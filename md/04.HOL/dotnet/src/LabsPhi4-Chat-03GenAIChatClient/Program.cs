@@ -33,7 +33,7 @@ var systemPrompt = "You are an AI assistant that helps people find information. 
 
 var config = OnnxRuntimeGenAIChatClientOptionsGenerator.GetDefault();
 
-using var client = new OnnxRuntimeGenAIChatClient(config, modelPath);
+using var client = new OnnxRuntimeGenAIChatClient(modelPath, config);
 
 
 // chat start
