@@ -9,9 +9,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.20.1" />
-		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI" Version="0.7.0-rc1" />
-		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Cuda" Version="0.7.0-rc1" />
+		<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.21.0" />
+		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI" Version="0.7.0-rc2" />
+		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Cuda" Version="0.7.0-rc2" />
 	</ItemGroup>
 
 	<ItemGroup>
