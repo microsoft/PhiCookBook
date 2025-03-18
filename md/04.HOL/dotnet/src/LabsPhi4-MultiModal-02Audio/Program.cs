@@ -67,12 +67,17 @@ generatorParams.SetInputs(inputTensors);
 Console.WriteLine("Generating response ...");
 Console.WriteLine("");
 using var generator = new Generator(model, generatorParams);
+var watch = System.Diagnostics.Stopwatch.StartNew();
 while (!generator.IsDone())
 {
     generator.GenerateNextToken();
     var seq = generator.GetSequence(0)[^1];
     Console.Write(tokenizerStream.Decode(seq));
 }
+watch.Stop();
+var runTimeInSeconds = watch.Elapsed.TotalSeconds;
+Console.WriteLine();
+Console.WriteLine($"Total Time: {runTimeInSeconds:0.00} seconds");
 
 audioFiles.Dispose();
 tokenizerStream.Dispose();
