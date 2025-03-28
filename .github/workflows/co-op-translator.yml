@@ -52,7 +52,7 @@ jobs:
           # IMPORTANT: Set your target languages here (REQUIRED CONFIGURATION)
           # =====================================================================
 
-          LANGUAGES="fr es de"  # <--- MODIFY THIS LINE with your desired languages
+          LANGUAGES="ar de es fa fr ru"  # <--- MODIFY THIS LINE with your desired languages
 
           echo "Translating to languages: $LANGUAGES"
           translate -l "$LANGUAGES" -y
