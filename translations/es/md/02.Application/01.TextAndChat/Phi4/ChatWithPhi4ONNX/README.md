@@ -1,8 +1,17 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
+  "translation_date": "2025-03-27T11:22:32+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi4\\ChatWithPhi4ONNX\\README.md",
+  "language_code": "es"
+}
+-->
 # **Chat con Phi-4-mini ONNX**
 
-***ONNX*** es un formato abierto diseñado para representar modelos de aprendizaje automático. ONNX define un conjunto común de operadores, que son los bloques de construcción de modelos de aprendizaje automático y aprendizaje profundo, y un formato de archivo común para permitir que los desarrolladores de IA utilicen modelos con una variedad de frameworks, herramientas, entornos de ejecución y compiladores.
+***ONNX*** es un formato abierto diseñado para representar modelos de aprendizaje automático. ONNX define un conjunto común de operadores, que son los bloques de construcción de modelos de aprendizaje automático y profundo, y un formato de archivo común que permite a los desarrolladores de IA usar modelos con una variedad de frameworks, herramientas, entornos de ejecución y compiladores.
 
-Esperamos implementar modelos de IA generativa en dispositivos de borde y usarlos en entornos con poder de cómputo limitado o sin conexión. Ahora podemos lograr este objetivo convirtiendo el modelo de una manera cuantizada. Podemos convertir el modelo cuantizado al formato GGUF o ONNX.
+Esperamos desplegar modelos de IA generativa en dispositivos de borde y utilizarlos en entornos con potencia de cómputo limitada o sin conexión. Ahora podemos lograr este objetivo convirtiendo el modelo de una manera cuantizada. Podemos convertir el modelo cuantizado al formato GGUF o ONNX.
 
 Microsoft Olive puede ayudarte a convertir SLM al formato ONNX cuantizado. El método para lograr la conversión del modelo es muy sencillo.
 
@@ -16,7 +25,7 @@ pip install transformers
 
 ```
 
-**Convertir soporte para CPU ONNX**
+**Convertir soporte ONNX para CPU**
 
 ```bash
 
@@ -147,4 +156,4 @@ while not generator.is_done():
 ```
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando servicios de traducción automática basados en inteligencia artificial. Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea que pueda surgir del uso de esta traducción.

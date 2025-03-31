@@ -1,49 +1,59 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
+  "translation_date": "2025-03-27T10:52:44+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-MLflow.md",
+  "language_code": "de"
+}
+-->
 # MLflow
 
 [MLflow](https://mlflow.org/) ist eine Open-Source-Plattform, die entwickelt wurde, um den gesamten Lebenszyklus des maschinellen Lernens zu verwalten.
 
 ![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.de.png)
 
-MLFlow wird verwendet, um den ML-Lebenszyklus zu verwalten, einschließlich Experimentieren, Reproduzierbarkeit, Bereitstellung und einer zentralen Modellregistrierung. MLFlow bietet derzeit vier Hauptkomponenten:
+MLFlow wird verwendet, um den ML-Lebenszyklus zu verwalten, einschließlich Experimentieren, Reproduzierbarkeit, Bereitstellung und einer zentralen Modellregistrierung. MLFlow bietet derzeit vier Komponenten:
 
 - **MLflow Tracking:** Aufzeichnen und Abfragen von Experimenten, Code, Datenkonfigurationen und Ergebnissen.
-- **MLflow Projects:** Verpacken von Data-Science-Code in einem Format, das auf jeder Plattform reproduziert werden kann.
-- **MLflow Models:** Bereitstellen von maschinellen Lernmodellen in unterschiedlichen Umgebungen.
-- **Model Registry:** Speichern, annotieren und verwalten von Modellen in einem zentralen Repository.
+- **MLflow Projects:** Verpacken von Data-Science-Code in einem Format, das Läufe auf jeder Plattform reproduzierbar macht.
+- **MLflow Models:** Bereitstellen von maschinellen Lernmodellen in verschiedenen Bereitstellungsumgebungen.
+- **Model Registry:** Speichern, Kommentieren und Verwalten von Modellen in einem zentralen Repository.
 
-Es bietet Funktionen zum Verfolgen von Experimenten, Verpacken von Code für reproduzierbare Abläufe sowie zum Teilen und Bereitstellen von Modellen. MLFlow ist in Databricks integriert und unterstützt eine Vielzahl von ML-Bibliotheken, wodurch es bibliotheksunabhängig ist. Es kann mit jeder maschinellen Lernbibliothek und in jeder Programmiersprache verwendet werden, da es eine REST-API und CLI für Benutzerfreundlichkeit bereitstellt.
+Es bietet Funktionen zum Nachverfolgen von Experimenten, Verpacken von Code in reproduzierbare Läufe sowie zum Teilen und Bereitstellen von Modellen. MLFlow ist in Databricks integriert und unterstützt eine Vielzahl von ML-Bibliotheken, wodurch es bibliotheksunabhängig ist. Es kann mit jeder ML-Bibliothek und in jeder Programmiersprache verwendet werden, da es eine REST-API und CLI für eine bequeme Nutzung bereitstellt.
 
 ![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.de.png)
 
 Wichtige Funktionen von MLFlow umfassen:
 
 - **Experiment Tracking:** Aufzeichnen und Vergleichen von Parametern und Ergebnissen.
-- **Model Management:** Bereitstellen von Modellen auf verschiedenen Plattformen für Serving und Inferenz.
-- **Model Registry:** Gemeinsames Verwalten des Lebenszyklus von MLflow-Modellen, einschließlich Versionierung und Anmerkungen.
-- **Projects:** Verpacken von ML-Code für das Teilen oder die Produktionsnutzung.  
-MLFlow unterstützt auch den MLOps-Kreislauf, der die Datenvorbereitung, Registrierung und Verwaltung von Modellen, Verpackung von Modellen für die Ausführung, Bereitstellung von Diensten und Überwachung von Modellen umfasst. Ziel ist es, den Übergang von einem Prototyp zu einem Produktionsworkflow zu vereinfachen, insbesondere in Cloud- und Edge-Umgebungen.
+- **Model Management:** Bereitstellen von Modellen auf verschiedenen Plattformen für Bereitstellung und Inferenz.
+- **Model Registry:** Gemeinsames Verwalten des Lebenszyklus von MLFlow-Modellen, einschließlich Versionierung und Kommentaren.
+- **Projects:** Verpacken von ML-Code für die gemeinsame Nutzung oder Produktionsnutzung.
 
-## E2E-Szenario – Aufbau eines Wrappers und Nutzung von Phi-3 als MLFlow-Modell
+MLFlow unterstützt auch den MLOps-Zyklus, der die Datenvorbereitung, Registrierung und Verwaltung von Modellen, Verpackung von Modellen zur Ausführung, Bereitstellung von Diensten und Überwachung von Modellen umfasst. Es zielt darauf ab, den Übergang von einem Prototyp zu einem Produktionsworkflow zu vereinfachen, insbesondere in Cloud- und Edge-Umgebungen.
 
-In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wrapper um das Phi-3 Small Language Model (SLM) zu erstellen und es dann entweder lokal oder in der Cloud, z. B. in einem Azure Machine Learning-Arbeitsbereich, als MLFlow-Modell auszuführen.
+## End-to-End-Szenario – Erstellen eines Wrappers und Verwenden von Phi-3 als MLFlow-Modell
+
+In diesem End-to-End-Beispiel demonstrieren wir zwei verschiedene Ansätze zum Erstellen eines Wrappers um das kleine Sprachmodell Phi-3 (SLM) und führen es dann entweder lokal oder in der Cloud, z. B. im Azure Machine Learning-Arbeitsbereich, als MLFlow-Modell aus.
 
 ![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.de.png)
 
-| Projekt | Beschreibung | Speicherort |
+| Projekt | Beschreibung | Standort |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Die Transformer Pipeline ist die einfachste Option, einen Wrapper zu erstellen, wenn Sie ein HuggingFace-Modell mit dem experimentellen Transformer-Flavor von MLFlow verwenden möchten. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | Zum Zeitpunkt der Erstellung unterstützte die Transformer-Pipeline keine MLFlow-Wrapper-Generierung für HuggingFace-Modelle im ONNX-Format, selbst mit dem experimentellen Optimum-Python-Paket. Für solche Fälle können Sie einen benutzerdefinierten Python-Wrapper für den MLFlow-Modus erstellen. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Die Transformer Pipeline ist die einfachste Option, einen Wrapper zu erstellen, wenn Sie ein HuggingFace-Modell mit dem experimentellen Transformers-Flavor von MLFlow verwenden möchten. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Benutzerdefinierter Python-Wrapper | Zum Zeitpunkt der Erstellung unterstützte die Transformer-Pipeline die Generierung von MLFlow-Wrappers für HuggingFace-Modelle im ONNX-Format nicht, selbst mit dem experimentellen Optimum-Python-Paket. Für solche Fälle können Sie einen benutzerdefinierten Python-Wrapper für den MLFlow-Modus erstellen. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Projekt: Transformer Pipeline
 
-1. Sie benötigen die relevanten Python-Pakete von MLFlow und HuggingFace:
+1. Sie benötigen relevante Python-Pakete von MLFlow und HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Als Nächstes sollten Sie eine Transformer-Pipeline initiieren, indem Sie auf das Zielmodell Phi-3 im HuggingFace-Repository verweisen. Wie aus der Modellkarte von _Phi-3-mini-4k-instruct_ hervorgeht, handelt es sich bei seiner Aufgabe um „Textgenerierung“:
+2. Als Nächstes sollten Sie eine Transformer-Pipeline initiieren, indem Sie auf das Zielmodell Phi-3 im HuggingFace-Repository verweisen. Wie aus der Modellkarte von _Phi-3-mini-4k-instruct_ ersichtlich, handelt es sich um eine Aufgabe des Typs „Textgenerierung“:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -52,7 +62,7 @@ In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wr
     )
     ```
 
-3. Nun können Sie die Transformer-Pipeline Ihres Phi-3-Modells im MLFlow-Format speichern und zusätzliche Details wie den Ziel-Artefaktpfad, spezifische Modelleinstellungen und den Inferenz-API-Typ angeben:
+3. Sie können nun die Transformer-Pipeline Ihres Phi-3-Modells im MLFlow-Format speichern und zusätzliche Details wie den Ziel-Artefaktpfad, spezifische Modelleinstellungen und den Inferenz-API-Typ angeben:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -63,9 +73,9 @@ In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wr
     )
     ```
 
-## Projekt: Custom Python Wrapper
+## Projekt: Benutzerdefinierter Python-Wrapper
 
-1. Hier können wir Microsofts [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) für die Inferenz des ONNX-Modells sowie das Codieren/Decodieren von Tokens verwenden. Sie müssen das Paket _onnxruntime_genai_ für Ihre Zielumgebung auswählen, wobei im folgenden Beispiel die CPU verwendet wird:
+1. Hier können wir die [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) von Microsoft für die Inferenz des ONNX-Modells sowie die Token-Codierung/Decodierung nutzen. Sie müssen das Paket _onnxruntime_genai_ für Ihre Ziel-Computing-Umgebung auswählen, wobei das unten stehende Beispiel auf die CPU abzielt:
 
     ``` Python
     import mlflow
@@ -73,7 +83,7 @@ In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wr
     import onnxruntime_genai as og
     ```
 
-1. Unsere benutzerdefinierte Klasse implementiert zwei Methoden: _load_context()_, um das **ONNX-Modell** von Phi-3 Mini 4K Instruct, **Generatorparameter** und den **Tokenizer** zu initialisieren, und _predict()_, um Ausgabetokens für den bereitgestellten Prompt zu generieren:
+2. Unsere benutzerdefinierte Klasse implementiert zwei Methoden: _load_context()_, um das **ONNX-Modell** von Phi-3 Mini 4K Instruct, **Generator-Parameter** und **Tokenizer** zu initialisieren; und _predict()_, um Ausgabetoken für den bereitgestellten Prompt zu generieren:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -104,7 +114,7 @@ In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wr
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Sie können nun die Funktion _mlflow.pyfunc.log_model()_ verwenden, um einen benutzerdefinierten Python-Wrapper (im Pickle-Format) für das Phi-3-Modell zusammen mit dem ursprünglichen ONNX-Modell und den erforderlichen Abhängigkeiten zu erstellen:
+3. Sie können nun die Funktion _mlflow.pyfunc.log_model()_ verwenden, um einen benutzerdefinierten Python-Wrapper (im Pickle-Format) für das Phi-3-Modell zusammen mit dem ursprünglichen ONNX-Modell und den erforderlichen Abhängigkeiten zu generieren:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -121,7 +131,7 @@ In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wr
 
 ## Signaturen der generierten MLFlow-Modelle
 
-1. In Schritt 3 des Projekts Transformer Pipeline oben haben wir die Aufgabe des MLFlow-Modells auf „_llm/v1/chat_“ festgelegt. Eine solche Anweisung generiert einen API-Wrapper für das Modell, der mit OpenAIs Chat-API kompatibel ist, wie unten gezeigt:
+1. Im Schritt 3 des oben genannten Transformer-Pipeline-Projekts setzen wir die Aufgabe des MLFlow-Modells auf „_llm/v1/chat_“. Eine solche Anweisung generiert einen API-Wrapper des Modells, der mit der Chat-API von OpenAI kompatibel ist, wie unten gezeigt:
 
     ``` Python
     {inputs: 
@@ -132,13 +142,13 @@ In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wr
       None}
     ```
 
-1. Dadurch können Sie Ihren Prompt im folgenden Format einreichen:
+2. Dadurch können Sie Ihren Prompt im folgenden Format einreichen:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Anschließend können Sie eine mit der OpenAI-API kompatible Nachbearbeitung verwenden, z. B. _response[0][‘choices’][0][‘message’][‘content’]_, um Ihre Ausgabe in etwa so zu gestalten:
+3. Verwenden Sie dann eine mit der OpenAI-API kompatible Nachbearbeitung, z. B. _response[0][‘choices’][0][‘message’][‘content’]_, um Ihre Ausgabe zu verschönern, sodass sie wie folgt aussieht:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -148,7 +158,7 @@ In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wr
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. In Schritt 3 des Projekts Custom Python Wrapper oben erlauben wir dem MLFlow-Paket, die Signatur des Modells aus einem gegebenen Eingabe-Beispiel zu generieren. Die Signatur unseres MLFlow-Wrappers sieht dann wie folgt aus:
+4. Im Schritt 3 des oben genannten Projekts „Benutzerdefinierter Python-Wrapper“ erlauben wir dem MLFlow-Paket, die Signatur des Modells aus einem gegebenen Eingabe-Beispiel zu generieren. Die Signatur unseres MLFlow-Wrappers sieht dann so aus:
 
     ``` Python
     {inputs: 
@@ -159,13 +169,13 @@ In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wr
       None}
     ```
 
-1. Unser Prompt müsste daher den Schlüssel „prompt“ im Dictionary enthalten, ähnlich wie hier:
+5. Unser Prompt muss daher den Schlüssel "prompt" als Wörterbuch enthalten, ähnlich wie hier:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Die Ausgabe des Modells wird dann im String-Format bereitgestellt:
+6. Die Ausgabe des Modells wird dann im String-Format bereitgestellt:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -178,4 +188,4 @@ In diesem End-to-End-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wr
     ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe von KI-basierten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.

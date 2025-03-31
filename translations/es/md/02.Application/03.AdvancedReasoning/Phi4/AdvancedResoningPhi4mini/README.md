@@ -1,6 +1,15 @@
-## **Usando Phi-4-mini como Experto en Razonamiento**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a9f1b650e11fec4e2790754b7a77cb23",
+  "translation_date": "2025-03-27T12:42:25+00:00",
+  "source_file": "md\\02.Application\\03.AdvancedReasoning\\Phi4\\AdvancedResoningPhi4mini\\README.md",
+  "language_code": "es"
+}
+-->
+## **Usar Phi-4-mini como Experto en Razonamiento**
 
-Una de las principales características de Phi-4 es su gran capacidad de razonamiento. Veamos su poderosa habilidad para razonar a través de Phi-4-mini.
+Una de las principales características de Phi-4 es su gran capacidad de razonamiento. Veamos esta habilidad destacada a través de Phi-4-mini.
 
 ```python
 
@@ -47,4 +56,4 @@ print(output[0]['generated_text'])
 ```
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando servicios de traducción automática basados en inteligencia artificial. Si bien nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea que surja del uso de esta traducción.

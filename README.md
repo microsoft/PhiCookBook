@@ -30,51 +30,7 @@ Follow these steps to get started using these resource :
 
 ## 🌐 Multi-Language Support
 
-| Language Code | Language Name        | Link to Translated Readme         | Last Updated |
-|---------------|----------------------|-----------------------------------|-------------|
-| fr            | French               | [French Translation](./translations/fr/README.md)              | 2025-02-03  |
-| es            | Spanish              | [Spanish Translation](./translations/es/README.md)             | 2025-02-03  |
-| de            | German               | [German Translation](./translations/de/README.md)       | 2025-02-03  |
-| ru            | Russian              |[Russian Translation](./translations/ru/README.md)            | 2025-02-03  |
-| ar            | Arabic               |[Arabic Translation](./translations/ar/README.md)      | 2025-02-03  |
-| fa            | Persian (Farsi)      | [Persian Translation](./translations/fa/README.md)       | 2025-02-03  |
-| ur            | Urdu                 | [Urdu Translation](./translations/ur/README.md)    | 2025-02-03  |
-| zh            | Chinese (Simplified) | [Chinese Translation](./translations/zh/README.md)        | 2025-02-03  |
-| mo            | Chinese (Traditional, Macau) | [Chinese Translation](./translations/mo/README.md)         | 2025-02-03|
-| hk            | Chinese (Traditional, Hong Kong) |[Chinese Translation](./translations/hk/README.md)        | 2025-02-03|
-| tw            | Chinese (Traditional, Taiwan) | [Chinese Translation](./translations/tw/README.md)         |2025-02-03|
-| ja            | Japanese             | [Japanese Translation](./translations/ja/README.md)            | 2025-02-03 |
-| ko            | Korean               | [Korean Translation](./translations/ko/README.md)           | 2025-02-03 |
-| hi            | Hindi                | [Hindi Translation](./translations/hi/README.md)   | 2025-02-03 |
-| bn            | Bengali              | [Bengali Translation](./translations/bn/README.md)       | 2025-02-03 |
-| mr            | Marathi              | [Marathi Translation](./translations/mr/README.md)  | 2025-02-03 |
-| ne            | Nepali               | [Nepali Translation](./translations/ne/README.md)    | 2025-02-03  |
-| pa            | Punjabi (Gurmukhi)   | [Punjabi Translation](./translations/pa/README.md)  | 2025-02-03  |
-| pt            | Portuguese           | [Portuguese Translation](./translations/pt/README.md)             | 2025-02-03  |
-| it            | Italian              | [Italian Translation](./translations/it/README.md)              | 2025-02-03  |
-| pl            | Polish               | [Polish Translation](./translations/pl/README.md)              | 2025-02-03  |
-| tr            | Turkish              | [Turkish Translation](./translations/tr/README.md)              | 2025-02-03 |
-| el            | Greek                | [Greek Translation](./translations/el/README.md)               | 2025-02-03 |
-| th            | Thai                 | [Thai Translation](./translations/th/README.md)          | 2025-02-03  |
-| sv            | Swedish              | [Swedish Translation](./translations/sv/README.md)             |2025-02-03  |
-| da            | Danish               | [Danish Translation](./translations/da/README.md)               |2025-02-03   |
-| no            | Norwegian            | [Norwegian Translation](./translations/no/README.md)               |2025-02-03 |
-| fi            | Finnish              | [Finnish Translation](./translations/fi/README.md)               |2025-02-03  |
-| nl            | Dutch                | [Dutch Translation](./translations/nl/README.md)             | 2025-02-03  |
-| he            | Hebrew               | [Hebrew Translation](./translations/he/README.md)         | 2025-02-03     |
-| vi            | Vietnamese           | [Vietnamese Translation](./translations/vi/README.md)                |2025-02-03         |
-| id            | Indonesian           | [Indonesian Translation](./translations/id/README.md)                | 2025-02-03     |
-| ms            | Malay                |[Malay Translation](./translations/ms/README.md)            | 2025-02-03        |
-| tl            | Tagalog (Filipino)   | [Tagalong Translation](./translations/tl/README.md)             | 2025-02-03       |
-| sw            | Swahili              | [Swahili Translation](./translations/sw/README.md)              | 2025-02-03         |
-| hu            | Hungarian            | [Hungarian Translation](./translations/hu/README.md)             | 2025-02-03       |
-| cs            | Czech                | [Czech Translation](./translations/cs/README.md)               | 2025-02-03       |
-| sk            | Slovak               | [Slovak Translation](./translations/sk/README.md)               | 2025-02-03      |
-| ro            | Romanian             |[Romanian Translation](./translations/ro/README.md)         | 2025-02-03      |
-| bg            | Bulgarian            | [Bulgarian Translation](./translations/bg/README.md)           | 2025-02-03     |
-| sr            | Serbian (Cyrillic)   | [Serbian Translation](./translations/sr/README.md)         | 2025-02-03       |
-| hr            | Croatian             | [Croatian Translation](./translations/hr/README.md)             | 2025-02-03     |
-| sl            | Slovenian            | [Slovenian Translation](./translations/sl/README.md)         | 2025-02-03  |
+[French](./translations/fr/README.md) | [Spanish](./translations/es/README.md) | [German](./translations/de/README.md) | [Russian](./translations/ru/README.md) | [Arabic](./translations/ar/README.md) | [Persian (Farsi)](./translations/fa/README.md) | [Urdu](./translations/ur/README.md) | [Chinese (Simplified)](./translations/zh/README.md) | [Chinese (Traditional, Macau)](./translations/mo/README.md) | [Chinese (Traditional, Hong Kong)](./translations/hk/README.md) | [Chinese (Traditional, Taiwan)](./translations/tw/README.md) | [Japanese](./translations/ja/README.md) | [Korean](./translations/ko/README.md) | [Hindi](./translations/hi/README.md) [Bengali](./translations/bn/README.md) | [Marathi](./translations/mr/README.md) | [Nepali](./translations/ne/README.md) | [Punjabi (Gurmukhi)](./translations/pa/README.md) | [Portuguese (Portugal)](./translations/pt/README.md) | [Portuguese (Brazil)](./translations/br/README.md) | [Italian](./translations/it/README.md) | [Polish](./translations/pl/README.md) | [Turkish](./translations/tr/README.md) | [Greek](./translations/el/README.md) | [Thai](./translations/th/README.md) | [Swedish](./translations/sv/README.md) | [Danish](./translations/da/README.md) | [Norwegian](./translations/no/README.md) | [Finnish](./translations/fi/README.md) | [Dutch](./translations/nl/README.md) | [Hebrew](./translations/he/README.md) | [Vietnamese](./translations/vi/README.md) | [Indonesian](./translations/id/README.md) | [Malay](./translations/ms/README.md) | [Tagalog (Filipino)](./translations/tl/README.md) | [Swahili](./translations/sw/README.md) | [Hungarian](./translations/hu/README.md) | [Czech](./translations/cs/README.md) | [Slovak](./translations/sk/README.md) | [Romanian](./translations/ro/README.md) | [Bulgarian](./translations/bg/README.md) | [Serbian (Cyrillic)](./translations/sr/README.md) | [Croatian](./translations/hr/README.md) | [Slovenian](./translations/sl/README.md)
 
 
 ## Table of Contents

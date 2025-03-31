@@ -1,49 +1,58 @@
-# Willkommen bei deiner VS Code-Erweiterung
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
+  "translation_date": "2025-03-27T05:07:22+00:00",
+  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\vsc-extension-quickstart.md",
+  "language_code": "de"
+}
+-->
+# Willkommen bei Ihrer VS Code-Erweiterung
 
 ## Was ist in diesem Ordner
 
-* Dieser Ordner enthält alle notwendigen Dateien für deine Erweiterung.
-* `package.json` – dies ist die Manifest-Datei, in der du deine Erweiterung und Befehle deklarierst.
-  * Das Beispiel-Plugin registriert einen Befehl und definiert dessen Titel und Namen. Mit diesen Informationen kann VS Code den Befehl in der Befehlsübersicht anzeigen. Es ist noch nicht erforderlich, das Plugin zu laden.
-* `src/extension.ts` – dies ist die Hauptdatei, in der du die Implementierung deines Befehls bereitstellst.
-  * Die Datei exportiert eine Funktion, `activate`, die zum allerersten Mal aufgerufen wird, wenn deine Erweiterung aktiviert wird (in diesem Fall durch Ausführen des Befehls). Innerhalb der `activate`-Funktion rufen wir `registerCommand` auf.
+* Dieser Ordner enthält alle notwendigen Dateien für Ihre Erweiterung.
+* `package.json` - Dies ist die Manifestdatei, in der Sie Ihre Erweiterung und den Befehl deklarieren.
+  * Das Beispiel-Plugin registriert einen Befehl und definiert dessen Titel und Befehlsnamen. Mit diesen Informationen kann VS Code den Befehl in der Befehlspalette anzeigen. Das Plugin muss dabei noch nicht geladen werden.
+* `src/extension.ts` - Dies ist die Hauptdatei, in der Sie die Implementierung Ihres Befehls bereitstellen.
+  * Die Datei exportiert eine Funktion, `activate`, die beim ersten Aktivieren Ihrer Erweiterung aufgerufen wird (in diesem Fall durch Ausführen des Befehls). Innerhalb der `activate`-Funktion rufen wir `registerCommand` auf.
   * Wir übergeben die Funktion, die die Implementierung des Befehls enthält, als zweiten Parameter an `registerCommand`.
 
 ## Einrichtung
 
-* Installiere die empfohlenen Erweiterungen (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner und dbaeumer.vscode-eslint).
+* Installieren Sie die empfohlenen Erweiterungen (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner und dbaeumer.vscode-eslint).
 
 ## Sofort loslegen
 
-* Drücke `F5`, um ein neues Fenster mit deiner geladenen Erweiterung zu öffnen.
-* Führe deinen Befehl aus der Befehlsübersicht aus, indem du (`Ctrl+Shift+P` oder `Cmd+Shift+P` auf Mac) drückst und `Hello World` eingibst.
-* Setze Haltepunkte in deinem Code innerhalb von `src/extension.ts`, um deine Erweiterung zu debuggen.
-* Finde Ausgaben deiner Erweiterung in der Debug-Konsole.
+* Drücken Sie `F5`, um ein neues Fenster mit Ihrer geladenen Erweiterung zu öffnen.
+* Führen Sie Ihren Befehl aus der Befehlspalette aus, indem Sie (`Ctrl+Shift+P` oder `Cmd+Shift+P` auf Mac) drücken und `Hello World` eingeben.
+* Setzen Sie Haltepunkte in Ihrem Code innerhalb von `src/extension.ts`, um Ihre Erweiterung zu debuggen.
+* Finden Sie die Ausgabe Ihrer Erweiterung in der Debug-Konsole.
 
 ## Änderungen vornehmen
 
-* Du kannst die Erweiterung über die Debug-Symbolleiste neu starten, nachdem du den Code in `src/extension.ts` geändert hast.
-* Alternativ kannst du das VS Code-Fenster mit deiner Erweiterung neu laden (`Ctrl+R` oder `Cmd+R` auf Mac), um deine Änderungen zu übernehmen.
+* Sie können die Erweiterung nach Änderungen im Code in `src/extension.ts` über die Debug-Toolbar neu starten.
+* Sie können auch das VS Code-Fenster mit Ihrer Erweiterung neu laden (`Ctrl+R` oder `Cmd+R` auf Mac), um Ihre Änderungen zu übernehmen.
 
-## Die API erkunden
+## API erkunden
 
-* Du kannst den vollständigen Satz unserer API öffnen, indem du die Datei `node_modules/@types/vscode/index.d.ts` öffnest.
+* Sie können das vollständige Set unserer API öffnen, indem Sie die Datei `node_modules/@types/vscode/index.d.ts` öffnen.
 
 ## Tests ausführen
 
-* Installiere den [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner).
-* Führe die "watch"-Aufgabe über den Befehl **Tasks: Run Task** aus. Stelle sicher, dass diese läuft, sonst werden Tests möglicherweise nicht erkannt.
-* Öffne die Testansicht in der Aktivitätsleiste und klicke auf die Schaltfläche "Run Test" oder verwende die Tastenkombination `Ctrl/Cmd + ; A`.
-* Sieh dir die Testergebnisse in der Test Results-Ansicht an.
-* Nimm Änderungen in `src/test/extension.test.ts` vor oder erstelle neue Testdateien im Ordner `test`.
+* Installieren Sie den [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner).
+* Führen Sie die "watch"-Aufgabe über den **Tasks: Run Task**-Befehl aus. Stellen Sie sicher, dass diese Aufgabe ausgeführt wird, da Tests sonst möglicherweise nicht erkannt werden.
+* Öffnen Sie die Testansicht in der Aktivitätsleiste und klicken Sie auf die Schaltfläche "Run Test" oder verwenden Sie die Tastenkombination `Ctrl/Cmd + ; A`.
+* Sehen Sie sich die Ausgabe des Testergebnisses in der Test Results-Ansicht an.
+* Nehmen Sie Änderungen an `src/test/extension.test.ts` vor oder erstellen Sie neue Testdateien im Ordner `test`.
   * Der bereitgestellte Test Runner berücksichtigt nur Dateien, die dem Namensmuster `**.test.ts` entsprechen.
-  * Du kannst Ordner im Ordner `test` erstellen, um deine Tests beliebig zu strukturieren.
+  * Sie können Ordner innerhalb des `test`-Ordners erstellen, um Ihre Tests beliebig zu strukturieren.
 
 ## Weiterführende Schritte
 
-* Reduziere die Größe der Erweiterung und verbessere die Startzeit, indem du [deine Erweiterung bündelst](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
-* [Veröffentliche deine Erweiterung](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) im VS Code-Erweiterungsmarktplatz.
-* Automatisiere Builds, indem du [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration) einrichtest.
+* Reduzieren Sie die Größe der Erweiterung und verbessern Sie die Startzeit, indem Sie [Ihre Erweiterung bündeln](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
+* [Veröffentlichen Sie Ihre Erweiterung](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) im VS Code-Erweiterungsmarktplatz.
+* Automatisieren Sie Builds, indem Sie [Continuous Integration einrichten](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit KI-gestützten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung resultieren.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.

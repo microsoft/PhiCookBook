@@ -1,10 +1,19 @@
-# **Inference Phi-3-Vision lokal ausführen**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
+  "translation_date": "2025-03-27T08:12:40+00:00",
+  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "language_code": "de"
+}
+-->
+# **Inference Phi-3-Vision in Lokal**
 
-Phi-3-vision-128k-instruct ermöglicht es Phi-3 nicht nur, Sprache zu verstehen, sondern auch die Welt visuell wahrzunehmen. Mit Phi-3-vision-128k-instruct können wir verschiedene visuelle Probleme lösen, wie z. B. OCR, Tabellenanalyse, Objekterkennung, Bildbeschreibung usw. Aufgaben, die zuvor umfangreiche Datentrainings erforderten, können nun einfach erledigt werden. Im Folgenden sind die zugehörigen Techniken und Anwendungsszenarien aufgeführt, die durch Phi-3-vision-128k-instruct ermöglicht werden.
+Phi-3-vision-128k-instruct ermöglicht es Phi-3 nicht nur, Sprache zu verstehen, sondern auch die Welt visuell wahrzunehmen. Durch Phi-3-vision-128k-instruct können wir verschiedene visuelle Probleme lösen, wie z. B. OCR, Tabellenanalyse, Objekterkennung, Bildbeschreibung usw. Aufgaben, die früher umfangreiche Datentrainings erforderten, können nun problemlos abgeschlossen werden. Im Folgenden sind verwandte Techniken und Anwendungsszenarien aufgeführt, die durch Phi-3-vision-128k-instruct ermöglicht werden.
 
 ## **0. Vorbereitung**
 
-Bitte stellen Sie sicher, dass die folgenden Python-Bibliotheken installiert sind, bevor Sie beginnen (Python 3.10+ wird empfohlen)
+Bitte stellen Sie sicher, dass die folgenden Python-Bibliotheken vor der Nutzung installiert sind (Python 3.10+ wird empfohlen)
 
 ```bash
 pip install transformers -U
@@ -42,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Analyse des Bildes mit Phi-3-Vision**
 
-Wir möchten, dass die KI den Inhalt unserer Bilder analysiert und relevante Beschreibungen liefert.
+Wir möchten, dass die KI den Inhalt unserer Bilder analysieren und relevante Beschreibungen liefern kann.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -65,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Durch Ausführen des folgenden Skripts im Notebook können wir die entsprechenden Antworten erhalten.
+Durch Ausführung des folgenden Skripts im Notebook können wir die relevanten Antworten erhalten.
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -73,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR mit Phi-3-Vision**
 
-Zusätzlich zur Bildanalyse können wir auch Informationen aus dem Bild extrahieren. Dies ist der OCR-Prozess, für den früher komplexer Code erforderlich war.
+Neben der Bildanalyse können wir auch Informationen aus dem Bild extrahieren. Dies ist der OCR-Prozess, für den wir früher komplexen Code schreiben mussten.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -97,7 +106,7 @@ response = processor.batch_decode(generate_ids,
 
 ```
 
-Das Ergebnis lautet:
+Das Ergebnis ist:
 
 ```txt
 The title of the book is "ALONE" and the author is Morgan Maxwell.
@@ -105,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Vergleich mehrerer Bilder**
 
-Phi-3 Vision unterstützt den Vergleich mehrerer Bilder. Mit diesem Modell können wir die Unterschiede zwischen den Bildern finden.
+Phi-3 Vision unterstützt den Vergleich mehrerer Bilder. Mit diesem Modell können wir die Unterschiede zwischen den Bildern identifizieren.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -134,11 +143,11 @@ generate_ids = generate_ids[:, inputs['input_ids'].shape[1]:]
 response = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 ```
 
-Das Ergebnis lautet:
+Das Ergebnis ist:
 
 ```txt
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit KI-gestützten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

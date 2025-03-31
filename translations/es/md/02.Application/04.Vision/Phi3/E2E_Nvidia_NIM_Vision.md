@@ -1,16 +1,25 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
+  "translation_date": "2025-03-27T12:48:33+00:00",
+  "source_file": "md\\02.Application\\04.Vision\\Phi3\\E2E_Nvidia_NIM_Vision.md",
+  "language_code": "es"
+}
+-->
 ### Escenario de Ejemplo
 
-Imagina que tienes una imagen (`demo.png`) y quieres generar un código en Python que procese esta imagen y guarde una nueva versión de la misma (`phi-3-vision.jpg`).
+Imagina que tienes una imagen (`demo.png`) y deseas generar un código en Python que procese esta imagen y guarde una nueva versión de la misma (`phi-3-vision.jpg`).
 
-El código anterior automatiza este proceso al:
+El código anterior automatiza este proceso mediante:
 
 1. Configurar el entorno y las configuraciones necesarias.
 2. Crear un prompt que instruya al modelo a generar el código Python requerido.
-3. Enviar el prompt al modelo y recopilar el código generado.
+3. Enviar el prompt al modelo y recoger el código generado.
 4. Extraer y ejecutar el código generado.
 5. Mostrar las imágenes original y procesada.
 
-Este enfoque aprovecha el poder de la IA para automatizar tareas de procesamiento de imágenes, haciendo que sea más fácil y rápido alcanzar tus objetivos.
+Este enfoque aprovecha el poder de la inteligencia artificial para automatizar tareas de procesamiento de imágenes, haciendo que sea más fácil y rápido alcanzar tus objetivos.
 
 [Solución de Código de Ejemplo](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
 
@@ -20,7 +29,7 @@ Desglosemos lo que hace todo el código paso a paso:
     ```python
     !pip install langchain_nvidia_ai_endpoints -U
     ```
-    Este comando instala el paquete `langchain_nvidia_ai_endpoints`, asegurando que sea la versión más reciente.
+    Este comando instala el paquete `langchain_nvidia_ai_endpoints`, asegurándose de que sea la versión más reciente.
 
 2. **Importar Módulos Necesarios**:
     ```python
@@ -31,12 +40,12 @@ Desglosemos lo que hace todo el código paso a paso:
     ```
     Estas importaciones traen los módulos necesarios para interactuar con los endpoints de NVIDIA AI, manejar contraseñas de forma segura, interactuar con el sistema operativo y codificar/decodificar datos en formato base64.
 
-3. **Configurar la Clave API**:
+3. **Configurar la Clave de API**:
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
     ```
-    Este código verifica si la variable de entorno `NVIDIA_API_KEY` está configurada. Si no lo está, solicita al usuario que introduzca su clave API de forma segura.
+    Este código verifica si la variable de entorno `NVIDIA_API_KEY` está configurada. Si no, solicita al usuario que ingrese su clave de API de forma segura.
 
 4. **Definir el Modelo y la Ruta de la Imagen**:
     ```python
@@ -44,7 +53,7 @@ Desglosemos lo que hace todo el código paso a paso:
     chat = ChatNVIDIA(model=model)
     img_path = './imgs/demo.png'
     ```
-    Esto establece el modelo que se utilizará, crea una instancia de `ChatNVIDIA` con el modelo especificado y define la ruta al archivo de imagen.
+    Esto define el modelo a usar, crea una instancia de `ChatNVIDIA` con el modelo especificado y define la ruta del archivo de imagen.
 
 5. **Crear un Prompt de Texto**:
     ```python
@@ -91,7 +100,7 @@ Desglosemos lo que hace todo el código paso a paso:
     ```
     Esto ejecuta el código Python extraído como un subproceso y captura su salida.
 
-11. **Mostrar las Imágenes**:
+11. **Mostrar Imágenes**:
     ```python
     from IPython.display import Image, display
     display(Image(filename='./imgs/phi-3-vision.jpg'))
@@ -100,4 +109,4 @@ Desglosemos lo que hace todo el código paso a paso:
     Estas líneas muestran las imágenes utilizando el módulo `IPython.display`.
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando servicios de traducción basados en inteligencia artificial. Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.

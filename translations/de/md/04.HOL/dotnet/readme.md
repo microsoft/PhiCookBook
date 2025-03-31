@@ -1,3 +1,12 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8fd4bbea0a970872d95cf189202589e1",
+  "translation_date": "2025-03-27T16:24:28+00:00",
+  "source_file": "md\\04.HOL\\dotnet\\readme.md",
+  "language_code": "de"
+}
+-->
 ## Willkommen bei den Phi-Labs mit C#
 
 Es gibt eine Auswahl an Labs, die zeigen, wie die leistungsstarken verschiedenen Versionen der Phi-Modelle in einer .NET-Umgebung integriert werden können.
@@ -6,13 +15,13 @@ Es gibt eine Auswahl an Labs, die zeigen, wie die leistungsstarken verschiedenen
 
 Bevor Sie das Beispiel ausführen, stellen Sie sicher, dass Sie Folgendes installiert haben:
 
-**.NET 9:** Stellen Sie sicher, dass Sie die [neueste Version von .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) auf Ihrem Computer installiert haben.
+**.NET 9:** Stellen Sie sicher, dass die [neueste Version von .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) auf Ihrem Rechner installiert ist.
 
 **(Optional) Visual Studio oder Visual Studio Code:** Sie benötigen eine IDE oder einen Code-Editor, der .NET-Projekte ausführen kann. [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) oder [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo) werden empfohlen.
 
-**Mit git** klonen Sie lokal eine der verfügbaren Versionen Phi-3, Phi3.5 oder Phi-4 von [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
+**Mit git** klonen Sie lokal eine der verfügbaren Versionen von Phi-3, Phi-3.5 oder Phi-4 von [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
 
-**Laden Sie die Phi-4 ONNX-Modelle** auf Ihren lokalen Computer herunter:
+**Laden Sie die Phi-4 ONNX-Modelle** auf Ihren lokalen Rechner herunter:
 
 ### Navigieren Sie zum Ordner, in dem die Modelle gespeichert werden sollen
 
@@ -20,13 +29,13 @@ Bevor Sie das Beispiel ausführen, stellen Sie sicher, dass Sie Folgendes instal
 cd c:\phi\models
 ```
 
-### Unterstützung für lfs hinzufügen
+### Fügen Sie Unterstützung für lfs hinzu
 
 ```bash
 git lfs install 
 ```
 
-### Klonen und Herunterladen des Phi-4 Mini Instruct-Modells und des Phi-4 Multi Modal-Modells
+### Klonen und laden Sie das Phi-4 Mini Instruct-Modell und das Phi-4 Multi Modal-Modell herunter
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
@@ -34,9 +43,9 @@ git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 ```
 
-**Laden Sie die Phi-3 ONNX-Modelle** auf Ihren lokalen Computer herunter:
+**Laden Sie die Phi-3 ONNX-Modelle** auf Ihren lokalen Rechner herunter:
 
-### Klonen und Herunterladen des Phi-3 Mini 4K Instruct-Modells und des Phi-3 Vision 128K-Modells
+### Klonen und laden Sie das Phi-3 Mini 4K Instruct-Modell und das Phi-3 Vision 128K-Modell herunter
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
@@ -52,7 +61,7 @@ Die Hauptlösung enthält mehrere Beispiel-Labs, die die Fähigkeiten der Phi-Mo
 
 | Projekt | Modell | Beschreibung |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 oder Phi-3.5 | Beispiel für eine Konsolen-Chat-Anwendung, die es dem Benutzer ermöglicht, Fragen zu stellen. Das Projekt lädt ein lokales ONNX Phi-3-Modell mit `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 oder Phi-3.5 | Beispiel-Chat in der Konsole, der es dem Benutzer ermöglicht, Fragen zu stellen. Das Projekt lädt ein lokales ONNX Phi-3-Modell mithilfe von `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
 | [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
@@ -74,7 +83,7 @@ To run the projects, follow these steps:
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
     ```
 
-1. Führen Sie das Projekt mit dem Befehl aus:
+1. Führen Sie das Projekt mit dem Befehl aus
 
     ```bash
     dotnet run
@@ -93,4 +102,4 @@ To run the projects, follow these steps:
    ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe maschineller KI-Übersetzungsdienste übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.

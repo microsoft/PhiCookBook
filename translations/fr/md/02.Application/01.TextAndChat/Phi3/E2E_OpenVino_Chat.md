@@ -1,4 +1,13 @@
-[Exemple de chat OpenVino](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
+  "translation_date": "2025-03-27T09:17:23+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_OpenVino_Chat.md",
+  "language_code": "fr"
+}
+-->
+[OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
 Ce code exporte un modèle au format OpenVINO, le charge et l'utilise pour générer une réponse à une invite donnée.
 
@@ -19,7 +28,7 @@ Ce code exporte un modèle au format OpenVINO, le charge et l'utilise pour gén�
    ```
    - Ces lignes importent des classes du module `transformers` library and the `optimum.intel.openvino`, nécessaires pour charger et utiliser le modèle.
 
-3. **Configurer le répertoire et la configuration du modèle** :
+3. **Configurer le répertoire et les paramètres du modèle** :
    ```python
    model_dir = './model/phi3-instruct/int4'
    ov_config = {
@@ -41,13 +50,13 @@ Ce code exporte un modèle au format OpenVINO, le charge et l'utilise pour gén�
        trust_remote_code=True,
    )
    ```
-   - Cette ligne charge le modèle depuis le répertoire spécifié, en utilisant les paramètres de configuration définis précédemment. Elle permet également l'exécution de code distant si nécessaire.
+   - Cette ligne charge le modèle à partir du répertoire spécifié, en utilisant les paramètres de configuration définis précédemment. Elle permet également l'exécution de code à distance si nécessaire.
 
 5. **Charger le tokenizer** :
    ```python
    tok = AutoTokenizer.from_pretrained(model_dir, trust_remote_code=True)
    ```
-   - Cette ligne charge le tokenizer, qui est responsable de convertir le texte en tokens compréhensibles par le modèle.
+   - Cette ligne charge le tokenizer, responsable de convertir le texte en tokens compréhensibles par le modèle.
 
 6. **Configurer les arguments du tokenizer** :
    ```python
@@ -67,7 +76,7 @@ Ce code exporte un modèle au format OpenVINO, le charge et l'utilise pour gén�
    ```python
    input_tokens = tok(prompt, return_tensors="pt", **tokenizer_kwargs)
    ```
-   - Cette ligne convertit l'invite en tokens que le modèle peut traiter, en renvoyant le résultat sous forme de tenseurs PyTorch.
+   - Cette ligne convertit l'invite en tokens que le modèle peut traiter, en retournant le résultat sous forme de tenseurs PyTorch.
 
 9. **Générer une réponse** :
    ```python
@@ -79,7 +88,7 @@ Ce code exporte un modèle au format OpenVINO, le charge et l'utilise pour gén�
     ```python
     decoded_answer = tok.batch_decode(answer, skip_special_tokens=True)[0]
     ```
-    - Cette ligne convertit les tokens générés en une chaîne lisible par un humain, en ignorant les tokens spéciaux, et récupère le premier résultat.
+    - Cette ligne convertit les tokens générés en une chaîne lisible, en ignorant les tokens spéciaux, et récupère le premier résultat.
 
 **Avertissement** :  
-Ce document a été traduit à l'aide de services de traduction automatisés basés sur l'IA. Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées découlant de l'utilisation de cette traduction.

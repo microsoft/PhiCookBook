@@ -1,20 +1,29 @@
-## خوش‌آمدید به آزمایشگاه‌های Phi با استفاده از C#
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8fd4bbea0a970872d95cf189202589e1",
+  "translation_date": "2025-03-27T16:27:31+00:00",
+  "source_file": "md\\04.HOL\\dotnet\\readme.md",
+  "language_code": "fa"
+}
+-->
+## به آزمایشگاه‌های فی با استفاده از C# خوش آمدید
 
-در اینجا مجموعه‌ای از آزمایشگاه‌ها وجود دارد که نحوه‌ی ادغام نسخه‌های قدرتمند مختلف مدل‌های Phi در محیط .NET را نمایش می‌دهند.
+مجموعه‌ای از آزمایشگاه‌ها وجود دارد که نشان می‌دهد چگونه می‌توان نسخه‌های قدرتمند مختلف مدل‌های فی را در یک محیط .NET ادغام کرد.
 
 ## پیش‌نیازها
 
-قبل از اجرای نمونه‌ها، مطمئن شوید که موارد زیر نصب شده‌اند:
+قبل از اجرای نمونه‌ها، اطمینان حاصل کنید که موارد زیر را نصب کرده‌اید:
 
-**.NET 9:** اطمینان حاصل کنید که [آخرین نسخه .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) روی دستگاه شما نصب شده است.
+**.NET 9:** مطمئن شوید که [آخرین نسخه .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) روی سیستم شما نصب شده است.
 
-**(اختیاری) Visual Studio یا Visual Studio Code:** به یک IDE یا ویرایشگر کد نیاز دارید که بتواند پروژه‌های .NET را اجرا کند. [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) یا [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo) توصیه می‌شوند.
+**(اختیاری) ویژوال استودیو یا ویژوال استودیو کد:** شما به یک محیط توسعه یا ویرایشگر کد نیاز دارید که قادر به اجرای پروژه‌های .NET باشد. [ویژوال استودیو](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) یا [ویژوال استودیو کد](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo) پیشنهاد می‌شوند.
 
-**استفاده از git** یکی از نسخه‌های موجود Phi-3، Phi3.5 یا Phi-4 را از [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c) به صورت محلی کلون کنید.
+**استفاده از گیت** یکی از نسخه‌های موجود Phi-3، Phi3.5 یا Phi-4 را از [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c) به‌صورت محلی کلون کنید.
 
-**مدل‌های Phi-4 ONNX** را روی دستگاه خود دانلود کنید:
+**مدل‌های ONNX فی-4 را** روی سیستم خود دانلود کنید:
 
-### به پوشه‌ای که مدل‌ها در آن ذخیره می‌شوند بروید
+### به پوشه‌ای که می‌خواهید مدل‌ها را ذخیره کنید بروید
 
 ```bash
 cd c:\phi\models
@@ -26,7 +35,7 @@ cd c:\phi\models
 git lfs install 
 ```
 
-### مدل Phi-4 mini instruct و مدل Phi-4 multi modal را کلون و دانلود کنید
+### مدل "Phi-4 mini instruct" و مدل "Phi-4 multi modal" را کلون و دانلود کنید
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
@@ -34,9 +43,9 @@ git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 ```
 
-**مدل‌های Phi-3 ONNX** را روی دستگاه خود دانلود کنید:
+**مدل‌های ONNX فی-3 را** روی سیستم خود دانلود کنید:
 
-### مدل Phi-3 mini 4K instruct و مدل Phi-3 vision 128K را کلون و دانلود کنید
+### مدل "Phi-3 mini 4K instruct" و مدل "Phi-3 vision 128K" را کلون و دانلود کنید
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
@@ -48,11 +57,11 @@ git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 
 ## درباره آزمایشگاه‌ها
 
-راه‌حل اصلی شامل چندین آزمایشگاه نمونه است که قابلیت‌های مدل‌های Phi را با استفاده از C# نمایش می‌دهند.
+راه‌حل اصلی شامل چندین آزمایشگاه نمونه است که قابلیت‌های مدل‌های فی را با استفاده از C# نشان می‌دهند.
 
 | پروژه | مدل | توضیحات |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 یا Phi-3.5 | نمونه‌ای از یک کنسول چت که به کاربر اجازه می‌دهد سوال بپرسد. این پروژه یک مدل محلی ONNX Phi-3 را با استفاده از `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 یا Phi-3.5 | نمونه چت کنسولی که به کاربر اجازه می‌دهد سوال بپرسد. این پروژه یک مدل ONNX محلی فی-3 را با استفاده از `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
 | [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
@@ -74,15 +83,15 @@ To run the projects, follow these steps:
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
     ```
 
-1. پروژه را با فرمان زیر اجرا کنید:
+1. پروژه را با دستور زیر اجرا کنید:
 
     ```bash
     dotnet run
     ```
 
-1. پروژه نمونه از کاربر ورودی می‌گیرد و با استفاده از حالت محلی پاسخ می‌دهد.
+1. پروژه نمونه از کاربر ورودی می‌گیرد و با استفاده از مدل محلی پاسخ می‌دهد.
 
-   اجرای دمو مشابه این است:
+   دموی اجراشده مشابه این نمونه است:
 
    ```bash
    PS D:\phi\PhiCookBook\md\04.HOL\dotnet\src\LabsPhi4-Chat-01OnnxRuntime> dotnet run
@@ -93,4 +102,4 @@ To run the projects, follow these steps:
    ```
 
 **سلب مسئولیت**:  
-این سند با استفاده از خدمات ترجمه مبتنی بر هوش مصنوعی ترجمه شده است. در حالی که ما برای دقت تلاش می‌کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، توصیه می‌شود از ترجمه انسانی حرفه‌ای استفاده کنید. ما هیچ مسئولیتی در قبال سوءتفاهم‌ها یا برداشت‌های نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت ترجمه را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، توصیه می‌شود از ترجمه انسانی حرفه‌ای استفاده کنید. ما مسئول هیچ‌گونه سوءتفاهم یا تفسیر اشتباه ناشی از استفاده از این ترجمه نیستیم.

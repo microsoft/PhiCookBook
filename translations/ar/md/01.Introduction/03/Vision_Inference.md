@@ -1,6 +1,15 @@
-# **تشغيل Phi-3-Vision محلياً**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
+  "translation_date": "2025-03-27T08:14:43+00:00",
+  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "language_code": "ar"
+}
+-->
+# **استنتاج Phi-3-Vision محليًا**
 
-Phi-3-vision-128k-instruct يتيح لـ Phi-3 فهم اللغة ورؤية العالم بصرياً. من خلال Phi-3-vision-128k-instruct، يمكننا حل مشكلات بصرية متنوعة، مثل التعرف على النصوص (OCR)، تحليل الجداول، التعرف على الكائنات، وصف الصور، وغيرها. يمكننا بسهولة إنجاز مهام كانت تتطلب سابقاً الكثير من تدريب البيانات. فيما يلي تقنيات وسيناريوهات تطبيق مرتبطة بـ Phi-3-vision-128k-instruct.
+يتيح Phi-3-vision-128k-instruct لـ Phi-3 ليس فقط فهم اللغة، بل أيضًا رؤية العالم بصريًا. من خلال Phi-3-vision-128k-instruct، يمكننا حل مشاكل بصرية مختلفة، مثل التعرف على النصوص (OCR)، تحليل الجداول، التعرف على الأشياء، وصف الصور وغيرها. يمكننا بسهولة إنجاز مهام كانت تتطلب سابقًا الكثير من تدريب البيانات. فيما يلي التقنيات والمجالات التطبيقية المرتبطة بـ Phi-3-vision-128k-instruct.
 
 ## **0. التحضير**
 
@@ -18,7 +27,7 @@ pip install torch -U
 pip install flash-attn --no-build-isolation
 ```
 
-قم بإنشاء Notebook جديد. لإكمال الأمثلة، يوصى بإنشاء المحتوى التالي أولاً.
+قم بإنشاء Notebook جديد. لإكمال الأمثلة، يُفضل إنشاء المحتوى التالي أولاً.
 
 ```python
 from PIL import Image
@@ -40,9 +49,9 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. تحليل الصور باستخدام Phi-3-Vision**
+## **1. تحليل الصورة باستخدام Phi-3-Vision**
 
-نريد من الذكاء الاصطناعي أن يكون قادراً على تحليل محتوى صورنا وتقديم وصف ذي صلة.
+نريد أن يتمكن الذكاء الاصطناعي من تحليل محتوى الصور لدينا وتقديم وصف ذي صلة.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -65,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-يمكننا الحصول على الإجابات ذات الصلة من خلال تنفيذ السكربت التالي في Notebook.
+يمكننا الحصول على الإجابات ذات الصلة من خلال تنفيذ النص التالي في Notebook.
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -73,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. التعرف على النصوص (OCR) باستخدام Phi-3-Vision**
 
-بالإضافة إلى تحليل الصور، يمكننا أيضاً استخراج المعلومات من الصور. هذه هي عملية التعرف على النصوص (OCR) التي كنا نحتاج لكتابة أكواد معقدة لإنجازها.
+بالإضافة إلى تحليل الصور، يمكننا أيضًا استخراج المعلومات من الصور. هذه هي عملية التعرف على النصوص (OCR) التي كانت تتطلب كتابة أكواد معقدة لإتمامها.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -103,9 +112,9 @@ response = processor.batch_decode(generate_ids,
 The title of the book is "ALONE" and the author is Morgan Maxwell.
 ```
 
-## **3. مقارنة صور متعددة**
+## **3. مقارنة بين صور متعددة**
 
-يدعم Phi-3 Vision مقارنة صور متعددة. يمكننا استخدام هذا النموذج لاكتشاف الاختلافات بين الصور.
+يدعم Phi-3 Vision مقارنة بين صور متعددة. يمكننا استخدام هذا النموذج للعثور على الفروقات بين الصور.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -141,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمات الترجمة الآلية المدعومة بالذكاء الاصطناعي. بينما نسعى جاهدين لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار المستند الأصلي بلغته الأصلية هو المصدر الموثوق. للحصول على معلومات حاسمة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.
+تم ترجمة هذه الوثيقة باستخدام خدمة ترجمة الذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار الوثيقة الأصلية بلغتها الأصلية المصدر الرسمي. بالنسبة للمعلومات الهامة، يُوصى باستخدام ترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.

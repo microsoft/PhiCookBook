@@ -1,11 +1,20 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
+  "translation_date": "2025-03-27T04:41:47+00:00",
+  "source_file": "code\\07.Lab\\RAG_with_PromptFlow_and_AISearch\\README.md",
+  "language_code": "es"
+}
+-->
 ## RAG con PromptFlow y AISearch
 
 En este ejemplo, implementaremos una aplicación de Generación Aumentada por Recuperación (RAG) utilizando Phi3 como SLM, AI Search como vectorDB y Prompt Flow como orquestador de bajo código.
 
 ## Características
 
-- Despliegue sencillo utilizando Docker.
-- Arquitectura escalable para gestionar flujos de trabajo de IA.
+- Despliegue sencillo usando Docker.
+- Arquitectura escalable para manejar flujos de trabajo de IA.
 - Enfoque de bajo código utilizando Prompt Flow.
 
 ## Requisitos previos
@@ -15,16 +24,16 @@ Antes de comenzar, asegúrate de cumplir con los siguientes requisitos:
 - Docker instalado en tu máquina local.
 - Una cuenta de Azure con permisos para crear y gestionar recursos de contenedores.
 - Instancias de Azure AI Studio y Azure AI Search.
-- Un modelo de embeddings para crear tu índice (puede ser un embedding de Azure OpenAI o un modelo OS del catálogo).
-- Python 3.8 o posterior instalado en tu máquina local.
-- Un Azure Container Registry (o cualquier otro registro de tu elección).
+- Un modelo de incrustaciones para crear tu índice (puede ser un modelo de Azure OpenAI embedding o un modelo OS del catálogo).
+- Python 3.8 o una versión posterior instalada en tu máquina local.
+- Un Azure Container Registry (o cualquier registro de tu elección).
 
 ## Instalación
 
-1. Crea un nuevo flujo en tu proyecto de Azure AI Studio utilizando el archivo flow.yaml.
+1. Crea un nuevo flujo en tu proyecto de Azure AI Studio usando el archivo flow.yaml.
 2. Despliega un modelo Phi3 desde el catálogo de modelos de Azure AI y crea la conexión con tu proyecto. [Desplegar Phi-3 como un Modelo como Servicio](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
-3. Crea el índice vectorial en Azure AI Search utilizando cualquier documento de tu elección. [Crear un índice vectorial en Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. Despliega el flujo en un endpoint gestionado y utilízalo en el archivo prompt-flow-frontend.py. [Desplegar un flujo en un endpoint en línea](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+3. Crea el índice vectorial en Azure AI Search usando cualquier documento de tu elección. [Crear un índice vectorial en Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
+4. Despliega el flujo en un endpoint gestionado y utilízalo en el archivo prompt-flow-frontend.py. [Desplegar un flujo en un endpoint online](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
 5. Clona el repositorio:
 
     ```sh
@@ -66,4 +75,4 @@ Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148
 Artículo completo: [RAG con Phi-3-Medium como un Modelo como Servicio desde el Catálogo de Modelos de Azure](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando servicios de traducción automática basados en inteligencia artificial. Si bien nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea que surja del uso de esta traducción.

@@ -1,43 +1,52 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "be0b2937160c486180ded27e4f14adeb",
+  "translation_date": "2025-03-27T04:29:32+00:00",
+  "source_file": "code\\07.Lab\\01\\Apple\\phi3ext\\README.md",
+  "language_code": "es"
+}
+-->
 # phi3ext README
 
 Este es el README de tu extensión "phi3ext". Después de escribir una breve descripción, te recomendamos incluir las siguientes secciones.
 
-## Funcionalidades
+## Features
 
-Describe las funciones específicas de tu extensión, incluyendo capturas de pantalla de su funcionamiento. Las rutas de las imágenes deben ser relativas a este archivo README.
+Describe las funciones específicas de tu extensión, incluyendo capturas de pantalla de la extensión en funcionamiento. Las rutas de las imágenes deben ser relativas a este archivo README.
 
-Por ejemplo, si tienes una subcarpeta de imágenes en el espacio de trabajo de tu proyecto de extensión:
+Por ejemplo, si tienes una carpeta de imágenes dentro del espacio de trabajo de tu proyecto de extensión:
 
-\!\[Funcionalidad X\]\(images/feature-x.png\)
+\!\[función X\]\(images/feature-x.png\)
 
-> Consejo: Muchas extensiones populares usan animaciones. ¡Es una excelente forma de mostrar tu extensión! Recomendamos animaciones cortas y enfocadas para que sean fáciles de seguir.
+> Consejo: Muchas extensiones populares utilizan animaciones. ¡Es una excelente manera de mostrar tu extensión! Recomendamos animaciones breves y enfocadas que sean fáciles de seguir.
 
-## Requisitos
+## Requirements
 
-Si tienes algún requisito o dependencia, añade una sección que describa estos requisitos y cómo instalarlos y configurarlos.
+Si tienes algún requisito o dependencia, agrega una sección describiendo esos requisitos y cómo instalarlos y configurarlos.
 
-## Configuración de la Extensión
+## Extension Settings
 
-Si tu extensión añade configuraciones a VS Code a través del punto de extensión `contributes.configuration`, inclúyelas aquí.
+Si tu extensión añade configuraciones de VS Code a través de `contributes.configuration`, inclúyelas aquí.
 
 Por ejemplo:
 
 Esta extensión contribuye con las siguientes configuraciones:
 
-* `myExtension.enable`: Activar/desactivar esta extensión.
-* `myExtension.thing`: Configurar como `blah` para realizar cierta acción.
+* `myExtension.enable`: Habilitar/deshabilitar esta extensión.
+* `myExtension.thing`: Configurar como `blah` para realizar una acción específica.
 
-## Problemas Conocidos
+## Known Issues
 
-Mencionar los problemas conocidos puede ayudar a reducir la cantidad de reportes duplicados sobre tu extensión.
+Identificar problemas conocidos puede ayudar a reducir la cantidad de reportes duplicados de los usuarios sobre tu extensión.
 
-## Notas de la Versión
+## Release Notes
 
-Los usuarios agradecerán que incluyas notas sobre las actualizaciones de tu extensión.
+Los usuarios agradecerán tener notas de lanzamiento cuando actualicen tu extensión.
 
 ### 1.0.0
 
-Lanzamiento inicial...
+Lanzamiento inicial ...
 
 ### 1.0.1
 
@@ -45,30 +54,30 @@ Se corrigió el problema #.
 
 ### 1.1.0
 
-Se añadieron las funcionalidades X, Y y Z.
+Se añadieron las funciones X, Y y Z.
 
 ---
 
-## Siguiendo las directrices para extensiones
+## Following extension guidelines
 
-Asegúrate de haber leído las directrices para extensiones y de seguir las mejores prácticas al crear tu extensión.
+Asegúrate de haber leído las pautas para extensiones y de seguir las mejores prácticas para crear extensiones.
 
-* [Directrices para extensiones](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [Guía para extensiones](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
-## Trabajando con Markdown
+## Working with Markdown
 
 Puedes usar Visual Studio Code para redactar tu README. Aquí tienes algunos atajos útiles del editor:
 
-* Dividir editor (`Cmd+\` en macOS o `Ctrl+\` en Windows y Linux).
-* Alternar vista previa (`Shift+Cmd+V` en macOS o `Shift+Ctrl+V` en Windows y Linux).
-* Presiona `Ctrl+Space` (Windows, Linux, macOS) para ver la lista de fragmentos de código Markdown.
+* Dividir el editor (`Cmd+\` en macOS o `Ctrl+\` en Windows y Linux).
+* Alternar la vista previa (`Shift+Cmd+V` en macOS o `Shift+Ctrl+V` en Windows y Linux).
+* Presiona `Ctrl+Space` (Windows, Linux, macOS) para ver la lista de fragmentos de código de Markdown.
 
-## Para más información
+## For more information
 
 * [Soporte para Markdown en Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
 * [Referencia de sintaxis Markdown](https://help.github.com/articles/markdown-basics/)
 
-**¡Disfruta!**
+**¡Disfrútalo!**
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando servicios de traducción automática basados en inteligencia artificial. Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

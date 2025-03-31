@@ -1,20 +1,29 @@
-# **Quantisieren von Phi-3.5 mit Intel OpenVINO**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
+  "translation_date": "2025-03-27T08:31:03+00:00",
+  "source_file": "md\\01.Introduction\\04\\UsingIntelOpenVINOQuantifyingPhi.md",
+  "language_code": "de"
+}
+-->
+# **Quantisierung von Phi-3.5 mit Intel OpenVINO**
 
-Intel ist der traditionellste CPU-Hersteller mit einer großen Nutzerbasis. Mit dem Aufstieg von Machine Learning und Deep Learning ist Intel ebenfalls in den Wettbewerb um KI-Beschleunigung eingestiegen. Für die Modellinferenz nutzt Intel nicht nur GPUs und CPUs, sondern auch NPUs.
+Intel ist der traditionellste CPU-Hersteller mit vielen Nutzern. Mit dem Aufstieg von Machine Learning und Deep Learning ist Intel ebenfalls in den Wettbewerb um KI-Beschleunigung eingestiegen. Für die Modellinferenz verwendet Intel nicht nur GPUs und CPUs, sondern auch NPUs.
 
-Wir möchten die Phi-3.x-Familie auf der Endseite bereitstellen und hoffen, damit ein zentraler Bestandteil von AI-PCs und Copilot-PCs zu werden. Das Laden des Modells auf der Endseite erfordert die Zusammenarbeit verschiedener Hardwarehersteller. Dieses Kapitel konzentriert sich hauptsächlich auf das Anwendungsszenario von Intel OpenVINO als quantitatives Modell.
+Wir möchten die Phi-3.x-Familie auf der Endseite einsetzen, um ein zentraler Bestandteil von AI-PCs und Copilot-PCs zu werden. Das Laden des Modells auf der Endseite hängt von der Zusammenarbeit verschiedener Hardwarehersteller ab. Dieses Kapitel konzentriert sich hauptsächlich auf das Anwendungsszenario von Intel OpenVINO als quantitatives Modell.
 
 ## **Was ist OpenVINO**
 
-OpenVINO ist ein Open-Source-Toolkit zur Optimierung und Bereitstellung von Deep-Learning-Modellen von der Cloud bis zum Edge. Es beschleunigt die Deep-Learning-Inferenz für verschiedene Anwendungsfälle, wie generative KI, Video, Audio und Sprache, mit Modellen aus beliebten Frameworks wie PyTorch, TensorFlow, ONNX und mehr. Modelle können konvertiert, optimiert und auf einer Kombination aus Intel®-Hardware und Umgebungen bereitgestellt werden – vor Ort, auf Geräten, im Browser oder in der Cloud.
+OpenVINO ist ein Open-Source-Toolkit zur Optimierung und Bereitstellung von Deep-Learning-Modellen von der Cloud bis zum Edge. Es beschleunigt die Deep-Learning-Inferenz für verschiedene Anwendungsfälle, wie generative KI, Video, Audio und Sprache, mit Modellen aus beliebten Frameworks wie PyTorch, TensorFlow, ONNX und mehr. Modelle können konvertiert und optimiert sowie auf einer Kombination aus Intel®-Hardware und Umgebungen bereitgestellt werden – vor Ort, auf Geräten, im Browser oder in der Cloud.
 
-Mit OpenVINO können Sie jetzt das GenAI-Modell auf Intel-Hardware schnell quantisieren und die Modellinferenz beschleunigen.
+Mit OpenVINO können Sie jetzt GenAI-Modelle schnell auf Intel-Hardware quantisieren und die Modellreferenz beschleunigen.
 
-OpenVINO unterstützt nun die Quantisierungsumwandlung von Phi-3.5-Vision und Phi-3.5-Instruct.
+OpenVINO unterstützt jetzt die Quantisierungskonvertierung von Phi-3.5-Vision und Phi-3.5-Instruct.
 
-### **Umgebungseinrichtung**
+### **Einrichtungsumgebung**
 
-Bitte stellen Sie sicher, dass die folgenden Abhängigkeiten der Umgebung installiert sind. Dies ist die requirement.txt 
+Bitte stellen Sie sicher, dass die folgenden Umgebungsabhängigkeiten installiert sind. Dies ist die Datei requirements.txt:
 
 ```txt
 
@@ -27,9 +36,9 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **Quantisieren von Phi-3.5-Instruct mit OpenVINO**
+### **Quantisierung von Phi-3.5-Instruct mit OpenVINO**
 
-Führen Sie dieses Skript im Terminal aus:
+Führen Sie im Terminal dieses Skript aus:
 
 ```bash
 
@@ -43,7 +52,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **Quantisieren von Phi-3.5-Vision mit OpenVINO**
+### **Quantisierung von Phi-3.5-Vision mit OpenVINO**
 
 Führen Sie dieses Skript in Python oder Jupyter Lab aus:
 
@@ -83,17 +92,17 @@ if not out_dir.exists():
 
 ### **🤖 Beispiele für Phi-3.5 mit Intel OpenVINO**
 
-| Labs    | Einführung | Link |
+| Labs    | Beschreibung | Gehe zu |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Einführung Phi-3.5 Instruct  | Lernen Sie, wie Sie Phi-3.5 Instruct in Ihrem AI-PC verwenden    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Einführung Phi-3.5 Vision (Bild) | Lernen Sie, wie Sie Phi-3.5 Vision zur Bildanalyse in Ihrem AI-PC verwenden      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Einführung Phi-3.5 Vision (Video)   | Lernen Sie, wie Sie Phi-3.5 Vision zur Videoanalyse in Ihrem AI-PC verwenden    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | Erfahren Sie, wie Sie Phi-3.5 Instruct in Ihrem AI-PC verwenden können    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (Bild) | Erfahren Sie, wie Sie Phi-3.5 Vision verwenden können, um Bilder in Ihrem AI-PC zu analysieren      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (Video)   | Erfahren Sie, wie Sie Phi-3.5 Vision verwenden können, um Videos in Ihrem AI-PC zu analysieren    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **Ressourcen**
 
 1. Erfahren Sie mehr über Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
-2. Intel OpenVINO GitHub-Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
+2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe von KI-gestützten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.

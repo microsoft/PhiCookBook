@@ -1,53 +1,62 @@
-## مرحبًا بك في AI Toolkit لـ VS Code
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
+  "translation_date": "2025-03-27T15:35:15+00:00",
+  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "language_code": "ar"
+}
+-->
+## مرحبًا بك في أدوات الذكاء الاصطناعي لـ VS Code
 
-[AI Toolkit لـ VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) يجمع بين مجموعة من النماذج من Azure AI Studio Catalog وكاتالوجات أخرى مثل Hugging Face. يُبسط هذا الأدوات عملية تطوير تطبيقات الذكاء الاصطناعي باستخدام أدوات ونماذج الذكاء الاصطناعي التوليدية من خلال:
-- البدء باكتشاف النماذج وتجربة الأدوات.
-- ضبط النماذج واستخدامها للاستدلال باستخدام الموارد الحاسوبية المحلية.
-- الضبط والاستدلال عن بُعد باستخدام موارد Azure.
+[أدوات الذكاء الاصطناعي لـ VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) تجمع بين نماذج متنوعة من كتالوج Azure AI Studio وكتالوجات أخرى مثل Hugging Face. تسهّل هذه الأدوات المهام الشائعة لتطوير التطبيقات باستخدام أدوات ونماذج الذكاء الاصطناعي من خلال:
+- البدء باستكشاف النماذج وتجربة تشغيلها.
+- تحسين النماذج والاستنتاج باستخدام موارد الحوسبة المحلية.
+- تحسين النماذج والاستنتاج عن بُعد باستخدام موارد Azure.
 
-[قم بتثبيت AI Toolkit لـ VS Code](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[قم بتثبيت أدوات الذكاء الاصطناعي لـ VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
 ![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.ar.png)
 
-**[معاينة خاصة]** إعداد بنقرة واحدة لتطبيقات Azure Container Apps لتشغيل ضبط النماذج والاستدلال في السحابة.
+**[معاينة خاصة]** توفير بنقرة واحدة لتطبيقات Azure Container لتشغيل تحسين النماذج والاستنتاج في السحابة.
 
-لنبدأ الآن في تطوير تطبيقك الذكي:
+لنبدأ الآن في تطوير تطبيق الذكاء الاصطناعي الخاص بك:
 
-- [مرحبًا بك في AI Toolkit لـ VS Code](../../../../md/03.FineTuning)
+- [مرحبًا بك في أدوات الذكاء الاصطناعي لـ VS Code](../../../../md/03.FineTuning)
 - [التطوير المحلي](../../../../md/03.FineTuning)
   - [التحضيرات](../../../../md/03.FineTuning)
-  - [تفعيل Conda](../../../../md/03.FineTuning)
-  - [ضبط النموذج الأساسي فقط](../../../../md/03.FineTuning)
-  - [ضبط النموذج والاستدلال](../../../../md/03.FineTuning)
-  - [ضبط النموذج](../../../../md/03.FineTuning)
+  - [تنشيط Conda](../../../../md/03.FineTuning)
+  - [تحسين النموذج الأساسي فقط](../../../../md/03.FineTuning)
+  - [تحسين النموذج والاستنتاج](../../../../md/03.FineTuning)
+  - [تحسين النموذج](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [عينات وموارد الضبط](../../../../md/03.FineTuning)
+  - [أمثلة وموارد تحسين النماذج](../../../../md/03.FineTuning)
 - [**\[معاينة خاصة\]** التطوير عن بُعد](../../../../md/03.FineTuning)
   - [المتطلبات الأساسية](../../../../md/03.FineTuning)
   - [إعداد مشروع تطوير عن بُعد](../../../../md/03.FineTuning)
   - [توفير موارد Azure](../../../../md/03.FineTuning)
-  - [\[اختياري\] إضافة رمز Huggingface إلى سر تطبيق Azure Container App](../../../../md/03.FineTuning)
-  - [تشغيل ضبط النموذج](../../../../md/03.FineTuning)
-  - [توفير نقطة نهاية للاستدلال](../../../../md/03.FineTuning)
-  - [نشر نقطة نهاية الاستدلال](../../../../md/03.FineTuning)
+  - [\[اختياري\] إضافة رمز Huggingface إلى السر الخاص بـ Azure Container App](../../../../md/03.FineTuning)
+  - [تشغيل تحسين النموذج](../../../../md/03.FineTuning)
+  - [توفير نقطة استنتاج](../../../../md/03.FineTuning)
+  - [نشر نقطة الاستنتاج](../../../../md/03.FineTuning)
   - [الاستخدام المتقدم](../../../../md/03.FineTuning)
 
 ## التطوير المحلي
 ### التحضيرات
 
-1. تأكد من تثبيت برنامج تشغيل NVIDIA على الجهاز المضيف.
-2. قم بتشغيل `huggingface-cli login` إذا كنت تستخدم HF لاستغلال مجموعة البيانات.
-3. `Olive` شرح إعدادات المفتاح لأي شيء يؤثر على استخدام الذاكرة.
+1. تأكد من تثبيت برنامج تشغيل NVIDIA على الجهاز المضيف.  
+2. قم بتشغيل `huggingface-cli login` إذا كنت تستخدم HF لاستغلال البيانات.  
+3. `Olive` شرح إعدادات المفاتيح لأي شيء يؤثر على استخدام الذاكرة.  
 
-### تفعيل Conda
-نظرًا لأننا نستخدم بيئة WSL وهي مشتركة، تحتاج إلى تفعيل بيئة Conda يدويًا. بعد هذه الخطوة، يمكنك تشغيل الضبط أو الاستدلال.
+### تنشيط Conda
+نظرًا لأننا نستخدم بيئة WSL وهي مشتركة، ستحتاج إلى تنشيط بيئة Conda يدويًا. بعد هذه الخطوة، يمكنك تشغيل تحسين النموذج أو الاستنتاج.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### ضبط النموذج الأساسي فقط
-لتجربة النموذج الأساسي بدون ضبط، يمكنك تشغيل هذا الأمر بعد تفعيل Conda.
+### تحسين النموذج الأساسي فقط
+لتجربة النموذج الأساسي دون تحسين، يمكنك تشغيل هذا الأمر بعد تنشيط Conda.
 
 ```bash
 cd inference
@@ -57,15 +66,15 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### ضبط النموذج والاستدلال
+### تحسين النموذج والاستنتاج
 
-بمجرد فتح مساحة العمل في حاوية التطوير، افتح نافذة الأوامر (المسار الافتراضي هو جذر المشروع)، ثم قم بتشغيل الأمر أدناه لضبط نموذج LLM على مجموعة البيانات المختارة.
+بمجرد فتح مساحة العمل في حاوية تطوير، افتح نافذة الأوامر (المسار الافتراضي هو جذر المشروع)، ثم قم بتشغيل الأمر أدناه لتحسين نموذج LLM على مجموعة البيانات المختارة.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-سيتم حفظ نقاط التحقق والنموذج النهائي في `models` folder.
+سيتم حفظ نقاط التفتيش والنموذج النهائي في `models` folder.
 
 Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`.
 
@@ -163,10 +172,10 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` وفي لوحة الإخراج. الآن أنت جاهز لتقييم النموذج باستخدام هذه النقطة النهائية.
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` وفي لوحة الإخراج. أنت الآن جاهز لتقييم النموذج باستخدام هذه النقطة النهائية.
 
 ### الاستخدام المتقدم
-لمزيد من المعلومات حول التطوير عن بُعد باستخدام AI Toolkit، راجع [ضبط النماذج عن بُعد](https://aka.ms/ai-toolkit/remote-provision) و[الاستدلال باستخدام النموذج المضبوط](https://aka.ms/ai-toolkit/remote-inference).
+لمزيد من المعلومات حول التطوير عن بُعد باستخدام أدوات الذكاء الاصطناعي، راجع الوثائق الخاصة بـ [تحسين النماذج عن بُعد](https://aka.ms/ai-toolkit/remote-provision) و[الاستنتاج باستخدام النموذج المحسّن](https://aka.ms/ai-toolkit/remote-inference).
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمات الترجمة الآلية بالذكاء الاصطناعي. بينما نسعى جاهدين لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق. للحصول على معلومات حاسمة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.
+تم ترجمة هذه الوثيقة باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار الوثيقة الأصلية بلغتها الأصلية المصدر الموثوق. بالنسبة للمعلومات الحساسة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ينشأ عن استخدام هذه الترجمة.

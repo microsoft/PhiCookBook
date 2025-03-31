@@ -1,53 +1,62 @@
-## به AI Toolkit برای VS Code خوش آمدید
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
+  "translation_date": "2025-03-27T15:36:15+00:00",
+  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "language_code": "fa"
+}
+-->
+## به ابزار هوش مصنوعی برای VS Code خوش آمدید
 
-[AI Toolkit برای VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) مجموعه‌ای از مدل‌های مختلف از Azure AI Studio Catalog و دیگر کاتالوگ‌ها مانند Hugging Face را گرد هم می‌آورد. این ابزار توسعه وظایف رایج برای ساخت برنامه‌های هوش مصنوعی با ابزارها و مدل‌های تولیدی هوش مصنوعی را از طریق موارد زیر ساده می‌کند:
+[ابزار هوش مصنوعی برای VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) مجموعه‌ای از مدل‌های مختلف از کاتالوگ Azure AI Studio و کاتالوگ‌هایی مانند Hugging Face را گرد هم می‌آورد. این ابزار فرآیندهای متداول توسعه برای ساخت برنامه‌های هوش مصنوعی با ابزارها و مدل‌های تولیدی هوش مصنوعی را از طریق موارد زیر ساده می‌کند:
 - شروع کار با کشف مدل و محیط آزمایش.
-- تنظیم دقیق مدل و استنتاج با استفاده از منابع محاسباتی محلی.
-- تنظیم دقیق و استنتاج از راه دور با استفاده از منابع Azure.
+- تنظیم و استنتاج مدل با استفاده از منابع محاسباتی محلی.
+- تنظیم و استنتاج مدل از راه دور با استفاده از منابع Azure.
 
-[نصب AI Toolkit برای VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[نصب ابزار هوش مصنوعی برای VS Code](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
 ![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.fa.png)
 
-**[پیش‌نمایش خصوصی]** فراهم‌سازی یک‌کلیکی برای Azure Container Apps به منظور اجرای تنظیم دقیق مدل و استنتاج در فضای ابری.
+**[پیش‌نمایش خصوصی]** ایجاد سریع برنامه‌های Azure Container Apps برای اجرای تنظیم مدل و استنتاج در فضای ابری.
 
-حالا بیایید وارد توسعه برنامه هوش مصنوعی شما شویم:
+حال بیایید وارد توسعه برنامه هوش مصنوعی خود شویم:
 
-- [به AI Toolkit برای VS Code خوش آمدید](../../../../md/03.FineTuning)
+- [به ابزار هوش مصنوعی برای VS Code خوش آمدید](../../../../md/03.FineTuning)
 - [توسعه محلی](../../../../md/03.FineTuning)
   - [آماده‌سازی‌ها](../../../../md/03.FineTuning)
   - [فعال‌سازی Conda](../../../../md/03.FineTuning)
-  - [فقط تنظیم دقیق مدل پایه](../../../../md/03.FineTuning)
-  - [تنظیم دقیق مدل و استنتاج](../../../../md/03.FineTuning)
-  - [تنظیم دقیق مدل](../../../../md/03.FineTuning)
+  - [تنها تنظیم مدل پایه](../../../../md/03.FineTuning)
+  - [تنظیم و استنتاج مدل](../../../../md/03.FineTuning)
+  - [تنظیم مدل](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [نمونه‌ها و منابع تنظیم دقیق](../../../../md/03.FineTuning)
+  - [نمونه‌ها و منابع تنظیم](../../../../md/03.FineTuning)
 - [**\[پیش‌نمایش خصوصی\]** توسعه از راه دور](../../../../md/03.FineTuning)
   - [پیش‌نیازها](../../../../md/03.FineTuning)
-  - [راه‌اندازی یک پروژه توسعه از راه دور](../../../../md/03.FineTuning)
-  - [فراهم‌سازی منابع Azure](../../../../md/03.FineTuning)
-  - [\[اختیاری\] افزودن توکن Huggingface به Azure Container App Secret](../../../../md/03.FineTuning)
-  - [اجرای تنظیم دقیق](../../../../md/03.FineTuning)
-  - [فراهم‌سازی نقطه پایانی استنتاج](../../../../md/03.FineTuning)
+  - [راه‌اندازی پروژه توسعه از راه دور](../../../../md/03.FineTuning)
+  - [ایجاد منابع Azure](../../../../md/03.FineTuning)
+  - [\[اختیاری\] افزودن توکن Huggingface به کلید مخفی Azure Container App](../../../../md/03.FineTuning)
+  - [اجرای تنظیم مدل](../../../../md/03.FineTuning)
+  - [ایجاد نقطه پایانی استنتاج](../../../../md/03.FineTuning)
   - [استقرار نقطه پایانی استنتاج](../../../../md/03.FineTuning)
   - [استفاده پیشرفته](../../../../md/03.FineTuning)
 
 ## توسعه محلی
 ### آماده‌سازی‌ها
 
-1. اطمینان حاصل کنید که درایور NVIDIA روی میزبان نصب شده است.
-2. `huggingface-cli login` را اجرا کنید، اگر از HF برای استفاده از مجموعه داده استفاده می‌کنید.
-3. توضیحات تنظیمات کلیدی `Olive` برای هر چیزی که استفاده از حافظه را تغییر می‌دهد.
+1. مطمئن شوید که درایور NVIDIA روی سیستم میزبان نصب شده است.  
+2. دستور `huggingface-cli login` را اجرا کنید، اگر از HF برای استفاده از مجموعه داده‌ها استفاده می‌کنید.  
+3. توضیحات تنظیمات کلیدی `Olive` برای هر چیزی که مصرف حافظه را تغییر می‌دهد.
 
 ### فعال‌سازی Conda
-از آنجا که از محیط WSL استفاده می‌کنیم و به اشتراک گذاشته شده است، باید محیط Conda را به صورت دستی فعال کنید. پس از این مرحله، می‌توانید تنظیم دقیق یا استنتاج را اجرا کنید.
+از آنجایی که ما از محیط WSL استفاده می‌کنیم و این محیط به اشتراک گذاشته شده است، باید محیط Conda را به صورت دستی فعال کنید. پس از این مرحله می‌توانید تنظیم مدل یا استنتاج را اجرا کنید.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### فقط تنظیم دقیق مدل پایه
-برای امتحان کردن مدل پایه بدون تنظیم دقیق، می‌توانید این دستور را پس از فعال‌سازی Conda اجرا کنید.
+### تنها تنظیم مدل پایه
+برای امتحان مدل پایه بدون تنظیم، می‌توانید این دستور را پس از فعال‌سازی Conda اجرا کنید.
 
 ```bash
 cd inference
@@ -57,15 +66,15 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### تنظیم دقیق مدل و استنتاج
+### تنظیم و استنتاج مدل
 
-وقتی فضای کاری در یک dev container باز شد، یک ترمینال باز کنید (مسیر پیش‌فرض ریشه پروژه است)، سپس دستور زیر را برای تنظیم دقیق یک LLM روی مجموعه داده انتخاب‌شده اجرا کنید.
+وقتی فضای کاری در یک کانتینر توسعه باز شد، یک ترمینال باز کنید (مسیر پیش‌فرض ریشه پروژه است)، سپس دستور زیر را برای تنظیم یک LLM روی مجموعه داده انتخاب شده اجرا کنید.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-چک‌پوینت‌ها و مدل نهایی در مسیر `models` folder.
+نقاط بازیابی و مدل نهایی در مسیر `models` folder.
 
 Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow` ذخیره خواهند شد.
 
@@ -163,10 +172,10 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` و در پنل خروجی. اکنون آماده ارزیابی مدل با استفاده از این نقطه پایانی هستید.
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` و در پنل خروجی آماده ارزیابی مدل با استفاده از این نقطه پایانی هستید.
 
 ### استفاده پیشرفته
-برای اطلاعات بیشتر درباره توسعه از راه دور با AI Toolkit، به مستندات [تنظیم دقیق مدل‌ها از راه دور](https://aka.ms/ai-toolkit/remote-provision) و [استنتاج با مدل تنظیم‌شده](https://aka.ms/ai-toolkit/remote-inference) مراجعه کنید.
+برای اطلاعات بیشتر درباره توسعه از راه دور با ابزار هوش مصنوعی، به مستندات [تنظیم مدل‌ها به صورت از راه دور](https://aka.ms/ai-toolkit/remote-provision) و [استنتاج با مدل تنظیم‌شده](https://aka.ms/ai-toolkit/remote-inference) مراجعه کنید.
 
 **سلب مسئولیت**:  
-این سند با استفاده از خدمات ترجمه مبتنی بر هوش مصنوعی ترجمه شده است. در حالی که ما برای دقت تلاش می‌کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان مادری آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما هیچ مسئولیتی در قبال سوءتفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت ترجمه را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نواقصی باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.

@@ -1,23 +1,32 @@
-## **Verwendung von Phi-4-mini-mm zur Code-Generierung**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
+  "translation_date": "2025-03-27T12:37:17+00:00",
+  "source_file": "md\\02.Application\\02.Code\\Phi4\\GenProjectCode\\README.md",
+  "language_code": "de"
+}
+-->
+## **Verwendung von Phi-4-mini-mm zur Codegenerierung**
 
-Phi-4-mini setzt die starken Codierungsfähigkeiten der Phi-Familie fort. Sie können Prompt verwenden, um Fragen im Zusammenhang mit Codierung zu stellen. Natürlich hat es durch die Erweiterung um starke Argumentationsfähigkeiten noch stärkere Codierungsfähigkeiten, wie z. B. Projekte gemäß Anforderungen zu generieren. Zum Beispiel Projekte gemäß Anforderungen generieren, wie:
+Phi-4-mini setzt die starken Programmierfähigkeiten der Phi-Familie fort. Sie können Prompt verwenden, um Fragen zur Programmierung zu stellen. Natürlich hat es durch die starke Fähigkeit zum logischen Denken noch leistungsfähigere Programmiermöglichkeiten, wie z. B. das Erstellen von Projekten nach Anforderungen. Zum Beispiel können Projekte basierend auf Anforderungen generiert werden, wie:
 
 ### **Anforderung**
 
-Erstellen Sie eine Shopping-Cart-App
+Erstellen Sie eine Shopping Cart App
 
-- Erstellen Sie eine REST-API mit den folgenden Methoden:
-    - Abrufen einer Liste von Bieren mit Seitenoffset und Limit.
+- Erstellen Sie eine API Rest mit den folgenden Methoden:
+    - Holen Sie eine Liste von Bieren mithilfe von Seitenoffset und Limit.
     - Abrufen von Bierdetails anhand der ID.
-    - Suche nach Bier anhand von Name, Beschreibung, Slogan, Speisenempfehlungen und Preis.
+    - Suche nach Bier anhand von Name, Beschreibung, Slogan, Speiseempfehlungen und Preis.
 - Erstellen Sie eine Produktliste auf der Hauptseite.
     - Erstellen Sie eine Suchleiste, um Produkte zu filtern.
     - Navigieren Sie zur Beschreibungsseite, wenn der Benutzer auf ein Produkt klickt.
-- (Optional) Schieberegler, um Produkte nach Preis zu filtern.
-- Erstellen Sie einen Einkaufswagen.
-    - Produkte in den Einkaufswagen hinzufügen.
-    - Produkte aus dem Einkaufswagen entfernen.
-    - Den Gesamtpreis der Produkte im Einkaufswagen berechnen.
+- (Optional) Preisfilter, um Produkte nach Preis zu sortieren.
+- Erstellen Sie einen Warenkorb.
+    - Produkte in den Warenkorb hinzufügen.
+    - Produkte aus dem Warenkorb entfernen.
+    - Den Gesamtpreis der Produkte im Warenkorb berechnen.
 
 ### **Beispielcode - Python**
 
@@ -130,4 +139,4 @@ print(response)
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe von KI-basierten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
