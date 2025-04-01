@@ -52,10 +52,10 @@ jobs:
           # IMPORTANT: Set your target languages here (REQUIRED CONFIGURATION)
           # =====================================================================
 
-          LANGUAGES="ar de es fa fr ru ur zh" -d  # <--- MODIFY THIS LINE with your desired languages
+          LANGUAGES="ar de es fa fr ru ur zh"  # <--- MODIFY THIS LINE with your desired languages
 
           echo "Translating to languages: $LANGUAGES"
-          translate -l "$LANGUAGES" -y
+          translate -l "$LANGUAGES" -y -d
 
       - name: Authenticate GitHub App
         id: generate_token
