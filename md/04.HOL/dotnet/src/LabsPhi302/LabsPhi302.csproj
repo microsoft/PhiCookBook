@@ -12,9 +12,9 @@
 		<PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.18.0" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI" Version="0.3.0-rc2" />
 		<PackageReference Include="Microsoft.ML.OnnxRuntimeGenAI.Cuda" Version="0.3.0-rc2" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.0-preview.4.24266.19" />
-		<PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0-preview.4.24266.19" />
-		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.0-preview.4.24266.19" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="10.0.0-preview.2.25163.2" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="10.0.0-preview.2.25163.2" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Console" Version="10.0.0-preview.2.25163.2" />
 		<PackageReference Include="Microsoft.SemanticKernel" Version="1.13.0" />
 		<PackageReference Include="Microsoft.SemanticKernel.Connectors.Onnx" Version="1.13.0-alpha" />
 	</ItemGroup>

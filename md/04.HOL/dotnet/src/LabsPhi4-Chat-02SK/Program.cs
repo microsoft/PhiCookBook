@@ -22,6 +22,8 @@
 //    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //    THE SOFTWARE.
 
+#pragma warning disable SKEXP0070 
+
 using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.ChatCompletion;
 
@@ -30,7 +32,7 @@ var modelPath = @"d:\phi\models\Phi-4-mini-instruct-onnx\cpu_and_mobile\cpu-int4
 
 // create kernel
 var builder = Kernel.CreateBuilder();
-builder.AddOnnxRuntimeGenAIChatCompletion(modelPath: modelPath);
+builder.AddOnnxRuntimeGenAIChatCompletion(modelId: "phi4-mini", modelPath: modelPath);
 var kernel = builder.Build();
 
 // create chat
