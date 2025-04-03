@@ -31,7 +31,6 @@ jobs:
 
       - name: Run Co-op Translator
         env:
-
           PYTHONIOENCODING: utf-8
           # Azure AI Service Credentials
           AZURE_SUBSCRIPTION_KEY: ${{ secrets.AZURE_SUBSCRIPTION_KEY }}
