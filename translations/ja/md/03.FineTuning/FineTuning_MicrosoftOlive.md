@@ -1,83 +1,92 @@
-# **Microsoft Olive を使用した Phi-3 のファインチューニング**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "727978e690ed9c055f594a4bfe01d75c",
+  "translation_date": "2025-04-04T13:14:32+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_MicrosoftOlive.md",
+  "language_code": "ja"
+}
+-->
+# **Microsoft Olive を使った Phi-3 のファインチューニング**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) は、モデル圧縮、最適化、コンパイルにおける業界トップの技術を統合した、ハードウェア対応のモデル最適化ツールです。
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) は、モデルの圧縮、最適化、コンパイルなど業界トップの技術を統合した、ハードウェアに対応したモデル最適化ツールです。
 
-このツールは、機械学習モデルの最適化プロセスを簡素化し、特定のハードウェアアーキテクチャを最大限に活用できるよう設計されています。
+このツールは機械学習モデルの最適化プロセスを簡素化し、特定のハードウェアアーキテクチャを効率的に活用できるように設計されています。
 
-クラウドベースのアプリケーションでもエッジデバイスでも、Olive を使用することで、モデルを簡単かつ効果的に最適化できます。
+クラウドベースのアプリケーションやエッジデバイスでの作業に関わらず、Olive を使えばモデルの最適化を簡単かつ効果的に行うことができます。
 
 ## 主な特徴:
-- Olive は、ターゲットとするハードウェア向けの最適化技術を統合し、自動化します。
-- すべてのシナリオに適した単一の最適化技術は存在しないため、Olive は業界の専門家が独自の最適化技術を拡張できるように設計されています。
+- Olive は、目的のハードウェアターゲットに対して最適化技術を統合し、自動化します。
+- すべてのシナリオに適した単一の最適化技術は存在しないため、Olive は拡張性を持ち、業界の専門家が独自の最適化技術を追加できるようにしています。
 
-## エンジニアリング作業の削減:
-- 開発者は通常、トレーニング済みモデルをデプロイ用に準備・最適化するために、複数のハードウェアベンダー固有のツールチェーンを学ぶ必要があります。
-- Olive は、希望するハードウェア向けの最適化技術を自動化することで、このプロセスを簡素化します。
+## エンジニアリング作業の軽減:
+- 開発者は通常、トレーニング済みモデルを展開するために複数のハードウェアベンダー固有のツールチェーンを学び、利用する必要があります。
+- Olive は、目的のハードウェアに対する最適化技術を自動化することで、この作業を簡素化します。
 
-## 使いやすい E2E 最適化ソリューション:
+## E2E最適化ソリューションの提供:
 
-Olive は統合された技術を組み合わせて調整し、エンドツーエンドの最適化ソリューションを提供します。
-モデルを最適化する際、精度やレイテンシーといった制約を考慮します。
+統合された技術を組み合わせて調整することで、Olive はエンドツーエンドの最適化を実現する統一されたソリューションを提供します。
+モデルの最適化中には、精度やレイテンシーなどの制約を考慮します。
 
-## Microsoft Olive を使用したファインチューニング
+## Microsoft Olive を使ったファインチューニング
 
-Microsoft Olive は、生成型人工知能の分野でファインチューニングとリファレンスの両方をカバーできる、非常に使いやすいオープンソースのモデル最適化ツールです。簡単な設定と、オープンソースの小型言語モデルや関連するランタイム環境（AzureML / ローカル GPU、CPU、DirectML）を組み合わせるだけで、自動最適化を通じてモデルのファインチューニングやリファレンスを完了し、最適なモデルを見つけてクラウドまたはエッジデバイスにデプロイできます。これにより、企業はオンプレミスやクラウド上で独自の業界特化型モデルを構築できます。
+Microsoft Olive は、生成型人工知能分野でのファインチューニングと参照の両方をカバーできる非常に使いやすいオープンソースのモデル最適化ツールです。簡単な設定と、オープンソースの小型言語モデルや関連するランタイム環境（AzureML / ローカルGPU、CPU、DirectML）の組み合わせを使用することで、自動最適化を通じてモデルのファインチューニングや参照を完了し、クラウドやエッジデバイスに展開する最適なモデルを見つけることができます。これにより、企業はオンプレミスやクラウドで独自の業界特化型モデルを構築することが可能になります。
 
 ![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.ja.png)
 
-## Microsoft Olive を使用した Phi-3 のファインチューニング
+## Microsoft Olive を使った Phi-3 のファインチューニング 
 
 ![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.ja.png)
 
-## Phi-3 Olive サンプルコードと例
-この例では、Olive を使用して以下を行います：
+## Phi-3 Olive のサンプルコードと例
+この例では Olive を使用して以下を行います:
 
-- LoRA アダプターをファインチューニングし、フレーズを Sad、Joy、Fear、Surprise に分類。
-- アダプターの重みをベースモデルに統合。
-- モデルを最適化し、int4 に量子化。
+- LoRA アダプターをファインチューニングし、フレーズを「悲しい」「喜び」「恐れ」「驚き」に分類します。
+- アダプターの重みをベースモデルに統合します。
+- モデルを int4 に最適化および量子化します。
 
 [サンプルコード](../../code/03.Finetuning/olive-ort-example/README.md)
 
 ### Microsoft Olive のセットアップ
 
-Microsoft Olive のインストールは非常に簡単で、CPU、GPU、DirectML、Azure ML にもインストール可能です。
+Microsoft Olive のインストールは非常に簡単で、CPU、GPU、DirectML、Azure ML 用にインストールすることも可能です。
 
 ```bash
 pip install olive-ai
 ```
 
-CPU で ONNX モデルを実行したい場合：
+ONNXモデルをCPUで実行したい場合は以下を使用します:
 
 ```bash
 pip install olive-ai[cpu]
 ```
 
-GPU で ONNX モデルを実行したい場合：
+ONNXモデルをGPUで実行したい場合は以下を使用します:
 
 ```python
 pip install olive-ai[gpu]
 ```
 
-Azure ML を使用したい場合：
+Azure ML を使用したい場合は以下を使用します:
 
 ```python
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
-**注意事項**
-OS 要件 : Ubuntu 20.04 / 22.04 
+**注意**
+OS 要件: Ubuntu 20.04 / 22.04 
 
 ### **Microsoft Olive の Config.json**
 
-インストール後、Config ファイルを通じてデータ、計算、トレーニング、デプロイ、モデル生成など、モデル固有の設定を構成できます。
+インストール後、データ、計算、トレーニング、展開、モデル生成など、モデル固有の設定を Config ファイルを通じて構成できます。
 
 **1. データ**
 
-Microsoft Olive ではローカルデータやクラウドデータでのトレーニングがサポートされており、設定で構成できます。
+Microsoft Olive では、ローカルデータやクラウドデータでのトレーニングがサポートされており、設定で構成することができます。
 
 *ローカルデータの設定*
 
-通常は json 形式で、トレーニングするデータセットを簡単に設定できます。データテンプレートに適合させる必要があり、モデルの要件に基づいて調整します（例：Microsoft Phi-3-mini が必要とする形式に適合させる。他のモデルを使用する場合は、それぞれのファインチューニング形式を参照してください）。
+ファインチューニングに必要なデータセットを設定するだけで簡単に構成できます。通常は json 形式で、データテンプレートに適合させます。これはモデルの要件に基づいて調整する必要があります（例えば、Microsoft Phi-3-mini が必要とする形式に適合させるなど。他のモデルを使用する場合は、それぞれのモデルが必要とするファインチューニング形式を参照してください）。
 
 ```json
 
@@ -112,7 +121,7 @@ Microsoft Olive ではローカルデータやクラウドデータでのトレ�
 
 **クラウドデータソースの設定**
 
-Azure AI Studio/Azure Machine Learning Service のデータストアをリンクすることで、クラウド上のデータを接続できます。Microsoft Fabric や Azure Data を介して異なるデータソースを導入し、ファインチューニングデータをサポートすることが可能です。
+Azure AI Studio/Azure Machine Learning Service のデータストアをリンクすることでクラウド内のデータを接続し、Microsoft Fabric や Azure Data を通じて異なるデータソースを Azure AI Studio/Azure Machine Learning Service に導入し、ファインチューニング用のデータをサポートすることができます。
 
 ```json
 
@@ -159,7 +168,7 @@ Azure AI Studio/Azure Machine Learning Service のデータストアをリンク
 
 **2. コンピューティング設定**
 
-ローカルで実行する場合、ローカルデータリソースを直接使用できます。Azure AI Studio / Azure Machine Learning Service のリソースを使用する場合は、関連する Azure パラメータやコンピューティングパワー名などを設定する必要があります。
+ローカルの場合は、ローカルのデータリソースを直接使用できます。Azure AI Studio / Azure Machine Learning Service のリソースを使用する場合は、関連する Azure パラメータや計算能力名などを構成する必要があります。
 
 ```json
 
@@ -190,9 +199,9 @@ Azure AI Studio/Azure Machine Learning Service のデータストアをリンク
     },
 ```
 
-***注意事項***
+***注意***
 
-Azure AI Studio / Azure Machine Learning Service 上でコンテナを通じて実行されるため、必要な環境を構成する必要があります。これは conda.yaml 環境で構成されます。
+Azure AI Studio / Azure Machine Learning Service でコンテナを通じて実行されるため、必要な環境を構成する必要があります。これは conda.yaml 環境で構成されます。
 
 ```yaml
 
@@ -227,9 +236,9 @@ dependencies:
 
 **3. SLM の選択**
 
-Hugging Face から直接モデルを使用することも、Azure AI Studio / Azure Machine Learning のモデルカタログと組み合わせてモデルを選択することも可能です。以下のコード例では、Microsoft Phi-3-mini を例として使用します。
+Hugging face からモデルを直接使用することも、Azure AI Studio / Azure Machine Learning の Model Catalog と組み合わせて使用するモデルを選択することもできます。以下のコード例では Microsoft Phi-3-mini を例として使用します。
 
-ローカルにモデルがある場合は、次の方法を使用します：
+モデルがローカルにある場合は以下の方法を使用します:
 
 ```json
 
@@ -247,7 +256,7 @@ Hugging Face から直接モデルを使用することも、Azure AI Studio / A
     },
 ```
 
-Azure AI Studio / Azure Machine Learning Service からモデルを使用する場合は、次の方法を使用します：
+Azure AI Studio / Azure Machine Learning Service からモデルを使用したい場合は以下の方法を使用します:
 
 ```json
 
@@ -274,16 +283,16 @@ Azure AI Studio / Azure Machine Learning Service からモデルを使用する�
     },
 ```
 
-**注意事項:**
-Azure AI Studio / Azure Machine Learning Service と統合する必要があるため、モデル設定時にはバージョン番号や関連する命名規則を参照してください。
+**注意:**
+Azure AI Studio / Azure Machine Learning Service と統合する必要があるため、モデルを設定する際にはバージョン番号や関連する名前付けを参照してください。
 
 Azure 上のすべてのモデルは PyTorch.MLflow に設定する必要があります。
 
-Hugging Face アカウントを持ち、Azure AI Studio / Azure Machine Learning の Key 値にキーをバインドする必要があります。
+Hugging face のアカウントを持ち、Azure AI Studio / Azure Machine Learning の Key 値にキーをバインドする必要があります。
 
 **4. アルゴリズム**
 
-Microsoft Olive は LoRA と QLoRA のファインチューニングアルゴリズムを非常にうまくカプセル化しています。関連するパラメータをいくつか設定するだけで済みます。ここでは QLoRA を例として取り上げます。
+Microsoft Olive は LoRA や QLoRA のファインチューニングアルゴリズムを非常にうまくカプセル化しています。関連するパラメータをいくつか構成するだけで済みます。ここでは QLoRA を例として挙げます。
 
 ```json
         "lora": {
@@ -323,9 +332,9 @@ Microsoft Olive は LoRA と QLoRA のファインチューニングアルゴリ
 量子化変換を行いたい場合、Microsoft Olive のメインブランチはすでに onnxruntime-genai メソッドをサポートしています。必要に応じて以下のように設定できます：
 
 1. アダプターの重みをベースモデルに統合
-2. ModelBuilder を使用して必要な精度でモデルを ONNX モデルに変換
+2. 必要な精度でモデルを onnx モデルに変換（ModelBuilder を使用）
 
-例：量子化された INT4 に変換
+例: 量子化された INT4 に変換
 
 ```json
 
@@ -340,10 +349,10 @@ Microsoft Olive は LoRA と QLoRA のファインチューニングアルゴリ
         }
 ```
 
-**注意事項** 
+**注意** 
 - QLoRA を使用する場合、ONNXRuntime-genai の量子化変換は現在サポートされていません。
 
-- 上記の手順は自身のニーズに応じて設定可能です。完全に上記の手順を構成する必要はなく、ニーズに応じてアルゴリズムの手順のみを使用することも可能です。最後に関連するエンジンを設定する必要があります。
+- ここで指摘しておくべき点は、上記の手順を自身のニーズに応じて設定できることです。これらすべての手順を完全に構成する必要はなく、ニーズに応じてアルゴリズムの手順を直接使用することも可能です。最後に関連するエンジンを構成する必要があります。
 
 ```json
 
@@ -360,11 +369,11 @@ Microsoft Olive は LoRA と QLoRA のファインチューニングアルゴリ
 
 **5. ファインチューニングの完了**
 
-コマンドラインで、olive-config.json のディレクトリで以下を実行します：
+コマンドラインで、olive-config.json のディレクトリで以下を実行します:
 
 ```bash
 olive run --config olive-config.json  
 ```
 
 **免責事項**:  
-この文書は、機械ベースのAI翻訳サービスを使用して翻訳されています。正確性を期すよう努めておりますが、自動翻訳には誤りや不正確さが含まれる可能性があります。元の言語で作成された文書が公式の情報源と見なされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や解釈の誤りについて、当方は責任を負いません。
+この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確さが含まれる可能性があります。元の言語で書かれた原文が正式な情報源として考慮されるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤った解釈について、当方は責任を負いません。

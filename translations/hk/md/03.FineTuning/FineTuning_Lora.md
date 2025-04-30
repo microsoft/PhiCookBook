@@ -1,12 +1,21 @@
-# **用 LoRA 微調 Phi-3**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "98eb289883c5e181a74e72a59e1ddc6d",
+  "translation_date": "2025-04-04T18:51:22+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_Lora.md",
+  "language_code": "hk"
+}
+-->
+# **使用 Lora 微調 Phi-3**
 
-使用 [LoRA (低秩適應)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) 喺自訂對話指令數據集上微調 Microsoft 嘅 Phi-3 Mini 語言模型。
+使用 [LoRA (低秩適應)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) 在自定義聊天指令數據集上微調 Microsoft 的 Phi-3 Mini 語言模型。
 
-LoRA 可以幫助改進對話理解同生成回應嘅能力。
+LORA 可以幫助提升對話理解和回應生成能力。
 
-## 微調 Phi-3 Mini 嘅逐步指南：
+## 微調 Phi-3 Mini 的分步指南：
 
-**導入同設置**
+**導入和設置**
 
 安裝 loralib
 
@@ -17,10 +26,10 @@ pip install loralib
 
 ```
 
-首先導入必要嘅庫，例如 datasets、transformers、peft、trl 同 torch。  
-設置日誌記錄，用嚟追蹤訓練過程。
+首先導入必要的庫，例如 datasets、transformers、peft、trl 和 torch。
+設置日誌記錄以跟蹤訓練過程。
 
-你可以選擇用 loralib 實現嘅對應層嚟取代某啲層。我哋而家只支持 nn.Linear、nn.Embedding 同 nn.Conv2d。仲支持 MergedLinear，適用於單個 nn.Linear 代表多層嘅情況，例如某啲注意力 qkv 投影嘅實現（詳細請參閱附加說明）。
+你可以選擇替換一些層，使用 loralib 實現的對應層。我們目前僅支持 nn.Linear、nn.Embedding 和 nn.Conv2d。我們還支持 MergedLinear，適用於某些情況下一個 nn.Linear 表示多個層，例如注意力 qkv 投影的某些實現（詳情請參閱附加說明）。
 
 ```
 # ===== Before =====
@@ -38,7 +47,7 @@ import loralib as lora
 layer = lora.Linear(in_features, out_features, r=16)
 ```
 
-喺訓練循環開始之前，只標記 LoRA 嘅參數為可訓練。
+在訓練循環開始之前，僅標記 LoRA 參數為可訓練。
 
 ```
 import loralib as lora
@@ -49,18 +58,18 @@ lora.mark_only_lora_as_trainable(model)
 for batch in dataloader:
 ```
 
-保存檢查點時，生成只包含 LoRA 參數嘅 state_dict。
+保存檢查點時，生成僅包含 LoRA 參數的 state_dict。
 
 ```
 # ===== Before =====
 # torch.save(model.state_dict(), checkpoint_path)
-```  
+```
 ```
 # ===== After =====
 torch.save(lora.lora_state_dict(model), checkpoint_path)
 ```
 
-使用 load_state_dict 加載檢查點時，記得設置 strict=False。
+使用 load_state_dict 加載檢查點時，請確保設置 strict=False。
 
 ```
 # Load the pretrained checkpoint first
@@ -69,34 +78,33 @@ model.load_state_dict(torch.load('ckpt_pretrained.pt'), strict=False)
 model.load_state_dict(torch.load('ckpt_lora.pt'), strict=False)
 ```
 
-而家可以如常進行訓練。
+現在可以按常規進行訓練。
 
 **超參數**
 
-定義兩個字典：training_config 同 peft_config。  
-training_config 包括訓練嘅超參數，例如學習率、批量大小同日誌設置。
+定義兩個字典：training_config 和 peft_config。training_config 包括訓練的超參數，例如學習率、批量大小和日誌設置。
 
-peft_config 指定同 LoRA 有關嘅參數，例如秩、dropout 同任務類型。
+peft_config 指定與 LoRA 相關的參數，如 rank、dropout 和任務類型。
 
-**模型同分詞器加載**
+**模型和分詞器加載**
 
-指定預訓練 Phi-3 模型嘅路徑（例如 "microsoft/Phi-3-mini-4k-instruct"）。  
-配置模型設置，包括緩存使用、數據類型（混合精度嘅 bfloat16）同注意力實現。
+指定預訓練 Phi-3 模型的路徑（例如 "microsoft/Phi-3-mini-4k-instruct"）。配置模型設置，包括緩存使用、數據類型（bfloat16 用於混合精度）和注意力實現。
 
 **訓練**
 
-使用自訂對話指令數據集微調 Phi-3 模型。  
-利用 peft_config 中嘅 LoRA 設置嚟進行高效適應。  
-通過指定嘅日誌策略監控訓練進度。  
-評估同保存：評估微調後嘅模型。  
-喺訓練期間保存檢查點以供日後使用。
+使用自定義聊天指令數據集微調 Phi-3 模型。利用 peft_config 中的 LoRA 設置進行高效適應。通過指定的日誌策略監控訓練進度。
+
+**評估和保存**
+
+評估微調後的模型。
+在訓練過程中保存檢查點以供後續使用。
 
 **範例**
-- [用呢個範例筆記學多啲](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
-- [Python 微調範例](../../../../code/03.Finetuning/FineTrainingScript.py)  
-- [用 LoRA 喺 Hugging Face Hub 微調嘅範例](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
-- [Hugging Face 模型卡範例 - LoRA 微調範例](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
-- [用 QLORA 喺 Hugging Face Hub 微調嘅範例](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)  
+- [了解更多，查看此範例 notebook](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
+- [Python 微調範例](../../../../code/03.Finetuning/FineTrainingScript.py)
+- [使用 LORA 微調 Hugging Face Hub 的範例](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
+- [Hugging Face 模型卡範例 - LORA 微調範例](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)
+- [使用 QLORA 微調 Hugging Face Hub 的範例](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
-**免責聲明**：  
-本文件已使用機器翻譯服務進行翻譯。我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原文文件應被視為權威來源。對於關鍵信息，建議使用專業的人工作翻譯。我們對因使用此翻譯而引起的任何誤解或誤讀概不負責。
+**免責聲明**:  
+此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。

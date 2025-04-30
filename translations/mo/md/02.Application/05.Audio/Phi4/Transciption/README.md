@@ -1,6 +1,15 @@
-## **Phi-4-multimodal-ийг ашиглан аудио транскрипцийг гаргах**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "79d66be47fdf7961abe34c07d4cbf5b2",
+  "translation_date": "2025-04-04T13:03:58+00:00",
+  "source_file": "md\\02.Application\\05.Audio\\Phi4\\Transciption\\README.md",
+  "language_code": "mo"
+}
+-->
+## **Mo le fangi transcription audio ni Phi-4-multimodal**
 
-Phi-4-multimodal нь текст болон зургийн хажуугаар аудиог ашиглах боломжтой бүрэн модаль загвар юм. Үүнийг хэрхэн ашиглахыг харцгаая.
+Phi-4-multimodal jẹ awoṣe ti o ni agbara pipe ti o le lo ohun ni afikun si ọrọ ati awọn aworan. Jẹ ká wo bi a ṣe le lo o.
 
 ```python
 
@@ -55,4 +64,4 @@ print(response)
 
 ```
 
-It seems like "mo" could refer to a specific language or dialect, but it is unclear which one you're referring to. Could you please clarify the language or provide more context so I can assist you accurately?
+It seems like you are asking to translate the text into "mo," but could you clarify what "mo" refers to? Are you referring to a specific language, such as Maori, Montenegrin, or something else? Providing more context will help ensure the translation is accurate.

@@ -1,18 +1,29 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "2fa1ead890e358cc560ed4f9b3cf219a",
+  "translation_date": "2025-04-03T06:59:12+00:00",
+  "source_file": "md\\01.Introduction\\03\\Rust_Inference.md",
+  "language_code": "zh"
+}
+-->
 # 使用 Rust 进行跨平台推理
 
-本教程将带领我们通过 HuggingFace 的 [Candle ML 框架](https://github.com/huggingface/candle) 使用 Rust 执行推理任务。使用 Rust 进行推理有许多优势，特别是与其他编程语言相比。Rust 以其高性能著称，性能可与 C 和 C++ 媲美。这使其成为计算密集型推理任务的绝佳选择。特别是因为 Rust 提供零成本抽象和高效的内存管理，没有垃圾回收的开销。此外，Rust 的跨平台特性使得开发的代码可以在包括 Windows、macOS、Linux，以及移动操作系统等各种操作系统上运行，而无需对代码库进行重大修改。
+本教程将指导我们使用 Rust 和 HuggingFace 提供的 [Candle ML 框架](https://github.com/huggingface/candle) 进行推理。相比其他编程语言，使用 Rust 进行推理有许多优势。Rust 以其高性能著称，与 C 和 C++ 相当。这使得它非常适合计算密集型的推理任务。特别是由于其零成本抽象和高效的内存管理（没有垃圾回收开销）。Rust 的跨平台能力使得开发的代码可以在多种操作系统上运行，包括 Windows、macOS、Linux，以及移动操作系统，且无需对代码进行重大修改。
 
-学习本教程的前提是[安装 Rust](https://www.rust-lang.org/tools/install)，其中包括 Rust 编译器和 Rust 包管理工具 Cargo。
+学习本教程的前提是 [安装 Rust](https://www.rust-lang.org/tools/install)，其中包括 Rust 编译器和包管理工具 Cargo。
 
 ## 第一步：创建一个新的 Rust 项目
 
-在终端中运行以下命令以创建一个新的 Rust 项目：
+在终端中运行以下命令来创建一个新的 Rust 项目：
 
 ```bash
 cargo new phi-console-app
 ```
 
-这将生成一个初始的项目结构，其中包含 `Cargo.toml` 文件和 `src/main.rs` 文件。我们还需要添加以下依赖项：`candle`、`hf-hub` 和 `tokenizers`。更新后的 `Cargo.toml` 文件如下：
+这将生成一个初始的项目结构，其中包括 `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+
+Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` 文件：
 
 ```toml
 [package]
@@ -30,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## 第二步：配置基本参数
 
-在 `main.rs` 文件中，我们将设置推理所需的初始参数。为了简单起见，这些参数将被硬编码，但我们可以根据需要修改它们。
+在 `main.rs` 文件中，我们将设置推理所需的初始参数。为了简单起见，这些参数将被硬编码，但我们可以根据需要进行修改。
 
 ```rust
 let temperature: f64 = 1.0;
@@ -44,14 +55,14 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**：控制采样过程的随机性。
-- **sample_len**：指定生成文本的最大长度。
-- **top_p**：用于核采样，限制每一步考虑的 token 数量。
-- **repeat_last_n**：控制为防止重复序列而施加惩罚时所考虑的 token 数量。
-- **repeat_penalty**：用于抑制重复 token 的惩罚值。
-- **seed**：随机种子（可以使用一个固定值以提高可重复性）。
-- **prompt**：生成文本的初始提示。注意，我们要求模型生成一首关于冰球的俳句，并使用特殊的标记包装提示，以表示用户和助手之间的对话部分。模型随后将完成提示，生成俳句。
-- **device**：本示例中使用 CPU 进行计算。Candle 也支持在 CUDA 和 Metal 的 GPU 上运行。
+- **temperature**: 控制采样过程的随机性。
+- **sample_len**: 指定生成文本的最大长度。
+- **top_p**: 用于核采样，限制每一步考虑的 token 数量。
+- **repeat_last_n**: 控制在应用惩罚时考虑的重复 token 的数量，以防止生成重复序列。
+- **repeat_penalty**: 用于抑制重复 token 的惩罚值。
+- **seed**: 随机种子（可以使用固定值以提高可重复性）。
+- **prompt**: 用于生成的初始提示文本。注意，我们要求模型生成一首关于冰球的俳句，并使用特殊标记来指示用户和助手的对话部分。模型随后会完成提示文本，生成一首俳句。
+- **device**: 本示例中我们使用 CPU 进行计算。Candle 也支持使用 CUDA 和 Metal 在 GPU 上运行。
 
 ## 第三步：下载/准备模型和分词器
 
@@ -71,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-我们使用 `hf_hub` 下载模型文件，并加载 `gguf` 格式的量化模型权重。同时，我们需要一个 `tokenizer.json` 文件来对输入文本进行分词。一旦下载完成，模型会被缓存，因此首次执行可能较慢（需要下载 2.4GB 的模型文件），但后续执行会更快。
+我们使用 `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` 文件对输入文本进行分词。模型下载后会被缓存，因此第一次运行会较慢（需要下载 2.4GB 的模型），但后续运行速度会更快。
 
 ## 第四步：加载模型
 
@@ -81,7 +92,7 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-我们将量化的模型权重加载到内存中，并初始化 Phi-3 模型。这一步涉及从 `gguf` 文件中读取模型权重，并在指定的设备（本例中为 CPU）上设置推理模型。
+我们将量化的模型权重加载到内存中，并初始化 Phi-3 模型。这一步需要从 `gguf` 文件中读取模型权重，并在指定设备（本例中为 CPU）上设置推理所需的模型。
 
 ## 第五步：处理提示并准备推理
 
@@ -109,9 +120,9 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-在这一步中，我们对输入的提示进行分词，并将其转换为 token ID 序列，为推理做准备。同时，我们初始化 `LogitsProcessor`，并设置 `temperature` 和 `top_p` 参数。每个 token 都会被转换为张量，并传递给模型以获得 logits。
+在此步骤中，我们将输入提示文本分词并转换为 token ID 序列，为推理做准备。同时初始化 `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` 参数值。每个 token 会被转换为张量，并传递给模型以获取 logits。
 
-循环会处理提示中的每个 token，更新 logits 处理器，并为下一个 token 的生成做准备。
+循环会逐一处理提示中的每个 token，更新 logits 处理器，并为下一个 token 的生成做准备。
 
 ## 第六步：推理
 
@@ -149,21 +160,20 @@ for index in 0..to_sample {
 }
 ```
 
-在推理循环中，我们逐个生成 token，直到达到指定的文本长度或遇到序列结束标记为止。下一个 token 会被转换为张量并传递给模型，同时 logits 会被处理以应用惩罚和采样。然后，采样出的下一个 token 会被解码并追加到序列中。
+在推理循环中，我们会逐个生成 token，直到达到预期的文本长度或遇到结束标记。下一个 token 会被转换为张量并传递给模型，同时 logits 会被处理以应用惩罚和采样。然后，生成的下一个 token 会被解码并追加到序列中。
+为了避免生成重复文本，会根据 `repeat_last_n` and `repeat_penalty` 参数对重复的 token 应用惩罚。
 
-为了避免重复的文本，会根据 `repeat_last_n` 和 `repeat_penalty` 参数对重复的 token 施加惩罚。
+最终，生成的文本会在解码后实时输出到控制台。
 
-最后，生成的文本会被解码并实时打印输出。
+## 第七步：运行程序
 
-## 第七步：运行应用程序
-
-在终端中执行以下命令以运行应用程序：
+在终端中执行以下命令运行程序：
 
 ```bash
 cargo run --release
 ```
 
-这将生成一首关于冰球的俳句，使用 Phi-3 模型生成的结果可能类似于：
+程序会生成一首关于冰球的俳句，例如：
 
 ```
 Puck glides swiftly,  
@@ -171,7 +181,7 @@ Blades on ice dance and clash—peace found
 in the cold battle.
 ```
 
-或
+或者
 
 ```
 Glistening puck glides in,
@@ -181,9 +191,9 @@ Swish of sticks now alive.
 
 ## 总结
 
-通过以上步骤，我们可以使用 Rust 和 Candle 在不到 100 行代码中完成基于 Phi-3 模型的文本生成。代码涵盖了模型加载、分词和推理，利用张量和 logits 处理器生成基于输入提示的连贯文本。
+通过以上步骤，我们可以使用 Rust 和 Candle 在不到 100 行代码中完成基于 Phi-3 模型的文本生成。代码处理了模型加载、分词和推理，利用张量和 logits 处理生成基于输入提示的连贯文本。
 
-该控制台应用程序可以在 Windows、Linux 和 macOS 上运行。由于 Rust 的可移植性，代码也可以被改编为一个库，以便在移动应用程序中运行（毕竟，我们无法在移动设备上运行控制台应用程序）。
+这个控制台应用可以在 Windows、Linux 和 macOS 上运行。由于 Rust 的可移植性，代码也可以适配为一个库，从而在移动应用中运行（毕竟我们无法直接在移动设备上运行控制台应用）。
 
 ## 附录：完整代码
 
@@ -308,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> 您可以访问官方 [Candle 示例](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) 仓库，了解更多关于使用 Rust 和 Candle 的 Phi-3 模型的示例，包括推理的替代方法。
+> 你可以访问官方 [Candle 示例](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) 仓库，了解更多关于如何使用 Rust 和 Candle 进行 Phi-3 模型推理的示例，包括推理的替代方法。
 
 **免责声明**：  
-本文件通过基于机器的人工智能翻译服务进行翻译。尽管我们努力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。应将原始语言的文件视为权威来源。对于关键信息，建议使用专业的人类翻译服务。我们对于因使用本翻译而导致的任何误解或误读不承担责任。
+本文档使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们尽力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言版本的文档应被视为权威来源。对于重要信息，建议使用专业的人工翻译。我们不对因使用此翻译而导致的任何误解或误读承担责任。

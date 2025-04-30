@@ -1,39 +1,48 @@
-## Kaitoを使ったファインチューニング
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "05e69691c294289d217150bec390a5fb",
+  "translation_date": "2025-04-04T13:11:40+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_Kaito.md",
+  "language_code": "ja"
+}
+-->
+## Kaito を使ったファインチューニング
 
-[Kaito](https://github.com/Azure/kaito) は、Kubernetesクラスタ内でAI/ML推論モデルのデプロイを自動化するオペレーターです。
+[Kaito](https://github.com/Azure/kaito) は、Kubernetes クラスター内で AI/ML 推論モデルのデプロイを自動化するオペレーターです。
 
-Kaitoは、仮想マシンインフラストラクチャ上に構築された主流のモデルデプロイ方法と比較して、以下のような主な特徴を持っています：
+Kaito は、仮想マシンインフラストラクチャ上に構築された主流のモデルデプロイ手法と比較して、以下のような主な差別化ポイントがあります：
 
-- コンテナイメージを使用してモデルファイルを管理します。モデルライブラリを使った推論呼び出しを実行するためのHTTPサーバーを提供します。
-- GPUハードウェアに適合させるためのデプロイパラメータの調整を、プリセット構成によって不要にします。
-- モデルの要件に基づいてGPUノードを自動的にプロビジョニングします。
-- ライセンスが許可する場合、大規模なモデルイメージをMicrosoft Container Registry (MCR) にホストします。
+- コンテナイメージを使用してモデルファイルを管理します。モデルライブラリを使用して推論呼び出しを行うための HTTP サーバーが提供されます。
+- GPU ハードウェアに適合させるためのデプロイパラメーターの調整を、プリセット構成を提供することで回避します。
+- モデル要件に基づいて GPU ノードを自動プロビジョニングします。
+- ライセンスが許可する場合には、大規模なモデルイメージを Microsoft Container Registry (MCR) にホストします。
 
-Kaitoを使用することで、Kubernetesにおける大規模AI推論モデルの導入ワークフローが大幅に簡素化されます。
+Kaito を使用すると、Kubernetes で大規模な AI 推論モデルを導入するワークフローが大幅に簡略化されます。
 
 ## アーキテクチャ
 
-Kaitoは、クラシックなKubernetesのカスタムリソース定義(CRD)/コントローラーデザインパターンに従っています。ユーザーは、GPU要件と推論仕様を記述した`workspace`カスタムリソースを管理します。Kaitoコントローラーは、`workspace`カスタムリソースを調整することでデプロイを自動化します。
+Kaito は、Kubernetes のカスタムリソース定義 (CRD)/コントローラーデザインパターンに従っています。ユーザーは、GPU 要件と推論仕様を記述する `workspace` カスタムリソースを管理します。Kaito コントローラーは、この `workspace` カスタムリソースを調整することでデプロイを自動化します。
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito アーキテクチャ" alt="Kaito アーキテクチャ">
 </div>
 
-上記の図はKaitoアーキテクチャの概要を示しています。主なコンポーネントは以下の通りです：
+上図は Kaito のアーキテクチャ概要を示しています。主なコンポーネントは以下の通りです：
 
-- **Workspace controller**: `workspace`カスタムリソースを調整し、ノード自動プロビジョニングをトリガーするための`machine`（後述）カスタムリソースを作成し、モデルのプリセット構成に基づいて推論ワークロード（`deployment`または`statefulset`）を作成します。
-- **Node provisioner controller**: コントローラーの名前は、[gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner)内の*gpu-provisioner*です。[Karpenter](https://sigs.k8s.io/karpenter)から派生した`machine` CRDを使用してWorkspace controllerと連携します。Azure Kubernetes Service(AKS) APIと統合し、AKSクラスタに新しいGPUノードを追加します。
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner)はオープンソースのコンポーネントです。他のコントローラーが[Karpenter-core](https://sigs.k8s.io/karpenter) APIをサポートしている場合、それらに置き換えることが可能です。
+- **Workspace controller**: `workspace` カスタムリソースを調整し、ノード自動プロビジョニングをトリガーするために `machine`（後述）カスタムリソースを作成し、モデルのプリセット構成に基づいて推論ワークロード（`deployment` または `statefulset`）を作成します。
+- **Node provisioner controller**: このコントローラーの名前は [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) では *gpu-provisioner* です。これは、[Karpenter](https://sigs.k8s.io/karpenter) 由来の `machine` CRD を使用して workspace controller と連携します。Azure Kubernetes Service (AKS) の API と統合し、AKS クラスターに新しい GPU ノードを追加します。
+> 注意: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) はオープンソースコンポーネントです。他のコントローラーが [Karpenter-core](https://sigs.k8s.io/karpenter) API をサポートしている場合、それらに置き換えることができます。
 
-## 概要ビデオ 
-[Kaitoのデモを見る](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+## 概要ビデオ
+[Kaito デモを見る](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## インストール
 
-インストールガイドについては[こちら](https://github.com/Azure/kaito/blob/main/docs/installation.md)をご確認ください。
+インストール手順については [こちら](https://github.com/Azure/kaito/blob/main/docs/installation.md) を参照してください。
 
 ## クイックスタート
 
-Kaitoをインストールした後、以下のコマンドを試してファインチューニングサービスを開始できます。
+Kaito をインストールした後、以下のコマンドを実行してファインチューニングサービスを開始できます。
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -84,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-以下のコマンドを実行することで、ワークスペースのステータスを確認できます。WORKSPACEREADY列が`True`になると、モデルが正常にデプロイされたことを示します。
+以下のコマンドを実行することで、workspace のステータスを確認できます。WORKSPACEREADY カラムが `True` になると、モデルが正常にデプロイされたことを示します。
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -92,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-次に、推論サービスのクラスタIPを確認し、クラスタ内の一時的な`curl`ポッドを使用してサービスエンドポイントをテストできます。
+次に、推論サービスのクラスター IP を確認し、クラスター内のエンドポイントをテストするために一時的な `curl` Pod を使用します。
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -104,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **免責事項**:  
-本書類は、機械翻訳AIサービスを使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。元の言語で記載された原文を信頼できる情報源としてお考えください。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用に起因する誤解や解釈の相違について、当方は一切の責任を負いかねます。
+この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を期すよう努めておりますが、自動翻訳には誤りや不正確な部分が含まれる場合があります。原文（元の言語で記載された文書）が信頼できる情報源とみなされるべきです。重要な情報については、専門の人間による翻訳をお勧めします。この翻訳の使用に起因する誤解や誤解釈について、当方は一切の責任を負いません。

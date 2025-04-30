@@ -1,8 +1,19 @@
-## **Appels de fonction dans Phi-4-mini**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "b7078bd9f16589c50139fbba8674de82",
+  "translation_date": "2025-03-27T13:12:06+00:00",
+  "source_file": "md\\02.Application\\07.FunctionCalling\\Phi4\\FunctionCallingBasic\\README.md",
+  "language_code": "fr"
+}
+-->
+## **Appel de fonction dans Phi-4-mini**
 
-Les appels de fonction sont apparus pour la première fois dans la famille Phi, et vous pouvez désormais les utiliser via Phi-4-mini.
+L'appel de fonction est apparu pour la première fois dans la famille Phi, et vous pouvez désormais l'utiliser avec Phi-4-mini.
 
-Cet exemple illustre la simulation des résultats de la Premier League. L'objectif est que Phi-4-mini fournisse des informations en temps réel sur les matchs. Voici un exemple de code :
+Cet exemple illustre la simulation des résultats de la Premier League. L'objectif est que Phi-4-mini fournisse des informations sur les matchs en temps réel. Voici le code d'exemple :
+
+
 
 ```python
 
@@ -98,4 +109,4 @@ print(messages)
 ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide de services de traduction automatisés basés sur l'intelligence artificielle. Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction IA [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

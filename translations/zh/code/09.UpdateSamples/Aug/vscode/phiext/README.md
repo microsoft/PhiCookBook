@@ -1,20 +1,29 @@
-# phiext 说明文档
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "c7e4439ea50fbf9e2197329bb254686b",
+  "translation_date": "2025-04-03T06:30:33+00:00",
+  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\README.md",
+  "language_code": "zh"
+}
+-->
+# phiext 说明文件
 
-这是关于您的扩展程序 "phiext" 的说明文档。在简要描述之后，我们建议包括以下几个部分。
+这是您的扩展 "phiext" 的说明文件。在编写简短描述后，我们建议包含以下部分。
 
 ## 功能
 
-描述您的扩展程序的具体功能，并附上扩展程序运行时的截图。图片路径应相对于此说明文档文件。
+描述您的扩展的具体功能，并包括扩展运行时的截图。图片路径是相对于此说明文件的。
 
-例如，如果您的扩展项目工作区中有一个图像子文件夹：
+例如，如果扩展项目工作区中有一个图片子文件夹：
 
 \!\[功能 X\]\(images/feature-x.png\)
 
-> 提示：许多流行的扩展都使用了动画。这是展示您的扩展程序的一个绝佳方式！我们建议使用简短、重点突出的动画，便于用户理解。
+> 提示：许多流行的扩展使用动画展示功能。这是展示扩展的一个绝佳方式！我们建议使用简短、重点突出且易于理解的动画。
 
-## 需求
+## 要求
 
-如果您的扩展程序有任何需求或依赖项，请添加一个部分来描述它们，以及如何安装和配置。
+如果您的扩展有任何要求或依赖项，请添加一个部分描述这些内容，以及如何安装和配置它们。
 
 ## 扩展设置
 
@@ -22,26 +31,26 @@
 
 例如：
 
-此扩展程序包含以下设置：
+此扩展提供以下设置：
 
-* `myExtension.enable`：启用/禁用此扩展程序。
+* `myExtension.enable`：启用/禁用此扩展。
 * `myExtension.thing`：设置为 `blah` 以执行某些操作。
 
 ## 已知问题
 
-列出已知问题可以帮助减少用户针对您的扩展提交重复的问题。
+列出已知问题可以帮助减少用户重复提交问题。
 
 ## 更新日志
 
-用户在您更新扩展程序时会很感激查看更新日志。
+用户通常会关注您在扩展更新时提供的更新日志。
 
 ### 1.0.0
 
-首次发布 ...
+初始版本发布...
 
 ### 1.0.1
 
-修复了问题 #。
+修复问题 #。
 
 ### 1.1.0
 
@@ -51,19 +60,19 @@
 
 ## 遵循扩展指南
 
-确保您已阅读扩展指南并遵循创建扩展的最佳实践。
+请确保您已阅读扩展指南，并遵循创建扩展的最佳实践。
 
 * [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines)
 
 ## 使用 Markdown
 
-您可以使用 Visual Studio Code 编写说明文档。以下是一些有用的编辑器快捷键：
+您可以使用 Visual Studio Code 编写说明文件。以下是一些有用的编辑器快捷键：
 
-* 分割编辑器（macOS 上使用 `Cmd+\`，Windows 和 Linux 上使用 `Ctrl+\`）。
-* 切换预览（macOS 上使用 `Shift+Cmd+V`，Windows 和 Linux 上使用 `Shift+Ctrl+V`）。
+* 分割编辑器（`Cmd+\` 在 macOS 上或 `Ctrl+\` 在 Windows 和 Linux 上）。
+* 切换预览（`Shift+Cmd+V` 在 macOS 上或 `Shift+Ctrl+V` 在 Windows 和 Linux 上）。
 * 按 `Ctrl+Space`（Windows、Linux、macOS）查看 Markdown 代码片段列表。
 
-## 获取更多信息
+## 更多信息
 
 * [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
@@ -71,4 +80,4 @@
 **祝您使用愉快！**
 
 **免责声明**：  
-本文件通过基于人工智能的机器翻译服务翻译而成。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文件为权威来源。对于关键信息，建议使用专业人工翻译。因使用本翻译而引起的任何误解或误读，我们概不负责。
+本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的原文作为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而产生的任何误解或误读承担责任。

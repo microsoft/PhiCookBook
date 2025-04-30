@@ -1,20 +1,29 @@
-# **Phi-3.5をIntel OpenVINOで量子化する**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8f766ec7e68d97f6009b58794b471d66",
+  "translation_date": "2025-04-04T12:14:25+00:00",
+  "source_file": "md\\01.Introduction\\04\\UsingIntelOpenVINOQuantifyingPhi.md",
+  "language_code": "ja"
+}
+-->
+# **Intel OpenVINOを使用したPhi-3.5の量子化**
 
-Intelは、多くのユーザーを持つ伝統的なCPUメーカーです。機械学習やディープラーニングの台頭に伴い、IntelもAI加速の競争に参入しました。モデル推論において、IntelはGPUやCPUだけでなく、NPUも活用しています。
+Intelは、最も伝統的なCPUメーカーであり、多くのユーザーを抱えています。機械学習や深層学習の台頭に伴い、IntelもAIアクセラレーション競争に参加しています。モデル推論において、IntelはGPUやCPUだけでなく、NPUも使用しています。
 
-私たちはPhi-3.xファミリーをエンドサイドで展開し、AI PCやCopilot PCの最重要な部分となることを目指しています。エンドサイドでのモデルのロードは、異なるハードウェアメーカーとの協力に依存しています。この章では、Intel OpenVINOを使用した量子化モデルの適用シナリオに焦点を当てます。
+私たちはPhi-3.xファミリーをエンド側に展開し、AI PCやCopilot PCの最重要部分になることを目指しています。エンド側でのモデルの読み込みは、異なるハードウェアメーカーの協力に依存します。本章では、Intel OpenVINOを量子化モデルの適用シナリオとして主に取り上げます。
 
 ## **OpenVINOとは**
 
-OpenVINOは、クラウドからエッジまでのディープラーニングモデルを最適化してデプロイするためのオープンソースツールキットです。PyTorch、TensorFlow、ONNXなどの人気フレームワークからのモデルを使用して、生成AI、ビデオ、オーディオ、言語などのさまざまなユースケースでディープラーニング推論を加速します。モデルを変換・最適化し、Intel®ハードウェアと環境の混在にわたって、オンプレミスやデバイス上、ブラウザやクラウドでデプロイできます。
+OpenVINOは、クラウドからエッジまでの深層学習モデルを最適化し展開するためのオープンソースツールキットです。PyTorch、TensorFlow、ONNXなどの人気フレームワークのモデルを使用して、生成AI、ビデオ、音声、言語などさまざまなユースケースで深層学習推論を高速化します。モデルを変換して最適化し、オンプレミスやデバイス上、ブラウザやクラウド内など、Intel®のハードウェアと環境の組み合わせで展開できます。
 
-OpenVINOを使用すれば、Intelハードウェア上でGenAIモデルを迅速に量子化し、モデルの推論を加速することが可能です。
+現在、OpenVINOを使用することで、Intelのハードウェア上でGenAIモデルを迅速に量子化し、モデルの推論を高速化できます。
 
-現在、OpenVINOはPhi-3.5-VisionおよびPhi-3.5-Instructの量子化変換をサポートしています。
+OpenVINOはPhi-3.5-VisionおよびPhi-3.5 Instructの量子化変換をサポートしています。
 
-### **環境設定**
+### **環境セットアップ**
 
-以下の環境依存関係がインストールされていることを確認してください。これはrequirement.txtです。
+以下の環境依存関係がインストールされていることを確認してください。これがrequirement.txtです。
 
 ```txt
 
@@ -29,7 +38,7 @@ openvino-genai>=2024.3.0.0
 
 ### **OpenVINOを使用したPhi-3.5-Instructの量子化**
 
-ターミナルで、以下のスクリプトを実行してください。
+ターミナルで以下のスクリプトを実行してください。
 
 ```bash
 
@@ -83,17 +92,17 @@ if not out_dir.exists():
 
 ### **🤖 Intel OpenVINOを使用したPhi-3.5のサンプル**
 
-| ラボ    | 説明 | 移動 |
+| ラボ    | 説明 | リンク |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Phi-3.5 Instructの紹介  | Phi-3.5 InstructをAI PCで使用する方法を学ぶ    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Phi-3.5 Vision（画像）の紹介 | Phi-3.5 Visionを使用してAI PCで画像を分析する方法を学ぶ      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Phi-3.5 Vision（動画）の紹介   | Phi-3.5 Visionを使用してAI PCで動画を分析する方法を学ぶ    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Phi-3.5 Instructの紹介  | AI PCでPhi-3.5 Instructを使用する方法を学ぶ    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Phi-3.5 Vision (画像)の紹介 | AI PCでPhi-3.5 Visionを使用して画像を分析する方法を学ぶ      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Phi-3.5 Vision (動画)の紹介   | AI PCでPhi-3.5 Visionを使用して動画を分析する方法を学ぶ    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **リソース**
 
-1. Intel OpenVINOの詳細はこちら [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
+1. Intel OpenVINOについて詳しく知る [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
 2. Intel OpenVINO GitHubリポジトリ [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **免責事項**:  
-本書類は、機械ベースのAI翻訳サービスを使用して翻訳されています。正確性を追求しておりますが、自動翻訳にはエラーや不正確な表現が含まれる場合があります。原文（原言語で記載された文書）が正式な情報源と見なされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤った解釈について、当方は一切の責任を負いません。
+この文書は、AI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で作成された文書を正式な情報源とみなしてください。重要な情報については、専門の人間による翻訳をお勧めします。この翻訳の使用に起因する誤解や誤解について、当社は責任を負いません。

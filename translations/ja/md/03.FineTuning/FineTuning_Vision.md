@@ -1,6 +1,15 @@
-# Phi-3.5-vision ファインチューニングレシピ
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "dd1b570422a819b39b14a4c7be06c8fa",
+  "translation_date": "2025-04-04T13:30:19+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_Vision.md",
+  "language_code": "ja"
+}
+-->
+# Phi-3.5-vision ファインチューニング レシピ
 
-これは、huggingfaceライブラリを使用したPhi-3.5-visionのファインチューニング公式サポートです。以下のコマンドを実行する前に、コードディレクトリ [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) に移動してください。
+これは、huggingfaceライブラリを使用したPhi-3.5-visionファインチューニングの公式サポートです。以下のコマンドを実行する前に、コードディレクトリ [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) に移動してください。
 
 ## インストール
 
@@ -27,14 +36,14 @@ pip install bitsandbytes==0.43.1
 
 DocVQAとヘイトフルミーム分類用の2つのファインチューニングスクリプトを提供しています。
 
-最小ハードウェア要件：RTX8000 4枚（GPUあたり48GB RAM）
+最小限のハードウェア要件: 4x RTX8000 (GPUごとに48GB RAM)
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-visionは現在、複数画像入力を公式にサポートしています。NLVR2のファインチューニング例を以下に示します。
+Phi-3.5-visionは現在、マルチイメージ入力を公式にサポートしています。以下はNLVR2のファインチューニング例です。
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -42,11 +51,11 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## 使用ガイド
 
-ハードウェアに応じて、ユーザーは異なるファインチューニング戦略を選択できます。Deepspeed Zero-2を使用した完全なファインチューニング（オプションでビジョンパラメータを固定可能）や、LoRA（4bit QLoRAを含む）をサポートしています。一般的には、可能な限りフラッシュアテンションとbf16を使用した完全なファインチューニングを推奨します。
+ハードウェアに応じて、ユーザーは異なるファインチューニング戦略を選択できます。完全ファインチューニング（Deepspeed Zero-2を使用）と、オプションで視覚パラメータを固定する方法、またはLoRA（4bit QLoRAを含む）をサポートしています。一般的には、可能であればフラッシュアテンションとbf16を使用した完全ファインチューニングを推奨します。
 
 ### カスタムデータセットを必要な形式に変換するためのガイド
 
-カスタムデータセットを必要な形式に変換し、Phi-3.5-visionをファインチューニングする方法を説明するために、最小限のビデオ分類データセット（UCF-101のサブセット）をエンドツーエンドの例として使用します。
+最小限のビデオ分類データセット（UCF-101のサブセット）を使用して、カスタムデータセットを必要な形式に変換し、Phi-3.5-visionをファインチューニングする方法を示すエンドツーエンドの例を提供します。
 
 ```bash
 # convert data
@@ -56,7 +65,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-変換後のデータは以下のようになります：
+変換後のデータは以下のようになります:
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -102,49 +111,49 @@ torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/co
 34 directories, 3 files
 ```
 
-`jsonl`アノテーションでは、各行は以下のような辞書形式である必要があります：
+`jsonl`アノテーションでは、各行が以下のような辞書である必要があります:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-`conversations`はリスト形式であるため、マルチターン会話データがある場合は対応可能です。
+`conversations`はリストであるため、マルチターンの会話がサポートされます（そのようなデータが利用可能な場合）。
 
-## Azure GPU クォータのリクエスト
+## Azure GPU クォータのリクエスト方法
 
 ### 前提条件
 
-Contributorロール（またはContributorアクセスを含む他のロール）を持つAzureアカウントが必要です。
+Contributorロール（またはContributorアクセスを含む他のロール）が付与されたAzureアカウント。
 
 Azureアカウントをお持ちでない場合は、[無料アカウントを作成してください](https://azure.microsoft.com)。
 
-### クォータ増加のリクエスト
+### クォータ増加のリクエスト方法
 
-クォータ増加のリクエストは、My quotasから直接送信できます。以下の手順に従って、クォータ増加をリクエストしてください。この例では、サブスクリプション内の調整可能な任意のクォータを選択できます。
+My quotasから直接クォータ増加をリクエストできます。以下の手順に従ってクォータ増加をリクエストしてください。この例では、サブスクリプション内の調整可能なクォータを選択できます。
 
-[Azureポータル](https://portal.azure.com) にサインインします。
+Azureポータルにサインインします。[Azure portal](https://portal.azure.com)。
 
-検索ボックスに「quotas」と入力し、Quotasを選択します。  
+検索ボックスに「quotas」と入力し、Quotasを選択します。
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
 概要ページで、ComputeやAMLなどのプロバイダーを選択します。
 
-**注**: Compute以外のすべてのプロバイダーでは、調整可能な列の代わりにRequest increase列が表示されます。ここで、特定のクォータの増加をリクエストするか、増加リクエストのサポートリクエストを作成できます。
+**注意** Compute以外のすべてのプロバイダーでは、以下で説明されているAdjustable列の代わりにRequest increase列が表示されます。そこで特定のクォータの増加をリクエストするか、増加のサポートリクエストを作成できます。
 
-My quotasページで、増加したいクォータを選択します。このクォータの調整可能な列が「Yes」であることを確認してください。
+My quotasページで、Quota nameの下から増加したいクォータを選択します。このクォータがAdjustable列でYesと表示されていることを確認してください。
 
-ページ上部の「New Quota Request」を選択し、「Enter a new limit」をクリックします。
+ページ上部でNew Quota Requestを選択し、Enter a new limitを選択します。
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-New Quota Requestパネルで、新しいクォータ制限の数値を入力し、「Submit」を選択します。
+New Quota Requestペインで、新しいクォータ制限の数値を入力し、Submitを選択します。
 
-リクエストが審査され、リクエストが承認可能かどうか通知されます。通常、数分以内に結果が通知されます。
+リクエストがレビューされ、リクエストが満たされるかどうか通知されます。通常、数分以内に通知されます。
 
-リクエストが承認されない場合は、サポートリクエストを作成するリンクが表示されます。このリンクを使用すると、サポートエンジニアがリクエストの増加を支援します。
+リクエストが満たされない場合は、サポートリクエストを作成するリンクが表示されます。このリンクを使用すると、サポートエンジニアが増加リクエストの支援を行います。
 
-## Azure Compute GPU マシン SKU 推奨
+## Azure Compute GPU マシン SKUの提案
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -152,11 +161,11 @@ New Quota Requestパネルで、新しいクォータ制限の数値を入力し
 
 [Standard_ND40rs_v2](https://learn.microsoft.com/azure/virtual-machines/ndv2-series)
 
-以下は例です：
+以下はいくつかの例です:
 
-### A100 または H100 GPU をお持ちの場合
+### A100またはH100 GPUを持っている場合
 
-完全なファインチューニングが通常最良のパフォーマンスを発揮します。以下のコマンドを使用して、ヘイトフルミーム分類でPhi-3-Vをファインチューニングできます。
+完全ファインチューニングは通常、最高のパフォーマンスを提供します。以下のコマンドを使用して、Phi-3-Vをヘイトフルミーム分類でファインチューニングできます。
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -168,9 +177,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --bf16
 ```
 
-### Standard_ND40rs_v2 8x V100-32GB GPU をお持ちの場合
+### Standard_ND40rs_v2 8x V100-32GB GPUを持っている場合
 
-ヘイトフルミーム分類でPhi-3-Vを完全にファインチューニングすることも可能です。ただし、フラッシュアテンションのサポートがないため、スループットがA100またはH100 GPUと比べて大幅に低下する可能性があります。また、bf16サポートがないため、精度にも影響が出る可能性があります（代わりにfp16混合精度トレーニングが使用されます）。
+Phi-3-Vをヘイトフルミーム分類で完全ファインチューニングすることは可能ですが、フラッシュアテンションのサポートがないため、A100またはH100 GPUと比較してスループットが大幅に低下することが予想されます。また、bf16サポートがないため、精度にも影響が出る可能性があります（fp16混合精度トレーニングが代わりに使用されます）。
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -181,8 +190,7 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 ```
 
 ### データセンターGPUにアクセスできない場合
-
-LoRAが唯一の選択肢になるかもしれません。以下のコマンドを使用して、ヘイトフルミーム分類でPhi-3-Vをファインチューニングできます。
+Loraが唯一の選択肢となる可能性があります。以下のコマンドを使用して、Phi-3-Vをヘイトフルミーム分類でファインチューニングできます。
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -217,16 +225,16 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | Frozen vision model | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
+トレーニング方法 | 視覚モデル固定 | データ型 | LoRAランク | LoRAアルファ | バッチサイズ | 学習率 | エポック数 | 精度
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
-LoRA results comming soon |  |  |  |  |  |  |  |  |
+完全ファインチューニング |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
+完全ファインチューニング | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
+LoRA結果は近日公開 |  |  |  |  |  |  |  |  |
 
-### 注記
-以下のDocVQAとヘイトフルミームの結果は、以前のバージョン（Phi-3-vision）に基づいています。Phi-3.5-visionの新しい結果は近日中に更新予定です。
+### 注意
+以下のDocVQAとヘイトフルミーム結果は以前のバージョン（Phi-3-vision）に基づいています。Phi-3.5-visionによる新しい結果は近日更新されます。
 
-### DocVQA（注記: Phi-3-vision）
+### DocVQA (注意: Phi-3-vision)
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -240,18 +248,18 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | ANLS
+トレーニング方法 | データ型 | LoRAランク | LoRAアルファ | バッチサイズ | 学習率 | エポック数 | ANLS
 --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
-full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
-frozen image model| bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
-frozen image model| fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
+完全ファインチューニング | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
+完全ファインチューニング | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
+視覚モデル固定 | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
+視覚モデル固定 | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
 LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
 LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
 QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
-### ヘイトフルミーム（注記: Phi-3-vision）
+### ヘイトフルミーム (注意: Phi-3-vision)
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -264,33 +272,33 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
+トレーニング方法 | データ型 | LoRAランク | LoRAアルファ | バッチサイズ | 学習率 | エポック数 | 精度
 --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
-full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
-frozen image model| bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
-frozen image model| fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
+完全ファインチューニング | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
+完全ファインチューニング | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
+視覚モデル固定 | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
+視覚モデル固定 | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
 LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
 LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
 QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
 QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
-## スピードベンチマーク（注記: Phi-3-vision）
+## スピードベンチマーク (注意: Phi-3-vision)
 
-Phi-3.5-visionの新しいベンチマーク結果は近日中に更新予定です。
+Phi-3.5-visionによる新しいベンチマーク結果は近日更新されます。
 
-スピードベンチマークはDocVQAデータセットで実施されました。このデータセットの平均シーケンス長は2443.23トークンです（画像モデルに`num_crops=16`を使用）。
+スピードベンチマークはDocVQAデータセットで実施されます。このデータセットの平均シーケンス長は2443.23トークンです（画像モデルで`num_crops=16`を使用）。
 
 ### 8x A100-80GB (Ampere)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
+トレーニング方法 | ノード数 | GPU数 | フラッシュアテンション | 実効バッチサイズ | スループット (img/s) | スピードアップ | GPUメモリのピーク (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
-full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
-full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29
-full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26
-frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29
-frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27
+完全ファインチューニング | 1 | 8 |  | 64 | 5.041 |  1x | ~42
+完全ファインチューニング | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
+完全ファインチューニング | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29
+完全ファインチューニング | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26
+視覚モデル固定 | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29
+視覚モデル固定 | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27
 LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50
 LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16
 QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32
@@ -298,18 +306,18 @@ QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
 ### 8x V100-32GB (Volta)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
+トレーニング方法 | ノード数 | GPU数 | フラッシュアテンション | 実効バッチサイズ | スループット (img/s) | スピードアップ | GPUメモリのピーク (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
-full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
-full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
-frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27
+完全ファインチューニング | 1 | 8 | | 64 | 2.462 |  1x | ~32
+完全ファインチューニング | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
+完全ファインチューニング | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
+視覚モデル固定 | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27
 LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
 ## 既知の問題
 
-- fp16ではフラッシュアテンションを実行できません（bf16が利用可能な場合は常に推奨されます。フラッシュアテンションをサポートするすべてのGPUはbf16もサポートしています）。
+- fp16ではフラッシュアテンションを実行できません（bf16が利用可能な場合は常に推奨され、フラッシュアテンションをサポートするすべてのGPUはbf16もサポートしています）。
 - 中間チェックポイントの保存とトレーニングの再開はまだサポートされていません。
 
 **免責事項**:  
-この文書は、機械翻訳AIサービスを使用して翻訳されています。正確性を期して努力しておりますが、自動翻訳には誤りや不正確さが含まれる可能性があります。元の言語で作成された原文が、信頼できる正式な情報源と見なされるべきです。重要な情報については、専門の人間による翻訳をお勧めします。この翻訳の利用に起因する誤解や誤解釈について、当社は一切の責任を負いません。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な点が含まれる可能性があります。原文の母国語で書かれた文書を正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用により生じた誤解や誤認について、当方は一切の責任を負いません。

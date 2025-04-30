@@ -1,20 +1,29 @@
-# **Phi-3.5 ကို Intel OpenVINO အသုံးပြု၍ Quantizing လုပ်ခြင်း**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8f766ec7e68d97f6009b58794b471d66",
+  "translation_date": "2025-04-04T12:13:37+00:00",
+  "source_file": "md\\01.Introduction\\04\\UsingIntelOpenVINOQuantifyingPhi.md",
+  "language_code": "mo"
+}
+-->
+# **Quantizing Phi-3.5 using Intel OpenVINO**
 
-Intel သည် အသုံးပြုသူအများဆုံး CPU ထုတ်လုပ်သူဖြစ်ပြီး ယခင်ကတည်းက နာမည်ကြီးခဲ့သည်။ Machine Learning နှင့် Deep Learning တိုးတက်လာသည်နှင့်အမျှ AI acceleration အတွက် ယှဉ်ပြိုင်မှုတွင်လည်း Intel ပါဝင်လာခဲ့သည်။ Model inference အတွက် Intel သည် GPU နှင့် CPU များသာမက NPU များကိုလည်း အသုံးပြုသည်။
+Intel është një nga prodhuesit më tradicionalë të CPU-ve me shumë përdorues. Me rritjen e mësimit të makinerive dhe të thellë, Intel ka hyrë gjithashtu në garën për përshpejtimin e AI-së. Për inferencën e modeleve, Intel jo vetëm që përdor GPU dhe CPU, por edhe NPU.
 
-ကျွန်ုပ်တို့သည် Phi-3.x Family ကို end-side တွင် တင်သွင်းလိုပြီး AI PC နှင့် Copilot PC ၏ အရေးပါဆုံးအစိတ်အပိုင်းဖြစ်လာစေရန် မျှော်လင့်ပါသည်။ Model ကို end-side တွင် တင်သွင်းခြင်းသည် ကွဲပြားသော hardware ထုတ်လုပ်သူများ၏ ပူးပေါင်းဆောင်ရွက်မှုအပေါ် မူတည်ပါသည်။ ဤအခန်းတွင် Intel OpenVINO ကို Quantitative Model အဖြစ် အသုံးပြုသည့် လျှောက်လွှာအခြေအနေကို အဓိကထား ရှင်းပြပါမည်။  
+Ne shpresojmë të shpërndajmë Familjen Phi-3.x në pajisjet fundore, duke synuar të bëhet pjesa më e rëndësishme e PC-ve AI dhe PC-ve Copilot. Ngarkimi i modelit në pajisjet fundore varet nga bashkëpunimi i prodhuesve të ndryshëm të harduerit. Ky kapitull fokusohet kryesisht në skenarin e aplikimit të Intel OpenVINO si model i kuantifikuar.
 
-## **OpenVINO ဆိုတာဘာလဲ**
+## **Çfarë është OpenVINO**
 
-OpenVINO သည် cloud မှ edge အထိ deep learning models များကို optimize လုပ်ပြီး တင်သွင်းရန်အတွက် open-source toolkit တစ်ခုဖြစ်သည်။ ယင်းသည် PyTorch, TensorFlow, ONNX စသည့် framework များမှ models များကို အသုံးပြု၍ generative AI, video, audio, language စသည့် လုပ်ငန်းစဉ်အမျိုးမျိုးတွင် deep learning inference ကို မြန်ဆန်စေပါသည်။ Models များကို ပြောင်းလဲ optimize လုပ်ပြီး Intel® hardware မျိုးစုံနှင့် အခြေအနေများ (on-premises, on-device, browser, cloud) တွင် တင်သွင်းနိုင်ပါသည်။
+OpenVINO është një mjet me burim të hapur për optimizimin dhe shpërndarjen e modeleve të mësimit të thellë nga cloud-i te pajisjet fundore. Ai përshpejton inferencën e mësimit të thellë në përdorime të ndryshme, si AI gjenerues, video, audio dhe gjuhë me modele nga kornizat e njohura si PyTorch, TensorFlow, ONNX dhe më shumë. Konvertoni dhe optimizoni modele, dhe shpërndajini në një kombinim të harduerëve dhe mjediseve Intel®, në premisa dhe në pajisje, në shfletues ose në cloud.
 
-OpenVINO ဖြင့် ယခုအခါ Intel hardware တွင် GenAI model ကို မြန်ဆန်စွာ quantize လုပ်ပြီး model reference ကို မြှင့်တင်နိုင်ပါသည်။
+Tani me OpenVINO, ju mund të kuantifikoni shpejt modelin GenAI në harduerin Intel dhe të përshpejtoni referencën e modelit.
 
-ယခုအခါ OpenVINO သည် Phi-3.5-Vision နှင့် Phi-3.5 Instruct ၏ quantization conversion ကို ပံ့ပိုးထားပါသည်။
+Tani OpenVINO mbështet konvertimin e kuantifikimit të Phi-3.5-Vision dhe Phi-3.5 Instruct.
 
-### **ပတ်ဝန်းကျင်ကို ပြင်ဆင်ခြင်း**
+### **Konfigurimi i Mjedisit**
 
-အောက်ပါ environment dependencies များကို ထည့်သွင်းထားပါရန် ကျေးဇူးပြု၍ သေချာပါစေ၊ ၎င်းသည် requirement.txt ဖြစ်ပါသည်။
+Ju lutemi sigurohuni që varësitë e mjedisit të mëposhtëm të jenë instaluar, kjo është requirement.txt 
 
 ```txt
 
@@ -27,9 +36,9 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **OpenVINO ဖြင့် Phi-3.5-Instruct ကို Quantizing လုပ်ခြင်း**
+### **Kuantifikimi i Phi-3.5-Instruct duke përdorur OpenVINO**
 
-Terminal တွင် အောက်ပါ script ကို run ပါ။
+Në Terminal, ju lutemi ekzekutoni këtë skript
 
 ```bash
 
@@ -43,9 +52,9 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **OpenVINO ဖြင့် Phi-3.5-Vision ကို Quantizing လုပ်ခြင်း**
+### **Kuantifikimi i Phi-3.5-Vision duke përdorur OpenVINO**
 
-Python သို့မဟုတ် Jupyter lab တွင် အောက်ပါ script ကို run ပါ။
+Ju lutemi ekzekutoni këtë skript në Python ose Jupyter lab
 
 ```python
 
@@ -81,18 +90,18 @@ if not out_dir.exists():
 
 ```
 
-### **🤖 Intel OpenVINO နှင့်အတူ Phi-3.5 ၏ နမူနာများ**
+### **🤖 Shembuj për Phi-3.5 me Intel OpenVINO**
 
-| Labs    | မိတ်ဆက် | သွားရန် |
+| Laboratorë    | Prezantim | Shko |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | AI PC တွင် Phi-3.5 Instruct ကို အသုံးပြုနည်းကို လေ့လာပါ    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (image) | AI PC တွင် Phi-3.5 Vision ကို အသုံးပြု၍ ပုံများကို ခွဲခြမ်းစိတ်ဖြာနည်းကို လေ့လာပါ      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | AI PC တွင် Phi-3.5 Vision ကို အသုံးပြု၍ ဗီဒီယိုများကို ခွဲခြမ်းစိတ်ဖြာနည်းကို လေ့လာပါ    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Laborator-Prezanto Phi-3.5 Instruct  | Mësoni si të përdorni Phi-3.5 Instruct në PC-në tuaj AI    |  [Shko](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Laborator-Prezanto Phi-3.5 Vision (imazh) | Mësoni si të përdorni Phi-3.5 Vision për të analizuar imazhe në PC-në tuaj AI      |  [Shko](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Laborator-Prezanto Phi-3.5 Vision (video)   | Mësoni si të përdorni Phi-3.5 Vision për të analizuar video në PC-në tuaj AI    |  [Shko](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
-## **အရင်းအမြစ်များ**
+## **Burime**
 
-1. Intel OpenVINO အကြောင်းပိုမိုလေ့လာရန် [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
+1. Mësoni më shumë rreth Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
-2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
+2. Repo-ja GitHub e Intel OpenVINO [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
-It seems you are asking for a translation to "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, is it Maori, Mongolian, or something else? Please provide more details so I can assist you accurately!
+It seems like you want the text translated into "mo," but could you clarify what "mo" refers to? Are you asking for a translation into a specific language, such as Maori, Mongolian, or another language? Let me know so I can assist you accurately!

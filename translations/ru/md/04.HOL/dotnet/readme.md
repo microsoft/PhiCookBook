@@ -1,18 +1,27 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8fd4bbea0a970872d95cf189202589e1",
+  "translation_date": "2025-03-27T16:25:29+00:00",
+  "source_file": "md\\04.HOL\\dotnet\\readme.md",
+  "language_code": "ru"
+}
+-->
 ## Добро пожаловать в лаборатории Phi с использованием C#
 
-Здесь представлен выбор лабораторий, демонстрирующих, как интегрировать мощные версии моделей Phi в среде .NET.
+Здесь представлен набор лабораторий, демонстрирующих, как интегрировать мощные версии моделей Phi в среде .NET.
 
-## Предварительные требования
+## Требования
 
-Перед запуском примера убедитесь, что у вас установлено следующее:
+Перед запуском примеров убедитесь, что у вас установлено следующее:
 
 **.NET 9:** Убедитесь, что на вашем компьютере установлена [последняя версия .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo).
 
-**(Опционально) Visual Studio или Visual Studio Code:** Вам понадобится IDE или редактор кода, способный запускать проекты .NET. Рекомендуются [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) или [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo).
+**(Опционально) Visual Studio или Visual Studio Code:** Вам понадобится IDE или редактор кода, способный запускать проекты .NET. Рекомендуется использовать [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) или [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo).
 
-**Использование git**: локально клонируйте одну из доступных версий Phi-3, Phi3.5 или Phi-4 с [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
+**Используя git**, клонируйте локально одну из доступных версий Phi-3, Phi3.5 или Phi-4 с [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
 
-**Скачайте ONNX-модели Phi-4** на ваш компьютер:
+**Скачайте модели Phi-4 ONNX** на ваш компьютер:
 
 ### перейдите в папку для хранения моделей
 
@@ -26,7 +35,7 @@ cd c:\phi\models
 git lfs install 
 ```
 
-### клонируйте и скачайте мини-инструкционную модель Phi-4 и мультимодальную модель Phi-4
+### клонируйте и скачайте мини-инструктивную модель Phi-4 и мультимодальную модель Phi-4
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
@@ -34,9 +43,9 @@ git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 ```
 
-**Скачайте ONNX-модели Phi-3** на ваш компьютер:
+**Скачайте модели Phi-3 ONNX** на ваш компьютер:
 
-### клонируйте и скачайте мини 4K инструкционную модель Phi-3 и визуальную модель Phi-3 с 128K
+### клонируйте и скачайте мини 4K инструктивную модель Phi-3 и модель Phi-3 vision 128K
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
@@ -44,15 +53,15 @@ git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 ```
 
-**Важно:** Текущие демонстрации разработаны для использования ONNX-версий моделей. Предыдущие шаги клонируют следующие модели.
+**Важно:** Текущие демонстрации разработаны для использования версий модели ONNX. На предыдущих шагах были клонированы следующие модели.
 
 ## О лабораториях
 
-Основное решение включает несколько лабораторий-примеров, демонстрирующих возможности моделей Phi с использованием C#.
+Основное решение содержит несколько лабораторий-примеров, демонстрирующих возможности моделей Phi с использованием C#.
 
 | Проект | Модель | Описание |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 или Phi-3.5 | Пример консольного чата, позволяющий пользователю задавать вопросы. Проект загружает локальную ONNX модель Phi-3 с использованием `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 или Phi-3.5 | Пример консольного чата, позволяющий пользователю задавать вопросы. Проект загружает локальную модель ONNX Phi-3 с использованием `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
 | [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
@@ -74,15 +83,15 @@ To run the projects, follow these steps:
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
     ```
 
-1. Запустите проект с помощью команды
+1. Запустите проект командой
 
     ```bash
     dotnet run
     ```
 
-1. Пример проекта запрашивает ввод пользователя и отвечает, используя локальный режим.
+1. Пример проекта запрашивает ввод от пользователя и отвечает, используя локальный режим.
 
-   Работающая демонстрация выглядит следующим образом:
+   Работающий пример выглядит следующим образом:
 
    ```bash
    PS D:\phi\PhiCookBook\md\04.HOL\dotnet\src\LabsPhi4-Chat-01OnnxRuntime> dotnet run
@@ -93,4 +102,4 @@ To run the projects, follow these steps:
    ```
 
 **Отказ от ответственности**:  
-Этот документ был переведен с использованием машинных сервисов перевода на основе искусственного интеллекта. Хотя мы стремимся к точности, имейте в виду, что автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется использовать профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные интерпретации, возникшие в результате использования данного перевода.

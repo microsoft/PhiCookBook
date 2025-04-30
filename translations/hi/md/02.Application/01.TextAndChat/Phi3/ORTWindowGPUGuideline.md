@@ -1,16 +1,25 @@
-# **OnnxRuntime GenAI Windows GPU के लिए मार्गदर्शिका**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "9fe95f5575ecf5985eb9f67d205d0136",
+  "translation_date": "2025-04-04T18:22:55+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\ORTWindowGPUGuideline.md",
+  "language_code": "hi"
+}
+-->
+# **OnnxRuntime GenAI Windows GPU के लिए दिशा-निर्देश**
 
-यह मार्गदर्शिका Windows पर GPU के साथ ONNX Runtime (ORT) सेटअप और उपयोग करने के चरण प्रदान करती है। इसका उद्देश्य आपके मॉडलों के लिए GPU एक्सेलेरेशन का लाभ उठाकर प्रदर्शन और दक्षता में सुधार करना है।
+यह दिशा-निर्देश ONNX Runtime (ORT) को Windows पर GPU के साथ सेटअप और उपयोग करने के चरण प्रदान करता है। इसका उद्देश्य आपके मॉडलों के लिए GPU एक्सेलेरेशन का उपयोग करके प्रदर्शन और दक्षता में सुधार करना है।
 
 इस दस्तावेज़ में निम्नलिखित पर मार्गदर्शन दिया गया है:
 
-- पर्यावरण सेटअप: आवश्यक डिपेंडेंसीज़ जैसे CUDA, cuDNN, और ONNX Runtime को इंस्टॉल करने के निर्देश।
-- कॉन्फ़िगरेशन: GPU संसाधनों का प्रभावी ढंग से उपयोग करने के लिए पर्यावरण और ONNX Runtime को कॉन्फ़िगर करने का तरीका।
-- अनुकूलन सुझाव: इष्टतम प्रदर्शन के लिए GPU सेटिंग्स को ठीक करने के सुझाव।
+- **पर्यावरण सेटअप**: आवश्यक निर्भरताओं जैसे CUDA, cuDNN, और ONNX Runtime को स्थापित करने के निर्देश।
+- **कॉन्फ़िगरेशन**: GPU संसाधनों का प्रभावी उपयोग करने के लिए पर्यावरण और ONNX Runtime को कैसे कॉन्फ़िगर करें।
+- **ऑप्टिमाइज़ेशन टिप्स**: आपके GPU सेटिंग्स को सर्वोत्तम प्रदर्शन के लिए कैसे ट्यून करें।
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***नोट*** [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) को अपने Python पर्यावरण के रूप में उपयोग करने की सलाह दी जाती है।
+   ***ध्यान दें*** [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) को अपने Python एनवायरनमेंट के रूप में उपयोग करने की सलाह दी जाती है।
 
    ```bash
 
@@ -20,9 +29,9 @@
 
    ```
 
-   ***याद रखें*** यदि आपने Python ONNX लाइब्रेरी से संबंधित कुछ भी इंस्टॉल किया है, तो कृपया उसे अनइंस्टॉल करें।
+   ***याद रखें*** यदि आपने पहले से Python ONNX लाइब्रेरी से संबंधित कुछ भी इंस्टॉल किया है, तो कृपया उसे अनइंस्टॉल करें।
 
-### **2. CMake को winget के साथ इंस्टॉल करें**
+### **2. winget के साथ CMake इंस्टॉल करें**
 
    ```bash
 
@@ -30,9 +39,9 @@
 
    ```
 
-### **3. Visual Studio 2022 - C++ के साथ डेस्कटॉप डेवलपमेंट इंस्टॉल करें**
+### **3. Visual Studio 2022 - Desktop Development with C++ इंस्टॉल करें**
 
-   ***नोट*** यदि आप कम्पाइल नहीं करना चाहते हैं, तो आप इस चरण को छोड़ सकते हैं।
+   ***ध्यान दें*** यदि आप इसे कम्पाइल नहीं करना चाहते हैं, तो आप इस चरण को छोड़ सकते हैं।
 
 ![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.hi.png)
 
@@ -44,17 +53,17 @@
 
 3. **NVIDIA CUDNN 9.4** [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***याद रखें*** इंस्टॉलेशन प्रक्रिया के दौरान डिफ़ॉल्ट सेटिंग्स का उपयोग करें।
+***याद रखें*** कृपया इंस्टॉलेशन प्रक्रिया में डिफ़ॉल्ट सेटिंग्स का उपयोग करें।
 
 ### **5. NVIDIA पर्यावरण सेट करें**
 
-NVIDIA CUDNN 9.4 की lib, bin, और include फाइल्स को NVIDIA CUDA 12.4 की lib, bin, और include फोल्डर में कॉपी करें।
+NVIDIA CUDNN 9.4 की lib, bin, include को NVIDIA CUDA 12.4 की lib, bin, include में कॉपी करें।
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* की फाइल्स को *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'* में कॉपी करें।
+- *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* फाइल्स को *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'* में कॉपी करें।
+  
+- *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* फाइल्स को *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'* में कॉपी करें।
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* की फाइल्स को *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'* में कॉपी करें।
-
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* की फाइल्स को *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* में कॉपी करें।
+- *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* फाइल्स को *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* में कॉपी करें।
 
 ### **6. Phi-3.5-mini-instruct-onnx डाउनलोड करें**
 
@@ -78,9 +87,9 @@ NVIDIA CUDNN 9.4 की lib, bin, और include फाइल्स को NVIDI
 
 ### **8. ORT GenAI GPU कम्पाइल करें**
 
-   ***नोट*** 
-   
-   1. कृपया पहले सभी ONNX, ONNX Runtime और ONNX Runtime-GenAI से संबंधित चीज़ों को अनइंस्टॉल करें।
+   ***ध्यान दें*** 
+
+   1. कृपया पहले ONNX, ONNXRuntime और ONNXRuntime-GenAI से संबंधित सभी चीजों को अनइंस्टॉल करें।
 
    ```bash
 
@@ -88,7 +97,7 @@ NVIDIA CUDNN 9.4 की lib, bin, और include फाइल्स को NVIDI
    
    ```
 
-   फिर सभी ONNX Runtime लाइब्रेरीज़ को अनइंस्टॉल करें, जैसे:
+   फिर सभी ONNXRuntime लाइब्रेरीज़ को अनइंस्टॉल करें, जैसे:
 
    ```bash
 
@@ -100,13 +109,13 @@ NVIDIA CUDNN 9.4 की lib, bin, और include फाइल्स को NVIDI
    
    ```
 
-   2. Visual Studio एक्सटेंशन सपोर्ट जांचें।
+   2. Visual Studio एक्सटेंशन समर्थन की जांच करें।
 
-   यह सुनिश्चित करें कि C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras में C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration मौजूद है। 
+   सुनिश्चित करें कि C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras में C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration मौजूद है। 
 
-   यदि यह मौजूद नहीं है, तो अन्य CUDA टूलकिट ड्राइवर फोल्डर्स की जांच करें और visual_studio_integration फोल्डर और उसकी सामग्री को C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration में कॉपी करें।
+   यदि यह मौजूद नहीं है, तो अन्य CUDA टूलकिट ड्राइवर फ़ोल्डर्स की जांच करें और visual_studio_integration फ़ोल्डर और उसकी सामग्री को C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration में कॉपी करें।
 
-   - यदि आप कम्पाइल नहीं करना चाहते हैं, तो आप इस चरण को छोड़ सकते हैं।
+   - यदि आप इसे कम्पाइल नहीं करना चाहते हैं, तो आप इस चरण को छोड़ सकते हैं।
 
    ```bash
 
@@ -114,15 +123,15 @@ NVIDIA CUDNN 9.4 की lib, bin, और include फाइल्स को NVIDI
 
    ```
 
-   - [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip) डाउनलोड करें।
+   - डाउनलोड करें [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - onnxruntime-win-x64-gpu-1.19.2.zip को अनज़िप करें और इसे **ort** नाम दें, फिर ort फोल्डर को onnxruntime-genai में कॉपी करें।
+   - onnxruntime-win-x64-gpu-1.19.2.zip को अनज़िप करें, इसे **ort** नाम दें, और ort फ़ोल्डर को onnxruntime-genai में कॉपी करें।
 
-   - Windows Terminal का उपयोग करें, VS 2022 के लिए डेवलपर कमांड प्रॉम्प्ट पर जाएं और onnxruntime-genai में जाएं।
+   - Windows Terminal का उपयोग करते हुए, Developer Command Prompt for VS 2022 पर जाएं और onnxruntime-genai पर जाएं।
 
 ![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.hi.png)
 
-   - इसे अपने Python पर्यावरण के साथ कम्पाइल करें।
+   - इसे अपने Python एनवायरनमेंट के साथ कम्पाइल करें।
 
    ```bash
 
@@ -138,4 +147,4 @@ NVIDIA CUDNN 9.4 की lib, bin, और include फाइल्स को NVIDI
    ```
 
 **अस्वीकरण**:  
-यह दस्तावेज़ मशीन-आधारित एआई अनुवाद सेवाओं का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या अशुद्धियां हो सकती हैं। मूल भाषा में लिखा गया मूल दस्तावेज़ प्रामाणिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता सुनिश्चित करने का प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या अशुद्धियां हो सकती हैं। मूल भाषा में उपलब्ध मूल दस्तावेज़ को प्रामाणिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।

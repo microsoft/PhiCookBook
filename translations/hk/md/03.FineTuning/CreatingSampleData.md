@@ -1,12 +1,21 @@
-# 透過下載 Hugging Face 的數據集及相關圖片生成圖像數據集
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "44a77501fe39a2eb2b776dfdf9953b67",
+  "translation_date": "2025-04-04T18:47:38+00:00",
+  "source_file": "md\\03.FineTuning\\CreatingSampleData.md",
+  "language_code": "hk"
+}
+-->
+# 下載 Hugging Face 數據集並生成圖片數據集
 
-### 概覽
+### 概述
 
-此腳本通過下載所需圖片，過濾掉無法成功下載圖片的行，並將數據集保存為 CSV 文件，來準備機器學習所需的數據集。
+這個腳本透過下載所需的圖片、過濾掉下載失敗的行，並將數據集保存為 CSV 文件，為機器學習準備數據集。
 
 ### 前置條件
 
-在運行此腳本之前，請確保已安裝以下庫：`Pandas`、`Datasets`、`requests`、`PIL` 和 `io`。此外，需將第 2 行的 `'Insert_Your_Dataset'` 替換為來自 Hugging Face 的數據集名稱。
+在運行此腳本之前，請確保已安裝以下庫：`Pandas`、`Datasets`、`requests`、`PIL` 和 `io`。此外，需將第 2 行的 `'Insert_Your_Dataset'` 替換為你在 Hugging Face 上的數據集名稱。
 
 所需庫：
 
@@ -20,7 +29,7 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### 功能介紹
+### 功能
 
 此腳本執行以下步驟：
 
@@ -33,33 +42,31 @@ from io import BytesIO
 
 ### Custom Function
 
-The `download_image()` 函數從 Hugging Face 下載數據集。
-2. 過濾掉無法成功下載圖片的行。
-3. 將過濾後的數據集保存為 CSV 文件。
+The `download_image()` 函數從 Hugging Face 下載數據集。`download_image()` 函數透過 Pillow 圖片庫 (PIL) 和 `io` 模塊，從 URL 下載圖片並保存到本地。如果圖片成功下載，返回 True，否則返回 False。如果請求失敗，該函數會拋出異常並提供錯誤信息。
 
-` function, and appending the filtered row to a new DataFrame called ` 函數通過 URL 下載圖片，並使用 Pillow 圖像庫（PIL）及 `io` 模組將圖片保存至本地。如果圖片成功下載，則返回 True，否則返回 False。當請求失敗時，該函數還會拋出包含錯誤訊息的異常。
+### 如何運作
 
-### 運作方式
-
-`download_image` 函數接收兩個參數：  
-- `image_url`：要下載圖片的 URL。  
-- `save_path`：下載後圖片保存的路徑。
+`download_image` 函數有兩個參數：`image_url` 是要下載的圖片 URL，`save_path` 是下載後保存圖片的路徑。
 
 以下是該函數的運作方式：
 
-1. 首先使用 `requests.get` 方法向 `image_url` 發送 GET 請求，從 URL 獲取圖片數據。
-2. 使用 `response.raise_for_status()` 檢查請求是否成功。如果響應的狀態碼顯示錯誤（例如 404 - 未找到），則拋出異常，確保只有在請求成功時才繼續下載圖片。
-3. 將圖片數據傳遞給 PIL（Python Imaging Library）的 `Image.open` 方法，該方法會從圖片數據中創建一個 Image 對象。
-4. 使用 `image.save(save_path)` 將圖片保存到指定的 `save_path`，其中應包含目標文件名及擴展名。
-5. 最後，函數返回 True，表示圖片成功下載並保存。如果過程中出現異常，則捕獲異常，打印失敗的錯誤訊息，並返回 False。
+- 首先，使用 `requests.get` 方法向 `image_url` 發送 GET 請求以獲取圖片數據。
 
-此函數用於從 URL 下載圖片並保存至本地。它在下載過程中處理潛在的錯誤，並提供有關下載是否成功的反饋。
+- 使用 `response.raise_for_status()` 檢查請求是否成功。如果狀態碼顯示錯誤（例如 404 - 未找到），則拋出異常。這確保只有在請求成功時才進行圖片下載。
 
-需要注意的是，該函數使用 `requests` 庫進行 HTTP 請求，使用 PIL 庫處理圖像，並使用 `BytesIO` 類作為字節流處理圖片數據。
+- 圖片數據接著通過 PIL 模塊的 `Image.open` 方法處理，該方法從數據中創建圖片對象。
+
+- 使用 `image.save(save_path)` 將圖片保存到指定的路徑，路徑應包含所需的文件名和擴展名。
+
+- 最後，該函數返回 True，表示圖片已成功下載並保存。如果過程中發生任何異常，則捕獲異常，打印失敗信息並返回 False。
+
+這個函數適合從 URL 下載圖片並保存到本地。它處理下載過程中的潛在錯誤，並提供是否成功下載的反饋。
+
+值得注意的是，`requests` 庫用於發送 HTTP 請求，PIL 庫用於處理圖片，而 `BytesIO` 類則用於以字節流形式處理圖片數據。
 
 ### 結論
 
-此腳本提供了一種方便的方法來準備機器學習所需的數據集，通過下載所需圖片、過濾掉下載失敗的行，並將數據集保存為 CSV 文件。
+這個腳本提供了一種便捷的方法，透過下載所需圖片、過濾掉下載失敗的行，並將數據集保存為 CSV 文件，為機器學習準備數據集。
 
 ### 示例腳本
 
@@ -124,7 +131,7 @@ print(f"Dataset and images saved to {dataset_dir}")
 [生成新數據集腳本](../../../../code/04.Finetuning/generate_dataset.py)
 
 ### 示例數據集
-[微調 LORA 示例中的數據集範例](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+[使用 LORA 微調的示例數據集](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
-**免責聲明**:  
-此文件是使用機器翻譯人工智能服務進行翻譯的。儘管我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原文的母語版本應被視為權威來源。對於關鍵信息，建議尋求專業的人手翻譯。我們對因使用此翻譯而產生的任何誤解或誤釋不承擔責任。
+**免責聲明**：  
+此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議尋求專業的人類翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解讀概不負責。

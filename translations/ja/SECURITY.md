@@ -1,40 +1,49 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "cc205495d4eace1fabcdee963024069f",
+  "translation_date": "2025-04-04T11:23:05+00:00",
+  "source_file": "SECURITY.md",
+  "language_code": "ja"
+}
+-->
 ## セキュリティ
 
-Microsoft は、ソフトウェア製品やサービスのセキュリティを非常に重視しています。これには、[Microsoft](https://github.com/Microsoft)、[Azure](https://github.com/Azure)、[DotNet](https://github.com/dotnet)、[AspNet](https://github.com/aspnet)、および [Xamarin](https://github.com/xamarin) を含む GitHub 組織を通じて管理されるすべてのソースコードリポジトリが含まれます。
+Microsoftは、ソフトウェア製品およびサービスのセキュリティを重視しており、GitHubの組織を通じて管理されるすべてのソースコードリポジトリを含みます。これには、[Microsoft](https://github.com/Microsoft)、[Azure](https://github.com/Azure)、[DotNet](https://github.com/dotnet)、[AspNet](https://github.com/aspnet)、および[Xamarin](https://github.com/xamarin)が含まれます。
 
-もし、[Microsoft のセキュリティ脆弱性の定義](https://aka.ms/security.md/definition)に該当するセキュリティ脆弱性を Microsoft 所有のリポジトリ内で発見した場合、以下の手順に従って報告してください。
+もし、[Microsoftのセキュリティ脆弱性の定義](https://aka.ms/security.md/definition)に該当するMicrosoft所有のリポジトリにおけるセキュリティ脆弱性を発見した場合は、以下の手順に従って報告してください。
 
 ## セキュリティ問題の報告
 
-**セキュリティ脆弱性を公開 GitHub Issue を通じて報告しないでください。**
+**セキュリティ脆弱性を公開されたGitHubのIssueで報告しないでください。**
 
-代わりに、Microsoft Security Response Center (MSRC) に [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report) から報告してください。
+代わりに、Microsoft Security Response Center (MSRC)に以下のリンクから報告してください：[https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report)。
 
-ログインせずに送信することを希望する場合は、[secure@microsoft.com](mailto:secure@microsoft.com) にメールを送信してください。可能であれば、メッセージを弊社の PGP キーで暗号化してください。PGP キーは [Microsoft Security Response Center PGP Key ページ](https://aka.ms/security.md/msrc/pgp) からダウンロードできます。
+ログインせずに提出したい場合は、[secure@microsoft.com](mailto:secure@microsoft.com)にメールを送信してください。可能であれば、メッセージを当社のPGPキーで暗号化してください。PGPキーは[Microsoft Security Response Center PGP Key page](https://aka.ms/security.md/msrc/pgp)からダウンロードできます。
 
-通常、24 時間以内に応答を受け取ることができます。万が一応答がない場合は、最初のメッセージが受信されていることを確認するために、メールで再度お問い合わせください。追加情報については [microsoft.com/msrc](https://www.microsoft.com/msrc) をご覧ください。
+通常、24時間以内に返信を受け取ることができます。万が一返信がない場合は、元のメッセージが受信されたことを確認するためにメールで追跡してください。追加情報は[Microsoft Security Response Center](https://www.microsoft.com/msrc)で確認できます。
 
-報告の際には、以下に記載されている情報（可能な限り詳細に）を含めていただけると、問題の性質と範囲をより正確に理解する助けになります：
+以下の情報をできるだけ詳しく提供していただけると、問題の性質と範囲をより正確に理解することができます：
 
-  * 問題の種類（例: バッファオーバーフロー、SQL インジェクション、クロスサイトスクリプティングなど）
-  * 問題が発生するソースファイルの完全なパス
-  * 影響を受けるソースコードの場所（タグ/ブランチ/コミットまたは直接の URL）
-  * 問題を再現するために必要な特別な設定
-  * 問題を再現するための手順
-  * 概念実証またはエクスプロイトコード（可能な場合）
-  * 問題の影響（攻撃者がどのように悪用できるかを含む）
+  * 問題の種類（例: バッファオーバーフロー、SQLインジェクション、クロスサイトスクリプティングなど）
+  * 問題が発生する関連ソースファイルの完全なパス
+  * 影響を受けるソースコードの場所（タグ/ブランチ/コミットまたは直接URL）
+  * 問題を再現するために必要な特別な構成
+  * 問題を再現するためのステップバイステップの手順
+  * 証明コードやエクスプロイトコード（可能であれば）
+  * 問題の影響、攻撃者が問題をどのように悪用する可能性があるか
 
-この情報は、報告内容の優先順位を迅速に決定するのに役立ちます。
+これらの情報を提供していただくことで、報告内容を迅速に処理することができます。
 
-バグバウンティプログラムへの報告の場合、より詳細な報告は高い報奨金につながる可能性があります。現在のプログラムの詳細については [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty) ページをご覧ください。
+バグ報奨金プログラムに報告する場合、より詳細な報告はより高額な報奨金につながる可能性があります。現在のプログラムについて詳しくは、[Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty)ページをご覧ください。
 
 ## 推奨言語
 
-通信は英語で行うことを推奨しています。
+すべてのコミュニケーションは英語で行うことを推奨します。
 
 ## ポリシー
 
-Microsoft は [Coordinated Vulnerability Disclosure](https://aka.ms/security.md/cvd) の原則に従っています。
+Microsoftは、[Coordinated Vulnerability Disclosure](https://aka.ms/security.md/cvd)の原則に従います。
 
 **免責事項**:  
-この文書は、AIによる機械翻訳サービスを使用して翻訳されています。正確性を期すよう努めておりますが、自動翻訳には誤りや不正確な表現が含まれる可能性があります。原文（原言語の文書）が信頼できる情報源として優先されるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤認について、当社は一切の責任を負いかねます。
+この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確な箇所が含まれる場合があります。元の言語で記述された文書が正式な情報源として考慮されるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤読について、当方は一切責任を負いません。

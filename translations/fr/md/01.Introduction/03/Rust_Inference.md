@@ -1,8 +1,17 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
+  "translation_date": "2025-03-27T08:04:28+00:00",
+  "source_file": "md\\01.Introduction\\03\\Rust_Inference.md",
+  "language_code": "fr"
+}
+-->
 # Inférence multiplateforme avec Rust
 
-Ce tutoriel nous guidera à travers le processus d'inférence en utilisant Rust et le [framework Candle ML](https://github.com/huggingface/candle) de HuggingFace. Utiliser Rust pour l'inférence offre plusieurs avantages, notamment en comparaison avec d'autres langages de programmation. Rust est réputé pour ses performances élevées, comparables à celles de C et C++. Cela en fait un excellent choix pour les tâches d'inférence, qui peuvent être très exigeantes en termes de calcul. Cela est particulièrement dû à ses abstractions sans coût et à sa gestion efficace de la mémoire, sans surcharge liée à un ramasse-miettes. Les capacités multiplateformes de Rust permettent de développer du code qui fonctionne sur divers systèmes d'exploitation, notamment Windows, macOS, Linux, ainsi que sur des systèmes d'exploitation mobiles, sans nécessiter de modifications significatives du code.
+Ce tutoriel nous guidera à travers le processus d'inférence en utilisant Rust et le [framework Candle ML](https://github.com/huggingface/candle) de HuggingFace. Utiliser Rust pour l'inférence présente plusieurs avantages, notamment en comparaison avec d'autres langages de programmation. Rust est reconnu pour ses performances élevées, comparables à celles de C et C++. Cela en fait un excellent choix pour les tâches d'inférence, souvent très gourmandes en calcul. En particulier, cela est dû aux abstractions sans coût et à la gestion efficace de la mémoire, sans surcharge liée à la collecte des déchets. Les capacités multiplateformes de Rust permettent de développer du code fonctionnant sur divers systèmes d'exploitation, tels que Windows, macOS, Linux, ainsi que sur des systèmes mobiles, sans nécessiter de modifications importantes dans la base de code.
 
-La condition préalable pour suivre ce tutoriel est [d'installer Rust](https://www.rust-lang.org/tools/install), ce qui inclut le compilateur Rust et Cargo, le gestionnaire de paquets Rust.
+Le prérequis pour suivre ce tutoriel est [d'installer Rust](https://www.rust-lang.org/tools/install), ce qui inclut le compilateur Rust et Cargo, le gestionnaire de paquets de Rust.
 
 ## Étape 1 : Créer un nouveau projet Rust
 
@@ -32,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## Étape 2 : Configurer les paramètres de base
 
-Dans le fichier main.rs, nous allons configurer les paramètres initiaux pour notre inférence. Ils seront tous codés en dur pour simplifier, mais nous pourrons les modifier selon les besoins.
+Dans le fichier main.rs, nous allons configurer les paramètres initiaux pour notre inférence. Ils seront tous codés en dur pour simplifier, mais nous pourrons les modifier selon nos besoins.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -46,13 +55,13 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature** : Contrôle le caractère aléatoire du processus d'échantillonnage.
+- **temperature** : Contrôle le degré de hasard du processus de génération.
 - **sample_len** : Spécifie la longueur maximale du texte généré.
 - **top_p** : Utilisé pour l'échantillonnage nucleus afin de limiter le nombre de tokens pris en compte à chaque étape.
-- **repeat_last_n** : Contrôle le nombre de tokens pris en compte pour appliquer une pénalité afin d'éviter les séquences répétitives.
-- **repeat_penalty** : La valeur de pénalité pour décourager les tokens répétés.
-- **seed** : Une graine aléatoire (nous pouvons utiliser une valeur constante pour une meilleure reproductibilité).
-- **prompt** : Le texte initial pour démarrer la génération. Notez que nous demandons au modèle de générer un haïku sur le hockey sur glace et que nous l'encadrons avec des tokens spéciaux pour indiquer les parties utilisateur et assistant de la conversation. Le modèle complétera ensuite le prompt avec un haïku.
+- **repeat_last_n** : Contrôle le nombre de tokens pris en compte pour appliquer une pénalité et éviter les séquences répétitives.
+- **repeat_penalty** : Valeur de pénalité pour décourager les tokens répétés.
+- **seed** : Une graine aléatoire (nous pourrions utiliser une valeur constante pour une meilleure reproductibilité).
+- **prompt** : Le texte initial pour démarrer la génération. Remarquez que nous demandons au modèle de générer un haïku sur le hockey sur glace, et que nous l'encadrons avec des tokens spéciaux pour indiquer les parties utilisateur et assistant de la conversation. Le modèle complétera ensuite le prompt avec un haïku.
 - **device** : Nous utilisons le CPU pour les calculs dans cet exemple. Candle prend également en charge l'exécution sur GPU avec CUDA et Metal.
 
 ## Étape 3 : Télécharger/Préparer le modèle et le tokenizer
@@ -83,7 +92,7 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Nous chargeons les poids quantifiés du modèle en mémoire et initialisons le modèle Phi-3. Cette étape consiste à lire les poids du modèle depuis le fichier `gguf` et à configurer le modèle pour l'inférence sur le périphérique spécifié (CPU dans ce cas).
+Nous chargeons les poids du modèle quantifié en mémoire et initialisons le modèle Phi-3. Cette étape consiste à lire les poids du modèle à partir du fichier `gguf` et à configurer le modèle pour l'inférence sur le périphérique spécifié (CPU dans ce cas).
 
 ## Étape 5 : Traiter le prompt et préparer l'inférence
 
@@ -111,9 +120,9 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-Dans cette étape, nous tokenisons le prompt d'entrée et le préparons pour l'inférence en le convertissant en une séquence d'IDs de tokens. Nous initialisons également les valeurs `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`. Chaque token est converti en tenseur et passé à travers le modèle pour obtenir les logits.
+À cette étape, nous tokenisons le prompt d'entrée et le préparons pour l'inférence en le convertissant en une séquence d'ID de tokens. Nous initialisons également les valeurs `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`. Chaque token est converti en tenseur et passé dans le modèle pour obtenir les logits.
 
-La boucle traite chaque token dans le prompt, met à jour le processeur de logits et prépare le prochain token à générer.
+La boucle traite chaque token du prompt, met à jour le processeur de logits et prépare la génération du prochain token.
 
 ## Étape 6 : Inférence
 
@@ -151,14 +160,14 @@ for index in 0..to_sample {
 }
 ```
 
-Dans la boucle d'inférence, nous générons les tokens un par un jusqu'à atteindre la longueur d'échantillon souhaitée ou rencontrer le token de fin de séquence. Le token suivant est converti en tenseur et passé à travers le modèle, tandis que les logits sont traités pour appliquer des pénalités et des échantillonnages. Ensuite, le token suivant est échantillonné, décodé et ajouté à la séquence.
-Pour éviter le texte répétitif, une pénalité est appliquée aux tokens répétés en fonction des paramètres `repeat_last_n` and `repeat_penalty`.
+Dans la boucle d'inférence, nous générons les tokens un par un jusqu'à atteindre la longueur d'échantillon souhaitée ou rencontrer le token de fin de séquence. Le prochain token est converti en tenseur et passé dans le modèle, tandis que les logits sont traités pour appliquer des pénalités et des échantillonnages. Ensuite, le prochain token est échantillonné, décodé et ajouté à la séquence.
+Pour éviter les textes répétitifs, une pénalité est appliquée aux tokens répétés en fonction des paramètres `repeat_last_n` and `repeat_penalty`.
 
 Enfin, le texte généré est affiché au fur et à mesure qu'il est décodé, assurant une sortie en temps réel.
 
 ## Étape 7 : Exécuter l'application
 
-Pour exécuter l'application, lancez la commande suivante dans le terminal :
+Pour exécuter l'application, exécutez la commande suivante dans le terminal :
 
 ```bash
 cargo run --release
@@ -182,9 +191,9 @@ Swish of sticks now alive.
 
 ## Conclusion
 
-En suivant ces étapes, nous pouvons générer du texte en utilisant le modèle Phi-3 avec Rust et Candle en moins de 100 lignes de code. Le code gère le chargement du modèle, la tokenisation et l'inférence, en s'appuyant sur les tenseurs et le traitement des logits pour générer un texte cohérent basé sur le prompt d'entrée.
+En suivant ces étapes, nous pouvons générer du texte en utilisant le modèle Phi-3 avec Rust et Candle en moins de 100 lignes de code. Le code gère le chargement du modèle, la tokenisation et l'inférence, en exploitant les tenseurs et le traitement des logits pour produire un texte cohérent basé sur le prompt d'entrée.
 
-Cette application console peut s'exécuter sur Windows, Linux et macOS. Grâce à la portabilité de Rust, le code peut également être adapté en une bibliothèque qui fonctionnerait dans des applications mobiles (puisque nous ne pouvons pas exécuter d'applications console sur ces plateformes).
+Cette application console peut fonctionner sur Windows, Linux et macOS. Grâce à la portabilité de Rust, le code peut également être adapté en une bibliothèque qui fonctionnerait à l'intérieur d'applications mobiles (les applications console ne sont pas adaptées dans ce cas, après tout).
 
 ## Annexe : code complet
 
@@ -309,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Vous pouvez consulter le [dépôt officiel des exemples Candle](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) pour plus d'exemples sur l'utilisation du modèle Phi-3 avec Rust et Candle, y compris des approches alternatives pour l'inférence.
+> Vous pouvez consulter le dépôt officiel des [exemples Candle](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) pour plus d'exemples sur l'utilisation du modèle Phi-3 avec Rust et Candle, y compris des approches alternatives pour l'inférence.
 
 **Avertissement** :  
-Ce document a été traduit à l'aide de services de traduction automatique basés sur l'IA. Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

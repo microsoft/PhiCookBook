@@ -1,6 +1,15 @@
-## **Phi-4-mini ကို အကြံဉာဏ်ပေး ကျွမ်းကျင်သူအဖြစ် အသုံးပြုခြင်း**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "7fdd22719901a23386b3c56bb02794e3",
+  "translation_date": "2025-04-04T12:59:53+00:00",
+  "source_file": "md\\02.Application\\03.AdvancedReasoning\\Phi4\\AdvancedResoningPhi4mini\\README.md",
+  "language_code": "mo"
+}
+-->
+## **Folosirea Phi-4-mini ca Expert în Raționament**
 
-Phi-4 ရဲ့ အဓိက အစွမ်းထက် လက္ခဏာတွေထဲက တစ်ခုကတော့ အကြံဉာဏ်ပေး စွမ်းရည် အရမ်းပြင်းထန်မှု ဖြစ်ပါတယ်။ Phi-4-mini ရဲ့ အကြံဉာဏ်ပေး စွမ်းရည် ပြင်းထန်မှုကို စမ်းသပ်ကြည့်ရအောင်။
+Una dintre principalele caracteristici ale Phi-4 este capacitatea sa puternică de raționament. Să analizăm această abilitate impresionantă prin Phi-4-mini.
 
 ```python
 
@@ -46,4 +55,4 @@ print(output[0]['generated_text'])
 
 ```
 
-It seems you might be referring to a language or code by "mo." Could you please clarify what you mean by "mo"? Are you referring to a specific language, such as Moldovan (Romanian), or something else? This will help me provide an accurate translation.
+It seems you are asking for a translation into "mo," but could you clarify what "mo" refers to? Are you referring to Maori, Mongolian, or another language? Let me know, and I'd be happy to assist!

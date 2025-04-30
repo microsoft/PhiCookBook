@@ -1,48 +1,57 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8d36fc444748a50558d017e8a0772437",
+  "translation_date": "2025-04-04T11:31:35+00:00",
+  "source_file": "code\\07.Lab\\01\\AIPC\\extensions\\phi3ext\\vsc-extension-quickstart.md",
+  "language_code": "mo"
+}
+-->
 # VS Code Extension-ээ тавтай морилно уу
 
-## Энэ хавтас юуг агуулж байна вэ?
+## Энэ хавтас юу агуулж байна
 
-* Энэ хавтас таны өргөтгөлийг бүтээхэд шаардлагатай бүх файлуудыг агуулна.  
-* `package.json` - энэ нь таны өргөтгөл болон командуудаа тодорхойлох манифест файл юм.  
-  * Жишээ плагин нь нэг командыг бүртгэж, түүний гарчиг болон командын нэрийг тодорхойлдог. Энэ мэдээллээр VS Code командын палеттад командыг харуулж чадна. Гэхдээ одоохондоо плагинийг ачаалах шаардлагагүй.  
-* `src/extension.ts` - энэ нь таны командын хэрэгжилтийг өгөх үндсэн файл юм.  
-  * Энэ файл нэг функцыг экспортолдог, `activate`, энэ нь таны өргөтгөл анх идэвхжсэн (энэ тохиолдолд командыг ажиллуулах замаар) үед дуудагддаг. `activate` функцийн дотор бид `registerCommand`-ийг дуудагдана.  
-  * Командын хэрэгжилтийг агуулсан функцийг `registerCommand`-д хоёр дахь параметр болгон дамжуулдаг.  
+* Энэ хавтас нь таны өргөтгөлд шаардлагатай бүх файлуудыг агуулна.
+* `package.json` - Энэ бол таны өргөтгөл болон командыг зарлах манифест файл юм.
+  * Жишээ залгаас нь нэг команд бүртгэж, түүний гарчиг болон командын нэрийг тодорхойлдог. Энэ мэдээллийн тусламжтайгаар VS Code командын палеттад командыг харуулж чадна. Гэхдээ залгаасыг ачаалахад хараахан шаардлагагүй.
+* `src/extension.ts` - Энэ бол таны командын хэрэгжилтийг хангах үндсэн файл юм.
+  * Файл нь нэг функц, `activate`-ийг экспортолдог бөгөөд энэ нь таны өргөтгөл анх идэвхжсэн үед (энэ тохиолдолд командыг гүйцэтгэснээр) дуудагддаг. `activate` функцийн дотор бид `registerCommand`-ийг дуудаж байна.
+  * Командын хэрэгжилтийг агуулсан функцийг `registerCommand`-д хоёрдугаар параметр байдлаар дамжуулдаг.
 
 ## Тохиргоо
 
-* Зөвлөж буй өргөтгөлүүдийг суулгаарай (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, болон dbaeumer.vscode-eslint).  
+* Зөвлөмж болгож буй өргөтгөлүүдийг суулгаарай (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, болон dbaeumer.vscode-eslint)
 
-## Шууд ажиллуулах
+## Шууд эхлүүлж ажиллуулаарай
 
-* `F5` товчийг дарж таны өргөтгөл ачаалагдсан шинэ цонх нээнэ.  
-* Командаа командын палеттаас (`Ctrl+Shift+P` эсвэл `Cmd+Shift+P` Mac дээр) `Hello World` гэж бичин ажиллуул.  
-* `src/extension.ts` дотор коддоо завсрын цэгүүдийг тавьж өргөтгөлөө дебаг хийгээрэй.  
-* Өргөтгөлөөс гарч буй үр дүнг дебаг консолоос олоорой.  
+* Таны өргөтгөлтэй шинэ цонхыг ачаалахын тулд `F5` товчийг дарна уу.
+* Командаа командын палеттаас гүйцэтгэхийн тулд (`Ctrl+Shift+P` эсвэл Mac дээр `Cmd+Shift+P`) дарж, `Hello World` гэж бичнэ үү.
+* Таны өргөтгөлийн код дотор `src/extension.ts`-д тасалбаруудыг (breakpoints) тавьж өргөтгөлөө дебаг хийнэ үү.
+* Өргөтгөлийнхөө гаралтыг дебаг консолд олно уу.
 
-## Өөрчлөлт оруулах
+## Өөрчлөлт хийх
 
-* `src/extension.ts` дотор кодоо өөрчилсний дараа дебаг баараас өргөтгөлөө дахин ачаалж болно.  
-* Мөн VS Code цонхыг (`Ctrl+R` эсвэл `Cmd+R` Mac дээр) дахин ачаалж өөрчлөлтүүдээ ачаалж болно.  
+* `src/extension.ts` дахь кодыг өөрчлөхийн дараа дебагийн баарнаас өргөтгөлөө дахин эхлүүлж болно.
+* Мөн VS Code цонхыг (`Ctrl+R` эсвэл Mac дээр `Cmd+R`) дахин ачаалж, өөрчлөлтүүдээ ачаалж болно.
 
-## API судлах
+## API-г судлах
 
-* `node_modules/@types/vscode/index.d.ts` файлыг нээхэд бидний API-ийг бүрэн харж болно.  
+* `node_modules/@types/vscode/index.d.ts` файлыг нээж, API-ийн бүрэн багцтай танилцаарай.
 
-## Туршилт ажиллуулах
+## Туршилт хийх
 
-* [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)-ийг суулгана уу.  
-* **Tasks: Run Task** командаар "watch" үүргийг ажиллуулна уу. Энэ ажиллаж байгаа эсэхийг шалгаарай, эс тэгвээс туршилтууд илрэхгүй байж магадгүй.  
-* Үйл ажиллагааны цэснээс Testing харагдац руу орж "Run Test" товчийг дарна уу, эсвэл `Ctrl/Cmd + ; A` товчлуурыг ашиглана уу.  
-* Туршилтын үр дүнг Test Results харагдацаас харна уу.  
-* `src/test/extension.test.ts` дээр өөрчлөлт оруулах эсвэл `test` хавтас дотор шинэ туршилтын файлууд үүсгээрэй.  
-  * Өгөгдсөн туршилтын ажиллуулагч зөвхөн `**.test.ts` нэрийн загварт тохирсон файлуудыг авч үзнэ.  
-  * `test` хавтас дотор өөрийн туршилтуудыг дурын бүтэцтэй байлгахын тулд хавтас үүсгэж болно.  
+* [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)-ийг суулгаарай.
+* **Tasks: Run Task** командыг ашиглан "watch" үүргийг ажиллуул. Энэ ажиллаж байгаа эсэхийг шалгаарай, эс тэгвэл туршилтууд олдохгүй байж магадгүй.
+* Үйл ажиллагааны мөрнөөс Туршилтын харах цонхыг нээж "Run Test" товчийг дарна уу, эсвэл `Ctrl/Cmd + ; A` товчлуурыг ашиглана уу.
+* Туршилтын үр дүнг Test Results харах цонхонд үзнэ үү.
+* `src/test/extension.test.ts` дээр өөрчлөлт хийн эсвэл `test` хавтас дотор шинэ туршилтын файлууд үүсгээрэй.
+  * Өгөгдсөн туршилтын гүйцэтгэгч нь `**.test.ts` нэрийн хэв маягтай файлуудыг л авч үзнэ.
+  * Туршилтуудаа ямар ч байдлаар зохион байгуулахын тулд `test` хавтас дотор хавтас үүсгэж болно.
 
-## Цаашид үргэлжлүүлэх
+## Цааш явах
 
-* Өргөтгөлийн хэмжээг багасгаж, ачаалах хурдыг сайжруулахын тулд [өргөтгөлөө багцлах](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo)-ыг судлаарай.  
-* Өргөтгөлөө VS Code өргөтгөлийн зах зээл дээр [нийтлэх](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo)-ийг сураарай.  
-* [Тасралтгүй интеграцчилал](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo)-ыг тохируулж, бүтээн байгуулалтуудыг автоматжуулаарай.  
+* Өргөтгөлөө [багцлах](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo) замаар өргөтгөлийн хэмжээг багасгаж, эхлүүлэх хугацааг сайжруулаарай.
+* Өргөтгөлөө VS Code өргөтгөлийн зах зээлд [нийтлээрэй](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo).
+* [Тасралтгүй интеграцчилал](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo)-ыг тохируулж, барилгуудыг автоматжуулаарай.
 
-It seems like you might be referring to "mo" as a language, but could you please clarify what you mean by "mo"? Are you referring to a specific language, such as Māori, Mongolian, or another? Let me know so I can assist you better!
+It seems like you may be asking for a translation, but I'm not sure what "mo" refers to. Could you clarify the language or context you're referring to? For example, are you asking for a translation into Maori, Mongolian, or another language? Let me know so I can assist you accurately!

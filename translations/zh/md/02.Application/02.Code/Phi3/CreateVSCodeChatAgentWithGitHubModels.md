@@ -1,48 +1,57 @@
-# **使用 GitHub Models 的 Phi-3.5 创建你自己的 Visual Studio Code Chat Copilot Agent**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "e8ff0378cb171924884b4abb3c2a8c37",
+  "translation_date": "2025-04-03T07:40:59+00:00",
+  "source_file": "md\\02.Application\\02.Code\\Phi3\\CreateVSCodeChatAgentWithGitHubModels.md",
+  "language_code": "zh"
+}
+-->
+# **使用 GitHub Models 的 Phi-3.5 创建属于你的 Visual Studio Code Chat Copilot Agent**
 
-你是否正在使用 Visual Studio Code Copilot？尤其是在 Chat 模式中，你可以通过使用不同的 Agent 来提升在 Visual Studio Code 中创建、编写和维护项目的能力。Visual Studio Code 提供了一个 API，允许公司和个人根据自身业务需求创建不同的 Agent，从而扩展在各种专有领域的能力。在本文中，我们将重点介绍 GitHub Models 的 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)**，以创建你自己的 Visual Studio Code Agent。
+你是否在使用 Visual Studio Code Copilot？尤其是在聊天功能中，你可以利用不同的 Agent 来提升在 Visual Studio Code 中创建、编写和维护项目的能力。Visual Studio Code 提供了一个 API，允许企业和个人根据自己的业务需求创建不同的 Agent，从而在各种专有领域扩展功能。在本文中，我们将重点介绍 GitHub Models 的 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)**，来创建属于你的 Visual Studio Code Agent。
 
 ## **关于 GitHub Models 的 Phi-3.5**
 
-我们知道，Phi-3/3.5-mini-instruct 在 Phi-3/3.5 系列中具有强大的代码理解和生成能力，并且在某些方面优于 Gemma-2-9b 和 Mistral-Nemo-12B-instruct-2407。
+我们知道，Phi-3/3.5-mini-instruct 在 Phi-3/3.5 系列中具有强大的代码理解和生成能力，相较于 Gemma-2-9b 和 Mistral-Nemo-12B-instruct-2407 具有明显优势。
 
 ![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.zh.png)
 
-最新的 GitHub Models 已经提供了对 Phi-3.5-mini-instruct (128k) 和 Phi-3.5-vision-instruct (128k) 模型的访问。开发者可以通过 OpenAI SDK、Azure AI Inference SDK 和 REST API 进行访问。
+最新的 GitHub Models 已经提供了对 Phi-3.5-mini-instruct (128k) 和 Phi-3.5-vision-instruct (128k) 模型的访问权限。开发者可以通过 OpenAI SDK、Azure AI Inference SDK 和 REST API 进行访问。
 
 ![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.zh.png)
 
-***注意：*** 推荐使用 Azure AI Inference SDK，因为它在生产环境中可以更好地与 Azure Model Catalog 切换。
+***注意：*** 推荐使用 Azure AI Inference SDK，因为它可以更好地与生产环境中的 Azure Model Catalog 切换。
 
-以下是 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)** 在对接 GitHub Models 后的代码生成场景中的表现，同时也为接下来的示例做准备。
+以下是 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)** 在与 GitHub Models 对接后，在代码生成场景中的表现，这也为后续示例做了准备。
 
-**示例：GitHub Models 的 Phi-3.5-mini-instruct (128k) 根据提示生成代码** ([点击链接](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**演示：GitHub Models Phi-3.5-mini-instruct (128k) 从 Prompt 生成代码** ([点击此链接](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**示例：GitHub Models 的 Phi-3.5-vision-instruct (128k) 根据图片生成代码** ([点击链接](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**演示：GitHub Models Phi-3.5-vision-instruct (128k) 从图像生成代码** ([点击此链接](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 ## **关于 GitHub Copilot Chat Agent**
 
-GitHub Copilot Chat Agent 能够根据代码在不同的项目场景中完成各种任务。系统有四种 Agent：workspace、github、terminal、vscode。
+GitHub Copilot Chat Agent 可以基于代码在不同项目场景中完成不同任务。系统目前支持四种 Agent：workspace、github、terminal、vscode。
 
 ![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.zh.png)
 
-通过在 Agent 名称前添加‘@’，你可以快速完成对应的工作。对于企业来说，如果将自身业务相关的内容（如需求、编码、测试规范和发布）添加到系统中，就可以基于 GitHub Copilot 拥有更强大的企业私有功能。
+通过在 Agent 名称前加上 ‘@’，可以快速完成相应的工作。对于企业来说，如果添加与自身业务相关的内容（如需求、编码、测试规范和发布），可以基于 GitHub Copilot 拥有更强大的企业专属功能。
 
-Visual Studio Code Chat Agent 现在已经正式发布其 API，允许企业或企业开发者基于不同的软件业务生态系统开发 Agent。基于 Visual Studio Code Extension Development 的开发方式，你可以轻松接入 Visual Studio Code Chat Agent API 的接口。我们可以按照以下流程进行开发：
+Visual Studio Code Chat Agent 已正式发布其 API，允许企业或企业开发者根据不同的软件业务生态系统开发 Agent。基于 Visual Studio Code Extension Development 的开发方法，你可以轻松访问 Visual Studio Code Chat Agent API 的接口。我们可以按照以下流程进行开发。
 
 ![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.zh.png)
 
-开发场景支持接入第三方模型 API（如 GitHub Models、Azure Model Catalog 和基于开源模型自建的服务），还可以使用 GitHub Copilot 提供的 gpt-35-turbo、gpt-4 和 gpt-4o 模型。
+开发场景支持接入第三方模型 API（如 GitHub Models、Azure Model Catalog 和基于开源模型的自建服务），也可以使用 GitHub Copilot 提供的 gpt-35-turbo、gpt-4 和 gpt-4o 模型。
 
 ## **基于 Phi-3.5 添加一个名为 @phicoding 的 Agent**
 
-我们尝试整合 Phi-3.5 的编程能力来完成代码编写、图像生成代码等任务。围绕 Phi-3.5 构建一个名为 @PHI 的 Agent，以下是一些功能：
+我们尝试整合 Phi-3.5 的编程能力来完成代码编写、基于图像生成代码等任务。构建一个围绕 Phi-3.5 的 Agent - @PHI，以下是一些功能：
 
-1. 通过 **@phicoding /help** 命令，基于 GitHub Copilot 提供的 GPT-4o 生成自我介绍。
+1. 通过 **@phicoding /help** 命令，使用 GitHub Copilot 提供的 GPT-4o 生成自我介绍。
 
-2. 通过 **@phicoding /gen** 命令，基于 **Phi-3.5-mini-instruct (128k)** 生成不同编程语言的代码。
+2. 通过 **@phicoding /gen** 命令，使用 **Phi-3.5-mini-instruct (128k)** 为不同编程语言生成代码。
 
-3. 通过 **@phicoding /image** 命令，基于 **Phi-3.5-vision-instruct (128k)** 生成代码和图像补全。
+3. 通过 **@phicoding /image** 命令，使用 **Phi-3.5-vision-instruct (128k)** 生成基于图像的代码。
 
 ![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.zh.png)
 
@@ -64,7 +73,7 @@ yo code
 
 ```
 
-3. 打开创建的项目并修改 package.json。这里包括相关的说明和配置，以及 GitHub Models 的配置。注意，你需要在此处添加你的 GitHub Models token。
+3. 打开创建的项目并修改 package.json。这里包含相关说明和配置，以及 GitHub Models 的配置。注意，需要在此处添加你的 GitHub Models token。
 
 ```json
 
@@ -351,7 +360,7 @@ export function deactivate() {}
 
 ```
 
-6. 运行。
+6. 运行
 
 ***/help***
 
@@ -369,7 +378,7 @@ export function deactivate() {}
 
 ![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.zh.png)
 
-你可以下载示例代码：[点击这里](../../../../../../code/09.UpdateSamples/Aug/vscode)
+你可以下载示例代码：[点击此处](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **资源**
 
@@ -380,4 +389,4 @@ export function deactivate() {}
 3. 了解 Visual Studio Code Copilot Chat API：[https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **免责声明**：  
-本文件使用基于机器的人工智能翻译服务进行翻译。尽管我们尽力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的原始文件作为权威来源。对于关键信息，建议寻求专业人工翻译。因使用此翻译而导致的任何误解或误读，我们概不负责。
+本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言版本的文档作为权威来源。对于关键性信息，建议使用专业人工翻译。我们对因使用此翻译而产生的任何误解或误读不承担责任。

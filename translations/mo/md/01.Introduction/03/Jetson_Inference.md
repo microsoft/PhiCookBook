@@ -1,37 +1,46 @@
-# **Inference Phi-3 e Nvidia Jetson**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "5b3df6e1a9927e93cda92801eec65d33",
+  "translation_date": "2025-04-04T12:03:28+00:00",
+  "source_file": "md\\01.Introduction\\03\\Jetson_Inference.md",
+  "language_code": "mo"
+}
+-->
+# **Inference Phi-3 in Nvidia Jetson**
 
-Nvidia Jetson adalah rangkaian papan komputasi tertanam dari Nvidia. Model Jetson TK1, TX1, dan TX2 semuanya dilengkapi prosesor Tegra (atau SoC) dari Nvidia yang mengintegrasikan unit pemrosesan pusat (CPU) dengan arsitektur ARM. Jetson adalah sistem berdaya rendah yang dirancang untuk mempercepat aplikasi pembelajaran mesin. Nvidia Jetson digunakan oleh pengembang profesional untuk menciptakan produk AI terobosan di berbagai industri, serta oleh pelajar dan penggemar untuk pembelajaran AI langsung dan pembuatan proyek-proyek luar biasa. SLM diterapkan pada perangkat edge seperti Jetson, yang memungkinkan implementasi yang lebih baik untuk skenario aplikasi generatif AI industri.
+Nvidia Jetson est une série de cartes informatiques embarquées conçues par Nvidia. Les modèles Jetson TK1, TX1 et TX2 intègrent tous un processeur Tegra (ou SoC) de Nvidia, qui comprend une unité centrale de traitement (CPU) basée sur l'architecture ARM. Jetson est un système à faible consommation d'énergie, conçu pour accélérer les applications d'apprentissage automatique. Nvidia Jetson est utilisé par des développeurs professionnels pour créer des produits d'IA révolutionnaires dans tous les secteurs, ainsi que par des étudiants et des passionnés pour apprendre l'IA de manière pratique et réaliser des projets impressionnants. SLM est déployé dans des dispositifs périphériques tels que Jetson, permettant une meilleure mise en œuvre des scénarios d'application industrielle de l'IA générative.
 
-## Penerapan di NVIDIA Jetson:
-Pengembang yang bekerja pada robotika otonom dan perangkat tertanam dapat memanfaatkan Phi-3 Mini. Ukuran Phi-3 yang relatif kecil menjadikannya ideal untuk penerapan di perangkat edge. Parameter telah disetel dengan cermat selama pelatihan, memastikan akurasi tinggi dalam respons.
+## Déploiement sur NVIDIA Jetson :
+Les développeurs travaillant sur des robots autonomes et des dispositifs embarqués peuvent tirer parti de Phi-3 Mini. La taille relativement petite de Phi-3 le rend idéal pour un déploiement en périphérie. Les paramètres ont été méticuleusement ajustés pendant l'entraînement, garantissant une grande précision dans les réponses.
 
-### Optimasi TensorRT-LLM:
-[TensorRT-LLM library](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) dari NVIDIA mengoptimalkan inferensi model bahasa besar. Library ini mendukung jendela konteks panjang Phi-3 Mini, meningkatkan throughput dan latensi. Optimasi mencakup teknik seperti LongRoPE, FP8, dan inflight batching.
+### Optimisation TensorRT-LLM :
+La bibliothèque [TensorRT-LLM de NVIDIA](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) optimise l'inférence des modèles de langage de grande taille. Elle prend en charge la longue fenêtre de contexte de Phi-3 Mini, améliorant à la fois le débit et la latence. Les optimisations incluent des techniques telles que LongRoPE, FP8 et le batching en vol.
 
-### Ketersediaan dan Penerapan:
-Pengembang dapat menjelajahi Phi-3 Mini dengan jendela konteks 128K di [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Model ini dikemas sebagai NVIDIA NIM, sebuah layanan mikro dengan API standar yang dapat diterapkan di mana saja. Selain itu, terdapat [implementasi TensorRT-LLM di GitHub](https://github.com/NVIDIA/TensorRT-LLM).
+### Disponibilité et Déploiement :
+Les développeurs peuvent explorer Phi-3 Mini avec une fenêtre de contexte de 128K sur [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Il est proposé sous forme de NIM NVIDIA, un microservice avec une API standard pouvant être déployé partout. En outre, les [implémentations TensorRT-LLM sur GitHub](https://github.com/NVIDIA/TensorRT-LLM).
 
-## **1. Persiapan**
+## **1. Préparation**
 
 a. Jetson Orin NX / Jetson NX
 
 b. JetPack 5.1.2+
-
+   
 c. Cuda 11.8
-
+   
 d. Python 3.8+
 
-## **2. Menjalankan Phi-3 di Jetson**
+## **2. Exécution de Phi-3 sur Jetson**
 
-Kita dapat memilih [Ollama](https://ollama.com) atau [LlamaEdge](https://llamaedge.com).
+Nous pouvons choisir [Ollama](https://ollama.com) ou [LlamaEdge](https://llamaedge.com)
 
-Jika Anda ingin menggunakan gguf di cloud dan perangkat edge secara bersamaan, LlamaEdge dapat dipahami sebagai WasmEdge (WasmEdge adalah runtime WebAssembly yang ringan, berkinerja tinggi, dan dapat diskalakan, cocok untuk aplikasi cloud native, edge, dan terdesentralisasi. Runtime ini mendukung aplikasi tanpa server, fungsi tertanam, layanan mikro, kontrak pintar, dan perangkat IoT. Anda dapat menerapkan model kuantitatif gguf ke perangkat edge dan cloud melalui LlamaEdge).
+Si vous souhaitez utiliser gguf à la fois dans le cloud et sur les dispositifs périphériques, LlamaEdge peut être compris comme WasmEdge (WasmEdge est un runtime WebAssembly léger, performant et évolutif, adapté aux applications natives du cloud, périphériques et décentralisées. Il prend en charge les applications sans serveur, les fonctions embarquées, les microservices, les contrats intelligents et les dispositifs IoT. Vous pouvez déployer le modèle quantitatif de gguf sur des dispositifs périphériques et le cloud via LlamaEdge.
 
 ![llamaedge](../../../../../translated_images/llamaedge.1356a35c809c5e9d89d8168db0c92161e87f5e2c34831f2fad800f00fc4e74dc.mo.jpg)
 
-Berikut adalah langkah-langkah penggunaannya:
+Voici les étapes à suivre :
 
-1. Instal dan unduh pustaka serta file terkait
+1. Installer et télécharger les bibliothèques et fichiers nécessaires
 
 ```bash
 
@@ -45,9 +54,9 @@ tar xzf chatbot-ui.tar.gz
 
 ```
 
-**Catatan**: llama-api-server.wasm dan chatbot-ui harus berada di direktori yang sama.
+**Note** : llama-api-server.wasm et chatbot-ui doivent être dans le même répertoire
 
-2. Jalankan skrip di terminal
+2. Exécuter les scripts dans le terminal
 
 ```bash
 
@@ -55,12 +64,12 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 ```
 
-Berikut adalah hasil eksekusinya:
+Voici le résultat de l'exécution :
 
 ![llamaedgerun](../../../../../translated_images/llamaedgerun.66eb2acd7f14e814437879522158b9531ae7c955014d48d0708d0e4ce6ac94a6.mo.png)
 
-***Kode contoh*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
+***Code d'exemple*** [Exemple de Notebook Phi-3 mini WASM](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
-Sebagai kesimpulan, Phi-3 Mini mewakili lompatan maju dalam pemodelan bahasa, menggabungkan efisiensi, kesadaran konteks, dan keunggulan optimasi dari NVIDIA. Apakah Anda sedang membangun robot atau aplikasi edge, Phi-3 Mini adalah alat yang sangat bermanfaat untuk diketahui.
+En résumé, Phi-3 Mini représente une avancée majeure dans la modélisation linguistique, combinant efficacité, sensibilité au contexte et expertise en optimisation de NVIDIA. Que vous construisiez des robots ou des applications périphériques, Phi-3 Mini est un outil puissant à connaître.
 
-It seems like "mo" could refer to a specific language or dialect, but it's not immediately clear which one you're referring to. Could you clarify which language or provide more context? For example, are you referring to Maori, Mongolian, or something else?
+It seems you would like the text translated into "mo." Could you clarify what "mo" refers to? Are you asking for a translation into Maori, Mongolian, or another language?

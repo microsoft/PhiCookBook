@@ -1,32 +1,41 @@
-## Bienvenue dans les laboratoires Phi utilisant C#
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8fd4bbea0a970872d95cf189202589e1",
+  "translation_date": "2025-03-27T16:22:25+00:00",
+  "source_file": "md\\04.HOL\\dotnet\\readme.md",
+  "language_code": "fr"
+}
+-->
+## Bienvenue dans les laboratoires Phi avec C#
 
-Voici une sélection de laboratoires qui montrent comment intégrer les différentes versions puissantes des modèles Phi dans un environnement .NET.
+Une sélection de laboratoires est disponible pour montrer comment intégrer les différentes versions puissantes des modèles Phi dans un environnement .NET.
 
 ## Prérequis
 
-Avant d'exécuter l'exemple, assurez-vous d'avoir les éléments suivants installés :
+Avant d'exécuter l'exemple, assurez-vous d'avoir installé les éléments suivants :
 
-**.NET 9 :** Assurez-vous d'avoir [la dernière version de .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) installée sur votre machine.
+**.NET 9 :** Assurez-vous d'avoir la [dernière version de .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) installée sur votre machine.
 
 **(Optionnel) Visual Studio ou Visual Studio Code :** Vous aurez besoin d'un IDE ou d'un éditeur de code capable d'exécuter des projets .NET. [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) ou [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo) sont recommandés.
 
-**Utiliser git** pour cloner localement une des versions disponibles Phi-3, Phi-3.5 ou Phi-4 depuis [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
+**Utilisation de git** clonez localement l'une des versions disponibles Phi-3, Phi-3.5 ou Phi-4 depuis [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
 
 **Téléchargez les modèles ONNX Phi-4** sur votre machine locale :
 
-### naviguer vers le dossier pour stocker les modèles
+### naviguez vers le dossier pour stocker les modèles
 
 ```bash
 cd c:\phi\models
 ```
 
-### ajouter le support pour lfs
+### ajoutez le support pour lfs
 
 ```bash
 git lfs install 
 ```
 
-### cloner et télécharger le modèle instruct mini Phi-4 et le modèle multi-modal Phi-4
+### clonez et téléchargez le modèle instruct mini Phi-4 et le modèle multimodal Phi-4
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
@@ -36,7 +45,7 @@ git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 
 **Téléchargez les modèles ONNX Phi-3** sur votre machine locale :
 
-### cloner et télécharger le modèle instruct mini 4K Phi-3 et le modèle vision 128K Phi-3
+### clonez et téléchargez le modèle instruct mini 4K Phi-3 et le modèle vision 128K Phi-3
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
@@ -44,15 +53,15 @@ git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 ```
 
-**Important :** Les démos actuelles sont conçues pour utiliser les versions ONNX du modèle. Les étapes précédentes clonent les modèles suivants.
+**Important :** Les démonstrations actuelles sont conçues pour utiliser les versions ONNX des modèles. Les étapes précédentes permettent de cloner les modèles suivants.
 
 ## À propos des laboratoires
 
-La solution principale contient plusieurs laboratoires d'exemple qui démontrent les capacités des modèles Phi en utilisant C#.
+La solution principale contient plusieurs laboratoires exemples qui démontrent les capacités des modèles Phi en utilisant C#.
 
 | Projet | Modèle | Description |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 ou Phi-3.5 | Exemple de chat en console qui permet à l'utilisateur de poser des questions. Le projet charge un modèle ONNX Phi-3 local en utilisant `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 ou Phi-3.5 | Exemple de console de chat permettant à l'utilisateur de poser des questions. Le projet charge un modèle ONNX Phi-3 local en utilisant `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
 | [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
@@ -82,7 +91,7 @@ To run the projects, follow these steps:
 
 1. Le projet exemple demande une entrée utilisateur et répond en utilisant le mode local.
 
-   La démo en cours d'exécution est similaire à celle-ci :
+   La démonstration en cours d'exécution est similaire à celle-ci :
 
    ```bash
    PS D:\phi\PhiCookBook\md\04.HOL\dotnet\src\LabsPhi4-Chat-01OnnxRuntime> dotnet run
@@ -93,4 +102,4 @@ To run the projects, follow these steps:
    ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide de services de traduction automatisée basés sur l'intelligence artificielle. Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

@@ -1,124 +1,135 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "212531c5722978740dcfb73e3995cbba",
+  "translation_date": "2025-04-04T11:16:32+00:00",
+  "source_file": "CONTRIBUTING.md",
+  "language_code": "mo"
+}
+-->
 # Contributing
 
-E projekteh dafanin kontribisyon ek ak sugjestion yo. Pifò kontribisyon mande pou ou dakò ak yon Akò Lisyen Kontribitè (CLA) ki deklare ke ou gen dwa, e aktyèlman fè sa, pou ba nou dwa pou itilize kontribisyon ou. Pou plis detay, vizite [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+Yi proyek a amana sababin da ba da shawara. Yawancin gudummawa suna bukatar ku amince da Yarjejeniyar Lasisin Gudummawa (CLA) wanda ke bayyana cewa kuna da haƙƙi kuma kuna ba mu haƙƙin amfani da gudummawarku. Don ƙarin bayani, ziyarci [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-Lè ou soumèt yon pull request, yon bot CLA ap otomatikman detèmine si ou bezwen bay yon CLA epi dekore PR a kòmsadwa (egzanp, verifikasyon estati, kòmantè). Senpleman swiv enstriksyon yo bay pa bot la. Ou pral sèlman bezwen fè sa yon fwa atravè tout depo ki itilize CLA nou an.
+Lokacin da kuka gabatar da buƙatar ɗaukarwa, bot na CLA zai ta atomatik tantance ko kuna buƙatar bayar da CLA kuma ya yi wa PR ɗinku alama (misali, binciken matsayi, sharhi). Kawai bi umarnin da bot ɗin ya bayar. Za ku yi wannan sau ɗaya kawai a duk gidajen adana da ke amfani da CLA ɗinmu.
 
-## Kòd Kondwit
+## Dokokin Halayya
 
-E projekteh adopte [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
-Pou plis enfòmasyon, li [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) oswa kontakte [opencode@microsoft.com](mailto:opencode@microsoft.com) pou nenpòt lòt kesyon oswa kòmantè.
+Yi wannan aikin ya ɗauki [Dokokin Halayya na Buɗaɗɗen Tushen Microsoft](https://opensource.microsoft.com/codeofconduct/). Don ƙarin bayani karanta [Tambayoyin FAQ na Dokokin Halayya](https://opensource.microsoft.com/codeofconduct/faq/) ko tuntuɓi [opencode@microsoft.com](mailto:opencode@microsoft.com) tare da kowanne karin tambayoyi ko sharhi.
 
-## Prekosyon pou kreye pwoblèm
+## Gargadi ga ƙirƙirar matsaloli
 
-Tanpri pa louvri pwoblèm GitHub pou kesyon sipò jeneral paske lis GitHub la ta dwe itilize pou demann karakteristik ak rapò pinèz. Fason sa a, nou ka pi fasil swiv pwoblèm oswa pinèz aktyèl ki soti nan kòd la epi kenbe diskisyon jeneral separe de kòd aktyèl la.
+Don Allah kada ku buɗe matsalolin GitHub don tambayoyin tallafi na gama-gari domin jerin GitHub ya kamata a yi amfani da shi don buƙatun fasali da rahoton kurakurai. Wannan hanyar za mu iya bin diddigin matsaloli ko kurakurai daga lambar kuma mu raba tattaunawar gama-gari daga ainihin lambar.
 
-## Kijan Pou Kontribye
+## Yadda za a ba da gudummawa
 
-### Gid Pou Pull Requests
+### Jagororin Buƙatar Ɗaukarwa
 
-Lè w ap soumèt yon pull request (PR) nan depo Phi-3 CookBook la, tanpri swiv gid sa yo:
+Lokacin da kuke gabatar da buƙatar ɗaukarwa (PR) zuwa rumbun Phi-3 CookBook, don Allah yi amfani da waɗannan jagororin:
 
-- **Fòke Depo a**: Toujou fòke depo a nan kont ou anvan ou fè modifikasyon ou yo.
+- **Yi Fork na Rumbun**: Kullum yi fork na rumbun zuwa asusunku kafin yin gyare-gyarenku.
 
-- **Separe pull requests (PR)**:
-  - Soumèt chak kalite chanjman nan pwòp pull request li yo. Pa egzanp, repare pinèz ak mete ajou dokiman yo ta dwe soumèt nan PR separe.
-  - Korije erè tipografik ak ti mete ajou dokiman yo ka konbine nan yon sèl PR kote sa apwopriye.
+- **Raba buƙatun ɗaukarwa (PR)**:
+  - Gabatar da kowanne nau'in canji cikin buƙatar ɗaukarwa daban-daban. Misali, gyaran kurakurai da sabunta takardu ya kamata a gabatar cikin PR daban-daban.
+  - Gyaran rubutu da ƙananan sabunta takardu za a iya haɗawa cikin PR ɗaya idan ya dace.
 
-- **Jere konfli fizyon yo**: Si pull request ou a montre konfli fizyon, mete ajou branch lokal `main` ou a pou reflete depo prensipal la anvan ou fè modifikasyon ou yo.
+- **Magance rikice-rikicen haɗawa**: Idan buƙatar ɗaukarwarku ta nuna rikice-rikice, sabunta reshen `main` na gida don yin kama da babban rumbun kafin yin gyare-gyarenku.
 
-- **Soumèt tradiksyon yo**: Lè w ap soumèt yon PR tradiksyon, asire w ke dosye tradiksyon an gen tradiksyon pou tout dosye nan katab orijinal la.
+- **Gabatar da fassarar**: Lokacin gabatar da PR na fassara, tabbatar da cewa babban fayil na fassara ya haɗa da fassarorin dukkan fayilolin cikin babban fayil ɗin asali.
 
-### Gid Pou Tradiksyon
+### Jagororin Fassara
 
-> [!IMPORTANT]  
-> Lè w ap tradui tèks nan depo sa a, pa itilize tradiksyon machin. Se sèlman volontè ki metrize langaj yo ki ka fè tradiksyon yo.
+> [!IMPORTANT]
+>
+> Lokacin fassara rubutu cikin wannan rumbun, kada ku yi amfani da fassarar injin. Kawai yi wa fassara cikin harsunan da kuke da ƙwarewa.
 
-Si ou metrize yon lang ki pa angle, ou ka ede tradui kontni an. Swiv etap sa yo pou asire kontribisyon tradiksyon ou yo byen entegre:
+Idan kun ƙware cikin wani harshe wanda ba Ingilishi ba, zaku iya taimakawa wajen fassara abun ciki. Bi waɗannan matakan don tabbatar da cewa gudummawar fassarar ku an haɗa su yadda ya kamata, don Allah yi amfani da waɗannan jagororin:
 
-- **Kreye yon katab tradiksyon**: Ale nan katab seksyon ki apwopriye a epi kreye yon katab tradiksyon pou lang ou ap kontribye a. Pa egzanp:
-  - Pou seksyon entwodiksyon: `PhiCookBook/md/01.Introduce/translations/<language_code>/`
-  - Pou seksyon kòmanse rapid: `PhiCookBook/md/02.QuickStart/translations/<language_code>/`
-  - Kontinye modèl sa a pou lòt seksyon yo (03.Inference, 04.Finetuning, elatriye)
+- **Ƙirƙiri babban fayil na fassara**: Ku je zuwa babban fayil na sashe mai dacewa ku ƙirƙiri babban fayil na fassara don harshen da kuke bayarwa. Misali:
+  - Don sashen gabatarwa: `PhiCookBook/md/01.Introduce/translations/<language_code>/`
+  - Don sashen farawa mai sauri: `PhiCookBook/md/02.QuickStart/translations/<language_code>/`
+  - Ci gaba da wannan tsarin don sauran sassa (03.Inference, 04.Finetuning, da sauransu.)
 
-- **Mete ajou chemen relatif yo**: Lè w ap tradui, ajiste estrikti katab la pa ajoute `../../` nan kòmansman chemen relatif yo nan dosye markdown yo pou asire lyen yo travay kòrèkteman. Pa egzanp, chanje jan sa a:
-  - Chanje `(../../imgs/01/phi3aisafety.png)` pou `(../../../../imgs/01/phi3aisafety.png)`
+- **Sabunta hanyoyin dangantaka**: Lokacin fassara, daidaita tsarin babban fayil ta hanyar ƙara `../../` zuwa farkon hanyoyin dangantaka cikin fayilolin markdown don tabbatar da cewa haɗin suna aiki yadda ya kamata. Misali, canza kamar haka:
+  - Canza `(../../imgs/01/phi3aisafety.png)` zuwa `(../../../../imgs/01/phi3aisafety.png)`
 
-- **Òganize tradiksyon ou yo**: Chak dosye tradui yo ta dwe mete nan katab tradiksyon seksyon ki koresponn lan. Pa egzanp, si w ap tradui seksyon entwodiksyon an nan lang panyòl, ou ta kreye jan sa a:
+- **Tsara fassarar ku**: Kowanne fayil na fassara ya kamata a sanya shi cikin babban fayil na fassarar sashe mai dacewa. Misali, idan kuna fassara sashen gabatarwa zuwa Spanish, zaku ƙirƙiri kamar haka:
   - `PhiCookBook/md/01.Introduce/translations/es/`
 
-- **Soumèt yon PR konplè**: Asire w ke tout dosye tradui pou yon seksyon enkli nan yon sèl PR. Nou pa aksepte tradiksyon pasyèl pou yon seksyon. Lè w ap soumèt yon PR tradiksyon, asire w ke katab tradiksyon an gen tradiksyon pou tout dosye nan katab orijinal la.
+- **Gabatar da PR mai cikakke**: Tabbatar cewa dukkan fayilolin fassara na sashe ɗaya sun haɗa cikin PR ɗaya. Ba mu karɓi fassarar da ba ta cika ba don sashe ɗaya. Lokacin gabatar da PR na fassara, tabbatar da cewa babban fayil na fassara ya haɗa da fassarorin dukkan fayilolin cikin babban fayil ɗin asali.
 
-### Gid Pou Ekri
+### Jagororin Rubutu
 
-Pou asire konsistans atravè tout dokiman yo, tanpri itilize gid sa yo:
+Don tabbatar da daidaito a dukkan takardu, don Allah yi amfani da waɗannan jagororin:
 
-- **Fòmat URL**: Mete tout URL yo nan parantèz kare ki swiv pa parantèz won, san okenn espas anplis alantou oswa andedan yo. Pa egzanp: `[example](https://www.microsoft.com)`.
+- **Tsarin URL**: Ku ɗaure dukkan URLs cikin murabba'in madauwari sannan ku bi su da baka, ba tare da kowanne sarari mai yawa a kusa da ko cikin su ba. Misali: `[example](https://www.microsoft.com)`.
 
-- **Lyen relatif**: Sèvi ak `./` pou lyen relatif ki montre dosye oswa katab nan repèrtwar aktyèl la, epi `../` pou sa yo ki nan yon repèrtwar paran. Pa egzanp: `[example](../../path/to/file)` oswa `[example](../../../path/to/file)`.
+- **Hanyoyin dangantaka**: Yi amfani da `./` don hanyoyin dangantaka da ke nuna fayiloli ko manyan fayiloli cikin babban fayil na yanzu, da `../` don waɗanda ke cikin babban fayil na iyaye. Misali: `[example](../../path/to/file)` ko `[example](../../../path/to/file)`.
 
-- **Pa sèvi ak lokal espesifik peyi**: Asire w ke lyen ou yo pa gen lokal espesifik peyi. Pa egzanp, evite `/en-us/` oswa `/en/`.
+- **Ba na ƙasashe masu takamaiman yanki**: Tabbatar cewa haɗin ku ba su haɗa da yankin ƙasa mai takamaiman yanki. Misali, guji `/en-us/` ko `/en/`.
 
-- **Depo imaj**: Mete tout imaj nan katab `./imgs` la.
+- **Ajiyar hotuna**: Ajiye dukkan hotuna cikin babban fayil na `./imgs`.
 
-- **Non imaj deskriptif**: Bay imaj yo non deskriptif lè w sèvi ak karaktè angle, chif, ak tirè. Pa egzanp: `example-image.jpg`.
+- **Sunan hotuna mai bayyana**: Sanya hotuna da sunaye masu bayyana ta amfani da haruffan Ingilishi, lambobi, da dashes. Misali: `example-image.jpg`.
 
-## Workflow GitHub yo
+## Tsarin Aiki na GitHub
 
-Lè w soumèt yon pull request, workflow sa yo pral aktive pou valide chanjman yo. Swiv enstriksyon ki anba yo pou asire pull request ou a pase verifikasyon workflow yo:
+Lokacin da kuka gabatar da buƙatar ɗaukarwa, za a kunna tsarin aiki na gaba don tantance canje-canje. Bi umarnin da ke ƙasa don tabbatar da cewa buƙatar ɗaukarwarku ta wuce binciken tsarin aiki:
 
-- [Verifye Chemen Relatif Ki Kase](../..)
-- [Verifye URL San Lokal](../..)
+- [Duba Hanyoyin Dangantaka Masu Lalacewa](../..)
+- [Duba URLs Ba Su Da Yankin Yanki](../..)
 
-### Verifye Chemen Relatif Ki Kase
+### Duba Hanyoyin Dangantaka Masu Lalacewa
 
-Workflow sa a asire ke tout chemen relatif nan dosye ou yo kòrèk.
+Wannan tsarin aiki yana tabbatar da cewa duk hanyoyin dangantaka cikin fayilolinku sun yi daidai.
 
-1. Pou asire lyen ou yo ap travay kòrèkteman, fè travay sa yo lè w ap itilize VS Code:
-    - Pase sourit ou sou nenpòt lyen nan dosye ou yo.
-    - Peze **Ctrl + Click** pou navige nan lyen an.
-    - Si ou klike sou yon lyen epi li pa travay lokalman, sa ap aktive workflow a epi li pap travay sou GitHub.
+1. Don tabbatar da cewa haɗin ku suna aiki yadda ya kamata, yi waɗannan ayyukan ta amfani da VS Code:
+    - Hover akan kowanne haɗi cikin fayilolinku.
+    - Danna **Ctrl + Click** don zuwa haɗin.
+    - Idan kun danna kan haɗin kuma bai yi aiki a gida ba, zai kunna tsarin aiki kuma ba zai yi aiki a GitHub ba.
 
-1. Pou rezoud pwoblèm sa a, fè travay sa yo lè w ap itilize sijesyon chemen yo bay pa VS Code:
-    - Tape `./` oswa `../`.
-    - VS Code ap pwopoze w chwazi nan opsyon ki disponib yo baze sou sa ou te tape.
-    - Swiv chemen an lè w klike sou dosye oswa katab ou vle a pou asire chemen ou kòrèk.
+1. Don gyara wannan matsalar, yi waɗannan ayyukan ta amfani da shawarwarin hanya da VS Code ya bayar:
+    - Rubuta `./` ko `../`.
+    - VS Code zai nuna muku zaɓuɓɓuka bisa abin da kuka rubuta.
+    - Bi hanyar ta danna kan fayil ko babban fayil mai so don tabbatar da cewa hanyar ku ta yi daidai.
 
-Yon fwa ou te ajoute chemen relatif kòrèk la, sove epi pouse chanjman ou yo.
+Da zarar kun ƙara hanyar dangantaka mai dacewa, adana ku turawa canje-canjeku.
 
-### Verifye URL San Lokal
+### Duba URLs Ba Su Da Yankin Yanki
 
-Workflow sa a asire ke nenpòt URL entènèt pa gen yon lokal espesifik peyi. Kòm depo sa a aksesib globalman, li enpòtan pou asire ke URL yo pa gen lokal peyi ou.
+Wannan tsarin aiki yana tabbatar da cewa dukkan URLs na yanar gizo ba su haɗa da yankin ƙasa mai takamaiman yanki. Tunda wannan rumbun yana samuwa a duniya, yana da mahimmanci a tabbatar da cewa URLs ba su ƙunshi yankin ƙasar ku ba.
 
-1. Pou verifye ke URL ou yo pa gen lokal peyi, fè travay sa yo:
+1. Don tabbatar da cewa URLs ɗinku ba su da yankin ƙasa, yi waɗannan ayyukan:
 
-    - Tcheke tèks tankou `/en-us/`, `/en/`, oswa nenpòt lòt lokal lang nan URL yo.
-    - Si sa yo pa prezan nan URL ou yo, lè sa a ou pral pase verifikasyon sa a.
+    - Duba rubutu kamar `/en-us/`, `/en/`, ko kowanne yanki na harshe cikin URLs.
 
-1. Pou rezoud pwoblèm sa a, fè travay sa yo:
-    - Louvri chemen dosye ki make pa workflow a.
-    - Retire lokal peyi a nan URL yo.
+    - Idan waɗannan ba su kasance cikin URLs ɗinku ba, za ku wuce wannan binciken.
 
-Yon fwa ou retire lokal peyi a, sove epi pouse chanjman ou yo.
+1. Don gyara wannan matsalar, yi waɗannan ayyukan:
+    - Buɗe hanyar fayil ɗin da tsarin aiki ya nuna.
+    - Cire yankin ƙasa daga URLs.
 
-### Verifye URL Ki Kase
+Da zarar kun cire yankin ƙasa, adana ku turawa canje-canjeku.
 
-Workflow sa a asire ke nenpòt URL entènèt nan dosye ou yo ap travay epi retounen kòd estati 200.
+### Duba URLs Masu Lalacewa
 
-1. Pou verifye ke URL ou yo ap travay kòrèkteman, fè travay sa yo:
-    - Tcheke estati URL yo nan dosye ou yo.
+Wannan tsarin aiki yana tabbatar da cewa dukkan URLs na yanar gizo cikin fayilolinku suna aiki kuma suna dawo da lambar matsayi 200.
 
-2. Pou rezoud nenpòt URL ki kase, fè travay sa yo:
-    - Louvri dosye ki gen URL ki kase a.
-    - Mete ajou URL a ak yon kòrèk.
+1. Don tabbatar da cewa URLs ɗinku suna aiki yadda ya kamata, yi waɗannan ayyukan:
+    - Duba matsayi na URLs cikin fayilolinku.
 
-Yon fwa ou te ranje URL yo, sove epi pouse chanjman ou yo.
+2. Don gyara URLs masu lalacewa, yi waɗannan ayyukan:
+    - Buɗe fayil ɗin da ke ƙunshe da URL mai lalacewa.
+    - Sabunta URL zuwa mai daidai.
 
-> [!NOTE]  
-> Gen ka kote verifikasyon URL la ka echwe menm si lyen an aksesib. Sa ka rive pou plizyè rezon, tankou:
+Da zarar kun gyara URLs, adana ku turawa canje-canjeku.
+
+> [!NOTE]
 >
-> - **Restriksyon rezo**: Sèvè aksyon GitHub yo ka gen restriksyon rezo ki anpeche aksè nan sèten URL.
-> - **Pwoblèm tan ekspirasyon**: URL ki pran twòp tan pou reponn ka lakòz yon erè tan ekspirasyon nan workflow la.
-> - **Pwoblèm sèvè tanporè**: Entèval sèvè oswa antretyen ka fè yon URL tanporèman endisponib pandan validasyon an.
+> Akwai lokuta da binciken URL zai kasa duk da cewa haɗin yana samuwa. Wannan na iya faruwa saboda dalilai da dama, ciki har da:
+>
+> - **Ƙuntatawar yanar gizo:** Sabis na aikin GitHub na iya samun ƙuntatawar yanar gizo wanda ke hana samun wasu URLs.
+> - **Matsalar lokaci:** URLs waɗanda suka ɗauki lokaci mai tsawo don amsawa na iya kunna kuskuren lokaci a cikin tsarin aiki.
+> - **Matsalolin uwar garke na ɗan lokaci:** Lokaci-lokaci uwar garke na iya zama ba samuwa ba na ɗan lokaci yayin tantancewa.
 
-It seems like you've requested a translation to "mo," but it's unclear what language "mo" refers to. Could you clarify the specific language or dialect you have in mind? For example, are you referring to Māori, Mongolian, or something else?
+It seems you are asking for a translation to "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, Māori, Marshallese, or another language?

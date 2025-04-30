@@ -1,6 +1,15 @@
-## **Verwendung von Phi-4-mini als Denkexperte**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a9f1b650e11fec4e2790754b7a77cb23",
+  "translation_date": "2025-03-27T12:43:26+00:00",
+  "source_file": "md\\02.Application\\03.AdvancedReasoning\\Phi4\\AdvancedResoningPhi4mini\\README.md",
+  "language_code": "de"
+}
+-->
+## **Verwendung von Phi-4-mini als Experten für logisches Denken**
 
-Eine der Hauptfunktionen von Phi-4 ist seine starke Fähigkeit zum logischen Denken. Werfen wir einen Blick auf diese beeindruckende Denkfähigkeit durch Phi-4-mini.
+Eine der Hauptmerkmale von Phi-4 ist seine ausgeprägte Fähigkeit zum logischen Denken. Schauen wir uns diese Fähigkeit anhand von Phi-4-mini genauer an.
 
 ```python
 
@@ -47,4 +56,4 @@ print(output[0]['generated_text'])
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe von KI-gestützten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung resultieren.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

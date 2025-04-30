@@ -1,8 +1,17 @@
-## **Phi-4-mini嘅函數調用**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a3db2edc82e92fba136d9731f6d067ef",
+  "translation_date": "2025-04-04T18:44:36+00:00",
+  "source_file": "md\\02.Application\\07.FunctionCalling\\Phi4\\FunctionCallingBasic\\README.md",
+  "language_code": "hk"
+}
+-->
+## **Phi-4-mini 中的函數調用**
 
-函數調用最早喺Phi Family系列出現，而家你可以喺Phi-4-mini上面用到。
+函數調用最早出現在 Phi 家族系列，現在你可以通過 Phi-4-mini 使用它。
 
-呢個例子展示咗模擬英超比賽結果。目標係令Phi-4-mini提供實時比賽資訊。以下係示例代碼：  
+這個例子展示了模擬英超比賽結果。目標是讓 Phi-4-mini 提供即時的比賽資訊。以下是範例代碼：
 
 ```python
 
@@ -97,5 +106,5 @@ print(messages)
 
 ```
 
-**免責聲明**：  
-本文件使用基於機器的人工智能翻譯服務進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文的母語版本作為權威來源。如涉及關鍵信息，建議尋求專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤讀概不負責。
+**免責聲明**:  
+本文件使用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯而成。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件作為權威來源。對於關鍵資訊，建議尋求專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。

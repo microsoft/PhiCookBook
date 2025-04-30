@@ -1,39 +1,48 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "05e69691c294289d217150bec390a5fb",
+  "translation_date": "2025-04-03T08:06:26+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_Kaito.md",
+  "language_code": "zh"
+}
+-->
 ## 使用 Kaito 进行微调
 
-[Kaito](https://github.com/Azure/kaito) 是一个操作工具，用于在 Kubernetes 集群中自动化部署 AI/ML 推理模型。
+[Kaito](https://github.com/Azure/kaito) 是一个操作工具，能够自动化在 Kubernetes 集群中部署 AI/ML 推理模型。
 
-与基于虚拟机基础设施的大多数主流模型部署方法相比，Kaito 具有以下关键区别：
+与大多数基于虚拟机基础设施的主流模型部署方法相比，Kaito 具有以下关键优势：
 
-- 使用容器镜像管理模型文件。提供一个 HTTP 服务器，通过模型库执行推理调用。
-- 通过提供预设配置，避免为适配 GPU 硬件而调整部署参数。
-- 根据模型需求自动分配 GPU 节点。
-- 如果许可允许，可在公共的 Microsoft Container Registry (MCR) 中托管大型模型镜像。
+- 使用容器镜像管理模型文件。提供一个 HTTP 服务器，用于通过模型库执行推理调用。
+- 通过提供预设配置，避免因适配 GPU 硬件而调整部署参数。
+- 根据模型需求自动配置 GPU 节点。
+- 如果许可证允许，可在公共的 Microsoft 容器注册表 (MCR) 中托管大型模型镜像。
 
-使用 Kaito，可以大大简化在 Kubernetes 中引入大型 AI 推理模型的工作流程。
+通过 Kaito，可以显著简化在 Kubernetes 中引入大型 AI 推理模型的工作流程。
 
 ## 架构
 
-Kaito 遵循经典的 Kubernetes 自定义资源定义（CRD）/控制器设计模式。用户管理一个 `workspace` 自定义资源，该资源描述了 GPU 需求和推理规范。Kaito 控制器将通过协调 `workspace` 自定义资源来自动化部署。
+Kaito 采用经典的 Kubernetes 自定义资源定义（CRD）和控制器设计模式。用户管理一个 `workspace` 自定义资源，用于描述 GPU 需求和推理规范。Kaito 控制器将通过协调该 `workspace` 自定义资源来自动化部署。
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito 架构" alt="Kaito 架构">
 </div>
 
-上图展示了 Kaito 架构概览。其主要组件包括：
+上图展示了 Kaito 的架构概览。其主要组件包括：
 
-- **工作区控制器**：协调 `workspace` 自定义资源，创建 `machine`（下面会解释）自定义资源以触发节点自动分配，并根据模型预设配置创建推理工作负载（`deployment` 或 `statefulset`）。
-- **节点分配控制器**：该控制器在 [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) 中的名称为 *gpu-provisioner*。它使用源自 [Karpenter](https://sigs.k8s.io/karpenter) 的 `machine` CRD 与工作区控制器交互。它集成了 Azure Kubernetes Service (AKS) API，以便向 AKS 集群添加新的 GPU 节点。
-> 注意：[*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) 是一个开源组件。如果其他控制器支持 [Karpenter-core](https://sigs.k8s.io/karpenter) API，也可以用它们替代。
+- **工作区控制器**：协调 `workspace` 自定义资源，创建 `machine`（下文会解释）自定义资源以触发节点自动配置，并根据模型预设配置创建推理工作负载（`deployment` 或 `statefulset`）。
+- **节点配置控制器**：该控制器在 [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) 中被称为 *gpu-provisioner*。它使用源自 [Karpenter](https://sigs.k8s.io/karpenter) 的 `machine` CRD 与工作区控制器交互。它集成了 Azure Kubernetes Service(AKS) 的 API，以向 AKS 集群添加新的 GPU 节点。
+> 注意：[*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) 是一个开源组件。如果其他控制器支持 [Karpenter-core](https://sigs.k8s.io/karpenter) API，则可以替换该组件。
 
 ## 概览视频
 [观看 Kaito 演示](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## 安装
 
-请参考 [安装指南](https://github.com/Azure/kaito/blob/main/docs/installation.md)。
+请查看 [安装指南](https://github.com/Azure/kaito/blob/main/docs/installation.md)。
 
 ## 快速开始
 
-安装 Kaito 后，可以尝试以下命令启动微调服务。
+安装 Kaito 后，可以尝试以下命令来启动微调服务。
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -104,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **免责声明**：  
-本文件使用基于机器的人工智能翻译服务进行翻译。尽管我们努力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文件为权威来源。对于关键信息，建议寻求专业的人类翻译服务。我们对因使用此翻译而导致的任何误解或误读不承担责任。
+本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们尽力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言版本的文档应被视为权威来源。对于关键信息，建议使用专业的人工翻译服务。我们对因使用此翻译而产生的任何误解或错误解读不承担责任。

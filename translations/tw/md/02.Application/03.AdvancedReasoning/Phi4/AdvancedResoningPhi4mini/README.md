@@ -1,6 +1,15 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "7fdd22719901a23386b3c56bb02794e3",
+  "translation_date": "2025-04-04T06:47:40+00:00",
+  "source_file": "md\\02.Application\\03.AdvancedReasoning\\Phi4\\AdvancedResoningPhi4mini\\README.md",
+  "language_code": "tw"
+}
+-->
 ## **使用 Phi-4-mini 作為推理專家**
 
-Phi-4 的主要特色之一是其強大的推理能力。我們來透過 Phi-4-mini 一探其卓越的推理能力。
+Phi-4 的主要特點之一是其強大的推理能力。讓我們透過 Phi-4-mini 來看看它的卓越推理能力。
 
 ```python
 
@@ -47,4 +56,4 @@ print(output[0]['generated_text'])
 ```
 
 **免責聲明**：  
-本文件使用基於機器的人工智能翻譯服務進行翻譯。我們努力追求準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文檔的母語版本作為權威來源。對於關鍵資訊，建議尋求專業人工翻譯。我們對因使用本翻譯而引起的任何誤解或錯誤解釋概不負責。
+本文檔使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始語言的文檔應被視為權威來源。對於重要信息，建議使用專業的人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解讀不承擔責任。

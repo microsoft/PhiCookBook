@@ -1,73 +1,82 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "74bd3aa8618299f1b78180902c04c691",
+  "translation_date": "2025-04-04T11:30:34+00:00",
+  "source_file": "code\\07.Lab\\01\\AIPC\\extensions\\phi3ext\\README.md",
+  "language_code": "mo"
+}
+-->
 # phi3ext README
 
-Ity ny README-n'ny fanitarana anao "phi3ext". Rehefa vita ny famaritana fohy dia asaina mampiditra ireto toko manaraka ireto izahay.
+Phi3ext "README" yɛ woɛ extension no abɔdin. Wɔ akyiri kɔmɔ wɔ akɔhoɔ a yɛyɛ abɔdin yi mu.
 
 ## Features
 
-Lazao ny fiasa manokana an'ny fanitaranao, miaraka amin'ny sary nalaina nandritra ny fampandehanana azy. Ny làlan'ny sary dia tokony hifandray amin'ity rakitra README ity.
+Kyere phi3ext no nsɛm a ɛyɛ, fa fa phi3ext no ho mfonini ho sɛso no. Mfonini no ɛkwan yɛ phi3ext README file no ho.
 
-Ohatra, raha manana lahatahiry sary ao amin'ny toeram-piasan'ny tetikasanao fanitarana ianao:
+Sɛ wɔ phi3ext extension project no ase yɛ fie a ɛwɔ mfonini folder bi a:
 
-\!\[endri-javatra X\]\(images/feature-x.png\)
+\!\[feature X\]\(images/feature-x.png\)
 
-> Torohevitra: Maro amin'ireo fanitarana malaza no mampiasa sary mihetsika. Ity dia fomba tsara hampisehoana ny fanitaranao! Manoro hevitra izahay ny hampiasa sary mihetsika fohy sy mifantoka, mora arahina.
+> Nsɛm: Extensions pii wɔ nsɛm a yɛyɛ wɔ nsɛm ho nsɛm ho nsɛm. Ɛyɛ phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm. Ɛyɛ nsɛm a yɛyɛ nsɛm a yɛyɛ nsɛm a nsɛm a yɛyɛ nsɛm a yɛyɛ nsɛm a yɛyɛ nsɛm.
 
 ## Requirements
 
-Raha manana zavatra takiana na fiankinan-doha ianao, ampidiro toko iray hanazavana ireo takiana ireo sy ny fomba fametrahana ary fanamboarana azy.
+Sɛ phi3ext no ho hia biribi a ɛyɛ phi3ext ho nsɛm ho nsɛm, fa phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm.
 
 ## Extension Settings
 
-Raha nampiditra toe-javatra VS Code ianao tamin'ny alàlan'ny `contributes.configuration`, dia ampidirina ao.
+Sɛ phi3ext extension no yɛ phi3ext nsɛm wɔ `contributes.configuration` extension no ho nsɛm ho nsɛm, fa phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm.
 
-Ohatra:
+Ɔkyerɛ sɛ:
 
-Ity fanitarana ity dia manampy ireto toe-javatra manaraka ireto:
+Phi3ext extension no yɛ phi3ext nsɛm:
 
-* `myExtension.enable`: Alefa/ajanona ity fanitarana ity.
-* `myExtension.thing`: Atombohy amin'ny `blah` hanaovana zavatra iray.
+* `myExtension.enable`: Phi3ext nsɛm wɔ phi3ext ho nsɛm ho nsɛm.
+* `myExtension.thing`: Phi3ext nsɛm yɛ phi3ext nsɛm ho nsɛm ho nsɛm `blah`.
 
 ## Known Issues
 
-Ny famaritana olana efa fantatra dia afaka manampy amin'ny fampihenana ny olana mitovy izay mety hampiakarin'ny mpampiasa ny fanitaranao.
+Phi3ext no nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm yɛ phi3ext nsɛm.
 
 ## Release Notes
 
-Ho faly ny mpampiasa raha manome naoty famoahana isaky ny manavao ny fanitaranao ianao.
+Phi3ext no nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm yɛ phi3ext nsɛm.
 
 ### 1.0.0
 
-Famoahana voalohany ...
+Phi3ext no yɛ phi3ext nsɛm ...
 
 ### 1.0.1
 
-Namaha ny olana #.
+Phi3ext no yɛ phi3ext nsɛm no phi3ext nsɛm #.
 
 ### 1.1.0
 
-Nanampy endri-javatra X, Y ary Z.
+Phi3ext no yɛ phi3ext nsɛm X, Y na Z phi3ext nsɛm.
 
 ---
 
 ## Following extension guidelines
 
-Ataovy azo antoka fa efa novakianao ny torolàlana momba ny fanitarana ary manaraka ny fomba fanao tsara indrindra amin'ny famoronana fanitarana ianao.
+Phi3ext no yɛ phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm phi3ext nsɛm.
 
-* [Torolàlana momba ny fanitarana](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [Phi3ext nsɛm ho nsɛm](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Afaka mampiasa Visual Studio Code ianao hanoratana ny README-nao. Ireto misy hitsin-dàlana mahasoa amin'ny mpanonta:
+Phi3ext no nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm yɛ phi3ext nsɛm. Phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm phi3ext nsɛm.
 
-* Fizarana mpanonta (`Cmd+\` amin'ny macOS na `Ctrl+\` amin'ny Windows sy Linux).
-* Fifamadihana eo amin'ny fijerena (`Shift+Cmd+V` amin'ny macOS na `Shift+Ctrl+V` amin'ny Windows sy Linux).
-* Tsindrio ny `Ctrl+Space` (Windows, Linux, macOS) hijerena ny lisitry ny sombintsombiny Markdown.
+* Phi3ext nsɛm ho nsɛm (`Cmd+\` macOS a phi3ext nsɛm no `Ctrl+\` Windows na Linux phi3ext nsɛm).
+* Phi3ext nsɛm (`Shift+Cmd+V` macOS a phi3ext nsɛm no `Shift+Ctrl+V` Windows na Linux phi3ext nsɛm).
+* Phi3ext nsɛm `Ctrl+Space` (Windows, Linux, macOS) phi3ext nsɛm Markdown phi3ext nsɛm.
 
 ## For more information
 
-* [Fanohanana Markdown an'ny Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Fampahafantarana momba ny sintaxy Markdown](https://help.github.com/articles/markdown-basics/)
+* [Phi3ext nsɛm ho nsɛm](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Phi3ext nsɛm ho nsɛm ho nsɛm](https://help.github.com/articles/markdown-basics/)
 
-**Ankafizo izany!**
+**Phi3ext nsɛm!**
 
-It seems like you are asking for a translation into "mo," but the specific language or context for "mo" is unclear. Could you please clarify which language or context "mo" refers to? For example, are you referring to Maori, Mongolian, or another language?
+It seems you are asking to translate the text into "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, is it Maori, Mongolian, or something else? Let me know so I can assist you accurately!

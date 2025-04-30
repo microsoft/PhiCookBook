@@ -1,10 +1,19 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
+  "translation_date": "2025-03-27T14:53:36+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_MLX.md",
+  "language_code": "fr"
+}
+-->
 # **Affiner Phi-3 avec le framework Apple MLX**
 
-Nous pouvons réaliser l'affinage combiné avec LoRA via la ligne de commande du framework Apple MLX. (Si vous souhaitez en savoir plus sur le fonctionnement du framework MLX, veuillez lire [Inference Phi-3 avec le framework Apple MLX](../03.FineTuning/03.Inference/MLX_Inference.md)
+Nous pouvons réaliser un ajustement fin combiné avec Lora via la ligne de commande du framework Apple MLX. (Si vous souhaitez en savoir plus sur le fonctionnement du framework MLX, veuillez lire [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
 ## **1. Préparation des données**
 
-Par défaut, le framework MLX nécessite un format jsonl pour les fichiers d'entraînement, de test et d'évaluation, et est combiné avec LoRA pour réaliser les tâches d'affinage.
+Par défaut, le framework MLX nécessite le format jsonl pour les ensembles d'entraînement, de test et d'évaluation, et il est combiné avec Lora pour effectuer les tâches d'ajustement fin.
 
 ### ***Remarque :***
 
@@ -19,13 +28,13 @@ Par défaut, le framework MLX nécessite un format jsonl pour les fichiers d'ent
 
 ```
 
-2. Notre exemple utilise les [données de TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), mais la quantité de données est relativement insuffisante, donc les résultats de l'affinage ne sont pas forcément les meilleurs. Il est recommandé aux apprenants d'utiliser des données de meilleure qualité adaptées à leurs propres scénarios.
+2. Notre exemple utilise les [données de TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), mais la quantité de données est relativement insuffisante, donc les résultats de l'ajustement fin ne sont pas forcément optimaux. Il est recommandé aux apprenants d'utiliser des données de meilleure qualité adaptées à leurs propres scénarios.
 
 3. Le format des données est combiné avec le modèle Phi-3.
 
 Veuillez télécharger les données depuis ce [lien](../../../../code/04.Finetuning/mlx), et inclure tous les fichiers .jsonl dans le dossier ***data***.
 
-## **2. Affinage dans votre terminal**
+## **2. Affiner via votre terminal**
 
 Veuillez exécuter cette commande dans le terminal :
 
@@ -37,9 +46,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Remarque :***
 
-1. Il s'agit d'un affinage LoRA, le framework MLX ne prend pas en charge QLoRA.
+1. Ceci est un ajustement fin avec LoRA, le framework MLX ne prend pas encore en charge QLoRA.
 
-2. Vous pouvez modifier certains paramètres dans config.yaml, tels que :
+2. Vous pouvez modifier config.yaml pour changer certains arguments, comme :
 
 ```yaml
 
@@ -117,9 +126,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ```
 
-## **3. Tester l'adaptateur d'affinage**
+## **3. Tester l'adaptateur d'ajustement fin**
 
-Vous pouvez exécuter l'adaptateur d'affinage dans le terminal comme ceci :
+Vous pouvez exécuter l'adaptateur d'ajustement fin dans le terminal, comme ceci :
 
 ```bash
 
@@ -135,7 +144,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Essayez de comparer les résultats de l'affinage avec ceux du modèle original.
+Vous pouvez essayer de comparer les résultats de l'ajustement fin avec ceux du modèle original.
 
 ## **4. Fusionner les adaptateurs pour générer de nouveaux modèles**
 
@@ -147,7 +156,7 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ## **5. Exécuter des modèles affinés quantifiés avec Ollama**
 
-Avant utilisation, veuillez configurer votre environnement llama.cpp :
+Avant utilisation, veuillez configurer votre environnement llama.cpp.
 
 ```bash
 
@@ -161,13 +170,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Remarque :*** 
+***Remarque :***
 
-1. Prend désormais en charge la conversion quantifiée en fp32, fp16 et INT8.
+1. La conversion quantifiée des formats fp32, fp16 et INT8 est maintenant prise en charge.
 
 2. Le modèle fusionné ne contient pas tokenizer.model, veuillez le télécharger depuis https://huggingface.co/microsoft/Phi-3-mini-4k-instruct.
 
-Configurez le fichier de modèle Ollama (si Ollama n'est pas installé, veuillez lire [Ollama QuickStart](https://ollama.com/)).
+Configurer un [modèle Ollama](https://ollama.com/).
 
 ```txt
 
@@ -186,7 +195,7 @@ Exécutez la commande dans le terminal :
 
 ```
 
-Félicitations ! Vous maîtrisez désormais l'affinage avec le framework MLX.
+Félicitations ! Vous maîtrisez désormais l'ajustement fin avec le framework MLX.
 
 **Avertissement** :  
-Ce document a été traduit à l'aide de services de traduction basés sur l'intelligence artificielle. Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, une traduction humaine professionnelle est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

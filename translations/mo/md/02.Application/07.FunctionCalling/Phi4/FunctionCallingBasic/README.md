@@ -1,8 +1,17 @@
-## **Phi-4-mini-এ ফাংশন কল করা**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a3db2edc82e92fba136d9731f6d067ef",
+  "translation_date": "2025-04-04T13:04:57+00:00",
+  "source_file": "md\\02.Application\\07.FunctionCalling\\Phi4\\FunctionCallingBasic\\README.md",
+  "language_code": "mo"
+}
+-->
+## **Fonksyon apèl nan Phi-4-mini**
 
-ফাংশন কল প্রথমে Phi Family-এ চালু হয়েছিল, এবং এখন আপনি এটি Phi-4-mini-এর মাধ্যমে ব্যবহার করতে পারেন।
+Fonksyon apèl te premye parèt nan fanmi Phi Family, epi kounye a ou ka itilize li atravè Phi-4-mini.
 
-এই উদাহরণটি প্রিমিয়ার লিগের ফলাফলগুলোর সিমুলেশন প্রদর্শন করে। লক্ষ্য হল Phi-4-mini-এর মাধ্যমে রিয়েল-টাইম গেমের তথ্য সরবরাহ করা। নিচে নমুনা কোড দেওয়া হল:
+Egzanp sa a montre simulasyon rezilta Premier League. Objektif la se pou Phi-4-mini bay enfòmasyon sou jwèt yo an tan reyèl. Men kòd egzanp lan:
 
 
 
@@ -99,4 +108,4 @@ print(messages)
 
 ```
 
-It seems like you are asking for a translation into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, do you mean Māori, Mongolian, or something else? Let me know, and I'll assist you accordingly!
+It seems like you're asking to translate the text into "mo," but it's unclear what language "mo" refers to. Could you clarify or provide more details? If "mo" refers to a specific language (e.g., Moldovan/Romanian), I'd be happy to assist!

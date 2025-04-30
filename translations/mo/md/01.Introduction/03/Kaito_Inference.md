@@ -1,36 +1,44 @@
-## Kaito-თან ინფერენცია
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "7739575218e3244a58516832ad88a9a2",
+  "translation_date": "2025-04-04T12:04:29+00:00",
+  "source_file": "md\\01.Introduction\\03\\Kaito_Inference.md",
+  "language_code": "mo"
+}
+-->
+## Inference with Kaito
 
-[Kaito](https://github.com/Azure/kaito) არის ოპერატორი, რომელიც ავტომატურად ახორციელებს AI/ML ინფერენციის მოდელის დანერგვას Kubernetes-ის კლასტერში.
+[Kaito](https://github.com/Azure/kaito) è un operatore che automatizza il deployment dei modelli di inferenza AI/ML in un cluster Kubernetes.
 
-Kaito-ს აქვს შემდეგი ძირითადი განსხვავებები ვირტუალურ მანქანებზე დაფუძნებულ მოდელის დანერგვის ძირითად მეთოდოლოგიებთან შედარებით:
+Kaito presenta le seguenti differenze principali rispetto alla maggior parte delle metodologie di deployment dei modelli basate su infrastrutture di macchine virtuali:
 
-- მოდელის ფაილების მართვა კონტეინერის იმიჯების გამოყენებით. უზრუნველყოფილია http სერვერი, რომელიც მოდელის ბიბლიოთეკის გამოყენებით ახორციელებს ინფერენციის მოთხოვნებს.
-- GPU აპარატურასთან შესაბამისობისთვის პარამეტრების რეგულირების თავიდან აცილება წინასწარ კონფიგურაციების მიწოდებით.
-- GPU ნოდების ავტომატური პროვიზირება მოდელის მოთხოვნების საფუძველზე.
-- დიდი მოდელის იმიჯების მასპინძლობა საჯარო Microsoft Container Registry (MCR)-ში, თუ ლიცენზია ამის უფლებას იძლევა.
+- Gestisce i file del modello utilizzando immagini container. Viene fornito un server http per eseguire chiamate di inferenza utilizzando la libreria del modello.
+- Evita la necessità di ottimizzare i parametri di deployment per adattarsi all'hardware GPU grazie a configurazioni preimpostate.
+- Effettua il provisioning automatico dei nodi GPU in base ai requisiti del modello.
+- Ospita immagini di modelli di grandi dimensioni nel Microsoft Container Registry (MCR) pubblico, se la licenza lo consente.
 
-Kaito-ს გამოყენებით, Kubernetes-ში დიდი AI ინფერენციის მოდელების დანერგვის სამუშაო პროცესი მნიშვნელოვნად მარტივდება.
+Con Kaito, il flusso di lavoro per integrare modelli di inferenza AI di grandi dimensioni in Kubernetes è notevolmente semplificato.
 
+## Architettura
 
-## არქიტექტურა
-
-Kaito მიჰყვება კლასიკურ Kubernetes Custom Resource Definition (CRD)/კონტროლერის დიზაინის შაბლონს. მომხმარებელი მართავს `workspace` სპეციალურ რესურსს, რომელიც აღწერს GPU მოთხოვნებს და ინფერენციის სპეციფიკაციას. Kaito-ს კონტროლერები ავტომატურად ახორციელებენ დანერგვას `workspace` სპეციალური რესურსის სინქრონიზაციის გზით.
+Kaito segue il classico pattern di progettazione Kubernetes Custom Resource Definition (CRD)/controller. L'utente gestisce una risorsa personalizzata `workspace` che descrive i requisiti GPU e le specifiche di inferenza. I controller di Kaito automatizzeranno il deployment riconciliando la risorsa personalizzata `workspace`.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito არქიტექტურა" alt="Kaito არქიტექტურა">
+  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Architettura Kaito" alt="Architettura Kaito">
 </div>
 
-ზემოთ მოცემულ სურათზე ნაჩვენებია Kaito-ს არქიტექტურის მიმოხილვა. მისი ძირითადი კომპონენტებია:
+La figura sopra presenta una panoramica dell'architettura di Kaito. I suoi principali componenti includono:
 
-- **Workspace კონტროლერი**: სინქრონიზაციას უწევს `workspace` სპეციალურ რესურსს, ქმნის `machine` (განსაზღვრული ქვემოთ) სპეციალურ რესურსებს ნოდების ავტომატური პროვიზირების დასაწყებად და ქმნის ინფერენციის სამუშაო დატვირთვას (`deployment` ან `statefulset`) მოდელის წინასწარ კონფიგურაციების საფუძველზე.
-- **Node provisioner კონტროლერი**: ამ კონტროლერის სახელია *gpu-provisioner* [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner)-ში. ის იყენებს `machine` CRD-ს, რომელიც [Karpenter](https://sigs.k8s.io/karpenter)-იდან მოდის, რათა ურთიერთობა ჰქონდეს Workspace კონტროლერთან. ის ინტეგრირდება Azure Kubernetes Service (AKS) API-ებთან, რათა დაამატოს ახალი GPU ნოდები AKS კლასტერში.
-> შენიშვნა: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) არის ღია კოდის მქონე კომპონენტი. მისი ჩანაცვლება შესაძლებელია სხვა კონტროლერებით, თუ ისინი მხარს უჭერენ [Karpenter-core](https://sigs.k8s.io/karpenter) API-ებს.
+- **Workspace controller**: Riconcilia la risorsa personalizzata `workspace`, crea risorse personalizzate `machine` (spiegate di seguito) per avviare il provisioning automatico dei nodi e genera il carico di lavoro di inferenza (`deployment` o `statefulset`) basandosi sulle configurazioni preimpostate del modello.
+- **Node provisioner controller**: Il nome del controller è *gpu-provisioner* nel [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Utilizza la CRD `machine` originata da [Karpenter](https://sigs.k8s.io/karpenter) per interagire con il workspace controller. Si integra con le API di Azure Kubernetes Service (AKS) per aggiungere nuovi nodi GPU al cluster AKS.
+> Nota: Il [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) è un componente open source. Può essere sostituito da altri controller se supportano le API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
-## ინსტალაცია
+## Installazione
 
-ინსტალაციის სახელმძღვანელოს სანახავად იხილეთ [აქ](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Consulta la guida all'installazione [qui](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## სწრაფი დაწყება Phi-3 ინფერენცია
-[ნიმუშის კოდი Phi-3 ინფერენციისთვის](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Avvio rapido Inferenza Phi-3
+[Codice di esempio Inferenza Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -75,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Workspace-ის სტატუსის მონიტორინგი შეგიძლიათ შემდეგი ბრძანების გაშვებით. როდესაც WORKSPACEREADY სვეტი გახდება `True`, მოდელი წარმატებით არის დანერგილი.
+Lo stato del workspace può essere monitorato eseguendo il seguente comando. Quando la colonna WORKSPACEREADY diventa `True`, il modello è stato distribuito con successo.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -83,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-შემდეგ, შეგიძლიათ იპოვოთ ინფერენციის სერვისის კლასტერის IP და გამოიყენოთ დროებითი `curl` პოდი სერვისის საბოლოო წერტილის შესამოწმებლად კლასტერში.
+Successivamente, si può individuare l'indirizzo IP del servizio di inferenza nel cluster e utilizzare un pod temporaneo `curl` per testare l'endpoint del servizio nel cluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -94,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## სწრაფი დაწყება Phi-3 ინფერენცია ადაპტერებით
+## Avvio rapido Inferenza Phi-3 con adattatori
 
-Kaito-ს ინსტალაციის შემდეგ, შეგიძლიათ სცადოთ შემდეგი ბრძანებები ინფერენციის სერვისის დასაწყებად.
+Dopo aver installato Kaito, si possono provare i seguenti comandi per avviare un servizio di inferenza.
 
-[ნიმუშის კოდი Phi-3 ინფერენციისთვის ადაპტერებით](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Codice di esempio Inferenza Phi-3 con Adattatori](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -147,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Workspace-ის სტატუსის მონიტორინგი შეგიძლიათ შემდეგი ბრძანების გაშვებით. როდესაც WORKSPACEREADY სვეტი გახდება `True`, მოდელი წარმატებით არის დანერგილი.
+Lo stato del workspace può essere monitorato eseguendo il seguente comando. Quando la colonna WORKSPACEREADY diventa `True`, il modello è stato distribuito con successo.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -155,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-შემდეგ, შეგიძლიათ იპოვოთ ინფერენციის სერვისის კლასტერის IP და გამოიყენოთ დროებითი `curl` პოდი სერვისის საბოლოო წერტილის შესამოწმებლად კლასტერში.
+Successivamente, si può individuare l'indirizzo IP del servizio di inferenza nel cluster e utilizzare un pod temporaneo `curl` per testare l'endpoint del servizio nel cluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -166,4 +174,4 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-It seems you might be referring to a specific language or abbreviation with "mo." Could you please clarify or specify the language you'd like me to translate the text into? For example, "mo" could refer to Māori, Mongolian, or something else entirely. Let me know so I can assist you better!
+It seems like you want the text translated into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect, such as Maori, Mongolian, or something else? Let me know so I can assist you better!

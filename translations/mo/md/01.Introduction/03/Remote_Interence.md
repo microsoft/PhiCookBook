@@ -1,45 +1,54 @@
-# Inferensiya daura remaot ke saath fine-tuned model
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8782d16f62bc2bdae1f0b38f39a2417c",
+  "translation_date": "2025-04-04T12:08:34+00:00",
+  "source_file": "md\\01.Introduction\\03\\Remote_Interence.md",
+  "language_code": "mo"
+}
+-->
+# Remote Inferencing with the fine-tuned model
 
-Jab adapters ko remaot environment mein train kar liya jaye, to ek simple Gradio application ka istemal karke model ke saath interact kar sakte hain.
+After training the adapters in the remote environment, you can interact with the model using a simple Gradio application.
 
 ![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.mo.png)
 
-### Azure Resources ka tayari karna
-Remote inference ke liye Azure Resources setup karne ke liye, command palette se `AI Toolkit: Provision Azure Container Apps for inference` execute karein. Is setup ke dauraan, aapko apni Azure Subscription aur resource group ko select karne ke liye kaha jayega.  
+### Provision Azure Resources
+Set up the Azure Resources for remote inference by running `AI Toolkit: Provision Azure Container Apps for inference` from the command palette. During this process, you’ll be prompted to select your Azure Subscription and resource group.  
 ![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.mo.png)
 
-Default ke taur par, inference ke liye subscription aur resource group wahi hone chahiye jo fine-tuning ke liye use kiye gaye the. Inference ke liye wahi Azure Container App Environment use hoga aur model aur model adapter ko Azure Files se access karega, jo fine-tuning ke step ke dauraan generate hua tha.
+By default, the subscription and resource group for inference should align with those used during fine-tuning. The inference process will utilize the same Azure Container App Environment and access the model and adapter stored in Azure Files, which were created in the fine-tuning step.
 
-## AI Toolkit ka istemal
+## Using AI Toolkit 
 
-### Inference ke liye Deployment  
-Agar aap inference code ko revise karna chahte hain ya inference model ko reload karna chahte hain, to `AI Toolkit: Deploy for inference` command execute karein. Ye command aapke latest code ko ACA ke saath synchronize karega aur replica ko restart karega.
+### Deployment for Inference  
+To update the inference code or reload the inference model, execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with ACA and restart the replica.  
 
 ![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.mo.png)
 
-Deployment ke safal hone ke baad, model evaluation ke liye endpoint par tayar hai.
+Once deployment is successfully completed, the model will be ready for evaluation via the endpoint.
 
-### Inference API tak pahunchna
+### Accessing the Inference API
 
-Aap inference API ko VSCode notification mein dikhayi dene wale "*Go to Inference Endpoint*" button par click karke access kar sakte hain. Vikalp roop se, web API endpoint `ACA_APP_ENDPOINT` mein `./infra/inference.config.json` aur output panel mein mil sakta hai.
+Access the inference API by clicking the "*Go to Inference Endpoint*" button in the VSCode notification. Alternatively, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` and in the output panel.
 
 ![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.mo.png)
 
-> **Note:** Inference endpoint ko fully operational hone mein kuch minute lag sakte hain.
+> **Note:** It may take a few minutes for the inference endpoint to become fully operational.
 
-## Template mein shaamil inference components
-
-| Folder | Samagri |
+## Inference Components Included in the Template
+ 
+| Folder | Contents |
 | ------ |--------- |
-| `infra` | Remote operations ke liye zaroori sabhi configurations ko rakhta hai. |
-| `infra/provision/inference.parameters.json` | Bicep templates ke parameters rakhta hai, jo Azure resources ke provisioning ke liye use hote hain. |
-| `infra/provision/inference.bicep` | Azure resources ke provisioning ke liye templates ko rakhta hai. |
-| `infra/inference.config.json` | Configuration file, jo `AI Toolkit: Provision Azure Container Apps for inference` command ke dwara generate hota hai. Ye anya remote command palettes ke liye input ke roop mein use hota hai. |
+| `infra` | Contains all configurations needed for remote operations. |
+| `infra/provision/inference.parameters.json` | Includes parameters for the bicep templates, used to provision Azure resources for inference. |
+| `infra/provision/inference.bicep` | Contains templates for provisioning Azure resources for inference. |
+| `infra/inference.config.json` | Configuration file generated by the `AI Toolkit: Provision Azure Container Apps for inference` command, serving as input for other remote commands. |
 
-### Azure Resource Provision ko configure karne ke liye AI Toolkit ka istemal
-[AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) ko configure karein.
+### Using AI Toolkit to Configure Azure Resource Provision
+Set up the [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio).
 
-Inference ke liye Azure Container Apps ko provision karein ` command.
+Provision Azure Container Apps for inference using ` command.
 
 You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
 | Parameter | Description |
@@ -53,9 +62,9 @@ You can find configuration parameters in `./infra/provision/inference.parameters
 
 By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` file. Phir, command palette se `AI Toolkit: Provision Azure Container Apps for inference` command run karein. Ye kisi bhi specified resources ko update karega aur missing resources ko create karega.
+If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json`. Afterward, execute the `AI Toolkit: Provision Azure Container Apps for inference` command from the command palette. This will update existing resources or create any that are missing.
 
-Udaharan ke taur par, agar aapke paas ek existing Azure container environment hai, to aapka `./infra/finetuning.parameters.json` kuch is prakar dikhega:
+For instance, if you already have an Azure container environment, your `./infra/finetuning.parameters.json` file should look like this:
 
 ```json
 {
@@ -75,9 +84,9 @@ Udaharan ke taur par, agar aapke paas ek existing Azure container environment ha
 ```
 
 ### Manual Provision  
-Agar aap Azure resources ko manually configure karna pasand karte hain, to aap `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` file mein diye gaye bicep files ka use kar sakte hain.
+If you prefer to manually configure Azure resources, you can use the provided bicep files in the `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` file.
 
-Udaharan ke taur par:
+For example:
 
 ```json
 {
@@ -90,4 +99,4 @@ Udaharan ke taur par:
 }
 ```
 
-It seems like "mo" might refer to a specific language or abbreviation, but it's not clear which one you're referring to. Could you clarify or provide more context about the language or format you need the text translated into?
+It seems you are asking for a translation of the text into "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or dialect? If you can provide more details, I'd be happy to assist!

@@ -1,10 +1,19 @@
-# **Использование Phi-3-Vision локально**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
+  "translation_date": "2025-03-27T08:13:41+00:00",
+  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "language_code": "ru"
+}
+-->
+# **Запуск Phi-3-Vision локально**
 
-Phi-3-vision-128k-instruct позволяет Phi-3 не только понимать язык, но и видеть окружающий мир визуально. С помощью Phi-3-vision-128k-instruct мы можем решать различные визуальные задачи, такие как OCR, анализ таблиц, распознавание объектов, описание изображения и т.д. Мы легко можем выполнять задачи, которые ранее требовали большого объема данных для обучения. Ниже приведены связанные техники и сценарии применения, которые предоставляет Phi-3-vision-128k-instruct.
+Phi-3-vision-128k-instruct позволяет Phi-3 не только понимать язык, но и видеть окружающий мир. С помощью Phi-3-vision-128k-instruct мы можем решать различные визуальные задачи, такие как OCR, анализ таблиц, распознавание объектов, описание изображений и многое другое. Теперь можно легко выполнять задачи, которые раньше требовали большого объема данных для обучения. Ниже представлены связанные технологии и сценарии применения, упомянутые в Phi-3-vision-128k-instruct.
 
 ## **0. Подготовка**
 
-Перед началом работы убедитесь, что следующие библиотеки Python установлены (рекомендуется Python 3.10+)
+Перед началом работы убедитесь, что установлены следующие библиотеки Python (рекомендуется Python 3.10+)
 
 ```bash
 pip install transformers -U
@@ -12,7 +21,7 @@ pip install datasets -U
 pip install torch -U
 ```
 
-Рекомендуется использовать ***CUDA 11.6+*** и установить flatten.
+Рекомендуется использовать ***CUDA 11.6+*** и установить flatten
 
 ```bash
 pip install flash-attn --no-build-isolation
@@ -71,9 +80,9 @@ response = processor.batch_decode(generate_ids,
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
 ```
 
-## **2. OCR с использованием Phi-3-Vision**
+## **2. OCR с помощью Phi-3-Vision**
 
-Помимо анализа изображения, мы также можем извлекать информацию из изображения. Это процесс OCR, для которого раньше требовалось писать сложный код.
+Помимо анализа изображения, мы также можем извлекать информацию из изображения. Это процесс OCR, для которого раньше приходилось писать сложный код.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -141,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Отказ от ответственности**:  
-Этот документ был переведен с использованием автоматизированных сервисов перевода на основе искусственного интеллекта. Хотя мы стремимся к точности, имейте в виду, что автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникающие в результате использования данного перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на стремление к точности, следует учитывать, что автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке должен рассматриваться как авторитетный источник. Для получения критически важной информации рекомендуется профессиональный перевод человеком. Мы не несем ответственности за любые недоразумения или неправильные интерпретации, возникающие в результате использования данного перевода.

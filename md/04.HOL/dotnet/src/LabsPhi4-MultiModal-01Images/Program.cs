@@ -36,7 +36,14 @@ string userPrompt = "Describe the image, and return the string 'STOP' at the end
 var fullPrompt = $"<|system|>{systemPrompt}<|end|><|user|><|image_1|>{userPrompt}<|end|><|assistant|>";
 
 // initialize model
-var model = new Model(modelPath);
+Config config = new Config(modelPath);
+config.ClearProviders();
+
+// using GPU and the "Microsoft.ML.OnnxRuntimeGenAI.CUDA" reference
+//config.AppendProvider("cuda");
+//config.SetProviderOption("cuda", "enable_cuda_graph", "0");
+
+var model = new Model(config);
 var tokenizer = new Tokenizer(model);
 
 

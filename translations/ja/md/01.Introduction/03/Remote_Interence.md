@@ -1,45 +1,54 @@
-# 微調整済みモデルを使ったリモート推論
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8782d16f62bc2bdae1f0b38f39a2417c",
+  "translation_date": "2025-04-04T12:09:00+00:00",
+  "source_file": "md\\01.Introduction\\03\\Remote_Interence.md",
+  "language_code": "ja"
+}
+-->
+# リモート環境で微調整済みモデルを推論
 
-リモート環境でアダプターのトレーニングが完了したら、シンプルなGradioアプリケーションを使用してモデルと対話します。
+リモート環境でアダプターをトレーニングした後、簡単なGradioアプリケーションを使用してモデルと対話できます。
 
 ![微調整完了](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.ja.png)
 
-### Azureリソースのプロビジョニング
-リモート推論のためのAzureリソースをセットアップするには、コマンドパレットから`AI Toolkit: Provision Azure Container Apps for inference`を実行します。このセットアップ中に、Azureサブスクリプションとリソースグループを選択するよう求められます。  
-![推論リソースのプロビジョニング](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.ja.png)
+### Azureリソースの準備
+コマンドパレットから`AI Toolkit: Provision Azure Container Apps for inference`を実行して、リモート推論用のAzureリソースを設定する必要があります。この設定中に、Azureサブスクリプションとリソースグループを選択するよう求められます。  
+![推論リソースの準備](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.ja.png)
+   
+デフォルトでは、推論用のサブスクリプションとリソースグループは微調整に使用したものと一致する必要があります。推論は同じAzure Container App Environmentを使用し、微調整ステップで生成されたAzure Filesに保存されたモデルとモデルアダプターにアクセスします。
 
-デフォルトでは、推論用のサブスクリプションとリソースグループは微調整で使用したものと一致する必要があります。推論は同じAzure Container App Environmentを使用し、微調整ステップで生成されたAzure Filesに保存されたモデルとモデルアダプターにアクセスします。
+## AI Toolkitの使用方法
 
-## AI Toolkitの使用
-
-### 推論のためのデプロイ
-推論コードを修正したり、推論モデルを再読み込みしたりしたい場合は、`AI Toolkit: Deploy for inference`コマンドを実行してください。これにより、最新のコードがACAに同期され、レプリカが再起動されます。
+### 推論用デプロイ  
+推論コードを修正したり、推論モデルを再ロードしたりする場合は、`AI Toolkit: Deploy for inference`コマンドを実行してください。このコマンドは最新のコードをACAに同期し、レプリカを再起動します。
 
 ![推論用デプロイ](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.ja.png)
 
-デプロイが正常に完了すると、このエンドポイントを使用してモデルを評価する準備が整います。
+デプロイが成功すると、エンドポイントを使用してモデルを評価する準備が整います。
 
 ### 推論APIへのアクセス
 
-VSCodeの通知に表示される「*Go to Inference Endpoint*」ボタンをクリックすることで、推論APIにアクセスできます。または、`ACA_APP_ENDPOINT`内の`./infra/inference.config.json`および出力パネルでWeb APIエンドポイントを確認できます。
+VSCode通知に表示される「*Go to Inference Endpoint*」ボタンをクリックすることで推論APIにアクセスできます。また、Web APIエンドポイントは`ACA_APP_ENDPOINT`の`./infra/inference.config.json`や出力パネルに記載されています。
 
 ![アプリエンドポイント](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.ja.png)
 
-> **注意:** 推論エンドポイントが完全に動作するようになるまでに数分かかる場合があります。
+> **Note:** 推論エンドポイントが完全に動作するまで数分かかる場合があります。
 
 ## テンプレートに含まれる推論コンポーネント
-
-| フォルダー | 内容 |
+ 
+| フォルダ | 内容 |
 | ------ |--------- |
-| `infra` | リモート操作に必要なすべての設定を含みます。 |
-| `infra/provision/inference.parameters.json` | Azureリソースをプロビジョニングするためのbicepテンプレートのパラメーターを保持します。 |
-| `infra/provision/inference.bicep` | Azureリソースをプロビジョニングするためのテンプレートが含まれています。 |
-| `infra/inference.config.json` | `AI Toolkit: Provision Azure Container Apps for inference`コマンドによって生成される設定ファイル。他のリモートコマンドパレットの入力として使用されます。 |
+| `infra` | リモート操作に必要なすべての設定を含む。 |
+| `infra/provision/inference.parameters.json` | Azureリソースをプロビジョニングするためのbicepテンプレートのパラメータを保持。 |
+| `infra/provision/inference.bicep` | Azureリソースをプロビジョニングするためのテンプレートを含む。 |
+| `infra/inference.config.json` | `AI Toolkit: Provision Azure Container Apps for inference`コマンドによって生成された設定ファイル。他のリモートコマンドパレットの入力として使用される。 |
 
 ### AI Toolkitを使用したAzureリソースプロビジョニングの設定
 [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)を設定してください。
 
-推論用のAzure Container Appsをプロビジョニングする` command.
+推論用のAzure Container Appsをプロビジョニングするには` command.
 
 You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
 | Parameter | Description |
@@ -53,9 +62,9 @@ You can find configuration parameters in `./infra/provision/inference.parameters
 
 By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json`ファイルを編集してください。その後、コマンドパレットから`AI Toolkit: Provision Azure Container Apps for inference`コマンドを実行します。これにより、指定されたリソースが更新され、不足しているリソースが作成されます。
+If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json`ファイルを使用します。そして、コマンドパレットから`AI Toolkit: Provision Azure Container Apps for inference`コマンドを実行してください。この操作により、指定されたリソースが更新され、不足しているものが作成されます。
 
-例えば、既存のAzure Container Environmentがある場合、`./infra/finetuning.parameters.json`は次のようになります：
+例えば、既存のAzureコンテナ環境がある場合、`./infra/finetuning.parameters.json`は次のようになります：
 
 ```json
 {
@@ -74,10 +83,10 @@ If you have customized the Azure resources during the fine-tuning step or want t
   }
 ```
 
-### 手動プロビジョニング
-Azureリソースを手動で設定したい場合は、`./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`ファイルにある提供されたbicepファイルを使用してください。
+### 手動プロビジョニング  
+Azureリソースを手動で設定したい場合は、`./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`ファイル内の提供されたbicepファイルを使用できます。
 
-例：
+例えば：
 
 ```json
 {
@@ -91,4 +100,4 @@ Azureリソースを手動で設定したい場合は、`./infra/provision` fold
 ```
 
 **免責事項**:  
-本書類は、機械ベースのAI翻訳サービスを使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確さが含まれる可能性があることをご承知おきください。元の言語で記載された原文が公式な情報源と見なされるべきです。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の利用に起因する誤解や誤解釈について、当社は一切の責任を負いません。
+この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性がありますのでご注意ください。原文書の母国語版を信頼できる情報源としてお考えください。重要な情報については、専門の人間による翻訳をお勧めします。この翻訳の使用に起因する誤解や誤解釈について、当社は一切責任を負いません。

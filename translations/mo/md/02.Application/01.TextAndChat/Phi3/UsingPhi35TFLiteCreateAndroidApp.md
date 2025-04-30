@@ -1,28 +1,37 @@
-# **Microsoft Phi-3.5 tflite-ийг ашиглан Android апп үүсгэх**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "2faa9c6d61c5aa2708aec02a39ec464b",
+  "translation_date": "2025-04-04T12:43:56+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\UsingPhi35TFLiteCreateAndroidApp.md",
+  "language_code": "mo"
+}
+-->
+# **Microsoft Phi-3.5 tflite ka yi amfani da shi don ƙirƙirar aikace-aikacen Android**
 
-Энэ бол Microsoft Phi-3.5 tflite загваруудыг ашигласан Android-ийн жишээ юм.
+Wannan misali ne na Android da ke amfani da samfuran Microsoft Phi-3.5 tflite.
 
-## **📚 Мэдлэг**
+## **📚 Ilimi**
 
-Android LLM Inference API нь Android аппликейшнуудад зориулан том хэмжээний хэлний загваруудыг (LLM) бүрэн төхөөрөмж дээр ажиллуулах боломжийг олгодог. Үүнийг ашиглан текст үүсгэх, байгалийн хэлээр мэдээлэл авах, баримт бичгийг хураангуйлах гэх мэт олон төрлийн даалгавруудыг гүйцэтгэж болно. Энэ даалгавар нь олон төрлийн текстээс текст рүү чиглэсэн том хэлний загваруудыг дэмждэг тул хамгийн сүүлийн үеийн төхөөрөмж дээрх generative AI загваруудыг таны Android апп-д ашиглах боломжтой.
+Android LLM Inference API yana ba ka damar gudanar da manyan samfuran harshe (LLMs) gaba ɗaya a kan na'urar don aikace-aikacen Android, wanda zaka iya amfani da shi don aiwatar da ayyuka iri-iri, kamar samar da rubutu, samun bayanai cikin harshe na halitta, da taƙaitawa takardu. Wannan aikin yana ba da tallafi na gina a ciki don samfuran manyan harshe na rubutu-zuwa-rubutu, don haka zaka iya amfani da sabbin samfuran AI na ƙirƙira akan na'urar don aikace-aikacen Android.
 
-Google AI Edge Torch нь PyTorch загваруудыг .tflite формат руу хөрвүүлэхийг дэмждэг python сан бөгөөд үүнийг TensorFlow Lite болон MediaPipe ашиглан ажиллуулах боломжтой. Энэ нь Android, iOS болон IoT төхөөрөмжүүдэд загваруудыг бүрэн төхөөрөмж дээр ажиллуулах боломжийг олгодог. AI Edge Torch нь CPU-гийн өргөн хүрээг хамардаг бөгөөд GPU болон NPU-ийн эхний шатны дэмжлэгтэй. AI Edge Torch нь PyTorch-тэй нягт уялдаж, torch.export() дээр суурилан Core ATen операторуудыг өргөн хамрахыг зорьдог.
+Googld AI Edge Torch wata ɗakunan karatu ne na python wanda ke tallafawa canza samfuran PyTorch zuwa tsari na .tflite, wanda daga nan za a iya gudanar da shi tare da TensorFlow Lite da MediaPipe. Wannan yana ba da damar aikace-aikace don Android, iOS da IoT wanda zai iya gudanar da samfuran gaba ɗaya a kan na'urar. AI Edge Torch yana ba da tallafi mai faɗi ga CPU, tare da tallafi na farko don GPU da NPU. AI Edge Torch yana neman haɗin kai sosai tare da PyTorch, gina a saman torch.export() da kuma ba da tallafi mai kyau ga Core ATen masu aiki.
 
-## **🪬 Заавар**
+## **🪬 Jagora**
 
-### **🔥 Microsoft Phi-3.5-ийг tflite руу хөрвүүлэх**
+### **🔥 Canza Microsoft Phi-3.5 zuwa tallafi na tflite**
 
-0. Энэ жишээ нь зөвхөн Android 14+ хувилбарт зориулагдсан.
+0. Wannan misali yana da Android 14+
 
-1. Python 3.10.12-ийг суулгах.
+1. Shigar da Python 3.10.12
 
-***Санал болгох:*** Python орчноо conda ашиглан суулгаарай.
+***Shawara:*** yin amfani da conda don shigar da yanayin Python ɗinka
 
-2. Ubuntu 20.04 / 22.04 (анхаарлаа [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) дээр төвлөрүүлнэ үү)
+2. Ubuntu 20.04 / 22.04 (da fatan a mai da hankali kan [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Санал болгох:*** Azure Linux VM эсвэл гуравдагч этгээдийн үүлэн VM ашиглан орчноо үүсгээрэй.
+***Shawara:*** Amfani da Azure Linux VM ko VM na cloud na ɓangare na uku don ƙirƙirar yanayin ɗinka
 
-3. Linux bash дээрээ очоод Python сан суулгаарай.
+3. Je zuwa bash ɗin Linux ɗinka, don shigar da ɗakunan karatu na Python 
 
 ```bash
 
@@ -38,7 +47,8 @@ pip install -e .
 
 ```
 
-4. Hugging Face-ээс Microsoft-3.5-Instruct-ийг татаж ав.
+4. Zazzage Microsoft-3.5-Instruct daga Hugging face
+
 
 ```bash
 
@@ -48,7 +58,8 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. Microsoft Phi-3.5-ийг tflite руу хөрвүүлнэ.
+5. Canza Microsoft Phi-3.5 zuwa tflite
+
 
 ```bash
 
@@ -56,9 +67,10 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 Microsoft Phi-3.5-ийг Android Mediapipe багц руу хөрвүүлэх**
 
-Эхлээд mediapipe-ийг суулгаарай.
+### **🔥 Canza Microsoft Phi-3.5 zuwa Android Mediapipe Bundle**
+
+da fatan za a fara shigar da mediapipe
 
 ```bash
 
@@ -66,7 +78,9 @@ pip install mediapipe
 
 ```
 
-[Тэмдэглэлийн дэвтэртээ](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb) дараах кодыг ажиллуулаарай.
+gudanar da wannan lambar a cikin [notebook ɗinku](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
+
+
 
 ```python
 
@@ -85,7 +99,9 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 Загварын файлыг adb push ашиглан Android төхөөрөмжийн замд байршуулах**
+
+### **🔥 Yin amfani da adb don turawa samfurin aikin zuwa hanyar na'urar Android ɗinka**
+
 
 ```bash
 
@@ -97,8 +113,8 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ```
 
-### **🔥 Android кодоо ажиллуулах**
+### **🔥 Gudanar da lambar Android ɗinka**
 
-![демо](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.mo.png)
+![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.mo.png)
 
-It seems like "mo" could refer to a language or abbreviation, but it's not entirely clear which one you mean. Could you clarify whether "mo" refers to a specific language (e.g., Maori, Montenegrin, or something else)? If so, I'd be happy to assist with the translation!
+It seems you want the text translated into "mo," but could you clarify what "mo" refers to? Are you asking for translation into Māori, Montenegrin, or another language?

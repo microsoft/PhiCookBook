@@ -1,6 +1,16 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
+  "translation_date": "2025-03-27T15:22:29+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_Vision.md",
+  "language_code": "de"
+}
+-->
 # Phi-3.5-vision Feintuning-Rezept
 
-Dies ist die offizielle Anleitung für das Feintuning von Phi-3.5-vision mit den Huggingface-Bibliotheken. Bitte `cd` in das Code-Verzeichnis [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) wechseln, bevor die folgenden Befehle ausgeführt werden.
+Dies ist die offizielle Unterstützung für das Feintuning von Phi-3.5-vision mit Huggingface-Bibliotheken.  
+Bitte `cd` in das Code-Verzeichnis [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) wechseln, bevor die folgenden Befehle ausgeführt werden.
 
 ## Installation
 
@@ -23,18 +33,18 @@ MAX_JOBS=32 pip install flash-attn==2.4.2 --no-build-isolation
 pip install bitsandbytes==0.43.1
 ```
 
-## Schnelleinstieg
+## Schnellstart
 
-Wir bieten zwei Beispielskripte für das Feintuning an: eines für DocVQA und eines für die Klassifikation von hasserfüllten Memes.
+Wir stellen zwei Beispielskripte für das Feintuning bereit: eines für DocVQA und eines für die Klassifizierung hasserfüllter Memes.
 
-Minimal getestete Hardware: 4x RTX8000 (48 GB RAM pro GPU)
+Minimale getestete Hardware: 4x RTX8000 (48GB RAM pro GPU)
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision unterstützt jetzt offiziell Multi-Image-Eingaben. Hier ein Beispiel für das Feintuning auf NLVR2:
+Phi-3.5-vision unterstützt jetzt offiziell Multi-Image-Eingaben. Hier ist ein Beispiel für das Feintuning von NLVR2:
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -42,11 +52,12 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## Anleitung zur Nutzung
 
-Je nach Hardware können Nutzer unterschiedliche Feintuning-Strategien wählen. Wir unterstützen vollständiges Feintuning (mit Deepspeed Zero-2) mit optional eingefrorenen Vision-Parametern sowie LoRA (einschließlich 4bit QLoRA). Generell empfehlen wir, wann immer möglich, vollständiges Feintuning mit Flash Attention und bf16 zu verwenden.
+Abhängig von der Hardware können Benutzer unterschiedliche Feintuning-Strategien wählen. Wir unterstützen vollständiges Feintuning (mit Deepspeed Zero-2) mit optional eingefrorenen Vision-Parametern sowie LoRA (einschließlich 4bit QLoRA).  
+Im Allgemeinen empfehlen wir die Verwendung von vollständigem Feintuning mit Flash Attention und bf16, wenn möglich.
 
-### Anleitung zur Konvertierung eines benutzerdefinierten Datensatzes in das erforderliche Format
+### Anleitung zur Konvertierung Ihres benutzerdefinierten Datensatzes in das erforderliche Format
 
-Wir verwenden einen minimalen Video-Klassifikationsdatensatz (einen Teil von UCF-101) als End-to-End-Beispiel, um zu demonstrieren, wie Sie Ihren benutzerdefinierten Datensatz in das erforderliche Format konvertieren und Phi-3.5-vision darauf feintunen können.
+Wir verwenden einen minimalen Videoklassifizierungsdatensatz (einen Teil von UCF-101) als End-to-End-Beispiel, um zu demonstrieren, wie Sie Ihren benutzerdefinierten Datensatz in das erforderliche Format konvertieren und Phi-3.5-vision darauf feintunen können.
 
 ```bash
 # convert data
@@ -56,7 +67,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-Die konvertierten Daten sehen wie folgt aus:
+Die konvertierten Daten werden wie folgt aussehen:
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -102,49 +113,49 @@ Die konvertierten Daten sehen wie folgt aus:
 34 directories, 3 files
 ```
 
-Für die `jsonl`-Annotation sollte jede Zeile ein Wörterbuch wie dieses sein:
+Für die `jsonl`-Annotation sollte jede Zeile ein Dictionary sein wie:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Beachten Sie, dass `conversations` eine Liste ist, sodass mehrstufige Dialoge unterstützt werden können, falls solche Daten verfügbar sind.
+Beachten Sie, dass `conversations` eine Liste ist, sodass mehrstufige Konversationen unterstützt werden können, falls solche Daten verfügbar sind.
 
-## Beantragung eines Azure GPU-Kontingents 
+## Azure GPU-Quota anfordern 
 
 ### Voraussetzungen
 
-Ein Azure-Konto mit der Rolle „Mitwirkender“ (oder einer anderen Rolle mit Mitwirkendenzugriff).
+Ein Azure-Konto mit der Rolle "Contributor" (oder einer anderen Rolle, die Zugriff als Contributor beinhaltet).
 
-Falls Sie kein Azure-Konto haben, erstellen Sie [hier ein kostenloses Konto](https://azure.microsoft.com), bevor Sie beginnen.
+Falls Sie kein Azure-Konto haben, erstellen Sie ein [kostenloses Konto, bevor Sie beginnen](https://azure.microsoft.com).
 
-### Kontingentserhöhung beantragen
+### Quota-Erhöhung anfordern
 
-Sie können eine Anfrage zur Erhöhung des Kontingents direkt über "Meine Kontingente" stellen. Befolgen Sie die unten stehenden Schritte, um eine Erhöhung zu beantragen. In diesem Beispiel können Sie jedes anpassbare Kontingent in Ihrem Abonnement auswählen.
+Sie können eine Anfrage zur Quota-Erhöhung direkt über "My quotas" einreichen. Folgen Sie den unten stehenden Schritten, um eine Erhöhung für eine Quota anzufordern. In diesem Beispiel können Sie jede anpassbare Quota in Ihrem Abonnement auswählen.
 
 Melden Sie sich im [Azure-Portal](https://portal.azure.com) an.
 
-Geben Sie „Kontingente“ in das Suchfeld ein und wählen Sie dann „Kontingente“ aus.  
+Geben Sie "quotas" in das Suchfeld ein und wählen Sie anschließend Quotas.  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-Wählen Sie auf der Übersichtsseite einen Anbieter aus, z. B. Compute oder AML.
+Auf der Übersichtsseite wählen Sie einen Anbieter aus, z. B. Compute oder AML.
 
-**Hinweis**: Für alle Anbieter außer Compute wird eine Spalte „Erhöhung beantragen“ angezeigt, anstelle der unten beschriebenen Spalte „Anpassbar“. Dort können Sie eine Erhöhung für ein bestimmtes Kontingent anfordern oder eine Supportanfrage für die Erhöhung erstellen.
+**Hinweis** Für alle Anbieter außer Compute wird Ihnen eine Spalte "Request increase" anstelle der unten beschriebenen Spalte "Adjustable" angezeigt. Dort können Sie eine Erhöhung für eine spezifische Quota anfordern oder eine Support-Anfrage für die Erhöhung erstellen.
 
-Wählen Sie auf der Seite „Meine Kontingente“ unter Kontingentname das Kontingent aus, das Sie erhöhen möchten. Stellen Sie sicher, dass in der Spalte „Anpassbar“ für dieses Kontingent „Ja“ angezeigt wird.
+Auf der Seite "My quotas" wählen Sie unter Quota-Name die Quota aus, die Sie erhöhen möchten. Stellen Sie sicher, dass die Spalte "Adjustable" für diese Quota "Yes" anzeigt.
 
-Wählen Sie oben auf der Seite „Neue Kontingentanfrage“ und anschließend „Neues Limit eingeben“ aus.
+Klicken Sie oben auf der Seite auf "New Quota Request" und wählen Sie "Enter a new limit".
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-Geben Sie im Bereich „Neue Kontingentanfrage“ einen numerischen Wert für Ihr neues Kontingentlimit ein und wählen Sie dann „Senden“ aus.
+Im Bereich "New Quota Request" geben Sie einen numerischen Wert für Ihre neue Quota-Grenze ein und klicken Sie auf "Submit".
 
-Ihre Anfrage wird überprüft, und Sie werden benachrichtigt, ob die Anfrage erfüllt werden kann. Dies geschieht in der Regel innerhalb weniger Minuten.
+Ihre Anfrage wird geprüft, und Sie werden benachrichtigt, ob die Anfrage erfüllt werden kann. Dies geschieht normalerweise innerhalb weniger Minuten.
 
-Falls Ihre Anfrage nicht erfüllt werden kann, wird ein Link angezeigt, um eine Supportanfrage zu erstellen. Über diesen Link wird Ihnen ein Supportingenieur bei Ihrer Anfrage zur Erhöhung helfen.
+Falls Ihre Anfrage nicht erfüllt wird, sehen Sie einen Link zur Erstellung einer Support-Anfrage. Wenn Sie diesen Link verwenden, wird ein Support-Ingenieur Sie bei Ihrer Anfrage zur Erhöhung unterstützen.
 
-## Azure Compute GPU-Maschinenvorschläge
+## Vorschläge für Azure Compute GPU-Maschinen-SKU
 
 [ND A100 v4-Serie](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -156,7 +167,7 @@ Hier sind einige Beispiele:
 
 ### Wenn Sie A100- oder H100-GPUs haben
 
-Vollständiges Feintuning bietet in der Regel die beste Leistung. Sie können den folgenden Befehl verwenden, um Phi-3-V für die Klassifikation von hasserfüllten Memes zu feintunen.
+Vollständiges Feintuning liefert normalerweise die besten Ergebnisse. Sie können den folgenden Befehl verwenden, um Phi-3-V für die Klassifizierung hasserfüllter Memes zu feintunen.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -170,7 +181,8 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Wenn Sie Standard_ND40rs_v2 8x V100-32GB GPUs haben
 
-Es ist immer noch möglich, Phi-3-V für die Klassifikation von hasserfüllten Memes vollständig zu feintunen. Allerdings sollten Sie mit einer deutlich niedrigeren Durchsatzrate im Vergleich zu A100- oder H100-GPUs rechnen, da keine Flash Attention-Unterstützung vorhanden ist. Die Genauigkeit könnte ebenfalls beeinträchtigt sein, da keine bf16-Unterstützung verfügbar ist (stattdessen wird ein fp16-Gemischtpräzisionstraining verwendet).
+Es ist weiterhin möglich, Phi-3-V vollständig für die Klassifizierung hasserfüllter Memes zu feintunen. Erwarten Sie jedoch eine deutlich niedrigere Durchsatzrate im Vergleich zu A100- oder H100-GPUs aufgrund fehlender Flash-Attention-Unterstützung.  
+Die Genauigkeit könnte ebenfalls beeinträchtigt sein, da keine bf16-Unterstützung verfügbar ist (stattdessen wird fp16-Mixed-Precision-Training verwendet).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -180,9 +192,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### Wenn Sie keinen Zugang zu Rechenzentrums-GPUs haben
+### Wenn Sie keinen Zugriff auf Rechenzentrums-GPUs haben
 
-LoRA könnte Ihre einzige Option sein. Sie können den folgenden Befehl verwenden, um Phi-3-V für die Klassifikation von hasserfüllten Memes zu feintunen.
+LoRA könnte Ihre einzige Option sein. Sie können den folgenden Befehl verwenden, um Phi-3-V für die Klassifizierung hasserfüllter Memes zu feintunen.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -192,7 +204,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-Für Turing+-GPUs wird QLoRA unterstützt.
+Für Turing+ GPU wird QLoRA unterstützt.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -204,7 +216,6 @@ torchrun --nproc_per_node=2 \
 ```
 
 ## Vorgeschlagene Hyperparameter und erwartete Genauigkeit
-
 ### NLVR2
 
 ```bash
@@ -218,15 +229,15 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Trainingsmethode | Eingefrorenes Vision-Modell | Datentyp | LoRA-Rang | LoRA-Alpha | Batchgröße | Lernrate | Epochen | Genauigkeit
---- | --- | --- | --- | --- | --- | --- | --- | --- |
-vollständiges Feintuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89,40 |
-vollständiges Feintuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89,20 |
+Trainingsmethode | Eingefrorenes Vision-Modell | Datentyp | LoRA-Rang | LoRA-Alpha | Batch-Größe | Lernrate | Epochen | Genauigkeit  
+--- | --- | --- | --- | --- | --- | --- | --- | --- |  
+Vollständiges Feintuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |  
+Vollständiges Feintuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |  
 LoRA-Ergebnisse folgen bald |  |  |  |  |  |  |  |  |
 
-### HINWEIS
-
-Die unten aufgeführten Ergebnisse für DocVQA und hasserfüllte Memes basieren auf der vorherigen Version (Phi-3-vision). Die neuen Ergebnisse mit Phi-3.5-vision werden bald aktualisiert.
+### HINWEIS  
+Die unten stehenden Ergebnisse für DocVQA und hasserfüllte Memes basieren auf der vorherigen Version (Phi-3-vision).  
+Die neuen Ergebnisse mit Phi-3.5-vision werden bald aktualisiert.
 
 ### DocVQA (HINWEIS: Phi-3-vision)
 
@@ -242,16 +253,16 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Trainingsmethode | Datentyp | LoRA-Rang | LoRA-Alpha | Batchgröße | Lernrate | Epochen | ANLS
---- | --- | --- | --- | --- | --- | --- | --- |
-vollständiges Feintuning | bf16 | - | - | 64 | 5e-6 | 2 | 83,65 |
-vollständiges Feintuning | fp16 | - | - | 64 | 5e-6 | 2 | 82,60 |
-eingefrorenes Bildmodell | bf16 | - | - | 64 | 1e-4 | 2 | 79,19 |
-eingefrorenes Bildmodell | fp16 | - | - | 64 | 1e-4 | 2 | 78,74 |
-LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82,46 |
-LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82,34 |
-QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81,85 |
-QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81,85 |
+Trainingsmethode | Datentyp | LoRA-Rang | LoRA-Alpha | Batch-Größe | Lernrate | Epochen | ANLS  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+Vollständiges Feintuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |  
+Vollständiges Feintuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |  
+Eingefrorenes Bildmodell | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |  
+Eingefrorenes Bildmodell | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |  
+LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |  
+LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |  
+QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |  
+QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
 ### Hasserfüllte Memes (HINWEIS: Phi-3-vision)
 
@@ -266,52 +277,52 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Trainingsmethode | Datentyp | LoRA-Rang | LoRA-Alpha | Batchgröße | Lernrate | Epochen | Genauigkeit
---- | --- | --- | --- | --- | --- | --- | --- |
-vollständiges Feintuning | bf16 | - | - | 64 | 5e-5 | 2 | 86,4 |
-vollständiges Feintuning | fp16 | - | - | 64 | 5e-5 | 2 | 85,4 |
-eingefrorenes Bildmodell | bf16 | - | - | 64 | 1e-4 | 3 | 79,4 |
-eingefrorenes Bildmodell | fp16 | - | - | 64 | 1e-4 | 3 | 78,6 |
-LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86,6 |
-LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85,2 |
-QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84,0 |
-QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83,8 |
+Trainingsmethode | Datentyp | LoRA-Rang | LoRA-Alpha | Batch-Größe | Lernrate | Epochen | Genauigkeit  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+Vollständiges Feintuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |  
+Vollständiges Feintuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |  
+Eingefrorenes Bildmodell | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |  
+Eingefrorenes Bildmodell | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |  
+LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |  
+LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |  
+QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |  
+QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 ## Geschwindigkeits-Benchmarking (HINWEIS: Phi-3-vision)
 
 Neue Benchmarking-Ergebnisse mit Phi-3.5-vision werden bald aktualisiert.
 
-Das Geschwindigkeits-Benchmarking wurde auf dem DocVQA-Datensatz durchgeführt. Die durchschnittliche Sequenzlänge dieses Datensatzes beträgt 2443,23 Token (unter Verwendung von `num_crops=16` für das Bildmodell).
+Das Geschwindigkeits-Benchmarking wurde auf dem DocVQA-Datensatz durchgeführt. Die durchschnittliche Sequenzlänge dieses Datensatzes beträgt 2443.23 Tokens (unter Verwendung von `num_crops=16` für das Bildmodell).
 
 ### 8x A100-80GB (Ampere)
 
-Trainingsmethode | \# Knoten | GPUs | Flash Attention | Effektive Batchgröße | Durchsatz (img/s) | Beschleunigung | Maximale GPU-Speicherbelegung (GB)
---- | --- | --- | --- | --- | --- | --- | --- |
-vollständiges Feintuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
-vollständiges Feintuning | 1 | 8 | ✔ | 64 | 8.657 | 1,72x | ~36
-vollständiges Feintuning | 2 | 16 | ✔ | 64 | 16.903 | 3,35x | ~29
-vollständiges Feintuning | 4 | 32 | ✔ | 64 | 33.433 | 6,63x | ~26
-eingefrorenes Bildmodell | 1 | 8 |  | 64 | 17.578 | 3,49x | ~29
-eingefrorenes Bildmodell | 1 | 8 | ✔ | 64 | 31.736 | 6,30x | ~27
-LoRA | 1 | 8 |  | 64 | 5.591 | 1,11x | ~50
-LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2,41x | ~16
-QLoRA | 1 | 8 |  | 64 | 4.831 | 0,96x | ~32
-QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2,09x | ~10
+Trainingsmethode | \# Nodes | GPUs | Flash Attention | Effektive Batch-Größe | Durchsatz (img/s) | Geschwindigkeitssteigerung | Maximale GPU-Speicherauslastung (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+Vollständiges Feintuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42  
+Vollständiges Feintuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36  
+Vollständiges Feintuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29  
+Vollständiges Feintuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26  
+Eingefrorenes Bildmodell | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29  
+Eingefrorenes Bildmodell | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27  
+LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50  
+LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16  
+QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32  
+QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10  
 
 ### 8x V100-32GB (Volta)
 
-Trainingsmethode | \# Knoten | GPUs | Flash Attention | Effektive Batchgröße | Durchsatz (img/s) | Beschleunigung | Maximale GPU-Speicherbelegung (GB)
---- | --- | --- | --- | --- | --- | --- | --- |
-vollständiges Feintuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
-vollständiges Feintuning | 2 | 16 |  | 64 | 4.182 | 1,70x | ~32
-vollständiges Feintuning | 4 | 32 |  | 64 | 5.465 | 2,22x | ~32
-eingefrorenes Bildmodell | 1 | 8 |  | 64 | 8.942 | 3,63x | ~27
-LoRA | 1 | 8 |  | 64 | 2.807 | 1,14x | ~30
+Trainingsmethode | \# Nodes | GPUs | Flash Attention | Effektive Batch-Größe | Durchsatz (img/s) | Geschwindigkeitssteigerung | Maximale GPU-Speicherauslastung (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+Vollständiges Feintuning | 1 | 8 | | 64 | 2.462 |  1x | ~32  
+Vollständiges Feintuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32  
+Vollständiges Feintuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32  
+Eingefrorenes Bildmodell | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27  
+LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30  
 
 ## Bekannte Probleme
 
-- Flash Attention kann nicht mit fp16 ausgeführt werden (bf16 wird immer empfohlen, wenn verfügbar, und alle GPUs, die Flash Attention unterstützen, unterstützen auch bf16).
-- Das Speichern von Zwischen-Checkpoints und das Fortsetzen des Trainings wird derzeit nicht unterstützt.
+- Flash Attention kann nicht mit fp16 ausgeführt werden (bf16 wird immer empfohlen, wenn verfügbar, und alle GPUs, die Flash Attention unterstützen, unterstützen auch bf16).  
+- Speichern von Zwischenergebnissen und Fortsetzen des Trainings wird derzeit nicht unterstützt.  
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit KI-gestützten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung resultieren.

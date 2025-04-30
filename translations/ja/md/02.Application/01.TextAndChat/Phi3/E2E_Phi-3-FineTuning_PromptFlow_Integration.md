@@ -1,56 +1,65 @@
-# Phi-3モデルのカスタムチューニングとPrompt flowへの統合
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "fbe98d822c2708e9dbc43509bad607ec",
+  "translation_date": "2025-04-04T12:30:57+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
+  "language_code": "ja"
+}
+-->
+# カスタムPhi-3モデルのファインチューニングとPrompt flowへの統合
 
-このエンドツーエンド（E2E）サンプルは、Microsoft Tech Communityのガイド「[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)」に基づいています。このガイドでは、Phi-3モデルのカスタムチューニング、デプロイ、Prompt flowとの統合のプロセスを紹介します。
+このエンドツーエンド（E2E）サンプルは、Microsoft Tech Communityのガイド「[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)」を基にしています。このガイドでは、カスタムPhi-3モデルのファインチューニング、デプロイ、Prompt flowとの統合プロセスについて説明します。
 
 ## 概要
 
-このE2Eサンプルでは、Phi-3モデルのチューニング方法とPrompt flowとの統合方法を学びます。Azure Machine LearningとPrompt flowを活用して、カスタムAIモデルをデプロイして利用するためのワークフローを確立します。このE2Eサンプルは以下の3つのシナリオに分かれています：
+このE2Eサンプルでは、Phi-3モデルのファインチューニングとPrompt flowへの統合方法を学びます。Azure Machine LearningとPrompt flowを活用して、カスタムAIモデルをデプロイおよび利用するためのワークフローを確立します。このE2Eサンプルは、以下の3つのシナリオに分かれています。
 
-**シナリオ1: Azureリソースのセットアップとチューニング準備**
+**シナリオ1: Azureリソースのセットアップとファインチューニングの準備**
 
-**シナリオ2: Phi-3モデルのチューニングとAzure Machine Learning Studioでのデプロイ**
+**シナリオ2: Phi-3モデルのファインチューニングとAzure Machine Learning Studioでのデプロイ**
 
 **シナリオ3: Prompt flowとの統合とカスタムモデルとのチャット**
 
-以下はこのE2Eサンプルの概要です。
+以下は、このE2Eサンプルの概要図です。
 
 ![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.dfeb1f15c7d3c8989fb267a05ac83a25485a7230bde037df9d3d92336afc1993.ja.png)
 
 ### 目次
 
-1. **[シナリオ1: Azureリソースのセットアップとチューニング準備](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Azure Machine Learningワークスペースの作成](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [AzureサブスクリプションでのGPUクォータのリクエスト](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [ロール割り当ての追加](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[シナリオ1: Azureリソースのセットアップとファインチューニングの準備](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Azure Machine Learning Workspaceの作成](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [AzureサブスクリプションでGPUクォータをリクエスト](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [ロールの割り当てを追加](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [プロジェクトのセットアップ](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [チューニング用データセットの準備](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [ファインチューニング用データセットの準備](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[シナリオ2: Phi-3モデルのチューニングとAzure Machine Learning Studioでのデプロイ](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[シナリオ2: Phi-3モデルのファインチューニングとAzure Machine Learning Studioでのデプロイ](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Azure CLIのセットアップ](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Phi-3モデルのチューニング](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [チューニング済みモデルのデプロイ](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Phi-3モデルのファインチューニング](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [ファインチューニングしたモデルのデプロイ](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. **[シナリオ3: Prompt flowとの統合とカスタムモデルとのチャット](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [カスタムPhi-3モデルをPrompt flowに統合](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [カスタムPhi-3モデルをPrompt flowと統合](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [カスタムモデルとのチャット](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## シナリオ1: Azureリソースのセットアップとチューニング準備
+## シナリオ1: Azureリソースのセットアップとファインチューニングの準備
 
-### Azure Machine Learningワークスペースの作成
+### Azure Machine Learning Workspaceの作成
 
-1. ポータルページ上部の**検索バー**に「*azure machine learning*」と入力し、表示されるオプションから**Azure Machine Learning**を選択します。
+1. ポータルページ上部の**検索バー**に「*azure machine learning*」と入力し、表示されたオプションから**Azure Machine Learning**を選択します。
 
     ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.321cff72d18a51c06dee2db7463868f3ca6619559a5d68b7795d70f4a8b3a683.ja.png)
 
 1. **+ Create**を選択します。
 
-1. ナビゲーションメニューから**New workspace**を選択します。
+1. **New workspace**を選択します。
 
     ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.9bd9208488fcf38226fc8d3cefffecb2cb14f414f6d8d982492c1bde8634e24a.ja.png)
 
-1. 次のタスクを実行します：
+1. 以下のタスクを実行します：
 
-    - Azure **Subscription**を選択します。
+    - Azureの**Subscription**を選択します。
     - 使用する**Resource group**を選択します（必要に応じて新規作成）。
     - **Workspace Name**を入力します。一意の値である必要があります。
     - 使用する**Region**を選択します。
@@ -65,19 +74,19 @@
 
 1. **Create**を選択します。
 
-### AzureサブスクリプションでのGPUクォータのリクエスト
+### AzureサブスクリプションでGPUクォータをリクエスト
 
-このE2Eサンプルでは、チューニングには*Standard_NC24ads_A100_v4 GPU*を使用し（クォータリクエストが必要）、デプロイには*Standard_E4s_v3* CPUを使用します（クォータリクエストは不要）。
+このE2Eサンプルでは、ファインチューニングに*Standard_NC24ads_A100_v4 GPU*を使用します。このGPUにはクォータリクエストが必要です。一方、デプロイには*Standard_E4s_v3* CPUを使用し、こちらはクォータリクエストを必要としません。
 
 > [!NOTE]
 >
-> GPU割り当てが可能なのはPay-As-You-Goサブスクリプション（標準サブスクリプションタイプ）のみです。特典サブスクリプションは現在サポートされていません。
+> GPUの割り当てはPay-As-You-Goサブスクリプション（標準のサブスクリプションタイプ）のみが対象です。特典サブスクリプションは現在サポートされていません。
 >
-> 特典サブスクリプション（例: Visual Studio Enterprise Subscription）を使用している場合や、チューニングおよびデプロイプロセスを迅速にテストしたい場合、このチュートリアルではCPUを使用して最小データセットでチューニングする方法も提供します。ただし、大規模なデータセットでGPUを使用する方がチューニング結果が大幅に向上します。
+> 特典サブスクリプション（例: Visual Studio Enterprise Subscription）を使用している場合、またはファインチューニングとデプロイプロセスを迅速にテストしたい場合、このチュートリアルではCPUを使用した最小データセットでのファインチューニング方法も案内しています。ただし、GPUを使用し、より大きなデータセットでファインチューニングを行う場合、結果が大幅に向上することに注意してください。
 
-1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)にアクセスします。
+1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)を訪問します。
 
-1. *Standard NCADSA100v4 Family*クォータをリクエストするために次のタスクを実行します：
+1. *Standard NCADSA100v4 Family*クォータをリクエストするため、以下のタスクを実行します：
 
     - 左側のタブから**Quota**を選択します。
     - 使用する**Virtual machine family**を選択します。例: **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**（*Standard_NC24ads_A100_v4* GPUを含む）。
@@ -85,19 +94,19 @@
 
         ![Request quota.](../../../../../../translated_images/01-04-request-quota.ddf063c7cda9799b8ef6fbde6c3c796201578fe9078feb1c624ed75c7705ad18.ja.png)
 
-    - Request quotaページで、使用する**New cores limit**を入力します。例: 24。
-    - Request quotaページで**Submit**を選択してGPUクォータをリクエストします。
+    - Request quotaページで、使用したい**New cores limit**を入力します（例: 24）。
+    - **Submit**を選択してGPUクォータをリクエストします。
 
 > [!NOTE]
-> 必要に応じて適切なGPUまたはCPUを選択するには、[Azureの仮想マシンサイズ](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist)のドキュメントを参照してください。
+> 使用するGPUやCPUを選択する際は、[Azure仮想マシンのサイズ](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist)のドキュメントを参照してください。
 
-### ロール割り当ての追加
+### ロールの割り当てを追加
 
-モデルのチューニングとデプロイを行うには、最初にUser Assigned Managed Identity（UAI）を作成し、適切な権限を割り当てる必要があります。このUAIはデプロイ中の認証に使用されます。
+モデルをファインチューニングおよびデプロイするには、まずユーザー割り当てマネージドID（UAI）を作成し、適切な権限を割り当てる必要があります。このUAIは、デプロイ時の認証に使用されます。
 
-#### User Assigned Managed Identity (UAI)の作成
+#### ユーザー割り当てマネージドID（UAI）の作成
 
-1. ポータルページ上部の**検索バー**に「*managed identities*」と入力し、表示されるオプションから**Managed Identities**を選択します。
+1. ポータルページ上部の**検索バー**に「*managed identities*」と入力し、表示されたオプションから**Managed Identities**を選択します。
 
     ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.8bf5dc5a4fa3e852f897ec1a983e506c2bc7b7113d159598bf0adeb66d20a5c4.ja.png)
 
@@ -105,9 +114,9 @@
 
     ![Select create.](../../../../../../translated_images/01-06-select-create.025632b7b54fe323f7d38edabbae05dd23f4665d0731f7143719c27c32e7e84f.ja.png)
 
-1. 次のタスクを実行します：
+1. 以下のタスクを実行します：
 
-    - Azure **Subscription**を選択します。
+    - Azureの**Subscription**を選択します。
     - 使用する**Resource group**を選択します（必要に応じて新規作成）。
     - 使用する**Region**を選択します。
     - **Name**を入力します。一意の値である必要があります。
@@ -116,211 +125,31 @@
 
 1. **+ Create**を選択します。
 
-#### Managed IdentityにContributorロール割り当てを追加
+以下のセクションでは、必要なロールをUAIに割り当てる手順を詳しく説明します。
+![サブスクリプションIDを探す](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.ja.png)
 
-1. 作成したManaged Identityリソースに移動します。
-
-1. 左側のタブから**Azure role assignments**を選択します。
-
-1. ナビゲーションメニューから**+Add role assignment**を選択します。
-
-1. Add role assignmentページで次のタスクを実行します：
-    - **Scope**を**Resource group**に設定します。
-    - Azure **Subscription**を選択します。
-    - 使用する**Resource group**を選択します。
-    - **Role**を**Contributor**に設定します。
-
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.8936866326c7cdc3b876f14657e03422cca9dbff8b193dd541a693ce34407b26.ja.png)
-
-1. **Save**を選択します。
-
-#### Managed IdentityにStorage Blob Data Readerロール割り当てを追加
-
-1. ポータルページ上部の**検索バー**に「*storage accounts*」と入力し、表示されるオプションから**Storage accounts**を選択します。
-
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.83554a27ff3edb5099ee3fbf7f467b843dabcc0e0e5fbb829a341eab3469ffa5.ja.png)
-
-1. 作成したAzure Machine Learningワークスペースに関連付けられているストレージアカウントを選択します。例: *finetunephistorage*。
-
-1. 次のタスクを実行してAdd role assignmentページに移動します：
-
-    - 作成したAzure Storageアカウントに移動します。
-    - 左側のタブから**Access Control (IAM)**を選択します。
-    - ナビゲーションメニューから**+ Add**を選択します。
-    - ナビゲーションメニューから**Add role assignment**を選択します。
-
-    ![Add role.](../../../../../../translated_images/01-09-add-role.4fef55886792c7e860da4c5a808044e6f7067fb5694f3ed4819a5758c6cc574e.ja.png)
-
-1. Add role assignmentページで次のタスクを実行します：
-
-    - Roleページで**Storage Blob Data Reader**を検索バーに入力し、表示されるオプションから**Storage Blob Data Reader**を選択します。
-    - Roleページで**Next**を選択します。
-    - Membersページで**Assign access to**を**Managed identity**に設定します。
-    - Membersページで**+ Select members**を選択します。
-    - Select managed identitiesページでAzure **Subscription**を選択します。
-    - Select managed identitiesページで**Managed identity**を**Manage Identity**に設定します。
-    - Select managed identitiesページで作成したManaged Identityを選択します。例: *finetunephi-managedidentity*。
-    - Select managed identitiesページで**Select**を選択します。
-
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.fffa802e4e6ce2de4fe50e64d37d3f2ef268c2ee16f30ec6f92bd1829b5f19c1.ja.png)
-
-1. **Review + assign**を選択します。
-
-#### Managed IdentityにAcrPullロール割り当てを追加
-
-1. ポータルページ上部の**検索バー**に「*container registries*」と入力し、表示されるオプションから**Container registries**を選択します。
-
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.62e58403d73d16a0cc715571c8a7b4105a0e97b1422aa5f26106aff1c0e8a47d.ja.png)
-
-1. 作成したAzure Machine Learningワークスペースに関連付けられているコンテナレジストリを選択します。例: *finetunephicontainerregistries*
-
-1. 次のタスクを実行してAdd role assignmentページに移動します：
-
-    - 左側のタブから**Access Control (IAM)**を選択します。
-    - ナビゲーションメニューから**+ Add**を選択します。
-    - ナビゲーションメニューから**Add role assignment**を選択します。
-
-1. Add role assignmentページで次のタスクを実行します：
-
-    - Roleページで**AcrPull**を検索バーに入力し、表示されるオプションから**AcrPull**を選択します。
-    - Roleページで**Next**を選択します。
-    - Membersページで**Assign access to**を**Managed identity**に設定します。
-    - Membersページで**+ Select members**を選択します。
-    - Select managed identitiesページでAzure **Subscription**を選択します。
-    - Select managed identitiesページで**Managed identity**を**Manage Identity**に設定します。
-    - Select managed identitiesページで作成したManaged Identityを選択します。例: *finetunephi-managedidentity*。
-    - Select managed identitiesページで**Select**を選択します。
-    - **Review + assign**を選択します。
-
-### プロジェクトのセットアップ
-
-次に、作業フォルダを作成し、仮想環境を設定して、Azure Cosmos DBに保存されたチャット履歴を使用して応答を生成するプログラムを開発します。
-
-#### 作業フォルダの作成
-
-1. ターミナルウィンドウを開き、以下のコマンドを入力して*finetune-phi*という名前のフォルダをデフォルトパスに作成します。
-
-    ```console
-    mkdir finetune-phi
-    ```
-
-1. ターミナルで以下のコマンドを入力して作成した*finetune-phi*フォルダに移動します。
-
-    ```console
-    cd finetune-phi
-    ```
-
-#### 仮想環境の作成
-
-1. ターミナルで以下のコマンドを入力して*.venv*という名前の仮想環境を作成します。
-
-    ```console
-    python -m venv .venv
-    ```
-
-1. ターミナルで以下のコマンドを入力して仮想環境を有効化します。
-
-    ```console
-    .venv\Scripts\activate.bat
-    ```
-
-> [!NOTE]
->
-> 正常に動作している場合、コマンドプロンプトの前に*(.venv)*が表示されます。
-
-#### 必要なパッケージのインストール
-
-1. ターミナルで以下のコマンドを入力して必要なパッケージをインストールします。
-
-    ```console
-    pip install datasets==2.19.1
-    pip install transformers==4.41.1
-    pip install azure-ai-ml==1.16.0
-    pip install torch==2.3.1
-    pip install trl==0.9.4
-    pip install promptflow==1.12.0
-    ```
-
-#### プロジェクトファイルの作成
-
-この演習では、プロジェクトの基本ファイルを作成します。これらのファイルには、データセットのダウンロード、Azure Machine Learning環境の設定、Phi-3モデルのチューニング、チューニング済みモデルのデプロイ用のスクリプトが含まれます。また、チューニング環境を設定するための*conda.yml*ファイルも作成します。
-
-この演習で行うこと：
-
-- データセットをダウンロードするための*download_dataset.py*ファイルを作成します。
-- Azure Machine Learning環境を設定するための*setup_ml.py*ファイルを作成します。
-- データセットを使用してPhi-3モデルをチューニングするための*finetuning_dir*フォルダ内に*fine_tune.py*ファイルを作成します。
-- チューニング環境を設定するための*conda.yml*ファイルを作成します。
-- チューニング済みモデルをデプロイするための*deploy_model.py*ファイルを作成します。
-- チューニング済みモデルを統合し、Prompt flowを使用してモデルを実行するための*integrate_with_promptflow.py*ファイルを作成します。
-- Prompt flowのワークフローストラクチャを設定するための*flow.dag.yml*ファイルを作成します。
-- Azure情報を入力するための*config.py*ファイルを作成します。
-
-> [!NOTE]
->
-> 完全なフォルダ構成：
->
-> ```text
-> └── YourUserName
-> .    └── finetune-phi
-> .        ├── finetuning_dir
-> .        │      └── fine_tune.py
-> .        ├── conda.yml
-> .        ├── config.py
-> .        ├── deploy_model.py
-> .        ├── download_dataset.py
-> .        ├── flow.dag.yml
-> .        ├── integrate_with_promptflow.py
-> .        └── setup_ml.py
-> ```
-
-1. **Visual Studio Code**を開きます。
-
-1. メニューバーから**File**を選択します。
-
-1. **Open Folder**を選択します。
-
-1. 作成した*finetune-phi*フォルダ（*C:\Users\yourUserName\finetune-phi*にあります）を選択します。
-
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1f7f0f79e5d4d62e546e906e1ce5a480cd98d06062ce292b7b99c6cfcd434fdf.ja.png)
-
-1. Visual Studio Codeの左ペインで右クリックし、**New File**を選択して*download_dataset.py*という名前の新しいファイルを作成します。
-
-1. Visual Studio Codeの左ペインで右クリックし、**New File**を選択して*setup_ml.py*という名前の新しいファイルを作成します。
-
-1. Visual Studio Codeの左ペインで右クリックし、**New File**を選択して*deploy_model.py*という名前の新しいファイルを作成します。
-
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.40698c2e0415929e7b6dc2b30925677e413f965bac4134d3aefa0b44d443deaf.ja.png)
-
-1. Visual Studio Codeの左ペインで右クリックし、**New Folder**を選択して*finetuning_dir*という名前の新しいフォルダを作成します。
-
-1. *finetuning_dir*フォルダ内に*fine_tune.py*という名前の新しいファイルを作成します。
-
-#### *conda.yml*ファイルの作成
-![サブスクリプションIDを見つける。](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.ja.png)
-
-1. Azureワークスペース名を追加するには、以下の手順を実行してください：
+1. Azure Workspace Nameを追加するために、以下の手順を実行してください：
 
     - 作成したAzure Machine Learningリソースに移動します。
-    - アカウント名をコピーして、*config.py*ファイルに貼り付けます。
+    - アカウント名をコピーして*config.py*ファイルに貼り付けます。
 
-    ![Azure Machine Learning名を見つける。](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.ja.png)
+    ![Azure Machine Learning名を探す](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.ja.png)
 
-1. Azureリソースグループ名を追加するには、以下の手順を実行してください：
+1. Azure Resource Group Nameを追加するために、以下の手順を実行してください：
 
     - 作成したAzure Machine Learningリソースに移動します。
-    - Azureリソースグループ名をコピーして、*config.py*ファイルに貼り付けます。
+    - Azure Resource Group Nameをコピーして*config.py*ファイルに貼り付けます。
 
-    ![リソースグループ名を見つける。](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.ja.png)
+    ![リソースグループ名を探す](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.ja.png)
 
-2. AzureマネージドID名を追加するには、以下の手順を実行してください：
+2. Azure Managed Identity名を追加するために以下の手順を実行してください：
 
-    - 作成したマネージドIDリソースに移動します。
-    - AzureマネージドID名をコピーして、*config.py*ファイルに貼り付けます。
+    - 作成したManaged Identitiesリソースに移動します。
+    - Azure Managed Identity名をコピーして*config.py*ファイルに貼り付けます。
 
-    ![UAIを見つける。](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.ja.png)
+    ![UAIを探す](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.ja.png)
 
-### ファインチューニング用データセットの準備
+### ファインチューニング用のデータセットを準備する
 
 この演習では、*download_dataset.py*ファイルを実行して*ULTRACHAT_200k*データセットをローカル環境にダウンロードします。その後、このデータセットを使用してAzure Machine LearningでPhi-3モデルをファインチューニングします。
 
@@ -328,7 +157,7 @@
 
 1. Visual Studio Codeで*download_dataset.py*ファイルを開きます。
 
-1. 以下のコードを*download_dataset.py*に追加します。
+1. 次のコードを*download_dataset.py*に追加します。
 
     ```python
     import json
@@ -395,14 +224,14 @@
 
 > [!TIP]
 >
-> **CPUを使用して最小限のデータセットでファインチューニングを行うためのガイダンス**
+> **CPUを使用した最小データセットでのファインチューニングに関するガイド**
 >
-> CPUを使用してファインチューニングを行いたい場合、このアプローチはVisual Studio Enterprise Subscriptionなどの特典サブスクリプションを持つ人や、ファインチューニングとデプロイメントプロセスを迅速にテストしたい人に最適です。
+> CPUを使用してファインチューニングを行いたい場合、この方法はVisual Studio Enterprise Subscriptionなどの特典付きサブスクリプションを持つ人や、ファインチューニングとデプロイプロセスを迅速にテストしたい人に最適です。
 >
-> `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`を置き換えてください。
+> `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`に置き換えてください。
 >
 
-1. ターミナル内で以下のコマンドを入力してスクリプトを実行し、データセットをローカル環境にダウンロードします。
+1. ターミナル内で次のコマンドを入力してスクリプトを実行し、データセットをローカル環境にダウンロードします。
 
     ```console
     python download_data.py
@@ -414,15 +243,15 @@
 >
 > **データセットサイズとファインチューニング時間**
 >
-> このE2Eサンプルでは、データセットの1%（`train_sft[:1%]`）のみを使用します。これにより、データ量が大幅に削減され、アップロードとファインチューニングのプロセスが高速化されます。トレーニング時間とモデル性能のバランスを取るために、割合を調整することができます。小規模なデータセットを使用することで、ファインチューニングに必要な時間を短縮し、E2Eサンプルに適したプロセスになります。
+> このE2Eサンプルでは、データセットの1%（`train_sft[:1%]`）のみを使用します。これによりデータ量が大幅に削減され、アップロードとファインチューニングプロセスが迅速化されます。トレーニング時間とモデル性能のバランスを見つけるために、パーセンテージを調整できます。データセットの小さな部分を使用することで、ファインチューニングに必要な時間が短縮され、E2Eサンプルとしてより管理しやすくなります。
 
-## シナリオ2: Phi-3モデルのファインチューニングとAzure Machine Learning Studioでのデプロイ
+## シナリオ2: Phi-3モデルをファインチューニングし、Azure Machine Learning Studioにデプロイする
 
-### Azure CLIのセットアップ
+### Azure CLIを設定する
 
-環境を認証するためにAzure CLIをセットアップする必要があります。Azure CLIを使用すると、コマンドラインから直接Azureリソースを管理でき、Azure Machine Learningがこれらのリソースにアクセスするために必要な資格情報を提供します。始めるには、[Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)をインストールしてください。
+Azure CLIを設定して環境を認証する必要があります。Azure CLIを使用すると、コマンドラインからAzureリソースを直接管理でき、Azure Machine Learningがこれらのリソースにアクセスするために必要な資格情報を提供します。まず、[Azure CLIをインストール](https://learn.microsoft.com/cli/azure/install-azure-cli)してください。
 
-1. ターミナルウィンドウを開き、以下のコマンドを入力してAzureアカウントにログインします。
+1. ターミナルウィンドウを開き、次のコマンドを入力してAzureアカウントにログインします。
 
     ```console
     az login
@@ -432,20 +261,20 @@
 
 1. 使用するAzureサブスクリプションを選択します。
 
-    ![リソースグループ名を見つける。](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.ja.png)
+    ![リソースグループ名を探す](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.ja.png)
 
 > [!TIP]
 >
-> Azureへのサインインに問題がある場合は、デバイスコードを使用してみてください。ターミナルウィンドウを開き、以下のコマンドを入力してAzureアカウントにサインインします：
+> Azureへのサインインに問題がある場合は、デバイスコードを使用して試してください。ターミナルウィンドウを開き、次のコマンドを入力してAzureアカウントにサインインします：
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### Phi-3モデルのファインチューニング
+### Phi-3モデルをファインチューニングする
 
-この演習では、提供されたデータセットを使用してPhi-3モデルをファインチューニングします。最初に、*fine_tune.py*ファイルでファインチューニングプロセスを定義します。その後、Azure Machine Learning環境を設定し、*setup_ml.py*ファイルを実行してファインチューニングプロセスを開始します。このスクリプトは、Azure Machine Learning環境内でファインチューニングが実行されることを保証します。
+この演習では、提供されたデータセットを使用してPhi-3モデルをファインチューニングします。まず、*fine_tune.py*ファイルでファインチューニングプロセスを定義します。その後、Azure Machine Learning環境を構成し、*setup_ml.py*ファイルを実行してファインチューニングプロセスを開始します。このスクリプトは、Azure Machine Learning環境内でファインチューニングが行われることを保証します。
 
 *setup_ml.py*を実行することで、Azure Machine Learning環境内でファインチューニングプロセスを実行します。
 
@@ -453,7 +282,7 @@
 
 1. *finetuning_dir*フォルダーに移動し、Visual Studio Codeで*fine_tune.py*ファイルを開きます。
 
-1. 以下のコードを*fine_tune.py*に追加します。
+1. 次のコードを*fine_tune.py*に追加します。
 
     ```python
     import argparse
@@ -609,18 +438,18 @@
 1. *fine_tune.py*ファイルを保存して閉じます。
 
 > [!TIP]
-> **Phi-3.5モデルをファインチューニングすることも可能**
+> **Phi-3.5モデルをファインチューニングできます**
 >
-> *fine_tune.py*ファイルで、`pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name`フィールドを変更することができます。
+> *fine_tune.py*ファイル内で、スクリプト内の`pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name`フィールドを変更できます。
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Phi-3.5のファインチューニング。":::
+> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Phi-3.5をファインチューニングする。":::
 >
 
 #### *setup_ml.py*ファイルにコードを追加する
 
 1. Visual Studio Codeで*setup_ml.py*ファイルを開きます。
 
-1. 以下のコードを*setup_ml.py*に追加します。
+1. 次のコードを*setup_ml.py*に追加します。
 
     ```python
     import logging
@@ -759,9 +588,9 @@
 
 > [!TIP]
 >
-> **CPUを使用して最小限のデータセットでファインチューニングを行うためのガイダンス**
+> **CPUを使用した最小データセットでのファインチューニングに関するガイド**
 >
-> CPUを使用してファインチューニングを行いたい場合、このアプローチはVisual Studio Enterprise Subscriptionなどの特典サブスクリプションを持つ人や、ファインチューニングとデプロイメントプロセスを迅速にテストしたい人に最適です。
+> CPUを使用してファインチューニングを行いたい場合、この方法はVisual Studio Enterprise Subscriptionなどの特典付きサブスクリプションを持つ人や、ファインチューニングとデプロイプロセスを迅速にテストしたい人に最適です。
 >
 > 1. *setup_ml*ファイルを開きます。
 > 1. `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
@@ -776,7 +605,7 @@
 >    ```
 >
 
-1. 以下のコマンドを入力して*setup_ml.py*スクリプトを実行し、Azure Machine Learningでファインチューニングプロセスを開始します。
+1. 次のコマンドを入力して*setup_ml.py*スクリプトを実行し、Azure Machine Learningでファインチューニングプロセスを開始します。
 
     ```python
     python setup_ml.py
@@ -798,15 +627,15 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
 1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"`を使用して、デプロイメントのための希望の名前を指定してください。
+1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"`を希望するデプロイ名で実行してください。
 
 #### *deploy_model.py*ファイルにコードを追加する
 
-*deploy_model.py*ファイルを実行することで、デプロイメントプロセス全体を自動化します。このスクリプトはモデルを登録し、エンドポイントを作成し、*config.py*ファイルで指定された設定（モデル名、エンドポイント名、デプロイメント名）に基づいてデプロイメントを実行します。
+*deploy_model.py*ファイルを実行すると、デプロイプロセス全体が自動化されます。このスクリプトは、モデルの登録、エンドポイントの作成、および*config.py*ファイルで指定された設定（モデル名、エンドポイント名、デプロイ名）に基づくデプロイを実行します。
 
 1. Visual Studio Codeで*deploy_model.py*ファイルを開きます。
 
-1. 以下のコードを*deploy_model.py*に追加します。
+1. 次のコードを*deploy_model.py*に追加します。
 
     ```python
     import logging
@@ -981,21 +810,21 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
     - Select the job that you created.
     - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
 
-1. Replace `COMPUTE_INSTANCE_TYPE`を具体的な詳細に置き換えるタスクを実行します。
+1. Replace `COMPUTE_INSTANCE_TYPE`を具体的な詳細に置き換えます。
 
-1. 以下のコマンドを入力して*deploy_model.py*スクリプトを実行し、Azure Machine Learningでデプロイメントプロセスを開始します。
+1. 次のコマンドを入力して*deploy_model.py*スクリプトを実行し、Azure Machine Learningでデプロイプロセスを開始します。
 
     ```python
     python deploy_model.py
     ```
 
 > [!WARNING]
-> アカウントに追加料金が発生しないように、Azure Machine Learningワークスペースで作成したエンドポイントを削除することを忘れないでください。
+> アカウントへの追加料金を避けるために、Azure Machine Learningワークスペースで作成したエンドポイントを削除してください。
 >
 
-#### Azure Machine Learningワークスペースでのデプロイメントステータスを確認する
+#### Azure Machine Learning Workspaceでデプロイ状況を確認する
 
-1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)を訪問します。
+1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)にアクセスします。
 
 1. 作成したAzure Machine Learningワークスペースに移動します。
 
@@ -1003,36 +832,36 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
 1. 左側のタブから**Endpoints**を選択します。
 
-    ![エンドポイントを選択します。](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.ja.png)
+    ![エンドポイントを選択する](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.ja.png)
 
 2. 作成したエンドポイントを選択します。
 
-    ![作成したエンドポイントを選択します。](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.ja.png)
+    ![作成したエンドポイントを選択する](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.ja.png)
 
-3. このページで、デプロイメントプロセス中に作成されたエンドポイントを管理できます。
+3. このページでは、デプロイプロセス中に作成されたエンドポイントを管理できます。
 
-## シナリオ3: Prompt flowとの統合とカスタムモデルとの対話
+## シナリオ3: Prompt flowと統合してカスタムモデルでチャットする
 
 ### カスタムPhi-3モデルをPrompt flowと統合する
 
-ファインチューニングされたモデルを正常にデプロイした後、Prompt flowと統合してリアルタイムアプリケーションでモデルを使用できるようになります。これにより、カスタムPhi-3モデルを使用したさまざまなインタラクティブなタスクが可能になります。
+ファインチューニングしたモデルを正常にデプロイした後、Prompt flowと統合してリアルタイムアプリケーションでモデルを使用できるようになります。これにより、カスタムPhi-3モデルを使用してさまざまなインタラクティブなタスクを実行できます。
 
-#### ファインチューニングされたPhi-3モデルのAPIキーとエンドポイントURIを設定する
+#### ファインチューニングしたPhi-3モデルのAPIキーとエンドポイントURIを設定する
 
 1. 作成したAzure Machine Learningワークスペースに移動します。
 1. 左側のタブから**Endpoints**を選択します。
 1. 作成したエンドポイントを選択します。
 1. ナビゲーションメニューから**Consume**を選択します。
-1. **RESTエンドポイント**をコピーし、*config.py*ファイルに貼り付けて、`AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"`を**Primary key**に置き換えます。
+1. **REST endpoint**をコピーして*config.py*ファイルに貼り付け、`AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
+1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"`を**Primary key**で置き換えます。
 
-    ![APIキーとエンドポイントURIをコピーします。](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.ja.png)
+    ![APIキーとエンドポイントURIをコピーする](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.ja.png)
 
 #### *flow.dag.yml*ファイルにコードを追加する
 
 1. Visual Studio Codeで*flow.dag.yml*ファイルを開きます。
 
-1. 以下のコードを*flow.dag.yml*に追加します。
+1. 次のコードを*flow.dag.yml*に追加します。
 
     ```yml
     inputs:
@@ -1059,7 +888,7 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
 1. Visual Studio Codeで*integrate_with_promptflow.py*ファイルを開きます。
 
-1. 以下のコードを*integrate_with_promptflow.py*に追加します。
+1. 次のコードを*integrate_with_promptflow.py*に追加します。
 
     ```python
     import logging
@@ -1125,17 +954,17 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
     ```
 
-### カスタムモデルとの対話
+### カスタムモデルでチャットする
 
-1. 以下のコマンドを入力して*deploy_model.py*スクリプトを実行し、Azure Machine Learningでデプロイメントプロセスを開始します。
+1. 次のコマンドを入力して*deploy_model.py*スクリプトを実行し、Azure Machine Learningでデプロイプロセスを開始します。
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. 結果の例：カスタムPhi-3モデルと対話できます。ファインチューニングに使用したデータに基づいて質問することをお勧めします。
+1. 以下は結果の例です：これでカスタムPhi-3モデルとチャットできるようになります。ファインチューニングに使用したデータに基づいた質問をすることを推奨します。
 
-    ![Prompt flowの例。](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.ja.png)
+    ![Prompt flow例](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.ja.png)
 
 **免責事項**:  
-本書類は、機械ベースのAI翻訳サービスを使用して翻訳されています。正確性を追求しておりますが、自動翻訳にはエラーや不正確な箇所が含まれる可能性があることをご承知おきください。原文（原本）が信頼できる正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用に起因する誤解や誤った解釈について、当方は一切の責任を負いかねます。
+この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確さが含まれる可能性があります。元の言語で記載された文書を正式な情報源として考慮してください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤解釈について、当社は責任を負いません。

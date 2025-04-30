@@ -1,85 +1,94 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "76956c0c22e5686908a6d85ec72126af",
+  "translation_date": "2025-04-04T11:23:49+00:00",
+  "source_file": "code\\03.Finetuning\\olive-lab\\readme.md",
+  "language_code": "mo"
+}
+-->
 # Lab. Optimize AI models for on-device inference
 
 ## Introduction 
 
 > [!IMPORTANT]
-> Lab hawn miangaka **GPU Nvidia A10 leh A100** a thawk theih driver leh CUDA toolkit (version 12 a tam ber) an tel a ngai.
+> This lab requires an **Nvidia A10 or A100 GPU** with associated drivers and CUDA toolkit (version 12+) installed.
 
 > [!NOTE]
-> Hei hi **35-na leilung** a awm ang a, OLIVE hmangin model danglamna (optimization) leh on-device inference tan a siam theihna hriatpuihna a pek ang.
+> This is a **35-minute** lab that will give you a hands-on introduction to the core concepts of optimizing models for on-device inference using OLIVE.
 
 ## Learning Objectives
 
-Lab hian khawngaihna tan OLIVE hmangin:
+By the end of this lab, you will be able to use OLIVE to:
 
-- AWQ quantization method hmanga AI Model quantize theihna.
-- AI model a specific task atan fine-tune theihna.
-- ONNX Runtime-ah LoRA adapters (fine-tuned model) siam theihna.
+- Quantize an AI Model using the AWQ quantization method.
+- Fine-tune an AI model for a specific task.
+- Generate LoRA adapters (fine-tuned model) for efficient on-device inference on the ONNX Runtime.
 
-### Olive chu engmah nge?
+### What is Olive
 
-Olive (*O*NNX *live*) hi model optimization aṭanga ONNX runtime tan ++https://onnxruntime.ai++ siamtu a ni a, CLI a nei bawk.
+Olive (*O*NNX *live*) is a model optimization toolkit with accompanying CLI that enables you to ship models for the ONNX runtime +++https://onnxruntime.ai+++ with quality and performance.
 
 ![Olive Flow](../../../../../translated_images/olive-flow.5beac74493fb2216eb8578519cfb1c4a1e752a3536bc755c4545bd0959634684.mo.png)
 
-Olive hian PyTorch emaw Hugging Face model an input a siam a, a output chu ONNX runtime hmanga device (deployment target) ah a thawk theihna atan siam model a ni. Olive chuan deployment target-a AI accelerator (NPU, GPU, CPU) hardware vendor ang deuhte hnena (Qualcomm, AMD, Nvidia leh Intel ang deuh) model a optimize a ni.
+The input to Olive is typically a PyTorch or Hugging Face model and the output is an optimized ONNX model that is executed on a device (deployment target) running the ONNX runtime. Olive will optimize the model for the deployment target's AI accelerator (NPU, GPU, CPU) provided by a hardware vendor such as Qualcomm, AMD, Nvidia or Intel.
 
-Olive hian *workflow* tih an hnuaia model optimization task *passes* tih thupui atan an siam ang. Example pass-ah model compression, graph capture, quantization, graph optimization an tel. Pass aṭangte parameter a siam theihna atan tun turin a ngai a, accuracy leh latency aṭangin evaluator hmangin an en a ni. Olive chuan search strategy hmangin pass pakhat emaw pass hrang hrang awlsamzia hmangin siam ang.
+Olive executes a *workflow*, which is an ordered sequence of individual model optimization tasks called *passes* - example passes include: model compression, graph capture, quantization, graph optimization. Each pass has a set of parameters that can be tuned to achieve the best metrics, say accuracy and latency, that are evaluated by the respective evaluator. Olive employs a search strategy that uses a search algorithm to auto-tune each pass one by one or set of passes together.
 
-#### Olive hnathawhna
+#### Benefits of Olive
 
-- **Manual trial-and-error** graph optimization, compression leh quantization technique hmangin tanpuihna leh hun awmzia a hman theih a, Olive hmangin quality leh performance constraint siam a, a ṭha ber model automatically a thlir theih.
-- **40+ model optimization components** quantization, compression, graph optimization leh finetuning-ah cutting edge technique hmanga siam.
-- **CLI pawimawh** model optimization task tan. Hman turin: olive quantize, olive auto-opt, olive finetune.
-- Model packaging leh deployment a tel.
-- **Multi LoRA serving** tan model siam hman theih.
-- YAML/JSON hmangin model optimization leh deployment task siam workflow.
-- **Hugging Face** leh **Azure AI** Integration a tel.
-- **Caching** a awm a, **cost reduce** theih.
+- **Reduce frustration and time** of trial-and-error manual experimentation with different techniques for graph optimization, compression and quantization. Define your quality and performance constraints and let Olive automatically find the best model for you.
+- **40+ built-in model optimization components** covering cutting edge techniques in quantization, compression, graph optimization and finetuning.
+- **Easy-to-use CLI** for common model optimization tasks. For example, olive quantize, olive auto-opt, olive finetune.
+- Model packaging and deployment built-in.
+- Supports generating models for **Multi LoRA serving**.
+- Construct workflows using YAML/JSON to orchestrate model optimization and deployment tasks.
+- **Hugging Face** and **Azure AI** Integration.
+- Built-in **caching** mechanism to **save costs**.
 
 ## Lab Instructions
 > [!NOTE]
-> Azure AI Hub leh Project siam turin A100 compute Lab 1-ah siam tawh turin ngai.
+> Please ensure you have provision your Azure AI Hub and Project and setup your A100 compute as per Lab 1.
 
-### Step 0: Azure AI Compute-ah connect rawh
+### Step 0: Connect to your Azure AI Compute
 
-Azure AI compute-ah **VS Code** remote feature hmangin connect rawh.
+You'll connect to the Azure AI compute using the remote feature in **VS Code.** 
 
-1. **VS Code** desktop application i hawn:
-1. **Command palette** (Shift+Ctrl+P) i hawn.
-1. Command palette-ah **AzureML - remote: Connect to compute instance in New Window** tih i thlir.
-1. On-screen instruction angin i thawk, Subscription, Resource Group, Project leh Compute Lab 1-ah i siam tawh select ang.
-1. Azure ML Compute node-ah i connect tawh hian **Visual Code** hnuaiah **bottom left** ah a lang `><Azure ML: Compute Name`
+1. Open your **VS Code** desktop application:
+1. Open the **command palette** using  **Shift+Ctrl+P**
+1. In the command palette search for **AzureML - remote: Connect to compute instance in New Window**.
+1. Follow the on-screen instructions to connect to the Compute. This will involve selecting your Azure Subscription, Resource Group, Project and Compute name you set up in Lab 1.
+1. Once your connected to your Azure ML Compute node this will be displayed in the **bottom left of Visual Code** `><Azure ML: Compute Name`
 
-### Step 1: Repo hi clone rawh
+### Step 1: Clone this repo
 
-VS Code-ah **Ctrl+J** hmangin terminal hawn leh:
+In VS Code, you can open a new terminal with **Ctrl+J** and clone this repo:
 
-Terminal-ah prompt i en:
+In the terminal you should see the prompt
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
 ```
-Solution hi clone rawh:
+Clone the solution 
 
 ```bash
 cd ~/localfiles
 git clone https://github.com/microsoft/phi-3cookbook.git
 ```
 
-### Step 2: Folder hawn rawh
+### Step 2: Open Folder in VS Code
 
-Relevant folder-a VS Code hawn turin terminal-ah command hi execute rawh, chu new window a hawn ang:
+To open VS Code in the relevant folder execute the following command in the terminal, which will open a new window:
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
 ```
 
-Aṭang emaw, **File** > **Open Folder** select rawh.
+Alternatively, you can open the folder by selecting **File** > **Open Folder**. 
 
 ### Step 3: Dependencies
 
-Azure AI Compute Instance-a VS Code terminal window (Ctrl+J tip) hawn leh command hian dependencies install rawh:
+Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+J**) and execute the following commands to install the dependencies:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -90,33 +99,33 @@ az extension add -n ml
 ```
 
 > [!NOTE]
-> Dependencies install turin ~5mins a ngai.
+> It will take ~5mins to install all the dependencies.
 
-Lab-ah model download leh upload Azure AI Model catalog-ah siam ang. Model catalog access theihna turin Azure login a ngai:
+In this lab you'll download and upload models to the Azure AI Model catalog. So that you can access the model catalog, you'll need to login to Azure using:
 
 ```bash
 az login
 ```
 
 > [!NOTE]
-> Login hunah subscription select turin a ngai. Lab hi tan subscription chu i thlang ang.
+> At login time you'll be asked to select your subscription. Ensure you set the subscription to the one provided for this lab.
 
-### Step 4: Olive commands execute rawh
+### Step 4: Execute Olive commands 
 
-Azure AI Compute Instance-a VS Code terminal window hawn leh (Ctrl+J tip) `olive-ai` conda environment activate turin ensure rawh:
+Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+J**) and ensure the `olive-ai` conda environment is activated:
 
 ```bash
 conda activate olive-ai
 ```
 
-Tuna Olive commands terminal-ah execute rawh:
+Next, execute the following Olive commands in the command line.
 
-1. **Data inspect rawh:** He example-ah, Phi-3.5-Mini model chu travel thlirna zawng zawng tan specialize turin fine-tune tur a ni. A hnuaia code hi dataset JSON lines format-a records a hrilh ang:
-
+1. **Inspect the data:** In this example, you're going to fine-tune Phi-3.5-Mini model so that it is specialized in answering travel related questions. The code below displays the first few records of the dataset, which are in JSON lines format:
+   
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **Model quantize rawh:** Training hun hmaa model chu quantize rawh, Active Aware Quantization (AWQ) technique hmanga +++https://arxiv.org/abs/2306.00978+++. AWQ hian model-a weights chu inference hunah activation siam dan ngaihtuahna hmanga quantize tur a ni. Hei hi model accuracy traditional weight quantization method aṭangin ṭha zawk a ni.
+1. **Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ quantizes the weights of a model by considering the activations produced during inference. This means that the quantization process takes into account the actual data distribution in the activations, leading to better preservation of model accuracy compared to traditional weight quantization methods.
     
     ```bash
     olive quantize \
@@ -127,12 +136,12 @@ Tuna Olive commands terminal-ah execute rawh:
        --log_level 1
     ```
     
-    **~8mins** a ṭang AWQ quantization hunah model size chu **~7.5GB aṭangin ~2.5GB** a ṭang.
+    It takes **~8mins** to complete the AWQ quantization, which will **reduce the model size from ~7.5GB to ~2.5GB**.
    
-   Lab-ah hian Hugging Face model hman turin a siam (Example: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
+   In this lab, we're showing you how to input models from Hugging Face (for example: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
 
-1. **Train the model:** Next, the `olive finetune` command hmanga quantized model finetune ang. Model finetune hun hmaa quantize hian accuracy ṭha zawk a ni a, finetune hunah quantization loss recover a ni.
-
+1. **Train the model:** Next, the `olive finetune` command finetunes the quantized model. Quantizing the model *before* fine-tuning instead of afterwards gives better accuracy as the fine-tuning process recovers some of the loss from the quantization.
+    
     ```bash
     olive finetune \
         --method lora \
@@ -145,9 +154,9 @@ Tuna Olive commands terminal-ah execute rawh:
         --log_level 1
     ```
     
-    Fine-tuning (100 steps) **~6mins** a ṭang.
+    It takes **~6mins** to complete the Fine-tuning (with 100 steps).
 
-1. **Optimize rawh:** Model finetune tawh hian Olive `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` arguments hmanga model optimize ang - Lab hian CPU hman ang.
+1. **Optimize:** With the model trained, you now optimize the model using Olive's `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` arguments  - but for the purposes of this lab we'll use CPU.
 
     ```bash
     olive auto-opt \
@@ -160,11 +169,11 @@ Tuna Olive commands terminal-ah execute rawh:
        --log_level 1
     ```
     
-    Optimization **~5mins** a ṭang.
+    It takes **~5mins** to complete the optimization.
 
-### Step 5: Model inference test rawh
+### Step 5: Model inference quick test
 
-Model inference test turin **app.py** tihna Python file folder-ah siam rawh, code hnuaia in copy-paste rawh:
+To test inferencing the model, create a Python file in your folder called **app.py** and copy-and-paste the following code:
 
 ```python
 import onnxruntime_genai as og
@@ -200,28 +209,28 @@ while not generator.is_done():
 print("\n")
 ```
 
-Command hian execute rawh:
+Execute the code using:
 
 ```bash
 python app.py
 ```
 
-### Step 6: Model Azure AI-ah upload rawh
+### Step 6: Upload model to Azure AI
 
-Model chu Azure AI model repository-ah upload rawh a, development team member dangte tan share leh version control aṭangin hman theih ang. Command hnuaiah model upload rawh:
+Uploading the model to an Azure AI model repository makes the model sharable with other members of your development team and also handles version control of the model. To upload the model run the following command:
 
 > [!NOTE]
-> `{}` placeholders with the name of your resource group and Azure AI Project Name. 
+> Update the `{}` placeholders with the name of your resource group and Azure AI Project Name. 
 
-To find your resource group `"resourceGroup" leh Azure AI Project Name update rawh leh command execute ang 
+To find your resource group `"resourceGroup"and Azure AI Project name, run the following command 
 
 ```
 az ml workspace show
 ```
 
-+++ai.azure.com+++ ah **management center** **project** **overview** select rawh.
+Or by going to +++ai.azure.com+++ and selecting **management center** **project** **overview**
 
-`{}` placeholders hian i resource group leh Azure AI Project Name update rawh.
+Update the `{}` placeholders with the name of your resource group and Azure AI Project Name.
 
 ```bash
 az ml model create \
@@ -231,6 +240,6 @@ az ml model create \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
 ```
-Uploaded model chu https://ml.azure.com/model/list ah i en leh deploy theih.
+You can then see your uploaded model and deploy your model at https://ml.azure.com/model/list
 
-It seems like "mo" could refer to a specific language or dialect, but it's unclear which one you're referring to. Could you please clarify which language you mean by "mo"? For example, do you mean Māori, Mon (a language spoken in Myanmar and Thailand), or something else? Let me know so I can assist you better!
+It seems there might be a misunderstanding. Could you clarify what you mean by "mo"? Are you referring to a specific language, dialect, or abbreviation? For example, are you asking for a translation into Maori, Montenegrin, or something else?

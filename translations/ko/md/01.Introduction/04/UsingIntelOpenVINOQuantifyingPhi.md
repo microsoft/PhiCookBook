@@ -1,14 +1,23 @@
-# **Intel OpenVINO를 사용한 Phi-3.5 양자화**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8f766ec7e68d97f6009b58794b471d66",
+  "translation_date": "2025-04-04T06:07:28+00:00",
+  "source_file": "md\\01.Introduction\\04\\UsingIntelOpenVINOQuantifyingPhi.md",
+  "language_code": "ko"
+}
+-->
+# **Intel OpenVINO를 사용하여 Phi-3.5 양자화하기**
 
-Intel은 많은 사용자를 보유한 가장 전통적인 CPU 제조업체입니다. 머신 러닝과 딥 러닝의 부상으로 Intel도 AI 가속 경쟁에 합류했습니다. 모델 추론을 위해 Intel은 GPU와 CPU뿐만 아니라 NPU도 사용합니다.
+Intel은 가장 전통적인 CPU 제조업체로 많은 사용자층을 보유하고 있습니다. 머신러닝과 딥러닝의 부상과 함께, Intel 역시 AI 가속화를 위한 경쟁에 뛰어들었습니다. 모델 추론을 위해 Intel은 GPU와 CPU뿐만 아니라 NPU도 사용합니다.
 
-우리는 Phi-3.x 패밀리를 엣지 디바이스에 배포하여 AI PC와 Copilot PC의 가장 중요한 부분이 되기를 희망합니다. 엣지 디바이스에서 모델을 로드하는 것은 다양한 하드웨어 제조업체의 협력에 달려 있습니다. 이 장에서는 Intel OpenVINO를 양자화 모델로 사용하는 응용 시나리오에 대해 중점적으로 다룹니다.
+우리는 Phi-3.x 패밀리를 엔드 사이드에 배포하여 AI PC와 Copilot PC의 가장 중요한 부분이 되기를 희망합니다. 엔드 사이드에서 모델을 로드하는 것은 다양한 하드웨어 제조업체 간의 협력을 필요로 합니다. 이 장에서는 Intel OpenVINO를 활용한 양자화 모델의 응용 시나리오에 초점을 맞춥니다.
 
 ## **OpenVINO란 무엇인가**
 
-OpenVINO는 클라우드에서 엣지까지 딥 러닝 모델을 최적화하고 배포하기 위한 오픈 소스 툴킷입니다. PyTorch, TensorFlow, ONNX 등 인기 있는 프레임워크의 모델을 활용하여 생성 AI, 비디오, 오디오, 언어와 같은 다양한 사용 사례에서 딥 러닝 추론을 가속화합니다. 모델을 변환하고 최적화하며, 온프레미스, 디바이스, 브라우저, 클라우드 등 다양한 Intel® 하드웨어와 환경에 배포할 수 있습니다.
+OpenVINO는 클라우드에서 엣지까지 딥러닝 모델을 최적화하고 배포하기 위한 오픈소스 툴킷입니다. PyTorch, TensorFlow, ONNX 등과 같은 인기 있는 프레임워크의 모델을 활용하여 생성형 AI, 비디오, 오디오, 언어 등 다양한 사용 사례에서 딥러닝 추론을 가속화합니다. 모델을 변환하고 최적화하며, Intel® 하드웨어와 환경을 혼합하여 온프레미스, 디바이스 내, 브라우저, 클라우드에서 배포할 수 있습니다.
 
-OpenVINO를 사용하면 Intel 하드웨어에서 GenAI 모델을 빠르게 양자화하고 모델 참조를 가속화할 수 있습니다.
+이제 OpenVINO를 통해 Intel 하드웨어에서 GenAI 모델을 빠르게 양자화하고 모델 참조를 가속화할 수 있습니다.
 
 현재 OpenVINO는 Phi-3.5-Vision과 Phi-3.5 Instruct의 양자화 변환을 지원합니다.
 
@@ -27,7 +36,7 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **OpenVINO를 사용한 Phi-3.5-Instruct 양자화**
+### **OpenVINO를 사용하여 Phi-3.5-Instruct 양자화하기**
 
 터미널에서 이 스크립트를 실행하세요.
 
@@ -43,7 +52,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **OpenVINO를 사용한 Phi-3.5-Vision 양자화**
+### **OpenVINO를 사용하여 Phi-3.5-Vision 양자화하기**
 
 Python 또는 Jupyter Lab에서 이 스크립트를 실행하세요.
 
@@ -81,19 +90,19 @@ if not out_dir.exists():
 
 ```
 
-### **🤖 Intel OpenVINO와 함께하는 Phi-3.5 샘플**
+### **🤖 Intel OpenVINO와 함께 Phi-3.5 샘플**
 
-| 실험실   | 소개 | 이동 |
+| 실험실    | 소개 | 이동 |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Phi-3.5 Instruct 소개  | AI PC에서 Phi-3.5 Instruct를 사용하는 방법을 배워보세요.    |  [이동](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Phi-3.5 Vision (이미지) 소개 | AI PC에서 Phi-3.5 Vision을 사용하여 이미지를 분석하는 방법을 배워보세요.      |  [이동](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Phi-3.5 Vision (비디오) 소개   | AI PC에서 Phi-3.5 Vision을 사용하여 비디오를 분석하는 방법을 배워보세요.    |  [이동](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | AI PC에서 Phi-3.5 Instruct를 사용하는 방법 배우기    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (이미지) | AI PC에서 Phi-3.5 Vision을 사용해 이미지를 분석하는 방법 배우기      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (비디오)   | AI PC에서 Phi-3.5 Vision을 사용해 이미지를 분석하는 방법 배우기    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
-## **자료**
+## **리소스**
 
 1. Intel OpenVINO에 대해 더 알아보기 [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
-2. Intel OpenVINO GitHub 저장소 [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
+2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **면책 조항**:  
-이 문서는 기계 기반 AI 번역 서비스를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의하시기 바랍니다. 원어로 작성된 원본 문서를 신뢰할 수 있는 권위 있는 자료로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 최대한 정확성을 기하기 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 내용이 포함될 수 있습니다. 원본 문서의 원어를 신뢰할 수 있는 권위 있는 자료로 간주해야 합니다. 중요한 정보에 대해서는 전문적인 인간 번역을 권장합니다. 이 번역을 사용하는 데서 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

@@ -1,10 +1,19 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
+  "translation_date": "2025-03-27T08:10:37+00:00",
+  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "language_code": "fr"
+}
+-->
 # **Inférence Phi-3-Vision en Local**
 
-Phi-3-vision-128k-instruct permet à Phi-3 non seulement de comprendre le langage, mais aussi de voir le monde visuellement. Grâce à Phi-3-vision-128k-instruct, nous pouvons résoudre différents problèmes visuels, tels que l'OCR, l'analyse de tableaux, la reconnaissance d'objets, la description d'images, etc. Nous pouvons facilement accomplir des tâches qui nécessitaient auparavant beaucoup d'entraînement de données. Voici les techniques et scénarios d'application associés à Phi-3-vision-128k-instruct.
+Phi-3-vision-128k-instruct permet à Phi-3 non seulement de comprendre le langage, mais aussi de voir le monde visuellement. Grâce à Phi-3-vision-128k-instruct, nous pouvons résoudre différents problèmes visuels, tels que la reconnaissance optique de caractères (OCR), l'analyse de tableaux, la reconnaissance d'objets, la description d'images, etc. Nous pouvons facilement accomplir des tâches qui nécessitaient auparavant beaucoup d'entraînement sur des données. Voici les techniques et scénarios d'application associés à Phi-3-vision-128k-instruct.
 
 ## **0. Préparation**
 
-Veuillez vous assurer que les bibliothèques Python suivantes ont été installées avant utilisation (Python 3.10+ est recommandé)
+Veuillez vous assurer que les bibliothèques Python suivantes ont été installées avant utilisation (Python 3.10+ est recommandé).
 
 ```bash
 pip install transformers -U
@@ -12,7 +21,7 @@ pip install datasets -U
 pip install torch -U
 ```
 
-Il est recommandé d'utiliser ***CUDA 11.6+*** et d'installer flatten
+Il est recommandé d'utiliser ***CUDA 11.6+*** et d'installer flatten.
 
 ```bash
 pip install flash-attn --no-build-isolation
@@ -42,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Analyser une image avec Phi-3-Vision**
 
-Nous voulons que l'IA soit capable d'analyser le contenu de nos images et de fournir des descriptions pertinentes.
+Nous souhaitons que l'IA puisse analyser le contenu de nos images et fournir des descriptions pertinentes.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -73,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR avec Phi-3-Vision**
 
-En plus d'analyser l'image, nous pouvons également extraire des informations de l'image. C'est le processus d'OCR qui nécessitait auparavant d'écrire un code complexe pour être réalisé.
+En plus d'analyser les images, nous pouvons également extraire des informations à partir des images. C'est le processus d'OCR, qui nécessitait auparavant d'écrire un code complexe pour être réalisé.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -97,7 +106,7 @@ response = processor.batch_decode(generate_ids,
 
 ```
 
-Le résultat est
+Le résultat est :
 
 ```txt
 The title of the book is "ALONE" and the author is Morgan Maxwell.
@@ -105,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Comparaison de plusieurs images**
 
-Phi-3 Vision prend en charge la comparaison de plusieurs images. Nous pouvons utiliser ce modèle pour trouver les différences entre les images.
+Phi-3 Vision prend en charge la comparaison de plusieurs images. Nous pouvons utiliser ce modèle pour identifier les différences entre les images.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -134,11 +143,11 @@ generate_ids = generate_ids[:, inputs['input_ids'].shape[1]:]
 response = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 ```
 
-Le résultat est
+Le résultat est :
 
 ```txt
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-**Avertissement** :  
-Ce document a été traduit à l'aide de services de traduction automatisée basés sur l'IA. Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées découlant de l'utilisation de cette traduction.
+**Clause de non-responsabilité** :  
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

@@ -1,36 +1,45 @@
-# **Phi Family Quantization Using llama.cpp**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "2a7aaeb42235207ba74581473b305581",
+  "translation_date": "2025-04-04T12:14:44+00:00",
+  "source_file": "md\\01.Introduction\\04\\UsingLlamacppQuantifyingPhi.md",
+  "language_code": "mo"
+}
+-->
+# **Phi परिवार को llama.cpp का उपयोग करके क्वांटाइज़ करना**
 
-## **What is llama.cpp**
+## **llama.cpp क्या है**
 
-llama.cpp adalah pustaka perangkat lunak open-source yang ditulis terutama dalam C++ untuk melakukan inferensi pada berbagai Model Bahasa Besar (LLM), seperti Llama. Tujuan utamanya adalah memberikan performa terbaik untuk inferensi LLM di berbagai perangkat keras dengan pengaturan minimal. Selain itu, pustaka ini juga memiliki binding Python yang menyediakan API tingkat tinggi untuk penyelesaian teks dan server web yang kompatibel dengan OpenAI.
+llama.cpp एक ओपन-सोर्स सॉफ़्टवेयर लाइब्रेरी है, जो मुख्य रूप से C++ में लिखी गई है और विभिन्न बड़े भाषा मॉडल्स (LLMs) जैसे Llama पर इन्फ़ेरेंस करती है। इसका मुख्य उद्देश्य न्यूनतम सेटअप के साथ विभिन्न हार्डवेयर पर अत्याधुनिक प्रदर्शन प्रदान करना है। इसके अलावा, इस लाइब्रेरी के लिए Python बाइंडिंग्स भी उपलब्ध हैं, जो टेक्स्ट कंप्लीशन और OpenAI संगत वेब सर्वर के लिए एक उच्च-स्तरीय API प्रदान करती हैं।
 
-Tujuan utama llama.cpp adalah memungkinkan inferensi LLM dengan pengaturan minimal dan performa terbaik di berbagai perangkat keras - baik secara lokal maupun di cloud.
+llama.cpp का मुख्य लक्ष्य न्यूनतम सेटअप के साथ और अत्याधुनिक प्रदर्शन के साथ स्थानीय और क्लाउड दोनों में विभिन्न प्रकार के हार्डवेयर पर LLM इन्फ़ेरेंस सक्षम करना है।
 
-- Implementasi murni C/C++ tanpa ketergantungan tambahan
-- Apple silicon sebagai warga kelas satu - dioptimalkan melalui ARM NEON, Accelerate, dan Metal frameworks
-- Dukungan AVX, AVX2, dan AVX512 untuk arsitektur x86
-- Kuantisasi bilangan bulat 1.5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit, dan 8-bit untuk inferensi lebih cepat dan penggunaan memori lebih rendah
-- Kernel CUDA kustom untuk menjalankan LLM di GPU NVIDIA (dukungan untuk GPU AMD melalui HIP)
-- Dukungan backend Vulkan dan SYCL
-- Inferensi hibrid CPU+GPU untuk mempercepat model yang lebih besar dari kapasitas total VRAM
+- बिना किसी डिपेंडेंसी के सरल C/C++ इम्प्लीमेंटेशन
+- Apple silicon को प्राथमिकता - ARM NEON, Accelerate और Metal फ्रेमवर्क्स के माध्यम से अनुकूलित
+- x86 आर्किटेक्चर के लिए AVX, AVX2 और AVX512 समर्थन
+- तेज़ इन्फ़ेरेंस और कम मेमोरी उपयोग के लिए 1.5-बिट, 2-बिट, 3-बिट, 4-बिट, 5-बिट, 6-बिट और 8-बिट इंटेजर क्वांटाइज़ेशन
+- NVIDIA GPUs पर LLMs चलाने के लिए कस्टम CUDA कर्नल्स (AMD GPUs के लिए HIP समर्थन)
+- Vulkan और SYCL बैकएंड समर्थन
+- CPU+GPU हाइब्रिड इन्फ़ेरेंस, जो कुल VRAM क्षमता से बड़े मॉडल्स को आंशिक रूप से तेज़ करता है
 
-## **Mengkuantisasi Phi-3.5 dengan llama.cpp**
+## **Phi-3.5 को llama.cpp से क्वांटाइज़ करना**
 
-Model Phi-3.5-Instruct dapat dikuantisasi menggunakan llama.cpp, namun Phi-3.5-Vision dan Phi-3.5-MoE belum didukung. Format yang dikonversi oleh llama.cpp adalah gguf, yang juga merupakan format kuantisasi yang paling banyak digunakan.
+Phi-3.5-Instruct मॉडल को llama.cpp का उपयोग करके क्वांटाइज़ किया जा सकता है, लेकिन Phi-3.5-Vision और Phi-3.5-MoE अभी समर्थित नहीं हैं। llama.cpp द्वारा परिवर्तित फॉर्मेट GGUF है, जो सबसे व्यापक रूप से उपयोग किया जाने वाला क्वांटाइज़ेशन फॉर्मेट भी है।
 
-Ada banyak model dalam format GGUF yang telah dikuantisasi di Hugging Face. AI Foundry, Ollama, dan LlamaEdge mengandalkan llama.cpp, sehingga model GGUF juga sering digunakan.
+Hugging Face पर GGUF फॉर्मेट में कई क्वांटाइज़्ड मॉडल्स उपलब्ध हैं। AI Foundry, Ollama, और LlamaEdge llama.cpp पर निर्भर करते हैं, इसलिए GGUF मॉडल्स का उपयोग अक्सर किया जाता है।
 
-### **Apa itu GGUF**
+### **GGUF क्या है**
 
-GGUF adalah format biner yang dioptimalkan untuk memuat dan menyimpan model dengan cepat, sehingga sangat efisien untuk tujuan inferensi. GGUF dirancang untuk digunakan dengan GGML dan eksekutor lainnya. GGUF dikembangkan oleh @ggerganov, yang juga merupakan pengembang llama.cpp, sebuah framework inferensi LLM populer berbasis C/C++. Model yang awalnya dikembangkan dalam framework seperti PyTorch dapat dikonversi ke format GGUF untuk digunakan dengan mesin-mesin tersebut.
+GGUF एक बाइनरी फॉर्मेट है, जो मॉडल्स को तेज़ी से लोड और सेव करने के लिए अनुकूलित है, जिससे यह इन्फ़ेरेंस उद्देश्यों के लिए अत्यधिक कुशल बनता है। GGUF को GGML और अन्य एक्सीक्यूटर्स के साथ उपयोग के लिए डिज़ाइन किया गया है। GGUF को @ggerganov द्वारा विकसित किया गया था, जो llama.cpp के डेवलपर भी हैं, एक लोकप्रिय C/C++ LLM इन्फ़ेरेंस फ्रेमवर्क। PyTorch जैसे फ्रेमवर्क्स में विकसित मॉडल्स को GGUF फॉर्मेट में परिवर्तित किया जा सकता है ताकि वे इन इंजनों के साथ उपयोग किए जा सकें।
 
-### **ONNX vs GGUF**
+### **ONNX बनाम GGUF**
 
-ONNX adalah format pembelajaran mesin/pembelajaran mendalam tradisional, yang didukung dengan baik di berbagai Framework AI dan memiliki skenario penggunaan yang baik di perangkat edge. Sedangkan GGUF, berbasis pada llama.cpp, dapat dikatakan sebagai produk dari era GenAI. Keduanya memiliki kegunaan yang serupa. Jika Anda menginginkan performa yang lebih baik pada perangkat keras tertanam dan lapisan aplikasi, ONNX mungkin menjadi pilihan Anda. Jika Anda menggunakan framework dan teknologi turunan dari llama.cpp, maka GGUF mungkin lebih sesuai.
+ONNX एक पारंपरिक मशीन लर्निंग/डीप लर्निंग फॉर्मेट है, जो विभिन्न AI फ्रेमवर्क्स में अच्छी तरह से समर्थित है और एज डिवाइसेस में उपयोग के अच्छे परिदृश्य प्रदान करता है। GGUF, llama.cpp पर आधारित है और इसे GenAI युग में उत्पादित माना जा सकता है। दोनों के उपयोग समान हैं। यदि आप एंबेडेड हार्डवेयर और एप्लिकेशन लेयर में बेहतर प्रदर्शन चाहते हैं, तो ONNX आपका विकल्प हो सकता है। यदि आप llama.cpp के डेरिवेटिव फ्रेमवर्क और तकनीक का उपयोग करते हैं, तो GGUF बेहतर हो सकता है।
 
-### **Mengkuantisasi Phi-3.5-Instruct Menggunakan llama.cpp**
+### **Phi-3.5-Instruct को llama.cpp से क्वांटाइज़ करना**
 
-**1. Konfigurasi Lingkungan**
+**1. पर्यावरण सेटअप**
 
 
 ```bash
@@ -44,9 +53,9 @@ make -j8
 ```
 
 
-**2. Kuantisasi**
+**2. क्वांटाइज़ेशन**
 
-Menggunakan llama.cpp untuk mengonversi Phi-3.5-Instruct ke FP16 GGUF
+llama.cpp का उपयोग करके Phi-3.5-Instruct को FP16 GGUF में बदलना
 
 
 ```bash
@@ -55,7 +64,7 @@ Menggunakan llama.cpp untuk mengonversi Phi-3.5-Instruct ke FP16 GGUF
 
 ```
 
-Mengkuantisasi Phi-3.5 ke INT4
+Phi-3.5 को INT4 में क्वांटाइज़ करना
 
 
 ```bash
@@ -65,9 +74,9 @@ Mengkuantisasi Phi-3.5 ke INT4
 ```
 
 
-**3. Pengujian**
+**3. परीक्षण**
 
-Pasang llama-cpp-python
+llama-cpp-python स्थापित करें
 
 
 ```bash
@@ -76,9 +85,9 @@ pip install llama-cpp-python -U
 
 ```
 
-***Catatan*** 
+***नोट*** 
 
-Jika Anda menggunakan Apple Silicon, pasang llama-cpp-python seperti ini
+यदि आप Apple Silicon का उपयोग करते हैं, तो कृपया llama-cpp-python इस तरह स्थापित करें
 
 
 ```bash
@@ -87,7 +96,7 @@ CMAKE_ARGS="-DLLAMA_METAL=on" pip install llama-cpp-python -U
 
 ```
 
-Pengujian 
+परीक्षण 
 
 
 ```bash
@@ -98,10 +107,10 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 
 
-## **Sumber Daya**
+## **संसाधन**
 
-1. Pelajari lebih lanjut tentang llama.cpp [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. llama.cpp के बारे में और जानें [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. Pelajari lebih lanjut tentang GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
+2. GGUF के बारे में और जानें [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
-It seems like you may be asking for a translation into a language abbreviated as "mo." Could you clarify which language you're referring to? For example, if you mean Moldovan (Romanian), I can assist with that. Let me know!
+It seems you are asking for a translation into "mo." Could you clarify what "mo" refers to? For example, are you asking for a translation into Māori, Marshallese, or another language?

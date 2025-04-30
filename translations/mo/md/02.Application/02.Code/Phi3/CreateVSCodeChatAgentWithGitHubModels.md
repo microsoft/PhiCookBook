@@ -1,54 +1,63 @@
-# **Phi-3.5 GitHub Models-ээр өөрийн Visual Studio Code Chat Copilot Agent үүсгэх**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "e8ff0378cb171924884b4abb3c2a8c37",
+  "translation_date": "2025-04-04T12:48:06+00:00",
+  "source_file": "md\\02.Application\\02.Code\\Phi3\\CreateVSCodeChatAgentWithGitHubModels.md",
+  "language_code": "mo"
+}
+-->
+# **Ka yi naƙasasshen wakilin Visual Studio Code Chat Copilot Agent ɗinka tare da Phi-3.5 daga GitHub Models**
 
-Та Visual Studio Code Copilot ашигладаг уу? Ялангуяа Chat-д, та өөр өөр агентуудыг ашиглан Visual Studio Code-д төслүүдийг үүсгэх, бичих, засварлах чадварыг сайжруулж болно. Visual Studio Code нь компаниуд болон хувь хүмүүст өөрсдийн бизнесийн хэрэгцээнд нийцүүлэн агентуудыг үүсгэх API-г санал болгодог бөгөөд энэ нь тодорхой салбаруудад тэдний чадамжийг өргөжүүлэх боломжийг олгодог. Энэ нийтлэлд бид GitHub Models-ийн **Phi-3.5-mini-instruct (128k)** болон **Phi-3.5-vision-instruct (128k)** дээр төвлөрч, өөрийн Visual Studio Code Agent үүсгэх талаар авч үзнэ.
+Shin kana amfani da Visual Studio Code Copilot? Musamman a cikin Chat, zaka iya amfani da wakilai daban-daban don inganta ikon ƙirƙira, rubutu, da kula da ayyukan a cikin Visual Studio Code. Visual Studio Code yana bayar da API wanda ke ba kamfanoni da mutane damar ƙirƙirar wakilai daban-daban bisa ga bukatun kasuwancinsu don faɗaɗa iyawa a fannonin mallakar su daban-daban. A cikin wannan labarin, zamu mayar da hankali kan **Phi-3.5-mini-instruct (128k)** da **Phi-3.5-vision-instruct (128k)** na GitHub Models don ƙirƙirar wakilin Visual Studio Code ɗinka.
 
-## **GitHub Models дээрх Phi-3.5-ийн тухай**
+## **Game da Phi-3.5 a cikin GitHub Models**
 
-Phi-3/3.5 Family-ийн Phi-3/3.5-mini-instruct нь кодыг ойлгох, үүсгэх тал дээр өндөр чадвартай бөгөөд Gemma-2-9b болон Mistral-Nemo-12B-instruct-2407 загваруудаас давуу талтай гэдгийг бид мэднэ.
+Mun san cewa Phi-3/3.5-mini-instruct a cikin Phi-3/3.5 Family yana da ƙarfi wajen fahimtar lamba da samar da lamba, kuma yana da fa'ida akan Gemma-2-9b da Mistral-Nemo-12B-instruct-2407.
 
 ![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.mo.png)
 
-GitHub Models-ийн хамгийн сүүлийн хувилбарууд нь **Phi-3.5-mini-instruct (128k)** болон **Phi-3.5-vision-instruct (128k)** загваруудыг ашиглах боломжийг олгож байна. Хөгжүүлэгчид эдгээрт OpenAI SDK, Azure AI Inference SDK болон REST API ашиглан хандаж болно.
+Sabbin GitHub Models sun riga sun bayar da damar zuwa Phi-3.5-mini-instruct (128k) da Phi-3.5-vision-instruct (128k) models. Masu haɓaka zasu iya samun su ta hanyar OpenAI SDK, Azure AI Inference SDK, da REST API.
 
 ![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.mo.png)
 
-***Тэмдэглэл:*** Үйлдвэрлэлийн орчинд Azure Model Catalog-той илүү хялбар холбогдох боломжтой тул энд Azure AI Inference SDK-г ашиглахыг зөвлөж байна.
+***Note:*** An ba da shawarar amfani da Azure AI Inference SDK anan, saboda yana iya sauƙaƙe sauyawa tare da Azure Model Catalog a cikin yanayin samarwa.
 
-Доорх нь GitHub Models-той холбогдсоны дараах **Phi-3.5-mini-instruct (128k)** болон **Phi-3.5-vision-instruct (128k)** загваруудын код үүсгэх хувилбар дахь үр дүн бөгөөд дараагийн жишээнүүдэд бэлтгэл болно.
+Abubuwan da ke ƙasa sune sakamakon **Phi-3.5-mini-instruct (128k)** da **Phi-3.5-vision-instruct (128k)** a cikin yanayin samar da lamba bayan haɗawa da GitHub Models, kuma suna shirya don misalai masu zuwa.
 
-**Жишээ: GitHub Models Phi-3.5-mini-instruct (128k) Prompt-аас код үүсгэх** ([энд дарна уу](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-mini-instruct (128k) samar da lamba daga Prompt** ([danna wannan mahada](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**Жишээ: GitHub Models Phi-3.5-vision-instruct (128k) Зургаас код үүсгэх** ([энд дарна уу](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-vision-instruct (128k) samar da lamba daga Hoton** ([danna wannan mahada](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
-## **GitHub Copilot Chat Agent-ийн тухай**
+## **Game da GitHub Copilot Chat Agent**
 
-GitHub Copilot Chat Agent нь код дээр үндэслэн төслийн өөр өөр нөхцөл байдалд олон төрлийн үүрэг гүйцэтгэж чадна. Систем нь workspace, github, terminal, vscode гэсэн дөрвөн агенттай.
+GitHub Copilot Chat Agent na iya kammala ayyuka daban-daban a cikin yanayin aikin daban-daban bisa ga lamba. Tsarin yana da wakilai guda huɗu: workspace, github, terminal, vscode.
 
 ![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.mo.png)
 
-Агентын нэрийг ‘@’ тэмдгээр нэмснээр та холбогдох ажлыг хурдан гүйцэтгэх боломжтой. Аж ахуйн нэгжүүдийн хувьд, хэрэв та өөрийн бизнесийн шаардлага, код бичих, тестийн үзүүлэлтүүд болон хувилбар зэрэг агуулгыг нэмэх юм бол GitHub Copilot дээр суурилсан илүү хүчирхэг хувийн функцүүдтэй болно.
+Ta hanyar ƙara sunan wakilin tare da '@', zaka iya kammala aikin da ya dace da sauri. Ga kamfanoni, idan ka ƙara abubuwan da suka shafi kasuwancin ku kamar buƙatu, rubutun lamba, ƙayyadaddun gwaji, da fitarwa, zaka iya samun ƙarin ƙarfi na mallakar kamfani bisa ga GitHub Copilot.
 
-Visual Studio Code Chat Agent нь одоо API-аа албан ёсоор гаргасан бөгөөд аж ахуйн нэгжүүд болон хөгжүүлэгчид өөрсдийн бизнесийн экосистемд нийцсэн агентуудыг хөгжүүлэх боломжтой болсон. Visual Studio Code Extension хөгжүүлэлтийн аргачлал дээр суурилан, та Visual Studio Code Chat Agent API-ийн интерфэйст хялбархан хандаж болно. Бид дараах үйл явцын дагуу хөгжүүлэлт хийх боломжтой.
+Visual Studio Code Chat Agent yanzu ya fitar da API ɗinsa a hukumance, yana ba kamfanoni ko masu haɓaka kamfanoni damar haɓaka wakilai bisa ga yanayin kasuwancin software daban-daban. Bisa ga hanyar haɓaka Visual Studio Code Extension Development, zaka iya samun sauƙin samun shiga interface na Visual Studio Code Chat Agent API. Zamu iya haɓaka bisa ga wannan tsari.
 
 ![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.mo.png)
 
-Энэхүү хөгжүүлэлтийн нөхцөл нь гуравдагч талын загварын API-ууд (GitHub Models, Azure Model Catalog, нээлттэй эхийн загварууд дээр суурилсан өөрийн үйлчилгээ гэх мэт)-ийг дэмжих боломжтой бөгөөд GitHub Copilot-оос өгсөн gpt-35-turbo, gpt-4, gpt-4o загваруудыг ашиглах боломжтой.
+Yanayin haɓaka yana iya tallafawa samun shiga APIs na samfurin na ɓangare na uku (kamar GitHub Models, Azure Model Catalog, da sabis na gina kai bisa ga samfurin buɗaɗɗen tushe) kuma yana iya amfani da gpt-35-turbo, gpt-4, da gpt-4o models da GitHub Copilot ya bayar.
 
-## **Phi-3.5 дээр суурилсан @phicoding агент нэмэх**
+## **Ƙara Wakilin @phicoding bisa ga Phi-3.5**
 
-Phi-3.5-ийн программчлалын чадварыг нэгтгэн, код бичих, зурагнаас код үүсгэх болон бусад үүргийг гүйцэтгэх боломжтой агент @PHI-г бүтээе. Доорх нь зарим функцууд юм:
+Mun yi ƙoƙarin haɗa ikon shirye-shirye na Phi-3.5 don kammala rubutun lamba, samar da lamba daga hotuna, da sauran ayyuka. Kammala wakilin da aka gina kusa da Phi-3.5 - @PHI, waɗannan sune wasu ayyuka:
 
-1. **@phicoding /help** командыг ашиглан GitHub Copilot-оос өгсөн GPT-4o дээр үндэслэн өөрийгөө танилцуулах текст үүсгэх.
+1. Samar da gabatarwa kai ta amfani da GPT-4o da GitHub Copilot ya bayar ta hanyar umarnin **@phicoding /help**.
 
-2. **@phicoding /gen** командыг ашиглан **Phi-3.5-mini-instruct (128k)** дээр үндэслэн өөр өөр програмчлалын хэлний код үүсгэх.
+2. Samar da lamba don harsunan shirye-shirye daban-daban bisa ga **Phi-3.5-mini-instruct (128k)** ta hanyar umarnin **@phicoding /gen**.
 
-3. **@phicoding /image** командыг ашиглан **Phi-3.5-vision-instruct (128k)** дээр үндэслэн код үүсгэх болон зурагны гүйцэтгэл хийх.
+3. Samar da lamba bisa ga **Phi-3.5-vision-instruct (128k)** da kammala hoto ta hanyar umarnin **@phicoding /image**.
 
 ![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.mo.png)
 
-## **Холбогдох алхмууд**
+## **Matakan da suka shafi**
 
-1. npm ашиглан Visual Studio Code Extension хөгжүүлэлтийн дэмжлэг суулгах.
+1. Shigar da tallafin haɓaka Visual Studio Code Extension ta amfani da npm.
 
 ```bash
 
@@ -56,7 +65,7 @@ npm install --global yo generator-code
 
 ```
 
-2. Visual Studio Code Extension залгаас үүсгэх (Typescript хөгжүүлэлтийн горим ашиглан, phiext нэртэй).
+2. Ƙirƙiri plugin na Visual Studio Code Extension (ta amfani da yanayin haɓaka Typescript, mai suna phiext).
 
 ```bash
 
@@ -64,7 +73,7 @@ yo code
 
 ```
 
-3. Үүсгэсэн төслийг нээгээд package.json-ийг засах. Энд GitHub Models-ийн зааварчилгаа, тохиргоо болон таны GitHub Models token-ийг нэмэх шаардлагатай.
+3. Buɗe aikin da aka ƙirƙira kuma gyara package.json. Anan akwai umarnin da ke da alaƙa da saitunan GitHub Models. Lura cewa dole ne ka ƙara token ɗin GitHub Models ɗinka anan.
 
 ```json
 
@@ -182,7 +191,7 @@ yo code
 
 ```
 
-4. src/extension.ts файлыг засах.
+4. Gyara src/extension.ts.
 
 ```typescript
 
@@ -351,7 +360,7 @@ export function deactivate() {}
 
 ```
 
-6. Ажиллуулах.
+6. Gudanarwa.
 
 ***/help***
 
@@ -369,14 +378,14 @@ export function deactivate() {}
 
 ![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.mo.png)
 
-Та жишээ кодыг татаж авах боломжтой: [энд дарна уу](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Zaka iya saukar da lambar samfurin: [danna](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
-## **Нөөцүүд**
+## **Albarkatu**
 
-1. GitHub Models-д бүртгүүлэх [https://gh.io/models](https://gh.io/models)
+1. Yi rijista GitHub Models [https://gh.io/models](https://gh.io/models)
 
-2. Visual Studio Code Extension хөгжүүлэлтийн талаар суралцах [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. Koyi Visual Studio Code Extension Development [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. Visual Studio Code Coilot Chat API-ийн талаар суралцах [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. Koyi game da Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
-It seems like "mo" could refer to a specific language or dialect. Could you please clarify which language you are referring to by "mo"? For example, it could mean Maori, Montenegrin, Mon, or something else. Let me know so I can assist you accurately!
+It seems you've requested a translation to "mo," but could you clarify what "mo" refers to? Are you referring to Maori, Mongolian, or another language? Providing more context will help ensure an accurate translation.

@@ -1,10 +1,19 @@
-# **在本地使用 Phi-3-Vision 進行推理**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "27cb0b952a2ef48c14b75dec13635acf",
+  "translation_date": "2025-04-04T17:54:57+00:00",
+  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "language_code": "hk"
+}
+-->
+# **在本地運行 Phi-3-Vision**
 
-Phi-3-vision-128k-instruct 讓 Phi-3 不僅能理解語言，還能以視覺方式感知世界。通過 Phi-3-vision-128k-instruct，我們可以解決各種視覺問題，例如 OCR、表格分析、物體識別、描述圖片等。我們可以輕鬆完成以前需要大量數據訓練的任務。以下是 Phi-3-vision-128k-instruct 提供的相關技術和應用場景。
+Phi-3-vision-128k-instruct 讓 Phi-3 不僅能理解語言，還能視覺地「看見」世界。透過 Phi-3-vision-128k-instruct，我們可以解決各種視覺問題，例如 OCR、表格分析、物體識別、圖片描述等。我們可以輕鬆完成以前需要大量數據訓練才能完成的任務。以下是 Phi-3-vision-128k-instruct 引用的相關技術和應用場景。
 
 ## **0. 準備工作**
 
-在使用之前，請確保已安裝以下 Python 函式庫（建議使用 Python 3.10+）
+請確保在使用前已安裝以下 Python 庫（建議使用 Python 3.10+）
 
 ```bash
 pip install transformers -U
@@ -18,7 +27,7 @@ pip install torch -U
 pip install flash-attn --no-build-isolation
 ```
 
-新建一個 Notebook。為了完成範例，建議您先創建以下內容。
+建立一個新的 Notebook。為了完成示例，建議您先建立以下內容。
 
 ```python
 from PIL import Image
@@ -65,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-我們可以通過在 Notebook 中執行以下腳本來獲取相關答案。
+透過在 Notebook 中執行以下腳本，我們可以獲得相關答案。
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -73,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. 使用 Phi-3-Vision 進行 OCR**
 
-除了分析圖片，我們還可以從圖片中提取信息。這就是 OCR 的過程，以前我們需要編寫複雜的代碼才能完成。
+除了分析圖片之外，我們還可以從圖片中提取信息。這是 OCR 的過程，過去我們需要編寫複雜的代碼才能完成。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -97,15 +106,15 @@ response = processor.batch_decode(generate_ids,
 
 ```
 
-結果為：
+結果是
 
 ```txt
 The title of the book is "ALONE" and the author is Morgan Maxwell.
 ```
 
-## **3. 多圖片對比**
+## **3. 多張圖片的比較**
 
-Phi-3 Vision 支援多圖片對比。我們可以利用此模型來找出圖片之間的差異。
+Phi-3 Vision 支持多張圖片的比較。我們可以使用此模型找出圖片之間的差異。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -134,11 +143,11 @@ generate_ids = generate_ids[:, inputs['input_ids'].shape[1]:]
 response = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 ```
 
-結果為：
+結果是
 
 ```txt
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
 **免責聲明**：  
-本文件是使用機器翻譯人工智能服務進行翻譯的。我們雖然努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件作為權威來源。對於關鍵信息，建議使用專業的人工作翻譯。我們對於因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。
+本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。如涉及重要信息，建議尋求專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。

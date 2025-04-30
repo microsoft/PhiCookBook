@@ -1,49 +1,59 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "1e42c399dcc2fa477925d3ef4038d403",
+  "translation_date": "2025-04-04T12:41:55+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-MLflow.md",
+  "language_code": "mo"
+}
+-->
 # MLflow
 
-[MLflow](https://mlflow.org/) jẹ pẹpẹ orisun-òfuurufú ti a ṣe apẹrẹ lati ṣakoso igbesi aye ẹrọ ẹkọ lati ibẹrẹ de opin.
+[MLflow](https://mlflow.org/) adalah platform open-source yang dirancang untuk mengelola siklus hidup pembelajaran mesin secara menyeluruh.
 
 ![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.mo.png)
 
-MLFlow ni a lo lati ṣakoso igbesi aye ẹrọ ẹkọ, pẹlu idanwo, atunṣe, iṣafihan ati iforukọsilẹ awoṣe aarin. MLFlow lọwọlọwọ nfunni awọn eroja mẹrin. 
+MLFlow digunakan untuk mengelola siklus hidup pembelajaran mesin, termasuk eksperimen, reproduksi, penerapan, dan registri model pusat. MLFlow saat ini menawarkan empat komponen utama:
 
-- **MLflow Tracking:** Ṣiṣakiyesi ati ibeere awọn idanwo, koodu, data config ati awọn abajade.
-- **MLflow Projects:** Ṣakojọpo koodu imọ-jinlẹ data ni ọna kika lati tun ṣe awọn iṣẹ ṣiṣe lori eyikeyi pẹpẹ.
-- **Mlflow Models:** Ṣafihan awọn awoṣe ẹrọ ẹkọ ni awọn agbegbe iṣẹ oriṣiriṣi.
-- **Model Registry:** Tọju, ṣe akọsilẹ ati ṣakoso awọn awoṣe ni ibi-ipamọ aarin kan.
+- **MLflow Tracking:** Mencatat dan menelusuri eksperimen, kode, konfigurasi data, dan hasil.
+- **MLflow Projects:** Mengemas kode data sains dalam format yang dapat mereproduksi proses di platform mana pun.
+- **Mlflow Models:** Menerapkan model pembelajaran mesin di berbagai lingkungan penyajian.
+- **Model Registry:** Menyimpan, memberi anotasi, dan mengelola model dalam repositori pusat.
 
-O pẹlu awọn agbara fun ṣiṣakiyesi awọn idanwo, ṣiṣakojọpo koodu sinu awọn iṣẹ ṣiṣe atunṣe, ati pinpin ati ṣiṣafihan awọn awoṣe. MLFlow ti ṣepọ sinu Databricks ati ṣe atilẹyin ọpọlọpọ awọn ile ikawe ML, ṣiṣe ni ti ominira ile ikawe. O le ṣee lo pẹlu eyikeyi ile ikawe ẹrọ ẹkọ ati ni eyikeyi ede siseto, bi o ṣe pese REST API ati CLI fun irọrun.
+MLFlow memiliki kemampuan untuk melacak eksperimen, mengemas kode menjadi proses yang dapat direproduksi, serta berbagi dan menerapkan model. MLFlow terintegrasi dengan Databricks dan mendukung berbagai pustaka pembelajaran mesin, sehingga bersifat agnostik terhadap pustaka. Platform ini dapat digunakan dengan pustaka pembelajaran mesin apa pun dan bahasa pemrograman apa pun, karena menyediakan REST API dan CLI untuk kemudahan.
 
 ![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.mo.png)
 
-Awọn ẹya pataki ti MLFlow pẹlu:
+Fitur utama MLFlow meliputi:
 
-- **Ṣiṣakiyesi Idanwo:** Ṣiṣakiyesi ati ṣe afiwe awọn paramita ati awọn abajade.
-- **Iṣakoso Awoṣe:** Ṣafihan awọn awoṣe si awọn pẹpẹ iṣẹ ati asọtẹlẹ oriṣiriṣi.
-- **Iforukọsilẹ Awoṣe:** Ṣiṣakoso papọ igbesi aye awọn awoṣe MLFlow, pẹlu awọn ẹya ati awọn akọsilẹ.
-- **Awọn iṣẹ akanṣe:** Ṣakojọpo koodu ML fun pinpin tabi lilo iṣelọpọ.
-MLFlow tun ṣe atilẹyin fun iyika MLOps, eyiti o pẹlu igbaradi data, iforukọsilẹ ati iṣakoso awọn awoṣe, ṣiṣakojọpo awọn awoṣe fun ṣiṣe, ṣiṣafihan awọn iṣẹ, ati ṣiṣakoso awọn awoṣe. O pinnu lati dẹrọ ilana ti gbigbe lati awoṣe si iṣẹ ṣiṣe iṣelọpọ, paapaa ni awọn agbegbe awọsanma ati eti.
+- **Pelacakan Eksperimen:** Mencatat dan membandingkan parameter serta hasil.
+- **Manajemen Model:** Menerapkan model ke berbagai platform penyajian dan inferensi.
+- **Registri Model:** Mengelola siklus hidup model MLFlow secara kolaboratif, termasuk versi dan anotasi.
+- **Proyek:** Mengemas kode pembelajaran mesin untuk berbagi atau penggunaan produksi.
 
-## E2E Eto - Ṣiṣẹda aṣọ wrapper ati lilo Phi-3 bi awoṣe MLFlow
+MLFlow juga mendukung siklus MLOps, yang mencakup persiapan data, registrasi dan pengelolaan model, pengemasan model untuk eksekusi, penerapan layanan, dan pemantauan model. Platform ini bertujuan untuk menyederhanakan proses dari prototipe hingga alur kerja produksi, terutama di lingkungan cloud dan edge.
 
-Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe aṣọ wrapper ni ayika awoṣe ede kekere Phi-3 (SLM) ati lẹhinna ṣiṣe bi awoṣe MLFlow boya ni agbegbe tabi ni awọsanma, fun apẹẹrẹ, ni aaye iṣẹ Ẹkọ Ẹrọ Azure.
+## Skenario E2E - Membangun wrapper dan menggunakan Phi-3 sebagai model MLFlow
+
+Dalam sampel E2E ini, kami akan mendemonstrasikan dua pendekatan berbeda untuk membangun wrapper di sekitar model bahasa kecil Phi-3 (SLM) dan menjalankannya sebagai model MLFlow baik secara lokal maupun di cloud, misalnya di Azure Machine Learning workspace.
 
 ![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.mo.png)
 
-| Iṣẹ akanṣe | Apejuwe | Ipo |
+| Proyek | Deskripsi | Lokasi |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline jẹ aṣayan ti o rọrun julọ lati ṣe aṣọ wrapper ti o ba fẹ lo awoṣe HuggingFace pẹlu adun transformers idanwo MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | Ni akoko kikọ yii, laini ọkọ ayọkẹlẹ transformer ko ṣe atilẹyin iranṣẹ wrapper MLFlow fun awọn awoṣe HuggingFace ni ọna kika ONNX, paapaa pẹlu package Python optimum idanwo. Fun awọn ọran bii eyi, o le ṣe aṣọ wrapper Python aṣa fun MLFlow mode | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline adalah opsi termudah untuk membangun wrapper jika Anda ingin menggunakan model HuggingFace dengan rasa transformer eksperimental MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | Pada saat penulisan, pipeline transformer belum mendukung pembuatan wrapper MLFlow untuk model HuggingFace dalam format ONNX, bahkan dengan paket Python optimum eksperimental. Untuk kasus seperti ini, Anda dapat membangun wrapper Python kustom untuk mode MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
-## Iṣẹ akanṣe: Transformer Pipeline
+## Proyek: Transformer Pipeline
 
-1. O yoo nilo awọn idii Python ti o yẹ lati MLFlow ati HuggingFace:
+1. Anda memerlukan paket Python yang relevan dari MLFlow dan HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Nigbamii, o yẹ ki o bẹrẹ laini ọkọ ayọkẹlẹ transformer nipa tọka si awoṣe Phi-3 ti o wa ni ibi iforukọsilẹ HuggingFace. Gẹgẹbi a ti le rii lati kaadi awoṣe _Phi-3-mini-4k-instruct_, iṣẹ rẹ jẹ ti iru “Ẹda ọrọ”:
+2. Selanjutnya, Anda harus memulai pipeline transformer dengan merujuk pada model Phi-3 target di registri HuggingFace. Seperti yang terlihat dari kartu model _Phi-3-mini-4k-instruct_, tugasnya adalah jenis “Text Generation”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -52,7 +62,7 @@ Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe a�
     )
     ```
 
-3. O le bayi fi laini ọkọ ayọkẹlẹ transformer awoṣe Phi-3 rẹ sinu ọna kika MLFlow ki o pese awọn alaye afikun bii ọna awọn nkan arọwọto, eto iṣeto awoṣe pato ati iru API asọtẹlẹ:
+3. Anda sekarang dapat menyimpan pipeline transformer model Phi-3 Anda dalam format MLFlow dan menyediakan detail tambahan seperti jalur artefak target, pengaturan konfigurasi model spesifik, dan jenis API inferensi:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -63,9 +73,9 @@ Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe a�
     )
     ```
 
-## Iṣẹ akanṣe: Custom Python Wrapper
+## Proyek: Custom Python Wrapper
 
-1. A le lo API [ONNX Runtime generate()](https://github.com/microsoft/onnxruntime-genai) ti Microsoft fun asọtẹlẹ awoṣe ONNX ati awọn koodu ifihan / fifin. O gbọdọ yan package _onnxruntime_genai_ fun kọnputa ti o fojusi rẹ, pẹlu apẹẹrẹ ti o wa ni isalẹ ti o fojusi CPU:
+1. Di sini kita dapat memanfaatkan [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) dari Microsoft untuk inferensi model ONNX dan pengkodean/penguraian token. Anda harus memilih paket _onnxruntime_genai_ untuk komputasi target Anda, dengan contoh di bawah ini menargetkan CPU:
 
     ``` Python
     import mlflow
@@ -73,7 +83,7 @@ Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe a�
     import onnxruntime_genai as og
     ```
 
-1. Kilasi aṣa wa n ṣe awọn ọna meji: _load_context()_ lati bẹrẹ awoṣe **ONNX** ti Phi-3 Mini 4K Instruct, **generator parameters** ati **tokenizer**; ati _predict()_ lati ṣe agbejade awọn aami jade fun ibeere ti a pese:
+1. Kelas kustom kami mengimplementasikan dua metode: _load_context()_ untuk menginisialisasi **model ONNX** dari Phi-3 Mini 4K Instruct, **parameter generator**, dan **tokenizer**; serta _predict()_ untuk menghasilkan token output berdasarkan prompt yang diberikan:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -104,7 +114,7 @@ Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe a�
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. O le lo bayi iṣẹ _mlflow.pyfunc.log_model()_ lati ṣe iranṣẹ wrapper Python aṣa (ni ọna kika pickle) fun awoṣe Phi-3, pẹlu awoṣe ONNX atilẹba ati awọn ohun elo pataki:
+1. Anda sekarang dapat menggunakan fungsi _mlflow.pyfunc.log_model()_ untuk menghasilkan wrapper Python kustom (dalam format pickle) untuk model Phi-3, bersama dengan model ONNX asli dan dependensi yang diperlukan:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -119,9 +129,9 @@ Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe a�
     )
     ```
 
-## Awọn aami ti awọn awoṣe MLFlow ti a ṣe
+## Tanda tangan model MLFlow yang dihasilkan
 
-1. Ni igbesẹ 3 ti iṣẹ akanṣe Transformer Pipeline loke, a ṣeto iṣẹ awoṣe MLFlow si “_llm/v1/chat_”. Aṣẹ bẹẹ n ṣe iranṣẹ wrapper API awoṣe, ibaramu pẹlu API Chat ti OpenAI bi a ti fihan ni isalẹ:
+1. Pada langkah 3 dari proyek Transformer Pipeline di atas, kami menetapkan tugas model MLFlow ke “_llm/v1/chat_”. Instruksi semacam ini menghasilkan wrapper API model yang kompatibel dengan API Chat OpenAI seperti yang ditunjukkan di bawah:
 
     ``` Python
     {inputs: 
@@ -132,13 +142,13 @@ Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe a�
       None}
     ```
 
-1. Nitorinaa, o le fi ibeere rẹ silẹ ni ọna kika atẹle:
+1. Hasilnya, Anda dapat mengirimkan prompt Anda dalam format berikut:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Lẹhinna, lo ilana atẹle API OpenAI, fun apẹẹrẹ, _response[0][‘choices’][0][‘message’][‘content’]_, lati ṣe ẹwa abajade rẹ si nkan bii eyi:
+1. Kemudian, gunakan pemrosesan pasca yang kompatibel dengan API OpenAI, misalnya _response[0][‘choices’][0][‘message’][‘content’]_, untuk mempercantik output Anda menjadi seperti ini:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -148,7 +158,7 @@ Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe a�
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. Ni igbesẹ 3 ti iṣẹ akanṣe Custom Python Wrapper loke, a gba package MLFlow laaye lati ṣe iranṣẹ aami awoṣe lati apẹẹrẹ titẹ sii ti a fun. Aami wrapper MLFlow wa yoo dabi eyi:
+1. Pada langkah 3 dari proyek Custom Python Wrapper di atas, kami memungkinkan paket MLFlow untuk menghasilkan tanda tangan model dari contoh input yang diberikan. Tanda tangan wrapper MLFlow kami akan terlihat seperti ini:
 
     ``` Python
     {inputs: 
@@ -159,13 +169,13 @@ Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe a�
       None}
     ```
 
-1. Nitorinaa, ibeere wa yoo nilo lati ni bọtini “prompt” ni ọna kika atẹle:
+1. Jadi, prompt kami perlu berisi kunci "prompt" dalam bentuk kamus, seperti ini:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Abajade awoṣe naa yoo pese lẹhinna ni ọna kika okun:
+1. Output model kemudian akan diberikan dalam format string:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -177,4 +187,4 @@ Ninu apẹẹrẹ E2E yii a yoo fihan awọn ọna meji ti o yatọ lati ṣe a�
     Remember, this is all in good fun, and we're just having a little atomic-level humor!
     ```
 
-It seems you've mentioned "mo" as the target language. Could you please clarify what "mo" refers to? Are you referring to a specific language, such as Maori, Mongolian, or something else? Let me know so I can assist you accurately!
+It seems like you are asking for the translation of the provided text into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect?

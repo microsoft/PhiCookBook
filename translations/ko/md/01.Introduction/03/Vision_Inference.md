@@ -1,10 +1,19 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "27cb0b952a2ef48c14b75dec13635acf",
+  "translation_date": "2025-04-04T06:04:27+00:00",
+  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "language_code": "ko"
+}
+-->
 # **로컬에서 Phi-3-Vision 추론하기**
 
-Phi-3-vision-128k-instruct는 Phi-3가 언어를 이해할 뿐만 아니라 시각적으로 세상을 볼 수 있게 해줍니다. Phi-3-vision-128k-instruct를 통해 OCR, 표 분석, 객체 인식, 이미지 설명 등 다양한 시각적 문제를 해결할 수 있습니다. 이를 통해 이전에는 많은 데이터 학습이 필요했던 작업들을 손쉽게 완료할 수 있습니다. 아래는 Phi-3-vision-128k-instruct가 인용하는 관련 기술과 응용 시나리오입니다.
+Phi-3-vision-128k-instruct는 Phi-3가 언어를 이해하는 것뿐만 아니라 시각적으로 세상을 볼 수 있게 합니다. Phi-3-vision-128k-instruct를 통해 OCR, 표 분석, 객체 인식, 이미지 설명 등 다양한 시각적 문제를 해결할 수 있습니다. 이전에는 많은 데이터 학습이 필요했던 작업들을 이제 쉽게 완료할 수 있습니다. 다음은 Phi-3-vision-128k-instruct에서 인용된 관련 기술 및 응용 시나리오입니다.
 
 ## **0. 준비**
 
-사용하기 전에 아래의 Python 라이브러리가 설치되어 있는지 확인하세요 (Python 3.10+ 권장)
+사용하기 전에 다음 Python 라이브러리가 설치되어 있는지 확인하세요 (Python 3.10+을 권장합니다).
 
 ```bash
 pip install transformers -U
@@ -12,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-***CUDA 11.6+*** 사용을 권장하며, flatten을 설치하세요.
+***CUDA 11.6+***를 사용하는 것을 권장하며, flatten을 설치하세요.
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-새로운 Notebook을 생성하세요. 예제를 완료하려면 다음 내용을 먼저 생성하는 것을 권장합니다.
+새로운 Notebook을 만드세요. 예제를 완료하기 위해 다음 내용을 먼저 작성하는 것을 권장합니다.
 
 ```python
 from PIL import Image
@@ -42,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Phi-3-Vision으로 이미지 분석하기**
 
-AI가 우리의 이미지를 분석하고 관련 설명을 제공할 수 있도록 하고 싶습니다.
+AI가 우리의 사진 내용을 분석하고 관련된 설명을 제공할 수 있기를 원합니다.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -65,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Notebook에서 다음 스크립트를 실행하면 관련 답변을 얻을 수 있습니다.
+Notebook에서 다음 스크립트를 실행하여 관련 답변을 얻을 수 있습니다.
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -73,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. Phi-3-Vision으로 OCR 수행하기**
 
-이미지를 분석하는 것 외에도, 이미지에서 정보를 추출할 수도 있습니다. 이는 우리가 이전에 복잡한 코드를 작성해야 했던 OCR 프로세스입니다.
+이미지를 분석하는 것 외에도 이미지를 통해 정보를 추출할 수 있습니다. 이는 우리가 복잡한 코드를 작성해야 했던 OCR 과정을 간소화합니다.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -141,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **면책 조항**:  
-이 문서는 기계 기반 AI 번역 서비스를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 모국어 버전이 신뢰할 수 있는 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있지만, 자동 번역은 오류나 부정확성을 포함할 수 있습니다. 원본 문서의 해당 언어 버전을 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

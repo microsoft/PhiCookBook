@@ -1,37 +1,61 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "74689a2b87f747d751edfec988ccb7fd",
+  "translation_date": "2025-04-04T13:26:18+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_Phi-3-visionWandB.md",
+  "language_code": "mo"
+}
+-->
 # Phi-3-Vision-128K-Instruct Project Overview
 
-## ໂຄງການຂອງແບບຈຳລອງ
+## The Model
 
-Phi-3-Vision-128K-Instruct ແມ່ນໂຄງຮ່າງທີ່ບໍ່ຫນັກ ສະຫຼອບເທັດທີ່ທັນສະໄໝ ແລະມີຄວາມສາມາດສູງ ທີ່ເປັນສ່ວນສຳຄັນຂອງໂຄງການນີ້. ມັນເປັນສ່ວນຫນຶ່ງຂອງຕະກູນໂຄງຮ່າງ Phi-3 ທີ່ສາມາດຮອງຮັບຄວາມຍາວຂອງບັນດາບັນທຶກໄດ້ສູງສຸດຫາ 128,000 tokens. ໂຄງຮ່າງນີ້ຖືກຝຶກຝົນດ້ວຍຊຸດຂໍ້ມູນທີ່ຫລາກຫລາຍ, ລວມທັງຂໍ້ມູນສັງຄົມທີ່ຖືກສ້າງຂື້ນ ແລະເວັບໄຊທ໌ທີ່ມີຄຸນນະພາບສູງທີ່ຖືກຄັດກອງຢ່າງລະມັດລະວັງ, ມຸ່ງເນັ້ນໃນເນື້ອຫາທີ່ມີການໃຊ້ຫຼັກເຫດຂັ້ນສູງ. ຂະບວນການຝຶກຝົນປະກອບດ້ວຍການປັບແຕ່ງຄວາມເປັນສ່ວນຕົວ ແລະການປັບປຸງຄວາມພຶງພໍໃຈໂດຍຕົງເພື່ອຮັບຮອງຄວາມເຂັ້ມງວດໃນຄຳສັ່ງ ພ້ອມທັງມາດຕະການຄວາມປອດໄພທີ່ແຂງແຮງ.
+Phi-3-Vision-128K-Instruct is a compact and cutting-edge multimodal model that serves as the foundation of this project. Part of the Phi-3 model series, it supports a context length of up to 128,000 tokens. The model was trained on a diverse dataset, including synthetic data and carefully curated publicly available websites, with a focus on high-quality, reasoning-heavy content. Training involved supervised fine-tuning and direct preference optimization to ensure precise instruction-following and robust safety protocols.
 
-## ການສ້າງຂໍ້ມູນຕົວຢ່າງມີຄວາມສຳຄັນດັ່ງນີ້:
+## Why Creating Sample Data Matters:
 
-1. **ການທົດສອບ**: ຂໍ້ມູນຕົວຢ່າງຊ່ວຍໃຫ້ທ່ານສາມາດທົດສອບແອັບພລິເຄຊັນໃນສະຖານະການຕ່າງໆໄດ້ໂດຍບໍ່ມີຜົນກະທົບຕໍ່ຂໍ້ມູນທີ່ເປັນຂໍ້ທິດຈິງ. ສິ່ງນີ້ມີຄວາມສຳຄັນເປັນພິເສດໃນຂະບວນການພັດທະນາ ແລະຂະບວນການທົດສອບ.
+1. **Testing**: Sample data enables you to test your application across various scenarios without risking real data, which is especially useful during development and staging.
 
-2. **ປັບປຸງປະສິດທິພາບ**: ດ້ວຍຂໍ້ມູນຕົວຢ່າງທີ່ຄືຄືຄວາມຊັບຊ້ອນ ແລະຂະຫນາດຂອງຂໍ້ມູນທີ່ເປັນຂໍ້ທິດຈິງ, ທ່ານສາມາດຄົ້ນພົບຄວາມລະຫວ່າງປະສິດທິພາບ ແລະປັບປຸງແອັບພລິເຄຊັນຂອງທ່ານໄດ້.
+2. **Performance Tuning**: By using sample data that reflects the complexity and scale of real data, you can identify bottlenecks and optimize your application's performance.
 
-3. **ສ້າງໂຄງຮ່າງ**: ຂໍ້ມູນຕົວຢ່າງສາມາດນຳໃຊ້ໃນການສ້າງໂຄງຮ່າງ ຫຼື mockups ທີ່ຊ່ວຍໃນການເຂົ້າໃຈຄວາມຕ້ອງການຂອງຜູ້ໃຊ້ ແລະໄດ້ຮັບຄຳຄິດເຫັນ.
+3. **Prototyping**: Sample data helps create prototypes and mockups, aiding in understanding user needs and gathering feedback.
 
-4. **ວິເຄາະຂໍ້ມູນ**: ສຳລັບວິທະຍາສາດຂໍ້ມູນ, ຂໍ້ມູນຕົວຢ່າງມັກຖືກນຳໃຊ້ໃນການວິເຄາະຂໍ້ມູນເບື້ອງຕົ້ນ, ຝຶກຝົນໂຄງຮ່າງ, ແລະທົດສອບອັລກອຣິທຶມ.
+4. **Data Analysis**: In data science, sample data is often used for exploratory analysis, training models, and testing algorithms.
 
-5. **ຄວາມປອດໄພ**: ການນຳໃຊ້ຂໍ້ມູນຕົວຢ່າງໃນສະຖານະທີ່ພັດທະນາ ແລະທົດສອບຊ່ວຍປ້ອງກັນການລົ່ວໄຫລຂໍ້ມູນທີ່ລະມັດລະວັງ.
+5. **Security**: Using sample data in development and testing minimizes the risk of exposing sensitive real data.
 
-6. **ການຮຽນຮູ້**: ຖ້າທ່ານກຳລັງຮຽນຮູ້ເທັກໂນໂລຊີ ຫຼືເຄື່ອງມືໃໝ່, ການໃຊ້ຂໍ້ມູນຕົວຢ່າງສາມາດເປັນວິທີທີ່ປະຕິບັດໄດ້ຈິງໃນສິ່ງທີ່ທ່ານຮຽນຮູ້.
+6. **Learning**: When learning a new tool or technology, sample data provides a hands-on way to practice and apply concepts.
 
-ຈົ່ງຈື່ໄວ້ວ່າ, ຄຸນນະພາບຂອງຂໍ້ມູນຕົວຢ່າງຂອງທ່ານສາມາດສົ່ງຜົນກະທົບຢ່າງສຳຄັນຕໍ່ກິດຈະກຳເຫຼົ່ານີ້. ມັນຄວນມີໂຄງສ້າງ ແລະຄວາມຫຼາກຫຼາຍທີ່ໃກ້ເຄີຍກັບຂໍ້ມູນທີ່ເປັນຂໍ້ທິດຈິງໃຫ້ຫຼາຍທີ່ສຸດ.
+Keep in mind that the quality of your sample data can significantly affect these activities. It should closely mimic real data in terms of structure and variability.
 
-### ການສ້າງຂໍ້ມູນຕົວຢ່າງ
+### Sample Data Creation
 [Generate DataSet Script](./CreatingSampleData.md)
 
-## ຊຸດຂໍ້ມູນ
+## Dataset
 
-ຕົວຢ່າງທີ່ດີຂອງຊຸດຂໍ້ມູນຕົວຢ່າງແມ່ນ [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States) (ມີຢູ່ໃນ Huggingface).  
-ຊຸດຂໍ້ມູນຕົວຢ່າງນີ້ມີຂໍ້ມູນກ່ຽວກັບຜະລິດຕະພັນ Burberry ພ້ອມຂໍ້ມູນ metadata ກ່ຽວກັບປະເພດສິນຄ້າ, ລາຄາ, ແລະຊື່ສິນຄ້າ, ມີທັງໝົດ 3,040 ແຖວ, ທຸກແຖວສະແດງຜະລິດຕະພັນທີ່ບໍ່ຊ້ຳກັນ. ຊຸດຂໍ້ມູນນີ້ຊ່ວຍໃຫ້ພວກເຮົາທົດສອບຄວາມສາມາດຂອງໂຄງຮ່າງໃນການເຂົ້າໃຈ ແລະວິເຄາະຂໍ້ມູນທັດສະນະສາດ, ພຽງສ້າງຂໍ້ຄວາມທີ່ລາຍລະອຽດໄດ້ຢ່າງແມ່ນຍຳ, ສະທ້ອນເອກະລັກຂອງສິນຄ້າແລະຍີ່ຫໍ້.
+A great example of a sample dataset is [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States) (available on Huggingface). This dataset contains information about Burberry products, including metadata such as product category, price, and title. It includes 3,040 rows, each representing a unique product. This dataset allows testing the model's ability to interpret visual data and generate descriptive text that captures intricate visual details and brand-specific traits.
 
-**ໝາຍເຫດ:** ທ່ານສາມາດໃຊ້ຊຸດຂໍ້ມູນໃດໆທີ່ມີຮູບພາບຢູ່ຂ້າງໃນ.
+**Note:** Any dataset that includes images can be used.
 
-## ການຄິດໄລ່ທີ່ຊັບຊ້ອນ
+## Complex Reasoning
 
-ໂຄງຮ່າງຈະຕ້ອງຄິດໄລ່ເກື່ອມກັບລາຄາ ແລະຊື່ສິນຄ້າໂດຍອີງໃນຮູບພາບເທົ່ານັ້ນ. ສິ່ງນີ້ຕ້ອງໃຫ້ໂຄງຮ່າງບໍ່ພຽງແຕ່ຈົດຈຳຄຸນສົມບັດທັດສະນະສາດເທົ່ານັ້ນ, ແຕ່ຍັງຕ້ອງເຂົ້າໃຈຄວາມໝາຍຂອງຄຸນສົມບັດເຫຼົ່ານັ້ນໃນເຊິ່ງຄວາມຄຸ້ນຄ່າ
+The model must infer pricing and naming details based solely on the image. This demands the ability to not only recognize visual features but also interpret their significance in terms of product value and branding. By generating accurate textual descriptions from images, the project demonstrates the potential of leveraging visual data to improve model versatility and performance in practical applications.
 
-It seems like you might be asking for a translation into a specific language, but "mo" isn't clear as a language code or reference. Could you clarify the language you're referring to? For example, are you referring to Mongolian, Maori, or another language?
+## Phi-3 Vision Architecture
+
+The model architecture is a multimodal adaptation of Phi-3. It processes text and image inputs, merging them into a unified sequence for comprehensive understanding and generation tasks. Separate embedding layers are used for text and images. Text tokens are transformed into dense vectors, while images are processed through a CLIP vision model to extract feature embeddings. These image embeddings are then projected to match the dimensions of text embeddings, ensuring seamless integration.
+
+## Integration of Text and Image Embeddings
+
+Special tokens within the text sequence indicate where image embeddings should be inserted. During processing, these special tokens are replaced with corresponding image embeddings, allowing the model to handle text and images as a unified sequence. The dataset prompt is formatted using the special <|image|> token, as shown below:
+
+```python
+text = f"<|user|>\n<|image_1|>What is shown in this image?<|end|><|assistant|>\nProduct: {row['title']}, Category: {row['category3_code']}, Full Price: {row['full_price']}<|end|>"
+```
+
+## Sample Code
+- [Phi-3-Vision Training Script](../../../../code/03.Finetuning/Phi-3-vision-Trainingscript.py)
+- [Weights and Bias Example walkthrough](https://wandb.ai/byyoung3/mlnews3/reports/How-to-fine-tune-Phi-3-vision-on-a-custom-dataset--Vmlldzo4MTEzMTg3)
+
+It seems like you want the text translated into "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or abbreviation? For example, it could be shorthand for Māori, Montenegrin, or another language. Let me know so I can assist you accurately!

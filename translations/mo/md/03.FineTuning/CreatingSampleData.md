@@ -1,14 +1,23 @@
-# 生成图像数据集：从 Hugging Face 下载数据集及相关图片
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "44a77501fe39a2eb2b776dfdf9953b67",
+  "translation_date": "2025-04-04T13:08:07+00:00",
+  "source_file": "md\\03.FineTuning\\CreatingSampleData.md",
+  "language_code": "mo"
+}
+-->
+# Angen Dataset Data Image dengan mengunduh Dataset dari Hugging Face beserta gambar terkait
 
-### 概述
+### Gambaran Umum
 
-此脚本通过下载所需的图片、过滤掉下载失败的行，并将数据集保存为 CSV 文件，为机器学习准备数据集。
+Script ini mempersiapkan dataset untuk pembelajaran mesin dengan cara mengunduh gambar yang diperlukan, menyaring baris di mana unduhan gambar gagal, dan menyimpan dataset sebagai file CSV.
 
-### 前提条件
+### Prasyarat
 
-在运行此脚本之前，请确保已安装以下库：`Pandas`、`Datasets`、`requests`、`PIL` 和 `io`。此外，需要将第 2 行中的 `'Insert_Your_Dataset'` 替换为 Hugging Face 数据集的名称。
+Sebelum menjalankan script ini, pastikan untuk memiliki pustaka berikut yang sudah terinstal: `Pandas`, `Datasets`, `requests`, `PIL`, dan `io`. Anda juga perlu mengganti `'Insert_Your_Dataset'` pada baris 2 dengan nama dataset Anda dari Hugging Face.
 
-所需库：
+Pustaka yang Diperlukan:
 
 ```python
 
@@ -20,11 +29,11 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### 功能说明
+### Fungsionalitas
 
-脚本执行以下步骤：
+Script ini melakukan langkah-langkah berikut:
 
-1. 使用 `load_dataset()` function.
+1. Mengunduh dataset dari Hugging Face menggunakan `load_dataset()` function.
 2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
 3. Creates directories to save the dataset and images.
 4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
@@ -33,35 +42,33 @@ from io import BytesIO
 
 ### Custom Function
 
-The `download_image()` 函数从 Hugging Face 下载数据集并转换为 Pandas 数据框。
-2. 下载失败的行会被过滤掉。
-3. 处理后的数据集将保存为 CSV 文件。
+The `download_image()` untuk mengunduh gambar dari URL dan menyimpannya secara lokal menggunakan pustaka Pillow Image Library (PIL) dan modul `io`. Fungsi ini mengembalikan nilai True jika gambar berhasil diunduh, dan False jika tidak. Fungsi juga akan melemparkan exception dengan pesan error jika permintaan gagal.
 
-#### download_image 函数说明
+### Bagaimana Cara Kerjanya
 
-`download_image()` 函数通过 PIL 图像库（Pillow）和 `io` 模块从 URL 下载图像并将其本地保存。函数在成功下载时返回 True，失败时返回 False。如果请求失败，还会抛出异常并显示错误信息。
+Fungsi download_image menerima dua parameter: image_url, yaitu URL gambar yang akan diunduh, dan save_path, yaitu jalur di mana gambar yang diunduh akan disimpan.
 
-### 工作原理
+Berikut cara kerja fungsi ini:
 
-`download_image` 函数接收两个参数：`image_url`（待下载图像的 URL）和 `save_path`（图像保存路径）。
+- Fungsi memulai dengan membuat permintaan GET ke image_url menggunakan metode requests.get. Ini mengambil data gambar dari URL.
 
-以下是函数的工作流程：
+- Baris response.raise_for_status() memeriksa apakah permintaan berhasil. Jika kode status respons menunjukkan kesalahan (misalnya, 404 - Tidak Ditemukan), maka exception akan dilemparkan. Ini memastikan kita hanya melanjutkan pengunduhan gambar jika permintaan berhasil.
 
-1. 使用 `requests.get` 方法对 `image_url` 发起 GET 请求，从 URL 获取图像数据。
-2. `response.raise_for_status()` 检查请求是否成功。如果状态码显示错误（如 404 - 未找到），则抛出异常。确保仅在请求成功时继续下载图像。
-3. 将图像数据传递给 PIL 模块的 `Image.open` 方法。该方法从图像数据中创建一个 Image 对象。
-4. `image.save(save_path)` 将图像保存到指定的 `save_path`，路径应包括所需的文件名和扩展名。
-5. 如果图像成功下载并保存，函数返回 True。如果过程中发生任何异常，捕获异常并打印错误信息，同时返回 False。
+- Data gambar kemudian diteruskan ke metode Image.open dari modul PIL (Python Imaging Library). Metode ini membuat objek Image dari data gambar.
 
-此函数可用于从 URL 下载图像并将其本地保存。它处理下载过程中的潜在错误，并提供下载是否成功的反馈。
+- Baris image.save(save_path) menyimpan gambar ke save_path yang ditentukan. Save_path harus menyertakan nama file dan ekstensi yang diinginkan.
 
-需要注意的是，此函数使用 `requests` 库进行 HTTP 请求，`PIL` 库处理图像，`BytesIO` 类以字节流形式处理图像数据。
+- Akhirnya, fungsi mengembalikan nilai True untuk menunjukkan bahwa gambar berhasil diunduh dan disimpan. Jika terjadi exception selama proses, fungsi akan menangkap exception tersebut, mencetak pesan error yang menunjukkan kegagalan, dan mengembalikan nilai False.
 
-### 结论
+Fungsi ini berguna untuk mengunduh gambar dari URL dan menyimpannya secara lokal. Fungsi ini menangani potensi error selama proses pengunduhan dan memberikan umpan balik apakah unduhan berhasil atau tidak.
 
-此脚本提供了一种便捷的方法，通过下载所需的图像、过滤掉下载失败的行，并将数据集保存为 CSV 文件，为机器学习准备数据集。
+Perlu dicatat bahwa pustaka requests digunakan untuk membuat permintaan HTTP, pustaka PIL digunakan untuk bekerja dengan gambar, dan kelas BytesIO digunakan untuk menangani data gambar sebagai aliran byte.
 
-### 示例脚本
+### Kesimpulan
+
+Script ini menyediakan cara yang praktis untuk mempersiapkan dataset untuk pembelajaran mesin dengan mengunduh gambar yang diperlukan, menyaring baris di mana unduhan gambar gagal, dan menyimpan dataset sebagai file CSV.
+
+### Contoh Script
 
 ```python
 import os
@@ -120,10 +127,10 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### 示例代码下载 
-[生成新数据集脚本](../../../../code/04.Finetuning/generate_dataset.py)
+### Unduh Kode Contoh 
+[Script untuk Membuat Dataset Baru](../../../../code/04.Finetuning/generate_dataset.py)
 
-### 示例数据集
-[微调 LORA 示例中的数据集示例](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+### Contoh Dataset
+[Contoh Dataset dari finetuning dengan LORA](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
-It seems like "mo" might refer to a language or abbreviation, but it is unclear what specific language or context you're referring to. Could you clarify what "mo" stands for? For example, is it Maori, Mongolian, or something else? Let me know so I can assist you better!
+It seems you are requesting a translation into "mo," but could you clarify what "mo" refers to? Are you referring to a specific language, dialect, or abbreviation? For example, are you referring to Maori, Mongolian, or something else?

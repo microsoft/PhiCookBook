@@ -1,8 +1,17 @@
-## **在 Phi-4-mini 中進行函數呼叫**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a3db2edc82e92fba136d9731f6d067ef",
+  "translation_date": "2025-04-04T06:52:41+00:00",
+  "source_file": "md\\02.Application\\07.FunctionCalling\\Phi4\\FunctionCallingBasic\\README.md",
+  "language_code": "tw"
+}
+-->
+## **Phi-4-mini 的函數呼叫**
 
-函數呼叫首次出現在 Phi 家族中，現在你可以在 Phi-4-mini 中使用這個功能。
+函數呼叫最早出現在 Phi Family 系列中，現在你可以透過 Phi-4-mini 使用它。
 
-以下範例展示了英超聯賽結果的模擬。目標是讓 Phi-4-mini 提供即時的比賽資訊。以下是範例程式碼：
+這個範例展示了英超比賽結果的模擬。目標是讓 Phi-4-mini 提供即時的比賽資訊。以下是範例程式碼：
 
 ```python
 
@@ -98,4 +107,4 @@ print(messages)
 ```
 
 **免責聲明**：  
-本文件使用基於機器的人工智能翻譯服務進行翻譯。我們雖然力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文作為權威來源。對於關鍵資訊，建議尋求專業人工翻譯。我們對因使用本翻譯而引起的任何誤解或錯誤解釋不承擔責任。
+本文件使用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文作為權威來源。對於關鍵資訊，建議尋求專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解讀概不負責。

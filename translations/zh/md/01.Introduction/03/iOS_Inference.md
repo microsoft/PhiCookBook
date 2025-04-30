@@ -1,27 +1,36 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "ffeb840575ff03dea81d2b2214f2e000",
+  "translation_date": "2025-04-03T06:50:50+00:00",
+  "source_file": "md\\01.Introduction\\03\\iOS_Inference.md",
+  "language_code": "zh"
+}
+-->
 # **在 iOS 上推理 Phi-3**
 
-Phi-3-mini 是微软推出的一系列新模型，可以在边缘设备和物联网设备上部署大型语言模型（LLMs）。Phi-3-mini 支持在 iOS、Android 和边缘设备上部署，使生成式 AI 能够在 BYOD 环境中使用。以下示例展示了如何在 iOS 上部署 Phi-3-mini。
+Phi-3-mini 是微软推出的新一代模型系列，能够在边缘设备和物联网设备上部署大语言模型（LLMs）。Phi-3-mini 支持 iOS、Android 和边缘设备部署，使生成式 AI 可以在 BYOD 环境中使用。以下示例展示了如何在 iOS 上部署 Phi-3-mini。
 
 ## **1. 准备工作**
 
-- **a.** macOS 14+
-- **b.** Xcode 15+
-- **c.** iOS SDK 17.x（iPhone 14 A16 或更高版本）
-- **d.** 安装 Python 3.10+（推荐使用 Conda）
+- **a.** macOS 14 及以上版本
+- **b.** Xcode 15 及以上版本
+- **c.** iOS SDK 17.x（支持 iPhone 14 A16 或更高版本）
+- **d.** 安装 Python 3.10 及以上版本（推荐使用 Conda）
 - **e.** 安装 Python 库：`python-flatbuffers`
 - **f.** 安装 CMake
 
-### Semantic Kernel 和推理
+### Semantic Kernel 与推理
 
-Semantic Kernel 是一个应用框架，允许您创建与 Azure OpenAI 服务、OpenAI 模型以及本地模型兼容的应用程序。通过 Semantic Kernel 访问本地服务，可以轻松集成自托管的 Phi-3-mini 模型服务器。
+Semantic Kernel 是一个应用框架，可用于创建兼容 Azure OpenAI 服务、OpenAI 模型以及本地模型的应用程序。通过 Semantic Kernel 访问本地服务，可以轻松集成自托管的 Phi-3-mini 模型服务器。
 
 ### 使用 Ollama 或 LlamaEdge 调用量化模型
 
-许多用户倾向于使用量化模型来在本地运行模型。[Ollama](https://ollama.com) 和 [LlamaEdge](https://llamaedge.com) 允许用户调用不同的量化模型：
+许多用户更喜欢使用量化模型来本地运行模型。[Ollama](https://ollama.com) 和 [LlamaEdge](https://llamaedge.com) 允许用户调用不同的量化模型：
 
 #### **Ollama**
 
-您可以直接运行 `ollama run phi3` 或在离线模式下配置。创建一个 Modelfile 并指定 `gguf` 文件的路径。以下是运行 Phi-3-mini 量化模型的示例代码：
+您可以直接运行 `ollama run phi3` 或离线配置它。创建一个 Modelfile 文件，指定 `gguf` 文件的路径。以下是运行 Phi-3-mini 量化模型的示例代码：
 
 ```gguf
 FROM {Add your gguf file path}
@@ -32,7 +41,7 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-如果您希望同时在云端和边缘设备上使用 `gguf`，LlamaEdge 是一个不错的选择。
+如果希望在云端和边缘设备同时使用 `gguf`，LlamaEdge 是一个不错的选择。
 
 ## **2. 为 iOS 编译 ONNX Runtime**
 
@@ -50,19 +59,19 @@ cd ../
 
 ### **注意事项**
 
-- **a.** 在编译之前，确保 Xcode 已正确配置，并在终端中将其设置为活动开发者目录：
+- **a.** 编译前，请确保 Xcode 已正确配置，并在终端中将其设置为活动开发目录：
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime 需要为不同的平台进行编译。对于 iOS，可以编译为 `arm64` or `x86_64`。
+- **b.** ONNX Runtime 需要针对不同平台进行编译。对于 iOS，可以编译 `arm64` or `x86_64`。
 
-- **c.** 推荐使用最新的 iOS SDK 进行编译。不过，如果需要兼容旧版本的 SDK，也可以使用较旧的版本。
+- **c.** 推荐使用最新的 iOS SDK 进行编译。但如果需要兼容旧版 SDK，也可以使用旧版本。
 
-## **3. 使用 ONNX Runtime 为 iOS 编译生成式 AI**
+## **3. 为 iOS 编译 ONNX Runtime 的生成式 AI**
 
-> **注意：** 由于基于 ONNX Runtime 的生成式 AI 仍处于预览阶段，请注意可能存在的变更。
+> **注意:** 由于生成式 AI 与 ONNX Runtime 仍处于预览阶段，请注意可能的变化。
 
 ```bash
 
@@ -92,13 +101,13 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. 在 Xcode 中创建 App 应用程序**
 
-我选择使用 Objective-C 作为 App 的开发方式，因为在使用基于 ONNX Runtime 的 C++ API 时，Objective-C 的兼容性更好。当然，您也可以通过 Swift bridging 完成相关调用。
+我选择了 Objective-C 作为 App 的开发方式，因为使用 ONNX Runtime C++ API 的生成式 AI时，Objective-C 的兼容性更好。当然，也可以通过 Swift 桥接完成相关调用。
 
 ![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.zh.png)
 
-## **5. 将 ONNX 量化的 INT4 模型复制到 App 应用程序项目中**
+## **5. 将 ONNX 量化 INT4 模型复制到 App 应用程序项目**
 
-我们需要导入 ONNX 格式的 INT4 量化模型，首先需要下载该模型。
+我们需要导入 ONNX 格式的 INT4 量化模型，需先下载该模型。
 
 ![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.zh.png)
 
@@ -108,7 +117,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **6. 在 ViewControllers 中添加 C++ API**
 
-> **注意：**
+> **注意:**
 
 - **a.** 将对应的 C++ 头文件添加到项目中。
 
@@ -151,11 +160,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **7. 运行应用程序**
 
-设置完成后，您可以运行应用程序，查看 Phi-3-mini 模型推理的结果。
+设置完成后，您可以运行应用程序以查看 Phi-3-mini 模型推理的结果。
 
 ![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.zh.jpg)
 
-有关更多示例代码和详细说明，请访问 [Phi-3 Mini Samples 仓库](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios)。
+更多示例代码和详细说明，请访问 [Phi-3 Mini Samples 仓库](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios)。
 
-**免责声明**:  
-本文档使用基于机器的人工智能翻译服务进行翻译。尽管我们尽力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议寻求专业人工翻译。我们不对因使用本翻译而引起的任何误解或误读承担责任。
+**免责声明**：  
+本文档通过AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译而成。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原文档的原始语言版本为权威来源。对于关键信息，建议使用专业人工翻译。对于因使用此翻译而引起的任何误解或误读，我们概不负责。

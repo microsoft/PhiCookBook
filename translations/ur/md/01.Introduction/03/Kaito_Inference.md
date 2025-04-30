@@ -1,35 +1,43 @@
-## Kaito کے ساتھ انفرنس
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "7739575218e3244a58516832ad88a9a2",
+  "translation_date": "2025-04-03T06:53:36+00:00",
+  "source_file": "md\\01.Introduction\\03\\Kaito_Inference.md",
+  "language_code": "ur"
+}
+-->
+## کائٹو کے ساتھ انفرنس 
 
-[Kaito](https://github.com/Azure/kaito) ایک آپریٹر ہے جو Kubernetes کلسٹر میں AI/ML انفرنس ماڈل کی ڈپلائمنٹ کو خودکار بناتا ہے۔
+[Kaito](https://github.com/Azure/kaito) ایک آپریٹر ہے جو Kubernetes کلسٹر میں AI/ML انفرنس ماڈل کو خودکار طریقے سے تعینات کرتا ہے۔
 
-Kaito کے پاس زیادہ تر عام ماڈل ڈپلائمنٹ طریقوں کے مقابلے میں درج ذیل اہم خصوصیات ہیں، جو ورچوئل مشین انفراسٹرکچر پر مبنی ہیں:
+کائٹو درج ذیل اہم فرق فراہم کرتا ہے، جو زیادہ تر عام ماڈل تعیناتی طریقوں کے مقابلے میں ہیں، جو ورچوئل مشین انفراسٹرکچر پر مبنی ہیں:
 
-- ماڈل فائلز کو کنٹینر امیجز کے ذریعے مینیج کریں۔ ایک HTTP سرور فراہم کیا جاتا ہے تاکہ ماڈل لائبریری کا استعمال کرتے ہوئے انفرنس کالز کی جا سکیں۔
-- GPU ہارڈویئر کے مطابق ڈپلائمنٹ پیرامیٹرز کو ایڈجسٹ کرنے سے بچنے کے لیے پہلے سے طے شدہ کنفیگریشنز فراہم کی جاتی ہیں۔
+- ماڈل فائلز کو کنٹینر امیجز کے ذریعے منظم کریں۔ ماڈل لائبریری کے ذریعے انفرنس کالز انجام دینے کے لیے ایک HTTP سرور فراہم کیا جاتا ہے۔
+- GPU ہارڈویئر کے مطابق تعیناتی پیرامیٹرز کو ٹیون کرنے سے بچیں، پری سیٹ کنفیگریشنز فراہم کرکے۔
 - ماڈل کی ضروریات کے مطابق GPU نوڈز کو خودکار طریقے سے پروویژن کریں۔
-- اگر لائسنس اجازت دے تو بڑے ماڈل امیجز کو مائیکروسافٹ کنٹینر رجسٹری (MCR) میں عوامی طور پر ہوسٹ کریں۔
+- اگر لائسنس اجازت دے تو بڑے ماڈل امیجز کو Microsoft Container Registry (MCR) میں عوامی طور پر ہوسٹ کریں۔
 
-Kaito کے ذریعے، Kubernetes میں بڑے AI انفرنس ماڈلز کی آن بورڈنگ کا ورک فلو بہت آسان ہو جاتا ہے۔
-
+کائٹو کے استعمال سے Kubernetes میں بڑے AI انفرنس ماڈلز کو شامل کرنے کا ورک فلو کافی حد تک آسان ہو جاتا ہے۔
 
 ## آرکیٹیکچر
 
-Kaito کلاسک Kubernetes کسٹم ریسورس ڈیفینیشن (CRD)/کنٹرولر ڈیزائن پیٹرن کی پیروی کرتا ہے۔ صارف `workspace` کسٹم ریسورس کو مینیج کرتا ہے جو GPU کی ضروریات اور انفرنس کی تفصیلات کو بیان کرتا ہے۔ Kaito کنٹرولرز `workspace` کسٹم ریسورس کو ہم آہنگ کر کے ڈپلائمنٹ کو خودکار بناتے ہیں۔
+کائٹو کلاسک Kubernetes Custom Resource Definition(CRD)/کنٹرولر ڈیزائن پیٹرن کی پیروی کرتا ہے۔ صارف ایک `workspace` کسٹم ریسورس کا انتظام کرتا ہے جو GPU کی ضروریات اور انفرنس تفصیلات کو بیان کرتا ہے۔ کائٹو کنٹرولرز `workspace` کسٹم ریسورس کو ہم آہنگ کرکے تعیناتی کو خودکار بناتے ہیں۔
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito آرکیٹیکچر" alt="Kaito آرکیٹیکچر">
+  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-اوپر دی گئی تصویر Kaito آرکیٹیکچر کا خلاصہ پیش کرتی ہے۔ اس کے اہم اجزاء درج ذیل ہیں:
+اوپر دی گئی تصویر کائٹو آرکیٹیکچر کا جائزہ پیش کرتی ہے۔ اس کے اہم اجزاء درج ذیل ہیں:
 
-- **ورک اسپیس کنٹرولر**: یہ `workspace` کسٹم ریسورس کو ہم آہنگ کرتا ہے، `machine` (جس کی وضاحت نیچے کی گئی ہے) کسٹم ریسورسز بناتا ہے تاکہ نوڈز کو خودکار طریقے سے پروویژن کیا جا سکے، اور ماڈل کی پہلے سے طے شدہ کنفیگریشنز کی بنیاد پر انفرنس ورک لوڈ (`deployment` یا `statefulset`) بناتا ہے۔
-- **نوڈ پروویژنر کنٹرولر**: اس کنٹرولر کا نام [gpu-provisioner helm چارٹ](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) میں *gpu-provisioner* ہے۔ یہ `machine` CRD کا استعمال کرتا ہے جو [Karpenter](https://sigs.k8s.io/karpenter) سے ماخوذ ہے تاکہ ورک اسپیس کنٹرولر کے ساتھ تعامل کیا جا سکے۔ یہ Azure Kubernetes Service (AKS) APIs کے ساتھ مربوط ہوتا ہے تاکہ AKS کلسٹر میں نئے GPU نوڈز شامل کیے جا سکیں۔  
-> نوٹ: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ایک اوپن سورسڈ جزو ہے۔ اسے دیگر کنٹرولرز سے تبدیل کیا جا سکتا ہے اگر وہ [Karpenter-core](https://sigs.k8s.io/karpenter) APIs کو سپورٹ کرتے ہوں۔
+- **ورک اسپیس کنٹرولر**: یہ `workspace` کسٹم ریسورس کو ہم آہنگ کرتا ہے، `machine` (نیچے وضاحت کی گئی ہے) کسٹم ریسورسز تخلیق کرتا ہے تاکہ نوڈ کی خودکار پروویژننگ کو متحرک کیا جا سکے، اور ماڈل کی پری سیٹ کنفیگریشنز کے مطابق انفرنس ورک لوڈ (`deployment` یا `statefulset`) تخلیق کرتا ہے۔
+- **نوڈ پروویژنر کنٹرولر**: اس کنٹرولر کا نام [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) میں *gpu-provisioner* ہے۔ یہ `machine` CRD استعمال کرتا ہے جو [Karpenter](https://sigs.k8s.io/karpenter) سے اخذ کیا گیا ہے تاکہ ورک اسپیس کنٹرولر کے ساتھ تعامل کیا جا سکے۔ یہ Azure Kubernetes Service(AKS) APIs کے ساتھ انضمام کرتا ہے تاکہ AKS کلسٹر میں نئے GPU نوڈز شامل کیے جا سکیں۔
+> نوٹ: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ایک اوپن سورس جزو ہے۔ اگر وہ [Karpenter-core](https://sigs.k8s.io/karpenter) APIs کو سپورٹ کرتے ہیں تو اسے دوسرے کنٹرولرز کے ساتھ تبدیل کیا جا سکتا ہے۔
 
 ## انسٹالیشن
 
-براہ کرم انسٹالیشن کی رہنمائی [یہاں](https://github.com/Azure/kaito/blob/main/docs/installation.md) دیکھیں۔
+انسٹالیشن کی رہنمائی کے لیے [یہاں](https://github.com/Azure/kaito/blob/main/docs/installation.md) دیکھیں۔
 
-## کوئیک اسٹارٹ انفرنس Phi-3
+## جلدی سے شروع کریں انفرنس Phi-3
 [سمپل کوڈ انفرنس Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
@@ -75,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-ورک اسپیس کی حیثیت کو درج ذیل کمانڈ کے ذریعے ٹریک کیا جا سکتا ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے، تو ماڈل کامیابی سے ڈپلائمنٹ ہو چکا ہو گا۔
+ورک اسپیس کی حالت درج ذیل کمانڈ چلا کر ٹریک کی جا سکتی ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے، تو ماڈل کامیابی سے تعینات ہو چکا ہوتا ہے۔
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -83,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-اس کے بعد، کوئی بھی انفرنس سروس کا کلسٹر آئی پی تلاش کر سکتا ہے اور کلسٹر میں سروس اینڈ پوائنٹ کو ٹیسٹ کرنے کے لیے ایک عارضی `curl` پوڈ استعمال کر سکتا ہے۔
+اس کے بعد، انفرنس سروس کے کلسٹر آئی پی کو تلاش کریں اور کلسٹر میں سروس اینڈ پوائنٹ کو ٹیسٹ کرنے کے لیے ایک عارضی `curl` پوڈ استعمال کریں۔
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -94,9 +102,9 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## کوئیک اسٹارٹ انفرنس Phi-3 ایڈاپٹرز کے ساتھ
+## جلدی سے شروع کریں انفرنس Phi-3 ایڈاپٹرز کے ساتھ
 
-Kaito انسٹال کرنے کے بعد، درج ذیل کمانڈز کو استعمال کر کے انفرنس سروس شروع کی جا سکتی ہے۔
+کائٹو انسٹال کرنے کے بعد، انفرنس سروس شروع کرنے کے لیے درج ذیل کمانڈز آزمائیں۔
 
 [سمپل کوڈ انفرنس Phi-3 ایڈاپٹرز کے ساتھ](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
@@ -147,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-ورک اسپیس کی حیثیت کو درج ذیل کمانڈ کے ذریعے ٹریک کیا جا سکتا ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے، تو ماڈل کامیابی سے ڈپلائمنٹ ہو چکا ہو گا۔
+ورک اسپیس کی حالت درج ذیل کمانڈ چلا کر ٹریک کی جا سکتی ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے، تو ماڈل کامیابی سے تعینات ہو چکا ہوتا ہے۔
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -155,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-اس کے بعد، کوئی بھی انفرنس سروس کا کلسٹر آئی پی تلاش کر سکتا ہے اور کلسٹر میں سروس اینڈ پوائنٹ کو ٹیسٹ کرنے کے لیے ایک عارضی `curl` پوڈ استعمال کر سکتا ہے۔
+اس کے بعد، انفرنس سروس کے کلسٹر آئی پی کو تلاش کریں اور کلسٹر میں سروس اینڈ پوائنٹ کو ٹیسٹ کرنے کے لیے ایک عارضی `curl` پوڈ استعمال کریں۔
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -167,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **ڈسکلیمر**:  
-یہ دستاویز مشین پر مبنی AI ترجمہ خدمات کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غیر درستیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ماخذ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غلط فہمیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ورانہ انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔

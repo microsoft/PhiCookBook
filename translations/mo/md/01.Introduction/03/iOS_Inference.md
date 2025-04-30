@@ -1,27 +1,36 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "ffeb840575ff03dea81d2b2214f2e000",
+  "translation_date": "2025-04-04T12:00:29+00:00",
+  "source_file": "md\\01.Introduction\\03\\iOS_Inference.md",
+  "language_code": "mo"
+}
+-->
 # **Inference Phi-3 in iOS**
 
-Phi-3-mini هو سلسلة جديدة من النماذج التي أطلقتها مايكروسوفت، والتي تتيح نشر نماذج اللغة الكبيرة (LLMs) على الأجهزة الطرفية وأجهزة إنترنت الأشياء. Phi-3-mini متاح لنظام iOS، Android، ونشر الأجهزة الطرفية، مما يتيح نشر الذكاء الاصطناعي التوليدي في بيئات الأجهزة الشخصية (BYOD). يوضح المثال التالي كيفية نشر Phi-3-mini على iOS.
+Phi-3-mini adalah seri model baru dari Microsoft yang memungkinkan penerapan Large Language Models (LLMs) pada perangkat edge dan perangkat IoT. Phi-3-mini tersedia untuk penerapan di iOS, Android, dan perangkat edge, memungkinkan AI generatif diterapkan dalam lingkungan BYOD. Contoh berikut menunjukkan cara menerapkan Phi-3-mini di iOS.
 
-## **1. التحضير**
+## **1. Persiapan**
 
-- **a.** macOS 14 أو أحدث  
-- **b.** Xcode 15 أو أحدث  
-- **c.** iOS SDK 17.x (iPhone 14 A16 أو أعلى)  
-- **d.** تثبيت Python 3.10 أو أحدث (يُفضل Conda)  
-- **e.** تثبيت مكتبة Python: `python-flatbuffers`  
-- **f.** تثبيت CMake  
+- **a.** macOS 14+
+- **b.** Xcode 15+
+- **c.** iOS SDK 17.x (iPhone 14 A16 atau lebih tinggi)
+- **d.** Instal Python 3.10+ (disarankan menggunakan Conda)
+- **e.** Instal pustaka Python: `python-flatbuffers`
+- **f.** Instal CMake
 
-### Semantic Kernel والاستدلال
+### Semantic Kernel dan Inferensi
 
-Semantic Kernel هو إطار عمل تطبيقات يسمح لك بإنشاء تطبيقات متوافقة مع Azure OpenAI Service، ونماذج OpenAI، وحتى النماذج المحلية. الوصول إلى الخدمات المحلية عبر Semantic Kernel يُسهّل التكامل مع خادم نموذج Phi-3-mini المستضاف محليًا.
+Semantic Kernel adalah kerangka kerja aplikasi yang memungkinkan Anda membuat aplikasi yang kompatibel dengan Azure OpenAI Service, model OpenAI, dan bahkan model lokal. Mengakses layanan lokal melalui Semantic Kernel mempermudah integrasi dengan server model Phi-3-mini yang Anda host sendiri.
 
-### استدعاء النماذج المضغوطة باستخدام Ollama أو LlamaEdge
+### Memanggil Model Kuantisasi dengan Ollama atau LlamaEdge
 
-يفضل العديد من المستخدمين استخدام النماذج المضغوطة لتشغيل النماذج محليًا. [Ollama](https://ollama.com) و[LlamaEdge](https://llamaedge.com) يتيحان للمستخدمين استدعاء نماذج مضغوطة مختلفة:
+Banyak pengguna lebih suka menggunakan model kuantisasi untuk menjalankan model secara lokal. [Ollama](https://ollama.com) dan [LlamaEdge](https://llamaedge.com) memungkinkan pengguna untuk memanggil berbagai model kuantisasi:
 
 #### **Ollama**
 
-يمكنك تشغيل `ollama run phi3` مباشرة أو تكوينه في وضع عدم الاتصال. قم بإنشاء ملف نموذج يحتوي على المسار إلى ملف `gguf` الخاص بك. مثال على الكود لتشغيل نموذج Phi-3-mini المضغوط:
+Anda dapat menjalankan `ollama run phi3` langsung atau mengonfigurasinya secara offline. Buat Modelfile dengan path ke file `gguf` Anda. Contoh kode untuk menjalankan model kuantisasi Phi-3-mini:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -32,9 +41,9 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-إذا كنت ترغب في استخدام `gguf` على كل من السحابة والأجهزة الطرفية في نفس الوقت، فإن LlamaEdge خيار رائع.
+Jika Anda ingin menggunakan `gguf` di perangkat cloud dan edge secara bersamaan, LlamaEdge adalah pilihan yang bagus.
 
-## **2. ترجمة ONNX Runtime لنظام iOS**
+## **2. Mengompilasi ONNX Runtime untuk iOS**
 
 ```bash
 
@@ -48,21 +57,21 @@ cd ../
 
 ```
 
-### **ملاحظة**
+### **Catatan**
 
-- **a.** قبل الترجمة، تأكد من تكوين Xcode بشكل صحيح وتعيينه كدليل المطور النشط في الطرفية:
+- **a.** Sebelum mengompilasi, pastikan Xcode dikonfigurasi dengan benar dan atur sebagai direktori pengembang aktif di terminal:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** يجب ترجمة ONNX Runtime لمنصات مختلفة. بالنسبة لنظام iOS، يمكنك الترجمة لـ `arm64` or `x86_64`.
+- **b.** ONNX Runtime perlu dikompilasi untuk berbagai platform. Untuk iOS, Anda dapat mengompilasi untuk `arm64` or `x86_64`.
 
-- **c.** يُوصى باستخدام أحدث إصدار من iOS SDK للترجمة. ومع ذلك، يمكنك استخدام إصدار أقدم إذا كنت بحاجة إلى التوافق مع SDKs السابقة.
+- **c.** Disarankan menggunakan SDK iOS terbaru untuk kompilasi. Namun, Anda juga dapat menggunakan versi yang lebih lama jika membutuhkan kompatibilitas dengan SDK sebelumnya.
 
-## **3. ترجمة الذكاء الاصطناعي التوليدي باستخدام ONNX Runtime لنظام iOS**
+## **3. Mengompilasi AI Generatif dengan ONNX Runtime untuk iOS**
 
-> **ملاحظة:** نظرًا لأن الذكاء الاصطناعي التوليدي باستخدام ONNX Runtime في وضع المعاينة، يرجى الانتباه إلى التغييرات المحتملة.
+> **Catatan:** Karena AI Generatif dengan ONNX Runtime masih dalam tahap pratinjau, harap perhatikan kemungkinan adanya perubahan.
 
 ```bash
 
@@ -90,37 +99,37 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **4. إنشاء تطبيق App في Xcode**
+## **4. Membuat aplikasi App di Xcode**
 
-اخترت Objective-C كطريقة لتطوير التطبيق، لأن استخدام الذكاء الاصطناعي التوليدي مع ONNX Runtime C++ API يجعل التوافق مع Objective-C أفضل. بالطبع، يمكنك أيضًا إكمال الاستدعاءات ذات الصلة من خلال Swift bridging.
+Saya memilih Objective-C sebagai metode pengembangan aplikasi, karena menggunakan API C++ ONNX Runtime untuk AI Generatif, Objective-C lebih kompatibel. Tentu saja, Anda juga dapat menyelesaikan pemanggilan terkait melalui bridging Swift.
 
 ![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.mo.png)
 
-## **5. نسخ نموذج ONNX المضغوط INT4 إلى مشروع تطبيق App**
+## **5. Menyalin model ONNX kuantisasi INT4 ke proyek aplikasi App**
 
-نحتاج إلى استيراد نموذج INT4 المضغوط بصيغة ONNX، والذي يجب تنزيله أولاً.
+Kita perlu mengimpor model kuantisasi INT4 dalam format ONNX, yang harus diunduh terlebih dahulu.
 
 ![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.mo.png)
 
-بعد التنزيل، تحتاج إلى إضافته إلى دليل Resources الخاص بالمشروع في Xcode.
+Setelah diunduh, Anda perlu menambahkannya ke direktori Resources proyek di Xcode.
 
 ![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.mo.png)
 
-## **6. إضافة C++ API في ViewControllers**
+## **6. Menambahkan API C++ di ViewControllers**
 
-> **ملاحظة:**
+> **Catatan:**
 
-- **a.** أضف ملفات الرأس C++ المقابلة إلى المشروع.
+- **a.** Tambahkan file header C++ yang sesuai ke proyek.
 
   ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.mo.png)
 
-- **b.** قم بتضمين `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Sertakan `onnxruntime-genai` dynamic library in Xcode.
 
   ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.mo.png)
 
 - **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` لتمكين دعم Objective-C++.
+- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` untuk mengaktifkan dukungan Objective-C++.
 
 ```objc
 
@@ -149,12 +158,12 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **7. تشغيل التطبيق**
+## **7. Menjalankan Aplikasi**
 
-بمجرد اكتمال الإعداد، يمكنك تشغيل التطبيق لرؤية نتائج استدلال نموذج Phi-3-mini.
+Setelah pengaturan selesai, Anda dapat menjalankan aplikasi untuk melihat hasil inferensi model Phi-3-mini.
 
 ![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.mo.jpg)
 
-للحصول على المزيد من عينات الكود والتعليمات التفصيلية، قم بزيارة [مستودع عينات Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+Untuk lebih banyak contoh kode dan petunjuk rinci, kunjungi [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
-It seems you may be referring to "mo," but could you clarify what you mean by "mo"? Are you referring to a specific language, dialect, or code? For example, do you mean Maori, Mongolian, or something else? Let me know, and I'll be happy to assist!
+It seems like "mo" isn't a recognized language or abbreviation. Could you clarify what language you're referring to? For example, do you mean Maori, Mongolian, or something else? Let me know so I can assist you better!

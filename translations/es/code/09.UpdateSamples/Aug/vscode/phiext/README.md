@@ -1,39 +1,48 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
+  "translation_date": "2025-03-27T05:00:13+00:00",
+  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\README.md",
+  "language_code": "es"
+}
+-->
 # phiext README
 
-Este es el README para tu extensión "phiext". Después de escribir una breve descripción, recomendamos incluir las siguientes secciones.
+Este es el archivo README para tu extensión "phiext". Después de escribir una breve descripción, recomendamos incluir las siguientes secciones.
 
-## Funcionalidades
+## Características
 
 Describe las características específicas de tu extensión, incluyendo capturas de pantalla de tu extensión en acción. Las rutas de las imágenes son relativas a este archivo README.
 
-Por ejemplo, si hay una subcarpeta de imágenes en el espacio de trabajo de tu proyecto de extensión:
+Por ejemplo, si hay una subcarpeta de imágenes dentro del espacio de trabajo de tu proyecto de extensión:
 
-\!\[funcionalidad X\]\(images/feature-x.png\)
+\!\[característica X\]\(images/feature-x.png\)
 
 > Consejo: Muchas extensiones populares utilizan animaciones. ¡Es una excelente manera de mostrar tu extensión! Recomendamos animaciones cortas y enfocadas que sean fáciles de seguir.
 
 ## Requisitos
 
-Si tu extensión tiene algún requisito o dependencia, añade una sección que describa cuáles son y cómo instalarlos y configurarlos.
+Si tu extensión tiene requisitos o dependencias, agrega una sección que describa esos requisitos y cómo instalarlos y configurarlos.
 
-## Configuración de la Extensión
+## Configuración de la extensión
 
-Incluye esta sección si tu extensión añade configuraciones a VS Code a través del punto de extensión `contributes.configuration`.
+Incluye esta sección si tu extensión agrega configuraciones a VS Code a través del punto de extensión `contributes.configuration`.
 
 Por ejemplo:
 
 Esta extensión contribuye con las siguientes configuraciones:
 
 * `myExtension.enable`: Habilitar/deshabilitar esta extensión.
-* `myExtension.thing`: Configurar a `blah` para realizar alguna acción.
+* `myExtension.thing`: Configurar como `blah` para realizar una acción.
 
-## Problemas Conocidos
+## Problemas conocidos
 
-Mencionar los problemas conocidos puede ayudar a reducir la cantidad de usuarios que abran problemas duplicados para tu extensión.
+Mencionar problemas conocidos puede ayudar a limitar que los usuarios abran problemas duplicados sobre tu extensión.
 
-## Notas de la Versión
+## Notas de lanzamiento
 
-Los usuarios aprecian las notas de la versión cuando actualizas tu extensión.
+Los usuarios valoran las notas de lanzamiento cuando actualizas tu extensión.
 
 ### 1.0.0
 
@@ -41,11 +50,11 @@ Lanzamiento inicial de ...
 
 ### 1.0.1
 
-Problema corregido #.
+Problema # solucionado.
 
 ### 1.1.0
 
-Se añadieron las funcionalidades X, Y y Z.
+Se añadieron las características X, Y y Z.
 
 ---
 
@@ -53,7 +62,7 @@ Se añadieron las funcionalidades X, Y y Z.
 
 Asegúrate de haber leído las pautas para extensiones y de seguir las mejores prácticas para crear tu extensión.
 
-* [Pautas para Extensiones](https://code.visualstudio.com/api/references/extension-guidelines)
+* [Pautas para extensiones](https://code.visualstudio.com/api/references/extension-guidelines)
 
 ## Trabajando con Markdown
 
@@ -61,14 +70,14 @@ Puedes redactar tu README utilizando Visual Studio Code. Aquí tienes algunos at
 
 * Dividir el editor (`Cmd+\` en macOS o `Ctrl+\` en Windows y Linux).
 * Alternar vista previa (`Shift+Cmd+V` en macOS o `Shift+Ctrl+V` en Windows y Linux).
-* Presiona `Ctrl+Space` (Windows, Linux, macOS) para ver una lista de fragmentos de código Markdown.
+* Presiona `Ctrl+Space` (Windows, Linux, macOS) para ver una lista de fragmentos de Markdown.
 
 ## Para más información
 
 * [Soporte de Markdown en Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown)
-* [Referencia de Sintaxis Markdown](https://help.github.com/articles/markdown-basics/)
+* [Referencia de sintaxis Markdown](https://help.github.com/articles/markdown-basics/)
 
-**¡Disfruta!**
+**¡Disfrútalo!**
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando servicios de traducción automática basados en inteligencia artificial. Si bien nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.

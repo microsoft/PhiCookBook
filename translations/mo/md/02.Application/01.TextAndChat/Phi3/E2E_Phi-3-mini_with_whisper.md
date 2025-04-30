@@ -1,99 +1,108 @@
-# Phi 3 Mini 4K Instruct Chatbot ma Whisper Chatbot
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "f737bf207e1691cdc654535c48dd2df4",
+  "translation_date": "2025-04-04T12:40:54+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-mini_with_whisper.md",
+  "language_code": "mo"
+}
+-->
+# Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper
 
-## Koondhiga
+## Overview
 
-Phi 3 Mini 4K Instruct Chatbot waa aalad u oggolaanaysa isticmaalayaasha inay ku falgalaan demo-ga Microsoft Phi 3 Mini 4K Instruct iyaga oo adeegsanaya qoraal ama cod. Chatbot-kan waxaa loo isticmaali karaa hawlo kala duwan, sida tarjumaadda, helitaanka warbixin ku saabsan cimilada, iyo xog-ururin guud.
+The Interactive Phi 3 Mini 4K Instruct Chatbot is a tool that enables users to interact with the Microsoft Phi 3 Mini 4K instruct demo using text or audio inputs. This chatbot can assist with various tasks, including translation, weather updates, and general information retrieval.
 
-### Sida Loo Bilaabo
+### Getting Started
 
-Si aad u isticmaasho chatbot-kan, raac tilmaamahan:
+Follow these steps to use the chatbot:
 
-1. Fur [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)
-2. Daaqadda ugu weyn ee notebook-ka, waxaad arki doontaa sanduuqa sheekaysiga oo leh meel qoraalka lagu geliyo iyo badhanka "Send".
-3. Si aad u isticmaasho chatbot-ka ku saleysan qoraalka, ku qor fariintaada sanduuqa qoraalka oo guji badhanka "Send". Chatbot-ku wuxuu ku siin doonaa fayl cod ah oo si toos ah uga ciyaari kara gudaha notebook-ka.
+1. Open the [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) notebook.
+2. In the notebook's main window, you'll find a chatbox interface with a text input field and a "Send" button.
+3. To interact with the text-based chatbot, type your message in the input field and click "Send." The chatbot will reply with an audio file that you can play directly within the notebook.
 
-**Ogsoonow**: Aaladdan waxay u baahan tahay GPU iyo marin u helidda moodooyinka Microsoft Phi-3 iyo OpenAI Whisper, kuwaas oo loo isticmaalo aqoonsiga hadalka iyo tarjumaadda.
+**Note**: This tool requires a GPU and access to the Microsoft Phi-3 and OpenAI Whisper models, which are utilized for speech recognition and translation.
 
-### Shuruudaha GPU-ga
+### GPU Requirements
 
-Si aad u maamusho demo-gan, waxaad u baahan tahay 12GB oo xasuusta GPU ah.
+You need a GPU with 12GB of memory to run this demo.
 
-Shuruudaha xasuusta GPU-ga ee loogu baahan yahay demo-ga **Microsoft-Phi-3-Mini-4K instruct** waxay ku xirnaan doonaan dhowr arrimood, sida cabbirka xogta la geliyo (cod ama qoraal), luqadda loo adeegsado tarjumaadda, xawaaraha moodelka, iyo xasuusta GPU-ga ee la heli karo.
+The memory needed for running the **Microsoft-Phi-3-Mini-4K instruct** demo depends on factors such as input size (audio or text), translation language, model speed, and available GPU memory.
 
-Guud ahaan, moodelka Whisper waxaa loogu talagalay inuu ku shaqeeyo GPU-yada. Xaddiga ugu yar ee xasuusta GPU-ga ee lagu taliyay si loo maamulo moodelka Whisper waa 8 GB, laakiin wuxuu awood u leeyahay inuu maareeyo xasuus ka badan haddii loo baahdo.
+The Whisper model is generally designed for GPU use. While 8GB of GPU memory is the recommended minimum, it can utilize more memory as needed.
 
-Waa muhiim in la ogaado in maareynta xog badan ama codsiyo fara badan oo ku socda moodelka laga yaabo inay u baahan tahay xasuus badan oo GPU ah iyo/ama inay keento dhibaatooyin waxqabad. Waxaa lagula talinayaa inaad tijaabiso xaaladdaada isticmaale iyadoo la adeegsanayo qaabeymo kala duwan oo aad la socoto isticmaalka xasuusta si aad u go'aamiso qaabeynta ugu habboon ee baahiyahaaga gaarka ah.
+Keep in mind that processing large datasets or handling high request volumes may require additional GPU memory and could impact performance. It's advisable to test your specific use case with different configurations and monitor memory usage to find the optimal setup.
 
-## Tusaale E2E ah oo loogu talagalay Phi 3 Mini 4K Instruct Chatbot ma Whisper
+## E2E Sample for Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper
 
-Notebook-ka jupyter ee cinwaankiisu yahay [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) wuxuu muujinayaa sida loo isticmaalo Demo-ga Microsoft Phi 3 Mini 4K Instruct si loo abuuro qoraal laga soo saaray cod ama qoraal la geliyo. Notebook-ka wuxuu qeexayaa dhowr hawlood:
+The Jupyter notebook titled [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) demonstrates how to use the Microsoft Phi 3 Mini 4K instruct demo to generate text from audio or written inputs. It includes several functions:
 
-1. `tts_file_name(text)`: Hawshan waxay soo saartaa magaca faylka iyadoo ku saleysan qoraalka la geliyay si loogu keydiyo faylka codka la abuuray.
-1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Hawshan waxay adeegsataa Edge TTS API si ay u abuurto fayl cod ah oo ka kooban qaybo qoraal ah oo la geliyay. Halbeegyada gelinta waa liiska qaybo, heerka codka, magaca codka, iyo meesha loo keydiyo faylka codka la abuuray.
-1. `talk(input_text)`: Hawshan waxay soo saartaa fayl cod ah iyadoo la adeegsanayo Edge TTS API oo lagu keydiyo magac fayl random ah gudaha galka /content/audio. Halbeegga gelinta waa qoraalka loo beddelayo cod.
-1. `run_text_prompt(message, chat_history)`: Hawshan waxay isticmaashaa demo-ga Microsoft Phi 3 Mini 4K instruct si ay u abuurto fayl cod ah oo laga soo saaray fariin la geliyay oo ay ku darto taariikhda sheekaysiga.
-1. `run_audio_prompt(audio, chat_history)`: Hawshan waxay u beddeshaa fayl cod ah qoraal iyadoo la adeegsanayo Whisper model API oo ay u gudbisaa `run_text_prompt()`.
-1. Koodhka wuxuu bilaabayaa Gradio app oo u oggolaanaya isticmaalayaasha inay ku falgalaan demo-ga Phi 3 Mini 4K instruct iyaga oo gelinaya fariimo qoraal ah ama soo gelinaya faylasha codka. Natiijada waxaa lagu soo bandhigaa sida fariin qoraal ah gudaha app-ka.
+1. `tts_file_name(text)`: Generates a file name based on the input text for saving the generated audio file.
+2. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Uses the Edge TTS API to create an audio file from input text chunks. Parameters include the text chunks, speech rate, voice name, and output path for saving the audio file.
+3. `talk(input_text)`: Generates an audio file using the Edge TTS API, saving it with a random file name in the /content/audio directory. The input parameter is the text to be converted into speech.
+4. `run_text_prompt(message, chat_history)`: Uses the Microsoft Phi 3 Mini 4K instruct demo to create an audio file from a message input and adds it to the chat history.
+5. `run_audio_prompt(audio, chat_history)`: Converts an audio file into text using the Whisper model API and sends it to the `run_text_prompt()` function.
+6. The code launches a Gradio app that allows users to interact with the Phi 3 Mini 4K instruct demo by typing messages or uploading audio files. The app displays the output as text.
 
-## Xallinta Dhibaatooyinka
+## Troubleshooting
 
-Ku rakibidda darawallada Cuda GPU
+Installing Cuda GPU drivers:
 
-1. Hubi in barnaamijyada Linux-kaaga ay cusboon yihiin
+1. Ensure your Linux applications are up to date:
 
     ```bash
     sudo apt update
     ```
 
-1. Ku rakib darawallada Cuda
+2. Install Cuda drivers:
 
     ```bash
     sudo apt install nvidia-cuda-toolkit
     ```
 
-1. Diiwaangeli meesha darawalka cuda
+3. Register the Cuda driver location:
 
     ```bash
     echo /usr/lib64-nvidia/ >/etc/ld.so.conf.d/libcuda.conf; ldconfig
     ```
 
-1. Hubi cabbirka xasuusta Nvidia GPU (Waxaa loo baahan yahay 12GB oo xasuusta GPU ah)
+4. Check Nvidia GPU memory size (12GB required):
 
     ```bash
     nvidia-smi
     ```
 
-1. Nadiifi Cache: Haddii aad isticmaalayso PyTorch, waad wici kartaa torch.cuda.empty_cache() si aad u sii dayso dhammaan xasuusta aan la isticmaalin si ay ugu adeegto barnaamijyada kale ee GPU.
+5. Empty Cache: If you're using PyTorch, call torch.cuda.empty_cache() to free unused cached memory for other GPU applications.
 
     ```python
     torch.cuda.empty_cache() 
     ```
 
-1. Hubinta Nvidia Cuda
+6. Check Nvidia Cuda:
 
     ```bash
     nvcc --version
     ```
 
-1. Samee hawlahan si aad u abuurto token Hugging Face.
+7. Follow these steps to create a Hugging Face token:
 
-    - U gudub [Bogga Dejinta Token-ka Hugging Face](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
-    - Xulo **New token**.
-    - Geli magaca mashruuca **Name** ee aad rabto inaad isticmaasho.
-    - Xulo nooca **Type** inuu noqdo **Write**.
+    - Visit the [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
+    - Click **New token**.
+    - Enter the project **Name**.
+    - Select **Type** as **Write**.
 
-> **Ogsoonow**
+> **Note**
 >
-> Haddii aad la kulanto qaladka soo socda:
+> If you encounter the following error:
 >
 > ```bash
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> Si aad tan u xalliso, geli amarkan hoosta terminal-kaaga.
+> Resolve it by typing this command in your terminal:
 >
 > ```bash
 > sudo ldconfig
 > ```
 
-It seems like "mo" might refer to a specific language or abbreviation, but it is unclear which language you're referring to. Could you please clarify or specify the target language you'd like the text translated into? For example, "mo" could potentially stand for Maori, Mongolian, or another language.
+It seems like you are asking to translate the provided text into "mo," but it's unclear what "mo" refers to. Could you clarify whether "mo" is a specific language (e.g., Maori, Montenegrin, or something else) or if you mean something else entirely?

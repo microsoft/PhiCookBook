@@ -1,18 +1,27 @@
-## GitHub Models - Public Beta Terbatas
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "3f37da1518bfb2cc9a8faa427fb0c916",
+  "translation_date": "2025-04-04T13:07:06+00:00",
+  "source_file": "md\\02.QuickStart\\GitHubModel_QuickStart.md",
+  "language_code": "mo"
+}
+-->
+## GitHub Models - Limited Public Beta
 
-Selamat datang di [GitHub Models](https://github.com/marketplace/models)! Kami telah menyiapkan semuanya agar Anda dapat menjelajahi Model AI yang di-host di Azure AI.
+Welcome to [GitHub Models](https://github.com/marketplace/models)! Everything is set up and ready for you to explore AI Models hosted on Azure AI.
 
 ![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.mo.png)
 
-Untuk informasi lebih lanjut tentang Model yang tersedia di GitHub Models, kunjungi [GitHub Model Marketplace](https://github.com/marketplace/models)
+For more details about the available models on GitHub Models, visit the [GitHub Model Marketplace](https://github.com/marketplace/models).
 
-## Model yang Tersedia
+## Models Available
 
-Setiap model memiliki playground khusus dan kode contoh.
+Each model comes with its own playground and sample code.
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
-### Model Phi-3 di GitHub Model Catalog
+### Phi-3 Models in GitHub Model Catalog
 
 [Phi-3-Medium-128k-Instruct](https://github.com/marketplace/models/azureml/Phi-3-medium-128k-instruct)
 
@@ -26,57 +35,57 @@ Setiap model memiliki playground khusus dan kode contoh.
 
 [Phi-3-small-8k-instruct](https://github.com/marketplace/models/azureml/Phi-3-small-8k-instruct)
 
-## Memulai
+## Getting Started
 
-Ada beberapa contoh dasar yang siap dijalankan. Anda dapat menemukannya di direktori sampel. Jika Anda ingin langsung menggunakan bahasa favorit Anda, contoh tersedia dalam bahasa berikut:
+We’ve prepared a few basic examples for you to try out. You can find them in the samples directory. If you want to dive right into your preferred programming language, examples are available in:
 
 - Python
 - JavaScript
 - cURL
 
-Terdapat juga Lingkungan Codespaces khusus untuk menjalankan sampel dan model.
+There’s also a dedicated Codespaces Environment for running the samples and models.
 
 ![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.mo.png)
 
-## Kode Contoh
+## Sample Code 
 
-Berikut adalah cuplikan kode contoh untuk beberapa kasus penggunaan. Untuk informasi tambahan tentang Azure AI Inference SDK, lihat dokumentasi dan sampel lengkapnya.
+Below are example code snippets for different use cases. For more details about the Azure AI Inference SDK, refer to the full documentation and samples.
 
-## Penyiapan
+## Setup 
 
-1. Buat token akses pribadi  
-Anda tidak perlu memberikan izin apa pun pada token ini. Perlu diketahui bahwa token akan dikirim ke layanan Microsoft.
+1. Create a personal access token  
+You don’t need to assign any permissions to the token. Keep in mind that the token will be sent to a Microsoft service.
 
-Untuk menggunakan cuplikan kode di bawah ini, buat variabel lingkungan untuk menetapkan token Anda sebagai kunci untuk kode klien.
+To use the code snippets below, set your token as an environment variable for the client code.
 
-Jika Anda menggunakan bash:  
+If you’re using bash:  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-Jika Anda menggunakan powershell:  
+If you’re using PowerShell:  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 
-Jika Anda menggunakan command prompt Windows:  
+If you’re using Windows command prompt:  
 
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
 ```  
 
-## Contoh Python
+## Python Sample
 
-### Instal dependensi  
-Instal Azure AI Inference SDK menggunakan pip (Memerlukan: Python >=3.8):  
+### Install dependencies  
+Use pip to install the Azure AI Inference SDK (Requires: Python >=3.8):  
 
 ```
 pip install azure-ai-inference
 ```  
 
-### Jalankan contoh kode dasar  
+### Run a basic code sample  
 
-Contoh ini menunjukkan panggilan dasar ke API penyelesaian obrolan. Contoh ini menggunakan endpoint inferensi model AI GitHub dan token GitHub Anda. Panggilan ini bersifat sinkron.  
+This example shows a simple call to the chat completion API using the GitHub AI model inference endpoint and your GitHub token. The call is synchronous.  
 
 ```
 import os
@@ -108,9 +117,9 @@ response = client.complete(
 print(response.choices[0].message.content)
 ```  
 
-### Jalankan percakapan multi-turn  
+### Run a multi-turn conversation  
 
-Contoh ini menunjukkan percakapan multi-turn dengan API penyelesaian obrolan. Saat menggunakan model untuk aplikasi obrolan, Anda perlu mengelola riwayat percakapan tersebut dan mengirim pesan terbaru ke model.  
+This example demonstrates a multi-turn conversation with the chat completion API. For chat applications, you’ll need to keep track of the conversation history and send the latest messages to the model.  
 
 ```
 import os
@@ -140,9 +149,9 @@ response = client.complete(messages=messages, model=model_name)
 print(response.choices[0].message.content)
 ```  
 
-### Streaming output  
+### Stream the output  
 
-Untuk pengalaman pengguna yang lebih baik, Anda ingin melakukan streaming respons model sehingga token pertama muncul lebih awal dan Anda tidak perlu menunggu respons yang panjang.  
+For a smoother user experience, you can stream the model’s response so that the first token appears early, reducing wait times for longer responses.  
 
 ```
 import os
@@ -176,13 +185,13 @@ for update in response:
 client.close()
 ```  
 
-## JavaScript
+## JavaScript  
 
-### Instal dependensi  
+### Install dependencies  
 
-Instal Node.js.  
+Install Node.js.  
 
-Salin baris teks berikut dan simpan sebagai file package.json di dalam folder Anda.  
+Save the following lines as a package.json file in your folder:  
 
 ```
 {
@@ -195,15 +204,15 @@ Salin baris teks berikut dan simpan sebagai file package.json di dalam folder An
 }
 ```  
 
-Catatan: @azure/core-sse hanya diperlukan saat Anda melakukan streaming respons penyelesaian obrolan.  
+Note: @azure/core-sse is only required when streaming the chat completions response.  
 
-Buka jendela terminal di folder ini dan jalankan npm install.  
+Open a terminal in this folder and run npm install.  
 
-Untuk setiap cuplikan kode di bawah ini, salin kontennya ke file sample.js dan jalankan dengan node sample.js.  
+For each code snippet below, copy the content into a file named sample.js and run it using node sample.js.  
 
-### Jalankan contoh kode dasar  
+### Run a basic code sample  
 
-Contoh ini menunjukkan panggilan dasar ke API penyelesaian obrolan. Contoh ini menggunakan endpoint inferensi model AI GitHub dan token GitHub Anda. Panggilan ini bersifat sinkron.  
+This example shows a simple call to the chat completion API using the GitHub AI model inference endpoint and your GitHub token. The call is synchronous.  
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -242,9 +251,9 @@ main().catch((err) => {
 });
 ```  
 
-### Jalankan percakapan multi-turn  
+### Run a multi-turn conversation  
 
-Contoh ini menunjukkan percakapan multi-turn dengan API penyelesaian obrolan. Saat menggunakan model untuk aplikasi obrolan, Anda perlu mengelola riwayat percakapan tersebut dan mengirim pesan terbaru ke model.  
+This example demonstrates a multi-turn conversation with the chat completion API. For chat applications, you’ll need to keep track of the conversation history and send the latest messages to the model.  
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -285,8 +294,9 @@ main().catch((err) => {
 });
 ```  
 
-### Streaming output  
-Untuk pengalaman pengguna yang lebih baik, Anda ingin melakukan streaming respons model sehingga token pertama muncul lebih awal dan Anda tidak perlu menunggu respons yang panjang.  
+### Stream the output  
+
+For a smoother user experience, you can stream the model’s response so that the first token appears early, reducing wait times for longer responses.  
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -342,9 +352,9 @@ main().catch((err) => {
 
 ## REST  
 
-### Jalankan contoh kode dasar  
+### Run a basic code sample  
 
-Tempelkan yang berikut ke shell:  
+Paste the following into a shell:  
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -365,9 +375,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```  
 
-### Jalankan percakapan multi-turn  
+### Run a multi-turn conversation  
 
-Panggil API penyelesaian obrolan dan masukkan riwayat obrolan:  
+Call the chat completion API and include the chat history:  
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -396,9 +406,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```  
 
-### Streaming output  
+### Stream the output  
 
-Ini adalah contoh memanggil endpoint dan melakukan streaming respons.  
+This example demonstrates how to call the endpoint and stream the response.  
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -420,20 +430,20 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```  
 
-## Penggunaan GRATIS dan Batasan untuk GitHub Models  
+## FREE Usage and Rate limits for GitHub Models  
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.mo.png)  
+![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.mo.png)
 
-[Batasan penggunaan gratis dan playground API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) dimaksudkan untuk membantu Anda bereksperimen dengan model dan membuat prototipe aplikasi AI Anda. Untuk penggunaan di luar batas tersebut, dan untuk meningkatkan skala aplikasi Anda, Anda harus menyediakan sumber daya dari akun Azure dan melakukan autentikasi dari sana, bukan menggunakan token akses pribadi GitHub Anda. Anda tidak perlu mengubah apa pun di kode Anda. Gunakan tautan ini untuk mengetahui cara melampaui batas tingkat gratis di Azure AI.  
+The [rate limits for the playground and free API usage](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) are designed to help you experiment with models and prototype your AI application. For usage beyond these limits and scaling your application, you’ll need to provision resources via an Azure account and authenticate from there instead of using your GitHub personal access token. No other changes to your code are required. Use this link to learn how to exceed the free tier limits in Azure AI.
 
-### Pengungkapan  
+### Disclosures  
 
-Ingatlah bahwa saat berinteraksi dengan model, Anda sedang bereksperimen dengan AI, sehingga kesalahan konten mungkin terjadi.  
+Keep in mind that when interacting with a model, you’re experimenting with AI, so errors in content may occur.
 
-Fitur ini memiliki berbagai batasan (termasuk permintaan per menit, permintaan per hari, token per permintaan, dan permintaan bersamaan) dan tidak dirancang untuk kasus penggunaan produksi.  
+This feature has various limits (including requests per minute, requests per day, tokens per request, and concurrent requests) and is not intended for production use cases.
 
-GitHub Models menggunakan Azure AI Content Safety. Filter ini tidak dapat dimatikan sebagai bagian dari pengalaman GitHub Models. Jika Anda memutuskan untuk menggunakan model melalui layanan berbayar, harap konfigurasikan filter konten Anda untuk memenuhi kebutuhan Anda.  
+GitHub Models utilize Azure AI Content Safety. These filters are mandatory and cannot be disabled as part of the GitHub Models experience. If you choose to use models through a paid service, configure your content filters according to your needs.
 
-Layanan ini tunduk pada Ketentuan Prarilis GitHub.  
+This service is governed by GitHub’s Pre-release Terms.
 
-It seems like you want the text translated into "mo," but "mo" isn't clear as a specific language. Could you clarify which language you're referring to? For example, are you referring to Mongolian, Maori, or something else? Let me know, and I'll assist you!
+It seems like "mo" might refer to a specific language or abbreviation, but it's not clear which language or context you're referring to. Could you clarify what "mo" stands for or provide more details? For example, is it Maori, Montenegrin, or something else?

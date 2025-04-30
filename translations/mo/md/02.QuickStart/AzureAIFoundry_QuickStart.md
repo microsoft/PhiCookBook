@@ -1,85 +1,94 @@
-# **Phi-3-ийг Azure AI Foundry-д ашиглах**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "6525689374197af33b41a93811e473a2",
+  "translation_date": "2025-04-04T13:05:58+00:00",
+  "source_file": "md\\02.QuickStart\\AzureAIFoundry_QuickStart.md",
+  "language_code": "mo"
+}
+-->
+# **Using Phi-3 in Azure AI Foundry**
 
-Генератив AI хөгжүүлэлтийн ачаар, бид өөр өөр LLM болон SLM-ийг удирдах, байгууллагын өгөгдөлтэй интеграц хийх, нарийвчлан тохируулах/RAG үйлдлүүдийг гүйцэтгэх, мөн LLM болон SLM-ийг нэвтрүүлсний дараах байгууллагын бизнесийн үнэлгээг хийх зэрэг ажлуудыг нэг платформ дээр төвлөрүүлэн удирдах боломжийг эрэлхийлж байна. [Azure AI Foundry](https://ai.azure.com) нь байгууллагын түвшний генератив AI програмын платформ юм.
+With the rise of Generative AI, the goal is to leverage a unified platform to handle various LLMs and SLMs, integrate enterprise data, perform fine-tuning/RAG tasks, and assess the outcomes of incorporating LLMs and SLMs into enterprise workflows. This ensures that generative AI applications can be implemented more effectively. [Azure AI Foundry](https://ai.azure.com) serves as an enterprise-grade platform for generative AI applications.
 
 ![aistudo](../../../../translated_images/aifoundry_home.ffa4fe13d11f26171097f8666a1db96ac0979ffa1adde80374c60d1136c7e1de.mo.png)
 
-Azure AI Foundry-ийн тусламжтайгаар та томоохон хэлний загваруудын (LLM) хариу үйлдлийг үнэлж, prompt flow ашиглан prompt програмын бүрэлдэхүүн хэсгүүдийг зохицуулж, гүйцэтгэлийг сайжруулж чадна. Энэхүү платформ нь туршилтын концепцуудыг бүрэн хэмжээний үйлдвэрлэлийн програм болгон хувиргах явцыг хялбарчилж, өргөтгөх боломжийг олгодог. Үргэлжлэн хяналт тавих, сайжруулах үйл ажиллагаа нь урт хугацааны амжилтыг дэмждэг.
+Azure AI Foundry enables you to evaluate the responses of large language models (LLMs) and coordinate prompt-driven application components using prompt flow for enhanced performance. The platform supports scalability, allowing you to effortlessly transition from proof-of-concept to full-scale production. Continuous monitoring and refinement ensure sustained success.
 
-Бид Phi-3 загварыг Azure AI Foundry дээр хурдан байршуулж, дараа нь Azure AI Foundry ашиглан Phi-3 холбогдох Playground/Chat, нарийвчлан тохируулах, үнэлгээ зэрэг ажлуудыг гүйцэтгэж чадна.
+By following simple steps, the Phi-3 model can be quickly deployed on Azure AI Foundry, enabling you to utilize the platform for Phi-3-related activities such as Playground/Chat, fine-tuning, evaluation, and more.
 
-## **1. Бэлтгэл ажил**
+## **1. Preparation**
 
-Хэрэв таны төхөөрөмж дээр [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) суулгасан бол энэ загварыг ашиглах нь шинэ хавтас дотор дараах командыг ажиллуулахтай адил энгийн.
+If you already have the [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) installed on your device, you can easily use this template by running the provided command in a new directory.
 
-## Гар аргаар үүсгэх
+## Manual Creation
 
-Microsoft Azure AI Foundry төсөл болон hub үүсгэх нь таны AI ажлыг зохион байгуулж, удирдахад маш сайн арга юм. Эндээс эхлэх алхмуудыг зааж өгье:
+Setting up a Microsoft Azure AI Foundry project and hub is an excellent way to organize and manage your AI initiatives. Follow these steps to get started:
 
-### Azure AI Foundry-д төсөл үүсгэх
+### Creating a Project in Azure AI Foundry
 
-1. **Azure AI Foundry руу орох**: Azure AI Foundry порталд нэвтэрнэ үү.
-2. **Төсөл үүсгэх**:
-   - Хэрэв та төсөл дээр ажиллаж байгаа бол, хуудасны зүүн дээд буланд байрлах "Azure AI Foundry"-г сонгож, Нүүр хуудас руу шилжинэ үү.
-   - "+ Create project" товчийг сонгоно уу.
-   - Төслийн нэр оруулна уу.
-   - Хэрэв танд hub байгаа бол энэ нь анхдагчаар сонгогдох болно. Хэрэв танд олон hub-д хандах эрх байгаа бол доош унах цэснээс өөр нэгийг сонгож болно. Хэрэв та шинэ hub үүсгэхийг хүсвэл "Create new hub"-г сонгож, нэр оруулна уу.
-   - "Create"-г сонгоно уу.
+1. **Access Azure AI Foundry**: Log in to the Azure AI Foundry portal.
+2. **Create a Project**:
+   - If you're already in a project, click "Azure AI Foundry" at the top left of the page to navigate to the Home page.
+   - Click "+ Create project".
+   - Provide a name for your project.
+   - If you have an existing hub, it will be selected by default. If you have access to multiple hubs, you can choose another one from the dropdown menu. To create a new hub, select "Create new hub" and enter a name.
+   - Click "Create".
 
-### Azure AI Foundry-д Hub үүсгэх
+### Creating a Hub in Azure AI Foundry
 
-1. **Azure AI Foundry руу орох**: Azure бүртгэлээрээ нэвтэрнэ үү.
-2. **Hub үүсгэх**:
-   - Зүүн цэснээс Management center-ийг сонгоно уу.
-   - "All resources"-ийг сонгож, дараа нь "+ New project"-ын хажууд байрлах сумыг дарж "+ New hub"-г сонгоно уу.
-   - "Create a new hub" цонхонд hub-ийн нэр (жишээ нь, contoso-hub) оруулж, бусад талбаруудыг хүссэнээрээ өөрчилнө үү.
-   - "Next"-ийг сонгож, мэдээллийг шалгасны дараа "Create"-г дарна уу.
+1. **Access Azure AI Foundry**: Log in using your Azure account.
+2. **Create a Hub**:
+   - From the left menu, go to the Management center.
+   - Select "All resources," click the down arrow next to "+ New project," and choose "+ New hub."
+   - In the "Create a new hub" dialog, enter a name for your hub (e.g., contoso-hub) and adjust other settings as needed.
+   - Click "Next," review the details, and then click "Create."
 
-Дэлгэрэнгүй заавар авахыг хүсвэл [Microsoft-ийн албан ёсны баримт бичиг](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects)-ийг үзнэ үү.
+For detailed guidance, refer to the official [Microsoft documentation](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
 
-Амжилттай үүсгэсний дараа та үүсгэсэн студио руугаа [ai.azure.com](https://ai.azure.com/) хаягаар нэвтрэх боломжтой.
+Once successfully created, you can access the studio you built via [ai.azure.com](https://ai.azure.com/).
 
-Нэг AI Foundry дээр хэд хэдэн төсөл байж болно. AI Foundry дээр төсөл үүсгэж, бэлтгэлээ хангана уу.
+Multiple projects can exist within a single AI Foundry hub. Start by creating a project in AI Foundry as part of the preparation.
 
-Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Explore Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code).
 
-## **2. Azure AI Foundry-д Phi загварыг байршуулна**
+## **2. Deploy a Phi model in Azure AI Foundry**
 
-Төслийн Explore хэсгийг сонгож, Model Catalog руу орж, Phi-3-ийг сонгоно уу.
+Navigate to the Explore section of your project to access the Model Catalog and choose Phi-3.
 
-Phi-3-mini-4k-instruct-ийг сонгоно уу.
+Select Phi-3-mini-4k-instruct.
 
-Phi-3-mini-4k-instruct загварыг байршуулж, 'Deploy'-г дарна уу.
+Click 'Deploy' to initiate deployment of the Phi-3-mini-4k-instruct model.
 
 > [!NOTE]
 >
-> Байршуулах үед тооцоолох хүчин чадлыг сонгох боломжтой.
+> You can select the computing resources during deployment.
 
-## **3. Azure AI Foundry дээр Phi-тай Playground Chat хийх**
+## **3. Playground Chat Phi in Azure AI Foundry**
 
-Байршуулах хуудас руу очиж, Playground-г сонгоод Azure AI Foundry-ийн Phi-3-тай чатлах.
+Go to the deployment page, select Playground, and interact with Phi-3 in Azure AI Foundry.
 
-## **4. Azure AI Foundry-оос загвар байрлуулах**
+## **4. Deploying the Model from Azure AI Foundry**
 
-Azure Model Catalog-оос загвар байрлуулахын тулд дараах алхмуудыг дагана уу:
+To deploy a model from the Azure Model Catalog, follow these steps:
 
-- Azure AI Foundry-д нэвтэрнэ үү.
-- Azure AI Foundry загварын каталогоос байрлуулахыг хүссэн загвараа сонгоно уу.
-- Загварын Details хуудас дээр Deploy-г сонгож, дараа нь Serverless API with Azure AI Content Safety-г сонгоно уу.
-- Загвараа байрлуулахыг хүссэн төслөө сонгоно уу. Serverless API-г ашиглахын тулд таны workspace East US 2 эсвэл Sweden Central бүсэд байх шаардлагатай. Deployment нэрийг өөрчлөх боломжтой.
-- Байршуулах мастер цонхонд Pricing and terms-г сонгож, үнийн нөхцөлтэй танилцана уу.
-- Deploy-г сонгоно уу. Байршуулах үйл явц дуусахыг хүлээгээд, Deployments хуудас руу чиглүүлэгдэх болно.
-- Open in playground-г сонгож, загвартай харилцахыг эхлүүлнэ үү.
-- Deployments хуудас руу буцаж очиж, байршилт сонгоод, Endpoint-ийн Target URL болон Secret Key-г тэмдэглэж авна уу. Эдгээрийг ашиглан байршилт руу хандаж, гүйцэтгэл үүсгэж болно.
-- Endpoint-ийн дэлгэрэнгүй мэдээлэл, URL, хандалтын түлхүүрүүдийг Build таб руу орж, Components хэсгээс Deployments-г сонгосноор олж болно.
+- Log in to Azure AI Foundry.
+- Select the model you wish to deploy from the Azure AI Foundry model catalog.
+- On the model's Details page, click Deploy and choose Serverless API with Azure AI Content Safety.
+- Select the project where you want the model deployed. To utilize the Serverless API feature, your workspace must be located in the East US 2 or Sweden Central region. Customize the Deployment name if needed.
+- In the deployment wizard, review the Pricing and terms section for details on costs and usage terms.
+- Click Deploy. Wait for the deployment process to complete and for the page to redirect to the Deployments section.
+- Click Open in playground to start using the model.
+- You can revisit the Deployments page, select the deployment, and note the endpoint's Target URL and Secret Key for making API calls and generating responses.
+- Endpoint details, URLs, and access keys can always be retrieved by navigating to the Build tab and selecting Deployments under the Components section.
 
 > [!NOTE]
-> Эдгээр алхмуудыг гүйцэтгэхийн тулд таны бүртгэл Resource Group дээр Azure AI Developer role-ийн зөвшөөрөлтэй байх шаардлагатай.
+> Ensure your account has Azure AI Developer role permissions on the Resource Group to complete these steps.
 
-## **5. Azure AI Foundry-д Phi API ашиглах**
+## **5. Using Phi API in Azure AI Foundry**
 
-Postman ашиглан https://{Таны төслийн нэр}.region.inference.ml.azure.com/swagger.json хаяг руу GET хүсэлт илгээж, Key-тэй хослуулан өгөгдсөн интерфэйсүүдийг шалгаж болно.
+Access https://{Your project name}.region.inference.ml.azure.com/swagger.json using Postman GET and combine it with your Key to explore the available interfaces.
 
-Хүсэлтийн параметрүүдийг болон хариу параметрүүдийг маш хялбархан авах боломжтой.
+You can easily obtain the request parameters as well as the response parameters.
 
-It seems like you are asking for a translation into "mo," but it's unclear what language or format "mo" refers to. Could you clarify or specify the target language or context for "mo"? For example, are you referring to Mongolian, Maori, or something else?
+It seems like you've requested a translation to "mo," but could you clarify what "mo" refers to? Is it a specific language, dialect, or code? For example, it could stand for Maori, Montenegrin, or something else. Please provide more context so I can assist you better!

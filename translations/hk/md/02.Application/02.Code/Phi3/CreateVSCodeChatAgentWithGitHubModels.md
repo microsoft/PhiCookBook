@@ -1,44 +1,53 @@
-# **用 GitHub Models 的 Phi-3.5 建立你自己的 Visual Studio Code Chat Copilot Agent**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "e8ff0378cb171924884b4abb3c2a8c37",
+  "translation_date": "2025-04-04T18:27:36+00:00",
+  "source_file": "md\\02.Application\\02.Code\\Phi3\\CreateVSCodeChatAgentWithGitHubModels.md",
+  "language_code": "hk"
+}
+-->
+# **用 GitHub Models 的 Phi-3.5 自行打造 Visual Studio Code Chat Copilot Agent**
 
-你有用 Visual Studio Code Copilot 嗎？特別是在 Chat 裡，你可以用不同的 agents 來提升在 Visual Studio Code 中創建、撰寫和維護專案的能力。Visual Studio Code 提供了一個 API，讓公司和個人可以根據自己的業務需求建立不同的 agents，從而在專有領域中擴展功能。在這篇文章中，我們會專注於 GitHub Models 的 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)**，來建立你自己的 Visual Studio Code Agent。
+你是否正在使用 Visual Studio Code Copilot？特別是在 Chat 模式中，你可以利用不同的 agent 來提升在 Visual Studio Code 中創建、撰寫和維護專案的能力。Visual Studio Code 提供了一個 API，讓企業和個人可以根據自己的業務需求創建不同的 agent，從而在各自的專有領域中擴展功能。在本文中，我們將聚焦於 GitHub Models 的 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)**，來打造屬於你自己的 Visual Studio Code Agent。
 
 ## **關於 GitHub Models 的 Phi-3.5**
 
-我們知道，Phi-3/3.5-mini-instruct 在 Phi-3/3.5 家族中具有強大的程式碼理解和生成能力，並且相較於 Gemma-2-9b 和 Mistral-Nemo-12B-instruct-2407 有明顯優勢。
+我們知道 Phi-3/3.5-mini-instruct 屬於 Phi-3/3.5 家族，具有強大的程式碼理解和生成能力，並且在某些方面優於 Gemma-2-9b 和 Mistral-Nemo-12B-instruct-2407。
 
 ![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.hk.png)
 
-最新的 GitHub Models 已經提供了 Phi-3.5-mini-instruct (128k) 和 Phi-3.5-vision-instruct (128k) 模型的存取方式。開發者可以通過 OpenAI SDK、Azure AI Inference SDK 和 REST API 來使用它們。
+最新的 GitHub Models 已經提供了對 Phi-3.5-mini-instruct (128k) 和 Phi-3.5-vision-instruct (128k) 模型的訪問。開發者可以通過 OpenAI SDK、Azure AI Inference SDK 和 REST API 進行訪問。
 
 ![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.hk.png)
 
-***注意：*** 建議使用 Azure AI Inference SDK，因為它能更好地與生產環境中的 Azure Model Catalog 切換。
+***注意：*** 這裡建議使用 Azure AI Inference SDK，因為它能更好地與生產環境中的 Azure Model Catalog 切換。
 
-以下是 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)** 在與 GitHub Models 整合後，在程式碼生成場景中的結果，也為後續範例做準備。
+以下是 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)** 在與 GitHub Models 對接後的程式碼生成場景中的結果，也為後續的示例做準備。
 
-**範例：GitHub Models Phi-3.5-mini-instruct (128k) 根據提示生成程式碼** ([點擊這裡](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**示例：GitHub Models Phi-3.5-mini-instruct (128k) 從 Prompt 生成程式碼** ([點擊這裡](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**範例：GitHub Models Phi-3.5-vision-instruct (128k) 根據圖片生成程式碼** ([點擊這裡](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**示例：GitHub Models Phi-3.5-vision-instruct (128k) 從圖片生成程式碼** ([點擊這裡](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 ## **關於 GitHub Copilot Chat Agent**
 
-GitHub Copilot Chat Agent 能根據程式碼，在不同的專案場景中完成不同的任務。系統有四種 agents：workspace、github、terminal、vscode。
+GitHub Copilot Chat Agent 可以根據程式碼在不同的專案場景中完成各種任務。系統提供了四種 agent：workspace、github、terminal、vscode。
 
 ![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.hk.png)
 
-透過在 agent 名稱前加上 ‘@’，你可以快速完成對應的工作。對於企業來說，如果能加入與自身業務相關的內容，例如需求、編碼、測試規範和發佈，就可以基於 GitHub Copilot 提供更強大的企業私有功能。
+通過在 agent 名稱前加上 '@'，你可以快速完成對應的工作。對於企業來說，如果加入與自己業務相關的內容，例如需求、程式碼撰寫、測試規範和發佈，那麼基於 GitHub Copilot 可以實現更強大的企業專屬功能。
 
-Visual Studio Code Chat Agent 現已正式推出 API，允許企業或企業開發者根據不同的軟體業務生態系統開發 agents。基於 Visual Studio Code 擴展開發的方法，你可以輕鬆存取 Visual Studio Code Chat Agent API 的介面。我們可以根據以下流程進行開發。
+Visual Studio Code Chat Agent 現已正式釋出其 API，允許企業或企業開發者根據不同的軟體業務生態系統開發 agent。基於 Visual Studio Code 擴展開發的方法，你可以輕鬆訪問 Visual Studio Code Chat Agent API 的介面。我們可以按照以下流程進行開發：
 
 ![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.hk.png)
 
-開發場景可以支援接入第三方模型 API（例如 GitHub Models、Azure Model Catalog，以及基於開源模型的自建服務），也可以使用 GitHub Copilot 提供的 gpt-35-turbo、gpt-4 和 gpt-4o 模型。
+開發場景支持接入第三方模型 API（例如 GitHub Models、Azure Model Catalog，以及基於開源模型自建的服務），還可以使用 GitHub Copilot 提供的 gpt-35-turbo、gpt-4 和 gpt-4o 模型。
 
-## **基於 Phi-3.5 添加一個 @phicoding Agent**
+## **基於 Phi-3.5 新增 Agent @phicoding**
 
-我們嘗試整合 Phi-3.5 的程式能力，來完成程式碼撰寫、圖片生成程式碼等任務。圍繞 Phi-3.5 建立一個 Agent - @PHI，以下是一些功能：
+我們嘗試整合 Phi-3.5 的編程能力，完成程式碼撰寫、基於圖片生成程式碼等任務。構建一個圍繞 Phi-3.5 的 Agent - @PHI，以下是一些功能：
 
-1. 通過 **@phicoding /help** 指令，使用 GitHub Copilot 提供的 GPT-4o 生成自我介紹。
+1. 通過 **@phicoding /help** 指令，基於 GitHub Copilot 提供的 GPT-4o 生成自我介紹。
 
 2. 通過 **@phicoding /gen** 指令，基於 **Phi-3.5-mini-instruct (128k)** 生成不同程式語言的程式碼。
 
@@ -56,7 +65,7 @@ npm install --global yo generator-code
 
 ```
 
-2. 建立一個 Visual Studio Code Extension 插件（使用 Typescript 開發模式，命名為 phiext）。
+2. 創建一個 Visual Studio Code Extension 插件（使用 Typescript 開發模式，命名為 phiext）。
 
 ```bash
 
@@ -64,7 +73,7 @@ yo code
 
 ```
 
-3. 打開已建立的專案並修改 package.json。這裡包含相關指令和配置，以及 GitHub Models 的配置。注意需要在這裡添加你的 GitHub Models token。
+3. 打開創建的專案並修改 package.json。這裡包括相關的說明和配置，以及 GitHub Models 的配置。請注意，需要在此處添加你的 GitHub Models token。
 
 ```json
 
@@ -351,7 +360,7 @@ export function deactivate() {}
 
 ```
 
-6. 執行
+5. 運行。
 
 ***/help***
 
@@ -373,11 +382,11 @@ export function deactivate() {}
 
 ## **資源**
 
-1. 註冊 GitHub Models：[https://gh.io/models](https://gh.io/models)
+1. 註冊 GitHub Models [https://gh.io/models](https://gh.io/models)
 
-2. 學習 Visual Studio Code 擴展開發：[https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. 學習 Visual Studio Code 擴展開發 [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. 瞭解 Visual Studio Code Coilot Chat API：[https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. 瞭解 Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
-**免責聲明**:  
-此文件是使用機器翻譯人工智能服務進行翻譯的。雖然我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文作為權威來源。如涉及關鍵資訊，建議尋求專業人工翻譯。我們對於因使用此翻譯而引起的任何誤解或誤讀概不負責。
+**免責聲明**：  
+此文件使用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原文的母語版本應被視為權威來源。對於關鍵信息，建議尋求專業的人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。

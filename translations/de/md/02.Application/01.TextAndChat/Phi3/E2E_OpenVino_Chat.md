@@ -1,18 +1,27 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
+  "translation_date": "2025-03-27T09:19:27+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_OpenVino_Chat.md",
+  "language_code": "de"
+}
+-->
 [OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
-Dieser Code exportiert ein Modell in das OpenVINO-Format, lädt es und nutzt es, um eine Antwort auf eine gegebene Eingabeaufforderung zu generieren.
+Dieser Code exportiert ein Modell in das OpenVINO-Format, lädt es und verwendet es, um eine Antwort auf eine gegebene Eingabeaufforderung zu generieren.
 
 1. **Exportieren des Modells**:
    ```bash
    optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6 --sym --trust-remote-code ./model/phi3-instruct/int4
    ```
-   - Dieser Befehl verwendet `optimum-cli` tool to export a model to the OpenVINO format, which is optimized for efficient inference.
+   - Dieser Befehl verwendet den `optimum-cli` tool to export a model to the OpenVINO format, which is optimized for efficient inference.
    - The model being exported is `"microsoft/Phi-3-mini-4k-instruct"`, and it's set up for the task of generating text based on past context.
    - The weights of the model are quantized to 4-bit integers (`int4`), which helps reduce the model size and speed up processing.
    - Other parameters like `group-size`, `ratio`, and `sym` are used to fine-tune the quantization process.
    - The exported model is saved in the directory `./model/phi3-instruct/int4`.
 
-2. **Importieren der benötigten Bibliotheken**:
+2. **Importieren der notwendigen Bibliotheken**:
    ```python
    from transformers import AutoConfig, AutoTokenizer
    from optimum.intel.openvino import OVModelForCausalLM
@@ -29,7 +38,7 @@ Dieser Code exportiert ein Modell in das OpenVINO-Format, lädt es und nutzt es,
    }
    ```
    - `model_dir` specifies where the model files are stored.
-   - `ov_config` ist ein Wörterbuch, das das OpenVINO-Modell so konfiguriert, dass es niedrige Latenz priorisiert, einen Inferenz-Stream verwendet und kein Cache-Verzeichnis nutzt.
+   - `ov_config` ist ein Wörterbuch, das das OpenVINO-Modell so konfiguriert, dass es niedrige Latenz priorisiert, nur einen Inferenz-Stream verwendet und kein Cache-Verzeichnis nutzt.
 
 4. **Laden des Modells**:
    ```python
@@ -41,7 +50,7 @@ Dieser Code exportiert ein Modell in das OpenVINO-Format, lädt es und nutzt es,
        trust_remote_code=True,
    )
    ```
-   - Diese Zeile lädt das Modell aus dem angegebenen Verzeichnis, unter Verwendung der zuvor definierten Konfigurationseinstellungen. Sie ermöglicht auch die Ausführung von Remote-Code, falls erforderlich.
+   - Diese Zeile lädt das Modell aus dem angegebenen Verzeichnis unter Verwendung der zuvor definierten Konfigurationseinstellungen. Es erlaubt auch die Ausführung von Remote-Code, falls erforderlich.
 
 5. **Laden des Tokenizers**:
    ```python
@@ -55,13 +64,13 @@ Dieser Code exportiert ein Modell in das OpenVINO-Format, lädt es und nutzt es,
        "add_special_tokens": False
    }
    ```
-   - Dieses Wörterbuch gibt an, dass keine speziellen Token zur tokenisierten Ausgabe hinzugefügt werden sollen.
+   - Dieses Wörterbuch legt fest, dass keine speziellen Token zur tokenisierten Ausgabe hinzugefügt werden sollen.
 
 7. **Definieren der Eingabeaufforderung**:
    ```python
    prompt = "<|system|>You are a helpful AI assistant.<|end|><|user|>can you introduce yourself?<|end|><|assistant|>"
    ```
-   - Dieser String legt eine Gesprächseingabe fest, bei der der Benutzer die KI-Assistenz bittet, sich vorzustellen.
+   - Dieser String definiert eine Konversationsaufforderung, bei der der Benutzer den KI-Assistenten bittet, sich vorzustellen.
 
 8. **Tokenisieren der Eingabeaufforderung**:
    ```python
@@ -79,7 +88,7 @@ Dieser Code exportiert ein Modell in das OpenVINO-Format, lädt es und nutzt es,
     ```python
     decoded_answer = tok.batch_decode(answer, skip_special_tokens=True)[0]
     ```
-    - Diese Zeile wandelt die generierten Token zurück in einen menschenlesbaren String, überspringt dabei spezielle Token und gibt das erste Ergebnis zurück.
+    - Diese Zeile wandelt die generierten Token zurück in einen menschenlesbaren Text um, überspringt dabei spezielle Token und gibt das erste Ergebnis zurück.
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe von KI-basierten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.

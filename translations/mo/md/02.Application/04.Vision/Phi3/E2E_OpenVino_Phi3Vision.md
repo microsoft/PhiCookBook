@@ -1,36 +1,45 @@
-এই ডেমোটি দেখায় কীভাবে একটি প্রিট্রেইনড মডেল ব্যবহার করে একটি ইমেজ এবং একটি টেক্সট প্রম্পটের ভিত্তিতে পাইথন কোড তৈরি করা যায়।
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "69d48385b1f1b31dd20dbb2405031bff",
+  "translation_date": "2025-04-04T13:01:55+00:00",
+  "source_file": "md\\02.Application\\04.Vision\\Phi3\\E2E_OpenVino_Phi3Vision.md",
+  "language_code": "mo"
+}
+-->
+This demo yi faaka gaɓe faɗa yadda za a yi amfani da samfurin da aka horar da shi don samar da lambar Python bisa hoton da kuma rubutun tambaya.
 
-[নমুনা কোড](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)
+[Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)
 
-এখানে ধাপে ধাপে ব্যাখ্যা দেওয়া হয়েছে:
+Ga bayanin mataki-mataki:
 
-1. **ইমপোর্ট এবং সেটআপ**:
-   - প্রয়োজনীয় লাইব্রেরি এবং মডিউল ইমপোর্ট করা হয়েছে, যার মধ্যে `requests`, `PIL` ইমেজ প্রসেসিংয়ের জন্য এবং `transformers` মডেল এবং প্রসেসিং পরিচালনার জন্য ব্যবহৃত হয়েছে।
+1. **Shigo da abubuwan da ake bukata da Tsarawa**:
+   - Ana shigo da ɗakunan karatu da kuma modules da ake bukata, ciki har da `requests`, `PIL` don sarrafa hotuna, da `transformers` don sarrafa samfurin da kuma aiwatarwa.
 
-2. **ইমেজ লোড এবং প্রদর্শন**:
-   - `demo.png` ফাইলটি `PIL` লাইব্রেরি ব্যবহার করে খোলা হয়েছে এবং প্রদর্শন করা হয়েছে।
+2. **Loda da Nuna Hoton**:
+   - Ana buɗe fayil ɗin hoto (`demo.png`) ta amfani da ɗakin karatu `PIL` kuma ana nuna shi.
 
-3. **প্রম্পট নির্ধারণ**:
-   - একটি বার্তা তৈরি করা হয়েছে যা ইমেজ অন্তর্ভুক্ত করে এবং `plt` (matplotlib) ব্যবহার করে ইমেজ প্রসেসিং এবং সংরক্ষণের জন্য পাইথন কোড তৈরি করার অনুরোধ জানায়।
+3. **Kirkirar Tambaya**:
+   - Saƙo yana ƙirƙirwa wanda ya haɗa da hoton da kuma buƙatar samar da lambar Python don sarrafa hoton da adana shi ta amfani da `plt` (matplotlib).
 
-4. **প্রসেসর লোড করা**:
-   - `AutoProcessor` একটি প্রিট্রেইনড মডেল থেকে `out_dir` ডিরেক্টরি দ্বারা লোড করা হয়েছে। এই প্রসেসরটি টেক্সট এবং ইমেজ ইনপুট পরিচালনা করবে।
+4. **Loda Processor**:
+   - Ana loda `AutoProcessor` daga samfurin da aka horar da shi wanda aka ayyana ta `out_dir` directory. Wannan processor ɗin zai sarrafa rubutu da shigarwar hotuna.
 
-5. **প্রম্পট তৈরি করা**:
-   - `apply_chat_template` পদ্ধতিটি বার্তাটি এমনভাবে ফরম্যাট করতে ব্যবহৃত হয়েছে যা মডেলের জন্য উপযুক্ত প্রম্পট তৈরি করে।
+5. **Kirkirar Tambaya**:
+   - Ana amfani da `apply_chat_template` don tsara saƙon cikin tambaya da ya dace da samfurin.
 
-6. **ইনপুট প্রসেসিং**:
-   - প্রম্পট এবং ইমেজ প্রসেস করা হয়েছে এমন টেনসরে যা মডেল বুঝতে পারে।
+6. **Sarrafawa Shigarwa**:
+   - Ana sarrafa tambaya da hoton cikin tensors da samfurin zai iya fahimta.
 
-7. **জেনারেশন আর্গুমেন্ট সেট করা**:
-   - মডেলের জেনারেশন প্রসেসের জন্য আর্গুমেন্ট নির্ধারণ করা হয়েছে, যার মধ্যে নতুন টোকেনের সর্বাধিক সংখ্যা এবং আউটপুট স্যাম্পল করার প্রয়োজনীয়তা অন্তর্ভুক্ত।
+7. **Kafa Zaɓuɓɓukan Samarwa**:
+   - Ana ayyana zaɓuɓɓuka don tsarin samarwa na samfurin, ciki har da adadin sabon tokens da za a samar da kuma ko za a yi sampling na fitarwa.
 
-8. **কোড জেনারেশন**:
-   - মডেল ইনপুট এবং জেনারেশন আর্গুমেন্টের ভিত্তিতে পাইথন কোড তৈরি করে। `TextStreamer` আউটপুট পরিচালনা করতে ব্যবহৃত হয়েছে, প্রম্পট এবং বিশেষ টোকেনগুলি বাদ দিয়ে।
+8. **Samar da Lambar**:
+   - Samfurin yana samar da lambar Python bisa shigarwar da kuma zaɓuɓɓukan samarwa. Ana amfani da `TextStreamer` don sarrafa fitarwa, yana tsallake tambaya da alamu na musamman.
 
-9. **আউটপুট**:
-   - তৈরি করা কোডটি প্রিন্ট করা হয়েছে, যা ইমেজ প্রসেসিং এবং প্রম্পটে নির্ধারিত হিসাবে সংরক্ষণ করার জন্য পাইথন কোড অন্তর্ভুক্ত করা উচিত।
+9. **Fitarwa**:
+   - Ana buga lambar da aka samar, wanda yakamata ya haɗa da lambar Python don sarrafa hoton da adana shi kamar yadda aka bayyana a tambaya.
 
-এই ডেমোটি দেখায় কীভাবে OpenVino ব্যবহার করে একটি প্রিট্রেইনড মডেলের মাধ্যমে ব্যবহারকারীর ইনপুট এবং ইমেজের ভিত্তিতে ডাইনামিক কোড তৈরি করা যায়।
+Wannan demo yana nuna yadda za a yi amfani da samfurin da aka horar da shi ta OpenVino don samar da lamba ta atomatik bisa shigarwar mai amfani da hotuna.
 
-It seems like "mo" could refer to a specific language or abbreviation, but it is not clear which one you mean. Could you please clarify the language or provide more context? For example, are you referring to Māori, Mongolian, or something else?
+It seems you are requesting a translation into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, is it Maori, Mongolian, or something else? Please provide more details so I can assist you accurately!

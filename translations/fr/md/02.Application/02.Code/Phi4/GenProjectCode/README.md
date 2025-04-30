@@ -1,6 +1,15 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
+  "translation_date": "2025-03-27T12:35:15+00:00",
+  "source_file": "md\\02.Application\\02.Code\\Phi4\\GenProjectCode\\README.md",
+  "language_code": "fr"
+}
+-->
 ## **Utiliser Phi-4-mini-mm pour générer du code**
 
-Phi-4-mini poursuit les solides capacités de codage de la famille Phi. Vous pouvez utiliser Prompt pour poser des questions liées au codage. Bien sûr, avec l'ajout de la capacité de raisonnement avancée, ses compétences en codage sont encore plus puissantes, comme générer des projets en fonction des exigences. Par exemple, générer des projets selon des besoins spécifiques, tels que :
+Phi-4-mini poursuit les solides capacités de codage de la famille Phi. Vous pouvez utiliser Prompt pour poser des questions liées au codage. Bien sûr, avec l'ajout d'une capacité de raisonnement renforcée, il dispose de capacités de codage encore plus puissantes, comme générer des projets en fonction des exigences. Par exemple, générer des projets en fonction des besoins, tels que :
 
 ### **Exigence**
 
@@ -12,8 +21,8 @@ Créer une application de panier d'achat
     - Rechercher une bière par nom, description, slogan, accords mets et prix.
 - Créer une liste de produits sur la page principale.
     - Créer une barre de recherche pour filtrer les produits.
-    - Naviguer vers la page de description lorsqu'un utilisateur clique sur un produit.
-- (Optionnel) Un filtre pour trier les produits par prix.
+    - Naviguer vers la page de description lorsque l'utilisateur clique sur un produit.
+- (Optionnel) Créer un filtre pour trier les produits par prix.
 - Créer un panier d'achat.
     - Ajouter des produits au panier.
     - Supprimer des produits du panier.
@@ -131,4 +140,4 @@ print(response)
 ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide de services de traduction automatique basés sur l'intelligence artificielle. Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

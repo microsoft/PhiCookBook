@@ -1,50 +1,59 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "1e42c399dcc2fa477925d3ef4038d403",
+  "translation_date": "2025-04-03T07:34:53+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-MLflow.md",
+  "language_code": "zh"
+}
+-->
 # MLflow
 
 [MLflow](https://mlflow.org/) 是一个开源平台，旨在管理端到端的机器学习生命周期。
 
 ![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.zh.png)
 
-MLflow 用于管理机器学习生命周期，包括实验、可重复性、部署以及一个集中式模型注册表。目前，MLflow 提供四个组件：
+MLFlow 用于管理机器学习生命周期，包括实验、可复现性、部署以及中央模型注册表。MLFlow 当前提供以下四个组件：
 
-- **MLflow Tracking：** 记录和查询实验、代码、数据配置和结果。
-- **MLflow Projects：** 将数据科学代码打包成可在任何平台上重现运行的格式。
-- **MLflow Models：** 在多种服务环境中部署机器学习模型。
-- **Model Registry：** 在集中式存储库中存储、注释和管理模型。
+- **MLflow Tracking:** 记录和查询实验、代码、数据配置和结果。
+- **MLflow Projects:** 以一种可以在任何平台上复现运行的格式打包数据科学代码。
+- **Mlflow Models:** 在多种服务环境中部署机器学习模型。
+- **Model Registry:** 在中央存储库中存储、注释和管理模型。
 
-它具备跟踪实验、将代码打包成可重复运行的形式，以及共享和部署模型的能力。MLflow 集成到 Databricks 中，并支持多种机器学习库，使其具有库无关性。通过提供 REST API 和 CLI，MLflow 可用于任何机器学习库和编程语言。
+MLFlow 提供了记录实验、将代码打包成可复现运行以及共享和部署模型的功能。MLFlow 集成到 Databricks 中，并支持多种机器学习库，具有库无关性。它可以与任何机器学习库和编程语言一起使用，因为它提供了方便的 REST API 和 CLI。
 
 ![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.zh.png)
 
-MLflow 的主要功能包括：
+MLFlow 的关键功能包括：
 
-- **实验跟踪：** 记录和比较参数及结果。
-- **模型管理：** 将模型部署到各种服务和推理平台。
-- **模型注册表：** 协作管理 MLflow 模型的生命周期，包括版本控制和注释。
-- **项目：** 将机器学习代码打包用于共享或生产环境。
+- **实验跟踪:** 记录并比较参数和结果。
+- **模型管理:** 将模型部署到各种服务和推理平台。
+- **模型注册表:** 协作管理 MLFlow 模型的生命周期，包括版本控制和注释。
+- **项目:** 打包机器学习代码以便共享或生产使用。
 
-MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打包模型以供执行、部署服务以及监控模型。它旨在简化从原型到生产工作流的过程，特别是在云和边缘环境中。
+MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打包模型用于执行、部署服务以及监控模型。它旨在简化从原型到生产工作流的过程，特别是在云和边缘环境中。
 
-## 端到端场景 - 构建封装器并将 Phi-3 作为 MLflow 模型使用
+## 端到端场景 - 构建封装器并将 Phi-3 作为 MLFlow 模型使用
 
-在这个端到端示例中，我们将展示两种不同的方法来围绕 Phi-3 小型语言模型（SLM）构建封装器，然后将其作为 MLflow 模型在本地或云端（例如 Azure Machine Learning 工作区）运行。
+在这个端到端示例中，我们将展示两种不同的方法来围绕 Phi-3 小型语言模型 (SLM) 构建封装器，然后将其作为 MLFlow 模型运行，无论是在本地还是在云端，例如 Azure Machine Learning 工作空间。
 
 ![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.zh.png)
 
 | 项目 | 描述 | 位置 |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | 如果您希望使用 HuggingFace 模型与 MLflow 的实验性 transformers 功能，Transformer Pipeline 是构建封装器的最简单选项。 | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| 自定义 Python 封装器 | 在撰写本文时，Transformer Pipeline 尚不支持为 ONNX 格式的 HuggingFace 模型生成 MLflow 封装器，即使使用了实验性的 optimum Python 包。对于这种情况，您可以为 MLflow 模式构建自定义 Python 封装器。 | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | 如果您希望使用 HuggingFace 模型并结合 MLFlow 的实验性 transformers 功能，Transformer Pipeline 是构建封装器的最简单选择。 | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| 自定义 Python 封装器 | 在撰写本文时，transformer pipeline 尚不支持为 ONNX 格式的 HuggingFace 模型生成 MLFlow 封装器，即使使用实验性的 optimum Python 包也是如此。在这种情况下，您可以为 MLFlow 模型构建自定义 Python 封装器。 | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## 项目：Transformer Pipeline
 
-1. 您需要从 MLflow 和 HuggingFace 获取相关的 Python 包：
+1. 您需要从 MLFlow 和 HuggingFace 安装相关的 Python 包：
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. 接下来，您需要通过 HuggingFace 注册表引用目标 Phi-3 模型来初始化一个 transformer pipeline。如 _Phi-3-mini-4k-instruct_ 的模型卡所示，其任务类型为“文本生成”：
+2. 接下来，您应该通过引用 HuggingFace 注册表中的目标 Phi-3 模型来初始化 transformer pipeline。如 _Phi-3-mini-4k-instruct_ 的模型卡所示，它的任务类型是“文本生成”：
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -53,7 +62,7 @@ MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     )
     ```
 
-3. 现在，您可以将 Phi-3 模型的 transformer pipeline 保存为 MLflow 格式，并提供额外的细节，如目标工件路径、特定模型配置设置和推理 API 类型：
+3. 现在，您可以将 Phi-3 模型的 transformer pipeline 保存为 MLFlow 格式，并提供额外的细节，例如目标工件路径、特定模型配置设置和推理 API 类型：
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -66,7 +75,7 @@ MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
 
 ## 项目：自定义 Python 封装器
 
-1. 在这里我们可以利用微软的 [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) 进行 ONNX 模型的推理以及令牌编码/解码。您需要选择适合目标计算环境的 _onnxruntime_genai_ 包，以下示例针对 CPU：
+1. 在这里我们可以利用微软的 [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) 来实现 ONNX 模型的推理以及令牌编码/解码。您需要选择适用于目标计算的 _onnxruntime_genai_ 包，以下示例针对 CPU：
 
     ``` Python
     import mlflow
@@ -74,7 +83,7 @@ MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     import onnxruntime_genai as og
     ```
 
-2. 我们的自定义类实现了两个方法：_load_context()_ 用于初始化 **Phi-3 Mini 4K Instruct 的 ONNX 模型**、**生成器参数**和**tokenizer**；_predict()_ 用于根据提供的提示生成输出令牌：
+2. 我们的自定义类实现了两个方法：_load_context()_ 用于初始化 **Phi-3 Mini 4K Instruct 的 ONNX 模型**、**生成器参数** 和 **分词器**；以及 _predict()_ 用于根据提供的提示生成输出令牌：
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -105,7 +114,7 @@ MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-3. 现在，您可以使用 _mlflow.pyfunc.log_model()_ 函数为 Phi-3 模型生成一个自定义 Python 封装器（pickle 格式），以及原始 ONNX 模型和所需的依赖项：
+3. 您现在可以使用 _mlflow.pyfunc.log_model()_ 函数为 Phi-3 模型生成一个自定义 Python 封装器（以 pickle 格式），同时包含原始 ONNX 模型和所需的依赖项：
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -120,9 +129,9 @@ MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     )
     ```
 
-## 生成的 MLflow 模型的签名
+## 生成的 MLFlow 模型的签名
 
-1. 在上文 Transformer Pipeline 项目的第 3 步中，我们将 MLflow 模型的任务设置为“_llm/v1/chat_”。这样的指令会生成一个与 OpenAI 的 Chat API 兼容的模型 API 封装器，如下所示：
+1. 在上述 Transformer Pipeline 项目的第 3 步中，我们将 MLFlow 模型的任务设置为“_llm/v1/chat_”。这样的指令会生成一个与 OpenAI 的 Chat API 兼容的模型 API 封装器，如下所示：
 
     ``` Python
     {inputs: 
@@ -133,13 +142,13 @@ MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
       None}
     ```
 
-2. 因此，您可以以以下格式提交您的提示：
+2. 因此，您可以以下格式提交提示：
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-3. 然后，使用与 OpenAI API 兼容的后处理，例如 _response[0][‘choices’][0][‘message’][‘content’]_，将输出美化为类似以下内容：
+3. 然后，使用与 OpenAI API 兼容的后处理，例如 _response[0][‘choices’][0][‘message’][‘content’]_，将输出优化为类似以下的内容：
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -149,7 +158,7 @@ MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-4. 在上文自定义 Python 封装器项目的第 3 步中，我们允许 MLflow 包根据给定的输入示例生成模型的签名。我们的 MLflow 封装器的签名如下所示：
+4. 在上述自定义 Python 封装器项目的第 3 步中，我们允许 MLFlow 包从给定的输入示例生成模型的签名。我们的 MLFlow 封装器签名如下所示：
 
     ``` Python
     {inputs: 
@@ -179,4 +188,4 @@ MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     ```
 
 **免责声明**：  
-本文档使用基于机器的AI翻译服务进行翻译。尽管我们努力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的原始文档作为权威来源。对于关键信息，建议使用专业的人类翻译服务。对于因使用本翻译而导致的任何误解或误读，我们不承担任何责任。
+本文档使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议寻求专业人工翻译。我们不对因使用此翻译而产生的任何误解或错误解释承担责任。

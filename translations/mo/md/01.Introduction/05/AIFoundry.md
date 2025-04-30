@@ -1,45 +1,54 @@
-# **استفاده از Azure AI Foundry برای ارزیابی**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "5dfb4983a2e74e4b5e8317eb16fc2154",
+  "translation_date": "2025-04-04T12:18:19+00:00",
+  "source_file": "md\\01.Introduction\\05\\AIFoundry.md",
+  "language_code": "mo"
+}
+-->
+# **Azure AI Foundry ke amfani da shi don tantancewa**
 
 ![aistudo](../../../../../translated_images/AIFoundry.61da8c74bccc0241ce9a4cb53a170912245871de9235043afcb796ccbc076fdc.mo.png)
 
-چگونه می‌توانید برنامه هوش مصنوعی تولیدی خود را با استفاده از [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ارزیابی کنید. چه در حال ارزیابی مکالمات تک‌مرحله‌ای باشید یا چندمرحله‌ای، Azure AI Foundry ابزارهایی برای ارزیابی عملکرد و ایمنی مدل ارائه می‌دهد.
+Yadda ake tantance aikace-aikacen AI na generative ta amfani da [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Ko kuna tantance tattaunawa guda ko mai yawa, Azure AI Foundry yana ba da kayan aikin tantance aikin samfurin da tsaro.
 
 ![aistudo](../../../../../translated_images/AIPortfolio.5aaa2b25e9157624a4542fe041d66a96a1c1ec6007e4e5aadd926c6ec8ce18b3.mo.png)
 
-## چگونه برنامه‌های هوش مصنوعی تولیدی را با Azure AI Foundry ارزیابی کنیم
-برای جزئیات بیشتر به [مستندات Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) مراجعه کنید.
+## Yadda ake tantance aikace-aikacen AI na generative tare da Azure AI Foundry
+Don karin bayani duba [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
-مراحل شروع به این صورت است:
+Ga matakai don farawa:
 
-## ارزیابی مدل‌های هوش مصنوعی تولیدی در Azure AI Foundry
+## Tantance Samfuran AI na Generative a cikin Azure AI Foundry
 
-**پیش‌نیازها**
+**Abubuwan da ake bukata**
 
-- یک مجموعه داده آزمایشی در فرمت CSV یا JSON.
-- یک مدل هوش مصنوعی تولیدی مستقرشده (مانند Phi-3، GPT 3.5، GPT 4 یا مدل‌های Davinci).
-- یک محیط اجرایی با یک نمونه محاسباتی برای اجرای ارزیابی.
+- Bayanai na gwaji a cikin tsarin CSV ko JSON.
+- Samfurin AI na generative da aka sanya (kamar Phi-3, GPT 3.5, GPT 4, ko Davinci models).
+- Lokaci tare da kwamfuta don gudanar da tantancewa.
 
-## معیارهای ارزیابی داخلی
+## Ma'auni Na Tantancewa Da Aka Gina
 
-Azure AI Foundry امکان ارزیابی مکالمات تک‌مرحله‌ای و همچنین مکالمات پیچیده چندمرحله‌ای را فراهم می‌کند.
-برای سناریوهای بازیابی اطلاعات تقویت‌شده (RAG)، که مدل بر اساس داده‌های خاص عمل می‌کند، می‌توانید عملکرد را با استفاده از معیارهای ارزیابی داخلی بررسی کنید.
-علاوه بر این، می‌توانید سناریوهای عمومی پرسش و پاسخ تک‌مرحله‌ای (غیر-RAG) را ارزیابی کنید.
+Azure AI Foundry yana ba ku damar tantance tattaunawa guda da tattaunawa masu rikitarwa, masu yawa.
+Don yanayin Retrieval Augmented Generation (RAG), inda samfurin ya dogara da bayanai na musamman, za ku iya tantance aiki ta amfani da ma'auni na tantancewa da aka gina.
+Bugu da ƙari, za ku iya tantance yanayin amsa tambaya guda (ba RAG).
 
-## ایجاد یک اجرای ارزیابی
+## Ƙirƙirar Gudun Tantancewa
 
-از رابط کاربری Azure AI Foundry به صفحه Evaluate یا Prompt Flow بروید.
-از ویزارد ایجاد ارزیابی برای تنظیم یک اجرای ارزیابی استفاده کنید. یک نام اختیاری برای ارزیابی خود ارائه دهید.
-سناریویی را که با اهداف برنامه شما همخوانی دارد انتخاب کنید.
-یک یا چند معیار ارزیابی برای سنجش خروجی مدل انتخاب کنید.
+Daga cikin UI na Azure AI Foundry, ku je zuwa shafin Evaluate ko shafin Prompt Flow.
+Bi wizard na ƙirƙirar tantancewa don saita gudun tantancewa. Ba da sunan zaɓi don tantancewarku.
+Zaɓi yanayin da ya dace da burin aikace-aikacenku.
+Zaɓi ɗaya ko fiye da ma'auni na tantancewa don tantance fitarwar samfurin.
 
-## جریان ارزیابی سفارشی (اختیاری)
+## Tsarin Tantancewa Na Musamman (Zabi)
 
-برای انعطاف بیشتر، می‌توانید یک جریان ارزیابی سفارشی ایجاد کنید. فرآیند ارزیابی را بر اساس نیازهای خاص خود سفارشی کنید.
+Don ƙarin sassauci, za ku iya kafa tsarin tantancewa na musamman. Musanya tsarin tantancewa bisa ga bukatunku na musamman.
 
-## مشاهده نتایج
+## Duba Sakamako
 
-پس از اجرای ارزیابی، معیارهای ارزیابی دقیق را در Azure AI Foundry ثبت، مشاهده و تحلیل کنید. بینش‌هایی درباره قابلیت‌ها و محدودیت‌های برنامه خود کسب کنید.
+Bayan gudanar da tantancewa, ku shiga, ku duba, kuma ku bincika ma'auni na tantancewa da aka yi a Azure AI Foundry. Samu fahimta game da ƙwarewar aikace-aikacenku da gazawarsa.
 
-**توجه** Azure AI Foundry در حال حاضر در مرحله پیش‌نمایش عمومی است، بنابراین از آن برای اهداف آزمایشی و توسعه‌ای استفاده کنید. برای بارهای کاری تولیدی، گزینه‌های دیگر را در نظر بگیرید. مستندات رسمی [AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) را برای جزئیات بیشتر و دستورالعمل‌های گام‌به‌گام بررسی کنید.
+**Lura** Azure AI Foundry a halin yanzu yana cikin gwajin jama'a, don haka ku yi amfani da shi don gwaji da dalilai na ci gaba. Don nauyin aikin samarwa, ku yi la'akari da sauran zaɓuɓɓuka. Ku bincika [AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) don ƙarin bayani da umarnin mataki-mataki.
 
-It seems like "mo" might refer to a specific language or dialect. Could you clarify which language you mean by "mo"? For example, are you referring to Māori, Mon (spoken in Myanmar), or another language? Let me know so I can assist you accurately!
+It seems like you are requesting translation into "mo," but could you clarify what "mo" refers to? Is it a specific language or abbreviation? For example, are you referring to Maori, Mongolian, or another language? Please provide more details so I can assist you accurately!

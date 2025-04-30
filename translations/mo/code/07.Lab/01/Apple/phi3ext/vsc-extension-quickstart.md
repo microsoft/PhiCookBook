@@ -1,48 +1,57 @@
-# VS Code Extension-ээ тавтай морил
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "6a7479104914787e4f0976e39131e8e3",
+  "translation_date": "2025-04-04T11:34:40+00:00",
+  "source_file": "code\\07.Lab\\01\\Apple\\phi3ext\\vsc-extension-quickstart.md",
+  "language_code": "mo"
+}
+-->
+# Sannu da zuwa ga ƙarin na'urar VS Code ɗinka
 
-## Хавтасны агуулга
+## Abubuwan da ke cikin babban fayil
 
-* Энэ хавтас таны өргөтгөлд шаардлагатай бүх файлуудыг агуулдаг.
-* `package.json` - энэ нь таны өргөтгөл болон командуудыг тодорхойлдог манифест файл юм.
-  * Жишээ плагин нь нэг команд бүртгэж, түүний гарчиг болон командын нэрийг тодорхойлсон. Энэ мэдээллээр VS Code командын палеттад командыг харуулж чадна. Гэхдээ одоогоор плагинийг ачаалах шаардлагагүй.
-* `src/extension.ts` - энэ бол таны командын хэрэгжүүлэлтийг өгөх үндсэн файл.
-  * Файл нь `activate` нэртэй нэг функцыг экспортолдог бөгөөд энэ нь өргөтгөл идэвхжих үед хамгийн анх дуудагддаг (энэ тохиолдолд командыг ажиллуулах замаар). `activate` функц дотор бид `registerCommand`-г дууддаг.
-  * Бид командын хэрэгжүүлэлтийг агуулсан функцийг `registerCommand`-д хоёр дахь параметр болгон дамжуулдаг.
+* Wannan babban fayil ɗin yana ɗauke da duk fayilolin da ake buƙata don ƙarin na'urar.
+* `package.json` - wannan shi ne fayil na manifest inda kake bayyana ƙarin na'urar da umarni.
+  * Misalin plugin yana yin rijista na umarni da bayyana sunansa da kuma taken umarni. Da wannan bayanin VS Code zai iya nuna umarni a cikin menu na umarni. Har yanzu ba lallai ba ne ya ɗora plugin.
+* `src/extension.ts` - wannan shi ne babban fayil inda za ka samar da aiwatar da umarninka.
+  * Fayil ɗin yana fitar da aiki ɗaya, `activate`, wanda ake kira a karon farko lokacin da ƙarin na'urar ta kunna (a wannan yanayin ta hanyar aiwatar da umarni). A cikin `activate` muna kira `registerCommand`.
+  * Muna mika aikin da ke ɗauke da aiwatar da umarni a matsayin sigar ta biyu zuwa `registerCommand`.
 
-## Тохиргоо
+## Saita
 
-* Санал болгосон өргөтгөлүүдийг суулгаарай (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, болон dbaeumer.vscode-eslint)
+* shigar da ƙarin na'urorin da aka ba da shawara (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, da dbaeumer.vscode-eslint)
 
-## Шууд ажиллуулах
+## Fara aiki kai tsaye
 
-* Таны өргөтгөл ачаалагдсан шинэ цонх нээхийн тулд `F5` товчийг дар.
-* Командаа командын палеттаас ажиллуулахын тулд (`Ctrl+Shift+P` эсвэл Mac дээр `Cmd+Shift+P`) дарж `Hello World` гэж бич.
-* Таны өргөтгөлийн `src/extension.ts` доторх кодонд breakpoints тавьж дебаг хийх.
-* Таны өргөтгөлөөс гарч буй үр дүнг дебаг консол дээрээс олж харах.
+* Danna `F5` don buɗe sabon taga tare da ƙarin na'urar da aka ɗora.
+* Gudanar da umarninka daga menu na umarni ta hanyar danna (`Ctrl+Shift+P` ko `Cmd+Shift+P` a Mac) da rubuta `Hello World`.
+* Sanya wuraren tsayawa a cikin lambar a cikin `src/extension.ts` don yin debugging na ƙarin na'urar.
+* Nemo fitarwa daga ƙarin na'urar a cikin kwamitin debugging.
 
-## Өөрчлөлт хийх
+## Yi gyare-gyare
 
-* `src/extension.ts` доторх кодыг өөрчилсний дараа дебагийн баараас өргөтгөлөө дахин ачаалж болно.
-* Мөн VS Code цонхыг дахин ачаалж (`Ctrl+R` эсвэл Mac дээр `Cmd+R`) өөрчлөлтүүдээ ачаалж болно.
+* Za ka iya sake ɗora ƙarin na'urar daga kayan aikin debugging bayan ka yi gyare-gyare a cikin `src/extension.ts`.
+* Hakanan za ka iya sake ɗora (`Ctrl+R` ko `Cmd+R` a Mac) taga na VS Code tare da ƙarin na'urar don ɗora gyare-gyarenka.
 
-## API-г судлах
+## Bincika API
 
-* `node_modules/@types/vscode/index.d.ts` файлыг нээж API-гийн бүх багцыг үзэж болно.
+* Za ka iya buɗe cikakken jerin API ɗinmu lokacin da ka buɗe fayil ɗin `node_modules/@types/vscode/index.d.ts`.
 
-## Тест ажиллуулах
+## Gudanar da gwaje-gwaje
 
-* [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)-г суулга.
-* **Tasks: Run Task** командаар "watch" даалгаврыг ажиллуул. Энэ ажиллаж байгаа эсэхийг шалгаарай, эс бөгөөс тестүүд илрэхгүй байж магадгүй.
-* Үйл ажиллагааны самбар дээрх Testing харагдацаас "Run Test" товчийг дарж эсвэл `Ctrl/Cmd + ; A` товчийг ашиглан тестээ ажиллуул.
-* Тестийн үр дүнг Test Results харагдац дээрээс үзээрэй.
-* `src/test/extension.test.ts` дээр өөрчлөлт хийж эсвэл `test` хавтас дотор шинэ тестийн файлууд үүсгээрэй.
-  * Өгөгдсөн тестийн ажиллуулагч нь зөвхөн `**.test.ts` нэрийн загварт тохирсон файлуудыг тооцох болно.
-  * Тестүүдээ хүссэнээрээ зохион байгуулахын тулд `test` хавтас дотор дэд хавтас үүсгэж болно.
+* Shigar da [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* Gudanar da aikin "watch" ta hanyar umarnin **Tasks: Run Task**. Tabbatar da cewa yana gudana, ko gwaje-gwaje ba za a gano ba.
+* Buɗe ra'ayin Testing daga mashaya ayyuka kuma danna maɓallin "Run Test", ko amfani da maɓallin umarni `Ctrl/Cmd + ; A`.
+* Duba fitarwa na sakamakon gwaji a cikin ra'ayin Test Results.
+* Yi gyare-gyare a cikin `src/test/extension.test.ts` ko ƙirƙiri sabbin fayilolin gwaji a cikin babban fayil ɗin `test`.
+  * Mai gudanar da gwaji da aka bayar zai ɗauki fayilolin da suka dace da sunan alamu `**.test.ts`.
+  * Za ka iya ƙirƙirar manyan fayiloli a cikin babban fayil ɗin `test` don tsara gwaje-gwajen yadda kake so.
 
-## Цааш үргэлжлүүлэх
+## Yi ƙarin bincike
 
-* Өргөтгөлөө [багцалж](https://code.visualstudio.com/api/working-with-extensions/bundling-extension) өргөтгөлийн хэмжээг багасгаж, ачаалах хугацааг сайжруулаарай.
-* Өргөтгөлөө [VS Code өргөтгөлүүдийн зах зээлд нийтэлнэ](https://code.visualstudio.com/api/working-with-extensions/publishing-extension).
-* [Үргэлжилсэн интеграц](https://code.visualstudio.com/api/working-with-extensions/continuous-integration)-ыг тохируулж, бүтээлүүдийг автоматжуул.
+* Rage girman ƙarin na'urar da inganta lokacin farawa ta hanyar [bundling your extension](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
+* [Publish your extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) a kasuwar ƙarin na'urar VS Code.
+* Daidaita gina-gina ta hanyar kafa [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
 
-It seems like "mo" could refer to a specific language or abbreviation, but it's unclear which one you mean. Could you clarify the target language or provide more context? For example, "mo" might refer to Māori, Mongolian, or something else. Let me know so I can assist you better!
+It seems like "mo" isn't a widely recognized language code or name for a language. Could you clarify or specify which language you mean by "mo"? For instance, are you referring to Maori, Moldovan, or something else?

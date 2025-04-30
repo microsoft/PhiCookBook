@@ -1,8 +1,17 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "b7078bd9f16589c50139fbba8674de82",
+  "translation_date": "2025-03-27T13:14:08+00:00",
+  "source_file": "md\\02.Application\\07.FunctionCalling\\Phi4\\FunctionCallingBasic\\README.md",
+  "language_code": "de"
+}
+-->
 ## **Funktionsaufruf in Phi-4-mini**
 
-Der Funktionsaufruf wurde erstmals in der Phi-Familie eingeführt, und jetzt können Sie ihn mit Phi-4-mini nutzen.
+Funktionsaufrufe wurden erstmals in der Phi-Familie eingeführt, und jetzt können Sie sie mit Phi-4-mini nutzen.
 
-Dieses Beispiel zeigt die Simulation von Premier-League-Ergebnissen. Das Ziel ist, dass Phi-4-mini Echtzeit-Spielinformationen liefert. Unten finden Sie den Beispielcode:
+Dieses Beispiel zeigt die Simulation von Premier-League-Ergebnissen. Ziel ist es, dass Phi-4-mini Echtzeit-Spielinformationen liefert. Unten finden Sie den Beispielcode:
 
 
 
@@ -100,4 +109,4 @@ print(messages)
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit KI-gestützten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

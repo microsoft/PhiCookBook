@@ -1,35 +1,44 @@
-## الاستدلال باستخدام Kaito
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
+  "translation_date": "2025-03-27T07:37:50+00:00",
+  "source_file": "md\\01.Introduction\\03\\Kaito_Inference.md",
+  "language_code": "ar"
+}
+-->
+## الاستنتاج باستخدام Kaito
 
-[Kaito](https://github.com/Azure/kaito) هو مشغل يقوم بأتمتة نشر نموذج الاستدلال AI/ML داخل مجموعة Kubernetes.
+[Kaito](https://github.com/Azure/kaito) هو مشغل يقوم بأتمتة نشر نموذج الاستنتاج AI/ML في مجموعة Kubernetes.
 
-يمتلك Kaito الفروقات الرئيسية التالية مقارنة بمعظم منهجيات نشر النماذج التقليدية المبنية على بنية تحتية تعتمد على الأجهزة الافتراضية:
+يمتلك Kaito الفروقات الرئيسية التالية مقارنة بمعظم منهجيات نشر النماذج السائدة المبنية على بنية تحتية تعتمد على الآلات الافتراضية:
 
-- إدارة ملفات النماذج باستخدام صور الحاويات. يتم توفير خادم HTTP لإجراء مكالمات الاستدلال باستخدام مكتبة النماذج.
-- تجنب ضبط معلمات النشر لتناسب أجهزة GPU من خلال توفير إعدادات مسبقة.
-- التوفير التلقائي لعقد GPU استنادًا إلى متطلبات النموذج.
-- استضافة صور النماذج الكبيرة في سجل الحاويات العام الخاص بـ Microsoft (MCR) إذا سمحت الرخصة بذلك.
+- إدارة ملفات النماذج باستخدام صور الحاويات. يتم توفير خادم HTTP لإجراء استدعاءات الاستنتاج باستخدام مكتبة النموذج.
+- تجنب ضبط معلمات النشر لتناسب أجهزة GPU من خلال توفير تكوينات مُعدة مسبقًا.
+- توفير عقد GPU تلقائيًا بناءً على متطلبات النموذج.
+- استضافة صور النماذج الكبيرة في سجل الحاويات العام الخاص بـ Microsoft (MCR) إذا سمح الترخيص بذلك.
 
-باستخدام Kaito، يتم تبسيط سير العمل الخاص بإعداد نماذج استدلال AI الكبيرة في Kubernetes بشكل كبير.
+باستخدام Kaito، يتم تبسيط سير العمل لتبني نماذج الاستنتاج الكبيرة للذكاء الاصطناعي في Kubernetes بشكل كبير.
 
-## الهيكلية
+## البنية المعمارية
 
-يتبع Kaito النمط الكلاسيكي لـ Kubernetes المتمثل في تعريف الموارد المخصصة (CRD) ووحدات التحكم. يقوم المستخدم بإدارة مورد مخصص `workspace` يصف متطلبات GPU ومواصفات الاستدلال. ستقوم وحدات التحكم في Kaito بأتمتة عملية النشر من خلال مطابقة المورد المخصص `workspace`.
-<div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+يتبع Kaito النمط الكلاسيكي لتعريف الموارد المخصصة (CRD) في Kubernetes/نمط تصميم وحدة التحكم. يقوم المستخدم بإدارة مورد مخصص `workspace` يصف متطلبات GPU ومواصفات الاستنتاج. ستقوم وحدات تحكم Kaito بأتمتة عملية النشر من خلال مطابقة المورد المخصص `workspace`.
+<div align="right">
+  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="بنية Kaito">
 </div>
 
-تعرض الصورة أعلاه نظرة عامة على هيكلية Kaito. المكونات الرئيسية تشمل:
+تُظهر الصورة أعلاه نظرة عامة على بنية Kaito. وتتألف مكوناته الرئيسية من:
 
-- **وحدة التحكم في مساحة العمل**: تقوم بمطابقة المورد المخصص `workspace`، وإنشاء الموارد المخصصة `machine` (الموضحة أدناه) لتفعيل التوفير التلقائي للعقد، وإنشاء عبء العمل الخاص بالاستدلال (`deployment` أو `statefulset`) بناءً على إعدادات النماذج المسبقة.
-- **وحدة التحكم في توفير العقد**: اسم وحدة التحكم هو *gpu-provisioner* في [مخطط gpu-provisioner الخاص بـ helm](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). تستخدم CRD `machine` المستمدة من [Karpenter](https://sigs.k8s.io/karpenter) للتفاعل مع وحدة التحكم في مساحة العمل. تتكامل مع واجهات برمجة التطبيقات الخاصة بـ Azure Kubernetes Service (AKS) لإضافة عقد GPU جديدة إلى مجموعة AKS.
+- **وحدة تحكم مساحة العمل**: تقوم بمطابقة المورد المخصص `workspace`، وتُنشئ موارد مخصصة `machine` (موضحة أدناه) لتفعيل التوفير التلقائي للعقد، وتُنشئ عبء العمل الخاص بالاستنتاج (`deployment` أو `statefulset`) بناءً على التكوينات المُعدة مسبقًا للنموذج.
+- **وحدة تحكم توفير العقد**: اسم وحدة التحكم هو *gpu-provisioner* في [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). تستخدم CRD `machine` التي نشأت من [Karpenter](https://sigs.k8s.io/karpenter) للتفاعل مع وحدة تحكم مساحة العمل. تتكامل مع واجهات برمجة التطبيقات الخاصة بـ Azure Kubernetes Service (AKS) لإضافة عقد GPU جديدة إلى مجموعة AKS.
 > ملاحظة: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) هو مكون مفتوح المصدر. يمكن استبداله بوحدات تحكم أخرى إذا كانت تدعم واجهات برمجة التطبيقات الخاصة بـ [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## التثبيت
 
-يرجى مراجعة إرشادات التثبيت [هنا](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+يرجى الاطلاع على إرشادات التثبيت [هنا](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## البدء السريع لاستدلال Phi-3
-[كود مثال لاستدلال Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## بدء سريع لاستنتاج Phi-3
+[كود استنتاج Phi-3 التجريبي](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -82,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-بعد ذلك، يمكن العثور على عنوان IP الخاص بخدمة الاستدلال واستخدام بود `curl` مؤقت لاختبار نقطة نهاية الخدمة داخل المجموعة.
+بعد ذلك، يمكن العثور على عنوان IP الخاص بخدمة الاستنتاج واستخدام حاوية `curl` مؤقتة لاختبار نقطة النهاية للخدمة في المجموعة.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -93,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## البدء السريع لاستدلال Phi-3 باستخدام المحولات
+## بدء سريع لاستنتاج Phi-3 باستخدام Adapters
 
-بعد تثبيت Kaito، يمكن تجربة الأوامر التالية لبدء خدمة الاستدلال.
+بعد تثبيت Kaito، يمكن تجربة الأوامر التالية لبدء خدمة استنتاج.
 
-[كود مثال لاستدلال Phi-3 باستخدام المحولات](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[كود استنتاج Phi-3 التجريبي باستخدام Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -154,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-بعد ذلك، يمكن العثور على عنوان IP الخاص بخدمة الاستدلال واستخدام بود `curl` مؤقت لاختبار نقطة نهاية الخدمة داخل المجموعة.
+بعد ذلك، يمكن العثور على عنوان IP الخاص بخدمة الاستنتاج واستخدام حاوية `curl` مؤقتة لاختبار نقطة النهاية للخدمة في المجموعة.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -166,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمات الترجمة الآلية المعتمدة على الذكاء الاصطناعي. على الرغم من أننا نسعى لتحقيق الدقة، يُرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي والموثوق. للحصول على معلومات حاسمة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ينشأ عن استخدام هذه الترجمة.
+تم ترجمة هذه الوثيقة باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يُرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار الوثيقة الأصلية بلغتها الأصلية المصدر الموثوق. للحصول على معلومات مهمة، يُوصى باستخدام ترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.

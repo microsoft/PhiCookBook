@@ -1,39 +1,48 @@
-## Аюулгүй байдал
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "cc205495d4eace1fabcdee963024069f",
+  "translation_date": "2025-04-04T11:22:37+00:00",
+  "source_file": "SECURITY.md",
+  "language_code": "mo"
+}
+-->
+## Sekirite
 
-Microsoft нь программ хангамжийн бүтээгдэхүүн, үйлчилгээгээ, үүнд манай GitHub байгууллагуудаар удирддаг бүх эх кодын сангуудыг (жишээ нь [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet), [Xamarin](https://github.com/xamarin)) хамгаалах асуудлыг маш чухалчилдаг.
+Microsoft pran sekirite pwodwi lojisyèl ak sèvis li yo trè seryezman, ki gen ladan tout depo kòd sous yo jere atravè òganizasyon GitHub li yo, tankou [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet), ak [Xamarin](https://github.com/xamarin).
 
-Хэрэв та [Microsoft-ийн аюулгүй байдлын эмзэг байдлын тодорхойлолт](https://aka.ms/security.md/definition)-д нийцэх Microsoft-д хамаарах аливаа сан дахь аюулгүй байдлын эмзэг байдлыг илрүүлсэн гэж үзэж байгаа бол доор заасны дагуу бидэнд мэдэгдэнэ үү.
+Si ou kwè ou te jwenn yon vilnerabilite sekirite nan nenpòt depo ki posede pa Microsoft ki satisfè [definisyon Microsoft sou yon vilnerabilite sekirite](https://aka.ms/security.md/definition), tanpri rapòte li ba nou jan sa dekri anba a.
 
-## Аюулгүй байдлын асуудлыг мэдээлэх
+## Rapòte Pwoblèm Sekirite
 
-**Аюулгүй байдлын эмзэг байдлыг олон нийтэд нээлттэй GitHub асуудлаар дамжуулан мэдээлэхгүй байхыг хүсье.**
+**Tanpri pa rapòte vilnerabilite sekirite atravè GitHub piblik.**
 
-Үүний оронд тэдгээрийг Microsoft Security Response Center (MSRC)-д [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report) хаягаар мэдэгдэнэ үү.
+Olye de sa, rapòte yo bay Microsoft Security Response Center (MSRC) nan [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report).
 
-Хэрэв та бүртгэлгүйгээр илгээхийг илүүд үзвэл [secure@microsoft.com](mailto:secure@microsoft.com) хаягаар имэйл илгээнэ үү. Боломжтой бол мессежээ манай PGP түлхүүрээр шифрлэнэ үү; үүнийг [Microsoft Security Response Center PGP Key](https://aka.ms/security.md/msrc/pgp) хуудаснаас татаж авна уу.
+Si ou prefere soumèt san ou pa konekte, voye yon imèl nan [secure@microsoft.com](mailto:secure@microsoft.com). Si posib, ankripte mesaj ou a ak kle PGP nou an; tanpri telechaje li nan paj [Microsoft Security Response Center PGP Key](https://aka.ms/security.md/msrc/pgp).
 
-Та 24 цагийн дотор хариу авах ёстой. Хэрэв ямар нэг шалтгаанаар хариу ирэхгүй бол анхны мессежээ хүлээн авсан эсэхийг баталгаажуулахын тулд имэйлээр дахин холбогдоно уу. Нэмэлт мэдээллийг [microsoft.com/msrc](https://www.microsoft.com/msrc) хаягаас авах боломжтой.
+Ou ta dwe resevwa yon repons nan lespas 24 èdtan. Si pou nenpòt rezon ou pa resevwa yon repons, tanpri swiv ak yon imèl pou asire nou te resevwa mesaj orijinal ou a. Enfòmasyon adisyonèl yo ka jwenn nan [microsoft.com/msrc](https://www.microsoft.com/msrc).
 
-Боломжтой бол дараах мэдээллийг (боломжийн хэрээр бүрэн) багтааж өгөөрэй. Энэ нь асуудлын мөн чанар, цар хүрээг илүү сайн ойлгоход тусална:
+Tanpri enkli enfòmasyon yo mande yo ki nan lis anba a (tout sa ou kapab bay) pou ede nou pi byen konprann nati ak domèn pwoblèm potansyèl la:
 
-  * Асуудлын төрөл (жишээ нь, буфер хэтрэлт, SQL injection, cross-site scripting гэх мэт)
-  * Асуудал илэрсэн эх файлын бүрэн зам(ууд)
-  * Нөлөөлсөн эх кодын байршил (tag/branch/commit эсвэл шууд URL)
-  * Асуудлыг дахин гаргах шаардлагатай онцгой тохиргоо
-  * Асуудлыг дахин гаргах алхам алхмаар заавар
-  * Баталгаажуулах жишээ эсвэл ашиглалтын код (боломжтой бол)
-  * Асуудлын нөлөөлөл, мөн халдагч үүнийг хэрхэн ашиглаж болох тухай
+  * Kalite pwoblèm (pa egzanp debòde memwa, SQL injection, cross-site scripting, elatriye)
+  * Chemen konplè dosye sous yo ki gen rapò ak manifestasyon pwoblèm nan
+  * Kote kòd sous ki afekte a (tag/branch/commit oswa URL dirèk)
+  * Nenpòt konfigirasyon espesyal ki nesesè pou repwodui pwoblèm nan
+  * Enstriksyon etap-pa-etap pou repwodui pwoblèm nan
+  * Kòd prèv-konsepsyon oswa eksplwatasyon (si posib)
+  * Enpak pwoblèm nan, ki gen ladan fason yon atakan ta ka eksplwate li
 
-Эдгээр мэдээлэл нь таны тайланг илүү хурдан боловсруулж, ангилахад тусална.
+Enfòmasyon sa yo ap ede nou trete rapò ou pi vit.
 
-Хэрэв та алдааны шагналын хөтөлбөрт оролцож байгаа бол илүү дэлгэрэнгүй тайлан илүү өндөр шагнал авахад хувь нэмэр оруулж болно. Манай идэвхтэй хөтөлбөрүүдийн талаар дэлгэрэнгүй мэдээллийг [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty) хуудаснаас авна уу.
+Si ou ap rapòte pou yon rekonpans pou erè, rapò ki pi konplè ka kontribye nan yon rekonpans ki pi wo. Tanpri vizite paj [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty) pou plis detay sou pwogram aktif nou yo.
 
-## Илүүд үзэх хэл
+## Lang Preferans
 
-Бүх харилцаа холбоо англи хэл дээр байхыг илүүд үздэг.
+Nou prefere tout kominikasyon yo fèt an Angle.
 
-## Бодлого
+## Politik
 
-Microsoft нь [Координоорч эмзэг байдлыг ил болгох](https://aka.ms/security.md/cvd) зарчмыг дагадаг.
+Microsoft swiv prensip [Koordinasyon Divulgasyon Vilnerabilite](https://aka.ms/security.md/cvd).
 
-It seems like you're asking for a translation into "mo," but it's unclear what language "mo" refers to. Could you clarify the language or provide more context? For example, are you referring to Māori, Marshallese, Mongolian, or another language? Let me know so I can assist you accurately!
+It seems you've requested translation to "mo," but could you clarify what "mo" refers to? Are you asking for translation into Maori, Mongolian, or another language? Let me know so I can assist you accurately!

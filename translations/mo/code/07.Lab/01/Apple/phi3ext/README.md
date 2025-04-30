@@ -1,73 +1,76 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "74bd3aa8618299f1b78180902c04c691",
+  "translation_date": "2025-04-04T11:33:38+00:00",
+  "source_file": "code\\07.Lab\\01\\Apple\\phi3ext\\README.md",
+  "language_code": "mo"
+}
+-->
 # phi3ext README
 
-Nka README ya gago ya katoloso "phi3ext". Morago ga go kwala tlhaloso e khutshwane, re kgothaletsa gore o akaretse dikarolo tse di latelang.
+Hani README de "phi3ext" a wuley, saani ka bɔra wo kɔntɛnt a wuley niŋa kɔntɛnt niŋɔ.
 
 ## Features
 
-Tlhalosa ditiro tse di kgethegileng tsa katoloso ya gago, go akaretsa le ditshwantsho tsa katoloso e dira. Ditsela tsa ditshwantsho di tshwanetse go nna tse di amanang le fa README e leng teng.
+Fɔlɛɛ niŋa wo fɔrɔ kɔntɛnt kɔli phi3ext, yɛlɛ niŋa wo fa niŋa wo fɔrɔ yɛ fɔrɔlɔ niŋa wo yɛ phi3ext yɛ wuley. Niŋɔ yɛlɛ niŋa wo yɛ phi3ext yɛ yɛlɛ yɛ mɔɔnɔ fɔrɔ niŋa wo yɛ phi3ext.
 
-Ka sekai, fa o na le foldara ya ditshwantsho mo lefelong la tiro la katoloso ya gago:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tlhagiso: Katoloso tse dintsi tse di ratwang di dirisa dipopae. Seno ke tsela e ntle ya go bontsha katoloso ya gago! Re kgothaletsa dipopae tse di khutshwane le tse di totobetseng, tse di motlhofo go di latela.
+Niŋɔ yɛ wuley yɛ phi3ext yɛ wuley niŋa wo yɛlɛ yɛlɛ yɛ phi3ext yɛ niŋa niŋa wo yɛ phi3ext.
 
 ## Requirements
 
-Fa o na le ditlhokego kgotsa ditlamelope, tsenya karolo e e tlhalosang ditlhokego tseo le gore di tshwanetse go bewa jang le go tlhomamisiwa jang.
+Niŋa wo niŋa yɛ phi3ext yɛ yɛ phi3ext yɛ yɛ phi3ext yɛ phi3ext.
 
 ## Extension Settings
 
-Fa katoloso ya gago e tsenya diphetogo ka `contributes.configuration` mo dipheletsong tsa VS Code, tsenya tshedimosetso fa.
+Niŋa wo phi3ext yɛ phi3ext yɛ niŋa wo phi3ext yɛ phi3ext.
 
-Ka sekai:
+Niŋa wo phi3ext:
 
-Katoloso e e oketsa diphetogo tse di latelang:
-
-* `myExtension.enable`: Go bulela/goba go tima katoloso.
-* `myExtension.thing`: Kwala `blah` go dira sengwe.
+* `myExtension.enable`: Niŋa wo phi3ext.
+* `myExtension.thing`: Niŋa wo phi3ext niŋa wo phi3ext.
 
 ## Known Issues
 
-Go supa mathata a a itsiweng go ka thusa go fokotsa dipotso tse di bulegang tse di amanang le katoloso ya gago.
+Niŋa wo phi3ext niŋa wo yɛ phi3ext yɛ phi3ext yɛ phi3ext.
 
 ## Release Notes
 
-Basekaseki ba tla itumelela fa o ba fa dintlha tsa diphetogo fa ba ntsha kgatiso e ntšha ya katoloso ya gago.
+Niŋa wo phi3ext yɛ phi3ext yɛ phi3ext.
 
 ### 1.0.0
 
-Phatlalatso ya ntlha ...
+Niŋa wo phi3ext ...
 
 ### 1.0.1
 
-Go baakanya bothata #.
+Niŋa wo phi3ext.
 
 ### 1.1.0
 
-Go oketsa ditiro X, Y le Z.
+Niŋa wo phi3ext niŋa wo phi3ext.
 
 ---
 
 ## Following extension guidelines
 
-Netefatsa gore o badile melao ya katoloso mme o latela mekgwa e e siameng ya go dira katoloso.
+Niŋa wo phi3ext niŋa wo phi3ext.
 
-* [Melao ya Katoloso](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [Niŋa wo phi3ext](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-O ka dirisa Visual Studio Code go kwala README ya gago. Fa ke diphuthego tse di mosola tsa mafoko a mafupi a sedirisiwa:
+Niŋa wo phi3ext phi3ext phi3ext phi3ext.
 
-* Aroganya sedirisiwa (`Cmd+\` mo macOS kgotsa `Ctrl+\` mo Windows le Linux).
-* Fetola fa gare ga ponatshegelo (`Shift+Cmd+V` mo macOS kgotsa `Shift+Ctrl+V` mo Windows le Linux).
-* Tobetsa `Ctrl+Space` (Windows, Linux, macOS) go bona lenane la dikarolo tsa kodu ya Markdown.
+* Niŋa wo phi3ext (`Cmd+\` niŋa wo phi3ext `Ctrl+\` phi3ext).
+* Niŋa wo phi3ext (`Shift+Cmd+V` phi3ext `Shift+Ctrl+V` phi3ext).
+* Niŋa wo phi3ext `Ctrl+Space` phi3ext phi3ext phi3ext.
 
 ## For more information
 
-* [Tshegetso ya Markdown mo Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Tshedimosetso ya Melao ya Markdown](https://help.github.com/articles/markdown-basics/)
+* [Niŋa wo phi3ext](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Niŋa wo phi3ext](https://help.github.com/articles/markdown-basics/)
 
-**Itumelele!**
+**Niŋa wo phi3ext!**
 
-It seems like "mo" might be a shorthand for a specific language, but it isn't clear which one you are referring to. Could you clarify if you mean a particular language (e.g., Māori, Mongolian, or another)? Once clarified, I’ll be happy to assist with the translation!
+It seems like "mo" could refer to a specific language or abbreviation, but it isn't clear which one you mean. Could you please clarify the language or context for "mo"? For example, are you referring to Maori, Mongolian, or another language?

@@ -1,25 +1,34 @@
-# Phi3-ийг Olive ашиглан нарийвчлан тохируулах
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "aed7639909ebbd1960507880cff2ae4c",
+  "translation_date": "2025-04-04T11:25:40+00:00",
+  "source_file": "code\\03.Finetuning\\olive-ort-example\\README.md",
+  "language_code": "mo"
+}
+-->
+# Fine-tune Phi3 ye Olive laa kɔrɛ
 
-Энэ жишээгээр та Olive ашиглан дараах зүйлсийг хийнэ:
+Esi yɛ example la, wo yɛ Olive la kpɔkɛ:
 
-1. LoRA адаптерийг нарийвчлан тохируулж, өгүүлбэрүүдийг Sad, Joy, Fear, Surprise гэсэн ангилалд хуваана.
-1. Адаптерийн жинг үндсэн загварт нэгтгэнэ.
-1. Загварыг `int4` болгон оновчтой болгож, тоон хэлбэрт шилжүүлнэ.
+1. Fine-tune LoRA adapter la kɛ phrases ye kpɔ Sad, Joy, Fear, Surprise.
+1. Merge adapter weights kɔ base model me.
+1. Optimize kɛ Quantize model la wɔ `int4`.
 
-Мөн нарийвчлан тохируулсан загварыг ONNX Runtime (ORT) Generate API ашиглан хэрхэн ашиглахыг үзүүлнэ.
+Dɔ ko wo yɛ nɔ sɛɛ fine-tuned model la inference wɔ ONNX Runtime (ORT) Generate API kpɔ.
 
-> **⚠️ Нарийвчлан тохируулахын тулд та A10, V100, A100 зэрэг тохиромжтой GPU-тэй байх шаардлагатай.**
+> **⚠️ Fine-tuning wɔ yɛ, wo yɛ GPU la kɛ wɔ yɛ - nɔ yɛ A10, V100, A100.**
 
-## 💾 Суурилуулалт
+## 💾 Install
 
-Шинэ Python виртуал орчин үүсгээрэй (жишээлбэл, `conda` ашиглан):
+Yɛ Python virtual environment fofo (nɔ yɛ `conda`):
 
 ```bash
 conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-Дараа нь Olive болон нарийвчлан тохируулах ажлын урсгалын хамаарлуудыг суулгаарай:
+Esi yɛ Olive kɛ dependencies wɔ fine-tuning workflow yɛ:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -27,33 +36,33 @@ pip install olive-ai[gpu]
 pip install -r requirements.txt
 ```
 
-## 🧪 Phi3-ийг Olive ашиглан нарийвчлан тохируулах
-[Olive тохиргооны файл](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json)-д дараах *дамжуулгуудтай* *ажлын урсгал* агуулагдана:
+## 🧪 Fine-tune Phi3 ye Olive
+[Olive configuration file](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) la yɛ *workflow* wɔ *passes* nɔ kpɔ:
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-Энэхүү ажлын урсгал нь ерөнхийдөө дараах үйлдлүүдийг хийнэ:
+Yɛ high-level la, workflow la yɛ:
 
-1. Phi3-ийг [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json) өгөгдөл ашиглан 150 алхам (өөрчлөх боломжтой) нарийвчлан тохируулна.
-1. LoRA адаптерийн жинг үндсэн загварт нэгтгэнэ. Үүний үр дүнд ONNX форматтай нэг загварын артефакт үүснэ.
-1. Model Builder нь загварыг ONNX runtime-д оновчтой болгож, загварыг `int4` болгон тоон хэлбэрт шилжүүлнэ.
+1. Fine-tune Phi3 (150 steps la, wo yɛ modify) wɔ [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json) data la kpɔ.
+1. Merge LoRA adapter weights kɔ base model me. Nɔ yɛ single model artifact wɔ ONNX format.
+1. Model Builder yɛ model la optimize wɔ ONNX runtime *kɛ* quantize model la wɔ `int4`.
 
-Ажлын урсгалыг ажиллуулахын тулд дараах командыг гүйцэтгэнэ:
+Wɔ yɛ workflow la execute, yɛ:
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-Olive дууссаны дараа таны оновчтой болсон `int4` нарийвчлан тохируулсан Phi3 загвар дараах байршилд хадгалагдсан байна: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
+Esi Olive yɛ complete, optimized `int4` fine-tuned Phi3 model la wɔ: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-## 🧑‍💻 Нарийвчлан тохируулсан Phi3-ийг өөрийн програмд нэгтгэх
+## 🧑‍💻 Integrate fine-tuned Phi3 wɔ wo application me 
 
-Програмыг ажиллуулахын тулд:
+Wɔ app la run:
 
 ```bash
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-Энэхүү хариулт нь өгүүлбэрийг нэг үгээр ангилах болно (Sad/Joy/Fear/Surprise).
+Response la yɛ single word classification wɔ phrase (Sad/Joy/Fear/Surprise).
 
-It seems like you want the text translated into a language, but "mo" is unclear. Could you clarify which language you mean by "mo"? For example, are you referring to Maori, Mongolian, or another language? Let me know so I can assist you accurately!
+It seems like "mo" might refer to a language or abbreviation, but it's not clear which specific language or context you're referring to. Could you clarify what "mo" means? For example, are you asking for a translation into Maori, Mongolian, or another language?

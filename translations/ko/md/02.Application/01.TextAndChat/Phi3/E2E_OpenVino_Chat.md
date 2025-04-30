@@ -1,6 +1,15 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "5621d23b682762686e0eccc7ce8bd9ec",
+  "translation_date": "2025-04-04T06:14:45+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_OpenVino_Chat.md",
+  "language_code": "ko"
+}
+-->
 [OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
-이 코드는 모델을 OpenVINO 포맷으로 내보내고, 이를 로드하여 주어진 프롬프트에 대한 응답을 생성합니다.
+이 코드는 모델을 OpenVINO 형식으로 내보내고, 이를 로드하여 주어진 프롬프트에 대한 응답을 생성합니다.
 
 1. **모델 내보내기**:
    ```bash
@@ -17,9 +26,9 @@
    from transformers import AutoConfig, AutoTokenizer
    from optimum.intel.openvino import OVModelForCausalLM
    ```
-   - 이 코드는 `transformers` library and the `optimum.intel.openvino` 모듈에서 클래스를 가져오며, 모델을 로드하고 사용하는 데 필요합니다.
+   - 이 코드 줄은 모델을 로드하고 사용하는 데 필요한 `transformers` library and the `optimum.intel.openvino` 모듈에서 클래스를 가져옵니다.
 
-3. **모델 디렉토리 및 설정 구성**:
+3. **모델 디렉터리 및 구성 설정**:
    ```python
    model_dir = './model/phi3-instruct/int4'
    ov_config = {
@@ -29,9 +38,9 @@
    }
    ```
    - `model_dir` specifies where the model files are stored.
-   - `ov_config`는 OpenVINO 모델이 낮은 지연 시간을 우선하도록, 하나의 추론 스트림을 사용하도록, 그리고 캐시 디렉토리를 사용하지 않도록 설정하는 딕셔너리입니다.
+   - `ov_config`는 OpenVINO 모델이 낮은 지연 시간, 하나의 추론 스트림 사용, 캐시 디렉터리 미사용을 우선시하도록 구성하는 딕셔너리입니다.
 
-4. **모델 로드**:
+4. **모델 로드하기**:
    ```python
    ov_model = OVModelForCausalLM.from_pretrained(
        model_dir,
@@ -41,13 +50,13 @@
        trust_remote_code=True,
    )
    ```
-   - 이 코드는 이전에 지정된 디렉토리에서 모델을 로드하며, 미리 정의된 설정을 사용합니다. 필요 시 원격 코드 실행도 허용합니다.
+   - 이 줄은 이전에 정의된 설정을 사용하여 지정된 디렉터리에서 모델을 로드합니다. 필요 시 원격 코드 실행도 허용합니다.
 
-5. **토크나이저 로드**:
+5. **토크나이저 로드하기**:
    ```python
    tok = AutoTokenizer.from_pretrained(model_dir, trust_remote_code=True)
    ```
-   - 이 코드는 텍스트를 모델이 이해할 수 있는 토큰으로 변환하는 역할을 하는 토크나이저를 로드합니다.
+   - 이 줄은 텍스트를 모델이 이해할 수 있는 토큰으로 변환하는 역할을 하는 토크나이저를 로드합니다.
 
 6. **토크나이저 인자 설정**:
    ```python
@@ -55,31 +64,31 @@
        "add_special_tokens": False
    }
    ```
-   - 이 딕셔너리는 토큰화된 출력에 특별 토큰을 추가하지 않도록 지정합니다.
+   - 이 딕셔너리는 토큰화된 출력에 특수 토큰이 추가되지 않도록 지정합니다.
 
-7. **프롬프트 정의**:
+7. **프롬프트 정의하기**:
    ```python
    prompt = "<|system|>You are a helpful AI assistant.<|end|><|user|>can you introduce yourself?<|end|><|assistant|>"
    ```
-   - 이 문자열은 사용자가 AI 어시스턴트에게 자신을 소개해달라고 요청하는 대화 프롬프트를 설정합니다.
+   - 이 문자열은 사용자와 AI 비서 간의 대화 프롬프트를 설정하며, AI 비서가 자신을 소개하도록 요청합니다.
 
-8. **프롬프트 토큰화**:
+8. **프롬프트 토큰화하기**:
    ```python
    input_tokens = tok(prompt, return_tensors="pt", **tokenizer_kwargs)
    ```
-   - 이 코드는 프롬프트를 모델이 처리할 수 있는 토큰으로 변환하며, 결과를 PyTorch 텐서로 반환합니다.
+   - 이 줄은 프롬프트를 모델이 처리할 수 있는 토큰으로 변환하며, 결과를 PyTorch 텐서로 반환합니다.
 
-9. **응답 생성**:
+9. **응답 생성하기**:
    ```python
    answer = ov_model.generate(**input_tokens, max_new_tokens=1024)
    ```
-   - 이 코드는 입력 토큰을 기반으로 최대 1024개의 새로운 토큰을 생성하여 모델이 응답을 생성하도록 합니다.
+   - 이 줄은 입력 토큰을 기반으로 최대 1024개의 새 토큰을 생성하여 모델이 응답을 생성하도록 합니다.
 
-10. **응답 디코딩**:
+10. **응답 디코딩하기**:
     ```python
     decoded_answer = tok.batch_decode(answer, skip_special_tokens=True)[0]
     ```
-    - 이 코드는 생성된 토큰을 사람이 읽을 수 있는 문자열로 변환하며, 특별 토큰을 생략하고 첫 번째 결과를 반환합니다.
+    - 이 줄은 생성된 토큰을 사람이 읽을 수 있는 문자열로 변환하며, 특수 토큰을 생략하고 첫 번째 결과를 반환합니다.
 
 **면책 조항**:  
-이 문서는 AI 기반 기계 번역 서비스를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서(원어로 작성된 문서)가 권위 있는 출처로 간주되어야 합니다. 중요한 정보에 대해서는 전문 번역가에 의한 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하지만, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어를 권위 있는 자료로 간주해야 합니다. 중요한 정보에 대해서는 전문적인 인간 번역을 권장합니다. 이 번역을 사용하는 과정에서 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

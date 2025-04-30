@@ -1,24 +1,33 @@
-## **Phi Family Quantization Using Generative AI Extensions for onnxruntime**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "b96f9dc2389500e24a2c2c4debf30908",
+  "translation_date": "2025-04-04T12:15:44+00:00",
+  "source_file": "md\\01.Introduction\\04\\UsingORTGenAIQuantifyingPhi.md",
+  "language_code": "mo"
+}
+-->
+# **Phi Ailesini Generative AI Uzantıları ile Kuantize Etme**
 
-## **What Are Generative AI Extensions for onnxruntime?**
+## **Generative AI Uzantıları nedir?**
 
-These extensions enable the use of generative AI with ONNX Runtime ([https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)). They provide a generative AI loop for ONNX models, encompassing inference with ONNX Runtime, logits processing, search and sampling, and KV cache management. Developers can leverage a high-level `generate()` method or execute each model iteration in a loop to generate tokens step by step, with the flexibility to update generation parameters within the loop. The extensions support greedy/beam search, TopP, TopK sampling for token sequence generation, and built-in logits processing such as repetition penalties. Additionally, custom scoring can be easily integrated.
+Bu uzantılar, ONNX Runtime ile generative AI çalıştırmanıza yardımcı olur ([https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)). ONNX modelleri için generative AI döngüsü sağlar; buna ONNX Runtime ile çıkarım, logits işleme, arama ve örnekleme, KV önbellek yönetimi dahildir. Geliştiriciler yüksek seviyeli bir generate() metodunu çağırabilir veya modeli bir döngü içinde her iterasyonda bir token üreterek çalıştırabilir ve döngü içinde üretim parametrelerini güncelleyebilir. Greedy/beam arama, TopP ve TopK örnekleme yöntemlerini kullanarak token dizileri oluşturmayı destekler ve tekrarlama cezaları gibi dahili logits işleme özellikleri sunar. Ayrıca, kolayca özel puanlama ekleyebilirsiniz.
 
-At the application level, Generative AI extensions for onnxruntime allow developers to build applications in C++/C#/Python. At the model level, they facilitate merging fine-tuned models and performing related quantitative deployment tasks.
+Uygulama seviyesinde, Generative AI uzantılarını C++/C#/Python kullanarak uygulamalar geliştirmek için kullanabilirsiniz. Model seviyesinde ise, ince ayar yapılmış modelleri birleştirmek ve ilgili kuantitatif dağıtım çalışmalarını yapmak için kullanabilirsiniz.
 
-## **Quantizing Phi-3.5 with Generative AI Extensions for onnxruntime**
+## **Generative AI Uzantıları ile Phi-3.5 Kuantizasyonu**
 
-### **Supported Models**
+### **Desteklenen Modeller**
 
-Generative AI extensions for onnxruntime support quantization for Microsoft Phi, Google Gemma, Mistral, and Meta LLaMA.
+Generative AI uzantıları, Microsoft Phi, Google Gemma, Mistral, Meta LLaMA gibi modellerin kuantizasyon dönüşümünü destekler.
 
-### **Model Builder in Generative AI Extensions for onnxruntime**
+### **Generative AI Uzantılarındaki Model Builder**
 
-The Model Builder simplifies and accelerates the creation of optimized and quantized ONNX models compatible with the ONNX Runtime `generate()` API.
+Model Builder, ONNX Runtime generate() API ile çalışan optimize edilmiş ve kuantize edilmiş ONNX modelleri oluşturmayı büyük ölçüde hızlandırır.
 
-With Model Builder, you can quantize models to INT4, INT8, FP16, FP32, and combine various hardware acceleration methods such as CPU, CUDA, DirectML, Mobile, etc.
+Model Builder aracılığıyla modeli INT4, INT8, FP16, FP32'ye kuantize edebilir ve CPU, CUDA, DirectML, Mobile gibi farklı donanım hızlandırma yöntemlerini birleştirebilirsiniz.
 
-To use Model Builder, you need to install:
+Model Builder'ı kullanmak için aşağıdaki kurulumları yapmanız gerekir:
 
 ```bash
 
@@ -28,7 +37,7 @@ pip install --pre onnxruntime-genai
 
 ```
 
-After installation, you can execute the Model Builder script in the terminal to convert model formats and apply quantization.
+Kurulumdan sonra, terminalden Model Builder scriptini çalıştırarak model formatı ve kuantizasyon dönüşümü yapabilirsiniz.
 
 ```bash
 
@@ -36,25 +45,25 @@ python3 -m onnxruntime_genai.models.builder -m model_name -o path_to_output_fold
 
 ```
 
-### **Understanding Key Parameters**
+İlgili parametreleri anlayın:
 
-1. **model_name**: The model's identifier on Hugging Face, such as `microsoft/Phi-3.5-mini-instruct` or `microsoft/Phi-3.5-vision-instruct`. Alternatively, this can be the local path where the model is stored.
+1. **model_name** Hugging Face üzerindeki model, örneğin microsoft/Phi-3.5-mini-instruct, microsoft/Phi-3.5-vision-instruct gibi. Ayrıca modeli sakladığınız yol da olabilir.
 
-2. **path_to_output_folder**: The directory where the quantized model will be saved.
+2. **path_to_output_folder** Kuantize dönüşümün kayıt yolu.
 
-3. **execution_provider**: Specifies the hardware acceleration to be used, such as CPU, CUDA, or DirectML.
+3. **execution_provider** Farklı donanım hızlandırma destekleri, örneğin cpu, cuda, DirectML.
 
-4. **cache_dir_to_save_hf_files**: The directory where models downloaded from Hugging Face will be cached locally.
+4. **cache_dir_to_save_hf_files** Hugging Face'den modeli indirip yerel olarak önbelleğe alıyoruz.
 
-***Note:***
+***Not:***  
 
-## **How to Use Model Builder to Quantize Phi-3.5**
+## **Model Builder ile Phi-3.5 Kuantizasyonu Nasıl Yapılır?**
 
-The Model Builder now supports ONNX model quantization for Phi-3.5 Instruct and Phi-3.5-Vision.
+Model Builder artık Phi-3.5 Instruct ve Phi-3.5-Vision için ONNX model kuantizasyonunu destekliyor.
 
 ### **Phi-3.5-Instruct**
 
-**CPU-Accelerated Quantization to INT4**
+**CPU ile INT4 Kuantize Dönüşüm**
 
 ```bash
 
@@ -62,7 +71,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**CUDA-Accelerated Quantization to INT4**
+**CUDA ile INT4 Kuantize Dönüşüm**
 
 ```bash
 
@@ -80,7 +89,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 **Phi-3.5-vision-instruct-onnx-cpu-fp32**
 
-1. Set up the environment in the terminal:
+1. Terminalde ortamı ayarlayın:
 
 ```bash
 
@@ -90,21 +99,23 @@ cd models
 
 ```
 
-2. Download the `microsoft/Phi-3.5-vision-instruct` model to the `models` folder:  
-   [https://huggingface.co/microsoft/Phi-3.5-vision-instruct](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
+2. microsoft/Phi-3.5-vision-instruct modelini models klasörüne indirin:  
+[https://huggingface.co/microsoft/Phi-3.5-vision-instruct](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
 
-3. Download the following files to your `Phi-3.5-vision-instruct` folder:
+3. Aşağıdaki dosyaları Phi-3.5-vision-instruct klasörüne indirin:
 
-   - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json)
+- [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json)
 
-   - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/image_embedding_phi3_v_for_onnx.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/image_embedding_phi3_v_for_onnx.py)
+- [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/image_embedding_phi3_v_for_onnx.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/image_embedding_phi3_v_for_onnx.py)
 
-   - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py)
+- [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py)
 
-4. Download this file to the `models` folder:  
-   [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
+4. Bu dosyayı models klasörüne indirin:  
+[https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
-5. Open the terminal and convert ONNX support to FP32:
+5. Terminale gidin:
+
+    ONNX desteğini FP32 ile dönüştürün:
 
 ```bash
 
@@ -112,22 +123,22 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ```
 
-### **Note:**
+### **Not:**
 
-1. The Model Builder currently supports Phi-3.5-Instruct and Phi-3.5-Vision but does not support Phi-3.5-MoE.
+1. Model Builder şu anda Phi-3.5-Instruct ve Phi-3.5-Vision dönüşümünü destekliyor, ancak Phi-3.5-MoE desteklenmiyor.
 
-2. You can utilize ONNX's quantized models through the Generative AI extensions for onnxruntime SDK.
+2. ONNX'in kuantize edilmiş modelini kullanmak için Generative AI uzantıları SDK'sı aracılığıyla kullanabilirsiniz.
 
-3. Responsible AI considerations are crucial. After quantizing a model, it is recommended to conduct comprehensive testing to validate results.
+3. Daha sorumlu bir AI yaklaşımı için, model kuantizasyon dönüşümünden sonra daha etkili sonuç testleri yapılması önerilir.
 
-4. By quantizing the CPU INT4 model, deployment on edge devices becomes feasible, offering better application scenarios. Therefore, Phi-3.5-Instruct has been prioritized for INT4 quantization.
+4. CPU INT4 modeli kuantize ederek, Edge Device'a dağıtım yapabiliriz; bu daha iyi uygulama senaryoları sunar. Bu nedenle Phi-3.5-Instruct modelini INT4 çevresinde tamamladık.
 
-## **Resources**
+## **Kaynaklar**
 
-1. Learn more about Generative AI extensions for onnxruntime:  
-   [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. Generative AI uzantıları hakkında daha fazla bilgi edinin:  
+[https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. Explore the Generative AI extensions for onnxruntime GitHub repository:  
-   [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
+2. Generative AI uzantıları GitHub deposu:  
+[https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
-It seems you are asking for a translation into "mo." Could you clarify what "mo" refers to? For instance, is it a specific language or abbreviation? Common possibilities might include Mongolian, Maori, or something else. Let me know so I can assist you accurately!
+It seems like "mo" isn't a widely recognized language abbreviation. Could you clarify what language you would like the text translated into? For example, are you referring to Maori, Mongolian, or another language?

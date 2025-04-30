@@ -1,83 +1,92 @@
-# **用 Microsoft Olive 微調 Phi-3**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "727978e690ed9c055f594a4bfe01d75c",
+  "translation_date": "2025-04-04T18:52:24+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_MicrosoftOlive.md",
+  "language_code": "hk"
+}
+-->
+# **使用 Microsoft Olive 微調 Phi-3**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) 係一個簡單易用、針對硬件嘅模型優化工具，結合咗行業領先嘅模型壓縮、優化同編譯技術。
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) 是一款易於使用且以硬件為中心的模型優化工具，集成了行業領先的模型壓縮、優化和編譯技術。
 
-佢嘅設計目標係簡化機器學習模型嘅優化過程，確保模型可以最有效咁利用特定硬件架構。
+它旨在簡化機器學習模型的優化流程，確保模型能夠充分利用特定硬件架構的效能。
 
-無論你係做雲端應用定係邊緣設備，Olive 都可以幫你輕鬆高效咁優化模型。
+無論您是在開發基於雲端的應用程序還是邊緣設備上的解決方案，Olive 都能讓您輕鬆有效地優化模型。
 
-## 核心功能：
-- Olive 集成並自動化咗針對硬件目標嘅優化技術。
-- 無一種優化技術可以適用於所有情景，因此 Olive 容許行業專家擴展並加入佢哋嘅創新優化技術。
+## 主要功能：
+- Olive 集成並自動化了針對特定硬件目標的優化技術。
+- 沒有一種單一的優化技術適合所有場景，因此 Olive 提供擴展性，允許行業專家插入他們的優化創新。
 
 ## 減少工程工作量：
-- 開發者通常需要學習並使用多個硬件供應商嘅工具鏈，嚟準備同優化已訓練嘅模型以便部署。
-- Olive 簡化咗呢個過程，通過自動化技術，幫助達成硬件需求。
+- 開發人員通常需要學習並使用多種硬件供應商的專屬工具鏈，來準備並優化訓練好的模型以進行部署。
+- Olive 通過自動化目標硬件的優化技術簡化了這一過程。
 
-## 即用型全流程優化解決方案：
+## 即用型的端到端優化解決方案：
 
-Olive 通過整合及調整技術，提供一個統一嘅端到端優化方案。
-優化過程會考慮到準確度同延遲等限制。
+通過組合和調整集成技術，Olive 提供了統一的端到端優化解決方案。
+在優化模型時，它會考慮準確性和延遲等約束。
 
 ## 使用 Microsoft Olive 進行微調
 
-Microsoft Olive 係一個非常易用嘅開源模型優化工具，可以覆蓋生成式人工智能領域嘅微調同參考。只需簡單配置，結合開源小型語言模型同相關運行環境（AzureML / 本地 GPU、CPU、DirectML），就可以通過自動優化完成模型嘅微調或參考，並搵到最佳模型部署到雲端或者邊緣設備。咁樣企業就可以喺本地同雲端建立自己嘅行業垂直模型。
+Microsoft Olive 是一款非常易於使用的開源模型優化工具，能覆蓋生成式人工智能領域的微調和參考需求。只需簡單的配置，結合使用開源的小型語言模型及相關運行時環境（AzureML / 本地 GPU、CPU、DirectML），即可通過自動優化完成模型的微調或參考，並找到最佳模型以部署到雲端或邊緣設備。幫助企業在本地或雲端構建專屬的行業垂直模型。
 
 ![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.hk.png)
 
-## 用 Microsoft Olive 微調 Phi-3 
+## 使用 Microsoft Olive 微調 Phi-3
 
 ![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.hk.png)
 
-## Phi-3 Olive 範例代碼同示例
-喺呢個示例入面，你將會用 Olive 嚟：
+## Phi-3 Olive 示例代碼和範例
+在此範例中，您將使用 Olive 來：
 
-- 微調一個 LoRA 適配器，用嚟將短語分類為 Sad、Joy、Fear、Surprise。
-- 將適配器嘅權重同基礎模型合併。
-- 優化並量化模型至 int4。
+- 微調 LoRA 適配器以將短語分類為 Sad, Joy, Fear, Surprise。
+- 將適配器權重合併到基礎模型中。
+- 將模型優化並量化為 int4。
 
-[範例代碼](../../code/03.Finetuning/olive-ort-example/README.md)
+[示例代碼](../../code/03.Finetuning/olive-ort-example/README.md)
 
 ### 安裝 Microsoft Olive
 
-Microsoft Olive 嘅安裝非常簡單，亦可以針對 CPU、GPU、DirectML 同 Azure ML 進行安裝。
+Microsoft Olive 的安裝非常簡單，且支持安裝到 CPU、GPU、DirectML 和 Azure ML。
 
 ```bash
 pip install olive-ai
 ```
 
-如果你想用 CPU 運行 ONNX 模型，可以用：
+如果您希望使用 CPU 運行 ONNX 模型，可以使用：
 
 ```bash
 pip install olive-ai[cpu]
 ```
 
-如果你想用 GPU 運行 ONNX 模型，可以用：
+如果您希望使用 GPU 運行 ONNX 模型，可以使用：
 
 ```python
 pip install olive-ai[gpu]
 ```
 
-如果你想用 Azure ML，可以用：
+如果您希望使用 Azure ML，可以使用：
 
 ```python
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
 **注意**
-操作系統要求：Ubuntu 20.04 / 22.04 
+操作系統要求：Ubuntu 20.04 / 22.04
 
-### **Microsoft Olive 嘅 Config.json**
+### **Microsoft Olive 的 Config.json 文件**
 
-安裝完成後，你可以通過 Config 文件配置唔同模型嘅設置，包括數據、計算、訓練、部署同模型生成。
+安裝完成後，您可以通過 Config 文件配置不同模型的設置，包括數據、計算、訓練、部署和模型生成。
 
 **1. 數據**
 
-喺 Microsoft Olive 上，可以支持本地數據同雲端數據訓練，並喺設置入面進行配置。
+在 Microsoft Olive 上，可以支持使用本地數據或雲端數據進行訓練，並可在設置中進行配置。
 
 *本地數據設置*
 
-你可以簡單設置需要微調嘅數據集，通常係 json 格式，並用數據模板進行適配。呢個需要根據模型嘅要求進行調整（例如適配 Microsoft Phi-3-mini 所需嘅格式。如果有其他模型，請參考其他模型所需嘅微調格式進行處理）。
+您可以簡單地設置需要微調的數據集，通常為 json 格式，並根據數據模板進行適配。這需要根據模型的要求進行調整（例如，適配 Microsoft Phi-3-mini 所需的格式。如果您有其他模型，請參考其他模型所需的微調格式進行處理）。
 
 ```json
 
@@ -112,7 +121,7 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 
 **雲端數據源設置**
 
-通過連接 Azure AI Studio/Azure Machine Learning Service 嘅數據存儲，可以引入雲端數據，並通過 Microsoft Fabric 同 Azure Data 將唔同數據源引入 Azure AI Studio/Azure Machine Learning Service，支持數據微調。
+通過連接 Azure AI Studio/Azure Machine Learning Service 的數據存儲，將雲端數據引入，您可以選擇通過 Microsoft Fabric 和 Azure Data 引入不同數據源到 Azure AI Studio/Azure Machine Learning Service，以支持微調數據。
 
 ```json
 
@@ -159,7 +168,7 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 
 **2. 計算配置**
 
-如果需要本地運行，可以直接使用本地數據資源。如果需要使用 Azure AI Studio / Azure Machine Learning Service 嘅資源，就需要配置相關嘅 Azure 參數、計算資源名稱等。
+如果需要使用本地資源，您可以直接使用本地數據資源。如果需要使用 Azure AI Studio / Azure Machine Learning Service 的資源，則需要配置相關的 Azure 參數、計算能力名稱等。
 
 ```json
 
@@ -192,7 +201,7 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 
 ***注意***
 
-由於喺 Azure AI Studio/Azure Machine Learning Service 上通過容器運行，需要配置所需嘅環境。呢個需要喺 conda.yaml 環境中進行配置。
+由於是在 Azure AI Studio/Azure Machine Learning Service 的容器中運行，所需的環境需要配置。這些環境是在 conda.yaml 文件中配置的。
 
 ```yaml
 
@@ -225,11 +234,11 @@ dependencies:
 
 ```
 
-**3. 選擇你的 SLM**
+**3. 選擇您的 SLM**
 
-你可以直接使用 Hugging face 上嘅模型，或者直接結合 Azure AI Studio / Azure Machine Learning 嘅模型目錄，選擇需要使用嘅模型。以下代碼示例會用 Microsoft Phi-3-mini 作為例子。
+您可以直接使用 Hugging Face 的模型，也可以結合 Azure AI Studio / Azure Machine Learning 的 Model Catalog 選擇使用的模型。在以下代碼示例中，我們將使用 Microsoft Phi-3-mini 作為範例。
 
-如果你有本地模型，可以用呢個方法：
+如果您有本地模型，可以使用以下方法：
 
 ```json
 
@@ -247,7 +256,7 @@ dependencies:
     },
 ```
 
-如果你想用 Azure AI Studio / Azure Machine Learning Service 嘅模型，可以用呢個方法：
+如果您希望使用 Azure AI Studio / Azure Machine Learning Service 的模型，可以使用以下方法：
 
 ```json
 
@@ -275,15 +284,15 @@ dependencies:
 ```
 
 **注意：**
-需要同 Azure AI Studio / Azure Machine Learning Service 集成，因此喺設置模型時，請參考版本號同相關命名。
+我們需要與 Azure AI Studio / Azure Machine Learning Service 集成，因此在設置模型時，請參考版本號及相關命名。
 
-Azure 上所有模型都需要設置為 PyTorch.MLflow。
+Azure 上的所有模型需設置為 PyTorch.MLflow。
 
-你需要有 Hugging face 帳號，並將密鑰綁定到 Azure AI Studio / Azure Machine Learning 嘅 Key 值。
+您需要擁有 Hugging Face 帳戶並將密鑰綁定到 Azure AI Studio / Azure Machine Learning 的 Key 值。
 
 **4. 算法**
 
-Microsoft Olive 將 Lora 同 QLora 微調算法封裝得非常好，你只需配置相關參數即可。以下以 QLora 為例。
+Microsoft Olive 對 Lora 和 QLora 微調算法進行了良好的封裝。您只需要配置一些相關參數。以下以 QLora 為例。
 
 ```json
         "lora": {
@@ -320,12 +329,12 @@ Microsoft Olive 將 Lora 同 QLora 微調算法封裝得非常好，你只需配
         },
 ```
 
-如果你需要進行量化轉換，Microsoft Olive 主分支已支持 onnxruntime-genai 方法。你可以根據需要進行設置：
+如果您需要進行量化轉換，Microsoft Olive 主分支已支持 onnxruntime-genai 方法。您可以根據需求進行設置：
 
-1. 將適配器權重合併到基礎模型。
-2. 通過 ModelBuilder 將模型轉換為所需精度嘅 onnx 模型。
+1. 將適配器權重合併到基礎模型中。
+2. 通過 ModelBuilder 將模型轉換為具有所需精度的 onnx 模型。
 
-例如轉換為量化嘅 INT4：
+例如轉換為量化的 INT4：
 
 ```json
 
@@ -340,10 +349,9 @@ Microsoft Olive 將 Lora 同 QLora 微調算法封裝得非常好，你只需配
         }
 ```
 
-**注意** 
-- 如果你用 QLoRA，暫時唔支持 ONNXRuntime-genai 嘅量化轉換。
-
-- 需要指出嘅係，你可以根據自己需要設置上述步驟，並唔需要完全配置所有步驟。根據需求，你可以直接使用算法步驟而唔進行微調。最後需要配置相關引擎。
+**注意**
+- 如果您使用 QLoRA，暫時不支持 ONNXRuntime-genai 的量化轉換。
+- 需要指出的是，您可以根據自己的需求設置上述步驟。並非必須完全配置上述所有步驟。根據需求，您可以直接使用算法步驟而不進行微調。最後需要配置相關引擎。
 
 ```json
 
@@ -360,11 +368,11 @@ Microsoft Olive 將 Lora 同 QLora 微調算法封裝得非常好，你只需配
 
 **5. 完成微調**
 
-喺命令行中，喺 olive-config.json 所在目錄執行：
+在命令行中，於 olive-config.json 文件的目錄下執行：
 
 ```bash
 olive run --config olive-config.json  
 ```
 
-**免責聲明**：  
-此文件是使用機器翻譯人工智能服務進行翻譯的。雖然我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文的母語版本作為權威來源。對於關鍵信息，建議使用專業的人手翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+**免責聲明**:  
+此文件使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原始語言的文件作為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們不對因使用此翻譯而引起的任何誤解或錯誤解釋承擔責任。

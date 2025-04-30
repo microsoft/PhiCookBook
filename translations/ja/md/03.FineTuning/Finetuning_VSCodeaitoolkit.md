@@ -1,53 +1,62 @@
-## VS Code用AI Toolkitへようこそ
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "82289836c6113c9df7544eec1fc54802",
+  "translation_date": "2025-04-04T13:31:51+00:00",
+  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "language_code": "ja"
+}
+-->
+## AI Toolkit for VS Codeへようこそ
 
-[VS Code用AI Toolkit](https://github.com/microsoft/vscode-ai-toolkit/tree/main)は、Azure AI Studio CatalogやHugging Faceなどのカタログからさまざまなモデルを統合します。このツールキットは、生成AIツールやモデルを使用したAIアプリ開発における一般的なタスクを効率化します。以下のような機能を提供します：
-- モデルの探索とプレイグラウンドから始める
-- ローカルコンピューティングリソースを使用したモデルの微調整と推論
-- Azureリソースを活用したリモートでのモデル微調整と推論
+[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) は、Azure AI Studio CatalogやHugging Faceなどのカタログから様々なモデルを統合します。このツールキットは、生成AIツールやモデルを使用したAIアプリ開発における一般的な作業を効率化します：
+- モデルの探索とプレイグラウンドからスタート。
+- ローカルコンピューティングリソースを使用したモデルの微調整と推論。
+- Azureリソースを利用したリモート微調整と推論。
 
-[VSCode用AI Toolkitをインストールする](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[AI Toolkit for VSCodeをインストールする](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
 ![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.ja.png)
 
-**[プライベートプレビュー]** Azure Container Appsをワンクリックでプロビジョニングし、クラウド上でモデルの微調整や推論を実行可能。
+**[プライベートプレビュー]** Azure Container Appsを使用したモデル微調整と推論をクラウドで実行するためのワンクリックプロビジョニング。
 
-では、AIアプリ開発を始めましょう：
+それでは、AIアプリ開発を始めましょう：
 
-- [VS Code用AI Toolkitへようこそ](../../../../md/03.FineTuning)
+- [AI Toolkit for VS Codeへようこそ](../../../../md/03.FineTuning)
 - [ローカル開発](../../../../md/03.FineTuning)
   - [準備](../../../../md/03.FineTuning)
   - [Condaの有効化](../../../../md/03.FineTuning)
-  - [ベースモデルのみの微調整](../../../../md/03.FineTuning)
-  - [モデルの微調整と推論](../../../../md/03.FineTuning)
-  - [モデルの微調整](../../../../md/03.FineTuning)
+  - [ベースモデルの微調整のみ](../../../../md/03.FineTuning)
+  - [モデル微調整と推論](../../../../md/03.FineTuning)
+  - [モデル微調整](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [微調整サンプルとリソース](../../../../md/03.FineTuning)
+  - [微調整のサンプルとリソース](../../../../md/03.FineTuning)
 - [**\[プライベートプレビュー\]** リモート開発](../../../../md/03.FineTuning)
   - [前提条件](../../../../md/03.FineTuning)
-  - [リモート開発プロジェクトの設定](../../../../md/03.FineTuning)
+  - [リモート開発プロジェクトのセットアップ](../../../../md/03.FineTuning)
   - [Azureリソースのプロビジョニング](../../../../md/03.FineTuning)
-  - [\[オプション\] HuggingfaceトークンをAzure Container App Secretに追加](../../../../md/03.FineTuning)
-  - [微調整の実行](../../../../md/03.FineTuning)
+  - [\[オプション\] HuggingfaceトークンをAzure Container Appのシークレットに追加](../../../../md/03.FineTuning)
+  - [微調整を実行する](../../../../md/03.FineTuning)
   - [推論エンドポイントのプロビジョニング](../../../../md/03.FineTuning)
   - [推論エンドポイントのデプロイ](../../../../md/03.FineTuning)
-  - [高度な使い方](../../../../md/03.FineTuning)
+  - [高度な使用法](../../../../md/03.FineTuning)
 
 ## ローカル開発
 ### 準備
 
-1. ホストにNVIDIAドライバがインストールされていることを確認してください。
+1. ホストにNVIDIAドライバーがインストールされていることを確認してください。
 2. データセット利用にHFを使用する場合は`huggingface-cli login`を実行してください。
-3. メモリ使用量を変更するキー設定の説明は`Olive`を参照してください。
+3. `Olive`メモリ使用量を変更する設定の説明。
 
 ### Condaの有効化
-WSL環境を使用しているため、手動でConda環境を有効化する必要があります。このステップの後、微調整や推論を実行できます。
+WSL環境を使用しているため、Conda環境を手動で有効化する必要があります。このステップの後、微調整や推論を実行できます。
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### ベースモデルのみの微調整
-微調整なしでベースモデルを試したい場合は、Condaを有効化した後に以下のコマンドを実行してください。
+### ベースモデルの微調整のみ
+ベースモデルを微調整せずに試したい場合は、Condaを有効化した後にこのコマンドを実行してください。
 
 ```bash
 cd inference
@@ -57,17 +66,17 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### モデルの微調整と推論
+### モデル微調整と推論
 
-開発コンテナ内でワークスペースを開いた後、ターミナルを開き（デフォルトパスはプロジェクトルート）、以下のコマンドを実行して選択したデータセットでLLMを微調整します。
+ワークスペースが開発コンテナ内で開かれたら、ターミナルを開き（デフォルトのパスはプロジェクトルート）、以下のコマンドを実行して選択したデータセット上でLLMを微調整します。
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-チェックポイントと最終モデルは`models` folder.
+チェックポイントと最終モデルは `models` folder.
 
-Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`に保存されます。
+Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow` に保存されます。
 
 ```bash
 cd inference
@@ -163,10 +172,10 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json`を使用して、出力パネルでモデルを評価する準備が整いました。
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` を使用し、出力パネルでモデルを評価する準備が整います。
 
-### 高度な使い方
-AI Toolkitを使用したリモート開発に関する詳細は、[リモートでのモデル微調整](https://aka.ms/ai-toolkit/remote-provision)および[微調整モデルでの推論](https://aka.ms/ai-toolkit/remote-inference)のドキュメントをご参照ください。
+### 高度な使用法
+AI Toolkitを使用したリモート開発の詳細については、[リモートでのモデル微調整](https://aka.ms/ai-toolkit/remote-provision)および[微調整されたモデルでの推論](https://aka.ms/ai-toolkit/remote-inference)のドキュメントをご参照ください。
 
 **免責事項**:  
-本書類は、機械翻訳AIサービスを使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確さが含まれる可能性があることをご承知おきください。原文（元の言語で記載された文書）が公式で信頼できる情報源と見なされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用に起因する誤解や誤った解釈について、当社は一切の責任を負いかねます。
+この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性がありますのでご了承ください。原文の母国語で書かれた文書が正式な情報源として考慮されるべきです。重要な情報については、プロの人間による翻訳を推奨します。この翻訳を使用することによって生じる誤解や誤解釈について、当方は一切の責任を負いません。

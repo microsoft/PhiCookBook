@@ -1,49 +1,58 @@
-## ማስተካከያ ምሳሌዎች
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "cd52a3c9a424a77d2ec0470770c93846",
+  "translation_date": "2025-04-04T13:28:30+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_Scenarios.md",
+  "language_code": "mo"
+}
+-->
+## Fine Tuning Scenarios
 
 ![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.25759a0154a97ad90e43a6cace37d6bea87f0ac0236ada3ad5d4a1fbacc3bdf7.mo.png)
 
-**መድረክ** ይህ እንደ Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, እና ONNX Runtime ያሉ በርካታ ቴክኖሎጂዎችን ያካትታል። 
+**Platform** Includes various technologies such as Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, and ONNX Runtime.
 
-**አወላጅ መዋቅር** ይህ በማስተካከያ ሂደት ውስጥ አስፈላጊ የሆኑትን CPU እና FPGA ያካትታል። የእነዚህን ቴክኖሎጂዎች አዶች እናሳይላችሁ።
+**Infrastructure** Covers the CPU and FPGA, which play a crucial role in the fine-tuning process. Below are the icons for these technologies.
 
-**መሣሪያዎች እና አብነት እቅፍ** ይህ በርካታ ጊዜ ONNX Runtime እና ONNX Runtime እንደሆነ ይወስዳል። የእነዚህን መሣሪያዎች አዶች እናሳይላችሁ።  
+**Tools & Framework** Includes ONNX Runtime and ONNX Runtime. Below are the icons for these technologies.
 [Insert icons for ONNX Runtime and ONNX Runtime]
 
-ከ Microsoft ቴክኖሎጂዎች ጋር የማስተካከያ ሂደት በተለያዩ አካላትና መሣሪያዎች ይደገፋል። እነዚህን ቴክኖሎጂዎች በመረዳትና በመጠቀም መተግበሪያችንን በተጠናከር ሁኔታ ማስተካከያ እና የተሻለ መፍትሄዎችን መፍጠር እንችላለን።
+The fine-tuning process using Microsoft technologies integrates multiple components and tools. By leveraging these technologies, applications can be effectively fine-tuned to deliver superior solutions.
 
-## አብነት እንደ አገልግሎት
+## Model as Service
 
-አብነቱን ማስተካከያ በማስተናገድ እና ማስተዳደር ያልተፈለገ ኮምፒዩት ሳይፈጽም።
+Fine-tune the model through hosted fine-tuning without needing to manage compute resources.
 
 ![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.6184d80a336ea9d7bb67a581e9e5d0b021cafdffff7ba257c2012e2123e0d77e.mo.png)
 
-ሳርቨርሌስ ማስተካከያ ለ Phi-3-mini እና Phi-3-medium አብነቶች ይገኛል። ይህም አቅራቢዎችን ለደመና እና የጫና ሁኔታዎች በፍጥነት እና በቀላሉ ማስተካከያ እንዲያከናውኑ ያስችላቸዋል። እንዲሁም እንደ Phi-3-small የተባለው አሁን በእኛ የአብነት እንደ አገልግሎት እቅፍ ውስጥ እንዳለ አስታውቀናል። እንዲሁም አቅራቢዎች የመጀመሪያ ደረጃ የ AI ልምድን ማግኘት ሳላስቸግራቸው ማስተካከያ መሥራት ይችላሉ።
+Serverless fine-tuning is offered for Phi-3-mini and Phi-3-medium models, allowing developers to quickly and easily customize models for both cloud and edge scenarios without worrying about compute setup. Additionally, Phi-3-small is now available via the Models-as-a-Service offering, enabling developers to begin AI development seamlessly without managing the underlying infrastructure.
 
-## አብነት እንደ መድረክ
+## Model as a Platform 
 
-ተጠቃሚዎች ራሳቸውን ኮምፒዩት በማስተዳደር አብነታቸውን ማስተካከያ ያከናውናሉ።
+Users oversee their own compute to fine-tune their models.
 
 ![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.cf8b08ef05bf57f362da90834be87562502f4370de4a7325a9fb03b8c008e5e7.mo.png)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## ማስተካከያ ምሳሌዎች 
+## Fine Tuning Scenarios 
 
 | | | | | | | |
 |-|-|-|-|-|-|-|
-|ምሳሌ|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|የተዘጋጀ የትምህርት አብነቶችን ለተወሰኑ ስራዎች ወይም ዘርፎች ማስተካከያ|አዎ|አዎ|አዎ|አዎ|አዎ|አዎ|
-|ለጽሑፍ መደበኛ እንደ ጽሁፍ ምርመራ፣ የስም እንድታውቅ እና የትርጉም ትርጉም ያሉ የ NLP ስራዎች ማስተካከያ|አዎ|አዎ|አዎ|አዎ|አዎ|አዎ|
-|ለጥያቄ መልስ ስራዎች ማስተካከያ|አዎ|አዎ|አዎ|አዎ|አዎ|አዎ|
-|በቻቦትስ ውስጥ እንደ ሰው ቅርብ መልስ ማቅረብ ማስተካከያ|አዎ|አዎ|አዎ|አዎ|አዎ|አዎ|
-|ሙዚቃ፣ ሥነ ጥበብ ወይም ሌሎች የፈጠራ አይነቶችን ማቅረብ ማስተካከያ|አዎ|አዎ|አዎ|አዎ|አዎ|አዎ|
-|የኮምፒዩተር እና የገንዘብ ወጪዎችን መቀነስ|አዎ|አዎ|አይ|አዎ|አዎ|አይ|
-|የማስተካከያ እንቅስቃሴን ማስቀላለጥ|አይ|አዎ|አይ|አዎ|አዎ|አዎ|
-|እንደሚቻል በቀላሉ ማስተካከያ ማስፈጸም የሚያስችል አነስተኛ መለኪያ መጠቀም|አይ|አዎ|አዎ|አይ|አይ|አዎ|
-|እንደ GPU መሳሪያዎች የጋራ ኮምፒዩት እንቅስቃሴ ማስተካከያ የሚያስችል የማስተካከያ ሂደት|አይ|አይ|አይ|አዎ|አዎ|አዎ|
+|Scenario|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
+|Adapting pre-trained LLMs to specific tasks or domains|Yes|Yes|Yes|Yes|Yes|Yes|
+|Fine-tuning for NLP tasks such as text classification, named entity recognition, and machine translation|Yes|Yes|Yes|Yes|Yes|Yes|
+|Fine-tuning for QA tasks|Yes|Yes|Yes|Yes|Yes|Yes|
+|Fine-tuning for generating human-like responses in chatbots|Yes|Yes|Yes|Yes|Yes|Yes|
+|Fine-tuning for generating music, art, or other forms of creativity|Yes|Yes|Yes|Yes|Yes|Yes|
+|Reducing computational and financial costs|Yes|Yes|No|Yes|Yes|No|
+|Reducing memory usage|No|Yes|No|Yes|Yes|Yes|
+|Using fewer parameters for efficient finetuning|No|Yes|Yes|No|No|Yes|
+|Memory-efficient form of data parallelism that gives access to the aggregate GPU memory of all the GPU devices available|No|No|No|Yes|Yes|Yes|
 
-## የማስተካከያ አፈጻጸም ምሳሌዎች
+## Fine Tuning Performance Examples
 
 ![Finetuning Performance](../../../../translated_images/Finetuningexamples.9dbf84557eef43e011eb7cadf51f51686f9245f7953e2712a27095ab7d18a6d1.mo.png)
 
-It seems like you want the text translated to "mo." Could you clarify what "mo" refers to? For instance, is it a specific language like Māori, Mongolian, or something else? Let me know so I can assist you accurately!
+It seems like you're asking for the text to be translated into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language, such as Moldovan (Romanian), or something else? Let me know so I can assist you properly!

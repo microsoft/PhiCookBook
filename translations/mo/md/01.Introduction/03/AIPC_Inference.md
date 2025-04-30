@@ -1,37 +1,46 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "5ca6ea8da7aa1335ef287124462b2833",
+  "translation_date": "2025-04-04T11:57:48+00:00",
+  "source_file": "md\\01.Introduction\\03\\AIPC_Inference.md",
+  "language_code": "mo"
+}
+-->
 # **Inference Phi-3 in AI PC**
 
-Mo generative AI oo kobcaya iyo awoodda qalabka edge device oo soo hagaagaya, waxaa hadda suurtagal ah in moodooyinka generative AI lagu daro qalabka Bring Your Own Device (BYOD) ee isticmaalayaasha. AI PCs ayaa kamid ah moodooyinkaas. Laga bilaabo 2024, Intel, AMD, iyo Qualcomm ayaa iska kaashaday soo saarista AI PCs oo awood u siinaya in lagu fuliyo moodooyinka generative AI ee deegaanka maxalliga ah iyada oo loo marayo isbeddelada qalabka. Qormadan, waxaan diiradda saari doonaa Intel AI PCs oo aan baari doonaa sida loo hirgeliyo Phi-3 oo lagu shaqeynayo Intel AI PC.
+Faʻatasi ai ma le alualu i luma o le generative AI ma le fa'aleleia atili o masini i luga o masini edge, o lo'o mafai nei ona tu'ufa'atasia le tele o faʻataʻitaʻiga AI i luga o masini BYOD (Bring Your Own Device) a tagata faʻaoga. O AI PCs o se tasi lea o nei fa'ata'ita'iga. Amata mai le 2024, ua galulue fa'atasi Intel, AMD, ma Qualcomm ma kamupani gaosi PC e fa'alauiloa AI PCs e mafai ai ona fa'atino faʻataʻitaʻiga generative AI i luga o masini i le lotoifale e ala i suiga i meafaigaluega. I lenei talanoaga, o le a tatou taulaʻi atu i Intel AI PCs ma suʻesuʻe pe faʻafefea ona faʻatino le Phi-3 i luga o le Intel AI PC.
 
-### Waa maxay NPU?
+### O le a le NPU
 
-NPU (Neural Processing Unit) waa processor gaar ah ama unug ku dhex jira SoC oo loogu talagalay in lagu dedejiyo hawlaha shabakadaha neerfaha iyo shaqooyinka AI. Si ka duwan CPUs iyo GPUs ee ujeeddooyinka guud, NPUs waxaa loo habeeyay xisaabinta isbarbar socda oo ku saleysan xog, taasoo ka dhigaysa kuwo aad u waxtar leh marka la shaqeynayo xogta badan sida muuqaalka iyo sawirrada, iyo sidoo kale xogta shabakadaha neerfaha. Waxay si gaar ah ugu wanaagsan yihiin qabashada shaqooyinka AI, sida aqoonsiga codka, dhalaalidda asalka ah ee wicitaanada muuqaalka, iyo habaynta sawirrada ama muuqaalada sida ogaanshaha walxaha.
+O le NPU (Neural Processing Unit) o se masini faʻapitoa poʻo se iunite i luga o le SoC e sili ona fuafuaina mo le faʻavaveina o galuega tau neural network ma galuega AI. E ese mai i CPUs ma GPUs lautele, o NPUs e fa'alelei mo le fa'ata'ita'iga fa'amaumauga fa'atasi, lea e avea ai i latou ma tagata sili ona lelei i le fa'agaioia o fa'amaumauga tele e pei o vitio ma ata, ma le fa'agaioia o fa'amaumauga mo neural networks. E matua talafeagai lava mo galuega tau AI, e pei o le iloaina o le tautalaga, fa'aitiitia o tua i vala'au vitio, ma fa'agaioiga ata po'o vitio e pei o le su'esu'eina o mea.
 
 ## NPU vs GPU
 
-In kasta oo shaqooyin badan oo AI iyo barashada mashiinka lagu fuliyo GPUs, waxaa jira farqi muhiim ah oo u dhexeeya GPUs iyo NPUs.  
-GPUs waxaa lagu yaqaanaa awoodda ay u leeyihiin xisaabinta isbarbar socda, laakiin dhammaan GPUs maaha kuwo isku waxtar leh marka laga soo tago habaynta garaafyada. NPUs, dhanka kale, waxaa si gaar ah loogu talagalay xisaabinta adag ee ku lug leh hawlaha shabakadaha neerfaha, taasoo ka dhigaysa kuwo aad ugu habboon shaqooyinka AI.
+E ui o le tele o galuega AI ma le aʻoaʻoina o masini e faʻatino i luga o GPUs, e iai le eseesega taua i le va o GPUs ma NPUs.  
+E taʻutaʻua GPUs mo lo latou mafai i le faʻagasologa fa'atasi, ae le o GPUs uma e tutusa lelei i tua atu o le faʻagasologa o ata. Ae o NPUs, e fa'apitoa lava mo fa'atatauga faigata e aofia ai galuega neural network, lea e sili ona aoga mo galuega tau AI.
 
-Gabagabadii, NPUs waa kuwa xisaabta ku xeel dheer oo dardar geliya xisaabinta AI, waxayna door muhiim ah ka ciyaarayaan waayaha cusub ee AI PCs!
+I se aotelega, o NPUs o "matai o le matematika" e fa'avavevave galuega fa'amatematika mo AI, ma o lo'o avea ma vaega taua i le vaitau fou o AI PCs!
 
-***Tusaalahan wuxuu ku saleysan yahay processor-ka ugu dambeeyay ee Intel Core Ultra***
+***O lenei faʻataʻitaʻiga e faʻavae i luga o le fou a Intel Core Ultra Processor***
 
-## **1. U isticmaal NPU in lagu shaqeeyo moodooyinka Phi-3**
+## **1. Fa'aoga le NPU e fa'agaioi ai le Phi-3 model**
 
-Qalabka Intel® NPU waa xawaaraha inference AI oo ku dhex dhisan CPUs-ka Intel ee macaamiisha, laga bilaabo jiilka Intel® Core™ Ultra ee CPUs (oo markii hore loo yaqaanay Meteor Lake). Waxay awood u siinaysaa fulinta tamarta-badbaadinta ee shaqooyinka shabakadaha neerfaha macmalka ah.
+O le Intel® NPU device o se fa'avavevave mo AI inference lea e tu'ufa'atasia i CPUs a Intel client, amata mai le Intel® Core™ Ultra augatupulaga o CPUs (sa lauiloa muamua o Meteor Lake). E mafai ai ona fa'atino galuega neural network i se auala e sili ona fa'asaoina le malosi.
 
 ![Latency](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.mo.png)
 
 ![Latency770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.mo.png)
 
-**Maktabadda Dardar-gelinta Intel NPU**
+**Intel NPU Acceleration Library**
 
-Maktabadda Dardar-gelinta Intel NPU [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) waa maktabad Python ah oo loogu talagalay in lagu kordhiyo waxtarka codsiyadaada adoo adeegsanaya awoodda Intel Neural Processing Unit (NPU) si ay u qabato xisaabinta degdegga ah ee qalabka ku habboon.
+O le Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) o se faletusi Python ua fuafuaina e fa'ateleina le lelei o au talosaga e ala i le fa'aogaina o le malosi o le Intel Neural Processing Unit (NPU) mo fa'atatauga maualuga i meafaigaluega e fetaui.
 
-Tusaale Phi-3-mini oo ku shaqeynaya AI PC oo ay ku shaqeyso processors-ka Intel® Core™ Ultra.
+Fa'ata'ita'iga o le Phi-3-mini i luga o AI PC e fa'aaogaina ai Intel® Core™ Ultra processors.
 
 ![DemoPhiIntelAIPC](../../../../../imgs/01/03/AIPC/aipcphi3-mini.gif)
 
-Ku rakib maktabadda Python-ka adigoo isticmaalaya pip
+Fa'apipi'i le faletusi Python i le pip
 
 ```bash
 
@@ -39,11 +48,11 @@ Ku rakib maktabadda Python-ka adigoo isticmaalaya pip
 
 ```
 
-***Ogow*** Mashruuca weli wuu socdaa, laakiin moodooyinka tixraaca ah waa kuwo aad u dhammaystiran.
+***Manatua*** O lo'o fa'atino pea le galuega i le poloketi, ae o le faʻataʻitaʻiga faʻasino ua matua maeʻa lava.
 
-### **Sida loo isticmaalo Maktabadda Dardar-gelinta Intel NPU si loogu shaqeeyo Phi-3**
+### **Fa'agaioi le Phi-3 i le Intel NPU Acceleration Library**
 
-Iyadoo la adeegsanayo dardar-gelinta Intel NPU, maktabaddani ma saameyneyso habka dhaqameed ee koodhinta. Waxa kaliya ee aad u baahan tahay waa inaad isticmaasho maktabaddan si aad u tiriso moodooyinka Phi-3 asalka ah, sida FP16, INT8, INT4, sida 
+I le fa'aogaina o le fa'avavevave a le Intel NPU, o lenei faletusi e le afaina ai le faiga masani o le encoding. E tatau lava ona e fa'aogaina lenei faletusi e fa'aitiiti ai le faʻataʻitaʻiga muamua o le Phi-3, e pei o FP16, INT8, INT4, e pei o
 
 ```python
 from transformers import AutoTokenizer, pipeline,TextStreamer
@@ -63,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-Marka tirinta si guul ah loo dhammeeyo, sii wad fulinta si aad u wacdo NPU si uu u socodsiiyo moodooyinka Phi-3.
+A maeʻa le faʻaitiitiga, faʻaauau le faiga e valaʻau ai le NPU e faʻatino le Phi-3 model.
 
 ```python
 generation_args = {
@@ -87,51 +96,51 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-Marka koodhka la fulinayo, waxaan ku arki karnaa xaaladda socodka NPU iyada oo loo marayo Task Manager
+A fa'agaioi le code, e mafai ona tatou va'ai i le tulaga o le NPU i le taimi moni e ala i le Task Manager.
 
 ![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.mo.png)
 
-***Tusaalooyin*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
+***Fa'ata'ita'iga*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
-## **2. U isticmaal DirectML + ONNX Runtime si loogu shaqeeyo moodooyinka Phi-3**
+## **2. Fa'aoga DirectML + ONNX Runtime e fa'agaioi ai le Phi-3 Model**
 
-### **Waa maxay DirectML**
+### **O le a le DirectML**
 
-[DirectML](https://github.com/microsoft/DirectML) waa maktabad DirectX 12 oo lagu dedejiyay waxqabadka sare leh oo loogu talagalay barashada mashiinka. DirectML waxay siisaa dardar-gelin GPU shaqooyinka caadiga ah ee barashada mashiinka iyadoo taageero ballaaran loo fidinayo qalabka iyo darawallada, oo ay ku jiraan dhammaan GPUs-ku-waafaqsan DirectX 12 ee ka yimid soo saarayaasha sida AMD, Intel, NVIDIA, iyo Qualcomm.
+[DirectML](https://github.com/microsoft/DirectML) o se faletusi maualuga-fa'atinoga, fa'avavevaveina masini e fa'avae i luga o DirectX 12 mo galuega tau masini aʻoaʻoina. E maua ai le GPU acceleration mo galuega masani o le aʻoaʻoina o masini i luga o masini ma aveta'avale lagolago, e aofia ai GPUs uma e mafai ona fa'aaogaina DirectX 12 mai tagata gaosi e pei o AMD, Intel, NVIDIA, ma Qualcomm.
 
-Marka si gaar ah loo isticmaalo, API-ga DirectML waa maktabad heer-hoose ah oo DirectX 12 ah waana mid ku habboon codsiyada waxqabadka sare leh, sida qaab-dhismeedyada, ciyaaraha, iyo codsiyada kale ee waqtiga-dhabta ah. Isdhexgalka fudud ee DirectML iyo Direct3D 12 iyo sidoo kale kharashkiisa yar iyo isku halaynta natiijooyinka across hardware ayaa ka dhigaysa DirectML mid ku habboon dardar-gelinta barashada mashiinka marka waxqabadka sare la rabo iyo natiijooyin lagu kalsoonaan karo across hardware.
+Pe a fa'aaogaina na'o ia, o le DirectML API o se faletusi maualalo i luga o le DirectX 12 ma e talafeagai mo talosaga maualuga-fa'atinoga, maualalo-leai taimi, e pei o fa'avae, ta'aloga, ma isi talosaga i le taimi moni. O le seamless interoperability a DirectML ma Direct3D 12 faʻapea foʻi ma lona maualalo o le faʻaogaina ma le faʻatuatuaina i luga o meafaigaluega e avea ai ma filifiliga lelei mo le faʻavavevaveina o le aʻoaʻoina o masini pe a manaʻomia le maualuga o le faʻatinoga ma le faʻatuatuaina o taunuuga i luga o meafaigaluega eseese e taua.
 
-***Ogow*** : DirectML-ka ugu dambeeyay ayaa hadda taageera NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
+***Manatua*** : O le DirectML fou ua uma ona lagolagoina le NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
-### DirectML iyo CUDA marka la barbar dhigo awooddooda iyo waxqabadkooda:
+###  DirectML ma CUDA i tulaga o latou gafatia ma fa'atinoga:
 
-**DirectML** waa maktabad barashada mashiinka oo ay horumarisay Microsoft. Waxaa loogu talagalay in lagu dedejiyo shaqooyinka barashada mashiinka ee qalabka Windows, oo ay ku jiraan kombuyuutarada miiska, laptops, iyo qalabka edge.  
-- Ku Salaysan DX12: DirectML waxaa lagu dhisay DirectX 12 (DX12), taasoo bixisa taageero ballaaran oo qalabka across GPUs, oo ay ku jiraan NVIDIA iyo AMD.  
-- Taageero Ballaaran: Sababtoo ah waxay adeegsaneysaa DX12, DirectML waxay la shaqeyn kartaa GPU kasta oo taageera DX12, xitaa kuwa isku dhafan.  
-- Habaynta Sawirka: DirectML waxay habaysaa sawirrada iyo xogta kale iyadoo la adeegsanayo shabakadaha neerfaha, taasoo ka dhigaysa mid ku habboon shaqooyinka sida aqoonsiga sawirka, ogaanshaha walxaha, iyo kuwo kale.  
-- Fududeynta Dejinta: Dejinta DirectML waa mid fudud, mana u baahna SDKs ama maktabado gaar ah oo ka socda soo saarayaasha GPU.  
-- Waxqabadka: Mararka qaar, DirectML waxay si fiican u shaqeysaa oo xitaa ka dheereyn kartaa CUDA, gaar ahaan shaqooyinka qaarkood.  
-- Xaddidaadaha: Si kastaba ha ahaatee, waxaa jira xaalado ay DirectML ka gaabis tahay, gaar ahaan xirmooyin waaweyn oo float16 ah.
+**DirectML** o se faletusi aʻoaʻo masini na atiaʻe e Microsoft. E fuafuaina e faʻavavevave galuega tau masini aʻoaʻo i luga o masini Windows, e aofia ai desktops, laptops, ma masini edge.  
+- DX12-Based: DirectML e fausia i luga o le DirectX 12 (DX12), lea e maua ai le lagolago lautele i GPUs, e aofia ai NVIDIA ma AMD GPUs.  
+- Lagolago Lautele: Ona o le fa'aogaina o DX12, e mafai ona galulue DirectML ma so'o se GPU e lagolagoina DX12, e o'o lava i GPUs tu'ufa'atasia.  
+- Fa'agaioiga Ata: E fa'agaoioi ata ma isi fa'amaumauga e fa'aaoga ai neural networks, lea e talafeagai mo galuega e pei o le iloa o ata, su'esu'e mea, ma isi.  
+- Faigofie o Fa'atulagaga: O le fa'atulagaina o DirectML e faigofie, ma e le mana'omia ni SDK po'o faletusi fa'apitoa mai tagata gaosi GPU.  
+- Fa'atinoga: I nisi tulaga, e lelei le fa'atinoga o DirectML ma e mafai ona sili atu le saoasaoa nai lo CUDA, aemaise lava mo nisi galuega.  
+- Tapula'a: Peita'i, o lo'o i ai tulaga e mafai ai ona fa'agesegese DirectML, aemaise lava mo float16 ma lapopo'a fa'aputuga.
 
-**CUDA** waa madal xisaabinta isbarbar socota iyo qaabka barnaamijka ee ay soo saartay NVIDIA. Waxay u oggolaaneysaa horumariyeyaasha inay ka faa'iideystaan awoodda GPUs-ka NVIDIA ee xisaabinta ujeeddooyinka guud, oo ay ku jiraan barashada mashiinka iyo jilitaanka cilmiga.  
-- Ku Gaar ah NVIDIA: CUDA waxaa si adag loogu dhex daray GPUs-ka NVIDIA waxaana loogu talagalay iyaga si gaar ah.  
-- Si Wanaagsan Loo Habeeyay: Waxay bixisaa waxqabad aad u fiican oo loogu talagalay shaqooyinka GPU-dardar-gelinta, gaar ahaan marka la adeegsanayo GPUs-ka NVIDIA.  
-- Si Weyn Loo Adeegsaday: Qaab-dhismeedyada iyo maktabadaha barashada mashiinka badan (sida TensorFlow iyo PyTorch) waxay leeyihiin taageero CUDA.  
-- Habaynta: Horumariyeyaashu waxay si gaar ah u habayn karaan dejinta CUDA shaqooyinka gaarka ah, taasoo keeni karta waxqabadka ugu wanaagsan.  
-- Xaddidaadaha: Si kastaba ha ahaatee, ku-tiirsanaanta CUDA ee qalabka NVIDIA waxay noqon kartaa caqabad haddii aad rabto waafaqid ballaaran across GPUs kala duwan.
+**CUDA** o le NVIDIA's parallel computing platform ma programming model. E mafai ai e le au atiaʻe ona faʻaaogaina le malosi o NVIDIA GPUs mo le faʻamoemoega lautele o le faʻagasologa, e aofia ai le aʻoaʻoina o masini ma faʻataʻitaʻiga faʻasaienisi.  
+- NVIDIA-Specific: CUDA e feso'ota'i lelei ma NVIDIA GPUs ma ua fuafuaina fa'apitoa mo i latou.  
+- Fa'alelei Maualuga: E maua ai le fa'atinoga lelei mo galuega fa'agaioiga GPU, aemaise lava pe a fa'aaogaina NVIDIA GPUs.  
+- Lautele Fa'aoga: Tele fa'avae ma faletusi mo le aʻoaʻoina o masini (e pei o TensorFlow ma PyTorch) e lagolagoina CUDA.  
+- Fa'alelei: E mafai e atia'e ona fa'alelei fa'atonuga CUDA mo galuega fa'apitoa, lea e mafai ona o'o atu ai i le fa'atinoga sili ona lelei.  
+- Tapula'a: Ae peita'i, o le fa'alagolago o CUDA i meafaigaluega NVIDIA e mafai ona fa'aitiitia pe afai e te mana'o i le fetaui lautele i GPUs eseese.  
 
-### Doorashada u dhaxaysa DirectML iyo CUDA
+### Filifiliga i le va o DirectML ma CUDA
 
-Doorashada u dhaxaysa DirectML iyo CUDA waxay ku xiran tahay kiiskaaga gaarka ah, helitaanka qalabka, iyo doorbidkaaga.  
-Haddii aad raadineyso waafaqid ballaaran iyo dejin fudud, DirectML waxay noqon kartaa doorasho wanaagsan. Si kastaba ha ahaatee, haddii aad haysato GPUs-ka NVIDIA oo aad u baahan tahay waxqabad si fiican loo habeeyay, CUDA weli waa doorasho xooggan. Gabagabadii, labadaba DirectML iyo CUDA waxay leeyihiin xooggooda iyo daciifnimadooda, sidaas darteed tixgeli shuruudahaaga iyo qalabka aad heli karto markaad go'aanka sameyneyso.
+O le filifiliga i le va o DirectML ma CUDA e fa'alagolago i lau fa'aoga fa'apitoa, masini o lo'o avanoa, ma mea e te fiafia i ai.  
+Afai o lo'o e su'eina se fetaui lautele ma le faigofie o le fa'atulagaina, e mafai ona avea DirectML ma filifiliga lelei. Ae peita'i, afai e iai sau NVIDIA GPUs ma e mana'omia le fa'atinoga sili ona lelei, CUDA o lo'o tumau pea o se filifiliga malosi. I se aotelega, o lo'o i ai malosiaga ma vaivaiga o DirectML ma CUDA, o lea ia mafaufau i ou mana'oga ma masini o lo'o avanoa pe a faia se filifiliga.  
 
-### **Generative AI oo leh ONNX Runtime**
+### **Generative AI ma ONNX Runtime**
 
-Xilliga AI, la qaadista moodooyinka AI aad bay muhiim u tahay. ONNX Runtime waxay si fudud u hirgelin kartaa moodooyinka la tababaray qalab kala duwan. Horumariyayaashu uma baahna inay fiiro gaar ah siiyaan qaab-dhismeedka inference-ka oo waxay isticmaali karaan API mideysan si ay u dhammaystiraan inference-ka moodooyinka. Xilliga generative AI, ONNX Runtime sidoo kale waxay fulisay hagaajin koodh (https://onnxruntime.ai/docs/genai/). Iyadoo loo marayo ONNX Runtime oo la hagaajiyay, moodooyinka generative AI ee la tiriyay waxaa lagu falanqeyn karaa qalab kala duwan. Generative AI oo leh ONNX Runtime, waxaad ku falanqeyn kartaa moodooyinka AI API adigoo adeegsanaya Python, C#, C / C++. Dabcan, Deployment-ka iPhone-ka waxaa ka faa'iideysan kara Generative AI oo leh API-ga ONNX Runtime ee C++.
+I le vaitaimi o le AI, o le mafai ona feavea'i o faʻataʻitaʻiga AI e taua tele. E mafai e ONNX Runtime ona faigofie ona tuʻuina atu faʻataʻitaʻiga ua aʻoaʻoina i masini eseese. E le mana'omia e atia'e ona taula'i atu i le fa'avae o le fa'atinoga ma fa'aoga se API tu'ufa'atasi e fa'amae'a ai le fa'atinoga o faʻataʻitaʻiga. I le vaitaimi o generative AI, ua faia foi e ONNX Runtime le faʻaleleia o le code (https://onnxruntime.ai/docs/genai/). E ala i le fa'aleleia o le ONNX Runtime, e mafai ona fa'ata'ita'iina le faʻataʻitaʻiga generative AI ua faʻaitiitia i terminals eseese. I le Generative AI ma ONNX Runtime, e mafai ona e faia le fa'atinoga o le AI model API e ala i Python, C#, C / C++. Ma, o le fa'atinoga i luga o le iPhone e mafai ona fa'aogaina le Generative AI ma le ONNX Runtime API a le C++.  
 
-[Tusaalaha Koodhka](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
+[Fa'ata'ita'iga Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
-***Isku keen Generative AI oo leh maktabadda ONNX Runtime***
+***compile generative AI with ONNX Runtime library***
 
 ```bash
 
@@ -170,7 +179,7 @@ python build.py --use_dml
 
 ```
 
-**Ku rakib maktabadda**
+**Fa'apipi'i le faletusi**
 
 ```bash
 
@@ -178,21 +187,21 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-Tani waa natiijada socodka
+O le i'uga o le fa'agaioiga o lo'o i lalo.
 
 ![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.mo.png)
 
-***Tusaalooyin*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
+***Fa'ata'ita'iga*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
-## **3. U isticmaal Intel OpenVino si loogu shaqeeyo moodooyinka Phi-3**
+## **3. Fa'aoga Intel OpenVino e fa'agaioi ai le Phi-3 Model**
 
-### **Waa maxay OpenVINO**
+### **O le a le OpenVINO**
 
-[OpenVINO](https://github.com/openvinotoolkit/openvino) waa qalab furan oo loogu talagalay hagaajinta iyo hirgelinta moodooyinka barashada qoto dheer. Waxay bixisaa waxqabad kordhiyay oo loogu talagalay moodooyinka aragtida, maqalka, iyo luqadda ee ka yimid qaab-dhismeedyada caanka ah sida TensorFlow, PyTorch, iyo kuwo kale. Bilow isticmaalka OpenVINO. OpenVINO sidoo kale waxaa loo isticmaali karaa in lagu daro CPU iyo GPU si loogu socodsiiyo moodooyinka Phi-3.
+[OpenVINO](https://github.com/openvinotoolkit/openvino) o se meafaigaluega tatala mo le faʻaleleia ma le faʻatinoina o faʻataʻitaʻiga loloto o aʻoaʻoga. E maua ai le faʻatinoga faʻaleleia mo faʻataʻitaʻiga mo vaʻaiga, leo, ma gagana mai fa'avae lauiloa e pei o TensorFlow, PyTorch, ma isi. Amata i le OpenVINO. E mafai fo'i ona fa'aaoga OpenVINO fa'atasi ma CPU ma GPU e fa'agaioi ai le Phi-3 model.
 
-***Ogow***: Hadda, OpenVINO ma taageerto NPU.
+***Manatua***: I le taimi nei, e le lagolagoina e OpenVINO le NPU.
 
-### **Ku rakib Maktabadda OpenVINO**
+### **Fa'apipi'i le OpenVINO Library**
 
 ```bash
 
@@ -204,9 +213,9 @@ Tani waa natiijada socodka
 
 ```
 
-### **Socodsiinta Phi-3 oo leh OpenVINO**
+### **Fa'agaioi le Phi-3 ma OpenVINO**
 
-Sida NPU, OpenVINO waxay dhammaystirtaa wicitaanka moodooyinka generative AI iyada oo lagu shaqeynayo moodooyinka la tiriyay. Waa inaan marka hore tirinaa moodooyinka Phi-3 oo aan ku dhammaystirnaa tirinta moodooyinka khadka amarka iyada oo loo marayo optimum-cli.
+E pei o le NPU, e fa'amae'a e OpenVINO le vala'auina o faʻataʻitaʻiga generative AI e ala i le fa'agaioia o faʻataʻitaʻiga ua faʻaitiitia. E tatau ona tatou faʻaitiitia le faʻataʻitaʻiga Phi-3 muamua ma maeʻa le faʻaitiitiga faʻataʻitaʻiga i luga o le laina faʻatonu e ala i le optimum-cli.
 
 **INT4**
 
@@ -224,11 +233,11 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ```
 
-Qaabka loo badalay, sida tan
+O le fa'avae ua suia e foliga mai lenei.
 
 ![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.mo.png)
 
-Ku shub dariiqyada moodooyinka (model_dir), qaabeynta la xiriirta (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), iyo qalabka dardar-gelinta qalabka (GPU.0) iyada oo loo marayo OVModelForCausalLM.
+Utaina ala o faʻataʻitaʻiga (model_dir), faʻatulagaga fesoʻotaʻi (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), ma masini faʻavavevave masini (GPU.0) e ala i le OVModelForCausalLM.
 
 ```python
 
@@ -242,12 +251,12 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-Marka koodhka la fulinayo, waxaan ku arki karnaa xaaladda socodka GPU iyada oo loo marayo Task Manager.
+A fa'agaioi le code, e mafai ona tatou va'ai i le tulaga o le GPU i le taimi moni e ala i le Task Manager.
 
 ![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.mo.png)
 
-***Tusaalooyin*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
+***Fa'ata'ita'iga*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***Ogow*** : Saddexda hab ee kor ku xusan waxay leeyihiin faa'iidooyinkooda, laakiin waxaa lagu talinayaa in la isticmaalo dardar-gelinta NPU ee inference-ka AI PC.
+### ***Manatua*** : O auala e tolu o lo'o i luga o lo'o iai a latou lava lelei, ae o lo'o fautuaina e fa'aoga le NPU acceleration mo le fa'atinoga o AI PC.
 
-It seems like you might have meant a specific language by "mo," but it’s unclear which language you're referring to. Could you please clarify the target language or provide more details? For example, are you referring to Mongolian, Maori, or another language? Let me know so I can assist you better!
+It seems like you've requested a translation to "mo," but it's unclear what language or context "mo" refers to. Could you clarify the target language or provide additional details? For example, are you referring to Maori, a specific dialect, or something else?

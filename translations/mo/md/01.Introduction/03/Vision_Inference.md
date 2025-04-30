@@ -1,10 +1,19 @@
-# **Phi-3-Vision-ийг Локал орчинд хэрэгжүүлэх**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "27cb0b952a2ef48c14b75dec13635acf",
+  "translation_date": "2025-04-04T12:10:35+00:00",
+  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "language_code": "mo"
+}
+-->
+# **Inference Phi-3-Vision in Local**
 
-Phi-3-vision-128k-instruct нь Phi-3-д зөвхөн хэл ойлгох бус, мөн дэлхийг харах чадварыг олгодог. Phi-3-vision-128k-instruct-ийн тусламжтайгаар бид OCR, хүснэгтийн шинжилгээ, объект таних, зураг тайлбарлах гэх мэт олон төрлийн харааны асуудлыг шийдвэрлэх боломжтой. Өмнө нь их хэмжээний өгөгдлийн сургалт шаарддаг байсан даалгавруудыг бид хялбархан гүйцэтгэх боломжтой болсон. Доор Phi-3-vision-128k-instruct-ийн ашигладаг холбогдох арга техник, хэрэглээний жишээнүүдийг дурдсан болно.
+Phi-3-vision-128k-instruct enables Phi-3 to not only comprehend language but also interpret the world visually. With Phi-3-vision-128k-instruct, various visual tasks such as OCR, table analysis, object recognition, and image description can be tackled effortlessly. Tasks that once demanded extensive data training can now be executed with ease. Below are the techniques and application scenarios associated with Phi-3-vision-128k-instruct.
 
-## **0. Бэлтгэл**
+## **0. Preparation**
 
-Хэрэглэхийн өмнө дараах Python сангуудыг суулгасан эсэхээ шалгана уу (Python 3.10+ хувилбарыг санал болгож байна)
+Ensure the following Python libraries are installed prior to use (Python 3.10+ is recommended):
 
 ```bash
 pip install transformers -U
@@ -12,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-***CUDA 11.6+*** хувилбарыг ашиглахыг зөвлөж байна, мөн flatten-ийг суулгах шаардлагатай.
+Using ***CUDA 11.6+*** and installing flatten is advised:
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-Шинэ Notebook үүсгэнэ үү. Жишээнүүдийг гүйцэтгэхийн тулд доорх агуулгыг эхлээд үүсгэхийг санал болгож байна.
+Create a new Notebook. To complete the examples, it is suggested to first set up the following content:
 
 ```python
 from PIL import Image
@@ -40,9 +49,9 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. Phi-3-Vision ашиглан зургийг шинжлэх**
+## **1. Analyze the image with Phi-3-Vision**
 
-Бид AI-ийг зургийн агуулгыг шинжлэх, холбогдох тайлбар гаргах чадвартай болгохыг хүсэж байна.
+The goal is for AI to analyze the content of images and provide relevant descriptions.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -65,15 +74,15 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Notebook дотор дараах скриптийг ажиллуулснаар бид холбогдох хариултыг авах боломжтой.
+By running the following script in the Notebook, relevant answers can be obtained:
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
 ```
 
-## **2. Phi-3-Vision ашиглан OCR хийх**
+## **2. OCR with Phi-3-Vision**
 
-Зургийг шинжлэхээс гадна бид зургийн мэдээллийг гаргаж авах боломжтой. Энэ нь OCR процесс бөгөөд өмнө нь нарийн төвөгтэй код бичих шаардлагатай байсан.
+Beyond analyzing images, information can also be extracted from them. This process, known as OCR, previously required writing complex code.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -97,15 +106,15 @@ response = processor.batch_decode(generate_ids,
 
 ```
 
-Үр дүн нь:
+The output will be:
 
 ```txt
 The title of the book is "ALONE" and the author is Morgan Maxwell.
 ```
 
-## **3. Олон зургийг харьцуулах**
+## **3. Comparison of multiple images**
 
-Phi-3 Vision нь олон зургийг харьцуулах боломжийг олгодог. Бид энэ загварыг ашиглан зургуудын ялгааг олох боломжтой.
+Phi-3 Vision supports the comparison of multiple images, allowing differences between them to be identified using this model.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -134,10 +143,10 @@ generate_ids = generate_ids[:, inputs['input_ids'].shape[1]:]
 response = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 ```
 
-Үр дүн нь:
+The output will be:
 
 ```txt
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-It seems you've mentioned "mo," but it's unclear which specific language or dialect you're referring to with "mo." Could you clarify the language you would like the text translated into? For example, are you referring to Māori, Mongolian, or another language? Let me know, and I'd be happy to assist!
+It seems like you've requested a translation to "mo," but could you clarify what "mo" refers to? Are you asking for a translation into Maori, Mongolian, or another language? Let me know so I can assist you accurately!

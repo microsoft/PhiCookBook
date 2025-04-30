@@ -1,45 +1,54 @@
-# ریموٹ انفرینسنگ فائن ٹونڈ ماڈل کے ساتھ
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "8782d16f62bc2bdae1f0b38f39a2417c",
+  "translation_date": "2025-04-03T06:57:38+00:00",
+  "source_file": "md\\01.Introduction\\03\\Remote_Interence.md",
+  "language_code": "ur"
+}
+-->
+# ریموٹ ماڈل کے ساتھ انفرنسنگ
 
-جب ایڈاپٹرز کو ریموٹ ماحول میں ٹرین کیا جا چکا ہو، تو ماڈل کے ساتھ انٹریکٹ کرنے کے لیے ایک سادہ Gradio ایپلیکیشن استعمال کریں۔
+جب ایڈاپٹرز کو ریموٹ ماحول میں ٹرین کر لیا جائے تو ماڈل کے ساتھ تعامل کے لیے ایک سادہ Gradio ایپلیکیشن استعمال کریں۔
 
-![فائن ٹون مکمل](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.ur.png)
+![فائن ٹیون مکمل](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.ur.png)
 
-### Azure ریسورسز کی تیاری
-ریموٹ انفرینسنگ کے لیے Azure ریسورسز کو سیٹ اپ کرنے کے لیے کمانڈ پیلیٹ سے `AI Toolkit: Provision Azure Container Apps for inference` چلائیں۔ اس سیٹ اپ کے دوران، آپ سے اپنی Azure سبسکرپشن اور ریسورس گروپ منتخب کرنے کے لیے کہا جائے گا۔  
-![انفرینس ریسورس کی تیاری](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.ur.png)
+### Azure وسائل کی تیاری
+ریموٹ انفرنسنگ کے لیے Azure وسائل کو سیٹ اپ کرنے کے لیے، کمانڈ پیلیٹ سے `AI Toolkit: Provision Azure Container Apps for inference` کو چلائیں۔ اس سیٹ اپ کے دوران، آپ کو اپنی Azure سبسکرپشن اور ریسورس گروپ منتخب کرنے کے لیے کہا جائے گا۔  
+![انفرنس وسائل کی تیاری](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.ur.png)
+   
+ڈیفالٹ طور پر، انفرنس کے لیے سبسکرپشن اور ریسورس گروپ وہی ہونا چاہیے جو فائن ٹیوننگ کے لیے استعمال ہوا تھا۔ انفرنسنگ وہی Azure Container App Environment استعمال کرے گی اور Azure Files میں محفوظ ماڈل اور ماڈل ایڈاپٹر تک رسائی حاصل کرے گی، جو فائن ٹیوننگ مرحلے کے دوران تیار کیے گئے تھے۔
 
-عام طور پر، انفرینسنگ کے لیے سبسکرپشن اور ریسورس گروپ وہی ہونے چاہئیں جو فائن ٹوننگ کے لیے استعمال کیے گئے تھے۔ انفرینسنگ اسی Azure Container App Environment کا استعمال کرے گا اور Azure Files میں محفوظ ماڈل اور ماڈل ایڈاپٹر تک رسائی حاصل کرے گا، جو فائن ٹوننگ کے مرحلے کے دوران تیار کیے گئے تھے۔
+## AI ٹول کٹ کا استعمال 
 
-## AI ٹول کٹ کا استعمال
+### انفرنس کے لیے ڈپلائمنٹ  
+اگر آپ انفرنس کوڈ میں ترمیم کرنا چاہتے ہیں یا انفرنس ماڈل کو دوبارہ لوڈ کرنا چاہتے ہیں، تو براہ کرم `AI Toolkit: Deploy for inference` کمانڈ چلائیں۔ یہ آپ کے تازہ ترین کوڈ کو ACA کے ساتھ ہم آہنگ کرے گا اور ریپلیکا کو دوبارہ شروع کرے گا۔  
 
-### انفرینسنگ کے لیے ڈپلائمنٹ  
-اگر آپ انفرینسنگ کوڈ میں ترمیم کرنا چاہتے ہیں یا انفرینسنگ ماڈل کو دوبارہ لوڈ کرنا چاہتے ہیں، تو `AI Toolkit: Deploy for inference` کمانڈ چلائیں۔ یہ آپ کے تازہ ترین کوڈ کو ACA کے ساتھ ہم آہنگ کرے گا اور ریپلیکا کو دوبارہ شروع کرے گا۔
+![انفرنس کے لیے ڈپلائمنٹ](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.ur.png)
 
-![انفرینسنگ کے لیے ڈپلائمنٹ](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.ur.png)
+ڈپلائمنٹ کامیابی سے مکمل ہونے کے بعد، ماڈل اب اس اینڈ پوائنٹ کے ذریعے ایویلیویشن کے لیے تیار ہے۔
 
-ڈپلائمنٹ کامیابی سے مکمل ہونے کے بعد، ماڈل اب اس اینڈپوائنٹ کے ذریعے ایویلیوایشن کے لیے تیار ہے۔
+### انفرنس API تک رسائی
 
-### انفرینس API تک رسائی
+آپ انفرنس API تک رسائی حاصل کرنے کے لیے VSCode نوٹیفکیشن میں دکھائے گئے "*Go to Inference Endpoint*" بٹن پر کلک کر سکتے ہیں۔ متبادل طور پر، ویب API اینڈ پوائنٹ `ACA_APP_ENDPOINT` میں `./infra/inference.config.json` اور آؤٹ پٹ پینل میں پایا جا سکتا ہے۔
 
-آپ انفرینس API تک رسائی حاصل کرنے کے لیے VSCode نوٹیفکیشن میں ظاہر ہونے والے "*Go to Inference Endpoint*" بٹن پر کلک کر سکتے ہیں۔ متبادل کے طور پر، ویب API اینڈپوائنٹ `ACA_APP_ENDPOINT` میں `./infra/inference.config.json` اور آؤٹ پٹ پینل میں پایا جا سکتا ہے۔
+![ایپ اینڈ پوائنٹ](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.ur.png)
 
-![ایپ اینڈپوائنٹ](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.ur.png)
+> **نوٹ:** انفرنس اینڈ پوائنٹ کو مکمل طور پر فعال ہونے میں چند منٹ لگ سکتے ہیں۔
 
-> **نوٹ:** انفرینس اینڈپوائنٹ کو مکمل طور پر فعال ہونے میں چند منٹ لگ سکتے ہیں۔
-
-## ٹیمپلیٹ میں شامل انفرینس کمپوننٹس
+## ٹیمپلیٹ میں شامل انفرنس کے اجزاء
  
 | فولڈر | مواد |
 | ------ |--------- |
-| `infra` | ریموٹ آپریشنز کے لیے تمام ضروری کنفیگریشنز پر مشتمل ہے۔ |
-| `infra/provision/inference.parameters.json` | بائیسپ ٹیمپلیٹس کے پیرامیٹرز کو رکھتا ہے، جو Azure ریسورسز کی تیاری کے لیے استعمال ہوتے ہیں۔ |
-| `infra/provision/inference.bicep` | Azure ریسورسز کی تیاری کے لیے ٹیمپلیٹس پر مشتمل ہے۔ |
+| `infra` | ریموٹ آپریشنز کے لیے تمام ضروری کنفیگریشنز شامل ہیں۔ |
+| `infra/provision/inference.parameters.json` | بائسپس ٹیمپلیٹس کے لیے پیرامیٹرز رکھتا ہے، جو انفرنس کے لیے Azure وسائل کی تیاری کے لیے استعمال ہوتے ہیں۔ |
+| `infra/provision/inference.bicep` | انفرنس کے لیے Azure وسائل کی تیاری کے ٹیمپلیٹس پر مشتمل ہے۔ |
 | `infra/inference.config.json` | کنفیگریشن فائل، جو `AI Toolkit: Provision Azure Container Apps for inference` کمانڈ کے ذریعے تیار کی گئی ہے۔ یہ دیگر ریموٹ کمانڈ پیلیٹس کے لیے ان پٹ کے طور پر استعمال ہوتی ہے۔ |
 
-### Azure ریسورس پروویژن کو کنفیگر کرنے کے لیے AI ٹول کٹ کا استعمال
+### AI ٹول کٹ کا استعمال کرتے ہوئے Azure وسائل کی تیاری
 [AI ٹول کٹ](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) کو کنفیگر کریں۔
 
-انفرینسنگ کے لیے Azure Container Apps پروویژن کریں ` command.
+انفرنس کے لیے Azure Container Apps تیار کریں ` command.
 
 You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
 | Parameter | Description |
@@ -53,9 +62,9 @@ You can find configuration parameters in `./infra/provision/inference.parameters
 
 By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` فائل۔ پھر، کمانڈ پیلیٹ سے `AI Toolkit: Provision Azure Container Apps for inference` کمانڈ چلائیں۔ یہ کسی بھی مخصوص ریسورس کو اپڈیٹ کرے گا اور کسی بھی غیر موجود ریسورس کو تیار کرے گا۔
+If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` فائل میں۔ پھر کمانڈ پیلیٹ سے `AI Toolkit: Provision Azure Container Apps for inference` کمانڈ چلائیں۔ یہ کسی بھی مخصوص وسائل کو اپ ڈیٹ کرے گا اور کسی بھی گمشدہ وسائل کو تیار کرے گا۔
 
-مثال کے طور پر، اگر آپ کے پاس ایک موجودہ Azure کنٹینر ماحول ہے، تو آپ کی `./infra/finetuning.parameters.json` فائل اس طرح نظر آنی چاہیے:
+مثال کے طور پر، اگر آپ کے پاس ایک موجودہ Azure کنٹینر ماحول ہے، تو آپ کی `./infra/finetuning.parameters.json` اس طرح نظر آنی چاہیے:
 
 ```json
 {
@@ -75,7 +84,7 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 ### دستی تیاری  
-اگر آپ Azure ریسورسز کو دستی طور پر کنفیگر کرنا پسند کرتے ہیں، تو آپ `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` فائل میں فراہم کردہ بائیسپ فائلز استعمال کر سکتے ہیں۔
+اگر آپ Azure وسائل کو دستی طور پر کنفیگر کرنا پسند کرتے ہیں، تو آپ `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` فائل میں فراہم کردہ بائسپس فائلز استعمال کر سکتے ہیں۔
 
 مثال کے طور پر:
 
@@ -91,4 +100,4 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 **ڈسکلیمر**:  
-یہ دستاویز مشین پر مبنی AI ترجمہ خدمات کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کی کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا نقصانات ہو سکتے ہیں۔ اصل دستاویز کو اس کی مقامی زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لئے بھرپور کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستگی ہو سکتی ہیں۔ اصل دستاویز، جو اس کی اصل زبان میں ہے، کو مستند ذریعہ سمجھا جانا چاہئے۔ اہم معلومات کے لئے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لئے ہم ذمہ دار نہیں ہیں۔

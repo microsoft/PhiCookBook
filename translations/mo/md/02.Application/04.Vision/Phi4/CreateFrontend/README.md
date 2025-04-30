@@ -1,10 +1,19 @@
-## **Phi-4-multimodal က အမြင်အာရုံပုံများ ဖတ်ပြီး ကုဒ်ဖန်တီးနိုင်ပါတယ်**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "550f504a78659133aa4c5757a6d875ce",
+  "translation_date": "2025-04-04T13:02:57+00:00",
+  "source_file": "md\\02.Application\\04.Vision\\Phi4\\CreateFrontend\\README.md",
+  "language_code": "mo"
+}
+-->
+## **Phi-4-multimodal'i istifadə edərək şəkilləri oxumaq və kod yaratmaq**
 
-Phi-4-multimodal မှာ ပုံဖတ်ခြင်းဆိုင်ရာ အရည်အချင်းတွေ ပြင်းထန်ပါတယ်။ Python ကို သုံးပြီး အောက်ပါ လုပ်ဆောင်ချက်တွေကို ပြုလုပ်ကြည့်ရအောင်။ ပုံက ChatGPT စာမျက်နှာတစ်ခု ဖြစ်ပါတယ်။
+Phi-4-multimodal güclü şəkil oxuma qabiliyyətinə malikdir. Gəlin Python ilə aşağıdakı funksiyaları həyata keçirməyə çalışaq. Şəkil ChatGPT səhifəsidir. 
 
 ![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.mo.png)
 
-### **နမူနာ ကုဒ်**
+### **Nümunə Kod**
 
 ```python
 
@@ -56,4 +65,4 @@ print(response)
 
 ```
 
-It seems like you are asking to translate the provided text into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language, such as Maori, Mongolian, or something else? Let me know so I can assist you accurately!
+It seems you've requested a translation to "mo," but I'm not certain what language "mo" refers to. Could you please clarify or provide more context? For example, are you referring to Maori, Mongolian, or another language?

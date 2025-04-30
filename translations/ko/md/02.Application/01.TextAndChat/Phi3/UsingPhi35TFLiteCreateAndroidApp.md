@@ -1,28 +1,37 @@
-# **Microsoft Phi-3.5 tflite를 사용하여 Android 앱 만들기**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "2faa9c6d61c5aa2708aec02a39ec464b",
+  "translation_date": "2025-04-04T06:32:13+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\UsingPhi35TFLiteCreateAndroidApp.md",
+  "language_code": "ko"
+}
+-->
+# **Microsoft Phi-3.5 tflite을 사용하여 Android 앱 만들기**
 
-이 문서는 Microsoft Phi-3.5 tflite 모델을 사용하는 Android 샘플입니다.
+이 샘플은 Microsoft Phi-3.5 tflite 모델을 사용하는 Android 샘플입니다.
 
 ## **📚 지식**
 
-Android LLM Inference API를 사용하면 Android 애플리케이션에서 대형 언어 모델(LLMs)을 완전히 온디바이스로 실행할 수 있습니다. 이를 통해 텍스트 생성, 자연어 형식으로 정보 검색, 문서 요약 등 다양한 작업을 수행할 수 있습니다. 이 API는 여러 텍스트-텍스트 대형 언어 모델을 기본적으로 지원하므로, 최신 온디바이스 생성 AI 모델을 Android 앱에 적용할 수 있습니다.
+Android LLM 추론 API를 사용하면 Android 애플리케이션에서 대규모 언어 모델(LLMs)을 완전히 온디바이스로 실행할 수 있습니다. 이를 통해 텍스트 생성, 자연어 형태로 정보 검색, 문서 요약 등 다양한 작업을 수행할 수 있습니다. 이 작업은 여러 텍스트-텍스트 대규모 언어 모델에 대한 기본 지원을 제공하므로 최신 온디바이스 생성 AI 모델을 Android 앱에 적용할 수 있습니다.
 
-Google AI Edge Torch는 PyTorch 모델을 .tflite 형식으로 변환할 수 있는 Python 라이브러리로, 변환된 모델은 TensorFlow Lite 및 MediaPipe에서 실행할 수 있습니다. 이를 통해 Android, iOS 및 IoT 애플리케이션에서 모델을 온디바이스로 실행할 수 있습니다. AI Edge Torch는 넓은 CPU 지원을 제공하며, 초기 GPU 및 NPU 지원도 포함하고 있습니다. AI Edge Torch는 PyTorch와의 밀접한 통합을 목표로 하며, torch.export()를 기반으로 구축되고 Core ATen 연산자의 높은 커버리지를 제공합니다.
+Google AI Edge Torch는 PyTorch 모델을 .tflite 형식으로 변환할 수 있도록 지원하는 파이썬 라이브러리입니다. 변환된 모델은 TensorFlow Lite 및 MediaPipe와 함께 실행할 수 있습니다. 이를 통해 Android, iOS 및 IoT 애플리케이션에서 모델을 완전히 온디바이스로 실행할 수 있습니다. AI Edge Torch는 광범위한 CPU 지원을 제공하며 초기 GPU 및 NPU 지원도 포함합니다. AI Edge Torch는 PyTorch와 밀접하게 통합되며 torch.export()를 기반으로 하고 Core ATen 연산자에 대한 우수한 지원을 제공합니다.
 
 ## **🪬 가이드라인**
 
-### **🔥 Microsoft Phi-3.5를 tflite로 변환하기**
+### **🔥 Microsoft Phi-3.5를 tflite 지원으로 변환하기**
 
-0. 이 샘플은 Android 14+를 대상으로 합니다.
+0. 이 샘플은 Android 14+용입니다.
 
 1. Python 3.10.12 설치
 
-***제안:*** conda를 사용하여 Python 환경을 설치하는 것을 추천합니다.
+***추천:*** conda를 사용하여 Python 환경 설치
 
-2. Ubuntu 20.04 / 22.04 (참고: [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
+2. Ubuntu 20.04 / 22.04 (여기에서 [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch)에 집중하세요)
 
-***제안:*** Azure Linux VM 또는 타사 클라우드 VM을 사용하여 환경을 설정하는 것을 추천합니다.
+***추천:*** Azure Linux VM 또는 제3자 클라우드 VM을 사용하여 환경 생성
 
-3. Linux bash로 이동하여 Python 라이브러리를 설치하세요.
+3. Linux bash로 이동하여 Python 라이브러리 설치
 
 ```bash
 
@@ -38,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Hugging Face에서 Microsoft-3.5-Instruct를 다운로드하세요.
+4. Hugging Face에서 Microsoft-3.5-Instruct 다운로드
 
 ```bash
 
@@ -48,7 +57,7 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. Microsoft Phi-3.5를 tflite로 변환하세요.
+5. Microsoft Phi-3.5를 tflite로 변환
 
 ```bash
 
@@ -66,7 +75,7 @@ pip install mediapipe
 
 ```
 
-[노트북](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)에서 아래 코드를 실행하세요.
+[your notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)에서 이 코드를 실행하세요.
 
 ```python
 
@@ -102,4 +111,4 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 ![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.ko.png)
 
 **면책 조항**:  
-이 문서는 기계 기반 AI 번역 서비스를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서(모국어로 작성된 문서)가 권위 있는 출처로 간주되어야 합니다. 중요한 정보에 대해서는 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 내용이 포함될 수 있습니다. 원문이 작성된 원어 문서를 권위 있는 자료로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 책임을 지지 않습니다.

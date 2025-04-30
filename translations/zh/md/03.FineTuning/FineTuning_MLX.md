@@ -1,10 +1,19 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "b1ec18a3db0bb90ba8483eceade60031",
+  "translation_date": "2025-04-03T08:18:03+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_MLX.md",
+  "language_code": "zh"
+}
+-->
 # **使用 Apple MLX 框架微调 Phi-3**
 
-我们可以通过 Apple MLX 框架的命令行结合 Lora 完成微调操作。（如果您想了解更多关于 MLX 框架的运行，请阅读 [使用 Apple MLX 框架进行推理 Phi-3](../03.FineTuning/03.Inference/MLX_Inference.md)）
+我们可以通过 Apple MLX 框架命令行结合 Lora 完成微调。（如果想了解更多关于 MLX 框架的操作，请阅读 [使用 Apple MLX 框架推理 Phi-3](../03.FineTuning/03.Inference/MLX_Inference.md)）
 
 ## **1. 数据准备**
 
-默认情况下，MLX 框架要求使用 train、test 和 eval 的 jsonl 格式数据，并结合 Lora 完成微调任务。
+MLX 框架默认要求使用 jsonl 格式的训练、测试和评估数据，并结合 Lora 完成微调任务。
 
 ### ***注意:***
 
@@ -19,13 +28,13 @@
 
 ```
 
-2. 我们的示例使用了 [TruthfulQA 的数据](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)，但数据量相对不足，因此微调结果不一定是最优的。建议学习者根据自己的场景使用更好的数据来完成。
+2. 我们的示例使用了 [TruthfulQA 的数据](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)，但数据量相对不足，因此微调结果不一定是最优的。建议学习者根据自己的场景使用更优质的数据完成微调。
 
-3. 数据格式需结合 Phi-3 模板
+3. 数据格式需与 Phi-3 模板结合。
 
-请从此 [链接](../../../../code/04.Finetuning/mlx) 下载数据，请确保包含 ***data*** 文件夹中的所有 .jsonl 文件。
+请从此 [链接](../../../../code/04.Finetuning/mlx) 下载数据，并确保包含 ***data*** 文件夹中的所有 .jsonl 文件。
 
-## **2. 在终端中进行微调**
+## **2. 在终端进行微调**
 
 请在终端中运行以下命令：
 
@@ -39,7 +48,7 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 1. 这是 LoRA 微调，MLX 框架尚未发布 QLoRA。
 
-2. 您可以通过设置 config.yaml 修改一些参数，例如：
+2. 您可以通过设置 config.yaml 来更改一些参数，例如：
 
 ```yaml
 
@@ -127,7 +136,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-然后运行原始模型以对比结果：
+然后运行原始模型以比较结果：
 
 ```bash
 
@@ -135,7 +144,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-您可以尝试比较微调结果与原始模型的差异。
+您可以尝试比较微调结果与原始模型的表现。
 
 ## **4. 合并适配器以生成新模型**
 
@@ -167,7 +176,7 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 2. 合并后的模型缺少 tokenizer.model，请从 https://huggingface.co/microsoft/Phi-3-mini-4k-instruct 下载。
 
-设置 Ollama 模型文件（如果尚未安装 Ollama，请阅读 [Ollama 快速入门](https://ollama.com/)）
+设置 [Ollama 模型](https://ollama.com/)：
 
 ```txt
 
@@ -186,7 +195,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-恭喜！您已掌握使用 MLX 框架进行微调的操作！
+恭喜！您已掌握使用 MLX 框架进行微调的技能。
 
 **免责声明**：  
-本文件使用基于机器的人工智能翻译服务进行翻译。尽管我们努力确保准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文件为权威来源。对于关键信息，建议寻求专业人工翻译服务。因使用本翻译而引起的任何误解或误读，我们概不负责。
+本文档使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们尽力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言版本的文档作为权威来源。对于关键信息，建议使用专业的人工翻译服务。我们对因使用此翻译而导致的任何误解或误读不承担责任。

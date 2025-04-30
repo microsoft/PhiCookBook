@@ -1,25 +1,34 @@
-## **Phi-4-mini-mm-ийг ашиглан код үүсгэх**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "aacf82e3da702afd8469bba99b662509",
+  "translation_date": "2025-04-04T12:58:53+00:00",
+  "source_file": "md\\02.Application\\02.Code\\Phi4\\GenProjectCode\\README.md",
+  "language_code": "mo"
+}
+-->
+## **Phi-4-mini-mm ke saath code generate karna**
 
-Phi-4-mini нь Phi гэр бүлийн хүчирхэг код бичих чадварыг үргэлжлүүлэн сайжруулж байна. Та Prompt ашиглан кодтой холбоотой асуултуудыг асууж болно. Мэдээжийн хэрэг, хүчтэй логик сэтгэлгээг нэмснээр энэ нь илүү хүчирхэг код үүсгэх чадвартай болсон, жишээлбэл, шаардлагын дагуу төслүүдийг үүсгэх гэх мэт. Жишээ нь:
+Phi-4-mini Phi Family ki mazboot coding kshamataon ko jari rakhta hai. Aap Prompt ka upyog karke coding se jude prashn pooch sakte hain. Swabhavik roop se, mazboot tarkshakti jodne ke baad, ismein aur bhi adhik shaktishali coding kshamataein hain, jaise ki aavashyaktaon ke anusar projects generate karna. Udaharan ke liye, aavashyaktaon ke anusar projects generate karna, jaise:
 
-### **Шаардлага**
+### **Aavashyakta**
 
-Худалдааны сагсны апп үүсгэх
+Ek Shopping Cart App banaiye
 
-- Дараах аргуудтай API Rest үүсгэх:
-    - Хуудасны офсет болон лимит ашиглан шар айрагны жагсаалтыг авах.
-    - ID-аар шар айрагны дэлгэрэнгүй мэдээллийг авах.
-    - Нэр, тайлбар, уриа үг, хоолны хослол болон үнээр нь шар айраг хайх.
-- Үндсэн хуудсан дээр бүтээгдэхүүний жагсаалт үүсгэх.
-    - Бүтээгдэхүүн шүүх хайлтын талбар үүсгэх.
-    - Хэрэглэгч бүтээгдэхүүн дээр дарахад тайлбарын хуудас руу шилжих.
-- (Сонголттой) Үнэ шүүх слайсер үүсгэх.
-- Худалдааны сагс үүсгэх.
-    - Сагсанд бүтээгдэхүүн нэмэх.
-    - Сагснаас бүтээгдэхүүн устгах.
-    - Сагсанд байгаа бүтээгдэхүүний нийт үнийг тооцоолох.
+- Ek API Rest banaiye jismein nimnlikhit methods ho:
+    - Page offset aur limit ka upyog karke beers ki list prapt karein.
+    - Id ke madhyam se beer ke details prapt karein.
+    - Naam, varnana, tagline, food pairings, aur price ke aadhar par beer khojein.
+- Main page par products ki ek list banaiye.
+    - Products ko filter karne ke liye ek search bar banaiye.
+    - Jab user kisi product par click kare, to description page par navigate karein.
+- (Vikalp) Price ke aadhar par products ko filter karne ke liye ek slicer banaiye.
+- Ek shopping cart banaiye.
+    - Products ko cart mein add karein.
+    - Cart se products ko remove karein.
+    - Cart mein products ki total price calculate karein.
 
-### **Жишээ код - Python**
+### **Udaharan Code - Python**
 
 ```python
 
@@ -129,4 +138,4 @@ print(response)
 
 ```
 
-It seems like you are asking for a translation into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language, such as Maori, Mongolian, or another language? Let me know so I can assist you better!
+It seems you are requesting a translation into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect?

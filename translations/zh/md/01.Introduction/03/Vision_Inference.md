@@ -1,10 +1,19 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "27cb0b952a2ef48c14b75dec13635acf",
+  "translation_date": "2025-04-03T07:00:13+00:00",
+  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "language_code": "zh"
+}
+-->
 # **在本地运行 Phi-3-Vision 推理**
 
-Phi-3-vision-128k-instruct 不仅让 Phi-3 能理解语言，还能通过视觉“看见”世界。通过 Phi-3-vision-128k-instruct，我们可以解决各种视觉问题，例如 OCR、表格分析、物体识别、图片描述等。我们可以轻松完成以往需要大量数据训练才能完成的任务。以下是 Phi-3-vision-128k-instruct 提供的相关技术和应用场景。
+Phi-3-vision-128k-instruct 让 Phi-3 不仅能够理解语言，还能通过视觉感知世界。借助 Phi-3-vision-128k-instruct，我们可以解决不同的视觉问题，例如 OCR（光学字符识别）、表格分析、物体识别、图片描述等。我们可以轻松完成以前需要大量数据训练才能实现的任务。以下是 Phi-3-vision-128k-instruct 引用的相关技术和应用场景。
 
 ## **0. 准备工作**
 
-在使用之前，请确保已安装以下 Python 库（建议使用 Python 3.10+）
+请确保在使用前已安装以下 Python 库（推荐使用 Python 3.10+）
 
 ```bash
 pip install transformers -U
@@ -18,7 +27,7 @@ pip install torch -U
 pip install flash-attn --no-build-isolation
 ```
 
-创建一个新的 Notebook。为了完成示例，建议您首先创建以下内容。
+创建一个新的 Notebook。为了完成示例，建议您先创建以下内容。
 
 ```python
 from PIL import Image
@@ -73,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. 使用 Phi-3-Vision 进行 OCR**
 
-除了分析图片，我们还可以从图片中提取信息。这是 OCR 的过程，以前需要编写复杂代码才能完成。
+除了分析图片，我们还可以从图片中提取信息。这是 OCR 过程，以前需要编写复杂的代码才能完成。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -97,7 +106,7 @@ response = processor.batch_decode(generate_ids,
 
 ```
 
-结果是
+结果为：
 
 ```txt
 The title of the book is "ALONE" and the author is Morgan Maxwell.
@@ -105,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. 多张图片的比较**
 
-Phi-3 Vision 支持多张图片的比较。我们可以使用此模型找出图片之间的差异。
+Phi-3 Vision 支持对多张图片进行比较。我们可以使用此模型来找出图片之间的差异。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -134,11 +143,11 @@ generate_ids = generate_ids[:, inputs['input_ids'].shape[1]:]
 response = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 ```
 
-结果是
+结果为：
 
 ```txt
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
 **免责声明**：  
-本文档是通过机器翻译服务生成的。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原文档的原始语言版本作为权威来源。对于关键信息，建议寻求专业人工翻译。我们不对因使用此翻译而引起的任何误解或误读承担责任。
+本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议使用专业人工翻译。对于因使用此翻译而引发的任何误解或误读，我们概不负责。

@@ -1,12 +1,21 @@
-# **Phi-4-mini ONNX-тай харилцах**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "17451c69069b49f37a5395131a61ee52",
+  "translation_date": "2025-04-04T12:47:05+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi4\\ChatWithPhi4ONNX\\README.md",
+  "language_code": "mo"
+}
+-->
+# **Phi-4-mini ONNX-თან ჩატი**
 
-***ONNX*** нь машин сургалтын загваруудыг илэрхийлэхэд зориулсан нээлттэй формат юм. ONNX нь машин сургалт болон гүнзгий сургалтын загваруудын үндсэн элемент болох нийтлэг операторуудын багц, мөн загваруудыг янз бүрийн хүрээ, хэрэгсэл, гүйцэтгэлийн орчин, компайлераар ашиглах боломжтой нийтлэг файл форматыг тодорхойлдог.
+***ONNX*** არის ღია ფორმატი, რომელიც შექმნილია მანქანური სწავლების მოდელების წარმოდგენისთვის. ONNX განსაზღვრავს ოპერატორების საერთო ნაკრებს - მანქანური და ღრმა სწავლების მოდელების საფუძვლებს - და საერთო ფაილის ფორმატს, რაც საშუალებას აძლევს AI დეველოპერებს გამოიყენონ მოდელები სხვადასხვა ჩარჩოებთან, ინსტრუმენტებთან, გაშვების გარემოებთან და კომპილატორებთან.
 
-Бид генератив хиймэл оюуны загваруудыг захын төхөөрөмжүүд дээр байршуулж, хязгаарлагдмал тооцоолох хүчин чадал эсвэл оффлайн орчинд ашиглахыг хүсэж байна. Одоо бид загварыг тоон хэмжээсээр хувиргах замаар энэ зорилгод хүрч чадна. Тоон хэмжээсээр хувиргасан загварыг GGUF эсвэл ONNX формат руу хөрвүүлж болно.
+ჩვენი მიზანია, განვათავსოთ გენერაციული AI მოდელები საზღვრულ მოწყობილობებზე და გამოვიყენოთ ისინი შეზღუდული გამოთვლითი რესურსებით ან ოფლაინ გარემოში. ახლა შეგვიძლია ამ მიზნის მიღწევა მოდელის კვანტიზებული მეთოდით გარდაქმნით. კვანტიზებული მოდელის გადაყვანა შესაძლებელია GGUF ან ONNX ფორმატში.
 
-Microsoft Olive нь SLM-ийг тоон хэмжээсийн ONNX формат руу хөрвүүлэхэд тусална. Загварын хөрвүүлэлт хийх арга маш энгийн.
+Microsoft Olive დაგეხმარებათ SLM-ის კვანტიზებულ ONNX ფორმატში გარდაქმნაში. მოდელის გარდაქმნის მეთოდი ძალიან მარტივია.
 
-**Microsoft Olive SDK-г суулгах**
+**Microsoft Olive SDK-ის ინსტალაცია**
 
 ```bash
 
@@ -16,7 +25,7 @@ pip install transformers
 
 ```
 
-**CPU ONNX дэмжлэг рүү хөрвүүлэх**
+**CPU ONNX მხარდაჭერის გარდაქმნა**
 
 ```bash
 
@@ -24,12 +33,11 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Note*** энэ жишээ CPU ашигласан болно
+***შენიშვნა*** ეს მაგალითი იყენებს CPU-ს.
 
+### **Phi-4-mini ONNX მოდელის ინფერენცია ONNX Runtime GenAI-ით**
 
-### **Phi-4-mini ONNX загварыг ONNX Runtime GenAI ашиглан дүгнэлт хийх**
-
-- **ONNX Runtime GenAI-г суулгах**
+- **ONNX Runtime GenAI-ის ინსტალაცია**
 
 ```bash
 
@@ -37,9 +45,9 @@ pip install --pre onnxruntime-genai
 
 ```
 
-- **Python код**
+- **Python კოდი**
 
-*Энэ бол ONNX Runtime GenAI 0.5.2 хувилбар*
+*ეს არის ONNX Runtime GenAI 0.5.2 ვერსია*
 
 ```python
 
@@ -94,7 +102,7 @@ while not generator.is_done():
 
 ```
 
-*Энэ бол ONNX Runtime GenAI 0.6.0 хувилбар*
+*ეს არის ONNX Runtime GenAI 0.6.0 ვერსია*
 
 ```python
 
@@ -147,4 +155,4 @@ while not generator.is_done():
 
 ```
 
-It seems you've requested a translation to "mo," but it's unclear what specific language or dialect "mo" refers to. Could you clarify the language you're referring to (e.g., Maori, Mongolian, Moore, etc.)? This will help me provide an accurate translation!
+It seems like you want the text translated to "mo," but could you clarify what "mo" refers to? Are you asking for translation into Māori, Mongolian, or another language?

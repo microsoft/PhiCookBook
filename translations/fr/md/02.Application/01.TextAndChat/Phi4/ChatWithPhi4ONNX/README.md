@@ -1,12 +1,21 @@
-# **Discuter avec Phi-4-mini ONNX**
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
+  "translation_date": "2025-03-27T11:21:31+00:00",
+  "source_file": "md\\02.Application\\01.TextAndChat\\Phi4\\ChatWithPhi4ONNX\\README.md",
+  "language_code": "fr"
+}
+-->
+# **Discussion avec Phi-4-mini ONNX**
 
-***ONNX*** est un format ouvert conçu pour représenter les modèles d'apprentissage automatique. ONNX définit un ensemble commun d'opérateurs - les blocs de construction des modèles d'apprentissage automatique et d'apprentissage profond - ainsi qu'un format de fichier commun pour permettre aux développeurs d'IA d'utiliser des modèles avec une variété de frameworks, d'outils, d'environnements d'exécution et de compilateurs.
+***ONNX*** est un format ouvert conçu pour représenter les modèles d'apprentissage automatique. ONNX définit un ensemble commun d'opérateurs - les blocs de construction des modèles d'apprentissage automatique et d'apprentissage profond - et un format de fichier commun permettant aux développeurs d'IA d'utiliser des modèles avec divers frameworks, outils, environnements d'exécution et compilateurs.
 
-Nous espérons déployer des modèles d'IA générative sur des appareils en périphérie et les utiliser dans des environnements à puissance de calcul limitée ou hors ligne. Désormais, nous pouvons atteindre cet objectif en convertissant le modèle de manière quantifiée. Nous pouvons convertir le modèle quantifié au format GGUF ou ONNX.
+Nous espérons déployer des modèles d'IA générative sur des dispositifs périphériques et les utiliser dans des environnements à puissance de calcul limitée ou hors ligne. Désormais, nous pouvons atteindre cet objectif en convertissant le modèle de manière quantifiée. Nous pouvons convertir le modèle quantifié au format GGUF ou ONNX.
 
-Microsoft Olive peut vous aider à convertir SLM en format ONNX quantifié. La méthode pour effectuer la conversion du modèle est très simple.
+Microsoft Olive peut vous aider à convertir SLM au format ONNX quantifié. La méthode pour effectuer cette conversion de modèle est très simple.
 
-**Installer le SDK Microsoft Olive**
+**Installer Microsoft Olive SDK**
 
 ```bash
 
@@ -16,7 +25,7 @@ pip install transformers
 
 ```
 
-**Convertir pour support CPU ONNX**
+**Convertir pour prise en charge ONNX sur CPU**
 
 ```bash
 
@@ -24,7 +33,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Note*** cet exemple utilise le CPU.
+***Note*** cet exemple utilise le CPU
 
 ### **Inférence du modèle Phi-4-mini ONNX avec ONNX Runtime GenAI**
 
@@ -38,7 +47,7 @@ pip install --pre onnxruntime-genai
 
 - **Code Python**
 
-*Il s'agit de la version 0.5.2 d'ONNX Runtime GenAI*
+*Version 0.5.2 de ONNX Runtime GenAI*
 
 ```python
 
@@ -93,7 +102,7 @@ while not generator.is_done():
 
 ```
 
-*Il s'agit de la version 0.6.0 d'ONNX Runtime GenAI*
+*Version 0.6.0 de ONNX Runtime GenAI*
 
 ```python
 
@@ -147,4 +156,4 @@ while not generator.is_done():
 ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide de services de traduction automatisée basés sur l'intelligence artificielle. Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

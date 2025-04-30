@@ -1,27 +1,36 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "82af197df38d25346a98f1f0e84d1698",
+  "translation_date": "2025-03-27T07:10:29+00:00",
+  "source_file": "md\\01.Introduction\\03\\iOS_Inference.md",
+  "language_code": "fr"
+}
+-->
 # **Inférence Phi-3 sur iOS**
 
-Phi-3-mini est une nouvelle série de modèles de Microsoft permettant le déploiement de modèles de langage étendus (LLMs) sur des appareils edge et IoT. Phi-3-mini est disponible pour les déploiements sur iOS, Android et appareils edge, permettant de déployer l'IA générative dans des environnements BYOD. L'exemple suivant montre comment déployer Phi-3-mini sur iOS.
+Phi-3-mini est une nouvelle série de modèles de Microsoft qui permet le déploiement de modèles de langage de grande taille (LLMs) sur des appareils en périphérie et des dispositifs IoT. Phi-3-mini est disponible pour les déploiements sur iOS, Android et appareils Edge, permettant ainsi de déployer l'IA générative dans des environnements BYOD. L'exemple suivant montre comment déployer Phi-3-mini sur iOS.
 
 ## **1. Préparation**
 
 - **a.** macOS 14+  
 - **b.** Xcode 15+  
-- **c.** iOS SDK 17.x (iPhone 14 A16 ou supérieur)  
+- **c.** SDK iOS 17.x (iPhone 14 A16 ou supérieur)  
 - **d.** Installer Python 3.10+ (Conda est recommandé)  
 - **e.** Installer la bibliothèque Python : `python-flatbuffers`  
 - **f.** Installer CMake  
 
 ### Semantic Kernel et inférence
 
-Semantic Kernel est un framework applicatif qui permet de créer des applications compatibles avec Azure OpenAI Service, les modèles OpenAI et même des modèles locaux. L'accès aux services locaux via Semantic Kernel facilite l'intégration avec votre serveur de modèles Phi-3-mini auto-hébergé.
+Semantic Kernel est un framework d'application qui vous permet de créer des applications compatibles avec Azure OpenAI Service, les modèles OpenAI et même les modèles locaux. Accéder aux services locaux via Semantic Kernel facilite l'intégration avec votre serveur de modèles Phi-3-mini auto-hébergé.
 
-### Appel de modèles quantifiés avec Ollama ou LlamaEdge
+### Appeler des modèles quantifiés avec Ollama ou LlamaEdge
 
 De nombreux utilisateurs préfèrent utiliser des modèles quantifiés pour exécuter des modèles localement. [Ollama](https://ollama.com) et [LlamaEdge](https://llamaedge.com) permettent d'appeler différents modèles quantifiés :
 
 #### **Ollama**
 
-Vous pouvez exécuter `ollama run phi3` directement ou le configurer hors ligne. Créez un Modelfile avec le chemin vers votre fichier `gguf`. Exemple de code pour exécuter le modèle quantifié Phi-3-mini :
+Vous pouvez exécuter `ollama run phi3` directement ou le configurer hors ligne. Créez un fichier Modelfile avec le chemin vers votre fichier `gguf`. Exemple de code pour exécuter le modèle quantifié Phi-3-mini :
 
 ```gguf
 FROM {Add your gguf file path}
@@ -32,7 +41,7 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-Si vous souhaitez utiliser `gguf` à la fois sur le cloud et sur des appareils edge simultanément, LlamaEdge est une excellente option.
+Si vous souhaitez utiliser `gguf` à la fois sur des appareils cloud et périphériques simultanément, LlamaEdge est une excellente option.
 
 ## **2. Compilation d'ONNX Runtime pour iOS**
 
@@ -50,7 +59,7 @@ cd ../
 
 ### **Remarques**
 
-- **a.** Avant de compiler, assurez-vous que Xcode est correctement configuré et définissez-le comme répertoire de développement actif dans le terminal :
+- **a.** Avant de compiler, assurez-vous que Xcode est correctement configuré et définissez-le comme répertoire de développeur actif dans le terminal :
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
@@ -58,11 +67,11 @@ cd ../
 
 - **b.** ONNX Runtime doit être compilé pour différentes plateformes. Pour iOS, vous pouvez compiler pour `arm64` or `x86_64`.
 
-- **c.** Il est recommandé d'utiliser la dernière version du SDK iOS pour la compilation. Cependant, vous pouvez également utiliser une version antérieure si vous avez besoin de compatibilité avec des SDK plus anciens.
+- **c.** Il est recommandé d'utiliser le dernier SDK iOS pour la compilation. Cependant, vous pouvez également utiliser une version antérieure si vous avez besoin de compatibilité avec des SDK plus anciens.
 
 ## **3. Compilation de l'IA générative avec ONNX Runtime pour iOS**
 
-> **Note :** Comme l'IA générative avec ONNX Runtime est en aperçu, veuillez noter qu'il pourrait y avoir des changements.
+> **Remarque :** Étant donné que l'IA générative avec ONNX Runtime est en aperçu, veuillez noter les éventuels changements.
 
 ```bash
 
@@ -92,11 +101,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. Créer une application App dans Xcode**
 
-J'ai choisi Objective-C comme méthode de développement de l'application, car en utilisant l'IA générative avec l'API C++ d'ONNX Runtime, Objective-C est mieux compatible. Bien sûr, vous pouvez également effectuer les appels associés via un pontage Swift.
+J'ai choisi Objective-C comme méthode de développement de l'application, car en utilisant l'IA générative avec l'API C++ d'ONNX Runtime, Objective-C est mieux compatible. Bien sûr, vous pouvez également effectuer les appels correspondants via le pont Swift.
 
 ![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.fr.png)
 
-## **5. Copier le modèle quantifié INT4 ONNX dans le projet d'application**
+## **5. Copier le modèle quantifié INT4 ONNX dans le projet de l'application**
 
 Nous devons importer le modèle de quantification INT4 au format ONNX, qui doit d'abord être téléchargé.
 
@@ -108,7 +117,7 @@ Après le téléchargement, vous devez l'ajouter au répertoire Resources du pro
 
 ## **6. Ajouter l'API C++ dans les ViewControllers**
 
-> **Remarques :**
+> **Remarque :**
 
 - **a.** Ajoutez les fichiers d'en-tête C++ correspondants au projet.
 
@@ -120,7 +129,7 @@ Après le téléchargement, vous devez l'ajouter au répertoire Resources du pro
 
 - **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` pour activer la prise en charge de l'Objective-C++.
+- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` pour activer la prise en charge d'Objective-C++.
 
 ```objc
 
@@ -155,7 +164,7 @@ Une fois la configuration terminée, vous pouvez exécuter l'application pour vo
 
 ![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.fr.jpg)
 
-Pour plus de code d'exemple et d'instructions détaillées, consultez le [dépôt Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+Pour plus d'exemples de code et des instructions détaillées, visitez le [répertoire d'exemples Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **Avertissement** :  
-Ce document a été traduit à l'aide de services de traduction automatique basés sur l'intelligence artificielle. Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

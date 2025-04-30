@@ -1,6 +1,15 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "82af197df38d25346a98f1f0e84d1698",
+  "translation_date": "2025-03-27T07:11:16+00:00",
+  "source_file": "md\\01.Introduction\\03\\iOS_Inference.md",
+  "language_code": "es"
+}
+-->
 # **Inferencia de Phi-3 en iOS**
 
-Phi-3-mini es una nueva serie de modelos de Microsoft que permite el despliegue de Modelos de Lenguaje Extenso (LLMs) en dispositivos de borde y dispositivos IoT. Phi-3-mini está disponible para implementaciones en iOS, Android y dispositivos de borde, lo que permite desplegar IA generativa en entornos BYOD. El siguiente ejemplo demuestra cómo implementar Phi-3-mini en iOS.
+Phi-3-mini es una nueva serie de modelos de Microsoft que permite la implementación de Modelos de Lenguaje de Gran Escala (LLMs) en dispositivos de borde y dispositivos IoT. Phi-3-mini está disponible para implementaciones en iOS, Android y dispositivos de borde, permitiendo que la IA generativa se despliegue en entornos BYOD. El siguiente ejemplo demuestra cómo implementar Phi-3-mini en iOS.
 
 ## **1. Preparación**
 
@@ -13,15 +22,15 @@ Phi-3-mini es una nueva serie de modelos de Microsoft que permite el despliegue 
 
 ### Semantic Kernel e Inferencia
 
-Semantic Kernel es un marco de aplicaciones que te permite crear aplicaciones compatibles con Azure OpenAI Service, modelos de OpenAI e incluso modelos locales. Acceder a servicios locales a través de Semantic Kernel facilita la integración con tu servidor de modelos Phi-3-mini autohospedado.
+Semantic Kernel es un marco de aplicaciones que te permite crear aplicaciones compatibles con Azure OpenAI Service, modelos de OpenAI e incluso modelos locales. Acceder a servicios locales a través de Semantic Kernel facilita la integración con tu servidor de modelos Phi-3-mini autoalojado.
 
-### Llamadas a Modelos Cuantizados con Ollama o LlamaEdge
+### Llamando a Modelos Cuantizados con Ollama o LlamaEdge
 
 Muchos usuarios prefieren usar modelos cuantizados para ejecutarlos localmente. [Ollama](https://ollama.com) y [LlamaEdge](https://llamaedge.com) permiten a los usuarios llamar a diferentes modelos cuantizados:
 
 #### **Ollama**
 
-Puedes ejecutar `ollama run phi3` directamente o configurarlo sin conexión. Crea un Modelfile con la ruta a tu archivo `gguf`. Código de ejemplo para ejecutar el modelo cuantizado Phi-3-mini:
+Puedes ejecutar `ollama run phi3` directamente o configurarlo sin conexión. Crea un archivo Modelfile con la ruta a tu archivo `gguf`. Código de ejemplo para ejecutar el modelo cuantizado Phi-3-mini:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -32,9 +41,9 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-Si deseas usar `gguf` tanto en la nube como en dispositivos de borde simultáneamente, LlamaEdge es una excelente opción.
+Si deseas usar `gguf` tanto en la nube como en dispositivos de borde simultáneamente, LlamaEdge es una gran opción.
 
-## **2. Compilación de ONNX Runtime para iOS**
+## **2. Compilando ONNX Runtime para iOS**
 
 ```bash
 
@@ -50,7 +59,7 @@ cd ../
 
 ### **Aviso**
 
-- **a.** Antes de compilar, asegúrate de que Xcode esté correctamente configurado y configúralo como el directorio de desarrollador activo en el terminal:
+- **a.** Antes de compilar, asegúrate de que Xcode esté correctamente configurado y configúralo como el directorio de desarrollador activo en la terminal:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
@@ -58,11 +67,11 @@ cd ../
 
 - **b.** ONNX Runtime necesita ser compilado para diferentes plataformas. Para iOS, puedes compilar para `arm64` or `x86_64`.
 
-- **c.** Se recomienda usar la última versión de iOS SDK para la compilación. Sin embargo, también puedes usar una versión anterior si necesitas compatibilidad con SDKs previos.
+- **c.** Se recomienda usar la última versión del SDK de iOS para la compilación. Sin embargo, también puedes usar una versión anterior si necesitas compatibilidad con SDKs previos.
 
-## **3. Compilación de IA Generativa con ONNX Runtime para iOS**
+## **3. Compilando Generative AI con ONNX Runtime para iOS**
 
-> **Nota:** Debido a que la IA Generativa con ONNX Runtime está en vista previa, ten en cuenta posibles cambios.
+> **Nota:** Debido a que Generative AI con ONNX Runtime está en vista previa, ten en cuenta posibles cambios.
 
 ```bash
 
@@ -90,27 +99,27 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **4. Crear una aplicación App en Xcode**
+## **4. Crear una aplicación en Xcode**
 
-Elegí Objective-C como el método de desarrollo de la App, porque al usar IA Generativa con la API de ONNX Runtime en C++, Objective-C es más compatible. Por supuesto, también puedes realizar las llamadas relacionadas a través de un puente con Swift.
+Elegí Objective-C como método de desarrollo de la aplicación, porque al usar Generative AI con la API C++ de ONNX Runtime, Objective-C es más compatible. Por supuesto, también puedes realizar llamadas relacionadas a través de un puente con Swift.
 
 ![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.es.png)
 
-## **5. Copiar el modelo cuantizado INT4 de ONNX al proyecto de la aplicación App**
+## **5. Copiar el modelo cuantizado INT4 de ONNX al proyecto de la aplicación**
 
-Necesitamos importar el modelo de cuantización INT4 en formato ONNX, el cual debe descargarse primero.
+Necesitamos importar el modelo cuantizado INT4 en formato ONNX, el cual debe descargarse primero.
 
 ![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.es.png)
 
-Después de descargarlo, debes añadirlo al directorio Resources del proyecto en Xcode.
+Después de descargarlo, debes agregarlo al directorio Resources del proyecto en Xcode.
 
 ![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.es.png)
 
-## **6. Añadir la API de C++ en ViewControllers**
+## **6. Agregar la API de C++ en ViewControllers**
 
 > **Aviso:**
 
-- **a.** Agrega los archivos de encabezado C++ correspondientes al proyecto.
+- **a.** Agrega los archivos de cabecera C++ correspondientes al proyecto.
 
   ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.es.png)
 
@@ -151,11 +160,11 @@ Después de descargarlo, debes añadirlo al directorio Resources del proyecto en
 
 ## **7. Ejecutar la Aplicación**
 
-Una vez que la configuración esté completa, puedes ejecutar la aplicación para ver los resultados de la inferencia del modelo Phi-3-mini.
+Una vez completada la configuración, puedes ejecutar la aplicación para ver los resultados de la inferencia del modelo Phi-3-mini.
 
 ![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.es.jpg)
 
-Para más código de ejemplo e instrucciones detalladas, visita el [repositorio de Ejemplos de Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+Para más ejemplos de código e instrucciones detalladas, visita el [repositorio de ejemplos de Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando servicios de traducción automática basados en inteligencia artificial. Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea que surja del uso de esta traducción.

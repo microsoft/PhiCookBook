@@ -1,39 +1,47 @@
-## Feinabstimmung mit Kaito
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
+  "translation_date": "2025-03-27T13:51:38+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_Kaito.md",
+  "language_code": "de"
+}
+-->
+## Feintuning mit Kaito
 
-[Kaito](https://github.com/Azure/kaito) ist ein Operator, der die Bereitstellung von AI/ML-Inferenzmodellen in einem Kubernetes-Cluster automatisiert.
+[Kaito](https://github.com/Azure/kaito) ist ein Operator, der die Bereitstellung von KI/ML-Inferenzmodellen in einem Kubernetes-Cluster automatisiert.
 
-Kaito bietet folgende wesentliche Vorteile im Vergleich zu den meisten gängigen Modellbereitstellungsmethoden, die auf virtuellen Maschinen basieren:
+Kaito bietet im Vergleich zu den meisten gängigen Methoden zur Modellbereitstellung, die auf virtuellen Maschinen basieren, folgende wesentliche Vorteile:
 
-- Verwalten von Modelldateien über Container-Images. Ein HTTP-Server wird bereitgestellt, um Inferenzaufrufe mithilfe der Modellbibliothek auszuführen.
-- Vermeidung der Anpassung von Bereitstellungsparametern an GPU-Hardware durch vordefinierte Konfigurationen.
-- Automatische Bereitstellung von GPU-Knoten basierend auf den Modellanforderungen.
-- Hosting großer Modell-Images im öffentlichen Microsoft Container Registry (MCR), sofern es die Lizenz erlaubt.
+- Verwalten von Modelldateien mithilfe von Container-Images. Ein HTTP-Server wird bereitgestellt, um Inferenzaufrufe mit der Modellbibliothek auszuführen.
+- Vermeidung der Anpassung von Bereitstellungsparametern an GPU-Hardware durch vorgefertigte Konfigurationen.
+- Automatische Bereitstellung von GPU-Knoten basierend auf Modellanforderungen.
+- Hosting großer Modell-Images im öffentlichen Microsoft Container Registry (MCR), sofern dies durch die Lizenz gestattet ist.
 
-Mit Kaito wird der Workflow zur Integration großer AI-Inferenzmodelle in Kubernetes erheblich vereinfacht.
+Mit Kaito wird der Workflow zur Integration großer KI-Inferenzmodelle in Kubernetes erheblich vereinfacht.
 
 ## Architektur
 
-Kaito folgt dem klassischen Kubernetes-Designmuster für benutzerdefinierte Ressourcen (Custom Resource Definition, CRD) und Controller. Der Benutzer verwaltet eine `workspace`-benutzerdefinierte Ressource, die die GPU-Anforderungen und die Inferenzspezifikation beschreibt. Die Kaito-Controller automatisieren die Bereitstellung, indem sie die `workspace`-Ressource abgleichen.
+Kaito folgt dem klassischen Kubernetes Custom Resource Definition(CRD)/Controller-Designmuster. Der Benutzer verwaltet eine `workspace`-benutzerdefinierte Ressource, die die GPU-Anforderungen und die Inferenzspezifikation beschreibt. Kaito-Controller automatisieren die Bereitstellung, indem sie die `workspace`-benutzerdefinierte Ressource abgleichen.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito-Architektur" alt="Kaito-Architektur">
+  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito Architektur" alt="Kaito Architektur">
 </div>
 
-Die obige Abbildung zeigt eine Übersicht der Kaito-Architektur. Zu den Hauptkomponenten gehören:
+Die obige Abbildung zeigt eine Übersicht über die Kaito-Architektur. Die Hauptkomponenten bestehen aus:
 
-- **Workspace-Controller**: Dieser gleicht die `workspace`-benutzerdefinierte Ressource ab, erstellt `machine` (weiter unten erläutert) benutzerdefinierte Ressourcen, um die automatische Bereitstellung von Knoten auszulösen, und erstellt die Inferenz-Workloads (`deployment` oder `statefulset`) basierend auf den vordefinierten Modellkonfigurationen.
-- **Node-Provisioner-Controller**: Der Name dieses Controllers lautet *gpu-provisioner* im [gpu-provisioner Helm Chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Er verwendet die `machine`-CRD, die von [Karpenter](https://sigs.k8s.io/karpenter) stammt, um mit dem Workspace-Controller zu interagieren. Er integriert sich mit den APIs des Azure Kubernetes Service (AKS), um neue GPU-Knoten zum AKS-Cluster hinzuzufügen.
+- **Workspace-Controller**: Dieser gleicht die `workspace`-benutzerdefinierte Ressource ab, erstellt `machine` (im Folgenden erläutert) benutzerdefinierte Ressourcen, um die automatische Bereitstellung von Knoten auszulösen, und erstellt die Inferenz-Arbeitslast (`deployment` oder `statefulset`) basierend auf den vorgefertigten Modellkonfigurationen.
+- **Node-Provisioner-Controller**: Der Name des Controllers ist *gpu-provisioner* im [gpu-provisioner Helm Chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Er verwendet die `machine`-CRD, die von [Karpenter](https://sigs.k8s.io/karpenter) stammt, um mit dem Workspace-Controller zu interagieren. Er integriert sich mit den Azure Kubernetes Service(AKS)-APIs, um neue GPU-Knoten zum AKS-Cluster hinzuzufügen.  
 > Hinweis: Der [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ist eine Open-Source-Komponente. Er kann durch andere Controller ersetzt werden, sofern diese die [Karpenter-core](https://sigs.k8s.io/karpenter)-APIs unterstützen.
 
 ## Übersichtsvideo 
 [Sehen Sie sich die Kaito-Demo an](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
-
 ## Installation
 
-Bitte folgen Sie der Installationsanleitung [hier](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Bitte prüfen Sie die Installationsanleitung [hier](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Schnellstart
 
-Nach der Installation von Kaito können Sie die folgenden Befehle ausprobieren, um einen Feinabstimmungsdienst zu starten.
+Nach der Installation von Kaito können folgende Befehle ausprobiert werden, um einen Feintuning-Service zu starten.
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -84,7 +92,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-Der Status des Workspaces kann mit dem folgenden Befehl überwacht werden. Wenn die Spalte WORKSPACEREADY den Wert `True` hat, wurde das Modell erfolgreich bereitgestellt.
+Der Status des Workspaces kann mit folgendem Befehl überprüft werden. Sobald die WORKSPACEREADY-Spalte den Wert `True` hat, wurde das Modell erfolgreich bereitgestellt.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -92,7 +100,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Anschließend können Sie die Cluster-IP des Inferenzdienstes ermitteln und einen temporären `curl`-Pod verwenden, um den Service-Endpunkt im Cluster zu testen.
+Als Nächstes kann die Cluster-IP des Inferenzdienstes gefunden und ein temporärer `curl`-Pod verwendet werden, um den Dienstendpunkt im Cluster zu testen.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -104,4 +112,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe von KI-basierten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

@@ -1,7 +1,15 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "dd1b570422a819b39b14a4c7be06c8fa",
+  "translation_date": "2025-04-04T13:29:31+00:00",
+  "source_file": "md\\03.FineTuning\\FineTuning_Vision.md",
+  "language_code": "mo"
+}
+-->
 # Phi-3.5-vision finetuning recipe
 
-This is the official guide for fine-tuning Phi-3.5-vision using Huggingface libraries.  
-Please `cd` to the code directory [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) before executing the following commands.
+This is the official guide for finetuning Phi-3.5-vision using Hugging Face libraries. Please `cd` to the code directory [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) before running the following commands.
 
 ## Installation
 
@@ -26,7 +34,7 @@ pip install bitsandbytes==0.43.1
 
 ## Quick start
 
-We provide two example fine-tuning scripts: one for DocVQA and another for hateful meme classification.
+We provide two example finetuning scripts: one for DocVQA and another for hateful meme classification.
 
 Minimum hardware tested: 4x RTX8000 (48GB RAM per GPU)
 
@@ -35,7 +43,7 @@ Minimum hardware tested: 4x RTX8000 (48GB RAM per GPU)
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision now officially supports multi-image inputs. Here's an example for fine-tuning NLVR2:
+Phi-3.5-vision now officially supports multi-image inputs. Below is an example for finetuning NLVR2.
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -43,15 +51,15 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## Usage guide
 
-Depending on your hardware, you can choose different fine-tuning strategies. We support:
-- Full fine-tuning (with Deepspeed Zero-2) with optional frozen vision parameters
-- LoRA (including 4bit QLoRA)
+Depending on your hardware, you can select different finetuning strategies. We support:
+- Full finetuning (with DeepSpeed Zero-2), optionally freezing vision parameters.
+- LoRA (including 4bit QLoRA).
 
-In general, we recommend full fine-tuning with flash attention and bf16 whenever possible.
+In general, we recommend full finetuning with flash attention and bf16 whenever possible.
 
 ### Guide for converting your custom dataset to the required format
 
-We use a small video classification dataset (a subset of UCF-101) as an end-to-end example to demonstrate how to convert your custom dataset to the required format and fine-tune Phi-3.5-vision on it.
+We use a minimal video classification dataset (a subset of UCF-101) as an end-to-end example to demonstrate how to convert your custom dataset to the required format and fine-tune Phi-3.5-vision on it.
 
 ```bash
 # convert data
@@ -107,14 +115,14 @@ The converted data will look like this:
 34 directories, 3 files
 ```
 
-For the `jsonl` annotation, each line should be a dictionary like:
+For the `jsonl` annotation, each line should be a dictionary structured as follows:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Note that `conversations` is a list, enabling support for multi-turn conversations if such data is available.
+Note: `conversations` is a list, allowing support for multi-turn conversations if such data is available.
 
 ## Requesting Azure GPU Quota 
 
@@ -128,33 +136,40 @@ If you don't have an Azure account, create a [free account before you begin](htt
 
 You can submit a request for a quota increase directly from My quotas. Follow the steps below to request an increase for a quota. For this example, you can select any adjustable quota in your subscription.
 
-1. Sign in to the [Azure portal](https://portal.azure.com).
-2. Enter "quotas" into the search box, and then select Quotas.  
-   ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
-3. On the Overview page, select a provider, such as Compute or AML.
+Sign in to the [Azure portal](https://portal.azure.com).
 
-   **Note:** For all providers other than Compute, you'll see a Request increase column instead of the Adjustable column described below. There, you can request an increase for a specific quota or create a support request for the increase.
+Enter "quotas" into the search box, then select Quotas.
+![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-4. On the My quotas page, under Quota name, select the quota you want to increase. Make sure that the Adjustable column shows Yes for this quota.
-5. Near the top of the page, select New Quota Request, then select Enter a new limit.  
-   ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
-6. In the New Quota Request pane, enter a numerical value for your new quota limit, then select Submit.
+On the Overview page, select a provider, such as Compute or AML.
 
-Your request will be reviewed, and you'll be notified if the request can be fulfilled. This usually happens within a few minutes.
+**Note** For all providers other than Compute, you'll see a Request increase column instead of the Adjustable column described below. Here, you can request an increase for a specific quota or create a support request for the increase.
 
-If your request isn't fulfilled, you'll see a link to create a support request. When you use this link, a support engineer will assist you with your increase request.
+On the My quotas page, under Quota name, select the quota you want to increase. Ensure the Adjustable column shows Yes for this quota.
+
+Near the top of the page, select New Quota Request, then select Enter a new limit.
+
+![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
+
+In the New Quota Request pane, enter a numerical value for your new quota limit, then select Submit.
+
+Your request will be reviewed, and you'll be notified if the request can be fulfilled—usually within a few minutes.
+
+If your request isn't fulfilled, you'll see a link to create a support request. Using this link, a support engineer will assist you with your increase request.
 
 ## Azure Compute GPU machine SKU suggestions
 
-[ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)  
-[ND H100 v5-series](https://learn.microsoft.com/azure/virtual-machines/nd-h100-v5-series)  
+[ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
+
+[ND H100 v5-series](https://learn.microsoft.com/azure/virtual-machines/nd-h100-v5-series)
+
 [Standard_ND40rs_v2](https://learn.microsoft.com/azure/virtual-machines/ndv2-series)
 
 Here are some examples:
 
 ### If you have A100 or H100 GPUs
 
-Full fine-tuning usually provides the best performance. You can use the following command to fine-tune Phi-3-V on hateful meme classification:
+Full finetuning typically provides the best performance. Use the following command to finetune Phi-3-V on hateful memes classification.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -168,7 +183,7 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### If you have Standard_ND40rs_v2 8x V100-32GB GPUs
 
-It is still possible to fully fine-tune Phi-3-V on hateful meme classification. However, you should expect much lower throughput compared to A100 or H100 GPUs due to the lack of flash attention support. Accuracy could also be affected due to the lack of bf16 support (fp16 mixed-precision training is used instead).
+Full finetuning is still possible for Phi-3-V on hateful memes classification. However, expect lower throughput compared to A100 or H100 GPUs due to the lack of flash attention support. Accuracy may also be impacted due to the lack of bf16 support (fp16 mixed-precision training is used instead).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -180,7 +195,7 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### If you don't have access to data center GPUs
 
-LoRA might be your only option. You can use the following command to fine-tune Phi-3-V on hateful meme classification:
+LoRA may be your only option. Use the following command to finetune Phi-3-V on hateful memes classification.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -190,7 +205,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-For Turing+ GPUs, QLoRA is supported:
+For Turing+ GPUs, QLoRA is supported.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -202,7 +217,6 @@ torchrun --nproc_per_node=2 \
 ```
 
 ## Suggested hyperparameters and expected accuracy
-
 ### NLVR2
 
 ```bash
@@ -216,16 +230,14 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-| Training method | Frozen vision model | Data type | LoRA rank | LoRA alpha | Batch size | Learning rate | Epochs | Accuracy |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Full fine-tuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-| Full fine-tuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
-| LoRA results coming soon |  |  |  |  |  |  |  |  |
+Training method | Frozen vision model | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
+--- | --- | --- | --- | --- | --- | --- | --- | --- |
+full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
+full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
+LoRA results coming soon |  |  |  |  |  |  |  |  |
 
 ### NOTE
-
-The following DocVQA and Hateful memes results are based on the previous version (Phi-3-vision).  
-The new results with Phi-3.5-vision will be updated soon.
+The DocVQA and hateful memes results below are based on the previous version (Phi-3-vision). Updated results for Phi-3.5-vision will be added soon.
 
 ### DocVQA (NOTE: Phi-3-vision)
 
@@ -241,16 +253,16 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-| Training method | Data type | LoRA rank | LoRA alpha | Batch size | Learning rate | Epochs | ANLS |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Full fine-tuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
-| Full fine-tuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
-| Frozen image model | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
-| Frozen image model | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
-| LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
-| LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
-| QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
-| QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
+Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | ANLS
+--- | --- | --- | --- | --- | --- | --- | --- |
+full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
+full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
+frozen image model | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
+frozen image model | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
+LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
+LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
+QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
+QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
 ### Hateful memes (NOTE: Phi-3-vision)
 
@@ -265,51 +277,51 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-| Training method | Data type | LoRA rank | LoRA alpha | Batch size | Learning rate | Epochs | Accuracy |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Full fine-tuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
-| Full fine-tuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
-| Frozen image model | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
-| Frozen image model | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
-| LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
-| LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
-| QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
-| QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
+Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
+--- | --- | --- | --- | --- | --- | --- | --- |
+full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
+full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
+frozen image model | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
+frozen image model | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
+LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
+LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
+QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
+QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 ## Speed benchmarking (NOTE: Phi-3-vision)
 
-New benchmarking results with Phi-3.5-vision will be updated soon.
+Updated benchmarking results for Phi-3.5-vision will be added soon.
 
-Speed benchmarking is performed on the DocVQA dataset. The average sequence length of this dataset is 2443.23 tokens (using `num_crops=16` for the image model).
+Speed benchmarking was performed on the DocVQA dataset. The average sequence length for this dataset is 2443.23 tokens (using `num_crops=16` for the image model).
 
 ### 8x A100-80GB (Ampere)
 
-| Training method | # nodes | GPUs | Flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB) |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Full fine-tuning | 1 | 8 |  | 64 | 5.041 | 1x | ~42 |
-| Full fine-tuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36 |
-| Full fine-tuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29 |
-| Full fine-tuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26 |
-| Frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29 |
-| Frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27 |
-| LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50 |
-| LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16 |
-| QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32 |
-| QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10 |
+Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
+--- | --- | --- | --- | --- | --- | --- | --- |
+full-finetuning | 1 | 8 |  | 64 | 5.041 | 1x | ~42 |
+full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36 |
+full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29 |
+full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26 |
+frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29 |
+frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27 |
+LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50 |
+LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16 |
+QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32 |
+QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10 |
 
 ### 8x V100-32GB (Volta)
 
-| Training method | # nodes | GPUs | Flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB) |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| Full fine-tuning | 1 | 8 | | 64 | 2.462 | 1x | ~32 |
-| Full fine-tuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32 |
-| Full fine-tuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32 |
-| Frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27 |
-| LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30 |
+Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
+--- | --- | --- | --- | --- | --- | --- | --- |
+full-finetuning | 1 | 8 |  | 64 | 2.462 | 1x | ~32 |
+full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32 |
+full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32 |
+frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27 |
+LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30 |
 
 ## Known issues
 
-- Flash attention cannot run with fp16 (bf16 is always recommended when available, and all GPUs supporting flash attention also support bf16).
-- Saving intermediate checkpoints and resuming training is not yet supported.
+- Flash attention cannot be run with fp16 (bf16 is always recommended when available, and all GPUs supporting flash attention also support bf16).
+- Intermediate checkpoints cannot be saved, and training resumption is not yet supported.
 
-It seems like "mo" might refer to a specific language or abbreviation. Could you clarify what "mo" stands for? For example, is it Mongolian, Maori, or something else? Let me know, and I'd be happy to assist!
+It seems like you are requesting a translation into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, "Mo" could refer to Maori, Montenegrin, or something else entirely. Let me know so I can assist you accurately!

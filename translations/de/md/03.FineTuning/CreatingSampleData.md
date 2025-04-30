@@ -1,8 +1,17 @@
-# Erstellen eines Bilddatensatzes durch Herunterladen eines Datensatzes von Hugging Face und zugehörigen Bildern
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "3cd0b727945d57998f1096763df56a84",
+  "translation_date": "2025-03-27T13:32:35+00:00",
+  "source_file": "md\\03.FineTuning\\CreatingSampleData.md",
+  "language_code": "de"
+}
+-->
+# Erstelle ein Bild-Datensatz durch Herunterladen eines Datensatzes von Hugging Face und zugehöriger Bilder
 
-### Übersicht
+### Überblick
 
-Dieses Skript bereitet einen Datensatz für maschinelles Lernen vor, indem es die benötigten Bilder herunterlädt, Zeilen filtert, bei denen das Herunterladen der Bilder fehlschlägt, und den Datensatz als CSV-Datei speichert.
+Dieses Skript bereitet einen Datensatz für maschinelles Lernen vor, indem es die benötigten Bilder herunterlädt, Zeilen herausfiltert, bei denen das Herunterladen der Bilder fehlschlägt, und den Datensatz als CSV-Datei speichert.
 
 ### Voraussetzungen
 
@@ -24,7 +33,7 @@ from io import BytesIO
 
 Das Skript führt die folgenden Schritte aus:
 
-1. Es lädt den Datensatz von Hugging Face herunter, indem es die Funktionen `load_dataset()` function.
+1. Lädt den Datensatz von Hugging Face herunter mit der Funktion `load_dataset()` function.
 2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
 3. Creates directories to save the dataset and images.
 4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
@@ -33,31 +42,31 @@ Das Skript führt die folgenden Schritte aus:
 
 ### Custom Function
 
-The `download_image()` verwendet. Die Funktion `download_image()` lädt ein Bild von einer URL herunter und speichert es lokal mithilfe der Pillow Image Library (PIL) und des Moduls `io`. Sie gibt True zurück, wenn das Bild erfolgreich heruntergeladen wurde, und False, wenn nicht. Die Funktion löst außerdem eine Ausnahme mit der Fehlermeldung aus, wenn die Anfrage fehlschlägt.
+The `download_image()`. Die Funktion `download_image()` lädt ein Bild von einer URL herunter und speichert es lokal mithilfe der Pillow-Bibliothek (PIL) und des `io` Moduls. Sie gibt True zurück, wenn das Bild erfolgreich heruntergeladen wurde, und False, wenn nicht. Die Funktion löst außerdem eine Ausnahme aus und gibt eine Fehlermeldung aus, falls die Anfrage fehlschlägt.
 
 ### Wie funktioniert das?
 
-Die Funktion `download_image` nimmt zwei Parameter entgegen: `image_url`, die URL des herunterzuladenden Bildes, und `save_path`, den Pfad, an dem das heruntergeladene Bild gespeichert werden soll.
+Die Funktion `download_image` nimmt zwei Parameter entgegen: `image_url`, die URL des herunterzuladenden Bildes, und `save_path`, den Pfad, unter dem das heruntergeladene Bild gespeichert werden soll.
 
 So funktioniert die Funktion:
 
-1. Sie startet mit einer GET-Anfrage an die `image_url` mithilfe der Methode `requests.get`. Dadurch werden die Bilddaten von der URL abgerufen.
+Sie beginnt mit einer GET-Anfrage an `image_url` mithilfe der Methode `requests.get`. Dadurch werden die Bilddaten von der URL abgerufen.
 
-2. Die Zeile `response.raise_for_status()` prüft, ob die Anfrage erfolgreich war. Wenn der Statuscode der Antwort auf einen Fehler hinweist (z. B. 404 - Nicht gefunden), wird eine Ausnahme ausgelöst. Dies stellt sicher, dass der Download nur fortgesetzt wird, wenn die Anfrage erfolgreich war.
+Die Zeile `response.raise_for_status()` überprüft, ob die Anfrage erfolgreich war. Falls der Statuscode der Antwort auf einen Fehler hinweist (z. B. 404 - Nicht gefunden), wird eine Ausnahme ausgelöst. Dadurch wird sichergestellt, dass der Bilddownload nur fortgesetzt wird, wenn die Anfrage erfolgreich war.
 
-3. Die Bilddaten werden dann an die Methode `Image.open` aus dem Modul PIL (Python Imaging Library) übergeben. Diese Methode erstellt ein `Image`-Objekt aus den Bilddaten.
+Die Bilddaten werden dann an die Methode `Image.open` aus dem PIL-Modul (Python Imaging Library) übergeben. Diese Methode erstellt ein Image-Objekt aus den Bilddaten.
 
-4. Die Zeile `image.save(save_path)` speichert das Bild im angegebenen `save_path`. Der `save_path` sollte den gewünschten Dateinamen und die Erweiterung enthalten.
+Die Zeile `image.save(save_path)` speichert das Bild unter dem angegebenen `save_path`. Der `save_path` sollte den gewünschten Dateinamen und die Erweiterung enthalten.
 
-5. Schließlich gibt die Funktion `True` zurück, um anzuzeigen, dass das Bild erfolgreich heruntergeladen und gespeichert wurde. Wenn während des Prozesses eine Ausnahme auftritt, fängt die Funktion die Ausnahme ab, gibt eine Fehlermeldung aus und gibt `False` zurück.
+Abschließend gibt die Funktion `True` zurück, um anzuzeigen, dass das Bild erfolgreich heruntergeladen und gespeichert wurde. Falls während des Prozesses eine Ausnahme auftritt, wird diese abgefangen, eine Fehlermeldung ausgegeben, die auf den Fehler hinweist, und die Funktion gibt `False` zurück.
 
-Diese Funktion ist nützlich, um Bilder von URLs herunterzuladen und lokal zu speichern. Sie behandelt potenzielle Fehler während des Downloadprozesses und gibt Feedback, ob der Download erfolgreich war oder nicht.
+Diese Funktion ist nützlich, um Bilder von URLs herunterzuladen und lokal zu speichern. Sie behandelt potenzielle Fehler während des Download-Prozesses und gibt Feedback darüber, ob der Download erfolgreich war oder nicht.
 
-Es ist erwähnenswert, dass die Bibliothek `requests` für HTTP-Anfragen verwendet wird, die Bibliothek PIL für die Arbeit mit Bildern und die Klasse `BytesIO`, um die Bilddaten als Byte-Stream zu verarbeiten.
+Es ist erwähnenswert, dass die `requests`-Bibliothek für HTTP-Anfragen verwendet wird, die PIL-Bibliothek für die Arbeit mit Bildern und die `BytesIO`-Klasse für die Verarbeitung der Bilddaten als Byte-Stream.
 
 ### Fazit
 
-Dieses Skript bietet eine praktische Möglichkeit, einen Datensatz für maschinelles Lernen vorzubereiten, indem die benötigten Bilder heruntergeladen, Zeilen gefiltert werden, bei denen das Herunterladen der Bilder fehlschlägt, und der Datensatz als CSV-Datei gespeichert wird.
+Dieses Skript bietet eine praktische Möglichkeit, einen Datensatz für maschinelles Lernen vorzubereiten, indem es die benötigten Bilder herunterlädt, Zeilen herausfiltert, bei denen das Herunterladen der Bilder fehlschlägt, und den Datensatz als CSV-Datei speichert.
 
 ### Beispielskript
 
@@ -118,11 +127,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Beispiel-Code herunterladen 
-[Neues Datensatz-Skript generieren](../../../../code/04.Finetuning/generate_dataset.py)
+### Beispiel-Code herunterladen
+[Generiere ein neues Datensatz-Skript](../../../../code/04.Finetuning/generate_dataset.py)
 
 ### Beispiel-Datensatz
-[Beispiel-Datensatz aus dem Finetuning mit LORA](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+[Beispiel-Datensatz aus der Feinabstimmung mit LORA](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit KI-basierten maschinellen Übersetzungsdiensten übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.

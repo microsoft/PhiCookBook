@@ -1,11 +1,20 @@
-# Changelog
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "717861279bce77869bac890492f171b2",
+  "translation_date": "2025-04-04T11:37:44+00:00",
+  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\CHANGELOG.md",
+  "language_code": "mo"
+}
+-->
+# Log de Mudanças
 
-सभी महत्वपूर्ण बदलाव "phiext" एक्सटेंशन में इस फाइल में दर्ज किए जाएंगे।
+Todas as alterações relevantes na extensão "phiext" serão documentadas neste arquivo.
 
-इस फाइल को संरचित करने के सुझावों के लिए [Keep a Changelog](http://keepachangelog.com/) देखें।
+Consulte [Keep a Changelog](http://keepachangelog.com/) para recomendações sobre como estruturar este arquivo.
 
-## [Unreleased]
+## [Não lançado]
 
-- प्रारंभिक रिलीज़
+- Lançamento inicial
 
-It seems like "mo" might refer to a language or abbreviation, but it's not entirely clear which language you're requesting. Could you clarify if "mo" refers to a specific language (e.g., Māori, Montenegrin, or something else)? Let me know so I can assist you better!
+It seems like you want the text translated into "mo," but it's unclear what language "mo" refers to. Could you clarify if you mean Moldovan (Romanian), Maori, or another language?

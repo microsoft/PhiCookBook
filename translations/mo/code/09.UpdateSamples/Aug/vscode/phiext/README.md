@@ -1,73 +1,82 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "c7e4439ea50fbf9e2197329bb254686b",
+  "translation_date": "2025-04-04T11:38:45+00:00",
+  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\README.md",
+  "language_code": "mo"
+}
+-->
 # phiext README
 
-यो तपाईंको "phiext" एक्स्टेन्सनको README हो। संक्षिप्त वर्णन लेखिसकेपछि, हामीले निम्न खण्डहरू समावेश गर्न सिफारिस गर्दछौं।
+Yɛ README yi yɛ wo "phiext" extension ho. Ɛno akyi no, yɛhyɛ sɛ ɛyɛ yiye sɛ wɔbɛka nsɛm a ɛfa nseɛmu ho.
 
-## विशेषताहरू
+## Nsɛmu Ho Adwuma
 
-तपाईंको एक्स्टेन्सनका विशिष्ट विशेषताहरू वर्णन गर्नुहोस्, जसमा एक्स्टेन्सनको प्रयोगमा भएका स्क्रिनसटहरू समावेश गर्नुहोस्। छविको पथ यो README फाइलसँग सापेक्षिक हुनुपर्छ।
+Kyerɛ nsɛm a ɛfa wo extension ho, ka nsɛm ho a ɛfa sɛnea ɛyɛ adwuma ne nsusɔm ho. Ɛho nsɛm no fa wo README fael ho.
 
-उदाहरणका लागि, यदि तपाईंको एक्स्टेन्सन प्रोजेक्ट वर्कस्पेसमा छवि सबफोल्डर छ भने:
+Sɛ ɛyɛ sɛ nsusɔm wɔ fael ho a, fa nsusɔm fael no kwan fa ho:
 
-\!\[विशेषता X\]\(images/feature-x.png\)
+\!\[adwuma X\]\(images/feature-x.png\)
 
-> टिप: धेरै लोकप्रिय एक्स्टेन्सनहरूले एनिमेशनहरू प्रयोग गर्छन्। यो तपाईंको एक्स्टेन्सन देखाउनको लागि उत्कृष्ट तरिका हो! हामी छोटो, ध्यान केन्द्रित र बुझ्न सजिलो एनिमेशनहरूको सिफारिस गर्दछौं।
+> Adesua: Nsɛm a ɛyɛ sɛnea wɔde animations yɛ adwuma no yɛ dɛ. Ɛyɛ ɔkwan pa ara sɛ wobɛkyerɛ sɛnea wo extension yɛ adwuma! Yɛhyɛ sɛ yɛnyɛ animations a ɛyɛ kakra na ɛyɛ den sɛ wɔbɛte ase.
 
-## आवश्यकताहरू
+## Nsɛyɛɛ Ho Nsɛm
 
-यदि तपाईंको एक्स्टेन्सनसँग कुनै आवश्यकताहरू वा निर्भरता छन् भने, तिनीहरूलाई कसरी स्थापना र कन्फिगर गर्ने भनेर वर्णन गर्ने खण्ड थप्नुहोस्।
+Sɛ wɔwɔ nsɛyɛɛ anaa dependencies bi a, fa nsɛm a ɛkyerɛ sɛnea ɛyɛ adwuma ne sɛnea wɔde yɛ ho.
 
-## एक्स्टेन्सन सेटिङहरू
+## Extension Settings
 
-यदि तपाईंको एक्स्टेन्सनले `contributes.configuration` एक्स्टेन्सन बिन्दु मार्फत कुनै VS Code सेटिङहरू थप्छ भने, तिनीहरूलाई समावेश गर्नुहोस्।
+Fa nsɛm a ɛfa sɛ wo extension no de VS Code settings ɛka ho wɔ `contributes.configuration` extension point ho.
 
-उदाहरणका लागि:
+Sɛ nhwɛso:
 
-यस एक्स्टेन्सनले निम्न सेटिङहरू योगदान गर्दछ:
+Wo extension yi de settings a ɛwɔ he yɛ:
 
-* `myExtension.enable`: यो एक्स्टेन्सन सक्षम/अक्षम गर्नुहोस्।
-* `myExtension.thing`: `blah` मा सेट गरेर केही गर्नुहोस्।
+* `myExtension.enable`: Bɔ extension yi wɔ anaa tu ho.
+* `myExtension.thing`: Fa `blah` yɛ biribi.
 
-## ज्ञात समस्याहरू
+## Nsɛyɛɛ Ho Nneɛma A Wɔnim
 
-ज्ञात समस्याहरू उल्लेख गर्दा, प्रयोगकर्ताहरूले तपाईंको एक्स्टेन्सनविरुद्ध डुप्लिकेट समस्याहरू खोल्नबाट बच्न मद्दत गर्दछ।
+Fa nsɛm a ɛfa sɛnea nsɛm a ɛfa extension ho yɛ adwuma ne nea wɔnim ho. Ɛyɛ ɔkwan pa sɛ wɔbɛma nkurɔfo antwa nsɛm a ɛfa ho yɛ adwuma foforɔ.
 
-## रिलिज नोट्स
+## Release Notes
 
-जब तपाईं आफ्नो एक्स्टेन्सन अद्यावधिक गर्नुहुन्छ, प्रयोगकर्ताहरूलाई रिलिज नोट्स मन पर्छ।
+Nkurɔfo de Release Notes yɛ adwuma na ɛboa sɛ wɔbɛma extension yɛ nkɔso.
 
 ### 1.0.0
 
-प्रारम्भिक संस्करण ...
+Ɔyɛ a edi kan ...
 
 ### 1.0.1
 
-समस्या # समाधान गरियो।
+Yɛɛ nsɛm a ɛyɛ ho problem #.
 
 ### 1.1.0
 
-विशेषताहरू X, Y, र Z थप गरियो।
+Fa nsɛm X, Y, ne Z ka ho.
 
 ---
 
-## एक्स्टेन्सन दिशानिर्देशहरू पालना गर्दै
+## Nsɛm Ho Nsɛyɛɛ
 
-पक्का गर्नुहोस् कि तपाईंले एक्स्टेन्सन दिशानिर्देशहरू पढ्नुभएको छ र आफ्नो एक्स्टेन्सन सिर्जना गर्दा उत्तम अभ्यासहरू पालना गर्नुहोस्।
+Sɛ wo de nsɛm ho nsɛyɛɛ yɛ extension, yɛhyɛ sɛ wo bɛkenkan nsɛm ho nsɛyɛɛ ho nsɛm na yɛ nsɛm no yɛ yiye.
 
-* [एक्स्टेन्सन दिशानिर्देशहरू](https://code.visualstudio.com/api/references/extension-guidelines)
+* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Markdownसँग काम गर्दै
+## Nsɛm Ho Adwuma Ne Markdown
 
-तपाईं Visual Studio Code प्रयोग गरेर आफ्नो README लेख्न सक्नुहुन्छ। यहाँ केहि उपयोगी सम्पादक किबोर्ड सर्टकटहरू छन्:
+Wo betumi de Visual Studio Code yɛ README. Ɛyɛ sɛnea nsɛm ho nsɛyɛɛ yɛ adwuma no yɛ yiye:
 
-* सम्पादक विभाजन गर्नुहोस् (`Cmd+\` macOS मा वा `Ctrl+\` Windows र Linux मा)।
-* पूर्वावलोकन टगल गर्नुहोस् (`Shift+Cmd+V` macOS मा वा `Shift+Ctrl+V` Windows र Linux मा)।
-* `Ctrl+Space` (Windows, Linux, macOS) थिचेर Markdown स्निपेटहरूको सूची हेर्नुहोस्।
+* Fa nsɛm ho nsɛm (`Cmd+\` wɔ macOS anaa `Ctrl+\` wɔ Windows ne Linux).
+* Fa nsɛm ho nsɛm preview (`Shift+Cmd+V` wɔ macOS anaa `Shift+Ctrl+V` wɔ Windows ne Linux).
+* Fa `Ctrl+Space` (Windows, Linux, macOS) sɛ wobɛhwɛ nsɛm ho snippets.
 
-## थप जानकारीको लागि
+## Nsɛm Ho Nsɛm Foforɔ
 
-* [Visual Studio Code को Markdown समर्थन](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown सिन्ट्याक्स सन्दर्भ](https://help.github.com/articles/markdown-basics/)
+* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
+* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**आनन्द लिनुहोस्!**
+**Yɛ wo ho dɛ!**
 
-It seems like you are asking for a translation of the provided text into "mo." Could you please clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, are you asking for a translation into Maori, Mongolian, or another language? Let me know so I can assist you better!
+It seems like you've requested a translation into "mo," but could you clarify what "mo" refers to? Are you asking for translation into Maori, Mongolian, or another language? Please provide more context so I can assist you accurately.

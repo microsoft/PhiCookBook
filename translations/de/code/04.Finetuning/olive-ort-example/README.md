@@ -1,25 +1,34 @@
-# Feinabstimmung von Phi3 mit Olive
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "4164123a700fecd535d850f09506d72a",
+  "translation_date": "2025-03-27T03:59:50+00:00",
+  "source_file": "code\\04.Finetuning\\olive-ort-example\\README.md",
+  "language_code": "de"
+}
+-->
+# Fine-Tune Phi3 mit Olive
 
-In diesem Beispiel verwenden Sie Olive, um:
+In diesem Beispiel wirst du Olive verwenden, um:
 
-1. Einen LoRA-Adapter zu trainieren, der Phrasen in die Kategorien Traurigkeit, Freude, Angst und Überraschung einordnet.
-2. Die Adapter-Gewichte in das Basismodell zu integrieren.
-3. Das Modell zu optimieren und in `int4` zu quantisieren.
+1. Einen LoRA-Adapter zu trainieren, der Phrasen in Sad, Joy, Fear, Surprise klassifiziert.
+1. Die Adapter-Gewichte mit dem Basismodell zu verschmelzen.
+1. Das Modell zu optimieren und in `int4` zu quantisieren.
 
-Wir zeigen Ihnen außerdem, wie Sie das feinabgestimmte Modell mithilfe der ONNX Runtime (ORT) Generate API zur Inferenz nutzen können.
+Außerdem zeigen wir dir, wie du das feinabgestimmte Modell mit der ONNX Runtime (ORT) Generate API inferieren kannst.
 
-> **⚠️ Für das Fein-Tuning benötigen Sie eine geeignete GPU - zum Beispiel eine A10, V100, A100.**
+> **⚠️ Für das Fine-Tuning benötigst du eine geeignete GPU - zum Beispiel eine A10, V100, A100.**
 
 ## 💾 Installation
 
-Erstellen Sie eine neue Python-Umgebung (zum Beispiel mit `conda`):
+Erstelle eine neue Python-Umgebung (zum Beispiel mit `conda`):
 
 ```bash
 conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-Installieren Sie anschließend Olive und die Abhängigkeiten für den Fein-Tuning-Workflow:
+Installiere anschließend Olive und die Abhängigkeiten für den Fine-Tuning-Workflow:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -27,26 +36,27 @@ pip install olive-ai[gpu]
 pip install -r requirements.txt
 ```
 
-## 🧪 Feinabstimmung von Phi3 mit Olive
+## 🧪 Phi3 mit Olive Fine-Tunen
+
 Die [Olive-Konfigurationsdatei](../../../../../code/04.Finetuning/olive-ort-example/phrase-classification.json) enthält einen *Workflow* mit den folgenden *Passes*:
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-Auf hoher Ebene führt dieser Workflow die folgenden Schritte aus:
+Auf hoher Ebene führt dieser Workflow folgende Schritte aus:
 
-1. Feinabstimmung von Phi3 (für 150 Schritte, dies können Sie anpassen) mit den Daten aus [dataset/data-classification.json](../../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json).
-2. Zusammenführen der LoRA-Adapter-Gewichte mit dem Basismodell. Dadurch erhalten Sie ein einzelnes Modellartefakt im ONNX-Format.
-3. Der Model Builder optimiert das Modell für die ONNX Runtime *und* quantisiert es in `int4`.
+1. Fine-Tune Phi3 (für 150 Schritte, die du anpassen kannst) mit den Daten aus [dataset/data-classification.json](../../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json).
+1. Die LoRA-Adapter-Gewichte werden mit dem Basismodell verschmolzen. Dies erzeugt ein einzelnes Modellartefakt im ONNX-Format.
+1. Der Model Builder optimiert das Modell für die ONNX Runtime *und* quantisiert das Modell in `int4`.
 
-Um den Workflow auszuführen, verwenden Sie:
+Um den Workflow auszuführen, verwende:
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-Nach Abschluss durch Olive steht Ihr optimiertes `int4` feinabgestimmtes Phi3-Modell unter folgendem Pfad bereit: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
+Sobald Olive abgeschlossen ist, steht dir dein optimiertes `int4` feinabgestimmtes Phi3-Modell unter folgendem Pfad zur Verfügung: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-## 🧑‍💻 Feinabgestimmtes Phi3 in Ihre Anwendung integrieren
+## 🧑‍💻 Integration des feinabgestimmten Phi3 in deine Anwendung 
 
 Um die Anwendung auszuführen:
 
@@ -54,7 +64,7 @@ Um die Anwendung auszuführen:
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-Die Antwort sollte eine einzelne Wortklassifikation der Phrase sein (Traurigkeit/Freude/Angst/Überraschung).
+Die Antwort sollte eine Einzelwort-Klassifikation der Phrase sein (Sad/Joy/Fear/Surprise).
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe KI-gestützter maschineller Übersetzungsdienste übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.

@@ -1,53 +1,62 @@
-## AI Toolkit ho an'ny VS Code
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "82289836c6113c9df7544eec1fc54802",
+  "translation_date": "2025-04-04T13:31:15+00:00",
+  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "language_code": "mo"
+}
+-->
+## Welcome to AI Toolkit for VS Code
 
-[AI Toolkit ho an'ny VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) dia manangona modely isan-karazany avy amin'ny Azure AI Studio Catalog sy katalaogy hafa toa ny Hugging Face. Ity fitaovana ity dia manamora ny asa fampandrosoana mahazatra amin'ny fananganana rindranasa AI miaraka amin'ny fitaovana sy modely generative AI amin'ny alalan'ny:
-- Fampahafantarana modely sy fampiasana playground ho fanombohana.
-- Fanatsarana sy fanadihadiana modely mampiasa loharano eo an-toerana.
-- Fanatsarana sy fanadihadiana lavitra mampiasa loharano Azure.
+[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) yééti Azure AI Studio Catalog ní Hugging Face Catalog bee naalnishí. Toolkit t’áá ájíiltééh éí yá’át’ééh naalnishí t’ááłts’íísgo baa áháyáanii éí AI apps baa naashnish doo generative AI tools dóó models baa ájíiltééh:
+- T’áá na’ídííłí da’ák’ehgo model discovery dóó playground baa áháyáanii.
+- Model baa nídahaazt’i’ dóó inference baa ájíiltééh t’áá ádóó local computing resources baa naashnishí.
+- Azure resources baa naashnishí t’áá ádóó remote fine-tuning dóó inference baa ájíiltééh.
 
-[Apetraka ny AI Toolkit ho an'ny VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[Install AI Toolkit for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
 ![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.mo.png)
 
-**[Private Preview]** Fametrahana haingana ny Azure Container Apps hanatanterahana fanatsarana sy fanadihadiana modely ao anaty rahona.
+**[Private Preview]** Azure Container Apps éí naalnishí baa naashnish t’ááłts’íísgo fine-tuning dóó inference baa ájíiltééh cloud bikáá’gi.
 
-Ankehitriny, andao hanomboka amin'ny fampandrosoana ny rindranasa AI anao:
+Áłtsé nihi’áá’jigo AI app baa naashnishí:
 
-- [AI Toolkit ho an'ny VS Code](../../../../md/03.FineTuning)
-- [Fampandrosoana eo an-toerana](../../../../md/03.FineTuning)
-  - [Fiomanana](../../../../md/03.FineTuning)
-  - [Mampihetsika ny Conda](../../../../md/03.FineTuning)
-  - [Fanatsarana modely fototra ihany](../../../../md/03.FineTuning)
-  - [Fanatsarana sy fanadihadiana modely](../../../../md/03.FineTuning)
-  - [Fanatsarana Modely](../../../../md/03.FineTuning)
+- [Welcome to AI Toolkit for VS Code](../../../../md/03.FineTuning)
+- [Local Development](../../../../md/03.FineTuning)
+  - [Preparations](../../../../md/03.FineTuning)
+  - [Activate Conda](../../../../md/03.FineTuning)
+  - [Base model fine-tuning only](../../../../md/03.FineTuning)
+  - [Model fine-tuning and inferencing](../../../../md/03.FineTuning)
+  - [Model Fine-tuning](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [Santionany sy loharano ho an'ny fanatsarana](../../../../md/03.FineTuning)
-- [**\[Private Preview\]** Fampandrosoana lavitra](../../../../md/03.FineTuning)
-  - [Fepetra ilaina](../../../../md/03.FineTuning)
-  - [Fametrahana tetikasa fampandrosoana lavitra](../../../../md/03.FineTuning)
-  - [Fametrahana loharano Azure](../../../../md/03.FineTuning)
-  - [\[Tsy voatery\] Manampy Huggingface Token amin'ny tsiambaratelo ao amin'ny Azure Container App](../../../../md/03.FineTuning)
-  - [Mampandeha ny fanatsarana](../../../../md/03.FineTuning)
-  - [Fametrahana toerana fanadihadiana](../../../../md/03.FineTuning)
-  - [Mampiditra ny toerana fanadihadiana](../../../../md/03.FineTuning)
-  - [Fampiasana mandroso](../../../../md/03.FineTuning)
+  - [Fine Tuning Samples and Resoures](../../../../md/03.FineTuning)
+- [**\[Private Preview\]** Remote Development](../../../../md/03.FineTuning)
+  - [Prerequisites](../../../../md/03.FineTuning)
+  - [Setting Up a Remote Development Project](../../../../md/03.FineTuning)
+  - [Provision Azure Resources](../../../../md/03.FineTuning)
+  - [\[Optional\] Add Huggingface Token to the Azure Container App Secret](../../../../md/03.FineTuning)
+  - [Run Fine-tuning](../../../../md/03.FineTuning)
+  - [Provision Inference Endpoint](../../../../md/03.FineTuning)
+  - [Deploy the Inference Endpoint](../../../../md/03.FineTuning)
+  - [Advanced usage](../../../../md/03.FineTuning)
 
-## Fampandrosoana eo an-toerana
-### Fiomanana
+## Local Development
+### Preparations
 
-1. Ataovy azo antoka fa efa napetraka ny mpamily NVIDIA ao amin'ny mpampiantrano.
-2. Alefaso ny `huggingface-cli login`, raha mampiasa HF ianao ho an'ny fampiasana angon-drakitra.
-3. `Olive` fanazavana momba ny fanalahidy ho an'ny zavatra rehetra manova ny fampiasana fahatsiarovana.
+1. T’áá’ákwíí NVIDIA driver éí host bikáá’gi biniiyéé’ naashnish.
+2. `huggingface-cli login` bikáá’gi, ní HF dataset baa naashnishí yá’át’ééh.
+3. `Olive` éí memory usage baa ájíiltééh settings baa ályaa.
 
-### Mampihetsika ny Conda
-Satria mampiasa tontolo WSL izahay ary iombonana izany, dia mila mampihetsika ny tontolo conda ianao amin'ny tanana. Rehefa vita io dingana io dia afaka manatanteraka fanatsarana na fanadihadiana ianao.
+### Activate Conda
+WSL environment éí shared áníígíí, éí t’ááłáh activation baa conda naashnishí ájíltééh. Áádóó fine-tuning dóó inference baa naashnish.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### Fanatsarana modely fototra ihany
-Raha te hanandrana ny modely fototra fotsiny ianao nefa tsy manao fanatsarana, dia azonao atao ny manatanteraka ity baiko ity rehefa vita ny fampihetsikanao ny conda.
+### Base model fine-tuning only
+Base model éí fine-tuning t’ááłáh ályaa dóó conda baa activation ájíiltééh ní bá hooghan.
 
 ```bash
 cd inference
@@ -57,17 +66,17 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### Fanatsarana sy fanadihadiana modely
+### Model fine-tuning and inferencing
 
-Rehefa misokatra ao anaty dev container ny workspace, sokafy ny terminal (ny lalana default dia ny fototry ny tetikasa), ary alefaso ny baiko etsy ambany mba hanatsarana ny LLM amin'ny dataset voafantina.
+Workspace éí dev container bikáá’gi naashnishí ní bikáá’gi terminal baa naashnishí (path éí project root bikáá’gi), áádóó ní éí fine-tuning LLM éí dataset baa ájíiltééh ní.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-Ho voatahiry ao amin'ny `models` folder.
+Checkpoints dóó final model éí `models` folder.
 
-Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow` ny checkpoints sy ny modely farany.
+Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow` bikáá’gi naashnishí.
 
 ```bash
 cd inference
@@ -80,7 +89,7 @@ python console_chat.py
 python gradio_chat.py
 ```
 
-Mba hampiasana `prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
+Prompt flow éí `` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
 
 ### Model Fine-tuning
 
@@ -163,9 +172,9 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` ary ao amin'ny output panel. Vonona hanombana ny modely mampiasa ity toerana ity ianao izao.
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` baa naashnishí output panel bikáá’gi ájíiltééh. Endpoint baa éí evaluation baa naashnishí.
 
-### Fampiasana mandroso
-Raha mila fanazavana fanampiny momba ny fampandrosoana lavitra miaraka amin'ny AI Toolkit, dia jereo ny antontan-taratasy [Fanatsarana modely lavitra](https://aka.ms/ai-toolkit/remote-provision) sy [Fanadihadiana amin'ny modely efa nohatsaraina](https://aka.ms/ai-toolkit/remote-inference).
+### Advanced usage
+Remote development baa AI Toolkit bikáá’gi, Fine-Tuning models remotely documentation éí [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) dóó [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference) baa ájíiltééh t’ááłts’íísgo baa áháyáanii.
 
-It seems like you might have meant "mo" as a language abbreviation, but it's unclear which language you're referring to. Could you clarify the target language for translation? For example, "mo" could refer to Māori, Montenegrin, or another language. Let me know so I can assist you accurately!
+It seems you are asking for a translation into "mo," but could you clarify what language or format "mo" refers to? If it's a specific language or style, please provide more details so I can assist you accurately!
