@@ -1,6 +1,6 @@
-## **Using Phi-4-mini as Reasoning Expert**
+## **Using Phi-4-mini-reasoning(3.8b) or Phi-4-reasoning(14b) as Reasoning Expert**
 
-One of the main features of Phi-4 is its strong reasoning ability. Let's take a look at its strong reasoning ability through Phi-4-mini.
+Let's take a look at its strong reasoning ability through Phi-4-mini-reasoning or Phi-4-mini-reasoning.
 
 
 ```python
@@ -8,41 +8,34 @@ One of the main features of Phi-4 is its strong reasoning ability. Let's take a 
 import torch
 from transformers import AutoTokenizer,pipeline
 
-model_path = "Your Phi-4-mini location"
+model_path = "Your Phi-4-mini-reasoning or Phi-4-reasoning location"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_path,
     device_map="cuda",
-    attn_implementation="flash_attention_2",
     torch_dtype="auto",
-    trust_remote_code=True)
+    trust_remote_code=True,
 
-tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-
-messages = [
-    {"role": "system", "content": "You are a helpful AI assistant."},
-    {"role": "user", "content": """I have $20,000 in my savings account, where I receive a 4% profit per year and payments twice a year. Can you please tell me how long it will take for me to become a millionaire? Thinks step by step carefully.
-"""},
-]
-
-pipe = pipeline(
-    "text-generation",
-    model=model,
-    tokenizer=tokenizer,
 )
 
-generation_args = {
-    "max_new_tokens": 4096,
-    "return_full_text": False,
-    "temperature": 0.00001,
-    "top_p": 1.0,
-    "do_sample": True,
-}
+tokenizer = AutoTokenizer.from_pretrained(model_path)
 
-output = pipe(messages, **generation_args)
+messages = [{"role": "user", "content": "Explain the Pythagorean Theorem"}]
 
-print(output[0]['generated_text'])
+model = AutoModelForCausalLM.from_pretrained(
+    model_path,
+    trust_remote_code=True,
+    torch_dtype='auto',
+    _attn_implementation='flash_attention_2',
+).cuda()
 
+inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_dict=True, return_tensors="pt")
+
+outputs = model.generate(**inputs.to(model.device), max_new_tokens=32768)
+
+outputs = tokenizer.batch_decode(outputs[:, inputs["input_ids"].shape[-1]:])
+
+print(outputs[0])
 
 
 ```
