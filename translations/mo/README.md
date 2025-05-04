@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8f2577190cbe70305b9de13df37e1c9a",
-  "translation_date": "2025-04-04T11:17:58+00:00",
+  "original_hash": "10139744c0f1757a5ade1c66749e803f",
+  "translation_date": "2025-05-04T13:35:23+00:00",
   "source_file": "README.md",
   "language_code": "mo"
 }
 -->
-# Phi Cookbook: Practical Examples with Microsoft's Phi Models
+# Phi Cookbook: Hands-On Examples with Microsoft's Phi Models
 
 [![Open and use the samples in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
@@ -21,62 +21,63 @@ CO_OP_TRANSLATOR_METADATA:
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 [![GitHub stars](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
+
 [![Azure AI Community Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-Phi represents a collection of open-source AI models developed by Microsoft.
+Phi هو سلسلة من نماذج الذكاء الاصطناعي مفتوحة المصدر التي طورتها Microsoft.
 
-Currently, Phi stands out as the most advanced and cost-efficient small language model (SLM), delivering impressive results in multilingual tasks, reasoning, text/chat generation, coding, image processing, audio tasks, and beyond.
+يُعد Phi حالياً أقوى نموذج لغة صغيرة (SLM) وأكثرها فعالية من حيث التكلفة، مع أداء ممتاز في عدة لغات، والتفكير، وتوليد النصوص/الدردشة، والبرمجة، والصور، والصوت، وسيناريوهات أخرى.
 
-Phi can be deployed both in the cloud and on edge devices, enabling the creation of generative AI applications even with limited computational resources.
+يمكنك نشر Phi في السحابة أو على أجهزة الحافة، ويمكنك بسهولة بناء تطبيقات الذكاء الاصطناعي التوليدي حتى مع قدرة حوسبة محدودة.
 
-Here's how you can get started with these resources:
-1. **Fork the Repository**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. **Clone the Repository**:   `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**Join The Microsoft AI Discord Community to connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+اتبع هذه الخطوات للبدء باستخدام هذه الموارد:
+1. **افتح نسخة من المستودع (Fork the Repository)**: اضغط على [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+2. **انسخ المستودع (Clone the Repository)**: `git clone https://github.com/microsoft/PhiCookBook.git`
+3. [**انضم إلى مجتمع Microsoft AI على Discord وتعرف على الخبراء والمطورين الآخرين**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
 ![cover](../../translated_images/cover.2595d43b382944c601aebf88583314636768eece3d94e8e4448e03a4e5bedef4.mo.png)
 
-## 🌐 Support for Multiple Languages
-[法文](../fr/README.md) | [西班牙文](../es/README.md) | [德文](../de/README.md) | [俄文](../ru/README.md) | [阿拉伯文](../ar/README.md) | [波斯文 (法尔西文)](../fa/README.md) | [乌尔都文](../ur/README.md) | [简体中文](../zh/README.md) | [繁体中文 (澳門)](./README.md) | [繁体中文 (香港)](../hk/README.md) | [繁体中文 (台湾)](../tw/README.md) | [日文](../ja/README.md) | [韩文](../ko/README.md) | [印地文](../hi/README.md) | [孟加拉文](../bn/README.md) | [马拉地文](../mr/README.md) | [尼泊尔文](../ne/README.md) | [旁遮普文 (古木基文)](../pa/README.md) | [葡萄牙文 (葡萄牙)](../pt/README.md) | [葡萄牙文 (巴西)](../br/README.md) | [意大利文](../it/README.md) | [波兰文](../pl/README.md) | [土耳其文](../tr/README.md) | [希腊文](../el/README.md) | [泰文](../th/README.md) | [瑞典文](../sv/README.md) | [丹麦文](../da/README.md) | [挪威文](../no/README.md) | [芬兰文](../fi/README.md) | [荷兰文](../nl/README.md) | [希伯来文](../he/README.md) | [越南文](../vi/README.md) | [印尼文](../id/README.md) | [马来文](../ms/README.md) | [塔加洛文 (菲律宾文)](../tl/README.md) | [斯瓦希里文](../sw/README.md) | [匈牙利文](../hu/README.md) | [捷克文](../cs/README.md) | [斯洛伐克文](../sk/README.md) | [罗马尼亚文](../ro/README.md) | [保加利亚文](../bg/README.md) | [塞尔维亚文 (西里尔文)](../sr/README.md) | [克罗地亚文](../hr/README.md) | [斯洛文尼亚文](../sl/README.md)
+## 🌐 دعم متعدد اللغات
+[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](./README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
 ## Table of Contents
 
-- مقدمة
-  - [مرحبًا بك في عائلة Phi](./md/01.Introduction/01/01.PhiFamily.md)
-  - [إعداد بيئتك](./md/01.Introduction/01/01.EnvironmentSetup.md)
-  - [فهم التقنيات الأساسية](./md/01.Introduction/01/01.Understandingtech.md)
-  - [سلامة الذكاء الاصطناعي لنماذج Phi](./md/01.Introduction/01/01.AISafety.md)
-  - [دعم الأجهزة لنماذج Phi](./md/01.Introduction/01/01.Hardwaresupport.md)
-  - [نماذج Phi وتوفرها عبر المنصات](./md/01.Introduction/01/01.Edgeandcloud.md)
-  - [استخدام Guidance-ai وPhi](./md/01.Introduction/01/01.Guidance.md)
-  - [نماذج GitHub Marketplace](https://github.com/marketplace/models)
-  - [كتالوج نماذج Azure AI](https://ai.azure.com)
+- Introduction
+  - [Welcome to the Phi Family](./md/01.Introduction/01/01.PhiFamily.md)
+  - [Setting up your environment](./md/01.Introduction/01/01.EnvironmentSetup.md)
+  - [Understanding Key Technologies](./md/01.Introduction/01/01.Understandingtech.md)
+  - [AI Safety for Phi Models](./md/01.Introduction/01/01.AISafety.md)
+  - [Phi Hardware Support](./md/01.Introduction/01/01.Hardwaresupport.md)
+  - [Phi Models & Availability across platforms](./md/01.Introduction/01/01.Edgeandcloud.md)
+  - [Using Guidance-ai and Phi](./md/01.Introduction/01/01.Guidance.md)
+  - [GitHub Marketplace Models](https://github.com/marketplace/models)
+  - [Azure AI Model Catalog](https://ai.azure.com)
 
-- استنتاج Phi في بيئات مختلفة
-    - [Hugging face](./md/01.Introduction/02/01.HF.md)
-    - [نماذج GitHub](./md/01.Introduction/02/02.GitHubModel.md)
-    - [كتالوج نماذج Azure AI Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
-    - [Ollama](./md/01.Introduction/02/04.Ollama.md)
-    - [أداة الذكاء الاصطناعي لـ VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
-    - [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
+- Inference Phi in different environment
+    -  [Hugging face](./md/01.Introduction/02/01.HF.md)
+    -  [GitHub Models](./md/01.Introduction/02/02.GitHubModel.md)
+    -  [Azure AI Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
+    -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
+    -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
+    -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
 
-- استنتاج عائلة Phi
-    - [استنتاج Phi في iOS](./md/01.Introduction/03/iOS_Inference.md)
-    - [استنتاج Phi في Android](./md/01.Introduction/03/Android_Inference.md)
-    - [استنتاج Phi في Jetson](./md/01.Introduction/03/Jetson_Inference.md)
-    - [استنتاج Phi في أجهزة الكمبيوتر الذكية](./md/01.Introduction/03/AIPC_Inference.md)
-    - [استنتاج Phi باستخدام إطار عمل Apple MLX](./md/01.Introduction/03/MLX_Inference.md)
-    - [استنتاج Phi في الخادم المحلي](./md/01.Introduction/03/Local_Server_Inference.md)
-    - [استنتاج Phi في الخادم البعيد باستخدام أداة الذكاء الاصطناعي](./md/01.Introduction/03/Remote_Interence.md)
-    - [استنتاج Phi باستخدام Rust](./md/01.Introduction/03/Rust_Inference.md)
-    - [استنتاج Phi--Vision محليًا](./md/01.Introduction/03/Vision_Inference.md)
-    - [استنتاج Phi باستخدام Kaito AKS، حاويات Azure (الدعم الرسمي)](./md/01.Introduction/03/Kaito_Inference.md)
-- [تكميم عائلة Phi](./md/01.Introduction/04/QuantifyingPhi.md)
-    - [تكميم Phi-3.5 / 4 باستخدام llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
-    - [تكميم Phi-3.5 / 4 باستخدام إضافات الذكاء الاصطناعي التوليدي لـ onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
-    - [تكميم Phi-3.5 / 4 باستخدام Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
-    - [تكميم Phi-3.5 / 4 باستخدام إطار عمل Apple MLX](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+- Inference Phi Family
+    - [Inference Phi in iOS](./md/01.Introduction/03/iOS_Inference.md)
+    - [Inference Phi in Android](./md/01.Introduction/03/Android_Inference.md)
+    - [Inference Phi in Jetson](./md/01.Introduction/03/Jetson_Inference.md)
+    - [Inference Phi in AI PC](./md/01.Introduction/03/AIPC_Inference.md)
+    - [Inference Phi with Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)
+    - [Inference Phi in Local Server](./md/01.Introduction/03/Local_Server_Inference.md)
+    - [Inference Phi in Remote Server using AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)
+    - [Inference Phi with Rust](./md/01.Introduction/03/Rust_Inference.md)
+    - [Inference Phi--Vision in Local](./md/01.Introduction/03/Vision_Inference.md)
+    - [Inference Phi with Kaito AKS, Azure Containers(official support)](./md/01.Introduction/03/Kaito_Inference.md)
+-  [Quantifying Phi Family](./md/01.Introduction/04/QuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4 using llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4 using Generative AI extensions for onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4  using Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
+    - [Quantizing Phi-3.5 / 4  using Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
-- تقييم Phi
+-  Evaluation Phi
 - [Response AI](./md/01.Introduction/05/ResponsibleAI.md)
     - [Azure AI Foundry for Evaluation](./md/01.Introduction/05/AIFoundry.md)
     - [Using Promptflow for Evaluation](./md/01.Introduction/05/Promptflow.md)
@@ -97,7 +98,7 @@ Here's how you can get started with these resources:
       - [MLFlow - Building a wrapper and using Phi-3 with MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
       - [Model Optimization - How to optimize Phi-3-min model for ONNX Runtime Web with Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
       - [WinUI3 App with Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
-      - [WinUI3 Multi Model AI Powered Notes App Sample](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+      -[WinUI3 Multi Model AI Powered Notes App Sample](https://github.com/microsoft/ai-powered-notes-winui3-sample)
       - [Fine-tune and Integrate custom Phi-3 models with Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
       - [Fine-tune and Integrate custom Phi-3 models with Prompt flow in Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
       - [Evaluate the Fine-tuned Phi-3 / Phi-3.5 Model in Azure AI Foundry Focusing on Microsoft's Responsible AI Principles](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
@@ -117,60 +118,61 @@ Here's how you can get started with these resources:
 
   - Advanced Reasoning Samples
     - Phi-4 Samples 🆕
-      - [📓] [Phi-4-mini Reasoning Samples](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
-  
-  - Demos
-      - [Phi-4-mini demos hosted on Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
-      - [Phi-4-multimodal demos hosted on Hugginge Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
-  - Vision Samples
-    - Phi-4 Samples 🆕
-      - [📓] [Use Phi-4-multimodal to read images and generate code](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) 
-    - Phi-3 / 3.5 Samples
-- [📓][Phi-3-vision-Image text to text](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
-      - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)  
-      - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
-      - [DEMO: Phi-3 Recycling](https://github.com/jennifermarsman/PhiRecycling/)  
-      - [Phi-3-vision - Visual language assistant - with Phi3-Vision and OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)  
-      - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)  
-      - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)  
-      - [📓][Phi-3.5 Vision multi-frame or multi-image sample](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)  
-      - [Phi-3 Vision Local ONNX Model using the Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi303)  
-      - [Menu based Phi-3 Vision Local ONNX Model using the Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)  
+      - [📓] [Phi-4-mini-reasoning or Phi-4-reasoning Samples](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
+      - [📓] [Fine-tuning Phi-4-mini-reasoning with Microsoft Olive](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
+      - [📓] [Fine-tuning Phi-4-mini-reasoning with Apple MLX](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
+      - [📓] [Phi-4-mini-reasoning with GitHub Models](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
+- [📓] [Phi-4-mini razonamiento con modelos Azure AI Foundry](../../md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
+  - Demostraciones
+      - [Demos Phi-4-mini alojados en Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
+      - [Demos Phi-4-multimodal alojados en Hugginge Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
+  - Ejemplos de Visión
+    - Ejemplos Phi-4 🆕
+      - [📓] [Usar Phi-4-multimodal para leer imágenes y generar código](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) 
+    - Ejemplos Phi-3 / 3.5
+      -  [📓][Phi-3-vision-Texto de imagen a texto](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
+      - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)
+      - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
+      - [DEMO: Reciclaje Phi-3](https://github.com/jennifermarsman/PhiRecycling/)
+      - [Phi-3-vision - Asistente de lenguaje visual - con Phi3-Vision y OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)
+      - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)
+      - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)
+      - [📓][Phi-3.5 Vision muestra multi-frame o multi-imagen](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)
+      - [Modelo ONNX local Phi-3 Vision usando Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi303)
+      - [Modelo ONNX local Phi-3 Vision basado en menú usando Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)
 
-  - نماذج الصوت  
-    - عينات Phi-4 🆕  
-      - [📓] [استخراج النصوص الصوتية باستخدام Phi-4-multimodal](./md/02.Application/05.Audio/Phi4/Transciption/README.md)  
-      - [📓] [عينة صوتية Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)  
-      - [📓] [عينة ترجمة الكلام Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)  
-      - [.NET console application باستخدام Phi-4-multimodal لتحليل ملف صوتي وإنشاء نصوص](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)  
+  - Ejemplos de Audio
+    - Ejemplos Phi-4 🆕
+      - [📓] [Extrayendo transcripciones de audio usando Phi-4-multimodal](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
+      - [📓] [Ejemplo de audio Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
+      - [📓] [Ejemplo de traducción de voz con Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
+      - [Aplicación consola .NET usando Phi-4-multimodal Audio para analizar un archivo de audio y generar transcripción](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
 
-  - نماذج MOE  
-    - عينات Phi-3 / 3.5  
-      - [📓] [نماذج Phi-3.5 Mixture of Experts (MoEs) عينة وسائل التواصل الاجتماعي](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
-      - [📓] [بناء خط أنابيب Retrieval-Augmented Generation (RAG) باستخدام NVIDIA NIM Phi-3 MOE، Azure AI Search، وLlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
+  - Ejemplos MOE
+    - Ejemplos Phi-3 / 3.5
+      - [📓] [Modelos Mixture of Experts (MoEs) Phi-3.5 para redes sociales](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
+      - [📓] [Construyendo un pipeline Retrieval-Augmented Generation (RAG) con NVIDIA NIM Phi-3 MOE, Azure AI Search y LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
+  - Ejemplos de Llamada a Funciones
+    - Ejemplos Phi-4 🆕
+      -  [📓] [Usando llamada a funciones con Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
+      -  [📓] [Usando llamada a funciones para crear multi-agentes con Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
+      -  [📓] [Usando llamada a funciones con Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)
+  - Ejemplos de mezcla multimodal
+    - Ejemplos Phi-4 🆕
+      -  [📓] [Usando Phi-4-multimodal como periodista tecnológico](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)
+      - [Aplicación consola .NET usando Phi-4-multimodal para analizar imágenes](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)
 
-  - نماذج استدعاء الوظائف  
-    - عينات Phi-4 🆕  
-      - [📓] [استخدام استدعاء الوظائف مع Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
-      - [📓] [استخدام استدعاء الوظائف لإنشاء وكلاء متعددين مع Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
-      - [📓] [استخدام استدعاء الوظائف مع Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
-
-  - نماذج مزج متعدد الوسائط  
-    - عينات Phi-4 🆕  
-      - [📓] [استخدام Phi-4-multimodal كصحفي تقني](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)  
-      - [.NET console application باستخدام Phi-4-multimodal لتحليل الصور](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)  
-
-- نماذج تحسين Phi  
-  - [سيناريوهات تحسين الأداء](./md/03.FineTuning/FineTuning_Scenarios.md)  
-  - [تحسين الأداء مقابل RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)  
-  - [تحسين الأداء لجعل Phi-3 خبيرًا صناعيًا](./md/03.FineTuning/LetPhi3gotoIndustriy.md)  
-  - [تحسين الأداء لـPhi-3 باستخدام أدوات الذكاء الاصطناعي لـVS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)  
-  - [تحسين الأداء لـPhi-3 باستخدام خدمة Azure Machine Learning](./md/03.FineTuning/Introduce_AzureML.md)  
-  - [تحسين الأداء لـPhi-3 باستخدام Lora](./md/03.FineTuning/FineTuning_Lora.md)  
-  - [تحسين الأداء لـPhi-3 باستخدام QLora](./md/03.FineTuning/FineTuning_Qlora.md)  
-  - [تحسين الأداء لـPhi-3 باستخدام Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)  
-  - [تحسين الأداء لـPhi-3 باستخدام Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)  
-- [Fine-tuning with Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
+- Ejemplos de Fine-tuning Phi
+  - [Escenarios de Fine-tuning](./md/03.FineTuning/FineTuning_Scenarios.md)
+  - [Fine-tuning vs RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)
+  - [Fine-tuning para que Phi-3 se convierta en experto de la industria](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
+  - [Fine-tuning Phi-3 con AI Toolkit para VS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)
+  - [Fine-tuning Phi-3 con Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
+- [Fine-tuning Phi-3 with Lora](./md/03.FineTuning/FineTuning_Lora.md)
+  - [Fine-tuning Phi-3 with QLora](./md/03.FineTuning/FineTuning_Qlora.md)
+  - [Fine-tuning Phi-3 with Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
+  - [Fine-tuning Phi-3 with Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
+  - [Fine-tuning with Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
   - [Fine-tuning with Microsoft Olive Hands-On Lab](./md/03.FineTuning/olive-lab/readme.md)
   - [Fine-tuning Phi-3-vision with Weights and Bias](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)
   - [Fine-tuning Phi-3 with Apple MLX Framework](./md/03.FineTuning/FineTuning_MLX.md)
@@ -178,7 +180,7 @@ Here's how you can get started with these resources:
   - [Fine-Tuning Phi-3 with Kaito AKS , Azure Containers(official Support)](./md/03.FineTuning/FineTuning_Kaito.md)
   - [Fine-Tuning Phi-3 and 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)
 
-- Hands-on Lab
+- Hands on Lab
   - [Exploring cutting-edge models: LLMs, SLMs, local development and more](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
   - [Unlocking NLP Potential: Fine-Tuning with Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
 
@@ -189,44 +191,52 @@ Here's how you can get started with these resources:
   - [Phi-4-Mini Technical Report: Compact yet Powerful Multimodal Language Models via Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
   - [Optimizing Small Language Models for In-Vehicle Function-Calling](https://arxiv.org/abs/2501.02342)
   - [(WhyPHI) Fine-Tuning PHI-3 for Multiple-Choice Question Answering: Methodology, Results, and Challenges](https://arxiv.org/abs/2501.01588)
+  - [Phi-4-reasoning Technical Report](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
+  - [Phi-4-mini-reasoning Technical Report](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
 
 ## Using Phi Models
 
 ### Phi on Azure AI Foundry
 
-Learn how to use Microsoft Phi and build end-to-end solutions across various hardware devices. To get started with Phi, explore the models and customize them for your specific needs using the [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). For additional details, refer to [Getting Started with Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
+You can learn how to use Microsoft Phi and how to build E2E solutions on your various hardware devices. To try Phi yourself, start by experimenting with the models and customizing Phi for your use cases using the [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). For more details, see Getting Started with [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Playground**  
-Each model offers a dedicated playground for testing: [Azure AI Playground](https://aka.ms/try-phi3).
+Each model has its own playground to test it: [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi on GitHub Models
 
-Discover how to use Microsoft Phi and create end-to-end solutions across different hardware setups. Begin by exploring and customizing the model for your scenarios through the [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). For more information, see [Getting Started with GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
+You can learn how to use Microsoft Phi and build end-to-end solutions on your different hardware devices. To get hands-on with Phi, start by experimenting with the model and customizing Phi for your scenarios using the [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Learn more at Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
 
 **Playground**  
-Each model provides a [playground for testing](/md/02.QuickStart/GitHubModel_QuickStart.md).
+Each model has a dedicated [playground to test the model](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 ### Phi on Hugging Face
 
-The model is also available on [Hugging Face](https://huggingface.co/microsoft).
+You can also find the model on [Hugging Face](https://huggingface.co/microsoft).
 
 **Playground**  
-Explore the [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct).
+[Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
-## Responsible AI
+## Responsible AI 
 
-Microsoft is dedicated to helping customers use AI solutions responsibly, sharing best practices, and fostering trust through tools like Transparency Notes and Impact Assessments. Many of these resources are accessible at [https://aka.ms/RAI](https://aka.ms/RAI).  
-Microsoft’s approach to responsible AI is rooted in its principles of fairness, reliability and safety, privacy and security, inclusiveness, transparency, and accountability.
+Microsoft is committed to helping customers use our AI products responsibly, sharing what we’ve learned, and building trust through tools like Transparency Notes and Impact Assessments. Many of these resources are available at [https://aka.ms/RAI](https://aka.ms/RAI).  
+Microsoft’s approach to responsible AI is based on our core AI principles: fairness, reliability and safety, privacy and security, inclusiveness, transparency, and accountability.
+Large-scale natural language, image, and speech models - like the ones used in this sample - can potentially behave in ways that are unfair, unreliable, or offensive, in turn causing harms. Please consult the [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) to be informed about risks and limitations.
 
-Large-scale models for natural language, image, and speech tasks—like those showcased here—can occasionally exhibit behavior that is unfair, unreliable, or offensive, potentially leading to harm. Review the [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) for insights into risks and limitations.
+The recommended approach to mitigating these risks is to include a safety system in your architecture that can detect and prevent harmful behavior. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) provides an independent layer of protection, able to detect harmful user-generated and AI-generated content in applications and services. Azure AI Content Safety includes text and image APIs that allow you to detect material that is harmful. Within Azure AI Foundry, the Content Safety service allows you to view, explore and try out sample code for detecting harmful content across different modalities. The following [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) guides you through making requests to the service.
 
-To mitigate these risks, it’s recommended to incorporate a safety system into your architecture to detect and prevent harmful behavior. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) offers an independent layer of protection, capable of identifying harmful content generated by users or AI in applications and services. Azure AI Content Safety provides APIs for text and image analysis to detect harmful material. Within Azure AI Foundry, the Content Safety service includes sample code to explore and test content detection across modalities. Refer to the [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) for guidance on making service requests.
+Another aspect to take into account is the overall application performance. With multi-modal and multi-models applications, we consider performance to mean that the system performs as you and your users expect, including not generating harmful outputs. It's important to assess the performance of your overall application using [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You also have the ability to create and evaluate with [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Performance is another key consideration for applications involving multi-modal and multi-model setups. Performance refers to the system meeting expectations, including avoiding harmful outputs. Evaluate your application’s overall performance using [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You can also create and assess [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
-You can evaluate your AI application in your development environment using the [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). By using either a test dataset or a target, the outputs of your generative AI application are quantitatively assessed with built-in evaluators or custom evaluators tailored to your needs. To begin using the Azure AI Evaluation SDK to assess your system, refer to the [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). After executing an evaluation run, you can [view the results in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
+You can evaluate your AI application in your development environment using the [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Given either a test dataset or a target, your generative AI application generations are quantitatively measured with built-in evaluators or custom evaluators of your choice. To get started with the azure ai evaluation sdk to evaluate your system, you can follow the [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Once you execute an evaluation run, you can [visualize the results in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Trademarks
 
-This project may include trademarks or logos associated with projects, products, or services. Any authorized use of Microsoft trademarks or logos must adhere to [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). Use of Microsoft trademarks or logos in modified versions of this project must avoid causing confusion or implying Microsoft sponsorship. The use of third-party trademarks or logos must comply with those third parties' policies.
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.
 
-It seems you are requesting a translation to "mo." Could you clarify what "mo" refers to? Are you asking for a translation into Māori, Mongolian, or perhaps another language? Let me know so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language "mo" refers to? There are several possibilities (e.g., Moldovan, Mo language), and I want to ensure I provide the correct translation.
