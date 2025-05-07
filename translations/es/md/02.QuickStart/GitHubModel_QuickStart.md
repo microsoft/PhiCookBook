@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-03-27T13:25:25+00:00",
-  "source_file": "md\\02.QuickStart\\GitHubModel_QuickStart.md",
+  "translation_date": "2025-05-07T10:19:41+00:00",
+  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "es"
 }
 -->
-## Modelos de GitHub - Beta Pública Limitada
+## GitHub Models - Beta Pública Limitada
 
-¡Bienvenido a [Modelos de GitHub](https://github.com/marketplace/models)! Tenemos todo listo para que explores los Modelos de IA alojados en Azure AI.
+¡Bienvenido a [GitHub Models](https://github.com/marketplace/models)! Tenemos todo listo para que explores Modelos de IA alojados en Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.es.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.es.png)
 
-Para más información sobre los Modelos disponibles en Modelos de GitHub, consulta el [Marketplace de Modelos de GitHub](https://github.com/marketplace/models)
+Para más información sobre los modelos disponibles en GitHub Models, consulta el [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Modelos Disponibles
 
-Cada modelo tiene un playground dedicado y código de ejemplo. 
+Cada modelo cuenta con un espacio dedicado para pruebas y código de ejemplo
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
-### Modelos Phi-3 en el Catálogo de Modelos de GitHub
+### Modelos Phi-3 en el Catálogo de GitHub Model
 
 [Phi-3-Medium-128k-Instruct](https://github.com/marketplace/models/azureml/Phi-3-medium-128k-instruct)
 
@@ -37,7 +37,7 @@ Cada modelo tiene un playground dedicado y código de ejemplo.
 
 ## Primeros Pasos
 
-Hay algunos ejemplos básicos listos para que los ejecutes. Puedes encontrarlos en el directorio de ejemplos. Si quieres ir directamente a tu lenguaje favorito, los ejemplos están disponibles en los siguientes lenguajes:
+Hay algunos ejemplos básicos listos para que los ejecutes. Los puedes encontrar en el directorio samples. Si quieres ir directo a tu lenguaje favorito, los ejemplos están disponibles en los siguientes lenguajes:
 
 - Python
 - JavaScript
@@ -45,30 +45,31 @@ Hay algunos ejemplos básicos listos para que los ejecutes. Puedes encontrarlos 
 
 También hay un entorno dedicado de Codespaces para ejecutar los ejemplos y modelos.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.es.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.es.png)
+
 
 ## Código de Ejemplo
 
-A continuación, se presentan fragmentos de código de ejemplo para algunos casos de uso. Para información adicional sobre el SDK de Inferencia de Azure AI, consulta la documentación completa y los ejemplos.
+A continuación, algunos fragmentos de código para distintos casos de uso. Para más información sobre Azure AI Inference SDK, consulta la documentación completa y los ejemplos.
 
 ## Configuración
 
-1. Crea un token de acceso personal.  
+1. Crea un token de acceso personal  
 No necesitas otorgar permisos al token. Ten en cuenta que el token será enviado a un servicio de Microsoft.
 
-Para usar los fragmentos de código a continuación, crea una variable de entorno para configurar tu token como clave para el código del cliente.
+Para usar los fragmentos de código a continuación, crea una variable de entorno con tu token como clave para el código cliente.
 
-Si estás usando bash:  
+Si usas bash:  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-Si estás en PowerShell:  
+Si estás en powershell:  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 
-Si estás usando el símbolo del sistema de Windows:  
+Si usas el símbolo del sistema de Windows:  
 
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
@@ -77,15 +78,14 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 ## Ejemplo en Python
 
 ### Instalar dependencias  
-Instala el SDK de Inferencia de Azure AI usando pip (Requiere: Python >=3.8):  
+Instala Azure AI Inference SDK usando pip (Requiere: Python >=3.8):
 
 ```
 pip install azure-ai-inference
 ```  
+### Ejecutar un ejemplo básico de código
 
-### Ejecutar un ejemplo básico de código  
-
-Este ejemplo demuestra una llamada básica a la API de finalización de chat. Utiliza el endpoint de inferencia del modelo de IA de GitHub y tu token de GitHub. La llamada es síncrona.  
+Este ejemplo muestra una llamada básica a la API de chat completion. Usa el endpoint de inferencia del modelo de IA de GitHub y tu token de GitHub. La llamada es síncrona.
 
 ```
 import os
@@ -115,11 +115,11 @@ response = client.complete(
 )
 
 print(response.choices[0].message.content)
-```  
+```
 
-### Ejecutar una conversación de varios turnos  
+### Ejecutar una conversación multi-turno
 
-Este ejemplo demuestra una conversación de varios turnos con la API de finalización de chat. Al usar el modelo para una aplicación de chat, necesitarás gestionar el historial de esa conversación y enviar los mensajes más recientes al modelo.  
+Este ejemplo muestra una conversación multi-turno con la API de chat completion. Al usar el modelo para una aplicación de chat, debes manejar el historial de la conversación y enviar los mensajes más recientes al modelo.
 
 ```
 import os
@@ -147,11 +147,11 @@ messages = [
 response = client.complete(messages=messages, model=model_name)
 
 print(response.choices[0].message.content)
-```  
+```
 
-### Transmitir la salida  
+### Transmitir la salida
 
-Para una mejor experiencia de usuario, querrás transmitir la respuesta del modelo para que el primer token aparezca rápidamente y no tengas que esperar respuestas largas.  
+Para una mejor experiencia de usuario, querrás transmitir la respuesta del modelo para que el primer token aparezca rápido y evitar esperar respuestas largas.
 
 ```
 import os
@@ -184,14 +184,13 @@ for update in response:
 
 client.close()
 ```  
+## JavaScript
 
-## JavaScript  
+### Instalar dependencias
 
-### Instalar dependencias  
+Instala Node.js.
 
-Instala Node.js.  
-
-Copia las siguientes líneas de texto y guárdalas como un archivo package.json dentro de tu carpeta.  
+Copia las siguientes líneas de texto y guárdalas en un archivo package.json dentro de tu carpeta.
 
 ```
 {
@@ -202,17 +201,17 @@ Copia las siguientes líneas de texto y guárdalas como un archivo package.json 
     "@azure/core-sse": "latest"
   }
 }
-```  
+```
 
-Nota: @azure/core-sse solo es necesario cuando transmites la respuesta de las finalizaciones de chat.  
+Nota: @azure/core-sse solo es necesario cuando transmites la respuesta de chat completions.
 
-Abre una ventana de terminal en esta carpeta y ejecuta npm install.  
+Abre una terminal en esta carpeta y ejecuta npm install.
 
-Para cada uno de los fragmentos de código a continuación, copia el contenido en un archivo sample.js y ejecútalo con node sample.js.  
+Para cada uno de los fragmentos de código a continuación, copia el contenido en un archivo sample.js y ejecútalo con node sample.js.
 
-### Ejecutar un ejemplo básico de código  
+### Ejecutar un ejemplo básico de código
 
-Este ejemplo demuestra una llamada básica a la API de finalización de chat. Utiliza el endpoint de inferencia del modelo de IA de GitHub y tu token de GitHub. La llamada es síncrona.  
+Este ejemplo muestra una llamada básica a la API de chat completion. Usa el endpoint de inferencia del modelo de IA de GitHub y tu token de GitHub. La llamada es síncrona.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -249,11 +248,11 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-### Ejecutar una conversación de varios turnos  
+### Ejecutar una conversación multi-turno
 
-Este ejemplo demuestra una conversación de varios turnos con la API de finalización de chat. Al usar el modelo para una aplicación de chat, necesitarás gestionar el historial de esa conversación y enviar los mensajes más recientes al modelo.  
+Este ejemplo muestra una conversación multi-turno con la API de chat completion. Al usar el modelo para una aplicación de chat, debes manejar el historial de la conversación y enviar los mensajes más recientes al modelo.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,10 +291,10 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
 ### Transmitir la salida  
-Para una mejor experiencia de usuario, querrás transmitir la respuesta del modelo para que el primer token aparezca rápidamente y no tengas que esperar respuestas largas.  
+Para una mejor experiencia de usuario, querrás transmitir la respuesta del modelo para que el primer token aparezca rápido y evitar esperar respuestas largas.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -347,13 +346,13 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-## REST  
+## REST
 
-### Ejecutar un ejemplo básico de código  
+### Ejecutar un ejemplo básico de código
 
-Pega lo siguiente en una terminal:  
+Pega lo siguiente en una shell:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -373,10 +372,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
+### Ejecutar una conversación multi-turno
 
-### Ejecutar una conversación de varios turnos  
-
-Llama a la API de finalización de chat y pasa el historial del chat:  
+Llama a la API de chat completion y pasa el historial del chat:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -404,10 +402,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
+### Transmitir la salida
 
-### Transmitir la salida  
-
-Este es un ejemplo de cómo llamar al endpoint y transmitir la respuesta.  
+Este es un ejemplo de llamada al endpoint transmitiendo la respuesta.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -427,23 +424,23 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "stream": true,
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
 
-## Uso GRATUITO y Límites de Tasa para Modelos de GitHub  
+## Uso GRATUITO y límites de tasa para GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.es.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.es.png)
 
-Los [límites de tasa para el playground y el uso gratuito de la API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) están diseñados para ayudarte a experimentar con modelos y crear prototipos de tu aplicación de IA. Para usos que excedan esos límites y para escalar tu aplicación, debes aprovisionar recursos desde una cuenta de Azure y autenticarte desde allí en lugar de usar tu token de acceso personal de GitHub. No necesitas cambiar nada más en tu código. Usa este enlace para descubrir cómo ir más allá de los límites del nivel gratuito en Azure AI.
+Los [límites de tasa para el playground y uso gratuito de la API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) están diseñados para ayudarte a experimentar con modelos y prototipar tu aplicación de IA. Para un uso que supere esos límites, y para escalar tu aplicación, debes aprovisionar recursos desde una cuenta de Azure y autenticarte desde ahí en lugar de usar tu token personal de GitHub. No necesitas cambiar nada más en tu código. Usa este enlace para descubrir cómo superar los límites del nivel gratuito en Azure AI.
 
-### Avisos  
+### Avisos
 
-Recuerda que al interactuar con un modelo estás experimentando con IA, por lo que pueden ocurrir errores en el contenido.  
+Recuerda que al interactuar con un modelo estás experimentando con IA, por lo que pueden ocurrir errores en el contenido.
 
-La función está sujeta a varios límites (incluyendo solicitudes por minuto, solicitudes por día, tokens por solicitud y solicitudes concurrentes) y no está diseñada para casos de uso en producción.  
+La función está sujeta a varios límites (incluyendo solicitudes por minuto, solicitudes por día, tokens por solicitud y solicitudes concurrentes) y no está diseñada para casos de uso en producción.
 
-Modelos de GitHub utiliza Azure AI Content Safety. Estos filtros no se pueden desactivar como parte de la experiencia de Modelos de GitHub. Si decides usar modelos a través de un servicio de pago, configura tus filtros de contenido para que cumplan con tus requisitos.  
+GitHub Models usa Azure AI Content Safety. Estos filtros no pueden desactivarse como parte de la experiencia de GitHub Models. Si decides usar modelos mediante un servicio de pago, configura tus filtros de contenido según tus necesidades.
 
-Este servicio está bajo los Términos de Prelanzamiento de GitHub.  
+Este servicio está bajo los Términos de Pre-lanzamiento de GitHub.
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

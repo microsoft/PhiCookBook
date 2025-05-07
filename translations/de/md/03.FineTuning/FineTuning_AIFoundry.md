@@ -2,60 +2,60 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-03-27T13:40:44+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_AIFoundry.md",
+  "translation_date": "2025-05-07T10:25:08+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "de"
 }
 -->
 # Feinabstimmung von Phi-3 mit Azure AI Foundry
 
-Lassen Sie uns untersuchen, wie Microsofts Phi-3 Mini-Sprachmodell mit Azure AI Foundry feinabgestimmt werden kann. Feinabstimmung ermöglicht es Ihnen, Phi-3 Mini an spezifische Aufgaben anzupassen und es noch leistungsfähiger und kontextbewusster zu machen.
+Lassen Sie uns erkunden, wie man das Sprachmodell Phi-3 Mini von Microsoft mit Azure AI Foundry feinabstimmt. Die Feinabstimmung ermöglicht es, Phi-3 Mini an spezifische Aufgaben anzupassen, wodurch es noch leistungsfähiger und kontextsensitiver wird.
 
 ## Überlegungen
 
-- **Fähigkeiten:** Welche Modelle können feinabgestimmt werden? Was kann das Basismodell nach der Feinabstimmung leisten?
+- **Fähigkeiten:** Welche Modelle sind feinabstimmbar? Was kann das Basismodell durch Feinabstimmung lernen?
 - **Kosten:** Wie sieht das Preismodell für die Feinabstimmung aus?
-- **Anpassbarkeit:** Wie stark kann ich das Basismodell modifizieren – und in welcher Weise?
-- **Benutzerfreundlichkeit:** Wie läuft die Feinabstimmung ab – muss ich benutzerdefinierten Code schreiben? Muss ich eigene Rechenressourcen bereitstellen?
-- **Sicherheit:** Feinabgestimmte Modelle können Sicherheitsrisiken bergen – gibt es Schutzmaßnahmen, um unbeabsichtigten Schaden zu vermeiden?
+- **Anpassbarkeit:** Wie stark kann ich das Basismodell modifizieren – und auf welche Weise?
+- **Bequemlichkeit:** Wie läuft die Feinabstimmung tatsächlich ab – muss ich eigenen Code schreiben? Benötige ich eigene Rechenressourcen?
+- **Sicherheit:** Feinabgestimmte Modelle bergen bekannte Sicherheitsrisiken – gibt es Schutzmechanismen, die vor unbeabsichtigten Schäden bewahren?
 
-![AIFoundry-Modelle](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.de.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.de.png)
 
-## Vorbereitung auf die Feinabstimmung
+## Vorbereitung für die Feinabstimmung
 
 ### Voraussetzungen
 
 > [!NOTE]
-> Für Modelle der Phi-3-Familie ist das Pay-as-you-go-Modell für die Feinabstimmung nur in Hubs verfügbar, die in den Regionen **East US 2** erstellt wurden.
+> Für Modelle der Phi-3-Familie ist das Pay-as-you-go-Angebot zur Feinabstimmung nur mit Hubs verfügbar, die in der Region **East US 2** erstellt wurden.
 
-- Ein Azure-Abonnement. Wenn Sie noch kein Azure-Abonnement haben, erstellen Sie ein [kostenpflichtiges Azure-Konto](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), um loszulegen.
+- Ein Azure-Abonnement. Falls Sie noch keines besitzen, erstellen Sie ein [kostenpflichtiges Azure-Konto](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), um zu starten.
 
-- Ein [AI Foundry-Projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure-Rollenbasierte Zugriffssteuerungen (Azure RBAC) werden verwendet, um Zugriff auf Vorgänge in Azure AI Foundry zu gewähren. Um die Schritte in diesem Artikel auszuführen, muss Ihrem Benutzerkonto die Rolle __Azure AI Developer__ für die Ressourcengruppe zugewiesen sein.
+- Ein [AI Foundry Projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
+- Azure rollenbasierte Zugriffssteuerungen (Azure RBAC) werden verwendet, um den Zugriff auf Operationen in Azure AI Foundry zu gewähren. Für die Durchführung der Schritte in diesem Artikel muss Ihrem Benutzerkonto die __Azure AI Developer Rolle__ auf der Ressourcengruppe zugewiesen sein.
 
 ### Registrierung des Abonnementanbieters
 
-Überprüfen Sie, ob das Abonnement beim Ressourcenanbieter `Microsoft.Network` registriert ist.
+Stellen Sie sicher, dass das Abonnement beim `Microsoft.Network` Ressourcenanbieter registriert ist.
 
 1. Melden Sie sich im [Azure-Portal](https://portal.azure.com) an.
-1. Wählen Sie **Abonnements** aus dem linken Menü.
-1. Wählen Sie das Abonnement, das Sie verwenden möchten.
-1. Wählen Sie **AI-Projekteinstellungen** > **Ressourcenanbieter** aus dem linken Menü.
-1. Stellen Sie sicher, dass **Microsoft.Network** in der Liste der Ressourcenanbieter aufgeführt ist. Falls nicht, fügen Sie es hinzu.
+1. Wählen Sie im linken Menü **Abonnements** aus.
+1. Wählen Sie das gewünschte Abonnement aus.
+1. Wählen Sie im linken Menü **AI-Projekteinstellungen** > **Ressourcenanbieter**.
+1. Vergewissern Sie sich, dass **Microsoft.Network** in der Liste der Ressourcenanbieter vorhanden ist. Falls nicht, fügen Sie es hinzu.
 
 ### Datenvorbereitung
 
-Bereiten Sie Ihre Trainings- und Validierungsdaten vor, um Ihr Modell feinabzustimmen. Ihre Trainings- und Validierungsdatensätze bestehen aus Eingabe- und Ausgabebeispielen, die zeigen, wie das Modell funktionieren soll.
+Bereiten Sie Ihre Trainings- und Validierungsdaten vor, um Ihr Modell fein abzustimmen. Ihre Trainings- und Validierungsdatensätze bestehen aus Eingabe- und Ausgabe-Beispielen, die zeigen, wie das Modell arbeiten soll.
 
-Stellen Sie sicher, dass alle Ihre Trainingsbeispiele dem erwarteten Format für Inferenz entsprechen. Um Modelle effektiv feinabzustimmen, sorgen Sie für einen ausgewogenen und vielfältigen Datensatz.
+Stellen Sie sicher, dass alle Trainingsbeispiele dem erwarteten Format für die Inferenz entsprechen. Um Modelle effektiv zu feinabstimmen, achten Sie auf einen ausgewogenen und vielfältigen Datensatz.
 
-Dies umfasst die Sicherstellung eines Daten-Gleichgewichts, die Einbeziehung verschiedener Szenarien und die regelmäßige Verfeinerung der Trainingsdaten, um sie an realistische Erwartungen anzupassen. Dadurch werden letztendlich genauere und ausgewogenere Modellantworten erzielt.
+Dies umfasst die Aufrechterhaltung eines Datengleichgewichts, das Einbeziehen verschiedener Szenarien sowie die regelmäßige Verfeinerung der Trainingsdaten, um sie an reale Erwartungen anzupassen. So erzielen Sie letztlich genauere und ausgewogenere Modellantworten.
 
-Verschiedene Modelltypen erfordern ein unterschiedliches Format der Trainingsdaten.
+Verschiedene Modelltypen erfordern unterschiedliche Formate der Trainingsdaten.
 
 ### Chat Completion
 
-Die von Ihnen verwendeten Trainings- und Validierungsdaten **müssen** als JSON Lines (JSONL)-Dokument formatiert sein. Für `Phi-3-mini-128k-instruct` muss der Feinabstimmungsdatensatz im Konversationsformat vorliegen, das von der Chat Completions API verwendet wird.
+Die Trainings- und Validierungsdaten müssen als JSON Lines (JSONL) formatiert sein. Für `Phi-3-mini-128k-instruct` muss der Feinabstimmungsdatensatz im konversationellen Format vorliegen, das von der Chat Completions API verwendet wird.
 
 ### Beispiel-Dateiformat
 
@@ -69,116 +69,116 @@ Der unterstützte Dateityp ist JSON Lines. Dateien werden in den Standard-Datens
 
 ## Feinabstimmung von Phi-3 mit Azure AI Foundry
 
-Azure AI Foundry ermöglicht es Ihnen, große Sprachmodelle mit Ihren eigenen Datensätzen anzupassen, indem Sie einen Prozess namens Feinabstimmung verwenden. Feinabstimmung bietet erheblichen Mehrwert, indem sie Anpassung und Optimierung für spezifische Aufgaben und Anwendungen ermöglicht. Dies führt zu verbesserter Leistung, Kosteneffizienz, reduzierter Latenz und maßgeschneiderten Ausgaben.
+Azure AI Foundry ermöglicht es Ihnen, große Sprachmodelle mit Ihren eigenen Datensätzen anzupassen, indem Sie einen Prozess namens Feinabstimmung nutzen. Die Feinabstimmung bietet einen großen Mehrwert durch individuelle Anpassung und Optimierung für spezifische Aufgaben und Anwendungen. Dies führt zu besserer Leistung, Kosteneffizienz, geringerer Latenz und maßgeschneiderten Ergebnissen.
 
-![Feinabstimmung AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.de.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.de.png)
 
-### Ein neues Projekt erstellen
+### Neues Projekt erstellen
 
 1. Melden Sie sich bei [Azure AI Foundry](https://ai.azure.com) an.
 
 1. Wählen Sie **+Neues Projekt**, um ein neues Projekt in Azure AI Foundry zu erstellen.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.de.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.de.png)
 
-1. Führen Sie die folgenden Aufgaben aus:
+1. Führen Sie folgende Aufgaben aus:
 
-    - Projekt **Hub-Name**. Dieser muss eindeutig sein.
-    - Wählen Sie den **Hub**, den Sie verwenden möchten (erstellen Sie bei Bedarf einen neuen).
+    - Projekt-**Hub-Name**. Dieser muss eindeutig sein.
+    - Wählen Sie den **Hub** aus, den Sie verwenden möchten (erstellen Sie bei Bedarf einen neuen).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.de.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.de.png)
 
-1. Führen Sie die folgenden Aufgaben aus, um einen neuen Hub zu erstellen:
+1. Führen Sie folgende Schritte aus, um einen neuen Hub zu erstellen:
 
-    - Geben Sie den **Hub-Namen** ein. Dieser muss eindeutig sein.
+    - Geben Sie den **Hub-Namen** ein. Er muss eindeutig sein.
     - Wählen Sie Ihr Azure-**Abonnement**.
-    - Wählen Sie die **Ressourcengruppe**, die Sie verwenden möchten (erstellen Sie bei Bedarf eine neue).
-    - Wählen Sie den **Standort**, den Sie verwenden möchten.
-    - Wählen Sie die **Azure AI Services verbinden**, die Sie verwenden möchten (erstellen Sie bei Bedarf eine neue).
-    - Wählen Sie **Azure AI Search verbinden**, um **Überspringen** auszuwählen.
+    - Wählen Sie die zu verwendende **Ressourcengruppe** aus (bei Bedarf neu erstellen).
+    - Wählen Sie den gewünschten **Standort** aus.
+    - Wählen Sie die zu verwendenden **Azure AI Services verbinden** aus (bei Bedarf neu erstellen).
+    - Wählen Sie bei **Azure AI Search verbinden** die Option **Verbindung überspringen**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.de.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.de.png)
 
 1. Wählen Sie **Weiter**.
 1. Wählen Sie **Projekt erstellen**.
 
 ### Datenvorbereitung
 
-Bevor Sie mit der Feinabstimmung beginnen, sammeln oder erstellen Sie einen Datensatz, der für Ihre Aufgabe relevant ist, z. B. Chat-Anweisungen, Frage-Antwort-Paare oder andere relevante Textdaten. Bereinigen und bereiten Sie diese Daten vor, indem Sie Rauschen entfernen, fehlende Werte behandeln und den Text tokenisieren.
+Vor der Feinabstimmung sammeln oder erstellen Sie einen Datensatz, der für Ihre Aufgabe relevant ist, wie Chat-Anweisungen, Frage-Antwort-Paare oder andere passende Textdaten. Bereinigen und verarbeiten Sie diese Daten vor, indem Sie Störfaktoren entfernen, fehlende Werte behandeln und den Text tokenisieren.
 
-### Feinabstimmung von Phi-3-Modellen in Azure AI Foundry
+### Feinabstimmung von Phi-3 Modellen in Azure AI Foundry
 
 > [!NOTE]
-> Die Feinabstimmung von Phi-3-Modellen wird derzeit nur in Projekten unterstützt, die in East US 2 angesiedelt sind.
+> Die Feinabstimmung von Phi-3 Modellen wird derzeit nur in Projekten unterstützt, die sich in East US 2 befinden.
 
-1. Wählen Sie **Modellkatalog** aus der linken Seitenleiste.
+1. Wählen Sie im linken Menü **Modellkatalog** aus.
 
-1. Geben Sie *phi-3* in die **Suchleiste** ein und wählen Sie das gewünschte Phi-3-Modell aus.
+1. Geben Sie *phi-3* in die **Suchleiste** ein und wählen Sie das phi-3 Modell, das Sie verwenden möchten.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.de.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.de.png)
 
 1. Wählen Sie **Feinabstimmen**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.de.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.de.png)
 
-1. Geben Sie den **Namen des feinabgestimmten Modells** ein.
+1. Geben Sie den Namen des **feinabgestimmten Modells** ein.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.de.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.de.png)
 
 1. Wählen Sie **Weiter**.
 
-1. Führen Sie die folgenden Aufgaben aus:
+1. Führen Sie folgende Aufgaben aus:
 
     - Wählen Sie den **Aufgabentyp** **Chat Completion**.
-    - Wählen Sie die **Trainingsdaten**, die Sie verwenden möchten. Sie können diese über Azure AI Foundry hochladen oder aus Ihrer lokalen Umgebung auswählen.
+    - Wählen Sie die **Trainingsdaten** aus, die Sie verwenden möchten. Sie können diese über Azure AI Foundry oder aus Ihrer lokalen Umgebung hochladen.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.de.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.de.png)
 
 1. Wählen Sie **Weiter**.
 
 1. Laden Sie die **Validierungsdaten** hoch, die Sie verwenden möchten, oder wählen Sie **Automatische Aufteilung der Trainingsdaten**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.de.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.de.png)
 
 1. Wählen Sie **Weiter**.
 
-1. Führen Sie die folgenden Aufgaben aus:
+1. Führen Sie folgende Aufgaben aus:
 
-    - Wählen Sie den **Batch-Größen-Multiplikator**, den Sie verwenden möchten.
-    - Wählen Sie die **Lernrate**, die Sie verwenden möchten.
-    - Wählen Sie die **Epochen**, die Sie verwenden möchten.
+    - Wählen Sie den gewünschten **Batchgrößen-Multiplikator**.
+    - Wählen Sie die gewünschte **Lernrate**.
+    - Wählen Sie die gewünschte Anzahl an **Epochen**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.de.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.de.png)
 
-1. Wählen Sie **Einreichen**, um den Feinabstimmungsprozess zu starten.
+1. Wählen Sie **Absenden**, um den Feinabstimmungsprozess zu starten.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.de.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.de.png)
 
-1. Sobald Ihr Modell feinabgestimmt ist, wird der Status als **Abgeschlossen** angezeigt, wie im Bild unten dargestellt. Jetzt können Sie das Modell bereitstellen und in Ihrer eigenen Anwendung, im Playground oder im Prompt Flow verwenden. Weitere Informationen finden Sie unter [Bereitstellung von Phi-3-Modellen mit Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Sobald Ihr Modell feinabgestimmt ist, wird der Status als **Abgeschlossen** angezeigt, wie im Bild unten zu sehen. Nun können Sie das Modell bereitstellen und in Ihrer eigenen Anwendung, im Playground oder in Prompt Flow verwenden. Weitere Informationen finden Sie unter [Wie man Phi-3 Familie kleiner Sprachmodelle mit Azure AI Foundry bereitstellt](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.de.png)
-
-> [!NOTE]
-> Weitere detaillierte Informationen zur Feinabstimmung von Phi-3 finden Sie unter [Feinabstimmung von Phi-3-Modellen in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
-
-## Bereinigung Ihrer feinabgestimmten Modelle
-
-Sie können ein feinabgestimmtes Modell aus der Liste der Feinabstimmungsmodelle in [Azure AI Foundry](https://ai.azure.com) oder von der Modell-Detailseite löschen. Wählen Sie das feinabgestimmte Modell aus, das Sie löschen möchten, und klicken Sie dann auf die Schaltfläche Löschen.
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.de.png)
 
 > [!NOTE]
-> Sie können ein benutzerdefiniertes Modell nicht löschen, wenn es über eine bestehende Bereitstellung verfügt. Sie müssen zuerst die Bereitstellung des Modells löschen, bevor Sie das benutzerdefinierte Modell löschen können.
+> Für detailliertere Informationen zur Feinabstimmung von Phi-3 besuchen Sie bitte [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+
+## Bereinigen Ihrer feinabgestimmten Modelle
+
+Sie können ein feinabgestimmtes Modell aus der Liste der feinabgestimmten Modelle in [Azure AI Foundry](https://ai.azure.com) oder von der Modell-Detailseite löschen. Wählen Sie das zu löschende feinabgestimmte Modell auf der Feinabstimmungsseite aus und klicken Sie dann auf die Schaltfläche Löschen, um das Modell zu entfernen.
+
+> [!NOTE]
+> Ein benutzerdefiniertes Modell kann nicht gelöscht werden, wenn eine aktive Bereitstellung existiert. Sie müssen zuerst die Modellbereitstellung löschen, bevor Sie das Modell entfernen können.
 
 ## Kosten und Kontingente
 
-### Kosten- und Kontingentüberlegungen für die Feinabstimmung von Phi-3-Modellen
+### Kosten- und Kontingentüberlegungen für als Service feinabgestimmte Phi-3 Modelle
 
-Phi-Modelle, die als Service feinabgestimmt werden, werden von Microsoft angeboten und sind in Azure AI Foundry integriert. Die Preise finden Sie beim [Bereitstellen](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) oder Feinabstimmen der Modelle unter dem Tab „Preise und Bedingungen“ im Bereitstellungsassistenten.
+Phi-Modelle, die als Service feinabgestimmt werden, werden von Microsoft angeboten und in Azure AI Foundry integriert. Die Preise finden Sie beim [Bereitstellen](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) oder der Feinabstimmung der Modelle unter dem Tab „Preise und Bedingungen“ im Bereitstellungsassistenten.
 
 ## Inhaltsfilterung
 
-Modelle, die als Service mit Pay-as-you-go bereitgestellt werden, sind durch Azure AI Content Safety geschützt. Bei der Bereitstellung für Echtzeit-Endpunkte können Sie diese Funktion deaktivieren. Mit aktiviertem Azure AI Content Safety durchlaufen sowohl die Eingabeaufforderung als auch die Ausgabe eine Reihe von Klassifikationsmodellen, die darauf abzielen, schädliche Inhalte zu erkennen und zu verhindern. Das Inhaltsfiltersystem erkennt und ergreift Maßnahmen bei bestimmten Kategorien potenziell schädlicher Inhalte in Eingabeaufforderungen und Ausgaben. Weitere Informationen finden Sie unter [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Modelle, die als Pay-as-you-go-Service bereitgestellt werden, sind durch Azure AI Content Safety geschützt. Bei Bereitstellung an Echtzeit-Endpunkten können Sie diese Funktion deaktivieren. Mit aktiviertem Azure AI Content Safety durchlaufen sowohl Eingabeaufforderung als auch Ausgabe ein Ensemble von Klassifikationsmodellen, die darauf abzielen, die Ausgabe schädlicher Inhalte zu erkennen und zu verhindern. Das Inhaltsfiltersystem erkennt und reagiert auf spezifische Kategorien potenziell schädlicher Inhalte in Eingabeaufforderungen und Ausgaben. Weitere Informationen finden Sie unter [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
-**Konfiguration der Feinabstimmung**
+**Feinabstimmungs-Konfiguration**
 
 Hyperparameter: Definieren Sie Hyperparameter wie Lernrate, Batch-Größe und Anzahl der Trainingsepochen.
 
@@ -188,49 +188,49 @@ Wählen Sie eine geeignete Verlustfunktion für Ihre Aufgabe (z. B. Kreuzentropi
 
 **Optimierer**
 
-Wählen Sie einen Optimierer (z. B. Adam) für die Gradientenaktualisierungen während des Trainings.
+Wählen Sie einen Optimierer (z. B. Adam) für die Gradientenaktualisierung während des Trainings.
 
 **Feinabstimmungsprozess**
 
-- Vortrainiertes Modell laden: Laden Sie den Phi-3 Mini-Checkpoint.
-- Benutzerdefinierte Schichten hinzufügen: Fügen Sie aufgabenspezifische Schichten hinzu (z. B. Klassifikationskopf für Chat-Anweisungen).
+- Vorgefertigtes Modell laden: Laden Sie den Phi-3 Mini Checkpoint.
+- Eigene Schichten hinzufügen: Fügen Sie aufgabenspezifische Schichten hinzu (z. B. Klassifikationskopf für Chat-Anweisungen).
 
-**Modell trainieren**
+**Modell trainieren**  
 Feinabstimmen des Modells mit Ihrem vorbereiteten Datensatz. Überwachen Sie den Trainingsfortschritt und passen Sie die Hyperparameter bei Bedarf an.
 
 **Evaluation und Validierung**
 
-Validierungssatz: Teilen Sie Ihre Daten in Trainings- und Validierungssätze auf.
+Validierungsdatensatz: Teilen Sie Ihre Daten in Trainings- und Validierungssets auf.
 
 **Leistung bewerten**
 
-Verwenden Sie Metriken wie Genauigkeit, F1-Score oder Perplexität, um die Modellleistung zu bewerten.
+Nutzen Sie Metriken wie Genauigkeit, F1-Score oder Perplexity zur Bewertung der Modellleistung.
 
 ## Feinabgestimmtes Modell speichern
 
-**Checkpoint**
-Speichern Sie den Checkpoint des feinabgestimmten Modells für die zukünftige Nutzung.
+**Checkpoint**  
+Speichern Sie den Checkpoint des feinabgestimmten Modells für zukünftige Verwendung.
 
 ## Bereitstellung
 
-- Als Webdienst bereitstellen: Stellen Sie Ihr feinabgestimmtes Modell als Webdienst in Azure AI Foundry bereit.
+- Als Webservice bereitstellen: Stellen Sie Ihr feinabgestimmtes Modell als Webservice in Azure AI Foundry bereit.
 - Endpunkt testen: Senden Sie Testanfragen an den bereitgestellten Endpunkt, um dessen Funktionalität zu überprüfen.
 
 ## Iterieren und verbessern
 
-Iterieren: Wenn die Leistung nicht zufriedenstellend ist, iterieren Sie, indem Sie Hyperparameter anpassen, mehr Daten hinzufügen oder das Modell über zusätzliche Epochen feinabstimmen.
+Iterieren: Wenn die Leistung nicht zufriedenstellend ist, passen Sie Hyperparameter an, fügen Sie weitere Daten hinzu oder führen Sie zusätzliche Feinabstimmungsepochen durch.
 
 ## Überwachen und verfeinern
 
-Überwachen Sie kontinuierlich das Verhalten des Modells und nehmen Sie bei Bedarf Anpassungen vor.
+Überwachen Sie kontinuierlich das Verhalten des Modells und verfeinern Sie es bei Bedarf.
 
 ## Anpassen und erweitern
 
-Benutzerdefinierte Aufgaben: Phi-3 Mini kann für verschiedene Aufgaben über Chat-Anweisungen hinaus feinabgestimmt werden. Erkunden Sie weitere Anwendungsfälle!
-Experimentieren: Probieren Sie unterschiedliche Architekturen, Schichtkombinationen und Techniken aus, um die Leistung zu verbessern.
+Benutzerdefinierte Aufgaben: Phi-3 Mini kann für verschiedene Aufgaben über Chat-Anweisungen hinaus feinabgestimmt werden. Entdecken Sie weitere Anwendungsfälle!  
+Experimentieren: Probieren Sie verschiedene Architekturen, Schichtkombinationen und Techniken aus, um die Leistung zu verbessern.
 
 > [!NOTE]
-> Feinabstimmung ist ein iterativer Prozess. Experimentieren Sie, lernen Sie und passen Sie Ihr Modell an, um die besten Ergebnisse für Ihre spezifische Aufgabe zu erzielen!
+> Feinabstimmung ist ein iterativer Prozess. Experimentieren Sie, lernen Sie dazu und passen Sie Ihr Modell an, um die besten Ergebnisse für Ihre spezifische Aufgabe zu erzielen!
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

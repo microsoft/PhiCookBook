@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-03-27T13:57:46+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Lora.md",
+  "translation_date": "2025-05-07T10:33:22+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "de"
 }
 -->
 # **Feinabstimmung von Phi-3 mit Lora**
 
-Feinabstimmung des Microsoft Phi-3 Mini Sprachmodells mithilfe von [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) auf einem benutzerdefinierten Chat-Instructions-Datensatz.
+Feinabstimmung von Microsofts Phi-3 Mini Sprachmodell mithilfe von [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) auf einem maßgeschneiderten Chat-Instruktionsdatensatz.
 
-LoRA hilft, das Verständnis von Konversationen und die Generierung von Antworten zu verbessern.
+LORA hilft dabei, das Verständnis von Gesprächen und die Generierung von Antworten zu verbessern.
 
 ## Schritt-für-Schritt-Anleitung zur Feinabstimmung von Phi-3 Mini:
 
-**Imports und Setup**
+**Imports und Einrichtung**
 
 Installation von loralib
 
@@ -26,10 +26,10 @@ pip install loralib
 
 ```
 
-Beginnen Sie mit dem Import der benötigten Bibliotheken wie datasets, transformers, peft, trl und torch.
-Richten Sie das Logging ein, um den Trainingsprozess zu verfolgen.
+Beginnen Sie mit dem Import der benötigten Bibliotheken wie datasets, transformers, peft, trl und torch.  
+Richten Sie das Logging ein, um den Trainingsverlauf zu verfolgen.
 
-Sie können einige Layer anpassen, indem Sie sie durch Gegenstücke ersetzen, die in loralib implementiert sind. Derzeit unterstützen wir nur nn.Linear, nn.Embedding und nn.Conv2d. Außerdem unterstützen wir MergedLinear für Fälle, in denen ein einzelnes nn.Linear mehr als einen Layer darstellt, wie z. B. bei einigen Implementierungen der qkv-Projektion in der Aufmerksamkeit (siehe zusätzliche Hinweise für weitere Informationen).
+Sie können einige Schichten anpassen, indem Sie diese durch Gegenstücke aus loralib ersetzen. Derzeit unterstützen wir nur nn.Linear, nn.Embedding und nn.Conv2d. Außerdem unterstützen wir MergedLinear für Fälle, in denen ein einzelnes nn.Linear mehrere Schichten repräsentiert, beispielsweise bei einigen Implementierungen der Attention qkv Projektion (siehe Zusätzliche Hinweise für mehr Details).
 
 ```
 # ===== Before =====
@@ -47,7 +47,7 @@ import loralib as lora
 layer = lora.Linear(in_features, out_features, r=16)
 ```
 
-Markieren Sie vor Beginn der Trainingsschleife nur die LoRA-Parameter als trainierbar.
+Vor Beginn der Trainingsschleife markieren Sie nur die LoRA-Parameter als trainierbar.
 
 ```
 import loralib as lora
@@ -58,18 +58,18 @@ lora.mark_only_lora_as_trainable(model)
 for batch in dataloader:
 ```
 
-Beim Speichern eines Checkpoints erstellen Sie ein state_dict, das nur die LoRA-Parameter enthält.
+Beim Speichern eines Checkpoints erzeugen Sie ein state_dict, das nur die LoRA-Parameter enthält.
 
 ```
 # ===== Before =====
 # torch.save(model.state_dict(), checkpoint_path)
-```
+```  
 ```
 # ===== After =====
 torch.save(lora.lora_state_dict(model), checkpoint_path)
 ```
 
-Beim Laden eines Checkpoints mit load_state_dict stellen Sie sicher, dass strict=False gesetzt ist.
+Beim Laden eines Checkpoints mit load_state_dict sollten Sie strict=False setzen.
 
 ```
 # Load the pretrained checkpoint first
@@ -82,26 +82,26 @@ Jetzt kann das Training wie gewohnt fortgesetzt werden.
 
 **Hyperparameter**
 
-Definieren Sie zwei Dictionaries: training_config und peft_config. training_config enthält Hyperparameter für das Training wie Lernrate, Batch-Größe und Logging-Einstellungen.
+Definieren Sie zwei Dictionaries: training_config und peft_config. training_config enthält Hyperparameter für das Training, wie Lernrate, Batch-Größe und Logging-Einstellungen.
 
-peft_config gibt LoRA-bezogene Parameter wie Rank, Dropout und Task-Typ an.
+peft_config spezifiziert LoRA-bezogene Parameter wie Rang, Dropout und Aufgabentyp.
 
 **Modell- und Tokenizer-Laden**
 
-Geben Sie den Pfad zum vortrainierten Phi-3-Modell an (z. B. "microsoft/Phi-3-mini-4k-instruct"). Konfigurieren Sie die Modelleinstellungen, einschließlich Cache-Nutzung, Datentyp (bfloat16 für gemischte Präzision) und Implementierung der Aufmerksamkeit.
+Geben Sie den Pfad zum vortrainierten Phi-3 Modell an (z. B. "microsoft/Phi-3-mini-4k-instruct"). Konfigurieren Sie die Modelleinstellungen, einschließlich Cache-Nutzung, Datentyp (bfloat16 für Mixed Precision) und Attention-Implementierung.
 
 **Training**
 
-Feinabstimmung des Phi-3-Modells mithilfe des benutzerdefinierten Chat-Instructions-Datensatzes. Nutzen Sie die LoRA-Einstellungen aus peft_config für eine effiziente Anpassung. Verfolgen Sie den Trainingsfortschritt mit der angegebenen Logging-Strategie.
-Bewertung und Speichern: Bewerten Sie das feinabgestimmte Modell.
+Feinabstimmung des Phi-3 Modells mit dem maßgeschneiderten Chat-Instruktionsdatensatz. Nutzen Sie die LoRA-Einstellungen aus peft_config für eine effiziente Anpassung. Überwachen Sie den Trainingsfortschritt mit der angegebenen Logging-Strategie.  
+Bewertung und Speicherung: Bewerten Sie das feinabgestimmte Modell.  
 Speichern Sie während des Trainings Checkpoints für die spätere Verwendung.
 
 **Beispiele**
-- [Erfahren Sie mehr mit diesem Beispiel-Notebook](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
-- [Beispiel eines Python FineTuning Scripts](../../../../code/03.Finetuning/FineTrainingScript.py)
-- [Beispiel für Hugging Face Hub Fine Tuning mit LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
-- [Beispiel für Hugging Face Model Card - LORA Fine Tuning](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)
+- [Mehr erfahren mit diesem Beispiel-Notebook](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
+- [Beispiel für Python FineTuning Sample](../../../../code/03.Finetuning/FineTrainingScript.py)  
+- [Beispiel für Hugging Face Hub Fine Tuning mit LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
+- [Beispiel Hugging Face Model Card - LORA Fine Tuning Sample](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
 - [Beispiel für Hugging Face Hub Fine Tuning mit QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

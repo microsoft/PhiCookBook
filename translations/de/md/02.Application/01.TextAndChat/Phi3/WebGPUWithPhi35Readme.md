@@ -2,78 +2,78 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b62864faf628eb07f5231d4885555198",
-  "translation_date": "2025-03-27T11:17:24+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\WebGPUWithPhi35Readme.md",
+  "translation_date": "2025-05-07T11:00:10+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md",
   "language_code": "de"
 }
 -->
 # Phi-3.5-Instruct WebGPU RAG Chatbot
 
-## Demo zur Präsentation von WebGPU und RAG-Muster
+## Demo zur Präsentation von WebGPU und dem RAG-Muster
 
-Das RAG-Muster mit dem Phi-3.5 Onnx Hosted-Modell nutzt den Ansatz der Retrieval-Augmented Generation, der die Leistungsfähigkeit der Phi-3.5-Modelle mit ONNX-Hosting für effiziente KI-Bereitstellungen kombiniert. Dieses Muster ist entscheidend für die Feinabstimmung von Modellen für spezifische Aufgabenbereiche und bietet eine Mischung aus Qualität, Kosteneffizienz und langem Kontextverständnis. Es gehört zur Azure AI-Suite und bietet eine breite Auswahl an Modellen, die leicht zu finden, auszuprobieren und zu verwenden sind, um den Anpassungsbedarf verschiedener Branchen zu decken.
+Das RAG-Muster mit dem Phi-3.5 Onnx Hosted Modell nutzt den Retrieval-Augmented Generation-Ansatz und kombiniert die Leistungsfähigkeit der Phi-3.5-Modelle mit ONNX-Hosting für effiziente KI-Einsätze. Dieses Muster ist besonders hilfreich beim Feinabstimmen von Modellen für domänenspezifische Aufgaben und bietet eine Mischung aus Qualität, Kosteneffizienz und Verständnis von Langzeitkontexten. Es ist Teil der Azure AI-Suite und stellt eine breite Auswahl an Modellen bereit, die einfach zu finden, auszuprobieren und zu verwenden sind, um den Anpassungsbedarf verschiedener Branchen zu erfüllen.
 
-## Was ist WebGPU
-WebGPU ist eine moderne Web-Grafik-API, die effizienten Zugriff auf die Grafikverarbeitungseinheit (GPU) eines Geräts direkt über Webbrowser ermöglicht. Sie soll der Nachfolger von WebGL sein und bietet mehrere wichtige Verbesserungen:
+## Was ist WebGPU  
+WebGPU ist eine moderne Web-Grafik-API, die einen effizienten Zugriff auf die Grafikeinheit (GPU) eines Geräts direkt aus Webbrowsern ermöglicht. Sie soll der Nachfolger von WebGL werden und bietet mehrere wesentliche Verbesserungen:
 
-1. **Kompatibilität mit modernen GPUs**: WebGPU wurde entwickelt, um nahtlos mit zeitgemäßen GPU-Architekturen zu arbeiten und nutzt System-APIs wie Vulkan, Metal und Direct3D 12.
-2. **Verbesserte Leistung**: Es unterstützt allgemeine GPU-Berechnungen und schnellere Operationen, wodurch es sowohl für die Grafikwiedergabe als auch für Aufgaben des maschinellen Lernens geeignet ist.
-3. **Erweiterte Funktionen**: WebGPU bietet Zugang zu fortgeschrittenen GPU-Funktionen und ermöglicht komplexere und dynamischere Grafik- und Rechenlasten.
-4. **Reduzierte JavaScript-Belastung**: Durch die Verlagerung von Aufgaben auf die GPU verringert WebGPU die Belastung von JavaScript erheblich, was zu einer besseren Leistung und flüssigeren Erlebnissen führt.
+1. **Kompatibilität mit modernen GPUs**: WebGPU ist darauf ausgelegt, nahtlos mit zeitgemäßen GPU-Architekturen zusammenzuarbeiten und nutzt System-APIs wie Vulkan, Metal und Direct3D 12.
+2. **Verbesserte Leistung**: Es unterstützt allgemeine GPU-Berechnungen und schnellere Abläufe, wodurch es sowohl für Grafikrendering als auch für maschinelles Lernen geeignet ist.
+3. **Erweiterte Funktionen**: WebGPU bietet Zugriff auf fortgeschrittene GPU-Fähigkeiten, die komplexere und dynamischere Grafik- und Rechenaufgaben ermöglichen.
+4. **Reduzierte JavaScript-Belastung**: Durch die Auslagerung weiterer Aufgaben an die GPU verringert WebGPU die Last auf JavaScript erheblich, was zu besserer Performance und flüssigeren Abläufen führt.
 
-WebGPU wird derzeit in Browsern wie Google Chrome unterstützt, wobei daran gearbeitet wird, die Unterstützung auf andere Plattformen auszuweiten.
+WebGPU wird derzeit in Browsern wie Google Chrome unterstützt, und es wird daran gearbeitet, die Unterstützung auf weitere Plattformen auszuweiten.
 
-### 03.WebGPU
+### 03.WebGPU  
 Erforderliche Umgebung:
 
-**Unterstützte Browser:** 
-- Google Chrome 113+
-- Microsoft Edge 113+
-- Safari 18 (macOS 15)
+**Unterstützte Browser:**  
+- Google Chrome 113+  
+- Microsoft Edge 113+  
+- Safari 18 (macOS 15)  
 - Firefox Nightly.
 
 ### WebGPU aktivieren:
 
-- In Chrome/Microsoft Edge 
+- In Chrome/Microsoft Edge  
 
-Aktivieren Sie das `chrome://flags/#enable-unsafe-webgpu`-Flag.
+Aktivieren Sie die `chrome://flags/#enable-unsafe-webgpu`-Flagge.
 
-#### Öffnen Sie Ihren Browser:
+#### Öffnen Sie Ihren Browser:  
 Starten Sie Google Chrome oder Microsoft Edge.
 
-#### Zugriff auf die Flags-Seite:
-Geben Sie in die Adressleiste `chrome://flags` ein und drücken Sie Enter.
+#### Greifen Sie auf die Flags-Seite zu:  
+Geben Sie in der Adressleiste `chrome://flags` ein und drücken Sie Enter.
 
-#### Suchen Sie nach dem Flag:
+#### Suchen Sie nach der Flagge:  
 Geben Sie im Suchfeld oben auf der Seite 'enable-unsafe-webgpu' ein.
 
-#### Aktivieren Sie das Flag:
-Suchen Sie das Flag #enable-unsafe-webgpu in der Ergebnisliste.
+#### Aktivieren Sie die Flagge:  
+Suchen Sie in der Ergebnisliste die #enable-unsafe-webgpu-Flagge.
 
 Klicken Sie auf das Dropdown-Menü daneben und wählen Sie Enabled.
 
-#### Starten Sie Ihren Browser neu:
+#### Starten Sie Ihren Browser neu:  
 
-Nachdem Sie das Flag aktiviert haben, müssen Sie Ihren Browser neu starten, damit die Änderungen wirksam werden. Klicken Sie auf die Schaltfläche Neustart, die unten auf der Seite erscheint.
+Nach der Aktivierung der Flagge müssen Sie den Browser neu starten, damit die Änderungen wirksam werden. Klicken Sie dazu auf die Schaltfläche Relaunch, die unten auf der Seite erscheint.
 
-- Unter Linux starten Sie den Browser mit `--enable-features=Vulkan`.
-- Safari 18 (macOS 15) hat WebGPU standardmäßig aktiviert.
+- Unter Linux starten Sie den Browser mit `--enable-features=Vulkan`.  
+- Safari 18 (macOS 15) hat WebGPU standardmäßig aktiviert.  
 - In Firefox Nightly geben Sie about:config in die Adressleiste ein und `set dom.webgpu.enabled to true`.
 
-### GPU für Microsoft Edge einrichten 
+### Einrichtung der GPU für Microsoft Edge  
 
-Hier sind die Schritte, um eine Hochleistungs-GPU für Microsoft Edge unter Windows einzurichten:
+Hier sind die Schritte zur Einrichtung einer Hochleistungs-GPU für Microsoft Edge unter Windows:
 
-- **Einstellungen öffnen:** Klicken Sie auf das Startmenü und wählen Sie Einstellungen.
-- **Systemeinstellungen:** Gehen Sie zu System und dann Anzeige.
-- **Grafikeinstellungen:** Scrollen Sie nach unten und klicken Sie auf Grafikeinstellungen.
-- **App auswählen:** Unter „App zum Festlegen der Präferenz auswählen“ wählen Sie Desktop-App und dann Durchsuchen.
-- **Edge auswählen:** Navigieren Sie zum Edge-Installationsordner (normalerweise `C:\Program Files (x86)\Microsoft\Edge\Application`) und wählen Sie `msedge.exe`.
-- **Präferenz festlegen:** Klicken Sie auf Optionen, wählen Sie Hohe Leistung und klicken Sie auf Speichern.
-Dies stellt sicher, dass Microsoft Edge Ihre Hochleistungs-GPU für eine bessere Leistung verwendet. 
-- **Starten Sie** Ihren Computer neu, damit diese Einstellungen wirksam werden.
+- **Einstellungen öffnen:** Klicken Sie auf das Startmenü und wählen Sie Einstellungen.  
+- **Systemeinstellungen:** Gehen Sie zu System und dann Anzeige.  
+- **Grafikeinstellungen:** Scrollen Sie nach unten und klicken Sie auf Grafikeinstellungen.  
+- **App auswählen:** Unter „App zur Einstellung der Präferenz auswählen“ wählen Sie Desktop-App und dann Durchsuchen.  
+- **Edge auswählen:** Navigieren Sie zum Edge-Installationsordner (normalerweise `C:\Program Files (x86)\Microsoft\Edge\Application`) und wählen Sie `msedge.exe` aus.  
+- **Präferenz festlegen:** Klicken Sie auf Optionen, wählen Sie Hochleistung und klicken Sie dann auf Speichern.  
+Dies stellt sicher, dass Microsoft Edge Ihre Hochleistungs-GPU für bessere Leistung nutzt.  
+- **Starten Sie** Ihren Rechner neu, damit die Einstellungen wirksam werden.
 
 ### Beispiele: Bitte [klicken Sie auf diesen Link](https://github.com/microsoft/aitour-exploring-cutting-edge-models/tree/main/src/02.ONNXRuntime/01.WebGPUChatRAG)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

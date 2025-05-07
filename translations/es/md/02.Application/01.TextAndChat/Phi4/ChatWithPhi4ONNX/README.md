@@ -2,20 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-03-27T11:22:32+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi4\\ChatWithPhi4ONNX\\README.md",
+  "translation_date": "2025-05-07T11:13:07+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "es"
 }
 -->
-# **Chat con Phi-4-mini ONNX**
+# **Chatea con Phi-4-mini ONNX**
 
-***ONNX*** es un formato abierto diseñado para representar modelos de aprendizaje automático. ONNX define un conjunto común de operadores, que son los bloques de construcción de modelos de aprendizaje automático y profundo, y un formato de archivo común que permite a los desarrolladores de IA usar modelos con una variedad de frameworks, herramientas, entornos de ejecución y compiladores.
+***ONNX*** es un formato abierto diseñado para representar modelos de aprendizaje automático. ONNX define un conjunto común de operadores, los bloques fundamentales de los modelos de aprendizaje automático y aprendizaje profundo, y un formato de archivo común para permitir que los desarrolladores de IA usen modelos con una variedad de frameworks, herramientas, entornos de ejecución y compiladores.
 
-Esperamos desplegar modelos de IA generativa en dispositivos de borde y utilizarlos en entornos con potencia de cómputo limitada o sin conexión. Ahora podemos lograr este objetivo convirtiendo el modelo de una manera cuantizada. Podemos convertir el modelo cuantizado al formato GGUF o ONNX.
+Esperamos desplegar modelos de IA generativa en dispositivos edge y usarlos en entornos con capacidad de cómputo limitada o sin conexión. Ahora podemos lograr este objetivo convirtiendo el modelo de forma cuantificada. Podemos convertir el modelo cuantificado a formato GGUF o ONNX.
 
-Microsoft Olive puede ayudarte a convertir SLM al formato ONNX cuantizado. El método para lograr la conversión del modelo es muy sencillo.
+Microsoft Olive puede ayudarte a convertir SLM al formato ONNX cuantificado. El método para lograr la conversión del modelo es muy sencillo.
 
 **Instalar Microsoft Olive SDK**
+
 
 ```bash
 
@@ -33,7 +34,8 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Nota*** este ejemplo utiliza CPU.
+***Nota*** este ejemplo usa CPU
+
 
 ### **Inferencia del modelo Phi-4-mini ONNX con ONNX Runtime GenAI**
 
@@ -102,6 +104,7 @@ while not generator.is_done():
 
 ```
 
+
 *Esta es la versión 0.6.0 de ONNX Runtime GenAI*
 
 ```python
@@ -156,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea que pueda surgir del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

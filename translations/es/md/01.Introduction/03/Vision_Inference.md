@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-03-27T08:11:38+00:00",
-  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "translation_date": "2025-05-07T10:46:02+00:00",
+  "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "es"
 }
 -->
-# **Inferencia de Phi-3-Vision en Local**
+# **Inferencia Phi-3-Vision en Local**
 
-Phi-3-vision-128k-instruct permite que Phi-3 no solo entienda el lenguaje, sino que también vea el mundo de forma visual. A través de Phi-3-vision-128k-instruct, podemos resolver diferentes problemas visuales, como OCR, análisis de tablas, reconocimiento de objetos, descripción de imágenes, etc. Podemos completar fácilmente tareas que antes requerían mucho entrenamiento de datos. A continuación, se presentan técnicas relacionadas y escenarios de aplicación citados por Phi-3-vision-128k-instruct.
+Phi-3-vision-128k-instruct permite que Phi-3 no solo entienda el lenguaje, sino que también vea el mundo visualmente. A través de Phi-3-vision-128k-instruct, podemos resolver diferentes problemas visuales, como OCR, análisis de tablas, reconocimiento de objetos, descripción de imágenes, etc. Podemos completar fácilmente tareas que antes requerían mucho entrenamiento con datos. A continuación se presentan técnicas relacionadas y escenarios de aplicación citados por Phi-3-vision-128k-instruct
 
 ## **0. Preparación**
 
-Por favor, asegúrate de que las siguientes bibliotecas de Python estén instaladas antes de usar (se recomienda Python 3.10+)
+Por favor, asegúrate de que las siguientes librerías de Python estén instaladas antes de usar (se recomienda Python 3.10+)
 
 ```bash
 pip install transformers -U
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Analizar la imagen con Phi-3-Vision**
 
-Queremos que la IA sea capaz de analizar el contenido de nuestras imágenes y proporcionar descripciones relevantes.
+Queremos que la IA pueda analizar el contenido de nuestras imágenes y dar descripciones relevantes
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Podemos obtener las respuestas relevantes ejecutando el siguiente script en el Notebook.
+Podemos obtener las respuestas relevantes ejecutando el siguiente script en el Notebook
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR con Phi-3-Vision**
 
-Además de analizar la imagen, también podemos extraer información de ella. Este es el proceso de OCR, que antes requería escribir código complejo para completarlo.
+Además de analizar la imagen, también podemos extraer información de ella. Este es el proceso de OCR que antes requería escribir código complejo para completar.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Comparación de múltiples imágenes**
 
-Phi-3 Vision admite la comparación de múltiples imágenes. Podemos usar este modelo para encontrar las diferencias entre las imágenes.
+Phi-3 Vision soporta la comparación de múltiples imágenes. Podemos usar este modelo para encontrar las diferencias entre las imágenes.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

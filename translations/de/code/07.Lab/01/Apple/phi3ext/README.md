@@ -2,55 +2,55 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-03-27T04:30:33+00:00",
-  "source_file": "code\\07.Lab\\01\\Apple\\phi3ext\\README.md",
+  "translation_date": "2025-05-07T10:16:39+00:00",
+  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "de"
 }
 -->
 # phi3ext README
 
-Dies ist die README-Datei für deine Erweiterung "phi3ext". Nachdem du eine kurze Beschreibung hinzugefügt hast, empfehlen wir, die folgenden Abschnitte einzufügen.
+Dies ist das README für deine Erweiterung "phi3ext". Nachdem du eine kurze Beschreibung geschrieben hast, empfehlen wir, die folgenden Abschnitte aufzunehmen.
 
-## Funktionen
+## Features
 
-Beschreibe die spezifischen Funktionen deiner Erweiterung, einschließlich Screenshots, die während der Nutzung der Erweiterung aufgenommen wurden. Bildpfade sollten relativ zu dieser README-Datei sein.
+Beschreibe die spezifischen Funktionen deiner Erweiterung, einschließlich Screenshots der Erweiterung in Aktion. Die Bildpfade sind relativ zu dieser README-Datei.
 
-Zum Beispiel, wenn es in deinem Erweiterungsprojekt einen Unterordner für Bilder gibt:
+Zum Beispiel, wenn du in deinem Erweiterungsprojektordner einen Unterordner für Bilder hast:
 
-\!\[Feature X\]\(images/feature-x.png\)
+\!\[feature X\]\(images/feature-x.png\)
 
-> Tipp: Viele beliebte Erweiterungen nutzen Animationen. Das ist eine großartige Möglichkeit, deine Erweiterung zu präsentieren! Wir empfehlen kurze, fokussierte Animationen, die leicht nachzuvollziehen sind.
+> Tipp: Viele beliebte Erweiterungen verwenden Animationen. Das ist eine großartige Möglichkeit, deine Erweiterung zu präsentieren! Wir empfehlen kurze, fokussierte Animationen, die leicht zu verfolgen sind.
 
-## Anforderungen
+## Requirements
 
-Falls deine Erweiterung bestimmte Anforderungen oder Abhängigkeiten hat, füge einen Abschnitt hinzu, der diese beschreibt und erklärt, wie sie installiert und konfiguriert werden können.
+Wenn du Anforderungen oder Abhängigkeiten hast, füge einen Abschnitt hinzu, der diese Anforderungen und die Installation sowie Konfiguration beschreibt.
 
-## Erweiterungseinstellungen
+## Extension Settings
 
-Falls deine Erweiterung über den `contributes.configuration`-Erweiterungspunkt VS Code-Einstellungen hinzufügt, liste diese hier auf.
+Falls deine Erweiterung VS Code Einstellungen über den `contributes.configuration` Erweiterungspunkt hinzufügt, solltest du diese hier aufführen.
 
 Zum Beispiel:
 
-Diese Erweiterung bietet die folgenden Einstellungen:
+Diese Erweiterung stellt folgende Einstellungen bereit:
 
 * `myExtension.enable`: Aktiviert/deaktiviert diese Erweiterung.
-* `myExtension.thing`: Setze auf `blah`, um etwas Bestimmtes zu tun.
+* `myExtension.thing`: Setze auf `blah`, um etwas zu tun.
 
-## Bekannte Probleme
+## Known Issues
 
-Das Auflisten bekannter Probleme kann helfen, dass Nutzer keine doppelten Fehlerberichte zu deiner Erweiterung erstellen.
+Das Aufzeigen bekannter Probleme kann helfen, dass Nutzer nicht mehrfach dieselben Probleme melden.
 
-## Versionshinweise
+## Release Notes
 
-Nutzer schätzen Versionshinweise, wenn sie deine Erweiterung aktualisieren.
+Nutzer schätzen es, wenn du bei Updates deiner Erweiterung Versionshinweise bereitstellst.
 
 ### 1.0.0
 
-Erste Veröffentlichung ...
+Erstveröffentlichung ...
 
 ### 1.0.1
 
-Behobenes Problem #.
+Problem # behoben.
 
 ### 1.1.0
 
@@ -58,26 +58,26 @@ Funktionen X, Y und Z hinzugefügt.
 
 ---
 
-## Einhaltung der Erweiterungsrichtlinien
+## Following extension guidelines
 
-Stelle sicher, dass du die Erweiterungsrichtlinien gelesen hast und den Best Practices für die Erstellung von Erweiterungen folgst.
+Stelle sicher, dass du die Erweiterungsrichtlinien gelesen hast und bewährte Methoden bei der Erstellung deiner Erweiterung befolgst.
 
-* [Erweiterungsrichtlinien](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
-## Arbeiten mit Markdown
+## Working with Markdown
 
-Du kannst Visual Studio Code verwenden, um deine README-Datei zu schreiben. Hier sind einige nützliche Editor-Kurzbefehle:
+Du kannst Visual Studio Code verwenden, um dein README zu schreiben. Hier sind einige nützliche Tastenkombinationen im Editor:
 
 * Editor teilen (`Cmd+\` auf macOS oder `Ctrl+\` auf Windows und Linux).
 * Vorschau umschalten (`Shift+Cmd+V` auf macOS oder `Shift+Ctrl+V` auf Windows und Linux).
-* Drücke `Ctrl+Space` (Windows, Linux, macOS), um die Liste der Markdown-Snippets anzuzeigen.
+* Drücke `Ctrl+Space` (Windows, Linux, macOS), um eine Liste der Markdown-Snippets anzuzeigen.
 
-## Weitere Informationen
+## For more information
 
-* [Markdown-Unterstützung in Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Markdown-Syntaxreferenz](https://help.github.com/articles/markdown-basics/)
+* [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
 
 **Viel Spaß!**
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

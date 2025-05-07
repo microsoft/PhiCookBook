@@ -2,109 +2,107 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-03-27T15:47:32+00:00",
-  "source_file": "md\\03.FineTuning\\Introduce_AzureML.md",
+  "translation_date": "2025-05-07T10:23:52+00:00",
+  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
   "language_code": "de"
 }
 -->
 # **Einführung in den Azure Machine Learning Service**
 
-[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) ist ein Cloud-Service zur Beschleunigung und Verwaltung des Lebenszyklus von Machine-Learning-Projekten (ML).
+[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) ist ein Cloud-Dienst zur Beschleunigung und Verwaltung des gesamten Lebenszyklus von Machine-Learning-(ML)-Projekten.
 
-ML-Experten, Datenwissenschaftler und Ingenieure können ihn in ihren täglichen Arbeitsabläufen nutzen, um:
+ML-Experten, Data Scientists und Ingenieure können ihn in ihrem täglichen Arbeitsablauf verwenden, um:
 
 - Modelle zu trainieren und bereitzustellen.
-- Machine-Learning-Operationen (MLOps) zu verwalten.
-- Sie können ein Modell in Azure Machine Learning erstellen oder ein Modell verwenden, das mit einer Open-Source-Plattform wie PyTorch, TensorFlow oder scikit-learn entwickelt wurde.
+- Machine Learning Operations (MLOps) zu verwalten.
+- Sie können ein Modell in Azure Machine Learning erstellen oder ein Modell verwenden, das auf einer Open-Source-Plattform wie PyTorch, TensorFlow oder scikit-learn entwickelt wurde.
 - MLOps-Tools helfen Ihnen, Modelle zu überwachen, neu zu trainieren und erneut bereitzustellen.
 
-## Für wen ist Azure Machine Learning geeignet?
+## Für wen ist Azure Machine Learning gedacht?
 
-**Datenwissenschaftler und ML-Ingenieure**
+**Data Scientists und ML-Ingenieure**
 
-Sie können Tools nutzen, um ihre täglichen Arbeitsabläufe zu beschleunigen und zu automatisieren.  
-Azure ML bietet Funktionen für Fairness, Erklärbarkeit, Nachverfolgung und Prüfbarkeit.  
+Sie können Werkzeuge nutzen, um ihre täglichen Arbeitsabläufe zu beschleunigen und zu automatisieren.  
+Azure ML bietet Funktionen für Fairness, Erklärbarkeit, Nachverfolgung und Prüfbarkeit.
 
-**Anwendungsentwickler**
-
-Sie können Modelle nahtlos in Anwendungen oder Dienste integrieren.  
+**Anwendungsentwickler:**  
+Sie können Modelle nahtlos in Anwendungen oder Dienste integrieren.
 
 **Plattformentwickler**
 
-Ihnen steht eine robuste Auswahl an Tools zur Verfügung, die durch dauerhafte Azure Resource Manager APIs unterstützt werden.  
-Diese Tools ermöglichen den Aufbau fortschrittlicher ML-Werkzeuge.  
+Sie haben Zugriff auf ein robustes Set an Tools, unterstützt durch langlebige Azure Resource Manager APIs.  
+Diese Tools ermöglichen den Aufbau fortschrittlicher ML-Werkzeuge.
 
 **Unternehmen**
 
 Unternehmen, die in der Microsoft Azure Cloud arbeiten, profitieren von vertrauter Sicherheit und rollenbasierter Zugriffskontrolle.  
-Projekte können so eingerichtet werden, dass der Zugriff auf geschützte Daten und bestimmte Operationen kontrolliert wird.  
+Projekte können so eingerichtet werden, dass der Zugriff auf geschützte Daten und spezifische Operationen kontrolliert wird.
 
-## Produktivität für das gesamte Team
+## Produktivität für das gesamte Team  
+ML-Projekte erfordern oft ein Team mit vielfältigen Fähigkeiten zum Aufbau und zur Wartung.
 
-ML-Projekte erfordern oft ein Team mit unterschiedlichen Fähigkeiten, um sie zu entwickeln und zu warten.
-
-Azure ML bietet Tools, die es ermöglichen:
-- Mit dem Team über gemeinsame Notebooks, Rechenressourcen, serverlose Berechnungen, Daten und Umgebungen zu kollaborieren.
-- Modelle zu entwickeln, die Fairness, Erklärbarkeit, Nachverfolgung und Prüfbarkeit gewährleisten, um Anforderungen an Herkunft und Prüfungen zu erfüllen.
-- ML-Modelle schnell und einfach in großem Maßstab bereitzustellen und effizient mit MLOps zu verwalten und zu steuern.
-- Machine-Learning-Arbeitslasten überall auszuführen, mit integrierter Governance, Sicherheit und Compliance.
+Azure ML stellt Tools bereit, die es ermöglichen:  
+- Mit Ihrem Team über geteilte Notebooks, Rechenressourcen, serverlose Berechnung, Daten und Umgebungen zusammenzuarbeiten.  
+- Modelle mit Fairness, Erklärbarkeit, Nachverfolgung und Prüfbarkeit zu entwickeln, um Anforderungen an Herkunft und Compliance zu erfüllen.  
+- ML-Modelle schnell und einfach in großem Maßstab bereitzustellen sowie effizient mit MLOps zu verwalten und zu steuern.  
+- Machine-Learning-Workloads überall auszuführen – mit integrierter Governance, Sicherheit und Compliance.
 
 ## Plattformübergreifende Tools
 
-Jeder in einem ML-Team kann seine bevorzugten Tools nutzen, um Aufgaben zu erledigen.  
-Egal, ob Sie schnelle Experimente durchführen, Hyperparameter optimieren, Pipelines erstellen oder Inferenzprozesse verwalten, Sie können vertraute Schnittstellen verwenden, darunter:
-- Azure Machine Learning Studio
-- Python SDK (v2)
-- Azure CLI (v2)
-- Azure Resource Manager REST APIs  
+Jeder im ML-Team kann seine bevorzugten Werkzeuge verwenden, um die Arbeit zu erledigen.  
+Ob schnelle Experimente, Hyperparameter-Tuning, Pipeline-Erstellung oder Inferenzverwaltung – Sie können vertraute Schnittstellen nutzen, darunter:  
+- Azure Machine Learning Studio  
+- Python SDK (v2)  
+- Azure CLI (v2)  
+- Azure Resource Manager REST APIs
 
 Während Sie Modelle verfeinern und im Entwicklungszyklus zusammenarbeiten, können Sie Assets, Ressourcen und Metriken innerhalb der Azure Machine Learning Studio-Benutzeroberfläche teilen und finden.
 
 ## **LLM/SLM in Azure ML**
 
-Azure ML hat viele Funktionen im Zusammenhang mit LLM/SLM hinzugefügt und kombiniert LLMOps und SLMOps, um eine unternehmensweite Plattform für generative künstliche Intelligenz zu schaffen.
+Azure ML hat viele Funktionen im Bereich LLM/SLM hinzugefügt, die LLMOps und SLMOps kombinieren, um eine unternehmensweite Plattform für generative künstliche Intelligenz bereitzustellen.
 
-### **Modellkatalog**
+### **Model Catalog**
 
-Unternehmensnutzer können verschiedene Modelle je nach Geschäftsszenario über den Modellkatalog bereitstellen und als Model as Service Dienste für Entwickler oder Nutzer anbieten.
+Unternehmensanwender können über den Model Catalog verschiedene Modelle entsprechend unterschiedlicher Geschäftsszenarien bereitstellen und diese als Model as Service für Entwickler oder Nutzer zugänglich machen.
 
-![models](../../../../translated_images/models.2450411eac222e539ffb55785a8f550d01be1030bd8eb67c9c4f9ae4ca5d64be.de.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.de.png)
 
-Der Modellkatalog im Azure Machine Learning Studio ist der zentrale Ort, um eine Vielzahl von Modellen zu entdecken und zu nutzen, die es Ihnen ermöglichen, Anwendungen mit generativer KI zu erstellen. Der Modellkatalog enthält Hunderte von Modellen von Anbietern wie Azure OpenAI Service, Mistral, Meta, Cohere, Nvidia, Hugging Face sowie Modelle, die von Microsoft trainiert wurden. Modelle von anderen Anbietern als Microsoft sind Nicht-Microsoft-Produkte, wie in den Produktbedingungen von Microsoft definiert, und unterliegen den Bedingungen, die mit dem Modell bereitgestellt werden.
+Der Model Catalog im Azure Machine Learning Studio ist das Zentrum, um eine breite Palette von Modellen zu entdecken und zu nutzen, die den Aufbau generativer KI-Anwendungen ermöglichen. Der Katalog umfasst hunderte Modelle von Anbietern wie Azure OpenAI Service, Mistral, Meta, Cohere, Nvidia, Hugging Face sowie von Microsoft trainierte Modelle. Modelle von anderen Anbietern als Microsoft gelten als Non-Microsoft Products gemäß den Microsoft-Produktbedingungen und unterliegen den jeweiligen Modellbedingungen.
 
-### **Job-Pipeline**
+### **Job Pipeline**
 
-Das Kernstück einer Machine-Learning-Pipeline besteht darin, eine vollständige Machine-Learning-Aufgabe in einen mehrstufigen Workflow aufzuteilen. Jeder Schritt ist eine handhabbare Komponente, die individuell entwickelt, optimiert, konfiguriert und automatisiert werden kann. Die Schritte sind über klar definierte Schnittstellen miteinander verbunden. Der Azure Machine Learning Pipeline-Service orchestriert automatisch alle Abhängigkeiten zwischen den Pipeline-Schritten.
+Der Kern einer Machine-Learning-Pipeline besteht darin, eine vollständige Machine-Learning-Aufgabe in einen mehrstufigen Workflow aufzuteilen. Jeder Schritt ist eine überschaubare Komponente, die einzeln entwickelt, optimiert, konfiguriert und automatisiert werden kann. Die Schritte sind durch klar definierte Schnittstellen verbunden. Der Azure Machine Learning Pipeline Service orchestriert automatisch alle Abhängigkeiten zwischen den Pipelineschritten.
 
-Beim Feinabstimmen von SLM / LLM können wir unsere Daten-, Trainings- und Generierungsprozesse über die Pipeline verwalten.
+Beim Feinabstimmen von SLM / LLM können wir unsere Daten-, Trainings- und Generierungsprozesse über Pipelines verwalten.
 
-![finetuning](../../../../translated_images/finetuning.b52e4aa971dfd8d3c668db913a2b419380533bd3a920d227ec19c078b7b3f309.de.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.de.png)
 
-### **Prompt Flow**
+### **Prompt flow**
 
-Vorteile der Verwendung von Azure Machine Learning Prompt Flow  
-Azure Machine Learning Prompt Flow bietet eine Reihe von Vorteilen, die Nutzern helfen, von der Ideenfindung über Experimente bis hin zu produktionsreifen Anwendungen auf LLM-Basis zu gelangen:
+Vorteile der Verwendung von Azure Machine Learning prompt flow  
+Azure Machine Learning prompt flow bietet eine Reihe von Vorteilen, die Nutzern helfen, vom Ideenstadium über Experimente bis hin zu produktionsreifen, auf LLM basierenden Anwendungen zu gelangen:
 
 **Agilität im Prompt Engineering**
 
-Interaktive Entwicklungsumgebung: Azure Machine Learning Prompt Flow bietet eine visuelle Darstellung der Struktur des Flows, sodass Nutzer ihre Projekte leicht verstehen und navigieren können. Es bietet auch eine Notebook-ähnliche Programmiererfahrung für eine effiziente Entwicklung und Debugging des Flows.  
-Varianten für Prompt-Tuning: Nutzer können mehrere Prompt-Varianten erstellen und vergleichen, um einen iterativen Verfeinerungsprozess zu ermöglichen.  
+Interaktive Erstellungserfahrung: Azure Machine Learning prompt flow bietet eine visuelle Darstellung der Struktur des Flows, die es Nutzern erleichtert, ihre Projekte zu verstehen und zu navigieren. Außerdem bietet es eine notebookähnliche Programmierumgebung für effiziente Flow-Entwicklung und Debugging.  
+Varianten für Prompt-Tuning: Nutzer können mehrere Prompt-Varianten erstellen und vergleichen, um den Verfeinerungsprozess iterativ zu gestalten.
 
-Bewertung: Eingebaute Bewertungsflows ermöglichen es Nutzern, die Qualität und Effektivität ihrer Prompts und Flows zu beurteilen.  
+Evaluation: Eingebaute Evaluationsflows ermöglichen es Nutzern, die Qualität und Effektivität ihrer Prompts und Flows zu bewerten.
 
-Umfassende Ressourcen: Azure Machine Learning Prompt Flow enthält eine Bibliothek mit integrierten Tools, Beispielen und Vorlagen, die als Ausgangspunkt für die Entwicklung dienen, Kreativität fördern und den Prozess beschleunigen.
+Umfassende Ressourcen: Azure Machine Learning prompt flow enthält eine Bibliothek mit integrierten Werkzeugen, Beispielen und Vorlagen, die als Ausgangspunkt für die Entwicklung dienen, Kreativität fördern und den Prozess beschleunigen.
 
-**Unternehmensbereitschaft für Anwendungen auf LLM-Basis**
+**Unternehmensreife für LLM-basierte Anwendungen**
 
-Zusammenarbeit: Azure Machine Learning Prompt Flow unterstützt die Teamzusammenarbeit, sodass mehrere Nutzer gemeinsam an Prompt-Engineering-Projekten arbeiten, Wissen teilen und Versionskontrolle durchführen können.
+Zusammenarbeit: Azure Machine Learning prompt flow unterstützt Teamarbeit, sodass mehrere Nutzer gemeinsam an Prompt-Engineering-Projekten arbeiten, Wissen teilen und Versionskontrolle pflegen können.
 
-All-in-One-Plattform: Azure Machine Learning Prompt Flow vereinfacht den gesamten Prompt-Engineering-Prozess, von der Entwicklung und Bewertung bis hin zur Bereitstellung und Überwachung. Nutzer können ihre Flows mühelos als Azure Machine Learning Endpoints bereitstellen und deren Leistung in Echtzeit überwachen, um einen optimalen Betrieb und kontinuierliche Verbesserung sicherzustellen.
+Alles-in-einem-Plattform: Azure Machine Learning prompt flow vereinfacht den gesamten Prompt-Engineering-Prozess – von Entwicklung und Bewertung bis hin zu Bereitstellung und Überwachung. Nutzer können ihre Flows mühelos als Azure Machine Learning Endpunkte bereitstellen und deren Leistung in Echtzeit überwachen, um optimale Abläufe und kontinuierliche Verbesserungen sicherzustellen.
 
-Azure Machine Learning Lösungen für Unternehmensbereitschaft: Prompt Flow nutzt die robusten Unternehmenslösungen von Azure Machine Learning und bietet eine sichere, skalierbare und zuverlässige Grundlage für die Entwicklung, das Experimentieren und die Bereitstellung von Flows.
+Azure Machine Learning Enterprise Readiness Solutions: Prompt flow nutzt die robusten Unternehmenslösungen von Azure Machine Learning und bietet eine sichere, skalierbare und zuverlässige Basis für Entwicklung, Experimente und Bereitstellung von Flows.
 
-Mit Azure Machine Learning Prompt Flow können Nutzer ihre Agilität im Prompt Engineering entfalten, effektiv zusammenarbeiten und Unternehmenslösungen nutzen, um erfolgreiche Anwendungen auf LLM-Basis zu entwickeln und bereitzustellen.
+Mit Azure Machine Learning prompt flow können Nutzer ihre Agilität im Prompt Engineering entfalten, effektiv zusammenarbeiten und Unternehmenslösungen nutzen, um erfolgreiche LLM-basierte Anwendungen zu entwickeln und bereitzustellen.
 
-Durch die Kombination der Rechenleistung, Daten und verschiedener Komponenten von Azure ML können Unternehmensentwickler problemlos ihre eigenen Anwendungen mit künstlicher Intelligenz erstellen.
+Durch die Kombination der Rechenleistung, Daten und verschiedener Komponenten von Azure ML können Unternehmensentwickler problemlos ihre eigenen KI-Anwendungen erstellen.
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, bitten wir zu beachten, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
