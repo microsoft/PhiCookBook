@@ -27,7 +27,7 @@ jobs:
       - name: Install Co-op Translator
         run: |
           python -m pip install --upgrade pip
-          pip install co-op-translator==0.8.4
+          pip install co-op-translator==0.8.5
 
       - name: Run Co-op Translator
         env:
@@ -53,7 +53,7 @@ jobs:
           # IMPORTANT: Set your target languages here (REQUIRED CONFIGURATION)
           # =====================================================================
 
-          translate -l "ar de" -y # <--- MODIFY THIS LINE with your desired languages
+          translate -l "ar de es" -y # <--- MODIFY THIS LINE with your desired languages
 
       - name: Authenticate GitHub App
         id: generate_token
