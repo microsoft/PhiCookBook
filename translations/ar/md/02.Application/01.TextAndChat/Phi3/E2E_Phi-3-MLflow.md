@@ -2,58 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-03-27T10:54:49+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-MLflow.md",
+  "translation_date": "2025-05-07T11:04:32+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "ar"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) هي منصة مفتوحة المصدر مصممة لإدارة دورة حياة التعلم الآلي من البداية إلى النهاية.
+[MLflow](https://mlflow.org/) هي منصة مفتوحة المصدر مصممة لإدارة دورة حياة تعلم الآلة من البداية إلى النهاية.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.ar.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.ar.png)
 
-يُستخدم MLFlow لإدارة دورة حياة التعلم الآلي، بما في ذلك التجارب، قابلية التكرار، النشر، وسجل مركزي للنماذج. يوفر MLFlow حاليًا أربعة مكونات:
+يُستخدم MLFlow لإدارة دورة حياة تعلم الآلة، بما في ذلك التجارب، إعادة الإنتاج، النشر وسجل النماذج المركزي. تقدم MLflow حاليًا أربعة مكونات.
 
-- **MLflow Tracking:** تسجيل واستعلام عن التجارب، الكود، إعدادات البيانات، والنتائج.
-- **MLflow Projects:** تعبئة كود علم البيانات في صيغة تتيح إعادة تشغيله على أي منصة.
-- **MLflow Models:** نشر نماذج التعلم الآلي في بيئات تقديم متنوعة.
-- **Model Registry:** تخزين، توضيح، وإدارة النماذج في مستودع مركزي.
+- **MLflow Tracking:** تسجيل واستعلام التجارب، الكود، تكوين البيانات والنتائج.
+- **MLflow Projects:** تغليف كود علوم البيانات بصيغة تسمح بإعادة تنفيذها على أي منصة.
+- **Mlflow Models:** نشر نماذج تعلم الآلة في بيئات تقديم متنوعة.
+- **Model Registry:** تخزين، توضيح وإدارة النماذج في مستودع مركزي.
 
-يتضمن MLFlow ميزات لتتبع التجارب، تعبئة الكود في تشغيلات قابلة للتكرار، ومشاركة ونشر النماذج. تم دمج MLFlow في Databricks ويدعم مجموعة متنوعة من مكتبات التعلم الآلي، مما يجعله مستقلًا عن المكتبة. يمكن استخدامه مع أي مكتبة تعلم آلي وفي أي لغة برمجة، حيث يوفر واجهة REST API وCLI لسهولة الاستخدام.
+تشمل قدراتها تتبع التجارب، تغليف الكود في عمليات قابلة لإعادة الإنتاج، ومشاركة ونشر النماذج. تم دمج MLFlow في Databricks ويدعم مجموعة متنوعة من مكتبات تعلم الآلة، مما يجعله غير مرتبط بمكتبة معينة. يمكن استخدامه مع أي مكتبة تعلم آلة وأي لغة برمجة، حيث يوفر واجهة REST API وCLI لسهولة الاستخدام.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.ar.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.ar.png)
 
 الميزات الرئيسية لـ MLFlow تشمل:
 
 - **تتبع التجارب:** تسجيل ومقارنة المعلمات والنتائج.
-- **إدارة النماذج:** نشر النماذج على منصات تقديم واستدلال متنوعة.
-- **سجل النماذج:** إدارة دورة حياة نماذج MLFlow بشكل تعاوني، بما في ذلك الترقيم والتعليقات التوضيحية.
-- **المشاريع:** تعبئة كود التعلم الآلي للمشاركة أو الاستخدام الإنتاجي.
+- **إدارة النماذج:** نشر النماذج على منصات تقديم واستدلال مختلفة.
+- **سجل النماذج:** إدارة دورة حياة نماذج MLflow بشكل تعاوني، بما في ذلك النسخ والتعليقات التوضيحية.
+- **المشاريع:** تغليف كود تعلم الآلة للمشاركة أو الاستخدام في الإنتاج.
 
-يدعم MLFlow أيضًا دورة حياة MLOps، والتي تشمل إعداد البيانات، تسجيل وإدارة النماذج، تعبئة النماذج للتنفيذ، نشر الخدمات، ومراقبة النماذج. يهدف إلى تبسيط عملية الانتقال من النموذج الأولي إلى سير العمل الإنتاجي، خاصة في بيئات السحابة والطرف.
+يدعم MLFlow أيضًا دورة MLOps، التي تشمل تحضير البيانات، تسجيل وإدارة النماذج، تغليف النماذج للتنفيذ، نشر الخدمات، ومراقبة النماذج. يهدف إلى تبسيط عملية الانتقال من النموذج الأولي إلى سير عمل الإنتاج، خاصة في بيئات السحابة والحافة.
 
-## سيناريو شامل - بناء غلاف واستخدام Phi-3 كنموذج MLFlow
+## السيناريو من البداية للنهاية - بناء غلاف واستخدام Phi-3 كنموذج MLFlow
 
-في هذا المثال الشامل، سنوضح طريقتين مختلفتين لبناء غلاف حول نموذج اللغة الصغيرة Phi-3 (SLM) ثم تشغيله كنموذج MLFlow إما محليًا أو في السحابة، مثلًا في مساحة عمل Azure Machine Learning.
+في هذا المثال من البداية للنهاية سنوضح طريقتين مختلفتين لبناء غلاف حول نموذج اللغة الصغير Phi-3 (SLM) ثم تشغيله كنموذج MLFlow سواء محليًا أو في السحابة، مثل مساحة عمل Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.ar.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.ar.png)
 
 | المشروع | الوصف | الموقع |
 | ------------ | ----------- | -------- |
-| خط أنابيب التحويل | خط أنابيب التحويل هو الخيار الأسهل لبناء غلاف إذا كنت ترغب في استخدام نموذج HuggingFace مع نكهة المحولات التجريبية لـ MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| غلاف بايثون مخصص | في وقت كتابة هذا النص، لم يكن خط أنابيب التحويل يدعم إنشاء غلاف MLFlow لنماذج HuggingFace بتنسيق ONNX، حتى مع الحزمة التجريبية optimum لـ Python. للحالات مثل هذه، يمكنك بناء غلاف بايثون مخصص لوضع MLFlow | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | يُعتبر Transformer Pipeline الخيار الأسهل لبناء غلاف إذا كنت تريد استخدام نموذج HuggingFace مع نكهة المحولات التجريبية في MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | حتى وقت كتابة هذا، لم يدعم Transformer Pipeline توليد غلاف MLFlow لنماذج HuggingFace بصيغة ONNX، حتى مع حزمة optimum التجريبية لـ Python. في مثل هذه الحالات، يمكنك بناء غلاف Python مخصص لنموذج MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
-## المشروع: خط أنابيب التحويل
+## المشروع: Transformer Pipeline
 
-1. ستحتاج إلى حزم Python ذات الصلة من MLFlow وHuggingFace:
+1. ستحتاج إلى الحزم المناسبة من Python لـ MLFlow وHuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. بعد ذلك، يجب أن تبدأ خط أنابيب التحويل بالإشارة إلى نموذج Phi-3 المستهدف في سجل HuggingFace. كما هو موضح في بطاقة نموذج _Phi-3-mini-4k-instruct_، فإن مهمته من نوع "توليد النص":
+2. بعد ذلك، يجب أن تبدأ Transformer Pipeline بالإشارة إلى نموذج Phi-3 المستهدف في سجل HuggingFace. كما يظهر في بطاقة نموذج _Phi-3-mini-4k-instruct_، مهمته هي من نوع "توليد النص":
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ CO_OP_TRANSLATOR_METADATA:
     )
     ```
 
-3. يمكنك الآن حفظ خط أنابيب التحويل لنموذج Phi-3 في صيغة MLFlow وتوفير تفاصيل إضافية مثل مسار العناصر المستهدفة، إعدادات تكوين النموذج المحددة، ونوع واجهة برمجة التطبيقات للاستدلال:
+3. يمكنك الآن حفظ Transformer Pipeline الخاص بنموذج Phi-3 بصيغة MLFlow وتقديم تفاصيل إضافية مثل مسار الأرتيفاكت المستهدف، إعدادات تكوين النموذج المحددة ونوع واجهة برمجة التطبيقات للاستدلال:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -73,9 +73,9 @@ CO_OP_TRANSLATOR_METADATA:
     )
     ```
 
-## المشروع: غلاف بايثون مخصص
+## المشروع: Custom Python Wrapper
 
-1. يمكننا استخدام واجهة [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) الخاصة بـ Microsoft لاستدلال النموذج ONNX وترميز/فك ترميز الرموز. عليك اختيار الحزمة _onnxruntime_genai_ للحساب المستهدف، مع المثال أدناه الذي يستهدف وحدة المعالجة المركزية:
+1. يمكننا هنا استخدام [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) من Microsoft لاستدلال نموذج ONNX وترميز/فك ترميز الرموز. عليك اختيار حزمة _onnxruntime_genai_ للحوسبة المستهدفة، مع المثال أدناه الذي يستهدف CPU:
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
     import onnxruntime_genai as og
     ```
 
-1. تقوم الفئة المخصصة لدينا بتنفيذ طريقتين: _load_context()_ لتهيئة **نموذج ONNX** لـ Phi-3 Mini 4K Instruct، **معلمات المولد** و**المُرمِّز**؛ و _predict()_ لتوليد رموز الإخراج للموجه المُقدَّم:
+1. تنفذ فئتنا المخصصة طريقتين: _load_context()_ لتهيئة **نموذج ONNX** لـ Phi-3 Mini 4K Instruct، **معلمات المولد** و**المجزئ**؛ و _predict()_ لتوليد رموز الإخراج للموجه المقدم:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ CO_OP_TRANSLATOR_METADATA:
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. يمكنك الآن استخدام وظيفة _mlflow.pyfunc.log_model()_ لإنشاء غلاف بايثون مخصص (بتنسيق pickle) لنموذج Phi-3، إلى جانب النموذج الأصلي ONNX والاعتماديات المطلوبة:
+1. يمكنك الآن استخدام دالة _mlflow.pyfunc.log_model()_ لتوليد غلاف Python مخصص (بصيغة pickle) لنموذج Phi-3، مع نموذج ONNX الأصلي والاعتمادات المطلوبة:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -129,9 +129,9 @@ CO_OP_TRANSLATOR_METADATA:
     )
     ```
 
-## توقيعات نماذج MLFlow المُنشأة
+## توقيعات نماذج MLFlow المولدة
 
-1. في الخطوة 3 من مشروع خط أنابيب التحويل أعلاه، قمنا بتعيين مهمة نموذج MLFlow إلى "_llm/v1/chat_". مثل هذا التوجيه يُنشئ غلاف API للنموذج، متوافق مع واجهة برمجة التطبيقات للدردشة الخاصة بـ OpenAI كما هو موضح أدناه:
+1. في الخطوة 3 من مشروع Transformer Pipeline أعلاه، قمنا بتعيين مهمة نموذج MLFlow إلى "_llm/v1/chat_". هذا التوجيه يولد غلاف API للنموذج، متوافق مع Chat API الخاص بـ OpenAI كما هو موضح أدناه:
 
     ``` Python
     {inputs: 
@@ -142,13 +142,13 @@ CO_OP_TRANSLATOR_METADATA:
       None}
     ```
 
-1. كنتيجة لذلك، يمكنك تقديم الموجه الخاص بك بالتنسيق التالي:
+1. كنتيجة لذلك، يمكنك تقديم موجهك بالتنسيق التالي:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. ثم، استخدم معالجة ما بعد متوافقة مع واجهة برمجة التطبيقات لـ OpenAI، مثل _response[0][‘choices’][0][‘message’][‘content’]_، لتحسين الإخراج إلى شيء مثل هذا:
+1. ثم، استخدم المعالجة اللاحقة المتوافقة مع OpenAI API، مثل _response[0][‘choices’][0][‘message’][‘content’]_، لتحسين مخرجاتك لتبدو كالتالي:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. في الخطوة 3 من مشروع غلاف بايثون المخصص أعلاه، نسمح لحزمة MLFlow بتوليد توقيع النموذج من مثال الإدخال المُقدَّم. توقيع غلاف MLFlow الخاص بنا سيبدو هكذا:
+1. في الخطوة 3 من مشروع Custom Python Wrapper أعلاه، نسمح لحزمة MLFlow بتوليد توقيع النموذج من مثال إدخال معين. توقيع غلاف MLFlow الخاص بنا سيبدو هكذا:
 
     ``` Python
     {inputs: 
@@ -169,13 +169,13 @@ CO_OP_TRANSLATOR_METADATA:
       None}
     ```
 
-1. لذلك، يجب أن يحتوي الموجه الخاص بنا على مفتاح "prompt" في القاموس، مشابه لهذا:
+1. لذا، يجب أن يحتوي موجهنا على مفتاح قاموس "prompt"، مشابه لهذا:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. سيتم توفير إخراج النموذج بعد ذلك بتنسيق نصي:
+1. سيتم تقديم مخرجات النموذج بعد ذلك بصيغة نصية:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -187,5 +187,5 @@ CO_OP_TRANSLATOR_METADATA:
     Remember, this is all in good fun, and we're just having a little atomic-level humor!
     ```
 
-**إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية هو المصدر الموثوق. للحصول على معلومات حاسمة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+**تنويه**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ناتج عن استخدام هذه الترجمة.

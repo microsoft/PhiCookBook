@@ -2,30 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e4e010400c2918557b36bb932a14004c",
-  "translation_date": "2025-03-27T15:39:24+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_vs_RAG.md",
+  "translation_date": "2025-05-07T10:27:33+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_vs_RAG.md",
   "language_code": "de"
 }
 -->
-## Feinabstimmung vs. RAG
+## Finetuning vs RAG
 
 ## Retrieval Augmented Generation
 
-RAG kombiniert Datenabruf mit Textgenerierung. Die strukturierten und unstrukturierten Daten eines Unternehmens werden in einer Vektordatenbank gespeichert. Bei der Suche nach relevanten Inhalten werden die passenden Zusammenfassungen und Inhalte gefunden, um einen Kontext zu bilden. Anschließend wird die Textgenerierungsfähigkeit von LLM/SLM genutzt, um Inhalte zu erstellen.
+RAG ist Datenabruf + Textgenerierung. Die strukturierten und unstrukturierten Daten des Unternehmens werden in der Vektordatenbank gespeichert. Bei der Suche nach relevantem Inhalt werden passende Zusammenfassungen und Inhalte gefunden, um einen Kontext zu bilden, und die Textvervollständigungsfunktion von LLM/SLM wird kombiniert, um Inhalte zu generieren.
 
 ## RAG-Prozess
-![FinetuningvsRAG](../../../../translated_images/rag.36e7cb856f120334d577fde60c6a5d7c5eecae255dac387669303d30b4b3efa4.de.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.de.png)
 
-## Feinabstimmung
-Die Feinabstimmung basiert auf der Verbesserung eines bestehenden Modells. Es ist nicht notwendig, bei der Modellalgorithmik von vorne zu beginnen, allerdings müssen kontinuierlich Daten gesammelt werden. Wenn in industriellen Anwendungen präzisere Terminologie und Sprache benötigt werden, ist die Feinabstimmung die bessere Wahl. Wenn sich Ihre Daten jedoch häufig ändern, kann die Feinabstimmung kompliziert werden.
+## Fine-tuning
+Fine-tuning basiert auf der Verbesserung eines bestimmten Modells. Es ist nicht notwendig, mit dem Modellalgorithmus zu beginnen, aber es müssen kontinuierlich Daten gesammelt werden. Wenn Sie in Branchenanwendungen präzisere Terminologie und sprachliche Ausdrucksweise wünschen, ist Fine-tuning die bessere Wahl. Wenn sich Ihre Daten jedoch häufig ändern, kann Fine-tuning kompliziert werden.
 
-## Wie wählt man?
-Wenn unsere Antwort externe Daten einbeziehen muss, ist RAG die beste Wahl.
+## Wie man wählt
+Wenn unsere Antwort die Einbeziehung externer Daten erfordert, ist RAG die beste Wahl.
 
-Wenn Sie stabiles und präzises Fachwissen aus einer Branche benötigen, ist Feinabstimmung eine gute Option. RAG priorisiert das Abrufen relevanter Inhalte, trifft jedoch möglicherweise nicht immer die spezialisierten Nuancen.
+Wenn Sie stabile und präzise Branchenkenntnisse ausgeben müssen, ist Fine-tuning eine gute Wahl. RAG priorisiert das Abrufen relevanter Inhalte, trifft aber nicht immer die speziellen Nuancen.
 
-Die Feinabstimmung erfordert einen hochwertigen Datensatz, und wenn es sich nur um einen kleinen Datenbereich handelt, wird der Unterschied nicht groß sein. RAG ist flexibler.  
-Die Feinabstimmung ist eine Art Blackbox, eine Art Metaphysik, und es ist schwierig, die internen Mechanismen zu verstehen. RAG hingegen erleichtert es, die Datenquelle zu identifizieren, wodurch Halluzinationen oder Inhaltsfehler besser angepasst und mehr Transparenz geboten werden können.
+Fine-tuning benötigt einen hochwertigen Datensatz, und wenn es sich nur um einen kleinen Datenbereich handelt, macht es keinen großen Unterschied. RAG ist flexibler.  
+Fine-tuning ist eine Blackbox, eine Metaphysik, und es ist schwer, den internen Mechanismus zu verstehen. RAG hingegen erleichtert es, die Datenquelle zu finden, wodurch Halluzinationen oder Fehler im Inhalt effektiv angepasst werden können und eine bessere Transparenz geboten wird.
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.

@@ -2,16 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-03-27T13:13:07+00:00",
-  "source_file": "md\\02.Application\\07.FunctionCalling\\Phi4\\FunctionCallingBasic\\README.md",
+  "translation_date": "2025-05-07T10:53:20+00:00",
+  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "es"
 }
 -->
-## **Llamada a funciones en Phi-4-mini**
+## **Llamadas a funciones en Phi-4-mini**
 
-La llamada a funciones apareció por primera vez en la familia Phi Family, y ahora puedes utilizarla a través de Phi-4-mini.
+Las llamadas a funciones aparecieron por primera vez en la familia Phi Family, y ahora puedes usarlas a través de Phi-4-mini.
 
-Este ejemplo demuestra la simulación de resultados de la Premier League. El objetivo es que Phi-4-mini proporcione información en tiempo real sobre los partidos. A continuación, se muestra el código de ejemplo:
+Este ejemplo demuestra la simulación de resultados de la Premier League. El objetivo es que Phi-4-mini entregue información del juego en tiempo real. A continuación, el código de ejemplo:
+
+
 
 ```python
 
@@ -106,5 +108,5 @@ print(messages)
 
 ```
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por garantizar la precisión, tenga en cuenta que las traducciones automatizadas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse como la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos responsabilizamos por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

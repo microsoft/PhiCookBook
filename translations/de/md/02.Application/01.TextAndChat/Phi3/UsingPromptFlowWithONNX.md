@@ -2,66 +2,66 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-  "translation_date": "2025-03-27T11:11:16+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\UsingPromptFlowWithONNX.md",
+  "translation_date": "2025-05-07T11:05:45+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
   "language_code": "de"
 }
 -->
 # Verwendung der Windows-GPU zur Erstellung einer PromptFlow-Lösung mit Phi-3.5-Instruct ONNX
 
-Das folgende Dokument ist ein Beispiel dafür, wie man PromptFlow mit ONNX (Open Neural Network Exchange) zur Entwicklung von KI-Anwendungen auf Basis von Phi-3-Modellen nutzen kann.
+Das folgende Dokument ist ein Beispiel dafür, wie PromptFlow mit ONNX (Open Neural Network Exchange) verwendet wird, um KI-Anwendungen auf Basis von Phi-3-Modellen zu entwickeln.
 
-PromptFlow ist eine Sammlung von Entwicklungstools, die den gesamten Entwicklungszyklus von KI-Anwendungen, die auf großen Sprachmodellen (LLM) basieren, von der Ideenfindung und Prototypenerstellung bis hin zu Tests und Evaluierung vereinfachen soll.
+PromptFlow ist eine Sammlung von Entwicklungstools, die den gesamten Entwicklungszyklus von LLM-basierten (Large Language Model) KI-Anwendungen von der Ideenfindung und Prototypenerstellung bis hin zu Tests und Evaluierung vereinfachen.
 
 Durch die Integration von PromptFlow mit ONNX können Entwickler:
 
-- **Modellleistung optimieren**: Nutzen Sie ONNX für effizientes Modell-Inferencing und Deployment.
-- **Entwicklung vereinfachen**: Verwenden Sie PromptFlow, um Workflows zu verwalten und wiederkehrende Aufgaben zu automatisieren.
-- **Zusammenarbeit verbessern**: Fördern Sie eine bessere Zusammenarbeit im Team durch eine einheitliche Entwicklungsumgebung.
+- Modellleistung optimieren: ONNX für effiziente Modellausführung und Bereitstellung nutzen.
+- Entwicklung vereinfachen: PromptFlow verwenden, um den Workflow zu verwalten und repetitive Aufgaben zu automatisieren.
+- Zusammenarbeit verbessern: Bessere Zusammenarbeit im Team durch eine einheitliche Entwicklungsumgebung ermöglichen.
 
-**PromptFlow** ist eine Sammlung von Entwicklungstools, die den gesamten Entwicklungszyklus von LLM-basierten KI-Anwendungen von der Ideenfindung über Prototyping, Tests, Evaluierung bis hin zur Produktionsbereitstellung und Überwachung optimiert. Es erleichtert das Prompt Engineering erheblich und ermöglicht die Entwicklung von LLM-Anwendungen in Produktionsqualität.
+**Prompt flow** ist eine Sammlung von Entwicklungstools, die den gesamten Entwicklungszyklus von LLM-basierten KI-Anwendungen von der Ideenfindung, Prototypenerstellung, Tests, Evaluierung bis hin zur Produktionsbereitstellung und Überwachung optimiert. Es macht Prompt-Engineering deutlich einfacher und ermöglicht es, LLM-Anwendungen in Produktionsqualität zu erstellen.
 
-PromptFlow kann mit OpenAI, Azure OpenAI Service und anpassbaren Modellen (Huggingface, lokale LLM/SLM) verbunden werden. Unser Ziel ist es, das quantisierte ONNX-Modell von Phi-3.5 in lokalen Anwendungen bereitzustellen. PromptFlow kann uns dabei helfen, unsere Geschäftsplanung besser zu gestalten und lokale Lösungen auf Basis von Phi-3.5 zu entwickeln. In diesem Beispiel kombinieren wir die ONNX Runtime GenAI-Bibliothek, um die PromptFlow-Lösung auf einer Windows-GPU umzusetzen.
+Prompt flow kann sich mit OpenAI, Azure OpenAI Service und anpassbaren Modellen (Huggingface, lokale LLM/SLM) verbinden. Wir hoffen, das quantisierte ONNX-Modell von Phi-3.5 in lokalen Anwendungen einzusetzen. Prompt flow hilft uns dabei, unser Geschäft besser zu planen und lokale Lösungen auf Basis von Phi-3.5 zu realisieren. In diesem Beispiel kombinieren wir die ONNX Runtime GenAI Library, um die Prompt flow-Lösung auf Basis der Windows-GPU zu vervollständigen.
 
 ## **Installation**
 
 ### **ONNX Runtime GenAI für Windows GPU**
 
-Lesen Sie diese Anleitung, um die ONNX Runtime GenAI für Windows GPU einzurichten: [hier klicken](./ORTWindowGPUGuideline.md)
+Lesen Sie diese Anleitung, um ONNX Runtime GenAI für Windows GPU einzurichten [hier klicken](./ORTWindowGPUGuideline.md)
 
-### **Einrichtung von PromptFlow in VSCode**
+### **Einrichtung von Prompt flow in VSCode**
 
-1. Installieren Sie die PromptFlow VS Code-Erweiterung.
+1. Installieren Sie die Prompt flow VS Code-Erweiterung
 
-![pfvscode](../../../../../../translated_images/pfvscode.79f42ae5dd93ed35c19d6d978ae75831fef40e0b8440ee48b893b5a0597d2260.de.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.de.png)
 
-2. Nachdem Sie die PromptFlow VS Code-Erweiterung installiert haben, klicken Sie auf die Erweiterung und wählen Sie **Installation dependencies**. Folgen Sie dieser Anleitung, um das PromptFlow SDK in Ihrer Umgebung zu installieren.
+2. Nach der Installation der Prompt flow VS Code-Erweiterung klicken Sie auf die Erweiterung und wählen **Installation dependencies**. Folgen Sie dieser Anleitung, um das Prompt flow SDK in Ihrer Umgebung zu installieren.
 
-![pfsetup](../../../../../../translated_images/pfsetup.0c82d99c7760aac29833b37faf4329e67e22279b1c5f37a73724dfa9ebaa32ee.de.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.de.png)
 
-3. Laden Sie den [Beispielcode](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) herunter und öffnen Sie ihn mit VS Code.
+3. Laden Sie den [Beispielcode](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) herunter und öffnen Sie dieses Beispiel mit VS Code.
 
-![pfsample](../../../../../../translated_images/pfsample.7bf40b133a558d86356dd6bc0e480bad2659d9c5364823dae9b3e6784e6f2d25.de.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.de.png)
 
 4. Öffnen Sie **flow.dag.yaml**, um Ihre Python-Umgebung auszuwählen.
 
-![pfdag](../../../../../../translated_images/pfdag.c5eb356fa3a96178cd594de9a5da921c4bbe646a9946f32aa20d344ccbeb51a0.de.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.de.png)
 
    Öffnen Sie **chat_phi3_ort.py**, um den Speicherort Ihres Phi-3.5-Instruct ONNX-Modells zu ändern.
 
-![pfphi](../../../../../../translated_images/pfphi.fff4b0afea47c92c8481174dbf3092823906fca5b717fc642f78947c3e5bbb39.de.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.de.png)
 
-5. Führen Sie Ihren PromptFlow aus, um ihn zu testen.
+5. Führen Sie Ihren Prompt flow zum Testen aus.
 
 Öffnen Sie **flow.dag.yaml** und klicken Sie auf den visuellen Editor.
 
-![pfv](../../../../../../translated_images/pfv.7af6ecd65784a98558b344ba69b5ba6233876823fb435f163e916a632394fc1e.de.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.de.png)
 
-Klicken Sie darauf und führen Sie ihn aus, um ihn zu testen.
+Nachdem Sie darauf geklickt haben, führen Sie es aus, um zu testen.
 
-![pfflow](../../../../../../translated_images/pfflow.9697e0fda67794bb0cf4b78d52e6f5a42002eec935bc2519933064afbbdd34f0.de.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.de.png)
 
-1. Sie können Batch-Dateien im Terminal ausführen, um weitere Ergebnisse zu überprüfen.
+1. Sie können Batch im Terminal ausführen, um weitere Ergebnisse zu überprüfen.
 
 ```bash
 
@@ -69,9 +69,9 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 ```
 
-Sie können die Ergebnisse in Ihrem Standardbrowser überprüfen.
+Sie können die Ergebnisse in Ihrem Standardbrowser ansehen.
 
-![pfresult](../../../../../../translated_images/pfresult.972eb57dd5bec646e1aa01148991ba8959897efea396e42cf9d7df259444878d.de.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.de.png)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ausgangssprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.

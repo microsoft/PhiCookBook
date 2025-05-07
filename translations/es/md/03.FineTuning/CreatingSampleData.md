@@ -2,22 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-03-27T13:31:34+00:00",
-  "source_file": "md\\03.FineTuning\\CreatingSampleData.md",
+  "translation_date": "2025-05-07T10:21:29+00:00",
+  "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "es"
 }
 -->
-# Generar un conjunto de datos de imágenes descargando el DataSet desde Hugging Face y las imágenes asociadas
+# Generar conjunto de datos de imágenes descargando DataSet desde Hugging Face y las imágenes asociadas
 
-### Descripción general
 
-Este script prepara un conjunto de datos para aprendizaje automático descargando las imágenes necesarias, filtrando las filas donde las descargas de imágenes fallan, y guardando el conjunto de datos como un archivo CSV.
+### Resumen
+
+Este script prepara un conjunto de datos para aprendizaje automático descargando las imágenes necesarias, filtrando las filas donde la descarga de imágenes falla, y guardando el conjunto de datos como un archivo CSV.
 
 ### Requisitos previos
 
-Antes de ejecutar este script, asegúrate de tener instaladas las siguientes bibliotecas: `Pandas`, `Datasets`, `requests`, `PIL` y `io`. También necesitarás reemplazar `'Insert_Your_Dataset'` en la línea 2 con el nombre de tu conjunto de datos de Hugging Face.
+Antes de ejecutar este script, asegúrate de tener instaladas las siguientes librerías: `Pandas`, `Datasets`, `requests`, `PIL` y `io`. También necesitarás reemplazar `'Insert_Your_Dataset'` en la línea 2 con el nombre de tu conjunto de datos de Hugging Face.
 
-Bibliotecas requeridas:
+Librerías requeridas:
 
 ```python
 
@@ -33,7 +34,7 @@ from io import BytesIO
 
 El script realiza los siguientes pasos:
 
-1. Descarga el conjunto de datos desde Hugging Face utilizando `load_dataset()` function.
+1. Descarga el conjunto de datos desde Hugging Face usando la función `load_dataset()` function.
 2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
 3. Creates directories to save the dataset and images.
 4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
@@ -42,31 +43,33 @@ El script realiza los siguientes pasos:
 
 ### Custom Function
 
-The `download_image()`. La función `download_image()` descarga una imagen desde una URL y la guarda localmente utilizando la biblioteca Pillow Image Library (PIL) y el módulo `io`. Devuelve True si la imagen se descarga correctamente, y False en caso contrario. Además, la función lanza una excepción con el mensaje de error cuando la solicitud falla.
+The `download_image()` descarga una imagen desde una URL y la guarda localmente utilizando la biblioteca Pillow Image Library (PIL) y el módulo `io`. Devuelve True si la imagen se descarga correctamente, y False en caso contrario. La función también lanza una excepción con el mensaje de error cuando la solicitud falla.
 
-### ¿Cómo funciona?
+### ¿Cómo funciona esto?
 
-La función `download_image` toma dos parámetros: `image_url`, que es la URL de la imagen a descargar, y `save_path`, que es la ruta donde se guardará la imagen descargada.
+La función download_image recibe dos parámetros: image_url, que es la URL de la imagen a descargar, y save_path, que es la ruta donde se guardará la imagen descargada.
 
 Así es como funciona la función:
 
-- Comienza haciendo una solicitud GET a `image_url` utilizando el método `requests.get`. Esto recupera los datos de la imagen desde la URL.
+Comienza realizando una solicitud GET a image_url usando el método requests.get. Esto obtiene los datos de la imagen desde la URL.
 
-- La línea `response.raise_for_status()` verifica si la solicitud fue exitosa. Si el código de estado de la respuesta indica un error (por ejemplo, 404 - No encontrado), se lanzará una excepción. Esto asegura que solo procedamos con la descarga de la imagen si la solicitud fue exitosa.
+La línea response.raise_for_status() verifica si la solicitud fue exitosa. Si el código de estado de la respuesta indica un error (por ejemplo, 404 - No encontrado), lanzará una excepción. Esto asegura que solo procedamos a descargar la imagen si la solicitud fue exitosa.
 
-- Los datos de la imagen se pasan al método `Image.open` del módulo PIL (Python Imaging Library). Este método crea un objeto Image a partir de los datos de la imagen.
+Los datos de la imagen se pasan luego al método Image.open del módulo PIL (Python Imaging Library). Este método crea un objeto Image a partir de los datos de la imagen.
 
-- La línea `image.save(save_path)` guarda la imagen en la ruta especificada `save_path`. La ruta debe incluir el nombre del archivo y la extensión deseados.
+La línea image.save(save_path) guarda la imagen en la ruta save_path especificada. save_path debe incluir el nombre de archivo y la extensión deseados.
 
-- Finalmente, la función devuelve True para indicar que la imagen se descargó y guardó exitosamente. Si ocurre alguna excepción durante el proceso, esta se captura, se imprime un mensaje de error indicando el fallo, y se devuelve False.
+Finalmente, la función devuelve True para indicar que la imagen se descargó y guardó correctamente. Si ocurre alguna excepción durante el proceso, captura la excepción, imprime un mensaje de error indicando la falla y devuelve False.
 
-Esta función es útil para descargar imágenes desde URLs y guardarlas localmente. Maneja posibles errores durante el proceso de descarga y proporciona información sobre si la descarga fue exitosa o no.
+Esta función es útil para descargar imágenes desde URLs y guardarlas localmente. Maneja posibles errores durante el proceso de descarga y proporciona retroalimentación sobre si la descarga fue exitosa o no.
 
-Es importante destacar que la biblioteca `requests` se utiliza para realizar solicitudes HTTP, la biblioteca `PIL` se utiliza para trabajar con imágenes, y la clase `BytesIO` se utiliza para manejar los datos de la imagen como un flujo de bytes.
+Cabe destacar que la librería requests se usa para hacer solicitudes HTTP, la librería PIL para trabajar con imágenes, y la clase BytesIO se utiliza para manejar los datos de la imagen como un flujo de bytes.
+
+
 
 ### Conclusión
 
-Este script ofrece una forma conveniente de preparar un conjunto de datos para aprendizaje automático descargando las imágenes necesarias, filtrando las filas donde las descargas fallan, y guardando el conjunto de datos como un archivo CSV.
+Este script ofrece una forma conveniente de preparar un conjunto de datos para aprendizaje automático descargando las imágenes necesarias, filtrando las filas donde la descarga de imágenes falla, y guardando el conjunto de datos como un archivo CSV.
 
 ### Script de ejemplo
 
@@ -127,11 +130,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Descarga de código de ejemplo
-[Generar script para un nuevo conjunto de datos](../../../../code/04.Finetuning/generate_dataset.py)
+### Código de ejemplo para descarga  
+[Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### Ejemplo de conjunto de datos
-[Ejemplo de conjunto de datos del ajuste fino con LORA](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+### Conjunto de datos de ejemplo
+[Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que surjan del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

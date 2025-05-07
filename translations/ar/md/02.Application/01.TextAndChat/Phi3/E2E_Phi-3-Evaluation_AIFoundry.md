@@ -1,209 +1,209 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7623679e8f69be39e2145094c05c00a8",
-  "translation_date": "2025-03-27T09:39:53+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-Evaluation_AIFoundry.md",
+  "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
+  "translation_date": "2025-05-07T11:06:04+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
   "language_code": "ar"
 }
 -->
-# تقييم نموذج Phi-3 / Phi-3.5 المحسن في Azure AI Foundry مع التركيز على مبادئ الذكاء الاصطناعي المسؤول من Microsoft
+# تقييم نموذج Phi-3 / Phi-3.5 المعدل في Azure AI Foundry مع التركيز على مبادئ الذكاء الاصطناعي المسؤول لدى Microsoft
 
-يعتمد هذا المثال المتكامل (E2E) على الدليل "[تقييم نماذج Phi-3 / Phi-3.5 المحسنة في Azure AI Foundry مع التركيز على الذكاء الاصطناعي المسؤول من Microsoft](https://techcommunity.microsoft.com/t5/educator-developer-blog/evaluate-fine-tuned-phi-3-3-5-models-in-azure-ai-studio-focusing/ba-p/4227850?WT.mc_id=aiml-137032-kinfeylo)" من مجتمع Microsoft Tech.
+يعتمد هذا المثال الشامل (E2E) على الدليل "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" من مجتمع Microsoft التقني.
 
 ## نظرة عامة
 
-### كيف يمكنك تقييم سلامة وأداء نموذج Phi-3 / Phi-3.5 المحسن في Azure AI Foundry؟
+### كيف يمكنك تقييم سلامة وأداء نموذج Phi-3 / Phi-3.5 المعدل في Azure AI Foundry؟
 
-قد يؤدي تحسين النموذج أحيانًا إلى استجابات غير مقصودة أو غير مرغوب فيها. لضمان أن النموذج يظل آمنًا وفعالًا، من المهم تقييم إمكانية النموذج في إنتاج محتوى ضار وقدرته على تقديم استجابات دقيقة وذات صلة ومتسقة. في هذا البرنامج التعليمي، ستتعلم كيفية تقييم سلامة وأداء نموذج Phi-3 / Phi-3.5 المحسن والمُدمج مع Prompt flow في Azure AI Foundry.
+قد يؤدي تعديل النموذج أحيانًا إلى استجابات غير مقصودة أو غير مرغوبة. لضمان بقاء النموذج آمنًا وفعّالًا، من المهم تقييم قدرته على توليد محتوى ضار وكذلك قدرته على تقديم استجابات دقيقة وذات صلة ومتسقة. في هذا الدرس، ستتعلم كيفية تقييم سلامة وأداء نموذج Phi-3 / Phi-3.5 المعدل والمُدمج مع Prompt flow في Azure AI Foundry.
 
 فيما يلي عملية التقييم في Azure AI Foundry.
 
-![هيكلية البرنامج التعليمي.](../../../../../../translated_images/architecture.99df2035c1c1a82e7f7d3aa3368e5940e46d27d35abd498166e55094298fce81.ar.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.ar.png)
 
-*مصدر الصورة: [تقييم تطبيقات الذكاء الاصطناعي التوليدي](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*مصدر الصورة: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
 >
-> للحصول على معلومات أكثر تفصيلًا واستكشاف موارد إضافية حول Phi-3 / Phi-3.5، يرجى زيارة [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723).
+> لمزيد من المعلومات التفصيلية واستكشاف موارد إضافية حول Phi-3 / Phi-3.5، يرجى زيارة [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723).
 
 ### المتطلبات الأساسية
 
 - [Python](https://www.python.org/downloads)
 - [اشتراك Azure](https://azure.microsoft.com/free?wt.mc_id=studentamb_279723)
 - [Visual Studio Code](https://code.visualstudio.com)
-- نموذج Phi-3 / Phi-3.5 المحسن
+- نموذج Phi-3 / Phi-3.5 معدل
 
 ### جدول المحتويات
 
-1. [**السيناريو الأول: مقدمة لتقييم Prompt flow في Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**السيناريو 1: مقدمة لتقييم Prompt flow في Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [مقدمة لتقييم السلامة](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [مقدمة لتقييم الأداء](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**السيناريو الثاني: تقييم نموذج Phi-3 / Phi-3.5 في Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**السيناريو 2: تقييم نموذج Phi-3 / Phi-3.5 في Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [قبل أن تبدأ](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [نشر Azure OpenAI لتقييم نموذج Phi-3 / Phi-3.5](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [تقييم نموذج Phi-3 / Phi-3.5 المحسن باستخدام تقييم Prompt flow في Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [تقييم نموذج Phi-3 / Phi-3.5 المعدل باستخدام تقييم Prompt flow في Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [تهانينا!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **السيناريو الأول: مقدمة لتقييم Prompt flow في Azure AI Foundry**
+## **السيناريو 1: مقدمة لتقييم Prompt flow في Azure AI Foundry**
 
 ### مقدمة لتقييم السلامة
 
-لضمان أن نموذج الذكاء الاصطناعي الخاص بك أخلاقي وآمن، من الضروري تقييمه بناءً على مبادئ الذكاء الاصطناعي المسؤول من Microsoft. في Azure AI Foundry، تتيح لك تقييمات السلامة تحليل ضعف النموذج أمام هجمات الاختراق وإمكانية إنتاج محتوى ضار، بما يتماشى مع هذه المبادئ.
+لضمان أن نموذج الذكاء الاصطناعي الخاص بك أخلاقي وآمن، من الضروري تقييمه وفقًا لمبادئ الذكاء الاصطناعي المسؤول لدى Microsoft. في Azure AI Foundry، تسمح تقييمات السلامة لك بتقييم مدى تعرض نموذجك لهجمات jailbreak وإمكانية توليده لمحتوى ضار، وهو ما يتماشى مباشرة مع هذه المبادئ.
 
-![تقييم السلامة.](../../../../../../translated_images/safety-evaluation.91fdef98588aadf56e8043d04cd78d24aac1472d6c121a6289f60d50d1f33d42.ar.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.ar.png)
 
-*مصدر الصورة: [تقييم تطبيقات الذكاء الاصطناعي التوليدي](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*مصدر الصورة: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
-#### مبادئ الذكاء الاصطناعي المسؤول من Microsoft
+#### مبادئ الذكاء الاصطناعي المسؤول لدى Microsoft
 
-قبل البدء في الخطوات التقنية، من المهم فهم مبادئ الذكاء الاصطناعي المسؤول من Microsoft، وهو إطار أخلاقي مصمم لتوجيه تطوير ونشر وتشغيل أنظمة الذكاء الاصطناعي بشكل مسؤول. هذه المبادئ توجه التصميم والتطوير والنشر المسؤول لأنظمة الذكاء الاصطناعي، مما يضمن أن تقنيات الذكاء الاصطناعي تُبنى بطريقة عادلة وشفافة وشاملة.
+قبل البدء في الخطوات التقنية، من الضروري فهم مبادئ الذكاء الاصطناعي المسؤول لدى Microsoft، وهي إطار أخلاقي مصمم لتوجيه التطوير المسؤول، والنشر، وتشغيل أنظمة الذكاء الاصطناعي. توجه هذه المبادئ التصميم المسؤول، والتطوير، والنشر لأنظمة الذكاء الاصطناعي، مما يضمن بناء تقنيات الذكاء الاصطناعي بطريقة عادلة، وشفافة، وشاملة. تشكل هذه المبادئ الأساس لتقييم سلامة نماذج الذكاء الاصطناعي.
 
-تشمل مبادئ الذكاء الاصطناعي المسؤول من Microsoft:
+تشمل مبادئ الذكاء الاصطناعي المسؤول لدى Microsoft:
 
-- **العدالة والشمولية**: يجب أن تعامل أنظمة الذكاء الاصطناعي الجميع بشكل عادل وتتجنب التأثير على مجموعات مماثلة من الأشخاص بطرق مختلفة. على سبيل المثال، عندما تقدم أنظمة الذكاء الاصطناعي إرشادات بشأن العلاج الطبي أو طلبات القروض أو التوظيف، يجب أن تقدم نفس التوصيات لكل من لديه ظروف مشابهة.
+- **الإنصاف والشمولية**: يجب أن تعامل أنظمة الذكاء الاصطناعي الجميع بعدالة وتتجنب التأثير على مجموعات متشابهة من الأشخاص بطرق مختلفة. على سبيل المثال، عندما تقدم أنظمة الذكاء الاصطناعي إرشادات بشأن العلاج الطبي، أو طلبات القروض، أو التوظيف، يجب أن تقدم نفس التوصيات لكل من لديه أعراض، أو ظروف مالية، أو مؤهلات مهنية مشابهة.
 
-- **الموثوقية والسلامة**: لبناء الثقة، من الضروري أن تعمل أنظمة الذكاء الاصطناعي بشكل موثوق وآمن ومتسق. يجب أن تكون هذه الأنظمة قادرة على العمل كما تم تصميمها في الأصل، وأن تستجيب بأمان للظروف غير المتوقعة، وأن تقاوم التلاعب الضار.
+- **الموثوقية والسلامة**: لبناء الثقة، من الضروري أن تعمل أنظمة الذكاء الاصطناعي بشكل موثوق وآمن ومتسق. يجب أن تكون هذه الأنظمة قادرة على العمل كما صممت أصلاً، والاستجابة بأمان للظروف غير المتوقعة، ومقاومة التلاعب الضار. يعكس سلوكها وتنوع الظروف التي يمكنها التعامل معها نطاق الحالات والظروف التي توقعها المطورون أثناء التصميم والاختبار.
 
-- **الشفافية**: عندما تساعد أنظمة الذكاء الاصطناعي في اتخاذ قرارات لها تأثير كبير على حياة الناس، من الضروري أن يفهم الناس كيفية اتخاذ هذه القرارات. على سبيل المثال، قد تستخدم البنوك أنظمة الذكاء الاصطناعي لتحديد أهلية الشخص للحصول على القروض.
+- **الشفافية**: عندما تساعد أنظمة الذكاء الاصطناعي في اتخاذ قرارات لها تأثيرات كبيرة على حياة الناس، من الضروري أن يفهم الناس كيف تم اتخاذ تلك القرارات. على سبيل المثال، قد يستخدم بنك نظام ذكاء اصطناعي لتحديد ما إذا كان الشخص جديرًا بالائتمان. قد تستخدم شركة نظام ذكاء اصطناعي لتحديد المرشحين الأكثر تأهيلاً للتوظيف.
 
-- **الخصوصية والأمان**: مع انتشار الذكاء الاصطناعي، يصبح حماية الخصوصية وتأمين المعلومات الشخصية والتجارية أكثر أهمية وتعقيدًا. تتطلب الخصوصية وأمان البيانات اهتمامًا دقيقًا لأن الوصول إلى البيانات ضروري لأنظمة الذكاء الاصطناعي لتقديم توقعات وقرارات دقيقة.
+- **الخصوصية والأمان**: مع تزايد انتشار الذكاء الاصطناعي، تصبح حماية الخصوصية وتأمين المعلومات الشخصية والتجارية أكثر أهمية وتعقيدًا. مع الذكاء الاصطناعي، تتطلب الخصوصية وأمن البيانات اهتمامًا وثيقًا لأن الوصول إلى البيانات ضروري لأنظمة الذكاء الاصطناعي لتقديم توقعات وقرارات دقيقة ومستنيرة حول الأشخاص.
 
-- **المسؤولية**: يجب أن يكون الأشخاص الذين يصممون وينشرون أنظمة الذكاء الاصطناعي مسؤولين عن كيفية عمل أنظمتهم. يجب على المنظمات الاستناد إلى معايير الصناعة لتطوير قواعد المسؤولية التي تضمن أن أنظمة الذكاء الاصطناعي ليست السلطة النهائية في أي قرار يؤثر على حياة الناس.
+- **المساءلة**: يجب أن يكون الأشخاص الذين يصممون وينشرون أنظمة الذكاء الاصطناعي مسؤولين عن كيفية عمل أنظمتهم. يجب على المؤسسات الاستناد إلى معايير الصناعة لتطوير معايير المساءلة. يمكن لهذه المعايير ضمان ألا تكون أنظمة الذكاء الاصطناعي هي السلطة النهائية في أي قرار يؤثر على حياة الناس. كما يمكنها ضمان بقاء البشر مسيطرين بشكل ذي معنى على أنظمة الذكاء الاصطناعي ذات الاستقلالية العالية.
 
-![المحور المسؤول.](../../../../../../translated_images/responsibleai2.93a32c6cd88ec3e57ec73a8c81717cd74ba27d2cd6d500097c82d79ac49726d7.ar.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.ar.png)
 
-*مصدر الصورة: [ما هو الذكاء الاصطناعي المسؤول؟](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
+*مصدر الصورة: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
-> لمعرفة المزيد حول مبادئ الذكاء الاصطناعي المسؤول من Microsoft، قم بزيارة [ما هو الذكاء الاصطناعي المسؤول؟](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723).
+> لمعرفة المزيد عن مبادئ الذكاء الاصطناعي المسؤول لدى Microsoft، قم بزيارة [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723).
 
-#### معايير السلامة
+#### مقاييس السلامة
 
-في هذا البرنامج التعليمي، ستقوم بتقييم سلامة نموذج Phi-3 المحسن باستخدام معايير السلامة في Azure AI Foundry. تساعد هذه المعايير في تقييم إمكانية النموذج في إنتاج محتوى ضار وضعفه أمام هجمات الاختراق. تشمل معايير السلامة:
+في هذا الدرس، ستقوم بتقييم سلامة نموذج Phi-3 المعدل باستخدام مقاييس السلامة في Azure AI Foundry. تساعدك هذه المقاييس على تقييم قدرة النموذج على توليد محتوى ضار ومدى تعرضه لهجمات jailbreak. تشمل مقاييس السلامة:
 
-- **المحتوى المرتبط بإيذاء الذات**: تقييم ما إذا كان النموذج يميل إلى إنتاج محتوى يتعلق بإيذاء الذات.
-- **المحتوى البغيض وغير العادل**: تقييم ما إذا كان النموذج يميل إلى إنتاج محتوى بغيض أو غير عادل.
-- **المحتوى العنيف**: تقييم ما إذا كان النموذج يميل إلى إنتاج محتوى عنيف.
-- **المحتوى الجنسي**: تقييم ما إذا كان النموذج يميل إلى إنتاج محتوى جنسي غير لائق.
+- **المحتوى المتعلق بالأذى الذاتي**: يقيم ما إذا كان النموذج يميل إلى إنتاج محتوى يتعلق بالأذى الذاتي.
+- **المحتوى الكريه وغير العادل**: يقيم ما إذا كان النموذج يميل إلى إنتاج محتوى كريه أو غير عادل.
+- **المحتوى العنيف**: يقيم ما إذا كان النموذج يميل إلى إنتاج محتوى عنيف.
+- **المحتوى الجنسي**: يقيم ما إذا كان النموذج يميل إلى إنتاج محتوى جنسي غير مناسب.
 
-تقييم هذه الجوانب يضمن أن نموذج الذكاء الاصطناعي لا ينتج محتوى ضارًا أو مهينًا، مما يجعله متوافقًا مع القيم المجتمعية والمعايير التنظيمية.
+يضمن تقييم هذه الجوانب أن نموذج الذكاء الاصطناعي لا ينتج محتوى ضارًا أو مسيئًا، مما يجعله متوافقًا مع القيم المجتمعية والمعايير التنظيمية.
 
-![التقييم بناءً على السلامة.](../../../../../../translated_images/evaluate-based-on-safety.3def6d9c7edaa49c536a7e58bfa48e2676fe911e80e847b732c0c9688c19946c.ar.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.ar.png)
 
 ### مقدمة لتقييم الأداء
 
-لضمان أن نموذج الذكاء الاصطناعي الخاص بك يعمل كما هو متوقع، من المهم تقييم أدائه بناءً على معايير الأداء. في Azure AI Foundry، تتيح لك تقييمات الأداء تحليل فعالية النموذج في إنتاج استجابات دقيقة وذات صلة ومتسقة.
+لضمان أن نموذج الذكاء الاصطناعي الخاص بك يعمل كما هو متوقع، من المهم تقييم أدائه بناءً على مقاييس الأداء. في Azure AI Foundry، تسمح تقييمات الأداء لك بتقييم فعالية نموذجك في توليد استجابات دقيقة وذات صلة ومتسقة.
 
-![تقييم الأداء.](../../../../../../translated_images/performance-evaluation.692eccfdea40b8a399040a6304cfee03667b5a9a0636a7152565d806427ff6be.ar.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.ar.png)
 
-*مصدر الصورة: [تقييم تطبيقات الذكاء الاصطناعي التوليدي](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*مصدر الصورة: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
-#### معايير الأداء
+#### مقاييس الأداء
 
-في هذا البرنامج التعليمي، ستقوم بتقييم أداء نموذج Phi-3 / Phi-3.5 المحسن باستخدام معايير الأداء في Azure AI Foundry. تساعد هذه المعايير في تقييم فعالية النموذج في إنتاج استجابات دقيقة وذات صلة ومتسقة. تشمل معايير الأداء:
+في هذا الدرس، ستقوم بتقييم أداء نموذج Phi-3 / Phi-3.5 المعدل باستخدام مقاييس الأداء في Azure AI Foundry. تساعدك هذه المقاييس على تقييم فعالية النموذج في توليد استجابات دقيقة وذات صلة ومتسقة. تشمل مقاييس الأداء:
 
-- **التأصيل**: تقييم مدى توافق الإجابات المُنتجة مع المعلومات الواردة من المصدر.
-- **الملاءمة**: تقييم مدى ارتباط الاستجابات المُنتجة بالأسئلة المعطاة.
-- **الاتساق**: تقييم مدى سلاسة النص المُنتج وقراءته بشكل طبيعي ومشابه للغة البشرية.
-- **الطلاقة**: تقييم مهارة اللغة للنص المُنتج.
-- **تشابه GPT**: مقارنة الاستجابة المُنتجة بالحقيقة الأرضية من حيث التشابه.
-- **درجة F1**: حساب نسبة الكلمات المشتركة بين الاستجابة المُنتجة وبيانات المصدر.
+- **الارتكاز على المصدر**: تقييم مدى توافق الإجابات المولدة مع المعلومات من المصدر الأصلي.
+- **الملاءمة**: تقييم مدى صلة الاستجابات المولدة بالأسئلة المطروحة.
+- **التماسك**: تقييم مدى سلاسة تدفق النص المولد، وقراءته بشكل طبيعي، وتشابه لغته مع لغة البشر.
+- **الطلاقة**: تقييم إجادة اللغة للنص المولد.
+- **التشابه مع GPT**: مقارنة الاستجابة المولدة مع الحقيقة الأرضية من حيث التشابه.
+- **درجة F1**: حساب نسبة الكلمات المشتركة بين الاستجابة المولدة وبيانات المصدر.
 
-تساعد هذه المعايير في تقييم فعالية النموذج في إنتاج استجابات دقيقة وذات صلة ومتسقة.
+تساعدك هذه المقاييس في تقييم فعالية النموذج في توليد استجابات دقيقة وذات صلة ومتسقة.
 
-![التقييم بناءً على الأداء.](../../../../../../translated_images/evaluate-based-on-performance.16c477bfd4e547f34dd803492ce032fbdb3376a5dbd236042233e21e5b7f7f6a.ar.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.ar.png)
 
-## **السيناريو الثاني: تقييم نموذج Phi-3 / Phi-3.5 في Azure AI Foundry**
+## **السيناريو 2: تقييم نموذج Phi-3 / Phi-3.5 في Azure AI Foundry**
 
 ### قبل أن تبدأ
 
-هذا البرنامج التعليمي يُعد متابعة للمدونات السابقة، "[تحسين وتكامل نماذج Phi-3 المخصصة مع Prompt Flow: دليل خطوة بخطوة](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" و"[تحسين وتكامل نماذج Phi-3 المخصصة مع Prompt Flow في Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." في هذه المدونات، قمنا بشرح عملية تحسين نموذج Phi-3 / Phi-3.5 في Azure AI Foundry وتكاملها مع Prompt flow.
+هذا الدرس هو متابعة للمدونات السابقة، "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" و "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." في هذه المشاركات، استعرضنا عملية تعديل نموذج Phi-3 / Phi-3.5 في Azure AI Foundry ودمجه مع Prompt flow.
 
-في هذا البرنامج التعليمي، ستقوم بنشر نموذج Azure OpenAI كمقيم في Azure AI Foundry واستخدامه لتقييم نموذج Phi-3 / Phi-3.5 المحسن الخاص بك.
+في هذا الدرس، ستقوم بنشر نموذج Azure OpenAI كمُقيّم في Azure AI Foundry واستخدامه لتقييم نموذج Phi-3 / Phi-3.5 المعدل الخاص بك.
 
-قبل البدء في هذا البرنامج التعليمي، تأكد من توفر المتطلبات الأساسية التالية، كما هو موضح في البرامج التعليمية السابقة:
+قبل أن تبدأ هذا الدرس، تأكد من توفر المتطلبات الأساسية التالية كما هو موضح في الدروس السابقة:
 
-1. مجموعة بيانات مُعدة لتقييم نموذج Phi-3 / Phi-3.5 المحسن.
-1. نموذج Phi-3 / Phi-3.5 تم تحسينه ونشره في Azure Machine Learning.
-1. تدفق Prompt مُدمج مع نموذج Phi-3 / Phi-3.5 المحسن في Azure AI Foundry.
-
-> [!NOTE]
-> ستستخدم ملف *test_data.jsonl* الموجود في مجلد البيانات من مجموعة بيانات **ULTRACHAT_200k** التي تم تنزيلها في المدونات السابقة، كمجموعة بيانات لتقييم نموذج Phi-3 / Phi-3.5 المحسن.
-
-#### تكامل نموذج Phi-3 / Phi-3.5 المخصص مع Prompt flow في Azure AI Foundry (نهج البرمجة أولًا)
+1. مجموعة بيانات معدة لتقييم نموذج Phi-3 / Phi-3.5 المعدل.
+1. نموذج Phi-3 / Phi-3.5 تم تعديله ونشره في Azure Machine Learning.
+1. Prompt flow مدمج مع نموذج Phi-3 / Phi-3.5 المعدل في Azure AI Foundry.
 
 > [!NOTE]
-> إذا اتبعت النهج ذو الكود المنخفض الموضح في "[تحسين وتكامل نماذج Phi-3 المخصصة مع Prompt Flow في Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)"، يمكنك تخطي هذا التمرين والمضي قدمًا إلى التمرين التالي.
-> ومع ذلك، إذا اتبعت نهج البرمجة أولًا الموضح في "[تحسين وتكامل نماذج Phi-3 المخصصة مع Prompt Flow: دليل خطوة بخطوة](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" لتحسين ونشر نموذج Phi-3 / Phi-3.5 الخاص بك، فإن عملية ربط النموذج بتدفق Prompt مختلفة قليلاً. ستتعلم هذه العملية في هذا التمرين.
+> ستستخدم ملف *test_data.jsonl* الموجود في مجلد البيانات من مجموعة البيانات **ULTRACHAT_200k** التي تم تنزيلها في المدونات السابقة، كمجموعة بيانات لتقييم نموذج Phi-3 / Phi-3.5 المعدل.
 
-للمتابعة، تحتاج إلى دمج نموذج Phi-3 / Phi-3.5 المحسن الخاص بك في تدفق Prompt في Azure AI Foundry.
+#### دمج نموذج Phi-3 / Phi-3.5 المخصص مع Prompt flow في Azure AI Foundry (النهج القائم على الكود أولاً)
 
-#### إنشاء محور Azure AI Foundry
+> [!NOTE]
+> إذا اتبعت النهج منخفض الكود الموصوف في "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)"، يمكنك تخطي هذا التمرين والمتابعة إلى التمرين التالي.
+> ومع ذلك، إذا اتبعت النهج القائم على الكود أولاً الموصوف في "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" لتعديل ونشر نموذج Phi-3 / Phi-3.5 الخاص بك، فإن عملية ربط النموذج بـ Prompt flow تختلف قليلاً. ستتعلم هذه العملية في هذا التمرين.
 
-تحتاج إلى إنشاء محور قبل إنشاء المشروع. يعمل المحور كمجموعة موارد، مما يتيح لك تنظيم وإدارة مشاريع متعددة داخل Azure AI Foundry.
+للمتابعة، تحتاج إلى دمج نموذج Phi-3 / Phi-3.5 المعدل الخاص بك في Prompt flow في Azure AI Foundry.
 
-1. قم بتسجيل الدخول إلى [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+#### إنشاء Hub في Azure AI Foundry
 
-1. اختر **جميع المحاور** من علامة التبويب الجانبية.
+تحتاج إلى إنشاء Hub قبل إنشاء المشروع. يعمل الـ Hub كـ Resource Group، مما يتيح لك تنظيم وإدارة مشاريع متعددة داخل Azure AI Foundry.
 
-1. اختر **+ محور جديد** من قائمة التنقل.
+1. سجّل الدخول إلى [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-    ![إنشاء محور.](../../../../../../translated_images/create-hub.1e304b20eb7e729735ac1c083fbaf6c02be763279b86af2540e8a001f2bf470b.ar.png)
+1. اختر **All hubs** من الشريط الجانبي الأيسر.
 
-1. قم بتنفيذ المهام التالية:
+1. اختر **+ New hub** من قائمة التنقل.
 
-    - أدخل **اسم المحور**. يجب أن يكون قيمة فريدة.
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.ar.png)
+
+1. قم بالمهام التالية:
+
+    - أدخل **Hub name**. يجب أن يكون قيمة فريدة.
     - اختر اشتراك Azure الخاص بك **Subscription**.
-    - اختر **مجموعة الموارد** التي تريد استخدامها (قم بإنشاء واحدة جديدة إذا لزم الأمر).
-    - اختر **الموقع** الذي ترغب في استخدامه.
-    - اختر **ربط خدمات Azure AI** للاستخدام (قم بإنشاء واحدة جديدة إذا لزم الأمر).
-    - اختر **تخطي الربط** لـ **ربط بحث Azure AI**.
-![املأ المركز.](../../../../../../translated_images/fill-hub.bb8b648703e968da13d123e40a6fc76f2193f6c6b432d24036d2aa9e823ee813.ar.png)
+    - اختر **Resource group** لاستخدامها (قم بإنشاء واحدة جديدة إذا لزم الأمر).
+    - اختر **Location** التي ترغب في استخدامها.
+    - اختر **Connect Azure AI Services** لاستخدامها (قم بإنشاء واحدة جديدة إذا لزم الأمر).
+    - اختر **Connect Azure AI Search** لتخطي الاتصال **Skip connecting**.
+![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.ar.png)
 
 1. اختر **التالي**.
 
 #### إنشاء مشروع Azure AI Foundry
 
-1. في المركز الذي أنشأته، اختر **كل المشاريع** من علامة التبويب الجانبية اليسرى.
+1. في الـ Hub الذي أنشأته، اختر **جميع المشاريع** من التبويب الموجود على الجانب الأيسر.
 
 1. اختر **+ مشروع جديد** من قائمة التنقل.
 
-    ![اختر مشروع جديد.](../../../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.ar.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ar.png)
 
 1. أدخل **اسم المشروع**. يجب أن يكون قيمة فريدة.
 
-    ![إنشاء مشروع.](../../../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.ar.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ar.png)
 
 1. اختر **إنشاء مشروع**.
 
-#### إضافة اتصال مخصص لنموذج Phi-3 / Phi-3.5 المخصص والمُحسّن
+#### إضافة اتصال مخصص لنموذج Phi-3 / Phi-3.5 المخصص
 
-لدمج نموذج Phi-3 / Phi-3.5 المخصص الخاص بك مع Prompt flow، تحتاج إلى حفظ نقطة النهاية والمفتاح الخاص بالنموذج في اتصال مخصص. يضمن هذا الإعداد الوصول إلى نموذج Phi-3 / Phi-3.5 المخصص الخاص بك في Prompt flow.
+لدمج نموذج Phi-3 / Phi-3.5 المخصص مع Prompt flow، تحتاج إلى حفظ نقطة النهاية والمفتاح الخاص بالنموذج في اتصال مخصص. هذا الإعداد يضمن الوصول إلى نموذج Phi-3 / Phi-3.5 المخصص في Prompt flow.
 
-#### إعداد مفتاح API وعنوان URI لنقطة النهاية لنموذج Phi-3 / Phi-3.5 المخصص والمُحسّن
+#### تعيين مفتاح api و uri لنقطة نهاية نموذج Phi-3 / Phi-3.5 المخصص
 
 1. قم بزيارة [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
 1. انتقل إلى مساحة عمل Azure Machine Learning التي أنشأتها.
 
-1. اختر **نقاط النهاية** من علامة التبويب الجانبية اليسرى.
+1. اختر **نقاط النهاية** من التبويب الموجود على الجانب الأيسر.
 
-    ![اختر نقاط النهاية.](../../../../../../translated_images/select-endpoints.fc2852aa73fdb1531682b599c0b1f5b39a842f0a60fec7c8e941b3070ec6c463.ar.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.ar.png)
 
 1. اختر نقطة النهاية التي أنشأتها.
 
-    ![اختر نقطة النهاية التي أنشأتها.](../../../../../../translated_images/select-endpoint-created.e1cd34ec8ae5a3eca599be7c894b0738e243317960138984b32d8a3fe20f4380.ar.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.ar.png)
 
 1. اختر **استهلاك** من قائمة التنقل.
 
-1. انسخ **نقطة النهاية REST** و**المفتاح الأساسي** الخاص بك.
+1. انسخ **نقطة نهاية REST** و **المفتاح الأساسي**.
 
-    ![انسخ مفتاح API وعنوان URI لنقطة النهاية.](../../../../../../translated_images/copy-endpoint-key.f74d8aab513b5f540d2a219198fc5b7a3e64213497491bedb17f4bd039f16054.ar.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.ar.png)
 
 #### إضافة الاتصال المخصص
 
@@ -211,58 +211,58 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. انتقل إلى مشروع Azure AI Foundry الذي أنشأته.
 
-1. في المشروع الذي أنشأته، اختر **الإعدادات** من علامة التبويب الجانبية اليسرى.
+1. في المشروع الذي أنشأته، اختر **الإعدادات** من التبويب الموجود على الجانب الأيسر.
 
 1. اختر **+ اتصال جديد**.
 
-    ![اختر اتصال جديد.](../../../../../../translated_images/select-new-connection.7ac97b4db6dc44c3d4f01a38b22fff11c3e88f75bcbf4d26999048a61a8729b2.ar.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.ar.png)
 
 1. اختر **مفاتيح مخصصة** من قائمة التنقل.
 
-    ![اختر مفاتيح مخصصة.](../../../../../../translated_images/select-custom-keys.b2e452da9ea19401c4b7c63fe2ec95a3a38fd13ae3e9fca37d431f0b7780d4da.ar.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.ar.png)
 
-1. قم بتنفيذ المهام التالية:
+1. قم بالمهام التالية:
 
     - اختر **+ إضافة أزواج مفتاح وقيمة**.
-    - لاسم المفتاح، أدخل **endpoint** والصق نقطة النهاية التي نسختها من Azure ML Studio في حقل القيمة.
+    - بالنسبة لاسم المفتاح، أدخل **endpoint** والصق نقطة النهاية التي نسختها من Azure ML Studio في حقل القيمة.
     - اختر **+ إضافة أزواج مفتاح وقيمة** مرة أخرى.
-    - لاسم المفتاح، أدخل **key** والصق المفتاح الذي نسخته من Azure ML Studio في حقل القيمة.
-    - بعد إضافة المفاتيح، اختر **is secret** لمنع كشف المفتاح.
+    - بالنسبة لاسم المفتاح، أدخل **key** والصق المفتاح الذي نسخته من Azure ML Studio في حقل القيمة.
+    - بعد إضافة المفاتيح، اختر **هو سر** لمنع ظهور المفتاح.
 
-    ![إضافة اتصال.](../../../../../../translated_images/add-connection.645b0c3ecf4a21f97a16ffafc9f25fedbb75a823cec5fc9dd778c3ab6130b4f0.ar.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.ar.png)
 
 1. اختر **إضافة اتصال**.
 
 #### إنشاء Prompt flow
 
-لقد أضفت اتصالاً مخصصًا في Azure AI Foundry. الآن، دعنا ننشئ Prompt flow باستخدام الخطوات التالية. بعد ذلك، ستقوم بربط هذا Prompt flow بالاتصال المخصص لاستخدام النموذج المُحسّن داخل Prompt flow.
+لقد أضفت اتصالًا مخصصًا في Azure AI Foundry. الآن، لننشئ Prompt flow باستخدام الخطوات التالية. ثم، ستربط هذا الـ Prompt flow بالاتصال المخصص لاستخدام النموذج المخصص ضمن Prompt flow.
 
 1. انتقل إلى مشروع Azure AI Foundry الذي أنشأته.
 
-1. اختر **Prompt flow** من علامة التبويب الجانبية اليسرى.
+1. اختر **Prompt flow** من التبويب الموجود على الجانب الأيسر.
 
 1. اختر **+ إنشاء** من قائمة التنقل.
 
-    ![اختر Promptflow.](../../../../../../translated_images/select-promptflow.4d42246677cc7ba65feb3e2be4479620a2b1e6637a66847dc1047ca89cd02780.ar.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.ar.png)
 
-1. اختر **Chat flow** من قائمة التنقل.
+1. اختر **تدفق المحادثة** من قائمة التنقل.
 
-    ![اختر Chat flow.](../../../../../../translated_images/select-flow-type.e818b610f36e93c5c9741911d7b95232164f01486cbb39a29d748c322bd62038.ar.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.ar.png)
 
 1. أدخل **اسم المجلد** للاستخدام.
 
-    ![اختر Chat flow.](../../../../../../translated_images/enter-name.628d4a5d69122cfae9d66e9bccf0f2f38c595e90e456a3837c713aadeff6aa52.ar.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.ar.png)
 
 1. اختر **إنشاء**.
 
-#### إعداد Prompt flow للدردشة مع نموذج Phi-3 / Phi-3.5 المخصص الخاص بك
+#### إعداد Prompt flow للدردشة مع نموذج Phi-3 / Phi-3.5 المخصص
 
-تحتاج إلى دمج نموذج Phi-3 / Phi-3.5 المُحسّن في Prompt flow. ومع ذلك، فإن Prompt flow الحالي غير مصمم لهذا الغرض. لذلك، يجب إعادة تصميم Prompt flow لتمكين دمج النموذج المخصص.
+تحتاج إلى دمج نموذج Phi-3 / Phi-3.5 المخصص في Prompt flow. ومع ذلك، فإن الـ Prompt flow الموجود غير مصمم لهذا الغرض. لذلك، يجب إعادة تصميم Prompt flow لتمكين دمج النموذج المخصص.
 
-1. في Prompt flow، قم بتنفيذ المهام التالية لإعادة بناء التدفق الحالي:
+1. في Prompt flow، قم بالمهام التالية لإعادة بناء التدفق الحالي:
 
     - اختر **وضع الملف الخام**.
-    - احذف جميع التعليمات البرمجية الموجودة في ملف *flow.dag.yml*.
+    - احذف كل الكود الموجود في ملف *flow.dag.yml*.
     - أضف الكود التالي إلى *flow.dag.yml*.
 
         ```yml
@@ -288,7 +288,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - اختر **حفظ**.
 
-    ![اختر وضع الملف الخام.](../../../../../../translated_images/select-raw-file-mode.e665df3117bf5411acf4d93bc8ecc405a984120c0ca7b944fe700601fdbac66f.ar.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.ar.png)
 
 1. أضف الكود التالي إلى *integrate_with_promptflow.py* لاستخدام نموذج Phi-3 / Phi-3.5 المخصص في Prompt flow.
 
@@ -351,75 +351,75 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![الصق كود Prompt flow.](../../../../../../translated_images/paste-promptflow-code.8547c46c57a5354667f91578d7bca9cc2d0f5e1c4dadd59efa1ca18d6376e7a8.ar.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.ar.png)
 
 > [!NOTE]
-> لمزيد من المعلومات التفصيلية حول استخدام Prompt flow في Azure AI Foundry، يمكنك الرجوع إلى [Prompt flow في Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> لمزيد من المعلومات التفصيلية حول استخدام Prompt flow في Azure AI Foundry، يمكنك الرجوع إلى [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. اختر **إدخال الدردشة** و**إخراج الدردشة** لتمكين الدردشة مع النموذج الخاص بك.
+1. اختر **مدخلات الدردشة**، **مخرجات الدردشة** لتمكين الدردشة مع نموذجك.
 
-    ![اختر الإدخال والإخراج.](../../../../../../translated_images/select-input-output.4d094b2da9e817e0ef7b9fd5339d929b50364b430ecc476a39c885ae9e4dcb35.ar.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.ar.png)
 
-1. الآن أنت جاهز للدردشة مع نموذج Phi-3 / Phi-3.5 المخصص الخاص بك. في التمرين التالي، ستتعلم كيفية بدء Prompt flow واستخدامه للدردشة مع نموذج Phi-3 / Phi-3.5 المُحسّن الخاص بك.
+1. الآن أنت جاهز للدردشة مع نموذج Phi-3 / Phi-3.5 المخصص. في التمرين التالي، ستتعلم كيفية بدء Prompt flow واستخدامه للدردشة مع نموذج Phi-3 / Phi-3.5 المخصص.
 
 > [!NOTE]
 >
-> يجب أن يبدو التدفق المُعاد بناؤه كما هو موضح في الصورة أدناه:
+> يجب أن يبدو التدفق المعاد بناؤه مثل الصورة أدناه:
 >
-> ![مثال على التدفق.](../../../../../../translated_images/graph-example.55ee258e205e3b686250c5fc480ffe8956eb9f4887f7b11e94a6720e0d032733.ar.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.ar.png)
 >
 
 #### بدء Prompt flow
 
 1. اختر **بدء جلسات الحوسبة** لبدء Prompt flow.
 
-    ![بدء جلسة الحوسبة.](../../../../../../translated_images/start-compute-session.e7eb268344e2040fdee7b46a175d2fbd19477e0ab122ef563113828d03b03946.ar.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.ar.png)
 
-1. اختر **التحقق من صحة الإدخال وتحليله** لتحديث المعلمات.
+1. اختر **التحقق من صحة وتحليل المدخلات** لتجديد المعلمات.
 
-    ![التحقق من صحة الإدخال.](../../../../../../translated_images/validate-input.dffb16c78fc266e52d55582791d67a54d631c166a61d7ca57a258e00c2e14150.ar.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.ar.png)
 
-1. اختر **القيمة** للاتصال بالمخصص الذي أنشأته. على سبيل المثال، *connection*.
+1. اختر **قيمة** الـ **connection** للاتصال المخصص الذي أنشأته. على سبيل المثال، *connection*.
 
-    ![الاتصال.](../../../../../../translated_images/select-connection.5c7a570da52e12219d21fef02800b152d124722619f56064b172a84721603b52.ar.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.ar.png)
 
-#### الدردشة مع نموذج Phi-3 / Phi-3.5 المخصص الخاص بك
+#### الدردشة مع نموذج Phi-3 / Phi-3.5 المخصص
 
-1. اختر **دردشة**.
+1. اختر **الدردشة**.
 
-    ![اختر دردشة.](../../../../../../translated_images/select-chat.c255a13f678aa46d9601c54a81aa2e0d58c9e01a8c6ec7d86598438d8e19214d.ar.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.ar.png)
 
-1. إليك مثال على النتائج: الآن يمكنك الدردشة مع نموذج Phi-3 / Phi-3.5 المخصص الخاص بك. يُوصى بطرح أسئلة استنادًا إلى البيانات المستخدمة لتحسين النموذج.
+1. إليك مثال على النتائج: الآن يمكنك الدردشة مع نموذج Phi-3 / Phi-3.5 المخصص. يُنصح بطرح أسئلة بناءً على البيانات المستخدمة في التخصيص الدقيق.
 
-    ![الدردشة مع Prompt flow.](../../../../../../translated_images/chat-with-promptflow.6da5e838c71f428b6d8aea9a0c655568354ae82babcdc87cd0f0d4edeee9d930.ar.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.ar.png)
 
 ### نشر Azure OpenAI لتقييم نموذج Phi-3 / Phi-3.5
 
-لتقييم نموذج Phi-3 / Phi-3.5 في Azure AI Foundry، تحتاج إلى نشر نموذج Azure OpenAI. سيتم استخدام هذا النموذج لتقييم أداء نموذج Phi-3 / Phi-3.5.
+لتقييم نموذج Phi-3 / Phi-3.5 في Azure AI Foundry، تحتاج إلى نشر نموذج Azure OpenAI. سيُستخدم هذا النموذج لتقييم أداء نموذج Phi-3 / Phi-3.5.
 
 #### نشر Azure OpenAI
 
-1. قم بتسجيل الدخول إلى [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. سجّل الدخول إلى [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
 1. انتقل إلى مشروع Azure AI Foundry الذي أنشأته.
 
-    ![اختر المشروع.](../../../../../../translated_images/select-project-created.84d119464c1bb0a8f5f9ab58012fa88304b0e3b0d6ddda444617424b2bb0d22e.ar.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ar.png)
 
-1. في المشروع الذي أنشأته، اختر **عمليات النشر** من علامة التبويب الجانبية اليسرى.
+1. في المشروع الذي أنشأته، اختر **النشر** من التبويب الموجود على الجانب الأيسر.
 
 1. اختر **+ نشر نموذج** من قائمة التنقل.
 
 1. اختر **نشر نموذج أساسي**.
 
-    ![اختر عمليات النشر.](../../../../../../translated_images/deploy-openai-model.91e6d9f9934e0e0c63116bd81a7628ea5ab37617f3e3b23a998a37c7f5aaba8b.ar.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.ar.png)
 
 1. اختر نموذج Azure OpenAI الذي ترغب في استخدامه. على سبيل المثال، **gpt-4o**.
 
-    ![اختر نموذج Azure OpenAI الذي ترغب في استخدامه.](../../../../../../translated_images/select-openai-model.c0f0e8d4afe80525745b4e67b52ae0d23550da9130bc8d1aea8160be0e261399.ar.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.ar.png)
 
 1. اختر **تأكيد**.
 
-### تقييم نموذج Phi-3 / Phi-3.5 المُحسّن باستخدام تقييم Prompt flow في Azure AI Foundry
+### تقييم نموذج Phi-3 / Phi-3.5 المخصص باستخدام تقييم Prompt flow في Azure AI Foundry
 
 ### بدء تقييم جديد
 
@@ -427,120 +427,120 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. انتقل إلى مشروع Azure AI Foundry الذي أنشأته.
 
-    ![اختر المشروع.](../../../../../../translated_images/select-project-created.84d119464c1bb0a8f5f9ab58012fa88304b0e3b0d6ddda444617424b2bb0d22e.ar.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ar.png)
 
-1. في المشروع الذي أنشأته، اختر **التقييم** من علامة التبويب الجانبية اليسرى.
+1. في المشروع الذي أنشأته، اختر **التقييم** من التبويب الموجود على الجانب الأيسر.
 
 1. اختر **+ تقييم جديد** من قائمة التنقل.
-![اختر التقييم.](../../../../../../translated_images/select-evaluation.00ce489c57544e735170ae63682b293c3f5e362ded9d62b602ff0cf8e957287c.ar.png)
+![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.ar.png)
 
-1. اختر **تقييم Prompt flow**.
+1. اختر تقييم **Prompt flow**.
 
-    ![اختر تقييم Prompt flow.](../../../../../../translated_images/promptflow-evaluation.350729f9e70f59110aa0b425adcdf00b2d5382066144ac1cdf265fa1884808b2.ar.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.ar.png)
 
 1. قم بتنفيذ المهام التالية:
 
     - أدخل اسم التقييم. يجب أن يكون قيمة فريدة.
-    - اختر **سؤال وجواب بدون سياق** كنوع المهمة. لأن مجموعة البيانات **UlTRACHAT_200k** المستخدمة في هذا الشرح لا تحتوي على سياق.
-    - اختر Prompt flow الذي ترغب في تقييمه.
+    - اختر **Question and answer without context** كنمط المهمة. لأن مجموعة البيانات **UlTRACHAT_200k** المستخدمة في هذا الدرس لا تحتوي على سياق.
+    - اختر تدفق المطالبات الذي ترغب في تقييمه.
 
-    ![تقييم Prompt flow.](../../../../../../translated_images/evaluation-setting1.772ca4e86a27e9c37d627e36c84c07b363a5d5229724f15596599d6b0f1d4ca1.ar.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.ar.png)
 
-1. اختر **التالي**.
+1. اختر **Next**.
 
 1. قم بتنفيذ المهام التالية:
 
-    - اختر **إضافة مجموعة البيانات الخاصة بك** لتحميل مجموعة البيانات. على سبيل المثال، يمكنك تحميل ملف مجموعة البيانات للاختبار مثل *test_data.json1*، والذي يتم تضمينه عند تنزيل مجموعة البيانات **ULTRACHAT_200k**.
-    - اختر **عمود مجموعة البيانات** المناسب الذي يتطابق مع مجموعة البيانات الخاصة بك. على سبيل المثال، إذا كنت تستخدم مجموعة البيانات **ULTRACHAT_200k**، اختر **${data.prompt}** كعمود مجموعة البيانات.
+    - اختر **Add your dataset** لتحميل مجموعة البيانات. على سبيل المثال، يمكنك تحميل ملف مجموعة بيانات الاختبار، مثل *test_data.json1*، الذي يتضمن عند تنزيل مجموعة بيانات **ULTRACHAT_200k**.
+    - اختر **Dataset column** المناسب الذي يتطابق مع مجموعة بياناتك. على سبيل المثال، إذا كنت تستخدم مجموعة بيانات **ULTRACHAT_200k**، اختر **${data.prompt}** كعمود مجموعة البيانات.
 
-    ![تقييم Prompt flow.](../../../../../../translated_images/evaluation-setting2.074e573f2ab245d37b12a9057b8fef349a552962f1ec3b23fd09734d4d653752.ar.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.ar.png)
 
-1. اختر **التالي**.
+1. اختر **Next**.
 
 1. قم بتنفيذ المهام التالية لتكوين مقاييس الأداء والجودة:
 
     - اختر مقاييس الأداء والجودة التي ترغب في استخدامها.
     - اختر نموذج Azure OpenAI الذي أنشأته للتقييم. على سبيل المثال، اختر **gpt-4o**.
 
-    ![تقييم Prompt flow.](../../../../../../translated_images/evaluation-setting3-1.7e26ae563c1312db5d1d21f8f44652243627f487df036ba27fe58d181102300d.ar.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.ar.png)
 
 1. قم بتنفيذ المهام التالية لتكوين مقاييس المخاطر والسلامة:
 
     - اختر مقاييس المخاطر والسلامة التي ترغب في استخدامها.
-    - اختر الحد الأدنى لحساب معدل العيوب الذي ترغب في استخدامه. على سبيل المثال، اختر **متوسط**.
-    - بالنسبة لـ **السؤال**، اختر **مصدر البيانات** ليكون **{$data.prompt}**.
-    - بالنسبة لـ **الإجابة**، اختر **مصدر البيانات** ليكون **{$run.outputs.answer}**.
-    - بالنسبة لـ **الإجابة الصحيحة**، اختر **مصدر البيانات** ليكون **{$data.message}**.
+    - اختر العتبة لحساب معدل العيوب التي ترغب في استخدامها. على سبيل المثال، اختر **Medium**.
+    - بالنسبة لـ **question**، اختر **Data source** إلى **{$data.prompt}**.
+    - بالنسبة لـ **answer**، اختر **Data source** إلى **{$run.outputs.answer}**.
+    - بالنسبة لـ **ground_truth**، اختر **Data source** إلى **{$data.message}**.
 
-    ![تقييم Prompt flow.](../../../../../../translated_images/evaluation-setting3-2.185148a456f1edb7d0db874f765dc6bc34fec7e1b00833be81b0428af6d18233.ar.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.ar.png)
 
-1. اختر **التالي**.
+1. اختر **Next**.
 
-1. اختر **إرسال** لبدء التقييم.
+1. اختر **Submit** لبدء التقييم.
 
-1. سيستغرق التقييم بعض الوقت لإكماله. يمكنك مراقبة التقدم في علامة تبويب **التقييم**.
+1. سيستغرق التقييم بعض الوقت ليكتمل. يمكنك متابعة التقدم في علامة التبويب **Evaluation**.
 
 ### مراجعة نتائج التقييم
 
 > [!NOTE]
-> النتائج المعروضة أدناه تهدف إلى توضيح عملية التقييم. في هذا الشرح، استخدمنا نموذجاً مدرباً على مجموعة بيانات صغيرة نسبياً، مما قد يؤدي إلى نتائج دون المستوى المطلوب. قد تختلف النتائج الفعلية بشكل كبير بناءً على حجم وجودة وتنوع مجموعة البيانات المستخدمة، وكذلك التكوين المحدد للنموذج.
+> النتائج المعروضة أدناه تهدف إلى توضيح عملية التقييم. في هذا الدرس، استخدمنا نموذجًا مدربًا على مجموعة بيانات صغيرة نسبيًا، مما قد يؤدي إلى نتائج دون المستوى الأمثل. قد تختلف النتائج الفعلية بشكل كبير اعتمادًا على حجم وجودة وتنوع مجموعة البيانات المستخدمة، بالإضافة إلى التكوين المحدد للنموذج.
 
-بمجرد اكتمال التقييم، يمكنك مراجعة النتائج لكل من مقاييس الأداء والسلامة.
+عند اكتمال التقييم، يمكنك مراجعة النتائج لكل من مقاييس الأداء والسلامة.
 
 1. مقاييس الأداء والجودة:
 
-    - تقييم فعالية النموذج في إنتاج إجابات مترابطة، وسلسة، وذات صلة.
+    - تقييم فعالية النموذج في توليد ردود متماسكة وطليقة وذات صلة.
 
-    ![نتائج التقييم.](../../../../../../translated_images/evaluation-result-gpu.8e9decea0f5dd1250948982514bcde94bb2debba2b686be5e633f1aad093921f.ar.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.ar.png)
 
 1. مقاييس المخاطر والسلامة:
 
-    - التأكد من أن مخرجات النموذج آمنة وتتماشى مع مبادئ الذكاء الاصطناعي المسؤول، وتجنب أي محتوى ضار أو مهين.
+    - التأكد من أن مخرجات النموذج آمنة وتتوافق مع مبادئ الذكاء الاصطناعي المسؤول، مع تجنب أي محتوى ضار أو مسيء.
 
-    ![نتائج التقييم.](../../../../../../translated_images/evaluation-result-gpu-2.180e37b9669f3d31aade247bd38b87b15a2ef93b69a1633c4e4072946aadaa26.ar.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.ar.png)
 
-1. يمكنك التمرير للأسفل لعرض **نتائج المقاييس التفصيلية**.
+1. يمكنك التمرير لأسفل لعرض **نتيجة المقاييس التفصيلية**.
 
-    ![نتائج التقييم.](../../../../../../translated_images/detailed-metrics-result.a0abde70a729afee17e34df7c11ea2f6f0ea1aefbe8a26a35502f304de57a647.ar.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.ar.png)
 
-1. من خلال تقييم نموذج Phi-3 / Phi-3.5 المخصص الخاص بك مقابل مقاييس الأداء والسلامة، يمكنك التأكد من أن النموذج ليس فقط فعالاً، ولكنه أيضاً يلتزم بممارسات الذكاء الاصطناعي المسؤول، مما يجعله جاهزاً للاستخدام في العالم الحقيقي.
+1. من خلال تقييم نموذج Phi-3 / Phi-3.5 المخصص الخاص بك مقابل مقاييس الأداء والسلامة، يمكنك التأكد من أن النموذج ليس فعالًا فحسب، بل يلتزم أيضًا بممارسات الذكاء الاصطناعي المسؤول، مما يجعله جاهزًا للنشر في العالم الحقيقي.
 
 ## تهانينا!
 
-### لقد أكملت هذا الشرح
+### لقد أكملت هذا الدرس
 
-لقد نجحت في تقييم نموذج Phi-3 المدرب والمُدمج مع Prompt flow في Azure AI Foundry. هذه خطوة مهمة لضمان أن نماذج الذكاء الاصطناعي الخاصة بك ليست فقط فعالة، ولكنها أيضاً تلتزم بمبادئ الذكاء الاصطناعي المسؤول من Microsoft لمساعدتك في بناء تطبيقات ذكاء اصطناعي موثوقة وقابلة للاعتماد.
+لقد قمت بتقييم نموذج Phi-3 المدرب بدقة والمُدمج مع Prompt flow في Azure AI Foundry بنجاح. هذه خطوة مهمة لضمان أن نماذج الذكاء الاصطناعي الخاصة بك لا تؤدي أداءً جيدًا فحسب، بل تلتزم أيضًا بمبادئ الذكاء الاصطناعي المسؤول التي تتبعها Microsoft لمساعدتك في بناء تطبيقات ذكاء اصطناعي موثوقة وجديرة بالثقة.
 
-![الهيكلية.](../../../../../../translated_images/architecture.99df2035c1c1a82e7f7d3aa3368e5940e46d27d35abd498166e55094298fce81.ar.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.ar.png)
 
 ## تنظيف موارد Azure
 
-قم بتنظيف موارد Azure الخاصة بك لتجنب تكاليف إضافية على حسابك. انتقل إلى بوابة Azure واحذف الموارد التالية:
+قم بتنظيف موارد Azure الخاصة بك لتجنب رسوم إضافية على حسابك. انتقل إلى بوابة Azure واحذف الموارد التالية:
 
-- مورد Azure Machine Learning.
-- نقطة النهاية لنموذج Azure Machine Learning.
+- مورد Azure Machine learning.
+- نقطة نهاية نموذج Azure Machine learning.
 - مورد مشروع Azure AI Foundry.
-- مورد Prompt flow الخاص بـ Azure AI Foundry.
+- مورد Azure AI Foundry Prompt flow.
 
 ### الخطوات التالية
 
-#### الوثائق
+#### التوثيق
 
-- [تقييم أنظمة الذكاء الاصطناعي باستخدام لوحة معلومات الذكاء الاصطناعي المسؤول](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
-- [مقاييس التقييم والمراقبة للذكاء الاصطناعي التوليدي](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [وثائق Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
-- [وثائق Prompt flow](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
+- [Assess AI systems by using the Responsible AI dashboard](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
+- [Evaluation and monitoring metrics for generative AI](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
+- [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Prompt flow documentation](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
-#### محتوى تدريبي
+#### محتوى التدريب
 
-- [مقدمة إلى نهج الذكاء الاصطناعي المسؤول من Microsoft](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [مقدمة إلى Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Introduction to Microsoft's Responsible AI Approach](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
+- [Introduction to Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### المرجع
 
-- [ما هو الذكاء الاصطناعي المسؤول؟](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
-- [الإعلان عن أدوات جديدة في Azure AI لمساعدتك على بناء تطبيقات ذكاء اصطناعي توليدي أكثر أماناً وموثوقية](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
-- [تقييم تطبيقات الذكاء الاصطناعي التوليدي](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
+- [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
+- [Announcing new tools in Azure AI to help you build more secure and trustworthy generative AI applications](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
+- [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
 
-**إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق. بالنسبة للمعلومات الحيوية، يُوصى باللجوء إلى ترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.
+**تنويه**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر المعتمد. للمعلومات الحساسة، يُنصح بالترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة ناتجة عن استخدام هذه الترجمة.

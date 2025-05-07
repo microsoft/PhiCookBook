@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-03-27T11:00:56+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\ORTWindowGPUGuideline.md",
+  "translation_date": "2025-05-07T11:03:25+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "ar"
 }
 -->
-# **دليل OnnxRuntime GenAI لنظام Windows مع GPU**
+# **دليل استخدام OnnxRuntime GenAI على Windows GPU**
 
-يوفر هذا الدليل خطوات إعداد واستخدام ONNX Runtime (ORT) مع وحدات معالجة الرسومات (GPU) على نظام Windows. يهدف إلى مساعدتك في الاستفادة من تسريع GPU لنماذجك، مما يحسن الأداء والكفاءة.
+يوفر هذا الدليل خطوات إعداد واستخدام ONNX Runtime (ORT) مع وحدات معالجة الرسومات على نظام ويندوز. الهدف هو مساعدتك في الاستفادة من تسريع GPU لنماذجك، مما يحسن الأداء والكفاءة.
 
-يتناول هذا المستند الإرشادات حول:
+يوضح المستند الإرشادات التالية:
 
-- إعداد البيئة: تعليمات لتثبيت التبعيات اللازمة مثل CUDA وcuDNN وONNX Runtime.
-- التهيئة: كيفية تهيئة البيئة وONNX Runtime لاستخدام موارد GPU بشكل فعال.
-- نصائح تحسين الأداء: نصائح حول كيفية ضبط إعدادات GPU لتحقيق الأداء الأمثل.
+- إعداد البيئة: تعليمات تثبيت الاعتمادات اللازمة مثل CUDA وcuDNN وONNX Runtime.
+- التهيئة: كيفية ضبط البيئة وONNX Runtime لاستخدام موارد GPU بفعالية.
+- نصائح التحسين: إرشادات لضبط إعدادات GPU لتحقيق أفضل أداء.
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***ملاحظة*** يُنصح باستخدام [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) كبيئة Python الخاصة بك.
+   ***Note*** يُفضل استخدام [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) كبيئة Python الخاصة بك
 
    ```bash
 
@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   ***تذكير*** إذا قمت بتثبيت أي مكتبة ONNX خاصة بـ Python، يُرجى إزالتها.
+   ***Reminder*** إذا قمت بتثبيت أي مكتبة ONNX لبايثون مسبقًا، يرجى إزالتها
 
 ### **2. تثبيت CMake باستخدام winget**
 
@@ -41,29 +41,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### **3. تثبيت Visual Studio 2022 - تطوير سطح المكتب باستخدام C++**
 
-   ***ملاحظة*** إذا كنت لا ترغب في التجميع، يمكنك تخطي هذه الخطوة.
+   ***Note*** إذا لم ترغب في الترجمة، يمكنك تخطي هذه الخطوة
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.ar.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.ar.png)
 
 ### **4. تثبيت برنامج تشغيل NVIDIA**
 
-1. **برنامج تشغيل NVIDIA GPU** [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
+1. **برنامج تشغيل NVIDIA GPU**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
 2. **NVIDIA CUDA 12.4** [https://developer.nvidia.com/cuda-12-4-0-download-archive](https://developer.nvidia.com/cuda-12-4-0-download-archive)
 
-3. **NVIDIA CUDNN 9.4** [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
+3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***تذكير*** يُرجى استخدام الإعدادات الافتراضية أثناء عملية التثبيت.
+***Reminder*** يرجى استخدام الإعدادات الافتراضية أثناء التثبيت
 
 ### **5. إعداد بيئة NVIDIA**
 
-انسخ ملفات lib, bin, include الخاصة بـ NVIDIA CUDNN 9.4 إلى lib, bin, include الخاصة بـ NVIDIA CUDA 12.4.
+انسخ ملفات NVIDIA CUDNN 9.4 lib وbin وinclude إلى مجلدات NVIDIA CUDA 12.4 lib وbin وinclude
 
-- انسخ ملفات *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* إلى *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*.
+- انسخ ملفات *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* إلى  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
-- انسخ ملفات *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* إلى *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*.
+- انسخ ملفات *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* إلى  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
 
-- انسخ ملفات *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* إلى *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*.
+- انسخ ملفات *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* إلى  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
 ### **6. تحميل Phi-3.5-mini-instruct-onnx**
 
@@ -81,15 +81,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### **7. تشغيل InferencePhi35Instruct.ipynb**
 
-   افتح [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) وقم بتنفيذه.
+   افتح [دفتر الملاحظات](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) وقم بالتنفيذ
 
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.ar.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.ar.png)
 
-### **8. تجميع ORT GenAI GPU**
+### **8. ترجمة ORT GenAI GPU**
 
-   ***ملاحظة***
-
-   1. يُرجى إزالة جميع المكتبات المتعلقة بـ onnx وonnxruntime وonnxruntime-genai أولاً.
+   ***Note*** 
+   
+   1. يرجى إلغاء تثبيت جميع مكتبات onnx و onnxruntime و onnxruntime-genai أولاً
 
    ```bash
 
@@ -97,7 +97,7 @@ CO_OP_TRANSLATOR_METADATA:
    
    ```
 
-   ثم قم بإزالة جميع مكتبات onnxruntime مثل:
+   ثم قم بإلغاء تثبيت جميع مكتبات onnxruntime مثل
 
    ```bash
 
@@ -109,17 +109,13 @@ CO_OP_TRANSLATOR_METADATA:
    
    ```
 
-   2. تحقق من دعم ملحقات Visual Studio.
+   2. تحقق من دعم امتداد Visual Studio
 
-   تحقق من وجود المسار التالي:  
-   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras  
-   وتأكد من العثور على:  
-   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration.  
+   تأكد من وجود المجلد C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration داخل C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras  
+   
+   إذا لم تجده، تحقق من مجلدات أدوات Cuda الأخرى وانسخ مجلد visual_studio_integration ومحتوياته إلى C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
-   إذا لم يتم العثور عليه، تحقق من المجلدات الأخرى الخاصة بـ Cuda toolkit وقم بنسخ مجلد visual_studio_integration ومحتوياته إلى:  
-   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration.
-
-   - إذا كنت لا ترغب في التجميع، يمكنك تخطي هذه الخطوة.
+   - إذا لم ترغب في الترجمة، يمكنك تخطي هذه الخطوة
 
    ```bash
 
@@ -127,15 +123,15 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   - قم بتنزيل [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip).
+   - قم بتنزيل [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - فك ضغط الملف onnxruntime-win-x64-gpu-1.19.2.zip، وأعد تسميته إلى **ort**، ثم انسخ مجلد ort إلى onnxruntime-genai.
+   - فك ضغط onnxruntime-win-x64-gpu-1.19.2.zip وأعد تسميته إلى **ort**، ثم انسخ مجلد ort إلى onnxruntime-genai
 
-   - باستخدام Windows Terminal، انتقل إلى Developer Command Prompt for VS 2022 وانتقل إلى onnxruntime-genai.
+   - باستخدام Windows Terminal، انتقل إلى Developer Command Prompt لـ VS 2022 واذهب إلى مجلد onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.ar.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.ar.png)
 
-   - قم بتجميعه باستخدام بيئة Python الخاصة بك.
+   - قم بترجمته باستخدام بيئة البايثون الخاصة بك
 
    ```bash
 
@@ -150,5 +146,5 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-**إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم بأن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية هو المصدر الرسمي. للحصول على معلومات حساسة، يُوصى بالترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.
+**تنويه**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر المعتمد. للمعلومات الحساسة، يُنصح بالاستعانة بترجمة بشرية محترفة. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ناتج عن استخدام هذه الترجمة.

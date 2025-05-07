@@ -2,22 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-03-27T14:55:42+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_MLX.md",
+  "translation_date": "2025-05-07T10:22:10+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "de"
 }
 -->
 # **Feinabstimmung von Phi-3 mit dem Apple MLX Framework**
 
-Wir können die Feinabstimmung in Kombination mit Lora über die Befehlszeile des Apple MLX Frameworks durchführen. (Wenn Sie mehr über den Betrieb des MLX Frameworks erfahren möchten, lesen Sie bitte [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)).
+Wir können die Feinabstimmung in Kombination mit Lora über die Befehlszeile des Apple MLX Frameworks durchführen. (Wenn Sie mehr über die Funktionsweise des MLX Frameworks erfahren möchten, lesen Sie bitte [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+
 
 ## **1. Datenvorbereitung**
 
-Standardmäßig erfordert das MLX Framework das jsonl-Format für Train-, Test- und Eval-Daten und wird in Kombination mit Lora verwendet, um Feinabstimmungsaufgaben abzuschließen.
+Standardmäßig erfordert das MLX Framework das jsonl-Format für train, test und eval und wird zusammen mit Lora verwendet, um Feinabstimmungsaufgaben abzuschließen.
 
-### ***Hinweis:***
 
-1. jsonl-Datenformat:
+### ***Note:***
+
+1. jsonl-Datenformat ：
+
 
 ```json
 
@@ -28,15 +31,17 @@ Standardmäßig erfordert das MLX Framework das jsonl-Format für Train-, Test- 
 
 ```
 
-2. Unser Beispiel verwendet die [Daten von TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), jedoch ist die Datenmenge relativ gering, sodass die Ergebnisse der Feinabstimmung nicht unbedingt optimal sind. Es wird empfohlen, dass Lernende bessere Daten basierend auf ihren eigenen Szenarien verwenden, um die Feinabstimmung durchzuführen.
+2. Unser Beispiel verwendet die [TruthfulQA-Daten](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), aber die Datenmenge ist relativ gering, daher sind die Feinabstimmungsergebnisse nicht unbedingt optimal. Es wird empfohlen, dass Lernende bessere Daten basierend auf ihren eigenen Szenarien verwenden.
 
-3. Das Datenformat wird mit der Phi-3-Vorlage kombiniert.
+3. Das Datenformat ist an die Phi-3 Vorlage angepasst.
 
 Bitte laden Sie die Daten von diesem [Link](../../../../code/04.Finetuning/mlx) herunter und stellen Sie sicher, dass alle .jsonl-Dateien im ***data***-Ordner enthalten sind.
 
+
 ## **2. Feinabstimmung im Terminal**
 
-Führen Sie diesen Befehl im Terminal aus:
+Bitte führen Sie diesen Befehl im Terminal aus
+
 
 ```bash
 
@@ -44,11 +49,13 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ```
 
-## ***Hinweis:***
 
-1. Dies ist eine LoRA-Feinabstimmung. Das MLX Framework hat QLoRA nicht veröffentlicht.
+## ***Note:***
 
-2. Sie können die Datei config.yaml bearbeiten, um einige Parameter zu ändern, wie z. B.:
+1. Dies ist eine LoRA-Feinabstimmung, das MLX Framework hat QLoRA nicht veröffentlicht.
+
+2. Sie können config.yaml anpassen, um einige Argumente zu ändern, zum Beispiel
+
 
 ```yaml
 
@@ -118,7 +125,8 @@ lora_parameters:
 
 ```
 
-Führen Sie diesen Befehl im Terminal aus:
+Bitte führen Sie diesen Befehl im Terminal aus
+
 
 ```bash
 
@@ -126,9 +134,11 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ```
 
-## **3. Feinabstimmungs-Adapter testen**
 
-Sie können den Feinabstimmungs-Adapter im Terminal ausführen, wie folgt:
+## **3. Feinabstimmungsadapter zum Testen ausführen**
+
+Sie können den Feinabstimmungsadapter im Terminal so ausführen:
+
 
 ```bash
 
@@ -136,7 +146,8 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-und das Originalmodell ausführen, um die Ergebnisse zu vergleichen:
+und das Originalmodell ausführen, um die Ergebnisse zu vergleichen
+
 
 ```bash
 
@@ -144,9 +155,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Sie können versuchen, die Ergebnisse der Feinabstimmung mit denen des Originalmodells zu vergleichen.
+Sie können versuchen, die Ergebnisse der Feinabstimmung mit dem Originalmodell zu vergleichen.
 
-## **4. Adapter zusammenführen, um neue Modelle zu generieren**
+
+## **4. Adapter zusammenführen, um neue Modelle zu erzeugen**
+
 
 ```bash
 
@@ -154,9 +167,10 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Quantifizierte Feinabstimmungsmodelle mit Ollama ausführen**
+## **5. Quantisierte Feinabstimmungsmodelle mit ollama ausführen**
 
-Konfigurieren Sie vor der Nutzung Ihre llama.cpp-Umgebung:
+Bitte konfigurieren Sie vor der Nutzung Ihre llama.cpp-Umgebung
+
 
 ```bash
 
@@ -170,13 +184,14 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Hinweis:***
+***Note:*** 
 
-1. Unterstützt jetzt die Quantisierungsumwandlung von fp32, fp16 und INT8.
+1. Unterstützt wird jetzt die Quantisierungskonvertierung von fp32, fp16 und INT 8
 
-2. Das zusammengeführte Modell enthält keinen tokenizer.model. Bitte laden Sie diesen von https://huggingface.co/microsoft/Phi-3-mini-4k-instruct herunter.
+2. Dem zusammengeführten Modell fehlt tokenizer.model, bitte laden Sie es von https://huggingface.co/microsoft/Phi-3-mini-4k-instruct herunter
 
-Richten Sie ein [Ollama-Modell](https://ollama.com/) ein:
+Richten Sie ein [Ollma Model](https://ollama.com/) ein
+
 
 ```txt
 
@@ -185,7 +200,8 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Führen Sie den Befehl im Terminal aus:
+Befehl im Terminal ausführen
+
 
 ```bash
 
@@ -195,7 +211,7 @@ Führen Sie den Befehl im Terminal aus:
 
 ```
 
-Herzlichen Glückwunsch! Sie haben die Feinabstimmung mit dem MLX Framework gemeistert.
+Herzlichen Glückwunsch! Sie beherrschen die Feinabstimmung mit dem MLX Framework
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, weisen wir darauf hin, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

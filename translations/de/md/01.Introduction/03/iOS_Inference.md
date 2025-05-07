@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-03-27T07:12:18+00:00",
-  "source_file": "md\\01.Introduction\\03\\iOS_Inference.md",
+  "translation_date": "2025-05-07T10:44:59+00:00",
+  "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "de"
 }
 -->
-# **Inference Phi-3 in iOS**
+# **Inference Phi-3 auf iOS**
 
-Phi-3-mini ist eine neue Modellreihe von Microsoft, die den Einsatz von Large Language Models (LLMs) auf Edge- und IoT-Geräten ermöglicht. Phi-3-mini ist für iOS, Android und Edge-Geräte verfügbar und erlaubt die Bereitstellung generativer KI in BYOD-Umgebungen. Das folgende Beispiel zeigt, wie Phi-3-mini auf iOS implementiert wird.
+Phi-3-mini ist eine neue Modellreihe von Microsoft, die die Bereitstellung von Large Language Models (LLMs) auf Edge- und IoT-Geräten ermöglicht. Phi-3-mini ist für iOS, Android und Edge-Geräte verfügbar und erlaubt den Einsatz generativer KI in BYOD-Umgebungen. Das folgende Beispiel zeigt, wie man Phi-3-mini auf iOS bereitstellt.
 
 ## **1. Vorbereitung**
 
 - **a.** macOS 14+
 - **b.** Xcode 15+
 - **c.** iOS SDK 17.x (iPhone 14 A16 oder höher)
-- **d.** Python 3.10+ installieren (Conda wird empfohlen)
-- **e.** Die Python-Bibliothek installieren: `python-flatbuffers`
-- **f.** CMake installieren
+- **d.** Installiere Python 3.10+ (Conda wird empfohlen)
+- **e.** Installiere die Python-Bibliothek: `python-flatbuffers`
+- **f.** Installiere CMake
 
 ### Semantic Kernel und Inferenz
 
-Semantic Kernel ist ein Anwendungsframework, das die Erstellung von Anwendungen ermöglicht, die mit Azure OpenAI Service, OpenAI-Modellen und sogar lokalen Modellen kompatibel sind. Der Zugriff auf lokale Dienste über Semantic Kernel vereinfacht die Integration mit Ihrem selbst gehosteten Phi-3-mini-Modellserver.
+Semantic Kernel ist ein Anwendungsframework, mit dem du Anwendungen erstellen kannst, die mit Azure OpenAI Service, OpenAI-Modellen und sogar lokalen Modellen kompatibel sind. Der Zugriff auf lokale Dienste über Semantic Kernel ermöglicht eine einfache Integration mit deinem selbstgehosteten Phi-3-mini Modellserver.
 
-### Aufruf von quantisierten Modellen mit Ollama oder LlamaEdge
+### Aufruf quantisierter Modelle mit Ollama oder LlamaEdge
 
-Viele Nutzer bevorzugen den Einsatz von quantisierten Modellen, um Modelle lokal auszuführen. [Ollama](https://ollama.com) und [LlamaEdge](https://llamaedge.com) ermöglichen den Aufruf verschiedener quantisierter Modelle:
+Viele Nutzer bevorzugen quantisierte Modelle, um Modelle lokal auszuführen. [Ollama](https://ollama.com) und [LlamaEdge](https://llamaedge.com) ermöglichen es, verschiedene quantisierte Modelle aufzurufen:
 
 #### **Ollama**
 
-Sie können `ollama run phi3` direkt ausführen oder offline konfigurieren. Erstellen Sie eine Modelfile mit dem Pfad zu Ihrer `gguf` Datei. Beispielcode für die Ausführung des quantisierten Phi-3-mini-Modells:
+Du kannst `ollama run phi3` direkt ausführen oder offline konfigurieren. Erstelle eine Modelfile mit dem Pfad zu deiner `gguf` Datei. Beispielcode zum Ausführen des Phi-3-mini quantisierten Modells:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -41,9 +41,9 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-Falls Sie `gguf` gleichzeitig in der Cloud und auf Edge-Geräten nutzen möchten, ist LlamaEdge eine hervorragende Option.
+Wenn du `gguf` sowohl in der Cloud als auch auf Edge-Geräten gleichzeitig verwenden möchtest, ist LlamaEdge eine gute Wahl.
 
-## **2. Kompilieren von ONNX Runtime für iOS**
+## **2. ONNX Runtime für iOS kompilieren**
 
 ```bash
 
@@ -59,19 +59,19 @@ cd ../
 
 ### **Hinweis**
 
-- **a.** Stellen Sie vor dem Kompilieren sicher, dass Xcode korrekt konfiguriert ist und setzen Sie es im Terminal als aktives Entwicklerverzeichnis:
+- **a.** Stelle vor dem Kompilieren sicher, dass Xcode richtig konfiguriert ist und setze es im Terminal als aktives Entwicklerverzeichnis:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime muss für verschiedene Plattformen kompiliert werden. Für iOS können Sie für `arm64` or `x86_64` kompilieren.
+- **b.** ONNX Runtime muss für verschiedene Plattformen kompiliert werden. Für iOS kannst du für `arm64` or `x86_64` kompilieren.
 
-- **c.** Es wird empfohlen, die neueste iOS SDK-Version für die Kompilierung zu verwenden. Falls nötig, können Sie auch eine ältere Version nutzen, um die Kompatibilität mit früheren SDKs zu gewährleisten.
+- **c.** Es wird empfohlen, das neueste iOS SDK für die Kompilierung zu verwenden. Du kannst aber auch eine ältere Version nutzen, falls Kompatibilität zu vorherigen SDKs erforderlich ist.
 
-## **3. Kompilieren von Generativer KI mit ONNX Runtime für iOS**
+## **3. Generative AI mit ONNX Runtime für iOS kompilieren**
 
-> **Hinweis:** Da Generative KI mit ONNX Runtime sich noch in der Vorschau befindet, beachten Sie mögliche Änderungen.
+> **Note:** Da Generative AI mit ONNX Runtime sich noch in der Vorschauphase befindet, können sich Änderungen ergeben.
 
 ```bash
 
@@ -99,37 +99,37 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **4. Erstellen einer App-Anwendung in Xcode**
+## **4. Erstelle eine App-Anwendung in Xcode**
 
-Ich habe mich für Objective-C als Entwicklungsmethode entschieden, da die Verwendung von Generativer KI mit der ONNX Runtime C++ API besser mit Objective-C kompatibel ist. Natürlich können Sie auch die entsprechenden Aufrufe über Swift Bridging durchführen.
+Ich habe Objective-C als Entwicklungsumgebung gewählt, da die Nutzung von Generative AI mit der ONNX Runtime C++ API in Objective-C besser kompatibel ist. Natürlich kannst du die entsprechenden Aufrufe auch über Swift-Bridge realisieren.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.de.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.de.png)
 
-## **5. Kopieren des ONNX quantisierten INT4-Modells in das App-Projekt**
+## **5. Kopiere das ONNX quantisierte INT4 Modell in das App-Projekt**
 
-Das INT4-Quantisierungsmodell im ONNX-Format muss importiert werden, nachdem es heruntergeladen wurde.
+Wir müssen das INT4 quantisierte Modell im ONNX-Format importieren, das vorher heruntergeladen werden muss.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.de.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.de.png)
 
-Nach dem Download müssen Sie es dem Ressourcenverzeichnis des Projekts in Xcode hinzufügen.
+Nach dem Download muss es zum Resources-Verzeichnis des Projekts in Xcode hinzugefügt werden.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.de.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.de.png)
 
 ## **6. Hinzufügen der C++ API in ViewControllers**
 
 > **Hinweis:**
 
-- **a.** Fügen Sie die entsprechenden C++-Header-Dateien dem Projekt hinzu.
+- **a.** Füge die entsprechenden C++ Header-Dateien zum Projekt hinzu.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.de.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.de.png)
 
-- **b.** Integrieren Sie `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Binde `onnxruntime-genai` dynamic library in Xcode.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.de.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.de.png)
 
 - **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm`, um Objective-C++-Unterstützung zu aktivieren.
+- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` ein, um Objective-C++ Unterstützung zu aktivieren.
 
 ```objc
 
@@ -158,13 +158,13 @@ Nach dem Download müssen Sie es dem Ressourcenverzeichnis des Projekts in Xcode
 
 ```
 
-## **7. Ausführen der Anwendung**
+## **7. Anwendung ausführen**
 
-Nach Abschluss der Einrichtung können Sie die Anwendung ausführen, um die Ergebnisse der Phi-3-mini-Modellinferenz zu sehen.
+Sobald die Einrichtung abgeschlossen ist, kannst du die Anwendung starten, um die Ergebnisse der Phi-3-mini Modellinferenz zu sehen.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.de.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.de.jpg)
 
-Weitere Beispielcodes und detaillierte Anweisungen finden Sie im [Phi-3 Mini Samples Repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+Für weitere Beispielcodes und detaillierte Anleitungen besuche das [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Originalsprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.

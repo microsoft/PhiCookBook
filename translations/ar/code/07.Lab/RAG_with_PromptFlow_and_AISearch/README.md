@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-03-27T04:44:52+00:00",
-  "source_file": "code\\07.Lab\\RAG_with_PromptFlow_and_AISearch\\README.md",
+  "translation_date": "2025-05-07T10:14:28+00:00",
+  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "ar"
 }
 -->
-## استخدام RAG مع PromptFlow و AISearch
+## RAG مع PromptFlow و AISearch
 
-في هذا المثال، سنقوم بتنفيذ تطبيق استرجاع معزز للتوليد (RAG) باستخدام Phi3 كنموذج لغة دلالي (SLM)، و AI Search كقاعدة بيانات متجهة، و Prompt Flow كمنظم منخفض الكود.
+في هذا المثال، سنقوم بتنفيذ تطبيق توليد معزز بالاسترجاع (RAG) باستخدام Phi3 كنموذج لغة صغيرة (SLM)، و AI Search كقاعدة بيانات متجهات، و Prompt Flow كمنسق منخفض الشيفرة.
 
 ## الميزات
 
 - نشر سهل باستخدام Docker.
-- بنية قابلة للتوسع لمعالجة سير العمل الخاص بالذكاء الاصطناعي.
-- نهج منخفض الكود باستخدام Prompt Flow.
+- بنية قابلة للتوسع لمعالجة تدفقات عمل الذكاء الاصطناعي.
+- نهج منخفض الشيفرة باستخدام Prompt Flow
 
-## المتطلبات الأساسية
+## المتطلبات المسبقة
 
 قبل البدء، تأكد من تلبية المتطلبات التالية:
 
@@ -30,10 +30,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## التثبيت
 
-1. أنشئ تدفقًا جديدًا في مشروع Azure AI Studio باستخدام ملف flow.yaml.
-2. قم بنشر نموذج Phi3 من كتالوج نماذج Azure AI وربط الاتصال بمشروعك. [نشر Phi-3 كنموذج كخدمة](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
-3. أنشئ فهرسًا متجهًا على Azure AI Search باستخدام أي مستند تختاره. [إنشاء فهرس متجه على Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. قم بنشر التدفق على نقطة نهاية مُدارة واستخدمه في ملف prompt-flow-frontend.py. [نشر تدفق على نقطة نهاية عبر الإنترنت](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+1. أنشئ تدفقًا جديدًا في مشروع Azure AI Studio الخاص بك باستخدام ملف flow.yaml.
+2. انشر نموذج Phi3 من كتالوج نماذج Azure AI وأنشئ الاتصال بمشروعك. [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
+3. أنشئ فهرس المتجهات على Azure AI Search باستخدام أي مستند تختاره [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
+4. انشر التدفق على نقطة نهاية مُدارة واستخدمه في ملف prompt-flow-frontend.py. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
 5. استنسخ المستودع:
 
     ```sh
@@ -42,7 +42,7 @@ CO_OP_TRANSLATOR_METADATA:
     cd code/07.Lab/RAG with PromptFlow and AISearch
     ```
 
-6. قم ببناء صورة Docker:
+6. أنشئ صورة Docker:
 
     ```sh
     docker build -t prompt-flow-frontend.py .
@@ -60,19 +60,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## الاستخدام
 
-1. قم بتشغيل حاوية Docker:
+1. شغّل حاوية Docker:
 
     ```sh
     docker run -p 8501:8501 yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-2. افتح التطبيق في متصفحك على `http://localhost:8501`.
+2. ادخل إلى التطبيق في متصفحك عبر `http://localhost:8501`.
 
 ## التواصل
 
-فالنتينا ألتو - [لينكد إن](https://www.linkedin.com/in/valentina-alto-6a0590148/)
+Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148/)
 
-المقال الكامل: [RAG باستخدام Phi-3-Medium كنموذج كخدمة من كتالوج نماذج Azure](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
+المقال الكامل: [RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
 **إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي. بالنسبة للمعلومات الحساسة أو الهامة، يُوصى بالاستعانة بخدمات الترجمة البشرية الاحترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ نتيجة استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى جاهدين لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي والموثوق. للمعلومات الحساسة أو الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ناتج عن استخدام هذه الترجمة.

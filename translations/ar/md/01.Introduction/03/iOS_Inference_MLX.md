@@ -2,49 +2,49 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-03-27T07:20:29+00:00",
-  "source_file": "md\\01.Introduction\\03\\iOS_Inference_MLX.md",
+  "translation_date": "2025-05-07T10:40:43+00:00",
+  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "ar"
 }
 -->
 # تشغيل Phi-3 و Phi-4 على iOS باستخدام إطار عمل Apple MLX
 
-هذا الدليل يوضح كيفية إنشاء تطبيق iOS لتشغيل نموذج Phi-3 أو Phi-4 على الجهاز باستخدام إطار عمل Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) هو إطار عمل التعلم الآلي من Apple المصمم خصيصًا لمعالجات Apple Silicon.
+يشرح هذا الدليل كيفية إنشاء تطبيق iOS يقوم بتشغيل نموذج Phi-3 أو Phi-4 على الجهاز، باستخدام إطار عمل Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) هو إطار تعلم آلي من Apple مُحسّن لمعالجات Apple Silicon.
 
-## المتطلبات المسبقة
+## المتطلبات الأساسية
 
-- macOS مع Xcode 16 أو أحدث
-- جهاز مستهدف يعمل بنظام iOS 18 أو أحدث يحتوي على ذاكرة 8 جيجابايت على الأقل (iPhone أو iPad متوافق مع متطلبات Apple Intelligence، حيث ستكون مشابهة لمتطلبات Phi المكثفة)
+- macOS مع Xcode 16 (أو أحدث)
+- جهاز iOS 18 (أو أحدث) بسعة لا تقل عن 8 جيجابايت (iPhone أو iPad متوافق مع متطلبات Apple Intelligence، حيث ستكون مشابهة لمتطلبات Phi الكمية)
 - معرفة أساسية بـ Swift و SwiftUI
 
 ## الخطوة 1: إنشاء مشروع iOS جديد
 
 ابدأ بإنشاء مشروع iOS جديد في Xcode:
 
-1. افتح Xcode واختر "Create a new Xcode project".
-2. اختر "App" كقالب.
-3. قم بتسمية المشروع (على سبيل المثال، "Phi3-iOS-App") واختر SwiftUI كواجهة.
-4. اختر موقعًا لحفظ المشروع.
+1. افتح Xcode واختر "إنشاء مشروع Xcode جديد"
+2. اختر "App" كقالب
+3. سمِّ مشروعك (مثلاً "Phi3-iOS-App") واختر SwiftUI كواجهة
+4. اختر موقعًا لحفظ مشروعك
 
 ## الخطوة 2: إضافة التبعيات المطلوبة
 
-أضف [حزمة أمثلة MLX](https://github.com/ml-explore/mlx-swift-examples) التي تحتوي على جميع التبعيات والمساعدات اللازمة لتحميل النماذج وتنفيذ الاستدلال:
+أضف [حزمة أمثلة MLX](https://github.com/ml-explore/mlx-swift-examples) التي تحتوي على جميع التبعيات والمساعدات اللازمة لتحميل النماذج مسبقًا وأداء الاستدلال:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-على الرغم من أن [حزمة MLX Swift الأساسية](https://github.com/ml-explore/mlx-swift) تكفي لعمليات المصفوفات الأساسية ووظائف التعلم الآلي الأساسية، فإن حزمة أمثلة MLX توفر عدة مكونات إضافية مصممة للعمل مع نماذج اللغة وجعل عملية الاستدلال أسهل:
+بينما تكفي حزمة [MLX Swift الأساسية](https://github.com/ml-explore/mlx-swift) للعمليات الأساسية على التنسورات والوظائف الأساسية للتعلم الآلي، توفر حزمة أمثلة MLX عدة مكونات إضافية مصممة للعمل مع نماذج اللغة، وتسهيل عملية الاستدلال:
 
-- أدوات تحميل النماذج التي تتعامل مع التنزيل من Hugging Face.
-- تكامل مع وحدات التحليل اللغوي.
-- مساعدات الاستدلال لتوليد النصوص.
-- تعريفات نماذج مُعدة مسبقًا.
+- أدوات تحميل النماذج التي تدير التنزيل من Hugging Face
+- دمج المحلل اللغوي (tokenizer)
+- مساعدات الاستدلال لتوليد النصوص
+- تعريفات النماذج المُعدة مسبقًا
 
-## الخطوة 3: تكوين الامتيازات
+## الخطوة 3: تكوين الصلاحيات
 
-لتمكين التطبيق من تنزيل النماذج وتخصيص ذاكرة كافية، نحتاج إلى إضافة امتيازات محددة. قم بإنشاء ملف `.entitlements` لتطبيقك يحتوي على المحتوى التالي:
+للسماح لتطبيقنا بتنزيل النماذج وتخصيص ذاكرة كافية، نحتاج لإضافة صلاحيات محددة. أنشئ ملف `.entitlements` لتطبيقك بالمحتوى التالي:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ CO_OP_TRANSLATOR_METADATA:
 </plist>
 ```
 
-> **ملاحظة:** الامتياز `com.apple.developer.kernel.increased-memory-limit` مهم لتشغيل النماذج الكبيرة، حيث يسمح للتطبيق بطلب ذاكرة أكبر من المعتاد.
+> **ملاحظة:** الصلاحية `com.apple.developer.kernel.increased-memory-limit` مهمة لتشغيل النماذج الأكبر، حيث تسمح للتطبيق بطلب ذاكرة أكثر من الحد المسموح عادة.
 
-## الخطوة 4: إنشاء نموذج رسائل الدردشة
+## الخطوة 4: إنشاء نموذج رسالة الدردشة
 
-لنبدأ بإنشاء هيكل أساسي لتمثيل رسائل الدردشة:
+أولًا، لننشئ هيكلًا أساسيًا لتمثيل رسائل الدردشة لدينا:
 
 ```swift
 import SwiftUI
@@ -87,7 +87,7 @@ struct ChatMessage: Identifiable {
 
 ## الخطوة 5: تنفيذ ViewModel
 
-بعد ذلك، سنقوم بإنشاء فئة `PhiViewModel` التي تتولى تحميل النموذج وتنفيذ الاستدلال:
+بعد ذلك، سننشئ فئة `PhiViewModel` التي تدير تحميل النموذج والاستدلال:
 
 ```swift
 import MLX
@@ -248,9 +248,9 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-يوضح ViewModel نقاط التكامل الرئيسية مع MLX:
+يُظهر ViewModel نقاط التكامل الرئيسية مع MLX:
 
-- إعداد حدود ذاكرة GPU باستخدام `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
+- تعيين حدود ذاكرة التخزين المؤقتة للمعالج الرسومي باستخدام `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
 - using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
 - accessing the model's parameters and structure through the `ModelContainer`
 - leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
@@ -264,7 +264,7 @@ In terms of UI interaction, the two key functions are `loadModel()`, which initi
 
 > **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`، حيث يشير إلى نموذج MLX محدد مسبقًا سيتم تنزيله تلقائيًا:
+The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`، حيث يشير إلى نموذج MLX محدد تم تحويله مسبقًا وسيتم تنزيله تلقائيًا:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-يمكنك إنشاء تكوينات نماذج خاصة بك للإشارة إلى أي نموذج متوافق على Hugging Face. على سبيل المثال، لاستخدام Phi-4 mini بدلاً من ذلك، يمكنك تعريف تكوين خاص بك:
+يمكنك إنشاء تكوينات نموذج خاصة بك للإشارة إلى أي نموذج متوافق على Hugging Face. على سبيل المثال، لاستخدام Phi-4 mini بدلاً من ذلك، يمكنك تعريف تكوين خاص بك:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **ملاحظة:** تمت إضافة دعم Phi-4 إلى مستودع أمثلة MLX Swift في نهاية فبراير 2025 (في [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). اعتبارًا من مارس 2025، الإصدار الرسمي الأخير (2.21.2 من ديسمبر 2024) لا يتضمن دعمًا مدمجًا لـ Phi-4. لاستخدام نماذج Phi-4، ستحتاج إلى الرجوع إلى الحزمة مباشرةً من الفرع الرئيسي:
+> **ملاحظة:** تم إضافة دعم Phi-4 إلى مستودع أمثلة MLX Swift في نهاية فبراير 2025 (في [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). حتى مارس 2025، الإصدار الرسمي الأخير (2.21.2 من ديسمبر 2024) لا يتضمن دعم Phi-4 مدمجًا. لاستخدام نماذج Phi-4، ستحتاج إلى الرجوع إلى الحزمة مباشرة من الفرع الرئيسي:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-يوفر هذا النهج الوصول إلى أحدث تكوينات النماذج، بما في ذلك Phi-4، قبل أن يتم تضمينها في إصدار رسمي. يمكنك استخدام هذا النهج لتشغيل إصدارات مختلفة من نماذج Phi أو حتى نماذج أخرى تم تحويلها إلى تنسيق MLX.
+هذا يمنحك الوصول إلى أحدث تكوينات النماذج، بما في ذلك Phi-4، قبل تضمينها في إصدار رسمي. يمكنك استخدام هذا الأسلوب لاستخدام إصدارات مختلفة من نماذج Phi أو حتى نماذج أخرى تم تحويلها إلى صيغة MLX.
 
 ## الخطوة 6: إنشاء واجهة المستخدم
 
-لنقم الآن بتنفيذ واجهة دردشة بسيطة للتفاعل مع نموذج العرض الخاص بنا:
+لنقم الآن بتنفيذ واجهة دردشة بسيطة للتفاعل مع ViewModel الخاص بنا:
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-تتكون واجهة المستخدم من ثلاثة مكونات رئيسية تعمل معًا لإنشاء واجهة دردشة أساسية. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` يوفر مؤشرًا بسيطًا متحركًا يظهر أن الذكاء الاصطناعي يعالج البيانات.
+تتكون واجهة المستخدم من ثلاثة مكونات رئيسية تعمل معًا لإنشاء واجهة دردشة أساسية. يوفر `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` مؤشرًا متحركًا بسيطًا لإظهار أن الذكاء الاصطناعي يعالج الطلب
 
 ## الخطوة 7: بناء وتشغيل التطبيق
 
 نحن الآن جاهزون لبناء وتشغيل التطبيق.
 
-> **مهم جدًا!** MLX لا يدعم المحاكي. يجب تشغيل التطبيق على جهاز فعلي يحتوي على شريحة Apple Silicon. راجع [هنا](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) لمزيد من المعلومات.
+> **هام!** MLX لا يدعم المحاكي. يجب تشغيل التطبيق على جهاز فعلي بمعالج Apple Silicon. راجع [هنا](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) لمزيد من المعلومات.
 
-عند تشغيل التطبيق، اضغط على زر "Load model" لتنزيل وتفعيل نموذج Phi-3 (أو، حسب التكوين الخاص بك، Phi-4). قد تستغرق هذه العملية بعض الوقت حسب سرعة اتصال الإنترنت، حيث تتضمن تنزيل النموذج من Hugging Face. يتضمن تنفيذنا فقط مؤشر تحميل، لكن يمكنك رؤية التقدم الفعلي في وحدة التحكم في Xcode.
+عند تشغيل التطبيق، اضغط على زر "Load model" لتنزيل وتهيئة نموذج Phi-3 (أو، حسب تكوينك، Phi-4). قد تستغرق هذه العملية بعض الوقت حسب سرعة اتصالك بالإنترنت، لأنها تتضمن تنزيل النموذج من Hugging Face. تطبيقنا يتضمن فقط مؤشر تحميل دوار، لكن يمكنك رؤية التقدم الفعلي في وحدة تحكم Xcode.
 
-بمجرد التحميل، يمكنك التفاعل مع النموذج عن طريق كتابة الأسئلة في حقل النص والضغط على زر الإرسال.
+بمجرد التحميل، يمكنك التفاعل مع النموذج بكتابة الأسئلة في حقل النص والضغط على زر الإرسال.
 
-إليك كيف يجب أن يتصرف التطبيق عند تشغيله على جهاز iPad Air M1:
+إليك كيف يجب أن يعمل تطبيقنا على iPad Air M1:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
 ## الخاتمة
 
-وهكذا انتهينا! باتباع هذه الخطوات، قمت بإنشاء تطبيق iOS يقوم بتشغيل نموذج Phi-3 (أو Phi-4) مباشرةً على الجهاز باستخدام إطار عمل MLX من Apple.
+وهذا كل شيء! باتباع هذه الخطوات، تكون قد أنشأت تطبيق iOS يقوم بتشغيل نموذج Phi-3 (أو Phi-4) مباشرة على الجهاز باستخدام إطار عمل Apple MLX.
 
 تهانينا!
 
-**إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق. للحصول على معلومات حساسة، يُوصى بالاستعانة بخدمات ترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ نتيجة استخدام هذه الترجمة.
+**تنويه**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى جاهدين للدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاستعانة بترجمة بشرية محترفة. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ناتج عن استخدام هذه الترجمة.

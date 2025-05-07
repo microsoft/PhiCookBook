@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-03-27T07:14:20+00:00",
-  "source_file": "md\\01.Introduction\\03\\iOS_Inference.md",
+  "translation_date": "2025-05-07T10:44:48+00:00",
+  "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "ar"
 }
 -->
-# **استنتاج Phi-3 في iOS**
+# **الاستدلال Phi-3 في iOS**
 
-Phi-3-mini هي سلسلة جديدة من النماذج التي تقدمها مايكروسوفت، تتيح نشر نماذج اللغة الكبيرة (LLMs) على الأجهزة الطرفية وأجهزة إنترنت الأشياء. تتوفر Phi-3-mini لنشرها على iOS، Android، والأجهزة الطرفية، مما يتيح استخدام الذكاء الاصطناعي التوليدي في بيئات الأجهزة الشخصية. المثال التالي يوضح كيفية نشر Phi-3-mini على iOS.
+Phi-3-mini هي سلسلة جديدة من النماذج من مايكروسوفت تتيح نشر نماذج اللغة الكبيرة (LLMs) على أجهزة الحافة وأجهزة إنترنت الأشياء. تتوفر Phi-3-mini لنشرها على iOS وAndroid وأجهزة الحافة، مما يسمح بنشر الذكاء الاصطناعي التوليدي في بيئات BYOD. يوضح المثال التالي كيفية نشر Phi-3-mini على iOS.
 
 ## **1. التحضير**
 
-- **أ.** macOS 14+  
-- **ب.** Xcode 15+  
-- **ج.** iOS SDK 17.x (iPhone 14 A16 أو أعلى)  
-- **د.** تثبيت Python 3.10+ (يوصى باستخدام Conda)  
-- **هـ.** تثبيت مكتبة Python: `python-flatbuffers`  
-- **و.** تثبيت CMake  
+- **أ.** macOS 14+
+- **ب.** Xcode 15+
+- **ج.** iOS SDK 17.x (iPhone 14 A16 أو أحدث)
+- **د.** تثبيت Python 3.10+ (يوصى باستخدام Conda)
+- **هـ.** تثبيت مكتبة Python: `python-flatbuffers`
+- **و.** تثبيت CMake
 
-### إطار عمل Semantic Kernel والاستنتاج
+### النواة الدلالية والاستدلال
 
-Semantic Kernel هو إطار عمل للتطبيقات يتيح لك إنشاء تطبيقات متوافقة مع خدمة Azure OpenAI، نماذج OpenAI، وحتى النماذج المحلية. الوصول إلى الخدمات المحلية من خلال Semantic Kernel يسهل التكامل مع خادم النموذج Phi-3-mini المستضاف ذاتيًا.
+النواة الدلالية هي إطار عمل لتطبيقات يتيح لك إنشاء تطبيقات متوافقة مع خدمة Azure OpenAI، ونماذج OpenAI، وحتى النماذج المحلية. يتيح الوصول إلى الخدمات المحلية عبر النواة الدلالية دمجًا سهلاً مع خادم نموذج Phi-3-mini المستضاف ذاتيًا.
 
-### استدعاء النماذج المضغوطة باستخدام Ollama أو LlamaEdge
+### استدعاء النماذج الكمّية مع Ollama أو LlamaEdge
 
-يفضل العديد من المستخدمين تشغيل النماذج المضغوطة محليًا. [Ollama](https://ollama.com) و [LlamaEdge](https://llamaedge.com) يتيحان للمستخدمين استدعاء نماذج مضغوطة مختلفة:
+يفضل العديد من المستخدمين استخدام النماذج الكمّية لتشغيل النماذج محليًا. يتيح كل من [Ollama](https://ollama.com) و [LlamaEdge](https://llamaedge.com) للمستخدمين استدعاء نماذج كمّية مختلفة:
 
 #### **Ollama**
 
-يمكنك تشغيل `ollama run phi3` مباشرة أو تكوينه بدون اتصال. قم بإنشاء ملف Modelfile مع مسار ملف `gguf` الخاص بك. مثال على كود تشغيل نموذج Phi-3-mini المضغوط:
+يمكنك تشغيل `ollama run phi3` مباشرة أو تكوينه بدون اتصال. أنشئ ملف Modelfile مع مسار ملف `gguf` الخاص بك. نموذج كود لتشغيل نموذج Phi-3-mini الكمّي:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -41,9 +41,9 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-إذا كنت ترغب في استخدام `gguf` على كل من السحابة والأجهزة الطرفية في نفس الوقت، فإن LlamaEdge خيار رائع.
+إذا كنت ترغب في استخدام `gguf` في السحابة وأجهزة الحافة في نفس الوقت، فإن LlamaEdge خيار ممتاز.
 
-## **2. تجميع ONNX Runtime لنظام iOS**
+## **2. تجميع ONNX Runtime لـ iOS**
 
 ```bash
 
@@ -59,19 +59,19 @@ cd ../
 
 ### **ملاحظة**
 
-- **أ.** قبل التجميع، تأكد من أن Xcode قد تم تكوينه بشكل صحيح واضبطه كدليل المطور النشط في الطرفية:
+- **أ.** قبل التجميع، تأكد من تكوين Xcode بشكل صحيح وتعيينه كمجلد المطور النشط في الطرفية:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **ب.** يحتاج ONNX Runtime إلى التجميع لمنصات مختلفة. بالنسبة لنظام iOS، يمكنك التجميع لـ `arm64` or `x86_64`.
+- **ب.** يحتاج ONNX Runtime إلى التجميع لمنصات مختلفة. بالنسبة لـ iOS، يمكنك التجميع لـ `arm64` or `x86_64`.
 
-- **ج.** يُوصى باستخدام أحدث إصدار من iOS SDK للتجميع. ومع ذلك، يمكنك أيضًا استخدام إصدار أقدم إذا كنت بحاجة إلى التوافق مع SDKs السابقة.
+- **ج.** يُنصح باستخدام أحدث إصدار من iOS SDK للتجميع. ومع ذلك، يمكنك أيضًا استخدام إصدار أقدم إذا كنت بحاجة إلى التوافق مع SDKs السابقة.
 
-## **3. تجميع الذكاء الاصطناعي التوليدي باستخدام ONNX Runtime لنظام iOS**
+## **3. تجميع الذكاء الاصطناعي التوليدي مع ONNX Runtime لـ iOS**
 
-> **ملاحظة:** لأن الذكاء الاصطناعي التوليدي باستخدام ONNX Runtime ما زال في المعاينة، يرجى الانتباه إلى أي تغييرات محتملة.
+> **ملاحظة:** نظرًا لأن الذكاء الاصطناعي التوليدي مع ONNX Runtime في مرحلة المعاينة، يرجى الانتباه إلى احتمال حدوث تغييرات.
 
 ```bash
 
@@ -101,31 +101,31 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. إنشاء تطبيق App في Xcode**
 
-اخترت Objective-C كطريقة لتطوير التطبيق، لأن استخدام الذكاء الاصطناعي التوليدي مع واجهة برمجة تطبيقات C++ الخاصة بـ ONNX Runtime يتوافق بشكل أفضل مع Objective-C. بالطبع، يمكنك أيضًا إكمال الاستدعاءات ذات الصلة من خلال Swift bridging.
+اخترت Objective-C كطريقة تطوير التطبيق، لأن استخدام الذكاء الاصطناعي التوليدي مع ONNX Runtime API الخاص بـ C++ يجعل Objective-C أكثر توافقًا. بالطبع، يمكنك أيضًا إكمال الاستدعاءات ذات الصلة عبر الربط مع Swift.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.ar.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.ar.png)
 
-## **5. نسخ نموذج ONNX المضغوط INT4 إلى مشروع تطبيق App**
+## **5. نسخ نموذج ONNX الكمّي INT4 إلى مشروع تطبيق App**
 
-نحتاج إلى استيراد نموذج INT4 المضغوط بتنسيق ONNX، والذي يجب تنزيله أولاً.
+نحتاج إلى استيراد نموذج الكمّية INT4 بتنسيق ONNX، والذي يجب تنزيله أولاً.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.ar.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.ar.png)
 
-بعد التنزيل، يجب إضافته إلى دليل Resources الخاص بالمشروع في Xcode.
+بعد التنزيل، تحتاج إلى إضافته إلى مجلد Resources في المشروع ضمن Xcode.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.ar.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.ar.png)
 
 ## **6. إضافة واجهة برمجة تطبيقات C++ في ViewControllers**
 
 > **ملاحظة:**
 
-- **أ.** أضف ملفات الترويسة C++ المناسبة إلى المشروع.
+- **أ.** أضف ملفات الرأس الخاصة بـ C++ المناسبة إلى المشروع.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.ar.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.ar.png)
 
 - **ب.** قم بتضمين `onnxruntime-genai` dynamic library in Xcode.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.ar.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.ar.png)
 
 - **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
 
@@ -160,11 +160,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **7. تشغيل التطبيق**
 
-بمجرد اكتمال الإعداد، يمكنك تشغيل التطبيق لرؤية نتائج استنتاج نموذج Phi-3-mini.
+بمجرد اكتمال الإعداد، يمكنك تشغيل التطبيق لرؤية نتائج استدلال نموذج Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.ar.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.ar.jpg)
 
-لمزيد من عينات الكود والتعليمات التفصيلية، قم بزيارة [مستودع Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+لمزيد من أمثلة الكود والتعليمات التفصيلية، قم بزيارة [مستودع عينات Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **إخلاء المسؤولية**:  
-تم ترجمة هذا المستند باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق. للحصول على معلومات حساسة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسيرات خاطئة تنشأ عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. بالنسبة للمعلومات الحساسة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-03-27T07:41:56+00:00",
-  "source_file": "md\\01.Introduction\\03\\Local_Server_Inference.md",
+  "translation_date": "2025-05-07T10:43:35+00:00",
+  "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
   "language_code": "de"
 }
 -->
-# **Inference Phi-3 auf einem lokalen Server**
+# **Inference Phi-3 auf lokalem Server**
 
-Wir können Phi-3 auf einem lokalen Server bereitstellen. Benutzer können [Ollama](https://ollama.com) oder [LM Studio](https://llamaedge.com) Lösungen wählen oder ihren eigenen Code schreiben. Sie können die lokalen Dienste von Phi-3 über [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) oder [Langchain](https://www.langchain.com/) verbinden, um Copilot-Anwendungen zu erstellen.
+Wir können Phi-3 auf einem lokalen Server bereitstellen. Nutzer können zwischen den Lösungen [Ollama](https://ollama.com) oder [LM Studio](https://llamaedge.com) wählen oder ihren eigenen Code schreiben. Phi-3's lokale Dienste lassen sich über [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) oder [Langchain](https://www.langchain.com/) anbinden, um Copilot-Anwendungen zu erstellen.
 
-## **Verwendung von Semantic Kernel für den Zugriff auf Phi-3-mini**
+## **Semantic Kernel zur Nutzung von Phi-3-mini**
 
-In der Copilot-Anwendung erstellen wir Anwendungen mithilfe von Semantic Kernel / LangChain. Diese Art von Anwendungsframework ist im Allgemeinen kompatibel mit Azure OpenAI Service / OpenAI-Modellen und unterstützt auch Open-Source-Modelle auf Hugging Face sowie lokale Modelle. Was müssen wir tun, wenn wir Semantic Kernel verwenden möchten, um auf Phi-3-mini zuzugreifen? Am Beispiel von .NET können wir es mit dem Hugging Face Connector in Semantic Kernel kombinieren. Standardmäßig kann es mit der Modell-ID auf Hugging Face korrespondieren (beim ersten Gebrauch wird das Modell von Hugging Face heruntergeladen, was lange dauert). Alternativ kann man auch eine Verbindung zu einem selbstgebauten lokalen Dienst herstellen. Im Vergleich der beiden empfehlen wir die zweite Option, da sie eine höhere Autonomie bietet, insbesondere in Unternehmensanwendungen.
+In der Copilot-Anwendung erstellen wir Anwendungen über Semantic Kernel / LangChain. Dieses Anwendungsframework ist in der Regel kompatibel mit Azure OpenAI Service / OpenAI-Modellen und unterstützt auch Open-Source-Modelle von Hugging Face sowie lokale Modelle. Was tun, wenn wir Semantic Kernel nutzen möchten, um auf Phi-3-mini zuzugreifen? Am Beispiel von .NET lässt sich dies mit dem Hugging Face Connector im Semantic Kernel kombinieren. Standardmäßig wird das Modell anhand der Modell-ID auf Hugging Face geladen (beim ersten Mal wird das Modell von Hugging Face heruntergeladen, was einige Zeit in Anspruch nimmt). Alternativ kann man sich auch mit dem lokal aufgebauten Dienst verbinden. Von den beiden Varianten empfehlen wir letztere, da sie eine höhere Autonomie bietet, insbesondere für Unternehmenseinsätze.
 
-![sk](../../../../../translated_images/sk.c244b32f4811c6f0938b9e95b0b2f4b28105bff6495bdc3b24cd42b3e3e89bb9.de.png)
+![sk](../../../../../translated_images/sk.d03785c25edc6d445a2e9ae037979e544e0b0c482f43c7617b0324e717b9af62.de.png)
 
-Wie in der Abbildung gezeigt, kann der Zugriff auf lokale Dienste über Semantic Kernel einfach mit dem selbstgebauten Phi-3-mini Modellserver verbunden werden. Hier ist das Ergebnis der Ausführung:
+Aus der Abbildung wird deutlich, dass der Zugriff auf lokale Dienste über Semantic Kernel eine einfache Verbindung zum selbst aufgebauten Phi-3-mini Modellserver ermöglicht. Hier das Ergebnis der Ausführung:
 
-![skrun](../../../../../translated_images/skrun.fb7a635a22ae8b7919d6e15c0eb27262526ed69728c5a1d2773a97d4562657c7.de.png)
+![skrun](../../../../../translated_images/skrun.5aafc1e7197dca2020eefcaeaaee184d29bb0cf1c37b00fd9c79acc23a6dc8d2.de.png)
 
-***Beispielcode*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
+***Sample Code*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir haften nicht für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.

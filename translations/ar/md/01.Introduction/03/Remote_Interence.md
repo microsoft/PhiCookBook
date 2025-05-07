@@ -2,53 +2,53 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-03-27T08:02:24+00:00",
-  "source_file": "md\\01.Introduction\\03\\Remote_Interence.md",
+  "translation_date": "2025-05-07T10:45:18+00:00",
+  "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "ar"
 }
 -->
-# الاستدلال عن بُعد باستخدام النموذج المُحسن
+# الاستدلال عن بُعد باستخدام النموذج المُدرب بدقة
 
-بعد تدريب المحولات في البيئة البعيدة، يمكنك استخدام تطبيق Gradio بسيط للتفاعل مع النموذج.
+بعد تدريب المحولات في البيئة البعيدة، استخدم تطبيق Gradio بسيط للتفاعل مع النموذج.
 
-![اكتمال التحسين](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.ar.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.ar.png)
 
-### إعداد موارد Azure
-تحتاج إلى إعداد موارد Azure للاستدلال عن بُعد عن طريق تنفيذ `AI Toolkit: Provision Azure Container Apps for inference` من لوحة الأوامر. أثناء هذه العملية، سيُطلب منك اختيار اشتراك Azure ومجموعة الموارد الخاصة بك.  
-![إعداد موارد الاستدلال](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.ar.png)
+### توفير موارد Azure  
+تحتاج إلى إعداد موارد Azure للاستدلال عن بُعد عن طريق تنفيذ `AI Toolkit: Provision Azure Container Apps for inference` من لوحة الأوامر. خلال هذا الإعداد، سيُطلب منك اختيار اشتراك Azure ومجموعة الموارد الخاصة بك.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.ar.png)
 
-بشكل افتراضي، يجب أن يتطابق الاشتراك ومجموعة الموارد للاستدلال مع تلك المستخدمة في تحسين النموذج. سيستخدم الاستدلال نفس بيئة تطبيقات Azure Container ويصل إلى النموذج ومحول النموذج المخزن في ملفات Azure التي تم إنشاؤها خلال خطوة التحسين.
+بشكل افتراضي، يجب أن يتطابق الاشتراك ومجموعة الموارد للاستدلال مع تلك المستخدمة في التدريب الدقيق. سيستخدم الاستدلال نفس بيئة تطبيق حاويات Azure ويصل إلى النموذج ومحول النموذج المخزنين في ملفات Azure، والتي تم إنشاؤها أثناء خطوة التدريب الدقيق.
 
-## استخدام أدوات الذكاء الاصطناعي
+## استخدام مجموعة أدوات AI
 
 ### النشر للاستدلال  
-إذا كنت ترغب في تعديل كود الاستدلال أو إعادة تحميل النموذج الخاص بالاستدلال، يرجى تنفيذ أمر `AI Toolkit: Deploy for inference`. سيؤدي ذلك إلى مزامنة الكود الأخير الخاص بك مع ACA وإعادة تشغيل النسخة.
+إذا رغبت في تعديل كود الاستدلال أو إعادة تحميل نموذج الاستدلال، يرجى تنفيذ أمر `AI Toolkit: Deploy for inference`. هذا سيزامن أحدث كود لديك مع ACA ويعيد تشغيل النسخة.
 
-![النشر للاستدلال](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.ar.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.ar.png)
 
-بعد اكتمال عملية النشر بنجاح، يصبح النموذج جاهزًا للتقييم باستخدام نقطة النهاية.
+بعد إتمام النشر بنجاح، يصبح النموذج جاهزًا للتقييم باستخدام نقطة النهاية هذه.
 
 ### الوصول إلى واجهة برمجة تطبيقات الاستدلال
 
-يمكنك الوصول إلى واجهة برمجة تطبيقات الاستدلال بالنقر على زر "*الانتقال إلى نقطة نهاية الاستدلال*" المعروض في إشعار VSCode. بدلاً من ذلك، يمكن العثور على نقطة نهاية واجهة الويب API تحت `ACA_APP_ENDPOINT` في `./infra/inference.config.json` وفي لوحة الإخراج.
+يمكنك الوصول إلى واجهة برمجة تطبيقات الاستدلال بالنقر على زر "*الذهاب إلى نقطة نهاية الاستدلال*" المعروض في إشعار VSCode. بدلاً من ذلك، يمكن العثور على نقطة نهاية واجهة الويب تحت `ACA_APP_ENDPOINT` في `./infra/inference.config.json` وفي لوحة الإخراج.
 
-![نقطة نهاية التطبيق](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.ar.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.ar.png)
 
-> **ملاحظة:** قد تحتاج نقطة نهاية الاستدلال إلى بضع دقائق لتصبح جاهزة تمامًا للعمل.
+> **ملاحظة:** قد تستغرق نقطة نهاية الاستدلال بضع دقائق لتصبح جاهزة للعمل بالكامل.
 
-## مكونات الاستدلال الموجودة في القالب
+## مكونات الاستدلال المدرجة في القالب
 
 | المجلد | المحتويات |
 | ------ |--------- |
 | `infra` | يحتوي على جميع التكوينات اللازمة للعمليات البعيدة. |
-| `infra/provision/inference.parameters.json` | يحتوي على معلمات لقوالب bicep، المستخدمة في إعداد موارد Azure للاستدلال. |
-| `infra/provision/inference.bicep` | يحتوي على قوالب لإعداد موارد Azure للاستدلال. |
-| `infra/inference.config.json` | ملف التكوين، الذي يتم إنشاؤه بواسطة أمر `AI Toolkit: Provision Azure Container Apps for inference`. يتم استخدامه كمدخل لأوامر أخرى من لوحة الأوامر البعيدة. |
+| `infra/provision/inference.parameters.json` | يحتوي على معلمات قوالب bicep، المستخدمة لتوفير موارد Azure للاستدلال. |
+| `infra/provision/inference.bicep` | يحتوي على قوالب لتوفير موارد Azure للاستدلال. |
+| `infra/inference.config.json` | ملف التكوين، الذي تم إنشاؤه بواسطة أمر `AI Toolkit: Provision Azure Container Apps for inference`. يُستخدم كمدخل لأوامر لوحة التحكم البعيدة الأخرى. |
 
-### استخدام أدوات الذكاء الاصطناعي لتكوين إعداد موارد Azure
-قم بتكوين [أدوات الذكاء الاصطناعي](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+### استخدام مجموعة أدوات AI لتكوين توفير موارد Azure  
+قم بتكوين [مجموعة أدوات AI](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-قم بإعداد تطبيقات Azure Container للاستدلال ` command.
+قم بتوفير تطبيقات حاويات Azure للاستدلال` command.
 
 You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
 | Parameter | Description |
@@ -62,9 +62,9 @@ You can find configuration parameters in `./infra/provision/inference.parameters
 
 By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` file. ثم قم بتنفيذ أمر `AI Toolkit: Provision Azure Container Apps for inference` من لوحة الأوامر. يقوم هذا بتحديث أي موارد محددة وإنشاء أي موارد مفقودة.
+If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` ثم، شغّل أمر `AI Toolkit: Provision Azure Container Apps for inference` من لوحة الأوامر. هذا يقوم بتحديث أي موارد محددة وينشئ أي موارد مفقودة.
 
-على سبيل المثال، إذا كان لديك بيئة حاويات Azure موجودة بالفعل، يجب أن يبدو ملف `./infra/finetuning.parameters.json` الخاص بك كما يلي:
+على سبيل المثال، إذا كان لديك بيئة حاويات Azure موجودة، يجب أن يبدو ملف `./infra/finetuning.parameters.json` كما يلي:
 
 ```json
 {
@@ -83,8 +83,8 @@ If you have customized the Azure resources during the fine-tuning step or want t
   }
 ```
 
-### الإعداد اليدوي  
-إذا كنت تفضل إعداد موارد Azure يدويًا، يمكنك استخدام ملفات bicep المقدمة في `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` file.
+### التوفير اليدوي  
+إذا فضلت تكوين موارد Azure يدويًا، يمكنك استخدام ملفات bicep المقدمة في ملف `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`.
 
 على سبيل المثال:
 
@@ -100,4 +100,4 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 **إخلاء المسؤولية**:  
-تم ترجمة هذه الوثيقة باستخدام خدمة الترجمة بالذكاء الاصطناعي [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يُرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو معلومات غير دقيقة. يجب اعتبار الوثيقة الأصلية بلغتها الأصلية المصدر الرسمي. للحصول على معلومات حساسة، يُوصى بالاستعانة بترجمة بشرية احترافية. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ينشأ عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. بالنسبة للمعلومات الهامة، يُنصح بالترجمة المهنية البشرية. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ناتج عن استخدام هذه الترجمة.

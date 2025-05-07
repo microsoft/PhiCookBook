@@ -2,46 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-03-27T13:51:38+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Kaito.md",
+  "translation_date": "2025-05-07T10:24:26+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "de"
 }
 -->
-## Feintuning mit Kaito
+## Feinabstimmung mit Kaito
 
-[Kaito](https://github.com/Azure/kaito) ist ein Operator, der die Bereitstellung von KI/ML-Inferenzmodellen in einem Kubernetes-Cluster automatisiert.
+[Kaito](https://github.com/Azure/kaito) ist ein Operator, der die Bereitstellung von AI/ML-Inferenzmodellen in einem Kubernetes-Cluster automatisiert.
 
-Kaito bietet im Vergleich zu den meisten gängigen Methoden zur Modellbereitstellung, die auf virtuellen Maschinen basieren, folgende wesentliche Vorteile:
+Kaito unterscheidet sich in folgenden Punkten wesentlich von den meisten gängigen Methoden zur Modellbereitstellung, die auf virtuellen Maschinen basieren:
 
-- Verwalten von Modelldateien mithilfe von Container-Images. Ein HTTP-Server wird bereitgestellt, um Inferenzaufrufe mit der Modellbibliothek auszuführen.
-- Vermeidung der Anpassung von Bereitstellungsparametern an GPU-Hardware durch vorgefertigte Konfigurationen.
-- Automatische Bereitstellung von GPU-Knoten basierend auf Modellanforderungen.
-- Hosting großer Modell-Images im öffentlichen Microsoft Container Registry (MCR), sofern dies durch die Lizenz gestattet ist.
+- Verwaltung von Modelldateien über Container-Images. Ein HTTP-Server wird bereitgestellt, um Inferenzaufrufe mit der Modellbibliothek durchzuführen.
+- Vermeidung der Anpassung von Bereitstellungsparametern an GPU-Hardware durch vordefinierte Konfigurationen.
+- Automatische Bereitstellung von GPU-Knoten basierend auf den Modellanforderungen.
+- Hosting großer Modell-Images im öffentlichen Microsoft Container Registry (MCR), sofern die Lizenz dies erlaubt.
 
-Mit Kaito wird der Workflow zur Integration großer KI-Inferenzmodelle in Kubernetes erheblich vereinfacht.
+Mit Kaito wird der Workflow zur Integration großer AI-Inferenzmodelle in Kubernetes erheblich vereinfacht.
 
 ## Architektur
 
-Kaito folgt dem klassischen Kubernetes Custom Resource Definition(CRD)/Controller-Designmuster. Der Benutzer verwaltet eine `workspace`-benutzerdefinierte Ressource, die die GPU-Anforderungen und die Inferenzspezifikation beschreibt. Kaito-Controller automatisieren die Bereitstellung, indem sie die `workspace`-benutzerdefinierte Ressource abgleichen.
+Kaito folgt dem klassischen Kubernetes Custom Resource Definition (CRD)/Controller-Designmuster. Der Benutzer verwaltet eine `workspace` Custom Resource, die die GPU-Anforderungen und die Inferenzspezifikation beschreibt. Die Kaito-Controller automatisieren die Bereitstellung, indem sie die `workspace` Custom Resource abgleichen.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito Architektur" alt="Kaito Architektur">
+  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-Die obige Abbildung zeigt eine Übersicht über die Kaito-Architektur. Die Hauptkomponenten bestehen aus:
+Die obige Abbildung zeigt einen Überblick über die Kaito-Architektur. Die wichtigsten Komponenten bestehen aus:
 
-- **Workspace-Controller**: Dieser gleicht die `workspace`-benutzerdefinierte Ressource ab, erstellt `machine` (im Folgenden erläutert) benutzerdefinierte Ressourcen, um die automatische Bereitstellung von Knoten auszulösen, und erstellt die Inferenz-Arbeitslast (`deployment` oder `statefulset`) basierend auf den vorgefertigten Modellkonfigurationen.
-- **Node-Provisioner-Controller**: Der Name des Controllers ist *gpu-provisioner* im [gpu-provisioner Helm Chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Er verwendet die `machine`-CRD, die von [Karpenter](https://sigs.k8s.io/karpenter) stammt, um mit dem Workspace-Controller zu interagieren. Er integriert sich mit den Azure Kubernetes Service(AKS)-APIs, um neue GPU-Knoten zum AKS-Cluster hinzuzufügen.  
-> Hinweis: Der [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ist eine Open-Source-Komponente. Er kann durch andere Controller ersetzt werden, sofern diese die [Karpenter-core](https://sigs.k8s.io/karpenter)-APIs unterstützen.
+- **Workspace-Controller**: Er gleicht die `workspace` Custom Resource ab, erstellt `machine` (siehe unten) Custom Resources, um die automatische Knotenbereitstellung auszulösen, und erstellt die Inferenz-Workloads (`deployment` oder `statefulset`) basierend auf den vordefinierten Modellkonfigurationen.
+- **Node-Provisioner-Controller**: Der Controller heißt *gpu-provisioner* im [gpu-provisioner Helm-Chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Er verwendet die `machine` CRD, die von [Karpenter](https://sigs.k8s.io/karpenter) stammt, um mit dem Workspace-Controller zu kommunizieren. Er integriert sich in die Azure Kubernetes Service (AKS) APIs, um neue GPU-Knoten zum AKS-Cluster hinzuzufügen.  
+> Hinweis: Der [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ist eine Open-Source-Komponente. Er kann durch andere Controller ersetzt werden, sofern diese die [Karpenter-core](https://sigs.k8s.io/karpenter) APIs unterstützen.
 
-## Übersichtsvideo 
-[Sehen Sie sich die Kaito-Demo an](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+## Übersichtsvideo  
+[Kaito Demo ansehen](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+
 ## Installation
 
-Bitte prüfen Sie die Installationsanleitung [hier](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Bitte beachten Sie die Installationsanleitung [hier](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Schnellstart
 
-Nach der Installation von Kaito können folgende Befehle ausprobiert werden, um einen Feintuning-Service zu starten.
+Nach der Installation von Kaito können folgende Befehle ausgeführt werden, um einen Feinabstimmungsdienst zu starten.
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -92,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-Der Status des Workspaces kann mit folgendem Befehl überprüft werden. Sobald die WORKSPACEREADY-Spalte den Wert `True` hat, wurde das Modell erfolgreich bereitgestellt.
+Der Status des Workspace kann mit folgendem Befehl überwacht werden. Sobald die Spalte WORKSPACEREADY auf `True` steht, wurde das Modell erfolgreich bereitgestellt.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -100,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Als Nächstes kann die Cluster-IP des Inferenzdienstes gefunden und ein temporärer `curl`-Pod verwendet werden, um den Dienstendpunkt im Cluster zu testen.
+Anschließend kann die Cluster-IP des Inferenzdienstes ermittelt und ein temporärer `curl`-Pod verwendet werden, um den Service-Endpunkt im Cluster zu testen.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -112,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Verwendung dieser Übersetzung entstehen.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-03-27T04:42:48+00:00",
-  "source_file": "code\\07.Lab\\RAG_with_PromptFlow_and_AISearch\\README.md",
+  "translation_date": "2025-05-07T10:14:35+00:00",
+  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "de"
 }
 -->
 ## RAG mit PromptFlow und AISearch
 
-In diesem Beispiel implementieren wir eine Retrieval Augmented Generation (RAG)-Anwendung, die Phi3 als SLM, AI Search als VectorDB und Prompt Flow als Low-Code-Orchestrator verwendet.
+In diesem Beispiel implementieren wir eine Retrieval Augmented Generation (RAG)-Anwendung, die Phi3 als SLM, AI Search als vectorDB und Prompt Flow als Low-Code-Orchestrator nutzt.
 
 ## Funktionen
 
@@ -21,19 +21,19 @@ In diesem Beispiel implementieren wir eine Retrieval Augmented Generation (RAG)-
 
 Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgenden Anforderungen erfüllen:
 
-- Docker ist auf Ihrem lokalen Rechner installiert.
+- Docker auf Ihrem lokalen Rechner installiert.
 - Ein Azure-Konto mit Berechtigungen zum Erstellen und Verwalten von Container-Ressourcen.
-- Instanzen von Azure AI Studio und Azure AI Search.
-- Ein Embedding-Modell zur Erstellung Ihres Index (entweder ein Azure OpenAI Embedding oder ein OS-Modell aus dem Katalog).
-- Python 3.8 oder höher ist auf Ihrem lokalen Rechner installiert.
-- Ein Azure Container Registry (oder ein beliebiges Registry Ihrer Wahl).
+- Eine Azure AI Studio- und Azure AI Search-Instanz.
+- Ein Einbettungsmodell zur Erstellung Ihres Index (kann entweder ein Azure OpenAI-Einbettungsmodell oder ein OS-Modell aus dem Katalog sein).
+- Python 3.8 oder höher auf Ihrem lokalen Rechner installiert.
+- Ein Azure Container Registry (oder ein beliebiges anderes Registry Ihrer Wahl).
 
 ## Installation
 
 1. Erstellen Sie einen neuen Flow in Ihrem Azure AI Studio-Projekt mit der Datei flow.yaml.
-2. Stellen Sie ein Phi3-Modell aus dem Azure AI-Modellkatalog bereit und verbinden Sie es mit Ihrem Projekt. [Phi-3 als Modell-as-a-Service bereitstellen](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
-3. Erstellen Sie den Vektorindex in Azure AI Search mit einem Dokument Ihrer Wahl. [Einen Vektorindex in Azure AI Search erstellen](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. Stellen Sie den Flow auf einem verwalteten Endpunkt bereit und nutzen Sie ihn in der Datei prompt-flow-frontend.py. [Einen Flow auf einem Online-Endpunkt bereitstellen](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+2. Stellen Sie ein Phi3-Modell aus Ihrem Azure AI-Modellkatalog bereit und verbinden Sie es mit Ihrem Projekt. [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
+3. Erstellen Sie den Vektorindex in Azure AI Search mit einem beliebigen Dokument Ihrer Wahl. [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
+4. Stellen Sie den Flow auf einem verwalteten Endpoint bereit und verwenden Sie ihn in der Datei prompt-flow-frontend.py. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
 5. Klonen Sie das Repository:
 
     ```sh
@@ -48,7 +48,7 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgenden Anforderungen erf
     docker build -t prompt-flow-frontend.py .
     ```
 
-7. Pushen Sie das Docker-Image in das Azure Container Registry:
+7. Pushen Sie das Docker-Image zum Azure Container Registry:
 
     ```sh
     az acr login --name yourregistry
@@ -66,13 +66,13 @@ Bevor Sie beginnen, stellen Sie sicher, dass Sie die folgenden Anforderungen erf
     docker run -p 8501:8501 yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-2. Greifen Sie über Ihren Browser auf die Anwendung unter `http://localhost:8501` zu.
+2. Greifen Sie im Browser auf die Anwendung unter `http://localhost:8501` zu.
 
 ## Kontakt
 
 Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148/)
 
-Vollständiger Artikel: [RAG mit Phi-3-Medium als Modell-as-a-Service aus dem Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
+Vollständiger Artikel: [RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache sollte als maßgebliche Quelle betrachtet werden. Für kritische Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die sich aus der Nutzung dieser Übersetzung ergeben.
+Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Originalsprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.

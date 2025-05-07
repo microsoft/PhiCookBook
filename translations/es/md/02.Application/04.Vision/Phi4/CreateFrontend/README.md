@@ -2,18 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-03-27T13:00:52+00:00",
-  "source_file": "md\\02.Application\\04.Vision\\Phi4\\CreateFrontend\\README.md",
+  "translation_date": "2025-05-07T10:59:57+00:00",
+  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "es"
 }
 -->
 ## **Usa Phi-4-multimodal para leer imágenes y generar código**
 
-Phi-4-multimodal tiene potentes capacidades para leer imágenes. Intentemos usar Python para implementar las siguientes funciones. La imagen es una página de ChatGPT. 
+Phi-4-multimodal tiene potentes capacidades para leer imágenes. Intentemos usar Python para implementar las siguientes funciones. La imagen es una página de ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.es.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.es.png)
 
-### **Código de Ejemplo**
+### **Código de ejemplo**
+
+
 
 ```python
 
@@ -65,5 +67,5 @@ print(response)
 
 ```
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Si bien nos esforzamos por lograr precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o imprecisiones. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
+**Aviso Legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas que puedan surgir del uso de esta traducción.
