@@ -1,31 +1,31 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7623679e8f69be39e2145094c05c00a8",
-  "translation_date": "2025-03-27T09:43:59+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-Evaluation_AIFoundry.md",
+  "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
+  "translation_date": "2025-05-07T14:20:48+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
   "language_code": "fa"
 }
 -->
 # ارزیابی مدل Fine-tuned Phi-3 / Phi-3.5 در Azure AI Foundry با تمرکز بر اصول مسئولانه هوش مصنوعی مایکروسافت
 
-این نمونه‌ی کامل بر اساس راهنمای "[ارزیابی مدل‌های Fine-tuned Phi-3 / 3.5 در Azure AI Foundry با تمرکز بر هوش مصنوعی مسئولانه مایکروسافت](https://techcommunity.microsoft.com/t5/educator-developer-blog/evaluate-fine-tuned-phi-3-3-5-models-in-azure-ai-studio-focusing/ba-p/4227850?WT.mc_id=aiml-137032-kinfeylo)" از جامعه‌ی فنی مایکروسافت نوشته شده است.
+این نمونه کامل (E2E) بر اساس راهنمای "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" از جامعه فناوری مایکروسافت است.
 
-## مروری کلی
+## مرور کلی
 
 ### چگونه می‌توانید ایمنی و عملکرد مدل Fine-tuned Phi-3 / Phi-3.5 را در Azure AI Foundry ارزیابی کنید؟
 
-گاهی اوقات، تنظیم دقیق یک مدل می‌تواند به پاسخ‌های ناخواسته یا نامطلوب منجر شود. برای اطمینان از اینکه مدل ایمن و مؤثر باقی می‌ماند، ارزیابی توانایی مدل در تولید محتوای مضر و توانایی آن در ارائه پاسخ‌های دقیق، مرتبط و منسجم ضروری است. در این آموزش، یاد خواهید گرفت که چگونه ایمنی و عملکرد مدل Fine-tuned Phi-3 / Phi-3.5 که با Prompt flow در Azure AI Foundry یکپارچه شده است را ارزیابی کنید.
+فاین‌تیون کردن مدل گاهی ممکن است به پاسخ‌های ناخواسته یا نامطلوب منجر شود. برای اطمینان از اینکه مدل ایمن و مؤثر باقی می‌ماند، مهم است که پتانسیل مدل برای تولید محتوای مضر و توانایی آن در ارائه پاسخ‌های دقیق، مرتبط و منسجم را ارزیابی کنید. در این آموزش، شما یاد می‌گیرید چگونه ایمنی و عملکرد مدل Fine-tuned Phi-3 / Phi-3.5 که با Prompt flow در Azure AI Foundry ادغام شده را ارزیابی کنید.
 
-این فرآیند ارزیابی در Azure AI Foundry است.
+فرآیند ارزیابی Azure AI Foundry به شرح زیر است.
 
-![معماری آموزش.](../../../../../../translated_images/architecture.99df2035c1c1a82e7f7d3aa3368e5940e46d27d35abd498166e55094298fce81.fa.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.fa.png)
 
-*منبع تصویر: [ارزیابی برنامه‌های هوش مصنوعی مولد](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*منبع تصویر: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
 >
-> برای اطلاعات بیشتر و منابع اضافی درباره Phi-3 / Phi-3.5، لطفاً به [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723) مراجعه کنید.
+> برای اطلاعات دقیق‌تر و دسترسی به منابع بیشتر درباره Phi-3 / Phi-3.5، لطفاً به [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723) مراجعه کنید.
 
 ### پیش‌نیازها
 
@@ -36,12 +36,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### فهرست مطالب
 
-1. [**سناریو ۱: مقدمه‌ای بر ارزیابی Prompt flow در Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**سناریو 1: معرفی ارزیابی Prompt flow در Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-    - [مقدمه‌ای بر ارزیابی ایمنی](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [مقدمه‌ای بر ارزیابی عملکرد](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [معرفی ارزیابی ایمنی](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [معرفی ارزیابی عملکرد](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. [**سناریو ۲: ارزیابی مدل Phi-3 / Phi-3.5 در Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. [**سناریو 2: ارزیابی مدل Phi-3 / Phi-3.5 در Azure AI Foundry**](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
     - [قبل از شروع](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [استقرار Azure OpenAI برای ارزیابی مدل Phi-3 / Phi-3.5](../../../../../../md/02.Application/01.TextAndChat/Phi3)
@@ -49,223 +49,223 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. [تبریک!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## **سناریو ۱: مقدمه‌ای بر ارزیابی Prompt flow در Azure AI Foundry**
+## **سناریو 1: معرفی ارزیابی Prompt flow در Azure AI Foundry**
 
-### مقدمه‌ای بر ارزیابی ایمنی
+### معرفی ارزیابی ایمنی
 
-برای اطمینان از اینکه مدل هوش مصنوعی شما اخلاقی و ایمن است، ارزیابی آن بر اساس اصول مسئولانه هوش مصنوعی مایکروسافت بسیار مهم است. در Azure AI Foundry، ارزیابی‌های ایمنی به شما امکان می‌دهد آسیب‌پذیری مدل خود در برابر حملات jailbreak و توانایی آن در تولید محتوای مضر را بررسی کنید، که این موارد به طور مستقیم با این اصول همسو هستند.
+برای اطمینان از اخلاقی و ایمن بودن مدل هوش مصنوعی شما، ارزیابی آن بر اساس اصول مسئولانه هوش مصنوعی مایکروسافت ضروری است. در Azure AI Foundry، ارزیابی‌های ایمنی به شما امکان می‌دهد آسیب‌پذیری مدل خود در برابر حملات jailbreak و پتانسیل آن برای تولید محتوای مضر را ارزیابی کنید که مستقیماً با این اصول هم‌راستا است.
 
-![ارزیابی ایمنی.](../../../../../../translated_images/safety-evaluation.91fdef98588aadf56e8043d04cd78d24aac1472d6c121a6289f60d50d1f33d42.fa.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.fa.png)
 
-*منبع تصویر: [ارزیابی برنامه‌های هوش مصنوعی مولد](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*منبع تصویر: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 #### اصول مسئولانه هوش مصنوعی مایکروسافت
 
-قبل از شروع مراحل فنی، درک اصول مسئولانه هوش مصنوعی مایکروسافت ضروری است. این چارچوب اخلاقی برای هدایت توسعه، استقرار و بهره‌برداری مسئولانه از سیستم‌های هوش مصنوعی طراحی شده است. این اصول راهنمای طراحی، توسعه و استقرار مسئولانه سیستم‌های هوش مصنوعی هستند، به گونه‌ای که تضمین کنند فناوری‌های هوش مصنوعی به صورت عادلانه، شفاف و فراگیر ساخته شده‌اند. این اصول پایه و اساس ارزیابی ایمنی مدل‌های هوش مصنوعی را تشکیل می‌دهند.
+قبل از شروع مراحل فنی، درک اصول مسئولانه هوش مصنوعی مایکروسافت ضروری است؛ چارچوب اخلاقی‌ای که برای هدایت توسعه، استقرار و عملیات مسئولانه سیستم‌های هوش مصنوعی طراحی شده است. این اصول طراحی، توسعه و استقرار مسئولانه سیستم‌های هوش مصنوعی را هدایت می‌کنند و تضمین می‌کنند که فناوری‌های هوش مصنوعی به شکلی عادلانه، شفاف و فراگیر ساخته شوند. این اصول پایه‌ای برای ارزیابی ایمنی مدل‌های هوش مصنوعی هستند.
 
 اصول مسئولانه هوش مصنوعی مایکروسافت شامل موارد زیر است:
 
-- **عدالت و فراگیری**: سیستم‌های هوش مصنوعی باید با همه به طور عادلانه رفتار کنند و از تأثیرگذاری متفاوت بر گروه‌های مشابه اجتناب کنند. برای مثال، وقتی سیستم‌های هوش مصنوعی در ارائه مشاوره‌های پزشکی، درخواست‌های وام یا استخدام مشارکت دارند، باید توصیه‌های مشابهی به افرادی که شرایط مشابهی دارند ارائه دهند.
+- **عدالت و فراگیری**: سیستم‌های هوش مصنوعی باید با همه به طور عادلانه رفتار کنند و از تأثیرگذاری متفاوت بر گروه‌های مشابه اجتناب کنند. برای مثال، وقتی سیستم‌های هوش مصنوعی راهنمایی‌هایی درباره درمان پزشکی، درخواست وام یا استخدام ارائه می‌دهند، باید به همه افرادی که علائم، شرایط مالی یا صلاحیت‌های حرفه‌ای مشابه دارند، توصیه‌های مشابهی بدهند.
 
-- **قابلیت اطمینان و ایمنی**: برای ایجاد اعتماد، بسیار مهم است که سیستم‌های هوش مصنوعی به طور قابل اعتماد، ایمن و مداوم عمل کنند. این سیستم‌ها باید بتوانند به همان صورتی که طراحی شده‌اند عمل کنند، به شرایط غیرمنتظره به صورت ایمن پاسخ دهند و در برابر دستکاری‌های مضر مقاومت کنند.
+- **قابلیت اطمینان و ایمنی**: برای ایجاد اعتماد، حیاتی است که سیستم‌های هوش مصنوعی به طور قابل اطمینان، ایمن و مداوم عمل کنند. این سیستم‌ها باید بتوانند همانطور که در ابتدا طراحی شده‌اند کار کنند، به شرایط پیش‌بینی نشده به صورت ایمن پاسخ دهند و در برابر دستکاری‌های مضر مقاومت کنند. رفتار آن‌ها و تنوع شرایطی که می‌توانند مدیریت کنند، بازتابی از دامنه موقعیت‌ها و شرایطی است که توسعه‌دهندگان در طول طراحی و آزمایش پیش‌بینی کرده‌اند.
 
-- **شفافیت**: وقتی سیستم‌های هوش مصنوعی در تصمیم‌گیری‌هایی که تأثیر زیادی بر زندگی افراد دارند کمک می‌کنند، بسیار مهم است که افراد بفهمند این تصمیمات چگونه گرفته شده‌اند.
+- **شفافیت**: وقتی سیستم‌های هوش مصنوعی به تصمیماتی کمک می‌کنند که تأثیرات زیادی بر زندگی مردم دارند، ضروری است که مردم بفهمند این تصمیمات چگونه گرفته شده‌اند. برای مثال، یک بانک ممکن است از سیستم هوش مصنوعی برای تعیین اعتبارسنجی فرد استفاده کند. یک شرکت ممکن است از سیستم هوش مصنوعی برای انتخاب واجدترین کاندیداها برای استخدام استفاده کند.
 
-- **حریم خصوصی و امنیت**: با افزایش استفاده از هوش مصنوعی، حفاظت از حریم خصوصی و امنیت اطلاعات شخصی و تجاری اهمیت بیشتری پیدا کرده است. با هوش مصنوعی، توجه دقیق به حریم خصوصی و امنیت داده‌ها ضروری است.
+- **حریم خصوصی و امنیت**: با گسترش هوش مصنوعی، حفاظت از حریم خصوصی و امنیت اطلاعات شخصی و تجاری اهمیت و پیچیدگی بیشتری پیدا کرده است. با هوش مصنوعی، حریم خصوصی و امنیت داده‌ها نیازمند توجه ویژه‌ای هستند زیرا دسترسی به داده‌ها برای سیستم‌های هوش مصنوعی ضروری است تا پیش‌بینی‌ها و تصمیمات دقیق و آگاهانه درباره افراد اتخاذ کنند.
 
-- **پاسخگویی**: افرادی که سیستم‌های هوش مصنوعی را طراحی و استقرار می‌دهند باید نسبت به عملکرد سیستم‌هایشان مسئول باشند. سازمان‌ها باید از استانداردهای صنعتی برای توسعه هنجارهای پاسخگویی استفاده کنند.
+- **پاسخگویی**: افرادی که سیستم‌های هوش مصنوعی را طراحی و پیاده‌سازی می‌کنند باید مسئول نحوه عملکرد سیستم‌های خود باشند. سازمان‌ها باید از استانداردهای صنعتی برای توسعه هنجارهای پاسخگویی استفاده کنند. این هنجارها می‌توانند تضمین کنند که سیستم‌های هوش مصنوعی مرجع نهایی هیچ تصمیمی که زندگی مردم را تحت تأثیر قرار می‌دهد نیستند و همچنین اطمینان دهند که انسان‌ها کنترل معناداری بر سیستم‌های هوش مصنوعی کاملاً خودکار دارند.
 
-![مرکز اصول مسئولانه.](../../../../../../translated_images/responsibleai2.93a32c6cd88ec3e57ec73a8c81717cd74ba27d2cd6d500097c82d79ac49726d7.fa.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.fa.png)
 
-*منبع تصویر: [هوش مصنوعی مسئولانه چیست؟](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
+*منبع تصویر: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
-> برای یادگیری بیشتر درباره اصول مسئولانه هوش مصنوعی مایکروسافت، به [هوش مصنوعی مسئولانه چیست؟](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723) مراجعه کنید.
+> برای کسب اطلاعات بیشتر درباره اصول مسئولانه هوش مصنوعی مایکروسافت، به [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723) مراجعه کنید.
 
 #### معیارهای ایمنی
 
-در این آموزش، ایمنی مدل Fine-tuned Phi-3 را با استفاده از معیارهای ایمنی Azure AI Foundry ارزیابی خواهید کرد. این معیارها به شما کمک می‌کنند تا توانایی مدل در تولید محتوای مضر و آسیب‌پذیری آن در برابر حملات jailbreak را بررسی کنید. معیارهای ایمنی شامل موارد زیر است:
+در این آموزش، ایمنی مدل Fine-tuned Phi-3 را با استفاده از معیارهای ایمنی Azure AI Foundry ارزیابی خواهید کرد. این معیارها به شما کمک می‌کنند تا پتانسیل مدل برای تولید محتوای مضر و آسیب‌پذیری آن در برابر حملات jailbreak را بسنجید. معیارهای ایمنی شامل موارد زیر است:
 
-- **محتوای مرتبط با آسیب به خود**: بررسی می‌کند که آیا مدل تمایل به تولید محتوای مرتبط با آسیب به خود دارد یا خیر.
-- **محتوای نفرت‌انگیز و ناعادلانه**: بررسی می‌کند که آیا مدل تمایل به تولید محتوای نفرت‌انگیز یا ناعادلانه دارد یا خیر.
-- **محتوای خشونت‌آمیز**: بررسی می‌کند که آیا مدل تمایل به تولید محتوای خشونت‌آمیز دارد یا خیر.
-- **محتوای جنسی**: بررسی می‌کند که آیا مدل تمایل به تولید محتوای نامناسب جنسی دارد یا خیر.
+- **محتوای مرتبط با خودآسیبی**: ارزیابی می‌کند که آیا مدل تمایل به تولید محتوای مرتبط با خودآسیبی دارد یا خیر.
+- **محتوای نفرت‌انگیز و ناعادلانه**: ارزیابی می‌کند که آیا مدل تمایل به تولید محتوای نفرت‌انگیز یا ناعادلانه دارد یا خیر.
+- **محتوای خشونت‌آمیز**: ارزیابی می‌کند که آیا مدل تمایل به تولید محتوای خشونت‌آمیز دارد یا خیر.
+- **محتوای جنسی**: ارزیابی می‌کند که آیا مدل تمایل به تولید محتوای جنسی نامناسب دارد یا خیر.
 
-ارزیابی این جنبه‌ها تضمین می‌کند که مدل هوش مصنوعی محتوای مضر یا توهین‌آمیز تولید نمی‌کند و با ارزش‌های اجتماعی و استانداردهای قانونی همسو است.
+ارزیابی این جنبه‌ها تضمین می‌کند که مدل هوش مصنوعی محتوای مضر یا توهین‌آمیز تولید نکند و با ارزش‌های اجتماعی و استانداردهای قانونی هم‌راستا باشد.
 
-![ارزیابی بر اساس ایمنی.](../../../../../../translated_images/evaluate-based-on-safety.3def6d9c7edaa49c536a7e58bfa48e2676fe911e80e847b732c0c9688c19946c.fa.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.fa.png)
 
-### مقدمه‌ای بر ارزیابی عملکرد
+### معرفی ارزیابی عملکرد
 
-برای اطمینان از اینکه مدل هوش مصنوعی شما همان‌طور که انتظار می‌رود عمل می‌کند، ارزیابی عملکرد آن بر اساس معیارهای عملکردی بسیار مهم است. در Azure AI Foundry، ارزیابی‌های عملکرد به شما امکان می‌دهند تا اثربخشی مدل خود را در تولید پاسخ‌های دقیق، مرتبط و منسجم بررسی کنید.
+برای اطمینان از اینکه مدل هوش مصنوعی شما مطابق انتظار عمل می‌کند، مهم است که عملکرد آن را بر اساس معیارهای عملکرد ارزیابی کنید. در Azure AI Foundry، ارزیابی‌های عملکرد به شما امکان می‌دهند اثربخشی مدل خود را در تولید پاسخ‌های دقیق، مرتبط و منسجم بسنجید.
 
-![ارزیابی ایمنی.](../../../../../../translated_images/performance-evaluation.692eccfdea40b8a399040a6304cfee03667b5a9a0636a7152565d806427ff6be.fa.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.fa.png)
 
-*منبع تصویر: [ارزیابی برنامه‌های هوش مصنوعی مولد](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*منبع تصویر: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 #### معیارهای عملکرد
 
-در این آموزش، عملکرد مدل Fine-tuned Phi-3 / Phi-3.5 را با استفاده از معیارهای عملکرد Azure AI Foundry ارزیابی خواهید کرد. این معیارها به شما کمک می‌کنند اثربخشی مدل را در تولید پاسخ‌های دقیق، مرتبط و منسجم بررسی کنید. معیارهای عملکرد شامل موارد زیر است:
+در این آموزش، عملکرد مدل Fine-tuned Phi-3 / Phi-3.5 را با استفاده از معیارهای عملکرد Azure AI Foundry ارزیابی خواهید کرد. این معیارها به شما کمک می‌کنند اثربخشی مدل را در تولید پاسخ‌های دقیق، مرتبط و منسجم بسنجید. معیارهای عملکرد شامل موارد زیر است:
 
-- **Groundedness**: ارزیابی می‌کند که پاسخ‌های تولید شده تا چه حد با اطلاعات منبع ورودی همسو هستند.
-- **Relevance**: مرتبط بودن پاسخ‌های تولید شده با سؤالات داده شده را بررسی می‌کند.
-- **Coherence**: بررسی می‌کند که متن تولید شده چقدر روان است، طبیعی خوانده می‌شود و شبیه زبان انسانی است.
-- **Fluency**: مهارت زبانی متن تولید شده را ارزیابی می‌کند.
-- **GPT Similarity**: پاسخ تولید شده را از نظر شباهت با پاسخ واقعی مقایسه می‌کند.
-- **F1 Score**: نسبت کلمات مشترک بین پاسخ تولید شده و داده‌های منبع را محاسبه می‌کند.
+- **مبنایی بودن**: ارزیابی می‌کند که پاسخ‌های تولید شده چقدر با اطلاعات منبع ورودی هم‌راستا هستند.
+- **مرتبط بودن**: میزان ارتباط پاسخ‌های تولید شده با سوالات داده شده را ارزیابی می‌کند.
+- **انسجام**: ارزیابی می‌کند که متن تولید شده چقدر روان، طبیعی و شبیه زبان انسانی است.
+- **روان بودن**: مهارت زبانی متن تولید شده را ارزیابی می‌کند.
+- **شباهت به GPT**: پاسخ تولید شده را با حقیقت زمینه برای سنجش شباهت مقایسه می‌کند.
+- **امتیاز F1**: نسبت کلمات مشترک بین پاسخ تولید شده و داده منبع را محاسبه می‌کند.
 
-این معیارها به شما کمک می‌کنند اثربخشی مدل در تولید پاسخ‌های دقیق، مرتبط و منسجم را ارزیابی کنید.
+این معیارها به شما کمک می‌کنند اثربخشی مدل را در تولید پاسخ‌های دقیق، مرتبط و منسجم بسنجید.
 
-![ارزیابی بر اساس عملکرد.](../../../../../../translated_images/evaluate-based-on-performance.16c477bfd4e547f34dd803492ce032fbdb3376a5dbd236042233e21e5b7f7f6a.fa.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.fa.png)
 
-## **سناریو ۲: ارزیابی مدل Phi-3 / Phi-3.5 در Azure AI Foundry**
+## **سناریو 2: ارزیابی مدل Phi-3 / Phi-3.5 در Azure AI Foundry**
 
 ### قبل از شروع
 
-این آموزش ادامه‌ی پست‌های قبلی وبلاگ است، "[Fine-Tune و ادغام مدل‌های سفارشی Phi-3 با Prompt Flow: راهنمای گام‌به‌گام](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" و "[Fine-Tune و ادغام مدل‌های سفارشی Phi-3 با Prompt Flow در Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." در این پست‌ها، فرآیند تنظیم دقیق مدل Phi-3 / Phi-3.5 در Azure AI Foundry و ادغام آن با Prompt flow شرح داده شده است.
+این آموزش ادامه پست‌های قبلی وبلاگ، "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" و "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" است. در این پست‌ها، فرآیند فاین‌تیون مدل Phi-3 / Phi-3.5 در Azure AI Foundry و ادغام آن با Prompt flow را مرور کردیم.
 
-در این آموزش، یک مدل Azure OpenAI را به عنوان ارزیاب در Azure AI Foundry مستقر خواهید کرد و از آن برای ارزیابی مدل Fine-tuned Phi-3 / Phi-3.5 خود استفاده خواهید کرد.
+در این آموزش، شما یک مدل Azure OpenAI را به عنوان ارزیاب در Azure AI Foundry مستقر می‌کنید و از آن برای ارزیابی مدل Fine-tuned Phi-3 / Phi-3.5 خود استفاده خواهید کرد.
 
-قبل از شروع این آموزش، مطمئن شوید که پیش‌نیازهای زیر را، همان‌طور که در آموزش‌های قبلی توضیح داده شده است، دارید:
+قبل از شروع این آموزش، مطمئن شوید که پیش‌نیازهای زیر را دارید، همانطور که در آموزش‌های قبلی توضیح داده شده است:
 
 1. یک مجموعه داده آماده برای ارزیابی مدل Fine-tuned Phi-3 / Phi-3.5.
-1. یک مدل Phi-3 / Phi-3.5 که تنظیم دقیق شده و در Azure Machine Learning مستقر شده است.
-1. یک Prompt flow که با مدل Fine-tuned Phi-3 / Phi-3.5 شما در Azure AI Foundry یکپارچه شده است.
+1. یک مدل Phi-3 / Phi-3.5 که فاین‌تیون شده و در Azure Machine Learning مستقر شده است.
+1. یک Prompt flow که با مدل Fine-tuned Phi-3 / Phi-3.5 شما در Azure AI Foundry ادغام شده است.
 
 > [!NOTE]
-> از فایل *test_data.jsonl*، که در پوشه‌ی داده از مجموعه داده‌ی **ULTRACHAT_200k** دانلود شده در پست‌های وبلاگ قبلی قرار دارد، به عنوان مجموعه داده برای ارزیابی مدل Fine-tuned Phi-3 / Phi-3.5 استفاده خواهید کرد.
+> شما از فایل *test_data.jsonl* که در پوشه داده‌ها از مجموعه داده **ULTRACHAT_200k** دانلود شده در پست‌های قبلی وبلاگ قرار دارد، به عنوان مجموعه داده برای ارزیابی مدل Fine-tuned Phi-3 / Phi-3.5 استفاده خواهید کرد.
 
-#### ادغام مدل سفارشی Phi-3 / Phi-3.5 با Prompt flow در Azure AI Foundry (رویکرد کدنویسی)
+#### ادغام مدل سفارشی Phi-3 / Phi-3.5 با Prompt flow در Azure AI Foundry (رویکرد کد اول)
 
 > [!NOTE]
-> اگر رویکرد کم‌کدنویسی که در "[Fine-Tune و ادغام مدل‌های سفارشی Phi-3 با Prompt Flow در Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" شرح داده شده است را دنبال کرده‌اید، می‌توانید این بخش را رد کرده و به بخش بعدی بروید.
-> با این حال، اگر رویکرد کدنویسی که در "[Fine-Tune و ادغام مدل‌های سفارشی Phi-3 با Prompt Flow: راهنمای گام‌به‌گام](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" توضیح داده شده است را دنبال کرده‌اید، فرآیند اتصال مدل به Prompt flow کمی متفاوت است. در این بخش این فرآیند را خواهید آموخت.
+> اگر رویکرد کم‌کد که در "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" توضیح داده شده را دنبال کرده‌اید، می‌توانید این تمرین را رد کنید و به تمرین بعدی بروید.
+> با این حال، اگر رویکرد کد اول که در "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" توضیح داده شده را برای فاین‌تیون و استقرار مدل Phi-3 / Phi-3.5 خود دنبال کرده‌اید، فرآیند اتصال مدل به Prompt flow کمی متفاوت است. شما این فرآیند را در این تمرین یاد خواهید گرفت.
 
 برای ادامه، باید مدل Fine-tuned Phi-3 / Phi-3.5 خود را در Prompt flow در Azure AI Foundry ادغام کنید.
 
-#### ایجاد هاب در Azure AI Foundry
+#### ایجاد Azure AI Foundry Hub
 
-قبل از ایجاد پروژه، باید یک هاب ایجاد کنید. هاب شبیه یک گروه منابع عمل می‌کند و به شما امکان می‌دهد چندین پروژه را در Azure AI Foundry سازماندهی و مدیریت کنید.
+قبل از ایجاد پروژه، باید یک Hub ایجاد کنید. Hub مانند Resource Group عمل می‌کند و به شما امکان می‌دهد چندین پروژه را در Azure AI Foundry سازماندهی و مدیریت کنید.
 
 1. وارد [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) شوید.
 
-1. از منوی سمت چپ، **All hubs** را انتخاب کنید.
+1. از تب سمت چپ، **All hubs** را انتخاب کنید.
 
 1. از منوی ناوبری، **+ New hub** را انتخاب کنید.
 
-    ![ایجاد هاب.](../../../../../../translated_images/create-hub.1e304b20eb7e729735ac1c083fbaf6c02be763279b86af2540e8a001f2bf470b.fa.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.fa.png)
 
 1. کارهای زیر را انجام دهید:
 
-    - **نام هاب** را وارد کنید. باید یک مقدار منحصربه‌فرد باشد.
-    - **اشتراک Azure** خود را انتخاب کنید.
-    - **گروه منابع** مورد نظر را انتخاب کنید (در صورت نیاز یک گروه جدید ایجاد کنید).
-    - **مکان** مورد نظر را انتخاب کنید.
-    - **اتصال به خدمات Azure AI** را انتخاب کنید (در صورت نیاز یک مورد جدید ایجاد کنید).
-    - **اتصال به Azure AI Search** را انتخاب کرده و **Skip connecting** را بزنید.
-![پر کردن هاب.](../../../../../../translated_images/fill-hub.bb8b648703e968da13d123e40a6fc76f2193f6c6b432d24036d2aa9e823ee813.fa.png)
+    - نام **Hub** را وارد کنید. باید یک مقدار یکتا باشد.
+    - اشتراک Azure خود را انتخاب کنید.
+    - گروه منابع (**Resource group**) مورد استفاده را انتخاب کنید (در صورت نیاز یک گروه جدید ایجاد کنید).
+    - مکان (**Location**) مورد نظر خود را انتخاب کنید.
+    - **Connect Azure AI Services** مورد استفاده را انتخاب کنید (در صورت نیاز یک مورد جدید ایجاد کنید).
+    - برای **Connect Azure AI Search** گزینه **Skip connecting** را انتخاب کنید.
+![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.fa.png)
 
-1. **بعدی** را انتخاب کنید.
+1. گزینه **Next** را انتخاب کنید.
 
 #### ایجاد پروژه Azure AI Foundry
 
-1. در هابی که ایجاد کرده‌اید، از تب سمت چپ **همه پروژه‌ها** را انتخاب کنید.
+1. در هابی که ایجاد کرده‌اید، از تب سمت چپ گزینه **All projects** را انتخاب کنید.
 
-1. از منوی ناوبری **+ پروژه جدید** را انتخاب کنید.
+1. از منوی ناوبری گزینه **+ New project** را انتخاب کنید.
 
-   ![انتخاب پروژه جدید.](../../../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.fa.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.fa.png)
 
-1. **نام پروژه** را وارد کنید. این نام باید یکتا باشد.
+1. نام پروژه (**Project name**) را وارد کنید. این نام باید منحصر به فرد باشد.
 
-   ![ایجاد پروژه.](../../../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.fa.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.fa.png)
 
-1. **ایجاد پروژه** را انتخاب کنید.
+1. گزینه **Create a project** را انتخاب کنید.
 
-#### اضافه کردن یک اتصال سفارشی برای مدل بهینه‌شده Phi-3 / Phi-3.5
+#### افزودن اتصال سفارشی برای مدل تنظیم‌شده Phi-3 / Phi-3.5
 
-برای ادغام مدل سفارشی Phi-3 / Phi-3.5 خود با Prompt flow، باید نقطه پایانی و کلید مدل را در یک اتصال سفارشی ذخیره کنید. این تنظیم دسترسی به مدل سفارشی شما را در Prompt flow تضمین می‌کند.
+برای ادغام مدل سفارشی Phi-3 / Phi-3.5 خود با Prompt flow، باید نقطه انتهایی و کلید مدل را در یک اتصال سفارشی ذخیره کنید. این تنظیم تضمین می‌کند که به مدل سفارشی Phi-3 / Phi-3.5 خود در Prompt flow دسترسی داشته باشید.
 
-#### تنظیم کلید API و URI نقطه پایانی مدل بهینه‌شده Phi-3 / Phi-3.5
+#### تنظیم api key و endpoint uri مدل تنظیم‌شده Phi-3 / Phi-3.5
 
 1. به [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) مراجعه کنید.
 
-1. به فضای کاری یادگیری ماشین Azure که ایجاد کرده‌اید بروید.
+1. به فضای کاری Azure Machine learning که ایجاد کرده‌اید، بروید.
 
-1. از تب سمت چپ **Endpoints** را انتخاب کنید.
+1. از تب سمت چپ گزینه **Endpoints** را انتخاب کنید.
 
-   ![انتخاب نقاط پایانی.](../../../../../../translated_images/select-endpoints.fc2852aa73fdb1531682b599c0b1f5b39a842f0a60fec7c8e941b3070ec6c463.fa.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.fa.png)
 
-1. نقطه پایانی که ایجاد کرده‌اید را انتخاب کنید.
+1. نقطه انتهایی که ایجاد کرده‌اید را انتخاب کنید.
 
-   ![انتخاب نقاط پایانی ایجاد شده.](../../../../../../translated_images/select-endpoint-created.e1cd34ec8ae5a3eca599be7c894b0738e243317960138984b32d8a3fe20f4380.fa.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.fa.png)
 
-1. از منوی ناوبری **Consume** را انتخاب کنید.
+1. از منوی ناوبری گزینه **Consume** را انتخاب کنید.
 
-1. **نقطه پایانی REST** و **کلید اصلی** خود را کپی کنید.
+1. **REST endpoint** و **Primary key** خود را کپی کنید.
 
-   ![کپی کردن کلید API و URI نقطه پایانی.](../../../../../../translated_images/copy-endpoint-key.f74d8aab513b5f540d2a219198fc5b7a3e64213497491bedb17f4bd039f16054.fa.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.fa.png)
 
-#### اضافه کردن اتصال سفارشی
+#### افزودن اتصال سفارشی
 
 1. به [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) مراجعه کنید.
 
-1. به پروژه Azure AI Foundry که ایجاد کرده‌اید بروید.
+1. به پروژه Azure AI Foundry که ایجاد کرده‌اید، بروید.
 
-1. در پروژه‌ای که ایجاد کرده‌اید، از تب سمت چپ **تنظیمات** را انتخاب کنید.
+1. در پروژه‌ای که ایجاد کرده‌اید، از تب سمت چپ گزینه **Settings** را انتخاب کنید.
 
-1. **+ اتصال جدید** را انتخاب کنید.
+1. گزینه **+ New connection** را انتخاب کنید.
 
-   ![انتخاب اتصال جدید.](../../../../../../translated_images/select-new-connection.7ac97b4db6dc44c3d4f01a38b22fff11c3e88f75bcbf4d26999048a61a8729b2.fa.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.fa.png)
 
-1. از منوی ناوبری **کلیدهای سفارشی** را انتخاب کنید.
+1. از منوی ناوبری گزینه **Custom keys** را انتخاب کنید.
 
-   ![انتخاب کلیدهای سفارشی.](../../../../../../translated_images/select-custom-keys.b2e452da9ea19401c4b7c63fe2ec95a3a38fd13ae3e9fca37d431f0b7780d4da.fa.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.fa.png)
 
-1. وظایف زیر را انجام دهید:
+1. کارهای زیر را انجام دهید:
 
-   - **+ افزودن جفت‌های کلید و مقدار** را انتخاب کنید.
-   - برای نام کلید، **endpoint** را وارد کنید و نقطه پایانی که از Azure ML Studio کپی کرده‌اید را در قسمت مقدار جای‌گذاری کنید.
-   - دوباره **+ افزودن جفت‌های کلید و مقدار** را انتخاب کنید.
-   - برای نام کلید، **key** را وارد کنید و کلیدی که از Azure ML Studio کپی کرده‌اید را در قسمت مقدار جای‌گذاری کنید.
-   - پس از افزودن کلیدها، **is secret** را انتخاب کنید تا از نمایش کلید جلوگیری شود.
+    - گزینه **+ Add key value pairs** را انتخاب کنید.
+    - برای نام کلید، **endpoint** را وارد کنید و نقطه انتهایی که از Azure ML Studio کپی کرده‌اید را در فیلد مقدار وارد کنید.
+    - دوباره گزینه **+ Add key value pairs** را انتخاب کنید.
+    - برای نام کلید، **key** را وارد کنید و کلیدی که از Azure ML Studio کپی کرده‌اید را در فیلد مقدار وارد کنید.
+    - پس از افزودن کلیدها، گزینه **is secret** را انتخاب کنید تا کلیدها مخفی بمانند.
 
-   ![افزودن اتصال.](../../../../../../translated_images/add-connection.645b0c3ecf4a21f97a16ffafc9f25fedbb75a823cec5fc9dd778c3ab6130b4f0.fa.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.fa.png)
 
-1. **افزودن اتصال** را انتخاب کنید.
+1. گزینه **Add connection** را انتخاب کنید.
 
 #### ایجاد Prompt flow
 
-شما یک اتصال سفارشی در Azure AI Foundry اضافه کرده‌اید. حالا، بیایید با استفاده از مراحل زیر یک Prompt flow ایجاد کنیم. سپس این Prompt flow را به اتصال سفارشی متصل می‌کنید تا از مدل بهینه‌شده در Prompt flow استفاده کنید.
+شما یک اتصال سفارشی در Azure AI Foundry اضافه کرده‌اید. حالا بیایید با استفاده از مراحل زیر یک Prompt flow ایجاد کنیم. سپس این Prompt flow را به اتصال سفارشی متصل خواهید کرد تا بتوانید از مدل تنظیم‌شده در داخل Prompt flow استفاده کنید.
 
 1. به پروژه Azure AI Foundry که ایجاد کرده‌اید بروید.
 
-1. از تب سمت چپ **Prompt flow** را انتخاب کنید.
+1. از تب سمت چپ گزینه **Prompt flow** را انتخاب کنید.
 
-1. از منوی ناوبری **+ ایجاد** را انتخاب کنید.
+1. از منوی ناوبری گزینه **+ Create** را انتخاب کنید.
 
-   ![انتخاب Promptflow.](../../../../../../translated_images/select-promptflow.4d42246677cc7ba65feb3e2be4479620a2b1e6637a66847dc1047ca89cd02780.fa.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.fa.png)
 
-1. از منوی ناوبری **Chat flow** را انتخاب کنید.
+1. از منوی ناوبری گزینه **Chat flow** را انتخاب کنید.
 
-   ![انتخاب چت فلو.](../../../../../../translated_images/select-flow-type.e818b610f36e93c5c9741911d7b95232164f01486cbb39a29d748c322bd62038.fa.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.fa.png)
 
-1. **نام پوشه** موردنظر خود را وارد کنید.
+1. نام پوشه (**Folder name**) را وارد کنید.
 
-   ![انتخاب چت فلو.](../../../../../../translated_images/enter-name.628d4a5d69122cfae9d66e9bccf0f2f38c595e90e456a3837c713aadeff6aa52.fa.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.fa.png)
 
-1. **ایجاد** را انتخاب کنید.
+1. گزینه **Create** را انتخاب کنید.
 
-#### تنظیم Prompt flow برای چت با مدل سفارشی Phi-3 / Phi-3.5
+#### راه‌اندازی Prompt flow برای گفتگو با مدل سفارشی Phi-3 / Phi-3.5
 
-برای ادغام مدل بهینه‌شده Phi-3 / Phi-3.5 در یک Prompt flow، باید Prompt flow موجود را بازطراحی کنید، زیرا Prompt flow فعلی برای این هدف طراحی نشده است.
+شما باید مدل تنظیم‌شده Phi-3 / Phi-3.5 را در یک Prompt flow ادغام کنید. با این حال، Prompt flow موجود برای این منظور طراحی نشده است. بنابراین باید Prompt flow را بازطراحی کنید تا امکان ادغام مدل سفارشی فراهم شود.
 
-1. در Prompt flow، وظایف زیر را برای بازسازی جریان موجود انجام دهید:
+1. در Prompt flow، کارهای زیر را برای بازسازی جریان موجود انجام دهید:
 
-   - **حالت فایل خام** را انتخاب کنید.
-   - تمام کدهای موجود در فایل *flow.dag.yml* را حذف کنید.
-   - کد زیر را به *flow.dag.yml* اضافه کنید:
+    - گزینه **Raw file mode** را انتخاب کنید.
+    - تمام کد موجود در فایل *flow.dag.yml* را حذف کنید.
+    - کد زیر را به *flow.dag.yml* اضافه کنید.
 
-       ```yml
+        ```yml
         inputs:
           input_data:
             type: string
@@ -286,13 +286,13 @@ CO_OP_TRANSLATOR_METADATA:
             input_data: ${inputs.input_data}
         ```
 
-   - **ذخیره** را انتخاب کنید.
+    - گزینه **Save** را انتخاب کنید.
 
-   ![انتخاب حالت فایل خام.](../../../../../../translated_images/select-raw-file-mode.e665df3117bf5411acf4d93bc8ecc405a984120c0ca7b944fe700601fdbac66f.fa.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.fa.png)
 
-1. کد زیر را به *integrate_with_promptflow.py* اضافه کنید تا از مدل سفارشی Phi-3 / Phi-3.5 در Prompt flow استفاده شود.
+1. کد زیر را به *integrate_with_promptflow.py* اضافه کنید تا از مدل سفارشی Phi-3 / Phi-3.5 در Prompt flow استفاده کنید.
 
-   ```python
+    ```python
     import logging
     import requests
     from promptflow import tool
@@ -351,47 +351,47 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-   ![جای‌گذاری کد Prompt flow.](../../../../../../translated_images/paste-promptflow-code.8547c46c57a5354667f91578d7bca9cc2d0f5e1c4dadd59efa1ca18d6376e7a8.fa.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.fa.png)
 
-> [!NOTE]  
-> برای اطلاعات بیشتر درباره استفاده از Prompt flow در Azure AI Foundry، می‌توانید به [Prompt flow در Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) مراجعه کنید.
+> [!NOTE]
+> برای اطلاعات دقیق‌تر درباره استفاده از Prompt flow در Azure AI Foundry، می‌توانید به [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) مراجعه کنید.
 
-1. **ورودی چت** و **خروجی چت** را انتخاب کنید تا چت با مدل شما فعال شود.
+1. گزینه‌های **Chat input** و **Chat output** را برای فعال کردن گفتگو با مدل خود انتخاب کنید.
 
-   ![انتخاب ورودی و خروجی.](../../../../../../translated_images/select-input-output.4d094b2da9e817e0ef7b9fd5339d929b50364b430ecc476a39c885ae9e4dcb35.fa.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.fa.png)
 
-1. حالا آماده‌اید با مدل سفارشی Phi-3 / Phi-3.5 خود چت کنید. در تمرین بعدی، یاد می‌گیرید چگونه Prompt flow را شروع کرده و از آن برای چت با مدل بهینه‌شده خود استفاده کنید.
+1. حالا آماده‌اید تا با مدل سفارشی Phi-3 / Phi-3.5 خود گفتگو کنید. در تمرین بعدی، یاد خواهید گرفت چگونه Prompt flow را راه‌اندازی کنید و از آن برای گفتگو با مدل تنظیم‌شده استفاده کنید.
 
-> [!NOTE]  
->  
-> جریان بازسازی‌شده باید شبیه تصویر زیر باشد:  
->  
-> ![مثال جریان](../../../../../../translated_images/graph-example.55ee258e205e3b686250c5fc480ffe8956eb9f4887f7b11e94a6720e0d032733.fa.png)  
+> [!NOTE]
+>
+> جریان بازسازی‌شده باید مشابه تصویر زیر باشد:
+>
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.fa.png)
 >
 
 #### شروع Prompt flow
 
-1. **شروع جلسات محاسباتی** را انتخاب کنید تا Prompt flow را شروع کنید.
+1. گزینه **Start compute sessions** را برای شروع Prompt flow انتخاب کنید.
 
-   ![شروع جلسه محاسباتی.](../../../../../../translated_images/start-compute-session.e7eb268344e2040fdee7b46a175d2fbd19477e0ab122ef563113828d03b03946.fa.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.fa.png)
 
-1. **اعتبارسنجی و تجزیه ورودی** را انتخاب کنید تا پارامترها تجدید شوند.
+1. گزینه **Validate and parse input** را برای به‌روزرسانی پارامترها انتخاب کنید.
 
-   ![اعتبارسنجی ورودی.](../../../../../../translated_images/validate-input.dffb16c78fc266e52d55582791d67a54d631c166a61d7ca57a258e00c2e14150.fa.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.fa.png)
 
-1. **مقدار** اتصال به اتصال سفارشی که ایجاد کرده‌اید را انتخاب کنید. به‌عنوان مثال، *connection*.
+1. مقدار **connection** را به اتصال سفارشی که ایجاد کرده‌اید تنظیم کنید. برای مثال، *connection*.
 
-   ![اتصال.](../../../../../../translated_images/select-connection.5c7a570da52e12219d21fef02800b152d124722619f56064b172a84721603b52.fa.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.fa.png)
 
-#### چت با مدل سفارشی Phi-3 / Phi-3.5
+#### گفتگو با مدل سفارشی Phi-3 / Phi-3.5
 
-1. **چت** را انتخاب کنید.
+1. گزینه **Chat** را انتخاب کنید.
 
-   ![انتخاب چت.](../../../../../../translated_images/select-chat.c255a13f678aa46d9601c54a81aa2e0d58c9e01a8c6ec7d86598438d8e19214d.fa.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.fa.png)
 
-1. اینجا یک مثال از نتایج آورده شده است: حالا می‌توانید با مدل سفارشی Phi-3 / Phi-3.5 خود چت کنید. پیشنهاد می‌شود سوالاتی را براساس داده‌هایی که برای بهینه‌سازی استفاده شده‌اند بپرسید.
+1. این یک نمونه از نتایج است: اکنون می‌توانید با مدل سفارشی Phi-3 / Phi-3.5 خود گفتگو کنید. توصیه می‌شود سوالات خود را بر اساس داده‌های استفاده‌شده برای تنظیم دقیق مطرح کنید.
 
-   ![چت با Prompt flow.](../../../../../../translated_images/chat-with-promptflow.6da5e838c71f428b6d8aea9a0c655568354ae82babcdc87cd0f0d4edeee9d930.fa.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.fa.png)
 
 ### استقرار Azure OpenAI برای ارزیابی مدل Phi-3 / Phi-3.5
 
@@ -403,23 +403,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. به پروژه Azure AI Foundry که ایجاد کرده‌اید بروید.
 
-   ![انتخاب پروژه.](../../../../../../translated_images/select-project-created.84d119464c1bb0a8f5f9ab58012fa88304b0e3b0d6ddda444617424b2bb0d22e.fa.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.fa.png)
 
-1. در پروژه‌ای که ایجاد کرده‌اید، از تب سمت چپ **استقرارها** را انتخاب کنید.
+1. در پروژه‌ای که ایجاد کرده‌اید، از تب سمت چپ گزینه **Deployments** را انتخاب کنید.
 
-1. از منوی ناوبری **+ استقرار مدل** را انتخاب کنید.
+1. از منوی ناوبری گزینه **+ Deploy model** را انتخاب کنید.
 
-1. **استقرار مدل پایه** را انتخاب کنید.
+1. گزینه **Deploy base model** را انتخاب کنید.
 
-   ![انتخاب استقرارها.](../../../../../../translated_images/deploy-openai-model.91e6d9f9934e0e0c63116bd81a7628ea5ab37617f3e3b23a998a37c7f5aaba8b.fa.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.fa.png)
 
-1. مدلی از Azure OpenAI که می‌خواهید استفاده کنید را انتخاب کنید. به‌عنوان مثال، **gpt-4o**.
+1. مدل Azure OpenAI که می‌خواهید استفاده کنید را انتخاب کنید. برای مثال، **gpt-4o**.
 
-   ![انتخاب مدل Azure OpenAI که می‌خواهید استفاده کنید.](../../../../../../translated_images/select-openai-model.c0f0e8d4afe80525745b4e67b52ae0d23550da9130bc8d1aea8160be0e261399.fa.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.fa.png)
 
-1. **تأیید** را انتخاب کنید.
+1. گزینه **Confirm** را انتخاب کنید.
 
-### ارزیابی مدل بهینه‌شده Phi-3 / Phi-3.5 با استفاده از ارزیابی Prompt flow در Azure AI Foundry
+### ارزیابی مدل تنظیم‌شده Phi-3 / Phi-3.5 با استفاده از ارزیابی Prompt flow در Azure AI Foundry
 
 ### شروع یک ارزیابی جدید
 
@@ -427,98 +427,98 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. به پروژه Azure AI Foundry که ایجاد کرده‌اید بروید.
 
-   ![انتخاب پروژه.](../../../../../../translated_images/select-project-created.84d119464c1bb0a8f5f9ab58012fa88304b0e3b0d6ddda444617424b2bb0d22e.fa.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.fa.png)
 
-1. در پروژه‌ای که ایجاد کرده‌اید، از تب سمت چپ **ارزیابی** را انتخاب کنید.
+1. در پروژه‌ای که ایجاد کرده‌اید، از تب سمت چپ گزینه **Evaluation** را انتخاب کنید.
 
-1. از منوی ناوبری **+ ارزیابی جدید** را انتخاب کنید.
-![انتخاب ارزیابی.](../../../../../../translated_images/select-evaluation.00ce489c57544e735170ae63682b293c3f5e362ded9d62b602ff0cf8e957287c.fa.png)
+1. از منوی ناوبری گزینه **+ New evaluation** را انتخاب کنید.
+![انتخاب ارزیابی.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.fa.png)
 
-1. **Prompt flow** ارزیابی را انتخاب کنید.
+1. ارزیابی **Prompt flow** را انتخاب کنید.
 
-   ![انتخاب ارزیابی Prompt flow.](../../../../../../translated_images/promptflow-evaluation.350729f9e70f59110aa0b425adcdf00b2d5382066144ac1cdf265fa1884808b2.fa.png)
-
-1. کارهای زیر را انجام دهید:
-
-   - نام ارزیابی را وارد کنید. این مقدار باید یکتا باشد.
-   - **پرسش و پاسخ بدون متن** را به عنوان نوع وظیفه انتخاب کنید. زیرا مجموعه داده **ULTRACHAT_200k** که در این آموزش استفاده می‌شود، متن ندارد.
-   - Prompt flow موردنظر برای ارزیابی را انتخاب کنید.
-
-   ![ارزیابی Prompt flow.](../../../../../../translated_images/evaluation-setting1.772ca4e86a27e9c37d627e36c84c07b363a5d5229724f15596599d6b0f1d4ca1.fa.png)
-
-1. **Next** را انتخاب کنید.
+    ![انتخاب ارزیابی Prompt flow.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.fa.png)
 
 1. کارهای زیر را انجام دهید:
 
-   - **Add your dataset** را انتخاب کنید تا مجموعه داده را آپلود کنید. به عنوان مثال، می‌توانید فایل مجموعه داده تست، مانند *test_data.json1*، را که هنگام دانلود مجموعه داده **ULTRACHAT_200k** همراه است، آپلود کنید.
-   - ستون مناسب مجموعه داده را که با مجموعه داده شما مطابقت دارد، انتخاب کنید. به عنوان مثال، اگر از مجموعه داده **ULTRACHAT_200k** استفاده می‌کنید، **${data.prompt}** را به عنوان ستون مجموعه داده انتخاب کنید.
+    - نام ارزیابی را وارد کنید. باید یک مقدار منحصر به فرد باشد.
+    - نوع کار را **Question and answer without context** انتخاب کنید. زیرا داده‌های **UlTRACHAT_200k** که در این آموزش استفاده شده‌اند، شامل زمینه نیستند.
+    - جریان پرامپتی را که می‌خواهید ارزیابی کنید، انتخاب کنید.
 
-   ![ارزیابی Prompt flow.](../../../../../../translated_images/evaluation-setting2.074e573f2ab245d37b12a9057b8fef349a552962f1ec3b23fd09734d4d653752.fa.png)
+    ![ارزیابی Prompt flow.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.fa.png)
 
-1. **Next** را انتخاب کنید.
+1. روی **Next** کلیک کنید.
 
-1. کارهای زیر را برای تنظیم معیارهای عملکرد و کیفیت انجام دهید:
+1. کارهای زیر را انجام دهید:
 
-   - معیارهای عملکرد و کیفیت موردنظر خود را انتخاب کنید.
-   - مدل Azure OpenAI که برای ارزیابی ایجاد کرده‌اید را انتخاب کنید. به عنوان مثال، **gpt-4o** را انتخاب کنید.
+    - برای بارگذاری داده‌ها، **Add your dataset** را انتخاب کنید. به عنوان مثال، می‌توانید فایل داده آزمایشی مانند *test_data.json1* را که هنگام دانلود مجموعه داده **ULTRACHAT_200k** همراه آن است، بارگذاری کنید.
+    - ستون مناسب **Dataset column** را که با داده‌های شما مطابقت دارد، انتخاب کنید. به عنوان مثال، اگر از مجموعه داده **ULTRACHAT_200k** استفاده می‌کنید، **${data.prompt}** را به عنوان ستون داده انتخاب کنید.
 
-   ![ارزیابی Prompt flow.](../../../../../../translated_images/evaluation-setting3-1.7e26ae563c1312db5d1d21f8f44652243627f487df036ba27fe58d181102300d.fa.png)
+    ![ارزیابی Prompt flow.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.fa.png)
 
-1. کارهای زیر را برای تنظیم معیارهای ریسک و ایمنی انجام دهید:
+1. روی **Next** کلیک کنید.
 
-   - معیارهای ریسک و ایمنی موردنظر خود را انتخاب کنید.
-   - آستانه‌ای را برای محاسبه نرخ نقص انتخاب کنید. به عنوان مثال، **Medium** را انتخاب کنید.
-   - برای **question**، **Data source** را به **{$data.prompt}** تنظیم کنید.
-   - برای **answer**، **Data source** را به **{$run.outputs.answer}** تنظیم کنید.
-   - برای **ground_truth**، **Data source** را به **{$data.message}** تنظیم کنید.
+1. برای پیکربندی معیارهای عملکرد و کیفیت، کارهای زیر را انجام دهید:
 
-   ![ارزیابی Prompt flow.](../../../../../../translated_images/evaluation-setting3-2.185148a456f1edb7d0db874f765dc6bc34fec7e1b00833be81b0428af6d18233.fa.png)
+    - معیارهای عملکرد و کیفیت مورد نظر خود را انتخاب کنید.
+    - مدل Azure OpenAI که برای ارزیابی ساخته‌اید را انتخاب کنید. به عنوان مثال، **gpt-4o** را انتخاب کنید.
 
-1. **Next** را انتخاب کنید.
+    ![ارزیابی Prompt flow.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.fa.png)
 
-1. **Submit** را انتخاب کنید تا ارزیابی شروع شود.
+1. برای پیکربندی معیارهای ریسک و ایمنی، کارهای زیر را انجام دهید:
 
-1. ارزیابی مدتی زمان می‌برد تا کامل شود. می‌توانید پیشرفت را در تب **Evaluation** مشاهده کنید.
+    - معیارهای ریسک و ایمنی مورد نظر خود را انتخاب کنید.
+    - آستانه‌ای که برای محاسبه نرخ خطا می‌خواهید استفاده کنید را انتخاب کنید. به عنوان مثال، **Medium** را انتخاب کنید.
+    - برای **question**، منبع داده را روی **{$data.prompt}** تنظیم کنید.
+    - برای **answer**، منبع داده را روی **{$run.outputs.answer}** تنظیم کنید.
+    - برای **ground_truth**، منبع داده را روی **{$data.message}** تنظیم کنید.
+
+    ![ارزیابی Prompt flow.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.fa.png)
+
+1. روی **Next** کلیک کنید.
+
+1. برای شروع ارزیابی، روی **Submit** کلیک کنید.
+
+1. ارزیابی مدتی طول می‌کشد تا کامل شود. می‌توانید پیشرفت را در تب **Evaluation** دنبال کنید.
 
 ### مرور نتایج ارزیابی
 
 > [!NOTE]
-> نتایج ارائه‌شده در زیر برای نمایش فرآیند ارزیابی است. در این آموزش، از مدلی که بر روی مجموعه داده کوچکی تنظیم شده است، استفاده شده، که ممکن است منجر به نتایج بهینه‌نشده شود. نتایج واقعی ممکن است بسته به اندازه، کیفیت و تنوع مجموعه داده استفاده‌شده و همچنین پیکربندی خاص مدل، به‌طور قابل‌توجهی متفاوت باشد.
+> نتایج ارائه شده در زیر برای نشان دادن روند ارزیابی است. در این آموزش، از مدلی استفاده شده که روی مجموعه داده نسبتاً کوچکی آموزش دیده است، که ممکن است به نتایج بهینه نرسد. نتایج واقعی ممکن است بسته به اندازه، کیفیت و تنوع داده‌های استفاده شده و همچنین پیکربندی خاص مدل به طور قابل توجهی متفاوت باشد.
 
-پس از اتمام ارزیابی، می‌توانید نتایج را برای هر دو معیار عملکرد و ایمنی مرور کنید.
+پس از پایان ارزیابی، می‌توانید نتایج مربوط به معیارهای عملکرد و ایمنی را مرور کنید.
 
 1. معیارهای عملکرد و کیفیت:
 
-   - اثربخشی مدل در تولید پاسخ‌های منسجم، روان و مرتبط را ارزیابی کنید.
+    - اثربخشی مدل در تولید پاسخ‌های منسجم، روان و مرتبط را ارزیابی کنید.
 
-   ![نتیجه ارزیابی.](../../../../../../translated_images/evaluation-result-gpu.8e9decea0f5dd1250948982514bcde94bb2debba2b686be5e633f1aad093921f.fa.png)
+    ![نتیجه ارزیابی.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.fa.png)
 
 1. معیارهای ریسک و ایمنی:
 
-   - اطمینان حاصل کنید که خروجی‌های مدل ایمن هستند و با اصول هوش مصنوعی مسئولانه همسو هستند و از تولید محتوای مضر یا توهین‌آمیز جلوگیری می‌کنند.
+    - اطمینان حاصل کنید که خروجی‌های مدل ایمن بوده و با اصول هوش مصنوعی مسئولانه همسو باشند و از هرگونه محتوای مضر یا توهین‌آمیز اجتناب شود.
 
-   ![نتیجه ارزیابی.](../../../../../../translated_images/evaluation-result-gpu-2.180e37b9669f3d31aade247bd38b87b15a2ef93b69a1633c4e4072946aadaa26.fa.png)
+    ![نتیجه ارزیابی.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.fa.png)
 
-1. می‌توانید برای مشاهده **نتایج معیارهای جزئیات** به پایین اسکرول کنید.
+1. می‌توانید برای مشاهده **نتایج دقیق معیارها** به پایین صفحه اسکرول کنید.
 
-   ![نتیجه ارزیابی.](../../../../../../translated_images/detailed-metrics-result.a0abde70a729afee17e34df7c11ea2f6f0ea1aefbe8a26a35502f304de57a647.fa.png)
+    ![نتیجه ارزیابی.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.fa.png)
 
-1. با ارزیابی مدل سفارشی Phi-3 / Phi-3.5 خود در برابر معیارهای عملکرد و ایمنی، می‌توانید تأیید کنید که مدل نه تنها موثر است، بلکه به اصول هوش مصنوعی مسئولانه نیز پایبند است و برای استفاده در دنیای واقعی آماده است.
+1. با ارزیابی مدل سفارشی Phi-3 / Phi-3.5 خود بر اساس معیارهای عملکرد و ایمنی، می‌توانید تأیید کنید که مدل نه تنها مؤثر است، بلکه مطابق با اصول هوش مصنوعی مسئولانه عمل می‌کند و آماده استفاده در دنیای واقعی است.
 
 ## تبریک!
 
 ### شما این آموزش را کامل کردید
 
-شما موفق به ارزیابی مدل تنظیم‌شده Phi-3 که با Prompt flow در Azure AI Foundry یکپارچه شده است، شدید. این یک گام مهم در اطمینان از این است که مدل‌های هوش مصنوعی شما نه تنها عملکرد خوبی دارند، بلکه به اصول هوش مصنوعی مسئولانه مایکروسافت نیز پایبند هستند تا به شما در ساخت برنامه‌های هوش مصنوعی قابل‌اعتماد و مطمئن کمک کنند.
+شما با موفقیت مدل Phi-3 را که با Prompt flow در Azure AI Foundry یکپارچه شده است، ارزیابی کردید. این گامی مهم برای اطمینان از این است که مدل‌های هوش مصنوعی شما نه تنها عملکرد خوبی دارند، بلکه با اصول هوش مصنوعی مسئولانه مایکروسافت همسو هستند تا به شما در ساخت برنامه‌های هوش مصنوعی قابل اعتماد و مطمئن کمک کنند.
 
-![معماری.](../../../../../../translated_images/architecture.99df2035c1c1a82e7f7d3aa3368e5940e46d27d35abd498166e55094298fce81.fa.png)
+![معماری.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.fa.png)
 
 ## پاک‌سازی منابع Azure
 
-برای جلوگیری از هزینه‌های اضافی به حساب خود، منابع Azure خود را پاک کنید. به پورتال Azure بروید و منابع زیر را حذف کنید:
+برای جلوگیری از هزینه‌های اضافی، منابع Azure خود را پاک کنید. به پرتال Azure بروید و منابع زیر را حذف کنید:
 
 - منبع Azure Machine learning.
-- نقطه پایانی مدل Azure Machine learning.
+- نقطه انتهایی مدل Azure Machine learning.
 - منبع پروژه Azure AI Foundry.
 - منبع Prompt flow در Azure AI Foundry.
 
@@ -526,21 +526,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### مستندات
 
-- [ارزیابی سیستم‌های هوش مصنوعی با استفاده از داشبورد هوش مصنوعی مسئولانه](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
-- [معیارهای ارزیابی و نظارت برای هوش مصنوعی تولیدی](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
+- [ارزیابی سیستم‌های هوش مصنوعی با استفاده از داشبورد Responsible AI](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
+- [معیارهای ارزیابی و نظارت برای هوش مصنوعی مولد](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
 - [مستندات Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [مستندات Prompt flow](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### محتوای آموزشی
 
-- [مقدمه‌ای بر رویکرد هوش مصنوعی مسئولانه مایکروسافت](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
+- [مقدمه‌ای بر رویکرد Responsible AI مایکروسافت](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
 - [مقدمه‌ای بر Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
-### مرجع
+### منابع
 
 - [هوش مصنوعی مسئولانه چیست؟](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
-- [اعلام ابزارهای جدید در Azure AI برای کمک به شما در ساخت برنامه‌های هوش مصنوعی تولیدی ایمن‌تر و قابل‌اعتمادتر](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
-- [ارزیابی برنامه‌های هوش مصنوعی تولیدی](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
+- [معرفی ابزارهای جدید در Azure AI برای کمک به ساخت برنامه‌های هوش مصنوعی مولد امن‌تر و قابل اعتمادتر](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
+- [ارزیابی برنامه‌های هوش مصنوعی مولد](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را رعایت کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان اصلی آن باید به‌عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوءتفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی اشتباهات یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا برداشت نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.

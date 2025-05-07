@@ -1,21 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "17451c69069b49f37a5395131a61ee52",
-  "translation_date": "2025-04-04T12:47:05+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi4\\ChatWithPhi4ONNX\\README.md",
+  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
+  "translation_date": "2025-05-07T13:56:43+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "mo"
 }
 -->
-# **Phi-4-mini ONNX-თან ჩატი**
+# **Chat with Phi-4-mini ONNX**
 
-***ONNX*** არის ღია ფორმატი, რომელიც შექმნილია მანქანური სწავლების მოდელების წარმოდგენისთვის. ONNX განსაზღვრავს ოპერატორების საერთო ნაკრებს - მანქანური და ღრმა სწავლების მოდელების საფუძვლებს - და საერთო ფაილის ფორმატს, რაც საშუალებას აძლევს AI დეველოპერებს გამოიყენონ მოდელები სხვადასხვა ჩარჩოებთან, ინსტრუმენტებთან, გაშვების გარემოებთან და კომპილატორებთან.
+***ONNX*** is an open format designed to represent machine learning models. ONNX defines a common set of operators—the building blocks of machine learning and deep learning models—and a standard file format to enable AI developers to use models across various frameworks, tools, runtimes, and compilers.
 
-ჩვენი მიზანია, განვათავსოთ გენერაციული AI მოდელები საზღვრულ მოწყობილობებზე და გამოვიყენოთ ისინი შეზღუდული გამოთვლითი რესურსებით ან ოფლაინ გარემოში. ახლა შეგვიძლია ამ მიზნის მიღწევა მოდელის კვანტიზებული მეთოდით გარდაქმნით. კვანტიზებული მოდელის გადაყვანა შესაძლებელია GGUF ან ONNX ფორმატში.
+We aim to deploy generative AI models on edge devices and use them in environments with limited computing power or offline. Now, we can achieve this by converting the model in a quantized way. The quantized model can be converted to GGUF or ONNX format.
 
-Microsoft Olive დაგეხმარებათ SLM-ის კვანტიზებულ ONNX ფორმატში გარდაქმნაში. მოდელის გარდაქმნის მეთოდი ძალიან მარტივია.
+Microsoft Olive can assist you in converting SLM to quantized ONNX format. The method for model conversion is very straightforward.
 
-**Microsoft Olive SDK-ის ინსტალაცია**
+**Install Microsoft Olive SDK**
+
 
 ```bash
 
@@ -25,7 +26,7 @@ pip install transformers
 
 ```
 
-**CPU ONNX მხარდაჭერის გარდაქმნა**
+**Convert CPU ONNX Support**
 
 ```bash
 
@@ -33,11 +34,12 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***შენიშვნა*** ეს მაგალითი იყენებს CPU-ს.
+***Note*** this example uses CPU
 
-### **Phi-4-mini ONNX მოდელის ინფერენცია ONNX Runtime GenAI-ით**
 
-- **ONNX Runtime GenAI-ის ინსტალაცია**
+### **Run Inference on Phi-4-mini ONNX Model With ONNX Runtime GenAI**
+
+- **Install ONNX Runtime GenAI**
 
 ```bash
 
@@ -45,9 +47,9 @@ pip install --pre onnxruntime-genai
 
 ```
 
-- **Python კოდი**
+- **Python Code**
 
-*ეს არის ONNX Runtime GenAI 0.5.2 ვერსია*
+*This is ONNX Runtime GenAI 0.5.2 version*
 
 ```python
 
@@ -102,7 +104,8 @@ while not generator.is_done():
 
 ```
 
-*ეს არის ONNX Runtime GenAI 0.6.0 ვერსია*
+
+*This is ONNX Runtime GenAI 0.6.0 version*
 
 ```python
 
@@ -155,4 +158,5 @@ while not generator.is_done():
 
 ```
 
-It seems like you want the text translated to "mo," but could you clarify what "mo" refers to? Are you asking for translation into Māori, Mongolian, or another language?
+**Disclaimer**:  
+Dis document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

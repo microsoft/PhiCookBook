@@ -1,120 +1,125 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3b3107c2477241058ef506743188f399",
-  "translation_date": "2025-04-04T12:20:50+00:00",
-  "source_file": "md\\01.Introduction\\05\\ResponsibleAI.md",
+  "original_hash": "805b96b20152936d8f4c587d90d6e06e",
+  "translation_date": "2025-05-07T14:44:55+00:00",
+  "source_file": "md/01.Introduction/05/ResponsibleAI.md",
   "language_code": "mo"
 }
 -->
-# **Introduce Responsible AI**
+# **Presentar Responsible AI**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) adalah inisiatif yang bertujuan membantu pengembang dan organisasi membangun sistem AI yang transparan, dapat dipercaya, dan bertanggung jawab. Inisiatif ini menyediakan panduan dan sumber daya untuk mengembangkan solusi AI yang bertanggung jawab sesuai dengan prinsip etika, seperti privasi, keadilan, dan transparansi. Kita juga akan membahas beberapa tantangan dan praktik terbaik yang terkait dengan pembangunan sistem AI yang bertanggung jawab.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) es una iniciativa que busca ayudar a desarrolladores y organizaciones a crear sistemas de IA que sean transparentes, confiables y responsables. La iniciativa ofrece orientación y recursos para desarrollar soluciones de IA responsables que se alineen con principios éticos, como la privacidad, la equidad y la transparencia. También exploraremos algunos de los desafíos y las mejores prácticas relacionados con la construcción de sistemas de IA responsables.
 
-## Gambaran Umum Microsoft Responsible AI 
+## Resumen de Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.e40f2a169a854832e885ce2659f3a913cfb393fa59b595ed57cfae9119694eb7.mo.png)
+![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d336830630939a5130a22b3f9e1f633773562f83fed08a50520.mo.png)
 
-**Prinsip Etika** 
+**Principios éticos**
 
-Microsoft Responsible AI dipandu oleh serangkaian prinsip etika, seperti privasi, keadilan, transparansi, tanggung jawab, dan keselamatan. Prinsip-prinsip ini dirancang untuk memastikan bahwa sistem AI dikembangkan dengan cara yang etis dan bertanggung jawab.
+Microsoft Responsible AI se guía por un conjunto de principios éticos, como la privacidad, la equidad, la transparencia, la responsabilidad y la seguridad. Estos principios están diseñados para garantizar que los sistemas de IA se desarrollen de manera ética y responsable.
 
-**AI yang Transparan**
+**IA transparente**
 
-Microsoft Responsible AI menekankan pentingnya transparansi dalam sistem AI. Ini mencakup memberikan penjelasan yang jelas tentang cara kerja model AI, serta memastikan bahwa sumber data dan algoritma tersedia untuk umum.
+Microsoft Responsible AI destaca la importancia de la transparencia en los sistemas de IA. Esto incluye ofrecer explicaciones claras sobre cómo funcionan los modelos de IA, así como asegurar que las fuentes de datos y los algoritmos estén disponibles públicamente.
 
-**AI yang Bertanggung Jawab** 
+**IA responsable**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) mendorong pengembangan sistem AI yang bertanggung jawab, yang dapat memberikan wawasan tentang bagaimana model AI membuat keputusan. Hal ini dapat membantu pengguna memahami dan mempercayai hasil dari sistem AI.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) promueve el desarrollo de sistemas de IA responsables, que puedan proporcionar información sobre cómo los modelos de IA toman decisiones. Esto ayuda a los usuarios a comprender y confiar en los resultados de los sistemas de IA.
 
-**Inklusivitas** 
+**Inclusividad**
 
-Sistem AI harus dirancang untuk memberikan manfaat bagi semua orang. Microsoft bertujuan untuk menciptakan AI yang inklusif dengan mempertimbangkan berbagai perspektif dan menghindari bias atau diskriminasi.
+Los sistemas de IA deben diseñarse para beneficiar a todos. Microsoft busca crear una IA inclusiva que considere diversas perspectivas y evite sesgos o discriminación.
 
-**Keandalan dan Keselamatan**
+**Confiabilidad y seguridad**
 
- Memastikan bahwa sistem AI dapat diandalkan dan aman adalah hal yang sangat penting. Microsoft berfokus pada pembangunan model yang kuat, yang bekerja secara konsisten dan menghindari hasil yang merugikan.
+Garantizar que los sistemas de IA sean confiables y seguros es fundamental. Microsoft se enfoca en construir modelos robustos que funcionen de manera constante y eviten resultados perjudiciales.
 
-**Keadilan dalam AI** 
+**Equidad en la IA**
 
-Microsoft Responsible AI mengakui bahwa sistem AI dapat memperkuat bias jika dilatih menggunakan data atau algoritma yang bias. Inisiatif ini memberikan panduan untuk mengembangkan sistem AI yang adil, yang tidak mendiskriminasi berdasarkan faktor seperti ras, gender, atau usia.
+Microsoft Responsible AI reconoce que los sistemas de IA pueden perpetuar sesgos si se entrenan con datos o algoritmos sesgados. La iniciativa ofrece orientación para desarrollar sistemas de IA justos que no discriminen por factores como raza, género o edad.
 
-**Privasi dan Keamanan** 
+**Privacidad y seguridad**
 
-Microsoft Responsible AI menekankan pentingnya melindungi privasi pengguna dan keamanan data dalam sistem AI. Ini mencakup penerapan enkripsi data yang kuat dan kontrol akses, serta secara rutin mengaudit sistem AI untuk mencari kerentanan.
+Microsoft Responsible AI enfatiza la importancia de proteger la privacidad de los usuarios y la seguridad de los datos en los sistemas de IA. Esto incluye implementar cifrado de datos fuerte y controles de acceso, además de auditar regularmente los sistemas de IA para detectar vulnerabilidades.
 
-**Tanggung Jawab dan Akuntabilitas** 
+**Responsabilidad y rendición de cuentas**
 
-Microsoft Responsible AI mendorong tanggung jawab dan akuntabilitas dalam pengembangan dan penerapan AI. Ini mencakup memastikan bahwa pengembang dan organisasi menyadari potensi risiko yang terkait dengan sistem AI, dan mengambil langkah-langkah untuk mengurangi risiko tersebut.
+Microsoft Responsible AI fomenta la responsabilidad y la rendición de cuentas en el desarrollo y despliegue de la IA. Esto implica asegurarse de que desarrolladores y organizaciones estén conscientes de los riesgos potenciales asociados con los sistemas de IA y tomen medidas para mitigarlos.
 
-## Praktik Terbaik untuk Membangun Sistem AI yang Bertanggung Jawab
+## Mejores prácticas para construir sistemas de IA responsables
 
-**Kembangkan model AI menggunakan kumpulan data yang beragam** 
+**Desarrollar modelos de IA utilizando conjuntos de datos diversos**
 
-Untuk menghindari bias dalam sistem AI, penting untuk menggunakan kumpulan data yang beragam yang mewakili berbagai perspektif dan pengalaman.
+Para evitar sesgos en los sistemas de IA, es importante usar conjuntos de datos variados que representen diferentes perspectivas y experiencias.
 
-**Gunakan teknik AI yang dapat dijelaskan** 
+**Usar técnicas de IA explicable**
 
-Teknik AI yang dapat dijelaskan dapat membantu pengguna memahami bagaimana model AI membuat keputusan, yang dapat meningkatkan kepercayaan terhadap sistem.
+Las técnicas de IA explicable ayudan a los usuarios a entender cómo los modelos de IA toman decisiones, lo que puede aumentar la confianza en el sistema.
 
-**Audit sistem AI secara rutin untuk mencari kerentanan** 
+**Auditar regularmente los sistemas de IA para detectar vulnerabilidades**
 
-Audit rutin terhadap sistem AI dapat membantu mengidentifikasi risiko dan kerentanan yang perlu ditangani.
+Las auditorías periódicas de los sistemas de IA pueden ayudar a identificar riesgos y vulnerabilidades que deben ser abordados.
 
-**Terapkan enkripsi data yang kuat dan kontrol akses** 
+**Implementar cifrado fuerte de datos y controles de acceso**
 
-Enkripsi data dan kontrol akses dapat membantu melindungi privasi dan keamanan pengguna dalam sistem AI.
+El cifrado de datos y los controles de acceso ayudan a proteger la privacidad y la seguridad de los usuarios en los sistemas de IA.
 
-**Ikuti prinsip etika dalam pengembangan AI** 
+**Seguir principios éticos en el desarrollo de IA**
 
-Mengikuti prinsip etika, seperti keadilan, transparansi, dan tanggung jawab, dapat membantu membangun kepercayaan dalam sistem AI dan memastikan bahwa sistem tersebut dikembangkan dengan cara yang bertanggung jawab.
+Seguir principios éticos, como la equidad, la transparencia y la responsabilidad, contribuye a generar confianza en los sistemas de IA y asegura que se desarrollen de manera responsable.
 
-## Menggunakan AI Foundry untuk AI yang Bertanggung Jawab 
+## Uso de AI Foundry para Responsible AI
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) adalah platform yang kuat yang memungkinkan pengembang dan organisasi untuk dengan cepat membuat aplikasi yang cerdas, canggih, siap pasar, dan bertanggung jawab. Berikut adalah beberapa fitur dan kemampuan utama dari Azure AI Foundry:
+[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) es una plataforma potente que permite a desarrolladores y organizaciones crear rápidamente aplicaciones inteligentes, innovadoras, listas para el mercado y responsables. Aquí algunas características y capacidades clave de Azure AI Foundry:
 
-**API dan Model Siap Pakai** 
+**APIs y modelos listos para usar**
 
-Azure AI Foundry menyediakan API dan model yang sudah dibuat sebelumnya dan dapat disesuaikan. Ini mencakup berbagai tugas AI, termasuk AI generatif, pemrosesan bahasa alami untuk percakapan, pencarian, pemantauan, penerjemahan, suara, penglihatan, dan pengambilan keputusan.
+Azure AI Foundry ofrece APIs y modelos preconstruidos y personalizables. Cubren una amplia gama de tareas de IA, incluyendo IA generativa, procesamiento de lenguaje natural para conversaciones, búsqueda, monitoreo, traducción, voz, visión y toma de decisiones.
 
-**Prompt Flow** 
+**Prompt Flow**
 
-Prompt flow di Azure AI Foundry memungkinkan Anda membuat pengalaman AI percakapan. Ini memungkinkan Anda merancang dan mengelola alur percakapan, sehingga lebih mudah untuk membangun chatbot, asisten virtual, dan aplikasi interaktif lainnya.
+Prompt Flow en Azure AI Foundry permite crear experiencias de IA conversacional. Facilita diseñar y gestionar flujos conversacionales, lo que simplifica la construcción de chatbots, asistentes virtuales y otras aplicaciones interactivas.
 
-**Retrieval Augmented Generation (RAG)** 
+**Retrieval Augmented Generation (RAG)**
 
-RAG adalah teknik yang menggabungkan pendekatan berbasis pengambilan dan berbasis generatif. Ini meningkatkan kualitas respons yang dihasilkan dengan memanfaatkan baik pengetahuan yang sudah ada (retrieval) maupun kreativitas generasi (generation).
+RAG es una técnica que combina enfoques basados en recuperación y generación. Mejora la calidad de las respuestas generadas al aprovechar tanto el conocimiento preexistente (recuperación) como la generación creativa (generación).
 
-**Evaluasi dan Pemantauan Metrik untuk AI Generatif** 
+**Métricas de evaluación y monitoreo para IA generativa**
 
-Azure AI Foundry menyediakan alat untuk mengevaluasi dan memantau model AI generatif. Anda dapat menilai kinerja, keadilan, dan metrik penting lainnya untuk memastikan penerapan yang bertanggung jawab. Selain itu, jika Anda telah membuat dasbor, Anda dapat menggunakan antarmuka tanpa kode di Azure Machine Learning Studio untuk menyesuaikan dan menghasilkan Responsible AI Dashboard serta kartu skor terkait berdasarkan [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. Kartu skor ini membantu Anda berbagi wawasan utama terkait keadilan, pentingnya fitur, dan pertimbangan penerapan yang bertanggung jawab dengan pemangku kepentingan teknis maupun non-teknis.
+Azure AI Foundry ofrece herramientas para evaluar y monitorear modelos de IA generativa. Puedes medir su rendimiento, equidad y otras métricas importantes para asegurar un despliegue responsable. Además, si has creado un panel de control, puedes usar la interfaz sin código en Azure Machine Learning Studio para personalizar y generar un Responsible AI Dashboard y la tarjeta de puntuación asociada basada en las bibliotecas Python del [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo). Esta tarjeta ayuda a compartir información clave relacionada con la equidad, la importancia de características y otras consideraciones para un despliegue responsable, tanto con partes interesadas técnicas como no técnicas.
 
-Untuk menggunakan AI Foundry dengan AI yang bertanggung jawab, Anda dapat mengikuti praktik terbaik berikut:
+Para usar AI Foundry con Responsible AI, puedes seguir estas mejores prácticas:
 
-**Definisikan masalah dan tujuan sistem AI Anda**
+**Definir el problema y los objetivos de tu sistema de IA**
 
-Sebelum memulai proses pengembangan, penting untuk dengan jelas mendefinisikan masalah atau tujuan yang ingin diselesaikan oleh sistem AI Anda. Ini akan membantu Anda mengidentifikasi data, algoritma, dan sumber daya yang diperlukan untuk membangun model yang efektif.
+Antes de comenzar el desarrollo, es importante definir claramente el problema u objetivo que tu sistema de IA busca resolver. Esto te ayudará a identificar los datos, algoritmos y recursos necesarios para construir un modelo efectivo.
 
-**Kumpulkan dan pra-proses data yang relevan** 
+**Recolectar y preprocesar datos relevantes**
 
-Kualitas dan kuantitas data yang digunakan dalam pelatihan sistem AI dapat memiliki dampak signifikan pada kinerjanya. Oleh karena itu, penting untuk mengumpulkan data yang relevan, membersihkannya, memprosesnya, dan memastikan bahwa data tersebut mewakili populasi atau masalah yang ingin Anda selesaikan.
+La calidad y cantidad de datos usados en el entrenamiento de un sistema de IA impactan significativamente su desempeño. Por eso, es importante recopilar datos relevantes, limpiarlos, preprocesarlos y asegurarse de que representen la población o el problema que intentas resolver.
 
-**Pilih evaluasi yang tepat** 
+**Elegir la evaluación adecuada**
 
-Ada berbagai algoritma evaluasi yang tersedia. Penting untuk memilih algoritma yang paling sesuai berdasarkan data dan masalah Anda.
+Existen diversos algoritmos de evaluación disponibles. Es importante seleccionar el más apropiado según tus datos y problema.
 
-**Evaluasi dan interpretasikan model** 
+**Evaluar e interpretar el modelo**
 
-Setelah Anda membangun model AI, penting untuk mengevaluasi kinerjanya menggunakan metrik yang sesuai dan menginterpretasikan hasilnya dengan cara yang transparan. Ini akan membantu Anda mengidentifikasi bias atau keterbatasan dalam model dan melakukan perbaikan jika diperlukan.
+Una vez construido el modelo de IA, es esencial evaluar su desempeño usando métricas adecuadas e interpretar los resultados de manera transparente. Esto ayuda a identificar sesgos o limitaciones y a realizar mejoras cuando sea necesario.
 
-**Pastikan transparansi dan keterjelasan** 
+**Asegurar transparencia y explicabilidad**
 
-Sistem AI harus transparan dan dapat dijelaskan agar pengguna dapat memahami cara kerjanya dan bagaimana keputusan dibuat. Hal ini sangat penting untuk aplikasi yang memiliki dampak signifikan pada kehidupan manusia, seperti kesehatan, keuangan, dan sistem hukum.
+Los sistemas de IA deben ser transparentes y explicables para que los usuarios entiendan cómo funcionan y cómo se toman las decisiones. Esto es especialmente importante en aplicaciones con impacto significativo en vidas humanas, como salud, finanzas y sistemas legales.
 
-**Pantau dan perbarui model** 
+**Monitorear y actualizar el modelo**
 
-Sistem AI harus terus dipantau dan diperbarui untuk memastikan bahwa mereka tetap akurat dan efektif dari waktu ke waktu. Ini memerlukan pemeliharaan, pengujian, dan pelatihan ulang model secara berkelanjutan.
+Los sistemas de IA deben ser monitoreados y actualizados continuamente para mantener su precisión y eficacia a lo largo del tiempo. Esto requiere mantenimiento constante, pruebas y reentrenamiento del modelo.
 
-Sebagai kesimpulan, Microsoft Responsible AI adalah inisiatif yang bertujuan membantu pengembang dan organisasi membangun sistem AI yang transparan, dapat dipercaya, dan bertanggung jawab. Ingatlah bahwa implementasi AI yang bertanggung jawab sangat penting, dan Azure AI Foundry bertujuan untuk membuatnya praktis bagi organisasi. Dengan mengikuti prinsip etika dan praktik terbaik, kita dapat memastikan bahwa sistem AI dikembangkan dan diterapkan dengan cara yang bertanggung jawab, yang memberikan manfaat bagi masyarakat secara keseluruhan.
+En conclusión, Microsoft Responsible AI es una iniciativa que busca ayudar a desarrolladores y organizaciones a crear sistemas de IA que sean transparentes, confiables y responsables. Recuerda que la implementación responsable de la IA es fundamental, y Azure AI Foundry busca hacerla práctica para las organizaciones. Siguiendo principios éticos y mejores prácticas, podemos garantizar que los sistemas de IA se desarrollen y desplieguen de manera responsable, beneficiando a la sociedad en su conjunto.
 
-It seems you want the text translated to "mo," but could you clarify what "mo" refers to? Are you referring to Maori, Mongolian, or another language? Please provide more context so I can assist you accurately.
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language "mo" refers to? There are several possibilities (e.g., Moldovan, a constructed language, or another language code). Once confirmed, I can provide the translation.

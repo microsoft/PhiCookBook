@@ -1,37 +1,37 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2faa9c6d61c5aa2708aec02a39ec464b",
-  "translation_date": "2025-04-04T12:43:56+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\UsingPhi35TFLiteCreateAndroidApp.md",
+  "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
+  "translation_date": "2025-05-07T14:07:53+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "mo"
 }
 -->
-# **Microsoft Phi-3.5 tflite ka yi amfani da shi don ƙirƙirar aikace-aikacen Android**
+# **استعمال Microsoft Phi-3.5 tflite کے ذریعے Android ایپ بنانا**
 
-Wannan misali ne na Android da ke amfani da samfuran Microsoft Phi-3.5 tflite.
+یہ ایک Android سیمپل ہے جو Microsoft Phi-3.5 tflite ماڈلز استعمال کرتا ہے۔
 
-## **📚 Ilimi**
+## **📚 معلومات**
 
-Android LLM Inference API yana ba ka damar gudanar da manyan samfuran harshe (LLMs) gaba ɗaya a kan na'urar don aikace-aikacen Android, wanda zaka iya amfani da shi don aiwatar da ayyuka iri-iri, kamar samar da rubutu, samun bayanai cikin harshe na halitta, da taƙaitawa takardu. Wannan aikin yana ba da tallafi na gina a ciki don samfuran manyan harshe na rubutu-zuwa-rubutu, don haka zaka iya amfani da sabbin samfuran AI na ƙirƙira akan na'urar don aikace-aikacen Android.
+Android LLM Inference API آپ کو بڑے زبان کے ماڈلز (LLMs) کو مکمل طور پر ڈیوائس پر چلانے کی سہولت دیتا ہے، جس سے آپ مختلف قسم کے کام انجام دے سکتے ہیں، جیسے کہ متن تیار کرنا، قدرتی زبان میں معلومات حاصل کرنا، اور دستاویزات کا خلاصہ بنانا۔ یہ ٹاسک متعدد text-to-text بڑے زبان کے ماڈلز کی بلٹ ان سپورٹ فراہم کرتا ہے، تاکہ آپ جدید on-device generative AI ماڈلز کو اپنی Android ایپس میں استعمال کر سکیں۔
 
-Googld AI Edge Torch wata ɗakunan karatu ne na python wanda ke tallafawa canza samfuran PyTorch zuwa tsari na .tflite, wanda daga nan za a iya gudanar da shi tare da TensorFlow Lite da MediaPipe. Wannan yana ba da damar aikace-aikace don Android, iOS da IoT wanda zai iya gudanar da samfuran gaba ɗaya a kan na'urar. AI Edge Torch yana ba da tallafi mai faɗi ga CPU, tare da tallafi na farko don GPU da NPU. AI Edge Torch yana neman haɗin kai sosai tare da PyTorch, gina a saman torch.export() da kuma ba da tallafi mai kyau ga Core ATen masu aiki.
+Google AI Edge Torch ایک پائتھن لائبریری ہے جو PyTorch ماڈلز کو .tflite فارمیٹ میں تبدیل کرنے کی حمایت کرتی ہے، جسے پھر TensorFlow Lite اور MediaPipe کے ساتھ چلایا جا سکتا ہے۔ یہ Android، iOS اور IoT ایپلیکیشنز کے لیے ہے جو ماڈلز کو مکمل طور پر ڈیوائس پر چلانے کی صلاحیت رکھتی ہیں۔ AI Edge Torch وسیع CPU سپورٹ فراہم کرتا ہے، اور ابتدائی GPU اور NPU سپورٹ بھی شامل ہے۔ AI Edge Torch PyTorch کے ساتھ قریبی انضمام کا مقصد رکھتا ہے، torch.export() کے اوپر بنایا گیا ہے اور Core ATen آپریٹرز کی اچھی کوریج فراہم کرتا ہے۔
 
-## **🪬 Jagora**
+## **🪬 رہنما اصول**
 
-### **🔥 Canza Microsoft Phi-3.5 zuwa tallafi na tflite**
+### **🔥 Microsoft Phi-3.5 کو tflite میں تبدیل کرنا**
 
-0. Wannan misali yana da Android 14+
+0. یہ سیمپل Android 14+ کے لیے ہے۔
 
-1. Shigar da Python 3.10.12
+1. Python 3.10.12 انسٹال کریں۔
 
-***Shawara:*** yin amfani da conda don shigar da yanayin Python ɗinka
+***تجویز:*** conda استعمال کر کے Python ماحول انسٹال کریں۔
 
-2. Ubuntu 20.04 / 22.04 (da fatan a mai da hankali kan [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
+2. Ubuntu 20.04 / 22.04 (براہ کرم [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) پر توجہ دیں)
 
-***Shawara:*** Amfani da Azure Linux VM ko VM na cloud na ɓangare na uku don ƙirƙirar yanayin ɗinka
+***تجویز:*** Azure Linux VM یا کسی 3rd پارٹی کلاؤڈ VM کا استعمال کریں تاکہ اپنا ماحول بنائیں۔
 
-3. Je zuwa bash ɗin Linux ɗinka, don shigar da ɗakunan karatu na Python 
+3. اپنے Linux bash میں جائیں اور Python لائبریری انسٹال کریں
 
 ```bash
 
@@ -47,8 +47,7 @@ pip install -e .
 
 ```
 
-4. Zazzage Microsoft-3.5-Instruct daga Hugging face
-
+4. Hugging face سے Microsoft-3.5-Instruct ڈاؤن لوڈ کریں
 
 ```bash
 
@@ -58,8 +57,7 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. Canza Microsoft Phi-3.5 zuwa tflite
-
+5. Microsoft Phi-3.5 کو tflite میں تبدیل کریں
 
 ```bash
 
@@ -67,10 +65,9 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
+### **🔥 Microsoft Phi-3.5 کو Android Mediapipe Bundle میں تبدیل کرنا**
 
-### **🔥 Canza Microsoft Phi-3.5 zuwa Android Mediapipe Bundle**
-
-da fatan za a fara shigar da mediapipe
+براہ کرم پہلے mediapipe انسٹال کریں
 
 ```bash
 
@@ -78,9 +75,7 @@ pip install mediapipe
 
 ```
 
-gudanar da wannan lambar a cikin [notebook ɗinku](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
-
-
+اس کوڈ کو [اپنے نوٹ بک](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb) میں چلائیں
 
 ```python
 
@@ -99,9 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-
-### **🔥 Yin amfani da adb don turawa samfurin aikin zuwa hanyar na'urar Android ɗinka**
-
+### **🔥 adb push کے ذریعے ماڈل کو اپنے Android ڈیوائس کے راستے پر بھیجنا**
 
 ```bash
 
@@ -113,8 +106,9 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ```
 
-### **🔥 Gudanar da lambar Android ɗinka**
+### **🔥 اپنے Android کوڈ کو چلانا**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.mo.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.mo.png)
 
-It seems you want the text translated into "mo," but could you clarify what "mo" refers to? Are you asking for translation into Māori, Montenegrin, or another language?
+**Disclaimer**:  
+Dis dokument haz bin translaited yusing AI translait serviz [Co-op Translator](https://github.com/Azure/co-op-translator). Wile wi stryv for akyurasy, pleez bi awair dat otomaytid translaitions mey contain erors or inakurysez. Da orijinal dokument in its naytiv langwaj shud bi konsidrd da autoritativ sors. For kritikul informashun, profeshunal hyuman translaiton iz rekomended. Wi ar not laybl for eni misanderstandings or misinterpretashuns arising from da yus of dis translaiton.

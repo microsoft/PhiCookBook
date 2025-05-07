@@ -1,57 +1,62 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6a7479104914787e4f0976e39131e8e3",
-  "translation_date": "2025-04-04T11:39:47+00:00",
-  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\vsc-extension-quickstart.md",
+  "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
+  "translation_date": "2025-05-07T15:25:52+00:00",
+  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
   "language_code": "mo"
 }
 -->
-# Ku soo dhawow kordhintaada VS Code
+# Welcome to your VS Code Extension
 
-## Maxaa ku jira galka
+## What's in the folder
 
-* Galkaan wuxuu ka kooban yahay dhammaan faylasha lagama maarmaanka u ah kordhintaada.
-* `package.json` - waa faylka manifest oo aad ku qeexeyso kordhintaada iyo amarkaaga.
-  * Plugin-ka tusaalaha ah wuxuu diiwaan gelinayaa amar wuxuuna qeexayaa cinwaankiisa iyo magaca amarka. Macluumaadkan VS Code wuxuu ku soo bandhigi karaa amarka liiska amarrada. Ma jiro baahi uu plugin-ka u leeyahay inuu hadda soo shubto.
-* `src/extension.ts` - waa faylka ugu muhiimsan halkaas oo aad ku bixin doonto hirgelinta amarkaaga.
-  * Faylku wuxuu dhoofinayaa hal shaqo, `activate`, taas oo la wacayo markii ugu horreysay ee kordhintaada la hawlgeliyo (kiiskan iyadoo la fulinayo amarka). Gudaha shaqada `activate` waxaan wacnaa `registerCommand`.
-  * Waxaan u gudbinnaa shaqada ka kooban hirgelinta amarka sida halbeeg labaad ee `registerCommand`.
+* This folder contains all of the files necessary for your extension.
+* `package.json` - manifest file where you declare your extension and command.
+  * The sample plugin registers a command and defines its title and command name. This lets VS Code display the command in the command palette without needing to load the plugin immediately.
+* `src/extension.ts` - main file where you implement your command.
+  * The file exports one function, `activate`, which runs the very first time your extension activates (in this case, when the command is executed). Inside `activate` we call `registerCommand`.
+  * We pass the function implementing the command as the second argument to `registerCommand`.
 
-## Dejinta
+## Setup
 
-* Ku rakib kordhinta lagula taliyay (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, iyo dbaeumer.vscode-eslint)
+* Install the recommended extensions (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, and dbaeumer.vscode-eslint)
 
-## Si degdeg ah uga shaqee
+## Get up and running straight away
 
-* Riix `F5` si aad u furto daaqad cusub oo kordhintaada ku shuban tahay.
-* Ka ful amar liiska amarrada adigoo riixaya (`Ctrl+Shift+P` ama `Cmd+Shift+P` ee Mac) oo ku qoraya `Hello World`.
-* Ku dejiso goobo jebin gudaha koodkaaga `src/extension.ts` si aad u baarto kordhintaada.
-* Raadi wax soo saarka kordhintaada gudaha console-ka debug.
+* Press `F5` to open a new window with your extension loaded.
+* Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `Hello World`.
+* Set breakpoints in your code inside `src/extension.ts` to debug your extension.
+* Find output from your extension in the debug console.
 
-## Wax ka beddel
+## Make changes
 
-* Waxaad dib u hawlgelin kartaa kordhinta adigoo ka soo bilowaya toolbar-ka debug ka dib markaad wax ka beddesho koodka `src/extension.ts`.
-* Sidoo kale waad dib u shubi kartaa (`Ctrl+R` ama `Cmd+R` ee Mac) daaqadda VS Code oo leh kordhintaada si aad u shubto isbeddeladaada.
+* Relaunch the extension from the debug toolbar after modifying `src/extension.ts`.
+* You can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to apply your changes.
 
-## Sahamin API-ga
+## Explore the API
 
-* Waxaad furi kartaa dhammaan API-ga markaad furto faylka `node_modules/@types/vscode/index.d.ts`.
+* Open the full API set by opening the file `node_modules/@types/vscode/index.d.ts`.
 
-## Tijaabi
+## Run tests
 
-* Ku rakib [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Ku socodsii hawsha "watch" adoo adeegsanaya amarka **Tasks: Run Task**. Hubi inay socoto, haddii kale tijaabooyinka lama ogaan karo.
-* Fur muuqaalka Tijaabinta ee baraha howlaha oo guji badhanka "Run Test", ama isticmaal furaha `Ctrl/Cmd + ; A`.
-* Fiiri natiijada tijaabada ee muuqaalka Natiijooyinka Tijaabada.
-* Samee isbeddelo `src/test/extension.test.ts` ama samee faylasha cusub ee tijaabada gudaha galka `test`.
-  * Socodsiiyaha tijaabada ee la bixiyay wuxuu kaliya tixgelin doonaa faylasha u dhigma qaabka magaca `**.test.ts`.
-  * Waxaad ka abuuri kartaa galal gudaha galka `test` si aad u dhisto tijaabooyinkaaga qaab kasta oo aad rabto.
+* Install the [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* Run the "watch" task via the **Tasks: Run Task** command. Keep this running to ensure tests are discovered.
+* Open the Testing view from the activity bar and click the "Run Test" button, or use the hotkey `Ctrl/Cmd + ; A`
+* View test results in the Test Results view.
+* Modify `src/test/extension.test.ts` or add new test files inside the `test` folder.
+  * The test runner only considers files matching the name pattern `**.test.ts`.
+  * You can create folders inside `test` to organize your tests as you like.
 
-## Ku sii soco
+## Go further
 
-* Yaree cabbirka kordhinta oo hagaaji waqtiga bilowga adigoo [isku xiraya kordhintaada](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
-* [Ku daabac kordhintaada](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) suuqa kordhinta ee VS Code.
-* Si toos ah u samee dhismayaal adigoo dejinaya [Isku-darka Joogtada ah](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+* Reduce extension size and improve startup time by [bundling your extension](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
+* [Publish your extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) on the VS Code extension marketplace.
+* Automate builds by setting up [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
 
-It seems you are requesting a translation to "mo," but could you clarify what language "mo" refers to? It could be shorthand for a specific language or dialect. Let me know so I can assist you better!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+(Note: "mo" is not a recognized language code or standard language name. If you meant a specific language, please clarify so I can provide the correct translation.)

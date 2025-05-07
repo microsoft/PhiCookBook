@@ -1,34 +1,35 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aacf82e3da702afd8469bba99b662509",
-  "translation_date": "2025-04-04T12:58:53+00:00",
-  "source_file": "md\\02.Application\\02.Code\\Phi4\\GenProjectCode\\README.md",
+  "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
+  "translation_date": "2025-05-07T13:45:36+00:00",
+  "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "mo"
 }
 -->
-## **Phi-4-mini-mm ke saath code generate karna**
+## **Phi-4-mini-mm ашиглан код үүсгэх**
 
-Phi-4-mini Phi Family ki mazboot coding kshamataon ko jari rakhta hai. Aap Prompt ka upyog karke coding se jude prashn pooch sakte hain. Swabhavik roop se, mazboot tarkshakti jodne ke baad, ismein aur bhi adhik shaktishali coding kshamataein hain, jaise ki aavashyaktaon ke anusar projects generate karna. Udaharan ke liye, aavashyaktaon ke anusar projects generate karna, jaise:
+Phi-4-mini нь Phi Family-ийн хүчтэй код бичих чадварыг үргэлжлүүлдэг. Та Prompt ашиглан кодтой холбоотой асуулт асууж болно. Мэдээж, хүчтэй логик чадвар нэмэгдсэнээр илүү хүчтэй код бичих чадвартай болсон бөгөөд шаардлагын дагуу төслүүд үүсгэх боломжтой. Жишээ нь, шаардлагын дагуу төслүүд үүсгэх, тухайлбал:
 
-### **Aavashyakta**
+### **Шаардлага**
 
-Ek Shopping Cart App banaiye
+Худалдан авах сагсны апп үүсгэх
 
-- Ek API Rest banaiye jismein nimnlikhit methods ho:
-    - Page offset aur limit ka upyog karke beers ki list prapt karein.
-    - Id ke madhyam se beer ke details prapt karein.
-    - Naam, varnana, tagline, food pairings, aur price ke aadhar par beer khojein.
-- Main page par products ki ek list banaiye.
-    - Products ko filter karne ke liye ek search bar banaiye.
-    - Jab user kisi product par click kare, to description page par navigate karein.
-- (Vikalp) Price ke aadhar par products ko filter karne ke liye ek slicer banaiye.
-- Ek shopping cart banaiye.
-    - Products ko cart mein add karein.
-    - Cart se products ko remove karein.
-    - Cart mein products ki total price calculate karein.
+- Дараах аргуудтай API Rest үүсгэх:
+    - Хуудас, offset, limit ашиглан шар айрагны жагсаалт авах.
+    - id-аар шар айрагны дэлгэрэнгүй мэдээлэл авах.
+    - Нэр, тайлбар, уриа үг, хоолны хослол, үнэ ашиглан шар айраг хайх.
+- Гол хуудсан дээр бүтээгдэхүүний жагсаалт үүсгэх.
+    - Бүтээгдэхүүн шүүх хайлтын самбар үүсгэх.
+    - Хэрэглэгч бүтээгдэхүүн дээр дарвал тайлбарын хуудсанд шилжих.
+- (Сонголт) Үнээр бүтээгдэхүүн шүүх Slicer.
+- Худалдан авах сагс үүсгэх.
+    - Бүтээгдэхүүн сагсанд нэмэх.
+    - Бүтээгдэхүүн сагснаас хасах.
+    - Сагс дахь бүтээгдэхүүний нийт үнийг тооцоолох.
 
-### **Udaharan Code - Python**
+### **Жишээ код - Python**
+
 
 ```python
 
@@ -138,4 +139,5 @@ print(response)
 
 ```
 
-It seems you are requesting a translation into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect?
+**Disclaimer**:  
+Thiz documont haz been translaytid uzing AI translaytion serviz [Co-op Translator](https://github.com/Azure/co-op-translator). Wile we striv for akkuracy, pleez be awar that otomaytid translaytions may contain erors or inakuraseez. The orijinal documont in its native langwaj shud be konsidrd the authoritativ sorce. For kritikal informashun, profeshunal hyuman translaytion is rekomended. We ar not laybl for eny misunderstandings or misinterpretayshuns arising from the yuz of this translaytion.

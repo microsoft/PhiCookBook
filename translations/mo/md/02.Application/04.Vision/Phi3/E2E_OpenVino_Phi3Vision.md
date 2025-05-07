@@ -1,45 +1,50 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "69d48385b1f1b31dd20dbb2405031bff",
-  "translation_date": "2025-04-04T13:01:55+00:00",
-  "source_file": "md\\02.Application\\04.Vision\\Phi3\\E2E_OpenVino_Phi3Vision.md",
+  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
+  "translation_date": "2025-05-07T13:44:53+00:00",
+  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
   "language_code": "mo"
 }
 -->
-This demo yi faaka gaɓe faɗa yadda za a yi amfani da samfurin da aka horar da shi don samar da lambar Python bisa hoton da kuma rubutun tambaya.
+This demo showcases how to use a pretrained model to generate Python code based on an image and a text prompt. 
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)
 
-Ga bayanin mataki-mataki:
+Here's a step-by-step explanation:
 
-1. **Shigo da abubuwan da ake bukata da Tsarawa**:
-   - Ana shigo da ɗakunan karatu da kuma modules da ake bukata, ciki har da `requests`, `PIL` don sarrafa hotuna, da `transformers` don sarrafa samfurin da kuma aiwatarwa.
+1. **Imports and Setup**:
+   - The necessary libraries and modules are imported, including `requests`, `PIL` for image processing, and `transformers` for handling the model and processing.
 
-2. **Loda da Nuna Hoton**:
-   - Ana buɗe fayil ɗin hoto (`demo.png`) ta amfani da ɗakin karatu `PIL` kuma ana nuna shi.
+2. **Loading and Displaying the Image**:
+   - An image file (`demo.png`) is opened using the `PIL` library and displayed.
 
-3. **Kirkirar Tambaya**:
-   - Saƙo yana ƙirƙirwa wanda ya haɗa da hoton da kuma buƙatar samar da lambar Python don sarrafa hoton da adana shi ta amfani da `plt` (matplotlib).
+3. **Defining the Prompt**:
+   - A message is created that includes the image and a request to generate Python code to process the image and save it using `plt` (matplotlib).
 
-4. **Loda Processor**:
-   - Ana loda `AutoProcessor` daga samfurin da aka horar da shi wanda aka ayyana ta `out_dir` directory. Wannan processor ɗin zai sarrafa rubutu da shigarwar hotuna.
+4. **Loading the Processor**:
+   - The `AutoProcessor` is loaded from a pretrained model specified by the `out_dir` directory. This processor will handle the text and image inputs.
 
-5. **Kirkirar Tambaya**:
-   - Ana amfani da `apply_chat_template` don tsara saƙon cikin tambaya da ya dace da samfurin.
+5. **Creating the Prompt**:
+   - The `apply_chat_template` method is used to format the message into a prompt suitable for the model.
 
-6. **Sarrafawa Shigarwa**:
-   - Ana sarrafa tambaya da hoton cikin tensors da samfurin zai iya fahimta.
+6. **Processing the Inputs**:
+   - The prompt and image are processed into tensors that the model can understand.
 
-7. **Kafa Zaɓuɓɓukan Samarwa**:
-   - Ana ayyana zaɓuɓɓuka don tsarin samarwa na samfurin, ciki har da adadin sabon tokens da za a samar da kuma ko za a yi sampling na fitarwa.
+7. **Setting Generation Arguments**:
+   - Arguments for the model's generation process are defined, including the maximum number of new tokens to generate and whether to sample the output.
 
-8. **Samar da Lambar**:
-   - Samfurin yana samar da lambar Python bisa shigarwar da kuma zaɓuɓɓukan samarwa. Ana amfani da `TextStreamer` don sarrafa fitarwa, yana tsallake tambaya da alamu na musamman.
+8. **Generating the Code**:
+   - The model generates the Python code based on the inputs and generation arguments. The `TextStreamer` is used to handle the output, skipping the prompt and special tokens.
 
-9. **Fitarwa**:
-   - Ana buga lambar da aka samar, wanda yakamata ya haɗa da lambar Python don sarrafa hoton da adana shi kamar yadda aka bayyana a tambaya.
+9. **Output**:
+   - The generated code is printed, which should include Python code to process the image and save it as specified in the prompt.
 
-Wannan demo yana nuna yadda za a yi amfani da samfurin da aka horar da shi ta OpenVino don samar da lamba ta atomatik bisa shigarwar mai amfani da hotuna.
+This demo illustrates how to leverage a pretrained model using OpenVino to generate code dynamically based on user input and images.
 
-It seems you are requesting a translation into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, is it Maori, Mongolian, or something else? Please provide more details so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what you mean by "mo"? Are you referring to a specific language or dialect? For example, "mo" could be shorthand for Moldovan, Mongolian, or something else. Once I know the exact language, I can provide an accurate translation.

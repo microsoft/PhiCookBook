@@ -1,23 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "44a77501fe39a2eb2b776dfdf9953b67",
-  "translation_date": "2025-04-04T13:08:07+00:00",
-  "source_file": "md\\03.FineTuning\\CreatingSampleData.md",
+  "original_hash": "3cd0b727945d57998f1096763df56a84",
+  "translation_date": "2025-05-07T13:25:59+00:00",
+  "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "mo"
 }
 -->
-# Angen Dataset Data Image dengan mengunduh Dataset dari Hugging Face beserta gambar terkait
+# Generate Image Data Set by downloading DataSet from Hugging Face and associated images
 
-### Gambaran Umum
 
-Script ini mempersiapkan dataset untuk pembelajaran mesin dengan cara mengunduh gambar yang diperlukan, menyaring baris di mana unduhan gambar gagal, dan menyimpan dataset sebagai file CSV.
+### Overview
 
-### Prasyarat
+Este script prepara un conjunto de datos para aprendizaje automático descargando las imágenes necesarias, filtrando las filas donde la descarga de imágenes falla y guardando el conjunto de datos como un archivo CSV.
 
-Sebelum menjalankan script ini, pastikan untuk memiliki pustaka berikut yang sudah terinstal: `Pandas`, `Datasets`, `requests`, `PIL`, dan `io`. Anda juga perlu mengganti `'Insert_Your_Dataset'` pada baris 2 dengan nama dataset Anda dari Hugging Face.
+### Prerequisites
 
-Pustaka yang Diperlukan:
+Antes de ejecutar este script, asegúrate de tener instaladas las siguientes librerías: `Pandas`, `Datasets`, `requests`, `PIL` y `io`. También necesitarás reemplazar `'Insert_Your_Dataset'` en la línea 2 con el nombre de tu conjunto de datos de Hugging Face.
+
+Required Libraries:
 
 ```python
 
@@ -29,11 +30,11 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### Fungsionalitas
+### Functionality
 
-Script ini melakukan langkah-langkah berikut:
+El script realiza los siguientes pasos:
 
-1. Mengunduh dataset dari Hugging Face menggunakan `load_dataset()` function.
+1. Descarga el conjunto de datos desde Hugging Face usando la función `load_dataset()` function.
 2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
 3. Creates directories to save the dataset and images.
 4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
@@ -42,33 +43,35 @@ Script ini melakukan langkah-langkah berikut:
 
 ### Custom Function
 
-The `download_image()` untuk mengunduh gambar dari URL dan menyimpannya secara lokal menggunakan pustaka Pillow Image Library (PIL) dan modul `io`. Fungsi ini mengembalikan nilai True jika gambar berhasil diunduh, dan False jika tidak. Fungsi juga akan melemparkan exception dengan pesan error jika permintaan gagal.
+The `download_image()` descarga una imagen desde una URL y la guarda localmente usando la biblioteca Pillow Image Library (PIL) y el módulo `io`. Devuelve True si la imagen se descarga correctamente, y False en caso contrario. La función también lanza una excepción con el mensaje de error cuando la solicitud falla.
 
-### Bagaimana Cara Kerjanya
+### How does this work
 
-Fungsi download_image menerima dua parameter: image_url, yaitu URL gambar yang akan diunduh, dan save_path, yaitu jalur di mana gambar yang diunduh akan disimpan.
+La función download_image recibe dos parámetros: image_url, que es la URL de la imagen a descargar, y save_path, que es la ruta donde se guardará la imagen descargada.
 
-Berikut cara kerja fungsi ini:
+Así es como funciona la función:
 
-- Fungsi memulai dengan membuat permintaan GET ke image_url menggunakan metode requests.get. Ini mengambil data gambar dari URL.
+Comienza haciendo una petición GET a image_url usando el método requests.get. Esto recupera los datos de la imagen desde la URL.
 
-- Baris response.raise_for_status() memeriksa apakah permintaan berhasil. Jika kode status respons menunjukkan kesalahan (misalnya, 404 - Tidak Ditemukan), maka exception akan dilemparkan. Ini memastikan kita hanya melanjutkan pengunduhan gambar jika permintaan berhasil.
+La línea response.raise_for_status() verifica si la solicitud fue exitosa. Si el código de estado de la respuesta indica un error (por ejemplo, 404 - No encontrado), lanzará una excepción. Esto asegura que solo continuemos con la descarga si la solicitud fue exitosa.
 
-- Data gambar kemudian diteruskan ke metode Image.open dari modul PIL (Python Imaging Library). Metode ini membuat objek Image dari data gambar.
+Luego, los datos de la imagen se pasan al método Image.open del módulo PIL (Python Imaging Library). Este método crea un objeto Image a partir de los datos de la imagen.
 
-- Baris image.save(save_path) menyimpan gambar ke save_path yang ditentukan. Save_path harus menyertakan nama file dan ekstensi yang diinginkan.
+La línea image.save(save_path) guarda la imagen en la ruta especificada por save_path. Esta ruta debe incluir el nombre y la extensión del archivo deseado.
 
-- Akhirnya, fungsi mengembalikan nilai True untuk menunjukkan bahwa gambar berhasil diunduh dan disimpan. Jika terjadi exception selama proses, fungsi akan menangkap exception tersebut, mencetak pesan error yang menunjukkan kegagalan, dan mengembalikan nilai False.
+Finalmente, la función devuelve True para indicar que la imagen se descargó y guardó correctamente. Si ocurre alguna excepción durante el proceso, captura la excepción, imprime un mensaje de error indicando la falla y devuelve False.
 
-Fungsi ini berguna untuk mengunduh gambar dari URL dan menyimpannya secara lokal. Fungsi ini menangani potensi error selama proses pengunduhan dan memberikan umpan balik apakah unduhan berhasil atau tidak.
+Esta función es útil para descargar imágenes desde URLs y guardarlas localmente. Maneja posibles errores durante la descarga y proporciona retroalimentación sobre si la descarga fue exitosa o no.
 
-Perlu dicatat bahwa pustaka requests digunakan untuk membuat permintaan HTTP, pustaka PIL digunakan untuk bekerja dengan gambar, dan kelas BytesIO digunakan untuk menangani data gambar sebagai aliran byte.
+Cabe destacar que la librería requests se usa para hacer peticiones HTTP, la librería PIL se usa para trabajar con imágenes, y la clase BytesIO se utiliza para manejar los datos de la imagen como un flujo de bytes.
 
-### Kesimpulan
 
-Script ini menyediakan cara yang praktis untuk mempersiapkan dataset untuk pembelajaran mesin dengan mengunduh gambar yang diperlukan, menyaring baris di mana unduhan gambar gagal, dan menyimpan dataset sebagai file CSV.
 
-### Contoh Script
+### Conclusion
+
+Este script ofrece una manera práctica de preparar un conjunto de datos para aprendizaje automático descargando las imágenes necesarias, filtrando las filas donde la descarga falla y guardando el conjunto de datos como un archivo CSV.
+
+### Sample Script
 
 ```python
 import os
@@ -127,10 +130,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Unduh Kode Contoh 
-[Script untuk Membuat Dataset Baru](../../../../code/04.Finetuning/generate_dataset.py)
+### Sample Code Download 
+[Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### Contoh Dataset
-[Contoh Dataset dari finetuning dengan LORA](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+### Sample Data Set
+[Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
-It seems you are requesting a translation into "mo," but could you clarify what "mo" refers to? Are you referring to a specific language, dialect, or abbreviation? For example, are you referring to Maori, Mongolian, or something else?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

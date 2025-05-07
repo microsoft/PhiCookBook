@@ -1,20 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f27e920c85081d40ddb90607d7ceabd7",
-  "translation_date": "2025-04-04T11:29:33+00:00",
-  "source_file": "code\\07.Lab\\01\\AIPC\\extensions\\phi3ext\\CHANGELOG.md",
+  "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
+  "translation_date": "2025-05-07T15:19:37+00:00",
+  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
   "language_code": "mo"
 }
 -->
-# Changelog
+# Change Log
 
 All notable changes to the "phi3ext" extension will be documented in this file.
 
-Check out [Keep a Changelog](http://keepachangelog.com/) for suggestions on how to structure this file.
+Please refer to [Keep a Changelog](http://keepachangelog.com/) for guidance on how to structure this file.
 
 ## [Unreleased]
 
-- Initial version
+- Initial release
 
-It seems like you might be asking for a translation into "mo," but could you clarify what "mo" refers to? Are you asking for a translation into Maori, Montenegrin, or another specific language? Let me know so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language or dialect "mo" refers to? This will help me provide the correct translation.

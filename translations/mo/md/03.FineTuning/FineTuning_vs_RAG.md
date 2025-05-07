@@ -1,9 +1,9 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5f1c641d645d9e86acdd304d5e9a03de",
-  "translation_date": "2025-04-04T13:32:17+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_vs_RAG.md",
+  "original_hash": "e4e010400c2918557b36bb932a14004c",
+  "translation_date": "2025-05-07T13:33:08+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_vs_RAG.md",
   "language_code": "mo"
 }
 -->
@@ -11,20 +11,21 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Retrieval Augmented Generation
 
-RAG ke data retrieval da text generation. Enterprise ke structured aur unstructured data vector database mein store kiye jaate hain. Jab relevant content search kiya jaata hai, toh ek context banane ke liye relevant summary aur content retrieve kiya jaata hai, aur LLM/SLM ki text completion capability ke saath combine karke content generate kiya jaata hai.
+RAG combines data retrieval with text generation. Both structured and unstructured enterprise data are stored in a vector database. When searching for relevant information, related summaries and content are retrieved to form a context, which is then used alongside the text completion capabilities of LLM/SLM to generate content.
 
 ## RAG Process
-![FinetuningvsRAG](../../../../translated_images/rag.36e7cb856f120334d577fde60c6a5d7c5eecae255dac387669303d30b4b3efa4.mo.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.mo.png)
 
 ## Fine-tuning
-Fine-tuning ek model ke improvement par based hota hai. Ismein model algorithm se shuruaat karne ki zarurat nahi hoti, lekin data ka lagataar accumulation zaruri hota hai. Agar industry applications mein zyada precise terminology aur language expression chahiye, toh fine-tuning better choice ho sakta hai. Lekin agar aapka data frequently change karta hai, toh fine-tuning complex ho sakta hai.
+Fine-tuning focuses on improving a specific model. It doesn’t require starting from the model algorithm, but it does need continuous accumulation of data. If you want more accurate terminology and language expression in industry applications, fine-tuning is a better choice. However, if your data changes frequently, fine-tuning can become complex.
 
 ## How to choose
-Agar hamare answer mein external data ko include karna zaruri ho, toh RAG sabse accha option hai.
+If your answer requires incorporating external data, RAG is the best choice.
 
-Agar stable aur precise industry knowledge output karna ho, toh fine-tuning ek achha choice ho sakta hai. RAG relevant content ko prioritize karta hai, lekin specialized nuances ko hamesha sahi se capture nahi kar paata.
+If you need to deliver stable and precise industry knowledge, fine-tuning is a good option. RAG prioritizes retrieving relevant content but may not always capture specialized nuances perfectly.
 
-Fine-tuning ke liye ek high-quality data set ki zarurat hoti hai, aur agar data ka scope chhota ho, toh iska zyada farq nahi padta. RAG zyada flexible hai.  
-Fine-tuning ek black box ki tarah hota hai, ek metaphysics, jiska internal mechanism samajhna mushkil hota hai. Lekin RAG data ke source ko identify karna asaan bana deta hai, jo hallucinations ya content errors ko effectively adjust karne aur better transparency dene mein madad karta hai.
+Fine-tuning demands a high-quality dataset, and if your data scope is small, it won’t make much difference. RAG is more flexible.  
+Fine-tuning is a black box, somewhat metaphysical, making it hard to understand the internal workings. RAG, on the other hand, makes it easier to trace the data source, helping to effectively address hallucinations or content errors and offering better transparency.
 
-It seems like you are asking for the text to be translated into "mo." Could you please clarify what "mo" refers to? Are you referring to a specific language or dialect?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

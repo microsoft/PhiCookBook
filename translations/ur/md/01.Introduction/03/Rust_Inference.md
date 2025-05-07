@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2fa1ead890e358cc560ed4f9b3cf219a",
-  "translation_date": "2025-04-03T06:58:39+00:00",
-  "source_file": "md\\01.Introduction\\03\\Rust_Inference.md",
+  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
+  "translation_date": "2025-05-07T14:40:28+00:00",
+  "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "ur"
 }
 -->
-# کراس پلیٹ فارم انفرنس رَسٹ کے ساتھ
+# Cross-platform inference with Rust
 
-یہ ٹیوٹوریل ہمیں رَسٹ اور [Candle ML فریم ورک](https://github.com/huggingface/candle) کے ذریعے انفرنس کرنے کے عمل کی رہنمائی کرے گا، جو HuggingFace کی جانب سے فراہم کیا گیا ہے۔ رَسٹ کو انفرنس کے لیے استعمال کرنے کے کئی فوائد ہیں، خاص طور پر دیگر پروگرامنگ زبانوں کے مقابلے میں۔ رَسٹ اپنی بہترین کارکردگی کے لیے جانا جاتا ہے، جو C اور C++ کے برابر ہے۔ یہ اسے انفرنس کے کاموں کے لیے ایک بہترین انتخاب بناتا ہے، جو کہ کمپیوٹیشنل طور پر بھاری ہو سکتے ہیں۔ خاص طور پر، یہ زیرو کاسٹ ایبسٹریکشنز اور مؤثر میموری مینجمنٹ کی وجہ سے ہوتا ہے، جس میں گاربیج کلیکشن کا کوئی اوورہیڈ نہیں ہوتا۔ رَسٹ کی کراس پلیٹ فارم صلاحیتیں ایسے کوڈ کی ڈیولپمنٹ کو ممکن بناتی ہیں جو مختلف آپریٹنگ سسٹمز، جیسے ونڈوز، میک او ایس، اور لینکس، کے ساتھ ساتھ موبائل آپریٹنگ سسٹمز پر بغیر کسی اہم تبدیلی کے چل سکتے ہیں۔
+یہ ٹیوٹوریل ہمیں Rust اور HuggingFace کے [Candle ML framework](https://github.com/huggingface/candle) کے ذریعے inference کرنے کے عمل سے روشناس کرائے گا۔ Rust کو inference کے لیے استعمال کرنے کے کئی فائدے ہیں، خاص طور پر جب اسے دیگر پروگرامنگ زبانوں سے موازنہ کیا جائے۔ Rust اپنی اعلیٰ کارکردگی کے لیے جانا جاتا ہے، جو C اور C++ کے برابر ہے۔ یہی اسے inference کے کاموں کے لیے بہترین انتخاب بناتا ہے، جو عموماً کمپیوٹیشنل لحاظ سے بھاری ہوتے ہیں۔ خاص طور پر، یہ صفر-لاگت abstraction اور مؤثر میموری مینجمنٹ کی بدولت ہے، جس میں کوئی garbage collection کا بوجھ نہیں ہوتا۔ Rust کی cross-platform صلاحیتیں مختلف آپریٹنگ سسٹمز جیسے Windows، macOS، Linux، اور موبائل آپریٹنگ سسٹمز پر بغیر کوڈ میں بڑی تبدیلی کے چلنے کی اجازت دیتی ہیں۔
 
-اس ٹیوٹوریل کو فالو کرنے کے لیے ضروری ہے کہ آپ [رَسٹ انسٹال کریں](https://www.rust-lang.org/tools/install)، جو رَسٹ کمپائلر اور پیکیج مینیجر، Cargo، شامل کرتا ہے۔
+اس ٹیوٹوریل کو فالو کرنے کے لیے شرط ہے کہ آپ نے [Rust انسٹال](https://www.rust-lang.org/tools/install) کیا ہو، جس میں Rust compiler اور Cargo، Rust کا پیکج مینیجر شامل ہے۔
 
-## مرحلہ 1: نیا رَسٹ پروجیکٹ بنائیں
+## Step 1: Create a New Rust Project
 
-نیا رَسٹ پروجیکٹ بنانے کے لیے، ٹرمینل میں درج ذیل کمانڈ چلائیں:
+نیا Rust پروجیکٹ بنانے کے لیے، ٹرمینل میں درج ذیل کمانڈ چلائیں:
 
 ```bash
 cargo new phi-console-app
 ```
 
-یہ ایک ابتدائی پروجیکٹ اسٹرکچر جنریٹ کرے گا جس میں `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+یہ ایک ابتدائی پروجیکٹ کا ڈھانچہ تیار کرتا ہے جس میں `Cargo.toml` file and a `src` directory containing a `main.rs` file.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` فائل شامل ہوگی:
+Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` فائل شامل ہے:
 
 ```toml
 [package]
@@ -39,9 +39,9 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## مرحلہ 2: بنیادی پیرامیٹرز ترتیب دیں
+## Step 2: Configure Basic Parameters
 
-`main.rs` فائل کے اندر، ہم انفرنس کے لیے ابتدائی پیرامیٹرز سیٹ کریں گے۔ سادگی کے لیے، یہ سب ہارڈ کوڈ کیے جائیں گے، لیکن ہم انہیں حسب ضرورت تبدیل کر سکتے ہیں۔
+main.rs فائل کے اندر، ہم اپنے inference کے ابتدائی پیرامیٹرز سیٹ کریں گے۔ آسانی کے لیے یہ سب hardcoded ہوں گے، لیکن ضرورت کے مطابق انہیں تبدیل کیا جا سکتا ہے۔
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,16 +55,16 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: سیمپلنگ کے عمل کی بے ترتیبی کو کنٹرول کرتا ہے۔
-- **sample_len**: جنریٹ ہونے والے ٹیکسٹ کی زیادہ سے زیادہ لمبائی کا تعین کرتا ہے۔
-- **top_p**: نیوکلئیس سیمپلنگ کے لیے استعمال ہوتا ہے تاکہ ہر قدم کے لیے محدود ٹوکنز پر غور کیا جائے۔
-- **repeat_last_n**: ان ٹوکنز کی تعداد کو کنٹرول کرتا ہے جن پر ریپیٹیٹیو سیکوینسز کو روکنے کے لیے پینلٹی لگائی جاتی ہے۔
-- **repeat_penalty**: ریپیٹڈ ٹوکنز کو روکنے کے لیے پینلٹی ویلیو۔
-- **seed**: ایک رینڈم سیڈ (بہتر ریپروڈیوسیبلٹی کے لیے ہم مستقل ویلیو استعمال کر سکتے ہیں)۔
-- **prompt**: جنریشن شروع کرنے کے لیے ابتدائی پرامپٹ ٹیکسٹ۔ نوٹ کریں کہ ہم ماڈل سے آئس ہاکی کے بارے میں ایک ہائیکو جنریٹ کرنے کو کہتے ہیں، اور اسے خاص ٹوکنز کے ساتھ لپیٹتے ہیں تاکہ صارف اور اسسٹنٹ کے حصے کی گفتگو کو ظاہر کیا جا سکے۔ ماڈل پرامپٹ کو مکمل کر کے ایک ہائیکو جنریٹ کرے گا۔
-- **device**: اس مثال میں ہم کمپیوٹیشن کے لیے CPU استعمال کرتے ہیں۔ Candle GPU کے ساتھ CUDA اور Metal پر چلنے کی بھی سپورٹ فراہم کرتا ہے۔
+- **temperature**: سیمپلنگ کے عمل میں randomness کو کنٹرول کرتا ہے۔
+- **sample_len**: جنریٹ کیے جانے والے متن کی زیادہ سے زیادہ لمبائی بتاتا ہے۔
+- **top_p**: nucleus sampling کے لیے استعمال ہوتا ہے تاکہ ہر قدم پر غور کیے جانے والے tokens کی تعداد محدود کی جا سکے۔
+- **repeat_last_n**: اس بات کو کنٹرول کرتا ہے کہ کتنے tokens پر penalty لگائی جائے تاکہ بار بار دہرائے جانے والے جملوں سے بچا جا سکے۔
+- **repeat_penalty**: دہرائے جانے والے tokens کو روکنے کے لیے penalty کی قیمت۔
+- **seed**: ایک random seed (بہتر reproducibility کے لیے مستقل ویلیو بھی استعمال کی جا سکتی ہے)۔
+- **prompt**: جنریشن شروع کرنے کے لیے ابتدائی متن۔ دھیان دیں کہ ہم ماڈل سے ice hockey پر ایک haiku بنانے کو کہتے ہیں، اور ہم اسے user اور assistant کے conversation حصوں کو ظاہر کرنے کے لیے خاص tokens کے ساتھ لپیٹتے ہیں۔ ماڈل پھر اس prompt کو haiku کے ساتھ مکمل کرے گا۔
+- **device**: اس مثال میں ہم computation کے لیے CPU استعمال کر رہے ہیں۔ Candle GPU پر CUDA اور Metal کے ساتھ چلانے کی بھی حمایت کرتا ہے۔
 
-## مرحلہ 3: ماڈل اور ٹوکنائزر ڈاؤنلوڈ/تیار کریں
+## Step 3: Download/Prepare Model and Tokenizer
 
 ```rust
 let api = hf_hub::api::sync::Api::new()?;
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-ہم `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` فائل کو اپنے انپٹ ٹیکسٹ کو ٹوکنائز کرنے کے لیے استعمال کرتے ہیں۔ ایک بار ڈاؤنلوڈ ہونے کے بعد ماڈل کیش ہو جاتا ہے، اس لیے پہلی بار عمل سست ہوگا (کیونکہ یہ ماڈل کے 2.4GB ڈاؤنلوڈ کرے گا) لیکن اگلی بار عمل تیز ہوگا۔
+ہم `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` فائل کو اپنے input متن کو tokenizing کرنے کے لیے استعمال کرتے ہیں۔ ماڈل ڈاؤن لوڈ ہونے کے بعد cache ہو جاتا ہے، اس لیے پہلی بار execution سست ہو گی (کیونکہ ماڈل کے 2.4GB ڈاؤن لوڈ ہوتے ہیں) لیکن بعد کی executionز تیز ہوں گی۔
 
-## مرحلہ 4: ماڈل لوڈ کریں
+## Step 4: Load Model
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-ہم کوانٹائزڈ ماڈل ویٹس کو میموری میں لوڈ کرتے ہیں اور Phi-3 ماڈل کو انیشیلائز کرتے ہیں۔ اس مرحلے میں `gguf` فائل سے ماڈل ویٹس کو پڑھنا اور مخصوص ڈیوائس (اس مثال میں CPU) پر انفرنس کے لیے ماڈل سیٹ اپ کرنا شامل ہے۔
+ہم quantized ماڈل کے وزن memory میں لوڈ کرتے ہیں اور Phi-3 ماڈل کو initialize کرتے ہیں۔ اس مرحلے میں `gguf` فائل سے ماڈل وزن پڑھنا اور مخصوص device (اس کیس میں CPU) پر inference کے لیے ماڈل سیٹ کرنا شامل ہے۔
 
-## مرحلہ 5: پرامپٹ پروسیس کریں اور انفرنس کے لیے تیار کریں
+## Step 5: Process Prompt and Prepare for Inference
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-اس مرحلے میں، ہم انپٹ پرامپٹ کو ٹوکنائز کرتے ہیں اور اسے انفرنس کے لیے تیار کرتے ہیں، یعنی اسے ٹوکن IDs کی سیکوینس میں تبدیل کرتے ہیں۔ ہم `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` ویلیوز بھی انیشیلائز کرتے ہیں۔ ہر ٹوکن کو ٹینسر میں تبدیل کر کے ماڈل کے ذریعے لاجٹس حاصل کیے جاتے ہیں۔
+اس مرحلے میں، ہم input prompt کو tokenize کرتے ہیں اور اسے token IDs کی ترتیب میں تبدیل کر کے inference کے لیے تیار کرتے ہیں۔ ہم `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` ویلیوز کو بھی initialize کرتے ہیں۔ ہر token کو tensor میں تبدیل کر کے ماڈل سے logits حاصل کیے جاتے ہیں۔
 
-یہ لوپ پرامپٹ کے ہر ٹوکن کو پروسیس کرتا ہے، لاجٹس پروسیسر کو اپڈیٹ کرتا ہے اور اگلے ٹوکن جنریشن کے لیے تیار کرتا ہے۔
+لوپ prompt کے ہر token کو process کرتا ہے، logits processor کو اپڈیٹ کرتا ہے اور اگلے token کی جنریشن کے لیے تیار کرتا ہے۔
 
-## مرحلہ 6: انفرنس
+## Step 6: Inference
 
 ```rust
 for index in 0..to_sample {
@@ -160,21 +160,20 @@ for index in 0..to_sample {
 }
 ```
 
-انفرنس لوپ میں، ہم ایک ایک کر کے ٹوکنز جنریٹ کرتے ہیں جب تک کہ مطلوبہ سیمپل لمبائی تک نہ پہنچ جائیں یا اینڈ آف سیکوینس ٹوکن کا سامنا نہ ہو۔ اگلا ٹوکن ٹینسر میں تبدیل کر کے ماڈل کے ذریعے پروسیس کیا جاتا ہے، جبکہ لاجٹس پر پینلٹیز اور سیمپلنگ اپلائی کی جاتی ہیں۔ پھر اگلا ٹوکن سیمپل، ڈی کوڈ اور سیکوینس میں شامل کیا جاتا ہے۔
+inference کے لوپ میں، ہم tokens کو ایک ایک کر کے جنریٹ کرتے ہیں جب تک کہ مطلوبہ sample length تک نہ پہنچ جائیں یا end-of-sequence token نہ مل جائے۔ اگلا token tensor میں تبدیل کر کے ماڈل سے گزارا جاتا ہے، اور logits کو penalties اور sampling کے لیے process کیا جاتا ہے۔ پھر اگلا token sample کیا جاتا ہے، decode کیا جاتا ہے، اور sequence میں شامل کیا جاتا ہے۔  
+بار بار دہرائے جانے والے متن سے بچنے کے لیے، `repeat_last_n` and `repeat_penalty` پیرامیٹرز کی بنیاد پر repeated tokens پر penalty لگائی جاتی ہے۔
 
-ریپیٹیٹو ٹیکسٹ سے بچنے کے لیے، `repeat_last_n` and `repeat_penalty` پیرامیٹرز کی بنیاد پر ریپیٹڈ ٹوکنز پر پینلٹی اپلائی کی جاتی ہے۔
+آخر میں، جنریٹ کیا گیا متن decode ہوتے ہی پرنٹ کیا جاتا ہے، تاکہ real-time streaming آؤٹ پٹ یقینی بنایا جا سکے۔
 
-آخر میں، جنریٹڈ ٹیکسٹ کو ڈی کوڈ کر کے پرنٹ کیا جاتا ہے، تاکہ ریئل ٹائم آؤٹ پٹ دکھایا جا سکے۔
+## Step 7: Run the Application
 
-## مرحلہ 7: ایپلیکیشن چلائیں
-
-ایپلیکیشن چلانے کے لیے، ٹرمینل میں درج ذیل کمانڈ چلائیں:
+ایپلیکیشن چلانے کے لیے، ٹرمینل میں درج ذیل کمانڈ execute کریں:
 
 ```bash
 cargo run --release
 ```
 
-یہ آئس ہاکی کے بارے میں ایک ہائیکو پرنٹ کرے گا جو Phi-3 ماڈل نے جنریٹ کیا ہے۔ کچھ اس طرح:
+یہ Phi-3 ماڈل کے ذریعے ice hockey پر ایک haiku پرنٹ کرے گا۔ کچھ اس طرح:
 
 ```
 Puck glides swiftly,  
@@ -190,13 +189,13 @@ On ice rink's silent stage it thrives—
 Swish of sticks now alive.
 ```
 
-## نتیجہ
+## Conclusion
 
-ان مراحل کو فالو کر کے، ہم Phi-3 ماڈل کے ذریعے رَسٹ اور Candle کا استعمال کرتے ہوئے 100 لائنز سے کم کوڈ میں ٹیکسٹ جنریشن کر سکتے ہیں۔ کوڈ ماڈل لوڈنگ، ٹوکنائزیشن، اور انفرنس کو ہینڈل کرتا ہے، ٹینسرز اور لاجٹس پروسیسنگ کا فائدہ اٹھاتے ہوئے انپٹ پرامپٹ کی بنیاد پر مربوط ٹیکسٹ جنریٹ کرتا ہے۔
+ان مراحل کو فالو کر کے، ہم Phi-3 ماڈل کے ساتھ Rust اور Candle استعمال کرتے ہوئے 100 لائنوں سے کم کوڈ میں متن کی جنریشن کر سکتے ہیں۔ کوڈ ماڈل لوڈنگ، tokenization، اور inference کو ہینڈل کرتا ہے، tensors اور logits processing کا فائدہ اٹھاتے ہوئے input prompt کی بنیاد پر coherent متن تیار کرتا ہے۔
 
-یہ کنسول ایپلیکیشن ونڈوز، لینکس، اور میک او ایس پر چل سکتی ہے۔ رَسٹ کی پورٹیبیلیٹی کی وجہ سے، کوڈ کو موبائل ایپس میں چلنے والی لائبریری میں بھی تبدیل کیا جا سکتا ہے (کنسول ایپس وہاں نہیں چل سکتیں، ظاہر ہے)۔
+یہ console application Windows، Linux، اور Mac OS پر چل سکتا ہے۔ Rust کی portability کی وجہ سے، کوڈ کو موبائل ایپس کے اندر چلنے والی لائبریری میں بھی تبدیل کیا جا سکتا ہے (کیونکہ ہم وہاں console apps نہیں چلا سکتے)۔
 
-## ضمیمہ: مکمل کوڈ
+## Appendix: full code
 
 ```rust
 use candle_core::{quantized::gguf_file, Device, Tensor};
@@ -305,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-نوٹ: اگر آپ اس کوڈ کو aarch64 Linux یا aarch64 Windows پر چلانا چاہتے ہیں، تو `.cargo/config` نامی ایک فائل بنائیں جس میں درج ذیل مواد ہو:
+نوٹ: aarch64 Linux یا aarch64 Windows پر یہ کوڈ چلانے کے لیے، `.cargo/config` نامی فائل بنائیں اور درج ذیل مواد شامل کریں:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -319,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> آپ Candle کے آفیشل [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) ریپوزیٹری پر مزید مثالوں کے لیے جا سکتے ہیں کہ Phi-3 ماڈل کو رَسٹ اور Candle کے ساتھ کیسے استعمال کیا جائے، بشمول انفرنس کے متبادل طریقے۔
+> آپ مزید مثالوں کے لیے [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) کے official repository کا دورہ کر سکتے ہیں، جہاں Rust اور Candle کے ساتھ Phi-3 ماڈل کے استعمال کے متبادل طریقے اور inference کی مثالیں دستیاب ہیں۔
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے پوری کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا خامیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ماخذ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمے کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**دستخطی**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کی کوشش کرتے ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غیر درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی مستند ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔

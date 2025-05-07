@@ -1,15 +1,16 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "79d66be47fdf7961abe34c07d4cbf5b2",
-  "translation_date": "2025-04-04T13:03:58+00:00",
-  "source_file": "md\\02.Application\\05.Audio\\Phi4\\Transciption\\README.md",
+  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
+  "translation_date": "2025-05-07T14:27:11+00:00",
+  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "mo"
 }
 -->
-## **Mo le fangi transcription audio ni Phi-4-multimodal**
+## **音频转录提取使用 Phi-4-multimodal**
 
-Phi-4-multimodal jẹ awoṣe ti o ni agbara pipe ti o le lo ohun ni afikun si ọrọ ati awọn aworan. Jẹ ká wo bi a ṣe le lo o.
+Phi-4-multimodal 是一个全模态模型，除了文本和图像外，还能处理音频。让我们来看一下如何使用它。
+
 
 ```python
 
@@ -64,4 +65,9 @@ print(response)
 
 ```
 
-It seems like you are asking to translate the text into "mo," but could you clarify what "mo" refers to? Are you referring to a specific language, such as Maori, Montenegrin, or something else? Providing more context will help ensure the translation is accurate.
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+(Note: "mo" is not a recognized language code or name in standard language lists. Could you please specify which language or dialect "mo" refers to? For example, is it a shorthand or abbreviation for a particular language?)

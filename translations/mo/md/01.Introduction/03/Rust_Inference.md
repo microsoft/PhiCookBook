@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2fa1ead890e358cc560ed4f9b3cf219a",
-  "translation_date": "2025-04-04T12:09:34+00:00",
-  "source_file": "md\\01.Introduction\\03\\Rust_Inference.md",
+  "original_hash": "8a7ad026d880c666db9739a17a2eb400",
+  "translation_date": "2025-05-07T14:41:07+00:00",
+  "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "mo"
 }
 -->
-# Rust-ով բազմապլատֆորմ ինֆերենս
+# Cross-platform inference with Rust
 
-Այս ձեռնարկը մեզ կուղեկցի Rust-ի և HuggingFace-ի [Candle ML framework](https://github.com/huggingface/candle)-ի միջոցով ինֆերենս կատարելու գործընթացով։ Rust-ը ինֆերենսի համար առաջարկում է մի շարք առավելություններ, հատկապես՝ համեմատած այլ ծրագրավորման լեզուների հետ։ Rust-ը հայտնի է իր բարձր արդյունավետությամբ, որը համեմատելի է C-ի և C++-ի հետ։ Սա այն դարձնում է հիանալի ընտրություն՝ հաշվողականորեն ծանրաբեռնված ինֆերենսի առաջադրանքների համար։ Սա հատկապես պայմանավորված է զրոյական արժեք ունեցող աբստրակցիաներով և արդյունավետ հիշողության կառավարմամբ, որը չունի աղբահանության ավելորդ ծախսեր։ Rust-ի բազմապլատֆորմ հնարավորությունները թույլ են տալիս մշակել կոդ, որը կարող է աշխատել տարբեր օպերացիոն համակարգերում՝ ներառյալ Windows, macOS և Linux, ինչպես նաև բջջային օպերացիոն համակարգերում՝ առանց կոդի բազային էական փոփոխությունների։
+This tutorial will guide us through the process of performing inference using Rust and the [Candle ML framework](https://github.com/huggingface/candle) from HuggingFace. Using Rust for inference offers several advantages, particularly when compared to other programming languages. Rust is known for its high performance, comparable to that of C and C++. This makes it an excellent choice for inference tasks, which can be computationally intensive. In particular, this is driven by the zero-cost abstractions and efficient memory management, which has no garbage collection overhead. Rust's cross-platform capabilities enable development of code that run on various operating systems, including Windows, macOS, and Linux, as well as mobile operating systems, without significant changes to the codebase.
 
-Այս ձեռնարկը հետևելու համար նախապայման է [տեղադրել Rust](https://www.rust-lang.org/tools/install), որը ներառում է Rust կոմպիլյատորը և Cargo փաթեթների կառավարիչը։
+The prerequisite to follow this tutorial is to [install Rust](https://www.rust-lang.org/tools/install), which includes the Rust compiler and Cargo, the Rust package manager.
 
-## Քայլ 1: Ստեղծել նոր Rust նախագիծ
+## Step 1: Create a New Rust Project
 
-Նոր Rust նախագիծ ստեղծելու համար տերմինալում կատարեք հետևյալ հրամանը․
+To create a new Rust project, run the following command in the terminal:
 
 ```bash
 cargo new phi-console-app
 ```
 
-Սա կստեղծի նախնական նախագծի կառուցվածք՝ `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+This generates an initial project structure with a `Cargo.toml` file and a `src` directory containing a `main.rs` file.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` ֆայլով․
+Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` file:
 
 ```toml
 [package]
@@ -39,9 +39,9 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## Քայլ 2: Հիմնական պարամետրերի կարգավորում
+## Step 2: Configure Basic Parameters
 
-`main.rs` ֆայլում մենք կկարգավորենք ինֆերենսի նախնական պարամետրերը։ Դրանք բոլորը կկոդավորվեն պարզության համար, սակայն հնարավոր է փոխել ըստ անհրաժեշտության։
+Inside the main.rs file, we will set up the initial parameters for our inference. They are all going to be hardcoded for simplicity, but we can modify them as needed.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,16 +55,16 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: Կառավարում է նմուշառման գործընթացի պատահականությունը։
-- **sample_len**: Սահմանում է գեներացված տեքստի առավելագույն երկարությունը։
-- **top_p**: Օգտագործվում է նուկլեուսի նմուշառման համար՝ սահմանափակելու յուրաքանչյուր քայլի համար դիտարկվող տոքենների քանակը։
-- **repeat_last_n**: Կառավարում է այն տոքենների քանակը, որոնք հաշվի են առնվում կրկնվող հաջորդականությունների կանխարգելման համար։
-- **repeat_penalty**: Արժեք, որը խրախուսում է չկրկնվող տոքենների օգտագործումը։
-- **seed**: Պատահական սերմ (կարող ենք օգտագործել հաստատուն արժեք՝ վերարտադրելիության համար)։
-- **prompt**: Սկզբնական տեքստը, որով սկսվում է գեներացիան։ Ուշադրություն դարձրեք, որ մենք խնդրում ենք մոդելին ստեղծել հոկեյի մասին հայկու և այն փաթաթում ենք հատուկ տոքեններով՝ նշելու համար զրույցի օգտագործողի և օգնականի հատվածները։ Մոդելը կավարտի հուշումը՝ հայկուով։
-- **device**: Այս օրինակում մենք օգտագործում ենք CPU հաշվարկի համար։ Candle-ը աջակցում է GPU-ի օգտագործմանը CUDA-ի և Metal-ի հետ։
+- **temperature**: Controls the randomness of the sampling process.
+- **sample_len**: Specifies the maximum length of the generated text.
+- **top_p**: Used for nucleus sampling to limit the number of tokens considered for each step.
+- **repeat_last_n**: Controls the number of tokens considered for applying a penalty to prevent repetitive sequences.
+- **repeat_penalty**: The penalty value to discourage repeated tokens.
+- **seed**: A random seed (we could use a constant value for better reproducibility).
+- **prompt**: The initial prompt text to start the generation. Notice that we ask the model to generate a haiku about ice hockey, and that we wrap it with special tokens to indicate the user and assistant parts of the conversation. The model will then complete the prompt with a haiku.
+- **device**: We use the CPU for computation in this example. Candle supports running on GPU with CUDA and Metal as well.
 
-## Քայլ 3: Ներբեռնել/Պատրաստել Մոդել և Տոքենիզատոր
+## Step 3: Download/Prepare Model and Tokenizer
 
 ```rust
 let api = hf_hub::api::sync::Api::new()?;
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Մենք օգտագործում ենք `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` ֆայլը՝ մեր մուտքային տեքստը տոքենիզացնելու համար։ Ներբեռնելուց հետո մոդելը քեշավորվում է, այնպես որ առաջին գործարկումը դանդաղ կլինի (քանի որ ներբեռնում է մոդելի 2.4 ԳԲ), բայց հաջորդ գործարկումները կլինեն ավելի արագ։
+We use the `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` file is used for tokenizing our input text. Once downloaded the model is cached, so the first execution would be slow (as it downloads the 2.4GB of the model) but subsequent executions would be faster.
 
-## Քայլ 4: Մոդելի բեռնում
+## Step 4: Load Model
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Մենք բեռնում ենք քվանտացված մոդելի կշիռները հիշողության մեջ և նախաձեռնում Phi-3 մոդելը։ Այս քայլը ներառում է կշիռների ընթերցում `gguf` ֆայլից և մոդելի նախապատրաստում ինֆերենսի համար նշված սարքում (այս դեպքում՝ CPU)։
+We load the quantized model weights into memory and initialize the Phi-3 model. This step involves reading the model weights from the `gguf` file and setting up the model for inference on the specified device (CPU in this case).
 
-## Քայլ 5: Հուշման մշակումը և ինֆերենսի նախապատրաստումը
+## Step 5: Process Prompt and Prepare for Inference
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-Այս քայլում մենք տոքենիզացնում ենք մուտքային հուշումը և պատրաստում այն ինֆերենսի համար՝ վերածելով այն տոքեն ID-ների հաջորդականության։ Մենք նաև նախաձեռնում ենք `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` արժեքները։ Յուրաքանչյուր տոքեն վերածվում է տենսորի և փոխանցվում մոդելին՝ լոգիտներ ստանալու համար։
+In this step, we tokenize the input prompt and prepare it for inference by converting it into a sequence of token IDs. We also initialize the `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` values. Each token is converted into a tensor and passed through the model to get the logits.
 
-Ցիկլը մշակում է հուշման յուրաքանչյուր տոքեն՝ թարմացնելով լոգիտների պրոցեսորը և նախապատրաստվելով հաջորդ տոքենի գեներացիային։
+The loop processes each token in the prompt, updating the logits processor and preparing for the next token generation.
 
-## Քայլ 6: Ինֆերենս
+## Step 6: Inference
 
 ```rust
 for index in 0..to_sample {
@@ -160,20 +160,20 @@ for index in 0..to_sample {
 }
 ```
 
-Ինֆերենսի ցիկլում մենք գեներացնում ենք տոքենները մեկը մյուսի հետևից, մինչև հասնենք ցանկալի նմուշի երկարությանը կամ հանդիպենք հաջորդականության ավարտի տոքենին։ Հաջորդ տոքենը վերածվում է տենսորի և փոխանցվում մոդելին, իսկ լոգիտները մշակվում են՝ կիրառելու պատիժներ և նմուշառում։ Այնուհետև հաջորդ տոքենը նմուշառվում է, դեկոդավորվում և կցվում հաջորդականությանը։  
-Կրկնվող տեքստից խուսափելու համար պատիժ է կիրառվում կրկնվող տոքենների վրա՝ հիմնվելով `repeat_last_n` and `repeat_penalty` պարամետրերի վրա։
+In the inference loop, we generate tokens one by one until we reach the desired sample length or encounter the end-of-sequence token. The next token is converted to a tensor and passed through the model, while the logits are processed to apply penalties and sampling. Then the next token is sampled, decoded, and appended to the sequence.
+To avoid repetitive text, a penalty is applied to repeated tokens based on the `repeat_last_n` and `repeat_penalty` parameters.
 
-Վերջում գեներացված տեքստը տպվում է՝ դեկոդավորվելով, ապահովելով իրական ժամանակում հոսքային արդյունք։
+Finally, the generated text is printed as it's decoded, ensuring streamed real-time output.
 
-## Քայլ 7: Ծրագրի գործարկում
+## Step 7: Run the Application
 
-Ծրագիրը գործարկելու համար տերմինալում կատարեք հետևյալ հրամանը․
+To run the application, execute the following command in the terminal:
 
 ```bash
 cargo run --release
 ```
 
-Սա պետք է տպի հոկեյի մասին հայկու, որը գեներացված է Phi-3 մոդելի կողմից։ Ինչ-որ բան այսպիսի․
+This should print a haiku about ice hockey generated by the Phi-3 model. Something like:
 
 ```
 Puck glides swiftly,  
@@ -181,7 +181,7 @@ Blades on ice dance and clash—peace found
 in the cold battle.
 ```
 
-կամ
+or
 
 ```
 Glistening puck glides in,
@@ -189,13 +189,13 @@ On ice rink's silent stage it thrives—
 Swish of sticks now alive.
 ```
 
-## Եզրակացություն
+## Conclusion
 
-Այս քայլերին հետևելով՝ մենք կարող ենք կատարել տեքստի գեներացիա Phi-3 մոդելի միջոցով Rust-ի և Candle-ի օգնությամբ՝ 100 տողից պակաս կոդով։ Կոդը կատարում է մոդելի բեռնում, տոքենիզացում և ինֆերենս՝ օգտագործելով տենսորներ և լոգիտների մշակում՝ գեներացնելու համահունչ տեքստ՝ հիմնված մուտքային հուշման վրա։
+By following these steps, we can perform text generation using the Phi-3 model with Rust and Candle in under 100 lines of code. The code handles model loading, tokenization, and inference, leveraging tensors and logits processing to generate coherent text based on the input prompt.
 
-Այս կոնսոլային ծրագիրը կարող է աշխատել Windows, Linux և Mac OS-ում։ Rust-ի շարժունակության շնորհիվ կոդը կարող է նաև հարմարեցվել գրադարանի, որը կաշխատի բջջային հավելվածներում (չէ որ մենք չենք կարող կոնսոլային հավելվածներ աշխատեցնել այնտեղ)։
+This console application can run on Windows, Linux and Mac OS. Becuase of Rust's portability, the code can also be adapted to a library that would run inside mobile apps (we can't run console apps there, after all).
 
-## Հավելված․ ամբողջական կոդ
+## Appendix: full code
 
 ```rust
 use candle_core::{quantized::gguf_file, Device, Tensor};
@@ -304,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Նշում. aarch64 Linux կամ aarch64 Windows-ում այս կոդը աշխատեցնելու համար ավելացրեք `.cargo/config` անունով ֆայլ հետևյալ պարունակությամբ․
+Note: in order to run this code on aarch64 Linux or aarch64 Windows, add a file named `.cargo/config` with the following content:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,6 +318,7 @@ rustflags = [
 ]
 ```
 
-> Կարող եք այցելել պաշտոնական [Candle օրինակների](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) ռեպոզիտորիան՝ Rust-ի և Candle-ի միջոցով Phi-3 մոդելի օգտագործման այլ օրինակների համար, ներառյալ ինֆերենսի այլընտրանքային մոտեցումները։
+> You can visit the official [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) repository for more examples on how to use the Phi-3 model with Rust and Candle, including alternative approaches to inference.
 
-It seems you've requested a translation to "mo." Could you please clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, is it Maori, Montenegrin, or something else? Let me know, and I'll assist you accordingly!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

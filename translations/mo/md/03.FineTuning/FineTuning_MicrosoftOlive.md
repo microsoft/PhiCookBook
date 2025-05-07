@@ -1,92 +1,92 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "727978e690ed9c055f594a4bfe01d75c",
-  "translation_date": "2025-04-04T13:13:24+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_MicrosoftOlive.md",
+  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
+  "translation_date": "2025-05-07T13:14:33+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "mo"
 }
 -->
-# **Phi-3をMicrosoft Oliveでファインチューニング**
+# **Fine-tuning Phi-3 with Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo)は、モデルの圧縮、最適化、コンパイルにおける業界トップクラスの技術を統合した、ハードウェアに特化したモデル最適化ツールです。
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) 是一款易于使用的硬件感知模型优化工具，汇集了业界领先的模型压缩、优化和编译技术。
 
-このツールは、機械学習モデルを特定のハードウェア構造に最適化するプロセスを簡素化するよう設計されています。
+它旨在简化机器学习模型的优化流程，确保模型能高效利用特定硬件架构。
 
-クラウドベースのアプリケーションでもエッジデバイスでも、Oliveを使用することでモデルの最適化が簡単かつ効果的に行えます。
+无论你是在云端应用还是边缘设备上工作，Olive 都能帮助你轻松且高效地优化模型。
 
-## 主な特徴:
-- Oliveは、目的のハードウェアターゲットに向けた最適化技術を集約し、自動化します。
-- すべてのシナリオに適した単一の最適化技術は存在しないため、Oliveは業界専門家が最適化技術を追加できる拡張性を提供します。
+## 主要功能：
+- Olive 汇聚并自动化针对目标硬件的优化技术。
+- 没有单一的优化技术能适用于所有场景，Olive 允许行业专家通过插件扩展优化创新。
 
-## エンジニアリングの負担軽減:
-- 開発者は通常、トレーニング済みモデルを展開するために複数のハードウェアベンダー固有のツールチェーンを学習・利用する必要があります。
-- Oliveは目的のハードウェア向けの最適化技術を自動化することで、このプロセスを簡素化します。
+## 降低工程投入：
+- 开发者通常需要学习并使用多个硬件厂商专属的工具链来准备和优化训练好的模型以供部署。
+- Olive 通过自动化目标硬件的优化技术简化了这一流程。
 
-## すぐに使えるE2E最適化ソリューション:
+## 开箱即用的端到端优化解决方案：
 
-統合された技術を組み合わせて調整することで、Oliveはエンドツーエンドの最適化に向けた統一ソリューションを提供します。
-モデルの最適化時には、精度やレイテンシーといった制約を考慮します。
+通过组合和调优集成技术，Olive 提供统一的端到端优化方案。
+它在优化模型时会考虑准确率和延迟等约束。
 
-## Microsoft Oliveを使ったファインチューニング
+## 使用 Microsoft Olive 进行微调
 
-Microsoft Oliveは非常に使いやすいオープンソースのモデル最適化ツールで、生成型人工知能分野でのファインチューニングや参照に対応しています。簡単な設定を行い、オープンソースの小型言語モデルと関連するランタイム環境（AzureML / ローカルGPU、CPU、DirectML）を組み合わせることで、モデルの自動最適化を通じてファインチューニングや参照が可能になります。そして、最適なモデルをクラウドやエッジデバイスに展開することができます。これにより、企業はオンプレミスやクラウド上で独自の業界特化型モデルを構築できます。
+Microsoft Olive 是一款非常易用的开源模型优化工具，覆盖生成式人工智能领域的微调和推理。只需简单配置，结合开源小型语言模型及相关运行环境（AzureML / 本地 GPU、CPU、DirectML），即可通过自动优化完成模型的微调或推理，找到最佳模型部署到云端或边缘设备。帮助企业在本地及云端构建行业垂直模型。
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.mo.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.mo.png)
 
-## Phi-3をMicrosoft Oliveでファインチューニングする
+## 使用 Microsoft Olive 进行 Phi-3 微调
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.mo.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.mo.png)
 
-## Phi-3 Oliveのサンプルコードと例
-この例では、Oliveを使用して以下を行います:
+## Phi-3 Olive 示例代码与示例
+本示例将使用 Olive 来：
 
-- LoRAアダプターをファインチューニングし、フレーズを「悲しみ」「喜び」「恐れ」「驚き」に分類します。
-- アダプターの重みをベースモデルに統合します。
-- モデルをint4に最適化・量子化します。
+- 微调 LoRA 适配器，将短语分类为 Sad、Joy、Fear、Surprise。
+- 将适配器权重合并到基础模型中。
+- 优化并量化模型为 int4。
 
-[サンプルコード](../../code/03.Finetuning/olive-ort-example/README.md)
+[Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
 
-### Microsoft Oliveのセットアップ
+### 安装 Microsoft Olive
 
-Microsoft Oliveのインストールは非常に簡単で、CPU、GPU、DirectML、Azure MLに対応したインストールが可能です。
+Microsoft Olive 安装非常简单，支持 CPU、GPU、DirectML 及 Azure ML 环境安装。
 
 ```bash
 pip install olive-ai
 ```
 
-ONNXモデルをCPUで実行したい場合は以下を使用します。
+如果你想在 CPU 上运行 ONNX 模型，可以使用
 
 ```bash
 pip install olive-ai[cpu]
 ```
 
-ONNXモデルをGPUで実行したい場合は以下を使用します。
+如果你想在 GPU 上运行 ONNX 模型，可以使用
 
 ```python
 pip install olive-ai[gpu]
 ```
 
-Azure MLを使用したい場合は以下を使用します。
+如果你想使用 Azure ML，使用
 
 ```python
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
-**注意**
-OS要件 : Ubuntu 20.04 / 22.04 
+**注意**  
+操作系统要求：Ubuntu 20.04 / 22.04
 
-### **Microsoft OliveのConfig.json**
+### **Microsoft Olive 的 Config.json**
 
-インストール後、Configファイルを通じてデータ、計算、トレーニング、展開、モデル生成などのモデル固有の設定を構成できます。
+安装完成后，可以通过 Config 文件配置不同模型的专属设置，包括数据、计算、训练、部署及模型生成。
 
-**1. データ**
+**1. 数据**
 
-Microsoft Oliveでは、ローカルデータとクラウドデータでのトレーニングがサポートされており、設定で構成できます。
+Microsoft Olive 支持本地数据和云端数据训练，均可在设置中配置。
 
-*ローカルデータの設定*
+*本地数据设置*
 
-ファインチューニングに必要なデータセットを簡単に設定できます。通常はjson形式で、データテンプレートに適合させます。モデルの要件に基づいて調整が必要です（例: Microsoft Phi-3-miniが必要とする形式に適合させる。他のモデルを使用する場合は、それぞれのモデルが必要とするファインチューニング形式を参照してください）。
+只需简单配置需要用于微调训练的数据集，通常为 json 格式，并适配对应数据模板。需根据模型要求调整（例如，适配 Microsoft Phi-3-mini 所需格式。如使用其他模型，请参考对应模型的微调格式要求进行处理）
 
 ```json
 
@@ -119,9 +119,9 @@ Microsoft Oliveでは、ローカルデータとクラウドデータでのト�
     ],
 ```
 
-**クラウドデータソースの設定**
+**云端数据源设置**
 
-Azure AI Studio / Azure Machine Learning Serviceのデータストアをリンクし、クラウド上のデータを結びつけることで、Microsoft FabricやAzure Dataを通じて異なるデータソースをAzure AI Studio / Azure Machine Learning Serviceに導入し、ファインチューニングのデータをサポートできます。
+通过关联 Azure AI Studio/Azure Machine Learning Service 的数据存储，可以通过 Microsoft Fabric 和 Azure Data 引入不同数据源，支持微调数据。
 
 ```json
 
@@ -166,9 +166,9 @@ Azure AI Studio / Azure Machine Learning Serviceのデータストアをリン�
     
 ```
 
-**2. コンピューティング構成**
+**2. 计算配置**
 
-ローカルで実行する場合はローカルデータリソースを直接使用できます。Azure AI Studio / Azure Machine Learning Serviceのリソースを使用する場合は、関連するAzureパラメータや計算能力名などを構成する必要があります。
+如果需要使用本地环境，可直接使用本地计算资源。若需使用 Azure AI Studio / Azure Machine Learning Service 的资源，需要配置相关 Azure 参数、计算资源名称等。
 
 ```json
 
@@ -201,7 +201,7 @@ Azure AI Studio / Azure Machine Learning Serviceのデータストアをリン�
 
 ***注意***
 
-Azure AI Studio / Azure Machine Learning Service上でコンテナを通じて実行されるため、必要な環境を構成する必要があります。これはconda.yaml環境で構成します。
+由于运行在 Azure AI Studio/Azure Machine Learning Service 的容器中，需配置所需环境，配置内容在 conda.yaml 文件中。
 
 ```yaml
 
@@ -234,11 +234,11 @@ dependencies:
 
 ```
 
-**3. SLMの選択**
+**3. 选择你的 SLM**
 
-Hugging Faceから直接モデルを使用することも、Azure AI Studio / Azure Machine Learningのモデルカタログと組み合わせて使用するモデルを選択することもできます。以下のコード例ではMicrosoft Phi-3-miniを例にします。
+你可以直接使用 Hugging Face 上的模型，也可以结合 Azure AI Studio / Azure Machine Learning 的模型目录选择使用的模型。以下代码示例以 Microsoft Phi-3-mini 为例。
 
-モデルがローカルにある場合は以下の方法を使用します。
+如果模型在本地，可以使用此方式
 
 ```json
 
@@ -256,7 +256,7 @@ Hugging Faceから直接モデルを使用することも、Azure AI Studio / Az
     },
 ```
 
-Azure AI Studio / Azure Machine Learning Serviceからモデルを使用したい場合は以下の方法を使用します。
+如果想使用 Azure AI Studio / Azure Machine Learning Service 的模型，可以使用此方式
 
 ```json
 
@@ -283,16 +283,16 @@ Azure AI Studio / Azure Machine Learning Serviceからモデルを使用した�
     },
 ```
 
-**注意:**
-Azure AI Studio / Azure Machine Learning Serviceと統合する必要があるため、モデルを設定する際にはバージョン番号や関連する命名を参照してください。
+**注意：**  
+需与 Azure AI Studio / Azure Machine Learning Service 集成，设置模型时请参考版本号及相关命名。
 
-Azure上のすべてのモデルはPyTorch.MLflowに設定する必要があります。
+Azure 上所有模型需设置为 PyTorch.MLflow。
 
-Hugging Faceのアカウントを持っている必要があり、そのキーをAzure AI Studio / Azure Machine LearningのKey値に結びつける必要があります。
+你需要拥有 Hugging Face 账号，并将密钥绑定到 Azure AI Studio / Azure Machine Learning 的 Key 值中。
 
-**4. アルゴリズム**
+**4. 算法**
 
-Microsoft OliveはLoraとQLoraのファインチューニングアルゴリズムを非常にうまくカプセル化しています。設定する必要があるのは関連するパラメータだけです。ここではQLoraを例に挙げます。
+Microsoft Olive 对 LoRA 和 QLoRA 微调算法封装良好，只需配置相关参数。这里以 QLoRA 为例。
 
 ```json
         "lora": {
@@ -329,12 +329,12 @@ Microsoft OliveはLoraとQLoraのファインチューニングアルゴリズ�
         },
 ```
 
-量子化変換を行いたい場合、Microsoft Oliveのメインブランチはonnxruntime-genaiメソッドをすでにサポートしています。必要に応じて以下のように設定できます：
+如果需要量化转换，Microsoft Olive 主分支已支持 onnxruntime-genai 方法，可根据需求设置：
 
-1. アダプターの重みをベースモデルに統合する
-2. 必要な精度でモデルをonnxモデルに変換する（ModelBuilderを使用）
+1. 将适配器权重合并到基础模型  
+2. 使用 ModelBuilder 将模型转换为所需精度的 onnx 模型
 
-例えば、量子化されたINT4への変換
+例如转换为量化的 INT4
 
 ```json
 
@@ -349,10 +349,9 @@ Microsoft OliveはLoraとQLoraのファインチューニングアルゴリズ�
         }
 ```
 
-**注意** 
-- QLoRAを使用する場合、ONNXRuntime-genaiの量子化変換は現時点ではサポートされていません。
-
-- ここで指摘すべき点として、上記のステップを自分のニーズに応じて設定することができます。必ずしも上記のステップを完全に構成する必要はありません。ニーズに応じてアルゴリズムのステップを直接使用することも可能です。最後に関連するエンジンを構成する必要があります。
+**注意**  
+- 如果使用 QLoRA，当前暂不支持 ONNXRuntime-genai 的量化转换。  
+- 这里强调，你可以根据需求设置以上步骤，无需全部配置。根据需求可直接使用算法步骤而不进行微调，最后配置相关引擎即可。
 
 ```json
 
@@ -367,12 +366,13 @@ Microsoft OliveはLoraとQLoraのファインチューニングアルゴリズ�
     }
 ```
 
-**5. ファインチューニングの完了**
+**5. 微调完成**
 
-コマンドラインで、olive-config.jsonのディレクトリ内で以下を実行します。
+在命令行中，在 olive-config.json 所在目录执行
 
 ```bash
 olive run --config olive-config.json  
 ```
 
-It seems like "mo" might be a typo or shorthand. Could you clarify what language or format you mean by "mo"? For example, are you referring to Māori, Mongolian, or something else? Let me know, and I'll assist you accordingly!
+**Disclaimer**:  
+Dis document haz been translatid yusing AI translatshun servis [Co-op Translator](https://github.com/Azure/co-op-translator). While we striv for akyurasi, pleez be aware dat automated translatshuns may contain erors or inakyerasees. De original document in its native langwaj shud be konsiderd de authoritativ sors. For kritikal informashun, profeshunal hyuman translatshun is rekomended. We ar not layabul for eni misunderstandings or misinterpretashuns arising from de yus of dis translatshun.

@@ -1,40 +1,40 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "962051ba495487884232e77fda80027f",
-  "translation_date": "2025-04-04T11:35:38+00:00",
-  "source_file": "code\\07.Lab\\RAG_with_PromptFlow_and_AISearch\\README.md",
+  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
+  "translation_date": "2025-05-07T15:19:04+00:00",
+  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "mo"
 }
 -->
-## RAG miaraka amin'ny PromptFlow sy AISearch
+## RAG with PromptFlow and AISearch
 
-Amin'ity ohatra ity, hampihatra fampiharana Retrieval Augmented Generation (RAG) isika, mampiasa Phi3 ho SLM, AI Search ho vectorDB ary Prompt Flow ho mpandrindra low-code.
+In this example, we will implement a Retrieval Augmented Generation (RAG) application leveraging Phi3 as SLM, AI Search as vectorDB and Prompt Flow as low-code orchestrator.
 
-## Endri-javatra
+## Features
 
-- Fomba fametrahana mora amin'ny alàlan'ny Docker.
-- Rafitra azo zatra mivelatra mba hitantanana ny fizotry ny asa AI.
-- Fomba low-code mampiasa Prompt Flow.
+- Easy deployment using Docker.
+- Scalable architecture for handling AI workflows.
+- Low code approach using Prompt Flow
 
-## Fepetra takiana
+## Prerequisites
 
-Alohan'ny hanombohana dia ataovy azo antoka fa efa mahafeno ireto fepetra manaraka ireto ianao:
+Before you begin, ensure you have met the following requirements:
 
-- Docker efa napetraka ao amin'ny solosainao.
-- Kaonty Azure miaraka amin'ny fahazoan-dàlana hamorona sy hitantana loharano container.
-- Azure AI Studio sy Azure AI Search efa misy.
-- Modely embedding mba hamoronana index (afaka mampiasa Azure OpenAI embedding na modely OS avy amin'ny catalog).
-- Python 3.8 na taty aoriana efa napetraka ao amin'ny solosainao.
-- Azure Container Registry (na registry hafa tianao ampiasaina).
+- Docker installed on your local machine.
+- An Azure account with permissions to create and manage container resources.
+- An Azure AI Studio and Azure AI Search instances
+- An embedding model to create your index (can be either an Azure OpenAI embedding or an OS model from the catalog)
+- Python 3.8 or later installed on your local machine.
+- An Azure Container Registry (or any registry of your choice)
 
-## Fametrahana
+## Installation
 
-1. Mamorona flow vaovao ao amin'ny tetikasa Azure AI Studio mampiasa ny rakitra flow.yaml.
-2. Alefaso ny Modely Phi3 avy amin'ny catalog modely Azure AI ary ampifandraiso amin'ny tetikasanao. [Deploy Phi-3 ho Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
-3. Mamorona vector index ao amin'ny Azure AI Search mampiasa antontan-taratasy izay tianao. [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. Alefaso ny flow amin'ny managed endpoint ary ampiasao ao amin'ny rakitra prompt-flow-frontend.py. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
-5. Clone ny repository:
+1. Create a new flow on your Azure AI Studio Project using the flow.yaml file.
+2. Deploy a Phi3 Model from your Azure AI model catalog and create the connection to your project. [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
+3. Create the vector index on Azure AI Search using any document of your choice [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
+4. Deploy the flow on a managed enpoint and use it in the prompt-flow-frontend.py file. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+5. Clone the repository:
 
     ```sh
     git clone [[https://github.com/yourusername/prompt-flow-frontend.git](https://github.com/microsoft/Phi-3CookBook.git)](https://github.com/microsoft/Phi-3CookBook.git)
@@ -42,13 +42,13 @@ Alohan'ny hanombohana dia ataovy azo antoka fa efa mahafeno ireto fepetra manara
     cd code/07.Lab/RAG with PromptFlow and AISearch
     ```
 
-6. Mamorona ny Docker image:
+6. Build the Docker image:
 
     ```sh
     docker build -t prompt-flow-frontend.py .
     ```
 
-7. Atosika ny Docker image ao amin'ny Azure Container Registry:
+7. Push the Docker image to Azure Container Registry:
 
     ```sh
     az acr login --name yourregistry
@@ -58,20 +58,21 @@ Alohan'ny hanombohana dia ataovy azo antoka fa efa mahafeno ireto fepetra manara
     docker push yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-## Fampiasana
+## Usage
 
-1. Alefaso ny Docker container:
+1. Run the Docker container:
 
     ```sh
     docker run -p 8501:8501 yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-2. Tsidiho ny fampiharana ao amin'ny navigateur amin'ny `http://localhost:8501`.
+2. Access the application in your browser at `http://localhost:8501`.
 
-## Fifandraisana
+## Contact
 
 Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148/)
 
-Lahatsoratra feno: [RAG miaraka amin'ny Phi-3-Medium ho Model as a Service avy amin'ny Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
+Full Article: [RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
-It seems like you want the text translated into "mo." Could you clarify what "mo" refers to? Are you asking for a translation into a specific language or code? Let me know so I can assist you effectively!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

@@ -1,76 +1,87 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "74bd3aa8618299f1b78180902c04c691",
-  "translation_date": "2025-04-04T11:33:38+00:00",
-  "source_file": "code\\07.Lab\\01\\Apple\\phi3ext\\README.md",
+  "original_hash": "be0b2937160c486180ded27e4f14adeb",
+  "translation_date": "2025-05-07T15:22:45+00:00",
+  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "mo"
 }
 -->
 # phi3ext README
 
-Hani README de "phi3ext" a wuley, saani ka bɔra wo kɔntɛnt a wuley niŋa kɔntɛnt niŋɔ.
+This is the README for your extension "phi3ext". After writing a brief description, we recommend including the following sections.
 
 ## Features
 
-Fɔlɛɛ niŋa wo fɔrɔ kɔntɛnt kɔli phi3ext, yɛlɛ niŋa wo fa niŋa wo fɔrɔ yɛ fɔrɔlɔ niŋa wo yɛ phi3ext yɛ wuley. Niŋɔ yɛlɛ niŋa wo yɛ phi3ext yɛ yɛlɛ yɛ mɔɔnɔ fɔrɔ niŋa wo yɛ phi3ext.
+Describe the specific features of your extension, including screenshots of it in action. Image paths are relative to this README file.
 
-Niŋɔ yɛ wuley yɛ phi3ext yɛ wuley niŋa wo yɛlɛ yɛlɛ yɛ phi3ext yɛ niŋa niŋa wo yɛ phi3ext.
+For example, if you have an images subfolder in your extension project workspace:
+
+\!\[feature X\]\(images/feature-x.png\)
+
+> TIP: Many popular extensions use animations. This is a great way to showcase your extension! We recommend short, focused animations that are easy to follow.
 
 ## Requirements
 
-Niŋa wo niŋa yɛ phi3ext yɛ yɛ phi3ext yɛ yɛ phi3ext yɛ phi3ext.
+If you have any requirements or dependencies, add a section describing these requirements and how to install and configure them.
 
 ## Extension Settings
 
-Niŋa wo phi3ext yɛ phi3ext yɛ niŋa wo phi3ext yɛ phi3ext.
+If your extension adds any VS Code settings through `contributes.configuration` extension points, include them here.
 
-Niŋa wo phi3ext:
+For example:
 
-* `myExtension.enable`: Niŋa wo phi3ext.
-* `myExtension.thing`: Niŋa wo phi3ext niŋa wo phi3ext.
+This extension contributes the following settings:
+
+* `myExtension.enable`: Enable/disable this extension.
+* `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
 
-Niŋa wo phi3ext niŋa wo yɛ phi3ext yɛ phi3ext yɛ phi3ext.
+Pointing out known issues can help reduce duplicate problem reports from users of your extension.
 
 ## Release Notes
 
-Niŋa wo phi3ext yɛ phi3ext yɛ phi3ext.
+Users appreciate release notes when you update your extension.
 
 ### 1.0.0
 
-Niŋa wo phi3ext ...
+Initial release ...
 
 ### 1.0.1
 
-Niŋa wo phi3ext.
+Fixed issue #.
 
 ### 1.1.0
 
-Niŋa wo phi3ext niŋa wo phi3ext.
+Added features X, Y, and Z.
 
 ---
 
 ## Following extension guidelines
 
-Niŋa wo phi3ext niŋa wo phi3ext.
+Make sure you have read the extension guidelines and followed best practices for creating extensions.
 
-* [Niŋa wo phi3ext](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Niŋa wo phi3ext phi3ext phi3ext phi3ext.
+You can use Visual Studio Code to write your README. Here are some useful editor shortcuts:
 
-* Niŋa wo phi3ext (`Cmd+\` niŋa wo phi3ext `Ctrl+\` phi3ext).
-* Niŋa wo phi3ext (`Shift+Cmd+V` phi3ext `Shift+Ctrl+V` phi3ext).
-* Niŋa wo phi3ext `Ctrl+Space` phi3ext phi3ext phi3ext.
+* Split editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
+* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
+* Press `Ctrl+Space` (Windows, Linux, macOS) to see the list of Markdown snippets.
 
 ## For more information
 
-* [Niŋa wo phi3ext](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Niŋa wo phi3ext](https://help.github.com/articles/markdown-basics/)
+* [Markdown support in Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Markdown syntax reference](https://help.github.com/articles/markdown-basics/)
 
-**Niŋa wo phi3ext!**
+**Enjoy!**
 
-It seems like "mo" could refer to a specific language or abbreviation, but it isn't clear which one you mean. Could you please clarify the language or context for "mo"? For example, are you referring to Maori, Mongolian, or another language?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+(Note: "mo" is not a recognized language code or name in my data. Could you please clarify which language "mo" refers to? For example, it might be a typo or abbreviation. If you mean Moldovan (which is essentially Romanian), Mongolian, or something else, please specify so I can provide an accurate translation.)

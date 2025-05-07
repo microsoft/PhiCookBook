@@ -1,82 +1,87 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "74bd3aa8618299f1b78180902c04c691",
-  "translation_date": "2025-04-04T11:30:34+00:00",
-  "source_file": "code\\07.Lab\\01\\AIPC\\extensions\\phi3ext\\README.md",
+  "original_hash": "be0b2937160c486180ded27e4f14adeb",
+  "translation_date": "2025-05-07T15:20:35+00:00",
+  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
   "language_code": "mo"
 }
 -->
 # phi3ext README
 
-Phi3ext "README" yɛ woɛ extension no abɔdin. Wɔ akyiri kɔmɔ wɔ akɔhoɔ a yɛyɛ abɔdin yi mu.
+This is the README for your extension "phi3ext". After writing a brief description, we recommend including the following sections.
 
 ## Features
 
-Kyere phi3ext no nsɛm a ɛyɛ, fa fa phi3ext no ho mfonini ho sɛso no. Mfonini no ɛkwan yɛ phi3ext README file no ho.
+Describe the specific features of your extension, including screenshots of it in action. Image paths are relative to this README file.
 
-Sɛ wɔ phi3ext extension project no ase yɛ fie a ɛwɔ mfonini folder bi a:
+For example, if you have an images subfolder in your extension project workspace:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Nsɛm: Extensions pii wɔ nsɛm a yɛyɛ wɔ nsɛm ho nsɛm ho nsɛm. Ɛyɛ phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm. Ɛyɛ nsɛm a yɛyɛ nsɛm a yɛyɛ nsɛm a nsɛm a yɛyɛ nsɛm a yɛyɛ nsɛm a yɛyɛ nsɛm.
+> Tip: Many popular extensions use animations. This is a great way to showcase your extension! We recommend short, focused animations that are easy to follow.
 
 ## Requirements
 
-Sɛ phi3ext no ho hia biribi a ɛyɛ phi3ext ho nsɛm ho nsɛm, fa phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm.
+If you have any requirements or dependencies, add a section describing these and how to install and configure them.
 
 ## Extension Settings
 
-Sɛ phi3ext extension no yɛ phi3ext nsɛm wɔ `contributes.configuration` extension no ho nsɛm ho nsɛm, fa phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm.
+If your extension adds any VS Code settings through `contributes.configuration` extension points, include them here.
 
-Ɔkyerɛ sɛ:
+For example:
 
-Phi3ext extension no yɛ phi3ext nsɛm:
+This extension contributes the following settings:
 
-* `myExtension.enable`: Phi3ext nsɛm wɔ phi3ext ho nsɛm ho nsɛm.
-* `myExtension.thing`: Phi3ext nsɛm yɛ phi3ext nsɛm ho nsɛm ho nsɛm `blah`.
+* `myExtension.enable`: Enable/disable this extension.
+* `myExtension.thing`: Set to `blah` to do something.
 
 ## Known Issues
 
-Phi3ext no nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm yɛ phi3ext nsɛm.
+Pointing out known issues can help reduce duplicate bug reports from users of your extension.
 
 ## Release Notes
 
-Phi3ext no nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm yɛ phi3ext nsɛm.
+Users appreciate release notes when you update your extension.
 
 ### 1.0.0
 
-Phi3ext no yɛ phi3ext nsɛm ...
+Initial release ...
 
 ### 1.0.1
 
-Phi3ext no yɛ phi3ext nsɛm no phi3ext nsɛm #.
+Fixed issue #.
 
 ### 1.1.0
 
-Phi3ext no yɛ phi3ext nsɛm X, Y na Z phi3ext nsɛm.
+Added features X, Y, and Z.
 
 ---
 
 ## Following extension guidelines
 
-Phi3ext no yɛ phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm phi3ext nsɛm.
+Make sure you have read the extension guidelines and follow best practices for creating extensions.
 
-* [Phi3ext nsɛm ho nsɛm](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Phi3ext no nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm yɛ phi3ext nsɛm. Phi3ext nsɛm a yɛyɛ nsɛm wɔ phi3ext ho nsɛm ho nsɛm phi3ext nsɛm.
+You can use Visual Studio Code to write your README. Here are some useful editor shortcuts:
 
-* Phi3ext nsɛm ho nsɛm (`Cmd+\` macOS a phi3ext nsɛm no `Ctrl+\` Windows na Linux phi3ext nsɛm).
-* Phi3ext nsɛm (`Shift+Cmd+V` macOS a phi3ext nsɛm no `Shift+Ctrl+V` Windows na Linux phi3ext nsɛm).
-* Phi3ext nsɛm `Ctrl+Space` (Windows, Linux, macOS) phi3ext nsɛm Markdown phi3ext nsɛm.
+* Split editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
+* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
+* Press `Ctrl+Space` (Windows, Linux, macOS) to see the list of Markdown snippets.
 
 ## For more information
 
-* [Phi3ext nsɛm ho nsɛm](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Phi3ext nsɛm ho nsɛm ho nsɛm](https://help.github.com/articles/markdown-basics/)
+* [Markdown support in Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Markdown syntax reference](https://help.github.com/articles/markdown-basics/)
 
-**Phi3ext nsɛm!**
+**Enjoy!**
 
-It seems you are asking to translate the text into "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, is it Maori, Mongolian, or something else? Let me know so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+If you intended "mo" to mean a specific language or code, please clarify which language "mo" refers to, so I can provide an accurate translation.

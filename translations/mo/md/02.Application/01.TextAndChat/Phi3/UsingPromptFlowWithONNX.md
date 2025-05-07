@@ -1,67 +1,68 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "20c7e34651318736a2606d351fcc37d0",
-  "translation_date": "2025-04-04T12:44:57+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\UsingPromptFlowWithONNX.md",
+  "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
+  "translation_date": "2025-05-07T13:59:34+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
   "language_code": "mo"
 }
 -->
-# Using Windows GPU to create Prompt flow solution with Phi-3.5-Instruct ONNX
+# 使用 Windows GPU 创建基于 Phi-3.5-Instruct ONNX 的 Prompt flow 解决方案
 
-The following document provides an example of how to use PromptFlow with ONNX (Open Neural Network Exchange) to develop AI applications based on Phi-3 models.
+以下文档示例演示了如何使用 PromptFlow 结合 ONNX（开放神经网络交换）来开发基于 Phi-3 模型的 AI 应用。
 
-PromptFlow is a set of development tools designed to simplify the entire development process of LLM-based (Large Language Model) AI applications, from brainstorming and prototyping to testing and evaluation.
+PromptFlow 是一套开发工具，旨在简化基于 LLM（大型语言模型）AI 应用的端到端开发流程，从构思、原型设计到测试和评估。
 
-By combining PromptFlow with ONNX, developers can:
+通过将 PromptFlow 与 ONNX 集成，开发者可以：
 
-- Optimize Model Performance: Utilize ONNX for efficient model inference and deployment.
-- Simplify Development: Employ PromptFlow to manage workflows and automate repetitive tasks.
-- Enhance Collaboration: Improve teamwork by offering a unified development environment.
+- 优化模型性能：利用 ONNX 实现高效的模型推理和部署。
+- 简化开发流程：使用 PromptFlow 管理工作流并自动化重复任务。
+- 增强协作：通过统一的开发环境促进团队成员间的更好协作。
 
-**Prompt flow** is a suite of tools aimed at streamlining the entire development lifecycle of LLM-based AI applications, including ideation, prototyping, testing, evaluation, production deployment, and monitoring. It simplifies prompt engineering and allows you to create LLM apps with production-level quality.
+**Prompt flow** 是一套开发工具，专为简化基于 LLM 的 AI 应用的端到端开发流程设计，涵盖从构思、原型设计、测试、评估到生产部署和监控。它大大简化了提示工程，使您能够构建具备生产质量的 LLM 应用。
 
-Prompt flow supports connections to OpenAI, Azure OpenAI Service, and customizable models (Huggingface, local LLM/SLM). Our goal is to deploy Phi-3.5's quantized ONNX model to local applications. Prompt flow helps us better plan our projects and complete local solutions using Phi-3.5. In this example, we will integrate the ONNX Runtime GenAI Library to build a Prompt flow solution using Windows GPU.
+Prompt flow 可连接 OpenAI、Azure OpenAI 服务以及可定制模型（Huggingface、本地 LLM/SLM）。我们希望将 Phi-3.5 的量化 ONNX 模型部署到本地应用。Prompt flow 可以帮助我们更好地规划业务，并基于 Phi-3.5 完成本地解决方案。在本示例中，我们将结合 ONNX Runtime GenAI 库，基于 Windows GPU 完成 Prompt flow 解决方案。
 
-## **Installation**
+## **安装**
 
-### **ONNX Runtime GenAI for Windows GPU**
+### **Windows GPU 的 ONNX Runtime GenAI**
 
-Refer to this guide to set up ONNX Runtime GenAI for Windows GPU [click here](./ORTWindowGPUGuideline.md)
+请阅读此指南以设置 Windows GPU 的 ONNX Runtime GenAI  [点击这里](./ORTWindowGPUGuideline.md)
 
-### **Set up Prompt flow in VSCode**
+### **在 VSCode 中设置 Prompt flow**
 
-1. Install the Prompt flow VS Code Extension.
+1. 安装 Prompt flow VS Code 扩展
 
-![pfvscode](../../../../../../translated_images/pfvscode.79f42ae5dd93ed35c19d6d978ae75831fef40e0b8440ee48b893b5a0597d2260.mo.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.mo.png)
 
-2. After installing the Prompt flow VS Code Extension, click on the extension and select **Installation dependencies**. Follow the provided guide to install the Prompt flow SDK in your environment.
+2. 安装 Prompt flow VS Code 扩展后，点击扩展，选择 **Installation dependencies**，按照指南在您的环境中安装 Prompt flow SDK
 
-![pfsetup](../../../../../../translated_images/pfsetup.0c82d99c7760aac29833b37faf4329e67e22279b1c5f37a73724dfa9ebaa32ee.mo.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.mo.png)
 
-3. Download [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) and open the sample using VS Code.
+3. 下载 [示例代码](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) 并使用 VS Code 打开该示例
 
-![pfsample](../../../../../../translated_images/pfsample.7bf40b133a558d86356dd6bc0e480bad2659d9c5364823dae9b3e6784e6f2d25.mo.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.mo.png)
 
-4. Open **flow.dag.yaml** and select your Python environment.
+4. 打开 **flow.dag.yaml** 选择您的 Python 环境
 
-![pfdag](../../../../../../translated_images/pfdag.c5eb356fa3a96178cd594de9a5da921c4bbe646a9946f32aa20d344ccbeb51a0.mo.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.mo.png)
 
-   Open **chat_phi3_ort.py** and update the path to your Phi-3.5-instruct ONNX Model.
+   打开 **chat_phi3_ort.py** 修改 Phi-3.5-instruct ONNX 模型的位置
 
-![pfphi](../../../../../../translated_images/pfphi.fff4b0afea47c92c8481174dbf3092823906fca5b717fc642f78947c3e5bbb39.mo.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.mo.png)
 
-5. Run your Prompt flow for testing.
+5. 运行您的 prompt flow 进行测试
 
-Open **flow.dag.yaml** and click on the visual editor.
+打开 **flow.dag.yaml**，点击可视化编辑器
 
-![pfv](../../../../../../translated_images/pfv.7af6ecd65784a98558b344ba69b5ba6233876823fb435f163e916a632394fc1e.mo.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.mo.png)
 
-After clicking this, execute the flow to test.
+点击后运行测试
 
-![pfflow](../../../../../../translated_images/pfflow.9697e0fda67794bb0cf4b78d52e6f5a42002eec935bc2519933064afbbdd34f0.mo.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.mo.png)
 
-1. You can run a batch in the terminal to view additional results.
+1. 您也可以在终端批量运行以查看更多结果
+
 
 ```bash
 
@@ -69,8 +70,14 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 ```
 
-You can view the results in your default browser.
+您可以在默认浏览器中查看结果
 
-![pfresult](../../../../../../translated_images/pfresult.972eb57dd5bec646e1aa01148991ba8959897efea396e42cf9d7df259444878d.mo.png)
 
-It seems like you requested translation to "mo," but could you clarify what language or dialect "mo" refers to? For example, are you referring to Māori, Montenegrin, or another language? Let me know so I can assist you better!
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.mo.png)
+
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+If by "mo" you meant a specific language or code, please clarify which language "mo" refers to so I can provide an accurate translation.

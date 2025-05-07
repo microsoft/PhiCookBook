@@ -1,21 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "44a77501fe39a2eb2b776dfdf9953b67",
-  "translation_date": "2025-04-03T08:01:06+00:00",
-  "source_file": "md\\03.FineTuning\\CreatingSampleData.md",
+  "original_hash": "3cd0b727945d57998f1096763df56a84",
+  "translation_date": "2025-05-07T13:25:47+00:00",
+  "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "zh"
 }
 -->
-# 通过从 Hugging Face 下载数据集和相关图片生成图像数据集
+# 通过从 Hugging Face 下载数据集及相关图片生成图像数据集
+
 
 ### 概述
 
-此脚本通过下载所需图片、过滤下载失败的行，并将数据集保存为 CSV 文件，为机器学习准备数据集。
+此脚本通过下载所需图片、过滤下载失败的行，并将数据集保存为 CSV 文件，来准备机器学习的数据集。
 
 ### 前提条件
 
-在运行此脚本之前，请确保已安装以下库：`Pandas`、`Datasets`、`requests`、`PIL` 和 `io`。此外，需将脚本第 2 行中的 `'Insert_Your_Dataset'` 替换为 Hugging Face 上数据集的名称。
+运行此脚本前，请确保已安装以下库：`Pandas`、`Datasets`、`requests`、`PIL` 和 `io`。你还需要将第 2 行的 `'Insert_Your_Dataset'` 替换为你在 Hugging Face 上的数据集名称。
 
 所需库：
 
@@ -29,9 +30,9 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### 功能
+### 功能说明
 
-此脚本执行以下步骤：
+脚本执行以下步骤：
 
 1. 使用 `load_dataset()` function.
 2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
@@ -42,28 +43,33 @@ from io import BytesIO
 
 ### Custom Function
 
-The `download_image()` 函数从 Hugging Face 下载数据集并处理成 Pandas 数据框。
-2. `download_image()` 函数通过 Pillow 图像库 (PIL) 和 `io` 模块从 URL 下载图片并保存到本地。若图片成功下载，返回 True；否则返回 False。当请求失败时，该函数会抛出异常并返回错误信息。
+The `download_image()` 函数从 Hugging Face 下载数据集。`download_image()` 函数通过 Pillow Image 库（PIL）和 `io` 模块从 URL 下载图片并保存到本地。如果图片下载成功，返回 True；否则返回 False。当请求失败时，该函数会抛出带有错误信息的异常。
 
 ### 工作原理
 
-`download_image` 函数接收两个参数：`image_url`（图片下载的 URL）和 `save_path`（图片保存的路径）。
+download_image 函数接受两个参数：image_url，即要下载图片的 URL；save_path，即保存下载图片的路径。
 
-以下是该函数的工作流程：
+函数的工作流程如下：
 
-1. 首先使用 `requests.get` 方法对 `image_url` 进行 GET 请求，从 URL 获取图片数据。
-2. 使用 `response.raise_for_status()` 检查请求是否成功。如果响应状态码表明请求失败（例如 404 - 未找到），将抛出异常。这样可以确保只有在请求成功时才继续下载图片。
-3. 然后将图片数据传递给 PIL 模块中的 `Image.open` 方法。此方法从图片数据中创建一个 Image 对象。
-4. 使用 `image.save(save_path)` 将图片保存到指定的路径。`save_path` 应包含所需的文件名和扩展名。
-5. 最后，函数返回 True，表示图片已成功下载并保存。如果过程中出现任何异常，函数会捕获异常，打印错误信息以指示失败，并返回 False。
+首先，使用 requests.get 方法对 image_url 发起 GET 请求，从 URL 获取图片数据。
 
-此函数适用于从 URL 下载图片并保存到本地。它处理下载过程中的潜在错误，并反馈下载是否成功。
+response.raise_for_status() 用于检查请求是否成功。如果响应状态码表示错误（例如 404 - 未找到），它会抛出异常。这样确保只有在请求成功时才继续下载图片。
 
-需要注意的是，`requests` 库用于发送 HTTP 请求，PIL 库用于处理图像，而 `BytesIO` 类用于将图像数据作为字节流进行处理。
+接着，将图片数据传给 PIL（Python Imaging Library）模块的 Image.open 方法，该方法会创建一个 Image 对象。
 
-### 结论
+image.save(save_path) 将图片保存到指定的 save_path，save_path 应包含文件名和扩展名。
 
-此脚本提供了一种方便的方法，通过下载所需图片、过滤下载失败的行并保存为 CSV 文件，为机器学习准备数据集。
+最后，函数返回 True，表示图片成功下载并保存。如果过程中出现任何异常，函数会捕获异常，打印错误信息，并返回 False。
+
+该函数适合从 URL 下载图片并保存到本地，能处理下载过程中的潜在错误，并反馈下载是否成功。
+
+需要注意的是，requests 库用于发起 HTTP 请求，PIL 库用于处理图片，BytesIO 类用于将图片数据作为字节流处理。
+
+
+
+### 总结
+
+此脚本通过下载所需图片、过滤下载失败的行，并将数据集保存为 CSV 文件，提供了一种便捷的机器学习数据集准备方法。
 
 ### 示例脚本
 
@@ -124,11 +130,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### 示例代码下载 
+### 示例代码下载  
 [生成新数据集脚本](../../../../code/04.Finetuning/generate_dataset.py)
 
-### 示例数据集
-[使用 LORA 微调示例中的数据集样例](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+### 示例数据集  
+[LORA 微调示例中的数据集示例](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们努力确保翻译的准确性，但请注意，自动翻译可能会包含错误或不准确之处。应以原始语言的文件作为权威来源。对于重要信息，建议使用专业的人工翻译服务。我们对于因使用本翻译而导致的任何误解或误读不承担责任。
+本文件由AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)翻译而成。虽然我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始语言的文件应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。

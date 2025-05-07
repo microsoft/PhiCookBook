@@ -1,41 +1,41 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f0e3a4453db505856d5d991285dd6001",
-  "translation_date": "2025-04-04T13:38:38+00:00",
-  "source_file": "md\\04.HOL\\dotnet\\readme.md",
+  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
+  "translation_date": "2025-05-07T13:10:12+00:00",
+  "source_file": "md/04.HOL/dotnet/readme.md",
   "language_code": "mo"
 }
 -->
-## Phi-labs ka soo dhawow adoo isticmaalaya C#
+﻿## ברוכים הבאים למעבדות Phi עם C#
 
-Waxaa jira xulasho maktabado muujinaya sida loo dhexgeliyo noocyada kala duwan ee awoodda leh ee Phi moodallo ku dhex jira deegaanka .NET.
+יש מבחר מעבדות שמדגימות כיצד לשלב את הגרסאות השונות והעוצמתיות של דגמי Phi בסביבת .NET.
 
-## Shuruudaha Hore
+## דרישות מוקדמות
 
-Ka hor inta aadan orodsiin tusaalaha, hubi inaad ku rakibtay waxyaabaha soo socda:
+לפני הרצת הדוגמה, ודא שיש ברשותך את הדברים הבאים מותקנים:
 
-**.NET 9:** Hubi inaad ku rakibtay [nooca ugu dambeeya ee .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) ee ku shaqeynaya qalabkaaga.
+**.NET 9:** ודא שהתקנת את [הגרסה העדכנית ביותר של .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) במחשב שלך.
 
-**(Ikhtiyaari) Visual Studio ama Visual Studio Code:** Waxaad u baahan doontaa IDE ama tifaftire kood oo awood u leh orodsiinta mashruucyada .NET. [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) ama [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo) ayaa lagu talinayaa.
+**(אופציונלי) Visual Studio או Visual Studio Code:** תזדקק ל-IDE או עורך קוד שיכול להריץ פרויקטים של .NET. מומלץ להשתמש ב-[Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) או [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo).
 
-**Isticmaal git** si aad u soo rogto mid ka mid ah noocyada Phi-3, Phi3.5 ama Phi-4 ee laga heli karo [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
+**שימוש ב-git** – שיכפל באופן מקומי אחת מגרסאות Phi-3, Phi3.5 או Phi-4 הזמינות מ-[Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
 
-**Soo dejiso moodallada Phi-4 ONNX** qalabkaaga maxalliga ah:
+**הורדת דגמי Phi-4 ONNX** למחשב המקומי שלך:
 
-### u dhaadhac folderka lagu kaydinayo moodallada
+### נווט לתיקייה לאחסון הדגמים
 
 ```bash
 cd c:\phi\models
 ```
 
-### ku dar taageerada lfs
+### הוסף תמיכה ב-lfs
 
 ```bash
 git lfs install 
 ```
 
-### soo rog oo soo dejiso Phi-4 mini instruct model iyo Phi-4 multi modal model
+### שיכפל והורד את דגם Phi-4 mini instruct ואת דגם Phi-4 multi modal
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
@@ -43,9 +43,9 @@ git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 ```
 
-**Soo dejiso moodallada Phi-3 ONNX** qalabkaaga maxalliga ah:
+**הורדת דגמי Phi-3 ONNX** למחשב המקומי שלך:
 
-### soo rog oo soo dejiso Phi-3 mini 4K instruct model iyo Phi-3 vision 128K model
+### שיכפל והורד את דגם Phi-3 mini 4K instruct ואת דגם Phi-3 vision 128K
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
@@ -53,15 +53,15 @@ git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 ```
 
-**Muhiim:** Muuqaalada hadda jira waxay loogu talagalay isticmaalka noocyada ONNX ee moodallada. Tallaabooyinkii hore waxay soo rogaan moodallada soo socda.
+**חשוב:** הדגמות הנוכחיות מתוכננות להשתמש בגרסאות ONNX של הדגם. השלבים הקודמים משכפלים את הדגמים הבאים.
 
-## Ku saabsan Maktabadaha
+## אודות המעבדות
 
-Xalka ugu weyn wuxuu leeyahay dhowr maktabado tusaale ah oo muujinaya awoodaha moodallada Phi iyadoo la isticmaalayo C#.
+הפתרון הראשי כולל מספר מעבדות לדוגמה שמדגימות את היכולות של דגמי Phi באמצעות C#.
 
-| Mashruuc | Model | Sharaxaad |
+| פרויקט | דגם | תיאור |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 ama Phi-3.5 | Tusaale console chat oo u oggolaanaya isticmaalaha inuu su'aalo weydiiyo. Mashruucu wuxuu soo rogayaa moodalka ONNX ee maxalliga ah ee Phi-3 isagoo isticmaalaya `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 או Phi-3.5 | דוגמת שיחה בקונסולה שמאפשרת למשתמש לשאול שאלות. הפרויקט טוען דגם ONNX מקומי של Phi-3 באמצעות `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
 | [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
@@ -84,15 +84,15 @@ To run the projects, follow these steps:
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
     ```
 
-1. Mashruuca ku orodsiin amarka
+1. הרץ את הפרויקט עם הפקודה
 
     ```bash
     dotnet run
     ```
 
-1. Mashruuca tusaalaha wuxuu weydiisanayaa isticmaalaha wax gelin ah oo ka jawaabaya isagoo isticmaalaya habka maxalliga ah.
+1. דוגמת הפרויקט מבקשת קלט מהמשתמש ומשיבה באמצעות המודל המקומי.
 
-   Tusaalaha orodaya wuxuu u eg yahay midkan:
+   הדמו הרץ דומה לזה:
 
    ```bash
    PS D:\phi\PhiCookBook\md\04.HOL\dotnet\src\LabsPhi4-Chat-01OnnxRuntime> dotnet run
@@ -102,4 +102,5 @@ To run the projects, follow these steps:
    Q:
    ```
 
-It seems like you want the text translated to "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, Maori, Mongolian, or something else?
+**Disclaimer**:  
+Dis document haz been translated usin AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, pleez be aware dat automated translations may contain errors or inaccuracies. Da original document in its native language should be considered da authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from da use of dis translation.

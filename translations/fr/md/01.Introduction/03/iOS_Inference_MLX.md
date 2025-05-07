@@ -2,49 +2,49 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-03-27T07:16:23+00:00",
-  "source_file": "md\\01.Introduction\\03\\iOS_Inference_MLX.md",
+  "translation_date": "2025-05-07T14:38:44+00:00",
+  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "fr"
 }
 -->
-# Exécution de Phi-3 et Phi-4 sur iOS avec le framework Apple MLX
+# Exécuter Phi-3 et Phi-4 sur iOS avec le framework Apple MLX
 
-Ce tutoriel montre comment créer une application iOS qui exécute le modèle Phi-3 ou Phi-4 directement sur l'appareil, en utilisant le framework Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) est le framework de machine learning d'Apple, optimisé pour les puces Apple Silicon.
+Ce tutoriel montre comment créer une application iOS qui exécute le modèle Phi-3 ou Phi-4 directement sur l’appareil, en utilisant le framework Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) est le framework d’apprentissage automatique d’Apple optimisé pour les puces Apple Silicon.
 
 ## Prérequis
 
-- macOS avec Xcode 16 (ou une version ultérieure)
-- Appareil cible iOS 18 (ou une version ultérieure) avec au moins 8 Go de RAM (iPhone ou iPad compatible avec les exigences d'Apple Intelligence, similaires aux exigences quantifiées de Phi)
-- Connaissances de base en Swift et SwiftUI
+- macOS avec Xcode 16 (ou version supérieure)  
+- Appareil cible iOS 18 (ou version supérieure) avec au moins 8 Go de RAM (iPhone ou iPad compatible avec les exigences Apple Intelligence, similaires à celles de Phi quantifié)  
+- Connaissances de base en Swift et SwiftUI  
 
 ## Étape 1 : Créer un nouveau projet iOS
 
 Commencez par créer un nouveau projet iOS dans Xcode :
 
-1. Lancez Xcode et sélectionnez « Créer un nouveau projet Xcode »
-2. Choisissez « App » comme modèle
-3. Nommez votre projet (par exemple, « Phi3-iOS-App ») et sélectionnez SwiftUI comme interface
-4. Choisissez un emplacement pour enregistrer votre projet
+1. lancez Xcode et sélectionnez « Create a new Xcode project »  
+2. choisissez le modèle « App »  
+3. nommez votre projet (par exemple, « Phi3-iOS-App ») et sélectionnez SwiftUI comme interface  
+4. choisissez un emplacement pour enregistrer votre projet  
 
-## Étape 2 : Ajouter les dépendances nécessaires
+## Étape 2 : Ajouter les dépendances requises
 
-Ajoutez le package [MLX Examples](https://github.com/ml-explore/mlx-swift-examples), qui contient toutes les dépendances et outils nécessaires pour précharger les modèles et effectuer des inférences :
+Ajoutez le package [MLX Examples](https://github.com/ml-explore/mlx-swift-examples) qui contient toutes les dépendances nécessaires et des utilitaires pour précharger les modèles et effectuer des inférences :
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-Bien que le package de base [MLX Swift](https://github.com/ml-explore/mlx-swift) soit suffisant pour les opérations de tenseurs et les fonctionnalités de base de ML, le package MLX Examples offre plusieurs composants supplémentaires conçus pour travailler avec des modèles de langage et simplifier le processus d'inférence :
+Alors que le package de base [MLX Swift](https://github.com/ml-explore/mlx-swift) suffit pour les opérations tensoriales de base et les fonctionnalités ML élémentaires, le package MLX Examples fournit plusieurs composants supplémentaires conçus pour travailler avec des modèles de langage et faciliter le processus d’inférence :
 
-- Outils de chargement de modèles qui gèrent les téléchargements depuis Hugging Face
-- Intégration du tokenizer
-- Aides à l'inférence pour la génération de texte
-- Définitions de modèles préconfigurées
+- utilitaires de chargement de modèles qui gèrent le téléchargement depuis Hugging Face  
+- intégration du tokenizer  
+- aides à l’inférence pour la génération de texte  
+- définitions de modèles préconfigurées  
 
-## Étape 3 : Configurer les droits
+## Étape 3 : Configurer les droits d’accès (Entitlements)
 
-Pour permettre à notre application de télécharger des modèles et d'allouer suffisamment de mémoire, nous devons ajouter des droits spécifiques. Créez un fichier `.entitlements` pour votre application avec le contenu suivant :
+Pour permettre à notre application de télécharger les modèles et d’allouer suffisamment de mémoire, nous devons ajouter des droits spécifiques. Créez un fichier `.entitlements` pour votre application avec le contenu suivant :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ Pour permettre à notre application de télécharger des modèles et d'allouer s
 </plist>
 ```
 
-> **Note :** Le droit `com.apple.developer.kernel.increased-memory-limit` est essentiel pour exécuter des modèles plus volumineux, car il permet à l'application de demander plus de mémoire que ce qui est normalement autorisé.
+> **Note :** Le droit `com.apple.developer.kernel.increased-memory-limit` est important pour exécuter des modèles plus volumineux, car il permet à l’application de demander plus de mémoire que la limite habituelle.
 
 ## Étape 4 : Créer le modèle de message de chat
 
-Tout d'abord, créons une structure de base pour représenter nos messages de chat :
+Commençons par créer une structure basique pour représenter nos messages de chat :
 
 ```swift
 import SwiftUI
@@ -87,7 +87,7 @@ struct ChatMessage: Identifiable {
 
 ## Étape 5 : Implémenter le ViewModel
 
-Ensuite, nous allons créer la classe `PhiViewModel`, qui gère le chargement du modèle et les inférences :
+Ensuite, nous allons créer la classe `PhiViewModel` qui gère le chargement du modèle et l’inférence :
 
 ```swift
 import MLX
@@ -248,23 +248,15 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-Le ViewModel démontre les principaux points d'intégration avec MLX :
+Le ViewModel illustre les points clés d’intégration avec MLX :
 
-- Définir les limites du cache GPU avec `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
-
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
-
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
-
-### Model format considerations
-
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
-
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`, il fait référence à un modèle MLX spécifique préconverti qui sera automatiquement téléchargé :
+- définition des limites du cache GPU avec `MLX.GPU.set(cacheLimit:)`  
+- `LLMModelFactory`  
+- `ModelContainer`  
+- `MLXLMCommon.generate`  
+- `loadModel()`  
+- `fetchAIResponse()`  
+- `ModelRegistry.phi3_5_4bit`, qui fait référence à un modèle MLX pré-converti spécifique qui sera téléchargé automatiquement :
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +266,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-Vous pouvez créer vos propres configurations de modèles pour pointer vers n'importe quel modèle compatible sur Hugging Face. Par exemple, pour utiliser Phi-4 mini, vous pourriez définir votre propre configuration :
+Vous pouvez créer vos propres configurations de modèles pour pointer vers n’importe quel modèle compatible sur Hugging Face. Par exemple, pour utiliser Phi-4 mini à la place, vous pourriez définir votre propre configuration :
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,16 +283,16 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Note :** La prise en charge de Phi-4 a été ajoutée au dépôt MLX Swift Examples fin février 2025 (dans [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). En mars 2025, la dernière version officielle (2.21.2 de décembre 2024) n'inclut pas de prise en charge intégrée de Phi-4. Pour utiliser les modèles Phi-4, vous devrez référencer le package directement depuis la branche principale :
->
+> **Note :** Le support de Phi-4 a été ajouté au dépôt MLX Swift Examples fin février 2025 (dans la [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). En mars 2025, la dernière version officielle (2.21.2 de décembre 2024) ne comprend pas encore le support intégré de Phi-4. Pour utiliser les modèles Phi-4, vous devrez référencer le package directement depuis la branche principale :  
+>  
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-Cela vous donne accès aux dernières configurations de modèles, y compris Phi-4, avant qu'elles ne soient incluses dans une version officielle. Vous pouvez utiliser cette approche pour utiliser différentes versions des modèles Phi ou même d'autres modèles convertis au format MLX.
+Cela vous donne accès aux dernières configurations de modèles, y compris Phi-4, avant leur inclusion dans une version officielle. Vous pouvez utiliser cette méthode pour exploiter différentes versions des modèles Phi ou même d’autres modèles convertis au format MLX.
 
-## Étape 6 : Créer l'interface utilisateur
+## Étape 6 : Créer l’interface utilisateur
 
 Implémentons maintenant une interface de chat simple pour interagir avec notre ViewModel :
 
@@ -429,27 +421,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-L'interface utilisateur se compose de trois principaux composants qui fonctionnent ensemble pour créer une interface de chat basique. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` fournit un indicateur animé simple pour montrer que l'IA est en train de traiter.
+L’interface utilisateur se compose de trois composants principaux qui fonctionnent ensemble pour créer une interface de chat basique. `ContentView`, `MessageView` et `TypingIndicatorView` fournissent un indicateur animé simple pour montrer que l’IA est en train de traiter.
 
-## Étape 7 : Construire et exécuter l'application
+## Étape 7 : Compiler et lancer l’application
 
-Nous sommes maintenant prêts à construire et exécuter l'application.
+Nous sommes maintenant prêts à compiler et exécuter l’application.
 
-> **Important !** MLX ne prend pas en charge le simulateur. Vous devez exécuter l'application sur un appareil physique avec une puce Apple Silicon. Voir [ici](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) pour plus d'informations.
+> **Important !** MLX ne supporte pas le simulateur. Vous devez lancer l’application sur un appareil physique équipé d’une puce Apple Silicon. Voir [ici](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) pour plus d’informations.
 
-Lorsque l'application se lance, appuyez sur le bouton « Charger le modèle » pour télécharger et initialiser le modèle Phi-3 (ou, selon votre configuration, Phi-4). Ce processus peut prendre du temps selon votre connexion Internet, car il implique le téléchargement du modèle depuis Hugging Face. Notre implémentation inclut seulement un spinner pour indiquer le chargement, mais vous pouvez voir la progression réelle dans la console Xcode.
+Au lancement de l’application, appuyez sur le bouton « Load model » pour télécharger et initialiser le modèle Phi-3 (ou, selon votre configuration, Phi-4). Ce processus peut prendre un certain temps selon votre connexion internet, car il implique de télécharger le modèle depuis Hugging Face. Notre implémentation inclut uniquement un indicateur de chargement, mais vous pouvez suivre la progression réelle dans la console Xcode.
 
-Une fois chargé, vous pouvez interagir avec le modèle en tapant des questions dans le champ de texte et en appuyant sur le bouton d'envoi.
+Une fois chargé, vous pouvez interagir avec le modèle en tapant des questions dans le champ de texte et en appuyant sur le bouton d’envoi.
 
-Voici comment notre application devrait se comporter, exécutée sur un iPad Air M1 :
+Voici à quoi devrait ressembler notre application, fonctionnant sur un iPad Air M1 :
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
 ## Conclusion
 
-Et voilà ! En suivant ces étapes, vous avez créé une application iOS qui exécute le modèle Phi-3 (ou Phi-4) directement sur l'appareil en utilisant le framework MLX d'Apple.
+Et voilà ! En suivant ces étapes, vous avez créé une application iOS qui exécute directement sur l’appareil le modèle Phi-3 (ou Phi-4) en utilisant le framework MLX d’Apple.
 
 Félicitations !
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions de garantir l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction professionnelle humaine. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle humaine. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l'utilisation de cette traduction.

@@ -2,69 +2,55 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-03-27T08:03:26+00:00",
-  "source_file": "md\\01.Introduction\\03\\Remote_Interence.md",
+  "translation_date": "2025-05-07T14:32:05+00:00",
+  "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "fa"
 }
 -->
-# استنتاج از راه دور با مدل تنظیم‌شده
+# استنتاج از راه دور با مدل فاین‌تیون شده
 
-پس از آموزش آداپتورها در محیط از راه دور، از یک برنامه ساده Gradio برای تعامل با مدل استفاده کنید.
+پس از آموزش آداپتورها در محیط راه دور، از یک برنامه ساده Gradio برای تعامل با مدل استفاده کنید.
 
-![پایان تنظیم دقیق](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.fa.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.fa.png)
 
-### آماده‌سازی منابع Azure  
-برای استنتاج از راه دور، باید منابع Azure را با اجرای `AI Toolkit: Provision Azure Container Apps for inference` از منوی فرمان تنظیم کنید. در طول این فرآیند، از شما خواسته می‌شود اشتراک Azure و گروه منابع خود را انتخاب کنید.  
-![آماده‌سازی منابع استنتاج](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.fa.png)
+### فراهم‌سازی منابع Azure  
+برای استنتاج از راه دور باید منابع Azure را با اجرای `AI Toolkit: Provision Azure Container Apps for inference` از پالت فرمان تنظیم کنید. در این مرحله از شما خواسته می‌شود که اشتراک Azure و گروه منابع خود را انتخاب کنید.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.fa.png)
 
-به‌طور پیش‌فرض، اشتراک و گروه منابع برای استنتاج باید با آن‌هایی که برای تنظیم دقیق استفاده شده‌اند یکسان باشند. استنتاج از همان محیط Azure Container App استفاده کرده و به مدل و آداپتور مدل ذخیره‌شده در Azure Files که در مرحله تنظیم دقیق تولید شده‌اند، دسترسی خواهد داشت.
+به طور پیش‌فرض، اشتراک و گروه منابع برای استنتاج باید با آن‌هایی که برای فاین‌تیون استفاده شده‌اند مطابقت داشته باشند. استنتاج از همان محیط Azure Container App استفاده می‌کند و به مدل و آداپتور مدل ذخیره شده در Azure Files که در مرحله فاین‌تیون ایجاد شده‌اند دسترسی خواهد داشت.
 
-## استفاده از AI Toolkit  
+## استفاده از AI Toolkit
 
 ### استقرار برای استنتاج  
-اگر می‌خواهید کد استنتاج را بازبینی کنید یا مدل استنتاج را مجدداً بارگذاری کنید، لطفاً فرمان `AI Toolkit: Deploy for inference` را اجرا کنید. این کار کد جدید شما را با ACA همگام‌سازی کرده و نسخه را مجدداً راه‌اندازی می‌کند.
+اگر می‌خواهید کد استنتاج را اصلاح کنید یا مدل استنتاج را دوباره بارگذاری کنید، دستور `AI Toolkit: Deploy for inference` را اجرا کنید. این کار کد جدید شما را با ACA همگام‌سازی کرده و نمونه را مجدداً راه‌اندازی می‌کند.
 
-![استقرار برای استنتاج](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.fa.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.fa.png)
 
-پس از تکمیل موفقیت‌آمیز استقرار، مدل اکنون آماده ارزیابی با استفاده از این نقطه پایانی است.
+پس از تکمیل موفق استقرار، مدل اکنون آماده ارزیابی با استفاده از این نقطه پایانی است.
 
-### دسترسی به API استنتاج  
+### دسترسی به API استنتاج
 
-می‌توانید با کلیک بر روی دکمه "*Go to Inference Endpoint*" که در اعلان VSCode نمایش داده می‌شود، به API استنتاج دسترسی پیدا کنید. به‌طور جایگزین، نقطه پایانی وب API در `ACA_APP_ENDPOINT` در `./infra/inference.config.json` و در پنل خروجی قابل مشاهده است.
+می‌توانید با کلیک روی دکمه "*Go to Inference Endpoint*" که در اعلان VSCode نمایش داده می‌شود به API استنتاج دسترسی پیدا کنید. همچنین، نقطه پایانی وب API را می‌توانید در `ACA_APP_ENDPOINT` در `./infra/inference.config.json` و در پنل خروجی پیدا کنید.
 
-![نقطه پایانی برنامه](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.fa.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.fa.png)
 
-> **توجه:** ممکن است چند دقیقه طول بکشد تا نقطه پایانی استنتاج کاملاً عملیاتی شود.
+> **Note:** ممکن است چند دقیقه طول بکشد تا نقطه پایانی استنتاج به طور کامل فعال شود.
 
-## اجزای استنتاج موجود در قالب  
+## اجزای استنتاج موجود در قالب
 
 | پوشه | محتویات |
 | ------ |--------- |
-| `infra` | شامل تمام تنظیمات لازم برای عملیات از راه دور. |
-| `infra/provision/inference.parameters.json` | شامل پارامترها برای قالب‌های bicep، که برای آماده‌سازی منابع Azure برای استنتاج استفاده می‌شوند. |
-| `infra/provision/inference.bicep` | شامل قالب‌هایی برای آماده‌سازی منابع Azure برای استنتاج. |
-| `infra/inference.config.json` | فایل تنظیماتی که توسط فرمان `AI Toolkit: Provision Azure Container Apps for inference` تولید شده است. این فایل به‌عنوان ورودی برای سایر منوهای فرمان از راه دور استفاده می‌شود. |
+| `infra` | شامل تمام پیکربندی‌های لازم برای عملیات راه دور است. |
+| `infra/provision/inference.parameters.json` | پارامترهای قالب‌های bicep را نگهداری می‌کند که برای فراهم‌سازی منابع Azure جهت استنتاج استفاده می‌شوند. |
+| `infra/provision/inference.bicep` | شامل قالب‌هایی برای فراهم‌سازی منابع Azure برای استنتاج است. |
+| `infra/inference.config.json` | فایل پیکربندی که توسط دستور `AI Toolkit: Provision Azure Container Apps for inference` تولید شده است. این فایل به عنوان ورودی برای سایر پالت‌های فرمان راه دور استفاده می‌شود. |
 
-### استفاده از AI Toolkit برای تنظیم آماده‌سازی منابع Azure  
-[AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) را پیکربندی کنید.
+### استفاده از AI Toolkit برای پیکربندی فراهم‌سازی منابع Azure  
+[AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) را پیکربندی کنید
 
-Azure Container Apps را برای استنتاج آماده کنید ` command.
+برای فراهم‌سازی Azure Container Apps جهت استنتاج، فایل `./infra/provision/inference.parameters.json` را ویرایش کنید سپس دستور `AI Toolkit: Provision Azure Container Apps for inference` را از پالت فرمان اجرا کنید. این دستور منابع مشخص شده را به‌روزرسانی کرده و هر منبعی که وجود ندارد را ایجاد می‌کند.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
-| --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
-
-### Using Existing Azure Resources
-
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
-
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` فایل. سپس، فرمان `AI Toolkit: Provision Azure Container Apps for inference` را از منوی فرمان اجرا کنید. این کار منابع مشخص‌شده را به‌روزرسانی کرده و هر منبعی که وجود ندارد را ایجاد می‌کند.
-
-برای مثال، اگر یک محیط کانتینر Azure موجود دارید، فایل `./infra/finetuning.parameters.json` شما باید به این شکل باشد:
+برای مثال، اگر یک محیط کانتینری Azure موجود دارید، فایل `./infra/finetuning.parameters.json` شما باید به این شکل باشد:
 
 ```json
 {
@@ -83,8 +69,8 @@ If you have customized the Azure resources during the fine-tuning step or want t
   }
 ```
 
-### آماده‌سازی دستی  
-اگر ترجیح می‌دهید منابع Azure را به‌صورت دستی تنظیم کنید، می‌توانید از فایل‌های bicep ارائه‌شده در فایل `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` استفاده کنید.
+### فراهم‌سازی دستی  
+اگر ترجیح می‌دهید منابع Azure را به صورت دستی پیکربندی کنید، می‌توانید از فایل‌های bicep ارائه شده در پوشه `./infra/provision` و فایل `inference.config.json` استفاده کنید.
 
 برای مثال:
 
@@ -100,4 +86,4 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را رعایت کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی اشتباهات یا نادقتی‌هایی باشند. سند اصلی به زبان بومی خود باید به‌عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، توصیه می‌شود از ترجمه حرفه‌ای انسانی استفاده کنید. ما مسئول هیچ‌گونه سوءتفاهم یا تفسیر نادرست ناشی از استفاده از این ترجمه نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی اشتباهات یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ‌گونه سوءتفاهم یا تفسیر نادرستی که ناشی از استفاده از این ترجمه باشد، نیستیم.

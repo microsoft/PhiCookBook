@@ -1,44 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7739575218e3244a58516832ad88a9a2",
-  "translation_date": "2025-04-03T06:53:36+00:00",
-  "source_file": "md\\01.Introduction\\03\\Kaito_Inference.md",
+  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
+  "translation_date": "2025-05-07T14:33:49+00:00",
+  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "ur"
 }
 -->
-## کائٹو کے ساتھ انفرنس 
+## کائیتو کے ساتھ استنتاج
 
-[Kaito](https://github.com/Azure/kaito) ایک آپریٹر ہے جو Kubernetes کلسٹر میں AI/ML انفرنس ماڈل کو خودکار طریقے سے تعینات کرتا ہے۔
+[Kaito](https://github.com/Azure/kaito) ایک آپریٹر ہے جو Kubernetes کلسٹر میں AI/ML استنتاج ماڈل کی تعیناتی کو خودکار بناتا ہے۔
 
-کائٹو درج ذیل اہم فرق فراہم کرتا ہے، جو زیادہ تر عام ماڈل تعیناتی طریقوں کے مقابلے میں ہیں، جو ورچوئل مشین انفراسٹرکچر پر مبنی ہیں:
+کائیتو کے درج ذیل اہم فرق ہیں جو زیادہ تر روایتی ماڈل تعیناتی طریقہ کار سے مختلف ہیں جو ورچوئل مشین انفراسٹرکچر پر مبنی ہیں:
 
-- ماڈل فائلز کو کنٹینر امیجز کے ذریعے منظم کریں۔ ماڈل لائبریری کے ذریعے انفرنس کالز انجام دینے کے لیے ایک HTTP سرور فراہم کیا جاتا ہے۔
-- GPU ہارڈویئر کے مطابق تعیناتی پیرامیٹرز کو ٹیون کرنے سے بچیں، پری سیٹ کنفیگریشنز فراہم کرکے۔
-- ماڈل کی ضروریات کے مطابق GPU نوڈز کو خودکار طریقے سے پروویژن کریں۔
-- اگر لائسنس اجازت دے تو بڑے ماڈل امیجز کو Microsoft Container Registry (MCR) میں عوامی طور پر ہوسٹ کریں۔
+- ماڈل فائلوں کا انتظام کنٹینر امیجز کے ذریعے۔ ماڈل لائبریری استعمال کرتے ہوئے استنتاج کالز کرنے کے لیے ایک http سرور فراہم کیا جاتا ہے۔
+- GPU ہارڈویئر کے مطابق تعیناتی کے پیرامیٹرز کو ایڈجسٹ کرنے سے گریز، پری سیٹ کنفیگریشنز فراہم کر کے۔
+- ماڈل کی ضروریات کی بنیاد پر GPU نوڈز کا خودکار انتظام۔
+- اگر لائسنس اجازت دیتا ہے تو بڑے ماڈل امیجز کو Microsoft Container Registry (MCR) میں ہوسٹ کرنا۔
 
-کائٹو کے استعمال سے Kubernetes میں بڑے AI انفرنس ماڈلز کو شامل کرنے کا ورک فلو کافی حد تک آسان ہو جاتا ہے۔
+کائیتو استعمال کرتے ہوئے، Kubernetes میں بڑے AI استنتاج ماڈلز کو شامل کرنے کا ورک فلو کافی آسان ہو جاتا ہے۔
 
-## آرکیٹیکچر
+## فن تعمیر
 
-کائٹو کلاسک Kubernetes Custom Resource Definition(CRD)/کنٹرولر ڈیزائن پیٹرن کی پیروی کرتا ہے۔ صارف ایک `workspace` کسٹم ریسورس کا انتظام کرتا ہے جو GPU کی ضروریات اور انفرنس تفصیلات کو بیان کرتا ہے۔ کائٹو کنٹرولرز `workspace` کسٹم ریسورس کو ہم آہنگ کرکے تعیناتی کو خودکار بناتے ہیں۔
+کائیتو کلاسک Kubernetes Custom Resource Definition (CRD)/controller ڈیزائن پیٹرن کی پیروی کرتا ہے۔ صارف ایک `workspace` کسٹم ریسورس کا انتظام کرتا ہے جو GPU کی ضروریات اور استنتاج کی وضاحت بیان کرتا ہے۔ کائیتو کنٹرولرز تعیناتی کو خودکار بنائیں گے اور `workspace` کسٹم ریسورس کو ہم آہنگ کریں گے۔
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-اوپر دی گئی تصویر کائٹو آرکیٹیکچر کا جائزہ پیش کرتی ہے۔ اس کے اہم اجزاء درج ذیل ہیں:
+اوپر والا خاکہ کائیتو کے فن تعمیر کا جائزہ پیش کرتا ہے۔ اس کے اہم اجزاء درج ذیل ہیں:
 
-- **ورک اسپیس کنٹرولر**: یہ `workspace` کسٹم ریسورس کو ہم آہنگ کرتا ہے، `machine` (نیچے وضاحت کی گئی ہے) کسٹم ریسورسز تخلیق کرتا ہے تاکہ نوڈ کی خودکار پروویژننگ کو متحرک کیا جا سکے، اور ماڈل کی پری سیٹ کنفیگریشنز کے مطابق انفرنس ورک لوڈ (`deployment` یا `statefulset`) تخلیق کرتا ہے۔
-- **نوڈ پروویژنر کنٹرولر**: اس کنٹرولر کا نام [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) میں *gpu-provisioner* ہے۔ یہ `machine` CRD استعمال کرتا ہے جو [Karpenter](https://sigs.k8s.io/karpenter) سے اخذ کیا گیا ہے تاکہ ورک اسپیس کنٹرولر کے ساتھ تعامل کیا جا سکے۔ یہ Azure Kubernetes Service(AKS) APIs کے ساتھ انضمام کرتا ہے تاکہ AKS کلسٹر میں نئے GPU نوڈز شامل کیے جا سکیں۔
-> نوٹ: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ایک اوپن سورس جزو ہے۔ اگر وہ [Karpenter-core](https://sigs.k8s.io/karpenter) APIs کو سپورٹ کرتے ہیں تو اسے دوسرے کنٹرولرز کے ساتھ تبدیل کیا جا سکتا ہے۔
+- **Workspace controller**: یہ `workspace` کسٹم ریسورس کو ہم آہنگ کرتا ہے، نوڈ آٹو پروویژننگ کو متحرک کرنے کے لیے `machine` (نیچے وضاحت کی گئی) کسٹم ریسورسز بناتا ہے، اور ماڈل کی پری سیٹ کنفیگریشنز کی بنیاد پر استنتاج ورک لوڈ (`deployment` یا `statefulset`) تخلیق کرتا ہے۔
+- **Node provisioner controller**: اس کنٹرولر کا نام [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) میں *gpu-provisioner* ہے۔ یہ [Karpenter](https://sigs.k8s.io/karpenter) سے ماخوذ `machine` CRD استعمال کرتا ہے تاکہ workspace controller کے ساتھ تعامل کرے۔ یہ Azure Kubernetes Service (AKS) APIs کے ساتھ انضمام کرتا ہے تاکہ AKS کلسٹر میں نئے GPU نوڈز شامل کیے جا سکیں۔
+> نوٹ: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ایک اوپن سورس کمپونینٹ ہے۔ اگر دوسرے کنٹرولرز [Karpenter-core](https://sigs.k8s.io/karpenter) APIs کی حمایت کرتے ہیں تو اسے تبدیل کیا جا سکتا ہے۔
 
-## انسٹالیشن
+## تنصیب
 
-انسٹالیشن کی رہنمائی کے لیے [یہاں](https://github.com/Azure/kaito/blob/main/docs/installation.md) دیکھیں۔
+براہ کرم تنصیب کی ہدایات [یہاں](https://github.com/Azure/kaito/blob/main/docs/installation.md) دیکھیں۔
 
-## جلدی سے شروع کریں انفرنس Phi-3
-[سمپل کوڈ انفرنس Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## استنتاج Phi-3 کے لیے فوری آغاز
+[نمونہ کوڈ استنتاج Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-ورک اسپیس کی حالت درج ذیل کمانڈ چلا کر ٹریک کی جا سکتی ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے، تو ماڈل کامیابی سے تعینات ہو چکا ہوتا ہے۔
+ورک اسپیس کی صورتحال درج ذیل کمانڈ چلا کر معلوم کی جا سکتی ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے تو ماڈل کامیابی سے تعینات ہو چکا ہوتا ہے۔
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-اس کے بعد، انفرنس سروس کے کلسٹر آئی پی کو تلاش کریں اور کلسٹر میں سروس اینڈ پوائنٹ کو ٹیسٹ کرنے کے لیے ایک عارضی `curl` پوڈ استعمال کریں۔
+اس کے بعد، استنتاج سروس کا کلسٹر IP معلوم کیا جا سکتا ہے اور عارضی `curl` پوڈ کا استعمال کرتے ہوئے کلسٹر میں سروس اینڈ پوائنٹ کی جانچ کی جا سکتی ہے۔
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## جلدی سے شروع کریں انفرنس Phi-3 ایڈاپٹرز کے ساتھ
+## اڈاپٹرز کے ساتھ استنتاج Phi-3 کے لیے فوری آغاز
 
-کائٹو انسٹال کرنے کے بعد، انفرنس سروس شروع کرنے کے لیے درج ذیل کمانڈز آزمائیں۔
+کائیتو انسٹال کرنے کے بعد، درج ذیل کمانڈز آزما کر استنتاج سروس شروع کی جا سکتی ہے۔
 
-[سمپل کوڈ انفرنس Phi-3 ایڈاپٹرز کے ساتھ](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[نمونہ کوڈ استنتاج Phi-3 اڈاپٹرز کے ساتھ](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-ورک اسپیس کی حالت درج ذیل کمانڈ چلا کر ٹریک کی جا سکتی ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے، تو ماڈل کامیابی سے تعینات ہو چکا ہوتا ہے۔
+ورک اسپیس کی صورتحال درج ذیل کمانڈ چلا کر معلوم کی جا سکتی ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے تو ماڈل کامیابی سے تعینات ہو چکا ہوتا ہے۔
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-اس کے بعد، انفرنس سروس کے کلسٹر آئی پی کو تلاش کریں اور کلسٹر میں سروس اینڈ پوائنٹ کو ٹیسٹ کرنے کے لیے ایک عارضی `curl` پوڈ استعمال کریں۔
+اس کے بعد، استنتاج سروس کا کلسٹر IP معلوم کیا جا سکتا ہے اور عارضی `curl` پوڈ کا استعمال کرتے ہوئے کلسٹر میں سروس اینڈ پوائنٹ کی جانچ کی جا سکتی ہے۔
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +174,5 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غلط فہمیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ورانہ انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+**ڈس کلیمر**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کی کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا بے ضابطگیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

@@ -2,44 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-03-27T07:28:41+00:00",
-  "source_file": "md\\01.Introduction\\03\\Kaito_Inference.md",
+  "translation_date": "2025-05-07T14:33:21+00:00",
+  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "fr"
 }
 -->
-## Inférence avec Kaito 
+## Inférence avec Kaito
 
-[Kaito](https://github.com/Azure/kaito) est un opérateur qui automatise le déploiement des modèles d'inférence AI/ML dans un cluster Kubernetes.
+[Kaito](https://github.com/Azure/kaito) est un opérateur qui automatise le déploiement de modèles d'inférence AI/ML dans un cluster Kubernetes.
 
-Kaito se distingue des méthodologies de déploiement de modèles les plus courantes basées sur des infrastructures de machines virtuelles grâce aux points suivants :
+Kaito présente les différences clés suivantes par rapport à la plupart des méthodologies classiques de déploiement de modèles basées sur des infrastructures de machines virtuelles :
 
-- Gestion des fichiers de modèles à l'aide d'images de conteneurs. Un serveur HTTP est fourni pour effectuer des appels d'inférence en utilisant la bibliothèque de modèles.
-- Évite d'ajuster les paramètres de déploiement pour s'adapter au matériel GPU en fournissant des configurations prédéfinies.
-- Provisionnement automatique des nœuds GPU en fonction des exigences du modèle.
-- Hébergement des images de modèles volumineux dans le registre public Microsoft Container Registry (MCR) si la licence le permet.
+- Gestion des fichiers modèles via des images conteneurs. Un serveur http est fourni pour effectuer des appels d'inférence en utilisant la bibliothèque de modèles.
+- Évite de devoir ajuster les paramètres de déploiement pour s’adapter au matériel GPU en proposant des configurations prédéfinies.
+- Provisionnement automatique des nœuds GPU en fonction des besoins du modèle.
+- Hébergement des grandes images de modèles dans le Microsoft Container Registry (MCR) public si la licence le permet.
 
-Avec Kaito, le processus d'intégration de grands modèles d'inférence AI dans Kubernetes est grandement simplifié.
-
+Avec Kaito, le processus d’intégration de grands modèles d’inférence AI dans Kubernetes est largement simplifié.
 
 ## Architecture
 
-Kaito suit le modèle classique de conception de définition de ressources personnalisées (CRD)/contrôleur de Kubernetes. L'utilisateur gère une ressource personnalisée `workspace` qui décrit les exigences GPU et les spécifications d'inférence. Les contrôleurs Kaito automatisent le déploiement en réconciliant la ressource personnalisée `workspace`.
+Kaito suit le modèle classique de conception Kubernetes basé sur Custom Resource Definition (CRD) / contrôleur. L’utilisateur gère une ressource personnalisée `workspace` qui décrit les besoins en GPU et la spécification d’inférence. Les contrôleurs Kaito automatisent le déploiement en conciliant la ressource personnalisée `workspace`.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Architecture de Kaito" alt="Architecture de Kaito">
+  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-La figure ci-dessus présente une vue d'ensemble de l'architecture de Kaito. Ses principaux composants comprennent :
+La figure ci-dessus présente une vue d’ensemble de l’architecture Kaito. Ses principaux composants sont :
 
-- **Contrôleur de workspace** : Il réconcilie la ressource personnalisée `workspace`, crée des ressources personnalisées `machine` (expliquées ci-dessous) pour déclencher le provisionnement automatique des nœuds, et crée la charge de travail d'inférence (`deployment` ou `statefulset`) en fonction des configurations prédéfinies du modèle.
-- **Contrôleur de provisionnement de nœuds** : Le nom du contrôleur est *gpu-provisioner* dans le [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Il utilise le CRD `machine` provenant de [Karpenter](https://sigs.k8s.io/karpenter) pour interagir avec le contrôleur de workspace. Il s'intègre aux APIs d'Azure Kubernetes Service (AKS) pour ajouter de nouveaux nœuds GPU au cluster AKS.  
-> Note : Le [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) est un composant open source. Il peut être remplacé par d'autres contrôleurs s'ils prennent en charge les APIs [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Contrôleur Workspace** : Il concilie la ressource personnalisée `workspace`, crée les ressources personnalisées `machine` (expliquées ci-dessous) pour déclencher le provisionnement automatique des nœuds, et crée la charge de travail d’inférence (`deployment` ou `statefulset`) basée sur les configurations prédéfinies du modèle.
+- **Contrôleur de provisionnement de nœuds** : Le contrôleur s’appelle *gpu-provisioner* dans le [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Il utilise la CRD `machine` issue de [Karpenter](https://sigs.k8s.io/karpenter) pour interagir avec le contrôleur workspace. Il s’intègre aux API Azure Kubernetes Service (AKS) pour ajouter de nouveaux nœuds GPU au cluster AKS.  
+> Note : Le [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) est un composant open source. Il peut être remplacé par d’autres contrôleurs s’ils supportent les API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Installation
 
-Veuillez consulter les instructions d'installation [ici](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Veuillez consulter le guide d’installation [ici](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Démarrage rapide : Inférence Phi-3
-[Exemple de code pour l'inférence Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Démarrage rapide Inférence Phi-3  
+[Exemple de code Inférence Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -92,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Ensuite, on peut trouver l'ip du service d'inférence dans le cluster et utiliser un pod `curl` temporaire pour tester le point de terminaison du service dans le cluster.
+Ensuite, on peut récupérer l’adresse IP du service d’inférence dans le cluster et utiliser un pod `curl` temporaire pour tester le point d’accès du service dans le cluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -103,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Démarrage rapide : Inférence Phi-3 avec adaptateurs
+## Démarrage rapide Inférence Phi-3 avec adaptateurs
 
-Après avoir installé Kaito, on peut essayer les commandes suivantes pour démarrer un service d'inférence.
+Après avoir installé Kaito, on peut essayer les commandes suivantes pour lancer un service d’inférence.
 
-[Exemple de code pour l'inférence Phi-3 avec adaptateurs](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Exemple de code Inférence Phi-3 avec adaptateurs](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -164,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Ensuite, on peut trouver l'ip du service d'inférence dans le cluster et utiliser un pod `curl` temporaire pour tester le point de terminaison du service dans le cluster.
+Ensuite, on peut récupérer l’adresse IP du service d’inférence dans le cluster et utiliser un pod `curl` temporaire pour tester le point d’accès du service dans le cluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -175,5 +174,5 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Clause de non-responsabilité** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions de garantir l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+**Avertissement** :  
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.

@@ -1,47 +1,49 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "05e69691c294289d217150bec390a5fb",
-  "translation_date": "2025-04-04T13:11:24+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Kaito.md",
+  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
+  "translation_date": "2025-05-07T13:38:53+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "mo"
 }
 -->
 ## Fine-Tuning with Kaito 
 
-[Kaito](https://github.com/Azure/kaito) é um operador que automatiza a implantação de modelos de inferência de AI/ML em um cluster Kubernetes.
+[Kaito](https://github.com/Azure/kaito) הוא אופרטור שמבצע אוטומציה לפריסת מודלים של AI/ML בקלאסטר Kubernetes.
 
-Kaito apresenta as seguintes diferenças principais em comparação com a maioria das metodologias de implantação de modelos tradicionais baseadas em infraestruturas de máquinas virtuais:
+ל-Kaito יש הבדלים מרכזיים בהשוואה לרוב שיטות הפריסה הנפוצות המבוססות על תשתיות וירטואליות:
 
-- Gerenciar arquivos de modelo usando imagens de contêiner. Um servidor http é fornecido para realizar chamadas de inferência usando a biblioteca de modelos.
-- Evitar ajustes de parâmetros de implantação para se adequar ao hardware de GPU, oferecendo configurações pré-definidas.
-- Provisionar automaticamente nós de GPU com base nos requisitos do modelo.
-- Hospedar imagens de modelos grandes no Microsoft Container Registry (MCR) público, se a licença permitir.
+- ניהול קבצי מודל באמצעות תמונות קונטיינר. שרת HTTP מסופק לביצוע קריאות אינפרנס באמצעות ספריית המודל.
+- הימנעות מכוונון פרמטרי פריסה לפי חומרת GPU על ידי מתן תצורות מוגדרות מראש.
+- פריסה אוטומטית של צמתים עם GPU בהתאם לדרישות המודל.
+- אחסון תמונות מודל גדולות ברישום הציבורי של Microsoft Container Registry (MCR) אם הרישיון מאפשר זאת.
 
-Com o Kaito, o fluxo de trabalho para integrar grandes modelos de inferência de AI no Kubernetes é bastante simplificado.
+באמצעות Kaito, תהליך העלאת מודלים גדולים של אינפרנס ב-Kubernetes הופך לפשוט בהרבה.
 
-## Arquitetura
 
-Kaito segue o padrão clássico de design de Definição de Recurso Personalizado (CRD)/controlador do Kubernetes. O usuário gerencia um recurso personalizado `workspace` que descreve os requisitos de GPU e a especificação de inferência. Os controladores do Kaito automatizam a implantação ao reconciliar o recurso personalizado `workspace`.
+## ארכיטקטורה
+
+Kaito פועל לפי דפוס העיצוב הקלאסי של Kubernetes Custom Resource Definition (CRD) ושל בקר (controller). המשתמש מנהל משאב מותאם אישית `workspace` שמתאר את דרישות ה-GPU ואת מפרט האינפרנס. בקרי Kaito מבצעים אוטומציה של הפריסה על ידי פיוס המשאב המותאם אישית `workspace`.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Arquitetura do Kaito" alt="Arquitetura do Kaito">
+  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-A figura acima apresenta uma visão geral da arquitetura do Kaito. Seus principais componentes incluem:
+התמונה למעלה מציגה את סקירת הארכיטקטורה של Kaito. הרכיבים העיקריים כוללים:
 
-- **Controlador de workspace**: Ele reconcilia o recurso personalizado `workspace`, cria recursos personalizados `machine` (explicados abaixo) para acionar o provisionamento automático de nós e cria a carga de trabalho de inferência (`deployment` ou `statefulset`) com base nas configurações pré-definidas do modelo.
-- **Controlador de provisionamento de nós**: O nome do controlador é *gpu-provisioner* no [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Ele utiliza o CRD `machine` originado do [Karpenter](https://sigs.k8s.io/karpenter) para interagir com o controlador de workspace. Ele se integra às APIs do Azure Kubernetes Service (AKS) para adicionar novos nós de GPU ao cluster AKS. 
-> Nota: O [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) é um componente de código aberto. Ele pode ser substituído por outros controladores, desde que suportem as APIs do [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Workspace controller**: מבצע פיוס של המשאב המותאם אישית `workspace`, יוצר משאבים מותאמים אישית `machine` (מוסבר למטה) כדי להפעיל פריסה אוטומטית של צמתים, ויוצר את עומס העבודה לאינפרנס (`deployment` או `statefulset`) בהתבסס על תצורות המודל המוגדרות מראש.
+- **Node provisioner controller**: שם הבקר הוא *gpu-provisioner* ב-[gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). הוא משתמש ב-CRD `machine` שמקורו ב-[Karpenter](https://sigs.k8s.io/karpenter) כדי לתקשר עם בקר ה-workspace. הוא משתלב עם ממשקי ה-API של Azure Kubernetes Service (AKS) כדי להוסיף צמתים עם GPU חדשים לקלאסטר AKS. 
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) הוא רכיב בקוד פתוח. ניתן להחליפו בבקרים אחרים אם הם תומכים בממשקי ה-API של [Karpenter-core](https://sigs.k8s.io/karpenter).
 
-## Vídeo de apresentação 
-[Assista ao Demo do Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
-## Instalação
+## סרטון סקירה
+[צפו בדמו של Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
-Consulte o guia de instalação [aqui](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+## התקנה
 
-## Início rápido
+אנא עיינו במדריך ההתקנה [כאן](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-Após instalar o Kaito, é possível executar os seguintes comandos para iniciar um serviço de fine-tuning.
+## התחלה מהירה
+
+לאחר התקנת Kaito, ניתן לנסות את הפקודות הבאות כדי להפעיל שירות כוונון עדין.
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -92,7 +94,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-O status do workspace pode ser acompanhado executando o seguinte comando. Quando a coluna WORKSPACEREADY se tornar `True`, o modelo foi implantado com sucesso.
+ניתן לעקוב אחרי מצב ה-workspace על ידי הרצת הפקודה הבאה. כאשר העמודה WORKSPACEREADY הופכת ל-`True`, המודל הותקן בהצלחה.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -100,7 +102,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Em seguida, é possível encontrar o IP do serviço de inferência no cluster e usar um pod temporário `curl` para testar o endpoint do serviço no cluster.
+בהמשך, ניתן למצוא את כתובת ה-IP של שירות האינפרנס בקלאסטר ולהשתמש בפוד `curl` זמני כדי לבדוק את נקודת הקצה של השירות בתוך הקלאסטר.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -111,4 +113,9 @@ export CLUSTERIP=$(kubectl get svc workspace-tuning-phi-3 -o jsonpath="{.spec.cl
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-It seems like you might be referring to "mo" as a language, but could you clarify what "mo" stands for? Are you referring to a specific language like Māori, Mongolian, or perhaps a fictional or constructed language? Let me know, and I'll assist you accordingly!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what you mean by "mo"? Are you referring to a specific language or dialect? For example, "mo" could refer to Moldovan, a language code, or something else. Providing more details will help me give you the correct translation.

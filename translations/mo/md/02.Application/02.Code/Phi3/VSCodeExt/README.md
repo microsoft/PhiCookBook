@@ -1,110 +1,116 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7302d85639441c7cedbae09795e6b9a6",
-  "translation_date": "2025-04-04T12:49:12+00:00",
-  "source_file": "md\\02.Application\\02.Code\\Phi3\\VSCodeExt\\README.md",
+  "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
+  "translation_date": "2025-05-07T13:48:50+00:00",
+  "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
   "language_code": "mo"
 }
 -->
-# **Bɔ wɔ hɔn Visual Studio Code GitHub Copilot Chat wɔ Microsoft Phi-3 Family**
+# **अपने खुद के Visual Studio Code GitHub Copilot Chat को Microsoft Phi-3 परिवार के साथ बनाएं**
 
-Woabɔ workspace agent wɔ GitHub Copilot Chat ho anaa? Ɛyɛ wo sɛ wobɔ wo ho team's code agent? Saa nsɛm yi yɛ nsɛm a wɔyɛ no nsa ho adwuma de boa wo sɛ wobɛyɛ enterprise-level code business agent wɔ open source model so.
+क्या आपने GitHub Copilot Chat में workspace एजेंट का उपयोग किया है? क्या आप अपनी टीम का कोड एजेंट बनाना चाहते हैं? यह हैंड्स-ऑन लैब ओपन सोर्स मॉडल को मिलाकर एक एंटरप्राइज-स्तरीय कोड बिजनेस एजेंट बनाने की कोशिश करता है।
 
-## **Fapem**
+## **बुनियाद**
 
-### **Adɛn nti na yɛpaw Microsoft Phi-3**
+### **Microsoft Phi-3 क्यों चुनें**
 
-Phi-3 yɛ series bi a ɛwɔ phi-3-mini, phi-3-small, ne phi-3-medium a wɔde training parameters a ɛho hia yɛ text generation, dialogue completion, ne code generation. Ɛwɔ phi-3-vision nso a ɛyɛ Vision-based. Phi-3 yɛ papa pa ma adwumakuo ne team a ɛyɛ foforɔ a wɔpɛ offline generative AI solutions.
+Phi-3 एक परिवार श्रृंखला है, जिसमें phi-3-mini, phi-3-small, और phi-3-medium शामिल हैं, जो टेक्स्ट जनरेशन, संवाद पूर्णता, और कोड जनरेशन के लिए विभिन्न प्रशिक्षण पैरामीटर पर आधारित हैं। इसके अलावा phi-3-vision भी है, जो विजन पर आधारित है। यह एंटरप्राइज या विभिन्न टीमों के लिए ऑफलाइन जनरेटिव AI समाधान बनाने के लिए उपयुक्त है।
 
-Ɛyɛ papa sɛ wo kenkan link yi [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
+इस लिंक को पढ़ने की सलाह दी जाती है [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
 
 ### **Microsoft GitHub Copilot Chat**
 
-GitHub Copilot Chat extension ma wo chat interface a ɛboa wo sɛ wubisa nsɛm a ɛfa coding ho na woanya mmuae wɔ VS Code mu, na wo nni ho hia sɛ wobɛkɔ documentation anaa online forums ho hwehwɛ.
+GitHub Copilot Chat एक्सटेंशन आपको एक चैट इंटरफ़ेस देता है, जिससे आप GitHub Copilot के साथ बातचीत कर सकते हैं और सीधे VS Code के अंदर कोडिंग से संबंधित सवालों के जवाब पा सकते हैं, बिना डॉक्यूमेंटेशन ब्राउज़ किए या ऑनलाइन फोरम खोजे।
 
-Copilot Chat betumi de syntax highlighting, indentation, ne formatting a ɛboa ma mmuae no ho tew mu. Ɛbɛyɛ sɛ nsɛm a ɛfiri user no yɛ no, mmuae no betumi aba sɛ links a ɛfa context ho a Copilot de yɛɛ nsɛm ho na ɛma mmuae no, sɛ source code files anaa documentation, anaa buttons a ɛma wo yɛ VS Code functionalities.
+Copilot Chat सिंटैक्स हाइलाइटिंग, इंडेंटेशन, और अन्य फॉर्मेटिंग फीचर्स का उपयोग कर सकता है ताकि जनरेट किए गए जवाब को स्पष्ट बनाया जा सके। उपयोगकर्ता के प्रश्न के प्रकार के आधार पर, परिणाम में उन संदर्भों के लिंक हो सकते हैं जिनका Copilot ने जवाब बनाने में उपयोग किया है, जैसे स्रोत कोड फाइलें या डॉक्यूमेंटेशन, या VS Code की कार्यक्षमता तक पहुंचने के लिए बटन।
 
-- Copilot Chat yɛ adwuma wɔ developer flow mu na ɛboa wo wɔ baabi a ɛho hia wo:
+- Copilot Chat आपके डेवलपर फ्लो में एकीकृत होता है और जहां जरूरत हो मदद देता है:
 
-- Firi editor anaa terminal mu na yɛ inline chat sɛ wobɛnya mmoa wɔ coding ho
+- एडिटर या टर्मिनल से सीधे इनलाइन चैट शुरू करें ताकि कोडिंग के दौरान मदद मिल सके
 
-- Fa Chat view yɛ adwuma sɛ AI assistant wɔ wo nkyɛn de boa wo bere biara a ɛyɛ hia
+- चैट व्यू का उपयोग करें ताकि आपके पास किसी भी समय AI असिस्टेंट मौजूद रहे
 
-- Fa Quick Chat yɛ nsɛm a ɛyɛ ntɛm na san kɔ nea woreyɛ no ho
+- क्विक चैट लॉन्च करें ताकि एक त्वरित सवाल पूछकर फिर से अपने काम में लग जाएं
 
-Wo betumi de GitHub Copilot Chat yɛ nsɛm ahorow, sɛ:
+आप GitHub Copilot Chat को विभिन्न परिदृश्यों में उपयोग कर सकते हैं, जैसे:
 
-- Mmuae a ɛfa coding nsɛm ho na ɛboa ma yɛ adwuma no yiye
+- किसी समस्या को सबसे अच्छा कैसे हल करें, इस पर कोडिंग सवालों के जवाब देना
 
-- Nsɛm a ɛkyerɛ obi code na ɛyɛ nsɛmfua foforɔ a ɛboa
+- किसी और के कोड को समझाना और सुधार सुझाना
 
-- Nsɛm a ɛboa ma yɛ code fixes
+- कोड फिक्स प्रस्तावित करना
 
-- Unit test cases a wɔyɛɛ ho nsɛm
+- यूनिट टेस्ट केस जनरेट करना
 
-- Nsɛm a ɛfa code documentation ho
+- कोड डॉक्यूमेंटेशन जनरेट करना
 
-Ɛyɛ papa sɛ wo kenkan link yi [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
-
-### **Microsoft GitHub Copilot Chat @workspace**
-
-Sɛ yɛde **@workspace** yɛ nsɛm wɔ Copilot Chat mu a, ɛboa wo sɛ wubisa nsɛm a ɛfa wo codebase nyinaa ho. Sɛ yɛyɛ nsɛm no a, Copilot hwehwɛ files ne symbols a ɛho hia na ɛde yɛɛ nsɛm ho sɛ links ne code examples.
-
-**@workspace** de nsɛm hwehwɛ sɛ nea developer bɛyɛ sɛ ɔrehwehwɛ codebase wɔ VS Code mu:
-
-- Files nyinaa a ɛwɔ workspace mu, gye sɛ files a wɔyɛɛ ignore wɔ .gitignore file mu
-
-- Directory structure a ɛwɔ nested folder ne file names
-
-- GitHub code search index, sɛ workspace no yɛ GitHub repository a wɔde code search yɛɛ indexed
-
-- Symbols ne definitions a ɛwɔ workspace mu
-
-- Text a wɔyɛ highlighted anaa visible text wɔ active editor mu
-
-Note: Sɛ wo file yɛ open anaa wo de text yɛ selected wɔ file a wɔ ignore no mu a, .gitignore no nni hia.
-
-Ɛyɛ papa sɛ wo kenkan link yi [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
+इस लिंक को पढ़ने की सलाह दी जाती है [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
 
 
-## **Fa ho nimdeɛ wɔ saa Lab yi ho**
+###  **Microsoft GitHub Copilot Chat @workspace**
 
-GitHub Copilot aboa enterprises programming efficiency paa, na enterprises pɛ sɛ wɔyɛ customization wɔ GitHub Copilot ho. Adwumakuo bebree yɛ Extensions a ɛyɛ GitHub Copilot ho sɛnea ɛbɛyɛ a ɛbɛyɛ papa wɔ wɔn business scenarios ne open source models ho. Ɛyɛ papa sɛ enterprises yɛ customized Extensions na ɛyɛ controllable, nanso ɛsɛ sɛ yɛka sɛ eyi betumi ma user experience no yɛ ahodoɔ. Ɛno nti, sɛ yɛde consistent experience ne customized functions bɔ mu a, ɛyɛ papa wɔ user experience ho. GitHub Copilot Chat de APIs a ɛboa enterprises ma wɔyɛ nsɛm wɔ Chat experience ho. Sɛ consistent experience ne customized functions yɛ bɔ mu a, ɛyɛ papa paa.
+Copilot Chat में **@workspace** का संदर्भ देने से आप अपने पूरे कोडबेस के बारे में सवाल पूछ सकते हैं। प्रश्न के आधार पर, Copilot बुद्धिमानी से प्रासंगिक फाइलें और प्रतीकों को खोजता है, जिन्हें वह अपने जवाब में लिंक और कोड उदाहरण के रूप में संदर्भित करता है।
 
-Saa lab yi yɛ Phi-3 model a wɔde local NPU ne Azure hybrid bɔ mu de yɛ customized Agent wɔ GitHub Copilot Chat ***@PHI3*** a ɛboa enterprise developers ma wɔyɛ code generation ***(@PHI3 /gen)*** ne code generation a ɛfiri images ***(@PHI3 /img)***.
+आपके सवाल का जवाब देने के लिए, **@workspace** उन स्रोतों को खोजता है जिनका उपयोग एक डेवलपर VS Code में कोडबेस नेविगेट करते समय करता है:
 
-![PHI3](../../../../../../../translated_images/cover.410a18b85555fad4ca8bfb8f0b1776a96ae7f8eae1132b8f0c09d4b92b8e3365.mo.png)
+- वर्कस्पेस की सभी फाइलें, सिवाय उन फाइलों के जिन्हें .gitignore द्वारा नजरअंदाज किया गया हो
+
+- डायरेक्टरी संरचना जिसमें नेस्टेड फोल्डर और फाइल नाम शामिल हैं
+
+- GitHub का कोड सर्च इंडेक्स, यदि वर्कस्पेस GitHub रिपॉजिटरी है और कोड सर्च द्वारा इंडेक्स किया गया है
+
+- वर्कस्पेस में प्रतीक और परिभाषाएं
+
+- सक्रिय एडिटर में वर्तमान में चयनित या दिखाई दे रहे टेक्स्ट
+
+ध्यान दें: यदि आप एक नजरअंदाज की गई फाइल खोलते हैं या उसमें टेक्स्ट चुनते हैं, तो .gitignore को बायपास किया जाता है।
+
+इस लिंक को पढ़ने की सलाह दी जाती है [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
+
+
+## **इस लैब के बारे में अधिक जानें**
+
+GitHub Copilot ने एंटरप्राइज की प्रोग्रामिंग दक्षता में काफी सुधार किया है, और हर एंटरप्राइज GitHub Copilot की संबंधित क्षमताओं को कस्टमाइज़ करना चाहता है। कई एंटरप्राइज ने अपने व्यवसायिक परिदृश्यों और ओपन सोर्स मॉडल के आधार पर GitHub Copilot जैसे कस्टम एक्सटेंशन बनाए हैं। एंटरप्राइज के लिए, कस्टम एक्सटेंशन नियंत्रण में आसान होते हैं, लेकिन इससे उपयोगकर्ता अनुभव प्रभावित हो सकता है। आखिरकार, GitHub Copilot सामान्य परिदृश्यों और पेशेवरता से निपटने में अधिक सक्षम है। यदि अनुभव सुसंगत रखा जा सके, तो अपनी खुद की कस्टम एक्सटेंशन बनाना बेहतर होगा। GitHub Copilot Chat एंटरप्राइज को चैट अनुभव में विस्तार करने के लिए संबंधित API प्रदान करता है। सुसंगत अनुभव बनाए रखना और कस्टम क्षमताएं रखना बेहतर उपयोगकर्ता अनुभव है।
+
+यह लैब मुख्य रूप से Phi-3 मॉडल का उपयोग स्थानीय NPU और Azure हाइब्रिड के साथ मिलाकर GitHub Copilot Chat में एक कस्टम एजेंट ***@PHI3*** बनाने पर केंद्रित है, जो एंटरप्राइज डेवलपर्स को कोड जनरेशन ***(@PHI3 /gen)*** और इमेज आधारित कोड जनरेशन ***(@PHI3 /img)*** में मदद करता है।
+
+![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d095fe0b942687287803c03933d2d1d439d14e10fa1442a864d.mo.png)
 
 ### ***Note:*** 
 
-Saa lab yi yɛ AIPC wɔ Intel CPU ne Apple Silicon. Yɛbɛtoaa Qualcomm version of NPU ho nsɛm.
+यह लैब वर्तमान में Intel CPU और Apple Silicon के AIPC में लागू है। हम Qualcomm संस्करण के NPU को अपडेट करते रहेंगे।
 
 
-## **Lab**
+## **लैब**
 
 
-| Name | Description | AIPC | Apple |
+| नाम | विवरण | AIPC | Apple |
 | ------------ | ----------- | -------- |-------- |
-| Lab0 - Installations(✅) | Configure ne install environments ne tools a ɛho hia | [Go](./HOL/AIPC/01.Installations.md) |[Go](./HOL/Apple/01.Installations.md) |
-| Lab1 - Run Prompt flow with Phi-3-mini (✅) | Firi AIPC / Apple Silicon, de local NPU yɛ code generation wɔ Phi-3-mini ho | [Go](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Go](./HOL/Apple/02.PromptflowWithMLX.md) |
-| Lab2 - Deploy Phi-3-vision on Azure Machine Learning Service(✅) | Yɛ code generation wɔ Azure Machine Learning Service's Model Catalog - Phi-3-vision image ho | [Go](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Go](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
-| Lab3 - Create a @phi-3 agent in GitHub Copilot Chat(✅)  | Yɛ customized Phi-3 agent wɔ GitHub Copilot Chat de yɛ code generation, graph generation code, RAG, etc. | [Go](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Go](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
-| Sample Code (✅)  | Download sample code | [Go](../../../../../../../code/07.Lab/01/AIPC) | [Go](../../../../../../../code/07.Lab/01/Apple) |
+| Lab0 - Installations(✅) | संबंधित वातावरण और इंस्टॉलेशन टूल्स को कॉन्फ़िगर और इंस्टॉल करें | [Go](./HOL/AIPC/01.Installations.md) |[Go](./HOL/Apple/01.Installations.md) |
+| Lab1 - Run Prompt flow with Phi-3-mini (✅) | AIPC / Apple Silicon के साथ मिलकर, स्थानीय NPU का उपयोग करते हुए Phi-3-mini के माध्यम से कोड जनरेशन बनाएं | [Go](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Go](./HOL/Apple/02.PromptflowWithMLX.md) |
+| Lab2 - Deploy Phi-3-vision on Azure Machine Learning Service(✅) | Azure Machine Learning Service के Model Catalog - Phi-3-vision इमेज को डिप्लॉय करके कोड जनरेट करें | [Go](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Go](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
+| Lab3 - Create a @phi-3 agent in GitHub Copilot Chat(✅)  | GitHub Copilot Chat में एक कस्टम Phi-3 एजेंट बनाएं जो कोड जनरेशन, ग्राफ जनरेशन कोड, RAG आदि पूरा करे | [Go](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Go](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
+| Sample Code (✅)  | सैंपल कोड डाउनलोड करें | [Go](../../../../../../../code/07.Lab/01/AIPC) | [Go](../../../../../../../code/07.Lab/01/Apple) |
 
 
-## **Resources**
+## **संसाधन**
 
 1. Phi-3 Cookbook [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook)
 
-2. Fa ho nimdeɛ wɔ GitHub Copilot ho [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
+2. GitHub Copilot के बारे में अधिक जानें [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-3. Fa ho nimdeɛ wɔ GitHub Copilot Chat ho [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
+3. GitHub Copilot Chat के बारे में अधिक जानें [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-4. Fa ho nimdeɛ wɔ GitHub Copilot Chat API ho [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
+4. GitHub Copilot Chat API के बारे में अधिक जानें [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
 
-5. Fa ho nimdeɛ wɔ Azure AI Foundry ho [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
+5. Azure AI Foundry के बारे में अधिक जानें [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
 
-6. Fa ho nimdeɛ wɔ Azure AI Foundry's Model Catalog ho [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
+6. Azure AI Foundry के Model Catalog के बारे में अधिक जानें [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
 
-It seems you are requesting a translation to "mo." Could you clarify what language or dialect "mo" refers to? This will help ensure the translation is accurate and appropriate.
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language or code "mo" refers to? There are several possibilities (e.g., Moldovan, a constructed language, or something else). This will help me provide an accurate translation.

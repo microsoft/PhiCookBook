@@ -1,50 +1,50 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "07ca611437b569633d7aacf855ecaa7e",
-  "translation_date": "2025-04-03T06:51:06+00:00",
-  "source_file": "md\\01.Introduction\\03\\iOS_Inference_MLX.md",
+  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
+  "translation_date": "2025-05-07T14:39:09+00:00",
+  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "ur"
 }
 -->
-# iOS پر Apple MLX فریم ورک کے ساتھ Phi-3 اور Phi-4 چلانا
+# تشغيل Phi-3 و Phi-4 على iOS باستخدام إطار عمل Apple MLX
 
-یہ ٹیوٹوریل دکھاتا ہے کہ کیسے ایک iOS ایپلیکیشن بنائی جائے جو Phi-3 یا Phi-4 ماڈل کو ڈیوائس پر چلائے، Apple MLX فریم ورک کا استعمال کرتے ہوئے۔ [MLX](https://opensource.apple.com/projects/mlx/) ایپل کا مشین لرننگ فریم ورک ہے جو ایپل سلیکون چپس کے لیے موزوں بنایا گیا ہے۔
+يُظهر هذا الدليل كيفية إنشاء تطبيق iOS يشغل نموذج Phi-3 أو Phi-4 على الجهاز، باستخدام إطار عمل Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) هو إطار عمل تعلم الآلة الخاص بشركة Apple والمُحسّن لمعالجات Apple Silicon.
 
-## ضروریات
+## المتطلبات الأساسية
 
-- macOS اور Xcode 16 (یا اس سے زیادہ)
-- iOS 18 (یا اس سے زیادہ) کا ٹارگٹ ڈیوائس جس میں کم از کم 8GB ہو (ایپل انٹیلیجنس کی ضروریات کے مطابق آئی فون یا آئی پیڈ، کیونکہ یہ Phi کے کوانٹائزڈ ماڈلز کی ضروریات سے مماثل ہوں گے)
-- Swift اور SwiftUI کی بنیادی معلومات
+- macOS مع Xcode 16 (أو أعلى)
+- جهاز iOS 18 (أو أعلى) مع ذاكرة لا تقل عن 8 جيجابايت (iPhone أو iPad متوافق مع متطلبات Apple Intelligence، حيث تكون مشابهة لمتطلبات Phi الكمومية)
+- معرفة أساسية بـ Swift و SwiftUI
 
-## مرحلہ 1: نیا iOS پروجیکٹ بنائیں
+## الخطوة 1: إنشاء مشروع iOS جديد
 
-Xcode میں نیا iOS پروجیکٹ بنانے سے شروع کریں:
+ابدأ بإنشاء مشروع iOS جديد في Xcode:
 
-1. Xcode لانچ کریں اور "Create a new Xcode project" منتخب کریں۔
-2. "App" کو بطور ٹیمپلیٹ منتخب کریں۔
-3. اپنے پروجیکٹ کا نام رکھیں (مثلاً، "Phi3-iOS-App") اور SwiftUI کو بطور انٹرفیس منتخب کریں۔
-4. اپنے پروجیکٹ کو محفوظ کرنے کے لیے ایک مقام منتخب کریں۔
+1. افتح Xcode واختر "Create a new Xcode project"
+2. اختر "App" كقالب
+3. سمِّ مشروعك (مثلًا "Phi3-iOS-App") وحدد SwiftUI كواجهة المستخدم
+4. اختر موقعًا لحفظ مشروعك
 
-## مرحلہ 2: ضروری ڈپینڈنسیز شامل کریں
+## الخطوة 2: إضافة التبعيات المطلوبة
 
-[MLX Examples package](https://github.com/ml-explore/mlx-swift-examples) شامل کریں، جو ماڈلز کو پری لوڈ کرنے اور انفیرنس کرنے کے لیے تمام ضروری ڈپینڈنسیز اور ہیلپرز فراہم کرتا ہے:
+أضف حزمة [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples) التي تحتوي على جميع التبعيات والمساعدين اللازمين لتحميل النماذج مسبقًا وإجراء الاستدلال:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-جبکہ بنیادی [MLX Swift package](https://github.com/ml-explore/mlx-swift) بنیادی ٹینسر آپریشنز اور بنیادی ML فنکشنلٹی کے لیے کافی ہے، MLX Examples پیکیج کئی اضافی کمپوننٹس فراہم کرتا ہے جو لینگویج ماڈلز کے ساتھ کام کرنے کے لیے ڈیزائن کیے گئے ہیں اور انفیرنس کے عمل کو آسان بناتے ہیں:
+بينما حزمة [MLX Swift package](https://github.com/ml-explore/mlx-swift) الأساسية تكفي لعمليات التنسور الأساسية ووظائف التعلم الآلي الأساسية، توفر حزمة MLX Examples عدة مكونات إضافية مصممة للعمل مع نماذج اللغة، وتسهيل عملية الاستدلال:
 
-- ماڈل لوڈنگ کی یوٹیلٹیز جو Hugging Face سے ڈاؤن لوڈنگ کو سنبھالتی ہیں۔
-- ٹوکنائزر انٹیگریشن
-- ٹیکسٹ جنریشن کے لیے انفیرنس ہیلپرز
-- پہلے سے کنفیگرڈ ماڈل ڈیفینیشنز
+- أدوات تحميل النماذج التي تدير التنزيل من Hugging Face
+- دمج المحلل اللغوي (tokenizer)
+- مساعدات الاستدلال لتوليد النصوص
+- تعريفات النماذج مُعدة مسبقًا
 
-## مرحلہ 3: اینٹائٹلمنٹس کنفیگر کریں
+## الخطوة 3: إعداد الأذونات
 
-اپنی ایپ کو ماڈلز ڈاؤن لوڈ کرنے اور کافی میموری مختص کرنے کی اجازت دینے کے لیے مخصوص اینٹائٹلمنٹس شامل کریں۔ اپنی ایپ کے لیے ایک `.entitlements` فائل بنائیں جس میں درج ذیل مواد ہو:
+للسماح لتطبيقنا بتنزيل النماذج وتخصيص ذاكرة كافية، نحتاج إلى إضافة أذونات محددة. أنشئ ملف `.entitlements` لتطبيقك بالمحتوى التالي:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ Xcode میں نیا iOS پروجیکٹ بنانے سے شروع کریں:
 </plist>
 ```
 
-> **نوٹ:** `com.apple.developer.kernel.increased-memory-limit` اینٹائٹلمنٹ بڑے ماڈلز چلانے کے لیے اہم ہے، کیونکہ یہ ایپ کو عام طور پر اجازت یافتہ سے زیادہ میموری کی درخواست کرنے کی اجازت دیتا ہے۔
+> **ملاحظة:** إذن `com.apple.developer.kernel.increased-memory-limit` مهم لتشغيل النماذج الأكبر، لأنه يسمح للتطبيق بطلب ذاكرة أكثر من الحد المسموح به عادةً.
 
-## مرحلہ 4: چیٹ میسج ماڈل بنائیں
+## الخطوة 4: إنشاء نموذج رسالة الدردشة
 
-سب سے پہلے، آئیے اپنے چیٹ میسجز کی نمائندگی کرنے کے لیے ایک بنیادی اسٹرکچر بناتے ہیں:
+أولًا، دعنا ننشئ هيكلًا بسيطًا لتمثيل رسائل الدردشة:
 
 ```swift
 import SwiftUI
@@ -85,9 +85,9 @@ struct ChatMessage: Identifiable {
 }
 ```
 
-## مرحلہ 5: ویو ماڈل نافذ کریں
+## الخطوة 5: تنفيذ ViewModel
 
-اگلے مرحلے میں، ہم `PhiViewModel` کلاس بنائیں گے جو ماڈل لوڈنگ اور انفیرنس کو سنبھالے گی:
+بعد ذلك، سننشئ فئة `PhiViewModel` التي تدير تحميل النموذج والاستدلال:
 
 ```swift
 import MLX
@@ -248,9 +248,9 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-ویو ماڈل MLX انٹیگریشن کے اہم نکات کو ظاہر کرتا ہے:
+يعرض ViewModel نقاط التكامل الرئيسية مع MLX:
 
-- GPU کیش کی حد مقرر کرنا `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
+- تعيين حدود ذاكرة التخزين المؤقت لوحدة معالجة الرسوميات باستخدام `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
 - using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
 - accessing the model's parameters and structure through the `ModelContainer`
 - leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
@@ -264,7 +264,7 @@ In terms of UI interaction, the two key functions are `loadModel()`, which initi
 
 > **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`، یہ ایک خاص پہلے سے کنورٹ شدہ MLX ماڈل کا حوالہ دیتا ہے جو خودکار طور پر ڈاؤن لوڈ ہو جائے گا:
+The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`، حيث يشير إلى نموذج MLX محول مسبقًا سيتم تنزيله تلقائيًا:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-آپ اپنی ماڈل کنفیگریشنز بنا سکتے ہیں تاکہ Hugging Face پر کسی بھی موزوں ماڈل کی طرف اشارہ کیا جا سکے۔ مثال کے طور پر، Phi-4 mini استعمال کرنے کے لیے، آپ اپنی کنفیگریشن ڈیفائن کر سکتے ہیں:
+يمكنك إنشاء تكوينات نموذج خاصة بك للإشارة إلى أي نموذج متوافق على Hugging Face. على سبيل المثال، لاستخدام Phi-4 mini بدلاً من ذلك، يمكنك تعريف تكوين خاص بك:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **نوٹ:** Phi-4 کی سپورٹ MLX Swift Examples ریپوزیٹری میں فروری 2025 کے آخر میں شامل کی گئی تھی (میں [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216))۔ مارچ 2025 تک، تازہ ترین آفیشل ریلیز (دسمبر 2024 کی 2.21.2) میں Phi-4 کی بلٹ ان سپورٹ شامل نہیں ہے۔ Phi-4 ماڈلز استعمال کرنے کے لیے، آپ کو پیکیج کو براہ راست مین برانچ سے ریفرنس کرنا ہوگا:
+> **ملاحظة:** تمت إضافة دعم Phi-4 إلى مستودع MLX Swift Examples في نهاية فبراير 2025 (في [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). وحتى مارس 2025، الإصدار الرسمي الأخير (2.21.2 من ديسمبر 2024) لا يتضمن دعم Phi-4 مدمجًا. لاستخدام نماذج Phi-4، ستحتاج إلى الإشارة إلى الحزمة مباشرة من الفرع الرئيسي:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-یہ آپ کو تازہ ترین ماڈل کنفیگریشنز تک رسائی فراہم کرتا ہے، بشمول Phi-4، اس سے پہلے کہ وہ کسی آفیشل ریلیز میں شامل ہوں۔ آپ اس طریقے کو مختلف ورژنز کے Phi ماڈلز یا دیگر ماڈلز کے ساتھ استعمال کر سکتے ہیں جو MLX فارمیٹ میں تبدیل کیے گئے ہوں۔
+هذا يمنحك الوصول إلى أحدث تكوينات النماذج، بما في ذلك Phi-4، قبل تضمينها في إصدار رسمي. يمكنك استخدام هذا الأسلوب لاستخدام إصدارات مختلفة من نماذج Phi أو حتى نماذج أخرى تم تحويلها إلى صيغة MLX.
 
-## مرحلہ 6: UI بنائیں
+## الخطوة 6: إنشاء واجهة المستخدم
 
-اب آئیے ایک سادہ چیٹ انٹرفیس نافذ کریں تاکہ ہمارے ویو ماڈل کے ساتھ تعامل کیا جا سکے:
+دعنا الآن ننفذ واجهة دردشة بسيطة للتفاعل مع ViewModel الخاص بنا:
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-UI تین اہم کمپوننٹس پر مشتمل ہے جو ایک بنیادی چیٹ انٹرفیس بنانے کے لیے مل کر کام کرتے ہیں۔ `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` ایک سادہ اینیمیٹڈ انڈیکیٹر فراہم کرتا ہے جو دکھاتا ہے کہ AI پراسیسنگ کر رہا ہے۔
+تتكون واجهة المستخدم من ثلاثة مكونات رئيسية تعمل معًا لإنشاء واجهة دردشة أساسية. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` يوفر مؤشرًا متحركًا بسيطًا لإظهار أن الذكاء الاصطناعي يعالج النص
 
-## مرحلہ 7: ایپ بنائیں اور چلائیں
+## الخطوة 7: بناء وتشغيل التطبيق
 
-ہم اب ایپلیکیشن بنانے اور چلانے کے لیے تیار ہیں۔
+نحن الآن جاهزون لبناء وتشغيل التطبيق.
 
-> **اہم!** MLX سیمولیٹر کو سپورٹ نہیں کرتا۔ آپ کو ایپ کو ایپل سلیکون چپ والے فزیکل ڈیوائس پر چلانا ہوگا۔ مزید معلومات کے لیے [یہاں](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) دیکھیں۔
+> **هام!** MLX لا يدعم المحاكي. يجب تشغيل التطبيق على جهاز فعلي بمعالج Apple Silicon. راجع [هنا](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) لمزيد من المعلومات.
 
-جب ایپ لانچ ہوتی ہے، "Load model" بٹن پر ٹیپ کریں تاکہ Phi-3 (یا، آپ کی کنفیگریشن کے مطابق، Phi-4) ماڈل کو ڈاؤن لوڈ اور انیشیئلائز کیا جا سکے۔ یہ عمل آپ کے انٹرنیٹ کنیکشن کی رفتار پر منحصر ہے، کیونکہ اس میں Hugging Face سے ماڈل ڈاؤن لوڈ کرنا شامل ہوتا ہے۔ ہماری امپلیمنٹیشن میں صرف ایک اسپنر شامل ہے جو لوڈنگ ظاہر کرتا ہے، لیکن آپ Xcode کنسول میں اصل پیش رفت دیکھ سکتے ہیں۔
+عند تشغيل التطبيق، اضغط على زر "Load model" لتنزيل وتهيئة نموذج Phi-3 (أو، حسب تكوينك، Phi-4). قد تستغرق هذه العملية بعض الوقت حسب سرعة اتصالك بالإنترنت، لأنها تتضمن تنزيل النموذج من Hugging Face. تتضمن تطبيقنا مؤشر تحميل دوار فقط، لكن يمكنك رؤية التقدم الفعلي في وحدة تحكم Xcode.
 
-ایک بار لوڈ ہو جانے کے بعد، آپ ماڈل کے ساتھ سوالات ٹائپ کر کے اور سینڈ بٹن پر ٹیپ کر کے تعامل کر سکتے ہیں۔
+بعد التحميل، يمكنك التفاعل مع النموذج بكتابة الأسئلة في حقل النص والضغط على زر الإرسال.
 
-یہاں ہماری ایپلیکیشن کا رویہ دکھایا گیا ہے، جو iPad Air M1 پر چل رہی ہے:
+إليك كيف يجب أن يتصرف تطبيقنا عند التشغيل على iPad Air M1:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
-## نتیجہ
+## الخلاصة
 
-اور بس! ان مراحل پر عمل کرتے ہوئے، آپ نے ایک iOS ایپلیکیشن بنائی ہے جو Phi-3 (یا Phi-4) ماڈل کو ایپل کے MLX فریم ورک کا استعمال کرتے ہوئے براہ راست ڈیوائس پر چلاتی ہے۔
+وهذا كل شيء! باتباع هذه الخطوات، أنشأت تطبيق iOS يشغل نموذج Phi-3 (أو Phi-4) مباشرة على الجهاز باستخدام إطار عمل Apple MLX.
 
-مبارک ہو!
+تهانينا!
 
-**ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم یہ جان لیں کہ خودکار ترجمے میں غلطیاں یا غیر درستیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ذمہ دار نہیں ہیں۔
+**ڈس کلیمر**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا بے ضابطگیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

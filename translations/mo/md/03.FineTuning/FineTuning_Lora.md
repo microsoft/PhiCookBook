@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "98eb289883c5e181a74e72a59e1ddc6d",
-  "translation_date": "2025-04-04T13:12:25+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Lora.md",
+  "original_hash": "50b6a55a0831b417835087d8b57759fe",
+  "translation_date": "2025-05-07T13:30:56+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "mo"
 }
 -->
-# **Phi-3 Mini ကို LoRA နဲ့ Fine-tuning လုပ်ခြင်း**
+# **Fine-tuning Phi-3 with Lora**
 
-Microsoft ရဲ့ Phi-3 Mini ဘာသာစကားမော်ဒယ်ကို [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) အသုံးပြုပြီး ကိုယ်ပိုင် Chat Instruction Dataset ပေါ်မှာ Fine-tuning လုပ်ခြင်း။
+Fine-tuning Microsoft's Phi-3 Mini language model using [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) on a custom chat instruction dataset.
 
-LoRA က ဆွေးနွေးမှုနားလည်မှုနဲ့ အဖြေထုတ်ပေးမှုကို တိုးတက်စေမှာဖြစ်ပါတယ်။
+LORA will help improve conversational understanding and response generation.
 
-## Phi-3 Mini ကို Fine-tuning လုပ်ရန် လိုက်နာရမည့်အဆင့်ဆင့်လမ်းညွှန်:
+## Step-by-step guide on how to fine-tune Phi-3 Mini:
 
-**Imports နဲ့ အစပျိုးခြင်း**
+**Imports and Setup**
 
-loralib ကို Install လုပ်ခြင်း
+Installing loralib
 
 ```
 pip install loralib
@@ -26,10 +26,10 @@ pip install loralib
 
 ```
 
-လိုအပ်သော Library တွေ (datasets, transformers, peft, trl, torch) ကို Import လုပ်ပါ။
-Training လုပ်ငန်းစဉ်ကို Monitor လုပ်နိုင်ဖို့ Logging ကို Set up လုပ်ပါ။
+Start by importing essential libraries such as datasets, transformers, peft, trl, and torch.  
+Set up logging to monitor the training progress.
 
-บาง Layer တွေကို LoRA နဲ့ ပြောင်းလဲနိုင်ပါတယ်။ လောလတ်တလောမှာ nn.Linear, nn.Embedding, nn.Conv2d ကိုပဲ Support လုပ်ပါတယ်။ nn.Linear တစ်ခုက Layer အများအပြားကို ကိုယ်စားပြုတဲ့အခါ (ဥပမာ Attention qkv projection အတွက်) MergedLinear ကိုလည်း Support လုပ်ပါတယ် (နောက်ထပ် မှတ်ချက်တွေကို ကြည့်ပါ)။
+You can choose to adapt certain layers by swapping them with versions implemented in loralib. Currently, we support nn.Linear, nn.Embedding, and nn.Conv2d. Additionally, MergedLinear is supported for cases where a single nn.Linear represents multiple layers, like some attention qkv projection implementations (see Additional Notes for details).
 
 ```
 # ===== Before =====
@@ -47,7 +47,7 @@ import loralib as lora
 layer = lora.Linear(in_features, out_features, r=16)
 ```
 
-Training Loop စမယ့်အခါ LoRA Parameters တွေကိုပဲ Trainable အဖြစ် သတ်မှတ်ပါ။
+Before starting the training loop, make sure only LoRA parameters are marked as trainable.
 
 ```
 import loralib as lora
@@ -58,18 +58,18 @@ lora.mark_only_lora_as_trainable(model)
 for batch in dataloader:
 ```
 
-Checkpoint ကို Save လုပ်တဲ့အခါ LoRA Parameters တွေပါဝင်တဲ့ state_dict ကိုသာ Generate လုပ်ပါ။
+When saving a checkpoint, create a state_dict that contains only LoRA parameters.
 
 ```
 # ===== Before =====
 # torch.save(model.state_dict(), checkpoint_path)
-```
+```  
 ```
 # ===== After =====
 torch.save(lora.lora_state_dict(model), checkpoint_path)
 ```
 
-Checkpoint ကို load_state_dict နဲ့ Load လုပ်တဲ့အခါ strict=False လို့ သတ်မှတ်ပါ။
+When loading a checkpoint with load_state_dict, remember to set strict=False.
 
 ```
 # Load the pretrained checkpoint first
@@ -78,33 +78,30 @@ model.load_state_dict(torch.load('ckpt_pretrained.pt'), strict=False)
 model.load_state_dict(torch.load('ckpt_lora.pt'), strict=False)
 ```
 
-အခုတော့ Training ကို ပုံမှန်အတိုင်း ဆက်လက်လုပ်နိုင်ပါပြီ။
+Now you can proceed with training as usual.
 
 **Hyperparameters**
 
-training_config နဲ့ peft_config ဆိုတဲ့ Dictionary နှစ်ခုကို သတ်မှတ်ပါ။  
-training_config မှာ Learning Rate, Batch Size, Logging Setting စတဲ့ Training Hyperparameters တွေ ပါဝင်ပါတယ်။
+Define two dictionaries: training_config and peft_config.  
+training_config includes training hyperparameters such as learning rate, batch size, and logging options.
 
-peft_config မှာ LoRA ဆိုင်ရာ Parameters (Rank, Dropout, Task Type) တွေ ပါပါတယ်။
+peft_config contains LoRA-specific settings like rank, dropout, and task type.
 
-**Model နဲ့ Tokenizer Loading**
+**Model and Tokenizer Loading**
 
-Pre-trained Phi-3 Model (ဥပမာ "microsoft/Phi-3-mini-4k-instruct") ရဲ့ Path ကို သတ်မှတ်ပါ။  
-Model Settings တွေ (Cache Usage, Data Type (Mixed Precision အတွက် bfloat16), Attention Implementation) ကို Configure လုပ်ပါ။
+Specify the path to the pre-trained Phi-3 model (e.g., "microsoft/Phi-3-mini-4k-instruct"). Configure model options including cache usage, data type (bfloat16 for mixed precision), and attention implementation.
 
 **Training**
 
-ကိုယ်ပိုင် Chat Instruction Dataset ကို အသုံးပြုပြီး Phi-3 Model ကို Fine-tune လုပ်ပါ။  
-peft_config ရဲ့ LoRA Settings တွေကို အသုံးပြုပြီး အကျိုးရှိစွာ Adapt လုပ်ပါ။  
-Training လုပ်စဉ် Progress ကို သတ်မှတ်ထားတဲ့ Logging Strategy နဲ့ Monitor လုပ်ပါ။  
-**Evaluation နဲ့ Saving:** Fine-tuned Model ကို သုံးပြီး စမ်းသပ်ပါ။  
-Training အတွင်း Checkpoints တွေကို Save လုပ်ထားပြီး နောက်တစ်ခါ အသုံးပြုနိုင်ဖို့ ထိန်းသိမ်းပါ။
+Fine-tune the Phi-3 model using your custom chat instruction dataset. Use the LoRA parameters from peft_config for efficient adaptation. Track training progress with the configured logging strategy.  
+Evaluation and Saving: Evaluate the fine-tuned model and save checkpoints during training for future use.
 
-**Samples**
-- [ဒီ Sample Notebook နဲ့ ပိုမိုလေ့လာပါ](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
-- [Python FineTuning Sample ဥပမာ](../../../../code/03.Finetuning/FineTrainingScript.py)
-- [Hugging Face Hub Fine Tuning with LORA ဥပမာ](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
-- [Hugging Face Model Card - LORA Fine Tuning Sample](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)
-- [Hugging Face Hub Fine Tuning with QLORA ဥပမာ](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
+**Samples**  
+- [Learn More with this sample notebook](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
+- [Example of Python FineTuning Sample](../../../../code/03.Finetuning/FineTrainingScript.py)  
+- [Example of Hugging Face Hub Fine Tuning with LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
+- [Example Hugging Face Model Card - LORA Fine Tuning Sample](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
+- [Example of Hugging Face Hub Fine Tuning with QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
-It seems like "mo" might be shorthand for a language or something specific, but it's unclear which language or context you're referring to. Could you clarify what "mo" stands for? For example, is it Maori, Montenegrin, or something else?
+**Disclaimer**:  
+Dis dokument has ben translaited using AI translait service [Co-op Translator](https://github.com/Azure/co-op-translator). Wail wi strive for accuracy, plies be awair dat automated translaits may contain errors or inaccuracies. Di original dokument in its native language shud be considered di authoritative source. For critical information, professional human translait is recommended. Wi ar not liable for any misunderstandings or misinterpretations arising from di use of dis translait.

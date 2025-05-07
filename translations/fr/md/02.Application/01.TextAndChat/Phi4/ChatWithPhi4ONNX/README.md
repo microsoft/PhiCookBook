@@ -2,20 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-03-27T11:21:31+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi4\\ChatWithPhi4ONNX\\README.md",
+  "translation_date": "2025-05-07T13:56:17+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "fr"
 }
 -->
 # **Discussion avec Phi-4-mini ONNX**
 
-***ONNX*** est un format ouvert conçu pour représenter les modèles d'apprentissage automatique. ONNX définit un ensemble commun d'opérateurs - les blocs de construction des modèles d'apprentissage automatique et d'apprentissage profond - et un format de fichier commun permettant aux développeurs d'IA d'utiliser des modèles avec divers frameworks, outils, environnements d'exécution et compilateurs.
+***ONNX*** est un format ouvert conçu pour représenter des modèles d'apprentissage automatique. ONNX définit un ensemble commun d'opérateurs - les éléments de base des modèles d'apprentissage automatique et d'apprentissage profond - ainsi qu'un format de fichier commun permettant aux développeurs en IA d'utiliser des modèles avec une variété de frameworks, outils, environnements d'exécution et compilateurs.
 
-Nous espérons déployer des modèles d'IA générative sur des dispositifs périphériques et les utiliser dans des environnements à puissance de calcul limitée ou hors ligne. Désormais, nous pouvons atteindre cet objectif en convertissant le modèle de manière quantifiée. Nous pouvons convertir le modèle quantifié au format GGUF ou ONNX.
+Nous souhaitons déployer des modèles d'IA générative sur des appareils en périphérie et les utiliser dans des environnements à puissance de calcul limitée ou hors ligne. Nous pouvons désormais atteindre cet objectif en convertissant le modèle de manière quantifiée. Il est possible de convertir le modèle quantifié aux formats GGUF ou ONNX.
 
-Microsoft Olive peut vous aider à convertir SLM au format ONNX quantifié. La méthode pour effectuer cette conversion de modèle est très simple.
+Microsoft Olive peut vous aider à convertir SLM au format ONNX quantifié. La méthode pour réaliser la conversion du modèle est très simple.
 
-**Installer Microsoft Olive SDK**
+**Installer le SDK Microsoft Olive**
+
 
 ```bash
 
@@ -25,7 +26,7 @@ pip install transformers
 
 ```
 
-**Convertir pour prise en charge ONNX sur CPU**
+**Convertir le support ONNX CPU**
 
 ```bash
 
@@ -34,6 +35,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ```
 
 ***Note*** cet exemple utilise le CPU
+
 
 ### **Inférence du modèle Phi-4-mini ONNX avec ONNX Runtime GenAI**
 
@@ -47,7 +49,7 @@ pip install --pre onnxruntime-genai
 
 - **Code Python**
 
-*Version 0.5.2 de ONNX Runtime GenAI*
+*Il s'agit de la version 0.5.2 d'ONNX Runtime GenAI*
 
 ```python
 
@@ -102,7 +104,8 @@ while not generator.is_done():
 
 ```
 
-*Version 0.6.0 de ONNX Runtime GenAI*
+
+*Il s'agit de la version 0.6.0 d'ONNX Runtime GenAI*
 
 ```python
 
@@ -156,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

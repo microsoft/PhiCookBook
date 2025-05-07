@@ -1,16 +1,16 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "dd1b570422a819b39b14a4c7be06c8fa",
-  "translation_date": "2025-04-03T08:22:29+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Vision.md",
+  "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
+  "translation_date": "2025-05-07T13:36:11+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "zh"
 }
 -->
-# Phi-3.5-vision 微调教程
+# Phi-3.5-vision 微调方案
 
-这是使用 Huggingface 库进行 Phi-3.5-vision 微调的官方支持。
-在运行以下命令之前，请`cd`到代码目录 [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning)。
+这是使用 huggingface 库对 Phi-3.5-vision 进行微调的官方支持。
+请在运行以下命令前切换到代码目录 [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning)。
 
 ## 安装
 
@@ -35,16 +35,16 @@ pip install bitsandbytes==0.43.1
 
 ## 快速开始
 
-我们提供了两个微调示例脚本，一个用于 DocVQA，另一个用于仇恨表情分类。
+我们提供了两个示例微调脚本，一个用于 DocVQA，另一个用于仇恨表情包分类。
 
-最低硬件需求：4x RTX8000（每块 GPU 配备 48GB RAM）
+最低硬件测试环境为 4x RTX8000（每个 GPU 48GB 内存）
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision 现在正式支持多图像输入。以下是微调 NLVR2 的示例：
+Phi-3.5-vision 现已正式支持多图像输入。下面是针对 NLVR2 微调的示例
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -52,15 +52,13 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## 使用指南
 
-根据硬件情况，用户可以选择不同的微调策略。我们支持：
-- 全量微调（使用 Deepspeed Zero-2），可选择冻结视觉参数；
-- LoRA（包括 4bit QLoRA）。
+根据硬件条件，用户可以选择不同的微调策略。我们支持
+全量微调（使用 Deepspeed Zero-2），可选择冻结视觉参数，以及 LoRA（包括 4bit QLoRA）。
+一般来说，我们建议尽可能使用支持 flash attention 和 bf16 的全量微调。
 
-通常情况下，我们建议在可能的情况下使用全量微调，并启用闪存注意力和 bf16。
+### 自定义数据集转换为所需格式的指南
 
-### 将自定义数据集转换为所需格式的指南
-
-我们使用一个最小的视频分类数据集（UCF-101 的子集）作为端到端示例，演示如何将您的自定义数据集转换为所需格式，并在其上微调 Phi-3.5-vision。
+我们以最小视频分类数据集（UCF-101 的子集）作为端到端示例，演示如何将自定义数据集转换为所需格式并对 Phi-3.5-vision 进行微调。
 
 ```bash
 # convert data
@@ -70,7 +68,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-转换后的数据格式如下：
+转换后的数据示例如下：
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -116,49 +114,49 @@ torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/co
 34 directories, 3 files
 ```
 
-对于 `jsonl` 注释，每行应该是一个字典，例如：
+对于 `jsonl` 注释文件，每一行应是如下格式的字典：
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-注意，`conversations` 是一个列表，因此如果有相关数据，可以支持多轮对话。
+注意 `conversations` 是一个列表，因此如果有多轮对话数据，也能得到支持。
 
-## 申请 Azure GPU 配额 
+## 申请 Azure GPU 配额
 
 ### 前提条件
 
-拥有一个具有 Contributor 角色（或包含 Contributor 访问权限的其他角色）的 Azure 账户。
+需要拥有 Azure 账户，并具备 Contributor 角色（或包含 Contributor 权限的其他角色）。
 
-如果您没有 Azure 账户，请在开始之前创建一个 [免费账户](https://azure.microsoft.com)。
+如果还没有 Azure 账户，请先[创建免费账户](https://azure.microsoft.com)。
 
 ### 申请配额提升
 
-您可以直接从 "我的配额" 提交配额提升申请。以下是申请配额提升的步骤。对于本示例，您可以选择订阅中的任何可调整配额。
+您可以直接在“我的配额”页面提交配额提升请求。以下步骤演示如何申请配额提升。示例中，您可以选择订阅中任何可调整的配额。
 
 登录 [Azure 门户](https://portal.azure.com)。
 
-在搜索框中输入 "quotas"，然后选择 "Quotas"。
-![配额](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
+在搜索框输入“quotas”，然后选择 Quotas。
+![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-在概览页面中，选择一个提供商，例如 Compute 或 AML。
+在概览页，选择一个服务提供商，比如 Compute 或 AML。
 
-**注意** 对于 Compute 以外的所有提供商，您会看到 "Request increase" 列，而不是下文描述的 "Adjustable" 列。在此，您可以申请特定配额的提升，或者创建支持请求以增加配额。
+**注意** 除 Compute 以外的所有服务提供商，您会看到“请求提升”列，而非下文描述的“可调整”列。您可以在此请求特定配额的提升，或创建支持请求。
 
-在 "我的配额" 页面中，在 "配额名称" 下选择您想要增加的配额。确保 "Adjustable" 列显示为 Yes。
+在“我的配额”页中，找到您想提升的配额，确保“可调整”列显示为“是”。
 
-在页面顶部，选择 "新建配额请求"，然后选择 "输入新的限制"。
+页面顶部选择“新建配额请求”，然后选择“输入新限制”。
 
-![增加配额](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
+![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-在 "新配额请求" 面板中，输入您的新配额限制的数值，然后选择 "提交"。
+在“新建配额请求”面板中，输入新的配额数值，然后点击“提交”。
 
-您的请求将被审核，通常会在几分钟内通知您是否可以满足请求。
+您的请求将被审核，审核结果会通知您，通常几分钟内完成。
 
-如果您的请求未被满足，您会看到一个创建支持请求的链接。使用此链接时，支持工程师将协助您完成增加请求。
+如果请求未通过，会显示创建支持请求的链接。使用该链接，支持工程师会协助您完成配额提升。
 
-## Azure Compute GPU 机器 SKU 推荐
+## Azure 计算 GPU 机型建议
 
 [ND A100 v4 系列](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -168,9 +166,9 @@ torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/co
 
 以下是一些示例：
 
-### 如果您有 A100 或 H100 GPUs
+### 如果您有 A100 或 H100 GPU
 
-全量微调通常提供最佳性能。您可以使用以下命令微调 Phi-3-V 用于仇恨表情分类。
+全量微调通常能获得最佳性能。您可以使用以下命令对 Phi-3-V 进行仇恨表情包分类微调。
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -182,10 +180,10 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --bf16
 ```
 
-### 如果您有 Standard_ND40rs_v2 8x V100-32GB GPUs
+### 如果您有 Standard_ND40rs_v2 8x V100-32GB GPU
 
-尽管如此，仍然可以对 Phi-3-V 进行全量微调以进行仇恨表情分类。然而，由于缺乏闪存注意力支持，预计吞吐量会比 A100 或 H100 GPUs 低得多。
-由于缺乏 bf16 支持（使用 fp16 混合精度训练代替），准确性也可能受到影响。
+依然可以对 Phi-3-V 进行仇恨表情包分类的全量微调。但由于不支持 flash attention，吞吐量会明显低于 A100 或 H100 GPU。
+由于缺少 bf16 支持（使用 fp16 混合精度训练），准确率也可能受到影响。
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -195,8 +193,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### 如果您无法访问数据中心 GPUs
-LoRA 可能是您唯一的选择。您可以使用以下命令微调 Phi-3-V 用于仇恨表情分类。
+### 如果您无法使用数据中心 GPU
+
+LoRA 可能是您的唯一选择。您可以使用以下命令对 Phi-3-V 进行仇恨表情包分类微调。
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -217,7 +216,8 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## 推荐超参数及预期准确率
+## 建议超参数及预期准确率
+
 ### NLVR2
 
 ```bash
@@ -231,15 +231,15 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-训练方法 | 冻结视觉模型 | 数据类型 | LoRA 等级 | LoRA alpha | 批量大小 | 学习率 | 轮数 | 准确率
+训练方法 | 是否冻结视觉模型 | 数据类型 | LoRA rank | LoRA alpha | 批大小 | 学习率 | 训练轮数 | 准确率
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
-全量微调 |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-全量微调 | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
-LoRA 结果即将公布 |  |  |  |  |  |  |  |  |
+全量微调 |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
+全量微调 | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
+LoRA 结果即将发布 |  |  |  |  |  |  |  |  |
 
 ### 注意
-以下 DocVQA 和仇恨表情结果基于上一版本（Phi-3-vision）。
-使用 Phi-3.5-vision 的新结果将会很快更新。
+以下 DocVQA 和仇恨表情包的结果基于之前版本（Phi-3-vision）。
+Phi-3.5-vision 的新结果将很快更新。
 
 ### DocVQA（注意：Phi-3-vision）
 
@@ -255,18 +255,18 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-训练方法 | 数据类型 | LoRA 等级 | LoRA alpha | 批量大小 | 学习率 | 轮数 | ANLS
+训练方法 | 数据类型 | LoRA rank | LoRA alpha | 批大小 | 学习率 | 训练轮数 | ANLS
 --- | --- | --- | --- | --- | --- | --- | --- |
 全量微调 | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
 全量微调 | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
-冻结图像模型| bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
-冻结图像模型| fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
+冻结图像模型 | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
+冻结图像模型 | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
 LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
 LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
 QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
-### 仇恨表情（注意：Phi-3-vision）
+### 仇恨表情包（注意：Phi-3-vision）
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -279,28 +279,28 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-训练方法 | 数据类型 | LoRA 等级 | LoRA alpha | 批量大小 | 学习率 | 轮数 | 准确率
+训练方法 | 数据类型 | LoRA rank | LoRA alpha | 批大小 | 学习率 | 训练轮数 | 准确率
 --- | --- | --- | --- | --- | --- | --- | --- |
 全量微调 | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
 全量微调 | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
-冻结图像模型| bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
-冻结图像模型| fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
+冻结图像模型 | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
+冻结图像模型 | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
 LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
 LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
 QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
 QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
-## 性能基准测试（注意：Phi-3-vision）
+## 速度基准测试（注意：Phi-3-vision）
 
-使用 Phi-3.5-vision 的新基准测试结果将会很快更新。
+Phi-3.5-vision 的最新基准测试结果将很快更新。
 
-性能基准测试在 DocVQA 数据集上进行。该数据集的平均序列长度为 2443.23 个 token（对图像模型使用 `num_crops=16`）。
+基准测试在 DocVQA 数据集上进行。该数据集的平均序列长度为 2443.23 个 token（图像模型使用 `num_crops=16`）。
 
-### 8x A100-80GB（Ampere）
+### 8x A100-80GB（Ampere 架构）
 
-训练方法 | 节点数 | GPUs | 闪存注意力 | 有效批量大小 | 吞吐量（img/s） | 加速比 | GPU 峰值内存（GB）
+训练方法 | 节点数 | GPU 数量 | flash attention | 有效批大小 | 吞吐量（图/秒） | 加速比 | GPU 峰值内存（GB）
 --- | --- | --- | --- | --- | --- | --- | --- |
-全量微调 | 1 | 8 |  | 64 | 5.041 |  1x | ~42
+全量微调 | 1 | 8 |  | 64 | 5.041 | 1x | ~42
 全量微调 | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
 全量微调 | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29
 全量微调 | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26
@@ -311,11 +311,11 @@ LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16
 QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32
 QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
-### 8x V100-32GB（Volta）
+### 8x V100-32GB（Volta 架构）
 
-训练方法 | 节点数 | GPUs | 闪存注意力 | 有效批量大小 | 吞吐量（img/s） | 加速比 | GPU 峰值内存（GB）
+训练方法 | 节点数 | GPU 数量 | flash attention | 有效批大小 | 吞吐量（图/秒） | 加速比 | GPU 峰值内存（GB）
 --- | --- | --- | --- | --- | --- | --- | --- |
-全量微调 | 1 | 8 | | 64 | 2.462 |  1x | ~32
+全量微调 | 1 | 8 |  | 64 | 2.462 | 1x | ~32
 全量微调 | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
 全量微调 | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
 冻结图像模型 | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27
@@ -323,8 +323,8 @@ LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
 ## 已知问题
 
-- 无法在 fp16 下运行闪存注意力（建议在支持 bf16 的情况下始终使用 bf16，所有支持闪存注意力的 GPU 也支持 bf16）。
-- 暂不支持保存中间检查点和恢复训练。
+- 无法在 fp16 下运行 flash attention（建议尽量使用 bf16，所有支持 flash attention 的 GPU 也都支持 bf16）。
+- 目前不支持保存中间检查点和恢复训练。
 
 **免责声明**：  
-本文档使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议使用专业人工翻译。对于因使用此翻译而产生的任何误解或误读，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意，自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

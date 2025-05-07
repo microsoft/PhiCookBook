@@ -2,70 +2,70 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-03-27T11:32:48+00:00",
-  "source_file": "md\\02.Application\\02.Code\\Phi3\\CreateVSCodeChatAgentWithGitHubModels.md",
+  "translation_date": "2025-05-07T13:45:43+00:00",
+  "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "fa"
 }
 -->
-# **ساخت Agent چت کوپایلوت ویژوال استودیو کد خودتان با Phi-3.5 از مدل‌های GitHub**
+# **ساخت عامل چت Visual Studio Code خودتان با Phi-3.5 از مدل‌های GitHub**
 
-آیا از کوپایلوت ویژوال استودیو کد استفاده می‌کنید؟ به‌خصوص در حالت چت، می‌توانید از عوامل مختلفی استفاده کنید تا توانایی ساخت، نوشتن و نگهداری پروژه‌ها در ویژوال استودیو کد را بهبود ببخشید. ویژوال استودیو کد یک API فراهم کرده است که به شرکت‌ها و افراد اجازه می‌دهد عوامل مختلفی بر اساس نیازهای تجاری خود ایجاد کنند تا قابلیت‌های خود را در زمینه‌های اختصاصی مختلف گسترش دهند. در این مقاله، ما بر روی **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** از مدل‌های GitHub تمرکز می‌کنیم تا Agent ویژوال استودیو کد خودتان را بسازید.
+آیا از Visual Studio Code Copilot استفاده می‌کنید؟ به‌ویژه در بخش چت، می‌توانید از عوامل مختلفی بهره ببرید تا توانایی ایجاد، نوشتن و نگهداری پروژه‌ها در Visual Studio Code را بهبود ببخشید. Visual Studio Code یک API ارائه می‌دهد که به شرکت‌ها و افراد امکان می‌دهد عوامل مختلفی بر اساس کسب‌وکار خود بسازند تا قابلیت‌هایشان را در حوزه‌های تخصصی مختلف گسترش دهند. در این مقاله، تمرکز ما بر **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** از مدل‌های GitHub برای ساخت عامل Visual Studio Code خودتان خواهد بود.
 
 ## **درباره Phi-3.5 در مدل‌های GitHub**
 
-می‌دانیم که Phi-3/3.5-mini-instruct در خانواده Phi-3/3.5 توانایی‌های قوی درک و تولید کد دارد و نسبت به Gemma-2-9b و Mistral-Nemo-12B-instruct-2407 برتری دارد.
+می‌دانیم که Phi-3/3.5-mini-instruct در خانواده Phi-3/3.5 دارای توانایی‌های قوی در درک و تولید کد است و نسبت به Gemma-2-9b و Mistral-Nemo-12B-instruct-2407 مزیت دارد.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.fa.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.fa.png)
 
-جدیدترین مدل‌های GitHub دسترسی به مدل‌های Phi-3.5-mini-instruct (128k) و Phi-3.5-vision-instruct (128k) را فراهم کرده‌اند. توسعه‌دهندگان می‌توانند از طریق OpenAI SDK، Azure AI Inference SDK و REST API به این مدل‌ها دسترسی پیدا کنند.
+جدیدترین مدل‌های GitHub هم‌اکنون دسترسی به مدل‌های Phi-3.5-mini-instruct (128k) و Phi-3.5-vision-instruct (128k) را فراهم کرده‌اند. توسعه‌دهندگان می‌توانند از طریق OpenAI SDK، Azure AI Inference SDK و REST API به آن‌ها دسترسی داشته باشند.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.fa.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.fa.png)
 
-***توجه:*** پیشنهاد می‌شود در اینجا از Azure AI Inference SDK استفاده کنید، زیرا این ابزار می‌تواند در محیط تولیدی بهتر با Azure Model Catalog جابجا شود.
+***توجه:*** توصیه می‌شود از Azure AI Inference SDK استفاده کنید، زیرا در محیط تولید بهتر می‌تواند با Azure Model Catalog جابجا شود.
 
-نتایج **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** در سناریوی تولید کد پس از اتصال به مدل‌های GitHub در زیر آمده است و همچنین برای مثال‌های بعدی آماده شده‌اند:
+نتایج **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** در سناریوی تولید کد پس از اتصال به مدل‌های GitHub در ادامه آمده است و همچنین برای مثال‌های بعدی آماده شده‌اند.
 
-**دمو: مدل‌های GitHub Phi-3.5-mini-instruct (128k) کد را از Prompt تولید می‌کنند** ([روی این لینک کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**دمو: تولید کد با Phi-3.5-mini-instruct (128k) مدل‌های GitHub از روی Prompt** ([اینجا کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**دمو: مدل‌های GitHub Phi-3.5-vision-instruct (128k) کد را از تصویر تولید می‌کنند** ([روی این لینک کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**دمو: تولید کد با Phi-3.5-vision-instruct (128k) مدل‌های GitHub از روی تصویر** ([اینجا کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
-## **درباره GitHub Copilot Chat Agent**
 
-GitHub Copilot Chat Agent می‌تواند وظایف مختلفی را در سناریوهای مختلف پروژه بر اساس کد انجام دهد. این سیستم چهار عامل دارد: workspace، github، terminal، vscode.
+## **درباره عامل چت GitHub Copilot**
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.fa.png)
+عامل چت GitHub Copilot می‌تواند وظایف مختلفی را در سناریوهای پروژه مختلف بر اساس کد انجام دهد. سیستم شامل چهار عامل است: workspace، github، terminal، vscode
 
-با اضافه کردن نام عامل با ‘@’، می‌توانید به سرعت کار مربوطه را انجام دهید. برای شرکت‌ها، اگر محتوای مرتبط با کسب‌وکار خود مانند نیازها، کدنویسی، مشخصات تست و انتشار را اضافه کنید، می‌توانید بر اساس GitHub Copilot عملکردهای خصوصی قوی‌تری برای شرکت ایجاد کنید.
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.fa.png)
 
-Agent چت ویژوال استودیو کد اکنون API خود را به‌صورت رسمی منتشر کرده است و به شرکت‌ها یا توسعه‌دهندگان شرکتی اجازه می‌دهد عوامل را بر اساس اکوسیستم‌های نرم‌افزاری مختلف توسعه دهند. بر اساس روش توسعه افزونه ویژوال استودیو کد، می‌توانید به راحتی به رابط API Agent چت ویژوال استودیو کد دسترسی پیدا کنید. ما می‌توانیم بر اساس این فرآیند توسعه دهیم.
+با افزودن نام عامل به همراه ‘@’ می‌توانید سریعاً کار مربوطه را انجام دهید. برای شرکت‌ها، اگر محتوای مرتبط با کسب‌وکار خود مانند نیازمندی‌ها، کدنویسی، مشخصات تست و انتشار را اضافه کنید، می‌توانید قابلیت‌های خصوصی قدرتمندتری بر اساس GitHub Copilot داشته باشید.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.fa.png)
+عامل چت Visual Studio Code اکنون API رسمی خود را منتشر کرده است که به شرکت‌ها یا توسعه‌دهندگان سازمانی اجازه می‌دهد عوامل مختلفی بر اساس اکوسیستم‌های نرم‌افزاری بسازند. بر اساس روش توسعه افزونه Visual Studio Code، می‌توانید به راحتی به رابط API عامل چت Visual Studio Code دسترسی پیدا کنید. ما می‌توانیم بر اساس این روند توسعه دهیم.
 
-این سناریوی توسعه می‌تواند از دسترسی به API مدل‌های شخص ثالث (مانند مدل‌های GitHub، Azure Model Catalog و سرویس‌های خودساخته بر اساس مدل‌های متن‌باز) پشتیبانی کند و همچنین می‌تواند از مدل‌های gpt-35-turbo، gpt-4 و gpt-4o ارائه‌شده توسط GitHub Copilot استفاده کند.
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.fa.png)
 
-## **اضافه کردن یک Agent با نام @phicoding بر اساس Phi-3.5**
+سناریوی توسعه می‌تواند دسترسی به API مدل‌های شخص ثالث (مانند مدل‌های GitHub، Azure Model Catalog و سرویس‌های خودساخته بر اساس مدل‌های متن‌باز) را پشتیبانی کند و همچنین می‌توان از مدل‌های gpt-35-turbo، gpt-4 و gpt-4o ارائه شده توسط GitHub Copilot استفاده کرد.
 
-ما تلاش می‌کنیم قابلیت‌های برنامه‌نویسی Phi-3.5 را برای انجام وظایف نوشتن کد، تولید کد از تصاویر و دیگر کارها ادغام کنیم. یک Agent ساخته‌شده حول محور Phi-3.5 - @PHI را کامل می‌کنیم. موارد زیر برخی از قابلیت‌ها هستند:
+## **افزودن عامل @phicoding بر پایه Phi-3.5**
 
-1. تولید یک معرفی از خود بر اساس GPT-4o ارائه‌شده توسط GitHub Copilot از طریق دستور **@phicoding /help**.
+ما سعی داریم توانایی‌های برنامه‌نویسی Phi-3.5 را برای انجام نوشتن کد، تولید کد از تصویر و سایر وظایف ادغام کنیم. یک عامل ساخته شده حول Phi-3.5 - @PHI را تکمیل می‌کنیم که برخی از قابلیت‌های آن به شرح زیر است:
 
-2. تولید کد برای زبان‌های برنامه‌نویسی مختلف بر اساس **Phi-3.5-mini-instruct (128k)** از طریق دستور **@phicoding /gen**.
+1. تولید معرفی‌نامه خودکار بر اساس GPT-4o ارائه شده توسط GitHub Copilot از طریق دستور **@phicoding /help**
 
-3. تولید کد بر اساس **Phi-3.5-vision-instruct (128k)** و تکمیل تصویر از طریق دستور **@phicoding /image**.
+2. تولید کد برای زبان‌های برنامه‌نویسی مختلف بر اساس **Phi-3.5-mini-instruct (128k)** از طریق دستور **@phicoding /gen**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.fa.png)
+3. تولید کد بر اساس **Phi-3.5-vision-instruct (128k)** و تکمیل تصویر از طریق دستور **@phicoding /image**
+
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.fa.png)
 
 ## **مراحل مرتبط**
 
-1. نصب پشتیبانی از توسعه افزونه ویژوال استودیو کد با استفاده از npm.
+1. نصب پشتیبانی توسعه افزونه Visual Studio Code با استفاده از npm
 
 ```bash
 
 npm install --global yo generator-code 
 
 ```
-
-2. ایجاد یک افزونه ویژوال استودیو کد (با استفاده از حالت توسعه تایپ‌اسکریپت، با نام phiext).
+2. ایجاد افزونه Visual Studio Code Extension (با حالت توسعه Typescript، به نام phiext)
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. باز کردن پروژه ایجادشده و تغییر فایل package.json. در اینجا دستورالعمل‌ها و تنظیمات مرتبط، همچنین پیکربندی مدل‌های GitHub آورده شده است. توجه داشته باشید که باید توکن مدل‌های GitHub خود را اینجا اضافه کنید.
+3. باز کردن پروژه ساخته شده و اصلاح package.json. در اینجا دستورات و پیکربندی‌های مرتبط و همچنین پیکربندی مدل‌های GitHub قرار دارد. توجه کنید که باید توکن مدل‌های GitHub خود را اضافه کنید.
 
 ```json
 
@@ -191,7 +191,7 @@ yo code
 
 ```
 
-4. تغییر فایل src/extension.ts.
+4. اصلاح فایل src/extension.ts
 
 ```typescript
 
@@ -360,23 +360,23 @@ export function deactivate() {}
 
 ```
 
-6. اجرا.
+6. اجرا
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.fa.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.fa.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.fa.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.fa.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.fa.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.fa.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.fa.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.fa.png)
 
 می‌توانید کد نمونه را دانلود کنید: [کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
@@ -384,9 +384,9 @@ export function deactivate() {}
 
 1. ثبت‌نام در مدل‌های GitHub [https://gh.io/models](https://gh.io/models)
 
-2. یادگیری توسعه افزونه ویژوال استودیو کد [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. آموزش توسعه افزونه Visual Studio Code [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. یادگیری درباره API چت ویژوال استودیو کد [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. آموزش درباره API چت Visual Studio Code Coilot [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم تا دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌ها باشند. سند اصلی به زبان مادری آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، توصیه می‌شود از ترجمه حرفه‌ای انسانی استفاده کنید. ما مسئولیتی در قبال سوء تفاهم‌ها یا برداشت‌های نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما برای دقت تلاش می‌کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، توصیه می‌شود از ترجمه حرفه‌ای انسانی استفاده شود. ما مسئول هیچ گونه سوءتفاهم یا برداشت نادرستی که ناشی از استفاده از این ترجمه باشد، نیستیم.

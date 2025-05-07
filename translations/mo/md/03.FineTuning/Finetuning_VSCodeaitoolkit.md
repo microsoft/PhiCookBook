@@ -1,26 +1,27 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82289836c6113c9df7544eec1fc54802",
-  "translation_date": "2025-04-04T13:31:15+00:00",
-  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
+  "translation_date": "2025-05-07T13:28:14+00:00",
+  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "mo"
 }
 -->
 ## Welcome to AI Toolkit for VS Code
 
-[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) yééti Azure AI Studio Catalog ní Hugging Face Catalog bee naalnishí. Toolkit t’áá ájíiltééh éí yá’át’ééh naalnishí t’ááłts’íísgo baa áháyáanii éí AI apps baa naashnish doo generative AI tools dóó models baa ájíiltééh:
-- T’áá na’ídííłí da’ák’ehgo model discovery dóó playground baa áháyáanii.
-- Model baa nídahaazt’i’ dóó inference baa ájíiltééh t’áá ádóó local computing resources baa naashnishí.
-- Azure resources baa naashnishí t’áá ádóó remote fine-tuning dóó inference baa ájíiltééh.
+[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) يجمع بين نماذج مختلفة من Azure AI Studio Catalog وكتالوجات أخرى مثل Hugging Face. تُبسّط هذه الأداة المهام الشائعة لتطوير تطبيقات الذكاء الاصطناعي باستخدام أدوات ونماذج الذكاء الاصطناعي التوليدية من خلال:
+- البدء باكتشاف النماذج وتجربة اللعب.
+- تحسين النماذج والاستدلال باستخدام موارد الحوسبة المحلية.
+- تحسين النماذج والاستدلال عن بُعد باستخدام موارد Azure
 
 [Install AI Toolkit for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.mo.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.mo.png)
 
-**[Private Preview]** Azure Container Apps éí naalnishí baa naashnish t’ááłts’íísgo fine-tuning dóó inference baa ájíiltééh cloud bikáá’gi.
 
-Áłtsé nihi’áá’jigo AI app baa naashnishí:
+**[Private Preview]** توفير بنقرة واحدة لتشغيل تحسين النماذج والاستدلال على Azure Container Apps في السحابة.
+
+لنبدأ الآن في تطوير تطبيق الذكاء الاصطناعي الخاص بك:
 
 - [Welcome to AI Toolkit for VS Code](../../../../md/03.FineTuning)
 - [Local Development](../../../../md/03.FineTuning)
@@ -44,19 +45,19 @@ CO_OP_TRANSLATOR_METADATA:
 ## Local Development
 ### Preparations
 
-1. T’áá’ákwíí NVIDIA driver éí host bikáá’gi biniiyéé’ naashnish.
-2. `huggingface-cli login` bikáá’gi, ní HF dataset baa naashnishí yá’át’ééh.
-3. `Olive` éí memory usage baa ájíiltééh settings baa ályaa.
+1. تأكد من تثبيت تعريف NVIDIA على الجهاز المضيف.
+2. شغّل `huggingface-cli login` إذا كنت تستخدم HF لاستغلال مجموعة البيانات.
+3. شرح إعدادات `Olive` لأي شيء يغير استخدام الذاكرة.
 
 ### Activate Conda
-WSL environment éí shared áníígíí, éí t’ááłáh activation baa conda naashnishí ájíltééh. Áádóó fine-tuning dóó inference baa naashnish.
+بما أننا نستخدم بيئة WSL وهي مشتركة، تحتاج إلى تفعيل بيئة conda يدويًا. بعد هذه الخطوة يمكنك تشغيل تحسين النماذج أو الاستدلال.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
 ### Base model fine-tuning only
-Base model éí fine-tuning t’ááłáh ályaa dóó conda baa activation ájíiltééh ní bá hooghan.
+إذا كنت تريد تجربة النموذج الأساسي فقط بدون تحسين، يمكنك تشغيل هذا الأمر بعد تفعيل conda.
 
 ```bash
 cd inference
@@ -68,15 +69,15 @@ python gradio_chat.py --baseonly
 
 ### Model fine-tuning and inferencing
 
-Workspace éí dev container bikáá’gi naashnishí ní bikáá’gi terminal baa naashnishí (path éí project root bikáá’gi), áádóó ní éí fine-tuning LLM éí dataset baa ájíiltééh ní.
+بمجرد فتح مساحة العمل داخل حاوية تطوير، افتح الطرفية (المسار الافتراضي هو جذر المشروع)، ثم شغّل الأمر أدناه لتحسين نموذج LLM على مجموعة البيانات المختارة.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-Checkpoints dóó final model éí `models` folder.
+سيتم حفظ نقاط التحقق والنموذج النهائي في `models` folder.
 
-Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow` bikáá’gi naashnishí.
+Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`.
 
 ```bash
 cd inference
@@ -89,7 +90,7 @@ python console_chat.py
 python gradio_chat.py
 ```
 
-Prompt flow éí `` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
+لاستخدام `prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
 
 ### Model Fine-tuning
 
@@ -172,9 +173,14 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` baa naashnishí output panel bikáá’gi ájíiltééh. Endpoint baa éí evaluation baa naashnishí.
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` وفي لوحة الإخراج. أنت الآن جاهز لتقييم النموذج باستخدام هذه النقطة النهائية.
 
 ### Advanced usage
-Remote development baa AI Toolkit bikáá’gi, Fine-Tuning models remotely documentation éí [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) dóó [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference) baa ájíiltééh t’ááłts’íísgo baa áháyáanii.
+لمزيد من المعلومات حول التطوير عن بُعد باستخدام AI Toolkit، راجع وثائق [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) و [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference).
 
-It seems you are asking for a translation into "mo," but could you clarify what language or format "mo" refers to? If it's a specific language or style, please provide more details so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+If by "mo" you mean a specific language or dialect, could you please clarify which language "mo" refers to? This will help me provide an accurate translation.
