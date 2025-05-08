@@ -2,49 +2,49 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-03-27T07:21:30+00:00",
-  "source_file": "md\\01.Introduction\\03\\iOS_Inference_MLX.md",
+  "translation_date": "2025-05-07T14:38:32+00:00",
+  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "fa"
 }
 -->
-# اجرای Phi-3 و Phi-4 روی iOS با استفاده از Apple MLX Framework
+# اجرای Phi-3 و Phi-4 روی iOS با چارچوب Apple MLX
 
-این آموزش نشان می‌دهد که چگونه یک اپلیکیشن iOS ایجاد کنید که مدل‌های Phi-3 یا Phi-4 را به صورت داخلی اجرا کند، با استفاده از چارچوب MLX اپل. [MLX](https://opensource.apple.com/projects/mlx/) چارچوب یادگیری ماشینی اپل است که برای تراشه‌های Apple Silicon بهینه شده است.
+این آموزش نحوه ساخت یک اپلیکیشن iOS را نشان می‌دهد که مدل Phi-3 یا Phi-4 را به صورت محلی روی دستگاه اجرا می‌کند، با استفاده از چارچوب Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) چارچوب یادگیری ماشینی اپل است که برای چیپ‌های Apple Silicon بهینه شده است.
 
 ## پیش‌نیازها
 
 - macOS با Xcode 16 (یا بالاتر)
-- دستگاه هدف iOS 18 (یا بالاتر) با حداقل ۸ گیگابایت حافظه (آیفون یا آیپد سازگار با نیازهای Apple Intelligence، مشابه نیازهای مدل‌های کم‌حجم‌شده Phi)
+- دستگاه هدف iOS 18 (یا بالاتر) با حداقل ۸ گیگابایت حافظه (آیفون یا آیپدی که با نیازهای Apple Intelligence سازگار باشد، زیرا این نیازها مشابه نیازهای کوانتیزه‌شده Phi هستند)
 - دانش پایه‌ای از Swift و SwiftUI
 
-## مرحله ۱: ایجاد یک پروژه جدید iOS
+## مرحله ۱: ایجاد پروژه جدید iOS
 
-ابتدا یک پروژه جدید iOS در Xcode ایجاد کنید:
+با ایجاد یک پروژه جدید iOS در Xcode شروع کنید:
 
-1. Xcode را اجرا کنید و گزینه "Create a new Xcode project" را انتخاب کنید.
-2. قالب "App" را انتخاب کنید.
-3. پروژه خود را نام‌گذاری کنید (برای مثال، "Phi3-iOS-App") و SwiftUI را به عنوان رابط کاربری انتخاب کنید.
-4. مکانی برای ذخیره پروژه خود انتخاب کنید.
+1. Xcode را باز کنید و گزینه "Create a new Xcode project" را انتخاب کنید
+2. قالب "App" را انتخاب کنید
+3. پروژه خود را نام‌گذاری کنید (مثلاً "Phi3-iOS-App") و SwiftUI را به عنوان رابط کاربری انتخاب کنید
+4. محل ذخیره پروژه را انتخاب کنید
 
-## مرحله ۲: افزودن وابستگی‌های مورد نیاز
+## مرحله ۲: افزودن وابستگی‌های لازم
 
-بسته [MLX Examples](https://github.com/ml-explore/mlx-swift-examples) را اضافه کنید که شامل تمامی وابستگی‌ها و ابزارهای لازم برای بارگذاری مدل‌ها و انجام استنتاج است:
+بسته [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples) را اضافه کنید که شامل تمام وابستگی‌ها و ابزارهای کمکی لازم برای بارگذاری پیش‌فرض مدل‌ها و انجام استنتاج است:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-در حالی که بسته پایه [MLX Swift](https://github.com/ml-explore/mlx-swift) برای عملیات اصلی تنسور و قابلیت‌های پایه‌ای یادگیری ماشینی کافی است، بسته MLX Examples چندین مؤلفه اضافی برای کار با مدل‌های زبانی و ساده‌سازی فرآیند استنتاج ارائه می‌دهد:
+در حالی که بسته پایه [MLX Swift package](https://github.com/ml-explore/mlx-swift) برای عملیات اصلی تنسور و عملکرد پایه یادگیری ماشین کافی است، بسته MLX Examples چندین مؤلفه اضافی ارائه می‌دهد که برای کار با مدل‌های زبانی و ساده‌تر کردن فرآیند استنتاج طراحی شده‌اند:
 
 - ابزارهای بارگذاری مدل که دانلود از Hugging Face را مدیریت می‌کنند
 - یکپارچه‌سازی توکنایزر
-- ابزارهای استنتاج برای تولید متن
-- تعریف‌های مدل از پیش‌پیکربندی‌شده
+- ابزارهای کمکی برای تولید متن
+- تعریف مدل‌های پیش‌پیکربندی شده
 
-## مرحله ۳: پیکربندی Entitlements
+## مرحله ۳: پیکربندی مجوزها
 
-برای اجازه دادن به اپلیکیشن جهت دانلود مدل‌ها و تخصیص حافظه کافی، باید Entitlements خاصی اضافه کنیم. یک فایل `.entitlements` برای اپلیکیشن خود با محتوای زیر ایجاد کنید:
+برای اینکه اپ ما بتواند مدل‌ها را دانلود کند و حافظه کافی اختصاص دهد، باید مجوزهای خاصی اضافه کنیم. یک فایل `.entitlements` برای اپ خود با محتوای زیر بسازید:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ CO_OP_TRANSLATOR_METADATA:
 </plist>
 ```
 
-> **توجه:** Entitlement `com.apple.developer.kernel.increased-memory-limit` برای اجرای مدل‌های بزرگ‌تر مهم است، زیرا به اپلیکیشن اجازه می‌دهد حافظه بیشتری از حد معمول درخواست کند.
+> **Note:** مجوز `com.apple.developer.kernel.increased-memory-limit` برای اجرای مدل‌های بزرگ‌تر اهمیت دارد، زیرا به اپ اجازه می‌دهد حافظه بیشتری نسبت به حالت عادی درخواست کند.
 
-## مرحله ۴: ایجاد مدل پیام‌های چت
+## مرحله ۴: ایجاد مدل پیام چت
 
-ابتدا یک ساختار پایه برای نمایش پیام‌های چت ایجاد کنید:
+ابتدا یک ساختار ساده برای نمایش پیام‌های چت ایجاد می‌کنیم:
 
 ```swift
 import SwiftUI
@@ -87,7 +87,7 @@ struct ChatMessage: Identifiable {
 
 ## مرحله ۵: پیاده‌سازی ViewModel
 
-در مرحله بعد، کلاس `PhiViewModel` را ایجاد می‌کنیم که مسئول بارگذاری مدل و استنتاج است:
+سپس کلاس `PhiViewModel` را ایجاد می‌کنیم که مسئول بارگذاری مدل و استنتاج است:
 
 ```swift
 import MLX
@@ -248,9 +248,9 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-ViewModel نقاط کلیدی یکپارچه‌سازی MLX را نشان می‌دهد:
+ViewModel نقاط کلیدی ادغام با MLX را نشان می‌دهد:
 
-- تنظیم محدودیت‌های حافظه GPU با `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
+- تنظیم محدودیت کش GPU با `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
 - using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
 - accessing the model's parameters and structure through the `ModelContainer`
 - leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
@@ -264,7 +264,7 @@ In terms of UI interaction, the two key functions are `loadModel()`, which initi
 
 > **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`، این مدل خاص از پیش‌تبدیل‌شده MLX را ارجاع می‌دهد که به صورت خودکار دانلود خواهد شد:
+The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit` که به یک مدل MLX خاص و پیش‌تبدیل شده اشاره می‌کند که به صورت خودکار دانلود می‌شود:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-شما می‌توانید تنظیمات مدل خود را برای اشاره به هر مدل سازگار روی Hugging Face ایجاد کنید. به عنوان مثال، برای استفاده از Phi-4 mini، می‌توانید تنظیمات خود را تعریف کنید:
+شما می‌توانید تنظیمات مدل خود را بسازید تا به هر مدل سازگار در Hugging Face اشاره کند. به عنوان مثال، برای استفاده از Phi-4 mini، می‌توانید تنظیمات خود را به شکل زیر تعریف کنید:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **توجه:** پشتیبانی از Phi-4 به مخزن MLX Swift Examples در پایان فوریه ۲۰۲۵ اضافه شد (در [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). از مارس ۲۰۲۵، آخرین نسخه رسمی (۲.۲۱.۲ از دسامبر ۲۰۲۴) شامل پشتیبانی داخلی از Phi-4 نیست. برای استفاده از مدل‌های Phi-4، باید بسته را مستقیماً از شاخه اصلی ارجاع دهید:
+> **Note:** پشتیبانی از Phi-4 در مخزن MLX Swift Examples در پایان فوریه ۲۰۲۵ اضافه شده است (در [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). تا مارس ۲۰۲۵، آخرین نسخه رسمی (2.21.2 از دسامبر ۲۰۲۴) شامل پشتیبانی داخلی Phi-4 نیست. برای استفاده از مدل‌های Phi-4 باید بسته را مستقیماً از شاخه اصلی فراخوانی کنید:
 >
-> ```swift
+>```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-این روش به شما امکان دسترسی به آخرین تنظیمات مدل‌ها، از جمله Phi-4، را قبل از اضافه شدن به یک نسخه رسمی می‌دهد. شما می‌توانید از این روش برای استفاده از نسخه‌های مختلف مدل‌های Phi یا حتی مدل‌های دیگری که به فرمت MLX تبدیل شده‌اند استفاده کنید.
+این روش به شما امکان دسترسی به جدیدترین تنظیمات مدل‌ها، از جمله Phi-4، را قبل از قرار گرفتن در نسخه رسمی می‌دهد. می‌توانید از این روش برای استفاده از نسخه‌های مختلف مدل‌های Phi یا حتی مدل‌های دیگر که به فرمت MLX تبدیل شده‌اند، بهره ببرید.
 
 ## مرحله ۶: ایجاد رابط کاربری
 
-حالا یک رابط کاربری ساده برای تعامل با ViewModel خود پیاده‌سازی می‌کنیم:
+اکنون یک رابط چت ساده برای تعامل با ViewModel خود پیاده‌سازی می‌کنیم:
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-رابط کاربری شامل سه مؤلفه اصلی است که با هم یک رابط چت پایه ایجاد می‌کنند. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` یک نشانگر متحرک ساده برای نمایش پردازش AI فراهم می‌کند.
+رابط کاربری از سه بخش اصلی تشکیل شده که با هم یک رابط چت پایه را می‌سازند. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` یک نشانگر متحرک ساده برای نمایش پردازش AI ارائه می‌دهد.
 
-## مرحله ۷: ساخت و اجرای اپلیکیشن
+## مرحله ۷: ساخت و اجرای اپ
 
-اکنون آماده ساخت و اجرای اپلیکیشن هستیم.
+اکنون آماده‌ایم که اپلیکیشن را بسازیم و اجرا کنیم.
 
-> **مهم!** MLX از شبیه‌ساز پشتیبانی نمی‌کند. شما باید اپلیکیشن را روی یک دستگاه فیزیکی با تراشه Apple Silicon اجرا کنید. برای اطلاعات بیشتر [اینجا](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) را ببینید.
+> **Important!** چارچوب MLX شبیه‌ساز را پشتیبانی نمی‌کند. باید اپ را روی یک دستگاه فیزیکی با چیپ Apple Silicon اجرا کنید. برای اطلاعات بیشتر به [اینجا](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) مراجعه کنید.
 
-وقتی اپلیکیشن اجرا شد، دکمه "Load model" را لمس کنید تا مدل Phi-3 (یا، بسته به تنظیمات شما، Phi-4) دانلود و مقداردهی اولیه شود. این فرآیند ممکن است بسته به سرعت اتصال اینترنت شما زمان‌بر باشد، زیرا شامل دانلود مدل از Hugging Face است. پیاده‌سازی ما تنها یک اسپینر برای نمایش بارگذاری دارد، اما می‌توانید پیشرفت واقعی را در کنسول Xcode مشاهده کنید.
+وقتی اپ اجرا شد، روی دکمه "Load model" ضربه بزنید تا مدل Phi-3 (یا بسته به تنظیمات، Phi-4) دانلود و راه‌اندازی شود. این فرایند ممکن است بسته به سرعت اینترنت شما مدتی طول بکشد، چون مدل از Hugging Face دانلود می‌شود. در پیاده‌سازی ما فقط یک چرخنده برای نمایش بارگذاری وجود دارد، اما می‌توانید پیشرفت واقعی را در کنسول Xcode مشاهده کنید.
 
-پس از بارگذاری، می‌توانید با تایپ کردن سوالات در فیلد متنی و لمس دکمه ارسال، با مدل تعامل داشته باشید.
+پس از بارگذاری، می‌توانید با تایپ سوالات در فیلد متن و زدن دکمه ارسال با مدل تعامل داشته باشید.
 
-این تصویری از نحوه عملکرد اپلیکیشن ما است، در حال اجرا روی iPad Air M1:
+در اینجا نحوه عملکرد اپ ما را هنگام اجرا روی iPad Air M1 مشاهده می‌کنید:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
 ## نتیجه‌گیری
 
-و تمام! با دنبال کردن این مراحل، شما یک اپلیکیشن iOS ایجاد کرده‌اید که مدل Phi-3 (یا Phi-4) را به صورت مستقیم روی دستگاه با استفاده از چارچوب MLX اپل اجرا می‌کند.
+همین بود! با دنبال کردن این مراحل، یک اپلیکیشن iOS ساختید که مدل Phi-3 (یا Phi-4) را مستقیماً روی دستگاه با استفاده از چارچوب MLX اپل اجرا می‌کند.
 
 تبریک می‌گوییم!
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل اشتباهات یا نواقصی باشد. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، توصیه می‌شود از ترجمه حرفه‌ای انسانی استفاده کنید. ما هیچ مسئولیتی در قبال سوءتفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه ماشینی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان مادری آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما در قبال هرگونه سوء تفاهم یا تفسیر نادرست ناشی از استفاده از این ترجمه مسئولیتی نداریم.

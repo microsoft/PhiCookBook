@@ -1,135 +1,139 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "212531c5722978740dcfb73e3995cbba",
-  "translation_date": "2025-04-04T11:16:32+00:00",
+  "original_hash": "9f71f15fee9a73ecfcd4fd40efbe3070",
+  "translation_date": "2025-05-07T13:04:40+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "mo"
 }
 -->
 # Contributing
 
-Yi proyek a amana sababin da ba da shawara. Yawancin gudummawa suna bukatar ku amince da Yarjejeniyar Lasisin Gudummawa (CLA) wanda ke bayyana cewa kuna da haƙƙi kuma kuna ba mu haƙƙin amfani da gudummawarku. Don ƙarin bayani, ziyarci [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-Lokacin da kuka gabatar da buƙatar ɗaukarwa, bot na CLA zai ta atomatik tantance ko kuna buƙatar bayar da CLA kuma ya yi wa PR ɗinku alama (misali, binciken matsayi, sharhi). Kawai bi umarnin da bot ɗin ya bayar. Za ku yi wannan sau ɗaya kawai a duk gidajen adana da ke amfani da CLA ɗinmu.
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
 
-## Dokokin Halayya
+## Code of Conduct
 
-Yi wannan aikin ya ɗauki [Dokokin Halayya na Buɗaɗɗen Tushen Microsoft](https://opensource.microsoft.com/codeofconduct/). Don ƙarin bayani karanta [Tambayoyin FAQ na Dokokin Halayya](https://opensource.microsoft.com/codeofconduct/faq/) ko tuntuɓi [opencode@microsoft.com](mailto:opencode@microsoft.com) tare da kowanne karin tambayoyi ko sharhi.
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information read the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## Gargadi ga ƙirƙirar matsaloli
+## Cautions for creating issues
 
-Don Allah kada ku buɗe matsalolin GitHub don tambayoyin tallafi na gama-gari domin jerin GitHub ya kamata a yi amfani da shi don buƙatun fasali da rahoton kurakurai. Wannan hanyar za mu iya bin diddigin matsaloli ko kurakurai daga lambar kuma mu raba tattaunawar gama-gari daga ainihin lambar.
+Please do not open GitHub issues for general support questions as the GitHub list should be used for feature requests and bug reports. This way we can more easily track actual issues or bugs from the code and keep the general discussion separate from the actual code.
 
-## Yadda za a ba da gudummawa
+## How to Contribute
 
-### Jagororin Buƙatar Ɗaukarwa
+### Pull Requests Guidelines
 
-Lokacin da kuke gabatar da buƙatar ɗaukarwa (PR) zuwa rumbun Phi-3 CookBook, don Allah yi amfani da waɗannan jagororin:
+When submitting a pull request (PR) to the Phi-3 CookBook repository, please use the following guidelines:
 
-- **Yi Fork na Rumbun**: Kullum yi fork na rumbun zuwa asusunku kafin yin gyare-gyarenku.
+- **Fork the Repository**: Always fork the repository to your own account before making your modifications.
 
-- **Raba buƙatun ɗaukarwa (PR)**:
-  - Gabatar da kowanne nau'in canji cikin buƙatar ɗaukarwa daban-daban. Misali, gyaran kurakurai da sabunta takardu ya kamata a gabatar cikin PR daban-daban.
-  - Gyaran rubutu da ƙananan sabunta takardu za a iya haɗawa cikin PR ɗaya idan ya dace.
+- **Separate pull requests (PR)**:
+  - Submit each type of change in its own pull request. For example, bug fixes and documentation updates should be submitted in separate PRs.
+  - Typo fixes and minor documentation updates can be combined into a single PR where appropriate.
 
-- **Magance rikice-rikicen haɗawa**: Idan buƙatar ɗaukarwarku ta nuna rikice-rikice, sabunta reshen `main` na gida don yin kama da babban rumbun kafin yin gyare-gyarenku.
+- **Handle merge conflicts**: If your pull request shows merge conflicts, update your local `main` branch to mirror the main repository before making your modifications.
 
-- **Gabatar da fassarar**: Lokacin gabatar da PR na fassara, tabbatar da cewa babban fayil na fassara ya haɗa da fassarorin dukkan fayilolin cikin babban fayil ɗin asali.
+- **Translation submissions**: When submitting a translation PR, ensure that the translation folder includes translations for all files in the original folder.
 
-### Jagororin Fassara
+### Translation Guidelines
 
 > [!IMPORTANT]
 >
-> Lokacin fassara rubutu cikin wannan rumbun, kada ku yi amfani da fassarar injin. Kawai yi wa fassara cikin harsunan da kuke da ƙwarewa.
+> When translating text in this repository, do not use machine translation. Only volunteer for translations in languages where you are proficient.
 
-Idan kun ƙware cikin wani harshe wanda ba Ingilishi ba, zaku iya taimakawa wajen fassara abun ciki. Bi waɗannan matakan don tabbatar da cewa gudummawar fassarar ku an haɗa su yadda ya kamata, don Allah yi amfani da waɗannan jagororin:
+If you are proficient in a non-English language, you can help translate the content. Follow these steps to ensure your translation contributions are properly integrated, please use the following guidelines:
 
-- **Ƙirƙiri babban fayil na fassara**: Ku je zuwa babban fayil na sashe mai dacewa ku ƙirƙiri babban fayil na fassara don harshen da kuke bayarwa. Misali:
-  - Don sashen gabatarwa: `PhiCookBook/md/01.Introduce/translations/<language_code>/`
-  - Don sashen farawa mai sauri: `PhiCookBook/md/02.QuickStart/translations/<language_code>/`
-  - Ci gaba da wannan tsarin don sauran sassa (03.Inference, 04.Finetuning, da sauransu.)
+- **Create translation folder**: Navigate to the appropriate section folder and create a translation folder for the language you are contributing to. For example:
+  - For the introduction section: `PhiCookBook/md/01.Introduce/translations/<language_code>/`
+  - For the quick start section: `PhiCookBook/md/02.QuickStart/translations/<language_code>/`
+  - Continue this pattern for other sections (03.Inference, 04.Finetuning, etc.)
 
-- **Sabunta hanyoyin dangantaka**: Lokacin fassara, daidaita tsarin babban fayil ta hanyar ƙara `../../` zuwa farkon hanyoyin dangantaka cikin fayilolin markdown don tabbatar da cewa haɗin suna aiki yadda ya kamata. Misali, canza kamar haka:
-  - Canza `(../../imgs/01/phi3aisafety.png)` zuwa `(../../../../imgs/01/phi3aisafety.png)`
+- **Update relative paths**: When translating, adjust the folder structure by adding `../../` to the beginning of relative paths within the markdown files to ensure links work correctly. For example, change as following:
+  - Change `(../../imgs/01/phi3aisafety.png)` to `(../../../../imgs/01/phi3aisafety.png)`
 
-- **Tsara fassarar ku**: Kowanne fayil na fassara ya kamata a sanya shi cikin babban fayil na fassarar sashe mai dacewa. Misali, idan kuna fassara sashen gabatarwa zuwa Spanish, zaku ƙirƙiri kamar haka:
+- **Organize your translations**: Each translated file should be placed in the corresponding section's translation folder. For example, if you are translating the introduction section into Spanish, you would create as following:
   - `PhiCookBook/md/01.Introduce/translations/es/`
 
-- **Gabatar da PR mai cikakke**: Tabbatar cewa dukkan fayilolin fassara na sashe ɗaya sun haɗa cikin PR ɗaya. Ba mu karɓi fassarar da ba ta cika ba don sashe ɗaya. Lokacin gabatar da PR na fassara, tabbatar da cewa babban fayil na fassara ya haɗa da fassarorin dukkan fayilolin cikin babban fayil ɗin asali.
+- **Submit a complete PR**: Ensure all translated files for a section are included in one PR. We do not accept partial translations for a section. When submitting a translation PR, make sure that the translation folder includes translations for all files in the original folder.
 
-### Jagororin Rubutu
+### Writing Guidelines
 
-Don tabbatar da daidaito a dukkan takardu, don Allah yi amfani da waɗannan jagororin:
+To ensure consistency across all documents, please use the following guidelines:
 
-- **Tsarin URL**: Ku ɗaure dukkan URLs cikin murabba'in madauwari sannan ku bi su da baka, ba tare da kowanne sarari mai yawa a kusa da ko cikin su ba. Misali: `[example](https://www.microsoft.com)`.
+- **URL formatting**: Wrap all URLs in square brackets followed by parentheses, without any extra spaces around or inside them. For example: `[example](https://www.microsoft.com)`.
 
-- **Hanyoyin dangantaka**: Yi amfani da `./` don hanyoyin dangantaka da ke nuna fayiloli ko manyan fayiloli cikin babban fayil na yanzu, da `../` don waɗanda ke cikin babban fayil na iyaye. Misali: `[example](../../path/to/file)` ko `[example](../../../path/to/file)`.
+- **Relative links**: Use `./` for relative links pointing to files or folders in the current directory, and `../` for those in a parent directory. For example: `[example](../../path/to/file)` or `[example](../../../path/to/file)`.
 
-- **Ba na ƙasashe masu takamaiman yanki**: Tabbatar cewa haɗin ku ba su haɗa da yankin ƙasa mai takamaiman yanki. Misali, guji `/en-us/` ko `/en/`.
+- **Not Country-Specific locales**: Ensure that your links do not include country-specific locales. For example, avoid `/en-us/` or `/en/`.
 
-- **Ajiyar hotuna**: Ajiye dukkan hotuna cikin babban fayil na `./imgs`.
+- **Image storage**: Store all images in the `./imgs` folder.
 
-- **Sunan hotuna mai bayyana**: Sanya hotuna da sunaye masu bayyana ta amfani da haruffan Ingilishi, lambobi, da dashes. Misali: `example-image.jpg`.
+- **Descriptive image names**: Name images descriptively using English characters, numbers, and dashes. For example: `example-image.jpg`.
 
-## Tsarin Aiki na GitHub
+## GitHub Workflows
 
-Lokacin da kuka gabatar da buƙatar ɗaukarwa, za a kunna tsarin aiki na gaba don tantance canje-canje. Bi umarnin da ke ƙasa don tabbatar da cewa buƙatar ɗaukarwarku ta wuce binciken tsarin aiki:
+When you submit a pull request, the following workflows will be triggered to validate the changes. Follow the instructions below to ensure your pull request passes the workflow checks:
 
-- [Duba Hanyoyin Dangantaka Masu Lalacewa](../..)
-- [Duba URLs Ba Su Da Yankin Yanki](../..)
+- [Check Broken Relative Paths](../..)
+- [Check URLs Don't Have Locale](../..)
 
-### Duba Hanyoyin Dangantaka Masu Lalacewa
+### Check Broken Relative Paths
 
-Wannan tsarin aiki yana tabbatar da cewa duk hanyoyin dangantaka cikin fayilolinku sun yi daidai.
+This workflow ensures that all relative paths in your files are correct.
 
-1. Don tabbatar da cewa haɗin ku suna aiki yadda ya kamata, yi waɗannan ayyukan ta amfani da VS Code:
-    - Hover akan kowanne haɗi cikin fayilolinku.
-    - Danna **Ctrl + Click** don zuwa haɗin.
-    - Idan kun danna kan haɗin kuma bai yi aiki a gida ba, zai kunna tsarin aiki kuma ba zai yi aiki a GitHub ba.
+1. To make sure your links are working properly, perform the following tasks using VS Code:
+    - Hover over any link in your files.
+    - Press **Ctrl + Click** to navigate to the link.
+    - If you click on a link and it doesn't work locally, it will trigger the workflow and not work on GitHub.
 
-1. Don gyara wannan matsalar, yi waɗannan ayyukan ta amfani da shawarwarin hanya da VS Code ya bayar:
-    - Rubuta `./` ko `../`.
-    - VS Code zai nuna muku zaɓuɓɓuka bisa abin da kuka rubuta.
-    - Bi hanyar ta danna kan fayil ko babban fayil mai so don tabbatar da cewa hanyar ku ta yi daidai.
+1. To fix this issue, perform the following tasks using the path suggestions provided by VS Code:
+    - Type `./` or `../`.
+    - VS Code will prompt you to choose from the available options based on what you typed.
+    - Follow the path by clicking on the desired file or folder to ensure your path is correct.
 
-Da zarar kun ƙara hanyar dangantaka mai dacewa, adana ku turawa canje-canjeku.
+Once you have added the correct relative path, save and push your changes.
 
-### Duba URLs Ba Su Da Yankin Yanki
+### Check URLs Don't Have Locale
 
-Wannan tsarin aiki yana tabbatar da cewa dukkan URLs na yanar gizo ba su haɗa da yankin ƙasa mai takamaiman yanki. Tunda wannan rumbun yana samuwa a duniya, yana da mahimmanci a tabbatar da cewa URLs ba su ƙunshi yankin ƙasar ku ba.
+This workflow ensures that any web URL doesn't include a country-specific locale. As this repository is accessible globally, it is important to ensure that URLs do not contain your country's locale.
 
-1. Don tabbatar da cewa URLs ɗinku ba su da yankin ƙasa, yi waɗannan ayyukan:
+1. To verify that your URLs don't have country locales, perform the following tasks:
 
-    - Duba rubutu kamar `/en-us/`, `/en/`, ko kowanne yanki na harshe cikin URLs.
+    - Check for text like `/en-us/`, `/en/`, or any other language locale in the URLs.
+    - If these are not present in your URLs, then you will pass this check.
 
-    - Idan waɗannan ba su kasance cikin URLs ɗinku ba, za ku wuce wannan binciken.
+1. To fix this issue, perform the following tasks:
+    - Open the file path highlighted by the workflow.
+    - Remove the country locale from the URLs.
 
-1. Don gyara wannan matsalar, yi waɗannan ayyukan:
-    - Buɗe hanyar fayil ɗin da tsarin aiki ya nuna.
-    - Cire yankin ƙasa daga URLs.
+Once you remove the country locale, save and push your changes.
 
-Da zarar kun cire yankin ƙasa, adana ku turawa canje-canjeku.
+### Check Broken Urls
 
-### Duba URLs Masu Lalacewa
+This workflow ensures that any web URL in your files is working and returning 200 status code.
 
-Wannan tsarin aiki yana tabbatar da cewa dukkan URLs na yanar gizo cikin fayilolinku suna aiki kuma suna dawo da lambar matsayi 200.
+1. To verify that your URLs are working correctly, perform the following tasks:
+    - Check the status of the URLs in your files.
 
-1. Don tabbatar da cewa URLs ɗinku suna aiki yadda ya kamata, yi waɗannan ayyukan:
-    - Duba matsayi na URLs cikin fayilolinku.
+2. To fix any broken URLs, perform the following tasks:
+    - Open the file that contains the broken URL.
+    - Update the URL to the correct one.
 
-2. Don gyara URLs masu lalacewa, yi waɗannan ayyukan:
-    - Buɗe fayil ɗin da ke ƙunshe da URL mai lalacewa.
-    - Sabunta URL zuwa mai daidai.
-
-Da zarar kun gyara URLs, adana ku turawa canje-canjeku.
+Once you have fixed the URLs, save and push your changes.
 
 > [!NOTE]
 >
-> Akwai lokuta da binciken URL zai kasa duk da cewa haɗin yana samuwa. Wannan na iya faruwa saboda dalilai da dama, ciki har da:
+> There may be cases where the URL check fails even though the link is accessible. This can happen for several reasons, including:
 >
-> - **Ƙuntatawar yanar gizo:** Sabis na aikin GitHub na iya samun ƙuntatawar yanar gizo wanda ke hana samun wasu URLs.
-> - **Matsalar lokaci:** URLs waɗanda suka ɗauki lokaci mai tsawo don amsawa na iya kunna kuskuren lokaci a cikin tsarin aiki.
-> - **Matsalolin uwar garke na ɗan lokaci:** Lokaci-lokaci uwar garke na iya zama ba samuwa ba na ɗan lokaci yayin tantancewa.
+> - **Network restrictions:** GitHub actions servers may have network restrictions that prevent access to certain URLs.
+> - **Timeout issues:** URLs that take too long to respond may trigger a timeout error in the workflow.
+> - **Temporary server issues:** Occasional server downtime or maintenance can make a URL temporarily unavailable during validation.
 
-It seems you are asking for a translation to "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or dialect? For example, Māori, Marshallese, or another language?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Note: Could you please clarify what language or code "mo" refers to? It is not a standard language code or widely recognized language abbreviation. If you meant a specific language or dialect, please specify so I can provide an accurate translation.

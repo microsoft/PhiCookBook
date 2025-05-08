@@ -1,19 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "550f504a78659133aa4c5757a6d875ce",
-  "translation_date": "2025-04-04T13:02:57+00:00",
-  "source_file": "md\\02.Application\\04.Vision\\Phi4\\CreateFrontend\\README.md",
+  "original_hash": "83b94a515637dffaea3bae99278561a6",
+  "translation_date": "2025-05-07T13:42:58+00:00",
+  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "mo"
 }
 -->
-## **Phi-4-multimodal'i istifadə edərək şəkilləri oxumaq və kod yaratmaq**
+## **استفاده از Phi-4-multimodal برای خواندن تصاویر و تولید کد**
 
-Phi-4-multimodal güclü şəkil oxuma qabiliyyətinə malikdir. Gəlin Python ilə aşağıdakı funksiyaları həyata keçirməyə çalışaq. Şəkil ChatGPT səhifəsidir. 
+Phi-4-multimodal قابلیت‌های قوی در خواندن تصویر دارد. بیایید با استفاده از Python توابع زیر را پیاده‌سازی کنیم. تصویر یک صفحه ChatGPT است.
 
-![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.mo.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.mo.png)
 
-### **Nümunə Kod**
+### **نمونه کد**
+
+
 
 ```python
 
@@ -65,4 +67,9 @@ print(response)
 
 ```
 
-It seems you've requested a translation to "mo," but I'm not certain what language "mo" refers to. Could you please clarify or provide more context? For example, are you referring to Maori, Mongolian, or another language?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+If by "mo" you meant a specific language or dialect, please clarify which language "mo" refers to, so I can provide an accurate translation.

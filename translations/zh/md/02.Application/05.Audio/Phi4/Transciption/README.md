@@ -1,15 +1,15 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "79d66be47fdf7961abe34c07d4cbf5b2",
-  "translation_date": "2025-04-03T07:56:43+00:00",
-  "source_file": "md\\02.Application\\05.Audio\\Phi4\\Transciption\\README.md",
+  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
+  "translation_date": "2025-05-07T14:27:03+00:00",
+  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "zh"
 }
 -->
-## **使用 Phi-4-multimodal 提取音频转录**
+## **使用 Phi-4-multimodal 提取音频转录文本**
 
-Phi-4-multimodal 是一个全模态模型，除了文本和图像外，还可以使用音频。下面我们来看看如何使用它。
+Phi-4-multimodal 是一个全模态模型，除了文本和图像外，还能处理音频。让我们看看如何使用它。
 
 ```python
 
@@ -65,4 +65,4 @@ print(response)
 ```
 
 **免责声明**：  
-本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业的人工翻译服务。对于因使用此翻译而引起的任何误解或误读，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

@@ -1,29 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8f766ec7e68d97f6009b58794b471d66",
-  "translation_date": "2025-04-03T07:03:42+00:00",
-  "source_file": "md\\01.Introduction\\04\\UsingIntelOpenVINOQuantifyingPhi.md",
+  "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
+  "translation_date": "2025-05-07T14:47:59+00:00",
+  "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "zh"
 }
 -->
-# **使用 Intel OpenVINO 对 Phi-3.5 进行量化**
+# **使用 Intel OpenVINO 量化 Phi-3.5**
 
-Intel 是最传统的 CPU 制造商之一，拥有众多用户。随着机器学习和深度学习的兴起，Intel 也加入了 AI 加速的竞争。为了进行模型推理，Intel 不仅使用 GPU 和 CPU，还使用 NPU。
+Intel 是最传统的 CPU 制造商，拥有大量用户。随着机器学习和深度学习的兴起，Intel 也加入了 AI 加速的竞争。对于模型推理，Intel 不仅使用 GPU 和 CPU，还使用 NPU。
 
-我们希望将 Phi-3.x 系列部署到终端设备上，成为 AI PC 和 Copilot PC 的重要组成部分。模型在终端设备上的加载需要不同硬件制造商的协作。本章主要聚焦于使用 Intel OpenVINO 作为量化模型的应用场景。
+我们希望将 Phi-3.x 系列部署到端侧，期望成为 AI PC 和 Copilot PC 的核心部分。端侧模型的加载依赖于不同硬件厂商的合作。本章主要聚焦于 Intel OpenVINO 作为量化模型的应用场景。
 
 ## **什么是 OpenVINO**
 
-OpenVINO 是一个开源工具包，用于优化和部署从云到边缘的深度学习模型。它加速了深度学习推理，适用于各种场景，比如生成式 AI、视频、音频和语言处理，并支持来自主流框架（如 PyTorch、TensorFlow、ONNX 等）的模型。通过转换和优化模型，可以在各种 Intel® 硬件和环境中部署，包括本地设备、浏览器或云端。
+OpenVINO 是一个开源工具包，用于优化和部署从云端到边缘的深度学习模型。它加速了各种应用场景下的深度学习推理，如生成式 AI、视频、音频和语言，支持来自 PyTorch、TensorFlow、ONNX 等流行框架的模型。可转换和优化模型，并部署到多种 Intel® 硬件和环境中，无论是本地、设备端、浏览器还是云端。
 
-借助 OpenVINO，您可以快速在 Intel 硬件上量化生成式 AI 模型，并加速模型推理。
+现在借助 OpenVINO，你可以快速在 Intel 硬件上量化 GenAI 模型并加速模型推理。
 
-目前，OpenVINO 支持对 Phi-3.5-Vision 和 Phi-3.5-Instruct 的量化转换。
+目前 OpenVINO 支持 Phi-3.5-Vision 和 Phi-3.5 Instruct 的量化转换。
 
 ### **环境配置**
 
-请确保安装以下环境依赖项，这是 requirement.txt 文件内容：
+请确保安装以下环境依赖，这是 requirement.txt
 
 ```txt
 
@@ -36,9 +36,9 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **使用 OpenVINO 对 Phi-3.5-Instruct 进行量化**
+### **使用 OpenVINO 量化 Phi-3.5-Instruct**
 
-在终端中运行以下脚本：
+在终端运行此脚本
 
 ```bash
 
@@ -52,9 +52,9 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **使用 OpenVINO 对 Phi-3.5-Vision 进行量化**
+### **使用 OpenVINO 量化 Phi-3.5-Vision**
 
-请在 Python 或 Jupyter Lab 中运行以下脚本：
+请在 Python 或 Jupyter lab 中运行此脚本
 
 ```python
 
@@ -90,19 +90,20 @@ if not out_dir.exists():
 
 ```
 
-### **🤖 使用 Intel OpenVINO 的 Phi-3.5 示例**
+### **🤖 Phi-3.5 与 Intel OpenVINO 示例**
 
-| 实验室    | 介绍 | 前往 |
+| 实验室    | 介绍 | 入口 |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | 了解如何在您的 AI PC 中使用 Phi-3.5 Instruct    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (image) | 了解如何在您的 AI PC 中使用 Phi-3.5 Vision 分析图像      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | 了解如何在您的 AI PC 中使用 Phi-3.5 Vision 分析视频    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | 学习如何在你的 AI PC 上使用 Phi-3.5 Instruct    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (image) | 学习如何使用 Phi-3.5 Vision 在你的 AI PC 上分析图像      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | 学习如何使用 Phi-3.5 Vision 在你的 AI PC 上分析视频    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+
 
 ## **资源**
 
-1. 了解更多关于 Intel OpenVINO 的信息 [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
+1. 了解更多 Intel OpenVINO 信息 [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
 2. Intel OpenVINO GitHub 仓库 [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **免责声明**：  
-本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们尽力确保翻译的准确性，但请注意，自动翻译可能会包含错误或不准确之处。原文档的母语版本应被视为权威来源。对于关键信息，建议使用专业的人工翻译服务。我们对于因使用此翻译而产生的任何误解或误读不承担责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。

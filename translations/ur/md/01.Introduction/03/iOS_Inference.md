@@ -1,36 +1,36 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ffeb840575ff03dea81d2b2214f2e000",
-  "translation_date": "2025-04-03T06:49:59+00:00",
-  "source_file": "md\\01.Introduction\\03\\iOS_Inference.md",
+  "original_hash": "82af197df38d25346a98f1f0e84d1698",
+  "translation_date": "2025-05-07T14:29:32+00:00",
+  "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "ur"
 }
 -->
-# **iOS میں Phi-3 کی پیش گوئی**
+# **iOS میں Inference Phi-3**
 
-Phi-3-mini مائیکروسافٹ کے نئے ماڈلز کی سیریز ہے جو بڑے زبان کے ماڈلز (LLMs) کو ایج ڈیوائسز اور IoT ڈیوائسز پر تعینات کرنے کے قابل بناتی ہے۔ Phi-3-mini iOS، اینڈرائیڈ، اور ایج ڈیوائس کی تعیناتی کے لیے دستیاب ہے، جس سے BYOD ماحول میں جنریٹو AI کو تعینات کرنا ممکن ہوتا ہے۔ ذیل میں دیے گئے مثال Phi-3-mini کو iOS پر تعینات کرنے کا طریقہ دکھاتی ہے۔
+Phi-3-mini مائیکروسافٹ کی نئی ماڈلز کی سیریز ہے جو ایج ڈیوائسز اور IoT ڈیوائسز پر Large Language Models (LLMs) کی تعیناتی کو ممکن بناتی ہے۔ Phi-3-mini iOS، Android، اور Edge Device تعیناتیوں کے لیے دستیاب ہے، جس سے generative AI کو BYOD ماحول میں تعینات کیا جا سکتا ہے۔ ذیل میں ایک مثال دی گئی ہے کہ iOS پر Phi-3-mini کو کیسے تعینات کیا جائے۔
 
 ## **1. تیاری**
 
-- **a.** macOS 14 یا اس سے زیادہ
-- **b.** Xcode 15 یا اس سے زیادہ
+- **a.** macOS 14+
+- **b.** Xcode 15+
 - **c.** iOS SDK 17.x (iPhone 14 A16 یا اس سے زیادہ)
-- **d.** Python 3.10+ انسٹال کریں (Conda تجویز کی جاتی ہے)
+- **d.** Python 3.10+ انسٹال کریں (Conda تجویز کیا جاتا ہے)
 - **e.** Python لائبریری انسٹال کریں: `python-flatbuffers`
 - **f.** CMake انسٹال کریں
 
-### Semantic Kernel اور پیش گوئی
+### Semantic Kernel اور Inference
 
-Semantic Kernel ایک ایپلیکیشن فریم ورک ہے جو آپ کو Azure OpenAI Service، OpenAI ماڈلز، اور یہاں تک کہ مقامی ماڈلز کے ساتھ مطابقت رکھنے والی ایپلیکیشنز بنانے کی اجازت دیتا ہے۔ Semantic Kernel کے ذریعے مقامی سروسز تک رسائی آپ کے خود میزبان Phi-3-mini ماڈل سرور کے ساتھ آسان انضمام کو ممکن بناتی ہے۔
+Semantic Kernel ایک ایپلیکیشن فریم ورک ہے جو آپ کو Azure OpenAI Service، OpenAI ماڈلز، اور یہاں تک کہ لوکل ماڈلز کے ساتھ مطابقت رکھنے والی ایپلیکیشنز بنانے کی اجازت دیتا ہے۔ Semantic Kernel کے ذریعے لوکل سروسز تک رسائی آپ کے خود میزبانی کردہ Phi-3-mini ماڈل سرور کے ساتھ آسان انضمام کو ممکن بناتی ہے۔
 
 ### Ollama یا LlamaEdge کے ساتھ Quantized ماڈلز کو کال کرنا
 
-بہت سے صارفین مقامی طور پر ماڈلز چلانے کے لیے Quantized ماڈلز کا استعمال ترجیح دیتے ہیں۔ [Ollama](https://ollama.com) اور [LlamaEdge](https://llamaedge.com) صارفین کو مختلف Quantized ماڈلز کال کرنے کی اجازت دیتے ہیں:
+بہت سے صارفین ماڈلز کو لوکل چلانے کے لیے quantized ماڈلز استعمال کرنا پسند کرتے ہیں۔ [Ollama](https://ollama.com) اور [LlamaEdge](https://llamaedge.com) صارفین کو مختلف quantized ماڈلز کال کرنے کی سہولت دیتے ہیں:
 
 #### **Ollama**
 
-آپ `ollama run phi3` کو براہ راست چلا سکتے ہیں یا اسے آف لائن کنفیگر کر سکتے ہیں۔ اپنے `gguf` فائل کے راستے کے ساتھ ایک Modelfile بنائیں۔ Phi-3-mini Quantized ماڈل چلانے کے لیے نمونہ کوڈ:
+آپ `ollama run phi3` کو براہ راست چلا سکتے ہیں یا اسے آف لائن ترتیب دے سکتے ہیں۔ اپنے `gguf` فائل کے راستے کے ساتھ ایک Modelfile بنائیں۔ Phi-3-mini quantized ماڈل چلانے کے لیے نمونہ کوڈ:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -41,9 +41,9 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-اگر آپ `gguf` کو بیک وقت کلاؤڈ اور ایج ڈیوائسز پر استعمال کرنا چاہتے ہیں، تو LlamaEdge ایک بہترین انتخاب ہے۔
+اگر آپ ایک ساتھ کلاؤڈ اور ایج ڈیوائسز دونوں میں `gguf` استعمال کرنا چاہتے ہیں، تو LlamaEdge ایک بہترین آپشن ہے۔
 
-## **2. iOS کے لیے ONNX Runtime کو مرتب کرنا**
+## **2. iOS کے لیے ONNX Runtime کمپائل کرنا**
 
 ```bash
 
@@ -57,21 +57,21 @@ cd ../
 
 ```
 
-### **نوٹ کریں**
+### **نوٹس**
 
-- **a.** مرتب کرنے سے پہلے، یقینی بنائیں کہ Xcode صحیح طریقے سے کنفیگر ہے اور اسے ٹرمینل میں فعال ڈویلپر ڈائریکٹری کے طور پر سیٹ کریں:
+- **a.** کمپائل کرنے سے پہلے، یقینی بنائیں کہ Xcode صحیح طریقے سے ترتیب دیا گیا ہے اور ٹرمینل میں اسے فعال ڈویلپر ڈائریکٹری کے طور پر سیٹ کریں:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime کو مختلف پلیٹ فارمز کے لیے مرتب کرنے کی ضرورت ہے۔ iOS کے لیے، آپ اسے `arm64` or `x86_64` کے لیے مرتب کر سکتے ہیں۔
+- **b.** ONNX Runtime کو مختلف پلیٹ فارمز کے لیے کمپائل کرنے کی ضرورت ہے۔ iOS کے لیے، آپ `arm64` or `x86_64` کے لیے کمپائل کر سکتے ہیں۔
 
-- **c.** مرتب کرنے کے لیے جدید ترین iOS SDK استعمال کرنے کی سفارش کی جاتی ہے۔ تاہم، اگر آپ کو پچھلے SDKs کے ساتھ مطابقت کی ضرورت ہو تو آپ پرانا ورژن بھی استعمال کر سکتے ہیں۔
+- **c.** کمپائلنگ کے لیے تازہ ترین iOS SDK استعمال کرنا بہتر ہے۔ تاہم، اگر آپ کو پچھلے SDKs کے ساتھ مطابقت کی ضرورت ہو تو پرانا ورژن بھی استعمال کیا جا سکتا ہے۔
 
-## **3. iOS کے لیے ONNX Runtime کے ساتھ Generative AI کو مرتب کرنا**
+## **3. iOS کے لیے ONNX Runtime کے ساتھ Generative AI کمپائل کرنا**
 
-> **نوٹ:** چونکہ ONNX Runtime کے ساتھ Generative AI ابھی پیش نظارہ میں ہے، براہ کرم ممکنہ تبدیلیوں سے آگاہ رہیں۔
+> **نوٹ:** چونکہ ONNX Runtime کے ساتھ Generative AI پریویو میں ہے، براہ کرم ممکنہ تبدیلیوں سے آگاہ رہیں۔
 
 ```bash
 
@@ -99,37 +99,37 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **4. Xcode میں ایک ایپ ایپلیکیشن بنائیں**
+## **4. Xcode میں App ایپلیکیشن بنائیں**
 
-میں نے Objective-C کو ایپلیکیشن ڈویلپمنٹ کے طریقہ کے طور پر منتخب کیا کیونکہ ONNX Runtime C++ API کے ساتھ Generative AI استعمال کرتے وقت Objective-C زیادہ مطابقت رکھتا ہے۔ ظاہر ہے، آپ متعلقہ کالز Swift bridging کے ذریعے بھی مکمل کر سکتے ہیں۔
+میں نے App کی ترقی کے لیے Objective-C کو منتخب کیا، کیونکہ ONNX Runtime C++ API کے ساتھ Generative AI استعمال کرتے وقت Objective-C بہتر مطابقت رکھتا ہے۔ یقیناً، آپ Swift bridging کے ذریعے متعلقہ کالز بھی مکمل کر سکتے ہیں۔
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.ur.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.ur.png)
 
-## **5. ONNX Quantized INT4 ماڈل کو ایپلیکیشن پروجیکٹ میں کاپی کریں**
+## **5. ONNX quantized INT4 ماڈل کو App ایپلیکیشن پروجیکٹ میں کاپی کریں**
 
-ہمیں ONNX فارمیٹ میں INT4 Quantization ماڈل درآمد کرنے کی ضرورت ہے، جسے پہلے ڈاؤن لوڈ کرنا ہوگا۔
+ہمیں ONNX فارمیٹ میں INT4 quantization ماڈل درآمد کرنا ہے، جسے پہلے ڈاؤن لوڈ کرنا ضروری ہے۔
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.ur.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.ur.png)
 
-ڈاؤن لوڈ کرنے کے بعد، آپ کو اسے Xcode میں پروجیکٹ کے Resources ڈائریکٹری میں شامل کرنا ہوگا۔
+ڈاؤن لوڈ کرنے کے بعد، اسے Xcode میں پروجیکٹ کے Resources ڈائریکٹری میں شامل کریں۔
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.ur.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.ur.png)
 
-## **6. ViewControllers میں C++ API شامل کریں**
+## **6. ViewControllers میں C++ API شامل کرنا**
 
-> **نوٹ کریں:**
+> **نوٹس:**
 
-- **a.** متعلقہ C++ ہیڈر فائلز کو پروجیکٹ میں شامل کریں۔
+- **a.** متعلقہ C++ ہیڈر فائلز پروجیکٹ میں شامل کریں۔
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.ur.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.ur.png)
 
-- **b.** `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Objective-C++ سپورٹ کو فعال کرنے کے لیے `onnxruntime-genai` dynamic library in Xcode.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.ur.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.ur.png)
 
 - **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` شامل کریں تاکہ Objective-C++ سپورٹ کو فعال کیا جا سکے۔
+- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` شامل کریں۔
 
 ```objc
 
@@ -158,13 +158,13 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **7. ایپلیکیشن چلائیں**
+## **7. ایپلیکیشن چلانا**
 
-ایک بار سیٹ اپ مکمل ہو جانے کے بعد، آپ ایپلیکیشن چلا سکتے ہیں تاکہ Phi-3-mini ماڈل کی پیش گوئی کے نتائج دیکھ سکیں۔
+ایک بار سیٹ اپ مکمل ہو جائے، آپ ایپلیکیشن چلا کر Phi-3-mini ماڈل inference کے نتائج دیکھ سکتے ہیں۔
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.ur.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.ur.jpg)
 
 مزید نمونہ کوڈ اور تفصیلی ہدایات کے لیے، [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ملاحظہ کریں۔
 
-**ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے بھرپور کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا خامیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ماخذ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمے کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**ڈس کلیمر**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کی کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ ہم اس ترجمہ کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔

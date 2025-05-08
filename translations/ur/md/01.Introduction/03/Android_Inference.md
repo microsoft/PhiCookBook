@@ -1,33 +1,33 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b909b4ac6465d33e81adb17df38deef3",
-  "translation_date": "2025-04-03T06:49:00+00:00",
-  "source_file": "md\\01.Introduction\\03\\Android_Inference.md",
+  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
+  "translation_date": "2025-05-07T14:31:34+00:00",
+  "source_file": "md/01.Introduction/03/Android_Inference.md",
   "language_code": "ur"
 }
 -->
-# **اینفرینس Phi-3 اینڈرائیڈ پر**
+# **اینڈرائیڈ میں Inference Phi-3**
 
-آئیے دیکھتے ہیں کہ آپ اینڈرائیڈ ڈیوائسز پر Phi-3-mini کے ساتھ انفرینس کیسے کر سکتے ہیں۔ Phi-3-mini مائیکروسافٹ کی ایک نئی ماڈل سیریز ہے جو بڑے لینگویج ماڈلز (LLMs) کو ایج ڈیوائسز اور IoT ڈیوائسز پر ڈیپلائی کرنے کے قابل بناتی ہے۔
+چلیے دیکھتے ہیں کہ آپ Android ڈیوائسز پر Phi-3-mini کے ساتھ inference کیسے کر سکتے ہیں۔ Phi-3-mini مائیکروسافٹ کی نئی ماڈلز کی سیریز ہے جو edge ڈیوائسز اور IoT ڈیوائسز پر Large Language Models (LLMs) کو deploy کرنے کی سہولت دیتی ہے۔
 
-## سیمینٹک کرنل اور انفرینس
+## Semantic Kernel اور Inference
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel) ایک ایپلیکیشن فریم ورک ہے جو آپ کو ایسی ایپلیکیشنز بنانے کی اجازت دیتا ہے جو Azure OpenAI Service، OpenAI ماڈلز، اور لوکل ماڈلز کے ساتھ مطابقت رکھتی ہوں۔ اگر آپ سیمینٹک کرنل کے بارے میں نئے ہیں، تو ہم تجویز کرتے ہیں کہ آپ [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) پر نظر ڈالیں۔
+[Semantic Kernel](https://github.com/microsoft/semantic-kernel) ایک application framework ہے جو آپ کو Azure OpenAI Service، OpenAI ماڈلز، اور یہاں تک کہ local ماڈلز کے ساتھ compatible applications بنانے دیتا ہے۔ اگر آپ Semantic Kernel میں نئے ہیں، تو ہم آپ کو [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) دیکھنے کی تجویز دیتے ہیں۔
 
-### سیمینٹک کرنل کے ذریعے Phi-3-mini تک رسائی حاصل کرنا
+### Semantic Kernel کے ذریعے Phi-3-mini تک رسائی
 
-آپ اسے سیمینٹک کرنل میں Hugging Face Connector کے ساتھ ملا سکتے ہیں۔ اس [نمونہ کوڈ](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo) کا حوالہ دیں۔
+آپ اسے Semantic Kernel میں Hugging Face Connector کے ساتھ ملا سکتے ہیں۔ اس [Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo) کا حوالہ لیں۔
 
-ڈیفالٹ طور پر، یہ Hugging Face پر ماڈل ID سے مطابقت رکھتا ہے۔ تاہم، آپ لوکل طور پر بنائے گئے Phi-3-mini ماڈل سرور سے بھی کنیکٹ کر سکتے ہیں۔
+By default، یہ Hugging Face پر ماڈل ID کے مطابق ہوتا ہے۔ تاہم، آپ locally built Phi-3-mini ماڈل سرور سے بھی connect کر سکتے ہیں۔
 
-### Ollama یا LlamaEdge کے ذریعے کوانٹائزڈ ماڈلز کو کال کرنا
+### Ollama یا LlamaEdge کے ساتھ Quantized Models کو کال کرنا
 
-بہت سے صارفین ماڈلز کو لوکل طور پر چلانے کے لیے کوانٹائزڈ ماڈلز استعمال کرنا پسند کرتے ہیں۔ [Ollama](https://ollama.com/) اور [LlamaEdge](https://llamaedge.com) انفرادی صارفین کو مختلف کوانٹائزڈ ماڈلز کو کال کرنے کی اجازت دیتے ہیں:
+بہت سے صارفین locally ماڈلز چلانے کے لیے quantized models استعمال کرنا پسند کرتے ہیں۔ [Ollama](https://ollama.com/) اور [LlamaEdge](https://llamaedge.com) انفرادی صارفین کو مختلف quantized models کال کرنے کی اجازت دیتے ہیں:
 
 #### Ollama
 
-آپ براہ راست `ollama run Phi-3` چلا سکتے ہیں یا اسے آف لائن کنفیگر کر سکتے ہیں `Modelfile` بنا کر، جس میں آپ کے `.gguf` فائل کا راستہ دیا گیا ہو۔
+آپ `ollama run Phi-3` کو براہ راست چلا سکتے ہیں یا اسے offline configure کرنے کے لیے اپنے `.gguf` فائل کے راستے کے ساتھ ایک `Modelfile` بنا سکتے ہیں۔
 
 ```gguf
 FROM {Add your gguf file path}
@@ -36,19 +36,19 @@ PARAMETER stop <|end|>
 PARAMETER num_ctx 4096
 ```
 
-[نمونہ کوڈ](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
+[Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
 
 #### LlamaEdge
 
-اگر آپ `.gguf` فائلز کو بیک وقت کلاؤڈ اور ایج ڈیوائسز پر استعمال کرنا چاہتے ہیں، تو LlamaEdge ایک بہترین انتخاب ہے۔ شروع کرنے کے لیے آپ اس [نمونہ کوڈ](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) کا حوالہ دے سکتے ہیں۔
+اگر آپ چاہتے ہیں کہ `.gguf` فائلیں بیک وقت cloud اور edge ڈیوائسز پر استعمال ہوں، تو LlamaEdge ایک بہترین انتخاب ہے۔ شروع کرنے کے لیے اس [sample code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) کا حوالہ لیں۔
 
-### اینڈرائیڈ فونز پر انسٹال کریں اور چلائیں
+### اینڈرائیڈ فونز پر انسٹال اور چلائیں
 
-1. **MLC Chat ایپ ڈاؤنلوڈ کریں** (مفت) اینڈرائیڈ فونز کے لیے۔
-2. APK فائل (148MB) ڈاؤنلوڈ کریں اور اسے اپنے ڈیوائس پر انسٹال کریں۔
-3. MLC Chat ایپ لانچ کریں۔ آپ کو AI ماڈلز کی ایک فہرست نظر آئے گی، جن میں Phi-3-mini شامل ہے۔
+1. **MLC Chat ایپ ڈاؤن لوڈ کریں** (مفت) اینڈرائیڈ فونز کے لیے۔
+2. APK فائل (148MB) ڈاؤن لوڈ کریں اور اپنے ڈیوائس پر انسٹال کریں۔
+3. MLC Chat ایپ لانچ کریں۔ آپ کو AI ماڈلز کی فہرست نظر آئے گی، جس میں Phi-3-mini بھی شامل ہے۔
 
-خلاصہ یہ کہ Phi-3-mini ایج ڈیوائسز پر جنریٹو AI کے لیے دلچسپ امکانات پیش کرتا ہے، اور آپ اینڈرائیڈ پر اس کی صلاحیتوں کو دریافت کرنا شروع کر سکتے ہیں۔
+خلاصہ یہ کہ، Phi-3-mini edge ڈیوائسز پر generative AI کے لیے دلچسپ امکانات کھولتا ہے، اور آپ اس کی صلاحیتوں کو اینڈرائیڈ پر آزمانا شروع کر سکتے ہیں۔
 
-**ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کی پوری کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا خامیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ورانہ انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**ڈس کلیمر**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا کمی بیشی ہو سکتی ہے۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تعبیر کی ذمہ داری ہم پر عائد نہیں ہوتی۔

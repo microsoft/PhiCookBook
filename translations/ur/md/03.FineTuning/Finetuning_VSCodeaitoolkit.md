@@ -1,62 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82289836c6113c9df7544eec1fc54802",
-  "translation_date": "2025-04-03T08:23:42+00:00",
-  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
+  "translation_date": "2025-05-07T13:27:38+00:00",
+  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "ur"
 }
 -->
-## اے آئی ٹول کٹ فار وی ایس کوڈ میں خوش آمدید
+## VS Code کے لیے AI Toolkit میں خوش آمدید
 
-[اے آئی ٹول کٹ فار وی ایس کوڈ](https://github.com/microsoft/vscode-ai-toolkit/tree/main) مختلف ماڈلز کو Azure AI Studio Catalog اور دوسرے کیٹلاگز جیسے Hugging Face سے یکجا کرتا ہے۔ یہ ٹول کٹ جنریٹو اے آئی ٹولز اور ماڈلز کے ذریعے اے آئی ایپ بنانے کے عام ڈیولپمنٹ کاموں کو آسان بناتا ہے:
-- ماڈل کی دریافت اور پلے گراؤنڈ کے ساتھ شروعات کریں۔
-- لوکل کمپیوٹنگ وسائل کے ذریعے ماڈل کی فائن ٹیوننگ اور انفیرنس۔
-- Azure وسائل کے ذریعے ریموٹ فائن ٹیوننگ اور انفیرنس۔
+[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) مختلف ماڈلز کو Azure AI Studio Catalog اور دیگر کیٹلاگز جیسے Hugging Face سے اکٹھا کرتا ہے۔ یہ ٹول کٹ جنریٹو AI ٹولز اور ماڈلز کے ذریعے AI ایپس بنانے کے عام ترقیاتی کاموں کو آسان بناتا ہے:
+- ماڈل کی دریافت اور پلے گراؤنڈ کے ساتھ شروع کریں۔
+- مقامی کمپیوٹنگ وسائل کا استعمال کرتے ہوئے ماڈل کی فائن ٹیوننگ اور انفرنس۔
+- Azure وسائل کا استعمال کرتے ہوئے ریموٹ فائن ٹیوننگ اور انفرنس۔
 
-[اے آئی ٹول کٹ فار وی ایس کوڈ انسٹال کریں](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[Install AI Toolkit for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.ur.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.ur.png)
 
-**[پرائیویٹ پریویو]** ماڈل کی فائن ٹیوننگ اور انفیرنس کو کلاؤڈ میں چلانے کے لیے Azure Container Apps کی ون کلک پروویژننگ۔
 
-اب اپنی اے آئی ایپ ڈیولپمنٹ شروع کرتے ہیں:
+**[Private Preview]** Azure Container Apps کے لیے ایک کلک پروویژننگ تاکہ کلاؤڈ میں ماڈل کی فائن ٹیوننگ اور انفرنس چلائی جا سکے۔
 
-- [اے آئی ٹول کٹ فار وی ایس کوڈ میں خوش آمدید](../../../../md/03.FineTuning)
-- [لوکل ڈیولپمنٹ](../../../../md/03.FineTuning)
-  - [تیاریاں](../../../../md/03.FineTuning)
-  - [کونڈا کو ایکٹیویٹ کریں](../../../../md/03.FineTuning)
-  - [صرف بیس ماڈل فائن ٹیوننگ](../../../../md/03.FineTuning)
-  - [ماڈل فائن ٹیوننگ اور انفیرنسنگ](../../../../md/03.FineTuning)
-  - [ماڈل فائن ٹیوننگ](../../../../md/03.FineTuning)
-  - [مائیکروسافٹ اولیو](../../../../md/03.FineTuning)
-  - [فائن ٹیوننگ کے نمونے اور وسائل](../../../../md/03.FineTuning)
-- [**\[پرائیویٹ پریویو\]** ریموٹ ڈیولپمنٹ](../../../../md/03.FineTuning)
-  - [ضروریات](../../../../md/03.FineTuning)
-  - [ریموٹ ڈیولپمنٹ پروجیکٹ سیٹ اپ کرنا](../../../../md/03.FineTuning)
-  - [Azure وسائل پروویژن کریں](../../../../md/03.FineTuning)
-  - [\[اختیاری\] Azure Container App سیکریٹ میں Huggingface ٹوکن شامل کریں](../../../../md/03.FineTuning)
-  - [فائن ٹیوننگ چلائیں](../../../../md/03.FineTuning)
-  - [انفیرنس اینڈ پوائنٹ پروویژن کریں](../../../../md/03.FineTuning)
-  - [انفیرنس اینڈ پوائنٹ ڈیپلائے کریں](../../../../md/03.FineTuning)
-  - [ایڈوانسڈ استعمال](../../../../md/03.FineTuning)
+اب آپ کے AI ایپ کی ترقی میں چلتے ہیں:
 
-## لوکل ڈیولپمنٹ
-### تیاریاں
+- [Welcome to AI Toolkit for VS Code](../../../../md/03.FineTuning)
+- [Local Development](../../../../md/03.FineTuning)
+  - [Preparations](../../../../md/03.FineTuning)
+  - [Activate Conda](../../../../md/03.FineTuning)
+  - [Base model fine-tuning only](../../../../md/03.FineTuning)
+  - [Model fine-tuning and inferencing](../../../../md/03.FineTuning)
+  - [Model Fine-tuning](../../../../md/03.FineTuning)
+  - [Microsoft Olive](../../../../md/03.FineTuning)
+  - [Fine Tuning Samples and Resoures](../../../../md/03.FineTuning)
+- [**\[Private Preview\]** Remote Development](../../../../md/03.FineTuning)
+  - [Prerequisites](../../../../md/03.FineTuning)
+  - [Setting Up a Remote Development Project](../../../../md/03.FineTuning)
+  - [Provision Azure Resources](../../../../md/03.FineTuning)
+  - [\[Optional\] Add Huggingface Token to the Azure Container App Secret](../../../../md/03.FineTuning)
+  - [Run Fine-tuning](../../../../md/03.FineTuning)
+  - [Provision Inference Endpoint](../../../../md/03.FineTuning)
+  - [Deploy the Inference Endpoint](../../../../md/03.FineTuning)
+  - [Advanced usage](../../../../md/03.FineTuning)
 
-1. اس بات کو یقینی بنائیں کہ NVIDIA ڈرائیور میزبان میں انسٹال ہو۔
-2. اگر آپ ڈیٹاسیٹ استعمال کے لیے HF استعمال کر رہے ہیں تو `huggingface-cli login` چلائیں۔
-3. `Olive` میموری کے استعمال کو تبدیل کرنے والی کسی بھی چیز کے لیے کلیدی ترتیبات کی وضاحت۔
+## مقامی ترقی
+### تیاری
 
-### کونڈا کو ایکٹیویٹ کریں
-چونکہ ہم WSL ماحول استعمال کر رہے ہیں اور یہ شیئرڈ ہے، آپ کو دستی طور پر کونڈا ماحول کو ایکٹیویٹ کرنا ہوگا۔ اس مرحلے کے بعد آپ فائن ٹیوننگ یا انفیرنس چلا سکتے ہیں۔
+1. یقینی بنائیں کہ NVIDIA ڈرائیور میزبان پر انسٹال ہے۔
+2. اگر آپ HF کو ڈیٹا سیٹ کے لیے استعمال کر رہے ہیں تو `huggingface-cli login` چلائیں۔
+3. `Olive` کلیدی ترتیبات کی وضاحتیں جو میموری کے استعمال کو تبدیل کرتی ہیں۔
+
+### Conda کو فعال کریں
+چونکہ ہم WSL ماحول استعمال کر رہے ہیں اور یہ مشترکہ ہے، آپ کو conda ماحول کو دستی طور پر فعال کرنا ہوگا۔ اس قدم کے بعد آپ فائن ٹیوننگ یا انفرنس چلا سکتے ہیں۔
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### صرف بیس ماڈل فائن ٹیوننگ
-اگر آپ صرف بیس ماڈل کو فائن ٹیوننگ کے بغیر آزمانا چاہتے ہیں تو کونڈا کو ایکٹیویٹ کرنے کے بعد یہ کمانڈ چلائیں۔
+### صرف بنیادی ماڈل کی فائن ٹیوننگ
+اگر آپ صرف بنیادی ماڈل کو بغیر فائن ٹیوننگ کے آزمانا چاہتے ہیں تو conda کو فعال کرنے کے بعد یہ کمانڈ چلائیں۔
 
 ```bash
 cd inference
@@ -66,15 +67,15 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### ماڈل فائن ٹیوننگ اور انفیرنسنگ
+### ماڈل کی فائن ٹیوننگ اور انفرنس
 
-جب ورک اسپیس ایک ڈیولپمنٹ کنٹینر میں کھل جائے، تو ایک ٹرمینل کھولیں (ڈیفالٹ راستہ پروجیکٹ روٹ ہے)، پھر منتخب ڈیٹاسیٹ پر ایک LLM کو فائن ٹیون کرنے کے لیے نیچے دی گئی کمانڈ چلائیں۔
+جب ورک اسپیس ڈیو کنٹینر میں کھل جائے، تو ایک ٹرمینل کھولیں (ڈیفالٹ راستہ پروجیکٹ روٹ ہے)، پھر منتخب کردہ ڈیٹا سیٹ پر LLM کو فائن ٹیون کرنے کے لیے نیچے دی گئی کمانڈ چلائیں۔
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-چیک پوائنٹس اور حتمی ماڈل `models` folder.
+چیک پوائنٹس اور آخری ماڈل `models` folder.
 
 Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow` میں محفوظ کیے جائیں گے۔
 
@@ -172,10 +173,10 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` اور آؤٹ پٹ پینل میں استعمال کرنے کے لیے تیار ہیں۔ آپ اس اینڈ پوائنٹ کا استعمال کرتے ہوئے ماڈل کو جانچ سکتے ہیں۔
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` اور آؤٹ پٹ پینل میں استعمال کرنے کے لیے۔ آپ اب اس اینڈپوائنٹ کے ذریعے ماڈل کا جائزہ لینے کے لیے تیار ہیں۔
 
-### ایڈوانسڈ استعمال
-اے آئی ٹول کٹ کے ساتھ ریموٹ ڈیولپمنٹ کے بارے میں مزید معلومات کے لیے [ماڈلز کو ریموٹ فائن ٹیوننگ](https://aka.ms/ai-toolkit/remote-provision) اور [فائن ٹیون کیے گئے ماڈل کے ساتھ انفیرنسنگ](https://aka.ms/ai-toolkit/remote-inference) دستاویزات دیکھیں۔
+### اعلیٰ درجے کا استعمال
+AI Toolkit کے ساتھ ریموٹ ترقی کے بارے میں مزید معلومات کے لیے، [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) اور [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference) دستاویزات دیکھیں۔
 
-**ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کے لیے کوشش کرتے ہیں، لیکن براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا خامیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**دستخط**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا غیر یقینی معلومات ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ورانہ انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر نہیں ہوگی۔

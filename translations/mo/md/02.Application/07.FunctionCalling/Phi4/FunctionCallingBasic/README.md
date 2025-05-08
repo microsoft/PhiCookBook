@@ -1,17 +1,17 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a3db2edc82e92fba136d9731f6d067ef",
-  "translation_date": "2025-04-04T13:04:57+00:00",
-  "source_file": "md\\02.Application\\07.FunctionCalling\\Phi4\\FunctionCallingBasic\\README.md",
+  "original_hash": "b7078bd9f16589c50139fbba8674de82",
+  "translation_date": "2025-05-07T13:42:27+00:00",
+  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "mo"
 }
 -->
-## **Fonksyon apèl nan Phi-4-mini**
+## **Функцияны шақыру Phi-4-mini-де**
 
-Fonksyon apèl te premye parèt nan fanmi Phi Family, epi kounye a ou ka itilize li atravè Phi-4-mini.
+Функцияны шақыру алғаш рет Phi Family отбасында пайда болды, енді оны Phi-4-mini арқылы қолдануға болады.
 
-Egzanp sa a montre simulasyon rezilta Premier League. Objektif la se pou Phi-4-mini bay enfòmasyon sou jwèt yo an tan reyèl. Men kòd egzanp lan:
+Бұл мысалда Премьер-лига нәтижелерін модельдеу көрсетілген. Мақсат - Phi-4-mini нақты уақыттағы ойын ақпаратын жеткізу. Төменде мысал коды берілген:
 
 
 
@@ -108,4 +108,5 @@ print(messages)
 
 ```
 
-It seems like you're asking to translate the text into "mo," but it's unclear what language "mo" refers to. Could you clarify or provide more details? If "mo" refers to a specific language (e.g., Moldovan/Romanian), I'd be happy to assist!
+**Disclaimer**:  
+Dis document haz been translated uzing AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive fo accuracy, please be aware dat automated translations may contain errors or inaccuracies. Da original document in its native language should be considered da authoritative source. Fo critical information, professional human translation is recommended. We are not liable fo any misunderstandings or misinterpretations arising from da use of dis translation.

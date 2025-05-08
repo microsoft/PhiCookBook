@@ -1,9 +1,9 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3f37da1518bfb2cc9a8faa427fb0c916",
-  "translation_date": "2025-04-04T13:07:06+00:00",
-  "source_file": "md\\02.QuickStart\\GitHubModel_QuickStart.md",
+  "original_hash": "5113634b77370af6790f9697d5d7de90",
+  "translation_date": "2025-05-07T13:08:55+00:00",
+  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "mo"
 }
 -->
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Welcome to [GitHub Models](https://github.com/marketplace/models)! Everything is set up and ready for you to explore AI Models hosted on Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.mo.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.mo.png)
 
-For more details about the available models on GitHub Models, visit the [GitHub Model Marketplace](https://github.com/marketplace/models).
+For more details about the Models available on GitHub Models, visit the [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Models Available
 
-Each model comes with its own playground and sample code.
+Each model comes with its own playground and sample code
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,38 +37,38 @@ Each model comes with its own playground and sample code.
 
 ## Getting Started
 
-We’ve prepared a few basic examples for you to try out. You can find them in the samples directory. If you want to dive right into your preferred programming language, examples are available in:
+There are several basic examples ready for you to run. You can find them in the samples directory. If you want to jump directly to your preferred language, examples are available in the following languages:
 
 - Python
 - JavaScript
 - cURL
 
-There’s also a dedicated Codespaces Environment for running the samples and models.
+There is also a dedicated Codespaces Environment for running the samples and models.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.mo.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.mo.png)
 
-## Sample Code 
+## Sample Code
 
-Below are example code snippets for different use cases. For more details about the Azure AI Inference SDK, refer to the full documentation and samples.
+Below are example code snippets for some common use cases. For more information about Azure AI Inference SDK, see the full documentation and samples.
 
-## Setup 
+## Setup
 
 1. Create a personal access token  
-You don’t need to assign any permissions to the token. Keep in mind that the token will be sent to a Microsoft service.
+You don’t need to assign any permissions to the token. Note that the token will be sent to a Microsoft service.
 
-To use the code snippets below, set your token as an environment variable for the client code.
+To use the code snippets below, create an environment variable to set your token as the key for the client code.
 
-If you’re using bash:  
+If you're using bash:  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-If you’re using PowerShell:  
+If you're in powershell:  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 
-If you’re using Windows command prompt:  
+If you're using Windows command prompt:  
 
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
@@ -77,15 +77,14 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 ## Python Sample
 
 ### Install dependencies  
-Use pip to install the Azure AI Inference SDK (Requires: Python >=3.8):  
+Install the Azure AI Inference SDK using pip (Requires: Python >=3.8):
 
 ```
 pip install azure-ai-inference
 ```  
+### Run a basic code sample
 
-### Run a basic code sample  
-
-This example shows a simple call to the chat completion API using the GitHub AI model inference endpoint and your GitHub token. The call is synchronous.  
+This example shows a simple call to the chat completion API. It uses the GitHub AI model inference endpoint and your GitHub token. The call is synchronous.
 
 ```
 import os
@@ -115,11 +114,11 @@ response = client.complete(
 )
 
 print(response.choices[0].message.content)
-```  
+```
 
-### Run a multi-turn conversation  
+### Run a multi-turn conversation
 
-This example demonstrates a multi-turn conversation with the chat completion API. For chat applications, you’ll need to keep track of the conversation history and send the latest messages to the model.  
+This example demonstrates a multi-turn conversation with the chat completion API. When using the model for a chat app, you need to manage the conversation history and send the latest messages to the model.
 
 ```
 import os
@@ -147,11 +146,11 @@ messages = [
 response = client.complete(messages=messages, model=model_name)
 
 print(response.choices[0].message.content)
-```  
+```
 
-### Stream the output  
+### Stream the output
 
-For a smoother user experience, you can stream the model’s response so that the first token appears early, reducing wait times for longer responses.  
+For a smoother user experience, stream the model’s response so the first token appears quickly, avoiding long waits for responses.
 
 ```
 import os
@@ -184,14 +183,13 @@ for update in response:
 
 client.close()
 ```  
+## JavaScript
 
-## JavaScript  
+### Install dependencies
 
-### Install dependencies  
+Install Node.js.
 
-Install Node.js.  
-
-Save the following lines as a package.json file in your folder:  
+Copy the following text into a file named package.json inside your folder.
 
 ```
 {
@@ -202,17 +200,17 @@ Save the following lines as a package.json file in your folder:
     "@azure/core-sse": "latest"
   }
 }
-```  
+```
 
-Note: @azure/core-sse is only required when streaming the chat completions response.  
+Note: @azure/core-sse is only needed when streaming chat completions.
 
-Open a terminal in this folder and run npm install.  
+Open a terminal in this folder and run npm install.
 
-For each code snippet below, copy the content into a file named sample.js and run it using node sample.js.  
+For each of the code snippets below, copy the content into a file named sample.js and run it with node sample.js.
 
-### Run a basic code sample  
+### Run a basic code sample
 
-This example shows a simple call to the chat completion API using the GitHub AI model inference endpoint and your GitHub token. The call is synchronous.  
+This example shows a simple call to the chat completion API. It uses the GitHub AI model inference endpoint and your GitHub token. The call is synchronous.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -249,11 +247,11 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-### Run a multi-turn conversation  
+### Run a multi-turn conversation
 
-This example demonstrates a multi-turn conversation with the chat completion API. For chat applications, you’ll need to keep track of the conversation history and send the latest messages to the model.  
+This example demonstrates a multi-turn conversation with the chat completion API. When using the model for a chat app, you need to manage the conversation history and send the latest messages to the model.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,11 +290,11 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-### Stream the output  
+### Stream the output
 
-For a smoother user experience, you can stream the model’s response so that the first token appears early, reducing wait times for longer responses.  
+For a smoother user experience, stream the model’s response so the first token appears quickly, avoiding long waits for responses.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -348,13 +346,13 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-## REST  
+## REST
 
-### Run a basic code sample  
+### Run a basic code sample
 
-Paste the following into a shell:  
+Paste the following into a shell:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -374,10 +372,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
+### Run a multi-turn conversation
 
-### Run a multi-turn conversation  
-
-Call the chat completion API and include the chat history:  
+Call the chat completion API and include the chat history:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -405,10 +402,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
+### Stream the output
 
-### Stream the output  
-
-This example demonstrates how to call the endpoint and stream the response.  
+Here’s an example of calling the endpoint and streaming the response.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -428,22 +424,27 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "stream": true,
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
 
-## FREE Usage and Rate limits for GitHub Models  
+## FREE Usage and Rate limits for GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.mo.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.mo.png)
 
-The [rate limits for the playground and free API usage](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) are designed to help you experiment with models and prototype your AI application. For usage beyond these limits and scaling your application, you’ll need to provision resources via an Azure account and authenticate from there instead of using your GitHub personal access token. No other changes to your code are required. Use this link to learn how to exceed the free tier limits in Azure AI.
+The [rate limits for the playground and free API usage](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) are designed to help you experiment with models and prototype your AI application. To go beyond these limits and scale your app, you must provision resources from an Azure account and authenticate from there instead of using your GitHub personal access token. No other changes are needed in your code. Use this link to learn how to exceed the free tier limits in Azure AI.
 
-### Disclosures  
+### Disclosures
 
-Keep in mind that when interacting with a model, you’re experimenting with AI, so errors in content may occur.
+Keep in mind that when you interact with a model, you’re experimenting with AI, so content errors are possible.
 
-This feature has various limits (including requests per minute, requests per day, tokens per request, and concurrent requests) and is not intended for production use cases.
+This feature has various limits (requests per minute, requests per day, tokens per request, concurrent requests) and isn’t intended for production workloads.
 
-GitHub Models utilize Azure AI Content Safety. These filters are mandatory and cannot be disabled as part of the GitHub Models experience. If you choose to use models through a paid service, configure your content filters according to your needs.
+GitHub Models uses Azure AI Content Safety. These filters cannot be disabled as part of the GitHub Models experience. If you choose to use models through a paid service, please configure content filters according to your needs.
 
-This service is governed by GitHub’s Pre-release Terms.
+This service is provided under GitHub’s Pre-release Terms.
 
-It seems like "mo" might refer to a specific language or abbreviation, but it's not clear which language or context you're referring to. Could you clarify what "mo" stands for or provide more details? For example, is it Maori, Montenegrin, or something else?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+(Note: "mo" is not a recognized language code or widely known language abbreviation. Could you please clarify which language "mo" refers to? For example, it might be a typo or abbreviation for a specific language like Moldovan, Maori, or something else.)

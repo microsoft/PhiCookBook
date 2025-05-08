@@ -1,34 +1,34 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aed7639909ebbd1960507880cff2ae4c",
-  "translation_date": "2025-04-04T11:25:40+00:00",
-  "source_file": "code\\03.Finetuning\\olive-ort-example\\README.md",
+  "original_hash": "4164123a700fecd535d850f09506d72a",
+  "translation_date": "2025-05-07T15:18:12+00:00",
+  "source_file": "code/03.Finetuning/olive-ort-example/README.md",
   "language_code": "mo"
 }
 -->
-# Fine-tune Phi3 ye Olive laa kɔrɛ
+# Fine-tune Phi3 using Olive
 
-Esi yɛ example la, wo yɛ Olive la kpɔkɛ:
+In this example you'll use Olive to:
 
-1. Fine-tune LoRA adapter la kɛ phrases ye kpɔ Sad, Joy, Fear, Surprise.
-1. Merge adapter weights kɔ base model me.
-1. Optimize kɛ Quantize model la wɔ `int4`.
+1. Fine-tune a LoRA adapter to classify phrases into Sad, Joy, Fear, Surprise.
+1. Merge the adapter weights into the base model.
+1. Optimize and Quantize the model into `int4`.
 
-Dɔ ko wo yɛ nɔ sɛɛ fine-tuned model la inference wɔ ONNX Runtime (ORT) Generate API kpɔ.
+We'll also show you how to inference the fine-tuned model using the ONNX Runtime (ORT) Generate API.
 
-> **⚠️ Fine-tuning wɔ yɛ, wo yɛ GPU la kɛ wɔ yɛ - nɔ yɛ A10, V100, A100.**
+> **⚠️ For Fine-tuning, you'll need to have a suitable GPU available - for example, an A10, V100, A100.**
 
 ## 💾 Install
 
-Yɛ Python virtual environment fofo (nɔ yɛ `conda`):
+Create a new Python virtual environment (for example, using `conda`):
 
 ```bash
 conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-Esi yɛ Olive kɛ dependencies wɔ fine-tuning workflow yɛ:
+Next, install the Olive and the dependencies for a fine-tuning workflow:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -36,33 +36,34 @@ pip install olive-ai[gpu]
 pip install -r requirements.txt
 ```
 
-## 🧪 Fine-tune Phi3 ye Olive
-[Olive configuration file](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) la yɛ *workflow* wɔ *passes* nɔ kpɔ:
+## 🧪 Fine-tune Phi3 using Olive
+The [Olive configuration file](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) contains a *workflow* with the following *passes*:
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-Yɛ high-level la, workflow la yɛ:
+At a high-level, this workflow will:
 
-1. Fine-tune Phi3 (150 steps la, wo yɛ modify) wɔ [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json) data la kpɔ.
-1. Merge LoRA adapter weights kɔ base model me. Nɔ yɛ single model artifact wɔ ONNX format.
-1. Model Builder yɛ model la optimize wɔ ONNX runtime *kɛ* quantize model la wɔ `int4`.
+1. Fine-tune Phi3 (for 150 steps, which you can modify) using the [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json) data.
+1. Merge the LoRA adapter weights into the base model. This will give you a single model artifact in the ONNX format.
+1. Model Builder will optimize the model for the ONNX runtime *and* quantize the model into `int4`.
 
-Wɔ yɛ workflow la execute, yɛ:
+To execute the workflow, run:
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-Esi Olive yɛ complete, optimized `int4` fine-tuned Phi3 model la wɔ: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
+When Olive has completed, you're optimized `int4` fine-tuned Phi3 model is available in: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-## 🧑‍💻 Integrate fine-tuned Phi3 wɔ wo application me 
+## 🧑‍💻 Integrate fine-tuned Phi3 into your application 
 
-Wɔ app la run:
+To run the app:
 
 ```bash
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-Response la yɛ single word classification wɔ phrase (Sad/Joy/Fear/Surprise).
+This response should be a single word classification of the phrase (Sad/Joy/Fear/Surprise).
 
-It seems like "mo" might refer to a language or abbreviation, but it's not clear which specific language or context you're referring to. Could you clarify what "mo" means? For example, are you asking for a translation into Maori, Mongolian, or another language?
+**Disclaimer**:  
+Thiz documont haz been translaited uzing AI translaition servis [Co-op Translator](https://github.com/Azure/co-op-translator). Whyle we stryve for akkuracy, pleze be aware dat automatid translaitions may contain errurz or inakkuracies. The orijinal documont in itz native langwaj shud be konsidered the autoritative sorce. For kritikal informashun, profeshunal human translaition iz rekomended. We ar not liable for eny misunderstandoz or misinterpretashuns arising from the use of this translaition.

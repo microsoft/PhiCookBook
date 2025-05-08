@@ -1,71 +1,71 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e8ff0378cb171924884b4abb3c2a8c37",
-  "translation_date": "2025-04-04T12:48:06+00:00",
-  "source_file": "md\\02.Application\\02.Code\\Phi3\\CreateVSCodeChatAgentWithGitHubModels.md",
+  "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
+  "translation_date": "2025-05-07T13:46:52+00:00",
+  "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "mo"
 }
 -->
-# **Ka yi naƙasasshen wakilin Visual Studio Code Chat Copilot Agent ɗinka tare da Phi-3.5 daga GitHub Models**
+# **Створіть власного агента Visual Studio Code Chat Copilot з Phi-3.5 від GitHub Models**
 
-Shin kana amfani da Visual Studio Code Copilot? Musamman a cikin Chat, zaka iya amfani da wakilai daban-daban don inganta ikon ƙirƙira, rubutu, da kula da ayyukan a cikin Visual Studio Code. Visual Studio Code yana bayar da API wanda ke ba kamfanoni da mutane damar ƙirƙirar wakilai daban-daban bisa ga bukatun kasuwancinsu don faɗaɗa iyawa a fannonin mallakar su daban-daban. A cikin wannan labarin, zamu mayar da hankali kan **Phi-3.5-mini-instruct (128k)** da **Phi-3.5-vision-instruct (128k)** na GitHub Models don ƙirƙirar wakilin Visual Studio Code ɗinka.
+Ви користуєтесь Visual Studio Code Copilot? Особливо в Chat можна використовувати різних агентів, щоб покращити можливості створення, написання та підтримки проєктів у Visual Studio Code. Visual Studio Code надає API, яке дозволяє компаніям і окремим користувачам створювати різних агентів на основі їх бізнесу для розширення можливостей у різних галузях. У цій статті ми зосередимося на **Phi-3.5-mini-instruct (128k)** та **Phi-3.5-vision-instruct (128k)** від GitHub Models для створення власного агента Visual Studio Code.
 
-## **Game da Phi-3.5 a cikin GitHub Models**
+## **Про Phi-3.5 на GitHub Models**
 
-Mun san cewa Phi-3/3.5-mini-instruct a cikin Phi-3/3.5 Family yana da ƙarfi wajen fahimtar lamba da samar da lamba, kuma yana da fa'ida akan Gemma-2-9b da Mistral-Nemo-12B-instruct-2407.
+Відомо, що Phi-3/3.5-mini-instruct із сімейства Phi-3/3.5 має потужні можливості розуміння та генерації коду, а також переваги над Gemma-2-9b та Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.mo.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.mo.png)
 
-Sabbin GitHub Models sun riga sun bayar da damar zuwa Phi-3.5-mini-instruct (128k) da Phi-3.5-vision-instruct (128k) models. Masu haɓaka zasu iya samun su ta hanyar OpenAI SDK, Azure AI Inference SDK, da REST API.
+Останні GitHub Models вже надають доступ до моделей Phi-3.5-mini-instruct (128k) та Phi-3.5-vision-instruct (128k). Розробники можуть отримати доступ через OpenAI SDK, Azure AI Inference SDK та REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.mo.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.mo.png)
 
-***Note:*** An ba da shawarar amfani da Azure AI Inference SDK anan, saboda yana iya sauƙaƙe sauyawa tare da Azure Model Catalog a cikin yanayin samarwa.
+***Note: *** Рекомендується використовувати Azure AI Inference SDK, оскільки він краще інтегрується з Azure Model Catalog у виробничому середовищі.
 
-Abubuwan da ke ƙasa sune sakamakon **Phi-3.5-mini-instruct (128k)** da **Phi-3.5-vision-instruct (128k)** a cikin yanayin samar da lamba bayan haɗawa da GitHub Models, kuma suna shirya don misalai masu zuwa.
+Нижче наведені результати роботи **Phi-3.5-mini-instruct (128k)** та **Phi-3.5-vision-instruct (128k)** у сценарії генерації коду після інтеграції з GitHub Models, а також підготовка до наступних прикладів.
 
-**Demo: GitHub Models Phi-3.5-mini-instruct (128k) samar da lamba daga Prompt** ([danna wannan mahada](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Демо: GitHub Models Phi-3.5-mini-instruct (128k) генерує код за Prompt** ([перейти за посиланням](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**Demo: GitHub Models Phi-3.5-vision-instruct (128k) samar da lamba daga Hoton** ([danna wannan mahada](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Демо: GitHub Models Phi-3.5-vision-instruct (128k) генерує код з зображення** ([перейти за посиланням](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
-## **Game da GitHub Copilot Chat Agent**
 
-GitHub Copilot Chat Agent na iya kammala ayyuka daban-daban a cikin yanayin aikin daban-daban bisa ga lamba. Tsarin yana da wakilai guda huɗu: workspace, github, terminal, vscode.
+## **Про GitHub Copilot Chat Agent**
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.mo.png)
+GitHub Copilot Chat Agent може виконувати різні завдання у різних проєктних сценаріях на основі коду. Система має чотири агенти: workspace, github, terminal, vscode.
 
-Ta hanyar ƙara sunan wakilin tare da '@', zaka iya kammala aikin da ya dace da sauri. Ga kamfanoni, idan ka ƙara abubuwan da suka shafi kasuwancin ku kamar buƙatu, rubutun lamba, ƙayyadaddun gwaji, da fitarwa, zaka iya samun ƙarin ƙarfi na mallakar kamfani bisa ga GitHub Copilot.
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.mo.png)
 
-Visual Studio Code Chat Agent yanzu ya fitar da API ɗinsa a hukumance, yana ba kamfanoni ko masu haɓaka kamfanoni damar haɓaka wakilai bisa ga yanayin kasuwancin software daban-daban. Bisa ga hanyar haɓaka Visual Studio Code Extension Development, zaka iya samun sauƙin samun shiga interface na Visual Studio Code Chat Agent API. Zamu iya haɓaka bisa ga wannan tsari.
+Додаючи ім’я агента з ‘@’, ви можете швидко виконати відповідне завдання. Для підприємств, якщо додати власний бізнес-контент, наприклад вимоги, кодування, тестові специфікації та реліз, можна отримати більш потужні приватні функції на базі GitHub Copilot.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.mo.png)
+Visual Studio Code Chat Agent офіційно випустив своє API, що дозволяє підприємствам або розробникам створювати агентів на основі різних екосистем програмного забезпечення. Використовуючи метод розробки розширень Visual Studio Code, можна легко отримати доступ до інтерфейсу API Visual Studio Code Chat Agent. Ми можемо розробляти на основі цього процесу.
 
-Yanayin haɓaka yana iya tallafawa samun shiga APIs na samfurin na ɓangare na uku (kamar GitHub Models, Azure Model Catalog, da sabis na gina kai bisa ga samfurin buɗaɗɗen tushe) kuma yana iya amfani da gpt-35-turbo, gpt-4, da gpt-4o models da GitHub Copilot ya bayar.
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.mo.png)
 
-## **Ƙara Wakilin @phicoding bisa ga Phi-3.5**
+Сценарій розробки підтримує доступ до API сторонніх моделей (наприклад, GitHub Models, Azure Model Catalog, та власних сервісів на базі відкритих моделей), а також може використовувати моделі gpt-35-turbo, gpt-4 і gpt-4o, які надає GitHub Copilot.
 
-Mun yi ƙoƙarin haɗa ikon shirye-shirye na Phi-3.5 don kammala rubutun lamba, samar da lamba daga hotuna, da sauran ayyuka. Kammala wakilin da aka gina kusa da Phi-3.5 - @PHI, waɗannan sune wasu ayyuka:
+## **Додайте агента @phicoding на основі Phi-3.5**
 
-1. Samar da gabatarwa kai ta amfani da GPT-4o da GitHub Copilot ya bayar ta hanyar umarnin **@phicoding /help**.
+Ми намагаємося інтегрувати можливості програмування Phi-3.5 для виконання написання коду, генерації коду з зображень та інших завдань. Створіть агента на базі Phi-3.5 - @PHI, ось деякі функції:
 
-2. Samar da lamba don harsunan shirye-shirye daban-daban bisa ga **Phi-3.5-mini-instruct (128k)** ta hanyar umarnin **@phicoding /gen**.
+1. Генерація самопрезентації на основі GPT-4o, що надається GitHub Copilot, через команду **@phicoding /help**
 
-3. Samar da lamba bisa ga **Phi-3.5-vision-instruct (128k)** da kammala hoto ta hanyar umarnin **@phicoding /image**.
+2. Генерація коду для різних мов програмування на основі **Phi-3.5-mini-instruct (128k)** через команду **@phicoding /gen**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.mo.png)
+3. Генерація коду на основі **Phi-3.5-vision-instruct (128k)** та доповнення зображень через команду **@phicoding /image**
 
-## **Matakan da suka shafi**
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.mo.png)
 
-1. Shigar da tallafin haɓaka Visual Studio Code Extension ta amfani da npm.
+## **Пов’язані кроки**
+
+1. Встановіть підтримку розробки розширень Visual Studio Code за допомогою npm
 
 ```bash
 
 npm install --global yo generator-code 
 
 ```
-
-2. Ƙirƙiri plugin na Visual Studio Code Extension (ta amfani da yanayin haɓaka Typescript, mai suna phiext).
+2. Створіть плагін розширення Visual Studio Code (у режимі розробки Typescript, з іменем phiext)
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. Buɗe aikin da aka ƙirƙira kuma gyara package.json. Anan akwai umarnin da ke da alaƙa da saitunan GitHub Models. Lura cewa dole ne ka ƙara token ɗin GitHub Models ɗinka anan.
+3. Відкрийте створений проєкт і змініть package.json. Тут наведені відповідні інструкції та конфігурації, а також налаштування GitHub Models. Зверніть увагу, що потрібно додати ваш токен GitHub Models.
 
 ```json
 
@@ -191,7 +191,7 @@ yo code
 
 ```
 
-4. Gyara src/extension.ts.
+4. Змініть src/extension.ts
 
 ```typescript
 
@@ -360,32 +360,37 @@ export function deactivate() {}
 
 ```
 
-6. Gudanarwa.
+6. Запуск
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.mo.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.mo.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.mo.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.mo.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.mo.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.mo.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.mo.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.mo.png)
 
-Zaka iya saukar da lambar samfurin: [danna](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Ви можете завантажити приклади коду: [натисніть тут](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
-## **Albarkatu**
+## **Ресурси**
 
-1. Yi rijista GitHub Models [https://gh.io/models](https://gh.io/models)
+1. Зареєструйтесь у GitHub Models [https://gh.io/models](https://gh.io/models)
 
-2. Koyi Visual Studio Code Extension Development [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. Вивчайте розробку розширень Visual Studio Code [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. Koyi game da Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. Дізнайтеся про Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
-It seems you've requested a translation to "mo," but could you clarify what "mo" refers to? Are you referring to Maori, Mongolian, or another language? Providing more context will help ensure an accurate translation.
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+It appears you requested a translation into "mo." Could you please clarify what language or code "mo" refers to? For example, is it Moldovan, Mohawk, or another language? This will help me provide an accurate translation.

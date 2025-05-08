@@ -1,37 +1,39 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "d570fac7029d6697ad8ab1c963b43811",
-  "translation_date": "2025-04-04T12:07:34+00:00",
-  "source_file": "md\\01.Introduction\\03\\overview.md",
+  "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
+  "translation_date": "2025-05-07T14:42:13+00:00",
+  "source_file": "md/01.Introduction/03/overview.md",
   "language_code": "mo"
 }
 -->
-Phi-3-mini မှာ inference ဆိုတာ input data အပေါ်အခြေခံပြီး မော်ဒယ်ကိုအသုံးပြုကာ ခန့်မှန်းချက်လုပ်ခြင်း သို့မဟုတ် output ထုတ်လုပ်ခြင်း ဖြစ်ပါတယ်။ အောက်မှာ Phi-3-mini နဲ့ သူ့ရဲ့ inference လုပ်ဆောင်ချက်တွေကို ပိုမိုသိရှိစေရန် အသေးစိတ်ဖော်ပြပေးလိုက်ပါတယ်။
+Phi-3-mini ၏အကြောင်းအရာတွင်၊ inference ဆိုသည်မှာ မော်ဒယ်ကို အသုံးပြု၍ input ဒေတာအပေါ် အခြေခံကာ ခန့်မှန်းချက်များ သို့မဟုတ် output များ ဖန်တီးခြင်းဖြစ်သည်။ Phi-3-mini နှင့် ၎င်း၏ inference စွမ်းရည်များအကြောင်း ပိုမိုအသေးစိတ် ဖော်ပြပေးလိုပါသည်။
 
-Phi-3-mini ဟာ Microsoft က ထုတ်လုပ်ထားတဲ့ Phi-3 မော်ဒယ်တွေရဲ့ တစ်စိတ်တစ်ပိုင်းဖြစ်ပြီး Small Language Models (SLMs) နဲ့အတူ သက်တောင့်သက်သာ အသုံးပြုနိုင်မယ့် နည်းလမ်းအသစ်တွေကို ဖော်ဆောင်ပေးပါတယ်။
+Phi-3-mini သည် Microsoft မှ ထုတ်ပြန်သော Phi-3 စီးရီးမော်ဒယ်များအတွင်း ပါဝင်သည်။ ဤမော်ဒယ်များသည် Small Language Models (SLMs) အတွက် အလားအလာအသစ်များ ဖန်တီးရန် ရည်ရွယ်ထားသည်။
 
-## **Phi-3-mini အကျဉ်းချုပ်:**
-- Phi-3-mini ရဲ့ parameter အရွယ်အစားက 3.8 ဘီလျံဖြစ်ပါတယ်။
-- ဒါဟာ ရိုးရိုးကွန်ပျူတာစနစ်တွေပေါ်မှာပဲမဟုတ်ဘဲ မိုဘိုင်းပစ္စည်းတွေ၊ IoT စနစ်တွေလို edge devices တွေပေါ်မှာတောင်လည်း အဆင်ပြေစွာ chạy လိုက်နိုင်ပါတယ်။
-- Phi-3-mini ထုတ်ဝေမှုကြောင့် လူပုဂ္ဂိုလ်တွေ နဲ့ လုပ်ငန်းတွေဟာ SLMs ကို အရင်းအမြစ် အကန့်အသတ်ရှိတဲ့ ပစ္စည်းတွေမှာတောင် လွယ်လွယ်ကူကူ အသုံးပြုနိုင်လာပါတယ်။
-- PyTorch format အပါအဝင် gguf format ရဲ့ quantized version နဲ့ ONNX-based quantized version အစရှိတဲ့ မော်ဒယ် format မျိုးစုံကို ပံ့ပိုးပေးပါတယ်။
+Phi-3-mini နှင့် ၎င်း၏ inference စွမ်းရည်များအကြောင်း အချက်အလက်အချို့မှာ -
 
-## **Phi-3-mini ကိုရယူရန်:**
-Phi-3-mini ကိုရယူဖို့ [Semantic Kernel](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) ကို Copilot အက်ပလီကေးရှင်းမှာအသုံးပြုနိုင်ပါတယ်။ Semantic Kernel ဟာ Azure OpenAI Service, Hugging Face ပေါ်မှာရှိတဲ့ open-source မော်ဒယ်တွေ၊ နဲ့ local မော်ဒယ်တွေကို အထွေထွေထောက်ပံ့ပေးပါတယ်။
-အခြားနည်းလမ်းအနေနဲ့ [Ollama](https://ollama.com) သို့မဟုတ် [LlamaEdge](https://llamaedge.com) ကိုအသုံးပြုပြီး quantized မော်ဒယ်တွေကိုခေါ်နိုင်ပါတယ်။ Ollama ဟာ တစ်ဦးချင်းသုံးစွဲသူတွေကို quantized မော်ဒယ်မျိုးစုံခေါ်ရန် အခွင့်အလမ်းပေးပြီး၊ LlamaEdge က GGUF မော်ဒယ်တွေအတွက် cross-platform ပံ့ပိုးမှုပေးပါတယ်။
+## **Phi-3-mini အကျဉ်းချုပ်**
+- Phi-3-mini ၏ parameter အရွယ်အစားမှာ 3.8 ဘီလီယံဖြစ်သည်။
+- ယင်းသည် ရိုးရာ ကွန်ပျူတာပစ္စည်းများတွင်သာမက မိုဘိုင်းပစ္စည်းများနှင့် IoT ပစ္စည်းများကဲ့သို့သော edge ပစ္စည်းများတွင်ပါ ပြေးနိုင်သည်။
+- Phi-3-mini ထုတ်ပြန်ခြင်းဖြင့် လူတစ်ဦးချင်းစီနှင့် စီးပွားရေးလုပ်ငန်းများသည် SLM များကို မတူညီသော hardware ပစ္စည်းများပေါ်တွင် တပ်ဆင်အသုံးပြုနိုင်ခြင်း၊ အထူးသဖြင့် အရင်းအမြစ်ကန့်သတ်ထားသော ပတ်ဝန်းကျင်များတွင် အသုံးပြုနိုင်ခြင်း ဖြစ်သည်။
+- ယင်းသည် ရိုးရာ PyTorch format၊ gguf format ၏ quantized ဗားရှင်းနှင့် ONNX-based quantized ဗားရှင်းတို့အပါအဝင် မော်ဒယ်ဖော်မတ်မျိုးစုံကို ထောက်ပံ့သည်။
 
-## **Quantized မော်ဒယ်များ:**
-သုံးစွဲသူအများစုဟာ local inference အတွက် quantized မော်ဒယ်တွေကို သဘောကျစွာအသုံးပြုကြပါတယ်။ ဥပမာအားဖြင့် Ollama run Phi-3 ကိုတိုက်ရိုက် chạy သို့မဟုတ် Modelfile သုံးပြီး offline မှာ configure လုပ်နိုင်ပါတယ်။ Modelfile မှာ GGUF ဖိုင်လမ်းကြောင်းနဲ့ prompt format ကို သတ်မှတ်ပေးထားပါတယ်။
+## **Phi-3-mini ကို အသုံးပြုခြင်း**
+Phi-3-mini ကို အသုံးပြုရန် Semantic Kernel ကို Copilot application တစ်ခုတွင် အသုံးပြုနိုင်သည်။ Semantic Kernel သည် Azure OpenAI Service၊ Hugging Face တွင်ရှိသော open-source မော်ဒယ်များနှင့် local မော်ဒယ်များနှင့် ယေဘုယျအားဖြင့် ကိုက်ညီသည်။
+quantized မော်ဒယ်များကို ခေါ်ယူရန် Ollama သို့မဟုတ် LlamaEdge ကိုလည်း အသုံးပြုနိုင်သည်။ Ollama သည် တစ်ဦးချင်း အသုံးပြုသူများအား quantized မော်ဒယ်မျိုးစုံကို ခေါ်ယူခွင့်ပြုသည်၊ LlamaEdge သည် GGUF မော်ဒယ်များအတွက် cross-platform အသုံးပြုနိုင်မှုကို ပံ့ပိုးပေးသည်။
 
-## **Generative AI ရဲ့ အခွင့်အလမ်းများ:**
-Phi-3-mini လို SLMs တွေကို ပေါင်းစပ်အသုံးပြုခြင်းက Generative AI ရဲ့ အခွင့်အလမ်းအသစ်တွေကို ဖွင့်လှစ်ပေးပါတယ်။ Inference က စတင်ခြင်းသာဖြစ်ပြီး၊ ဒီမော်ဒယ်တွေကို အရင်းအမြစ်အကန့်အသတ်၊ latency-bound နဲ့ cost-constrained အခြေအနေတွေမှာ အမျိုးမျိုးအသုံးချနိုင်ပါတယ်။
+## **Quantized မော်ဒယ်များ**
+အများပြည်သူသည် local inference အတွက် quantized မော်ဒယ်များကို ပိုမိုနှစ်သက်ကြသည်။ ဥပမာအားဖြင့် Ollama ဖြင့် Phi-3 ကို တိုက်ရိုက် run ပြုလုပ်နိုင်သလို၊ Modelfile ကို အသုံးပြု၍ offline တွင်လည်း ပြင်ဆင်နိုင်သည်။ Modelfile တွင် GGUF ဖိုင်လမ်းကြောင်းနှင့် prompt ဖော်မတ်ကို ဖော်ပြထားသည်။
 
-## **Phi-3-mini နဲ့ Generative AI ကိုဖွင့်လှစ်ခြင်း: Inference နဲ့ Deployment လမ်းညွှန်**
-Semantic Kernel, Ollama/LlamaEdge နဲ့ ONNX Runtime ကိုအသုံးပြုပြီး Phi-3-mini မော်ဒယ်တွေကို ရယူပြီး inference လုပ်နည်း၊ Generative AI ရဲ့ အခွင့်အလမ်းတွေကို အမျိုးမျိုးသော အက်ပလီကေးရှင်းအခြေအနေများတွင် ရှာဖွေပါ။
+## **Generative AI ၏ အခွင့်အလမ်းများ**
+Phi-3-mini ကဲ့သို့ SLM များပေါင်းစပ်ခြင်းဖြင့် generative AI အတွက် အသစ်အဆန်းများ ဖန်တီးနိုင်သည်။ inference သည် ပထမဆုံးအဆင့်သာဖြစ်ပြီး၊ ၎င်းမော်ဒယ်များကို အရင်းအမြစ်ကန့်သတ်ထားသော၊ latency ကန့်သတ်ထားသော၊ သက်သာမှုကန့်သတ်ထားသော ပတ်ဝန်းကျင်များတွင် မတူညီသော လုပ်ငန်းများအတွက် အသုံးပြုနိုင်သည်။
+
+## **Phi-3-mini ဖြင့် Generative AI ကို ဖွင့်လှစ်ခြင်း: Inference နှင့် Deployment လမ်းညွှန်**
+Semantic Kernel, Ollama/LlamaEdge, နှင့် ONNX Runtime ကို အသုံးပြု၍ Phi-3-mini မော်ဒယ်များကို ရယူခြင်းနှင့် inference ပြုလုပ်ခြင်း၊ မတူညီသော လျှောက်လွှာအခြေအနေများတွင် generative AI ၏ အခွင့်အလမ်းများကို ရှာဖွေပါ။
 
 **Features**
-Phi-3-mini မော်ဒယ်ကို အောက်ပါနေရာများတွင် inference လုပ်နိုင်ပါသည် -
+phi3-mini မော်ဒယ်ကို အောက်ပါတွင် inference ပြုလုပ်နိုင်သည်-
 
 - [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)
 - [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
@@ -39,6 +41,7 @@ Phi-3-mini မော်ဒယ်ကို အောက်ပါနေရာမ�
 - [ONNX Runtime](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx?WT.mc_id=aiml-138114-kinfeylo)
 - [iOS](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios?WT.mc_id=aiml-138114-kinfeylo)
 
-အကျဉ်းချုပ်အနေနဲ့ Phi-3-mini ဟာ developer တွေကို မော်ဒယ် format မျိုးစုံကို စမ်းသပ်ခွင့်ပေးပြီး၊ Generative AI ကို အမျိုးမျိုးသော အက်ပလီကေးရှင်းအခြေအနေများတွင် အသုံးချနိုင်စေပါတယ်။
+အကျဉ်းချုပ်အားဖြင့် Phi-3-mini သည် ဖန်တီးမှု AI ကို မတူညီသော မော်ဒယ်ဖော်မတ်များနှင့် လျှောက်လွှာအခြေအနေများတွင် လေ့လာအသုံးချရန် ဖန်တီးသူများအား အခွင့်အလမ်းများ ပေးစွမ်းသည်။
 
-It seems like you want the text translated into "mo." Could you please clarify what "mo" refers to? Are you referring to a specific language or dialect?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

@@ -1,58 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7fdd22719901a23386b3c56bb02794e3",
-  "translation_date": "2025-04-04T12:59:53+00:00",
-  "source_file": "md\\02.Application\\03.AdvancedReasoning\\Phi4\\AdvancedResoningPhi4mini\\README.md",
+  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
+  "translation_date": "2025-05-07T14:27:35+00:00",
+  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "mo"
 }
 -->
-## **Folosirea Phi-4-mini ca Expert în Raționament**
+## **Phi-4-mini-reasoning(3.8b) သို့မဟုတ် Phi-4-reasoning(14b) ကို Reasoning Expert အဖြစ် အသုံးပြုခြင်း**
 
-Una dintre principalele caracteristici ale Phi-4 este capacitatea sa puternică de raționament. Să analizăm această abilitate impresionantă prin Phi-4-mini.
+Phi-4-mini-reasoning သို့မဟုတ် Phi-4-mini-reasoning မှတဆင့် ၎င်း၏ အားသာချက် reasoning စွမ်းရည်ကို ကြည့်ကြရအောင်။
+
 
 ```python
 
 import torch
 from transformers import AutoTokenizer,pipeline
 
-model_path = "Your Phi-4-mini location"
+model_path = "Your Phi-4-mini-reasoning or Phi-4-reasoning location"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_path,
     device_map="cuda",
-    attn_implementation="flash_attention_2",
     torch_dtype="auto",
-    trust_remote_code=True)
+    trust_remote_code=True,
 
-tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-
-messages = [
-    {"role": "system", "content": "You are a helpful AI assistant."},
-    {"role": "user", "content": """I have $20,000 in my savings account, where I receive a 4% profit per year and payments twice a year. Can you please tell me how long it will take for me to become a millionaire? Thinks step by step carefully.
-"""},
-]
-
-pipe = pipeline(
-    "text-generation",
-    model=model,
-    tokenizer=tokenizer,
 )
 
-generation_args = {
-    "max_new_tokens": 4096,
-    "return_full_text": False,
-    "temperature": 0.00001,
-    "top_p": 1.0,
-    "do_sample": True,
-}
+tokenizer = AutoTokenizer.from_pretrained(model_path)
 
-output = pipe(messages, **generation_args)
+messages = [{"role": "user", "content": "Explain the Pythagorean Theorem"}]
 
-print(output[0]['generated_text'])
+model = AutoModelForCausalLM.from_pretrained(
+    model_path,
+    trust_remote_code=True,
+    torch_dtype='auto',
+    _attn_implementation='flash_attention_2',
+).cuda()
 
+inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_dict=True, return_tensors="pt")
+
+outputs = model.generate(**inputs.to(model.device), max_new_tokens=32768)
+
+outputs = tokenizer.batch_decode(outputs[:, inputs["input_ids"].shape[-1]:])
+
+print(outputs[0])
 
 
 ```
 
-It seems you are asking for a translation into "mo," but could you clarify what "mo" refers to? Are you referring to Maori, Mongolian, or another language? Let me know, and I'd be happy to assist!
+**Disclaimer**:  
+Thi documint haz bin translaited yusing AI translaition serviss [Co-op Translator](https://github.com/Azure/co-op-translator). Whil wi striv for akyurasy, pleez bi awair that otomaytid translaitions mei contain errurs or inakurysez. Thi orijinal documint in its naytiv langwaj shud bi considird thi autoritativ sours. For kritikal informayshun, profeshunal hyuman translaition is rekomended. Wi ar not laybil for eni misandurstandings or misinterpretayshuns arising from thi yus of this translaition.

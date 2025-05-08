@@ -1,9 +1,9 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1e42c399dcc2fa477925d3ef4038d403",
-  "translation_date": "2025-04-03T07:34:53+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-MLflow.md",
+  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
+  "translation_date": "2025-05-07T13:57:53+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "zh"
 }
 -->
@@ -11,49 +11,49 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) 是一个开源平台，旨在管理端到端的机器学习生命周期。
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.zh.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.zh.png)
 
-MLFlow 用于管理机器学习生命周期，包括实验、可复现性、部署以及中央模型注册表。MLFlow 当前提供以下四个组件：
+MLflow 用于管理机器学习生命周期，包括实验、可复现性、部署和中央模型注册。目前 MLflow 提供四个组件。
 
-- **MLflow Tracking:** 记录和查询实验、代码、数据配置和结果。
-- **MLflow Projects:** 以一种可以在任何平台上复现运行的格式打包数据科学代码。
-- **Mlflow Models:** 在多种服务环境中部署机器学习模型。
-- **Model Registry:** 在中央存储库中存储、注释和管理模型。
+- **MLflow Tracking：** 记录和查询实验、代码、数据配置和结果。
+- **MLflow Projects：** 以一种格式打包数据科学代码，以便在任何平台上复现运行。
+- **MLflow Models：** 在多种服务环境中部署机器学习模型。
+- **Model Registry：** 在中央仓库中存储、注释和管理模型。
 
-MLFlow 提供了记录实验、将代码打包成可复现运行以及共享和部署模型的功能。MLFlow 集成到 Databricks 中，并支持多种机器学习库，具有库无关性。它可以与任何机器学习库和编程语言一起使用，因为它提供了方便的 REST API 和 CLI。
+它具备追踪实验、将代码打包成可复现运行、共享和部署模型的能力。MLflow 集成在 Databricks 中，支持多种机器学习库，具有库无关性。它可以与任何机器学习库和任何编程语言一起使用，因为它提供了 REST API 和命令行工具以方便操作。
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.zh.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.zh.png)
 
-MLFlow 的关键功能包括：
+MLflow 的主要功能包括：
 
-- **实验跟踪:** 记录并比较参数和结果。
-- **模型管理:** 将模型部署到各种服务和推理平台。
-- **模型注册表:** 协作管理 MLFlow 模型的生命周期，包括版本控制和注释。
-- **项目:** 打包机器学习代码以便共享或生产使用。
+- **实验追踪：** 记录和比较参数与结果。
+- **模型管理：** 将模型部署到各种服务和推理平台。
+- **模型注册：** 协作管理 MLflow 模型的生命周期，包括版本控制和注释。
+- **项目：** 打包机器学习代码以便共享或生产使用。
 
-MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打包模型用于执行、部署服务以及监控模型。它旨在简化从原型到生产工作流的过程，特别是在云和边缘环境中。
+MLflow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打包模型以供执行、部署服务以及监控模型。它旨在简化从原型到生产工作流的过程，尤其是在云端和边缘环境中。
 
-## 端到端场景 - 构建封装器并将 Phi-3 作为 MLFlow 模型使用
+## 端到端示例 - 构建包装器并将 Phi-3 作为 MLflow 模型使用
 
-在这个端到端示例中，我们将展示两种不同的方法来围绕 Phi-3 小型语言模型 (SLM) 构建封装器，然后将其作为 MLFlow 模型运行，无论是在本地还是在云端，例如 Azure Machine Learning 工作空间。
+在这个端到端示例中，我们将展示两种不同的方法，围绕 Phi-3 小型语言模型（SLM）构建包装器，然后将其作为 MLflow 模型在本地或云端运行，例如在 Azure Machine Learning 工作区中。
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.zh.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.zh.png)
 
-| 项目 | 描述 | 位置 |
+| 项目 | 说明 | 位置 |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | 如果您希望使用 HuggingFace 模型并结合 MLFlow 的实验性 transformers 功能，Transformer Pipeline 是构建封装器的最简单选择。 | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| 自定义 Python 封装器 | 在撰写本文时，transformer pipeline 尚不支持为 ONNX 格式的 HuggingFace 模型生成 MLFlow 封装器，即使使用实验性的 optimum Python 包也是如此。在这种情况下，您可以为 MLFlow 模型构建自定义 Python 封装器。 | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | 如果你想使用带有 MLflow 实验性 transformers 版本的 HuggingFace 模型，Transformer Pipeline 是构建包装器的最简单选项。 | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | 在撰写本文时，transformer pipeline 尚不支持使用实验性 optimum Python 包为 ONNX 格式的 HuggingFace 模型生成 MLflow 包装器。针对这种情况，你可以构建自定义的 Python 包装器来适配 MLflow 模型。 | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## 项目：Transformer Pipeline
 
-1. 您需要从 MLFlow 和 HuggingFace 安装相关的 Python 包：
+1. 你需要安装 MLflow 和 HuggingFace 相关的 Python 包：
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. 接下来，您应该通过引用 HuggingFace 注册表中的目标 Phi-3 模型来初始化 transformer pipeline。如 _Phi-3-mini-4k-instruct_ 的模型卡所示，它的任务类型是“文本生成”：
+2. 接下来，通过引用 HuggingFace 注册表中的目标 Phi-3 模型，初始化一个 transformer pipeline。正如 _Phi-3-mini-4k-instruct_ 的模型卡所示，其任务类型是“文本生成”：
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     )
     ```
 
-3. 现在，您可以将 Phi-3 模型的 transformer pipeline 保存为 MLFlow 格式，并提供额外的细节，例如目标工件路径、特定模型配置设置和推理 API 类型：
+3. 现在你可以将 Phi-3 模型的 transformer pipeline 保存为 MLflow 格式，并提供额外信息，比如目标 artifact 路径、特定模型配置设置和推理 API 类型：
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -73,9 +73,9 @@ MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     )
     ```
 
-## 项目：自定义 Python 封装器
+## 项目：Custom Python Wrapper
 
-1. 在这里我们可以利用微软的 [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) 来实现 ONNX 模型的推理以及令牌编码/解码。您需要选择适用于目标计算的 _onnxruntime_genai_ 包，以下示例针对 CPU：
+1. 我们这里可以利用微软的 [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) 来进行 ONNX 模型的推理及 token 的编码/解码。你需要根据目标计算环境选择 _onnxruntime_genai_ 包，以下示例以 CPU 为目标：
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     import onnxruntime_genai as og
     ```
 
-2. 我们的自定义类实现了两个方法：_load_context()_ 用于初始化 **Phi-3 Mini 4K Instruct 的 ONNX 模型**、**生成器参数** 和 **分词器**；以及 _predict()_ 用于根据提供的提示生成输出令牌：
+1. 我们的自定义类实现了两个方法：_load_context()_ 用于初始化 Phi-3 Mini 4K Instruct 的 **ONNX 模型**、**生成器参数** 和 **分词器**；_predict()_ 用于根据输入提示生成输出 token：
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-3. 您现在可以使用 _mlflow.pyfunc.log_model()_ 函数为 Phi-3 模型生成一个自定义 Python 封装器（以 pickle 格式），同时包含原始 ONNX 模型和所需的依赖项：
+1. 现在你可以使用 _mlflow.pyfunc.log_model()_ 函数生成 Phi-3 模型的自定义 Python 包装器（pickle 格式），同时包含原始 ONNX 模型及所需依赖：
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -129,9 +129,9 @@ MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     )
     ```
 
-## 生成的 MLFlow 模型的签名
+## 生成的 MLflow 模型签名
 
-1. 在上述 Transformer Pipeline 项目的第 3 步中，我们将 MLFlow 模型的任务设置为“_llm/v1/chat_”。这样的指令会生成一个与 OpenAI 的 Chat API 兼容的模型 API 封装器，如下所示：
+1. 在上面 Transformer Pipeline 项目的第 3 步中，我们将 MLflow 模型的任务设置为 “_llm/v1/chat_”。这样的设置会生成一个模型的 API 包装器，与 OpenAI 的 Chat API 兼容，如下所示：
 
     ``` Python
     {inputs: 
@@ -142,13 +142,13 @@ MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
       None}
     ```
 
-2. 因此，您可以以下格式提交提示：
+1. 因此，你可以用以下格式提交提示：
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-3. 然后，使用与 OpenAI API 兼容的后处理，例如 _response[0][‘choices’][0][‘message’][‘content’]_，将输出优化为类似以下的内容：
+1. 然后，使用兼容 OpenAI API 的后处理，例如 _response[0][‘choices’][0][‘message’][‘content’]_，将输出美化为类似下面的格式：
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-4. 在上述自定义 Python 封装器项目的第 3 步中，我们允许 MLFlow 包从给定的输入示例生成模型的签名。我们的 MLFlow 封装器签名如下所示：
+1. 在上面 Custom Python Wrapper 项目的第 3 步中，我们让 MLflow 包根据给定的输入示例自动生成模型签名。我们的 MLflow 包装器签名将如下所示：
 
     ``` Python
     {inputs: 
@@ -169,13 +169,13 @@ MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
       None}
     ```
 
-5. 因此，我们的提示需要包含 "prompt" 字典键，类似于以下内容：
+1. 因此，我们的提示需要包含一个名为 "prompt" 的字典键，类似这样：
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-6. 然后，模型的输出将以字符串格式提供：
+1. 模型的输出将以字符串格式提供：
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -188,4 +188,4 @@ MLFlow 还支持 MLOps 循环，包括准备数据、注册和管理模型、打
     ```
 
 **免责声明**：  
-本文档使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议寻求专业人工翻译。我们不对因使用此翻译而产生的任何误解或错误解释承担责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。

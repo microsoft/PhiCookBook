@@ -1,28 +1,29 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "700b9a537ce4426de5a7ccfa8e96e581",
-  "translation_date": "2025-04-04T12:06:32+00:00",
-  "source_file": "md\\01.Introduction\\03\\MLX_Inference.md",
+  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
+  "translation_date": "2025-05-07T14:37:40+00:00",
+  "source_file": "md/01.Introduction/03/MLX_Inference.md",
   "language_code": "mo"
 }
 -->
-# **Inference Phi-3 with Apple MLX Framework**
+# **Inference Phi-3 עם מסגרת Apple MLX**
 
-## **What is MLX Framework**
+## **מהי מסגרת MLX**
 
-MLX is an advanced framework developed by Apple for machine learning research on Apple silicon devices.
+MLX היא מסגרת מערך למחקר למידת מכונה על שבבי Apple, מבית Apple machine learning research.
 
-Designed specifically for machine learning researchers, MLX combines user-friendly features with efficient model training and deployment capabilities. Its straightforward design allows researchers to easily extend and enhance the framework, enabling rapid experimentation with new ideas.
+MLX עוצבה על ידי חוקרי למידת מכונה עבור חוקרי למידת מכונה. המסגרת מיועדת להיות ידידותית למשתמש, אך עדיין יעילה לאימון והפעלת מודלים. העיצוב של המסגרת עצמה גם פשוט מבחינה קונספטואלית. אנו שואפים להקל על החוקרים להרחיב ולשפר את MLX במטרה לחקור במהירות רעיונות חדשים.
 
-Large Language Models (LLMs) can leverage the power of Apple Silicon through MLX, making it convenient to run models locally.
+ניתן להאיץ מודלים גדולים (LLMs) במכשירי Apple Silicon דרך MLX, והמודלים יכולים לרוץ מקומית בנוחות רבה.
 
-## **Using MLX to inference Phi-3-mini**
+## **שימוש ב-MLX ל-inference של Phi-3-mini**
 
-### **1. Set up your MLX environment**
+### **1. הקמת סביבת MLX**
 
 1. Python 3.11.x  
-2. Install the MLX Library  
+2. התקנת ספריית MLX
+
 
 ```bash
 
@@ -30,7 +31,8 @@ pip install mlx-lm
 
 ```
 
-### **2. Running Phi-3-mini in Terminal with MLX**
+### **2. הרצת Phi-3-mini בטרמינל עם MLX**
+
 
 ```bash
 
@@ -38,11 +40,12 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-On my setup (Apple M1 Max, 64GB), the result is as follows:
+התוצאה (הסביבה שלי היא Apple M1 Max, 64GB) היא
 
-![Terminal](../../../../../translated_images/01.0d0f100b646a4e4c4f1cd36c1a05727cd27f1e696ed642c06cf6e2c9bbf425a4.mo.png)
+![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.mo.png)
 
-### **3. Quantizing Phi-3-mini with MLX in Terminal**
+### **3. כימות Phi-3-mini עם MLX בטרמינל**
+
 
 ```bash
 
@@ -50,11 +53,12 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***Note：*** The model can be quantized using mlx_lm.convert, with INT4 as the default quantization format. This example demonstrates how to quantize Phi-3-mini into INT4.
+***Note：*** ניתן לכמת את המודל דרך mlx_lm.convert, והכימות ברירת המחדל הוא INT4. בדוגמה זו כימות Phi-3-mini ל-INT4
 
-Once quantized, the model will be stored in the default directory `./mlx_model`.
+ניתן לכמת את המודל דרך mlx_lm.convert, והכימות ברירת המחדל הוא INT4. בדוגמה זו הכוונה לכמת את Phi-3-mini ל-INT4. לאחר הכימות, המודל יישמר בתיקיית ברירת המחדל ./mlx_model
 
-You can test the quantized model with MLX directly from the terminal:
+ניתן לבדוק את המודל המכווץ עם MLX מהטרמינל
+
 
 ```bash
 
@@ -62,20 +66,28 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ```
 
-The result is:
+התוצאה היא
 
-![INT4](../../../../../translated_images/02.04e0be1f18a90a58ad47e0c9d9084ac94d0f1a8c02fa707d04dd2dfc7e9117c6.mo.png)
+![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.mo.png)
 
-### **4. Running Phi-3-mini with MLX in Jupyter Notebook**
 
-![Notebook](../../../../../translated_images/03.0cf0092fe143357656bb5a7bc6427c41d8528d772d38a82d0b2693e2a3eeb16e.mo.png)
+### **4. הרצת Phi-3-mini עם MLX ב-Jupyter Notebook**
 
-***Note:*** For a detailed example, refer to this sample: [click this link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
-## **Resources**
+![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.mo.png)
 
-1. Learn about Apple MLX Framework [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)  
+***Note:*** אנא קראו את הדוגמה הזו [click this link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
-2. Apple MLX GitHub Repo [https://github.com/ml-explore](https://github.com/ml-explore)  
 
-It seems like you want the text translated to "mo," but could you clarify what "mo" refers to? Are you asking for a specific language or abbreviation? For example, are you referring to Māori, Montenegrin, or something else?
+## **משאבים**
+
+1. למידה על מסגרת Apple MLX [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)
+
+2. מאגר GitHub של Apple MLX [https://github.com/ml-explore](https://github.com/ml-explore)
+
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+It appears you requested a translation to "mo." Could you please clarify what language or dialect "mo" refers to? This will help me provide an accurate translation.

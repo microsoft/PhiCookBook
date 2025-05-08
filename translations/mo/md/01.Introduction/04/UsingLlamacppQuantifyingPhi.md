@@ -1,45 +1,45 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2a7aaeb42235207ba74581473b305581",
-  "translation_date": "2025-04-04T12:14:44+00:00",
-  "source_file": "md\\01.Introduction\\04\\UsingLlamacppQuantifyingPhi.md",
+  "original_hash": "462bddc47427d8785f3c9fd817b346fe",
+  "translation_date": "2025-05-07T14:51:43+00:00",
+  "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "mo"
 }
 -->
-# **Phi परिवार को llama.cpp का उपयोग करके क्वांटाइज़ करना**
+# **Quantizing Phi Family using llama.cpp**
 
-## **llama.cpp क्या है**
+## **What's llama.cpp**
 
-llama.cpp एक ओपन-सोर्स सॉफ़्टवेयर लाइब्रेरी है, जो मुख्य रूप से C++ में लिखी गई है और विभिन्न बड़े भाषा मॉडल्स (LLMs) जैसे Llama पर इन्फ़ेरेंस करती है। इसका मुख्य उद्देश्य न्यूनतम सेटअप के साथ विभिन्न हार्डवेयर पर अत्याधुनिक प्रदर्शन प्रदान करना है। इसके अलावा, इस लाइब्रेरी के लिए Python बाइंडिंग्स भी उपलब्ध हैं, जो टेक्स्ट कंप्लीशन और OpenAI संगत वेब सर्वर के लिए एक उच्च-स्तरीय API प्रदान करती हैं।
+llama.cpp သည် C++ ဖြင့်ရေးသားထားသော open-source software library တစ်ခုဖြစ်ပြီး Llama ကဲ့သို့သော အကြီးစား ဘာသာစကားမော်ဒယ်များ (LLMs) တွင် inference ပြုလုပ်ရန် အသုံးပြုသည်။ ၎င်း၏ အဓိကရည်ရွယ်ချက်မှာ hardware မျိုးစုံတွင် setup နည်းနည်းဖြင့် LLM inference အတွက် နောက်ဆုံးပေါ် စွမ်းဆောင်ရည်ကို ပေးနိုင်ရန်ဖြစ်သည်။ ထို့အပြင် Python bindings များလည်း ရရှိနိုင်ပြီး၊ text completion အတွက် high-level API နှင့် OpenAI နှင့် ကိုက်ညီသော web server ကို ပံ့ပိုးပေးသည်။
 
-llama.cpp का मुख्य लक्ष्य न्यूनतम सेटअप के साथ और अत्याधुनिक प्रदर्शन के साथ स्थानीय और क्लाउड दोनों में विभिन्न प्रकार के हार्डवेयर पर LLM इन्फ़ेरेंस सक्षम करना है।
+llama.cpp ၏ အဓိကရည်ရွယ်ချက်မှာ hardware မျိုးစုံတွင် မိမိ device တွင် သို့မဟုတ် cloud ပေါ်တွင် setup နည်းနည်းဖြင့် နောက်ဆုံးပေါ် စွမ်းဆောင်ရည်ဖြင့် LLM inference ပြုလုပ်နိုင်ရန်ဖြစ်သည်။
 
-- बिना किसी डिपेंडेंसी के सरल C/C++ इम्प्लीमेंटेशन
-- Apple silicon को प्राथमिकता - ARM NEON, Accelerate और Metal फ्रेमवर्क्स के माध्यम से अनुकूलित
-- x86 आर्किटेक्चर के लिए AVX, AVX2 और AVX512 समर्थन
-- तेज़ इन्फ़ेरेंस और कम मेमोरी उपयोग के लिए 1.5-बिट, 2-बिट, 3-बिट, 4-बिट, 5-बिट, 6-बिट और 8-बिट इंटेजर क्वांटाइज़ेशन
-- NVIDIA GPUs पर LLMs चलाने के लिए कस्टम CUDA कर्नल्स (AMD GPUs के लिए HIP समर्थन)
-- Vulkan और SYCL बैकएंड समर्थन
-- CPU+GPU हाइब्रिड इन्फ़ेरेंस, जो कुल VRAM क्षमता से बड़े मॉडल्स को आंशिक रूप से तेज़ करता है
+- အခြေခံ C/C++ ဖြင့် dependencies မလိုအပ်ဘဲ အကောင်အထည်ဖော်ထားခြင်း
+- Apple silicon ကို ပထမတန်းစား အနေဖြင့် ARM NEON, Accelerate နှင့် Metal frameworks များဖြင့် အထူးပြု optimize ပြုလုပ်ထားခြင်း
+- x86 architecture များအတွက် AVX, AVX2 နှင့် AVX512 ပံ့ပိုးမှု
+- inference လျင်မြန်စေရန်နှင့် memory သုံးစွဲမှု လျော့နည်းစေရန် 1.5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit, နှင့် 8-bit integer quantization များ
+- NVIDIA GPU များတွင် LLM များကို လည်ပတ်စေသော custom CUDA kernels (AMD GPU များအတွက် HIP ဖြင့် ပံ့ပိုးမှု)
+- Vulkan နှင့် SYCL backend ပံ့ပိုးမှု
+- VRAM စွမ်းရည်ကျော်မည့် မော်ဒယ်များအတွက် CPU+GPU hybrid inference ဖြင့် အချို့အပိုင်းများကို အမြန်ပြုလုပ်နိုင်ခြင်း
 
-## **Phi-3.5 को llama.cpp से क्वांटाइज़ करना**
+## **Quantizing Phi-3.5 with llama.cpp**
 
-Phi-3.5-Instruct मॉडल को llama.cpp का उपयोग करके क्वांटाइज़ किया जा सकता है, लेकिन Phi-3.5-Vision और Phi-3.5-MoE अभी समर्थित नहीं हैं। llama.cpp द्वारा परिवर्तित फॉर्मेट GGUF है, जो सबसे व्यापक रूप से उपयोग किया जाने वाला क्वांटाइज़ेशन फॉर्मेट भी है।
+Phi-3.5-Instruct မော်ဒယ်ကို llama.cpp ဖြင့် quantize ပြုလုပ်နိုင်သော်လည်း Phi-3.5-Vision နှင့် Phi-3.5-MoE များကို မထောက်ပံ့သေးပါ။ llama.cpp မှ ပြောင်းလဲသည့် format သည် gguf ဖြစ်ပြီး၊ quantization အတွက် အများဆုံး အသုံးပြုသော format ဖြစ်သည်။
 
-Hugging Face पर GGUF फॉर्मेट में कई क्वांटाइज़्ड मॉडल्स उपलब्ध हैं। AI Foundry, Ollama, और LlamaEdge llama.cpp पर निर्भर करते हैं, इसलिए GGUF मॉडल्स का उपयोग अक्सर किया जाता है।
+Hugging face တွင် quantized GGUF format မော်ဒယ်များ အများအပြား ရှိသည်။ AI Foundry, Ollama နှင့် LlamaEdge များသည် llama.cpp ကို အခြေခံထားပြီး GGUF မော်ဒယ်များကိုလည်း မကြာခဏ အသုံးပြုကြသည်။
 
-### **GGUF क्या है**
+### **What's GGUF**
 
-GGUF एक बाइनरी फॉर्मेट है, जो मॉडल्स को तेज़ी से लोड और सेव करने के लिए अनुकूलित है, जिससे यह इन्फ़ेरेंस उद्देश्यों के लिए अत्यधिक कुशल बनता है। GGUF को GGML और अन्य एक्सीक्यूटर्स के साथ उपयोग के लिए डिज़ाइन किया गया है। GGUF को @ggerganov द्वारा विकसित किया गया था, जो llama.cpp के डेवलपर भी हैं, एक लोकप्रिय C/C++ LLM इन्फ़ेरेंस फ्रेमवर्क। PyTorch जैसे फ्रेमवर्क्स में विकसित मॉडल्स को GGUF फॉर्मेट में परिवर्तित किया जा सकता है ताकि वे इन इंजनों के साथ उपयोग किए जा सकें।
+GGUF သည် မော်ဒယ်များကို လျင်မြန်စွာ load နှင့် save ပြုလုပ်ရန် အထူး optimize ပြုလုပ်ထားသော binary format ဖြစ်ပြီး inference အတွက် ထူးခြားစွာ ထိရောက်သည်။ GGUF သည် GGML နှင့် အခြား executor များတွင် အသုံးပြုရန် ရည်ရွယ်ထားသည်။ GGUF ကို llama.cpp ၏ ဖန်တီးသူ @ggerganov က ဖန်တီးခဲ့ပြီး llama.cpp သည် C/C++ LLM inference framework အဖြစ် နာမည်ကြီးသည်။ PyTorch ကဲ့သို့သော framework များတွင် ဖန်တီးထားသော မော်ဒယ်များကို GGUF format သို့ ပြောင်းလဲ၍ အသုံးပြုနိုင်သည်။
 
-### **ONNX बनाम GGUF**
+### **ONNX vs GGUF**
 
-ONNX एक पारंपरिक मशीन लर्निंग/डीप लर्निंग फॉर्मेट है, जो विभिन्न AI फ्रेमवर्क्स में अच्छी तरह से समर्थित है और एज डिवाइसेस में उपयोग के अच्छे परिदृश्य प्रदान करता है। GGUF, llama.cpp पर आधारित है और इसे GenAI युग में उत्पादित माना जा सकता है। दोनों के उपयोग समान हैं। यदि आप एंबेडेड हार्डवेयर और एप्लिकेशन लेयर में बेहतर प्रदर्शन चाहते हैं, तो ONNX आपका विकल्प हो सकता है। यदि आप llama.cpp के डेरिवेटिव फ्रेमवर्क और तकनीक का उपयोग करते हैं, तो GGUF बेहतर हो सकता है।
+ONNX သည် ရိုးရာ machine learning/deep learning format တစ်ခုဖြစ်ပြီး AI Framework များစွာတွင် ကောင်းစွာ ထောက်ပံ့ထားပြီး edge device များတွင် အသုံးပြုမှု ကောင်းမွန်သည်။ GGUF သည် llama.cpp အခြေခံပြီး GenAI ခေတ်တွင် ဖန်တီးထားသော format ဖြစ်သည်။ နှစ်ခုစလုံး အသုံးပြုမှုများ ဆင်တူသည်။ embedded hardware နှင့် application layer များတွင် ပိုမိုကောင်းမွန်သော စွမ်းဆောင်ရည်လိုလျှင် ONNX ကို ရွေးချယ်နိုင်သည်။ llama.cpp ၏ derivative framework နှင့် နည်းပညာများကို အသုံးပြုလျှင် GGUF သည် ပိုမိုသင့်တော်သည်။
 
-### **Phi-3.5-Instruct को llama.cpp से क्वांटाइज़ करना**
+### **Quantization Phi-3.5-Instruct using llama.cpp**
 
-**1. पर्यावरण सेटअप**
+**1. Environment Configuration**
 
 
 ```bash
@@ -53,9 +53,9 @@ make -j8
 ```
 
 
-**2. क्वांटाइज़ेशन**
+**2. Quantization**
 
-llama.cpp का उपयोग करके Phi-3.5-Instruct को FP16 GGUF में बदलना
+llama.cpp ကို အသုံးပြုပြီး Phi-3.5-Instruct ကို FP16 GGUF သို့ ပြောင်းလဲခြင်း
 
 
 ```bash
@@ -64,7 +64,7 @@ llama.cpp का उपयोग करके Phi-3.5-Instruct को FP16 GGUF 
 
 ```
 
-Phi-3.5 को INT4 में क्वांटाइज़ करना
+Phi-3.5 ကို INT4 သို့ quantize ပြုလုပ်ခြင်း
 
 
 ```bash
@@ -74,9 +74,9 @@ Phi-3.5 को INT4 में क्वांटाइज़ करना
 ```
 
 
-**3. परीक्षण**
+**3. Testing**
 
-llama-cpp-python स्थापित करें
+llama-cpp-python ကို 설치
 
 
 ```bash
@@ -85,9 +85,9 @@ pip install llama-cpp-python -U
 
 ```
 
-***नोट*** 
+***Note*** 
 
-यदि आप Apple Silicon का उपयोग करते हैं, तो कृपया llama-cpp-python इस तरह स्थापित करें
+Apple Silicon ကို အသုံးပြုပါက llama-cpp-python ကို ဒီလို 설치ပါ
 
 
 ```bash
@@ -96,7 +96,7 @@ CMAKE_ARGS="-DLLAMA_METAL=on" pip install llama-cpp-python -U
 
 ```
 
-परीक्षण 
+စမ်းသပ်ခြင်း 
 
 
 ```bash
@@ -107,10 +107,11 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 
 
-## **संसाधन**
+## **Resources**
 
-1. llama.cpp के बारे में और जानें [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. llama.cpp အကြောင်းပိုမိုလေ့လာရန် [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+2. onnxruntime အကြောင်းပိုမိုလေ့လာရန် [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+3. GGUF အကြောင်းပိုမိုလေ့လာရန် [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
-2. GGUF के बारे में और जानें [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
-
-It seems you are asking for a translation into "mo." Could you clarify what "mo" refers to? For example, are you asking for a translation into Māori, Marshallese, or another language?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

@@ -1,111 +1,116 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "99474e9687279d0657412c806856b559",
-  "translation_date": "2025-04-04T13:00:55+00:00",
-  "source_file": "md\\02.Application\\04.Vision\\Phi3\\E2E_Nvidia_NIM_Vision.md",
+  "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
+  "translation_date": "2025-05-07T13:44:02+00:00",
+  "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "mo"
 }
 -->
-### Misali Yanayi
+### Example Scenario
 
-Ka yi tunanin kana da hoton (`demo.png`) kuma kana son samar da lambar Python da za ta sarrafa wannan hoto ta kuma adana sabon nau'in sa (`phi-3-vision.jpg`).
+Imagine you have an image (`demo.png`) and you want to generate Python code that processes this image and saves a new version of it (`phi-3-vision.jpg`).
 
-Lambar da ke sama tana sarrafa wannan tsari ta hanyar:
+The code above automates this process by:
 
-1. Kafa muhalli da kuma abubuwan da ake bukata.
-2. Kirkirar wani umarni da ke ba da shawara ga samfurin don samar da lambar Python da ake bukata.
-3. Aika umarnin zuwa samfurin da kuma tattara lambar da aka samar.
-4. Ciro da gudanar da lambar da aka samar.
-5. Nuna hoton asali da wanda aka sarrafa.
+1. Setting up the environment and necessary configurations.  
+2. Creating a prompt that instructs the model to generate the required Python code.  
+3. Sending the prompt to the model and collecting the generated code.  
+4. Extracting and running the generated code.  
+5. Displaying the original and processed images.
 
-Wannan dabarar tana amfani da karfin AI don sarrafa ayyukan sarrafa hoto, tana saukaka da kuma sauri wajen cimma burinka.
+This approach leverages the power of AI to automate image processing tasks, making it easier and faster to achieve your goals.
 
-[Samfurin Maganin Lamba](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
+[Sample Code Solution](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
 
-Bari mu bayyana abin da duka lambar ke yi mataki-mataki:
+Let's break down what the entire code does step by step:
 
-1. **Shigar da Kunshin da ake Bukata**:
+1. **Install Required Package**:  
     ```python
     !pip install langchain_nvidia_ai_endpoints -U
-    ```
-    Wannan umarni yana shigar da kunshin `langchain_nvidia_ai_endpoints`, yana tabbatar da cewa sabuwar sigar ce.
+    ```  
+    This command installs the `langchain_nvidia_ai_endpoints` package, ensuring it's the latest version.
 
-2. **Shigo da Moduli da ake Bukata**:
+2. **Import Necessary Modules**:  
     ```python
     from langchain_nvidia_ai_endpoints import ChatNVIDIA
     import getpass
     import os
     import base64
-    ```
-    Wadannan abubuwan shigo da suke kawo moduli da ake bukata don yin hulɗa da hanyoyin AI na NVIDIA, sarrafa kalmomin shiga cikin tsaro, yin hulɗa da tsarin aiki, da kuma loda/karanta bayanai a tsarin base64.
+    ```  
+    These imports bring in the necessary modules for interacting with the NVIDIA AI endpoints, handling passwords securely, interacting with the operating system, and encoding/decoding data in base64 format.
 
-3. **Kafa Maɓallin API**:
+3. **Set Up API Key**:  
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
-    ```
-    Wannan lambar tana duba ko an kafa mahallin `NVIDIA_API_KEY`. Idan ba haka ba, tana tambayar mai amfani don shigar da maɓallin API cikin tsaro.
+    ```  
+    This code checks if the `NVIDIA_API_KEY` environment variable is set. If not, it prompts the user to enter their API key securely.
 
-4. **Bayyana Samfurin da Hanyar Hoton**:
+4. **Define Model and Image Path**:  
     ```python
     model = 'microsoft/phi-3-vision-128k-instruct'
     chat = ChatNVIDIA(model=model)
     img_path = './imgs/demo.png'
-    ```
-    Wannan yana kafa samfurin da za a yi amfani da shi, yana ƙirƙirar wani abu na `ChatNVIDIA` tare da samfurin da aka fayyace, da kuma bayyana hanyar fayil ɗin hoton.
+    ```  
+    This sets the model to be used, creates an instance of `ChatNVIDIA` with the specified model, and defines the path to the image file.
 
-5. **Kirkirar Umarnin Rubutu**:
+5. **Create Text Prompt**:  
     ```python
     text = "Please create Python code for image, and use plt to save the new picture under imgs/ and name it phi-3-vision.jpg."
-    ```
-    Wannan yana fayyace wani umarnin rubutu wanda yake umartar samfurin don samar da lambar Python don sarrafa hoto.
+    ```  
+    This defines a text prompt instructing the model to generate Python code for processing an image.
 
-6. **Loda Hoton a Base64**:
+6. **Encode Image in Base64**:  
     ```python
     with open(img_path, "rb") as f:
         image_b64 = base64.b64encode(f.read()).decode()
     image = f'<img src="data:image/png;base64,{image_b64}" />'
-    ```
-    Wannan lambar tana karanta fayil ɗin hoton, tana loda shi a tsarin base64, kuma tana ƙirƙirar alamar HTML na hoto tare da bayanan da aka loda.
+    ```  
+    This code reads the image file, encodes it in base64, and creates an HTML image tag with the encoded data.
 
-7. **Hada Rubutu da Hoto cikin Umarnin**:
+7. **Combine Text and Image into Prompt**:  
     ```python
     prompt = f"{text} {image}"
-    ```
-    Wannan yana haɗa umarnin rubutu da alamar HTML na hoto cikin tsari guda.
+    ```  
+    This combines the text prompt and the HTML image tag into a single string.
 
-8. **Samar da Lamba Tare da ChatNVIDIA**:
+8. **Generate Code Using ChatNVIDIA**:  
     ```python
     code = ""
     for chunk in chat.stream(prompt):
         print(chunk.content, end="")
         code += chunk.content
-    ```
-    Wannan lambar tana aika umarnin zuwa `ChatNVIDIA` model and collects the generated code in chunks, printing and appending each chunk to the `code` string.
+    ```  
+    This code sends the prompt to the `ChatNVIDIA` model and collects the generated code in chunks, printing and appending each chunk to the `code` string.
 
-9. **Ciro Lambar Python daga Abun da Aka Samar**:
+9. **Extract Python Code from Generated Content**:  
     ```python
-    begin = code.index('```python') + 9
-    code = code[begin:]
+    begin = code.index('```python') + 9  
+    code = code[begin:]  
     end = code.index('```')
     code = code[:end]
-    ```
-    Wannan yana cire lambar Python daga abun da aka samar ta hanyar cire tsarin markdown.
+    ```  
+    This extracts the actual Python code from the generated content by removing the markdown formatting.
 
-10. **Gudanar da Lambar da Aka Samar**:
+10. **Run the Generated Code**:  
     ```python
     import subprocess
     result = subprocess.run(["python", "-c", code], capture_output=True)
-    ```
-    Wannan tana gudanar da lambar Python da aka cire a matsayin subprocess tana kuma tattara sakamakonta.
+    ```  
+    This runs the extracted Python code as a subprocess and captures its output.
 
-11. **Nuna Hotuna**:
+11. **Display Images**:  
     ```python
     from IPython.display import Image, display
     display(Image(filename='./imgs/phi-3-vision.jpg'))
     display(Image(filename='./imgs/demo.png'))
-    ```
-    Wadannan layukan suna nuna hotuna ta amfani da `IPython.display`.
+    ```  
+    These lines display the images using the `IPython.display` module.
 
-It seems you've requested a translation to "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or dialect (e.g., Maori, Mongolian, or something else)? Providing more context will help me assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language "mo" refers to? It could stand for several languages or dialects (e.g., Moldovan, Mohawk, or others). Providing the full name or additional context will help me give you an accurate translation.

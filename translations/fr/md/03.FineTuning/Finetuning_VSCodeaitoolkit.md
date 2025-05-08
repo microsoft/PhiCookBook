@@ -2,61 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-03-27T15:31:09+00:00",
-  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "translation_date": "2025-05-07T13:27:15+00:00",
+  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "fr"
 }
 -->
 ## Bienvenue dans AI Toolkit pour VS Code
 
-[AI Toolkit pour VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) regroupe divers modèles issus du catalogue Azure AI Studio ainsi que d'autres catalogues comme Hugging Face. Ce toolkit simplifie les tâches courantes de développement pour créer des applications IA avec des outils et modèles de génération d'IA grâce à :
-- Une prise en main rapide pour découvrir les modèles et utiliser le playground.
-- Le fine-tuning et l'inférence des modèles en utilisant des ressources informatiques locales.
-- Le fine-tuning et l'inférence à distance en utilisant des ressources Azure.
+[AI Toolkit pour VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) regroupe plusieurs modèles issus du catalogue Azure AI Studio ainsi que d’autres catalogues comme Hugging Face. Cette boîte à outils simplifie les tâches courantes de développement pour créer des applications IA avec des outils et modèles d’IA générative grâce à :
+- Découverte de modèles et espace de test pour débuter.
+- Affinage et inférence de modèles en utilisant les ressources locales.
+- Affinage et inférence à distance via les ressources Azure.
 
 [Installer AI Toolkit pour VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.fr.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.fr.png)
 
-**[Aperçu privé]** Provisionnement en un clic pour Azure Container Apps afin d'exécuter le fine-tuning et l'inférence des modèles dans le cloud.
+
+**[Private Preview]** Provisionnement en un clic pour Azure Container Apps afin d’exécuter l’affinage et l’inférence des modèles dans le cloud.
 
 Passons maintenant au développement de votre application IA :
 
 - [Bienvenue dans AI Toolkit pour VS Code](../../../../md/03.FineTuning)
 - [Développement local](../../../../md/03.FineTuning)
-  - [Préparations](../../../../md/03.FineTuning)
-  - [Activer Conda](../../../../md/03.FineTuning)
-  - [Fine-tuning uniquement du modèle de base](../../../../md/03.FineTuning)
-  - [Fine-tuning et inférence du modèle](../../../../md/03.FineTuning)
-  - [Fine-tuning du modèle](../../../../md/03.FineTuning)
+  - [Préparatifs](../../../../md/03.FineTuning)
+  - [Activation de Conda](../../../../md/03.FineTuning)
+  - [Affinage du modèle de base uniquement](../../../../md/03.FineTuning)
+  - [Affinage et inférence du modèle](../../../../md/03.FineTuning)
+  - [Affinage du modèle](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [Exemples et ressources pour le fine-tuning](../../../../md/03.FineTuning)
-- [**\[Aperçu privé\]** Développement à distance](../../../../md/03.FineTuning)
+  - [Exemples et ressources d’affinage](../../../../md/03.FineTuning)
+- [**\[Private Preview\]** Développement à distance](../../../../md/03.FineTuning)
   - [Prérequis](../../../../md/03.FineTuning)
-  - [Configurer un projet de développement à distance](../../../../md/03.FineTuning)
-  - [Provisionner des ressources Azure](../../../../md/03.FineTuning)
-  - [\[Optionnel\] Ajouter un token Huggingface au secret de l'application Azure Container Apps](../../../../md/03.FineTuning)
-  - [Exécuter le fine-tuning](../../../../md/03.FineTuning)
-  - [Provisionner un point de terminaison pour l'inférence](../../../../md/03.FineTuning)
-  - [Déployer le point de terminaison pour l'inférence](../../../../md/03.FineTuning)
+  - [Configuration d’un projet de développement à distance](../../../../md/03.FineTuning)
+  - [Provisionnement des ressources Azure](../../../../md/03.FineTuning)
+  - [\[Optionnel\] Ajout du token Huggingface au secret de l’Azure Container App](../../../../md/03.FineTuning)
+  - [Lancer l’affinage](../../../../md/03.FineTuning)
+  - [Provisionnement du point d’inférence](../../../../md/03.FineTuning)
+  - [Déploiement du point d’inférence](../../../../md/03.FineTuning)
   - [Utilisation avancée](../../../../md/03.FineTuning)
 
 ## Développement local
-### Préparations
+### Préparatifs
 
-1. Assurez-vous que le pilote NVIDIA est installé sur l’hôte.
-2. Exécutez `huggingface-cli login` si vous utilisez HF pour l'utilisation des ensembles de données.
-3. `Olive` Explications des paramètres clés pour tout ce qui modifie l'utilisation de la mémoire.
+1. Assurez-vous que le pilote NVIDIA est installé sur l’hôte.  
+2. Exécutez `huggingface-cli login` si vous utilisez HF pour l’utilisation de datasets.  
+3. `Olive` explications des paramètres clés pour tout ce qui modifie l’utilisation de la mémoire.
 
-### Activer Conda
-Étant donné que nous utilisons un environnement WSL partagé, vous devez activer manuellement l'environnement conda. Après cette étape, vous pouvez exécuter le fine-tuning ou l'inférence.
+### Activation de Conda
+Puisque nous utilisons un environnement WSL partagé, vous devez activer manuellement l’environnement conda. Après cette étape, vous pouvez lancer l’affinage ou l’inférence.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### Fine-tuning uniquement du modèle de base
-Pour simplement tester le modèle de base sans fine-tuning, vous pouvez exécuter cette commande après avoir activé conda.
+### Affinage du modèle de base uniquement
+Pour simplement tester le modèle de base sans affinage, vous pouvez exécuter cette commande après avoir activé conda.
 
 ```bash
 cd inference
@@ -66,9 +67,9 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### Fine-tuning et inférence du modèle
+### Affinage et inférence du modèle
 
-Une fois l'espace de travail ouvert dans un conteneur de développement, ouvrez un terminal (le chemin par défaut est la racine du projet), puis exécutez la commande ci-dessous pour affiner un LLM sur l'ensemble de données sélectionné.
+Une fois l’espace de travail ouvert dans un conteneur de développement, ouvrez un terminal (le chemin par défaut est la racine du projet), puis lancez la commande ci-dessous pour affiner un LLM sur le dataset sélectionné.
 
 ```bash
 python finetuning/invoke_olive.py 
@@ -134,7 +135,7 @@ We use [Olive](https://microsoft.github.io/Olive/why-olive.html) to run QLoRA fi
 - [Remote Fine tuning](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
 
 ### Setting Up a Remote Development Project
-1. Execute the command palette `AI Toolkit: Focus on Resource View`.
+1. Execute the command palette `AI Toolkit : Concentration sur la vue Ressources`.
 2. Navigate to *Model Fine-tuning* to access the model catalog. Assign a name to your project and select its location on your machine. Then, hit the *"Configure Project"* button.
 3. Project Configuration
     1. Avoid enabling the *"Fine-tune locally"* option.
@@ -145,37 +146,37 @@ We use [Olive](https://microsoft.github.io/Olive/why-olive.html) to run QLoRA fi
 > **Note:** The project currently works either locally or remotely within the AI Toolkit for VS Code. If you choose *"Fine-tune locally"* during project creation, it will operate exclusively in WSL without remote development capabilities. On the other hand, if you forego enabling *"Fine-tune locally"*, the project will be restricted to the remote Azure Container App environment.
 
 ### Provision Azure Resources
-To get started, you need to provision the Azure Resource for remote fine-tuning. Do this by running the `AI Toolkit: Provision Azure Container Apps job for fine-tuning` from the command palette.
+To get started, you need to provision the Azure Resource for remote fine-tuning. Do this by running the `AI Toolkit : Provisionnement Azure Container Apps pour l’affinage` from the command palette.
 
 Monitor the progress of the provision through the link displayed in the output channel.
 
 ### [Optional] Add Huggingface Token to the Azure Container App Secret
 If you're using private HuggingFace dataset, set your HuggingFace token as an environment variable to avoid the need for manual login on the Hugging Face Hub.
-You can do this using the `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning command`. With this command, you can set the secret name as [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) and use your Hugging Face token as the secret value.
+You can do this using the `AI Toolkit : Ajout du secret Azure Container Apps pour l’affinage`. With this command, you can set the secret name as [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) and use your Hugging Face token as the secret value.
 
 ### Run Fine-tuning
-To start the remote fine-tuning job, execute the `AI Toolkit: Run fine-tuning` command.
+To start the remote fine-tuning job, execute the `AI Toolkit : Lancer l’affinage` command.
 
-To view the system and console logs, you can visit the Azure portal using the link in the output panel (more steps at [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Or, you can view the console logs directly in the VSCode output panel by running the command `AI Toolkit: Show the running fine-tuning job streaming logs`. 
-> **Note:** The job might be queued due to insufficient resources. If the log is not displayed, execute the `AI Toolkit: Show the running fine-tuning job streaming logs` command, wait for a while and then execute the command again to re-connect to the streaming log.
+To view the system and console logs, you can visit the Azure portal using the link in the output panel (more steps at [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Or, you can view the console logs directly in the VSCode output panel by running the command `AI Toolkit : Afficher les logs en streaming de la tâche d’affinage en cours`. 
+> **Note:** The job might be queued due to insufficient resources. If the log is not displayed, execute the `AI Toolkit : Afficher les logs en streaming de la tâche d’affinage en cours` command, wait for a while and then execute the command again to re-connect to the streaming log.
 
 During this process, QLoRA will be used for fine-tuning, and will create LoRA adapters for the model to use during inference.
 The results of the fine-tuning will be stored in the Azure Files.
 
 ### Provision Inference Endpoint
 After the adapters are trained in the remote environment, use a simple Gradio application to interact with the model.
-Similar to the fine-tuning process, you need to set up the Azure Resources for remote inference by executing the `AI Toolkit: Provision Azure Container Apps for inference` from the command palette.
+Similar to the fine-tuning process, you need to set up the Azure Resources for remote inference by executing the `AI Toolkit : Provisionnement Azure Container Apps pour l’inférence` from the command palette.
 
 By default, the subscription and the resource group for inference should match those used for fine-tuning. The inference will use the same Azure Container App Environment and access the model and model adapter stored in Azure Files, which were generated during the fine-tuning step. 
 
 
 ### Deploy the Inference Endpoint
-If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
+If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit : Déploiement pour l’inférence` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` et dans le panneau de sortie. Vous êtes maintenant prêt à évaluer le modèle en utilisant ce point de terminaison.
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` et dans le panneau de sortie. Vous êtes maintenant prêt à évaluer le modèle via ce point d’accès.
 
 ### Utilisation avancée
-Pour plus d'informations sur le développement à distance avec AI Toolkit, consultez la documentation [Fine-Tuning des modèles à distance](https://aka.ms/ai-toolkit/remote-provision) et [Inférence avec le modèle affiné](https://aka.ms/ai-toolkit/remote-inference).
+Pour plus d’informations sur le développement à distance avec AI Toolkit, consultez la documentation [Affinage des modèles à distance](https://aka.ms/ai-toolkit/remote-provision) et [Inférence avec le modèle affiné](https://aka.ms/ai-toolkit/remote-inference).
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatisée [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de faire appel à une traduction professionnelle humaine. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

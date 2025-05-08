@@ -1,33 +1,33 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b909b4ac6465d33e81adb17df38deef3",
-  "translation_date": "2025-04-04T11:59:27+00:00",
-  "source_file": "md\\01.Introduction\\03\\Android_Inference.md",
+  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
+  "translation_date": "2025-05-07T14:31:58+00:00",
+  "source_file": "md/01.Introduction/03/Android_Inference.md",
   "language_code": "mo"
 }
 -->
-# **Inference Phi-3 په Android کې**
+# **Inference Phi-3 en Android**
 
-راځئ چې وګورو څنګه کولای شئ په Android وسیلو کې د Phi-3-mini سره inference ترسره کړئ. Phi-3-mini د مایکروسافټ نوې ماډل لړۍ ده چې د لوی ژبنیو ماډلونو (LLMs) د edge وسیلو او IoT وسیلو کې ځای پر ځای کولو ته اجازه ورکوي.
+Exploremos cómo puedes realizar inferencias con Phi-3-mini en dispositivos Android. Phi-3-mini es una nueva serie de modelos de Microsoft que permite desplegar Modelos de Lenguaje Grande (LLMs) en dispositivos edge y dispositivos IoT.
 
-## د Semantic Kernel او Inference
+## Semantic Kernel e Inferencia
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel) یو اپلیکیشن چوکاټ دی چې تاسو ته اجازه درکوي د Azure OpenAI Service، د OpenAI ماډلونو، او حتی محلي ماډلونو سره سازګار اپلیکیشنونه جوړ کړئ. که تاسو د Semantic Kernel سره نوي یاست، موږ وړاندیز کوو چې د [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) وګورئ.
+[Semantic Kernel](https://github.com/microsoft/semantic-kernel) es un marco de aplicaciones que te permite crear aplicaciones compatibles con Azure OpenAI Service, modelos OpenAI e incluso modelos locales. Si eres nuevo en Semantic Kernel, te recomendamos revisar el [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
 
-### د Phi-3-mini ته د لاسرسي لپاره د Semantic Kernel کارول
+### Para acceder a Phi-3-mini usando Semantic Kernel
 
-تاسو کولی شئ دا د Semantic Kernel کې د Hugging Face Connector سره یوځای کړئ. د دې لپاره دې [Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo) ته مراجعه وکړئ.
+Puedes combinarlo con el Hugging Face Connector en Semantic Kernel. Consulta este [Código de ejemplo](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
 
-په ډیفالټ توګه، دا د Hugging Face د ماډل ID سره مطابقت لري. خو تاسو کولی شئ د محلي جوړ شوي Phi-3-mini ماډل سرور سره هم وصل شئ.
+Por defecto, corresponde al ID del modelo en Hugging Face. Sin embargo, también puedes conectarte a un servidor de modelo Phi-3-mini construido localmente.
 
-### د Quantized ماډلونو غوښتنه د Ollama یا LlamaEdge سره
+### Llamando a modelos cuantificados con Ollama o LlamaEdge
 
-ډیری کاروونکي د ماډلونو محلي چلولو لپاره د Quantized ماډلونو کارولو ته ترجیح ورکوي. [Ollama](https://ollama.com/) او [LlamaEdge](https://llamaedge.com) انفرادي کاروونکو ته اجازه ورکوي چې مختلف Quantized ماډلونه وغواړي:
+Muchos usuarios prefieren usar modelos cuantificados para ejecutar modelos localmente. [Ollama](https://ollama.com/) y [LlamaEdge](https://llamaedge.com) permiten a usuarios individuales llamar a diferentes modelos cuantificados:
 
 #### Ollama
 
-تاسو کولی شئ په مستقیم ډول `ollama run Phi-3` اجرا کړئ یا دا آفلاین ترتیب کړئ د `Modelfile` په جوړولو سره چې د `.gguf` فایل ته لارښود کوي.
+Puedes ejecutarlo directamente con `ollama run Phi-3` o configurarlo sin conexión creando un `Modelfile` con la ruta a tu archivo `.gguf`.
 
 ```gguf
 FROM {Add your gguf file path}
@@ -36,18 +36,23 @@ PARAMETER stop <|end|>
 PARAMETER num_ctx 4096
 ```
 
-[Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
+[Código de ejemplo](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
 
 #### LlamaEdge
 
-که تاسو غواړئ `.gguf` فایلونه په کلاوډ او edge وسیلو کې په یو وخت کې وکاروئ، LlamaEdge یوه غوره انتخاب ده. د پیل لپاره تاسو دې [sample code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) ته مراجعه وکړئ.
+Si deseas usar archivos `.gguf` en la nube y en dispositivos edge al mismo tiempo, LlamaEdge es una excelente opción. Puedes consultar este [código de ejemplo](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) para comenzar.
 
-### په Android موبایلونو کې نصب او چلول
+### Instalar y ejecutar en teléfonos Android
 
-1. **د MLC Chat اپلیکیشن ډاونلوډ کړئ** (وړیا) د Android موبایلونو لپاره.
-2. د APK فایل (148MB) ډاونلوډ کړئ او په خپل وسیله یې نصب کړئ.
-3. د MLC Chat اپلیکیشن لانچ کړئ. تاسو به د AI ماډلونو لیست وګورئ چې Phi-3-mini پکې شامل دی.
+1. **Descarga la app MLC Chat** (Gratis) para teléfonos Android.  
+2. Descarga el archivo APK (148MB) e instálalo en tu dispositivo.  
+3. Abre la app MLC Chat. Verás una lista de modelos de IA, incluyendo Phi-3-mini.
 
-په لنډ ډول، Phi-3-mini د جنریټیف AI لپاره په edge وسیلو کې د زړه پورې امکاناتو دروازې پرانیزي، او تاسو کولی شئ په Android کې د دې وړتیاوې وپلټئ.
+En resumen, Phi-3-mini abre posibilidades emocionantes para la IA generativa en dispositivos edge, y puedes comenzar a explorar sus capacidades en Android.
 
-It seems like "mo" might refer to a specific language, but it's not clear which one you're referring to. Could you please clarify the language you'd like me to translate the text into? For example, is it Maori, Mongolian, or something else? Let me know so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+(Note: "mo" is not a recognized language code or language name in common language databases. Could you please clarify what language "mo" refers to?)

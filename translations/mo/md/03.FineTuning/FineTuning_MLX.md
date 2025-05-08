@@ -1,26 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b1ec18a3db0bb90ba8483eceade60031",
-  "translation_date": "2025-04-04T13:25:11+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_MLX.md",
+  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
+  "translation_date": "2025-05-07T13:26:57+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "mo"
 }
 -->
-# **Phi-3-ийг Apple MLX Framework ашиглан нарийвчлан тохируулах**
+# **Fine-tuning Phi-3 with Apple MLX Framework**
 
-Apple MLX Framework-ийн командын мөрийг ашиглан LoRA-тай хослуулан нарийвчлан тохируулах ажлыг гүйцэтгэж болно. (Хэрэв та MLX Framework-ийн ажиллагааны талаар илүү ихийг мэдэхийг хүсвэл [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)-г уншина уу.)
+We can complete fine-tuning combined with Lora through the Apple MLX framework command line. (If you want to know more about the operation of MLX Framework, please read [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
+## **1. Data preparation**
 
-## **1. Өгөгдөл бэлтгэх**
+By default, MLX Framework requires the jsonl format of train, test, and eval, and is combined with Lora to complete fine-tuning jobs.
 
-Анхдагч байдлаар, MLX Framework нь сургалт, шалгалт, үнэлгээний jsonl форматыг шаарддаг бөгөөд LoRA-тай хослуулан нарийвчлан тохируулах ажлыг гүйцэтгэдэг.
+### ***Note:***
 
-
-### ***Тэмдэглэл:***
-
-1. jsonl өгөгдлийн формат :
-
+1. jsonl data format：
 
 ```json
 
@@ -31,17 +28,15 @@ Apple MLX Framework-ийн командын мөрийг ашиглан LoRA-т�
 
 ```
 
-2. Бидний жишээнд [TruthfulQA-гийн өгөгдөл](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)-ийг ашигласан, гэхдээ өгөгдлийн хэмжээ харьцангуй бага тул нарийвчлалын үр дүн заавал хамгийн сайн байх албагүй. Суралцагчид өөрсдийн нөхцөл байдалд тохируулан илүү сайн өгөгдөл ашиглахыг зөвлөж байна.
+2. Our example uses [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), but the amount of data is relatively insufficient, so the fine-tuning results may not be optimal. It is recommended that learners use better data based on their own scenarios to complete the process.
 
-3. Өгөгдлийн формат нь Phi-3 загварын загвартай хослуулсан
+3. The data format is combined with the Phi-3 template
 
-Энэ [холбоосоос](../../../../code/04.Finetuning/mlx) өгөгдлийг татаж авна уу, ***data*** хавтсанд байгаа бүх .jsonl файлуудыг оруулна уу.
+Please download data from this [link](../../../../code/04.Finetuning/mlx), make sure to include all .jsonl files in the ***data*** folder
 
+## **2. Fine-tuning in your terminal**
 
-## **2. Терминал дээр нарийвчлан тохируулах**
-
-Терминал дээр дараах командыг ажиллуулна уу
-
+Please run this command in terminal
 
 ```bash
 
@@ -49,13 +44,11 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ```
 
+## ***Note:***
 
-## ***Тэмдэглэл:***
+1. This is LoRA fine-tuning; the MLX framework does not support QLoRA yet.
 
-1. Энэ бол LoRA нарийвчлал, MLX Framework нь QLoRA-г гаргаагүй
-
-2. config.yaml файлыг ашиглан зарим параметрүүдийг өөрчлөх боломжтой, жишээ нь:
-
+2. You can modify config.yaml to change some parameters, such as
 
 ```yaml
 
@@ -125,8 +118,7 @@ lora_parameters:
 
 ```
 
-Терминал дээр дараах командыг ажиллуулна уу
-
+Please run this command in terminal
 
 ```bash
 
@@ -134,11 +126,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ```
 
+## **3. Run Fine-tuning adapter to test**
 
-## **3. Нарийвчилсан тохиргооны адаптерийг турших**
-
-Терминал дээр нарийвчилсан тохиргооны адаптерийг дараах байдлаар ажиллуулна уу
-
+You can run the fine-tuning adapter in terminal like this
 
 ```bash
 
@@ -146,8 +136,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-дараа нь эх загварыг ажиллуулж үр дүнг харьцуулна уу
-
+and run the original model to compare results
 
 ```bash
 
@@ -155,11 +144,9 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Нарийвчилсан тохиргооны үр дүнг эх загвартай харьцуулахыг оролдож үзээрэй
+Feel free to compare the outputs of the fine-tuned model with the original one
 
-
-## **4. Адаптеруудыг нэгтгэж шинэ загвар үүсгэх**
-
+## **4. Merge adapters to generate new models**
 
 ```bash
 
@@ -167,10 +154,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Ollama ашиглан тоон нарийвчилсан загварыг ажиллуулах**
+## **5. Running quantized fine-tuning models using ollama**
 
-Хэрэглэхийн өмнө llama.cpp орчныг тохируулна уу
-
+Before use, please configure your llama.cpp environment
 
 ```bash
 
@@ -184,14 +170,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Тэмдэглэл:*** 
+***Note:***
 
-1. Одоо fp32, fp16 болон INT 8-ийн тоон хувиргалтыг дэмжиж байна
+1. Currently supports quantization conversion for fp32, fp16, and INT8
 
-2. Нэгтгэсэн загвар нь tokenizer.model байхгүй, үүнийг дараах хаягаас татаж авна уу: https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. The merged model lacks tokenizer.model, please download it from https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-[Ollama загвар](https://ollama.com/)-ыг тохируулна уу
-
+Set up a [Ollama Model](https://ollama.com/)
 
 ```txt
 
@@ -200,8 +185,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Терминал дээр дараах командыг ажиллуулна уу
-
+Run the command in terminal
 
 ```bash
 
@@ -211,6 +195,11 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Баяр хүргэе! MLX Framework-ийг ашиглан нарийвчлан тохируулах аргыг эзэмшлээ
+Congratulations! You’ve mastered fine-tuning with the MLX Framework
 
-It seems like you are requesting a translation into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect? Examples include Maori, Montenegrin, or something else entirely. Please provide more context so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+I’m not familiar with a language called “mo.” Could you please clarify which language or dialect you mean by “mo”? For example, is it a language code, a shorthand, or a specific language name? This will help me provide an accurate translation.

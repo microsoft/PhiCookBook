@@ -1,75 +1,81 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "01a5ee7478befb159e2b7ded29832206",
-  "translation_date": "2025-04-04T12:19:37+00:00",
-  "source_file": "md\\01.Introduction\\05\\Promptflow.md",
+  "original_hash": "3cbe7629d254f1043193b7fe22524d55",
+  "translation_date": "2025-05-07T14:46:48+00:00",
+  "source_file": "md/01.Introduction/05/Promptflow.md",
   "language_code": "mo"
 }
 -->
-# **Tanıştır Promptflow**
+# **Introduce Promptflow**
 
-[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo), kullanıcıların önceden hazırlanmış şablonlar ve özel bağlayıcılar kullanarak otomatik iş akışları oluşturmasına olanak tanıyan görsel bir iş akışı otomasyon aracıdır. Veri yönetimi, iş birliği ve süreç optimizasyonu gibi görevler için hızlı bir şekilde otomatik süreçler oluşturmayı sağlar. Prompt Flow ile kullanıcılar farklı hizmetleri, uygulamaları ve sistemleri kolayca bağlayabilir ve karmaşık iş süreçlerini otomatikleştirebilir.
+[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) is a visual workflow automation tool that enables users to build automated workflows using ready-made templates and custom connectors. It’s designed to help developers and business analysts quickly create automated processes for tasks like data management, collaboration, and process optimization. With Prompt Flow, users can easily link various services, applications, and systems, automating complex business workflows.
 
-Microsoft Prompt Flow, Büyük Dil Modelleri (LLM'ler) tarafından desteklenen yapay zeka uygulamalarının uçtan uca geliştirme sürecini kolaylaştırmak için tasarlanmıştır. İster fikir geliştirme, prototipleme, test etme, değerlendirme, ister dağıtım aşamasında olun, Prompt Flow süreci basitleştirir ve üretim kalitesinde LLM uygulamaları oluşturmanıza olanak tanır.
+Microsoft Prompt Flow aims to streamline the full development cycle of AI applications powered by Large Language Models (LLMs). Whether you’re brainstorming, prototyping, testing, evaluating, or deploying LLM-based applications, Prompt Flow simplifies the workflow and helps you build production-quality LLM apps.
 
-## Microsoft Prompt Flow'u kullanmanın temel özellikleri ve avantajları şunlardır:
+## Here are the key features and benefits of using Microsoft Prompt Flow:
 
-**Etkileşimli Yazım Deneyimi**
+**Interactive Authoring Experience**
 
-Prompt Flow, iş akışınızın yapısını görsel olarak temsil eder, bu da projelerinizi anlamayı ve gezinmeyi kolaylaştırır.
-Verimli iş akışı geliştirme ve hata ayıklama için not defteri benzeri bir kodlama deneyimi sunar.
+Prompt Flow offers a visual layout of your flow’s structure, making it simple to understand and navigate your projects.  
+It provides a notebook-like coding environment for efficient flow development and debugging.
 
-**Prompt Varyantları ve Ayarlama**
+**Prompt Variants and Tuning**
 
-Birden fazla prompt varyantı oluşturun ve karşılaştırın, böylece yinelemeli bir iyileştirme süreci kolaylaşır. Farklı prompt'ların performansını değerlendirin ve en etkili olanları seçin.
+Create and compare multiple prompt versions to support iterative refinement. Evaluate how different prompts perform and select the best ones.
 
-**Dahili Değerlendirme Akışları**
+**Built-in Evaluation Flows**
 
-Prompt'larınızın ve iş akışlarınızın kalitesini ve etkinliğini dahili değerlendirme araçlarıyla ölçün.
-LLM tabanlı uygulamalarınızın ne kadar iyi performans gösterdiğini anlayın.
+Evaluate the quality and effectiveness of your prompts and flows with built-in evaluation tools.  
+Gain insights into how well your LLM-based applications are performing.
 
-**Kapsamlı Kaynaklar**
+**Comprehensive Resources**
 
-Prompt Flow, yerleşik araçlar, örnekler ve şablonlardan oluşan bir kütüphane içerir. Bu kaynaklar geliştirme için bir başlangıç noktası sağlar, yaratıcılığı teşvik eder ve süreci hızlandırır.
+Prompt Flow includes a library of built-in tools, samples, and templates. These resources help you get started, spark creativity, and speed up development.
 
-**İş Birliği ve Kurumsal Hazırlık**
+**Collaboration and Enterprise Readiness**
 
-Birden fazla kullanıcının prompt mühendisliği projelerinde birlikte çalışmasına olanak tanıyarak ekip iş birliğini destekler.
-Sürüm kontrolünü koruyun ve bilgiyi etkili bir şekilde paylaşın. Prompt mühendisliği sürecinin tamamını, geliştirmeden değerlendirme, dağıtım ve izlemeye kadar kolaylaştırın.
+Enable team collaboration by allowing multiple users to work together on prompt engineering projects.  
+Maintain version control and share knowledge efficiently. Simplify the entire prompt engineering lifecycle, from development and evaluation to deployment and monitoring.
 
-## Prompt Flow'da Değerlendirme 
+## Evaluation in Prompt Flow
 
-Microsoft Prompt Flow'da değerlendirme, yapay zeka modellerinizin ne kadar iyi performans gösterdiğini ölçmek için kritik bir rol oynar. Prompt Flow'da değerlendirme akışlarını ve metrikleri nasıl özelleştirebileceğinizi keşfedelim:
+In Microsoft Prompt Flow, evaluation is key to measuring how well your AI models perform. Let’s look at how you can customize evaluation flows and metrics within Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.93c453890f4088830217fa7308b1a589058ed499bbfff160c85676066b5cbf2d.mo.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.mo.png)
 
-**Prompt Flow'da Değerlendirmeyi Anlamak**
+**Understanding Evaluation in Prompt Flow**
 
-Prompt Flow'da bir iş akışı, girdileri işleyen ve çıktılar üreten bir dizi düğümü temsil eder. Değerlendirme akışları, belirli kriterlere ve hedeflere göre bir çalışmanın performansını değerlendirmek için tasarlanmış özel iş akışlarıdır.
+A flow in Prompt Flow is a sequence of nodes that process input and generate output. Evaluation flows are specialized flows designed to assess the performance of a run based on specific criteria and goals.
 
-**Değerlendirme Akışlarının Temel Özellikleri**
+**Key features of evaluation flows**
 
-Test edilen iş akışının çıktıları kullanılarak genellikle testten sonra çalıştırılırlar. Test edilen iş akışının performansını ölçmek için skorlar veya metrikler hesaplarlar. Metrikler doğruluk, alaka düzeyi skorları veya diğer ilgili ölçümleri içerebilir.
+They usually run after the flow under test, using its outputs. They calculate scores or metrics to measure the tested flow’s performance. Metrics can include accuracy, relevance scores, or other relevant measures.
 
-### Değerlendirme Akışlarını Özelleştirme
+### Customizing Evaluation Flows
 
-**Girdi Tanımlama**
+**Defining Inputs**
 
-Değerlendirme akışları, test edilen çalışmanın çıktısını almalıdır. Girdileri standart iş akışlarına benzer şekilde tanımlayın. Örneğin, bir Soru-Cevap iş akışını değerlendiriyorsanız bir girdiyi "cevap" olarak adlandırın. Sınıflandırma iş akışını değerlendiriyorsanız bir girdiyi "kategori" olarak adlandırın. Gerçek değer girdileri (örneğin, gerçek etiketler) de gerekebilir.
+Evaluation flows need to accept the outputs of the flow being tested. Define inputs similarly to regular flows.  
+For example, when evaluating a QnA flow, name an input "answer." For a classification flow, name an input "category." Ground truth inputs (such as actual labels) may also be required.
 
-**Çıktılar ve Metrikler**
+**Outputs and Metrics**
 
-Değerlendirme akışları, test edilen iş akışının performansını ölçen sonuçlar üretir. Metrikler Python veya LLM (Büyük Dil Modelleri) kullanılarak hesaplanabilir. İlgili metrikleri kaydetmek için log_metric() işlevini kullanın.
+Evaluation flows produce results that quantify the tested flow’s performance. Metrics can be computed using Python or LLMs. Use the log_metric() function to record relevant metrics.
 
-**Özelleştirilmiş Değerlendirme Akışlarını Kullanma**
+**Using Customized Evaluation Flows**
 
-Belirli görevlerinize ve hedeflerinize uygun kendi değerlendirme akışınızı geliştirin. Değerlendirme hedeflerinize göre metrikleri özelleştirin. Bu özelleştirilmiş değerlendirme akışını büyük ölçekli testler için toplu çalışmalara uygulayın.
+Build your own evaluation flow tailored to your specific tasks and goals. Customize metrics based on your evaluation needs.  
+Apply this custom evaluation flow to batch runs for large-scale testing.
 
-## Dahili Değerlendirme Yöntemleri
+## Built-in Evaluation Methods
 
-Prompt Flow ayrıca dahili değerlendirme yöntemleri sağlar. Toplu çalışmalar göndererek iş akışınızın büyük veri setleriyle ne kadar iyi performans gösterdiğini değerlendirebilirsiniz. Değerlendirme sonuçlarını görüntüleyin, metrikleri karşılaştırın ve gerektiğinde yineleyin. Unutmayın, değerlendirme yapay zeka modellerinizin istenen kriterlere ve hedeflere ulaşmasını sağlamak için önemlidir. Microsoft Prompt Flow'da değerlendirme akışları geliştirme ve kullanma konusunda ayrıntılı talimatlar için resmi belgeleri inceleyin.
+Prompt Flow also offers built-in evaluation methods.  
+You can submit batch runs and use these methods to assess how well your flow performs on large datasets.  
+Review evaluation results, compare metrics, and iterate as needed.  
+Remember, evaluation is crucial to ensure your AI models meet the desired standards and objectives. Check the official documentation for detailed guidance on developing and using evaluation flows in Microsoft Prompt Flow.
 
-Özetle, Microsoft Prompt Flow, prompt mühendisliğini basitleştirerek ve sağlam bir geliştirme ortamı sunarak geliştiricilerin yüksek kaliteli LLM uygulamaları oluşturmasını sağlar. LLM'lerle çalışıyorsanız, Prompt Flow keşfetmek için değerli bir araçtır. Microsoft Prompt Flow'da değerlendirme akışları geliştirme ve kullanma konusunda ayrıntılı talimatlar için [Prompt Flow Değerlendirme Belgelerini](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) inceleyin.
+In summary, Microsoft Prompt Flow empowers developers to build high-quality LLM applications by simplifying prompt engineering and offering a strong development environment. If you work with LLMs, Prompt Flow is a valuable tool to explore. Visit the [Prompt Flow Evaluation Documents](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) for detailed instructions on creating and using evaluation flows in Microsoft Prompt Flow.
 
-It seems like "mo" might refer to a specific language, but could you clarify which language you are referring to? For example, "mo" could mean Maori, Montenegrin, or another language. Let me know so I can provide an accurate translation!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

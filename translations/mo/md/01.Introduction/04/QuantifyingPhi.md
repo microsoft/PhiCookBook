@@ -1,41 +1,41 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "418c693c63cc0e817dc560558f730a7a",
-  "translation_date": "2025-04-04T12:11:35+00:00",
-  "source_file": "md\\01.Introduction\\04\\QuantifyingPhi.md",
+  "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
+  "translation_date": "2025-05-07T14:49:45+00:00",
+  "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "mo"
 }
 -->
-# **Phi Family Quantization**
+# **Quantifying Phi Family**
 
-Quantization of models involves converting the parameters (like weights and activation values) of a neural network from a broad range of values (often continuous) to a smaller, finite range. This technique helps reduce model size and computational complexity, improving the efficiency of the model in environments with limited resources, such as mobile devices or embedded systems. While quantization compresses models by lowering parameter precision, it also introduces some accuracy loss. Therefore, it’s essential to strike a balance between model size, computational complexity, and accuracy during quantization. Common methods include fixed-point quantization and floating-point quantization. You can select the most suitable strategy based on specific scenarios and requirements.
+Model quantization means mapping the parameters (like weights and activation values) in a neural network model from a large range (usually continuous) to a smaller, finite range. This technique reduces the model’s size and computational load, improving efficiency in resource-limited environments such as mobile or embedded devices. Quantization compresses the model by lowering parameter precision but introduces some accuracy loss. Therefore, it’s important to balance model size, computational cost, and precision during quantization. Common methods include fixed-point and floating-point quantization. Choose the right strategy based on your specific scenario and needs.
 
-We aim to deploy GenAI models to edge devices, enabling broader access to GenAI applications, such as on mobile devices, AI PCs/Copilot PCs, and traditional IoT devices. By leveraging quantized models, we can adapt deployments to various edge devices. Coupled with acceleration frameworks and quantization models provided by hardware vendors, we can build more optimized SLM application scenarios.
+We aim to deploy GenAI models on edge devices, enabling more devices like mobiles, AI PC/Copilot+PC, and traditional IoT devices to enter GenAI scenarios. With quantized models, deployment can be tailored to different edge devices. Together with model acceleration frameworks and hardware vendor quantization models, we can create better SLM application scenarios.
 
-In quantization, we work with different levels of precision (INT4, INT8, FP16, FP32). Below is an overview of commonly used quantization precisions.
+In quantization, different precisions exist (INT4, INT8, FP16, FP32). Below is an overview of commonly used precisions:
 
 ### **INT4**
 
-INT4 quantization is an aggressive approach that converts model weights and activations into 4-bit integers. Due to the narrower representation range and reduced precision, INT4 quantization often results in greater accuracy loss. However, compared to INT8, INT4 can further lower storage demands and computational complexity. It's worth noting that INT4 quantization is less commonly used in practice because the reduced accuracy can significantly impact model performance. Additionally, not all hardware supports INT4 operations, so hardware compatibility must be considered when selecting this method.
+INT4 quantization is an aggressive method that converts model weights and activations into 4-bit integers. Due to the smaller range and lower precision, INT4 usually causes greater accuracy loss. However, compared to INT8, it further reduces storage and computational demands. INT4 is relatively rare in practice because too low precision can significantly degrade model performance. Also, not all hardware supports INT4 operations, so hardware compatibility must be considered when choosing this method.
 
 ### **INT8**
 
-INT8 quantization involves transforming model weights and activations from floating-point numbers to 8-bit integers. While INT8 offers a smaller numerical range and lower precision, it drastically reduces storage and computation requirements. During INT8 quantization, the model’s weights and activations undergo processes like scaling and offsetting to retain as much of the original floating-point data as possible. During inference, quantized values are temporarily dequantized back to floating-point numbers for calculations before being re-quantized to INT8 for subsequent steps. This approach balances computational efficiency with sufficient accuracy for most applications.
+INT8 quantization converts model weights and activations from floating point to 8-bit integers. Although INT8’s range and precision are lower, it significantly reduces storage and computation needs. The model’s weights and activations undergo quantization with scaling and offset to preserve floating point information as much as possible. During inference, these values are dequantized back to floating point for calculations, then re-quantized to INT8 for the next step. This approach provides adequate accuracy in most cases while maintaining high computational efficiency.
 
 ### **FP16**
 
-FP16, or 16-bit floating-point numbers (float16), cuts memory usage in half compared to FP32 (32-bit floating-point numbers), making it advantageous for large-scale deep learning tasks. FP16 allows larger models or more data to be processed within the same GPU memory constraints. With modern GPUs increasingly supporting FP16 operations, this format can also enhance computation speeds. However, FP16’s reduced precision may cause numerical instability or accuracy loss in certain cases.
+FP16, or 16-bit floating point (float16), halves memory usage compared to 32-bit float (float32), which is advantageous in large-scale deep learning. FP16 allows loading bigger models or handling more data within the same GPU memory limits. As modern GPUs increasingly support FP16 operations, it can also speed up computation. However, FP16 has lower precision, which can sometimes cause numerical instability or precision loss.
 
 ### **FP32**
 
-FP32 provides higher precision and can represent a broader range of values. It’s the preferred choice for scenarios requiring complex mathematical operations or high-accuracy results. However, this higher precision comes at the cost of increased memory usage and longer computation times. For large-scale deep learning models, FP32 may lead to GPU memory limitations or slower inference speeds due to the sheer volume of parameters and data.
+FP32 offers higher precision and accurately represents a wide range of values. It’s preferred for complex mathematical operations or when high-precision results are needed. However, higher accuracy means more memory usage and longer computation times. For large deep learning models with many parameters and huge data, FP32 may lead to insufficient GPU memory or slower inference.
 
-For mobile or IoT devices, Phi-3.x models can be converted to INT4, whereas AI PCs/Copilot PCs can utilize higher precisions like INT8, FP16, or FP32.
+On mobile or IoT devices, Phi-3.x models can be converted to INT4, while AI PC / Copilot PC can use higher precisions like INT8, FP16, or FP32.
 
-Currently, various hardware manufacturers provide frameworks to support generative models, including Intel's OpenVINO, Qualcomm's QNN, Apple's MLX, and Nvidia's CUDA. These frameworks, combined with quantized models, facilitate local deployment.
+Currently, different hardware vendors offer frameworks supporting generative models, such as Intel's OpenVINO, Qualcomm's QNN, Apple's MLX, and Nvidia's CUDA, combined with model quantization for local deployment.
 
-From a technical standpoint, different formats are supported after quantization, such as PyTorch/TensorFlow, GGUF, and ONNX. I’ve compared GGUF and ONNX formats in terms of application scenarios. Here, I recommend the ONNX quantization format due to its robust support across model frameworks and hardware. In this chapter, we will focus on ONNX Runtime for GenAI, OpenVINO, and Apple MLX for model quantization. (If you have a better approach, feel free to submit it via PR.)
+Technically, we support various formats after quantization, like PyTorch / Tensorflow formats, GGUF, and ONNX. I have compared GGUF and ONNX formats and their application scenarios. I recommend the ONNX quantization format due to its strong support from both model frameworks and hardware. In this chapter, we focus on ONNX Runtime for GenAI, OpenVINO, and Apple MLX for model quantization (if you have better methods, feel free to contribute via PR).
 
 **This chapter includes**
 
@@ -47,4 +47,9 @@ From a technical standpoint, different formats are supported after quantization,
 
 4. [Quantizing Phi-3.5 / 4 using Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
 
-It seems like you are asking for a translation of the provided disclaimer text into "mo." Could you clarify what "mo" refers to? Are you referring to a specific language, such as Maori, Mongolian, or something else?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language or dialect "mo" refers to? This will help me provide the correct translation.

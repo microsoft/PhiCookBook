@@ -1,20 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "717861279bce77869bac890492f171b2",
-  "translation_date": "2025-04-04T11:37:44+00:00",
-  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\CHANGELOG.md",
+  "original_hash": "bd0afcb627d5754038537758315cbad7",
+  "translation_date": "2025-05-07T15:24:16+00:00",
+  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
   "language_code": "mo"
 }
 -->
-# Log de Mudanças
+# Change Log
 
-Todas as alterações relevantes na extensão "phiext" serão documentadas neste arquivo.
+All notable changes to the "phiext" extension will be documented in this file.
 
-Consulte [Keep a Changelog](http://keepachangelog.com/) para recomendações sobre como estruturar este arquivo.
+Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [Não lançado]
+## [Unreleased]
 
-- Lançamento inicial
+- Initial release
 
-It seems like you want the text translated into "mo," but it's unclear what language "mo" refers to. Could you clarify if you mean Moldovan (Romanian), Maori, or another language?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+(Note: "mo" is not a recognized language code or language name in my training data. Could you please specify which language "mo" refers to, or provide more details?)

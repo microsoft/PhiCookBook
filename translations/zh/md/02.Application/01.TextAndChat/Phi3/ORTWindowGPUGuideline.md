@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9fe95f5575ecf5985eb9f67d205d0136",
-  "translation_date": "2025-04-03T07:35:53+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\ORTWindowGPUGuideline.md",
+  "original_hash": "b066fc29c1b2129df84e027cb75119ce",
+  "translation_date": "2025-05-07T14:20:25+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "zh"
 }
 -->
 # **OnnxRuntime GenAI Windows GPU 指南**
 
-本指南提供了在 Windows 上使用 GPU 设置和使用 ONNX Runtime (ORT) 的步骤，旨在帮助您利用 GPU 加速模型，提高性能和效率。
+本指南介绍了在 Windows 上使用 GPU 运行 ONNX Runtime (ORT) 的步骤，帮助您利用 GPU 加速模型运行，提高性能和效率。
 
 文档内容包括：
 
-- 环境设置：安装 CUDA、cuDNN 和 ONNX Runtime 等必要依赖的说明。
-- 配置：如何配置环境和 ONNX Runtime 以有效利用 GPU 资源。
-- 优化建议：关于如何微调 GPU 设置以获得最佳性能的建议。
+- 环境搭建：安装 CUDA、cuDNN 和 ONNX Runtime 等必要依赖的说明。
+- 配置方法：如何配置环境和 ONNX Runtime 以有效利用 GPU 资源。
+- 优化建议：针对 GPU 设置的调优技巧，提升性能表现。
 
-### **1. Python 3.10.x / 3.11.8**
+### **1. Python 3.10.x /3.11.8**
 
-   ***注意*** 建议使用 [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) 作为您的 Python 环境
+   ***Note*** 建议使用 [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) 作为您的 Python 环境
 
    ```bash
 
@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   ***提醒*** 如果您已安装任何与 Python ONNX 相关的库，请先卸载它们
+   ***Reminder*** 如果之前安装过任何 Python 版本的 ONNX 库，请先卸载
 
 ### **2. 使用 winget 安装 CMake**
 
@@ -39,31 +39,31 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-### **3. 安装 Visual Studio 2022 - 带有 C++ 的桌面开发**
+### **3. 安装 Visual Studio 2022 - 使用 C++ 的桌面开发**
 
-   ***注意*** 如果您不需要编译，可以跳过此步骤
+   ***Note*** 如果不需要编译，可以跳过此步骤
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.zh.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.zh.png)
 
 ### **4. 安装 NVIDIA 驱动**
 
-1. **NVIDIA GPU 驱动** [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
+1. **NVIDIA GPU 驱动**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
 2. **NVIDIA CUDA 12.4** [https://developer.nvidia.com/cuda-12-4-0-download-archive](https://developer.nvidia.com/cuda-12-4-0-download-archive)
 
-3. **NVIDIA CUDNN 9.4** [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
+3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***提醒*** 请使用默认设置进行安装
+***Reminder*** 安装时请使用默认设置
 
-### **5. 设置 NVIDIA 环境变量**
+### **5. 配置 NVIDIA 环境变量**
 
-将 NVIDIA CUDNN 9.4 的 lib、bin、include 文件复制到 NVIDIA CUDA 12.4 的 lib、bin、include 文件夹中
+将 NVIDIA CUDNN 9.4 的 lib、bin、include 文件复制到 NVIDIA CUDA 12.4 对应目录
 
-- 将 *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* 文件复制到 *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
+- 将 *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* 下的文件复制到 *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
-- 将 *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* 文件复制到 *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
+- 将 *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* 下的文件复制到 *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
 
-- 将 *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* 文件复制到 *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+- 将 *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* 下的文件复制到 *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
 ### **6. 下载 Phi-3.5-mini-instruct-onnx**
 
@@ -83,13 +83,13 @@ CO_OP_TRANSLATOR_METADATA:
 
    打开 [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) 并执行
 
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.zh.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.zh.png)
 
 ### **8. 编译 ORT GenAI GPU**
 
-   ***注意*** 
+   ***Note*** 
    
-   1. 请先卸载所有与 onnx、onnxruntime 和 onnxruntime-genai 相关的内容
+   1. 请先卸载所有 onnx、onnxruntime 及 onnxruntime-genai 相关库
 
    
    ```bash
@@ -98,9 +98,9 @@ CO_OP_TRANSLATOR_METADATA:
    
    ```
 
-   然后卸载所有 onnxruntime 库，例如：
+   然后卸载所有 onnxruntime 库，例如
 
-   
+
    ```bash
 
    pip uninstall onnxruntime
@@ -111,13 +111,13 @@ CO_OP_TRANSLATOR_METADATA:
    
    ```
 
-   2. 检查 Visual Studio 扩展支持 
+   2. 检查 Visual Studio 扩展支持
 
-   检查 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras，确保找到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration 文件夹。
+   确认在 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras 目录下有 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration 文件夹。
    
-   如果未找到，请检查其他 CUDA 工具包驱动文件夹，并将 visual_studio_integration 文件夹及其内容复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration。
+   如果找不到，请检查其他 CUDA 工具包驱动文件夹，将 visual_studio_integration 文件夹及其内容复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
-   - 如果您不需要编译，可以跳过此步骤
+   - 如果不需要编译，可以跳过此步骤
 
    ```bash
 
@@ -127,11 +127,11 @@ CO_OP_TRANSLATOR_METADATA:
 
    - 下载 [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - 解压 onnxruntime-win-x64-gpu-1.19.2.zip，并将其重命名为 **ort**，然后将 ort 文件夹复制到 onnxruntime-genai
+   - 解压 onnxruntime-win-x64-gpu-1.19.2.zip，重命名为 **ort**，将 ort 文件夹复制到 onnxruntime-genai 目录下
 
-   - 使用 Windows Terminal，打开 VS 2022 的开发者命令提示符，并进入 onnxruntime-genai 目录
+   - 使用 Windows Terminal，进入 VS 2022 的开发者命令提示符，切换到 onnxruntime-genai 目录
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.zh.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.zh.png)
 
    - 使用您的 Python 环境进行编译
 
@@ -150,4 +150,4 @@ CO_OP_TRANSLATOR_METADATA:
    ```
 
 **免责声明**：  
-本文档使用AI翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们努力确保翻译的准确性，但请注意，自动翻译可能包含错误或不准确之处。应以原始语言的文档作为权威来源。对于关键信息，建议使用专业人工翻译。对于因使用此翻译而产生的任何误解或误读，我们不承担责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。

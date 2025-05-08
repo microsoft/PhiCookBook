@@ -1,82 +1,83 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c7e4439ea50fbf9e2197329bb254686b",
-  "translation_date": "2025-04-04T11:38:45+00:00",
-  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\README.md",
+  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
+  "translation_date": "2025-05-07T15:24:58+00:00",
+  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "mo"
 }
 -->
 # phiext README
 
-Yɛ README yi yɛ wo "phiext" extension ho. Ɛno akyi no, yɛhyɛ sɛ ɛyɛ yiye sɛ wɔbɛka nsɛm a ɛfa nseɛmu ho.
+This is the README for your extension "phiext". After writing up a brief description, we recommend including the following sections.
 
-## Nsɛmu Ho Adwuma
+## Features
 
-Kyerɛ nsɛm a ɛfa wo extension ho, ka nsɛm ho a ɛfa sɛnea ɛyɛ adwuma ne nsusɔm ho. Ɛho nsɛm no fa wo README fael ho.
+Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
-Sɛ ɛyɛ sɛ nsusɔm wɔ fael ho a, fa nsusɔm fael no kwan fa ho:
+For example if there is an image subfolder under your extension project workspace:
 
-\!\[adwuma X\]\(images/feature-x.png\)
+\!\[feature X\]\(images/feature-x.png\)
 
-> Adesua: Nsɛm a ɛyɛ sɛnea wɔde animations yɛ adwuma no yɛ dɛ. Ɛyɛ ɔkwan pa ara sɛ wobɛkyerɛ sɛnea wo extension yɛ adwuma! Yɛhyɛ sɛ yɛnyɛ animations a ɛyɛ kakra na ɛyɛ den sɛ wɔbɛte ase.
+> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
-## Nsɛyɛɛ Ho Nsɛm
+## Requirements
 
-Sɛ wɔwɔ nsɛyɛɛ anaa dependencies bi a, fa nsɛm a ɛkyerɛ sɛnea ɛyɛ adwuma ne sɛnea wɔde yɛ ho.
+If you have any requirements or dependencies, add a section describing those and how to install and configure them.
 
 ## Extension Settings
 
-Fa nsɛm a ɛfa sɛ wo extension no de VS Code settings ɛka ho wɔ `contributes.configuration` extension point ho.
+Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
-Sɛ nhwɛso:
+For example:
 
-Wo extension yi de settings a ɛwɔ he yɛ:
+This extension contributes the following settings:
 
-* `myExtension.enable`: Bɔ extension yi wɔ anaa tu ho.
-* `myExtension.thing`: Fa `blah` yɛ biribi.
+* `myExtension.enable`: Enable/disable this extension.
+* `myExtension.thing`: Set to `blah` to do something.
 
-## Nsɛyɛɛ Ho Nneɛma A Wɔnim
+## Known Issues
 
-Fa nsɛm a ɛfa sɛnea nsɛm a ɛfa extension ho yɛ adwuma ne nea wɔnim ho. Ɛyɛ ɔkwan pa sɛ wɔbɛma nkurɔfo antwa nsɛm a ɛfa ho yɛ adwuma foforɔ.
+Calling out known issues can help limit users opening duplicate issues against your extension.
 
 ## Release Notes
 
-Nkurɔfo de Release Notes yɛ adwuma na ɛboa sɛ wɔbɛma extension yɛ nkɔso.
+Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
-Ɔyɛ a edi kan ...
+Initial release of ...
 
 ### 1.0.1
 
-Yɛɛ nsɛm a ɛyɛ ho problem #.
+Fixed issue #.
 
 ### 1.1.0
 
-Fa nsɛm X, Y, ne Z ka ho.
+Added features X, Y, and Z.
 
 ---
 
-## Nsɛm Ho Nsɛyɛɛ
+## Following extension guidelines
 
-Sɛ wo de nsɛm ho nsɛyɛɛ yɛ extension, yɛhyɛ sɛ wo bɛkenkan nsɛm ho nsɛyɛɛ ho nsɛm na yɛ nsɛm no yɛ yiye.
+Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Nsɛm Ho Adwuma Ne Markdown
+## Working with Markdown
 
-Wo betumi de Visual Studio Code yɛ README. Ɛyɛ sɛnea nsɛm ho nsɛyɛɛ yɛ adwuma no yɛ yiye:
+You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
 
-* Fa nsɛm ho nsɛm (`Cmd+\` wɔ macOS anaa `Ctrl+\` wɔ Windows ne Linux).
-* Fa nsɛm ho nsɛm preview (`Shift+Cmd+V` wɔ macOS anaa `Shift+Ctrl+V` wɔ Windows ne Linux).
-* Fa `Ctrl+Space` (Windows, Linux, macOS) sɛ wobɛhwɛ nsɛm ho snippets.
+* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
+* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
+* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
 
-## Nsɛm Ho Nsɛm Foforɔ
+## For more information
 
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Yɛ wo ho dɛ!**
+**Enjoy!**
 
-It seems like you've requested a translation into "mo," but could you clarify what "mo" refers to? Are you asking for translation into Maori, Mongolian, or another language? Please provide more context so I can assist you accurately.
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

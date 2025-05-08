@@ -2,66 +2,67 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-  "translation_date": "2025-03-27T11:14:21+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\UsingPromptFlowWithONNX.md",
+  "translation_date": "2025-05-07T13:58:40+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
   "language_code": "fa"
 }
 -->
-# استفاده از GPU ویندوز برای ایجاد راه‌حل Prompt flow با Phi-3.5-Instruct ONNX
+# استفاده از GPU ویندوز برای ایجاد راهکار Prompt flow با Phi-3.5-Instruct ONNX
 
-این سند مثالی از نحوه استفاده از PromptFlow با ONNX (Open Neural Network Exchange) برای توسعه برنامه‌های هوش مصنوعی مبتنی بر مدل‌های Phi-3 است.
+این سند نمونه‌ای است از نحوه استفاده از PromptFlow با ONNX (Open Neural Network Exchange) برای توسعه برنامه‌های هوش مصنوعی مبتنی بر مدل‌های Phi-3.
 
-PromptFlow مجموعه‌ای از ابزارهای توسعه است که برای ساده‌سازی چرخه کامل توسعه برنامه‌های هوش مصنوعی مبتنی بر مدل‌های زبان بزرگ (LLM) طراحی شده است؛ از ایده‌پردازی و نمونه‌سازی اولیه تا تست و ارزیابی.
+PromptFlow مجموعه‌ای از ابزارهای توسعه است که برای ساده‌سازی چرخه توسعه از ابتدا تا انتهای برنامه‌های هوش مصنوعی مبتنی بر LLM (مدل زبان بزرگ) طراحی شده است، از ایده‌پردازی و نمونه‌سازی تا تست و ارزیابی.
 
-با ترکیب PromptFlow با ONNX، توسعه‌دهندگان می‌توانند:
+با ادغام PromptFlow با ONNX، توسعه‌دهندگان می‌توانند:
 
-- **بهینه‌سازی عملکرد مدل**: از ONNX برای استنتاج و استقرار کارآمد مدل استفاده کنند.
-- **ساده‌سازی توسعه**: با استفاده از PromptFlow جریان کاری را مدیریت کرده و وظایف تکراری را خودکار کنند.
-- **تقویت همکاری**: با ارائه یک محیط توسعه یکپارچه، همکاری میان اعضای تیم را بهبود بخشند.
+- بهینه‌سازی عملکرد مدل: بهره‌گیری از ONNX برای استنتاج و استقرار کارآمد مدل.
+- ساده‌سازی توسعه: استفاده از PromptFlow برای مدیریت جریان کار و خودکارسازی وظایف تکراری.
+- ارتقاء همکاری: تسهیل همکاری بهتر بین اعضای تیم با فراهم کردن محیط توسعه یکپارچه.
 
-**Prompt flow** مجموعه‌ای از ابزارهای توسعه است که برای ساده‌سازی چرخه کامل توسعه برنامه‌های هوش مصنوعی مبتنی بر LLM طراحی شده است؛ از ایده‌پردازی، نمونه‌سازی اولیه، تست و ارزیابی گرفته تا استقرار در تولید و نظارت. این ابزار مهندسی درخواست‌ها (Prompt Engineering) را بسیار آسان‌تر می‌کند و به شما امکان می‌دهد برنامه‌های LLM با کیفیت تولیدی ایجاد کنید.
+**Prompt flow** مجموعه‌ای از ابزارهای توسعه است که برای ساده‌سازی چرخه توسعه از ابتدا تا انتهای برنامه‌های هوش مصنوعی مبتنی بر LLM طراحی شده است، از ایده‌پردازی، نمونه‌سازی، تست، ارزیابی تا استقرار و نظارت در تولید. این ابزار مهندسی prompt را بسیار آسان‌تر می‌کند و به شما امکان می‌دهد برنامه‌های LLM با کیفیت تولید بسازید.
 
-Prompt flow می‌تواند به OpenAI، سرویس Azure OpenAI و مدل‌های قابل تنظیم (Huggingface، LLM/SLM محلی) متصل شود. ما امیدواریم که مدل ONNX کم‌حجم‌شده Phi-3.5 را در برنامه‌های محلی مستقر کنیم. Prompt flow می‌تواند به ما کمک کند تا بهتر کسب‌وکارمان را برنامه‌ریزی کرده و راه‌حل‌های محلی مبتنی بر Phi-3.5 را تکمیل کنیم. در این مثال، ما کتابخانه ONNX Runtime GenAI را برای تکمیل راه‌حل Prompt flow مبتنی بر GPU ویندوز ترکیب خواهیم کرد.
+Prompt flow می‌تواند به OpenAI، Azure OpenAI Service و مدل‌های قابل تنظیم (Huggingface، LLM/SLM محلی) متصل شود. ما امیدواریم مدل کوانتیزه شده ONNX Phi-3.5 را در برنامه‌های محلی مستقر کنیم. Prompt flow می‌تواند به ما کمک کند برنامه‌ریزی بهتری برای کسب‌وکار خود داشته باشیم و راهکارهای محلی مبتنی بر Phi-3.5 را کامل کنیم. در این مثال، ما کتابخانه ONNX Runtime GenAI را برای تکمیل راهکار Prompt flow مبتنی بر GPU ویندوز ترکیب خواهیم کرد.
 
 ## **نصب**
 
 ### **ONNX Runtime GenAI برای GPU ویندوز**
 
-برای مطالعه راهنمای تنظیم ONNX Runtime GenAI برای GPU ویندوز [اینجا کلیک کنید](./ORTWindowGPUGuideline.md)
+برای تنظیم ONNX Runtime GenAI برای GPU ویندوز این راهنما را بخوانید [کلیک کنید](./ORTWindowGPUGuideline.md)
 
 ### **راه‌اندازی Prompt flow در VSCode**
 
-1. افزونه Prompt flow برای VS Code را نصب کنید.
+1. افزونه Prompt flow VS Code را نصب کنید
 
-![pfvscode](../../../../../../translated_images/pfvscode.79f42ae5dd93ed35c19d6d978ae75831fef40e0b8440ee48b893b5a0597d2260.fa.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.fa.png)
 
-2. پس از نصب افزونه Prompt flow برای VS Code، روی افزونه کلیک کنید و گزینه **Installation dependencies** را انتخاب کنید و طبق این راهنما SDK Prompt flow را در محیط خود نصب کنید.
+2. پس از نصب افزونه Prompt flow VS Code، روی افزونه کلیک کنید و گزینه **Installation dependencies** را انتخاب کنید و طبق این راهنما SDK Prompt flow را در محیط خود نصب کنید
 
-![pfsetup](../../../../../../translated_images/pfsetup.0c82d99c7760aac29833b37faf4329e67e22279b1c5f37a73724dfa9ebaa32ee.fa.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.fa.png)
 
-3. [نمونه کد](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) را دانلود کرده و با VS Code باز کنید.
+3. [کد نمونه](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) را دانلود کنید و با VS Code این نمونه را باز کنید
 
-![pfsample](../../../../../../translated_images/pfsample.7bf40b133a558d86356dd6bc0e480bad2659d9c5364823dae9b3e6784e6f2d25.fa.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.fa.png)
 
-4. فایل **flow.dag.yaml** را باز کنید و محیط Python خود را انتخاب کنید.
+4. فایل **flow.dag.yaml** را باز کنید و محیط Python خود را انتخاب کنید
 
-![pfdag](../../../../../../translated_images/pfdag.c5eb356fa3a96178cd594de9a5da921c4bbe646a9946f32aa20d344ccbeb51a0.fa.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.fa.png)
 
-   فایل **chat_phi3_ort.py** را باز کنید و مکان مدل Phi-3.5-instruct ONNX خود را تغییر دهید.
+   فایل **chat_phi3_ort.py** را باز کنید و محل مدل Phi-3.5-instruct ONNX خود را تغییر دهید
 
-![pfphi](../../../../../../translated_images/pfphi.fff4b0afea47c92c8481174dbf3092823906fca5b717fc642f78947c3e5bbb39.fa.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.fa.png)
 
-5. جریان Prompt flow خود را برای تست اجرا کنید.
+5. Prompt flow خود را برای تست اجرا کنید
 
-فایل **flow.dag.yaml** را باز کرده و روی ویرایشگر بصری کلیک کنید.
+فایل **flow.dag.yaml** را باز کنید و روی ویرایشگر بصری کلیک کنید
 
-![pfv](../../../../../../translated_images/pfv.7af6ecd65784a98558b344ba69b5ba6233876823fb435f163e916a632394fc1e.fa.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.fa.png)
 
-پس از کلیک روی این گزینه، آن را اجرا کرده و تست کنید.
+بعد از کلیک روی این گزینه، آن را اجرا کنید تا تست شود
 
-![pfflow](../../../../../../translated_images/pfflow.9697e0fda67794bb0cf4b78d52e6f5a42002eec935bc2519933064afbbdd34f0.fa.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.fa.png)
 
-1. می‌توانید دسته‌ای از دستورات را در ترمینال اجرا کرده و نتایج بیشتری را بررسی کنید.
+1. می‌توانید در ترمینال به صورت دسته‌ای اجرا کنید تا نتایج بیشتری بررسی کنید
+
 
 ```bash
 
@@ -69,9 +70,10 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 ```
 
-نتایج را می‌توانید در مرورگر پیش‌فرض خود مشاهده کنید.
+می‌توانید نتایج را در مرورگر پیش‌فرض خود مشاهده کنید
 
-![pfresult](../../../../../../translated_images/pfresult.972eb57dd5bec646e1aa01148991ba8959897efea396e42cf9d7df259444878d.fa.png)
+
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.fa.png)
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادقتی‌ها باشند. سند اصلی به زبان بومی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ‌گونه سوءتفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما برای دقت تلاش می‌کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطا یا نادرستی باشند. سند اصلی به زبان مادری خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا برداشت نادرست ناشی از استفاده از این ترجمه نیستیم.

@@ -2,61 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-03-27T15:36:15+00:00",
-  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "translation_date": "2025-05-07T13:27:04+00:00",
+  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "fa"
 }
 -->
-## به ابزار هوش مصنوعی برای VS Code خوش آمدید
+## خوش‌آمدید به AI Toolkit برای VS Code
 
-[ابزار هوش مصنوعی برای VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) مجموعه‌ای از مدل‌های مختلف از کاتالوگ Azure AI Studio و کاتالوگ‌هایی مانند Hugging Face را گرد هم می‌آورد. این ابزار فرآیندهای متداول توسعه برای ساخت برنامه‌های هوش مصنوعی با ابزارها و مدل‌های تولیدی هوش مصنوعی را از طریق موارد زیر ساده می‌کند:
-- شروع کار با کشف مدل و محیط آزمایش.
-- تنظیم و استنتاج مدل با استفاده از منابع محاسباتی محلی.
-- تنظیم و استنتاج مدل از راه دور با استفاده از منابع Azure.
+[AI Toolkit برای VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) مجموعه‌ای از مدل‌های مختلف از Azure AI Studio Catalog و کاتالوگ‌های دیگر مانند Hugging Face را گرد هم آورده است. این کیت ابزار، کارهای رایج توسعه برای ساخت اپلیکیشن‌های هوش مصنوعی با استفاده از ابزارها و مدل‌های تولیدی AI را ساده می‌کند از طریق:
+- شروع کار با کشف مدل و محیط آزمایشی.
+- تنظیم دقیق مدل و استنتاج با استفاده از منابع محاسباتی محلی.
+- تنظیم دقیق و استنتاج از راه دور با استفاده از منابع Azure
 
-[نصب ابزار هوش مصنوعی برای VS Code](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[نصب AI Toolkit برای VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.fa.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.fa.png)
 
-**[پیش‌نمایش خصوصی]** ایجاد سریع برنامه‌های Azure Container Apps برای اجرای تنظیم مدل و استنتاج در فضای ابری.
 
-حال بیایید وارد توسعه برنامه هوش مصنوعی خود شویم:
+**[Private Preview]** تهیه یک‌کلیکی Azure Container Apps برای اجرای تنظیم دقیق مدل و استنتاج در فضای ابری.
 
-- [به ابزار هوش مصنوعی برای VS Code خوش آمدید](../../../../md/03.FineTuning)
+حالا بیایید به توسعه اپلیکیشن هوش مصنوعی شما بپردازیم:
+
+- [خوش‌آمدید به AI Toolkit برای VS Code](../../../../md/03.FineTuning)
 - [توسعه محلی](../../../../md/03.FineTuning)
-  - [آماده‌سازی‌ها](../../../../md/03.FineTuning)
+  - [آمادگی‌ها](../../../../md/03.FineTuning)
   - [فعال‌سازی Conda](../../../../md/03.FineTuning)
-  - [تنها تنظیم مدل پایه](../../../../md/03.FineTuning)
-  - [تنظیم و استنتاج مدل](../../../../md/03.FineTuning)
-  - [تنظیم مدل](../../../../md/03.FineTuning)
+  - [تنظیم دقیق فقط مدل پایه](../../../../md/03.FineTuning)
+  - [تنظیم دقیق مدل و استنتاج](../../../../md/03.FineTuning)
+  - [تنظیم دقیق مدل](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [نمونه‌ها و منابع تنظیم](../../../../md/03.FineTuning)
-- [**\[پیش‌نمایش خصوصی\]** توسعه از راه دور](../../../../md/03.FineTuning)
+  - [نمونه‌ها و منابع تنظیم دقیق](../../../../md/03.FineTuning)
+- [**\[Private Preview\]** توسعه از راه دور](../../../../md/03.FineTuning)
   - [پیش‌نیازها](../../../../md/03.FineTuning)
   - [راه‌اندازی پروژه توسعه از راه دور](../../../../md/03.FineTuning)
-  - [ایجاد منابع Azure](../../../../md/03.FineTuning)
-  - [\[اختیاری\] افزودن توکن Huggingface به کلید مخفی Azure Container App](../../../../md/03.FineTuning)
-  - [اجرای تنظیم مدل](../../../../md/03.FineTuning)
-  - [ایجاد نقطه پایانی استنتاج](../../../../md/03.FineTuning)
+  - [تهیه منابع Azure](../../../../md/03.FineTuning)
+  - [\[اختیاری\] افزودن توکن Huggingface به راز Azure Container App](../../../../md/03.FineTuning)
+  - [اجرای تنظیم دقیق](../../../../md/03.FineTuning)
+  - [تهیه نقطه پایانی استنتاج](../../../../md/03.FineTuning)
   - [استقرار نقطه پایانی استنتاج](../../../../md/03.FineTuning)
-  - [استفاده پیشرفته](../../../../md/03.FineTuning)
+  - [کاربرد پیشرفته](../../../../md/03.FineTuning)
 
 ## توسعه محلی
-### آماده‌سازی‌ها
+### آمادگی‌ها
 
-1. مطمئن شوید که درایور NVIDIA روی سیستم میزبان نصب شده است.  
-2. دستور `huggingface-cli login` را اجرا کنید، اگر از HF برای استفاده از مجموعه داده‌ها استفاده می‌کنید.  
-3. توضیحات تنظیمات کلیدی `Olive` برای هر چیزی که مصرف حافظه را تغییر می‌دهد.
+1. مطمئن شوید درایور NVIDIA روی میزبان نصب شده است.
+2. اگر از HF برای استفاده از دیتاست استفاده می‌کنید، `huggingface-cli login` را اجرا کنید.
+3. توضیحات کلیدی `Olive` برای هر چیزی که مصرف حافظه را تغییر می‌دهد.
 
 ### فعال‌سازی Conda
-از آنجایی که ما از محیط WSL استفاده می‌کنیم و این محیط به اشتراک گذاشته شده است، باید محیط Conda را به صورت دستی فعال کنید. پس از این مرحله می‌توانید تنظیم مدل یا استنتاج را اجرا کنید.
+از آنجا که ما از محیط WSL استفاده می‌کنیم و این محیط مشترک است، باید به صورت دستی محیط conda را فعال کنید. پس از این مرحله می‌توانید تنظیم دقیق یا استنتاج را اجرا کنید.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### تنها تنظیم مدل پایه
-برای امتحان مدل پایه بدون تنظیم، می‌توانید این دستور را پس از فعال‌سازی Conda اجرا کنید.
+### فقط تنظیم دقیق مدل پایه
+برای اینکه فقط مدل پایه را بدون تنظیم دقیق امتحان کنید، پس از فعال‌سازی conda می‌توانید این دستور را اجرا کنید.
 
 ```bash
 cd inference
@@ -66,15 +67,15 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### تنظیم و استنتاج مدل
+### تنظیم دقیق مدل و استنتاج
 
-وقتی فضای کاری در یک کانتینر توسعه باز شد، یک ترمینال باز کنید (مسیر پیش‌فرض ریشه پروژه است)، سپس دستور زیر را برای تنظیم یک LLM روی مجموعه داده انتخاب شده اجرا کنید.
+وقتی فضای کاری در یک کانتینر توسعه باز شد، یک ترمینال باز کنید (مسیر پیش‌فرض ریشه پروژه است)، سپس دستور زیر را برای تنظیم دقیق یک LLM روی دیتاست انتخاب شده اجرا کنید.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-نقاط بازیابی و مدل نهایی در مسیر `models` folder.
+نقاط بررسی و مدل نهایی در `models` folder.
 
 Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow` ذخیره خواهند شد.
 
@@ -172,10 +173,10 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` و در پنل خروجی آماده ارزیابی مدل با استفاده از این نقطه پایانی هستید.
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` و در پنل خروجی. اکنون آماده هستید تا مدل را با استفاده از این نقطه پایانی ارزیابی کنید.
 
-### استفاده پیشرفته
-برای اطلاعات بیشتر درباره توسعه از راه دور با ابزار هوش مصنوعی، به مستندات [تنظیم مدل‌ها به صورت از راه دور](https://aka.ms/ai-toolkit/remote-provision) و [استنتاج با مدل تنظیم‌شده](https://aka.ms/ai-toolkit/remote-inference) مراجعه کنید.
+### کاربرد پیشرفته
+برای اطلاعات بیشتر درباره توسعه از راه دور با AI Toolkit، به مستندات [تنظیم دقیق مدل‌ها از راه دور](https://aka.ms/ai-toolkit/remote-provision) و [استنتاج با مدل تنظیم دقیق شده](https://aka.ms/ai-toolkit/remote-inference) مراجعه کنید.
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما تلاش می‌کنیم دقت ترجمه را حفظ کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نواقصی باشند. سند اصلی به زبان اصلی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حساس، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئولیتی در قبال سوء تفاهم‌ها یا تفسیرهای نادرست ناشی از استفاده از این ترجمه نداریم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی اشتباهات یا نواقصی باشند. سند اصلی به زبان مادری آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوء تفاهم یا تفسیر نادرست ناشی از استفاده از این ترجمه نیستیم.

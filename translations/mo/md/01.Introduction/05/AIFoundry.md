@@ -1,54 +1,59 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5dfb4983a2e74e4b5e8317eb16fc2154",
-  "translation_date": "2025-04-04T12:18:19+00:00",
-  "source_file": "md\\01.Introduction\\05\\AIFoundry.md",
+  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
+  "translation_date": "2025-05-07T14:43:13+00:00",
+  "source_file": "md/01.Introduction/05/AIFoundry.md",
   "language_code": "mo"
 }
 -->
-# **Azure AI Foundry ke amfani da shi don tantancewa**
+# **استخدام Azure AI Foundry للتقييم**
 
-![aistudo](../../../../../translated_images/AIFoundry.61da8c74bccc0241ce9a4cb53a170912245871de9235043afcb796ccbc076fdc.mo.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.mo.png)
 
-Yadda ake tantance aikace-aikacen AI na generative ta amfani da [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Ko kuna tantance tattaunawa guda ko mai yawa, Azure AI Foundry yana ba da kayan aikin tantance aikin samfurin da tsaro.
+كيفية تقييم تطبيق الذكاء الاصطناعي التوليدي الخاص بك باستخدام [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). سواء كنت تقوم بتقييم محادثات ذات دور واحد أو متعددة الأدوار، يوفر Azure AI Foundry أدوات لتقييم أداء النموذج والسلامة.
 
-![aistudo](../../../../../translated_images/AIPortfolio.5aaa2b25e9157624a4542fe041d66a96a1c1ec6007e4e5aadd926c6ec8ce18b3.mo.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.mo.png)
 
-## Yadda ake tantance aikace-aikacen AI na generative tare da Azure AI Foundry
-Don karin bayani duba [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## كيفية تقييم تطبيقات الذكاء الاصطناعي التوليدي باستخدام Azure AI Foundry
+لمزيد من التعليمات التفصيلية، راجع [توثيق Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
-Ga matakai don farawa:
+فيما يلي الخطوات للبدء:
 
-## Tantance Samfuran AI na Generative a cikin Azure AI Foundry
+## تقييم نماذج الذكاء الاصطناعي التوليدي في Azure AI Foundry
 
-**Abubuwan da ake bukata**
+**المتطلبات الأساسية**
 
-- Bayanai na gwaji a cikin tsarin CSV ko JSON.
-- Samfurin AI na generative da aka sanya (kamar Phi-3, GPT 3.5, GPT 4, ko Davinci models).
-- Lokaci tare da kwamfuta don gudanar da tantancewa.
+- مجموعة بيانات اختبار بصيغة CSV أو JSON.
+- نموذج ذكاء اصطناعي توليدي منشور (مثل Phi-3، GPT 3.5، GPT 4، أو نماذج Davinci).
+- بيئة تشغيل مع جهاز حوسبة لتشغيل التقييم.
 
-## Ma'auni Na Tantancewa Da Aka Gina
+## مقاييس التقييم المدمجة
 
-Azure AI Foundry yana ba ku damar tantance tattaunawa guda da tattaunawa masu rikitarwa, masu yawa.
-Don yanayin Retrieval Augmented Generation (RAG), inda samfurin ya dogara da bayanai na musamman, za ku iya tantance aiki ta amfani da ma'auni na tantancewa da aka gina.
-Bugu da ƙari, za ku iya tantance yanayin amsa tambaya guda (ba RAG).
+يتيح Azure AI Foundry تقييم المحادثات ذات الدور الواحد والمعقدة متعددة الأدوار.
+بالنسبة لسيناريوهات Retrieval Augmented Generation (RAG)، حيث يكون النموذج مستندًا إلى بيانات محددة، يمكنك تقييم الأداء باستخدام مقاييس التقييم المدمجة.
+بالإضافة إلى ذلك، يمكنك تقييم سيناريوهات الإجابة على الأسئلة ذات الدور الواحد العامة (غير RAG).
 
-## Ƙirƙirar Gudun Tantancewa
+## إنشاء جلسة تقييم
 
-Daga cikin UI na Azure AI Foundry, ku je zuwa shafin Evaluate ko shafin Prompt Flow.
-Bi wizard na ƙirƙirar tantancewa don saita gudun tantancewa. Ba da sunan zaɓi don tantancewarku.
-Zaɓi yanayin da ya dace da burin aikace-aikacenku.
-Zaɓi ɗaya ko fiye da ma'auni na tantancewa don tantance fitarwar samfurin.
+من واجهة Azure AI Foundry، انتقل إلى صفحة Evaluate أو صفحة Prompt Flow.
+اتبع معالج إنشاء التقييم لإعداد جلسة تقييم. يمكنك إدخال اسم اختياري للتقييم.
+اختر السيناريو الذي يتوافق مع أهداف تطبيقك.
+حدد مقياسًا واحدًا أو أكثر لتقييم مخرجات النموذج.
 
-## Tsarin Tantancewa Na Musamman (Zabi)
+## سير تقييم مخصص (اختياري)
 
-Don ƙarin sassauci, za ku iya kafa tsarin tantancewa na musamman. Musanya tsarin tantancewa bisa ga bukatunku na musamman.
+للمزيد من المرونة، يمكنك إنشاء سير تقييم مخصص. قم بتخصيص عملية التقييم وفقًا لمتطلباتك الخاصة.
 
-## Duba Sakamako
+## عرض النتائج
 
-Bayan gudanar da tantancewa, ku shiga, ku duba, kuma ku bincika ma'auni na tantancewa da aka yi a Azure AI Foundry. Samu fahimta game da ƙwarewar aikace-aikacenku da gazawarsa.
+بعد تشغيل التقييم، قم بتسجيل وعرض وتحليل مقاييس التقييم التفصيلية في Azure AI Foundry. احصل على رؤى حول قدرات وقيود تطبيقك.
 
-**Lura** Azure AI Foundry a halin yanzu yana cikin gwajin jama'a, don haka ku yi amfani da shi don gwaji da dalilai na ci gaba. Don nauyin aikin samarwa, ku yi la'akari da sauran zaɓuɓɓuka. Ku bincika [AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) don ƙarin bayani da umarnin mataki-mataki.
+**Note** Azure AI Foundry حاليًا في المعاينة العامة، لذا استخدمه لأغراض التجربة والتطوير. للعمليات الإنتاجية، فكر في خيارات أخرى. استكشف التوثيق الرسمي لـ [AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) لمزيد من التفاصيل والتعليمات خطوة بخطوة.
 
-It seems like you are requesting translation into "mo," but could you clarify what "mo" refers to? Is it a specific language or abbreviation? For example, are you referring to Maori, Mongolian, or another language? Please provide more details so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language or code "mo" refers to? There are multiple possibilities (e.g., Moldovan, a constructed language, or something else). Once confirmed, I can provide the accurate translation.

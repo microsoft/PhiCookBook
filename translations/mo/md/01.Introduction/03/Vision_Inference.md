@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "27cb0b952a2ef48c14b75dec13635acf",
-  "translation_date": "2025-04-04T12:10:35+00:00",
-  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
+  "translation_date": "2025-05-07T14:38:25+00:00",
+  "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "mo"
 }
 -->
 # **Inference Phi-3-Vision in Local**
 
-Phi-3-vision-128k-instruct enables Phi-3 to not only comprehend language but also interpret the world visually. With Phi-3-vision-128k-instruct, various visual tasks such as OCR, table analysis, object recognition, and image description can be tackled effortlessly. Tasks that once demanded extensive data training can now be executed with ease. Below are the techniques and application scenarios associated with Phi-3-vision-128k-instruct.
+Phi-3-vision-128k-instruct позволяет Phi-3 не только понимать язык, но и видеть мир визуально. С помощью Phi-3-vision-128k-instruct мы можем решать различные визуальные задачи, такие как OCR, анализ таблиц, распознавание объектов, описание изображений и др. Мы легко выполняем задачи, которые раньше требовали большого объема данных для обучения. Ниже приведены связанные техники и сценарии применения, упомянутые в Phi-3-vision-128k-instruct
 
-## **0. Preparation**
+## **0. Подготовка**
 
-Ensure the following Python libraries are installed prior to use (Python 3.10+ is recommended):
+Пожалуйста, убедитесь, что следующие библиотеки Python установлены перед использованием (рекомендуется Python 3.10+)
 
 ```bash
 pip install transformers -U
@@ -21,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-Using ***CUDA 11.6+*** and installing flatten is advised:
+Рекомендуется использовать ***CUDA 11.6+*** и установить flatten
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-Create a new Notebook. To complete the examples, it is suggested to first set up the following content:
+Создайте новый Notebook. Для выполнения примеров рекомендуется сначала создать следующий контент.
 
 ```python
 from PIL import Image
@@ -49,9 +49,9 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. Analyze the image with Phi-3-Vision**
+## **1. Анализ изображения с Phi-3-Vision**
 
-The goal is for AI to analyze the content of images and provide relevant descriptions.
+Мы хотим, чтобы ИИ мог анализировать содержание наших изображений и давать соответствующие описания
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,15 +74,15 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-By running the following script in the Notebook, relevant answers can be obtained:
+Мы можем получить нужные ответы, выполнив следующий скрипт в Notebook
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
 ```
 
-## **2. OCR with Phi-3-Vision**
+## **2. OCR с Phi-3-Vision**
 
-Beyond analyzing images, information can also be extracted from them. This process, known as OCR, previously required writing complex code.
+Помимо анализа изображения, мы также можем извлекать информацию из изображения. Это процесс OCR, для которого раньше нужно было писать сложный код.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -106,15 +106,15 @@ response = processor.batch_decode(generate_ids,
 
 ```
 
-The output will be:
+Результат:
 
 ```txt
 The title of the book is "ALONE" and the author is Morgan Maxwell.
 ```
 
-## **3. Comparison of multiple images**
+## **3. Сравнение нескольких изображений**
 
-Phi-3 Vision supports the comparison of multiple images, allowing differences between them to be identified using this model.
+Phi-3 Vision поддерживает сравнение нескольких изображений. Мы можем использовать эту модель, чтобы найти различия между изображениями.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -143,10 +143,11 @@ generate_ids = generate_ids[:, inputs['input_ids'].shape[1]:]
 response = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 ```
 
-The output will be:
+Результат:
 
 ```txt
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-It seems like you've requested a translation to "mo," but could you clarify what "mo" refers to? Are you asking for a translation into Maori, Mongolian, or another language? Let me know so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

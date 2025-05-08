@@ -1,9 +1,9 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f737bf207e1691cdc654535c48dd2df4",
-  "translation_date": "2025-04-04T12:40:54+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-mini_with_whisper.md",
+  "original_hash": "006e8cf75211d3297f24e1b22e38955f",
+  "translation_date": "2025-05-07T14:11:24+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
   "language_code": "mo"
 }
 -->
@@ -11,98 +11,99 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview
 
-The Interactive Phi 3 Mini 4K Instruct Chatbot is a tool that enables users to interact with the Microsoft Phi 3 Mini 4K instruct demo using text or audio inputs. This chatbot can assist with various tasks, including translation, weather updates, and general information retrieval.
+Interactive Phi 3 Mini 4K Instruct Chatbot သည် Microsoft Phi 3 Mini 4K instruct demo နှင့် စာသား သို့မဟုတ် အသံအချက်အလက်ဖြင့် အပြန်အလှန် ဆက်သွယ်နိုင်သော ကိရိယာတစ်ခုဖြစ်သည်။ ဤ chatbot ကို ဘာသာပြန်ခြင်း၊ မိုးလေဝသ အချက်အလက်များ ရယူခြင်း၊ သတင်းအချက်အလက် စုဆောင်းခြင်း စသည့် အလုပ်များအတွက် အသုံးပြုနိုင်သည်။
 
 ### Getting Started
 
-Follow these steps to use the chatbot:
+ဤ chatbot ကို အသုံးပြုရန် အောက်ပါ အဆင့်များကို လိုက်နာပါ-
 
-1. Open the [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) notebook.
-2. In the notebook's main window, you'll find a chatbox interface with a text input field and a "Send" button.
-3. To interact with the text-based chatbot, type your message in the input field and click "Send." The chatbot will reply with an audio file that you can play directly within the notebook.
+1. အသစ်သော [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) ဖိုင်ကို ဖွင့်ပါ။
+2. notebook ရဲ့ အဓိက ပြတင်းပေါ်တွင် စကားပြောမှုအတွက် စာသား ထည့်ရန် နေရာနှင့် "Send" ခလုတ်ပါသော chatbox interface ကို တွေ့မြင်ရမည်။
+3. စာသားအခြေခံ chatbot ကို အသုံးပြုလိုပါက စာသား ထည့်သွင်းရန် နေရာတွင် မက်ဆေ့ခ်ျ ရိုက်ထည့်ပြီး "Send" ခလုတ်ကို နှိပ်ပါ။ chatbot သည် notebook အတွင်းမှ တိုက်ရိုက်ဖွင့်၍ နားဆင်နိုင်သော အသံဖိုင်ဖြင့် တုံ့ပြန်မည်ဖြစ်သည်။
 
-**Note**: This tool requires a GPU and access to the Microsoft Phi-3 and OpenAI Whisper models, which are utilized for speech recognition and translation.
+**Note**: ဤကိရိယာသည် GPU နှင့် Microsoft Phi-3 နှင့် OpenAI Whisper မော်ဒယ်များသို့ ဝင်ရောက်ခွင့်လိုအပ်ပြီး၊ Whisper ကို အသံမှ စာသားသို့ ပြောင်းခြင်းနှင့် ဘာသာပြန်ခြင်းအတွက် အသုံးပြုသည်။
 
 ### GPU Requirements
 
-You need a GPU with 12GB of memory to run this demo.
+ဤ demonstration ကို ပြေးရန် 12Gb GPU မှတ်ဉာဏ် လိုအပ်သည်။
 
-The memory needed for running the **Microsoft-Phi-3-Mini-4K instruct** demo depends on factors such as input size (audio or text), translation language, model speed, and available GPU memory.
+**Microsoft-Phi-3-Mini-4K instruct** demo ကို GPU ပေါ်တွင် ပြေးရန် လိုအပ်သော မှတ်ဉာဏ်ပမာဏမှာ input data (အသံ သို့မဟုတ် စာသား) အရွယ်အစား၊ ဘာသာပြန်ရန် သုံးသော ဘာသာစကား၊ မော်ဒယ်၏ အမြန်နှုန်းနှင့် GPU တွင် ရနိုင်သော မှတ်ဉာဏ် ပမာဏ စသည်တို့ပေါ် မူတည်သည်။
 
-The Whisper model is generally designed for GPU use. While 8GB of GPU memory is the recommended minimum, it can utilize more memory as needed.
+Whisper မော်ဒယ်သည် GPU ပေါ်တွင် ပြေးရန် ဒီဇိုင်းထုတ်ထားပြီး၊ Whisper မော်ဒယ်အတွက် အနည်းဆုံး GPU မှတ်ဉာဏ်အရေအတွက်မှာ 8 GB ဖြစ်သော်လည်း လိုအပ်ပါက ပိုမိုမြင့်မားသော မှတ်ဉာဏ်ကို ဆက်လက်ကိုင်တွယ်နိုင်သည်။
 
-Keep in mind that processing large datasets or handling high request volumes may require additional GPU memory and could impact performance. It's advisable to test your specific use case with different configurations and monitor memory usage to find the optimal setup.
+အချက်အလက်များ အများအပြား သို့မဟုတ် မော်ဒယ်အပေါ် အမိန့်များ အများကြီး ပေးပို့သည်ဆိုပါက ပိုမိုများသော GPU မှတ်ဉာဏ် လိုအပ်နိုင်ပြီး စွမ်းဆောင်ရည် ပြဿနာများ ဖြစ်ပေါ်နိုင်သည်။ သင့်အသုံးပြုမှုအတွက် အမျိုးမျိုးသော ဆက်တင်များဖြင့် စမ်းသပ်ပြီး မှတ်ဉာဏ်အသုံးပြုမှုကို စောင့်ကြည့်ကာ သင့်လိုအပ်ချက်များအတွက် အကောင်းဆုံး ဆက်တင်များကို ရှာဖွေရန် အကြံပြုသည်။
 
 ## E2E Sample for Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper
 
-The Jupyter notebook titled [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) demonstrates how to use the Microsoft Phi 3 Mini 4K instruct demo to generate text from audio or written inputs. It includes several functions:
+[Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) ဟုခေါ်သော jupyter notebook သည် Microsoft Phi 3 Mini 4K instruct Demo ကို အသံ သို့မဟုတ် စာသား input မှ စာသား ထုတ်ယူရန် ဘယ်လို အသုံးပြုရမည်ကို ဖော်ပြသည်။ notebook တွင် function များအတော်များများကို သတ်မှတ်ထားသည်-
 
-1. `tts_file_name(text)`: Generates a file name based on the input text for saving the generated audio file.
-2. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Uses the Edge TTS API to create an audio file from input text chunks. Parameters include the text chunks, speech rate, voice name, and output path for saving the audio file.
-3. `talk(input_text)`: Generates an audio file using the Edge TTS API, saving it with a random file name in the /content/audio directory. The input parameter is the text to be converted into speech.
-4. `run_text_prompt(message, chat_history)`: Uses the Microsoft Phi 3 Mini 4K instruct demo to create an audio file from a message input and adds it to the chat history.
-5. `run_audio_prompt(audio, chat_history)`: Converts an audio file into text using the Whisper model API and sends it to the `run_text_prompt()` function.
-6. The code launches a Gradio app that allows users to interact with the Phi 3 Mini 4K instruct demo by typing messages or uploading audio files. The app displays the output as text.
+1. `tts_file_name(text)`: စာသား input အပေါ် မူတည်၍ ဖိုင်နာမည်တစ်ခု ထုတ်ပေးပြီး ထုတ်လုပ်ထားသော အသံဖိုင်ကို သိမ်းဆည်းရန် အသုံးပြုသည်။
+1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Edge TTS API ကို အသုံးပြု၍ စာသား input ချုပ်စုများ စာရင်းမှ အသံဖိုင်တစ်ခု ထုတ်လုပ်သည်။ input parameters တွင် ချုပ်စုများစာရင်း၊ စကားပြောနှုန်း၊ အသံအမည်နှင့် ထုတ်လုပ်ထားသော အသံဖိုင် သိမ်းဆည်းမည့် လမ်းကြောင်း ပါဝင်သည်။
+1. `talk(input_text)`: Edge TTS API ကို အသုံးပြု၍ အသံဖိုင်တစ်ခု ထုတ်လုပ်ပြီး /content/audio ဖိုလ်ဒါတွင် အမည်မသိ ဖိုင်အမည်ဖြင့် သိမ်းဆည်းသည်။ input parameter သည် အသံသို့ ပြောင်းလိုသော စာသားဖြစ်သည်။
+1. `run_text_prompt(message, chat_history)`: Microsoft Phi 3 Mini 4K instruct demo ကို အသုံးပြု၍ မက်ဆေ့ခ်ျ input မှ အသံဖိုင်တစ်ခု ထုတ်လုပ်ပြီး chat history တွင် ထည့်သွင်းသည်။
+1. `run_audio_prompt(audio, chat_history)`: Whisper model API ကို အသုံးပြု၍ အသံဖိုင်ကို စာသားသို့ ပြောင်းပြီး `run_text_prompt()` function သို့ ပေးပို့သည်။
+1. code သည် Gradio app ကို စတင်ကာ အသုံးပြုသူများအား မက်ဆေ့ခ်ျ ရိုက်ထည့်ခြင်း သို့မဟုတ် အသံဖိုင်တင်ခြင်းဖြင့် Phi 3 Mini 4K instruct demo နှင့် ဆက်သွယ်နိုင်စေရန် ခွင့်ပြုသည်။ output ကို app အတွင်း စာသား မက်ဆေ့ခ်ျအဖြစ် ပြသသည်။
 
 ## Troubleshooting
 
-Installing Cuda GPU drivers:
+Cuda GPU drivers 설치하기
 
-1. Ensure your Linux applications are up to date:
+1. သင့် Linux application များကို နောက်ဆုံး version သို့ update လုပ်ပါ
 
     ```bash
     sudo apt update
     ```
 
-2. Install Cuda drivers:
+1. Cuda Drivers 설치하기
 
     ```bash
     sudo apt install nvidia-cuda-toolkit
     ```
 
-3. Register the Cuda driver location:
+1. cuda driver တည်နေရာ မှတ်ပုံတင်ပါ
 
     ```bash
     echo /usr/lib64-nvidia/ >/etc/ld.so.conf.d/libcuda.conf; ldconfig
     ```
 
-4. Check Nvidia GPU memory size (12GB required):
+1. Nvidia GPU မှတ်ဉာဏ် အရွယ်အစား စစ်ဆေးခြင်း (12GB GPU Memory လိုအပ်သည်)
 
     ```bash
     nvidia-smi
     ```
 
-5. Empty Cache: If you're using PyTorch, call torch.cuda.empty_cache() to free unused cached memory for other GPU applications.
+1. Cache ဖျက်ခြင်း: PyTorch ကို အသုံးပြုပါက torch.cuda.empty_cache() ကို ခေါ်၍ မသုံးသော cached memory များအားလုံးကို လွှတ်ပေးနိုင်ပြီး အခြား GPU application များအသုံးပြုနိုင်ပါသည်။
 
     ```python
     torch.cuda.empty_cache() 
     ```
 
-6. Check Nvidia Cuda:
+1. Nvidia Cuda စစ်ဆေးခြင်း
 
     ```bash
     nvcc --version
     ```
 
-7. Follow these steps to create a Hugging Face token:
+1. Hugging Face token တစ်ခု ဖန်တီးရန် အောက်ပါ လုပ်ဆောင်ချက်များ ပြုလုပ်ပါ-
 
-    - Visit the [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
-    - Click **New token**.
-    - Enter the project **Name**.
-    - Select **Type** as **Write**.
+    - [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo) သို့ သွားပါ။
+    - **New token** ကို ရွေးချယ်ပါ။
+    - အသုံးပြုလိုသော project **Name** ကို ထည့်သွင်းပါ။
+    - **Type** ကို **Write** အဖြစ် ရွေးချယ်ပါ။
 
 > **Note**
 >
-> If you encounter the following error:
+> အောက်ပါ error ကို ကြုံတွေ့ပါက-
 >
 > ```bash
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> Resolve it by typing this command in your terminal:
+> ပြဿနာကို ဖြေရှင်းရန် terminal အတွင်း အောက်ပါ command ကို ရိုက်ထည့်ပါ။
 >
 > ```bash
 > sudo ldconfig
 > ```
 
-It seems like you are asking to translate the provided text into "mo," but it's unclear what "mo" refers to. Could you clarify whether "mo" is a specific language (e.g., Maori, Montenegrin, or something else) or if you mean something else entirely?
+**Disclaimer**:  
+Dis document ha bin transleit yuseng AI transleit serviss [Co-op Translator](https://github.com/Azure/co-op-translator). Wai wi traiv for akyurasie, plis no dat otomated transleits mebi get erors or inakyerasis. Di orijinal document in im neitiv langwij shud bi konsiderd di otoritetiv sors. For kritikol informashon, profeshonal human transleit iz rekomended. Wi no responsibol for eni misandastandin or misinterpretashon dat kam from yus of dis transleit.

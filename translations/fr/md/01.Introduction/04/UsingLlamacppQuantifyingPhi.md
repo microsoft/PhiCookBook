@@ -1,9 +1,9 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e5bb9190ef9d149d28037a768c6b62b2",
-  "translation_date": "2025-03-27T08:35:09+00:00",
-  "source_file": "md\\01.Introduction\\04\\UsingLlamacppQuantifyingPhi.md",
+  "original_hash": "462bddc47427d8785f3c9fd817b346fe",
+  "translation_date": "2025-05-07T14:50:54+00:00",
+  "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "fr"
 }
 -->
@@ -11,35 +11,35 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **Qu'est-ce que llama.cpp**
 
-llama.cpp est une bibliothèque logicielle open-source principalement écrite en C++ qui réalise des inférences sur divers modèles de langage à grande échelle (LLMs), tels que Llama. Son objectif principal est d'offrir des performances de pointe pour l'inférence de LLM sur une large gamme de matériel avec une configuration minimale. De plus, des liaisons Python sont disponibles pour cette bibliothèque, fournissant une API de haut niveau pour la complétion de texte et un serveur web compatible OpenAI.
+llama.cpp est une bibliothèque logicielle open-source principalement écrite en C++ qui permet l'inférence sur divers grands modèles de langage (LLM), comme Llama. Son objectif principal est d'offrir des performances de pointe pour l'inférence LLM sur une large gamme de matériels avec une configuration minimale. De plus, des liaisons Python sont disponibles pour cette bibliothèque, offrant une API de haut niveau pour la complétion de texte ainsi qu'un serveur web compatible OpenAI.
 
-Le principal objectif de llama.cpp est de permettre l'inférence des LLM avec une configuration minimale et des performances de pointe sur une grande variété de matériels - localement et dans le cloud.
+Le but principal de llama.cpp est de permettre l'inférence LLM avec une configuration minimale et des performances de pointe sur une grande variété de matériels - localement et dans le cloud.
 
-- Implémentation en C/C++ sans dépendances
-- Les puces Apple sont des citoyens de première classe - optimisées via ARM NEON, Accelerate et Metal frameworks
-- Support AVX, AVX2 et AVX512 pour les architectures x86
-- Quantification entière en 1,5 bits, 2 bits, 3 bits, 4 bits, 5 bits, 6 bits et 8 bits pour une inférence plus rapide et une utilisation réduite de la mémoire
-- Noyaux CUDA personnalisés pour exécuter des LLM sur des GPU NVIDIA (support pour les GPU AMD via HIP)
+- Implémentation pure en C/C++ sans aucune dépendance
+- Le silicium Apple est pleinement pris en charge - optimisé via ARM NEON, les frameworks Accelerate et Metal
+- Support AVX, AVX2 et AVX512 pour architectures x86
+- Quantification en entiers 1,5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit et 8-bit pour une inférence plus rapide et une utilisation mémoire réduite
+- Kernels CUDA personnalisés pour exécuter les LLM sur GPU NVIDIA (support des GPU AMD via HIP)
 - Support des backends Vulkan et SYCL
-- Inférence hybride CPU+GPU pour accélérer partiellement les modèles plus grands que la capacité totale de VRAM
+- Inférence hybride CPU+GPU pour accélérer partiellement les modèles plus grands que la capacité totale de la VRAM
 
 ## **Quantification de Phi-3.5 avec llama.cpp**
 
-Le modèle Phi-3.5-Instruct peut être quantifié en utilisant llama.cpp, mais Phi-3.5-Vision et Phi-3.5-MoE ne sont pas encore pris en charge. Le format converti par llama.cpp est gguf, qui est également le format de quantification le plus largement utilisé.
+Le modèle Phi-3.5-Instruct peut être quantifié avec llama.cpp, mais Phi-3.5-Vision et Phi-3.5-MoE ne sont pas encore pris en charge. Le format converti par llama.cpp est gguf, qui est aussi le format de quantification le plus répandu.
 
-Il existe un grand nombre de modèles au format GGUF quantifiés sur Hugging Face. AI Foundry, Ollama et LlamaEdge s'appuient sur llama.cpp, ce qui fait que les modèles GGUF sont également souvent utilisés.
+Il existe un grand nombre de modèles quantifiés au format GGUF sur Hugging Face. AI Foundry, Ollama et LlamaEdge s’appuient sur llama.cpp, donc les modèles GGUF sont également souvent utilisés.
 
 ### **Qu'est-ce que GGUF**
 
-GGUF est un format binaire optimisé pour un chargement et une sauvegarde rapides des modèles, ce qui le rend très efficace pour les inférences. GGUF est conçu pour être utilisé avec GGML et d'autres exécutants. GGUF a été développé par @ggerganov, qui est également le créateur de llama.cpp, un framework populaire d'inférence LLM en C/C++. Les modèles initialement développés dans des frameworks comme PyTorch peuvent être convertis au format GGUF pour être utilisés avec ces moteurs.
+GGUF est un format binaire optimisé pour le chargement et la sauvegarde rapides des modèles, ce qui le rend très efficace pour l'inférence. GGUF est conçu pour être utilisé avec GGML et d'autres exécutants. GGUF a été développé par @ggerganov, également développeur de llama.cpp, un framework populaire d'inférence LLM en C/C++. Les modèles initialement développés dans des frameworks comme PyTorch peuvent être convertis au format GGUF pour être utilisés avec ces moteurs.
 
 ### **ONNX vs GGUF**
 
-ONNX est un format traditionnel de machine learning/deep learning, bien pris en charge par différents frameworks d'IA et offrant de bons scénarios d'utilisation sur des appareils périphériques. Quant à GGUF, il est basé sur llama.cpp et peut être considéré comme un produit de l'ère GenAI. Les deux ont des usages similaires. Si vous recherchez de meilleures performances sur du matériel embarqué et dans les couches applicatives, ONNX pourrait être votre choix. Si vous utilisez le framework dérivé et la technologie de llama.cpp, alors GGUF pourrait être préférable.
+ONNX est un format traditionnel de machine learning / deep learning, bien supporté dans différents frameworks IA et adapté à de nombreux scénarios d’usage sur des appareils embarqués. GGUF, quant à lui, est basé sur llama.cpp et peut être considéré comme un produit de l’ère GenAI. Les deux ont des usages similaires. Si vous recherchez de meilleures performances sur du matériel embarqué et au niveau des couches applicatives, ONNX peut être votre choix. Si vous utilisez le framework dérivé et la technologie de llama.cpp, alors GGUF peut être préférable.
 
 ### **Quantification de Phi-3.5-Instruct avec llama.cpp**
 
-**1. Configuration de l'environnement**
+**1. Configuration de l’environnement**
 
 
 ```bash
@@ -55,7 +55,7 @@ make -j8
 
 **2. Quantification**
 
-Utilisation de llama.cpp pour convertir Phi-3.5-Instruct en FP16 GGUF
+Conversion de Phi-3.5-Instruct en FP16 GGUF avec llama.cpp
 
 
 ```bash
@@ -76,7 +76,7 @@ Quantification de Phi-3.5 en INT4
 
 **3. Tests**
 
-Installer llama-cpp-python
+Installation de llama-cpp-python
 
 
 ```bash
@@ -87,7 +87,7 @@ pip install llama-cpp-python -U
 
 ***Note*** 
 
-Si vous utilisez une puce Apple, installez llama-cpp-python comme suit
+Si vous utilisez Apple Silicon, veuillez installer llama-cpp-python comme suit
 
 
 ```bash
@@ -109,9 +109,9 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 ## **Ressources**
 
-1. En savoir plus sur llama.cpp [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. En savoir plus sur llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+2. En savoir plus sur onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+3. En savoir plus sur GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
-2. En savoir plus sur GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
-
-**Clause de non-responsabilité** :  
-Ce document a été traduit à l'aide du service de traduction IA [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+**Avertissement** :  
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour des informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

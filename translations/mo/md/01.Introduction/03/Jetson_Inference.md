@@ -1,46 +1,46 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5b3df6e1a9927e93cda92801eec65d33",
-  "translation_date": "2025-04-04T12:03:28+00:00",
-  "source_file": "md\\01.Introduction\\03\\Jetson_Inference.md",
+  "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
+  "translation_date": "2025-05-07T14:28:52+00:00",
+  "source_file": "md/01.Introduction/03/Jetson_Inference.md",
   "language_code": "mo"
 }
 -->
 # **Inference Phi-3 in Nvidia Jetson**
 
-Nvidia Jetson est une série de cartes informatiques embarquées conçues par Nvidia. Les modèles Jetson TK1, TX1 et TX2 intègrent tous un processeur Tegra (ou SoC) de Nvidia, qui comprend une unité centrale de traitement (CPU) basée sur l'architecture ARM. Jetson est un système à faible consommation d'énergie, conçu pour accélérer les applications d'apprentissage automatique. Nvidia Jetson est utilisé par des développeurs professionnels pour créer des produits d'IA révolutionnaires dans tous les secteurs, ainsi que par des étudiants et des passionnés pour apprendre l'IA de manière pratique et réaliser des projets impressionnants. SLM est déployé dans des dispositifs périphériques tels que Jetson, permettant une meilleure mise en œuvre des scénarios d'application industrielle de l'IA générative.
+Nvidia Jetson is a series of embedded computing boards from Nvidia. The Jetson TK1, TX1 and TX2 models all carry a Tegra processor (or SoC) from Nvidia that integrates an ARM architecture central processing unit (CPU). Jetson is a low-power system and is designed for accelerating machine learning applications. Nvidia Jetson is used by professional developers to create breakthrough AI products across all industries, and by students and enthusiasts for hands-on AI learning and making amazing projects. SLM is deployed in edge devices such as Jetson, which will enable better implementation of industrial generative AI application scenarios.
 
-## Déploiement sur NVIDIA Jetson :
-Les développeurs travaillant sur des robots autonomes et des dispositifs embarqués peuvent tirer parti de Phi-3 Mini. La taille relativement petite de Phi-3 le rend idéal pour un déploiement en périphérie. Les paramètres ont été méticuleusement ajustés pendant l'entraînement, garantissant une grande précision dans les réponses.
+## Deployment on NVIDIA Jetson:
+Developers working on autonomous robotics and embedded devices can leverage Phi-3 Mini. Phi-3 relatively small size makes it ideal for edge deployment. Parameters have been meticulously tuned during training, ensuring high accuracy in responses.
 
-### Optimisation TensorRT-LLM :
-La bibliothèque [TensorRT-LLM de NVIDIA](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) optimise l'inférence des modèles de langage de grande taille. Elle prend en charge la longue fenêtre de contexte de Phi-3 Mini, améliorant à la fois le débit et la latence. Les optimisations incluent des techniques telles que LongRoPE, FP8 et le batching en vol.
+### TensorRT-LLM Optimization:
+NVIDIA's [TensorRT-LLM library](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) optimizes large language model inference. It supports Phi-3 Mini's long context window, enhancing both throughput and latency. Optimizations include techniques like LongRoPE, FP8, and inflight batching.
 
-### Disponibilité et Déploiement :
-Les développeurs peuvent explorer Phi-3 Mini avec une fenêtre de contexte de 128K sur [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Il est proposé sous forme de NIM NVIDIA, un microservice avec une API standard pouvant être déployé partout. En outre, les [implémentations TensorRT-LLM sur GitHub](https://github.com/NVIDIA/TensorRT-LLM).
+### Availability and Deployment:
+Developers can explore Phi-3 Mini with the 128K context window at [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). It's packaged as an NVIDIA NIM, a microservice with a standard API that can be deployed anywhere. Additionally, the [TensorRT-LLM implementations on GitHub](https://github.com/NVIDIA/TensorRT-LLM).
 
-## **1. Préparation**
+## **1. Preparation**
 
 a. Jetson Orin NX / Jetson NX
 
 b. JetPack 5.1.2+
-   
+
 c. Cuda 11.8
-   
+
 d. Python 3.8+
 
-## **2. Exécution de Phi-3 sur Jetson**
+## **2. Running Phi-3 in Jetson**
 
-Nous pouvons choisir [Ollama](https://ollama.com) ou [LlamaEdge](https://llamaedge.com)
+We can choose [Ollama](https://ollama.com) or [LlamaEdge](https://llamaedge.com)
 
-Si vous souhaitez utiliser gguf à la fois dans le cloud et sur les dispositifs périphériques, LlamaEdge peut être compris comme WasmEdge (WasmEdge est un runtime WebAssembly léger, performant et évolutif, adapté aux applications natives du cloud, périphériques et décentralisées. Il prend en charge les applications sans serveur, les fonctions embarquées, les microservices, les contrats intelligents et les dispositifs IoT. Vous pouvez déployer le modèle quantitatif de gguf sur des dispositifs périphériques et le cloud via LlamaEdge.
+If you want to use gguf in the cloud and edge devices at the same time, LlamaEdge can be understood as WasmEdge (WasmEdge is a lightweight, high-performance, scalable WebAssembly runtime suitable for cloud native, edge and decentralized applications. It supports serverless applications, embedded functions, microservices, smart contracts and IoT devices. You can deploy gguf's quantitative model to edge devices and the cloud through LlamaEdge.
 
-![llamaedge](../../../../../translated_images/llamaedge.1356a35c809c5e9d89d8168db0c92161e87f5e2c34831f2fad800f00fc4e74dc.mo.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.mo.jpg)
 
-Voici les étapes à suivre :
+Here are the steps to use
 
-1. Installer et télécharger les bibliothèques et fichiers nécessaires
+1. Install and download related libraries and files
 
 ```bash
 
@@ -54,9 +54,9 @@ tar xzf chatbot-ui.tar.gz
 
 ```
 
-**Note** : llama-api-server.wasm et chatbot-ui doivent être dans le même répertoire
+**Note**: llama-api-server.wasm and chatbot-ui need to be in the same directory
 
-2. Exécuter les scripts dans le terminal
+2. Run scripts in terminal
 
 ```bash
 
@@ -64,12 +64,13 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 ```
 
-Voici le résultat de l'exécution :
+Here is the running result
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.66eb2acd7f14e814437879522158b9531ae7c955014d48d0708d0e4ce6ac94a6.mo.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.mo.png)
 
-***Code d'exemple*** [Exemple de Notebook Phi-3 mini WASM](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
+***Sample code*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
-En résumé, Phi-3 Mini représente une avancée majeure dans la modélisation linguistique, combinant efficacité, sensibilité au contexte et expertise en optimisation de NVIDIA. Que vous construisiez des robots ou des applications périphériques, Phi-3 Mini est un outil puissant à connaître.
+In summary, Phi-3 Mini represents a leap forward in language modeling, combining efficiency, context awareness, and NVIDIA's optimization prowess. Whether you're building robots or edge applications, Phi-3 Mini is a powerful tool to be aware of.
 
-It seems you would like the text translated into "mo." Could you clarify what "mo" refers to? Are you asking for a translation into Maori, Mongolian, or another language?
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

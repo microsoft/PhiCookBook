@@ -1,107 +1,109 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "315566447513c4c6215ea5a004315e4f",
-  "translation_date": "2025-04-04T13:33:19+00:00",
-  "source_file": "md\\03.FineTuning\\Introduce_AzureML.md",
+  "original_hash": "7fe541373802e33568e94e13226d463c",
+  "translation_date": "2025-05-07T13:32:21+00:00",
+  "source_file": "md/03.FineTuning/Introduce_AzureML.md",
   "language_code": "mo"
 }
 -->
-# **Introduce Azure Machine Learning Service**
+# **परिचय Azure Machine Learning सेवा**
 
-[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) è un servizio cloud progettato per accelerare e gestire il ciclo di vita dei progetti di machine learning (ML).
+[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) एक क्लाउड सेवा है जो मशीन लर्निंग (ML) परियोजना जीवनचक्र को तेज़ और प्रबंधित करने के लिए है।
 
-Professionisti ML, data scientist e ingegneri possono utilizzarlo nelle loro attività quotidiane per:
+ML पेशेवर, डेटा वैज्ञानिक, और इंजीनियर इसे अपनी दैनिक कार्यप्रणाली में उपयोग कर सकते हैं:
 
-- Allenare e distribuire modelli.
-- Gestire le operazioni di machine learning (MLOps).
-- È possibile creare un modello direttamente in Azure Machine Learning o utilizzare modelli sviluppati su piattaforme open-source come PyTorch, TensorFlow o scikit-learn.
-- Gli strumenti MLOps aiutano a monitorare, riaddestrare e ridistribuire i modelli.
+- मॉडल प्रशिक्षण और तैनाती करें।  
+मशीन लर्निंग संचालन (MLOps) का प्रबंधन करें।  
+- आप Azure Machine Learning में मॉडल बना सकते हैं या PyTorch, TensorFlow, या scikit-learn जैसे ओपन-सोर्स प्लेटफॉर्म से बने मॉडल का उपयोग कर सकते हैं।  
+- MLOps उपकरण आपको मॉडलों की निगरानी, पुनःप्रशिक्षण, और पुनःतैनाती में मदद करते हैं।
 
-## A chi è rivolto Azure Machine Learning?
+## Azure Machine Learning किसके लिए है?
 
-**Data Scientist e Ingegneri ML**
+**डेटा वैज्ञानिक और ML इंजीनियर**  
+वे अपनी दैनिक कार्यप्रणाली को तेज़ और स्वचालित करने के लिए उपकरणों का उपयोग कर सकते हैं।  
+Azure ML न्यायसंगतता, व्याख्यात्मकता, ट्रैकिंग, और ऑडिटबिलिटी के लिए सुविधाएँ प्रदान करता है।  
 
-Possono utilizzare strumenti per accelerare e automatizzare i loro flussi di lavoro quotidiani.  
-Azure ML offre funzionalità per equità, spiegabilità, tracciabilità e verificabilità.
+**एप्लिकेशन डेवलपर्स:**  
+वे मॉडल को अनुप्रयोगों या सेवाओं में सहजता से एकीकृत कर सकते हैं।
 
-**Sviluppatori di Applicazioni**
+**प्लेटफ़ॉर्म डेवलपर्स**  
+उन्हें Azure Resource Manager APIs द्वारा समर्थित एक मजबूत उपकरण सेट मिलता है।  
+ये उपकरण उन्नत ML टूलिंग बनाने की अनुमति देते हैं।
 
-Possono integrare i modelli in applicazioni o servizi in modo semplice e fluido.
+**उद्योग**  
+Microsoft Azure क्लाउड में काम करते हुए, उद्योग परिचित सुरक्षा और भूमिका-आधारित पहुँच नियंत्रण का लाभ उठाते हैं।  
+परियोजनाएँ सेट करें ताकि संरक्षित डेटा और विशिष्ट संचालन तक पहुँच नियंत्रित की जा सके।
 
-**Sviluppatori di Piattaforme**
+## टीम के हर सदस्य के लिए उत्पादकता  
+ML परियोजनाओं के लिए अक्सर विविध कौशल वाले टीम की आवश्यकता होती है जो निर्माण और रखरखाव कर सके।
 
-Hanno accesso a un set di strumenti avanzati supportati da API affidabili di Azure Resource Manager.  
-Questi strumenti consentono di costruire strumenti ML avanzati.
+Azure ML ऐसे उपकरण प्रदान करता है जो आपको सक्षम बनाते हैं:  
+- साझा नोटबुक, कंप्यूट संसाधन, सर्वरलेस कंप्यूट, डेटा, और परिवेशों के माध्यम से अपनी टीम के साथ सहयोग करने के लिए।  
+- न्यायसंगतता, व्याख्यात्मकता, ट्रैकिंग, और ऑडिटबिलिटी के साथ मॉडल विकसित करने के लिए, ताकि वंशावली और ऑडिट अनुपालन आवश्यकताओं को पूरा किया जा सके।  
+- ML मॉडल को तेज़ और आसानी से पैमाने पर तैनात करें, और MLOps के साथ उन्हें कुशलतापूर्वक प्रबंधित और नियंत्रित करें।  
+- अंतर्निहित शासन, सुरक्षा, और अनुपालन के साथ कहीं भी मशीन लर्निंग वर्कलोड चलाएं।
 
-**Imprese**
+## क्रॉस-कंपैटिबल प्लेटफ़ॉर्म टूल्स
 
-Lavorando nel cloud Microsoft Azure, le imprese possono beneficiare di una sicurezza familiare e del controllo degli accessi basato sui ruoli.  
-È possibile configurare progetti per controllare l'accesso a dati protetti e operazioni specifiche.
+ML टीम का कोई भी सदस्य अपनी पसंदीदा टूल्स का उपयोग कर काम पूरा कर सकता है।  
+चाहे आप तेजी से प्रयोग कर रहे हों, हाइपरपैरामीटर ट्यूनिंग कर रहे हों, पाइपलाइनों का निर्माण कर रहे हों, या पूर्वानुमान प्रबंधन कर रहे हों, आप परिचित इंटरफेस का उपयोग कर सकते हैं जैसे:  
+- Azure Machine Learning Studio  
+- Python SDK (v2)  
+- Azure CLI (v2)  
+- Azure Resource Manager REST APIs  
 
-## Produttività per Tutti i Membri del Team
+जैसे-जैसे आप मॉडल परिष्कृत करते हैं और विकास चक्र के दौरान सहयोग करते हैं, आप Azure Machine Learning स्टूडियो UI में एसेट्स, संसाधन, और मेट्रिक्स साझा और खोज सकते हैं।
 
-I progetti ML spesso richiedono un team con competenze diversificate per costruire e mantenere i modelli.
+## **Azure ML में LLM/SLM**
 
-Azure ML offre strumenti che consentono di:
-- Collaborare con il team tramite notebook condivisi, risorse di calcolo, calcolo serverless, dati e ambienti.
-- Sviluppare modelli con equità, spiegabilità, tracciabilità e verificabilità per soddisfare i requisiti di conformità alla tracciabilità e agli audit.
-- Distribuire modelli ML rapidamente e facilmente su larga scala e gestirli in modo efficiente con MLOps.
-- Eseguire carichi di lavoro di machine learning ovunque, con governance, sicurezza e conformità integrate.
+Azure ML ने कई LLM/SLM-संबंधित फ़ंक्शन जोड़े हैं, जो LLMOps और SLMOps को मिलाकर एक उद्यम-स्तरीय जनरेटिव आर्टिफिशियल इंटेलिजेंस तकनीकी प्लेटफ़ॉर्म बनाते हैं।
 
-## Strumenti Piattaforma Compatibili
+### **मॉडल कैटलॉग**
 
-Chiunque faccia parte di un team ML può utilizzare gli strumenti preferiti per svolgere il proprio lavoro.  
-Che si tratti di esperimenti rapidi, tuning di iperparametri, costruzione di pipeline o gestione delle inferenze, è possibile utilizzare interfacce familiari, tra cui:
-- Azure Machine Learning Studio
-- Python SDK (v2)
-- Azure CLI (v2)
-- API REST di Azure Resource Manager
+उद्यम उपयोगकर्ता मॉडल कैटलॉग के माध्यम से विभिन्न व्यावसायिक परिदृश्यों के अनुसार अलग-अलग मॉडल तैनात कर सकते हैं, और मॉडल को सेवा के रूप में प्रदान कर सकते हैं ताकि उद्यम डेवलपर्स या उपयोगकर्ता इसे एक्सेस कर सकें।
 
-Mentre si affinano i modelli e si collabora durante il ciclo di sviluppo, è possibile condividere e trovare asset, risorse e metriche direttamente nell'interfaccia utente di Azure Machine Learning Studio.
+![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.mo.png)
 
-## **LLM/SLM in Azure ML**
+Azure Machine Learning स्टूडियो में मॉडल कैटलॉग एक केंद्र है जहाँ आप विभिन्न मॉडल खोज और उपयोग कर सकते हैं, जो आपको जनरेटिव AI अनुप्रयोग बनाने में सक्षम बनाते हैं। मॉडल कैटलॉग में Azure OpenAI सेवा, Mistral, Meta, Cohere, Nvidia, Hugging Face जैसे मॉडल प्रदाताओं के सैकड़ों मॉडल होते हैं, जिनमें Microsoft द्वारा प्रशिक्षित मॉडल भी शामिल हैं। Microsoft के अलावा अन्य प्रदाताओं के मॉडल Microsoft के उत्पाद नियमों में गैर-Microsoft उत्पाद होते हैं और मॉडल के साथ प्रदान किए गए नियमों के अधीन होते हैं।
 
-Azure ML ha introdotto numerose funzionalità legate a LLM/SLM, combinando LLMOps e SLMOps per creare una piattaforma tecnologica di intelligenza artificiale generativa a livello aziendale.
+### **जॉब पाइपलाइन**
 
-### **Catalogo Modelli**
+मशीन लर्निंग पाइपलाइन का मूल एक पूर्ण मशीन लर्निंग कार्य को कई चरणों वाले वर्कफ़्लो में विभाजित करना है। प्रत्येक चरण एक प्रबंधनीय घटक होता है जिसे व्यक्तिगत रूप से विकसित, अनुकूलित, कॉन्फ़िगर, और स्वचालित किया जा सकता है। चरण अच्छी तरह परिभाषित इंटरफेस के माध्यम से जुड़े होते हैं। Azure Machine Learning पाइपलाइन सेवा पाइपलाइन चरणों के बीच सभी निर्भरताओं का स्वचालित समन्वय करती है।
 
-Gli utenti aziendali possono distribuire diversi modelli in base a scenari di business specifici tramite il Catalogo Modelli, fornendo servizi come Model as Service per consentire agli sviluppatori o utenti aziendali di accedere ai modelli.
+SLM / LLM के फाइन-ट्यूनिंग में, हम पाइपलाइन के माध्यम से अपने डेटा, प्रशिक्षण, और जनरेशन प्रक्रियाओं का प्रबंधन कर सकते हैं।
 
-![models](../../../../translated_images/models.2450411eac222e539ffb55785a8f550d01be1030bd8eb67c9c4f9ae4ca5d64be.mo.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.mo.png)
 
-Il Catalogo Modelli in Azure Machine Learning Studio è il punto di riferimento per scoprire e utilizzare una vasta gamma di modelli che consentono di costruire applicazioni di intelligenza artificiale generativa.  
-Il catalogo include centinaia di modelli di fornitori come Azure OpenAI Service, Mistral, Meta, Cohere, Nvidia, Hugging Face, oltre a modelli addestrati da Microsoft.  
-I modelli forniti da fornitori diversi da Microsoft sono definiti Prodotti Non-Microsoft, come indicato nei Termini di Prodotti Microsoft, e sono soggetti ai termini forniti con il modello.
+### **प्रॉम्प्ट फ्लो**
 
-### **Pipeline di Lavoro**
+Azure Machine Learning प्रॉम्प्ट फ्लो का उपयोग करने के लाभ  
+Azure Machine Learning प्रॉम्प्ट फ्लो उपयोगकर्ताओं को विचार से लेकर प्रयोग और अंततः उत्पादन-तैयार LLM-आधारित अनुप्रयोगों तक पहुँचने में मदद करता है:
 
-Il cuore di una pipeline di machine learning è suddividere un compito ML completo in un flusso di lavoro a più fasi.  
-Ogni fase rappresenta un componente gestibile che può essere sviluppato, ottimizzato, configurato e automatizzato singolarmente.  
-Le fasi sono connesse tramite interfacce ben definite. Il servizio di pipeline di Azure Machine Learning orchestra automaticamente tutte le dipendenze tra le fasi della pipeline.
+**प्रॉम्प्ट इंजीनियरिंग में लचीलापन**
 
-Nella messa a punto di SLM / LLM, possiamo gestire i nostri dati, processi di addestramento e generazione tramite Pipeline.
+इंटरएक्टिव लेखन अनुभव: Azure Machine Learning प्रॉम्प्ट फ्लो फ्लो की संरचना का दृश्य प्रतिनिधित्व प्रदान करता है, जिससे उपयोगकर्ता अपने प्रोजेक्ट को आसानी से समझ और नेविगेट कर सकते हैं। यह कुशल फ्लो विकास और डीबगिंग के लिए नोटबुक जैसी कोडिंग सुविधा भी प्रदान करता है।  
+प्रॉम्प्ट ट्यूनिंग के लिए वेरिएंट: उपयोगकर्ता कई प्रॉम्प्ट वेरिएंट बना सकते हैं और तुलना कर सकते हैं, जिससे एक पुनरावृत्त सुधार प्रक्रिया संभव होती है।  
 
-![finetuning](../../../../translated_images/finetuning.b52e4aa971dfd8d3c668db913a2b419380533bd3a920d227ec19c078b7b3f309.mo.png)
+मूल्यांकन: अंतर्निर्मित मूल्यांकन फ्लो उपयोगकर्ताओं को उनके प्रॉम्प्ट और फ्लो की गुणवत्ता और प्रभावशीलता का आकलन करने में सक्षम बनाते हैं।  
 
-### **Prompt flow**
+व्यापक संसाधन: Azure Machine Learning प्रॉम्प्ट फ्लो में अंतर्निहित उपकरणों, नमूनों, और टेम्प्लेट्स का एक पुस्तकालय शामिल है, जो विकास के लिए शुरुआती बिंदु के रूप में काम करता है, रचनात्मकता को प्रेरित करता है और प्रक्रिया को तेज करता है।
 
-**Vantaggi dell'uso di Azure Machine Learning Prompt Flow**  
-Azure Machine Learning Prompt Flow offre una serie di vantaggi che aiutano gli utenti a passare dall'ideazione all'esperimento e, infine, alla produzione di applicazioni basate su LLM:
+**LLM-आधारित अनुप्रयोगों के लिए उद्यम तत्परता**
 
-**Agilità nella progettazione dei prompt**  
-- Esperienza interattiva di authoring: Azure Machine Learning Prompt Flow fornisce una rappresentazione visiva della struttura del flusso, consentendo agli utenti di comprendere e navigare facilmente nei loro progetti. Offre anche un'esperienza di codifica simile ai notebook per uno sviluppo e un debugging efficienti.  
-- Varianti per la messa a punto dei prompt: Gli utenti possono creare e confrontare diverse varianti di prompt, facilitando un processo iterativo di affinamento.  
-- Valutazione: I flussi di valutazione integrati consentono agli utenti di analizzare la qualità e l'efficacia dei loro prompt e flussi.  
-- Risorse complete: Azure Machine Learning Prompt Flow include una libreria di strumenti, esempi e modelli integrati che fungono da punto di partenza per lo sviluppo, ispirando creatività e accelerando il processo.
+सहयोग: Azure Machine Learning प्रॉम्प्ट फ्लो टीम सहयोग का समर्थन करता है, जिससे कई उपयोगकर्ता प्रॉम्प्ट इंजीनियरिंग प्रोजेक्ट्स पर साथ काम कर सकते हैं, ज्ञान साझा कर सकते हैं, और संस्करण नियंत्रण बनाए रख सकते हैं।  
 
-**Preparazione aziendale per applicazioni basate su LLM**  
-- Collaborazione: Azure Machine Learning Prompt Flow supporta la collaborazione tra i membri del team, permettendo a più utenti di lavorare insieme su progetti di progettazione di prompt, condividere conoscenze e mantenere il controllo delle versioni.  
-- Piattaforma integrata: Azure Machine Learning Prompt Flow semplifica l'intero processo di progettazione dei prompt, dalla fase di sviluppo e valutazione fino alla distribuzione e monitoraggio. Gli utenti possono distribuire facilmente i loro flussi come endpoint Azure Machine Learning e monitorarne le prestazioni in tempo reale, garantendo un funzionamento ottimale e miglioramenti continui.  
-- Soluzioni di preparazione aziendale di Azure Machine Learning: Prompt Flow sfrutta le solide soluzioni aziendali di Azure Machine Learning, fornendo una base sicura, scalabile e affidabile per lo sviluppo, l'esperimento e la distribuzione dei flussi.
+सभी-एक-में प्लेटफ़ॉर्म: Azure Machine Learning प्रॉम्प्ट फ्लो पूरे प्रॉम्प्ट इंजीनियरिंग प्रक्रिया को सुव्यवस्थित करता है, विकास और मूल्यांकन से लेकर तैनाती और निगरानी तक। उपयोगकर्ता अपने फ्लो को Azure Machine Learning endpoints के रूप में आसानी से तैनात कर सकते हैं और वास्तविक समय में उनके प्रदर्शन की निगरानी कर सकते हैं, जिससे सर्वोत्तम संचालन और सतत सुधार सुनिश्चित होता है।  
 
-Con Azure Machine Learning Prompt Flow, gli utenti possono liberare la loro agilità nella progettazione dei prompt, collaborare efficacemente e sfruttare soluzioni aziendali per sviluppare e distribuire con successo applicazioni basate su LLM.
+Azure Machine Learning उद्यम तत्परता समाधान: प्रॉम्प्ट फ्लो Azure Machine Learning के मजबूत उद्यम तत्परता समाधानों का लाभ उठाता है, जो फ्लो के विकास, प्रयोग, और तैनाती के लिए एक सुरक्षित, स्केलेबल, और विश्वसनीय आधार प्रदान करता है।
 
-Combinando la potenza di calcolo, i dati e i diversi componenti di Azure ML, gli sviluppatori aziendali possono costruire facilmente le proprie applicazioni di intelligenza artificiale.
+Azure Machine Learning प्रॉम्प्ट फ्लो के साथ, उपयोगकर्ता अपनी प्रॉम्प्ट इंजीनियरिंग क्षमता को मुक्त कर सकते हैं, प्रभावी सहयोग कर सकते हैं, और सफल LLM-आधारित अनुप्रयोग विकास और तैनाती के लिए उद्यम-ग्रेड समाधान का लाभ उठा सकते हैं।
 
-It seems like you want the text translated to "mo." Could you clarify what "mo" refers to? Are you referring to a specific language or dialect?
+Azure ML की कम्प्यूटिंग शक्ति, डेटा, और विभिन्न घटकों को मिलाकर, उद्यम डेवलपर्स आसानी से अपने खुद के आर्टिफिशियल इंटेलिजेंस अनुप्रयोग बना सकते हैं।
+
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+If by "mo" you mean a specific language or code, could you please clarify? The term "mo" could refer to several things (e.g., Moldovan language, a language code, or something else). Providing more details will help me deliver an accurate translation.

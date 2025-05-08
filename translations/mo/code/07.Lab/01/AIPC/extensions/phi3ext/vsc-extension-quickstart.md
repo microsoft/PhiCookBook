@@ -1,57 +1,62 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8d36fc444748a50558d017e8a0772437",
-  "translation_date": "2025-04-04T11:31:35+00:00",
-  "source_file": "code\\07.Lab\\01\\AIPC\\extensions\\phi3ext\\vsc-extension-quickstart.md",
+  "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
+  "translation_date": "2025-05-07T15:21:26+00:00",
+  "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
   "language_code": "mo"
 }
 -->
-# VS Code Extension-ээ тавтай морилно уу
+# Welcome to your VS Code Extension
 
-## Энэ хавтас юу агуулж байна
+## What's in the folder
 
-* Энэ хавтас нь таны өргөтгөлд шаардлагатай бүх файлуудыг агуулна.
-* `package.json` - Энэ бол таны өргөтгөл болон командыг зарлах манифест файл юм.
-  * Жишээ залгаас нь нэг команд бүртгэж, түүний гарчиг болон командын нэрийг тодорхойлдог. Энэ мэдээллийн тусламжтайгаар VS Code командын палеттад командыг харуулж чадна. Гэхдээ залгаасыг ачаалахад хараахан шаардлагагүй.
-* `src/extension.ts` - Энэ бол таны командын хэрэгжилтийг хангах үндсэн файл юм.
-  * Файл нь нэг функц, `activate`-ийг экспортолдог бөгөөд энэ нь таны өргөтгөл анх идэвхжсэн үед (энэ тохиолдолд командыг гүйцэтгэснээр) дуудагддаг. `activate` функцийн дотор бид `registerCommand`-ийг дуудаж байна.
-  * Командын хэрэгжилтийг агуулсан функцийг `registerCommand`-д хоёрдугаар параметр байдлаар дамжуулдаг.
+* This folder contains all of the files necessary for your extension.
+* `package.json` - hi si manifest file, ha men ti kha extension leh command a hlawk a ni.
+  * Sample plugin hi command a register a, a title leh command name a hman a ni. Hei hian VS Code command palette-ah command hi a hman theih a ni. Plugin chu a load thei lo.
+* `src/extension.ts` - hi main file a ni a, command a implementation chu he file-ah a provide a ni.
+  * File hi function pawimawh tak a export a, `activate` tih function a ni a, extension chu a activate theihna ah chuan (hei hi command a run chuan) a hman a ni. `activate` function-ah chuan `registerCommand` a call a ni.
+  * Command implementation a zawng zawng hi function-ah chuan `registerCommand`-ah second parameter a lo pass a ni.
 
-## Тохиргоо
+## Setup
 
-* Зөвлөмж болгож буй өргөтгөлүүдийг суулгаарай (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, болон dbaeumer.vscode-eslint)
+* Recommended extensions (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, leh dbaeumer.vscode-eslint) a install rawh.
 
-## Шууд эхлүүлж ажиллуулаарай
+## Get up and running straight away
 
-* Таны өргөтгөлтэй шинэ цонхыг ачаалахын тулд `F5` товчийг дарна уу.
-* Командаа командын палеттаас гүйцэтгэхийн тулд (`Ctrl+Shift+P` эсвэл Mac дээр `Cmd+Shift+P`) дарж, `Hello World` гэж бичнэ үү.
-* Таны өргөтгөлийн код дотор `src/extension.ts`-д тасалбаруудыг (breakpoints) тавьж өргөтгөлөө дебаг хийнэ үү.
-* Өргөтгөлийнхөө гаралтыг дебаг консолд олно уу.
+* `F5` tih button a press a, extension a load a, window thar a open theih ang.
+* Command palette-ah chuan command hi run theih a ni, (`Ctrl+Shift+P` leh Mac-ah `Cmd+Shift+P` tih button a hman) a lo press a, `Hello World` tih command a type rawh.
+* `src/extension.ts` file-ah breakpoints set a, extension a debug theih ang.
+* Extension output chu debug console-ah a hmu theih ang.
 
-## Өөрчлөлт хийх
+## Make changes
 
-* `src/extension.ts` дахь кодыг өөрчлөхийн дараа дебагийн баарнаас өргөтгөлөө дахин эхлүүлж болно.
-* Мөн VS Code цонхыг (`Ctrl+R` эсвэл Mac дээр `Cmd+R`) дахин ачаалж, өөрчлөлтүүдээ ачаалж болно.
+* `src/extension.ts` file-ah code a change a, debug toolbar-ah chuan extension a relaunch theih ang.
+* VS Code window-ah chuan reload (`Ctrl+R` leh Mac-ah `Cmd+R` tih button a hman) a, extension a load leh a change a hman theih ang.
 
-## API-г судлах
+## Explore the API
 
-* `node_modules/@types/vscode/index.d.ts` файлыг нээж, API-ийн бүрэн багцтай танилцаарай.
+* API chungchang a hmu theih a, `node_modules/@types/vscode/index.d.ts` file a open rawh.
 
-## Туршилт хийх
+## Run tests
 
-* [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)-ийг суулгаарай.
-* **Tasks: Run Task** командыг ашиглан "watch" үүргийг ажиллуул. Энэ ажиллаж байгаа эсэхийг шалгаарай, эс тэгвэл туршилтууд олдохгүй байж магадгүй.
-* Үйл ажиллагааны мөрнөөс Туршилтын харах цонхыг нээж "Run Test" товчийг дарна уу, эсвэл `Ctrl/Cmd + ; A` товчлуурыг ашиглана уу.
-* Туршилтын үр дүнг Test Results харах цонхонд үзнэ үү.
-* `src/test/extension.test.ts` дээр өөрчлөлт хийн эсвэл `test` хавтас дотор шинэ туршилтын файлууд үүсгээрэй.
-  * Өгөгдсөн туршилтын гүйцэтгэгч нь `**.test.ts` нэрийн хэв маягтай файлуудыг л авч үзнэ.
-  * Туршилтуудаа ямар ч байдлаар зохион байгуулахын тулд `test` хавтас дотор хавтас үүсгэж болно.
+* [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner) a install rawh.
+* **Tasks: Run Task** tih command hmangin "watch" task a run rawh. Hei hi run theih loh chuan test-te hi a hmu lo.
+* Activity bar-ah Testing view a open a, Run Test button a click rawh, leh hotkey `Ctrl/Cmd + ; A` a hman theih ang.
+* Test result output chu Test Results view-ah a hmu theih ang.
+* `src/test/extension.test.ts` a change rawh leh test file thar pawimawh chu `test` folder-ah create rawh.
+  * Provided test runner hi file a name pattern `**.test.ts` tihna a hmu zawng zawng a hman a ni.
+  * `test` folder-ah chuan folder pawimawh a create a, test-te chu a structure theih ang.
 
-## Цааш явах
+## Go further
 
-* Өргөтгөлөө [багцлах](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo) замаар өргөтгөлийн хэмжээг багасгаж, эхлүүлэх хугацааг сайжруулаарай.
-* Өргөтгөлөө VS Code өргөтгөлийн зах зээлд [нийтлээрэй](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo).
-* [Тасралтгүй интеграцчилал](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo)-ыг тохируулж, барилгуудыг автоматжуулаарай.
+* Extension size a chhiah leh startup time a hnuaiah a hman theihna a chhuak theih a, [bundling your extension](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo) tih hman rawh.
+* VS Code extension marketplace-ah [Publish your extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo) rawh.
+* [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo) a setup a, build automation a lo hman rawh.
 
-It seems like you may be asking for a translation, but I'm not sure what "mo" refers to. Could you clarify the language or context you're referring to? For example, are you asking for a translation into Maori, Mongolian, or another language? Let me know so I can assist you accurately!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+I’m not familiar with a language or code called “mo.” Could you please clarify what “mo” refers to? For example, is it a language code, a shorthand for a language name, or something else? This will help me provide an accurate translation.

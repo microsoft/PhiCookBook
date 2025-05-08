@@ -1,9 +1,9 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "74689a2b87f747d751edfec988ccb7fd",
-  "translation_date": "2025-04-04T13:26:18+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Phi-3-visionWandB.md",
+  "original_hash": "e0a07fd2a30fe2af30b1373df207a5bf",
+  "translation_date": "2025-05-07T13:29:49+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md",
   "language_code": "mo"
 }
 -->
@@ -11,44 +11,45 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## The Model
 
-Phi-3-Vision-128K-Instruct is a compact and cutting-edge multimodal model that serves as the foundation of this project. Part of the Phi-3 model series, it supports a context length of up to 128,000 tokens. The model was trained on a diverse dataset, including synthetic data and carefully curated publicly available websites, with a focus on high-quality, reasoning-heavy content. Training involved supervised fine-tuning and direct preference optimization to ensure precise instruction-following and robust safety protocols.
+Phi-3-Vision-128K-Instruct, a lightweight and cutting-edge multimodal model, is the centerpiece of this project. It belongs to the Phi-3 model family and supports a context length of up to 128,000 tokens. The model was trained on a diverse dataset that includes synthetic data and carefully filtered publicly available websites, focusing on high-quality, reasoning-heavy content. The training involved supervised fine-tuning and direct preference optimization to ensure precise compliance with instructions, along with strong safety measures.
 
-## Why Creating Sample Data Matters:
+## Creating sample data is crucial for several reasons:
 
-1. **Testing**: Sample data enables you to test your application across various scenarios without risking real data, which is especially useful during development and staging.
+1. **Testing**: Sample data lets you test your application in different scenarios without risking real data. This is especially important during development and staging.
 
-2. **Performance Tuning**: By using sample data that reflects the complexity and scale of real data, you can identify bottlenecks and optimize your application's performance.
+2. **Performance Tuning**: Using sample data that mirrors the scale and complexity of real data helps identify performance bottlenecks and optimize your application.
 
-3. **Prototyping**: Sample data helps create prototypes and mockups, aiding in understanding user needs and gathering feedback.
+3. **Prototyping**: Sample data can be used to build prototypes and mockups, aiding in understanding user needs and gathering feedback.
 
-4. **Data Analysis**: In data science, sample data is often used for exploratory analysis, training models, and testing algorithms.
+4. **Data Analysis**: In data science, sample data is often used for exploratory analysis, model training, and algorithm testing.
 
-5. **Security**: Using sample data in development and testing minimizes the risk of exposing sensitive real data.
+5. **Security**: Using sample data in development and testing helps avoid accidental exposure of sensitive real data.
 
-6. **Learning**: When learning a new tool or technology, sample data provides a hands-on way to practice and apply concepts.
+6. **Learning**: When learning a new technology or tool, working with sample data offers a practical way to apply your knowledge.
 
-Keep in mind that the quality of your sample data can significantly affect these activities. It should closely mimic real data in terms of structure and variability.
+Keep in mind, the quality of your sample data greatly affects these activities. It should closely resemble real data in structure and variability.
 
 ### Sample Data Creation
 [Generate DataSet Script](./CreatingSampleData.md)
 
 ## Dataset
 
-A great example of a sample dataset is [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States) (available on Huggingface). This dataset contains information about Burberry products, including metadata such as product category, price, and title. It includes 3,040 rows, each representing a unique product. This dataset allows testing the model's ability to interpret visual data and generate descriptive text that captures intricate visual details and brand-specific traits.
+A good example of a sample dataset is the [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States) (available on Huggingface).  
+This sample dataset contains Burberry products along with metadata on product category, price, and title, totaling 3,040 rows, each representing a unique product. This dataset allows us to test the model’s ability to understand and interpret visual data, generating descriptive text that captures fine visual details and brand-specific traits.
 
-**Note:** Any dataset that includes images can be used.
+**Note:** You can use any dataset that includes images.
 
 ## Complex Reasoning
 
-The model must infer pricing and naming details based solely on the image. This demands the ability to not only recognize visual features but also interpret their significance in terms of product value and branding. By generating accurate textual descriptions from images, the project demonstrates the potential of leveraging visual data to improve model versatility and performance in practical applications.
+The model must reason about prices and product names based solely on the image. This requires not only recognizing visual features but also understanding their implications for product value and branding. By generating accurate textual descriptions from images, this project demonstrates the potential of combining visual data to boost model performance and versatility in real-world use cases.
 
 ## Phi-3 Vision Architecture
 
-The model architecture is a multimodal adaptation of Phi-3. It processes text and image inputs, merging them into a unified sequence for comprehensive understanding and generation tasks. Separate embedding layers are used for text and images. Text tokens are transformed into dense vectors, while images are processed through a CLIP vision model to extract feature embeddings. These image embeddings are then projected to match the dimensions of text embeddings, ensuring seamless integration.
+The model architecture is a multimodal version of Phi-3. It processes both text and image data, merging these inputs into a unified sequence for comprehensive understanding and generation tasks. The model uses separate embedding layers for text and images. Text tokens are converted into dense vectors, while images are processed through a CLIP vision model to extract feature embeddings. These image embeddings are then projected to match the dimensions of the text embeddings, allowing seamless integration.
 
 ## Integration of Text and Image Embeddings
 
-Special tokens within the text sequence indicate where image embeddings should be inserted. During processing, these special tokens are replaced with corresponding image embeddings, allowing the model to handle text and images as a unified sequence. The dataset prompt is formatted using the special <|image|> token, as shown below:
+Special tokens within the text sequence mark where image embeddings should be inserted. During processing, these special tokens are replaced by the corresponding image embeddings, enabling the model to treat text and images as a single sequence. The prompt for our dataset is formatted using the special <|image|> token as follows:
 
 ```python
 text = f"<|user|>\n<|image_1|>What is shown in this image?<|end|><|assistant|>\nProduct: {row['title']}, Category: {row['category3_code']}, Full Price: {row['full_price']}<|end|>"
@@ -58,4 +59,5 @@ text = f"<|user|>\n<|image_1|>What is shown in this image?<|end|><|assistant|>\n
 - [Phi-3-Vision Training Script](../../../../code/03.Finetuning/Phi-3-vision-Trainingscript.py)
 - [Weights and Bias Example walkthrough](https://wandb.ai/byyoung3/mlnews3/reports/How-to-fine-tune-Phi-3-vision-on-a-custom-dataset--Vmlldzo4MTEzMTg3)
 
-It seems like you want the text translated into "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or abbreviation? For example, it could be shorthand for Māori, Montenegrin, or another language. Let me know so I can assist you accurately!
+**Disclaimer**:  
+Dis document ha ben traduced uzant AI traduction servise [Co-op Translator](https://github.com/Azure/co-op-translator). While we striv for accuraci, pleas be aware dat automatizd traductions may contain errurs or inaccuracis. Da original document in its native langwage shuld be considerd da authoritativ source. For critical informasion, professional human traduction is recomendd. We ar not liabl for any misunderstandings or misinterpretations arising from da use of dis traduction.

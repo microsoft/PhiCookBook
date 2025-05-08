@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-03-27T13:24:23+00:00",
-  "source_file": "md\\02.QuickStart\\GitHubModel_QuickStart.md",
+  "translation_date": "2025-05-07T13:07:42+00:00",
+  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "fr"
 }
 -->
-## Modèles GitHub - Bêta publique limitée
+## GitHub Models - Bêta publique limitée
 
-Bienvenue sur [GitHub Models](https://github.com/marketplace/models) ! Tout est prêt pour que vous exploriez les modèles d'IA hébergés sur Azure AI.
+Bienvenue sur [GitHub Models](https://github.com/marketplace/models) ! Tout est prêt pour que vous puissiez explorer les modèles d’IA hébergés sur Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.fr.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.fr.png)
 
-Pour plus d'informations sur les modèles disponibles sur GitHub Models, consultez le [GitHub Model Marketplace](https://github.com/marketplace/models).
+Pour plus d’informations sur les modèles disponibles sur GitHub Models, consultez le [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Modèles disponibles
 
-Chaque modèle dispose d'un espace de test dédié et de code d'exemple.
+Chaque modèle dispose d’un espace de test dédié ainsi que d’exemples de code
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
-### Modèles Phi-3 dans le catalogue des modèles GitHub
+### Modèles Phi-3 dans le catalogue GitHub Model
 
 [Phi-3-Medium-128k-Instruct](https://github.com/marketplace/models/azureml/Phi-3-medium-128k-instruct)
 
@@ -37,52 +37,54 @@ Chaque modèle dispose d'un espace de test dédié et de code d'exemple.
 
 ## Premiers pas
 
-Quelques exemples de base sont prêts à être exécutés. Vous pouvez les trouver dans le répertoire des exemples. Si vous souhaitez passer directement à votre langage préféré, les exemples sont disponibles dans les langues suivantes :
+Quelques exemples de base sont prêts à être exécutés. Vous les trouverez dans le répertoire samples. Si vous souhaitez aller directement à votre langage préféré, les exemples sont disponibles dans les langages suivants :
 
 - Python
 - JavaScript
 - cURL
 
-Un environnement dédié Codespaces est également disponible pour exécuter les exemples et les modèles.
+Un environnement Codespaces dédié est également disponible pour exécuter les exemples et les modèles.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.fr.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.fr.png)
 
-## Code d'exemple
+## Exemples de code
 
-Voici des extraits de code pour quelques cas d'utilisation. Pour des informations supplémentaires sur le SDK Azure AI Inference, consultez la documentation complète et les exemples.
+Voici des extraits de code pour quelques cas d’usage. Pour plus d’informations sur Azure AI Inference SDK, consultez la documentation complète et les exemples.
 
 ## Configuration
 
-1. Créez un jeton d'accès personnel.  
-Vous n'avez pas besoin de donner des permissions au jeton. Notez que le jeton sera envoyé à un service Microsoft.
+1. Créez un jeton d’accès personnel  
+Vous n’avez pas besoin d’attribuer de permissions au jeton. Notez que ce jeton sera envoyé à un service Microsoft.
 
-Pour utiliser les extraits de code ci-dessous, créez une variable d'environnement pour définir votre jeton comme clé pour le code client.
+Pour utiliser les extraits de code ci-dessous, créez une variable d’environnement pour définir votre jeton comme clé pour le code client.
 
 Si vous utilisez bash :  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-Si vous êtes sous PowerShell :  
+Si vous êtes sous powershell :  
+
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 
-Si vous utilisez l'invite de commande Windows :  
+Si vous utilisez l’invite de commandes Windows :  
+
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
 ```  
 
 ## Exemple Python
 
-### Installer les dépendances  
-Installez le SDK Azure AI Inference avec pip (Requis : Python >=3.8) :  
+### Installation des dépendances  
+Installez Azure AI Inference SDK via pip (Requis : Python >=3.8) :
+
 ```
 pip install azure-ai-inference
 ```  
+### Exécuter un exemple simple
 
-### Exécuter un exemple de base  
-
-Cet exemple démontre un appel de base à l'API de complétion de chat. Il utilise le point de terminaison d'inférence du modèle AI de GitHub et votre jeton GitHub. L'appel est synchrone.  
+Cet exemple montre un appel basique à l’API de complétion de chat. Il utilise le point d’accès d’inférence du modèle GitHub AI et votre jeton GitHub. L’appel est synchrone.
 
 ```
 import os
@@ -112,11 +114,11 @@ response = client.complete(
 )
 
 print(response.choices[0].message.content)
-```  
+```
 
-### Exécuter une conversation multi-tours  
+### Exécuter une conversation multi-tours
 
-Cet exemple démontre une conversation multi-tours avec l'API de complétion de chat. Lors de l'utilisation du modèle pour une application de chat, vous devrez gérer l'historique de cette conversation et envoyer les derniers messages au modèle.  
+Cet exemple illustre une conversation multi-tours avec l’API de complétion de chat. Pour une application de chat, vous devrez gérer l’historique de la conversation et envoyer les derniers messages au modèle.
 
 ```
 import os
@@ -144,11 +146,11 @@ messages = [
 response = client.complete(messages=messages, model=model_name)
 
 print(response.choices[0].message.content)
-```  
+```
 
-### Diffuser la sortie  
+### Diffuser la sortie
 
-Pour une meilleure expérience utilisateur, vous souhaiterez diffuser la réponse du modèle afin que le premier token apparaisse rapidement et que vous évitiez d'attendre de longues réponses.  
+Pour une meilleure expérience utilisateur, il est conseillé de diffuser la réponse du modèle afin que le premier token apparaisse rapidement et éviter d’attendre de longues réponses.
 
 ```
 import os
@@ -181,14 +183,13 @@ for update in response:
 
 client.close()
 ```  
+## JavaScript
 
-## JavaScript  
+### Installation des dépendances
 
-### Installer les dépendances  
+Installez Node.js.
 
-Installez Node.js.  
-
-Copiez les lignes suivantes et enregistrez-les sous forme de fichier package.json dans votre dossier.  
+Copiez les lignes suivantes et enregistrez-les dans un fichier package.json dans votre dossier.
 
 ```
 {
@@ -199,17 +200,17 @@ Copiez les lignes suivantes et enregistrez-les sous forme de fichier package.jso
     "@azure/core-sse": "latest"
   }
 }
-```  
+```
 
-Note : @azure/core-sse est uniquement nécessaire lorsque vous diffusez la réponse des complétions de chat.  
+Note : @azure/core-sse est nécessaire uniquement si vous diffusez la réponse des complétions de chat.
 
-Ouvrez une fenêtre de terminal dans ce dossier et exécutez npm install.  
+Ouvrez un terminal dans ce dossier et lancez npm install.
 
-Pour chacun des extraits de code ci-dessous, copiez le contenu dans un fichier sample.js et exécutez-le avec node sample.js.  
+Pour chaque extrait de code ci-dessous, copiez le contenu dans un fichier sample.js et exécutez-le avec node sample.js.
 
-### Exécuter un exemple de base  
+### Exécuter un exemple simple
 
-Cet exemple démontre un appel de base à l'API de complétion de chat. Il utilise le point de terminaison d'inférence du modèle AI de GitHub et votre jeton GitHub. L'appel est synchrone.  
+Cet exemple montre un appel basique à l’API de complétion de chat. Il utilise le point d’accès d’inférence du modèle GitHub AI et votre jeton GitHub. L’appel est synchrone.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -246,11 +247,11 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-### Exécuter une conversation multi-tours  
+### Exécuter une conversation multi-tours
 
-Cet exemple démontre une conversation multi-tours avec l'API de complétion de chat. Lors de l'utilisation du modèle pour une application de chat, vous devrez gérer l'historique de cette conversation et envoyer les derniers messages au modèle.  
+Cet exemple illustre une conversation multi-tours avec l’API de complétion de chat. Pour une application de chat, vous devrez gérer l’historique de la conversation et envoyer les derniers messages au modèle.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -289,10 +290,10 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
 ### Diffuser la sortie  
-Pour une meilleure expérience utilisateur, vous souhaiterez diffuser la réponse du modèle afin que le premier token apparaisse rapidement et que vous évitiez d'attendre de longues réponses.  
+Pour une meilleure expérience utilisateur, il est conseillé de diffuser la réponse du modèle afin que le premier token apparaisse rapidement et éviter d’attendre de longues réponses.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -344,13 +345,13 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-## REST  
+## REST
 
-### Exécuter un exemple de base  
+### Exécuter un exemple simple
 
-Collez le texte suivant dans un shell :  
+Collez ce qui suit dans un shell :
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -370,10 +371,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
+### Exécuter une conversation multi-tours
 
-### Exécuter une conversation multi-tours  
-
-Appelez l'API de complétion de chat et passez l'historique du chat :  
+Appelez l’API de complétion de chat en passant l’historique de la conversation :
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -401,10 +401,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
+### Diffuser la sortie
 
-### Diffuser la sortie  
-
-Voici un exemple d'appel du point de terminaison et de diffusion de la réponse.  
+Voici un exemple d’appel à l’endpoint avec diffusion de la réponse.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -424,23 +423,23 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "stream": true,
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
 
-## Utilisation GRATUITE et limites de taux pour les modèles GitHub  
+## Utilisation GRATUITE et limites de débit pour GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.fr.png)  
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.fr.png)
 
-Les [limites de taux pour l'espace de test et l'utilisation gratuite de l'API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sont conçues pour vous aider à expérimenter avec les modèles et à créer un prototype de votre application d'IA. Pour une utilisation au-delà de ces limites et pour passer à l'échelle avec votre application, vous devez provisionner des ressources à partir d'un compte Azure et vous authentifier depuis ce compte plutôt que d'utiliser votre jeton d'accès personnel GitHub. Vous n'avez rien d'autre à modifier dans votre code. Utilisez ce lien pour découvrir comment dépasser les limites de la version gratuite dans Azure AI.
+Les [limites de débit pour le playground et l’utilisation gratuite de l’API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sont conçues pour vous permettre d’expérimenter les modèles et de prototyper votre application IA. Pour dépasser ces limites et faire évoluer votre application, vous devez provisionner des ressources depuis un compte Azure et vous authentifier via ce compte plutôt qu’avec votre jeton personnel GitHub. Vous n’aurez pas besoin de modifier autre chose dans votre code. Utilisez ce lien pour découvrir comment dépasser les limites du niveau gratuit dans Azure AI.
 
-### Divulgations  
+### Informations importantes
 
-Rappelez-vous qu'en interagissant avec un modèle, vous expérimentez avec l'IA, donc des erreurs de contenu sont possibles.  
+Gardez à l’esprit qu’en interagissant avec un modèle, vous expérimentez avec de l’IA, donc des erreurs de contenu peuvent survenir.
 
-Cette fonctionnalité est soumise à diverses limites (y compris les requêtes par minute, les requêtes par jour, les tokens par requête et les requêtes simultanées) et n'est pas conçue pour des cas d'utilisation en production.  
+Cette fonctionnalité est soumise à diverses limites (nombre de requêtes par minute, par jour, tokens par requête, requêtes simultanées) et n’est pas conçue pour des cas d’usage en production.
 
-GitHub Models utilise Azure AI Content Safety. Ces filtres ne peuvent pas être désactivés dans le cadre de l'expérience GitHub Models. Si vous décidez d'utiliser des modèles via un service payant, veuillez configurer vos filtres de contenu selon vos besoins.  
+GitHub Models utilise Azure AI Content Safety. Ces filtres ne peuvent pas être désactivés dans l’expérience GitHub Models. Si vous utilisez des modèles via un service payant, configurez vos filtres de contenu selon vos besoins.
 
-Ce service est soumis aux conditions préalables de GitHub.  
+Ce service est soumis aux conditions de pré-lancement de GitHub.
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatisée [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des imprécisions. Le document original dans sa langue native doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.

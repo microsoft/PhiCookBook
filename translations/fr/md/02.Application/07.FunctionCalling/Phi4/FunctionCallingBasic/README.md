@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-03-27T13:12:06+00:00",
-  "source_file": "md\\02.Application\\07.FunctionCalling\\Phi4\\FunctionCallingBasic\\README.md",
+  "translation_date": "2025-05-07T13:42:06+00:00",
+  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "fr"
 }
 -->
 ## **Appel de fonction dans Phi-4-mini**
 
-L'appel de fonction est apparu pour la première fois dans la famille Phi, et vous pouvez désormais l'utiliser avec Phi-4-mini.
+L'appel de fonction est apparu pour la première fois dans la famille Phi Family, et vous pouvez maintenant l'utiliser avec Phi-4-mini.
 
-Cet exemple illustre la simulation des résultats de la Premier League. L'objectif est que Phi-4-mini fournisse des informations sur les matchs en temps réel. Voici le code d'exemple :
+Cet exemple illustre la simulation des résultats de la Premier League. L'objectif est que Phi-4-mini fournisse des informations de match en temps réel. Voici le code d'exemple :
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction IA [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.

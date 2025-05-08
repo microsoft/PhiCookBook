@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-03-27T04:28:30+00:00",
-  "source_file": "code\\07.Lab\\01\\Apple\\phi3ext\\README.md",
+  "translation_date": "2025-05-07T15:22:07+00:00",
+  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "fr"
 }
 -->
 # phi3ext README
 
-Voici le README de votre extension "phi3ext". Après avoir rédigé une brève description, nous vous suggérons d'inclure les sections suivantes.
+Ceci est le README de votre extension "phi3ext". Après une brève description, nous vous recommandons d’inclure les sections suivantes.
 
-## Fonctionnalités
+## Features
 
-Décrivez les fonctionnalités spécifiques de votre extension, y compris des captures d'écran montrant son fonctionnement. Les chemins des images doivent être relatifs à ce fichier README.
+Décrivez les fonctionnalités spécifiques de votre extension, y compris des captures d’écran montrant l’extension en action. Les chemins des images sont relatifs à ce fichier README.
 
-Par exemple, si vous avez un sous-dossier d'images dans votre espace de travail de projet d'extension :
+Par exemple, si vous avez un sous-dossier images dans votre espace de travail de projet d’extension :
 
-\!\[fonctionnalité X\]\(images/feature-x.png\)
+\!\[feature X\]\(images/feature-x.png\)
 
-> Conseil : De nombreuses extensions populaires utilisent des animations. C'est un excellent moyen de montrer votre extension en action ! Nous recommandons des animations courtes et précises pour faciliter leur suivi.
+> Astuce : de nombreuses extensions populaires utilisent des animations. C’est un excellent moyen de présenter votre extension ! Nous recommandons des animations courtes et ciblées, faciles à suivre.
 
-## Prérequis
+## Requirements
 
-Si votre extension nécessite des prérequis ou des dépendances, ajoutez une section décrivant ces exigences et comment les installer et les configurer.
+Si vous avez des prérequis ou des dépendances, ajoutez une section pour décrire ces exigences ainsi que comment les installer et les configurer.
 
-## Paramètres de l'extension
+## Extension Settings
 
-Si votre extension ajoute des paramètres dans VS Code via `contributes.configuration`, incluez-les ici.
+Si votre extension ajoute des paramètres VS Code via le point d’extension `contributes.configuration`, veuillez les inclure ici.
 
 Par exemple :
 
-Cette extension propose les paramètres suivants :
+Cette extension contribue aux paramètres suivants :
 
-* `myExtension.enable` : Active/désactive cette extension.
-* `myExtension.thing` : Configurez à `blah` pour effectuer une action spécifique.
+* `myExtension.enable` : activer/désactiver cette extension.
+* `myExtension.thing` : définir sur `blah` pour faire quelque chose.
 
-## Problèmes connus
+## Known Issues
 
-Mentionner les problèmes connus peut aider à réduire les rapports d'erreurs redondants de vos utilisateurs.
+Mentionner les problèmes connus peut aider à réduire les questions répétées des utilisateurs concernant votre extension.
 
-## Notes de version
+## Release Notes
 
-Vos utilisateurs apprécieront des notes de version claires lors de la mise à jour de votre extension.
+Les utilisateurs apprécieront d’avoir des notes de version lors des mises à jour de votre extension.
 
 ### 1.0.0
 
-Publication initiale ...
+Première publication...
 
 ### 1.0.1
 
@@ -58,26 +58,26 @@ Ajout des fonctionnalités X, Y et Z.
 
 ---
 
-## Suivre les directives pour les extensions
+## Following extension guidelines
 
-Assurez-vous d'avoir lu les directives pour les extensions et de suivre les meilleures pratiques pour leur création.
+Assurez-vous d’avoir lu les directives d’extension et de suivre les bonnes pratiques pour créer des extensions.
 
-* [Directives pour les extensions](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
-## Travailler avec Markdown
+## Working with Markdown
 
-Vous pouvez utiliser Visual Studio Code pour rédiger votre README. Voici quelques raccourcis utiles dans l'éditeur :
+Vous pouvez rédiger votre README avec Visual Studio Code. Voici quelques raccourcis utiles de l’éditeur :
 
-* Diviser l'éditeur (`Cmd+\` sur macOS ou `Ctrl+\` sur Windows et Linux).
-* Basculer vers l'aperçu (`Shift+Cmd+V` sur macOS ou `Shift+Ctrl+V` sur Windows et Linux).
-* Appuyez sur `Ctrl+Space` (Windows, Linux, macOS) pour afficher une liste de fragments de code Markdown.
+* Diviser l’éditeur (`Cmd+\` sur macOS ou `Ctrl+\` sur Windows et Linux).
+* Basculer l’aperçu (`Shift+Cmd+V` sur macOS ou `Shift+Ctrl+V` sur Windows et Linux).
+* Appuyer sur `Ctrl+Space` (Windows, Linux, macOS) pour voir la liste des extraits de code Markdown.
 
-## Pour plus d'informations
+## For more information
 
 * [Support Markdown dans Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
 * [Référence de la syntaxe Markdown](https://help.github.com/articles/markdown-basics/)
 
-**Amusez-vous bien !**
+**Amusez-vous bien !**
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatisée [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous fassions de notre mieux pour garantir l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour des informations critiques, il est recommandé de recourir à une traduction humaine professionnelle. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées découlant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

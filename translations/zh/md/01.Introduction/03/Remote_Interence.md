@@ -1,51 +1,51 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8782d16f62bc2bdae1f0b38f39a2417c",
-  "translation_date": "2025-04-03T06:58:10+00:00",
-  "source_file": "md\\01.Introduction\\03\\Remote_Interence.md",
+  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
+  "translation_date": "2025-05-07T14:32:45+00:00",
+  "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "zh"
 }
 -->
 # 使用微调模型进行远程推理
 
-在远程环境中训练好适配器后，可以使用一个简单的 Gradio 应用与模型进行交互。
+适配器在远程环境中训练完成后，可以使用一个简单的 Gradio 应用与模型进行交互。
 
-![微调完成](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.zh.png)
+![微调完成](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.zh.png)
 
 ### 配置 Azure 资源
-通过命令面板执行 `AI Toolkit: Provision Azure Container Apps for inference` 来设置远程推理所需的 Azure 资源。在此过程中，您需要选择自己的 Azure 订阅和资源组。  
-![配置推理资源](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.zh.png)
-   
-默认情况下，推理的订阅和资源组应与微调时使用的保持一致。推理将使用相同的 Azure 容器应用环境，并访问存储在 Azure Files 中的模型和模型适配器，这些是在微调步骤中生成的。
+你需要通过命令面板执行 `AI Toolkit: Provision Azure Container Apps for inference` 来设置用于远程推理的 Azure 资源。设置过程中会要求你选择 Azure 订阅和资源组。  
+![配置推理资源](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.zh.png)
 
-## 使用 AI 工具包
+默认情况下，推理所用的订阅和资源组应与微调时使用的保持一致。推理将使用相同的 Azure 容器应用环境，并访问存储在 Azure 文件中的模型和模型适配器，这些内容是在微调步骤中生成的。
+
+## 使用 AI Toolkit
 
 ### 推理部署  
-如果您希望修改推理代码或重新加载推理模型，请执行 `AI Toolkit: Deploy for inference` 命令。此命令会将最新代码同步到 ACA 并重新启动副本。
+如果你想修改推理代码或重新加载推理模型，请执行 `AI Toolkit: Deploy for inference` 命令。此操作会将你最新的代码同步到 ACA 并重启副本。
 
-![推理部署](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.zh.png)
+![推理部署](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.zh.png)
 
-部署成功后，模型即可通过此端点进行评估。
+部署成功后，模型即可通过该端点进行评估。
 
 ### 访问推理 API
 
-您可以通过 VSCode 通知中显示的“*Go to Inference Endpoint*”按钮访问推理 API。此外，Web API 端点可以在 `ACA_APP_ENDPOINT` 中找到，位于 `./infra/inference.config.json` 和输出面板中。
+你可以通过点击 VSCode 通知中显示的“*Go to Inference Endpoint*”按钮访问推理 API。或者，也可以在 `./infra/inference.config.json` 中的 `ACA_APP_ENDPOINT` 以及输出面板找到 Web API 端点。
 
-![应用端点](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.zh.png)
+![应用端点](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.zh.png)
 
-> **注意:** 推理端点可能需要几分钟才能完全运行。
+> **Note:** 推理端点可能需要几分钟时间才能完全启动。
 
 ## 模板中包含的推理组件
- 
+
 | 文件夹 | 内容 |
 | ------ |--------- |
 | `infra` | 包含远程操作所需的所有配置。 |
-| `infra/provision/inference.parameters.json` | 保存用于配置 Azure 推理资源的 bicep 模板参数。 |
-| `infra/provision/inference.bicep` | 包含用于配置 Azure 推理资源的模板。 |
-| `infra/inference.config.json` | 配置文件，由 `AI Toolkit: Provision Azure Container Apps for inference` 命令生成。作为其他远程命令面板的输入。 |
+| `infra/provision/inference.parameters.json` | 存放 bicep 模板的参数，用于配置推理所需的 Azure 资源。 |
+| `infra/provision/inference.bicep` | 包含用于配置推理 Azure 资源的模板。 |
+| `infra/inference.config.json` | 配置文件，由 `AI Toolkit: Provision Azure Container Apps for inference` 命令生成，用作其他远程命令面板的输入。 |
 
-### 使用 AI 工具包配置 Azure 资源
+### 使用 AI Toolkit 配置 Azure 资源配置
 配置 [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
 为推理配置 Azure 容器应用` command.
@@ -62,9 +62,9 @@ You can find configuration parameters in `./infra/provision/inference.parameters
 
 By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` 文件。然后，从命令面板运行 `AI Toolkit: Provision Azure Container Apps for inference` 命令。此操作会更新指定的资源，并创建任何缺失的资源。
+If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` 文件。然后，从命令面板运行 `AI Toolkit: Provision Azure Container Apps for inference` 命令。此命令会更新指定的资源，并创建缺失的资源。
 
-例如，如果您已有一个现有的 Azure 容器环境，那么您的 `./infra/finetuning.parameters.json` 文件应如下所示：
+例如，如果你已有一个现成的 Azure 容器环境，你的 `./infra/finetuning.parameters.json` 文件应如下所示：
 
 ```json
 {
@@ -84,7 +84,7 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 ### 手动配置  
-如果您更倾向于手动配置 Azure 资源，可以使用 `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` 文件中提供的 bicep 文件。
+如果你更倾向于手动配置 Azure 资源，可以使用 `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` 文件中提供的 bicep 文件。
 
 例如：
 
@@ -100,4 +100,4 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 **免责声明**：  
-本文档使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们努力确保翻译的准确性，但请注意，自动翻译可能会包含错误或不准确之处。原始语言的文档应被视为权威来源。对于关键信息，建议使用专业人工翻译。我们不对因使用此翻译而导致的任何误解或误读承担责任。
+本文件由AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)翻译而成。尽管我们努力确保翻译的准确性，但请注意自动翻译可能存在错误或不准确之处。原始语言版本的文件应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译内容而产生的任何误解或误释，我们概不负责。

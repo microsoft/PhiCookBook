@@ -1,59 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7fdd22719901a23386b3c56bb02794e3",
-  "translation_date": "2025-04-03T07:52:03+00:00",
-  "source_file": "md\\02.Application\\03.AdvancedReasoning\\Phi4\\AdvancedResoningPhi4mini\\README.md",
+  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
+  "translation_date": "2025-05-07T14:27:28+00:00",
+  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "ur"
 }
 -->
-## **Phi-4-mini کو بطور ماہر استدلال استعمال کرنا**
+## **استعمال Phi-4-mini-reasoning(3.8b) یا Phi-4-reasoning(14b) بطور ماہر استدلال**
 
-Phi-4 کی ایک اہم خصوصیت اس کی مضبوط استدلالی صلاحیت ہے۔ آئیے Phi-4-mini کے ذریعے اس کی مضبوط استدلالی صلاحیت پر ایک نظر ڈالتے ہیں۔
+آئیے Phi-4-mini-reasoning یا Phi-4-mini-reasoning کے ذریعے اس کی مضبوط استدلال کی صلاحیت کو دیکھتے ہیں۔
+
 
 ```python
 
 import torch
 from transformers import AutoTokenizer,pipeline
 
-model_path = "Your Phi-4-mini location"
+model_path = "Your Phi-4-mini-reasoning or Phi-4-reasoning location"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_path,
     device_map="cuda",
-    attn_implementation="flash_attention_2",
     torch_dtype="auto",
-    trust_remote_code=True)
+    trust_remote_code=True,
 
-tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-
-messages = [
-    {"role": "system", "content": "You are a helpful AI assistant."},
-    {"role": "user", "content": """I have $20,000 in my savings account, where I receive a 4% profit per year and payments twice a year. Can you please tell me how long it will take for me to become a millionaire? Thinks step by step carefully.
-"""},
-]
-
-pipe = pipeline(
-    "text-generation",
-    model=model,
-    tokenizer=tokenizer,
 )
 
-generation_args = {
-    "max_new_tokens": 4096,
-    "return_full_text": False,
-    "temperature": 0.00001,
-    "top_p": 1.0,
-    "do_sample": True,
-}
+tokenizer = AutoTokenizer.from_pretrained(model_path)
 
-output = pipe(messages, **generation_args)
+messages = [{"role": "user", "content": "Explain the Pythagorean Theorem"}]
 
-print(output[0]['generated_text'])
+model = AutoModelForCausalLM.from_pretrained(
+    model_path,
+    trust_remote_code=True,
+    torch_dtype='auto',
+    _attn_implementation='flash_attention_2',
+).cuda()
 
+inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_dict=True, return_tensors="pt")
+
+outputs = model.generate(**inputs.to(model.device), max_new_tokens=32768)
+
+outputs = tokenizer.batch_decode(outputs[:, inputs["input_ids"].shape[-1]:])
+
+print(outputs[0])
 
 
 ```
 
-**ڈسکلئمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ ہم درستگی کی بھرپور کوشش کرتے ہیں، لیکن براہ کرم یہ جان لیں کہ خودکار ترجمے میں غلطیاں یا غیر درستیاں ہو سکتی ہیں۔ اصل دستاویز کو اس کی اصل زبان میں مستند ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے، پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ذمہ دار نہیں ہیں۔
+**دسclaimer**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم نوٹ کریں کہ خودکار تراجم میں غلطیاں یا عدم صحت ہو سکتی ہے۔ اصل دستاویز اپنی مادری زبان میں معتبر ذریعہ سمجھا جانا چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر نہیں ہوگی۔

@@ -1,28 +1,28 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "700b9a537ce4426de5a7ccfa8e96e581",
-  "translation_date": "2025-04-04T13:35:46+00:00",
-  "source_file": "md\\03.FineTuning\\03.Inference\\MLX_Inference.md",
+  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
+  "translation_date": "2025-05-07T13:41:54+00:00",
+  "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
   "language_code": "mo"
 }
 -->
-# **Inference Phi-3 with Apple MLX Framework**
+# **Inference Phi-3 með Apple MLX Framework**
 
-## **What is MLX Framework**
+## **Hvað er MLX Framework**
 
-MLX jẹ awoṣe fun iwadi ẹrọ ẹkọ lori Apple silicon, ti a mu wa fun ọ nipasẹ iwadi ẹrọ ẹkọ Apple.
+MLX er fylkisrammi fyrir vélanám á Apple silicon, þróaður af Apple vélanámshópnum.
 
-MLX jẹ apẹrẹ nipasẹ awọn oluwadi ẹrọ ẹkọ fun awọn oluwadi ẹrọ ẹkọ. Awoṣe naa jẹ ti ifọkanbalẹ olumulo, ṣugbọn o tun munadoko lati kọ ẹkọ ati ṣe agbekalẹ awọn awoṣe. Apẹrẹ ti awoṣe naa tun jẹ rọrun lati ni oye. A pinnu lati jẹ ki o rọrun fun awọn oluwadi lati faagun ati mu MLX dara pẹlu ibi-afẹde ti ṣawari awọn imọran tuntun ni kiakia.
+MLX er hannaður af vélanámssérfræðingum fyrir vélanámssérfræðinga. Ramminn er ætlaður að vera notendavænn en samt skilvirkur til að þjálfa og keyra líkön. Hönnun rammans sjálfs er líka hugmyndafræðilega einföld. Markmiðið er að auðvelda rannsakendum að bæta við og þróa MLX til að flýta fyrir nýjum hugmyndum.
 
-LLMs le yara ni awọn ẹrọ Apple Silicon nipasẹ MLX, ati pe awọn awoṣe le ṣiṣẹ ni agbegbe ni irọrun pupọ.
+LLM líkön geta verið hraðað á Apple Silicon tækjum með MLX, og líkön geta keyrt á staðnum mjög þægilega.
 
-## **Using MLX to inference Phi-3-mini**
+## **Notkun MLX til að keyra Phi-3-mini**
 
-### **1. Ṣeto agbegbe MLX rẹ**
+### **1. Setja upp MLX umhverfið þitt**
 
-1. Python 3.11.x
-2. Fi sori MLX Library
+1. Python 3.11.x  
+2. Settu upp MLX bókasafnið
 
 ```bash
 
@@ -30,7 +30,7 @@ pip install mlx-lm
 
 ```
 
-### **2. Ṣiṣe Phi-3-mini ni Terminal pẹlu MLX**
+### **2. Keyra Phi-3-mini í Terminal með MLX**
 
 ```bash
 
@@ -38,11 +38,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Abajade (agbegbe mi ni Apple M1 Max, 64GB) ni
+Útkoman (umhverfið mitt er Apple M1 Max, 64GB) er
 
-![Terminal](../../../../../translated_images/01.0d0f100b646a4e4c4f1cd36c1a05727cd27f1e696ed642c06cf6e2c9bbf425a4.mo.png)
+![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.mo.png)
 
-### **3. Quantizing Phi-3-mini pẹlu MLX ni Terminal**
+### **3. Kvantun Phi-3-mini með MLX í Terminal**
 
 ```bash
 
@@ -50,11 +50,11 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***Akiyesi：*** Awoṣe le ṣe quantize nipasẹ mlx_lm.convert, ati pe quantization aiyipada jẹ INT4. Apẹẹrẹ yii ṣe quantize Phi-3-mini si INT4.
+***Note：*** Líkanið er hægt að kvantunera með mlx_lm.convert, og sjálfgefna kvantunin er INT4. Þessi dæmi kvantunar kvantunar Phi-3-mini í INT4.
 
-Awoṣe le ṣe quantize nipasẹ mlx_lm.convert, ati pe quantization aiyipada jẹ INT4. Apẹẹrẹ yii ni lati ṣe quantize Phi-3-mini sinu INT4. Lẹhin quantization, yoo wa ni fipamọ ni itọsọna aiyipada ./mlx_model.
+Líkanið er hægt að kvantunera með mlx_lm.convert, og sjálfgefna kvantunin er INT4. Í þessu dæmi er Phi-3-mini kvantunar í INT4. Eftir kvantun er það vistað í sjálfgefna möppunni ./mlx_model
 
-A le ṣe idanwo awoṣe ti a ṣe quantize pẹlu MLX lati terminal.
+Við getum prófað kvantaða líkanið með MLX úr terminal
 
 ```bash
 
@@ -62,20 +62,25 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ```
 
-Abajade ni
+Útkoman er
 
-![INT4](../../../../../translated_images/02.04e0be1f18a90a58ad47e0c9d9084ac94d0f1a8c02fa707d04dd2dfc7e9117c6.mo.png)
+![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.mo.png)
 
-### **4. Ṣiṣe Phi-3-mini pẹlu MLX ni Jupyter Notebook**
+### **4. Keyra Phi-3-mini með MLX í Jupyter Notebook**
 
-![Notebook](../../../../../translated_images/03.0cf0092fe143357656bb5a7bc6427c41d8528d772d38a82d0b2693e2a3eeb16e.mo.png)
+![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.mo.png)
 
-***Akiyesi:*** Jọwọ ka apẹẹrẹ yii [tẹ ọna asopọ yii](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
+***Note:*** Vinsamlegast skoðaðu þetta sýnidæmi [click this link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
-## **Awọn orisun**
+## **Auðlindir**
 
-1. Kọ ẹkọ nipa Apple MLX Framework [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)
+1. Lærðu um Apple MLX Framework [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)
 
 2. Apple MLX GitHub Repo [https://github.com/ml-explore](https://github.com/ml-explore)
 
-It seems you are asking for a translation to "mo," but could you clarify what "mo" refers to? Are you referring to a specific language or dialect, such as Maori (mi), Montenegrin (sr-ME), or something else? Let me know so I can assist you better!
+**Disclaimer**:  
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+
+---
+
+Could you please clarify what language or code "mo" refers to? "mo" is not a widely recognized language code. If you mean Moldovan (which is essentially Romanian), or something else, please specify so I can provide the correct translation.
