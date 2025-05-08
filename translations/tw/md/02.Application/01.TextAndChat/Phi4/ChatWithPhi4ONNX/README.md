@@ -1,21 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "17451c69069b49f37a5395131a61ee52",
-  "translation_date": "2025-04-04T06:34:49+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi4\\ChatWithPhi4ONNX\\README.md",
+  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
+  "translation_date": "2025-05-08T05:35:07+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "tw"
 }
 -->
 # **與 Phi-4-mini ONNX 聊天**
 
-***ONNX*** 是一種開放格式，用於表示機器學習模型。ONNX 定義了一組通用的運算符——機器學習和深度學習模型的基本構建模塊，以及一種通用的文件格式，幫助 AI 開發者使用多種框架、工具、運行時和編譯器來運行模型。
+***ONNX*** 是一種開放格式，用來表示機器學習模型。ONNX 定義了一組通用的運算子——機器學習和深度學習模型的基礎構件——以及一種通用的檔案格式，讓 AI 開發者能夠在多種框架、工具、執行環境和編譯器中使用模型。
 
-我們希望能將生成式 AI 模型部署到邊緣設備上，並在有限的計算能力或離線環境中使用。現在，透過量化方式轉換模型，我們可以實現這個目標。我們能將量化後的模型轉換為 GGUF 或 ONNX 格式。
+我們希望能將生成式 AI 模型部署到邊緣裝置，並在計算能力有限或離線的環境中使用。現在，我們可以透過量化的方式來達成這個目標，將模型轉換成 GGUF 或 ONNX 格式。
 
-Microsoft Olive 可以幫助你將 SLM 轉換為量化的 ONNX 格式。實現模型轉換的方法非常簡單。
+Microsoft Olive 可以幫助你將 SLM 轉換成量化的 ONNX 格式。達成模型轉換的方法非常簡單
 
 **安裝 Microsoft Olive SDK**
+
 
 ```bash
 
@@ -25,7 +26,7 @@ pip install transformers
 
 ```
 
-**轉換為支援 CPU 的 ONNX**
+**轉換支援 CPU 的 ONNX**
 
 ```bash
 
@@ -35,7 +36,8 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ***注意*** 此範例使用 CPU
 
-### **使用 ONNX Runtime GenAI 推理 Phi-4-mini ONNX 模型**
+
+### **使用 ONNX Runtime GenAI 推論 Phi-4-mini ONNX 模型**
 
 - **安裝 ONNX Runtime GenAI**
 
@@ -102,6 +104,7 @@ while not generator.is_done():
 
 ```
 
+
 *這是 ONNX Runtime GenAI 0.6.0 版本*
 
 ```python
@@ -156,4 +159,4 @@ while not generator.is_done():
 ```
 
 **免責聲明**：  
-本文檔使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們努力追求準確性，但請注意，自動翻譯可能包含錯誤或不精確之處。原始語言的文件應被視為權威來源。對於關鍵信息，建議尋求專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解釋不承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們努力追求準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用此翻譯而產生之任何誤解或誤釋負責。

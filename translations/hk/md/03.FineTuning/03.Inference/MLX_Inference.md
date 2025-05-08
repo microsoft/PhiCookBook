@@ -1,9 +1,9 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "700b9a537ce4426de5a7ccfa8e96e581",
-  "translation_date": "2025-04-04T19:11:27+00:00",
-  "source_file": "md\\03.FineTuning\\03.Inference\\MLX_Inference.md",
+  "original_hash": "dcb656f3d206fc4968e236deec5d4384",
+  "translation_date": "2025-05-08T05:24:48+00:00",
+  "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
   "language_code": "hk"
 }
 -->
@@ -11,18 +11,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **咩係 MLX Framework**
 
-MLX 係一個專為 Apple Silicon 開發嘅機器學習研究框架，由 Apple 嘅機器學習團隊推出。
+MLX 係一個針對 Apple silicon 嘅機器學習研究陣列框架，由 Apple 機器學習研究團隊開發。
 
-MLX 係專為機器學習研究員設計，目標係易用之餘，仲可以高效訓練同部署模型。呢個框架嘅設計概念非常簡單，方便研究人員快速擴展同改進 MLX，以便探索新嘅想法。
+MLX 係由機器學習研究員為機器學習研究員設計。呢個框架目標係方便用戶使用，同時又有效率去訓練同部署模型。框架本身嘅設計概念都好簡單。我哋希望研究員可以輕鬆擴展同改進 MLX，快速探索新嘅想法。
 
-透過 MLX，可以喺 Apple Silicon 設備上加速 LLMs，並且可以非常方便咁本地運行模型。
+喺 Apple Silicon 裝置上，透過 MLX 可以加速大型語言模型（LLMs），而且可以好方便喺本地運行模型。
 
 ## **用 MLX 推論 Phi-3-mini**
 
-### **1. 設置 MLX 環境**
+### **1. 設定你嘅 MLX 環境**
 
 1. Python 3.11.x  
 2. 安裝 MLX Library  
+
 
 ```bash
 
@@ -30,7 +31,7 @@ pip install mlx-lm
 
 ```
 
-### **2. 用 MLX 喺 Terminal 運行 Phi-3-mini**
+### **2. 喺 Terminal 用 MLX 運行 Phi-3-mini**
 
 ```bash
 
@@ -38,11 +39,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-結果（我嘅環境係 Apple M1 Max, 64GB）如下：
+結果（我用緊 Apple M1 Max，64GB）係
 
-![Terminal](../../../../../translated_images/01.0d0f100b646a4e4c4f1cd36c1a05727cd27f1e696ed642c06cf6e2c9bbf425a4.hk.png)
+![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.hk.png)
 
-### **3. 用 MLX 喺 Terminal 量化 Phi-3-mini**
+### **3. 喺 Terminal 用 MLX 量化 Phi-3-mini**
 
 ```bash
 
@@ -50,11 +51,11 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***注意：*** 可以透過 mlx_lm.convert 量化模型，默認量化係 INT4。呢個例子係將 Phi-3-mini 量化到 INT4。
+***Note：*** 模型可以用 mlx_lm.convert 量化，預設量化係 INT4。呢個例子係將 Phi-3-mini 量化成 INT4。
 
-模型可以透過 mlx_lm.convert 進行量化，默認係 INT4。呢個例子係將 Phi-3-mini 量化到 INT4。量化完成之後，模型會存喺默認目錄 ./mlx_model。
+模型可以用 mlx_lm.convert 量化，預設係 INT4。呢個例子係將 Phi-3-mini 量化成 INT4。量化完成後會儲存在預設資料夾 ./mlx_model。
 
-我哋可以喺 Terminal 測試經 MLX 量化嘅模型：
+我哋可以喺 terminal 測試用 MLX 量化嘅模型。
 
 ```bash
 
@@ -62,15 +63,15 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ```
 
-結果如下：
+結果係
 
-![INT4](../../../../../translated_images/02.04e0be1f18a90a58ad47e0c9d9084ac94d0f1a8c02fa707d04dd2dfc7e9117c6.hk.png)
+![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.hk.png)
 
-### **4. 用 MLX 喺 Jupyter Notebook 運行 Phi-3-mini**
+### **4. 喺 Jupyter Notebook 用 MLX 運行 Phi-3-mini**
 
-![Notebook](../../../../../translated_images/03.0cf0092fe143357656bb5a7bc6427c41d8528d772d38a82d0b2693e2a3eeb16e.hk.png)
+![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.hk.png)
 
-***注意：*** 請參考呢個範例 [點擊呢度](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
+***Note:*** 請閱讀呢個範例 [click this link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
 ## **資源**
 
@@ -79,4 +80,4 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 2. Apple MLX GitHub Repo [https://github.com/ml-explore](https://github.com/ml-explore)
 
 **免責聲明**：  
-本文件使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始語言的文件應被視為權威來源。對於重要信息，建議使用專業的人類翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤解釋不承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋致力保持準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件嘅母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我哋對因使用此翻譯而引致嘅任何誤解或誤釋概不負責。

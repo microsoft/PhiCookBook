@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "27cb0b952a2ef48c14b75dec13635acf",
-  "translation_date": "2025-04-04T12:11:03+00:00",
-  "source_file": "md\\01.Introduction\\03\\Vision_Inference.md",
+  "original_hash": "110bee6270dad2ebf506d90a30b46dde",
+  "translation_date": "2025-05-08T06:01:32+00:00",
+  "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "ja"
 }
 -->
-# **ローカル環境でのPhi-3-Vision推論**
+# **ローカルでの Phi-3-Vision 推論**
 
-Phi-3-vision-128k-instructを使用すると、Phi-3は言語を理解するだけでなく、視覚的に世界を見ることができます。Phi-3-vision-128k-instructを通じて、OCR、表の解析、物体認識、画像の説明など、さまざまな視覚的な問題を解決することが可能です。以前は大量のデータトレーニングを必要としていたタスクを簡単に完了できます。以下は、Phi-3-vision-128k-instructによって引用された関連技術と応用シナリオです。
+Phi-3-vision-128k-instruct により、Phi-3 は言語を理解するだけでなく、視覚的に世界を見ることも可能になります。Phi-3-vision-128k-instruct を使うことで、OCR、表解析、物体認識、画像の説明など、さまざまな視覚的な問題を解決できます。これまでは大量のデータトレーニングが必要だったタスクも簡単に完了できます。以下は Phi-3-vision-128k-instruct が引用する関連技術や応用シナリオです。
 
 ## **0. 準備**
 
-使用する前に、以下のPythonライブラリがインストールされていることを確認してください（Python 3.10以上を推奨）。
+使用前に以下の Python ライブラリがインストールされていることを確認してください（Python 3.10+ 推奨）
 
 ```bash
 pip install transformers -U
@@ -21,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-***CUDA 11.6+*** を使用することを推奨し、flattenをインストールしてください。
+***CUDA 11.6+*** の使用と flatten のインストールを推奨します
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-新しいNotebookを作成します。例を完了するには、以下の内容を先に作成することをお勧めします。
+新しいノートブックを作成します。例を完了するために、まず以下の内容を作成することを推奨します。
 
 ```python
 from PIL import Image
@@ -49,9 +49,9 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. Phi-3-Visionで画像を解析する**
+## **1. Phi-3-Vision で画像を解析する**
 
-AIに画像の内容を解析し、関連する説明を生成させたい場合
+AI に画像の内容を解析し、関連する説明を提供してもらいたい場合
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,15 +74,15 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Notebookで以下のスクリプトを実行することで、関連する回答を得ることができます。
+ノートブックで以下のスクリプトを実行することで、関連する回答が得られます
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
 ```
 
-## **2. Phi-3-VisionでのOCR**
+## **2. Phi-3-Vision での OCR**
 
-画像を解析するだけでなく、画像から情報を抽出することも可能です。これはOCRのプロセスであり、以前は複雑なコードを書く必要がありました。
+画像を解析するだけでなく、画像から情報を抽出することもできます。これは以前は複雑なコードを書いて行っていた OCR 処理です。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -106,7 +106,7 @@ response = processor.batch_decode(generate_ids,
 
 ```
 
-結果は以下の通りです。
+結果は以下の通りです
 
 ```txt
 The title of the book is "ALONE" and the author is Morgan Maxwell.
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. 複数画像の比較**
 
-Phi-3 Visionは複数画像の比較をサポートしています。このモデルを使用して、画像間の違いを見つけることができます。
+Phi-3 Vision は複数の画像の比較をサポートしています。このモデルを使って画像間の違いを見つけることができます。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -143,11 +143,11 @@ generate_ids = generate_ids[:, inputs['input_ids'].shape[1]:]
 response = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 ```
 
-結果は以下の通りです。
+結果は以下の通りです
 
 ```txt
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で記載された文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤読について、当方は責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や解釈の相違について、当方は一切の責任を負いかねます。

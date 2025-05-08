@@ -1,37 +1,37 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2faa9c6d61c5aa2708aec02a39ec464b",
-  "translation_date": "2025-04-04T12:44:25+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\UsingPhi35TFLiteCreateAndroidApp.md",
+  "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
+  "translation_date": "2025-05-08T05:41:59+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "ja"
 }
 -->
-# **Microsoft Phi-3.5 tfliteを使用したAndroidアプリの作成**
+# **Microsoft Phi-3.5 tflite を使って Android アプリを作成する方法**
 
-これは、Microsoft Phi-3.5 tfliteモデルを使用したAndroidサンプルです。
+これは Microsoft Phi-3.5 tflite モデルを使った Android のサンプルです。
 
 ## **📚 知識**
 
-Android LLM Inference APIを使用すると、Androidアプリケーション向けに大規模言語モデル（LLM）を完全にオンデバイスで実行できます。このAPIを使用して、テキスト生成、自然言語形式での情報検索、ドキュメントの要約など、幅広いタスクを実行できます。このタスクは、複数のテキスト間の大規模言語モデルをサポートしており、最新のオンデバイス生成AIモデルをAndroidアプリに適用することが可能です。
+Android LLM Inference API は、大規模言語モデル（LLM）を完全にデバイス上で実行できるようにし、テキスト生成や自然言語での情報取得、ドキュメントの要約など幅広いタスクに利用できます。このタスクは複数のテキスト・ツー・テキスト大規模言語モデルを標準でサポートしており、最新のオンデバイス生成AIモデルを Android アプリに適用可能です。
 
-Google AI Edge Torchは、PyTorchモデルを.tflite形式に変換することをサポートするPythonライブラリであり、この形式はTensorFlow LiteやMediaPipeで実行できます。これにより、完全にオンデバイスでモデルを実行できるAndroid、iOS、IoT向けのアプリケーションが可能になります。AI Edge Torchは幅広いCPUカバレッジを提供し、初期段階のGPUおよびNPUサポートも備えています。AI Edge TorchはPyTorchとの密接な統合を目指しており、torch.export()を基盤に構築し、Core ATenオペレーターの良好なカバレッジを提供します。
+Googld AI Edge Torch は、PyTorch モデルを .tflite 形式に変換できる Python ライブラリで、TensorFlow Lite と MediaPipe で実行可能にします。これにより、Android、iOS、IoT 向けにモデルを完全にオンデバイスで動かすアプリケーションが作れます。AI Edge Torch は幅広い CPU をサポートし、初期段階で GPU と NPU のサポートも備えています。PyTorch と密接に連携し、torch.export() をベースに Core ATen オペレーターを幅広くカバーすることを目指しています。
 
 ## **🪬 ガイドライン**
 
-### **🔥 Microsoft Phi-3.5をtflite対応に変換**
+### **🔥 Microsoft Phi-3.5 を tflite に変換する手順**
 
-0. このサンプルはAndroid 14以上向けです。
+0. このサンプルは Android 14 以上向けです。
 
-1. Python 3.10.12をインストールする
+1. Python 3.10.12 をインストールしてください。
 
-***提案:*** condaを使用してPython環境をインストールすることを推奨
+***おすすめ:*** conda を使って Python 環境を構築するのが便利です。
 
-2. Ubuntu 20.04 / 22.04 (詳細は [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) を参照)
+2. Ubuntu 20.04 / 22.04 を使用してください（[google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) に注目）
 
-***提案:*** Azure Linux VMやサードパーティのクラウドVMを使用して環境を構築することを推奨
+***おすすめ:*** Azure Linux VM やサードパーティのクラウド VM で環境を作るのが良いでしょう。
 
-3. Linux bashでPythonライブラリをインストールする
+3. Linux の bash で Python ライブラリをインストールします。
 
 ```bash
 
@@ -47,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Hugging FaceからMicrosoft-3.5-Instructをダウンロードする
+4. Hugging face から Microsoft-3.5-Instruct をダウンロードします。
 
 ```bash
 
@@ -57,7 +57,7 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. Microsoft Phi-3.5をtfliteに変換する
+5. Microsoft Phi-3.5 を tflite に変換します。
 
 ```bash
 
@@ -65,9 +65,9 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 Microsoft Phi-3.5をAndroid Mediapipeバンドルに変換**
+### **🔥 Microsoft Phi-3.5 を Android Mediapipe バンドルに変換する**
 
-まず、mediapipeをインストールしてください。
+まず mediapipe をインストールしてください。
 
 ```bash
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-[ノートブック](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)でこのコードを実行してください。
+このコードは [your notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb) で実行します。
 
 ```python
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 adb pushを使用してモデルをAndroidデバイスのパスに転送**
+### **🔥 adb push でタスクモデルを Android デバイスのパスに送る**
 
 ```bash
 
@@ -106,9 +106,9 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ```
 
-### **🔥 Androidコードを実行する**
+### **🔥 Android コードの実行**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.ja.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.ja.png)
 
 **免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。元の言語で記載された原文が公式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤った解釈について、当方は一切の責任を負いません。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご承知ください。原文の母国語版が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

@@ -1,19 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "98eb289883c5e181a74e72a59e1ddc6d",
-  "translation_date": "2025-04-04T13:12:47+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Lora.md",
+  "original_hash": "50b6a55a0831b417835087d8b57759fe",
+  "translation_date": "2025-05-08T05:17:08+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "ja"
 }
 -->
-# **Phi-3をLoRAでファインチューニングする**
+# **LoRAを使ったPhi-3のファインチューニング**
 
-MicrosoftのPhi-3 Mini言語モデルを、カスタムチャット指示データセットを使用して[LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo)でファインチューニングします。
+MicrosoftのPhi-3 Mini言語モデルを、カスタムチャット指示データセットで[LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo)を用いてファインチューニングします。
 
-LoRAを利用することで、会話の理解や応答生成を向上させることができます。
+LoRAは会話の理解と応答生成の向上に役立ちます。
 
-## Phi-3 Miniをファインチューニングする手順ガイド:
+## Phi-3 Miniをファインチューニングする手順：
 
 **インポートとセットアップ**
 
@@ -26,10 +26,10 @@ pip install loralib
 
 ```
 
-必要なライブラリ（datasets、transformers、peft、trl、torchなど）をインポートすることから始めます。
-トレーニングプロセスを追跡するためにログを設定します。
+datasets、transformers、peft、trl、torchなどの必要なライブラリをインポートします。  
+トレーニングの進行を追跡するためにログ設定を行います。
 
-いくつかのレイヤーをloralibで実装された対応するレイヤーに置き換えることができます。現在サポートされているのは、nn.Linear、nn.Embedding、nn.Conv2dのみです。また、注意のqkvプロジェクションの一部実装のように、単一のnn.Linearが複数のレイヤーを表す場合に対応するMergedLinearもサポートしています（詳細については追加の注記を参照してください）。
+一部のレイヤーをloralibで実装されたものに置き換えて適応させることも可能です。現在サポートしているのはnn.Linear、nn.Embedding、nn.Conv2dのみです。さらに、単一のnn.Linearが複数のレイヤーを表す場合（例：attentionのqkv投影の一部実装）に対応するMergedLinearもサポートしています（詳細は追加の注意事項を参照）。
 
 ```
 # ===== Before =====
@@ -47,7 +47,7 @@ import loralib as lora
 layer = lora.Linear(in_features, out_features, r=16)
 ```
 
-トレーニングループが始まる前に、LoRAのパラメータのみをトレーニング可能としてマークします。
+トレーニングループが始まる前に、LoRAパラメータのみを学習可能に設定します。
 
 ```
 import loralib as lora
@@ -58,18 +58,18 @@ lora.mark_only_lora_as_trainable(model)
 for batch in dataloader:
 ```
 
-チェックポイントを保存する際には、LoRAのパラメータのみを含むstate_dictを生成します。
+チェックポイントを保存するときは、LoRAパラメータだけを含むstate_dictを生成します。
 
 ```
 # ===== Before =====
 # torch.save(model.state_dict(), checkpoint_path)
-```
+```  
 ```
 # ===== After =====
 torch.save(lora.lora_state_dict(model), checkpoint_path)
 ```
 
-load_state_dictを使用してチェックポイントを読み込む際には、strict=Falseを設定することを忘れないでください。
+load_state_dictでチェックポイントを読み込む際は、strict=Falseに設定してください。
 
 ```
 # Load the pretrained checkpoint first
@@ -78,33 +78,29 @@ model.load_state_dict(torch.load('ckpt_pretrained.pt'), strict=False)
 model.load_state_dict(torch.load('ckpt_lora.pt'), strict=False)
 ```
 
-これで通常通りトレーニングを進めることができます。
+これで通常通りトレーニングを進められます。
 
 **ハイパーパラメータ**
 
-2つの辞書を定義します：training_configとpeft_config。training_configには学習率、バッチサイズ、ログ設定など、トレーニング用のハイパーパラメータを含めます。
+training_configとpeft_configの2つの辞書を定義します。training_configには学習率、バッチサイズ、ログ設定などのトレーニング用ハイパーパラメータを含みます。
 
-peft_configにはLoRA関連のパラメータ（rank、dropout、タスクタイプなど）を指定します。
+peft_configにはLoRAに関するパラメータ（rank、dropout、タスクタイプなど）を指定します。
 
 **モデルとトークナイザーの読み込み**
 
-事前学習済みPhi-3モデルのパスを指定します（例: "microsoft/Phi-3-mini-4k-instruct"）。キャッシュ使用、データ型（混合精度用のbfloat16）、注意実装など、モデル設定を構成します。
+事前学習済みのPhi-3モデル（例："microsoft/Phi-3-mini-4k-instruct"）のパスを指定します。キャッシュの利用、データタイプ（混合精度のためbfloat16）、アテンションの実装などモデル設定を行います。
 
 **トレーニング**
 
-カスタムチャット指示データセットを使用してPhi-3モデルをファインチューニングします。peft_configで指定されたLoRA設定を活用して効率的に適応を行います。指定されたログ戦略を使用してトレーニングの進行状況を監視します。
+カスタムチャット指示データセットを使ってPhi-3モデルをファインチューニングします。peft_configのLoRA設定を活用し効率的に適応させます。指定したログ設定でトレーニングの進行を監視します。  
+評価と保存：ファインチューニングしたモデルを評価し、トレーニング中にチェックポイントを保存して後で利用できるようにします。
 
-**評価と保存**
+**サンプル**  
+- [このサンプルノートブックでさらに学ぶ](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
+- [Pythonファインチューニングサンプルの例](../../../../code/03.Finetuning/FineTrainingScript.py)  
+- [Hugging Face HubでのLoRAファインチューニング例](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
+- [Hugging Faceモデルカードの例 - LoRAファインチューニングサンプル](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
+- [Hugging Face HubでのQLORAファインチューニング例](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
-ファインチューニングされたモデルを評価します。
-後で使用するためにトレーニング中にチェックポイントを保存します。
-
-**サンプル**
-- [このサンプルノートブックでさらに学ぶ](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
-- [Pythonファインチューニングのサンプル例](../../../../code/03.Finetuning/FineTrainingScript.py)
-- [Hugging Face HubでLoRAを使用したファインチューニング例](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
-- [Hugging Faceモデルカードの例 - LoRAファインチューニングサンプル](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)
-- [Hugging Face HubでQLORAを使用したファインチューニング例](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
-
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確さが含まれる場合がありますのでご了承ください。元の言語で記載された文書を公式の情報源としてお考えください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の利用に起因する誤解や解釈の誤りについて、当社は一切の責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性を期していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。正式な情報源としては、原文のオリジナル言語の文書を参照してください。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤訳について、当方は一切責任を負いません。

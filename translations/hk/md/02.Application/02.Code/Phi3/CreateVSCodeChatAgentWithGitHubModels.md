@@ -1,71 +1,71 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "e8ff0378cb171924884b4abb3c2a8c37",
-  "translation_date": "2025-04-04T18:27:36+00:00",
-  "source_file": "md\\02.Application\\02.Code\\Phi3\\CreateVSCodeChatAgentWithGitHubModels.md",
+  "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
+  "translation_date": "2025-05-08T05:27:42+00:00",
+  "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "hk"
 }
 -->
-# **用 GitHub Models 的 Phi-3.5 自行打造 Visual Studio Code Chat Copilot Agent**
+# **用 GitHub Models 嘅 Phi-3.5 自己整 Visual Studio Code Chat Copilot Agent**
 
-你是否正在使用 Visual Studio Code Copilot？特別是在 Chat 模式中，你可以利用不同的 agent 來提升在 Visual Studio Code 中創建、撰寫和維護專案的能力。Visual Studio Code 提供了一個 API，讓企業和個人可以根據自己的業務需求創建不同的 agent，從而在各自的專有領域中擴展功能。在本文中，我們將聚焦於 GitHub Models 的 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)**，來打造屬於你自己的 Visual Studio Code Agent。
+你有冇用緊 Visual Studio Code Copilot？特別係 Chat 入面，你可以用唔同嘅 agents 去提升喺 Visual Studio Code 入面創作、寫作同維護項目嘅能力。Visual Studio Code 提供咗一個 API，容許公司同個人根據自己嘅業務去創建唔同嘅 agents，喺唔同嘅專有領域擴展佢哋嘅功能。今次文章我哋會集中講下 GitHub Models 嘅 **Phi-3.5-mini-instruct (128k)** 同 **Phi-3.5-vision-instruct (128k)**，教你點樣整自己嘅 Visual Studio Code Agent。
 
-## **關於 GitHub Models 的 Phi-3.5**
+## **關於 GitHub Models 嘅 Phi-3.5**
 
-我們知道 Phi-3/3.5-mini-instruct 屬於 Phi-3/3.5 家族，具有強大的程式碼理解和生成能力，並且在某些方面優於 Gemma-2-9b 和 Mistral-Nemo-12B-instruct-2407。
+我哋知道 Phi-3/3.5-mini-instruct 喺 Phi-3/3.5 家族入面擁有強大嘅代碼理解同生成能力，仲比 Gemma-2-9b 同 Mistral-Nemo-12B-instruct-2407 有優勢。
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.hk.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.hk.png)
 
-最新的 GitHub Models 已經提供了對 Phi-3.5-mini-instruct (128k) 和 Phi-3.5-vision-instruct (128k) 模型的訪問。開發者可以通過 OpenAI SDK、Azure AI Inference SDK 和 REST API 進行訪問。
+最新嘅 GitHub Models 已經提供咗 Phi-3.5-mini-instruct (128k) 同 Phi-3.5-vision-instruct (128k) 嘅存取。開發者可以透過 OpenAI SDK、Azure AI Inference SDK 同 REST API 去用佢哋。
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.hk.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.hk.png)
 
-***注意：*** 這裡建議使用 Azure AI Inference SDK，因為它能更好地與生產環境中的 Azure Model Catalog 切換。
+***Note: *** 建議用 Azure AI Inference SDK，因為喺生產環境可以更好咁同 Azure Model Catalog 互換。
 
-以下是 **Phi-3.5-mini-instruct (128k)** 和 **Phi-3.5-vision-instruct (128k)** 在與 GitHub Models 對接後的程式碼生成場景中的結果，也為後續的示例做準備。
+以下係 **Phi-3.5-mini-instruct (128k)** 同 **Phi-3.5-vision-instruct (128k)** 喺代碼生成場景同 GitHub Models 對接後嘅效果，亦為下面嘅例子做準備。
 
-**示例：GitHub Models Phi-3.5-mini-instruct (128k) 從 Prompt 生成程式碼** ([點擊這裡](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-mini-instruct (128k) 從 Prompt 生成代碼** ([點擊呢度](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**示例：GitHub Models Phi-3.5-vision-instruct (128k) 從圖片生成程式碼** ([點擊這裡](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-vision-instruct (128k) 從圖片生成代碼** ([點擊呢度](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+
 
 ## **關於 GitHub Copilot Chat Agent**
 
-GitHub Copilot Chat Agent 可以根據程式碼在不同的專案場景中完成各種任務。系統提供了四種 agent：workspace、github、terminal、vscode。
+GitHub Copilot Chat Agent 可以根據代碼喺唔同嘅項目場景完成唔同嘅任務。系統有四個 agents：workspace、github、terminal、vscode。
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.hk.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.hk.png)
 
-通過在 agent 名稱前加上 '@'，你可以快速完成對應的工作。對於企業來說，如果加入與自己業務相關的內容，例如需求、程式碼撰寫、測試規範和發佈，那麼基於 GitHub Copilot 可以實現更強大的企業專屬功能。
+加上 ‘@’ 同 agent 名稱，就可以快速完成相應嘅工作。對企業嚟講，如果加入自己業務相關嘅內容，例如需求、編碼、測試規範同發佈，可以基於 GitHub Copilot 擁有更強大嘅企業私有功能。
 
-Visual Studio Code Chat Agent 現已正式釋出其 API，允許企業或企業開發者根據不同的軟體業務生態系統開發 agent。基於 Visual Studio Code 擴展開發的方法，你可以輕鬆訪問 Visual Studio Code Chat Agent API 的介面。我們可以按照以下流程進行開發：
+Visual Studio Code Chat Agent 而家已正式推出 API，容許企業或企業開發者根據唔同軟件業務生態系統去開發 agents。基於 Visual Studio Code Extension 開發嘅方法，你可以輕鬆接入 Visual Studio Code Chat Agent API 嘅介面。我哋可以基於呢個流程去開發。
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.hk.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.hk.png)
 
-開發場景支持接入第三方模型 API（例如 GitHub Models、Azure Model Catalog，以及基於開源模型自建的服務），還可以使用 GitHub Copilot 提供的 gpt-35-turbo、gpt-4 和 gpt-4o 模型。
+開發場景支持接入第三方模型 API（例如 GitHub Models、Azure Model Catalog，同基於開源模型嘅自建服務），亦可以用 GitHub Copilot 提供嘅 gpt-35-turbo、gpt-4 同 gpt-4o 模型。
 
-## **基於 Phi-3.5 新增 Agent @phicoding**
+## **基於 Phi-3.5 加入 Agent @phicoding**
 
-我們嘗試整合 Phi-3.5 的編程能力，完成程式碼撰寫、基於圖片生成程式碼等任務。構建一個圍繞 Phi-3.5 的 Agent - @PHI，以下是一些功能：
+我哋嘗試整合 Phi-3.5 嘅編程能力，完成寫代碼、根據圖片生成代碼等任務。完成一個以 Phi-3.5 為核心嘅 Agent - @PHI，以下係部分功能：
 
-1. 通過 **@phicoding /help** 指令，基於 GitHub Copilot 提供的 GPT-4o 生成自我介紹。
+1. 透過 GitHub Copilot 提供嘅 GPT-4o，用 **@phicoding /help** 命令生成自我介紹
 
-2. 通過 **@phicoding /gen** 指令，基於 **Phi-3.5-mini-instruct (128k)** 生成不同程式語言的程式碼。
+2. 透過 **Phi-3.5-mini-instruct (128k)** 用 **@phicoding /gen** 命令生成唔同編程語言嘅代碼
 
-3. 通過 **@phicoding /image** 指令，基於 **Phi-3.5-vision-instruct (128k)** 和圖片完成程式碼生成。
+3. 透過 **Phi-3.5-vision-instruct (128k)** 同圖片，用 **@phicoding /image** 命令生成代碼
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.hk.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.hk.png)
 
 ## **相關步驟**
 
-1. 使用 npm 安裝 Visual Studio Code Extension 開發支持。
+1. 用 npm 安裝 Visual Studio Code Extension 開發支持
 
 ```bash
 
 npm install --global yo generator-code 
 
 ```
-
-2. 創建一個 Visual Studio Code Extension 插件（使用 Typescript 開發模式，命名為 phiext）。
+2. 創建 Visual Studio Code Extension 插件（用 Typescript 開發模式，名叫 phiext）
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. 打開創建的專案並修改 package.json。這裡包括相關的說明和配置，以及 GitHub Models 的配置。請注意，需要在此處添加你的 GitHub Models token。
+3. 打開創建嘅項目，修改 package.json。呢度有相關嘅說明同配置，同 GitHub Models 嘅配置。記住要喺度加你嘅 GitHub Models token。
 
 ```json
 
@@ -191,7 +191,7 @@ yo code
 
 ```
 
-4. 修改 src/extension.ts。
+4. 修改 src/extension.ts
 
 ```typescript
 
@@ -360,33 +360,35 @@ export function deactivate() {}
 
 ```
 
-5. 運行。
+6. 運行
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.hk.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.hk.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.hk.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.hk.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.hk.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.hk.png)
+
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.hk.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.hk.png)
 
-你可以下載範例程式碼：[點擊這裡](../../../../../../code/09.UpdateSamples/Aug/vscode)
+
+你可以下載示例代碼：[點擊](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **資源**
 
 1. 註冊 GitHub Models [https://gh.io/models](https://gh.io/models)
 
-2. 學習 Visual Studio Code 擴展開發 [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. 學習 Visual Studio Code Extension 開發 [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. 瞭解 Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. 了解 Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **免責聲明**：  
-此文件使用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原文的母語版本應被視為權威來源。對於關鍵信息，建議尋求專業的人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。
+本文件乃使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資料，建議採用專業人工翻譯。因使用本翻譯而引致的任何誤解或誤釋，我們概不負責。

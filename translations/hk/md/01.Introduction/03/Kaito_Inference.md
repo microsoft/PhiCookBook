@@ -1,45 +1,44 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7739575218e3244a58516832ad88a9a2",
-  "translation_date": "2025-04-04T17:48:37+00:00",
-  "source_file": "md\\01.Introduction\\03\\Kaito_Inference.md",
+  "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
+  "translation_date": "2025-05-08T05:58:33+00:00",
+  "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "hk"
 }
 -->
-## Kaito 推理
+## 使用 Kaito 進行推理
 
-[Kaito](https://github.com/Azure/kaito) 是一個操作工具，可以在 Kubernetes 群集內自動化部署 AI/ML 推理模型。
+[Kaito](https://github.com/Azure/kaito) 是一個操作器，用於自動化在 Kubernetes 叢集內部署 AI/ML 推理模型。
 
-相比於大多數基於虛擬機基礎設施的主流模型部署方法，Kaito 具有以下主要差異：
+與大部分基於虛擬機基礎設施的主流模型部署方法相比，Kaito 有以下主要特色：
 
-- 使用容器映像管理模型文件，並提供一個 http 伺服器，用於使用模型庫進行推理調用。
-- 通過提供預設配置，避免調整部署參數以適配 GPU 硬件。
+- 使用容器映像管理模型檔案。提供一個 http 伺服器，利用模型庫進行推理呼叫。
+- 透過預設配置避免為 GPU 硬件調整部署參數。
 - 根據模型需求自動配置 GPU 節點。
-- 如果許可證允許，將大型模型映像託管在 Microsoft 公共容器註冊表 (MCR)。
+- 若授權允許，將大型模型映像托管於公開的 Microsoft Container Registry (MCR)。
 
-使用 Kaito，可以大大簡化在 Kubernetes 中上線大型 AI 推理模型的工作流程。
-
+利用 Kaito，在 Kubernetes 上導入大型 AI 推理模型的流程大幅簡化。
 
 ## 架構
 
-Kaito 遵循經典的 Kubernetes 自定義資源定義 (CRD) / 控制器設計模式。用戶管理 `workspace` 自定義資源，該資源描述了 GPU 需求和推理規範。Kaito 控制器將通過調和 `workspace` 自定義資源來自動化部署。
+Kaito 採用經典的 Kubernetes 自訂資源定義(CRD)/控制器設計模式。使用者管理一個 `workspace` 自訂資源，描述 GPU 需求及推理規格。Kaito 控制器會透過調和 `workspace` 自訂資源來自動完成部署。
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito 架構" alt="Kaito 架構">
+  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
 上圖展示了 Kaito 架構概覽。其主要組件包括：
 
-- **工作空間控制器**：調和 `workspace` 自定義資源，創建 `machine`（下文解釋）自定義資源以觸發節點自動配置，並根據模型預設配置創建推理工作負載 (`deployment` 或 `statefulset`)。
-- **節點配置控制器**：該控制器名稱為 [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) 中的 *gpu-provisioner*。它使用源自 [Karpenter](https://sigs.k8s.io/karpenter) 的 `machine` CRD 與工作空間控制器交互。它集成了 Azure Kubernetes Service (AKS) API，用於向 AKS 群集添加新的 GPU 節點。
-> 注意：[*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) 是一個開源組件。如果其他控制器支持 [Karpenter-core](https://sigs.k8s.io/karpenter) API，則可以替換它。
+- **Workspace controller**：負責調和 `workspace` 自訂資源，建立 `machine`（以下說明）自訂資源以觸發節點自動配置，並根據模型預設配置建立推理工作負載（`deployment` 或 `statefulset`）。
+- **Node provisioner controller**：該控制器名稱為 *gpu-provisioner*，位於 [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner)。它使用源自 [Karpenter](https://sigs.k8s.io/karpenter) 的 `machine` CRD 與 workspace controller 互動，並整合 Azure Kubernetes Service (AKS) API 以向 AKS 叢集新增 GPU 節點。
+> 注意：[ *gpu-provisioner*](https://github.com/Azure/gpu-provisioner) 是開源元件。如其他控制器支援 [Karpenter-core](https://sigs.k8s.io/karpenter) API，亦可替換使用。
 
 ## 安裝
 
-請查看 [這裡](https://github.com/Azure/kaito/blob/main/docs/installation.md) 的安裝指南。
+請參考此處的安裝指南 [here](https://github.com/Azure/kaito/blob/main/docs/installation.md)。
 
-## Phi-3 推理快速入門
-[Phi-3 推理範例代碼](https://github.com/Azure/kaito/tree/main/examples/inference)
+## 快速開始推理 Phi-3
+[Sample Code Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -84,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-可以通過運行以下命令追蹤工作空間狀態。當 WORKSPACEREADY 列顯示為 `True` 時，模型已成功部署。
+可透過以下指令追蹤 workspace 狀態。當 WORKSPACEREADY 欄位變為 `True`，代表模型已成功部署。
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -92,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-接下來，可以找到推理服務的群集 IP，並使用一個臨時 `curl` pod 測試群集中的服務端點。
+接著，可以找到推理服務的 cluster ip，並使用臨時的 `curl` pod 來測試叢集內的服務端點。
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -103,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## 使用適配器的 Phi-3 推理快速入門
+## 使用 adapters 快速開始推理 Phi-3
 
-安裝 Kaito 後，可以嘗試以下命令啟動推理服務。
+安裝 Kaito 後，可以嘗試以下指令啟動推理服務。
 
-[使用適配器的 Phi-3 推理範例代碼](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Sample Code Inference Phi-3 with Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -156,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-可以通過運行以下命令追蹤工作空間狀態。當 WORKSPACEREADY 列顯示為 `True` 時，模型已成功部署。
+可透過以下指令追蹤 workspace 狀態。當 WORKSPACEREADY 欄位變為 `True`，代表模型已成功部署。
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -164,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-接下來，可以找到推理服務的群集 IP，並使用一個臨時 `curl` pod 測試群集中的服務端點。
+接著，可以找到推理服務的 cluster ip，並使用臨時的 `curl` pod 來測試叢集內的服務端點。
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -176,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **免責聲明**：  
-本文件使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯準確性，但請注意，自動翻譯可能會包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於關鍵信息，建議尋求專業人工翻譯。我們不對因使用此翻譯而引起的任何誤解或錯誤解釋承擔責任。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤譯承擔責任。

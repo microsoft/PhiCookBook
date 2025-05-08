@@ -1,53 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ef071f0e903a1a38f8a5f8cbb253a9ca",
-  "translation_date": "2025-04-04T13:22:00+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_MLSDK.md",
+  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
+  "translation_date": "2025-05-08T05:08:06+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "ja"
 }
 -->
-## Azure MLシステムレジストリのチャット補完コンポーネントを使用してモデルを微調整する方法
+## Azure MLシステムレジストリのchat-completionコンポーネントを使ってモデルをファインチューニングする方法
 
-この例では、ultrachat_200kデータセットを使用して、Phi-3-mini-4k-instructモデルを微調整し、2人の間の会話を完了する方法を説明します。
+この例では、Phi-3-mini-4k-instructモデルを使い、ultrachat_200kデータセットを用いて2人の会話を完結させるファインチューニングを行います。
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.ja.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.ja.png)
 
-この例では、Azure ML SDKとPythonを使用して微調整を行い、その後微調整されたモデルをオンラインエンドポイントにデプロイしてリアルタイム推論を実行する方法を示します。
+この例では、Azure ML SDKとPythonを使ってファインチューニングを実施し、その後リアルタイム推論用にファインチューニング済みモデルをオンラインエンドポイントにデプロイする方法を示します。
 
 ### トレーニングデータ
 
-ultrachat_200kデータセットを使用します。このデータセットはUltraChatデータセットの厳選されたバージョンであり、最先端の7bチャットモデルであるZephyr-7B-βのトレーニングに使用されました。
+ultrachat_200kデータセットを使用します。これはUltraChatデータセットを厳選したもので、最先端の7BチャットモデルであるZephyr-7B-βのトレーニングに使用されました。
 
 ### モデル
 
-Phi-3-mini-4k-instructモデルを使用して、チャット補完タスクのためにモデルを微調整する方法を示します。このノートブックを特定のモデルカードから開いた場合は、モデル名を適切に置き換えてください。
+チャット完了タスクのためにユーザーがモデルをファインチューニングする方法を示すために、Phi-3-mini-4k-instructモデルを使用します。このノートブックを特定のモデルカードから開いた場合は、該当するモデル名に置き換えてください。
 
 ### タスク
 
-- 微調整するモデルを選択する
-- トレーニングデータを選択して探索する
-- 微調整ジョブを設定する
-- 微調整ジョブを実行する
-- トレーニングと評価のメトリクスを確認する
-- 微調整されたモデルを登録する
-- 微調整されたモデルをリアルタイム推論用にデプロイする
+- ファインチューニングするモデルを選ぶ
+- トレーニングデータを選び、確認する
+- ファインチューニングジョブを設定する
+- ファインチューニングジョブを実行する
+- トレーニングおよび評価指標を確認する
+- ファインチューニング済みモデルを登録する
+- ファインチューニング済みモデルをリアルタイム推論用にデプロイする
 - リソースをクリーンアップする
 
-## 1. 必要条件のセットアップ
+## 1. 前提条件のセットアップ
 
 - 依存関係をインストールする
-- AzureMLワークスペースに接続する。SDK認証のセットアップについて詳しく学ぶ。以下の<WORKSPACE_NAME>, <RESOURCE_GROUP>, <SUBSCRIPTION_ID>を置き換える。
-- AzureMLシステムレジストリに接続する
+- AzureMLワークスペースに接続する。SDK認証のセットアップについては公式ドキュメントを参照。以下の<WORKSPACE_NAME>、<RESOURCE_GROUP>、<SUBSCRIPTION_ID>を置き換える。
+- azuremlシステムレジストリに接続する
 - 任意の実験名を設定する
 - コンピュートを確認または作成する
 
 > [!NOTE]
-> 要件として、単一のGPUノードには複数のGPUカードが含まれる場合があります。例えば、Standard_NC24rs_v3の1ノードには4つのNVIDIA V100 GPUが含まれ、Standard_NC12s_v3では2つのNVIDIA V100 GPUが含まれています。この情報についてはドキュメントを参照してください。ノードごとのGPUカード数は以下のパラメータgpus_per_nodeで設定されます。この値を正しく設定することで、ノード内のすべてのGPUを利用できます。推奨されるGPUコンピュートSKUはここやここで確認できます。
+> 要件としては単一GPUノードで複数のGPUカードを搭載可能です。例えば、Standard_NC24rs_v3の1ノードには4つのNVIDIA V100 GPUが搭載されていますが、Standard_NC12s_v3では2つです。この情報はドキュメントを参照してください。ノードあたりのGPUカード数は以下のgpus_per_nodeパラメータで設定します。正しく設定することでノード内の全GPUを活用できます。推奨GPUコンピュートSKUはここやここで確認できます。
 
 ### Pythonライブラリ
 
-以下のセルを実行して依存関係をインストールします。新しい環境で実行する場合、これは必須のステップです。
+以下のセルを実行して依存関係をインストールしてください。新しい環境で実行する場合は必須です。
 
 ```bash
 pip install azure-ai-ml
@@ -59,19 +59,19 @@ pip install azureml-mlflow
 
 ### Azure MLとのやり取り
 
-1. このPythonスクリプトはAzure Machine Learning (Azure ML)サービスとやり取りします。以下がその内容です：
+1. このPythonスクリプトはAzure Machine Learning (Azure ML)サービスと連携します。処理内容の概要は以下の通りです：
 
-    - azure.ai.ml、azure.identity、azure.ai.ml.entitiesパッケージから必要なモジュールをインポートします。また、timeモジュールもインポートします。
+    - azure.ai.ml、azure.identity、azure.ai.ml.entitiesの必要なモジュールをインポート。timeモジュールもインポートしています。
 
-    - DefaultAzureCredential()を使用して認証を試みます。これにより、Azureクラウドでアプリケーションを迅速に開発するための簡易認証体験が提供されます。これが失敗した場合、InteractiveBrowserCredential()にフォールバックし、対話型ログインプロンプトを提供します。
+    - DefaultAzureCredential()で認証を試みます。これはAzureクラウド上での開発を迅速に開始できる簡易認証方式です。失敗した場合はInteractiveBrowserCredential()でインタラクティブログインを行います。
 
-    - from_configメソッドを使用してMLClientインスタンスを作成し、デフォルトの設定ファイル(config.json)から設定を読み取ります。これが失敗した場合、subscription_id、resource_group_name、workspace_nameを手動で指定してMLClientインスタンスを作成します。
+    - from_configメソッドでMLClientインスタンスを作成し、config.jsonから設定を読み込みます。失敗した場合はsubscription_id、resource_group_name、workspace_nameを手動で指定してMLClientを作成します。
 
-    - "azureml"という名前のAzure MLレジストリ用に別のMLClientインスタンスを作成します。このレジストリは、モデル、微調整パイプライン、環境が保存される場所です。
+    - Azure MLのレジストリ「azureml」に対する別のMLClientインスタンスを作成します。このレジストリにはモデル、ファインチューニングパイプライン、環境が保存されています。
 
     - experiment_nameを"chat_completion_Phi-3-mini-4k-instruct"に設定します。
 
-    - 現在の時刻(エポックからの秒数を浮動小数点数として表現)を整数に変換し、さらに文字列に変換してユニークなタイムスタンプを生成します。このタイムスタンプは、ユニークな名前やバージョンを作成する際に使用できます。
+    - 現在の時間（エポック秒）を整数化して文字列に変換し、一意のタイムスタンプを生成します。これにより一意の名前やバージョンが作成可能です。
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -112,20 +112,20 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. 微調整する基盤モデルを選択する
+## 2. ファインチューニングする基盤モデルを選ぶ
 
-1. Phi-3-mini-4k-instructは、3.8Bパラメータを持つ軽量で最先端のオープンモデルであり、Phi-2で使用されたデータセットに基づいて構築されています。このモデルはPhi-3モデルファミリーに属しており、Miniバージョンは4Kと128Kの2つのバリアントがあり、サポートできるコンテキスト長(トークン数)が異なります。特定の目的で使用するためにモデルを微調整する必要があります。これらのモデルはAzureML Studioのモデルカタログでチャット補完タスクでフィルタリングして閲覧できます。この例ではPhi-3-mini-4k-instructモデルを使用します。このノートブックを別のモデルで開いた場合は、モデル名とバージョンを適宜置き換えてください。
+1. Phi-3-mini-4k-instructは3.8Bパラメータの軽量な最先端オープンモデルで、Phi-2のデータセットを基に構築されています。このモデルはPhi-3ファミリーに属し、Mini版は4Kと128Kの2つのコンテキスト長（トークン数）バリエーションがあります。用途に合わせてファインチューニングが必要です。AzureML Studioのモデルカタログでチャット完了タスクをフィルターし、これらのモデルを閲覧できます。この例ではPhi-3-mini-4k-instructモデルを使用します。別のモデルでこのノートブックを開いた場合は、モデル名とバージョンを適宜置き換えてください。
 
     > [!NOTE]
-    > モデルのidプロパティ。このプロパティは微調整ジョブへの入力として渡されます。また、AzureML Studioモデルカタログのモデル詳細ページのAsset IDフィールドとしても利用可能です。
+    > モデルのidプロパティはファインチューニングジョブの入力として渡されます。AzureML Studioのモデルカタログのモデル詳細ページのAsset IDフィールドでも確認可能です。
 
-2. このPythonスクリプトはAzure Machine Learning (Azure ML)サービスとやり取りします。以下がその内容です：
+2. このPythonスクリプトはAzure Machine Learningサービスと連携します。処理内容の概要は以下の通りです：
 
     - model_nameを"Phi-3-mini-4k-instruct"に設定します。
 
-    - registry_ml_clientオブジェクトのmodelsプロパティのgetメソッドを使用して、指定された名前のモデルの最新バージョンをAzure MLレジストリから取得します。getメソッドには、モデル名と最新バージョンを指定するラベルの2つの引数が渡されます。
+    - registry_ml_clientのmodelsプロパティのgetメソッドを使い、指定した名前のモデルの最新バージョンをAzure MLレジストリから取得します。getメソッドにはモデル名と最新バージョンを取得するラベルを渡します。
 
-    - 微調整に使用するモデルの名前、バージョン、idを示すメッセージをコンソールに出力します。formatメソッドを使用して名前、バージョン、idをメッセージに挿入します。これらのプロパティはfoundation_modelオブジェクトのプロパティとしてアクセスされます。
+    - ファインチューニングに使用するモデルの名前、バージョン、idをコンソールに出力します。文字列のformatメソッドでこれらの値を挿入しています。name、version、idはfoundation_modelオブジェクトのプロパティです。
 
     ```python
     # Set the model name
@@ -143,29 +143,29 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. ジョブに使用するコンピュートを作成する
+## 3. ジョブで使用するコンピュートを作成する
 
-微調整ジョブはGPUコンピュートでのみ動作します。コンピュートのサイズはモデルの大きさに依存し、多くの場合ジョブに適したコンピュートを特定するのが難しくなります。このセルでは、ユーザーがジョブに適したコンピュートを選択する方法を案内します。
-
-> [!NOTE]
-> 以下に示すコンピュートは最適化された構成で動作します。構成に変更を加えるとCuda Out Of Memoryエラーが発生する可能性があります。その場合は、コンピュートをより大きなサイズにアップグレードしてください。
+ファインチューニングジョブはGPUコンピュートでのみ動作します。コンピュートのサイズはモデルの大きさによって変わり、適切なコンピュートを選ぶのは難しい場合が多いです。このセルではユーザーが適切なコンピュートを選べるよう案内します。
 
 > [!NOTE]
-> 下記のcompute_cluster_sizeを選択する際、コンピュートがリソースグループ内で利用可能であることを確認してください。特定のコンピュートが利用できない場合は、コンピュートリソースへのアクセスをリクエストすることができます。
+> 以下に示すコンピュートは最適化された構成で動作します。設定を変更するとCuda Out Of Memoryエラーが発生することがあります。その場合はより大きなサイズのコンピュートにアップグレードしてください。
 
-### 微調整サポートを確認するモデルのチェック
+> [!NOTE]
+> compute_cluster_sizeを選ぶ際は、リソースグループ内でそのコンピュートが利用可能か確認してください。利用不可の場合はアクセス申請を行えます。
 
-1. このPythonスクリプトはAzure Machine Learning (Azure ML)モデルとやり取りします。以下がその内容です：
+### ファインチューニング対応モデルの確認
 
-    - astモジュールをインポートします。このモジュールはPythonの抽象構文木を処理するための関数を提供します。
+1. このPythonスクリプトはAzure MLモデルと連携し、以下の処理を行います：
 
-    - foundation_modelオブジェクト(これはAzure ML内のモデルを表します)にfinetune_compute_allow_listというタグがあるかどうかを確認します。Azure MLのタグは、作成してモデルをフィルタリングやソートするために使用できるキーと値のペアです。
+    - Pythonのastモジュールをインポートします。これはPythonの抽象構文木を処理する関数を提供します。
 
-    - finetune_compute_allow_listタグが存在する場合、そのタグの値(文字列)を安全に解析してPythonのリストに変換するためにast.literal_eval関数を使用します。このリストはcomputes_allow_list変数に割り当てられます。その後、リストからコンピュートを作成する必要があることを示すメッセージを出力します。
+    - foundation_modelオブジェクト（Azure MLのモデルを表す）がfinetune_compute_allow_listというタグを持っているか確認します。タグはAzure MLでモデルのフィルターやソートに使えるキー・バリューのペアです。
 
-    - finetune_compute_allow_listタグが存在しない場合、computes_allow_listをNoneに設定し、そのタグがモデルのタグの一部ではないことを示すメッセージを出力します。
+    - finetune_compute_allow_listタグがあれば、その値（文字列）をast.literal_evalで安全にPythonリストに変換し、computes_allow_list変数に代入します。その後、リストからコンピュートを作成すべき旨のメッセージを出力します。
 
-    - 要約すると、このスクリプトはモデルのメタデータに特定のタグがあるかどうかを確認し、タグが存在する場合はその値をリストに変換し、ユーザーにフィードバックを提供します。
+    - タグがなければcomputes_allow_listをNoneに設定し、タグがモデルに含まれていない旨を出力します。
+
+    - 要約すると、このスクリプトはモデルのメタデータに特定のタグがあるか確認し、あればリスト化してユーザーに通知します。
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -186,21 +186,21 @@ pip install azureml-mlflow
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### コンピュートインスタンスのチェック
+### コンピュートインスタンスの確認
 
-1. このPythonスクリプトはAzure Machine Learning (Azure ML)サービスとやり取りし、コンピュートインスタンスに対していくつかのチェックを行います。以下がその内容です：
+1. このPythonスクリプトはAzure MLサービスと連携し、コンピュートインスタンスの複数チェックを行います。処理内容は以下の通りです：
 
-    - compute_clusterに格納されている名前を使用してAzure MLワークスペースからコンピュートインスタンスを取得しようとします。コンピュートインスタンスのプロビジョニング状態が"failed"の場合、ValueErrorを発生させます。
+    - compute_clusterに格納された名前のコンピュートインスタンスをAzure MLワークスペースから取得し、プロビジョニング状態が"failed"ならValueErrorを発生させます。
 
-    - computes_allow_listがNoneでない場合、そのリスト内のすべてのコンピュートサイズを小文字に変換し、現在のコンピュートインスタンスのサイズがリスト内にあるかどうかを確認します。リスト内にない場合、ValueErrorを発生させます。
+    - computes_allow_listがNoneでなければ、そのリスト内のコンピュートサイズを小文字に変換し、現在のコンピュートインスタンスのサイズがリストに含まれているか確認します。含まれていなければValueErrorを発生させます。
 
-    - computes_allow_listがNoneの場合、現在のコンピュートインスタンスのサイズがサポートされていないGPU VMサイズのリストに含まれているかどうかを確認します。含まれている場合、ValueErrorを発生させます。
+    - computes_allow_listがNoneの場合は、現在のコンピュートサイズがサポート外のGPU VMサイズリストに含まれているか確認し、含まれていればValueErrorを発生させます。
 
-    - ワークスペース内のすべての利用可能なコンピュートサイズのリストを取得します。このリストを反復処理し、各コンピュートサイズの名前が現在のコンピュートインスタンスのサイズと一致するかどうかを確認します。一致する場合、そのコンピュートサイズのGPU数を取得し、gpu_count_foundをTrueに設定します。
+    - ワークスペース内の利用可能な全コンピュートサイズを取得し、現在のコンピュートサイズと一致するものを探します。一致すれば、そのコンピュートサイズのGPU数を取得し、gpu_count_foundをTrueに設定します。
 
-    - gpu_count_foundがTrueの場合、コンピュートインスタンスのGPU数を出力します。gpu_count_foundがFalseの場合、ValueErrorを発生させます。
+    - gpu_count_foundがTrueならコンピュートのGPU数を出力し、FalseならValueErrorを発生させます。
 
-    - 要約すると、このスクリプトはAzure MLワークスペース内のコンピュートインスタンスに対していくつかのチェックを行い、プロビジョニング状態、許可リストまたは禁止リストとのサイズの一致、GPU数を確認します。
+    - 要約すると、このスクリプトはAzure MLワークスペースのコンピュートインスタンスについて、状態、許可リストとの整合性、GPU数をチェックします。
 
     ```python
     # Print the exception message
@@ -269,40 +269,41 @@ pip install azureml-mlflow
         )
     ```
 
-## 4. 微調整するモデルのデータセットを選択する
+## 4. モデルのファインチューニング用データセットを選ぶ
 
-1. ultrachat_200kデータセットを使用します。このデータセットには4つのスプリットがあり、Supervised fine-tuning (sft)とGeneration ranking (gen)に適しています。各スプリットの例の数は以下の通りです：
+1. ultrachat_200kデータセットを使用します。このデータセットは4つのスプリットがあり、教師ありファインチューニング（sft）に適しています。生成ランキング（gen）もあります。スプリットごとの例数は以下の通りです：
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. 次のセルでは微調整のための基本的なデータ準備を示します：
+1. 次のセルではファインチューニングのための基本的なデータ準備を示します：
 
-### データ行を可視化する
+### データの一部を可視化する
 
-このサンプルを迅速に実行したいので、既にトリムされた行の5%を含むtrain_sft、test_sftファイルを保存します。これにより、微調整されたモデルの精度が低くなるため、実際の使用には適していません。
-download-dataset.pyはultrachat_200kデータセットをダウンロードし、データセットを微調整パイプラインコンポーネントが消費可能な形式に変換するために使用されます。また、データセットが大きいため、ここではデータセットの一部のみを使用しています。
+高速に動作させるため、既にトリム済みの行の5%を含むtrain_sft、test_sftファイルを保存します。これによりファインチューニング済みモデルの精度は低下するため、実運用には適しません。download-dataset.pyはultrachat_200kデータセットをダウンロードし、ファインチューニングパイプラインコンポーネントが利用可能な形式に変換します。データセットが大きいため、ここでは一部のみ扱います。
 
-1. 以下のスクリプトを実行するとデータの5%のみがダウンロードされます。この割合はdataset_split_pcパラメータを変更することで増やすことができます。
+1. 以下のスクリプトはデータの5%のみをダウンロードします。dataset_split_pcパラメータを変更することで割合を調整可能です。
 
     > [!NOTE]
-    > 一部の言語モデルには異なる言語コードがあり、データセット内の列名がそれに応じて反映される必要があります。
+    > 一部の言語モデルは異なる言語コードを持つため、データセットのカラム名もそれに合わせる必要があります。
 
-1. データがどのように見えるべきかの例を以下に示します：
-チャット補完データセットはparquet形式で保存されており、各エントリは以下のスキーマを使用しています：
+1. データの例は以下の通りです。チャット完了データセットはparquet形式で保存され、各エントリーは以下のスキーマを持ちます：
 
-    - これはJSON(JavaScript Object Notation)ドキュメントであり、データ交換形式として人気があります。以下がその構造の概要です：
+    - これはJSON（JavaScript Object Notation）形式のドキュメントで、データ交換に広く使われています。実行コードではなく、データの保存・転送手段です。構造は以下の通りです：
 
-    - "prompt": AIアシスタントに対して提示されるタスクや質問を表す文字列値を保持します。
+    - "prompt": AIアシスタントに対するタスクや質問を表す文字列。
 
-    - "messages": 会話内の各メッセージを表すオブジェクトの配列を保持します。各メッセージオブジェクトには以下の2つのキーがあります：
-        - "content": メッセージの内容を表す文字列値を保持します。
-        - "role": メッセージを送信したエンティティの役割を表す文字列値を保持します。"user"または"assistant"のいずれかです。
-    - "prompt_id": プロンプトの一意の識別子を表す文字列値を保持します。
+    - "messages": 配列で、ユーザーとAIアシスタント間の会話メッセージを表します。各メッセージはオブジェクトで、2つのキーを持ちます：
 
-1. この特定のJSONドキュメントでは、ユーザーがAIアシスタントにディストピアストーリーの主人公を作成するよう依頼し、アシスタントが応答し、その後ユーザーが詳細を求める会話が表されています。この会話全体は特定のprompt_idに関連付けられています。
+        - "content": メッセージの内容を表す文字列。
+
+        - "role": メッセージ送信者の役割を表す文字列。 "user"か"assistant"のいずれか。
+
+    - "prompt_id": プロンプトの一意識別子を表す文字列。
+
+1. このJSONドキュメントでは、ユーザーがディストピア小説の主人公を作成するようAIアシスタントに依頼し、アシスタントが応答し、さらに詳細を求める会話が記録されています。会話は特定のprompt_idに紐づいています。
 
     ```python
     {
@@ -342,17 +343,17 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
     }
     ```
 
-### データをダウンロードする
+### データのダウンロード
 
-1. このPythonスクリプトはヘルパースクリプトdownload-dataset.pyを使用してデータセットをダウンロードします。以下がその内容です：
+1. このPythonスクリプトはdownload-dataset.pyという補助スクリプトを使ってデータセットをダウンロードします。処理内容は以下の通りです：
 
-    - osモジュールをインポートします。このモジュールはオペレーティングシステムに依存する機能を移植可能な方法で提供します。
+    - osモジュールをインポートします。これはOS依存の機能を移植性高く扱うためのモジュールです。
 
-    - os.system関数を使用してdownload-dataset.pyスクリプトを特定のコマンドライン引数付きでシェルで実行します。引数はダウンロードするデータセット(HuggingFaceH4/ultrachat_200k)、ダウンロード先ディレクトリ(ultrachat_200k_dataset)、データセットを分割する割合(5)を指定します。os.system関数は実行したコマンドの終了ステータスを返します。このステータスはexit_status変数に格納されます。
+    - os.system関数でシェル上でdownload-dataset.pyを特定のコマンドライン引数付きで実行します。引数はダウンロードするデータセット（HuggingFaceH4/ultrachat_200k）、保存先ディレクトリ（ultrachat_200k_dataset）、データセットの分割割合（5）です。os.systemは実行結果の終了ステータスを返し、exit_statusに格納します。
 
-    - exit_statusが0でない場合をチェックします。Unix系オペレーティングシステムでは、終了ステータスが0の場合通常コマンドが成功したことを示し、その他の番号はエラーを示します。exit_statusが0でない場合、データセットのダウンロード中にエラーが発生したことを示すメッセージ付きでExceptionを発生させます。
+    - exit_statusが0でなければ（Unix系では0が成功を意味し、それ以外はエラー）、例外を発生させてダウンロードエラーを通知します。
 
-    - 要約すると、このスクリプトはヘルパースクリプトを使用してデータセットをダウンロードするコマンドを実行し、コマンドが失敗した場合は例外を発生させます。
+    - 要約すると、補助スクリプトを使ってデータセットをダウンロードし、失敗したら例外を投げます。
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -372,19 +373,19 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
         raise Exception("Error downloading dataset")
     ```
 
-### データをデータフレームに読み込む
+### DataFrameへのデータ読み込み
 
-1. このPythonスクリプトはJSON Linesファイルをpandasデータフレームに読み込み、最初の5行を表示します。以下がその内容です：
+1. このPythonスクリプトはJSON LinesファイルをpandasのDataFrameに読み込み、最初の5行を表示します。処理内容は以下の通りです：
 
-    - pandasライブラリをインポートします。これは強力なデータ操作と分析ライブラリです。
+    - pandasライブラリをインポートします。これは強力なデータ操作・解析ライブラリです。
 
-    - pandasの表示オプションの最大列幅を0に設定します。これにより、データフレームが印刷される際に各列の完全なテキストが切り捨てられることなく表示されます。
+    - pandasの表示設定でカラム幅の最大値を0に設定し、DataFrameを表示する際にテキストが切れないようにします。
 
-    - pd.read_json関数を使用して、ultrachat_200k_datasetディレクトリ内のtrain_sft.jsonlファイルをデータフレームに読み込みます。lines=True引数はファイルがJSON Lines形式であることを示します。この形式では各行が個別のJSONオブジェクトです。
+    - pd.read_json関数でultrachat_200k_datasetディレクトリのtrain_sft.jsonlファイルを読み込みます。lines=TrueはJSON Lines形式（1行ごとにJSONオブジェクトがある形式）であることを示します。
 
-    - headメソッドを使用してデータフレームの最初の5行を表示します。データフレームに5行未満しかない場合は、すべて表示されます。
+    - headメソッドで最初の5行を表示します。5行未満の場合は全行表示されます。
 
-    - 要約すると、このスクリプトはJSON Linesファイルをデータフレームに読み込み、最初の5行を完全な列テキストで表示します。
+    - 要約すると、JSON LinesファイルをDataFrameに読み込み、先頭5行を全文表示しています。
 
     ```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
@@ -403,14 +404,42 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
     df.head()
     ```
 
-## 5. モデルとデータを入力として使用して微調整ジョブを送信する
+## 5. モデルとデータを入力にファインチューニングジョブを提出する
 
-チャット補完パイプラインコンポーネントを使用するジョブを作成します。微調整でサポートされるすべてのパラメータについて詳しく学ぶ。
+chat-completionパイプラインコンポーネントを使うジョブを作成します。ファインチューニングでサポートされる全パラメータについてはこちらを参照してください。
 
-### 微調整パラメータを定義する
+### ファインチューニングパラメータの定義
 
+1. ファインチューニングパラメータは大きく2つに分類できます：トレーニングパラメータ、最適化パラメータ。
 
-機械学習パイプラインをさまざまなパラメータに基づいて構成し、その表示名を出力します。```python
+1. トレーニングパラメータは以下を定義します：
+
+    - 使用するオプティマイザーやスケジューラー
+    - ファインチューニングで最適化する指標
+    - トレーニングステップ数やバッチサイズなど
+    - 最適化パラメータはGPUメモリの最適化やコンピュート資源の効率的活用に役立ちます。
+
+1. 以下は最適化パラメータの例です。モデルごとに異なり、モデルと一緒にパッケージ化されています。
+
+    - deepspeedとLoRAの有効化
+    - 混合精度トレーニングの有効化
+    - マルチノードトレーニングの有効化
+
+> [!NOTE]
+> 教師ありファインチューニングはアライメントの喪失や破滅的忘却を引き起こす可能性があります。問題がないか確認し、ファインチューニング後にアライメントステージを実行することを推奨します。
+
+### ファインチューニングパラメータ設定
+
+1. このPythonスクリプトは機械学習モデルのファインチューニングパラメータを設定します。処理内容は以下の通りです：
+
+    - トレーニングエポック数、トレーニング・評価バッチサイズ、学習率、学習率スケジューラーの種類などのデフォルトのトレーニングパラメータを設定します。
+
+    - LoRaやDeepSpeedの適用有無、DeepSpeedステージなどのデフォルトの最適化パラメータを設定します。
+
+    - トレーニングと最適化パラメータをfinetune_parametersという辞書にまとめます。
+
+    - foundation_modelにモデル固有のデフォルトパラメータがあれば、警告メッセージを表示し、ast.literal_evalで文字列から辞書に変換
+training pipelineはさまざまなパラメータに基づいて構築され、その後この表示名を出力します。```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -470,8 +499,8 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
 このPythonスクリプトは、Azure Machine Learning SDKを使用して機械学習パイプラインを定義および構成しています。以下はその内容の概要です：
 
 1. Azure AI ML SDKから必要なモジュールをインポートします。
-1. レジストリから「chat_completion_pipeline」という名前のパイプラインコンポーネントを取得します。
-1. パイプラインジョブを定義します。`@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
+1. レジストリから "chat_completion_pipeline" という名前のパイプラインコンポーネントを取得します。
+1. `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
 
 1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
 
@@ -481,8 +510,8 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
 
 1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False`という設定により、パイプライン内のいずれかのステップが失敗すると停止します。
-1. 要約すると、このスクリプトはAzure Machine Learning SDKを使用してチャット補完タスクのための機械学習パイプラインを定義および構成しています。
+1. It sets the `continue_on_step_failure` setting of the pipeline to `False` を使ってパイプラインジョブを定義します。これは、いずれかのステップが失敗した場合にパイプラインが停止することを意味します。
+1. まとめると、このスクリプトはAzure Machine Learning SDKを使ってチャット完了タスク用の機械学習パイプラインを定義および構成しています。
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -537,11 +566,11 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
 
 ### ジョブの送信
 
-1. このPythonスクリプトは、Azure Machine Learningワークスペースに機械学習パイプラインジョブを送信し、ジョブの完了を待機します。以下はその内容の概要です：
+1. このPythonスクリプトは、Azure Machine Learningワークスペースに機械学習パイプラインジョブを送信し、ジョブの完了を待ちます。以下はその内容の概要です：
 
-- `create_or_update`メソッドを呼び出し、パイプラインジョブを送信します。実行するパイプラインは`pipeline_object`で指定され、ジョブが実行される実験は`experiment_name`で指定されます。
-- `stream`メソッドを呼び出し、パイプラインジョブが完了するまで待機します。待機するジョブは`pipeline_job`オブジェクトの`name`属性で指定されます。
-- 要約すると、このスクリプトはAzure Machine Learningワークスペースに機械学習パイプラインジョブを送信し、ジョブの完了を待機します。
+- workspace_ml_clientのjobsオブジェクトのcreate_or_updateメソッドを呼び出してパイプラインジョブを送信します。実行するパイプラインはpipeline_objectで指定され、ジョブを実行する実験はexperiment_nameで指定されます。
+- 続いて、workspace_ml_clientのjobsオブジェクトのstreamメソッドを呼び出してパイプラインジョブの完了を待ちます。待機するジョブはpipeline_jobオブジェクトのname属性で指定されます。
+- まとめると、このスクリプトはAzure Machine Learningワークスペースに機械学習パイプラインジョブを送信し、その完了を待っています。
 
 ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
@@ -556,22 +585,23 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. 微調整モデルをワークスペースに登録する
+## 6. ファインチューニング済みモデルのワークスペースへの登録
 
-微調整ジョブの出力からモデルを登録します。これにより、微調整モデルと微調整ジョブの間の系譜が追跡されます。さらに、微調整ジョブは基盤モデル、データ、トレーニングコードとの系譜を追跡します。
+ファインチューニングジョブの出力からモデルを登録します。これにより、ファインチューニング済みモデルとファインチューニングジョブの間の系統を追跡できます。さらに、ファインチューニングジョブは基盤モデル、データ、トレーニングコードへの系統も追跡します。
 
-### 機械学習モデルの登録
+### MLモデルの登録
 
 1. このPythonスクリプトは、Azure Machine Learningパイプラインでトレーニングされた機械学習モデルを登録しています。以下はその内容の概要です：
 
 - Azure AI ML SDKから必要なモジュールをインポートします。
-- `workspace_ml_client`オブジェクトの`jobs`メソッドを呼び出し、パイプラインジョブの出力`trained_model`が利用可能かどうかを確認します。
-- パイプラインジョブの名前と出力名（"trained_model"）を使用して、トレーニング済みモデルへのパスを構築します。
-- 元のモデル名に"-ultrachat-200k"を追加し、スラッシュをハイフンに置き換えることで、微調整モデルの名前を定義します。
-- モデルへのパス、モデルのタイプ（MLflowモデル）、モデルの名前とバージョン、モデルの説明など、さまざまなパラメータを含むModelオブジェクトを作成してモデル登録を準備します。
-- `workspace_ml_client`オブジェクトの`models`メソッドを呼び出し、Modelオブジェクトを引数として渡してモデルを登録します。
+- workspace_ml_clientのjobsオブジェクトのgetメソッドを呼び出し、そのoutputs属性にアクセスしてパイプラインジョブからtrained_model出力が利用可能か確認します。
+- パイプラインジョブの名前と出力名("trained_model")を使って、トレーニング済みモデルへのパスを文字列として作成します。
+- 元のモデル名に "-ultrachat-200k" を付加し、スラッシュをハイフンに置き換えた名前をファインチューニング済みモデル名として定義します。
+- モデルのパス、モデルタイプ（MLflowモデル）、モデル名とバージョン、モデルの説明などのパラメータを指定してModelオブジェクトを作成し、モデルの登録準備を行います。
+- workspace_ml_clientのmodelsオブジェクトのcreate_or_updateメソッドを呼び出してモデルを登録します。
 - 登録されたモデルを出力します。
-- 要約すると、このスクリプトはAzure Machine Learningパイプラインでトレーニングされた機械学習モデルを登録しています。
+
+1. まとめると、このスクリプトはAzure Machine Learningパイプラインでトレーニングされた機械学習モデルを登録しています。
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -613,19 +643,20 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
     print("registered model: \n", registered_model)
     ```
 
-## 7. 微調整モデルをオンラインエンドポイントにデプロイする
+## 7. ファインチューニング済みモデルのオンラインエンドポイントへのデプロイ
 
-オンラインエンドポイントは、モデルを使用する必要があるアプリケーションと統合するために使用できる永続的なREST APIを提供します。
+オンラインエンドポイントは、モデルを利用するアプリケーションと連携可能な耐久性のあるREST APIを提供します。
 
 ### エンドポイントの管理
 
-1. このPythonスクリプトは、Azure Machine Learningで登録済みモデルの管理オンラインエンドポイントを作成しています。以下はその内容の概要です：
+1. このPythonスクリプトは、Azure Machine Learningで登録済みモデル用の管理されたオンラインエンドポイントを作成しています。以下はその内容の概要です：
 
 - Azure AI ML SDKから必要なモジュールをインポートします。
-- タイムスタンプを文字列"ultrachat-completion-"に追加することで、オンラインエンドポイントのユニークな名前を定義します。
-- エンドポイント名、エンドポイントの説明、認証モード（"key"）など、さまざまなパラメータを含むManagedOnlineEndpointオブジェクトを作成してオンラインエンドポイントの作成を準備します。
-- `workspace_ml_client`オブジェクトの`begin_create_or_update`メソッドを呼び出し、ManagedOnlineEndpointオブジェクトを引数として渡してオンラインエンドポイントを作成します。その後、`wait`メソッドを呼び出して作成操作が完了するまで待機します。
-- 要約すると、このスクリプトはAzure Machine Learningで登録済みモデルの管理オンラインエンドポイントを作成しています。
+- "ultrachat-completion-" にタイムスタンプを付加してオンラインエンドポイントの一意な名前を定義します。
+- エンドポイントの名前、説明、認証モード("key")などのパラメータを指定してManagedOnlineEndpointオブジェクトを作成し、エンドポイント作成の準備をします。
+- workspace_ml_clientのbegin_create_or_updateメソッドを呼び出してオンラインエンドポイントを作成し、waitメソッドで作成完了を待ちます。
+
+1. まとめると、このスクリプトはAzure Machine Learningで登録済みモデル用の管理されたオンラインエンドポイントを作成しています。
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -654,22 +685,23 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
-> [!NOTE]  
-> デプロイメントに対応するSKUのリストはこちらで確認できます - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> [!NOTE]
+> デプロイに対応しているSKUの一覧はここで確認できます - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### 機械学習モデルのデプロイ
+### MLモデルのデプロイ
 
-1. このPythonスクリプトは、Azure Machine Learningで登録済みの機械学習モデルを管理オンラインエンドポイントにデプロイしています。以下はその内容の概要です：
+1. このPythonスクリプトは、Azure Machine Learningの管理されたオンラインエンドポイントに登録済み機械学習モデルをデプロイしています。以下はその内容の概要です：
 
-- Pythonの抽象構文木を処理するための関数を提供する`ast`モジュールをインポートします。
-- デプロイメントのインスタンスタイプを"Standard_NC6s_v3"に設定します。
-- 基盤モデルに`inference_compute_allow_list`タグが存在するか確認します。存在する場合はタグ値を文字列からPythonリストに変換し`inference_computes_allow_list`に割り当てます。存在しない場合は`None`を設定します。
-- 指定されたインスタンスタイプが許可リストに含まれているか確認します。含まれていない場合は、許可リストからインスタンスタイプを選択するようユーザーにメッセージを出力します。
-- デプロイメント名、エンドポイント名、モデルID、インスタンスタイプと数、ライブネスプローブ設定、リクエスト設定など、さまざまなパラメータを含むManagedOnlineDeploymentオブジェクトを作成してデプロイメントの作成を準備します。
-- `workspace_ml_client`オブジェクトの`begin_create_or_update`メソッドを呼び出し、ManagedOnlineDeploymentオブジェクトを引数として渡してデプロイメントを作成します。その後、`wait`メソッドを呼び出して作成操作が完了するまで待機します。
-- エンドポイントのトラフィックを"demo"デプロイメントに100%向けるよう設定します。
-- エンドポイントオブジェクトを引数として`begin_create_or_update`メソッドを呼び出し、エンドポイントを更新します。その後、`result`メソッドを呼び出して更新操作が完了するまで待機します。
-- 要約すると、このスクリプトはAzure Machine Learningで登録済みの機械学習モデルを管理オンラインエンドポイントにデプロイしています。
+- Pythonのastモジュールをインポートします。これはPythonの抽象構文木を処理する関数を提供します。
+- デプロイに使用するインスタンスの種類を "Standard_NC6s_v3" に設定します。
+- foundation modelにinference_compute_allow_listタグが存在するか確認し、存在すれば文字列をPythonのリストに変換してinference_computes_allow_listに代入します。なければNoneに設定します。
+- 指定されたインスタンスの種類が許可リストにあるか確認し、なければ許可リストからインスタンスを選ぶようメッセージを表示します。
+- デプロイ名、エンドポイント名、モデルID、インスタンスの種類と数、liveness probe設定、リクエスト設定などのパラメータを指定してManagedOnlineDeploymentオブジェクトを作成し、デプロイの準備をします。
+- workspace_ml_clientのbegin_create_or_updateメソッドを呼び出してデプロイを作成し、waitメソッドで作成完了を待ちます。
+- エンドポイントのトラフィックを "demo" デプロイに100%割り当てます。
+- workspace_ml_clientのbegin_create_or_updateメソッドを呼び出してエンドポイントを更新し、resultメソッドで更新完了を待ちます。
+
+1. まとめると、このスクリプトはAzure Machine Learningの管理されたオンラインエンドポイントに登録済み機械学習モデルをデプロイしています。
 
 ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -722,19 +754,20 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. エンドポイントをサンプルデータでテストする
+## 8. サンプルデータを使ったエンドポイントのテスト
 
-テストデータセットからサンプルデータを取得し、オンラインエンドポイントに送信して推論を行います。推論結果のラベルを正解ラベルと並べて表示します。
+テストデータセットからサンプルデータを取得し、オンラインエンドポイントに推論を送信します。その後、スコア付けされたラベルと正解ラベルを並べて表示します。
 
 ### 結果の読み込み
 
-1. このPythonスクリプトは、JSON Lines形式のファイルをpandas DataFrameに読み込み、ランダムサンプルを取得し、インデックスをリセットします。以下はその内容の概要です：
+1. このPythonスクリプトはJSON Lines形式のファイルをpandasのDataFrameに読み込み、ランダムサンプルを取り、インデックスをリセットしています。以下はその内容の概要です：
 
-- `./ultrachat_200k_dataset/test_gen.jsonl`ファイルをpandas DataFrameに読み込みます。このファイルはJSON Lines形式で、各行が個別のJSONオブジェクトになっています。そのため、`read_json`関数を`lines=True`引数とともに使用します。
-- DataFrameから1行のランダムサンプルを取得します。`sample`関数を`n=1`引数とともに使用して、選択するランダム行の数を指定します。
-- DataFrameのインデックスをリセットします。`reset_index`関数を`drop=True`引数とともに使用して、元のインデックスを削除し、デフォルトの整数値の新しいインデックスに置き換えます。
-- DataFrameの最初の2行を表示します。ただし、サンプリング後は1行しか含まれないため、この1行のみが表示されます。
-- 要約すると、このスクリプトはJSON Lines形式のファイルをpandas DataFrameに読み込み、1行のランダムサンプルを取得し、インデックスをリセットして最初の行を表示します。
+- ./ultrachat_200k_dataset/test_gen.jsonlファイルをpandasのread_json関数で読み込みます。lines=True引数を指定しているのは、ファイルが各行が独立したJSONオブジェクトであるJSON Lines形式だからです。
+- DataFrameから1行のランダムサンプルを取得します。sample関数にn=1を指定しています。
+- DataFrameのインデックスをリセットします。reset_index関数にdrop=Trueを指定して元のインデックスを破棄し、新たに整数のデフォルトインデックスを付与します。
+- head関数で最初の2行を表示します。ただしサンプルが1行のみなので、実際にはその1行だけが表示されます。
+
+1. まとめると、このスクリプトはJSON LinesファイルをpandasのDataFrameに読み込み、1行のランダムサンプルを取り、インデックスをリセットし、最初の行を表示しています。
 
 ```python
     # Import pandas library
@@ -760,12 +793,12 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
 
 ### JSONオブジェクトの作成
 
-1. このPythonスクリプトは、特定のパラメータを持つJSONオブジェクトを作成し、ファイルに保存しています。以下はその内容の概要です：
+1. このPythonスクリプトは特定のパラメータを持つJSONオブジェクトを作成し、ファイルに保存しています。以下はその内容の概要です：
 
-- JSONデータを操作するための関数を提供する`json`モジュールをインポートします。
-- 機械学習モデルのパラメータを表すキーと値を持つ辞書`parameters`を作成します。キーは"temperature"、"top_p"、"do_sample"、"max_new_tokens"で、それぞれの値は0.6、0.9、True、200です。
-- `test_json`という別の辞書を作成し、2つのキーを持たせます："input_data"と"params"。"input_data"の値は、`test_df` DataFrameの最初のメッセージを含むリストを持つ辞書です。"params"の値は空の辞書です。
-- `sample_score.json`というファイルを開きます。
+- jsonモジュールをインポートします。これはJSONデータを扱う関数を提供します。
+- temperature、top_p、do_sample、max_new_tokensというキーと、それぞれ0.6、0.9、True、200という値を持つparameters辞書を作成します。
+- test_json辞書を作成します。キーは "input_data" と "params" で、"input_data" の値は "input_string" と "parameters" をキーとする辞書です。"input_string" はtest_df DataFrameの最初のメッセージを含むリストで、"parameters" は先に作成したparameters辞書です。"params" の値は空の辞書です。
+- sample_score.jsonというファイルを開きます。
 
 ```python
     # Import the json module, which provides functions to work with JSON data
@@ -801,14 +834,15 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
 
 ### エンドポイントの呼び出し
 
-1. このPythonスクリプトは、Azure Machine Learningのオンラインエンドポイントを呼び出してJSONファイルをスコアリングします。以下はその内容の概要です：
+1. このPythonスクリプトはAzure Machine Learningのオンラインエンドポイントを呼び出してJSONファイルのスコアリングを行っています。以下はその内容の概要です：
 
-- `workspace_ml_client`オブジェクトの`online_endpoints`プロパティの`invoke`メソッドを呼び出します。このメソッドはオンラインエンドポイントにリクエストを送信し、レスポンスを取得するために使用されます。
-- エンドポイント名とデプロイメント名を`endpoint_name`と`deployment_name`引数で指定します。エンドポイント名は`online_endpoint_name`変数に格納され、デプロイメント名は"demo"です。
-- スコアリングするJSONファイルのパスを`request_file`引数で指定します。この場合、ファイルは`./ultrachat_200k_dataset/sample_score.json`です。
-- エンドポイントからのレスポンスを`response`変数に格納します。
-- レスポンスの生データを出力します。
-- 要約すると、このスクリプトはAzure Machine Learningのオンラインエンドポイントを呼び出してJSONファイルをスコアリングし、レスポンスを出力します。
+- workspace_ml_clientオブジェクトのonline_endpointsプロパティのinvokeメソッドを呼び出して、オンラインエンドポイントにリクエストを送り、レスポンスを取得します。
+- endpoint_nameとdeployment_name引数でエンドポイント名とデプロイ名を指定します。ここではエンドポイント名はonline_endpoint_name変数に格納され、デプロイ名は "demo" です。
+- request_file引数でスコアリング対象のJSONファイルのパスを指定します。ここでは ./ultrachat_200k_dataset/sample_score.json です。
+- エンドポイントからのレスポンスをresponse変数に格納します。
+- 生のレスポンスを出力します。
+
+1. まとめると、このスクリプトはAzure Machine Learningのオンラインエンドポイントを呼び出してJSONファイルのスコアリングを行い、レスポンスを表示しています。
 
 ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
@@ -826,14 +860,14 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
     print("raw response: \n", response, "\n")
     ```
 
-## 9. オンラインエンドポイントを削除する
+## 9. オンラインエンドポイントの削除
 
-1. オンラインエンドポイントを削除することを忘れないでください。削除しない場合、エンドポイントで使用されるコンピュートの課金メーターが動作し続けます。このPythonコードはAzure Machine Learningでオンラインエンドポイントを削除しています。以下はその内容の概要です：
+1. オンラインエンドポイントを削除しないと、エンドポイントで使用されたコンピュートの課金が続いてしまうので忘れずに削除しましょう。このPythonコードはAzure Machine Learningのオンラインエンドポイントを削除しています。以下はその内容の概要です：
 
-- `workspace_ml_client`オブジェクトの`online_endpoints`プロパティの`begin_delete`メソッドを呼び出します。このメソッドはオンラインエンドポイントの削除を開始するために使用されます。
-- 削除するエンドポイントの名前を`name`引数で指定します。この場合、エンドポイント名は`online_endpoint_name`変数に格納されています。
-- `wait`メソッドを呼び出して削除操作が完了するまで待機します。この操作はブロックされるため、削除が終了するまでスクリプトの続行を防ぎます。
-- 要約すると、このコードはAzure Machine Learningでオンラインエンドポイントの削除を開始し、操作が完了するまで待機します。
+- workspace_ml_clientオブジェクトのonline_endpointsプロパティのbegin_deleteメソッドを呼び出して、オンラインエンドポイントの削除を開始します。
+- name引数で削除対象のエンドポイント名を指定します。ここではonline_endpoint_name変数に格納されています。
+- waitメソッドを呼び出して削除処理が完了するまで待機します。この処理はブロッキングで、削除完了までスクリプトの続行を停止します。
+- まとめると、このコードはAzure Machine Learningのオンラインエンドポイントの削除を開始し、完了まで待機しています。
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -843,5 +877,5 @@ download-dataset.pyはultrachat_200kデータセットをダウンロードし�
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。元の言語で記載された文書が正式な情報源と見なされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳を使用したことによる誤解や誤った解釈について、当方は一切の責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性の確保に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源としてご参照ください。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や解釈の相違について、当方は一切の責任を負いかねます。

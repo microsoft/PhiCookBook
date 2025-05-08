@@ -1,63 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "94e7d7ab455720bab75ead5c28521c97",
-  "translation_date": "2025-04-04T13:10:25+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_AIFoundry.md",
+  "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
+  "translation_date": "2025-05-08T05:02:41+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "ja"
 }
 -->
-# Phi-3のAzure AI Foundryによる微調整
+# Azure AI FoundryでPhi-3をファインチューニングする
 
-MicrosoftのPhi-3 Mini言語モデルをAzure AI Foundryを使用して微調整する方法を探ってみましょう。微調整を行うことで、Phi-3 Miniを特定のタスクに適応させ、さらに強力で文脈を理解する能力を向上させることができます。
+MicrosoftのPhi-3 Mini言語モデルをAzure AI Foundryを使ってファインチューニングする方法を見ていきましょう。ファインチューニングにより、Phi-3 Miniを特定のタスクに適応させ、より強力でコンテキストに即したモデルに仕上げることができます。
 
-## 考慮事項
+## 注意点
 
-- **能力:** 微調整可能なモデルはどれか？ベースモデルを微調整することで何ができるか？
-- **コスト:** 微調整の価格体系はどうなっているか？
-- **カスタマイズ性:** ベースモデルをどの程度変更できるか？どのような方法で変更できるか？
-- **利便性:** 微調整はどのように行われるか？カスタムコードを書く必要があるか？自分でコンピュートリソースを用意する必要があるか？
-- **安全性:** 微調整されたモデルには安全性のリスクがあることが知られていますが、意図しない危害を防ぐためのガードレールはあるか？
+- **機能:** どのモデルがファインチューニング可能か？ベースモデルはどんなことに対応できるのか？
+- **コスト:** ファインチューニングの料金体系はどうなっているか？
+- **カスタマイズ性:** ベースモデルをどの程度、どのように変更できるか？
+- **利便性:** 実際のファインチューニングはどのように行うのか？カスタムコードは必要か？自分で計算資源を用意する必要はあるか？
+- **安全性:** ファインチューニングされたモデルは安全リスクがあることが知られているが、意図しない害を防ぐためのガードレールはあるか？
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.ja.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.ja.png)
 
-## 微調整の準備
+## ファインチューニングの準備
 
 ### 前提条件
 
-> [!NOTE]  
-> Phi-3ファミリーモデルの場合、従量課金制の微調整サービスは**East US 2**リージョンで作成されたハブでのみ利用可能です。
+> [!NOTE]
+> Phi-3ファミリーモデルの場合、従量課金制のファインチューニング提供は**East US 2**リージョンで作成されたハブのみ利用可能です。
 
-- Azureサブスクリプション。Azureサブスクリプションをお持ちでない場合は、[有料Azureアカウント](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go)を作成してください。
+- Azureサブスクリプション。お持ちでない場合は、[有料のAzureアカウント](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go)を作成してください。
 
-- [AI Foundryプロジェクト](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo)。  
-- Azureのロールベースアクセス制御（Azure RBAC）は、Azure AI Foundryでの操作へのアクセスを許可するために使用されます。この手順を実行するには、ユーザーアカウントにリソースグループでの__Azure AI Developer role__が割り当てられている必要があります。
+- [AI Foundryプロジェクト](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo)。
+- Azureのロールベースアクセス制御（Azure RBAC）を使ってAzure AI Foundryの操作権限を付与します。本記事の手順を実行するには、リソースグループに対して__Azure AI Developerロール__が割り当てられている必要があります。
 
-### サブスクリプションプロバイダーの登録
+### サブスクリプションのプロバイダー登録
 
-`Microsoft.Network`リソースプロバイダーがサブスクリプションに登録されていることを確認してください。
+サブスクリプションが`Microsoft.Network`リソースプロバイダーに登録されていることを確認します。
 
-1. [Azureポータル](https://portal.azure.com)にサインインします。  
-1. 左メニューから**サブスクリプション**を選択します。  
-1. 使用するサブスクリプションを選択します。  
-1. 左メニューから**AIプロジェクト設定** > **リソースプロバイダー**を選択します。  
-1. **Microsoft.Network**がリソースプロバイダーのリストにあることを確認します。リストにない場合は追加してください。
+1. [Azureポータル](https://portal.azure.com)にサインインします。
+1. 左メニューから**Subscriptions**を選択します。
+1. 使用するサブスクリプションを選択します。
+1. 左メニューから**AI project settings** > **Resource providers**を選択します。
+1. **Microsoft.Network**がリソースプロバイダーの一覧にあることを確認します。なければ追加してください。
 
 ### データ準備
 
-モデルを微調整するためのトレーニングデータと検証データを準備します。トレーニングデータと検証データセットには、モデルに期待する動作を示す入力と出力の例が含まれます。
+ファインチューニング用のトレーニングデータと検証データを用意します。これらのデータセットは、モデルに期待する動作の入出力例で構成されます。
 
-すべてのトレーニング例が推論に必要な形式に従っていることを確認してください。モデルを効果的に微調整するには、バランスが取れた多様なデータセットを確保する必要があります。
+すべてのトレーニング例が推論時の期待フォーマットに沿っていることを確認してください。効果的にファインチューニングするには、バランスの良い多様なデータセットが重要です。
 
-これには、データのバランスを維持し、さまざまなシナリオを含めること、トレーニングデータを定期的に更新して実際の期待に沿うようにすることが含まれます。これにより、より正確でバランスの取れたモデル応答が得られます。
+これは、データのバランスを保ち、様々なシナリオを含め、定期的にトレーニングデータを現実の期待に合わせて調整することを意味します。これにより、より正確でバランスの取れたモデル応答が得られます。
 
-異なるモデルタイプでは、トレーニングデータの形式が異なる場合があります。
+モデルの種類によって、トレーニングデータのフォーマットは異なります。
 
-### チャット完了
+### チャット補完
 
-使用するトレーニングデータと検証データは、**JSON Lines (JSONL)** ドキュメントとしてフォーマットされている必要があります。`Phi-3-mini-128k-instruct`の微調整データセットは、Chat completions APIで使用される会話形式に従ってフォーマットされている必要があります。
+使用するトレーニングおよび検証データは、**JSON Lines (JSONL)**形式である必要があります。`Phi-3-mini-128k-instruct`の場合は、Chat completions APIで使われる会話形式でフォーマットされたデータセットである必要があります。
 
-### ファイル形式の例
+### ファイルフォーマット例
 
 ```json
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Is Xbox better than PlayStation?"}, {"role": "assistant", "content": "I apologize, but I cannot provide personal opinions. My primary job is to assist you with any issues related to your Xbox device. Do you have any Xbox-related issues that need addressing?"}]}
@@ -65,172 +65,174 @@ MicrosoftのPhi-3 Mini言語モデルをAzure AI Foundryを使用して微調整
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-サポートされているファイルタイプはJSON Linesです。ファイルはデフォルトのデータストアにアップロードされ、プロジェクト内で利用可能になります。
+対応ファイル形式はJSON Linesです。ファイルはデフォルトのデータストアにアップロードされ、プロジェクト内で利用可能になります。
 
-## Azure AI FoundryでPhi-3を微調整
+## Azure AI FoundryでPhi-3をファインチューニングする
 
-Azure AI Foundryでは、微調整と呼ばれるプロセスを使用して、大規模言語モデルを独自のデータセットに合わせることができます。微調整は、特定のタスクやアプリケーションに合わせてカスタマイズと最適化を行うことで、性能向上、コスト効率化、レイテンシー削減、カスタマイズされた出力を実現します。
+Azure AI Foundryでは、ファインチューニングという手法を使って、大規模言語モデルを自分のデータセットに合わせてカスタマイズできます。ファインチューニングは特定のタスクや用途に最適化することで、性能向上、コスト効率化、レイテンシ削減、そして出力の最適化を実現します。
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.ja.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.ja.png)
 
-### 新しいプロジェクトを作成
+### 新規プロジェクトの作成
 
-1. [Azure AI Foundry](https://ai.azure.com)にサインインします。  
+1. [Azure AI Foundry](https://ai.azure.com)にサインインします。
 
-1. **+新しいプロジェクト**を選択して、Azure AI Foundryで新しいプロジェクトを作成します。
+1. **+New project**を選択し、新しいプロジェクトを作成します。
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.ja.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ja.png)
 
-1. 以下のタスクを実行します：
+1. 以下の作業を行います：
 
-    - プロジェクトの**ハブ名**を入力します。一意の値である必要があります。
-    - 使用する**ハブ**を選択します（必要に応じて新しいものを作成します）。
+    - プロジェクトの**Hub name**。ユニークな値である必要があります。
+    - 使用する**Hub**を選択（必要に応じて新規作成）。
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.ja.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ja.png)
 
-1. 新しいハブを作成するために以下のタスクを実行します：
+1. 新しいハブを作成するには、以下を行います：
 
-    - **ハブ名**を入力します。一意の値である必要があります。
-    - Azureの**サブスクリプション**を選択します。
-    - 使用する**リソースグループ**を選択します（必要に応じて新しいものを作成します）。
-    - 使用したい**場所**を選択します。
-    - 使用する**Azure AIサービスの接続**を選択します（必要に応じて新しいものを作成します）。
-    - **Azure AI Searchの接続**を**スキップ**します。
+    - **Hub name**を入力。ユニークな値である必要があります。
+    - Azureの**Subscription**を選択。
+    - 使用する**Resource group**を選択（必要に応じて新規作成）。
+    - 使用したい**Location**を選択。
+    - 使用する**Connect Azure AI Services**を選択（必要に応じて新規作成）。
+    - **Connect Azure AI Search**は**Skip connecting**を選択。
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.ja.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.ja.png)
 
-1. **次へ**を選択します。  
-1. **プロジェクトを作成**を選択します。
+1. **Next**を選択します。
+1. **Create a project**を選択します。
 
 ### データ準備
 
-微調整を行う前に、チャット指示や質問回答ペアなど、タスクに関連するデータセットを収集または作成します。このデータをクリーンアップし、ノイズを除去し、欠損値を処理し、テキストをトークン化します。
+ファインチューニング前に、チャット指示、質問応答ペア、その他関連するテキストデータなど、タスクに関連したデータセットを収集または作成します。ノイズ除去、欠損値処理、トークナイズなどの前処理を行ってください。
 
-### Azure AI FoundryでPhi-3モデルを微調整
+### Azure AI FoundryでPhi-3モデルをファインチューニングする
 
-> [!NOTE]  
-> Phi-3モデルの微調整は現在、East US 2に配置されたプロジェクトでサポートされています。
+> [!NOTE]
+> Phi-3モデルのファインチューニングは現在、East US 2にあるプロジェクトでのみサポートされています。
 
-1. 左側のタブから**モデルカタログ**を選択します。
+1. 左側のタブから**Model catalog**を選択します。
 
-1. **検索バー**に*phi-3*と入力し、使用したいPhi-3モデルを選択します。
+1. **検索バー**に*phi-3*と入力し、使用したいphi-3モデルを選択します。
 
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.ja.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.ja.png)
 
-1. **微調整**を選択します。
+1. **Fine-tune**を選択します。
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.ja.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.ja.png)
 
-1. **微調整済みモデル名**を入力します。
+1. **Fine-tuned model name**を入力します。
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.ja.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.ja.png)
 
-1. **次へ**を選択します。
+1. **Next**を選択します。
 
-1. 以下のタスクを実行します：
+1. 以下の作業を行います：
 
-    - **タスクタイプ**を**チャット完了**に選択します。
-    - 使用したい**トレーニングデータ**を選択します。Azure AI Foundryのデータまたはローカル環境からアップロードできます。
+    - **task type**に**Chat completion**を選択。
+    - 使用する**Training data**を選択。Azure AI Foundryのデータからアップロードするか、ローカル環境からアップロード可能です。
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.ja.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.ja.png)
 
-1. **次へ**を選択します。
+1. **Next**を選択します。
 
-1. 使用したい**検証データ**をアップロードします。または、**トレーニングデータの自動分割**を選択できます。
+1. 使用する**Validation data**をアップロードするか、**Automatic split of training data**を選択します。
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.ja.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.ja.png)
 
-1. **次へ**を選択します。
+1. **Next**を選択します。
 
-1. 以下のタスクを実行します：
+1. 以下を設定します：
 
-    - 使用したい**バッチサイズの倍率**を選択します。
-    - 使用したい**学習率**を選択します。
-    - 使用したい**エポック数**を選択します。
+    - 使用したい**Batch size multiplier**を選択。
+    - 使用したい**Learning rate**を選択。
+    - 使用したい**Epochs**を選択。
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.ja.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.ja.png)
 
-1. **送信**を選択して微調整プロセスを開始します。
+1. **Submit**を選択してファインチューニングを開始します。
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.ja.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.ja.png)
 
-1. モデルが微調整されると、状態が**完了**として表示されます。これでモデルをデプロイし、独自のアプリケーション、プレイグラウンド、またはプロンプトフローで使用できます。詳細については、[Phi-3ファミリーの小型言語モデルをAzure AI Foundryでデプロイする方法](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)を参照してください。
+1. モデルのファインチューニングが完了すると、ステータスが**Completed**と表示されます。これでモデルをデプロイし、自分のアプリケーション、プレイグラウンド、またはプロンプトフローで使用可能です。詳細は[Azure AI FoundryでのPhi-3ファミリーの小型言語モデルのデプロイ方法](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)を参照してください。
 
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.ja.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.ja.png)
 
-> [!NOTE]  
-> Phi-3の微調整についての詳細情報は、[Azure AI FoundryでPhi-3モデルを微調整する方法](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)をご覧ください。
+> [!NOTE]
+> Phi-3のファインチューニングに関する詳細情報は、[Azure AI FoundryでのPhi-3モデルのファインチューニング](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)をご覧ください。
 
-## 微調整されたモデルのクリーンアップ
+## ファインチューニング済みモデルのクリーンアップ
 
-微調整モデルは、[Azure AI Foundry](https://ai.azure.com)の微調整モデルリストまたはモデル詳細ページから削除できます。微調整ページで削除したいモデルを選択し、削除ボタンを選択してください。
+[Azure AI Foundry](https://ai.azure.com)のファインチューニングモデル一覧またはモデル詳細ページから、ファインチューニング済みモデルを削除できます。ファインチューニングページで削除したいモデルを選択し、削除ボタンを押してください。
 
-> [!NOTE]  
-> デプロイが存在するカスタムモデルは削除できません。カスタムモデルを削除する前にモデルデプロイを削除する必要があります。
+> [!NOTE]
+> 既存のデプロイメントがあるカスタムモデルは削除できません。モデルのデプロイメントを先に削除する必要があります。
 
 ## コストとクォータ
 
-### サービスとして微調整されたPhi-3モデルのコストとクォータに関する考慮事項
+### サービスとしてファインチューニングされたPhi-3モデルのコストとクォータの考慮事項
 
-Microsoftが提供するサービスとして微調整されたPhiモデルは、Azure AI Foundryと統合されて使用されます。モデルの[デプロイ](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)や微調整時に、デプロイメントウィザードの料金と利用規約タブで価格情報を確認できます。
+サービスとしてファインチューニングされたPhiモデルはMicrosoftが提供し、Azure AI Foundryと統合されています。モデルの[デプロイ](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)やファインチューニング時の料金は、デプロイウィザードの「Pricing and terms」タブで確認できます。
 
 ## コンテンツフィルタリング
 
-従量課金制でサービスとしてデプロイされたモデルは、Azure AI Content Safetyによって保護されています。リアルタイムエンドポイントにデプロイする際、この機能をオプトアウトすることも可能です。Azure AI Content Safetyが有効になっている場合、プロンプトと応答は有害なコンテンツの出力を検出・防止するための分類モデル群を通過します。コンテンツフィルタリングシステムは、入力プロンプトと出力応答の両方で特定の有害コンテンツカテゴリを検出し、対応を行います。[Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering)についてさらに詳しく学ぶことができます。
+従量課金制のサービスとしてデプロイされたモデルはAzure AI Content Safetyによって保護されています。リアルタイムエンドポイントにデプロイした際、この機能をオプトアウトすることも可能です。Azure AI Content Safetyが有効な場合、プロンプトと補完の両方が有害コンテンツの出力を検出・防止するための複数の分類モデル群に通されます。コンテンツフィルタリングシステムは、入力プロンプトと出力補完の両方に含まれる特定のカテゴリの潜在的に有害なコンテンツを検知し、適切に対処します。詳細は[Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering)をご覧ください。
 
-**微調整の設定**
+**ファインチューニング設定**
 
-ハイパーパラメータ: 学習率、バッチサイズ、トレーニングエポック数などを定義します。
+ハイパーパラメーター：学習率、バッチサイズ、トレーニングエポック数などを定義します。
 
 **損失関数**
 
-タスクに適した損失関数を選択します（例: クロスエントロピー）。
+タスクに適した損失関数を選択します（例：クロスエントロピー）。
 
-**オプティマイザ**
+**オプティマイザー**
 
-トレーニング中の勾配更新に使用するオプティマイザを選択します（例: Adam）。
+トレーニング中の勾配更新に使用するオプティマイザーを選択します（例：Adam）。
 
-**微調整プロセス**
+**ファインチューニングプロセス**
 
-- 事前学習済みモデルのロード: Phi-3 Miniのチェックポイントをロードします。
-- カスタムレイヤーの追加: タスク固有のレイヤーを追加します（例: チャット指示用の分類ヘッド）。
+- 事前学習済みモデルの読み込み：Phi-3 Miniのチェックポイントをロードします。
+- カスタムレイヤーの追加：タスク固有のレイヤー（例：チャット指示用の分類ヘッド）を追加します。
 
-**モデルのトレーニング**  
-準備したデータセットを使用してモデルを微調整します。トレーニングの進行状況を監視し、必要に応じてハイパーパラメータを調整します。
+**モデルのトレーニング**
+
+用意したデータセットでモデルをファインチューニングします。トレーニングの進捗を監視し、必要に応じてハイパーパラメーターを調整します。
 
 **評価と検証**
 
-検証セット: データをトレーニングセットと検証セットに分割します。
+検証セット：データをトレーニングセットと検証セットに分割します。
 
 **性能評価**
 
-精度、F1スコア、または困惑度などの指標を使用してモデルの性能を評価します。
+精度、F1スコア、パープレキシティなどの指標を用いてモデル性能を評価します。
 
-## 微調整済みモデルの保存
+## ファインチューニング済みモデルの保存
 
-**チェックポイント**  
-微調整済みモデルのチェックポイントを保存して、将来の使用に備えます。
+**チェックポイント**
+
+将来の利用のためにファインチューニング済みモデルのチェックポイントを保存します。
 
 ## デプロイ
 
-- Webサービスとしてデプロイ: 微調整済みモデルをAzure AI FoundryでWebサービスとしてデプロイします。
-- エンドポイントのテスト: デプロイされたエンドポイントにテストクエリを送信して、その機能を確認します。
+- Webサービスとしてデプロイ：ファインチューニング済みモデルをAzure AI FoundryでWebサービスとしてデプロイします。
+- エンドポイントのテスト：デプロイしたエンドポイントにテストクエリを送り、動作を確認します。
 
-## 繰り返しと改善
+## 繰り返し改善
 
-繰り返し: パフォーマンスが満足できない場合は、ハイパーパラメータを調整したり、データを追加したり、追加エポックで微調整を行ったりして繰り返します。
+パフォーマンスが満足いかない場合は、ハイパーパラメーターの調整、データの追加、エポック数の増加などを試しながら繰り返し改善します。
 
-## 監視と改良
+## モニタリングと調整
 
-モデルの動作を継続的に監視し、必要に応じて改良します。
+モデルの挙動を継続的に監視し、必要に応じて調整を行います。
 
 ## カスタマイズと拡張
 
-カスタムタスク: Phi-3 Miniはチャット指示以外のさまざまなタスクに微調整することができます。他のユースケースを探ってみましょう！  
-実験: パフォーマンスを向上させるために、異なるアーキテクチャ、レイヤーの組み合わせ、技術を試してみてください。
+カスタムタスク：Phi-3 Miniはチャット指示以外の様々なタスクにもファインチューニング可能です。ほかのユースケースもぜひ試してみてください！
+実験：異なるアーキテクチャやレイヤーの組み合わせ、技術を試して性能向上を目指しましょう。
 
-> [!NOTE]  
-> 微調整は繰り返しのプロセスです。実験、学習、そしてモデルを適応させて、特定のタスクに最適な結果を達成してください！
+> [!NOTE]
+> ファインチューニングは反復的なプロセスです。実験し、学び、モデルを適応させて、特定のタスクで最高の結果を目指しましょう！
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。原文の母国語での文書が公式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳をお勧めします。この翻訳の使用に起因する誤解や誤認について、当方は責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご理解ください。原文はその言語における正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や解釈の相違についても、当方は責任を負いかねます。

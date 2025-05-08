@@ -1,46 +1,46 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5ca6ea8da7aa1335ef287124462b2833",
-  "translation_date": "2025-04-04T17:42:56+00:00",
-  "source_file": "md\\01.Introduction\\03\\AIPC_Inference.md",
+  "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
+  "translation_date": "2025-05-08T05:59:21+00:00",
+  "source_file": "md/01.Introduction/03/AIPC_Inference.md",
   "language_code": "hk"
 }
 -->
-# **Inference Phi-3 in AI PC**
+# **AI PC 上 Phi-3 推理**
 
-隨著生成式 AI 的進步以及邊緣設備硬件能力的提升，越來越多生成式 AI 模型可以整合到用戶的自攜設備 (BYOD) 中。AI PC 就是其中之一。從 2024 年開始，Intel、AMD 和 Qualcomm 已與 PC 製造商合作，通過硬件改造推出 AI PC，支持部署本地化生成式 AI 模型。在這篇討論中，我們將聚焦於 Intel AI PC，並探討如何在 Intel AI PC 上部署 Phi-3。
+隨著生成式 AI 技術的進步以及邊緣裝置硬件能力的提升，越來越多生成式 AI 模型可以直接整合到用戶的自攜裝置（BYOD）中。AI PC 就是其中一種。自 2024 年起，Intel、AMD 和 Qualcomm 與 PC 製造商合作，透過硬件改良推出 AI PC，方便在本地部署生成式 AI 模型。本文將聚焦 Intel AI PC，介紹如何在 Intel AI PC 上部署 Phi-3。
 
 ### 什麼是 NPU
 
-NPU (Neural Processing Unit) 是專門設計用於加速神經網絡運算和 AI 任務的處理器或處理單元，通常集成在更大的 SoC 中。與通用的 CPU 和 GPU 不同，NPU 專為數據驅動的並行計算而優化，因此在處理大量多媒體數據（如視頻和圖像）以及神經網絡運算數據方面效率極高。它特別擅長處理 AI 相關任務，例如語音識別、視頻通話中的背景模糊，以及物件檢測等照片或視頻編輯過程。
+NPU（神經網絡處理器）是集成在較大 SoC 裡專門用於加速神經網絡運算和 AI 任務的處理器。與通用 CPU 和 GPU 不同，NPU 針對數據驅動的並行運算優化，非常擅長處理大量多媒體數據（如影片和圖片）以及神經網絡所需的資料處理。它特別適合 AI 相關任務，例如語音識別、視像通話中的背景模糊，以及影像或影片編輯中的物件偵測。
 
-## NPU vs GPU
+## NPU 與 GPU 的分別
 
-雖然許多 AI 和機器學習工作負載都運行於 GPU 上，但 GPU 與 NPU 之間存在重要區別。
-GPU 以其並行計算能力著稱，但並非所有 GPU 在處理圖形之外的任務都同樣高效。相比之下，NPU 是專門為神經網絡運算中的複雜計算而設計的，因此在處理 AI 任務方面非常高效。
+雖然很多 AI 和機器學習任務會使用 GPU，但 GPU 和 NPU 之間有關鍵差異。
+GPU 以其並行運算能力聞名，但並非所有 GPU 在圖形處理以外的任務上效率都相同。NPU 則是專門為神經網絡複雜計算打造，對 AI 任務非常有效率。
 
-簡而言之，NPU 是加速 AI 計算的數學高手，在 AI PC 的新時代中扮演了關鍵角色！
+總結來說，NPU 就是推動 AI 運算的數學高手，在 AI PC 的新時代扮演重要角色！
 
 ***此示例基於 Intel 最新的 Intel Core Ultra 處理器***
 
-## **1. 使用 NPU 運行 Phi-3 模型**
+## **1. 用 NPU 運行 Phi-3 模型**
 
-Intel® NPU 設備是一種集成於 Intel 客戶端 CPU 的 AI 推理加速器，從 Intel® Core™ Ultra 世代 CPU（以前稱為 Meteor Lake）開始提供。它支持以能源高效的方式執行人工神經網絡任務。
+Intel® NPU 裝置是與 Intel 客戶端 CPU 整合的 AI 推理加速器，從 Intel® Core™ Ultra 世代 CPU（前稱 Meteor Lake）開始支援。它可實現人工神經網絡任務的節能高效執行。
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.hk.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.hk.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.hk.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.hk.png)
 
 **Intel NPU 加速庫**
 
-Intel NPU 加速庫 [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) 是一個 Python 庫，通過利用 Intel 神經處理單元 (NPU) 的強大性能，實現高效能的硬件計算，從而提升應用程序效率。
+Intel NPU 加速庫 [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) 是一個 Python 庫，利用 Intel 神經網絡處理器 (NPU) 的運算能力，提升應用程式的運算效率，適用於相容硬件上的高速計算。
 
-以下是使用 Intel® Core™ Ultra 處理器驅動的 AI PC 上 Phi-3-mini 的示例。
+這是基於 Intel® Core™ Ultra 處理器的 AI PC 上 Phi-3-mini 範例。
 
 ![DemoPhiIntelAIPC](../../../../../imgs/01/03/AIPC/aipcphi3-mini.gif)
 
-使用 pip 安裝 Python 庫
+用 pip 安裝 Python 庫
 
 ```bash
 
@@ -48,11 +48,11 @@ Intel NPU 加速庫 [https://github.com/intel/intel-npu-acceleration-library](ht
 
 ```
 
-***注意*** 該項目仍在開發中，但參考模型已非常完整。
+***注意*** 專案仍在開發中，但參考模型已相當完整。
 
-### **使用 Intel NPU 加速庫運行 Phi-3**
+### **用 Intel NPU 加速庫運行 Phi-3**
 
-通過 Intel NPU 加速，該庫不會影響傳統編碼過程。只需使用該庫對原始 Phi-3 模型進行量化，例如 FP16、INT8、INT4 等。
+利用 Intel NPU 加速，這個庫不會影響傳統的編碼流程。你只需用它來量化原始的 Phi-3 模型，如 FP16、INT8、INT4 等。
 
 ```python
 from transformers import AutoTokenizer, pipeline,TextStreamer
@@ -72,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-量化成功後，繼續執行並調用 NPU 運行 Phi-3 模型。
+量化成功後，繼續呼叫 NPU 運行 Phi-3 模型。
 
 ```python
 generation_args = {
@@ -96,51 +96,51 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-執行代碼時，我們可以通過任務管理器查看 NPU 的運行狀態。
+執行程式時，可以透過工作管理員查看 NPU 的運行狀態。
 
-![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.hk.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.hk.png)
 
-***示例*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
+***範例*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
-## **2. 使用 DirectML + ONNX Runtime 運行 Phi-3 模型**
+## **2. 用 DirectML + ONNX Runtime 運行 Phi-3 模型**
 
 ### **什麼是 DirectML**
 
-[DirectML](https://github.com/microsoft/DirectML) 是一個高性能、硬件加速的 DirectX 12 機器學習庫。DirectML 提供 GPU 加速，用於常見的機器學習任務，支持廣泛的硬件和驅動，包括所有支持 DirectX 12 的 GPU，如 AMD、Intel、NVIDIA 和 Qualcomm。
+[DirectML](https://github.com/microsoft/DirectML) 是一個高效能、硬件加速的 DirectX 12 機器學習庫。DirectML 為廣泛支援的硬件和驅動提供 GPU 加速，涵蓋 AMD、Intel、NVIDIA、Qualcomm 等廠商所有支援 DirectX 12 的 GPU。
 
-當獨立使用時，DirectML API 是一個低層次的 DirectX 12 庫，適合高性能、低延遲的應用程序，例如框架、遊戲和其他實時應用程序。DirectML 與 Direct3D 12 的無縫互操作性，以及其低開銷和硬件一致性，使其成為加速機器學習的理想選擇，特別是在需要高性能並且硬件結果的可靠性和可預測性至關重要時。
+單獨使用時，DirectML API 是一個低階 DirectX 12 庫，適合高效能、低延遲的應用，例如框架、遊戲及其他即時應用。DirectML 與 Direct3D 12 的無縫整合、低開銷及跨硬件一致性，使它非常適合需要高效能及結果可靠性的機器學習加速。
 
-***注意*** : 最新的 DirectML 已支持 NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
+***注意*** : 最新版 DirectML 已支援 NPU(https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
-### DirectML 和 CUDA 的能力及性能比較：
+### DirectML 與 CUDA 的能力與效能比較：
 
-**DirectML** 是由 Microsoft 開發的機器學習庫，旨在加速 Windows 設備上的機器學習工作負載，包括桌面、筆記本和邊緣設備。
-- 基於 DX12：DirectML 建立在 DirectX 12 (DX12) 之上，提供廣泛的硬件支持，包括 NVIDIA 和 AMD 的 GPU。
-- 更廣泛支持：由於利用 DX12，DirectML 可與任何支持 DX12 的 GPU 一起工作，包括集成 GPU。
-- 圖像處理：DirectML 使用神經網絡處理圖像和其他數據，非常適合圖像識別、物件檢測等任務。
-- 易於設置：DirectML 設置簡單，不需要 GPU 製造商提供的特定 SDK 或庫。
-- 性能：在某些情況下，DirectML 表現良好，甚至可以比 CUDA 更快，特別是某些工作負載。
-- 局限性：但在處理 float16 大批量數據時，DirectML 可能會較慢。
+**DirectML** 是微軟開發的機器學習庫，專為 Windows 裝置（桌面、筆電及邊緣裝置）加速機器學習工作負載。
+- 基於 DX12：DirectML 建構於 DirectX 12 之上，支援包括 NVIDIA 與 AMD 在內的多種 GPU。
+- 廣泛支援：利用 DX12，DirectML 可用於任何支援 DX12 的 GPU，甚至是整合 GPU。
+- 影像處理：DirectML 利用神經網絡處理影像及其他數據，適合影像識別、物件偵測等任務。
+- 安裝簡單：設置容易，不需 GPU 廠商特定的 SDK 或庫。
+- 效能：在某些情況下，DirectML 效能優異，甚至比 CUDA 快，特別是特定工作負載。
+- 限制：但在 float16 大批量數據處理上，有時可能較慢。
 
-**CUDA** 是 NVIDIA 的並行計算平台和編程模型。它允許開發者利用 NVIDIA GPU 的性能進行通用計算，包括機器學習和科學模擬。
-- 特定於 NVIDIA：CUDA 與 NVIDIA GPU 緊密集成，專為這些硬件設計。
-- 高度優化：對於 GPU 加速任務提供卓越性能，尤其是在使用 NVIDIA GPU 時。
-- 廣泛使用：許多機器學習框架和庫（如 TensorFlow 和 PyTorch）都支持 CUDA。
-- 可定制性：開發者可以針對特定任務微調 CUDA 設置，以獲得最佳性能。
-- 局限性：但 CUDA 的硬件依賴性可能會限制其在不同 GPU 上的兼容性。
+**CUDA** 是 NVIDIA 的平行運算平台及程式模型，讓開發者利用 NVIDIA GPU 進行通用運算，包括機器學習和科學模擬。
+- 專為 NVIDIA：CUDA 緊密整合 NVIDIA GPU，專門為其設計。
+- 高度優化：為 GPU 加速任務提供優秀效能，尤其是 NVIDIA GPU。
+- 廣泛使用：許多機器學習框架（如 TensorFlow、PyTorch）支援 CUDA。
+- 可客製化：開發者可針對特定任務調整 CUDA 設定，達到最佳效能。
+- 限制：但 CUDA 依賴 NVIDIA 硬件，限制了跨 GPU 廠商的兼容性。
 
-### 如何選擇 DirectML 和 CUDA
+### 選擇 DirectML 或 CUDA
 
-選擇 DirectML 或 CUDA 取決於具體使用情況、硬件可用性和偏好。
-如果您希望更廣泛的兼容性和易於設置，DirectML 可能是一個不錯的選擇。但如果您擁有 NVIDIA GPU 並需要高度優化的性能，CUDA 仍然是強有力的競爭者。總之，DirectML 和 CUDA 各有優勢和劣勢，請根據需求和可用硬件作出選擇。
+選擇 DirectML 還是 CUDA 取決於你的使用場景、硬件條件及偏好。
+若追求廣泛兼容和簡易設置，DirectML 是不錯選擇。但若有 NVIDIA GPU 且需要極致優化效能，CUDA 依然是強力方案。總結來說，兩者各有優缺點，請根據需求和硬件選擇。
 
-### **使用 ONNX Runtime 進行生成式 AI**
+### **用 ONNX Runtime 進行生成式 AI**
 
-在 AI 時代，AI 模型的可移植性非常重要。ONNX Runtime 可以輕鬆地將訓練好的模型部署到不同設備上。開發者無需關注推理框架，使用統一的 API 即可完成模型推理。在生成式 AI 時代，ONNX Runtime 也進行了代碼優化 (https://onnxruntime.ai/docs/genai/)。通過優化的 ONNX Runtime，量化的生成式 AI 模型可以在不同終端上進行推理。在使用 ONNX Runtime 進行生成式 AI 時，您可以通過 Python、C#、C/C++ 推理 AI 模型 API。當然，在 iPhone 上部署也可以利用 C++ 的 ONNX Runtime API。
+在 AI 時代，模型的可攜性非常重要。ONNX Runtime 可輕鬆將訓練好的模型部署到不同裝置。開發者無需關注推理框架，統一使用 API 完成模型推理。在生成式 AI 領域，ONNX Runtime 也做了代碼優化 (https://onnxruntime.ai/docs/genai/)，透過優化後的 ONNX Runtime，可在不同終端推理量化後的生成式 AI 模型。使用 ONNX Runtime 進行生成式 AI，可用 Python、C#、C/C++ 調用 AI 模型 API，當然在 iPhone 上部署可利用 C++ 的生成式 AI ONNX Runtime API。
 
-[示例代碼](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
+[範例代碼](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
-***編譯生成式 AI 與 ONNX Runtime 庫***
+***編譯生成式 AI ONNX Runtime 庫***
 
 ```bash
 
@@ -187,19 +187,19 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-以下是運行結果
+這是執行結果
 
-![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.hk.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.hk.png)
 
-***示例*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
+***範例*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
-## **3. 使用 Intel OpenVino 運行 Phi-3 模型**
+## **3. 用 Intel OpenVino 運行 Phi-3 模型**
 
 ### **什麼是 OpenVINO**
 
-[OpenVINO](https://github.com/openvinotoolkit/openvino) 是一個用於優化和部署深度學習模型的開源工具包。它提供了提升深度學習性能的工具，支持來自 TensorFlow、PyTorch 等流行框架的視覺、音頻和語言模型。OpenVINO 可與 CPU 和 GPU 結合使用，運行 Phi-3 模型。
+[OpenVINO](https://github.com/openvinotoolkit/openvino) 是一套開源工具包，用於優化和部署深度學習模型。它提升來自 TensorFlow、PyTorch 等流行框架的視覺、語音和語言模型的深度學習效能。OpenVINO 也可結合 CPU 和 GPU 運行 Phi-3 模型。
 
-***注意***：目前 OpenVINO 尚不支持 NPU。
+***注意***：目前 OpenVINO 尚不支援 NPU。
 
 ### **安裝 OpenVINO 庫**
 
@@ -213,9 +213,9 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-### **使用 OpenVINO 運行 Phi-3**
+### **用 OpenVINO 運行 Phi-3**
 
-與 NPU 類似，OpenVINO 通過運行量化模型完成生成式 AI 模型的調用。我們需要先量化 Phi-3 模型，並通過 optimum-cli 在命令行上完成模型量化。
+與 NPU 類似，OpenVINO 透過運行量化模型完成生成式 AI 模型的調用。我們需先量化 Phi-3 模型，並透過 optimum-cli 在命令列完成模型量化。
 
 **INT4**
 
@@ -233,11 +233,11 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ```
 
-轉換後的格式如下：
+轉換後的格式如下圖
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.hk.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.hk.png)
 
-通過 OVModelForCausalLM 加載模型路徑 (model_dir)、相關配置 (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) 和硬件加速設備 (GPU.0)。
+透過 OVModelForCausalLM 載入模型路徑(model_dir)、相關配置(ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) 和硬件加速裝置(GPU.0)
 
 ```python
 
@@ -251,13 +251,13 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-執行代碼時，我們可以通過任務管理器查看 GPU 的運行狀態。
+執行程式時，可以透過工作管理員查看 GPU 的運行狀態。
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.hk.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.hk.png)
 
-***示例*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
+***範例*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***注意***：以上三種方法各有優勢，但建議使用 NPU 加速進行 AI PC 推理。
+### ***注意***：以上三種方法各有優勢，但建議 AI PC 推理時優先使用 NPU 加速。
 
-**免責聲明**:  
-本文檔使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)進行翻譯。儘管我們努力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文檔的母語版本作為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+**免責聲明**：  
+本文件係使用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋致力確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件嘅母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我哋對因使用此翻譯而引致嘅任何誤解或誤釋概不負責。

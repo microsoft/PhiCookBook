@@ -1,46 +1,46 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "69d48385b1f1b31dd20dbb2405031bff",
-  "translation_date": "2025-04-04T18:41:34+00:00",
-  "source_file": "md\\02.Application\\04.Vision\\Phi3\\E2E_OpenVino_Phi3Vision.md",
+  "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
+  "translation_date": "2025-05-08T05:26:43+00:00",
+  "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
   "language_code": "hk"
 }
 -->
-這個示範展示如何使用預訓練模型根據圖像和文字提示生成Python代碼。
+呢個示範展示咗點樣用一個預訓練模型，根據一張圖片同文字提示去生成 Python 代碼。
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)
 
-以下是逐步的解釋：
+以下係逐步解釋：
 
-1. **導入和設置**：
-   - 導入所需的庫和模組，包括 `requests`、`PIL` 用於圖像處理，以及 `transformers` 用於處理模型和數據。
+1. **導入同設置**：
+   - 導入咗所需嘅庫同模組，包括用於圖像處理嘅 `requests`、`PIL`，以及處理模型同流程嘅 `transformers`。
 
-2. **載入並顯示圖像**：
-   - 使用 `PIL` 庫打開圖像文件 (`demo.png`) 並顯示。
+2. **加載同顯示圖片**：
+   - 用 `PIL` 庫打開咗一個圖片文件（`demo.png`）並顯示出嚟。
 
-3. **定義提示**：
-   - 創建一個包含圖像和請求生成Python代碼的消息，用於處理圖像並使用 `plt` (matplotlib) 保存。
+3. **定義提示語**：
+   - 建立咗一個信息，包含圖片同請求生成用於處理圖片並用 `plt`（matplotlib）保存嘅 Python 代碼。
 
-4. **載入處理器**：
-   - 從 `out_dir` 目錄指定的預訓練模型中載入 `AutoProcessor`。該處理器負責處理文字和圖像輸入。
+4. **加載處理器**：
+   - 從 `out_dir` 目錄指定嘅預訓練模型加載 `AutoProcessor`。呢個處理器會處理文字同圖片輸入。
 
 5. **創建提示**：
-   - 使用 `apply_chat_template` 方法將消息格式化為適合模型的提示。
+   - 用 `apply_chat_template` 方法將信息格式化成適合模型嘅提示語。
 
 6. **處理輸入**：
-   - 將提示和圖像處理為模型可以理解的張量。
+   - 將提示語同圖片處理成模型能理解嘅張量。
 
 7. **設置生成參數**：
-   - 定義模型生成過程的參數，包括生成新token的最大數量以及是否對輸出進行採樣。
+   - 定義模型生成過程嘅參數，包括最大生成新 token 數量同是否採樣輸出。
 
 8. **生成代碼**：
-   - 模型根據輸入和生成參數生成Python代碼。使用 `TextStreamer` 處理輸出，跳過提示和特殊token。
+   - 模型根據輸入同生成參數生成 Python 代碼。用 `TextStreamer` 處理輸出，跳過提示語同特殊 token。
 
 9. **輸出**：
-   - 打印生成的代碼，應包括用於處理圖像並按提示要求保存的Python代碼。
+   - 打印生成嘅代碼，應該包括用於處理圖片並按提示保存嘅 Python 代碼。
 
-這個示範說明如何利用OpenVino的預訓練模型根據用戶輸入和圖像動態生成代碼。
+呢個示範說明咗點樣利用 OpenVino 嘅預訓練模型，根據用戶輸入同圖片動態生成代碼。
 
-**免責聲明**:  
-此文件經由AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。我們致力於確保翻譯準確，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文文件作為權威來源。對於關鍵資訊，建議尋求專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯而成。雖然我哋致力確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件嘅母語版本應被視為權威來源。對於重要資料，建議採用專業人手翻譯。對因使用此翻譯而引起嘅任何誤解或誤釋，我哋概不負責。

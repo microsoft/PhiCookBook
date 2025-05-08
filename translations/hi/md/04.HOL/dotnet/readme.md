@@ -1,35 +1,35 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f0e3a4453db505856d5d991285dd6001",
-  "translation_date": "2025-04-04T19:14:21+00:00",
-  "source_file": "md\\04.HOL\\dotnet\\readme.md",
+  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
+  "translation_date": "2025-05-08T05:02:15+00:00",
+  "source_file": "md/04.HOL/dotnet/readme.md",
   "language_code": "hi"
 }
 -->
-## Phi लैब्स में आपका स्वागत है (C# का उपयोग करते हुए)
+﻿## C# का उपयोग करते हुए Phi लैब्स में आपका स्वागत है
 
-यह लैब्स का एक चयन है जो दिखाता है कि .NET वातावरण में शक्तिशाली Phi मॉडल के विभिन्न संस्करणों को कैसे एकीकृत किया जाए।
+यहाँ Phi मॉडल के विभिन्न शक्तिशाली संस्करणों को .NET वातावरण में एकीकृत करने के तरीके को दिखाने वाले लैब्स का एक चयन है।
 
 ## आवश्यकताएँ
 
 नमूना चलाने से पहले, सुनिश्चित करें कि आपके पास निम्नलिखित इंस्टॉल हैं:
 
-**.NET 9:** सुनिश्चित करें कि आपके कंप्यूटर पर [नवीनतम .NET संस्करण](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) इंस्टॉल है।
+**.NET 9:** सुनिश्चित करें कि आपके कंप्यूटर पर [लेटेस्ट .NET संस्करण](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) इंस्टॉल है।
 
-**(वैकल्पिक) Visual Studio या Visual Studio Code:** आपको एक IDE या कोड एडिटर की आवश्यकता होगी जो .NET प्रोजेक्ट्स चलाने में सक्षम हो। [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) या [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo) की अनुशंसा की जाती है।
+**(वैकल्पिक) Visual Studio या Visual Studio Code:** आपको एक ऐसा IDE या कोड एडिटर चाहिए जो .NET प्रोजेक्ट्स चला सके। [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) या [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo) की सलाह दी जाती है।
 
-**git का उपयोग करते हुए** [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c) से उपलब्ध Phi-3, Phi3.5 या Phi-4 संस्करणों में से एक को लोकल क्लोन करें।
+**git का उपयोग करते हुए** [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c) से Phi-3, Phi3.5 या Phi-4 के उपलब्ध संस्करणों में से किसी एक को लोकली क्लोन करें।
 
-**Phi-4 ONNX मॉडल्स को डाउनलोड करें** और अपने कंप्यूटर पर स्टोर करें:
+**Phi-4 ONNX मॉडल अपने लोकल मशीन पर डाउनलोड करें:**
 
-### मॉडल्स स्टोर करने के लिए फ़ोल्डर पर जाएं
+### मॉडल्स को स्टोर करने के लिए फ़ोल्डर में जाएँ
 
 ```bash
 cd c:\phi\models
 ```
 
-### lfs सपोर्ट जोड़ें
+### lfs के लिए सपोर्ट जोड़ें
 
 ```bash
 git lfs install 
@@ -43,9 +43,9 @@ git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 ```
 
-**Phi-3 ONNX मॉडल्स को डाउनलोड करें** और अपने कंप्यूटर पर स्टोर करें:
+**Phi-3 ONNX मॉडल अपने लोकल मशीन पर डाउनलोड करें:**
 
-### Phi-3 मिनी 4K इंस्ट्रक्ट मॉडल और Phi-3 विजन 128K मॉडल को क्लोन और डाउनलोड करें
+### Phi-3 मिनी 4K इंस्ट्रक्ट मॉडल और Phi-3 विज़न 128K मॉडल को क्लोन और डाउनलोड करें
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
@@ -53,15 +53,15 @@ git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 ```
 
-**महत्वपूर्ण:** वर्तमान डेमो ONNX संस्करणों का उपयोग करने के लिए डिज़ाइन किए गए हैं। पिछले चरणों में निम्नलिखित मॉडल क्लोन किए जाते हैं।
+**महत्वपूर्ण:** वर्तमान डेमो मॉडल के ONNX संस्करणों का उपयोग करने के लिए डिज़ाइन किए गए हैं। ऊपर दिए गए चरण निम्नलिखित मॉडलों को क्लोन करते हैं।
 
 ## लैब्स के बारे में
 
-मुख्य समाधान में कई नमूना लैब्स शामिल हैं जो C# का उपयोग करके Phi मॉडल्स की क्षमताओं को प्रदर्शित करते हैं।
+मुख्य सॉल्यूशन में कई सैंपल लैब्स हैं जो C# का उपयोग करते हुए Phi मॉडलों की क्षमताओं को दर्शाते हैं।
 
 | प्रोजेक्ट | मॉडल | विवरण |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 या Phi-3.5 | एक नमूना कंसोल चैट जो उपयोगकर्ता को प्रश्न पूछने की अनुमति देता है। प्रोजेक्ट लोकल ONNX Phi-3 मॉडल को लोड करता है `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 या Phi-3.5 | एक सैंपल कंसोल चैट जो उपयोगकर्ता को सवाल पूछने की अनुमति देता है। यह प्रोजेक्ट लोकल ONNX Phi-3 मॉडल को `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
 | [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
 | [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
@@ -78,21 +78,21 @@ To run the projects, follow these steps:
 
 1. Clone the repository to your local machine.
 
-1. Open a terminal and navigate to the desired project. In example, let's run `LabsPhi4-Chat-01OnnxRuntime`.
+1. Open a terminal and navigate to the desired project. In example, let's run `LabsPhi4-Chat-01OnnxRuntime` का उपयोग करके लोड करता है।
 
     ```bash
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
     ```
 
-1. प्रोजेक्ट को निम्नलिखित कमांड के साथ चलाएं:
+1. प्रोजेक्ट को इस कमांड से चलाएँ
 
     ```bash
     dotnet run
     ```
 
-1. नमूना प्रोजेक्ट उपयोगकर्ता इनपुट पूछता है और लोकल मोड का उपयोग करते हुए जवाब देता है।
+1. सैंपल प्रोजेक्ट उपयोगकर्ता से इनपुट मांगता है और लोकल मॉडल का उपयोग करके जवाब देता है।
 
-   चल रहे डेमो इस प्रकार दिखता है:
+   चल रहा डेमो इस जैसा दिखता है:
 
    ```bash
    PS D:\phi\PhiCookBook\md\04.HOL\dotnet\src\LabsPhi4-Chat-01OnnxRuntime> dotnet run
@@ -103,4 +103,4 @@ To run the projects, follow these steps:
    ```
 
 **अस्वीकरण**:  
-यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या अशुद्धियां हो सकती हैं। मूल भाषा में उपलब्ध मूल दस्तावेज़ को आधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया ध्यान रखें कि स्वचालित अनुवादों में त्रुटियाँ या अशुद्धियाँ हो सकती हैं। मूल दस्तावेज़ अपनी मूल भाषा में प्रामाणिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सलाह दी जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।

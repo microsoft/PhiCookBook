@@ -1,59 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "7fdd22719901a23386b3c56bb02794e3",
-  "translation_date": "2025-04-04T13:00:14+00:00",
-  "source_file": "md\\02.Application\\03.AdvancedReasoning\\Phi4\\AdvancedResoningPhi4mini\\README.md",
+  "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
+  "translation_date": "2025-05-08T05:54:42+00:00",
+  "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "ja"
 }
 -->
-## **Phi-4-miniを推論エキスパートとして活用する**
+## **Phi-4-mini-reasoning(3.8b) または Phi-4-reasoning(14b) を Reasoning Expert として使う**
 
-Phi-4の主な特徴の一つは、その優れた推論能力です。Phi-4-miniを通じて、その卓越した推論能力を見てみましょう。
+Phi-4-mini-reasoning または Phi-4-mini-reasoning を通じて、その強力な推論能力を見てみましょう。
+
 
 ```python
 
 import torch
 from transformers import AutoTokenizer,pipeline
 
-model_path = "Your Phi-4-mini location"
+model_path = "Your Phi-4-mini-reasoning or Phi-4-reasoning location"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_path,
     device_map="cuda",
-    attn_implementation="flash_attention_2",
     torch_dtype="auto",
-    trust_remote_code=True)
+    trust_remote_code=True,
 
-tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-
-messages = [
-    {"role": "system", "content": "You are a helpful AI assistant."},
-    {"role": "user", "content": """I have $20,000 in my savings account, where I receive a 4% profit per year and payments twice a year. Can you please tell me how long it will take for me to become a millionaire? Thinks step by step carefully.
-"""},
-]
-
-pipe = pipeline(
-    "text-generation",
-    model=model,
-    tokenizer=tokenizer,
 )
 
-generation_args = {
-    "max_new_tokens": 4096,
-    "return_full_text": False,
-    "temperature": 0.00001,
-    "top_p": 1.0,
-    "do_sample": True,
-}
+tokenizer = AutoTokenizer.from_pretrained(model_path)
 
-output = pipe(messages, **generation_args)
+messages = [{"role": "user", "content": "Explain the Pythagorean Theorem"}]
 
-print(output[0]['generated_text'])
+model = AutoModelForCausalLM.from_pretrained(
+    model_path,
+    trust_remote_code=True,
+    torch_dtype='auto',
+    _attn_implementation='flash_attention_2',
+).cuda()
 
+inputs = tokenizer.apply_chat_template(messages, add_generation_prompt=True, return_dict=True, return_tensors="pt")
+
+outputs = model.generate(**inputs.to(model.device), max_new_tokens=32768)
+
+outputs = tokenizer.batch_decode(outputs[:, inputs["input_ids"].shape[-1]:])
+
+print(outputs[0])
 
 
 ```
 
-**免責事項**:  
-この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文書の母国語での内容を公式な情報源としてお考えください。重要な情報については、プロの人間による翻訳を推奨します。この翻訳の使用により生じた誤解や誤解釈について、当方は責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されました。正確性の確保に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の母国語版を正本としてご参照ください。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の利用により生じた誤解や誤訳について、一切の責任を負いかねますのでご了承ください。

@@ -1,219 +1,231 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ed86d361ac6d4cc8bfb47428e6a2a247",
-  "translation_date": "2025-04-04T06:26:18+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
+  "original_hash": "ecbd9179a21edbaafaf114d47f09f3e3",
+  "translation_date": "2025-05-08T05:47:30+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
   "language_code": "ko"
 }
 -->
-# 사용자 정의 Phi-3 모델을 Azure AI Foundry의 Prompt flow와 통합 및 미세 조정하기
+# Fine-tune 및 Azure AI Foundry의 Prompt flow와 맞춤 Phi-3 모델 통합하기
 
-이 End-to-End(E2E) 샘플은 Microsoft Tech Community의 가이드 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)"를 기반으로 작성되었습니다. 이 문서는 Azure AI Foundry에서 사용자 정의 Phi-3 모델을 미세 조정, 배포 및 Prompt flow와 통합하는 과정을 소개합니다.  
-이전 샘플 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)"는 로컬에서 코드를 실행하는 과정을 포함했지만, 이 튜토리얼은 Azure AI / ML Studio에서 모델을 미세 조정하고 통합하는 데만 집중합니다.
+이 종단 간(E2E) 샘플은 Microsoft Tech Community의 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" 가이드를 기반으로 합니다. 이 가이드는 Azure AI Foundry에서 Prompt flow와 함께 맞춤 Phi-3 모델을 미세 조정, 배포 및 통합하는 과정을 소개합니다. 로컬에서 코드를 실행하는 "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" E2E 샘플과 달리, 이 튜토리얼은 Azure AI / ML Studio 내에서 모델을 미세 조정하고 통합하는 데 집중합니다.
 
 ## 개요
 
-이 E2E 샘플에서는 Phi-3 모델을 미세 조정하고 Azure AI Foundry의 Prompt flow와 통합하는 방법을 배웁니다. Azure AI / ML Studio를 활용하여 사용자 정의 AI 모델을 배포하고 사용하는 워크플로를 설정합니다. 이 E2E 샘플은 세 가지 시나리오로 나뉩니다:
+이 E2E 샘플에서는 Phi-3 모델을 미세 조정하고 Azure AI Foundry의 Prompt flow와 통합하는 방법을 배웁니다. Azure AI / ML Studio를 활용하여 맞춤 AI 모델을 배포하고 활용하는 워크플로를 구축합니다. 이 E2E 샘플은 세 가지 시나리오로 나뉩니다:
 
-**시나리오 1: Azure 리소스 설정 및 미세 조정을 위한 준비**  
-**시나리오 2: Phi-3 모델 미세 조정 및 Azure Machine Learning Studio에서 배포**  
-**시나리오 3: Prompt flow와 통합 및 사용자 정의 모델과의 채팅**
+**시나리오 1: Azure 리소스 설정 및 미세 조정 준비**
+
+**시나리오 2: Phi-3 모델 미세 조정 및 Azure Machine Learning Studio에 배포**
+
+**시나리오 3: Prompt flow와 통합하고 Azure AI Foundry에서 맞춤 모델과 채팅**
 
 다음은 이 E2E 샘플의 개요입니다.
 
-![Phi-3-FineTuning_PromptFlow_Integration 개요.](../../../../../../translated_images/00-01-architecture.48557afd46be88c521fb66f886c611bb93ec4cde1b00e138174ae97f75f56262.ko.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a2ceacdc6401c688bdf100d874fe8d55169f7723ed024781e.ko.png)
 
 ### 목차
 
-1. **[시나리오 1: Azure 리소스 설정 및 미세 조정을 위한 준비](../../../../../../md/02.Application/01.TextAndChat/Phi3)**  
-    - [Azure Machine Learning 워크스페이스 생성](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [Azure 구독에서 GPU 할당량 요청](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [역할 할당 추가](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [프로젝트 설정](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [미세 조정을 위한 데이터셋 준비](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[시나리오 1: Azure 리소스 설정 및 미세 조정 준비](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Azure Machine Learning 작업 영역 생성](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Azure 구독에서 GPU 할당량 요청](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [역할 할당 추가](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [프로젝트 설정](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [미세 조정용 데이터셋 준비](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[시나리오 2: Phi-3 모델 미세 조정 및 Azure Machine Learning Studio에서 배포](../../../../../../md/02.Application/01.TextAndChat/Phi3)**  
-    - [Phi-3 모델 미세 조정](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
+1. **[시나리오 2: Phi-3 모델 미세 조정 및 Azure Machine Learning Studio에 배포](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Phi-3 모델 미세 조정](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [미세 조정된 Phi-3 모델 배포](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[시나리오 3: Prompt flow와 통합 및 Azure AI Foundry에서 사용자 정의 모델과의 채팅](../../../../../../md/02.Application/01.TextAndChat/Phi3)**  
-    - [사용자 정의 Phi-3 모델을 Prompt flow와 통합](../../../../../../md/02.Application/01.TextAndChat/Phi3)  
-    - [사용자 정의 Phi-3 모델과 채팅](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[시나리오 3: Prompt flow와 통합하고 Azure AI Foundry에서 맞춤 모델과 채팅](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [맞춤 Phi-3 모델을 Prompt flow와 통합](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [맞춤 Phi-3 모델과 채팅](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## 시나리오 1: Azure 리소스 설정 및 미세 조정을 위한 준비
+## 시나리오 1: Azure 리소스 설정 및 미세 조정 준비
 
-### Azure Machine Learning 워크스페이스 생성
+### Azure Machine Learning 작업 영역 생성
 
 1. 포털 페이지 상단의 **검색창**에 *azure machine learning*을 입력하고 나타나는 옵션 중 **Azure Machine Learning**을 선택합니다.
 
-    ![azure machine learning 입력.](../../../../../../translated_images/01-01-type-azml.d34ed3e290197950bb59b5574720c139f88921832c375c07d5c0f3134d7831ca.ko.png)
+    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b9780de8accc31e4e1de7254e9c34a7836a955d455339e77d.ko.png)
 
-2. 탐색 메뉴에서 **+ Create**를 선택합니다.
+2. 탐색 메뉴에서 **+ 만들기**를 선택합니다.
 
-3. 탐색 메뉴에서 **New workspace**를 선택합니다.
+3. 탐색 메뉴에서 **새 작업 영역**을 선택합니다.
 
-    ![새 워크스페이스 선택.](../../../../../../translated_images/01-02-select-new-workspace.969d9b84a9a134e223a6efeba5bb9a81729993389665a76b81a22cb65e1ee702.ko.png)
+    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2cf04946c36873223099fd568e0c3ab0377c096868892fdda.ko.png)
 
-4. 다음 작업을 수행합니다:  
-    - Azure **구독**을 선택합니다.  
-    - 사용할 **리소스 그룹**을 선택합니다(필요 시 새로 생성).  
-    - **워크스페이스 이름**을 입력합니다. 고유한 값이어야 합니다.  
-    - 사용할 **지역**을 선택합니다.  
-    - 사용할 **스토리지 계정**을 선택합니다(필요 시 새로 생성).  
-    - 사용할 **키 보관소**를 선택합니다(필요 시 새로 생성).  
-    - 사용할 **애플리케이션 인사이트**를 선택합니다(필요 시 새로 생성).  
-    - 사용할 **컨테이너 레지스트리**를 선택합니다(필요 시 새로 생성).  
+4. 다음 작업을 수행합니다:
 
-    ![Azure Machine Learning 채우기.](../../../../../../translated_images/01-03-fill-AZML.97c43ed40b5231572001c9e2a5193a4c63de657f07401d1fce962a085e129809.ko.png)
+    - Azure **구독**을 선택합니다.
+    - 사용할 **리소스 그룹**을 선택합니다(필요 시 새로 만듭니다).
+    - **작업 영역 이름**을 입력합니다. 고유해야 합니다.
+    - 사용할 **지역**을 선택합니다.
+    - 사용할 **스토리지 계정**을 선택합니다(필요 시 새로 만듭니다).
+    - 사용할 **키 볼트**를 선택합니다(필요 시 새로 만듭니다).
+    - 사용할 **애플리케이션 인사이트**를 선택합니다(필요 시 새로 만듭니다).
+    - 사용할 **컨테이너 레지스트리**를 선택합니다(필요 시 새로 만듭니다).
 
-5. **Review + Create**를 선택합니다.
+    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090ff9ec341c724c1493e7f96726f5c810a89a7409b782a7b04a.ko.png)
 
-6. **Create**를 선택합니다.
+5. **검토 + 만들기**를 선택합니다.
+
+6. **만들기**를 선택합니다.
 
 ### Azure 구독에서 GPU 할당량 요청
 
-이 튜토리얼에서는 GPU를 사용하여 Phi-3 모델을 미세 조정하고 배포하는 방법을 배웁니다. 미세 조정을 위해 *Standard_NC24ads_A100_v4* GPU를 사용하며, 이 GPU는 할당량 요청이 필요합니다. 배포를 위해 *Standard_NC6s_v3* GPU를 사용하며, 역시 할당량 요청이 필요합니다.
+이 튜토리얼에서는 Phi-3 모델을 미세 조정하고 배포하기 위해 GPU를 사용합니다. 미세 조정에는 *Standard_NC24ads_A100_v4* GPU가 필요하며, 할당량 요청이 필요합니다. 배포에는 *Standard_NC6s_v3* GPU가 필요하며, 이 역시 할당량 요청이 필요합니다.
 
-> [!NOTE]  
-> Pay-As-You-Go 구독(표준 구독 유형)만 GPU 할당이 가능하며, 혜택 구독은 현재 지원되지 않습니다.
+> [!NOTE]
+>
+> Pay-As-You-Go 구독(표준 구독 유형)만 GPU 할당 대상이며, 혜택 구독은 현재 지원되지 않습니다.
+>
 
-1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)에 방문합니다.
+1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)로 이동합니다.
 
-1. *Standard NCADSA100v4 Family* 할당량을 요청하려면 다음 작업을 수행합니다:  
-    - 왼쪽 탭에서 **Quota**를 선택합니다.  
-    - 사용할 **가상 머신 패밀리**를 선택합니다. 예를 들어, *Standard_NC24ads_A100_v4* GPU를 포함하는 **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**를 선택합니다.  
-    - 탐색 메뉴에서 **Request quota**를 선택합니다.
+1. *Standard NCADSA100v4 Family* 할당량을 요청하려면 다음 작업을 수행합니다:
 
-        ![할당량 요청.](../../../../../../translated_images/02-02-request-quota.9bb6ecf76b842dbccd70603b5a6f8533e7a2a0f9f9cc8304bef67fb0bb09e49a.ko.png)
+    - 왼쪽 탭에서 **할당량**을 선택합니다.
+    - 사용할 **가상 머신 패밀리**를 선택합니다. 예를 들어, *Standard_NC24ads_A100_v4* GPU가 포함된 **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**를 선택합니다.
+    - 탐색 메뉴에서 **할당량 요청**을 선택합니다.
 
-    - Request quota 페이지에서 사용할 **New cores limit**을 입력합니다. 예: 24.  
-    - Request quota 페이지에서 **Submit**을 선택하여 GPU 할당량을 요청합니다.
+        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd536f2e4a305c8528a34914370813bc2cda4d7bbdd2de873f0.ko.png)
 
-1. *Standard NCSv3 Family* 할당량을 요청하려면 다음 작업을 수행합니다:  
-    - 왼쪽 탭에서 **Quota**를 선택합니다.  
-    - 사용할 **가상 머신 패밀리**를 선택합니다. 예를 들어, *Standard_NC6s_v3* GPU를 포함하는 **Standard NCSv3 Family Cluster Dedicated vCPUs**를 선택합니다.  
-    - 탐색 메뉴에서 **Request quota**를 선택합니다.  
-    - Request quota 페이지에서 사용할 **New cores limit**을 입력합니다. 예: 24.  
-    - Request quota 페이지에서 **Submit**을 선택하여 GPU 할당량을 요청합니다.
+    - 할당량 요청 페이지에서 원하는 **새 코어 제한**을 입력합니다. 예: 24
+    - 할당량 요청 페이지에서 **제출**을 선택해 GPU 할당량을 요청합니다.
+
+1. *Standard NCSv3 Family* 할당량을 요청하려면 다음 작업을 수행합니다:
+
+    - 왼쪽 탭에서 **할당량**을 선택합니다.
+    - 사용할 **가상 머신 패밀리**를 선택합니다. 예를 들어, *Standard_NC6s_v3* GPU가 포함된 **Standard NCSv3 Family Cluster Dedicated vCPUs**를 선택합니다.
+    - 탐색 메뉴에서 **할당량 요청**을 선택합니다.
+    - 할당량 요청 페이지에서 원하는 **새 코어 제한**을 입력합니다. 예: 24
+    - 할당량 요청 페이지에서 **제출**을 선택해 GPU 할당량을 요청합니다.
 
 ### 역할 할당 추가
 
-모델을 미세 조정하고 배포하려면 먼저 사용자 할당 관리 ID(UAI)를 생성하고 적절한 권한을 할당해야 합니다. 이 UAI는 배포 중 인증에 사용됩니다.
+모델을 미세 조정하고 배포하려면 먼저 사용자 할당 관리 ID(User Assigned Managed Identity, UAI)를 생성하고 적절한 권한을 부여해야 합니다. 이 UAI는 배포 시 인증에 사용됩니다.
 
 #### 사용자 할당 관리 ID(UAI) 생성
 
-1. 포털 페이지 상단의 **검색창**에 *managed identities*를 입력하고 나타나는 옵션 중 **Managed Identities**를 선택합니다.
+1. 포털 상단의 **검색창**에 *managed identities*를 입력하고 나타나는 옵션 중 **Managed Identities**를 선택합니다.
 
-    ![managed identities 입력.](../../../../../../translated_images/03-01-type-managed-identities.61954962fbc13913ceb35d00dd9d746b91fdd96834383b65214fa0f4d1152441.ko.png)
+    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e52f52a152187b230243fe884f58a9940cd9b534db3dcea383.ko.png)
 
-1. **+ Create**를 선택합니다.
+1. **+ 만들기**를 선택합니다.
 
-    ![생성 선택.](../../../../../../translated_images/03-02-select-create.4608dd89e644e68f40b559d30788383bc70dd3d14f082c78f460ba45d208f273.ko.png)
+    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f27b6680cd94ef6ec7557394022dafdcfba2a92777b11e4817.ko.png)
 
-1. 다음 작업을 수행합니다:  
-    - Azure **구독**을 선택합니다.  
-    - 사용할 **리소스 그룹**을 선택합니다(필요 시 새로 생성).  
-    - 사용할 **지역**을 선택합니다.  
-    - **이름**을 입력합니다. 고유한 값이어야 합니다.
+1. 다음 작업을 수행합니다:
 
-    ![managed identities 채우기.](../../../../../../translated_images/03-03-fill-managed-identities-1.ff32a0010dd0667dd231f214881ab59f809ecf10b901030fc3db4e41a50a834a.ko.png)
+    - Azure **구독**을 선택합니다.
+    - 사용할 **리소스 그룹**을 선택합니다(필요 시 새로 만듭니다).
+    - 사용할 **지역**을 선택합니다.
+    - **이름**을 입력합니다. 고유해야 합니다.
 
-1. **Review + create**를 선택합니다.
+    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0e313fffaecf7d6ce4ee5e86c0badcd038f03519cac63b76b.ko.png)
 
-1. **+ Create**를 선택합니다.
+1. **검토 + 만들기**를 선택합니다.
+
+1. **+ 만들기**를 선택합니다.
 
 #### Managed Identity에 Contributor 역할 할당 추가
 
 1. 생성한 Managed Identity 리소스로 이동합니다.
 
-1. 왼쪽 탭에서 **Azure role assignments**를 선택합니다.
+1. 왼쪽 탭에서 **Azure 역할 할당**을 선택합니다.
 
-1. 탐색 메뉴에서 **+Add role assignment**를 선택합니다.
+1. 탐색 메뉴에서 **+ 역할 할당 추가**를 선택합니다.
 
-1. Add role assignment 페이지에서 다음 작업을 수행합니다:  
-    - **Scope**를 **Resource group**으로 설정합니다.  
-    - Azure **구독**을 선택합니다.  
-    - 사용할 **리소스 그룹**을 선택합니다.  
-    - **Role**을 **Contributor**로 설정합니다.
+1. 역할 할당 추가 페이지에서 다음 작업을 수행합니다:
+    - **범위**를 **리소스 그룹**으로 설정합니다.
+    - Azure **구독**을 선택합니다.
+    - 사용할 **리소스 그룹**을 선택합니다.
+    - **역할**을 **Contributor**로 선택합니다.
 
-    ![Contributor 역할 채우기.](../../../../../../translated_images/03-04-fill-contributor-role.419141712bde1fa89624c3792233a367b23cbc46fb7018d1d11c3cd65a25f748.ko.png)
+    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d1d62333e91b4d2719284f0dad14bd9b4c3459510a0c44fab.ko.png)
 
-2. **Save**를 선택합니다.
+2. **저장**을 선택합니다.
 
 #### Managed Identity에 Storage Blob Data Reader 역할 할당 추가
 
-1. 포털 페이지 상단의 **검색창**에 *storage accounts*를 입력하고 나타나는 옵션 중 **Storage accounts**를 선택합니다.
+1. 포털 상단의 **검색창**에 *storage accounts*를 입력하고 나타나는 옵션 중 **Storage accounts**를 선택합니다.
 
-    ![storage accounts 입력.](../../../../../../translated_images/03-05-type-storage-accounts.026e03a619ba23f474f9d704cd9050335df48aab7253eb17729da506baf2056b.ko.png)
+    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e55b6b4dda10841d74d1c7463a2e4f23b9c45ffbb84219deb2.ko.png)
 
-1. 생성한 Azure Machine Learning 워크스페이스와 연결된 스토리지 계정을 선택합니다. 예: *finetunephistorage*.
+1. 생성한 Azure Machine Learning 작업 영역과 연결된 스토리지 계정을 선택합니다. 예: *finetunephistorage*
 
-1. Add role assignment 페이지로 이동하려면 다음 작업을 수행합니다:  
-    - 생성한 Azure Storage 계정으로 이동합니다.  
-    - 왼쪽 탭에서 **Access Control (IAM)**을 선택합니다.  
-    - 탐색 메뉴에서 **+ Add**를 선택합니다.  
-    - 탐색 메뉴에서 **Add role assignment**를 선택합니다.
+1. 역할 할당 추가 페이지로 이동하기 위해 다음 작업을 수행합니다:
 
-    ![역할 추가.](../../../../../../translated_images/03-06-add-role.ea9dffa9d4e12c8ce5d7ee4c5ffb6eb7f7a5aac820c60a5782a3fb634b7aa09a.ko.png)
+    - 생성한 Azure Storage 계정으로 이동합니다.
+    - 왼쪽 탭에서 **액세스 제어 (IAM)**를 선택합니다.
+    - 탐색 메뉴에서 **+ 추가**를 선택합니다.
+    - **역할 할당 추가**를 선택합니다.
 
-1. Add role assignment 페이지에서 다음 작업을 수행합니다:  
-    - Role 페이지에서 **Storage Blob Data Reader**를 검색창에 입력하고 나타나는 옵션 중 **Storage Blob Data Reader**를 선택합니다.  
-    - Role 페이지에서 **Next**를 선택합니다.  
-    - Members 페이지에서 **Assign access to**를 **Managed identity**로 설정합니다.  
-    - Members 페이지에서 **+ Select members**를 선택합니다.  
-    - Select managed identities 페이지에서 Azure **구독**을 선택합니다.  
-    - Select managed identities 페이지에서 **Managed identity**를 **Manage Identity**로 설정합니다.  
-    - Select managed identities 페이지에서 생성한 Manage Identity를 선택합니다. 예: *finetunephi-managedidentity*.  
-    - Select managed identities 페이지에서 **Select**를 선택합니다.
+    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c25fb73e63b957e214a2b651375a640a3aa54159a3731f495b.ko.png)
 
-    ![managed identity 선택.](../../../../../../translated_images/03-08-select-managed-identity.2456b3430a31bbaba7c744256dfb99c7fa6e12ba2dd122e34205973d29115d6c.ko.png)
+1. 역할 할당 추가 페이지에서 다음 작업을 수행합니다:
 
-1. **Review + assign**을 선택합니다.
+    - 역할 페이지의 **검색창**에 *Storage Blob Data Reader*를 입력하고 나타나는 옵션에서 **Storage Blob Data Reader**를 선택합니다.
+    - 역할 페이지에서 **다음**을 선택합니다.
+    - 구성원 페이지에서 **액세스 할당 대상**을 **Managed identity**로 선택합니다.
+    - 구성원 페이지에서 **+ 구성원 선택**을 선택합니다.
+    - 관리 ID 선택 페이지에서 Azure **구독**을 선택합니다.
+    - 관리 ID 선택 페이지에서 **Managed identity**를 선택합니다.
+    - 생성한 Managed Identity를 선택합니다. 예: *finetunephi-managedidentity*
+    - 관리 ID 선택 페이지에서 **선택**을 클릭합니다.
+
+    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25289f2f121da05d114934d21d26aae9cb779334cbbccdf9e8.ko.png)
+
+1. **검토 + 할당**을 선택합니다.
 
 #### Managed Identity에 AcrPull 역할 할당 추가
 
-1. 포털 페이지 상단의 **검색창**에 *container registries*를 입력하고 나타나는 옵션 중 **Container registries**를 선택합니다.
+1. 포털 상단의 **검색창**에 *container registries*를 입력하고 나타나는 옵션 중 **Container registries**를 선택합니다.
 
-    ![container registries 입력.](../../../../../../translated_images/03-09-type-container-registries.cac7db97652dda0e9d7b98d40034f5ac81752db9528b708e014c74a9891c49aa.ko.png)
+    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a69b003f7a698dac908ffc2f355e675c10939fdd0bb09f790e.ko.png)
 
-1. 생성한 Azure Machine Learning 워크스페이스와 연결된 컨테이너 레지스트리를 선택합니다. 예: *finetunephicontainerregistry*.
+1. Azure Machine Learning 작업 영역과 연결된 컨테이너 레지스트리를 선택합니다. 예: *finetunephicontainerregistry*
 
-1. Add role assignment 페이지로 이동하려면 다음 작업을 수행합니다:  
-    - 왼쪽 탭에서 **Access Control (IAM)**을 선택합니다.  
-    - 탐색 메뉴에서 **+ Add**를 선택합니다.  
-    - 탐색 메뉴에서 **Add role assignment**를 선택합니다.
+1. 역할 할당 추가 페이지로 이동하기 위해 다음 작업을 수행합니다:
 
-1. Add role assignment 페이지에서 다음 작업을 수행합니다:  
-    - Role 페이지에서 **AcrPull**을 검색창에 입력하고 나타나는 옵션 중 **AcrPull**을 선택합니다.  
-    - Role 페이지에서 **Next**를 선택합니다.  
-    - Members 페이지에서 **Assign access to**를 **Managed identity**로 설정합니다.  
-    - Members 페이지에서 **+ Select members**를 선택합니다.  
-    - Select managed identities 페이지에서 Azure **구독**을 선택합니다.  
-    - Select managed identities 페이지에서 **Managed identity**를 **Manage Identity**로 설정합니다.  
-    - Select managed identities 페이지에서 생성한 Manage Identity를 선택합니다. 예: *finetunephi-managedidentity*.  
-    - Select managed identities 페이지에서 **Select**를 선택합니다.  
-    - **Review + assign**을 선택합니다.
+    - 왼쪽 탭에서 **액세스 제어 (IAM)**를 선택합니다.
+    - 탐색 메뉴에서 **+ 추가**를 선택합니다.
+    - **역할 할당 추가**를 선택합니다.
+
+1. 역할 할당 추가 페이지에서 다음 작업을 수행합니다:
+
+    - 역할 페이지의 **검색창**에 *AcrPull*을 입력하고 나타나는 옵션에서 **AcrPull**을 선택합니다.
+    - 역할 페이지에서 **다음**을 선택합니다.
+    - 구성원 페이지에서 **액세스 할당 대상**을 **Managed identity**로 선택합니다.
+    - 구성원 페이지에서 **+ 구성원 선택**을 선택합니다.
+    - 관리 ID 선택 페이지에서 Azure **구독**을 선택합니다.
+    - 관리 ID 선택 페이지에서 **Managed identity**를 선택합니다.
+    - 생성한 Managed Identity를 선택합니다. 예: *finetunephi-managedidentity*
+    - 관리 ID 선택 페이지에서 **선택**을 클릭합니다.
+    - **검토 + 할당**을 선택합니다.
 
 ### 프로젝트 설정
 
-미세 조정에 필요한 데이터셋을 다운로드하려면 로컬 환경을 설정해야 합니다.
+미세 조정에 필요한 데이터셋을 다운로드하기 위해 로컬 환경을 설정합니다.
 
-이 과정에서는 다음 작업을 수행합니다:  
-- 작업할 폴더를 생성합니다.  
-- 가상 환경을 생성합니다.  
-- 필요한 패키지를 설치합니다.  
-- 데이터셋을 다운로드하기 위한 *download_dataset.py* 파일을 생성합니다.
+이 연습에서는
+
+- 작업할 폴더를 생성합니다.
+- 가상 환경을 생성합니다.
+- 필요한 패키지를 설치합니다.
+- 데이터셋 다운로드용 *download_dataset.py* 파일을 생성합니다.
 
 #### 작업할 폴더 생성
 
-1. 터미널 창을 열고 기본 경로에 *finetune-phi*라는 폴더를 생성하기 위해 다음 명령어를 입력합니다.
+1. 터미널 창을 열고 기본 경로에 *finetune-phi*라는 이름의 폴더를 생성하려면 다음 명령어를 입력합니다.
 
     ```console
     mkdir finetune-phi
     ```
 
-2. 생성한 *finetune-phi* 폴더로 이동하려면 터미널에서 다음 명령어를 입력합니다.
+2. 터미널에서 다음 명령어를 입력하여 생성한 *finetune-phi* 폴더로 이동합니다.
 
     ```console
     cd finetune-phi
@@ -221,20 +233,20 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### 가상 환경 생성
 
-1. 터미널에서 *.venv*라는 가상 환경을 생성하기 위해 다음 명령어를 입력합니다.
+1. 터미널에서 다음 명령어를 입력하여 *.venv*라는 이름의 가상 환경을 생성합니다.
 
     ```console
     python -m venv .venv
     ```
 
-2. 가상 환경을 활성화하려면 터미널에서 다음 명령어를 입력합니다.
+2. 터미널에서 다음 명령어를 입력하여 가상 환경을 활성화합니다.
 
     ```console
     .venv\Scripts\activate.bat
     ```
 
-> [!NOTE]  
-> 성공하면 명령 프롬프트 앞에 *(.venv)*가 표시됩니다.
+> [!NOTE]
+> 성공적으로 활성화되면 명령 프롬프트 앞에 *(.venv)*가 표시됩니다.
 
 #### 필요한 패키지 설치
 
@@ -244,10 +256,10 @@ CO_OP_TRANSLATOR_METADATA:
     pip install datasets==2.19.1
     ```
 
-#### `download_dataset.py` 파일 생성
+#### `download_dataset.py` 생성
 
-> [!NOTE]  
-> 폴더 구조 완성:
+> [!NOTE]
+> 완성된 폴더 구조:
 >
 > ```text
 > └── YourUserName
@@ -257,27 +269,28 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **Visual Studio Code**를 엽니다.
 
-1. 메뉴 바에서 **File**을 선택합니다.
+1. 메뉴 바에서 **파일**을 선택합니다.
 
-1. **Open Folder**를 선택합니다.
+1. **폴더 열기**를 선택합니다.
 
-1. 생성한 *finetune-phi* 폴더를 선택합니다. 경로: *C:\Users\yourUserName\finetune-phi*.
+1. *C:\Users\yourUserName\finetune-phi*에 위치한 생성한 *finetune-phi* 폴더를 선택합니다.
 
-    ![생성한 폴더 선택.](../../../../../../translated_images/04-01-open-project-folder.01a82ecd87581d5a0572bc4f12dd8004a204ec366c907a2ad4d42dfd61ea5e21.ko.png)
+    ![Select the folder that you created.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6f63a0a50961e51a39cc6de7a7ddc86da5f4896e815f28abd.ko.png)
 
-1. Visual Studio Code의 왼쪽 창에서 마우스 오른쪽 버튼을 클릭하고 **New File**을 선택하여 *download_dataset.py*라는 새 파일을 생성합니다.
+1. Visual Studio Code 왼쪽 창에서 우클릭 후 **새 파일**을 선택하여 *download_dataset.py* 파일을 생성합니다.
 
-    ![새 파일 생성.](../../../../../../translated_images/04-02-create-new-file.16e088bf7213c299e258482be49fb1c735ba3eca1503b38a6b45b9289c651732.ko.png)
+    ![Create a new file.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff927ede875300e1b5c91ab90d1e486c77a43bb9494880cf9b6f.ko.png)
 
-### 미세 조정을 위한 데이터셋 준비
+### 미세 조정용 데이터셋 준비
 
-이 과정에서는 *download_dataset.py* 파일을 실행하여 *ultrachat_200k* 데이터셋을 로컬 환경에 다운로드합니다. 그런 다음 이 데이터셋을 사용하여 Azure Machine Learning에서 Phi-3 모델을 미세 조정합니다.
+이 연습에서는 *download_dataset.py* 파일을 실행해 *ultrachat_200k* 데이터셋을 로컬 환경에 다운로드합니다. 이후 이 데이터셋을 사용해 Azure Machine Learning에서 Phi-3 모델을 미세 조정합니다.
 
-이 과정에서는 다음 작업을 수행합니다:  
-- 데이터셋을 다운로드하기 위한 코드를 *download_dataset.py* 파일에 추가합니다.  
-- *download_dataset.py* 파일을 실행하여 데이터셋을 로컬 환경에 다운로드합니다.
+이 연습에서는:
 
-#### *download_dataset.py*를 사용하여 데이터셋 다운로드
+- *download_dataset.py* 파일에 데이터셋 다운로드 코드를 추가합니다.
+- *download_dataset.py* 파일을 실행해 데이터셋을 로컬 환경에 다운로드합니다.
+
+#### *download_dataset.py*를 사용해 데이터셋 다운로드
 
 1. Visual Studio Code에서 *download_dataset.py* 파일을 엽니다.
 
@@ -343,161 +356,164 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. 터미널에서 다음 명령어를 입력하여 스크립트를 실행하고 데이터셋을 로컬 환경에 다운로드합니다.
+1. 터미널에서 다음 명령어를 입력해 스크립트를 실행하고 데이터셋을 로컬 환경에 다운로드합니다.
 
     ```console
     python download_dataset.py
     ```
 
-1. 데이터셋이 로컬 *finetune-phi/data* 디렉토리에 성공적으로 저장되었는지 확인합니다.
+1. 데이터셋이 로컬 *finetune-phi/data* 디렉터리에 성공적으로 저장되었는지 확인합니다.
 
-> [!NOTE]  
-> #### 데이터셋 크기 및 미세 조정 시간에 대한 참고 사항  
-> 이 튜토리얼에서는 데이터셋의 1%만 사용합니다(`split='train[:1%]'`). 이는 데이터 양을 크게 줄여 업로드 및 미세 조정 과정을 빠르게 합니다. 학습 시간과 모델 성능 간의 균형을 찾기 위해 비율을 조정할 수 있습니다. 데이터셋의 작은 부분을 사용하면 미세 조정에 필요한 시간이 줄어들어 튜토리얼을 더 쉽게 관리할 수 있습니다.
+> [!NOTE]
+>
+> #### 데이터셋 크기 및 미세 조정 시간 관련 참고
+>
+> 이 튜토리얼에서는 데이터셋의 1%(`split='train[:1%]'`)만 사용합니다. 이는 데이터 양을 크게 줄여 업로드 및 미세 조정 속도를 높입니다. 학습 시간과 모델 성능 간 적절한 균형을 위해 비율을 조정할 수 있습니다. 데이터셋의 작은 부분집합 사용은 미세 조정 시간을 단축해 튜토리얼 진행을 용이하게 만듭니다.
 
-## 시나리오 2: Phi-3 모델 미세 조정 및 Azure Machine Learning Studio에서 배포
+## 시나리오 2: Phi-3 모델 미세 조정 및 Azure Machine Learning Studio에 배포
 
 ### Phi-3 모델 미세 조정
 
-이 과정에서는 Azure Machine Learning Studio에서 Phi-3 모델을 미세 조정합니다.
+이 연습에서는 Azure Machine Learning Studio에서 Phi-3 모델을 미세 조정합니다.
 
-이 과정에서는 다음 작업을 수행합니다:  
-- 미세 조정을 위한 컴퓨터 클러스터 생성.  
-- Azure Machine Learning Studio에서 Phi-3 모델 미세 조정.  
+이 연습에서는:
+
+- 미세 조정을 위한 컴퓨터 클러스터 생성
+- Azure Machine Learning Studio에서 Phi-3 모델 미세 조정
 
 #### 미세 조정을 위한 컴퓨터 클러스터 생성
 1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)에 방문합니다.
 
 1. 왼쪽 탭에서 **Compute**를 선택합니다.
 
-1. 네비게이션 메뉴에서 **Compute clusters**를 선택합니다.
+1. 탐색 메뉴에서 **Compute clusters**를 선택합니다.
 
 1. **+ New**를 선택합니다.
 
-    ![Compute 선택.](../../../../../../translated_images/06-01-select-compute.e151458e2884d4877a05acf3553d015cd63c0c6ed056efcfbd425c715692a947.ko.png)
+    ![Select compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252d04ffd0142c073486df7d3b7256335964a98b87e28072523.ko.png)
 
 1. 다음 작업을 수행합니다:
 
-    - 사용하고자 하는 **Region**을 선택합니다.
+    - 사용하려는 **Region**을 선택합니다.
     - **Virtual machine tier**를 **Dedicated**로 선택합니다.
-    - **Virtual machine type**를 **GPU**로 선택합니다.
+    - **Virtual machine type**을 **GPU**로 선택합니다.
     - **Virtual machine size** 필터를 **Select from all options**로 설정합니다.
     - **Virtual machine size**를 **Standard_NC24ads_A100_v4**로 선택합니다.
 
-    ![클러스터 생성.](../../../../../../translated_images/06-02-create-cluster.19e5e8403b754eecaa1e2886625335ca16f4161391e0d75ef85f2e5eaa8ffb5a.ko.png)
+    ![Create cluster.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e4baa9c5ccf86510f21df87515c231b2a255e1ee545496458.ko.png)
 
 1. **Next**를 선택합니다.
 
 1. 다음 작업을 수행합니다:
 
     - **Compute name**을 입력합니다. 고유한 값이어야 합니다.
-    - **Minimum number of nodes**를 **0**으로 선택합니다.
-    - **Maximum number of nodes**를 **1**로 선택합니다.
+    - **Minimum number of nodes**를 **0**으로 설정합니다.
+    - **Maximum number of nodes**를 **1**로 설정합니다.
     - **Idle seconds before scale down**을 **120**으로 설정합니다.
 
-    ![클러스터 생성.](../../../../../../translated_images/06-03-create-cluster.8796fad73635590754b6095c30fe98112db248596d194cd5b0af077cca371ac1.ko.png)
+    ![Create cluster.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662edc0f95ad364a869b4dbb7f7be08ff259528fea96312e77e.ko.png)
 
 1. **Create**를 선택합니다.
 
-#### Phi-3 모델 미세 조정
+#### Phi-3 모델 미세 조정하기
 
 1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)에 방문합니다.
 
-1. 생성한 Azure Machine Learning 워크스페이스를 선택합니다.
+1. 생성한 Azure Machine Learning 작업 영역을 선택합니다.
 
-    ![생성한 워크스페이스 선택.](../../../../../../translated_images/06-04-select-workspace.f5449319befd49bad6028622f194507712fccee9d744f96b78765d2c1ffcb9c3.ko.png)
+    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.ko.png)
 
 1. 다음 작업을 수행합니다:
 
     - 왼쪽 탭에서 **Model catalog**를 선택합니다.
-    - **검색창**에 *phi-3-mini-4k*를 입력하고 나타나는 옵션에서 **Phi-3-mini-4k-instruct**를 선택합니다.
+    - **검색창**에 *phi-3-mini-4k*를 입력하고 나타나는 옵션 중 **Phi-3-mini-4k-instruct**를 선택합니다.
 
-    ![phi-3-mini-4k 입력.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.808fa02bdce5b9cda91e19a5fa9ff254697575293245ea49263f860354032e66.ko.png)
+    ![Type phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b25018a7e7353ce6525d8f5803b0af9bc9a60a9be4204dd77578.ko.png)
 
-1. 네비게이션 메뉴에서 **Fine-tune**을 선택합니다.
+1. 탐색 메뉴에서 **Fine-tune**를 선택합니다.
 
-    ![미세 조정 선택.](../../../../../../translated_images/06-06-select-fine-tune.bcb1fd63ead2da12219c0615d35cef2c9ce18d3c8467ef604d755accba87a063.ko.png)
+    ![Select fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeecb897ac74882792b59086893b8a7448a89be3628aee62fc1b.ko.png)
 
 1. 다음 작업을 수행합니다:
 
     - **Select task type**을 **Chat completion**으로 선택합니다.
     - **+ Select data**를 선택하여 **Training data**를 업로드합니다.
-    - Validation 데이터 업로드 유형을 **Provide different validation data**로 선택합니다.
+    - 검증 데이터 업로드 유형을 **Provide different validation data**로 선택합니다.
     - **+ Select data**를 선택하여 **Validation data**를 업로드합니다.
 
-    ![미세 조정 페이지 작성.](../../../../../../translated_images/06-07-fill-finetuning.dcf5eb5a2d6d2bfb727e1fc278de717df0b25cf8d11ace970df8ea7d5951591e.ko.png)
+    ![Fill fine-tuning page.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0bbc6b248af9e7369ca98379770badec9f73b6bced7a8b7806.ko.png)
 
     > [!TIP]
     >
-    > **Advanced settings**를 선택하여 **learning_rate** 및 **lr_scheduler_type**과 같은 설정을 사용자 정의하여 미세 조정 프로세스를 최적화할 수 있습니다.
+    > **Advanced settings**를 선택하면 **learning_rate**나 **lr_scheduler_type** 같은 설정을 조정하여 미세 조정 과정을 최적화할 수 있습니다.
 
 1. **Finish**를 선택합니다.
 
-1. 이 연습에서는 Azure Machine Learning을 사용하여 Phi-3 모델을 성공적으로 미세 조정했습니다. 미세 조정 작업은 상당한 시간이 걸릴 수 있습니다. 작업 실행 후 완료될 때까지 기다려야 합니다. Azure Machine Learning 워크스페이스의 왼쪽 탭에서 Jobs 탭으로 이동하여 작업 상태를 모니터링할 수 있습니다. 다음 단계에서는 미세 조정된 모델을 배포하고 Prompt flow와 통합할 것입니다.
+1. 이번 실습에서는 Azure Machine Learning을 사용해 Phi-3 모델을 성공적으로 미세 조정했습니다. 미세 조정 작업은 시간이 꽤 걸릴 수 있으니, 작업이 완료될 때까지 기다려야 합니다. 작업 상태는 Azure Machine Learning 작업 영역 왼쪽의 Jobs 탭에서 확인할 수 있습니다. 다음 시리즈에서는 미세 조정된 모델을 배포하고 Prompt flow와 통합할 예정입니다.
 
-    ![미세 조정 작업 확인.](../../../../../../translated_images/06-08-output.3fedec9572bca5d86b7db3a6d060345c762aa59ce6aefa2b1998154b9f475b69.ko.png)
+    ![See finetuning job.](../../../../../../translated_images/06-08-output.2bd32e59930672b1cc1de86056e2fbc91e338f59e2a29d7dac86ede49a9714b2.ko.png)
 
-### 미세 조정된 Phi-3 모델 배포
+### 미세 조정된 Phi-3 모델 배포하기
 
-미세 조정된 Phi-3 모델을 Prompt flow와 통합하려면 실시간 추론을 위해 모델을 배포해야 합니다. 이 과정은 모델 등록, 온라인 엔드포인트 생성, 모델 배포를 포함합니다.
+미세 조정된 Phi-3 모델을 Prompt flow와 통합하려면, 실시간 추론에 사용할 수 있도록 모델을 배포해야 합니다. 이 과정은 모델 등록, 온라인 엔드포인트 생성, 모델 배포를 포함합니다.
 
-이 연습에서는 다음 작업을 수행합니다:
+이번 실습에서는 다음을 수행합니다:
 
-- 미세 조정된 모델을 Azure Machine Learning 워크스페이스에 등록합니다.
-- 온라인 엔드포인트를 생성합니다.
-- 등록된 미세 조정된 Phi-3 모델을 배포합니다.
+- Azure Machine Learning 작업 영역에 미세 조정된 모델 등록하기
+- 온라인 엔드포인트 생성하기
+- 등록된 미세 조정 Phi-3 모델 배포하기
 
-#### 미세 조정된 모델 등록
+#### 미세 조정된 모델 등록하기
 
 1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)에 방문합니다.
 
-1. 생성한 Azure Machine Learning 워크스페이스를 선택합니다.
+1. 생성한 Azure Machine Learning 작업 영역을 선택합니다.
 
-    ![생성한 워크스페이스 선택.](../../../../../../translated_images/06-04-select-workspace.f5449319befd49bad6028622f194507712fccee9d744f96b78765d2c1ffcb9c3.ko.png)
+    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.ko.png)
 
 1. 왼쪽 탭에서 **Models**를 선택합니다.
 1. **+ Register**를 선택합니다.
-1. **From a job output**을 선택합니다.
+1. **From a job output**를 선택합니다.
 
-    ![모델 등록.](../../../../../../translated_images/07-01-register-model.46cad47d2bb083c74e616691ef836735209ffc42b29fb432a1acbef52e28d41f.ko.png)
+    ![Register model.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777c8c39906ce5cd57f16b54fb3887dd4e4de1ce963b26499ad.ko.png)
 
 1. 생성한 작업을 선택합니다.
 
-    ![작업 선택.](../../../../../../translated_images/07-02-select-job.a5d34472aead80a4b69594f277dd43491c6aaf42d847940c1dc2081d909a23f3.ko.png)
+    ![Select job.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd09315953b4eb2cc9d62d0d77ab0d9d877e34c6827fa6d2b6be4.ko.png)
 
 1. **Next**를 선택합니다.
 
 1. **Model type**을 **MLflow**로 선택합니다.
 
-1. **Job output**이 선택되어 있는지 확인합니다. 자동으로 선택되어야 합니다.
+1. **Job output**이 자동으로 선택되어 있는지 확인합니다.
 
-    ![출력 선택.](../../../../../../translated_images/07-03-select-output.e1a56a25db9065901df821343ff894ca45ce0569c3daf30b5aafdd060f26e059.ko.png)
+    ![Select output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f267b40f73de77f092a5b02808ade72f8eb94e5fe9723feb3.ko.png)
 
 2. **Next**를 선택합니다.
 
 3. **Register**를 선택합니다.
 
-    ![등록 선택.](../../../../../../translated_images/07-04-register.71316a5a4d2e1f520f14fee93be7865a785971cdfdd8cd08779866f5f29f7da4.ko.png)
+    ![Select register.](../../../../../../translated_images/07-04-register.fd82a3b293060bc78399e613293032d3d301c02a6fd8092bec52bfaf4f3104de.ko.png)
 
-4. 왼쪽 탭의 **Models** 메뉴로 이동하여 등록된 모델을 확인할 수 있습니다.
+4. 등록된 모델은 왼쪽 탭의 **Models** 메뉴에서 확인할 수 있습니다.
 
-    ![등록된 모델.](../../../../../../translated_images/07-05-registered-model.969e2ec99a4cbf5cc9bb006b118110803853a15aa3c499eceb7812d976bd6128.ko.png)
+    ![Registered model.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591b7995686b95396ffd8c185ba66f0a1f6be18f4aea05e93d5.ko.png)
 
-#### 미세 조정된 모델 배포
+#### 미세 조정된 모델 배포하기
 
-1. 생성한 Azure Machine Learning 워크스페이스로 이동합니다.
+1. 생성한 Azure Machine Learning 작업 영역으로 이동합니다.
 
 1. 왼쪽 탭에서 **Endpoints**를 선택합니다.
 
-1. 네비게이션 메뉴에서 **Real-time endpoints**를 선택합니다.
+1. 탐색 메뉴에서 **Real-time endpoints**를 선택합니다.
 
-    ![엔드포인트 생성.](../../../../../../translated_images/07-06-create-endpoint.0741c2a4369bd3b9c4e17aa7b31ed0337bfb1303f9038244784791250164b2f7.ko.png)
+    ![Create endpoint.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09618ce29b467276523838b8cc766d79ebfecdb052fef2c4df.ko.png)
 
 1. **Create**를 선택합니다.
 
 1. 생성한 등록된 모델을 선택합니다.
 
-    ![등록된 모델 선택.](../../../../../../translated_images/07-07-select-registered-model.7a270d391fd543a21d9a024d2ea516667c039393dbe954019e19162dd07d2387.ko.png)
+    ![Select registered model.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4460f7646dfaa59121fb1384ed1957755427d358462c25225.ko.png)
 
 1. **Select**를 선택합니다.
 
@@ -505,146 +521,146 @@ CO_OP_TRANSLATOR_METADATA:
 
     - **Virtual machine**을 *Standard_NC6s_v3*로 선택합니다.
     - 사용할 **Instance count**를 선택합니다. 예: *1*.
-    - **Endpoint**를 **New**로 선택하여 엔드포인트를 생성합니다.
+    - **Endpoint**를 **New**로 선택하여 새 엔드포인트를 만듭니다.
     - **Endpoint name**을 입력합니다. 고유한 값이어야 합니다.
     - **Deployment name**을 입력합니다. 고유한 값이어야 합니다.
 
-    ![배포 설정 작성.](../../../../../../translated_images/07-08-deployment-setting.5907ac712d60af1f5e6d18e09a39b3fcd5706e9ce2e3dffc7120a2f79e025483.ko.png)
+    ![Fill the deployment setting.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e67378494bb8d81418bc3bdaceb8c57151727d538594cb378697f36.ko.png)
 
 1. **Deploy**를 선택합니다.
 
 > [!WARNING]
-> 계정에 추가 비용이 발생하지 않도록 Azure Machine Learning 워크스페이스에서 생성한 엔드포인트를 삭제해야 합니다.
+> 추가 요금이 발생하지 않도록, Azure Machine Learning 작업 영역에서 생성한 엔드포인트를 사용하지 않을 경우 반드시 삭제하세요.
 >
 
-#### Azure Machine Learning 워크스페이스에서 배포 상태 확인
+#### Azure Machine Learning 작업 영역에서 배포 상태 확인하기
 
-1. 생성한 Azure Machine Learning 워크스페이스로 이동합니다.
+1. 생성한 Azure Machine Learning 작업 영역으로 이동합니다.
 
 1. 왼쪽 탭에서 **Endpoints**를 선택합니다.
 
 1. 생성한 엔드포인트를 선택합니다.
 
-    ![엔드포인트 선택](../../../../../../translated_images/07-09-check-deployment.dc970e535b490992ff68e6127c9d520389b3f0f5a5fc41358c2ad16669bce49a.ko.png)
+    ![Select endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4a302f0efc8875002e1c382167083c7fefbdb42ede274d0da.ko.png)
 
 1. 이 페이지에서 배포 과정 중 엔드포인트를 관리할 수 있습니다.
 
 > [!NOTE]
-> 배포가 완료되면 **Live traffic**이 **100%**로 설정되어 있는지 확인하세요. 설정되지 않은 경우 **Update traffic**을 선택하여 트래픽 설정을 조정하세요. 트래픽이 0%로 설정되어 있으면 모델을 테스트할 수 없습니다.
+> 배포가 완료되면 **Live traffic**이 **100%**로 설정되어 있는지 확인하세요. 그렇지 않으면 **Update traffic**을 선택해 트래픽 설정을 조정할 수 있습니다. 트래픽이 0%로 설정되어 있으면 모델 테스트가 불가능합니다.
 >
-> ![트래픽 설정.](../../../../../../translated_images/07-10-set-traffic.a0fccfd2b1e2bd0dba22860daa76d35999cfcf23b53ecc09df92f992c4cab64f.ko.png)
+> ![Set traffic.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d30c64ecabac4b17a7b5dc004ba52ad387cbaaf7b266eeadf.ko.png)
 >
 
-## 시나리오 3: Prompt flow와 통합하여 Azure AI Foundry에서 사용자 정의 모델과 대화하기
+## 시나리오 3: Prompt flow와 통합하고 Azure AI Foundry에서 맞춤 모델로 채팅하기
 
-### 사용자 정의 Phi-3 모델을 Prompt flow와 통합하기
+### 맞춤 Phi-3 모델을 Prompt flow와 통합하기
 
-미세 조정된 모델을 성공적으로 배포한 후, Prompt Flow와 통합하여 실시간 애플리케이션에서 모델을 사용할 수 있습니다. 이를 통해 사용자 정의 Phi-3 모델과 다양한 인터랙티브 작업을 수행할 수 있습니다.
+미세 조정한 모델을 성공적으로 배포한 후, Prompt Flow와 통합하여 실시간 애플리케이션에서 맞춤 Phi-3 모델을 활용할 수 있습니다. 이를 통해 다양한 인터랙티브 작업이 가능합니다.
 
-이 연습에서는 다음 작업을 수행합니다:
+이번 실습에서는 다음을 수행합니다:
 
-- Azure AI Foundry Hub 생성.
-- Azure AI Foundry Project 생성.
-- Prompt flow 생성.
-- 미세 조정된 Phi-3 모델을 위한 사용자 정의 연결 추가.
-- Prompt flow를 설정하여 사용자 정의 Phi-3 모델과 대화하기.
+- Azure AI Foundry Hub 생성
+- Azure AI Foundry 프로젝트 생성
+- Prompt flow 생성
+- 미세 조정된 Phi-3 모델을 위한 맞춤 연결 추가
+- 맞춤 Phi-3 모델과 채팅할 수 있도록 Prompt flow 설정
 
 > [!NOTE]
-> Promptflow는 Azure ML Studio를 통해서도 통합할 수 있습니다. 동일한 통합 과정이 Azure ML Studio에 적용됩니다.
+> Azure ML Studio를 사용해 Promptflow와 통합할 수도 있습니다. 동일한 통합 절차가 Azure ML Studio에도 적용됩니다.
 
 #### Azure AI Foundry Hub 생성
 
-프로젝트를 생성하기 전에 Hub를 생성해야 합니다. Hub는 리소스 그룹과 유사하게 작동하며, Azure AI Foundry에서 여러 프로젝트를 조직하고 관리할 수 있도록 도와줍니다.
+프로젝트를 만들기 전에 Hub를 생성해야 합니다. Hub는 리소스 그룹처럼 여러 프로젝트를 조직하고 관리하는 역할을 합니다.
 
 1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)에 방문합니다.
 
 1. 왼쪽 탭에서 **All hubs**를 선택합니다.
 
-1. 네비게이션 메뉴에서 **+ New hub**를 선택합니다.
+1. 탐색 메뉴에서 **+ New hub**를 선택합니다.
 
-    ![Hub 생성.](../../../../../../translated_images/08-01-create-hub.c54d78fb49923ff1d8c6a11010a8c8eca9b044d525182a2a1700b3ff4c542674.ko.png)
+    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834e092dcf9dda773276fbee65f40252ed4a9af4f9aa4fef5d7.ko.png)
 
 1. 다음 작업을 수행합니다:
 
     - **Hub name**을 입력합니다. 고유한 값이어야 합니다.
     - Azure **Subscription**을 선택합니다.
-    - 사용할 **Resource group**을 선택합니다(필요시 새로 생성).
-    - 사용하고자 하는 **Location**을 선택합니다.
-    - 사용할 **Connect Azure AI Services**를 선택합니다(필요시 새로 생성).
-    - **Connect Azure AI Search**를 **Skip connecting**으로 설정합니다.
+    - 사용할 **Resource group**을 선택합니다(필요 시 새로 생성).
+    - 사용할 **Location**을 선택합니다.
+    - 사용할 **Connect Azure AI Services**를 선택합니다(필요 시 새로 생성).
+    - **Connect Azure AI Search**는 **Skip connecting**으로 선택합니다.
 
-    ![Hub 작성.](../../../../../../translated_images/08-02-fill-hub.ced9ab1db4d2f3324d3d34bd9e846641e80bb9e4ebfc56f47d09ce6885e9caf7.ko.png)
+    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c44658a87c2ed01d9e588581f157480ff1ac3312085c51d25.ko.png)
 
 1. **Next**를 선택합니다.
 
-#### Azure AI Foundry Project 생성
+#### Azure AI Foundry 프로젝트 생성
 
 1. 생성한 Hub에서 왼쪽 탭의 **All projects**를 선택합니다.
 
-1. 네비게이션 메뉴에서 **+ New project**를 선택합니다.
+1. 탐색 메뉴에서 **+ New project**를 선택합니다.
 
-    ![새 프로젝트 선택.](../../../../../../translated_images/08-04-select-new-project.e3033e8fa767fa86e03dc830014e59222eceacbc322082771d0e11be6e60ed6a.ko.png)
+    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f1251c487d98aed0641bd057100b8e5d6fba9062bfb7d752ce9.ko.png)
 
 1. **Project name**을 입력합니다. 고유한 값이어야 합니다.
 
-    ![프로젝트 생성.](../../../../../../translated_images/08-05-create-project.6172ff97b4c49ad0f364e6d4a7b658dba45f8e27aaa2126a83d0af77056450b0.ko.png)
+    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a192b4ed3dde6b1136c860fc85352d612aa2f3ae8a4d54eb4.ko.png)
 
 1. **Create a project**를 선택합니다.
 
-#### 미세 조정된 Phi-3 모델을 위한 사용자 정의 연결 추가
+#### 미세 조정된 Phi-3 모델을 위한 맞춤 연결 추가
 
-사용자 정의 Phi-3 모델을 Prompt flow와 통합하려면 모델의 엔드포인트와 키를 사용자 정의 연결에 저장해야 합니다. 이 설정은 Prompt flow에서 사용자 정의 Phi-3 모델에 액세스할 수 있도록 보장합니다.
+맞춤 Phi-3 모델을 Prompt flow와 통합하려면, 모델의 엔드포인트와 키를 맞춤 연결에 저장해야 합니다. 이렇게 하면 Prompt flow에서 맞춤 모델에 접근할 수 있습니다.
 
-#### 미세 조정된 Phi-3 모델의 API 키와 엔드포인트 URI 설정
+#### 미세 조정된 Phi-3 모델의 api key와 endpoint uri 설정하기
 
 1. [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo)에 방문합니다.
 
-1. 생성한 Azure Machine Learning 워크스페이스로 이동합니다.
+1. 생성한 Azure Machine Learning 작업 영역으로 이동합니다.
 
 1. 왼쪽 탭에서 **Endpoints**를 선택합니다.
 
-    ![엔드포인트 선택.](../../../../../../translated_images/08-06-select-endpoints.7c12a37c1b477c2829a045a230ae9c18373156fe7adb797dcabd3ab18bd139a7.ko.png)
+    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf960519c1ac95116d1a7e5b8d0bdea5cd42281930766fbfad1929.ko.png)
 
 1. 생성한 엔드포인트를 선택합니다.
 
-    ![생성된 엔드포인트 선택.](../../../../../../translated_images/08-07-select-endpoint-created.d69043d757b715c24c88c9ae7e796247eb8909bae8967839a7dc30de3f403caf.ko.png)
+    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275ea16f689f59b70d5b0162fff1781204e389edcb63b42b95b2.ko.png)
 
-1. 네비게이션 메뉴에서 **Consume**을 선택합니다.
+1. 탐색 메뉴에서 **Consume**을 선택합니다.
 
 1. **REST endpoint**와 **Primary key**를 복사합니다.
-![API 키와 엔드포인트 URI 복사하기.](../../../../../../translated_images/08-08-copy-endpoint-key.511a027574cee0efc50fdda33b6de1e1e268c5979914ba944b72092f72f95544.ko.png)
+![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cbe30a20b889154d04109bf17c5c09816060a8689933dc0fd7.ko.png)
 
-#### 사용자 지정 연결 추가하기
+#### 사용자 지정 연결 추가
 
-1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)를 방문합니다.
+1. [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)에 접속합니다.
 
 1. 생성한 Azure AI Foundry 프로젝트로 이동합니다.
 
-1. 생성한 프로젝트에서 왼쪽 탭에서 **Settings**를 선택합니다.
+1. 생성한 프로젝트에서 왼쪽 탭의 **Settings**를 선택합니다.
 
 1. **+ New connection**을 선택합니다.
 
-    ![새 연결 선택하기.](../../../../../../translated_images/08-09-select-new-connection.c55d4faa9f655e163a5d7aec1f21843ea30738d4e8c5ce5f0724048ebc6ca007.ko.png)
+    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc77130c3a16fbb8ee59407ecbf74fd3502cb8720c61384446.ko.png)
 
 1. 탐색 메뉴에서 **Custom keys**를 선택합니다.
 
-    ![사용자 지정 키 선택하기.](../../../../../../translated_images/08-10-select-custom-keys.78c5267f5d037ef1931bc25e4d1a77747b709df7141a9968e25ebd9188ac9fdd.ko.png)
+    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b29664605513ccc134f1adaefaf27f951981c511783a6a0d1118c9178a5.ko.png)
 
 1. 다음 작업을 수행합니다:
 
     - **+ Add key value pairs**를 선택합니다.
-    - 키 이름에 **endpoint**를 입력하고, Azure ML Studio에서 복사한 엔드포인트를 값 필드에 붙여넣습니다.
+    - 키 이름에 **endpoint**를 입력하고 Azure ML Studio에서 복사한 endpoint를 값 필드에 붙여넣습니다.
     - 다시 **+ Add key value pairs**를 선택합니다.
-    - 키 이름에 **key**를 입력하고, Azure ML Studio에서 복사한 키를 값 필드에 붙여넣습니다.
-    - 키를 추가한 후 **is secret**을 선택하여 키가 노출되지 않도록 설정합니다.
+    - 키 이름에 **key**를 입력하고 Azure ML Studio에서 복사한 키를 값 필드에 붙여넣습니다.
+    - 키를 추가한 후, 키가 노출되지 않도록 **is secret**을 선택합니다.
 
-    ![연결 추가하기.](../../../../../../translated_images/08-11-add-connection.a2e410ab11c11a4798fe8ac56ba4e9707d1a5079be00f6f91bb187515f756a31.ko.png)
+    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26e8df1bbd0948e06aa20aa0dc102faa96c8144722ef7f0b72.ko.png)
 
 1. **Add connection**을 선택합니다.
 
-#### 프롬프트 흐름 생성하기
+#### Prompt flow 생성
 
-Azure AI Foundry에서 사용자 지정 연결을 추가했습니다. 이제 다음 단계에 따라 프롬프트 흐름을 생성해 보겠습니다. 이후 생성한 프롬프트 흐름을 사용자 지정 연결에 연결하여 프롬프트 흐름 내에서 세부 조정된 모델을 사용할 수 있습니다.
+Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음 단계를 따라 Prompt flow를 생성해 보겠습니다. 이후 이 Prompt flow를 사용자 지정 연결과 연결하여 fine-tuned 모델을 Prompt flow 내에서 사용할 수 있습니다.
 
 1. 생성한 Azure AI Foundry 프로젝트로 이동합니다.
 
@@ -652,26 +668,26 @@ Azure AI Foundry에서 사용자 지정 연결을 추가했습니다. 이제 다
 
 1. 탐색 메뉴에서 **+ Create**를 선택합니다.
 
-    ![프롬프트 흐름 선택하기.](../../../../../../translated_images/08-12-select-promptflow.1782ec6988841bb53c35011f31fbebc1bdc09c6f4653fea935176212ba608af1.ko.png)
+    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5ba79bedfd35e2f2fb430f344844994375680fcfc111a994ae.ko.png)
 
 1. 탐색 메뉴에서 **Chat flow**를 선택합니다.
 
-    ![채팅 흐름 선택하기.](../../../../../../translated_images/08-13-select-flow-type.f346cc55beed0b2774bd61b2afe86f3640cc772c1715914926333b0e4d6281ee.ko.png)
+    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591f6cc6360bc35c8fca8d63519c09111c6c431de9b46eed143.ko.png)
 
 1. 사용할 **Folder name**을 입력합니다.
 
-    ![이름 입력하기.](../../../../../../translated_images/08-14-enter-name.e2b324f7734290157520834403e041f46c06cbdfa5633f4c91725f7389b41cf7.ko.png)
+    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d824bad779a54e55d808a09394b6b730fbea55d78421f52ff.ko.png)
 
 2. **Create**를 선택합니다.
 
-#### 사용자 지정 Phi-3 모델과 대화할 수 있는 프롬프트 흐름 설정하기
+#### 사용자 지정 Phi-3 모델과 채팅할 수 있도록 Prompt flow 설정하기
 
-세부 조정된 Phi-3 모델을 프롬프트 흐름에 통합해야 합니다. 하지만 제공된 기존 프롬프트 흐름은 이 목적에 맞게 설계되지 않았습니다. 따라서 사용자 지정 모델 통합을 가능하게 하기 위해 프롬프트 흐름을 재설계해야 합니다.
+fine-tuned Phi-3 모델을 Prompt flow에 통합해야 합니다. 하지만 기본 제공되는 Prompt flow는 이를 위한 설계가 되어 있지 않으므로, 사용자 지정 모델을 통합할 수 있도록 Prompt flow를 재설계해야 합니다.
 
-1. 프롬프트 흐름에서 다음 작업을 수행하여 기존 흐름을 재구성합니다:
+1. Prompt flow에서 기존 플로우를 다시 구성하기 위해 다음 작업을 수행합니다:
 
     - **Raw file mode**를 선택합니다.
-    - *flow.dag.yml* 파일에 있는 기존 코드를 모두 삭제합니다.
+    - *flow.dag.yml* 파일 내 기존 코드를 모두 삭제합니다.
     - *flow.dag.yml* 파일에 다음 코드를 추가합니다.
 
         ```yml
@@ -697,9 +713,9 @@ Azure AI Foundry에서 사용자 지정 연결을 추가했습니다. 이제 다
 
     - **Save**를 선택합니다.
 
-    ![원시 파일 모드 선택하기.](../../../../../../translated_images/08-15-select-raw-file-mode.8383d30bf0b893f0f05e340e68fa3631ee2a526b861551865e2e8a5dd6d4b02b.ko.png)
+    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985b76e070bf170e1d0d0d26b38d93bc635624642191f715a6d.ko.png)
 
-1. 사용자 지정 Phi-3 모델을 프롬프트 흐름에서 사용하기 위해 *integrate_with_promptflow.py* 파일에 다음 코드를 추가합니다.
+1. Prompt flow에서 사용자 지정 Phi-3 모델을 사용하기 위해 *integrate_with_promptflow.py* 파일에 다음 코드를 추가합니다.
 
     ```python
     import logging
@@ -762,53 +778,53 @@ Azure AI Foundry에서 사용자 지정 연결을 추가했습니다. 이제 다
 
     ```
 
-    ![프롬프트 흐름 코드 붙여넣기.](../../../../../../translated_images/08-16-paste-promptflow-code.1e74d673739ae3fc114a386fd7dff65d6f98d8bf69be16d4b577cbb75844ba38.ko.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d097779ab1c429be9fc07e3f4171e41fbbfb747a6e755816411e6d.ko.png)
 
 > [!NOTE]
-> Azure AI Foundry에서 프롬프트 흐름 사용에 대한 자세한 정보는 [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)를 참조하세요.
+> Azure AI Foundry에서 Prompt flow 사용에 관한 자세한 내용은 [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)를 참고하세요.
 
-1. **Chat input**, **Chat output**을 선택하여 모델과의 대화를 활성화합니다.
+1. 모델과 채팅할 수 있도록 **Chat input**, **Chat output**을 선택합니다.
 
-    ![입력 출력 선택하기.](../../../../../../translated_images/08-17-select-input-output.71fb7bf702d1fff773d9d929aa482bc1962e8ce36dac04ad9d9b86db8c6bb776.ko.png)
+    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03ba022a21159e51d544c6e063e73c10e772c942d4e44da0d30.ko.png)
 
-1. 이제 사용자 지정 Phi-3 모델과 대화할 준비가 완료되었습니다. 다음 연습에서는 프롬프트 흐름을 시작하고 세부 조정된 Phi-3 모델과 대화하는 방법을 배울 것입니다.
+1. 이제 사용자 지정 Phi-3 모델과 채팅할 준비가 되었습니다. 다음 실습에서는 Prompt flow를 시작하고 fine-tuned Phi-3 모델과 채팅하는 방법을 배웁니다.
 
 > [!NOTE]
 >
-> 재구성된 흐름은 아래 이미지와 같아야 합니다:
+> 재구성된 플로우는 아래 이미지와 유사해야 합니다:
 >
-> ![흐름 예제.](../../../../../../translated_images/08-18-graph-example.bb35453a6bfee310805715e3ec0678e118273bc32ae8248acfcf8e4c553ed1e5.ko.png)
+> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c10b7375192511a8e2aba847e442b294a2e65d88ffac8f63b.ko.png)
 >
 
-### 사용자 지정 Phi-3 모델과 대화하기
+### 사용자 지정 Phi-3 모델과 채팅하기
 
-세부 조정된 사용자 지정 Phi-3 모델을 프롬프트 흐름에 통합한 후, 이제 모델과 상호작용을 시작할 준비가 되었습니다. 이 연습에서는 프롬프트 흐름을 설정하고 모델과 대화를 시작하는 과정을 안내합니다. 이 단계를 따르면 세부 조정된 Phi-3 모델의 다양한 작업 및 대화 기능을 완전히 활용할 수 있습니다.
+fine-tuned한 사용자 지정 Phi-3 모델을 Prompt flow와 통합했으니 이제 상호작용을 시작할 수 있습니다. 이 실습에서는 Prompt flow를 사용해 모델과 채팅을 설정하고 시작하는 과정을 안내합니다. 이 단계를 따라 하면 fine-tuned Phi-3 모델의 다양한 작업과 대화 기능을 최대한 활용할 수 있습니다.
 
-- 프롬프트 흐름을 사용하여 사용자 지정 Phi-3 모델과 대화합니다.
+- Prompt flow를 사용해 사용자 지정 Phi-3 모델과 채팅합니다.
 
-#### 프롬프트 흐름 시작하기
+#### Prompt flow 시작하기
 
-1. **Start compute sessions**를 선택하여 프롬프트 흐름을 시작합니다.
+1. **Start compute sessions**를 선택해 Prompt flow를 시작합니다.
 
-    ![컴퓨트 세션 시작하기.](../../../../../../translated_images/09-01-start-compute-session.bf4fd553850fc0efcb8f8fa1e089839f9ea09333f48689aeb8ecce41e4a1ba42.ko.png)
+    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b4809b60d75ce9b0ad53e0729cc1449935ccbe90b954401dc.ko.png)
 
-1. **Validate and parse input**을 선택하여 매개변수를 갱신합니다.
+1. **Validate and parse input**을 선택해 파라미터를 갱신합니다.
 
-    ![입력 검증하기.](../../../../../../translated_images/09-02-validate-input.24092d447308054d25144e73649a9ac630bd895c376297b03d82354090815a97.ko.png)
+    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e97038d7529b9060a23dc59d7ddbeb38ac9c4562ef4f5b32f7.ko.png)
 
-1. 생성한 사용자 지정 연결의 **connection** 값을 선택합니다. 예를 들어, *connection*.
+1. 생성한 사용자 지정 연결의 **connection** 값을 선택합니다. 예: *connection*.
 
-    ![연결 선택하기.](../../../../../../translated_images/09-03-select-connection.77f4eef8f74410b4abae1e34ba0f6bc34b3f1390b7158ab4023a08c025ff4993.ko.png)
+    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b184402368a6ec383814b139686118331a5b2eefa489678902269dfc.ko.png)
 
-#### 사용자 지정 모델과 대화하기
+#### 사용자 지정 모델과 채팅하기
 
 1. **Chat**을 선택합니다.
 
-    ![채팅 선택하기.](../../../../../../translated_images/09-04-select-chat.3cd7462ff5c6e3aa0eb686a29b91420a8fdcd3066fba5507dc257d7b91a3c492.ko.png)
+    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e636a5e1516b6c64fdf2345ceb3142db2bed93ab7e6f03bbb2.ko.png)
 
-1. 다음은 결과의 예시입니다: 이제 사용자 지정 Phi-3 모델과 대화할 수 있습니다. 세부 조정에 사용된 데이터를 기반으로 질문하는 것이 권장됩니다.
+1. 결과 예시는 다음과 같습니다: 이제 사용자 지정 Phi-3 모델과 채팅할 수 있습니다. fine-tuning에 사용된 데이터를 기반으로 질문하는 것을 권장합니다.
 
-    ![프롬프트 흐름으로 채팅하기.](../../../../../../translated_images/09-05-chat-with-promptflow.30574a870c00e676916d9afb28b70d3fb90e1f00e73f70413cd6aeed74d9c151.ko.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126fa4886e6fd0e7482cfdc6c907fa36f7f2f13d04126f9eda14.ko.png)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있습니다. 원본 문서의 원어를 권위 있는 출처로 간주해야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생할 수 있는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원본 문서의 원어 버전이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

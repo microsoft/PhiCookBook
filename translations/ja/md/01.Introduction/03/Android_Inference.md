@@ -1,33 +1,33 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b909b4ac6465d33e81adb17df38deef3",
-  "translation_date": "2025-04-04T12:00:01+00:00",
-  "source_file": "md\\01.Introduction\\03\\Android_Inference.md",
+  "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
+  "translation_date": "2025-05-08T05:57:17+00:00",
+  "source_file": "md/01.Introduction/03/Android_Inference.md",
   "language_code": "ja"
 }
 -->
-# **AndroidでPhi-3の推論を行う**
+# **AndroidでのPhi-3推論**
 
-AndroidデバイスでPhi-3-miniを使用して推論を行う方法を見ていきましょう。Phi-3-miniは、Microsoftが提供する新しいモデルシリーズで、大規模言語モデル（LLM）をエッジデバイスやIoTデバイスで展開できるようにします。
+AndroidデバイスでPhi-3-miniを使った推論方法を見ていきましょう。Phi-3-miniはMicrosoftの新しいモデルシリーズで、エッジデバイスやIoTデバイス上で大規模言語モデル（LLM）を展開できるように設計されています。
 
 ## Semantic Kernelと推論
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel)は、Azure OpenAI Service、OpenAIモデル、さらにはローカルモデルと互換性のあるアプリケーションを作成できるアプリケーションフレームワークです。Semantic Kernelを初めて使う方は、[Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo)をご覧になることをお勧めします。
+[Semantic Kernel](https://github.com/microsoft/semantic-kernel)は、Azure OpenAI Service、OpenAIモデル、さらにはローカルモデルと連携可能なアプリケーションフレームワークです。Semantic Kernelを初めて使う場合は、[Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo)を参照することをおすすめします。
 
-### Semantic Kernelを使用してPhi-3-miniにアクセスするには
+### Semantic KernelでPhi-3-miniにアクセスするには
 
-Semantic KernelのHugging Face Connectorと組み合わせることができます。この[サンプルコード](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)を参照してください。
+Semantic KernelのHugging Face Connectorと組み合わせて利用できます。詳細はこの[サンプルコード](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)を参照してください。
 
-デフォルトでは、Hugging Face上のモデルIDに対応していますが、ローカルに構築したPhi-3-miniモデルサーバーにも接続できます。
+デフォルトではHugging Face上のモデルIDに対応していますが、ローカルで構築したPhi-3-miniモデルサーバーにも接続可能です。
 
-### OllamaやLlamaEdgeを使用した量子化モデルの呼び出し
+### OllamaやLlamaEdgeで量子化モデルを呼び出す
 
-多くのユーザーは、モデルをローカルで実行するために量子化モデルを使用することを好みます。[Ollama](https://ollama.com/)や[LlamaEdge](https://llamaedge.com)を使用すると、さまざまな量子化モデルを個別に呼び出すことができます。
+多くのユーザーはローカルでモデルを動かすために量子化モデルを使うことを好みます。[Ollama](https://ollama.com/)や[LlamaEdge](https://llamaedge.com)は、個人ユーザーがさまざまな量子化モデルを呼び出せるようにしています。
 
 #### Ollama
 
-`ollama run Phi-3`を直接実行するか、`.gguf`ファイルへのパスを指定した`Modelfile`を作成してオフラインで構成することができます。
+`ollama run Phi-3`を直接実行するか、`.gguf`ファイルのパスを指定した`Modelfile`を作成してオフラインで設定できます。
 
 ```gguf
 FROM {Add your gguf file path}
@@ -40,15 +40,15 @@ PARAMETER num_ctx 4096
 
 #### LlamaEdge
 
-クラウドとエッジデバイスの両方で`.gguf`ファイルを使用したい場合は、LlamaEdgeが優れた選択肢です。開始するには、この[サンプルコード](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo)を参照してください。
+クラウドとエッジデバイスの両方で`.gguf`ファイルを使いたい場合、LlamaEdgeが最適です。こちらの[サンプルコード](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo)を参考にしてください。
 
-### Androidスマートフォンへのインストールと実行
+### Androidスマホへのインストールと実行
 
-1. **MLC Chatアプリ**（無料）をAndroidスマートフォンにダウンロードします。
-2. APKファイル（148MB）をダウンロードし、デバイスにインストールします。
-3. MLC Chatアプリを起動します。Phi-3-miniを含むAIモデルのリストが表示されます。
+1. Androidスマホ向けの無料アプリ「MLC Chat」をダウンロードします。
+2. APKファイル（148MB）をダウンロードして端末にインストールします。
+3. MLC Chatアプリを起動すると、Phi-3-miniを含むAIモデルの一覧が表示されます。
 
-まとめると、Phi-3-miniはエッジデバイスで生成AIを活用するためのエキサイティングな可能性を提供します。Androidでその機能を探索し始めてみましょう。
+まとめると、Phi-3-miniはエッジデバイスでの生成AIに新たな可能性をもたらし、Android上でその機能を手軽に試せます。
 
-**免責事項**:  
-この文書は、AI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。原文（元の言語で書かれた文書）が正式な情報源として考慮されるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の利用に起因する誤解や誤認について、当方は一切の責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文はその言語での正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や解釈の相違について、当方は一切の責任を負いかねます。

@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "44a77501fe39a2eb2b776dfdf9953b67",
-  "translation_date": "2025-04-04T18:47:38+00:00",
-  "source_file": "md\\03.FineTuning\\CreatingSampleData.md",
+  "original_hash": "3cd0b727945d57998f1096763df56a84",
+  "translation_date": "2025-05-08T05:13:46+00:00",
+  "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "hk"
 }
 -->
-# 下載 Hugging Face 數據集並生成圖片數據集
+# 透過由 Hugging Face 下載 DataSet 及相關圖片來生成圖像數據集
 
-### 概述
+### 概覽
 
-這個腳本透過下載所需的圖片、過濾掉下載失敗的行，並將數據集保存為 CSV 文件，為機器學習準備數據集。
+呢個 script 係準備機器學習用嘅數據集，方法係下載所需嘅圖片，篩選出下載圖片失敗嘅行，然後將數據集保存成 CSV 文件。
 
-### 前置條件
+### 先決條件
 
-在運行此腳本之前，請確保已安裝以下庫：`Pandas`、`Datasets`、`requests`、`PIL` 和 `io`。此外，需將第 2 行的 `'Insert_Your_Dataset'` 替換為你在 Hugging Face 上的數據集名稱。
+喺執行呢個 script 前，請確保已安裝以下庫：`Pandas`、`Datasets`、`requests`、`PIL` 同 `io`。你仲需要喺第 2 行將 `'Insert_Your_Dataset'` 換成你喺 Hugging Face 嘅數據集名稱。
 
 所需庫：
 
@@ -29,11 +29,11 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### 功能
+### 功能說明
 
-此腳本執行以下步驟：
+呢個 script 會做以下步驟：
 
-1. 使用 `load_dataset()` function.
+1. 用 `load_dataset()` function.
 2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
 3. Creates directories to save the dataset and images.
 4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
@@ -42,33 +42,33 @@ from io import BytesIO
 
 ### Custom Function
 
-The `download_image()` 函數從 Hugging Face 下載數據集。`download_image()` 函數透過 Pillow 圖片庫 (PIL) 和 `io` 模塊，從 URL 下載圖片並保存到本地。如果圖片成功下載，返回 True，否則返回 False。如果請求失敗，該函數會拋出異常並提供錯誤信息。
+The `download_image()` 函數由 Hugging Face 下載數據集。`download_image()` 函數會從 URL 下載圖片並用 Pillow Image Library (PIL) 同 `io` 模組將圖片儲存到本地。如果圖片成功下載會回傳 True，失敗就回傳 False。當請求失敗時，函數會拋出帶有錯誤訊息嘅異常。
 
-### 如何運作
+### 運作原理
 
-`download_image` 函數有兩個參數：`image_url` 是要下載的圖片 URL，`save_path` 是下載後保存圖片的路徑。
+download_image 函數有兩個參數：image_url，代表要下載嘅圖片 URL；save_path，代表下載後圖片嘅儲存路徑。
 
-以下是該函數的運作方式：
+函數嘅運作方式如下：
 
-- 首先，使用 `requests.get` 方法向 `image_url` 發送 GET 請求以獲取圖片數據。
+首先用 requests.get 方法對 image_url 發出 GET 請求，從 URL 取得圖片數據。
 
-- 使用 `response.raise_for_status()` 檢查請求是否成功。如果狀態碼顯示錯誤（例如 404 - 未找到），則拋出異常。這確保只有在請求成功時才進行圖片下載。
+response.raise_for_status() 會檢查請求是否成功。如果狀態碼顯示有錯誤（例如 404 - 找唔到），就會拋出異常。咁樣確保只有請求成功先會繼續下載圖片。
 
-- 圖片數據接著通過 PIL 模塊的 `Image.open` 方法處理，該方法從數據中創建圖片對象。
+圖片數據會傳畀 PIL（Python Imaging Library）嘅 Image.open 方法，將數據轉成 Image 物件。
 
-- 使用 `image.save(save_path)` 將圖片保存到指定的路徑，路徑應包含所需的文件名和擴展名。
+image.save(save_path) 會將圖片儲存到指定嘅 save_path，路徑應該包括檔案名同副檔名。
 
-- 最後，該函數返回 True，表示圖片已成功下載並保存。如果過程中發生任何異常，則捕獲異常，打印失敗信息並返回 False。
+最後函數會回傳 True 表示圖片成功下載同儲存。如果過程中有任何異常，會捕捉異常，打印錯誤訊息提示失敗，並回傳 False。
 
-這個函數適合從 URL 下載圖片並保存到本地。它處理下載過程中的潛在錯誤，並提供是否成功下載的反饋。
+呢個函數方便用嚟從 URL 下載圖片並儲存本地，處理下載過程中可能出現嘅錯誤，並提供下載成功與否嘅反饋。
 
-值得注意的是，`requests` 庫用於發送 HTTP 請求，PIL 庫用於處理圖片，而 `BytesIO` 類則用於以字節流形式處理圖片數據。
+值得留意嘅係，requests 庫用嚟發 HTTP 請求，PIL 庫用嚟處理圖片，而 BytesIO 類用嚟將圖片數據當作位元組流處理。
 
-### 結論
+### 總結
 
-這個腳本提供了一種便捷的方法，透過下載所需圖片、過濾掉下載失敗的行，並將數據集保存為 CSV 文件，為機器學習準備數據集。
+呢個 script 提供咗一個方便嘅方法，幫助準備機器學習用嘅數據集，透過下載所需圖片、篩選下載失敗嘅行，最後將數據集保存成 CSV 文件。
 
-### 示例腳本
+### 範例 Script
 
 ```python
 import os
@@ -127,11 +127,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### 示例代碼下載 
-[生成新數據集腳本](../../../../code/04.Finetuning/generate_dataset.py)
+### 範例代碼下載  
+[Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### 示例數據集
-[使用 LORA 微調的示例數據集](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+### 範例數據集  
+[Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **免責聲明**：  
-此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要信息，建議尋求專業的人類翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解讀概不負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋盡力確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件嘅母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。因使用此翻譯而引致嘅任何誤解或誤釋，我哋概不負責。

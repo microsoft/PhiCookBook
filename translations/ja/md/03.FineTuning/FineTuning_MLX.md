@@ -1,25 +1,25 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "b1ec18a3db0bb90ba8483eceade60031",
-  "translation_date": "2025-04-04T13:25:32+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_MLX.md",
+  "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
+  "translation_date": "2025-05-08T05:14:35+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "ja"
 }
 -->
-# **Apple MLXフレームワークを使用したPhi-3の微調整**
+# **Apple MLXフレームワークを使ったPhi-3のファインチューニング**
 
-Apple MLXフレームワークのコマンドラインを使用して、Loraと組み合わせた微調整を完了することができます。（MLXフレームワークの操作について詳しく知りたい場合は、[Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)をお読みください）
+Apple MLXフレームワークのコマンドラインを通じて、Loraと組み合わせたファインチューニングを完了できます。（MLXフレームワークの操作について詳しく知りたい場合は、[Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)を参照してください）
 
 
 ## **1. データ準備**
 
-デフォルトでは、MLXフレームワークはtrain、test、evalのjsonl形式を要求し、Loraと組み合わせて微調整を実行します。
+デフォルトでは、MLXフレームワークはtrain、test、evalのjsonl形式を要求し、Loraと組み合わせてファインチューニング作業を完了します。
 
 
-### ***注:***
+### ***Note:***
 
-1. jsonlデータ形式：
+1. jsonlデータ形式 ：
 
 
 ```json
@@ -31,16 +31,16 @@ Apple MLXフレームワークのコマンドラインを使用して、Loraと�
 
 ```
 
-2. 例として[TruthfulQAのデータ](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)を使用していますが、データ量が比較的少ないため、微調整結果が必ずしも最適であるとは限りません。学習者は自身のシナリオに基づいてより良いデータを使用することをお勧めします。
+2. 例として[TruthfulQAのデータ](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)を使用していますが、データ量が比較的少ないため、ファインチューニング結果が必ずしも最良とは限りません。学習者は自身のシナリオに基づいてより良いデータを使うことをおすすめします。
 
-3. データ形式はPhi-3テンプレートと組み合わせています。
+3. データ形式はPhi-3テンプレートと組み合わせています
 
 この[リンク](../../../../code/04.Finetuning/mlx)からデータをダウンロードしてください。***data***フォルダ内のすべての.jsonlを含めてください。
 
 
-## **2. ターミナルで微調整を実行**
+## **2. ターミナルでのファインチューニング**
 
-ターミナルで以下のコマンドを実行してください。
+ターミナルで次のコマンドを実行してください
 
 
 ```bash
@@ -50,11 +50,11 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 ```
 
 
-## ***注:***
+## ***Note:***
 
-1. これはLoRA微調整であり、MLXフレームワークはQLoRAを公開していません。
+1. これはLoRAファインチューニングであり、MLXフレームワークはQLoRAを公開していません
 
-2. config.yamlを設定することで、以下のような引数を変更できます。
+2. config.yamlを設定して、一部の引数を変更できます。例えば
 
 
 ```yaml
@@ -125,7 +125,7 @@ lora_parameters:
 
 ```
 
-ターミナルで以下のコマンドを実行してください。
+ターミナルで次のコマンドを実行してください
 
 
 ```bash
@@ -135,9 +135,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. 微調整アダプターのテストを実行**
+## **3. ファインチューニングアダプターのテスト実行**
 
-ターミナルで微調整アダプターを実行できます。以下のようにしてください。
+ターミナルでファインチューニングアダプターを次のように実行できます
 
 
 ```bash
@@ -146,7 +146,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-その後、オリジナルモデルを実行して結果を比較します。
+元のモデルも実行して結果を比較してください
 
 
 ```bash
@@ -155,10 +155,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-微調整結果とオリジナルモデルの結果を比較してみてください。
+ファインチューニング後の結果と元のモデルの結果を比較してみましょう
 
 
-## **4. アダプターを統合して新しいモデルを生成**
+## **4. アダプターをマージして新しいモデルを生成**
+
 
 ```bash
 
@@ -166,10 +167,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
+## **5. ollamaを使った量子化ファインチューニングモデルの実行**
 
-## **5. ollamaを使用した量子化済み微調整モデルの実行**
-
-使用前に、llama.cpp環境を構成してください。
+使用前にllama.cpp環境を設定してください
 
 
 ```bash
@@ -184,13 +184,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***注:*** 
+***Note:*** 
 
-1. 現在、fp32、fp16、およびINT 8の量子化変換をサポートしています。
+1. 現在、fp32、fp16、INT8の量子化変換に対応しています
 
-2. 統合されたモデルにはtokenizer.modelが欠けています。以下からダウンロードしてください：https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. マージされたモデルにはtokenizer.modelが含まれていないため、https://huggingface.co/microsoft/Phi-3-mini-4k-instruct からダウンロードしてください
 
-[Ollma Model](https://ollama.com/)を設定してください。
+[Ollma Model](https://ollama.com/)を設定してください
 
 
 ```txt
@@ -200,7 +200,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-ターミナルで以下のコマンドを実行してください。
+ターミナルでコマンドを実行
 
 
 ```bash
@@ -211,7 +211,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-おめでとうございます！MLXフレームワークを使用した微調整を習得しました。
+おめでとうございます！MLXフレームワークでのファインチューニングをマスターしました
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確さが含まれる場合がありますのでご了承ください。原文の母国語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や解釈の誤りについて、当社は一切の責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の母国語版が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても責任を負いかねますのでご了承ください。

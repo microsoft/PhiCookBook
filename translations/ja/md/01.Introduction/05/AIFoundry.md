@@ -1,55 +1,59 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "5dfb4983a2e74e4b5e8317eb16fc2154",
-  "translation_date": "2025-04-04T12:18:29+00:00",
-  "source_file": "md\\01.Introduction\\05\\AIFoundry.md",
+  "original_hash": "7b4235159486df4000e16b7b46ddfec3",
+  "translation_date": "2025-05-08T06:04:55+00:00",
+  "source_file": "md/01.Introduction/05/AIFoundry.md",
   "language_code": "ja"
 }
 -->
-# **Azure AI Foundryを使用した評価**
+# **Azure AI Foundryを使った評価方法**
 
-![aistudo](../../../../../translated_images/AIFoundry.61da8c74bccc0241ce9a4cb53a170912245871de9235043afcb796ccbc076fdc.ja.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.ja.png)
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo)を使用して生成型AIアプリケーションを評価する方法について解説します。単一ターンや複数ターンの会話を評価する場合でも、Azure AI Foundryはモデルの性能と安全性を評価するためのツールを提供します。
+[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo)を使って生成AIアプリケーションを評価する方法です。シングルターンやマルチターンの会話評価に関わらず、Azure AI Foundryはモデルの性能や安全性を評価するためのツールを提供します。
 
-![aistudo](../../../../../translated_images/AIPortfolio.5aaa2b25e9157624a4542fe041d66a96a1c1ec6007e4e5aadd926c6ec8ce18b3.ja.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.ja.png)
 
-## Azure AI Foundryを使用した生成型AIアプリの評価方法
-詳細な手順については、[Azure AI Foundryのドキュメント](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)を参照してください。
+## Azure AI Foundryで生成AIアプリを評価する方法
+詳細な手順については[Azure AI Foundryのドキュメント](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)をご覧ください。
 
-以下は開始するためのステップです。
+以下は評価を始めるためのステップです：
 
-## Azure AI Foundryで生成型AIモデルを評価する
+## Azure AI Foundryで生成AIモデルを評価する
 
 **前提条件**
 
-- CSVまたはJSON形式のテストデータセット。
-- デプロイ済みの生成型AIモデル（Phi-3、GPT 3.5、GPT 4、Davinciモデルなど）。
-- 評価を実行するためのコンピュートインスタンスを備えたランタイム。
+- CSVまたはJSON形式のテストデータセット
+- 展開済みの生成AIモデル（Phi-3、GPT 3.5、GPT 4、Davinciモデルなど）
+- 評価を実行するためのコンピュートインスタンスを備えたランタイム
 
 ## 組み込み評価指標
 
-Azure AI Foundryでは、単一ターンの会話や複雑な複数ターンの会話を評価することができます。
-特定のデータに基づいてモデルを動作させるRetrieval Augmented Generation (RAG)シナリオでは、組み込み評価指標を使用して性能を評価することが可能です。
-また、一般的な単一ターンの質問応答シナリオ（非RAG）の評価も行えます。
+Azure AI Foundryはシングルターンだけでなく、複雑なマルチターン会話の評価も可能です。  
+特定のデータに基づくRetrieval Augmented Generation（RAG）シナリオでは、組み込みの評価指標を使ってパフォーマンスを測定できます。  
+また、一般的なシングルターンの質問応答シナリオ（非RAG）も評価できます。
 
 ## 評価実行の作成
 
-Azure AI FoundryのUIから、EvaluateページまたはPrompt Flowページに移動します。
-評価作成ウィザードに従って評価実行をセットアップします。評価に任意の名前を付けることも可能です。
-アプリケーションの目的に合ったシナリオを選択します。
+Azure AI FoundryのUIでEvaluateページまたはPrompt Flowページに移動します。  
+評価作成ウィザードに従って評価実行をセットアップします。評価に任意の名前を付けることが可能です。  
+アプリケーションの目的に合ったシナリオを選択します。  
 モデルの出力を評価するために、1つ以上の評価指標を選択します。
 
 ## カスタム評価フロー（任意）
 
-より柔軟性を持たせるために、カスタム評価フローを設定することができます。特定の要件に基づいて評価プロセスをカスタマイズしてください。
+より柔軟な評価を行いたい場合は、カスタム評価フローを作成できます。  
+特定の要件に合わせて評価プロセスをカスタマイズしてください。
 
 ## 結果の確認
 
-評価を実行した後、Azure AI Foundryで詳細な評価指標を記録し、確認し、分析することができます。アプリケーションの能力と限界についての洞察を得ることができます。
+評価を実行した後、Azure AI Foundryで詳細な評価指標をログ、表示、分析できます。  
+アプリケーションの能力や限界を理解するのに役立ちます。
 
-**注** Azure AI Foundryは現在パブリックプレビュー中です。そのため、実験や開発目的で使用してください。運用環境でのワークロードには他の選択肢を検討してください。公式の[AI Foundryドキュメント](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo)を参照し、詳細な手順を確認してください。
+**Note** Azure AI Foundryは現在パブリックプレビュー段階のため、実験や開発目的での利用を推奨します。  
+本番環境での利用には他の選択肢も検討してください。  
+詳細や手順については公式の[AI Foundryドキュメント](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo)を参照してください。
 
 **免責事項**:  
-この文書はAI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確さが含まれる場合がありますのでご注意ください。原文の母国語で書かれた文書が公式な情報源として考慮されるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や誤認について、当方は一切責任を負いません。
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。原文はその言語における正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

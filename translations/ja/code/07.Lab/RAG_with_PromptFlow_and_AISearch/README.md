@@ -1,39 +1,39 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "962051ba495487884232e77fda80027f",
-  "translation_date": "2025-04-04T11:36:05+00:00",
-  "source_file": "code\\07.Lab\\RAG_with_PromptFlow_and_AISearch\\README.md",
+  "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
+  "translation_date": "2025-05-08T06:42:07+00:00",
+  "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "ja"
 }
 -->
-## RAG with PromptFlowとAISearch
+## RAG with PromptFlow and AISearch
 
-この例では、Phi3をSLMとして活用し、AI SearchをvectorDBとして使用し、Prompt Flowをローコードオーケストレーターとして活用するRetrieval Augmented Generation (RAG)アプリケーションを実装します。
+この例では、Phi3をSLMとして、AI SearchをベクトルDBとして、Prompt Flowをローコードオーケストレーターとして活用したRetrieval Augmented Generation（RAG）アプリケーションを実装します。
 
-## 特徴
+## Features
 
-- Dockerを使用した簡単なデプロイ。
+- Dockerを使った簡単なデプロイ。
 - AIワークフローを処理するためのスケーラブルなアーキテクチャ。
-- Prompt Flowを使用したローコードアプローチ。
+- Prompt Flowを使ったローコードアプローチ。
 
-## 前提条件
+## Prerequisites
 
 始める前に、以下の要件を満たしていることを確認してください：
 
 - ローカルマシンにDockerがインストールされていること。
-- コンテナリソースを作成および管理する権限を持つAzureアカウント。
-- Azure AI StudioとAzure AI Searchインスタンス。
-- インデックスを作成するための埋め込みモデル（Azure OpenAI埋め込みまたはカタログのOSモデルのいずれか）。
+- コンテナリソースの作成と管理権限を持つAzureアカウント。
+- Azure AI StudioとAzure AI Searchのインスタンス。
+- インデックス作成用の埋め込みモデル（Azure OpenAIの埋め込みモデルまたはカタログのOSモデルのいずれか）。
 - ローカルマシンにPython 3.8以降がインストールされていること。
 - Azure Container Registry（または任意のレジストリ）。
 
-## インストール
+## Installation
 
-1. flow.yamlファイルを使用してAzure AI Studioプロジェクトに新しいフローを作成します。
-2. Azure AIモデルカタログからPhi3モデルをデプロイし、プロジェクトへの接続を作成します。 [Phi-3をモデルとしてデプロイする](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
-3. 任意のドキュメントを使用してAzure AI Searchでベクターインデックスを作成します。 [Azure AI Searchでベクターインデックスを作成する](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. マネージドエンドポイントにフローをデプロイし、prompt-flow-frontend.pyファイルで使用します。 [オンラインエンドポイントにフローをデプロイする](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+1. flow.yamlファイルを使って、Azure AI Studioプロジェクトに新しいフローを作成します。
+2. Azure AIモデルカタログからPhi3モデルをデプロイし、プロジェクトとの接続を作成します。[Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
+3. 任意のドキュメントを使ってAzure AI Search上にベクトルインデックスを作成します。[Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
+4. マネージドエンドポイントにフローをデプロイし、prompt-flow-frontend.pyファイルで使用します。[Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
 5. リポジトリをクローンします：
 
     ```sh
@@ -58,21 +58,21 @@ CO_OP_TRANSLATOR_METADATA:
     docker push yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-## 使用方法
+## Usage
 
-1. Dockerコンテナを実行します：
+1. Dockerコンテナを起動します：
 
     ```sh
     docker run -p 8501:8501 yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-2. ブラウザで`http://localhost:8501`にアクセスしてアプリケーションを開きます。
+2. ブラウザで`http://localhost:8501`にアクセスしてアプリケーションを利用します。
 
-## 問い合わせ
+## Contact
 
 Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148/)
 
 全文記事: [RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で作成された文書が正式な情報源として考慮されるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の利用により生じる誤解や誤認について、当社は一切の責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を期しておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。原文の言語でのオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

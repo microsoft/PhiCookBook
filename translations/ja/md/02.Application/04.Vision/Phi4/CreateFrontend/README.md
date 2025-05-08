@@ -1,19 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "550f504a78659133aa4c5757a6d875ce",
-  "translation_date": "2025-04-04T13:03:15+00:00",
-  "source_file": "md\\02.Application\\04.Vision\\Phi4\\CreateFrontend\\README.md",
+  "original_hash": "83b94a515637dffaea3bae99278561a6",
+  "translation_date": "2025-05-08T05:25:47+00:00",
+  "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "ja"
 }
 -->
-## **Phi-4-multimodalを使って画像を読み取りコードを生成する**
+## **Phi-4-multimodalを使って画像を読み込みコードを生成する**
 
-Phi-4-multimodalは強力な画像読み取り機能を備えています。以下の機能をPythonで実装してみましょう。画像はChatGPTのページです。
+Phi-4-multimodalは強力な画像読み取り機能を持っています。Pythonを使って以下の機能を実装してみましょう。画像はChatGPTのページです。
 
-![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.ja.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.ja.png)
 
 ### **サンプルコード**
+
+
 
 ```python
 
@@ -65,5 +67,5 @@ print(response)
 
 ```
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご承知おきください。元の言語で記載された原文が権威ある情報源と見なされるべきです。重要な情報については、専門の人間による翻訳をお勧めします。本翻訳の使用に起因する誤解や解釈の誤りについて、当社は一切の責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性を期していますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご承知ください。原文の言語によるオリジナル文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や解釈の相違についても、当方は責任を負いかねます。

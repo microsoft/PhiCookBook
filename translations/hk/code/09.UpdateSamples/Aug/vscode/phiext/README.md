@@ -1,83 +1,83 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c7e4439ea50fbf9e2197329bb254686b",
-  "translation_date": "2025-04-04T17:25:45+00:00",
-  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\README.md",
+  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
+  "translation_date": "2025-05-08T06:46:28+00:00",
+  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "hk"
 }
 -->
-# phiext 使用說明
+# phiext README
 
-呢份係你嘅 "phiext" 擴展嘅使用說明。寫咗簡單描述之後，我哋建議加入以下幾個部分。
+呢份係你嘅擴充功能 "phiext" 嘅 README。寫完簡短介紹後，我哋建議加入以下章節。
 
-## 功能介紹
+## 功能
 
-描述你擴展嘅具體功能，可以包括擴展點用時嘅截圖。圖片路徑係相對於呢份 README 文件嘅。
+描述你擴充功能嘅具體功能，包括擴充功能運作時嘅截圖。圖片路徑係相對於呢份 README 文件。
 
-例如，如果你嘅擴展項目工作區下面有一個圖片子文件夾：
+例如，如果你嘅擴充功能專案工作區有個 images 子資料夾：
 
-\!\[功能 X\]\(images/feature-x.png\)
+\!\[feature X\]\(images/feature-x.png\)
 
-> 提示：好多受歡迎嘅擴展都會用動畫。呢個係展示你擴展嘅好方法！我哋建議用簡短、集中而且容易跟嘅動畫。
+> Tip: 好多受歡迎嘅擴充功能會用動畫。呢個係展示你擴充功能嘅好方法！我哋建議用簡短、集中、易明嘅動畫。
 
 ## 需求
 
-如果你擴展有任何需求或者依賴，請加入一個部分描述佢哋同埋點樣安裝同配置。
+如果有任何需求或者依賴，請新增一節講解佢哋同埋點安裝同設定。
 
-## 擴展設置
+## 擴充功能設定
 
-如果你嘅擴展通過 `contributes.configuration` 擴展點加入咗任何 VS Code 設置，請喺呢度提及。
+如果你嘅擴充功能透過 `contributes.configuration` 擴充點新增咗任何 VS Code 設定，請包括喺度。
 
 例如：
 
-呢個擴展提供以下設置：
+呢個擴充功能提供以下設定：
 
-* `myExtension.enable`: 啟用/停用呢個擴展。
-* `myExtension.thing`: 設置為 `blah` 去執行某個功能。
+* `myExtension.enable`：啟用／停用呢個擴充功能。
+* `myExtension.thing`：設定為 `blah` 去做某啲嘢。
 
 ## 已知問題
 
-列出已知問題可以幫助減少用戶重複提交相同嘅問題。
+指出已知問題可以幫助減少用戶重複開啟同一個問題。
 
-## 發佈記錄
+## 版本更新記錄
 
-當你更新擴展時，用戶會好欣賞有發佈記錄。
+用戶會欣賞你更新擴充功能時嘅版本說明。
 
 ### 1.0.0
 
-初始發佈...
+初次發佈...
 
 ### 1.0.1
 
-修正問題 #。
+修正咗問題 #。
 
 ### 1.1.0
 
-新增功能 X、Y 同 Z。
+新增咗功能 X、Y 同 Z。
 
 ---
 
-## 遵循擴展指引
+## 遵循擴充功能指引
 
-確保你已經閱讀咗擴展指引，並且遵循咗創建擴展嘅最佳實踐。
+確保你已經睇過擴充功能指引，並跟從最佳實踐去建立你嘅擴充功能。
 
-* [擴展指引](https://code.visualstudio.com/api/references/extension-guidelines)
+* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
 ## 使用 Markdown
 
-你可以用 Visual Studio Code 編寫呢份 README。以下係啲有用嘅編輯器快捷鍵：
+你可以用 Visual Studio Code 編寫你嘅 README。呢度有啲實用嘅編輯器快捷鍵：
 
-* 分割編輯器（macOS 上用 `Cmd+\`，Windows 同 Linux 上用 `Ctrl+\`）。
-* 切換預覽（macOS 上用 `Shift+Cmd+V`，Windows 同 Linux 上用 `Shift+Ctrl+V`）。
+* 分割編輯器（macOS 用 `Cmd+\`，Windows 同 Linux 用 `Ctrl+\`）。
+* 切換預覽（macOS 用 `Shift+Cmd+V`，Windows 同 Linux 用 `Shift+Ctrl+V`）。
 * 按 `Ctrl+Space`（Windows、Linux、macOS）睇 Markdown 片段列表。
 
 ## 更多資訊
 
-* [Visual Studio Code 嘅 Markdown 支援](http://code.visualstudio.com/docs/languages/markdown)
+* [Visual Studio Code 的 Markdown 支援](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown 語法參考](https://help.github.com/articles/markdown-basics/)
 
-**祝你使用愉快！**
+**祝你玩得開心！**
 
 **免責聲明**：  
-此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始語言的文件應被視為權威來源。對於關鍵信息，建議尋求專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋不承擔責任。
+本文件乃使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們致力於準確性，但請注意自動翻譯可能存在錯誤或不準確之處。原始文件之母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引致之任何誤解或誤釋承擔責任。

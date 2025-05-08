@@ -1,34 +1,34 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "aed7639909ebbd1960507880cff2ae4c",
-  "translation_date": "2025-04-04T17:12:56+00:00",
-  "source_file": "code\\03.Finetuning\\olive-ort-example\\README.md",
+  "original_hash": "4164123a700fecd535d850f09506d72a",
+  "translation_date": "2025-05-08T06:41:23+00:00",
+  "source_file": "code/03.Finetuning/olive-ort-example/README.md",
   "language_code": "hk"
 }
 -->
 # 用 Olive 微調 Phi3
 
-喺呢個例子入面，你會用 Olive 嚟：
+喺呢個例子入面，你會用 Olive 去：
 
-1. 微調 LoRA adapter，將短句分類為 Sad（傷心）、Joy（開心）、Fear（驚慌）、Surprise（驚訝）。
-1. 將 adapter 權重合併到基礎模型入面。
-1. 優化同量化模型到 `int4`。
+1. 微調 LoRA adapter，將短語分類為 Sad、Joy、Fear、Surprise。
+1. 將 adapter 權重合併入基礎模型。
+1. 將模型優化同量化成 `int4`。
 
-我哋仲會教你點樣用 ONNX Runtime (ORT) Generate API 去推理經微調嘅模型。
+我哋亦會示範點用 ONNX Runtime (ORT) Generate API 去推理微調後嘅模型。
 
-> **⚠️ 微調需要一個合適嘅 GPU，例如 A10、V100、A100。**
+> **⚠️ 微調嘅時候，你需要有合適嘅 GPU，例如 A10、V100、A100。**
 
 ## 💾 安裝
 
-創建一個新嘅 Python 虛擬環境（例如用 `conda`）：
+建立一個新的 Python 虛擬環境（例如用 `conda`）：
 
 ```bash
 conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-之後，安裝 Olive 同埋微調工作流程所需嘅依賴：
+之後，安裝 Olive 同微調工作流程所需嘅依賴：
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -37,25 +37,25 @@ pip install -r requirements.txt
 ```
 
 ## 🧪 用 Olive 微調 Phi3
-[Olive 配置文件](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) 包含咗一個 *工作流程*，當中有以下 *步驟*：
+[Olive 配置文件](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) 包含一個 *workflow*，入面有以下嘅 *passes*：
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-從高層次睇，呢個工作流程會：
+大致上，呢個工作流程會：
 
-1. 用 [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json) 嘅數據微調 Phi3（150 步，你可以修改呢個數字）。
-1. 將 LoRA adapter 權重合併到基礎模型，生成一個 ONNX 格式嘅單一模型工件。
-1. 用 Model Builder 優化模型以適配 ONNX runtime，並將模型量化到 `int4`。
+1. 用 [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json) 嘅數據，微調 Phi3（150 步，你可以修改）。
+1. 將 LoRA adapter 權重合併入基礎模型，生成一個 ONNX 格式嘅模型檔案。
+1. Model Builder 會優化模型用於 ONNX runtime，仲會將模型量化成 `int4`。
 
-執行呢個工作流程：
+執行工作流程，運行：
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-當 Olive 完成之後，你經優化嘅 `int4` 微調 Phi3 模型會喺呢度：`code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`。
+當 Olive 完成後，你優化同微調嘅 `int4` Phi3 模型會喺呢度搵到：`code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`。
 
-## 🧑‍💻 將微調後嘅 Phi3 整合到你嘅應用程式 
+## 🧑‍💻 將微調後嘅 Phi3 整合入你嘅應用程式
 
 運行應用程式：
 
@@ -63,7 +63,7 @@ olive run --config phrase-classification.json
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-呢個回應應該係短句嘅單字分類（Sad/ Joy/ Fear/ Surprise）。
+呢個回應應該係對短語嘅單字分類（Sad/Joy/Fear/Surprise）。
 
 **免責聲明**：  
-此文件已使用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們努力確保翻譯準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原文檔的母語版本應被視為具權威性的來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。
+本文件係使用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。雖然我哋盡力確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原文文件嘅母語版本應被視為權威來源。對於重要資料，建議使用專業人工翻譯。因使用本翻譯而引起嘅任何誤解或誤釋，本公司概不負責。

@@ -1,45 +1,46 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2a7aaeb42235207ba74581473b305581",
-  "translation_date": "2025-04-04T06:08:06+00:00",
-  "source_file": "md\\01.Introduction\\04\\UsingLlamacppQuantifyingPhi.md",
+  "original_hash": "462bddc47427d8785f3c9fd817b346fe",
+  "translation_date": "2025-05-08T06:11:16+00:00",
+  "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "tw"
 }
 -->
-# **使用 llama.cpp 量化 Phi 系列模型**
+# **使用 llama.cpp 量化 Phi 系列**
 
 ## **什麼是 llama.cpp**
 
-llama.cpp 是一個主要使用 C++ 編寫的開源軟體庫，用於對多種大型語言模型 (LLMs) 進行推論，例如 Llama。它的主要目標是提供在各種硬體上進行 LLM 推論的最先進效能，且僅需最少的設定。此外，該庫還提供 Python 綁定，提供高階 API 用於文本生成以及一個兼容 OpenAI 的網頁伺服器。
+llama.cpp 是一個主要用 C++ 撰寫的開源軟體庫，可以對各種大型語言模型（LLM），例如 Llama，進行推論。它的主要目標是在各種硬體上以最少設定提供最先進的 LLM 推論效能。此外，這個庫也有 Python 綁定，提供高階的文字補全 API 和相容 OpenAI 的網頁伺服器。
 
-llama.cpp 的主要目標是以最少的設定和最先進的效能，實現本地和雲端上的多種硬體 LLM 推論。
+llama.cpp 的主要目標是讓 LLM 推論能夠以最少設定，並在多種硬體上（本地端和雲端）達到頂尖效能。
 
-- 純 C/C++ 實現，無需依賴其他庫
-- 對 Apple Silicon 提供一流支持 - 通過 ARM NEON、Accelerate 和 Metal 框架進行優化
-- 支持 x86 架構的 AVX、AVX2 和 AVX512
-- 支持 1.5-bit、2-bit、3-bit、4-bit、5-bit、6-bit 和 8-bit 整數量化，以加速推論並減少記憶體使用
-- 自訂 CUDA 核心，用於在 NVIDIA GPU 上運行 LLM（支持 AMD GPU 通過 HIP）
-- 支持 Vulkan 和 SYCL 後端
-- CPU+GPU 混合推論，可加速超過 VRAM 容量的大型模型
+- 純 C/C++ 實作，無任何依賴
+- Apple silicon 支援完善，透過 ARM NEON、Accelerate 和 Metal 框架優化
+- 支援 x86 架構的 AVX、AVX2 和 AVX512
+- 支援 1.5-bit、2-bit、3-bit、4-bit、5-bit、6-bit 和 8-bit 整數量化，加速推論並減少記憶體使用
+- NVIDIA GPU 的自訂 CUDA 核心（透過 HIP 支援 AMD GPU）
+- 支援 Vulkan 和 SYCL 後端
+- CPU+GPU 混合推論，可部分加速超出 VRAM 容量的模型
 
 ## **使用 llama.cpp 量化 Phi-3.5**
 
-Phi-3.5-Instruct 模型可以使用 llama.cpp 進行量化，但目前不支持 Phi-3.5-Vision 和 Phi-3.5-MoE。llama.cpp 轉換的格式是 gguf，這也是目前最廣泛使用的量化格式。
+Phi-3.5-Instruct 模型可以用 llama.cpp 量化，但 Phi-3.5-Vision 和 Phi-3.5-MoE 尚未支援。llama.cpp 轉換的格式是 gguf，這也是目前最廣泛使用的量化格式。
 
-在 Hugging Face 上有大量使用 GGUF 格式量化的模型。AI Foundry、Ollama 和 LlamaEdge 都依賴於 llama.cpp，因此 GGUF 模型也經常被使用。
+Hugging Face 上有大量量化的 GGUF 格式模型。AI Foundry、Ollama 和 LlamaEdge 都依賴 llama.cpp，因此 GGUF 模型也經常被使用。
 
 ### **什麼是 GGUF**
 
-GGUF 是一種二進制格式，經過優化以快速載入和保存模型，非常適合推論用途。GGUF 專為 GGML 和其他執行器設計。GGUF 是由 @ggerganov 開發的，他也是流行的 C/C++ LLM 推論框架 llama.cpp 的開發者。最初在 PyTorch 等框架中開發的模型可以轉換為 GGUF 格式，以便與這些引擎一起使用。
+GGUF 是一種二進位格式，優化了模型的快速載入與儲存，非常適合推論使用。GGUF 是為 GGML 和其他執行器設計。GGUF 由 @ggerganov 開發，他同時也是 llama.cpp 的開發者，llama.cpp 是一個流行的 C/C++ LLM 推論框架。最初在 PyTorch 等框架開發的模型，可以轉換成 GGUF 格式以供這些引擎使用。
 
-### **ONNX vs GGUF**
+### **ONNX 與 GGUF 比較**
 
-ONNX 是一種傳統的機器學習/深度學習格式，在不同的 AI 框架中具有良好的支持，並且在邊緣設備中有良好的使用場景。至於 GGUF，它基於 llama.cpp，可以說是在生成式 AI 時代誕生的。兩者的用途相似。如果您希望在嵌入式硬體和應用層中獲得更好的效能，ONNX 可能是您的選擇。如果您使用 llama.cpp 的衍生框架和技術，那麼 GGUF 可能更適合。
+ONNX 是一種傳統的機器學習/深度學習格式，廣泛支援於各種 AI 框架，且在邊緣裝置有良好應用場景。GGUF 則是基於 llama.cpp，算是在生成式 AI 時代產生的格式。兩者用途相似。如果你想在嵌入式硬體和應用層獲得更好效能，ONNX 可能是你的選擇；如果你使用 llama.cpp 衍生的框架和技術，GGUF 會更合適。
 
 ### **使用 llama.cpp 量化 Phi-3.5-Instruct**
 
-**1. 環境配置**
+**1. 環境設定**
+
 
 ```bash
 
@@ -51,9 +52,11 @@ make -j8
 
 ```
 
+
 **2. 量化**
 
-使用 llama.cpp 將 Phi-3.5-Instruct 轉換為 FP16 GGUF
+用 llama.cpp 將 Phi-3.5-Instruct 轉成 FP16 GGUF
+
 
 ```bash
 
@@ -61,7 +64,8 @@ make -j8
 
 ```
 
-量化 Phi-3.5 為 INT4
+將 Phi-3.5 量化成 INT4
+
 
 ```bash
 
@@ -69,9 +73,11 @@ make -j8
 
 ```
 
+
 **3. 測試**
 
 安裝 llama-cpp-python
+
 
 ```bash
 
@@ -79,9 +85,10 @@ pip install llama-cpp-python -U
 
 ```
 
-***注意***  
+***Note*** 
 
-如果您使用 Apple Silicon，請按照以下方式安裝 llama-cpp-python
+如果你使用 Apple Silicon，請這樣安裝 llama-cpp-python
+
 
 ```bash
 
@@ -91,17 +98,20 @@ CMAKE_ARGS="-DLLAMA_METAL=on" pip install llama-cpp-python -U
 
 測試
 
+
 ```bash
 
 llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prompt "<|user|>\nCan you introduce .NET<|end|>\n<|assistant|>\n"  --gpu-layers 10
 
 ```
 
+
+
 ## **資源**
 
-1. 了解更多有關 llama.cpp 的資訊 [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
-
-2. 了解更多有關 GGUF 的資訊 [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
+1. 進一步了解 llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+2. 進一步了解 onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+3. 進一步了解 GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
 **免責聲明**：  
-本文檔使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，機器翻譯可能會包含錯誤或不精確之處。原始語言的文件應被視為具有權威性的來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤讀不承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

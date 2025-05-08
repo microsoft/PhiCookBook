@@ -1,97 +1,97 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f737bf207e1691cdc654535c48dd2df4",
-  "translation_date": "2025-04-04T12:41:15+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-mini_with_whisper.md",
+  "original_hash": "006e8cf75211d3297f24e1b22e38955f",
+  "translation_date": "2025-05-08T05:44:01+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
   "language_code": "ja"
 }
 -->
-# インタラクティブ Phi 3 Mini 4K Instruct Chatbot with Whisper
+# Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper
 
 ## 概要
 
-インタラクティブ Phi 3 Mini 4K Instruct Chatbotは、Microsoft Phi 3 Mini 4K instructデモとテキストまたは音声入力でやり取りできるツールです。このチャットボットは、翻訳、天気情報の更新、一般的な情報収集など、さまざまなタスクに使用できます。
+Interactive Phi 3 Mini 4K Instruct Chatbot は、Microsoft Phi 3 Mini 4K instruct デモとテキストまたは音声入力で対話できるツールです。このチャットボットは、翻訳、天気情報、一般的な情報収集など、さまざまなタスクに利用できます。
 
 ### はじめに
 
-このチャットボットを使用するには、以下の手順に従ってください：
+このチャットボットを使うには、以下の手順に従ってください：
 
-1. [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) を開きます。
-2. ノートブックのメインウィンドウには、テキスト入力ボックスと「送信」ボタンを備えたチャットボックスインターフェースが表示されます。
-3. テキストベースのチャットボットを使用するには、テキスト入力ボックスにメッセージを入力し、「送信」ボタンをクリックします。チャットボットは、ノートブック内で直接再生可能な音声ファイルで応答します。
+1. 新しい [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) を開きます。
+2. ノートブックのメインウィンドウに、テキスト入力ボックスと「Send」ボタンがあるチャットボックスインターフェースが表示されます。
+3. テキストベースのチャットボットを使う場合は、テキスト入力ボックスにメッセージを入力し、「Send」ボタンをクリックしてください。チャットボットはノートブック内で直接再生可能な音声ファイルで応答します。
 
-**注**: このツールを使用するには、GPUとMicrosoft Phi-3およびOpenAI Whisperモデルへのアクセスが必要です。これらは音声認識と翻訳に使用されます。
+**Note**: このツールはGPUと、音声認識および翻訳に使用される Microsoft Phi-3 と OpenAI Whisper モデルへのアクセスが必要です。
 
-### GPU要件
+### GPU 要件
 
-このデモを実行するには、12GBのGPUメモリが必要です。
+このデモを実行するには12GBのGPUメモリが必要です。
 
-**Microsoft-Phi-3-Mini-4K instruct**デモをGPU上で実行する際のメモリ要件は、入力データのサイズ（音声またはテキスト）、使用言語、モデルの速度、およびGPUの利用可能なメモリなど、いくつかの要因に依存します。
+**Microsoft-Phi-3-Mini-4K instruct** デモのGPUでのメモリ要件は、入力データ（音声またはテキスト）のサイズ、翻訳に使用する言語、モデルの速度、GPUの利用可能メモリなど複数の要因によって変わります。
 
-一般に、WhisperモデルはGPU上での実行を前提に設計されています。このモデルを実行するための推奨最小GPUメモリは8GBですが、必要に応じてより大容量のメモリにも対応できます。
+一般的に、WhisperモデルはGPU上での実行を想定しています。Whisperモデルを動かすための推奨最低GPUメモリは8GBですが、必要に応じてより多くのメモリも扱えます。
 
-大量のデータや高いリクエスト量でモデルを実行すると、より多くのGPUメモリが必要になったり、パフォーマンスに影響を与える可能性があります。さまざまな構成でユースケースをテストし、メモリ使用量を監視して、特定のニーズに最適な設定を決定することをお勧めします。
+大量のデータや高頻度のリクエストを処理すると、より多くのGPUメモリが必要になったり、パフォーマンスに影響が出る場合があります。使用ケースに応じて異なる設定でテストし、メモリ使用状況を監視して最適な設定を見つけることをお勧めします。
 
-## Whisperを使用したインタラクティブ Phi 3 Mini 4K Instruct ChatbotのE2Eサンプル
+## Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper の E2E サンプル
 
-[Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)というタイトルのJupyterノートブックでは、Microsoft Phi 3 Mini 4K instructデモを使用して、音声またはテキスト入力からテキストを生成する方法を示しています。このノートブックでは、以下のいくつかの関数が定義されています：
+[Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) というタイトルのJupyterノートブックは、Microsoft Phi 3 Mini 4K instruct デモを使って音声またはテキスト入力からテキストを生成する方法を示しています。ノートブックにはいくつかの関数が定義されています：
 
-1. `tts_file_name(text)`: 入力テキストに基づいて生成された音声ファイルを保存するためのファイル名を生成します。
-1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Edge TTS APIを使用して、入力テキストのチャンクリストから音声ファイルを生成します。入力パラメータには、チャンクリスト、話速、音声名、および生成された音声ファイルを保存する出力パスが含まれます。
-1. `talk(input_text)`: Edge TTS APIを使用して音声ファイルを生成し、/content/audioディレクトリ内のランダムなファイル名に保存します。入力パラメータは、音声に変換する入力テキストです。
-1. `run_text_prompt(message, chat_history)`: Microsoft Phi 3 Mini 4K instructデモを使用してメッセージ入力から音声ファイルを生成し、それをチャット履歴に追加します。
-1. `run_audio_prompt(audio, chat_history)`: WhisperモデルAPIを使用して音声ファイルをテキストに変換し、それを`run_text_prompt()`関数に渡します。
-1. コードはGradioアプリを起動し、ユーザーがPhi 3 Mini 4K instructデモとメッセージを入力するか音声ファイルをアップロードすることでやり取りできるようにします。出力はアプリ内にテキストメッセージとして表示されます。
+1. `tts_file_name(text)`: 入力テキストに基づいて生成された音声ファイルの保存用ファイル名を生成する関数。
+1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Edge TTS API を使って、入力テキストのチャンクリストから音声ファイルを生成する関数。入力パラメータはチャンクリスト、話速、音声名、生成音声ファイルの保存先パスです。
+1. `talk(input_text)`: Edge TTS API を使い、/content/audio ディレクトリのランダムなファイル名で音声ファイルを生成・保存する関数。入力パラメータは音声変換するテキストです。
+1. `run_text_prompt(message, chat_history)`: Microsoft Phi 3 Mini 4K instruct デモを使い、メッセージ入力から音声ファイルを生成し、チャット履歴に追加する関数。
+1. `run_audio_prompt(audio, chat_history)`: WhisperモデルAPIを使って音声ファイルをテキストに変換し、その結果を `run_text_prompt()` 関数に渡す関数。
+1. このコードはGradioアプリを起動し、ユーザーがメッセージを入力するか音声ファイルをアップロードしてPhi 3 Mini 4K instruct デモと対話できるようにします。出力はアプリ内でテキストメッセージとして表示されます。
 
 ## トラブルシューティング
 
-Cuda GPUドライバーのインストール
+Cuda GPU ドライバーのインストール
 
-1. Linuxアプリケーションが最新であることを確認します。
+1. Linuxアプリケーションが最新であることを確認してください
 
     ```bash
     sudo apt update
     ```
 
-1. Cudaドライバーをインストールします。
+1. Cudaドライバーをインストールする
 
     ```bash
     sudo apt install nvidia-cuda-toolkit
     ```
 
-1. Cudaドライバーの場所を登録します。
+1. cudaドライバーの場所を登録する
 
     ```bash
     echo /usr/lib64-nvidia/ >/etc/ld.so.conf.d/libcuda.conf; ldconfig
     ```
 
-1. Nvidia GPUメモリサイズを確認します（12GBのGPUメモリが必要）。
+1. Nvidia GPUのメモリサイズを確認する（12GBのGPUメモリが必要）
 
     ```bash
     nvidia-smi
     ```
 
-1. キャッシュのクリア: PyTorchを使用している場合、torch.cuda.empty_cache()を呼び出して、未使用のキャッシュメモリを解放し、他のGPUアプリケーションで使用できるようにします。
+1. キャッシュを空にする: PyTorchを使用している場合は、torch.cuda.empty_cache() を呼び出して未使用のキャッシュメモリを解放し、他のGPUアプリケーションで使用できるようにします。
 
     ```python
     torch.cuda.empty_cache() 
     ```
 
-1. Nvidia Cudaを確認します。
+1. Nvidia Cudaを確認する
 
     ```bash
     nvcc --version
     ```
 
-1. 以下の手順でHugging Faceトークンを作成します。
+1. Hugging Faceトークンを作成するために以下の手順を実行してください。
 
-    - [Hugging Face Token Settingsページ](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo) に移動します。
-    - **New token**を選択します。
-    - 使用したいプロジェクトの**名前**を入力します。
-    - **タイプ**を**Write**に設定します。
+    - [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo) にアクセスします。
+    - **New token** を選択します。
+    - 使用したいプロジェクトの **Name** を入力します。
+    - **Type** を **Write** に設定します。
 
-> **注**
+> **Note**
 >
 > 以下のエラーが発生した場合：
 >
@@ -99,11 +99,11 @@ Cuda GPUドライバーのインストール
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> 解決するには、ターミナル内で以下のコマンドを入力してください：
+> 解決するには、ターミナル内で次のコマンドを入力してください。
 >
 > ```bash
 > sudo ldconfig
 > ```
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご理解ください。原文（元の言語の文書）が公式な情報源として考慮されるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用により生じた誤解や誤解釈について、当社は責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文の母国語版が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤訳について、一切の責任を負いかねます。

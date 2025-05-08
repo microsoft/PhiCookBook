@@ -1,53 +1,53 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "ef071f0e903a1a38f8a5f8cbb253a9ca",
-  "translation_date": "2025-04-04T18:56:08+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_MLSDK.md",
+  "original_hash": "944949f040e61b2ea25b3460f7394fd4",
+  "translation_date": "2025-05-08T05:06:34+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "hk"
 }
 -->
-## 如何使用 Azure ML 系統註冊表中的聊天完成元件微調模型
+## 點樣用 Azure ML system registry 嘅 chat-completion component 去微調模型
 
-在這個例子中，我們將使用 ultrachat_200k 數據集對 Phi-3-mini-4k-instruct 模型進行微調，以完成兩個人之間的對話。
+呢個例子會示範點樣用 ultrachat_200k dataset 去微調 Phi-3-mini-4k-instruct 模型，完成兩個人之間嘅對話。
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.hk.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.hk.png)
 
-該例子將展示如何使用 Azure ML SDK 和 Python 進行微調，然後將微調後的模型部署到線上端點以進行實時推斷。
+呢個例子會教你點用 Azure ML SDK 同 Python 去做微調，然後將微調後嘅模型部署到線上端點，實時推理。
 
 ### 訓練數據
 
-我們將使用 ultrachat_200k 數據集。這是一個經過大量篩選的 UltraChat 數據集版本，曾用於訓練 Zephyr-7B-β，一個最先進的 7B 聊天模型。
+我哋會用 ultrachat_200k dataset。呢個係 UltraChat dataset 嘅深度過濾版本，用嚟訓練 Zephyr-7B-β，一個頂尖嘅 7b 聊天模型。
 
 ### 模型
 
-我們將使用 Phi-3-mini-4k-instruct 模型來展示用戶如何為聊天完成任務微調模型。如果您是從特定的模型卡打開此筆記本，請記得替換為具體的模型名稱。
+我哋會用 Phi-3-mini-4k-instruct 模型，示範用戶點樣微調模型做 chat-completion 嘅任務。如果你係由特定模型卡開呢個 notebook，記得換返你嘅模型名。
 
 ### 任務
 
-- 選擇要微調的模型。
-- 選擇並探索訓練數據。
-- 配置微調任務。
-- 運行微調任務。
-- 查看訓練和評估指標。
-- 註冊微調後的模型。
-- 部署微調後的模型進行實時推斷。
+- 揀一個模型去微調。
+- 揀同探索訓練數據。
+- 配置微調工作。
+- 執行微調工作。
+- 檢視訓練同評估指標。
+- 註冊微調後嘅模型。
+- 部署微調後嘅模型做實時推理。
 - 清理資源。
 
-## 1. 設置前置條件
+## 1. 設定先決條件
 
-- 安裝依賴項
-- 連接到 AzureML 工作區。了解更多關於 SDK 身份驗證設置的信息。替換 <WORKSPACE_NAME>, <RESOURCE_GROUP> 和 <SUBSCRIPTION_ID>。
-- 連接到 AzureML 系統註冊表
-- 設置可選的實驗名稱
-- 檢查或創建計算資源。
+- 安裝依賴套件
+- 連接 AzureML Workspace。詳情請參考 set up SDK authentication。下面要替換 <WORKSPACE_NAME>、<RESOURCE_GROUP> 同 <SUBSCRIPTION_ID>。
+- 連接 azureml system registry
+- 設定一個可選嘅實驗名稱
+- 檢查或建立計算資源。
 
 > [!NOTE]
-> 要求單個 GPU 節點可以有多個 GPU 卡。例如，在 Standard_NC24rs_v3 的一個節點中有 4 個 NVIDIA V100 GPU，而在 Standard_NC12s_v3 中有 2 個 NVIDIA V100 GPU。請參考文檔獲取此信息。每個節點的 GPU 卡數量在下面的 gpus_per_node 參數中設置。正確設置此值將確保充分利用節點中的所有 GPU。推薦的 GPU 計算 SKU 可以在此處和此處找到。
+> 要求係一個 GPU 節點可以有多張 GPU 卡。例如 Standard_NC24rs_v3 節點有 4 張 NVIDIA V100 GPU，而 Standard_NC12s_v3 有 2 張 NVIDIA V100 GPU。相關資料請參考文件。每個節點嘅 GPU 卡數量係由下面嘅參數 gpus_per_node 設定。正確設定呢個數值可以確保用晒節點所有 GPU。建議嘅 GPU 計算 SKU 可以喺呢度同呢度搵到。
 
-### Python 庫
+### Python 函式庫
 
-運行下面的單元格以安裝依賴項。如果是在新環境中運行，這步驟不可省略。
+執行下面嘅 cell 安裝依賴。呢個步驟喺新環境入面唔係可選。
 
 ```bash
 pip install azure-ai-ml
@@ -57,21 +57,21 @@ pip install mlflow
 pip install azureml-mlflow
 ```
 
-### 與 Azure ML 交互
+### 同 Azure ML 互動
 
-1. 此 Python 腳本用於與 Azure 機器學習 (Azure ML) 服務交互。以下是其作用的概述：
+1. 呢個 Python 腳本用嚟同 Azure Machine Learning (Azure ML) 服務互動。以下係佢嘅功能概述：
 
-    - 它從 azure.ai.ml、azure.identity 和 azure.ai.ml.entities 包中導入必要的模塊。還導入了 time 模塊。
+    - 從 azure.ai.ml、azure.identity 同 azure.ai.ml.entities 套件引入所需模組，亦引入 time 模組。
 
-    - 它嘗試使用 DefaultAzureCredential() 進行身份驗證，該方法提供了一種簡化的身份驗證方式以快速開始開發在 Azure 雲中運行的應用程序。如果失敗，則回退到 InteractiveBrowserCredential()，這會提供交互式登錄提示。
+    - 嘗試用 DefaultAzureCredential() 進行認證，呢個方法簡化認證流程，方便喺 Azure 雲端快速開發應用。如果失敗，會退回用 InteractiveBrowserCredential()，提供互動式登入提示。
 
-    - 它嘗試使用 from_config 方法創建 MLClient 實例，該方法從默認配置文件（config.json）中讀取配置。如果失敗，則通過手動提供 subscription_id、resource_group_name 和 workspace_name 創建 MLClient 實例。
+    - 然後嘗試用 from_config 方法建立 MLClient 實例，從預設配置檔 (config.json) 讀取設定。如果失敗，會手動提供 subscription_id、resource_group_name 同 workspace_name 建立 MLClient。
 
-    - 它為名為 "azureml" 的 Azure ML 註冊表創建另一個 MLClient 實例。該註冊表存儲模型、微調管道和環境。
+    - 再建立一個 MLClient 實例，針對名為 "azureml" 嘅 Azure ML registry，呢個 registry 用嚟儲存模型、微調流水線同環境。
 
-    - 它將 experiment_name 設置為 "chat_completion_Phi-3-mini-4k-instruct"。
+    - 設定 experiment_name 為 "chat_completion_Phi-3-mini-4k-instruct"。
 
-    - 它通過將當前時間（自紀元開始以來的秒數，作為浮點數）轉換為整數，然後轉換為字符串來生成唯一的時間戳。此時間戳可用於創建唯一的名稱和版本。
+    - 產生一個獨特嘅時間戳，透過將當前時間（自 epoch 起嘅秒數，浮點數）轉成整數再轉成字串。呢個時間戳可用嚟創造唯一嘅名稱同版本。
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -112,20 +112,20 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. 選擇要微調的基礎模型
+## 2. 揀一個基礎模型去微調
 
-1. Phi-3-mini-4k-instruct 是一個擁有 3.8B 參數的輕量級、最先進的開放模型，基於用於 Phi-2 的數據集構建。該模型屬於 Phi-3 模型家族，而 Mini 版本有兩個變體：4K 和 128K，這是其支持的上下文長度（以 tokens 計）。我們需要根據特定目的微調模型才能使用。您可以在 AzureML Studio 的模型目錄中瀏覽這些模型，並通過聊天完成任務進行篩選。在此例子中，我們使用 Phi-3-mini-4k-instruct 模型。如果您為其他模型打開了此筆記本，請相應地替換模型名稱和版本。
+1. Phi-3-mini-4k-instruct 係一個 3.8B 參數嘅輕量級先進開源模型，基於 Phi-2 嘅數據集建構。呢個模型屬於 Phi-3 系列，Mini 版本有兩個變體 4K 同 128K，代表佢支援嘅上下文長度（token 數）。我哋需要微調模型，先可以用喺我哋嘅具體用途。你可以喺 AzureML Studio 嘅 Model Catalog 入面瀏覽呢啲模型，用 chat-completion 任務做篩選。呢個例子用嘅係 Phi-3-mini-4k-instruct。如果你係用其他模型開呢個 notebook，記得換返模型名同版本。
 
     > [!NOTE]
-    > 模型的 id 屬性。這將作為輸入傳遞給微調任務。在 AzureML Studio 模型目錄的模型詳細信息頁面中，這也可以作為資產 ID 字段找到。
+    > 呢個係模型嘅 id 屬性，會用作微調工作嘅輸入。喺 AzureML Studio Model Catalog 嘅模型詳情頁面都有呢個 Asset ID 欄位。
 
-2. 此 Python 腳本用於與 Azure 機器學習 (Azure ML) 服務交互。以下是其作用的概述：
+2. 呢個 Python 腳本用嚟同 Azure Machine Learning (Azure ML) 服務互動。以下係佢嘅功能概述：
 
-    - 它將 model_name 設置為 "Phi-3-mini-4k-instruct"。
+    - 設定 model_name 為 "Phi-3-mini-4k-instruct"。
 
-    - 它使用 registry_ml_client 對象的 models 屬性的 get 方法，從 Azure ML 註冊表中檢索具有指定名稱的模型的最新版本。get 方法接受兩個參數：模型名稱和標籤，指定應檢索模型的最新版本。
+    - 用 registry_ml_client 物件嘅 models 屬性嘅 get 方法，從 Azure ML registry 取得指定名稱嘅模型最新版本。get 方法有兩個參數：模型名同標籤，標籤指定要攞最新版本。
 
-    - 它向控制台打印一條消息，指示將用於微調的模型的名稱、版本和 id。使用字符串的 format 方法將模型的名稱、版本和 id 插入到消息中。模型的名稱、版本和 id 作為 foundation_model 對象的屬性訪問。
+    - 喺控制台打印一條訊息，顯示將用嚟微調嘅模型名稱、版本同 id。用 format 方法將 foundation_model 物件嘅 name、version 同 id 屬性插入訊息。
 
     ```python
     # Set the model name
@@ -143,29 +143,29 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. 創建用於任務的計算資源
+## 3. 建立用於工作嘅計算資源
 
-微調任務僅適用於 GPU 計算資源。計算資源的大小取決於模型的大小，在大多數情況下，識別適合任務的計算資源可能會變得棘手。在此單元格中，我們指導用戶選擇適合任務的計算資源。
-
-> [!NOTE]
-> 以下列出的計算資源與最優配置配合使用。對配置的任何更改可能導致 Cuda Out Of Memory 錯誤。在這種情況下，嘗試升級計算資源到更大的尺寸。
+微調工作只支援 GPU 計算資源。計算資源嘅大小視乎模型大小，好多時難以識別適合嘅計算資源。呢個 cell 會指引用戶揀啱嘅計算資源。
 
 > [!NOTE]
-> 在選擇下面的 compute_cluster_size 時，請確保計算資源在您的資源組中可用。如果某個計算資源不可用，您可以提出請求以獲取該計算資源的訪問權限。
+> 以下列出嘅計算資源都係用最優化配置。任何配置改動可能會導致 Cuda Out Of Memory 錯誤。遇到呢啲情況，試下升級計算資源到更大規格。
 
-### 檢查模型的微調支持
+> [!NOTE]
+> 揀 compute_cluster_size 時，記住確保計算資源喺你嘅資源組可用。如果冇，記得申請取得計算資源權限。
 
-1. 此 Python 腳本用於與 Azure 機器學習 (Azure ML) 模型交互。以下是其作用的概述：
+### 檢查模型支援微調嘅計算資源
 
-    - 它導入 ast 模塊，該模塊提供處理 Python 抽象語法樹的函數。
+1. 呢個 Python 腳本用嚟同 Azure Machine Learning (Azure ML) 模型互動。以下係佢嘅功能概述：
 
-    - 它檢查 foundation_model 對象（表示 Azure ML 中的模型）是否具有名為 finetune_compute_allow_list 的標籤。Azure ML 中的標籤是鍵值對，您可以創建並用於篩選和排序模型。
+    - 引入 ast 模組，提供處理 Python 抽象語法樹嘅功能。
 
-    - 如果存在 finetune_compute_allow_list 標籤，它使用 ast.literal_eval 函數安全地解析標籤的值（字符串）為 Python 列表。然後將該列表分配給 computes_allow_list 變量。接著打印一條消息，指示應從列表中創建計算資源。
+    - 檢查 foundation_model 物件（代表 Azure ML 嘅模型）有冇叫 finetune_compute_allow_list 嘅 tag。Azure ML 嘅 tag 係 key-value 配對，可以用嚟篩選同排序模型。
 
-    - 如果不存在 finetune_compute_allow_list 標籤，它將 computes_allow_list 設置為 None，並打印一條消息，指示 finetune_compute_allow_list 標籤不是模型標籤的一部分。
+    - 如果有 finetune_compute_allow_list tag，就用 ast.literal_eval 安全解析 tag 嘅字串值成 Python list，並賦值畀 computes_allow_list。然後打印訊息話要喺呢個列表中建立計算資源。
 
-    - 總之，此腳本正在檢查模型元數據中的特定標籤，並在該標籤存在時將其值轉換為列表，並相應地向用戶提供反饋。
+    - 如果冇呢個 tag，就設 computes_allow_list 為 None，並打印訊息話模型冇呢個 tag。
+
+    - 總結：呢個腳本係檢查模型 metadata 入面有冇指定 tag，將值轉成列表（如果有），並回饋用戶。
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -186,21 +186,21 @@ pip install azureml-mlflow
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### 檢查計算實例
+### 檢查計算資源實例
 
-1. 此 Python 腳本用於與 Azure 機器學習 (Azure ML) 服務交互，並對計算實例進行多項檢查。以下是其作用的概述：
+1. 呢個 Python 腳本用嚟同 Azure Machine Learning (Azure ML) 服務互動，並對計算資源實例做多項檢查。以下係佢嘅功能概述：
 
-    - 它嘗試從 Azure ML 工作區檢索 compute_cluster 中存儲的計算實例。如果計算實例的 provision 狀態為 "failed"，則引發 ValueError。
+    - 嘗試喺 Azure ML workspace 搵名為 compute_cluster 嘅計算資源實例。如果呢個實例嘅 provisioning state 係 "failed"，就會拋出 ValueError。
 
-    - 它檢查 computes_allow_list 是否不為 None。如果不為 None，則將列表中的所有計算尺寸轉換為小寫，並檢查當前計算實例的尺寸是否在列表中。如果不在，則引發 ValueError。
+    - 如果 computes_allow_list 唔係 None，將列表中所有計算資源大小轉成小寫，檢查目前計算資源大小係唔係喺列表入面。唔係就拋出 ValueError。
 
-    - 如果 computes_allow_list 為 None，則檢查計算實例的尺寸是否在不支持的 GPU VM 尺寸列表中。如果在，則引發 ValueError。
+    - 如果 computes_allow_list 係 None，就檢查計算資源大小係唔係喺唔支援嘅 GPU VM size 列表入面。如果係，就拋出 ValueError。
 
-    - 它檢索工作區中所有可用計算尺寸的列表。然後迭代該列表，對於每個計算尺寸，檢查其名稱是否與當前計算實例的尺寸匹配。如果匹配，則檢索該計算尺寸的 GPU 數量，並將 gpu_count_found 設置為 True。
+    - 取得 workspace 中所有可用嘅計算資源大小，遍歷呢個列表，搵同目前計算資源大小相符嘅，然後取得該計算資源嘅 GPU 數量，並設 gpu_count_found 為 True。
 
-    - 如果 gpu_count_found 為 True，則打印計算實例中的 GPU 數量。如果 gpu_count_found 為 False，則引發 ValueError。
+    - 如果 gpu_count_found 係 True，就打印計算資源嘅 GPU 數量；如果唔係，就拋出 ValueError。
 
-    - 總之，此腳本對 Azure ML 工作區中的計算實例進行多項檢查，包括檢查其 provision 狀態、尺寸是否符合允許或禁止列表，以及其 GPU 數量。
+    - 總結：呢個腳本對 Azure ML workspace 入面嘅計算資源實例做多重檢查，包括 provisioning 狀態、大小係唔係允許列表或拒絕列表、同 GPU 數量。
 
     ```python
     # Print the exception message
@@ -269,42 +269,42 @@ pip install azureml-mlflow
         )
     ```
 
-## 4. 選擇用於微調模型的數據集
+## 4. 揀微調模型用嘅數據集
 
-1. 我們使用 ultrachat_200k 數據集。該數據集有四個分割，適合於監督微調 (sft) 和生成排名 (gen)。每個分割的示例數量如下所示：
+1. 我哋用 ultrachat_200k dataset。呢個數據集有四個拆分，適合做監督式微調 (sft)。Generation ranking (gen)。每個拆分嘅示例數如下：
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. 接下來的幾個單元格展示了微調的基本數據準備：
+1. 接落嚟嘅幾個 cell 示範微調嘅基本數據準備：
 
-### 可視化一些數據行
+### 視覺化部分數據列
 
-我們希望此示例能快速運行，因此保存包含已裁剪行 5% 的 train_sft 和 test_sft 文件。這意味著微調後的模型準確性較低，因此不應用於真實世界。
+我哋想令呢個範例快啲跑，所以會儲存 train_sft、test_sft 文件，只包含已裁剪行數嘅 5%。即係話微調後嘅模型準確度會較低，唔建議用喺真實世界。
 
-download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換為微調管道元件可消耗的格式。由於數據集較大，因此這裡僅包含部分數據集。
+download-dataset.py 用嚟下載 ultrachat_200k dataset，同將數據轉成微調流水線組件可用格式。由於數據集好大，呢度只用咗部分數據。
 
-1. 運行下面的腳本僅下載 5% 的數據。可以通過更改 dataset_split_pc 參數到所需百分比來增加。
+1. 執行下面嘅腳本只會下載 5% 嘅數據。你可以透過改 dataset_split_pc 參數去調整百分比。
 
     > [!NOTE]
-    > 一些語言模型有不同的語言代碼，因此數據集中的列名應反映這一點。
+    > 有啲語言模型用唔同語言代碼，數據集入面嘅欄位名應該反映呢啲差異。
 
-1. 以下是數據的示例展示方式：
-聊天完成數據集以 parquet 格式存儲，每個條目使用以下架構：
+1. 呢度係數據應該係點嘅範例
+chat-completion 數據集用 parquet 格式儲存，每條目用以下結構：
 
-    - 這是一個 JSON（JavaScript Object Notation）文檔，一種流行的數據交換格式。它不是可執行代碼，而是一種存儲和傳輸數據的方式。以下是其結構的概述：
+    - 呢個係 JSON（JavaScript 物件表示法）文件，一種流行嘅數據交換格式。唔係可執行代碼，而係用嚟存儲同傳輸數據。結構如下：
 
-    - "prompt"：此鍵包含一個字符串值，表示給 AI 助手的一個任務或問題。
+    - "prompt": 呢個 key 存住一條字串，代表交畀 AI 助手嘅任務或問題。
 
-    - "messages"：此鍵包含一個對象的數組。每個對象表示用戶和 AI 助手之間對話中的一條消息。每個消息對象有兩個鍵：
+    - "messages": 呢個 key 存住一個物件陣列。每個物件代表用戶同 AI 助手之間嘅一段對話。每條消息物件有兩個 key：
 
-    - "content"：此鍵包含表示消息內容的字符串值。
-    - "role"：此鍵包含表示發送消息的實體角色的字符串值。它可以是 "user" 或 "assistant"。
-    - "prompt_id"：此鍵包含表示該提示唯一標識符的字符串值。
+    - "content": 消息內容嘅字串。
+    - "role": 發送消息嘅角色，可能係 "user" 或 "assistant"。
+    - "prompt_id": 唯一標識呢個 prompt 嘅字串。
 
-1. 在此特定 JSON 文檔中，對話表示為用戶要求 AI 助手創建一個反烏托邦故事的主角。助手回應後，用戶要求更多細節。助手同意提供更多細節。整個對話與特定的 prompt id 關聯。
+1. 呢份 JSON 文件入面，對話係用嚟描述用戶叫 AI 助手創作一個反烏托邦故事嘅主角。助手回應後，用戶再問多啲細節。助手同意提供更多資料。整段對話同一個特定嘅 prompt id 相關聯。
 
     ```python
     {
@@ -346,15 +346,15 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
 
 ### 下載數據
 
-1. 此 Python 腳本用於使用名為 download-dataset.py 的輔助腳本下載數據集。以下是其作用的概述：
+1. 呢個 Python 腳本用嚟用一個叫 download-dataset.py 嘅輔助腳本下載數據集。功能概述：
 
-    - 它導入 os 模塊，該模塊提供操作系統相關功能的便捷方式。
+    - 引入 os 模組，提供跨平台操作系統功能。
 
-    - 它使用 os.system 函數在 shell 中運行 download-dataset.py 腳本並指定命令行參數。參數指定要下載的數據集 (HuggingFaceH4/ultrachat_200k)、下載目錄 (ultrachat_200k_dataset) 和數據集的分割百分比 (5)。os.system 函數返回其執行的命令的退出狀態；此狀態存儲在 exit_status 變量中。
+    - 用 os.system 喺 shell 執行 download-dataset.py，指定下載 HuggingFaceH4/ultrachat_200k 數據集，下載到 ultrachat_200k_dataset 目錄，並設置拆分百分比為 5。os.system 返回執行狀態，存喺 exit_status。
 
-    - 它檢查 exit_status 是否不為 0。在類 Unix 操作系統中，退出狀態為 0 通常表示命令成功執行，而其他任何數字表示錯誤。如果 exit_status 不為 0，則引發 Exception，並顯示一條消息，指示下載數據集時出現錯誤。
+    - 檢查 exit_status 唔係 0，表示執行失敗，會拋出 Exception，提示下載數據集出錯。
 
-    - 總之，此腳本運行命令以使用輔助腳本下載數據集，如果命令失敗則引發異常。
+    - 總結：腳本係用輔助腳本下載數據集，失敗時會拋錯。
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -374,19 +374,19 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
         raise Exception("Error downloading dataset")
     ```
 
-### 將數據加載到 DataFrame
+### 將數據載入 DataFrame
 
-1. 此 Python 腳本將 JSON Lines 文件加載到 pandas DataFrame 中並顯示前 5 行。以下是其作用的概述：
+1. 呢個 Python 腳本用嚟將 JSON Lines 格式嘅文件載入 pandas DataFrame，並顯示前 5 行。功能概述：
 
-    - 它導入 pandas 庫，該庫是一個功能強大的數據操作和分析工具。
+    - 引入 pandas 庫，一個強大嘅數據處理同分析工具。
 
-    - 它將 pandas 的顯示選項中的最大列寬設置為 0。這意味著在打印 DataFrame 時，每列的完整文本將不被截斷。
+    - 設定 pandas 顯示選項，最大欄寬為 0，代表顯示欄位全部文字唔截斷。
 
-    - 它使用 pd.read_json 函數將 ultrachat_200k_dataset 目錄中的 train_sft.jsonl 文件加載到 DataFrame 中。lines=True 參數表示該文件是 JSON Lines 格式，其中每行是一個單獨的 JSON 對象。
+    - 用 pd.read_json 讀入 ultrachat_200k_dataset 目錄下嘅 train_sft.jsonl 文件，lines=True 表示 JSON Lines 格式，每行係獨立 JSON 物件。
 
-    - 它使用 head 方法顯示 DataFrame 的前 5 行。如果 DataFrame 的行數少於 5，則顯示所有行。
+    - 用 head 方法顯示前 5 行，少於 5 行就顯示全部。
 
-    - 總之，此腳本將 JSON Lines 文件加載到 DataFrame 中並顯示前 5 行，並且顯示完整的列文本。
+    - 總結：腳本將 JSON Lines 文件讀入 DataFrame，並完整顯示前 5 行欄位文字。
 
     ```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
@@ -405,44 +405,45 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     df.head()
     ```
 
-## 5. 使用模型和數據作為輸入提交微調任務
+## 5. 用模型同數據作為輸入提交微調工作
 
-創建使用聊天完成管道元件的任務。了解更多支持微調的所有參數。
+建立一個用 chat-completion pipeline component 嘅工作。了解微調支持嘅所有參數。
 
 ### 定義微調參數
 
-1. 微調參數可以分為兩類——訓練參數和優化參數。
+1. 微調參數可分兩大類 — 訓練參數同優化參數
 
 1. 訓練參數定義訓練方面，例如：
 
-    - 要使用的優化器和調度器
-    - 微調的最佳化指標
-    - 訓練步驟數量、批量大小等
+    - 用邊個 optimizer、scheduler
+    - 用邊個指標去優化微調
+    - 訓練步數同批量大小等
+    - 優化參數有助優化 GPU 記憶體同有效利用計算資源。
 
-1. 優化參數幫助優化 GPU 記憶體並有效利用計算資源。
+1. 以下係屬於優化參數嘅部分。優化參數因模型而異，會包裝喺模型內以處理差異。
 
-    - 啟用 DeepSpeed 和 LoRA
+    - 啟用 deepspeed 同 LoRA
     - 啟用混合精度訓練
     - 啟用多節點訓練
 
 > [!NOTE]
-> 監督微調可能導致對齊丟失或災難性遺忘。我們建議檢查此問題並在微調後運行對齊階段。
+> 監督式微調可能導致對齊喪失或嚴重遺忘。建議微調後檢查呢個問題，並執行對齊階段。
 
 ### 微調參數
 
-1. 此 Python 腳本設置微調機器學習模型的參數。以下是其作用的概述：
+1. 呢個 Python 腳本用嚟設定微調機器學習模型嘅參數。功能概述：
 
-    - 它設置了默認訓練參數，例如訓練時期數量、訓練和評估的批量大小、學習率和學習率調度器類型。
+    - 設定預設訓練參數，如訓練 epoch 數、訓練同評估批量大小、學習率、學習率調度器類型。
 
-    - 它設置了默認優化參數，例如是否應用 Layer-wise Relevance Propagation (LoRa) 和 DeepSpeed，以及 DeepSpeed 階段。
+    - 設定預設優化參數，例如是否啟用 LoRa、DeepSpeed 同 DeepSpeed 階段。
 
-    - 它將訓練和優化參數組合到一個名為 finetune_parameters 的字典中。
+    - 將訓練參數同優化參數合併成一個字典 finetune_parameters。
 
-    - 它檢查 foundation_model 是否具有任何模型特定的默認參數。如果有，它打印一條警告消息，並使用這些模型特定的默認參數更新 finetune_parameters 字典。ast.literal_eval 函數用於將模型特定的默認參數從字符串轉換為 Python 字典。
+    - 檢查 foundation_model 有冇模型特定嘅預設參數。如果有，打印警告訊息，並用 ast.literal_eval 將字串轉成 Python 字典，更新 finetune_parameters。
 
-    - 它打印將用於運行的最終微調參數集。
+    - 打印最終微調參數集合。
 
-    - 總之，此腳本設置並顯示微調機器學習模型的參數，並能夠使用模型特定的參數覆蓋默認參數。
+    - 總結：腳本設定並顯示微調參數，並可以用模型特定參數覆蓋預設值。
 
     ```python
     # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
@@ -481,10 +482,24 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     )
     ```
 
-### 訓練管道
+### 訓練流水線
 
-1. 此 Python 腳本定義了一個生成機器學習訓練管道顯示名稱
-根據不同參數建立訓練管道，然後顯示它的名稱。```python
+1. 呢個 Python 腳本定義咗一個函數，用嚟生成機器學習訓練流水線嘅顯示名稱，然後調用該函數生成同打印顯示名稱。功能概述：
+
+    1. 定義 get_pipeline_display_name 函數，根據訓練流水線相關嘅多個參數生成顯示名稱。
+
+    1. 函數內計算總批量大小，方法係將每設備批量大小、梯度累積步數、每節點 GPU 數量同微調節點數相乘。
+
+    1. 取得其他參數，如學習率調度器類型、有冇用 DeepSpeed、DeepSpeed 階段、有冇用 LoRa、保留模型檢查點數量限制、最大序列長度。
+
+    1. 組合一條字串，包括以上所有參數，以連字符分隔。如果有用 DeepSpeed 或 LoRa，字串會包含 "ds" 加上 DeepSpeed 階段，或 "lora"；冇用就會包含 "nods" 或 "nolora"。
+
+    1. 函數返回呢條字串，作為訓練流水線嘅顯示名稱。
+
+    1. 定義完函數後，調用佢生成顯示名稱，並打印出嚟。
+
+    1. 總結：腳本用嚟生成機器學習訓練流水線
+training pipeline 根據不同參數設定，然後打印呢個顯示名稱。```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -539,13 +554,13 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
-### 配置管道
+### 配置 Pipeline
 
-這段 Python 腳本使用 Azure Machine Learning SDK 定義並配置機器學習管道。以下是詳細解說：
+呢個 Python 腳本用 Azure Machine Learning SDK 定義同配置一個機器學習 pipeline。內容大致如下：
 
-1. 它從 Azure AI ML SDK 匯入必要模組。
-2. 從註冊表中提取名為 "chat_completion_pipeline" 的管道元件。
-3. 使用 `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
+1. 從 Azure AI ML SDK 匯入所需模組。
+2. 從 registry 拿取一個叫做 "chat_completion_pipeline" 嘅 pipeline component。
+3. 用 `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
 
 1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
 
@@ -555,8 +570,8 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
 
 1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False` 定義管道作業，這意味著如果任一步驟失敗，管道將停止。
-4. 總結來說，這段腳本是為聊天完成任務定義並配置機器學習管道，使用 Azure Machine Learning SDK。
+1. It sets the `continue_on_step_failure` setting of the pipeline to `False` 定義一個 pipeline job，即係如果任何步驟失敗，pipeline 就會停止。
+4. 總結嚟講，呢個腳本係用 Azure Machine Learning SDK 定義同配置一個用於 chat completion 任務嘅機器學習 pipeline。
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -609,13 +624,13 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### 提交作業
+### 提交工作
 
-1. 這段 Python 腳本向 Azure Machine Learning 工作區提交機器學習管道作業，並等待作業完成。以下是詳細解說：
+1. 呢個 Python 腳本係向 Azure Machine Learning workspace 提交一個機器學習 pipeline 工作，然後等待工作完成。內容大致如下：
 
-   - 它使用 workspace_ml_client 的 jobs 物件的 create_or_update 方法提交管道作業。要運行的管道由 pipeline_object 指定，而作業所屬的實驗由 experiment_name 指定。
-   - 然後，它使用 workspace_ml_client 的 jobs 物件的 stream 方法等待管道作業完成。要等待的作業由 pipeline_job 物件的 name 屬性指定。
-   - 總結來說，這段腳本向 Azure Machine Learning 工作區提交機器學習管道作業，並等待作業完成。
+- 用 workspace_ml_client 裡 jobs 嘅 create_or_update 方法提交 pipeline 工作。要執行嘅 pipeline 由 pipeline_object 指定，工作所屬嘅實驗由 experiment_name 指定。
+- 用 workspace_ml_client 裡 jobs 嘅 stream 方法等待 pipeline 工作完成。要等待嘅工作係 pipeline_job 嘅 name 屬性指定。
+- 總結嚟講，呢個腳本係提交一個機器學習 pipeline 工作到 Azure Machine Learning workspace，然後等待工作完成。
 
 ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
@@ -630,22 +645,23 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. 將微調模型註冊到工作區
+## 6. 喺 workspace 登記微調後嘅模型
 
-我們將從微調作業的輸出中註冊模型。這將追蹤微調模型和微調作業之間的關聯。微調作業進一步追蹤基礎模型、數據和訓練代碼的關聯。
+我哋會從微調工作嘅輸出登記模型，咁樣可以追蹤微調模型同微調工作之間嘅關係。微調工作亦會追蹤基礎模型、數據同訓練代碼嘅關係。
 
-### 註冊機器學習模型
+### 登記 ML 模型
 
-1. 這段 Python 腳本註冊了一個在 Azure Machine Learning 管道中訓練的機器學習模型。以下是詳細解說：
+1. 呢個 Python 腳本係登記一個喺 Azure Machine Learning pipeline 裡訓練出嚟嘅機器學習模型。內容大致如下：
 
-   - 它從 Azure AI ML SDK 匯入必要模組。
-   - 它通過調用 workspace_ml_client 的 jobs 物件的 get 方法並訪問其 outputs 屬性，檢查 pipeline 作業是否提供 trained_model 輸出。
-   - 它通過格式化字符串構建指向訓練模型的路徑，該字符串包含管道作業的名稱和輸出的名稱 ("trained_model")。
-   - 它通過將 "-ultrachat-200k" 附加到原始模型名稱並將任何斜槓替換為連字號來定義微調模型的名稱。
-   - 它準備註冊模型，通過創建一個 Model 物件並指定各種參數，包括模型的路徑、模型的類型 (MLflow 模型)、模型的名稱和版本以及模型的描述。
-   - 它通過調用 workspace_ml_client 的 models 物件的 create_or_update 方法並將 Model 物件作為參數來註冊模型。
-   - 它打印註冊的模型。
-   - 總結來說，這段腳本註冊了一個在 Azure Machine Learning 管道中訓練的機器學習模型。
+- 從 Azure AI ML SDK 匯入所需模組。
+- 透過 workspace_ml_client 裡 jobs 嘅 get 方法，檢查 pipeline 工作嘅輸出 outputs 屬性中有冇 trained_model。
+- 用 pipeline 工作名同輸出名稱 ("trained_model") 格式化一個模型路徑。
+- 定義微調後模型嘅名稱，喺原模型名後加 "-ultrachat-200k"，並將所有斜線換成連字符。
+- 用各種參數建立一個 Model 物件，包括模型路徑、模型類型（MLflow 模型）、模型名稱同版本、同模型描述。
+- 用 workspace_ml_client 裡 models 嘅 create_or_update 方法登記模型，傳入 Model 物件。
+- 打印已登記嘅模型。
+
+1. 總結嚟講，呢個腳本係登記一個喺 Azure Machine Learning pipeline 裡訓練嘅機器學習模型。
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -687,19 +703,20 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     print("registered model: \n", registered_model)
     ```
 
-## 7. 部署微調模型到線上端點
+## 7. 部署微調後模型到線上 endpoint
 
-線上端點提供一個持久的 REST API，可用於與需要使用模型的應用集成。
+線上 endpoint 提供持久嘅 REST API，可以用嚟同需要用模型嘅應用程式整合。
 
-### 管理端點
+### 管理 Endpoint
 
-1. 這段 Python 腳本為註冊的模型在 Azure Machine Learning 中創建一個管理的線上端點。以下是詳細解說：
+1. 呢個 Python 腳本係喺 Azure Machine Learning 創建一個受管理嘅線上 endpoint，用於已登記嘅模型。內容大致如下：
 
-   - 它從 Azure AI ML SDK 匯入必要模組。
-   - 它通過將時間戳附加到字符串 "ultrachat-completion-" 定義線上端點的唯一名稱。
-   - 它準備創建線上端點，通過創建一個 ManagedOnlineEndpoint 物件並指定各種參數，包括端點的名稱、端點的描述和身份驗證模式 ("key")。
-   - 它通過調用 workspace_ml_client 的 begin_create_or_update 方法並將 ManagedOnlineEndpoint 物件作為參數創建線上端點。然後通過調用 wait 方法等待創建操作完成。
-   - 總結來說，這段腳本為註冊的模型在 Azure Machine Learning 中創建了一個管理的線上端點。
+- 從 Azure AI ML SDK 匯入所需模組。
+- 透過加上時間戳記喺 "ultrachat-completion-" 字串後面，定義一個獨特嘅線上 endpoint 名稱。
+- 用多個參數建立一個 ManagedOnlineEndpoint 物件，包括 endpoint 名稱、描述同認證模式 ("key")。
+- 用 workspace_ml_client 嘅 begin_create_or_update 方法創建線上 endpoint，傳入 ManagedOnlineEndpoint 物件，然後用 wait 方法等創建完成。
+
+1. 總結嚟講，呢個腳本係喺 Azure Machine Learning 創建一個受管理嘅線上 endpoint 用於已登記嘅模型。
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -728,22 +745,23 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
-> [!NOTE]  
-> 您可以在此處找到支持部署的 SKU 列表 - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> [!NOTE]
+> 呢度可以搵到支援部署嘅 SKU 清單 - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### 部署機器學習模型
+### 部署 ML 模型
 
-1. 這段 Python 腳本將註冊的機器學習模型部署到 Azure Machine Learning 的管理線上端點。以下是詳細解說：
+1. 呢個 Python 腳本係將已登記嘅機器學習模型部署到 Azure Machine Learning 嘅受管理線上 endpoint。內容大致如下：
 
-   - 它匯入 ast 模組，該模組提供處理 Python 抽象語法樹的函數。
-   - 它將部署的實例類型設置為 "Standard_NC6s_v3"。
-   - 它檢查基礎模型是否存在 inference_compute_allow_list 標籤。如果存在，則將標籤值從字符串轉換為 Python 列表並分配給 inference_computes_allow_list。如果不存在，則將 inference_computes_allow_list 設置為 None。
-   - 它檢查指定的實例類型是否在允許列表中。如果不在，則打印消息要求用戶從允許列表中選擇實例類型。
-   - 它準備創建部署，通過創建一個 ManagedOnlineDeployment 物件並指定各種參數，包括部署的名稱、端點的名稱、模型的 ID、實例類型和數量、存活探測設置以及請求設置。
-   - 它通過調用 workspace_ml_client 的 begin_create_or_update 方法並將 ManagedOnlineDeployment 物件作為參數創建部署。然後通過調用 wait 方法等待創建操作完成。
-   - 它將端點的流量設置為全部指向 "demo" 部署。
-   - 它通過調用 workspace_ml_client 的 begin_create_or_update 方法並將端點物件作為參數更新端點。然後通過調用 result 方法等待更新操作完成。
-   - 總結來說，這段腳本將註冊的機器學習模型部署到 Azure Machine Learning 的管理線上端點。
+- 匯入 ast 模組，用嚟處理 Python 抽象語法樹。
+- 設定部署實例類型為 "Standard_NC6s_v3"。
+- 檢查 foundation model 裡有冇 inference_compute_allow_list 標籤。如果有，將標籤值由字串轉成 Python 列表，賦值比 inference_computes_allow_list；如果冇，就設為 None。
+- 檢查指定嘅實例類型係唔係喺允許列表入面。如果唔係，就打印訊息叫用戶揀允許列表入面嘅實例類型。
+- 用多個參數建立一個 ManagedOnlineDeployment 物件，包括部署名稱、endpoint 名稱、模型 ID、實例類型同數量、liveness probe 設定同請求設定，準備創建部署。
+- 用 workspace_ml_client 嘅 begin_create_or_update 方法創建部署，傳入 ManagedOnlineDeployment 物件，然後用 wait 方法等創建完成。
+- 將 endpoint 流量設置為 100% 指向 "demo" 部署。
+- 用 workspace_ml_client 嘅 begin_create_or_update 方法更新 endpoint，傳入 endpoint 物件，然後用 result 方法等更新完成。
+
+1. 總結嚟講，呢個腳本係將已登記嘅機器學習模型部署到 Azure Machine Learning 嘅受管理線上 endpoint。
 
 ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -796,19 +814,20 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. 使用樣本數據測試端點
+## 8. 用示範數據測試 endpoint
 
-我們將從測試數據集中獲取一些樣本數據並提交到線上端點進行推理。然後顯示分數標籤與真實標籤。
+我哋會從測試數據集攞啲示範數據，提交到線上 endpoint 做推論，然後顯示模型預測嘅標籤同真實標籤。
 
 ### 讀取結果
 
-1. 這段 Python 腳本將 JSON Lines 文件讀取到 pandas DataFrame 中，隨機抽樣並重置索引。以下是詳細解說：
+1. 呢個 Python 腳本係將 JSON Lines 檔案讀入 pandas DataFrame，隨機抽取一筆樣本，然後重設索引。內容大致如下：
 
-   - 它使用 read_json 函數讀取文件 ./ultrachat_200k_dataset/test_gen.jsonl 到 pandas DataFrame 中，並指定 lines=True 參數，因為文件是 JSON Lines 格式，每行都是一個獨立的 JSON 對象。
-   - 它從 DataFrame 中隨機抽取 1 行樣本。sample 函數使用 n=1 參數指定要選擇的隨機行數。
-   - 它重置 DataFrame 的索引。reset_index 函數使用 drop=True 參數丟棄原始索引並用默認整數值的新索引替換。
-   - 它使用 head 函數並指定參數 2 顯示 DataFrame 的前 2 行。然而，由於抽樣後 DataFrame 只有一行，因此只會顯示那一行。
-   - 總結來說，這段腳本將 JSON Lines 文件讀取到 pandas DataFrame 中，隨機抽取 1 行樣本，重置索引並顯示第一行。
+- 讀取 ./ultrachat_200k_dataset/test_gen.jsonl 檔案到 pandas DataFrame。用 read_json 函數並帶 lines=True 參數，因為檔案係 JSON Lines 格式，每行係一個獨立 JSON 物件。
+- 從 DataFrame 隨機抽取 1 筆資料，用 sample 函數並帶 n=1 參數指定抽取筆數。
+- 重設 DataFrame 索引，用 reset_index 函數並帶 drop=True 參數，捨棄原本索引並用預設整數索引取代。
+- 用 head 函數顯示 DataFrame 前 2 行。但因為抽樣後只有 1 行，所以只會顯示嗰一行。
+
+1. 總結嚟講，呢個腳本係將 JSON Lines 檔案讀入 pandas DataFrame，抽取 1 筆隨機樣本，重設索引，並顯示第一筆資料。
 
 ```python
     # Import pandas library
@@ -832,14 +851,14 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     test_df.head(2)
     ```
 
-### 創建 JSON 對象
+### 建立 JSON 物件
 
-1. 這段 Python 腳本創建了一個具有特定參數的 JSON 對象並保存到文件中。以下是詳細解說：
+1. 呢個 Python 腳本係建立一個帶有指定參數嘅 JSON 物件，並保存到檔案。內容大致如下：
 
-   - 它匯入 json 模組，該模組提供處理 JSON 數據的函數。
-   - 它創建了一個字典 parameters，包含鍵和值來表示機器學習模型的參數。鍵包括 "temperature"、"top_p"、"do_sample" 和 "max_new_tokens"，對應的值分別為 0.6、0.9、True 和 200。
-   - 它創建了另一個字典 test_json，包含兩個鍵："input_data" 和 "params"。"input_data" 的值是另一個字典，包含鍵 "input_string" 和 "parameters"。"input_string" 的值是一個列表，包含來自 test_df DataFrame 的第一條消息。"parameters" 的值是先前創建的 parameters 字典。"params" 的值是一個空字典。
-   - 它打開了一個名為 sample_score.json 的文件。
+- 匯入 json 模組，提供處理 JSON 數據嘅功能。
+- 建立一個字典 parameters，鍵值對代表機器學習模型嘅參數，鍵包括 "temperature"、"top_p"、"do_sample" 同 "max_new_tokens"，對應值分別係 0.6、0.9、True 同 200。
+- 建立另一個字典 test_json，有兩個鍵："input_data" 同 "params"。"input_data" 嘅值係另一個字典，包括 "input_string" 同 "parameters"。"input_string" 係一個列表，包含 test_df DataFrame 第一筆訊息；"parameters" 就係之前建立嘅 parameters 字典。"params" 係一個空字典。
+- 開啟一個叫 sample_score.json 嘅檔案
 
 ```python
     # Import the json module, which provides functions to work with JSON data
@@ -873,16 +892,17 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
         json.dump(test_json, f)
     ```
 
-### 調用端點
+### 調用 Endpoint
 
-1. 這段 Python 腳本調用 Azure Machine Learning 的線上端點來對 JSON 文件進行評分。以下是詳細解說：
+1. 呢個 Python 腳本係調用 Azure Machine Learning 裡嘅線上 endpoint，對 JSON 檔案做評分。內容大致如下：
 
-   - 它調用 workspace_ml_client 物件的 online_endpoints 屬性的 invoke 方法。此方法用於向線上端點發送請求並獲取響應。
-   - 它使用 endpoint_name 和 deployment_name 參數指定端點和部署的名稱。在這種情況下，端點名稱存儲在 online_endpoint_name 變量中，部署名稱為 "demo"。
-   - 它使用 request_file 參數指定要評分的 JSON 文件的路徑。在這種情況下，文件是 ./ultrachat_200k_dataset/sample_score.json。
-   - 它將端點的響應存儲在 response 變量中。
-   - 它打印原始響應。
-   - 總結來說，這段腳本調用 Azure Machine Learning 的線上端點來對 JSON 文件進行評分並打印響應。
+- 用 workspace_ml_client 物件嘅 online_endpoints 屬性嘅 invoke 方法，向線上 endpoint 發送請求並取得回應。
+- 用 endpoint_name 同 deployment_name 參數指定 endpoint 名稱同部署名稱。呢度 endpoint 名稱係 online_endpoint_name 變數，部署名稱係 "demo"。
+- 用 request_file 參數指定要評分嘅 JSON 檔案路徑，呢度係 ./ultrachat_200k_dataset/sample_score.json。
+- 將 endpoint 回應存入 response 變數。
+- 打印原始回應。
+
+1. 總結嚟講，呢個腳本係調用 Azure Machine Learning 嘅線上 endpoint，對 JSON 檔案做評分，並打印回應。
 
 ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
@@ -900,14 +920,14 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     print("raw response: \n", response, "\n")
     ```
 
-## 9. 刪除線上端點
+## 9. 刪除線上 endpoint
 
-1. 別忘了刪除線上端點，否則計算使用的計費將繼續運行。這行 Python 代碼用於刪除 Azure Machine Learning 的線上端點。以下是詳細解說：
+1. 唔好忘記刪除線上 endpoint，否則會繼續計算用量收費。呢行 Python 代碼係刪除 Azure Machine Learning 嘅線上 endpoint。內容大致如下：
 
-   - 它調用 workspace_ml_client 物件的 online_endpoints 屬性的 begin_delete 方法。此方法用於開始刪除線上端點。
-   - 它使用 name 參數指定要刪除的端點名稱。在這種情況下，端點名稱存儲在 online_endpoint_name 變量中。
-   - 它調用 wait 方法等待刪除操作完成。這是一個阻塞操作，意味著它會阻止腳本繼續運行直到刪除完成。
-   - 總結來說，這行代碼開始刪除 Azure Machine Learning 的線上端點並等待操作完成。
+- 用 workspace_ml_client 物件嘅 online_endpoints 屬性嘅 begin_delete 方法開始刪除線上 endpoint。
+- 用 name 參數指定要刪除嘅 endpoint 名稱，呢度係 online_endpoint_name 變數。
+- 用 wait 方法等待刪除操作完成。呢個係阻塞操作，即係話會阻止腳本繼續執行，直到刪除完成。
+- 總結嚟講，呢行代碼係開始刪除 Azure Machine Learning 嘅線上 endpoint，並等待操作完成。
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -918,4 +938,4 @@ download-dataset.py 用於下載 ultrachat_200k 數據集並將數據集轉換�
     ```
 
 **免責聲明**：  
-此文件使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為具有權威性的來源。對於關鍵資訊，建議使用專業的人力翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。
+本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用此翻譯而引起的任何誤解或誤釋承擔責任。

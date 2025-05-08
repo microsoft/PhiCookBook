@@ -1,83 +1,83 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c7e4439ea50fbf9e2197329bb254686b",
-  "translation_date": "2025-04-04T11:39:19+00:00",
-  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\README.md",
+  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
+  "translation_date": "2025-05-08T06:46:37+00:00",
+  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "ja"
 }
 -->
 # phiext README
 
-これは、拡張機能 "phiext" のREADMEです。簡単な説明を書いた後、以下のセクションを含めることをお勧めします。
+これは拡張機能「phiext」のREADMEです。簡単な説明を書いた後、以下のセクションを含めることをおすすめします。
 
-## 機能
+## Features
 
-拡張機能の具体的な機能を説明し、動作中のスクリーンショットを含めてください。画像のパスはこのREADMEファイルからの相対パスです。
+拡張機能の具体的な特徴や動作中のスクリーンショットを説明してください。画像のパスはこのREADMEファイルからの相対パスです。
 
-例えば、拡張機能プロジェクトのワークスペース内に画像のサブフォルダがある場合：
+例えば、拡張機能のプロジェクトワークスペースにimagesというサブフォルダがある場合：
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> ヒント: 多くの人気のある拡張機能はアニメーションを利用しています。これは拡張機能をアピールする素晴らしい方法です！短く、わかりやすいアニメーションをお勧めします。
+> Tip: 多くの人気拡張機能はアニメーションを活用しています。これは拡張機能の魅力を伝える素晴らしい方法です！短くてわかりやすいアニメーションを推奨します。
 
-## 必要条件
+## Requirements
 
-必要な条件や依存関係がある場合、それらを説明するセクションを追加し、インストール方法や設定方法を記載してください。
+もし要件や依存関係があれば、それらとインストールや設定方法を説明するセクションを追加してください。
 
-## 拡張機能の設定
+## Extension Settings
 
-この拡張機能が`contributes.configuration`エクステンションポイントを通じてVS Code設定を追加する場合は、記載してください。
+拡張機能が`contributes.configuration`拡張ポイントを通じてVS Codeの設定を追加する場合は記載してください。
 
 例えば：
 
 この拡張機能は以下の設定を提供します：
 
-* `myExtension.enable`: この拡張機能を有効/無効にします。
-* `myExtension.thing`: `blah`に設定して何かを実行します。
+* `myExtension.enable`: この拡張機能の有効/無効を切り替えます。
+* `myExtension.thing`: `blah`に設定すると何かの動作をします。
 
-## 既知の問題
+## Known Issues
 
-既知の問題を記載することで、ユーザーが重複した問題を報告するのを防ぐことができます。
+既知の問題を挙げることで、ユーザーが同じ問題の重複報告をするのを防げます。
 
-## リリースノート
+## Release Notes
 
-拡張機能を更新する際にリリースノートを記載すると、ユーザーに喜ばれます。
+拡張機能を更新する際、リリースノートはユーザーに喜ばれます。
 
 ### 1.0.0
 
-初回リリース
+初回リリース...
 
 ### 1.0.1
 
-問題 # を修正しました。
+問題#を修正。
 
 ### 1.1.0
 
-機能 X、Y、Z を追加しました。
+機能X、Y、Zを追加。
 
 ---
 
-## 拡張機能ガイドラインの遵守
+## Following extension guidelines
 
-拡張機能ガイドラインを熟読し、拡張機能を作成する際のベストプラクティスに従ってください。
+拡張機能のガイドラインをよく読み、作成のベストプラクティスに従っていることを確認してください。
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Markdownを使用した作業
+## Working with Markdown
 
-Visual Studio Codeを使用してREADMEを作成することができます。以下は便利なエディターのキーボードショートカットです：
+READMEはVisual Studio Codeで作成できます。便利なエディタのキーボードショートカットをいくつか紹介します：
 
-* エディターを分割する（macOSでは`Cmd+\`、WindowsとLinuxでは`Ctrl+\`）。
-* プレビューを切り替える（macOSでは`Shift+Cmd+V`、WindowsとLinuxでは`Shift+Ctrl+V`）。
-* `Ctrl+Space`を押す（Windows、Linux、macOS）とMarkdownスニペットのリストが表示されます。
+* エディタを分割（macOSでは`Cmd+\`、Windows/Linuxでは`Ctrl+\`）。
+* プレビューの切り替え（macOSでは`Shift+Cmd+V`、Windows/Linuxでは`Shift+Ctrl+V`）。
+* `Ctrl+Space`を押すと（Windows、Linux、macOS共通）Markdownスニペットの一覧が表示されます。
 
-## 詳細情報
+## For more information
 
-* [Visual Studio CodeのMarkdownサポート](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown構文リファレンス](https://help.github.com/articles/markdown-basics/)
+* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
+* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **お楽しみください！**
 
 **免責事項**:  
-この文書はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文書の母国語で記載された内容が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の利用に起因する誤解や誤認について、当方は一切の責任を負いません。
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご了承ください。原文の言語によるオリジナル文書が権威ある情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても責任を負いかねます。

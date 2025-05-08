@@ -1,48 +1,48 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "05e69691c294289d217150bec390a5fb",
-  "translation_date": "2025-04-04T06:58:42+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Kaito.md",
+  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
+  "translation_date": "2025-05-08T05:23:00+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "tw"
 }
 -->
 ## 使用 Kaito 進行微調
 
-[Kaito](https://github.com/Azure/kaito) 是一個操作工具，可自動化在 Kubernetes 集群中部署 AI/ML 推理模型。
+[Kaito](https://github.com/Azure/kaito) 是一個在 Kubernetes 叢集中自動化 AI/ML 推論模型部署的 operator。
 
-與大多數基於虛擬機基礎設施的主流模型部署方法相比，Kaito 具有以下主要差異：
+與大多數基於虛擬機基礎架構的主流模型部署方法相比，Kaito 有以下主要差異：
 
-- 使用容器映像管理模型文件。提供一個 HTTP 伺服器，用於使用模型庫進行推理調用。
-- 提供預設配置，避免因適配 GPU 硬件而調整部署參數。
+- 使用容器映像管理模型檔案。提供一個 http 伺服器，透過模型庫執行推論呼叫。
+- 提供預設配置，避免為符合 GPU 硬體調整部署參數。
 - 根據模型需求自動配置 GPU 節點。
-- 如果許可證允許，可將大型模型映像托管於 Microsoft Container Registry (MCR)。
+- 若授權允許，將大型模型映像托管在公共的 Microsoft Container Registry (MCR)。
 
-使用 Kaito，可以大幅簡化在 Kubernetes 中引入大型 AI 推理模型的工作流程。
+使用 Kaito，將大型 AI 推論模型導入 Kubernetes 的流程大幅簡化。
 
 ## 架構
 
-Kaito 遵循經典的 Kubernetes 自定義資源定義 (CRD) 和控制器設計模式。使用者管理一個 `workspace` 自定義資源，該資源描述了 GPU 需求和推理規範。Kaito 控制器將通過調和 `workspace` 自定義資源自動化部署。
+Kaito 採用經典的 Kubernetes 自訂資源定義 (CRD)/controller 設計模式。使用者管理一個 `workspace` 自訂資源，描述 GPU 需求與推論規格。Kaito controller 會透過調和 `workspace` 自訂資源來自動化部署。
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito 架構" alt="Kaito 架構">
+  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
 上圖展示了 Kaito 架構概覽。其主要組件包括：
 
-- **工作區控制器**：調和 `workspace` 自定義資源，創建 `machine`（如下所述）自定義資源以觸發節點自動配置，並根據模型預設配置創建推理工作負載（`deployment` 或 `statefulset`）。
-- **節點配置控制器**：該控制器的名稱為 *gpu-provisioner*，位於 [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner)。它使用來自 [Karpenter](https://sigs.k8s.io/karpenter) 的 `machine` CRD 與工作區控制器交互。該控制器整合 Azure Kubernetes Service (AKS) API，為 AKS 集群新增 GPU 節點。
-> 注意：[*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) 是一個開源組件。如果其他控制器支持 [Karpenter-core](https://sigs.k8s.io/karpenter) API，也可以替代使用。
+- **Workspace controller**：調和 `workspace` 自訂資源，建立 `machine`（下方說明）自訂資源以觸發節點自動配置，並根據模型預設配置建立推論工作負載（`deployment` 或 `statefulset`）。
+- **Node provisioner controller**：該 controller 名稱為 *gpu-provisioner*，位於 [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner)。它使用來自 [Karpenter](https://sigs.k8s.io/karpenter) 的 `machine` CRD 與 workspace controller 互動，並整合 Azure Kubernetes Service (AKS) API 以新增 GPU 節點至 AKS 叢集。
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) 是開源元件。若其他 controller 支援 [Karpenter-core](https://sigs.k8s.io/karpenter) API，也可替換使用。
 
-## 概覽影片
-[觀看 Kaito 演示](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+## 概覽影片  
+[觀看 Kaito 示範](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## 安裝
 
-請參考 [安裝指南](https://github.com/Azure/kaito/blob/main/docs/installation.md)。
+請參考此處的安裝說明 [here](https://github.com/Azure/kaito/blob/main/docs/installation.md)。
 
-## 快速入門
+## 快速開始
 
-安裝 Kaito 後，可以嘗試以下命令啟動微調服務。
+安裝 Kaito 後，可以嘗試以下指令啟動微調服務。
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-可以通過以下命令跟蹤工作區狀態。當 WORKSPACEREADY 列顯示 `True` 時，模型已成功部署。
+可透過執行以下指令追蹤 workspace 狀態。當 WORKSPACEREADY 欄位變成 `True`，表示模型已成功部署。
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-接下來，可以找到推理服務的集群 IP，並使用臨時 `curl` pod 測試集群中的服務端點。
+接著，可找到推論服務的叢集 IP，並使用臨時的 `curl` pod 測試叢集內的服務端點。
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -113,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **免責聲明**：  
-本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，機器翻譯可能包含錯誤或不精確之處。原始語言的文件應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋概不負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威資料。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。

@@ -1,70 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "8782d16f62bc2bdae1f0b38f39a2417c",
-  "translation_date": "2025-04-04T12:09:00+00:00",
-  "source_file": "md\\01.Introduction\\03\\Remote_Interence.md",
+  "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
+  "translation_date": "2025-05-08T05:57:56+00:00",
+  "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "ja"
 }
 -->
-# リモート環境で微調整済みモデルを推論
+# ファインチューニング済みモデルを使ったリモート推論
 
-リモート環境でアダプターをトレーニングした後、簡単なGradioアプリケーションを使用してモデルと対話できます。
+リモート環境でアダプターのトレーニングが完了したら、シンプルなGradioアプリケーションを使ってモデルと対話します。
 
-![微調整完了](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.ja.png)
+![ファインチューニング完了](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.ja.png)
 
-### Azureリソースの準備
-コマンドパレットから`AI Toolkit: Provision Azure Container Apps for inference`を実行して、リモート推論用のAzureリソースを設定する必要があります。この設定中に、Azureサブスクリプションとリソースグループを選択するよう求められます。  
-![推論リソースの準備](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.ja.png)
-   
-デフォルトでは、推論用のサブスクリプションとリソースグループは微調整に使用したものと一致する必要があります。推論は同じAzure Container App Environmentを使用し、微調整ステップで生成されたAzure Filesに保存されたモデルとモデルアダプターにアクセスします。
+### Azureリソースのプロビジョニング  
+コマンドパレットから`AI Toolkit: Provision Azure Container Apps for inference`を実行して、リモート推論用のAzureリソースをセットアップします。このセットアップ中に、Azureサブスクリプションとリソースグループの選択を求められます。  
+![推論リソースのプロビジョニング](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.ja.png)
 
-## AI Toolkitの使用方法
+デフォルトでは、推論用のサブスクリプションとリソースグループはファインチューニング時と同じものを使用します。推論は同じAzure Container App Environmentを利用し、ファインチューニング時に生成されたAzure Filesに保存されたモデルとモデルアダプターにアクセスします。
 
-### 推論用デプロイ  
-推論コードを修正したり、推論モデルを再ロードしたりする場合は、`AI Toolkit: Deploy for inference`コマンドを実行してください。このコマンドは最新のコードをACAに同期し、レプリカを再起動します。
+## AI Toolkitの使用
 
-![推論用デプロイ](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.ja.png)
+### 推論用のデプロイ  
+推論コードを修正したり、推論モデルを再読み込みしたい場合は、`AI Toolkit: Deploy for inference`コマンドを実行してください。これにより、最新のコードがACAと同期され、レプリカが再起動されます。
 
-デプロイが成功すると、エンドポイントを使用してモデルを評価する準備が整います。
+![推論用デプロイ](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.ja.png)
+
+デプロイが正常に完了すると、このエンドポイントを使ってモデルの評価が可能になります。
 
 ### 推論APIへのアクセス
 
-VSCode通知に表示される「*Go to Inference Endpoint*」ボタンをクリックすることで推論APIにアクセスできます。また、Web APIエンドポイントは`ACA_APP_ENDPOINT`の`./infra/inference.config.json`や出力パネルに記載されています。
+VSCodeの通知に表示される「*Go to Inference Endpoint*」ボタンをクリックすることで推論APIにアクセスできます。あるいは、`./infra/inference.config.json`の`ACA_APP_ENDPOINT`にあるWeb APIエンドポイントや出力パネルからも確認可能です。
 
-![アプリエンドポイント](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.ja.png)
+![アプリエンドポイント](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.ja.png)
 
-> **Note:** 推論エンドポイントが完全に動作するまで数分かかる場合があります。
+> **Note:** 推論エンドポイントが完全に動作可能になるまで数分かかる場合があります。
 
 ## テンプレートに含まれる推論コンポーネント
- 
-| フォルダ | 内容 |
+
+| フォルダー | 内容 |
 | ------ |--------- |
-| `infra` | リモート操作に必要なすべての設定を含む。 |
-| `infra/provision/inference.parameters.json` | Azureリソースをプロビジョニングするためのbicepテンプレートのパラメータを保持。 |
-| `infra/provision/inference.bicep` | Azureリソースをプロビジョニングするためのテンプレートを含む。 |
-| `infra/inference.config.json` | `AI Toolkit: Provision Azure Container Apps for inference`コマンドによって生成された設定ファイル。他のリモートコマンドパレットの入力として使用される。 |
+| `infra` | リモート操作に必要なすべての設定が含まれています。 |
+| `infra/provision/inference.parameters.json` | 推論用Azureリソースのプロビジョニングに使うbicepテンプレートのパラメーターが格納されています。 |
+| `infra/provision/inference.bicep` | 推論用Azureリソースのプロビジョニング用テンプレートが含まれています。 |
+| `infra/inference.config.json` | `AI Toolkit: Provision Azure Container Apps for inference`コマンドで生成される設定ファイルで、他のリモートコマンドパレットの入力として使用されます。 |
 
-### AI Toolkitを使用したAzureリソースプロビジョニングの設定
-[AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)を設定してください。
+### AI Toolkitを使ったAzureリソースプロビジョニングの設定  
+[AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)を設定します。
 
-推論用のAzure Container Appsをプロビジョニングするには` command.
+推論用のAzure Container Appsをプロビジョニングするには、`./infra/provision/inference.parameters.json`ファイルの`defaultCommands`、`maximumInstanceCount`、`location`、`storageAccountName`、`fileShareName`、`acaEnvironmentName`、`acaEnvironmentStorageName`、`acaAppName`、`acaLogAnalyticsName`などのパラメーターを編集します。編集後、コマンドパレットから`AI Toolkit: Provision Azure Container Apps for inference`コマンドを実行してください。これにより指定されたリソースの更新や不足しているリソースの作成が行われます。
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
-| --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
-
-### Using Existing Azure Resources
-
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
-
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json`ファイルを使用します。そして、コマンドパレットから`AI Toolkit: Provision Azure Container Apps for inference`コマンドを実行してください。この操作により、指定されたリソースが更新され、不足しているものが作成されます。
-
-例えば、既存のAzureコンテナ環境がある場合、`./infra/finetuning.parameters.json`は次のようになります：
+例えば、既存のAzureコンテナ環境がある場合、`./infra/finetuning.parameters.json`は以下のようになります：
 
 ```json
 {
@@ -84,9 +70,9 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 ### 手動プロビジョニング  
-Azureリソースを手動で設定したい場合は、`./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`ファイル内の提供されたbicepファイルを使用できます。
+Azureリソースを手動で設定したい場合は、`./infra/provision`内のbicepファイルと`inference.config.json`ファイルを使用できます。
 
-例えば：
+例：
 
 ```json
 {
@@ -99,5 +85,5 @@ Azureリソースを手動で設定したい場合は、`./infra/provision` fold
 }
 ```
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性がありますのでご注意ください。原文書の母国語版を信頼できる情報源としてお考えください。重要な情報については、専門の人間による翻訳をお勧めします。この翻訳の使用に起因する誤解や誤解釈について、当社は一切責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されています。正確性には努めておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご了承ください。原文の言語によるオリジナルの文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

@@ -1,15 +1,16 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "79d66be47fdf7961abe34c07d4cbf5b2",
-  "translation_date": "2025-04-04T06:51:40+00:00",
-  "source_file": "md\\02.Application\\05.Audio\\Phi4\\Transciption\\README.md",
+  "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
+  "translation_date": "2025-05-08T05:54:27+00:00",
+  "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "tw"
 }
 -->
-## **使用 Phi-4-multimodal 提取音頻文本**
+## **使用 Phi-4-multimodal 擷取語音文字稿**
 
-Phi-4-multimodal 是一個全模態模型，除了文本和圖片外，它還可以處理音頻。讓我們來看看如何使用它。
+Phi-4-multimodal 是一個全模態模型，除了文字和圖片外，還能使用語音。讓我們來看看怎麼使用它。
+
 
 ```python
 
@@ -65,4 +66,4 @@ print(response)
 ```
 
 **免責聲明**：  
-本文檔使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，機器翻譯可能包含錯誤或不準確之處。原始語言版本的文件應被視為權威來源。對於關鍵信息，建議尋求專業的人工翻譯。我們對因使用本翻譯而產生的任何誤解或錯誤解釋不承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。本公司不對因使用本翻譯而產生之任何誤解或誤譯負責。

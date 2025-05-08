@@ -1,21 +1,22 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "17451c69069b49f37a5395131a61ee52",
-  "translation_date": "2025-04-04T12:47:28+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi4\\ChatWithPhi4ONNX\\README.md",
+  "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
+  "translation_date": "2025-05-08T05:35:02+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "ja"
 }
 -->
-# **Phi-4-mini ONNXとチャット**
+# **Phi-4-mini ONNXとのチャット**
 
-***ONNX*** は、機械学習モデルを表現するためのオープンフォーマットです。ONNXは、機械学習およびディープラーニングモデルの構成要素である共通の演算子セットと、さまざまなフレームワーク、ツール、ランタイム、コンパイラでモデルを利用できるようにする共通のファイル形式を定義しています。
+***ONNX***は、機械学習モデルを表現するためのオープンフォーマットです。ONNXは、機械学習やディープラーニングモデルの基本要素である共通のオペレーターセットと、様々なフレームワーク、ツール、ランタイム、コンパイラーでモデルを利用できる共通のファイルフォーマットを定義しています。
 
-私たちは生成型AIモデルをエッジデバイスで展開し、限られた計算能力やオフライン環境で使用することを目指しています。この目標は、モデルを量子化することで達成できます。量子化されたモデルをGGUFまたはONNX形式に変換することが可能です。
+ジェネレーティブAIモデルをエッジデバイスに展開し、限られた計算資源やオフライン環境で利用することを目指しています。現在、この目標はモデルを量子化して変換することで実現可能です。量子化モデルはGGUFまたはONNX形式に変換できます。
 
-Microsoft Oliveを使用すると、SLMを量子化されたONNX形式に変換できます。モデル変換を実現する方法は非常に簡単です。
+Microsoft OliveはSLMを量子化されたONNX形式に変換するのを支援します。モデル変換を実現する方法は非常に簡単です。
 
 **Microsoft Olive SDKのインストール**
+
 
 ```bash
 
@@ -25,7 +26,7 @@ pip install transformers
 
 ```
 
-**CPU ONNXサポートの変換**
+**CPU ONNXサポートへの変換**
 
 ```bash
 
@@ -33,9 +34,10 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Note*** この例ではCPUを使用しています。
+***Note*** この例はCPUを使用しています
 
-### **ONNX Runtime GenAIを使ったPhi-4-mini ONNXモデルの推論**
+
+### **ONNX Runtime GenAIでPhi-4-mini ONNXモデルを推論する**
 
 - **ONNX Runtime GenAIのインストール**
 
@@ -47,7 +49,7 @@ pip install --pre onnxruntime-genai
 
 - **Pythonコード**
 
-*こちらはONNX Runtime GenAIバージョン0.5.2です*
+*これはONNX Runtime GenAI 0.5.2バージョンです*
 
 ```python
 
@@ -102,7 +104,8 @@ while not generator.is_done():
 
 ```
 
-*こちらはONNX Runtime GenAIバージョン0.6.0です*
+
+*これはONNX Runtime GenAI 0.6.0バージョンです*
 
 ```python
 
@@ -155,5 +158,5 @@ while not generator.is_done():
 
 ```
 
-**免責事項**:  
-本書類は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を期すよう努めておりますが、自動翻訳には誤りや不正確さが含まれる可能性があることをご了承ください。原文（元の言語で記載された文書）が公式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用に起因する誤解や誤訳について、当方は一切の責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご了承ください。原文はあくまで権威ある情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や解釈の違いについて、一切の責任を負いかねます。
