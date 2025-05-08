@@ -1,62 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82289836c6113c9df7544eec1fc54802",
-  "translation_date": "2025-04-04T07:15:38+00:00",
-  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
+  "translation_date": "2025-05-08T05:15:39+00:00",
+  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "ko"
 }
 -->
 ## VS Code용 AI Toolkit에 오신 것을 환영합니다
 
-[VS Code용 AI Toolkit](https://github.com/microsoft/vscode-ai-toolkit/tree/main)은 Azure AI Studio Catalog 및 Hugging Face와 같은 기타 카탈로그의 다양한 모델을 하나로 통합합니다. 이 툴킷은 생성형 AI 도구 및 모델을 활용한 AI 앱 개발의 일반적인 작업을 간소화합니다:
-- 모델 탐색 및 플레이그라운드로 시작하기
-- 로컬 컴퓨팅 자원을 활용한 모델 세부 조정 및 추론
-- Azure 자원을 활용한 원격 세부 조정 및 추론
+[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main)는 Azure AI Studio Catalog와 Hugging Face 같은 다양한 카탈로그의 모델을 한데 모았습니다. 이 툴킷은 생성형 AI 도구와 모델을 활용해 AI 앱을 개발하는 일반적인 작업을 간소화합니다:
+- 모델 탐색과 플레이그라운드로 시작하기
+- 로컬 컴퓨팅 자원을 이용한 모델 파인튜닝과 추론
+- Azure 자원을 이용한 원격 파인튜닝과 추론
 
-[VS Code용 AI Toolkit 설치하기](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[VSCode용 AI Toolkit 설치하기](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.ko.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.ko.png)
 
-**[Private Preview]** 클라우드에서 모델 세부 조정 및 추론을 실행하기 위한 Azure Container Apps의 원클릭 프로비저닝.
+
+**[Private Preview]** 원클릭으로 Azure Container Apps를 프로비저닝해 클라우드에서 모델 파인튜닝과 추론을 실행할 수 있습니다.
 
 이제 AI 앱 개발을 시작해 봅시다:
 
 - [VS Code용 AI Toolkit에 오신 것을 환영합니다](../../../../md/03.FineTuning)
 - [로컬 개발](../../../../md/03.FineTuning)
-  - [준비](../../../../md/03.FineTuning)
+  - [준비사항](../../../../md/03.FineTuning)
   - [Conda 활성화](../../../../md/03.FineTuning)
-  - [기본 모델 세부 조정만 수행](../../../../md/03.FineTuning)
-  - [모델 세부 조정 및 추론](../../../../md/03.FineTuning)
-  - [모델 세부 조정](../../../../md/03.FineTuning)
+  - [기본 모델 파인튜닝만 실행하기](../../../../md/03.FineTuning)
+  - [모델 파인튜닝과 추론](../../../../md/03.FineTuning)
+  - [모델 파인튜닝](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [세부 조정 샘플 및 리소스](../../../../md/03.FineTuning)
+  - [파인튜닝 샘플과 자료](../../../../md/03.FineTuning)
 - [**\[Private Preview\]** 원격 개발](../../../../md/03.FineTuning)
-  - [사전 요구 사항](../../../../md/03.FineTuning)
+  - [필수 조건](../../../../md/03.FineTuning)
   - [원격 개발 프로젝트 설정](../../../../md/03.FineTuning)
   - [Azure 자원 프로비저닝](../../../../md/03.FineTuning)
-  - [\[선택 사항\] Huggingface 토큰을 Azure Container App 비밀에 추가](../../../../md/03.FineTuning)
-  - [세부 조정 실행](../../../../md/03.FineTuning)
+  - [\[선택 사항\] Azure Container App 비밀에 Huggingface 토큰 추가하기](../../../../md/03.FineTuning)
+  - [파인튜닝 실행](../../../../md/03.FineTuning)
   - [추론 엔드포인트 프로비저닝](../../../../md/03.FineTuning)
   - [추론 엔드포인트 배포](../../../../md/03.FineTuning)
   - [고급 사용법](../../../../md/03.FineTuning)
 
 ## 로컬 개발
-### 준비
+### 준비사항
 
 1. 호스트에 NVIDIA 드라이버가 설치되어 있는지 확인하세요.
-2. 데이터셋 활용을 위해 HF를 사용하는 경우 `huggingface-cli login`을 실행하세요.
-3. 메모리 사용량을 수정하는 모든 설정에 대한 `Olive` 키 설명.
+2. 데이터셋 활용을 위해 HF를 사용하는 경우 `huggingface-cli login`를 실행하세요.
+3. 메모리 사용량을 변경하는 설정에 대해서는 `Olive` 키 설정 설명을 참고하세요.
 
 ### Conda 활성화
-WSL 환경을 사용 중이며 공유되므로 Conda 환경을 수동으로 활성화해야 합니다. 이 단계 후 세부 조정 또는 추론을 실행할 수 있습니다.
+WSL 환경을 사용하고 공유되기 때문에 conda 환경을 수동으로 활성화해야 합니다. 이 단계를 마치면 파인튜닝이나 추론을 실행할 수 있습니다.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### 기본 모델 세부 조정만 수행
-세부 조정 없이 기본 모델만 시도하려면 Conda를 활성화한 후 아래 명령을 실행하세요.
+### 기본 모델 파인튜닝만 실행하기
+파인튜닝 없이 기본 모델을 시험해보고 싶다면 conda 활성화 후 아래 명령어를 실행하세요.
 
 ```bash
 cd inference
@@ -66,9 +67,9 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### 모델 세부 조정 및 추론
+### 모델 파인튜닝과 추론
 
-워크스페이스가 개발 컨테이너에서 열리면 터미널을 열고(기본 경로는 프로젝트 루트) 아래 명령을 실행하여 선택한 데이터셋에서 LLM을 세부 조정합니다.
+개발 컨테이너에서 작업공간을 열면 터미널(기본 경로는 프로젝트 루트)을 열고 아래 명령어를 실행해 선택한 데이터셋으로 LLM을 파인튜닝할 수 있습니다.
 
 ```bash
 python finetuning/invoke_olive.py 
@@ -172,10 +173,10 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json`을 사용하고 출력 패널에서 모델을 평가할 준비가 되었습니다.
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` 및 출력 패널을 사용하여 모델을 평가할 준비가 완료되었습니다.
 
 ### 고급 사용법
-AI Toolkit을 활용한 원격 개발에 대한 추가 정보는 [원격으로 모델 세부 조정](https://aka.ms/ai-toolkit/remote-provision) 및 [세부 조정된 모델로 추론](https://aka.ms/ai-toolkit/remote-inference) 문서를 참조하세요.
+AI Toolkit을 이용한 원격 개발에 대한 자세한 내용은 [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) 및 [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference) 문서를 참고하세요.
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역은 오류나 부정확성을 포함할 수 있습니다. 원본 문서를 해당 언어로 작성된 상태로 권위 있는 자료로 간주해야 합니다. 중요한 정보에 대해서는 전문적인 인간 번역을 권장합니다. 이 번역을 사용하는 과정에서 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 내용이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서는 해당 언어의 원문이 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

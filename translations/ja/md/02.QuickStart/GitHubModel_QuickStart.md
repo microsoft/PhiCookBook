@@ -1,23 +1,23 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "3f37da1518bfb2cc9a8faa427fb0c916",
-  "translation_date": "2025-04-04T13:07:23+00:00",
-  "source_file": "md\\02.QuickStart\\GitHubModel_QuickStart.md",
+  "original_hash": "5113634b77370af6790f9697d5d7de90",
+  "translation_date": "2025-05-08T05:00:49+00:00",
+  "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "ja"
 }
 -->
-## GitHub Models - 限定公開ベータ版
+## GitHub Models - 限定パブリックベータ
 
-[GitHub Models](https://github.com/marketplace/models)へようこそ！Azure AI上でホストされているAIモデルを探索する準備が整いました。
+[GitHub Models](https://github.com/marketplace/models)へようこそ！Azure AI上でホストされているAIモデルを探索できる環境が整っています。
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.ja.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.ja.png)
 
-GitHub Modelsで利用可能なモデルについて詳しくは、[GitHub Model Marketplace](https://github.com/marketplace/models)をご覧ください。
+GitHub Modelsで利用可能なモデルの詳細については、[GitHub Model Marketplace](https://github.com/marketplace/models)をご覧ください。
 
 ## 利用可能なモデル
 
-各モデルには専用のプレイグラウンドとサンプルコードが用意されています。
+各モデルには専用のプレイグラウンドとサンプルコードがあります。
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -35,55 +35,54 @@ GitHub Modelsで利用可能なモデルについて詳しくは、[GitHub Model
 
 [Phi-3-small-8k-instruct](https://github.com/marketplace/models/azureml/Phi-3-small-8k-instruct)
 
-## 始め方
+## はじめに
 
-すぐに実行可能な基本的な例がいくつか用意されています。これらはサンプルディレクトリにあります。特定の言語を使いたい場合は、以下の言語別の例を参照してください：
+すぐに実行できる基本的な例がいくつか用意されています。samplesディレクトリで見つけることができます。お好みの言語に直接ジャンプしたい場合は、以下の言語の例をご覧ください。
 
 - Python
 - JavaScript
 - cURL
 
-サンプルやモデルを実行する専用のCodespaces環境も用意されています。
+また、サンプルやモデルを実行するための専用のCodespaces環境も用意されています。
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.ja.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.ja.png)
 
 ## サンプルコード
 
-以下は、いくつかのユースケースに対応したサンプルコードスニペットです。Azure AI Inference SDKの詳細については、完全なドキュメントとサンプルをご覧ください。
+以下は、いくつかのユースケースの例コードスニペットです。Azure AI Inference SDKの詳細については、公式ドキュメントとサンプルをご参照ください。
 
 ## セットアップ
 
-1. 個人アクセストークンを作成する  
-トークンに特別な権限を付与する必要はありません。このトークンはMicrosoftのサービスに送信されることに注意してください。
+1. パーソナルアクセストークンを作成します  
+トークンに特別な権限を付与する必要はありません。トークンはMicrosoftのサービスに送信されることに注意してください。
 
-以下のコードスニペットを使用するためには、環境変数を作成してトークンをクライアントコードのキーとして設定してください。
+以下のコードスニペットを使うには、環境変数としてトークンをクライアントコードのキーに設定してください。
 
-bashを使用している場合：  
+bashを使っている場合：  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-powershellを使用している場合：  
+powershellの場合：  
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-
-Windowsコマンドプロンプトを使用している場合：  
+Windowsコマンドプロンプトの場合：  
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
-```  
+```
 
 ## Pythonサンプル
 
-### 依存関係のインストール
-pipを使用してAzure AI Inference SDKをインストールします（必要条件：Python >=3.8）。
+### 依存関係のインストール  
+pipを使ってAzure AI Inference SDKをインストールします（Python 3.8以上が必要）：
 
 ```
 pip install azure-ai-inference
-```  
+```
 
-### 基本的なコードサンプルを実行する
+### 基本的なコードサンプルの実行
 
-このサンプルは、チャット補完APIへの基本的な呼び出しを示しています。GitHub AIモデル推論エンドポイントとGitHubトークンを利用しています。この呼び出しは同期的です。
+このサンプルはchat completion APIへの基本的な呼び出しを示しています。GitHub AIモデルの推論エンドポイントとGitHubトークンを利用しています。呼び出しは同期的です。
 
 ```
 import os
@@ -113,11 +112,11 @@ response = client.complete(
 )
 
 print(response.choices[0].message.content)
-```  
+```
 
-### マルチターン会話を実行する
+### マルチターン会話の実行
 
-このサンプルは、チャット補完APIを使用したマルチターン会話を示しています。チャットアプリケーションでモデルを使用する際には、会話の履歴を管理し、最新のメッセージをモデルに送信する必要があります。
+このサンプルはchat completion APIを使ったマルチターン会話を示しています。チャットアプリケーションでモデルを使う場合は、会話履歴を管理し最新のメッセージをモデルに送る必要があります。
 
 ```
 import os
@@ -145,11 +144,11 @@ messages = [
 response = client.complete(messages=messages, model=model_name)
 
 print(response.choices[0].message.content)
-```  
+```
 
-### 出力をストリームする
+### 出力のストリーミング
 
-より良いユーザー体験のためには、モデルの応答をストリームして最初のトークンを早く表示し、長い応答を待つことを避けることが推奨されます。
+より良いユーザー体験のために、モデルの応答をストリーミングし、最初のトークンが早く表示されるようにして、長い応答を待つのを避けましょう。
 
 ```
 import os
@@ -181,15 +180,15 @@ for update in response:
         print(update.choices[0].delta.content or "", end="")
 
 client.close()
-```  
+```
 
 ## JavaScript
 
 ### 依存関係のインストール
 
-Node.jsをインストールします。
+Node.jsをインストールしてください。
 
-以下のテキストをコピーして、フォルダー内にpackage.jsonという名前で保存してください。
+以下のテキストをコピーして、フォルダ内にpackage.jsonとして保存してください。
 
 ```
 {
@@ -200,17 +199,17 @@ Node.jsをインストールします。
     "@azure/core-sse": "latest"
   }
 }
-```  
+```
 
-注: @azure/core-sseは、チャット補完応答をストリームする場合にのみ必要です。
+注意：@azure/core-sseはチャット完了のレスポンスをストリーミングする場合のみ必要です。
 
-このフォルダーでターミナルウィンドウを開き、npm installを実行してください。
+このフォルダでターミナルを開き、npm installを実行してください。
 
-以下のコードスニペットをそれぞれコピーして、sample.jsというファイルに保存し、node sample.jsで実行してください。
+以下のコードスニペットはそれぞれsample.jsにコピーし、node sample.jsで実行します。
 
-### 基本的なコードサンプルを実行する
+### 基本的なコードサンプルの実行
 
-このサンプルは、チャット補完APIへの基本的な呼び出しを示しています。GitHub AIモデル推論エンドポイントとGitHubトークンを利用しています。この呼び出しは同期的です。
+このサンプルはchat completion APIへの基本的な呼び出しを示しています。GitHub AIモデルの推論エンドポイントとGitHubトークンを利用しています。呼び出しは同期的です。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -247,11 +246,11 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-### マルチターン会話を実行する
+### マルチターン会話の実行
 
-このサンプルは、チャット補完APIを使用したマルチターン会話を示しています。チャットアプリケーションでモデルを使用する際には、会話の履歴を管理し、最新のメッセージをモデルに送信する必要があります。
+このサンプルはchat completion APIを使ったマルチターン会話を示しています。チャットアプリケーションでモデルを使う場合は、会話履歴を管理し最新のメッセージをモデルに送る必要があります。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -290,11 +289,11 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-### 出力をストリームする
+### 出力のストリーミング
 
-より良いユーザー体験のためには、モデルの応答をストリームして最初のトークンを早く表示し、長い応答を待つことを避けることが推奨されます。
+より良いユーザー体験のために、モデルの応答をストリーミングし、最初のトークンが早く表示されるようにして、長い応答を待つのを避けましょう。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -346,11 +345,11 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
 ## REST
 
-### 基本的なコードサンプルを実行する
+### 基本的なコードサンプルの実行
 
 以下をシェルに貼り付けてください：
 
@@ -371,11 +370,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
 
-### マルチターン会話を実行する
+### マルチターン会話の実行
 
-チャット履歴を渡してチャット補完APIを呼び出してください：
+chat completion APIを呼び出し、チャット履歴を渡します：
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -402,11 +401,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
 
-### 出力をストリームする
+### 出力のストリーミング
 
-エンドポイントを呼び出し、応答をストリームする例です。
+エンドポイントを呼び出し、レスポンスをストリーミングする例です。
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -426,23 +425,23 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "stream": true,
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
 
 ## GitHub Modelsの無料利用とレート制限
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.ja.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.ja.png)
 
-プレイグラウンドと無料API利用の[レート制限](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits)は、モデルを試してAIアプリケーションをプロトタイプするためのものです。これらの制限を超えて利用する場合や、アプリケーションをスケールさせたい場合は、Azureアカウントからリソースをプロビジョニングし、そこから認証する必要があります。コードの他の部分を変更する必要はありません。Azure AIで無料利用枠を超える方法については、こちらのリンクをご覧ください。
+[プレイグラウンドおよび無料API利用のレート制限](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits)は、モデルの実験やAIアプリケーションのプロトタイプ作成を支援するためのものです。これらの制限を超えて利用し、アプリケーションを本格運用するには、Azureアカウントでリソースをプロビジョニングし、GitHubのパーソナルアクセストークンではなくそちらから認証を行う必要があります。コードの他の部分を変更する必要はありません。Azure AIの無料枠を超える方法については、こちらのリンクをご参照ください。
 
 ### 注意事項
 
-モデルを操作する際には、AIを試していることを念頭に置いてください。そのため、コンテンツに誤りが含まれる可能性があります。
+モデルと対話するときは、AIを実験していることを念頭に置いてください。内容に誤りが含まれる可能性があります。
 
-この機能には様々な制限（1分あたりのリクエスト数、1日あたりのリクエスト数、リクエストごとのトークン数、同時リクエスト数など）があり、プロダクション用途には設計されていません。
+この機能はさまざまな制限（1分あたりのリクエスト数、1日あたりのリクエスト数、リクエストごとのトークン数、同時リクエスト数など）があり、本番用途向けではありません。
 
-GitHub ModelsはAzure AIコンテンツセーフティを使用しています。これらのフィルターはGitHub Modelsの利用体験の一部としてオフにすることはできません。有料サービスを通じてモデルを使用する場合は、コンテンツフィルターをニーズに合わせて設定してください。
+GitHub ModelsはAzure AI Content Safetyを使用しています。これらのフィルターはGitHub Modelsの利用時にオフにできません。有料サービスでモデルを利用する場合は、要件に応じてコンテンツフィルターを設定してください。
 
-このサービスはGitHubのプレリリース規約の対象となります。
+このサービスはGitHubのプレリリース利用規約の対象です。
 
-**免責事項**:  
-この文書はAI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。元の言語で記載された原文が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や解釈の誤りについて、当方は責任を負いません。
+**免責事項**：  
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。原文の言語による文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の利用により生じたいかなる誤解や誤訳についても責任を負いかねます。

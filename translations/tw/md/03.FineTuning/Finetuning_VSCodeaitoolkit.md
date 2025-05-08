@@ -1,62 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82289836c6113c9df7544eec1fc54802",
-  "translation_date": "2025-04-04T07:15:03+00:00",
-  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
+  "translation_date": "2025-05-08T05:15:29+00:00",
+  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "tw"
 }
 -->
-## 歡迎使用 VS Code 的 AI 工具包
+## 歡迎使用 VS Code 的 AI Toolkit
 
-[AI 工具包 for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) 結合了 Azure AI Studio Catalog 和其他如 Hugging Face 的模型目錄。此工具包簡化了使用生成式 AI 工具和模型開發 AI 應用的常見任務，包括：
-- 快速開始模型探索和測試。
-- 使用本地計算資源進行模型微調和推理。
-- 使用 Azure 資源進行遠端微調和推理。
+[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) 整合了來自 Azure AI Studio Catalog 以及其他目錄如 Hugging Face 的多種模型。這個工具組簡化了使用生成式 AI 工具和模型來開發 AI 應用程式的常見開發任務，包括：
+- 快速開始模型探索和遊樂場。
+- 使用本地運算資源進行模型微調與推論。
+- 使用 Azure 資源進行遠端微調與推論。
 
-[安裝 AI 工具包 for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[安裝 AI Toolkit for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.tw.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.tw.png)
 
-**[私密預覽]** 一鍵佈署 Azure Container Apps 以在雲端進行模型微調和推理。
 
-現在開始您的 AI 應用開發：
+**[Private Preview]** 一鍵佈署 Azure Container Apps，讓模型微調和推論能在雲端執行。
 
-- [歡迎使用 VS Code 的 AI 工具包](../../../../md/03.FineTuning)
+現在讓我們開始你的 AI 應用程式開發：
+
+- [歡迎使用 VS Code 的 AI Toolkit](../../../../md/03.FineTuning)
 - [本地開發](../../../../md/03.FineTuning)
   - [準備工作](../../../../md/03.FineTuning)
-  - [啟用 Conda](../../../../md/03.FineTuning)
+  - [啟動 Conda](../../../../md/03.FineTuning)
   - [僅微調基礎模型](../../../../md/03.FineTuning)
-  - [模型微調與推理](../../../../md/03.FineTuning)
+  - [模型微調與推論](../../../../md/03.FineTuning)
   - [模型微調](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
   - [微調範例與資源](../../../../md/03.FineTuning)
-- [**\[私密預覽\]** 遠端開發](../../../../md/03.FineTuning)
-  - [必要條件](../../../../md/03.FineTuning)
+- [**\[Private Preview\]** 遠端開發](../../../../md/03.FineTuning)
+  - [先決條件](../../../../md/03.FineTuning)
   - [設定遠端開發專案](../../../../md/03.FineTuning)
   - [佈署 Azure 資源](../../../../md/03.FineTuning)
-  - [\[可選\] 將 Huggingface Token 添加到 Azure Container App Secret](../../../../md/03.FineTuning)
+  - [\[選用\] 將 Huggingface Token 加入 Azure Container App Secret](../../../../md/03.FineTuning)
   - [執行微調](../../../../md/03.FineTuning)
-  - [佈署推理端點](../../../../md/03.FineTuning)
-  - [部署推理端點](../../../../md/03.FineTuning)
-  - [進階使用方式](../../../../md/03.FineTuning)
+  - [佈署推論端點](../../../../md/03.FineTuning)
+  - [部署推論端點](../../../../md/03.FineTuning)
+  - [進階用法](../../../../md/03.FineTuning)
 
 ## 本地開發
 ### 準備工作
 
-1. 確保主機已安裝 NVIDIA 驅動程式。
-2. 如果使用 HF 進行數據集操作，請執行 `huggingface-cli login`。
-3. `Olive` 關於修改記憶體使用的設定解釋。
+1. 確認主機已安裝 NVIDIA 驅動程式。
+2. 如果使用 HF 進行資料集使用，請執行 `huggingface-cli login`。
+3. `Olive` 是關於修改記憶體使用的設定說明。
 
-### 啟用 Conda
-由於我們使用的是 WSL 環境並且是共享的，您需要手動啟用 Conda 環境。完成此步驟後，您可以執行微調或推理。
+### 啟動 Conda
+因為我們使用的是共用的 WSL 環境，所以需要手動啟動 conda 環境。完成這步後即可執行微調或推論。
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
 ### 僅微調基礎模型
-如果您只想嘗試基礎模型而不進行微調，可以在啟用 Conda 後執行以下命令。
+如果只想嘗試基礎模型而不做微調，啟動 conda 後可執行以下指令。
 
 ```bash
 cd inference
@@ -66,15 +67,15 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### 模型微調與推理
+### 模型微調與推論
 
-當工作空間在開發容器中打開後，打開終端（默認路徑為專案根目錄），然後執行以下命令，對選定的數據集進行 LLM 微調。
+當工作區在開發容器中開啟後，打開終端機（預設路徑為專案根目錄），執行以下指令對選定的資料集進行大型語言模型微調。
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-檢查點和最終模型將保存於 `models` folder.
+檢查點與最終模型將會保存在 `models` folder.
 
 Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`。
 
@@ -89,7 +90,7 @@ python console_chat.py
 python gradio_chat.py
 ```
 
-若要使用 `prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
+要使用 `prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
 
 ### Model Fine-tuning
 
@@ -172,10 +173,10 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` 並查看輸出面板。現在您已準備好使用此端點評估模型。
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` 以及輸出面板。你現在已經可以使用此端點來評估模型。
 
-### 進階使用方式
-如需更多關於使用 AI 工具包進行遠端開發的資訊，請參考 [遠端微調模型](https://aka.ms/ai-toolkit/remote-provision) 和 [使用微調模型進行推理](https://aka.ms/ai-toolkit/remote-inference) 的文檔。
+### 進階用法
+關於使用 AI Toolkit 進行遠端開發的更多資訊，請參考 [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) 和 [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference) 文件。
 
 **免責聲明**：  
-本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們致力於提供準確的翻譯，請注意自動翻譯可能包含錯誤或不準確之處。原始語言的文件應被視為權威來源。對於關鍵資訊，建議使用專業人工翻譯。我們對因使用本翻譯而產生的任何誤解或誤釋不承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議使用專業人工翻譯。我們不對因使用本翻譯所引起之任何誤解或誤譯負責。

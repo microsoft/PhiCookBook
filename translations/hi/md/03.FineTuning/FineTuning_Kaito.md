@@ -1,47 +1,48 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "05e69691c294289d217150bec390a5fb",
-  "translation_date": "2025-04-04T18:50:42+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Kaito.md",
+  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
+  "translation_date": "2025-05-08T05:23:17+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "hi"
 }
 -->
 ## Kaito के साथ फाइन-ट्यूनिंग
 
-[Kaito](https://github.com/Azure/kaito) एक ऑपरेटर है जो Kubernetes क्लस्टर में AI/ML इंफरेंस मॉडल को डिप्लॉय करने को ऑटोमेट करता है।
+[Kaito](https://github.com/Azure/kaito) एक ऑपरेटर है जो Kubernetes क्लस्टर में AI/ML इन्फरेंस मॉडल डिप्लॉयमेंट को स्वचालित करता है।
 
-Kaito के पास मुख्यधारा के मॉडल डिप्लॉयमेंट तरीकों की तुलना में निम्नलिखित प्रमुख अंतर हैं, जो वर्चुअल मशीन इंफ्रास्ट्रक्चर पर आधारित होते हैं:
+Kaito के पास अधिकांश मुख्यधारा के मॉडल डिप्लॉयमेंट विधियों की तुलना में कुछ प्रमुख अंतर हैं, जो वर्चुअल मशीन इन्फ्रास्ट्रक्चर पर आधारित हैं:
 
-- कंटेनर इमेज का उपयोग करके मॉडल फाइल्स को प्रबंधित करें। मॉडल लाइब्रेरी का उपयोग करके इंफरेंस कॉल्स करने के लिए एक HTTP सर्वर प्रदान किया जाता है।
-- GPU हार्डवेयर के अनुसार डिप्लॉयमेंट पैरामीटर्स को ट्यून करने से बचें, क्योंकि प्रीसेट कॉन्फ़िगरेशन उपलब्ध हैं।
-- मॉडल की आवश्यकताओं के आधार पर GPU नोड्स को ऑटो-प्रोविजन करें।
-- यदि लाइसेंस अनुमति देता है, तो बड़े मॉडल इमेज को सार्वजनिक Microsoft Container Registry (MCR) में होस्ट करें।
+- मॉडल फाइलों को कंटेनर इमेजेज के माध्यम से प्रबंधित करना। मॉडल लाइब्रेरी का उपयोग करके इन्फरेंस कॉल करने के लिए एक HTTP सर्वर प्रदान किया जाता है।
+- GPU हार्डवेयर के अनुसार डिप्लॉयमेंट पैरामीटर को ट्यून करने से बचने के लिए प्रीसेट कॉन्फ़िगरेशन प्रदान करना।
+- मॉडल आवश्यकताओं के आधार पर GPU नोड्स का ऑटो-प्रावधान।
+- यदि लाइसेंस अनुमति देता है, तो बड़े मॉडल इमेजेज को सार्वजनिक Microsoft Container Registry (MCR) में होस्ट करना।
 
-Kaito का उपयोग करके Kubernetes में बड़े AI इंफरेंस मॉडल को ऑनबोर्ड करने का वर्कफ़्लो काफी सरल हो जाता है।
+Kaito का उपयोग करके, Kubernetes में बड़े AI इन्फरेंस मॉडल को ऑनबोर्ड करने का कार्यप्रवाह काफी सरल हो जाता है।
 
 ## आर्किटेक्चर
 
-Kaito क्लासिक Kubernetes Custom Resource Definition(CRD)/कंट्रोलर डिज़ाइन पैटर्न का अनुसरण करता है। उपयोगकर्ता एक `workspace` कस्टम रिसोर्स प्रबंधित करते हैं, जो GPU आवश्यकताओं और इंफरेंस स्पेसिफिकेशन का वर्णन करता है। Kaito कंट्रोलर `workspace` कस्टम रिसोर्स को समेटकर डिप्लॉयमेंट को ऑटोमेट कर देते हैं।
+Kaito पारंपरिक Kubernetes Custom Resource Definition (CRD)/controller डिज़ाइन पैटर्न का पालन करता है। उपयोगकर्ता एक `workspace` कस्टम रिसोर्स को प्रबंधित करता है जो GPU आवश्यकताओं और इन्फरेंस विनिर्देशन का वर्णन करता है। Kaito कंट्रोलर `workspace` कस्टम रिसोर्स को मेल करके डिप्लॉयमेंट को स्वचालित करेगा।
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-ऊपर दिए गए चित्र में Kaito आर्किटेक्चर का ओवरव्यू प्रस्तुत किया गया है। इसके मुख्य घटक निम्नलिखित हैं:
+ऊपर दिया गया चित्र Kaito आर्किटेक्चर का अवलोकन प्रस्तुत करता है। इसके मुख्य घटक निम्नलिखित हैं:
 
-- **वर्कस्पेस कंट्रोलर**: यह `workspace` कस्टम रिसोर्स को समेटता है, `machine` (नीचे समझाया गया है) कस्टम रिसोर्स बनाता है ताकि नोड ऑटो-प्रोविजनिंग ट्रिगर हो सके, और मॉडल प्रीसेट कॉन्फ़िगरेशन के आधार पर इंफरेंस वर्कलोड (`deployment` या `statefulset`) बनाता है।
-- **नोड प्रोविजनर कंट्रोलर**: इस कंट्रोलर का नाम [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) में *gpu-provisioner* है। यह [Karpenter](https://sigs.k8s.io/karpenter) से उत्पन्न `machine` CRD का उपयोग वर्कस्पेस कंट्रोलर के साथ बातचीत करने के लिए करता है। यह Azure Kubernetes Service(AKS) APIs के साथ इंटीग्रेट करता है ताकि AKS क्लस्टर में नए GPU नोड्स जोड़े जा सकें।  
-> नोट: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) एक ओपन सोर्स्ड घटक है। इसे अन्य कंट्रोलर्स द्वारा प्रतिस्थापित किया जा सकता है यदि वे [Karpenter-core](https://sigs.k8s.io/karpenter) APIs को सपोर्ट करते हैं।
+- **Workspace controller**: यह `workspace` कस्टम रिसोर्स को मेल करता है, नोड ऑटो प्राविजनिंग को ट्रिगर करने के लिए `machine` (नीचे समझाया गया) कस्टम रिसोर्स बनाता है, और मॉडल प्रीसेट कॉन्फ़िगरेशन के आधार पर इन्फरेंस वर्कलोड (`deployment` या `statefulset`) बनाता है।
+- **Node provisioner controller**: इस कंट्रोलर का नाम [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) में *gpu-provisioner* है। यह [Karpenter](https://sigs.k8s.io/karpenter) से उत्पन्न `machine` CRD का उपयोग करके workspace controller के साथ इंटरैक्ट करता है। यह Azure Kubernetes Service (AKS) APIs के साथ इंटीग्रेट होकर AKS क्लस्टर में नए GPU नोड्स जोड़ता है।  
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) एक ओपन सोर्स कंपोनेंट है। इसे अन्य कंट्रोलर्स से बदला जा सकता है यदि वे [Karpenter-core](https://sigs.k8s.io/karpenter) APIs का समर्थन करते हों।
 
-## ओवरव्यू वीडियो
+## अवलोकन वीडियो  
 [Kaito डेमो देखें](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+
 ## इंस्टॉलेशन
 
-कृपया इंस्टॉलेशन गाइडेंस [यहां](https://github.com/Azure/kaito/blob/main/docs/installation.md) देखें।
+इंस्टॉलेशन मार्गदर्शन के लिए कृपया [यहाँ](https://github.com/Azure/kaito/blob/main/docs/installation.md) देखें।
 
 ## त्वरित शुरुआत
 
-Kaito इंस्टॉल करने के बाद, निम्नलिखित कमांड्स का उपयोग करके एक फाइन-ट्यूनिंग सर्विस शुरू की जा सकती है।
+Kaito इंस्टॉल करने के बाद, फाइन-ट्यूनिंग सेवा शुरू करने के लिए निम्नलिखित कमांड आज़माए जा सकते हैं।
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -92,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-वर्कस्पेस की स्थिति को निम्नलिखित कमांड चलाकर ट्रैक किया जा सकता है। जब WORKSPACEREADY कॉलम `True` हो जाए, तो मॉडल सफलतापूर्वक डिप्लॉय हो चुका है।
+वर्कस्पेस की स्थिति को ट्रैक करने के लिए निम्नलिखित कमांड चलाएं। जब WORKSPACEREADY कॉलम `True` हो जाता है, तो मॉडल सफलतापूर्वक डिप्लॉय हो चुका होता है।
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -100,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-इसके बाद, क्लस्टर के इंफरेंस सर्विस का क्लस्टर IP ढूंढा जा सकता है और एक अस्थायी `curl` pod का उपयोग करके क्लस्टर में सर्विस एन्डपॉइंट का परीक्षण किया जा सकता है।
+इसके बाद, इन्फरेंस सेवा के क्लस्टर IP को खोजा जा सकता है और क्लस्टर में सेवा एंडपॉइंट का परीक्षण करने के लिए एक अस्थायी `curl` पॉड का उपयोग किया जा सकता है।
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -112,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **अस्वीकरण**:  
-यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता सुनिश्चित करने का प्रयास करते हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियां या गलतियां हो सकती हैं। मूल भाषा में लिखा गया मूल दस्तावेज़ ही आधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया ध्यान रखें कि स्वचालित अनुवादों में त्रुटियाँ या गलतियाँ हो सकती हैं। मूल दस्तावेज़ अपनी मूल भाषा में ही अधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए पेशेवर मानव अनुवाद की सलाह दी जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम जिम्मेदार नहीं हैं।

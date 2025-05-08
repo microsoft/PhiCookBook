@@ -1,21 +1,21 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "340bd4c009524ef84102b78d06eea735",
-  "translation_date": "2025-04-04T17:56:52+00:00",
-  "source_file": "md\\01.Introduction\\04\\UsingAppleMLXQuantifyingPhi.md",
+  "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
+  "translation_date": "2025-05-08T06:10:16+00:00",
+  "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
   "language_code": "hk"
 }
 -->
-# **使用 Apple MLX 框架量化 Phi-3.5**
+# **用 Apple MLX Framework 量化 Phi-3.5**
 
-MLX 是 Apple 機器學習研究團隊開發的一個陣列框架，專為 Apple Silicon 上的機器學習研究設計。
+MLX 係 Apple 硅片上用作機器學習研究嘅陣列框架，由 Apple 機器學習研究團隊開發。
 
-MLX 是由機器學習研究人員為機器學習研究人員設計的框架。該框架旨在保持用戶友好，同時仍然高效地進行模型訓練和部署。框架本身的設計概念也非常簡單。我們希望研究人員能夠輕鬆擴展和改進 MLX，以快速探索新想法為目標。
+MLX 係由機器學習研究人員為機器學習研究人員設計。呢個框架旨在用戶友善，但同時又高效，方便訓練同部署模型。框架本身嘅設計概念亦好簡單。我哋希望方便研究人員擴展同改進 MLX，目標係快速探索新嘅想法。
 
-在 Apple Silicon 設備上，可以通過 MLX 加速 LLMs，並且模型可以非常方便地在本地運行。
+喺 Apple 硅片裝置上，透過 MLX 可以加速大型語言模型（LLMs），而且模型可以喺本地非常方便咁運行。
 
-現在，Apple MLX 框架支持 Phi-3.5-Instruct（**Apple MLX Framework 支持**）、Phi-3.5-Vision（**MLX-VLM Framework 支持**）以及 Phi-3.5-MoE（**Apple MLX Framework 支持**）的量化轉換。接下來讓我們試試看：
+而家 Apple MLX Framework 支援 Phi-3.5-Instruct 嘅量化轉換（**Apple MLX Framework 支援**）、Phi-3.5-Vision（**MLX-VLM Framework 支援**）同 Phi-3.5-MoE（**Apple MLX Framework 支援**）。一齊試下啦：
 
 ### **Phi-3.5-Instruct**
 
@@ -41,21 +41,23 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3.5-MoE-instruct  -q
 
 ```
 
-### **🤖 使用 Apple MLX 的 Phi-3.5 示例**
 
-| 實驗室    | 介紹 | 前往 |
+### **🤖 Apple MLX 嘅 Phi-3.5 範例**
+
+| Labs    | 介紹 | 前往 |
 | -------- | ------- |  ------- |
-| 🚀 實驗室 - 介紹 Phi-3.5 Instruct  | 學習如何使用 Apple MLX 框架的 Phi-3.5 Instruct   |  [前往](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
-| 🚀 實驗室 - 介紹 Phi-3.5 Vision（圖像） | 學習如何使用 Apple MLX 框架的 Phi-3.5 Vision 來分析圖像     |  [前往](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
-| 🚀 實驗室 - 介紹 Phi-3.5 Vision（MoE）   | 學習如何使用 Apple MLX 框架的 Phi-3.5 MoE  |  [前往](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | 學習點樣用 Apple MLX framework 搭配 Phi-3.5 Instruct   |  [前往](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (image) | 學習點樣用 Phi-3.5 Vision 配合 Apple MLX framework 分析圖片     |  [前往](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (moE)   | 學習點樣用 Apple MLX framework 搭配 Phi-3.5 MoE  |  [前往](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
+
 
 ## **資源**
 
-1. 了解 Apple MLX 框架 [https://ml-explore.github.io/mlx/](https://ml-explore.github.io/mlx/)
+1. 認識 Apple MLX Framework [https://ml-explore.github.io/mlx/](https://ml-explore.github.io/mlx/)
 
-2. Apple MLX GitHub 倉庫 [https://github.com/ml-explore](https://github.com/ml-explore/mlx)
+2. Apple MLX GitHub Repo [https://github.com/ml-explore](https://github.com/ml-explore/mlx)
 
-3. MLX-VLM GitHub 倉庫 [https://github.com/Blaizzy/mlx-vlm](https://github.com/Blaizzy/mlx-vlm)
+3. MLX-VLM GitHub Repo [https://github.com/Blaizzy/mlx-vlm](https://github.com/Blaizzy/mlx-vlm)
 
 **免責聲明**：  
-此文件已使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為具權威性的來源。對於重要信息，建議尋求專業的人類翻譯。我們不對因使用此翻譯而產生的任何誤解或錯誤解釋承擔責任。
+本文件乃使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 所翻譯。雖然我們致力於準確，但請注意自動翻譯可能包含錯誤或不準確之處。原文文件以其原生語言版本為權威來源。對於重要資料，建議採用專業人工翻譯。我們對因使用此翻譯而引致的任何誤解或誤釋概不負責。

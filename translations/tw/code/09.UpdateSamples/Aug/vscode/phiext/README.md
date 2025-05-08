@@ -1,56 +1,56 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c7e4439ea50fbf9e2197329bb254686b",
-  "translation_date": "2025-04-04T05:35:43+00:00",
-  "source_file": "code\\09.UpdateSamples\\Aug\\vscode\\phiext\\README.md",
+  "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
+  "translation_date": "2025-05-08T06:46:44+00:00",
+  "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "tw"
 }
 -->
 # phiext README
 
-這是您的擴展 "phiext" 的 README。在撰寫簡短描述後，我們建議包含以下章節。
+這是你的擴充功能 "phiext" 的 README。在撰寫完簡短介紹後，我們建議加入以下章節。
 
-## 功能
+## Features
 
-描述您的擴展的具體功能，包括擴展運行中的截圖。圖片路徑是相對於此 README 文件的。
+描述你的擴充功能的具體功能，並附上擴充功能運作時的截圖。圖片路徑是相對於這個 README 檔案。
 
-例如，如果您的擴展專案工作區下有一個圖片子文件夾：
+例如，如果在你的擴充專案工作區有個 images 子資料夾：
 
-\!\[功能 X\]\(images/feature-x.png\)
+\!\[feature X\]\(images/feature-x.png\)
 
-> 提示：許多熱門擴展會利用動畫來展示功能。這是一個展示您擴展的絕佳方式！我們建議使用簡短、專注且易於理解的動畫。
+> Tip: 許多熱門擴充功能會使用動畫。這是展示擴充功能的絕佳方式！我們建議使用簡短且專注、容易理解的動畫。
 
-## 必要條件
+## Requirements
 
-如果您的擴展有任何需求或依賴項，請新增一個章節來描述這些需求以及如何安裝和配置它們。
+如果你有任何需求或相依套件，請新增一個章節說明這些需求以及如何安裝和設定。
 
-## 擴展設定
+## Extension Settings
 
-如果您的擴展通過 `contributes.configuration` 擴展點新增了任何 VS Code 設定，請將其包含在此處。
+如果你的擴充功能透過 `contributes.configuration` 擴充點新增任何 VS Code 設定，請包含這部分。
 
 例如：
 
-此擴展提供以下設定：
+這個擴充功能貢獻了以下設定：
 
-* `myExtension.enable`: 啟用/禁用此擴展。
-* `myExtension.thing`: 設置為 `blah` 以執行某些操作。
+* `myExtension.enable`: 啟用/停用此擴充功能。
+* `myExtension.thing`: 設定為 `blah` 以執行某項操作。
 
-## 已知問題
+## Known Issues
 
-列出已知問題可以幫助減少用戶針對您的擴展提交重複的問題。
+指出已知問題有助於避免使用者重複開啟相同的問題。
 
-## 發布說明
+## Release Notes
 
-隨著您更新擴展，用戶會很感激查看發布說明。
+使用者會很重視你更新擴充功能時的發行說明。
 
 ### 1.0.0
 
-初始版本的 ...
+初始版本釋出...
 
 ### 1.0.1
 
-修復問題 #。
+修正問題 #。
 
 ### 1.1.0
 
@@ -58,26 +58,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 ---
 
-## 遵循擴展指南
+## Following extension guidelines
 
-確保您已閱讀擴展指南，並遵循創建擴展的最佳實踐。
+確保你已閱讀擴充功能指引，並遵循建立擴充功能的最佳實務。
 
-* [擴展指南](https://code.visualstudio.com/api/references/extension-guidelines)
+* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## 使用 Markdown
+## Working with Markdown
 
-您可以使用 Visual Studio Code 編寫 README。以下是一些有用的編輯器鍵盤快捷鍵：
+你可以使用 Visual Studio Code 撰寫 README。以下是一些有用的編輯器快捷鍵：
 
-* 分割編輯器 (`Cmd+\` 在 macOS 或 `Ctrl+\` 在 Windows 和 Linux 上)。
-* 切換預覽 (`Shift+Cmd+V` 在 macOS 或 `Shift+Ctrl+V` 在 Windows 和 Linux 上)。
-* 按下 `Ctrl+Space` (Windows、Linux、macOS) 查看 Markdown 片段列表。
+* 分割編輯器（macOS 上是 `Cmd+\`，Windows 和 Linux 上是 `Ctrl+\`）。
+* 切換預覽（macOS 上是 `Shift+Cmd+V`，Windows 和 Linux 上是 `Shift+Ctrl+V`）。
+* 按 `Ctrl+Space`（Windows、Linux、macOS）來查看 Markdown 範本清單。
 
-## 獲取更多資訊
+## For more information
 
-* [Visual Studio Code 的 Markdown 支援](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown 語法參考](https://help.github.com/articles/markdown-basics/)
+* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
+* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**享受使用！**
+**Enjoy!**
 
 **免責聲明**：  
-本文檔使用AI翻譯服務[Co-op Translator](https://github.com/Azure/co-op-translator)進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能會包含錯誤或不準確之處。原始語言的文件應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們不對因使用此翻譯而產生的任何誤解或錯誤解釋承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們努力追求準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生之任何誤解或誤譯負責。

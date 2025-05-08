@@ -1,62 +1,62 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "82289836c6113c9df7544eec1fc54802",
-  "translation_date": "2025-04-04T13:31:51+00:00",
-  "source_file": "md\\03.FineTuning\\Finetuning_VSCodeaitoolkit.md",
+  "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
+  "translation_date": "2025-05-08T05:15:17+00:00",
+  "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "ja"
 }
 -->
-## AI Toolkit for VS Codeへようこそ
+## VS Code向けAIツールキットへようこそ
 
-[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) は、Azure AI Studio CatalogやHugging Faceなどのカタログから様々なモデルを統合します。このツールキットは、生成AIツールやモデルを使用したAIアプリ開発における一般的な作業を効率化します：
-- モデルの探索とプレイグラウンドからスタート。
-- ローカルコンピューティングリソースを使用したモデルの微調整と推論。
-- Azureリソースを利用したリモート微調整と推論。
+[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) は、Azure AI Studio CatalogやHugging Faceなどのカタログからさまざまなモデルをまとめています。このツールキットは、生成AIツールやモデルを使ったAIアプリ開発の一般的な作業を効率化します：
+- モデル探索やプレイグラウンドでのスタートガイド
+- ローカルの計算リソースを使ったモデルのファインチューニングと推論
+- Azureリソースを使ったリモートのファインチューニングと推論
 
-[AI Toolkit for VSCodeをインストールする](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[AI Toolkit for VSCodeのインストール](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.ja.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.ja.png)
 
-**[プライベートプレビュー]** Azure Container Appsを使用したモデル微調整と推論をクラウドで実行するためのワンクリックプロビジョニング。
+**[Private Preview]** Azure Container Appsのワンクリックプロビジョニングで、クラウド上でモデルのファインチューニングと推論を実行可能。
 
 それでは、AIアプリ開発を始めましょう：
 
-- [AI Toolkit for VS Codeへようこそ](../../../../md/03.FineTuning)
+- [VS Code向けAIツールキットへようこそ](../../../../md/03.FineTuning)
 - [ローカル開発](../../../../md/03.FineTuning)
   - [準備](../../../../md/03.FineTuning)
   - [Condaの有効化](../../../../md/03.FineTuning)
-  - [ベースモデルの微調整のみ](../../../../md/03.FineTuning)
-  - [モデル微調整と推論](../../../../md/03.FineTuning)
-  - [モデル微調整](../../../../md/03.FineTuning)
+  - [ベースモデルのファインチューニングのみ](../../../../md/03.FineTuning)
+  - [モデルのファインチューニングと推論](../../../../md/03.FineTuning)
+  - [モデルファインチューニング](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [微調整のサンプルとリソース](../../../../md/03.FineTuning)
-- [**\[プライベートプレビュー\]** リモート開発](../../../../md/03.FineTuning)
+  - [ファインチューニングのサンプルとリソース](../../../../md/03.FineTuning)
+- [**\[Private Preview\]** リモート開発](../../../../md/03.FineTuning)
   - [前提条件](../../../../md/03.FineTuning)
   - [リモート開発プロジェクトのセットアップ](../../../../md/03.FineTuning)
   - [Azureリソースのプロビジョニング](../../../../md/03.FineTuning)
-  - [\[オプション\] HuggingfaceトークンをAzure Container Appのシークレットに追加](../../../../md/03.FineTuning)
-  - [微調整を実行する](../../../../md/03.FineTuning)
+  - [\[オプション\] Azure Container AppのシークレットにHuggingfaceトークンを追加](../../../../md/03.FineTuning)
+  - [ファインチューニングの実行](../../../../md/03.FineTuning)
   - [推論エンドポイントのプロビジョニング](../../../../md/03.FineTuning)
   - [推論エンドポイントのデプロイ](../../../../md/03.FineTuning)
-  - [高度な使用法](../../../../md/03.FineTuning)
+  - [高度な使い方](../../../../md/03.FineTuning)
 
 ## ローカル開発
 ### 準備
 
-1. ホストにNVIDIAドライバーがインストールされていることを確認してください。
-2. データセット利用にHFを使用する場合は`huggingface-cli login`を実行してください。
-3. `Olive`メモリ使用量を変更する設定の説明。
+1. ホストにNVIDIAドライバーがインストールされていることを確認してください。  
+2. データセットの利用にHFを使う場合は`huggingface-cli login`を実行してください。  
+3. メモリ使用量に影響する設定については`Olive`の説明を参照してください。  
 
 ### Condaの有効化
-WSL環境を使用しているため、Conda環境を手動で有効化する必要があります。このステップの後、微調整や推論を実行できます。
+WSL環境を使用しており共有されているため、手動でconda環境を有効化する必要があります。このステップを終えたら、ファインチューニングや推論を実行できます。
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### ベースモデルの微調整のみ
-ベースモデルを微調整せずに試したい場合は、Condaを有効化した後にこのコマンドを実行してください。
+### ベースモデルのファインチューニングのみ
+ファインチューニングせずにベースモデルを試したい場合は、condaを有効化した後に以下のコマンドを実行してください。
 
 ```bash
 cd inference
@@ -66,9 +66,9 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### モデル微調整と推論
+### モデルのファインチューニングと推論
 
-ワークスペースが開発コンテナ内で開かれたら、ターミナルを開き（デフォルトのパスはプロジェクトルート）、以下のコマンドを実行して選択したデータセット上でLLMを微調整します。
+開発コンテナ内でワークスペースを開いたら、ターミナル（デフォルトのパスはプロジェクトルート）を開き、以下のコマンドで選択したデータセットに対してLLMのファインチューニングを行います。
 
 ```bash
 python finetuning/invoke_olive.py 
@@ -172,10 +172,10 @@ By default, the subscription and the resource group for inference should match t
 ### Deploy the Inference Endpoint
 If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` を使用し、出力パネルでモデルを評価する準備が整います。
+Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` と出力パネルを使って、モデルの評価をこのエンドポイントで行う準備が整いました。
 
-### 高度な使用法
-AI Toolkitを使用したリモート開発の詳細については、[リモートでのモデル微調整](https://aka.ms/ai-toolkit/remote-provision)および[微調整されたモデルでの推論](https://aka.ms/ai-toolkit/remote-inference)のドキュメントをご参照ください。
+### 高度な使い方
+AI Toolkitを使ったリモート開発の詳細については、[リモートでのファインチューニングモデル](https://aka.ms/ai-toolkit/remote-provision) および [ファインチューニング済みモデルでの推論](https://aka.ms/ai-toolkit/remote-inference) のドキュメントを参照してください。
 
 **免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性がありますのでご了承ください。原文の母国語で書かれた文書が正式な情報源として考慮されるべきです。重要な情報については、プロの人間による翻訳を推奨します。この翻訳を使用することによって生じる誤解や誤解釈について、当方は一切の責任を負いません。
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、一切の責任を負いかねますのでご了承ください。

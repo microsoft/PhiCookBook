@@ -1,94 +1,95 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "76956c0c22e5686908a6d85ec72126af",
-  "translation_date": "2025-04-04T11:24:11+00:00",
-  "source_file": "code\\03.Finetuning\\olive-lab\\readme.md",
+  "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
+  "translation_date": "2025-05-08T06:38:50+00:00",
+  "source_file": "code/03.Finetuning/olive-lab/readme.md",
   "language_code": "ja"
 }
 -->
-# ラボ. AIモデルのデバイス上での推論を最適化
+# Lab. オンデバイス推論向けAIモデルの最適化
 
 ## はじめに
 
-> [!IMPORTANT]
-> このラボには、**Nvidia A10 または A100 GPU** と関連するドライバーおよび CUDA ツールキット (バージョン12以上) が必要です。
+> [!IMPORTANT]  
+> このラボでは、**Nvidia A10またはA100 GPU** とそれに対応したドライバーおよびCUDAツールキット（バージョン12以上）が必要です。
 
-> [!NOTE]
-> このラボは**35分間**で、OLIVEを使用してモデルをデバイス上での推論に最適化するための基本概念を実践的に学ぶことができます。
+> [!NOTE]  
+> 本ラボは**35分**で、OLIVEを使ったオンデバイス推論向けモデル最適化の基本概念を実践的に学べます。
 
 ## 学習目標
 
-このラボを終えると、以下をOLIVEで実行できるようになります:
+このラボを終える頃には、OLIVEを使って以下ができるようになります：
 
-- AWQ量子化法を使用してAIモデルを量子化する。
-- 特定のタスク向けにAIモデルを微調整する。
-- ONNX Runtimeで効率的なデバイス上推論を行うためのLoRAアダプター（微調整済みモデル）を生成する。
+- AWQ量子化手法を使ったAIモデルの量子化
+- 特定タスク向けAIモデルのファインチューニング
+- ONNX Runtime上で効率的に動作するLoRAアダプター（ファインチューニング済みモデル）の生成
 
 ### Oliveとは何か
 
-Olive (*O*NNX *live*) は、ONNX Runtime +++https://onnxruntime.ai+++向けのモデル最適化ツールキットで、CLIも付属しており、品質とパフォーマンスを備えたモデルを提供することができます。
+Olive (*O*NNX *live*) は、ONNXランタイム +++https://onnxruntime.ai+++ 向けにモデルの品質とパフォーマンスを両立させて提供できる、CLI付きのモデル最適化ツールキットです。
 
-![Olive Flow](../../../../../translated_images/olive-flow.5beac74493fb2216eb8578519cfb1c4a1e752a3536bc755c4545bd0959634684.ja.png)
+![Olive Flow](../../../../../translated_images/olive-flow.a47985655a756dcba73521511ea42eef359509a3a33cbd4b9ac04ba433287b80.ja.png)
 
-Oliveの入力は通常PyTorchやHugging Faceのモデルで、出力はデバイス（デプロイメントターゲット）上でONNX Runtimeで実行される最適化されたONNXモデルです。Oliveは、Qualcomm、AMD、Nvidia、Intelなどのハードウェアベンダーが提供するデプロイメントターゲットのAIアクセラレーター（NPU、GPU、CPU）に合わせてモデルを最適化します。
+Oliveの入力は通常PyTorchやHugging Faceのモデルで、出力はONNXランタイム上で動作する最適化済みのONNXモデルです。OliveはQualcomm、AMD、Nvidia、Intelなどのハードウェアベンダーが提供するAIアクセラレータ（NPU、GPU、CPU）に合わせてモデルを最適化します。
 
-Oliveは*ワークフロー*を実行します。これは、*パス*と呼ばれる個々のモデル最適化タスクの順序付けされたシーケンスです。例としては、モデル圧縮、グラフキャプチャ、量子化、グラフ最適化などがあります。各パスには、精度やレイテンシなどの最適なメトリクスを達成するために調整できる一連のパラメーターがあり、これらはそれぞれの評価者によって評価されます。Oliveは、検索アルゴリズムを使用して各パスを1つずつ、または複数のパスをまとめて自動調整する検索戦略を採用しています。
+Oliveは「ワークフロー」と呼ばれる一連のモデル最適化タスク（*パス*）を順に実行します。パスの例にはモデル圧縮、グラフキャプチャ、量子化、グラフ最適化などがあります。各パスにはチューニング可能なパラメーターがあり、精度やレイテンシなどの評価指標に基づいて最適化されます。Oliveは探索アルゴリズムを用いて各パスまたは複数パスを自動チューニングします。
 
-#### Oliveの利点
+#### Oliveのメリット
 
-- グラフ最適化、圧縮、量子化のさまざまな技術を試行錯誤で手動で実験する際の**フラストレーションと時間を削減**します。品質とパフォーマンスの制約を定義すれば、Oliveが自動的に最適なモデルを見つけます。
-- **40以上の組み込みモデル最適化コンポーネント**により、量子化、圧縮、グラフ最適化、微調整の最新技術をカバー。
-- **使いやすいCLI**で一般的なモデル最適化タスクを簡単に実行可能。例: olive quantize、olive auto-opt、olive finetune。
-- モデルのパッケージ化とデプロイメントが組み込み。
-- **マルチLoRAサービング**用のモデル生成をサポート。
-- YAML/JSONを使用してワークフローを構築し、モデル最適化とデプロイメントタスクを調整可能。
-- **Hugging Face**および**Azure AI**との統合。
-- **キャッシュ機構**が組み込まれており、**コストを節約**。
+- グラフ最適化、圧縮、量子化などの試行錯誤による手動実験の手間と時間を大幅に削減。品質と性能の制約を設定すれば、Oliveが最適モデルを自動で見つけます。  
+- 量子化、圧縮、グラフ最適化、ファインチューニングなど最先端手法を網羅した40以上の組み込みコンポーネント。  
+- よく使うモデル最適化タスク向けの使いやすいCLI（例：olive quantize、olive auto-opt、olive finetune）。  
+- モデルのパッケージングとデプロイ機能を内蔵。  
+- **Multi LoRA serving** 向けモデル生成をサポート。  
+- YAML/JSONでワークフローを構築し、モデル最適化やデプロイタスクを管理可能。  
+- **Hugging Face** や **Azure AI** との統合。  
+- 組み込みの**キャッシュ機構**によりコスト削減が可能。
 
-## ラボの手順
-> [!NOTE]
-> Lab 1に従ってAzure AI Hubとプロジェクトをプロビジョニングし、A100コンピュートをセットアップしてください。
+## ラボ手順
 
-### ステップ0: Azure AI Computeに接続する
+> [!NOTE]  
+> Azure AI Hubとプロジェクトの準備、およびLab 1に従ったA100コンピュートのセットアップが完了していることを確認してください。
 
-**VS Code**のリモート機能を使用してAzure AI Computeに接続します。
+### Step 0: Azure AI Computeへの接続
 
-1. **VS Code**デスクトップアプリケーションを開きます。
-1. **コマンドパレット**を**Shift+Ctrl+P**で開きます。
-1. コマンドパレットで**AzureML - remote: Connect to compute instance in New Window**を検索します。
-1. 画面の指示に従ってComputeに接続します。これには、Lab 1で設定したAzure Subscription、Resource Group、Project、Compute名を選択するプロセスが含まれます。
-1. Azure ML Computeノードに接続すると、**Visual Codeの左下**に表示されます `><Azure ML: Compute Name`
+**VS Code**のリモート機能を使ってAzure AI Computeに接続します。
 
-### ステップ1: このリポジトリをクローンする
+1. **VS Code**デスクトップアプリを開く  
+1. **Shift+Ctrl+P** でコマンドパレットを開く  
+1. コマンドパレットで **AzureML - remote: Connect to compute instance in New Window** を検索  
+1. 表示される指示に従い、Azureサブスクリプション、リソースグループ、プロジェクト、Lab 1で設定したコンピュート名を選択して接続  
+1. 接続が完了すると、VS Codeの左下に接続中のAzure ML Computeノードが表示されます `><Azure ML: Compute Name`
 
-VS Codeで**Ctrl+J**を使って新しいターミナルを開き、このリポジトリをクローンします。
+### Step 1: リポジトリのクローン
 
-ターミナルで以下のプロンプトが表示されます。
+VS Codeで新しいターミナルを開く（**Ctrl+J**）し、リポジトリをクローンします：
+
+ターミナルには以下のプロンプトが表示されます。
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
-```
-ソリューションをクローンします。
+```  
+ソリューションをクローン
 
 ```bash
 cd ~/localfiles
 git clone https://github.com/microsoft/phi-3cookbook.git
 ```
 
-### ステップ2: VS Codeでフォルダーを開く
+### Step 2: フォルダーをVS Codeで開く
 
-関連するフォルダーでVS Codeを開くには、ターミナルで以下のコマンドを実行します。これにより新しいウィンドウが開きます。
+ターミナルで以下のコマンドを実行すると、新しいウィンドウでフォルダーが開きます：
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
 ```
 
-または、**ファイル** > **フォルダーを開く**を選択してフォルダーを開くこともできます。
+または、**ファイル** > **フォルダーを開く** から該当フォルダーを選択して開くことも可能です。
 
-### ステップ3: 依存関係
+### Step 3: 依存関係のインストール
 
-VS CodeのAzure AI Computeインスタンスでターミナルウィンドウを開き（ヒント: **Ctrl+J**）、以下のコマンドを実行して依存関係をインストールします。
+VS CodeのAzure AI Computeインスタンス上でターミナルを開き（ヒント：**Ctrl+J**）、以下のコマンドを実行して依存関係をインストールします：
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -98,35 +99,36 @@ az extension remove -n azure-cli-ml
 az extension add -n ml
 ```
 
-> [!NOTE]
-> すべての依存関係をインストールするには約5分かかります。
+> [!NOTE]  
+> 依存関係のインストールには約5分かかります。
 
-このラボでは、Azure AI Modelカタログにモデルをダウンロードしてアップロードします。モデルカタログにアクセスできるようにするには、Azureにログインする必要があります:
+このラボではモデルをAzure AIモデルカタログからダウンロード・アップロードします。モデルカタログにアクセスするために、Azureへログインしてください：
 
 ```bash
 az login
 ```
 
-> [!NOTE]
-> ログイン時にサブスクリプションを選択するよう求められます。このラボで提供されたサブスクリプションを設定してください。
+> [!NOTE]  
+> ログイン時にサブスクリプションの選択を求められます。必ず本ラボ用に指定されたサブスクリプションを選択してください。
 
-### ステップ4: Oliveコマンドを実行する
+### Step 4: Oliveコマンドの実行
 
-VS CodeのAzure AI Computeインスタンスでターミナルウィンドウを開き（ヒント: **Ctrl+J**）、`olive-ai` conda環境がアクティブになっていることを確認します。
+VS CodeのAzure AI Computeインスタンスでターミナルを開き（ヒント：**Ctrl+J**）、`olive-ai`のconda環境がアクティベートされていることを確認します：
 
 ```bash
 conda activate olive-ai
 ```
 
-次に、以下のOliveコマンドをコマンドラインで実行します。
+次に、以下のOliveコマンドを順に実行します。
 
-1. **データを確認する:** この例では、Phi-3.5-Miniモデルを微調整して旅行関連の質問に特化させます。以下のコードは、JSONライン形式のデータセットの最初の数レコードを表示します:
-   
+1. **データの確認:** ここではPhi-3.5-Miniモデルをファインチューニングし、旅行関連の質問に特化させます。以下のコードはJSON Lines形式のデータセットの最初の数レコードを表示します：
+
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **モデルを量子化する:** モデルをトレーニングする前に、以下のコマンドを使用してActive Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++という技術で量子化します。AWQは、推論中に生成される活性化を考慮してモデルの重みを量子化します。これは、活性化の実際のデータ分布を考慮するため、従来の重み量子化法と比較してモデルの精度がより良く保持されます。
-    
+
+1. **モデルの量子化:** トレーニング前に、Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++ という手法で量子化を行います。AWQは推論時の活性化値を考慮して重みを量子化するため、従来の重み量子化より精度の保持が優れています。
+
     ```bash
     olive quantize \
        --model_name_or_path microsoft/Phi-3.5-mini-instruct \
@@ -135,13 +137,13 @@ conda activate olive-ai
        --output_path models/phi/awq \
        --log_level 1
     ```
-    
-    AWQ量子化には**約8分**かかり、モデルサイズを**約7.5GBから約2.5GBに削減**します。
-   
-   このラボでは、Hugging Faceからモデルを入力する方法を紹介します（例: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
 
-1. **Train the model:** Next, the `olive finetune`コマンドで量子化済みモデルを微調整します。量子化後ではなく*前*に微調整することで、量子化による損失を微調整プロセスが回復するため、より良い精度が得られます。
-    
+    AWQ量子化には**約8分**かかり、モデルサイズは**約7.5GBから約2.5GBに削減**されます。
+
+    本ラボではHugging Faceからモデルを取り込み（例：`microsoft/Phi-3.5-mini-instruct`）、``). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
+
+1. **Train the model:** Next, the `olive finetune` コマンドで量子化済みモデルをファインチューニングします。量子化後にファインチューニングするよりも、量子化前にファインチューニングしたほうが精度が良くなるためです。
+
     ```bash
     olive finetune \
         --method lora \
@@ -153,10 +155,10 @@ conda activate olive-ai
         --output_path ./models/phi/ft \
         --log_level 1
     ```
-    
-    微調整には**約6分**かかります（100ステップ）。
 
-1. **最適化:** トレーニング済みモデルを使用して、Oliveの`auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider`引数でモデルを最適化しますが、このラボではCPUを使用します。
+    ファインチューニング（100ステップ）は**約6分**かかります。
+
+1. **最適化:** モデルのトレーニング後、Oliveの `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` 引数を使ってモデルを最適化しますが、本ラボではCPUを使用します。
 
     ```bash
     olive auto-opt \
@@ -168,12 +170,12 @@ conda activate olive-ai
        --output_path models/phi/onnx-ao \
        --log_level 1
     ```
-    
+
     最適化には**約5分**かかります。
 
-### ステップ5: モデル推論の簡易テスト
+### Step 5: モデル推論の簡単なテスト
 
-モデルの推論をテストするには、**app.py**というPythonファイルをフォルダーに作成し、以下のコードをコピー＆ペーストしてください:
+モデル推論をテストするため、フォルダー内に **app.py** というPythonファイルを作成し、以下のコードをコピー＆ペーストしてください：
 
 ```python
 import onnxruntime_genai as og
@@ -209,28 +211,26 @@ while not generator.is_done():
 print("\n")
 ```
 
-以下のコマンドでコードを実行します:
+以下のコマンドで実行します：
 
 ```bash
 python app.py
 ```
 
-### ステップ6: モデルをAzure AIにアップロードする
+### Step 6: モデルをAzure AIにアップロード
 
-モデルをAzure AIモデルリポジトリにアップロードすることで、開発チームの他のメンバーとモデルを共有でき、モデルのバージョン管理も行えます。以下のコマンドを実行してモデルをアップロードします:
+モデルをAzure AIのモデルリポジトリにアップロードすると、開発チーム内で共有できるほか、モデルのバージョン管理も行えます。モデルをアップロードするには、以下のコマンドを実行してください：
 
-> [!NOTE]
-> `{}`` placeholders with the name of your resource group and Azure AI Project Name. 
-
-To find your resource group `の`resourceGroup`とAzure AIプロジェクト名を更新して、以下のコマンドを実行してください。
+> [!NOTE]  
+> `{}`の部分を自分のリソースグループ名およびAzure AIプロジェクト名に置き換えてください。
 
 ```
 az ml workspace show
 ```
 
-または、+++ai.azure.com+++にアクセスし、**管理センター** > **プロジェクト** > **概要**を選択します。
+または +++ai.azure.com+++ にアクセスし、**management center** > **project** > **overview** から操作可能です。
 
-`{}`プレースホルダーをリソースグループ名とAzure AIプロジェクト名に更新してください。
+`{}`のプレースホルダーにリソースグループ名とAzure AIプロジェクト名を入力してください。
 
 ```bash
 az ml model create \
@@ -240,7 +240,8 @@ az ml model create \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
 ```
-アップロードされたモデルを確認し、https://ml.azure.com/model/list でモデルをデプロイできます。
 
-**免責事項**:  
-この文書は、AI翻訳サービス [Co-op Translator](https://github.com/Azure/co-op-translator) を使用して翻訳されています。正確性を追求しておりますが、自動翻訳には誤りや不正確な部分が含まれる場合がありますのでご了承ください。元の言語で記載された文書を公式な情報源としてお考えください。重要な情報については、専門の人間による翻訳を推奨いたします。この翻訳の使用に起因する誤解や解釈の誤りについて、当社は一切の責任を負いません。
+アップロードしたモデルは https://ml.azure.com/model/list で確認およびデプロイできます。
+
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご承知おきください。原文の言語によるオリジナル文書が権威ある情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じたいかなる誤解や誤訳についても、当方は一切責任を負いかねます。

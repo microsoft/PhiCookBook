@@ -1,63 +1,63 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "74689a2b87f747d751edfec988ccb7fd",
-  "translation_date": "2025-04-04T19:01:37+00:00",
-  "source_file": "md\\03.FineTuning\\FineTuning_Phi-3-visionWandB.md",
+  "original_hash": "e0a07fd2a30fe2af30b1373df207a5bf",
+  "translation_date": "2025-05-08T05:16:01+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md",
   "language_code": "hk"
 }
 -->
-# Phi-3-Vision-128K-Instruct 計劃概覽
+# Phi-3-Vision-128K-Instruct 項目概覽
 
-## 模型
+## 模型簡介
 
-Phi-3-Vision-128K-Instruct 是一個輕量化、最尖端的多模態模型，是此計劃的核心。它屬於 Phi-3 模型家族，支持最長 128,000 個 tokens 的上下文長度。模型訓練使用了多樣化的數據集，包括合成數據和精心篩選的公開網站，重點在於高質量和需要深入推理的內容。訓練過程包含監督式微調和直接偏好優化，以確保精準執行指令，並採取了強大的安全措施。
+Phi-3-Vision-128K-Instruct 係呢個項目嘅核心，一個輕量化、先進嘅多模態模型。佢屬於 Phi-3 模型家族，支持最高 128,000 個 token 嘅上下文長度。模型喺一個多元化嘅數據集上訓練，包括合成數據同經過嚴格篩選嘅公開網站內容，重點係高質素、需要推理嘅內容。訓練過程包含監督式微調同直接偏好優化，確保模型準確跟隨指示，並且有完善嘅安全措施。
 
-## 創建樣本數據的重要性：
+## 創建樣本數據嘅重要原因：
 
-1. **測試**：樣本數據可以在不同情境下測試應用程式，而不影響真實數據。這在開發和測試階段尤為重要。
+1. **測試**：樣本數據可以喺唔影響真實數據嘅情況下，測試應用喺唔同場景嘅表現。呢點喺開發同測試階段尤其重要。
 
-2. **性能調整**：利用模仿真實數據規模和複雜性的樣本數據，可以識別性能瓶頸並相應優化應用程式。
+2. **性能調校**：用模擬真實數據規模同複雜度嘅樣本數據，可以識別性能瓶頸，從而優化應用。
 
-3. **原型設計**：樣本數據可用於創建原型和模型，有助於理解用戶需求並獲得反饋。
+3. **原型設計**：樣本數據可以用嚟做原型同模擬，有助理解用戶需求同收集反饋。
 
-4. **數據分析**：在數據科學領域，樣本數據通常用於探索性數據分析、模型訓練和算法測試。
+4. **數據分析**：喺數據科學領域，樣本數據經常用於探索性分析、模型訓練同算法測試。
 
-5. **安全性**：在開發和測試環境中使用樣本數據，可以防止敏感真實數據的意外洩露。
+5. **安全**：喺開發同測試環境用樣本數據，有助防止意外洩漏敏感真實數據。
 
-6. **學習**：如果正在學習一項新技術或工具，使用樣本數據可以提供一種實際應用所學知識的方法。
+6. **學習**：學習新技術或工具時，使用樣本數據可以實踐所學。
 
-請記住，樣本數據的質量會顯著影響這些活動。它的結構和變化性應盡可能接近真實數據。
+記住，樣本數據嘅質素對以上活動影響重大，佢嘅結構同變異性應盡量貼近真實數據。
 
-### 創建樣本數據
-[生成數據集腳本](./CreatingSampleData.md)
+### 樣本數據創建
+[Generate DataSet Script](./CreatingSampleData.md)
 
 ## 數據集
 
-一個好的樣本數據集例子是 [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States)（可在 Huggingface 上獲得）。  
-這個 Burberry 產品的樣本數據集包含產品分類、價格和標題的元數據，共有 3,040 行，每行代表一個獨特產品。該數據集讓我們測試模型理解和解釋視覺數據的能力，生成能捕捉細緻視覺細節和品牌特徵的描述性文字。
+一個好嘅樣本數據集例子係 [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States)（喺 Huggingface 有提供）。  
+Burberry 產品嘅樣本數據集，連同產品分類、價格同標題嘅元數據，總共有 3,040 行，每行代表一件獨特產品。呢個數據集可以用嚟測試模型理解同解讀視覺數據嘅能力，生成捕捉細緻視覺細節同品牌特徵嘅描述性文本。
 
-**注意：** 你可以使用任何包含圖片的數據集。
+**Note:** 你可以用任何包含圖片嘅數據集。
 
 ## 複雜推理
 
-模型需要僅憑圖片進行價格和命名的推理。這要求模型不僅能識別視覺特徵，還要理解這些特徵在產品價值和品牌定位上的含義。通過從圖片生成準確的文本描述，這個計劃突出了整合視覺數據以提升模型在實際應用中的性能和多功能性的潛力。
+模型需要根據圖片推理價格同命名。呢點唔單止要識別視覺特徵，仲要理解呢啲特徵喺產品價值同品牌定位上嘅含義。透過從圖片合成準確嘅文字描述，項目展示咗整合視覺數據喺提升模型喺現實應用中表現同多功能性嘅潛力。
 
 ## Phi-3 Vision 架構
 
-模型架構是一個 Phi-3 的多模態版本。它處理文本和圖片數據，將這些輸入整合到統一序列中，用於全面的理解和生成任務。模型為文本和圖片分別使用嵌入層。文本 tokens 被轉換為密集向量，而圖片通過 CLIP 視覺模型處理以提取特徵嵌入。這些圖片嵌入隨後被投射到與文本嵌入相匹配的維度，確保它們可以無縫整合。
+模型架構係 Phi-3 嘅多模態版本。佢同時處理文本同圖片數據，將呢啲輸入整合成一個統一序列，方便全面理解同生成任務。模型用獨立嘅嵌入層處理文本同圖片。文本 token 會轉成密集向量，圖片則透過 CLIP vision 模型抽取特徵嵌入。之後將圖片嵌入投影到同文本嵌入相同維度，確保可以無縫整合。
 
-## 文本與圖片嵌入的整合
+## 文本同圖片嵌入整合
 
-文本序列中的特殊 tokens 指示圖片嵌入應插入的位置。在處理過程中，這些特殊 tokens 被相應的圖片嵌入替換，讓模型能夠將文本和圖片作為一個序列進行處理。我們數據集的提示格式使用特殊的 <|image|> token，如下所示：
+文本序列入面嘅特殊 token 用嚟標示插入圖片嵌入嘅位置。處理時，呢啲特殊 token 會被對應嘅圖片嵌入替換，令模型可以將文本同圖片當作一條序列處理。我哋嘅數據集 prompt 用咗特殊嘅 <|image|> token 格式如下：
 
 ```python
 text = f"<|user|>\n<|image_1|>What is shown in this image?<|end|><|assistant|>\nProduct: {row['title']}, Category: {row['category3_code']}, Full Price: {row['full_price']}<|end|>"
 ```
 
-## 範例代碼
-- [Phi-3-Vision 訓練腳本](../../../../code/03.Finetuning/Phi-3-vision-Trainingscript.py)
-- [Weights and Bias 示例操作指南](https://wandb.ai/byyoung3/mlnews3/reports/How-to-fine-tune-Phi-3-vision-on-a-custom-dataset--Vmlldzo4MTEzMTg3)
+## 範例程式碼
+- [Phi-3-Vision Training Script](../../../../code/03.Finetuning/Phi-3-vision-Trainingscript.py)
+- [Weights and Bias Example walkthrough](https://wandb.ai/byyoung3/mlnews3/reports/How-to-fine-tune-Phi-3-vision-on-a-custom-dataset--Vmlldzo4MTEzMTg3)
 
 **免責聲明**：  
-本文件使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯準確性，但請注意，機器翻譯可能存在錯誤或不準確之處。應以原始語言版本的文件作為權威來源。對於重要信息，建議尋求專業人工翻譯。我們對因使用此翻譯而產生的任何誤解或錯誤概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原文文件的母語版本應被視為權威來源。對於重要資料，建議使用專業人工翻譯。我們不對因使用此翻譯而引致的任何誤解或誤釋負責。

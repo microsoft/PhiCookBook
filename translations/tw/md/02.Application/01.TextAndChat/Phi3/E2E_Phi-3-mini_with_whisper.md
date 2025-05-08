@@ -1,109 +1,109 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f737bf207e1691cdc654535c48dd2df4",
-  "translation_date": "2025-04-04T06:28:43+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-mini_with_whisper.md",
+  "original_hash": "006e8cf75211d3297f24e1b22e38955f",
+  "translation_date": "2025-05-08T05:44:13+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
   "language_code": "tw"
 }
 -->
-# 互動式 Phi 3 Mini 4K 指令聊天機器人與 Whisper
+# Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper
 
-## 概述
+## 概覽
 
-互動式 Phi 3 Mini 4K 指令聊天機器人是一個工具，讓使用者可以使用文字或語音輸入與 Microsoft Phi 3 Mini 4K 指令演示進行互動。該聊天機器人可以用於各種任務，例如翻譯、天氣更新和一般資訊收集。
+Interactive Phi 3 Mini 4K Instruct Chatbot 是一個工具，讓使用者能透過文字或語音輸入與 Microsoft Phi 3 Mini 4K instruct 示範互動。這個聊天機器人可以用於多種任務，例如翻譯、天氣更新和一般資訊查詢。
 
-### 入門指南
+### 快速開始
 
-要使用此聊天機器人，請按照以下步驟操作：
+要使用這個聊天機器人，只要按照以下步驟操作：
 
-1. 開啟 [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)
-2. 在筆記本的主視窗中，你會看到一個聊天框介面，包含文字輸入框和「發送」按鈕。
-3. 若要使用文字聊天機器人，只需在文字輸入框中輸入你的訊息並點擊「發送」按鈕。聊天機器人會回應一個音頻檔案，可直接在筆記本中播放。
+1. 開啟新的 [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)
+2. 在筆記本的主視窗中，你會看到一個帶有文字輸入框和「Send」按鈕的聊天介面。
+3. 若要使用文字聊天機器人，只要在文字輸入框輸入訊息，然後點擊「Send」按鈕。聊天機器人會回覆一個可以直接在筆記本中播放的音訊檔案。
 
-**注意**：此工具需要 GPU 和 Microsoft Phi-3 以及 OpenAI Whisper 模型的存取權，這些模型用於語音識別和翻譯。
+**Note**：此工具需要 GPU 以及 Microsoft Phi-3 和 OpenAI Whisper 模型的存取權限，這些模型用於語音辨識和翻譯。
 
-### GPU 要求
+### GPU 需求
 
-要運行此演示，你需要 12GB 的 GPU 記憶體。
+執行此示範需要 12GB 的 GPU 記憶體。
 
-運行 **Microsoft-Phi-3-Mini-4K 指令**演示所需的 GPU 記憶體取決於多種因素，例如輸入資料（音頻或文字）的大小、翻譯所用的語言、模型的速度以及 GPU 的可用記憶體。
+執行 **Microsoft-Phi-3-Mini-4K instruct** 示範時，GPU 記憶體需求會依多種因素而異，例如輸入資料大小（音訊或文字）、翻譯語言、模型速度以及 GPU 可用記憶體。
 
-一般來說，Whisper 模型設計為在 GPU 上運行。運行 Whisper 模型的建議最低 GPU 記憶體為 8 GB，但如果需要，可以處理更大的記憶體。
+一般來說，Whisper 模型是設計用於 GPU 運行。建議執行 Whisper 模型的最低 GPU 記憶體為 8 GB，但如果需要也能支援更大容量。
 
-需要注意的是，若處理大量資料或高頻率的請求，可能需要更多的 GPU 記憶體，並可能導致性能問題。建議針對你的使用案例進行不同配置的測試，並監控記憶體使用情況，以確定最佳設定。
+需要注意的是，處理大量資料或高頻率請求時，可能需要更多 GPU 記憶體，或可能會造成效能問題。建議根據實際使用情況測試不同設定，並監控記憶體使用情況，以找出最佳配置。
 
-## 使用 Whisper 的互動式 Phi 3 Mini 4K 指令聊天機器人 E2E 範例
+## Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper 的 E2E 範例
 
-名為 [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) 的 Jupyter 筆記本展示如何使用 Microsoft Phi 3 Mini 4K 指令演示，通過音頻或文字輸入生成文字。該筆記本定義了以下幾個函數：
+這個名為 [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) 的 Jupyter 筆記本示範如何使用 Microsoft Phi 3 Mini 4K instruct Demo 從音訊或文字輸入產生文字。筆記本定義了幾個函式：
 
-1. `tts_file_name(text)`：此函數根據輸入文字生成文件名，用於保存生成的音頻文件。
-2. `edge_free_tts(chunks_list,speed,voice_name,save_path)`：此函數使用 Edge TTS API 從輸入文字塊列表生成音頻文件。輸入參數包括文字塊列表、語速、語音名稱以及保存音頻文件的輸出路徑。
-3. `talk(input_text)`：此函數使用 Edge TTS API 生成音頻文件，並保存到 /content/audio 目錄中的隨機文件名。輸入參數是要轉換為語音的文字。
-4. `run_text_prompt(message, chat_history)`：此函數使用 Microsoft Phi 3 Mini 4K 指令演示從訊息輸入生成音頻文件，並將其附加到聊天歷史中。
-5. `run_audio_prompt(audio, chat_history)`：此函數使用 Whisper 模型 API 將音頻文件轉換為文字，並將文字傳遞給 `run_text_prompt()` 函數。
-6. 該程式碼啟動了一個 Gradio 應用，讓使用者可以通過輸入文字訊息或上傳音頻文件與 Phi 3 Mini 4K 指令演示互動。輸出會以文字訊息形式顯示在應用中。
+1. `tts_file_name(text)`：此函式根據輸入文字產生檔名，用來儲存產生的音訊檔案。
+1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`：此函式使用 Edge TTS API，從多段輸入文字清單產生音訊檔案。輸入參數包含文字段落清單、語速、聲音名稱，以及儲存音訊檔案的路徑。
+1. `talk(input_text)`：此函式利用 Edge TTS API 產生音訊檔案，並將其儲存在 /content/audio 目錄下的隨機檔名中。輸入參數是要轉成語音的文字。
+1. `run_text_prompt(message, chat_history)`：此函式使用 Microsoft Phi 3 Mini 4K instruct demo，從訊息輸入產生音訊檔案，並將結果加入聊天紀錄。
+1. `run_audio_prompt(audio, chat_history)`：此函式使用 Whisper 模型 API 將音訊檔轉成文字，並將結果傳給 `run_text_prompt()` 函式。
+1. 這段程式碼啟動一個 Gradio 應用，讓使用者可以透過輸入訊息或上傳音訊檔與 Phi 3 Mini 4K instruct demo 互動。輸出會以文字訊息顯示在應用中。
 
 ## 疑難排解
 
-安裝 Cuda GPU 驅動
+安裝 Cuda GPU 驅動程式
 
-1. 確保你的 Linux 應用程式是最新的
+1. 確保你的 Linux 系統是最新版本
 
     ```bash
     sudo apt update
     ```
 
-2. 安裝 Cuda 驅動
+1. 安裝 Cuda 驅動程式
 
     ```bash
     sudo apt install nvidia-cuda-toolkit
     ```
 
-3. 註冊 Cuda 驅動位置
+1. 註冊 cuda 驅動程式路徑
 
     ```bash
     echo /usr/lib64-nvidia/ >/etc/ld.so.conf.d/libcuda.conf; ldconfig
     ```
 
-4. 檢查 Nvidia GPU 記憶體大小（需要 12GB GPU 記憶體）
+1. 檢查 Nvidia GPU 記憶體大小（需要 12GB GPU 記憶體）
 
     ```bash
     nvidia-smi
     ```
 
-5. 清空快取：如果你使用的是 PyTorch，可以呼叫 torch.cuda.empty_cache() 來釋放所有未使用的快取記憶體，讓其他 GPU 應用程式使用。
+1. 清空快取：如果你使用 PyTorch，可以呼叫 torch.cuda.empty_cache() 釋放所有未使用的快取記憶體，讓其他 GPU 應用程式能使用
 
     ```python
     torch.cuda.empty_cache() 
     ```
 
-6. 檢查 Nvidia Cuda
+1. 檢查 Nvidia Cuda
 
     ```bash
     nvcc --version
     ```
 
-7. 執行以下步驟以建立 Hugging Face token。
+1. 執行以下步驟以建立 Hugging Face token。
 
-    - 前往 [Hugging Face Token Settings 頁面](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo)。
+    - 前往 [Hugging Face Token 設定頁面](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo)。
     - 選擇 **New token**。
-    - 輸入你想使用的專案 **名稱**。
-    - 將 **類型** 選擇為 **Write**。
+    - 輸入你想使用的專案 **Name**。
+    - 選擇 **Type** 為 **Write**。
 
-> **注意**
+> **Note**
 >
-> 如果遇到以下錯誤：
+> 如果你遇到以下錯誤：
 >
 > ```bash
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> 要解決此問題，請在終端中輸入以下命令：
+> 解決方法是在終端機輸入以下指令。
 >
 > ```bash
 > sudo ldconfig
 > ```
 
 **免責聲明**：  
-本文檔使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。儘管我們努力確保翻譯的準確性，但請注意，自動翻譯可能會包含錯誤或不準確之處。原始語言的文件應被視為權威來源。對於關鍵信息，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤釋不承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不精確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所引起之任何誤解或誤譯負責。

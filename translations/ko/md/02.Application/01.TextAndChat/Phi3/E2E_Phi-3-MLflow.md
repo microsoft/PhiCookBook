@@ -1,59 +1,59 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1e42c399dcc2fa477925d3ef4038d403",
-  "translation_date": "2025-04-04T06:30:11+00:00",
-  "source_file": "md\\02.Application\\01.TextAndChat\\Phi3\\E2E_Phi-3-MLflow.md",
+  "original_hash": "f61c383bbf0c3dac97e43f833c258731",
+  "translation_date": "2025-05-08T05:35:59+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "ko"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/)는 머신 러닝 라이프사이클의 끝에서 끝까지 관리하기 위해 설계된 오픈 소스 플랫폼입니다.
+[MLflow](https://mlflow.org/)는 머신러닝 라이프사이클 전 과정을 관리하기 위해 설계된 오픈소스 플랫폼입니다.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.ko.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.ko.png)
 
-MLFlow는 실험, 재현성, 배포 및 중앙 모델 레지스트리를 포함하여 ML 라이프사이클을 관리하는 데 사용됩니다. 현재 MLFlow는 네 가지 구성 요소를 제공합니다.
+MLFlow는 실험, 재현성, 배포, 중앙 모델 레지스트리 등 ML 라이프사이클을 관리하는 데 사용됩니다. 현재 MLflow는 네 가지 구성 요소를 제공합니다.
 
-- **MLflow Tracking:** 실험, 코드, 데이터 구성 및 결과를 기록하고 조회합니다.
-- **MLflow Projects:** 데이터 과학 코드를 패키징하여 어떤 플랫폼에서도 실행을 재현할 수 있는 형식으로 제공합니다.
-- **Mlflow Models:** 다양한 서빙 환경에서 머신 러닝 모델을 배포합니다.
-- **Model Registry:** 중앙 저장소에서 모델을 저장, 주석 추가 및 관리합니다.
+- **MLflow Tracking:** 실험, 코드, 데이터 설정 및 결과를 기록하고 조회합니다.
+- **MLflow Projects:** 실행을 재현할 수 있는 형식으로 데이터 과학 코드를 패키징합니다.
+- **Mlflow Models:** 다양한 서빙 환경에 머신러닝 모델을 배포합니다.
+- **Model Registry:** 중앙 저장소에서 모델을 저장, 주석 달기 및 관리합니다.
 
-MLFlow는 실험 추적, 코드를 재현 가능한 실행으로 패키징, 모델 공유 및 배포 기능을 포함합니다. Databricks와 통합되어 있으며 다양한 머신 러닝 라이브러리를 지원하여 라이브러리 독립적으로 사용할 수 있습니다. REST API와 CLI를 제공하므로 어떤 머신 러닝 라이브러리와 프로그래밍 언어에서도 사용할 수 있습니다.
+실험 추적, 코드를 재현 가능한 실행 단위로 패키징, 모델 공유 및 배포 기능을 포함합니다. MLFlow는 Databricks에 통합되어 있으며 다양한 ML 라이브러리를 지원해 라이브러리에 구애받지 않습니다. REST API와 CLI를 제공해 어떤 머신러닝 라이브러리와 프로그래밍 언어에서도 사용할 수 있습니다.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.ko.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.ko.png)
 
 MLFlow의 주요 기능은 다음과 같습니다:
 
-- **실험 추적:** 매개변수와 결과를 기록하고 비교합니다.
+- **실험 추적:** 파라미터와 결과를 기록하고 비교합니다.
 - **모델 관리:** 다양한 서빙 및 추론 플랫폼에 모델을 배포합니다.
-- **모델 레지스트리:** 버전 관리 및 주석을 포함하여 MLFlow 모델의 라이프사이클을 협업적으로 관리합니다.
-- **프로젝트:** ML 코드를 공유하거나 프로덕션 환경에서 사용할 수 있도록 패키징합니다.
+- **모델 레지스트리:** 버전 관리와 주석을 포함해 MLflow 모델의 라이프사이클을 공동으로 관리합니다.
+- **프로젝트:** ML 코드를 공유 또는 프로덕션 용도로 패키징합니다.
 
-MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 패키징, 서비스 배포, 모델 모니터링을 포함하는 MLOps 루프를 지원합니다. 특히 클라우드 및 엣지 환경에서 프로토타입에서 프로덕션 워크플로로 이동하는 과정을 간소화하는 것을 목표로 합니다.
+MLFlow는 데이터 준비, 모델 등록 및 관리, 실행용 모델 패키징, 서비스 배포, 모델 모니터링을 포함하는 MLOps 루프도 지원합니다. 특히 클라우드와 엣지 환경에서 프로토타입에서 프로덕션 워크플로로의 전환 과정을 단순화하는 것을 목표로 합니다.
 
-## E2E 시나리오 - 래퍼를 구축하고 Phi-3를 MLFlow 모델로 사용하기
+## E2E 시나리오 - 래퍼 빌드 및 Phi-3를 MLFlow 모델로 사용하기
 
-이 E2E 샘플에서는 두 가지 접근 방식을 사용하여 Phi-3 소형 언어 모델(SLM)을 래퍼로 구축한 다음 로컬 또는 클라우드(예: Azure Machine Learning 워크스페이스)에서 MLFlow 모델로 실행하는 방법을 시연합니다.
+이 E2E 샘플에서는 Phi-3 소형 언어 모델(SLM)을 감싸는 두 가지 다른 래퍼 빌드 방식을 보여주고, 이를 로컬 또는 클라우드(예: Azure Machine Learning 작업 공간)에서 MLFlow 모델로 실행하는 방법을 설명합니다.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.ko.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.ko.png)
 
 | 프로젝트 | 설명 | 위치 |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline은 HuggingFace 모델을 MLFlow의 실험적인 Transformers flavor와 함께 사용하려는 경우 래퍼를 구축하는 가장 쉬운 옵션입니다. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | 작성 시점에서 Transformer Pipeline은 HuggingFace 모델의 ONNX 형식에 대한 MLFlow 래퍼 생성을 지원하지 않았습니다. 이러한 경우를 위해 MLFlow 모드를 위한 사용자 정의 Python 래퍼를 구축할 수 있습니다. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | HuggingFace 모델을 MLFlow의 실험적 transformers flavor와 함께 사용하려면 Transformer Pipeline이 가장 쉬운 래퍼 빌드 옵션입니다. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | 작성 시점 기준으로, transformer pipeline은 ONNX 형식의 HuggingFace 모델에 대해 MLFlow 래퍼 생성을 지원하지 않습니다(실험적 optimum Python 패키지 사용 시에도). 이런 경우에는 직접 맞춤형 Python 래퍼를 빌드할 수 있습니다. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## 프로젝트: Transformer Pipeline
 
-1. MLFlow 및 HuggingFace에서 필요한 Python 패키지를 설치해야 합니다:
+1. MLFlow와 HuggingFace 관련 Python 패키지를 설치해야 합니다:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. 다음으로 HuggingFace 레지스트리에서 대상 Phi-3 모델을 참조하여 Transformer Pipeline을 초기화해야 합니다. _Phi-3-mini-4k-instruct_ 모델 카드에서 볼 수 있듯이 이 모델의 작업 유형은 "텍스트 생성"입니다:
+2. 다음으로 HuggingFace 레지스트리에서 대상 Phi-3 모델을 참조해 transformer pipeline을 초기화합니다. _Phi-3-mini-4k-instruct_ 모델 카드에서 알 수 있듯, 해당 작업은 “텍스트 생성” 유형입니다:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 �
     )
     ```
 
-3. 이제 Phi-3 모델의 Transformer Pipeline을 MLFlow 형식으로 저장하고 대상 아티팩트 경로, 특정 모델 구성 설정 및 추론 API 유형과 같은 추가 세부 정보를 제공할 수 있습니다:
+3. 이제 Phi-3 모델의 transformer pipeline을 MLFlow 형식으로 저장하고, 대상 아티팩트 경로, 특정 모델 구성 설정, 추론 API 유형 등 추가 정보를 제공할 수 있습니다:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -75,7 +75,7 @@ MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 �
 
 ## 프로젝트: Custom Python Wrapper
 
-1. Microsoft의 [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai)를 사용하여 ONNX 모델의 추론 및 토큰 인코딩/디코딩을 수행할 수 있습니다. 아래 예는 CPU를 대상으로 _onnxruntime_genai_ 패키지를 선택하는 예입니다:
+1. 여기서는 Microsoft의 [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai)를 사용해 ONNX 모델 추론과 토큰 인코딩/디코딩을 수행합니다. 대상 컴퓨팅 환경에 맞는 _onnxruntime_genai_ 패키지를 선택해야 하며, 아래 예시는 CPU를 대상으로 합니다:
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 �
     import onnxruntime_genai as og
     ```
 
-1. 사용자 정의 클래스는 두 가지 메서드를 구현합니다: _load_context()_는 **Phi-3 Mini 4K Instruct의 ONNX 모델**, **생성기 매개변수**, **토크나이저**를 초기화하고, _predict()_는 제공된 프롬프트에 대한 출력 토큰을 생성합니다:
+1. 커스텀 클래스는 두 가지 메서드를 구현합니다: Phi-3 Mini 4K Instruct의 **ONNX 모델**, **생성기 파라미터**, **토크나이저**를 초기화하는 _load_context()_와, 주어진 프롬프트에 대해 출력 토큰을 생성하는 _predict()_입니다:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 �
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. 이제 _mlflow.pyfunc.log_model()_ 함수를 사용하여 Phi-3 모델에 대한 사용자 정의 Python 래퍼(피클 형식), 원래 ONNX 모델 및 필요한 종속성을 생성할 수 있습니다:
+1. 이제 _mlflow.pyfunc.log_model()_ 함수를 사용해 Phi-3 모델의 커스텀 Python 래퍼(피클 형식)와 원본 ONNX 모델 및 필요한 종속성을 함께 생성할 수 있습니다:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -129,9 +129,9 @@ MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 �
     )
     ```
 
-## 생성된 MLFlow 모델의 서명
+## 생성된 MLFlow 모델의 시그니처
 
-1. 위 Transformer Pipeline 프로젝트의 3단계에서 MLFlow 모델의 작업을 "_llm/v1/chat_"로 설정했습니다. 이러한 설정은 아래와 같이 OpenAI의 Chat API와 호환되는 모델 API 래퍼를 생성합니다:
+1. 위 Transformer Pipeline 프로젝트의 3단계에서 MLFlow 모델의 작업을 “_llm/v1/chat_”으로 설정했습니다. 이 설정은 아래와 같이 OpenAI의 Chat API와 호환되는 모델 API 래퍼를 생성합니다:
 
     ``` Python
     {inputs: 
@@ -142,13 +142,13 @@ MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 �
       None}
     ```
 
-1. 결과적으로 프롬프트를 다음 형식으로 제출할 수 있습니다:
+1. 결과적으로 다음 형식으로 프롬프트를 제출할 수 있습니다:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. 그런 다음 OpenAI API와 호환되는 후처리, 예를 들어 _response[0][‘choices’][0][‘message’][‘content’]_를 사용하여 출력을 다음과 같이 정리할 수 있습니다:
+1. 이후 OpenAI API 호환 후처리(예: _response[0][‘choices’][0][‘message’][‘content’]_)를 사용해 출력 결과를 다음과 같이 깔끔하게 만들 수 있습니다:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 �
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. 위 Custom Python Wrapper 프로젝트의 3단계에서 제공된 입력 예제를 기반으로 MLFlow 패키지가 모델의 서명을 생성하도록 허용했습니다. 우리의 MLFlow 래퍼 서명은 다음과 같이 보일 것입니다:
+1. 위 Custom Python Wrapper 프로젝트 3단계에서는 주어진 입력 예제로부터 MLFlow 패키지가 모델 시그니처를 생성하도록 허용했습니다. 우리의 MLFlow 래퍼 시그니처는 다음과 같습니다:
 
     ``` Python
     {inputs: 
@@ -169,13 +169,13 @@ MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 �
       None}
     ```
 
-1. 따라서 프롬프트에는 "prompt"라는 딕셔너리 키가 포함되어야 하며, 이는 다음과 같습니다:
+1. 따라서 프롬프트에는 아래와 같이 "prompt" 딕셔너리 키가 포함되어야 합니다:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. 모델의 출력은 문자열 형식으로 제공됩니다:
+1. 모델 출력은 문자열 형식으로 제공됩니다:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -188,4 +188,4 @@ MLFlow는 데이터 준비, 모델 등록 및 관리, 실행을 위한 모델 �
     ```
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있지만, 자동 번역은 오류나 부정확한 내용이 포함될 수 있음을 유의하시기 바랍니다. 원문이 작성된 원어 문서를 신뢰할 수 있는 권위 있는 출처로 간주해야 합니다. 중요한 정보에 대해서는 전문적인 인간 번역을 권장합니다. 이 번역을 사용함으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서는 해당 언어로 작성된 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

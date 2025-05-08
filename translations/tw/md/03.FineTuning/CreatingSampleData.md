@@ -1,23 +1,24 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "44a77501fe39a2eb2b776dfdf9953b67",
-  "translation_date": "2025-04-04T06:55:43+00:00",
-  "source_file": "md\\03.FineTuning\\CreatingSampleData.md",
+  "original_hash": "3cd0b727945d57998f1096763df56a84",
+  "translation_date": "2025-05-08T05:14:03+00:00",
+  "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "tw"
 }
 -->
-# 從 Hugging Face 下載資料集並生成影像數據集
+# Generate Image Data Set by downloading DataSet from Hugging Face and associated images
 
-### 概述
 
-這段腳本用於準備機器學習所需的數據集，通過下載所需的影像，過濾掉下載失敗的行，並將數據集保存為 CSV 文件。
+### Overview
 
-### 前置條件
+這個腳本透過下載所需的圖片，過濾掉下載失敗的列，並將資料集存成 CSV 檔，來準備機器學習用的資料集。
 
-在運行此腳本之前，請確保已安裝以下庫：`Pandas`, `Datasets`, `requests`, `PIL` 和 `io`。此外，需將第 2 行中的 `'Insert_Your_Dataset'` 替換為你從 Hugging Face 獲取的數據集名稱。
+### Prerequisites
 
-所需庫：
+執行此腳本前，請確認已安裝以下函式庫：`Pandas`、`Datasets`、`requests`、`PIL` 和 `io`。你也需要將第 2 行的 `'Insert_Your_Dataset'` 替換成你從 Hugging Face 下載的資料集名稱。
+
+Required Libraries:
 
 ```python
 
@@ -29,9 +30,9 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### 功能
+### Functionality
 
-腳本執行以下步驟：
+腳本會執行以下步驟：
 
 1. 使用 `load_dataset()` function.
 2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
@@ -42,30 +43,35 @@ from io import BytesIO
 
 ### Custom Function
 
-The `download_image()` 函數從 Hugging Face 下載數據集並轉換為 pandas 格式，下載影像，並過濾掉下載失敗的行。
-2. `download_image()` 函數使用 Pillow 影像庫 (PIL) 和 `io` 模塊，從 URL 下載影像並保存到本地。如果影像成功下載，返回 True；否則返回 False。如果請求失敗，該函數會拋出異常並返回錯誤信息。
+The `download_image()` 函式從 Hugging Face 下載資料集。`download_image()` 函式會從 URL 下載圖片並使用 Pillow Image Library (PIL) 及 `io` 模組將圖片儲存在本地。若圖片成功下載，會回傳 True，否則回傳 False。當請求失敗時，該函式也會丟出帶有錯誤訊息的例外。
 
-### 運作方式
+### How does this work
 
-`download_image` 函數接收兩個參數：`image_url`（影像的 URL）和 `save_path`（保存影像的路徑）。
+download_image 函式接受兩個參數：image_url 是要下載的圖片 URL，save_path 是下載後圖片要儲存的路徑。
 
-以下是該函數的運作方式：
+函式運作方式如下：
 
-- 首先使用 `requests.get` 方法向 `image_url` 發送 GET 請求，從 URL 獲取影像數據。
-- `response.raise_for_status()` 用於檢查請求是否成功。如果返回的狀態碼表示錯誤（例如 404 - 未找到），則拋出異常。這確保只有在請求成功時才繼續下載影像。
-- 影像數據通過 PIL 模塊中的 `Image.open` 方法處理，生成影像對象。
-- 使用 `image.save(save_path)` 將影像保存到指定的 `save_path`，其中 `save_path` 包含所需的文件名和擴展名。
-- 最後，函數返回 True，表示影像成功下載並保存。如果過程中發生異常，函數會捕獲異常，打印錯誤信息並返回 False。
+首先使用 requests.get 方法對 image_url 發出 GET 請求，取得圖片資料。
 
-此函數適用於從 URL 下載影像並保存到本地。它處理下載過程中的潛在錯誤，並提供下載是否成功的反饋。
+response.raise_for_status() 這行會檢查請求是否成功。如果回應狀態碼顯示錯誤（例如 404 - 找不到），就會丟出例外。這確保只有在請求成功時才會繼續下載圖片。
 
-需要注意的是，`requests` 庫用於發送 HTTP 請求，PIL 庫用於處理影像，而 `BytesIO` 類用於以字節流的形式處理影像數據。
+接著將圖片資料傳給 PIL (Python Imaging Library) 模組的 Image.open 方法，建立 Image 物件。
 
-### 結論
+image.save(save_path) 會把圖片存到指定的 save_path，該路徑應包含檔名及副檔名。
 
-此腳本提供了一種方便的方法，用於準備機器學習數據集，通過下載所需影像、過濾掉下載失敗的行，並將數據集保存為 CSV 文件。
+最後，函式會回傳 True，表示圖片成功下載並儲存。若過程中發生任何例外，會捕捉例外並印出錯誤訊息，然後回傳 False。
 
-### 範例腳本
+這個函式適合用來從 URL 下載圖片並儲存到本地，能處理下載過程中可能發生的錯誤，並回饋下載是否成功。
+
+值得一提的是，requests 函式庫用來發出 HTTP 請求，PIL 函式庫用來處理圖片，而 BytesIO 類別則用來將圖片資料當作位元組串流處理。
+
+
+
+### Conclusion
+
+這個腳本提供一個方便的方式，透過下載所需圖片、過濾下載失敗的列，並將資料集存成 CSV，來準備機器學習用的資料集。
+
+### Sample Script
 
 ```python
 import os
@@ -124,11 +130,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### 下載範例代碼 
-[生成新數據集腳本](../../../../code/04.Finetuning/generate_dataset.py)
+### Sample Code Download 
+[Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### 範例數據集
-[使用 LORA 微調的範例數據集](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+### Sample Data Set
+[Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **免責聲明**：  
-本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不精確之處。原始文件的原文應被視為權威來源。對於關鍵信息，建議尋求專業人工翻譯。我們不對因使用此翻譯而產生的任何誤解或誤讀承擔責任。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

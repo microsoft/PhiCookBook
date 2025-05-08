@@ -1,95 +1,95 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "6525689374197af33b41a93811e473a2",
-  "translation_date": "2025-04-04T18:45:36+00:00",
-  "source_file": "md\\02.QuickStart\\AzureAIFoundry_QuickStart.md",
+  "original_hash": "3a1e48b628022485aac989c9f733e792",
+  "translation_date": "2025-05-08T04:59:38+00:00",
+  "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
   "language_code": "hk"
 }
 -->
-# **在 Azure AI Foundry 中使用 Phi-3**
+# **喺 Azure AI Foundry 使用 Phi-3**
 
-隨著生成式 AI 的發展，我們希望使用統一的平台來管理不同的 LLM 和 SLM，企業數據整合，微調/RAG 操作，以及在整合 LLM 和 SLM 後對不同企業業務的評估等，從而更好地實現生成式 AI 的智能應用。[Azure AI Foundry](https://ai.azure.com) 是一個企業級生成式 AI 應用平台。
+隨住生成式 AI 嘅發展，我哋希望用一個統一平台去管理唔同嘅 LLM 同 SLM、企業數據整合、微調/RAG 操作，仲有整合 LLM 同 SLM 後評估唔同企業業務，等生成式 AI 可以更智能咁應用喺實際場景。[Azure AI Foundry](https://ai.azure.com) 係一個企業級嘅生成式 AI 應用平台。
 
-![aistudo](../../../../translated_images/aifoundry_home.ffa4fe13d11f26171097f8666a1db96ac0979ffa1adde80374c60d1136c7e1de.hk.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.hk.png)
 
-通過 Azure AI Foundry，你可以評估大型語言模型（LLM）的響應，並通過 Prompt Flow 編排 Prompt 應用組件以獲得更好的性能。該平台支持從概念驗證到全面投產的輕鬆擴展。持續的監控和調整則為長期成功提供支持。
+用 Azure AI Foundry，可以評估大型語言模型（LLM）嘅回應，仲可以用 prompt flow 去編排提示應用組件，提升表現。平台方便擴展，輕鬆將概念驗證轉成完整生產系統。持續監控同優化支援長遠成功。
 
-我們可以通過簡單步驟快速在 Azure AI Foundry 上部署 Phi-3 模型，然後利用 Azure AI Foundry 完成 Phi-3 相關的 Playground/Chat、微調、評估等相關工作。
+我哋可以透過簡單步驟喺 Azure AI Foundry 快速部署 Phi-3 模型，之後用 Azure AI Foundry 完成 Phi-3 相關嘅 Playground/Chat、微調、評估等工作。
 
 ## **1. 準備工作**
 
-如果你的設備上已安裝 [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo)，使用這個模板只需在新目錄中運行以下命令即可。
+如果你已經喺機器安裝咗 [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo)，用呢個模板只需要喺新目錄執行呢個指令就得。
 
-## 手動創建
+## 手動建立
 
-創建一個 Microsoft Azure AI Foundry 項目和 Hub 是組織和管理你的 AI 工作的好方法。以下是逐步指導：
+建立 Microsoft Azure AI Foundry 項目同 hub 係組織同管理 AI 工作嘅好方法。以下係逐步指引幫你開始：
 
-### 在 Azure AI Foundry 中創建項目
+### 喺 Azure AI Foundry 建立項目
 
-1. **進入 Azure AI Foundry**：登錄 Azure AI Foundry 門戶。
-2. **創建項目**：
-   - 如果你已在某個項目中，點擊頁面左上角的“Azure AI Foundry”，進入主頁。
-   - 點擊“+ 創建項目”。
+1. **登入 Azure AI Foundry**：登入 Azure AI Foundry 入口網站。
+2. **建立項目**：
+   - 如果你已經喺某個項目，喺頁面左上角揀「Azure AI Foundry」返回主頁。
+   - 揀「+ Create project」。
    - 輸入項目名稱。
-   - 如果你已有 Hub，默認會選中該 Hub。如果你有多個 Hub 的訪問權限，可以從下拉菜單中選擇其他 Hub。如果你想創建新的 Hub，點擊“創建新 Hub”，並輸入名稱。
-   - 點擊“創建”。
+   - 如果你有 hub，會自動選擇。如果你有多於一個 hub，可以喺下拉選單揀另一個。如果想建立新 hub，揀「Create new hub」並輸入名稱。
+   - 揀「Create」。
 
-### 在 Azure AI Foundry 中創建 Hub
+### 喺 Azure AI Foundry 建立 Hub
 
-1. **進入 Azure AI Foundry**：使用你的 Azure 賬戶登錄。
-2. **創建 Hub**：
-   - 從左側菜單中選擇管理中心。
-   - 點擊“所有資源”，然後點擊“+ 新項目”旁的下拉箭頭，選擇“+ 新 Hub”。
-   - 在“創建新 Hub”對話框中，輸入 Hub 的名稱（例如 contoso-hub），並根據需要修改其他字段。
-   - 點擊“下一步”，檢查信息，然後點擊“創建”。
+1. **登入 Azure AI Foundry**：用你嘅 Azure 帳戶登入。
+2. **建立 Hub**：
+   - 喺左側選單揀「Management center」。
+   - 揀「All resources」，跟住喺「+ New project」旁嘅下拉箭頭揀「+ New hub」。
+   - 喺「Create a new hub」對話框入面，輸入 hub 名稱（例如 contoso-hub），同埋根據需要修改其他欄位。
+   - 揀「Next」，檢查資料，然後揀「Create」。
 
-更多詳細指導，請參考官方 [Microsoft 文檔](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects)。
+想了解更詳細指引，可以參考官方嘅 [Microsoft 文件](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects)。
 
-創建成功後，你可以通過 [ai.azure.com](https://ai.azure.com/) 訪問你創建的工作室。
+建立成功後，可以透過 [ai.azure.com](https://ai.azure.com/) 進入你建立嘅 studio。
 
-一個 AI Foundry 可以包含多個項目。在 AI Foundry 中創建項目以做好準備。
+一個 AI Foundry 可以有多個項目。先喺 AI Foundry 建立項目作準備。
 
-創建 Azure AI Foundry [快速入門](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+建立 Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
-## **2. 在 Azure AI Foundry 中部署 Phi 模型**
+## **2. 喺 Azure AI Foundry 部署 Phi 模型**
 
-點擊項目中的 Explore 選項，進入模型目錄並選擇 Phi-3
+喺項目入面揀 Explore，進入 Model Catalog，揀 Phi-3。
 
-選擇 Phi-3-mini-4k-instruct
+揀 Phi-3-mini-4k-instruct。
 
-點擊“部署”，以部署 Phi-3-mini-4k-instruct 模型
+點擊「Deploy」部署 Phi-3-mini-4k-instruct 模型。
 
 > [!NOTE]
 >
-> 部署時可選擇計算能力
+> 部署時可以揀計算資源。
 
-## **3. 在 Azure AI Foundry 中使用 Playground 聊天 Phi**
+## **3. 喺 Azure AI Foundry Playground Chat Phi**
 
-進入部署頁面，選擇 Playground，與 Azure AI Foundry 的 Phi-3 進行聊天
+去部署頁面，揀 Playground，同 Azure AI Foundry 嘅 Phi-3 聊天。
 
-## **4. 從 Azure AI Foundry 部署模型**
+## **4. 喺 Azure AI Foundry 部署模型**
 
-要從 Azure 模型目錄中部署模型，可以按照以下步驟：
+要喺 Azure Model Catalog 部署模型，可以跟住以下步驟：
 
-- 登錄 Azure AI Foundry。
-- 從 Azure AI Foundry 模型目錄中選擇你要部署的模型。
-- 在模型的詳細信息頁面中，選擇部署，然後選擇帶有 Azure AI Content Safety 的無服務 API。
-- 選擇你希望部署模型的項目。要使用無服務 API，工作區必須位於 East US 2 或 Sweden Central 地區。你可以自定義部署名稱。
-- 在部署向導中，選擇定價和條款以了解定價和使用條款。
-- 點擊部署。等待部署完成，並跳轉到部署頁面。
-- 點擊“在 Playground 中打開”開始與模型交互。
-- 你可以返回部署頁面，選擇部署，並記錄端點的目標 URL 和密鑰，用於調用部署並生成完成。
-- 你可以隨時通過導航到 Build 標籤，並從組件部分選擇 Deployments，找到端點的詳細信息、URL 和訪問密鑰。
+- 登入 Azure AI Foundry。
+- 喺 Azure AI Foundry 模型目錄揀你想部署嘅模型。
+- 喺模型嘅詳細頁面，揀 Deploy，然後揀 Serverless API with Azure AI Content Safety。
+- 揀你想部署模型嘅項目。要用 Serverless API，你嘅工作區必須喺 East US 2 或 Sweden Central 區域。你可以自訂部署名稱。
+- 喺部署嚮導，揀 Pricing and terms 了解價格同使用條款。
+- 揀 Deploy。等部署完成，會跳轉去 Deployments 頁面。
+- 揀 Open in playground 開始同模型互動。
+- 你可以返回 Deployments 頁面，揀部署，留意 endpoint 嘅 Target URL 同 Secret Key，用嚟調用部署同生成回應。
+- 你隨時可以喺 Build 標籤底下，喺 Components 區揀 Deployments，搵到 endpoint 詳情、URL 同存取金鑰。
 
 > [!NOTE]
-> 請注意，執行這些步驟需要你的賬戶具有資源組上的 Azure AI Developer 角色權限。
+> 請注意，你嘅帳戶必須喺資源組擁有 Azure AI Developer 角色權限先可以執行以上步驟。
 
-## **5. 在 Azure AI Foundry 中使用 Phi API**
+## **5. 喺 Azure AI Foundry 使用 Phi API**
 
-你可以通過 Postman 的 GET 請求訪問 https://{Your project name}.region.inference.ml.azure.com/swagger.json，並結合密鑰來了解提供的接口
+你可以透過 Postman 用 GET 方法訪問 https://{Your project name}.region.inference.ml.azure.com/swagger.json，配合 Key 了解提供嘅接口。
 
-你可以非常方便地獲取請求參數以及響應參數。
+你可以好方便咁攞到請求參數，同埋回應參數。
 
 **免責聲明**：  
-本文件已使用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原語言版本的文件作為權威來源。對於關鍵信息，建議尋求專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或誤讀概不負責。
+本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用此翻譯而引起的任何誤解或誤釋負責。

@@ -1,142 +1,140 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "c7a7f2a07dc176c19e1ab9f249b548c9",
-  "translation_date": "2025-04-04T17:23:31+00:00",
-  "source_file": "code\\08.RAG\\rag_webgpu_chat\\README.md",
+  "original_hash": "4aac6b8a5dcbbe9a32b47be30340cac2",
+  "translation_date": "2025-05-08T06:47:48+00:00",
+  "source_file": "code/08.RAG/rag_webgpu_chat/README.md",
   "language_code": "hk"
 }
 -->
 Phi-3-mini WebGPU RAG Chatbot
 
-## 示範展示 WebGPU 和 RAG 模式
-使用 Phi-3 Onnx Hosted 模型的 RAG 模式採用 Retrieval-Augmented Generation 方法，結合 Phi-3 模型的強大功能和 ONNX 託管，以實現高效的 AI 部署。這種模式在模型微調方面非常有用，適用於特定領域任務，提供了質量、成本效益和長上下文理解的良好平衡。它是 Azure AI 套件的一部分，提供多種易於找到、試用和使用的模型，滿足各行業的定制需求。Phi-3 模型，包括 Phi-3-mini、Phi-3-small 和 Phi-3-medium，可在 Azure AI Model Catalog 上找到，並可進行自管理部署或通過 HuggingFace 和 ONNX 平台部署，展示了 Microsoft 致力於提供可訪問和高效 AI 解決方案的承諾。
+## 展示 WebGPU 同 RAG 模式嘅示範
+用 Phi-3 Onnx Hosted model 嘅 RAG 模式採用 Retrieval-Augmented Generation 方法，結合咗 Phi-3 模型同 ONNX hosting 嘅優勢，令 AI 部署更加高效。呢個模式對於針對特定領域任務嘅模型微調非常重要，提供質素、成本效益同長上下文理解嘅平衡。佢係 Azure AI 嘅一部分，提供多款容易搵到、試用同使用嘅模型，滿足唔同行業嘅定制需求。Phi-3 系列模型，包括 Phi-3-mini、Phi-3-small 同 Phi-3-medium，都喺 Azure AI Model Catalog 上架，可以自行微調同部署，或者透過 HuggingFace 同 ONNX 等平台，展示咗 Microsoft 致力於提供易用同高效 AI 解決方案嘅承諾。
 
-## 什麼是 WebGPU
-WebGPU 是一種現代化的網頁圖形 API，旨在直接從網頁瀏覽器高效訪問設備的圖形處理單元（GPU）。它被設計為 WebGL 的繼任者，提供了以下幾個重要改進：
+## 乜嘢係 WebGPU
+WebGPU 係一個現代網頁圖形 API，設計用嚟直接喺瀏覽器入面高效使用裝置嘅圖形處理器（GPU）。佢係 WebGL 嘅後繼者，帶嚟幾個主要改進：
 
-1. **兼容現代 GPU**：WebGPU 專為當代 GPU 架構設計，利用系統 API 如 Vulkan、Metal 和 Direct3D 12。
-2. **性能提升**：支持通用 GPU 計算和更快的操作，適用於圖形渲染和機器學習任務。
-3. **高級功能**：提供更高級的 GPU 功能，能夠處理更複雜和動態的圖形及計算工作負載。
-4. **減少 JavaScript 負擔**：通過將更多任務交給 GPU，WebGPU 大幅減少了 JavaScript 的工作量，從而提升性能和流暢度。
+1. **兼容現代 GPU**：WebGPU 專為現代 GPU 架構設計，利用 Vulkan、Metal 同 Direct3D 12 等系統 API。
+2. **提升效能**：支持通用 GPU 運算同更快嘅操作，適合圖形渲染同機器學習任務。
+3. **先進功能**：提供更多高級 GPU 能力，支持更複雜同動態嘅圖形同計算工作負載。
+4. **減輕 JavaScript 負擔**：將更多工作交畀 GPU 處理，大大減少 JavaScript 嘅運算量，令效能更好同體驗更流暢。
 
-目前 WebGPU 在 Google Chrome 等瀏覽器中得到支持，並在擴展到其他平台的工作中。
+而家 WebGPU 已經喺 Google Chrome 等瀏覽器支援，仲有持續努力擴展到其他平台。
 
 ### 03.WebGPU
 所需環境：
 
-**支持的瀏覽器：**
-- Google Chrome 113+
-- Microsoft Edge 113+
-- Safari 18 (macOS 15)
-- Firefox Nightly
+**支援嘅瀏覽器：**  
+- Google Chrome 113+  
+- Microsoft Edge 113+  
+- Safari 18 (macOS 15)  
+- Firefox Nightly。
 
 ### 啟用 WebGPU：
 
-- 在 Chrome/Microsoft Edge 中
+- 喺 Chrome/Microsoft Edge
 
 啟用 `chrome://flags/#enable-unsafe-webgpu` 標誌。
 
 #### 打開瀏覽器：
 啟動 Google Chrome 或 Microsoft Edge。
 
-#### 訪問 Flags 頁面：
-在地址欄中輸入 `chrome://flags`，然後按 Enter。
+#### 進入 Flags 頁面：
+喺地址欄輸入 `chrome://flags`，然後按 Enter。
 
-#### 搜索標誌：
-在頁面頂部的搜索框中輸入 'enable-unsafe-webgpu'
+#### 搜尋標誌：
+喺頁面頂部嘅搜尋框輸入 'enable-unsafe-webgpu'。
 
 #### 啟用標誌：
-在搜索結果中找到 #enable-unsafe-webgpu 標誌。
+喺結果列表搵到 #enable-unsafe-webgpu 標誌。
 
-點擊旁邊的下拉菜單並選擇 Enabled。
+喺旁邊嘅下拉菜單揀選 Enabled。
 
 #### 重啟瀏覽器：
 
-啟用標誌後，需重啟瀏覽器以使更改生效。點擊頁面底部出現的重新啟動按鈕。
+啟用後，需要重啟瀏覽器先會生效。點擊頁面底部出現嘅 Relaunch 按鈕。
 
-- 對於 Linux，用 `--enable-features=Vulkan` 啟動瀏覽器。
-- Safari 18 (macOS 15) 默認啟用了 WebGPU。
-- 在 Firefox Nightly 中，進入地址欄輸入 about:config 並 `set dom.webgpu.enabled to true`。
+- Linux 用戶，啟動瀏覽器時加 `--enable-features=Vulkan` 參數。  
+- Safari 18 (macOS 15) 預設已啟用 WebGPU。  
+- Firefox Nightly，喺地址欄輸入 about:config，然後 `set dom.webgpu.enabled to true`。
 
-### 為 Microsoft Edge 設置 GPU 
+### 喺 Microsoft Edge 設置 GPU
 
-以下是在 Windows 上為 Microsoft Edge 設置高性能 GPU 的步驟：
+喺 Windows 上為 Microsoft Edge 設置高性能 GPU 嘅步驟：
 
-- **打開設置：** 點擊開始菜單並選擇設置。
-- **系統設置：** 進入系統，然後選擇顯示。
-- **圖形設置：** 滾動到下方並點擊圖形設置。
-- **選擇應用：** 在“選擇應用設置偏好”下選擇桌面應用，然後瀏覽。
-- **選擇 Edge：** 導航到 Edge 安裝文件夾（通常是 `C:\Program Files (x86)\Microsoft\Edge\Application`），然後選擇 `msedge.exe`。
-- **設置偏好：** 點擊選項，選擇高性能，然後點擊保存。
-這樣可以確保 Microsoft Edge 使用您的高性能 GPU 以提升性能。
-- **重啟**機器以使設置生效。
+- **打開設定：** 點擊開始菜單，揀 Settings。  
+- **系統設定：** 進入 System，再揀 Display。  
+- **圖形設定：** 向下捲動，點擊 Graphics settings。  
+- **選擇應用程式：** 喺「Choose an app to set preference」底下，揀 Desktop app，再點 Browse。  
+- **揀 Edge：** 去到 Edge 安裝資料夾（通常係 `C:\Program Files (x86)\Microsoft\Edge\Application`），揀 `msedge.exe`。  
+- **設定偏好：** 點 Options，揀 High performance，跟住按 Save。  
+咁樣可以確保 Microsoft Edge 用高性能 GPU，提升效能。  
+- **重啟** 電腦，令設定生效。
 
-### 打開 Codespace：
-導航到您的 GitHub 存儲庫。
-點擊 Code 按鈕並選擇 Open with Codespaces。
+### 打開你嘅 Codespace：
+去 GitHub 上你嘅 repository。  
+點 Code 按鈕，揀 Open with Codespaces。
 
-如果您還沒有 Codespace，可以點擊 New codespace 創建一個。
+如果未有 Codespace，可以點 New codespace 建立一個。
 
-**注意** 在您的 Codespace 中安裝 Node 環境
-在 GitHub Codespace 中運行 npm 示範是測試和開發項目的絕佳方式。以下是幫助您入門的分步指南：
+**Note** 安裝 Node 環境喺你嘅 codespace  
+喺 GitHub Codespace 運行 npm 示範係測試同開發項目嘅好方法。以下係一步步指引：
 
 ### 設置環境：
-打開 Codespace 後，確保已安裝 Node.js 和 npm。您可以通過運行以下命令進行檢查：
+Codespace 開啟後，確保已安裝 Node.js 同 npm。可以用以下指令檢查：  
 ```
 node -v
-```
+```  
 ```
 npm -v
 ```
 
-如果尚未安裝，可以使用以下命令進行安裝：
+如果未安裝，可以用以下指令安裝：  
 ```
 sudo apt-get update
-```
+```  
 ```
 sudo apt-get install nodejs npm
 ```
 
-### 導航到項目目錄：
-使用終端導航到 npm 項目所在的目錄：
+### 進入項目目錄：
+用終端機去到你嘅 npm 項目目錄：  
 ```
 cd path/to/your/project
 ```
 
-### 安裝依賴項：
-運行以下命令以安裝 package.json 文件中列出的所有必要依賴項：
-
+### 安裝依賴：
+執行以下指令安裝 package.json 裏面嘅所有依賴：  
 ```
 npm install
 ```
 
 ### 運行示範：
-依賴項安裝完成後，您可以運行示範腳本。通常在 package.json 的 scripts 部分中指定。例如，如果您的示範腳本名為 start，可以運行：
-
+依賴安裝完成後，可以運行示範腳本。通常喺 package.json 嘅 scripts 裏面指定，例如腳本名係 start，就用：  
 ```
 npm run build
-```
+```  
 ```
 npm run dev
 ```
 
 ### 訪問示範：
-如果您的示範涉及到網頁服務器，Codespaces 會提供一個 URL 供您訪問。查看通知或檢查 Ports 標籤以找到 URL。
+如果示範涉及網頁服務器，Codespaces 會提供訪問 URL。留意通知或喺 Ports 標籤頁搵 URL。
 
-**注意：** 模型需要在瀏覽器中緩存，因此可能需要一些時間加載。
+**Note:** 模型需要喺瀏覽器緩存，所以加載可能會花啲時間。
 
 ### RAG 示範
-上傳 markdown 文件 `intro_rag.md` to complete the RAG solution. If using codespaces you can download the file located in `01.InferencePhi3/docs/`
+上載 markdown 文件 `intro_rag.md` to complete the RAG solution. If using codespaces you can download the file located in `01.InferencePhi3/docs/`
 
 ### 選擇文件：
-點擊“Choose File”按鈕選擇您要上傳的文檔。
+點擊「Choose File」按鈕，揀你想上載嘅文件。
 
-### 上傳文檔：
-選擇文件後，點擊“Upload”按鈕加載您的文檔以進行 RAG（Retrieval-Augmented Generation）。
+### 上載文件：
+揀好文件後，點「Upload」按鈕，將文件上載用嚟做 RAG（Retrieval-Augmented Generation）。
 
-### 開始聊天：
-文檔上傳完成後，您可以根據文檔內容使用 RAG 開始聊天會話。
+### 開始對話：
+文件上載完成後，可以根據文件內容開始 RAG 對話。
 
 **免責聲明**：  
-本文件已使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。應以原文作為權威來源。對於關鍵信息，建議尋求專業的人工翻譯。我們對因使用本翻譯而引起的任何誤解或錯誤解釋概不負責。
+本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原文文件以其原始語言版本為準。對於重要資訊，建議採用專業人工翻譯。我們不對因使用此翻譯而引致的任何誤解或誤釋承擔責任。

@@ -1,50 +1,50 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "07ca611437b569633d7aacf855ecaa7e",
-  "translation_date": "2025-04-04T17:46:37+00:00",
-  "source_file": "md\\01.Introduction\\03\\iOS_Inference_MLX.md",
+  "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
+  "translation_date": "2025-05-08T06:01:56+00:00",
+  "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "hk"
 }
 -->
-# 在 iOS 上用 Apple MLX Framework 執行 Phi-3 和 Phi-4
+# 喺 iOS 用 Apple MLX Framework 運行 Phi-3 同 Phi-4
 
-本教學將示範如何利用 Apple MLX 框架，在裝置上執行 Phi-3 或 Phi-4 模型，並建立一個 iOS 應用程式。[MLX](https://opensource.apple.com/projects/mlx/) 是 Apple 專為 Apple Silicon 晶片優化的機器學習框架。
+呢個教學示範點樣用 Apple MLX framework 喺 iOS 裝置上面運行 Phi-3 或 Phi-4 模型，建立一個 iOS 應用程式。[MLX](https://opensource.apple.com/projects/mlx/) 係 Apple 專為 Apple Silicon 晶片優化嘅機器學習框架。
 
-## 先決條件
+## 前置條件
 
-- 安裝 Xcode 16（或更高版本）的 macOS
-- 目標裝置需為 iOS 18（或更高版本），且至少具備 8GB 記憶體（例如符合 Apple Intelligence 要求的 iPhone 或 iPad，因為這些要求與量化後的 Phi 模型相似）
-- 具備基本的 Swift 和 SwiftUI 知識
+- macOS 同 Xcode 16（或以上）
+- iOS 18（或以上）嘅目標裝置，至少 8GB 記憶體（iPhone 或 iPad，要符合 Apple Intelligence 嘅要求，因為呢啲要求同量化後嘅 Phi 模型要求相似）
+- 基本嘅 Swift 同 SwiftUI 知識
 
-## 步驟 1：建立新的 iOS 專案
+## 第一步：建立新嘅 iOS 專案
 
-首先，在 Xcode 中建立一個新的 iOS 專案：
+喺 Xcode 開始建立一個新嘅 iOS 專案：
 
-1. 啟動 Xcode，選擇「Create a new Xcode project」
-2. 選擇「App」作為模板
-3. 為專案命名（例如「Phi3-iOS-App」），並選擇 SwiftUI 作為介面
-4. 選擇專案儲存的位置
+1. 開啟 Xcode，揀「Create a new Xcode project」
+2. 選擇「App」作為範本
+3. 為專案命名（例如「Phi3-iOS-App」），介面選 SwiftUI
+4. 揀一個位置儲存專案
 
-## 步驟 2：新增必要的依賴項
+## 第二步：加入所需依賴
 
-新增 [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples)，該套件包含預載模型和執行推理所需的所有依賴項和輔助工具：
+加入包含所有必要依賴同預載模型及推理輔助工具嘅 [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples)：
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-雖然基本的 [MLX Swift package](https://github.com/ml-explore/mlx-swift) 已足夠處理核心張量運算和基本的機器學習功能，但 MLX Examples 套件額外提供多個專為語言模型設計的元件，讓推理過程更簡單：
+雖然基本嘅 [MLX Swift package](https://github.com/ml-explore/mlx-swift) 已經足夠做核心張量運算同基本 ML 功能，但 MLX Examples package 提供多啲專為語言模型同簡化推理流程設計嘅額外元件：
 
-- 處理從 Hugging Face 下載的模型載入工具
+- 負責由 Hugging Face 下載模型嘅載入工具
 - 分詞器整合
-- 生成文字的推理輔助工具
-- 預先配置的模型定義
+- 文字生成嘅推理輔助工具
+- 預設好嘅模型定義
 
-## 步驟 3：配置權限
+## 第三步：設定權限
 
-為了讓應用程式能下載模型並分配足夠的記憶體，我們需要新增特定的權限。為應用程式建立一個 `.entitlements` 檔案，內容如下：
+為咗畀我哋嘅 app 下載模型同分配足夠記憶體，需要加啲特定權限。為你嘅 app 建立一個 `.entitlements` 檔案，內容如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ CO_OP_TRANSLATOR_METADATA:
 </plist>
 ```
 
-> **注意：** `com.apple.developer.kernel.increased-memory-limit` 權限對於執行較大型的模型至關重要，因為它允許應用程式請求比通常允許更多的記憶體。
+> **Note:** `com.apple.developer.kernel.increased-memory-limit` 權限好重要，因為佢允許 app 請求比平時多嘅記憶體，方便運行較大嘅模型。
 
-## 步驟 4：建立聊天訊息模型
+## 第四步：建立聊天訊息模型
 
-首先，我們建立一個基本結構來表示聊天訊息：
+首先，建立一個基本結構嚟表示我哋嘅聊天訊息：
 
 ```swift
 import SwiftUI
@@ -85,9 +85,9 @@ struct ChatMessage: Identifiable {
 }
 ```
 
-## 步驟 5：實作 ViewModel
+## 第五步：實作 ViewModel
 
-接下來，我們建立 `PhiViewModel` 類別，負責模型載入和推理：
+接住，我哋會建立負責載入模型同推理嘅 `PhiViewModel` class：
 
 ```swift
 import MLX
@@ -248,9 +248,9 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-該 ViewModel 展示了與 MLX 整合的關鍵點：
+呢個 ViewModel 展示咗 MLX 主要嘅整合點：
 
-- 使用 `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
+- 用 `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
 - using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
 - accessing the model's parameters and structure through the `ModelContainer`
 - leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
@@ -264,7 +264,7 @@ In terms of UI interaction, the two key functions are `loadModel()`, which initi
 
 > **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit` 設置 GPU 快取限制，它參考了一個特定的預轉換 MLX 模型，該模型會自動下載：
+The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit` 設定 GPU 快取限制，引用咗一個已預先轉換好嘅 MLX 模型，會自動下載：
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-你可以建立自己的模型配置，指向任何 Hugging Face 上相容的模型。例如，要使用 Phi-4 mini，可以定義自己的配置：
+你可以自己建立模型設定，指向 Hugging Face 上任何相容嘅模型。例如，如果想用 Phi-4 mini，可以自己定義一個設定：
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **注意：** Phi-4 支援於 2025 年 2 月底新增至 MLX Swift Examples 儲存庫（參見 [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)）。截至 2025 年 3 月，最新的官方版本（2024 年 12 月發佈的 2.21.2）尚未內建 Phi-4 支援。如需使用 Phi-4 模型，需直接從主分支引用套件：
+> **Note:** Phi-4 支援喺 2025 年 2 月底加入咗 MLX Swift Examples repository（[PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)）。截至 2025 年 3 月，官方最新版本（2024 年 12 月嘅 2.21.2）未內置 Phi-4 支援。要用 Phi-4 模型，你需要直接由 main 分支引用套件：
 >
-> ```swift
+>```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-這樣可以讓你在官方版本發佈之前，存取最新的模型配置（包括 Phi-4）。你也可以使用此方法，選擇不同版本的 Phi 模型，甚至其他已轉換為 MLX 格式的模型。
+咁你就可以搶先用到最新嘅模型設定，包括 Phi-4，未正式入官方版本之前。你亦可以用呢個方法去用唔同版本嘅 Phi 模型，或者其他已轉換成 MLX 格式嘅模型。
 
-## 步驟 6：建立使用者介面
+## 第六步：建立 UI
 
-現在，我們來實作一個簡單的聊天介面，與 ViewModel 互動：
+而家實作一個簡單嘅聊天介面，同我哋嘅 view model 互動：
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-此使用者介面包含三個主要元件，共同構成一個基本的聊天介面。`ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` 提供一個簡單的動畫指示器，顯示 AI 正在處理中。
+呢個 UI 有三個主要組件，合力打造一個基本嘅聊天介面。`ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` 提供一個簡單嘅動畫指示器，顯示 AI 正喺處理中。
 
-## 步驟 7：建置並執行應用程式
+## 第七步：建構同運行 App
 
-現在我們已準備好建置並執行應用程式。
+而家可以開始建構同運行應用程式。
 
-> **重要！** MLX 不支援模擬器。你必須在具有 Apple Silicon 晶片的實體裝置上執行應用程式。詳情請參考 [這裡](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS)。
+> **Important!** MLX 唔支援模擬器，你必須喺有 Apple Silicon 晶片嘅實體裝置上運行。詳情請睇 [here](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS)。
 
-當應用程式啟動後，點擊「Load model」按鈕以下載並初始化 Phi-3（或根據你的配置，Phi-4）模型。根據網路連線速度，這個過程可能需要一些時間，因為它需要從 Hugging Face 下載模型。我們的實作僅包含一個載入指示器，但你可以在 Xcode 主控台中查看實際進度。
+App 啟動後，撳「Load model」按鈕，開始下載同初始化 Phi-3（或者視乎你設定嘅 Phi-4）模型。呢個過程會視乎你嘅網絡速度而定，因為要由 Hugging Face 下載模型。我哋嘅實作只係用一個轉圈指示載入，但你可以喺 Xcode console 睇到實際進度。
 
-載入完成後，你可以透過在文字框中輸入問題並點擊發送按鈕與模型互動。
+載入完成後，你可以喺文字欄輸入問題，再撳送出按鈕同模型互動。
 
-以下是應用程式在 iPad Air M1 上運行的示範畫面：
+以下係我哋嘅應用程式喺 iPad Air M1 上運行嘅效果：
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
-## 結論
+## 總結
 
-就是這樣！透過這些步驟，你已成功建立一個 iOS 應用程式，並使用 Apple 的 MLX 框架在裝置上直接執行 Phi-3（或 Phi-4）模型。
+就係咁！跟住呢啲步驟，你已經建立咗一個 iOS 應用程式，可以用 Apple MLX framework 喺裝置上直接運行 Phi-3（或 Phi-4）模型。
 
-恭喜你！
+恭喜晒！
 
 **免責聲明**：  
-本文件使用人工智能翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。我們致力於提供準確的翻譯，但請注意，自動翻譯可能會包含錯誤或不準確之處。原文的母語版本應被視為權威來源。如涉及關鍵資訊，建議使用專業人工翻譯。我們對因使用此翻譯而引起的任何誤解或錯誤解釋不承擔責任。
+本文件使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議使用專業人工翻譯。因使用本翻譯而引起的任何誤解或誤釋，我們概不負責。

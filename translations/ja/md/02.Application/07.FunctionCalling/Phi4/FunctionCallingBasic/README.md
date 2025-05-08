@@ -1,17 +1,19 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a3db2edc82e92fba136d9731f6d067ef",
-  "translation_date": "2025-04-04T13:05:16+00:00",
-  "source_file": "md\\02.Application\\07.FunctionCalling\\Phi4\\FunctionCallingBasic\\README.md",
+  "original_hash": "b7078bd9f16589c50139fbba8674de82",
+  "translation_date": "2025-05-08T05:25:28+00:00",
+  "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "ja"
 }
 -->
 ## **Phi-4-miniでの関数呼び出し**
 
-関数呼び出しは最初にPhiファミリーで登場し、現在ではPhi-4-miniを通じて利用できるようになりました。
+関数呼び出しはPhi Familyで初めて登場し、現在はPhi-4-miniでも利用できます。
 
-この例では、プレミアリーグの試合結果をシミュレーションする方法を示しています。目標は、Phi-4-miniがリアルタイムで試合情報を提供することです。以下はサンプルコードです：
+この例ではプレミアリーグの結果をシミュレートしています。目的はPhi-4-miniがリアルタイムの試合情報を提供することです。以下はサンプルコードです：
+
+
 
 ```python
 
@@ -107,4 +109,4 @@ print(messages)
 ```
 
 **免責事項**:  
-この文書は、AI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を追求していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。元の言語で書かれた文書を正式な情報源として考慮してください。重要な情報については、専門の人間による翻訳を推奨します。この翻訳の使用に起因する誤解や解釈の誤りについて、当社は一切責任を負いません。
+本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても責任を負いかねます。
