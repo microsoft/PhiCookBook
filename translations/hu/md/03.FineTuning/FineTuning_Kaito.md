@@ -1,0 +1,116 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
+  "translation_date": "2025-05-09T20:42:37+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
+  "language_code": "hu"
+}
+-->
+## Finomhangolás Kaito-val
+
+A [Kaito](https://github.com/Azure/kaito) egy operátor, amely automatizálja az AI/ML következtetési modellek telepítését Kubernetes klaszterben.
+
+A Kaito a következő főbb jellemzőkkel különbözik a legtöbb, virtuális gép infrastruktúrákra épülő modelltelepítési módszertől:
+
+- A modellfájlokat konténerképek segítségével kezeli. Egy http szerver biztosított a modellkönyvtár használatával történő következtetési hívásokhoz.
+- Előre beállított konfigurációkat kínál, így nem szükséges a telepítési paramétereket a GPU hardverhez igazítani.
+- Automatikusan biztosít GPU node-okat a modell igényei alapján.
+- Nagy modellképeket tárolhat a nyilvános Microsoft Container Registry-ben (MCR), amennyiben a licenc ezt engedélyezi.
+
+A Kaito segítségével a nagy AI következtetési modellek Kubernetes-be történő integrálása jelentősen leegyszerűsödik.
+
+## Architektúra
+
+A Kaito a klasszikus Kubernetes Custom Resource Definition (CRD)/controller mintát követi. A felhasználó egy `workspace` egyedi erőforrást kezel, amely leírja a GPU követelményeket és a következtetési specifikációt. A Kaito kontroller automatikusan végrehajtja a telepítést az `workspace` egyedi erőforrás egyeztetésével.
+<div align="left">
+  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+</div>
+
+A fenti ábra a Kaito architektúra áttekintését mutatja. Főbb komponensei:
+
+- **Workspace controller**: Ez egyezteti az `workspace` egyedi erőforrást, létrehozza a `machine` (lentebb kifejtve) egyedi erőforrásokat a node automatikus biztosításához, és a modell előre beállított konfigurációi alapján létrehozza a következtetési munkaterhelést (`deployment` vagy `statefulset`).
+- **Node provisioner controller**: A kontroller neve *gpu-provisioner* a [gpu-provisioner helm chartban](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Az `machine` CRD-t használja, amely a [Karpenter](https://sigs.k8s.io/karpenter)-ből származik, hogy kapcsolatot tartson a workspace controllerrel. Integrálódik az Azure Kubernetes Service (AKS) API-kkal, hogy új GPU node-okat adjon az AKS klaszterhez.
+> Megjegyzés: A [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) egy nyílt forráskódú komponens. Más kontrollerek is használhatók helyette, amennyiben támogatják a [Karpenter-core](https://sigs.k8s.io/karpenter) API-kat.
+
+## Áttekintő videó  
+[Nézd meg a Kaito demót](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+
+## Telepítés
+
+Kérjük, tekintsd meg a telepítési útmutatót [itt](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+
+## Gyors kezdés
+
+A Kaito telepítése után az alábbi parancsokkal indítható el egy finomhangolási szolgáltatás.
+
+```
+apiVersion: kaito.sh/v1alpha1
+kind: Workspace
+metadata:
+  name: workspace-tuning-phi-3
+resource:
+  instanceType: "Standard_NC6s_v3"
+  labelSelector:
+    matchLabels:
+      app: tuning-phi-3
+tuning:
+  preset:
+    name: phi-3-mini-128k-instruct
+  method: qlora
+  input:
+    urls:
+      - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
+  output:
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    imagePushSecret: ACR_REGISTRY_SECRET_HERE
+```
+
+```sh
+$ cat examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
+
+apiVersion: kaito.sh/v1alpha1
+kind: Workspace
+metadata:
+  name: workspace-tuning-phi-3
+resource:
+  instanceType: "Standard_NC6s_v3"
+  labelSelector:
+    matchLabels:
+      app: tuning-phi-3
+tuning:
+  preset:
+    name: phi-3-mini-128k-instruct
+  method: qlora
+  input:
+    urls:
+      - "https://huggingface.co/datasets/philschmid/dolly-15k-oai-style/resolve/main/data/train-00000-of-00001-54e3756291ca09c6.parquet?download=true"
+  output:
+    image: "ACR_REPO_HERE.azurecr.io/IMAGE_NAME_HERE:0.0.1" # Tuning Output ACR Path
+    imagePushSecret: ACR_REGISTRY_SECRET_HERE
+    
+
+$ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
+```
+
+A workspace állapotát a következő paranccsal lehet nyomon követni. Amikor a WORKSPACEREADY oszlop értéke `True` lesz, a modell sikeresen telepítve lett.
+
+```sh
+$ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
+NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKSPACEREADY   AGE
+workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
+```
+
+Ezután megkereshető a következtetési szolgáltatás klaszter IP címe, és egy ideiglenes `curl` pod segítségével tesztelhető a szolgáltatás elérhetősége a klaszteren belül.
+
+```sh
+$ kubectl get svc workspace_tuning
+NAME                  TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)            AGE
+workspace-tuning-phi-3   ClusterIP   <CLUSTERIP>  <none>        80/TCP,29500/TCP   10m
+
+export CLUSTERIP=$(kubectl get svc workspace-tuning-phi-3 -o jsonpath="{.spec.clusterIPs[0]}") 
+$ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
+```
+
+**Jogi nyilatkozat**:  
+Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy félreértelmezésekért.
