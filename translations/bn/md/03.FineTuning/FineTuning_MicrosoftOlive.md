@@ -1,0 +1,379 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
+  "translation_date": "2025-05-09T20:49:00+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
+  "language_code": "bn"
+}
+-->
+# **Microsoft Olive দিয়ে Phi-3 ফাইন-টিউনিং**
+
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) হলো একটি সহজে ব্যবহারযোগ্য হার্ডওয়্যার-সচেতন মডেল অপ্টিমাইজেশন টুল যা মডেল কম্প্রেশন, অপ্টিমাইজেশন এবং কম্পাইলেশনের ক্ষেত্রে শিল্প-নেতৃত্বাধীন বিভিন্ন কৌশল একত্রিত করে।
+
+এটি মেশিন লার্নিং মডেল অপ্টিমাইজ করার প্রক্রিয়াকে সহজ করে তোলে, নিশ্চিত করে যে মডেলগুলো নির্দিষ্ট হার্ডওয়্যার আর্কিটেকচারের সর্বোচ্চ কার্যকর ব্যবহার করে।
+
+আপনি ক্লাউড ভিত্তিক অ্যাপ্লিকেশন বা এজ ডিভাইসে কাজ করুক না কেন, Olive আপনার মডেলগুলো সহজে এবং কার্যকরভাবে অপ্টিমাইজ করার সুযোগ দেয়।
+
+## প্রধান বৈশিষ্ট্যসমূহ:
+- Olive নির্দিষ্ট হার্ডওয়্যার টার্গেটের জন্য অপ্টিমাইজেশন কৌশলগুলো একত্রিত এবং স্বয়ংক্রিয় করে।
+- কোনো একক অপ্টিমাইজেশন কৌশল সব পরিস্থিতিতে মানানসই নয়, তাই Olive শিল্প বিশেষজ্ঞদের তাদের অপ্টিমাইজেশন উদ্ভাবন যুক্ত করার সুযোগ দিয়ে প্রসারযোগ্যতা প্রদান করে।
+
+## ইঞ্জিনিয়ারিং প্রচেষ্টা কমান:
+- ডেভেলপারদের প্রায়শই বিভিন্ন হার্ডওয়্যার ভেন্ডর-নির্দিষ্ট টুলচেইন শিখে এবং ব্যবহার করে প্রশিক্ষিত মডেল ডিপ্লয়মেন্টের জন্য প্রস্তুত করতে হয়।
+- Olive এই অভিজ্ঞতাকে সহজ করে, কাঙ্ক্ষিত হার্ডওয়্যারের জন্য অপ্টিমাইজেশন কৌশলগুলো স্বয়ংক্রিয় করে।
+
+## ব্যবহার প্রস্তুত E2E অপ্টিমাইজেশন সমাধান:
+
+একত্রিত কৌশলগুলোকে রচনা ও টিউন করে, Olive একটি একক সমাধান প্রদান করে এন্ড-টু-এন্ড অপ্টিমাইজেশনের জন্য।
+এটি মডেল অপ্টিমাইজ করার সময় নির্ভুলতা এবং লেটেন্সির মতো সীমাবদ্ধতাগুলো বিবেচনায় নেয়।
+
+## Microsoft Olive দিয়ে ফাইন-টিউনিং করা
+
+Microsoft Olive একটি খুব সহজে ব্যবহারযোগ্য ওপেন সোর্স মডেল অপ্টিমাইজেশন টুল যা জেনারেটিভ আর্টিফিশিয়াল ইন্টেলিজেন্সের ক্ষেত্রে ফাইন-টিউনিং এবং রেফারেন্স উভয়ই করতে পারে। এটি কেবল সহজ কনফিগারেশন প্রয়োজন, ওপেন সোর্স ছোট ভাষার মডেল এবং সংশ্লিষ্ট রানটাইম পরিবেশ (AzureML / লোকাল GPU, CPU, DirectML) এর সাথে মিলিয়ে, আপনি স্বয়ংক্রিয় অপ্টিমাইজেশনের মাধ্যমে মডেল ফাইন-টিউনিং বা রেফারেন্স সম্পন্ন করতে পারেন এবং সেরা মডেলটি ক্লাউড বা এজ ডিভাইসে ডিপ্লয় করতে পারেন। এটি প্রতিষ্ঠানগুলোকে তাদের নিজস্ব শিল্পভিত্তিক মডেল অন-প্রিমাইস এবং ক্লাউডে তৈরি করার সুযোগ দেয়।
+
+![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.bn.png)
+
+## Microsoft Olive দিয়ে Phi-3 ফাইন টিউনিং
+
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.bn.png)
+
+## Phi-3 Olive নমুনা কোড এবং উদাহরণ
+এই উদাহরণে আপনি Olive ব্যবহার করে:
+
+- একটি LoRA অ্যাডাপ্টার ফাইন-টিউন করে বাক্যাংশগুলোকে Sad, Joy, Fear, Surprise শ্রেণীবদ্ধ করবেন।
+- অ্যাডাপ্টার ওজনগুলো বেস মডেলের সাথে মার্জ করবেন।
+- মডেলটিকে int4 তে অপ্টিমাইজ এবং কোয়ান্টাইজ করবেন।
+
+[Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
+
+### Microsoft Olive সেটআপ
+
+Microsoft Olive ইনস্টলেশন খুবই সহজ, এবং CPU, GPU, DirectML, এবং Azure ML এর জন্য ইনস্টল করা যায়।
+
+```bash
+pip install olive-ai
+```
+
+যদি আপনি CPU দিয়ে ONNX মডেল চালাতে চান, তাহলে ব্যবহার করতে পারেন
+
+```bash
+pip install olive-ai[cpu]
+```
+
+যদি GPU দিয়ে ONNX মডেল চালাতে চান, তাহলে ব্যবহার করতে পারেন
+
+```python
+pip install olive-ai[gpu]
+```
+
+Azure ML ব্যবহার করতে চাইলে,
+
+```python
+pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
+```
+
+**দ্রষ্টব্য**
+OS এর প্রয়োজনীয়তা: Ubuntu 20.04 / 22.04
+
+### **Microsoft Olive এর Config.json**
+
+ইনস্টলেশনের পর, আপনি Config ফাইলের মাধ্যমে বিভিন্ন মডেল-নির্দিষ্ট সেটিংস কনফিগার করতে পারেন, যার মধ্যে ডেটা, কম্পিউটিং, ট্রেনিং, ডিপ্লয়মেন্ট এবং মডেল জেনারেশন অন্তর্ভুক্ত।
+
+**1. ডেটা**
+
+Microsoft Olive এ লোকাল ডেটা এবং ক্লাউড ডেটা উভয় ট্রেনিং সমর্থিত, এবং সেটিংসে কনফিগার করা যায়।
+
+*লোকাল ডেটা সেটিংস*
+
+আপনি সহজেই ফাইন-টিউনিং এর জন্য ট্রেনিং ডেটাসেট সেটআপ করতে পারেন, সাধারণত json ফরম্যাটে, এবং ডেটা টেমপ্লেটের সাথে মানানসই করতে হবে। এটি মডেলের প্রয়োজন অনুসারে সামঞ্জস্য করতে হবে (যেমন Microsoft Phi-3-mini এর জন্য প্রয়োজনীয় ফরম্যাটে মানানসই করা। যদি আপনার অন্য মডেল থাকে, তাহলে অন্য মডেলগুলোর প্রয়োজনীয় ফাইন-টিউনিং ফরম্যাট অনুসারে প্রক্রিয়া করুন)
+
+```json
+
+    "data_configs": [
+        {
+            "name": "dataset_default_train",
+            "type": "HuggingfaceContainer",
+            "load_dataset_config": {
+                "params": {
+                    "data_name": "json", 
+                    "data_files":"dataset/dataset-classification.json",
+                    "split": "train"
+                }
+            },
+            "pre_process_data_config": {
+                "params": {
+                    "dataset_type": "corpus",
+                    "text_cols": [
+                            "phrase",
+                            "tone"
+                    ],
+                    "text_template": "### Text: {phrase}\n### The tone is:\n{tone}",
+                    "corpus_strategy": "join",
+                    "source_max_len": 2048,
+                    "pad_to_max_len": false,
+                    "use_attention_mask": false
+                }
+            }
+        }
+    ],
+```
+
+**ক্লাউড ডেটা সোর্স সেটিংস**
+
+Azure AI Studio/Azure Machine Learning Service এর ডেটাস্টোর লিঙ্ক করে ক্লাউডের ডেটা যুক্ত করা যায়। Microsoft Fabric এবং Azure Data এর মাধ্যমে Azure AI Studio/Azure Machine Learning Service এ বিভিন্ন ডেটা সোর্স ইম্পোর্ট করে ফাইন-টিউনিং এর জন্য ডেটা সাপোর্ট হিসেবে ব্যবহার করা সম্ভব।
+
+```json
+
+    "data_configs": [
+        {
+            "name": "dataset_default_train",
+            "type": "HuggingfaceContainer",
+            "load_dataset_config": {
+                "params": {
+                    "data_name": "json", 
+                    "data_files": {
+                        "type": "azureml_datastore",
+                        "config": {
+                            "azureml_client": {
+                                "subscription_id": "Your Azure Subscrition ID",
+                                "resource_group": "Your Azure Resource Group",
+                                "workspace_name": "Your Azure ML Workspaces name"
+                            },
+                            "datastore_name": "workspaceblobstore",
+                            "relative_path": "Your train_data.json Azure ML Location"
+                        }
+                    },
+                    "split": "train"
+                }
+            },
+            "pre_process_data_config": {
+                "params": {
+                    "dataset_type": "corpus",
+                    "text_cols": [
+                            "Question",
+                            "Best Answer"
+                    ],
+                    "text_template": "<|user|>\n{Question}<|end|>\n<|assistant|>\n{Best Answer}\n<|end|>",
+                    "corpus_strategy": "join",
+                    "source_max_len": 2048,
+                    "pad_to_max_len": false,
+                    "use_attention_mask": false
+                }
+            }
+        }
+    ],
+    
+```
+
+**2. কম্পিউটিং কনফিগারেশন**
+
+যদি লোকাল ব্যবহার করতে চান, তাহলে সরাসরি লোকাল ডেটা রিসোর্স ব্যবহার করতে পারেন। Azure AI Studio / Azure Machine Learning Service এর রিসোর্স ব্যবহার করতে হলে প্রাসঙ্গিক Azure প্যারামিটার, কম্পিউটিং পাওয়ার নাম ইত্যাদি কনফিগার করতে হবে।
+
+```json
+
+    "systems": {
+        "aml": {
+            "type": "AzureML",
+            "config": {
+                "accelerators": ["gpu"],
+                "hf_token": true,
+                "aml_compute": "Your Azure AI Studio / Azure Machine Learning Service Compute Name",
+                "aml_docker_config": {
+                    "base_image": "Your Azure AI Studio / Azure Machine Learning Service docker",
+                    "conda_file_path": "conda.yaml"
+                }
+            }
+        },
+        "azure_arc": {
+            "type": "AzureML",
+            "config": {
+                "accelerators": ["gpu"],
+                "aml_compute": "Your Azure AI Studio / Azure Machine Learning Service Compute Name",
+                "aml_docker_config": {
+                    "base_image": "Your Azure AI Studio / Azure Machine Learning Service docker",
+                    "conda_file_path": "conda.yaml"
+                }
+            }
+        }
+    },
+```
+
+***দ্রষ্টব্য***
+
+Azure AI Studio/Azure Machine Learning Service এ কন্টেইনারের মাধ্যমে রান হওয়ায় প্রয়োজনীয় পরিবেশ কনফিগার করতে হয়। এটি conda.yaml পরিবেশে কনফিগার করা হয়।
+
+```yaml
+
+name: project_environment
+channels:
+  - defaults
+dependencies:
+  - python=3.8.13
+  - pip=22.3.1
+  - pip:
+      - einops
+      - accelerate
+      - azure-keyvault-secrets
+      - azure-identity
+      - bitsandbytes
+      - datasets
+      - huggingface_hub
+      - peft
+      - scipy
+      - sentencepiece
+      - torch>=2.2.0
+      - transformers
+      - git+https://github.com/microsoft/Olive@jiapli/mlflow_loading_fix#egg=olive-ai[gpu]
+      - --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ORT-Nightly/pypi/simple/ 
+      - ort-nightly-gpu==1.18.0.dev20240307004
+      - --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-genai/pypi/simple/
+      - onnxruntime-genai-cuda
+
+    
+
+```
+
+**3. আপনার SLM নির্বাচন করুন**
+
+আপনি Hugging face থেকে সরাসরি মডেল ব্যবহার করতে পারেন, অথবা Azure AI Studio / Azure Machine Learning এর Model Catalog এর সাথে মডেল নির্বাচন করতে পারেন। নিচের কোড উদাহরণে Microsoft Phi-3-mini মডেলটি ব্যবহার করা হয়েছে।
+
+যদি মডেল আপনার কাছে লোকালি থাকে, তাহলে এই পদ্ধতি ব্যবহার করুন
+
+```json
+
+    "input_model":{
+        "type": "PyTorchModel",
+        "config": {
+            "hf_config": {
+                "model_name": "model-cache/microsoft/phi-3-mini",
+                "task": "text-generation",
+                "model_loading_args": {
+                    "trust_remote_code": true
+                }
+            }
+        }
+    },
+```
+
+Azure AI Studio / Azure Machine Learning Service থেকে মডেল ব্যবহার করতে চাইলে এই পদ্ধতি ব্যবহার করুন
+
+```json
+
+    "input_model":{
+        "type": "PyTorchModel",
+        "config": {
+            "model_path": {
+                "type": "azureml_registry_model",
+                "config": {
+                    "name": "microsoft/Phi-3-mini-4k-instruct",
+                    "registry_name": "azureml-msr",
+                    "version": "11"
+                }
+            },
+             "model_file_format": "PyTorch.MLflow",
+             "hf_config": {
+                "model_name": "microsoft/Phi-3-mini-4k-instruct",
+                "task": "text-generation",
+                "from_pretrained_args": {
+                    "trust_remote_code": true
+                }
+            }
+        }
+    },
+```
+
+**দ্রষ্টব্য:**
+আমাদের Azure AI Studio / Azure Machine Learning Service এর সাথে ইন্টিগ্রেট করতে হবে, তাই মডেল সেটআপ করার সময় সংস্করণ নম্বর এবং সংশ্লিষ্ট নামকরণ অনুসরণ করুন।
+
+Azure এর সব মডেল PyTorch.MLflow এ সেট করা থাকতে হবে।
+
+Hugging face অ্যাকাউন্ট থাকা এবং Azure AI Studio / Azure Machine Learning এর Key মানে কী বাইন্ড করা প্রয়োজন।
+
+**4. অ্যালগরিদম**
+
+Microsoft Olive Lora এবং QLora ফাইন-টিউনিং অ্যালগরিদমগুলো খুব ভালোভাবে এনক্যাপসুলেট করে। আপনাকে শুধু কিছু প্রাসঙ্গিক প্যারামিটার কনফিগার করতে হবে। এখানে QLora উদাহরণ হিসেবে নেওয়া হয়েছে।
+
+```json
+        "lora": {
+            "type": "LoRA",
+            "config": {
+                "target_modules": [
+                    "o_proj",
+                    "qkv_proj"
+                ],
+                "double_quant": true,
+                "lora_r": 64,
+                "lora_alpha": 64,
+                "lora_dropout": 0.1,
+                "train_data_config": "dataset_default_train",
+                "eval_dataset_size": 0.3,
+                "training_args": {
+                    "seed": 0,
+                    "data_seed": 42,
+                    "per_device_train_batch_size": 1,
+                    "per_device_eval_batch_size": 1,
+                    "gradient_accumulation_steps": 4,
+                    "gradient_checkpointing": false,
+                    "learning_rate": 0.0001,
+                    "num_train_epochs": 3,
+                    "max_steps": 10,
+                    "logging_steps": 10,
+                    "evaluation_strategy": "steps",
+                    "eval_steps": 187,
+                    "group_by_length": true,
+                    "adam_beta2": 0.999,
+                    "max_grad_norm": 0.3
+                }
+            }
+        },
+```
+
+যদি কোয়ান্টাইজেশন কনভার্শন করতে চান, Microsoft Olive এর মেইন ব্রাঞ্চ ইতোমধ্যেই onnxruntime-genai পদ্ধতি সমর্থন করে। আপনি আপনার প্রয়োজন অনুসারে এটি কনফিগার করতে পারেন:
+
+1. অ্যাডাপ্টার ওজনগুলো বেস মডেলের সাথে মার্জ করুন
+2. ModelBuilder দিয়ে প্রয়োজনীয় প্রিসিশনে মডেলকে onnx মডেলে রূপান্তর করুন
+
+যেমন কোয়ান্টাইজড INT4 তে রূপান্তর করা
+
+```json
+
+        "merge_adapter_weights": {
+            "type": "MergeAdapterWeights"
+        },
+        "builder": {
+            "type": "ModelBuilder",
+            "config": {
+                "precision": "int4"
+            }
+        }
+```
+
+**দ্রষ্টব্য**
+- যদি আপনি QLoRA ব্যবহার করেন, ONNXRuntime-genai এর কোয়ান্টাইজেশন কনভার্শন আপাতত সমর্থিত নয়।
+
+- এখানে উল্লেখ করা উচিত যে আপনি উপরের ধাপগুলো আপনার প্রয়োজন অনুযায়ী সেট করতে পারেন। উপরের সব ধাপ সম্পূর্ণরূপে কনফিগার করা বাধ্যতামূলক নয়। আপনার প্রয়োজন অনুযায়ী সরাসরি অ্যালগরিদমের ধাপগুলো ব্যবহার করতে পারেন ফাইন-টিউনিং ছাড়াই। সর্বশেষে আপনাকে প্রাসঙ্গিক ইঞ্জিনগুলো কনফিগার করতে হবে।
+
+```json
+
+    "engine": {
+        "log_severity_level": 0,
+        "host": "aml",
+        "target": "aml",
+        "search_strategy": false,
+        "execution_providers": ["CUDAExecutionProvider"],
+        "cache_dir": "../model-cache/models/phi3-finetuned/cache",
+        "output_dir" : "../model-cache/models/phi3-finetuned"
+    }
+```
+
+**5. ফাইন-টিউনিং সম্পন্ন**
+
+কমান্ড লাইনে olive-config.json এর ডিরেক্টরিতে নিচের কমান্ড চালান
+
+```bash
+olive run --config olive-config.json  
+```
+
+**অস্বীকারোক্তি**:  
+এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতা বজায় রাখার চেষ্টা করি, তবে দয়া করে মনে রাখবেন যে স্বয়ংক্রিয় অনুবাদে ভুল বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদের পরামর্শ দেওয়া হয়। এই অনুবাদ ব্যবহারের ফলে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।

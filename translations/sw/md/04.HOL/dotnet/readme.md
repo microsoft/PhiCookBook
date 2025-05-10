@@ -1,0 +1,106 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
+  "translation_date": "2025-05-09T22:45:32+00:00",
+  "source_file": "md/04.HOL/dotnet/readme.md",
+  "language_code": "sw"
+}
+-->
+## Karibu katika maabara za Phi kwa kutumia C#
+
+Kuna uteuzi wa maabara unaoonyesha jinsi ya kuunganisha matoleo mbalimbali yenye nguvu ya modeli za Phi katika mazingira ya .NET.
+
+## Mahitaji ya awali
+
+Kabla ya kuendesha sampuli, hakikisha umeweka yafuatayo:
+
+**.NET 9:** Hakikisha umeweka [toleo jipya la .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) kwenye kompyuta yako.
+
+**(Hiari) Visual Studio au Visual Studio Code:** Utahitaji IDE au mhariri wa msimbo unaoweza kuendesha miradi ya .NET. [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) au [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo) zinapendekezwa.
+
+**Kutumia git** kloni moja ya matoleo ya Phi-3, Phi3.5 au Phi-4 yanayopatikana kutoka [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
+
+**Pakua modeli za Phi-4 ONNX** kwenye kompyuta yako:
+
+### elekea kwenye folda ya kuhifadhi modeli
+
+```bash
+cd c:\phi\models
+```
+
+### ongeza msaada wa lfs
+
+```bash
+git lfs install 
+```
+
+### kloni na pakua modeli ya Phi-4 mini instruct na modeli ya Phi-4 multimodal
+
+```bash
+git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
+
+git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
+```
+
+**Pakua modeli za Phi-3 ONNX** kwenye kompyuta yako:
+
+### kloni na pakua modeli ya Phi-3 mini 4K instruct na Phi-3 vision 128K
+
+```bash
+git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
+
+git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
+```
+
+**Muhimu:** Demo zilizopo zimeundwa kutumia matoleo ya ONNX ya modeli. Hatua zilizopita ziliongeza modeli zifuatazo.
+
+## Kuhusu Maabara
+
+Suluhisho kuu lina maabara kadhaa za sampuli zinazonyesha uwezo wa modeli za Phi kwa kutumia C#.
+
+| Mradi | Modeli | Maelezo |
+| ------------ | -----------| ----------- |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 au Phi-3.5 | Sampuli ya mazungumzo ya console inayomruhusu mtumiaji kuuliza maswali. Mradi huu unachukua modeli ya ONNX ya Phi-3 iliyoko kwa karibu kwa kutumia `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
+| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
+| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Semantic Kernel` libraries. |
+| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntimeGenAI` libraries and implements the `IChatClient` from `Microsoft.Extensions.AI`. |
+| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Sample console chat that allows the user to ask questions. The chat implements memory. |
+| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | This is a sample project that uses a local Phi-4 model to analyze images showing the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 |This is a sample project that uses a local Phi-4 model to analyze an audio file, generate the transcript of the file and show the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
+
+## How to Run the Projects
+
+To run the projects, follow these steps:
+
+1. Clone the repository to your local machine.
+
+1. Open a terminal and navigate to the desired project. In example, let's run `LabsPhi4-Chat-01OnnxRuntime`.
+
+    ```bash
+    cd .\src\LabsPhi4-Chat-01OnnxRuntime \
+    ```
+
+1. Endesha mradi kwa amri
+
+    ```bash
+    dotnet run
+    ```
+
+1. Mradi wa sampuli utaomba maingizo ya mtumiaji na kujibu kwa kutumia modeli iliyoko kwa karibu.
+
+   Demo inayotumika ni kama hii:
+
+   ```bash
+   PS D:\phi\PhiCookBook\md\04.HOL\dotnet\src\LabsPhi4-Chat-01OnnxRuntime> dotnet run
+   Ask your question. Type an empty string to Exit.
+   Q: 2+2
+   Phi4: The sum of 2 and 2 is 4.
+   Q:
+   ```
+
+**Kiaraguzi**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kufikia usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati ya asili katika lugha yake ya mama inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubeba dhamana yoyote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
