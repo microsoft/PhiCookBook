@@ -44,7 +44,7 @@ jobs:
           OPENAI_CHAT_MODEL_ID: ${{ secrets.OPENAI_CHAT_MODEL_ID }}
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
         run: |
-          translate -l "ar de es fa fr ru ur zh mo hk ja tw ko hi" -y -d
+          translate -l "ar de es fa fr ru ur zh mo hk ja tw ko hi" -y
 
       - name: Authenticate GitHub App
         id: generate_token
