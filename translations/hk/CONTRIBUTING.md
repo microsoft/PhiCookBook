@@ -1,135 +1,114 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9f71f15fee9a73ecfcd4fd40efbe3070",
-  "translation_date": "2025-05-08T04:53:00+00:00",
+  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
+  "translation_date": "2025-05-27T02:41:07+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "hk"
 }
 -->
 # Contributing
 
-呢個項目歡迎大家提供貢獻同建議。大部分貢獻都需要你同意一份Contributor License Agreement (CLA)，聲明你有權利並確實授權我哋使用你嘅貢獻。詳情請瀏覽 [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+呢個項目歡迎大家嘅貢獻同建議。大部分嘅貢獻都需要你同意一份Contributor License Agreement (CLA)，聲明你有權利並且實際授權我哋使用你嘅貢獻。詳情請瀏覽 [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-當你提交pull request嘅時候，CLA機械人會自動判斷你係咪需要提供CLA，並且適當標示PR（例如狀態檢查、評論）。只需要跟住機械人嘅指示做就得。所有用緊我哋CLA嘅repo，你只需要做一次。
+當你提交 pull request 嘅時候，CLA bot 會自動判斷你係咪需要提供 CLA，並且會適當地標示 PR（例如狀態檢查、評論）。只需跟隨 bot 嘅指示操作即可。你只需要喺所有使用我哋 CLA 嘅倉庫中做一次。
 
 ## Code of Conduct
 
-呢個項目採用咗[Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)。
-想知多啲，可以睇[Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/)或者發電郵去[opencode@microsoft.com](mailto:opencode@microsoft.com)查詢。
+呢個項目已經採用咗 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)。
+想了解更多，可以閱讀 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) 或者電郵聯絡 [opencode@microsoft.com](mailto:opencode@microsoft.com) 提問或提供意見。
 
 ## Cautions for creating issues
 
-唔好用GitHub issues嚟問一般支援問題，因為GitHub嘅issues主要用嚟提交功能請求同埋錯誤報告。咁樣我哋可以更容易追蹤實際嘅問題或錯誤，亦可以將一般討論同代碼問題分開。
+請唔好喺 GitHub 開 general support 問題，因為 GitHub 嘅 issue list 係用嚟提交功能請求同埋報告錯誤。咁樣我哋可以更容易追蹤實際嘅問題或者程式錯誤，同時將一般討論同實際程式碼分開。
 
 ## How to Contribute
 
 ### Pull Requests Guidelines
 
-當你向Phi-3 CookBook嘅repo提交pull request (PR)時，請跟以下指引：
+當你向 Phi-3 CookBook 倉庫提交 pull request (PR) 嘅時候，請遵守以下指引：
 
-- **Fork Repository**：改動之前，記住先fork個repo到自己帳戶。
+- **Fork 倉庫**：喺你修改之前，請先將倉庫 fork 去你自己嘅帳戶。
 
-- **分開pull requests (PR)**：
-  - 每種改動應該分開用唔同嘅PR提交。例如，錯誤修正同文檔更新要分開。
-  - 打錯字修正同細微文檔更新可以合併成一個PR。
+- **分開嘅 pull requests (PR)**：
+  - 每種改動都應該分開提交，例如錯誤修正同文件更新應該係不同嘅 PR。
+  - 拼寫錯誤修正同細微嘅文件更新可以合併成一個 PR。
 
-- **處理合併衝突**：如果你嘅PR出現合併衝突，請先更新本地`main`分支，令佢同主repo同步，然後再做改動。
+- **處理合併衝突**：如果你嘅 pull request 顯示有合併衝突，請先更新你本地嘅 `main` 分支，使佢同主倉庫保持一致，然後先做修改。
 
-- **翻譯提交**：提交翻譯PR時，要確保翻譯資料夾包含咗原始資料夾所有檔案嘅翻譯。
-
-### Translation Guidelines
-
-> [!IMPORTANT]
->
-> 喺呢個repo做翻譯唔好用機械翻譯。只接受對該語言有能力嘅義工幫手翻譯。
-
-如果你熟識非英語語言，可以幫手翻譯內容。為咗確保翻譯嘅貢獻能夠順利整合，請跟以下指引：
-
-- **建立翻譯資料夾**：去相應章節資料夾，為你翻譯嘅語言建立翻譯資料夾。例如：
-  - 導言章節：`PhiCookBook/md/01.Introduce/translations/<language_code>/`
-  - 快速入門章節：`PhiCookBook/md/02.QuickStart/translations/<language_code>/`
-  - 其他章節如03.Inference、04.Finetuning等等，依此類推。
-
-- **更新相對路徑**：翻譯時，調整markdown檔案內相對路徑，喺路徑開頭加`../../`，確保連結正確。例如：
-  - 將`(../../imgs/01/phi3aisafety.png)`改成`(../../../../imgs/01/phi3aisafety.png)`
-
-- **整理翻譯檔案**：每個翻譯檔案應該放喺對應章節嘅翻譯資料夾。例如，如果你係翻譯導言章節成西班牙文，就係咁做：
-  - `PhiCookBook/md/01.Introduce/translations/es/`
-
-- **提交完整PR**：確保一個章節嘅所有翻譯檔案都包含喺一個PR度。我哋唔接受章節嘅部分翻譯。提交翻譯PR時，請確保翻譯資料夾包含咗原始資料夾所有檔案嘅翻譯。
+- **翻譯提交**：提交翻譯嘅 PR 時，請確保翻譯資料夾包含原始資料夾所有檔案嘅翻譯。
 
 ### Writing Guidelines
 
-為咗確保所有文件嘅一致性，請跟以下指引：
+為咗確保所有文件嘅一致性，請使用以下指引：
 
-- **URL格式**：所有URL要用中括號包住，再用括號包住URL，兩邊唔好有多餘空格。例如：`[example](https://www.microsoft.com)`。
+- **URL 格式**：所有 URL 請用方括號包住，跟住用括號括住 URL，內外唔好有多餘空格。例如：`[example](https://www.microsoft.com)`。
 
-- **相對連結**：指向當前目錄嘅檔案或資料夾，請用`./`；指向父目錄嘅用`../`。例如：`[example](../../path/to/file)`或者`[example](../../../path/to/file)`。
+- **相對連結**：對於指向當前目錄嘅檔案或資料夾，使用 `./`；對於上層目錄嘅，使用 `../`。例如：`[example](../../path/to/file)` 或 `[example](../../../path/to/file)`。
 
-- **唔好用國家特定嘅語言代碼**：連結唔好帶有國家特定嘅locale，例如避免`/en-us/`或者`/en/`。
+- **唔好用國家地區特定嘅語言版本**：確保你嘅連結唔包含國家地區特定嘅語言版本，例如避免使用 `/en-us/` 或 `/en/`。
 
-- **圖片儲存**：所有圖片放喺`./imgs`資料夾。
+- **圖片儲存**：所有圖片請儲存在 `./imgs` 資料夾。
 
-- **圖片命名要描述性**：用英文字符、數字同連字號命名。例如：`example-image.jpg`。
+- **描述性圖片命名**：用英文字符、數字同連字號命名圖片。例如：`example-image.jpg`。
 
 ## GitHub Workflows
 
-當你提交pull request，以下workflow會被觸發，用嚟驗證改動。請跟指示確保你嘅PR通過檢查：
+當你提交 pull request 時，以下工作流程會自動運行以驗證你嘅改動。請跟從以下指示，確保你嘅 PR 通過工作流程檢查：
 
 - [Check Broken Relative Paths](../..)
 - [Check URLs Don't Have Locale](../..)
 
 ### Check Broken Relative Paths
 
-呢個workflow會確保你檔案入面所有相對路徑都正確。
+呢個工作流程確保你文件中嘅所有相對路徑都正確。
 
-1. 用VS Code檢查連結：
-    - 將滑鼠移到任何連結上。
-    - 按**Ctrl + Click**去打開連結。
-    - 如果連結喺本地唔work，就會觸發workflow，GitHub度都唔work。
+1. 為咗確保你嘅連結正常，請喺 VS Code 做以下操作：
+    - 將滑鼠移到文件中嘅任何連結上。
+    - 按 **Ctrl + Click** 跳轉到該連結。
+    - 如果你點擊連結但本地唔工作，工作流程就會觸發，GitHub 上亦會無法使用。
 
-1. 用VS Code嘅路徑建議修正問題：
-    - 輸入`./`或者`../`。
-    - VS Code會提示你揀選合適嘅路徑。
-    - 按選定檔案或資料夾，確保路徑正確。
+1. 為咗修正呢個問題，請用 VS Code 提供嘅路徑建議做以下操作：
+    - 輸入 `./` 或 `../`。
+    - VS Code 會根據你輸入嘅內容提示可用選項。
+    - 按想要嘅文件或資料夾選擇正確路徑。
 
-加咗正確路徑後，記得儲存同推送改動。
+加咗正確嘅相對路徑後，記得儲存並推送改動。
 
 ### Check URLs Don't Have Locale
 
-呢個workflow確保所有web URL冇帶有國家特定嘅locale。因為呢個repo係全球可用，URL唔應該包含你嘅國家locale。
+呢個工作流程確保所有網頁 URL 裡面冇包含國家地區特定嘅語言版本。由於呢個倉庫係全球可訪問，確保 URL 裡面冇你國家地區嘅語言版本好重要。
 
-1. 檢查URL唔帶國家locale：
-    - 搜尋URL入面有冇`/en-us/`、`/en/`或者其他語言locale。
-    - 冇嘅話就通過檢查。
+1. 為咗驗證你嘅 URL 冇包含地區語言版本，請做以下檢查：
+
+    - 搜尋 URL 裡面有冇 `/en-us/`、`/en/` 或其他語言地區代碼。
+    - 如果 URL 裡冇呢啲內容，就通過咗檢查。
 
 1. 修正方法：
-    - 打開workflow標示嘅檔案路徑。
-    - 將URL入面嘅國家locale移除。
+    - 打開工作流程標示嘅文件路徑。
+    - 從 URL 中移除地區語言代碼。
 
-移除locale後，記得儲存同推送改動。
+移除地區語言代碼後，記得儲存並推送改動。
 
 ### Check Broken Urls
 
-呢個workflow確保你檔案入面嘅web URL正常運作，返回200狀態碼。
+呢個工作流程確保你文件入面嘅所有網頁 URL 都能正常運作，並返回 200 狀態碼。
 
-1. 驗證URL狀態：
-    - 檢查檔案入面URL嘅狀態。
+1. 為咗驗證你嘅 URL 正常運作，請檢查文件中 URL 嘅狀態。
 
-2. 修正壞URL：
-    - 打開有問題嘅URL所在檔案。
-    - 更新URL到正確嘅。
+2. 修正損壞 URL 嘅方法：
+    - 打開包含損壞 URL 嘅文件。
+    - 更新 URL 至正確嘅地址。
 
-修正完URL後，記得儲存同推送改動。
+修正 URL 後，記得儲存並推送改動。
 
 > [!NOTE]
 >
-> 有時URL檢查會失敗，但連結其實可以打開。原因可能包括：
+> 有時候 URL 檢查可能會失敗，但連結其實仍然可用。呢啲情況可能因為：
 >
-> - **網絡限制**：GitHub actions伺服器可能有限制，阻止存取某啲URL。
-> - **超時問題**：URL響應太耐，workflow會報超時錯誤。
-> - **暫時伺服器問題**：伺服器偶爾停機或維護，驗證時URL暫時無法使用。
+> - **網絡限制**：GitHub actions 伺服器可能有限制，阻止訪問某啲 URL。
+> - **超時問題**：URL 回應時間太長可能會令工作流程出現超時錯誤。
+> - **臨時伺服器問題**：偶爾伺服器維護或停機可能令 URL 喺驗證期間暫時無法使用。
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋努力確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原文文件嘅母語版本應被視為權威來源。對於重要資料，建議採用專業人工翻譯。對於因使用本翻譯而引致嘅任何誤解或誤釋，我哋概不負責。
+本文件係用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。雖然我哋盡力確保準確，但自動翻譯可能會有錯誤或不準確嘅地方。原始文件嘅母語版本應視為權威來源。對於重要資訊，建議使用專業人工翻譯。我哋對因使用本翻譯而引起嘅任何誤解或錯誤解讀概不負責。
