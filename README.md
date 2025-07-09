@@ -142,6 +142,9 @@ Follow these steps to get started using these resource :
       - [Phi-3 Vision Local ONNX Model using the Microsoft.ML.OnnxRuntime .NET](./md/04.HOL/dotnet/src/LabsPhi303/)
       - [Menu based Phi-3 Vision Local ONNX Model using the Microsoft.ML.OnnxRuntime .NET](./md/04.HOL/dotnet/src/LabsPhi304/)
 
+  - Math Samples
+    -  Phi-4-Mini-Flash-Reasoning-Instruct Samples 🆕 [Math Demo with Phi-4-Mini-Flash-Reasoning-Instruct](./md/02.Application/09.Math/MathDemo.ipynb)
+
   - Audio Samples
     - Phi-4 Samples 🆕
       - [📓] [Extracting audio transcripts using Phi-4-multimodal](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
@@ -153,6 +156,7 @@ Follow these steps to get started using these resource :
     - Phi-3 / 3.5 Samples
       - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) Social Media Sample](./md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
       - [📓] [Building a Retrieval-Augmented Generation (RAG) Pipeline with NVIDIA NIM Phi-3 MOE, Azure AI Search, and LlamaIndex](./md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
+      - 
   - Function Calling Samples
     - Phi-4 Samples 🆕
       -  [📓] [Using Function Calling With Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
