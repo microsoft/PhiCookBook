@@ -1,136 +1,115 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9f71f15fee9a73ecfcd4fd40efbe3070",
-  "translation_date": "2025-05-09T03:27:38+00:00",
+  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
+  "translation_date": "2025-07-09T18:18:52+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "pt"
 }
 -->
-# Contribuindo
+# Contribuir
 
-Este projeto aceita contribuições e sugestões. A maioria das contribuições exige que você concorde com um Acordo de Licença de Contribuidor (CLA) declarando que você tem o direito e realmente concede a nós os direitos de usar sua contribuição. Para mais detalhes, visite [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+Este projeto aceita contribuições e sugestões. A maioria das contribuições exige que concorde com um Acordo de Licença de Contribuidor (CLA) declarando que tem o direito e efetivamente concede-nos os direitos para usar a sua contribuição. Para mais detalhes, visite [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-Ao enviar um pull request, um bot de CLA determinará automaticamente se você precisa fornecer um CLA e marcará o PR adequadamente (por exemplo, verificação de status, comentário). Basta seguir as instruções fornecidas pelo bot. Você precisará fazer isso apenas uma vez para todos os repositórios que usam nosso CLA.
+Quando submeter um pull request, um bot de CLA irá automaticamente determinar se precisa de fornecer um CLA e marcar o PR adequadamente (por exemplo, verificação de estado, comentário). Basta seguir as instruções fornecidas pelo bot. Só precisará de fazer isto uma vez para todos os repositórios que usam o nosso CLA.
 
 ## Código de Conduta
 
-Este projeto adotou o [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
-Para mais informações, leia o [FAQ do Código de Conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou entre em contato com [opencode@microsoft.com](mailto:opencode@microsoft.com) para dúvidas ou comentários adicionais.
+Este projeto adotou o [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Para mais informações, leia o [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) ou contacte [opencode@microsoft.com](mailto:opencode@microsoft.com) para quaisquer perguntas ou comentários adicionais.
 
 ## Cuidados ao criar issues
 
-Por favor, não abra issues no GitHub para dúvidas gerais de suporte, pois a lista do GitHub deve ser usada para solicitações de funcionalidades e relatórios de bugs. Dessa forma, podemos acompanhar mais facilmente problemas reais ou bugs no código e manter a discussão geral separada do código em si.
+Por favor, não abra issues no GitHub para questões gerais de suporte, pois a lista do GitHub deve ser usada para pedidos de funcionalidades e relatórios de bugs. Desta forma, podemos acompanhar mais facilmente problemas ou erros reais no código e manter a discussão geral separada do código propriamente dito.
 
 ## Como Contribuir
 
 ### Diretrizes para Pull Requests
 
-Ao enviar um pull request (PR) para o repositório Phi-3 CookBook, siga as diretrizes abaixo:
+Ao submeter um pull request (PR) para o repositório Phi-3 CookBook, por favor siga as seguintes diretrizes:
 
-- **Faça um fork do repositório**: Sempre faça um fork do repositório para sua própria conta antes de fazer suas modificações.
+- **Fork do Repositório**: Faça sempre um fork do repositório para a sua própria conta antes de fazer as suas modificações.
 
-- **Pull requests separados**:
-  - Envie cada tipo de alteração em um pull request separado. Por exemplo, correções de bugs e atualizações de documentação devem ser enviadas em PRs distintos.
-  - Correções de erros de digitação e pequenas atualizações de documentação podem ser combinadas em um único PR quando apropriado.
+- **Pull requests (PR) separados**:
+  - Submeta cada tipo de alteração num pull request separado. Por exemplo, correções de bugs e atualizações de documentação devem ser submetidas em PRs diferentes.
+  - Correções de erros tipográficos e pequenas atualizações de documentação podem ser combinadas num único PR quando apropriado.
 
-- **Resolver conflitos de merge**: Se seu pull request apresentar conflitos de merge, atualize sua branch local `main` para espelhar o repositório principal antes de fazer suas modificações.
+- **Resolver conflitos de merge**: Se o seu pull request apresentar conflitos de merge, atualize a sua branch local `main` para refletir o repositório principal antes de fazer as suas modificações.
 
-- **Envio de traduções**: Ao enviar um PR de tradução, certifique-se de que a pasta de tradução inclua traduções para todos os arquivos da pasta original.
-
-### Diretrizes de Tradução
-
-> [!IMPORTANT]
->
-> Ao traduzir textos neste repositório, não utilize tradução automática. Só se voluntarie para traduções em idiomas nos quais você seja proficiente.
-
-Se você domina um idioma que não seja o inglês, pode ajudar traduzindo o conteúdo. Siga estes passos para garantir que suas contribuições sejam integradas corretamente, usando as seguintes diretrizes:
-
-- **Crie a pasta de tradução**: Navegue até a pasta da seção apropriada e crie uma pasta de tradução para o idioma que você está contribuindo. Por exemplo:
-  - Para a seção de introdução: `PhiCookBook/md/01.Introduce/translations/<language_code>/`
-  - Para a seção de início rápido: `PhiCookBook/md/02.QuickStart/translations/<language_code>/`
-  - Continue esse padrão para outras seções (03.Inference, 04.Finetuning, etc.)
-
-- **Atualize os caminhos relativos**: Ao traduzir, ajuste a estrutura de pastas adicionando `../../` no início dos caminhos relativos dentro dos arquivos markdown para garantir que os links funcionem corretamente. Por exemplo, altere:
-  - De `(../../imgs/01/phi3aisafety.png)` para `(../../../../imgs/01/phi3aisafety.png)`
-
-- **Organize suas traduções**: Cada arquivo traduzido deve ser colocado na pasta de tradução correspondente à seção. Por exemplo, se você estiver traduzindo a seção de introdução para o espanhol, crie a seguinte estrutura:
-  - `PhiCookBook/md/01.Introduce/translations/es/`
-
-- **Envie um PR completo**: Garanta que todos os arquivos traduzidos de uma seção estejam incluídos em um único PR. Não aceitamos traduções parciais de uma seção. Ao enviar um PR de tradução, certifique-se de que a pasta de tradução contenha todas as traduções dos arquivos da pasta original.
+- **Submissões de traduções**: Ao submeter um PR de tradução, certifique-se de que a pasta de tradução inclui traduções para todos os ficheiros da pasta original.
 
 ### Diretrizes de Escrita
 
-Para garantir consistência em todos os documentos, utilize as seguintes orientações:
+Para garantir consistência em todos os documentos, por favor use as seguintes diretrizes:
 
-- **Formatação de URLs**: Envolva todas as URLs entre colchetes seguidos de parênteses, sem espaços extras ao redor ou dentro deles. Por exemplo: `[example](https://www.microsoft.com)`.
+- **Formatação de URLs**: Envolva todas as URLs entre colchetes seguidos de parênteses, sem espaços extras à volta ou dentro deles. Por exemplo: `[example](https://www.microsoft.com)`.
 
-- **Links relativos**: Use `./` para links relativos que apontam para arquivos ou pastas no diretório atual, e `../` para aqueles em diretórios superiores. Por exemplo: `[example](../../path/to/file)` ou `[example](../../../path/to/file)`.
+- **Links relativos**: Use `./` para links relativos que apontam para ficheiros ou pastas no diretório atual, e `../` para os que estão num diretório superior. Por exemplo: `[example](../../path/to/file)` ou `[example](../../../path/to/file)`.
 
-- **Locales não específicos de país**: Certifique-se de que seus links não incluam locais específicos de país. Por exemplo, evite `/en-us/` ou `/en/`.
+- **Locales não específicos de país**: Certifique-se de que os seus links não incluem locales específicos de país. Por exemplo, evite `/en-us/` ou `/en/`.
 
-- **Armazenamento de imagens**: Armazene todas as imagens na pasta `./imgs`.
+- **Armazenamento de imagens**: Guarde todas as imagens na pasta `./imgs`.
 
-- **Nomes descritivos para imagens**: Nomeie as imagens de forma descritiva usando caracteres em inglês, números e traços. Por exemplo: `example-image.jpg`.
+- **Nomes descritivos para imagens**: Nomeie as imagens de forma descritiva usando caracteres em inglês, números e hífens. Por exemplo: `example-image.jpg`.
 
 ## Workflows do GitHub
 
-Ao enviar um pull request, os seguintes workflows serão acionados para validar as alterações. Siga as instruções abaixo para garantir que seu pull request passe nas verificações dos workflows:
+Quando submeter um pull request, os seguintes workflows serão acionados para validar as alterações. Siga as instruções abaixo para garantir que o seu pull request passa nas verificações do workflow:
 
-- [Check Broken Relative Paths](../..)  
-- [Check URLs Don't Have Locale](../..)
+- [Verificar Caminhos Relativos Quebrados](../..)
+- [Verificar URLs Sem Locale](../..)
 
-### Check Broken Relative Paths
+### Verificar Caminhos Relativos Quebrados
 
-Este workflow garante que todos os caminhos relativos em seus arquivos estejam corretos.
+Este workflow garante que todos os caminhos relativos nos seus ficheiros estão corretos.
 
-1. Para garantir que seus links estejam funcionando corretamente, faça o seguinte usando o VS Code:
-    - Passe o mouse sobre qualquer link nos seus arquivos.
-    - Pressione **Ctrl + Clique** para navegar até o link.
-    - Se o link não funcionar localmente, isso acionará o workflow e o link não funcionará no GitHub.
+1. Para garantir que os seus links funcionam corretamente, execute as seguintes tarefas usando o VS Code:
+    - Passe o cursor sobre qualquer link nos seus ficheiros.
+    - Pressione **Ctrl + Clique** para navegar até ao link.
+    - Se clicar num link e este não funcionar localmente, irá disparar o workflow e não funcionará no GitHub.
 
-1. Para corrigir esse problema, faça o seguinte usando as sugestões de caminho fornecidas pelo VS Code:
+1. Para corrigir este problema, execute as seguintes tarefas usando as sugestões de caminho fornecidas pelo VS Code:
     - Digite `./` ou `../`.
-    - O VS Code irá sugerir opções com base no que você digitou.
-    - Siga o caminho clicando no arquivo ou pasta desejada para garantir que o caminho esteja correto.
+    - O VS Code irá sugerir opções disponíveis com base no que digitou.
+    - Siga o caminho clicando no ficheiro ou pasta desejada para garantir que o caminho está correto.
 
-Depois de adicionar o caminho relativo correto, salve e envie suas alterações.
+Depois de adicionar o caminho relativo correto, guarde e envie as suas alterações.
 
-### Check URLs Don't Have Locale
+### Verificar URLs Sem Locale
 
-Este workflow garante que qualquer URL web não contenha um local específico de país. Como este repositório é acessível globalmente, é importante garantir que as URLs não contenham o local do seu país.
+Este workflow garante que qualquer URL web não inclui um locale específico de país. Como este repositório é acessível globalmente, é importante garantir que as URLs não contenham o locale do seu país.
 
-1. Para verificar se suas URLs não possuem locais específicos, faça o seguinte:
+1. Para verificar que as suas URLs não têm locales de país, execute as seguintes tarefas:
 
-    - Verifique se há textos como `/en-us/`, `/en/` ou qualquer outro local de idioma nas URLs.
-    - Se esses não estiverem presentes em suas URLs, você passará nesta verificação.
+    - Verifique se há texto como `/en-us/`, `/en/` ou qualquer outro locale de idioma nas URLs.
+    - Se estes não estiverem presentes nas suas URLs, então passará nesta verificação.
 
-1. Para corrigir esse problema, faça o seguinte:
-    - Abra o arquivo destacado pelo workflow.
-    - Remova o local do país das URLs.
+1. Para corrigir este problema, execute as seguintes tarefas:
+    - Abra o caminho do ficheiro destacado pelo workflow.
+    - Remova o locale do país das URLs.
 
-Depois de remover o local do país, salve e envie suas alterações.
+Depois de remover o locale do país, guarde e envie as suas alterações.
 
-### Check Broken Urls
+### Verificar URLs Quebradas
 
-Este workflow garante que qualquer URL web em seus arquivos esteja funcionando e retorne código de status 200.
+Este workflow garante que qualquer URL web nos seus ficheiros está a funcionar e retorna o código de estado 200.
 
-1. Para verificar se suas URLs estão funcionando corretamente, faça o seguinte:
-    - Verifique o status das URLs em seus arquivos.
+1. Para verificar que as suas URLs estão a funcionar corretamente, execute as seguintes tarefas:
+    - Verifique o estado das URLs nos seus ficheiros.
 
-2. Para corrigir URLs quebradas, faça o seguinte:
-    - Abra o arquivo que contém a URL quebrada.
+2. Para corrigir quaisquer URLs quebradas, execute as seguintes tarefas:
+    - Abra o ficheiro que contém a URL quebrada.
     - Atualize a URL para a correta.
 
-Depois de corrigir as URLs, salve e envie suas alterações.
+Depois de corrigir as URLs, guarde e envie as suas alterações.
 
 > [!NOTE]
 >
-> Pode haver casos em que a verificação de URL falhe mesmo que o link esteja acessível. Isso pode ocorrer por vários motivos, incluindo:
+> Pode haver casos em que a verificação da URL falhe mesmo que o link esteja acessível. Isto pode acontecer por várias razões, incluindo:
 >
-> - **Restrições de rede:** os servidores de ações do GitHub podem ter restrições de rede que impedem o acesso a certas URLs.
-> - **Problemas de timeout:** URLs que demoram muito para responder podem gerar erro de timeout no workflow.
-> - **Problemas temporários no servidor:** interrupções ocasionais ou manutenção do servidor podem tornar uma URL temporariamente indisponível durante a validação.
+> - **Restrições de rede:** Os servidores das ações do GitHub podem ter restrições de rede que impedem o acesso a certas URLs.
+> - **Problemas de timeout:** URLs que demoram demasiado a responder podem disparar um erro de timeout no workflow.
+> - **Problemas temporários do servidor:** Eventuais períodos de indisponibilidade ou manutenção do servidor podem tornar uma URL temporariamente inacessível durante a validação.
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.

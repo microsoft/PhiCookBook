@@ -1,140 +1,119 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9f71f15fee9a73ecfcd4fd40efbe3070",
-  "translation_date": "2025-05-09T03:45:04+00:00",
+  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
+  "translation_date": "2025-07-09T18:47:37+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "sr"
 }
 -->
-# Contribuisanje
+# Contributing
 
-Ovaj projekat pozdravlja doprinose i sugestije. Većina doprinosa zahteva da se saglasite sa
-Contributor License Agreement (CLA) koji potvrđuje da imate pravo i da nam zaista dajete
-dozvolu da koristimo vaš doprinos. Za detalje posetite [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+Овај пројекат прихвата доприносе и предлоге. Већина доприноса захтева да се сложите са
+Contributor License Agreement (CLA) у којем изјављујете да имате право и заиста нам дајете
+права да користимо ваш допринос. За детаље посетите [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-Kada pošaljete pull request, CLA bot će automatski odrediti da li treba da dostavite
-CLA i odgovarajuće obeležiti PR (npr. status check, komentar). Jednostavno pratite uputstva
-koja daje bot. Ovo je potrebno uraditi samo jednom za sve repozitorijume koji koriste naš CLA.
+Када пошаљете pull request, CLA бот ће аутоматски одредити да ли је потребно да доставите
+CLA и одговарајуће означити PR (нпр. провера статуса, коментар). Једноставно пратите упутства
+која пружа бот. Ово ћете морати да урадите само једном за све репозиторијуме који користе наш CLA.
 
-## Kodeks ponašanja
+## Code of Conduct
 
-Ovaj projekat je usvojio [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-Za više informacija pročitajte [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) ili kontaktirajte [opencode@microsoft.com](mailto:opencode@microsoft.com) za dodatna pitanja ili komentare.
+Овај пројекат је усвојио [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+За више информација прочитајте [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) или контактирајте [opencode@microsoft.com](mailto:opencode@microsoft.com) за додатна питања или коментаре.
 
-## Upozorenja za kreiranje problema
+## Cautions for creating issues
 
-Molimo vas da ne otvarate GitHub issues za opšta pitanja podrške jer se GitHub lista koristi za zahteve za funkcionalnost i prijave grešaka. Na ovaj način možemo lakše pratiti stvarne probleme ili bagove u kodu i držati opštu diskusiju odvojenu od samog koda.
+Молимо вас да не отварате GitHub issues за општа питања подршке јер се GitHub листа треба користити за захтеве за нове функције и пријаве грешака. На овај начин можемо лакше пратити стварне проблеме или грешке у коду и одвојити општу дискусију од стварног кода.
 
-## Kako doprineti
+## How to Contribute
 
-### Pravila za pull requestove
+### Pull Requests Guidelines
 
-Kada šaljete pull request (PR) u Phi-3 CookBook repozitorijum, molimo vas da koristite sledeće smernice:
+Када шаљете pull request (PR) у Phi-3 CookBook репозиторијум, молимо вас да користите следећа упутства:
 
-- **Forkujte repozitorijum**: Uvek prvo forkujte repozitorijum na svoj nalog pre nego što napravite izmene.
+- **Fork the Repository**: Увек направите fork репозиторијума на свој налог пре него што направите измене.
 
-- **Odvojeni pull requestovi (PR)**:
-  - Pošaljite svaki tip izmene u posebnom pull requestu. Na primer, ispravke grešaka i ažuriranja dokumentacije treba da budu u odvojenim PR-ovima.
-  - Ispravke tipfelera i manje izmene dokumentacije mogu se spojiti u jedan PR gde je to prikladno.
+- **Separate pull requests (PR)**:
+  - Пошаљите сваки тип измене у посебном pull request-у. На пример, исправке грешака и ажурирања документације треба да буду у одвојеним PR-овима.
+  - Исправке типографских грешака и мања ажурирања документације могу бити комбиновани у један PR када је то прикладно.
 
-- **Rešavanje konflikata spajanja**: Ako vaš pull request pokazuje konflikte pri spajanju, ažurirajte lokalnu `main` granu da odgovara glavnom repozitorijumu pre nego što napravite izmene.
+- **Handle merge conflicts**: Ако ваш pull request показује конфликте приликом спајања, ажурирајте свој локални `main` branch да одговара главном репозиторијуму пре него што направите измене.
 
-- **Podnošenje prevoda**: Kada šaljete prevod, proverite da prevodilačka fascikla sadrži prevode za sve fajlove iz originalne fascikle.
+- **Translation submissions**: Када шаљете превод, уверите се да фолдер са преводом садржи преводе за све фајлове из оригиналног фолдера.
 
-### Smernice za prevod
+### Writing Guidelines
 
-> [!IMPORTANT]
->
-> Prilikom prevođenja teksta u ovom repozitorijumu, nemojte koristiti mašinski prevod. Prevode pravite samo za jezike u kojima ste stručni.
+Да би се обезбедила доследност у свим документима, молимо вас да користите следећа упутства:
 
-Ako ste vešti u nekom jeziku osim engleskog, možete pomoći sa prevodom sadržaja. Pratite sledeće korake da bi vaši prevodi bili pravilno integrisani:
+- **URL formatting**: Све URL адресе стављајте у угластe заграде, а затим у обле заграде, без додатних размакa око или унутар њих. На пример: `[example](https://www.microsoft.com)`.
 
-- **Kreirajte prevodilačku fasciklu**: Idite do odgovarajuće fascikle sekcije i napravite prevodilačku fasciklu za jezik na koji doprinosite. Na primer:
-  - Za uvodnu sekciju: `PhiCookBook/md/01.Introduce/translations/<language_code>/`
-  - Za sekciju brzog početka: `PhiCookBook/md/02.QuickStart/translations/<language_code>/`
-  - Nastavite ovim redosledom za ostale sekcije (03.Inference, 04.Finetuning, itd.)
+- **Relative links**: Користите `./` за релативне линкове који показују на фајлове или фолдере у тренутном директоријуму, и `../` за оне у родитељском директоријуму. На пример: `[example](../../path/to/file)` или `[example](../../../path/to/file)`.
 
-- **Ažurirajte relativne putanje**: Prilikom prevođenja, prilagodite strukturu fascikli dodavanjem `../../` na početak relativnih putanja u markdown fajlovima da bi linkovi pravilno funkcionisali. Na primer, promenite:
-  - `(../../imgs/01/phi3aisafety.png)` u `(../../../../imgs/01/phi3aisafety.png)`
+- **Not Country-Specific locales**: Уверите се да ваши линкови не садрже локале специфичне за земљу. На пример, избегавајте `/en-us/` или `/en/`.
 
-- **Organizujte prevode**: Svaki prevedeni fajl treba da bude smešten u odgovarajuću prevodilačku fasciklu sekcije. Na primer, ako prevodite uvodnu sekciju na španski, kreiraćete sledeće:
-  - `PhiCookBook/md/01.Introduce/translations/es/`
+- **Image storage**: Све слике чувајте у фолдеру `./imgs`.
 
-- **Pošaljite kompletan PR**: Proverite da svi prevedeni fajlovi za određenu sekciju budu uključeni u jedan PR. Ne prihvatamo delimične prevode za sekciju. Kada šaljete prevod, uverite se da prevodilačka fascikla sadrži prevode za sve fajlove iz originalne fascikle.
+- **Descriptive image names**: Дајте сликама описна имена користећи енглеска слова, бројеве и цртице. На пример: `example-image.jpg`.
 
-### Smernice za pisanje
+## GitHub Workflows
 
-Da bismo obezbedili doslednost u svim dokumentima, koristite sledeće smernice:
+Када пошаљете pull request, следећи workflows ће бити покренути да би се провериле измене. Пратите упутства испод да бисте осигурали да ваш pull request прође све провере:
 
-- **Formatiranje URL-ova**: Sve URL-ove stavljajte u uglaste zagrade, a zatim u obične zagrade, bez dodatnih razmaka unutar ili oko njih. Na primer: `[example](https://www.microsoft.com)`.
+- [Check Broken Relative Paths](../..)
+- [Check URLs Don't Have Locale](../..)
 
-- **Relativni linkovi**: Koristite `./` za relativne linkove ka fajlovima ili fasciklama u trenutnom direktorijumu, i `../` za one u nadređenom direktorijumu. Na primer: `[example](../../path/to/file)` ili `[example](../../../path/to/file)`.
+### Check Broken Relative Paths
 
-- **Ne koristite lokalizacije specifične za zemlju**: Proverite da linkovi ne sadrže lokalizacije specifične za zemlju. Na primer, izbegavajte `/en-us/` ili `/en/`.
+Овај workflow проверава да ли су сви релативни путеви у вашим фајловима исправни.
 
-- **Skladištenje slika**: Sve slike čuvajte u `./imgs` fascikli.
+1. Да бисте били сигурни да ваши линкови раде како треба, урадите следеће у VS Code:
+    - Пређите курсором преко било ког линка у вашим фајловима.
+    - Притисните **Ctrl + Click** да бисте отворили линк.
+    - Ако кликнете на линк и он не ради локално, то ће покренути workflow и неће радити на GitHub-у.
 
-- **Opisna imena slika**: Imenujte slike opisno koristeći engleska slova, brojeve i crtice. Na primer: `example-image.jpg`.
+1. Да бисте решили овај проблем, урадите следеће користећи предлоге путања које пружа VS Code:
+    - Откуцајте `./` или `../`.
+    - VS Code ће вам понудити опције на основу онога што сте унели.
+    - Пратите путању кликом на жељени фајл или фолдер да бисте били сигурни да је пут исправан.
 
-## GitHub radni tokovi
+Када додате исправан релативни пут, сачувајте и пошаљите измене.
 
-Kada pošaljete pull request, sledeći radni tokovi će se pokrenuti da potvrde izmene. Pratite uputstva ispod da biste osigurali da vaš pull request prođe provere radnog toka:
+### Check URLs Don't Have Locale
 
-- [Provera pokvarenih relativnih putanja](../..)
-- [Provera da URL-ovi nemaju lokalizaciju](../..)
+Овај workflow проверава да ли неки веб URL не садржи локал специфичан за земљу. Пошто је овај репозиторијум доступан глобално, важно је да URL-ови не садрже локал ваше земље.
 
-### Provera pokvarenih relativnih putanja
+1. Да бисте проверили да ваши URL-ови не садрже локале земаља, урадите следеће:
 
-Ovaj radni tok proverava da su sve relativne putanje u vašim fajlovima ispravne.
+    - Потражите текст као што су `/en-us/`, `/en/` или било који други језички локал у URL-овима.
+    - Ако их нема у вашим URL-овима, проћи ћете ову проверу.
 
-1. Da biste proverili da li linkovi funkcionišu, uradite sledeće u VS Code-u:
-    - Pređite mišem preko bilo kog linka u fajlovima.
-    - Pritisnite **Ctrl + Klik** da otvorite link.
-    - Ako link ne radi lokalno, pokrenuće se radni tok i neće raditi na GitHub-u.
+1. Да бисте решили овај проблем, урадите следеће:
+    - Отворите фајл који је workflow означио.
+    - Уклоните локал земље из URL-ова.
 
-1. Da biste rešili ovaj problem, sledite predloge za putanje koje nudi VS Code:
-    - Ukucajte `./` ili `../`.
-    - VS Code će vam ponuditi opcije na osnovu onoga što ste uneli.
-    - Izaberite odgovarajući fajl ili fasciklu da biste osigurali da je putanja tačna.
+Када уклоните локал земље, сачувајте и пошаљите измене.
 
-Kada dodate ispravnu relativnu putanju, sačuvajte i push-ujte izmene.
+### Check Broken Urls
 
-### Provera da URL-ovi nemaju lokalizaciju
+Овај workflow проверава да ли сваки веб URL у вашим фајловима ради и враћа статусни код 200.
 
-Ovaj radni tok proverava da nijedan web URL ne sadrži lokalizaciju specifičnu za zemlju. Pošto je ovaj repozitorijum dostupan globalno, važno je da URL-ovi ne sadrže lokalizaciju vaše zemlje.
+1. Да бисте проверили да ли ваши URL-ови раде исправно, урадите следеће:
+    - Проверите статус URL-ова у вашим фајловима.
 
-1. Da proverite da URL-ovi nemaju lokalizaciju, uradite sledeće:
+2. Да бисте исправили покварене URL-ове, урадите следеће:
+    - Отворите фајл који садржи покварени URL.
+    - Ажурирајте URL на исправан.
 
-    - Proverite da li se u URL-ovima pojavljuju tekstovi kao što su `/en-us/`, `/en/` ili bilo koja druga lokalizacija jezika.
-    - Ako ih nema, prolazite ovu proveru.
-
-1. Da rešite ovaj problem, uradite sledeće:
-    - Otvorite fajl označen u radnom toku.
-    - Uklonite lokalizaciju zemlje iz URL-ova.
-
-Kada uklonite lokalizaciju, sačuvajte i push-ujte izmene.
-
-### Provera pokvarenih URL-ova
-
-Ovaj radni tok proverava da li su svi web URL-ovi u vašim fajlovima aktivni i vraćaju statusni kod 200.
-
-1. Da proverite da URL-ovi rade ispravno, uradite sledeće:
-    - Proverite status URL-ova u vašim fajlovima.
-
-2. Da popravite pokvarene URL-ove, uradite sledeće:
-    - Otvorite fajl koji sadrži pokvareni URL.
-    - Ažurirajte URL na ispravan.
-
-Kada popravite URL-ove, sačuvajte i push-ujte izmene.
+Када исправите URL-ове, сачувајте и пошаљите измене.
 
 > [!NOTE]
 >
-> Mogu postojati slučajevi kada provera URL-ova ne uspe iako je link dostupan. Razlozi mogu biti:
+> Могуће је да провера URL-ова не успе иако је линк доступан. То се може десити из више разлога, укључујући:
 >
-> - **Mrežna ograničenja:** GitHub serverski radni tokovi mogu imati mrežna ograničenja koja sprečavaju pristup određenim URL-ovima.
-> - **Problemi sa vremenom čekanja:** URL-ovi koji sporo odgovaraju mogu izazvati timeout grešku u radnom toku.
-> - **Privremeni problemi sa serverom:** Povremeni prekidi ili održavanje servera mogu učiniti URL privremeno nedostupnim tokom provere.
+> - **Ограничења мреже:** GitHub actions сервери могу имати мрежна ограничења која спречавају приступ одређеним URL-овима.
+> - **Проблеми са временским ограничењем:** URL-ови који споро одговарају могу изазвати timeout грешку у workflow-у.
+> - **Привремени проблеми са сервером:** Повремени прекид рада сервера или одржавање могу учинити URL привремено недоступним током провере.
 
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде прецизан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

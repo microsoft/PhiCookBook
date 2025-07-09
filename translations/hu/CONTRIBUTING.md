@@ -1,139 +1,115 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9f71f15fee9a73ecfcd4fd40efbe3070",
-  "translation_date": "2025-05-09T03:43:33+00:00",
+  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
+  "translation_date": "2025-07-09T18:41:04+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "hu"
 }
 -->
 # Hozzájárulás
 
-Ez a projekt szívesen fogad hozzájárulásokat és javaslatokat. A legtöbb hozzájáruláshoz el kell fogadnod egy Contributor License Agreement (CLA) nevű szerződést, amelyben kijelented, hogy jogod van a hozzájárulásod felhasználására, és ténylegesen meg is adod nekünk ezt a jogot. Részletekért látogass el ide: [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+Ez a projekt szívesen fogad hozzájárulásokat és javaslatokat. A legtöbb hozzájáruláshoz el kell fogadnod egy Contributor License Agreement (CLA) nevű licencszerződést, amelyben kijelented, hogy jogodban áll, és ténylegesen megadod nekünk a jogot a hozzájárulásod használatára. Részletekért látogass el ide: [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-Amikor pull request-et nyújtasz be, egy CLA bot automatikusan eldönti, hogy szükséges-e CLA-t benyújtanod, és megfelelően jelöli a PR-t (például státuszellenőrzéssel vagy kommenttel). Egyszerűen kövesd a bot utasításait. Ezt csak egyszer kell megtenned az összes CLA-t használó repóban.
+Amikor pull request-et nyújtasz be, egy CLA bot automatikusan megállapítja, hogy szükséges-e CLA-t benyújtanod, és ennek megfelelően jelöli meg a PR-t (például státusz ellenőrzés, komment). Egyszerűen kövesd a bot utasításait. Ezt csak egyszer kell megtenned az összes CLA-t használó repóban.
 
 ## Magatartási kódex
 
-Ez a projekt a [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) magatartási kódexet alkalmazza.  
-További információért olvasd el a [Code of Conduct GYIK-et](https://opensource.microsoft.com/codeofconduct/faq/) vagy írj az [opencode@microsoft.com](mailto:opencode@microsoft.com) címre kérdéseiddel vagy észrevételeiddel.
+Ez a projekt elfogadta a [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) magatartási kódexet.  
+További információkért olvasd el a [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) oldalt, vagy írj az [opencode@microsoft.com](mailto:opencode@microsoft.com) címre, ha kérdésed vagy észrevételed van.
 
-## Figyelmeztetések hibajegyek létrehozásához
+## Figyelmeztetések a hibajegyek létrehozásához
 
-Kérjük, ne nyiss GitHub hibajegyeket általános támogatási kérdések miatt, mivel a GitHub lista funkciókérések és hibajelentések nyomon követésére szolgál. Így könnyebben tudjuk követni a tényleges kódhibákat, és az általános vitákat elkülöníthetjük a tényleges kódtól.
+Kérjük, ne nyiss GitHub hibajegyeket általános támogatási kérdések miatt, mivel a GitHub lista a funkciókérések és hibajelentések számára van fenntartva. Így könnyebben nyomon követhetjük a tényleges problémákat vagy hibákat a kódban, és a általános beszélgetéseket elkülöníthetjük a tényleges kódtól.
 
 ## Hogyan járulhatsz hozzá
 
-### Pull request irányelvek
+### Pull Request irányelvek
 
 Amikor pull request-et (PR) nyújtasz be a Phi-3 CookBook repóba, kérjük, kövesd az alábbi irányelveket:
 
-- **Forkold a repót**: Mindig előbb forkold a repót a saját fiókodba, mielőtt módosításokat végeznél.
+- **Forkold a repót**: Mindig forkold a repót a saját fiókodba, mielőtt módosításokat végzel.
 
-- **Különálló pull requestek (PR-ek)**:
-  - Minden változtatást külön PR-ben nyújts be. Például hibajavításokat és dokumentációs frissítéseket külön PR-ekben.
-  - Helyesírási hibák és kisebb dokumentációs módosítások esetén egy PR-ben is összefoghatók, ha indokolt.
+- **Külön pull requestek (PR)**:
+  - Minden változtatást külön PR-ben nyújts be. Például hibajavításokat és dokumentáció frissítéseket külön PR-ben.
+  - Elgépelés javításokat és kisebb dokumentációs frissítéseket egy PR-ben is össze lehet vonni, ha indokolt.
 
-- **Merge konfliktusok kezelése**: Ha a pull request-ed merge konfliktust jelez, frissítsd a helyi `main` ágat, hogy megfeleljen a fő repónak, mielőtt módosításokat végzel.
+- **Merge konfliktusok kezelése**: Ha a pull request-ed merge konfliktusokat jelez, frissítsd a helyi `main` ágadat, hogy tükrözze a fő repót, mielőtt módosítanál.
 
-- **Fordítások beküldése**: Fordítási PR benyújtásakor győződj meg róla, hogy a fordítási mappa tartalmazza az eredeti mappa összes fájljának fordítását.
-
-### Fordítási irányelvek
-
-> [!IMPORTANT]
->
-> Amikor ebben a repóban szöveget fordítasz, ne használj gépi fordítást. Csak olyan nyelveken vállalj fordítást, amelyekben jártas vagy.
-
-Ha jártas vagy egy nem angol nyelvben, segíthetsz a tartalom fordításában. A fordításaid megfelelő integrálása érdekében kérjük, kövesd az alábbi irányelveket:
-
-- **Fordítási mappa létrehozása**: Navigálj a megfelelő szakasz mappájába, és hozz létre egy fordítási mappát a nyelved számára. Például:
-  - Bevezető szakaszhoz: `PhiCookBook/md/01.Introduce/translations/<language_code>/`
-  - Gyors kezdés szakaszhoz: `PhiCookBook/md/02.QuickStart/translations/<language_code>/`
-  - Folytasd ezt a mintát a többi szakasznál (03.Inference, 04.Finetuning, stb.)
-
-- **Relatív útvonalak frissítése**: Fordítás közben módosítsd a mappaszerkezetet úgy, hogy a markdown fájlokban lévő relatív útvonalak elejére `../../`-t illessz be, hogy a linkek helyesen működjenek. Például:
-  - Cseréld le `(../../imgs/01/phi3aisafety.png)`-t `(../../../../imgs/01/phi3aisafety.png)`-re
-
-- **Fordítások rendszerezése**: Minden lefordított fájlt a megfelelő szakasz fordítási mappájába tegyél. Például, ha a bevezető szakaszt fordítod spanyolra, így hozz létre mappát:
-  - `PhiCookBook/md/01.Introduce/translations/es/`
-
-- **Teljes PR benyújtása**: Győződj meg róla, hogy egy PR tartalmazza az adott szakasz összes lefordított fájlját. Nem fogadunk el részleges fordításokat egy szakaszhoz. Fordítási PR benyújtásakor ügyelj arra, hogy a fordítási mappa tartalmazza az eredeti mappa összes fájljának fordítását.
+- **Fordítások benyújtása**: Fordítási PR benyújtásakor győződj meg róla, hogy a fordítási mappa tartalmazza az eredeti mappa összes fájljának fordítását.
 
 ### Írási irányelvek
 
-Az összes dokumentum egységessége érdekében kérjük, tartsd be az alábbi irányelveket:
+Az összes dokumentum egységessége érdekében kérjük, használd az alábbi irányelveket:
 
-- **URL formázás**: Minden URL-t zárj szögletes zárójelbe, amit kerek zárójel követ, szóközök nélkül. Például: `[example](https://www.microsoft.com)`.
+- **URL formázás**: Minden URL-t zárj szögletes zárójelbe, majd kerek zárójelbe, szóközök nélkül. Például: `[példa](https://www.microsoft.com)`.
 
-- **Relatív linkek**: Használd `./`-t relatív linkekhez, amelyek az aktuális könyvtár fájljaira vagy mappáira mutatnak, és `../`-t a szülő könyvtárban lévő fájlokra vagy mappákra. Például: `[example](../../path/to/file)` vagy `[example](../../../path/to/file)`.
+- **Relatív linkek**: Használd a `./`-t relatív linkekhez, amelyek az aktuális könyvtárban lévő fájlokra vagy mappákra mutatnak, és a `../`-t a szülő könyvtárban lévőkre. Például: `[példa](../../elérési/út/fájl)` vagy `[példa](../../../elérési/út/fájl)`.
 
-- **Nem ország-specifikus lokalizációk**: Ügyelj arra, hogy a linkjeid ne tartalmazzanak ország-specifikus lokalizációkat. Például kerüld a `/en-us/` vagy `/en/` használatát.
+- **Nem ország-specifikus lokalizációk**: Ügyelj arra, hogy a linkjeid ne tartalmazzanak ország-specifikus lokalizációkat. Például kerüld az `/en-us/` vagy `/en/` használatát.
 
-- **Képtárolás**: Minden képet a `./imgs` mappában tárolj.
+- **Képek tárolása**: Minden képet a `./imgs` mappában tárolj.
 
-- **Leíró képnevek**: A képek nevei legyenek beszédesek, angol betűket, számokat és kötőjeleket használva. Például: `example-image.jpg`.
+- **Leíró képfájlnevek**: A képek neve legyen leíró jellegű, angol karakterekből, számokból és kötőjelekből álljon. Például: `example-image.jpg`.
 
 ## GitHub munkafolyamatok
 
-Amikor pull request-et nyújtasz be, az alábbi munkafolyamatok indulnak el a változtatások érvényesítésére. Kövesd az alábbi utasításokat, hogy a PR-ed átmenjen a munkafolyamat ellenőrzéseken:
+Amikor pull request-et nyújtasz be, az alábbi munkafolyamatok futnak le a változtatások ellenőrzésére. Kövesd az alábbi utasításokat, hogy a pull request-ed átmenjen a munkafolyamat ellenőrzéseken:
 
 - [Check Broken Relative Paths](../..)
 - [Check URLs Don't Have Locale](../..)
 
 ### Check Broken Relative Paths
 
-Ez a munkafolyamat biztosítja, hogy az összes relatív útvonal a fájljaidban helyes legyen.
+Ez a munkafolyamat ellenőrzi, hogy az összes relatív elérési út helyes-e a fájljaidban.
 
-1. A linkjeid helyes működésének ellenőrzéséhez végezd el a következőket VS Code használatával:
-    - Mozgasd az egeret bármelyik link fölé a fájlokban.
-    - Nyomd meg a **Ctrl + Klikk** kombinációt, hogy a linkre navigálj.
-    - Ha a link helyileg nem működik, a munkafolyamat elindul, és GitHubon sem fog működni.
+1. Annak érdekében, hogy a linkjeid megfelelően működjenek, végezd el a következő lépéseket VS Code-ban:
+    - Vidd az egeret bármelyik link fölé a fájljaidban.
+    - Nyomd meg a **Ctrl + Klikk** kombinációt a link megnyitásához.
+    - Ha a link helyileg nem működik, az elindítja a munkafolyamatot, és a GitHubon sem fog működni.
 
-1. A hiba javításához használd a VS Code által javasolt útvonalakat:
-    - Írd be `./` vagy `../`.
-    - A VS Code felajánlja a választható lehetőségeket az általad begépelt alapján.
-    - Kattints a kívánt fájlra vagy mappára, hogy biztosítsd az útvonal helyességét.
+1. A probléma javításához használd a VS Code által javasolt elérési útvonalakat:
+    - Írd be a `./` vagy `../` karaktereket.
+    - A VS Code felajánlja a választható lehetőségeket az általad beírt alapján.
+    - Kövesd az elérési utat úgy, hogy rákattintasz a kívánt fájlra vagy mappára, hogy biztosan helyes legyen az útvonal.
 
-Ha megadtad a helyes relatív útvonalat, mentsd el és push-old a változtatásokat.
+Miután hozzáadtad a helyes relatív elérési utat, mentsd el és push-old a változtatásokat.
 
 ### Check URLs Don't Have Locale
 
-Ez a munkafolyamat ellenőrzi, hogy a webes URL-ek ne tartalmazzanak ország-specifikus lokalizációt. Mivel ez a repó globálisan elérhető, fontos, hogy az URL-ek ne tartalmazzanak az országodhoz kötött lokalizációt.
+Ez a munkafolyamat ellenőrzi, hogy a webes URL-ek nem tartalmaznak ország-specifikus lokalizációt. Mivel ez a repó globálisan elérhető, fontos, hogy az URL-ek ne tartalmazzanak országod lokalizációját.
 
 1. Az URL-ek ellenőrzéséhez végezd el a következőket:
 
-    - Keress olyan szövegeket, mint `/en-us/`, `/en/` vagy bármilyen más nyelvi lokalizáció az URL-ekben.
-    - Ha nem találsz ilyeneket az URL-ekben, átmentél az ellenőrzésen.
+    - Ellenőrizd, hogy nincs-e `/en-us/`, `/en/` vagy bármilyen más nyelvi lokalizáció az URL-ekben.
+    - Ha ezek nem szerepelnek az URL-ekben, akkor átmentél az ellenőrzésen.
 
-1. A probléma javításához:
-
-    - Nyisd meg a munkafolyamat által kiemelt fájlútvonalat.
+1. A probléma javításához végezd el a következőket:
+    - Nyisd meg a munkafolyamat által kiemelt fájlt.
     - Távolítsd el az ország-specifikus lokalizációt az URL-ekből.
 
-Ha eltávolítottad a lokalizációt, mentsd el és push-old a változtatásokat.
+Miután eltávolítottad a lokalizációt, mentsd el és push-old a változtatásokat.
 
 ### Check Broken Urls
 
-Ez a munkafolyamat ellenőrzi, hogy a fájljaidban lévő webes URL-ek működnek-e és 200-as státuszkódot adnak vissza.
+Ez a munkafolyamat ellenőrzi, hogy a fájljaidban szereplő webes URL-ek működnek-e és 200-as státuszkódot adnak-e vissza.
 
-1. Az URL-ek működésének ellenőrzéséhez:
+1. Az URL-ek helyes működésének ellenőrzéséhez végezd el a következőket:
+    - Ellenőrizd az URL-ek státuszát a fájljaidban.
 
-    - Ellenőrizd az URL-ek státuszát a fájlokban.
-
-2. Hibás URL-ek javításához:
-
-    - Nyisd meg a hibás URL-t tartalmazó fájlt.
+2. A hibás URL-ek javításához végezd el a következőket:
+    - Nyisd meg azt a fájlt, amely a hibás URL-t tartalmazza.
     - Frissítsd az URL-t a helyesre.
 
-Ha kijavítottad az URL-eket, mentsd el és push-old a változtatásokat.
+Miután javítottad az URL-eket, mentsd el és push-old a változtatásokat.
 
 > [!NOTE]
 >
-> Előfordulhat, hogy az URL-ellenőrzés hibát jelez, még ha a link elérhető is. Ennek több oka lehet, például:
+> Előfordulhat, hogy az URL ellenőrzés hibát jelez, még akkor is, ha a link elérhető. Ennek több oka lehet, például:
 >
-> - **Hálózati korlátozások:** A GitHub Actions szerverek hálózati korlátozások miatt nem férhetnek hozzá bizonyos URL-ekhez.
-> - **Időtúllépés:** Az URL-ek, amelyek túl sokáig válaszolnak, időtúllépési hibát válthatnak ki a munkafolyamatban.
-> - **Ideiglenes szerverproblémák:** Időszakos szerverleállás vagy karbantartás miatt az URL ideiglenesen nem elérhető az ellenőrzés során.
+> - **Hálózati korlátozások:** A GitHub actions szerverek hálózati korlátozásokkal rendelkezhetnek, amelyek megakadályozzák bizonyos URL-ek elérését.
+> - **Időtúllépés:** Azok az URL-ek, amelyek túl sokáig válaszolnak, időtúllépési hibát válthatnak ki a munkafolyamatban.
+> - **Átmeneti szerverproblémák:** Időszakos szerverleállások vagy karbantartások miatt az URL ideiglenesen nem elérhető a validálás során.
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

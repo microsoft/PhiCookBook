@@ -1,243 +1,250 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1cab9282e04f2e1c388a38dca7763c16",
-  "translation_date": "2025-05-09T04:06:00+00:00",
+  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
+  "translation_date": "2025-07-09T18:36:26+00:00",
   "source_file": "README.md",
   "language_code": "ms"
 }
 -->
-# Phi Cookbook: דוגמאות מעשיות עם דגמי Phi של מיקרוסופט
+# Phi Cookbook: Contoh Praktikal dengan Model Phi Microsoft
 
-[![פתח והשתמש בדוגמאות ב-GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
-[![פתח ב-Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
+[![Buka dan gunakan sampel dalam GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)  
+[![Buka dalam Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
 
-[![תורמים ב-GitHub](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
-[![נושאים ב-GitHub](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
-[![בקשות משיכה ב-GitHub](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
+[![Penyumbang GitHub](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)  
+[![Isu GitHub](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)  
+[![Permintaan tarik GitHub](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)  
+[![PRs Dialu-alukan](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
-[![עוקבים ב-GitHub](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
-[![מזלגות ב-GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-[![כוכבים ב-GitHub](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
+[![Pengikut GitHub](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)  
+[![Fork GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
+[![Bintang GitHub](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
+[![Azure AI Community Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-[![קהילת Azure AI ב-Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+Phi adalah siri model AI sumber terbuka yang dibangunkan oleh Microsoft.
 
-Phi היא סדרת דגמי AI בקוד פתוח שפותחה על ידי מיקרוסופט.
+Phi kini merupakan model bahasa kecil (SLM) yang paling berkuasa dan kos efektif, dengan penanda aras yang sangat baik dalam pelbagai bahasa, penalaran, penjanaan teks/sembang, pengkodan, imej, audio dan senario lain.
 
-Phi כיום הוא המודל הקטן (SLM) החזק והיעיל ביותר מבחינת עלות, עם ביצועים טובים מאוד במבחני שפה מרובים, היגיון, יצירת טקסט/שיחה, קידוד, תמונות, אודיו ותרחישים נוספים.
+Anda boleh melaksanakan Phi di awan atau peranti tepi, dan anda boleh dengan mudah membina aplikasi AI generatif dengan kuasa pengkomputeran yang terhad.
 
-ניתן לפרוס את Phi בענן או במכשירי קצה, וניתן לבנות בקלות יישומי AI גנרטיביים עם כוח מחשוב מוגבל.
+Ikuti langkah berikut untuk mula menggunakan sumber ini:  
+1. **Fork Repositori**: Klik [![Fork GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
+2. **Clone Repositori**: `git clone https://github.com/microsoft/PhiCookBook.git`  
+3. [**Sertai Komuniti Discord Microsoft AI dan berjumpa dengan pakar serta pembangun lain**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-עקבו אחרי השלבים הבאים כדי להתחיל להשתמש במשאבים אלו:
-1. **פוצלו את המאגר**: לחצו על [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. **שכפלו את המאגר**:   `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**הצטרפו לקהילת Microsoft AI ב-Discord ופגשו מומחים ומפתחים אחרים**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+![cover](../../imgs/cover.png)
 
-![cover](../../translated_images/cover.2595d43b382944c601aebf88583314636768eece3d94e8e4448e03a4e5bedef4.ms.png)
+## 🌐 Sokongan Pelbagai Bahasa
 
-## 🌐 תמיכה בריבוי שפות
+### Disokong melalui GitHub Action (Automatik & Sentiasa Dikemas Kini)
 
-### נתמך דרך GitHub Action (אוטומטי ותמיד מעודכן)
+[Perancis](../fr/README.md) | [Sepanyol](../es/README.md) | [Jerman](../de/README.md) | [Rusia](../ru/README.md) | [Arab](../ar/README.md) | [Parsi (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Cina (Ringkas)](../zh/README.md) | [Cina (Tradisional, Macau)](../mo/README.md) | [Cina (Tradisional, Hong Kong)](../hk/README.md) | [Cina (Tradisional, Taiwan)](../tw/README.md) | [Jepun](../ja/README.md) | [Korea](../ko/README.md) | [Hindi](../hi/README.md)  
+[Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugis (Portugal)](../pt/README.md) | [Portugis (Brazil)](../br/README.md) | [Itali](../it/README.md) | [Poland](../pl/README.md) | [Turki](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Sweden](../sv/README.md) | [Denmark](../da/README.md) | [Norway](../no/README.md) | [Finland](../fi/README.md) | [Belanda](../nl/README.md) | [Ibrani](../he/README.md) | [Vietnam](../vi/README.md) | [Indonesia](../id/README.md) | [Melayu](./README.md) | [Tagalog (Filipina)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungary](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romania](../ro/README.md) | [Bulgaria](../bg/README.md) | [Serbia (Cyrillic)](../sr/README.md) | [Croatia](../hr/README.md) | [Slovenia](../sl/README.md)
 
-[צרפתית](../fr/README.md) | [ספרדית](../es/README.md) | [גרמנית](../de/README.md) | [רוסית](../ru/README.md) | [ערבית](../ar/README.md) | [פרסית (פארסי)](../fa/README.md) | [אורדו](../ur/README.md) | [סינית (מפושטת)](../zh/README.md) | [סינית (מסורתית, מקאו)](../mo/README.md) | [סינית (מסורתית, הונג קונג)](../hk/README.md) | [סינית (מסורתית, טייוואן)](../tw/README.md) | [יפנית](../ja/README.md) | [קוריאנית](../ko/README.md) | [הינדי](../hi/README.md)
-
-### נתמך דרך CLI
 ## Jadual Kandungan
 
-- Pengenalan
-- [ברוכים הבאים למשפחת Phi](./md/01.Introduction/01/01.PhiFamily.md)
-  - [הגדרת הסביבה שלך](./md/01.Introduction/01/01.EnvironmentSetup.md)
-  - [הבנת טכנולוגיות מפתח](./md/01.Introduction/01/01.Understandingtech.md)
-  - [בטיחות AI עבור דגמי Phi](./md/01.Introduction/01/01.AISafety.md)
-  - [תמיכה בחומרה של Phi](./md/01.Introduction/01/01.Hardwaresupport.md)
-  - [דגמי Phi וזמינות בפלטפורמות שונות](./md/01.Introduction/01/01.Edgeandcloud.md)
-  - [שימוש ב-Guidance-ai ו-Phi](./md/01.Introduction/01/01.Guidance.md)
-  - [GitHub Marketplace Models](https://github.com/marketplace/models)
-  - [Azure AI Model Catalog](https://ai.azure.com)
+- Pengenalan  
+  - [Selamat Datang ke Keluarga Phi](./md/01.Introduction/01/01.PhiFamily.md)  
+  - [Menyediakan Persekitaran Anda](./md/01.Introduction/01/01.EnvironmentSetup.md)  
+  - [Memahami Teknologi Utama](./md/01.Introduction/01/01.Understandingtech.md)  
+  - [Keselamatan AI untuk Model Phi](./md/01.Introduction/01/01.AISafety.md)  
+  - [Sokongan Perkakasan Phi](./md/01.Introduction/01/01.Hardwaresupport.md)  
+  - [Model Phi & Ketersediaan merentasi platform](./md/01.Introduction/01/01.Edgeandcloud.md)  
+  - [Menggunakan Guidance-ai dan Phi](./md/01.Introduction/01/01.Guidance.md)  
+  - [Model Marketplace GitHub](https://github.com/marketplace/models)  
+  - [Katalog Model Azure AI](https://ai.azure.com)
 
-- הפעלת Phi בסביבות שונות
-    -  [Hugging face](./md/01.Introduction/02/01.HF.md)
-    -  [GitHub Models](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)
-    -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
-    -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
-    -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
+- Inferens Phi dalam persekitaran berbeza  
+    -  [Hugging face](./md/01.Introduction/02/01.HF.md)  
+    -  [Model GitHub](./md/01.Introduction/02/02.GitHubModel.md)  
+    -  [Katalog Model Azure AI Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)  
+    -  [Ollama](./md/01.Introduction/02/04.Ollama.md)  
+    -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)  
+    -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)  
+    -  [Foundry Tempatan](./md/01.Introduction/02/07.FoundryLocal.md)
 
-- הפעלת Phi Family
-    - [הפעלת Phi ב-iOS](./md/01.Introduction/03/iOS_Inference.md)
-    - [הפעלת Phi ב-Android](./md/01.Introduction/03/Android_Inference.md)
-    - [הפעלת Phi ב-Jetson](./md/01.Introduction/03/Jetson_Inference.md)
-    - [הפעלת Phi ב-AI PC](./md/01.Introduction/03/AIPC_Inference.md)
-    - [הפעלת Phi עם Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)
-    - [הפעלת Phi בשרת מקומי](./md/01.Introduction/03/Local_Server_Inference.md)
-    - [הפעלת Phi בשרת מרוחק באמצעות AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)
-    - [הפעלת Phi עם Rust](./md/01.Introduction/03/Rust_Inference.md)
-    - [הפעלת Phi--Vision במחשב מקומי](./md/01.Introduction/03/Vision_Inference.md)
-    - [הפעלת Phi עם Kaito AKS, מכולות Azure (תמיכה רשמית)](./md/01.Introduction/03/Kaito_Inference.md)
--  [כימות Phi Family](./md/01.Introduction/04/QuantifyingPhi.md)
-    - [כימות Phi-3.5 / 4 באמצעות llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
-    - [כימות Phi-3.5 / 4 באמצעות הרחבות Generative AI ל-onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
-    - [כימות Phi-3.5 / 4 באמצעות Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
-    - [כימות Phi-3.5 / 4 באמצעות Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+- Inferens Keluarga Phi  
+    - [Inferens Phi di iOS](./md/01.Introduction/03/iOS_Inference.md)  
+    - [Inferens Phi di Android](./md/01.Introduction/03/Android_Inference.md)  
+    - [Inferens Phi di Jetson](./md/01.Introduction/03/Jetson_Inference.md)  
+    - [Inferens Phi di AI PC](./md/01.Introduction/03/AIPC_Inference.md)  
+    - [Inferens Phi dengan Rangka Kerja Apple MLX](./md/01.Introduction/03/MLX_Inference.md)  
+    - [Inferens Phi di Pelayan Tempatan](./md/01.Introduction/03/Local_Server_Inference.md)  
+    - [Inferens Phi di Pelayan Jauh menggunakan AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
+    - [Inferens Phi dengan Rust](./md/01.Introduction/03/Rust_Inference.md)  
+    - [Inferens Phi--Vision secara Tempatan](./md/01.Introduction/03/Vision_Inference.md)  
+    - [Inferens Phi dengan Kaito AKS, Azure Containers (sokongan rasmi)](./md/01.Introduction/03/Kaito_Inference.md)  
+-  [Pengkuantitian Keluarga Phi](./md/01.Introduction/04/QuantifyingPhi.md)  
+    - [Pengkuantitian Phi-3.5 / 4 menggunakan llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
+    - [Pengkuantitian Phi-3.5 / 4 menggunakan sambungan Generative AI untuk onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
+    - [Pengkuantitian Phi-3.5 / 4 menggunakan Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
+    - [Pengkuantitian Phi-3.5 / 4 menggunakan Rangka Kerja Apple MLX](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
--  הערכת Phi
-- [Response AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry for Evaluation](./md/01.Introduction/05/AIFoundry.md)
-    - [Using Promptflow for Evaluation](./md/01.Introduction/05/Promptflow.md)
- 
-- RAG עם Azure AI Search
-    - [כיצד להשתמש ב-Phi-4-mini ו-Phi-4-multimodal(RAG) עם Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+- Penilaian Phi  
+    - [AI Bertanggungjawab](./md/01.Introduction/05/ResponsibleAI.md)  
+    - [Azure AI Foundry untuk Penilaian](./md/01.Introduction/05/AIFoundry.md)  
+    - [Menggunakan Promptflow untuk Penilaian](./md/01.Introduction/05/Promptflow.md)
 
-- דוגמאות לפיתוח יישומי Phi
-  - יישומי טקסט ושיחה
-    - דוגמאות Phi-4 🆕
-      - [📓] [שיחה עם מודל Phi-4-mini ONNX](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
-      - [שיחה עם מודל Phi-4 מקומי ONNX ב-.NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
-      - [אפליקציית שיחה קונסול .NET עם Phi-4 ONNX באמצעות Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
-    - דוגמאות Phi-3 / 3.5
-      - [צ׳טבוט מקומי בדפדפן המשתמש ב-Phi3, ONNX Runtime Web ו-WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
-      - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
-      - [מודלים מרובים - אינטראקציה בין Phi-3-mini ו-OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
-      - [MLFlow - בניית עטיפה ושימוש ב-Phi-3 עם MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
-      - [אופטימיזציית מודל - כיצד לאופטם את מודל Phi-3-min עבור ONNX Runtime Web עם Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
-      - [אפליקציית WinUI3 עם Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
-      - [דוגמת אפליקציית רשימות עם מודלים מרובים ב-WinUI3 מופעלת על ידי AI](https://github.com/microsoft/ai-powered-notes-winui3-sample)
-      - [כיוונון עדין ואינטגרציה של מודלים מותאמים אישית Phi-3 עם Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [כיוונון עדין ואינטגרציה של מודלים מותאמים אישית Phi-3 עם Prompt flow ב-Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [הערכת מודל Phi-3 / Phi-3.5 מכוונן עדין ב-Azure AI Foundry עם דגש על עקרונות Responsible AI של מיקרוסופט](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
-      - [📓] [דוגמת חיזוי שפה Phi-3.5-mini-instruct (סינית/אנגלית)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
-      - [צ׳טבוט RAG עם Phi-3.5-Instruct ו-WebGPU](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
-      - [שימוש ב-GPU של Windows ליצירת פתרון Prompt flow עם Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
-      - [שימוש ב-Microsoft Phi-3.5 tflite ליצירת אפליקציית Android](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
-      - [דוגמת שאלות ותשובות ב-.NET המשתמשת במודל ONNX מקומי Phi-3 עם Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
-      - [אפליקציית שיחה קונסול .NET עם Semantic Kernel ו-Phi-3](../../md/04.HOL/dotnet/src/LabsPhi302)
+- RAG dengan Azure AI Search  
+    - [Cara menggunakan Phi-4-mini dan Phi-4-multimodal (RAG) dengan Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
-  - דוגמאות מבוססות קוד של Azure AI Inference SDK
-    - דוגמאות Phi-4 🆕
-      - [📓] [יצירת קוד פרויקט באמצעות Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
-    - דוגמאות Phi-3 / 3.5
-      - [בנה את סוכן השיחה GitHub Copilot שלך ב-Visual Studio Code עם משפחת Microsoft Phi-3](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
-      - [צור סוכן שיחה ב-Visual Studio Code עם Phi-3.5 באמצעות דגמי GitHub](./md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
+- Contoh pembangunan aplikasi Phi  
+  - Aplikasi Teks & Sembang  
+    - Contoh Phi-4 🆕  
+      - [📓] [Sembang Dengan Model Phi-4-mini ONNX](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)  
+      - [Sembang dengan Model ONNX Phi-4 tempatan .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
+      - [Aplikasi Konsol Sembang .NET dengan Phi-4 ONNX menggunakan Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)  
+    - Contoh Phi-3 / 3.5  
+      - [Chatbot Tempatan dalam pelayar menggunakan Phi3, ONNX Runtime Web dan WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
+      - [Sembang OpenVino](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
+      - [Model Pelbagai - Phi-3-mini Interaktif dan OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
+      - [MLFlow - Membina pembalut dan menggunakan Phi-3 dengan MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
+      - [Pengoptimuman Model - Cara mengoptimumkan model Phi-3-min untuk ONNX Runtime Web dengan Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
+      - [Aplikasi WinUI3 dengan Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)  
+      - [Contoh Aplikasi Nota Berkuasa AI Multi Model WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+- [Laraskan dan Integrasi model Phi-3 tersuai dengan Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
+- [Laraskan dan Integrasi model Phi-3 tersuai dengan Prompt flow dalam Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+- [Nilai Model Phi-3 / Phi-3.5 yang telah dilaras dalam Azure AI Foundry dengan fokus pada Prinsip AI Bertanggungjawab Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+- [📓] [Contoh ramalan bahasa Phi-3.5-mini-instruct (Cina/Inggeris)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
+- [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
+- [Menggunakan GPU Windows untuk mencipta penyelesaian Prompt flow dengan Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
+- [Menggunakan Microsoft Phi-3.5 tflite untuk mencipta aplikasi Android](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
+- [Contoh Q&A .NET menggunakan model ONNX Phi-3 tempatan dengan Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
+- [Aplikasi chat konsol .NET dengan Semantic Kernel dan Phi-3](../../md/04.HOL/dotnet/src/LabsPhi302)
 
-  - דוגמאות למחשבה מתקדמת
-    - דוגמאות Phi-4 🆕
-      - [📓] [דוגמאות ל-Phi-4-mini-reasoning או Phi-4-reasoning](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
-      - [📓] [כיוונון עדין של Phi-4-mini-reasoning עם Microsoft Olive](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
-      - [📓] [כיוונון עדין של Phi-4-mini-reasoning עם Apple MLX](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
-      - [📓] [Phi-4-mini-reasoning עם דגמי GitHub](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-- [📓] [Phi-4-mini reasoning עם דגמי Azure AI Foundry](../../md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
-  - הדגמות
-      - [הדגמות Phi-4-mini המארחות ב-Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
-      - [הדגמות Phi-4-multimodal המארחות ב-Hugginge Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
-  - דוגמאות ויזואליות
-    - דוגמאות Phi-4 🆕
-      - [📓] [שימוש ב-Phi-4-multimodal לקריאת תמונות ויצירת קוד](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) 
-    - דוגמאות Phi-3 / 3.5
-      -  [📓][Phi-3-vision - טקסט מתמונה לטקסט](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
-      - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)
-      - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
-      - [DEMO: מיחזור Phi-3](https://github.com/jennifermarsman/PhiRecycling/)
-      - [Phi-3-vision - עוזר שפה חזותית עם Phi3-Vision ו-OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)
-      - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)
-      - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)
-      - [📓][דוגמת Phi-3.5 Vision עם פריימים מרובים או תמונות מרובות](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)
-      - [מודל ONNX מקומי של Phi-3 Vision עם Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi303)
-      - [מודל ONNX מקומי מבוסס תפריט של Phi-3 Vision עם Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)
+- Contoh Kod SDK Inferens Azure AI  
+  - Contoh Phi-4 🆕  
+    - [📓] [Jana kod projek menggunakan Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)  
+  - Contoh Phi-3 / 3.5  
+    - [Bina Visual Studio Code GitHub Copilot Chat anda sendiri dengan Keluarga Microsoft Phi-3](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)  
+    - [Cipta Ejen Chat Copilot Visual Studio Code anda sendiri dengan Phi-3.5 menggunakan Model GitHub](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)  
 
-  - דוגמאות אודיו
-    - דוגמאות Phi-4 🆕
-      - [📓] [חילוץ תמלילי אודיו עם Phi-4-multimodal](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
-      - [📓] [דוגמת אודיו Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
-      - [📓] [דוגמת תרגום דיבור עם Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
-      - [אפליקציית קונסול .NET שמשתמשת ב-Phi-4-multimodal לניתוח קובץ אודיו ויצירת תמליל](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
+- Contoh Penalaran Lanjutan  
+  - Contoh Phi-4 🆕  
+    - [📓] [Contoh Phi-4-mini-reasoning atau Phi-4-reasoning](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)  
+    - [📓] [Laraskan Phi-4-mini-reasoning dengan Microsoft Olive](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)  
+    - [📓] [Laraskan Phi-4-mini-reasoning dengan Apple MLX](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)  
+    - [📓] [Phi-4-mini-reasoning dengan Model GitHub](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)  
+    - [📓] [Phi-4-mini-reasoning dengan Model Azure AI Foundry](../../md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)  
+- Demo  
+    - [Demo Phi-4-mini yang dihoskan di Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)  
+    - [Demo Phi-4-multimodal yang dihoskan di Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)  
+- Contoh Visi  
+  - Contoh Phi-4 🆕  
+    - [📓] [Gunakan Phi-4-multimodal untuk membaca imej dan menjana kod](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md)  
+  - Contoh Phi-3 / 3.5  
+    - [📓][Phi-3-vision-Teks imej ke teks](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
+    - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)  
+    - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
+    - [DEMO: Kitar Semula Phi-3](https://github.com/jennifermarsman/PhiRecycling/)  
+    - [Phi-3-vision - Pembantu bahasa visual - dengan Phi3-Vision dan OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)  
+    - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)  
+    - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)  
+    - [📓][Contoh multi-frame atau multi-imej Phi-3.5 Vision](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)  
+    - [Model ONNX Tempatan Phi-3 Vision menggunakan Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi303)  
+    - [Model ONNX Tempatan Phi-3 Vision berasaskan menu menggunakan Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)  
 
-  - דוגמאות MOE
-    - דוגמאות Phi-3 / 3.5
-      - [📓] [דוגמת Phi-3.5 Mixture of Experts Models (MoEs) למדיה חברתית](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
-      - [📓] [בניית Pipeline של Retrieval-Augmented Generation (RAG) עם NVIDIA NIM Phi-3 MOE, Azure AI Search ו-LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
-  - דוגמאות קריאת פונקציות
-    - דוגמאות Phi-4 🆕
-      -  [📓] [שימוש בקריאת פונקציות עם Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
-      -  [📓] [שימוש בקריאת פונקציות ליצירת סוכנים מרובים עם Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
-      -  [📓] [שימוש בקריאת פונקציות עם Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)
-  - דוגמאות מיקס מודאלי
-    - דוגמאות Phi-4 🆕
-      -  [📓] [שימוש ב-Phi-4-multimodal כעיתונאי טכנולוגיה](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)
-      - [אפליקציית קונסול .NET שמשתמשת ב-Phi-4-multimodal לניתוח תמונות](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)
+- Contoh Matematik  
+  - Contoh Phi-4-Mini-Flash-Reasoning-Instruct 🆕 [Demo Matematik dengan Phi-4-Mini-Flash-Reasoning-Instruct](../../md/02.Application/09.Math/MathDemo.ipynb)  
 
-- דוגמאות כיוונון עדין של Phi
-  - [תסריטי כיוונון עדין](./md/03.FineTuning/FineTuning_Scenarios.md)
-  - [כיוונון עדין מול RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)
-  - [כיוונון עדין - להפוך את Phi-3 למומחה תעשייתי](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
-  - [כיוונון עדין של Phi-3 עם AI Toolkit ל-VS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)
-  - [כיוונון עדין של Phi-3 עם Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
-- [כיוונון עדין של Phi-3 עם Lora](./md/03.FineTuning/FineTuning_Lora.md)
-  - [כיוונון עדין של Phi-3 עם QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [כיוונון עדין של Phi-3 עם Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
-  - [כיוונון עדין של Phi-3 עם Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
-  - [כיוונון עדין עם Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
-  - [כיוונון עדין עם Microsoft Olive Hands-On Lab](./md/03.FineTuning/olive-lab/readme.md)
-  - [כיוונון עדין של Phi-3-vision עם Weights and Bias](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)
-  - [כיוונון עדין של Phi-3 עם Apple MLX Framework](./md/03.FineTuning/FineTuning_MLX.md)
-  - [כיוונון עדין של Phi-3-vision (תמיכה רשמית)](./md/03.FineTuning/FineTuning_Vision.md)
-  - [כיוונון עדין של Phi-3 עם Kaito AKS, מכולות Azure (תמיכה רשמית)](./md/03.FineTuning/FineTuning_Kaito.md)
-  - [כיוונון עדין של Phi-3 ו-3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)
+- Contoh Audio  
+  - Contoh Phi-4 🆕  
+    - [📓] [Mengekstrak transkrip audio menggunakan Phi-4-multimodal](./md/02.Application/05.Audio/Phi4/Transciption/README.md)  
+    - [📓] [Contoh Audio Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)  
+    - [📓] [Contoh Terjemahan Ucapan Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)  
+    - [Aplikasi konsol .NET menggunakan Phi-4-multimodal Audio untuk menganalisis fail audio dan menjana transkrip](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)  
 
-- מעבדת עבודה מעשית
-  - [חקירת מודלים מתקדמים: LLMs, SLMs, פיתוח מקומי ועוד](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
-  - [שחרור הפוטנציאל של NLP: כיוונון עדין עם Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
+- Contoh MOE  
+  - Contoh Phi-3 / 3.5  
+    - [📓] [Contoh Media Sosial Model Mixture of Experts Phi-3.5 (MoEs)](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
+    - [📓] [Membina Saluran Retrieval-Augmented Generation (RAG) dengan NVIDIA NIM Phi-3 MOE, Azure AI Search, dan LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
 
-- מאמרים ומחקרים אקדמיים
-  - [Textbooks Are All You Need II: דוח טכני על phi-1.5](https://arxiv.org/abs/2309.05463)
-  - [דוח טכני על Phi-3: מודל שפה חזק שניתן להריץ במכשיר הנייד שלך](https://arxiv.org/abs/2404.14219)
-  - [דוח טכני על Phi-4](https://arxiv.org/abs/2412.08905)
-  - [דוח טכני על Phi-4-Mini: מודלים רב-מודליים קומפקטיים אך רבי עוצמה באמצעות Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
-  - [אופטימיזציה של מודלים קטנים לפונקציות קריאה בתוך הרכב](https://arxiv.org/abs/2501.02342)
-  - [(WhyPHI) כיוונון עדין של PHI-3 למענה על שאלות רב-ברירתיות: שיטות, תוצאות ואתגרים](https://arxiv.org/abs/2501.01588)
-  - [דוח טכני על Phi-4-reasoning](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
-  - [דוח טכני על Phi-4-mini-reasoning](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
+- Contoh Panggilan Fungsi  
+  - Contoh Phi-4 🆕  
+    - [📓] [Menggunakan Panggilan Fungsi Dengan Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
+    - [📓] [Menggunakan Panggilan Fungsi untuk mencipta ejen pelbagai dengan Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
+    - [📓] [Menggunakan Panggilan Fungsi dengan Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
+    - [📓] [Menggunakan Panggilan Fungsi dengan ONNX](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)  
 
-## שימוש במודלים של Phi
+- Contoh Campuran Multimodal  
+  - Contoh Phi-4 🆕  
+    - [📓] [Menggunakan Phi-4-multimodal sebagai wartawan teknologi](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)  
+    - [Aplikasi konsol .NET menggunakan Phi-4-multimodal untuk menganalisis imej](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)  
 
-### Phi ב-Azure AI Foundry
+- Laraskan Contoh Phi  
+  - [Senario Laraskan](./md/03.FineTuning/FineTuning_Scenarios.md)  
+  - [Laraskan vs RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)  
+  - [Laraskan supaya Phi-3 menjadi pakar industri](./md/03.FineTuning/LetPhi3gotoIndustriy.md)  
+  - [Laraskan Phi-3 dengan AI Toolkit untuk VS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)  
+  - [Laraskan Phi-3 dengan Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)  
+  - [Laraskan Phi-3 dengan Lora](./md/03.FineTuning/FineTuning_Lora.md)  
+  - [Laraskan Phi-3 dengan QLora](./md/03.FineTuning/FineTuning_Qlora.md)  
+  - [Laraskan Phi-3 dengan Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)  
+  - [Laraskan Phi-3 dengan Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)  
+  - [Laraskan dengan Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)  
+  - [Latihan Praktikal Laraskan dengan Microsoft Olive](./md/03.FineTuning/olive-lab/readme.md)  
+  - [Laraskan Phi-3-vision dengan Weights and Bias](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)  
+  - [Laraskan Phi-3 dengan Apple MLX Framework](./md/03.FineTuning/FineTuning_MLX.md)  
+  - [Laraskan Phi-3-vision (sokongan rasmi)](./md/03.FineTuning/FineTuning_Vision.md)  
+  - [Laraskan Phi-3 dengan Kaito AKS, Azure Containers (Sokongan rasmi)](./md/03.FineTuning/FineTuning_Kaito.md)  
+  - [Laraskan Phi-3 dan 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)  
 
-ניתן ללמוד כיצד להשתמש ב-Microsoft Phi וכיצד לבנות פתרונות מקצה לקצה במכשירים שונים. כדי להתנסות בעצמך, התחל לשחק עם המודלים ולבצע התאמות אישיות של Phi לסצנריו שלך באמצעות [קטלוג המודלים של Azure AI Foundry](https://aka.ms/phi3-azure-ai). ניתן ללמוד עוד ב-Getting Started עם [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+- Latihan Praktikal  
+  - [Meneroka model terkini: LLM, SLM, pembangunan tempatan dan banyak lagi](https://github.com/microsoft/aitour-exploring-cutting-edge-models)  
+  - [Membuka Potensi NLP: Laraskan dengan Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)  
+
+- Kertas Penyelidikan Akademik dan Penerbitan  
+  - [Textbooks Are All You Need II: laporan teknikal phi-1.5](https://arxiv.org/abs/2309.05463)  
+  - [Laporan Teknikal Phi-3: Model Bahasa Berkeupayaan Tinggi Secara Tempatan di Telefon Anda](https://arxiv.org/abs/2404.14219)  
+  - [Laporan Teknikal Phi-4](https://arxiv.org/abs/2412.08905)  
+  - [Laporan Teknikal Phi-4-Mini: Model Bahasa Multimodal Kompak tetapi Berkuasa melalui Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)  
+  - [Mengoptimumkan Model Bahasa Kecil untuk Panggilan Fungsi Dalam Kenderaan](https://arxiv.org/abs/2501.02342)  
+  - [(WhyPHI) Laraskan PHI-3 untuk Menjawab Soalan Pilihan Berganda: Metodologi, Keputusan, dan Cabaran](https://arxiv.org/abs/2501.01588)
+- [Laporan Teknikal Phi-4-reasoning](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)  
+- [Laporan Teknikal Phi-4-mini-reasoning](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
+
+## Menggunakan Model Phi
+
+### Phi di Azure AI Foundry
+
+Anda boleh belajar cara menggunakan Microsoft Phi dan bagaimana membina penyelesaian E2E pada pelbagai peranti perkakasan anda. Untuk mengalami Phi sendiri, mulakan dengan mencuba model dan menyesuaikan Phi untuk senario anda menggunakan [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Anda boleh belajar lebih lanjut di Memulakan dengan [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Playground**  
-לכל מודל יש סביבת playground ייעודית לבדיקת המודל ב-[Azure AI Playground](https://aka.ms/try-phi3).
+Setiap model mempunyai playground khusus untuk menguji model di [Azure AI Playground](https://aka.ms/try-phi3).
 
-### Phi במודלים של GitHub
+### Phi di Model GitHub
 
-ניתן ללמוד כיצד להשתמש ב-Microsoft Phi וכיצד לבנות פתרונות מקצה לקצה במכשירים שונים. כדי להתנסות בעצמך, התחל לשחק עם המודל ולבצע התאמות אישיות של Phi לסצנריו שלך באמצעות [קטלוג המודלים ב-GitHub](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). ניתן ללמוד עוד ב-Getting Started עם [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
+Anda boleh belajar cara menggunakan Microsoft Phi dan bagaimana membina penyelesaian E2E pada pelbagai peranti perkakasan anda. Untuk mengalami Phi sendiri, mulakan dengan mencuba model dan menyesuaikan Phi untuk senario anda menggunakan [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Anda boleh belajar lebih lanjut di Memulakan dengan [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
 
 **Playground**  
-לכל מודל יש [playground ייעודי לבדיקת המודל](/md/02.QuickStart/GitHubModel_QuickStart.md).
+Setiap model mempunyai [playground khusus untuk menguji model](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
-### Phi ב-Hugging Face
+### Phi di Hugging Face
 
-ניתן גם למצוא את המודל ב-[Hugging Face](https://huggingface.co/microsoft)
+Anda juga boleh mendapatkan model ini di [Hugging Face](https://huggingface.co/microsoft)
 
 **Playground**  
 [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
-## AI אחראי
+## AI Bertanggungjawab
 
-Microsoft מחויבת לסייע ללקוחותינו להשתמש במוצרי ה-AI שלנו באופן אחראי, לשתף את הלמידות שלנו ולבנות שותפויות מבוססות אמון באמצעות כלים כמו Transparency Notes ו-Impact Assessments. משאבים רבים זמינים ב-[https://aka.ms/RAI](https://aka.ms/RAI).  
-הגישה של Microsoft ל-AI אחראי מבוססת על עקרונות ה-AI שלנו הכוללים הגינות, אמינות ובטיחות, פרטיות ואבטחה, הכללה, שקיפות ואחריות.
-Large-scale natural language, image, and speech models - like the ones used in this sample - can potentially behave in ways that are unfair, unreliable, or offensive, in turn causing harms. Please consult the [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) to be informed about risks and limitations.
+Microsoft komited untuk membantu pelanggan kami menggunakan produk AI kami secara bertanggungjawab, berkongsi pembelajaran kami, dan membina kerjasama berasaskan kepercayaan melalui alat seperti Transparency Notes dan Impact Assessments. Banyak sumber ini boleh didapati di [https://aka.ms/RAI](https://aka.ms/RAI).  
+Pendekatan Microsoft terhadap AI bertanggungjawab berasaskan prinsip AI kami iaitu keadilan, kebolehpercayaan dan keselamatan, privasi dan keselamatan, keterangkuman, ketelusan, dan akauntabiliti.
 
-The recommended approach to mitigating these risks is to include a safety system in your architecture that can detect and prevent harmful behavior. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) provides an independent layer of protection, able to detect harmful user-generated and AI-generated content in applications and services. Azure AI Content Safety includes text and image APIs that allow you to detect material that is harmful. Within Azure AI Foundry, the Content Safety service allows you to view, explore and try out sample code for detecting harmful content across different modalities. The following [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) guides you through making requests to the service.
+Model bahasa semula jadi, imej, dan suara berskala besar - seperti yang digunakan dalam contoh ini - berpotensi berkelakuan secara tidak adil, tidak boleh dipercayai, atau menyinggung, yang boleh menyebabkan kemudaratan. Sila rujuk [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) untuk maklumat tentang risiko dan had.
 
-Another aspect to take into account is the overall application performance. With multi-modal and multi-models applications, we consider performance to mean that the system performs as you and your users expect, including not generating harmful outputs. It's important to assess the performance of your overall application using [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You also have the ability to create and evaluate with [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
+Pendekatan yang disyorkan untuk mengurangkan risiko ini adalah dengan memasukkan sistem keselamatan dalam seni bina anda yang boleh mengesan dan menghalang tingkah laku berbahaya. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) menyediakan lapisan perlindungan bebas, mampu mengesan kandungan berbahaya yang dihasilkan pengguna dan AI dalam aplikasi dan perkhidmatan. Azure AI Content Safety merangkumi API teks dan imej yang membolehkan anda mengesan bahan yang berbahaya. Dalam Azure AI Foundry, perkhidmatan Content Safety membolehkan anda melihat, meneroka dan mencuba kod contoh untuk mengesan kandungan berbahaya merentasi pelbagai modaliti. Dokumentasi [quickstart berikut](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) membimbing anda membuat permintaan ke perkhidmatan ini.
 
-You can evaluate your AI application in your development environment using the [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Given either a test dataset or a target, your generative AI application generations are quantitatively measured with built-in evaluators or custom evaluators of your choice. To get started with the azure ai evaluation sdk to evaluate your system, you can follow the [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Once you execute an evaluation run, you can [visualize the results in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Satu lagi aspek yang perlu diambil kira adalah prestasi keseluruhan aplikasi. Dengan aplikasi multi-modal dan multi-model, kami menganggap prestasi bermaksud sistem berfungsi seperti yang anda dan pengguna anda jangkakan, termasuk tidak menghasilkan output yang berbahaya. Penting untuk menilai prestasi aplikasi keseluruhan anda menggunakan [Penilai Prestasi dan Kualiti serta Penilai Risiko dan Keselamatan](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Anda juga boleh mencipta dan menilai dengan [penilai tersuai](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-## Trademarks
+Anda boleh menilai aplikasi AI anda dalam persekitaran pembangunan menggunakan [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Dengan dataset ujian atau sasaran, generasi aplikasi AI generatif anda diukur secara kuantitatif menggunakan penilai terbina dalam atau penilai tersuai pilihan anda. Untuk memulakan dengan azure ai evaluation sdk bagi menilai sistem anda, anda boleh mengikuti [panduan quickstart](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Setelah menjalankan penilaian, anda boleh [memvisualisasikan keputusan dalam Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft trademarks or logos is subject to and must follow [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship. Any use of third-party trademarks or logos are subject to those third-party's policies.
+## Tanda Dagangan
+
+Projek ini mungkin mengandungi tanda dagangan atau logo untuk projek, produk, atau perkhidmatan. Penggunaan tanda dagangan atau logo Microsoft yang dibenarkan tertakluk kepada dan mesti mematuhi [Garis Panduan Tanda Dagangan & Jenama Microsoft](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Penggunaan tanda dagangan atau logo Microsoft dalam versi projek yang diubah suai tidak boleh menyebabkan kekeliruan atau memberi gambaran bahawa Microsoft menaja. Sebarang penggunaan tanda dagangan atau logo pihak ketiga tertakluk kepada polisi pihak ketiga tersebut.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat kritikal, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

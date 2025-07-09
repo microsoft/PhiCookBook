@@ -1,135 +1,114 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9f71f15fee9a73ecfcd4fd40efbe3070",
-  "translation_date": "2025-05-09T03:39:29+00:00",
+  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
+  "translation_date": "2025-07-09T18:23:43+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "tr"
 }
 -->
 # Katkıda Bulunma
 
-Bu proje katkıları ve önerileri memnuniyetle karşılar. Çoğu katkı için, katkınızı kullanma hakkını size ait olduğunu ve gerçekten bize verdiğinizi belirten bir Katkıda Bulunma Lisans Sözleşmesi'ni (CLA) kabul etmeniz gerekir. Detaylar için [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com) adresini ziyaret edin.
+Bu proje katkılara ve önerilere açıktır. Çoğu katkı için, katkınızı kullanma haklarını bize verdiğinizi ve gerçekten bu haklara sahip olduğunuzu beyan eden bir Contributor License Agreement (CLA) kabul etmeniz gerekir. Detaylar için [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com) adresini ziyaret edin.
 
-Bir pull request gönderdiğinizde, bir CLA botu otomatik olarak CLA sağlamanız gerekip gerekmediğini belirleyecek ve PR'ı uygun şekilde işaretleyecektir (örneğin, durum kontrolü, yorum). Botun verdiği talimatları izleyin. CLA'yı kullanan tüm depolar için bunu yalnızca bir kez yapmanız yeterlidir.
+Bir pull request gönderdiğinizde, bir CLA botu otomatik olarak CLA sağlamanız gerekip gerekmediğini belirler ve PR'ı uygun şekilde işaretler (örneğin, durum kontrolü, yorum). Botun verdiği talimatları takip etmeniz yeterlidir. CLA, tüm depolarda yalnızca bir kez yapılması gereken bir işlemdir.
 
 ## Davranış Kuralları
 
-Bu proje [Microsoft Açık Kaynak Davranış Kuralları](https://opensource.microsoft.com/codeofconduct/)nu benimsemiştir. Daha fazla bilgi için [Davranış Kuralları SSS](https://opensource.microsoft.com/codeofconduct/faq/) sayfasını okuyabilir veya ek sorularınız ya da yorumlarınız için [opencode@microsoft.com](mailto:opencode@microsoft.com) adresiyle iletişime geçebilirsiniz.
+Bu proje [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) kurallarını benimsemiştir. Daha fazla bilgi için [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) sayfasını okuyabilir veya ek sorularınız ya da yorumlarınız için [opencode@microsoft.com](mailto:opencode@microsoft.com) adresiyle iletişime geçebilirsiniz.
 
 ## Sorun Oluştururken Dikkat Edilmesi Gerekenler
 
-Lütfen genel destek soruları için GitHub sorunları açmayın, çünkü GitHub listesi özellik istekleri ve hata bildirimleri için kullanılmalıdır. Böylece gerçek kodla ilgili sorunları veya hataları daha kolay takip edebilir ve genel tartışmayı koddan ayrı tutabiliriz.
+Lütfen genel destek soruları için GitHub issue açmayın; GitHub listesi özellik talepleri ve hata raporları için kullanılmalıdır. Bu sayede gerçek kod sorunlarını veya hatalarını daha kolay takip edebilir ve genel tartışmaları koddan ayrı tutabiliriz.
 
-## Katkıda Bulunma Yöntemi
+## Katkıda Bulunma Yöntemleri
 
 ### Pull Request Kuralları
 
-Phi-3 CookBook deposuna bir pull request (PR) gönderirken lütfen aşağıdaki kurallara uyun:
+Phi-3 CookBook deposuna pull request (PR) gönderirken aşağıdaki kurallara uyunuz:
 
 - **Depoyu Forklayın**: Değişiklik yapmadan önce her zaman depoyu kendi hesabınıza forklayın.
 
 - **Ayrı pull requestler (PR)**:
-  - Her değişiklik türünü ayrı bir pull request olarak gönderin. Örneğin, hata düzeltmeleri ve dokümantasyon güncellemeleri ayrı PR'lar olmalıdır.
-  - Yazım hatası düzeltmeleri ve küçük dokümantasyon güncellemeleri uygun olduğunda tek bir PR'da birleştirilebilir.
+  - Her değişiklik türünü ayrı bir pull request olarak gönderin. Örneğin, hata düzeltmeleri ve dokümantasyon güncellemeleri ayrı PR’larda olmalıdır.
+  - Yazım hatası düzeltmeleri ve küçük dokümantasyon güncellemeleri uygun olduğunda tek bir PR’da birleştirilebilir.
 
-- **Birleştirme çatışmalarını çözün**: Pull request'inizde birleştirme çatışmaları varsa, değişiklik yapmadan önce yerel `main` dalınızı ana depoyla eşitleyin.
+- **Birleştirme çatışmalarını çözün**: Pull request’inizde birleştirme çatışmaları varsa, değişiklik yapmadan önce yerel `main` dalınızı ana depoyla güncelleyin.
 
-- **Çeviri gönderimleri**: Çeviri PR'sı gönderirken, çeviri klasörünün orijinal klasördeki tüm dosyaların çevirilerini içerdiğinden emin olun.
-
-### Çeviri Kuralları
-
-> [!IMPORTANT]
->
-> Bu depoda metin çevirisi yaparken makine çevirisi kullanmayın. Sadece iyi bildiğiniz dillerde gönüllü olarak çeviri yapın.
-
-İngilizce dışındaki bir dilde yetkin iseniz, içeriğin çevirisine yardımcı olabilirsiniz. Çeviri katkılarınızın doğru şekilde entegre edilmesi için aşağıdaki kurallara uyun:
-
-- **Çeviri klasörü oluşturun**: İlgili bölüm klasörüne gidin ve katkıda bulunduğunuz dil için bir çeviri klasörü oluşturun. Örneğin:
-  - Giriş bölümü için: `PhiCookBook/md/01.Introduce/translations/<language_code>/`
-  - Hızlı başlangıç bölümü için: `PhiCookBook/md/02.QuickStart/translations/<language_code>/`
-  - Diğer bölümler (03.Inference, 04.Finetuning vb.) için aynı deseni takip edin.
-
-- **Göreli yolları güncelleyin**: Çeviri yaparken, markdown dosyalarındaki göreli yolların başına `../../` ekleyerek klasör yapısını ayarlayın ki bağlantılar doğru çalışsın. Örneğin, şu şekilde değiştirin:
-  - `(../../imgs/01/phi3aisafety.png)` yerine `(../../../../imgs/01/phi3aisafety.png)`
-
-- **Çevirilerinizi düzenleyin**: Her çevrilmiş dosya, karşılık geldiği bölümün çeviri klasörüne yerleştirilmelidir. Örneğin, giriş bölümünü İspanyolcaya çeviriyorsanız, şu şekilde oluşturmalısınız:
-  - `PhiCookBook/md/01.Introduce/translations/es/`
-
-- **Tam bir PR gönderin**: Bir bölüm için tüm çevrilmiş dosyaların tek bir PR içinde olduğundan emin olun. Bölümün kısmi çevirilerini kabul etmiyoruz. Çeviri PR'sı gönderirken, çeviri klasörünün orijinal klasördeki tüm dosyaların çevirilerini içerdiğinden emin olun.
+- **Çeviri gönderimleri**: Çeviri PR’ları gönderirken, çeviri klasörünün orijinal klasördeki tüm dosyaların çevirilerini içerdiğinden emin olun.
 
 ### Yazım Kuralları
 
-Tüm belgelerde tutarlılığı sağlamak için lütfen aşağıdaki kuralları kullanın:
+Tüm belgelerde tutarlılığı sağlamak için aşağıdaki kurallara uyunuz:
 
-- **URL formatı**: Tüm URL'leri köşeli parantez içine alın ve ardından parantezle kapatın, aralarında veya içinde ekstra boşluk bırakmayın. Örneğin: `[example](https://www.microsoft.com)`.
+- **URL formatı**: Tüm URL’leri köşeli parantez içine alıp ardından parantez içinde yazın, aralarında veya içinde ekstra boşluk bırakmayın. Örnek: `[example](https://www.microsoft.com)`.
 
-- **Göreli bağlantılar**: Mevcut dizindeki dosya veya klasörlere yönelik göreli bağlantılar için `./`, üst dizindeki dosya veya klasörler için `../` kullanın. Örneğin: `[example](../../path/to/file)` veya `[example](../../../path/to/file)`.
+- **Göreli bağlantılar**: Geçerli dizindeki dosya veya klasörlere göreli bağlantılar için `./`, üst dizindeki dosya veya klasörler için `../` kullanın. Örnek: `[example](../../path/to/file)` veya `[example](../../../path/to/file)`.
 
-- **Ülkeye özel yerel ayarlar kullanmayın**: Bağlantılarınızda ülkeye özgü yerel ayarları içermediğinden emin olun. Örneğin, `/en-us/` veya `/en/` kullanmaktan kaçının.
+- **Ülkeye özgü yerel ayar kullanmayın**: Bağlantılarınızda ülkeye özgü yerel ayarları içermediğinden emin olun. Örneğin, `/en-us/` veya `/en/` kullanmaktan kaçının.
 
-- **Resim depolama**: Tüm resimleri `./imgs` klasöründe saklayın.
+- **Resimlerin depolanması**: Tüm resimleri `./imgs` klasöründe saklayın.
 
-- **Anlamlı resim adları**: Resim adlarını İngilizce karakterler, rakamlar ve tire kullanarak açıklayıcı şekilde adlandırın. Örneğin: `example-image.jpg`.
+- **Anlamlı resim isimleri**: Resimleri İngilizce karakterler, rakamlar ve tire kullanarak açıklayıcı şekilde adlandırın. Örnek: `example-image.jpg`.
 
 ## GitHub İş Akışları
 
-Bir pull request gönderdiğinizde, değişikliklerin doğrulanması için aşağıdaki iş akışları tetiklenir. Pull request'inizin iş akışı kontrollerinden geçmesi için aşağıdaki talimatları izleyin:
+Pull request gönderdiğinizde, değişikliklerin doğrulanması için aşağıdaki iş akışları tetiklenir. Pull request’inizin iş akışı kontrollerinden geçmesi için aşağıdaki talimatları izleyin:
 
 - [Kırık Göreli Yolları Kontrol Et](../..)
-- [URL'lerin Yerel Ayar İçermediğini Kontrol Et](../..)
+- [URL’lerde Yerel Ayar Olmadığını Kontrol Et](../..)
 
 ### Kırık Göreli Yolları Kontrol Et
 
 Bu iş akışı, dosyalarınızdaki tüm göreli yolların doğru olduğunu doğrular.
 
-1. Bağlantılarınızın düzgün çalıştığından emin olmak için VS Code kullanarak şu işlemleri yapın:
+1. Bağlantılarınızın düzgün çalıştığından emin olmak için VS Code kullanarak aşağıdaki işlemleri yapın:
     - Dosyalarınızdaki herhangi bir bağlantının üzerine gelin.
     - **Ctrl + Tıklama** yaparak bağlantıya gidin.
-    - Eğer bağlantı yerel olarak çalışmıyorsa, iş akışı tetiklenir ve GitHub'da da çalışmaz.
+    - Eğer bağlantıya tıkladığınızda yerelde çalışmıyorsa, bu iş akışını tetikler ve GitHub’da da çalışmaz.
 
-1. Bu sorunu düzeltmek için VS Code tarafından önerilen yol seçeneklerini kullanarak şu işlemleri yapın:
+1. Bu sorunu düzeltmek için VS Code’un sunduğu yol önerilerini kullanarak aşağıdaki işlemleri yapın:
     - `./` veya `../` yazın.
-    - VS Code, yazdıklarınıza göre mevcut seçeneklerden birini seçmenizi isteyecektir.
+    - VS Code, yazdığınıza göre mevcut seçenekleri sunacaktır.
     - Doğru yolu seçmek için istediğiniz dosya veya klasöre tıklayın.
 
-Doğru göreli yolu ekledikten sonra değişikliklerinizi kaydedin ve gönderin.
+Doğru göreli yolu ekledikten sonra değişikliklerinizi kaydedip gönderin.
 
-### URL'lerin Yerel Ayar İçermediğini Kontrol Et
+### URL’lerde Yerel Ayar Olmadığını Kontrol Et
 
-Bu iş akışı, herhangi bir web URL'sinin ülkeye özgü yerel ayar içermediğini doğrular. Bu depo küresel olarak erişilebilir olduğu için URL'lerin ülkenizin yerel ayarını içermemesi önemlidir.
+Bu iş akışı, web URL’lerinde ülkeye özgü yerel ayarların olmadığını doğrular. Bu depo dünya çapında erişilebilir olduğundan, URL’lerde ülkenizin yerel ayarının bulunmaması önemlidir.
 
-1. URL'lerinizin ülkeye özgü yerel ayar içermediğini doğrulamak için şu işlemleri yapın:
+1. URL’lerinizde ülkeye özgü yerel ayar olmadığını doğrulamak için aşağıdaki işlemleri yapın:
 
-    - URL'lerde `/en-us/`, `/en/` veya başka herhangi bir dil yerel ayarına bakın.
-    - Eğer bunlar URL'lerinizde yoksa, bu kontrolü geçersiniz.
+    - URL’lerde `/en-us/`, `/en/` veya başka bir dil yerel ayarı olup olmadığını kontrol edin.
+    - Eğer URL’lerinizde bunlar yoksa, bu kontrolü geçersiniz.
 
-1. Bu sorunu düzeltmek için şu işlemleri yapın:
-    - İş akışı tarafından işaretlenen dosya yolunu açın.
-    - URL'lerden ülke yerel ayarını kaldırın.
+1. Bu sorunu düzeltmek için aşağıdaki işlemleri yapın:
+    - İş akışının işaretlediği dosya yolunu açın.
+    - URL’lerden ülke yerel ayarını kaldırın.
 
-Ülke yerel ayarını kaldırdıktan sonra dosyayı kaydedin ve değişikliklerinizi gönderin.
+Yerel ayarı kaldırdıktan sonra değişikliklerinizi kaydedip gönderin.
 
-### Kırık URL'leri Kontrol Et
+### Kırık URL’leri Kontrol Et
 
-Bu iş akışı, dosyalarınızdaki herhangi bir web URL'sinin çalıştığını ve 200 durum kodu döndürdüğünü doğrular.
+Bu iş akışı, dosyalarınızdaki tüm web URL’lerinin çalıştığını ve 200 durum kodu döndürdüğünü doğrular.
 
-1. URL'lerinizin düzgün çalıştığını doğrulamak için şu işlemleri yapın:
-    - Dosyalarınızdaki URL'lerin durumunu kontrol edin.
+1. URL’lerinizin doğru çalıştığını doğrulamak için aşağıdaki işlemleri yapın:
+    - Dosyalarınızdaki URL’lerin durumunu kontrol edin.
 
-2. Kırık URL'leri düzeltmek için şu işlemleri yapın:
+2. Kırık URL’leri düzeltmek için aşağıdaki işlemleri yapın:
     - Kırık URL içeren dosyayı açın.
-    - URL'yi doğru olanla güncelleyin.
+    - URL’yi doğru olanla güncelleyin.
 
-URL'leri düzelttikten sonra dosyayı kaydedin ve değişikliklerinizi gönderin.
+URL’leri düzelttikten sonra değişikliklerinizi kaydedip gönderin.
 
 > [!NOTE]
 >
 > Bağlantı erişilebilir olsa bile URL kontrolü başarısız olabilir. Bunun birkaç nedeni olabilir:
 >
-> - **Ağ kısıtlamaları:** GitHub eylem sunucularının bazı URL'lere erişimi engellenmiş olabilir.
-> - **Zaman aşımı sorunları:** Yanıt vermesi uzun süren URL'ler iş akışında zaman aşımı hatası oluşturabilir.
-> - **Geçici sunucu sorunları:** Sunucu bakımı veya arızaları doğrulama sırasında URL'nin geçici olarak erişilememesine neden olabilir.
+> - **Ağ kısıtlamaları:** GitHub actions sunucuları bazı URL’lere erişimi engelleyen ağ kısıtlamalarına sahip olabilir.
+> - **Zaman aşımı sorunları:** Yanıt vermesi uzun süren URL’ler iş akışında zaman aşımı hatası tetikleyebilir.
+> - **Geçici sunucu sorunları:** Ara sıra sunucu bakımı veya kesintileri URL’nin doğrulama sırasında geçici olarak erişilememesine neden olabilir.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

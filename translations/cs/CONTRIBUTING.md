@@ -1,135 +1,115 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "9f71f15fee9a73ecfcd4fd40efbe3070",
-  "translation_date": "2025-05-09T03:43:51+00:00",
+  "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
+  "translation_date": "2025-07-09T18:42:19+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "cs"
 }
 -->
-# Contributing
+# Přispívání
 
-Este proyecto recibe con gusto contribuciones y sugerencias. La mayoría de las contribuciones requieren que aceptes un Acuerdo de Licencia de Contribuyente (CLA) declarando que tienes el derecho y realmente nos otorgas los derechos para usar tu contribución. Para más detalles, visita [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+Tento projekt vítá příspěvky a návrhy. Většina příspěvků vyžaduje, abyste souhlasili s Contributor License Agreement (CLA), který potvrzuje, že máte právo a skutečně nám udělujete práva k použití vašeho příspěvku. Podrobnosti najdete na [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-Cuando envíes un pull request, un bot de CLA determinará automáticamente si necesitas proporcionar un CLA y decorará el PR apropiadamente (por ejemplo, verificación de estado, comentario). Simplemente sigue las instrucciones proporcionadas por el bot. Solo tendrás que hacer esto una vez para todos los repositorios que usan nuestro CLA.
+Když odešlete pull request, CLA bot automaticky zjistí, zda je potřeba poskytnout CLA, a označí PR odpovídajícím způsobem (např. kontrola stavu, komentář). Stačí postupovat podle pokynů bota. Toto je potřeba udělat pouze jednou pro všechny repozitáře používající náš CLA.
 
-## Code of Conduct
+## Kodex chování
 
-Este proyecto ha adoptado el [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). Para más información, lee las [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) o contacta a [opencode@microsoft.com](mailto:opencode@microsoft.com) con cualquier pregunta o comentario adicional.
+Tento projekt přijal [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
+Pro více informací si přečtěte [Často kladené otázky k Kodexu chování](https://opensource.microsoft.com/codeofconduct/faq/) nebo kontaktujte [opencode@microsoft.com](mailto:opencode@microsoft.com) s dalšími dotazy či připomínkami.
 
-## Cautions for creating issues
+## Upozornění při vytváření issue
 
-Por favor, no abras issues en GitHub para preguntas generales de soporte, ya que la lista de GitHub debe usarse para solicitudes de características y reportes de errores. De esta manera podemos rastrear más fácilmente problemas o bugs reales del código y mantener la discusión general separada del código en sí.
+Prosíme, neotvírejte GitHub issues pro obecné dotazy na podporu, protože seznam na GitHubu by měl sloužit pro požadavky na nové funkce a hlášení chyb. Tímto způsobem můžeme lépe sledovat skutečné problémy nebo chyby v kódu a oddělit obecnou diskusi od samotného kódu.
 
-## How to Contribute
+## Jak přispět
 
-### Pull Requests Guidelines
+### Pokyny pro pull requesty
 
-Al enviar un pull request (PR) al repositorio Phi-3 CookBook, por favor usa las siguientes pautas:
+Při odesílání pull requestu (PR) do repozitáře Phi-3 CookBook prosím dodržujte následující pravidla:
 
-- **Haz fork del repositorio**: Siempre haz un fork del repositorio a tu propia cuenta antes de hacer tus modificaciones.
+- **Forkněte repozitář**: Vždy si repozitář nejprve forknete na svůj účet, než začnete s úpravami.
 
-- **Pull requests (PR) separados**:
-  - Envía cada tipo de cambio en su propio pull request. Por ejemplo, correcciones de bugs y actualizaciones de documentación deben enviarse en PRs separados.
-  - Las correcciones de errores tipográficos y actualizaciones menores de documentación pueden combinarse en un solo PR cuando sea apropiado.
+- **Oddělené pull requesty (PR)**:
+  - Každý typ změny odesílejte v samostatném pull requestu. Například opravy chyb a aktualizace dokumentace by měly být v oddělených PR.
+  - Opravy překlepů a drobné aktualizace dokumentace lze vhodně sloučit do jednoho PR.
 
-- **Manejo de conflictos de merge**: Si tu pull request muestra conflictos de merge, actualiza tu rama local `main` para reflejar el repositorio principal antes de hacer tus modificaciones.
+- **Řešení konfliktů při slučování**: Pokud váš pull request vykazuje konflikty, aktualizujte si lokální větev `main`, aby odpovídala hlavnímu repozitáři, než provedete úpravy.
 
-- **Envíos de traducción**: Al enviar un PR de traducción, asegúrate de que la carpeta de traducción incluya las traducciones para todos los archivos de la carpeta original.
+- **Odesílání překladů**: Při odesílání PR s překladem zajistěte, aby složka s překladem obsahovala překlady všech souborů z původní složky.
 
-### Translation Guidelines
+### Pokyny pro psaní
 
-> [!IMPORTANT]
->
-> Al traducir texto en este repositorio, no uses traducción automática. Solo ofrece traducciones para idiomas en los que seas competente.
+Pro zajištění jednotnosti ve všech dokumentech prosím dodržujte následující pravidla:
 
-Si dominas un idioma que no sea inglés, puedes ayudar a traducir el contenido. Sigue estos pasos para asegurar que tus contribuciones de traducción se integren correctamente, por favor utiliza las siguientes pautas:
+- **Formátování URL**: Všechny URL uzavírejte do hranatých závorek následovaných kulatými, bez mezer uvnitř nebo kolem nich. Například: `[example](https://www.microsoft.com)`.
 
-- **Crea una carpeta de traducción**: Navega a la carpeta de la sección correspondiente y crea una carpeta de traducción para el idioma al que contribuyes. Por ejemplo:
-  - Para la sección de introducción: `PhiCookBook/md/01.Introduce/translations/<language_code>/`
-  - Para la sección de inicio rápido: `PhiCookBook/md/02.QuickStart/translations/<language_code>/`
-  - Continúa este patrón para otras secciones (03.Inference, 04.Finetuning, etc.)
+- **Relativní odkazy**: Pro relativní odkazy na soubory nebo složky v aktuálním adresáři používejte `./`, pro nadřazený adresář `../`. Například: `[example](../../path/to/file)` nebo `[example](../../../path/to/file)`.
 
-- **Actualiza rutas relativas**: Al traducir, ajusta la estructura de carpetas añadiendo `../../` al inicio de las rutas relativas dentro de los archivos markdown para asegurar que los enlaces funcionen correctamente. Por ejemplo, cambia:
-  - `(../../imgs/01/phi3aisafety.png)` a `(../../../../imgs/01/phi3aisafety.png)`
+- **Ne používejte lokalizace specifické pro zemi**: Ujistěte se, že vaše odkazy neobsahují lokalizace specifické pro zemi, například `/en-us/` nebo `/en/`.
 
-- **Organiza tus traducciones**: Cada archivo traducido debe colocarse en la carpeta de traducción correspondiente a la sección. Por ejemplo, si traduces la sección de introducción al español, crearías:
-  - `PhiCookBook/md/01.Introduce/translations/es/`
+- **Ukládání obrázků**: Všechny obrázky ukládejte do složky `./imgs`.
 
-- **Envía un PR completo**: Asegúrate de incluir todos los archivos traducidos de una sección en un solo PR. No aceptamos traducciones parciales para una sección. Al enviar un PR de traducción, asegúrate de que la carpeta de traducción incluya las traducciones para todos los archivos de la carpeta original.
-
-### Writing Guidelines
-
-Para asegurar consistencia en todos los documentos, por favor usa las siguientes pautas:
-
-- **Formato de URLs**: Envuelve todas las URLs entre corchetes seguidos de paréntesis, sin espacios extras dentro o alrededor. Por ejemplo: `[example](https://www.microsoft.com)`.
-
-- **Enlaces relativos**: Usa `./` para enlaces relativos a archivos o carpetas en el directorio actual, y `../` para aquellos en un directorio padre. Por ejemplo: `[example](../../path/to/file)` o `[example](../../../path/to/file)`.
-
-- **Locales no específicos de país**: Asegúrate de que tus enlaces no incluyan locales específicos de país. Por ejemplo, evita `/en-us/` o `/en/`.
-
-- **Almacenamiento de imágenes**: Guarda todas las imágenes en la carpeta `./imgs`.
-
-- **Nombres descriptivos para imágenes**: Nombra las imágenes descriptivamente usando caracteres en inglés, números y guiones. Por ejemplo: `example-image.jpg`.
+- **Popisné názvy obrázků**: Obrázky pojmenovávejte popisně pomocí anglických znaků, čísel a pomlček. Například: `example-image.jpg`.
 
 ## GitHub Workflows
 
-Cuando envíes un pull request, se activarán los siguientes workflows para validar los cambios. Sigue las instrucciones a continuación para asegurar que tu pull request pase las verificaciones del workflow:
+Při odeslání pull requestu se spustí následující workflow, která ověří změny. Postupujte podle níže uvedených pokynů, aby váš pull request prošel kontrolami:
 
-- [Check Broken Relative Paths](../..)
-- [Check URLs Don't Have Locale](../..)
+- [Kontrola nefunkčních relativních cest](../..)
+- [Kontrola, že URL neobsahují lokalizaci](../..)
 
-### Check Broken Relative Paths
+### Kontrola nefunkčních relativních cest
 
-Este workflow asegura que todas las rutas relativas en tus archivos sean correctas.
+Toto workflow ověřuje, že všechny relativní cesty ve vašich souborech jsou správné.
 
-1. Para asegurarte de que tus enlaces funcionan correctamente, realiza las siguientes tareas usando VS Code:
-    - Pasa el cursor sobre cualquier enlace en tus archivos.
-    - Presiona **Ctrl + Click** para navegar al enlace.
-    - Si haces clic en un enlace y no funciona localmente, se activará el workflow y no funcionará en GitHub.
+1. Pro ověření funkčnosti odkazů proveďte v VS Code následující:
+    - Najetím myši na odkaz zobrazíte jeho náhled.
+    - Stiskněte **Ctrl + Klik** pro přechod na odkaz.
+    - Pokud odkaz nefunguje lokálně, workflow se spustí a odkaz nebude fungovat ani na GitHubu.
 
-1. Para solucionar este problema, realiza las siguientes tareas usando las sugerencias de ruta que ofrece VS Code:
-    - Escribe `./` o `../`.
-    - VS Code te pedirá que elijas entre las opciones disponibles según lo que escribiste.
-    - Sigue la ruta haciendo clic en el archivo o carpeta deseada para asegurarte de que la ruta es correcta.
+1. Pro opravu proveďte následující pomocí návrhů cest ve VS Code:
+    - Napište `./` nebo `../`.
+    - VS Code vám nabídne dostupné možnosti podle toho, co jste napsali.
+    - Kliknutím na požadovaný soubor nebo složku ověřte správnost cesty.
 
-Una vez que hayas agregado la ruta relativa correcta, guarda y sube tus cambios.
+Po přidání správné relativní cesty uložte a pushněte změny.
 
-### Check URLs Don't Have Locale
+### Kontrola, že URL neobsahují lokalizaci
 
-Este workflow asegura que ninguna URL web incluya un locale específico de país. Como este repositorio es accesible globalmente, es importante que las URLs no contengan el locale de tu país.
+Toto workflow ověřuje, že žádná webová URL neobsahuje lokalizaci specifickou pro zemi. Jelikož je tento repozitář přístupný globálně, je důležité zajistit, aby URL neobsahovaly lokalizaci vaší země.
 
-1. Para verificar que tus URLs no tengan locales de país, realiza las siguientes tareas:
+1. Pro ověření, že vaše URL neobsahují lokalizaci, proveďte následující:
 
-    - Revisa que no haya texto como `/en-us/`, `/en/`, o cualquier otro locale de idioma en las URLs.
-    - Si no están presentes en tus URLs, pasarás esta verificación.
+    - Zkontrolujte, zda se v URL nevyskytuje text jako `/en-us/`, `/en/` nebo jiná jazyková lokalizace.
+    - Pokud tyto texty v URL nejsou, kontrolu projdete.
 
-1. Para solucionar este problema, realiza las siguientes tareas:
-    - Abre el archivo cuyo path fue destacado por el workflow.
-    - Elimina el locale de país de las URLs.
+1. Pro opravu proveďte následující:
+    - Otevřete soubor zvýrazněný workflow.
+    - Odstraňte lokalizaci země z URL.
 
-Una vez que elimines el locale de país, guarda y sube tus cambios.
+Po odstranění lokalizace uložte a pushněte změny.
 
-### Check Broken Urls
+### Kontrola nefunkčních URL
 
-Este workflow asegura que cualquier URL web en tus archivos funcione y retorne código de estado 200.
+Toto workflow ověřuje, že všechny webové URL ve vašich souborech fungují a vracejí stavový kód 200.
 
-1. Para verificar que tus URLs funcionen correctamente, realiza las siguientes tareas:
-    - Revisa el estado de las URLs en tus archivos.
+1. Pro ověření správnosti URL proveďte následující:
+    - Zkontrolujte stav URL ve vašich souborech.
 
-2. Para arreglar cualquier URL rota, realiza las siguientes tareas:
-    - Abre el archivo que contiene la URL rota.
-    - Actualiza la URL a la correcta.
+2. Pro opravu nefunkčních URL proveďte následující:
+    - Otevřete soubor obsahující nefunkční URL.
+    - Aktualizujte URL na správnou.
 
-Una vez que hayas corregido las URLs, guarda y sube tus cambios.
+Po opravě URL uložte a pushněte změny.
 
 > [!NOTE]
 >
-> Puede haber casos donde la verificación de URLs falle aunque el enlace sea accesible. Esto puede suceder por varias razones, incluyendo:
+> Může se stát, že kontrola URL selže, i když je odkaz dostupný. Může to být z několika důvodů, například:
 >
-> - **Restricciones de red:** Los servidores de GitHub Actions pueden tener restricciones de red que impiden el acceso a ciertas URLs.
-> - **Problemas de tiempo de espera:** URLs que tardan demasiado en responder pueden generar un error de timeout en el workflow.
-> - **Problemas temporales del servidor:** Caídas ocasionales o mantenimiento del servidor pueden hacer que una URL no esté disponible temporalmente durante la validación.
+> - **Síťová omezení:** Servery GitHub Actions mohou mít omezení přístupu k určitým URL.
+> - **Problémy s časovým limitem:** URL, které odpovídají příliš dlouho, mohou způsobit chybu timeoutu ve workflow.
+> - **Dočasné problémy se serverem:** Občasné výpadky nebo údržba serveru mohou způsobit dočasnou nedostupnost URL během ověřování.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje využít profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

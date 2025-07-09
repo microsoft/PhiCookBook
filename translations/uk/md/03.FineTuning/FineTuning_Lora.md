@@ -1,0 +1,106 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "50b6a55a0831b417835087d8b57759fe",
+  "translation_date": "2025-07-09T19:05:26+00:00",
+  "source_file": "md/03.FineTuning/FineTuning_Lora.md",
+  "language_code": "uk"
+}
+-->
+# **Тонке налаштування Phi-3 з Lora**
+
+Тонке налаштування мовної моделі Phi-3 Mini від Microsoft за допомогою [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) на власному наборі даних з інструкціями для чат-бота.
+
+LORA допоможе покращити розуміння діалогів та генерацію відповідей.
+
+## Покрокова інструкція з тонкого налаштування Phi-3 Mini:
+
+**Імпорти та налаштування**
+
+Встановлення loralib
+
+```
+pip install loralib
+# Alternatively
+# pip install git+https://github.com/microsoft/LoRA
+
+```
+
+Спочатку імпортуйте необхідні бібліотеки, такі як datasets, transformers, peft, trl та torch. Налаштуйте логування для відстеження процесу навчання.
+
+Ви можете адаптувати деякі шари, замінивши їх на аналоги, реалізовані в loralib. Наразі підтримуються лише nn.Linear, nn.Embedding та nn.Conv2d. Також підтримується MergedLinear для випадків, коли один nn.Linear представляє кілька шарів, наприклад, у деяких реалізаціях проекції qkv уваги (див. Додаткові нотатки для деталей).
+
+```
+# ===== Before =====
+# layer = nn.Linear(in_features, out_features)
+```
+
+```
+# ===== After ======
+```
+
+import loralib as lora
+
+```
+# Add a pair of low-rank adaptation matrices with rank r=16
+layer = lora.Linear(in_features, out_features, r=16)
+```
+
+Перед початком циклу навчання позначте як треновані лише параметри LoRA.
+
+```
+import loralib as lora
+model = BigModel()
+# This sets requires_grad to False for all parameters without the string "lora_" in their names
+lora.mark_only_lora_as_trainable(model)
+# Training loop
+for batch in dataloader:
+```
+
+Під час збереження контрольної точки створюйте state_dict, що містить лише параметри LoRA.
+
+```
+# ===== Before =====
+# torch.save(model.state_dict(), checkpoint_path)
+```
+```
+# ===== After =====
+torch.save(lora.lora_state_dict(model), checkpoint_path)
+```
+
+При завантаженні контрольної точки за допомогою load_state_dict обов’язково встановіть strict=False.
+
+```
+# Load the pretrained checkpoint first
+model.load_state_dict(torch.load('ckpt_pretrained.pt'), strict=False)
+# Then load the LoRA checkpoint
+model.load_state_dict(torch.load('ckpt_lora.pt'), strict=False)
+```
+
+Тепер навчання може проходити у звичайному режимі.
+
+**Гіперпараметри**
+
+Визначте два словники: training_config та peft_config. training_config містить гіперпараметри для навчання, такі як швидкість навчання, розмір батчу та налаштування логування.
+
+peft_config задає параметри, пов’язані з LoRA, такі як ранг, dropout та тип завдання.
+
+**Завантаження моделі та токенізатора**
+
+Вкажіть шлях до попередньо навченого Phi-3 (наприклад, "microsoft/Phi-3-mini-4k-instruct"). Налаштуйте параметри моделі, включно з використанням кешу, типом даних (bfloat16 для змішаної точності) та реалізацією уваги.
+
+**Навчання**
+
+Тонко налаштуйте модель Phi-3 на власному наборі інструкцій для чат-бота. Використовуйте параметри LoRA з peft_config для ефективної адаптації. Відстежуйте прогрес навчання за допомогою заданої стратегії логування.  
+Оцінка та збереження: оцініть тонко налаштовану модель.  
+Зберігайте контрольні точки під час навчання для подальшого використання.
+
+**Приклади**
+- [Дізнатись більше з цього зразка ноутбука](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
+- [Приклад скрипта тонкого налаштування на Python](../../../../code/03.Finetuning/FineTrainingScript.py)
+- [Приклад тонкого налаштування на Hugging Face Hub з LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
+- [Приклад Model Card на Hugging Face – зразок тонкого налаштування LORA](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)
+- [Приклад тонкого налаштування на Hugging Face Hub з QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
+
+**Відмова від відповідальності**:  
+Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.
