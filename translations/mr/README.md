@@ -1,242 +1,250 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "1cab9282e04f2e1c388a38dca7763c16",
-  "translation_date": "2025-05-09T03:47:04+00:00",
+  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
+  "translation_date": "2025-07-09T18:13:24+00:00",
   "source_file": "README.md",
   "language_code": "mr"
 }
 -->
 # Phi Cookbook: Microsoft च्या Phi मॉडेल्ससह प्रत्यक्ष उदाहरणे
 
-[![GitHub Codespaces मध्ये सॅम्पल्स उघडा आणि वापरा](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
+[![GitHub Codespaces मध्ये नमुने उघडा आणि वापरा](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)  
 [![Dev Containers मध्ये उघडा](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
 
-[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub issues](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub योगदानकर्ते](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)  
+[![GitHub समस्या](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)  
+[![GitHub पुल-रिक्वेस्ट्स](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)  
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
-[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub stars](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
-
+[![GitHub वॉचर्स](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)  
+[![GitHub फोर्क्स](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
+[![GitHub स्टार्स](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
 [![Azure AI Community Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-Phi हे Microsoft कडून विकसित केलेले एक ओपन सोर्स AI मॉडेल्सचे सिरीज आहे.
+Phi ही Microsoft द्वारे विकसित केलेली एक ओपन सोर्स AI मॉडेल्सची मालिका आहे.
 
-Phi सध्या सर्वात सामर्थ्यशाली आणि किफायतशीर छोटे भाषा मॉडेल (SLM) आहे, जे बहुभाषिक, तर्कशास्त्र, मजकूर/चॅट जनरेशन, कोडिंग, प्रतिमा, ऑडिओ आणि इतर परिस्थितींमध्ये उत्कृष्ट बेंचमार्क्स देते.
+Phi सध्या सर्वात शक्तिशाली आणि किफायतशीर लहान भाषा मॉडेल (SLM) आहे, ज्याला बहुभाषिक, तर्कशास्त्र, मजकूर/चॅट जनरेशन, कोडिंग, प्रतिमा, ऑडिओ आणि इतर अनेक परिस्थितींमध्ये उत्कृष्ट कामगिरी मिळाली आहे.
 
-तुम्ही Phi ला क्लाउडवर किंवा एज डिव्हायसेसवर डिप्लॉय करू शकता, आणि कमी संगणकीय शक्तीने सहजपणे जनरेटिव्ह AI अनुप्रयोग तयार करू शकता.
+तुम्ही Phi ला क्लाउडवर किंवा एज डिव्हाइसेसवर तैनात करू शकता, आणि मर्यादित संगणकीय शक्तीने सहजपणे जनरेटिव्ह AI अनुप्रयोग तयार करू शकता.
 
-हे स्त्रोत वापरण्यास सुरुवात करण्यासाठी खालील पायऱ्या फॉलो करा:
-1. **Repository Fork करा**: Click [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. **Repository Clone करा**: `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**Microsoft AI Discord Community मध्ये Join व्हा आणि तज्ञ व सहकार्यकांसोबत भेटा**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+हे संसाधन वापरण्यास सुरुवात करण्यासाठी खालील पायऱ्या फॉलो करा:  
+1. **रिपॉझिटरी फोर्क करा**: क्लिक करा [![GitHub फोर्क्स](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
+2. **रिपॉझिटरी क्लोन करा**: `git clone https://github.com/microsoft/PhiCookBook.git`  
+3. [**Microsoft AI Discord Community मध्ये सामील व्हा आणि तज्ञ व सहकारी विकसकांशी भेटा**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.2595d43b382944c601aebf88583314636768eece3d94e8e4448e03a4e5bedef4.mr.png)
+![cover](../../imgs/cover.png)
 
 ## 🌐 बहुभाषिक समर्थन
 
-### GitHub Action द्वारे समर्थित (स्वयंचलित आणि नेहमी अपडेटेड)
+### GitHub Action द्वारे समर्थित (स्वयंचलित आणि नेहमी अद्ययावत)
 
-[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md)
+[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md)  
+[Bengali](../bn/README.md) | [Marathi](./README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
 
-### CLI द्वारे समर्थित
 ## अनुक्रमणिका
 
-- परिचय
-- [Phi कुटुंबात आपले स्वागत आहे](./md/01.Introduction/01/01.PhiFamily.md)
-  - [आपले वातावरण सेट करणे](./md/01.Introduction/01/01.EnvironmentSetup.md)
-  - [महत्त्वाच्या तंत्रज्ञानांची समज](./md/01.Introduction/01/01.Understandingtech.md)
-  - [Phi मॉडेल्ससाठी AI सुरक्षा](./md/01.Introduction/01/01.AISafety.md)
-  - [Phi हार्डवेअर समर्थन](./md/01.Introduction/01/01.Hardwaresupport.md)
-  - [Phi मॉडेल्स आणि प्लॅटफॉर्मवर त्यांची उपलब्धता](./md/01.Introduction/01/01.Edgeandcloud.md)
-  - [Guidance-ai आणि Phi वापरणे](./md/01.Introduction/01/01.Guidance.md)
-  - [GitHub मार्केटप्लेस मॉडेल्स](https://github.com/marketplace/models)
+- परिचय  
+  - [Phi कुटुंबात आपले स्वागत आहे](./md/01.Introduction/01/01.PhiFamily.md)  
+  - [आपले वातावरण सेट करणे](./md/01.Introduction/01/01.EnvironmentSetup.md)  
+  - [महत्त्वाच्या तंत्रज्ञानांची समज](./md/01.Introduction/01/01.Understandingtech.md)  
+  - [Phi मॉडेल्ससाठी AI सुरक्षा](./md/01.Introduction/01/01.AISafety.md)  
+  - [Phi हार्डवेअर समर्थन](./md/01.Introduction/01/01.Hardwaresupport.md)  
+  - [Phi मॉडेल्स आणि प्लॅटफॉर्मवर उपलब्धता](./md/01.Introduction/01/01.Edgeandcloud.md)  
+  - [Guidance-ai आणि Phi चा वापर](./md/01.Introduction/01/01.Guidance.md)  
+  - [GitHub मार्केटप्लेस मॉडेल्स](https://github.com/marketplace/models)  
   - [Azure AI मॉडेल कॅटलॉग](https://ai.azure.com)
 
-- विविध वातावरणात Phi चे इन्फरन्स
-    -  [Hugging face](./md/01.Introduction/02/01.HF.md)
-    -  [GitHub मॉडेल्स](./md/01.Introduction/02/02.GitHubModel.md)
-    -  [Azure AI Foundry मॉडेल कॅटलॉग](./md/01.Introduction/02/03.AzureAIFoundry.md)
-    -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
-    -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
-    -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)
+- विविध वातावरणात Phi चे इन्फरन्स  
+  - [Hugging face](./md/01.Introduction/02/01.HF.md)  
+  - [GitHub मॉडेल्स](./md/01.Introduction/02/02.GitHubModel.md)  
+  - [Azure AI Foundry मॉडेल कॅटलॉग](./md/01.Introduction/02/03.AzureAIFoundry.md)  
+  - [Ollama](./md/01.Introduction/02/04.Ollama.md)  
+  - [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)  
+  - [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)  
+  - [Foundry Local](./md/01.Introduction/02/07.FoundryLocal.md)
 
-- Phi कुटुंबात इन्फरन्स
-    - [iOS मध्ये Phi इन्फरन्स](./md/01.Introduction/03/iOS_Inference.md)
-    - [Android मध्ये Phi इन्फरन्स](./md/01.Introduction/03/Android_Inference.md)
-    - [Jetson मध्ये Phi इन्फरन्स](./md/01.Introduction/03/Jetson_Inference.md)
-    - [AI PC मध्ये Phi इन्फरन्स](./md/01.Introduction/03/AIPC_Inference.md)
-    - [Apple MLX Framework सह Phi इन्फरन्स](./md/01.Introduction/03/MLX_Inference.md)
-    - [स्थानिक सर्व्हरमध्ये Phi इन्फरन्स](./md/01.Introduction/03/Local_Server_Inference.md)
-    - [AI Toolkit वापरून रिमोट सर्व्हरमध्ये Phi इन्फरन्स](./md/01.Introduction/03/Remote_Interence.md)
-    - [Rust सह Phi इन्फरन्स](./md/01.Introduction/03/Rust_Inference.md)
-    - [स्थानिक Vision मध्ये Phi इन्फरन्स](./md/01.Introduction/03/Vision_Inference.md)
-    - [Kaito AKS, Azure Containers (अधिकृत समर्थन) सह Phi इन्फरन्स](./md/01.Introduction/03/Kaito_Inference.md)
--  [Phi कुटुंबाचे क्वांटिफायिंग](./md/01.Introduction/04/QuantifyingPhi.md)
-    - [llama.cpp वापरून Phi-3.5 / 4 चे क्वांटायझेशन](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
-    - [onnxruntime साठी Generative AI एक्स्टेंशन्स वापरून Phi-3.5 / 4 चे क्वांटायझेशन](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
-    - [Intel OpenVINO वापरून Phi-3.5 / 4 चे क्वांटायझेशन](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
-    - [Apple MLX Framework वापरून Phi-3.5 / 4 चे क्वांटायझेशन](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+- Phi कुटुंबाचा इन्फरन्स  
+  - [iOS मध्ये Phi चे इन्फरन्स](./md/01.Introduction/03/iOS_Inference.md)  
+  - [Android मध्ये Phi चे इन्फरन्स](./md/01.Introduction/03/Android_Inference.md)  
+  - [Jetson मध्ये Phi चे इन्फरन्स](./md/01.Introduction/03/Jetson_Inference.md)  
+  - [AI PC मध्ये Phi चे इन्फरन्स](./md/01.Introduction/03/AIPC_Inference.md)  
+  - [Apple MLX Framework सह Phi चे इन्फरन्स](./md/01.Introduction/03/MLX_Inference.md)  
+  - [स्थानिक सर्व्हरमध्ये Phi चे इन्फरन्स](./md/01.Introduction/03/Local_Server_Inference.md)  
+  - [AI Toolkit वापरून रिमोट सर्व्हरमध्ये Phi चे इन्फरन्स](./md/01.Introduction/03/Remote_Interence.md)  
+  - [Rust सह Phi चे इन्फरन्स](./md/01.Introduction/03/Rust_Inference.md)  
+  - [स्थानिक Vision मध्ये Phi चे इन्फरन्स](./md/01.Introduction/03/Vision_Inference.md)  
+  - [Kaito AKS, Azure Containers (अधिकृत समर्थन) सह Phi चे इन्फरन्स](./md/01.Introduction/03/Kaito_Inference.md)  
+- [Phi कुटुंबाचे क्वांटिफायिंग](./md/01.Introduction/04/QuantifyingPhi.md)  
+  - [llama.cpp वापरून Phi-3.5 / 4 चे क्वांटायझेशन](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
+  - [onnxruntime साठी Generative AI विस्तार वापरून Phi-3.5 / 4 चे क्वांटायझेशन](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
+  - [Intel OpenVINO वापरून Phi-3.5 / 4 चे क्वांटायझेशन](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
+  - [Apple MLX Framework वापरून Phi-3.5 / 4 चे क्वांटायझेशन](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
--  Phi चे मूल्यमापन
-- [Response AI](./md/01.Introduction/05/ResponsibleAI.md)
-    - [Azure AI Foundry for Evaluation](./md/01.Introduction/05/AIFoundry.md)
-    - [Using Promptflow for Evaluation](./md/01.Introduction/05/Promptflow.md)
- 
-- RAG सह Azure AI Search
-    - [Phi-4-mini आणि Phi-4-multimodal(RAG) Azure AI Search सोबत कसे वापरावे](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+- Phi चे मूल्यांकन  
+  - [Responsible AI](./md/01.Introduction/05/ResponsibleAI.md)  
+  - [Azure AI Foundry मूल्यांकनासाठी](./md/01.Introduction/05/AIFoundry.md)  
+  - [मूल्यांकनासाठी Promptflow वापरणे](./md/01.Introduction/05/Promptflow.md)
 
-- Phi अनुप्रयोग विकास नमुने
-  - मजकूर & चॅट अनुप्रयोग
-    - Phi-4 नमुने 🆕
-      - [📓] [Phi-4-mini ONNX मॉडेलसह चॅट करा](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
-      - [Phi-4 स्थानिक ONNX मॉडेल .NET सह चॅट](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
-      - [Semantic Kernel वापरून Phi-4 ONNX सह .NET कन्सोल अॅपमध्ये चॅट](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
-    - Phi-3 / 3.5 नमुने
-      - [Phi3, ONNX Runtime Web आणि WebGPU वापरून ब्राउझरमध्ये स्थानिक चॅटबॉट](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
-      - [OpenVino चॅट](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
-      - [मल्टि मॉडेल - परस्परसंवादी Phi-3-mini आणि OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
-      - [MLFlow - Phi-3 वापरून रॅपर तयार करणे आणि वापरणे](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
-      - [मॉडेल ऑप्टिमायझेशन - ONNX Runtime Web साठी Phi-3-min मॉडेल कसे ऑप्टिमाइझ करावे Olive वापरून](https://github.com/microsoft/Olive/tree/main/examples/phi3)
-      - [Phi-3 mini-4k-instruct-onnx सह WinUI3 अॅप](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
-      - [WinUI3 मल्टि मॉडेल AI पॉवर्ड नोट्स अॅप नमुना](https://github.com/microsoft/ai-powered-notes-winui3-sample)
-      - [Prompt flow सह कस्टम Phi-3 मॉडेल फाइन-ट्यून आणि एकत्रीकरण](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-      - [Azure AI Foundry मध्ये Prompt flow सह कस्टम Phi-3 मॉडेल फाइन-ट्यून आणि एकत्रीकरण](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-      - [Microsoft च्या Responsible AI तत्त्वांवर लक्ष केंद्रित करून Azure AI Foundry मध्ये फाइन-ट्यून केलेले Phi-3 / Phi-3.5 मॉडेल मूल्यांकन](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
-      - [📓] [Phi-3.5-mini-instruct भाषा भाकीत नमुना (चिनी/इंग्रजी)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
-      - [Phi-3.5-Instruct WebGPU RAG चॅटबॉट](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
-      - [Windows GPU वापरून Phi-3.5-Instruct ONNX सह Prompt flow सोल्यूशन तयार करणे](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
-      - [Microsoft Phi-3.5 tflite वापरून Android अॅप तयार करणे](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
-      - [स्थानिक ONNX Phi-3 मॉडेल वापरून Q&A .NET उदाहरण Microsoft.ML.OnnxRuntime सह](../../md/04.HOL/dotnet/src/LabsPhi301)
-      - [Semantic Kernel आणि Phi-3 सह .NET कन्सोल चॅट अॅप](../../md/04.HOL/dotnet/src/LabsPhi302)
+- Azure AI Search सह RAG  
+  - [Phi-4-mini आणि Phi-4-multimodal (RAG) Azure AI Search सह कसे वापरायचे](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
-  - Azure AI Inference SDK कोड आधारित नमुने
-    - Phi-4 नमुने 🆕
-      - [📓] [Phi-4-multimodal वापरून प्रोजेक्ट कोड तयार करा](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
-    - Phi-3 / 3.5 नमुने
-      - [Microsoft Phi-3 कुटुंबासह Visual Studio Code GitHub Copilot Chat स्वतः तयार करा](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
-      - [GitHub मॉडेल्स वापरून Phi-3.5 सह Visual Studio Code Chat Copilot एजंट तयार करा](./md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
+- Phi अनुप्रयोग विकास नमुने  
+  - मजकूर आणि चॅट अनुप्रयोग  
+    - Phi-4 नमुने 🆕  
+      - [📓] [Phi-4-mini ONNX मॉडेलसह चॅट](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)  
+      - [Phi-4 स्थानिक ONNX मॉडेलसह चॅट .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
+      - [Semantic Kernel वापरून Phi-4 ONNX सह .NET कन्सोल अॅपमध्ये चॅट](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)  
+    - Phi-3 / 3.5 नमुने  
+      - [Phi3, ONNX Runtime Web आणि WebGPU वापरून ब्राउझरमध्ये स्थानिक चॅटबॉट](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
+      - [OpenVino चॅट](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
+      - [मल्टी मॉडेल - इंटरऐक्टिव्ह Phi-3-mini आणि OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
+      - [MLFlow - Phi-3 सह व्रॅपर तयार करणे आणि वापरणे](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
+      - [मॉडेल ऑप्टिमायझेशन - ONNX Runtime Web साठी Phi-3-min मॉडेल कसे ऑप्टिमाइझ करावे Olive वापरून](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
+      - [WinUI3 अॅप Phi-3 mini-4k-instruct-onnx सह](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)  
+      - [WinUI3 मल्टी मॉडेल AI पॉवर्ड नोट्स अॅप नमुना](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+- [Prompt flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग आणि एकत्रीकरण](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
+- [Azure AI Foundry मध्ये Prompt flow सह सानुकूल Phi-3 मॉडेल्सचे फाइन-ट्यूनिंग आणि एकत्रीकरण](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+- [Microsoft च्या जबाबदार AI तत्त्वांवर लक्ष केंद्रित करून Azure AI Foundry मध्ये फाइन-ट्यून केलेल्या Phi-3 / Phi-3.5 मॉडेलचे मूल्यांकन](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+- [📓] [Phi-3.5-mini-instruct भाषा भाकीत नमुना (चिनी/इंग्रजी)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
+- [Phi-3.5-Instruct WebGPU RAG चॅटबॉट](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
+- [Windows GPU वापरून Phi-3.5-Instruct ONNX सह Prompt flow सोल्यूशन तयार करणे](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
+- [Microsoft Phi-3.5 tflite वापरून Android अॅप तयार करणे](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
+- [Microsoft.ML.OnnxRuntime वापरून स्थानिक ONNX Phi-3 मॉडेलसह Q&A .NET उदाहरण](../../md/04.HOL/dotnet/src/LabsPhi301)
+- [Semantic Kernel आणि Phi-3 सह Console चॅट .NET अॅप](../../md/04.HOL/dotnet/src/LabsPhi302)
 
-  - प्रगत तर्क नमुने
-    - Phi-4 नमुने 🆕
-      - [📓] [Phi-4-mini-reasoning किंवा Phi-4-reasoning नमुने](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
-      - [📓] [Microsoft Olive वापरून Phi-4-mini-reasoning चे फाइन-ट्यूनिंग](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
-      - [📓] [Apple MLX वापरून Phi-4-mini-reasoning चे फाइन-ट्यूनिंग](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
-      - [📓] [GitHub मॉडेल्स सह Phi-4-mini-reasoning](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-- [📓] [Azure AI Foundry मॉडेल्ससह Phi-4-mini-तर्कशास्त्र](../../md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
-  - डेमो
-      - [Phi-4-mini डेमो Hugging Face Spaces वर होस्ट केलेले](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
-      - [Phi-4-multimodal डेमो Hugging Face Spaces वर होस्ट केलेले](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
-  - व्हिजन नमुने
-    - Phi-4 नमुने 🆕
-      - [📓] [Phi-4-multimodal वापरून प्रतिमा वाचणे आणि कोड जनरेट करणे](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) 
-    - Phi-3 / 3.5 नमुने
-      -  [📓][Phi-3-vision-प्रतिमा मजकूर ते मजकूर](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
-      - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)
-      - [📓][Phi-3-vision CLIP एम्बेडिंग](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
-      - [डेमो: Phi-3 रीसायक्लिंग](https://github.com/jennifermarsman/PhiRecycling/)
-      - [Phi-3-vision - व्हिज्युअल भाषा सहाय्यक - Phi3-Vision आणि OpenVINO सह](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)
-      - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)
-      - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)
-      - [📓][Phi-3.5 Vision मल्टि-फ्रेम किंवा मल्टि-इमेज नमुना](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)
-      - [Phi-3 Vision स्थानिक ONNX मॉडेल Microsoft.ML.OnnxRuntime .NET वापरून](../../md/04.HOL/dotnet/src/LabsPhi303)
-      - [मेनू आधारित Phi-3 Vision स्थानिक ONNX मॉडेल Microsoft.ML.OnnxRuntime .NET वापरून](../../md/04.HOL/dotnet/src/LabsPhi304)
+- Azure AI Inference SDK कोड आधारित नमुने  
+  - Phi-4 नमुने 🆕  
+    - [📓] [Phi-4-multimodal वापरून प्रोजेक्ट कोड तयार करणे](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)  
+  - Phi-3 / 3.5 नमुने  
+    - [Microsoft Phi-3 कुटुंबासह आपला स्वतःचा Visual Studio Code GitHub Copilot Chat तयार करा](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)  
+    - [GitHub मॉडेल्स वापरून Phi-3.5 सह आपला स्वतःचा Visual Studio Code Chat Copilot एजंट तयार करा](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)  
 
-  - ऑडिओ नमुने
-    - Phi-4 नमुने 🆕
-      - [📓] [Phi-4-multimodal वापरून ऑडिओ ट्रान्सक्रिप्ट्स काढणे](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
-      - [📓] [Phi-4-multimodal ऑडिओ नमुना](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
-      - [📓] [Phi-4-multimodal भाषांतर नमुना](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
-      - [.NET कन्सोल अ‍ॅप्लिकेशन Phi-4-multimodal वापरून ऑडिओ फाइलचे विश्लेषण आणि ट्रान्सक्रिप्ट तयार करणे](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
+- प्रगत तर्क नमुने  
+  - Phi-4 नमुने 🆕  
+    - [📓] [Phi-4-mini-reasoning किंवा Phi-4-reasoning नमुने](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)  
+    - [📓] [Microsoft Olive सह Phi-4-mini-reasoning चे फाइन-ट्यूनिंग](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)  
+    - [📓] [Apple MLX सह Phi-4-mini-reasoning चे फाइन-ट्यूनिंग](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)  
+    - [📓] [GitHub मॉडेल्ससह Phi-4-mini-reasoning](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)  
+    - [📓] [Azure AI Foundry मॉडेल्ससह Phi-4-mini-reasoning](../../md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)  
+- डेमो  
+    - [Phi-4-mini डेमो Hugging Face Spaces वर होस्ट केलेले](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)  
+    - [Phi-4-multimodal डेमो Hugging Face Spaces वर होस्ट केलेले](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)  
+- व्हिजन नमुने  
+  - Phi-4 नमुने 🆕  
+    - [📓] [Phi-4-multimodal वापरून प्रतिमा वाचा आणि कोड तयार करा](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md)  
+  - Phi-3 / 3.5 नमुने  
+    - [📓][Phi-3-vision-प्रतिमा मजकूर ते मजकूर](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
+    - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)  
+    - [📓][Phi-3-vision CLIP एम्बेडिंग](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
+    - [डेमो: Phi-3 रीसायक्लिंग](https://github.com/jennifermarsman/PhiRecycling/)  
+    - [Phi-3-vision - व्हिज्युअल भाषा सहाय्यक - Phi3-Vision आणि OpenVINO सह](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)  
+    - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)  
+    - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)  
+    - [📓][Phi-3.5 Vision मल्टी-फ्रेम किंवा मल्टी-इमेज नमुना](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)  
+    - [Microsoft.ML.OnnxRuntime .NET वापरून Phi-3 Vision स्थानिक ONNX मॉडेल](../../md/04.HOL/dotnet/src/LabsPhi303)  
+    - [मेनू आधारित Phi-3 Vision स्थानिक ONNX मॉडेल Microsoft.ML.OnnxRuntime .NET वापरून](../../md/04.HOL/dotnet/src/LabsPhi304)  
 
-  - MOE नमुने
-    - Phi-3 / 3.5 नमुने
-      - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) सोशल मीडिया नमुना](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
-      - [📓] [NVIDIA NIM Phi-3 MOE, Azure AI Search आणि LlamaIndex सह Retrieval-Augmented Generation (RAG) पाइपलाइन तयार करणे](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
-  - फंक्शन कॉलिंग नमुने
-    - Phi-4 नमुने 🆕
-      -  [📓] [Phi-4-mini सह फंक्शन कॉलिंग वापरणे](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
-      -  [📓] [Phi-4-mini सह मल्टि-एजंट्स तयार करण्यासाठी फंक्शन कॉलिंग वापरणे](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
-      -  [📓] [Ollama सह फंक्शन कॉलिंग वापरणे](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)
-  - मल्टिमोडल मिक्सिंग नमुने
-    - Phi-4 नमुने 🆕
-      -  [📓] [Phi-4-multimodal वापरून तंत्रज्ञान पत्रकार म्हणून काम करणे](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)
-      - [.NET कन्सोल अ‍ॅप्लिकेशन Phi-4-multimodal वापरून प्रतिमा विश्लेषणासाठी](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)
+- गणित नमुने  
+  - Phi-4-Mini-Flash-Reasoning-Instruct नमुने 🆕 [Phi-4-Mini-Flash-Reasoning-Instruct सह गणित डेमो](../../md/02.Application/09.Math/MathDemo.ipynb)  
 
-- Phi फाइन-ट्यूनिंग नमुने
-  - [फाइन-ट्यूनिंग परिस्थिती](./md/03.FineTuning/FineTuning_Scenarios.md)
-  - [फाइन-ट्यूनिंग विरुद्ध RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)
-  - [Phi-3 ला उद्योग विशेषज्ञ बनवण्यासाठी फाइन-ट्यूनिंग](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
-  - [VS Code साठी AI Toolkit वापरून Phi-3 चे फाइन-ट्यूनिंग](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)
-  - [Azure Machine Learning Service वापरून Phi-3 चे फाइन-ट्यूनिंग](./md/03.FineTuning/Introduce_AzureML.md)
-- [Lora सह Phi-3 ची फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_Lora.md)
-  - [QLora सह Phi-3 ची फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Azure AI Foundry सह Phi-3 ची फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_AIFoundry.md)
-  - [Azure ML CLI/SDK सह Phi-3 ची फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_MLSDK.md)
-  - [Microsoft Olive सह फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
-  - [Microsoft Olive Hands-On Lab सह फाइन-ट्यूनिंग](./md/03.FineTuning/olive-lab/readme.md)
-  - [Weights and Bias सह Phi-3-vision ची फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)
-  - [Apple MLX Framework सह Phi-3 ची फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_MLX.md)
-  - [Phi-3-vision ची फाइन-ट्यूनिंग (अधिकृत समर्थन)](./md/03.FineTuning/FineTuning_Vision.md)
-  - [Kaito AKS, Azure Containers सह Phi-3 ची फाइन-ट्यूनिंग (अधिकृत समर्थन)](./md/03.FineTuning/FineTuning_Kaito.md)
-  - [Phi-3 आणि 3.5 Vision ची फाइन-ट्यूनिंग](https://github.com/2U1/Phi3-Vision-Finetune)
+- ऑडिओ नमुने  
+  - Phi-4 नमुने 🆕  
+    - [📓] [Phi-4-multimodal वापरून ऑडिओ ट्रान्सक्रिप्ट्स काढणे](./md/02.Application/05.Audio/Phi4/Transciption/README.md)  
+    - [📓] [Phi-4-multimodal ऑडिओ नमुना](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)  
+    - [📓] [Phi-4-multimodal भाषांतर नमुना](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)  
+    - [Phi-4-multimodal वापरून ऑडिओ फाइलचे विश्लेषण आणि ट्रान्सक्रिप्ट तयार करणारे .NET कन्सोल अॅप्लिकेशन](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)  
 
-- Hands on Lab
-  - [अत्याधुनिक मॉडेल्सची एक्सप्लोरेशन: LLMs, SLMs, लोकल डेव्हलपमेंट आणि बरेच काही](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
-  - [NLP क्षमता उघडणे: Microsoft Olive सह फाइन-ट्यूनिंग](https://github.com/azure/Ignite_FineTuning_workshop)
+- MOE नमुने  
+  - Phi-3 / 3.5 नमुने  
+    - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) सोशल मीडिया नमुना](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
+    - [📓] [NVIDIA NIM Phi-3 MOE, Azure AI Search, आणि LlamaIndex सह Retrieval-Augmented Generation (RAG) पाइपलाइन तयार करणे](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
 
-- अकादमिक संशोधन पेपर्स आणि प्रकाशने
-  - [Textbooks Are All You Need II: phi-1.5 तांत्रिक अहवाल](https://arxiv.org/abs/2309.05463)
-  - [Phi-3 तांत्रिक अहवाल: तुमच्या फोनवर स्थानिकरित्या उच्च क्षमतायुक्त भाषा मॉडेल](https://arxiv.org/abs/2404.14219)
-  - [Phi-4 तांत्रिक अहवाल](https://arxiv.org/abs/2412.08905)
-  - [Phi-4-Mini तांत्रिक अहवाल: Mixture-of-LoRAs द्वारे कॉम्पॅक्ट पण शक्तिशाली मल्टिमोडल भाषा मॉडेल्स](https://arxiv.org/abs/2503.01743)
-  - [इन-व्हीकल फंक्शन-कॉलिंगसाठी लहान भाषा मॉडेल्सचे ऑप्टिमायझेशन](https://arxiv.org/abs/2501.02342)
-  - [(WhyPHI) मल्टीपल-चॉइस प्रश्न उत्तरेसाठी PHI-3 ची फाइन-ट्यूनिंग: पद्धती, निकाल आणि आव्हाने](https://arxiv.org/abs/2501.01588)
-  - [Phi-4- reasoning तांत्रिक अहवाल](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
-  - [Phi-4-mini-reasoning तांत्रिक अहवाल](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
+- फंक्शन कॉलिंग नमुने  
+  - Phi-4 नमुने 🆕  
+    - [📓] [Phi-4-mini सह फंक्शन कॉलिंग वापरणे](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
+    - [📓] [Phi-4-mini सह मल्टी-एजंट तयार करण्यासाठी फंक्शन कॉलिंग वापरणे](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
+    - [📓] [Ollama सह फंक्शन कॉलिंग वापरणे](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
+    - [📓] [ONNX सह फंक्शन कॉलिंग वापरणे](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)  
 
-## Phi मॉडेल्स वापरणे
+- मल्टीमोडल मिक्सिंग नमुने  
+  - Phi-4 नमुने 🆕  
+    - [📓] [Phi-4-multimodal वापरून तंत्रज्ञान पत्रकार म्हणून काम करणे](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)  
+    - [Phi-4-multimodal वापरून प्रतिमा विश्लेषण करणारे .NET कन्सोल अॅप्लिकेशन](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)  
 
-### Azure AI Foundry वर Phi
+- Phi फाइन-ट्यूनिंग  
+  - [फाइन-ट्यूनिंग परिस्थिती](./md/03.FineTuning/FineTuning_Scenarios.md)  
+  - [फाइन-ट्यूनिंग विरुद्ध RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)  
+  - [Phi-3 ला उद्योग तज्ञ बनविण्यासाठी फाइन-ट्यूनिंग](./md/03.FineTuning/LetPhi3gotoIndustriy.md)  
+  - [VS Code साठी AI Toolkit वापरून Phi-3 चे फाइन-ट्यूनिंग](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)  
+  - [Azure Machine Learning Service सह Phi-3 चे फाइन-ट्यूनिंग](./md/03.FineTuning/Introduce_AzureML.md)  
+  - [Lora सह Phi-3 चे फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_Lora.md)  
+  - [QLora सह Phi-3 चे फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_Qlora.md)  
+  - [Azure AI Foundry सह Phi-3 चे फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_AIFoundry.md)  
+  - [Azure ML CLI/SDK सह Phi-3 चे फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_MLSDK.md)  
+  - [Microsoft Olive सह फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)  
+  - [Microsoft Olive Hands-On Lab सह फाइन-ट्यूनिंग](./md/03.FineTuning/olive-lab/readme.md)  
+  - [Weights and Bias सह Phi-3-vision चे फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)  
+  - [Apple MLX Framework सह Phi-3 चे फाइन-ट्यूनिंग](./md/03.FineTuning/FineTuning_MLX.md)  
+  - [Phi-3-vision चे फाइन-ट्यूनिंग (अधिकृत समर्थन)](./md/03.FineTuning/FineTuning_Vision.md)  
+  - [Kaito AKS, Azure Containers सह Phi-3 चे फाइन-ट्यूनिंग (अधिकृत समर्थन)](./md/03.FineTuning/FineTuning_Kaito.md)  
+  - [Phi-3 आणि 3.5 Vision चे फाइन-ट्यूनिंग](https://github.com/2U1/Phi3-Vision-Finetune)  
 
-Microsoft Phi कसे वापरायचे आणि विविध हार्डवेअर डिव्हाइसेसवर E2E सोल्यूशन्स कसे तयार करायचे हे तुम्ही शिकू शकता. Phi स्वतः अनुभवण्यासाठी, मॉडेल्ससह प्रयोग करा आणि तुमच्या परिस्थितीनुसार Phi सानुकूलित करा [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) वापरून. अधिक जाणून घेण्यासाठी [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) चा परिचय पहा.
+- Hands on Lab  
+  - [आधुनिक मॉडेल्सचा अभ्यास: LLMs, SLMs, स्थानिक विकास आणि बरेच काही](https://github.com/microsoft/aitour-exploring-cutting-edge-models)  
+  - [NLP क्षमता अनलॉक करणे: Microsoft Olive सह फाइन-ट्यूनिंग](https://github.com/azure/Ignite_FineTuning_workshop)  
+
+- शैक्षणिक संशोधन पेपर्स आणि प्रकाशने  
+  - [Textbooks Are All You Need II: phi-1.5 तांत्रिक अहवाल](https://arxiv.org/abs/2309.05463)  
+  - [Phi-3 तांत्रिक अहवाल: तुमच्या फोनवर स्थानिकपणे एक अत्यंत सक्षम भाषा मॉडेल](https://arxiv.org/abs/2404.14219)  
+  - [Phi-4 तांत्रिक अहवाल](https://arxiv.org/abs/2412.08905)  
+  - [Phi-4-Mini तांत्रिक अहवाल: Mixture-of-LoRAs द्वारे कॉम्पॅक्ट पण शक्तिशाली मल्टीमोडल भाषा मॉडेल्स](https://arxiv.org/abs/2503.01743)  
+  - [वाहनातील फंक्शन-कॉलिंगसाठी लहान भाषा मॉडेल्सचे ऑप्टिमायझेशन](https://arxiv.org/abs/2501.02342)  
+  - [(WhyPHI) बहुविकल्पीय प्रश्नोत्तरेसाठी PHI-3 चे फाइन-ट्यूनिंग: पद्धतशास्त्र, निकाल आणि आव्हाने](https://arxiv.org/abs/2501.01588)
+  - [Phi-4-reasoning Technical Report](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
+  - [Phi-4-mini-reasoning Technical Report](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
+
+## Phi मॉडेल्सचा वापर
+
+### Azure AI Foundry वरील Phi
+
+आपण Microsoft Phi कसा वापरायचा आणि विविध हार्डवेअर उपकरणांमध्ये E2E सोल्यूशन्स कसे तयार करायचे हे शिकू शकता. स्वतःसाठी Phi अनुभवण्यासाठी, आधी मॉडेल्ससह प्रयोग करा आणि आपल्या परिस्थितींसाठी Phi सानुकूलित करा, [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai) वापरून. अधिक जाणून घेण्यासाठी [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md) या मार्गदर्शकाचा अभ्यास करा.
 
 **Playground**  
-प्रत्येक मॉडेलसाठी मॉडेल चाचणीसाठी समर्पित playground आहे [Azure AI Playground](https://aka.ms/try-phi3).
+प्रत्येक मॉडेलसाठी एक समर्पित playground आहे जिथे तुम्ही मॉडेलची चाचणी करू शकता [Azure AI Playground](https://aka.ms/try-phi3).
 
-### GitHub Models वर Phi
+### GitHub मॉडेल्सवरील Phi
 
-Microsoft Phi कसे वापरायचे आणि विविध हार्डवेअर डिव्हाइसेसवर E2E सोल्यूशन्स कसे तयार करायचे हे शिकण्यासाठी, मॉडेलसह प्रयोग करा आणि तुमच्या परिस्थितीनुसार Phi सानुकूलित करा [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) वापरून. अधिक जाणून घेण्यासाठी [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md) चा परिचय पहा.
+आपण Microsoft Phi कसा वापरायचा आणि विविध हार्डवेअर उपकरणांमध्ये E2E सोल्यूशन्स कसे तयार करायचे हे शिकू शकता. स्वतःसाठी Phi अनुभवण्यासाठी, आधी मॉडेलसह प्रयोग करा आणि आपल्या परिस्थितींसाठी Phi सानुकूलित करा, [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) वापरून. अधिक जाणून घेण्यासाठी [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md) या मार्गदर्शकाचा अभ्यास करा.
 
 **Playground**  
-प्रत्येक मॉडेलसाठी समर्पित [playground आहे ज्यात मॉडेलची चाचणी करता येते](/md/02.QuickStart/GitHubModel_QuickStart.md).
+प्रत्येक मॉडेलसाठी एक समर्पित [playground आहे जिथे तुम्ही मॉडेलची चाचणी करू शकता](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
-### Hugging Face वर Phi
+### Hugging Face वरील Phi
 
-तुम्हाला [Hugging Face](https://huggingface.co/microsoft) वर देखील मॉडेल सापडेल.
+तुम्हाला हा मॉडेल [Hugging Face](https://huggingface.co/microsoft) वरही सापडेल.
 
 **Playground**  
 [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
 ## जबाबदार AI
 
-Microsoft आपल्या ग्राहकांना आमच्या AI उत्पादनांचा जबाबदारीने वापर करण्यास मदत करण्यासाठी वचनबद्ध आहे, आमचे अनुभव शेअर करतो आणि Transparency Notes आणि Impact Assessments सारख्या साधनांद्वारे विश्वासावर आधारित भागीदारी तयार करतो. या संसाधनांपैकी बरेच काही [https://aka.ms/RAI](https://aka.ms/RAI) येथे उपलब्ध आहेत.  
-Microsoft चा जबाबदार AI चा दृष्टिकोन आमच्या AI तत्त्वांवर आधारित आहे: न्याय्यपणा, विश्वासार्हता आणि सुरक्षा, गोपनीयता आणि सुरक्षितता, समावेश, पारदर्शकता, आणि जबाबदारी.
-मोठ्या प्रमाणावर नैसर्गिक भाषा, प्रतिमा, आणि भाषण मॉडेल्स - जसे की या नमुन्यात वापरलेले - संभाव्यतः असमान, अविश्वसनीय किंवा अपमानास्पद वर्तन करू शकतात, ज्यामुळे हानी होऊ शकते. कृपया [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) पाहा जेणेकरून धोके आणि मर्यादा यांची माहिती मिळेल.
+Microsoft आपल्या ग्राहकांना AI उत्पादने जबाबदारीने वापरण्यास मदत करण्यासाठी, आमच्या शिकवण्या शेअर करण्यासाठी आणि Transparency Notes आणि Impact Assessments सारख्या साधनांद्वारे विश्वासावर आधारित भागीदारी तयार करण्यासाठी कटिबद्ध आहे. या संसाधनांपैकी बरेच काही [https://aka.ms/RAI](https://aka.ms/RAI) येथे उपलब्ध आहेत.  
+Microsoft चा जबाबदार AI साठीचा दृष्टिकोन आमच्या AI तत्त्वांवर आधारित आहे ज्यात न्याय, विश्वासार्हता आणि सुरक्षितता, गोपनीयता आणि सुरक्षा, समावेश, पारदर्शकता आणि जबाबदारी यांचा समावेश आहे.
 
-या धोका कमी करण्यासाठी शिफारस केलेला मार्ग म्हणजे तुमच्या आर्किटेक्चरमध्ये एक सुरक्षा प्रणाली समाविष्ट करणे जी हानिकारक वर्तन ओळखू आणि प्रतिबंधित करू शकेल. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) एक स्वतंत्र संरक्षण स्तर प्रदान करते, जे वापरकर्त्यांनी तयार केलेल्या आणि AI-निर्मित हानिकारक सामग्रीचा शोध घेऊ शकते. Azure AI Content Safety मध्ये टेक्स्ट आणि प्रतिमा API समाविष्ट आहेत जे तुम्हाला हानिकारक सामग्री ओळखण्यास मदत करतात. Azure AI Foundry मध्ये, Content Safety सेवा तुम्हाला वेगवेगळ्या माध्यमांमधील हानिकारक सामग्री शोधण्यासाठी नमुना कोड पाहण्याची, एक्सप्लोर करण्याची आणि वापरून पाहण्याची संधी देते. पुढील [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) तुम्हाला सेवेवर विनंत्या करण्यास मार्गदर्शन करते.
+या नमुन्यात वापरल्या गेलेल्या मोठ्या प्रमाणावर नैसर्गिक भाषा, प्रतिमा आणि भाषण मॉडेल्स कधीकधी अन्यायकारक, अविश्वसनीय किंवा अपमानास्पद वर्तन करू शकतात, ज्यामुळे हानी होऊ शकते. कृपया धोके आणि मर्यादा जाणून घेण्यासाठी [Azure OpenAI सेवा Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) वाचा.
 
-दुसरी गोष्ट जी लक्षात घेणे आवश्यक आहे ती म्हणजे संपूर्ण अनुप्रयोगाची कामगिरी. मल्टी-मॉडल आणि मल्टी-मॉडेल्स असलेल्या अनुप्रयोगांसाठी, कामगिरी म्हणजे प्रणाली तुम्ही आणि तुमचे वापरकर्ते अपेक्षा करतात तसे कार्य करणे, ज्यात हानिकारक आउटपुट तयार न होणे याचा समावेश आहे. तुमच्या संपूर्ण अनुप्रयोगाची कामगिरी [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) वापरून तपासणे महत्त्वाचे आहे. तुम्हाला [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) तयार करण्याची आणि त्यांचा वापर करून मूल्यांकन करण्याची क्षमता देखील आहे.
+या धोके कमी करण्यासाठी शिफारस केलेला उपाय म्हणजे आपल्या आर्किटेक्चरमध्ये एक सुरक्षा प्रणाली समाविष्ट करणे जी हानिकारक वर्तन ओळखू आणि प्रतिबंधित करू शकेल. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) स्वतंत्र संरक्षणाची पातळी प्रदान करते, जी अनुप्रयोगांमध्ये आणि सेवांमध्ये हानिकारक वापरकर्ता-निर्मित आणि AI-निर्मित सामग्री ओळखू शकते. Azure AI Content Safety मध्ये मजकूर आणि प्रतिमा API आहेत जे तुम्हाला हानिकारक सामग्री शोधण्यास मदत करतात. Azure AI Foundry मध्ये, Content Safety सेवा तुम्हाला वेगवेगळ्या प्रकारच्या हानिकारक सामग्रीचा शोध घेण्यासाठी नमुना कोड पाहण्याची, तपासण्याची आणि वापरून पाहण्याची संधी देते. खालील [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) तुम्हाला या सेवेवर विनंत्या कशा करायच्या हे मार्गदर्शन करते.
 
-तुम्ही तुमच्या विकास वातावरणात [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) वापरून तुमचा AI अनुप्रयोग मूल्यांकन करू शकता. एखादा चाचणी डेटासेट किंवा लक्ष्य दिल्यास, तुमच्या जनरेटिव्ह AI अनुप्रयोगाच्या निर्मितींचे प्रमाणात्मक मूल्यांकन अंगभूत किंवा तुमच्या पसंतीनुसार कस्टम इव्हॅल्युएटर्सने केले जाऊ शकते. तुमच्या प्रणालीचे मूल्यांकन करण्यासाठी azure ai evaluation sdk सह सुरुवात करण्यासाठी, तुम्ही [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) अनुसरू शकता. एकदा तुम्ही मूल्यांकन चालवले की, तुम्ही [Azure AI Foundry मध्ये निकालांचे दृश्य](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results) पाहू शकता.
+दुसरी बाब म्हणजे संपूर्ण अनुप्रयोगाची कामगिरी. मल्टी-मोडल आणि मल्टी-मॉडेल्स अनुप्रयोगांसाठी, कामगिरी म्हणजे प्रणाली तुमच्या आणि तुमच्या वापरकर्त्यांच्या अपेक्षांनुसार कार्य करते, ज्यात हानिकारक आउटपुट तयार न करणे याचा समावेश आहे. तुमच्या संपूर्ण अनुप्रयोगाची कामगिरी [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in) वापरून तपासणे महत्त्वाचे आहे. तुम्हाला [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators) तयार करण्याची आणि त्यांचा वापर करून मूल्यांकन करण्याचीही संधी आहे.
+
+तुम्ही तुमच्या विकास वातावरणात [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html) वापरून तुमचा AI अनुप्रयोग मूल्यांकन करू शकता. चाचणी डेटासेट किंवा लक्ष्य दिल्यास, तुमच्या जनरेटिव्ह AI अनुप्रयोगाच्या निर्मितींचे प्रमाणात्मक मापन अंगभूत किंवा तुमच्या पसंतीनुसार कस्टम मूल्यांकनकर्त्यांद्वारे केले जाते. तुमच्या प्रणालीचे मूल्यांकन करण्यासाठी Azure AI Evaluation SDK वापरण्यास सुरुवात करण्यासाठी, तुम्ही [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) अनुसरू शकता. एकदा मूल्यांकन चालवल्यानंतर, तुम्ही [Azure AI Foundry मध्ये निकालांचे दृश्य](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results) पाहू शकता.
 
 ## ट्रेडमार्क्स
 
-हा प्रकल्प प्रकल्प, उत्पादने किंवा सेवांसाठी ट्रेडमार्क्स किंवा लोगो असू शकतात. Microsoft ट्रेडमार्क्स किंवा लोगोच्या अधिकृत वापरासाठी [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) चे पालन करणे आवश्यक आहे. या प्रकल्पाच्या सुधारित आवृत्त्यांमध्ये Microsoft ट्रेडमार्क्स किंवा लोगोचा वापर गोंधळ निर्माण करू नये किंवा Microsoft च्या प्रायोजकत्वाचा भास होऊ नये. तृतीय-पक्ष ट्रेडमार्क्स किंवा लोगोचा वापर त्या तृतीय-पक्षाच्या धोरणांनुसार असतो.
+हा प्रकल्प प्रकल्प, उत्पादने किंवा सेवा यांचे ट्रेडमार्क किंवा लोगो असू शकतो. Microsoft ट्रेडमार्क किंवा लोगोचा अधिकृत वापर [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general) च्या अटींनुसार आणि नियमांनुसार असावा.  
+या प्रकल्पाच्या सुधारित आवृत्त्यांमध्ये Microsoft ट्रेडमार्क किंवा लोगोचा वापर गोंधळ निर्माण करू नये किंवा Microsoft च्या प्रायोजकत्वाचा भास देऊ नये. तृतीय पक्षांच्या ट्रेडमार्क किंवा लोगोचा वापर त्या तृतीय पक्षांच्या धोरणांनुसार असावा.
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून भाषांतरित केला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, तरी कृपया लक्षात ठेवा की स्वयंचलित भाषांतरांमध्ये चुका किंवा अचूकतेच्या त्रुटी असू शकतात. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी भाषांतर शिफारस केले जाते. या भाषांतराच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थसंग्रहांसाठी आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

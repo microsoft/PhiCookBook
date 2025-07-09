@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "f133aeb5a2b33942b50a761d56389d91",
-  "translation_date": "2025-07-09T16:16:06+00:00",
+  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
+  "translation_date": "2025-07-09T17:57:59+00:00",
   "source_file": "README.md",
   "language_code": "fr"
 }
@@ -15,7 +15,7 @@ CO_OP_TRANSLATOR_METADATA:
 [![Contributeurs GitHub](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)  
 [![Issues GitHub](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)  
 [![Pull requests GitHub](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)  
-[![PRs Bienvenus](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
+[![PRs Bienvenues](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
 [![Observateurs GitHub](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)  
 [![Forks GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
@@ -32,19 +32,16 @@ Vous pouvez déployer Phi dans le cloud ou sur des appareils en périphérie, et
 Suivez ces étapes pour commencer à utiliser ces ressources :  
 1. **Forkez le dépôt** : Cliquez sur [![Forks GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
 2. **Clonez le dépôt** : `git clone https://github.com/microsoft/PhiCookBook.git`  
-3. [**Rejoignez la communauté Microsoft AI Discord pour rencontrer des experts et d’autres développeurs**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+3. [**Rejoignez la communauté Microsoft AI Discord et rencontrez des experts et développeurs**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.fr.png)
+![cover](../../imgs/cover.png)
 
 ## 🌐 Support multilingue
 
-### Pris en charge via GitHub Action (Automatisé & toujours à jour)
+### Pris en charge via GitHub Action (Automatisé & Toujours à jour)
 
-[Français](./README.md) | [Espagnol](../es/README.md) | [Allemand](../de/README.md) | [Russe](../ru/README.md) | [Arabe](../ar/README.md) | [Persan (Farsi)](../fa/README.md) | [Ourdou](../ur/README.md) | [Chinois (simplifié)](../zh/README.md) | [Chinois (traditionnel, Macao)](../mo/README.md) | [Chinois (traditionnel, Hong Kong)](../hk/README.md) | [Chinois (traditionnel, Taïwan)](../tw/README.md) | [Japonais](../ja/README.md) | [Coréen](../ko/README.md) | [Hindi](../hi/README.md)
-
-### Pris en charge via CLI
-
-[Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Népalais](../ne/README.md) | [Pendjabi (Gurmukhi)](../pa/README.md) | [Portugais (Portugal)](../pt/README.md) | [Portugais (Brésil)](../br/README.md) | [Italien](../it/README.md) | [Polonais](../pl/README.md) | [Turc](../tr/README.md) | [Grec](../el/README.md) | [Thaï](../th/README.md) | [Suédois](../sv/README.md) | [Danois](../da/README.md) | [Norvégien](../no/README.md) | [Finnois](../fi/README.md) | [Néerlandais](../nl/README.md) | [Hébreu](../he/README.md) | [Vietnamien](../vi/README.md) | [Indonésien](../id/README.md) | [Malais](../ms/README.md) | [Tagalog (Philippin)](../tl/README.md) | [Swahili](../sw/README.md) | [Hongrois](../hu/README.md) | [Tchèque](../cs/README.md) | [Slovaque](../sk/README.md) | [Roumain](../ro/README.md) | [Bulgare](../bg/README.md) | [Serbe (cyrillique)](../sr/README.md) | [Croate](../hr/README.md) | [Slovène](../sl/README.md)
+[Français](./README.md) | [Espagnol](../es/README.md) | [Allemand](../de/README.md) | [Russe](../ru/README.md) | [Arabe](../ar/README.md) | [Persan (Farsi)](../fa/README.md) | [Ourdou](../ur/README.md) | [Chinois (Simplifié)](../zh/README.md) | [Chinois (Traditionnel, Macao)](../mo/README.md) | [Chinois (Traditionnel, Hong Kong)](../hk/README.md) | [Chinois (Traditionnel, Taïwan)](../tw/README.md) | [Japonais](../ja/README.md) | [Coréen](../ko/README.md) | [Hindi](../hi/README.md)  
+[Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Népalais](../ne/README.md) | [Pendjabi (Gurmukhi)](../pa/README.md) | [Portugais (Portugal)](../pt/README.md) | [Portugais (Brésil)](../br/README.md) | [Italien](../it/README.md) | [Polonais](../pl/README.md) | [Turc](../tr/README.md) | [Grec](../el/README.md) | [Thaï](../th/README.md) | [Suédois](../sv/README.md) | [Danois](../da/README.md) | [Norvégien](../no/README.md) | [Finnois](../fi/README.md) | [Néerlandais](../nl/README.md) | [Hébreu](../he/README.md) | [Vietnamien](../vi/README.md) | [Indonésien](../id/README.md) | [Malais](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hongrois](../hu/README.md) | [Tchèque](../cs/README.md) | [Slovaque](../sk/README.md) | [Roumain](../ro/README.md) | [Bulgare](../bg/README.md) | [Serbe (Cyrillique)](../sr/README.md) | [Croate](../hr/README.md) | [Slovène](../sl/README.md)
 
 ## Table des matières
 
@@ -52,7 +49,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
   - [Bienvenue dans la famille Phi](./md/01.Introduction/01/01.PhiFamily.md)  
   - [Configurer votre environnement](./md/01.Introduction/01/01.EnvironmentSetup.md)  
   - [Comprendre les technologies clés](./md/01.Introduction/01/01.Understandingtech.md)  
-  - [Sécurité de l’IA pour les modèles Phi](./md/01.Introduction/01/01.AISafety.md)  
+  - [Sécurité IA pour les modèles Phi](./md/01.Introduction/01/01.AISafety.md)  
   - [Support matériel Phi](./md/01.Introduction/01/01.Hardwaresupport.md)  
   - [Modèles Phi & disponibilité sur différentes plateformes](./md/01.Introduction/01/01.Edgeandcloud.md)  
   - [Utiliser Guidance-ai et Phi](./md/01.Introduction/01/01.Guidance.md)  
@@ -79,11 +76,11 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
     - [Inférence Phi avec Rust](./md/01.Introduction/03/Rust_Inference.md)  
     - [Inférence Phi--Vision en local](./md/01.Introduction/03/Vision_Inference.md)  
     - [Inférence Phi avec Kaito AKS, Azure Containers (support officiel)](./md/01.Introduction/03/Kaito_Inference.md)  
--  [Quantification de la famille Phi](./md/01.Introduction/04/QuantifyingPhi.md)  
-    - [Quantification de Phi-3.5 / 4 avec llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
-    - [Quantification de Phi-3.5 / 4 avec les extensions Generative AI pour onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
-    - [Quantification de Phi-3.5 / 4 avec Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
-    - [Quantification de Phi-3.5 / 4 avec le framework Apple MLX](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+-  [Quantification Phi Family](./md/01.Introduction/04/QuantifyingPhi.md)  
+    - [Quantification Phi-3.5 / 4 avec llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
+    - [Quantification Phi-3.5 / 4 avec les extensions Generative AI pour onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
+    - [Quantification Phi-3.5 / 4 avec Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
+    - [Quantification Phi-3.5 / 4 avec le framework Apple MLX](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
 - Évaluation Phi  
     - [IA responsable](./md/01.Introduction/05/ResponsibleAI.md)  
@@ -97,27 +94,27 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
   - Applications texte & chat  
     - Exemples Phi-4 🆕  
       - [📓] [Chat avec le modèle Phi-4-mini ONNX](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)  
-      - [Chat avec modèle ONNX Phi-4 local en .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
+      - [Chat avec modèle local Phi-4 ONNX en .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
       - [Application console Chat .NET avec Phi-4 ONNX utilisant Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)  
     - Exemples Phi-3 / 3.5  
-      - [Chatbot local dans le navigateur utilisant Phi3, ONNX Runtime Web et WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
+      - [Chatbot local dans le navigateur avec Phi3, ONNX Runtime Web et WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
       - [Chat OpenVino](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
       - [Multi-modèle - Phi-3-mini interactif et OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
       - [MLFlow - Création d’un wrapper et utilisation de Phi-3 avec MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
       - [Optimisation de modèle - Comment optimiser Phi-3-mini pour ONNX Runtime Web avec Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
       - [Application WinUI3 avec Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)  
-      - [Exemple d’application de notes alimentée par IA multi-modèle WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+      - [Exemple d’application de notes multi-modèles alimentée par IA WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
 - [Affiner et intégrer des modèles Phi-3 personnalisés avec Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
 - [Affiner et intégrer des modèles Phi-3 personnalisés avec Prompt flow dans Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
 - [Évaluer le modèle Phi-3 / Phi-3.5 affiné dans Azure AI Foundry en se concentrant sur les principes d’IA responsable de Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
-- [📓] [Exemple de prédiction linguistique Phi-3.5-mini-instruct (Chinois/Anglais)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
+- [📓] [Exemple de prédiction linguistique Phi-3.5-mini-instruct (chinois/anglais)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
 - [Chatbot RAG Phi-3.5-Instruct WebGPU](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
 - [Utiliser le GPU Windows pour créer une solution Prompt flow avec Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
 - [Utiliser Microsoft Phi-3.5 tflite pour créer une application Android](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
-- [Exemple Q&A .NET utilisant un modèle local ONNX Phi-3 avec Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
+- [Exemple Q&R .NET utilisant un modèle local ONNX Phi-3 avec Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
 - [Application console chat .NET avec Semantic Kernel et Phi-3](../../md/04.HOL/dotnet/src/LabsPhi302)
 
-- Échantillons basés sur le SDK Azure AI Inference  
+- Échantillons de code Azure AI Inference SDK  
   - Échantillons Phi-4 🆕  
     - [📓] [Générer le code d’un projet avec Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)  
   - Échantillons Phi-3 / 3.5  
@@ -138,7 +135,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
   - Échantillons Phi-4 🆕  
     - [📓] [Utiliser Phi-4-multimodal pour lire des images et générer du code](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md)  
   - Échantillons Phi-3 / 3.5  
-    - [📓][Phi-3-vision - Conversion texte-image en texte](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
+    - [📓][Phi-3-vision - Texte image vers texte](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
     - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)  
     - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
     - [DÉMO : Phi-3 Recycling](https://github.com/jennifermarsman/PhiRecycling/)  
@@ -147,7 +144,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
     - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)  
     - [📓][Exemple Phi-3.5 Vision multi-frames ou multi-images](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)  
     - [Modèle local Phi-3 Vision ONNX utilisant Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi303)  
-    - [Modèle local Phi-3 Vision ONNX basé sur menu utilisant Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)  
+    - [Modèle local Phi-3 Vision ONNX avec menu utilisant Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)  
 
 - Échantillons Mathématiques  
   - Échantillons Phi-4-Mini-Flash-Reasoning-Instruct 🆕 [Démo Math avec Phi-4-Mini-Flash-Reasoning-Instruct](../../md/02.Application/09.Math/MathDemo.ipynb)  
@@ -191,7 +188,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
   - [Affiner Phi-3-vision avec Weights and Bias](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)  
   - [Affiner Phi-3 avec le framework Apple MLX](./md/03.FineTuning/FineTuning_MLX.md)  
   - [Affiner Phi-3-vision (support officiel)](./md/03.FineTuning/FineTuning_Vision.md)  
-  - [Affiner Phi-3 avec Kaito AKS, conteneurs Azure (support officiel)](./md/03.FineTuning/FineTuning_Kaito.md)  
+  - [Affiner Phi-3 avec Kaito AKS, Azure Containers (support officiel)](./md/03.FineTuning/FineTuning_Kaito.md)  
   - [Affiner Phi-3 et 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)  
 
 - Atelier pratique  
@@ -212,14 +209,14 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
 
 ### Phi sur Azure AI Foundry
 
-Vous pouvez apprendre à utiliser Microsoft Phi et à créer des solutions de bout en bout sur vos différents appareils matériels. Pour découvrir Phi par vous-même, commencez par tester les modèles et personnaliser Phi pour vos scénarios en utilisant le [Catalogue de modèles Azure AI Foundry](https://aka.ms/phi3-azure-ai). Vous pouvez en savoir plus dans la section Démarrage rapide avec [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
+Vous pouvez apprendre à utiliser Microsoft Phi et à créer des solutions de bout en bout sur vos différents appareils matériels. Pour découvrir Phi par vous-même, commencez par tester les modèles et personnaliser Phi pour vos scénarios en utilisant le [Catalogue de modèles Azure AI Foundry](https://aka.ms/phi3-azure-ai). Vous pouvez en savoir plus dans la section Premiers pas avec [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
 
 **Playground**  
 Chaque modèle dispose d’un playground dédié pour tester le modèle [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi sur GitHub Models
 
-Vous pouvez apprendre à utiliser Microsoft Phi et à créer des solutions de bout en bout sur vos différents appareils matériels. Pour découvrir Phi par vous-même, commencez par tester le modèle et personnaliser Phi pour vos scénarios en utilisant le [Catalogue de modèles GitHub](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Vous pouvez en savoir plus dans la section Démarrage rapide avec [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
+Vous pouvez apprendre à utiliser Microsoft Phi et à créer des solutions de bout en bout sur vos différents appareils matériels. Pour découvrir Phi par vous-même, commencez par tester le modèle et personnaliser Phi pour vos scénarios en utilisant le [Catalogue de modèles GitHub](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Vous pouvez en savoir plus dans la section Premiers pas avec [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 **Playground**  
 Chaque modèle dispose d’un [playground dédié pour tester le modèle](/md/02.QuickStart/GitHubModel_QuickStart.md).
@@ -242,7 +239,7 @@ La méthode recommandée pour atténuer ces risques est d’intégrer un systèm
 
 Un autre aspect à prendre en compte est la performance globale de l’application. Avec des applications multi-modales et multi-modèles, la performance signifie que le système fonctionne comme vous et vos utilisateurs l’attendez, notamment en ne générant pas de résultats nuisibles. Il est important d’évaluer la performance de votre application globale en utilisant les [évaluateurs de Performance, Qualité, Risque et Sécurité](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Vous avez également la possibilité de créer et d’évaluer avec des [évaluateurs personnalisés](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Vous pouvez évaluer votre application d’IA dans votre environnement de développement en utilisant le [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Que vous disposiez d’un jeu de données de test ou d’un objectif, les générations de votre application d’IA générative sont mesurées quantitativement avec des évaluateurs intégrés ou personnalisés selon votre choix. Pour commencer avec le Azure AI Evaluation SDK et évaluer votre système, vous pouvez suivre le [guide de démarrage rapide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Une fois une évaluation lancée, vous pouvez [visualiser les résultats dans Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Vous pouvez évaluer votre application d’IA dans votre environnement de développement en utilisant le [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Que vous disposiez d’un jeu de données de test ou d’un objectif, les générations de votre application d’IA générative sont mesurées quantitativement avec des évaluateurs intégrés ou personnalisés de votre choix. Pour commencer avec le Azure AI Evaluation SDK et évaluer votre système, vous pouvez suivre le [guide de démarrage rapide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Une fois une évaluation lancée, vous pouvez [visualiser les résultats dans Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Marques déposées
 
