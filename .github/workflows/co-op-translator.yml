@@ -43,7 +43,7 @@ jobs:
           OPENAI_CHAT_MODEL_ID: ${{ secrets.OPENAI_CHAT_MODEL_ID }}
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
         run: |
-          translate -l "all" -y
+          translate -l "all" -md -y
 
       - name: Authenticate GitHub App
         id: generate_token
