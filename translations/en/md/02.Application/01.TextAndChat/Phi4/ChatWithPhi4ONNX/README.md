@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-07-09T19:28:51+00:00",
+  "translation_date": "2025-07-17T03:14:48+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "en"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ***ONNX*** is an open format designed to represent machine learning models. ONNX defines a common set of operators—the building blocks of machine learning and deep learning models—and a common file format to allow AI developers to use models across various frameworks, tools, runtimes, and compilers.
 
-Our goal is to deploy generative AI models on edge devices and use them in environments with limited computing power or offline. We can now achieve this by converting the model in a quantized form. The quantized model can be converted to GGUF or ONNX format.
+Our goal is to deploy generative AI models on edge devices and use them in environments with limited computing power or offline. Now, we can achieve this by converting the model in a quantized form. We can convert the quantized model to GGUF or ONNX format.
 
-Microsoft Olive can help you convert SLM to quantized ONNX format. The process for model conversion is very straightforward.
+Microsoft Olive can help you convert SLM to quantized ONNX format. The process to convert the model is very simple.
 
 **Install Microsoft Olive SDK**
 
@@ -37,7 +37,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Note*** this example uses CPU
 
 
-### **Run Inference on Phi-4-mini ONNX Model Using ONNX Runtime GenAI**
+### **Run Inference on Phi-4-mini ONNX Model With ONNX Runtime GenAI**
 
 - **Install ONNX Runtime GenAI**
 

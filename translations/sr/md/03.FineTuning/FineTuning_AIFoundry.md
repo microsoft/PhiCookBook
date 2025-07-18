@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:38:02+00:00",
+  "translation_date": "2025-07-17T06:14:53+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "sr"
 }
 -->
-# Fino podešavanje Phi-3 uz Azure AI Foundry
+# Фино подешавање Phi-3 помоћу Azure AI Foundry
 
-Hajde da istražimo kako da fino podesimo Microsoft-ov Phi-3 Mini jezički model koristeći Azure AI Foundry. Fino podešavanje vam omogućava da prilagodite Phi-3 Mini za specifične zadatke, čineći ga još moćnijim i svesnijim konteksta.
+Хајде да истражимо како да фино подесимо Microsoft-ов Phi-3 Mini језички модел користећи Azure AI Foundry. Фино подешавање вам омогућава да прилагодите Phi-3 Mini за специфичне задатке, чинећи га још моћнијим и свеснијим контекста.
 
-## Razmatranja
+## Разматрања
 
-- **Mogućnosti:** Koji modeli se mogu fino podesiti? Za šta se osnovni model može fino podesiti?
-- **Troškovi:** Kakav je model naplate za fino podešavanje?
-- **Prilagodljivost:** Koliko mogu da modifikujem osnovni model – i na koje načine?
-- **Praktičnost:** Kako zapravo izgleda proces fino podešavanja – da li moram da pišem prilagođeni kod? Da li moram da obezbedim sopstvene resurse za računanje?
-- **Bezbednost:** Fino podešeni modeli mogu imati bezbednosne rizike – da li postoje zaštitne mere koje sprečavaju neželjenu štetu?
+- **Могућности:** Који модели се могу фино подесити? Шта основни модел може да уради након фино подешавања?
+- **Трошкови:** Како изгледа модел цена за фино подешавање?
+- **Прилагодљивост:** Колико могу да изменим основни модел – и на који начин?
+- **Практичност:** Како се фино подешавање заправо обавља – да ли морам да пишем прилагођени код? Да ли морам да обезбедим сопствене ресурсе за рачунарство?
+- **Безбедност:** Фино подешени модели могу имати безбедносне ризике – да ли постоје неке мере заштите од нежељених последица?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.sr.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.sr.png)
 
-## Priprema za fino podešavanje
+## Припрема за фино подешавање
 
-### Preduslovi
+### Предуслови
 
 > [!NOTE]
-> Za modele iz Phi-3 porodice, opcija fino podešavanja po modelu "pay-as-you-go" je dostupna samo za hub-ove kreirane u **East US 2** regionima.
+> За Phi-3 породицу модела, опција фино подешавања по моделу плаћања по коришћењу је доступна само за хабове креиране у регионима **East US 2**.
 
-- Azure pretplata. Ako nemate Azure pretplatu, napravite [plaćeni Azure nalog](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) da biste započeli.
+- Azure претплата. Ако немате Azure претплату, направите [плаћени Azure налог](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) да бисте почели.
 
-- [AI Foundry projekat](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure kontrola pristupa zasnovana na ulogama (Azure RBAC) se koristi za dodeljivanje pristupa operacijama u Azure AI Foundry. Da biste izvršili korake u ovom članku, vaš korisnički nalog mora imati __Azure AI Developer ulogu__ na grupi resursa.
+- [AI Foundry пројекат](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
+- Azure контроле приступа засноване на улогама (Azure RBAC) се користе за доделу приступа операцијама у Azure AI Foundry. Да бисте извршили кораке у овом чланку, ваш кориснички налог мора имати __Azure AI Developer улогу__ на групи ресурса.
 
-### Registracija provajdera pretplate
+### Регистрација провајдера претплате
 
-Proverite da li je pretplata registrovana za `Microsoft.Network` resource provider.
+Проверите да ли је претплата регистрована за `Microsoft.Network` провајдера ресурса.
 
-1. Prijavite se na [Azure portal](https://portal.azure.com).
-1. Izaberite **Subscriptions** iz levog menija.
-1. Izaberite pretplatu koju želite da koristite.
-1. Izaberite **AI project settings** > **Resource providers** iz levog menija.
-1. Potvrdite da je **Microsoft.Network** na listi resource providera. Ako nije, dodajte ga.
+1. Пријавите се у [Azure портал](https://portal.azure.com).
+1. Изаберите **Subscriptions** из левог менија.
+1. Изаберите претплату коју желите да користите.
+1. Изаберите **AI project settings** > **Resource providers** из левог менија.
+1. Потврдите да је **Microsoft.Network** на листи провајдера ресурса. У супротном, додајте га.
 
-### Priprema podataka
+### Припрема података
 
-Pripremite svoje trening i validacione podatke za fino podešavanje modela. Vaši trening i validacioni skupovi podataka sastoje se od ulaznih i izlaznih primera koji pokazuju kako želite da model funkcioniše.
+Припремите своје податке за тренирање и валидацију за фино подешавање модела. Ваши скупови података за тренирање и валидацију састоје се од примера улаза и излаза који показују како желите да модел функционише.
 
-Obavezno da svi vaši primeri treninga prate očekivani format za inferencu. Da biste efikasno fino podesili modele, obezbedite uravnotežen i raznovrstan skup podataka.
+Уверите се да сви ваши примери за тренирање прате очекивани формат за инференцију. Да бисте ефикасно фино подесили моделе, обезбедите уравнотежен и разноврстан скуп података.
 
-To uključuje održavanje balansa podataka, uključivanje različitih scenarija i povremeno usavršavanje trening podataka kako bi se uskladili sa realnim očekivanjima, što na kraju dovodi do tačnijih i uravnoteženijih odgovora modela.
+Ово подразумева одржавање равнотеже података, укључивање различитих сценарија и периодично усавршавање података за тренирање у складу са стварним очекивањима, што на крају доводи до прецизнијих и уравнотеженијих одговора модела.
 
-Različiti tipovi modela zahtevaju različit format trening podataka.
+Различити типови модела захтевају различит формат података за тренирање.
 
 ### Chat Completion
 
-Podaci za trening i validaciju koje koristite **moraju** biti formatirani kao JSON Lines (JSONL) dokument. Za `Phi-3-mini-128k-instruct`, skup podataka za fino podešavanje mora biti u konverzacijskom formatu koji koristi Chat completions API.
+Подаци за тренирање и валидацију које користите **морају** бити форматирани као JSON Lines (JSONL) документ. За `Phi-3-mini-128k-instruct` скуп за фино подешавање мора бити форматиран у конверзацијски формат који користи Chat completions API.
 
-### Primer formata fajla
+### Пример формата фајла
 
 ```json
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Is Xbox better than PlayStation?"}, {"role": "assistant", "content": "I apologize, but I cannot provide personal opinions. My primary job is to assist you with any issues related to your Xbox device. Do you have any Xbox-related issues that need addressing?"}]}
@@ -65,172 +65,172 @@ Podaci za trening i validaciju koje koristite **moraju** biti formatirani kao JS
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-Podržani tip fajla je JSON Lines. Fajlovi se otpremaju u podrazumevani skladišni prostor i postaju dostupni u vašem projektu.
+Подржани тип фајла је JSON Lines. Фајлови се отпремају у подразумевани датастор и постају доступни у вашем пројекту.
 
-## Fino podešavanje Phi-3 uz Azure AI Foundry
+## Фино подешавање Phi-3 помоћу Azure AI Foundry
 
-Azure AI Foundry vam omogućava da prilagodite velike jezičke modele koristeći vaše lične skupove podataka kroz proces poznat kao fino podešavanje. Fino podešavanje donosi značajnu vrednost omogućavajući prilagođavanje i optimizaciju za specifične zadatke i primene. To vodi ka poboljšanim performansama, uštedi troškova, smanjenju latencije i prilagođenim rezultatima.
+Azure AI Foundry вам омогућава да прилагодите велике језичке моделе вашим личним скуповима података коришћењем процеса познатог као фино подешавање. Фино подешавање пружа значајну вредност омогућавајући прилагођавање и оптимизацију за специфичне задатке и апликације. То доводи до побољшаних перформанси, ефикасности трошкова, смањене латенције и прилагођених резултата.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.sr.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.sr.png)
 
-### Kreiranje novog projekta
+### Креирање новог пројекта
 
-1. Prijavite se na [Azure AI Foundry](https://ai.azure.com).
+1. Пријавите се у [Azure AI Foundry](https://ai.azure.com).
 
-1. Izaberite **+New project** da kreirate novi projekat u Azure AI Foundry.
+1. Изаберите **+New project** да бисте креирали нови пројекат у Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.sr.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.sr.png)
 
-1. Izvršite sledeće zadatke:
+1. Извршите следеће задатке:
 
-    - Naziv projekta **Hub name**. Mora biti jedinstvena vrednost.
-    - Izaberite **Hub** koji želite da koristite (kreirajte novi ako je potrebno).
+    - Име пројекта **Hub name**. Мора бити јединствена вредност.
+    - Изаберите **Hub** који желите да користите (направите нови ако је потребно).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.sr.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.sr.png)
 
-1. Izvršite sledeće zadatke za kreiranje novog huba:
+1. Извршите следеће кораке за креирање новог хаба:
 
-    - Unesite **Hub name**. Mora biti jedinstvena vrednost.
-    - Izaberite vašu Azure **Subscription**.
-    - Izaberite **Resource group** koji želite da koristite (kreirajte novi ako je potrebno).
-    - Izaberite **Location** koji želite da koristite.
-    - Izaberite **Connect Azure AI Services** koji želite da koristite (kreirajte novi ako je potrebno).
-    - Izaberite **Connect Azure AI Search** i izaberite **Skip connecting**.
+    - Унесите **Hub name**. Мора бити јединствена вредност.
+    - Изаберите вашу Azure **Subscription**.
+    - Изаберите **Resource group** коју желите да користите (направите нову ако је потребно).
+    - Изаберите **Location** коју желите да користите.
+    - Изаберите **Connect Azure AI Services** коју желите да користите (направите нову ако је потребно).
+    - Изаберите **Connect Azure AI Search** и изаберите **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.sr.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.sr.png)
 
-1. Izaberite **Next**.
-1. Izaberite **Create a project**.
+1. Изаберите **Next**.
+1. Изаберите **Create a project**.
 
-### Priprema podataka
+### Припрема података
 
-Pre fino podešavanja, prikupite ili kreirajte skup podataka relevantan za vaš zadatak, kao što su uputstva za chat, parovi pitanja i odgovora ili bilo koji drugi odgovarajući tekstualni podaci. Očistite i pripremite te podatke uklanjanjem šuma, rešavanjem nedostajućih vrednosti i tokenizacijom teksta.
+Пре фино подешавања, прикупите или направите скуп података релевантан вашем задатку, као што су упутства за ћаскање, парови питања и одговора или било који други релевантни текстуални подаци. Очистите и претходно обрадите ове податке уклањањем шума, обрадом недостајућих вредности и токенизацијом текста.
 
-### Fino podešavanje Phi-3 modela u Azure AI Foundry
-
-> [!NOTE]
-> Fino podešavanje Phi-3 modela trenutno je podržano samo u projektima lociranim u East US 2.
-
-1. Izaberite **Model catalog** sa leve strane.
-
-1. Ukucajte *phi-3* u **search bar** i izaberite phi-3 model koji želite da koristite.
-
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.sr.png)
-
-1. Izaberite **Fine-tune**.
-
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.sr.png)
-
-1. Unesite **Fine-tuned model name**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.sr.png)
-
-1. Izaberite **Next**.
-
-1. Izvršite sledeće zadatke:
-
-    - Izaberite **task type** na **Chat completion**.
-    - Izaberite **Training data** koji želite da koristite. Možete ga otpremiti preko Azure AI Foundry podataka ili sa vašeg lokalnog okruženja.
-
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.sr.png)
-
-1. Izaberite **Next**.
-
-1. Otpremite **Validation data** koji želite da koristite, ili izaberite **Automatic split of training data**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.sr.png)
-
-1. Izaberite **Next**.
-
-1. Izvršite sledeće zadatke:
-
-    - Izaberite **Batch size multiplier** koji želite da koristite.
-    - Izaberite **Learning rate** koji želite da koristite.
-    - Izaberite **Epochs** koje želite da koristite.
-
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.sr.png)
-
-1. Izaberite **Submit** da započnete proces fino podešavanja.
-
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.sr.png)
-
-1. Kada je vaš model fino podešen, status će biti prikazan kao **Completed**, kao što je prikazano na slici ispod. Sada možete da implementirate model i koristite ga u svojoj aplikaciji, u playground-u ili u prompt flow-u. Za više informacija, pogledajte [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
-
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.sr.png)
+### Фино подешавање Phi-3 модела у Azure AI Foundry
 
 > [!NOTE]
-> Za detaljnije informacije o fino podešavanju Phi-3, posetite [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Фино подешавање Phi-3 модела тренутно је подржано само у пројектима лоцираним у East US 2.
 
-## Brisanje fino podešenih modela
+1. Изаберите **Model catalog** из левог таба.
 
-Možete obrisati fino podešen model sa liste modela za fino podešavanje u [Azure AI Foundry](https://ai.azure.com) ili sa stranice detalja modela. Izaberite fino podešen model koji želite da obrišete na stranici Fine-tuning, a zatim kliknite na dugme Delete da biste uklonili model.
+1. Упишите *phi-3* у **search bar** и изаберите phi-3 модел који желите да користите.
+
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.sr.png)
+
+1. Изаберите **Fine-tune**.
+
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.sr.png)
+
+1. Унесите име **Fine-tuned model name**.
+
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.sr.png)
+
+1. Изаберите **Next**.
+
+1. Извршите следеће задатке:
+
+    - Изаберите тип задатка **task type** као **Chat completion**.
+    - Изаберите **Training data** који желите да користите. Можете га отпремити преко Azure AI Foundry података или са вашег локалног окружења.
+
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.sr.png)
+
+1. Изаберите **Next**.
+
+1. Отпремите **Validation data** који желите да користите или изаберите **Automatic split of training data**.
+
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.sr.png)
+
+1. Изаберите **Next**.
+
+1. Извршите следеће задатке:
+
+    - Изаберите **Batch size multiplier** који желите да користите.
+    - Изаберите **Learning rate** који желите да користите.
+    - Изаберите број **Epochs** који желите да користите.
+
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.sr.png)
+
+1. Изаберите **Submit** да бисте покренули процес фино подешавања.
+
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.sr.png)
+
+1. Када је ваш модел фино подешен, статус ће бити приказан као **Completed**, као што је приказано на слици испод. Сада можете да имплементирате модел и користите га у својој апликацији, у playground-у или у prompt flow-у. За више информација, погледајте [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.sr.png)
 
 > [!NOTE]
-> Ne možete obrisati prilagođeni model ako ima postojeću implementaciju. Prvo morate obrisati implementaciju modela pre nego što možete obrisati prilagođeni model.
+> За детаљније информације о фино подешавању Phi-3, посетите [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
-## Troškovi i kvote
+## Брисање фино подешених модела
 
-### Razmatranja troškova i kvota za Phi-3 modele fino podešene kao servis
+Можете избрисати фино подешени модел са листе модела за фино подешавање у [Azure AI Foundry](https://ai.azure.com) или са странице детаља модела. Изаберите фино подешени модел који желите да избришете са странице за фино подешавање, а затим изаберите дугме Delete да бисте га избрисали.
 
-Phi modeli fino podešeni kao servis su ponuđeni od strane Microsoft-a i integrisani sa Azure AI Foundry za korišćenje. Cene možete pronaći prilikom [implementacije](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ili fino podešavanja modela pod karticom Pricing and terms u čarobnjaku za implementaciju.
+> [!NOTE]
+> Не можете избрисати прилагођени модел ако има постојећу имплементацију. Прво морате избрисати имплементацију модела пре него што избришете прилагођени модел.
 
-## Filtriranje sadržaja
+## Трошкови и квоте
 
-Modeli implementirani kao servis sa "pay-as-you-go" modelom su zaštićeni Azure AI Content Safety. Kada su implementirani na real-time krajnje tačke, možete se odjaviti iz ove funkcionalnosti. Sa omogućenim Azure AI Content Safety, i prompt i završetak prolaze kroz skup klasifikacionih modela čiji je cilj da otkriju i spreče generisanje štetnog sadržaja. Sistem filtriranja sadržaja detektuje i preduzima akciju na određene kategorije potencijalno štetnog sadržaja u ulaznim promptovima i izlaznim odgovorima. Saznajte više o [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+### Разматрања о трошковима и квотама за Phi-3 моделе фино подешене као услуга
 
-**Konfiguracija fino podešavanja**
+Phi модели фино подешени као услуга нуде се од стране Microsoft-а и интегрисани су са Azure AI Foundry за употребу. Можете пронаћи цене приликом [деплоја](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) или фино подешавања модела у одељку Pricing and terms у чаробњаку за деплој.
 
-Hiparametri: Definišite hiparametre kao što su learning rate, batch size i broj epoha treninga.
+## Филтрирање садржаја
 
-**Funkcija gubitka**
+Модели деплојовани као услуга по моделу плаћања по коришћењу заштићени су Azure AI Content Safety. Када се деплојују на реално време крајње тачке, можете искључити ову могућност. Са омогућеним Azure AI content safety, и упит и одговор пролазе кроз ансамбл класификационих модела чији је циљ да открију и спрече излаз штетног садржаја. Систем за филтрирање садржаја детектује и реагује на одређене категорије потенцијално штетног садржаја у улазним упитима и излазним одговорима. Сазнајте више о [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
-Izaberite odgovarajuću funkciju gubitka za vaš zadatak (npr. cross-entropy).
+**Конфигурација фино подешавања**
 
-**Optimizator**
+Хиперпараметри: Дефинишите хиперпараметре као што су learning rate, batch size и број епоха тренирања.
 
-Izaberite optimizator (npr. Adam) za ažuriranje gradijenata tokom treninga.
+**Функција губитка**
 
-**Proces fino podešavanja**
+Изаберите одговарајућу функцију губитка за ваш задатак (нпр. cross-entropy).
 
-- Učitajte prethodno trenirani model: Učitajte Phi-3 Mini checkpoint.
-- Dodajte prilagođene slojeve: Dodajte slojeve specifične za zadatak (npr. klasifikaciona glava za chat instrukcije).
+**Оптимизатор**
 
-**Trenirajte model**  
-Fino podesite model koristeći pripremljeni skup podataka. Pratite napredak treninga i po potrebi prilagođavajte hiparametre.
+Изаберите оптимизатор (нпр. Adam) за ажурирање градијента током тренирања.
 
-**Evaluacija i validacija**
+**Процес фино подешавања**
 
-Validacioni skup: Podelite podatke na trening i validacioni skup.
+- Учитајте претходно обучени модел: Учитајте Phi-3 Mini checkpoint.
+- Додајте прилагођене слојеве: Додајте слојеве специфичне за задатак (нпр. classification head за упутства за ћаскање).
 
-**Procena performansi**
+**Тренирање модела**  
+Фино подесите модел користећи припремљени скуп података. Пратите напредак тренирања и по потреби прилагођавајте хиперпараметре.
 
-Koristite metrike kao što su tačnost, F1-score ili perplexity za procenu performansi modela.
+**Евалуација и валидација**
 
-## Čuvanje fino podešenog modela
+Валидациони скуп: Поделите податке на тренирајући и валидациони скуп.
+
+**Процените перформансе**
+
+Користите метрике као што су тачност, F1-score или perplexity за процену перформанси модела.
+
+## Чување фино подешеног модела
 
 **Checkpoint**  
-Sačuvajte checkpoint fino podešenog modela za buduću upotrebu.
+Сачувајте checkpoint фино подешеног модела за будућу употребу.
 
-## Implementacija
+## Деплој
 
-- Implementirajte kao Web servis: Postavite vaš fino podešeni model kao web servis u Azure AI Foundry.
-- Testirajte krajnju tačku: Pošaljite test upite na implementiranu krajnju tačku da biste proverili njenu funkcionalnost.
+- Деплојујте као веб услугу: Деплојујте свој фино подешени модел као веб услугу у Azure AI Foundry.
+- Тестирајте крајњу тачку: Пошаљите тест упите на деплојовану крајњу тачку да бисте проверили њену функционалност.
 
-## Iterirajte i unapredite
+## Итерација и унапређење
 
-Iterirajte: Ako performanse nisu zadovoljavajuće, prilagodite hiparametre, dodajte više podataka ili fino podesite dodatne epohe.
+Итерација: Ако перформансе нису задовољавајуће, поновите процес прилагођавањем хиперпараметара, додавањем више података или финим подешавањем током додатних епоха.
 
-## Pratite i usavršavajte
+## Праћење и усавршавање
 
-Kontinuirano pratite ponašanje modela i po potrebi ga usavršavajte.
+Континуирано пратите понашање модела и усавршавајте га по потреби.
 
-## Prilagodite i proširite
+## Прилагођавање и проширење
 
-Prilagođeni zadaci: Phi-3 Mini može biti fino podešen za različite zadatke van chat instrukcija. Istražite druge primene!  
-Eksperimentišite: Isprobajte različite arhitekture, kombinacije slojeva i tehnike za poboljšanje performansi.
+Прилагођени задаци: Phi-3 Mini се може фино подесити за различите задатке осим упутстава за ћаскање. Истражите друге примене!  
+Експериментишите: Испробајте различите архитектуре, комбинације слојева и технике за побољшање перформанси.
 
 > [!NOTE]
-> Fino podešavanje je iterativan proces. Eksperimentišite, učite i prilagođavajte svoj model kako biste postigli najbolje rezultate za vaš specifičan zadatak!
+> Фино подешавање је итеративан процес. Експериментишите, учите и прилагођавајте свој модел да бисте постигли најбоље резултате за свој специфични задатак!
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произлазе из коришћења овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

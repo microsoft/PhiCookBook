@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-05-07T13:42:35+00:00",
+  "translation_date": "2025-07-17T05:06:44+00:00",
   "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "fr"
 }
 -->
 ## **Utiliser Phi-4-multimodal pour lire des images et générer du code**
 
-Phi-4-multimodal possède de solides capacités de lecture d’images. Essayons d’utiliser Python pour réaliser les fonctions suivantes. L’image représente une page ChatGPT.
+Phi-4-multimodal possède de solides capacités de lecture d’images. Essayons d’utiliser Python pour implémenter les fonctions suivantes. L’image est une page ChatGPT.
 
 ![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.fr.png)
 
@@ -68,4 +68,4 @@ print(response)
 ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant autorité. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle humaine. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

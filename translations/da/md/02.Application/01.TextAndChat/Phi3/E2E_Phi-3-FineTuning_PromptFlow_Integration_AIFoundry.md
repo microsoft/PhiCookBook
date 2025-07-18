@@ -2,72 +2,73 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ecbd9179a21edbaafaf114d47f09f3e3",
-  "translation_date": "2025-05-09T18:10:47+00:00",
+  "translation_date": "2025-07-17T01:34:03+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
   "language_code": "da"
 }
 -->
-# Finjuster og integrer brugerdefinerede Phi-3 modeller med Prompt flow i Azure AI Foundry
+# Finjuster og integrer tilpassede Phi-3 modeller med Prompt flow i Azure AI Foundry
 
-Denne end-to-end (E2E) prøve er baseret på guiden "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" fra Microsoft Tech Community. Den introducerer processerne for finjustering, udrulning og integration af brugerdefinerede Phi-3 modeller med Prompt flow i Azure AI Foundry. I modsætning til E2E-prøven, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", som involverede at køre kode lokalt, fokuserer denne vejledning udelukkende på finjustering og integration af din model inden for Azure AI / ML Studio.
+Dette end-to-end (E2E) eksempel er baseret på guiden "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" fra Microsoft Tech Community. Det introducerer processerne for finjustering, implementering og integration af tilpassede Phi-3 modeller med Prompt flow i Azure AI Foundry.  
+I modsætning til E2E-eksemplet, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", som involverede at køre kode lokalt, fokuserer denne vejledning udelukkende på finjustering og integration af din model inden for Azure AI / ML Studio.
 
 ## Oversigt
 
-I denne E2E-prøve lærer du, hvordan du finjusterer Phi-3 modellen og integrerer den med Prompt flow i Azure AI Foundry. Ved at udnytte Azure AI / ML Studio opretter du en arbejdsgang til udrulning og brug af brugerdefinerede AI-modeller. Denne E2E-prøve er opdelt i tre scenarier:
+I dette E2E-eksempel vil du lære, hvordan du finjusterer Phi-3 modellen og integrerer den med Prompt flow i Azure AI Foundry. Ved at udnytte Azure AI / ML Studio vil du etablere en arbejdsgang til implementering og brug af tilpassede AI-modeller. Dette E2E-eksempel er opdelt i tre scenarier:
 
 **Scenario 1: Opsæt Azure-ressourcer og forbered til finjustering**
 
-**Scenario 2: Finjuster Phi-3 modellen og udrul i Azure Machine Learning Studio**
+**Scenario 2: Finjuster Phi-3 modellen og implementer i Azure Machine Learning Studio**
 
-**Scenario 3: Integrer med Prompt flow og chat med din brugerdefinerede model i Azure AI Foundry**
+**Scenario 3: Integrer med Prompt flow og chat med din tilpassede model i Azure AI Foundry**
 
-Her er en oversigt over denne E2E-prøve.
+Her er en oversigt over dette E2E-eksempel.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.48557afd46be88c521fb66f886c611bb93ec4cde1b00e138174ae97f75f56262.da.png)
+![Phi-3-FineTuning_PromptFlow_Integration Oversigt.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a2ceacdc6401c688bdf100d874fe8d55169f7723ed024781e.da.png)
 
 ### Indholdsfortegnelse
 
 1. **[Scenario 1: Opsæt Azure-ressourcer og forbered til finjustering](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Opret et Azure Machine Learning Workspace](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Anmod om GPU-kvoter i Azure Subscription](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Tilføj rolle tildeling](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Tilføj rolle-tildeling](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Opsæt projekt](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Forbered datasæt til finjustering](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 2: Finjuster Phi-3 model og udrul i Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenario 2: Finjuster Phi-3 model og implementer i Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Finjuster Phi-3 modellen](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Udrul den finjusterede Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Implementer den finjusterede Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 3: Integrer med Prompt flow og chat med din brugerdefinerede model i Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Integrer den brugerdefinerede Phi-3 model med Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Chat med din brugerdefinerede Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenario 3: Integrer med Prompt flow og chat med din tilpassede model i Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Integrer den tilpassede Phi-3 model med Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Chat med din tilpassede Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 ## Scenario 1: Opsæt Azure-ressourcer og forbered til finjustering
 
 ### Opret et Azure Machine Learning Workspace
 
-1. Skriv *azure machine learning* i **søgefeltet** øverst på portalsiden, og vælg **Azure Machine Learning** fra de viste muligheder.
+1. Skriv *azure machine learning* i **søgefeltet** øverst på portal-siden og vælg **Azure Machine Learning** fra de viste muligheder.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.d34ed3e290197950bb59b5574720c139f88921832c375c07d5c0f3134d7831ca.da.png)
+    ![Skriv azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b9780de8accc31e4e1de7254e9c34a7836a955d455339e77d.da.png)
 
 2. Vælg **+ Create** i navigationsmenuen.
 
 3. Vælg **New workspace** i navigationsmenuen.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.969d9b84a9a134e223a6efeba5bb9a81729993389665a76b81a22cb65e1ee702.da.png)
+    ![Vælg nyt workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2cf04946c36873223099fd568e0c3ab0377c096868892fdda.da.png)
 
 4. Udfør følgende opgaver:
 
-    - Vælg dit Azure **Subscription**.
+    - Vælg din Azure **Subscription**.
     - Vælg den **Resource group**, der skal bruges (opret en ny, hvis nødvendigt).
-    - Indtast **Workspace Name**. Det skal være et unikt navn.
+    - Indtast **Workspace Name**. Det skal være en unik værdi.
     - Vælg den **Region**, du ønsker at bruge.
     - Vælg den **Storage account**, der skal bruges (opret en ny, hvis nødvendigt).
     - Vælg den **Key vault**, der skal bruges (opret en ny, hvis nødvendigt).
     - Vælg den **Application insights**, der skal bruges (opret en ny, hvis nødvendigt).
     - Vælg den **Container registry**, der skal bruges (opret en ny, hvis nødvendigt).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.97c43ed40b5231572001c9e2a5193a4c63de657f07401d1fce962a085e129809.da.png)
+    ![Udfyld azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090ff9ec341c724c1493e7f96726f5c810a89a7409b782a7b04a.da.png)
 
 5. Vælg **Review + Create**.
 
@@ -75,64 +76,64 @@ Her er en oversigt over denne E2E-prøve.
 
 ### Anmod om GPU-kvoter i Azure Subscription
 
-I denne vejledning lærer du at finjustere og udrulle en Phi-3 model ved brug af GPU'er. Til finjustering bruger du *Standard_NC24ads_A100_v4* GPU, som kræver en kvoteanmodning. Til udrulning bruger du *Standard_NC6s_v3* GPU, som også kræver en kvoteanmodning.
+I denne vejledning lærer du, hvordan du finjusterer og implementerer en Phi-3 model ved brug af GPU’er. Til finjustering bruger du *Standard_NC24ads_A100_v4* GPU, som kræver en kvoteanmodning. Til implementering bruger du *Standard_NC6s_v3* GPU, som også kræver en kvoteanmodning.
 
 > [!NOTE]
 >
-> Kun Pay-As-You-Go abonnementer (standard abonnementstype) er berettigede til GPU-allokering; benefit abonnementer understøttes ikke på nuværende tidspunkt.
+> Kun Pay-As-You-Go abonnementer (standard abonnementstype) er berettigede til GPU-tildeling; benefit-abonnementer understøttes ikke i øjeblikket.
 >
 
 1. Besøg [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Udfør følgende opgaver for at anmode om *Standard NCADSA100v4 Family* kvote:
+1. Udfør følgende for at anmode om *Standard NCADSA100v4 Family* kvote:
 
     - Vælg **Quota** i venstre sidepanel.
-    - Vælg den **Virtual machine family**, der skal bruges. For eksempel, vælg **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, som inkluderer *Standard_NC24ads_A100_v4* GPU.
+    - Vælg den **Virtual machine family**, der skal bruges. For eksempel vælg **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, som inkluderer *Standard_NC24ads_A100_v4* GPU’en.
     - Vælg **Request quota** i navigationsmenuen.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.9bb6ecf76b842dbccd70603b5a6f8533e7a2a0f9f9cc8304bef67fb0bb09e49a.da.png)
+        ![Anmod om kvote.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd536f2e4a305c8528a34914370813bc2cda4d7bbdd2de873f0.da.png)
 
     - På siden Request quota, indtast den **New cores limit**, du ønsker at bruge. For eksempel 24.
     - På siden Request quota, vælg **Submit** for at anmode om GPU-kvoten.
 
-1. Udfør følgende opgaver for at anmode om *Standard NCSv3 Family* kvote:
+1. Udfør følgende for at anmode om *Standard NCSv3 Family* kvote:
 
     - Vælg **Quota** i venstre sidepanel.
-    - Vælg den **Virtual machine family**, der skal bruges. For eksempel, vælg **Standard NCSv3 Family Cluster Dedicated vCPUs**, som inkluderer *Standard_NC6s_v3* GPU.
+    - Vælg den **Virtual machine family**, der skal bruges. For eksempel vælg **Standard NCSv3 Family Cluster Dedicated vCPUs**, som inkluderer *Standard_NC6s_v3* GPU’en.
     - Vælg **Request quota** i navigationsmenuen.
     - På siden Request quota, indtast den **New cores limit**, du ønsker at bruge. For eksempel 24.
     - På siden Request quota, vælg **Submit** for at anmode om GPU-kvoten.
 
-### Tilføj rolle tildeling
+### Tilføj rolle-tildeling
 
-For at finjustere og udrulle dine modeller skal du først oprette en User Assigned Managed Identity (UAI) og tildele den de nødvendige tilladelser. Denne UAI vil blive brugt til autentificering under udrulning.
+For at finjustere og implementere dine modeller skal du først oprette en User Assigned Managed Identity (UAI) og tildele den de nødvendige tilladelser. Denne UAI vil blive brugt til autentificering under implementeringen.
 
-#### Opret User Assigned Managed Identity(UAI)
+#### Opret User Assigned Managed Identity (UAI)
 
-1. Skriv *managed identities* i **søgefeltet** øverst på portalsiden, og vælg **Managed Identities** fra de viste muligheder.
+1. Skriv *managed identities* i **søgefeltet** øverst på portal-siden og vælg **Managed Identities** fra de viste muligheder.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.61954962fbc13913ceb35d00dd9d746b91fdd96834383b65214fa0f4d1152441.da.png)
+    ![Skriv managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e52f52a152187b230243fe884f58a9940cd9b534db3dcea383.da.png)
 
 1. Vælg **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.4608dd89e644e68f40b559d30788383bc70dd3d14f082c78f460ba45d208f273.da.png)
+    ![Vælg create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f27b6680cd94ef6ec7557394022dafdcfba2a92777b11e4817.da.png)
 
 1. Udfør følgende opgaver:
 
-    - Vælg dit Azure **Subscription**.
+    - Vælg din Azure **Subscription**.
     - Vælg den **Resource group**, der skal bruges (opret en ny, hvis nødvendigt).
     - Vælg den **Region**, du ønsker at bruge.
-    - Indtast **Name**. Det skal være et unikt navn.
+    - Indtast **Name**. Det skal være en unik værdi.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ff32a0010dd0667dd231f214881ab59f809ecf10b901030fc3db4e41a50a834a.da.png)
+    ![Udfyld create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0e313fffaecf7d6ce4ee5e86c0badcd038f03519cac63b76b.da.png)
 
 1. Vælg **Review + create**.
 
 1. Vælg **+ Create**.
 
-#### Tilføj Contributor rolle tildeling til Managed Identity
+#### Tilføj Contributor rolle-tildeling til Managed Identity
 
-1. Naviger til den Managed Identity-ressource, du oprettede.
+1. Gå til den Managed Identity-ressource, du oprettede.
 
 1. Vælg **Azure role assignments** i venstre sidepanel.
 
@@ -141,51 +142,51 @@ For at finjustere og udrulle dine modeller skal du først oprette en User Assign
 1. På siden Add role assignment, udfør følgende:
 
     - Vælg **Scope** til **Resource group**.
-    - Vælg dit Azure **Subscription**.
+    - Vælg din Azure **Subscription**.
     - Vælg den **Resource group**, der skal bruges.
-    - Vælg rollen **Contributor**.
+    - Vælg **Role** til **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.419141712bde1fa89624c3792233a367b23cbc46fb7018d1d11c3cd65a25f748.da.png)
+    ![Udfyld contributor rolle.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d1d62333e91b4d2719284f0dad14bd9b4c3459510a0c44fab.da.png)
 
 2. Vælg **Save**.
 
-#### Tilføj Storage Blob Data Reader rolle tildeling til Managed Identity
+#### Tilføj Storage Blob Data Reader rolle-tildeling til Managed Identity
 
-1. Skriv *storage accounts* i **søgefeltet** øverst på portalsiden, og vælg **Storage accounts** fra de viste muligheder.
+1. Skriv *storage accounts* i **søgefeltet** øverst på portal-siden og vælg **Storage accounts** fra de viste muligheder.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.026e03a619ba23f474f9d704cd9050335df48aab7253eb17729da506baf2056b.da.png)
+    ![Skriv storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e55b6b4dda10841d74d1c7463a2e4f23b9c45ffbb84219deb2.da.png)
 
-1. Vælg den storage-konto, som er tilknyttet det Azure Machine Learning workspace, du oprettede. For eksempel *finetunephistorage*.
+1. Vælg den storage account, der er tilknyttet det Azure Machine Learning workspace, du oprettede. For eksempel *finetunephistorage*.
 
 1. Udfør følgende for at navigere til siden Add role assignment:
 
-    - Naviger til den Azure Storage-konto, du oprettede.
+    - Gå til den Azure Storage account, du oprettede.
     - Vælg **Access Control (IAM)** i venstre sidepanel.
     - Vælg **+ Add** i navigationsmenuen.
     - Vælg **Add role assignment** i navigationsmenuen.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.ea9dffa9d4e12c8ce5d7ee4c5ffb6eb7f7a5aac820c60a5782a3fb634b7aa09a.da.png)
+    ![Tilføj rolle.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c25fb73e63b957e214a2b651375a640a3aa54159a3731f495b.da.png)
 
 1. På siden Add role assignment, udfør følgende:
 
-    - Skriv *Storage Blob Data Reader* i **søgefeltet** på Role-siden og vælg **Storage Blob Data Reader** fra de viste muligheder.
-    - Vælg **Next** på Role-siden.
+    - På Role-siden, skriv *Storage Blob Data Reader* i **søgefeltet** og vælg **Storage Blob Data Reader** fra de viste muligheder.
+    - På Role-siden, vælg **Next**.
     - På Members-siden, vælg **Assign access to** **Managed identity**.
     - På Members-siden, vælg **+ Select members**.
-    - På siden Select managed identities, vælg dit Azure **Subscription**.
-    - Vælg den **Managed identity** til **Manage Identity**.
-    - Vælg den Manage Identity, du oprettede, for eksempel *finetunephi-managedidentity*.
-    - Vælg **Select**.
+    - På siden Select managed identities, vælg din Azure **Subscription**.
+    - På siden Select managed identities, vælg den **Managed identity** til **Manage Identity**.
+    - På siden Select managed identities, vælg den Manage Identity, du oprettede. For eksempel *finetunephi-managedidentity*.
+    - På siden Select managed identities, vælg **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.2456b3430a31bbaba7c744256dfb99c7fa6e12ba2dd122e34205973d29115d6c.da.png)
+    ![Vælg managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25289f2f121da05d114934d21d26aae9cb779334cbbccdf9e8.da.png)
 
 1. Vælg **Review + assign**.
 
-#### Tilføj AcrPull rolle tildeling til Managed Identity
+#### Tilføj AcrPull rolle-tildeling til Managed Identity
 
-1. Skriv *container registries* i **søgefeltet** øverst på portalsiden, og vælg **Container registries** fra de viste muligheder.
+1. Skriv *container registries* i **søgefeltet** øverst på portal-siden og vælg **Container registries** fra de viste muligheder.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.cac7db97652dda0e9d7b98d40034f5ac81752db9528b708e014c74a9891c49aa.da.png)
+    ![Skriv container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a69b003f7a698dac908ffc2f355e675c10939fdd0bb09f790e.da.png)
 
 1. Vælg den container registry, der er tilknyttet Azure Machine Learning workspace. For eksempel *finetunephicontainerregistry*
 
@@ -197,19 +198,19 @@ For at finjustere og udrulle dine modeller skal du først oprette en User Assign
 
 1. På siden Add role assignment, udfør følgende:
 
-    - Skriv *AcrPull* i **søgefeltet** på Role-siden og vælg **AcrPull** fra de viste muligheder.
-    - Vælg **Next** på Role-siden.
+    - På Role-siden, skriv *AcrPull* i **søgefeltet** og vælg **AcrPull** fra de viste muligheder.
+    - På Role-siden, vælg **Next**.
     - På Members-siden, vælg **Assign access to** **Managed identity**.
     - På Members-siden, vælg **+ Select members**.
-    - På siden Select managed identities, vælg dit Azure **Subscription**.
-    - Vælg den **Managed identity** til **Manage Identity**.
-    - Vælg den Manage Identity, du oprettede, for eksempel *finetunephi-managedidentity*.
-    - Vælg **Select**.
+    - På siden Select managed identities, vælg din Azure **Subscription**.
+    - På siden Select managed identities, vælg den **Managed identity** til **Manage Identity**.
+    - På siden Select managed identities, vælg den Manage Identity, du oprettede. For eksempel *finetunephi-managedidentity*.
+    - På siden Select managed identities, vælg **Select**.
     - Vælg **Review + assign**.
 
 ### Opsæt projekt
 
-For at downloade de datasæt, der er nødvendige til finjustering, opsætter du et lokalt miljø.
+For at downloade de datasæt, der er nødvendige til finjustering, skal du opsætte et lokalt miljø.
 
 I denne øvelse vil du
 
@@ -220,18 +221,13 @@ I denne øvelse vil du
 
 #### Opret en mappe til at arbejde i
 
-1. Åbn et terminalvindue, og skriv følgende kommando for at oprette en mappe med navnet *finetune-phi* i standardstien.
+1. Åbn et terminalvindue og skriv følgende kommando for at oprette en mappe med navnet *finetune-phi* i standardstien.
 
     ```console
     mkdir finetune-phi
     ```
 
-2. Skriv følgende kommando i din terminal for at navigere til *finetune-phi* mappen, du oprettede.
-
-    ```console
-    cd finetune-phi
-    ```
-
+2. Skriv følgende kommando i din terminal for at navigere til den *finetune-phi* mappe, du oprettede.
 #### Opret et virtuelt miljø
 
 1. Skriv følgende kommando i din terminal for at oprette et virtuelt miljø med navnet *.venv*.
@@ -245,6 +241,7 @@ I denne øvelse vil du
     ```console
     .venv\Scripts\activate.bat
     ```
+
 
 > [!NOTE]
 > Hvis det virkede, skulle du se *(.venv)* før kommandoprompten.
@@ -260,7 +257,7 @@ I denne øvelse vil du
 #### Opret `download_dataset.py`
 
 > [!NOTE]
-> Komplett mappestruktur:
+> Fuldstændig mappestruktur:
 >
 > ```text
 > └── YourUserName
@@ -274,28 +271,28 @@ I denne øvelse vil du
 
 1. Vælg **Open Folder**.
 
-1. Vælg *finetune-phi* mappen, som du oprettede, og som ligger i *C:\Users\yourUserName\finetune-phi*.
+1. Vælg mappen *finetune-phi*, som du har oprettet, og som ligger i *C:\Users\yourUserName\finetune-phi*.
 
-    ![Select the folder that you created.](../../../../../../translated_images/04-01-open-project-folder.01a82ecd87581d5a0572bc4f12dd8004a204ec366c907a2ad4d42dfd61ea5e21.da.png)
+    ![Vælg den mappe, du har oprettet.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6f63a0a50961e51a39cc6de7a7ddc86da5f4896e815f28abd.da.png)
 
 1. I venstre rude i Visual Studio Code, højreklik og vælg **New File** for at oprette en ny fil med navnet *download_dataset.py*.
 
-    ![Create a new file.](../../../../../../translated_images/04-02-create-new-file.16e088bf7213c299e258482be49fb1c735ba3eca1503b38a6b45b9289c651732.da.png)
+    ![Opret en ny fil.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff927ede875300e1b5c91ab90d1e486c77a43bb9494880cf9b6f.da.png)
 
 ### Forbered datasæt til finjustering
 
-I denne øvelse vil du køre *download_dataset.py* filen for at downloade *ultrachat_200k* datasættet til dit lokale miljø. Du vil derefter bruge dette datasæt til at finjustere Phi-3 modellen i Azure Machine Learning.
+I denne øvelse skal du køre filen *download_dataset.py* for at downloade *ultrachat_200k* datasættene til dit lokale miljø. Du vil derefter bruge disse datasæt til at finjustere Phi-3 modellen i Azure Machine Learning.
 
 I denne øvelse vil du:
 
-- Tilføje kode til *download_dataset.py* filen for at downloade datasættene.
-- Køre *download_dataset.py* filen for at downloade datasættene til dit lokale miljø.
+- Tilføje kode til filen *download_dataset.py* for at downloade datasættene.
+- Køre filen *download_dataset.py* for at downloade datasættene til dit lokale miljø.
 
 #### Download dit datasæt ved hjælp af *download_dataset.py*
 
-1. Åbn *download_dataset.py* filen i Visual Studio Code.
+1. Åbn filen *download_dataset.py* i Visual Studio Code.
 
-1. Tilføj følgende kode i *download_dataset.py* filen.
+1. Tilføj følgende kode i filen *download_dataset.py*.
 
     ```python
     import json
@@ -369,13 +366,13 @@ I denne øvelse vil du:
 >
 > #### Bemærkning om datasætstørrelse og finjusteringstid
 >
-> I denne vejledning bruger du kun 1% af datasættet (`split='train[:1%]'`). Det reducerer mængden af data betydeligt og gør både upload og finjustering hurtigere. Du kan justere procentdelen for at finde den rette balance mellem træningstid og modelpræstation. Ved at bruge en mindre delmængde af datasættet forkortes finjusteringstiden, hvilket gør processen mere overskuelig til en vejledning.
+> I denne vejledning bruger du kun 1% af datasættet (`split='train[:1%]'`). Det reducerer mængden af data betydeligt og gør både upload og finjustering hurtigere. Du kan justere procentdelen for at finde den rette balance mellem træningstid og modelpræstation. Ved at bruge et mindre udsnit af datasættet mindskes tiden, der kræves til finjustering, hvilket gør processen mere overskuelig i en vejledning.
 
-## Scenario 2: Finjuster Phi-3 model og udrul i Azure Machine Learning Studio
+## Scenario 2: Finjuster Phi-3 modellen og deployér i Azure Machine Learning Studio
 
 ### Finjuster Phi-3 modellen
 
-I denne øvelse vil du finjustere Phi-3 modellen i Azure Machine Learning Studio.
+I denne øvelse skal du finjustere Phi-3 modellen i Azure Machine Learning Studio.
 
 I denne øvelse vil du:
 
@@ -383,6 +380,7 @@ I denne øvelse vil du:
 - Finjustere Phi-3 modellen i Azure Machine Learning Studio.
 
 #### Opret computerklynge til finjustering
+
 1. Besøg [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
 1. Vælg **Compute** i venstre sidepanel.
@@ -391,7 +389,7 @@ I denne øvelse vil du:
 
 1. Vælg **+ New**.
 
-    ![Select compute.](../../../../../../translated_images/06-01-select-compute.e151458e2884d4877a05acf3553d015cd63c0c6ed056efcfbd425c715692a947.da.png)
+    ![Vælg compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252d04ffd0142c073486df7d3b7256335964a98b87e28072523.da.png)
 
 1. Udfør følgende opgaver:
 
@@ -401,18 +399,18 @@ I denne øvelse vil du:
     - Vælg filteret for **Virtual machine size** til **Select from all options**.
     - Vælg **Virtual machine size** til **Standard_NC24ads_A100_v4**.
 
-    ![Create cluster.](../../../../../../translated_images/06-02-create-cluster.19e5e8403b754eecaa1e2886625335ca16f4161391e0d75ef85f2e5eaa8ffb5a.da.png)
+    ![Opret klynge.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e4baa9c5ccf86510f21df87515c231b2a255e1ee545496458.da.png)
 
 1. Vælg **Next**.
 
 1. Udfør følgende opgaver:
 
-    - Indtast **Compute name**. Det skal være en unik værdi.
+    - Indtast **Compute name**. Det skal være et unikt navn.
     - Vælg **Minimum number of nodes** til **0**.
     - Vælg **Maximum number of nodes** til **1**.
     - Vælg **Idle seconds before scale down** til **120**.
 
-    ![Create cluster.](../../../../../../translated_images/06-03-create-cluster.8796fad73635590754b6095c30fe98112db248596d194cd5b0af077cca371ac1.da.png)
+    ![Opret klynge.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662edc0f95ad364a869b4dbb7f7be08ff259528fea96312e77e.da.png)
 
 1. Vælg **Create**.
 
@@ -422,47 +420,47 @@ I denne øvelse vil du:
 
 1. Vælg det Azure Machine Learning workspace, du har oprettet.
 
-    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.f5449319befd49bad6028622f194507712fccee9d744f96b78765d2c1ffcb9c3.da.png)
+    ![Vælg workspace, du har oprettet.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.da.png)
 
 1. Udfør følgende opgaver:
 
     - Vælg **Model catalog** i venstre sidepanel.
-    - Skriv *phi-3-mini-4k* i **søgefeltet** og vælg **Phi-3-mini-4k-instruct** blandt de viste muligheder.
+    - Skriv *phi-3-mini-4k* i **søgefeltet** og vælg **Phi-3-mini-4k-instruct** fra de viste muligheder.
 
-    ![Type phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.808fa02bdce5b9cda91e19a5fa9ff254697575293245ea49263f860354032e66.da.png)
+    ![Skriv phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b25018a7e7353ce6525d8f5803b0af9bc9a60a9be4204dd77578.da.png)
 
 1. Vælg **Fine-tune** i navigationsmenuen.
 
-    ![Select fine tune.](../../../../../../translated_images/06-06-select-fine-tune.bcb1fd63ead2da12219c0615d35cef2c9ce18d3c8467ef604d755accba87a063.da.png)
+    ![Vælg fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeecb897ac74882792b59086893b8a7448a89be3628aee62fc1b.da.png)
 
 1. Udfør følgende opgaver:
 
     - Vælg **Select task type** til **Chat completion**.
     - Vælg **+ Select data** for at uploade **Training data**.
-    - Vælg typen for upload af valideringsdata til **Provide different validation data**.
+    - Vælg uploadtypen for valideringsdata til **Provide different validation data**.
     - Vælg **+ Select data** for at uploade **Validation data**.
 
-    ![Fill fine-tuning page.](../../../../../../translated_images/06-07-fill-finetuning.dcf5eb5a2d6d2bfb727e1fc278de717df0b25cf8d11ace970df8ea7d5951591e.da.png)
+    ![Udfyld finjusteringssiden.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0bbc6b248af9e7369ca98379770badec9f73b6bced7a8b7806.da.png)
 
     > [!TIP]
     >
-    > Du kan vælge **Advanced settings** for at tilpasse konfigurationer som **learning_rate** og **lr_scheduler_type** for at optimere finjusteringsprocessen efter dine behov.
+    > Du kan vælge **Advanced settings** for at tilpasse indstillinger som **learning_rate** og **lr_scheduler_type** for at optimere finjusteringsprocessen efter dine behov.
 
 1. Vælg **Finish**.
 
-1. I denne øvelse har du med succes finjusteret Phi-3 modellen ved hjælp af Azure Machine Learning. Bemærk, at finjusteringsprocessen kan tage en del tid. Efter du har startet finjusteringsjobbet, skal du vente på, at det færdiggøres. Du kan følge status på finjusteringsjobbet ved at gå til fanen Jobs i venstre side af dit Azure Machine Learning Workspace. I den næste serie vil du implementere den finjusterede model og integrere den med Prompt flow.
+1. I denne øvelse har du med succes finjusteret Phi-3 modellen ved hjælp af Azure Machine Learning. Bemærk, at finjusteringsprocessen kan tage en del tid. Efter at have startet finjusteringsjobbet, skal du vente på, at det bliver færdigt. Du kan følge status for finjusteringsjobbet ved at gå til fanen Jobs i venstre side af dit Azure Machine Learning Workspace. I næste serie vil du deployere den finjusterede model og integrere den med Prompt flow.
 
-    ![See finetuning job.](../../../../../../translated_images/06-08-output.3fedec9572bca5d86b7db3a6d060345c762aa59ce6aefa2b1998154b9f475b69.da.png)
+    ![Se finjusteringsjob.](../../../../../../translated_images/06-08-output.2bd32e59930672b1cc1de86056e2fbc91e338f59e2a29d7dac86ede49a9714b2.da.png)
 
-### Implementer den finjusterede Phi-3 model
+### Deployér den finjusterede Phi-3 model
 
-For at integrere den finjusterede Phi-3 model med Prompt flow skal du implementere modellen, så den kan bruges til realtidsinference. Denne proces involverer registrering af modellen, oprettelse af en online endpoint og implementering af modellen.
+For at integrere den finjusterede Phi-3 model med Prompt flow, skal du deployere modellen, så den er tilgængelig til realtidsinference. Denne proces involverer registrering af modellen, oprettelse af en online endpoint og deployment af modellen.
 
 I denne øvelse vil du:
 
 - Registrere den finjusterede model i Azure Machine Learning workspace.
 - Oprette en online endpoint.
-- Implementere den registrerede finjusterede Phi-3 model.
+- Deployere den registrerede finjusterede Phi-3 model.
 
 #### Registrer den finjusterede model
 
@@ -470,17 +468,17 @@ I denne øvelse vil du:
 
 1. Vælg det Azure Machine Learning workspace, du har oprettet.
 
-    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.f5449319befd49bad6028622f194507712fccee9d744f96b78765d2c1ffcb9c3.da.png)
+    ![Vælg workspace, du har oprettet.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.da.png)
 
 1. Vælg **Models** i venstre sidepanel.
 1. Vælg **+ Register**.
 1. Vælg **From a job output**.
 
-    ![Register model.](../../../../../../translated_images/07-01-register-model.46cad47d2bb083c74e616691ef836735209ffc42b29fb432a1acbef52e28d41f.da.png)
+    ![Registrer model.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777c8c39906ce5cd57f16b54fb3887dd4e4de1ce963b26499ad.da.png)
 
 1. Vælg det job, du har oprettet.
 
-    ![Select job.](../../../../../../translated_images/07-02-select-job.a5d34472aead80a4b69594f277dd43491c6aaf42d847940c1dc2081d909a23f3.da.png)
+    ![Vælg job.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd09315953b4eb2cc9d62d0d77ab0d9d877e34c6827fa6d2b6be4.da.png)
 
 1. Vælg **Next**.
 
@@ -488,19 +486,19 @@ I denne øvelse vil du:
 
 1. Sørg for, at **Job output** er valgt; det burde være valgt automatisk.
 
-    ![Select output.](../../../../../../translated_images/07-03-select-output.e1a56a25db9065901df821343ff894ca45ce0569c3daf30b5aafdd060f26e059.da.png)
+    ![Vælg output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f267b40f73de77f092a5b02808ade72f8eb94e5fe9723feb3.da.png)
 
 2. Vælg **Next**.
 
 3. Vælg **Register**.
 
-    ![Select register.](../../../../../../translated_images/07-04-register.71316a5a4d2e1f520f14fee93be7865a785971cdfdd8cd08779866f5f29f7da4.da.png)
+    ![Vælg register.](../../../../../../translated_images/07-04-register.fd82a3b293060bc78399e613293032d3d301c02a6fd8092bec52bfaf4f3104de.da.png)
 
 4. Du kan se din registrerede model ved at gå til menuen **Models** i venstre sidepanel.
 
-    ![Registered model.](../../../../../../translated_images/07-05-registered-model.969e2ec99a4cbf5cc9bb006b118110803853a15aa3c499eceb7812d976bd6128.da.png)
+    ![Registreret model.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591b7995686b95396ffd8c185ba66f0a1f6be18f4aea05e93d5.da.png)
 
-#### Implementer den finjusterede model
+#### Deployér den finjusterede model
 
 1. Gå til det Azure Machine Learning workspace, du har oprettet.
 
@@ -508,33 +506,33 @@ I denne øvelse vil du:
 
 1. Vælg **Real-time endpoints** i navigationsmenuen.
 
-    ![Create endpoint.](../../../../../../translated_images/07-06-create-endpoint.0741c2a4369bd3b9c4e17aa7b31ed0337bfb1303f9038244784791250164b2f7.da.png)
+    ![Opret endpoint.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09618ce29b467276523838b8cc766d79ebfecdb052fef2c4df.da.png)
 
 1. Vælg **Create**.
 
 1. Vælg den registrerede model, du har oprettet.
 
-    ![Select registered model.](../../../../../../translated_images/07-07-select-registered-model.7a270d391fd543a21d9a024d2ea516667c039393dbe954019e19162dd07d2387.da.png)
+    ![Vælg registreret model.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4460f7646dfaa59121fb1384ed1957755427d358462c25225.da.png)
 
 1. Vælg **Select**.
 
 1. Udfør følgende opgaver:
 
     - Vælg **Virtual machine** til *Standard_NC6s_v3*.
-    - Vælg det ønskede antal instanser, fx *1*.
+    - Vælg det antal instanser, du ønsker at bruge. For eksempel *1*.
     - Vælg **Endpoint** til **New** for at oprette en endpoint.
-    - Indtast **Endpoint name**. Det skal være en unik værdi.
-    - Indtast **Deployment name**. Det skal være en unik værdi.
+    - Indtast **Endpoint name**. Det skal være et unikt navn.
+    - Indtast **Deployment name**. Det skal være et unikt navn.
 
-    ![Fill the deployment setting.](../../../../../../translated_images/07-08-deployment-setting.5907ac712d60af1f5e6d18e09a39b3fcd5706e9ce2e3dffc7120a2f79e025483.da.png)
+    ![Udfyld deploymentsindstillinger.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e67378494bb8d81418bc3bdaceb8c57151727d538594cb378697f36.da.png)
 
 1. Vælg **Deploy**.
 
 > [!WARNING]
-> For at undgå ekstra omkostninger på din konto, skal du sørge for at slette den oprettede endpoint i Azure Machine Learning workspace.
+> For at undgå ekstra omkostninger på din konto, skal du huske at slette den oprettede endpoint i Azure Machine Learning workspace.
 >
 
-#### Tjek implementeringsstatus i Azure Machine Learning Workspace
+#### Tjek deploymentsstatus i Azure Machine Learning Workspace
 
 1. Gå til det Azure Machine Learning workspace, du har oprettet.
 
@@ -542,21 +540,21 @@ I denne øvelse vil du:
 
 1. Vælg den endpoint, du har oprettet.
 
-    ![Select endpoints](../../../../../../translated_images/07-09-check-deployment.dc970e535b490992ff68e6127c9d520389b3f0f5a5fc41358c2ad16669bce49a.da.png)
+    ![Vælg endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4a302f0efc8875002e1c382167083c7fefbdb42ede274d0da.da.png)
 
-1. På denne side kan du administrere endpoints under implementeringsprocessen.
+1. På denne side kan du administrere endpoints under deploymentsprocessen.
 
 > [!NOTE]
-> Når implementeringen er færdig, skal du sikre, at **Live traffic** er sat til **100%**. Hvis ikke, vælg **Update traffic** for at justere trafikindstillingerne. Bemærk, at du ikke kan teste modellen, hvis trafikken er sat til 0%.
+> Når deployment er færdig, skal du sikre dig, at **Live traffic** er sat til **100%**. Hvis ikke, vælg **Update traffic** for at justere trafikindstillingerne. Bemærk, at du ikke kan teste modellen, hvis trafikken er sat til 0%.
 >
-> ![Set traffic.](../../../../../../translated_images/07-10-set-traffic.a0fccfd2b1e2bd0dba22860daa76d35999cfcf23b53ecc09df92f992c4cab64f.da.png)
+> ![Sæt trafik.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d30c64ecabac4b17a7b5dc004ba52ad387cbaaf7b266eeadf.da.png)
 >
 
 ## Scenario 3: Integrer med Prompt flow og chat med din tilpassede model i Azure AI Foundry
 
 ### Integrer den tilpassede Phi-3 model med Prompt flow
 
-Efter at have implementeret din finjusterede model kan du nu integrere den med Prompt Flow for at bruge din model i realtidsapplikationer, hvilket muliggør en række interaktive opgaver med din tilpassede Phi-3 model.
+Efter du har deployeret din finjusterede model, kan du nu integrere den med Prompt Flow for at bruge din model i realtidsapplikationer, hvilket muliggør en række interaktive opgaver med din tilpassede Phi-3 model.
 
 I denne øvelse vil du:
 
@@ -564,14 +562,12 @@ I denne øvelse vil du:
 - Oprette Azure AI Foundry Project.
 - Oprette Prompt flow.
 - Tilføje en brugerdefineret forbindelse til den finjusterede Phi-3 model.
-- Opsætte Prompt flow til at chatte med din tilpassede Phi-3 model.
-
+- Sætte Prompt flow op til at chatte med din tilpassede Phi-3 model.
 > [!NOTE]
 > Du kan også integrere med Promptflow ved hjælp af Azure ML Studio. Den samme integrationsproces kan anvendes i Azure ML Studio.
-
 #### Opret Azure AI Foundry Hub
 
-Du skal oprette en Hub, før du opretter et Project. En Hub fungerer som en Resource Group, der giver dig mulighed for at organisere og administrere flere Projects inden for Azure AI Foundry.
+Du skal oprette en Hub, før du opretter Projektet. En Hub fungerer som en Resource Group, der giver dig mulighed for at organisere og administrere flere Projekter inden for Azure AI Foundry.
 
 1. Besøg [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
@@ -579,73 +575,74 @@ Du skal oprette en Hub, før du opretter et Project. En Hub fungerer som en Reso
 
 1. Vælg **+ New hub** i navigationsmenuen.
 
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.c54d78fb49923ff1d8c6a11010a8c8eca9b044d525182a2a1700b3ff4c542674.da.png)
+    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834e092dcf9dda773276fbee65f40252ed4a9af4f9aa4fef5d7.da.png)
 
 1. Udfør følgende opgaver:
 
     - Indtast **Hub name**. Det skal være en unik værdi.
-    - Vælg din Azure **Subscription**.
+    - Vælg dit Azure **Subscription**.
     - Vælg den **Resource group**, der skal bruges (opret en ny, hvis nødvendigt).
     - Vælg den **Location**, du ønsker at bruge.
-    - Vælg **Connect Azure AI Services** (opret en ny, hvis nødvendigt).
-    - Vælg **Connect Azure AI Search** til **Skip connecting**.
+    - Vælg **Connect Azure AI Services** der skal bruges (opret en ny, hvis nødvendigt).
+    - Vælg **Connect Azure AI Search** og vælg **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.ced9ab1db4d2f3324d3d34bd9e846641e80bb9e4ebfc56f47d09ce6885e9caf7.da.png)
+    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c44658a87c2ed01d9e588581f157480ff1ac3312085c51d25.da.png)
 
 1. Vælg **Next**.
 
-#### Opret Azure AI Foundry Project
+#### Opret Azure AI Foundry Projekt
 
-1. I den Hub, du har oprettet, vælg **All projects** i venstre sidepanel.
+1. I den Hub, du oprettede, vælg **All projects** i venstre sidepanel.
 
 1. Vælg **+ New project** i navigationsmenuen.
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.e3033e8fa767fa86e03dc830014e59222eceacbc322082771d0e11be6e60ed6a.da.png)
+    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f1251c487d98aed0641bd057100b8e5d6fba9062bfb7d752ce9.da.png)
 
 1. Indtast **Project name**. Det skal være en unik værdi.
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.6172ff97b4c49ad0f364e6d4a7b658dba45f8e27aaa2126a83d0af77056450b0.da.png)
+    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a192b4ed3dde6b1136c860fc85352d612aa2f3ae8a4d54eb4.da.png)
 
 1. Vælg **Create a project**.
 
 #### Tilføj en brugerdefineret forbindelse til den finjusterede Phi-3 model
 
-For at integrere din tilpassede Phi-3 model med Prompt flow skal du gemme modellens endpoint og nøgle i en brugerdefineret forbindelse. Denne opsætning sikrer adgang til din tilpassede Phi-3 model i Prompt flow.
+For at integrere din brugerdefinerede Phi-3 model med Prompt flow, skal du gemme modellens endpoint og nøgle i en brugerdefineret forbindelse. Denne opsætning sikrer adgang til din brugerdefinerede Phi-3 model i Prompt flow.
 
-#### Indstil api-nøgle og endpoint URI for den finjusterede Phi-3 model
+#### Indstil api-nøgle og endpoint-uri for den finjusterede Phi-3 model
 
 1. Besøg [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Naviger til det Azure Machine Learning workspace, du har oprettet.
+1. Naviger til det Azure Machine learning workspace, du oprettede.
 
 1. Vælg **Endpoints** i venstre sidepanel.
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.7c12a37c1b477c2829a045a230ae9c18373156fe7adb797dcabd3ab18bd139a7.da.png)
+    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf960519c1ac95116d1a7e5b8d0bdea5cd42281930766fbfad1929.da.png)
 
-1. Vælg den endpoint, du har oprettet.
+1. Vælg det endpoint, du oprettede.
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.d69043d757b715c24c88c9ae7e796247eb8909bae8967839a7dc30de3f403caf.da.png)
+    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275ea16f689f59b70d5b0162fff1781204e389edcb63b42b95b2.da.png)
 
 1. Vælg **Consume** i navigationsmenuen.
 
-1. Kopiér din **REST endpoint** og **Primary key**.
-![Kopiér api-nøgle og endpoint-uri.](../../../../../../translated_images/08-08-copy-endpoint-key.511a027574cee0efc50fdda33b6de1e1e268c5979914ba944b72092f72f95544.da.png)
+1. Kopiér dit **REST endpoint** og din **Primary key**.
+
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cbe30a20b889154d04109bf17c5c09816060a8689933dc0fd7.da.png)
 
 #### Tilføj den brugerdefinerede forbindelse
 
 1. Besøg [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Gå til det Azure AI Foundry-projekt, du har oprettet.
+1. Naviger til det Azure AI Foundry projekt, du oprettede.
 
-1. I det projekt, du har oprettet, vælg **Settings** i venstre sidepanel.
+1. I det Projekt, du oprettede, vælg **Settings** i venstre sidepanel.
 
 1. Vælg **+ New connection**.
 
-    ![Vælg ny forbindelse.](../../../../../../translated_images/08-09-select-new-connection.c55d4faa9f655e163a5d7aec1f21843ea30738d4e8c5ce5f0724048ebc6ca007.da.png)
+    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc77130c3a16fbb8ee59407ecbf74fd3502cb8720c61384446.da.png)
 
 1. Vælg **Custom keys** i navigationsmenuen.
 
-    ![Vælg brugerdefinerede nøgler.](../../../../../../translated_images/08-10-select-custom-keys.78c5267f5d037ef1931bc25e4d1a77747b709df7141a9968e25ebd9188ac9fdd.da.png)
+    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b29664605513ccc134f1adaefaf27f951981c511783a6a0d1118c9178a5.da.png)
 
 1. Udfør følgende opgaver:
 
@@ -655,41 +652,41 @@ For at integrere din tilpassede Phi-3 model med Prompt flow skal du gemme modell
     - For nøglens navn, indtast **key** og indsæt den nøgle, du kopierede fra Azure ML Studio, i værdifeltet.
     - Efter at have tilføjet nøglerne, vælg **is secret** for at forhindre, at nøglen bliver synlig.
 
-    ![Tilføj forbindelse.](../../../../../../translated_images/08-11-add-connection.a2e410ab11c11a4798fe8ac56ba4e9707d1a5079be00f6f91bb187515f756a31.da.png)
+    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26e8df1bbd0948e06aa20aa0dc102faa96c8144722ef7f0b72.da.png)
 
 1. Vælg **Add connection**.
 
 #### Opret Prompt flow
 
-Du har tilføjet en brugerdefineret forbindelse i Azure AI Foundry. Nu skal vi oprette en Prompt flow ved at følge disse trin. Derefter forbinder du denne Prompt flow til den brugerdefinerede forbindelse, så du kan bruge den finjusterede model i Prompt flow.
+Du har tilføjet en brugerdefineret forbindelse i Azure AI Foundry. Lad os nu oprette en Prompt flow ved at følge nedenstående trin. Derefter vil du forbinde denne Prompt flow til den brugerdefinerede forbindelse, så du kan bruge den finjusterede model i Prompt flow.
 
-1. Gå til det Azure AI Foundry-projekt, du har oprettet.
+1. Naviger til det Azure AI Foundry projekt, du oprettede.
 
 1. Vælg **Prompt flow** i venstre sidepanel.
 
 1. Vælg **+ Create** i navigationsmenuen.
 
-    ![Vælg Promptflow.](../../../../../../translated_images/08-12-select-promptflow.1782ec6988841bb53c35011f31fbebc1bdc09c6f4653fea935176212ba608af1.da.png)
+    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5ba79bedfd35e2f2fb430f344844994375680fcfc111a994ae.da.png)
 
 1. Vælg **Chat flow** i navigationsmenuen.
 
-    ![Vælg chat flow.](../../../../../../translated_images/08-13-select-flow-type.f346cc55beed0b2774bd61b2afe86f3640cc772c1715914926333b0e4d6281ee.da.png)
+    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591f6cc6360bc35c8fca8d63519c09111c6c431de9b46eed143.da.png)
 
-1. Indtast **Folder name**, som skal bruges.
+1. Indtast **Folder name**, som du vil bruge.
 
-    ![Indtast navn.](../../../../../../translated_images/08-14-enter-name.e2b324f7734290157520834403e041f46c06cbdfa5633f4c91725f7389b41cf7.da.png)
+    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d824bad779a54e55d808a09394b6b730fbea55d78421f52ff.da.png)
 
 2. Vælg **Create**.
 
 #### Opsæt Prompt flow til at chatte med din brugerdefinerede Phi-3 model
 
-Du skal integrere den finjusterede Phi-3 model i en Prompt flow. Den eksisterende Prompt flow, som følger med, er dog ikke designet til dette formål. Derfor skal du redesigne Prompt flow for at muliggøre integration af den brugerdefinerede model.
+Du skal integrere den finjusterede Phi-3 model i en Prompt flow. Den eksisterende Prompt flow, der leveres, er dog ikke designet til dette formål. Derfor skal du redesigne Prompt flow for at muliggøre integrationen af den brugerdefinerede model.
 
-1. I Prompt flow skal du udføre følgende opgaver for at genskabe den eksisterende flow:
+1. I Prompt flow, udfør følgende opgaver for at genopbygge den eksisterende flow:
 
     - Vælg **Raw file mode**.
-    - Slet al eksisterende kode i filen *flow.dag.yml*.
-    - Tilføj følgende kode til filen *flow.dag.yml*.
+    - Slet al eksisterende kode i *flow.dag.yml* filen.
+    - Tilføj følgende kode til *flow.dag.yml* filen.
 
         ```yml
         inputs:
@@ -714,9 +711,9 @@ Du skal integrere den finjusterede Phi-3 model i en Prompt flow. Den eksisterend
 
     - Vælg **Save**.
 
-    ![Vælg rå fil-tilstand.](../../../../../../translated_images/08-15-select-raw-file-mode.8383d30bf0b893f0f05e340e68fa3631ee2a526b861551865e2e8a5dd6d4b02b.da.png)
+    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985b76e070bf170e1d0d0d26b38d93bc635624642191f715a6d.da.png)
 
-1. Tilføj følgende kode til filen *integrate_with_promptflow.py* for at bruge den brugerdefinerede Phi-3 model i Prompt flow.
+1. Tilføj følgende kode til *integrate_with_promptflow.py* filen for at bruge den brugerdefinerede Phi-3 model i Prompt flow.
 
     ```python
     import logging
@@ -779,27 +776,27 @@ Du skal integrere den finjusterede Phi-3 model i en Prompt flow. Den eksisterend
 
     ```
 
-    ![Indsæt prompt flow kode.](../../../../../../translated_images/08-16-paste-promptflow-code.1e74d673739ae3fc114a386fd7dff65d6f98d8bf69be16d4b577cbb75844ba38.da.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d097779ab1c429be9fc07e3f4171e41fbbfb747a6e755816411e6d.da.png)
 
 > [!NOTE]
 > For mere detaljeret information om brug af Prompt flow i Azure AI Foundry, kan du se [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Vælg **Chat input**, **Chat output** for at aktivere chat med din model.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.71fb7bf702d1fff773d9d929aa482bc1962e8ce36dac04ad9d9b86db8c6bb776.da.png)
+    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03ba022a21159e51d544c6e063e73c10e772c942d4e44da0d30.da.png)
 
-1. Nu er du klar til at chatte med din brugerdefinerede Phi-3 model. I næste øvelse vil du lære, hvordan du starter Prompt flow og bruger den til at chatte med din finjusterede Phi-3 model.
+1. Nu er du klar til at chatte med din brugerdefinerede Phi-3 model. I den næste øvelse vil du lære, hvordan du starter Prompt flow og bruger det til at chatte med din finjusterede Phi-3 model.
 
 > [!NOTE]
 >
-> Den genskabte flow bør se ud som billedet nedenfor:
+> Den genopbyggede flow skulle se ud som billedet nedenfor:
 >
-> ![Flow eksempel.](../../../../../../translated_images/08-18-graph-example.bb35453a6bfee310805715e3ec0678e118273bc32ae8248acfcf8e4c553ed1e5.da.png)
+> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c10b7375192511a8e2aba847e442b294a2e65d88ffac8f63b.da.png)
 >
 
 ### Chat med din brugerdefinerede Phi-3 model
 
-Nu hvor du har finjusteret og integreret din brugerdefinerede Phi-3 model med Prompt flow, er du klar til at begynde at interagere med den. Denne øvelse guider dig gennem processen med at opsætte og starte en chat med din model ved hjælp af Prompt flow. Ved at følge disse trin kan du udnytte din finjusterede Phi-3 models kapaciteter til forskellige opgaver og samtaler.
+Nu hvor du har finjusteret og integreret din brugerdefinerede Phi-3 model med Prompt flow, er du klar til at begynde at interagere med den. Denne øvelse guider dig gennem processen med at opsætte og starte en chat med din model ved hjælp af Prompt flow. Ved at følge disse trin vil du kunne udnytte din finjusterede Phi-3 models fulde potentiale til forskellige opgaver og samtaler.
 
 - Chat med din brugerdefinerede Phi-3 model ved hjælp af Prompt flow.
 
@@ -807,25 +804,25 @@ Nu hvor du har finjusteret og integreret din brugerdefinerede Phi-3 model med Pr
 
 1. Vælg **Start compute sessions** for at starte Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.bf4fd553850fc0efcb8f8fa1e089839f9ea09333f48689aeb8ecce41e4a1ba42.da.png)
+    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b4809b60d75ce9b0ad53e0729cc1449935ccbe90b954401dc.da.png)
 
 1. Vælg **Validate and parse input** for at opdatere parametrene.
 
-    ![Valider input.](../../../../../../translated_images/09-02-validate-input.24092d447308054d25144e73649a9ac630bd895c376297b03d82354090815a97.da.png)
+    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e97038d7529b9060a23dc59d7ddbeb38ac9c4562ef4f5b32f7.da.png)
 
-1. Vælg **Value** for **connection** til den brugerdefinerede forbindelse, du har oprettet. For eksempel *connection*.
+1. Vælg **Value** for **connection** til den brugerdefinerede forbindelse, du oprettede. For eksempel *connection*.
 
-    ![Forbindelse.](../../../../../../translated_images/09-03-select-connection.77f4eef8f74410b4abae1e34ba0f6bc34b3f1390b7158ab4023a08c025ff4993.da.png)
+    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b184402368a6ec383814b139686118331a5b2eefa489678902269dfc.da.png)
 
 #### Chat med din brugerdefinerede model
 
 1. Vælg **Chat**.
 
-    ![Vælg chat.](../../../../../../translated_images/09-04-select-chat.3cd7462ff5c6e3aa0eb686a29b91420a8fdcd3066fba5507dc257d7b91a3c492.da.png)
+    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e636a5e1516b6c64fdf2345ceb3142db2bed93ab7e6f03bbb2.da.png)
 
 1. Her er et eksempel på resultaterne: Nu kan du chatte med din brugerdefinerede Phi-3 model. Det anbefales at stille spørgsmål baseret på de data, der blev brugt til finjusteringen.
 
-    ![Chat med prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.30574a870c00e676916d9afb28b70d3fb90e1f00e73f70413cd6aeed74d9c151.da.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126fa4886e6fd0e7482cfdc6c907fa36f7f2f13d04126f9eda14.da.png)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

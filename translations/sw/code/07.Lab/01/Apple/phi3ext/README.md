@@ -2,47 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T05:05:04+00:00",
+  "translation_date": "2025-07-16T16:55:53+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "sw"
 }
 -->
 # phi3ext README
 
-Hii ni README ya upanuzi wako "phi3ext". Baada ya maelezo mafupi, tunapendekeza kujumuisha sura zifuatazo.
+Hii ni README ya upanuzi wako "phi3ext". Baada ya kuandika maelezo mafupi, tunapendekeza ujumuishe sura zifuatazo.
 
 ## Features
 
-Elezea vipengele maalum vya upanuzi wako, pamoja na skrini zinazoonyesha upanuzi ukiwa unafanya kazi. Njia za picha ni kwa kuzingatia faili hili la README.
+Elezea vipengele maalum vya upanuzi wako, ikiwa ni pamoja na picha za skrini zinazoonyesha upanuzi ukiwa unafanya kazi. Njia za picha ni kwa mujibu wa faili hii ya README.
 
-Kwa mfano, ikiwa kuna folda ndogo ya picha chini ya eneo la kazi la mradi wako wa upanuzi:
+Kwa mfano, ikiwa kuna folda ndogo ya picha chini ya eneo la mradi wa upanuzi wako:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> TIP: Upanuzi mwingi maarufu hutumia michoro inayoendelea. Hii ni njia nzuri ya kuonyesha upanuzi wako! Tunapendekeza michoro mifupi na iliyoelekezwa, rahisi kufuatilia.
+> [!TIP] Vidokezo: Upanuzi mwingi maarufu hutumia michoro ya kuonyesha mabadiliko. Hii ni njia nzuri ya kuonyesha upanuzi wako! Tunapendekeza michoro fupi na iliyoelekezwa vizuri ili iwe rahisi kufuatilia.
 
 ## Requirements
 
-Ikiwa una mahitaji au tegemezi zozote, ongeza sura inayofafanua mahitaji haya na jinsi ya kuyasakinisha na kuyapanga.
+Ikiwa una mahitaji au utegemezi wowote, tafadhali ongeza sura inayofafanua mahitaji haya na jinsi ya kuyasakinisha na kuyapanga.
 
 ## Extension Settings
 
-Ikiwa upanuzi wako umeongeza mipangilio yoyote ya VS Code kupitia `contributes.configuration` extension point, tafadhali jumuisha hapa.
+Ikiwa upanuzi wako umeongeza mipangilio yoyote ya VS Code kupitia `contributes.configuration`, tafadhali jumuisha hapa.
 
 Kwa mfano:
 
 Upanuzi huu umechangia mipangilio ifuatayo:
 
-* `myExtension.enable`: Washa au zima upanuzi huu.
+* `myExtension.enable`: Washa/zima upanuzi huu.
 * `myExtension.thing`: Weka kuwa `blah` kufanya jambo fulani.
 
 ## Known Issues
 
-Kuelezea matatizo yanayojulikana kunaweza kusaidia kupunguza maswali yanayojirudia kutoka kwa watumiaji wa upanuzi wako.
+Kuelezea matatizo yanayojulikana kunaweza kusaidia kupunguza maswali yanayojirudia kutoka kwa watumiaji kuhusu upanuzi wako.
 
 ## Release Notes
 
-Watumiaji watafurahia kuona maelezo ya toleo kila unapoboresha upanuzi wako.
+Watumiaji watafurahia kupata maelezo ya toleo kila unapoboresha upanuzi wako.
 
 ### 1.0.0
 
@@ -60,24 +60,24 @@ Imeongeza vipengele X, Y, na Z.
 
 ## Following extension guidelines
 
-Hakikisha umesoma miongozo ya upanuzi na unafuata mbinu bora za kuunda upanuzi.
+Hakikisha umeisoma mwongozo wa upanuzi na unafuata mbinu bora za kuunda upanuzi.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Unaweza kutumia Visual Studio Code kuandika README yako. Hapa kuna baadhi ya funguo za mkato za mhariri zinazofaa:
+Unaweza kutumia Visual Studio Code kuandika README yako. Hapa kuna baadhi ya njia za mkato za mhariri zinazosaidia:
 
-* Kugawanya mhariri (`Cmd+\` kwenye macOS au `Ctrl+\` kwenye Windows na Linux).
-* Kubadilisha mtazamo wa awali (`Shift+Cmd+V` kwenye macOS au `Shift+Ctrl+V` kwenye Windows na Linux).
-* Bonyeza `Ctrl+Space` (Windows, Linux, macOS) kuona orodha ya vipande vya msimbo wa Markdown.
+* Gawanya mhariri (`Cmd+\` kwenye macOS au `Ctrl+\` kwenye Windows na Linux).
+* Badilisha mtazamo wa awali (`Shift+Cmd+V` kwenye macOS au `Shift+Ctrl+V` kwenye Windows na Linux).
+* Bonyeza `Ctrl+Space` (Windows, Linux, macOS) kuona orodha ya vipande vya msimbo vya Markdown.
 
 ## For more information
 
-* [Markdown Support in Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+* [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
 
 **Furahia!**
 
-**Kisahafu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatuna dhamana kwa maelewano au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

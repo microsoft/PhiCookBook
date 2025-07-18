@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-05-07T10:59:53+00:00",
+  "translation_date": "2025-07-17T05:06:53+00:00",
   "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "de"
 }
 -->
-## **Verwenden Sie Phi-4-multimodal zum Lesen von Bildern und Generieren von Code**
+## **Verwenden Sie Phi-4-multimodal, um Bilder zu lesen und Code zu generieren**
 
-Phi-4-multimodal verfügt über starke Bildlesefähigkeiten. Versuchen wir, die folgenden Funktionen mit Python zu implementieren. Das Bild zeigt eine ChatGPT-Seite.
+Phi-4-multimodal verfügt über starke Fähigkeiten zur Bilderkennung. Lassen Sie uns versuchen, mit Python die folgenden Funktionen zu implementieren. Das Bild zeigt eine ChatGPT-Seite.
 
 ![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.de.png)
 
@@ -68,4 +68,4 @@ print(response)
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

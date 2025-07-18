@@ -2,29 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-05-07T14:30:56+00:00",
+  "translation_date": "2025-07-16T20:55:37+00:00",
   "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
   "language_code": "mo"
 }
 -->
-# **Inference Phi-3 in Local Server**
+# **在本地伺服器上推論 Phi-3**
 
-We can deploy Phi-3 on a local server. Users can choose [Ollama](https://ollama.com) or [LM Studio](https://llamaedge.com) solutions, or they can write their own code. You can connect Phi-3's local services through [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) or [Langchain](https://www.langchain.com/) to build Copilot applications
+我們可以將 Phi-3 部署在本地伺服器上。使用者可以選擇 [Ollama](https://ollama.com) 或 [LM Studio](https://llamaedge.com) 解決方案，或者自行撰寫程式碼。你可以透過 [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) 或 [Langchain](https://www.langchain.com/) 連接 Phi-3 的本地服務，來構建 Copilot 應用程式。
 
+## **使用 Semantic Kernel 存取 Phi-3-mini**
 
-## **Use Semantic Kernel to access Phi-3-mini**
-
-In the Copilot application, we create applications through Semantic Kernel / LangChain. This type of application framework is generally compatible with Azure OpenAI Service / OpenAI models, and can also support open source models on Hugging Face and local models. What should we do if we want to use Semantic Kernel to access Phi-3-mini? Using .NET as an example, we can combine it with the Hugging Face Connector in  Semantic Kernel. By default, it can correspond to the model id on Hugging Face (the first time you use it, the model will be downloaded from Hugging Face, which takes a long time). You can also connect to the built local service. Compared with the two, we recommend using the latter because it has a higher degree of autonomy, especially in enterprise applications.
+在 Copilot 應用程式中，我們透過 Semantic Kernel / LangChain 建立應用程式。這類應用框架通常相容於 Azure OpenAI Service / OpenAI 模型，也能支援 Hugging Face 上的開源模型及本地模型。如果想用 Semantic Kernel 存取 Phi-3-mini 該怎麼做？以 .NET 為例，我們可以將它與 Semantic Kernel 中的 Hugging Face Connector 結合。預設情況下，它會對應 Hugging Face 上的模型 ID（首次使用時，模型會從 Hugging Face 下載，耗時較長）。你也可以連接到已建置的本地服務。兩者相比，我們建議使用後者，因為它擁有更高的自主性，尤其適合企業應用。
 
 ![sk](../../../../../translated_images/sk.d03785c25edc6d445a2e9ae037979e544e0b0c482f43c7617b0324e717b9af62.mo.png)
 
-
-From the figure accessing local services through Semantic Kernel can easily connect to the self-built Phi-3-mini model server. Here is the running result
-
+從圖中可見，透過 Semantic Kernel 存取本地服務能輕鬆連接自建的 Phi-3-mini 模型伺服器。以下是執行結果
 
 ![skrun](../../../../../translated_images/skrun.5aafc1e7197dca2020eefcaeaaee184d29bb0cf1c37b00fd9c79acc23a6dc8d2.mo.png)
 
-***Sample Code*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
+***範例程式碼*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 
-**Disclaimer**:  
-Dis dokumento ha bin tradusí uzando AI traduk-serviso [Co-op Translator](https://github.com/Azure/co-op-translator). Dum nos strebas por precizo, bonvolu konscii ke aŭtomataj tradukoj povas enhavi erarojn aŭ malprecizojn. La originala dokumento en ĝia denaska lingvo devas esti konsiderata la aŭtoritata fonto. Por kritikaj informoj, estas rekomendate profesia homa traduko. Ni ne estas respondeca por ajnaj miskomprenoj aŭ miskomprenoj rezultantaj de la uzo de ĉi tiu traduko.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

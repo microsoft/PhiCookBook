@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-07T14:20:25+00:00",
+  "translation_date": "2025-07-17T02:39:45+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "zh"
 }
 -->
 # **OnnxRuntime GenAI Windows GPU 指南**
 
-本指南介绍了在 Windows 上使用 GPU 运行 ONNX Runtime (ORT) 的步骤，帮助您利用 GPU 加速模型运行，提高性能和效率。
+本指南介绍了在 Windows 上使用 GPU 配置和运行 ONNX Runtime (ORT) 的步骤，帮助您利用 GPU 加速模型，提高性能和效率。
 
-文档内容包括：
+本文档涵盖内容：
 
 - 环境搭建：安装 CUDA、cuDNN 和 ONNX Runtime 等必要依赖的说明。
 - 配置方法：如何配置环境和 ONNX Runtime 以有效利用 GPU 资源。
@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** 建议使用 [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) 作为您的 Python 环境
+   ***Note*** 建议使用 [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) 作为 Python 环境
 
    ```bash
 
@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   ***Reminder*** 如果之前安装过任何 Python 版本的 ONNX 库，请先卸载
+   ***Reminder*** 如果之前安装过任何 Python ONNX 库，请先卸载
 
 ### **2. 使用 winget 安装 CMake**
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ***Reminder*** 安装时请使用默认设置
 
-### **5. 配置 NVIDIA 环境变量**
+### **5. 设置 NVIDIA 环境变量**
 
 将 NVIDIA CUDNN 9.4 的 lib、bin、include 文件复制到 NVIDIA CUDA 12.4 对应目录
 
@@ -89,7 +89,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** 
    
-   1. 请先卸载所有 onnx、onnxruntime 及 onnxruntime-genai 相关库
+   1. 请先卸载所有关于 onnx、onnxruntime 和 onnxruntime-genai 的包
 
    
    ```bash
@@ -98,8 +98,7 @@ CO_OP_TRANSLATOR_METADATA:
    
    ```
 
-   然后卸载所有 onnxruntime 库，例如
-
+   然后卸载所有 onnxruntime 相关库，例如：
 
    ```bash
 
@@ -113,9 +112,9 @@ CO_OP_TRANSLATOR_METADATA:
 
    2. 检查 Visual Studio 扩展支持
 
-   确认在 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras 目录下有 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration 文件夹。
+   确认路径 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras 下存在 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration 文件夹。
    
-   如果找不到，请检查其他 CUDA 工具包驱动文件夹，将 visual_studio_integration 文件夹及其内容复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   如果未找到，请检查其他 CUDA 工具包驱动文件夹，将 visual_studio_integration 文件夹及其内容复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
    - 如果不需要编译，可以跳过此步骤
 
@@ -127,13 +126,13 @@ CO_OP_TRANSLATOR_METADATA:
 
    - 下载 [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - 解压 onnxruntime-win-x64-gpu-1.19.2.zip，重命名为 **ort**，将 ort 文件夹复制到 onnxruntime-genai 目录下
+   - 解压 onnxruntime-win-x64-gpu-1.19.2.zip，重命名为 **ort**，并将 ort 文件夹复制到 onnxruntime-genai 目录下
 
-   - 使用 Windows Terminal，进入 VS 2022 的开发者命令提示符，切换到 onnxruntime-genai 目录
+   - 使用 Windows Terminal，打开 VS 2022 的开发者命令提示符，进入 onnxruntime-genai 目录
 
 ![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.zh.png)
 
-   - 使用您的 Python 环境进行编译
+   - 使用你的 Python 环境进行编译
 
    
    ```bash
@@ -150,4 +149,4 @@ CO_OP_TRANSLATOR_METADATA:
    ```
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

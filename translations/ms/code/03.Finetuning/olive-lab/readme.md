@@ -2,93 +2,93 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T04:27:39+00:00",
+  "translation_date": "2025-07-16T15:56:10+00:00",
   "source_file": "code/03.Finetuning/olive-lab/readme.md",
   "language_code": "ms"
 }
 -->
-# Lab. Optimize AI models for on-device inference
+# Makmal. Optimumkan model AI untuk inferens peranti
 
-## Introduction 
+## Pengenalan
 
 > [!IMPORTANT]
-> This lab requires an **Nvidia A10 or A100 GPU** with associated drivers and CUDA toolkit (version 12+) installed.
+> Makmal ini memerlukan **GPU Nvidia A10 atau A100** dengan pemacu berkaitan dan toolkit CUDA (versi 12+) yang dipasang.
 
 > [!NOTE]
-> This is a **35-minute** lab that will give you a hands-on introduction to the core concepts of optimizing models for on-device inference using OLIVE.
+> Ini adalah makmal **35 minit** yang akan memberi anda pengenalan praktikal kepada konsep teras mengoptimumkan model untuk inferens peranti menggunakan OLIVE.
 
-## Learning Objectives
+## Objektif Pembelajaran
 
-By the end of this lab, you will be able to use OLIVE to:
+Menjelang akhir makmal ini, anda akan dapat menggunakan OLIVE untuk:
 
-- Quantize an AI Model using the AWQ quantization method.
-- Fine-tune an AI model for a specific task.
-- Generate LoRA adapters (fine-tuned model) for efficient on-device inference on the ONNX Runtime.
+- Kuantisasi Model AI menggunakan kaedah kuantisasi AWQ.
+- Melatih semula model AI untuk tugasan tertentu.
+- Menjana penyesuai LoRA (model yang dilatih semula) untuk inferens peranti yang cekap pada ONNX Runtime.
 
-### What is Olive
+### Apa itu Olive
 
-Olive (*O*NNX *live*) is a model optimization toolkit with accompanying CLI that enables you to ship models for the ONNX runtime +++https://onnxruntime.ai+++ with quality and performance.
+Olive (*O*NNX *live*) adalah toolkit pengoptimuman model dengan CLI yang membolehkan anda menghantar model untuk ONNX runtime +++https://onnxruntime.ai+++ dengan kualiti dan prestasi.
 
-![Olive Flow](../../../../../translated_images/olive-flow.5beac74493fb2216eb8578519cfb1c4a1e752a3536bc755c4545bd0959634684.ms.png)
+![Olive Flow](../../../../../translated_images/olive-flow.a47985655a756dcba73521511ea42eef359509a3a33cbd4b9ac04ba433287b80.ms.png)
 
-The input to Olive is typically a PyTorch or Hugging Face model and the output is an optimized ONNX model that runs on a device (deployment target) with the ONNX runtime. Olive optimizes the model for the deployment target’s AI accelerator (NPU, GPU, CPU) provided by hardware vendors such as Qualcomm, AMD, Nvidia, or Intel.
+Input kepada Olive biasanya model PyTorch atau Hugging Face dan outputnya adalah model ONNX yang dioptimumkan yang dijalankan pada peranti (sasaran penyebaran) yang menggunakan ONNX runtime. Olive akan mengoptimumkan model untuk pemecut AI sasaran penyebaran (NPU, GPU, CPU) yang disediakan oleh pembekal perkakasan seperti Qualcomm, AMD, Nvidia atau Intel.
 
-Olive runs a *workflow*, which is an ordered sequence of model optimization tasks called *passes* – examples include: model compression, graph capture, quantization, graph optimization. Each pass has parameters that can be tuned to get the best metrics like accuracy and latency, evaluated by the respective evaluator. Olive uses a search strategy that auto-tunes each pass one by one or groups of passes together.
+Olive melaksanakan *workflow*, iaitu urutan teratur tugas pengoptimuman model individu yang dipanggil *passes* - contoh passes termasuk: pemampatan model, tangkapan graf, kuantisasi, pengoptimuman graf. Setiap pass mempunyai set parameter yang boleh dilaras untuk mencapai metrik terbaik, contohnya ketepatan dan kelewatan, yang dinilai oleh penilai masing-masing. Olive menggunakan strategi carian yang menggunakan algoritma carian untuk melaras automatik setiap pass satu persatu atau set passes bersama-sama.
 
-#### Benefits of Olive
+#### Manfaat Olive
 
-- **Cut down on trial-and-error** time and frustration by automating experimentation with graph optimization, compression, and quantization. Set your quality and performance goals and let Olive find the best model for you.
-- **40+ built-in model optimization components** covering state-of-the-art techniques in quantization, compression, graph optimization, and fine-tuning.
-- **User-friendly CLI** for common optimization tasks, e.g., olive quantize, olive auto-opt, olive finetune.
-- Built-in model packaging and deployment.
-- Supports generating models for **Multi LoRA serving**.
-- Create workflows using YAML/JSON to orchestrate optimization and deployment tasks.
-- **Hugging Face** and **Azure AI** integration.
-- Built-in **caching** to **save costs**.
+- **Kurangkan kekecewaan dan masa** eksperimen manual cuba-cuba dengan teknik berbeza untuk pengoptimuman graf, pemampatan dan kuantisasi. Tetapkan had kualiti dan prestasi anda dan biarkan Olive secara automatik mencari model terbaik untuk anda.
+- **40+ komponen pengoptimuman model terbina dalam** merangkumi teknik terkini dalam kuantisasi, pemampatan, pengoptimuman graf dan latihan semula.
+- **CLI yang mudah digunakan** untuk tugasan pengoptimuman model biasa. Contohnya, olive quantize, olive auto-opt, olive finetune.
+- Pembungkusan dan penyebaran model terbina dalam.
+- Menyokong penjanaan model untuk **Perkhidmatan Multi LoRA**.
+- Membina workflow menggunakan YAML/JSON untuk mengatur tugasan pengoptimuman model dan penyebaran.
+- Integrasi **Hugging Face** dan **Azure AI**.
+- Mekanisme **caching** terbina dalam untuk **menjimatkan kos**.
 
-## Lab Instructions
+## Arahan Makmal
 > [!NOTE]
-> Please ensure you have provisioned your Azure AI Hub and Project and set up your A100 compute as per Lab 1.
+> Sila pastikan anda telah menyediakan Azure AI Hub dan Projek anda serta menyediakan pengkomputeran A100 anda seperti dalam Makmal 1.
 
-### Step 0: Connect to your Azure AI Compute
+### Langkah 0: Sambung ke Azure AI Compute anda
 
-Connect to the Azure AI compute using the remote feature in **VS Code.** 
+Anda akan menyambung ke Azure AI compute menggunakan ciri jauh dalam **VS Code.**
 
-1. Open your **VS Code** desktop application.
-2. Open the **command palette** using **Shift+Ctrl+P**.
-3. Search for **AzureML - remote: Connect to compute instance in New Window** in the command palette.
-4. Follow the prompts to connect to the Compute. You’ll select your Azure Subscription, Resource Group, Project, and Compute name you set up in Lab 1.
-5. Once connected, your Azure ML Compute node will be shown in the **bottom left of Visual Studio Code** `><Azure ML: Compute Name`.
+1. Buka aplikasi desktop **VS Code** anda:
+1. Buka **command palette** menggunakan **Shift+Ctrl+P**
+1. Dalam command palette, cari **AzureML - remote: Connect to compute instance in New Window**.
+1. Ikuti arahan di skrin untuk menyambung ke Compute. Ini melibatkan memilih Langganan Azure, Kumpulan Sumber, Projek dan nama Compute yang anda sediakan dalam Makmal 1.
+1. Setelah anda disambungkan ke nod Azure ML Compute, ia akan dipaparkan di **bahagian bawah kiri Visual Code** `><Azure ML: Compute Name`
 
-### Step 1: Clone this repo
+### Langkah 1: Klon repo ini
 
-In VS Code, open a new terminal with **Ctrl+J** and clone this repo:
+Dalam VS Code, anda boleh buka terminal baru dengan **Ctrl+J** dan klon repo ini:
 
-You should see the prompt in the terminal:
+Dalam terminal anda akan melihat prompt
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
-```  
-Clone the solution  
+```
+Klon penyelesaian
 
 ```bash
 cd ~/localfiles
 git clone https://github.com/microsoft/phi-3cookbook.git
 ```
 
-### Step 2: Open Folder in VS Code
+### Langkah 2: Buka Folder dalam VS Code
 
-To open VS Code in the relevant folder, run this command in the terminal, which opens a new window:
+Untuk membuka VS Code dalam folder yang berkaitan, jalankan arahan berikut dalam terminal, yang akan membuka tetingkap baru:
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
 ```
 
-Alternatively, open the folder by selecting **File** > **Open Folder**.
+Sebagai alternatif, anda boleh membuka folder dengan memilih **File** > **Open Folder**.
 
-### Step 3: Dependencies
+### Langkah 3: Pergantungan
 
-Open a terminal in VS Code on your Azure AI Compute Instance (tip: **Ctrl+J**) and run these commands to install dependencies:
+Buka tetingkap terminal dalam VS Code pada Azure AI Compute Instance anda (petua: **Ctrl+J**) dan jalankan arahan berikut untuk memasang pergantungan:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -99,35 +99,34 @@ az extension add -n ml
 ```
 
 > [!NOTE]
-> Installing all dependencies will take about 5 minutes.
+> Ia akan mengambil masa kira-kira 5 minit untuk memasang semua pergantungan.
 
-In this lab, you’ll download and upload models to the Azure AI Model catalog. To access the catalog, login to Azure using:
+Dalam makmal ini anda akan memuat turun dan memuat naik model ke katalog Model Azure AI. Untuk mengakses katalog model, anda perlu log masuk ke Azure menggunakan:
 
 ```bash
 az login
 ```
 
 > [!NOTE]
-> When logging in, you’ll be asked to select your subscription. Make sure to choose the subscription provided for this lab.
+> Semasa log masuk, anda akan diminta memilih langganan anda. Pastikan anda tetapkan langganan kepada yang disediakan untuk makmal ini.
 
-### Step 4: Execute Olive commands 
+### Langkah 4: Jalankan arahan Olive
 
-Open a terminal in VS Code on your Azure AI Compute Instance (tip: **Ctrl+J**) and activate the `olive-ai` conda environment:
+Buka tetingkap terminal dalam VS Code pada Azure AI Compute Instance anda (petua: **Ctrl+J**) dan pastikan persekitaran `olive-ai` conda diaktifkan:
 
 ```bash
 conda activate olive-ai
 ```
 
-Next, run the following Olive commands:
+Seterusnya, jalankan arahan Olive berikut dalam baris arahan.
 
-1. **Inspect the data:** You will fine-tune the Phi-3.5-Mini model to specialize in answering travel-related questions. The code below shows the first few records of the dataset in JSON lines format:
-
+1. **Periksa data:** Dalam contoh ini, anda akan melatih semula model Phi-3.5-Mini supaya ia khusus menjawab soalan berkaitan perjalanan. Kod di bawah memaparkan beberapa rekod pertama dataset, yang dalam format baris JSON:
+   
     ```bash
     head data/data_sample_travel.jsonl
     ```
-
-2. **Quantize the model:** Before training, quantize the model using Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ quantizes weights by considering activations during inference, which better preserves accuracy than traditional methods.
-
+1. **Kuantisasi model:** Sebelum melatih model, anda kuantisasi terlebih dahulu dengan arahan berikut yang menggunakan teknik dipanggil Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ mengkuantisasi berat model dengan mengambil kira aktivasi yang dihasilkan semasa inferens. Ini bermakna proses kuantisasi mengambil kira taburan data sebenar dalam aktivasi, menghasilkan pemeliharaan ketepatan model yang lebih baik berbanding kaedah kuantisasi berat tradisional.
+    
     ```bash
     olive quantize \
        --model_name_or_path microsoft/Phi-3.5-mini-instruct \
@@ -136,13 +135,13 @@ Next, run the following Olive commands:
        --output_path models/phi/awq \
        --log_level 1
     ```
+    
+    Ia mengambil masa **~8 minit** untuk melengkapkan kuantisasi AWQ, yang akan **mengurangkan saiz model dari ~7.5GB ke ~2.5GB**.
+   
+   Dalam makmal ini, kami tunjukkan cara memasukkan model dari Hugging Face (contoh: `microsoft/Phi-3.5-mini-instruct`). Walau bagaimanapun, Olive juga membolehkan anda memasukkan model dari katalog Azure AI dengan mengemas kini argumen `model_name_or_path` kepada ID aset Azure AI (contoh: `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
 
-    AWQ quantization takes about **8 minutes** and reduces the model size from roughly 7.5GB to 2.5GB.
-
-   In this lab, we demonstrate how to input models from Hugging Face (e.g., `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
-
-1. **Train the model:** Next, the `olive finetune` command fine-tunes the quantized model. Quantizing before fine-tuning yields better accuracy since fine-tuning recovers some quantization loss.
-
+1. **Latih model:** Seterusnya, arahan `olive finetune` melatih semula model yang telah dikuantisasi. Kuantisasi model *sebelum* latihan semula berbanding selepasnya memberikan ketepatan yang lebih baik kerana proses latihan semula memulihkan sebahagian kehilangan akibat kuantisasi.
+    
     ```bash
     olive finetune \
         --method lora \
@@ -154,10 +153,10 @@ Next, run the following Olive commands:
         --output_path ./models/phi/ft \
         --log_level 1
     ```
+    
+    Ia mengambil masa **~6 minit** untuk melengkapkan latihan semula (dengan 100 langkah).
 
-    Fine-tuning takes about **6 minutes** (with 100 steps).
-
-3. **Optimize:** After training, optimize the model using Olive’s `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` arguments. For this lab, we’ll use CPU.
+1. **Optimumkan:** Dengan model yang telah dilatih, anda kini mengoptimumkan model menggunakan arahan `auto-opt` Olive, yang akan menangkap graf ONNX dan secara automatik melakukan beberapa pengoptimuman untuk meningkatkan prestasi model bagi CPU dengan memampatkan model dan melakukan penggabungan. Perlu diingat, anda juga boleh mengoptimumkan untuk peranti lain seperti NPU atau GPU dengan hanya mengemas kini argumen `--device` dan `--provider` - tetapi untuk tujuan makmal ini kita akan gunakan CPU.
 
     ```bash
     olive auto-opt \
@@ -169,12 +168,12 @@ Next, run the following Olive commands:
        --output_path models/phi/onnx-ao \
        --log_level 1
     ```
+    
+    Ia mengambil masa **~5 minit** untuk melengkapkan pengoptimuman.
 
-    Optimization takes about **5 minutes**.
+### Langkah 5: Ujian pantas inferens model
 
-### Step 5: Model inference quick test
-
-To test the model inference, create a Python file named **app.py** in your folder and paste the following code:
+Untuk menguji inferens model, buat fail Python dalam folder anda bernama **app.py** dan salin tampal kod berikut:
 
 ```python
 import onnxruntime_genai as og
@@ -210,28 +209,28 @@ while not generator.is_done():
 print("\n")
 ```
 
-Run the code with:
+Jalankan kod menggunakan:
 
 ```bash
 python app.py
 ```
 
-### Step 6: Upload model to Azure AI
+### Langkah 6: Muat naik model ke Azure AI
 
-Uploading your model to the Azure AI model repository allows sharing with your team and manages version control. To upload the model, run:
+Muat naik model ke repositori model Azure AI membolehkan model dikongsi dengan ahli pasukan pembangunan lain dan juga mengurus kawalan versi model. Untuk memuat naik model, jalankan arahan berikut:
 
 > [!NOTE]
-> Update the `{}` placeholders with the name of your resource group and Azure AI Project Name. 
+> Kemas kini tempat letak `{}` dengan nama kumpulan sumber dan Nama Projek Azure AI anda.
 
-To find your resource group `"resourceGroup"` and Azure AI Project name, then run:
+Untuk mencari kumpulan sumber `"resourceGroup"` dan Nama Projek Azure AI, jalankan arahan berikut
 
 ```
 az ml workspace show
 ```
 
-Alternatively, go to +++ai.azure.com+++ and select **management center** > **project** > **overview**.
+Atau dengan pergi ke +++ai.azure.com+++ dan memilih **management center** **project** **overview**
 
-Replace the `{}` placeholders with your resource group and Azure AI Project names.
+Kemas kini tempat letak `{}` dengan nama kumpulan sumber dan Nama Projek Azure AI anda.
 
 ```bash
 az ml model create \
@@ -241,8 +240,7 @@ az ml model create \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
 ```
-
-You can then view and deploy your uploaded model at https://ml.azure.com/model/list
+Anda kemudian boleh melihat model yang dimuat naik dan menyebarkan model anda di https://ml.azure.com/model/list
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

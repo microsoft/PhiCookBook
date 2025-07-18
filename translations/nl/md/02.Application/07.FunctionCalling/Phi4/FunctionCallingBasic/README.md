@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:08:42+00:00",
+  "translation_date": "2025-07-17T05:16:12+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "nl"
 }
 -->
-## **Functie-aanroepen in Phi-4-mini**
+## **Functieaanroepen in Phi-4-mini**
 
-Functie-aanroepen verschenen voor het eerst in de Phi Family, en nu kun je ze gebruiken via Phi-4-mini.
+Functieaanroepen verschenen voor het eerst in de Phi Family, en nu kun je ze ook gebruiken in Phi-4-mini.
 
-Dit voorbeeld laat de simulatie van Premier League-resultaten zien. Het doel is dat Phi-4-mini realtime wedstrijdinformatie levert. Hieronder staat de voorbeeldcode:
+Dit voorbeeld laat zien hoe je Premier League-resultaten simuleert. Het doel is dat Phi-4-mini realtime informatie over wedstrijden levert. Hieronder staat de voorbeeldcode:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor belangrijke informatie wordt een professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

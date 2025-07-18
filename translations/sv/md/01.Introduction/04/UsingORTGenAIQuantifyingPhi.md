@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:33:18+00:00",
+  "translation_date": "2025-07-16T22:21:25+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "sv"
 }
 -->
-## **Hur man använder Model Builder för att kvantifiera Phi-3.5**
+## **Hur man använder Model Builder för att kvantisera Phi-3.5**
 
-Model Builder stödjer nu ONNX-modellkvantisering för Phi-3.5 Instruct och Phi-3.5-Vision
+Model Builder stöder nu ONNX-modellkvantisering för Phi-3.5 Instruct och Phi-3.5-Vision
 
 ### **Phi-3.5-Instruct**
 
-**CPU-accelererad konvertering av kvantifierad INT4**
+**CPU-accelererad konvertering till kvantiserad INT4**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**CUDA-accelererad konvertering av kvantifierad INT4**
+**CUDA-accelererad konvertering till kvantiserad INT4**
 
 ```bash
 
@@ -39,7 +39,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 **Phi-3.5-vision-instruct-onnx-cpu-fp32**
 
-1. Sätt miljön i terminalen
+1. Sätt upp miljön i terminalen
 
 ```bash
 
@@ -73,13 +73,13 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ```
 
-### **Observera:**
+### **Notera:**
 
-1. Model Builder stödjer för närvarande konvertering av Phi-3.5-Instruct och Phi-3.5-Vision, men inte Phi-3.5-MoE
+1. Model Builder stöder för närvarande konvertering av Phi-3.5-Instruct och Phi-3.5-Vision, men inte Phi-3.5-MoE
 
-2. För att använda ONNX:s kvantifierade modell kan du använda den via Generative AI extensions for onnxruntime SDK
+2. För att använda ONNX:s kvantiserade modell kan du använda den via Generative AI extensions for onnxruntime SDK
 
-3. Vi behöver ta hänsyn till mer ansvarsfull AI, så efter modellkvantiseringskonverteringen rekommenderas det att göra mer omfattande testning av resultaten
+3. Vi behöver ta hänsyn till mer ansvarsfull AI, så efter modellkvantiseringen rekommenderas det att genomföra mer noggranna tester av resultaten
 
 4. Genom att kvantisera CPU INT4-modellen kan vi distribuera den till Edge-enheter, vilket ger bättre användningsscenarier, därför har vi slutfört Phi-3.5-Instruct runt INT4
 

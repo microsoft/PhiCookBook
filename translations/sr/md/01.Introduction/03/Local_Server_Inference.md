@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-05-09T12:09:28+00:00",
+  "translation_date": "2025-07-16T20:59:24+00:00",
   "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
   "language_code": "sr"
 }
 -->
-# **Inferencija Phi-3 na lokalnom serveru**
+# **Инференција Phi-3 на локалном серверу**
 
-Možemo da pokrenemo Phi-3 na lokalnom serveru. Korisnici mogu da izaberu rešenja kao što su [Ollama](https://ollama.com) ili [LM Studio](https://llamaedge.com), ili mogu da napišu sopstveni kod. Phi-3 lokalne servise možete povezati preko [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) ili [Langchain](https://www.langchain.com/) kako biste napravili Copilot aplikacije.
+Можемо да покренемо Phi-3 на локалном серверу. Корисници могу да изаберу решења као што су [Ollama](https://ollama.com) или [LM Studio](https://llamaedge.com), или могу написати свој код. Можете повезати локалне сервисе Phi-3 преко [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) или [Langchain](https://www.langchain.com/) како бисте направили Copilot апликације.
 
-## **Korišćenje Semantic Kernel za pristup Phi-3-mini**
+## **Коришћење Semantic Kernel за приступ Phi-3-mini**
 
-U Copilot aplikaciji pravimo aplikacije preko Semantic Kernel / LangChain. Ovaj tip okvira za aplikacije je uglavnom kompatibilan sa Azure OpenAI servisom / OpenAI modelima, a može podržavati i open source modele sa Hugging Face i lokalne modele. Šta treba da uradimo ako želimo da koristimo Semantic Kernel za pristup Phi-3-mini? Koristeći .NET kao primer, možemo ga kombinovati sa Hugging Face Connector u Semantic Kernel-u. Po default-u, to može da odgovara model id-u na Hugging Face-u (pri prvom korišćenju, model će biti preuzet sa Hugging Face-a, što može potrajati). Takođe, možete se povezati i na lokalno izgrađeni servis. Preporučujemo korišćenje ovog drugog jer pruža veći stepen autonomije, posebno u poslovnim aplikacijama.
+У Copilot апликацији креирамо апликације преко Semantic Kernel / LangChain. Овај тип апликационог оквира је генерално компатибилан са Azure OpenAI Service / OpenAI моделима, а може подржати и open source моделе са Hugging Face и локалне моделе. Шта треба да урадимо ако желимо да користимо Semantic Kernel за приступ Phi-3-mini? Уз пример .NET-а, можемо га комбиновати са Hugging Face Connector-ом у Semantic Kernel-у. По дифолту, он одговара моделу на Hugging Face (при првом коришћењу модел ће бити преузет са Hugging Face-а, што може потрајати). Такође можете да се повежете на изграђени локални сервис. У поређењу са ова два, препоручујемо коришћење другог јер пружа већу аутономију, посебно у пословним апликацијама.
 
-![sk](../../../../../translated_images/sk.c244b32f4811c6f0938b9e95b0b2f4b28105bff6495bdc3b24cd42b3e3e89bb9.sr.png)
+![sk](../../../../../translated_images/sk.d03785c25edc6d445a2e9ae037979e544e0b0c482f43c7617b0324e717b9af62.sr.png)
 
-Sa slike se vidi da pristup lokalnim servisima preko Semantic Kernel-a lako povezuje sa samostalno izgrađenim Phi-3-mini serverskim modelom. Ovo je rezultat pokretanja:
+Са слике се види да приступ локалним сервисима преко Semantic Kernel-а лако повезује са самостално изграђеним Phi-3-mini сервером модела. Ево резултата извршавања:
 
-![skrun](../../../../../translated_images/skrun.fb7a635a22ae8b7919d6e15c0eb27262526ed69728c5a1d2773a97d4562657c7.sr.png)
+![skrun](../../../../../translated_images/skrun.5aafc1e7197dca2020eefcaeaaee184d29bb0cf1c37b00fd9c79acc23a6dc8d2.sr.png)
 
-***Sample Code*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
+***Пример кода*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетом. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне интерпретације настале употребом овог превода.
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

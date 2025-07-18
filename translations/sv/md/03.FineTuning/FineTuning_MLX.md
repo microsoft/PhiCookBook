@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:43:21+00:00",
+  "translation_date": "2025-07-17T08:00:35+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "sv"
 }
 -->
-# **Finjustera Phi-3 med Apple MLX Framework**
+# **Finjustering av Phi-3 med Apple MLX Framework**
 
-Vi kan genomföra finjustering kombinerat med Lora via Apple MLX Frameworks kommandorad. (Om du vill veta mer om hur MLX Framework fungerar, läs [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+Vi kan genomföra finjustering kombinerat med Lora via Apple MLX Frameworks kommandorad. (Om du vill veta mer om hur MLX Framework fungerar, läs gärna [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
 
-## **1. Datapreparation**
+## **1. Datapreparering**
 
 Som standard kräver MLX Framework jsonl-format för train, test och eval, och kombineras med Lora för att slutföra finjusteringsjobb.
 
 
 ### ***Note:***
 
-1. jsonl-dataformat ：
+1. jsonl dataformat ：
 
 
 ```json
@@ -31,7 +31,7 @@ Som standard kräver MLX Framework jsonl-format för train, test och eval, och k
 
 ```
 
-2. Vårt exempel använder [TruthfulQA:s data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), men mängden data är relativt liten, så finjusteringsresultaten är inte nödvändigtvis de bästa. Vi rekommenderar att användare använder bättre data baserat på sina egna scenarier för att slutföra.
+2. Vårt exempel använder [TruthfulQA:s data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), men mängden data är relativt begränsad, så finjusteringsresultaten är inte nödvändigtvis de bästa. Vi rekommenderar att användare använder bättre data baserat på sina egna scenarier för att slutföra.
 
 3. Dataformatet är anpassat till Phi-3-mallen
 
@@ -155,10 +155,10 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Du kan försöka jämföra resultaten mellan finjusteringen och originalmodellen
+Du kan prova att jämföra resultaten från finjusteringen med originalmodellen
 
 
-## **4. Slå ihop adaptrar för att generera nya modeller**
+## **4. Slå ihop adapters för att generera nya modeller**
 
 
 ```bash
@@ -186,11 +186,11 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Note:*** 
 
-1. Stöder nu kvantisering för fp32, fp16 och INT 8
+1. Stöder nu kvantiseringskonvertering av fp32, fp16 och INT 8
 
 2. Den sammanslagna modellen saknar tokenizer.model, ladda ner den från https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-sätt upp en [Ollma Model](https://ollama.com/)
+ställ in en [Ollma Model](https://ollama.com/)
 
 
 ```txt
@@ -214,4 +214,4 @@ kör kommando i terminalen
 Grattis! Bemästra finjustering med MLX Framework
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

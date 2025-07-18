@@ -2,66 +2,66 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-  "translation_date": "2025-05-09T18:55:39+00:00",
+  "translation_date": "2025-07-17T03:03:59+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
   "language_code": "sr"
 }
 -->
-# Korišćenje Windows GPU za kreiranje Prompt flow rešenja sa Phi-3.5-Instruct ONNX
+# Коришћење Windows GPU-а за креирање Prompt flow решења са Phi-3.5-Instruct ONNX
 
-Sledeći dokument je primer kako koristiti PromptFlow sa ONNX (Open Neural Network Exchange) za razvoj AI aplikacija zasnovanih na Phi-3 modelima.
+Следећи документ је пример како користити PromptFlow са ONNX (Open Neural Network Exchange) за развој AI апликација заснованих на Phi-3 моделима.
 
-PromptFlow je paket razvojnih alata dizajniran da pojednostavi ceo razvojni ciklus AI aplikacija zasnovanih na LLM (Large Language Model), od ideje i prototipa do testiranja i evaluacije.
+PromptFlow је скуп алата за развој дизајниран да поједностави цео циклус развоја AI апликација заснованих на LLM-овима (Large Language Model), од идеје и прототиповања до тестирања и евалуације.
 
-Integracijom PromptFlow sa ONNX, programeri mogu:
+Интеграцијом PromptFlow-а са ONNX-ом, програмери могу:
 
-- Optimizovati performanse modela: Iskoristiti ONNX za efikasno izvođenje modela i implementaciju.
-- Pojednostaviti razvoj: Koristiti PromptFlow za upravljanje radnim tokovima i automatizaciju ponavljajućih zadataka.
-- Poboljšati saradnju: Omogućiti bolju saradnju među članovima tima kroz jedinstveno razvojno okruženje.
+- Оптимизовати перформансе модела: Искористити ONNX за ефикасно извођење и имплементацију модела.
+- Поједноставити развој: Користити PromptFlow за управљање током рада и аутоматизацију понављајућих задатака.
+- Побољшати сарадњу: Олакшати бољу сарадњу међу члановима тима пружајући јединствено развојно окружење.
 
-**Prompt flow** je paket razvojnih alata dizajniran da pojednostavi ceo razvojni ciklus AI aplikacija zasnovanih na LLM, od ideje, prototipa, testiranja, evaluacije do implementacije u produkciju i praćenja. Olakšava prompt inženjering i omogućava vam da pravite LLM aplikacije sa kvalitetom za produkciju.
+**Prompt flow** је скуп алата за развој дизајниран да поједностави цео циклус развоја AI апликација заснованих на LLM-овима, од идеје, прототиповања, тестирања, евалуације до производног распореда и праћења. Чини инжењеринг упита знатно једноставнијим и омогућава вам да градите LLM апликације производног квалитета.
 
-Prompt flow može da se poveže sa OpenAI, Azure OpenAI Service i prilagodljivim modelima (Huggingface, lokalni LLM/SLM). Planiramo da implementiramo kvantizovani Phi-3.5 ONNX model u lokalne aplikacije. Prompt flow nam može pomoći da bolje isplaniramo poslovanje i završimo lokalna rešenja bazirana na Phi-3.5. U ovom primeru ćemo kombinovati ONNX Runtime GenAI biblioteku da završimo Prompt flow rešenje bazirano na Windows GPU.
+Prompt flow може да се повеже са OpenAI, Azure OpenAI Service и прилагодљивим моделима (Huggingface, локални LLM/SLM). Надамо се да ћемо имплементирати квантовани ONNX модел Phi-3.5 у локалне апликације. Prompt flow нам може помоћи да боље испланирамо пословање и завршимо локална решења заснована на Phi-3.5. У овом примеру ћемо комбиновати ONNX Runtime GenAI библиотеку да завршимо Prompt flow решење засновано на Windows GPU-у.
 
-## **Instalacija**
+## **Инсталација**
 
-### **ONNX Runtime GenAI za Windows GPU**
+### **ONNX Runtime GenAI за Windows GPU**
 
-Pročitajte ovaj vodič za podešavanje ONNX Runtime GenAI za Windows GPU [kliknite ovde](./ORTWindowGPUGuideline.md)
+Прочитајте овај водич за подешавање ONNX Runtime GenAI за Windows GPU [кликните овде](./ORTWindowGPUGuideline.md)
 
-### **Podešavanje Prompt flow u VSCode**
+### **Подешавање Prompt flow у VSCode**
 
-1. Instalirajte Prompt flow VS Code ekstenziju
+1. Инсталирајте Prompt flow VS Code екстензију
 
-![pfvscode](../../../../../../translated_images/pfvscode.79f42ae5dd93ed35c19d6d978ae75831fef40e0b8440ee48b893b5a0597d2260.sr.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.sr.png)
 
-2. Nakon instalacije Prompt flow VS Code ekstenzije, kliknite na ekstenziju i izaberite **Installation dependencies** pratite ovaj vodič da instalirate Prompt flow SDK u vašem okruženju
+2. Након инсталације Prompt flow VS Code екстензије, кликните на екстензију и изаберите **Installation dependencies** пратите овај водич да инсталирате Prompt flow SDK у вашем окружењу
 
-![pfsetup](../../../../../../translated_images/pfsetup.0c82d99c7760aac29833b37faf4329e67e22279b1c5f37a73724dfa9ebaa32ee.sr.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.sr.png)
 
-3. Preuzmite [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) i otvorite ovaj primer u VS Code
+3. Преузмите [пример кода](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) и отворите га у VS Code-у
 
-![pfsample](../../../../../../translated_images/pfsample.7bf40b133a558d86356dd6bc0e480bad2659d9c5364823dae9b3e6784e6f2d25.sr.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.sr.png)
 
-4. Otvorite **flow.dag.yaml** da izaberete vaše Python okruženje
+4. Отворите **flow.dag.yaml** да изаберете ваше Python окружење
 
-![pfdag](../../../../../../translated_images/pfdag.c5eb356fa3a96178cd594de9a5da921c4bbe646a9946f32aa20d344ccbeb51a0.sr.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.sr.png)
 
-   Otvorite **chat_phi3_ort.py** da promenite lokaciju Phi-3.5-instruct ONNX modela
+   Отворите **chat_phi3_ort.py** да промените локацију вашег Phi-3.5-instruct ONNX модела
 
-![pfphi](../../../../../../translated_images/pfphi.fff4b0afea47c92c8481174dbf3092823906fca5b717fc642f78947c3e5bbb39.sr.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.sr.png)
 
-5. Pokrenite vaš prompt flow za testiranje
+5. Покрените ваш prompt flow за тестирање
 
-Otvorite **flow.dag.yaml** i kliknite na vizuelni editor
+Отворите **flow.dag.yaml** и кликните на визуелни едитор
 
-![pfv](../../../../../../translated_images/pfv.7af6ecd65784a98558b344ba69b5ba6233876823fb435f163e916a632394fc1e.sr.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.sr.png)
 
-nakon klika, pokrenite da testirate
+Након клика, покрените га за тестирање
 
-![pfflow](../../../../../../translated_images/pfflow.9697e0fda67794bb0cf4b78d52e6f5a42002eec935bc2519933064afbbdd34f0.sr.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.sr.png)
 
-1. Možete pokrenuti batch u terminalu da proverite više rezultata
+1. Можете покренути batch у терминалу да проверите више резултата
 
 
 ```bash
@@ -70,10 +70,10 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 ```
 
-Rezultate možete proveriti u vašem podrazumevanom pregledaču
+Резултате можете проверити у вашем подразумеваном прегледачу
 
 
-![pfresult](../../../../../../translated_images/pfresult.972eb57dd5bec646e1aa01148991ba8959897efea396e42cf9d7df259444878d.sr.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.sr.png)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне тумачења која произилазе из употребе овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

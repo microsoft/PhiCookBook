@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-05-07T10:40:36+00:00",
+  "translation_date": "2025-07-16T21:00:15+00:00",
   "source_file": "md/01.Introduction/03/MLX_Inference.md",
   "language_code": "es"
 }
 -->
-# **Inferencia Phi-3 con Apple MLX Framework**
+# **Inferencia Phi-3 con el Framework Apple MLX**
 
-## **Qué es MLX Framework**
+## **Qué es el Framework MLX**
 
 MLX es un framework de arrays para investigación en aprendizaje automático en Apple silicon, desarrollado por el equipo de investigación en machine learning de Apple.
 
-MLX está diseñado por investigadores de machine learning para investigadores de machine learning. El framework busca ser fácil de usar, pero a la vez eficiente para entrenar y desplegar modelos. El diseño del framework es conceptualmente simple. Nuestro objetivo es facilitar que los investigadores puedan extender y mejorar MLX para explorar nuevas ideas rápidamente.
+MLX está diseñado por investigadores de machine learning para investigadores de machine learning. El framework busca ser fácil de usar, pero a la vez eficiente para entrenar y desplegar modelos. El diseño del framework es conceptualmente simple. Nuestra intención es facilitar que los investigadores puedan extender y mejorar MLX con el objetivo de explorar nuevas ideas rápidamente.
 
-Los LLMs pueden acelerarse en dispositivos Apple Silicon mediante MLX, y los modelos pueden ejecutarse localmente de manera muy conveniente.
+Los LLMs pueden acelerarse en dispositivos Apple Silicon mediante MLX, y los modelos pueden ejecutarse localmente de forma muy conveniente.
 
 ## **Usando MLX para inferir Phi-3-mini**
 
@@ -24,7 +24,6 @@ Los LLMs pueden acelerarse en dispositivos Apple Silicon mediante MLX, y los mod
 1. Python 3.11.x  
 2. Instala la librería MLX
 
-
 ```bash
 
 pip install mlx-lm
@@ -32,7 +31,6 @@ pip install mlx-lm
 ```
 
 ### **2. Ejecutando Phi-3-mini en Terminal con MLX**
-
 
 ```bash
 
@@ -46,19 +44,17 @@ El resultado (mi entorno es Apple M1 Max, 64GB) es
 
 ### **3. Cuantizando Phi-3-mini con MLX en Terminal**
 
-
 ```bash
 
 python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***Note：*** El modelo puede cuantizarse usando mlx_lm.convert, y la cuantización por defecto es INT4. Este ejemplo cuantiza Phi-3-mini a INT4.
+***Nota:*** El modelo puede cuantizarse mediante mlx_lm.convert, y la cuantización por defecto es INT4. Este ejemplo cuantiza Phi-3-mini a INT4.
 
-El modelo puede cuantizarse con mlx_lm.convert, y la cuantización predeterminada es INT4. En este ejemplo se cuantiza Phi-3-mini a INT4. Después de la cuantización, se almacenará en el directorio por defecto ./mlx_model
+El modelo puede cuantizarse mediante mlx_lm.convert, y la cuantización por defecto es INT4. En este ejemplo se cuantiza Phi-3-mini a INT4. Después de la cuantización, se almacenará en el directorio por defecto ./mlx_model
 
 Podemos probar el modelo cuantizado con MLX desde la terminal
-
 
 ```bash
 
@@ -70,20 +66,17 @@ El resultado es
 
 ![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.es.png)
 
-
 ### **4. Ejecutando Phi-3-mini con MLX en Jupyter Notebook**
-
 
 ![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.es.png)
 
-***Note:*** Por favor revisa este ejemplo [click this link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
-
+***Nota:*** Por favor, revisa este ejemplo [haz clic en este enlace](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
 ## **Recursos**
 
-1. Aprende sobre Apple MLX Framework [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)
+1. Aprende sobre el Framework Apple MLX [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)
 
 2. Repositorio Apple MLX en GitHub [https://github.com/ml-explore](https://github.com/ml-explore)
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

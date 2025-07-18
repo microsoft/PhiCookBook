@@ -2,107 +2,107 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-05-09T22:22:23+00:00",
+  "translation_date": "2025-07-17T09:45:46+00:00",
   "source_file": "md/03.FineTuning/Introduce_AzureML.md",
   "language_code": "ms"
 }
 -->
-# **הכרת שירות Azure Machine Learning**
+# **Memperkenalkan Perkhidmatan Pembelajaran Mesin Azure**
 
-[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) הוא שירות ענן שמאיץ ומנהל את מחזור החיים של פרויקטים בתחום למידת מכונה (ML).
+[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) adalah perkhidmatan awan untuk mempercepat dan mengurus kitar hayat projek pembelajaran mesin (ML).
 
-מקצועני ML, מדעני נתונים ומהנדסים יכולים להשתמש בו בעבודתם היומיומית כדי:
+Profesional ML, saintis data, dan jurutera boleh menggunakannya dalam aliran kerja harian mereka untuk:
 
-- לאמן ולפרוס מודלים.
-- לנהל תהליכי Machine Learning Operations (MLOps).
-- ניתן ליצור מודל ב-Azure Machine Learning או להשתמש במודל שנבנה בפלטפורמה בקוד פתוח, כמו PyTorch, TensorFlow או scikit-learn.
-- כלי MLOps עוזרים במעקב, אימון מחדש ופריסה חוזרת של מודלים.
+- Melatih dan menyebarkan model.
+- Mengurus operasi pembelajaran mesin (MLOps).
+- Anda boleh mencipta model dalam Azure Machine Learning atau menggunakan model yang dibina dari platform sumber terbuka, seperti PyTorch, TensorFlow, atau scikit-learn.
+- Alat MLOps membantu anda memantau, melatih semula, dan menyebarkan semula model.
 
-## למי מיועד Azure Machine Learning?
+## Siapa yang sesuai menggunakan Azure Machine Learning?
 
-**מדעני נתונים ומהנדסי ML**
+**Saintis Data dan Jurutera ML**
 
-הם יכולים להשתמש בכלים שמאיצים ומאוטומטים את תהליכי העבודה היומיומיים שלהם.  
-Azure ML מספק תכונות להבטחת הוגנות, להסבריות, למעקב ולביקורת.
+Mereka boleh menggunakan alat untuk mempercepat dan mengautomasikan aliran kerja harian mereka.  
+Azure ML menyediakan ciri untuk keadilan, penjelasan, penjejakan, dan audit.
 
-**מפתחי אפליקציות:**  
-יכולים לשלב מודלים באפליקציות או בשירותים בצורה חלקה.
+**Pembangun Aplikasi:**  
+Mereka boleh mengintegrasikan model ke dalam aplikasi atau perkhidmatan dengan lancar.
 
-**מפתחי פלטפורמה**
+**Pembangun Platform**
 
-יש להם גישה למערך כלים חזק הנתמך על ידי Azure Resource Manager APIs יציבים.  
-כלים אלו מאפשרים בנייה של כלי ML מתקדמים.
+Mereka mempunyai akses kepada set alat yang kukuh disokong oleh API Azure Resource Manager yang tahan lama.  
+Alat ini membolehkan pembinaan alat ML yang canggih.
 
-**ארגונים**
+**Perusahaan**
 
-עובדים בענן Microsoft Azure, ומרוויחים מאבטחה מוכרת ובקרת גישה מבוססת תפקידים.  
-ניתן להגדיר פרויקטים לשליטה בגישה לנתונים מוגנים ולפעולות ספציפיות.
+Bekerja dalam awan Microsoft Azure, perusahaan mendapat manfaat daripada keselamatan yang dikenali dan kawalan akses berasaskan peranan.  
+Sediakan projek untuk mengawal akses kepada data yang dilindungi dan operasi tertentu.
 
-## פרודוקטיביות לכל חברי הצוות  
-פרויקטי ML לרוב דורשים צוות עם מגוון מיומנויות לבנייה ותחזוקה.
+## Produktiviti untuk Semua Ahli Pasukan  
+Projek ML sering memerlukan pasukan dengan pelbagai kemahiran untuk membina dan menyelenggara.
 
-Azure ML מספק כלים שמאפשרים לך:  
-- לשתף פעולה עם הצוות דרך פנקסי הערות משותפים, משאבי חישוב, חישוב ללא שרת, נתונים וסביבות.  
-- לפתח מודלים עם הוגנות, הסבריות, מעקב וביקורת כדי לעמוד בדרישות שייכות וביקורת.  
-- לפרוס מודלי ML במהירות ובקלות בקנה מידה, ולנהל ולפקח עליהם ביעילות באמצעות MLOps.  
-- להריץ עומסי עבודה של למידת מכונה בכל מקום עם ממשל, אבטחה וציות מובנים.
+Azure ML menyediakan alat yang membolehkan anda:  
+- Bekerjasama dengan pasukan anda melalui buku nota berkongsi, sumber pengkomputeran, pengkomputeran tanpa pelayan, data, dan persekitaran.  
+- Membangunkan model dengan keadilan, penjelasan, penjejakan, dan audit untuk memenuhi keperluan keturunan dan pematuhan audit.  
+- Menyebarkan model ML dengan cepat dan mudah pada skala besar, serta mengurus dan mengawalnya dengan cekap menggunakan MLOps.  
+- Menjalankan beban kerja pembelajaran mesin di mana-mana dengan tadbir urus, keselamatan, dan pematuhan terbina dalam.
 
-## כלים חוצי פלטפורמות
+## Alat Platform Serasi Silang
 
-כל חבר צוות ML יכול להשתמש בכלים המועדפים עליו כדי לבצע את העבודה.  
-בין אם אתה מריץ ניסויים מהירים, מכוון פרמטרים, בונה צינורות עבודה או מנהל אינפרנסים, ניתן להשתמש בממשקים מוכרים כמו:  
+Sesiapa sahaja dalam pasukan ML boleh menggunakan alat pilihan mereka untuk menyelesaikan tugasan.  
+Sama ada anda menjalankan eksperimen pantas, penyetelan hiperparameter, membina saluran paip, atau mengurus inferens, anda boleh menggunakan antara muka yang biasa termasuk:  
 - Azure Machine Learning Studio  
 - Python SDK (v2)  
 - Azure CLI (v2)  
 - Azure Resource Manager REST APIs
 
-כשאתה מחדד מודלים ומשתף פעולה לאורך מחזור הפיתוח, תוכל לשתף ולמצוא נכסים, משאבים ומדדים בממשק Azure Machine Learning studio.
+Semasa anda memperhalusi model dan bekerjasama sepanjang kitaran pembangunan, anda boleh berkongsi dan mencari aset, sumber, dan metrik dalam antara muka Azure Machine Learning studio.
 
-## **LLM/SLM ב-Azure ML**
+## **LLM/SLM dalam Azure ML**
 
-Azure ML הוסיף פונקציות רבות הקשורות ל-LLM/SLM, שמשלבות בין LLMOps ל-SLMOps ליצירת פלטפורמת טכנולוגיית בינה מלאכותית גנרטיבית ארגונית.
+Azure ML telah menambah banyak fungsi berkaitan LLM/SLM, menggabungkan LLMOps dan SLMOps untuk mewujudkan platform teknologi kecerdasan buatan generatif di seluruh perusahaan.
 
-### **קטלוג מודלים**
+### **Katalog Model**
 
-משתמשים ארגוניים יכולים לפרוס מודלים שונים בהתאם לתרחישי עסק שונים דרך קטלוג מודלים, ולספק שירותים כ-Model as Service למפתחים או משתמשים בארגון.
+Pengguna perusahaan boleh menyebarkan model yang berbeza mengikut senario perniagaan yang berbeza melalui Katalog Model, dan menyediakan perkhidmatan sebagai Model sebagai Perkhidmatan untuk pembangun atau pengguna perusahaan mengakses.
 
-![models](../../../../translated_images/models.2450411eac222e539ffb55785a8f550d01be1030bd8eb67c9c4f9ae4ca5d64be.ms.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.ms.png)
 
-קטלוג המודלים ב-Azure Machine Learning studio הוא מרכז לגילוי ושימוש במגוון רחב של מודלים שמאפשרים לבנות יישומי Generative AI. קטלוג המודלים כולל מאות מודלים מספקים שונים כמו Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, כולל מודלים שאומנו על ידי Microsoft. מודלים מספקים שאינם Microsoft מוגדרים כמוצרים שאינם של Microsoft, בהתאם לתנאי המוצר של Microsoft, ומותנים בתנאים המסופקים עם המודל.
+Katalog Model dalam Azure Machine Learning studio adalah pusat untuk menemui dan menggunakan pelbagai model yang membolehkan anda membina aplikasi AI Generatif. Katalog model menampilkan ratusan model dari penyedia model seperti perkhidmatan Azure OpenAI, Mistral, Meta, Cohere, Nvidia, Hugging Face, termasuk model yang dilatih oleh Microsoft. Model dari penyedia selain Microsoft adalah Produk Bukan Microsoft, seperti yang ditakrifkan dalam Terma Produk Microsoft, dan tertakluk kepada terma yang disediakan bersama model tersebut.
 
-### **צינור עבודה (Job Pipeline)**
+### **Saluran Paip Tugasan**
 
-הבסיס של צינור למידת מכונה הוא חלוקה של משימת למידת מכונה מלאה לזרימת עבודה רב-שלבית. כל שלב הוא רכיב ניהולי שניתן לפתח, לאופטימיזציה, להגדיר ולאוטומציה בנפרד. השלבים מחוברים דרך ממשקים מוגדרים היטב. שירות צינור העבודה של Azure Machine Learning מנהל אוטומטית את כל התלות בין השלבים.
+Teras saluran paip pembelajaran mesin adalah untuk memecahkan tugasan pembelajaran mesin lengkap kepada aliran kerja berbilang langkah. Setiap langkah adalah komponen yang boleh diurus yang boleh dibangunkan, dioptimumkan, dikonfigurasikan, dan diautomasi secara berasingan. Langkah-langkah disambungkan melalui antara muka yang ditakrifkan dengan jelas. Perkhidmatan saluran paip Azure Machine Learning secara automatik mengatur semua kebergantungan antara langkah saluran paip.
 
-בהתאמת SLM / LLM, ניתן לנהל את הנתונים, האימון ותהליכי ההפקה דרך Pipeline.
+Dalam penyetelan halus SLM / LLM, kita boleh mengurus data, latihan, dan proses penjanaan melalui Saluran Paip.
 
-![finetuning](../../../../translated_images/finetuning.b52e4aa971dfd8d3c668db913a2b419380533bd3a920d227ec19c078b7b3f309.ms.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.ms.png)
 
-### **Prompt flow**
+### **Aliran Prompt**
 
-יתרונות השימוש ב-Azure Machine Learning prompt flow  
-Azure Machine Learning prompt flow מציע מגוון יתרונות שעוזרים למשתמשים לעבור מרעיון לניסוי ולבסוף ליישומים מבוססי LLM מוכנים לפרודקשן:
+Kelebihan menggunakan aliran prompt Azure Machine Learning  
+Aliran prompt Azure Machine Learning menawarkan pelbagai manfaat yang membantu pengguna beralih dari idea kepada eksperimen dan akhirnya, aplikasi LLM yang sedia untuk pengeluaran:
 
-**גמישות בהנדסת פרומפטים**
+**Kelincahan kejuruteraan prompt**
 
-חוויית כתיבה אינטראקטיבית: Azure Machine Learning prompt flow מספק ייצוג חזותי של מבנה הזרימה, שמאפשר למשתמשים להבין ולנווט בקלות בפרויקטים שלהם. בנוסף, הוא מציע חוויית קידוד בסגנון פנקס הערות לפיתוח ו-debug יעיל של הזרימה.  
-גרסאות לכיוונון פרומפט: משתמשים יכולים ליצור ולהשוות בין וריאציות פרומפט שונות, מה שמקל על תהליך שיפור איטרטיבי.
+Pengalaman penulisan interaktif: Aliran prompt Azure Machine Learning menyediakan representasi visual struktur aliran, membolehkan pengguna memahami dan menavigasi projek mereka dengan mudah. Ia juga menawarkan pengalaman pengkodan seperti buku nota untuk pembangunan dan penyahpepijatan aliran yang cekap.  
+Variasi untuk penyetelan prompt: Pengguna boleh mencipta dan membandingkan pelbagai variasi prompt, memudahkan proses penambahbaikan berulang.
 
-הערכה: זרימות הערכה מובנות מאפשרות למשתמשים להעריך את איכות ויעילות הפרומפטים והזרימות שלהם.
+Penilaian: Aliran penilaian terbina dalam membolehkan pengguna menilai kualiti dan keberkesanan prompt dan aliran mereka.
 
-משאבים מקיפים: Azure Machine Learning prompt flow כולל ספריית כלים, דוגמאות ותבניות מובנות שמספקות נקודת התחלה לפיתוח, מעוררות יצירתיות ומאיצות את התהליך.
+Sumber komprehensif: Aliran prompt Azure Machine Learning termasuk perpustakaan alat terbina dalam, contoh, dan templat yang berfungsi sebagai titik permulaan pembangunan, memberi inspirasi kreativiti dan mempercepat proses.
 
-**מוכנות ארגונית ליישומים מבוססי LLM**
+**Kesediaan perusahaan untuk aplikasi berasaskan LLM**
 
-שיתוף פעולה: Azure Machine Learning prompt flow תומך בשיתוף פעולה בצוות, ומאפשר למספר משתמשים לעבוד יחד על פרויקטים של הנדסת פרומפטים, לשתף ידע ולשמור על בקרת גרסאות.
+Kerjasama: Aliran prompt Azure Machine Learning menyokong kerjasama pasukan, membolehkan pelbagai pengguna bekerja bersama dalam projek kejuruteraan prompt, berkongsi pengetahuan, dan mengekalkan kawalan versi.
 
-פלטפורמה כוללת: Azure Machine Learning prompt flow מפשט את כל תהליך הנדסת הפרומפטים, מפיתוח והערכה ועד פריסה ומעקב. משתמשים יכולים לפרוס את הזרימות שלהם כנקודות קצה של Azure Machine Learning ולעקוב אחר הביצועים בזמן אמת, להבטיח פעולה מיטבית ושיפור מתמיד.
+Platform sehenti: Aliran prompt Azure Machine Learning memudahkan keseluruhan proses kejuruteraan prompt, dari pembangunan dan penilaian hingga penyebaran dan pemantauan. Pengguna boleh menyebarkan aliran mereka sebagai titik akhir Azure Machine Learning dan memantau prestasi secara masa nyata, memastikan operasi optimum dan penambahbaikan berterusan.
 
-פתרונות מוכנות ארגונית של Azure Machine Learning: Prompt flow משתמש בפתרונות המוכנות הארגונית החזקים של Azure Machine Learning, ומספק בסיס מאובטח, סקלאבילי ואמין לפיתוח, ניסוי ופריסה של זרימות.
+Penyelesaian Kesediaan Perusahaan Azure Machine Learning: Aliran prompt memanfaatkan penyelesaian kesediaan perusahaan Azure Machine Learning yang kukuh, menyediakan asas yang selamat, boleh skala, dan boleh dipercayai untuk pembangunan, eksperimen, dan penyebaran aliran.
 
-עם Azure Machine Learning prompt flow, משתמשים יכולים לשחרר את הגמישות בהנדסת הפרומפטים, לשתף פעולה ביעילות ולהשתמש בפתרונות ארגוניים מוצקים להצלחה בפיתוח ופריסת יישומים מבוססי LLM.
+Dengan aliran prompt Azure Machine Learning, pengguna boleh melepaskan kelincahan kejuruteraan prompt mereka, bekerjasama dengan berkesan, dan memanfaatkan penyelesaian bertaraf perusahaan untuk pembangunan dan penyebaran aplikasi berasaskan LLM yang berjaya.
 
-שילוב כוח המחשוב, הנתונים והרכיבים השונים של Azure ML מאפשר למפתחים ארגוניים לבנות בקלות את יישומי הבינה המלאכותית שלהם.
+Menggabungkan kuasa pengkomputeran, data, dan komponen berbeza Azure ML, pembangun perusahaan boleh dengan mudah membina aplikasi kecerdasan buatan mereka sendiri.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

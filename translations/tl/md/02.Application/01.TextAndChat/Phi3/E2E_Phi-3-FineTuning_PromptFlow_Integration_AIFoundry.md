@@ -2,72 +2,73 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ecbd9179a21edbaafaf114d47f09f3e3",
-  "translation_date": "2025-05-09T18:18:27+00:00",
+  "translation_date": "2025-07-17T01:47:43+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
   "language_code": "tl"
 }
 -->
-# Fine-tune at I-integrate ang custom Phi-3 models gamit ang Prompt flow sa Azure AI Foundry
+# Fine-tune at Isama ang custom na Phi-3 models gamit ang Prompt flow sa Azure AI Foundry
 
-Ang end-to-end (E2E) sample na ito ay base sa gabay na "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" mula sa Microsoft Tech Community. Ipinapakilala nito ang mga proseso ng fine-tuning, deployment, at integration ng custom Phi-3 models gamit ang Prompt flow sa Azure AI Foundry. Hindi tulad ng E2E sample na "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" na tumatakbo locally ang code, nakatuon ang tutorial na ito sa fine-tuning at integration ng model mo sa loob ng Azure AI / ML Studio.
+Ang end-to-end (E2E) na halimbawa na ito ay batay sa gabay na "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" mula sa Microsoft Tech Community. Ipinapakilala nito ang mga proseso ng fine-tuning, deployment, at integrasyon ng custom na Phi-3 models gamit ang Prompt flow sa Azure AI Foundry.  
+Hindi tulad ng E2E na halimbawa, "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)", na nangangailangan ng pagpapatakbo ng code nang lokal, ang tutorial na ito ay nakatuon nang buo sa fine-tuning at integrasyon ng iyong modelo sa loob ng Azure AI / ML Studio.
 
 ## Pangkalahatang-ideya
 
-Sa E2E sample na ito, matututuhan mo kung paano i-fine-tune ang Phi-3 model at i-integrate ito sa Prompt flow sa Azure AI Foundry. Sa pamamagitan ng Azure AI / ML Studio, magtatayo ka ng workflow para sa deployment at paggamit ng custom AI models. Nahahati ang E2E sample na ito sa tatlong scenario:
+Sa E2E na halimbawa na ito, matututuhan mo kung paano i-fine-tune ang Phi-3 model at isama ito sa Prompt flow sa Azure AI Foundry. Sa pamamagitan ng paggamit ng Azure AI / ML Studio, makakabuo ka ng workflow para sa deployment at paggamit ng custom AI models. Ang E2E na halimbawa na ito ay nahahati sa tatlong senaryo:
 
-**Scenario 1: I-setup ang Azure resources at Ihanda ang fine-tuning**
+**Senaryo 1: I-set up ang mga Azure resources at Ihanda para sa fine-tuning**
 
-**Scenario 2: I-fine-tune ang Phi-3 model at I-deploy sa Azure Machine Learning Studio**
+**Senaryo 2: I-fine-tune ang Phi-3 model at I-deploy sa Azure Machine Learning Studio**
 
-**Scenario 3: I-integrate sa Prompt flow at Makipag-chat gamit ang custom model mo sa Azure AI Foundry**
+**Senaryo 3: Isama sa Prompt flow at Makipag-chat gamit ang iyong custom na modelo sa Azure AI Foundry**
 
-Narito ang pangkalahatang-ideya ng E2E sample na ito.
+Narito ang pangkalahatang-ideya ng E2E na halimbawa na ito.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.48557afd46be88c521fb66f886c611bb93ec4cde1b00e138174ae97f75f56262.tl.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a2ceacdc6401c688bdf100d874fe8d55169f7723ed024781e.tl.png)
 
 ### Talaan ng Nilalaman
 
-1. **[Scenario 1: I-setup ang Azure resources at Ihanda ang fine-tuning](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Senaryo 1: I-set up ang mga Azure resources at Ihanda para sa fine-tuning](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Gumawa ng Azure Machine Learning Workspace](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Humiling ng GPU quotas sa Azure Subscription](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Magdagdag ng role assignment](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [I-setup ang proyekto](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [I-set up ang proyekto](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Ihanda ang dataset para sa fine-tuning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 2: I-fine-tune ang Phi-3 model at I-deploy sa Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Senaryo 2: I-fine-tune ang Phi-3 model at I-deploy sa Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [I-fine-tune ang Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [I-deploy ang fine-tuned Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [I-deploy ang fine-tuned na Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 3: I-integrate sa Prompt flow at Makipag-chat gamit ang custom model mo sa Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [I-integrate ang custom Phi-3 model sa Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Makipag-chat gamit ang custom Phi-3 model mo](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Senaryo 3: Isama sa Prompt flow at Makipag-chat gamit ang iyong custom na modelo sa Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Isama ang custom na Phi-3 model sa Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Makipag-chat gamit ang iyong custom na Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## Scenario 1: I-setup ang Azure resources at Ihanda ang fine-tuning
+## Senaryo 1: I-set up ang mga Azure resources at Ihanda para sa fine-tuning
 
 ### Gumawa ng Azure Machine Learning Workspace
 
-1. I-type ang *azure machine learning* sa **search bar** sa itaas ng portal page at piliin ang **Azure Machine Learning** mula sa mga lalabas na opsyon.
+1. I-type ang *azure machine learning* sa **search bar** sa itaas ng portal page at piliin ang **Azure Machine Learning** mula sa mga lumabas na opsyon.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.d34ed3e290197950bb59b5574720c139f88921832c375c07d5c0f3134d7831ca.tl.png)
+    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b9780de8accc31e4e1de7254e9c34a7836a955d455339e77d.tl.png)
 
 2. Piliin ang **+ Create** mula sa navigation menu.
 
 3. Piliin ang **New workspace** mula sa navigation menu.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.969d9b84a9a134e223a6efeba5bb9a81729993389665a76b81a22cb65e1ee702.tl.png)
+    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2cf04946c36873223099fd568e0c3ab0377c096868892fdda.tl.png)
 
 4. Gawin ang mga sumusunod:
 
-    - Piliin ang Azure **Subscription** mo.
-    - Piliin ang **Resource group** na gagamitin (gumawa ng bago kung kailangan).
-    - Ilagay ang **Workspace Name**. Dapat ito ay unique.
-    - Piliin ang **Region** na gusto mong gamitin.
-    - Piliin ang **Storage account** na gagamitin (gumawa ng bago kung kailangan).
-    - Piliin ang **Key vault** na gagamitin (gumawa ng bago kung kailangan).
-    - Piliin ang **Application insights** na gagamitin (gumawa ng bago kung kailangan).
-    - Piliin ang **Container registry** na gagamitin (gumawa ng bago kung kailangan).
+    - Piliin ang iyong Azure **Subscription**.
+    - Piliin ang **Resource group** na gagamitin (gumawa ng bago kung kinakailangan).
+    - Ilagay ang **Workspace Name**. Dapat ito ay natatanging pangalan.
+    - Piliin ang **Region** na nais mong gamitin.
+    - Piliin ang **Storage account** na gagamitin (gumawa ng bago kung kinakailangan).
+    - Piliin ang **Key vault** na gagamitin (gumawa ng bago kung kinakailangan).
+    - Piliin ang **Application insights** na gagamitin (gumawa ng bago kung kinakailangan).
+    - Piliin ang **Container registry** na gagamitin (gumawa ng bago kung kinakailangan).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.97c43ed40b5231572001c9e2a5193a4c63de657f07401d1fce962a085e129809.tl.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090ff9ec341c724c1493e7f96726f5c810a89a7409b782a7b04a.tl.png)
 
 5. Piliin ang **Review + Create**.
 
@@ -75,56 +76,56 @@ Narito ang pangkalahatang-ideya ng E2E sample na ito.
 
 ### Humiling ng GPU quotas sa Azure Subscription
 
-Sa tutorial na ito, matututuhan mo kung paano mag-fine-tune at mag-deploy ng Phi-3 model gamit ang GPUs. Para sa fine-tuning, gagamitin mo ang *Standard_NC24ads_A100_v4* GPU, na nangangailangan ng quota request. Para sa deployment, gagamitin mo ang *Standard_NC6s_v3* GPU, na kailangan din ng quota request.
+Sa tutorial na ito, matututuhan mo kung paano i-fine-tune at i-deploy ang Phi-3 model gamit ang mga GPU. Para sa fine-tuning, gagamitin mo ang *Standard_NC24ads_A100_v4* GPU, na nangangailangan ng quota request. Para sa deployment, gagamitin mo ang *Standard_NC6s_v3* GPU, na nangangailangan din ng quota request.
 
 > [!NOTE]
 >
-> Ang Pay-As-You-Go subscriptions lang (standard subscription type) ang kwalipikado para sa GPU allocation; hindi pa sinusuportahan ang benefit subscriptions.
+> Ang Pay-As-You-Go subscriptions lamang (ang karaniwang uri ng subscription) ang kwalipikado para sa GPU allocation; hindi pa sinusuportahan ang benefit subscriptions.
 >
 
 1. Bisitahin ang [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Gawin ang mga sumusunod para humiling ng *Standard NCADSA100v4 Family* quota:
+1. Gawin ang mga sumusunod upang humiling ng *Standard NCADSA100v4 Family* quota:
 
     - Piliin ang **Quota** mula sa kaliwang tab.
     - Piliin ang **Virtual machine family** na gagamitin. Halimbawa, piliin ang **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, na kasama ang *Standard_NC24ads_A100_v4* GPU.
     - Piliin ang **Request quota** mula sa navigation menu.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.9bb6ecf76b842dbccd70603b5a6f8533e7a2a0f9f9cc8304bef67fb0bb09e49a.tl.png)
+        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd536f2e4a305c8528a34914370813bc2cda4d7bbdd2de873f0.tl.png)
 
-    - Sa Request quota page, ilagay ang **New cores limit** na gusto mong gamitin. Halimbawa, 24.
-    - Sa Request quota page, piliin ang **Submit** para humiling ng GPU quota.
+    - Sa loob ng Request quota page, ilagay ang **New cores limit** na nais mong gamitin. Halimbawa, 24.
+    - Sa loob ng Request quota page, piliin ang **Submit** para isumite ang GPU quota request.
 
-1. Gawin ang mga sumusunod para humiling ng *Standard NCSv3 Family* quota:
+1. Gawin ang mga sumusunod upang humiling ng *Standard NCSv3 Family* quota:
 
     - Piliin ang **Quota** mula sa kaliwang tab.
     - Piliin ang **Virtual machine family** na gagamitin. Halimbawa, piliin ang **Standard NCSv3 Family Cluster Dedicated vCPUs**, na kasama ang *Standard_NC6s_v3* GPU.
     - Piliin ang **Request quota** mula sa navigation menu.
-    - Sa Request quota page, ilagay ang **New cores limit** na gusto mong gamitin. Halimbawa, 24.
-    - Sa Request quota page, piliin ang **Submit** para humiling ng GPU quota.
+    - Sa loob ng Request quota page, ilagay ang **New cores limit** na nais mong gamitin. Halimbawa, 24.
+    - Sa loob ng Request quota page, piliin ang **Submit** para isumite ang GPU quota request.
 
 ### Magdagdag ng role assignment
 
-Para ma-fine-tune at ma-deploy ang models mo, kailangan mo munang gumawa ng User Assigned Managed Identity (UAI) at bigyan ito ng tamang permiso. Gagamitin ang UAI na ito para sa authentication habang nagde-deploy.
+Para ma-fine-tune at ma-deploy ang iyong mga modelo, kailangan mo munang gumawa ng User Assigned Managed Identity (UAI) at bigyan ito ng tamang mga permiso. Gagamitin ang UAI na ito para sa authentication habang nagde-deploy.
 
-#### Gumawa ng User Assigned Managed Identity(UAI)
+#### Gumawa ng User Assigned Managed Identity (UAI)
 
-1. I-type ang *managed identities* sa **search bar** sa itaas ng portal page at piliin ang **Managed Identities** mula sa mga lalabas na opsyon.
+1. I-type ang *managed identities* sa **search bar** sa itaas ng portal page at piliin ang **Managed Identities** mula sa mga lumabas na opsyon.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.61954962fbc13913ceb35d00dd9d746b91fdd96834383b65214fa0f4d1152441.tl.png)
+    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e52f52a152187b230243fe884f58a9940cd9b534db3dcea383.tl.png)
 
 1. Piliin ang **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.4608dd89e644e68f40b559d30788383bc70dd3d14f082c78f460ba45d208f273.tl.png)
+    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f27b6680cd94ef6ec7557394022dafdcfba2a92777b11e4817.tl.png)
 
 1. Gawin ang mga sumusunod:
 
-    - Piliin ang Azure **Subscription** mo.
-    - Piliin ang **Resource group** na gagamitin (gumawa ng bago kung kailangan).
-    - Piliin ang **Region** na gusto mong gamitin.
-    - Ilagay ang **Name**. Dapat ito ay unique.
+    - Piliin ang iyong Azure **Subscription**.
+    - Piliin ang **Resource group** na gagamitin (gumawa ng bago kung kinakailangan).
+    - Piliin ang **Region** na nais mong gamitin.
+    - Ilagay ang **Name**. Dapat ito ay natatanging pangalan.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ff32a0010dd0667dd231f214881ab59f809ecf10b901030fc3db4e41a50a834a.tl.png)
+    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0e313fffaecf7d6ce4ee5e86c0badcd038f03519cac63b76b.tl.png)
 
 1. Piliin ang **Review + create**.
 
@@ -138,23 +139,23 @@ Para ma-fine-tune at ma-deploy ang models mo, kailangan mo munang gumawa ng User
 
 1. Piliin ang **+Add role assignment** mula sa navigation menu.
 
-1. Sa Add role assignment page, gawin ang mga sumusunod:
+1. Sa loob ng Add role assignment page, gawin ang mga sumusunod:
     - Piliin ang **Scope** bilang **Resource group**.
-    - Piliin ang Azure **Subscription** mo.
+    - Piliin ang iyong Azure **Subscription**.
     - Piliin ang **Resource group** na gagamitin.
     - Piliin ang **Role** bilang **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.419141712bde1fa89624c3792233a367b23cbc46fb7018d1d11c3cd65a25f748.tl.png)
+    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d1d62333e91b4d2719284f0dad14bd9b4c3459510a0c44fab.tl.png)
 
 2. Piliin ang **Save**.
 
 #### Magdagdag ng Storage Blob Data Reader role assignment sa Managed Identity
 
-1. I-type ang *storage accounts* sa **search bar** sa itaas ng portal page at piliin ang **Storage accounts** mula sa mga lalabas na opsyon.
+1. I-type ang *storage accounts* sa **search bar** sa itaas ng portal page at piliin ang **Storage accounts** mula sa mga lumabas na opsyon.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.026e03a619ba23f474f9d704cd9050335df48aab7253eb17729da506baf2056b.tl.png)
+    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e55b6b4dda10841d74d1c7463a2e4f23b9c45ffbb84219deb2.tl.png)
 
-1. Piliin ang storage account na konektado sa Azure Machine Learning workspace na ginawa mo. Halimbawa, *finetunephistorage*.
+1. Piliin ang storage account na kaugnay ng Azure Machine Learning workspace na ginawa mo. Halimbawa, *finetunephistorage*.
 
 1. Gawin ang mga sumusunod para pumunta sa Add role assignment page:
 
@@ -163,30 +164,30 @@ Para ma-fine-tune at ma-deploy ang models mo, kailangan mo munang gumawa ng User
     - Piliin ang **+ Add** mula sa navigation menu.
     - Piliin ang **Add role assignment** mula sa navigation menu.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.ea9dffa9d4e12c8ce5d7ee4c5ffb6eb7f7a5aac820c60a5782a3fb634b7aa09a.tl.png)
+    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c25fb73e63b957e214a2b651375a640a3aa54159a3731f495b.tl.png)
 
-1. Sa Add role assignment page, gawin ang mga sumusunod:
+1. Sa loob ng Add role assignment page, gawin ang mga sumusunod:
 
-    - Sa Role page, i-type ang *Storage Blob Data Reader* sa **search bar** at piliin ang **Storage Blob Data Reader** mula sa mga lalabas na opsyon.
+    - Sa Role page, i-type ang *Storage Blob Data Reader* sa **search bar** at piliin ang **Storage Blob Data Reader** mula sa mga lumabas na opsyon.
     - Sa Role page, piliin ang **Next**.
     - Sa Members page, piliin ang **Assign access to** bilang **Managed identity**.
     - Sa Members page, piliin ang **+ Select members**.
-    - Sa Select managed identities page, piliin ang Azure **Subscription** mo.
+    - Sa Select managed identities page, piliin ang iyong Azure **Subscription**.
     - Sa Select managed identities page, piliin ang **Managed identity** bilang **Manage Identity**.
     - Sa Select managed identities page, piliin ang Manage Identity na ginawa mo. Halimbawa, *finetunephi-managedidentity*.
     - Sa Select managed identities page, piliin ang **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.2456b3430a31bbaba7c744256dfb99c7fa6e12ba2dd122e34205973d29115d6c.tl.png)
+    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25289f2f121da05d114934d21d26aae9cb779334cbbccdf9e8.tl.png)
 
 1. Piliin ang **Review + assign**.
 
 #### Magdagdag ng AcrPull role assignment sa Managed Identity
 
-1. I-type ang *container registries* sa **search bar** sa itaas ng portal page at piliin ang **Container registries** mula sa mga lalabas na opsyon.
+1. I-type ang *container registries* sa **search bar** sa itaas ng portal page at piliin ang **Container registries** mula sa mga lumabas na opsyon.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.cac7db97652dda0e9d7b98d40034f5ac81752db9528b708e014c74a9891c49aa.tl.png)
+    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a69b003f7a698dac908ffc2f355e675c10939fdd0bb09f790e.tl.png)
 
-1. Piliin ang container registry na konektado sa Azure Machine Learning workspace. Halimbawa, *finetunephicontainerregistry*
+1. Piliin ang container registry na kaugnay ng Azure Machine Learning workspace. Halimbawa, *finetunephicontainerregistry*
 
 1. Gawin ang mga sumusunod para pumunta sa Add role assignment page:
 
@@ -194,195 +195,109 @@ Para ma-fine-tune at ma-deploy ang models mo, kailangan mo munang gumawa ng User
     - Piliin ang **+ Add** mula sa navigation menu.
     - Piliin ang **Add role assignment** mula sa navigation menu.
 
-1. Sa Add role assignment page, gawin ang mga sumusunod:
+1. Sa loob ng Add role assignment page, gawin ang mga sumusunod:
 
-    - Sa Role page, i-type ang *AcrPull* sa **search bar** at piliin ang **AcrPull** mula sa mga lalabas na opsyon.
+    - Sa Role page, i-type ang *AcrPull* sa **search bar** at piliin ang **AcrPull** mula sa mga lumabas na opsyon.
     - Sa Role page, piliin ang **Next**.
     - Sa Members page, piliin ang **Assign access to** bilang **Managed identity**.
     - Sa Members page, piliin ang **+ Select members**.
-    - Sa Select managed identities page, piliin ang Azure **Subscription** mo.
+    - Sa Select managed identities page, piliin ang iyong Azure **Subscription**.
     - Sa Select managed identities page, piliin ang **Managed identity** bilang **Manage Identity**.
     - Sa Select managed identities page, piliin ang Manage Identity na ginawa mo. Halimbawa, *finetunephi-managedidentity*.
     - Sa Select managed identities page, piliin ang **Select**.
     - Piliin ang **Review + assign**.
 
-### I-setup ang proyekto
+### I-set up ang proyekto
 
-Para ma-download ang datasets na kailangan para sa fine-tuning, magse-set up ka ng local environment.
+Para ma-download ang mga dataset na kailangan para sa fine-tuning, magse-set up ka ng lokal na environment.
 
-Sa exercise na ito, gagawin mo ang mga sumusunod:
+Sa pagsasanay na ito, gagawin mo ang mga sumusunod:
 
-- Gumawa ng folder para pagtrabahuan.
+- Gumawa ng folder na pagtatrabahuhan.
 - Gumawa ng virtual environment.
 - I-install ang mga kinakailangang packages.
-- Gumawa ng *download_dataset.py* file para i-download ang dataset.
+- Gumawa ng *download_dataset.py* na file para i-download ang dataset.
 
-#### Gumawa ng folder para pagtrabahuan
+#### Gumawa ng folder na pagtatrabahuhan
 
-1. Buksan ang terminal window at i-type ang sumusunod na command para gumawa ng folder na tinawag na *finetune-phi* sa default na path.
+1. Buksan ang terminal window at i-type ang sumusunod na utos para gumawa ng folder na pinangalanang *finetune-phi* sa default na path.
 
     ```console
     mkdir finetune-phi
     ```
 
-2. I-type ang sumusunod na command sa terminal para pumunta sa *finetune-phi* folder na ginawa mo.
-
-    ```console
-    cd finetune-phi
-    ```
-
+2. I-type ang sumusunod na utos sa terminal para pumunta sa *finetune-phi* na folder na ginawa mo.
 #### Gumawa ng virtual environment
 
-1. I-type ang sumusunod na command sa terminal para gumawa ng virtual environment na tinawag na *.venv*.
+1. I-type ang sumusunod na utos sa loob ng iyong terminal upang gumawa ng virtual environment na pinangalanang *.venv*.
 
-    ```console
-    python -m venv .venv
-    ```
-
-2. I-type ang sumusunod na command sa terminal para i-activate ang virtual environment.
-
-    ```console
-    .venv\Scripts\activate.bat
-    ```
+2. I-type ang sumusunod na utos sa loob ng iyong terminal upang i-activate ang virtual environment.
 
 > [!NOTE]
-> Kung gumana, makikita mo ang *(.venv)* bago ang command prompt.
+> Kung nagtagumpay, makikita mo ang *(.venv)* bago ang command prompt.
 
-#### I-install ang mga kinakailangang packages
+#### I-install ang mga kinakailangang package
 
-1. I-type ang mga sumusunod na command sa terminal para i-install ang mga kinakailangang packages.
-
-    ```console
-    pip install datasets==2.19.1
-    ```
+1. I-type ang mga sumusunod na utos sa loob ng iyong terminal upang i-install ang mga kinakailangang package.
 
 #### Gumawa ng `download_dataset.py`
 
 > [!NOTE]
-> Kumpletong folder structure:
+> Kumpletong istruktura ng folder:
 >
-> ```text
-> └── YourUserName
-> .    └── finetune-phi
-> .        └── download_dataset.py
-> ```
-
-1. Buksan ang **Visual Studio Code**.
+> 1. Buksan ang **Visual Studio Code**.
 
 1. Piliin ang **File** mula sa menu bar.
 
 1. Piliin ang **Open Folder**.
 
-1. Piliin ang *finetune-phi* folder na ginawa mo, na nasa *C:\Users\yourUserName\finetune-phi*.
+1. Piliin ang folder na *finetune-phi* na iyong ginawa, na matatagpuan sa *C:\Users\yourUserName\finetune-phi*.
 
-    ![Select the folder that you created.](../../../../../../translated_images/04-01-open-project-folder.01a82ecd87581d5a0572bc4f12dd8004a204ec366c907a2ad4d42dfd61ea5e21.tl.png)
+    ![Piliin ang folder na iyong ginawa.](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6f63a0a50961e51a39cc6de7a7ddc86da5f4896e815f28abd.tl.png)
 
-1. Sa kaliwang bahagi ng Visual Studio Code, i-right click at piliin ang **New File** para gumawa ng bagong file na tinawag na *download_dataset.py*.
+1. Sa kaliwang bahagi ng Visual Studio Code, i-right click at piliin ang **New File** upang gumawa ng bagong file na pinangalanang *download_dataset.py*.
 
-    ![Create a new file.](../../../../../../translated_images/04-02-create-new-file.16e088bf7213c299e258482be49fb1c735ba3eca1503b38a6b45b9289c651732.tl.png)
+    ![Gumawa ng bagong file.](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff927ede875300e1b5c91ab90d1e486c77a43bb9494880cf9b6f.tl.png)
 
 ### Ihanda ang dataset para sa fine-tuning
 
-Sa exercise na ito, patatakbuhin mo ang *download_dataset.py* file para i-download ang *ultrachat_200k* datasets sa local environment mo. Gagamitin mo ang mga dataset na ito para i-fine-tune ang Phi-3 model sa Azure Machine Learning.
+Sa pagsasanay na ito, patatakbuhin mo ang *download_dataset.py* na file upang i-download ang *ultrachat_200k* na mga dataset sa iyong lokal na kapaligiran. Gagamitin mo ang mga dataset na ito upang i-fine-tune ang Phi-3 model sa Azure Machine Learning.
 
-Sa exercise na ito, gagawin mo ang mga sumusunod:
+Sa pagsasanay na ito, gagawin mo ang mga sumusunod:
 
-- Magdagdag ng code sa *download_dataset.py* file para i-download ang datasets.
-- Patakbuhin ang *download_dataset.py* file para i-download ang datasets sa local environment mo.
+- Magdagdag ng code sa *download_dataset.py* na file upang i-download ang mga dataset.
+- Patakbuhin ang *download_dataset.py* na file upang i-download ang mga dataset sa iyong lokal na kapaligiran.
 
-#### I-download ang dataset gamit ang *download_dataset.py*
+#### I-download ang iyong dataset gamit ang *download_dataset.py*
 
-1. Buksan ang *download_dataset.py* file sa Visual Studio Code.
+1. Buksan ang *download_dataset.py* na file sa Visual Studio Code.
 
-1. Idagdag ang sumusunod na code sa *download_dataset.py* file.
+1. Idagdag ang sumusunod na code sa loob ng *download_dataset.py* na file.
 
-    ```python
-    import json
-    import os
-    from datasets import load_dataset
+1. I-type ang sumusunod na utos sa loob ng iyong terminal upang patakbuhin ang script at i-download ang dataset sa iyong lokal na kapaligiran.
 
-    def load_and_split_dataset(dataset_name, config_name, split_ratio):
-        """
-        Load and split a dataset.
-        """
-        # Load the dataset with the specified name, configuration, and split ratio
-        dataset = load_dataset(dataset_name, config_name, split=split_ratio)
-        print(f"Original dataset size: {len(dataset)}")
-        
-        # Split the dataset into train and test sets (80% train, 20% test)
-        split_dataset = dataset.train_test_split(test_size=0.2)
-        print(f"Train dataset size: {len(split_dataset['train'])}")
-        print(f"Test dataset size: {len(split_dataset['test'])}")
-        
-        return split_dataset
-
-    def save_dataset_to_jsonl(dataset, filepath):
-        """
-        Save a dataset to a JSONL file.
-        """
-        # Create the directory if it does not exist
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        
-        # Open the file in write mode
-        with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
-            for record in dataset:
-                # Dump the record as a JSON object and write it to the file
-                json.dump(record, f)
-                # Write a newline character to separate records
-                f.write('\n')
-        
-        print(f"Dataset saved to {filepath}")
-
-    def main():
-        """
-        Main function to load, split, and save the dataset.
-        """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
-        dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
-        
-        # Extract the train and test datasets from the split
-        train_dataset = dataset['train']
-        test_dataset = dataset['test']
-
-        # Save the train dataset to a JSONL file
-        save_dataset_to_jsonl(train_dataset, "data/train_data.jsonl")
-        
-        # Save the test dataset to a separate JSONL file
-        save_dataset_to_jsonl(test_dataset, "data/test_data.jsonl")
-
-    if __name__ == "__main__":
-        main()
-
-    ```
-
-1. I-type ang sumusunod na command sa terminal para patakbuhin ang script at i-download ang dataset sa local environment mo.
-
-    ```console
-    python download_dataset.py
-    ```
-
-1. Siguraduhing na-save nang maayos ang datasets sa local *finetune-phi/data* directory mo.
+1. Tiyaking matagumpay na na-save ang mga dataset sa iyong lokal na *finetune-phi/data* na direktoryo.
 
 > [!NOTE]
 >
 > #### Paalala tungkol sa laki ng dataset at oras ng fine-tuning
 >
-> Sa tutorial na ito, gagamit ka lang ng 1% ng dataset (`split='train[:1%]'`). Malaki ang nabawas sa dami ng data, kaya mas mabilis ang upload at fine-tuning. Pwede mong baguhin ang porsyento para mahanap ang tamang balanse sa pagitan ng oras ng training at performance ng model. Ang paggamit ng mas maliit na bahagi ng dataset ay nagpapabilis ng fine-tuning, kaya mas madali itong gawin para sa tutorial.
+> Sa tutorial na ito, gagamitin mo lamang ang 1% ng dataset (`split='train[:1%]'`). Malaki ang naitutulong nito sa pagpapabawas ng dami ng data, kaya mas mabilis ang proseso ng pag-upload at fine-tuning. Maaari mong baguhin ang porsyento upang mahanap ang tamang balanse sa pagitan ng oras ng pagsasanay at performance ng modelo. Ang paggamit ng mas maliit na bahagi ng dataset ay nagpapabilis ng fine-tuning, kaya mas madali itong gawin sa isang tutorial.
 
-## Scenario 2: I-fine-tune ang Phi-3 model at I-deploy sa Azure Machine Learning Studio
+## Scenario 2: Fine-tune ang Phi-3 model at I-deploy sa Azure Machine Learning Studio
 
-### I-fine-tune ang Phi-3 model
+### Fine-tune ang Phi-3 model
 
-Sa exercise na ito, i-fine-tune mo ang Phi-3 model sa Azure Machine Learning Studio.
+Sa pagsasanay na ito, i-fine-tune mo ang Phi-3 model sa Azure Machine Learning Studio.
 
-Sa exercise na ito, gagawin mo ang mga sumusunod:
+Sa pagsasanay na ito, gagawin mo ang mga sumusunod:
 
 - Gumawa ng computer cluster para sa fine-tuning.
 - I-fine-tune ang Phi-3 model sa Azure Machine Learning Studio.
 
 #### Gumawa ng computer cluster para sa fine-tuning
-1. Bisitaha ang [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+
+1. Bisitahin ang [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
 1. Piliin ang **Compute** mula sa kaliwang tab.
 
@@ -390,74 +305,74 @@ Sa exercise na ito, gagawin mo ang mga sumusunod:
 
 1. Piliin ang **+ New**.
 
-    ![Select compute.](../../../../../../translated_images/06-01-select-compute.e151458e2884d4877a05acf3553d015cd63c0c6ed056efcfbd425c715692a947.tl.png)
+    ![Piliin ang compute.](../../../../../../translated_images/06-01-select-compute.a29cff290b480252d04ffd0142c073486df7d3b7256335964a98b87e28072523.tl.png)
 
 1. Gawin ang mga sumusunod:
 
     - Piliin ang **Region** na nais mong gamitin.
-    - Piliin ang **Virtual machine tier** bilang **Dedicated**.
-    - Piliin ang **Virtual machine type** bilang **GPU**.
+    - Piliin ang **Virtual machine tier** sa **Dedicated**.
+    - Piliin ang **Virtual machine type** sa **GPU**.
     - Piliin ang filter ng **Virtual machine size** sa **Select from all options**.
-    - Piliin ang **Virtual machine size** na **Standard_NC24ads_A100_v4**.
+    - Piliin ang **Virtual machine size** sa **Standard_NC24ads_A100_v4**.
 
-    ![Create cluster.](../../../../../../translated_images/06-02-create-cluster.19e5e8403b754eecaa1e2886625335ca16f4161391e0d75ef85f2e5eaa8ffb5a.tl.png)
+    ![Gumawa ng cluster.](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e4baa9c5ccf86510f21df87515c231b2a255e1ee545496458.tl.png)
 
 1. Piliin ang **Next**.
 
 1. Gawin ang mga sumusunod:
 
-    - Ipasok ang **Compute name**. Dapat ito ay natatanging pangalan.
-    - Piliin ang **Minimum number of nodes** na **0**.
-    - Piliin ang **Maximum number of nodes** na **1**.
-    - Piliin ang **Idle seconds before scale down** na **120**.
+    - Ilagay ang **Compute name**. Dapat ito ay natatangi.
+    - Piliin ang **Minimum number of nodes** sa **0**.
+    - Piliin ang **Maximum number of nodes** sa **1**.
+    - Piliin ang **Idle seconds before scale down** sa **120**.
 
-    ![Create cluster.](../../../../../../translated_images/06-03-create-cluster.8796fad73635590754b6095c30fe98112db248596d194cd5b0af077cca371ac1.tl.png)
+    ![Gumawa ng cluster.](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662edc0f95ad364a869b4dbb7f7be08ff259528fea96312e77e.tl.png)
 
 1. Piliin ang **Create**.
 
-#### I-fine-tune ang Phi-3 model
+#### Fine-tune ang Phi-3 model
 
-1. Bisitaha ang [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Bisitahin ang [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Piliin ang Azure Machine Learning workspace na ginawa mo.
+1. Piliin ang Azure Machine Learning workspace na iyong ginawa.
 
-    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.f5449319befd49bad6028622f194507712fccee9d744f96b78765d2c1ffcb9c3.tl.png)
+    ![Piliin ang workspace na ginawa mo.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.tl.png)
 
 1. Gawin ang mga sumusunod:
 
     - Piliin ang **Model catalog** mula sa kaliwang tab.
-    - I-type ang *phi-3-mini-4k* sa **search bar** at piliin ang **Phi-3-mini-4k-instruct** mula sa lumabas na mga opsyon.
+    - I-type ang *phi-3-mini-4k* sa **search bar** at piliin ang **Phi-3-mini-4k-instruct** mula sa mga lumabas na opsyon.
 
-    ![Type phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.808fa02bdce5b9cda91e19a5fa9ff254697575293245ea49263f860354032e66.tl.png)
+    ![I-type ang phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b25018a7e7353ce6525d8f5803b0af9bc9a60a9be4204dd77578.tl.png)
 
 1. Piliin ang **Fine-tune** mula sa navigation menu.
 
-    ![Select fine tune.](../../../../../../translated_images/06-06-select-fine-tune.bcb1fd63ead2da12219c0615d35cef2c9ce18d3c8467ef604d755accba87a063.tl.png)
+    ![Piliin ang fine tune.](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeecb897ac74882792b59086893b8a7448a89be3628aee62fc1b.tl.png)
 
 1. Gawin ang mga sumusunod:
 
-    - Piliin ang **Select task type** bilang **Chat completion**.
-    - Piliin ang **+ Select data** para i-upload ang **Training data**.
+    - Piliin ang **Select task type** sa **Chat completion**.
+    - Piliin ang **+ Select data** upang i-upload ang **Training data**.
     - Piliin ang uri ng pag-upload ng Validation data sa **Provide different validation data**.
-    - Piliin ang **+ Select data** para i-upload ang **Validation data**.
+    - Piliin ang **+ Select data** upang i-upload ang **Validation data**.
 
-    ![Fill fine-tuning page.](../../../../../../translated_images/06-07-fill-finetuning.dcf5eb5a2d6d2bfb727e1fc278de717df0b25cf8d11ace970df8ea7d5951591e.tl.png)
+    ![Punan ang fine-tuning page.](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0bbc6b248af9e7369ca98379770badec9f73b6bced7a8b7806.tl.png)
 
     > [!TIP]
     >
-    > Maaari mong piliin ang **Advanced settings** para i-customize ang mga configuration tulad ng **learning_rate** at **lr_scheduler_type** upang mas ma-optimize ang fine-tuning ayon sa iyong pangangailangan.
+    > Maaari mong piliin ang **Advanced settings** upang i-customize ang mga configuration tulad ng **learning_rate** at **lr_scheduler_type** para ma-optimize ang fine-tuning ayon sa iyong pangangailangan.
 
 1. Piliin ang **Finish**.
 
-1. Sa ehersisyong ito, matagumpay mong na-fine-tune ang Phi-3 model gamit ang Azure Machine Learning. Tandaan na maaaring tumagal ng ilang oras ang proseso ng fine-tuning. Pagkatapos patakbuhin ang fine-tuning job, kailangan mong maghintay hanggang matapos ito. Maaari mong subaybayan ang status ng fine-tuning job sa pamamagitan ng pagpunta sa Jobs tab sa kaliwang bahagi ng iyong Azure Machine Learning Workspace. Sa susunod na serye, ide-deploy mo ang fine-tuned na modelo at i-iintegrate ito sa Prompt flow.
+1. Sa pagsasanay na ito, matagumpay mong na-fine-tune ang Phi-3 model gamit ang Azure Machine Learning. Tandaan na ang proseso ng fine-tuning ay maaaring tumagal ng ilang oras. Pagkatapos patakbuhin ang fine-tuning job, kailangan mong maghintay hanggang matapos ito. Maaari mong subaybayan ang status ng fine-tuning job sa pamamagitan ng pagpunta sa Jobs tab sa kaliwang bahagi ng iyong Azure Machine Learning Workspace. Sa susunod na bahagi, ide-deploy mo ang fine-tuned na modelo at i-integrate ito sa Prompt flow.
 
-    ![See finetuning job.](../../../../../../translated_images/06-08-output.3fedec9572bca5d86b7db3a6d060345c762aa59ce6aefa2b1998154b9f475b69.tl.png)
+    ![Tingnan ang finetuning job.](../../../../../../translated_images/06-08-output.2bd32e59930672b1cc1de86056e2fbc91e338f59e2a29d7dac86ede49a9714b2.tl.png)
 
 ### I-deploy ang fine-tuned na Phi-3 model
 
-Para ma-integrate ang fine-tuned na Phi-3 model sa Prompt flow, kailangan mong i-deploy ang modelo para maging accessible ito para sa real-time inference. Kasama sa prosesong ito ang pagrerehistro ng modelo, paggawa ng online endpoint, at pag-deploy ng modelo.
+Para ma-integrate ang fine-tuned na Phi-3 model sa Prompt flow, kailangan mong i-deploy ang modelo upang maging accessible ito para sa real-time inference. Kasama sa prosesong ito ang pagrerehistro ng modelo, paggawa ng online endpoint, at pag-deploy ng modelo.
 
-Sa ehersisyong ito, gagawin mo ang mga sumusunod:
+Sa pagsasanay na ito, gagawin mo ang mga sumusunod:
 
 - Irehistro ang fine-tuned na modelo sa Azure Machine Learning workspace.
 - Gumawa ng online endpoint.
@@ -465,131 +380,131 @@ Sa ehersisyong ito, gagawin mo ang mga sumusunod:
 
 #### Irehistro ang fine-tuned na modelo
 
-1. Bisitaha ang [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Bisitahin ang [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Piliin ang Azure Machine Learning workspace na ginawa mo.
+1. Piliin ang Azure Machine Learning workspace na iyong ginawa.
 
-    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.f5449319befd49bad6028622f194507712fccee9d744f96b78765d2c1ffcb9c3.tl.png)
+    ![Piliin ang workspace na ginawa mo.](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.tl.png)
 
 1. Piliin ang **Models** mula sa kaliwang tab.
+
 1. Piliin ang **+ Register**.
+
 1. Piliin ang **From a job output**.
 
-    ![Register model.](../../../../../../translated_images/07-01-register-model.46cad47d2bb083c74e616691ef836735209ffc42b29fb432a1acbef52e28d41f.tl.png)
+    ![Irehistro ang modelo.](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777c8c39906ce5cd57f16b54fb3887dd4e4de1ce963b26499ad.tl.png)
 
-1. Piliin ang job na ginawa mo.
+1. Piliin ang job na iyong ginawa.
 
-    ![Select job.](../../../../../../translated_images/07-02-select-job.a5d34472aead80a4b69594f277dd43491c6aaf42d847940c1dc2081d909a23f3.tl.png)
+    ![Piliin ang job.](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd09315953b4eb2cc9d62d0d77ab0d9d877e34c6827fa6d2b6be4.tl.png)
 
 1. Piliin ang **Next**.
 
-1. Piliin ang **Model type** bilang **MLflow**.
+1. Piliin ang **Model type** sa **MLflow**.
 
-1. Siguraduhing naka-select ang **Job output**; dapat ito ay awtomatikong naka-select.
+1. Siguraduhing naka-select ang **Job output**; ito ay awtomatikong naka-select.
 
-    ![Select output.](../../../../../../translated_images/07-03-select-output.e1a56a25db9065901df821343ff894ca45ce0569c3daf30b5aafdd060f26e059.tl.png)
+    ![Piliin ang output.](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f267b40f73de77f092a5b02808ade72f8eb94e5fe9723feb3.tl.png)
 
 2. Piliin ang **Next**.
 
 3. Piliin ang **Register**.
 
-    ![Select register.](../../../../../../translated_images/07-04-register.71316a5a4d2e1f520f14fee93be7865a785971cdfdd8cd08779866f5f29f7da4.tl.png)
+    ![Piliin ang register.](../../../../../../translated_images/07-04-register.fd82a3b293060bc78399e613293032d3d301c02a6fd8092bec52bfaf4f3104de.tl.png)
 
-4. Makikita mo ang iyong nairehistrong modelo sa pamamagitan ng pagpunta sa **Models** menu mula sa kaliwang tab.
+4. Makikita mo ang iyong nairehistrong modelo sa pamamagitan ng pagpunta sa **Models** na menu mula sa kaliwang tab.
 
-    ![Registered model.](../../../../../../translated_images/07-05-registered-model.969e2ec99a4cbf5cc9bb006b118110803853a15aa3c499eceb7812d976bd6128.tl.png)
+    ![Nairehistrong modelo.](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591b7995686b95396ffd8c185ba66f0a1f6be18f4aea05e93d5.tl.png)
 
 #### I-deploy ang fine-tuned na modelo
 
-1. Pumunta sa Azure Machine Learning workspace na ginawa mo.
+1. Pumunta sa Azure Machine Learning workspace na iyong ginawa.
 
 1. Piliin ang **Endpoints** mula sa kaliwang tab.
 
 1. Piliin ang **Real-time endpoints** mula sa navigation menu.
 
-    ![Create endpoint.](../../../../../../translated_images/07-06-create-endpoint.0741c2a4369bd3b9c4e17aa7b31ed0337bfb1303f9038244784791250164b2f7.tl.png)
+    ![Gumawa ng endpoint.](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09618ce29b467276523838b8cc766d79ebfecdb052fef2c4df.tl.png)
 
 1. Piliin ang **Create**.
 
-1. Piliin ang nairehistrong model na ginawa mo.
+1. Piliin ang nairehistrong modelo na iyong ginawa.
 
-    ![Select registered model.](../../../../../../translated_images/07-07-select-registered-model.7a270d391fd543a21d9a024d2ea516667c039393dbe954019e19162dd07d2387.tl.png)
+    ![Piliin ang nairehistrong modelo.](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4460f7646dfaa59121fb1384ed1957755427d358462c25225.tl.png)
 
 1. Piliin ang **Select**.
 
 1. Gawin ang mga sumusunod:
 
-    - Piliin ang **Virtual machine** na *Standard_NC6s_v3*.
+    - Piliin ang **Virtual machine** sa *Standard_NC6s_v3*.
     - Piliin ang bilang ng **Instance count** na nais mong gamitin. Halimbawa, *1*.
-    - Piliin ang **Endpoint** bilang **New** para gumawa ng bagong endpoint.
-    - Ipasok ang **Endpoint name**. Dapat ito ay natatangi.
-    - Ipasok ang **Deployment name**. Dapat ito ay natatangi.
+    - Piliin ang **Endpoint** sa **New** upang gumawa ng bagong endpoint.
+    - Ilagay ang **Endpoint name**. Dapat ito ay natatangi.
+    - Ilagay ang **Deployment name**. Dapat ito ay natatangi.
 
-    ![Fill the deployment setting.](../../../../../../translated_images/07-08-deployment-setting.5907ac712d60af1f5e6d18e09a39b3fcd5706e9ce2e3dffc7120a2f79e025483.tl.png)
+    ![Punan ang deployment setting.](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e67378494bb8d81418bc3bdaceb8c57151727d538594cb378697f36.tl.png)
 
 1. Piliin ang **Deploy**.
 
 > [!WARNING]
-> Para maiwasan ang dagdag na singil sa iyong account, siguraduhing tanggalin ang nagawang endpoint sa Azure Machine Learning workspace.
+> Upang maiwasan ang karagdagang singil sa iyong account, siguraduhing tanggalin ang nagawang endpoint sa Azure Machine Learning workspace.
 >
 
 #### Suriin ang status ng deployment sa Azure Machine Learning Workspace
 
-1. Pumunta sa Azure Machine Learning workspace na ginawa mo.
+1. Pumunta sa Azure Machine Learning workspace na iyong ginawa.
 
 1. Piliin ang **Endpoints** mula sa kaliwang tab.
 
-1. Piliin ang endpoint na ginawa mo.
+1. Piliin ang endpoint na iyong ginawa.
 
-    ![Select endpoints](../../../../../../translated_images/07-09-check-deployment.dc970e535b490992ff68e6127c9d520389b3f0f5a5fc41358c2ad16669bce49a.tl.png)
+    ![Piliin ang endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4a302f0efc8875002e1c382167083c7fefbdb42ede274d0da.tl.png)
 
-1. Sa pahinang ito, maaari mong pamahalaan ang mga endpoints habang nagde-deploy.
+1. Sa pahinang ito, maaari mong pamahalaan ang mga endpoint habang nagpapatuloy ang deployment.
 
 > [!NOTE]
-> Kapag natapos na ang deployment, siguraduhing naka-set ang **Live traffic** sa **100%**. Kung hindi, piliin ang **Update traffic** para ayusin ang settings ng traffic. Tandaan na hindi mo maaaring subukan ang modelo kung naka-set ang traffic sa 0%.
+> Kapag natapos na ang deployment, siguraduhing naka-set ang **Live traffic** sa **100%**. Kung hindi, piliin ang **Update traffic** upang ayusin ang traffic settings. Tandaan na hindi mo maaaring subukan ang modelo kung ang traffic ay naka-set sa 0%.
 >
-> ![Set traffic.](../../../../../../translated_images/07-10-set-traffic.a0fccfd2b1e2bd0dba22860daa76d35999cfcf23b53ecc09df92f992c4cab64f.tl.png)
+> ![I-set ang traffic.](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d30c64ecabac4b17a7b5dc004ba52ad387cbaaf7b266eeadf.tl.png)
 >
 
-## Scenario 3: Integrate with Prompt flow at Makipag-chat gamit ang custom model mo sa Azure AI Foundry
+## Scenario 3: I-integrate sa Prompt flow at Makipag-chat gamit ang iyong custom na modelo sa Azure AI Foundry
 
-### I-integrate ang custom Phi-3 model sa Prompt flow
+### I-integrate ang custom na Phi-3 model sa Prompt flow
 
-Matapos mong matagumpay na ma-deploy ang fine-tuned na modelo, maaari mo na itong i-integrate sa Prompt Flow para magamit ang modelo sa mga real-time na aplikasyon, na nagbibigay-daan sa iba't ibang interactive na gawain gamit ang custom Phi-3 model mo.
+Matapos mong matagumpay na ma-deploy ang iyong fine-tuned na modelo, maaari mo na itong i-integrate sa Prompt Flow upang magamit ang iyong modelo sa mga real-time na aplikasyon, na nagbibigay-daan sa iba't ibang interactive na gawain gamit ang iyong custom na Phi-3 model.
 
-Sa ehersisyong ito, gagawin mo ang mga sumusunod:
+Sa pagsasanay na ito, gagawin mo ang mga sumusunod:
 
 - Gumawa ng Azure AI Foundry Hub.
 - Gumawa ng Azure AI Foundry Project.
 - Gumawa ng Prompt flow.
-- Magdagdag ng custom connection para sa fine-tuned na Phi-3 model.
-- I-setup ang Prompt flow para makipag-chat sa custom Phi-3 model mo.
-
+- Magdagdag ng custom na koneksyon para sa fine-tuned na Phi-3 model.
+- I-set up ang Prompt flow upang makipag-chat gamit ang iyong custom na Phi-3 model.
 > [!NOTE]
-> Maaari ka ring mag-integrate sa Promptflow gamit ang Azure ML Studio. Pareho ang proseso ng integration na maaaring gamitin sa Azure ML Studio.
-
+> Maaari ka ring mag-integrate gamit ang Promptflow sa Azure ML Studio. Pareho ang proseso ng integration na maaaring gamitin sa Azure ML Studio.
 #### Gumawa ng Azure AI Foundry Hub
 
-Kailangan mong gumawa ng Hub bago gumawa ng Project. Ang Hub ay parang Resource Group na nagpapahintulot sa iyo na i-organisa at pamahalaan ang maraming Projects sa loob ng Azure AI Foundry.
+Kailangan mong gumawa ng Hub bago gumawa ng Project. Ang Hub ay parang Resource Group, na nagbibigay-daan sa iyo upang ayusin at pamahalaan ang maraming Projects sa loob ng Azure AI Foundry.
 
-1. Bisitaha ang [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
+1. Bisitahin ang [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
 1. Piliin ang **All hubs** mula sa kaliwang tab.
 
 1. Piliin ang **+ New hub** mula sa navigation menu.
 
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.c54d78fb49923ff1d8c6a11010a8c8eca9b044d525182a2a1700b3ff4c542674.tl.png)
+    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834e092dcf9dda773276fbee65f40252ed4a9af4f9aa4fef5d7.tl.png)
 
-1. Gawin ang mga sumusunod:
+1. Gawin ang mga sumusunod na hakbang:
 
-    - Ipasok ang **Hub name**. Dapat ito ay natatangi.
-    - Piliin ang Azure **Subscription** mo.
-    - Piliin ang **Resource group** na gagamitin (gumawa ng bago kung kailangan).
+    - Ilagay ang **Hub name**. Dapat ito ay natatanging pangalan.
+    - Piliin ang iyong Azure **Subscription**.
+    - Piliin ang **Resource group** na gagamitin (gumawa ng bago kung kinakailangan).
     - Piliin ang **Location** na nais mong gamitin.
-    - Piliin ang **Connect Azure AI Services** na gagamitin (gumawa ng bago kung kailangan).
-    - Piliin ang **Connect Azure AI Search** bilang **Skip connecting**.
+    - Piliin ang **Connect Azure AI Services** na gagamitin (gumawa ng bago kung kinakailangan).
+    - Piliin ang **Connect Azure AI Search** sa **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.ced9ab1db4d2f3324d3d34bd9e846641e80bb9e4ebfc56f47d09ce6885e9caf7.tl.png)
+    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c44658a87c2ed01d9e588581f157480ff1ac3312085c51d25.tl.png)
 
 1. Piliin ang **Next**.
 
@@ -599,68 +514,69 @@ Kailangan mong gumawa ng Hub bago gumawa ng Project. Ang Hub ay parang Resource 
 
 1. Piliin ang **+ New project** mula sa navigation menu.
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.e3033e8fa767fa86e03dc830014e59222eceacbc322082771d0e11be6e60ed6a.tl.png)
+    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f1251c487d98aed0641bd057100b8e5d6fba9062bfb7d752ce9.tl.png)
 
-1. Ipasok ang **Project name**. Dapat ito ay natatangi.
+1. Ilagay ang **Project name**. Dapat ito ay natatanging pangalan.
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.6172ff97b4c49ad0f364e6d4a7b658dba45f8e27aaa2126a83d0af77056450b0.tl.png)
+    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a192b4ed3dde6b1136c860fc85352d612aa2f3ae8a4d54eb4.tl.png)
 
 1. Piliin ang **Create a project**.
 
 #### Magdagdag ng custom connection para sa fine-tuned na Phi-3 model
 
-Para ma-integrate ang custom Phi-3 model mo sa Prompt flow, kailangan mong i-save ang endpoint at key ng modelo sa isang custom connection. Ang setup na ito ay nagsisiguro ng access sa custom Phi-3 model mo sa Prompt flow.
+Para ma-integrate ang iyong custom Phi-3 model sa Prompt flow, kailangan mong i-save ang endpoint at key ng model sa isang custom connection. Tinitiyak ng setup na ito ang access sa iyong custom Phi-3 model sa Prompt flow.
 
 #### Itakda ang api key at endpoint uri ng fine-tuned na Phi-3 model
 
-1. Bisitaha ang [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo).
+1. Bisitahin ang [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Pumunta sa Azure Machine Learning workspace na ginawa mo.
+1. Pumunta sa Azure Machine learning workspace na ginawa mo.
 
 1. Piliin ang **Endpoints** mula sa kaliwang tab.
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.7c12a37c1b477c2829a045a230ae9c18373156fe7adb797dcabd3ab18bd139a7.tl.png)
+    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf960519c1ac95116d1a7e5b8d0bdea5cd42281930766fbfad1929.tl.png)
 
 1. Piliin ang endpoint na ginawa mo.
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.d69043d757b715c24c88c9ae7e796247eb8909bae8967839a7dc30de3f403caf.tl.png)
+    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275ea16f689f59b70d5b0162fff1781204e389edcb63b42b95b2.tl.png)
 
 1. Piliin ang **Consume** mula sa navigation menu.
 
 1. Kopyahin ang iyong **REST endpoint** at **Primary key**.
-![Kopyahin ang api key at endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.511a027574cee0efc50fdda33b6de1e1e268c5979914ba944b72092f72f95544.tl.png)
 
-#### Idagdag ang Custom Connection
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cbe30a20b889154d04109bf17c5c09816060a8689933dc0fd7.tl.png)
+
+#### Magdagdag ng Custom Connection
 
 1. Bisitahin ang [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo).
 
-1. Pumunta sa Azure AI Foundry project na iyong ginawa.
+1. Pumunta sa Azure AI Foundry project na ginawa mo.
 
 1. Sa Project na ginawa mo, piliin ang **Settings** mula sa kaliwang tab.
 
 1. Piliin ang **+ New connection**.
 
-    ![Piliin ang bagong connection.](../../../../../../translated_images/08-09-select-new-connection.c55d4faa9f655e163a5d7aec1f21843ea30738d4e8c5ce5f0724048ebc6ca007.tl.png)
+    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc77130c3a16fbb8ee59407ecbf74fd3502cb8720c61384446.tl.png)
 
 1. Piliin ang **Custom keys** mula sa navigation menu.
 
-    ![Piliin ang custom keys.](../../../../../../translated_images/08-10-select-custom-keys.78c5267f5d037ef1931bc25e4d1a77747b709df7141a9968e25ebd9188ac9fdd.tl.png)
+    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b29664605513ccc134f1adaefaf27f951981c511783a6a0d1118c9178a5.tl.png)
 
 1. Gawin ang mga sumusunod:
 
     - Piliin ang **+ Add key value pairs**.
-    - Sa key name, ilagay ang **endpoint** at i-paste ang endpoint na kinopya mo mula sa Azure ML Studio sa value field.
+    - Para sa pangalan ng key, ilagay ang **endpoint** at i-paste ang endpoint na kinopya mo mula sa Azure ML Studio sa value field.
     - Piliin muli ang **+ Add key value pairs**.
-    - Sa key name, ilagay ang **key** at i-paste ang key na kinopya mo mula sa Azure ML Studio sa value field.
-    - Pagkatapos idagdag ang mga keys, piliin ang **is secret** para hindi makita ang key.
+    - Para sa pangalan ng key, ilagay ang **key** at i-paste ang key na kinopya mo mula sa Azure ML Studio sa value field.
+    - Pagkatapos maidagdag ang mga keys, piliin ang **is secret** upang hindi makita ang key.
 
-    ![Idagdag ang connection.](../../../../../../translated_images/08-11-add-connection.a2e410ab11c11a4798fe8ac56ba4e9707d1a5079be00f6f91bb187515f756a31.tl.png)
+    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26e8df1bbd0948e06aa20aa0dc102faa96c8144722ef7f0b72.tl.png)
 
 1. Piliin ang **Add connection**.
 
 #### Gumawa ng Prompt flow
 
-Nagdagdag ka na ng custom connection sa Azure AI Foundry. Ngayon, gumawa tayo ng Prompt flow gamit ang mga sumusunod na hakbang. Pagkatapos, ikokonekta mo ang Prompt flow na ito sa custom connection para magamit mo ang fine-tuned na modelo sa loob ng Prompt flow.
+Nagdagdag ka na ng custom connection sa Azure AI Foundry. Ngayon, gumawa tayo ng Prompt flow gamit ang mga sumusunod na hakbang. Pagkatapos, ikokonekta mo ang Prompt flow na ito sa custom connection para magamit mo ang fine-tuned na model sa loob ng Prompt flow.
 
 1. Pumunta sa Azure AI Foundry project na ginawa mo.
 
@@ -668,27 +584,27 @@ Nagdagdag ka na ng custom connection sa Azure AI Foundry. Ngayon, gumawa tayo ng
 
 1. Piliin ang **+ Create** mula sa navigation menu.
 
-    ![Piliin ang Promptflow.](../../../../../../translated_images/08-12-select-promptflow.1782ec6988841bb53c35011f31fbebc1bdc09c6f4653fea935176212ba608af1.tl.png)
+    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5ba79bedfd35e2f2fb430f344844994375680fcfc111a994ae.tl.png)
 
 1. Piliin ang **Chat flow** mula sa navigation menu.
 
-    ![Piliin ang chat flow.](../../../../../../translated_images/08-13-select-flow-type.f346cc55beed0b2774bd61b2afe86f3640cc772c1715914926333b0e4d6281ee.tl.png)
+    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591f6cc6360bc35c8fca8d63519c09111c6c431de9b46eed143.tl.png)
 
 1. Ilagay ang **Folder name** na gagamitin.
 
-    ![Ilagay ang pangalan.](../../../../../../translated_images/08-14-enter-name.e2b324f7734290157520834403e041f46c06cbdfa5633f4c91725f7389b41cf7.tl.png)
+    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d824bad779a54e55d808a09394b6b730fbea55d78421f52ff.tl.png)
 
 2. Piliin ang **Create**.
 
-#### I-set up ang Prompt flow para makipag-chat gamit ang custom Phi-3 model mo
+#### I-setup ang Prompt flow para makipag-chat sa iyong custom Phi-3 model
 
-Kailangan mong isama ang fine-tuned na Phi-3 model sa isang Prompt flow. Pero, ang kasalukuyang Prompt flow na ibinigay ay hindi ginawa para dito. Kaya, kailangan mong baguhin ang Prompt flow para ma-integrate ang custom model.
+Kailangan mong i-integrate ang fine-tuned na Phi-3 model sa isang Prompt flow. Ngunit, ang kasalukuyang Prompt flow na ibinigay ay hindi disenyo para dito. Kaya, kailangan mong baguhin ang Prompt flow para payagan ang integration ng custom model.
 
-1. Sa Prompt flow, gawin ang mga sumusunod para ma-rebuild ang kasalukuyang flow:
+1. Sa Prompt flow, gawin ang mga sumusunod upang muling buuin ang kasalukuyang flow:
 
     - Piliin ang **Raw file mode**.
-    - Burahin lahat ng existing na code sa *flow.dag.yml* file.
-    - Idagdag ang sumusunod na code sa *flow.dag.yml* file.
+    - Burahin lahat ng umiiral na code sa *flow.dag.yml* na file.
+    - Idagdag ang sumusunod na code sa *flow.dag.yml* na file.
 
         ```yml
         inputs:
@@ -713,9 +629,9 @@ Kailangan mong isama ang fine-tuned na Phi-3 model sa isang Prompt flow. Pero, a
 
     - Piliin ang **Save**.
 
-    ![Piliin ang raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.8383d30bf0b893f0f05e340e68fa3631ee2a526b861551865e2e8a5dd6d4b02b.tl.png)
+    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985b76e070bf170e1d0d0d26b38d93bc635624642191f715a6d.tl.png)
 
-1. Idagdag ang sumusunod na code sa *integrate_with_promptflow.py* file para magamit ang custom Phi-3 model sa Prompt flow.
+1. Idagdag ang sumusunod na code sa *integrate_with_promptflow.py* na file para magamit ang custom Phi-3 model sa Prompt flow.
 
     ```python
     import logging
@@ -778,53 +694,53 @@ Kailangan mong isama ang fine-tuned na Phi-3 model sa isang Prompt flow. Pero, a
 
     ```
 
-    ![I-paste ang prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.1e74d673739ae3fc114a386fd7dff65d6f98d8bf69be16d4b577cbb75844ba38.tl.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d097779ab1c429be9fc07e3f4171e41fbbfb747a6e755816411e6d.tl.png)
 
 > [!NOTE]
 > Para sa mas detalyadong impormasyon tungkol sa paggamit ng Prompt flow sa Azure AI Foundry, maaari mong tingnan ang [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. Piliin ang **Chat input**, **Chat output** para paganahin ang chat gamit ang model mo.
+1. Piliin ang **Chat input**, **Chat output** para paganahin ang chat sa iyong model.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.71fb7bf702d1fff773d9d929aa482bc1962e8ce36dac04ad9d9b86db8c6bb776.tl.png)
+    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03ba022a21159e51d544c6e063e73c10e772c942d4e44da0d30.tl.png)
 
-1. Handa ka na ngayong makipag-chat gamit ang custom Phi-3 model mo. Sa susunod na pagsasanay, matutunan mo kung paano simulan ang Prompt flow at gamitin ito para makipag-chat sa fine-tuned na Phi-3 model mo.
+1. Handa ka na ngayong makipag-chat sa iyong custom Phi-3 model. Sa susunod na pagsasanay, matututuhan mo kung paano simulan ang Prompt flow at gamitin ito para makipag-chat sa iyong fine-tuned na Phi-3 model.
 
 > [!NOTE]
 >
-> Dapat ganito ang itsura ng na-rebuild na flow, tulad ng nasa larawan sa ibaba:
+> Ang muling binuong flow ay dapat magmukhang ganito:
 >
-> ![Halimbawa ng flow.](../../../../../../translated_images/08-18-graph-example.bb35453a6bfee310805715e3ec0678e118273bc32ae8248acfcf8e4c553ed1e5.tl.png)
+> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c10b7375192511a8e2aba847e442b294a2e65d88ffac8f63b.tl.png)
 >
 
-### Makipag-chat gamit ang custom Phi-3 model mo
+### Makipag-chat sa iyong custom Phi-3 model
 
-Ngayon na na-fine-tune at na-integrate mo na ang custom Phi-3 model mo sa Prompt flow, handa ka nang makipag-ugnayan dito. Gabay ka ng pagsasanay na ito sa proseso ng pag-set up at pagsisimula ng chat gamit ang model mo sa Prompt flow. Sa pagsunod sa mga hakbang na ito, magagamit mo nang buo ang kakayahan ng fine-tuned na Phi-3 model mo para sa iba't ibang gawain at usapan.
+Ngayon na na-fine-tune at na-integrate mo na ang iyong custom Phi-3 model sa Prompt flow, handa ka nang makipag-ugnayan dito. Ang pagsasanay na ito ay gagabay sa iyo sa proseso ng pag-setup at pagsisimula ng chat gamit ang iyong model sa pamamagitan ng Prompt flow. Sa pagsunod sa mga hakbang na ito, magagamit mo nang lubos ang kakayahan ng iyong fine-tuned na Phi-3 model para sa iba't ibang gawain at pag-uusap.
 
-- Makipag-chat gamit ang custom Phi-3 model mo gamit ang Prompt flow.
+- Makipag-chat sa iyong custom Phi-3 model gamit ang Prompt flow.
 
 #### Simulan ang Prompt flow
 
 1. Piliin ang **Start compute sessions** para simulan ang Prompt flow.
 
-    ![Simulan ang compute session.](../../../../../../translated_images/09-01-start-compute-session.bf4fd553850fc0efcb8f8fa1e089839f9ea09333f48689aeb8ecce41e4a1ba42.tl.png)
+    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b4809b60d75ce9b0ad53e0729cc1449935ccbe90b954401dc.tl.png)
 
-1. Piliin ang **Validate and parse input** para i-update ang mga parameters.
+1. Piliin ang **Validate and parse input** para i-renew ang mga parameters.
 
-    ![I-validate ang input.](../../../../../../translated_images/09-02-validate-input.24092d447308054d25144e73649a9ac630bd895c376297b03d82354090815a97.tl.png)
+    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e97038d7529b9060a23dc59d7ddbeb38ac9c4562ef4f5b32f7.tl.png)
 
-1. Piliin ang **Value** ng **connection** papunta sa custom connection na ginawa mo. Halimbawa, *connection*.
+1. Piliin ang **Value** ng **connection** sa custom connection na ginawa mo. Halimbawa, *connection*.
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.77f4eef8f74410b4abae1e34ba0f6bc34b3f1390b7158ab4023a08c025ff4993.tl.png)
+    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b184402368a6ec383814b139686118331a5b2eefa489678902269dfc.tl.png)
 
-#### Makipag-chat sa custom model mo
+#### Makipag-chat sa iyong custom model
 
 1. Piliin ang **Chat**.
 
-    ![Piliin ang chat.](../../../../../../translated_images/09-04-select-chat.3cd7462ff5c6e3aa0eb686a29b91420a8fdcd3066fba5507dc257d7b91a3c492.tl.png)
+    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e636a5e1516b6c64fdf2345ceb3142db2bed93ab7e6f03bbb2.tl.png)
 
-1. Narito ang halimbawa ng resulta: Ngayon ay maaari ka nang makipag-chat gamit ang custom Phi-3 model mo. Mas mainam na magtanong base sa data na ginamit sa fine-tuning.
+1. Narito ang halimbawa ng resulta: Ngayon ay maaari ka nang makipag-chat sa iyong custom Phi-3 model. Inirerekomenda na magtanong base sa data na ginamit sa fine-tuning.
 
-    ![Makipag-chat gamit ang prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.30574a870c00e676916d9afb28b70d3fb90e1f00e73f70413cd6aeed74d9c151.tl.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126fa4886e6fd0e7482cfdc6c907fa36f7f2f13d04126f9eda14.tl.png)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pinakapinagkakatiwalaang sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

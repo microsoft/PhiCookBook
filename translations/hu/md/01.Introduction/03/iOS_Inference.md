@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-09T11:04:33+00:00",
+  "translation_date": "2025-07-16T20:23:59+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "hu"
 }
 -->
 # **Phi-3 inferálása iOS-en**
 
-A Phi-3-mini a Microsoft új modellcsaládja, amely lehetővé teszi a nagy nyelvi modellek (LLM-ek) telepítését élő eszközökre és IoT eszközökre. A Phi-3-mini elérhető iOS-re, Androidra és élő eszközökön történő telepítésre, így a generatív AI BYOD környezetben is használható. Az alábbi példa bemutatja, hogyan telepíthető a Phi-3-mini iOS-en.
+A Phi-3-mini a Microsoft új modellcsaládja, amely lehetővé teszi a nagy nyelvi modellek (LLM-ek) telepítését élő eszközökre és IoT eszközökre. A Phi-3-mini elérhető iOS, Android és Edge Device telepítésekhez, így a generatív AI BYOD környezetben is használható. Az alábbi példa bemutatja, hogyan telepíthető a Phi-3-mini iOS-en.
 
 ## **1. Előkészületek**
 
-- **a.** macOS 14 vagy újabb
-- **b.** Xcode 15 vagy újabb
+- **a.** macOS 14+
+- **b.** Xcode 15+
 - **c.** iOS SDK 17.x (iPhone 14 A16 vagy újabb)
 - **d.** Telepítsd a Python 3.10+ verziót (ajánlott a Conda)
-- **e.** Telepítsd a Python könyvtárat: `python-flatbuffers`
+- **e.** Telepítsd a `python-flatbuffers` Python könyvtárat
 - **f.** Telepítsd a CMake-et
 
 ### Semantic Kernel és inferálás
 
-A Semantic Kernel egy alkalmazáskeret, amely lehetővé teszi olyan alkalmazások létrehozását, amelyek kompatibilisek az Azure OpenAI Service-szel, OpenAI modellekkel, sőt helyi modellekkel is. A Semantic Kernel segítségével egyszerűen elérheted a helyi szolgáltatásokat, így könnyen integrálhatod a saját hosztolt Phi-3-mini modell szerveredet.
+A Semantic Kernel egy alkalmazáskeret, amely lehetővé teszi olyan alkalmazások létrehozását, amelyek kompatibilisek az Azure OpenAI Service-szel, OpenAI modellekkel, sőt helyi modellekkel is. A Semantic Kernel-en keresztüli helyi szolgáltatások elérése egyszerű integrációt tesz lehetővé az önállóan hosztolt Phi-3-mini modell szervereddel.
 
 ### Kvantált modellek hívása Ollama vagy LlamaEdge segítségével
 
-Sokan inkább kvantált modelleket használnak a helyi futtatáshoz. Az [Ollama](https://ollama.com) és a [LlamaEdge](https://llamaedge.com) lehetővé teszik különböző kvantált modellek hívását:
+Sok felhasználó előnyben részesíti a kvantált modellek használatát a helyi futtatáshoz. Az [Ollama](https://ollama.com) és a [LlamaEdge](https://llamaedge.com) lehetővé teszi különböző kvantált modellek hívását:
 
 #### **Ollama**
 
-Futtathatod közvetlenül a `ollama run phi3`-t, vagy offline konfigurálhatod. Készíts egy Modelfile-t, amely tartalmazza a `gguf` fájl elérési útját. Példa a Phi-3-mini kvantált modell futtatására:
+Futtathatod közvetlenül az `ollama run phi3` parancsot, vagy offline konfigurálhatod. Hozz létre egy Modelfile-t a `gguf` fájl elérési útjával. Példa a Phi-3-mini kvantált modell futtatására:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -41,7 +41,7 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-Ha egyszerre szeretnéd használni a `gguf`-t felhőben és élő eszközökön, a LlamaEdge remek választás.
+Ha egyszerre szeretnéd használni a `gguf` fájlt felhőben és élő eszközökön, a LlamaEdge kiváló választás.
 
 ## **2. ONNX Runtime fordítása iOS-re**
 
@@ -59,19 +59,19 @@ cd ../
 
 ### **Figyelem**
 
-- **a.** Fordítás előtt győződj meg róla, hogy az Xcode megfelelően be van állítva, és állítsd be aktív fejlesztői könyvtárként a terminálban:
+- **a.** A fordítás előtt győződj meg róla, hogy az Xcode megfelelően van beállítva, és állítsd be aktív fejlesztői könyvtárként a terminálban:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** Az ONNX Runtime-ot több platformra is fordítani kell. iOS esetén fordítsd le `arm64` or `x86_64` architektúrákra.
+- **b.** Az ONNX Runtime-ot különböző platformokra kell fordítani. iOS esetén `arm64` vagy `x86_64` architektúrára fordíthatsz.
 
-- **c.** Ajánlott a legfrissebb iOS SDK használata a fordításhoz, de régebbi verzióval is működik, ha kompatibilitásra van szükség.
+- **c.** Ajánlott a legfrissebb iOS SDK használata a fordításhoz, de régebbi verzió is használható, ha kompatibilitásra van szükség korábbi SDK-kkal.
 
 ## **3. Generatív AI fordítása ONNX Runtime-tal iOS-re**
 
-> **Note:** Mivel a Generatív AI ONNX Runtime-tal még előzetes verzióban van, számíts változásokra.
+> **Megjegyzés:** Mivel a Generatív AI ONNX Runtime-mal még előzetes verzióban van, számíts esetleges változásokra.
 
 ```bash
 
@@ -101,35 +101,35 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. Alkalmazás létrehozása Xcode-ban**
 
-Az Objective-C-t választottam az alkalmazás fejlesztéséhez, mert az ONNX Runtime C++ API-jával a Generatív AI jobban kompatibilis Objective-C-vel. Természetesen Swift hídon keresztül is megoldható a hívások kezelése.
+Az alkalmazás fejlesztési módjaként az Objective-C-t választottam, mert az ONNX Runtime C++ API-jával a Generatív AI használata így jobb kompatibilitást biztosít. Természetesen Swift bridging segítségével is megvalósíthatók a hívások.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.hu.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.hu.png)
 
-## **5. ONNX kvantált INT4 modell másolása az alkalmazás projektbe**
+## **5. ONNX kvantált INT4 modell másolása az App projektbe**
 
-Az ONNX formátumú INT4 kvantált modellt importálni kell, amit először le kell tölteni.
+Importálni kell az ONNX formátumú INT4 kvantált modellt, amelyet először le kell tölteni.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.hu.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.hu.png)
 
-A letöltés után add hozzá a projekt Resources könyvtárához Xcode-ban.
+A letöltés után hozzá kell adni a projekt Resources könyvtárához Xcode-ban.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.hu.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.hu.png)
 
 ## **6. C++ API hozzáadása a ViewControllers-hez**
 
 > **Figyelem:**
 
-- **a.** Add hozzá a megfelelő C++ fejléc fájlokat a projekthez.
+- **a.** Add hozzá a megfelelő C++ fejlécfájlokat a projekthez.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.hu.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.hu.png)
 
-- **b.** Include-olj be `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Illeszd be az `onnxruntime-genai` dinamikus könyvtárat Xcode-ba.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.hu.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.hu.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **c.** Használd a C mintakódot teszteléshez. További funkciókhoz, például ChatUI-hoz is hozzáadhatsz kiegészítéseket.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` fájlokat, hogy engedélyezd az Objective-C++ támogatást.
+- **d.** Mivel C++-t kell használnod a projektben, nevezd át a `ViewController.m` fájlt `ViewController.mm`-re, hogy engedélyezd az Objective-C++ támogatást.
 
 ```objc
 
@@ -160,11 +160,11 @@ A letöltés után add hozzá a projekt Resources könyvtárához Xcode-ban.
 
 ## **7. Az alkalmazás futtatása**
 
-A beállítások után futtasd az alkalmazást, hogy láthasd a Phi-3-mini modell inferálásának eredményét.
+A beállítások elvégzése után futtathatod az alkalmazást, hogy megtekintsd a Phi-3-mini modell inferálásának eredményét.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.hu.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.hu.jpg)
 
 További mintakódokért és részletes útmutatókért látogass el a [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) oldalra.
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum anyanyelvű változatát kell tekinteni a hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

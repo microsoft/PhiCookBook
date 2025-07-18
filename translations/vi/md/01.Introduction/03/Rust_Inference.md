@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T13:02:03+00:00",
+  "translation_date": "2025-07-16T21:31:38+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "vi"
 }
 -->
 # Inference đa nền tảng với Rust
 
-Hướng dẫn này sẽ dẫn bạn qua quá trình thực hiện inference sử dụng Rust và [Candle ML framework](https://github.com/huggingface/candle) từ HuggingFace. Việc sử dụng Rust cho inference mang lại nhiều lợi thế, đặc biệt khi so sánh với các ngôn ngữ lập trình khác. Rust nổi tiếng với hiệu năng cao, tương đương với C và C++. Điều này khiến nó trở thành lựa chọn tuyệt vời cho các tác vụ inference, vốn có thể rất tốn tài nguyên tính toán. Cụ thể, điều này nhờ vào các trừu tượng không tốn chi phí và quản lý bộ nhớ hiệu quả, không có overhead của garbage collection. Khả năng đa nền tảng của Rust cho phép phát triển mã chạy trên nhiều hệ điều hành khác nhau, bao gồm Windows, macOS và Linux, cũng như các hệ điều hành di động, mà không cần thay đổi đáng kể mã nguồn.
+Hướng dẫn này sẽ giúp chúng ta thực hiện inference sử dụng Rust và [Candle ML framework](https://github.com/huggingface/candle) từ HuggingFace. Việc dùng Rust cho inference mang lại nhiều lợi thế, đặc biệt khi so sánh với các ngôn ngữ lập trình khác. Rust nổi tiếng với hiệu năng cao, tương đương với C và C++. Điều này làm cho Rust trở thành lựa chọn tuyệt vời cho các tác vụ inference, vốn có thể đòi hỏi tính toán nặng. Đặc biệt, điều này nhờ vào các trừu tượng không tốn chi phí và quản lý bộ nhớ hiệu quả, không có chi phí thu gom rác. Khả năng đa nền tảng của Rust cho phép phát triển mã chạy trên nhiều hệ điều hành khác nhau, bao gồm Windows, macOS và Linux, cũng như các hệ điều hành di động, mà không cần thay đổi nhiều trong mã nguồn.
 
 Điều kiện tiên quyết để theo dõi hướng dẫn này là [cài đặt Rust](https://www.rust-lang.org/tools/install), bao gồm trình biên dịch Rust và Cargo, trình quản lý gói của Rust.
 
@@ -21,9 +21,9 @@ Hướng dẫn này sẽ dẫn bạn qua quá trình thực hiện inference s�
 cargo new phi-console-app
 ```
 
-Lệnh này tạo cấu trúc dự án ban đầu với file `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Lệnh này tạo ra cấu trúc dự án ban đầu với một file `Cargo.toml` và thư mục `src` chứa file `main.rs`.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml`:
+Tiếp theo, chúng ta sẽ thêm các dependencies - cụ thể là các crate `candle`, `hf-hub` và `tokenizers` - vào file `Cargo.toml`:
 
 ```toml
 [package]
@@ -41,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## Bước 2: Cấu hình các tham số cơ bản
 
-Trong file main.rs, chúng ta sẽ thiết lập các tham số ban đầu cho inference. Tất cả sẽ được hardcode để đơn giản, nhưng bạn có thể chỉnh sửa theo nhu cầu.
+Trong file main.rs, chúng ta sẽ thiết lập các tham số ban đầu cho quá trình inference. Tất cả sẽ được mã hóa cứng để đơn giản, nhưng có thể chỉnh sửa khi cần.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,16 +55,16 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: Điều chỉnh độ ngẫu nhiên trong quá trình sampling.
-- **sample_len**: Xác định độ dài tối đa của văn bản được sinh ra.
-- **top_p**: Dùng cho nucleus sampling để giới hạn số lượng token được xét tại mỗi bước.
-- **repeat_last_n**: Kiểm soát số lượng token được xét để áp dụng penalty tránh lặp lại.
-- **repeat_penalty**: Giá trị penalty để hạn chế token bị lặp lại.
-- **seed**: Hạt giống ngẫu nhiên (có thể dùng giá trị cố định để tái tạo kết quả).
-- **prompt**: Văn bản đầu vào để bắt đầu quá trình sinh. Lưu ý rằng ta yêu cầu model tạo một bài haiku về khúc côn cầu trên băng, đồng thời bọc nó bằng các token đặc biệt để chỉ phần người dùng và trợ lý trong hội thoại. Model sẽ hoàn thành prompt bằng một bài haiku.
-- **device**: Ở ví dụ này ta dùng CPU để tính toán. Candle cũng hỗ trợ chạy trên GPU với CUDA và Metal.
+- **temperature**: Điều chỉnh độ ngẫu nhiên trong quá trình lấy mẫu.
+- **sample_len**: Xác định độ dài tối đa của văn bản được tạo ra.
+- **top_p**: Dùng cho nucleus sampling để giới hạn số token được xem xét ở mỗi bước.
+- **repeat_last_n**: Kiểm soát số token được xem xét để áp dụng hình phạt nhằm tránh lặp lại chuỗi.
+- **repeat_penalty**: Giá trị hình phạt để hạn chế token bị lặp lại.
+- **seed**: Hạt giống ngẫu nhiên (có thể dùng giá trị cố định để tái tạo kết quả tốt hơn).
+- **prompt**: Văn bản gợi ý ban đầu để bắt đầu tạo văn bản. Lưu ý rằng chúng ta yêu cầu mô hình tạo một bài haiku về khúc côn cầu trên băng, và chúng ta bao quanh nó bằng các token đặc biệt để chỉ phần người dùng và trợ lý trong cuộc hội thoại. Mô hình sẽ hoàn thành prompt bằng một bài haiku.
+- **device**: Ở ví dụ này, chúng ta sử dụng CPU để tính toán. Candle cũng hỗ trợ chạy trên GPU với CUDA và Metal.
 
-## Bước 3: Tải/Chuẩn bị Model và Tokenizer
+## Bước 3: Tải về/Chuẩn bị mô hình và tokenizer
 
 ```rust
 let api = hf_hub::api::sync::Api::new()?;
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Chúng ta sử dụng file `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` để token hóa văn bản đầu vào. Sau khi tải về, model sẽ được cache lại, nên lần chạy đầu tiên sẽ hơi chậm (vì phải tải model 2.4GB), nhưng các lần sau sẽ nhanh hơn nhiều.
+Chúng ta sử dụng API `hf_hub` để tải các file mô hình và tokenizer từ Hugging Face model hub. File `gguf` chứa trọng số mô hình đã được lượng tử hóa, trong khi file `tokenizer.json` dùng để phân tách văn bản đầu vào thành token. Sau khi tải về, mô hình được lưu cache, nên lần chạy đầu tiên sẽ chậm (vì tải 2.4GB mô hình) nhưng các lần sau sẽ nhanh hơn.
 
-## Bước 4: Nạp Model
+## Bước 4: Tải mô hình
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Chúng ta nạp trọng số model đã được lượng tử hóa vào bộ nhớ và khởi tạo model Phi-3. Bước này bao gồm việc đọc trọng số từ file `gguf` và thiết lập model để inference trên thiết bị đã chọn (ở đây là CPU).
+Chúng ta tải trọng số mô hình đã lượng tử vào bộ nhớ và khởi tạo mô hình Phi-3. Bước này bao gồm việc đọc trọng số từ file `gguf` và thiết lập mô hình để inference trên thiết bị đã chỉ định (ở đây là CPU).
 
-## Bước 5: Xử lý Prompt và Chuẩn bị cho Inference
+## Bước 5: Xử lý prompt và chuẩn bị cho inference
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-Ở bước này, ta token hóa prompt đầu vào và chuẩn bị cho inference bằng cách chuyển đổi nó thành chuỗi các ID token. Đồng thời khởi tạo các giá trị `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`. Mỗi token được chuyển thành tensor và đưa qua model để lấy logits.
+Ở bước này, chúng ta tokenize prompt đầu vào và chuẩn bị nó cho inference bằng cách chuyển đổi thành chuỗi ID token. Đồng thời khởi tạo `LogitsProcessor` để xử lý quá trình lấy mẫu (phân phối xác suất trên từ vựng) dựa trên các giá trị `temperature` và `top_p` đã cho. Mỗi token được chuyển thành tensor và đưa qua mô hình để lấy logits.
 
-Vòng lặp xử lý từng token trong prompt, cập nhật logits processor và chuẩn bị cho việc sinh token tiếp theo.
+Vòng lặp xử lý từng token trong prompt, cập nhật logits processor và chuẩn bị cho việc tạo token tiếp theo.
 
-## Bước 6: Thực hiện Inference
+## Bước 6: Inference
 
 ```rust
 for index in 0..to_sample {
@@ -160,11 +160,11 @@ for index in 0..to_sample {
 }
 ```
 
-Trong vòng lặp inference, ta sinh token từng cái một cho đến khi đạt độ dài mẫu mong muốn hoặc gặp token kết thúc chuỗi. Token tiếp theo được chuyển thành tensor và đưa qua model, trong khi logits được xử lý để áp dụng penalty và sampling. Sau đó token được chọn, giải mã và thêm vào chuỗi.
+Trong vòng lặp inference, chúng ta tạo token từng cái một cho đến khi đạt độ dài mẫu mong muốn hoặc gặp token kết thúc chuỗi. Token tiếp theo được chuyển thành tensor và đưa qua mô hình, trong khi logits được xử lý để áp dụng hình phạt và lấy mẫu. Sau đó token tiếp theo được lấy mẫu, giải mã và thêm vào chuỗi.
 
-Để tránh văn bản bị lặp lại, ta áp dụng penalty lên các token đã xuất hiện dựa trên tham số `repeat_last_n` and `repeat_penalty`.
+Để tránh văn bản bị lặp lại, một hình phạt được áp dụng cho các token lặp dựa trên các tham số `repeat_last_n` và `repeat_penalty`.
 
-Cuối cùng, văn bản được sinh ra sẽ được in ra từng phần khi giải mã, đảm bảo xuất ra theo thời gian thực.
+Cuối cùng, văn bản được tạo ra được in ra ngay khi giải mã, đảm bảo đầu ra theo thời gian thực.
 
 ## Bước 7: Chạy ứng dụng
 
@@ -174,7 +174,7 @@ Cuối cùng, văn bản được sinh ra sẽ được in ra từng phần khi 
 cargo run --release
 ```
 
-Lệnh này sẽ in ra một bài haiku về khúc côn cầu trên băng do model Phi-3 tạo ra. Ví dụ như:
+Lệnh này sẽ in ra một bài haiku về khúc côn cầu trên băng được tạo bởi mô hình Phi-3. Ví dụ như:
 
 ```
 Puck glides swiftly,  
@@ -192,9 +192,9 @@ Swish of sticks now alive.
 
 ## Kết luận
 
-Bằng cách làm theo các bước trên, chúng ta có thể thực hiện sinh văn bản sử dụng model Phi-3 với Rust và Candle chỉ trong chưa đến 100 dòng mã. Mã nguồn xử lý việc nạp model, token hóa và inference, tận dụng tensor và xử lý logits để tạo ra văn bản mạch lạc dựa trên prompt đầu vào.
+Bằng cách làm theo các bước trên, chúng ta có thể thực hiện tạo văn bản sử dụng mô hình Phi-3 với Rust và Candle chỉ trong chưa đầy 100 dòng mã. Mã xử lý việc tải mô hình, phân tách token và inference, tận dụng tensor và xử lý logits để tạo ra văn bản mạch lạc dựa trên prompt đầu vào.
 
-Ứng dụng console này có thể chạy trên Windows, Linux và Mac OS. Nhờ tính di động của Rust, mã cũng có thể được chuyển đổi thành thư viện chạy trong các ứng dụng di động (console app thì không chạy được trên đó).
+Ứng dụng console này có thể chạy trên Windows, Linux và Mac OS. Nhờ tính di động của Rust, mã cũng có thể được điều chỉnh thành thư viện để chạy trong các ứng dụng di động (vì chúng ta không thể chạy ứng dụng console trực tiếp trên đó).
 
 ## Phụ lục: mã nguồn đầy đủ
 
@@ -305,7 +305,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Lưu ý: để chạy mã này trên aarch64 Linux hoặc aarch64 Windows, hãy thêm file `.cargo/config` với nội dung sau:
+Lưu ý: để chạy mã này trên aarch64 Linux hoặc aarch64 Windows, thêm một file tên `.cargo/config` với nội dung sau:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -319,7 +319,7 @@ rustflags = [
 ]
 ```
 
-> Bạn có thể truy cập kho [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) chính thức để xem thêm các ví dụ về cách sử dụng model Phi-3 với Rust và Candle, bao gồm các phương pháp khác nhau cho inference.
+> Bạn có thể truy cập kho [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) chính thức để xem thêm các ví dụ về cách sử dụng mô hình Phi-3 với Rust và Candle, bao gồm các phương pháp thay thế cho inference.
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ nguyên bản nên được coi là nguồn tham khảo chính thức. Đối với các thông tin quan trọng, nên sử dụng dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm đối với bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

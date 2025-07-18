@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:31:25+00:00",
+  "translation_date": "2025-07-16T14:42:50+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "fi"
 }
@@ -15,7 +15,7 @@ Kun lähetät pull requestin, CLA-botti tarkistaa automaattisesti, tarvitsetko C
 
 ## Käyttäytymissäännöt
 
-Tämä projekti on ottanut käyttöön [Microsoft Open Source Code of Conductin](https://opensource.microsoft.com/codeofconduct/). Lisätietoja löydät [Code of Conduct FAQ:sta](https://opensource.microsoft.com/codeofconduct/faq/) tai ota yhteyttä osoitteeseen [opencode@microsoft.com](mailto:opencode@microsoft.com) jos sinulla on lisäkysymyksiä tai kommentteja.
+Tämä projekti on ottanut käyttöön [Microsoft Open Source Code of Conductin](https://opensource.microsoft.com/codeofconduct/). Lisätietoja löydät [Code of Conduct FAQ:sta](https://opensource.microsoft.com/codeofconduct/faq/) tai ota yhteyttä osoitteeseen [opencode@microsoft.com](mailto:opencode@microsoft.com) lisäkysymyksiä tai kommentteja varten.
 
 ## Varotoimet issueiden luomisessa
 
@@ -23,7 +23,7 @@ Tämä projekti on ottanut käyttöön [Microsoft Open Source Code of Conductin]
 
 ## Kuinka osallistua
 
-### Pull requestien ohjeet
+### Pull request -ohjeet
 
 Kun lähetät pull requestin (PR) Phi-3 CookBook -repositorioosi, noudata seuraavia ohjeita:
 
@@ -78,7 +78,7 @@ Kun olet lisännyt oikean suhteellisen polun, tallenna ja työnnä muutokset.
 
 Tämä työnkulku varmistaa, ettei mikään verkkourli sisällä maakohtaista paikallisasetusta. Koska tämä repositorio on maailmanlaajuisesti saatavilla, on tärkeää varmistaa, ettei URL-osoitteissa ole oman maasi paikallisasetusta.
 
-1. Tarkista, ettei URL-osoitteissasi ole maakohtaisia paikallisasetuksia tekemällä seuraavat toimet:
+1. Tarkista, ettei URL-osoitteissasi ole maakohtaisia paikallisasetuksia:
 
     - Etsi tekstiä kuten `/en-us/`, `/en/` tai muita kielikohtaisia paikallisasetuksia URL-osoitteista.
     - Jos näitä ei ole URL-osoitteissasi, tarkistus menee läpi.
@@ -91,14 +91,14 @@ Kun olet poistanut paikallisasetuksen, tallenna ja työnnä muutokset.
 
 ### Tarkista rikkinäiset URL-osoitteet
 
-Tämä työnkulku varmistaa, että kaikki verkkourlit tiedostoissasi toimivat ja palauttavat 200-tilakoodin.
+Tämä työnkulku varmistaa, että kaikki tiedostoissasi olevat verkkourlit toimivat ja palauttavat 200-tilakoodin.
 
-1. Tarkista, että URL-osoitteesi toimivat oikein tekemällä seuraavat toimet:
-    - Tarkista URL-osoitteiden tila tiedostoissasi.
+1. Tarkista, että URL-osoitteesi toimivat oikein:
+    - Tarkista tiedostoissasi olevien URL-osoitteiden tila.
 
 2. Korjataksesi rikkinäiset URL-osoitteet, tee seuraavat toimet:
-    - Avaa tiedosto, joka sisältää rikkinäisen URL-osoitteen.
-    - Päivitä URL oikeaksi.
+    - Avaa tiedosto, jossa rikkinäinen URL on.
+    - Päivitä URL oikeaan osoitteeseen.
 
 Kun olet korjannut URL-osoitteet, tallenna ja työnnä muutokset.
 
@@ -107,8 +107,8 @@ Kun olet korjannut URL-osoitteet, tallenna ja työnnä muutokset.
 > On tilanteita, joissa URL-tarkistus epäonnistuu, vaikka linkki olisi saavutettavissa. Tämä voi johtua useista syistä, kuten:
 >
 > - **Verkkorajoitukset:** GitHubin toimintapalvelimilla voi olla verkkorajoituksia, jotka estävät pääsyn tiettyihin URL-osoitteisiin.
-> - **Aikakatkaisuongelmat:** URL-osoitteet, jotka vastaavat hitaasti, voivat aiheuttaa aikakatkaisun työnkulussa.
+> - **Aikakatkaisuongelmat:** URL-osoitteet, jotka vastaavat liian hitaasti, voivat aiheuttaa aikakatkaisun työnkulussa.
 > - **Väliaikaiset palvelinongelmat:** Satunnaiset palvelinkatkokset tai huollot voivat tehdä URL-osoitteen tilapäisesti saavuttamattomaksi tarkistuksen aikana.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

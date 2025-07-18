@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-05-09T13:49:53+00:00",
+  "translation_date": "2025-07-16T21:57:07+00:00",
   "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
   "language_code": "sk"
 }
 -->
-# **Kvantizácia Phi-3.5 pomocou Apple MLX Frameworku**
+# **Kvantilizácia Phi-3.5 pomocou Apple MLX Frameworku**
 
-MLX je framework pre strojové učenie na Apple silicii, vytvorený výskumníkmi Apple v oblasti strojového učenia.
+MLX je framework pre strojové učenie na Apple silicium, vyvinutý výskumníkmi v oblasti strojového učenia v Apple.
 
-MLX je navrhnutý výskumníkmi strojového učenia pre výskumníkov strojového učenia. Framework je užívateľsky prívetivý, no zároveň efektívny na trénovanie a nasadzovanie modelov. Jeho dizajn je konceptuálne jednoduchý. Cieľom je umožniť výskumníkom ľahko rozširovať a vylepšovať MLX, aby mohli rýchlo skúmať nové nápady.
+MLX je navrhnutý výskumníkmi pre výskumníkov v oblasti strojového učenia. Framework je určený tak, aby bol používateľsky prívetivý, no zároveň efektívny pri trénovaní a nasadzovaní modelov. Koncepcia samotného frameworku je tiež jednoduchá. Naším cieľom je umožniť výskumníkom ľahko rozširovať a vylepšovať MLX, aby mohli rýchlo skúmať nové nápady.
 
-LLM modely je možné zrýchliť na zariadeniach Apple Silicon pomocou MLX a modely je možné pohodlne spúšťať lokálne.
+LLM modely môžu byť zrýchlené na zariadeniach Apple Silicon pomocou MLX a modely je možné pohodlne spúšťať lokálne.
 
-Teraz Apple MLX Framework podporuje konverziu kvantizácie pre Phi-3.5-Instruct (**podpora Apple MLX Frameworku**), Phi-3.5-Vision (**podpora MLX-VLM Frameworku**) a Phi-3.5-MoE (**podpora Apple MLX Frameworku**). Poďme to vyskúšať:
+Teraz Apple MLX Framework podporuje konverziu kvantilizácie pre Phi-3.5-Instruct (**podpora Apple MLX Frameworku**), Phi-3.5-Vision (**podpora MLX-VLM Frameworku**) a Phi-3.5-MoE (**podpora Apple MLX Frameworku**). Poďme to vyskúšať:
 
 ### **Phi-3.5-Instruct**
 
@@ -41,13 +41,13 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3.5-MoE-instruct  -q
 
 ```
 
-### **🤖 Príklady pre Phi-3.5 s Apple MLX**
+### **🤖 Ukážky pre Phi-3.5 s Apple MLX**
 
 | Laboratóriá    | Úvod | Spustiť |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Úvod Phi-3.5 Instruct  | Naučte sa, ako používať Phi-3.5 Instruct s Apple MLX frameworkom   |  [Spustiť](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
-| 🚀 Lab-Úvod Phi-3.5 Vision (obrázok) | Naučte sa, ako používať Phi-3.5 Vision na analýzu obrázkov s Apple MLX frameworkom     |  [Spustiť](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
-| 🚀 Lab-Úvod Phi-3.5 Vision (moE)   | Naučte sa, ako používať Phi-3.5 MoE s Apple MLX frameworkom  |  [Spustiť](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | Naučte sa, ako používať Phi-3.5 Instruct s Apple MLX frameworkom   |  [Spustiť](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (obrázok) | Naučte sa, ako používať Phi-3.5 Vision na analýzu obrázkov s Apple MLX frameworkom     |  [Spustiť](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (moE)   | Naučte sa, ako používať Phi-3.5 MoE s Apple MLX frameworkom  |  [Spustiť](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
 
 ## **Zdroje**
 
@@ -57,5 +57,5 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3.5-MoE-instruct  -q
 
 3. MLX-VLM GitHub repozitár [https://github.com/Blaizzy/mlx-vlm](https://github.com/Blaizzy/mlx-vlm)
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

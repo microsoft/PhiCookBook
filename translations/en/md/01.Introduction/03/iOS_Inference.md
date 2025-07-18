@@ -2,31 +2,31 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-09T20:03:53+00:00",
+  "translation_date": "2025-07-16T20:17:05+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "en"
 }
 -->
 # **Inference Phi-3 on iOS**
 
-Phi-3-mini is a new series of models from Microsoft that enables deployment of Large Language Models (LLMs) on edge devices and IoT devices. Phi-3-mini is available for iOS, Android, and Edge Device deployments, allowing generative AI to be deployed in BYOD environments. The following example shows how to deploy Phi-3-mini on iOS.
+Phi-3-mini is a new series of models from Microsoft that enables deploying Large Language Models (LLMs) on edge and IoT devices. Phi-3-mini supports iOS, Android, and Edge Device deployments, allowing generative AI to be used in BYOD environments. The following example shows how to deploy Phi-3-mini on iOS.
 
 ## **1. Preparation**
 
 - **a.** macOS 14+
 - **b.** Xcode 15+
 - **c.** iOS SDK 17.x (iPhone 14 A16 or newer)
-- **d.** Install Python 3.10+ (Conda is recommended)
+- **d.** Install Python 3.10+ (Conda recommended)
 - **e.** Install the Python library: `python-flatbuffers`
 - **f.** Install CMake
 
 ### Semantic Kernel and Inference
 
-Semantic Kernel is an application framework that lets you build apps compatible with Azure OpenAI Service, OpenAI models, and even local models. Accessing local services through Semantic Kernel makes it easy to integrate with your self-hosted Phi-3-mini model server.
+Semantic Kernel is an application framework that lets you build apps compatible with Azure OpenAI Service, OpenAI models, and even local models. Using Semantic Kernel to access local services makes it easy to integrate with your self-hosted Phi-3-mini model server.
 
 ### Calling Quantized Models with Ollama or LlamaEdge
 
-Many users prefer using quantized models to run models locally. [Ollama](https://ollama.com) and [LlamaEdge](https://llamaedge.com) allow users to call various quantized models:
+Many users prefer quantized models to run models locally. [Ollama](https://ollama.com) and [LlamaEdge](https://llamaedge.com) allow you to call various quantized models:
 
 #### **Ollama**
 
@@ -41,7 +41,7 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-If you want to use `gguf` on both cloud and edge devices at the same time, LlamaEdge is a great choice.
+If you want to use `gguf` models on both cloud and edge devices simultaneously, LlamaEdge is a great choice.
 
 ## **2. Compiling ONNX Runtime for iOS**
 
@@ -59,13 +59,13 @@ cd ../
 
 ### **Notice**
 
-- **a.** Before compiling, make sure Xcode is properly set up and set it as the active developer directory in the terminal:
+- **a.** Before compiling, make sure Xcode is properly set up and set as the active developer directory in the terminal:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime needs to be compiled for different platforms. For iOS, you can compile for `arm64` or `x86_64`.
+- **b.** ONNX Runtime must be compiled for different platforms. For iOS, you can compile for `arm64` or `x86_64`.
 
 - **c.** It’s recommended to use the latest iOS SDK for compilation, but you can also use an older version if you need compatibility with previous SDKs.
 
@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 I chose Objective-C for app development because using Generative AI with the ONNX Runtime C++ API works better with Objective-C. Of course, you can also handle related calls through Swift bridging.
 
-![xcode](../../../../../imgs/01/03/iOS/xcode.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.en.png)
 
 ## **5. Copy the ONNX quantized INT4 model to the App project**
 
-We need to import the INT4 quantized model in ONNX format, which must be downloaded first.
+We need to import the INT4 quantized ONNX model, which must be downloaded first.
 
-![hf](../../../../../imgs/01/03/iOS/hf.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.en.png)
 
 After downloading, add it to the Resources folder of your Xcode project.
 
-![model](../../../../../imgs/01/03/iOS/model.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.en.png)
 
 ## **6. Adding the C++ API in ViewControllers**
 
@@ -121,13 +121,13 @@ After downloading, add it to the Resources folder of your Xcode project.
 
 - **a.** Add the corresponding C++ header files to the project.
 
-  ![Header File](../../../../../imgs/01/03/iOS/head.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.en.png)
 
 - **b.** Include the `onnxruntime-genai` dynamic library in Xcode.
 
-  ![Library](../../../../../imgs/01/03/iOS/lib.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.en.png)
 
-- **c.** Use the C samples code for testing. You can also add extra features like ChatUI for more functionality.
+- **c.** Use the C sample code for testing. You can also add extra features like ChatUI for more functionality.
 
 - **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` to enable Objective-C++ support.
 
@@ -162,7 +162,7 @@ After downloading, add it to the Resources folder of your Xcode project.
 
 Once everything is set up, you can run the app to see the results of the Phi-3-mini model inference.
 
-![Running Result](../../../../../imgs/01/03/iOS/result.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.en.jpg)
 
 For more sample code and detailed instructions, visit the [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

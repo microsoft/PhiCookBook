@@ -2,58 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:36:15+00:00",
+  "translation_date": "2025-07-17T02:30:09+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "pt"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) é uma plataforma open-source projetada para gerenciar o ciclo de vida completo de machine learning.
+[MLflow](https://mlflow.org/) é uma plataforma open-source concebida para gerir o ciclo de vida completo do machine learning.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.pt.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.pt.png)
 
-MLFlow é usado para gerenciar o ciclo de vida de ML, incluindo experimentação, reprodutibilidade, deployment e um registro central de modelos. Atualmente, MLflow oferece quatro componentes.
+O MLFlow é utilizado para gerir o ciclo de vida do ML, incluindo experimentação, reprodutibilidade, deployment e um registo central de modelos. Atualmente, o MLflow oferece quatro componentes.
 
-- **MLflow Tracking:** Registrar e consultar experimentos, código, configuração de dados e resultados.
-- **MLflow Projects:** Empacotar código de ciência de dados em um formato que permite reproduzir execuções em qualquer plataforma.
-- **Mlflow Models:** Fazer deploy de modelos de machine learning em diversos ambientes de serving.
-- **Model Registry:** Armazenar, anotar e gerenciar modelos em um repositório central.
+- **MLflow Tracking:** Registar e consultar experimentos, código, configuração de dados e resultados.
+- **MLflow Projects:** Empacotar código de ciência de dados num formato que permite reproduzir execuções em qualquer plataforma.
+- **Mlflow Models:** Fazer deployment de modelos de machine learning em diversos ambientes de serving.
+- **Model Registry:** Armazenar, anotar e gerir modelos num repositório central.
 
-Ele inclui funcionalidades para rastrear experimentos, empacotar código em execuções reprodutíveis, além de compartilhar e implantar modelos. MLFlow está integrado ao Databricks e suporta várias bibliotecas de ML, sendo agnóstico quanto à biblioteca. Pode ser usado com qualquer biblioteca de machine learning e em qualquer linguagem de programação, pois oferece uma API REST e CLI para facilitar o uso.
+Inclui funcionalidades para rastrear experimentos, empacotar código em execuções reproduzíveis, e partilhar e fazer deployment de modelos. O MLFlow está integrado no Databricks e suporta várias bibliotecas de ML, sendo agnóstico em relação a bibliotecas. Pode ser usado com qualquer biblioteca de machine learning e em qualquer linguagem de programação, pois disponibiliza uma API REST e uma CLI para maior conveniência.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.pt.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.pt.png)
 
-Principais recursos do MLFlow incluem:
+As principais funcionalidades do MLFlow incluem:
 
-- **Experiment Tracking:** Registrar e comparar parâmetros e resultados.
-- **Model Management:** Implantar modelos em várias plataformas de serving e inferência.
-- **Model Registry:** Gerenciar colaborativamente o ciclo de vida dos modelos MLflow, incluindo versionamento e anotações.
-- **Projects:** Empacotar código de ML para compartilhamento ou uso em produção.
+- **Rastreamento de Experimentos:** Registar e comparar parâmetros e resultados.
+- **Gestão de Modelos:** Fazer deployment de modelos para várias plataformas de serving e inferência.
+- **Model Registry:** Gerir colaborativamente o ciclo de vida dos modelos MLflow, incluindo versionamento e anotações.
+- **Projects:** Empacotar código ML para partilha ou uso em produção.
 
-MLFlow também suporta o ciclo MLOps, que inclui preparar dados, registrar e gerenciar modelos, empacotar modelos para execução, implantar serviços e monitorar modelos. Seu objetivo é simplificar o processo de transição de um protótipo para um fluxo de trabalho em produção, especialmente em ambientes de nuvem e edge.
+O MLFlow também suporta o ciclo MLOps, que inclui preparar dados, registar e gerir modelos, empacotar modelos para execução, fazer deployment de serviços e monitorizar modelos. O objetivo é simplificar o processo de transição de um protótipo para um fluxo de trabalho de produção, especialmente em ambientes cloud e edge.
 
-## Cenário E2E - Construindo um wrapper e usando Phi-3 como um modelo MLFlow
+## Cenário E2E - Construir um wrapper e usar o Phi-3 como modelo MLFlow
 
-Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um wrapper em torno do modelo de linguagem pequeno Phi-3 (SLM) e executá-lo como um modelo MLFlow, seja localmente ou na nuvem, por exemplo, no workspace do Azure Machine Learning.
+Neste exemplo E2E vamos demonstrar duas abordagens diferentes para construir um wrapper em torno do modelo de linguagem pequeno Phi-3 (SLM) e depois executá-lo como um modelo MLFlow, localmente ou na cloud, por exemplo, no Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.pt.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.pt.png)
 
 | Projeto | Descrição | Localização |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline é a opção mais simples para construir um wrapper se você quiser usar um modelo HuggingFace com o sabor experimental transformers do MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | No momento da escrita, o transformer pipeline não suportava a geração de wrapper MLFlow para modelos HuggingFace em formato ONNX, mesmo com o pacote experimental optimum Python. Para casos assim, você pode construir seu próprio wrapper Python personalizado para modo MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | O Transformer Pipeline é a opção mais simples para construir um wrapper se quiser usar um modelo HuggingFace com o flavour experimental de transformers do MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | No momento da escrita, o transformer pipeline não suportava a geração de wrappers MLFlow para modelos HuggingFace em formato ONNX, mesmo com o pacote experimental optimum Python. Para casos como este, pode construir o seu wrapper Python personalizado para o modo MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Projeto: Transformer Pipeline
 
-1. Você vai precisar dos pacotes Python relevantes do MLFlow e HuggingFace:
+1. Vai precisar dos pacotes Python relevantes do MLFlow e HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Em seguida, deve iniciar um transformer pipeline referenciando o modelo Phi-3 desejado no registro HuggingFace. Como pode ser visto no card do modelo _Phi-3-mini-4k-instruct_, sua tarefa é do tipo “Text Generation”:
+2. De seguida, deve iniciar um transformer pipeline referenciando o modelo Phi-3 alvo no registo HuggingFace. Como pode ser visto no cartão do modelo _Phi-3-mini-4k-instruct_, a sua tarefa é do tipo “Text Generation”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um
     )
     ```
 
-3. Agora, você pode salvar o pipeline transformer do seu modelo Phi-3 no formato MLFlow e fornecer detalhes adicionais como o caminho dos artefatos, configurações específicas do modelo e tipo de API de inferência:
+3. Agora pode guardar o transformer pipeline do seu modelo Phi-3 no formato MLFlow e fornecer detalhes adicionais como o caminho para os artefactos, configurações específicas do modelo e tipo de API de inferência:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -75,7 +75,7 @@ Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um
 
 ## Projeto: Custom Python Wrapper
 
-1. Podemos usar aqui a [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) da Microsoft para a inferência do modelo ONNX e codificação/decodificação de tokens. Você deve escolher o pacote _onnxruntime_genai_ para seu ambiente de execução, no exemplo abaixo voltado para CPU:
+1. Podemos aqui utilizar a [API generate() do ONNX Runtime](https://github.com/microsoft/onnxruntime-genai) da Microsoft para a inferência do modelo ONNX e codificação/decodificação de tokens. Deve escolher o pacote _onnxruntime_genai_ para o seu ambiente de computação alvo, com o exemplo abaixo a visar CPU:
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um
     import onnxruntime_genai as og
     ```
 
-1. Nossa classe customizada implementa dois métodos: _load_context()_ para inicializar o **modelo ONNX** do Phi-3 Mini 4K Instruct, os **parâmetros do gerador** e o **tokenizer**; e _predict()_ para gerar tokens de saída para o prompt fornecido:
+1. A nossa classe personalizada implementa dois métodos: _load_context()_ para inicializar o **modelo ONNX** do Phi-3 Mini 4K Instruct, os **parâmetros do gerador** e o **tokenizer**; e _predict()_ para gerar tokens de saída para o prompt fornecido:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Agora você pode usar a função _mlflow.pyfunc.log_model()_ para gerar um wrapper Python personalizado (em formato pickle) para o modelo Phi-3, junto com o modelo ONNX original e as dependências necessárias:
+1. Pode agora usar a função _mlflow.pyfunc.log_model()_ para gerar um wrapper Python personalizado (em formato pickle) para o modelo Phi-3, juntamente com o modelo ONNX original e as dependências necessárias:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -131,7 +131,7 @@ Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um
 
 ## Assinaturas dos modelos MLFlow gerados
 
-1. No passo 3 do projeto Transformer Pipeline acima, definimos a tarefa do modelo MLFlow como “_llm/v1/chat_”. Essa instrução gera um wrapper de API do modelo, compatível com a API de chat da OpenAI, conforme mostrado abaixo:
+1. No passo 3 do projeto Transformer Pipeline acima, definimos a tarefa do modelo MLFlow como “_llm/v1/chat_”. Esta instrução gera um wrapper da API do modelo, compatível com a API Chat da OpenAI, como mostrado abaixo:
 
     ``` Python
     {inputs: 
@@ -142,13 +142,13 @@ Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um
       None}
     ```
 
-1. Como resultado, você pode enviar seu prompt no seguinte formato:
+1. Como resultado, pode submeter o seu prompt no seguinte formato:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Depois, use o pós-processamento compatível com a API OpenAI, por exemplo, _response[0][‘choices’][0][‘message’][‘content’]_, para deixar sua saída mais legível, algo assim:
+1. Depois, use um pós-processamento compatível com a API OpenAI, por exemplo, _response[0][‘choices’][0][‘message’][‘content’]_, para embelezar a sua saída para algo como isto:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. No passo 3 do projeto Custom Python Wrapper acima, permitimos que o pacote MLFlow gere a assinatura do modelo a partir de um exemplo de entrada fornecido. A assinatura do nosso wrapper MLFlow ficará assim:
+1. No passo 3 do projeto Custom Python Wrapper acima, permitimos que o pacote MLFlow gere a assinatura do modelo a partir de um exemplo de input dado. A assinatura do nosso wrapper MLFlow ficará assim:
 
     ``` Python
     {inputs: 
@@ -169,7 +169,7 @@ Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um
       None}
     ```
 
-1. Portanto, nosso prompt precisará conter a chave do dicionário "prompt", parecido com isto:
+1. Portanto, o nosso prompt deverá conter a chave do dicionário "prompt", semelhante a isto:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
@@ -188,4 +188,4 @@ Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um
     ```
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-07-09T19:30:56+00:00",
+  "translation_date": "2025-07-17T03:31:30+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "my"
 }
 -->
 # **GitHub Models ဖြင့် Phi-3.5 ကို အသုံးပြု၍ သင့်ကိုယ်ပိုင် Visual Studio Code Chat Copilot Agent ဖန်တီးခြင်း**
 
-သင် Visual Studio Code Copilot ကို အသုံးပြုနေပါသလား? အထူးသဖြင့် Chat တွင် သင်သည် Visual Studio Code တွင် ပရောဂျက်များ ဖန်တီးရေးသားထိန်းသိမ်းနိုင်စွမ်းကို တိုးတက်စေရန် အမျိုးမျိုးသော Agent များကို အသုံးပြုနိုင်ပါသည်။ Visual Studio Code သည် ကုမ္ပဏီများနှင့် တစ်ဦးချင်းစီအတွက် မိမိတို့လုပ်ငန်းအပေါ် အခြေခံ၍ အမျိုးမျိုးသော Agent များ ဖန်တီးနိုင်ရန် API ကို ပံ့ပိုးပေးထားပြီး၊ မတူညီသော ပိုင်ဆိုင်မှုနယ်ပယ်များတွင် စွမ်းဆောင်ရည်များကို တိုးချဲ့နိုင်ပါသည်။ ဤဆောင်းပါးတွင် GitHub Models ၏ **Phi-3.5-mini-instruct (128k)** နှင့် **Phi-3.5-vision-instruct (128k)** ကို အခြေခံ၍ သင့်ကိုယ်ပိုင် Visual Studio Code Agent ကို ဖန်တီးခြင်းအပေါ် အာရုံစိုက်ပါမည်။
+သင် Visual Studio Code Copilot ကို အသုံးပြုနေပါသလား? အထူးသဖြင့် Chat တွင် သင့်ရဲ့ Visual Studio Code မှာ ပရောဂျက်များ ဖန်တီးရေးသားထိန်းသိမ်းနိုင်စွမ်းကို တိုးတက်စေရန် အမျိုးမျိုးသော Agent များကို အသုံးပြုနိုင်ပါတယ်။ Visual Studio Code သည် ကုမ္ပဏီများနှင့် တစ်ဦးချင်းစီအတွက် မိမိတို့လုပ်ငန်းအပေါ် အခြေခံ၍ အမျိုးမျိုးသော Agent များ ဖန်တီးနိုင်ရန် API ကို ပံ့ပိုးပေးထားပြီး၊ မတူညီသော ပိုင်ဆိုင်မှုနယ်ပယ်များတွင် စွမ်းဆောင်ရည်များကို တိုးချဲ့နိုင်စေပါတယ်။ ဤဆောင်းပါးတွင် GitHub Models ၏ **Phi-3.5-mini-instruct (128k)** နှင့် **Phi-3.5-vision-instruct (128k)** ကို အခြေခံ၍ သင့်ကိုယ်ပိုင် Visual Studio Code Agent ကို ဖန်တီးခြင်းအပေါ် အာရုံစိုက်ပါမည်။
 
 ## **GitHub Models တွင် Phi-3.5 အကြောင်း**
 
 Phi-3/3.5 မိသားစုရှိ Phi-3/3.5-mini-instruct သည် ကုဒ်နားလည်မှုနှင့် ဖန်တီးနိုင်စွမ်းများအားကောင်းပြီး Gemma-2-9b နှင့် Mistral-Nemo-12B-instruct-2407 ထက် အားသာချက်ရှိကြောင်း ကျွန်ုပ်တို့ သိရှိထားပါသည်။
 
-![codegen](../../../../../../imgs/02/phi35vscode/codegen.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.my.png)
 
 နောက်ဆုံးထွက် GitHub Models များတွင် Phi-3.5-mini-instruct (128k) နှင့် Phi-3.5-vision-instruct (128k) မော်ဒယ်များကို ရရှိနိုင်ပြီး၊ ဖန်တီးသူများသည် OpenAI SDK၊ Azure AI Inference SDK နှင့် REST API များမှတဆင့် ဝင်ရောက်အသုံးပြုနိုင်ပါသည်။
 
-![gh](../../../../../../imgs/02/phi35vscode/gh.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.my.png)
 
-***Note: *** ထုတ်လုပ်မှုပတ်ဝန်းကျင်တွင် Azure Model Catalog နှင့် ပိုမိုကောင်းမွန်စွာ ပြောင်းလဲအသုံးပြုနိုင်သည့်အတွက် Azure AI Inference SDK ကို အသုံးပြုရန် အကြံပြုပါသည်။
+***Note: *** ထုတ်လုပ်မှုပတ်ဝန်းကျင်တွင် Azure Model Catalog နှင့် ပိုမိုကောင်းမွန်စွာ ပြောင်းလဲအသုံးပြုနိုင်သောကြောင့် Azure AI Inference SDK ကို အသုံးပြုရန် အကြံပြုပါသည်။
 
 အောက်တွင် GitHub Models နှင့် ချိတ်ဆက်ပြီးနောက် **Phi-3.5-mini-instruct (128k)** နှင့် **Phi-3.5-vision-instruct (128k)** မော်ဒယ်များ၏ ကုဒ်ဖန်တီးမှု စမ်းသပ်ရလဒ်များနှင့် နမူနာများကို ပြထားပါသည်။
 
@@ -32,29 +32,29 @@ Phi-3/3.5 မိသားစုရှိ Phi-3/3.5-mini-instruct သည် က�
 
 ## **GitHub Copilot Chat Agent အကြောင်း**
 
-GitHub Copilot Chat Agent သည် ကုဒ်အခြေခံ၍ ပရောဂျက်အမျိုးမျိုးတွင် မတူညီသော လုပ်ငန်းများကို ပြီးမြောက်စေပါသည်။ စနစ်တွင် Agent လေးမျိုးရှိသည် - workspace, github, terminal, vscode
+GitHub Copilot Chat Agent သည် ကုဒ်အခြေခံ၍ ပရောဂျက်အမျိုးမျိုးတွင် မတူညီသောတာဝန်များကို ပြီးမြောက်စေပါသည်။ စနစ်တွင် Agent လေးမျိုးရှိသည်- workspace, github, terminal, vscode
 
-![agent](../../../../../../imgs/02/phi35vscode/agent.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.my.png)
 
-Agent အမည်ကို ‘@’ ဖြင့် ထည့်သွင်းခြင်းအားဖြင့် သက်ဆိုင်ရာ လုပ်ငန်းကို အမြန်ဆုံး ပြီးမြောက်စေနိုင်သည်။ စီးပွားရေးလုပ်ငန်းများအတွက် မိမိလုပ်ငန်းနှင့် သက်ဆိုင်သော လိုအပ်ချက်များ၊ ကုဒ်ရေးသားခြင်း၊ စမ်းသပ်မှုစံနှုန်းများနှင့် ထုတ်ပြန်ခြင်းများကို ထည့်သွင်းပါက GitHub Copilot အခြေခံ စီးပွားရေးလုပ်ငန်းပုဂ္ဂိုလ်ရေး လုပ်ဆောင်ချက်များ ပိုမိုခိုင်မာစေပါသည်။
+Agent အမည်ကို ‘@’ ဖြင့် ထည့်သွင်းခြင်းအားဖြင့် သက်ဆိုင်ရာ အလုပ်များကို အမြန်ဆုံး ပြီးမြောက်စေနိုင်သည်။ စီးပွားရေးလုပ်ငန်းများအတွက် မိမိလုပ်ငန်းနှင့်ဆိုင်သော လိုအပ်ချက်များ၊ ကုဒ်ရေးသားခြင်း၊ စမ်းသပ်မှုစံနှုန်းများနှင့် ထုတ်ပြန်ခြင်းများကို ထည့်သွင်းပါက GitHub Copilot အခြေခံ စီးပွားရေးလုပ်ငန်းပုဂ္ဂိုလ်ရေး လုပ်ဆောင်ချက်များ ပိုမိုခိုင်မာစေပါသည်။
 
-Visual Studio Code Chat Agent သည် ယခုအခါ တရားဝင် API ကို ထုတ်ပြန်ပြီးဖြစ်၍ စီးပွားရေးလုပ်ငန်းများ သို့မဟုတ် စီးပွားရေးလုပ်ငန်း ဖန်တီးသူများသည် မတူညီသော ဆော့ဖ်ဝဲလုပ်ငန်းပတ်ဝန်းကျင်များအပေါ် အခြေခံ၍ Agent များ ဖန်တီးနိုင်ပါသည်။ Visual Studio Code Extension ဖန်တီးခြင်းနည်းလမ်းအတိုင်း Visual Studio Code Chat Agent API ၏ အင်တာဖေ့စ်ကို လွယ်ကူစွာ ဝင်ရောက်အသုံးပြုနိုင်ပါသည်။ ဤလုပ်ငန်းစဉ်အပေါ် အခြေခံ၍ ဖန်တီးနိုင်ပါသည်။
+Visual Studio Code Chat Agent သည် ယခုအခါ တရားဝင် API ကို ထုတ်ပြန်ပြီးဖြစ်ကာ၊ စီးပွားရေးလုပ်ငန်းများ သို့မဟုတ် စီးပွားရေးလုပ်ငန်း ဖန်တီးသူများအနေဖြင့် မတူညီသော ဆော့ဖ်ဝဲလုပ်ငန်းစဉ်ပတ်ဝန်းကျင်များအပေါ် အခြေခံ၍ Agent များ ဖန်တီးနိုင်ပါသည်။ Visual Studio Code Extension Development နည်းလမ်းအတိုင်း ဖန်တီးခြင်းဖြင့် Visual Studio Code Chat Agent API ၏ အင်တာဖေ့စ်ကို လွယ်ကူစွာ ဝင်ရောက်အသုံးပြုနိုင်ပါသည်။ ဤလုပ်ငန်းစဉ်အပေါ် အခြေခံ၍ ဖန်တီးနိုင်ပါသည်။
 
-![diagram](../../../../../../imgs/02/phi35vscode/diagram.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.my.png)
 
-ဖန်တီးမှုအခြေအနေတွင် တတိယပါတီ မော်ဒယ် API များ (GitHub Models, Azure Model Catalog, နှင့် open source မော်ဒယ်များအပေါ် အခြေခံ၍ ကိုယ်ပိုင်တည်ဆောက်ထားသော ဝန်ဆောင်မှုများ) ကို ဝင်ရောက်အသုံးပြုနိုင်ပြီး GitHub Copilot မှ ပံ့ပိုးပေးသည့် gpt-35-turbo, gpt-4, gpt-4o မော်ဒယ်များကိုလည်း အသုံးပြုနိုင်ပါသည်။
+ဖန်တီးမှုအခြေအနေတွင် တတိယပါတီ မော်ဒယ် API များ (GitHub Models, Azure Model Catalog, နှင့် open source မော်ဒယ်များအပေါ် အခြေခံ၍ ကိုယ်ပိုင်တည်ဆောက်ထားသော ဝန်ဆောင်မှုများ) ကို ဝင်ရောက်အသုံးပြုနိုင်ပြီး GitHub Copilot မှ ပံ့ပိုးပေးသော gpt-35-turbo, gpt-4, gpt-4o မော်ဒယ်များကိုလည်း အသုံးပြုနိုင်ပါသည်။
 
 ## **Phi-3.5 အခြေခံ၍ @phicoding Agent ထည့်သွင်းခြင်း**
 
-Phi-3.5 ၏ ပရိုဂရမ်ရေးသားနိုင်စွမ်းများကို ပေါင်းစပ်၍ ကုဒ်ရေးသားခြင်း၊ ပုံမှန် ကုဒ်ဖန်တီးခြင်းနှင့် အခြားတာဝန်များ ပြီးမြောက်စေရန် ကြိုးစားပါသည်။ Phi-3.5 အခြေခံ Agent တစ်ခုဖြစ်သော @PHI ကို ဖန်တီးပြီး အောက်ပါ လုပ်ဆောင်ချက်များ ပါဝင်သည်။
+Phi-3.5 ၏ ပရိုဂရမ်ရေးသားနိုင်စွမ်းများကို ပေါင်းစပ်၍ ကုဒ်ရေးသားခြင်း၊ ပုံမှန် ကုဒ်ဖန်တီးခြင်းနှင့် အခြားတာဝန်များ ပြီးမြောက်စေရန် ကြိုးစားပါသည်။ Phi-3.5 အပေါ် အခြေခံ၍ ဖန်တီးထားသော Agent - @PHI ၏ အချို့သော လုပ်ဆောင်ချက်များမှာ
 
-1. GitHub Copilot မှ ပံ့ပိုးသော GPT-4o အပေါ် အခြေခံ၍ **@phicoding /help** command ဖြင့် ကိုယ်တိုင်မိတ်ဆက်စာ ဖန်တီးခြင်း
+1. GitHub Copilot မှ ပံ့ပိုးသော GPT-4o ကို အသုံးပြု၍ **@phicoding /help** command ဖြင့် ကိုယ်တိုင်မိတ်ဆက်စာ ဖန်တီးခြင်း
 
 2. **Phi-3.5-mini-instruct (128k)** အပေါ် အခြေခံ၍ **@phicoding /gen** command ဖြင့် အမျိုးမျိုးသော programming language များအတွက် ကုဒ်ဖန်တီးခြင်း
 
-3. **Phi-3.5-vision-instruct (128k)** နှင့် ပုံအပြီးသတ်ခြင်းအပေါ် အခြေခံ၍ **@phicoding /image** command ဖြင့် ကုဒ်ဖန်တီးခြင်း
+3. **Phi-3.5-vision-instruct (128k)** နှင့် ပုံမှန် ပြီးမြောက်မှုအပေါ် အခြေခံ၍ **@phicoding /image** command ဖြင့် ကုဒ်ဖန်တီးခြင်း
 
-![arch](../../../../../../imgs/02/phi35vscode/arch.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.my.png)
 
 ## **ဆက်စပ်အဆင့်များ**
 
@@ -74,7 +74,7 @@ yo code
 
 ```
 
-3. ဖန်တီးထားသော ပရောဂျက်ကို ဖွင့်ပြီး package.json ကို ပြင်ဆင်ပါ။ ဤနေရာတွင် ဆက်စပ်ညွှန်ကြားချက်များ၊ GitHub Models ၏ ဖော်ပြချက်များနှင့် သတ်မှတ်ချက်များ ပါဝင်ပြီး GitHub Models token ကို ထည့်သွင်းရန် လိုအပ်ပါသည်။
+3. ဖန်တီးထားသော ပရောဂျက်ကို ဖွင့်ပြီး package.json ကို ပြင်ဆင်ပါ။ ဤနေရာတွင် ဆက်စပ်ညွှန်ကြားချက်များ၊ GitHub Models ၏ ဖွဲ့စည်းမှုများ ပါဝင်ပြီး GitHub Models token ကို ထည့်သွင်းရန် လိုအပ်ပါသည်။
 
 ```json
 
@@ -365,29 +365,29 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../imgs/02/phi35vscode/help.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.my.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../imgs/02/phi35vscode/agenthelp.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.my.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../imgs/02/phi35vscode/agentgen.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.my.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../imgs/02/phi35vscode/agentimage.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.my.png)
 
 နမူနာကုဒ်ကို ဒေါင်းလုပ်လုပ်နိုင်ပါသည် :[click](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **အရင်းအမြစ်များ**
 
-1. GitHub Models တွင် စာရင်းသွင်းရန် [https://gh.io/models](https://gh.io/models)
+1. GitHub Models အတွက် စာရင်းသွင်းရန် [https://gh.io/models](https://gh.io/models)
 
-2. Visual Studio Code Extension ဖန်တီးခြင်းကို လေ့လာရန် [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. Visual Studio Code Extension ဖန်တီးမှုကို လေ့လာရန် [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
 3. Visual Studio Code Copilot Chat API အကြောင်း လေ့လာရန် [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

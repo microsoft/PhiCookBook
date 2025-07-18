@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:18:10+00:00",
+  "translation_date": "2025-07-16T21:40:00+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "sk"
 }
 -->
-# **Inferencia Phi-3-Vision lokálne**
+# **Inference Phi-3-Vision lokálne**
 
-Phi-3-vision-128k-instruct umožňuje Phi-3 nielen rozumieť jazyku, ale aj vizuálne vnímať svet. Vďaka Phi-3-vision-128k-instruct môžeme riešiť rôzne vizuálne úlohy, ako OCR, analýzu tabuliek, rozpoznávanie objektov, popis obrázkov a podobne. Jednoducho tak zvládneme úlohy, ktoré predtým vyžadovali veľa dát na trénovanie. Nižšie sú uvedené techniky a aplikačné scenáre spojené s Phi-3-vision-128k-instruct.
+Phi-3-vision-128k-instruct umožňuje Phi-3 nielen rozumieť jazyku, ale aj vizuálne vnímať svet. Vďaka Phi-3-vision-128k-instruct môžeme riešiť rôzne vizuálne úlohy, ako OCR, analýzu tabuliek, rozpoznávanie objektov, popis obrázkov a podobne. Jednoducho tak zvládneme úlohy, ktoré predtým vyžadovali veľké množstvo dát na trénovanie. Nižšie sú uvedené súvisiace techniky a aplikačné scenáre, ktoré Phi-3-vision-128k-instruct využíva.
 
 ## **0. Príprava**
 
-Pred použitím sa uistite, že máte nainštalované nasledujúce knižnice v Pythone (odporúča sa Python 3.10+)
+Pred použitím sa uistite, že máte nainštalované nasledujúce Python knižnice (odporúča sa Python 3.10+)
 
 ```bash
 pip install transformers -U
@@ -49,9 +49,9 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. Analýza obrázka pomocou Phi-3-Vision**
+## **1. Analýza obrázka s Phi-3-Vision**
 
-Chceme, aby AI vedela analyzovať obsah našich obrázkov a poskytla relevantné popisy
+Chceme, aby AI dokázala analyzovať obsah našich obrázkov a poskytla relevantné popisy
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR s Phi-3-Vision**
 
-Okrem analýzy obrázka môžeme z obrázka aj vyťažiť informácie. Toto je proces OCR, ktorý sme predtým museli riešiť písaním zložitého kódu.
+Okrem analýzy obrázka môžeme tiež z obrázka vyťažiť informácie. Toto je proces OCR, ktorý sme predtým museli riešiť písaním zložitého kódu.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Porovnanie viacerých obrázkov**
 
-Phi-3 Vision podporuje porovnávanie viacerých obrázkov. Tento model môžeme využiť na zistenie rozdielov medzi obrázkami.
+Phi-3 Vision podporuje porovnávanie viacerých obrázkov. Tento model môžeme použiť na nájdenie rozdielov medzi obrázkami.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, vezmite prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

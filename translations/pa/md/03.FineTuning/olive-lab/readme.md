@@ -2,83 +2,83 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T22:35:06+00:00",
+  "translation_date": "2025-07-17T10:17:27+00:00",
   "source_file": "md/03.FineTuning/olive-lab/readme.md",
   "language_code": "pa"
 }
 -->
-# Lab. Optimize AI models for on-device inference
+# ਲੈਬ। ਡਿਵਾਈਸ 'ਤੇ ਇਨਫਰੰਸ ਲਈ AI ਮਾਡਲਾਂ ਨੂੰ ਅਪਟੀਮਾਈਜ਼ ਕਰੋ
 
-## Introduction 
+## ਪਰਿਚਯ
 
-> [!IMPORTANT]
-> ਇਸ ਲੈਬ ਲਈ **Nvidia A10 ਜਾਂ A100 GPU** ਅਤੇ ਸੰਬੰਧਤ ਡਰਾਈਵਰ ਅਤੇ CUDA ਟੂਲਕਿਟ (ਵਰਜ਼ਨ 12+) ਦੀ ਲੋੜ ਹੈ।
+> [!IMPORTANT]  
+> ਇਸ ਲੈਬ ਲਈ **Nvidia A10 ਜਾਂ A100 GPU** ਨਾਲ ਜੁੜੇ ਡਰਾਈਵਰ ਅਤੇ CUDA ਟੂਲਕਿਟ (ਵਰਜਨ 12+) ਲੋੜੀਂਦੇ ਹਨ।
 
-> [!NOTE]
-> ਇਹ ਇੱਕ **35 ਮਿੰਟਾਂ ਦਾ** ਲੈਬ ਹੈ ਜੋ ਤੁਹਾਨੂੰ OLIVE ਦੀ ਵਰਤੋਂ ਕਰਕੇ on-device inference ਲਈ ਮਾਡਲਾਂ ਨੂੰ optimize ਕਰਨ ਦੇ ਮੁੱਖ ਅਸੂਲਾਂ ਦੀ ਹੱਥ-ਅਨੁਭਵ ਜਾਣਕਾਰੀ ਦੇਵੇਗਾ।
+> [!NOTE]  
+> ਇਹ ਇੱਕ **35 ਮਿੰਟਾਂ** ਦੀ ਲੈਬ ਹੈ ਜੋ ਤੁਹਾਨੂੰ OLIVE ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਡਿਵਾਈਸ 'ਤੇ ਇਨਫਰੰਸ ਲਈ ਮਾਡਲਾਂ ਨੂੰ ਅਪਟੀਮਾਈਜ਼ ਕਰਨ ਦੇ ਮੁੱਖ ਸਿਧਾਂਤਾਂ ਦਾ ਹੱਥੋਂ-ਹੱਥ ਪਰਿਚਯ ਦਿੰਦੀ ਹੈ।
 
-## Learning Objectives
+## ਸਿੱਖਣ ਦੇ ਉਦੇਸ਼
 
-ਇਸ ਲੈਬ ਦੇ ਅੰਤ ਤੱਕ, ਤੁਸੀਂ OLIVE ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਇਹ ਕਰ ਸਕੋਗੇ:
+ਇਸ ਲੈਬ ਦੇ ਅੰਤ ਤੱਕ, ਤੁਸੀਂ OLIVE ਦੀ ਵਰਤੋਂ ਕਰਕੇ:
 
-- AWQ quantization ਤਰੀਕੇ ਨਾਲ AI ਮਾਡਲ ਨੂੰ Quantize ਕਰਨਾ।
-- ਕਿਸੇ ਵਿਸ਼ੇਸ਼ ਕੰਮ ਲਈ AI ਮਾਡਲ ਨੂੰ Fine-tune ਕਰਨਾ।
-- ONNX Runtime 'ਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ on-device inference ਲਈ LoRA adapters (fine-tuned ਮਾਡਲ) ਤਿਆਰ ਕਰਨਾ।
+- AWQ ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ ਵਿਧੀ ਨਾਲ AI ਮਾਡਲ ਨੂੰ ਕਵਾਂਟਾਈਜ਼ ਕਰ ਸਕੋਗੇ।  
+- ਕਿਸੇ ਖਾਸ ਕੰਮ ਲਈ AI ਮਾਡਲ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰ ਸਕੋਗੇ।  
+- ONNX ਰਨਟਾਈਮ 'ਤੇ ਪ੍ਰਭਾਵਸ਼ਾਲੀ ਡਿਵਾਈਸ ਇਨਫਰੰਸ ਲਈ LoRA ਐਡਾਪਟਰ (ਫਾਈਨ-ਟਿਊਨ ਕੀਤਾ ਮਾਡਲ) ਤਿਆਰ ਕਰ ਸਕੋਗੇ।  
 
-### What is Olive
+### Olive ਕੀ ਹੈ
 
-Olive (*O*NNX *live*) ਇੱਕ ਮਾਡਲ optimization ਟੂਲਕਿਟ ਹੈ ਜਿਸਦੇ ਨਾਲ CLI ਵੀ ਹੈ ਜੋ ਤੁਹਾਨੂੰ ONNX runtime +++https://onnxruntime.ai+++ ਲਈ ਗੁਣਵੱਤਾ ਅਤੇ ਪ੍ਰਦਰਸ਼ਨ ਵਾਲੇ ਮਾਡਲ ਭੇਜਣ ਦੀ ਸਹੂਲਤ ਦਿੰਦਾ ਹੈ।
+Olive (*O*NNX *live*) ਇੱਕ ਮਾਡਲ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਟੂਲਕਿਟ ਹੈ ਜਿਸ ਨਾਲ CLI ਵੀ ਮਿਲਦਾ ਹੈ ਜੋ ਤੁਹਾਨੂੰ ONNX ਰਨਟਾਈਮ +++https://onnxruntime.ai+++ ਲਈ ਗੁਣਵੱਤਾ ਅਤੇ ਪ੍ਰਦਰਸ਼ਨ ਵਾਲੇ ਮਾਡਲ ਭੇਜਣ ਦੀ ਸਹੂਲਤ ਦਿੰਦਾ ਹੈ।
 
-![Olive Flow](../../../../../translated_images/olive-flow.9e6a284c256068568eb569a242b22dd2e7ec6e73f292d98272398739537ef513.pa.png)
+![Olive Flow](../../../../../translated_images/olive-flow.5daf97340275f8b61397e91430ff02724a2547937b352e7fdfc2f669c56dcd35.pa.png)
 
-Olive ਵਿੱਚ ਆਮ ਤੌਰ 'ਤੇ PyTorch ਜਾਂ Hugging Face ਮਾਡਲ ਦਾਖਲ ਹੁੰਦਾ ਹੈ ਅਤੇ ਨਤੀਜਾ ਇੱਕ optimized ONNX ਮਾਡਲ ਹੁੰਦਾ ਹੈ ਜੋ ਕਿਸੇ ਡਿਵਾਈਸ (deployment target) 'ਤੇ ਚਲਾਇਆ ਜਾਂਦਾ ਹੈ ਜੋ ONNX runtime ਚਲਾ ਰਿਹਾ ਹੁੰਦਾ ਹੈ। Olive ਮਾਡਲ ਨੂੰ deployment target ਦੇ AI accelerator (NPU, GPU, CPU) ਲਈ optimize ਕਰਦਾ ਹੈ ਜੋ Qualcomm, AMD, Nvidia ਜਾਂ Intel ਵਰਗੇ hardware vendor ਵੱਲੋਂ ਦਿੱਤਾ ਜਾਂਦਾ ਹੈ।
+Olive ਵਿੱਚ ਆਮ ਤੌਰ 'ਤੇ ਇਨਪੁੱਟ PyTorch ਜਾਂ Hugging Face ਮਾਡਲ ਹੁੰਦਾ ਹੈ ਅਤੇ ਆਉਟਪੁੱਟ ਇੱਕ ਅਪਟੀਮਾਈਜ਼ਡ ONNX ਮਾਡਲ ਹੁੰਦਾ ਹੈ ਜੋ ONNX ਰਨਟਾਈਮ ਚਲਾਉਂਦੇ ਡਿਵਾਈਸ (ਡਿਪਲੋਇਮੈਂਟ ਟਾਰਗੇਟ) 'ਤੇ ਚਲਾਇਆ ਜਾਂਦਾ ਹੈ। Olive ਮਾਡਲ ਨੂੰ ਡਿਪਲੋਇਮੈਂਟ ਟਾਰਗੇਟ ਦੇ AI ਐਕਸਲੇਰੇਟਰ (NPU, GPU, CPU) ਲਈ ਅਪਟੀਮਾਈਜ਼ ਕਰੇਗਾ, ਜੋ Qualcomm, AMD, Nvidia ਜਾਂ Intel ਵਰਗੇ ਹਾਰਡਵੇਅਰ ਵੇਂਡਰ ਵੱਲੋਂ ਪ੍ਰਦਾਨ ਕੀਤਾ ਜਾਂਦਾ ਹੈ।
 
-Olive ਇੱਕ *workflow* ਚਲਾਉਂਦਾ ਹੈ, ਜੋ ਕਿ ਕਈ model optimization ਕੰਮਾਂ ਦੀ ਲੜੀ ਹੁੰਦੀ ਹੈ ਜਿਸਨੂੰ *passes* ਕਹਿੰਦੇ ਹਨ - ਉਦਾਹਰਨ ਲਈ: model compression, graph capture, quantization, graph optimization। ਹਰ pass ਦੇ ਕੁਝ parameters ਹੁੰਦੇ ਹਨ ਜੋ metrics ਜਿਵੇਂ ਕਿ accuracy ਅਤੇ latency ਨੂੰ ਵਧੀਆ ਬਣਾਉਣ ਲਈ ਟਿਊਨ ਕੀਤੇ ਜਾ ਸਕਦੇ ਹਨ। Olive ਇੱਕ search strategy ਵਰਤਦਾ ਹੈ ਜੋ ਹਰ pass ਨੂੰ ਇੱਕ-ਇੱਕ ਕਰਕੇ ਜਾਂ ਕੁਝ passes ਨੂੰ ਇੱਕੱਠੇ auto-tune ਕਰਦਾ ਹੈ।
+Olive ਇੱਕ *ਵਰਕਫਲੋ* ਚਲਾਉਂਦਾ ਹੈ, ਜੋ ਕਿ ਵਿਅਕਤੀਗਤ ਮਾਡਲ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਟਾਸਕਾਂ ਦੀ ਇੱਕ ਕ੍ਰਮਬੱਧ ਲੜੀ ਹੁੰਦੀ ਹੈ, ਜਿਸਨੂੰ *ਪਾਸ* ਕਿਹਾ ਜਾਂਦਾ ਹੈ - ਉਦਾਹਰਨ ਵਜੋਂ: ਮਾਡਲ ਕੰਪ੍ਰੈਸ਼ਨ, ਗ੍ਰਾਫ ਕੈਪਚਰ, ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ, ਗ੍ਰਾਫ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ। ਹਰ ਪਾਸ ਦੇ ਕੁਝ ਪੈਰਾਮੀਟਰ ਹੁੰਦੇ ਹਨ ਜਿਨ੍ਹਾਂ ਨੂੰ ਬਿਹਤਰ ਮੈਟ੍ਰਿਕਸ, ਜਿਵੇਂ ਕਿ ਸਹੀਤਾ ਅਤੇ ਲੇਟੈਂਸੀ, ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਟਿਊਨ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ ਜੋ ਸੰਬੰਧਿਤ ਇਵੈਲੂਏਟਰ ਵੱਲੋਂ ਮਾਪੇ ਜਾਂਦੇ ਹਨ। Olive ਇੱਕ ਖੋਜ ਰਣਨੀਤੀ ਵਰਤਦਾ ਹੈ ਜੋ ਹਰ ਪਾਸ ਨੂੰ ਇੱਕ-ਇੱਕ ਕਰਕੇ ਜਾਂ ਪਾਸਾਂ ਦੇ ਸਮੂਹ ਨੂੰ ਆਟੋ-ਟਿਊਨ ਕਰਨ ਲਈ ਖੋਜ ਅਲਗੋਰਿਦਮ ਦੀ ਵਰਤੋਂ ਕਰਦਾ ਹੈ।
 
-#### Benefits of Olive
+#### Olive ਦੇ ਫਾਇਦੇ
 
-- **ਹੱਥ-ਅਨੁਭਵ ਤਜਰਬੇ ਨਾਲ ਹੋਣ ਵਾਲੀ ਥਕਾਵਟ ਅਤੇ ਸਮਾਂ ਘਟਾਓ**। ਗੁਣਵੱਤਾ ਅਤੇ ਪ੍ਰਦਰਸ਼ਨ ਦੀਆਂ ਸ਼ਰਤਾਂ ਸੈੱਟ ਕਰੋ ਅਤੇ Olive ਆਪ ਹੀ ਤੁਹਾਡੇ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਮਾਡਲ ਲੱਭੇਗਾ।
-- **40+ built-in model optimization components** ਜੋ quantization, compression, graph optimization ਅਤੇ finetuning ਵਿੱਚ ਅੱਗੇ ਹਨ।
-- **ਆਸਾਨ CLI** ਆਮ model optimization ਕੰਮਾਂ ਲਈ। ਉਦਾਹਰਨ ਲਈ, olive quantize, olive auto-opt, olive finetune।
-- ਮਾਡਲ ਪੈਕੇਜਿੰਗ ਅਤੇ deployment built-in।
-- **Multi LoRA serving** ਲਈ ਮਾਡਲ ਤਿਆਰ ਕਰਨ ਦੀ ਸਮਰੱਥਾ।
-- YAML/JSON ਨਾਲ workflows ਬਣਾਓ ਜੋ model optimization ਅਤੇ deployment ਕੰਮਾਂ ਨੂੰ ਆਯੋਜਿਤ ਕਰਦੇ ਹਨ।
-- **Hugging Face** ਅਤੇ **Azure AI** ਇੰਟਿਗ੍ਰੇਸ਼ਨ।
-- ਖਰਚ ਬਚਾਉਣ ਲਈ built-in **caching** ਮਕੈਨਿਜ਼ਮ।
+- ਗ੍ਰਾਫ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ, ਕੰਪ੍ਰੈਸ਼ਨ ਅਤੇ ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ ਲਈ ਵੱਖ-ਵੱਖ ਤਕਨੀਕਾਂ ਨਾਲ ਹੱਥੋਂ-ਹੱਥ ਟ੍ਰਾਇਲ-ਐਂਡ-ਐਰਰ ਮੈਨੂਅਲ ਪ੍ਰਯੋਗ ਦੇ ਸਮੇਂ ਅਤੇ ਨਿਰਾਸ਼ਾ ਨੂੰ ਘਟਾਓ। ਆਪਣੀ ਗੁਣਵੱਤਾ ਅਤੇ ਪ੍ਰਦਰਸ਼ਨ ਦੀਆਂ ਸੀਮਾਵਾਂ ਨਿਰਧਾਰਤ ਕਰੋ ਅਤੇ Olive ਤੁਹਾਡੇ ਲਈ ਸਭ ਤੋਂ ਵਧੀਆ ਮਾਡਲ ਖੋਜ ਲਵੇਗਾ।  
+- **40+ ਬਿਲਟ-ਇਨ ਮਾਡਲ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਕੰਪੋਨੈਂਟ** ਜੋ ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ, ਕੰਪ੍ਰੈਸ਼ਨ, ਗ੍ਰਾਫ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਅਤੇ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਵਿੱਚ ਅੱਗੇ ਦੀਆਂ ਤਕਨੀਕਾਂ ਨੂੰ ਕਵਰ ਕਰਦੇ ਹਨ।  
+- ਆਮ ਮਾਡਲ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਟਾਸਕਾਂ ਲਈ ਆਸਾਨ CLI। ਉਦਾਹਰਨ ਵਜੋਂ, olive quantize, olive auto-opt, olive finetune।  
+- ਮਾਡਲ ਪੈਕੇਜਿੰਗ ਅਤੇ ਡਿਪਲੋਇਮੈਂਟ ਬਿਲਟ-ਇਨ।  
+- **ਮਲਟੀ LoRA ਸਰਵਿੰਗ** ਲਈ ਮਾਡਲ ਤਿਆਰ ਕਰਨ ਦਾ ਸਮਰਥਨ।  
+- YAML/JSON ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਵਰਕਫਲੋ ਬਣਾਓ ਜੋ ਮਾਡਲ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਅਤੇ ਡਿਪਲੋਇਮੈਂਟ ਟਾਸਕਾਂ ਨੂੰ ਸੰਚਾਲਿਤ ਕਰਦਾ ਹੈ।  
+- **Hugging Face** ਅਤੇ **Azure AI** ਇੰਟੀਗ੍ਰੇਸ਼ਨ।  
+- ਲਾਗਤ ਬਚਾਉਣ ਲਈ ਬਿਲਟ-ਇਨ **ਕੈਸ਼ਿੰਗ** ਮਕੈਨਿਜ਼ਮ।  
 
-## Lab Instructions
-> [!NOTE]
-> ਕਿਰਪਾ ਕਰਕੇ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਆਪਣਾ Azure AI Hub ਅਤੇ Project ਪ੍ਰੋਵਿਜ਼ਨ ਕੀਤਾ ਹੈ ਅਤੇ Lab 1 ਅਨੁਸਾਰ ਆਪਣਾ A100 compute ਸੈੱਟਅੱਪ ਕੀਤਾ ਹੈ।
+## ਲੈਬ ਨਿਰਦੇਸ਼  
+> [!NOTE]  
+> ਕਿਰਪਾ ਕਰਕੇ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਆਪਣਾ Azure AI Hub ਅਤੇ ਪ੍ਰੋਜੈਕਟ ਪ੍ਰੋਵਿਜ਼ਨ ਕੀਤਾ ਹੈ ਅਤੇ Lab 1 ਅਨੁਸਾਰ ਆਪਣਾ A100 ਕੰਪਿਊਟ ਸੈਟਅਪ ਕੀਤਾ ਹੈ।
 
-### Step 0: Connect to your Azure AI Compute
+### ਕਦਮ 0: ਆਪਣੇ Azure AI ਕੰਪਿਊਟ ਨਾਲ ਜੁੜੋ
 
-ਤੁਸੀਂ VS Code ਦੀ remote ਫੀਚਰ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Azure AI compute ਨਾਲ ਜੁੜੋਗੇ।
+ਤੁਸੀਂ **VS Code** ਵਿੱਚ ਰਿਮੋਟ ਫੀਚਰ ਦੀ ਵਰਤੋਂ ਕਰਕੇ Azure AI ਕੰਪਿਊਟ ਨਾਲ ਜੁੜੋਗੇ।
 
-1. ਆਪਣੀ **VS Code** ਡੈਸਕਟਾਪ ਐਪ ਖੋਲ੍ਹੋ:
-1. **Shift+Ctrl+P** ਨਾਲ **command palette** ਖੋਲ੍ਹੋ
-1. command palette ਵਿੱਚ ਖੋਜੋ **AzureML - remote: Connect to compute instance in New Window**।
-1. ਸਕ੍ਰੀਨ 'ਤੇ ਦਿੱਤੇ ਹੁਕਮਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦੇ ਹੋਏ Compute ਨਾਲ ਜੁੜੋ। ਇਸ ਵਿੱਚ ਤੁਹਾਡੀ Azure Subscription, Resource Group, Project ਅਤੇ Lab 1 ਵਿੱਚ ਸੈੱਟ ਕੀਤਾ Compute ਨਾਮ ਚੁਣਨਾ ਸ਼ਾਮਲ ਹੈ।
-1. ਜਦੋਂ ਤੁਸੀਂ Azure ML Compute node ਨਾਲ ਜੁੜ ਜਾਵੋਗੇ ਤਾਂ ਇਹ Visual Code ਦੇ **ਥੱਲੇ ਖੱਬੇ ਕੋਨੇ** ਵਿੱਚ ਦਿਖਾਈ ਦੇਵੇਗਾ `><Azure ML: Compute Name`
+1. ਆਪਣਾ **VS Code** ਡੈਸਕਟਾਪ ਐਪ ਖੋਲ੍ਹੋ।  
+2. **Shift+Ctrl+P** ਨਾਲ ਕਮਾਂਡ ਪੈਲੇਟ ਖੋਲ੍ਹੋ।  
+3. ਕਮਾਂਡ ਪੈਲੇਟ ਵਿੱਚ **AzureML - remote: Connect to compute instance in New Window** ਖੋਜੋ।  
+4. ਸਕ੍ਰੀਨ 'ਤੇ ਦਿੱਤੇ ਨਿਰਦੇਸ਼ਾਂ ਦੀ ਪਾਲਣਾ ਕਰਦੇ ਹੋਏ ਕੰਪਿਊਟ ਨਾਲ ਜੁੜੋ। ਇਸ ਵਿੱਚ ਤੁਹਾਡੇ Azure ਸਬਸਕ੍ਰਿਪਸ਼ਨ, ਰਿਸੋਰਸ ਗਰੁੱਪ, ਪ੍ਰੋਜੈਕਟ ਅਤੇ Lab 1 ਵਿੱਚ ਸੈਟ ਕੀਤਾ ਕੰਪਿਊਟ ਨਾਮ ਚੁਣਨਾ ਸ਼ਾਮਲ ਹੈ।  
+5. ਜਦੋਂ ਤੁਸੀਂ Azure ML ਕੰਪਿਊਟ ਨੋਡ ਨਾਲ ਜੁੜ ਜਾਵੋਗੇ, ਤਾਂ ਇਹ **Visual Code ਦੇ ਹੇਠਲੇ ਖੱਬੇ ਕੋਨੇ** ਵਿੱਚ `><Azure ML: Compute Name` ਵਜੋਂ ਦਿਖਾਈ ਦੇਵੇਗਾ।  
 
-### Step 1: Clone this repo
+### ਕਦਮ 1: ਇਸ ਰਿਪੋ ਨੂੰ ਕਲੋਨ ਕਰੋ
 
-VS Code ਵਿੱਚ, **Ctrl+J** ਨਾਲ ਨਵਾਂ ਟਰਮੀਨਲ ਖੋਲ੍ਹੋ ਅਤੇ ਇਸ repo ਨੂੰ clone ਕਰੋ:
+VS Code ਵਿੱਚ, **Ctrl+J** ਨਾਲ ਨਵਾਂ ਟਰਮੀਨਲ ਖੋਲ੍ਹੋ ਅਤੇ ਇਸ ਰਿਪੋ ਨੂੰ ਕਲੋਨ ਕਰੋ:
 
-ਟਰਮੀਨਲ ਵਿੱਚ ਤੁਸੀਂ prompt ਵੇਖੋਗੇ
+ਟਰਮੀਨਲ ਵਿੱਚ ਤੁਹਾਨੂੰ ਪ੍ਰਾਂਪਟ ਵੇਖਾਈ ਦੇਵੇਗਾ
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
-```
-ਸੋਲੂਸ਼ਨ ਨੂੰ ਕਲੋਨ ਕਰੋ
+```  
+ਸੋਲੂਸ਼ਨ ਕਲੋਨ ਕਰੋ  
 
 ```bash
 cd ~/localfiles
 git clone https://github.com/microsoft/phi-3cookbook.git
 ```
 
-### Step 2: Open Folder in VS Code
+### ਕਦਮ 2: VS Code ਵਿੱਚ ਫੋਲਡਰ ਖੋਲ੍ਹੋ
 
-ਟਰਮੀਨਲ ਵਿੱਚ ਹੇਠਾਂ ਦਿੱਤਾ ਕਮਾਂਡ ਚਲਾਓ, ਜੋ ਨਵੀਂ ਵਿੰਡੋ ਵਿੱਚ VS Code ਖੋਲ੍ਹੇਗੀ:
+ਸੰਬੰਧਿਤ ਫੋਲਡਰ ਵਿੱਚ VS Code ਖੋਲ੍ਹਣ ਲਈ ਟਰਮੀਨਲ ਵਿੱਚ ਹੇਠਾਂ ਦਿੱਤੀ ਕਮਾਂਡ ਚਲਾਓ, ਜੋ ਨਵੀਂ ਵਿੰਡੋ ਖੋਲ੍ਹੇਗੀ:
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
@@ -86,9 +86,9 @@ code phi-3cookbook/code/04.Finetuning/Olive-lab
 
 ਵਿਕਲਪ ਵਜੋਂ, ਤੁਸੀਂ **File** > **Open Folder** ਚੁਣ ਕੇ ਵੀ ਫੋਲਡਰ ਖੋਲ੍ਹ ਸਕਦੇ ਹੋ।
 
-### Step 3: Dependencies
+### ਕਦਮ 3: ਡਿਪੈਂਡੈਂਸੀਜ਼
 
-VS Code ਵਿੱਚ ਆਪਣੇ Azure AI Compute Instance 'ਚ ਇੱਕ ਟਰਮੀਨਲ ਖੋਲ੍ਹੋ (ਸੁਝਾਅ: **Ctrl+J**) ਅਤੇ dependencies ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੀਆਂ ਕਮਾਂਡਾਂ ਚਲਾਓ:
+VS Code ਵਿੱਚ ਆਪਣੇ Azure AI ਕੰਪਿਊਟ ਇੰਸਟੈਂਸ ਵਿੱਚ ਟਰਮੀਨਲ ਖੋਲ੍ਹੋ (ਟਿੱਪ: **Ctrl+J**) ਅਤੇ ਡਿਪੈਂਡੈਂਸੀਜ਼ ਇੰਸਟਾਲ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੀਆਂ ਕਮਾਂਡਾਂ ਚਲਾਓ:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -98,35 +98,36 @@ az extension remove -n azure-cli-ml
 az extension add -n ml
 ```
 
-> [!NOTE]
-> ਸਾਰੇ dependencies ਇੰਸਟਾਲ ਕਰਨ ਵਿੱਚ ਲਗਭਗ 5 ਮਿੰਟ ਲੱਗਣਗੇ।
+> [!NOTE]  
+> ਸਾਰੀਆਂ ਡਿਪੈਂਡੈਂਸੀਜ਼ ਇੰਸਟਾਲ ਕਰਨ ਵਿੱਚ ਲਗਭਗ 5 ਮਿੰਟ ਲੱਗਣਗੇ।
 
-ਇਸ ਲੈਬ ਵਿੱਚ ਤੁਸੀਂ ਮਾਡਲ Azure AI Model ਕੈਟਲੌਗ ਵਿੱਚ ਡਾਊਨਲੋਡ ਅਤੇ ਅਪਲੋਡ ਕਰੋਗੇ। ਮਾਡਲ ਕੈਟਲੌਗ ਤੱਕ ਪਹੁੰਚ ਲਈ, ਤੁਹਾਨੂੰ Azure ਵਿੱਚ ਲੌਗਿਨ ਕਰਨਾ ਪਵੇਗਾ:
+ਇਸ ਲੈਬ ਵਿੱਚ ਤੁਸੀਂ ਮਾਡਲ ਡਾਊਨਲੋਡ ਅਤੇ ਅਪਲੋਡ ਕਰਕੇ Azure AI ਮਾਡਲ ਕੈਟਾਲੌਗ ਤੱਕ ਪਹੁੰਚ ਕਰੋਗੇ। ਇਸ ਲਈ, Azure ਵਿੱਚ ਲੌਗਿਨ ਕਰੋ:
 
 ```bash
 az login
 ```
 
-> [!NOTE]
-> ਲੌਗਿਨ ਸਮੇਂ ਤੁਹਾਨੂੰ ਆਪਣੀ subscription ਚੁਣਣ ਲਈ ਕਿਹਾ ਜਾਵੇਗਾ। ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਇਸ ਲੈਬ ਲਈ ਦਿੱਤੀ subscription ਚੁਣੀ ਹੈ।
+> [!NOTE]  
+> ਲੌਗਿਨ ਸਮੇਂ ਤੁਹਾਨੂੰ ਆਪਣੀ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਚੁਣਨ ਲਈ ਕਿਹਾ ਜਾਵੇਗਾ। ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਇਸ ਲੈਬ ਲਈ ਦਿੱਤੀ ਗਈ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਚੁਣੀ ਹੈ।  
 
-### Step 4: Execute Olive commands 
+### ਕਦਮ 4: Olive ਕਮਾਂਡ ਚਲਾਓ
 
-VS Code ਵਿੱਚ Azure AI Compute Instance 'ਚ ਟਰਮੀਨਲ ਖੋਲ੍ਹੋ (ਸੁਝਾਅ: **Ctrl+J**) ਅਤੇ ਯਕੀਨੀ ਬਣਾਓ ਕਿ `olive-ai` conda environment ਐਕਟੀਵੇਟ ਹੈ:
+VS Code ਵਿੱਚ ਆਪਣੇ Azure AI ਕੰਪਿਊਟ ਇੰਸਟੈਂਸ ਵਿੱਚ ਟਰਮੀਨਲ ਖੋਲ੍ਹੋ (ਟਿੱਪ: **Ctrl+J**) ਅਤੇ ਯਕੀਨੀ ਬਣਾਓ ਕਿ `olive-ai` ਕੋਂਡਾ ਵਾਤਾਵਰਣ ਐਕਟੀਵੇਟ ਹੈ:
 
 ```bash
 conda activate olive-ai
 ```
 
-ਫਿਰ ਹੇਠਾਂ ਦਿੱਤੀਆਂ Olive ਕਮਾਂਡਾਂ ਚਲਾਓ:
+ਫਿਰ, ਹੇਠਾਂ ਦਿੱਤੀਆਂ Olive ਕਮਾਂਡਾਂ ਕਮਾਂਡ ਲਾਈਨ 'ਤੇ ਚਲਾਓ।
 
-1. **ਡਾਟਾ ਦੀ ਜਾਂਚ ਕਰੋ:** ਇਸ ਉਦਾਹਰਨ ਵਿੱਚ, ਤੁਸੀਂ Phi-3.5-Mini ਮਾਡਲ ਨੂੰ fine-tune ਕਰ ਰਹੇ ਹੋ ਤਾਂ ਜੋ ਇਹ ਯਾਤਰਾ ਨਾਲ ਸੰਬੰਧਿਤ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦੇਣ ਵਿੱਚ ਮਾਹਿਰ ਹੋ ਜਾਵੇ। ਹੇਠਾਂ ਦਿੱਤਾ ਕੋਡ dataset ਦੇ ਪਹਿਲੇ ਕੁਝ ਰਿਕਾਰਡ ਦਿਖਾਉਂਦਾ ਹੈ ਜੋ JSON lines ਫਾਰਮੈਟ ਵਿੱਚ ਹਨ:
-   
+1. **ਡਾਟਾ ਦੀ ਜਾਂਚ ਕਰੋ:** ਇਸ ਉਦਾਹਰਨ ਵਿੱਚ, ਤੁਸੀਂ Phi-3.5-Mini ਮਾਡਲ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰਨ ਜਾ ਰਹੇ ਹੋ ਤਾਂ ਜੋ ਇਹ ਯਾਤਰਾ ਸੰਬੰਧੀ ਸਵਾਲਾਂ ਦੇ ਜਵਾਬ ਦੇਣ ਵਿੱਚ ਮਾਹਿਰ ਹੋ ਜਾਵੇ। ਹੇਠਾਂ ਦਿੱਤਾ ਕੋਡ ਡਾਟਾਸੈੱਟ ਦੇ ਪਹਿਲੇ ਕੁਝ ਰਿਕਾਰਡ ਦਿਖਾਉਂਦਾ ਹੈ, ਜੋ JSON ਲਾਈਨ ਫਾਰਮੈਟ ਵਿੱਚ ਹਨ:
+
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **ਮਾਡਲ ਨੂੰ Quantize ਕਰੋ:** ਮਾਡਲ ਨੂੰ train ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, ਤੁਸੀਂ ਹੇਠਾਂ ਦਿੱਤੀ ਕਮਾਂਡ ਨਾਲ Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++ ਤਕਨੀਕ ਵਰਤ ਕੇ quantize ਕਰੋਗੇ। AWQ ਮਾਡਲ ਦੇ weights ਨੂੰ quantize ਕਰਦਾ ਹੈ ਜਿਸ ਵਿੱਚ inference ਦੌਰਾਨ ਬਣਦੇ activations ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖਿਆ ਜਾਂਦਾ ਹੈ। ਇਸਦਾ ਮਤਲਬ ਹੈ ਕਿ quantization actual data distribution ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਮਾਡਲ ਦੀ accuracy ਵਧੀਆ ਰਹਿੰਦੀ ਹੈ ਬਜਾਏ ਪਰੰਪਰਾਗਤ weight quantization ਤਰੀਕਿਆਂ ਦੇ।
-    
+
+2. **ਮਾਡਲ ਨੂੰ ਕਵਾਂਟਾਈਜ਼ ਕਰੋ:** ਮਾਡਲ ਨੂੰ ਟ੍ਰੇਨ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ, ਤੁਸੀਂ ਹੇਠਾਂ ਦਿੱਤੀ ਕਮਾਂਡ ਨਾਲ ਕਵਾਂਟਾਈਜ਼ ਕਰਦੇ ਹੋ ਜੋ Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++ ਤਕਨੀਕ ਵਰਤਦੀ ਹੈ। AWQ ਮਾਡਲ ਦੇ ਵਜ਼ਨਾਂ ਨੂੰ ਕਵਾਂਟਾਈਜ਼ ਕਰਦਾ ਹੈ ਜੋ ਇਨਫਰੰਸ ਦੌਰਾਨ ਬਣੇ ਐਕਟੀਵੇਸ਼ਨਾਂ ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖਦਾ ਹੈ। ਇਸਦਾ ਮਤਲਬ ਹੈ ਕਿ ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ ਪ੍ਰਕਿਰਿਆ ਐਕਟੀਵੇਸ਼ਨਾਂ ਵਿੱਚ ਅਸਲ ਡਾਟਾ ਵੰਡ ਨੂੰ ਧਿਆਨ ਵਿੱਚ ਰੱਖਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਮਾਡਲ ਦੀ ਸਹੀਤਾ ਬਿਹਤਰ ਬਣੀ ਰਹਿੰਦੀ ਹੈ, ਜਿਵੇਂ ਕਿ ਰਵਾਇਤੀ ਵਜ਼ਨ ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ ਤਰੀਕਿਆਂ ਨਾਲੋਂ।
+
     ```bash
     olive quantize \
        --model_name_or_path microsoft/Phi-3.5-mini-instruct \
@@ -135,13 +136,13 @@ conda activate olive-ai
        --output_path models/phi/awq \
        --log_level 1
     ```
-    
-    AWQ quantization ਕਰਨ ਵਿੱਚ ਲਗਭਗ **8 ਮਿੰਟ** ਲੱਗਦੇ ਹਨ, ਜੋ ਮਾਡਲ ਦਾ ਆਕਾਰ ~7.5GB ਤੋਂ ~2.5GB ਕਰ ਦਿੰਦਾ ਹੈ।
-   
-   ਇਸ ਲੈਬ ਵਿੱਚ, ਅਸੀਂ ਦਿਖਾ ਰਹੇ ਹਾਂ ਕਿ ਕਿਸ ਤਰ੍ਹਾਂ Hugging Face ਤੋਂ ਮਾਡਲ ਲਿਆ ਜਾ ਸਕਦਾ ਹੈ (ਉਦਾਹਰਨ: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
 
-1. **Train the model:** Next, the `olive finetune` ਕਮਾਂਡ quantized ਮਾਡਲ ਨੂੰ fine-tune ਕਰਦੀ ਹੈ। Quantize ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ fine-tune ਕਰਨ ਨਾਲ accuracy ਵਧੀਆ ਹੁੰਦੀ ਹੈ ਕਿਉਂਕਿ fine-tuning quantization ਨਾਲ ਹੋਏ ਕੁਝ ਨੁਕਸਾਨ ਨੂੰ ਠੀਕ ਕਰਦਾ ਹੈ।
-    
+    AWQ ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ ਨੂੰ ਪੂਰਾ ਕਰਨ ਵਿੱਚ ਲਗਭਗ **8 ਮਿੰਟ** ਲੱਗਦੇ ਹਨ, ਜੋ ਮਾਡਲ ਦਾ ਆਕਾਰ ਲਗਭਗ **7.5GB ਤੋਂ 2.5GB** ਤੱਕ ਘਟਾ ਦਿੰਦਾ ਹੈ।
+
+    ਇਸ ਲੈਬ ਵਿੱਚ, ਅਸੀਂ ਤੁਹਾਨੂੰ ਦਿਖਾ ਰਹੇ ਹਾਂ ਕਿ ਕਿਵੇਂ Hugging Face ਤੋਂ ਮਾਡਲ ਇਨਪੁੱਟ ਕਰਨਾ ਹੈ (ਉਦਾਹਰਨ ਵਜੋਂ: `microsoft/Phi-3.5-mini-instruct`)। ਪਰ Olive ਤੁਹਾਨੂੰ Azure AI ਕੈਟਾਲੌਗ ਤੋਂ ਮਾਡਲ ਇਨਪੁੱਟ ਕਰਨ ਦੀ ਵੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ ਜੇ ਤੁਸੀਂ `model_name_or_path` ਆਰਗੁਮੈਂਟ ਨੂੰ Azure AI ਐਸੈੱਟ ID ਨਾਲ ਅਪਡੇਟ ਕਰੋ (ਉਦਾਹਰਨ ਵਜੋਂ: `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`)।
+
+3. **ਮਾਡਲ ਨੂੰ ਟ੍ਰੇਨ ਕਰੋ:** ਫਿਰ, `olive finetune` ਕਮਾਂਡ ਕਵਾਂਟਾਈਜ਼ਡ ਮਾਡਲ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰਦੀ ਹੈ। ਮਾਡਲ ਨੂੰ ਕਵਾਂਟਾਈਜ਼ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਫਾਈਨ-ਟਿਊਨ ਕਰਨ ਨਾਲ ਬਿਹਤਰ ਸਹੀਤਾ ਮਿਲਦੀ ਹੈ ਕਿਉਂਕਿ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਪ੍ਰਕਿਰਿਆ ਕਵਾਂਟਾਈਜ਼ੇਸ਼ਨ ਤੋਂ ਹੋਈ ਕੁਝ ਨੁਕਸਾਨ ਨੂੰ ਠੀਕ ਕਰਦੀ ਹੈ।
+
     ```bash
     olive finetune \
         --method lora \
@@ -153,10 +154,10 @@ conda activate olive-ai
         --output_path ./models/phi/ft \
         --log_level 1
     ```
-    
-    Fine-tuning (100 steps) ਕਰਨ ਵਿੱਚ ਲਗਭਗ **6 ਮਿੰਟ** ਲੱਗਦੇ ਹਨ।
 
-1. **Optimize ਕਰੋ:** ਮਾਡਲ train ਹੋਣ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ Olive ਦੇ `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` arguments ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਮਾਡਲ ਨੂੰ optimize ਕਰੋਗੇ - ਪਰ ਇਸ ਲੈਬ ਲਈ ਅਸੀਂ CPU ਦੀ ਵਰਤੋਂ ਕਰਾਂਗੇ।
+    ਫਾਈਨ-ਟਿਊਨਿੰਗ (100 ਕਦਮਾਂ ਨਾਲ) ਨੂੰ ਪੂਰਾ ਕਰਨ ਵਿੱਚ ਲਗਭਗ **6 ਮਿੰਟ** ਲੱਗਦੇ ਹਨ।
+
+4. **ਅਪਟੀਮਾਈਜ਼ ਕਰੋ:** ਮਾਡਲ ਟ੍ਰੇਨ ਹੋਣ ਤੋਂ ਬਾਅਦ, ਤੁਸੀਂ Olive ਦੀ `auto-opt` ਕਮਾਂਡ ਨਾਲ ਮਾਡਲ ਨੂੰ ਅਪਟੀਮਾਈਜ਼ ਕਰਦੇ ਹੋ, ਜੋ ONNX ਗ੍ਰਾਫ ਕੈਪਚਰ ਕਰਦਾ ਹੈ ਅਤੇ ਮਾਡਲ ਦੇ ਪ੍ਰਦਰਸ਼ਨ ਨੂੰ ਸੁਧਾਰਨ ਲਈ ਕਈ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਕਰਦਾ ਹੈ, ਜਿਵੇਂ ਕਿ ਮਾਡਲ ਕੰਪ੍ਰੈਸ਼ਨ ਅਤੇ ਫਿਊਜ਼ਨ। ਇਹ ਧਿਆਨ ਵਿੱਚ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ ਕਿ ਤੁਸੀਂ `--device` ਅਤੇ `--provider` ਆਰਗੁਮੈਂਟ ਅਪਡੇਟ ਕਰਕੇ ਹੋਰ ਡਿਵਾਈਸਾਂ ਲਈ ਵੀ ਅਪਟੀਮਾਈਜ਼ ਕਰ ਸਕਦੇ ਹੋ, ਜਿਵੇਂ ਕਿ NPU ਜਾਂ GPU, ਪਰ ਇਸ ਲੈਬ ਲਈ ਅਸੀਂ CPU ਦੀ ਵਰਤੋਂ ਕਰਾਂਗੇ।
 
     ```bash
     olive auto-opt \
@@ -168,12 +169,12 @@ conda activate olive-ai
        --output_path models/phi/onnx-ao \
        --log_level 1
     ```
-    
-    Optimize ਕਰਨ ਵਿੱਚ ਲਗਭਗ **5 ਮਿੰਟ** ਲੱਗਦੇ ਹਨ।
 
-### Step 5: Model inference quick test
+    ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਨੂੰ ਪੂਰਾ ਕਰਨ ਵਿੱਚ ਲਗਭਗ **5 ਮਿੰਟ** ਲੱਗਦੇ ਹਨ।
 
-ਮਾਡਲ ਦੀ inference ਟੈਸਟ ਕਰਨ ਲਈ, ਆਪਣੇ ਫੋਲਡਰ ਵਿੱਚ **app.py** ਨਾਮ ਦਾ Python ਫਾਈਲ ਬਣਾਓ ਅਤੇ ਹੇਠਾਂ ਦਿੱਤਾ ਕੋਡ ਕਾਪੀ-ਪੇਸਟ ਕਰੋ:
+### ਕਦਮ 5: ਮਾਡਲ ਇਨਫਰੰਸ ਤੇਜ਼ ਟੈਸਟ
+
+ਮਾਡਲ ਇਨਫਰੰਸ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ, ਆਪਣੇ ਫੋਲਡਰ ਵਿੱਚ ਇੱਕ Python ਫਾਈਲ **app.py** ਬਣਾਓ ਅਤੇ ਹੇਠਾਂ ਦਿੱਤਾ ਕੋਡ ਕਾਪੀ-ਪੇਸਟ ਕਰੋ:
 
 ```python
 import onnxruntime_genai as og
@@ -215,12 +216,14 @@ print("\n")
 python app.py
 ```
 
-### Step 6: Upload model to Azure AI
+### ਕਦਮ 6: ਮਾਡਲ ਨੂੰ Azure AI 'ਤੇ ਅਪਲੋਡ ਕਰੋ
 
-ਮਾਡਲ ਨੂੰ Azure AI ਮਾਡਲ ਰਿਪੋਜ਼ਿਟਰੀ ਵਿੱਚ ਅਪਲੋਡ ਕਰਨ ਨਾਲ ਮਾਡਲ ਤੁਹਾਡੇ ਵਿਕਾਸ ਟੀਮ ਦੇ ਹੋਰ ਮੈਂਬਰਾਂ ਨਾਲ ਸਾਂਝਾ ਹੋ ਸਕਦਾ ਹੈ ਅਤੇ ਮਾਡਲ ਦਾ ਵਰਜ਼ਨ ਕੰਟਰੋਲ ਵੀ ਹੁੰਦਾ ਹੈ। ਮਾਡਲ ਅਪਲੋਡ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੀ ਕਮਾਂਡ ਚਲਾਓ:
+ਮਾਡਲ ਨੂੰ Azure AI ਮਾਡਲ ਰਿਪੋਜ਼ਿਟਰੀ ਵਿੱਚ ਅਪਲੋਡ ਕਰਨ ਨਾਲ ਮਾਡਲ ਤੁਹਾਡੇ ਵਿਕਾਸ ਟੀਮ ਦੇ ਹੋਰ ਮੈਂਬਰਾਂ ਨਾਲ ਸਾਂਝਾ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ ਅਤੇ ਮਾਡਲ ਦੇ ਵਰਜਨ ਕੰਟਰੋਲ ਨੂੰ ਵੀ ਸੰਭਾਲਿਆ ਜਾਂਦਾ ਹੈ। ਮਾਡਲ ਅਪਲੋਡ ਕਰਨ ਲਈ ਹੇਠਾਂ ਦਿੱਤੀ ਕਮਾਂਡ ਚਲਾਓ:
 
-> [!NOTE]
-> `{}` ਅਤੇ Azure AI Project ਦਾ ਨਾਮ ਅਪਡੇਟ ਕਰੋ ਅਤੇ ਹੇਠਾਂ ਦਿੱਤੀ ਕਮਾਂਡ ਚਲਾਓ
+> [!NOTE]  
+> `{}` ਪਲੇਸਹੋਲਡਰ ਨੂੰ ਆਪਣੇ ਰਿਸੋਰਸ ਗਰੁੱਪ ਅਤੇ Azure AI ਪ੍ਰੋਜੈਕਟ ਦੇ ਨਾਮ ਨਾਲ ਅਪਡੇਟ ਕਰੋ।
+
+ਆਪਣਾ ਰਿਸੋਰਸ ਗਰੁੱਪ `"resourceGroup"` ਅਤੇ Azure AI ਪ੍ਰੋਜੈਕਟ ਨਾਮ ਲੱਭਣ ਲਈ ਹੇਠਾਂ ਦਿੱਤੀ ਕਮਾਂਡ ਚਲਾਓ:
 
 ```
 az ml workspace show
@@ -228,7 +231,7 @@ az ml workspace show
 
 ਜਾਂ +++ai.azure.com+++ 'ਤੇ ਜਾ ਕੇ **management center** > **project** > **overview** ਚੁਣੋ।
 
-`{}` ਵਾਲੇ placeholders ਨੂੰ ਆਪਣੇ resource group ਅਤੇ Azure AI Project Name ਨਾਲ ਅਪਡੇਟ ਕਰੋ।
+`{}` ਪਲੇਸਹੋਲਡਰ ਨੂੰ ਆਪਣੇ ਰਿਸੋਰਸ ਗਰੁੱਪ ਅਤੇ Azure AI ਪ੍ਰੋਜੈਕਟ ਦੇ ਨਾਮ ਨਾਲ ਅਪਡੇਟ ਕਰੋ।
 
 ```bash
 az ml model create \
@@ -237,9 +240,8 @@ az ml model create \
     --path ./models/phi/onnx-ao \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
-```
+```  
+ਤੁਸੀਂ ਆਪਣਾ ਅਪਲੋਡ ਕੀਤਾ ਮਾਡਲ ਵੇਖ ਸਕਦੇ ਹੋ ਅਤੇ https://ml.azure.com/model/list 'ਤੇ ਮਾਡਲ ਡਿਪਲੋਇ ਕਰ ਸਕਦੇ ਹੋ।
 
-ਤੁਸੀਂ ਆਪਣਾ ਅਪਲੋਡ ਕੀਤਾ ਮਾਡਲ ਵੇਖ ਸਕਦੇ ਹੋ ਅਤੇ https://ml.azure.com/model/list 'ਤੇ ਆਪਣਾ ਮਾਡਲ deploy ਵੀ ਕਰ ਸਕਦੇ ਹੋ।
-
-**ਅਸਵੀਕਾਰੋਤਾ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਤੀਰਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਹੀ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਣ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਿਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਸਮਝ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+**ਅਸਵੀਕਾਰੋਪੱਤਰ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

@@ -2,58 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-05-09T21:58:06+00:00",
+  "translation_date": "2025-07-17T08:30:47+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
   "language_code": "sr"
 }
 -->
-## Scenariji za fino podešavanje
+## Сценарији фино подешавање
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.25759a0154a97ad90e43a6cace37d6bea87f0ac0236ada3ad5d4a1fbacc3bdf7.sr.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.sr.png)
 
-**Platforma** Obuhvata različite tehnologije kao što su Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito i ONNX Runtime.
+**Платформа** Ово обухвата различите технологије као што су Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito и ONNX Runtime.
 
-**Infrastruktura** Obuhvata CPU i FPGA, koji su ključni za proces fino podešavanja. Pokažem vam ikone za svaku od ovih tehnologija.
+**Инфраструктура** Ово укључује CPU и FPGA, који су кључни за процес фино подешавања. Хајде да вам покажем иконе за сваку од ових технологија.
 
-**Alati i okviri** Obuhvataju ONNX Runtime i ONNX Runtime. Pokažem vam ikone za svaku od ovih tehnologija.  
+**Алатке и оквири** Ово укључује ONNX Runtime и ONNX Runtime. Хајде да вам покажем иконе за сваку од ових технологија.  
 [Insert icons for ONNX Runtime and ONNX Runtime]
 
-Proces fino podešavanja sa Microsoft tehnologijama uključuje različite komponente i alate. Razumevanjem i korišćenjem ovih tehnologija možemo efikasno fino podesiti naše aplikacije i kreirati bolje rešenja.
+Процес фино подешавања уз Microsoft технологије укључује различите компоненте и алатке. Разумевањем и коришћењем ових технологија можемо ефикасно фино подесити наше апликације и креирати боља решења.
 
-## Model kao usluga
+## Модел као услуга
 
-Fino podesite model koristeći hostovano fino podešavanje, bez potrebe za kreiranjem i upravljanjem računarskim resursima.
+Фино подесите модел користећи хостовано фино подешавање, без потребе за креирањем и управљањем рачунарским ресурсима.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.6184d80a336ea9d7bb67a581e9e5d0b021cafdffff7ba257c2012e2123e0d77e.sr.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.sr.png)
 
-Serverless fino podešavanje je dostupno za Phi-3-mini i Phi-3-medium modele, omogućavajući programerima da brzo i lako prilagode modele za cloud i edge scenarije, bez potrebe za organizovanjem računarskih resursa. Takođe smo najavili da je Phi-3-small sada dostupan kroz našu ponudu Models-as-a-Service, tako da programeri mogu brzo i lako započeti razvoj AI bez upravljanja osnovnom infrastrukturom.
+Безсерверско фино подешавање је доступно за Phi-3-mini и Phi-3-medium моделе, омогућавајући програмерима да брзо и лако прилагоде моделе за облачне и edge сценарије без потребе за обезбеђивањем рачунарских ресурса. Такође смо најавили да је Phi-3-small сада доступан кроз нашу понуду Models-as-a-Service, тако да програмери могу брзо и лако започети са развојем вештачке интелигенције без потребе за управљањем основном инфраструктуром.
 
-## Model kao platforma
+## Модел као платформа
 
-Korisnici sami upravljaju svojim računarskim resursima kako bi fino podesili svoje modele.
+Корисници управљају својим рачунарским ресурсима како би фино подесили своје моделе.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.cf8b08ef05bf57f362da90834be87562502f4370de4a7325a9fb03b8c008e5e7.sr.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.sr.png)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## Scenariji za fino podešavanje
+## Сценарији фино подешавања
 
 | | | | | | | |
 |-|-|-|-|-|-|-|
-|Scenario|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|Prilagođavanje prethodno treniranih LLM modela specifičnim zadacima ili domenima|Da|Da|Da|Da|Da|Da|
-|Fino podešavanje za NLP zadatke kao što su klasifikacija teksta, prepoznavanje imenovanih entiteta i mašinski prevod|Da|Da|Da|Da|Da|Da|
-|Fino podešavanje za QA zadatke|Da|Da|Da|Da|Da|Da|
-|Fino podešavanje za generisanje odgovora nalik ljudskim u chatbotovima|Da|Da|Da|Da|Da|Da|
-|Fino podešavanje za generisanje muzike, umetnosti ili drugih oblika kreativnosti|Da|Da|Da|Da|Da|Da|
-|Smanjenje računarskih i finansijskih troškova|Da|Da|Ne|Da|Da|Ne|
-|Smanjenje korišćenja memorije|Ne|Da|Ne|Da|Da|Da|
-|Korišćenje manjeg broja parametara za efikasno fino podešavanje|Ne|Da|Da|Ne|Ne|Da|
-|Memorijski efikasna forma paralelizma podataka koja omogućava pristup ukupnoj GPU memoriji svih dostupnih GPU uređaja|Ne|Ne|Ne|Da|Da|Da|
+|Сценарио|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
+|Прилагођавање претходно обучених LLM модела специфичним задацима или доменима|Да|Да|Да|Да|Да|Да|
+|Фино подешавање за NLP задатке као што су класификација текста, препознавање именованих ентитета и машински превод|Да|Да|Да|Да|Да|Да|
+|Фино подешавање за QA задатке|Да|Да|Да|Да|Да|Да|
+|Фино подешавање за генерисање одговора сличних људским у чатботовима|Да|Да|Да|Да|Да|Да|
+|Фино подешавање за генерисање музике, уметности или других облика креативности|Да|Да|Да|Да|Да|Да|
+|Смањење рачунарских и финансијских трошкова|Да|Да|Не|Да|Да|Не|
+|Смањење коришћења меморије|Не|Да|Не|Да|Да|Да|
+|Коришћење мањег броја параметара за ефикасно фино подешавање|Не|Да|Да|Не|Не|Да|
+|Меморијски ефикасан облик паралелизма података који омогућава приступ укупној GPU меморији свих доступних GPU уређаја|Не|Не|Не|Да|Да|Да|
 
-## Primeri performansi fino podešavanja
+## Примери перформанси фино подешавања
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.9dbf84557eef43e011eb7cadf51f51686f9245f7953e2712a27095ab7d18a6d1.sr.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.sr.png)
 
-**Ограничење одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетом. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне интерпретације настале употребом овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

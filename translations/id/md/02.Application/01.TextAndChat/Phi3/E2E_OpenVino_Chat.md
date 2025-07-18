@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-05-09T15:58:01+00:00",
+  "translation_date": "2025-07-16T23:06:07+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
   "language_code": "id"
 }
@@ -15,18 +15,18 @@ Kode ini mengekspor model ke format OpenVINO, memuatnya, dan menggunakannya untu
    ```bash
    optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6 --sym --trust-remote-code ./model/phi3-instruct/int4
    ```  
-   - Perintah ini menggunakan `optimum-cli` tool to export a model to the OpenVINO format, which is optimized for efficient inference.
-   - The model being exported is `"microsoft/Phi-3-mini-4k-instruct"`, and it's set up for the task of generating text based on past context.
-   - The weights of the model are quantized to 4-bit integers (`int4`), which helps reduce the model size and speed up processing.
-   - Other parameters like `group-size`, `ratio`, and `sym` are used to fine-tune the quantization process.
-   - The exported model is saved in the directory `./model/phi3-instruct/int4`.
+   - Perintah ini menggunakan alat `optimum-cli` untuk mengekspor model ke format OpenVINO, yang dioptimalkan untuk inferensi yang efisien.  
+   - Model yang diekspor adalah `"microsoft/Phi-3-mini-4k-instruct"`, dan disiapkan untuk tugas menghasilkan teks berdasarkan konteks sebelumnya.  
+   - Bobot model dikwantisasi ke bilangan bulat 4-bit (`int4`), yang membantu mengurangi ukuran model dan mempercepat pemrosesan.  
+   - Parameter lain seperti `group-size`, `ratio`, dan `sym` digunakan untuk menyempurnakan proses kwantisasi.  
+   - Model yang diekspor disimpan di direktori `./model/phi3-instruct/int4`.
 
-2. **Mengimpor Library yang Diperlukan**:  
+2. **Mengimpor Perpustakaan yang Diperlukan**:  
    ```python
    from transformers import AutoConfig, AutoTokenizer
    from optimum.intel.openvino import OVModelForCausalLM
    ```  
-   - Baris-baris ini mengimpor kelas dari modul `transformers` library and the `optimum.intel.openvino`, yang dibutuhkan untuk memuat dan menggunakan model.
+   - Baris-baris ini mengimpor kelas dari perpustakaan `transformers` dan modul `optimum.intel.openvino`, yang dibutuhkan untuk memuat dan menggunakan model.
 
 3. **Menyiapkan Direktori Model dan Konfigurasi**:  
    ```python
@@ -37,8 +37,8 @@ Kode ini mengekspor model ke format OpenVINO, memuatnya, dan menggunakannya untu
        "CACHE_DIR": ""
    }
    ```  
-   - `model_dir` specifies where the model files are stored.
-   - `ov_config` adalah sebuah dictionary yang mengonfigurasi model OpenVINO agar memprioritaskan latensi rendah, menggunakan satu aliran inferensi, dan tidak menggunakan direktori cache.
+   - `model_dir` menentukan lokasi penyimpanan file model.  
+   - `ov_config` adalah kamus yang mengonfigurasi model OpenVINO agar memprioritaskan latensi rendah, menggunakan satu aliran inferensi, dan tidak menggunakan direktori cache.
 
 4. **Memuat Model**:  
    ```python
@@ -64,13 +64,13 @@ Kode ini mengekspor model ke format OpenVINO, memuatnya, dan menggunakannya untu
        "add_special_tokens": False
    }
    ```  
-   - Dictionary ini menentukan bahwa token khusus tidak akan ditambahkan ke output tokenisasi.
+   - Kamus ini menentukan bahwa token khusus tidak akan ditambahkan ke hasil tokenisasi.
 
 7. **Mendefinisikan Prompt**:  
    ```python
    prompt = "<|system|>You are a helpful AI assistant.<|end|><|user|>can you introduce yourself?<|end|><|assistant|>"
    ```  
-   - String ini menetapkan prompt percakapan di mana pengguna meminta asisten AI untuk memperkenalkan dirinya.
+   - String ini mengatur prompt percakapan di mana pengguna meminta asisten AI untuk memperkenalkan dirinya.
 
 8. **Melakukan Tokenisasi pada Prompt**:  
    ```python
@@ -82,7 +82,7 @@ Kode ini mengekspor model ke format OpenVINO, memuatnya, dan menggunakannya untu
    ```python
    answer = ov_model.generate(**input_tokens, max_new_tokens=1024)
    ```  
-   - Baris ini menggunakan model untuk menghasilkan respons berdasarkan token input, dengan maksimum 1024 token baru.
+   - Baris ini menggunakan model untuk menghasilkan respons berdasarkan token input, dengan maksimal 1024 token baru.
 
 10. **Mendekode Respons**:  
     ```python
@@ -91,4 +91,4 @@ Kode ini mengekspor model ke format OpenVINO, memuatnya, dan menggunakannya untu
     - Baris ini mengubah token yang dihasilkan kembali menjadi string yang dapat dibaca manusia, melewati token khusus, dan mengambil hasil pertama.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

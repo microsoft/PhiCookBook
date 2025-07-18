@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-05-09T20:07:31+00:00",
+  "translation_date": "2025-07-17T05:13:33+00:00",
   "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "sl"
 }
 -->
 ## **Izvlečenje zvočnih prepisov z uporabo Phi-4-multimodal**
 
-Phi-4-multimodal je model z več modalnostmi, ki lahko uporablja zvok poleg besedila in slik. Poglejmo, kako ga uporabiti.
+Phi-4-multimodal je model z več modalnostmi, ki poleg besedila in slik lahko uporablja tudi zvok. Poglejmo, kako ga uporabiti.
 
 
 ```python
@@ -65,5 +65,5 @@ print(response)
 
 ```
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

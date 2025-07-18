@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-07-09T18:56:54+00:00",
+  "translation_date": "2025-07-17T08:04:07+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "uk"
 }
@@ -35,7 +35,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 3. Формат даних поєднується з шаблоном Phi-3
 
-Будь ласка, завантажте дані за цим [посиланням](../../../../code/04.Finetuning/mlx), включаючи всі .jsonl у папці ***data***
+Будь ласка, завантажте дані за цим [посиланням](../../../../code/04.Finetuning/mlx), включаючи всі .jsonl файли у папці ***data***
 
 
 ## **2. Тонке налаштування у вашому терміналі**
@@ -52,7 +52,7 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Примітка:***
 
-1. Це тонке налаштування LoRA, MLX framework не публікував QLoRA
+1. Це тонке налаштування LoRA, MLX Framework не публікує QLoRA
 
 2. Ви можете змінити деякі параметри у config.yaml, наприклад
 

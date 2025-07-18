@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-07-09T19:30:29+00:00",
+  "translation_date": "2025-07-17T05:13:48+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "en"
 }
 -->
 ## **Function calling in Phi-4-mini**
 
-Function calling first appeared in the Phi Family series, and now you can use it in Phi-4-mini.
+Function calling first appeared in the Phi Family family, and now you can use it through Phi-4-mini.
 
-This example demonstrates simulating Premier League results. The goal is for Phi-4-mini to provide real-time game information. Below is the sample code:
+This example demonstrates the simulation of Premier League results. The goal is for Phi-4-mini to deliver real-time game information. Below is the sample code:
 
 
 

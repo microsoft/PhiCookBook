@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:50:58+00:00",
+  "translation_date": "2025-07-17T04:46:07+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "nl"
 }
 -->
 ## **Gebruik van Phi-4-mini-mm om code te genereren**
 
-Phi-4-mini zet de sterke programmeermogelijkheden van de Phi Family voort. Je kunt Prompt gebruiken om vragen te stellen over programmeren. Uiteraard heeft het, dankzij de toegevoegde sterke redeneervermogen, nog krachtigere programmeermogelijkheden, zoals het genereren van projecten op basis van specificaties. Bijvoorbeeld, projecten genereren volgens eisen, zoals:
+Phi-4-mini zet de sterke programmeermogelijkheden van de Phi Family voort. Je kunt Prompt gebruiken om vragen te stellen over programmeren. Natuurlijk, na het toevoegen van de sterke redeneervaardigheid, heeft het krachtigere programmeermogelijkheden, zoals het genereren van projecten op basis van eisen. Bijvoorbeeld, projecten genereren volgens specificaties, zoals:
 
-### **Vereiste**
+### **Eis**
 
-Maak een Shopping Cart App
+Maak een Winkelwagen-app
 
-- Maak een API Rest met de volgende methoden:
+- Maak een REST API met de volgende methoden:
     - Haal een lijst met bieren op met behulp van pagina-offset en limiet.
-    - Haal bierdetails op basis van id.
-    - Zoek naar bier op naam, beschrijving, slogan, food pairings en prijs.
-- Maak een lijst met producten op de hoofdpagina.
+    - Haal bierdetails op via id.
+    - Zoek naar bier op naam, beschrijving, slogan, voedselcombinaties en prijs.
+- Maak een productlijst op de hoofdpagina.
     - Maak een zoekbalk om producten te filteren.
     - Navigeer naar de beschrijvingspagina wanneer de gebruiker op een product klikt.
 - (Optioneel) Slicer om producten te filteren op prijs.
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

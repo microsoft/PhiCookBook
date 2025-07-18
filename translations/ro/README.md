@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:43:51+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T15:30:19+00:00",
   "source_file": "README.md",
   "language_code": "ro"
 }
@@ -18,7 +18,7 @@ CO_OP_TRANSLATOR_METADATA:
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
 [![Urmăritori GitHub](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)  
-[![Forks GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
+[![Fork-uri GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
 [![Stele GitHub](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
 [![Azure AI Community Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
@@ -30,15 +30,15 @@ Phi este în prezent cel mai puternic și eficient model mic de limbaj (SLM), cu
 Poți implementa Phi în cloud sau pe dispozitive edge și poți construi cu ușurință aplicații AI generative cu resurse limitate de calcul.
 
 Urmează acești pași pentru a începe să folosești aceste resurse:  
-1. **Fă fork la repository**: Click pe [![Forks GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
+1. **Fă fork la repository**: Click pe [![Fork-uri GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
 2. **Clonează repository-ul**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Alătură-te comunității Microsoft AI pe Discord și întâlnește experți și alți dezvoltatori**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.ro.png)
 
-## 🌐 Suport multilingv
+### 🌐 Suport multilingv
 
-### Suportat prin GitHub Action (automatizat și mereu actualizat)
+#### Suportat prin GitHub Action (automatizat și mereu actualizat)
 
 [Franceză](../fr/README.md) | [Spaniolă](../es/README.md) | [Germană](../de/README.md) | [Rusă](../ru/README.md) | [Arabă](../ar/README.md) | [Persană (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chineză (simplificată)](../zh/README.md) | [Chineză (tradițională, Macau)](../mo/README.md) | [Chineză (tradițională, Hong Kong)](../hk/README.md) | [Chineză (tradițională, Taiwan)](../tw/README.md) | [Japoneză](../ja/README.md) | [Coreeană](../ko/README.md) | [Hindi](../hi/README.md)  
 [Bengaleză](../bn/README.md) | [Marathi](../mr/README.md) | [Nepaleză](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugheză (Portugalia)](../pt/README.md) | [Portugheză (Brazilia)](../br/README.md) | [Italiană](../it/README.md) | [Poloneză](../pl/README.md) | [Turcă](../tr/README.md) | [Greacă](../el/README.md) | [Thailandeză](../th/README.md) | [Suedeză](../sv/README.md) | [Daneză](../da/README.md) | [Norvegiană](../no/README.md) | [Finlandeză](../fi/README.md) | [Olandeză](../nl/README.md) | [Ebraică](../he/README.md) | [Vietnameză](../vi/README.md) | [Indoneziană](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipineză)](../tl/README.md) | [Swahili](../sw/README.md) | [Maghiară](../hu/README.md) | [Cehă](../cs/README.md) | [Slovacă](../sk/README.md) | [Română](./README.md) | [Bulgară](../bg/README.md) | [Sârbă (chirilică)](../sr/README.md) | [Croată](../hr/README.md) | [Slovenă](../sl/README.md)
@@ -158,7 +158,7 @@ Urmează acești pași pentru a începe să folosești aceste resurse:
 
 - Exemple MOE  
   - Exemple Phi-3 / 3.5  
-    - [📓] [Exemplu Phi-3.5 Mixture of Experts Models (MoEs) pentru social media](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
+    - [📓] [Exemplu Phi-3.5 Mixture of Experts Models (MoEs) pentru Social Media](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
     - [📓] [Construirea unui pipeline Retrieval-Augmented Generation (RAG) cu NVIDIA NIM Phi-3 MOE, Azure AI Search și LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
 
 - Exemple Function Calling  
@@ -176,7 +176,7 @@ Urmează acești pași pentru a începe să folosești aceste resurse:
 - Ajustarea fină a modelelor Phi  
   - [Scenarii de ajustare fină](./md/03.FineTuning/FineTuning_Scenarios.md)  
   - [Ajustare fină vs RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)  
-  - [Ajustarea fină: Lasă Phi-3 să devină expert în industrie](./md/03.FineTuning/LetPhi3gotoIndustriy.md)  
+  - [Ajustarea fină pentru a transforma Phi-3 într-un expert în industrie](./md/03.FineTuning/LetPhi3gotoIndustriy.md)  
   - [Ajustarea fină a Phi-3 cu AI Toolkit pentru VS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)  
   - [Ajustarea fină a Phi-3 cu Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)  
   - [Ajustarea fină a Phi-3 cu Lora](./md/03.FineTuning/FineTuning_Lora.md)  
@@ -199,7 +199,7 @@ Urmează acești pași pentru a începe să folosești aceste resurse:
   - [Textbooks Are All You Need II: raport tehnic phi-1.5](https://arxiv.org/abs/2309.05463)  
   - [Raport tehnic Phi-3: un model lingvistic foarte capabil local pe telefonul tău](https://arxiv.org/abs/2404.14219)  
   - [Raport tehnic Phi-4](https://arxiv.org/abs/2412.08905)  
-  - [Raport tehnic Phi-4-Mini: modele multimodale compacte și puternice prin Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)  
+  - [Raport tehnic Phi-4-Mini: modele multimodale compacte, dar puternice, prin Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)  
   - [Optimizarea modelelor lingvistice mici pentru Function-Calling în vehicule](https://arxiv.org/abs/2501.02342)  
   - [(WhyPHI) Ajustarea fină PHI-3 pentru răspunsuri la întrebări cu alegere multiplă: metodologie, rezultate și provocări](https://arxiv.org/abs/2501.01588)
 - [Raport Tehnic Phi-4-reasoning](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)  
@@ -209,21 +209,21 @@ Urmează acești pași pentru a începe să folosești aceste resurse:
 
 ### Phi pe Azure AI Foundry
 
-Poți învăța cum să folosești Microsoft Phi și cum să construiești soluții E2E pe diferitele tale dispozitive hardware. Pentru a experimenta Phi personal, începe prin a testa modelele și a personaliza Phi pentru scenariile tale folosind [Catalogul de modele Azure AI Foundry](https://aka.ms/phi3-azure-ai). Poți afla mai multe la Început cu [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Poți învăța cum să folosești Microsoft Phi și cum să construiești soluții E2E pe diferitele tale dispozitive hardware. Pentru a experimenta Phi personal, începe prin a testa modelele și a personaliza Phi pentru scenariile tale folosind [Catalogul de modele Azure AI Foundry](https://aka.ms/phi3-azure-ai). Poți afla mai multe din Ghidul de început cu [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
 
 **Playground**  
 Fiecare model are un spațiu dedicat pentru testare, [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi pe modelele GitHub
 
-Poți învăța cum să folosești Microsoft Phi și cum să construiești soluții E2E pe diferitele tale dispozitive hardware. Pentru a experimenta Phi personal, începe prin a testa modelul și a personaliza Phi pentru scenariile tale folosind [Catalogul de modele GitHub](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Poți afla mai multe la Început cu [Catalogul de modele GitHub](/md/02.QuickStart/GitHubModel_QuickStart.md)
+Poți învăța cum să folosești Microsoft Phi și cum să construiești soluții E2E pe diferitele tale dispozitive hardware. Pentru a experimenta Phi personal, începe prin a testa modelul și a personaliza Phi pentru scenariile tale folosind [Catalogul de modele GitHub](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Poți afla mai multe din Ghidul de început cu [Catalogul de modele GitHub](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 **Playground**  
 Fiecare model are un [spațiu dedicat pentru testare](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 ### Phi pe Hugging Face
 
-De asemenea, poți găsi modelul pe [Hugging Face](https://huggingface.co/microsoft)
+De asemenea, poți găsi modelul pe [Hugging Face](https://huggingface.co/microsoft).
 
 **Playground**  
 [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
@@ -237,13 +237,13 @@ Modelele de limbaj natural, imagine și vorbire la scară largă – precum cele
 
 Abordarea recomandată pentru a reduce aceste riscuri este să incluzi un sistem de siguranță în arhitectura ta care să poată detecta și preveni comportamentele dăunătoare. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) oferă un strat independent de protecție, capabil să detecteze conținut dăunător generat de utilizatori sau de AI în aplicații și servicii. Azure AI Content Safety include API-uri pentru text și imagine care permit detectarea materialelor dăunătoare. În cadrul Azure AI Foundry, serviciul Content Safety îți permite să vizualizezi, să explorezi și să testezi coduri exemplu pentru detectarea conținutului dăunător în diferite modalități. Următoarea [documentație quickstart](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) te ghidează în realizarea cererilor către serviciu.
 
-Un alt aspect de luat în considerare este performanța generală a aplicației. În aplicațiile multi-modale și multi-modele, performanța înseamnă că sistemul funcționează așa cum te aștepți tu și utilizatorii tăi, inclusiv să nu genereze rezultate dăunătoare. Este important să evaluezi performanța aplicației tale folosind [evaluatori de Performanță și Calitate și de Risc și Siguranță](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). De asemenea, ai posibilitatea să creezi și să evaluezi cu [evaluatori personalizați](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
+Un alt aspect de luat în considerare este performanța generală a aplicației. În aplicațiile multi-modale și multi-modele, performanța înseamnă că sistemul funcționează așa cum te aștepți tu și utilizatorii tăi, inclusiv să nu genereze rezultate dăunătoare. Este important să evaluezi performanța aplicației tale folosind [evaluatori de Performanță, Calitate, Risc și Siguranță](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). De asemenea, ai posibilitatea să creezi și să evaluezi cu [evaluatori personalizați](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Poți evalua aplicația ta AI în mediul de dezvoltare folosind [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Având un set de date de test sau un obiectiv, generațiile aplicației tale AI generative sunt măsurate cantitativ cu evaluatori încorporați sau evaluatori personalizați la alegere. Pentru a începe cu azure ai evaluation sdk și a evalua sistemul tău, poți urma [ghidul quickstart](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). După ce execuți o rulare de evaluare, poți [vizualiza rezultatele în Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Poți evalua aplicația ta AI în mediul de dezvoltare folosind [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Având un set de date de test sau un obiectiv, generațiile aplicației tale AI generative sunt măsurate cantitativ cu evaluatori încorporați sau evaluatori personalizați la alegere. Pentru a începe cu Azure AI Evaluation SDK și a evalua sistemul tău, poți urma [ghidul quickstart](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). După ce execuți o rulare de evaluare, poți [vizualiza rezultatele în Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Mărci înregistrate
 
-Acest proiect poate conține mărci comerciale sau logo-uri pentru proiecte, produse sau servicii. Utilizarea autorizată a mărcilor comerciale sau logo-urilor Microsoft este supusă și trebuie să respecte [Ghidul Microsoft privind mărcile comerciale și brandul](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Acest proiect poate conține mărci comerciale sau logo-uri pentru proiecte, produse sau servicii. Utilizarea autorizată a mărcilor comerciale sau logo-urilor Microsoft este supusă și trebuie să respecte [Ghidul Microsoft privind Mărcile Comerciale și Brandul](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
 Utilizarea mărcilor comerciale sau logo-urilor Microsoft în versiuni modificate ale acestui proiect nu trebuie să creeze confuzie sau să sugereze sponsorizarea Microsoft. Orice utilizare a mărcilor comerciale sau logo-urilor terțe este supusă politicilor acelor terțe părți.
 
 **Declinare de responsabilitate**:  

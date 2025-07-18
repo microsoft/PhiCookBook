@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:45:29+00:00",
+  "translation_date": "2025-07-16T22:25:17+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "cs"
 }
@@ -13,7 +13,7 @@ Model Builder nyní podporuje kvantizaci ONNX modelů pro Phi-3.5 Instruct a Phi
 
 ### **Phi-3.5-Instruct**
 
-**CPU akcelerovaná konverze kvantizovaného INT 4**
+**CPU akcelerovaná konverze kvantizovaného INT4**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**CUDA akcelerovaná konverze kvantizovaného INT 4**
+**CUDA akcelerovaná konverze kvantizovaného INT4**
 
 ```bash
 
@@ -63,9 +63,9 @@ cd models
 4. Stáhněte tento soubor do složky models  
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
-5. V terminálu spusťte
+5. Přejděte do terminálu
 
-    Konverzi ONNX modelu s podporou FP32
+    Proveďte konverzi ONNX s podporou FP32
 
 ```bash
 
@@ -75,13 +75,13 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ### **Poznámka:**
 
-1. Model Builder momentálně podporuje konverzi Phi-3.5-Instruct a Phi-3.5-Vision, nikoli však Phi-3.5-MoE
+1. Model Builder momentálně podporuje konverzi Phi-3.5-Instruct a Phi-3.5-Vision, ale ne Phi-3.5-MoE
 
-2. Pro použití kvantizovaného ONNX modelu lze využít Generative AI extensions for onnxruntime SDK
+2. Pro použití kvantizovaného modelu ONNX jej můžete využít přes Generative AI extensions for onnxruntime SDK
 
-3. Je třeba brát v potaz odpovědnější AI, proto se po kvantizační konverzi modelu doporučuje provést důkladnější testování výsledků
+3. Je potřeba brát v úvahu odpovědnější AI, proto se po kvantizační konverzi modelu doporučuje provést důkladnější testování výsledků
 
-4. Kvantizací CPU INT4 modelu můžeme nasadit model na Edge zařízení, což nabízí lepší možnosti aplikace, proto jsme dokončili Phi-3.5-Instruct v oblasti INT 4
+4. Kvantizací CPU INT4 modelu jej můžeme nasadit na Edge zařízení, což nabízí lepší aplikační scénáře, proto jsme dokončili Phi-3.5-Instruct kolem INT4
 
 ## **Zdroje**
 
@@ -90,4 +90,4 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 2. GitHub repozitář Generative AI extensions for onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

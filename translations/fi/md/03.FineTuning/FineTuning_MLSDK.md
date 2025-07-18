@@ -2,30 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:19:15+00:00",
+  "translation_date": "2025-07-17T07:31:05+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "fi"
 }
 -->
 ## Kuinka käyttää chat-completion-komponentteja Azure ML -järjestelmärekisteristä mallin hienosäätöön
 
-Tässä esimerkissä teemme Phi-3-mini-4k-instruct -mallin hienosäädön, jotta se voi täydentää keskustelua kahden henkilön välillä käyttäen ultrachat_200k-datasarjaa.
+Tässä esimerkissä teemme hienosäädön Phi-3-mini-4k-instruct-mallille, jotta se osaa täydentää keskustelun kahden henkilön välillä käyttäen ultrachat_200k-datasarjaa.
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.fi.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.fi.png)
 
-Esimerkki näyttää, kuinka hienosäätö tehdään Azure ML SDK:lla ja Pythonilla, ja miten hienosäädetty malli otetaan käyttöön online-päätepisteessä reaaliaikaista päättelyä varten.
+Esimerkki näyttää, miten hienosäätö tehdään Azure ML SDK:lla ja Pythonilla, ja miten hienosäädetty malli otetaan käyttöön online-päätepisteessä reaaliaikaista päättelyä varten.
 
 ### Koulutusdata
 
-Käytämme ultrachat_200k-datasarjaa. Tämä on voimakkaasti suodatettu versio UltraChat-datasarjasta, jota käytettiin Zephyr-7B-β-mallin kouluttamiseen, joka on huippuluokan 7 miljardin parametrin chat-malli.
+Käytämme ultrachat_200k-datasarjaa. Tämä on voimakkaasti suodatettu versio UltraChat-datasarjasta, jota käytettiin Zephyr-7B-β:n kouluttamiseen, joka on huippuluokan 7 miljardin parametrin chat-malli.
 
 ### Malli
 
-Käytämme Phi-3-mini-4k-instruct-mallia näyttämään, miten käyttäjä voi hienosäätää mallia chat-completion-tehtävään. Jos avasit tämän muistikirjan tietystä mallikortista, muista vaihtaa mallin nimi vastaavasti.
+Käytämme Phi-3-mini-4k-instruct-mallia näyttämään, miten käyttäjä voi hienosäätää mallin chat-completion-tehtävään. Jos avasit tämän muistikirjan tietystä mallikortista, muista korvata mallin nimi vastaavasti.
 
 ### Tehtävät
 
-- Valitse malli hienosäätöä varten.
+- Valitse hienosäädettävä malli.
 - Valitse ja tutki koulutusdata.
 - Määritä hienosäätötyö.
 - Suorita hienosäätötyö.
@@ -34,16 +34,16 @@ Käytämme Phi-3-mini-4k-instruct-mallia näyttämään, miten käyttäjä voi h
 - Ota hienosäädetty malli käyttöön reaaliaikaista päättelyä varten.
 - Siivoa resurssit.
 
-## 1. Valmistele edellytykset
+## 1. Valmistele esivaatimukset
 
 - Asenna riippuvuudet
-- Yhdistä AzureML-työtilaan. Lisätietoja kohdassa SDK:n todennuksen asetukset. Vaihda alla <WORKSPACE_NAME>, <RESOURCE_GROUP> ja <SUBSCRIPTION_ID>.
+- Yhdistä AzureML-työtilaan. Lisätietoja löytyy kohdasta SDK-todennuksen asetukset. Korvaa alla <WORKSPACE_NAME>, <RESOURCE_GROUP> ja <SUBSCRIPTION_ID>.
 - Yhdistä azureml-järjestelmärekisteriin
-- Aseta valinnainen kokeilun nimi
+- Aseta valinnainen kokeen nimi
 - Tarkista tai luo laskentaresurssi.
 
 > [!NOTE]
-> Vaatimuksena on yksittäinen GPU-solmu, joka voi sisältää useita GPU-kortteja. Esimerkiksi Standard_NC24rs_v3-solmussa on 4 NVIDIA V100 GPU:ta, kun taas Standard_NC12s_v3:ssa on 2 NVIDIA V100 GPU:ta. Katso lisätietoja dokumentaatiosta. GPU-korttien määrä per solmu asetetaan alla parametrissa gpus_per_node. Oikein asetettu arvo varmistaa kaikkien GPU:iden käytön solmussa. Suositellut GPU-laskenta-SKU:t löytyvät täältä ja täältä.
+> Vaatimuksena on yksittäinen GPU-solmu, jossa voi olla useita GPU-kortteja. Esimerkiksi Standard_NC24rs_v3-solmussa on 4 NVIDIA V100 GPU:ta, kun taas Standard_NC12s_v3-solmussa on 2 NVIDIA V100 GPU:ta. Katso lisätietoja dokumentaatiosta. GPU-korttien määrä per solmu määritetään alla parametrilla gpus_per_node. Oikea arvo varmistaa kaikkien GPU:iden käytön solmussa. Suositellut GPU-laskentatyypit löytyvät täältä ja täältä.
 
 ### Python-kirjastot
 
@@ -59,19 +59,19 @@ pip install azureml-mlflow
 
 ### Vuorovaikutus Azure ML:n kanssa
 
-1. Tämä Python-skripti on tarkoitettu Azure Machine Learning (Azure ML) -palvelun kanssa työskentelyyn. Se tekee seuraavaa:
+1. Tämä Python-skripti on tarkoitettu vuorovaikutukseen Azure Machine Learning (Azure ML) -palvelun kanssa. Tässä mitä se tekee:
 
-    - Tuo tarvittavat moduulit paketeista azure.ai.ml, azure.identity ja azure.ai.ml.entities sekä time-moduulin.
+    - Se tuo tarvittavat moduulit azure.ai.ml, azure.identity ja azure.ai.ml.entities -paketeista. Lisäksi se tuo time-moduulin.
 
-    - Yrittää todennusta DefaultAzureCredential()-luokalla, joka tarjoaa yksinkertaistetun tavan aloittaa sovellusten kehitys Azure-pilvessä. Jos tämä epäonnistuu, se käyttää InteractiveBrowserCredential()-luokkaa, joka avaa interaktiivisen kirjautumisikkunan.
+    - Se yrittää todennusta DefaultAzureCredential()-luokalla, joka tarjoaa yksinkertaistetun todennuksen Azure-pilvessä ajettaville sovelluksille. Jos tämä epäonnistuu, se käyttää InteractiveBrowserCredential()-luokkaa, joka avaa interaktiivisen kirjautumisikkunan.
 
-    - Yrittää luoda MLClient-instanssin from_config-metodilla, joka lukee asetukset oletuskonfiguraatiotiedostosta (config.json). Jos tämä epäonnistuu, MLClient luodaan manuaalisesti antamalla subscription_id, resource_group_name ja workspace_name.
+    - Se yrittää luoda MLClient-instanssin from_config-metodilla, joka lukee asetukset oletuskonfiguraatiotiedostosta (config.json). Jos tämä epäonnistuu, se luo MLClient-instanssin manuaalisesti antamalla subscription_id, resource_group_name ja workspace_name.
 
-    - Luo toisen MLClient-instanssin Azure ML -rekisterille nimeltä "azureml". Tässä rekisterissä säilytetään malleja, hienosäätöputkia ja ympäristöjä.
+    - Se luo toisen MLClient-instanssin Azure ML -rekisterille nimeltä "azureml". Tämä rekisteri sisältää mallit, hienosäätöputket ja ympäristöt.
 
-    - Asettaa kokeilun nimeksi "chat_completion_Phi-3-mini-4k-instruct".
+    - Se asettaa experiment_name-arvoksi "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Luo yksilöllisen aikaleiman muuntamalla nykyinen aika (sekunteina epookista liukulukuna) kokonaisluvuksi ja sitten merkkijonoksi. Tätä aikaleimaa voidaan käyttää uniikkien nimien ja versioiden luomiseen.
+    - Se luo uniikin aikaleiman muuntamalla nykyisen ajan (sekunteina epochista liukulukuna) kokonaisluvuksi ja sitten merkkijonoksi. Tätä aikaleimaa voi käyttää uniikkien nimien ja versioiden luomiseen.
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -112,20 +112,20 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. Valitse pohjamalli hienosäätöä varten
+## 2. Valitse perusmalli hienosäätöön
 
-1. Phi-3-mini-4k-instruct on 3,8 miljardin parametrin kevyt, huippuluokan avoin malli, joka perustuu Phi-2:n käyttämään datasarjaan. Malli kuuluu Phi-3-malliperheeseen, ja Mini-versio on saatavilla kahtena varianttina: 4K ja 128K, jotka kuvaavat tuettujen kontekstipituuksien (tokeneina) määrää. Malli täytyy hienosäätää omaan käyttötarkoitukseen sopivaksi. Voit selata näitä malleja AzureML Studion Model Catalogissa suodattamalla chat-completion-tehtävän mukaan. Tässä esimerkissä käytämme Phi-3-mini-4k-instruct-mallia. Jos avasit tämän muistikirjan eri mallia varten, vaihda mallin nimi ja versio vastaavasti.
+1. Phi-3-mini-4k-instruct on 3,8 miljardin parametrin kevyt, huippuluokan avoin malli, joka perustuu Phi-2:n käyttämään datasarjaan. Malli kuuluu Phi-3-malliperheeseen, ja Mini-versiota on kahta tyyppiä: 4K ja 128K, jotka kuvaavat kontekstin pituutta (tokeneina), jota malli tukee. Malli täytyy hienosäätää omaan käyttötarkoitukseen. Voit selata näitä malleja AzureML Studion Model Catalogissa suodattamalla chat-completion-tehtävän mukaan. Tässä esimerkissä käytämme Phi-3-mini-4k-instruct-mallia. Jos avasit tämän muistikirjan eri mallille, vaihda mallin nimi ja versio vastaavasti.
 
     > [!NOTE]
-    > Mallin id-ominaisuus. Tätä käytetään syötteenä hienosäätötyössä. Se löytyy myös Asset ID -kentästä mallin tiedoissa AzureML Studion Model Catalogissa.
+    > Mallin id-ominaisuus. Tätä käytetään syötteenä hienosäätötyöhön. Se löytyy myös Asset ID -kentästä mallin tiedoissa AzureML Studion Model Catalogissa.
 
-2. Tämä Python-skripti on vuorovaikutuksessa Azure Machine Learning -palvelun kanssa. Se tekee seuraavaa:
+2. Tämä Python-skripti on vuorovaikutuksessa Azure Machine Learning (Azure ML) -palvelun kanssa. Tässä mitä se tekee:
 
-    - Asettaa model_name-muuttujaksi "Phi-3-mini-4k-instruct".
+    - Se asettaa model_name-arvoksi "Phi-3-mini-4k-instruct".
 
-    - Käyttää registry_ml_client-objektin models-ominaisuuden get-metodia hakeakseen mallin uusimman version Azure ML -rekisteristä. get-metodi kutsutaan kahdella argumentilla: mallin nimi ja lippu, joka kertoo haettavan uusimman version.
+    - Se käyttää registry_ml_client-objektin models-ominaisuuden get-metodia hakeakseen mallin viimeisimmän version Azure ML -rekisteristä. get-metodi saa kaksi argumenttia: mallin nimen ja labelin, joka määrittää, että haetaan viimeisin versio.
 
-    - Tulostaa konsoliin viestin, jossa kerrotaan käytettävän mallin nimi, versio ja id. Viestiin lisätään nämä tiedot foundation_model-olion ominaisuuksina.
+    - Se tulostaa konsoliin viestin, jossa kerrotaan mallin nimi, versio ja id, joita käytetään hienosäätöön. Viestiin lisätään tiedot foundation_model-objektin ominaisuuksista.
 
     ```python
     # Set the model name
@@ -145,27 +145,27 @@ pip install azureml-mlflow
 
 ## 3. Luo laskentaresurssi työtä varten
 
-Hienosäätötyö toimii VAIN GPU-laskennalla. Laskentaresurssin koko riippuu mallin koosta, ja oikean laskennan valinta voi olla haastavaa. Tässä solussa ohjataan käyttäjää valitsemaan sopiva laskentaresurssi työtä varten.
+Hienosäätötyö toimii VAIN GPU-laskennalla. Laskennan koko riippuu mallin koosta, ja oikean laskennan valinta voi olla haastavaa. Tässä solussa ohjataan käyttäjää valitsemaan sopiva laskentaresurssi.
 
 > [!NOTE]
-> Alla listatut laskentaresurssit toimivat optimoidulla kokoonpanolla. Muutokset kokoonpanoon voivat johtaa Cuda Out Of Memory -virheeseen. Tällaisissa tapauksissa kokeile päivittää laskentaresurssi suurempaan kokoon.
+> Alla listatut laskennat toimivat optimaalisella kokoonpanolla. Muutokset voivat aiheuttaa Cuda Out Of Memory -virheen. Tällöin kokeile päivittää laskenta suurempaan kokoon.
 
 > [!NOTE]
-> Valitessasi compute_cluster_size -arvoa, varmista että laskenta on saatavilla resurssiryhmässäsi. Jos tietty laskenta ei ole käytettävissä, voit pyytää pääsyä laskentaresursseihin.
+> Valitessasi compute_cluster_size varmista, että laskenta on saatavilla resurssiryhmässäsi. Jos tietty laskenta ei ole saatavilla, voit pyytää pääsyä laskentaresursseihin.
 
 ### Mallin hienosäätötuen tarkistus
 
-1. Tämä Python-skripti tarkistaa Azure Machine Learning -mallin. Se tekee seuraavaa:
+1. Tämä Python-skripti on vuorovaikutuksessa Azure Machine Learning (Azure ML) -mallin kanssa. Tässä mitä se tekee:
 
-    - Tuo ast-moduulin, joka tarjoaa toimintoja Pythonin abstraktin syntaksipuun käsittelyyn.
+    - Se tuo ast-moduulin, joka tarjoaa funktioita Pythonin abstraktin syntaksipuun käsittelyyn.
 
-    - Tarkistaa, onko foundation_model-oliolla tagi nimeltä finetune_compute_allow_list. Tagit Azure ML:ssä ovat avain-arvopareja, joita voi käyttää mallien suodattamiseen ja lajitteluun.
+    - Se tarkistaa, onko foundation_model-objektilla tagi nimeltä finetune_compute_allow_list. Tagit Azure ML:ssä ovat avain-arvo-pareja, joita voi käyttää mallien suodattamiseen ja lajitteluun.
 
-    - Jos finetune_compute_allow_list -tagi löytyy, sen arvo (merkkijono) parsitaan turvallisesti Python-listaksi ast.literal_eval-funktiolla. Lista tallennetaan computes_allow_list-muuttujaan. Tulostetaan viesti, että laskentaresurssi tulisi valita tältä listalta.
+    - Jos finetune_compute_allow_list-tagi löytyy, se käyttää ast.literal_eval-funktiota turvallisesti muuntaakseen tagin arvon (merkkijonon) Python-listaksi. Tämä lista tallennetaan computes_allow_list-muuttujaan. Se tulostaa viestin, että laskenta tulisi luoda listan perusteella.
 
-    - Jos tagia ei löydy, asetetaan computes_allow_list arvoksi None ja tulostetaan viesti, että tagi ei kuulu mallin tageihin.
+    - Jos tagia ei löydy, computes_allow_list asetetaan None-arvoksi ja tulostetaan viesti, että tagi ei kuulu mallin tageihin.
 
-    - Yhteenvetona skripti tarkistaa tietyn tagin mallin metatiedoista, muuntaa sen arvon listaksi jos se löytyy, ja antaa käyttäjälle palautetta.
+    - Yhteenvetona skripti tarkistaa mallin metatiedoista tietyn tagin, muuntaa sen arvon listaksi jos se on olemassa, ja antaa käyttäjälle palautetta.
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -188,19 +188,19 @@ Hienosäätötyö toimii VAIN GPU-laskennalla. Laskentaresurssin koko riippuu ma
 
 ### Laskenta-instanssin tarkistus
 
-1. Tämä Python-skripti tarkistaa Azure Machine Learning -palvelussa laskenta-instanssin tilan ja konfiguraation. Se tekee seuraavaa:
+1. Tämä Python-skripti on vuorovaikutuksessa Azure Machine Learning (Azure ML) -palvelun kanssa ja suorittaa useita tarkistuksia laskenta-instanssille. Tässä mitä se tekee:
 
-    - Yrittää hakea compute_cluster-nimisen laskenta-instanssin Azure ML -työtilasta. Jos instanssin provisionointitila on "failed", nostaa ValueErrorin.
+    - Se yrittää hakea compute_cluster-nimisen laskenta-instanssin Azure ML -työtilasta. Jos instanssin provisioning-tila on "failed", se nostaa ValueErrorin.
 
-    - Tarkistaa, onko computes_allow_list ei-None. Jos on, muuntaa listan kaikki laskentakoot pieniksi kirjaimiksi ja tarkistaa, onko nykyisen instanssin koko tässä listassa. Jos ei ole, nostaa ValueErrorin.
+    - Se tarkistaa, onko computes_allow_list ei-None. Jos on, se muuttaa kaikki listan laskentakoot pieniksi kirjaimiksi ja tarkistaa, onko nykyisen instanssin koko listassa. Jos ei ole, se nostaa ValueErrorin.
 
-    - Jos computes_allow_list on None, tarkistaa onko instanssin koko tuettujen GPU VM -kokojen mustalla listalla. Jos on, nostaa ValueErrorin.
+    - Jos computes_allow_list on None, se tarkistaa, onko instanssin koko kiellettyjen GPU-VM-kokojen listalla. Jos on, se nostaa ValueErrorin.
 
-    - Hakee kaikki käytettävissä olevat laskentakoot työtilasta. Käy ne läpi ja jos jokin vastaa nykyisen instanssin kokoa, hakee GPU-korttien määrän ja asettaa gpu_count_found-arvoksi True.
+    - Se hakee kaikki työtilan saatavilla olevat laskentakoot. Käy ne läpi ja jos jokin vastaa instanssin kokoa, se hakee kyseisen laskentakoon GPU-määrän ja asettaa gpu_count_found-arvoksi True.
 
-    - Jos gpu_count_found on True, tulostaa GPU-korttien määrän. Muussa tapauksessa nostaa ValueErrorin.
+    - Jos gpu_count_found on True, se tulostaa GPU-määrän instanssissa. Muuten se nostaa ValueErrorin.
 
-    - Yhteenvetona skripti tarkistaa laskenta-instanssin provisionointitilan, koon sallitun listan tai mustan listan mukaan sekä GPU-määrän.
+    - Yhteenvetona skripti tarkistaa laskenta-instanssin provisioning-tilan, koon sallitun listan tai kielletyn listan mukaan, ja GPU-määrän.
 
     ```python
     # Print the exception message
@@ -271,40 +271,39 @@ Hienosäätötyö toimii VAIN GPU-laskennalla. Laskentaresurssin koko riippuu ma
 
 ## 4. Valitse datasarja mallin hienosäätöön
 
-1. Käytämme ultrachat_200k-datasarjaa. Datasarjassa on neljä osaa, jotka sopivat ohjattuun hienosäätöön (Supervised fine-tuning, sft).
-Generointijärjestys (gen). Esimerkkien määrä kussakin osassa on seuraava:
+1. Käytämme ultrachat_200k-datasarjaa. Datasarjassa on neljä osaa, jotka sopivat valvottuun hienosäätöön (sft). Generointijärjestys (gen). Esimerkkien määrä per osa on seuraava:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. Seuraavissa soluissa tehdään perusdatan valmistelu hienosäätöä varten:
+1. Seuraavat solut näyttävät perusdatan valmistelun hienosäätöä varten:
 
 ### Visualisoi muutama datarivi
 
-Haluamme, että tämä esimerkki suoritetaan nopeasti, joten tallennamme train_sft- ja test_sft-tiedostot, jotka sisältävät 5 % jo rajatuista riveistä. Tämä tarkoittaa, että hienosäädetty malli on vähemmän tarkka, joten sitä ei tulisi käyttää tuotantokäytössä.
-download-dataset.py-skriptiä käytetään ultrachat_200k-datasarjan lataamiseen ja muuntamiseen hienosäätöputken kulutettavaksi muodoksi. Koska datasarja on suuri, meillä on tässä vain osa siitä.
+Haluamme, että tämä esimerkki suoritetaan nopeasti, joten tallennamme train_sft ja test_sft -tiedostot, jotka sisältävät 5 % jo rajatuista riveistä. Tämä tarkoittaa, että hienosäädetyn mallin tarkkuus on alhaisempi, joten sitä ei tulisi käyttää tuotantokäytössä.
+download-dataset.py -skripti lataa ultrachat_200k-datasarjan ja muuntaa sen hienosäätöputken komponenttien käyttämään muotoon. Koska datasarja on suuri, meillä on tässä vain osa siitä.
 
-1. Alla oleva skripti lataa vain 5 % datasta. Tätä osuutta voi kasvattaa muuttamalla dataset_split_pc-parametria haluttuun prosenttiosuuteen.
+1. Alla oleva skripti lataa vain 5 % datasta. Tätä voi kasvattaa muuttamalla dataset_split_pc-parametria haluttuun prosenttiosuuteen.
 
     > [!NOTE]
     > Joillakin kielimalleilla on eri kielikoodit, joten datasarjan sarakenimien tulisi vastata tätä.
 
 1. Tässä esimerkki siitä, miltä data näyttää
-chat-completion-datasarja on tallennettu parquet-muodossa, ja jokainen merkintä noudattaa seuraavaa rakennetta:
+Chat-completion-datasarja on tallennettu parquet-muodossa, ja jokainen merkintä noudattaa seuraavaa rakennetta:
 
-    - Tämä on JSON (JavaScript Object Notation) -dokumentti, suosittu tiedonvaihtoformaatti. Se ei ole suoritettavaa koodia, vaan tapa tallentaa ja siirtää tietoa. Rakenne on seuraava:
+    - Tämä on JSON (JavaScript Object Notation) -dokumentti, joka on suosittu tiedonvaihtoformaatti. Se ei ole suoritettavaa koodia, vaan tapa tallentaa ja siirtää tietoa. Tässä rakenne:
 
-    - "prompt": sisältää merkkijonon, joka kuvaa tehtävää tai kysymystä tekoälyavustajalle.
+    - "prompt": Avain, jonka arvo on merkkijono, joka kuvaa tehtävää tai kysymystä AI-avustajalle.
 
-    - "messages": sisältää taulukon objekteja. Kukin objekti edustaa viestiä käyttäjän ja tekoälyavustajan välillä. Jokaisella viestillä on kaksi avainta:
+    - "messages": Avain, jonka arvo on taulukko objekteja. Jokainen objekti edustaa viestiä käyttäjän ja AI-avustajan välisessä keskustelussa. Jokaisella viestiobjektilla on kaksi avainta:
 
-    - "content": viestin sisältö merkkijonona.
-    - "role": viestin lähettäjän rooli, joko "user" tai "assistant".
-    - "prompt_id": merkkijono, joka toimii ainutkertaisena tunnisteena kehotteelle.
+    - "content": Merkkijono, joka sisältää viestin sisällön.
+    - "role": Merkkijono, joka kertoo viestin lähettäjän roolin. Se voi olla "user" tai "assistant".
+    - "prompt_id": Merkkijono, joka on yksilöllinen tunniste promptille.
 
-1. Tässä JSON-dokumentissa käydään keskustelua, jossa käyttäjä pyytää tekoälyavustajaa luomaan päähenkilön dystooppiseen tarinaan. Avustaja vastaa, ja käyttäjä pyytää lisätietoja. Avustaja lupaa antaa lisätietoja. Koko keskustelu liittyy tiettyyn prompt_id:hen.
+1. Tässä JSON-dokumentissa käydään keskustelu, jossa käyttäjä pyytää AI-avustajaa luomaan päähenkilön dystooppiseen tarinaan. Avustaja vastaa, ja käyttäjä pyytää lisätietoja. Avustaja suostuu antamaan lisätietoja. Koko keskustelu liittyy tiettyyn prompt_id:hen.
 
     ```python
     {
@@ -346,15 +345,15 @@ chat-completion-datasarja on tallennettu parquet-muodossa, ja jokainen merkintä
 
 ### Lataa data
 
-1. Tämä Python-skripti lataa datasarjan apuskriptin download-dataset.py avulla. Se tekee seuraavaa:
+1. Tämä Python-skripti lataa datasarjan apuskriptillä download-dataset.py. Tässä mitä se tekee:
 
-    - Tuo os-moduulin, joka tarjoaa käyttöjärjestelmäriippuvaisia toimintoja.
+    - Se tuo os-moduulin, joka tarjoaa käyttöjärjestelmäriippuvaisia toimintoja.
 
-    - Suorittaa os.system-funktiolla download-dataset.py-skriptin komentoriviltä argumentteineen: ladattava datasarja (HuggingFaceH4/ultrachat_200k), latauskansio (ultrachat_200k_dataset) ja datan osuus (5 %). Paluuarvo tallennetaan exit_status-muuttujaan.
+    - Se käyttää os.system-funktiota ajaakseen download-dataset.py-skriptin komentoriviparametreilla. Parametrit määrittävät ladattavan datasarjan (HuggingFaceH4/ultrachat_200k), hakemiston (ultrachat_200k_dataset) ja datan osan prosentteina (5). os.system palauttaa komennon poistumistilan, joka tallennetaan exit_status-muuttujaan.
 
-    - Tarkistaa, onko exit_status eri kuin 0. Unix-tyyppisissä käyttöjärjestelmissä 0 tarkoittaa onnistumista, muut arvot virhettä. Jos virhe, nostaa Exceptionin, jossa kerrotaan latausvirheestä.
+    - Se tarkistaa, onko exit_status eri kuin 0. Unix-tyyppisissä järjestelmissä 0 tarkoittaa onnistumista, muut arvot virhettä. Jos exit_status ei ole 0, se nostaa poikkeuksen, jossa kerrotaan virhe latauksessa.
 
-    - Yhteenvetona skripti suorittaa komennon datasarjan lataamiseksi apuskriptillä ja nostaa virheen, jos lataus epäonnistuu.
+    - Yhteenvetona skripti ajaa komennon datasarjan lataamiseksi apuskriptillä ja nostaa virheen, jos lataus epäonnistuu.
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -376,19 +375,18 @@ chat-completion-datasarja on tallennettu parquet-muodossa, ja jokainen merkintä
 
 ### Lataa data DataFrameen
 
-1. Tämä Python-skripti lataa JSON Lines -tiedoston pandas DataFrameen ja näyttää ensimmäiset 5 riviä. Se tekee seuraavaa:
+1. Tämä Python-skripti lataa JSON Lines -tiedoston pandas DataFrameen ja näyttää ensimmäiset 5 riviä. Tässä mitä se tekee:
 
-    - Tuo pandas-kirjaston, joka on tehokas tietojen käsittely- ja analysointityökalu.
+    - Se tuo pandas-kirjaston, joka on tehokas tietojen käsittely- ja analysointikirjasto.
 
-    - Asettaa pandas:n näyttöasetuksiin sarakkeen maksimileveydeksi 0, mikä tarkoittaa, että sarakkeiden koko sisältö näytetään ilman katkaisua.
+    - Se asettaa pandas:n näyttöasetuksissa sarakkeiden maksimileveydeksi 0, mikä tarkoittaa, että sarakkeiden koko sisältö näytetään ilman katkaisua.
 
-    - Käyttää pd.read_json-funktiota ladatakseen train_sft.jsonl-tiedoston ultrachat_200k_dataset-kansiosta DataFrameen. lines=True kertoo, että tiedosto on JSON Lines -muodossa, jossa jokainen rivi on oma JSON-objekti.
+    - Se käyttää pd.read_json-funktiota ladatakseen train_sft.jsonl-tiedoston ultrachat_200k_dataset-hakemistosta DataFrameen. lines=True tarkoittaa, että tiedosto on JSON Lines -muodossa, jossa jokainen rivi on oma JSON-objekti.
+- Se käyttää head-metodia näyttääkseen DataFramen ensimmäiset 5 riviä. Jos DataFramessa on alle 5 riviä, se näyttää kaikki rivit.
 
-    - Käyttää head-metodia näyttääksesi ensimmäiset 5 riviä. Jos rivejä on vähemmän kuin 5, näytetään kaikki.
+- Yhteenvetona tämä skripti lataa JSON Lines -tiedoston DataFrameen ja näyttää ensimmäiset 5 riviä täydellisine saraketeksteineen.
 
-    - Yhteenvetona skripti lataa JSON Lines -tiedoston DataFrameen ja näyttää ensimmäiset 5 riviä täydellä tekstillä.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -407,43 +405,44 @@ chat-completion-datasarja on tallennettu parquet-muodossa, ja jokainen merkintä
 
 ## 5. Lähetä hienosäätötyö käyttäen mallia ja dataa syötteinä
 
-Luo työ, joka käyttää chat-completion-putkikomponenttia. Lue lisää hienosäädön tuetuista parametreista.
+Luo työ, joka käyttää chat-completion pipeline -komponenttia. Lue lisää kaikista hienosäätöä tukevista parametreista.
 
 ### Määritä hienosäätöparametrit
 
-1. Hienosäätöparametrit voidaan jakaa kahteen ryhmään – koulutusparametrit ja optimointiparametrit.
+1. Hienosäätöparametrit voidaan jakaa kahteen ryhmään – koulutusparametrit ja optimointiparametrit
 
 1. Koulutusparametrit määrittelevät koulutuksen osa-alueet, kuten -
 
-    - Käytettävä optimointimenetelmä ja aikataulu
-    - Hienosäädön optimoitava mittari
-    - Koulutusvaiheiden määrä, eräkoko ja niin edelleen
-    - Optimointiparametrit auttavat GPU-muistin hallinnassa ja laskentaresurssien tehokkaassa hyödyntämisessä.
+    - Käytettävän optimointimenetelmän ja ajastimen
+    - Mittarin, jota hienosäädössä optimoidaan
+    - Koulutusaskelten määrän, eräkoot ja niin edelleen
+    - Optimointiparametrit auttavat optimoimaan GPU-muistia ja käyttämään laskentaresursseja tehokkaasti.
 
-1. Alla on muutama optimointiparametri. Nämä vaihtelevat mallikohtaisesti ja ovat mukana mallin mukana käsittelemään näitä eroja.
+1. Alla on muutamia tähän kategoriaan kuuluvia parametreja. Optimointiparametrit vaihtelevat mallikohtaisesti ja ne sisältyvät mallipakettiin näiden erojen hallitsemiseksi.
 
     - Ota käyttöön deepspeed ja LoRA
     - Ota käyttöön mixed precision -koulutus
-    - Ota käyttöön monisolmukoulutus
+    - Ota käyttöön monisolmuinen koulutus
+
 
 > [!NOTE]
-> Ohjattu hienosäätö saattaa johtaa kohdistuksen menetykseen tai katastrofaaliseen unohtamiseen. Suosittelemme tarkistamaan tämän ongelman ja suorittamaan kohdistusvaiheen hienosäädön jälkeen.
+> Ohjattu hienosäätö voi johtaa kohdistuksen menetykseen tai katastrofaaliseen unohtamiseen. Suosittelemme tarkistamaan tämän ongelman ja suorittamaan kohdistusvaiheen hienosäädön jälkeen.
 
 ### Hienosäätöparametrit
 
-1. Tämä Python-skripti asettaa parametrit koneoppimismallin hienosäätöön. Se tekee seuraavaa:
+1. Tämä Python-skripti määrittää parametrit koneoppimismallin hienosäätöä varten. Tässä yhteenveto siitä, mitä se tekee:
 
-    - Määrittää oletuskoulutusparametrit, kuten koulutusepochien määrän, koulutus- ja arviointieräkoot, oppimisnopeuden ja oppimisnopeuden aikataulun tyypin.
+    - Se asettaa oletuskoulutusparametrit, kuten koulutusepokien määrän, eräkoot koulutukselle ja arvioinnille, oppimisnopeuden ja oppimisnopeuden ajastimen tyypin.
 
-    - Määrittää oletusoptimointiparametrit, kuten Layer-wise Relevance Propagationin (LoRa) ja DeepSpeedin käytön sekä DeepSpeed-vaiheen.
+    - Se asettaa oletusoptimointiparametrit, kuten Layer-wise Relevance Propagationin (LoRa) ja DeepSpeedin käytön sekä DeepSpeed-vaiheen.
 
-    - Yhdistää koulutus- ja optimointiparametrit finetune_parameters-sanakirjaksi.
+    - Se yhdistää koulutus- ja optimointiparametrit yhdeksi sanakirjaksi nimeltä finetune_parameters.
 
-    - Tarkistaa, onko foundation_modelilla mallikohtaisia oletusparametreja. Jos on, tulostaa varoituksen ja päivittää finetune_parametersin näillä arvoilla. ast.literal_eval-funktiota käytetään merkkijonon muuntamiseen Python-sanakirjaksi.
+    - Se tarkistaa, onko foundation_modelilla mallikohtaisia oletusparametreja. Jos on, se tulostaa varoituksen ja päivittää finetune_parameters-sanakirjan näillä mallikohtaisilla oletuksilla. ast.literal_eval -funktiota käytetään muuntamaan mallikohtaiset oletukset merkkijonosta Python-sanakirjaksi.
 
-    - Tulostaa lopulliset hienosäätöparametrit, joita käytetään ajossa.
+    - Se tulostaa lopullisen hienosäätöparametrien joukon, jota käytetään suorituksessa.
 
-    - Yhteenvetona skripti määrittää ja näyttää hienosäätöparametrit, joihin voi vaikuttaa mallikohtaisilla oletuksilla.
+    - Yhteenvetona tämä skripti määrittää ja näyttää koneoppimismallin hienosäätöparametrit, mahdollistaen oletusparametrien korvaamisen mallikohtaisilla arvoilla.
 
     ```python
     # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
@@ -484,8 +483,23 @@ Luo työ, joka käyttää chat-completion-putkikomponenttia. Lue lisää hienos�
 
 ### Koulutusputki
 
-1. Tämä Python-skripti
-koulutusputki perustuu erilaisiin parametreihin, ja sitten tulostaa tämän näyttönimen. ```python
+1. Tämä Python-skripti määrittelee funktion, joka luo näyttönimen koneoppimisen koulutusputkelle, ja kutsuu tätä funktiota näyttönimen luomiseksi ja tulostamiseksi. Tässä yhteenveto siitä, mitä se tekee:
+
+1. Määritellään get_pipeline_display_name-funktio, joka luo näyttönimen koulutusputken eri parametreihin perustuen.
+
+1. Funktion sisällä lasketaan kokonaiseräkoko kertomalla laitekohtainen eräkoko, gradienttien kertymisaskelten määrä, solmukohtainen GPU-määrä ja hienosäätöön käytettyjen solmujen määrä.
+
+1. Haetaan muita parametreja, kuten oppimisnopeuden ajastimen tyyppi, onko DeepSpeed käytössä, DeepSpeed-vaihe, onko Layer-wise Relevance Propagation (LoRa) käytössä, säilytettävien mallitarkistuspisteiden enimmäismäärä ja maksimisekvenssin pituus.
+
+1. Rakennetaan merkkijono, joka sisältää kaikki nämä parametrit yhdistettynä väliviivoin. Jos DeepSpeed tai LoRa on käytössä, merkkijono sisältää "ds" ja DeepSpeed-vaiheen tai "lora". Muussa tapauksessa se sisältää "nods" tai "nolora".
+
+1. Funktio palauttaa tämän merkkijonon, joka toimii koulutusputken näyttönimenä.
+
+1. Funktion määrittelyn jälkeen sitä kutsutaan näyttönimen luomiseksi, joka tulostetaan.
+
+1. Yhteenvetona tämä skripti luo koneoppimisen koulutusputken näyttönimen eri parametrien perusteella ja tulostaa sen.
+
+    ```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -542,24 +556,27 @@ koulutusputki perustuu erilaisiin parametreihin, ja sitten tulostaa tämän näy
 
 ### Putken konfigurointi
 
-Tämä Python-skripti määrittelee ja konfiguroi koneoppimisen putken käyttäen Azure Machine Learning SDK:ta. Tässä yhteenveto siitä, mitä se tekee:
+Tämä Python-skripti määrittelee ja konfiguroi koneoppimisen putken Azure Machine Learning SDK:lla. Tässä yhteenveto siitä, mitä se tekee:
 
 1. Se tuo tarvittavat moduulit Azure AI ML SDK:sta.
-1. Se hakee rekisteristä putkikomponentin nimeltä "chat_completion_pipeline".
-1. Se määrittelee putkityön käyttäen `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+1. Se hakee rekisteristä pipeline-komponentin nimeltä "chat_completion_pipeline".
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+1. Se määrittelee pipeline-työn käyttäen `@pipeline`-koristetta ja funktiota `create_pipeline`. Putken nimeksi asetetaan `pipeline_display_name`.
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. `create_pipeline`-funktion sisällä alustetaan haettu pipeline-komponentti eri parametreilla, mukaan lukien mallin polku, laskentaklustereita eri vaiheisiin, datasetin jaot koulutukseen ja testaukseen, hienosäätöön käytettävien GPU:iden määrä ja muut hienosäätöparametrit.
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. Se yhdistää hienosäätötyön tulosteen pipeline-työn tulosteeksi, jotta hienosäädetty malli voidaan helposti rekisteröidä, mikä on tarpeen mallin käyttöönotossa online- tai batch-päätepisteeseen.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False`, mikä tarkoittaa, että putki keskeytyy, jos jokin vaihe epäonnistuu.
-1. Yhteenvetona tämä skripti määrittelee ja konfiguroi koneoppimisen putken chat completion -tehtävää varten käyttäen Azure Machine Learning SDK:ta.
+1. Se luo pipeline-instanssin kutsumalla `create_pipeline`-funktiota.
 
-```python
+1. Se asettaa pipeline:n `force_rerun`-asetuksen arvoksi `True`, mikä tarkoittaa, että aiempien töiden välimuistissa olevia tuloksia ei käytetä.
+
+1. Se asettaa pipeline:n `continue_on_step_failure`-asetuksen arvoksi `False`, eli pipeline pysähtyy, jos jokin vaihe epäonnistuu.
+
+1. Yhteenvetona tämä skripti määrittelee ja konfiguroi koneoppimisen putken chat completion -tehtävään Azure Machine Learning SDK:lla.
+
+    ```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
@@ -612,13 +629,15 @@ Tämä Python-skripti määrittelee ja konfiguroi koneoppimisen putken käyttäe
 
 ### Lähetä työ
 
-1. Tämä Python-skripti lähettää koneoppimisen putkityön Azure Machine Learning -työtilaan ja odottaa työn valmistumista. Tässä yhteenveto siitä, mitä se tekee:
+1. Tämä Python-skripti lähettää koneoppimisen pipeline-työn Azure Machine Learning -työtilaan ja odottaa työn valmistumista. Tässä yhteenveto siitä, mitä se tekee:
 
-- Se kutsuu workspace_ml_clientin jobs-olion create_or_update-metodia lähettääkseen putkityön. Suoritettava putki määritellään pipeline_object-muuttujalla, ja kokeilu, jonka alla työ suoritetaan, määritellään experiment_name-muuttujalla.
-- Se kutsuu workspace_ml_clientin jobs-olion stream-metodia odottaakseen putkityön valmistumista. Odotettava työ määritellään pipeline_job-olion name-ominaisuudella.
-- Yhteenvetona tämä skripti lähettää koneoppimisen putkityön Azure Machine Learning -työtilaan ja odottaa työn valmistumista.
+    - Se kutsuu workspace_ml_clientin jobs-olion create_or_update-metodia pipeline-työn lähettämiseksi. Suoritettava pipeline määritellään pipeline_objectilla ja kokeilu, jonka alla työ suoritetaan, määritellään experiment_name-arvolla.
 
-```python
+    - Sen jälkeen se kutsuu workspace_ml_clientin jobs-olion stream-metodia odottaakseen pipeline-työn valmistumista. Odotettava työ määritellään pipeline_job-olion name-attribuutilla.
+
+    - Yhteenvetona tämä skripti lähettää koneoppimisen pipeline-työn Azure Machine Learning -työtilaan ja odottaa työn valmistumista.
+
+    ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
     # The pipeline to be run is specified by pipeline_object
     # The experiment under which the job is run is specified by experiment_name
@@ -633,23 +652,29 @@ Tämä Python-skripti määrittelee ja konfiguroi koneoppimisen putken käyttäe
 
 ## 6. Rekisteröi hienosäädetty malli työtilaan
 
-Rekisteröimme mallin hienosäädön työn tuloksena. Tämä seuraa perimää hienosäädetyn mallin ja hienosäätötyön välillä. Hienosäätötyö puolestaan seuraa perimää pohjamalliin, dataan ja koulutuskoodiin.
+Rekisteröimme mallin hienosäätötyön tuloksena. Tämä seuraa jäljitettävyyttä hienosäädetyn mallin ja hienosäätötyön välillä. Hienosäätötyö puolestaan seuraa jäljitettävyyttä perustamalliin, dataan ja koulutuskoodiin.
 
 ### ML-mallin rekisteröinti
 
 1. Tämä Python-skripti rekisteröi koneoppimismallin, joka on koulutettu Azure Machine Learning -putkessa. Tässä yhteenveto siitä, mitä se tekee:
 
-- Se tuo tarvittavat moduulit Azure AI ML SDK:sta.
-- Se tarkistaa, onko pipeline-työn trained_model-tulos saatavilla kutsumalla workspace_ml_clientin jobs-olion get-metodia ja pääsemällä sen outputs-ominaisuuteen.
-- Se muodostaa polun koulutettuun malliin muotoilemalla merkkijonon pipeline-työn nimen ja outputin ("trained_model") nimen avulla.
-- Se määrittelee hienosäädetylle mallille nimen lisäämällä alkuperäisen mallin nimeen "-ultrachat-200k" ja korvaamalla mahdolliset kauttaviivat viivoilla.
-- Se valmistautuu mallin rekisteröintiin luomalla Model-olion, johon sisältyy mallin polku, mallin tyyppi (MLflow-malli), mallin nimi ja versio sekä mallin kuvaus.
-- Se rekisteröi mallin kutsumalla workspace_ml_clientin models-olion create_or_update-metodia Model-oliolla argumenttina.
-- Se tulostaa rekisteröidyn mallin.
+    - Se tuo tarvittavat moduulit Azure AI ML SDK:sta.
+
+    - Se tarkistaa, onko pipeline-työn trained_model-tulos saatavilla kutsumalla workspace_ml_clientin jobs-olion get-metodia ja pääsemällä sen outputs-attribuuttiin.
+
+    - Se rakentaa polun koulutettuun malliin muotoilemalla merkkijonon pipeline-työn nimen ja tuloksen ("trained_model") nimen avulla.
+
+    - Se määrittelee hienosäädetylle mallille nimen lisäämällä alkuperäisen mallin nimeen "-ultrachat-200k" ja korvaamalla mahdolliset kauttaviivat väliviivoilla.
+
+    - Se valmistautuu rekisteröimään mallin luomalla Model-olion, johon sisältyy mallin polku, mallin tyyppi (MLflow-malli), mallin nimi ja versio sekä mallin kuvaus.
+
+    - Se rekisteröi mallin kutsumalla workspace_ml_clientin models-olion create_or_update-metodia Model-oliolla argumenttina.
+
+    - Se tulostaa rekisteröidyn mallin.
 
 1. Yhteenvetona tämä skripti rekisteröi koneoppimismallin, joka on koulutettu Azure Machine Learning -putkessa.
 
-```python
+    ```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
@@ -689,22 +714,25 @@ Rekisteröimme mallin hienosäädön työn tuloksena. Tämä seuraa perimää hi
     print("registered model: \n", registered_model)
     ```
 
-## 7. Ota hienosäädetty malli käyttöön online-päätepisteeseen
+## 7. Ota hienosäädetty malli käyttöön online-päätepisteessä
 
-Online-päätepisteet tarjoavat kestävän REST-rajapinnan, jota voidaan käyttää sovellusten integrointiin, jotka tarvitsevat mallin käyttöä.
+Online-päätepisteet tarjoavat kestävän REST-rajapinnan, jota voidaan käyttää sovelluksissa, jotka tarvitsevat mallin käyttöä.
 
 ### Päätepisteen hallinta
 
 1. Tämä Python-skripti luo hallitun online-päätepisteen Azure Machine Learningissä rekisteröidylle mallille. Tässä yhteenveto siitä, mitä se tekee:
 
-- Se tuo tarvittavat moduulit Azure AI ML SDK:sta.
-- Se määrittelee uniikin nimen online-päätepisteelle lisäämällä aikaleiman merkkijonon "ultrachat-completion-" perään.
-- Se valmistautuu online-päätepisteen luomiseen luomalla ManagedOnlineEndpoint-olion, johon sisältyvät päätepisteen nimi, kuvaus ja todennusmode ("key").
-- Se luo online-päätepisteen kutsumalla workspace_ml_clientin begin_create_or_update-metodia ManagedOnlineEndpoint-oliolla argumenttina ja odottaa luontiprosessin valmistumista wait-metodilla.
+    - Se tuo tarvittavat moduulit Azure AI ML SDK:sta.
+
+    - Se määrittelee uniikin nimen online-päätepisteelle lisäämällä aikaleiman merkkijonoon "ultrachat-completion-".
+
+    - Se valmistautuu luomaan online-päätepisteen luomalla ManagedOnlineEndpoint-olion, johon sisältyy päätepisteen nimi, kuvaus ja todennustila ("key").
+
+    - Se luo online-päätepisteen kutsumalla workspace_ml_clientin begin_create_or_update-metodia ManagedOnlineEndpoint-oliolla argumenttina ja odottaa luontiprosessin valmistumista kutsumalla wait-metodia.
 
 1. Yhteenvetona tämä skripti luo hallitun online-päätepisteen Azure Machine Learningissä rekisteröidylle mallille.
 
-```python
+    ```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
@@ -731,25 +759,32 @@ Online-päätepisteet tarjoavat kestävän REST-rajapinnan, jota voidaan käytt�
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
-> [!NOTE]  
-> Tästä löydät listan käyttöönotossa tuetuista SKU:ista - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> [!NOTE]
+> Täältä löydät listan käyttöönottoa tukevista SKU:ista - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
 ### ML-mallin käyttöönotto
 
-1. Tämä Python-skripti ottaa käyttöön rekisteröidyn koneoppimismallin hallitussa online-päätepisteessä Azure Machine Learningissä. Tässä yhteenveto siitä, mitä se tekee:
+1. Tämä Python-skripti ottaa rekisteröidyn koneoppimismallin käyttöön hallitussa online-päätepisteessä Azure Machine Learningissä. Tässä yhteenveto siitä, mitä se tekee:
 
-- Se tuo ast-moduulin, joka tarjoaa funktioita Pythonin abstraktin syntaksipuun käsittelyyn.
-- Se asettaa käyttöönoton instanssityypiksi "Standard_NC6s_v3".
-- Se tarkistaa, onko foundation modelissa tagi inference_compute_allow_list. Jos on, se muuntaa tagin arvon merkkijonosta Python-listaksi ja asettaa sen inference_computes_allow_list-muuttujaan. Jos ei ole, asettaa inference_computes_allow_list-arvoksi None.
-- Se tarkistaa, onko määritelty instanssityyppi sallittujen listalla. Jos ei ole, se tulostaa viestin, jossa pyytää käyttäjää valitsemaan instanssityypin sallituista vaihtoehdoista.
-- Se valmistautuu käyttöönottoon luomalla ManagedOnlineDeployment-olion, johon sisältyvät käyttöönoton nimi, päätepisteen nimi, mallin ID, instanssityyppi ja määrä, liveness probe -asetukset sekä pyyntöasetukset.
-- Se luo käyttöönoton kutsumalla workspace_ml_clientin begin_create_or_update-metodia ManagedOnlineDeployment-oliolla argumenttina ja odottaa luontiprosessin valmistumista wait-metodilla.
-- Se asettaa päätepisteen liikenteen ohjaamaan 100 % liikenteestä "demo"-käyttöönottoon.
-- Se päivittää päätepistettä kutsumalla workspace_ml_clientin begin_create_or_update-metodia päätepiste-oliolla argumenttina ja odottaa päivityksen valmistumista result-metodilla.
+    - Se tuo ast-moduulin, joka tarjoaa funktioita Pythonin abstraktin syntaksipuun käsittelyyn.
 
-1. Yhteenvetona tämä skripti ottaa käyttöön rekisteröidyn koneoppimismallin hallittuun online-päätepisteeseen Azure Machine Learningissä.
+    - Se asettaa käyttöönoton instanssityypiksi "Standard_NC6s_v3".
 
-```python
+    - Se tarkistaa, onko foundation_modelissa inference_compute_allow_list -tagi. Jos on, se muuntaa tagin arvon merkkijonosta Python-listaksi ja asettaa sen inference_computes_allow_list -muuttujaan. Jos ei ole, asettaa arvoksi None.
+
+    - Se tarkistaa, onko määritelty instanssityyppi sallittujen listalla. Jos ei ole, se tulostaa viestin, jossa pyytää käyttäjää valitsemaan instanssityypin sallitulta listalta.
+
+    - Se valmistautuu luomaan käyttöönoton luomalla ManagedOnlineDeployment-olion, johon sisältyy käyttöönoton nimi, päätepisteen nimi, mallin ID, instanssityyppi ja -määrä, liveness probe -asetukset ja pyyntöasetukset.
+
+    - Se luo käyttöönoton kutsumalla workspace_ml_clientin begin_create_or_update-metodia ManagedOnlineDeployment-oliolla argumenttina ja odottaa luontiprosessin valmistumista kutsumalla wait-metodia.
+
+    - Se asettaa päätepisteen liikenteen ohjaamaan 100 % liikenteestä "demo"-käyttöönotolle.
+
+    - Se päivittää päätepisteen kutsumalla workspace_ml_clientin begin_create_or_update-metodia päätepiste-oliolla argumenttina ja odottaa päivityksen valmistumista kutsumalla result-metodia.
+
+1. Yhteenvetona tämä skripti ottaa rekisteröidyn koneoppimismallin käyttöön hallitussa online-päätepisteessä Azure Machine Learningissä.
+
+    ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
     import ast
     
@@ -802,20 +837,23 @@ Online-päätepisteet tarjoavat kestävän REST-rajapinnan, jota voidaan käytt�
 
 ## 8. Testaa päätepistettä esimerkkidatalla
 
-Haemme testidatasta esimerkkidatan ja lähetämme sen online-päätepisteelle inferenssiä varten. Näytämme sitten pisteytetyt luokat rinnakkain todellisten luokkien kanssa.
+Haemme esimerkkidataa testidatasetistä ja lähetämme sen online-päätepisteeseen inferenssiä varten. Näytämme sitten arvioidut luokat rinnakkain todellisten luokkien kanssa.
 
 ### Tulosten lukeminen
 
 1. Tämä Python-skripti lukee JSON Lines -tiedoston pandas DataFrameen, ottaa satunnaisotoksen ja nollaa indeksin. Tässä yhteenveto siitä, mitä se tekee:
 
-- Se lukee tiedoston ./ultrachat_200k_dataset/test_gen.jsonl pandas DataFrameen. read_json-funktiota käytetään lines=True -argumentilla, koska tiedosto on JSON Lines -muodossa, jossa jokainen rivi on erillinen JSON-objekti.
-- Se ottaa satunnaisotoksen yhdestä rivistä DataFramesta. sample-funktiota käytetään n=1 -argumentilla määrittämään valittavien satunnaisten rivien määrä.
-- Se nollaa DataFramen indeksin. reset_index-funktiota käytetään drop=True -argumentilla, joka poistaa alkuperäisen indeksin ja korvaa sen oletusarvoisella kokonaislukujen indeksillä.
-- Se näyttää DataFramen kaksi ensimmäistä riviä head-funktiolla argumentilla 2. Koska DataFrame sisältää otoksen jälkeen vain yhden rivin, tämä näyttää vain kyseisen rivin.
+    - Se lukee tiedoston ./ultrachat_200k_dataset/test_gen.jsonl pandas DataFrameen. read_json-funktiota käytetään lines=True -parametrilla, koska tiedosto on JSON Lines -muodossa, jossa kukin rivi on erillinen JSON-objekti.
+
+    - Se ottaa satunnaisotoksen yhdestä rivistä DataFramesta. sample-funktiota käytetään n=1 -parametrilla määrittämään valittavien rivien määrä.
+
+    - Se nollaa DataFramen indeksin. reset_index-funktiota käytetään drop=True -parametrilla, jolloin alkuperäinen indeksi poistetaan ja korvataan oletuskokonaislukuarvoilla.
+
+    - Se näyttää DataFramen ensimmäiset 2 riviä head-funktiolla argumentilla 2. Koska DataFrame sisältää otoksen jälkeen vain yhden rivin, tämä näyttää vain kyseisen rivin.
 
 1. Yhteenvetona tämä skripti lukee JSON Lines -tiedoston pandas DataFrameen, ottaa satunnaisotoksen yhdestä rivistä, nollaa indeksin ja näyttää ensimmäisen rivin.
 
-```python
+    ```python
     # Import pandas library
     import pandas as pd
     
@@ -841,9 +879,11 @@ Haemme testidatasta esimerkkidatan ja lähetämme sen online-päätepisteelle in
 
 1. Tämä Python-skripti luo JSON-objektin tietyillä parametreilla ja tallentaa sen tiedostoon. Tässä yhteenveto siitä, mitä se tekee:
 
-- Se tuo json-moduulin, joka tarjoaa funktioita JSON-datan käsittelyyn.
-- Se luo sanakirjan parameters, jonka avaimet ja arvot kuvaavat koneoppimismallin parametreja. Avaimet ovat "temperature", "top_p", "do_sample" ja "max_new_tokens", ja niiden vastaavat arvot ovat 0.6, 0.9, True ja 200.
-- Se luo toisen sanakirjan test_json, jossa on kaksi avainta: "input_data" ja "params". "input_data":n arvo on toinen sanakirja, jossa on avaimet "input_string" ja "parameters". "input_string":n arvo on lista, joka sisältää ensimmäisen viestin test_df DataFramesta. "parameters":n arvo on aiemmin luotu parameters-sanakirja. "params":n arvo on tyhjä sanakirja.
+    - Se tuo json-moduulin, joka tarjoaa funktioita JSON-datan käsittelyyn.
+
+    - Se luo sanakirjan parameters, jonka avaimet ja arvot kuvaavat koneoppimismallin parametreja. Avaimet ovat "temperature", "top_p", "do_sample" ja "max_new_tokens", ja niiden arvot ovat vastaavasti 0.6, 0.9, True ja 200.
+
+    - Se luo toisen sanakirjan test_json, jossa on kaksi avainta: "input_data" ja "params". "input_data":n arvo on toinen sanakirja, jonka avaimet ovat "input_string" ja "parameters". "input_string":n arvo on lista, joka sisältää ensimmäisen viestin test_df DataFramesta. "parameters":n arvo on aiemmin luotu parameters-sanakirja. "params":n arvo on tyhjä sanakirja.
 - Se avaa tiedoston nimeltä sample_score.json
 
 ```python
@@ -880,15 +920,19 @@ Haemme testidatasta esimerkkidatan ja lähetämme sen online-päätepisteelle in
 
 ### Päätepisteen kutsuminen
 
-1. Tämä Python-skripti kutsuu online-päätepistettä Azure Machine Learningissä pisteyttääkseen JSON-tiedoston. Tässä yhteenveto siitä, mitä se tekee:
+1. Tämä Python-skripti kutsuu Azure Machine Learningin online-päätepistettä pisteyttääkseen JSON-tiedoston. Tässä on erittely siitä, mitä se tekee:
 
-- Se kutsuu workspace_ml_client-olion online_endpoints-ominaisuuden invoke-metodia. Tätä metodia käytetään lähettämään pyyntö online-päätepisteelle ja saamaan vastaus.
-- Se määrittelee päätepisteen ja käyttöönoton nimet endpoint_name- ja deployment_name-argumenteilla. Tässä tapauksessa päätepisteen nimi on online_endpoint_name-muuttujassa ja käyttöönoton nimi on "demo".
-- Se määrittelee pisteytettävän JSON-tiedoston polun request_file-argumentilla. Tässä tapauksessa tiedosto on ./ultrachat_200k_dataset/sample_score.json.
-- Se tallentaa päätepisteen vastauksen response-muuttujaan.
-- Se tulostaa raakavastauksen.
+    - Se kutsuu workspace_ml_client-olion online_endpoints-ominaisuuden invoke-metodia. Tätä metodia käytetään lähettämään pyyntö online-päätepisteelle ja saamaan vastaus.
 
-1. Yhteenvetona tämä skripti kutsuu online-päätepistettä Azure Machine Learningissä pisteyttääkseen JSON-tiedoston ja tulostaa vastauksen.
+    - Se määrittää päätepisteen ja käyttöönoton nimet endpoint_name- ja deployment_name-argumenteilla. Tässä tapauksessa päätepisteen nimi on tallennettu online_endpoint_name-muuttujaan ja käyttöönoton nimi on "demo".
+
+    - Se määrittää pisteytettävän JSON-tiedoston polun request_file-argumentilla. Tässä tapauksessa tiedosto on ./ultrachat_200k_dataset/sample_score.json.
+
+    - Se tallentaa päätepisteen vastauksen response-muuttujaan.
+
+    - Se tulostaa raakavastauksen.
+
+1. Yhteenvetona, tämä skripti kutsuu Azure Machine Learningin online-päätepistettä pisteyttääkseen JSON-tiedoston ja tulostaa vastauksen.
 
 ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
@@ -908,12 +952,15 @@ Haemme testidatasta esimerkkidatan ja lähetämme sen online-päätepisteelle in
 
 ## 9. Poista online-päätepiste
 
-1. Muista poistaa online-päätepiste, muuten laskutus jatkuu käytetyn laskennan osalta. Tämä Python-koodirivi poistaa online-päätepisteen Azure Machine Learningissä. Tässä yhteenveto siitä, mitä se tekee:
+1. Muista poistaa online-päätepiste, muuten laskutus jatkuu käytetyn laskentatehon osalta. Tämä Python-koodirivi poistaa online-päätepisteen Azure Machine Learningissä. Tässä on erittely siitä, mitä se tekee:
 
-- Se kutsuu workspace_ml_client-olion online_endpoints-ominaisuuden begin_delete-metodia. Tätä metodia käytetään aloittamaan online-päätepisteen poisto.
-- Se määrittelee poistettavan päätepisteen nimen name-argumentilla. Tässä tapauksessa päätepisteen nimi on online_endpoint_name-muuttujassa.
-- Se kutsuu wait-metodia odottaakseen poistoprosessin valmistumista. Tämä on estävä operaatio, eli se estää skriptiä jatkamasta, ennen kuin poisto on valmis.
-- Yhteenvetona tämä koodirivi aloittaa online-päätepisteen poistamisen Azure Machine Learningissä ja odottaa operaation valmistumista.
+    - Se kutsuu workspace_ml_client-olion online_endpoints-ominaisuuden begin_delete-metodia. Tätä metodia käytetään aloittamaan online-päätepisteen poisto.
+
+    - Se määrittää poistettavan päätepisteen nimen name-argumentilla. Tässä tapauksessa päätepisteen nimi on tallennettu online_endpoint_name-muuttujaan.
+
+    - Se kutsuu wait-metodia odottaakseen poisto-operaation valmistumista. Tämä on estävä operaatio, eli se estää skriptiä jatkamasta ennen kuin poisto on valmis.
+
+    - Yhteenvetona, tämä koodirivi aloittaa online-päätepisteen poiston Azure Machine Learningissä ja odottaa operaation valmistumista.
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -924,4 +971,4 @@ Haemme testidatasta esimerkkidatan ja lähetämme sen online-päätepisteelle in
     ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattilaisen tekemää ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

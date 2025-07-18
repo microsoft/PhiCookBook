@@ -2,111 +2,111 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-05-09T19:58:06+00:00",
+  "translation_date": "2025-07-17T04:58:29+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "cs"
 }
 -->
-### Example Scenario
+### Příklad scénáře
 
-Stel je voor dat je een afbeelding (`demo.png`) hebt en je wilt Python-code genereren die deze afbeelding verwerkt en een nieuwe versie ervan opslaat (`phi-3-vision.jpg`).
+Představte si, že máte obrázek (`demo.png`) a chcete vygenerovat Python kód, který tento obrázek zpracuje a uloží jeho novou verzi (`phi-3-vision.jpg`).
 
-De bovenstaande code automatiseert dit proces door:
+Výše uvedený kód tento proces automatizuje takto:
 
-1. De omgeving en benodigde configuraties in te stellen.  
-2. Een prompt te maken die het model instrueert om de benodigde Python-code te genereren.  
-3. De prompt naar het model te sturen en de gegenereerde code te verzamelen.  
-4. De gegenereerde code te extraheren en uit te voeren.  
-5. De originele en verwerkte afbeeldingen weer te geven.
+1. Nastaví prostředí a potřebné konfigurace.
+2. Vytvoří prompt, který modelu zadá úkol vygenerovat požadovaný Python kód.
+3. Odešle prompt modelu a shromáždí vygenerovaný kód.
+4. Extrahuje a spustí vygenerovaný kód.
+5. Zobrazí původní a zpracované obrázky.
 
-Deze aanpak benut de kracht van AI om beeldverwerkingstaken te automatiseren, waardoor het makkelijker en sneller wordt om je doelen te bereiken.
+Tento přístup využívá sílu AI k automatizaci úloh zpracování obrázků, což usnadňuje a urychluje dosažení vašich cílů.
 
-[Sample Code Solution](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
+[Ukázkové řešení kódu](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
 
-Laten we stap voor stap bekijken wat de hele code doet:
+Pojďme si krok za krokem rozebrat, co celý kód dělá:
 
-1. **Installeer Vereist Pakket**:  
+1. **Nainstalujte požadovaný balíček**:
     ```python
     !pip install langchain_nvidia_ai_endpoints -U
-    ```  
-    Dit commando installeert het `langchain_nvidia_ai_endpoints` pakket en zorgt ervoor dat je de nieuwste versie hebt.
+    ```
+    Tento příkaz nainstaluje balíček `langchain_nvidia_ai_endpoints` a zajistí, že máte jeho nejnovější verzi.
 
-2. **Importeer Benodigde Modules**:  
+2. **Importujte potřebné moduly**:
     ```python
     from langchain_nvidia_ai_endpoints import ChatNVIDIA
     import getpass
     import os
     import base64
-    ```  
-    Deze imports halen de benodigde modules binnen om te communiceren met de NVIDIA AI endpoints, wachtwoorden veilig te verwerken, met het besturingssysteem te werken en data in base64 te coderen/decoderen.
+    ```
+    Tyto importy přinášejí moduly potřebné pro komunikaci s NVIDIA AI endpointy, bezpečné zadávání hesel, práci s operačním systémem a kódování/dekódování dat v base64 formátu.
 
-3. **Stel API-sleutel in**:  
+3. **Nastavte API klíč**:
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
-    ```  
-    Deze code controleert of de `NVIDIA_API_KEY` omgevingsvariabele is ingesteld. Zo niet, dan vraagt het de gebruiker om de API-sleutel veilig in te voeren.
+    ```
+    Tento kód zkontroluje, zda je nastavena proměnná prostředí `NVIDIA_API_KEY`. Pokud ne, bezpečně vyzve uživatele k zadání API klíče.
 
-4. **Definieer Model en Afbeeldingspad**:  
+4. **Definujte model a cestu k obrázku**:
     ```python
     model = 'microsoft/phi-3-vision-128k-instruct'
     chat = ChatNVIDIA(model=model)
     img_path = './imgs/demo.png'
-    ```  
-    Dit stelt het te gebruiken model in, maakt een instantie van `ChatNVIDIA` met het opgegeven model en definieert het pad naar het afbeeldingsbestand.
+    ```
+    Zde se nastaví model, vytvoří instance `ChatNVIDIA` s daným modelem a definuje se cesta k souboru s obrázkem.
 
-5. **Maak Tekstprompt**:  
+5. **Vytvořte textový prompt**:
     ```python
     text = "Please create Python code for image, and use plt to save the new picture under imgs/ and name it phi-3-vision.jpg."
-    ```  
-    Dit definieert een tekstprompt die het model instrueert om Python-code te genereren voor het verwerken van een afbeelding.
+    ```
+    Tento prompt instruuje model, aby vygeneroval Python kód pro zpracování obrázku.
 
-6. **Encodeer Afbeelding in Base64**:  
+6. **Zakódujte obrázek do base64**:
     ```python
     with open(img_path, "rb") as f:
         image_b64 = base64.b64encode(f.read()).decode()
     image = f'<img src="data:image/png;base64,{image_b64}" />'
-    ```  
-    Deze code leest het afbeeldingsbestand, codeert het in base64 en maakt een HTML `<img>`-tag met de gecodeerde data.
+    ```
+    Tento kód načte obrázek, zakóduje ho do base64 a vytvoří HTML tag obrázku s tímto zakódovaným obsahem.
 
-7. **Combineer Tekst en Afbeelding in Prompt**:  
+7. **Spojte text a obrázek do promptu**:
     ```python
     prompt = f"{text} {image}"
-    ```  
-    Dit voegt de tekstprompt en de HTML-afbeeldingstag samen in één string.
+    ```
+    Tento krok kombinuje textový prompt a HTML tag obrázku do jednoho řetězce.
 
-8. **Genereer Code met ChatNVIDIA**:  
+8. **Vygenerujte kód pomocí ChatNVIDIA**:
     ```python
     code = ""
     for chunk in chat.stream(prompt):
         print(chunk.content, end="")
         code += chunk.content
-    ```  
-    Deze code stuurt de prompt naar de `ChatNVIDIA` en slaat de gegenereerde code op in de variabele `code`.
+    ```
+    Tento kód odešle prompt modelu `ChatNVIDIA` a sbírá vygenerovaný kód po částech, přičemž každou část vypisuje a přidává do proměnné `code`.
 
-9. **Extraheer Python-code uit de gegenereerde inhoud**:  
+9. **Extrahujte Python kód z vygenerovaného obsahu**:
     ```python
-    begin = code.index('```python') + 9  
-    code = code[begin:]  
+    begin = code.index('```python') + 9
+    code = code[begin:]
     end = code.index('```')
     code = code[:end]
-    ```  
-    Dit haalt de daadwerkelijke Python-code uit de gegenereerde inhoud door de markdown-opmaak te verwijderen.
+    ```
+    Tento krok odstraní markdown formátování a získá čistý Python kód z vygenerovaného textu.
 
-10. **Voer de gegenereerde code uit**:  
+10. **Spusťte vygenerovaný kód**:
     ```python
     import subprocess
     result = subprocess.run(["python", "-c", code], capture_output=True)
-    ```  
-    Dit voert de geëxtraheerde Python-code uit als een subprocess en vangt de uitvoer op.
+    ```
+    Tento příkaz spustí extrahovaný Python kód jako podproces a zachytí jeho výstup.
 
-11. **Toon Afbeeldingen**:  
+11. **Zobrazte obrázky**:
     ```python
     from IPython.display import Image, display
     display(Image(filename='./imgs/phi-3-vision.jpg'))
     display(Image(filename='./imgs/demo.png'))
-    ```  
-    Deze regels tonen de afbeeldingen met behulp van de `IPython.display` module.
+    ```
+    Tyto řádky zobrazí obrázky pomocí modulu `IPython.display`.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

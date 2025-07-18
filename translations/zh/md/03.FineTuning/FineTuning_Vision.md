@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-07T13:36:11+00:00",
+  "translation_date": "2025-07-17T08:36:15+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "zh"
 }
 -->
 # Phi-3.5-vision 微调方案
 
-这是使用 huggingface 库对 Phi-3.5-vision 进行微调的官方支持。
-请在运行以下命令前切换到代码目录 [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning)。
+这是使用 huggingface 库对 Phi-3.5-vision 进行微调的官方支持。  
+请在运行以下命令前，`cd` 到代码目录 [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning)。
 
 ## 安装
 
@@ -44,7 +44,7 @@ pip install bitsandbytes==0.43.1
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision 现已正式支持多图像输入。下面是针对 NLVR2 微调的示例
+Phi-3.5-vision 现已正式支持多图像输入。以下是微调 NLVR2 的示例
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -52,13 +52,13 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## 使用指南
 
-根据硬件条件，用户可以选择不同的微调策略。我们支持
-全量微调（使用 Deepspeed Zero-2），可选择冻结视觉参数，以及 LoRA（包括 4bit QLoRA）。
-一般来说，我们建议尽可能使用支持 flash attention 和 bf16 的全量微调。
+根据硬件情况，用户可以选择不同的微调策略。我们支持  
+全量微调（使用 Deepspeed Zero-2），可选择冻结视觉参数，以及 LoRA（包括 4bit QLoRA）。  
+一般来说，我们推荐尽可能使用带有 flash attention 和 bf16 的全量微调。
 
 ### 自定义数据集转换为所需格式的指南
 
-我们以最小视频分类数据集（UCF-101 的子集）作为端到端示例，演示如何将自定义数据集转换为所需格式并对 Phi-3.5-vision 进行微调。
+我们使用一个最小的视频分类数据集（UCF-101 的子集）作为端到端示例，演示如何将自定义数据集转换为所需格式，并在其上微调 Phi-3.5-vision。
 
 ```bash
 # convert data
@@ -114,47 +114,46 @@ torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/co
 34 directories, 3 files
 ```
 
-对于 `jsonl` 注释文件，每一行应是如下格式的字典：
+对于 `jsonl` 注释文件，每行应为如下字典格式：
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-注意 `conversations` 是一个列表，因此如果有多轮对话数据，也能得到支持。
+注意 `conversations` 是一个列表，因此如果有多轮对话数据，也能支持多轮对话。
 
 ## 申请 Azure GPU 配额
 
 ### 前提条件
 
-需要拥有 Azure 账户，并具备 Contributor 角色（或包含 Contributor 权限的其他角色）。
+拥有 Azure 账户且具备 Contributor 角色（或包含 Contributor 权限的其他角色）。
 
-如果还没有 Azure 账户，请先[创建免费账户](https://azure.microsoft.com)。
+如果没有 Azure 账户，请先[创建免费账户](https://azure.microsoft.com)。
 
 ### 申请配额提升
 
-您可以直接在“我的配额”页面提交配额提升请求。以下步骤演示如何申请配额提升。示例中，您可以选择订阅中任何可调整的配额。
+您可以直接在“我的配额”中提交配额提升申请。以下步骤演示如何申请配额提升。示例中，您可以选择订阅中任何可调整的配额。
 
 登录 [Azure 门户](https://portal.azure.com)。
 
-在搜索框输入“quotas”，然后选择 Quotas。
+在搜索框输入“quotas”，然后选择 Quotas。  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-在概览页，选择一个服务提供商，比如 Compute 或 AML。
+在概览页，选择一个提供商，如 Compute 或 AML。
 
-**注意** 除 Compute 以外的所有服务提供商，您会看到“请求提升”列，而非下文描述的“可调整”列。您可以在此请求特定配额的提升，或创建支持请求。
+**注意** 除 Compute 外，其他提供商会显示“Request increase”列，而非下文所述的“Adjustable”列。您可以在此请求特定配额的提升，或创建支持请求。
 
-在“我的配额”页中，找到您想提升的配额，确保“可调整”列显示为“是”。
+在“我的配额”页，找到您想提升的配额，确保“Adjustable”列显示为 Yes。
 
-页面顶部选择“新建配额请求”，然后选择“输入新限制”。
-
+页面顶部附近，选择“New Quota Request”，然后选择“Enter a new limit”。  
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-在“新建配额请求”面板中，输入新的配额数值，然后点击“提交”。
+在“New Quota Request”面板中，输入新的配额数值，然后点击“Submit”。
 
-您的请求将被审核，审核结果会通知您，通常几分钟内完成。
+您的申请将被审核，审核结果会通知您，通常几分钟内完成。
 
-如果请求未通过，会显示创建支持请求的链接。使用该链接，支持工程师会协助您完成配额提升。
+如果申请未通过，页面会提供创建支持请求的链接。使用该链接后，支持工程师会协助您完成配额提升申请。
 
 ## Azure 计算 GPU 机型建议
 
@@ -182,8 +181,8 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### 如果您有 Standard_ND40rs_v2 8x V100-32GB GPU
 
-依然可以对 Phi-3-V 进行仇恨表情包分类的全量微调。但由于不支持 flash attention，吞吐量会明显低于 A100 或 H100 GPU。
-由于缺少 bf16 支持（使用 fp16 混合精度训练），准确率也可能受到影响。
+仍然可以对 Phi-3-V 进行仇恨表情包分类的全量微调。但由于不支持 flash attention，吞吐量会远低于 A100 或 H100 GPU。  
+同时由于不支持 bf16（改用 fp16 混合精度训练），准确率可能也会受到影响。
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -216,7 +215,7 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## 建议超参数及预期准确率
+## 建议的超参数及预期准确率
 
 ### NLVR2
 
@@ -231,15 +230,15 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-训练方法 | 是否冻结视觉模型 | 数据类型 | LoRA rank | LoRA alpha | 批大小 | 学习率 | 训练轮数 | 准确率
+训练方法 | 是否冻结视觉模型 | 数据类型 | LoRA rank | LoRA alpha | 批量大小 | 学习率 | 训练轮数 | 准确率
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
 全量微调 |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
 全量微调 | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
 LoRA 结果即将发布 |  |  |  |  |  |  |  |  |
 
-### 注意
-以下 DocVQA 和仇恨表情包的结果基于之前版本（Phi-3-vision）。
-Phi-3.5-vision 的新结果将很快更新。
+### 注意  
+以下 DocVQA 和仇恨表情包的结果基于之前版本（Phi-3-vision）。  
+Phi-3.5-vision 的新结果将尽快更新。
 
 ### DocVQA（注意：Phi-3-vision）
 
@@ -255,7 +254,7 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-训练方法 | 数据类型 | LoRA rank | LoRA alpha | 批大小 | 学习率 | 训练轮数 | ANLS
+训练方法 | 数据类型 | LoRA rank | LoRA alpha | 批量大小 | 学习率 | 训练轮数 | ANLS
 --- | --- | --- | --- | --- | --- | --- | --- |
 全量微调 | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
 全量微调 | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
@@ -279,7 +278,7 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-训练方法 | 数据类型 | LoRA rank | LoRA alpha | 批大小 | 学习率 | 训练轮数 | 准确率
+训练方法 | 数据类型 | LoRA rank | LoRA alpha | 批量大小 | 学习率 | 训练轮数 | 准确率
 --- | --- | --- | --- | --- | --- | --- | --- |
 全量微调 | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
 全量微调 | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
@@ -292,13 +291,13 @@ QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 ## 速度基准测试（注意：Phi-3-vision）
 
-Phi-3.5-vision 的最新基准测试结果将很快更新。
+Phi-3.5-vision 的新基准测试结果将尽快更新。
 
-基准测试在 DocVQA 数据集上进行。该数据集的平均序列长度为 2443.23 个 token（图像模型使用 `num_crops=16`）。
+速度基准测试在 DocVQA 数据集上进行。该数据集的平均序列长度为 2443.23 个 token（图像模型使用 `num_crops=16`）。
 
-### 8x A100-80GB（Ampere 架构）
+### 8x A100-80GB（Ampere）
 
-训练方法 | 节点数 | GPU 数量 | flash attention | 有效批大小 | 吞吐量（图/秒） | 加速比 | GPU 峰值内存（GB）
+训练方法 | 节点数 | GPU 数量 | flash attention | 有效批量大小 | 吞吐量（张/秒） | 加速比 | GPU 峰值内存（GB）
 --- | --- | --- | --- | --- | --- | --- | --- |
 全量微调 | 1 | 8 |  | 64 | 5.041 | 1x | ~42
 全量微调 | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
@@ -311,9 +310,9 @@ LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16
 QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32
 QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
-### 8x V100-32GB（Volta 架构）
+### 8x V100-32GB（Volta）
 
-训练方法 | 节点数 | GPU 数量 | flash attention | 有效批大小 | 吞吐量（图/秒） | 加速比 | GPU 峰值内存（GB）
+训练方法 | 节点数 | GPU 数量 | flash attention | 有效批量大小 | 吞吐量（张/秒） | 加速比 | GPU 峰值内存（GB）
 --- | --- | --- | --- | --- | --- | --- | --- |
 全量微调 | 1 | 8 |  | 64 | 2.462 | 1x | ~32
 全量微调 | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
@@ -323,8 +322,8 @@ LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
 ## 已知问题
 
-- 无法在 fp16 下运行 flash attention（建议尽量使用 bf16，所有支持 flash attention 的 GPU 也都支持 bf16）。
+- fp16 下无法运行 flash attention（建议有条件时优先使用 bf16，所有支持 flash attention 的 GPU 也都支持 bf16）。
 - 目前不支持保存中间检查点和恢复训练。
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意，自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

@@ -2,24 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-05-07T15:24:16+00:00",
+  "translation_date": "2025-07-16T17:24:06+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
   "language_code": "mo"
 }
 -->
-# Change Log
+# 變更紀錄
 
-All notable changes to the "phiext" extension will be documented in this file.
+所有關於 "phiext" 擴充功能的重要變更都會記錄在此檔案中。
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+請參考 [Keep a Changelog](http://keepachangelog.com/) 了解如何組織此檔案的建議。
 
-## [Unreleased]
+## [未發佈]
 
-- Initial release
+- 初始版本
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-(Note: "mo" is not a recognized language code or language name in my training data. Could you please specify which language "mo" refers to, or provide more details?)
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

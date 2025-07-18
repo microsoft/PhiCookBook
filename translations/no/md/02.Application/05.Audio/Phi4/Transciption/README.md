@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-05-09T20:06:21+00:00",
+  "translation_date": "2025-07-17T05:12:20+00:00",
   "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "no"
 }
 -->
-## **Ekstrahere lydtranskripsjoner ved bruk av Phi-4-multimodal**
+## **Uttrekking av lydtranskripsjoner med Phi-4-multimodal**
 
-Phi-4-multimodal er en full-modal modell som kan bruke lyd i tillegg til tekst og bilder. La oss se hvordan vi kan bruke den.
+Phi-4-multimodal er en fullmodal modell som kan bruke lyd i tillegg til tekst og bilder. La oss se hvordan vi kan bruke den.
 
 
 ```python
@@ -66,4 +66,4 @@ print(response)
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

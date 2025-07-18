@@ -2,58 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
-  "translation_date": "2025-05-09T04:59:35+00:00",
+  "translation_date": "2025-07-16T16:46:50+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
   "language_code": "sl"
 }
 -->
-# ඔබේ VS Code විස්තාරණයට සාදරයෙන් පිළිගනිමු
+# Dobrodošli v vaši razširitvi za VS Code
 
-## ෆෝල්ඩරයේ ඇති දේ
+## Kaj je v mapi
 
-* මෙම ෆෝල්ඩරය තුළ ඔබේ විස්තාරණය සඳහා අවශ්‍ය සියලු ගොනු අඩංගු වේ.
-* `package.json` - මෙය manifest ගොනුව වන අතර මෙහි ඔබ ඔබේ විස්තාරණය සහ විධානය ප්‍රකාශ කරයි.
-  * නියැදි ප්ලගිනයක් විධානයක් ලියාපදිංචි කර එහි මාතෘකාව සහ විධානයේ නම නියම කරයි. මේ මගින් VS Code විධානය command palette එකේ පෙන්විය හැක. තවමත් ප්ලගිනය ලෝඩ් කිරීම අවශ්‍ය නැත.
-* `src/extension.ts` - මෙය ප්‍රධාන ගොනුව වන අතර ඔබ මෙහි ඔබේ විධානයේ ක්‍රියාත්මක කිරීම සපයයි.
-  * ගොනුවෙන් එක් function එකක්, `activate`, අපනයනය කරයි. මෙය ඔබේ විස්තාරණය පළවෙනි වතාවට සක්‍රීය වූ විට (මෙම අවස්ථාවේ විධානය ක්‍රියාත්මක කිරීමෙන්) කැඳවෙයි. `activate` function එක තුළ අපි `registerCommand` කැඳවයි.
-  * විධානයේ ක්‍රියාත්මක කිරීම අඩංගු function එක දෙවන පරාමිතිය ලෙස `registerCommand` වෙත යවයි.
+* Ta mapa vsebuje vse datoteke, potrebne za vašo razširitev.
+* `package.json` - to je manifestna datoteka, v kateri deklarirate svojo razširitev in ukaz.
+  * Vzorec vtičnika registrira ukaz in določi njegov naslov ter ime ukaza. S temi informacijami lahko VS Code prikaže ukaz v paleti ukazov. Vtičnika še ni treba naložiti.
+* `src/extension.ts` - to je glavna datoteka, kjer boste implementirali svoj ukaz.
+  * Datoteka izvozi eno funkcijo, `activate`, ki se pokliče prvič, ko je razširitev aktivirana (v tem primeru z izvajanjem ukaza). Znotraj funkcije `activate` pokličemo `registerCommand`.
+  * Funkcijo, ki vsebuje implementacijo ukaza, posredujemo kot drugi parameter funkciji `registerCommand`.
 
-## සැකසීම
+## Namestitev
 
-* නිර්දේශිත විස්තාරණ ස්ථාපනය කරන්න (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, සහ dbaeumer.vscode-eslint)
+* Namestite priporočene razširitve (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner in dbaeumer.vscode-eslint)
 
+## Zaženite takoj
 
-## සෘජුවම ආරම්භ කරන්න
+* Pritisnite `F5`, da odprete novo okno z naloženo razširitvijo.
+* Zaženite svoj ukaz iz palete ukazov s pritiskom na (`Ctrl+Shift+P` ali `Cmd+Shift+P` na Macu) in vtipkajte `Hello World`.
+* Nastavite točke prekinitve v kodi v `src/extension.ts` za razhroščevanje razširitve.
+* Izhod vaše razširitve poiščite v konzoli za razhroščevanje.
 
-* ඔබේ විස්තාරණය සමඟ නව කවුළුවක් විවෘත කිරීමට `F5` ඔබන්න.
-* විධානය command palette එකෙන් ධාවනය කරන්න (Mac හි `Ctrl+Shift+P` හෝ `Cmd+Shift+P` ඔබා) සහ `Hello World` ටයිප් කරන්න.
-* ඔබේ කේතයේ `src/extension.ts` තුළ breakpoints සකසන්න ඔබේ විස්තාරණය නිවැරදි කිරීම සඳහා.
-* debug console එකේ ඔබේ විස්තාරණයෙන් ප්‍රතිදානය සොයා ගන්න.
+## Naredite spremembe
 
-## වෙනස්කම් කරන්න
+* Razširitev lahko ponovno zaženete iz orodne vrstice za razhroščevanje po spremembi kode v `src/extension.ts`.
+* Prav tako lahko osvežite (`Ctrl+R` ali `Cmd+R` na Macu) okno VS Code z vašo razširitvijo, da naložite spremembe.
 
-* `src/extension.ts` හි කේතය වෙනස් කිරීමෙන් පසු debug toolbar එකෙන් විස්තාරණය නැවත ආරම්භ කළ හැක.
-* VS Code කවුළුව නැවත ලෝඩ් කිරීමට (`Ctrl+R` හෝ Mac හි `Cmd+R`) ඔබේ විස්තාරණය සමඟ ඔබේ වෙනස්කම් පූරණය කර ගත හැක.
+## Raziščite API
 
-## API සොයා බලන්න
+* Celoten nabor našega API-ja lahko odprete z odpiranjem datoteke `node_modules/@types/vscode/index.d.ts`.
 
-* `node_modules/@types/vscode/index.d.ts` ගොනුව විවෘත කළ විට අපගේ API සම්පූර්ණ කට්ටලය ඔබට විවෘත කළ හැක.
+## Zaženite teste
 
-## පරීක්ෂණ ධාවනය කරන්න
+* Namestite [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* Zaženite nalogo "watch" preko ukaza **Tasks: Run Task**. Poskrbite, da teče, sicer testi morda ne bodo odkriti.
+* Odprite pogled Testing iz vrstice aktivnosti in kliknite gumb "Run Test" ali uporabite bližnjico `Ctrl/Cmd + ; A`
+* Rezultate testov si oglejte v pogledu Test Results.
+* Spremembe naredite v `src/test/extension.test.ts` ali ustvarite nove testne datoteke znotraj mape `test`.
+  * Zagotovljeni testni izvajalec bo upošteval samo datoteke, ki ustrezajo vzorcu imena `**.test.ts`.
+  * Znotraj mape `test` lahko ustvarite podmape za poljubno organizacijo testov.
 
-* [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner) ස්ථාපනය කරන්න
-* **Tasks: Run Task** විධානයෙන් "watch" task එක ධාවනය කරන්න. මෙය ක්‍රියාත්මක නොවුවහොත් පරීක්ෂණ හඳුනාගැනීම සිදු නොවනු ඇත.
-* activity bar හි Testing දර්ශනය විවෘත කර "Run Test" බොත්තම ඔබන්න, හෝ හොට්කි `Ctrl/Cmd + ; A` භාවිතා කරන්න
-* Test Results දර්ශනයේ පරීක්ෂණ ප්‍රතිඵල ප්‍රතිදානය බලන්න.
-* `src/test/extension.test.ts` හෝ `test` ෆෝල්ඩරය තුළ නව පරීක්ෂණ ගොනු සාදන්න.
-  * සපයන ලද test runner එකේ නාම රටාවට `**.test.ts` ගොනු පමණක් සලකා බලයි.
-  * ඔබට `test` ෆෝල්ඩරය තුළ නව ෆෝල්ඩර සාදා ඔබේ පරීක්ෂණ ව්‍යුහගත කළ හැක.
+## Pojdite korak dlje
 
-## තවදුරටත් යන්න
+* Zmanjšajte velikost razširitve in izboljšajte čas zagona z [združevanjem razširitve](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo).
+* [Objavite svojo razširitev](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo) na tržnici razširitev VS Code.
+* Avtomatizirajte gradnje z nastavitvijo [neprekinjene integracije](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo).
 
-* ඔබේ විස්තාරණයේ ප්‍රමාණය අඩු කර ආරම්භක කාලය වැඩි දියුණු කිරීමට [ඔබේ විස්තාරණය bundle කිරීම](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo) කරන්න.
-* VS Code විස්තාරණ වෙළඳපොළේ ඔබේ විස්තාරණය [ප්‍රකාශනය](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo) කරන්න.
-* [අඛණ්ඩ ඒකාබද්ධ කිරීම](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo) සකස් කර ගොඩනැගීම් ස්වයංක්‍රීය කරන්න.
-
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni prevod, opravljen s strani človeka. Ne odgovarjamo za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

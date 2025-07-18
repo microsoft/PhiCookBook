@@ -2,21 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:26:17+00:00",
+  "translation_date": "2025-07-17T05:51:12+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "sw"
 }
 -->
-# Generate Image Data Set by downloading DataSet from Hugging Face and associated images
-
+# Tengeneza Seti ya Data ya Picha kwa kupakua DataSet kutoka Hugging Face na picha zinazohusiana
 
 ### Muhtasari
 
-Script hii huandaa dataset kwa ajili ya mashine kujifunza kwa kupakua picha zinazohitajika, kuchuja mistari ambapo upakuaji wa picha umefaulu, na kuhifadhi dataset kama faili la CSV.
+Script hii huandaa seti ya data kwa ajili ya mashine kujifunza kwa kupakua picha zinazohitajika, kuchuja mistari ambapo upakuaji wa picha unashindwa, na kuhifadhi seti ya data kama faili la CSV.
 
 ### Mahitaji
 
-Kabla ya kuendesha script hii, hakikisha umeweka maktaba zifuatazo: `Pandas`, `Datasets`, `requests`, `PIL`, na `io`. Pia utahitaji kubadilisha `'Insert_Your_Dataset'` katika mstari wa 2 na jina la dataset yako kutoka Hugging Face.
+Kabla ya kuendesha script hii, hakikisha umeweka maktaba zifuatazo: `Pandas`, `Datasets`, `requests`, `PIL`, na `io`. Pia utahitaji kubadilisha `'Insert_Your_Dataset'` kwenye mstari wa 2 na jina la seti yako ya data kutoka Hugging Face.
 
 Maktaba Zinazohitajika:
 
@@ -34,41 +33,40 @@ from io import BytesIO
 
 Script hufanya hatua zifuatazo:
 
-1. Inapakua dataset kutoka Hugging Face kwa kutumia `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Inapakua seti ya data kutoka Hugging Face kwa kutumia kazi ya `load_dataset()`.
+2. Inageuza seti ya data ya Hugging Face kuwa Pandas DataFrame kwa urahisi wa usindikaji kwa kutumia njia ya `to_pandas()`.
+3. Inaunda folda za kuhifadhi seti ya data na picha.
+4. Inachuja mistari ambapo upakuaji wa picha unashindwa kwa kupitia kila mstari katika DataFrame, kupakua picha kwa kutumia kazi maalum ya `download_image()`, na kuongeza mstari uliosafishwa kwenye DataFrame mpya iitwayo `filtered_rows`.
+5. Inaunda DataFrame mpya yenye mistari iliyochujwa na kuihifadhi kwenye diski kama faili la CSV.
+6. Inachapisha ujumbe unaoonyesha mahali seti ya data na picha zimehifadhiwa.
 
-### Custom Function
+### Kazi Maalum
 
-The `download_image()` kazi inayopakua picha kutoka URL na kuihifadhi kwa ndani kwa kutumia Pillow Image Library (PIL) na moduli ya `io`. Inarudisha True ikiwa picha imeshapakuliwa kwa mafanikio, na False vinginevyo. Kazi pia hutupa exception ikiwa ombi limekosea.
+Kazi ya `download_image()` hupakua picha kutoka kwenye URL na kuihifadhi kwa ndani kwa kutumia Maktaba ya Pillow Image (PIL) na moduli ya `io`. Inarudisha True ikiwa picha imesafirishwa kwa mafanikio, na False vinginevyo. Kazi hii pia hutupa kosa lenye ujumbe wa makosa wakati ombi linaposhindwa.
 
-### Jinsi Hii Inavyofanya Kazi
+### Jinsi inavyofanya kazi
 
 Kazi ya download_image inachukua vigezo viwili: image_url, ambayo ni URL ya picha inayopakuliwa, na save_path, ambayo ni njia ambapo picha iliyopakuliwa itahifadhiwa.
 
 Hivi ndivyo kazi inavyofanya kazi:
 
-Inaanzia kwa kutuma ombi la GET kwa image_url kwa kutumia requests.get. Hii inapata data ya picha kutoka URL.
+Inaanza kwa kutuma ombi la GET kwa image_url kwa kutumia njia ya requests.get. Hii inapata data ya picha kutoka kwenye URL.
 
-Mstari wa response.raise_for_status() unahakikisha kama ombi limefanikiwa. Ikiwa status code ya jibu inaonyesha hitilafu (mfano, 404 - Haipatikani), itatoa exception. Hii inahakikisha tunapakia picha tu ikiwa ombi limefanikiwa.
+Mstari wa response.raise_for_status() unahakikisha kama ombi lilifanikiwa. Ikiwa msimbo wa hali ya jibu unaonyesha kosa (mfano, 404 - Haipatikani), itatoa kosa. Hii inahakikisha kuwa tunaendelea kupakua picha tu ikiwa ombi lilifanikiwa.
 
-Data ya picha kisha hupitishwa kwa Image.open kutoka moduli ya PIL (Python Imaging Library). Hii hutengeneza kitu cha Image kutoka kwa data ya picha.
+Data ya picha kisha hupitishwa kwa njia ya Image.open kutoka moduli ya PIL (Python Imaging Library). Njia hii huunda kitu cha Image kutoka kwa data ya picha.
 
-Mstari wa image.save(save_path) unahifadhi picha kwenye save_path iliyotajwa. save_path inapaswa kujumuisha jina la faili na kiambatisho kinachotakiwa.
+Mstari wa image.save(save_path) unaweka picha kwenye save_path iliyotajwa. Save_path inapaswa kujumuisha jina la faili na kiendelezi kinachotakiwa.
 
-Mwishowe, kazi inarudisha True kuonyesha kuwa picha imeshapakuliwa na kuhifadhiwa kwa mafanikio. Ikiwa kuna exception yoyote wakati wa mchakato, inakamata exception, kuchapisha ujumbe wa kosa unaoonyesha kushindwa, na kurudisha False.
+Mwishowe, kazi inarudisha True kuonyesha kuwa picha imesafirishwa na kuhifadhiwa kwa mafanikio. Ikiwa kosa lolote litatokea wakati wa mchakato, linakamatwa, linachapisha ujumbe wa kosa unaoonyesha kushindwa, na kurudisha False.
 
-Kazi hii ni muhimu kwa kupakua picha kutoka URL na kuzihifadhi kwa ndani. Inashughulikia makosa yanayoweza kutokea wakati wa upakuaji na kutoa mrejesho kama upakuaji umefanikiwa au la.
+Kazi hii ni muhimu kwa kupakua picha kutoka URL na kuzihifadhi kwa ndani. Inashughulikia makosa yanayoweza kutokea wakati wa upakuaji na kutoa mrejesho kama upakuaji ulifanikiwa au la.
 
-Ni muhimu kutambua kuwa maktaba ya requests hutumika kutuma ombi za HTTP, maktaba ya PIL hutumika kushughulikia picha, na darasa la BytesIO hutumika kushughulikia data ya picha kama mtiririko wa bytes.
-
+Ni vyema kutambua kuwa maktaba ya requests hutumika kutuma maombi ya HTTP, maktaba ya PIL hutumika kufanya kazi na picha, na darasa la BytesIO hutumika kushughulikia data ya picha kama mtiririko wa bytes.
 
 ### Hitimisho
 
-Script hii inatoa njia rahisi ya kuandaa dataset kwa mashine kujifunza kwa kupakua picha zinazohitajika, kuchuja mistari ambapo upakuaji wa picha haukufanikiwa, na kuhifadhi dataset kama faili la CSV.
+Script hii inatoa njia rahisi ya kuandaa seti ya data kwa mashine kujifunza kwa kupakua picha zinazohitajika, kuchuja mistari ambapo upakuaji wa picha unashindwa, na kuhifadhi seti ya data kama faili la CSV.
 
 ### Mfano wa Script
 
@@ -129,11 +127,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Mfano wa Pakua Msimbo  
+### Mfano wa Kupakua Msimbo  
 [Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### Mfano wa Data Set  
+### Mfano wa Seti ya Data  
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
-**Kiasi cha Majukumu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya mtaalamu wa binadamu inashauriwa. Hatutawajibika kwa kutoelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

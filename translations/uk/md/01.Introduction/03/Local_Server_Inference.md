@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-07-09T20:03:46+00:00",
+  "translation_date": "2025-07-16T20:59:53+00:00",
   "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
   "language_code": "uk"
 }
@@ -13,13 +13,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **Використання Semantic Kernel для доступу до Phi-3-mini**
 
-У додатку Copilot ми створюємо програми через Semantic Kernel / LangChain. Такий тип фреймворку зазвичай сумісний із Azure OpenAI Service / моделями OpenAI, а також може підтримувати open source моделі на Hugging Face і локальні моделі. Що робити, якщо ми хочемо використовувати Semantic Kernel для доступу до Phi-3-mini? На прикладі .NET ми можемо поєднати його з Hugging Face Connector у Semantic Kernel. За замовчуванням він відповідає ідентифікатору моделі на Hugging Face (при першому використанні модель буде завантажена з Hugging Face, що займає багато часу). Також можна підключитися до власноруч створеного локального сервісу. Порівняно з двома варіантами, ми рекомендуємо використовувати другий, оскільки він забезпечує вищий рівень автономності, особливо у корпоративних додатках.
+У додатку Copilot ми створюємо програми через Semantic Kernel / LangChain. Такий тип фреймворку зазвичай сумісний із Azure OpenAI Service / моделями OpenAI, а також може підтримувати open source моделі на Hugging Face і локальні моделі. Що робити, якщо ми хочемо використовувати Semantic Kernel для доступу до Phi-3-mini? На прикладі .NET ми можемо поєднати його з Hugging Face Connector у Semantic Kernel. За замовчуванням він відповідає ідентифікатору моделі на Hugging Face (при першому використанні модель буде завантажена з Hugging Face, що займає багато часу). Також можна підключитися до власноруч створеного локального сервісу. Порівняно з двома варіантами, ми рекомендуємо використовувати другий, оскільки він забезпечує більшу автономність, особливо у корпоративних додатках.
 
-![sk](../../../../../imgs/01/03/LocalServer/sk.png)
+![sk](../../../../../translated_images/sk.d03785c25edc6d445a2e9ae037979e544e0b0c482f43c7617b0324e717b9af62.uk.png)
 
 З рисунка видно, що доступ до локальних сервісів через Semantic Kernel легко підключається до самостійно створеного сервера моделі Phi-3-mini. Ось результат виконання
 
-![skrun](../../../../../imgs/01/03/LocalServer/skrun.png)
+![skrun](../../../../../translated_images/skrun.5aafc1e7197dca2020eefcaeaaee184d29bb0cf1c37b00fd9c79acc23a6dc8d2.uk.png)
 
 ***Приклад коду*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 

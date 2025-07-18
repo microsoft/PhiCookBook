@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:17:31+00:00",
+  "translation_date": "2025-07-17T05:36:01+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "pl"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Witamy w [GitHub Models](https://github.com/marketplace/models)! Mamy wszystko gotowe, abyś mógł odkrywać modele AI hostowane na Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.pl.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.pl.png)
 
-Aby uzyskać więcej informacji o dostępnych modelach w GitHub Models, odwiedź [GitHub Model Marketplace](https://github.com/marketplace/models)
+Aby uzyskać więcej informacji o modelach dostępnych na GitHub Models, sprawdź [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Dostępne modele
 
@@ -37,26 +37,26 @@ Każdy model ma dedykowane środowisko testowe oraz przykładowy kod
 
 ## Pierwsze kroki
 
-Do dyspozycji masz kilka podstawowych przykładów gotowych do uruchomienia. Znajdziesz je w katalogu samples. Jeśli chcesz od razu przejść do swojego ulubionego języka, przykłady dostępne są w następujących językach:
+Mamy kilka podstawowych przykładów gotowych do uruchomienia. Znajdziesz je w katalogu samples. Jeśli chcesz od razu przejść do swojego ulubionego języka, przykłady dostępne są w następujących językach:
 
 - Python
 - JavaScript
 - cURL
 
-Dostępne jest także dedykowane środowisko Codespaces do uruchamiania przykładów i modeli.
+Dostępne jest również dedykowane środowisko Codespaces do uruchamiania przykładów i modeli.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.pl.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.pl.png)
 
 ## Przykładowy kod
 
-Poniżej znajdziesz przykładowe fragmenty kodu dla kilku zastosowań. Aby uzyskać więcej informacji o Azure AI Inference SDK, zobacz pełną dokumentację i przykłady.
+Poniżej znajdują się przykładowe fragmenty kodu dla kilku zastosowań. Aby uzyskać więcej informacji o Azure AI Inference SDK, zobacz pełną dokumentację i przykłady.
 
 ## Konfiguracja
 
-1. Utwórz token dostępu osobistego  
-Nie musisz nadawać żadnych uprawnień tokenowi. Pamiętaj, że token zostanie przesłany do usługi Microsoft.
+1. Utwórz personal access token  
+Nie musisz nadawać żadnych uprawnień tokenowi. Pamiętaj, że token będzie przesyłany do usługi Microsoft.
 
-Aby korzystać z poniższych fragmentów kodu, ustaw zmienną środowiskową z tokenem jako klucz dla kodu klienta.
+Aby użyć poniższych fragmentów kodu, utwórz zmienną środowiskową, w której ustawisz swój token jako klucz dla kodu klienta.
 
 Jeśli używasz bash:  
 ```
@@ -77,14 +77,14 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 ## Przykład w Python
 
 ### Instalacja zależności  
-Zainstaluj Azure AI Inference SDK za pomocą pip (Wymaga: Python >=3.8):
+Zainstaluj Azure AI Inference SDK za pomocą pip (wymaga: Python >=3.8):
 
 ```
 pip install azure-ai-inference
 ```  
 ### Uruchom podstawowy przykład kodu
 
-Ten przykład pokazuje podstawowe wywołanie API chat completion. Wykorzystuje punkt końcowy inferencji modelu AI GitHub oraz Twój token GitHub. Wywołanie jest synchroniczne.
+Ten przykład pokazuje podstawowe wywołanie API chat completion. Wykorzystuje endpoint inferencji modelu AI GitHub oraz Twój token GitHub. Wywołanie jest synchroniczne.
 
 ```
 import os
@@ -203,15 +203,15 @@ Skopiuj poniższe linie tekstu i zapisz je jako plik package.json w swoim folder
 }
 ```
 
-Uwaga: @azure/core-sse jest potrzebny tylko wtedy, gdy strumieniujesz odpowiedzi chat completion.
+Uwaga: @azure/core-sse jest potrzebne tylko, gdy strumieniujesz odpowiedzi chat completion.
 
 Otwórz terminal w tym folderze i uruchom npm install.
 
-Dla każdego z poniższych fragmentów kodu skopiuj zawartość do pliku sample.js i uruchom node sample.js.
+Dla każdego z poniższych fragmentów kodu skopiuj zawartość do pliku sample.js i uruchom poleceniem node sample.js.
 
 ### Uruchom podstawowy przykład kodu
 
-Ten przykład pokazuje podstawowe wywołanie API chat completion. Wykorzystuje punkt końcowy inferencji modelu AI GitHub oraz Twój token GitHub. Wywołanie jest synchroniczne.
+Ten przykład pokazuje podstawowe wywołanie API chat completion. Wykorzystuje endpoint inferencji modelu AI GitHub oraz Twój token GitHub. Wywołanie jest synchroniczne.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -372,10 +372,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
+
 ### Uruchom rozmowę wieloetapową
 
-Wywołaj API chat completion i przekaż historię rozmowy:
+Wywołaj API chat completion i przekaż historię czatu:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -402,10 +403,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
+
 ### Strumieniowanie odpowiedzi
 
-To przykład wywołania punktu końcowego z jednoczesnym strumieniowaniem odpowiedzi.
+To przykład wywołania endpointu z jednoczesnym strumieniowaniem odpowiedzi.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -427,21 +429,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## BEZPŁATNE użycie i limity dla GitHub Models
+## Darmowe użycie i limity dla GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.pl.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.pl.png)
 
-[Limity dla środowiska testowego i darmowego API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) mają na celu umożliwić eksperymentowanie z modelami i prototypowanie aplikacji AI. Aby korzystać poza tymi limitami i skalować swoją aplikację, musisz przydzielić zasoby z konta Azure i uwierzytelnić się tam zamiast za pomocą osobistego tokena GitHub. Nie musisz zmieniać niczego w swoim kodzie. Skorzystaj z tego linku, aby dowiedzieć się, jak przekroczyć limity darmowego poziomu w Azure AI.
+[Limity dla playground i darmowego użycia API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) mają na celu umożliwienie eksperymentowania z modelami i prototypowania aplikacji AI. Aby korzystać poza tymi limitami i skalować swoją aplikację, musisz przydzielić zasoby z konta Azure i uwierzytelnić się tam zamiast używać personal access token GitHub. Nie musisz zmieniać niczego w swoim kodzie. Skorzystaj z tego linku, aby dowiedzieć się, jak przekroczyć limity darmowego poziomu w Azure AI.
 
 ### Informacje dodatkowe
 
-Pamiętaj, że korzystając z modelu eksperymentujesz z AI, więc mogą zdarzyć się błędy w treści.
+Pamiętaj, że podczas interakcji z modelem eksperymentujesz z AI, więc mogą pojawić się błędy w treści.
 
-Funkcjonalność jest objęta różnymi ograniczeniami (w tym liczba zapytań na minutę, na dzień, tokeny na zapytanie oraz zapytania równoczesne) i nie jest przeznaczona do zastosowań produkcyjnych.
+Funkcja podlega różnym ograniczeniom (w tym liczba zapytań na minutę, na dzień, tokeny na zapytanie oraz zapytania równoczesne) i nie jest przeznaczona do zastosowań produkcyjnych.
 
-GitHub Models korzysta z Azure AI Content Safety. Te filtry nie mogą być wyłączone w ramach doświadczenia GitHub Models. Jeśli zdecydujesz się korzystać z modeli przez płatną usługę, skonfiguruj filtry treści zgodnie ze swoimi wymaganiami.
+GitHub Models korzysta z Azure AI Content Safety. Te filtry nie mogą być wyłączone w ramach doświadczenia GitHub Models. Jeśli zdecydujesz się korzystać z modeli przez płatną usługę, skonfiguruj filtry treści zgodnie z własnymi wymaganiami.
 
 Ta usługa jest objęta warunkami wstępnej wersji GitHub.
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dążymy do dokładności, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub niedokładności. Oryginalny dokument w jego języku źródłowym powinien być uważany za wiarygodne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

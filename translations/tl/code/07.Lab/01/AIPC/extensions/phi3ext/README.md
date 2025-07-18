@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T04:53:04+00:00",
+  "translation_date": "2025-07-16T16:37:32+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
   "language_code": "tl"
 }
 -->
 # phi3ext README
 
-Ito ang README ng iyong extension na "phi3ext". Pagkatapos ng maikling paglalarawan, inirerekomenda naming isama ang mga sumusunod na seksyon.
+Ito ang README para sa iyong extension na "phi3ext". Pagkatapos mong magsulat ng maikling paglalarawan, inirerekomenda naming isama ang mga sumusunod na seksyon.
 
 ## Features
 
-Ilarawan ang mga partikular na tampok ng iyong extension, kabilang ang mga screenshot habang tumatakbo ang extension. Ang mga landas ng larawan ay relatibo sa README na ito.
+Ilarawan ang mga partikular na tampok ng iyong extension, kabilang ang mga screenshot habang tumatakbo ang extension. Ang mga path ng larawan ay kaugnay sa README file na ito.
 
-Halimbawa, kung may folder na imahe sa workspace ng iyong extension project:
+Halimbawa, kung mayroon kang isang subfolder ng mga larawan sa workspace ng iyong extension project:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> TIP: Maraming sikat na extension ang gumagamit ng mga animation. Ito ay isang mahusay na paraan upang ipakita ang iyong extension! Inirerekomenda namin ang maikli at nakatuon na mga animation para madaling sundan.
+> [!TIP] Maraming sikat na extension ang gumagamit ng mga animation. Isa itong mahusay na paraan para ipakita ang iyong extension! Inirerekomenda namin ang maikli at nakatuon na mga animation para madaling sundan.
 
 ## Requirements
 
@@ -38,15 +38,15 @@ Nag-aambag ang extension na ito ng mga sumusunod na setting:
 
 ## Known Issues
 
-Ang pagtukoy sa mga kilalang isyu ay makakatulong upang mabawasan ang paulit-ulit na mga tanong mula sa mga user tungkol sa iyong extension.
+Ang pagtukoy sa mga kilalang isyu ay makakatulong upang mabawasan ang mga paulit-ulit na tanong mula sa mga gumagamit tungkol sa iyong extension.
 
 ## Release Notes
 
-Pinahahalagahan ng mga user ang mga release notes kapag ina-update mo ang iyong extension.
+Pinahahalagahan ng mga gumagamit ang mga release notes kapag ina-update mo ang iyong extension.
 
 ### 1.0.0
 
-Unang paglabas...
+Unang release ...
 
 ### 1.0.1
 
@@ -60,9 +60,9 @@ Nagdagdag ng mga tampok na X, Y, at Z.
 
 ## Following extension guidelines
 
-Siguraduhing nabasa mo ang extension guidelines at sinusunod ang mga best practices sa paggawa ng extension.
+Tiyaking nabasa mo na ang mga extension guidelines at sinusunod ang mga best practice sa paggawa ng extension.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
@@ -74,10 +74,10 @@ Maaari mong gamitin ang Visual Studio Code para isulat ang iyong README. Narito 
 
 ## For more information
 
-* [Markdown support sa Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Markdown syntax reference](https://help.github.com/articles/markdown-basics/)
+* [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong salin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang orihinal na wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

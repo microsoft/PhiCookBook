@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T12:54:22+00:00",
+  "translation_date": "2025-07-16T21:29:08+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "pl"
 }
 -->
-# Wnioskowanie wieloplatformowe z użyciem Rust
+# Wnioskowanie wieloplatformowe z Rust
 
-Ten samouczek przeprowadzi nas przez proces wykonywania wnioskowania za pomocą Rust i [Candle ML framework](https://github.com/huggingface/candle) od HuggingFace. Korzystanie z Rust do wnioskowania oferuje kilka zalet, szczególnie w porównaniu z innymi językami programowania. Rust jest znany ze swojej wysokiej wydajności, porównywalnej z C i C++. To czyni go doskonałym wyborem do zadań wnioskowania, które mogą być obliczeniowo wymagające. W szczególności jest to możliwe dzięki zero-kosztowym abstrakcjom i efektywnemu zarządzaniu pamięcią, bez narzutu związanego z garbage collection. Wieloplatformowe możliwości Rust pozwalają na tworzenie kodu działającego na różnych systemach operacyjnych, w tym Windows, macOS i Linux, a także na systemach mobilnych, bez znaczących zmian w bazie kodu.
+Ten samouczek przeprowadzi nas przez proces wykonywania wnioskowania za pomocą Rust i [frameworka Candle ML](https://github.com/huggingface/candle) od HuggingFace. Użycie Rust do wnioskowania niesie ze sobą kilka zalet, szczególnie w porównaniu z innymi językami programowania. Rust jest znany z wysokiej wydajności, porównywalnej do C i C++. To czyni go doskonałym wyborem do zadań wnioskowania, które mogą być obliczeniowo wymagające. Szczególnie ważne są tutaj abstrakcje bezkosztowe oraz efektywne zarządzanie pamięcią, bez narzutu garbage collectora. Wieloplatformowość Rust pozwala na tworzenie kodu działającego na różnych systemach operacyjnych, w tym Windows, macOS i Linux, a także na systemach mobilnych, bez konieczności znaczących zmian w kodzie.
 
-Warunkiem koniecznym do śledzenia tego samouczka jest [zainstalowanie Rust](https://www.rust-lang.org/tools/install), co obejmuje kompilator Rust oraz Cargo, menedżera pakietów Rust.
+Warunkiem koniecznym do śledzenia tego samouczka jest [zainstalowanie Rust](https://www.rust-lang.org/tools/install), które obejmuje kompilator Rust oraz Cargo, menedżera pakietów Rust.
 
 ## Krok 1: Utwórz nowy projekt Rust
 
@@ -21,9 +21,9 @@ Aby utworzyć nowy projekt Rust, uruchom następujące polecenie w terminalu:
 cargo new phi-console-app
 ```
 
-To wygeneruje początkową strukturę projektu z plikiem `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+To wygeneruje początkową strukturę projektu z plikiem `Cargo.toml` oraz katalogiem `src` zawierającym plik `main.rs`.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml`:
+Następnie dodamy nasze zależności - mianowicie crate'y `candle`, `hf-hub` oraz `tokenizers` - do pliku `Cargo.toml`:
 
 ```toml
 [package]
@@ -41,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## Krok 2: Skonfiguruj podstawowe parametry
 
-W pliku main.rs ustawimy początkowe parametry dla naszego wnioskowania. Wszystkie będą na stałe zakodowane dla uproszczenia, ale możemy je modyfikować według potrzeb.
+W pliku main.rs ustawimy początkowe parametry dla naszego wnioskowania. Wszystkie będą na stałe wpisane dla uproszczenia, ale możemy je modyfikować według potrzeb.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -57,12 +57,12 @@ let device = Device::Cpu;
 
 - **temperature**: Kontroluje losowość procesu próbkowania.
 - **sample_len**: Określa maksymalną długość generowanego tekstu.
-- **top_p**: Używane do próbkowania jądrowego, ogranicza liczbę tokenów branych pod uwagę na każdym kroku.
+- **top_p**: Używany w próbkowaniu jądrowym, ogranicza liczbę tokenów branych pod uwagę na każdym kroku.
 - **repeat_last_n**: Kontroluje liczbę tokenów branych pod uwagę przy nakładaniu kary, aby zapobiec powtarzającym się sekwencjom.
-- **repeat_penalty**: Wartość kary za powtarzające się tokeny.
+- **repeat_penalty**: Wartość kary mająca zniechęcić do powtarzania tokenów.
 - **seed**: Ziarno losowe (możemy użyć stałej wartości dla lepszej powtarzalności).
-- **prompt**: Początkowy tekst wywołujący generowanie. Zauważ, że prosimy model o stworzenie haiku o hokeju na lodzie, a tekst jest opakowany specjalnymi tokenami, które wskazują części rozmowy użytkownika i asystenta. Model uzupełni prompt haiku.
-- **device**: W tym przykładzie używamy CPU do obliczeń. Candle wspiera również uruchamianie na GPU z CUDA i Metal.
+- **prompt**: Początkowy tekst zachęty do rozpoczęcia generowania. Zauważ, że prosimy model o wygenerowanie haiku o hokeju na lodzie, a tekst otaczamy specjalnymi tokenami, które wskazują części rozmowy użytkownika i asystenta. Model uzupełni prompt haiku.
+- **device**: W tym przykładzie używamy CPU do obliczeń. Candle obsługuje także uruchamianie na GPU z CUDA i Metal.
 
 ## Krok 3: Pobierz/Przygotuj model i tokenizer
 
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Używamy pliku `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` do tokenizacji naszego tekstu wejściowego. Po pobraniu model jest zapisywany w pamięci podręcznej, więc pierwsze uruchomienie będzie wolniejsze (ze względu na pobieranie 2.4GB modelu), ale kolejne uruchomienia będą szybsze.
+Używamy API `hf_hub` do pobrania plików modelu i tokenizera z repozytorium modeli Hugging Face. Plik `gguf` zawiera skwantowane wagi modelu, natomiast plik `tokenizer.json` służy do tokenizacji naszego tekstu wejściowego. Po pobraniu model jest buforowany, więc pierwsze uruchomienie będzie wolniejsze (ponieważ pobiera 2,4 GB modelu), ale kolejne będą szybsze.
 
 ## Krok 4: Załaduj model
 
@@ -92,7 +92,7 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Ładujemy skwantowane wagi modelu do pamięci i inicjalizujemy model Phi-3. Ten krok polega na odczytaniu wag modelu z pliku `gguf` i przygotowaniu modelu do wnioskowania na wskazanym urządzeniu (w tym przypadku CPU).
+Ładujemy skwantowane wagi modelu do pamięci i inicjalizujemy model Phi-3. Ten krok polega na odczytaniu wag modelu z pliku `gguf` i przygotowaniu modelu do wnioskowania na określonym urządzeniu (w tym przypadku CPU).
 
 ## Krok 5: Przetwórz prompt i przygotuj do wnioskowania
 
@@ -120,9 +120,9 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-W tym kroku tokenizujemy tekst wejściowy i przygotowujemy go do wnioskowania, konwertując na sekwencję identyfikatorów tokenów. Inicjalizujemy też wartości `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`. Każdy token jest konwertowany na tensor i przekazywany przez model, aby uzyskać logits.
+W tym kroku tokenizujemy tekst wejściowy i przygotowujemy go do wnioskowania, konwertując na sekwencję identyfikatorów tokenów. Inicjalizujemy także `LogitsProcessor`, który obsługuje proces próbkowania (rozkład prawdopodobieństwa na słowniku) na podstawie podanych wartości `temperature` i `top_p`. Każdy token jest konwertowany na tensor i przekazywany przez model, aby uzyskać logity.
 
-Pętla przetwarza każdy token w prompt, aktualizując procesor logits i przygotowując się do generowania kolejnego tokena.
+Pętla przetwarza każdy token w prompt, aktualizując procesor logitów i przygotowując się do generowania kolejnego tokena.
 
 ## Krok 6: Wnioskowanie
 
@@ -160,10 +160,10 @@ for index in 0..to_sample {
 }
 ```
 
-W pętli wnioskowania generujemy tokeny jeden po drugim, aż osiągniemy żądaną długość próbki lub napotkamy token końca sekwencji. Następny token jest konwertowany na tensor i przekazywany przez model, a logits są przetwarzane, aby zastosować kary i próbkowanie. Następnie kolejny token jest próbkowany, dekodowany i dołączany do sekwencji.
-Aby uniknąć powtarzającego się tekstu, stosowana jest kara za powtarzające się tokeny na podstawie parametrów `repeat_last_n` and `repeat_penalty`.
+W pętli wnioskowania generujemy tokeny jeden po drugim, aż osiągniemy żądaną długość próbki lub napotkamy token końca sekwencji. Następny token jest konwertowany na tensor i przekazywany przez model, a logity są przetwarzane w celu nałożenia kar i próbkowania. Następnie token jest próbkowany, dekodowany i dodawany do sekwencji.
+Aby uniknąć powtarzającego się tekstu, nakładana jest kara na powtarzające się tokeny na podstawie parametrów `repeat_last_n` i `repeat_penalty`.
 
-Na końcu generowany tekst jest wypisywany na bieżąco, zapewniając strumieniowe wyjście w czasie rzeczywistym.
+Na koniec generowany tekst jest drukowany na bieżąco, zapewniając strumieniowy, rzeczywisty output.
 
 ## Krok 7: Uruchom aplikację
 
@@ -191,9 +191,9 @@ Swish of sticks now alive.
 
 ## Podsumowanie
 
-Postępując według tych kroków, możemy wykonać generowanie tekstu za pomocą modelu Phi-3 w Rust i Candle w mniej niż 100 linijkach kodu. Kod obsługuje ładowanie modelu, tokenizację i wnioskowanie, wykorzystując tensory i przetwarzanie logits, aby generować spójny tekst na podstawie podanego promptu.
+Postępując według tych kroków, możemy wykonać generowanie tekstu za pomocą modelu Phi-3 w Rust i Candle w mniej niż 100 linijkach kodu. Kod obsługuje ładowanie modelu, tokenizację i wnioskowanie, wykorzystując tensory i przetwarzanie logitów do generowania spójnego tekstu na podstawie podanego promptu.
 
-Ta aplikacja konsolowa może działać na Windows, Linux i Mac OS. Dzięki przenośności Rust, kod może być również dostosowany do biblioteki działającej wewnątrz aplikacji mobilnych (w końcu nie możemy tam uruchamiać aplikacji konsolowych).
+Ta aplikacja konsolowa może działać na Windows, Linux i Mac OS. Dzięki przenośności Rust, kod można również zaadaptować do biblioteki działającej w aplikacjach mobilnych (w końcu nie możemy tam uruchamiać aplikacji konsolowych).
 
 ## Dodatek: pełny kod
 
@@ -321,4 +321,4 @@ rustflags = [
 > Możesz odwiedzić oficjalne repozytorium [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) po więcej przykładów użycia modelu Phi-3 z Rust i Candle, w tym alternatywne podejścia do wnioskowania.
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uważany za autorytatywne źródło. W przypadku informacji o krytycznym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

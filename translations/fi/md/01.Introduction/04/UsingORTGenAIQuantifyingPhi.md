@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:36:47+00:00",
+  "translation_date": "2025-07-16T22:22:20+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "fi"
 }
@@ -13,7 +13,7 @@ Model Builder tukee nyt ONNX-mallien kvantisointia Phi-3.5 Instruct- ja Phi-3.5-
 
 ### **Phi-3.5-Instruct**
 
-**CPU-kiihdytetty INT4-kvantisointimuunnos**
+**CPU-kiihdytetty kvantisoitu INT4-muunnos**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**CUDA-kiihdytetty INT4-kvantisointimuunnos**
+**CUDA-kiihdytetty kvantisoitu INT4-muunnos**
 
 ```bash
 
@@ -52,7 +52,7 @@ cd models
 2. Lataa microsoft/Phi-3.5-vision-instruct models-kansioon  
 [https://huggingface.co/microsoft/Phi-3.5-vision-instruct](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
 
-3. Lataa nämä tiedostot omaan Phi-3.5-vision-instruct -kansioosi
+3. Lataa nämä tiedostot Phi-3.5-vision-instruct -kansioosi
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json)
 
@@ -65,7 +65,7 @@ cd models
 
 5. Siirry terminaaliin
 
-    Muunna ONNX-malli tukemaan FP32:ta
+    Muunna ONNX-tuki FP32-muotoon
 
 ```bash
 
@@ -73,15 +73,15 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ```
 
-### **Huomioita:**
+### **Huomio:**
 
-1. Model Builder tukee tällä hetkellä Phi-3.5-Instruct- ja Phi-3.5-Vision-mallien muunnosta, mutta ei Phi-3.5-MoE:ta.
+1. Model Builder tukee tällä hetkellä Phi-3.5-Instruct- ja Phi-3.5-Vision-mallien muunnosta, mutta ei Phi-3.5-MoE-mallia.
 
-2. ONNX:n kvantisoitua mallia voi käyttää Generative AI extensions for onnxruntime SDK:n kautta.
+2. ONNX:n kvantisoitua mallia voi käyttää Generative AI extensions for onnxruntime -SDK:n kautta.
 
-3. Otetaan vastuullinen AI huomioon – mallin kvantisoinnin jälkeen suositellaan kattavampia tulostestejä.
+3. Vastuullisemman tekoälyn vuoksi mallin kvantisoinnin jälkeen suositellaan tehokkaampaa tulosten testausta.
 
-4. Kvantisoimalla CPU:n INT4-mallin voimme ottaa sen käyttöön reunalaitteissa, joissa on paremmat sovelluskohteet. Tämän vuoksi olemme saattaneet Phi-3.5-Instructin INT4-tasolle.
+4. Kvantisoimalla CPU INT4 -mallin voimme ottaa sen käyttöön reunalaitteissa, joissa on paremmat sovellusmahdollisuudet, joten Phi-3.5-Instruct on saatu valmiiksi INT4-tasolla.
 
 ## **Resurssit**
 
@@ -90,4 +90,4 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 2. Generative AI extensions for onnxruntime GitHub-repositorio: [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tästä käännöksestä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

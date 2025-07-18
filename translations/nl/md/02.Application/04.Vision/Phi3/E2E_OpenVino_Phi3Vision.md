@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-05-09T20:01:05+00:00",
+  "translation_date": "2025-07-17T05:04:18+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
   "language_code": "nl"
 }
@@ -16,29 +16,29 @@ Hier is een stapsgewijze uitleg:
 1. **Imports en Setup**:
    - De benodigde libraries en modules worden geïmporteerd, waaronder `requests`, `PIL` voor beeldverwerking, en `transformers` voor het afhandelen van het model en de verwerking.
 
-2. **Afbeelding Laden en Tonen**:
+2. **Afbeelding Laden en Weergeven**:
    - Een afbeeldingsbestand (`demo.png`) wordt geopend met de `PIL`-bibliotheek en weergegeven.
 
 3. **De Prompt Definiëren**:
    - Er wordt een bericht gemaakt dat de afbeelding bevat en een verzoek om Python-code te genereren die de afbeelding verwerkt en opslaat met `plt` (matplotlib).
 
 4. **De Processor Laden**:
-   - De `AutoProcessor` wordt geladen vanuit een pretrained model dat is opgegeven in de `out_dir`-map. Deze processor verwerkt de tekst- en afbeeldingsinputs.
+   - De `AutoProcessor` wordt geladen vanuit een pretrained model dat is gespecificeerd door de `out_dir` map. Deze processor verwerkt de tekst- en afbeeldingsinput.
 
 5. **De Prompt Maken**:
-   - De `apply_chat_template`-methode wordt gebruikt om het bericht te formatteren tot een prompt die geschikt is voor het model.
+   - De `apply_chat_template` methode wordt gebruikt om het bericht te formatteren tot een prompt die geschikt is voor het model.
 
 6. **De Inputs Verwerken**:
    - De prompt en afbeelding worden omgezet in tensors die het model kan begrijpen.
 
 7. **Generatie-argumenten Instellen**:
-   - Argumenten voor het generatieproces van het model worden gedefinieerd, waaronder het maximale aantal nieuwe tokens om te genereren en of de output gesampled moet worden.
+   - Argumenten voor het generatieproces van het model worden gedefinieerd, waaronder het maximale aantal nieuwe tokens dat gegenereerd mag worden en of de output gesampled moet worden.
 
 8. **De Code Genereren**:
    - Het model genereert de Python-code op basis van de inputs en generatie-argumenten. De `TextStreamer` wordt gebruikt om de output te verwerken, waarbij de prompt en speciale tokens worden overgeslagen.
 
 9. **Output**:
-   - De gegenereerde code wordt afgedrukt, deze zou Python-code moeten bevatten om de afbeelding te verwerken en op te slaan zoals gespecificeerd in de prompt.
+   - De gegenereerde code wordt afgedrukt, die Python-code zou moeten bevatten om de afbeelding te verwerken en op te slaan zoals gespecificeerd in de prompt.
 
 Deze demo laat zien hoe je een pretrained model kunt inzetten met OpenVino om dynamisch code te genereren op basis van gebruikersinput en afbeeldingen.
 

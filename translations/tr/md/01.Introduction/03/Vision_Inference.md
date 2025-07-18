@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:13:51+00:00",
+  "translation_date": "2025-07-16T21:38:03+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "tr"
 }
 -->
-# **Yerel Phi-3-Vision Çıkarımı**
+# **Yerel Ortamda Phi-3-Vision ile Çıkarım**
 
-Phi-3-vision-128k-instruct, Phi-3'ün sadece dili anlamasını değil, aynı zamanda dünyayı görsel olarak da algılamasını sağlar. Phi-3-vision-128k-instruct sayesinde OCR, tablo analizi, nesne tanıma, resim betimleme gibi farklı görsel problemleri çözebiliriz. Daha önce çok fazla veri eğitimi gerektiren görevleri kolayca tamamlayabiliriz. Aşağıda Phi-3-vision-128k-instruct tarafından referans verilen ilgili teknikler ve uygulama senaryoları bulunmaktadır.
+Phi-3-vision-128k-instruct, Phi-3'ün sadece dili anlamasını değil, aynı zamanda dünyayı görsel olarak da algılamasını sağlar. Phi-3-vision-128k-instruct sayesinde OCR, tablo analizi, nesne tanıma, resim betimleme gibi farklı görsel problemleri çözebiliriz. Önceden çok fazla veri eğitimi gerektiren görevleri kolayca tamamlayabiliriz. Aşağıda Phi-3-vision-128k-instruct tarafından kullanılan ilgili teknikler ve uygulama senaryoları yer almaktadır.
 
 ## **0. Hazırlık**
 
@@ -27,7 +27,7 @@ pip install torch -U
 pip install flash-attn --no-build-isolation
 ```
 
-Yeni bir Notebook oluşturun. Örnekleri tamamlamak için aşağıdaki içeriği önce oluşturmanız önerilir.
+Yeni bir Notebook oluşturun. Örnekleri tamamlamak için öncelikle aşağıdaki içeriği oluşturmanız önerilir.
 
 ```python
 from PIL import Image
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Phi-3-Vision ile Görüntü Analizi**
 
-Yapay zekanın resimlerimizin içeriğini analiz edip ilgili açıklamalar yapmasını istiyoruz
+Yapay zekanın resimlerimizin içeriğini analiz edip ilgili açıklamaları yapabilmesini istiyoruz
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. Phi-3-Vision ile OCR**
 
-Görüntüyü analiz etmenin yanı sıra, görüntüden bilgi de çıkarabiliriz. Bu, önceden karmaşık kodlar yazmamız gereken OCR işlemidir.
+Görüntüyü analiz etmenin yanı sıra, görüntüden bilgi de çıkarabiliriz. Bu, daha önce karmaşık kodlar yazmamız gereken OCR sürecidir.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı nedeniyle oluşabilecek herhangi bir yanlış anlama veya yorum hatasından sorumlu tutulamayız.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

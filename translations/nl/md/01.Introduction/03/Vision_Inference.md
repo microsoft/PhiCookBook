@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:15:43+00:00",
+  "translation_date": "2025-07-16T21:38:52+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "nl"
 }
 -->
-# **Inferentie Phi-3-Vision lokaal**
+# **Inference Phi-3-Vision lokaal**
 
-Phi-3-vision-128k-instruct stelt Phi-3 in staat om niet alleen taal te begrijpen, maar ook de wereld visueel waar te nemen. Met Phi-3-vision-128k-instruct kunnen we verschillende visuele problemen oplossen, zoals OCR, tabelanalyse, objectherkenning, het beschrijven van afbeeldingen, enzovoort. We kunnen eenvoudig taken voltooien die voorheen veel data en training vereisten. Hieronder staan gerelateerde technieken en toepassingsscenario’s die door Phi-3-vision-128k-instruct worden genoemd.
+Phi-3-vision-128k-instruct stelt Phi-3 in staat om niet alleen taal te begrijpen, maar ook de wereld visueel waar te nemen. Met Phi-3-vision-128k-instruct kunnen we verschillende visuele problemen oplossen, zoals OCR, tabelanalyse, objectherkenning, het beschrijven van afbeeldingen, enzovoort. We kunnen eenvoudig taken voltooien die voorheen veel data training vereisten. Hieronder staan gerelateerde technieken en toepassingsscenario’s die door Phi-3-vision-128k-instruct worden genoemd.
 
 ## **0. Voorbereiding**
 
@@ -27,7 +27,7 @@ Het wordt aanbevolen om ***CUDA 11.6+*** te gebruiken en flatten te installeren
 pip install flash-attn --no-build-isolation
 ```
 
-Maak een nieuw Notebook aan. Om de voorbeelden te voltooien, is het aan te raden eerst de volgende inhoud te maken.
+Maak een nieuw Notebook aan. Om de voorbeelden te voltooien, is het aan te raden eerst de volgende inhoud te creëren.
 
 ```python
 from PIL import Image
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor kritieke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

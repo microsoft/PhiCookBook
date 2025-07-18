@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-09T18:45:25+00:00",
+  "translation_date": "2025-07-17T02:45:43+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "ms"
 }
 -->
-# **הנחיות לשימוש ב-OnnxRuntime GenAI עם GPU ב-Windows**
+# **Garis Panduan untuk OnnxRuntime GenAI Windows GPU**
 
-הנחיות אלו מספקות שלבים להתקנה ושימוש ב-ONNX Runtime (ORT) עם GPUs ב-Windows. הן מיועדות לעזור לכם לנצל את ההאצה של ה-GPU עבור המודלים שלכם, לשפר ביצועים ויעילות.
+Garis panduan ini menyediakan langkah-langkah untuk memasang dan menggunakan ONNX Runtime (ORT) dengan GPU di Windows. Ia direka untuk membantu anda memanfaatkan pecutan GPU bagi model anda, meningkatkan prestasi dan kecekapan.
 
-המסמך מכיל הנחיות על:
+Dokumen ini memberikan panduan mengenai:
 
-- הגדרת סביבה: הוראות להתקנת התלויות הנדרשות כמו CUDA, cuDNN ו-ONNX Runtime.
-- קונפיגורציה: כיצד להגדיר את הסביבה ואת ONNX Runtime כדי להשתמש במשאבי ה-GPU בצורה מיטבית.
-- טיפים לאופטימיזציה: עצות לכוונון הגדרות ה-GPU שלכם להשגת ביצועים מיטביים.
+- Persediaan Persekitaran: Arahan untuk memasang kebergantungan yang diperlukan seperti CUDA, cuDNN, dan ONNX Runtime.
+- Konfigurasi: Cara mengkonfigurasi persekitaran dan ONNX Runtime untuk menggunakan sumber GPU dengan berkesan.
+- Petua Pengoptimuman: Nasihat tentang cara menyesuaikan tetapan GPU anda untuk prestasi yang optimum.
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** מומלץ להשתמש ב-[miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) כסביבת Python שלכם
+   ***Nota*** Disarankan menggunakan [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) sebagai persekitaran Python anda
 
    ```bash
 
@@ -29,9 +29,9 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   ***Reminder*** אם התקנתם בעבר ספריות ONNX של Python, יש להסירן
+   ***Peringatan*** Jika anda telah memasang mana-mana perpustakaan ONNX untuk Python, sila nyahpasangnya
 
-### **2. התקנת CMake עם winget**
+### **2. Pasang CMake dengan winget**
 
    ```bash
 
@@ -39,33 +39,33 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-### **3. התקנת Visual Studio 2022 - Desktop Development with C++**
+### **3. Pasang Visual Studio 2022 - Pembangunan Desktop dengan C++**
 
-   ***Note*** אם אינכם מעוניינים לקמפל, ניתן לדלג על שלב זה
+   ***Nota*** Jika anda tidak mahu menyusun, anda boleh langkau langkah ini
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.ms.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.ms.png)
 
-### **4. התקנת דרייבר NVIDIA**
+### **4. Pasang Pemacu NVIDIA**
 
-1. **דרייבר NVIDIA GPU**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
+1. **Pemacu GPU NVIDIA**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
 2. **NVIDIA CUDA 12.4** [https://developer.nvidia.com/cuda-12-4-0-download-archive](https://developer.nvidia.com/cuda-12-4-0-download-archive)
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** יש להשתמש בהגדרות ברירת המחדל במהלך ההתקנה
+***Peringatan*** Sila gunakan tetapan lalai semasa proses pemasangan
 
-### **5. הגדרת סביבה ל-NVIDIA**
+### **5. Tetapkan Persekitaran NVIDIA**
 
-העתיקו את קבצי NVIDIA CUDNN 9.4 מתיקיות lib, bin, include אל תיקיות המקבילות ב-NVIDIA CUDA 12.4
+Salin fail lib, bin, include NVIDIA CUDNN 9.4 ke dalam lib, bin, include NVIDIA CUDA 12.4
 
-- העתקת קבצים מ-*'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* ל-*'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
+- salin fail dari *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* ke  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
-- העתקת קבצים מ-*'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* ל-*'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
+- salin fail dari *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* ke  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
 
-- העתקת קבצים מ-*'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* ל-*'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+- salin fail dari *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* ke  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
-### **6. הורדת Phi-3.5-mini-instruct-onnx**
+### **6. Muat Turun Phi-3.5-mini-instruct-onnx**
 
    ```bash
 
@@ -79,17 +79,17 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-### **7. הרצת InferencePhi35Instruct.ipynb**
+### **7. Jalankan InferencePhi35Instruct.ipynb**
 
-   פתחו את [המחברת](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) והפעילו אותה
+   Buka [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) dan jalankan
 
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.ms.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.ms.png)
 
-### **8. קימפול ORT GenAI GPU**
+### **8. Kompilasi ORT GenAI GPU**
 
-   ***Note*** 
+   ***Nota*** 
    
-   1. יש להסיר תחילה את כל ההתקנות של onnx, onnxruntime ו-onnxruntime-genai
+   1. Sila nyahpasang semua berkaitan onnx, onnxruntime dan onnxruntime-genai terlebih dahulu
 
    ```bash
 
@@ -97,7 +97,7 @@ CO_OP_TRANSLATOR_METADATA:
    
    ```
 
-   לאחר מכן יש להסיר את כל ספריות onnxruntime, לדוגמה: 
+   Kemudian nyahpasang semua perpustakaan onnxruntime seperti berikut
 
    ```bash
 
@@ -109,13 +109,13 @@ CO_OP_TRANSLATOR_METADATA:
    
    ```
 
-   2. בדיקת תמיכת הרחבות ב-Visual Studio 
+   2. Semak sokongan Sambungan Visual Studio
 
-   בדקו בתיקייה C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras אם קיימת התיקייה visual_studio_integration בנתיב C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration.
+   Semak di C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras untuk memastikan folder C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration wujud. 
    
-   אם לא נמצאה, בדקו תיקיות אחרות של Cuda toolkit והעתיקו את התיקייה visual_studio_integration לתיקייה C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   Jika tidak dijumpai, periksa folder pemacu toolkit Cuda lain dan salin folder visual_studio_integration beserta kandungannya ke C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
-   - אם אינכם רוצים לקמפל, ניתן לדלג על שלב זה
+   - Jika anda tidak mahu menyusun, anda boleh langkau langkah ini
 
    ```bash
 
@@ -123,15 +123,15 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   - הורידו את [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
+   - Muat turun [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - חלצו את onnxruntime-win-x64-gpu-1.19.2.zip, שנהו את שמו ל-**ort**, והעתיקו את תיקיית ort אל onnxruntime-genai
+   - Nyahzip onnxruntime-win-x64-gpu-1.19.2.zip, dan namakan semula kepada **ort**, salin folder ort ke onnxruntime-genai
 
-   - השתמשו ב-Windows Terminal, פתחו את Developer Command Prompt for VS 2022 ועברו לתיקיית onnxruntime-genai
+   - Gunakan Windows Terminal, buka Developer Command Prompt untuk VS 2022 dan pergi ke onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.ms.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.ms.png)
 
-   - קמפל את זה עם סביבת ה-Python שלך
+   - Kompilasi menggunakan persekitaran python anda
 
    ```bash
 
@@ -147,4 +147,4 @@ CO_OP_TRANSLATOR_METADATA:
    ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

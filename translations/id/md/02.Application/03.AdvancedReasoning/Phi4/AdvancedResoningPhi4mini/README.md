@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:53:40+00:00",
+  "translation_date": "2025-07-17T04:50:41+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "id"
 }
 -->
-## **Menggunakan Phi-4-mini-reasoning(3.8b) atau Phi-4-reasoning(14b) sebagai Ahli Penalaran**
+## **Menggunakan Phi-4-mini-reasoning(3.8b) atau Phi-4-reasoning(14b) sebagai Pakar Penalaran**
 
 Mari kita lihat kemampuan penalarannya yang kuat melalui Phi-4-mini-reasoning atau Phi-4-mini-reasoning.
 
@@ -50,4 +50,4 @@ print(outputs[0])
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:53:23+00:00",
+  "translation_date": "2025-07-17T04:50:22+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "fi"
 }
 -->
-## **Phi-4-mini-reasoning(3.8b) tai Phi-4-reasoning(14b) käyttäminen päättelyasiantuntijana**
+## **Phi-4-mini-reasoning(3.8b) tai Phi-4-reasoning(14b) käytön hyödyntäminen päättelyasiantuntijana**
 
-Katsotaanpa sen vahvaa päättelykykyä Phi-4-mini-reasoningillä tai Phi-4-mini-reasoningillä.
+Katsotaanpa sen vahvaa päättelykykyä Phi-4-mini-reasoningin tai Phi-4-reasoningin avulla.
 
 
 ```python
@@ -50,4 +50,4 @@ print(outputs[0])
 ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja omalla kielellään on pidettävä virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

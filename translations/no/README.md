@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:29:07+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T15:17:26+00:00",
   "source_file": "README.md",
   "language_code": "no"
 }
@@ -34,11 +34,11 @@ Følg disse stegene for å komme i gang med disse ressursene:
 2. **Klon repositoriet**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Bli med i Microsoft AI Discord Community og møt eksperter og andre utviklere**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.no.png)
 
-## 🌐 Flerspråklig støtte
+### 🌐 Flerspråklig støtte
 
-### Støttes via GitHub Action (Automatisert og alltid oppdatert)
+#### Støttes via GitHub Action (Automatisert og alltid oppdatert)
 
 [Fransk](../fr/README.md) | [Spansk](../es/README.md) | [Tysk](../de/README.md) | [Russisk](../ru/README.md) | [Arabisk](../ar/README.md) | [Persisk (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Kinesisk (forenklet)](../zh/README.md) | [Kinesisk (tradisjonell, Macau)](../mo/README.md) | [Kinesisk (tradisjonell, Hong Kong)](../hk/README.md) | [Kinesisk (tradisjonell, Taiwan)](../tw/README.md) | [Japansk](../ja/README.md) | [Koreansk](../ko/README.md) | [Hindi](../hi/README.md)  
 [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugisisk (Portugal)](../pt/README.md) | [Portugisisk (Brasil)](../br/README.md) | [Italiensk](../it/README.md) | [Polsk](../pl/README.md) | [Tyrkisk](../tr/README.md) | [Gresk](../el/README.md) | [Thai](../th/README.md) | [Svensk](../sv/README.md) | [Dansk](../da/README.md) | [Norsk](./README.md) | [Finsk](../fi/README.md) | [Nederlandsk](../nl/README.md) | [Hebraisk](../he/README.md) | [Vietnamesisk](../vi/README.md) | [Indonesisk](../id/README.md) | [Malayisk](../ms/README.md) | [Tagalog (Filippinsk)](../tl/README.md) | [Swahili](../sw/README.md) | [Ungarsk](../hu/README.md) | [Tsjekkisk](../cs/README.md) | [Slovakisk](../sk/README.md) | [Rumensk](../ro/README.md) | [Bulgarsk](../bg/README.md) | [Serbisk (kyrillisk)](../sr/README.md) | [Kroatisk](../hr/README.md) | [Slovensk](../sl/README.md)
@@ -48,17 +48,17 @@ Følg disse stegene for å komme i gang med disse ressursene:
 - Introduksjon  
   - [Velkommen til Phi-familien](./md/01.Introduction/01/01.PhiFamily.md)  
   - [Slik setter du opp miljøet ditt](./md/01.Introduction/01/01.EnvironmentSetup.md)  
-  - [Forstå viktige teknologier](./md/01.Introduction/01/01.Understandingtech.md)  
+  - [Forståelse av nøkkelteknologier](./md/01.Introduction/01/01.Understandingtech.md)  
   - [AI-sikkerhet for Phi-modeller](./md/01.Introduction/01/01.AISafety.md)  
   - [Phi maskinvarestøtte](./md/01.Introduction/01/01.Hardwaresupport.md)  
   - [Phi-modeller og tilgjengelighet på tvers av plattformer](./md/01.Introduction/01/01.Edgeandcloud.md)  
   - [Bruke Guidance-ai og Phi](./md/01.Introduction/01/01.Guidance.md)  
-  - [GitHub Marketplace Models](https://github.com/marketplace/models)  
+  - [GitHub Marketplace-modeller](https://github.com/marketplace/models)  
   - [Azure AI Model Catalog](https://ai.azure.com)
 
 - Inference Phi i ulike miljøer  
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)  
-    -  [GitHub Models](./md/01.Introduction/02/02.GitHubModel.md)  
+    -  [GitHub-modeller](./md/01.Introduction/02/02.GitHubModel.md)  
     -  [Azure AI Foundry Model Catalog](./md/01.Introduction/02/03.AzureAIFoundry.md)  
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)  
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)  
@@ -69,10 +69,10 @@ Følg disse stegene for å komme i gang med disse ressursene:
     - [Inference Phi på iOS](./md/01.Introduction/03/iOS_Inference.md)  
     - [Inference Phi på Android](./md/01.Introduction/03/Android_Inference.md)  
     - [Inference Phi på Jetson](./md/01.Introduction/03/Jetson_Inference.md)  
-    - [Inference Phi på AI PC](./md/01.Introduction/03/AIPC_Inference.md)  
+    - [Inference Phi på AI-PC](./md/01.Introduction/03/AIPC_Inference.md)  
     - [Inference Phi med Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)  
     - [Inference Phi på lokal server](./md/01.Introduction/03/Local_Server_Inference.md)  
-    - [Inference Phi på ekstern server med AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
+    - [Inference Phi på fjernserver med AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
     - [Inference Phi med Rust](./md/01.Introduction/03/Rust_Inference.md)  
     - [Inference Phi–Vision lokalt](./md/01.Introduction/03/Vision_Inference.md)  
     - [Inference Phi med Kaito AKS, Azure Containers (offisiell støtte)](./md/01.Introduction/03/Kaito_Inference.md)  
@@ -90,7 +90,7 @@ Følg disse stegene for å komme i gang med disse ressursene:
 - RAG med Azure AI Search  
     - [Hvordan bruke Phi-4-mini og Phi-4-multimodal (RAG) med Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
-- Eksempler på Phi-applikasjonsutvikling  
+- Eksempler på utvikling av Phi-applikasjoner  
   - Tekst- og chatapplikasjoner  
     - Phi-4 eksempler 🆕  
       - [📓] [Chat med Phi-4-mini ONNX-modell](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)  
@@ -101,9 +101,9 @@ Følg disse stegene for å komme i gang med disse ressursene:
       - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
       - [Multi-modell - Interaktiv Phi-3-mini og OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
       - [MLFlow - Lage en wrapper og bruke Phi-3 med MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
-      - [Modelloptimalisering - Hvordan optimalisere Phi-3-minimodell for ONNX Runtime Web med Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
+      - [Modelloptimalisering - Hvordan optimalisere Phi-3-minimodellen for ONNX Runtime Web med Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
       - [WinUI3-app med Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)  
-      - [WinUI3 Multi Model AI-drevet notatapp eksempel](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+      - [WinUI3 Multi Model AI-drevet notatapp-eksempel](https://github.com/microsoft/ai-powered-notes-winui3-sample)
 - [Finjuster og integrer tilpassede Phi-3-modeller med Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
 - [Finjuster og integrer tilpassede Phi-3-modeller med Prompt flow i Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
 - [Evaluer den finjusterte Phi-3 / Phi-3.5-modellen i Azure AI Foundry med fokus på Microsofts prinsipper for ansvarlig AI](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
@@ -123,11 +123,11 @@ Følg disse stegene for å komme i gang med disse ressursene:
 
 - Avanserte resonnementseksempler  
   - Phi-4-eksempler 🆕  
-    - [📓] [Phi-4-mini-resonnement eller Phi-4-resonnementseksempler](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)  
-    - [📓] [Finjustering av Phi-4-mini-resonnement med Microsoft Olive](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)  
-    - [📓] [Finjustering av Phi-4-mini-resonnement med Apple MLX](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)  
-    - [📓] [Phi-4-mini-resonnement med GitHub-modeller](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)  
-    - [📓] [Phi-4-mini-resonnement med Azure AI Foundry-modeller](../../md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)  
+    - [📓] [Phi-4-mini-reasoning eller Phi-4-reasoning-eksempler](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)  
+    - [📓] [Finjustering av Phi-4-mini-reasoning med Microsoft Olive](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)  
+    - [📓] [Finjustering av Phi-4-mini-reasoning med Apple MLX](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)  
+    - [📓] [Phi-4-mini-reasoning med GitHub-modeller](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)  
+    - [📓] [Phi-4-mini-reasoning med Azure AI Foundry-modeller](../../md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)  
 - Demoer  
     - [Phi-4-mini-demoer hostet på Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)  
     - [Phi-4-multimodal-demoer hostet på Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)  
@@ -137,7 +137,7 @@ Følg disse stegene for å komme i gang med disse ressursene:
   - Phi-3 / 3.5-eksempler  
     - [📓][Phi-3-vision-Bilde tekst til tekst](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
     - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)  
-    - [📓][Phi-3-vision CLIP-embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
+    - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
     - [DEMO: Phi-3 Resirkulering](https://github.com/jennifermarsman/PhiRecycling/)  
     - [Phi-3-vision - Visuell språkassistent - med Phi3-Vision og OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)  
     - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)  
@@ -158,15 +158,15 @@ Følg disse stegene for å komme i gang med disse ressursene:
 
 - MOE-eksempler  
   - Phi-3 / 3.5-eksempler  
-    - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) sosiale medier-eksempel](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
-    - [📓] [Bygging av en Retrieval-Augmented Generation (RAG) pipeline med NVIDIA NIM Phi-3 MOE, Azure AI Search og LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
+    - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) Sosiale medier-eksempel](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
+    - [📓] [Bygge en Retrieval-Augmented Generation (RAG) pipeline med NVIDIA NIM Phi-3 MOE, Azure AI Search og LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
 
 - Funksjonskall-eksempler  
   - Phi-4-eksempler 🆕  
-    - [📓] [Bruke Function Calling med Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
-    - [📓] [Bruke Function Calling for å lage multi-agenter med Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
-    - [📓] [Bruke Function Calling med Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
-    - [📓] [Bruke Function Calling med ONNX](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)  
+    - [📓] [Bruke funksjonskall med Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
+    - [📓] [Bruke funksjonskall for å lage multi-agenter med Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
+    - [📓] [Bruke funksjonskall med Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
+    - [📓] [Bruke funksjonskall med ONNX](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)  
 
 - Multimodal miksing-eksempler  
   - Phi-4-eksempler 🆕  
@@ -209,14 +209,14 @@ Følg disse stegene for å komme i gang med disse ressursene:
 
 ### Phi på Azure AI Foundry
 
-Du kan lære hvordan du bruker Microsoft Phi og hvordan du bygger ende-til-ende-løsninger på ulike maskinvareenheter. For å prøve Phi selv, start med å leke med modellene og tilpasse Phi til dine scenarier ved å bruke [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Du kan lære mer i Komme i gang med [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Du kan lære hvordan du bruker Microsoft Phi og hvordan du bygger ende-til-ende-løsninger på ulike maskinvareenheter. For å prøve Phi selv, start med å leke med modellene og tilpasse Phi til dine scenarier ved å bruke [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Du kan lære mer i Komme i gang med [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Playground**  
 Hver modell har en egen playground for å teste modellen [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi på GitHub-modeller
 
-Du kan lære hvordan du bruker Microsoft Phi og hvordan du bygger ende-til-ende-løsninger på ulike maskinvareenheter. For å prøve Phi selv, start med å leke med modellen og tilpasse Phi til dine scenarier ved å bruke [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Du kan lære mer i Komme i gang med [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
+Du kan lære hvordan du bruker Microsoft Phi og hvordan du bygger ende-til-ende-løsninger på ulike maskinvareenheter. For å prøve Phi selv, start med å leke med modellen og tilpasse Phi til dine scenarier ved å bruke [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Du kan lære mer i Komme i gang med [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
 
 **Playground**  
 Hver modell har en dedikert [playground for å teste modellen](/md/02.QuickStart/GitHubModel_QuickStart.md).
@@ -233,11 +233,11 @@ Du kan også finne modellen på [Hugging Face](https://huggingface.co/microsoft)
 Microsoft er forpliktet til å hjelpe kundene våre med å bruke AI-produktene våre på en ansvarlig måte, dele våre erfaringer og bygge tillitsbaserte partnerskap gjennom verktøy som Transparency Notes og Impact Assessments. Mange av disse ressursene finner du på [https://aka.ms/RAI](https://aka.ms/RAI).  
 Microsofts tilnærming til ansvarlig AI er forankret i våre AI-prinsipper om rettferdighet, pålitelighet og sikkerhet, personvern og sikkerhet, inkludering, åpenhet og ansvarlighet.
 
-Store språk-, bilde- og tale-modeller – som de som brukes i dette eksempelet – kan potensielt oppføre seg på måter som er urettferdige, upålitelige eller støtende, noe som kan føre til skade. Vennligst se [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) for informasjon om risikoer og begrensninger.
+Storskala modeller for naturlig språk, bilder og tale – som de som brukes i dette eksempelet – kan potensielt oppføre seg på måter som er urettferdige, upålitelige eller støtende, noe som kan føre til skade. Vennligst se [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) for informasjon om risikoer og begrensninger.
 
-Den anbefalte måten å redusere disse risikoene på er å inkludere et sikkerhetssystem i arkitekturen din som kan oppdage og forhindre skadelig atferd. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) tilbyr et uavhengig beskyttelseslag som kan oppdage skadelig innhold generert av brukere og AI i applikasjoner og tjenester. Azure AI Content Safety inkluderer tekst- og bilde-API-er som lar deg oppdage skadelig materiale. Innenfor Azure AI Foundry gir Content Safety-tjenesten deg mulighet til å se, utforske og prøve ut eksempel-kode for å oppdage skadelig innhold på tvers av ulike modaliteter. Følgende [quickstart-dokumentasjon](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) veileder deg i hvordan du sender forespørsler til tjenesten.
+Den anbefalte tilnærmingen for å redusere disse risikoene er å inkludere et sikkerhetssystem i arkitekturen din som kan oppdage og forhindre skadelig atferd. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) tilbyr et uavhengig beskyttelseslag som kan oppdage skadelig innhold generert av brukere og AI i applikasjoner og tjenester. Azure AI Content Safety inkluderer tekst- og bilde-APIer som lar deg oppdage skadelig materiale. Innen Azure AI Foundry gir Content Safety-tjenesten deg mulighet til å se, utforske og prøve ut eksempel-kode for å oppdage skadelig innhold på tvers av ulike modaliteter. Følgende [quickstart-dokumentasjon](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) veileder deg i hvordan du sender forespørsler til tjenesten.
 
-Et annet aspekt å ta hensyn til er den totale ytelsen til applikasjonen. Med multimodale og multimodell-applikasjoner mener vi at systemet skal fungere slik du og brukerne dine forventer, inkludert at det ikke genererer skadelige resultater. Det er viktig å vurdere ytelsen til hele applikasjonen ved hjelp av [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Du har også mulighet til å lage og evaluere med [egendefinerte evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
+Et annet aspekt å ta hensyn til er den totale ytelsen til applikasjonen. Med multimodale og multimodell-applikasjoner mener vi at systemet skal fungere slik du og brukerne dine forventer, inkludert at det ikke genererer skadelig innhold. Det er viktig å vurdere ytelsen til hele applikasjonen ved hjelp av [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Du har også mulighet til å lage og evaluere med [egendefinerte evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
 Du kan evaluere AI-applikasjonen din i utviklingsmiljøet ved hjelp av [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Med enten et testdatasett eller et mål, blir genereringene fra din generative AI-applikasjon kvantitativt målt med innebygde evaluators eller egendefinerte evaluators etter eget valg. For å komme i gang med Azure AI Evaluation SDK for å evaluere systemet ditt, kan du følge [quickstart-guiden](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Når du har kjørt en evaluering, kan du [visualisere resultatene i Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 

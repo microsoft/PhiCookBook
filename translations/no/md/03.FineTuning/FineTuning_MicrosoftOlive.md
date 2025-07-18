@@ -2,66 +2,66 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:52:26+00:00",
+  "translation_date": "2025-07-17T06:46:28+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "no"
 }
 -->
 # **Finjustering av Phi-3 med Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) er et brukervennlig, maskinvarebevisst verktøy for modelloptimalisering som samler ledende teknikker innen modellkomprimering, optimalisering og kompilering.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) er et brukervennlig verktøy for maskinvarebevisst modelloptimalisering som samler bransjeledende teknikker innen modellkomprimering, optimalisering og kompilering.
 
-Det er designet for å forenkle prosessen med å optimalisere maskinlæringsmodeller, slik at de utnytter spesifikke maskinvarearkitekturer mest mulig effektivt.
+Det er utviklet for å forenkle prosessen med å optimalisere maskinlæringsmodeller, slik at de utnytter spesifikke maskinvarearkitekturer på en mest mulig effektiv måte.
 
 Enten du jobber med skybaserte applikasjoner eller enheter på kanten, gjør Olive det enkelt og effektivt å optimalisere modellene dine.
 
-## Nøkkelfunksjoner:
-- Olive samler og automatiserer optimaliseringsteknikker for ønskede maskinvareplattformer.
-- Ingen enkelt optimaliseringsteknikk passer alle situasjoner, derfor tillater Olive utvidelser slik at bransjeeksperter kan legge til sine egne optimaliseringsinnovasjoner.
+## Viktige funksjoner:
+- Olive samler og automatiserer optimaliseringsteknikker for ønskede maskinvaremål.
+- Ingen enkelt optimaliseringsteknikk passer for alle situasjoner, derfor tillater Olive utvidelser slik at bransjeeksperter kan integrere sine egne optimaliseringsinnovasjoner.
 
-## Reduser utviklingsarbeid:
+## Reduser ingeniørarbeidet:
 - Utviklere må ofte lære og bruke flere maskinvareleverandørspesifikke verktøykjeder for å forberede og optimalisere trente modeller for distribusjon.
-- Olive forenkler denne prosessen ved å automatisere optimaliseringsteknikker for ønsket maskinvare.
+- Olive forenkler denne prosessen ved å automatisere optimaliseringsteknikkene for ønsket maskinvare.
 
-## Ferdig løsning for ende-til-ende optimalisering:
+## Klar-til-bruk ende-til-ende optimaliseringsløsning:
 
-Ved å sette sammen og justere integrerte teknikker tilbyr Olive en samlet løsning for ende-til-ende optimalisering.
-Den tar hensyn til begrensninger som nøyaktighet og ventetid under optimalisering av modeller.
+Ved å sette sammen og finjustere integrerte teknikker tilbyr Olive en samlet løsning for ende-til-ende optimalisering.
+Den tar hensyn til begrensninger som nøyaktighet og latenstid under optimaliseringen av modeller.
 
-## Bruke Microsoft Olive for finjustering
+## Bruke Microsoft Olive til finjustering
 
-Microsoft Olive er et svært brukervennlig, åpen kildekode-verktøy for modelloptimalisering som dekker både finjustering og referanse innen generativ kunstig intelligens. Det krever bare enkel konfigurasjon, kombinert med bruk av åpne små språkmodeller og tilhørende runtime-miljøer (AzureML / lokal GPU, CPU, DirectML), kan du fullføre finjustering eller referanse av modellen gjennom automatisk optimalisering, og finne den beste modellen for distribusjon i skyen eller på edge-enheter. Dette gjør det mulig for bedrifter å bygge egne bransjespesifikke modeller både lokalt og i skyen.
+Microsoft Olive er et svært brukervennlig åpen kildekode-verktøy for modelloptimalisering som dekker både finjustering og referanse innen generativ kunstig intelligens. Det krever kun enkel konfigurasjon, kombinert med bruk av åpne små språkmodeller og tilhørende kjøremiljøer (AzureML / lokal GPU, CPU, DirectML), slik at du kan fullføre finjustering eller referanse av modellen gjennom automatisk optimalisering, og finne den beste modellen for distribusjon i skyen eller på enheter på kanten. Dette gjør det mulig for bedrifter å bygge sine egne bransjespesifikke modeller både lokalt og i skyen.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.no.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.no.png)
 
 ## Phi-3 finjustering med Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.no.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.no.png)
 
 ## Phi-3 Olive eksempel på kode og bruk
-I dette eksempelet bruker du Olive til å:
+I dette eksempelet vil du bruke Olive til å:
 
-- Finjustere en LoRA-adapter for å klassifisere setninger som trist, glede, frykt, overraskelse.
-- Slå sammen adaptervektene inn i basismodellen.
+- Finjustere en LoRA-adapter for å klassifisere setninger i Sad, Joy, Fear, Surprise.
+- Slå sammen adaptervektene med basismodellen.
 - Optimalisere og kvantisere modellen til int4.
 
-[Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
+[Eksempelkode](../../code/03.Finetuning/olive-ort-example/README.md)
 
 ### Sette opp Microsoft Olive
 
-Installasjon av Microsoft Olive er veldig enkel, og kan også installeres for CPU, GPU, DirectML og Azure ML
+Installasjonen av Microsoft Olive er veldig enkel, og kan også installeres for CPU, GPU, DirectML og Azure ML.
 
 ```bash
 pip install olive-ai
 ```
 
-Hvis du ønsker å kjøre en ONNX-modell på CPU, kan du bruke
+Hvis du ønsker å kjøre en ONNX-modell med CPU, kan du bruke
 
 ```bash
 pip install olive-ai[cpu]
 ```
 
-Hvis du vil kjøre en ONNX-modell på GPU, kan du bruke
+Hvis du vil kjøre en ONNX-modell med GPU, kan du bruke
 
 ```python
 pip install olive-ai[gpu]
@@ -76,17 +76,17 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 **Merk**
 OS-krav: Ubuntu 20.04 / 22.04
 
-### **Microsoft Olives Config.json**
+### **Microsoft Olive sin Config.json**
 
-Etter installasjon kan du konfigurere ulike modellspesifikke innstillinger gjennom Config-filen, inkludert data, beregning, trening, distribusjon og modellgenerering.
+Etter installasjon kan du konfigurere ulike modellspesifikke innstillinger via Config-filen, inkludert data, beregning, trening, distribusjon og modellgenerering.
 
 **1. Data**
 
-I Microsoft Olive støttes trening på både lokal og skybasert data, og dette kan konfigureres i innstillingene.
+På Microsoft Olive støttes trening på både lokale data og skydata, og dette kan konfigureres i innstillingene.
 
-*Innstillinger for lokal data*
+*Innstillinger for lokale data*
 
-Du kan enkelt sette opp datasettet som skal trenes for finjustering, vanligvis i json-format, og tilpasse det med datamalen. Dette må justeres basert på modellens krav (for eksempel tilpasses formatet som kreves av Microsoft Phi-3-mini. Hvis du har andre modeller, vennligst se kravene til finjusteringsformat for andre modeller).
+Du kan enkelt sette opp datasettet som skal trenes for finjustering, vanligvis i json-format, og tilpasse det med datamalen. Dette må justeres basert på modellens krav (for eksempel tilpasses formatet som kreves av Microsoft Phi-3-mini. Hvis du har andre modeller, vennligst se på de nødvendige finjusteringsformatene for disse modellene).
 
 ```json
 
@@ -119,9 +119,9 @@ Du kan enkelt sette opp datasettet som skal trenes for finjustering, vanligvis i
     ],
 ```
 
-**Innstillinger for skybasert datakilde**
+**Innstillinger for skybaserte datakilder**
 
-Ved å koble til datalageret til Azure AI Studio/Azure Machine Learning Service kan du hente data fra skyen. Du kan velge å importere ulike datakilder til Azure AI Studio/Azure Machine Learning Service via Microsoft Fabric og Azure Data som støtte for finjusteringsdata.
+Ved å koble til datalageret i Azure AI Studio/Azure Machine Learning Service for å hente data i skyen, kan du velge å importere ulike datakilder til Azure AI Studio/Azure Machine Learning Service via Microsoft Fabric og Azure Data som støtte for finjustering.
 
 ```json
 
@@ -168,7 +168,7 @@ Ved å koble til datalageret til Azure AI Studio/Azure Machine Learning Service 
 
 **2. Beregningskonfigurasjon**
 
-Hvis du trenger lokal kjøring, kan du bruke lokale datakilder direkte. Hvis du trenger å bruke ressurser fra Azure AI Studio / Azure Machine Learning Service, må du konfigurere relevante Azure-parametere, navn på beregningsressurser osv.
+Hvis du trenger lokal kjøring, kan du bruke lokale dataressurser direkte. Hvis du skal bruke ressurser fra Azure AI Studio / Azure Machine Learning Service, må du konfigurere relevante Azure-parametere, navn på beregningsressurser osv.
 
 ```json
 
@@ -201,7 +201,7 @@ Hvis du trenger lokal kjøring, kan du bruke lokale datakilder direkte. Hvis du 
 
 ***Merk***
 
-Siden det kjøres via en container på Azure AI Studio/Azure Machine Learning Service, må det nødvendige miljøet konfigureres. Dette gjøres i conda.yaml-miljøet.
+Siden det kjøres gjennom en container på Azure AI Studio/Azure Machine Learning Service, må det nødvendige miljøet konfigureres. Dette gjøres i conda.yaml-miljøet.
 
 ```yaml
 
@@ -236,7 +236,7 @@ dependencies:
 
 **3. Velg din SLM**
 
-Du kan bruke modellen direkte fra Hugging Face, eller du kan kombinere den med Modellkatalogen i Azure AI Studio / Azure Machine Learning for å velge modell. I kodeeksemplet under bruker vi Microsoft Phi-3-mini som eksempel.
+Du kan bruke modellen direkte fra Hugging Face, eller du kan kombinere den med Model Catalog i Azure AI Studio / Azure Machine Learning for å velge modellen du vil bruke. I kodeeksempelet under bruker vi Microsoft Phi-3-mini som eksempel.
 
 Hvis du har modellen lokalt, kan du bruke denne metoden
 
@@ -284,15 +284,15 @@ Hvis du vil bruke en modell fra Azure AI Studio / Azure Machine Learning Service
 ```
 
 **Merk:**
-Vi må integrere med Azure AI Studio / Azure Machine Learning Service, så når du setter opp modellen, vennligst sjekk versjonsnummer og tilhørende navngivning.
+Vi må integrere med Azure AI Studio / Azure Machine Learning Service, så ved oppsett av modellen, vennligst følg versjonsnummer og tilhørende navngivning.
 
-Alle modeller på Azure må settes til PyTorch.MLflow
+Alle modeller på Azure må settes til PyTorch.MLflow.
 
-Du må ha en Hugging Face-konto og knytte nøkkelen til nøkkelverdien i Azure AI Studio / Azure Machine Learning
+Du må ha en Hugging Face-konto og knytte nøkkelen til nøkkelverdien i Azure AI Studio / Azure Machine Learning.
 
 **4. Algoritme**
 
-Microsoft Olive har god støtte for LoRA og QLoRA finjusteringsalgoritmer. Alt du trenger å gjøre er å konfigurere noen relevante parametere. Her bruker jeg QLoRA som eksempel.
+Microsoft Olive pakker inn Lora og QLora finjusteringsalgoritmer på en god måte. Alt du trenger å konfigurere er noen relevante parametere. Her bruker jeg QLora som eksempel.
 
 ```json
         "lora": {
@@ -329,10 +329,10 @@ Microsoft Olive har god støtte for LoRA og QLoRA finjusteringsalgoritmer. Alt d
         },
 ```
 
-Hvis du ønsker kvantiseringskonvertering, støtter hovedgrenen til Microsoft Olive allerede onnxruntime-genai-metoden. Du kan sette det opp etter behov:
+Hvis du ønsker kvantiseringskonvertering, støtter hovedgrenen til Microsoft Olive allerede onnxruntime-genai-metoden. Du kan sette det etter behov:
 
 1. Slå sammen adaptervekter med basismodellen
-2. Konverter modellen til ONNX med ønsket presisjon ved hjelp av ModelBuilder
+2. Konverter modellen til onnx-modell med ønsket presisjon via ModelBuilder
 
 for eksempel konvertering til kvantisert INT4
 
@@ -352,7 +352,7 @@ for eksempel konvertering til kvantisert INT4
 **Merk**
 - Hvis du bruker QLoRA, støttes ikke kvantiseringskonvertering med ONNXRuntime-genai foreløpig.
 
-- Det bør påpekes at du kan tilpasse de ovennevnte trinnene etter eget behov. Det er ikke nødvendig å konfigurere alle trinnene fullstendig. Avhengig av dine behov kan du bruke algoritmetrinnene direkte uten finjustering. Til slutt må du konfigurere relevante motorer.
+- Det bør påpekes at du kan sette opp de ovennevnte trinnene etter eget behov. Det er ikke nødvendig å konfigurere alle trinnene fullstendig. Avhengig av dine behov kan du bruke algoritmetrinnene direkte uten finjustering. Til slutt må du konfigurere relevante motorer.
 
 ```json
 
@@ -369,11 +369,11 @@ for eksempel konvertering til kvantisert INT4
 
 **5. Fullført finjustering**
 
-Kjør kommandoen i katalogen med olive-config.json
+På kommandolinjen, kjør i katalogen med olive-config.json
 
 ```bash
 olive run --config olive-config.json  
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på det opprinnelige språket bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

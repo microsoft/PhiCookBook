@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T05:04:55+00:00",
+  "translation_date": "2025-07-16T16:55:44+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "tl"
 }
 -->
 # phi3ext README
 
-Ito ang README para sa iyong extension na "phi3ext". Pagkatapos ng maikling paglalarawan, inirerekomenda naming isama ang mga sumusunod na seksyon.
+Ito ang README para sa iyong extension na "phi3ext". Pagkatapos mong magsulat ng maikling paglalarawan, inirerekomenda naming isama ang mga sumusunod na seksyon.
 
 ## Features
 
-Ilarawan ang mga partikular na tampok ng iyong extension, kabilang ang mga screenshot habang tumatakbo ang extension. Ang mga path ng larawan ay relative sa README file na ito.
+Ilarawan ang mga partikular na tampok ng iyong extension, kabilang ang mga screenshot habang tumatakbo ang extension. Ang mga path ng larawan ay kaugnay sa README file na ito.
 
-Halimbawa, kung mayroong subfolder na larawan sa workspace ng iyong extension project:
+Halimbawa, kung mayroon kang subfolder ng mga larawan sa workspace ng iyong extension project:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> TIP: Maraming sikat na extension ang gumagamit ng mga animation. Isa itong mahusay na paraan para ipakita ang iyong extension! Inirerekomenda namin ang maikli at nakatuong mga animation para madaling sundan.
+> [!TIP] Maraming sikat na extension ang gumagamit ng mga animation. Isa itong mahusay na paraan para ipakita ang iyong extension! Inirerekomenda namin ang maikli at nakatuon na mga animation para madaling sundan.
 
 ## Requirements
 
-Kung mayroon kang anumang mga kinakailangan o dependencies, magdagdag ng seksyon para ilarawan ang mga ito at kung paano i-install at i-configure ang mga ito.
+Kung mayroon kang anumang mga kinakailangan o dependencies, magdagdag ng seksyon na naglalarawan sa mga ito at kung paano i-install at i-configure ang mga ito.
 
 ## Extension Settings
 
@@ -31,18 +31,18 @@ Kung ang iyong extension ay nagdagdag ng anumang VS Code settings sa pamamagitan
 
 Halimbawa:
 
-Ang extension na ito ay nag-aambag ng mga sumusunod na setting:
+Nag-aambag ang extension na ito ng mga sumusunod na setting:
 
 * `myExtension.enable`: I-enable o i-disable ang extension na ito.
-* `myExtension.thing`: Itakda sa `blah` upang gawin ang isang bagay.
+* `myExtension.thing`: Itakda sa `blah` para gawin ang isang bagay.
 
 ## Known Issues
 
-Ang pagtukoy sa mga kilalang isyu ay makakatulong upang mabawasan ang mga paulit-ulit na tanong mula sa mga gumagamit ng iyong extension.
+Ang pagtukoy sa mga kilalang isyu ay makakatulong upang mabawasan ang mga paulit-ulit na tanong mula sa mga gumagamit tungkol sa iyong extension.
 
 ## Release Notes
 
-Pinahahalagahan ng mga gumagamit ang mga release notes kapag ina-update ang iyong extension.
+Pinahahalagahan ng mga gumagamit ang mga release notes kapag ina-update mo ang iyong extension.
 
 ### 1.0.0
 
@@ -54,19 +54,19 @@ Naayos ang isyu #.
 
 ### 1.1.0
 
-Nagdagdag ng mga tampok X, Y, at Z.
+Nagdagdag ng mga tampok na X, Y, at Z.
 
 ---
 
 ## Following extension guidelines
 
-Tiyaking nabasa mo na ang extension guidelines at sinusunod ang mga best practice sa paggawa ng extension.
+Tiyaking nabasa mo na ang mga extension guidelines at sinusunod ang mga best practice sa paggawa ng extension.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Maaari mong gamitin ang Visual Studio Code para isulat ang iyong README. Narito ang ilang kapaki-pakinabang na editor shortcuts:
+Maaari mong gamitin ang Visual Studio Code para isulat ang iyong README. Narito ang ilang kapaki-pakinabang na mga shortcut sa editor:
 
 * Hatiin ang editor (`Cmd+\` sa macOS o `Ctrl+\` sa Windows at Linux).
 * I-toggle ang preview (`Shift+Cmd+V` sa macOS o `Shift+Ctrl+V` sa Windows at Linux).
@@ -74,10 +74,10 @@ Maaari mong gamitin ang Visual Studio Code para isulat ang iyong README. Narito 
 
 ## For more information
 
-* [Visual Studio Code Markdown Support](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+* [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kaming maging tumpak, pakatandaan na ang mga awtomatikong salin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng salin na ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

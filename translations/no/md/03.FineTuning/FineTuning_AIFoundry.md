@@ -2,60 +2,60 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:32:44+00:00",
+  "translation_date": "2025-07-17T06:07:24+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "no"
 }
 -->
 # Finjustering av Phi-3 med Azure AI Foundry
 
-La oss utforske hvordan du kan finjustere Microsofts Phi-3 Mini språkmodell ved hjelp av Azure AI Foundry. Finjustering gjør det mulig å tilpasse Phi-3 Mini til spesifikke oppgaver, noe som gjør den enda mer kraftfull og kontekstbevisst.
+La oss utforske hvordan man finjusterer Microsofts Phi-3 Mini språkmodell ved hjelp av Azure AI Foundry. Finjustering gjør det mulig å tilpasse Phi-3 Mini til spesifikke oppgaver, noe som gjør den enda kraftigere og mer kontekstsensitiv.
 
 ## Vurderinger
 
 - **Muligheter:** Hvilke modeller kan finjusteres? Hva kan grunnmodellen finjusteres til å gjøre?
 - **Kostnad:** Hva er prismodellen for finjustering?
 - **Tilpasningsmuligheter:** Hvor mye kan jeg endre grunnmodellen – og på hvilke måter?
-- **Bekvemmelighet:** Hvordan skjer finjusteringen i praksis – må jeg skrive egendefinert kode? Må jeg ha egen datakraft?
+- **Brukervennlighet:** Hvordan foregår finjusteringen i praksis – må jeg skrive egen kode? Må jeg ha egen datakraft?
 - **Sikkerhet:** Finjusterte modeller kan ha sikkerhetsrisikoer – finnes det noen sikkerhetsmekanismer for å beskytte mot utilsiktet skade?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.no.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.no.png)
 
 ## Forberedelser til finjustering
 
 ### Forutsetninger
 
 > [!NOTE]
-> For Phi-3-familien er finjusteringstilbudet basert på betalingsmodell kun tilgjengelig for hubs opprettet i **East US 2** regioner.
+> For Phi-3 familie-modeller er pay-as-you-go-modellen for finjustering kun tilgjengelig for hubs opprettet i **East US 2**-regionen.
 
 - Et Azure-abonnement. Hvis du ikke har et Azure-abonnement, opprett en [betalt Azure-konto](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) for å komme i gang.
 
 - Et [AI Foundry-prosjekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure rollebasert tilgangskontroll (Azure RBAC) brukes for å gi tilgang til operasjoner i Azure AI Foundry. For å utføre stegene i denne artikkelen må brukerkontoen din ha tildelt __Azure AI Developer-rollen__ på ressursgruppen.
+- Azure rollebasert tilgangskontroll (Azure RBAC) brukes for å gi tilgang til operasjoner i Azure AI Foundry. For å utføre stegene i denne artikkelen må brukerkontoen din ha __Azure AI Developer-rollen__ på ressursgruppen.
 
 ### Registrering av abonnementets leverandør
 
-Sjekk at abonnementet er registrert for `Microsoft.Network` ressursleverandøren.
+Sjekk at abonnementet er registrert hos ressursleverandøren `Microsoft.Network`.
 
 1. Logg inn på [Azure-portalen](https://portal.azure.com).
 1. Velg **Subscriptions** i venstremenyen.
 1. Velg abonnementet du vil bruke.
 1. Velg **AI project settings** > **Resource providers** i venstremenyen.
-1. Bekreft at **Microsoft.Network** finnes i listen over ressursleverandører. Hvis ikke, legg det til.
+1. Bekreft at **Microsoft.Network** er i listen over ressursleverandører. Hvis ikke, legg det til.
 
 ### Datapreparering
 
-Forbered trenings- og valideringsdataene dine for å finjustere modellen. Trenings- og valideringsdatasett består av input- og output-eksempler som viser hvordan du ønsker at modellen skal prestere.
+Forbered trenings- og valideringsdata for å finjustere modellen din. Trenings- og valideringsdatasett består av input- og output-eksempler som viser hvordan du ønsker at modellen skal prestere.
 
-Sørg for at alle trenings-eksemplene følger forventet format for inferens. For effektiv finjustering må datasettet være balansert og variert.
+Sørg for at alle trenings-eksempler følger forventet format for inferens. For effektiv finjustering bør datasettet være balansert og variert.
 
-Dette innebærer å opprettholde databalansen, inkludere ulike scenarioer, og jevnlig forbedre treningsdataene for å samsvare med virkelige forventninger, noe som til slutt gir mer nøyaktige og balanserte modellrespons.
+Dette innebærer å opprettholde databalansen, inkludere ulike scenarier, og jevnlig forbedre treningsdata for å samsvare med virkelige forventninger, noe som til slutt gir mer nøyaktige og balanserte modellrespons.
 
 Ulike modelltyper krever ulikt format på treningsdata.
 
 ### Chat Completion
 
-Trenings- og valideringsdataene du bruker **må** være formatert som et JSON Lines (JSONL) dokument. For `Phi-3-mini-128k-instruct` må finjusteringsdatasettet være formatert i det samtaleformatet som brukes av Chat completions API.
+Trenings- og valideringsdata du bruker **må** være formatert som et JSON Lines (JSONL) dokument. For `Phi-3-mini-128k-instruct` må finjusteringsdatasettet være i det konversasjonsformatet som brukes av Chat completions API.
 
 ### Eksempel på filformat
 
@@ -69,9 +69,9 @@ Støttet filtype er JSON Lines. Filene lastes opp til standard datalager og gjø
 
 ## Finjustering av Phi-3 med Azure AI Foundry
 
-Azure AI Foundry lar deg tilpasse store språkmodeller til dine egne datasett ved hjelp av en prosess kalt finjustering. Finjustering gir betydelig verdi ved å muliggjøre tilpasning og optimalisering for spesifikke oppgaver og applikasjoner. Det fører til bedre ytelse, kostnadseffektivitet, redusert ventetid og skreddersydde resultater.
+Azure AI Foundry lar deg tilpasse store språkmodeller til dine egne datasett ved hjelp av en prosess kalt finjustering. Finjustering gir stor verdi ved å muliggjøre tilpasning og optimalisering for spesifikke oppgaver og bruksområder. Det fører til bedre ytelse, kostnadseffektivitet, redusert ventetid og skreddersydde resultater.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.no.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.no.png)
 
 ### Opprett et nytt prosjekt
 
@@ -79,66 +79,66 @@ Azure AI Foundry lar deg tilpasse store språkmodeller til dine egne datasett ve
 
 1. Velg **+New project** for å opprette et nytt prosjekt i Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.no.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.no.png)
 
 1. Gjør følgende:
 
-    - Prosjektets **Hub name**. Det må være unikt.
-    - Velg **Hub** som skal brukes (opprett ny om nødvendig).
+    - Prosjektets **Hub name**. Det må være en unik verdi.
+    - Velg hvilken **Hub** som skal brukes (opprett en ny om nødvendig).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.no.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.no.png)
 
 1. Gjør følgende for å opprette en ny hub:
 
-    - Skriv inn **Hub name**. Det må være unikt.
-    - Velg din Azure **Subscription**.
-    - Velg **Resource group** som skal brukes (opprett ny om nødvendig).
+    - Skriv inn **Hub name**. Det må være en unik verdi.
+    - Velg ditt Azure **Subscription**.
+    - Velg hvilken **Resource group** som skal brukes (opprett en ny om nødvendig).
     - Velg **Location** du ønsker å bruke.
-    - Velg **Connect Azure AI Services** som skal brukes (opprett ny om nødvendig).
+    - Velg **Connect Azure AI Services** som skal brukes (opprett en ny om nødvendig).
     - Velg **Connect Azure AI Search** og velg **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.no.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.no.png)
 
 1. Velg **Next**.
 1. Velg **Create a project**.
 
 ### Datapreparering
 
-Før finjustering, samle eller lag et datasett relevant for oppgaven din, som chat-instruksjoner, spørsmål-svar-par eller annen relevant tekstdata. Rens og forhåndsbehandle dataene ved å fjerne støy, håndtere manglende verdier og tokenisere teksten.
+Før finjustering, samle eller lag et datasett som er relevant for oppgaven din, for eksempel chat-instruksjoner, spørsmål-svar-par, eller annen relevant tekstdata. Rens og forbehandle dataene ved å fjerne støy, håndtere manglende verdier og tokenisere teksten.
 
 ### Finjuster Phi-3 modeller i Azure AI Foundry
 
 > [!NOTE]
 > Finjustering av Phi-3 modeller støttes for øyeblikket kun i prosjekter lokalisert i East US 2.
 
-1. Velg **Model catalog** fra venstre tab.
+1. Velg **Model catalog** fra venstre sidepanel.
 
-1. Skriv *phi-3* i **søkelinjen** og velg phi-3 modellen du ønsker å bruke.
+1. Skriv *phi-3* i **søkelinjen** og velg den phi-3 modellen du ønsker å bruke.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.no.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.no.png)
 
 1. Velg **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.no.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.no.png)
 
 1. Skriv inn navnet på den **finjusterte modellen**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.no.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.no.png)
 
 1. Velg **Next**.
 
 1. Gjør følgende:
 
     - Velg **task type** til **Chat completion**.
-    - Velg **Training data** du ønsker å bruke. Du kan laste opp data via Azure AI Foundry eller fra ditt lokale miljø.
+    - Velg **Training data** du ønsker å bruke. Du kan laste det opp via Azure AI Foundry eller fra ditt lokale miljø.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.no.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.no.png)
 
 1. Velg **Next**.
 
 1. Last opp **Validation data** du ønsker å bruke, eller velg **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.no.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.no.png)
 
 1. Velg **Next**.
 
@@ -148,37 +148,37 @@ Før finjustering, samle eller lag et datasett relevant for oppgaven din, som ch
     - Velg ønsket **Learning rate**.
     - Velg ønsket antall **Epochs**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.no.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.no.png)
 
 1. Velg **Submit** for å starte finjusteringsprosessen.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.no.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.no.png)
 
-1. Når modellen din er finjustert, vises status som **Completed**, som vist under. Nå kan du distribuere modellen og bruke den i din egen applikasjon, i playground eller i prompt flow. For mer informasjon, se [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Når modellen er finjustert, vil status vises som **Completed**, som vist i bildet under. Nå kan du distribuere modellen og bruke den i din egen applikasjon, i playground, eller i prompt flow. For mer informasjon, se [Hvordan distribuere Phi-3 familie av små språkmodeller med Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.no.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.no.png)
 
 > [!NOTE]
-> For mer detaljert informasjon om finjustering av Phi-3, besøk [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> For mer detaljert informasjon om finjustering av Phi-3, besøk [Finjuster Phi-3 modeller i Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Rydd opp i dine finjusterte modeller
 
-Du kan slette en finjustert modell fra finjusteringsmodellslisten i [Azure AI Foundry](https://ai.azure.com) eller fra modellens detaljside. Velg den finjusterte modellen du vil slette på Fine-tuning-siden, og velg deretter Slett-knappen for å fjerne modellen.
+Du kan slette en finjustert modell fra listen over finjusterte modeller i [Azure AI Foundry](https://ai.azure.com) eller fra modellens detaljside. Velg den finjusterte modellen du vil slette fra finjusteringssiden, og trykk deretter på Slett-knappen for å fjerne modellen.
 
 > [!NOTE]
-> Du kan ikke slette en egendefinert modell hvis den har en aktiv distribusjon. Du må først slette modellens distribusjon før du kan slette den egendefinerte modellen.
+> Du kan ikke slette en tilpasset modell hvis den har en eksisterende distribusjon. Du må først slette distribusjonen før du kan slette den tilpassede modellen.
 
 ## Kostnader og kvoter
 
-### Kostnads- og kvotahensyn for Phi-3 modeller finjustert som tjeneste
+### Kostnads- og kvotevurderinger for Phi-3 modeller finjustert som en tjeneste
 
-Phi-modeller finjustert som tjeneste tilbys av Microsoft og er integrert med Azure AI Foundry. Du finner priser når du [distribuerer](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) eller finjusterer modeller under fanen Pricing and terms i distribusjonsveiviseren.
+Phi-modeller finjustert som en tjeneste tilbys av Microsoft og er integrert med Azure AI Foundry for bruk. Du finner prisinformasjon når du [distribuerer](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) eller finjusterer modellene under fanen Pris og vilkår i distribusjonsveiviseren.
 
 ## Innholdsfiltrering
 
-Modeller som distribueres som tjeneste med betalingsmodell er beskyttet av Azure AI Content Safety. Når de distribueres til sanntid-endepunkter, kan du velge å deaktivere denne funksjonen. Med Azure AI Content Safety aktivert, passerer både prompt og fullføring gjennom en rekke klassifiseringsmodeller som har som mål å oppdage og forhindre skadelig innhold. Innholdsfiltreringssystemet oppdager og håndterer spesifikke kategorier av potensielt skadelig innhold både i input-prompt og output-fullføringer. Les mer om [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Modeller distribuert som en tjeneste med pay-as-you-go er beskyttet av Azure AI Content Safety. Når de distribueres til sanntidsendepunkter, kan du velge å ikke bruke denne funksjonen. Med Azure AI Content Safety aktivert, går både prompt og fullføring gjennom et ensemble av klassifiseringsmodeller som har som mål å oppdage og forhindre utdata med skadelig innhold. Innholdsfiltreringssystemet oppdager og håndterer spesifikke kategorier av potensielt skadelig innhold i både input-prompter og output-fullføringer. Les mer om [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
-**Konfigurasjon for finjustering**
+**Finjusteringskonfigurasjon**
 
 Hyperparametere: Definer hyperparametere som læringsrate, batch-størrelse og antall trenings-epoker.
 
@@ -196,11 +196,11 @@ Velg en optimizer (f.eks. Adam) for gradientoppdateringer under trening.
 - Legg til egendefinerte lag: Legg til oppgavespesifikke lag (f.eks. klassifiseringshode for chat-instruksjoner).
 
 **Tren modellen**  
-Finjuster modellen med ditt forberedte datasett. Overvåk treningsprosessen og juster hyperparametere ved behov.
+Finjuster modellen med ditt forberedte datasett. Overvåk treningsprogresjonen og juster hyperparametere etter behov.
 
 **Evaluering og validering**
 
-Valideringssett: Del dataene dine inn i trenings- og valideringssett.
+Valideringssett: Del dataene dine i trenings- og valideringssett.
 
 **Evaluer ytelse**
 
@@ -213,24 +213,24 @@ Lagre sjekkpunktet for den finjusterte modellen for fremtidig bruk.
 
 ## Distribusjon
 
-- Distribuer som webtjeneste: Distribuer din finjusterte modell som en webtjeneste i Azure AI Foundry.
-- Test endepunkt: Send testspørringer til det distribuerte endepunktet for å verifisere funksjonalitet.
+- Distribuer som en webtjeneste: Distribuer din finjusterte modell som en webtjeneste i Azure AI Foundry.
+- Test endepunktet: Send testspørringer til det distribuerte endepunktet for å verifisere funksjonaliteten.
 
 ## Iterer og forbedre
 
-Iterer: Hvis ytelsen ikke er tilfredsstillende, iterer ved å justere hyperparametere, legge til mer data eller finjustere flere epoker.
+Iterer: Hvis ytelsen ikke er tilfredsstillende, iterer ved å justere hyperparametere, legge til mer data eller finjustere over flere epoker.
 
 ## Overvåk og forbedre
 
-Overvåk modellens oppførsel kontinuerlig og forbedre ved behov.
+Overvåk kontinuerlig modellens oppførsel og forbedre etter behov.
 
 ## Tilpass og utvid
 
-Egendefinerte oppgaver: Phi-3 Mini kan finjusteres for ulike oppgaver utover chat-instruksjoner. Utforsk flere bruksområder!  
+Egendefinerte oppgaver: Phi-3 Mini kan finjusteres for ulike oppgaver utover chat-instruksjoner. Utforsk andre bruksområder!  
 Eksperimenter: Prøv ulike arkitekturer, lagkombinasjoner og teknikker for å forbedre ytelsen.
 
 > [!NOTE]
 > Finjustering er en iterativ prosess. Eksperimenter, lær og tilpass modellen for å oppnå best mulig resultat for din spesifikke oppgave!
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-09T20:00:48+00:00",
+  "translation_date": "2025-07-16T21:35:30+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "en"
 }
@@ -27,7 +27,7 @@ It is recommended to use ***CUDA 11.6+*** and install flatten
 pip install flash-attn --no-build-isolation
 ```
 
-Create a new Notebook. To follow the examples, it is recommended to first create the following content.
+Create a new Notebook. To follow the examples, it’s recommended to first create the following content.
 
 ```python
 from PIL import Image
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR with Phi-3-Vision**
 
-Besides analyzing images, we can also extract information from them. This is the OCR process that previously required writing complex code.
+Besides analyzing images, we can also extract information from them. This is the OCR process, which previously required writing complex code.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"

@@ -2,59 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
-  "translation_date": "2025-05-09T04:59:13+00:00",
+  "translation_date": "2025-07-16T16:46:28+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
   "language_code": "sr"
 }
 -->
-# Dobrodošli u vaš VS Code Extension
+# Добродошли у ваш VS Code Extension
 
-## Šta se nalazi u fascikli
+## Шта се налази у фасцикли
 
-* Ova fascikla sadrži sve fajlove potrebne za vašu ekstenziju.
-* `package.json` - ovo je manifest fajl u kome deklarišete vašu ekstenziju i komandu.
-  * Primer plugina registruje komandu i definiše njen naslov i ime komande. Sa ovim informacijama VS Code može prikazati komandu u paleti komandi. Još uvek nije potrebno da učitava plugin.
-* `src/extension.ts` - ovo je glavni fajl gde ćete implementirati vašu komandu.
-  * Fajl eksportuje jednu funkciju, `activate`, koja se poziva prvi put kada se ekstenzija aktivira (u ovom slučaju izvršavanjem komande). Unutar funkcije `activate` pozivamo `registerCommand`.
-  * Funkciju koja sadrži implementaciju komande prosleđujemo kao drugi parametar funkciji `registerCommand`.
+* Ова фасцикла садржи све потребне фајлове за вашу екстензију.
+* `package.json` - ово је манифест фајл у којем декларишете вашу екстензију и команду.
+  * Пример додатка региструје команду и дефинише њен наслов и име команде. Са овим информацијама VS Code може приказати команду у командној палети. Још увек није потребно учитати додатак.
+* `src/extension.ts` - ово је главни фајл у ком ћете имплементирати вашу команду.
+  * Фајл извозе једну функцију, `activate`, која се позива први пут када се ваша екстензија активира (у овом случају извршавањем команде). Унутар функције `activate` позивамо `registerCommand`.
+  * Као други параметар `registerCommand` прослеђујемо функцију која садржи имплементацију команде.
 
-## Podešavanje
+## Подешавање
 
-* instalirajte preporučene ekstenzije (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner i dbaeumer.vscode-eslint)
+* инсталирајте препоручене екстензије (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, и dbaeumer.vscode-eslint)
 
+## Почните одмах
 
-## Počnite odmah
+* Притисните `F5` да отворите нови прозор са учитаном вашом екстензијом.
+* Покрените вашу команду из командне палете притиском на (`Ctrl+Shift+P` или `Cmd+Shift+P` на Mac-у) и укуцајте `Hello World`.
+* Поставите тачке прекида у вашем коду унутар `src/extension.ts` да бисте дебаговали екстензију.
+* Пронађите излаз ваше екстензије у дебаг конзоли.
 
-* Pritisnite `F5` da otvorite novi prozor sa učitanom vašom ekstenzijom.
-* Pokrenite vašu komandu iz palete komandi pritiskom na (`Ctrl+Shift+P` ili `Cmd+Shift+P` na Mac-u) i ukucajte `Hello World`.
-* Postavite tačke prekida u kodu unutar `src/extension.ts` da biste debug-ovali vašu ekstenziju.
-* Izlaz vaše ekstenzije pronađite u debug konzoli.
+## Направите измене
 
-## Napravite izmene
+* Можете поново покренути екстензију са дебаг траке након измена у коду у `src/extension.ts`.
+* Такође можете освежити (`Ctrl+R` или `Cmd+R` на Mac-у) VS Code прозор са вашом екстензијом да бисте учитали измене.
 
-* Možete ponovo pokrenuti ekstenziju sa debug trake nakon izmene koda u `src/extension.ts`.
-* Takođe možete ponovo učitati (`Ctrl+R` ili `Cmd+R` na Mac-u) VS Code prozor sa vašom ekstenzijom da biste učitali izmene.
+## Истражите API
 
+* Можете отворити цео скуп нашег API-ја тако што ћете отворити фајл `node_modules/@types/vscode/index.d.ts`.
 
-## Istražite API
+## Покрените тестове
 
-* Možete otvoriti kompletan skup našeg API-ja tako što ćete otvoriti fajl `node_modules/@types/vscode/index.d.ts`.
+* Инсталирајте [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* Покрените "watch" задатак преко команде **Tasks: Run Task**. Уверите се да је овај задатак покренут, иначе тестови можда неће бити откривени.
+* Отворите Testing приказ са траке активности и кликните на дугме Run Test, или користите пречицу `Ctrl/Cmd + ; A`
+* Погледајте резултате теста у Test Results приказу.
+* Направите измене у `src/test/extension.test.ts` или креирајте нове тест фајлове унутар фасцикле `test`.
+  * Пружањи тест ранер ће узимати у обзир само фајлове који одговарају шаблону имена `**.test.ts`.
+  * Можете креирати фасцикле унутар `test` фасцикле да организујете тестове како желите.
 
-## Pokrenite testove
+## Идите даље
 
-* Instalirajte [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Pokrenite zadatak "watch" preko komande **Tasks: Run Task**. Proverite da li je zadatak aktivan, jer u suprotnom testovi možda neće biti otkriveni.
-* Otvorite Testing prikaz sa activity bara i kliknite na dugme Run Test, ili koristite prečicu `Ctrl/Cmd + ; A`
-* Pogledajte rezultat testa u Test Results prikazu.
-* Pravite izmene u `src/test/extension.test.ts` ili kreirajte nove test fajlove unutar fascikle `test`.
-  * Dati test runner će uzimati u obzir samo fajlove koji odgovaraju obrascu imena `**.test.ts`.
-  * Možete kreirati podfascikle unutar `test` fascikle da organizujete testove kako god želite.
+* Смањите величину екстензије и убрзајте време покретања тако што ћете [упаковати вашу екстензију](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo).
+* [Објавите вашу екстензију](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo) на VS Code extension marketplace-у.
+* Аутоматизујте израду тако што ћете подесити [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo).
 
-## Idite dalje
-
-* Smanjite veličinu ekstenzije i poboljšajte vreme pokretanja tako što ćete [pakovati vašu ekstenziju](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo).
-* [Objavite vašu ekstenziju](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo) na VS Code marketplace-u.
-* Automatizujte build procese podešavanjem [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo).
-
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korišćenjem AI prevodilačke usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo tačnosti, imajte na umu da automatski prevodi mogu sadržavati greške ili netačnosti. Originalni dokument na izvornom jeziku treba smatrati zvaničnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Nismo odgovorni za bilo kakva nesporazumevanja ili pogrešna tumačenja koja proisteknu iz korišćenja ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

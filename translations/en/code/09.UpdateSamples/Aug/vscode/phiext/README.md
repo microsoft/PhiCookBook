@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-09T20:09:29+00:00",
+  "translation_date": "2025-07-16T17:26:56+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "en"
 }

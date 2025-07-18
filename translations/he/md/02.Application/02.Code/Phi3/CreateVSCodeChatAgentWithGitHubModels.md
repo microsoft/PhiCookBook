@@ -2,71 +2,70 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:07:33+00:00",
+  "translation_date": "2025-07-17T03:27:50+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "he"
 }
 -->
-# **צור סוכן Visual Studio Code Chat משלך עם Phi-3.5 של GitHub Models**
+# **צור סוכן Visual Studio Code Chat Copilot משלך עם Phi-3.5 של GitHub Models**
 
-האם אתה משתמש ב-Visual Studio Code Copilot? במיוחד בצ'אט, אפשר להשתמש בסוכנים שונים כדי לשפר את היכולת ליצור, לכתוב ולתחזק פרויקטים ב-Visual Studio Code. Visual Studio Code מספק API שמאפשר לחברות ויחידים ליצור סוכנים שונים בהתבסס על העסק שלהם כדי להרחיב את היכולות בתחומים קנייניים שונים. במאמר זה נתמקד ב-**Phi-3.5-mini-instruct (128k)** ו-**Phi-3.5-vision-instruct (128k)** של GitHub Models כדי ליצור את סוכן Visual Studio Code משלך.
+האם אתה משתמש ב-Visual Studio Code Copilot? במיוחד בצ'אט, ניתן להשתמש בסוכנים שונים כדי לשפר את היכולת ליצור, לכתוב ולתחזק פרויקטים ב-Visual Studio Code. Visual Studio Code מספק API שמאפשר לחברות ויחידים ליצור סוכנים שונים בהתבסס על העסק שלהם כדי להרחיב את היכולות בתחומים קנייניים שונים. במאמר זה נתמקד ב-**Phi-3.5-mini-instruct (128k)** ו-**Phi-3.5-vision-instruct (128k)** של GitHub Models כדי ליצור את סוכן Visual Studio Code משלך.
 
 ## **על Phi-3.5 ב-GitHub Models**
 
-ידוע לנו ש-Phi-3/3.5-mini-instruct במשפחת Phi-3/3.5 מחזיק ביכולות חזקות של הבנת קוד ויצירתו, ויש לו יתרונות על פני Gemma-2-9b ו-Mistral-Nemo-12B-instruct-2407.
+ידוע כי Phi-3/3.5-mini-instruct במשפחת Phi-3/3.5 מציג יכולות חזקות של הבנת קוד ויצירתו, ויש לו יתרונות על פני Gemma-2-9b ו-Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.he.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.he.png)
 
 הגרסאות האחרונות של GitHub Models כבר מספקות גישה למודלים Phi-3.5-mini-instruct (128k) ו-Phi-3.5-vision-instruct (128k). מפתחים יכולים לגשת אליהם דרך OpenAI SDK, Azure AI Inference SDK ו-REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.he.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.he.png)
 
-***הערה:*** מומלץ להשתמש כאן ב-Azure AI Inference SDK, מכיוון שהוא מאפשר החלפה טובה יותר עם קטלוג המודלים של Azure בסביבת הייצור
+***Note:*** מומלץ להשתמש ב-Azure AI Inference SDK כאן, מכיוון שהוא מאפשר החלפה טובה יותר עם Azure Model Catalog בסביבת הייצור
 
-להלן תוצאות **Phi-3.5-mini-instruct (128k)** ו-**Phi-3.5-vision-instruct (128k)** בתרחיש יצירת קוד לאחר חיבור ל-GitHub Models, וכן הכנה לדוגמאות הבאות
+להלן תוצאות של **Phi-3.5-mini-instruct (128k)** ו-**Phi-3.5-vision-instruct (128k)** בתרחיש יצירת קוד לאחר חיבור ל-GitHub Models, וכן הכנה לדוגמאות הבאות
 
-**הדגמה: GitHub Models Phi-3.5-mini-instruct (128k) יוצר קוד מתוך Prompt** ([לחץ כאן](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-mini-instruct (128k) מייצר קוד מתוך Prompt** ([לחץ כאן](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**הדגמה: GitHub Models Phi-3.5-vision-instruct (128k) יוצר קוד מתוך תמונה** ([לחץ כאן](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-vision-instruct (128k) מייצר קוד מתוך תמונה** ([לחץ כאן](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 
 ## **על סוכן GitHub Copilot Chat**
 
-סוכן GitHub Copilot Chat יכול להשלים משימות שונות בתרחישי פרויקט מגוונים בהתבסס על הקוד. למערכת יש ארבעה סוכנים: workspace, github, terminal, vscode
+סוכן GitHub Copilot Chat יכול להשלים משימות שונות בתרחישי פרויקטים מגוונים בהתבסס על הקוד. המערכת כוללת ארבעה סוכנים: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.he.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.he.png)
 
 על ידי הוספת שם הסוכן עם ‘@’, ניתן להשלים במהירות את העבודה המתאימה. עבור ארגונים, אם תוסיפו תוכן עסקי משלכם כמו דרישות, קידוד, מפרטי בדיקה ושחרור, תוכלו לקבל פונקציות פרטיות ארגוניות חזקות יותר בהתבסס על GitHub Copilot.
 
-סוכן Visual Studio Code Chat שוחרר כעת רשמית עם ה-API שלו, המאפשר לארגונים או למפתחים ארגוניים לפתח סוכנים בהתבסס על אקוסיסטמים עסקיים שונים של תוכנה. בהתבסס על שיטת הפיתוח של Visual Studio Code Extension Development, ניתן לגשת בקלות לממשק ה-API של סוכן Visual Studio Code Chat. אפשר לפתח בהתבסס על התהליך הזה
+סוכן Visual Studio Code Chat שוחרר כעת רשמית עם API, המאפשר לארגונים או למפתחים ארגוניים לפתח סוכנים בהתבסס על אקוסיסטמים עסקיים שונים של תוכנה. בהתבסס על שיטת הפיתוח של Visual Studio Code Extension Development, ניתן לגשת בקלות לממשק ה-API של סוכן Visual Studio Code Chat. ניתן לפתח בהתבסס על תהליך זה
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.he.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.he.png)
 
 תרחיש הפיתוח תומך בגישה ל-API של מודלים צד שלישי (כגון GitHub Models, Azure Model Catalog, ושירותים עצמאיים המבוססים על מודלים בקוד פתוח) וניתן גם להשתמש במודלים gpt-35-turbo, gpt-4, ו-gpt-4o המסופקים על ידי GitHub Copilot.
 
 ## **הוספת סוכן @phicoding מבוסס Phi-3.5**
 
-ננסה לשלב את יכולות התכנות של Phi-3.5 כדי להשלים כתיבת קוד, יצירת קוד מתמונה ומשימות נוספות. ניצור סוכן המבוסס על Phi-3.5 - @PHI, להלן כמה פונקציות
+ננסה לשלב את יכולות התכנות של Phi-3.5 כדי להשלים כתיבת קוד, יצירת קוד מתמונה ומשימות נוספות. נבנה סוכן סביב Phi-3.5 - @PHI, להלן כמה פונקציות
 
-1. יצירת הצגה עצמית בהתבסס על GPT-4o המסופק על ידי GitHub Copilot דרך הפקודה **@phicoding /help**
+1. יצירת הצגה עצמית בהתבסס על GPT-4o המסופק על ידי GitHub Copilot באמצעות הפקודה **@phicoding /help**
 
-2. יצירת קוד בשפות תכנות שונות בהתבסס על **Phi-3.5-mini-instruct (128k)** דרך הפקודה **@phicoding /gen**
+2. יצירת קוד בשפות תכנות שונות בהתבסס על **Phi-3.5-mini-instruct (128k)** באמצעות הפקודה **@phicoding /gen**
 
-3. יצירת קוד בהתבסס על **Phi-3.5-vision-instruct (128k)** והשלמת תמונה דרך הפקודה **@phicoding /image**
+3. יצירת קוד בהתבסס על **Phi-3.5-vision-instruct (128k)** והשלמת תמונה באמצעות הפקודה **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.he.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.he.png)
 
 ## **שלבים קשורים**
 
-1. התקן תמיכה בפיתוח Visual Studio Code Extension באמצעות npm
+1. התקנת תמיכה בפיתוח Visual Studio Code Extension באמצעות npm
 
 ```bash
 
 npm install --global yo generator-code 
 
 ```
-2. צור תוסף Visual Studio Code Extension (בשיטת פיתוח Typescript, בשם phiext)
-
+2. יצירת תוסף Visual Studio Code Extension (בשיטת פיתוח Typescript, בשם phiext)
 
 ```bash
 
@@ -74,8 +73,7 @@ yo code
 
 ```
 
-3. פתח את הפרויקט שנוצר וערוך את package.json. כאן ההוראות וההגדרות הרלוונטיות, וכן הגדרת GitHub Models. שים לב שצריך להוסיף כאן את טוקן GitHub Models שלך.
-
+3. פתיחת הפרויקט שנוצר ושינוי package.json. כאן נמצאות ההוראות וההגדרות הרלוונטיות, וכן הגדרת GitHub Models. שים לב שיש להוסיף כאן את הטוקן של GitHub Models שלך.
 
 ```json
 
@@ -193,8 +191,7 @@ yo code
 
 ```
 
-4. ערוך את src/extension.ts
-
+4. שינוי הקובץ src/extension.ts
 
 ```typescript
 
@@ -363,35 +360,33 @@ export function deactivate() {}
 
 ```
 
-6. הפעלה
+6. הרצה
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.he.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.he.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.he.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.he.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.he.png)
-
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.he.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.he.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.he.png)
 
-
-ניתן להוריד קוד לדוגמה :[לחץ כאן](../../../../../../code/09.UpdateSamples/Aug/vscode)
+ניתן להוריד קוד לדוגמה: [לחץ כאן](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **משאבים**
 
-1. הירשם ל-GitHub Models [https://gh.io/models](https://gh.io/models)
+1. הרשמה ל-GitHub Models [https://gh.io/models](https://gh.io/models)
 
-2. למד פיתוח Visual Studio Code Extension [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. למידה על פיתוח Visual Studio Code Extension [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. למד על Visual Studio Code Coilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. למידה על Visual Studio Code Coilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפת המקור שלו צריך להיחשב כמקור הסמכות. למידע קריטי מומלץ להשתמש בתרגום מקצועי של מתרגם אנושי. אנו לא נושאים באחריות לכל אי הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-05-07T14:28:52+00:00",
+  "translation_date": "2025-07-16T20:39:56+00:00",
   "source_file": "md/01.Introduction/03/Jetson_Inference.md",
   "language_code": "mo"
 }
 -->
-# **Inference Phi-3 in Nvidia Jetson**
+# **在 Nvidia Jetson 上推理 Phi-3**
 
-Nvidia Jetson is a series of embedded computing boards from Nvidia. The Jetson TK1, TX1 and TX2 models all carry a Tegra processor (or SoC) from Nvidia that integrates an ARM architecture central processing unit (CPU). Jetson is a low-power system and is designed for accelerating machine learning applications. Nvidia Jetson is used by professional developers to create breakthrough AI products across all industries, and by students and enthusiasts for hands-on AI learning and making amazing projects. SLM is deployed in edge devices such as Jetson, which will enable better implementation of industrial generative AI application scenarios.
+Nvidia Jetson 是 Nvidia 推出的一系列嵌入式運算板。Jetson TK1、TX1 和 TX2 型號均搭載 Nvidia 的 Tegra 處理器（或 SoC），內建 ARM 架構的中央處理器（CPU）。Jetson 是一款低功耗系統，專為加速機器學習應用而設計。Nvidia Jetson 被專業開發者用來打造跨產業的突破性 AI 產品，也被學生和愛好者用於實作 AI 學習與創作精彩專案。SLM 部署於 Jetson 等邊緣設備，能更好地實現工業生成式 AI 的應用場景。
 
-## Deployment on NVIDIA Jetson:
-Developers working on autonomous robotics and embedded devices can leverage Phi-3 Mini. Phi-3 relatively small size makes it ideal for edge deployment. Parameters have been meticulously tuned during training, ensuring high accuracy in responses.
+## 在 NVIDIA Jetson 上部署：
+從事自主機器人和嵌入式設備開發的工程師可以利用 Phi-3 Mini。Phi-3 體積相對小巧，非常適合邊緣部署。訓練過程中參數經過細緻調校，確保回應的高準確度。
 
-### TensorRT-LLM Optimization:
-NVIDIA's [TensorRT-LLM library](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) optimizes large language model inference. It supports Phi-3 Mini's long context window, enhancing both throughput and latency. Optimizations include techniques like LongRoPE, FP8, and inflight batching.
+### TensorRT-LLM 優化：
+NVIDIA 的 [TensorRT-LLM library](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) 專為大型語言模型推理進行優化。它支援 Phi-3 Mini 的長上下文視窗，提升吞吐量與延遲表現。優化技術包括 LongRoPE、FP8 以及 inflight batching 等。
 
-### Availability and Deployment:
-Developers can explore Phi-3 Mini with the 128K context window at [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). It's packaged as an NVIDIA NIM, a microservice with a standard API that can be deployed anywhere. Additionally, the [TensorRT-LLM implementations on GitHub](https://github.com/NVIDIA/TensorRT-LLM).
+### 可用性與部署：
+開發者可在 [NVIDIA 的 AI 頁面](https://www.nvidia.com/en-us/ai-data-science/generative-ai/) 探索具備 128K 上下文視窗的 Phi-3 Mini。它以 NVIDIA NIM 形式封裝，為具標準 API 的微服務，可部署於任何環境。此外，[GitHub 上的 TensorRT-LLM 實作](https://github.com/NVIDIA/TensorRT-LLM) 也提供參考。
 
-## **1. Preparation**
+## **1. 準備工作**
 
 a. Jetson Orin NX / Jetson NX
 
@@ -30,17 +30,17 @@ c. Cuda 11.8
 
 d. Python 3.8+
 
-## **2. Running Phi-3 in Jetson**
+## **2. 在 Jetson 上運行 Phi-3**
 
-We can choose [Ollama](https://ollama.com) or [LlamaEdge](https://llamaedge.com)
+我們可以選擇 [Ollama](https://ollama.com) 或 [LlamaEdge](https://llamaedge.com)
 
-If you want to use gguf in the cloud and edge devices at the same time, LlamaEdge can be understood as WasmEdge (WasmEdge is a lightweight, high-performance, scalable WebAssembly runtime suitable for cloud native, edge and decentralized applications. It supports serverless applications, embedded functions, microservices, smart contracts and IoT devices. You can deploy gguf's quantitative model to edge devices and the cloud through LlamaEdge.
+如果想同時在雲端和邊緣設備使用 gguf，LlamaEdge 可視為 WasmEdge（WasmEdge 是一個輕量、高效且可擴展的 WebAssembly 執行環境，適用於雲原生、邊緣及去中心化應用。它支援無伺服器應用、嵌入式函式、微服務、智能合約及物聯網設備）。你可以透過 LlamaEdge 將 gguf 的量化模型部署到邊緣設備和雲端。
 
 ![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.mo.jpg)
 
-Here are the steps to use
+以下是使用步驟：
 
-1. Install and download related libraries and files
+1. 安裝並下載相關函式庫與檔案
 
 ```bash
 
@@ -54,9 +54,9 @@ tar xzf chatbot-ui.tar.gz
 
 ```
 
-**Note**: llama-api-server.wasm and chatbot-ui need to be in the same directory
+**注意**：llama-api-server.wasm 與 chatbot-ui 需放在同一目錄下
 
-2. Run scripts in terminal
+2. 在終端機執行腳本
 
 ```bash
 
@@ -64,13 +64,13 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 ```
 
-Here is the running result
+以下是執行結果
 
 ![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.mo.png)
 
-***Sample code*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
+***範例程式碼*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
-In summary, Phi-3 Mini represents a leap forward in language modeling, combining efficiency, context awareness, and NVIDIA's optimization prowess. Whether you're building robots or edge applications, Phi-3 Mini is a powerful tool to be aware of.
+總結來說，Phi-3 Mini 在語言模型領域帶來重大突破，結合了效率、上下文感知能力與 NVIDIA 的優化技術。無論你是在打造機器人還是邊緣應用，Phi-3 Mini 都是一個值得關注的強大工具。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

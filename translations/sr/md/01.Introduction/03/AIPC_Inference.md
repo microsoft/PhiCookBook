@@ -2,45 +2,45 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-05-09T10:38:45+00:00",
+  "translation_date": "2025-07-16T20:08:14+00:00",
   "source_file": "md/01.Introduction/03/AIPC_Inference.md",
   "language_code": "sr"
 }
 -->
-# **Inferencija Phi-3 na AI PC-u**
+# **Инференција Phi-3 на AI рачунару**
 
-Sa napretkom generativne AI i poboljšanjem hardverskih mogućnosti edge uređaja, sve veći broj generativnih AI modela može se integrisati u korisničke uređaje u konceptu Bring Your Own Device (BYOD). AI PC računari su među tim modelima. Počevši od 2024. godine, Intel, AMD i Qualcomm su u saradnji sa proizvođačima PC-a predstavili AI PC računare koji omogućavaju lokalnu primenu generativnih AI modela putem hardverskih modifikacija. U ovoj diskusiji fokusiraćemo se na Intel AI PC i istražiti kako se Phi-3 može pokrenuti na Intel AI PC-u.
+Са напретком генеративне вештачке интелигенције и побољшањем хардверских могућности уређаја на ивици мреже, све већи број генеративних AI модела може се интегрисати у корисничке уређаје по систему Bring Your Own Device (BYOD). AI рачунари су међу тим моделима. Почев од 2024. године, Intel, AMD и Qualcomm су сарађивали са произвођачима рачунара како би представили AI рачунаре који омогућавају покретање локализованих генеративних AI модела кроз хардверске измене. У овој дискусији фокусираћемо се на Intel AI рачунаре и истражити како покренути Phi-3 на Intel AI рачунару.
 
-### Šta je NPU
+### Шта је NPU
 
-NPU (Neural Processing Unit) je namenski procesor ili procesorska jedinica unutar većeg SoC dizajnirana posebno za ubrzanje operacija neuronskih mreža i AI zadataka. Za razliku od opšte namene CPU i GPU, NPU su optimizovani za paralelno računanje zasnovano na podacima, što ih čini veoma efikasnim u obradi velikih količina multimedijalnih podataka poput videa i slika, kao i u obradi podataka za neuronske mreže. Posebno su dobri u obavljanju AI zadataka kao što su prepoznavanje govora, zamućivanje pozadine u video pozivima i procesi uređivanja fotografija ili video zapisa poput detekcije objekata.
+NPU (Neural Processing Unit) је посебан процесор или процесорска јединица у оквиру већег SoC-а, дизајнирана посебно за убрзавање операција неуронских мрежа и AI задатака. За разлику од општих CPU и GPU, NPU су оптимизовани за паралелно рачунање засновано на подацима, што их чини изузетно ефикасним у обради великих мултимедијалних података као што су видео снимци и слике, као и у обради података за неуронске мреже. Посебно су добри у извршавању AI задатака као што су препознавање говора, замућење позадине у видео позивима и процеси уређивања фотографија или видео снимака као што је детекција објеката.
 
-## NPU vs GPU
+## NPU у односу на GPU
 
-Iako mnogi AI i mašinsko učenje zadaci rade na GPU-ima, postoji važna razlika između GPU i NPU.
-GPU su poznati po svojim paralelnim računarskim sposobnostima, ali nisu svi GPU-ovi podjednako efikasni izvan grafičke obrade. NPU, s druge strane, su specijalno dizajnirani za složene proračune potrebne za neuronske mreže, što ih čini izuzetno efikasnim za AI zadatke.
+Иако многи AI и машинско учење задаци раде на GPU-има, постоји важна разлика између GPU и NPU.
+GPU су познати по својим паралелним рачунарским способностима, али нису сви GPU једнако ефикасни изван обраде графике. NPU, с друге стране, су специјално направљени за сложене прорачуне који су укључени у операције неуронских мрежа, што их чини изузетно ефикасним за AI задатке.
 
-Ukratko, NPU su matematički eksperti koji ubrzavaju AI proračune i igraju ključnu ulogu u novoj eri AI PC računara!
+Укратко, NPU су математички генији који убрзавају AI прорачуне и играју кључну улогу у новој ери AI рачунара!
 
-***Ovaj primer je baziran na najnovijem Intel Core Ultra procesoru***
+***Овај пример је заснован на најновијем Intel Core Ultra процесору***
 
-## **1. Korišćenje NPU za pokretanje Phi-3 modela**
+## **1. Коришћење NPU за покретање Phi-3 модела**
 
-Intel® NPU uređaj je AI inferencijski akcelerator integrisan sa Intel klijentskim CPU-ima, počevši od Intel® Core™ Ultra generacije procesora (ranije poznat kao Meteor Lake). Omogućava energetsku efikasnost u izvršavanju zadataka veštačkih neuronskih mreža.
+Intel® NPU уређај је AI инференцијски акцелератор интегрисан са Intel клијентским CPU-има, почев од Intel® Core™ Ultra генерације процесора (раније познат као Meteor Lake). Омогућава енергетски ефикасно извршавање задатака вештачких неуронских мрежа.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.sr.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.sr.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.sr.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.sr.png)
 
 **Intel NPU Acceleration Library**
 
-Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) je Python biblioteka dizajnirana da poveća efikasnost vaših aplikacija koristeći snagu Intel Neural Processing Unit (NPU) za brze proračune na kompatibilnom hardveru.
+Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) је Python библиотека дизајнирана да повећа ефикасност ваших апликација коришћењем снаге Intel Neural Processing Unit (NPU) за извођење брзих прорачуна на компатибилном хардверу.
 
-Primer Phi-3-mini na AI PC-u sa Intel® Core™ Ultra procesorima.
+Пример Phi-3-mini на AI рачунару са Intel® Core™ Ultra процесорима.
 
 ![DemoPhiIntelAIPC](../../../../../imgs/01/03/AIPC/aipcphi3-mini.gif)
 
-Instalirajte Python biblioteku pomoću pip
+Инсталирајте Python библиотеку помоћу pip
 
 ```bash
 
@@ -48,11 +48,11 @@ Instalirajte Python biblioteku pomoću pip
 
 ```
 
-***Napomena*** Projekat je još uvek u razvoju, ali referentni model je već vrlo kompletan.
+***Напомена*** Пројекат је још у развоју, али референтни модел је већ веома комплетан.
 
-### **Pokretanje Phi-3 sa Intel NPU Acceleration Library**
+### **Покретање Phi-3 са Intel NPU Acceleration Library**
 
-Korišćenjem Intel NPU ubrzanja, ova biblioteka ne utiče na tradicionalni proces kodiranja. Potrebno je samo koristiti ovu biblioteku za kvantizaciju originalnog Phi-3 modela, kao što su FP16, INT8, INT4, na primer
+Коришћењем Intel NPU акцелерације, ова библиотека не утиче на традиционални процес кодирања. Потребно је само да користите ову библиотеку за квантизацију оригиналног Phi-3 модела, као што су FP16, INT8, INT4, на пример
 
 ```python
 from transformers import AutoTokenizer, pipeline,TextStreamer
@@ -72,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-Nakon uspešne kvantizacije, nastavlja se izvršavanje pozivanjem NPU da pokrene Phi-3 model.
+Након успешне квантизације, наставите извршавање позивањем NPU за покретање Phi-3 модела.
 
 ```python
 generation_args = {
@@ -96,51 +96,51 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-Tokom izvršavanja koda, status rada NPU-a možemo pratiti preko Task Manager-a
+При извршавању кода можемо пратити статус рада NPU преко Task Manager-а
 
-![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.sr.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.sr.png)
 
-***Primeri*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
+***Примери*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
-## **2. Korišćenje DirectML + ONNX Runtime za pokretanje Phi-3 modela**
+## **2. Коришћење DirectML + ONNX Runtime за покретање Phi-3 модела**
 
-### **Šta je DirectML**
+### **Шта је DirectML**
 
-[DirectML](https://github.com/microsoft/DirectML) je visokoperformansna, hardverski ubrzana DirectX 12 biblioteka za mašinsko učenje. DirectML pruža GPU ubrzanje za uobičajene zadatke mašinskog učenja na širokom spektru podržanog hardvera i drajvera, uključujući sve GPU-ove sa podrškom za DirectX 12 od proizvođača kao što su AMD, Intel, NVIDIA i Qualcomm.
+[DirectML](https://github.com/microsoft/DirectML) је високо перформантна, хардверски убрзана DirectX 12 библиотека за машинско учење. DirectML пружа GPU акцелерацију за уобичајене задатке машинског учења на широком спектру подржаног хардвера и драјвера, укључујући све DirectX 12 компатибилне GPU-ове од произвођача као што су AMD, Intel, NVIDIA и Qualcomm.
 
-Kada se koristi samostalno, DirectML API je niskonivojska DirectX 12 biblioteka pogodna za visokoperformansne, niskolatentne aplikacije poput frejmwork-a, igara i drugih real-time aplikacija. Besprekorno međudjelovanje DirectML sa Direct3D 12, kao i njegova mala potrošnja resursa i usklađenost na različitom hardveru, čine DirectML idealnim za ubrzanje mašinskog učenja kada su potrebni visoke performanse, pouzdanost i predvidljivost rezultata na različitim uređajima.
+Када се користи самостално, DirectML API је ниско-ниво DirectX 12 библиотека и погодан је за апликације са високим перформансама и ниском латенцијом као што су фрејмворкови, игре и друге апликације у реалном времену. Беспрекорна интероперабилност DirectML са Direct3D 12, као и његов мали оверхед и конзистентност на различитом хардверу, чине DirectML идеалним за убрзавање машинског учења када су потребне и високе перформансе и поузданост и предвидљивост резултата на различитим уређајима.
 
-***Napomena*** : Najnoviji DirectML već podržava NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
+***Напомена*** : Најновији DirectML већ подржава NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
-### DirectML i CUDA u pogledu mogućnosti i performansi:
+### DirectML и CUDA у погледу могућности и перформанси:
 
-**DirectML** je biblioteka za mašinsko učenje razvijena od strane Microsoft-a. Namenjena je ubrzanju mašinskog učenja na Windows uređajima, uključujući desktop računare, laptope i edge uređaje.
-- Baziran na DX12: DirectML je izgrađen na DirectX 12 (DX12) što pruža široku podršku hardvera na GPU-ovima, uključujući NVIDIA i AMD.
-- Šira podrška: Pošto koristi DX12, DirectML može raditi sa bilo kojim GPU-om koji podržava DX12, čak i integrisanim GPU-ovima.
-- Obrada slika: DirectML obrađuje slike i druge podatke koristeći neuronske mreže, što ga čini pogodnim za zadatke poput prepoznavanja slika, detekcije objekata i slično.
-- Jednostavna instalacija: Postavljanje DirectML-a je jednostavno i ne zahteva specifične SDK-ove ili biblioteke od proizvođača GPU-a.
-- Performanse: U nekim slučajevima, DirectML postiže dobre performanse i može biti brži od CUDA, naročito za određene vrste poslova.
-- Ograničenja: Međutim, postoje situacije kada je DirectML sporiji, naročito za velike batch-eve u float16 formatu.
+**DirectML** је библиотека за машинско учење коју је развио Microsoft. Дизајнирана је да убрза радне задатке машинског учења на Windows уређајима, укључујући десктопове, лаптопове и уређаје на ивици мреже.
+- Заснован на DX12: DirectML је изграђен на врху DirectX 12 (DX12), који пружа широк спектар подршке за хардвер на GPU-овима, укључујући NVIDIA и AMD.
+- Шира подршка: Пошто користи DX12, DirectML може радити са било којим GPU који подржава DX12, чак и интегрисаним GPU-овима.
+- Обрада слика: DirectML обрађује слике и друге податке користећи неуронске мреже, што га чини погодним за задатке као што су препознавање слика, детекција објеката и слично.
+- Лакоћа подешавања: Подешавање DirectML је једноставно и не захтева специфичне SDK или библиотеке од произвођача GPU-а.
+- Перформансе: У неким случајевима, DirectML има добре перформансе и може бити бржи од CUDA, посебно за одређене радне задатке.
+- Ограничења: Међутим, постоје случајеви када DirectML може бити спорији, нарочито за велике батчеве у float16 формату.
 
-**CUDA** je NVIDIA-ina platforma za paralelno računanje i programski model. Omogućava programerima da iskoriste snagu NVIDIA GPU-ova za opštu računarsku obradu, uključujući mašinsko učenje i naučne simulacije.
-- Specifično za NVIDIA: CUDA je usko povezan sa NVIDIA GPU-ovima i posebno je dizajniran za njih.
-- Visoko optimizovan: Pruža odlične performanse za GPU ubrzane zadatke, naročito na NVIDIA hardveru.
-- Široka upotreba: Mnogi frejmwork-i i biblioteke za mašinsko učenje (kao što su TensorFlow i PyTorch) podržavaju CUDA.
-- Prilagodljivost: Programeri mogu detaljno podešavati CUDA postavke za specifične zadatke, što može dovesti do optimalnih performansi.
-- Ograničenja: Međutim, zavisnost od NVIDIA hardvera može biti ograničavajuća ako želite širu kompatibilnost sa različitim GPU-ovima.
+**CUDA** је NVIDIA платформа за паралелно рачунање и програмски модел. Омогућава програмерима да искористе снагу NVIDIA GPU-а за опште рачунарске задатке, укључујући машинско учење и научне симулације.
+- Специфично за NVIDIA: CUDA је тесно интегрисана са NVIDIA GPU-овима и дизајнирана је посебно за њих.
+- Високо оптимизована: Пружа одличне перформансе за задатке убрзане GPU-ом, посебно када се користе NVIDIA GPU-ови.
+- Широко коришћена: Многи фрејмворкови и библиотеке за машинско учење (као што су TensorFlow и PyTorch) имају подршку за CUDA.
+- Прилагођавање: Програмери могу детаљно подесити CUDA за специфичне задатке, што може довести до оптималних перформанси.
+- Ограничења: Међутим, зависност CUDA од NVIDIA хардвера може бити ограничење ако желите ширу компатибилност са различитим GPU-овима.
 
-### Izbor između DirectML i CUDA
+### Избор између DirectML и CUDA
 
-Izbor između DirectML i CUDA zavisi od vašeg konkretnog slučaja upotrebe, dostupnosti hardvera i ličnih preferencija.
-Ako tražite širu kompatibilnost i jednostavnu instalaciju, DirectML može biti dobar izbor. Sa druge strane, ako imate NVIDIA GPU i potrebne su vam visoko optimizovane performanse, CUDA je i dalje snažan kandidat. Ukratko, oba imaju svoje prednosti i mane, pa razmotrite svoje zahteve i dostupni hardver pri donošenju odluke.
+Избор између DirectML и CUDA зависи од вашег конкретног случаја употребе, доступности хардвера и личних преференција.
+Ако тражите ширу компатибилност и лакоћу подешавања, DirectML може бити добар избор. Међутим, ако имате NVIDIA GPU и потребне су вам високо оптимизоване перформансе, CUDA остаје јак кандидат. Укратко, и DirectML и CUDA имају своје предности и мане, па узмите у обзир своје захтеве и расположиви хардвер при доношењу одлуке.
 
-### **Generativna AI sa ONNX Runtime**
+### **Генеративна AI са ONNX Runtime**
 
-U eri AI, prenosivost AI modela je veoma važna. ONNX Runtime omogućava lako raspoređivanje treniranih modela na različite uređaje. Programeri ne moraju da brinu o okviru za inferenciju i koriste jedinstveni API za izvršavanje modela. U eri generativne AI, ONNX Runtime takođe vrši optimizaciju koda (https://onnxruntime.ai/docs/genai/). Kroz optimizovani ONNX Runtime, kvantizovani generativni AI modeli mogu se inferencirati na različitim uređajima. U Generative AI sa ONNX Runtime, inferenciju AI modela možete obaviti preko Python, C#, C/C++ API-ja. Naravno, na iPhone-u se može iskoristiti C++ Generative AI sa ONNX Runtime API-jem.
+У ери AI, преносивост AI модела је веома важна. ONNX Runtime омогућава лако распоређивање обучених модела на различите уређаје. Програмери не морају да брину о инференцијском фрејмворку и користе унифицирани API за извршење инференције модела. У ери генеративне AI, ONNX Runtime је такође оптимизовао код (https://onnxruntime.ai/docs/genai/). Кроз оптимизовани ONNX Runtime, квантизовани генеративни AI модел може се изводити на различитим уређајима. У Generative AI са ONNX Runtime, можете извршавати AI модел преко API-ја у Python, C#, C / C++. Наравно, распоређивање на iPhone-у може искористити C++ Generative AI са ONNX Runtime API-јем.
 
-[Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
+[Пример кода](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
-***Kompajliranje generativne AI sa ONNX Runtime bibliotekom***
+***компајлирање генеративне AI са ONNX Runtime библиотеком***
 
 ```bash
 
@@ -179,7 +179,7 @@ python build.py --use_dml
 
 ```
 
-**Instalacija biblioteke**
+**Инсталирање библиотеке**
 
 ```bash
 
@@ -187,21 +187,21 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-Ovo je rezultat izvršavanja
+Ово је резултат извршавања
 
-![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.sr.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.sr.png)
 
-***Primeri*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
+***Примери*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
-## **3. Korišćenje Intel OpenVino za pokretanje Phi-3 modela**
+## **3. Коришћење Intel OpenVino за покретање Phi-3 модела**
 
-### **Šta je OpenVINO**
+### **Шта је OpenVINO**
 
-[OpenVINO](https://github.com/openvinotoolkit/openvino) je open-source alatka za optimizaciju i raspoređivanje dubokih modela učenja. Pruža ubrzanje dubokog učenja za modele vida, zvuka i jezika iz popularnih frejmwork-a kao što su TensorFlow, PyTorch i drugi. Počnite sa OpenVINO-om. OpenVINO se takođe može koristiti u kombinaciji sa CPU i GPU za pokretanje Phi-3 modela.
+[OpenVINO](https://github.com/openvinotoolkit/openvino) је open-source алат за оптимизацију и распоређивање дубоких модела учења. Пружа убрзање дубоког учења за моделе за вид, звук и језик из популарних фрејмворкова као што су TensorFlow, PyTorch и други. Започните са OpenVINO. OpenVINO се такође може користити у комбинацији са CPU и GPU за покретање Phi-3 модела.
 
-***Napomena***: Trenutno, OpenVINO ne podržava NPU.
+***Напомена***: Тренутно OpenVINO не подржава NPU.
 
-### **Instalacija OpenVINO biblioteke**
+### **Инсталирање OpenVINO библиотеке**
 
 ```bash
 
@@ -213,9 +213,9 @@ Ovo je rezultat izvršavanja
 
 ```
 
-### **Pokretanje Phi-3 sa OpenVINO**
+### **Покретање Phi-3 са OpenVINO**
 
-Kao i kod NPU, OpenVINO izvršava pozive generativnih AI modela kroz kvantizovane modele. Prvo je potrebno kvantizovati Phi-3 model i završiti kvantizaciju modela preko komandne linije koristeći optimum-cli.
+Као и NPU, OpenVINO извршава позив генеративних AI модела покретањем квантизованих модела. Прво је потребно квантизовати Phi-3 модел и завршити квантизацију модела преко командне линије помоћу optimum-cli
 
 **INT4**
 
@@ -233,11 +233,11 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ```
 
-konvertovani format izgleda ovako
+конвертовани формат изгледа овако
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.sr.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.sr.png)
 
-Učitajte putanje modela (model_dir), povezane konfiguracije (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), i hardverski ubrzane uređaje (GPU.0) preko OVModelForCausalLM
+Учитајте путање модела (model_dir), релевантне конфигурације (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) и хардверски убрзане уређаје (GPU.0) преко OVModelForCausalLM
 
 ```python
 
@@ -251,13 +251,13 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-Tokom izvršavanja koda, status rada GPU-a možemo pratiti preko Task Manager-a
+При извршавању кода можемо пратити статус рада GPU преко Task Manager-а
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.sr.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.sr.png)
 
-***Primeri*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
+***Примери*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***Napomena*** : Sve tri pomenute metode imaju svoje prednosti, ali se preporučuje korišćenje NPU ubrzanja za inferenciju na AI PC-u.
+### ***Напомена*** : Горенаведене три методе имају своје предности, али се препоручује коришћење NPU акцелерације за инференцију на AI рачунарима.
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу АИ сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људи. Не одговарамо за било каква неспоразума или погрешна тумачења настала употребом овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

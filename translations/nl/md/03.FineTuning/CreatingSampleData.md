@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:25:24+00:00",
+  "translation_date": "2025-07-17T05:50:06+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "nl"
 }
 -->
-# Genereer een afbeeldingsdataset door DataSet te downloaden van Hugging Face en bijbehorende afbeeldingen
+# Genereer Image Data Set door DataSet te downloaden van Hugging Face en bijbehorende afbeeldingen
 
 
 ### Overzicht
 
-Dit script bereidt een dataset voor machine learning voor door de benodigde afbeeldingen te downloaden, rijen te filteren waar het downloaden van afbeeldingen mislukt, en de dataset op te slaan als een CSV-bestand.
+Dit script bereidt een dataset voor machine learning voor door de benodigde afbeeldingen te downloaden, rijen te filteren waarbij het downloaden van afbeeldingen mislukt, en de dataset op te slaan als een CSV-bestand.
 
 ### Vereisten
 
-Voordat je dit script uitvoert, zorg ervoor dat de volgende libraries geïnstalleerd zijn: `Pandas`, `Datasets`, `requests`, `PIL`, en `io`. Je moet ook `'Insert_Your_Dataset'` in regel 2 vervangen door de naam van je dataset van Hugging Face.
+Zorg ervoor dat de volgende libraries geïnstalleerd zijn voordat je dit script uitvoert: `Pandas`, `Datasets`, `requests`, `PIL` en `io`. Vervang ook `'Insert_Your_Dataset'` in regel 2 door de naam van jouw dataset van Hugging Face.
 
 Vereiste libraries:
 
@@ -34,16 +34,16 @@ from io import BytesIO
 
 Het script voert de volgende stappen uit:
 
-1. Downloadt de dataset van Hugging Face met behulp van de `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Downloadt de dataset van Hugging Face met de functie `load_dataset()`.
+2. Zet de Hugging Face dataset om naar een Pandas DataFrame voor eenvoudigere bewerking met de methode `to_pandas()`.
+3. Maakt mappen aan om de dataset en afbeeldingen op te slaan.
+4. Filtert rijen waar het downloaden van afbeeldingen mislukt door elke rij in de DataFrame te doorlopen, de afbeelding te downloaden met de aangepaste functie `download_image()`, en de gefilterde rij toe te voegen aan een nieuwe DataFrame genaamd `filtered_rows`.
+5. Maakt een nieuwe DataFrame met de gefilterde rijen en slaat deze op als een CSV-bestand.
+6. Print een bericht waarin staat waar de dataset en afbeeldingen zijn opgeslagen.
 
-### Custom Function
+### Aangepaste functie
 
-The `download_image()` functie download_image() haalt een afbeelding op van een URL en slaat deze lokaal op met behulp van de Pillow Image Library (PIL) en de `io` module. De functie geeft True terug als de afbeelding succesvol is gedownload, en False als dat niet het geval is. Bij een mislukte aanvraag wordt een uitzondering met de foutmelding opgegooid.
+De functie `download_image()` downloadt een afbeelding van een URL en slaat deze lokaal op met behulp van de Pillow Image Library (PIL) en de `io` module. De functie geeft True terug als de afbeelding succesvol is gedownload, en False als dat niet lukt. Bij een mislukte aanvraag wordt een uitzondering gegooid met de foutmelding.
 
 ### Hoe werkt dit
 
@@ -51,25 +51,25 @@ De functie download_image neemt twee parameters: image_url, de URL van de afbeel
 
 Zo werkt de functie:
 
-Eerst wordt een GET-verzoek gedaan naar image_url met de requests.get methode. Hiermee wordt de afbeeldingsdata opgehaald van de URL.
+Eerst wordt een GET-verzoek gedaan naar image_url met de methode requests.get. Dit haalt de afbeeldingsdata op van de URL.
 
-De regel response.raise_for_status() controleert of het verzoek succesvol was. Als de statuscode van de response een fout aangeeft (bijvoorbeeld 404 - Niet gevonden), wordt er een uitzondering opgegooid. Dit zorgt ervoor dat we alleen doorgaan met downloaden als het verzoek gelukt is.
+De regel response.raise_for_status() controleert of het verzoek succesvol was. Als de statuscode van de response een fout aangeeft (bijvoorbeeld 404 - Niet gevonden), wordt er een uitzondering gegooid. Dit zorgt ervoor dat we alleen doorgaan met het downloaden als het verzoek geslaagd is.
 
-De afbeeldingsdata wordt vervolgens doorgegeven aan de Image.open methode van de PIL (Python Imaging Library) module. Deze methode maakt een Image-object aan van de data.
+De afbeeldingsdata wordt vervolgens doorgegeven aan de Image.open methode van de PIL (Python Imaging Library) module. Deze methode maakt een Image-object van de data.
 
-Met image.save(save_path) wordt de afbeelding opgeslagen op het opgegeven save_path. Het pad moet de gewenste bestandsnaam en extensie bevatten.
+Met image.save(save_path) wordt de afbeelding opgeslagen op het opgegeven save_path. Dit pad moet de gewenste bestandsnaam en extensie bevatten.
 
-Tot slot geeft de functie True terug om aan te geven dat de afbeelding succesvol is gedownload en opgeslagen. Als er tijdens het proces een uitzondering optreedt, wordt deze opgevangen, wordt er een foutmelding getoond, en wordt False teruggegeven.
+Tot slot geeft de functie True terug om aan te geven dat de afbeelding succesvol is gedownload en opgeslagen. Als er een uitzondering optreedt tijdens het proces, wordt deze opgevangen, wordt een foutmelding geprint en geeft de functie False terug.
 
-Deze functie is handig om afbeeldingen van URLs te downloaden en lokaal op te slaan. Hij gaat om met mogelijke fouten tijdens het downloaden en geeft feedback over het succes van het downloaden.
+Deze functie is handig om afbeeldingen van URL’s te downloaden en lokaal op te slaan. Het handelt mogelijke fouten tijdens het downloaden af en geeft feedback of het downloaden gelukt is.
 
-Het is goed om te weten dat de requests library wordt gebruikt voor HTTP-verzoeken, de PIL library voor het werken met afbeeldingen, en de BytesIO klasse om de afbeeldingsdata als een stroom van bytes te verwerken.
+Het is goed om te weten dat de requests library wordt gebruikt om HTTP-verzoeken te doen, de PIL library om met afbeeldingen te werken, en de BytesIO klasse om de afbeeldingsdata als een byte-stream te verwerken.
 
 
 
 ### Conclusie
 
-Dit script biedt een handige manier om een dataset voor machine learning voor te bereiden door benodigde afbeeldingen te downloaden, rijen waar het downloaden mislukt te filteren, en de dataset op te slaan als CSV-bestand.
+Dit script biedt een handige manier om een dataset voor machine learning voor te bereiden door benodigde afbeeldingen te downloaden, rijen te filteren waar het downloaden mislukt, en de dataset op te slaan als CSV-bestand.
 
 ### Voorbeeldscript
 
@@ -134,7 +134,7 @@ print(f"Dataset and images saved to {dataset_dir}")
 [Genereer een nieuw Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
 ### Voorbeeld Data Set  
-[Voorbeeld Data Set uit finetuning met LORA voorbeeld](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+[Voorbeeld Data Set van finetuning met LORA voorbeeld](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

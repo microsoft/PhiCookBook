@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-05-09T17:33:28+00:00",
+  "translation_date": "2025-07-17T00:29:11+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "th"
 }
 -->
 # ปรับแต่งและผสานรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow
 
-ตัวอย่างแบบครบวงจร (E2E) นี้อ้างอิงจากคู่มือ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" จาก Microsoft Tech Community ซึ่งแนะนำขั้นตอนการปรับแต่ง การนำไปใช้ และการผสานรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow
+ตัวอย่างแบบครบวงจร (E2E) นี้อ้างอิงจากคู่มือ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" จาก Microsoft Tech Community ซึ่งแนะนำขั้นตอนการปรับแต่ง การปรับใช้ และการผสานรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow
 
 ## ภาพรวม
 
-ในตัวอย่าง E2E นี้ คุณจะได้เรียนรู้วิธีปรับแต่งโมเดล Phi-3 และผสานรวมกับ Prompt flow โดยใช้ Azure Machine Learning และ Prompt flow เพื่อสร้างเวิร์กโฟลว์สำหรับการนำโมเดล AI ที่กำหนดเองไปใช้และใช้งาน ตัวอย่างนี้แบ่งออกเป็นสามสถานการณ์:
+ในตัวอย่าง E2E นี้ คุณจะได้เรียนรู้วิธีการปรับแต่งโมเดล Phi-3 และผสานรวมกับ Prompt flow โดยใช้ประโยชน์จาก Azure Machine Learning และ Prompt flow เพื่อสร้างเวิร์กโฟลว์สำหรับการปรับใช้และใช้งานโมเดล AI ที่กำหนดเอง ตัวอย่างนี้แบ่งออกเป็นสามสถานการณ์:
 
 **สถานการณ์ที่ 1: ตั้งค่า Azure resources และเตรียมความพร้อมสำหรับการปรับแต่ง**
 
-**สถานการณ์ที่ 2: ปรับแต่งโมเดล Phi-3 และนำไปใช้ใน Azure Machine Learning Studio**
+**สถานการณ์ที่ 2: ปรับแต่งโมเดล Phi-3 และปรับใช้ใน Azure Machine Learning Studio**
 
 **สถานการณ์ที่ 3: ผสานรวมกับ Prompt flow และสนทนากับโมเดลที่กำหนดเองของคุณ**
 
 นี่คือภาพรวมของตัวอย่าง E2E นี้
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.dfeb1f15c7d3c8989fb267a05ac83a25485a7230bde037df9d3d92336afc1993.th.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.th.png)
 
 ### สารบัญ
 
@@ -34,10 +34,10 @@ CO_OP_TRANSLATOR_METADATA:
     - [ตั้งค่าโปรเจกต์](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [เตรียมชุดข้อมูลสำหรับการปรับแต่ง](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[สถานการณ์ที่ 2: ปรับแต่งโมเดล Phi-3 และนำไปใช้ใน Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[สถานการณ์ที่ 2: ปรับแต่งโมเดล Phi-3 และปรับใช้ใน Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [ตั้งค่า Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [ปรับแต่งโมเดล Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [นำโมเดลที่ปรับแต่งแล้วไปใช้](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [ปรับใช้โมเดลที่ปรับแต่งแล้ว](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. **[สถานการณ์ที่ 3: ผสานรวมกับ Prompt flow และสนทนากับโมเดลที่กำหนดเองของคุณ](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [ผสานรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
@@ -49,26 +49,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *azure machine learning* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Azure Machine Learning** จากตัวเลือกที่ปรากฏ
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.321cff72d18a51c06dee2db7463868f3ca6619559a5d68b7795d70f4a8b3a683.th.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.th.png)
 
 1. เลือก **+ Create** จากเมนูนำทาง
 
 1. เลือก **New workspace** จากเมนูนำทาง
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.9bd9208488fcf38226fc8d3cefffecb2cb14f414f6d8d982492c1bde8634e24a.th.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.th.png)
 
-1. ดำเนินการดังนี้:
+1. ดำเนินการตามขั้นตอนดังนี้:
 
-    - เลือก Azure **Subscription** ของคุณ
+    - เลือก **Subscription** ของ Azure ของคุณ
     - เลือก **Resource group** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
-    - กรอก **Workspace Name** ซึ่งต้องไม่ซ้ำกับชื่ออื่น
-    - เลือก **Region** ที่ต้องการใช้
+    - กรอกชื่อ **Workspace Name** ซึ่งต้องไม่ซ้ำกับที่มีอยู่
+    - เลือก **Region** ที่ต้องการใช้งาน
     - เลือก **Storage account** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **Key vault** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **Application insights** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **Container registry** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.b2ebbef59952cd17d16b1f82adc252bf7616f8638d451e3c6595ffefe44f2cfa.th.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.th.png)
 
 1. เลือก **Review + Create**
 
@@ -76,144 +76,144 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### ขอเพิ่มโควต้า GPU ใน Azure Subscription
 
-ในตัวอย่าง E2E นี้ คุณจะใช้ *Standard_NC24ads_A100_v4 GPU* สำหรับการปรับแต่ง ซึ่งต้องมีการขอโควต้า และใช้ *Standard_E4s_v3* CPU สำหรับการนำไปใช้ ซึ่งไม่ต้องขอโควต้า
+ในตัวอย่าง E2E นี้ คุณจะใช้ *Standard_NC24ads_A100_v4 GPU* สำหรับการปรับแต่ง ซึ่งต้องมีการขอโควต้า และใช้ *Standard_E4s_v3* CPU สำหรับการปรับใช้ ซึ่งไม่ต้องขอโควต้า
 
 > [!NOTE]
 >
-> เฉพาะ Subscription แบบ Pay-As-You-Go (ประเภท Subscription มาตรฐาน) เท่านั้นที่มีสิทธิ์ขอจัดสรร GPU; Subscription ประเภท benefit ยังไม่รองรับในขณะนี้
+> เฉพาะ Subscription แบบ Pay-As-You-Go (ประเภท Subscription มาตรฐาน) เท่านั้นที่มีสิทธิ์ขอจัดสรร GPU; Subscription แบบ benefit ยังไม่รองรับในขณะนี้
 >
-> สำหรับผู้ที่ใช้ Subscription ประเภท benefit (เช่น Visual Studio Enterprise Subscription) หรือผู้ที่ต้องการทดสอบกระบวนการปรับแต่งและนำไปใช้แบบรวดเร็ว บทแนะนำนี้ยังแนะนำวิธีปรับแต่งด้วยชุดข้อมูลขนาดเล็กโดยใช้ CPU แต่ควรทราบว่าผลลัพธ์จากการปรับแต่งจะดีขึ้นมากเมื่อใช้ GPU กับชุดข้อมูลขนาดใหญ่
+> สำหรับผู้ที่ใช้ Subscription แบบ benefit (เช่น Visual Studio Enterprise Subscription) หรือผู้ที่ต้องการทดสอบกระบวนการปรับแต่งและปรับใช้แบบรวดเร็ว คู่มือนี้ยังแนะนำวิธีปรับแต่งด้วยชุดข้อมูลขนาดเล็กโดยใช้ CPU แต่ควรทราบว่าผลลัพธ์การปรับแต่งจะดีกว่ามากเมื่อใช้ GPU กับชุดข้อมูลขนาดใหญ่
 
 1. เข้าไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
 
-1. ดำเนินการดังนี้เพื่อขอ *Standard NCADSA100v4 Family* โควต้า:
+1. ดำเนินการตามขั้นตอนเพื่อขอเพิ่มโควต้า *Standard NCADSA100v4 Family* ดังนี้:
 
     - เลือก **Quota** จากแท็บด้านซ้าย
     - เลือก **Virtual machine family** ที่ต้องการใช้ เช่น เลือก **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** ซึ่งรวมถึง *Standard_NC24ads_A100_v4* GPU
     - เลือก **Request quota** จากเมนูนำทาง
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.ddf063c7cda9799b8ef6fbde6c3c796201578fe9078feb1c624ed75c7705ad18.th.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.th.png)
 
-    - ในหน้าขอเพิ่มโควต้า กรอก **New cores limit** ที่ต้องการ เช่น 24
-    - เลือก **Submit** เพื่อส่งคำขอโควต้า GPU
+    - ในหน้า Request quota ให้กรอกจำนวน **New cores limit** ที่ต้องการ เช่น 24
+    - ในหน้า Request quota ให้เลือก **Submit** เพื่อส่งคำขอโควต้า GPU
 
 > [!NOTE]
-> คุณสามารถเลือก GPU หรือ CPU ที่เหมาะสมกับความต้องการโดยดูได้จากเอกสาร [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist)
+> คุณสามารถเลือก GPU หรือ CPU ที่เหมาะสมกับความต้องการได้โดยดูจากเอกสาร [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist)
 
 ### เพิ่มการมอบหมายบทบาท
 
-เพื่อปรับแต่งและนำโมเดลของคุณไปใช้ คุณต้องสร้าง User Assigned Managed Identity (UAI) และมอบสิทธิ์ที่เหมาะสมให้กับ UAI ตัวนี้ซึ่งจะใช้สำหรับการยืนยันตัวตนในระหว่างการนำไปใช้
+เพื่อปรับแต่งและปรับใช้โมเดลของคุณ คุณต้องสร้าง User Assigned Managed Identity (UAI) และมอบสิทธิ์ที่เหมาะสมให้กับมันก่อน โดย UAI นี้จะใช้สำหรับการยืนยันตัวตนในระหว่างการปรับใช้
 
-#### สร้าง User Assigned Managed Identity(UAI)
+#### สร้าง User Assigned Managed Identity (UAI)
 
 1. พิมพ์ *managed identities* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Managed Identities** จากตัวเลือกที่ปรากฏ
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.8bf5dc5a4fa3e852f897ec1a983e506c2bc7b7113d159598bf0adeb66d20a5c4.th.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.th.png)
 
 1. เลือก **+ Create**
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.025632b7b54fe323f7d38edabbae05dd23f4665d0731f7143719c27c32e7e84f.th.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.th.png)
 
-1. ดำเนินการดังนี้:
+1. ดำเนินการตามขั้นตอนดังนี้:
 
-    - เลือก Azure **Subscription** ของคุณ
+    - เลือก **Subscription** ของ Azure ของคุณ
     - เลือก **Resource group** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
-    - เลือก **Region** ที่ต้องการใช้
-    - กรอก **Name** ซึ่งต้องไม่ซ้ำกับชื่ออื่น
+    - เลือก **Region** ที่ต้องการใช้งาน
+    - กรอกชื่อ **Name** ซึ่งต้องไม่ซ้ำกับที่มีอยู่
 
 1. เลือก **Review + create**
 
 1. เลือก **+ Create**
 
-#### เพิ่มการมอบหมายบทบาท Contributor ให้กับ Managed Identity
+#### เพิ่มบทบาท Contributor ให้กับ Managed Identity
 
-1. ไปยัง Managed Identity ที่คุณสร้างขึ้น
+1. ไปที่ Managed Identity ที่คุณสร้างขึ้น
 
 1. เลือก **Azure role assignments** จากแท็บด้านซ้าย
 
 1. เลือก **+Add role assignment** จากเมนูนำทาง
 
-1. ในหน้าการเพิ่มมอบหมายบทบาท ดำเนินการดังนี้:
+1. ในหน้า Add role assignment ดำเนินการดังนี้:
     - เลือก **Scope** เป็น **Resource group**
-    - เลือก Azure **Subscription** ของคุณ
+    - เลือก **Subscription** ของ Azure ของคุณ
     - เลือก **Resource group** ที่จะใช้
     - เลือก **Role** เป็น **Contributor**
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.8936866326c7cdc3b876f14657e03422cca9dbff8b193dd541a693ce34407b26.th.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.th.png)
 
 1. เลือก **Save**
 
-#### เพิ่มการมอบหมายบทบาท Storage Blob Data Reader ให้กับ Managed Identity
+#### เพิ่มบทบาท Storage Blob Data Reader ให้กับ Managed Identity
 
 1. พิมพ์ *storage accounts* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Storage accounts** จากตัวเลือกที่ปรากฏ
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.83554a27ff3edb5099ee3fbf7f467b843dabcc0e0e5fbb829a341eab3469ffa5.th.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.th.png)
 
 1. เลือก storage account ที่เชื่อมโยงกับ Azure Machine Learning workspace ที่คุณสร้าง เช่น *finetunephistorage*
 
-1. ดำเนินการดังนี้เพื่อไปยังหน้าการเพิ่มมอบหมายบทบาท:
+1. ดำเนินการตามขั้นตอนเพื่อไปยังหน้า Add role assignment ดังนี้:
 
-    - ไปยัง Azure Storage account ที่คุณสร้าง
+    - ไปที่ Azure Storage account ที่คุณสร้าง
     - เลือก **Access Control (IAM)** จากแท็บด้านซ้าย
     - เลือก **+ Add** จากเมนูนำทาง
     - เลือก **Add role assignment** จากเมนูนำทาง
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.4fef55886792c7e860da4c5a808044e6f7067fb5694f3ed4819a5758c6cc574e.th.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.th.png)
 
-1. ในหน้าการเพิ่มมอบหมายบทบาท ดำเนินการดังนี้:
+1. ในหน้า Add role assignment ดำเนินการดังนี้:
 
-    - ในหน้าบทบาท พิมพ์ *Storage Blob Data Reader* ใน **แถบค้นหา** แล้วเลือก **Storage Blob Data Reader** จากตัวเลือกที่ปรากฏ
+    - ในหน้า Role ให้พิมพ์ *Storage Blob Data Reader* ใน **แถบค้นหา** แล้วเลือก **Storage Blob Data Reader** จากตัวเลือกที่ปรากฏ
     - เลือก **Next**
-    - ในหน้าสมาชิก เลือก **Assign access to** เป็น **Managed identity**
+    - ในหน้า Members เลือก **Assign access to** เป็น **Managed identity**
     - เลือก **+ Select members**
-    - ในหน้าการเลือก managed identities เลือก Azure **Subscription** ของคุณ
+    - ในหน้า Select managed identities เลือก **Subscription** ของ Azure ของคุณ
     - เลือก **Managed identity** เป็น **Manage Identity**
-    - เลือก Manage Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
+    - เลือก Managed Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
     - เลือก **Select**
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.fffa802e4e6ce2de4fe50e64d37d3f2ef268c2ee16f30ec6f92bd1829b5f19c1.th.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.th.png)
 
 1. เลือก **Review + assign**
 
-#### เพิ่มการมอบหมายบทบาท AcrPull ให้กับ Managed Identity
+#### เพิ่มบทบาท AcrPull ให้กับ Managed Identity
 
 1. พิมพ์ *container registries* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Container registries** จากตัวเลือกที่ปรากฏ
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.62e58403d73d16a0cc715571c8a7b4105a0e97b1422aa5f26106aff1c0e8a47d.th.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.th.png)
 
 1. เลือก container registry ที่เชื่อมโยงกับ Azure Machine Learning workspace เช่น *finetunephicontainerregistries*
 
-1. ดำเนินการดังนี้เพื่อไปยังหน้าการเพิ่มมอบหมายบทบาท:
+1. ดำเนินการตามขั้นตอนเพื่อไปยังหน้า Add role assignment ดังนี้:
 
     - เลือก **Access Control (IAM)** จากแท็บด้านซ้าย
     - เลือก **+ Add** จากเมนูนำทาง
     - เลือก **Add role assignment** จากเมนูนำทาง
 
-1. ในหน้าการเพิ่มมอบหมายบทบาท ดำเนินการดังนี้:
+1. ในหน้า Add role assignment ดำเนินการดังนี้:
 
-    - ในหน้าบทบาท พิมพ์ *AcrPull* ใน **แถบค้นหา** แล้วเลือก **AcrPull** จากตัวเลือกที่ปรากฏ
+    - ในหน้า Role ให้พิมพ์ *AcrPull* ใน **แถบค้นหา** แล้วเลือก **AcrPull** จากตัวเลือกที่ปรากฏ
     - เลือก **Next**
-    - ในหน้าสมาชิก เลือก **Assign access to** เป็น **Managed identity**
+    - ในหน้า Members เลือก **Assign access to** เป็น **Managed identity**
     - เลือก **+ Select members**
-    - ในหน้าการเลือก managed identities เลือก Azure **Subscription** ของคุณ
+    - ในหน้า Select managed identities เลือก **Subscription** ของ Azure ของคุณ
     - เลือก **Managed identity** เป็น **Manage Identity**
-    - เลือก Manage Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
+    - เลือก Managed Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
     - เลือก **Select**
     - เลือก **Review + assign**
 
 ### ตั้งค่าโปรเจกต์
 
-ตอนนี้ คุณจะสร้างโฟลเดอร์สำหรับทำงาน และตั้งค่าสภาพแวดล้อมเสมือน (virtual environment) เพื่อพัฒนาโปรแกรมที่โต้ตอบกับผู้ใช้ และใช้ประวัติการสนทนาที่เก็บไว้ใน Azure Cosmos DB เพื่อช่วยให้การตอบสนองมีความเหมาะสม
+ตอนนี้คุณจะสร้างโฟลเดอร์สำหรับทำงาน และตั้งค่าสภาพแวดล้อมเสมือน (virtual environment) เพื่อพัฒนาโปรแกรมที่โต้ตอบกับผู้ใช้และใช้ประวัติการสนทนาที่เก็บไว้ใน Azure Cosmos DB เพื่อช่วยในการตอบกลับ
 
 #### สร้างโฟลเดอร์สำหรับทำงาน
 
-1. เปิดหน้าต่าง terminal แล้วพิมพ์คำสั่งต่อไปนี้เพื่อสร้างโฟลเดอร์ชื่อ *finetune-phi* ในเส้นทางเริ่มต้น
+1. เปิดหน้าต่างเทอร์มินัลและพิมพ์คำสั่งต่อไปนี้เพื่อสร้างโฟลเดอร์ชื่อ *finetune-phi* ในเส้นทางเริ่มต้น
 
     ```console
     mkdir finetune-phi
     ```
 
-1. พิมพ์คำสั่งต่อไปนี้ใน terminal เพื่อเข้าไปยังโฟลเดอร์ *finetune-phi* ที่คุณสร้าง
+1. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลเพื่อเข้าไปยังโฟลเดอร์ *finetune-phi* ที่คุณสร้างขึ้น
 
     ```console
     cd finetune-phi
@@ -221,25 +221,23 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### สร้างสภาพแวดล้อมเสมือน
 
-1. พิมพ์คำสั่งต่อไปนี้ใน terminal เพื่อสร้างสภาพแวดล้อมเสมือนชื่อ *.venv*
+1. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลเพื่อสร้างสภาพแวดล้อมเสมือนชื่อ *.venv*
 
     ```console
     python -m venv .venv
     ```
 
-1. พิมพ์คำสั่งต่อไปนี้ใน terminal เพื่อเปิดใช้งานสภาพแวดล้อมเสมือน
+1. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลเพื่อเปิดใช้งานสภาพแวดล้อมเสมือน
 
     ```console
     .venv\Scripts\activate.bat
     ```
-
 > [!NOTE]
 >
-> ถ้าทำงานได้ถูกต้อง คุณจะเห็น *(.venv)* ปรากฏก่อนพรอมต์คำสั่ง
-
+> ถ้าทำได้สำเร็จ คุณจะเห็น *(.venv)* ปรากฏอยู่หน้าพร้อมท์คำสั่ง
 #### ติดตั้งแพ็กเกจที่จำเป็น
 
-1. พิมพ์คำสั่งต่อไปนี้ใน terminal เพื่อติดตั้งแพ็กเกจที่จำเป็น
+1. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลของคุณเพื่อติดตั้งแพ็กเกจที่จำเป็น
 
     ```console
     pip install datasets==2.19.1
@@ -252,18 +250,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### สร้างไฟล์โปรเจกต์
 
-ในแบบฝึกหัดนี้ คุณจะสร้างไฟล์ที่จำเป็นสำหรับโปรเจกต์ของเรา ซึ่งรวมถึงสคริปต์สำหรับดาวน์โหลดชุดข้อมูล ตั้งค่าสภาพแวดล้อม Azure Machine Learning ปรับแต่งโมเดล Phi-3 และนำโมเดลที่ปรับแต่งแล้วไปใช้ นอกจากนี้ยังสร้างไฟล์ *conda.yml* เพื่อเตรียมสภาพแวดล้อมสำหรับการปรับแต่ง
+ในแบบฝึกหัดนี้ คุณจะสร้างไฟล์สำคัญสำหรับโปรเจกต์ของเรา ไฟล์เหล่านี้ประกอบด้วยสคริปต์สำหรับดาวน์โหลดชุดข้อมูล ตั้งค่าสภาพแวดล้อม Azure Machine Learning ปรับแต่งโมเดล Phi-3 และปรับใช้โมเดลที่ปรับแต่งแล้ว นอกจากนี้คุณยังจะสร้างไฟล์ *conda.yml* เพื่อเตรียมสภาพแวดล้อมสำหรับการปรับแต่ง
 
 ในแบบฝึกหัดนี้ คุณจะ:
 
 - สร้างไฟล์ *download_dataset.py* เพื่อดาวน์โหลดชุดข้อมูล
 - สร้างไฟล์ *setup_ml.py* เพื่อเตรียมสภาพแวดล้อม Azure Machine Learning
-- สร้างไฟล์ *fine_tune.py* ในโฟลเดอร์ *finetuning_dir* เพื่อปรับแต่งโมเดล Phi-3 ด้วยชุดข้อมูล
+- สร้างไฟล์ *fine_tune.py* ในโฟลเดอร์ *finetuning_dir* เพื่อปรับแต่งโมเดล Phi-3 โดยใช้ชุดข้อมูล
 - สร้างไฟล์ *conda.yml* เพื่อเตรียมสภาพแวดล้อมสำหรับการปรับแต่ง
-- สร้างไฟล์ *deploy_model.py* เพื่อนำโมเดลที่ปรับแต่งแล้วไปใช้
-- สร้างไฟล์ *integrate_with_promptflow.py* เพื่อผสานรวมโมเดลที่ปรับแต่งแล้วและเรียกใช้โมเดลผ่าน Prompt flow
+- สร้างไฟล์ *deploy_model.py* เพื่อปรับใช้โมเดลที่ปรับแต่งแล้ว
+- สร้างไฟล์ *integrate_with_promptflow.py* เพื่อเชื่อมต่อโมเดลที่ปรับแต่งแล้วและรันโมเดลผ่าน Prompt flow
 - สร้างไฟล์ flow.dag.yml เพื่อกำหนดโครงสร้างเวิร์กโฟลว์สำหรับ Prompt flow
-- สร้างไฟล์ *config.py* เพื่อกรอกข้อมูล Azure
+- สร้างไฟล์ *config.py* เพื่อกรอกข้อมูล Azure ของคุณ
 
 > [!NOTE]
 >
@@ -285,13 +283,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เปิด **Visual Studio Code**
 
-1. เลือก **File** จากแถบเมนู
+1. เลือก **File** จากเมนูบาร์
 
 1. เลือก **Open Folder**
 
 1. เลือกโฟลเดอร์ *finetune-phi* ที่คุณสร้างไว้ ซึ่งอยู่ที่ *C:\Users\yourUserName\finetune-phi*
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1f7f0f79e5d4d62e546e906e1ce5a480cd98d06062ce292b7b99c6cfcd434fdf.th.png)
+    ![เปิดโฟลเดอร์โปรเจกต์](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.th.png)
 
 1. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาและเลือก **New File** เพื่อสร้างไฟล์ใหม่ชื่อ *download_dataset.py*
 
@@ -299,13 +297,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาและเลือก **New File** เพื่อสร้างไฟล์ใหม่ชื่อ *deploy_model.py*
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.40698c2e0415929e7b6dc2b30925677e413f965bac4134d3aefa0b44d443deaf.th.png)
+    ![สร้างไฟล์ใหม่](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.th.png)
 
 1. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาและเลือก **New Folder** เพื่อสร้างโฟลเดอร์ใหม่ชื่อ *finetuning_dir*
 
 1. ในโฟลเดอร์ *finetuning_dir* สร้างไฟล์ใหม่ชื่อ *fine_tune.py*
 
-#### สร้างและตั้งค่าไฟล์ *conda.yml*
+#### สร้างและกำหนดค่าไฟล์ *conda.yml*
 
 1. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาและเลือก **New File** เพื่อสร้างไฟล์ใหม่ชื่อ *conda.yml*
 
@@ -335,7 +333,7 @@ CO_OP_TRANSLATOR_METADATA:
           - azureml-mlflow==1.57.0
     ```
 
-#### สร้างและตั้งค่าไฟล์ *config.py*
+#### สร้างและกำหนดค่าไฟล์ *config.py*
 
 1. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาและเลือก **New File** เพื่อสร้างไฟล์ใหม่ชื่อ *config.py*
 
@@ -369,39 +367,44 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### เพิ่มตัวแปรสภาพแวดล้อม Azure
 
-1. ดำ
-![ค้นหา subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.th.png)
+1. ทำตามขั้นตอนต่อไปนี้เพื่อเพิ่ม Azure Subscription ID:
+
+    - พิมพ์ *subscriptions* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Subscriptions** จากตัวเลือกที่แสดง
+    - เลือก Azure Subscription ที่คุณกำลังใช้งานอยู่
+    - คัดลอกและวาง Subscription ID ของคุณลงในไฟล์ *config.py*
+
+    ![ค้นหา subscription id](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.th.png)
 
 1. ทำตามขั้นตอนต่อไปนี้เพื่อเพิ่มชื่อ Azure Workspace:
 
     - ไปที่ Azure Machine Learning resource ที่คุณสร้างไว้
     - คัดลอกและวางชื่อบัญชีของคุณลงในไฟล์ *config.py*
 
-    ![ค้นหาชื่อ Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.th.png)
+    ![ค้นหาชื่อ Azure Machine Learning](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.th.png)
 
 1. ทำตามขั้นตอนต่อไปนี้เพื่อเพิ่มชื่อ Azure Resource Group:
 
     - ไปที่ Azure Machine Learning resource ที่คุณสร้างไว้
     - คัดลอกและวางชื่อ Azure Resource Group ของคุณลงในไฟล์ *config.py*
 
-    ![ค้นหาชื่อ resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.th.png)
+    ![ค้นหาชื่อ resource group](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.th.png)
 
 2. ทำตามขั้นตอนต่อไปนี้เพื่อเพิ่มชื่อ Azure Managed Identity
 
     - ไปที่ Managed Identities resource ที่คุณสร้างไว้
     - คัดลอกและวางชื่อ Azure Managed Identity ของคุณลงในไฟล์ *config.py*
 
-    ![ค้นหา UAI.](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.th.png)
+    ![ค้นหา UAI](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.th.png)
 
-### เตรียมชุดข้อมูลสำหรับการ fine-tuning
+### เตรียมชุดข้อมูลสำหรับการปรับแต่ง
 
-ในแบบฝึกหัดนี้ คุณจะรันไฟล์ *download_dataset.py* เพื่อดาวน์โหลดชุดข้อมูล *ULTRACHAT_200k* ลงในสภาพแวดล้อมของคุณ จากนั้นจะใช้ชุดข้อมูลนี้ในการ fine-tune โมเดล Phi-3 ใน Azure Machine Learning
+ในแบบฝึกหัดนี้ คุณจะรันไฟล์ *download_dataset.py* เพื่อดาวน์โหลดชุดข้อมูล *ULTRACHAT_200k* ลงในสภาพแวดล้อมเครื่องของคุณ จากนั้นจะใช้ชุดข้อมูลนี้ในการปรับแต่งโมเดล Phi-3 บน Azure Machine Learning
 
-#### ดาวน์โหลดชุดข้อมูลของคุณโดยใช้ *download_dataset.py*
+#### ดาวน์โหลดชุดข้อมูลโดยใช้ *download_dataset.py*
 
 1. เปิดไฟล์ *download_dataset.py* ใน Visual Studio Code
 
-1. เพิ่มโค้ดต่อไปนี้ลงใน *download_dataset.py*
+1. เพิ่มโค้ดต่อไปนี้ในไฟล์ *download_dataset.py*
 
     ```python
     import json
@@ -468,14 +471,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> **คำแนะนำสำหรับการ fine-tune ด้วยชุดข้อมูลขนาดเล็กโดยใช้ CPU**
+> **คำแนะนำสำหรับการปรับแต่งด้วยชุดข้อมูลขนาดเล็กโดยใช้ CPU**
 >
-> หากคุณต้องการใช้ CPU ในการ fine-tune วิธีนี้เหมาะสำหรับผู้ที่มี subscription ประเภท benefit (เช่น Visual Studio Enterprise Subscription) หรือสำหรับทดสอบกระบวนการ fine-tune และ deployment อย่างรวดเร็ว
+> หากคุณต้องการใช้ CPU ในการปรับแต่ง วิธีนี้เหมาะสำหรับผู้ที่มีสิทธิ์ใช้งานแบบ benefit subscriptions (เช่น Visual Studio Enterprise Subscription) หรือสำหรับทดสอบกระบวนการปรับแต่งและปรับใช้แบบรวดเร็ว
 >
-> แทนที่ `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
+> ให้เปลี่ยน `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` เป็น `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลเพื่อรันสคริปต์และดาวน์โหลดชุดข้อมูลลงในสภาพแวดล้อมของคุณ
+1. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลเพื่อรันสคริปต์และดาวน์โหลดชุดข้อมูลลงในสภาพแวดล้อมเครื่องของคุณ
 
     ```console
     python download_data.py
@@ -485,15 +488,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!NOTE]
 >
-> **ขนาดชุดข้อมูลและเวลาที่ใช้ในการ fine-tune**
+> **ขนาดชุดข้อมูลและเวลาการปรับแต่ง**
 >
-> ในตัวอย่าง E2E นี้ คุณใช้เพียง 1% ของชุดข้อมูล (`train_sft[:1%]`) ซึ่งช่วยลดปริมาณข้อมูลอย่างมาก ทำให้การอัปโหลดและการ fine-tune เร็วขึ้น คุณสามารถปรับเปอร์เซ็นต์เพื่อหาจุดสมดุลระหว่างเวลาการฝึกและประสิทธิภาพของโมเดล การใช้ชุดข้อมูลย่อยที่เล็กลงจะช่วยลดเวลาที่ต้องใช้ในการ fine-tune ทำให้กระบวนการเหมาะสมกับตัวอย่าง E2E มากขึ้น
+> ในตัวอย่าง E2E นี้ คุณใช้เพียง 1% ของชุดข้อมูล (`train_sft[:1%]`) ซึ่งช่วยลดปริมาณข้อมูลอย่างมาก ทำให้การอัปโหลดและการปรับแต่งเร็วขึ้น คุณสามารถปรับเปอร์เซ็นต์นี้เพื่อหาสมดุลระหว่างเวลาการฝึกและประสิทธิภาพของโมเดล การใช้ชุดข้อมูลย่อยขนาดเล็กช่วยลดเวลาที่ใช้ในการปรับแต่ง ทำให้กระบวนการเหมาะสมกับตัวอย่าง E2E มากขึ้น
 
-## สถานการณ์ที่ 2: Fine-tune โมเดล Phi-3 และ Deploy ใน Azure Machine Learning Studio
+## กรณีที่ 2: ปรับแต่งโมเดล Phi-3 และปรับใช้ใน Azure Machine Learning Studio
 
 ### ตั้งค่า Azure CLI
 
-คุณต้องตั้งค่า Azure CLI เพื่อยืนยันตัวตนในสภาพแวดล้อมของคุณ Azure CLI ช่วยให้คุณจัดการทรัพยากร Azure โดยตรงจากบรรทัดคำสั่งและให้ข้อมูลรับรองที่จำเป็นสำหรับ Azure Machine Learning ในการเข้าถึงทรัพยากรเหล่านี้ เริ่มต้นได้โดยติดตั้ง [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+คุณต้องตั้งค่า Azure CLI เพื่อยืนยันตัวตนในสภาพแวดล้อมของคุณ Azure CLI ช่วยให้คุณจัดการทรัพยากร Azure ได้โดยตรงจากบรรทัดคำสั่ง และให้ข้อมูลรับรองที่จำเป็นสำหรับ Azure Machine Learning ในการเข้าถึงทรัพยากรเหล่านี้ เริ่มต้นด้วยการติดตั้ง [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
 1. เปิดหน้าต่างเทอร์มินัลและพิมพ์คำสั่งต่อไปนี้เพื่อล็อกอินเข้าสู่บัญชี Azure ของคุณ
 
@@ -501,32 +504,32 @@ CO_OP_TRANSLATOR_METADATA:
     az login
     ```
 
-1. เลือกบัญชี Azure ที่จะใช้งาน
+1. เลือกบัญชี Azure ที่คุณต้องการใช้งาน
 
-1. เลือก subscription ของ Azure ที่จะใช้งาน
+1. เลือก Azure subscription ที่คุณต้องการใช้งาน
 
-    ![ค้นหาชื่อ resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.th.png)
+    ![ค้นหาชื่อ resource group](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.th.png)
 
 > [!TIP]
 >
-> หากคุณประสบปัญหาในการเข้าสู่ระบบ Azure ให้ลองใช้ device code เปิดหน้าต่างเทอร์มินัลแล้วพิมพ์คำสั่งต่อไปนี้เพื่อล็อกอินเข้าสู่บัญชี Azure ของคุณ:
+> หากคุณพบปัญหาในการเข้าสู่ระบบ Azure ให้ลองใช้รหัสอุปกรณ์ เปิดหน้าต่างเทอร์มินัลและพิมพ์คำสั่งต่อไปนี้เพื่อล็อกอินเข้าสู่บัญชี Azure ของคุณ:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### Fine-tune โมเดล Phi-3
+### ปรับแต่งโมเดล Phi-3
 
-ในแบบฝึกหัดนี้ คุณจะทำการ fine-tune โมเดล Phi-3 โดยใช้ชุดข้อมูลที่เตรียมไว้ก่อนหน้านี้ ขั้นแรก คุณจะกำหนดกระบวนการ fine-tune ในไฟล์ *fine_tune.py* จากนั้นจะตั้งค่าสภาพแวดล้อม Azure Machine Learning และเริ่มกระบวนการ fine-tune โดยรันไฟล์ *setup_ml.py* สคริปต์นี้จะช่วยให้การ fine-tune เกิดขึ้นภายในสภาพแวดล้อม Azure Machine Learning
+ในแบบฝึกหัดนี้ คุณจะปรับแต่งโมเดล Phi-3 โดยใช้ชุดข้อมูลที่เตรียมไว้ก่อนหน้านี้ ขั้นแรกคุณจะกำหนดกระบวนการปรับแต่งในไฟล์ *fine_tune.py* จากนั้นคุณจะตั้งค่าสภาพแวดล้อม Azure Machine Learning และเริ่มกระบวนการปรับแต่งโดยรันไฟล์ *setup_ml.py* สคริปต์นี้จะช่วยให้การปรับแต่งเกิดขึ้นภายในสภาพแวดล้อม Azure Machine Learning
 
-โดยการรัน *setup_ml.py* คุณจะเริ่มกระบวนการ fine-tune ในสภาพแวดล้อม Azure Machine Learning
+โดยการรัน *setup_ml.py* คุณจะเริ่มกระบวนการปรับแต่งในสภาพแวดล้อม Azure Machine Learning
 
 #### เพิ่มโค้ดในไฟล์ *fine_tune.py*
 
 1. ไปที่โฟลเดอร์ *finetuning_dir* และเปิดไฟล์ *fine_tune.py* ใน Visual Studio Code
 
-1. เพิ่มโค้ดต่อไปนี้ลงใน *fine_tune.py*
+1. เพิ่มโค้ดต่อไปนี้ในไฟล์ *fine_tune.py*
 
     ```python
     import argparse
@@ -682,18 +685,18 @@ CO_OP_TRANSLATOR_METADATA:
 1. บันทึกและปิดไฟล์ *fine_tune.py*
 
 > [!TIP]
-> **คุณสามารถ fine-tune โมเดล Phi-3.5 ได้**
+> **คุณสามารถปรับแต่งโมเดล Phi-3.5 ได้**
 >
-> ในไฟล์ *fine_tune.py* คุณสามารถเปลี่ยนค่าฟิลด์ `pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name` ในสคริปต์ของคุณได้
+> ในไฟล์ *fine_tune.py* คุณสามารถเปลี่ยนค่า `pretrained_model_name` จาก `"microsoft/Phi-3-mini-4k-instruct"` เป็นโมเดลที่คุณต้องการปรับแต่ง เช่น หากเปลี่ยนเป็น `"microsoft/Phi-3.5-mini-instruct"` คุณจะใช้โมเดล Phi-3.5-mini-instruct ในการปรับแต่ง หากต้องการค้นหาและใช้ชื่อโมเดลที่คุณชอบ ให้ไปที่ [Hugging Face](https://huggingface.co/) ค้นหาโมเดลที่สนใจ แล้วคัดลอกชื่อมาใส่ในฟิลด์ `pretrained_model_name` ในสคริปต์ของคุณ
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.":::
+> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="ปรับแต่ง Phi-3.5":::
 >
 
 #### เพิ่มโค้ดในไฟล์ *setup_ml.py*
 
 1. เปิดไฟล์ *setup_ml.py* ใน Visual Studio Code
 
-1. เพิ่มโค้ดต่อไปนี้ลงใน *setup_ml.py*
+1. เพิ่มโค้ดต่อไปนี้ในไฟล์ *setup_ml.py*
 
     ```python
     import logging
@@ -820,7 +823,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. แทนที่ `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `LOCATION` ด้วยรายละเอียดเฉพาะของคุณ
+1. แทนที่ `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` และ `LOCATION` ด้วยรายละเอียดของคุณ
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -832,13 +835,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> **คำแนะนำสำหรับการ fine-tune ด้วยชุดข้อมูลขนาดเล็กโดยใช้ CPU**
+> **คำแนะนำสำหรับการปรับแต่งด้วยชุดข้อมูลขนาดเล็กโดยใช้ CPU**
 >
-> หากคุณต้องการใช้ CPU ในการ fine-tune วิธีนี้เหมาะสำหรับผู้ที่มี subscription ประเภท benefit (เช่น Visual Studio Enterprise Subscription) หรือสำหรับทดสอบกระบวนการ fine-tune และ deployment อย่างรวดเร็ว
+> หากคุณต้องการใช้ CPU ในการปรับแต่ง วิธีนี้เหมาะสำหรับผู้ที่มีสิทธิ์ใช้งานแบบ benefit subscriptions (เช่น Visual Studio Enterprise Subscription) หรือสำหรับทดสอบกระบวนการปรับแต่งและปรับใช้แบบรวดเร็ว
 >
 > 1. เปิดไฟล์ *setup_ml*
-> 1. แทนที่ `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
-> 1. Replace `LOCATION` ด้วยรายละเอียดเฉพาะของคุณ
+> 2. แทนที่ `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` และ `DOCKER_IMAGE_NAME` ด้วยค่าต่อไปนี้ หากคุณไม่มีสิทธิ์ใช้งาน *Standard_E16s_v3* คุณสามารถใช้ instance CPU ที่เทียบเท่าหรือขอเพิ่มโควต้าใหม่ได้
+> 3. แทนที่ `LOCATION` ด้วยรายละเอียดของคุณ
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -849,37 +852,37 @@ CO_OP_TRANSLATOR_METADATA:
 >    ```
 >
 
-1. พิมพ์คำสั่งต่อไปนี้เพื่อรันสคริปต์ *setup_ml.py* และเริ่มกระบวนการ fine-tune ใน Azure Machine Learning
+1. พิมพ์คำสั่งต่อไปนี้เพื่อรันสคริปต์ *setup_ml.py* และเริ่มกระบวนการปรับแต่งใน Azure Machine Learning
 
     ```python
     python setup_ml.py
     ```
 
-1. ในแบบฝึกหัดนี้ คุณได้ทำการ fine-tune โมเดล Phi-3 สำเร็จแล้วโดยใช้ Azure Machine Learning โดยการรันสคริปต์ *setup_ml.py* คุณได้ตั้งค่าสภาพแวดล้อม Azure Machine Learning และเริ่มกระบวนการ fine-tune ที่กำหนดไว้ในไฟล์ *fine_tune.py* โปรดทราบว่ากระบวนการ fine-tune อาจใช้เวลานาน หลังจากรัน `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
+1. ในแบบฝึกหัดนี้ คุณได้ปรับแต่งโมเดล Phi-3 สำเร็จโดยใช้ Azure Machine Learning โดยการรันสคริปต์ *setup_ml.py* คุณได้ตั้งค่าสภาพแวดล้อม Azure Machine Learning และเริ่มกระบวนการปรับแต่งที่กำหนดไว้ในไฟล์ *fine_tune.py* โปรดทราบว่ากระบวนการปรับแต่งอาจใช้เวลานาน หลังจากรันคำสั่ง `python setup_ml.py` คุณต้องรอจนกระบวนการเสร็จสมบูรณ์ คุณสามารถติดตามสถานะงานปรับแต่งได้โดยคลิกลิงก์ที่แสดงในเทอร์มินัลเพื่อเข้าสู่พอร์ทัล Azure Machine Learning
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.a28c8552f7b7bc088ccd67dd0c522f7fc1944048d3554bb1b24f95a1169ad538.th.png)
+    ![ดูงานปรับแต่ง](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.th.png)
 
-### Deploy the fine-tuned model
+### ปรับใช้โมเดลที่ปรับแต่งแล้ว
 
-To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+เพื่อเชื่อมต่อโมเดล Phi-3 ที่ปรับแต่งแล้วกับ Prompt Flow คุณต้องปรับใช้โมเดลเพื่อให้สามารถเรียกใช้งานแบบเรียลไทม์ได้ กระบวนการนี้รวมถึงการลงทะเบียนโมเดล สร้าง endpoint ออนไลน์ และปรับใช้โมเดล
 
-#### Set the model name, endpoint name, and deployment name for deployment
+#### กำหนดชื่อโมเดล ชื่อ endpoint และชื่อ deployment สำหรับการปรับใช้
 
-1. Open *config.py* file.
+1. เปิดไฟล์ *config.py*
 
-1. Replace `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` with the desired name for your model.
+1. แทนที่ `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` ด้วยชื่อโมเดลที่คุณต้องการ
 
-1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
+1. แทนที่ `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` ด้วยชื่อ endpoint ที่คุณต้องการ
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` โดยใช้ชื่อที่ต้องการสำหรับ deployment ของคุณ
+1. แทนที่ `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` ด้วยชื่อ deployment ที่คุณต้องการ
 
 #### เพิ่มโค้ดในไฟล์ *deploy_model.py*
 
-การรันไฟล์ *deploy_model.py* จะทำให้กระบวนการ deployment ทั้งหมดเป็นไปโดยอัตโนมัติ โดยจะลงทะเบียนโมเดล สร้าง endpoint และดำเนินการ deployment ตามการตั้งค่าในไฟล์ config.py ซึ่งรวมถึงชื่อโมเดล ชื่อ endpoint และชื่อ deployment
+การรันไฟล์ *deploy_model.py* จะทำให้กระบวนการปรับใช้ทั้งหมดเป็นไปโดยอัตโนมัติ โดยจะลงทะเบียนโมเดล สร้าง endpoint และดำเนินการปรับใช้ตามการตั้งค่าในไฟล์ *config.py* ซึ่งรวมถึงชื่อโมเดล ชื่อ endpoint และชื่อ deployment
 
 1. เปิดไฟล์ *deploy_model.py* ใน Visual Studio Code
 
-1. เพิ่มโค้ดต่อไปนี้ลงใน *deploy_model.py*
+1. เพิ่มโค้ดต่อไปนี้ในไฟล์ *deploy_model.py*
 
     ```python
     import logging
@@ -1047,59 +1050,60 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
 1. ทำตามขั้นตอนต่อไปนี้เพื่อรับค่า `JOB_NAME`:
 
-    - Navigate to Azure Machine Learning resource that you created.
-    - Select **Studio web URL** to open the Azure Machine Learning workspace.
-    - Select **Jobs** from the left side tab.
-    - Select the experiment for fine-tuning. For example, *finetunephi*.
-    - Select the job that you created.
-    - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+    - ไปที่ Azure Machine Learning resource ที่คุณสร้างไว้
+    - เลือก **Studio web URL** เพื่อเปิด Azure Machine Learning workspace
+    - เลือก **Jobs** จากแท็บด้านซ้าย
+    - เลือกการทดลองสำหรับการปรับแต่ง เช่น *finetunephi*
+    - เลือกงานที่คุณสร้างไว้
+- คัดลอกและวางชื่องานของคุณลงใน `JOB_NAME = "your-job-name"` ในไฟล์ *deploy_model.py*
 
-1. Replace `COMPUTE_INSTANCE_TYPE` โดยใช้รายละเอียดเฉพาะของคุณ
+1. แทนที่ `COMPUTE_INSTANCE_TYPE` ด้วยรายละเอียดเฉพาะของคุณ
 
-1. พิมพ์คำสั่งต่อไปนี้เพื่อรันสคริปต์ *deploy_model.py* และเริ่มกระบวนการ deployment ใน Azure Machine Learning
+1. พิมพ์คำสั่งต่อไปนี้เพื่อรันสคริปต์ *deploy_model.py* และเริ่มกระบวนการดีพลอยใน Azure Machine Learning
 
     ```python
     python deploy_model.py
     ```
 
+
 > [!WARNING]
-> เพื่อหลีกเลี่ยงค่าใช้จ่ายเพิ่มเติมในบัญชีของคุณ โปรดลบ endpoint ที่สร้างขึ้นใน Azure Machine Learning workspace เมื่อไม่ใช้งานแล้ว
+> เพื่อหลีกเลี่ยงค่าบริการเพิ่มเติมในบัญชีของคุณ โปรดลบ endpoint ที่สร้างขึ้นใน Azure Machine Learning workspace
 >
 
-#### ตรวจสอบสถานะ deployment ใน Azure Machine Learning Workspace
+#### ตรวจสอบสถานะการดีพลอยใน Azure Machine Learning Workspace
 
-1. ไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
+1. เข้าไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
 
-1. ไปที่ Azure Machine Learning workspace ที่คุณสร้างไว้
+1. ไปยัง Azure Machine Learning workspace ที่คุณสร้างไว้
 
 1. เลือก **Studio web URL** เพื่อเปิด Azure Machine Learning workspace
 
 1. เลือก **Endpoints** จากแท็บด้านซ้าย
 
-    ![เลือก endpoints.](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.th.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.th.png)
 
 2. เลือก endpoint ที่คุณสร้างขึ้น
 
-    ![เลือก endpoints ที่คุณสร้างขึ้น.](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.th.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.th.png)
 
-3. ในหน้านี้ คุณสามารถจัดการ endpoints ที่สร้างขึ้นในกระบวนการ deployment ได้
+3. บนหน้านี้ คุณสามารถจัดการกับ endpoints ที่สร้างขึ้นในระหว่างกระบวนการดีพลอยได้
 
-## สถานการณ์ที่ 3: รวมเข้ากับ Prompt flow และสนทนากับโมเดลที่ปรับแต่งเอง
+## กรณีที่ 3: รวมกับ Prompt flow และแชทกับโมเดลที่ปรับแต่งเอง
 
-### รวมโมเดล Phi-3 ที่ปรับแต่งเองเข้ากับ Prompt flow
+### รวมโมเดล Phi-3 ที่ปรับแต่งเองกับ Prompt flow
 
-หลังจากที่คุณ deploy โมเดลที่ fine-tune เรียบร้อยแล้ว คุณสามารถรวมโมเดลนี้เข้ากับ Prompt flow เพื่อใช้งานโมเดลของคุณในแอปพลิเคชันแบบเรียลไทม์ ช่วยให้ทำงานโต้ตอบต่าง ๆ กับโมเดล Phi-3 ที่ปรับแต่งเองได้หลากหลาย
+หลังจากที่ดีพลอยโมเดลที่ปรับแต่งเสร็จเรียบร้อยแล้ว คุณสามารถรวมโมเดลนี้กับ Prompt flow เพื่อใช้งานโมเดลของคุณในแอปพลิเคชันแบบเรียลไทม์ ช่วยให้ทำงานแบบโต้ตอบได้หลากหลายกับโมเดล Phi-3 ที่ปรับแต่งเองของคุณ
 
-#### ตั้งค่า api key และ endpoint uri ของโมเดล Phi-3 ที่ fine-tune แล้ว
+#### ตั้งค่า api key และ endpoint uri ของโมเดล Phi-3 ที่ปรับแต่งแล้ว
 
-1. ไปที่ Azure Machine Learning workspace ที่คุณสร้างไว้
-1. เลือก **Endpoints** จากแท็บด้านซ้าย
-1. เลือก endpoint ที่คุณสร้างขึ้น
-1. เลือก **Consume** จากเมนูนำทาง
-1. คัดลอกและวาง **REST endpoint** ของคุณลงในไฟล์ *config.py* โดยแทนที่ `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ด้วย **Primary key** ของคุณ
+1. ไปยัง Azure Machine Learning workspace ที่คุณสร้างไว้  
+1. เลือก **Endpoints** จากแท็บด้านซ้าย  
+1. เลือก endpoint ที่คุณสร้างขึ้น  
+1. เลือก **Consume** จากเมนูนำทาง  
+1. คัดลอกและวาง **REST endpoint** ของคุณลงในไฟล์ *config.py* โดยแทนที่ `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ด้วย **REST endpoint** ของคุณ  
+1. คัดลอกและวาง **Primary key** ของคุณลงในไฟล์ *config.py* โดยแทนที่ `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ด้วย **Primary key** ของคุณ  
 
-    ![คัดลอก api key และ endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.th.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.th.png)
 
 #### เพิ่มโค้ดในไฟล์ *flow.dag.yml*
 
@@ -1198,17 +1202,17 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
     ```
 
-### สนทนากับโมเดลที่ปรับแต่งเองของคุณ
+### แชทกับโมเดลที่ปรับแต่งเองของคุณ
 
-1. พิมพ์คำสั่งต่อไปนี้เพื่อรันสคริปต์ *deploy_model.py* และเริ่มกระบวนการ deployment ใน Azure Machine Learning
+1. พิมพ์คำสั่งต่อไปนี้เพื่อรันสคริปต์ *deploy_model.py* และเริ่มกระบวนการดีพลอยใน Azure Machine Learning
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. นี่คือตัวอย่างผลลัพธ์: ตอนนี้คุณสามารถสนทนากับโมเดล Phi-3 ที่ปรับแต่งเองได้ แนะนำให้ถามคำถามที่เกี่ยวข้องกับข้อมูลที่ใช้ในการ fine-tune
+1. นี่คือตัวอย่างผลลัพธ์: ตอนนี้คุณสามารถแชทกับโมเดล Phi-3 ที่ปรับแต่งเองได้ แนะนำให้ถามคำถามที่เกี่ยวข้องกับข้อมูลที่ใช้ในการปรับแต่งโมเดล
 
-    ![ตัวอย่าง Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.th.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.th.png)
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้มีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อน เอกสารต้นฉบับในภาษาต้นทางควรถูกพิจารณาเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลสำคัญ แนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญด้านภาษามนุษย์ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดขึ้นจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

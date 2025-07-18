@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-05-09T20:03:58+00:00",
+  "translation_date": "2025-07-17T05:08:41+00:00",
   "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "da"
 }
 -->
 ## **Brug Phi-4-multimodal til at læse billeder og generere kode**
 
-Phi-4-multimodal har stærke evner til billedlæsning. Lad os prøve at bruge Python til at implementere følgende funktioner. Billedet er en ChatGPT-side.
+Phi-4-multimodal har stærke evner til at læse billeder. Lad os prøve at bruge Python til at implementere følgende funktioner. Billedet er en ChatGPT-side.
 
-![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.da.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.da.png)
 
 ### **Eksempelkode**
 
@@ -68,4 +68,4 @@ print(response)
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-08T05:14:03+00:00",
+  "translation_date": "2025-07-17T05:45:56+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "tw"
 }
 -->
-# Generate Image Data Set by downloading DataSet from Hugging Face and associated images
+# 透過從 Hugging Face 下載資料集及相關圖片來生成影像資料集
 
 
-### Overview
+### 概覽
 
-這個腳本透過下載所需的圖片，過濾掉下載失敗的列，並將資料集存成 CSV 檔，來準備機器學習用的資料集。
+此腳本透過下載所需圖片、過濾下載失敗的資料列，並將資料集儲存為 CSV 檔案，來準備機器學習用的資料集。
 
-### Prerequisites
+### 前置條件
 
-執行此腳本前，請確認已安裝以下函式庫：`Pandas`、`Datasets`、`requests`、`PIL` 和 `io`。你也需要將第 2 行的 `'Insert_Your_Dataset'` 替換成你從 Hugging Face 下載的資料集名稱。
+執行此腳本前，請確保已安裝以下函式庫：`Pandas`、`Datasets`、`requests`、`PIL` 及 `io`。同時，請將第 2 行的 `'Insert_Your_Dataset'` 替換成你在 Hugging Face 上的資料集名稱。
 
-Required Libraries:
+所需函式庫：
 
 ```python
 
@@ -30,48 +30,48 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### Functionality
+### 功能說明
 
-腳本會執行以下步驟：
+此腳本執行以下步驟：
 
-1. 使用 `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. 使用 `load_dataset()` 函式從 Hugging Face 下載資料集。
+2. 利用 `to_pandas()` 方法將 Hugging Face 資料集轉換成 Pandas DataFrame，方便操作。
+3. 建立資料集及圖片的儲存目錄。
+4. 透過遍歷 DataFrame 中的每一列，使用自訂的 `download_image()` 函式下載圖片，並過濾掉下載失敗的列，將成功的列加入新的 DataFrame `filtered_rows`。
+5. 以過濾後的資料建立新的 DataFrame，並將其儲存為 CSV 檔案。
+6. 印出訊息，告知資料集及圖片的儲存位置。
 
-### Custom Function
+### 自訂函式
 
-The `download_image()` 函式從 Hugging Face 下載資料集。`download_image()` 函式會從 URL 下載圖片並使用 Pillow Image Library (PIL) 及 `io` 模組將圖片儲存在本地。若圖片成功下載，會回傳 True，否則回傳 False。當請求失敗時，該函式也會丟出帶有錯誤訊息的例外。
+`download_image()` 函式會從 URL 下載圖片，並使用 Pillow Image Library (PIL) 及 `io` 模組將圖片儲存至本地。若圖片成功下載，回傳 True，否則回傳 False。當請求失敗時，函式會拋出包含錯誤訊息的例外。
 
-### How does this work
+### 運作原理
 
-download_image 函式接受兩個參數：image_url 是要下載的圖片 URL，save_path 是下載後圖片要儲存的路徑。
+`download_image` 函式接受兩個參數：`image_url`（欲下載圖片的 URL）及 `save_path`（下載後圖片的儲存路徑）。
 
-函式運作方式如下：
+函式運作流程如下：
 
-首先使用 requests.get 方法對 image_url 發出 GET 請求，取得圖片資料。
+首先，使用 `requests.get` 方法對 `image_url` 發出 GET 請求，取得圖片資料。
 
-response.raise_for_status() 這行會檢查請求是否成功。如果回應狀態碼顯示錯誤（例如 404 - 找不到），就會丟出例外。這確保只有在請求成功時才會繼續下載圖片。
+`response.raise_for_status()` 會檢查請求是否成功。如果回應狀態碼顯示錯誤（例如 404 - 找不到資源），會拋出例外。這確保只有在請求成功時才繼續下載圖片。
 
-接著將圖片資料傳給 PIL (Python Imaging Library) 模組的 Image.open 方法，建立 Image 物件。
+接著，將圖片資料傳入 PIL 模組的 `Image.open` 方法，建立 Image 物件。
 
-image.save(save_path) 會把圖片存到指定的 save_path，該路徑應包含檔名及副檔名。
+`image.save(save_path)` 會將圖片儲存到指定的 `save_path`，該路徑需包含檔名及副檔名。
 
-最後，函式會回傳 True，表示圖片成功下載並儲存。若過程中發生任何例外，會捕捉例外並印出錯誤訊息，然後回傳 False。
+最後，函式回傳 True，表示圖片成功下載並儲存。若過程中發生任何例外，會捕捉例外並印出錯誤訊息，然後回傳 False。
 
-這個函式適合用來從 URL 下載圖片並儲存到本地，能處理下載過程中可能發生的錯誤，並回饋下載是否成功。
+此函式適合用來從 URL 下載圖片並儲存至本地，能處理下載過程中的潛在錯誤，並回饋下載是否成功。
 
-值得一提的是，requests 函式庫用來發出 HTTP 請求，PIL 函式庫用來處理圖片，而 BytesIO 類別則用來將圖片資料當作位元組串流處理。
+值得一提的是，`requests` 函式庫用於發送 HTTP 請求，`PIL` 用於處理圖片，而 `BytesIO` 類別則用來將圖片資料當作位元組串流處理。
 
 
 
-### Conclusion
+### 結論
 
-這個腳本提供一個方便的方式，透過下載所需圖片、過濾下載失敗的列，並將資料集存成 CSV，來準備機器學習用的資料集。
+此腳本提供一個方便的方式，透過下載所需圖片、過濾下載失敗的資料列，並將資料集儲存為 CSV 檔案，來準備機器學習用的資料集。
 
-### Sample Script
+### 範例腳本
 
 ```python
 import os
@@ -130,11 +130,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Sample Code Download 
+### 範例程式碼下載
 [Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### Sample Data Set
+### 範例資料集
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

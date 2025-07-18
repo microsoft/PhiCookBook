@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:19:19+00:00",
+  "translation_date": "2025-07-16T21:40:29+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "hr"
 }
 -->
-# **Izvođenje Phi-3-Vision lokalno**
+# **Inferencija Phi-3-Vision lokalno**
 
-Phi-3-vision-128k-instruct omogućuje Phi-3 da ne samo razumije jezik, već i da vizualno vidi svijet. Kroz Phi-3-vision-128k-instruct možemo rješavati različite vizualne probleme, poput OCR-a, analize tablica, prepoznavanja objekata, opisivanja slika i slično. Jednostavno možemo obaviti zadatke koji su prije zahtijevali puno podataka za treniranje. Slijede povezane tehnike i primjeri primjene koje koristi Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct omogućuje Phi-3 ne samo razumijevanje jezika, već i vizualno opažanje svijeta. Kroz Phi-3-vision-128k-instruct možemo rješavati različite vizualne probleme, poput OCR-a, analize tablica, prepoznavanja objekata, opisivanja slika i slično. Jednostavno možemo obaviti zadatke koji su prije zahtijevali puno podataka za treniranje. Slijede povezane tehnike i primjeri primjene koje navodi Phi-3-vision-128k-instruct.
 
 ## **0. Priprema**
 
@@ -27,7 +27,7 @@ Preporučuje se korištenje ***CUDA 11.6+*** i instalacija flatten
 pip install flash-attn --no-build-isolation
 ```
 
-Kreirajte novi Notebook. Za dovršetak primjera preporučuje se da prvo kreirate sljedeći sadržaj.
+Kreirajte novi Notebook. Za dovršetak primjera preporučuje se da prvo napravite sljedeći sadržaj.
 
 ```python
 from PIL import Image
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR s Phi-3-Vision**
 
-Osim analize slike, možemo izvući i informacije iz slike. To je OCR proces za koji smo prije morali pisati složen kod.
+Osim analize slike, možemo i izvući informacije iz slike. To je OCR proces za koji smo prije morali pisati složen kod.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Usporedba više slika**
 
-Phi-3 Vision podržava usporedbu više slika. Ovim modelom možemo pronaći razlike između slika.
+Phi-3 Vision podržava usporedbu više slika. Ovaj model možemo koristiti za pronalaženje razlika između slika.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:25:33+00:00",
+  "translation_date": "2025-07-17T05:50:16+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "he"
 }
 -->
-# יצירת מערך נתוני תמונות על ידי הורדת DataSet מ-Hugging Face ותמונות קשורות
+# יצירת מערך נתוני תמונות על ידי הורדת DataSet מ-Hugging Face והתמונות המשויכות אליו
 
 
 ### סקירה כללית
 
-הסקריפט הזה מכין מערך נתונים ללמידת מכונה על ידי הורדת התמונות הנדרשות, סינון שורות שבהן ההורדה נכשלה, ושמירת מערך הנתונים כקובץ CSV.
+הסקריפט הזה מכין מערך נתונים ללמידת מכונה על ידי הורדת התמונות הנדרשות, סינון שורות שבהן ההורדה של התמונות נכשלה, ושמירת מערך הנתונים כקובץ CSV.
 
 ### דרישות מוקדמות
 
-לפני הרצת הסקריפט, ודא שהספריות הבאות מותקנות: `Pandas`, `Datasets`, `requests`, `PIL`, ו-`io`. כמו כן, תצטרך להחליף את `'Insert_Your_Dataset'` בשורה 2 בשם מערך הנתונים שלך מ-Hugging Face.
+לפני הרצת הסקריפט, ודאו שהספריות הבאות מותקנות: `Pandas`, `Datasets`, `requests`, `PIL`, ו-`io`. כמו כן, יש להחליף את `'Insert_Your_Dataset'` בשורה 2 בשם מערך הנתונים שלכם מ-Hugging Face.
 
 ספריות נדרשות:
 
@@ -34,36 +34,36 @@ from io import BytesIO
 
 הסקריפט מבצע את השלבים הבאים:
 
-1. מוריד את מערך הנתונים מ-Hugging Face באמצעות הפונקציה `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. מוריד את מערך הנתונים מ-Hugging Face באמצעות הפונקציה `load_dataset()`.
+2. ממיר את מערך הנתונים של Hugging Face ל-Pandas DataFrame לצורך טיפול נוח יותר באמצעות השיטה `to_pandas()`.
+3. יוצר תיקיות לשמירת מערך הנתונים והתמונות.
+4. מסנן שורות שבהן הורדת התמונה נכשלה על ידי מעבר על כל שורה ב-DataFrame, הורדת התמונה באמצעות הפונקציה המותאמת אישית `download_image()`, והוספת השורה המסוננת ל-DataFrame חדש בשם `filtered_rows`.
+5. יוצר DataFrame חדש עם השורות המסוננות ושומר אותו בדיסק כקובץ CSV.
+6. מדפיס הודעה שמציינת היכן נשמרו מערך הנתונים והתמונות.
 
-### Custom Function
+### פונקציה מותאמת אישית
 
-The `download_image()`, שפונקציית download_image() מורידה תמונה מכתובת URL ושומרת אותה מקומית באמצעות ספריית Pillow Image (PIL) ומודול `io`. הפונקציה מחזירה True אם ההורדה הצליחה, ו-False אחרת. הפונקציה גם מעלה חריגה עם הודעת שגיאה כאשר הבקשה נכשלת.
+הפונקציה `download_image()` מורידה תמונה מכתובת URL ושומרת אותה מקומית באמצעות ספריית Pillow Image (PIL) ומודול `io`. היא מחזירה True אם התמונה הורדה בהצלחה, ו-False אחרת. הפונקציה גם מעלה חריגה עם הודעת שגיאה כאשר הבקשה נכשלה.
 
 ### איך זה עובד
 
-פונקציית download_image מקבלת שני פרמטרים: image_url, שהיא כתובת ה-URL של התמונה שיש להוריד, ו-save_path, שהוא הנתיב שבו התמונה תישמר.
+הפונקציה download_image מקבלת שני פרמטרים: image_url, שהיא כתובת ה-URL של התמונה להורדה, ו-save_path, שהוא הנתיב שבו התמונה שהורדה תישמר.
 
 כך הפונקציה פועלת:
 
-היא מתחילה בביצוע בקשת GET ל-image_url באמצעות requests.get. זה מושך את נתוני התמונה מהכתובת.
+היא מתחילה בביצוע בקשת GET ל-image_url באמצעות השיטה requests.get. זה מושך את נתוני התמונה מה-URL.
 
-השורה response.raise_for_status() בודקת אם הבקשה הצליחה. אם קוד הסטטוס מצביע על שגיאה (למשל, 404 - לא נמצא), היא תעלה חריגה. זה מבטיח שנמשיך להוריד את התמונה רק אם הבקשה הצליחה.
+השורה response.raise_for_status() בודקת אם הבקשה הצליחה. אם קוד הסטטוס של התגובה מצביע על שגיאה (למשל, 404 - לא נמצא), היא תזרוק חריגה. זה מבטיח שנמשיך להוריד את התמונה רק אם הבקשה הצליחה.
 
-נתוני התמונה מועברים לאחר מכן ל-Image.open מתוך מודול PIL (Python Imaging Library). שיטה זו יוצרת אובייקט Image מנתוני התמונה.
+נתוני התמונה מועברים לאחר מכן לשיטה Image.open מתוך מודול PIL (Python Imaging Library). שיטה זו יוצרת אובייקט Image מנתוני התמונה.
 
-השורה image.save(save_path) שומרת את התמונה בנתיב שצויין. הנתיב צריך לכלול את שם הקובץ והסיומת הרצויים.
+השורה image.save(save_path) שומרת את התמונה בנתיב ה-save_path שצויין. הנתיב צריך לכלול את שם הקובץ הרצוי והסיומת.
 
 לבסוף, הפונקציה מחזירה True כדי לציין שהתמונה הורדה ונשמרה בהצלחה. אם מתרחשת חריגה במהלך התהליך, היא תופסת את החריגה, מדפיסה הודעת שגיאה שמציינת את הכישלון, ומחזירה False.
 
-פונקציה זו שימושית להורדת תמונות מכתובות URL ושמירתן מקומית. היא מטפלת בשגיאות אפשריות במהלך ההורדה ומספקת משוב האם ההורדה הצליחה או לא.
+פונקציה זו שימושית להורדת תמונות מכתובות URL ושמירתן מקומית. היא מטפלת בשגיאות אפשריות במהלך תהליך ההורדה ומספקת משוב האם ההורדה הצליחה או לא.
 
-כדאי לציין שהספרייה requests משמשת לביצוע בקשות HTTP, ספריית PIL משמשת לעבודה עם תמונות, ומחלקת BytesIO משמשת לטיפול בנתוני התמונה כזרם בתים.
+ראוי לציין שהספרייה requests משמשת לביצוע בקשות HTTP, ספריית PIL משמשת לעבודה עם תמונות, ומחלקת BytesIO משמשת לטיפול בנתוני התמונה כזרם של בתים.
 
 
 
@@ -137,4 +137,4 @@ print(f"Dataset and images saved to {dataset_dir}")
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. איננו אחראים לכל אי הבנה או פרשנות שגויה הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

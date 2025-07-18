@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-07T10:21:29+00:00",
+  "translation_date": "2025-07-17T05:44:16+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "es"
 }
@@ -16,7 +16,7 @@ Este script prepara un conjunto de datos para aprendizaje automático descargand
 
 ### Requisitos previos
 
-Antes de ejecutar este script, asegúrate de tener instaladas las siguientes librerías: `Pandas`, `Datasets`, `requests`, `PIL` y `io`. También necesitarás reemplazar `'Insert_Your_Dataset'` en la línea 2 con el nombre de tu conjunto de datos de Hugging Face.
+Antes de ejecutar este script, asegúrate de tener instaladas las siguientes librerías: `Pandas`, `Datasets`, `requests`, `PIL` y `io`. También deberás reemplazar `'Insert_Your_Dataset'` en la línea 2 con el nombre de tu conjunto de datos de Hugging Face.
 
 Librerías requeridas:
 
@@ -34,16 +34,16 @@ from io import BytesIO
 
 El script realiza los siguientes pasos:
 
-1. Descarga el conjunto de datos desde Hugging Face usando la función `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Descarga el conjunto de datos desde Hugging Face usando la función `load_dataset()`.
+2. Convierte el conjunto de datos de Hugging Face a un DataFrame de Pandas para facilitar su manipulación usando el método `to_pandas()`.
+3. Crea directorios para guardar el conjunto de datos y las imágenes.
+4. Filtra las filas donde la descarga de imágenes falla iterando sobre cada fila del DataFrame, descargando la imagen con la función personalizada `download_image()`, y agregando la fila filtrada a un nuevo DataFrame llamado `filtered_rows`.
+5. Crea un nuevo DataFrame con las filas filtradas y lo guarda en disco como un archivo CSV.
+6. Imprime un mensaje indicando dónde se han guardado el conjunto de datos y las imágenes.
 
-### Custom Function
+### Función personalizada
 
-The `download_image()` descarga una imagen desde una URL y la guarda localmente utilizando la biblioteca Pillow Image Library (PIL) y el módulo `io`. Devuelve True si la imagen se descarga correctamente, y False en caso contrario. La función también lanza una excepción con el mensaje de error cuando la solicitud falla.
+La función `download_image()` descarga una imagen desde una URL y la guarda localmente usando la biblioteca Pillow (PIL) y el módulo `io`. Devuelve True si la imagen se descarga correctamente, y False en caso contrario. La función también lanza una excepción con el mensaje de error cuando la solicitud falla.
 
 ### ¿Cómo funciona esto?
 
@@ -51,25 +51,25 @@ La función download_image recibe dos parámetros: image_url, que es la URL de l
 
 Así es como funciona la función:
 
-Comienza realizando una solicitud GET a image_url usando el método requests.get. Esto obtiene los datos de la imagen desde la URL.
+Comienza haciendo una solicitud GET a image_url usando el método requests.get. Esto recupera los datos de la imagen desde la URL.
 
 La línea response.raise_for_status() verifica si la solicitud fue exitosa. Si el código de estado de la respuesta indica un error (por ejemplo, 404 - No encontrado), lanzará una excepción. Esto asegura que solo procedamos a descargar la imagen si la solicitud fue exitosa.
 
 Los datos de la imagen se pasan luego al método Image.open del módulo PIL (Python Imaging Library). Este método crea un objeto Image a partir de los datos de la imagen.
 
-La línea image.save(save_path) guarda la imagen en la ruta save_path especificada. save_path debe incluir el nombre de archivo y la extensión deseados.
+La línea image.save(save_path) guarda la imagen en la ruta especificada por save_path. La ruta debe incluir el nombre de archivo y la extensión deseados.
 
-Finalmente, la función devuelve True para indicar que la imagen se descargó y guardó correctamente. Si ocurre alguna excepción durante el proceso, captura la excepción, imprime un mensaje de error indicando la falla y devuelve False.
+Finalmente, la función devuelve True para indicar que la imagen se descargó y guardó correctamente. Si ocurre alguna excepción durante el proceso, captura la excepción, imprime un mensaje de error indicando la falla, y devuelve False.
 
 Esta función es útil para descargar imágenes desde URLs y guardarlas localmente. Maneja posibles errores durante el proceso de descarga y proporciona retroalimentación sobre si la descarga fue exitosa o no.
 
-Cabe destacar que la librería requests se usa para hacer solicitudes HTTP, la librería PIL para trabajar con imágenes, y la clase BytesIO se utiliza para manejar los datos de la imagen como un flujo de bytes.
+Cabe destacar que la librería requests se usa para hacer solicitudes HTTP, la librería PIL para trabajar con imágenes, y la clase BytesIO para manejar los datos de la imagen como un flujo de bytes.
 
 
 
 ### Conclusión
 
-Este script ofrece una forma conveniente de preparar un conjunto de datos para aprendizaje automático descargando las imágenes necesarias, filtrando las filas donde la descarga de imágenes falla, y guardando el conjunto de datos como un archivo CSV.
+Este script ofrece una forma práctica de preparar un conjunto de datos para aprendizaje automático descargando las imágenes necesarias, filtrando las filas donde la descarga de imágenes falla, y guardando el conjunto de datos como un archivo CSV.
 
 ### Script de ejemplo
 
@@ -131,10 +131,10 @@ print(f"Dataset and images saved to {dataset_dir}")
 ```
 
 ### Código de ejemplo para descarga  
-[Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
+[Generar un nuevo script de conjunto de datos](../../../../code/04.Finetuning/generate_dataset.py)
 
 ### Conjunto de datos de ejemplo
-[Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+[Ejemplo de conjunto de datos de fine-tuning con LORA](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

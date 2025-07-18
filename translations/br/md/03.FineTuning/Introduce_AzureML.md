@@ -2,108 +2,107 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-05-09T22:19:18+00:00",
+  "translation_date": "2025-07-17T09:40:25+00:00",
   "source_file": "md/03.FineTuning/Introduce_AzureML.md",
   "language_code": "br"
 }
 -->
-# **Introdúz Azure Machine Learning Service**
+# **Introdução ao Azure Machine Learning Service**
 
-[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) zo ur servijenn en-linenn evit buheziñ ha merañ bevenn buhez ar raktresoù kentañ (ML).
+[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) é um serviço em nuvem para acelerar e gerenciar o ciclo de vida de projetos de machine learning (ML).
 
-Ar profoù ML, ar skiantoù roadennoù ha ar sevelerien a c’hall ober gant anezhañ bemdez evit :
+Profissionais de ML, cientistas de dados e engenheiros podem usá-lo em seus fluxos de trabalho diários para:
 
-- Seveniñ ha kas da benn ar modleoù.
-- Merañ ar c’hudennoù labourat ML (MLOps).
-- Gallout a rit krouiñ ur model e Azure Machine Learning pe implijout ur model savet gant ur platformezi digor, evel PyTorch, TensorFlow, pe scikit-learn.
-- Ar benvegioù MLOps a sikour ac'hanout da sellet ouzh ar modleoù, da ad-dreuzkas ha da adkas anezho en-dro.
+- Treinar e implantar modelos.  
+Gerenciar operações de machine learning (MLOps).  
+- Você pode criar um modelo no Azure Machine Learning ou usar um modelo construído em uma plataforma open-source, como PyTorch, TensorFlow ou scikit-learn.  
+- As ferramentas de MLOps ajudam a monitorar, retreinar e reimplantar modelos.
 
-## Piv eo Azure Machine Learning evit ?
+## Para quem é o Azure Machine Learning?
 
-**Skiantoù Roadennoù ha Sevelerien ML**
+**Cientistas de Dados e Engenheiros de ML**
 
-Gallout a reont implijout benvegioù evit buheziñ ha automatisaat o labourioù bemdez.
-Azure ML a ginnig arc’hantoù evit reizhder, displegañ, heuliañ, ha kontrol audit.
+Eles podem usar ferramentas para acelerar e automatizar seus fluxos de trabalho diários.  
+O Azure ML oferece recursos para justiça, explicabilidade, rastreamento e auditoria.
 
-**Sevelerien Arc’hantioù**
+**Desenvolvedores de Aplicações:**  
+Podem integrar modelos em aplicações ou serviços de forma simples.
 
-Gallout a reont enporzhiañ modleoù en arloadoù pe servijoù hep problem.
+**Desenvolvedores de Plataforma**
 
-**Sevelerien Platvorm**
+Têm acesso a um conjunto robusto de ferramentas suportadas por APIs duráveis do Azure Resource Manager.  
+Essas ferramentas permitem construir soluções avançadas de ML.
 
-Bez’ ez int gouest da implijout ur roll benvegioù kreñv skoazellet gant APIoù Azure Resource Manager kreñv.
-Ar benvegioù-se a ro an tu da sevel ostilhoù ML dibar.
+**Empresas**
 
-**Kompagnunoù**
+Trabalhando na nuvem Microsoft Azure, as empresas se beneficiam de segurança familiar e controle de acesso baseado em funções.  
+Configure projetos para controlar o acesso a dados protegidos e operações específicas.
 
-O labourat er sklaer Microsoft Azure, ez a ar gevredigezhioù gant ar surentez anavezet ha kontrol a arloadoù war rolloù.
-Setu ma c’hallont lakaat raktresoù evit merañ an tu da heul data diogel ha obererezhioù resis.
+## Produtividade para toda a equipe  
+Projetos de ML geralmente exigem uma equipe com habilidades variadas para construir e manter.
 
-## Buhez buhez evit an holl er skipailh  
-A bep seurt skiantoù a rank mont e darempred evit sevel ha merañ raktresoù ML.
+O Azure ML oferece ferramentas que permitem:  
+- Colaborar com sua equipe por meio de notebooks compartilhados, recursos de computação, computação serverless, dados e ambientes.  
+- Desenvolver modelos com justiça, explicabilidade, rastreamento e auditoria para atender a requisitos de linhagem e conformidade.  
+- Implantar modelos de ML rápida e facilmente em escala, além de gerenciá-los e governá-los eficientemente com MLOps.  
+- Executar cargas de trabalho de machine learning em qualquer lugar com governança, segurança e conformidade integradas.
 
-Azure ML a ginnig benvegioù evit :
-- Kevreañ gant ho skipailh dre notebookoù heverk, darvoudoù compute, compute serverless, roadennoù ha endroioù.
-- Seveniñ modleoù gant reizhder, displegañ, heuliañ ha audit evit mont war-raok gant ar reoladoù lineage ha audit.
-- Kas da benn modleoù ML buan ha aes dre skalañ, ha merañ ha renabl an oad gant MLOps.
-- Ober ar gwellañ labourioù ML e lec’h m’ho peus c’hoant gant ur roll mererezh, surentez ha kempouezadur enno.
+## Ferramentas da plataforma compatíveis entre si
 
-## Benvegioù Platvorm Skorioù
-
-An holl er skipailh ML a c’hall implijout e benvegioù karet evit ober o labour.
-Piv bennak o klask ober eksperimentoù buan, o lammat hyperparameterioù, o sevel pipelineoù pe o merañ inferenzennoù, e c’hallit implijout interfezoù anavezet evel :
-- Azure Machine Learning Studio
-- Python SDK (v2)
-- Azure CLI (v2)
+Qualquer pessoa na equipe de ML pode usar suas ferramentas preferidas para realizar o trabalho.  
+Seja para executar experimentos rápidos, ajuste de hiperparâmetros, construir pipelines ou gerenciar inferências, você pode usar interfaces familiares, incluindo:  
+- Azure Machine Learning Studio  
+- Python SDK (v2)  
+- Azure CLI (v2)  
 - Azure Resource Manager REST APIs
 
-Pa vez graet ar modleoù ha kevrinoù e-pad an hentad diorren, e c’hallit kemer perzh ha kavout madoù, roadennoù, ha metrikoù e-barzh Azure Machine Learning studio UI.
+À medida que você refina modelos e colabora durante o ciclo de desenvolvimento, pode compartilhar e encontrar ativos, recursos e métricas dentro da interface do Azure Machine Learning Studio.
 
-## **LLM/SLM e Azure ML**
+## **LLM/SLM no Azure ML**
 
-Azure ML en deus ouzhpennet kalz a arc’hantoù liammet gant LLM/SLM, o kevreañ LLMOps ha SLMOps evit krouiñ ur platvorm teknologiezh generadelezh arzoù artifisel evit an holl embregerezhioù.
+O Azure ML adicionou muitas funções relacionadas a LLM/SLM, combinando LLMOps e SLMOps para criar uma plataforma tecnológica de inteligência artificial generativa para toda a empresa.
 
-### **Katalog Modleoù**
+### **Catálogo de Modelos**
 
-An implijerien embregerezh a c’hall kas modleoù disheñvel hervez ar c’hudennoù embregerezh dre Katalog Modleoù, ha kinnig servijoù evel Model as Service evit ar sevelerien pe ar implijerien embregerezh.
+Usuários empresariais podem implantar diferentes modelos conforme diferentes cenários de negócio através do Catálogo de Modelos, e fornecer serviços como Modelo como Serviço para desenvolvedores ou usuários empresariais acessarem.
 
-![models](../../../../translated_images/models.2450411eac222e539ffb55785a8f550d01be1030bd8eb67c9c4f9ae4ca5d64be.br.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.br.png)
 
-Katalog Modleoù e Azure Machine Learning studio zo ar gêr evit kavout ha implijout kalz modleoù a ro an tu deoc’h da sevel arloadoù Generative AI. Katalog Modleoù a ginnig cantadoù modleoù gant proviñerien modleoù evel Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, ha modleoù bet desavet gant Microsoft ivez. Modleoù a zo bet krouet gant proviñerien all nemet Microsoft a zo Non-Microsoft Products, evel ma vez termenet e Temoù Arc’hant Microsoft, ha gouest da termeoù ar model.
+O Catálogo de Modelos no Azure Machine Learning Studio é o centro para descobrir e usar uma ampla variedade de modelos que permitem construir aplicações de IA Generativa. O catálogo apresenta centenas de modelos de provedores como Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, incluindo modelos treinados pela Microsoft. Modelos de provedores que não sejam Microsoft são Produtos Não Microsoft, conforme definido nos Termos de Produto da Microsoft, e estão sujeitos aos termos fornecidos com o modelo.
 
-### **Pipeline Labour**
+### **Pipeline de Jobs**
 
-Kerne ur pipeline labourat ML eo rann ur raktres komplek ML e ul labourad meur-vad. Pep labourad a zo ur rann eus an holl labourad, a c’hall bezañ diorren, optimizet, kempennet ha automatiset hepken. Pep labourad a vez liammet dre interfezoù resis. Servij pipeline Azure Machine Learning a orinat an holl darempredoù etre labouradoù ar pipeline.
+O núcleo de um pipeline de machine learning é dividir uma tarefa completa de ML em um fluxo de trabalho com múltiplas etapas. Cada etapa é um componente gerenciável que pode ser desenvolvido, otimizado, configurado e automatizado individualmente. As etapas são conectadas por interfaces bem definidas. O serviço de pipeline do Azure Machine Learning orquestra automaticamente todas as dependências entre as etapas do pipeline.
 
-E fin-tuning SLM / LLM, e c’hallomp merañ hor roadennoù, hor c’henlabour ha hor prosesoù generadelezh dre Pipeline.
+No fine-tuning de SLM / LLM, podemos gerenciar nossos dados, treinamento e processos de geração através do Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.b52e4aa971dfd8d3c668db913a2b419380533bd3a920d227ec19c078b7b3f309.br.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.br.png)
 
 ### **Prompt flow**
 
-Dibaboù implij Azure Machine Learning prompt flow  
-Azure Machine Learning prompt flow a ginnig kalz a dibaboù evit sikour an implijerien da vont eus ar c’henlabour da eskemmoù ha da sevel arloadoù LLM a zo prest evit ar produiñ :
+Benefícios de usar o prompt flow do Azure Machine Learning  
+O prompt flow do Azure Machine Learning oferece uma série de benefícios que ajudam os usuários a passar da ideação para a experimentação e, finalmente, para aplicações baseadas em LLM prontas para produção:
 
-**Agilite en arloañ prompt**
+**Agilidade na engenharia de prompts**
 
-Dibaboù skrivañ interaktivel : Azure Machine Learning prompt flow a ro un displegadenn gwelet eus stumm ar flow, evit ma c’hall an implijerien kompren ha merkañ o raktresoù aesoc’h. Emañ ivez da vezañ ur sell notebook-like evit skrivañ ha diskoulmañ ar flowoù buanoc’h.  
-Variantioù evit lammat prompt : An implijerien a c’hall krouiñ ha kevrinañ meur a variant prompt evit un diorren iterel.
+Experiência interativa de autoria: o prompt flow do Azure Machine Learning fornece uma representação visual da estrutura do fluxo, permitindo que os usuários entendam e naveguem facilmente em seus projetos. Também oferece uma experiência de codificação semelhante a notebooks para desenvolvimento e depuração eficientes do fluxo.  
+Variantes para ajuste de prompt: os usuários podem criar e comparar múltiplas variantes de prompt, facilitando um processo iterativo de refinamento.
 
-Priz : Ar flowoù priz enno a ro lañs d’an implijerien da werzhañ kalite ha efedusted o promptoù ha flowoù.
+Avaliação: fluxos de avaliação integrados permitem que os usuários avaliem a qualidade e eficácia de seus prompts e fluxos.
 
-Madoù komplek : Azure Machine Learning prompt flow a ginnig ur roll benvegioù, skouerioù ha templetennoù enno evit krouiñ, o tisplegañ ha buheziñ ar proses.
+Recursos abrangentes: o prompt flow do Azure Machine Learning inclui uma biblioteca de ferramentas, exemplos e templates integrados que servem como ponto de partida para o desenvolvimento, inspirando criatividade e acelerando o processo.
 
-**Prestantez embregerezh evit arloadoù LLM**
+**Pronto para empresas em aplicações baseadas em LLM**
 
-Kevreerezh : Azure Machine Learning prompt flow a skoazella kevreerezh e skipailh, da reiñ lañs d’ar meur a implijerien da labourat war arloadoù prompt, da rannañ anavezout ha da mirout kontrol ar vent.
+Colaboração: o prompt flow do Azure Machine Learning suporta colaboração em equipe, permitindo que múltiplos usuários trabalhem juntos em projetos de engenharia de prompts, compartilhem conhecimento e mantenham controle de versões.
 
-Platvorm unan-tre : Azure Machine Learning prompt flow a strinklec’h an holl dazont arloañ prompt, adpriz, kas da benn ha mererezh. An implijerien a c’hall kas o flowoù da benn evel Azure Machine Learning endpoints ha sellet ouzh o stumm e gwir-aman evit ma vefe ar gwellañ obererezh hag ur gwellañ pad.
+Plataforma tudo-em-um: o prompt flow do Azure Machine Learning simplifica todo o processo de engenharia de prompts, desde o desenvolvimento e avaliação até a implantação e monitoramento. Os usuários podem implantar seus fluxos como endpoints do Azure Machine Learning e monitorar seu desempenho em tempo real, garantindo operação ideal e melhoria contínua.
 
-Soluzoù Prestantez Embregerezh Azure Machine Learning : Prompt flow a implij soluzoù kreñv prestantez embregerezh Azure Machine Learning, o kinnig ur skeudenn sur, skalañ ha sur evit diorren, eskemm ha kas da benn ar flowoù.
+Soluções de Prontidão Empresarial do Azure Machine Learning: o prompt flow aproveita as robustas soluções de prontidão empresarial do Azure Machine Learning, oferecendo uma base segura, escalável e confiável para o desenvolvimento, experimentação e implantação de fluxos.
 
-Gant Azure Machine Learning prompt flow, an implijerien a c’hall diskouez o agilite en arloañ prompt, kevreañ efedus, ha implijout soluzoù prestantez embregerezh evit sevel ha kas da benn arloadoù LLM.
+Com o prompt flow do Azure Machine Learning, os usuários podem liberar sua agilidade na engenharia de prompts, colaborar efetivamente e aproveitar soluções de nível empresarial para o desenvolvimento e implantação bem-sucedidos de aplicações baseadas em LLM.
 
-O krouiñ gant galloud ar c’halkul, roadennoù, ha meur a rann eus Azure ML, an sevelerien embregerezh a c’hall sevel aes o arloadoù arzoù artifisel.
+Combinando o poder computacional, dados e diferentes componentes do Azure ML, desenvolvedores empresariais podem construir facilmente suas próprias aplicações de inteligência artificial.
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

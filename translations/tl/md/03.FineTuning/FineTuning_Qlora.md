@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-05-09T21:53:12+00:00",
+  "translation_date": "2025-07-17T08:20:09+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
   "language_code": "tl"
 }
 -->
-**Fine-tuning Phi-3 gamit ang QLoRA**
+**Fine-tuning ng Phi-3 gamit ang QLoRA**
 
-Pag-fine-tune ng Phi-3 Mini language model ng Microsoft gamit ang [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora).
+Fine-tuning ng Microsoft Phi-3 Mini language model gamit ang [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora).
 
-Makakatulong ang QLoRA para mapabuti ang pag-unawa sa usapan at paggawa ng mga sagot.
+Makakatulong ang QLoRA para mapabuti ang pag-unawa sa pag-uusap at paggawa ng mga tugon.
 
-Para makapag-load ng mga modelo sa 4bits gamit ang transformers at bitsandbytes, kailangan mong i-install ang accelerate at transformers mula sa source at siguraduhing nasa pinakabagong bersyon ang bitsandbytes library.
+Para ma-load ang mga modelo sa 4bits gamit ang transformers at bitsandbytes, kailangan mong i-install ang accelerate at transformers mula sa source at siguraduhing meron kang pinakabagong bersyon ng bitsandbytes library.
 
 **Mga Halimbawa**
 - [Matuto Pa gamit ang sample notebook na ito](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
@@ -22,4 +22,4 @@ Para makapag-load ng mga modelo sa 4bits gamit ang transformers at bitsandbytes,
 - [Halimbawa ng Hugging Face Hub Fine Tuning gamit ang QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pinagmulan ng katotohanan. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na nagmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

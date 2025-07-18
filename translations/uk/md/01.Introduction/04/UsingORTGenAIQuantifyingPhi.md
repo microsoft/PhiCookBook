@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-07-09T19:44:59+00:00",
+  "translation_date": "2025-07-16T22:27:50+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "uk"
 }
@@ -39,7 +39,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 **Phi-3.5-vision-instruct-onnx-cpu-fp32**
 
-1. Встановіть середовище у терміналі
+1. Налаштуйте середовище в терміналі
 
 ```bash
 
@@ -75,11 +75,11 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ### **Примітка:**
 
-1. Model Builder наразі підтримує конвертацію Phi-3.5-Instruct та Phi-3.5-Vision, але не Phi-3.5-MoE
+1. Наразі Model Builder підтримує конвертацію Phi-3.5-Instruct та Phi-3.5-Vision, але не Phi-3.5-MoE
 
 2. Для використання квантизованої моделі ONNX можна застосовувати Generative AI extensions for onnxruntime SDK
 
-3. Важливо враховувати відповідальне використання AI, тому після квантизації моделі рекомендується провести додаткове тестування результатів
+3. Важливо враховувати відповідальне використання AI, тому після квантизації моделі рекомендується провести більш ретельне тестування результатів
 
 4. Квантизуючи модель CPU INT4, ми можемо розгортати її на Edge-пристроях, що відкриває кращі сценарії застосування, тому ми завершили роботу над Phi-3.5-Instruct у форматі INT4
 

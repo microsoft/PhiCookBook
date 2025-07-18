@@ -2,20 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:27:25+00:00",
+  "translation_date": "2025-07-17T05:52:44+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "hr"
 }
 -->
-# Generiranje skupa podataka slika preuzimanjem DataSeta s Hugging Face i pridruženih slika
+# Generiranje skupa podataka slika preuzimanjem DataSet-a s Hugging Face i pripadajućih slika
+
 
 ### Pregled
 
-Ovaj skript priprema skup podataka za strojno učenje preuzimanjem potrebnih slika, filtriranjem redaka gdje preuzimanje slike ne uspije, te spremanjem skupa podataka kao CSV datoteke.
+Ovaj skript priprema skup podataka za strojno učenje preuzimanjem potrebnih slika, filtriranjem redaka gdje preuzimanje slika ne uspije, te spremanjem skupa podataka kao CSV datoteke.
 
 ### Preduvjeti
 
-Prije pokretanja ovog skripta, provjerite da imate instalirane sljedeće biblioteke: `Pandas`, `Datasets`, `requests`, `PIL` i `io`. Također ćete trebati zamijeniti `'Insert_Your_Dataset'` u liniji 2 imenom vašeg skupa podataka s Hugging Face.
+Prije pokretanja ovog skripta, provjerite imate li instalirane sljedeće biblioteke: `Pandas`, `Datasets`, `requests`, `PIL` i `io`. Također, potrebno je zamijeniti `'Insert_Your_Dataset'` u liniji 2 s imenom vašeg skupa podataka s Hugging Face.
 
 Potrebne biblioteke:
 
@@ -31,18 +32,18 @@ from io import BytesIO
 
 ### Funkcionalnost
 
-Skripta izvodi sljedeće korake:
+Skript izvodi sljedeće korake:
 
-1. Preuzima skup podataka s Hugging Face koristeći `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Preuzima skup podataka s Hugging Face koristeći funkciju `load_dataset()`.
+2. Pretvara Hugging Face skup podataka u Pandas DataFrame radi lakše manipulacije koristeći metodu `to_pandas()`.
+3. Kreira direktorije za spremanje skupa podataka i slika.
+4. Filtrira retke gdje preuzimanje slike ne uspijeva tako da prolazi kroz svaki redak u DataFrame-u, preuzima sliku koristeći prilagođenu funkciju `download_image()`, te dodaje filtrirane retke u novi DataFrame nazvan `filtered_rows`.
+5. Kreira novi DataFrame s filtriranim redcima i sprema ga na disk kao CSV datoteku.
+6. Ispisuje poruku koja pokazuje gdje su skup podataka i slike spremljeni.
 
-### Custom Function
+### Prilagođena funkcija
 
-The `download_image()` funkcija preuzima sliku s URL-a i sprema je lokalno koristeći Pillow Image Library (PIL) i `io` modul. Funkcija vraća True ako je slika uspješno preuzeta, a False ako nije. Također baca iznimku s porukom o grešci kada zahtjev ne uspije.
+Funkcija `download_image()` preuzima sliku s URL-a i sprema je lokalno koristeći Pillow Image Library (PIL) i modul `io`. Vraća True ako je slika uspješno preuzeta, a False u suprotnom. Funkcija također baca iznimku s porukom o pogrešci ako zahtjev ne uspije.
 
 ### Kako to funkcionira
 
@@ -50,23 +51,25 @@ Funkcija download_image prima dva parametra: image_url, što je URL slike koja s
 
 Evo kako funkcija radi:
 
-Počinje slanjem GET zahtjeva na image_url koristeći requests.get metodu. To dohvaća podatke slike s URL-a.
+Počinje slanjem GET zahtjeva na image_url koristeći metodu requests.get. Time se dohvaćaju podaci slike s URL-a.
 
-Linija response.raise_for_status() provjerava je li zahtjev bio uspješan. Ako statusni kod odgovora označava grešku (npr. 404 - Nije pronađeno), funkcija će baciti iznimku. Time se osigurava da nastavljamo s preuzimanjem slike samo ako je zahtjev uspješan.
+Linija response.raise_for_status() provjerava je li zahtjev bio uspješan. Ako statusni kod odgovora ukazuje na pogrešku (npr. 404 - Nije pronađeno), baca iznimku. Time se osigurava da se slika preuzima samo ako je zahtjev prošao bez grešaka.
 
 Podaci slike zatim se prosljeđuju metodi Image.open iz PIL (Python Imaging Library) modula. Ova metoda stvara Image objekt iz podataka slike.
 
-Linija image.save(save_path) sprema sliku na navedenu putanju save_path. Putanja treba uključivati željeno ime datoteke i ekstenziju.
+Linija image.save(save_path) sprema sliku na zadanu putanju save_path. Putanja treba uključivati željeno ime datoteke i ekstenziju.
 
-Na kraju, funkcija vraća True kao znak da je slika uspješno preuzeta i spremljena. Ako tijekom procesa dođe do bilo kakve iznimke, funkcija hvata iznimku, ispisuje poruku o grešci koja označava neuspjeh i vraća False.
+Na kraju, funkcija vraća True kao znak da je slika uspješno preuzeta i spremljena. Ako tijekom procesa dođe do bilo kakve iznimke, funkcija hvata iznimku, ispisuje poruku o pogrešci koja označava neuspjeh i vraća False.
 
-Ova funkcija je korisna za preuzimanje slika s URL-ova i njihovo lokalno spremanje. Ona upravlja potencijalnim greškama tijekom procesa preuzimanja i daje povratnu informaciju o tome je li preuzimanje bilo uspješno ili ne.
+Ova funkcija je korisna za preuzimanje slika s URL-ova i njihovo lokalno spremanje. Rukuje mogućim pogreškama tijekom preuzimanja i pruža povratnu informaciju o uspješnosti preuzimanja.
 
-Važno je napomenuti da se requests biblioteka koristi za HTTP zahtjeve, PIL biblioteka za rad sa slikama, a klasa BytesIO za rukovanje podacima slike kao streamom bajtova.
+Vrijedi napomenuti da se za HTTP zahtjeve koristi biblioteka requests, za rad sa slikama koristi se PIL, a klasa BytesIO služi za rukovanje podacima slike kao nizom bajtova.
+
+
 
 ### Zaključak
 
-Ovaj skript pruža jednostavan način za pripremu skupa podataka za strojno učenje preuzimanjem potrebnih slika, filtriranjem redaka gdje preuzimanje slike ne uspije, i spremanjem skupa podataka kao CSV datoteke.
+Ovaj skript pruža jednostavan način za pripremu skupa podataka za strojno učenje preuzimanjem potrebnih slika, filtriranjem redaka gdje preuzimanje slika ne uspije, te spremanjem skupa podataka kao CSV datoteke.
 
 ### Primjer skripte
 
@@ -134,4 +137,4 @@ print(f"Dataset and images saved to {dataset_dir}")
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je pomoću AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati službenim i autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili kriva tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T13:59:19+00:00",
+  "translation_date": "2025-07-16T22:02:55+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "vi"
 }
 -->
 # **Lượng tử hóa Phi-3.5 sử dụng Intel OpenVINO**
 
-Intel là nhà sản xuất CPU truyền thống với nhiều người dùng. Với sự phát triển của học máy và học sâu, Intel cũng tham gia vào cuộc đua tăng tốc AI. Đối với suy luận mô hình, Intel không chỉ sử dụng GPU và CPU mà còn sử dụng NPU.
+Intel là nhà sản xuất CPU truyền thống với nhiều người dùng. Với sự phát triển của học máy và học sâu, Intel cũng đã tham gia vào cuộc đua tăng tốc AI. Đối với suy luận mô hình, Intel không chỉ sử dụng GPU và CPU mà còn sử dụng NPU.
 
 Chúng tôi hy vọng triển khai Phi-3.x Family ở phía thiết bị cuối, mong muốn trở thành phần quan trọng nhất của AI PC và Copilot PC. Việc tải mô hình ở phía thiết bị cuối phụ thuộc vào sự hợp tác của các nhà sản xuất phần cứng khác nhau. Chương này chủ yếu tập trung vào kịch bản ứng dụng của Intel OpenVINO như một mô hình lượng tử hóa.
 
 ## **OpenVINO là gì**
 
-OpenVINO là bộ công cụ mã nguồn mở dùng để tối ưu và triển khai các mô hình học sâu từ đám mây đến thiết bị biên. Nó tăng tốc suy luận học sâu trong nhiều trường hợp sử dụng khác nhau, như AI tạo sinh, video, âm thanh và ngôn ngữ với các mô hình từ các framework phổ biến như PyTorch, TensorFlow, ONNX và nhiều hơn nữa. Chuyển đổi và tối ưu mô hình, đồng thời triển khai trên nhiều phần cứng và môi trường Intel®, tại chỗ hoặc trên thiết bị, trong trình duyệt hoặc trên đám mây.
+OpenVINO là bộ công cụ mã nguồn mở để tối ưu hóa và triển khai các mô hình học sâu từ đám mây đến thiết bị biên. Nó tăng tốc suy luận học sâu trong nhiều trường hợp sử dụng khác nhau, như AI tạo sinh, video, âm thanh và ngôn ngữ với các mô hình từ các framework phổ biến như PyTorch, TensorFlow, ONNX và nhiều hơn nữa. Chuyển đổi và tối ưu hóa mô hình, đồng thời triển khai trên nhiều phần cứng và môi trường Intel®, tại chỗ hoặc trên thiết bị, trong trình duyệt hoặc trên đám mây.
 
 Giờ đây với OpenVINO, bạn có thể nhanh chóng lượng tử hóa mô hình GenAI trên phần cứng Intel và tăng tốc tham chiếu mô hình.
 
-Hiện OpenVINO hỗ trợ chuyển đổi lượng tử hóa Phi-3.5-Vision và Phi-3.5 Instruct
+Hiện OpenVINO hỗ trợ chuyển đổi lượng tử hóa Phi-3.5-Vision và Phi-3.5 Instruct.
 
-### **Thiết lập môi trường**
+### **Cài đặt môi trường**
 
-Vui lòng đảm bảo các phụ thuộc môi trường sau đã được cài đặt, đây là requirement.txt
+Vui lòng đảm bảo các phụ thuộc môi trường sau đã được cài đặt, đây là file requirement.txt
 
 ```txt
 
@@ -38,7 +38,7 @@ openvino-genai>=2024.3.0.0
 
 ### **Lượng tử hóa Phi-3.5-Instruct sử dụng OpenVINO**
 
-Trong Terminal, hãy chạy script này
+Trong Terminal, vui lòng chạy script này
 
 ```bash
 
@@ -90,13 +90,13 @@ if not out_dir.exists():
 
 ```
 
-### **🤖 Ví dụ cho Phi-3.5 với Intel OpenVINO**
+### **🤖 Mẫu cho Phi-3.5 với Intel OpenVINO**
 
 | Labs    | Giới thiệu | Vào |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Giới thiệu Phi-3.5 Instruct  | Tìm hiểu cách sử dụng Phi-3.5 Instruct trên AI PC của bạn    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Giới thiệu Phi-3.5 Vision (hình ảnh) | Tìm hiểu cách sử dụng Phi-3.5 Vision để phân tích hình ảnh trên AI PC của bạn      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Giới thiệu Phi-3.5 Vision (video)   | Tìm hiểu cách sử dụng Phi-3.5 Vision để phân tích video trên AI PC của bạn    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Giới thiệu Phi-3.5 Instruct  | Tìm hiểu cách sử dụng Phi-3.5 Instruct trên AI PC của bạn    |  [Vào](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Giới thiệu Phi-3.5 Vision (hình ảnh) | Tìm hiểu cách sử dụng Phi-3.5 Vision để phân tích hình ảnh trên AI PC của bạn      |  [Vào](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Giới thiệu Phi-3.5 Vision (video)   | Tìm hiểu cách sử dụng Phi-3.5 Vision để phân tích video trên AI PC của bạn    |  [Vào](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **Tài nguyên**
 
@@ -105,4 +105,4 @@ if not out_dir.exists():
 2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc sai sót. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

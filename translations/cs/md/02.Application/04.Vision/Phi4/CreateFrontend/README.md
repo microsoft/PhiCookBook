@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-05-09T20:04:48+00:00",
+  "translation_date": "2025-07-17T05:09:33+00:00",
   "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "cs"
 }
 -->
-## **Использование Phi-4-multimodal для чтения изображений и генерации кода**
+## **Použijte Phi-4-multimodal pro čtení obrázků a generování kódu**
 
-Phi-4-multimodal обладает мощными возможностями распознавания изображений. Давайте попробуем использовать Python для реализации следующих функций. Изображение — это страница ChatGPT.
+Phi-4-multimodal má silné schopnosti čtení obrázků. Zkusme pomocí Pythonu implementovat následující funkce. Obrázek je stránka ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.cs.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.cs.png)
 
-### **Пример кода**
+### **Ukázkový kód**
 
 
 
@@ -68,4 +68,4 @@ print(response)
 ```
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

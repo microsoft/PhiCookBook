@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-05-09T21:52:46+00:00",
+  "translation_date": "2025-07-17T08:19:36+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
   "language_code": "nl"
 }
 -->
-**Fijn afstemmen van Phi-3 met QLoRA**
+**Fine-tunen van Phi-3 met QLoRA**
 
-Fijn afstemmen van Microsoft’s Phi-3 Mini taalmodel met behulp van [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora).
+Het fine-tunen van Microsoft’s Phi-3 Mini taalmodel met behulp van [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora).
 
 QLoRA helpt bij het verbeteren van het begrip in gesprekken en het genereren van reacties.
 
@@ -17,7 +17,7 @@ Om modellen in 4bits te laden met transformers en bitsandbytes, moet je accelera
 
 **Voorbeelden**
 - [Leer meer met dit voorbeeldnotebook](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
-- [Voorbeeld van Python FineTuning Sample](../../../../code/03.Finetuning/FineTrainingScript.py)
+- [Voorbeeld van een Python FineTuning script](../../../../code/03.Finetuning/FineTrainingScript.py)
 - [Voorbeeld van Hugging Face Hub Fine Tuning met LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
 - [Voorbeeld van Hugging Face Hub Fine Tuning met QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 

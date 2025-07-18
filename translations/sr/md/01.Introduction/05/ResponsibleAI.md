@@ -2,120 +2,120 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-05-09T15:48:55+00:00",
+  "translation_date": "2025-07-16T22:58:41+00:00",
   "source_file": "md/01.Introduction/05/ResponsibleAI.md",
   "language_code": "sr"
 }
 -->
-# **Uvod u Odgovorni AI**
+# **Увод у Одговорни AI**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) je inicijativa koja ima za cilj da pomogne programerima i organizacijama u izgradnji AI sistema koji su transparentni, pouzdani i odgovorni. Ova inicijativa pruža smernice i resurse za razvoj odgovornih AI rešenja koja su u skladu sa etičkim principima kao što su privatnost, pravičnost i transparentnost. Takođe ćemo istražiti neke od izazova i najboljih praksi vezanih za izgradnju odgovornih AI sistema.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) је иницијатива која има за циљ да помогне програмерима и организацијама да развију AI системе који су транспарентни, поуздани и одговорни. Иницијатива пружа смернице и ресурсе за развој одговорних AI решења која су у складу са етичким принципима, као што су приватност, правичност и транспарентност. Такође ћемо истражити неке од изазова и најбољих пракси повезаних са изградњом одговорних AI система.
 
-## Pregled Microsoft Responsible AI
+## Преглед Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.e40f2a169a854832e885ce2659f3a913cfb393fa59b595ed57cfae9119694eb7.sr.png)
+![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d336830630939a5130a22b3f9e1f633773562f83fed08a50520.sr.png)
 
-**Etički principi**
+**Етички принципи**
 
-Microsoft Responsible AI se rukovodi skupom etičkih principa, kao što su privatnost, pravičnost, transparentnost, odgovornost i bezbednost. Ovi principi su osmišljeni da osiguraju da se AI sistemi razvijaju na etički i odgovoran način.
+Microsoft Responsible AI се руководи скупом етичких принципа, као што су приватност, правичност, транспарентност, одговорност и безбедност. Ови принципи су осмишљени да обезбеде да се AI системи развијају на етички и одговоран начин.
 
-**Transparentni AI**
+**Транспарентни AI**
 
-Microsoft Responsible AI naglašava važnost transparentnosti u AI sistemima. To uključuje pružanje jasnih objašnjenja kako AI modeli funkcionišu, kao i osiguravanje da izvori podataka i algoritmi budu javno dostupni.
+Microsoft Responsible AI наглашава важност транспарентности у AI системима. То укључује пружање јасних објашњења о томе како AI модели функционишу, као и обезбеђивање да извори података и алгоритми буду јавно доступни.
 
-**Odgovorni AI**
+**Одговорни AI**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) promoviše razvoj odgovornih AI sistema, koji mogu pružiti uvid u to kako AI modeli donose odluke. Ovo može pomoći korisnicima da razumeju i veruju rezultatima AI sistema.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) подстиче развој одговорних AI система који могу пружити увид у то како AI модели доносе одлуке. Ово може помоћи корисницима да разумеју и верују резултатима AI система.
 
-**Uključivost**
+**Инклузивност**
 
-AI sistemi treba da budu dizajnirani tako da koriste svima. Microsoft ima za cilj da stvori inkluzivan AI koji uzima u obzir različite perspektive i izbegava pristrasnost ili diskriminaciju.
+AI системи треба да буду дизајнирани тако да користе свима. Microsoft има за циљ да створи инклузивни AI који узима у обзир различите перспективе и избегава пристрасност или дискриминацију.
 
-**Pouzdanost i bezbednost**
+**Поузданост и безбедност**
 
-Osiguranje da AI sistemi budu pouzdani i bezbedni je od ključnog značaja. Microsoft se fokusira na izgradnju robusnih modela koji dosledno rade i izbegavaju štetne ishode.
+Обезбеђивање да AI системи буду поуздани и безбедни је од кључног значаја. Microsoft се фокусира на изградњу робусних модела који доследно функционишу и избегавају штетне последице.
 
-**Pravičnost u AI**
+**Правичност у AI**
 
-Microsoft Responsible AI prepoznaje da AI sistemi mogu da perpetuiraju pristrasnosti ako su trenirani na pristrasnim podacima ili algoritmima. Inicijativa pruža smernice za razvoj pravdičnih AI sistema koji ne diskriminišu na osnovu faktora kao što su rasa, pol ili godine.
+Microsoft Responsible AI препознаје да AI системи могу да одржавају пристрасности ако су обучени на пристрасним подацима или алгоритмима. Иницијатива пружа смернице за развој праведних AI система који не дискриминишу на основу фактора као што су раса, пол или старост.
 
-**Privatnost i bezbednost**
+**Приватност и безбедност**
 
-Microsoft Responsible AI naglašava važnost zaštite privatnosti korisnika i bezbednosti podataka u AI sistemima. Ovo uključuje primenu snažne enkripcije podataka i kontrolu pristupa, kao i redovne revizije AI sistema radi otkrivanja ranjivosti.
+Microsoft Responsible AI наглашава важност заштите приватности корисника и безбедности података у AI системима. Ово укључује примену јаке енкрипције података и контролу приступа, као и редовне ревизије AI система ради откривања рањивости.
 
-**Odgovornost i odgovornost**
+**Одговорност и обавеза**
 
-Microsoft Responsible AI promoviše odgovornost i odgovornost u razvoju i primeni AI. To podrazumeva da programeri i organizacije budu svesni potencijalnih rizika povezanih sa AI sistemima i preduzimaju korake za njihovo ublažavanje.
+Microsoft Responsible AI подстиче одговорност и обавезу у развоју и примени AI. Ово укључује осигуравање да програмери и организације буду свесни потенцијалних ризика повезаних са AI системима и да предузму мере за њихово смањење.
 
-## Najbolje prakse za izgradnju odgovornih AI sistema
+## Најбоље праксе за изградњу одговорних AI система
 
-**Razvijajte AI modele koristeći raznovrsne skupove podataka**
+**Развијајте AI моделе користећи разноврсне скупове података**
 
-Da biste izbegli pristrasnost u AI sistemima, važno je koristiti raznovrsne skupove podataka koji predstavljaju različite perspektive i iskustva.
+Да бисте избегли пристрасност у AI системима, важно је користити разноврсне скупове података који представљају широк спектар перспектива и искустава.
 
-**Koristite tehnike objašnjivog AI**
+**Користите технике објашњивог AI**
 
-Tehnike objašnjivog AI mogu pomoći korisnicima da razumeju kako AI modeli donose odluke, što može povećati poverenje u sistem.
+Технике објашњивог AI могу помоћи корисницима да разумеју како AI модели доносе одлуке, што може повећати поверење у систем.
 
-**Redovno proveravajte AI sisteme na ranjivosti**
+**Редовно вршите ревизију AI система ради откривања рањивости**
 
-Redovne revizije AI sistema mogu pomoći u identifikaciji potencijalnih rizika i ranjivosti koje je potrebno rešiti.
+Редовне ревизије AI система могу помоћи у идентификовању потенцијалних ризика и рањивости које треба решити.
 
-**Implementirajte snažnu enkripciju podataka i kontrole pristupa**
+**Имплементирајте јаку енкрипцију података и контролу приступа**
 
-Enkripcija podataka i kontrole pristupa mogu pomoći u zaštiti privatnosti i bezbednosti korisnika u AI sistemima.
+Енкрипција података и контрола приступа могу помоћи у заштити приватности и безбедности корисника у AI системима.
 
-**Pridržavajte se etičkih principa u razvoju AI**
+**Пратите етичке принципе у развоју AI**
 
-Pridržavanje etičkih principa, kao što su pravičnost, transparentnost i odgovornost, može pomoći u izgradnji poverenja u AI sisteme i osigurati da se razvijaju na odgovoran način.
+Поштовање етичких принципа, као што су правичност, транспарентност и одговорност, може помоћи у изградњи поверења у AI системе и обезбедити да се они развијају на одговоран начин.
 
-## Korišćenje AI Foundry za Odgovorni AI
+## Коришћење AI Foundry за Одговорни AI
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) je moćna platforma koja omogućava programerima i organizacijama da brzo kreiraju inteligentne, najsavremenije, tržišno spremne i odgovorne aplikacije. Evo nekoliko ključnih karakteristika i mogućnosti Azure AI Foundry:
+[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) је моћна платформа која омогућава програмерима и организацијама да брзо креирају интелигентне, најсавременије, спремне за тржиште и одговорне апликације. Ево неких кључних карактеристика и могућности Azure AI Foundry:
 
-**API-jevi i modeli spremni za upotrebu**
+**Спремни API-ји и модели**
 
-Azure AI Foundry pruža unapred izgrađene i prilagodljive API-jeve i modele. Oni pokrivaju širok spektar AI zadataka, uključujući generativni AI, obradu prirodnog jezika za razgovore, pretragu, nadzor, prevod, govor, viziju i donošenje odluka.
+Azure AI Foundry пружа унапред изграђене и прилагодљиве API-је и моделе. Они покривају широк спектар AI задатака, укључујући генеративни AI, обраду природног језика за разговоре, претрагу, праћење, превођење, говор, визуелну обраду и доношење одлука.
 
 **Prompt Flow**
 
-Prompt flow u Azure AI Foundry omogućava kreiranje konverzacionih AI iskustava. Omogućava dizajn i upravljanje konverzacionim tokovima, što olakšava izradu chatbotova, virtuelnih asistenata i drugih interaktivnih aplikacija.
+Prompt flow у Azure AI Foundry омогућава креирање разговорних AI искустава. Омогућава дизајн и управљање разговорним токовима, што олакшава изградњу четботова, виртуелних асистената и других интерактивних апликација.
 
 **Retrieval Augmented Generation (RAG)**
 
-RAG je tehnika koja kombinuje pristupe zasnovane na pretraživanju i generisanju. Poboljšava kvalitet generisanih odgovora korišćenjem i prethodno postojećeg znanja (pretraživanje) i kreativnog generisanja (generisanje).
+RAG је техника која комбинује приступе засноване на претрази и генеративне приступе. Побољшава квалитет генерисаних одговора користећи и постојеће знање (претрага) и креативну генерацију (генерација).
 
-**Metrike za evaluaciju i nadzor generativnog AI**
+**Метрике за евалуацију и праћење генеративног AI**
 
-Azure AI Foundry pruža alate za evaluaciju i nadzor generativnih AI modela. Možete proceniti njihovu performansu, pravičnost i druge važne metrike kako biste osigurali odgovornu primenu. Takođe, ako ste kreirali kontrolnu tablu, možete koristiti no-code UI u Azure Machine Learning Studio za prilagođavanje i generisanje Responsible AI Dashboard-a i pripadajuće kartice ocena zasnovane na [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python bibliotekama. Ova kartica ocena pomaže u deljenju ključnih uvida vezanih za pravičnost, važnost karakteristika i druge aspekte odgovorne primene sa tehničkim i netehničkim zainteresovanim stranama.
+Azure AI Foundry пружа алате за евалуацију и праћење генеративних AI модела. Можете проценити њихове перформансе, правичност и друге важне метрике како бисте осигурали одговорну примену. Поред тога, ако сте креирали контролну таблу, можете користити no-code UI у Azure Machine Learning Studio за прилагођавање и генерисање Responsible AI Dashboard-а и повезане scorecard табеле засноване на [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python библиотекама. Ова scorecard табела помаже у дељењу кључних увида везаних за правичност, важност карактеристика и друге аспекте одговорне примене са техничким и нетехничким заинтересованим странама.
 
-Da biste koristili AI Foundry sa odgovornim AI, možete slediti ove najbolje prakse:
+За коришћење AI Foundry у оквиру одговорног AI, можете пратити ове најбоље праксе:
 
-**Definišite problem i ciljeve vašeg AI sistema**
+**Дефинишите проблем и циљеве вашег AI система**
 
-Pre nego što započnete razvoj, važno je jasno definisati problem ili cilj koji vaš AI sistem treba da reši. Ovo će vam pomoći da identifikujete podatke, algoritme i resurse potrebne za izgradnju efikasnog modela.
+Пре почетка развоја, важно је јасно дефинисати проблем или циљ који ваш AI систем треба да реши. Ово ће вам помоћи да идентификујете податке, алгоритме и ресурсе потребне за изградњу ефикасног модела.
 
-**Prikupite i prethodno obradite relevantne podatke**
+**Прикупите и припремите релевантне податке**
 
-Kvalitet i količina podataka korišćenih za treniranje AI sistema može značajno uticati na njegovu performansu. Zato je važno prikupiti relevantne podatke, očistiti ih, prethodno obraditi i osigurati da predstavljaju populaciju ili problem koji pokušavate da rešite.
+Квалитет и количина података који се користе за обуку AI система могу значајно утицати на његове перформансе. Због тога је важно прикупити релевантне податке, очистити их, припремити и осигурати да представљају популацију или проблем који покушавате да решите.
 
-**Izaberite odgovarajuću evaluaciju**
+**Изаберите одговарајућу методу евалуације**
 
-Postoji više dostupnih evaluacionih algoritama. Važno je izabrati najprikladniji algoritam na osnovu vaših podataka i problema.
+Постоје различити алгоритми за евалуацију. Важно је изабрати најприкладнији алгоритам у складу са вашим подацима и проблемом.
 
-**Evaluirajte i interpretirajte model**
+**Евалуирајте и тумачите модел**
 
-Kada izgradite AI model, važno je proceniti njegovu performansu koristeći odgovarajuće metrike i interpretirati rezultate na transparentan način. Ovo će vam pomoći da identifikujete eventualne pristrasnosti ili ograničenja modela i izvršite potrebna poboljšanja.
+Када изградите AI модел, важно је проценити његове перформансе користећи одговарајуће метрике и транспарентно тумачити резултате. Ово ће вам помоћи да идентификујете евентуалне пристрасности или ограничења модела и унапредите га где је потребно.
 
-**Osigurajte transparentnost i objašnjivost**
+**Обезбедите транспарентност и објашњивост**
 
-AI sistemi treba da budu transparentni i objašnjivi kako bi korisnici mogli da razumeju kako funkcionišu i kako se donose odluke. Ovo je posebno važno za aplikacije koje imaju značajan uticaj na ljudske živote, kao što su zdravstvo, finansije i pravni sistemi.
+AI системи треба да буду транспарентни и објашњиви како би корисници разумели како функционишу и како се доносе одлуке. Ово је посебно важно за апликације које имају значајан утицај на људске животе, као што су здравство, финансије и правни системи.
 
-**Nadzirite i ažurirajte model**
+**Пратите и ажурирајте модел**
 
-AI sistemi treba da budu kontinuirano nadzirani i ažurirani kako bi ostali tačni i efikasni tokom vremena. Ovo zahteva stalno održavanje, testiranje i ponovno treniranje modela.
+AI системи треба да се континуирано прате и ажурирају како би остали прецизни и ефикасни током времена. Ово захтева стално одржавање, тестирање и поновну обуку модела.
 
-Zaključno, Microsoft Responsible AI je inicijativa koja ima za cilj da pomogne programerima i organizacijama u izgradnji AI sistema koji su transparentni, pouzdani i odgovorni. Imajte na umu da je odgovorna primena AI od ključnog značaja, a Azure AI Foundry nastoji da je učini praktičnom za organizacije. Prateći etičke principe i najbolje prakse, možemo osigurati da se AI sistemi razvijaju i primenjuju na odgovoran način koji koristi celom društvu.
+У закључку, Microsoft Responsible AI је иницијатива која има за циљ да помогне програмерима и организацијама да развију AI системе који су транспарентни, поуздани и одговорни. Имајте на уму да је одговорна примена AI од кључног значаја, а Azure AI Foundry настоји да је учини практичном за организације. Пратећи етичке принципе и најбоље праксе, можемо осигурати да се AI системи развијају и примењују на одговоран начин који користи целокупном друштву.
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу АИ сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

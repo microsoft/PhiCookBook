@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:32:19+00:00",
+  "translation_date": "2025-07-16T22:21:06+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "th"
 }
 -->
-## **วิธีใช้ Model Builder เพื่อทำ Quantizing Phi-3.5**
+## **วิธีใช้ Model Builder ในการทำ Quantizing Phi-3.5**
 
-ตอนนี้ Model Builder รองรับการทำ ONNX model quantization สำหรับ Phi-3.5 Instruct และ Phi-3.5-Vision
+ตอนนี้ Model Builder รองรับการทำ Quantization ของโมเดล ONNX สำหรับ Phi-3.5 Instruct และ Phi-3.5-Vision
 
 ### **Phi-3.5-Instruct**
 
-**การแปลงแบบเร่งความเร็วด้วย CPU สำหรับ quantized INT 4**
+**การแปลงแบบเร่งด้วย CPU สำหรับ Quantized INT4**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**การแปลงแบบเร่งความเร็วด้วย CUDA สำหรับ quantized INT 4**
+**การแปลงแบบเร่งด้วย CUDA สำหรับ Quantized INT4**
 
 ```bash
 
@@ -49,7 +49,7 @@ cd models
 
 ```
 
-2. ดาวน์โหลด microsoft/Phi-3.5-vision-instruct ลงในโฟลเดอร์ models  
+2. ดาวน์โหลด microsoft/Phi-3.5-vision-instruct ไปยังโฟลเดอร์ models  
 [https://huggingface.co/microsoft/Phi-3.5-vision-instruct](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
 
 3. กรุณาดาวน์โหลดไฟล์เหล่านี้ไปยังโฟลเดอร์ Phi-3.5-vision-instruct ของคุณ
@@ -63,9 +63,9 @@ cd models
 4. ดาวน์โหลดไฟล์นี้ไปยังโฟลเดอร์ models  
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
-5. เข้าไปที่เทอร์มินัล
+5. ไปที่เทอร์มินัล
 
-    แปลง ONNX ให้รองรับ FP32
+    แปลงโมเดล ONNX ให้รองรับ FP32
 
 ```bash
 
@@ -75,13 +75,13 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ### **หมายเหตุ：**
 
-1. ปัจจุบัน Model Builder รองรับการแปลง Phi-3.5-Instruct และ Phi-3.5-Vision แต่ยังไม่รองรับ Phi-3.5-MoE
+1. Model Builder รองรับการแปลง Phi-3.5-Instruct และ Phi-3.5-Vision ในขณะนี้ แต่ยังไม่รองรับ Phi-3.5-MoE
 
-2. หากต้องการใช้โมเดล quantized ของ ONNX สามารถใช้ผ่าน Generative AI extensions for onnxruntime SDK ได้
+2. หากต้องการใช้โมเดล ONNX ที่ทำ Quantized แล้ว สามารถใช้งานผ่าน Generative AI extensions for onnxruntime SDK ได้
 
-3. เราควรพิจารณาเรื่อง AI ที่รับผิดชอบมากขึ้น ดังนั้นหลังจากการแปลงโมเดล quantization ควรทำการทดสอบผลลัพธ์อย่างมีประสิทธิภาพเพิ่มเติม
+3. เราควรคำนึงถึงความรับผิดชอบด้าน AI มากขึ้น ดังนั้นหลังจากการแปลงโมเดลควรทดสอบผลลัพธ์อย่างมีประสิทธิภาพ
 
-4. การทำ quantize โมเดล CPU INT4 ช่วยให้เราสามารถนำไปใช้งานบน Edge Device ได้ดีขึ้น ซึ่งเหมาะกับกรณีใช้งานหลายแบบ ดังนั้นเราจึงทำเสร็จสิ้น Phi-3.5-Instruct สำหรับ INT 4 แล้ว
+4. การทำ Quantizing โมเดล CPU INT4 ช่วยให้เราสามารถนำไปใช้งานบน Edge Device ได้ดีขึ้น ซึ่งเหมาะกับสถานการณ์การใช้งานจริง ดังนั้นเราจึงได้ทำ Phi-3.5-Instruct ในรูปแบบ INT4 เสร็จสมบูรณ์แล้ว
 
 ## **แหล่งข้อมูล**
 
@@ -90,4 +90,4 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 2. GitHub Repo ของ Generative AI extensions for onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารฉบับนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้การแปลมีความถูกต้อง โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อนได้ เอกสารต้นฉบับในภาษาต้นทางควรถูกพิจารณาเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลสำคัญแนะนำให้ใช้การแปลโดยผู้เชี่ยวชาญมนุษย์ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดขึ้นจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

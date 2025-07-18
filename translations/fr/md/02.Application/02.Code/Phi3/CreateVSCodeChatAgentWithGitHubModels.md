@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-07T13:45:57+00:00",
+  "translation_date": "2025-07-17T03:20:28+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "fr"
 }
 -->
 # **Créez votre propre agent Visual Studio Code Chat Copilot avec Phi-3.5 par GitHub Models**
 
-Utilisez-vous Visual Studio Code Copilot ? Surtout dans Chat, vous pouvez utiliser différents agents pour améliorer la capacité à créer, écrire et maintenir des projets dans Visual Studio Code. Visual Studio Code offre une API qui permet aux entreprises et aux particuliers de créer différents agents adaptés à leur activité afin d’étendre leurs capacités dans divers domaines propriétaires. Dans cet article, nous nous concentrerons sur **Phi-3.5-mini-instruct (128k)** et **Phi-3.5-vision-instruct (128k)** de GitHub Models pour créer votre propre agent Visual Studio Code.
+Utilisez-vous Visual Studio Code Copilot ? Surtout dans Chat, vous pouvez utiliser différents agents pour améliorer la capacité à créer, écrire et maintenir des projets dans Visual Studio Code. Visual Studio Code propose une API qui permet aux entreprises et aux particuliers de créer différents agents adaptés à leur activité afin d’étendre leurs capacités dans divers domaines propriétaires. Dans cet article, nous nous concentrerons sur **Phi-3.5-mini-instruct (128k)** et **Phi-3.5-vision-instruct (128k)** de GitHub Models pour créer votre propre agent Visual Studio Code.
 
 ## **À propos de Phi-3.5 sur GitHub Models**
 
@@ -21,9 +21,9 @@ Les derniers GitHub Models offrent déjà l’accès aux modèles Phi-3.5-mini-i
 
 ![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.fr.png)
 
-***Note :*** Il est recommandé d’utiliser ici l’Azure AI Inference SDK, car il permet une meilleure gestion du catalogue de modèles Azure en environnement de production.
+***Note :*** Il est recommandé d’utiliser ici l’Azure AI Inference SDK, car il permet une meilleure intégration avec le catalogue de modèles Azure en environnement de production.
 
-Voici les résultats de **Phi-3.5-mini-instruct (128k)** et **Phi-3.5-vision-instruct (128k)** dans le scénario de génération de code après intégration avec GitHub Models, et qui serviront pour les exemples suivants.
+Voici les résultats de **Phi-3.5-mini-instruct (128k)** et **Phi-3.5-vision-instruct (128k)** dans le scénario de génération de code après intégration avec GitHub Models, ainsi que la préparation des exemples suivants.
 
 **Démo : GitHub Models Phi-3.5-mini-instruct (128k) génère du code à partir d’un prompt** ([cliquez ici](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
@@ -32,33 +32,33 @@ Voici les résultats de **Phi-3.5-mini-instruct (128k)** et **Phi-3.5-vision-ins
 
 ## **À propos de l’agent GitHub Copilot Chat**
 
-L’agent GitHub Copilot Chat peut accomplir différentes tâches selon les scénarios de projet et le code. Le système comprend quatre agents : workspace, github, terminal, vscode.
+L’agent GitHub Copilot Chat peut accomplir différentes tâches dans divers scénarios de projet basés sur le code. Le système comprend quatre agents : workspace, github, terminal, vscode.
 
 ![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.fr.png)
 
-En ajoutant le nom de l’agent précédé de « @ », vous pouvez rapidement effectuer la tâche correspondante. Pour les entreprises, si vous ajoutez vos propres contenus liés à votre activité tels que les exigences, le codage, les spécifications de test et la mise en production, vous pouvez bénéficier de fonctions privées plus puissantes basées sur GitHub Copilot.
+En ajoutant le nom de l’agent précédé de ‘@’, vous pouvez rapidement effectuer le travail correspondant. Pour les entreprises, si vous ajoutez vos propres contenus liés à votre activité tels que les exigences, le codage, les spécifications de test et la mise en production, vous pouvez bénéficier de fonctions privées d’entreprise plus puissantes basées sur GitHub Copilot.
 
-L’agent Visual Studio Code Chat a désormais officiellement publié son API, permettant aux entreprises ou développeurs d’entreprise de développer des agents basés sur différents écosystèmes logiciels. Basé sur le mode de développement d’extensions Visual Studio Code, vous pouvez facilement accéder à l’interface de l’API Visual Studio Code Chat Agent. Nous pouvons développer selon ce processus.
+L’agent Visual Studio Code Chat a désormais officiellement publié son API, permettant aux entreprises ou aux développeurs d’entreprise de créer des agents basés sur différents écosystèmes logiciels. En s’appuyant sur la méthode de développement d’extensions Visual Studio Code, vous pouvez facilement accéder à l’interface de l’API Visual Studio Code Chat Agent. Nous pouvons développer en suivant ce processus.
 
 ![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.fr.png)
 
-Le scénario de développement peut prendre en charge l’accès aux API de modèles tiers (comme GitHub Models, Azure Model Catalog, ou des services auto-hébergés basés sur des modèles open source) et peut également utiliser les modèles gpt-35-turbo, gpt-4 et gpt-4o fournis par GitHub Copilot.
+Le scénario de développement peut prendre en charge l’accès aux API de modèles tiers (comme GitHub Models, Azure Model Catalog, et des services auto-hébergés basés sur des modèles open source) et peut également utiliser les modèles gpt-35-turbo, gpt-4 et gpt-4o fournis par GitHub Copilot.
 
 ## **Ajouter un agent @phicoding basé sur Phi-3.5**
 
-Nous essayons d’intégrer les capacités de programmation de Phi-3.5 pour accomplir l’écriture de code, la génération de code à partir d’images et d’autres tâches. Créez un agent construit autour de Phi-3.5 - @PHI, avec les fonctions suivantes :
+Nous essayons d’intégrer les capacités de programmation de Phi-3.5 pour accomplir l’écriture de code, la génération de code à partir d’images et d’autres tâches. Complétons un agent construit autour de Phi-3.5 - @PHI, voici quelques fonctionnalités :
 
 1. Générer une présentation personnelle basée sur GPT-4o fourni par GitHub Copilot via la commande **@phicoding /help**
 
 2. Générer du code pour différents langages de programmation basé sur **Phi-3.5-mini-instruct (128k)** via la commande **@phicoding /gen**
 
-3. Générer du code basé sur **Phi-3.5-vision-instruct (128k)** et compléter des images via la commande **@phicoding /image**
+3. Générer du code basé sur **Phi-3.5-vision-instruct (128k)** et compléter à partir d’images via la commande **@phicoding /image**
 
 ![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.fr.png)
 
 ## **Étapes associées**
 
-1. Installer le support de développement d’extensions Visual Studio Code via npm
+1. Installer le support de développement d’extension Visual Studio Code avec npm
 
 ```bash
 
@@ -389,4 +389,4 @@ Vous pouvez télécharger le code d’exemple : [cliquez ici](../../../../../../
 3. Découvrez l’API Visual Studio Code Copilot Chat [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle humaine. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

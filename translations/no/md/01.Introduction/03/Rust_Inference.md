@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T12:59:06+00:00",
+  "translation_date": "2025-07-16T21:30:38+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "no"
 }
 -->
-# Plattformuavhengig inferens med Rust
+# Kryssplattform inferens med Rust
 
-Denne veiledningen vil lede oss gjennom prosessen med å utføre inferens ved hjelp av Rust og [Candle ML-rammeverket](https://github.com/huggingface/candle) fra HuggingFace. Å bruke Rust til inferens gir flere fordeler, spesielt sammenlignet med andre programmeringsspråk. Rust er kjent for sin høye ytelse, sammenlignbar med C og C++. Dette gjør det til et utmerket valg for inferensoppgaver, som ofte kan være beregningsintensive. Dette skyldes særlig de kostnadsfrie abstraksjonene og effektiv minnehåndtering uten overhead fra garbage collection. Rusts plattformuavhengige egenskaper muliggjør utvikling av kode som kan kjøre på ulike operativsystemer, inkludert Windows, macOS og Linux, samt mobile operativsystemer, uten vesentlige endringer i kodebasen.
+Denne veiledningen tar oss gjennom prosessen med å utføre inferens ved hjelp av Rust og [Candle ML-rammeverket](https://github.com/huggingface/candle) fra HuggingFace. Å bruke Rust til inferens gir flere fordeler, spesielt sammenlignet med andre programmeringsspråk. Rust er kjent for sin høye ytelse, på nivå med C og C++. Dette gjør det til et utmerket valg for inferensoppgaver, som ofte kan være beregningsintensive. Dette skyldes særlig nullkostnadsabstraksjoner og effektiv minnehåndtering, uten overhead fra søppelrydding. Rusts kryssplattformmuligheter gjør det mulig å utvikle kode som kjører på ulike operativsystemer, inkludert Windows, macOS og Linux, samt mobile operativsystemer, uten store endringer i kodebasen.
 
 Forutsetningen for å følge denne veiledningen er å [installere Rust](https://www.rust-lang.org/tools/install), som inkluderer Rust-kompilatoren og Cargo, Rusts pakkebehandler.
 
@@ -21,9 +21,9 @@ For å opprette et nytt Rust-prosjekt, kjør følgende kommando i terminalen:
 cargo new phi-console-app
 ```
 
-Dette genererer en grunnleggende prosjektstruktur med en `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Dette genererer en grunnleggende prosjektstruktur med en `Cargo.toml`-fil og en `src`-mappe som inneholder en `main.rs`-fil.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml`-fil:
+Deretter legger vi til avhengighetene våre – nemlig `candle`, `hf-hub` og `tokenizers` crates – i `Cargo.toml`-filen:
 
 ```toml
 [package]
@@ -41,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## Steg 2: Konfigurer grunnleggende parametere
 
-Inne i main.rs-filen setter vi opp de innledende parameterne for vår inferens. De blir alle hardkodet for enkelhets skyld, men vi kan endre dem etter behov.
+I `main.rs`-filen setter vi opp de innledende parameterne for inferensen. De vil alle være hardkodet for enkelhets skyld, men vi kan endre dem etter behov.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,14 +55,14 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: Styrer hvor tilfeldig samplingprosessen er.
+- **temperature**: Styrer tilfeldigheten i utvalgsprosessen.
 - **sample_len**: Angir maksimal lengde på den genererte teksten.
-- **top_p**: Brukes for nucleus-sampling for å begrense antall tokens som vurderes for hvert steg.
-- **repeat_last_n**: Styrer hvor mange tokens som vurderes for å påføre en straff for å unngå repeterende sekvenser.
+- **top_p**: Brukes for nucleus sampling for å begrense antall tokens som vurderes i hvert steg.
+- **repeat_last_n**: Styrer antall tokens som vurderes for å påføre en straff for å unngå repeterende sekvenser.
 - **repeat_penalty**: Straffeverdi for å motvirke gjentatte tokens.
-- **seed**: Et tilfeldig frø (vi kan bruke en konstant verdi for bedre reproduserbarhet).
-- **prompt**: Den innledende teksten som starter genereringen. Merk at vi ber modellen om å generere et haiku om ishockey, og at vi pakker det inn med spesielle tokens for å indikere bruker- og assistent-delen av samtalen. Modellen vil så fullføre prompten med et haiku.
-- **device**: Vi bruker CPU for beregning i dette eksemplet. Candle støtter også kjøring på GPU med CUDA og Metal.
+- **seed**: En tilfeldig seed (vi kan bruke en konstant verdi for bedre reproduserbarhet).
+- **prompt**: Startteksten for genereringen. Merk at vi ber modellen generere et haiku om ishockey, og at vi pakker det inn med spesialtokens for å indikere bruker- og assistentdelen av samtalen. Modellen fullfører deretter prompten med et haiku.
+- **device**: Vi bruker CPU for beregning i dette eksempelet. Candle støtter også kjøring på GPU med CUDA og Metal.
 
 ## Steg 3: Last ned/forbered modell og tokenizer
 
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Vi bruker `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json`-filen for å tokenisere vår inputtekst. Når modellen er lastet ned, blir den bufret, så første kjøring vil være treg (siden den laster ned 2,4 GB med modell) men påfølgende kjøringer vil gå raskere.
+Vi bruker `hf_hub` API-et for å laste ned modell- og tokenizer-filer fra Hugging Face model hub. `gguf`-filen inneholder de kvantiserte modellvektene, mens `tokenizer.json`-filen brukes til å tokenisere inndataene våre. Når modellen er lastet ned, blir den bufret, så første kjøring vil være treg (siden den laster ned 2,4 GB med modell), men påfølgende kjøringer går raskere.
 
 ## Steg 4: Last inn modell
 
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Vi laster de kvantiserte modellvektene inn i minnet og initialiserer Phi-3-modellen. Dette steget innebærer å lese modellvektene fra `gguf`-filen og sette opp modellen for inferens på den angitte enheten (her CPU).
+Vi laster de kvantiserte modellvektene inn i minnet og initialiserer Phi-3-modellen. Dette steget innebærer å lese modellvektene fra `gguf`-filen og sette opp modellen for inferens på den angitte enheten (CPU i dette tilfellet).
 
-## Steg 5: Behandle prompt og forbered for inferens
+## Steg 5: Behandle prompt og forbered til inferens
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,9 +120,9 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-I dette steget tokeniserer vi input-prompten og forbereder den for inferens ved å konvertere den til en sekvens av token-IDer. Vi initialiserer også `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`-verdiene. Hver token konverteres til en tensor og sendes gjennom modellen for å hente logits.
+I dette steget tokeniserer vi inndata-prompten og forbereder den for inferens ved å konvertere den til en sekvens av token-IDer. Vi initialiserer også `LogitsProcessor` for å håndtere utvalgsprosessen (sannsynlighetsfordeling over vokabularet) basert på de gitte `temperature` og `top_p` verdiene. Hver token konverteres til en tensor og sendes gjennom modellen for å hente logits.
 
-Løkken behandler hver token i prompten, oppdaterer logits-prosessoren og forbereder neste token for generering.
+Løkken behandler hver token i prompten, oppdaterer logits-prosessoren og forbereder neste token-generering.
 
 ## Steg 6: Inferens
 
@@ -160,9 +160,10 @@ for index in 0..to_sample {
 }
 ```
 
-I inferensløkken genererer vi tokens én etter én til vi når ønsket sample-lengde eller støter på end-of-sequence-token. Neste token konverteres til en tensor og sendes gjennom modellen, mens logits behandles for å påføre straffer og sampling. Deretter samples neste token, dekodes og legges til sekvensen. For å unngå repeterende tekst, påføres en straff på gjentatte tokens basert på `repeat_last_n` and `repeat_penalty`-parameterne.
+I inferensløkken genererer vi tokens én etter én til vi når ønsket lengde eller støter på end-of-sequence-token. Neste token konverteres til en tensor og sendes gjennom modellen, mens logits behandles for å påføre straffer og sampling. Deretter samples neste token, dekodes og legges til sekvensen.  
+For å unngå repeterende tekst påføres en straff på gjentatte tokens basert på `repeat_last_n` og `repeat_penalty` parametrene.
 
-Til slutt printes den genererte teksten fortløpende etter hvert som den dekodes, noe som sikrer strømmet sanntidsutdata.
+Til slutt skrives den genererte teksten ut fortløpende etter hvert som den dekodes, for å sikre sanntidsstrømming.
 
 ## Steg 7: Kjør applikasjonen
 
@@ -190,11 +191,11 @@ Swish of sticks now alive.
 
 ## Konklusjon
 
-Ved å følge disse stegene kan vi utføre tekstgenerering ved hjelp av Phi-3-modellen med Rust og Candle på under 100 linjer kode. Koden håndterer modellinnlasting, tokenisering og inferens, og benytter tensorer og logits-prosessering for å generere sammenhengende tekst basert på input-prompten.
+Ved å følge disse stegene kan vi utføre tekstgenerering med Phi-3-modellen ved hjelp av Rust og Candle på under 100 linjer kode. Koden håndterer lasting av modell, tokenisering og inferens, og utnytter tensorer og logits-prosessering for å generere sammenhengende tekst basert på inndata-prompten.
 
-Denne konsollapplikasjonen kan kjøre på Windows, Linux og Mac OS. På grunn av Rusts portabilitet kan koden også tilpasses til et bibliotek som kan kjøre inne i mobilapper (konsollapper kan vi tross alt ikke kjøre der).
+Denne konsollapplikasjonen kan kjøre på Windows, Linux og Mac OS. På grunn av Rusts portabilitet kan koden også tilpasses til et bibliotek som kan kjøre inne i mobilapper (vi kan tross alt ikke kjøre konsollapper der).
 
-## Vedlegg: full kode
+## Vedlegg: fullstendig kode
 
 ```rust
 use candle_core::{quantized::gguf_file, Device, Tensor};
@@ -303,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Merk: for å kjøre denne koden på aarch64 Linux eller aarch64 Windows, legg til en fil med navnet `.cargo/config` med følgende innhold:
+Merk: for å kjøre denne koden på aarch64 Linux eller aarch64 Windows, legg til en fil kalt `.cargo/config` med følgende innhold:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -317,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Du kan besøke det offisielle [Candle-eksemplene](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs)-arkivet for flere eksempler på hvordan du bruker Phi-3-modellen med Rust og Candle, inkludert alternative tilnærminger til inferens.
+> Du kan besøke det offisielle [Candle-eksempel](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) arkivet for flere eksempler på hvordan du bruker Phi-3-modellen med Rust og Candle, inkludert alternative tilnærminger til inferens.
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på det opprinnelige språket bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

@@ -2,46 +2,46 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-05-09T12:29:44+00:00",
+  "translation_date": "2025-07-16T21:11:56+00:00",
   "source_file": "md/01.Introduction/03/overview.md",
   "language_code": "ms"
 }
 -->
-In the context of Phi-3-mini, inference refers to the process of using the model to make predictions or generate outputs based on input data. Let me provide you with more details about Phi-3-mini and its inference capabilities.
+Dalam konteks Phi-3-mini, inferens merujuk kepada proses menggunakan model untuk membuat ramalan atau menghasilkan output berdasarkan data input. Izinkan saya memberikan lebih banyak maklumat tentang Phi-3-mini dan keupayaan inferensnya.
 
-Phi-3-mini is part of the Phi-3 series of models released by Microsoft. These models are designed to redefine what's possible with Small Language Models (SLMs). 
+Phi-3-mini adalah sebahagian daripada siri model Phi-3 yang dikeluarkan oleh Microsoft. Model-model ini direka untuk mentakrif semula apa yang mungkin dengan Model Bahasa Kecil (SLM).
 
-Here are some key points about Phi-3-mini and its inference capabilities:
+Berikut adalah beberapa perkara penting mengenai Phi-3-mini dan keupayaan inferensnya:
 
-## **Phi-3-mini Overview:**
-- Phi-3-mini has a parameter size of 3.8 billion.
-- It can run not only on traditional computing devices but also on edge devices such as mobile devices and IoT devices.
-- The release of Phi-3-mini enables individuals and enterprises to deploy SLMs on different hardware devices, especially in resource-constrained environments.
-- It supports various model formats, including the traditional PyTorch format, the quantized version of the gguf format, and the ONNX-based quantized version.
+## **Gambaran Keseluruhan Phi-3-mini:**
+- Phi-3-mini mempunyai saiz parameter sebanyak 3.8 bilion.
+- Ia boleh dijalankan bukan sahaja pada peranti pengkomputeran tradisional tetapi juga pada peranti edge seperti peranti mudah alih dan peranti IoT.
+- Pelepasan Phi-3-mini membolehkan individu dan perusahaan menggunakan SLM pada pelbagai peranti perkakasan, terutamanya dalam persekitaran yang terhad sumber.
+- Ia merangkumi pelbagai format model, termasuk format PyTorch tradisional, versi kuantisasi format gguf, dan versi kuantisasi berasaskan ONNX.
 
-## **Accessing Phi-3-mini:**
-To access Phi-3-mini, you can use [Semantic Kernel](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) in a Copilot application. Semantic Kernel is generally compatible with Azure OpenAI Service, open-source models on Hugging Face, and local models.
-You can also use [Ollama](https://ollama.com) or [LlamaEdge](https://llamaedge.com) to call quantized models. Ollama allows individual users to call different quantized models, while LlamaEdge provides cross-platform availability for GGUF models.
+## **Mengakses Phi-3-mini:**
+Untuk mengakses Phi-3-mini, anda boleh menggunakan [Semantic Kernel](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) dalam aplikasi Copilot. Semantic Kernel secara amnya serasi dengan Azure OpenAI Service, model sumber terbuka di Hugging Face, dan model tempatan.  
+Anda juga boleh menggunakan [Ollama](https://ollama.com) atau [LlamaEdge](https://llamaedge.com) untuk memanggil model kuantisasi. Ollama membolehkan pengguna individu memanggil pelbagai model kuantisasi, manakala LlamaEdge menyediakan ketersediaan merentas platform untuk model GGUF.
 
-## **Quantized Models:**
-Many users prefer to use quantized models for local inference. For example, you can directly run Ollama run Phi-3 or configure it offline using a Modelfile. The Modelfile specifies the GGUF file path and the prompt format.
+## **Model Kuantisasi:**
+Ramai pengguna lebih suka menggunakan model kuantisasi untuk inferens tempatan. Contohnya, anda boleh terus menjalankan Ollama run Phi-3 atau mengkonfigurasikannya secara luar talian menggunakan Modelfile. Modelfile menentukan laluan fail GGUF dan format prompt.
 
-## **Generative AI Possibilities:**
-Combining SLMs like Phi-3-mini opens up new possibilities for generative AI. Inference is just the first step; these models can be used for various tasks in resource-constrained, latency-bound, and cost-constrained scenarios.
+## **Kemungkinan AI Generatif:**
+Menggabungkan SLM seperti Phi-3-mini membuka peluang baru untuk AI generatif. Inferens hanyalah langkah pertama; model-model ini boleh digunakan untuk pelbagai tugasan dalam senario yang terhad sumber, terikat latensi, dan terhad kos.
 
-## **Unlocking Generative AI with Phi-3-mini: A Guide to Inference and Deployment** 
-Learn how to use Semantic Kernel, Ollama/LlamaEdge, and ONNX Runtime to access and infer Phi-3-mini models, and explore the possibilities of generative AI in various application scenarios.
+## **Membuka Potensi AI Generatif dengan Phi-3-mini: Panduan untuk Inferens dan Penyebaran**  
+Pelajari cara menggunakan Semantic Kernel, Ollama/LlamaEdge, dan ONNX Runtime untuk mengakses dan melakukan inferens model Phi-3-mini, serta terokai kemungkinan AI generatif dalam pelbagai senario aplikasi.
 
-**Features**
-Inference phi3-mini model in:
+**Ciri-ciri**  
+Inferens model phi3-mini dalam:
 
-- [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)
-- [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
-- [LlamaEdge WASM](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo)
-- [ONNX Runtime](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx?WT.mc_id=aiml-138114-kinfeylo)
-- [iOS](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios?WT.mc_id=aiml-138114-kinfeylo)
+- [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)  
+- [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)  
+- [LlamaEdge WASM](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo)  
+- [ONNX Runtime](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx?WT.mc_id=aiml-138114-kinfeylo)  
+- [iOS](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios?WT.mc_id=aiml-138114-kinfeylo)  
 
-In summary, Phi-3-mini allows developers to explore different model formats and leverage generative AI in various application scenarios.
+Secara ringkas, Phi-3-mini membolehkan pembangun meneroka pelbagai format model dan memanfaatkan AI generatif dalam pelbagai senario aplikasi.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

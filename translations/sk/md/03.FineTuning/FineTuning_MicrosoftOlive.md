@@ -2,46 +2,46 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:54:59+00:00",
+  "translation_date": "2025-07-17T06:50:34+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "sk"
 }
 -->
-# **Ladné doladenie Phi-3 pomocou Microsoft Olive**
+# **Ladenie Phi-3 pomocou Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) je jednoduchý nástroj na optimalizáciu modelov s ohľadom na hardvér, ktorý spája popredné techniky v oblasti kompresie, optimalizácie a kompilácie modelov.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) je jednoduchý nástroj na optimalizáciu modelov s ohľadom na hardvér, ktorý spája špičkové techniky v oblasti kompresie, optimalizácie a kompilácie modelov.
 
 Je navrhnutý tak, aby zjednodušil proces optimalizácie strojového učenia a zabezpečil čo najefektívnejšie využitie konkrétnych hardvérových architektúr.
 
-Či už pracujete na cloudových aplikáciách alebo na edge zariadeniach, Olive vám umožní jednoducho a efektívne optimalizovať vaše modely.
+Či už pracujete na cloudových aplikáciách alebo na zariadeniach na okraji siete, Olive vám umožní optimalizovať modely jednoducho a efektívne.
 
 ## Kľúčové vlastnosti:
 - Olive zhromažďuje a automatizuje optimalizačné techniky pre požadované hardvérové ciele.
-- Žiadna jedna optimalizačná technika nie je univerzálna, preto Olive umožňuje rozšíriteľnosť tým, že odborníci z priemyslu môžu pridávať svoje inovatívne optimalizácie.
+- Žiadna jedna optimalizačná technika nevyhovuje všetkým scenárom, preto Olive umožňuje rozšíriteľnosť tým, že odborníci z odvetvia môžu pridávať svoje inovatívne optimalizácie.
 
 ## Zníženie inžinierskej námahy:
-- Vývojári často musia ovládať a používať viacero špecifických nástrojových reťazcov od rôznych hardvérových dodávateľov na prípravu a optimalizáciu vytrénovaných modelov pre nasadenie.
+- Vývojári často potrebujú ovládať a používať viacero nástrojových reťazcov špecifických pre rôznych výrobcov hardvéru, aby pripravili a optimalizovali trénované modely na nasadenie.
 - Olive túto skúsenosť zjednodušuje automatizáciou optimalizačných techník pre požadovaný hardvér.
 
-## Hotové E2E optimalizačné riešenie:
+## Hotové riešenie E2E optimalizácie:
 
 Kombináciou a ladením integrovaných techník ponúka Olive jednotné riešenie pre end-to-end optimalizáciu.
 Pri optimalizácii modelov zohľadňuje obmedzenia ako presnosť a latenciu.
 
-## Použitie Microsoft Olive na ladanie
+## Použitie Microsoft Olive na ladenie
 
-Microsoft Olive je veľmi jednoduchý open source nástroj na optimalizáciu modelov, ktorý pokrýva ladanie aj referenciu v oblasti generatívnej umelej inteligencie. Vyžaduje len jednoduchú konfiguráciu a v kombinácii s open source malými jazykovými modelmi a príslušnými runtime prostrediami (AzureML / lokálne GPU, CPU, DirectML) môžete automatickou optimalizáciou dokončiť ladanie alebo referenciu modelu a nájsť najlepší model na nasadenie do cloudu alebo na edge zariadenia. Umožňuje firmám vytvárať vlastné priemyselné vertikálne modely lokálne aj v cloude.
+Microsoft Olive je veľmi jednoduchý open source nástroj na optimalizáciu modelov, ktorý pokrýva ako ladenie, tak referenciu v oblasti generatívnej umelej inteligencie. Vyžaduje len jednoduchú konfiguráciu, v kombinácii s použitím open source malých jazykových modelov a súvisiacich runtime prostredí (AzureML / lokálne GPU, CPU, DirectML) môžete dokončiť ladenie alebo referenciu modelu pomocou automatickej optimalizácie a nájsť najlepší model na nasadenie do cloudu alebo na edge zariadenia. Umožňuje firmám vytvárať vlastné vertikálne modely v priemysle lokálne aj v cloude.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.sk.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.sk.png)
 
-## Phi-3 doladenie pomocou Microsoft Olive
+## Ladenie Phi-3 pomocou Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.sk.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.sk.png)
 
-## Phi-3 Olive ukážkový kód a príklad
+## Príklad kódu a ukážka Phi-3 Olive
 V tomto príklade použijete Olive na:
 
-- Doladenie LoRA adaptéra na klasifikáciu fráz do kategórií Smútok, Radosť, Strach, Prekvapenie.
+- Ladenie LoRA adaptéra na klasifikáciu fráz do kategórií Smútok, Radosť, Strach, Prekvapenie.
 - Zlúčenie váh adaptéra do základného modelu.
 - Optimalizáciu a kvantizáciu modelu do int4.
 
@@ -49,7 +49,7 @@ V tomto príklade použijete Olive na:
 
 ### Inštalácia Microsoft Olive
 
-Inštalácia Microsoft Olive je veľmi jednoduchá a dá sa nainštalovať pre CPU, GPU, DirectML aj Azure ML
+Inštalácia Microsoft Olive je veľmi jednoduchá a dá sa nainštalovať pre CPU, GPU, DirectML a Azure ML.
 
 ```bash
 pip install olive-ai
@@ -74,19 +74,19 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
 **Upozornenie**  
-Požiadavky na OS: Ubuntu 20.04 / 22.04
+Požiadavka na OS: Ubuntu 20.04 / 22.04
 
-### **Konfiguračný súbor Config.json pre Microsoft Olive**
+### **Konfigurácia Microsoft Olive Config.json**
 
-Po inštalácii môžete nakonfigurovať rôzne nastavenia špecifické pre model cez konfiguračný súbor, vrátane dát, výpočtovej kapacity, trénovania, nasadenia a generovania modelu.
+Po inštalácii môžete nastaviť rôzne modelovo špecifické parametre cez konfiguračný súbor, vrátane dát, výpočtov, tréningu, nasadenia a generovania modelu.
 
 **1. Dáta**
 
-Na Microsoft Olive je možné trénovať na lokálnych aj cloudových dátach, ktoré sa dajú nastaviť v konfigurácii.
+Microsoft Olive podporuje tréning na lokálnych aj cloudových dátach, ktoré je možné nakonfigurovať v nastaveniach.
 
 *Nastavenie lokálnych dát*
 
-Jednoducho nastavíte dátovú sadu, ktorú chcete použiť na doladenie, obvykle vo formáte json, a prispôsobíte ju dátovej šablóne. Toto je potrebné upraviť podľa požiadaviek modelu (napríklad prispôsobiť formátu požadovanému Microsoft Phi-3-mini. Ak máte iné modely, pozrite si požadované formáty doladenia pre ne)
+Jednoducho nastavíte dátovú sadu, na ktorej chcete trénovať pre ladenie, zvyčajne vo formáte json, a prispôsobíte ju dátovej šablóne. Toto je potrebné upraviť podľa požiadaviek modelu (napríklad prispôsobiť formátu požadovanému Microsoft Phi-3-mini. Ak máte iné modely, pozrite si požadované formáty ladenia pre dané modely).
 
 ```json
 
@@ -121,7 +121,7 @@ Jednoducho nastavíte dátovú sadu, ktorú chcete použiť na doladenie, obvykl
 
 **Nastavenie cloudových dátových zdrojov**
 
-Prepojením úložiska Azure AI Studio/Azure Machine Learning Service na cloudové dáta môžete zvoliť rôzne zdroje dát cez Microsoft Fabric a Azure Data ako podporu pre doladenie.
+Prepojením úložiska Azure AI Studio/Azure Machine Learning Service na cloudové dáta môžete vybrať rôzne zdroje dát do Azure AI Studio/Azure Machine Learning Service cez Microsoft Fabric a Azure Data ako podporu pre ladenie dát.
 
 ```json
 
@@ -166,9 +166,9 @@ Prepojením úložiska Azure AI Studio/Azure Machine Learning Service na cloudov
     
 ```
 
-**2. Výpočtová konfigurácia**
+**2. Konfigurácia výpočtov**
 
-Ak chcete používať lokálne zdroje, môžete ich priamo využiť. Ak potrebujete zdroje Azure AI Studio / Azure Machine Learning Service, je potrebné nakonfigurovať príslušné parametre Azure, názov výpočtovej kapacity a pod.
+Ak potrebujete pracovať lokálne, môžete priamo použiť lokálne dátové zdroje. Ak chcete využiť zdroje Azure AI Studio / Azure Machine Learning Service, je potrebné nakonfigurovať príslušné Azure parametre, názov výpočtového výkonu a podobne.
 
 ```json
 
@@ -201,7 +201,7 @@ Ak chcete používať lokálne zdroje, môžete ich priamo využiť. Ak potrebuj
 
 ***Upozornenie***
 
-Keďže beží cez kontajner na Azure AI Studio/Azure Machine Learning Service, je potrebné nakonfigurovať požadované prostredie. Toto sa nastavuje v conda.yaml.
+Keďže sa spúšťa cez kontajner na Azure AI Studio/Azure Machine Learning Service, je potrebné nakonfigurovať požadované prostredie. To sa nastavuje v súbore conda.yaml.
 
 ```yaml
 
@@ -236,9 +236,9 @@ dependencies:
 
 **3. Výber SLM**
 
-Model môžete použiť priamo z Hugging Face, alebo ho môžete vybrať cez Model Catalog Azure AI Studio / Azure Machine Learning. V príklade nižšie použijeme Microsoft Phi-3-mini.
+Model môžete použiť priamo z Hugging Face, alebo ho môžete vybrať z Model Catalog Azure AI Studio / Azure Machine Learning. V nasledujúcom príklade použijeme Microsoft Phi-3-mini.
 
-Ak máte model lokálne, použite tento spôsob
+Ak máte model lokálne, môžete použiť tento spôsob
 
 ```json
 
@@ -284,15 +284,15 @@ Ak chcete použiť model z Azure AI Studio / Azure Machine Learning Service, pou
 ```
 
 **Upozornenie:**  
-Je potrebné integrovať sa s Azure AI Studio / Azure Machine Learning Service, preto pri nastavovaní modelu dbajte na verziu a názvy.
+Je potrebná integrácia s Azure AI Studio / Azure Machine Learning Service, preto pri nastavovaní modelu dbajte na verziu a súvisiace pomenovania.
 
 Všetky modely na Azure musia byť nastavené na PyTorch.MLflow.
 
-Potrebujete účet na Hugging Face a prepojenie kľúča s hodnotou Key v Azure AI Studio / Azure Machine Learning.
+Potrebujete mať účet na Hugging Face a prepojiť kľúč s hodnotou Key v Azure AI Studio / Azure Machine Learning.
 
 **4. Algoritmus**
 
-Microsoft Olive veľmi dobre zahŕňa Lora a QLora algoritmy doladenia. Stačí nakonfigurovať niektoré relevantné parametre. Tu uvádzam príklad pre QLora.
+Microsoft Olive veľmi dobre zapuzdruje ladenie pomocou Lora a QLora algoritmov. Stačí nakonfigurovať niektoré relevantné parametre. Tu uvádzam príklad s QLora.
 
 ```json
         "lora": {
@@ -329,7 +329,7 @@ Microsoft Olive veľmi dobre zahŕňa Lora a QLora algoritmy doladenia. Stačí 
         },
 ```
 
-Ak chcete previesť kvantizáciu, hlavná vetva Microsoft Olive už podporuje metódu onnxruntime-genai. Môžete ju nastaviť podľa potreby:
+Ak chcete vykonať kvantizačnú konverziu, hlavná vetva Microsoft Olive už podporuje metódu onnxruntime-genai. Môžete ju nastaviť podľa svojich potrieb:
 
 1. zlúčiť váhy adaptéra do základného modelu  
 2. previesť model na onnx model s požadovanou presnosťou pomocou ModelBuildera
@@ -350,9 +350,8 @@ napríklad prevod na kvantizovaný INT4
 ```
 
 **Upozornenie**  
-- Ak používate QLoRA, kvantizačný prevod cez ONNXRuntime-genai zatiaľ nie je podporovaný.
-
-- Treba zdôrazniť, že vyššie uvedené kroky môžete nastaviť podľa vlastných potrieb. Nie je nutné ich všetky konfigurovať. Podľa potreby môžete použiť len algoritmické kroky bez doladenia. Nakoniec je potrebné nakonfigurovať príslušné enginy.
+- Ak používate QLoRA, kvantizačná konverzia ONNXRuntime-genai zatiaľ nie je podporovaná.  
+- Treba zdôrazniť, že vyššie uvedené kroky môžete nastaviť podľa vlastných potrieb. Nie je nutné ich všetky konfigurovať úplne. Podľa potreby môžete priamo použiť kroky algoritmu bez ladenia. Nakoniec je potrebné nakonfigurovať príslušné enginy.
 
 ```json
 
@@ -367,7 +366,7 @@ napríklad prevod na kvantizovaný INT4
     }
 ```
 
-**5. Dokončenie doladenia**
+**5. Dokončenie ladenia**
 
 Na príkazovom riadku spustite v adresári s olive-config.json
 
@@ -375,5 +374,5 @@ Na príkazovom riadku spustite v adresári s olive-config.json
 olive run --config olive-config.json  
 ```
 
-**Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

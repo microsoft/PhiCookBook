@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-09T20:08:15+00:00",
+  "translation_date": "2025-07-17T05:29:47+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Welcome to [GitHub Models](https://github.com/marketplace/models)! Everything is set up and ready for you to explore AI Models hosted on Azure AI.
 
-![GitHubModel](../../../../imgs/01/02/02/GitHub_ModelCatalog.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.en.png)
 
 For more details about the Models available on GitHub Models, visit the [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ There are several basic examples ready for you to run. You can find them in the 
 
 There is also a dedicated Codespaces Environment for running the samples and models.
 
-![Getting Started](../../../../imgs/01/02/02/GitHub_ModelGetStarted.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.en.png)
 
 ## Sample Code
 
@@ -62,7 +62,7 @@ If you're using bash:
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-If you're in PowerShell:  
+If you're using PowerShell:  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
@@ -373,7 +373,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 ```  
 ### Run a multi-turn conversation
 
-Call the chat completion API and include the chat history:
+Call the chat completion API and pass the chat history:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -403,7 +403,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 ```  
 ### Stream the output
 
-Here’s an example of calling the endpoint and streaming the response.
+This is an example of calling the endpoint and streaming the response.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## FREE Usage and Rate limits for GitHub Models
 
-![Model Catalog](../../../../imgs/01/02/02/GitHub_Model.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.en.png)
 
 The [rate limits for the playground and free API usage](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) are designed to help you experiment with models and prototype your AI application. To go beyond these limits and scale your application, you must provision resources from an Azure account and authenticate through it instead of using your GitHub personal access token. You don’t need to change anything else in your code. Use this link to learn how to exceed the free tier limits in Azure AI.
 

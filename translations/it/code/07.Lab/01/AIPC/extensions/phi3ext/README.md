@@ -2,82 +2,82 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T04:51:00+00:00",
+  "translation_date": "2025-07-16T16:35:36+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
   "language_code": "it"
 }
 -->
 # phi3ext README
 
-This is the README for your extension "phi3ext". After writing a brief description, we recommend including the following sections.
+Questo è il README della tua estensione "phi3ext". Dopo una breve descrizione, consigliamo di includere le seguenti sezioni.
 
 ## Features
 
-Describe the specific features of your extension, including screenshots of it in action. Image paths are relative to this README file.
+Descrivi le funzionalità specifiche della tua estensione, includendo screenshot dell’estensione in esecuzione. I percorsi delle immagini sono relativi a questo file README.
 
-For example, if you have an images subfolder under your extension project workspace:
+Ad esempio, se nel workspace del tuo progetto di estensione c’è una sottocartella immagini:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Many popular extensions use animations. This is a great way to showcase your extension! We recommend short, focused animations that are easy to follow.
+> [!TIP] Molte estensioni popolari usano animazioni. È un ottimo modo per mostrare la tua estensione! Consigliamo animazioni brevi e mirate, facili da seguire.
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing these and how to install and configure them.
+Se hai requisiti o dipendenze, aggiungi una sezione che li descriva e spieghi come installarli e configurarli.
 
 ## Extension Settings
 
-If your extension adds any VS Code settings through `contributes.configuration` extension points, include them here.
+Se la tua estensione aggiunge impostazioni di VS Code tramite il punto di estensione `contributes.configuration`, includile qui.
 
-For example:
+Ad esempio:
 
-This extension contributes the following settings:
+Questa estensione contribuisce con le seguenti impostazioni:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+* `myExtension.enable`: abilita/disabilita questa estensione.
+* `myExtension.thing`: impostalo su `blah` per fare qualcosa.
 
 ## Known Issues
 
-Listing known issues can help reduce users opening duplicate issues for your extension.
+Segnalare problemi noti aiuta a ridurre le richieste ripetute degli utenti riguardo a problemi già noti.
 
 ## Release Notes
 
-Users appreciate release notes when you update your extension.
+Gli utenti apprezzano le note di rilascio quando aggiorni la tua estensione.
 
 ### 1.0.0
 
-Initial release...
+Prima versione pubblicata...
 
 ### 1.0.1
 
-Fixed issue #.
+Risolto il problema #.
 
 ### 1.1.0
 
-Added features X, Y, and Z.
+Aggiunte le funzionalità X, Y e Z.
 
 ---
 
 ## Following extension guidelines
 
-Make sure you have read the extension guidelines and follow best practices for creating extensions.
+Assicurati di aver letto le linee guida per le estensioni e di seguire le best practice per la creazione di estensioni.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-You can write your README using Visual Studio Code. Here are some useful editor shortcuts:
+Puoi scrivere il tuo README usando Visual Studio Code. Ecco alcune scorciatoie utili dell’editor:
 
-* Split editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+* Dividi l’editor (`Cmd+\` su macOS o `Ctrl+\` su Windows e Linux).
+* Passa alla modalità anteprima (`Shift+Cmd+V` su macOS o `Shift+Ctrl+V` su Windows e Linux).
+* Premi `Ctrl+Space` (Windows, Linux, macOS) per vedere la lista dei frammenti di codice Markdown.
 
 ## For more information
 
-* [Markdown support in Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Markdown syntax reference](https://help.github.com/articles/markdown-basics/)
+* [Supporto Markdown in Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Riferimento sintassi Markdown](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Buon divertimento!**
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua madre deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

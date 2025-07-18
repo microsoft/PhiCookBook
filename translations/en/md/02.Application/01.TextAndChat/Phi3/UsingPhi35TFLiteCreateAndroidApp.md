@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-07-09T19:17:43+00:00",
+  "translation_date": "2025-07-17T02:49:04+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "en"
 }
@@ -13,9 +13,9 @@ This is an Android sample using Microsoft Phi-3.5 tflite models.
 
 ## **📚 Knowledge**
 
-Android LLM Inference API lets you run large language models (LLMs) entirely on-device for Android applications, allowing you to perform a variety of tasks such as generating text, retrieving information in natural language, and summarizing documents. The API supports multiple text-to-text large language models out of the box, so you can integrate the latest on-device generative AI models into your Android apps.
+Android LLM Inference API allows you to run large language models (LLMs) entirely on-device for Android apps. You can use it to perform a variety of tasks such as generating text, retrieving information in natural language, and summarizing documents. The API supports multiple text-to-text large language models out of the box, enabling you to integrate the latest on-device generative AI models into your Android applications.
 
-Google AI Edge Torch is a Python library that supports converting PyTorch models into a .tflite format, which can then be executed with TensorFlow Lite and MediaPipe. This enables Android, iOS, and IoT applications to run models fully on-device. AI Edge Torch offers broad CPU support, with initial GPU and NPU support as well. It aims to closely integrate with PyTorch by building on top of torch.export() and providing extensive coverage of Core ATen operators.
+Google AI Edge Torch is a Python library that supports converting PyTorch models into the .tflite format, which can then be executed with TensorFlow Lite and MediaPipe. This makes it possible to build Android, iOS, and IoT applications that run models fully on-device. AI Edge Torch offers extensive CPU support, with initial GPU and NPU compatibility. It aims to integrate closely with PyTorch by building on torch.export() and providing comprehensive coverage of Core ATen operators.
 
 ## **🪬 Guideline**
 
@@ -108,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Running your Android code**
 
-![demo](../../../../../../imgs/02/android-tf/demo.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.en.png)
 
 **Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

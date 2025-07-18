@@ -2,58 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-05-09T21:54:24+00:00",
+  "translation_date": "2025-07-17T08:25:23+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
   "language_code": "ne"
 }
 -->
-## Fine Tuning Scenarios
+## फाइन ट्यूनिङ परिदृश्यहरू
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.25759a0154a97ad90e43a6cace37d6bea87f0ac0236ada3ad5d4a1fbacc3bdf7.ne.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.ne.png)
 
-**Platform** यसमा Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, र ONNX Runtime जस्ता विभिन्न प्रविधिहरू समावेश छन्।
+**प्लेटफर्म** यसमा Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, र ONNX Runtime जस्ता विभिन्न प्रविधिहरू समावेश छन्।
 
-**Infrastructure** यसमा CPU र FPGA समावेश छन्, जुन fine-tuning प्रक्रियाको लागि अत्यावश्यक हुन्छन्। म तपाईंलाई यी प्रविधिहरूका आइकनहरू देखाउन चाहन्छु।
+**पूर्वाधार** यसमा CPU र FPGA समावेश छन्, जुन फाइन ट्यूनिङ प्रक्रियाका लागि आवश्यक हुन्छन्। म तपाईंलाई यी प्रविधिहरूका आइकनहरू देखाउँछु।
 
-**Tools & Framework** यसमा ONNX Runtime समावेश छ। म तपाईंलाई यी प्रविधिहरूका आइकनहरू देखाउन चाहन्छु।  
-[Insert icons for ONNX Runtime and ONNX Runtime]
+**उपकरण र फ्रेमवर्क** यसमा ONNX Runtime र ONNX Runtime समावेश छन्। म तपाईंलाई यी प्रविधिहरूका आइकनहरू देखाउँछु।
+[ONNX Runtime र ONNX Runtime का आइकनहरू राख्नुहोस्]
 
-Microsoft प्रविधिहरूसँग fine-tuning प्रक्रिया विभिन्न कम्पोनेन्ट र उपकरणहरू समावेश गर्दछ। यी प्रविधिहरूलाई बुझेर र प्रयोग गरेर हामी हाम्रो एप्लिकेसनहरूलाई प्रभावकारी रूपमा fine-tune गरी राम्रो समाधानहरू सिर्जना गर्न सक्छौं।
+Microsoft प्रविधिहरूको साथ फाइन ट्यूनिङ प्रक्रियामा विभिन्न कम्पोनेन्ट र उपकरणहरू समावेश हुन्छन्। यी प्रविधिहरूलाई बुझेर र प्रयोग गरेर, हामी हाम्रो अनुप्रयोगहरूलाई प्रभावकारी रूपमा फाइन ट्यून गर्न सक्छौं र राम्रो समाधानहरू सिर्जना गर्न सक्छौं।
 
-## Model as Service
+## मोडेल सेवा रूपमा
 
-होस्ट गरिएको fine-tuning प्रयोग गरेर मोडेललाई fine-tune गर्नुहोस्, compute सिर्जना र व्यवस्थापन गर्न आवश्यक छैन।
+होस्ट गरिएको फाइन ट्यूनिङ प्रयोग गरेर मोडेललाई फाइन ट्यून गर्नुहोस्, कम्प्युट सिर्जना र व्यवस्थापन गर्न आवश्यक बिना।
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.6184d80a336ea9d7bb67a581e9e5d0b021cafdffff7ba257c2012e2123e0d77e.ne.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.ne.png)
 
-Serverless fine-tuning Phi-3-mini र Phi-3-medium मोडेलहरूको लागि उपलब्ध छ, जसले विकासकर्ताहरूलाई छिटो र सजिलै क्लाउड र edge परिदृश्यहरूको लागि मोडेलहरू अनुकूलन गर्न अनुमति दिन्छ, compute को व्यवस्था नगरी। हामीले पनि घोषणा गरेका छौं कि Phi-3-small अब Models-as-a-Service प्रस्ताव मार्फत उपलब्ध छ, जसले विकासकर्ताहरूलाई आधारभूत पूर्वाधार व्यवस्थापन नगरी छिटो र सजिलै AI विकास सुरु गर्न सक्षम बनाउँछ।
+Phi-3-mini र Phi-3-medium मोडेलहरूको लागि सर्भरलेस फाइन ट्यूनिङ उपलब्ध छ, जसले विकासकर्ताहरूलाई क्लाउड र एज परिदृश्यहरूका लागि मोडेलहरू छिटो र सजिलै अनुकूलन गर्न सक्षम बनाउँछ, कम्प्युटको व्यवस्था नगरी। हामीले घोषणा गरेका छौं कि Phi-3-small अब Models-as-a-Service मार्फत उपलब्ध छ, जसले विकासकर्ताहरूलाई आधारभूत पूर्वाधार व्यवस्थापन नगरी AI विकास छिटो र सजिलै सुरु गर्न मद्दत गर्दछ।
 
-## Model as a Platform
+## प्लेटफर्म रूपमा मोडेल
 
-प्रयोगकर्ताहरूले आफ्नै compute व्यवस्थापन गरेर आफ्नो मोडेलहरू fine-tune गर्छन्।
+प्रयोगकर्ताहरूले आफ्नै कम्प्युट व्यवस्थापन गरेर आफ्नो मोडेलहरू फाइन ट्यून गर्छन्।
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.cf8b08ef05bf57f362da90834be87562502f4370de4a7325a9fb03b8c008e5e7.ne.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.ne.png)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## Fine Tuning Scenarios
+## फाइन ट्यूनिङ परिदृश्यहरू
 
 | | | | | | | |
 |-|-|-|-|-|-|-|
-|Scenario|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|पूर्व-प्रशिक्षित LLMs लाई विशेष कार्य वा डोमेनहरूमा अनुकूलन गर्ने|Yes|Yes|Yes|Yes|Yes|Yes|
-|NLP कार्यहरू जस्तै पाठ वर्गीकरण, नामित इकाई पहिचान, र मेसिन अनुवादको लागि fine-tuning|Yes|Yes|Yes|Yes|Yes|Yes|
-|QA कार्यहरूको लागि fine-tuning|Yes|Yes|Yes|Yes|Yes|Yes|
-|च्याटबोटमा मानवजस्तै प्रतिक्रिया उत्पन्न गर्न fine-tuning|Yes|Yes|Yes|Yes|Yes|Yes|
-|संगीत, कला वा अन्य सिर्जनात्मक कार्यहरूका लागि fine-tuning|Yes|Yes|Yes|Yes|Yes|Yes|
-|गणनात्मक र वित्तीय लागत घटाउने|Yes|Yes|No|Yes|Yes|No|
-|मेमोरी प्रयोग घटाउने|No|Yes|No|Yes|Yes|Yes|
-|कम पैरामीटर प्रयोग गरेर कुशल fine-tuning गर्ने|No|Yes|Yes|No|No|Yes|
-|डेटा समानान्तरता को मेमोरी-कुशल रूप जसले सबै GPU उपकरणहरूको समग्र GPU मेमोरीमा पहुँच दिन्छ|No|No|No|Yes|Yes|Yes|
+|परिदृश्य|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
+|पूर्व-प्रशिक्षित LLMs लाई विशेष कार्य वा डोमेनमा अनुकूलन गर्ने|हो|हो|हो|हो|हो|हो|
+|टेक्स्ट वर्गीकरण, नामित इकाई पहिचान, र मेशिन अनुवाद जस्ता NLP कार्यहरूको लागि फाइन ट्यूनिङ|हो|हो|हो|हो|हो|हो|
+|QA कार्यहरूको लागि फाइन ट्यूनिङ|हो|हो|हो|हो|हो|हो|
+|च्याटबोटहरूमा मानव-जस्तो प्रतिक्रिया उत्पन्न गर्न फाइन ट्यूनिङ|हो|हो|हो|हो|हो|हो|
+|संगीत, कला, वा अन्य सिर्जनात्मक रूपहरू उत्पन्न गर्न फाइन ट्यूनिङ|हो|हो|हो|हो|हो|हो|
+|गणनात्मक र आर्थिक लागत घटाउने|हो|हो|होइन|हो|हो|होइन|
+|मेमोरी प्रयोग घटाउने|होइन|हो|होइन|हो|हो|हो|
+|कम प्यारामिटर प्रयोग गरेर प्रभावकारी फाइन ट्यूनिङ|होइन|हो|हो|होइन|होइन|हो|
+|डेटा समानान्तरताको मेमोरी-प्रभावकारी रूप जसले सबै GPU उपकरणहरूको समग्र GPU मेमोरीमा पहुँच दिन्छ|होइन|होइन|होइन|हो|हो|हो|
 
-## Fine Tuning Performance Examples
+## फाइन ट्यूनिङ प्रदर्शन उदाहरणहरू
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.9dbf84557eef43e011eb7cadf51f51686f9245f7953e2712a27095ab7d18a6d1.ne.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.ne.png)
 
 **अस्वीकरण**:  
-यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताको लागि प्रयास गर्छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा असत्यताहरू हुन सक्छन्। मूल दस्तावेज यसको मूल भाषामा आधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।
+यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

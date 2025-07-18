@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:01:47+00:00",
+  "translation_date": "2025-07-17T03:17:15+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "pl"
 }
 -->
-# **Czat z Phi-4-mini ONNX**
+# **Chat z Phi-4-mini ONNX**
 
 ***ONNX*** to otwarty format stworzony do reprezentowania modeli uczenia maszynowego. ONNX definiuje wspólny zestaw operatorów – podstawowych elementów modeli uczenia maszynowego i głębokiego uczenia – oraz wspólny format plików, który umożliwia deweloperom AI korzystanie z modeli w różnych frameworkach, narzędziach, środowiskach uruchomieniowych i kompilatorach.
 
-Chcemy wdrażać generatywne modele AI na urządzeniach brzegowych i używać ich w środowiskach o ograniczonej mocy obliczeniowej lub offline. Teraz możemy osiągnąć ten cel, konwertując model w sposób kwantyzowany. Możemy przekształcić kwantyzowany model do formatu GGUF lub ONNX.
+Chcemy wdrażać generatywne modele AI na urządzeniach brzegowych i używać ich w środowiskach o ograniczonej mocy obliczeniowej lub offline. Teraz możemy osiągnąć ten cel, konwertując model w sposób kwantyzowany. Możemy przekonwertować skwantyzowany model do formatu GGUF lub ONNX.
 
-Microsoft Olive może pomóc w konwersji SLM do kwantyzowanego formatu ONNX. Metoda konwersji modelu jest bardzo prosta.
+Microsoft Olive może pomóc Ci przekonwertować SLM do skwantyzowanego formatu ONNX. Metoda konwersji modelu jest bardzo prosta.
 
 **Zainstaluj Microsoft Olive SDK**
 
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Konwersja CPU ONNX Support**
+**Konwersja z obsługą CPU ONNX**
 
 ```bash
 
@@ -34,7 +34,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Note*** ten przykład wykorzystuje CPU
+***Uwaga*** ten przykład używa CPU
 
 
 ### **Inferencja modelu Phi-4-mini ONNX za pomocą ONNX Runtime GenAI**
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako wiarygodne i autorytatywne źródło. W przypadku informacji o krytycznym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

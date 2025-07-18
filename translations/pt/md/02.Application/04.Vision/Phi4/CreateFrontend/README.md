@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-05-09T20:03:23+00:00",
+  "translation_date": "2025-07-17T05:08:05+00:00",
   "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "pt"
 }
 -->
-## **Use Phi-4-multimodal para ler imagens e gerar código**
+## **Usar Phi-4-multimodal para ler imagens e gerar código**
 
-Phi-4-multimodal possui fortes capacidades de leitura de imagens. Vamos tentar usar Python para implementar as seguintes funções. A imagem é uma página do ChatGPT.
+O Phi-4-multimodal tem fortes capacidades de leitura de imagens. Vamos tentar usar Python para implementar as seguintes funções. A imagem é uma página do ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.pt.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.pt.png)
 
 ### **Código de Exemplo**
 
@@ -68,4 +68,4 @@ print(response)
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, por favor, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

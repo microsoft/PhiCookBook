@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:03:51+00:00",
+  "translation_date": "2025-07-17T08:48:51+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "nl"
 }
 -->
 # Phi-3.5-vision finetuning recept
 
-Dit is de officiële ondersteuning voor Phi-3.5-vision finetuning met behulp van huggingface libraries.
-Ga eerst naar de code directory [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) voordat je de onderstaande commando's uitvoert.
+Dit is de officiële ondersteuning voor Phi-3.5-vision finetuning met behulp van huggingface libraries.  
+Ga eerst naar de code directory [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) voordat je de volgende commando's uitvoert.
 
 ## Installatie
 
@@ -35,7 +35,7 @@ pip install bitsandbytes==0.43.1
 
 ## Snel aan de slag
 
-We bieden twee voorbeeldscripts voor finetuning, één voor DocVQA en één voor de classificatie van hatelijke memes.
+We bieden twee voorbeeldscripts voor finetuning, één voor DocVQA en één voor classificatie van hatelijke memes.
 
 Minimale hardware getest op 4x RTX8000 (48GB RAM per GPU)
 
@@ -52,13 +52,13 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## Gebruiksaanwijzing
 
-Afhankelijk van de hardware kunnen gebruikers verschillende finetuning strategieën kiezen. We ondersteunen
-full-finetuning (met Deepspeed Zero-2) met optioneel bevroren vision parameters, en LoRA (inclusief 4bit QLoRA).
-Over het algemeen raden we aan full finetuning te gebruiken met flash attention en bf16 waar mogelijk.
+Afhankelijk van de hardware kunnen gebruikers verschillende finetuning strategieën kiezen. We ondersteunen  
+full-finetuning (met Deepspeed Zero-2) met optioneel bevroren vision parameters, en LoRA (inclusief 4bit QLoRA).  
+Over het algemeen raden we aan om full finetuning te gebruiken met flash attention en bf16 waar mogelijk.
 
-### gids voor het converteren van je eigen dataset naar het vereiste formaat
+### gids voor het omzetten van je eigen dataset naar het vereiste formaat
 
-We gebruiken een minimale video-classificatie dataset (een subset van UCF-101) als een end-to-end voorbeeld om te laten zien hoe je je eigen dataset converteert naar het vereiste formaat en Phi-3.5-vision daarop finetunet.
+We gebruiken een minimale video-classificatie dataset (een subset van UCF-101) als een end-to-end voorbeeld om te laten zien hoe je je eigen dataset kunt omzetten naar het vereiste formaat en Phi-3.5-vision daarop kunt finetunen.
 
 ```bash
 # convert data
@@ -68,7 +68,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-De geconverteerde data ziet er zo uit:
+De geconverteerde data ziet er als volgt uit:
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -121,40 +121,40 @@ Voor de `jsonl` annotatie moet elke regel een dictionary zijn zoals:
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Let op dat `conversations` een lijst is, waardoor multi-turn gesprekken ondersteund kunnen worden als zulke data beschikbaar is.
+Let op dat `conversations` een lijst is, waardoor multi-turn gesprekken ondersteund kunnen worden als dergelijke data beschikbaar is.
 
 ## Azure GPU Quota aanvragen
 
 ### Vereisten
 
-Een Azure account met de rol Contributor (of een andere rol met Contributor toegang).
+Een Azure-account met de rol Contributor (of een andere rol die Contributor-toegang bevat).
 
-Als je nog geen Azure account hebt, maak dan een [gratis account aan voordat je begint](https://azure.microsoft.com).
+Als je nog geen Azure-account hebt, maak dan een [gratis account aan voordat je begint](https://azure.microsoft.com).
 
 ### Vraag een verhoging van je quota aan
 
-Je kunt een verzoek indienen voor een verhoging van je quota direct vanuit My quotas. Volg de onderstaande stappen om een verhoging aan te vragen. Voor dit voorbeeld kun je elke aanpasbare quota in je abonnement selecteren.
+Je kunt een verzoek indienen voor een verhoging van je quota rechtstreeks via Mijn quota. Volg onderstaande stappen om een verhoging aan te vragen. Voor dit voorbeeld kun je elke aanpasbare quota in je abonnement selecteren.
 
 Meld je aan bij de [Azure portal](https://portal.azure.com).
 
-Typ "quotas" in het zoekvak en selecteer vervolgens Quotas.
+Typ "quotas" in het zoekvak en selecteer vervolgens Quotas.  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
 Selecteer op de overzichtspagina een provider, zoals Compute of AML.
 
-**Note** Voor alle providers behalve Compute zie je een Request increase kolom in plaats van de Adjustable kolom zoals hieronder beschreven. Daar kun je een verhoging aanvragen voor een specifieke quota, of een supportverzoek indienen voor de verhoging.
+**Note** Voor alle providers behalve Compute zie je een kolom Request increase in plaats van de kolom Adjustable zoals hieronder beschreven. Daar kun je een verhoging aanvragen voor een specifieke quota, of een supportverzoek indienen voor de verhoging.
 
-Ga naar de pagina My quotas, selecteer onder Quota name de quota die je wilt verhogen. Zorg dat de Adjustable kolom voor deze quota Ja aangeeft.
+Op de pagina Mijn quota, selecteer onder Quota name de quota die je wilt verhogen. Zorg ervoor dat in de kolom Adjustable voor deze quota Ja staat.
 
-Selecteer bovenaan de pagina New Quota Request, en kies vervolgens Enter a new limit.
+Selecteer bovenaan de pagina New Quota Request en kies vervolgens Enter a new limit.
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
 Voer in het paneel New Quota Request een numerieke waarde in voor je nieuwe quota limiet en klik op Submit.
 
-Je verzoek wordt beoordeeld en je krijgt een melding of het verzoek kan worden ingewilligd. Dit gebeurt meestal binnen enkele minuten.
+Je verzoek wordt beoordeeld en je ontvangt een melding of het verzoek kan worden ingewilligd. Dit gebeurt meestal binnen enkele minuten.
 
-Als je verzoek niet wordt ingewilligd, zie je een link om een supportverzoek aan te maken. Wanneer je deze link gebruikt, helpt een support engineer je met je verhogingsaanvraag.
+Als je verzoek niet wordt ingewilligd, zie je een link om een supportverzoek aan te maken. Wanneer je deze link gebruikt, helpt een support engineer je met je verhogingsverzoek.
 
 ## Azure Compute GPU machine SKU suggesties
 
@@ -168,7 +168,7 @@ Hier zijn enkele voorbeelden:
 
 ### Als je A100 of H100 GPU's hebt
 
-Full finetuning levert meestal de beste prestaties. Je kunt het volgende commando gebruiken om Phi-3-V te finetunen voor hatelijke memes classificatie.
+Full finetuning levert meestal de beste prestaties. Je kunt het volgende commando gebruiken om Phi-3-V te finetunen op classificatie van hatelijke memes.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -182,9 +182,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Als je Standard_ND40rs_v2 8x V100-32GB GPU's hebt
 
-Het is nog steeds mogelijk om Phi-3-V volledig te finetunen voor hatelijke memes classificatie. Verwacht echter
-veel lagere doorvoer vergeleken met A100 of H100 GPU's vanwege het ontbreken van flash attention ondersteuning.
-De nauwkeurigheid kan ook beïnvloed worden door het ontbreken van bf16 ondersteuning (in plaats daarvan wordt fp16 mixed-precision training gebruikt).
+Het is nog steeds mogelijk om Phi-3-V volledig te finetunen op classificatie van hatelijke memes. Verwacht echter  
+veel lagere doorvoer vergeleken met A100 of H100 GPU's vanwege het ontbreken van ondersteuning voor flash attention.  
+De nauwkeurigheid kan ook beïnvloed worden door het ontbreken van bf16-ondersteuning (in plaats daarvan wordt fp16 mixed-precision training gebruikt).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -195,7 +195,8 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 ```
 
 ### Als je geen toegang hebt tot datacenter GPU's
-Lora is mogelijk je enige optie. Je kunt het volgende commando gebruiken om Phi-3-V te finetunen voor hatelijke memes classificatie.
+
+LoRA is dan waarschijnlijk je enige optie. Je kunt het volgende commando gebruiken om Phi-3-V te finetunen op classificatie van hatelijke memes.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -217,6 +218,7 @@ torchrun --nproc_per_node=2 \
 ```
 
 ## Aanbevolen hyperparameters en verwachte nauwkeurigheid
+
 ### NLVR2
 
 ```bash
@@ -232,12 +234,12 @@ torchrun --nproc_per_node=4 \
 
 Trainingsmethode | Bevroren vision model | datatype | LoRA rank | LoRA alpha | batchgrootte | leersnelheid | epochs | Nauwkeurigheid
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
+full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
+full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
 LoRA resultaten volgen binnenkort |  |  |  |  |  |  |  |  |
 
-### NOTE
-De onderstaande DocVQA en Hateful memes resultaten zijn gebaseerd op de vorige versie (Phi-3-vision).
+### NOTE  
+De onderstaande DocVQA en Hateful memes resultaten zijn gebaseerd op de vorige versie (Phi-3-vision).  
 De nieuwe resultaten met Phi-3.5-vision worden binnenkort bijgewerkt.
 
 ### DocVQA (NOTE: Phi-3-vision)
@@ -293,12 +295,12 @@ QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 Nieuwe benchmarkresultaten met Phi-3.5-vision worden binnenkort bijgewerkt.
 
-De snelheidsbenchmark is uitgevoerd op de DocVQA dataset. De gemiddelde sequentielengte van deze dataset
+De snelheidsbenchmark is uitgevoerd op de DocVQA dataset. De gemiddelde sequentielengte van deze dataset  
 is 2443.23 tokens (met `num_crops=16` voor het beeldmodel).
 
 ### 8x A100-80GB (Ampere)
 
-Trainingsmethode | \# nodes | GPU's | flash attention | Effectieve batchgrootte | Doorvoer (img/s) | Versnelling | Maximale GPU geheugen (GB)
+Trainingsmethode | \# nodes | GPU's | flash attention | Effectieve batchgrootte | Doorvoer (img/s) | Versnelling | Max GPU geheugen (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
 full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
@@ -313,7 +315,7 @@ QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
 ### 8x V100-32GB (Volta)
 
-Trainingsmethode | \# nodes | GPU's | flash attention | Effectieve batchgrootte | Doorvoer (img/s) | Versnelling | Maximale GPU geheugen (GB)
+Trainingsmethode | \# nodes | GPU's | flash attention | Effectieve batchgrootte | Doorvoer (img/s) | Versnelling | Max GPU geheugen (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
 full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
@@ -323,8 +325,8 @@ LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
 ## Bekende problemen
 
-- Flash attention werkt niet met fp16 (bf16 wordt altijd aanbevolen als het beschikbaar is, en alle GPU's die flash attention ondersteunen ondersteunen ook bf16).
-- Het is nog niet mogelijk om tussentijdse checkpoints op te slaan en de training te hervatten.
+- Flash attention werkt niet met fp16 (bf16 wordt altijd aanbevolen wanneer beschikbaar, en alle GPU's die flash attention ondersteunen, ondersteunen ook bf16).  
+- Het is nog niet mogelijk om tussentijdse checkpoints op te slaan en training te hervatten.
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-07T10:58:47+00:00",
+  "translation_date": "2025-07-17T04:48:21+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "de"
 }
 -->
 ## **Verwendung von Phi-4-mini-reasoning(3.8b) oder Phi-4-reasoning(14b) als Reasoning Expert**
 
-Schauen wir uns seine starke Argumentationsfähigkeit anhand von Phi-4-mini-reasoning oder Phi-4-mini-reasoning an.
+Werfen wir einen Blick auf seine starke Argumentationsfähigkeit durch Phi-4-mini-reasoning oder Phi-4-mini-reasoning.
 
 
 ```python
@@ -50,4 +50,4 @@ print(outputs[0])
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

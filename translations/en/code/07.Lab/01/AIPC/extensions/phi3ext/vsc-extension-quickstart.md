@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
-  "translation_date": "2025-07-09T20:10:56+00:00",
+  "translation_date": "2025-07-16T16:39:19+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
   "language_code": "en"
 }
@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
   * The sample plugin registers a command and defines its title and command name. With this information, VS Code can display the command in the command palette. It doesn’t need to load the plugin yet.
 * `src/extension.ts` - this is the main file where you will implement your command.
   * The file exports one function, `activate`, which is called the very first time your extension is activated (in this case by running the command). Inside the `activate` function, we call `registerCommand`.
-  * We pass the function containing the command implementation as the second argument to `registerCommand`.
+  * We pass the function containing the command’s implementation as the second argument to `registerCommand`.
 
 ## Setup
 
@@ -41,11 +41,11 @@ CO_OP_TRANSLATOR_METADATA:
 ## Run tests
 
 * Install the [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Run the "watch" task via the **Tasks: Run Task** command. Make sure this is running, or tests might not be discovered.
+* Run the "watch" task via the **Tasks: Run Task** command. Make sure this is running, or tests might not be detected.
 * Open the Testing view from the activity bar and click the "Run Test" button, or use the hotkey `Ctrl/Cmd + ; A`
-* See the test results output in the Test Results view.
+* See the test results in the Test Results view.
 * Modify `src/test/extension.test.ts` or create new test files inside the `test` folder.
-  * The provided test runner will only consider files matching the name pattern `**.test.ts`.
+  * The provided test runner only considers files matching the pattern `**.test.ts`.
   * You can create folders inside the `test` folder to organize your tests however you like.
 
 ## Go further

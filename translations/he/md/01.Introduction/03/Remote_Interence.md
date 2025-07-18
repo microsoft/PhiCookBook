@@ -2,69 +2,69 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:42:49+00:00",
+  "translation_date": "2025-07-16T21:20:27+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "he"
 }
 -->
-# למידת מרחוק עם המודל המותאם
+# הסקת מסקנות מרחוק עם המודל המותאם אישית
 
-לאחר שהמתאמים מאומנים בסביבה מרוחקת, השתמשו באפליקציית Gradio פשוטה כדי לתקשר עם המודל.
+לאחר שה-adapters אומנו בסביבה מרוחקת, השתמשו באפליקציית Gradio פשוטה כדי לתקשר עם המודל.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.he.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.he.png)
 
 ### הקצאת משאבי Azure  
-יש להגדיר את משאבי Azure עבור למידת מרחוק על ידי הרצת `AI Toolkit: Provision Azure Container Apps for inference` מפלטת הפקודות. במהלך ההגדרה תתבקשו לבחור את מנוי ה-Azure וקבוצת המשאבים שלכם.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.he.png)
+יש להגדיר את משאבי Azure עבור הסקת מסקנות מרחוק על ידי ביצוע הפקודה `AI Toolkit: Provision Azure Container Apps for inference` מפלטת הפקודות. במהלך ההגדרה תתבקשו לבחור את המנוי ואת קבוצת המשאבים שלכם ב-Azure.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.he.png)
 
-ברירת המחדל היא שמנוי וקבוצת המשאבים ללמידה יתאימו לאלו ששימשו לאימון המודל. הלמידה תשתמש באותה סביבת Azure Container App ותיגש למודל ולמתאם המודל המאוחסנים ב-Azure Files, שנוצרו במהלך שלב האימון.
+ברירת המחדל היא שהמנוי וקבוצת המשאבים עבור ההסקה יתאימו לאלו ששימשו לאימון המודל. ההסקה תשתמש באותו Azure Container App Environment ותיגש למודל ול-adapter של המודל המאוחסנים ב-Azure Files, שנוצרו במהלך שלב האימון.
 
 ## שימוש ב-AI Toolkit
 
-### פריסה ללמידה  
-אם ברצונכם לשנות את קוד הלמידה או לטעון מחדש את מודל הלמידה, יש להריץ את הפקודה `AI Toolkit: Deploy for inference`. פעולה זו תסנכרן את הקוד העדכני עם ACA ותאתחל מחדש את הרפליקה.
+### פריסה עבור הסקה  
+אם ברצונכם לעדכן את קוד ההסקה או לטעון מחדש את מודל ההסקה, יש להריץ את הפקודה `AI Toolkit: Deploy for inference`. פעולה זו תסנכרן את הקוד העדכני שלכם עם ACA ותאתחל מחדש את הרפליקה.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.he.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.he.png)
 
 לאחר השלמת הפריסה בהצלחה, המודל מוכן להערכה דרך נקודת הקצה הזו.
 
-### גישה ל-API של הלמידה
+### גישה ל-API של ההסקה
 
-ניתן לגשת ל-API של הלמידה על ידי לחיצה על הכפתור "*Go to Inference Endpoint*" שמוצג בהתראה ב-VSCode. לחלופין, ניתן למצוא את נקודת הקצה של ה-API תחת `ACA_APP_ENDPOINT` ב-`./infra/inference.config.json` ובפאנל הפלט.
+ניתן לגשת ל-API של ההסקה על ידי לחיצה על כפתור "*Go to Inference Endpoint*" שמופיע בהתראה ב-VSCode. לחלופין, ניתן למצוא את נקודת הקצה של ה-API תחת `ACA_APP_ENDPOINT` בקובץ `./infra/inference.config.json` ובחלונית הפלט.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.he.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.he.png)
 
-> **Note:** ייתכן שנקודת הקצה של הלמידה תדרוש מספר דקות עד שתפעל במלואה.
+> **[!NOTE]:** ייתכן שלוקח כמה דקות עד שנקודת הקצה של ההסקה תהיה פעילה במלואה.
 
-## רכיבי הלמידה הכלולים בתבנית
+## רכיבי ההסקה הכלולים בתבנית
 
 | תיקייה | תוכן |
 | ------ |--------- |
-| `infra` | מכילה את כל ההגדרות הדרושות לפעולות מרחוק. |
-| `infra/provision/inference.parameters.json` | מכילה פרמטרים לתבניות bicep, המשמשות להקצאת משאבי Azure ללמידה. |
-| `infra/provision/inference.bicep` | מכילה תבניות להקצאת משאבי Azure ללמידה. |
+| `infra` | מכילה את כל ההגדרות הנדרשות להפעלה מרחוק. |
+| `infra/provision/inference.parameters.json` | מכיל פרמטרים לתבניות bicep, המשמשות להקצאת משאבי Azure עבור ההסקה. |
+| `infra/provision/inference.bicep` | מכיל תבניות להקצאת משאבי Azure עבור ההסקה. |
 | `infra/inference.config.json` | קובץ ההגדרות, שנוצר על ידי הפקודה `AI Toolkit: Provision Azure Container Apps for inference`. משמש כקלט לפלטות פקודות מרוחקות נוספות. |
 
 ### שימוש ב-AI Toolkit להגדרת הקצאת משאבי Azure  
 הגדירו את [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-הקצו Azure Container Apps ללמידה ` command.
+פקודת `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+ניתן למצוא את פרמטרי ההגדרה בקובץ `./infra/provision/inference.parameters.json`. להלן הפרטים:  
+| פרמטר | תיאור |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | הפקודות שמפעילות את ה-web API. |
+| `maximumInstanceCount` | פרמטר זה מגדיר את הקיבולת המקסימלית של מופעי GPU. |
+| `location` | מיקום בו מוקצים משאבי Azure. הערך ברירת המחדל הוא מיקום קבוצת המשאבים שנבחרה. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | פרמטרים אלו משמשים לשם משאבי Azure שיוקצו. כברירת מחדל, שמות אלו יהיו זהים לשם משאבי האימון. ניתן להזין שם חדש, שלא בשימוש, ליצירת משאבים עם שמות מותאמים אישית, או להזין שם של משאב Azure קיים במידה וברצונכם להשתמש בו. לפרטים נוספים ראו את הסעיף [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### שימוש במשאבי Azure קיימים
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+ברירת המחדל היא שההקצאה של ההסקה תשתמש באותו Azure Container App Environment, Storage Account, Azure File Share ו-Azure Log Analytics ששימשו לאימון. אפליקציית Azure Container App נפרדת נוצרת אך ורק עבור API ההסקה.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` ואז הריצו את הפקודה `AI Toolkit: Provision Azure Container Apps for inference` מפלטת הפקודות. פעולה זו מעדכנת משאבים קיימים ויוצרת משאבים חסרים.
+אם ביצעתם התאמות אישיות למשאבי Azure במהלך שלב האימון או ברצונכם להשתמש במשאבי Azure קיימים משלכם עבור ההסקה, יש לציין את שמותיהם בקובץ `./infra/inference.parameters.json`. לאחר מכן, הריצו את הפקודה `AI Toolkit: Provision Azure Container Apps for inference` מפלטת הפקודות. פעולה זו תעדכן את המשאבים שצוינו ותיצור את אלו החסרים.
 
-לדוגמה, אם יש לכם סביבת Azure container קיימת, הקובץ `./infra/finetuning.parameters.json` שלכם אמור להיראות כך:
+לדוגמה, אם יש לכם סביבה קיימת של Azure container, קובץ `./infra/finetuning.parameters.json` שלכם אמור להיראות כך:
 
 ```json
 {
@@ -84,7 +84,7 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 ### הקצאה ידנית  
-אם אתם מעדיפים להגדיר את משאבי Azure באופן ידני, ניתן להשתמש בקבצי bicep המסופקים ב-`./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`.
+אם אתם מעדיפים להגדיר את משאבי Azure באופן ידני, ניתן להשתמש בקבצי bicep המסופקים בתיקיות `./infra/provision`. אם כבר הגדרתם וקונפגתם את כל משאבי Azure ללא שימוש בפלטת הפקודות של AI Toolkit, תוכלו פשוט להזין את שמות המשאבים בקובץ `inference.config.json`.
 
 לדוגמה:
 
@@ -100,4 +100,4 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי-הבנות או פרשנויות שגויות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

@@ -2,49 +2,49 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-09T11:21:19+00:00",
+  "translation_date": "2025-07-16T20:35:18+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "sw"
 }
 -->
 # Kuendesha Phi-3 na Phi-4 kwenye iOS kwa kutumia Apple MLX Framework
 
-Mafunzo haya yanaonyesha jinsi ya kuunda programu ya iOS inayoweza kuendesha modeli ya Phi-3 au Phi-4 kwenye kifaa, kwa kutumia Apple MLX framework. [MLX](https://opensource.apple.com/projects/mlx/) ni mfumo wa mashine za kujifunza wa Apple ulioboreshwa kwa ajili ya chips za Apple Silicon.
+Mafunzo haya yanaonyesha jinsi ya kuunda programu ya iOS inayoweza kuendesha modeli ya Phi-3 au Phi-4 moja kwa moja kwenye kifaa, kwa kutumia mfumo wa Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) ni mfumo wa kujifunza mashine wa Apple ulioboreshwa kwa ajili ya chips za Apple Silicon.
 
-## Mahitaji
+## Mahitaji ya Awali
 
-- macOS yenye Xcode 16 (au juu zaidi)
-- Kifaa lengwa cha iOS 18 (au juu zaidi) chenye angalau 8GB (iPhone au iPad kinachokidhi mahitaji ya Apple Intelligence, kwani haya ni sawa na mahitaji ya modeli za Phi zilizoquantize)
-- ujuzi wa msingi wa Swift na SwiftUI
+- macOS yenye Xcode 16 (au toleo jipya zaidi)
+- Kifaa lengwa cha iOS 18 (au toleo jipya zaidi) chenye angalau 8GB (iPhone au iPad kinachokidhi mahitaji ya Apple Intelligence, kwani ni sawa na mahitaji ya Phi zilizopunguzwa)
+- Ujuzi wa msingi wa Swift na SwiftUI
 
 ## Hatua ya 1: Unda Mradi Mpya wa iOS
 
 Anza kwa kuunda mradi mpya wa iOS katika Xcode:
 
 1. fungua Xcode na chagua "Create a new Xcode project"
-2. chagua "App" kama template
-3. panga jina la mradi wako (mfano, "Phi3-iOS-App") na chagua SwiftUI kama interface
+2. chagua "App" kama kiolezo
+3. panga jina la mradi wako (mfano, "Phi3-iOS-App") na chagua SwiftUI kama muonekano
 4. chagua mahali pa kuhifadhi mradi wako
 
 ## Hatua ya 2: Ongeza Maktaba Zinazohitajika
 
-Ongeza kifurushi cha [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples) ambacho kina maktaba zote muhimu na msaada wa kupakia modeli na kufanya inference:
+Ongeza kifurushi cha [MLX Examples](https://github.com/ml-explore/mlx-swift-examples) ambacho kina maktaba zote muhimu na msaada wa kupakia modeli na kufanya utambuzi:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-Ingawa kifurushi cha msingi cha [MLX Swift package](https://github.com/ml-explore/mlx-swift) kinatosha kwa shughuli za msingi za tensor na kazi za mashine za kujifunza, kifurushi cha MLX Examples kinatoa vipengele vingine vingi vinavyolenga kazi na modeli za lugha, na kurahisisha mchakato wa inference:
+Ingawa kifurushi cha msingi cha [MLX Swift](https://github.com/ml-explore/mlx-swift) kinatosha kwa shughuli za msingi za tensor na kazi za ML za kawaida, kifurushi cha MLX Examples kinatoa vipengele zaidi vilivyoundwa kwa ajili ya kufanya kazi na modeli za lugha, na kurahisisha mchakato wa utambuzi:
 
-- zana za kupakia modeli zinazoshughulikia kupakua kutoka Hugging Face
-- ujumuishaji wa tokenizer
-- msaada wa inference kwa ajili ya uzalishaji wa maandishi
-- ufafanuzi wa modeli uliowekwa tayari
+- zana za kupakia modeli zinazoshughulikia upakuaji kutoka Hugging Face
+- ushirikiano wa tokenizer
+- msaada wa utambuzi kwa ajili ya uzalishaji wa maandishi
+- ufafanuzi wa modeli zilizopangwa awali
 
 ## Hatua ya 3: Sanidi Ruhusa
 
-Ili kuruhusu programu yetu kupakua modeli na kupata kumbukumbu ya kutosha, tunahitaji kuongeza ruhusa maalum. Unda faili la `.entitlements` kwa programu yako yenye maudhui yafuatayo:
+Ili kuruhusu programu yetu kupakua modeli na kugawa kumbukumbu ya kutosha, tunahitaji kuongeza ruhusa maalum. Unda faili la `.entitlements` kwa programu yako lenye maudhui yafuatayo:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ Ili kuruhusu programu yetu kupakua modeli na kupata kumbukumbu ya kutosha, tunah
 </plist>
 ```
 
-> **Note:** Ruhusa ya `com.apple.developer.kernel.increased-memory-limit` ni muhimu kwa kuendesha modeli kubwa zaidi, kwani inaruhusu programu kuomba kumbukumbu zaidi kuliko kawaida inavyoruhusiwa.
+> **[!NOTE]:** Ruhusa ya `com.apple.developer.kernel.increased-memory-limit` ni muhimu kwa kuendesha modeli kubwa zaidi, kwani inaruhusu programu kuomba kumbukumbu zaidi kuliko kawaida inavyoruhusiwa.
 
 ## Hatua ya 4: Unda Muundo wa Ujumbe wa Chat
 
-Kwanza, tunda muundo wa msingi unaowakilisha ujumbe wetu wa mazungumzo:
+Kwanza, tuunde muundo wa msingi unaowakilisha ujumbe wetu wa mazungumzo:
 
 ```swift
 import SwiftUI
@@ -87,7 +87,7 @@ struct ChatMessage: Identifiable {
 
 ## Hatua ya 5: Tekeleza ViewModel
 
-Ifuatayo, tutaunda darasa la `PhiViewModel` linaloshughulikia upakiaji wa modeli na inference:
+Ifuatayo, tutaunda darasa la `PhiViewModel` linaloshughulikia upakiaji wa modeli na utambuzi:
 
 ```swift
 import MLX
@@ -248,23 +248,23 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-ViewModel inaonyesha sehemu muhimu za ujumuishaji wa MLX:
+ViewModel inaonyesha sehemu muhimu za ushirikiano wa MLX:
 
-- kuweka mipaka ya cache ya GPU kwa kutumia `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- kuweka mipaka ya cache ya GPU kwa kutumia `MLX.GPU.set(cacheLimit:)` ili kuboresha matumizi ya kumbukumbu kwenye vifaa vya simu
+- kutumia `LLMModelFactory` kupakua modeli kwa mahitaji na kuanzisha modeli iliyoboreshwa kwa MLX
+- kupata vigezo na muundo wa modeli kupitia `ModelContainer`
+- kutumia uzalishaji wa tokeni moja kwa moja wa MLX kupitia njia ya `MLXLMCommon.generate`
+- kusimamia mchakato wa utambuzi kwa mipangilio sahihi ya joto na mipaka ya tokeni
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+Mbinu ya uzalishaji wa tokeni kwa mtiririko hutoa mrejesho wa papo hapo kwa watumiaji wakati modeli inazalisha maandishi. Hii ni sawa na jinsi modeli za seva zinavyofanya kazi, zinaporudisha tokeni kwa mtumiaji moja kwa moja, lakini bila ucheleweshaji wa maombi ya mtandao.
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+Kuhusu mwingiliano wa UI, kazi kuu mbili ni `loadModel()`, inayozindua LLM, na `fetchAIResponse()`, inayoshughulikia maingizo ya mtumiaji na kuzalisha majibu ya AI.
 
-### Model format considerations
+### Mambo ya kuzingatia kuhusu muundo wa modeli
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **[!IMPORTANT]:** Modeli za Phi kwa MLX haziwezi kutumika katika muundo wao wa kawaida au wa GGUF. Lazima zibadilishwe kuwa muundo wa MLX, jambo linalofanywa na jamii ya MLX. Unaweza kupata modeli zilizobadilishwa tayari kwenye [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`, inarejelea modeli maalum ya MLX iliyobadilishwa awali ambayo itapakuliwa kiotomatiki:
+Kifurushi cha MLX Examples kina usajili uliopangwa awali kwa modeli kadhaa, ikiwa ni pamoja na Phi-3. Unapoitisha `ModelRegistry.phi3_5_4bit`, inarejelea modeli maalum ya MLX iliyobadilishwa tayari ambayo itapakuliwa moja kwa moja:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-Unaweza kuunda usanidi wako wa modeli kuonyesha modeli yoyote inayolingana kwenye Hugging Face. Kwa mfano, kutumia Phi-4 mini badala yake, unaweza kufafanua usanidi wako:
+Unaweza kuunda mipangilio yako ya modeli ili kuelekeza kwa modeli yoyote inayolingana kwenye Hugging Face. Kwa mfano, kutumia Phi-4 mini badala yake, unaweza kufafanua mpangilio wako mwenyewe:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Note:** Msaada wa Phi-4 uliongezwa kwenye hazina ya MLX Swift Examples mwishoni mwa Februari 2025 (katika [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). Hadi Machi 2025, toleo la hivi karibuni rasmi (2.21.2 kutoka Desemba 2024) halijajumuisha msaada wa Phi-4. Ili kutumia modeli za Phi-4, unahitaji kurejelea kifurushi moja kwa moja kutoka tawi kuu:
+> **[!NOTE]:** Msaada wa Phi-4 uliongezwa kwenye hazina ya MLX Swift Examples mwishoni mwa Februari 2025 (katika [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). Hadi Machi 2025, toleo la hivi karibuni rasmi (2.21.2 kutoka Desemba 2024) halijajumuisha msaada wa Phi-4. Ili kutumia modeli za Phi-4, utahitaji kurejelea kifurushi moja kwa moja kutoka tawi kuu:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-Hii inakupa ufikiaji wa usanidi wa hivi karibuni wa modeli, ikiwa ni pamoja na Phi-4, kabla hayajajumuishwa kwenye toleo rasmi. Unaweza kutumia njia hii kutumia matoleo tofauti ya modeli za Phi au hata modeli nyingine zilizobadilishwa kwa muundo wa MLX.
+Hii inakupa ufikiaji wa mipangilio ya hivi karibuni ya modeli, ikiwa ni pamoja na Phi-4, kabla haijajumuishwa katika toleo rasmi. Unaweza kutumia njia hii kutumia matoleo tofauti ya modeli za Phi au hata modeli nyingine zilizobadilishwa kuwa muundo wa MLX.
 
 ## Hatua ya 6: Unda UI
 
-Sasa tutaweka kiolesura rahisi cha mazungumzo kuwasiliana na view model yetu:
+Sasa tutaweka utekelezaji wa kiolesura rahisi cha mazungumzo kuingiliana na view model yetu:
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-UI ina sehemu kuu tatu zinazofanya kazi pamoja kuunda kiolesura cha msingi cha mazungumzo. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` hutoa kiashiria rahisi cha kusogea kinachoonyesha kwamba AI inaendelea kuchakata
+UI ina sehemu kuu tatu zinazofanya kazi pamoja kuunda kiolesura cha mazungumzo cha msingi. `ContentView` huunda kiolesura cha hali mbili kinachoonyesha kitufe cha kupakia au kiolesura cha mazungumzo kulingana na utayari wa modeli. `MessageView` huonyesha ujumbe wa mazungumzo mmoja mmoja tofauti kulingana na kama ni ujumbe wa mtumiaji (umewekwa kulia, nyuma ya rangi ya bluu) au majibu ya modeli ya Phi (umewekwa kushoto, nyuma ya rangi ya kijivu). `TypingIndicatorView` hutoa kiashiria rahisi cha kuonyesha kwa michoro kwamba AI inaendelea kuchakata.
 
 ## Hatua ya 7: Kujenga na Kuendesha Programu
 
 Sasa tuko tayari kujenga na kuendesha programu.
 
-> **Important!** MLX haitegemezi simulator. Lazima uendeshe programu kwenye kifaa halisi chenye chip ya Apple Silicon. Angalia [hapa](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) kwa maelezo zaidi.
+> **[!IMPORTANT]:** MLX haijiungi na simulator. Lazima uendeshe programu kwenye kifaa halisi chenye chip ya Apple Silicon. Tazama [hapa](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) kwa maelezo zaidi.
 
-Programu itakapozinduliwa, gonga kitufe cha "Load model" kupakua na kuanzisha modeli ya Phi-3 (au, kulingana na usanidi wako, Phi-4). Mchakato huu unaweza kuchukua muda kulingana na muunganisho wako wa intaneti, kwani unahusisha kupakua modeli kutoka Hugging Face. Utekelezaji wetu unajumuisha tu spina kuonyesha upakiaji, lakini unaweza kuona maendeleo halisi kwenye koni ya Xcode.
+Unapoanzisha programu, gonga kitufe cha "Load model" kupakua na kuanzisha modeli ya Phi-3 (au, kulingana na mpangilio wako, Phi-4). Mchakato huu unaweza kuchukua muda kulingana na muunganisho wako wa intaneti, kwani unahusisha upakuaji wa modeli kutoka Hugging Face. Utekelezaji wetu unaonyesha tu mzunguko wa kuonyesha upakiaji, lakini unaweza kuona maendeleo halisi kwenye console ya Xcode.
 
-Baada ya kupakuliwa, unaweza kuwasiliana na modeli kwa kuandika maswali kwenye sehemu ya maandishi na kugonga kitufe cha kutuma.
+Mara baada ya kupakuliwa, unaweza kuingiliana na modeli kwa kuandika maswali kwenye sehemu ya maandishi na kugonga kitufe cha kutuma.
 
-Hivi ndivyo programu yetu inavyopaswa kufanya kazi, ikionyeshwa kwenye iPad Air M1:
+Hivi ndivyo programu yetu inavyopaswa kufanya kazi, ikiendeshwa kwenye iPad Air M1:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
 ## Hitimisho
 
-Na hapo umefanya! Kwa kufuata hatua hizi, umeunda programu ya iOS inayoweza kuendesha modeli ya Phi-3 (au Phi-4) moja kwa moja kwenye kifaa kwa kutumia Apple MLX framework.
+Na hapo ndipo! Kwa kufuata hatua hizi, umeunda programu ya iOS inayoweza kuendesha modeli ya Phi-3 (au Phi-4) moja kwa moja kwenye kifaa kwa kutumia mfumo wa Apple MLX.
 
 Hongera!
 
-**Kifungu cha kutanguliza**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubebeki dhima kwa maelewano mabaya au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

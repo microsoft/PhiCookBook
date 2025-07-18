@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-07T13:37:54+00:00",
+  "translation_date": "2025-07-17T06:18:41+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "fa"
 }
 -->
 ## تنظیم دقیق با Kaito
 
-[Kaito](https://github.com/Azure/kaito) یک اپراتور است که استقرار مدل‌های استنتاج AI/ML را در یک خوشه Kubernetes به‌صورت خودکار انجام می‌دهد.
+[Kaito](https://github.com/Azure/kaito) یک اپراتور است که استقرار مدل‌های استنتاج AI/ML را در یک کلاستر Kubernetes به‌صورت خودکار انجام می‌دهد.
 
-Kaito در مقایسه با بیشتر روش‌های متداول استقرار مدل که روی زیرساخت‌های ماشین مجازی ساخته شده‌اند، تفاوت‌های کلیدی زیر را دارد:
+Kaito نسبت به بیشتر روش‌های رایج استقرار مدل که بر پایه زیرساخت‌های ماشین مجازی ساخته شده‌اند، تفاوت‌های کلیدی زیر را دارد:
 
-- مدیریت فایل‌های مدل با استفاده از ایمیج‌های کانتینری. یک سرور http فراهم شده تا فراخوانی‌های استنتاج با استفاده از کتابخانه مدل انجام شود.
-- جلوگیری از تنظیم دستی پارامترهای استقرار برای تطبیق با سخت‌افزار GPU با ارائه تنظیمات پیش‌فرض.
-- تخصیص خودکار گره‌های GPU بر اساس نیازهای مدل.
-- میزبانی ایمیج‌های بزرگ مدل در Microsoft Container Registry (MCR) عمومی در صورت اجازه داشتن مجوز.
+- مدیریت فایل‌های مدل با استفاده از ایمیج‌های کانتینر. یک سرور http فراهم شده است تا فراخوانی‌های استنتاج با استفاده از کتابخانه مدل انجام شود.
+- جلوگیری از تنظیم پارامترهای استقرار برای تطبیق با سخت‌افزار GPU با ارائه پیکربندی‌های پیش‌فرض.
+- تأمین خودکار نودهای GPU بر اساس نیازهای مدل.
+- میزبانی ایمیج‌های مدل بزرگ در رجیستری عمومی Microsoft Container Registry (MCR) در صورت اجازه مجوز.
 
-با استفاده از Kaito، روند وارد کردن مدل‌های بزرگ استنتاج AI در Kubernetes تا حد زیادی ساده شده است.
+با استفاده از Kaito، روند وارد کردن مدل‌های بزرگ استنتاج AI در Kubernetes به طور قابل توجهی ساده‌تر می‌شود.
 
 ## معماری
 
-Kaito از الگوی طراحی کلاسیک Kubernetes Custom Resource Definition (CRD)/controller پیروی می‌کند. کاربر یک منبع سفارشی `workspace` را مدیریت می‌کند که نیازهای GPU و مشخصات استنتاج را توصیف می‌کند. کنترلرهای Kaito با تطبیق منبع سفارشی `workspace` به صورت خودکار استقرار را انجام می‌دهند.
+Kaito از الگوی طراحی کلاسیک Kubernetes Custom Resource Definition (CRD) / کنترلر پیروی می‌کند. کاربر یک منبع سفارشی `workspace` را مدیریت می‌کند که نیازهای GPU و مشخصات استنتاج را توصیف می‌کند. کنترلرهای Kaito با تطبیق منبع سفارشی `workspace`، استقرار را به‌صورت خودکار انجام می‌دهند.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="معماری Kaito" alt="معماری Kaito">
 </div>
 
 شکل بالا نمای کلی معماری Kaito را نشان می‌دهد. اجزای اصلی آن شامل موارد زیر است:
 
-- **کنترلر Workspace**: این کنترلر منبع سفارشی `workspace` را تطبیق می‌دهد، منابع سفارشی `machine` (که در ادامه توضیح داده می‌شود) را برای فعال‌سازی تخصیص خودکار گره ایجاد می‌کند و بار کاری استنتاج (`deployment` یا `statefulset`) را بر اساس تنظیمات پیش‌فرض مدل ایجاد می‌کند.
-- **کنترلر Node provisioner**: نام این کنترلر *gpu-provisioner* است که در [نقشه helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) یافت می‌شود. این کنترلر از CRD `machine` که از [Karpenter](https://sigs.k8s.io/karpenter) منشأ گرفته، برای تعامل با کنترلر workspace استفاده می‌کند. همچنین با APIهای Azure Kubernetes Service (AKS) یکپارچه شده و گره‌های GPU جدید را به خوشه AKS اضافه می‌کند.
-> نکته: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) یک مؤلفه متن‌باز است. در صورتی که کنترلرهای دیگر از APIهای [Karpenter-core](https://sigs.k8s.io/karpenter) پشتیبانی کنند، می‌توانند جایگزین آن شوند.
+- **کنترلر Workspace**: این کنترلر منبع سفارشی `workspace` را تطبیق می‌دهد، منابع سفارشی `machine` (که در ادامه توضیح داده شده) را برای فعال‌سازی تأمین خودکار نودها ایجاد می‌کند و بار کاری استنتاج (`deployment` یا `statefulset`) را بر اساس پیکربندی‌های پیش‌فرض مدل ایجاد می‌کند.
+- **کنترلر تأمین نود**: نام این کنترلر *gpu-provisioner* است که در [نمودار helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) قرار دارد. این کنترلر از CRD `machine` که از [Karpenter](https://sigs.k8s.io/karpenter) منشأ می‌گیرد، برای تعامل با کنترلر workspace استفاده می‌کند. همچنین با APIهای Azure Kubernetes Service (AKS) ادغام شده تا نودهای GPU جدید را به کلاستر AKS اضافه کند.
+> توجه: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) یک کامپوننت متن‌باز است. در صورت پشتیبانی کنترلرهای دیگر از APIهای [Karpenter-core](https://sigs.k8s.io/karpenter)، می‌توان آن را جایگزین کرد.
 
 ## ویدئوی معرفی  
-[مشاهده دمو Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+[تماشای دموی Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## نصب
 
-لطفاً راهنمای نصب را از [اینجا](https://github.com/Azure/kaito/blob/main/docs/installation.md) بررسی کنید.
+لطفاً راهنمای نصب را [اینجا](https://github.com/Azure/kaito/blob/main/docs/installation.md) بررسی کنید.
 
 ## شروع سریع
 
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-وضعیت workspace را می‌توان با اجرای دستور زیر پیگیری کرد. زمانی که ستون WORKSPACEREADY مقدار `True` شود، مدل با موفقیت مستقر شده است.
+وضعیت workspace را می‌توان با اجرای دستور زیر پیگیری کرد. وقتی ستون WORKSPACEREADY مقدار `True` را نشان داد، مدل با موفقیت مستقر شده است.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-سپس می‌توان آدرس IP کلاستر سرویس استنتاج را یافت و با استفاده از یک پاد موقتی `curl` نقطه پایانی سرویس در کلاستر را آزمایش کرد.
+سپس می‌توان آدرس IP کلاستر سرویس استنتاج را پیدا کرد و با استفاده از یک پاد موقتی `curl`، نقطه انتهایی سرویس را در کلاستر آزمایش کرد.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -113,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان مادری آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا برداشت نادرستی که ناشی از استفاده از این ترجمه باشد، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.

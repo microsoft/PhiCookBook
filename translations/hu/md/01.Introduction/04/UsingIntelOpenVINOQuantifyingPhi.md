@@ -2,28 +2,29 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T14:01:39+00:00",
+  "translation_date": "2025-07-16T22:03:40+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "hu"
 }
 -->
-# **Phi-3.5 kvantálása Intel OpenVINO használatával**
+# **Phi-3.5 kvantálása Intel OpenVINO segítségével**
 
-Az Intel a legismertebb CPU gyártó, sok felhasználóval. A gépi tanulás és a mélytanulás térnyerésével az Intel is bekapcsolódott az AI gyorsítás versenyébe. A modell inferencia során az Intel nem csak GPU-kat és CPU-kat használ, hanem NPU-kat is.
+Az Intel a legtradicionálisabb CPU gyártó, sok felhasználóval. A gépi tanulás és mélytanulás térnyerésével az Intel is beszállt az AI gyorsítás versenyébe. A modell inferenciához az Intel nemcsak GPU-kat és CPU-kat használ, hanem NPU-kat is.
 
-Célunk, hogy a Phi-3.x családot az élő oldalon telepítsük, és ezáltal az AI PC és Copilot PC legfontosabb részévé váljunk. A modell betöltése az élő oldalon különböző hardvergyártók együttműködésétől függ. Ez a fejezet elsősorban az Intel OpenVINO kvantált modell alkalmazási esetére fókuszál.
+Reméljük, hogy a Phi-3.x családot az élő oldalon tudjuk telepíteni, és ez válik majd az AI PC és Copilot PC legfontosabb részévé. A modell betöltése az élő oldalon különböző hardvergyártók együttműködésétől függ. Ez a fejezet elsősorban az Intel OpenVINO kvantált modell alkalmazási forgatóköreit tárgyalja.
+
 
 ## **Mi az OpenVINO**
 
-Az OpenVINO egy nyílt forráskódú eszközkészlet, amely a mélytanulási modellek optimalizálását és telepítését teszi lehetővé a felhőtől az élő eszközökig. Gyorsítja a mélytanulási inferenciát különböző felhasználási területeken, mint például generatív AI, videó, hang és nyelv, népszerű keretrendszerekből származó modellekkel, mint a PyTorch, TensorFlow, ONNX és mások. Lehetővé teszi a modellek átalakítását és optimalizálását, valamint telepítését Intel® hardvereken és különböző környezetekben, helyben vagy eszközön, böngészőben vagy felhőben.
+Az OpenVINO egy nyílt forráskódú eszközkészlet, amely a mélytanulási modellek optimalizálására és telepítésére szolgál a felhőtől az élő eszközökig. Gyorsítja a mélytanulási inferenciát különféle felhasználási területeken, mint például generatív AI, videó, hang és nyelv, népszerű keretrendszerekből származó modellekkel, mint a PyTorch, TensorFlow, ONNX és mások. Átalakítja és optimalizálja a modelleket, majd telepíti azokat különféle Intel® hardvereken és környezetekben, helyben vagy eszközön, böngészőben vagy a felhőben.
 
-Most az OpenVINO segítségével gyorsan kvantálhatod a GenAI modellt Intel hardveren, és felgyorsíthatod a modell referenciát.
+Az OpenVINO segítségével most gyorsan kvantálhatod a GenAI modellt Intel hardveren, és felgyorsíthatod a modell referenciát.
 
 Jelenleg az OpenVINO támogatja a Phi-3.5-Vision és Phi-3.5 Instruct kvantálási átalakítását.
 
-### **Környezeti beállítás**
+### **Környezet beállítása**
 
-Kérjük, győződj meg róla, hogy az alábbi környezeti függőségek telepítve vannak, ez a requirement.txt
+Kérjük, győződj meg róla, hogy a következő környezeti függőségek telepítve vannak, ez a requirement.txt
 
 ```txt
 
@@ -40,6 +41,7 @@ openvino-genai>=2024.3.0.0
 
 Terminálban futtasd ezt a szkriptet
 
+
 ```bash
 
 
@@ -54,7 +56,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ### **Phi-3.5-Vision kvantálása OpenVINO-val**
 
-Futtasd ezt a szkriptet Pythonban vagy Jupyter labban
+Pythonban vagy Jupyter labben futtasd ezt a szkriptet
 
 ```python
 
@@ -92,18 +94,19 @@ if not out_dir.exists():
 
 ### **🤖 Phi-3.5 minták Intel OpenVINO-val**
 
-| Laborok | Bemutatás | Indítás |
-| -------- | ------- | ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | Tanuld meg, hogyan használd a Phi-3.5 Instructot az AI PC-den    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (kép) | Tanuld meg, hogyan elemezheted a képeket Phi-3.5 Vision segítségével az AI PC-den      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (videó)   | Tanuld meg, hogyan elemezheted a videókat Phi-3.5 Vision segítségével az AI PC-den    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| Laborok    | Bemutatás | Indítás |
+| -------- | ------- |  ------- |
+| 🚀 Lab-Bemutató Phi-3.5 Instruct  | Ismerd meg, hogyan használd a Phi-3.5 Instructot az AI PC-den    |  [Indítás](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Bemutató Phi-3.5 Vision (kép) | Tanuld meg, hogyan elemezd a képeket Phi-3.5 Vision segítségével az AI PC-den      |  [Indítás](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Bemutató Phi-3.5 Vision (videó)   | Tanuld meg, hogyan elemezd a videókat Phi-3.5 Vision segítségével az AI PC-den    |  [Indítás](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+
 
 
 ## **Források**
 
 1. Tudj meg többet az Intel OpenVINO-ról [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
-2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
+2. Intel OpenVINO GitHub tárhely [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt szakmai, emberi fordítást igénybe venni. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

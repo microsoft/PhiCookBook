@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-07-09T20:12:01+00:00",
+  "translation_date": "2025-07-16T16:32:33+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
   "language_code": "uk"
 }
 -->
 # Журнал змін
 
-Всі значні зміни розширення "phi3ext" будуть зафіксовані в цьому файлі.
+Всі значущі зміни розширення "phi3ext" будуть зафіксовані в цьому файлі.
 
 Будь ласка, ознайомтеся з [Keep a Changelog](http://keepachangelog.com/) для порад щодо структурування цього файлу.
 

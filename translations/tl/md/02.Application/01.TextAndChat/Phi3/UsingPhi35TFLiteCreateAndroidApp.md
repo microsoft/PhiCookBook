@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:50:11+00:00",
+  "translation_date": "2025-07-17T02:54:20+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "tl"
 }
@@ -13,11 +13,11 @@ Ito ay isang Android sample gamit ang Microsoft Phi-3.5 tflite models.
 
 ## **📚 Kaalaman**
 
-Ang Android LLM Inference API ay nagpapahintulot sa'yo na patakbuhin ang malalaking language models (LLMs) nang buo sa device para sa mga Android application, na magagamit mo para sa iba't ibang gawain, tulad ng paggawa ng teksto, pagkuha ng impormasyon sa natural na wika, at pagbubuod ng mga dokumento. Ang task na ito ay may built-in na suporta para sa maraming text-to-text large language models, kaya maaari mong gamitin ang pinakabagong on-device generative AI models sa iyong mga Android apps.
+Pinapayagan ka ng Android LLM Inference API na patakbuhin ang malalaking language models (LLMs) nang buo sa device para sa mga Android application, na maaari mong gamitin para sa iba't ibang gawain tulad ng paggawa ng teksto, pagkuha ng impormasyon sa natural na wika, at pagbubuod ng mga dokumento. Ang task na ito ay may built-in na suporta para sa maraming text-to-text large language models, kaya maaari mong gamitin ang pinakabagong on-device generative AI models sa iyong mga Android app.
 
-Ang Googld AI Edge Torch ay isang python library na sumusuporta sa pag-convert ng PyTorch models papuntang .tflite format, na maaaring patakbuhin gamit ang TensorFlow Lite at MediaPipe. Pinapagana nito ang mga aplikasyon para sa Android, iOS, at IoT na kayang patakbuhin ang mga modelo nang buo sa device. Ang AI Edge Torch ay may malawak na suporta sa CPU, kasama ang panimulang suporta para sa GPU at NPU. Layunin ng AI Edge Torch na maging malapit ang integrasyon sa PyTorch, gamit ang torch.export() at nagbibigay ng mahusay na coverage sa Core ATen operators.
+Ang Googld AI Edge Torch ay isang python library na sumusuporta sa pag-convert ng PyTorch models sa .tflite format, na maaaring patakbuhin gamit ang TensorFlow Lite at MediaPipe. Pinapagana nito ang mga aplikasyon para sa Android, iOS, at IoT na kayang patakbuhin ang mga modelo nang buo sa device. Nagbibigay ang AI Edge Torch ng malawak na suporta sa CPU, kasama ang paunang suporta para sa GPU at NPU. Nilalayon ng AI Edge Torch na maging malapit ang integrasyon sa PyTorch, gamit ang torch.export() at nagbibigay ng mahusay na coverage sa Core ATen operators.
 
-## **🪬 Patnubay**
+## **🪬 Gabay**
 
 ### **🔥 I-convert ang Microsoft Phi-3.5 sa tflite support**
 
@@ -25,11 +25,11 @@ Ang Googld AI Edge Torch ay isang python library na sumusuporta sa pag-convert n
 
 1. I-install ang Python 3.10.12
 
-***Suhestiyon:*** gamitin ang conda para i-install ang iyong Python environment
+***Suhestiyon:*** gumamit ng conda para i-install ang iyong Python environment
 
-2. Ubuntu 20.04 / 22.04 (paki-tutok sa [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
+2. Ubuntu 20.04 / 22.04 (paki-pokus sa [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Suhestiyon:*** Gumamit ng Azure Linux VM o third party cloud vm para gumawa ng iyong environment
+***Suhestiyon:*** Gumamit ng Azure Linux VM o 3rd party cloud vm para gumawa ng iyong environment
 
 3. Pumunta sa iyong Linux bash, para i-install ang Python library
 
@@ -65,10 +65,9 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-
 ### **🔥 I-convert ang Microsoft Phi-3.5 sa Android Mediapipe Bundle**
 
-paki-install muna ang mediapipe
+pakilagay munang i-install ang mediapipe
 
 ```bash
 
@@ -95,7 +94,6 @@ bundler.create_bundle(config)
 
 ```
 
-
 ### **🔥 Gamitin ang adb push para ilagay ang task model sa path ng iyong Android device**
 
 ```bash
@@ -110,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Patakbuhin ang iyong Android code**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.tl.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.tl.png)
 
-**Pagtatanggol**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat aming pinagsisikapang maging tumpak, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

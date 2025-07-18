@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T12:59:46+00:00",
+  "translation_date": "2025-07-16T21:30:53+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "fi"
 }
 -->
-# Cross-platform inference with Rust
+# Ristiinalustainen päättely Rustilla
 
-Tämä opas ohjaa meidät läpi inferenssin suorittamisen Rustilla ja HuggingFacen [Candle ML -kehikolla](https://github.com/huggingface/candle). Rustin käyttö inferenssissä tarjoaa useita etuja, erityisesti verrattuna muihin ohjelmointikieliin. Rust tunnetaan korkeasta suorituskyvystään, joka on verrattavissa C:n ja C++:n tasoon. Tämä tekee siitä erinomaisen valinnan inferenssitehtäviin, jotka voivat olla laskennallisesti vaativia. Erityisesti tämä johtuu nollakustannuksisista abstraktioista ja tehokkaasta muistinhallinnasta, jossa ei ole roskienkeruusta aiheutuvaa ylimääräistä kuormitusta. Rustin monialustaiset ominaisuudet mahdollistavat koodin kehittämisen, joka toimii eri käyttöjärjestelmissä, kuten Windowsissa, macOS:ssä ja Linuxissa, sekä mobiilikäyttöjärjestelmissä ilman merkittäviä muutoksia koodipohjaan.
+Tämä opas ohjaa meitä suorittamaan päättelyn Rustilla ja HuggingFacen [Candle ML -kehikolla](https://github.com/huggingface/candle). Rustin käyttäminen päättelyssä tarjoaa useita etuja, erityisesti verrattuna muihin ohjelmointikieliin. Rust tunnetaan korkeasta suorituskyvystään, joka on verrattavissa C:n ja C++:n tasoon. Tämä tekee siitä erinomaisen valinnan päättelytehtäviin, jotka voivat olla laskennallisesti vaativia. Erityisesti tämä perustuu nollakustannuksellisiin abstraktioihin ja tehokkaaseen muistinhallintaan, jossa ei ole roskienkeruusta aiheutuvaa ylikuormitusta. Rustin ristiinalustaiset ominaisuudet mahdollistavat koodin kehittämisen, joka toimii eri käyttöjärjestelmissä, kuten Windowsissa, macOS:ssä ja Linuxissa, sekä mobiilikäyttöjärjestelmissä ilman merkittäviä muutoksia koodipohjaan.
 
-Edellytyksenä tämän oppaan seuraamiselle on [Rustin asentaminen](https://www.rust-lang.org/tools/install), joka sisältää Rust-kääntäjän ja Cargo-pakettienhallinnan.
+Tämän oppaan seuraamisen edellytys on [Rustin asentaminen](https://www.rust-lang.org/tools/install), joka sisältää Rust-kääntäjän ja Cargo-pakettienhallinnan.
 
 ## Vaihe 1: Luo uusi Rust-projekti
 
@@ -21,9 +21,9 @@ Luo uusi Rust-projekti suorittamalla seuraava komento terminaalissa:
 cargo new phi-console-app
 ```
 
-Tämä luo alkuperäisen projektirakenteen sisältäen `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Tämä luo alkuperäisen projektirakenteen, jossa on `Cargo.toml`-tiedosto ja `src`-hakemisto, joka sisältää `main.rs`-tiedoston.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml`-tiedoston:
+Seuraavaksi lisäämme riippuvuudet — nimittäin `candle`, `hf-hub` ja `tokenizers` -kirjastot — `Cargo.toml`-tiedostoon:
 
 ```toml
 [package]
@@ -41,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## Vaihe 2: Määritä perusparametrit
 
-`main.rs`-tiedostossa asetamme inferenssin alkuparametrit. Ne kovakoodataan yksinkertaisuuden vuoksi, mutta niitä voidaan muokata tarpeen mukaan.
+`main.rs`-tiedostossa asetamme päättelyn alkuparametrit. Ne kovakoodataan yksinkertaisuuden vuoksi, mutta niitä voi muokata tarpeen mukaan.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,13 +55,13 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: Ohjaa satunnaisuutta näytteistysprosessissa.
+- **temperature**: Ohjaa satunnaisuuden määrää näytteistysprosessissa.
 - **sample_len**: Määrittää luodun tekstin maksimipituuden.
-- **top_p**: Käytetään ydin-näytteistykseen rajoittamaan kunkin vaiheen huomioitavien tokenien määrää.
-- **repeat_last_n**: Hallitsee tokenien määrää, joihin toistuvuusrangaistus kohdistetaan toistuvien sekvenssien estämiseksi.
+- **top_p**: Käytetään ydinotannassa rajoittamaan kunkin askeleen tokenien määrää.
+- **repeat_last_n**: Määrittää tokenien määrän, joita käytetään rangaistuksen soveltamiseen toistuvien sekvenssien estämiseksi.
 - **repeat_penalty**: Rangaistusarvo toistuvien tokenien vähentämiseksi.
-- **seed**: Satunnainen siemen (voisimme käyttää vakioarvoa paremman toistettavuuden takaamiseksi).
-- **prompt**: Alkuperäinen kehoteteksti generoinnin aloittamiseksi. Huomaa, että pyydämme mallia luomaan haikun jääkiekosta ja ympäröimme sen erityisillä tokeneilla osoittamaan käyttäjän ja avustajan osat keskustelussa. Malli täydentää kehotteen haikulla.
+- **seed**: Satunnaissiementä (voisimme käyttää vakioarvoa paremman toistettavuuden vuoksi).
+- **prompt**: Alkuperäinen kehoteteksti generaation aloittamiseksi. Huomaa, että pyydämme mallia luomaan haikun jääkiekosta, ja ympäröimme sen erityisillä tokeneilla osoittaaksemme käyttäjän ja avustajan osat keskustelussa. Malli täydentää sitten kehotteen haikulla.
 - **device**: Tässä esimerkissä käytämme laskentaan CPU:ta. Candle tukee myös GPU:n käyttöä CUDA:n ja Metalin kautta.
 
 ## Vaihe 3: Lataa/valmistele malli ja tokenisoija
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Käytämme `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json`-tiedostoa syötteen tokenisointiin. Kun malli on ladattu, se välimuistitetaan, joten ensimmäinen suoritus on hidas (koska malli, joka on 2,4 Gt, ladataan), mutta myöhemmät suoritukset ovat nopeampia.
+Käytämme `hf_hub`-API:a ladataksemme mallin ja tokenisoijan tiedostot Hugging Facen mallivarastosta. `gguf`-tiedosto sisältää kvantisoidut mallipainot, kun taas `tokenizer.json`-tiedostoa käytetään syötteen tokenisointiin. Kun malli on ladattu, se välimuistitetaan, joten ensimmäinen suoritus on hidas (koska malli, jonka koko on 2,4 Gt, ladataan), mutta seuraavat suoritukset ovat nopeampia.
 
 ## Vaihe 4: Lataa malli
 
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Lataamme kvantisoidut mallipainot muistiin ja alustamme Phi-3-mallin. Tämä vaihe sisältää mallipainojen lukemisen `gguf`-tiedostosta ja mallin valmistelun inferenssiä varten määritetyllä laitteella (tässä tapauksessa CPU).
+Lataamme kvantisoidut mallipainot muistiin ja alustamme Phi-3-mallin. Tämä vaihe sisältää mallipainojen lukemisen `gguf`-tiedostosta ja mallin valmistelun päättelyä varten määritetyllä laitteella (tässä tapauksessa CPU).
 
-## Vaihe 5: Käsittele kehotetta ja valmistele inferenssiä varten
+## Vaihe 5: Käsittele kehotetta ja valmistaudu päättelyyn
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-Tässä vaiheessa tokenisoimme syötekehotteen ja valmistelemme sen inferenssiä varten muuntamalla sen token-ID -sekvenssiksi. Alustamme myös `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` -arvot. Jokainen token muunnetaan tensoriksi ja syötetään malliin logitsien saamiseksi.
+Tässä vaiheessa tokenisoimme syötekehotteen ja valmistelemme sen päättelyä varten muuntamalla sen token-ID-jonoksi. Alustamme myös `LogitsProcessor`-olion hallitsemaan näytteistysprosessia (todennäköisyysjakauma sanastosta) annettujen `temperature`- ja `top_p`-arvojen perusteella. Jokainen token muunnetaan tensoriin ja syötetään mallin läpi saadakseen logits-arvot.
 
 Silmukka käsittelee jokaisen kehotteen tokenin, päivittää logits-prosessorin ja valmistelee seuraavan tokenin generointia varten.
 
-## Vaihe 6: Inferenssi
+## Vaihe 6: Päättely
 
 ```rust
 for index in 0..to_sample {
@@ -160,9 +160,8 @@ for index in 0..to_sample {
 }
 ```
 
-Inferenssisilmukassa generoit tokenit yksi kerrallaan, kunnes saavutetaan haluttu näytteen pituus tai törmätään sekvenssin lopputokeniin. Seuraava token muunnetaan tensoriksi ja syötetään malliin, samalla kun logitit käsitellään rangaistusten ja näytteistyksen soveltamiseksi. Tämän jälkeen seuraava token valitaan, dekoodataan ja lisätään sekvenssiin.
-
-Toistuvien tekstien välttämiseksi toistuville tokeneille sovelletaan rangaistusta `repeat_last_n` and `repeat_penalty`-parametrien mukaisesti.
+Päättelysilmukassa generoimme tokeneita yksi kerrallaan, kunnes saavutamme halutun näytteen pituuden tai törmäämme loppusekvenssitokeniin. Seuraava token muunnetaan tensoriin ja syötetään mallin läpi, samalla kun logits-arvoja käsitellään rangaistusten ja näytteistyksen soveltamiseksi. Tämän jälkeen seuraava token valitaan, dekoodataan ja lisätään sekvenssiin.
+Toistuvan tekstin välttämiseksi toistuville tokeneille sovelletaan rangaistusta `repeat_last_n`- ja `repeat_penalty`-parametrien perusteella.
 
 Lopuksi generoitu teksti tulostetaan sitä mukaa kun se dekoodataan, mahdollistaen reaaliaikaisen suoratoiston.
 
@@ -192,9 +191,9 @@ Swish of sticks now alive.
 
 ## Yhteenveto
 
-Näitä vaiheita seuraamalla voimme suorittaa tekstin generoinnin Phi-3-mallilla Rustilla ja Candlella alle 100 rivillä koodia. Koodi hoitaa mallin lataamisen, tokenisoinnin ja inferenssin, hyödyntäen tensoreita ja logits-käsittelyä johdonmukaisen tekstin tuottamiseksi syötekehotteen perusteella.
+Noudattamalla näitä vaiheita voimme suorittaa tekstin generoinnin Phi-3-mallilla Rustilla ja Candlella alle 100 rivillä koodia. Koodi hoitaa mallin lataamisen, tokenisoinnin ja päättelyn hyödyntäen tensoreita ja logits-käsittelyä tuottaakseen johdonmukaista tekstiä syötekehotteen perusteella.
 
-Tämä konsolisovellus toimii Windowsissa, Linuxissa ja Mac OS:ssä. Rustin siirrettävyyden ansiosta koodi voidaan myös mukauttaa kirjastoksi, joka toimisi mobiilisovelluksissa (konsolisovelluksia ei voi kuitenkaan ajaa siellä).
+Tämä konsolisovellus toimii Windowsissa, Linuxissa ja Mac OS:ssä. Rustin siirrettävyyden ansiosta koodi voidaan myös mukauttaa kirjastoksi, joka toimisi mobiilisovelluksissa (konsolisovelluksia ei siellä kuitenkaan voi ajaa).
 
 ## Liite: koko koodi
 
@@ -305,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Huomautus: jos haluat suorittaa tämän koodin aarch64 Linuxilla tai aarch64 Windowsilla, lisää tiedosto nimeltä `.cargo/config`, jonka sisältö on seuraava:
+Huomautus: jotta tämä koodi toimii aarch64 Linuxissa tai aarch64 Windowsissa, lisää tiedosto nimeltä `.cargo/config`, jonka sisältö on seuraava:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -319,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Voit vierailla virallisessa [Candle-esimerkkien](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) arkistossa saadaksesi lisää esimerkkejä Phi-3-mallin käytöstä Rustin ja Candlen kanssa, mukaan lukien vaihtoehtoisia lähestymistapoja inferenssiin.
+> Voit vierailla virallisessa [Candle-esimerkit](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) -varastossa saadaksesi lisää esimerkkejä Phi-3-mallin käytöstä Rustin ja Candlen kanssa, mukaan lukien vaihtoehtoisia lähestymistapoja päättelyyn.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

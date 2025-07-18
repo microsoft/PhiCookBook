@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-05-08T05:17:08+00:00",
+  "translation_date": "2025-07-17T06:29:04+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "ja"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 MicrosoftのPhi-3 Mini言語モデルを、カスタムチャット指示データセットで[LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo)を用いてファインチューニングします。
 
-LoRAは会話の理解と応答生成の向上に役立ちます。
+LoRAは会話の理解力と応答生成の向上に役立ちます。
 
 ## Phi-3 Miniをファインチューニングする手順：
 
@@ -26,10 +26,11 @@ pip install loralib
 
 ```
 
-datasets、transformers、peft、trl、torchなどの必要なライブラリをインポートします。  
+datasets、transformers、peft、trl、torchなど必要なライブラリをインポートして始めます。  
 トレーニングの進行を追跡するためにログ設定を行います。
 
-一部のレイヤーをloralibで実装されたものに置き換えて適応させることも可能です。現在サポートしているのはnn.Linear、nn.Embedding、nn.Conv2dのみです。さらに、単一のnn.Linearが複数のレイヤーを表す場合（例：attentionのqkv投影の一部実装）に対応するMergedLinearもサポートしています（詳細は追加の注意事項を参照）。
+一部のレイヤーをloralibで実装された対応レイヤーに置き換えて適応させることも可能です。現在サポートしているのはnn.Linear、nn.Embedding、nn.Conv2dのみです。  
+また、単一のnn.Linearが複数のレイヤーを表す場合（例えば一部のattentionのqkvプロジェクション実装など）に対応するMergedLinearもサポートしています（詳細は追加の注意事項を参照）。
 
 ```
 # ===== Before =====
@@ -47,7 +48,7 @@ import loralib as lora
 layer = lora.Linear(in_features, out_features, r=16)
 ```
 
-トレーニングループが始まる前に、LoRAパラメータのみを学習可能に設定します。
+トレーニングループ開始前に、LoRAパラメータのみを学習可能にマークします。
 
 ```
 import loralib as lora
@@ -58,7 +59,7 @@ lora.mark_only_lora_as_trainable(model)
 for batch in dataloader:
 ```
 
-チェックポイントを保存するときは、LoRAパラメータだけを含むstate_dictを生成します。
+チェックポイントを保存する際は、LoRAパラメータのみを含むstate_dictを生成します。
 
 ```
 # ===== Before =====
@@ -82,18 +83,22 @@ model.load_state_dict(torch.load('ckpt_lora.pt'), strict=False)
 
 **ハイパーパラメータ**
 
-training_configとpeft_configの2つの辞書を定義します。training_configには学習率、バッチサイズ、ログ設定などのトレーニング用ハイパーパラメータを含みます。
+training_configとpeft_configの2つの辞書を定義します。  
+training_configには学習率、バッチサイズ、ログ設定などトレーニングに関するハイパーパラメータを含みます。
 
-peft_configにはLoRAに関するパラメータ（rank、dropout、タスクタイプなど）を指定します。
+peft_configはLoRAに関するパラメータ（ランク、ドロップアウト、タスクタイプなど）を指定します。
 
 **モデルとトークナイザーの読み込み**
 
-事前学習済みのPhi-3モデル（例："microsoft/Phi-3-mini-4k-instruct"）のパスを指定します。キャッシュの利用、データタイプ（混合精度のためbfloat16）、アテンションの実装などモデル設定を行います。
+事前学習済みPhi-3モデルのパス（例："microsoft/Phi-3-mini-4k-instruct"）を指定します。  
+モデル設定にはキャッシュの使用、データ型（混合精度用のbfloat16）、アテンションの実装方法などを含めます。
 
 **トレーニング**
 
-カスタムチャット指示データセットを使ってPhi-3モデルをファインチューニングします。peft_configのLoRA設定を活用し効率的に適応させます。指定したログ設定でトレーニングの進行を監視します。  
-評価と保存：ファインチューニングしたモデルを評価し、トレーニング中にチェックポイントを保存して後で利用できるようにします。
+カスタムチャット指示データセットを使ってPhi-3モデルをファインチューニングします。  
+peft_configのLoRA設定を活用して効率的に適応させます。  
+指定したログ戦略でトレーニングの進行を監視します。  
+評価と保存：ファインチューニング済みモデルを評価し、トレーニング中にチェックポイントを保存します。
 
 **サンプル**  
 - [このサンプルノートブックでさらに学ぶ](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
@@ -103,4 +108,4 @@ peft_configにはLoRAに関するパラメータ（rank、dropout、タスクタ
 - [Hugging Face HubでのQLORAファインチューニング例](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性を期していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。正式な情報源としては、原文のオリジナル言語の文書を参照してください。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤訳について、当方は一切責任を負いません。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

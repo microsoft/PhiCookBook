@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-05-07T13:43:12+00:00",
+  "translation_date": "2025-07-17T04:51:53+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "fr"
 }
@@ -13,13 +13,13 @@ Imaginez que vous avez une image (`demo.png`) et que vous souhaitez générer un
 
 Le code ci-dessus automatise ce processus en :
 
-1. Configurant l’environnement et les paramètres nécessaires.  
-2. Créant une invite qui demande au modèle de générer le code Python requis.  
-3. Envoyant l’invite au modèle et récupérant le code généré.  
-4. Extrait et exécute le code généré.  
+1. Configurant l’environnement et les paramètres nécessaires.
+2. Créant une invite qui demande au modèle de générer le code Python requis.
+3. Envoyant l’invite au modèle et récupérant le code généré.
+4. Extrait et exécutant le code généré.
 5. Affichant les images originale et traitée.
 
-Cette approche exploite la puissance de l’IA pour automatiser les tâches de traitement d’image, rendant leur réalisation plus simple et plus rapide.
+Cette approche exploite la puissance de l’IA pour automatiser les tâches de traitement d’image, rendant le processus plus simple et plus rapide.
 
 [Sample Code Solution](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
 
@@ -29,7 +29,7 @@ Décomposons ce que fait le code étape par étape :
     ```python
     !pip install langchain_nvidia_ai_endpoints -U
     ```  
-    Cette commande installe le package `langchain_nvidia_ai_endpoints`, en s’assurant d’avoir la dernière version.
+    Cette commande installe le package `langchain_nvidia_ai_endpoints`, en s’assurant qu’il s’agit de la dernière version.
 
 2. **Importer les modules nécessaires** :  
     ```python
@@ -38,14 +38,14 @@ Décomposons ce que fait le code étape par étape :
     import os
     import base64
     ```  
-    Ces importations incluent les modules nécessaires pour interagir avec les endpoints NVIDIA AI, gérer les mots de passe de manière sécurisée, interagir avec le système d’exploitation, et encoder/décoder des données en base64.
+    Ces imports chargent les modules nécessaires pour interagir avec les endpoints NVIDIA AI, gérer les mots de passe de manière sécurisée, interagir avec le système d’exploitation, et encoder/décoder des données en base64.
 
 3. **Configurer la clé API** :  
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
     ```  
-    Ce code vérifie si la variable d’environnement `NVIDIA_API_KEY` est définie. Sinon, il invite l’utilisateur à saisir sa clé API en toute sécurité.
+    Ce code vérifie si la variable d’environnement `NVIDIA_API_KEY` est définie. Sinon, il invite l’utilisateur à saisir sa clé API de manière sécurisée.
 
 4. **Définir le modèle et le chemin de l’image** :  
     ```python
@@ -69,7 +69,7 @@ Décomposons ce que fait le code étape par étape :
     ```  
     Ce code lit le fichier image, l’encode en base64, et crée une balise HTML image avec les données encodées.
 
-7. **Combiner texte et image dans l’invite** :  
+7. **Combiner le texte et l’image dans l’invite** :  
     ```python
     prompt = f"{text} {image}"
     ```  
@@ -82,7 +82,7 @@ Décomposons ce que fait le code étape par étape :
         print(chunk.content, end="")
         code += chunk.content
     ```  
-    Ce code envoie l’invite à `ChatNVIDIA` model and collects the generated code in chunks, printing and appending each chunk to the `code` string.
+    Ce code envoie l’invite au modèle `ChatNVIDIA` et récupère le code généré par morceaux, affichant et ajoutant chaque morceau à la variable `code`.
 
 9. **Extraire le code Python du contenu généré** :  
     ```python
@@ -109,4 +109,4 @@ Décomposons ce que fait le code étape par étape :
     Ces lignes affichent les images en utilisant le module `IPython.display`.
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-  "translation_date": "2025-05-07T11:05:56+00:00",
+  "translation_date": "2025-07-17T02:56:33+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
   "language_code": "es"
 }
 -->
-# Uso de GPU en Windows para crear una solución Prompt flow con Phi-3.5-Instruct ONNX
+# Usando GPU de Windows para crear una solución Prompt flow con Phi-3.5-Instruct ONNX
 
 El siguiente documento es un ejemplo de cómo usar PromptFlow con ONNX (Open Neural Network Exchange) para desarrollar aplicaciones de IA basadas en modelos Phi-3.
 
-PromptFlow es un conjunto de herramientas de desarrollo diseñadas para agilizar el ciclo completo de desarrollo de aplicaciones de IA basadas en LLM (Large Language Model), desde la ideación y el prototipado hasta las pruebas y la evaluación.
+PromptFlow es un conjunto de herramientas de desarrollo diseñadas para agilizar el ciclo completo de desarrollo de aplicaciones de IA basadas en LLM (Modelos de Lenguaje a Gran Escala), desde la ideación y el prototipado hasta las pruebas y la evaluación.
 
 Al integrar PromptFlow con ONNX, los desarrolladores pueden:
 
-- Optimizar el rendimiento del modelo: aprovechar ONNX para una inferencia y despliegue eficiente del modelo.
+- Optimizar el rendimiento del modelo: aprovechar ONNX para una inferencia y despliegue eficientes del modelo.
 - Simplificar el desarrollo: usar PromptFlow para gestionar el flujo de trabajo y automatizar tareas repetitivas.
 - Mejorar la colaboración: facilitar una mejor colaboración entre los miembros del equipo proporcionando un entorno de desarrollo unificado.
 
-**Prompt flow** es un conjunto de herramientas de desarrollo diseñado para agilizar el ciclo completo de desarrollo de aplicaciones de IA basadas en LLM, desde la ideación, prototipado, pruebas, evaluación hasta el despliegue en producción y monitoreo. Hace que la ingeniería de prompts sea mucho más sencilla y te permite construir aplicaciones LLM con calidad de producción.
+**Prompt flow** es un conjunto de herramientas de desarrollo diseñadas para agilizar el ciclo completo de desarrollo de aplicaciones de IA basadas en LLM, desde la ideación, prototipado, pruebas, evaluación hasta el despliegue en producción y monitoreo. Facilita mucho la ingeniería de prompts y te permite construir aplicaciones LLM con calidad de producción.
 
-Prompt flow puede conectarse a OpenAI, Azure OpenAI Service y modelos personalizables (Huggingface, LLM/SLM local). Esperamos desplegar el modelo ONNX cuantificado de Phi-3.5 en aplicaciones locales. Prompt flow puede ayudarnos a planificar mejor nuestro negocio y completar soluciones locales basadas en Phi-3.5. En este ejemplo, combinaremos la biblioteca ONNX Runtime GenAI para completar la solución Prompt flow basada en GPU de Windows.
+Prompt flow puede conectarse a OpenAI, Azure OpenAI Service y modelos personalizables (Huggingface, LLM/SLM locales). Esperamos desplegar el modelo ONNX cuantificado de Phi-3.5 en aplicaciones locales. Prompt flow puede ayudarnos a planificar mejor nuestro negocio y completar soluciones locales basadas en Phi-3.5. En este ejemplo, combinaremos ONNX Runtime GenAI Library para completar la solución Prompt flow basada en GPU de Windows.
 
 ## **Instalación**
 
-### **ONNX Runtime GenAI para GPU en Windows**
+### **ONNX Runtime GenAI para GPU de Windows**
 
-Lee esta guía para configurar ONNX Runtime GenAI para GPU en Windows [haz clic aquí](./ORTWindowGPUGuideline.md)
+Lee esta guía para configurar ONNX Runtime GenAI para GPU de Windows [haz clic aquí](./ORTWindowGPUGuideline.md)
 
 ### **Configurar Prompt flow en VSCode**
 
@@ -43,7 +43,7 @@ Lee esta guía para configurar ONNX Runtime GenAI para GPU en Windows [haz clic 
 
 ![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.es.png)
 
-4. Abre **flow.dag.yaml** para seleccionar tu entorno de Python
+4. Abre **flow.dag.yaml** para seleccionar tu entorno Python
 
 ![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.es.png)
 
@@ -61,7 +61,7 @@ Después de hacer clic, ejecútalo para probar
 
 ![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.es.png)
 
-1. Puedes ejecutar en batch desde la terminal para ver más resultados
+1. Puedes ejecutar en batch desde la terminal para revisar más resultados
 
 
 ```bash
@@ -70,10 +70,10 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 ```
 
-Puedes revisar los resultados en tu navegador predeterminado
+Puedes ver los resultados en tu navegador predeterminado
 
 
 ![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.es.png)
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por un humano. No nos responsabilizamos por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

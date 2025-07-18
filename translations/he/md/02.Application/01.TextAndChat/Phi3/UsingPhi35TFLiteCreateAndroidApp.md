@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:49:42+00:00",
+  "translation_date": "2025-07-17T02:53:45+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "he"
 }
@@ -13,25 +13,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **📚 ידע**
 
-Android LLM Inference API מאפשר להריץ מודלים גדולים של שפה (LLMs) בצורה מלאה במכשיר עבור אפליקציות אנדרואיד, מה שניתן להשתמש בו לביצוע מגוון רחב של משימות, כמו יצירת טקסט, שליפת מידע בצורה של שפה טבעית, וסיכום מסמכים. המשימה תומכת באופן מובנה במודלים גדולים של טקסט-לטקסט, כך שניתן להחיל את מודלי ה-AI הגנרטיביים העדכניים ביותר במכשיר על האפליקציות שלכם.
+Android LLM Inference API מאפשר לך להריץ מודלים גדולים של שפה (LLMs) באופן מלא במכשיר עבור אפליקציות אנדרואיד, אותם ניתן להשתמש למשימות מגוונות כמו יצירת טקסט, שליפת מידע בשפה טבעית, וסיכום מסמכים. המשימה תומכת במגוון מודלים גדולים של טקסט-לטקסט, כך שתוכל ליישם את המודלים החדישים של AI גנרטיבי במכשיר באפליקציות האנדרואיד שלך.
 
-Googld AI Edge Torch היא ספריית פייתון התומכת בהמרת מודלים מ-PyTorch לפורמט .tflite, שניתן להריץ עם TensorFlow Lite ו-MediaPipe. זה מאפשר אפליקציות לאנדרואיד, iOS ו-IoT שיכולות להריץ מודלים בצורה מלאה במכשיר. AI Edge Torch מציעה תמיכה רחבה ב-CPU, עם תמיכה ראשונית ב-GPU ו-NPU. AI Edge Torch שואפת להשתלב היטב עם PyTorch, מתבססת על torch.export() ומספקת תמיכה טובה באופרציות Core ATen.
+Google AI Edge Torch היא ספריית פייתון התומכת בהמרת מודלים של PyTorch לפורמט .tflite, שניתן להריץ באמצעות TensorFlow Lite ו-MediaPipe. זה מאפשר אפליקציות לאנדרואיד, iOS ו-IoT שיכולות להריץ מודלים באופן מלא במכשיר. AI Edge Torch מציעה תמיכה רחבה ב-CPU, עם תמיכה ראשונית ב-GPU ו-NPU. AI Edge Torch שואפת להשתלב היטב עם PyTorch, מתבססת על torch.export() ומספקת תמיכה טובה במפעילי Core ATen.
 
 ## **🪬 הנחיות**
 
 ### **🔥 המרת Microsoft Phi-3.5 לתמיכה ב-tflite**
 
-0. הדוגמה מיועדת ל-Android 14+
+0. דוגמה זו מיועדת ל-Android 14+
 
 1. התקן Python 3.10.12
 
 ***המלצה:*** השתמש ב-conda להתקנת סביבת הפייתון שלך
 
-2. Ubuntu 20.04 / 22.04 (יש להתמקד ב-[google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
+2. Ubuntu 20.04 / 22.04 (אנא התרכז ב-[google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
 ***המלצה:*** השתמש ב-Azure Linux VM או ב-VM בענן צד שלישי ליצירת הסביבה שלך
 
-3. עבור לטרמינל הלינוקס שלך, להתקנת ספריית פייתון
+3. עבור ל-Linux bash שלך, להתקנת ספריית פייתון
 
 ```bash
 
@@ -65,7 +65,7 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 המרת Microsoft Phi-3.5 ל-Mediapipe Bundle לאנדרואיד**
+### **🔥 המרת Microsoft Phi-3.5 ל-Android Mediapipe Bundle**
 
 אנא התקן את mediapipe תחילה
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-הפעל את הקוד הזה ב-[המחברת שלך](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
+הרץ את הקוד הזה ב-[המחברת שלך](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
 
 ```python
 
@@ -106,9 +106,9 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ```
 
-### **🔥 הרצת קוד האנדרואיד שלך**
+### **🔥 הרצת הקוד שלך באנדרואיד**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.he.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.he.png)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש להיות מודעים לכך שתירגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו צריך להיחשב כמקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי של אדם. אנו לא אחראים לכל אי-הבנות או פרשנויות שגויות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

@@ -2,52 +2,52 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:33:16+00:00",
+  "translation_date": "2025-07-17T07:43:08+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "sk"
 }
 -->
-## Ako používať chat-completion komponenty zo systému Azure ML registry na doladenie modelu
+## Ako používať komponenty chat-completion zo systémového registra Azure ML na doladenie modelu
 
-V tomto príklade budeme doladiť model Phi-3-mini-4k-instruct, aby dokončil konverzáciu medzi 2 osobami pomocou datasetu ultrachat_200k.
+V tomto príklade vykonáme doladenie modelu Phi-3-mini-4k-instruct na dokončenie konverzácie medzi dvoma ľuďmi pomocou datasetu ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.sk.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.sk.png)
 
-Príklad vám ukáže, ako vykonať doladenie pomocou Azure ML SDK a Pythonu, a následne nasadiť doladený model na online endpoint pre inferenciu v reálnom čase.
+Príklad vám ukáže, ako vykonať doladenie pomocou Azure ML SDK a Pythonu a následne nasadiť doladený model na online endpoint pre inferenciu v reálnom čase.
 
 ### Tréningové dáta
 
-Použijeme dataset ultrachat_200k. Ide o výrazne filtrovanú verziu UltraChat datasetu, ktorý sa použil na trénovanie modelu Zephyr-7B-β, špičkového 7b chat modelu.
+Použijeme dataset ultrachat_200k. Ide o výrazne filtrovanú verziu datasetu UltraChat, ktorý bol použitý na trénovanie modelu Zephyr-7B-β, špičkového 7b chat modelu.
 
 ### Model
 
-Použijeme model Phi-3-mini-4k-instruct, aby sme ukázali, ako si používateľ môže doladiť model pre úlohu chat-completion. Ak ste otvorili tento notebook zo špecifickej modelovej karty, nezabudnite nahradiť názov modelu.
+Použijeme model Phi-3-mini-4k-instruct, aby sme ukázali, ako môže používateľ doladiť model pre úlohu chat-completion. Ak ste otvorili tento notebook z konkrétnej modelovej karty, nezabudnite nahradiť názov modelu.
 
 ### Úlohy
 
 - Vybrať model na doladenie.
 - Vybrať a preskúmať tréningové dáta.
-- Nakonfigurovať doladenie.
-- Spustiť doladenie.
-- Skontrolovať tréningové a evaluačné metriky.
+- Nakonfigurovať úlohu doladenia.
+- Spustiť úlohu doladenia.
+- Skontrolovať metriky tréningu a vyhodnotenia.
 - Zaregistrovať doladený model.
 - Nasadiť doladený model pre inferenciu v reálnom čase.
-- Vyčistiť zdroje.
+- Uvoľniť zdroje.
 
 ## 1. Nastavenie predpokladov
 
 - Nainštalovať závislosti
 - Pripojiť sa k AzureML Workspace. Viac informácií nájdete v nastavení autentifikácie SDK. Nahradiť <WORKSPACE_NAME>, <RESOURCE_GROUP> a <SUBSCRIPTION_ID> nižšie.
-- Pripojiť sa k azureml systémovému registru
+- Pripojiť sa k systémovému registru azureml
 - Nastaviť voliteľný názov experimentu
-- Skontrolovať alebo vytvoriť výpočtové prostredie.
+- Skontrolovať alebo vytvoriť výpočtový zdroj.
 
 > [!NOTE]
-> Požiadavky: jeden GPU uzol môže mať viac GPU kariet. Napríklad, uzol Standard_NC24rs_v3 má 4 NVIDIA V100 GPU, zatiaľ čo Standard_NC12s_v3 má 2 NVIDIA V100 GPU. Podrobnosti nájdete v dokumentácii. Počet GPU kariet na uzol sa nastavuje v parametri gpus_per_node nižšie. Správne nastavenie zabezpečí využitie všetkých GPU v uzle. Odporúčané GPU compute SKU nájdete tu a tu.
+> Požiadavky: jeden GPU uzol môže mať viacero GPU kariet. Napríklad v jednom uzle Standard_NC24rs_v3 sú 4 NVIDIA V100 GPU, zatiaľ čo v Standard_NC12s_v3 sú 2 NVIDIA V100 GPU. Pre viac informácií pozrite dokumentáciu. Počet GPU kariet na uzol je nastavený v parametri gpus_per_node nižšie. Správne nastavenie zabezpečí využitie všetkých GPU v uzle. Odporúčané GPU compute SKU nájdete tu a tu.
 
 ### Python knižnice
 
-Nainštalujte závislosti spustením nasledujúcej bunky. Tento krok nie je voliteľný, ak bežíte v novom prostredí.
+Nainštalujte závislosti spustením nasledujúcej bunky. Tento krok nie je voliteľný pri spustení v novom prostredí.
 
 ```bash
 pip install azure-ai-ml
@@ -59,19 +59,19 @@ pip install azureml-mlflow
 
 ### Interakcia s Azure ML
 
-1. Tento Python skript slúži na interakciu so službou Azure Machine Learning (Azure ML). Tu je rozpis, čo robí:
+1. Tento Python skript slúži na interakciu so službou Azure Machine Learning (Azure ML). Tu je prehľad jeho funkcií:
 
     - Importuje potrebné moduly z balíkov azure.ai.ml, azure.identity a azure.ai.ml.entities. Tiež importuje modul time.
 
-    - Pokúša sa autentifikovať pomocou DefaultAzureCredential(), ktorý zjednodušuje autentifikáciu pre rýchly vývoj aplikácií bežiacich v Azure cloude. Ak to zlyhá, použije InteractiveBrowserCredential(), ktorý zobrazí interaktívne prihlasovacie okno.
+    - Pokúša sa autentifikovať pomocou DefaultAzureCredential(), ktorý poskytuje zjednodušený spôsob autentifikácie pre rýchly štart vývoja aplikácií bežiacich v Azure cloude. Ak to zlyhá, použije InteractiveBrowserCredential(), ktorý poskytuje interaktívne prihlasovacie okno.
 
-    - Pokúša sa vytvoriť inštanciu MLClient pomocou from_config metódy, ktorá číta konfiguráciu z predvoleného konfiguračného súboru (config.json). Ak to zlyhá, vytvorí MLClient manuálnym poskytnutím subscription_id, resource_group_name a workspace_name.
+    - Následne sa pokúša vytvoriť inštanciu MLClient pomocou metódy from_config, ktorá načíta konfiguráciu z predvoleného konfiguračného súboru (config.json). Ak to zlyhá, vytvorí MLClient manuálnym zadaním subscription_id, resource_group_name a workspace_name.
 
-    - Vytvorí ďalšiu inštanciu MLClient, tentokrát pre Azure ML register s názvom "azureml". Tento register uchováva modely, doladenia a prostredia.
+    - Vytvorí ďalšiu inštanciu MLClient, tentokrát pre Azure ML register s názvom "azureml". Tento register slúži na ukladanie modelov, pipeline pre doladenie a prostredí.
 
     - Nastaví experiment_name na "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Vygeneruje jedinečný timestamp konverziou aktuálneho času (v sekundách od epochy, ako float) na celé číslo a potom na reťazec. Tento timestamp sa môže použiť na vytváranie jedinečných mien a verzií.
+    - Vygeneruje unikátny časový údaj prevodom aktuálneho času (v sekundách od epochy, ako desatinné číslo) na celé číslo a následne na reťazec. Tento časový údaj sa dá použiť na vytváranie unikátnych názvov a verzií.
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -114,18 +114,18 @@ pip install azureml-mlflow
 
 ## 2. Výber základného modelu na doladenie
 
-1. Phi-3-mini-4k-instruct je model s 3,8 miliardami parametrov, ľahký, špičkový open model postavený na dátach použitých pre Phi-2. Model patrí do rodiny Phi-3 a Mini verzia prichádza v dvoch variantoch 4K a 128K, čo je dĺžka kontextu (v tokenoch), ktorú môže podporovať. Model je potrebné doladiť pre náš konkrétny účel. Tieto modely si môžete prezrieť v Model Catalog v AzureML Studiu, filtrovaním podľa úlohy chat-completion. V tomto príklade používame model Phi-3-mini-4k-instruct. Ak ste otvorili tento notebook pre iný model, nahraďte názov modelu a verziu.
+1. Phi-3-mini-4k-instruct je model s 3,8 miliardami parametrov, ľahký, špičkový open model založený na datasetoch použitých pre Phi-2. Model patrí do rodiny Phi-3 a Mini verzia prichádza v dvoch variantoch 4K a 128K, čo je dĺžka kontextu (v tokenoch), ktorú dokáže spracovať. Model je potrebné doladiť pre náš konkrétny účel. Tieto modely si môžete prezrieť v Model Catalog v AzureML Studio, filtrované podľa úlohy chat-completion. V tomto príklade používame model Phi-3-mini-4k-instruct. Ak ste otvorili tento notebook pre iný model, nahraďte názov a verziu modelu podľa potreby.
 
     > [!NOTE]
-    > id modelu je vlastnosť modelu. Táto hodnota sa odovzdáva ako vstup do doladenia. Je tiež dostupná ako Asset ID na stránke detailov modelu v AzureML Studio Model Catalog.
+    > vlastnosť model_id modelu. Táto hodnota sa odovzdáva ako vstup do úlohy doladenia. Je tiež dostupná ako pole Asset ID na stránke detailov modelu v Model Catalog AzureML Studio.
 
-2. Tento Python skript komunikuje so službou Azure Machine Learning (Azure ML). Tu je, čo robí:
+2. Tento Python skript komunikuje so službou Azure Machine Learning (Azure ML). Tu je prehľad jeho funkcií:
 
     - Nastaví model_name na "Phi-3-mini-4k-instruct".
 
-    - Použije metódu get z vlastnosti models objektu registry_ml_client na získanie najnovšej verzie modelu s daným názvom z Azure ML registra. Metóda get sa volá s dvoma argumentmi: názvom modelu a štítkom, ktorý určuje, že má byť získaná najnovšia verzia modelu.
+    - Použije metódu get z vlastnosti models objektu registry_ml_client na získanie najnovšej verzie modelu s daným názvom zo systémového registra Azure ML. Metóda get sa volá s dvoma argumentmi: názvom modelu a štítkom, ktorý špecifikuje, že sa má získať najnovšia verzia modelu.
 
-    - Vypíše správu do konzoly s názvom, verziou a id modelu, ktorý sa použije na doladenie. Na formátovanie správy sa používa metóda format reťazca. Názov, verzia a id modelu sa získavajú ako vlastnosti objektu foundation_model.
+    - Vypíše správu do konzoly, ktorá uvádza názov, verziu a id modelu, ktorý bude použitý na doladenie. Metóda format reťazca sa používa na vloženie názvu, verzie a id modelu do správy. Názov, verzia a id modelu sú prístupné ako vlastnosti objektu foundation_model.
 
     ```python
     # Set the model name
@@ -143,27 +143,27 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. Vytvorenie výpočtového prostredia pre job
+## 3. Vytvorenie výpočtového zdroja pre úlohu
 
-Doladenie funguje IBA s GPU výpočtom. Veľkosť výpočtu závisí od veľkosti modelu a často je ťažké vybrať správny výpočet pre job. V tejto bunke pomáhame používateľovi vybrať správny výpočet.
-
-> [!NOTE]
-> Nižšie uvedené výpočty fungujú s najoptimalizovanejšou konfiguráciou. Akékoľvek zmeny môžu spôsobiť chybu Cuda Out Of Memory. V takom prípade skúste upgradovať výpočet na väčší.
+Úloha doladenia funguje IBA s GPU výpočtom. Veľkosť výpočtu závisí od veľkosti modelu a vo väčšine prípadov je náročné vybrať správny výpočtový zdroj pre úlohu. V tejto bunke používateľa navedieme, ako vybrať správny výpočtový zdroj.
 
 > [!NOTE]
-> Pri výbere compute_cluster_size nižšie sa uistite, že výpočet je dostupný vo vašej resource group. Ak nie je, môžete požiadať o prístup k výpočtovým zdrojom.
+> Nižšie uvedené výpočtové zdroje pracujú s najoptimalizovanejšou konfiguráciou. Akékoľvek zmeny konfigurácie môžu viesť k chybe Cuda Out Of Memory. V takých prípadoch skúste upgradovať výpočtový zdroj na väčší.
 
-### Kontrola podpory doladenia modelu
+> [!NOTE]
+> Pri výbere compute_cluster_size nižšie sa uistite, že výpočtový zdroj je dostupný vo vašej resource group. Ak nie je dostupný, môžete požiadať o prístup k výpočtovým zdrojom.
 
-1. Tento Python skript komunikuje s modelom Azure Machine Learning (Azure ML). Tu je, čo robí:
+### Kontrola podpory modelu pre doladenie
 
-    - Importuje modul ast, ktorý poskytuje funkcie na spracovanie stromov Python abstraktnej syntaxe.
+1. Tento Python skript komunikuje s modelom Azure Machine Learning (Azure ML). Tu je prehľad jeho funkcií:
 
-    - Kontroluje, či objekt foundation_model (reprezentujúci model v Azure ML) obsahuje tag s názvom finetune_compute_allow_list. Tagy v Azure ML sú kľúč-hodnota páry, ktoré môžete vytvárať a používať na filtrovanie a triedenie modelov.
+    - Importuje modul ast, ktorý poskytuje funkcie na spracovanie stromov abstraktnej syntaxe Pythonu.
 
-    - Ak tag finetune_compute_allow_list existuje, použije ast.literal_eval na bezpečné parsovanie hodnoty tagu (reťazec) do Python zoznamu. Tento zoznam priradí premennej computes_allow_list a vypíše správu, že by sa mal vytvoriť výpočet z tohto zoznamu.
+    - Kontroluje, či objekt foundation_model (ktorý reprezentuje model v Azure ML) má tag s názvom finetune_compute_allow_list. Tagy v Azure ML sú kľúč-hodnota páry, ktoré môžete vytvárať a používať na filtrovanie a triedenie modelov.
 
-    - Ak tag neexistuje, nastaví computes_allow_list na None a vypíše správu, že tag nie je súčasťou tagov modelu.
+    - Ak je tag finetune_compute_allow_list prítomný, použije funkciu ast.literal_eval na bezpečné parsovanie hodnoty tagu (reťazec) do Python zoznamu. Tento zoznam sa priradí do premennej computes_allow_list. Následne vypíše správu, že by sa mal vytvoriť výpočtový zdroj zo zoznamu.
+
+    - Ak tag finetune_compute_allow_list nie je prítomný, nastaví computes_allow_list na None a vypíše správu, že tag nie je súčasťou tagov modelu.
 
     - Skript teda kontroluje špecifický tag v metadátach modelu, konvertuje jeho hodnotu na zoznam, ak existuje, a poskytuje používateľovi spätnú väzbu.
 
@@ -188,19 +188,19 @@ Doladenie funguje IBA s GPU výpočtom. Veľkosť výpočtu závisí od veľkost
 
 ### Kontrola výpočtovej inštancie
 
-1. Tento Python skript komunikuje so službou Azure Machine Learning (Azure ML) a vykonáva viaceré kontroly na výpočtovej inštancii. Tu je, čo robí:
+1. Tento Python skript komunikuje so službou Azure Machine Learning (Azure ML) a vykonáva niekoľko kontrol výpočtovej inštancie. Tu je prehľad jeho funkcií:
 
-    - Pokúša sa získať výpočtovú inštanciu s názvom uloženým v premennej compute_cluster z Azure ML workspace. Ak je stav provisioning "failed", vyvolá ValueError.
+    - Pokúša sa získať výpočtovú inštanciu s názvom uloženým v compute_cluster z Azure ML workspace. Ak je stav provisioning tejto inštancie "failed", vyvolá ValueError.
 
-    - Kontroluje, či computes_allow_list nie je None. Ak nie je, prevedie všetky veľkosti výpočtu v zozname na malé písmená a skontroluje, či veľkosť aktuálnej výpočtovej inštancie je v zozname. Ak nie je, vyvolá ValueError.
+    - Kontroluje, či computes_allow_list nie je None. Ak nie je, prevedie všetky veľkosti výpočtov v zozname na malé písmená a skontroluje, či veľkosť aktuálnej výpočtovej inštancie je v zozname. Ak nie je, vyvolá ValueError.
 
-    - Ak computes_allow_list je None, skontroluje, či veľkosť výpočtovej inštancie je v zozname nepodporovaných GPU VM veľkostí. Ak áno, vyvolá ValueError.
+    - Ak je computes_allow_list None, skontroluje, či veľkosť výpočtovej inštancie je v zozname nepodporovaných GPU VM veľkostí. Ak áno, vyvolá ValueError.
 
-    - Získa zoznam všetkých dostupných veľkostí výpočtov v workspace. Pre každú veľkosť skontroluje, či sa jej názov zhoduje s veľkosťou aktuálnej inštancie. Ak áno, získa počet GPU pre túto veľkosť a nastaví gpu_count_found na True.
+    - Získa zoznam všetkých dostupných veľkostí výpočtov vo workspace. Prechádza tento zoznam a pre každú veľkosť kontroluje, či jej názov zodpovedá veľkosti aktuálnej výpočtovej inštancie. Ak áno, získa počet GPU pre túto veľkosť a nastaví gpu_count_found na True.
 
     - Ak je gpu_count_found True, vypíše počet GPU vo výpočtovej inštancii. Ak nie, vyvolá ValueError.
 
-    - Skript teda vykonáva viaceré kontroly na výpočtovej inštancii v Azure ML workspace, vrátane stavu provisioning, veľkosti podľa povoleného alebo zakázaného zoznamu a počtu GPU.
+    - Skript teda vykonáva niekoľko kontrol výpočtovej inštancie v Azure ML workspace, vrátane stavu provisioning, veľkosti voči povolenému alebo zakázanému zoznamu a počtu GPU.
 
     ```python
     # Print the exception message
@@ -271,7 +271,8 @@ Doladenie funguje IBA s GPU výpočtom. Veľkosť výpočtu závisí od veľkost
 
 ## 4. Výber datasetu pre doladenie modelu
 
-1. Používame dataset ultrachat_200k. Dataset má štyri časti, vhodné pre Supervised fine-tuning (sft). Generation ranking (gen). Počet príkladov v jednotlivých častiach je nasledovný:
+1. Používame dataset ultrachat_200k. Dataset má štyri časti, vhodné pre Supervised fine-tuning (sft).
+Generačné hodnotenie (gen). Počet príkladov v jednotlivých častiach je uvedený nasledovne:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
@@ -282,28 +283,28 @@ Doladenie funguje IBA s GPU výpočtom. Veľkosť výpočtu závisí od veľkost
 
 ### Vizualizácia niektorých riadkov dát
 
-Chceme, aby tento príklad bežal rýchlo, preto uložíme train_sft, test_sft súbory obsahujúce 5 % už orezaných riadkov. To znamená, že doladený model bude menej presný, preto by sa nemal používať v reálnom svete.  
-download-dataset.py sa používa na stiahnutie datasetu ultrachat_200k a transformáciu datasetu do formátu použiteľného v doladení. Keďže dataset je veľký, tu máme len časť datasetu.
+Chceme, aby sa tento príklad spustil rýchlo, preto uložíme súbory train_sft, test_sft obsahujúce 5 % už orezaných riadkov. To znamená, že doladený model bude mať nižšiu presnosť, preto by nemal byť použitý v reálnych aplikáciách.
+Skript download-dataset.py sa používa na stiahnutie datasetu ultrachat_200k a transformáciu datasetu do formátu použiteľného v pipeline pre doladenie. Keďže dataset je veľký, tu máme len časť datasetu.
 
-1. Spustením nasledujúceho skriptu sa stiahne len 5 % dát. Toto môžete zvýšiť zmenou parametra dataset_split_pc na požadované percento.
+1. Spustením nasledujúceho skriptu sa stiahne iba 5 % dát. Toto percento je možné zvýšiť zmenou parametra dataset_split_pc na požadovanú hodnotu.
 
     > [!NOTE]
-    > Niektoré jazykové modely majú rôzne jazykové kódy, preto by názvy stĺpcov v datasete mali zodpovedať týmto kódom.
+    > Niektoré jazykové modely používajú rôzne jazykové kódy, preto by názvy stĺpcov v datasete mali tieto kódy zodpovedajúcim spôsobom odrážať.
 
-1. Tu je príklad, ako by mali dáta vyzerať:  
-Dataset chat-completion je uložený vo formáte parquet, pričom každý záznam má nasledujúcu schému:
+1. Tu je príklad, ako by mali dáta vyzerať
+Dataset chat-completion je uložený vo formáte parquet, pričom každý záznam používa nasledujúcu schému:
 
-    - Ide o JSON (JavaScript Object Notation) dokument, populárny formát na výmenu dát. Nie je to vykonateľný kód, ale spôsob ukladania a prenosu dát. Tu je rozpis jeho štruktúry:
+    - Ide o JSON (JavaScript Object Notation) dokument, ktorý je populárnym formátom na výmenu dát. Nie je to spustiteľný kód, ale spôsob ukladania a prenosu dát. Tu je rozpis jeho štruktúry:
 
-    - "prompt": tento kľúč obsahuje reťazec, ktorý predstavuje úlohu alebo otázku pre AI asistenta.
+    - "prompt": Tento kľúč obsahuje reťazec, ktorý predstavuje úlohu alebo otázku položenú AI asistentovi.
 
-    - "messages": tento kľúč obsahuje pole objektov. Každý objekt predstavuje správu v konverzácii medzi používateľom a AI asistentom. Každá správa má dva kľúče:
+    - "messages": Tento kľúč obsahuje pole objektov. Každý objekt predstavuje správu v konverzácii medzi používateľom a AI asistentom. Každá správa má dva kľúče:
 
-    - "content": reťazec predstavujúci obsah správy.
-    - "role": reťazec predstavujúci rolu entity, ktorá správu poslala. Môže byť "user" alebo "assistant".
-    - "prompt_id": reťazec predstavujúci jedinečný identifikátor promptu.
+    - "content": Tento kľúč obsahuje reťazec, ktorý predstavuje obsah správy.
+    - "role": Tento kľúč obsahuje reťazec, ktorý predstavuje rolu entity, ktorá správu poslala. Môže to byť "user" alebo "assistant".
+    - "prompt_id": Tento kľúč obsahuje reťazec, ktorý predstavuje jedinečný identifikátor promptu.
 
-1. V tomto konkrétnom JSON dokumente je znázornená konverzácia, kde používateľ žiada AI asistenta, aby vytvoril protagonistu pre dystopický príbeh. Asistent odpovedá, používateľ žiada o viac detailov a asistent súhlasí ich poskytnúť. Celá konverzácia je priradená ku konkrétnemu prompt_id.
+1. V tomto konkrétnom JSON dokumente je reprezentovaná konverzácia, kde používateľ žiada AI asistenta o vytvorenie protagonistu pre dystopický príbeh. Asistent odpovedá a používateľ následne žiada o viac detailov. Asistent súhlasí poskytnúť viac detailov. Celá konverzácia je spojená s konkrétnym prompt_id.
 
     ```python
     {
@@ -343,17 +344,17 @@ Dataset chat-completion je uložený vo formáte parquet, pričom každý zázna
     }
     ```
 
-### Sťahovanie dát
+### Stiahnutie dát
 
-1. Tento Python skript slúži na stiahnutie datasetu pomocou pomocného skriptu download-dataset.py. Tu je, čo robí:
+1. Tento Python skript slúži na stiahnutie datasetu pomocou pomocného skriptu download-dataset.py. Tu je prehľad jeho funkcií:
 
-    - Importuje modul os, ktorý poskytuje prenositeľné funkcie závislé od operačného systému.
+    - Importuje modul os, ktorý poskytuje prenositeľný spôsob používania funkcií závislých od operačného systému.
 
-    - Používa os.system na spustenie skriptu download-dataset.py v shelli s konkrétnymi argumentmi príkazového riadku. Argumenty určujú dataset na stiahnutie (HuggingFaceH4/ultrachat_200k), adresár na uloženie (ultrachat_200k_dataset) a percento rozdelenia datasetu (5). Funkcia os.system vráti stav ukončenia príkazu, ktorý sa uloží do premennej exit_status.
+    - Používa funkciu os.system na spustenie skriptu download-dataset.py v shelli s konkrétnymi argumentmi príkazového riadku. Argumenty špecifikujú dataset na stiahnutie (HuggingFaceH4/ultrachat_200k), adresár na uloženie (ultrachat_200k_dataset) a percento rozdelenia datasetu (5). Funkcia os.system vracia výstupný stav príkazu, ktorý sa uloží do premennej exit_status.
 
-    - Kontroluje, či exit_status nie je 0. V Unix-like systémoch stav 0 znamená úspech, iné číslo chybu. Ak exit_status nie je 0, vyvolá výnimku s chybovou správou o chybe pri sťahovaní datasetu.
+    - Kontroluje, či exit_status nie je 0. V operačných systémoch podobných Unixu znamená stav 0 úspešné vykonanie príkazu, iné číslo znamená chybu. Ak exit_status nie je 0, vyvolá výnimku s hlásením o chybe pri sťahovaní datasetu.
 
-    - Skript teda spúšťa príkaz na stiahnutie datasetu pomocou pomocného skriptu a vyvolá výnimku, ak príkaz zlyhá.
+    - Skript teda spúšťa príkaz na stiahnutie datasetu pomocou pomocného skriptu a v prípade zlyhania vyvolá výnimku.
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -375,19 +376,18 @@ Dataset chat-completion je uložený vo formáte parquet, pričom každý zázna
 
 ### Načítanie dát do DataFrame
 
-1. Tento Python skript načítava JSON Lines súbor do pandas DataFrame a zobrazuje prvých 5 riadkov. Tu je, čo robí:
+1. Tento Python skript načítava JSON Lines súbor do pandas DataFrame a zobrazuje prvých 5 riadkov. Tu je prehľad jeho funkcií:
 
-    - Importuje knižnicu pandas, ktorá je výkonným nástrojom na manipuláciu a analýzu dát.
+    - Importuje knižnicu pandas, ktorá je výkonná knižnica na manipuláciu a analýzu dát.
 
-    - Nastaví maximálnu šírku stĺpca v pandas na 0, čo znamená, že sa zobrazí celý text stĺpca bez skrátenia.
+    - Nastavuje maximálnu šírku stĺpca pre zobrazenie pandas na 0. To znamená, že sa zobrazí celý text v každom stĺpci bez orezania pri výpise DataFrame.
 
-    - Použije pd.read_json na načítanie train_sft.jsonl zo zložky ultrachat_200k_dataset do DataFrame. Argument lines=True znamená, že súbor je vo formáte JSON Lines, kde každý riadok je samostatný JSON objekt.
+    - Používa funkciu pd.read_json na načítanie súboru train_sft.jsonl z adresára ultrachat_200k_dataset do DataFrame. Argument lines=True znamená, že súbor je vo formáte JSON Lines, kde každý riadok je samostatný JSON objekt.
+- Používa metódu head na zobrazenie prvých 5 riadkov DataFrame. Ak DataFrame obsahuje menej ako 5 riadkov, zobrazia sa všetky.
 
-    - Použije metódu head na zobrazenie prvých 5 riadkov DataFrame. Ak je menej než 5 riadkov, zobrazia sa všetky.
+- Stručne povedané, tento skript načítava súbor vo formáte JSON Lines do DataFrame a zobrazuje prvých 5 riadkov s úplným textom stĺpcov.
 
-    - Skript teda načíta JSON Lines súbor do DataFrame a zobrazí prvých 5 riadkov s plným textom stĺpcov.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -404,38 +404,102 @@ Dataset chat-completion je uložený vo formáte parquet, pričom každý zázna
     df.head()
     ```
 
-## 5. Odoslanie jobu na doladenie s použitím modelu a dát ako vstupov
+## 5. Odoslanie úlohy na doladenie modelu s použitím modelu a dát ako vstupov
 
-Vytvorte job, ktorý používa chat-completion pipeline komponent. Viac o parametroch podporovaných pri doladení.
+Vytvorte úlohu, ktorá používa komponent pipeline chat-completion. Viac informácií o všetkých parametroch podporovaných pre doladenie nájdete v dokumentácii.
 
 ### Definovanie parametrov doladenia
 
-1. Parametre doladenia možno rozdeliť do 2 kategórií - tréningové parametre, optimalizačné parametre.
+1. Parametre doladenia možno rozdeliť do 2 kategórií – parametre tréningu a parametre optimalizácie.
 
-1. Tréningové parametre definujú aspekty tréningu ako:
+1. Parametre tréningu definujú aspekty tréningu, ako napríklad:
 
-    - Optimizer, scheduler, ktoré sa použijú
+    - Optimizer a scheduler, ktoré sa použijú
     - Metriku, ktorú chceme optimalizovať pri doladení
     - Počet tréningových krokov, veľkosť batchu a podobne
-    - Optimalizačné parametre pomáhajú optimalizovať GPU pamäť a efektívne využívať výpočtové zdroje.
+    - Parametre optimalizácie pomáhajú optimalizovať pamäť GPU a efektívne využívať výpočtové zdroje.
 
-1. Nižšie sú uvedené niektoré z parametrov tejto kategórie. Optimalizačné parametre sa líšia pre každý model a sú zabalené s modelom, aby sa tieto variácie zvládli.
+1. Nižšie sú uvedené niektoré parametre patriace do tejto kategórie. Parametre optimalizácie sa líšia pre každý model a sú zabalené spolu s modelom, aby sa tieto rozdiely správne spracovali.
 
-    - Povoliť deepspeed a LoRA
-    - Povoliť trénovanie s miešanou presnosťou
-    - Povoliť multi-node trénovanie
+    - Povolenie deepspeed a LoRA
+    - Povolenie tréningu s miešanou presnosťou
+    - Povolenie tréningu na viacerých uzloch
 
 > [!NOTE]
-> Supervised doladenie môže viesť k strate zarovnania alebo katastrofickému zabudnutiu. Odporúčame toto skontrolovať a po doladení spustiť fázu zarovnania.
+> Supervidované doladenie môže viesť k strate zarovnania alebo katastrofickému zabudnutiu. Odporúčame skontrolovať tento problém a po doladení spustiť fázu zarovnania.
 
 ### Parametre doladenia
 
-1. Tento Python skript nastavuje parametre pre doladenie modelu strojového učenia. Tu je, čo robí:  
-- Nastavuje predvolené tréningové parametre ako počet epoch, veľkosti batchov pre tréning a evaluáciu, learning rate a typ scheduleru.  
-- Nastavuje predvolené optimalizačné parametre ako použitie LoRa a DeepSpeed, a stupeň DeepSpeed.  
-- Kombinuje tréningové a optimalizačné parametre do jedného slovníka finetune_parameters.  
-- Kontroluje, či foundation_model má nejaké modelovo špecifické predvolené param
-training pipeline založený na rôznych parametroch, a potom vypisovanie tohto zobrazovaného mena. ```python
+1. Tento Python skript nastavuje parametre pre doladenie strojového učenia. Tu je prehľad, čo robí:
+
+    - Nastavuje predvolené parametre tréningu, ako je počet epoch, veľkosť batchu pre tréning a vyhodnotenie, rýchlosť učenia a typ scheduleru rýchlosti učenia.
+
+    - Nastavuje predvolené parametre optimalizácie, ako je použitie Layer-wise Relevance Propagation (LoRa) a DeepSpeed, a fázu DeepSpeed.
+
+    - Kombinuje parametre tréningu a optimalizácie do jedného slovníka s názvom finetune_parameters.
+
+    - Kontroluje, či foundation_model obsahuje nejaké modelovo špecifické predvolené parametre. Ak áno, vypíše varovnú správu a aktualizuje slovník finetune_parameters týmito modelovo špecifickými predvoľbami. Funkcia ast.literal_eval sa používa na konverziu týchto predvolieb zo stringu na Python slovník.
+
+    - Vypíše finálnu sadu parametrov doladenia, ktoré sa použijú pri spustení.
+
+    - Stručne povedané, skript nastavuje a zobrazuje parametre pre doladenie modelu strojového učenia s možnosťou prepísať predvolené parametre modelovo špecifickými.
+
+```python
+    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    training_parameters = dict(
+        num_train_epochs=3,
+        per_device_train_batch_size=1,
+        per_device_eval_batch_size=1,
+        learning_rate=5e-6,
+        lr_scheduler_type="cosine",
+    )
+    
+    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    optimization_parameters = dict(
+        apply_lora="true",
+        apply_deepspeed="true",
+        deepspeed_stage=2,
+    )
+    
+    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    finetune_parameters = {**training_parameters, **optimization_parameters}
+    
+    # Check if the foundation_model has any model-specific default parameters
+    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
+    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    if "model_specific_defaults" in foundation_model.tags:
+        print("Warning! Model specific defaults exist. The defaults could be overridden.")
+        finetune_parameters.update(
+            ast.literal_eval(  # convert string to python dict
+                foundation_model.tags["model_specific_defaults"]
+            )
+        )
+    
+    # Print the final set of fine-tuning parameters that will be used for the run
+    print(
+        f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
+    )
+    ```
+
+### Tréningová pipeline
+
+1. Tento Python skript definuje funkciu na generovanie zobrazovaného názvu pre tréningovú pipeline strojového učenia a následne túto funkciu volá na vygenerovanie a vytlačenie názvu. Tu je prehľad, čo robí:
+
+1. Definuje sa funkcia get_pipeline_display_name, ktorá generuje zobrazovaný názov na základe rôznych parametrov súvisiacich s tréningovou pipeline.
+
+1. Vo funkcii sa vypočíta celková veľkosť batchu vynásobením veľkosti batchu na jedno zariadenie, počtu krokov akumulácie gradientu, počtu GPU na uzol a počtu uzlov použitých na doladenie.
+
+1. Získavajú sa ďalšie parametre, ako typ scheduleru rýchlosti učenia, či sa používa DeepSpeed, fáza DeepSpeed, či sa používa Layer-wise Relevance Propagation (LoRa), limit počtu uložených checkpointov modelu a maximálna dĺžka sekvencie.
+
+1. Vytvára sa reťazec, ktorý obsahuje všetky tieto parametre oddelené pomlčkami. Ak sa používa DeepSpeed alebo LoRa, reťazec obsahuje "ds" nasledované fázou DeepSpeed, alebo "lora". Ak nie, obsahuje "nods" alebo "nolora".
+
+1. Funkcia vracia tento reťazec, ktorý slúži ako zobrazovaný názov tréningovej pipeline.
+
+1. Po definovaní funkcie sa táto funkcia zavolá na vygenerovanie zobrazovaného názvu, ktorý sa následne vytlačí.
+
+1. Stručne povedané, skript generuje zobrazovaný názov tréningovej pipeline na základe rôznych parametrov a následne ho vypisuje.
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -492,22 +556,25 @@ training pipeline založený na rôznych parametroch, a potom vypisovanie tohto 
 
 ### Konfigurácia pipeline
 
-Tento Python skript definuje a konfiguruje pipeline strojového učenia pomocou Azure Machine Learning SDK. Tu je rozpis toho, čo robí:
+Tento Python skript definuje a konfiguruje pipeline strojového učenia pomocou Azure Machine Learning SDK. Tu je prehľad, čo robí:
 
 1. Importuje potrebné moduly z Azure AI ML SDK.
-2. Získava komponent pipeline s názvom "chat_completion_pipeline" z registra.
-3. Definuje pipeline job pomocou `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+1. Z registra načíta komponent pipeline s názvom "chat_completion_pipeline".
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+1. Definuje pipeline job pomocou dekorátora `@pipeline` a funkcie `create_pipeline`. Názov pipeline sa nastaví na `pipeline_display_name`.
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. Vo funkcii `create_pipeline` inicializuje načítaný komponent pipeline s rôznymi parametrami, vrátane cesty k modelu, výpočtových klastrov pre rôzne fázy, datasetových rozdelení pre tréning a testovanie, počtu GPU na doladenie a ďalších parametrov doladenia.
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. Mapuje výstup úlohy doladenia na výstup pipeline jobu, aby bolo možné jednoducho zaregistrovať doladený model, čo je potrebné pre nasadenie modelu na online alebo batch endpoint.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False`, čo znamená, že pipeline sa zastaví, ak niektorý krok zlyhá.
-4. Zhrnutie: tento skript definuje a konfiguruje pipeline strojového učenia pre úlohu dokončenia chatu pomocou Azure Machine Learning SDK.
+1. Vytvorí inštanciu pipeline zavolaním funkcie `create_pipeline`.
+
+1. Nastaví parameter `force_rerun` pipeline na `True`, čo znamená, že sa nebudú používať výsledky z cache predchádzajúcich úloh.
+
+1. Nastaví parameter `continue_on_step_failure` pipeline na `False`, čo znamená, že pipeline sa zastaví, ak niektorý krok zlyhá.
+
+1. Stručne povedané, skript definuje a konfiguruje pipeline strojového učenia pre úlohu chat completion pomocou Azure Machine Learning SDK.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -560,13 +627,15 @@ Tento Python skript definuje a konfiguruje pipeline strojového učenia pomocou 
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### Odoslanie jobu
+### Odoslanie úlohy
 
-1. Tento Python skript odosiela pipeline job strojového učenia do Azure Machine Learning workspace a potom čaká na dokončenie jobu. Tu je rozpis toho, čo robí:
+1. Tento Python skript odosiela pipeline job strojového učenia do Azure Machine Learning workspace a potom čaká na dokončenie úlohy. Tu je prehľad, čo robí:
 
-- Volá metódu create_or_update objektu jobs v workspace_ml_client na odoslanie pipeline jobu. Pipeline, ktorá sa má spustiť, je určená pomocou pipeline_object a experiment, pod ktorým sa job spúšťa, je určený pomocou experiment_name.
-- Potom volá metódu stream objektu jobs v workspace_ml_client, aby počkal na dokončenie pipeline jobu. Job, na ktorý sa čaká, je určený atribútom name objektu pipeline_job.
-- Zhrnutie: tento skript odosiela pipeline job strojového učenia do Azure Machine Learning workspace a čaká na jeho dokončenie.
+    - Zavolá metódu create_or_update objektu jobs vo workspace_ml_client na odoslanie pipeline jobu. Pipeline, ktorá sa má spustiť, je určená objektom pipeline_object a experiment, pod ktorým sa úloha spúšťa, je určený experiment_name.
+
+    - Následne zavolá metódu stream objektu jobs vo workspace_ml_client, aby počkal na dokončenie pipeline jobu. Úloha, na ktorú sa čaká, je určená atribútom name objektu pipeline_job.
+
+    - Stručne povedané, skript odosiela pipeline job do Azure Machine Learning workspace a čaká na jeho dokončenie.
 
 ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
@@ -581,23 +650,29 @@ Tento Python skript definuje a konfiguruje pipeline strojového učenia pomocou 
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. Registrácia doladeného modelu do workspace
+## 6. Registrácia doladeného modelu vo workspace
 
-Zaregistrujeme model z výstupu doladenia. Toto bude sledovať väzbu medzi doladeným modelom a doladiacim jobom. Doladiaci job ďalej sleduje väzbu na základný model, dáta a tréningový kód.
+Model z výstupu úlohy doladenia zaregistrujeme. Tým sa sleduje pôvod modelu medzi doladeným modelom a úlohou doladenia. Úloha doladenia ďalej sleduje pôvod k základnému modelu, dátam a tréningovému kódu.
 
 ### Registrácia ML modelu
 
-1. Tento Python skript registruje model strojového učenia, ktorý bol natrénovaný v Azure Machine Learning pipeline. Tu je rozpis toho, čo robí:
+1. Tento Python skript registruje model strojového učenia, ktorý bol trénovaný v Azure Machine Learning pipeline. Tu je prehľad, čo robí:
 
-- Importuje potrebné moduly z Azure AI ML SDK.
-- Kontroluje, či je výstup trained_model dostupný z pipeline jobu pomocou metódy get objektu jobs v workspace_ml_client a prístupu k jeho outputs atribútu.
-- Vytvára cestu k trénovanému modelu formátovaním reťazca s názvom pipeline jobu a názvom výstupu ("trained_model").
-- Definuje názov pre doladený model pridaním "-ultrachat-200k" k pôvodnému názvu modelu a nahradí všetky lomky pomlčkami.
-- Pripravuje registráciu modelu vytvorením objektu Model s rôznymi parametrami vrátane cesty k modelu, typu modelu (MLflow model), názvu a verzie modelu a popisu modelu.
-- Registruje model volaním metódy create_or_update objektu models v workspace_ml_client s objektom Model ako argumentom.
-- Vypisuje registrovaný model.
+    - Importuje potrebné moduly z Azure AI ML SDK.
 
-1. Zhrnutie: tento skript registruje model strojového učenia, ktorý bol natrénovaný v Azure Machine Learning pipeline.
+    - Kontroluje, či je výstup trained_model dostupný z pipeline jobu pomocou metódy get objektu jobs vo workspace_ml_client a prístupu k jeho atribútu outputs.
+
+    - Vytvára cestu k trénovanému modelu formátovaním reťazca s názvom pipeline jobu a názvom výstupu ("trained_model").
+
+    - Definuje názov pre doladený model pridaním "-ultrachat-200k" k pôvodnému názvu modelu a nahradením všetkých lomítok pomlčkami.
+
+    - Pripravuje registráciu modelu vytvorením objektu Model s rôznymi parametrami, vrátane cesty k modelu, typu modelu (MLflow model), názvu a verzie modelu a popisu modelu.
+
+    - Registruje model zavolaním metódy create_or_update objektu models vo workspace_ml_client s objektom Model ako argumentom.
+
+    - Vypisuje zaregistrovaný model.
+
+1. Stručne povedané, skript registruje model strojového učenia, ktorý bol trénovaný v Azure Machine Learning pipeline.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -641,18 +716,21 @@ Zaregistrujeme model z výstupu doladenia. Toto bude sledovať väzbu medzi dola
 
 ## 7. Nasadenie doladeného modelu na online endpoint
 
-Online endpointy poskytujú trvalé REST API, ktoré sa dá použiť na integráciu s aplikáciami, ktoré potrebujú model používať.
+Online endpointy poskytujú trvácne REST API, ktoré možno použiť na integráciu s aplikáciami vyžadujúcimi použitie modelu.
 
 ### Správa endpointu
 
-1. Tento Python skript vytvára spravovaný online endpoint v Azure Machine Learning pre registrovaný model. Tu je rozpis toho, čo robí:
+1. Tento Python skript vytvára spravovaný online endpoint v Azure Machine Learning pre zaregistrovaný model. Tu je prehľad, čo robí:
 
-- Importuje potrebné moduly z Azure AI ML SDK.
-- Definuje jedinečný názov pre online endpoint pridaním časovej značky k reťazcu "ultrachat-completion-".
-- Pripravuje vytvorenie online endpointu vytvorením objektu ManagedOnlineEndpoint s rôznymi parametrami, vrátane názvu endpointu, popisu a režimu autentifikácie ("key").
-- Vytvára online endpoint volaním metódy begin_create_or_update workspace_ml_client s objektom ManagedOnlineEndpoint ako argumentom. Potom čaká na dokončenie operácie volaním metódy wait.
+    - Importuje potrebné moduly z Azure AI ML SDK.
 
-1. Zhrnutie: tento skript vytvára spravovaný online endpoint v Azure Machine Learning pre registrovaný model.
+    - Definuje jedinečný názov online endpointu pridaním časovej pečiatky k reťazcu "ultrachat-completion-".
+
+    - Pripravuje vytvorenie online endpointu vytvorením objektu ManagedOnlineEndpoint s rôznymi parametrami, vrátane názvu endpointu, popisu endpointu a režimu autentifikácie ("key").
+
+    - Vytvára online endpoint zavolaním metódy begin_create_or_update vo workspace_ml_client s objektom ManagedOnlineEndpoint ako argumentom. Následne čaká na dokončenie operácie zavolaním metódy wait.
+
+1. Stručne povedané, skript vytvára spravovaný online endpoint v Azure Machine Learning pre zaregistrovaný model.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -686,18 +764,25 @@ Online endpointy poskytujú trvalé REST API, ktoré sa dá použiť na integrá
 
 ### Nasadenie ML modelu
 
-1. Tento Python skript nasadzuje registrovaný model strojového učenia na spravovaný online endpoint v Azure Machine Learning. Tu je rozpis toho, čo robí:
+1. Tento Python skript nasadzuje zaregistrovaný model strojového učenia na spravovaný online endpoint v Azure Machine Learning. Tu je prehľad, čo robí:
 
-- Importuje modul ast, ktorý poskytuje funkcie na spracovanie stromov Python abstraktnej syntaxe.
-- Nastavuje typ inštancie pre nasadenie na "Standard_NC6s_v3".
-- Kontroluje, či tag inference_compute_allow_list existuje v základnom modeli. Ak áno, konvertuje hodnotu tagu zo stringu na Python zoznam a priradí ho do inference_computes_allow_list. Ak nie, nastaví inference_computes_allow_list na None.
-- Kontroluje, či je zadaný typ inštancie v zozname povolených. Ak nie je, vypíše správu, aby používateľ vybral typ inštancie zo zoznamu povolených.
-- Pripravuje vytvorenie nasadenia vytvorením objektu ManagedOnlineDeployment s rôznymi parametrami, vrátane názvu nasadenia, názvu endpointu, ID modelu, typu a počtu inštancií, nastavení liveness probe a request settings.
-- Vytvára nasadenie volaním metódy begin_create_or_update workspace_ml_client s objektom ManagedOnlineDeployment ako argumentom. Potom čaká na dokončenie operácie volaním metódy wait.
-- Nastavuje traffic endpointu tak, aby 100 % trafficu smeroval na nasadenie "demo".
-- Aktualizuje endpoint volaním metódy begin_create_or_update workspace_ml_client s endpoint objektom ako argumentom. Potom čaká na dokončenie aktualizácie volaním metódy result.
+    - Importuje modul ast, ktorý poskytuje funkcie na spracovanie stromov abstraktnej syntaxe Pythonu.
 
-1. Zhrnutie: tento skript nasadzuje registrovaný model strojového učenia na spravovaný online endpoint v Azure Machine Learning.
+    - Nastavuje typ inštancie pre nasadenie na "Standard_NC6s_v3".
+
+    - Kontroluje, či je v foundation model prítomný tag inference_compute_allow_list. Ak áno, konvertuje hodnotu tagu zo stringu na Python zoznam a priradí ho do inference_computes_allow_list. Ak nie, nastaví inference_computes_allow_list na None.
+
+    - Kontroluje, či je zadaný typ inštancie v zozname povolených. Ak nie je, vypíše správu, aby si používateľ vybral typ inštancie zo zoznamu povolených.
+
+    - Pripravuje vytvorenie nasadenia vytvorením objektu ManagedOnlineDeployment s rôznymi parametrami, vrátane názvu nasadenia, názvu endpointu, ID modelu, typu a počtu inštancií, nastavení liveness probe a nastavení požiadaviek.
+
+    - Vytvára nasadenie zavolaním metódy begin_create_or_update vo workspace_ml_client s objektom ManagedOnlineDeployment ako argumentom. Následne čaká na dokončenie operácie zavolaním metódy wait.
+
+    - Nastavuje traffic endpointu tak, aby 100 % prevádzky smerovalo na nasadenie "demo".
+
+    - Aktualizuje endpoint zavolaním metódy begin_create_or_update vo workspace_ml_client s objektom endpoint ako argumentom. Následne čaká na dokončenie aktualizácie zavolaním metódy result.
+
+1. Stručne povedané, skript nasadzuje zaregistrovaný model strojového učenia na spravovaný online endpoint v Azure Machine Learning.
 
 ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -750,20 +835,23 @@ Online endpointy poskytujú trvalé REST API, ktoré sa dá použiť na integrá
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. Testovanie endpointu s ukážkovými dátami
+## 8. Testovanie endpointu na vzorových dátach
 
-Získame niekoľko ukážkových dát z testovacej množiny a odošleme ich na online endpoint na inferenciu. Následne zobrazíme skórované štítky spolu s referenčnými štítkami.
+Načítame vzorové dáta z testovacieho datasetu a odošleme ich na online endpoint na inferenciu. Následne zobrazíme skórované štítky spolu s referenčnými štítkami.
 
 ### Čítanie výsledkov
 
-1. Tento Python skript načítava JSON Lines súbor do pandas DataFrame, vyberie náhodný vzorok a resetuje index. Tu je rozpis toho, čo robí:
+1. Tento Python skript načítava súbor vo formáte JSON Lines do pandas DataFrame, vyberá náhodný vzorok a resetuje index. Tu je prehľad, čo robí:
 
-- Načíta súbor ./ultrachat_200k_dataset/test_gen.jsonl do pandas DataFrame. Funkcia read_json sa používa s argumentom lines=True, pretože súbor je vo formáte JSON Lines, kde každý riadok je samostatný JSON objekt.
-- Vyberie náhodný vzorok 1 riadku z DataFrame. Funkcia sample sa používa s argumentom n=1 na určenie počtu náhodných riadkov.
-- Resetuje index DataFrame. Funkcia reset_index sa používa s argumentom drop=True, aby sa pôvodný index zahodil a nahradil novým štandardným celočíselným indexom.
-- Zobrazí prvé 2 riadky DataFrame pomocou funkcie head s argumentom 2. Keďže DataFrame obsahuje len jeden riadok po vzorkovaní, zobrazí sa len tento jeden riadok.
+    - Načíta súbor ./ultrachat_200k_dataset/test_gen.jsonl do pandas DataFrame. Funkcia read_json sa používa s argumentom lines=True, pretože súbor je vo formáte JSON Lines, kde každý riadok je samostatný JSON objekt.
 
-1. Zhrnutie: tento skript načítava JSON Lines súbor do pandas DataFrame, vyberie náhodný vzorok jedného riadku, resetuje index a zobrazí prvý riadok.
+    - Vyberie náhodný vzorok 1 riadku z DataFrame. Funkcia sample sa používa s argumentom n=1 na určenie počtu náhodných riadkov.
+
+    - Resetuje index DataFrame. Funkcia reset_index sa používa s argumentom drop=True, aby sa pôvodný index zahodil a nahradil novým indexom s predvolenými celočíselnými hodnotami.
+
+    - Zobrazí prvé 2 riadky DataFrame pomocou funkcie head s argumentom 2. Keďže DataFrame obsahuje po vzorkovaní len jeden riadok, zobrazí sa iba tento jeden riadok.
+
+1. Stručne povedané, skript načítava súbor vo formáte JSON Lines do pandas DataFrame, vyberá náhodný vzorok 1 riadku, resetuje index a zobrazuje prvý riadok.
 
 ```python
     # Import pandas library
@@ -789,12 +877,14 @@ Získame niekoľko ukážkových dát z testovacej množiny a odošleme ich na o
 
 ### Vytvorenie JSON objektu
 
-1. Tento Python skript vytvára JSON objekt so špecifickými parametrami a ukladá ho do súboru. Tu je rozpis toho, čo robí:
+1. Tento Python skript vytvára JSON objekt so špecifickými parametrami a ukladá ho do súboru. Tu je prehľad, čo robí:
 
-- Importuje modul json, ktorý poskytuje funkcie na prácu s JSON dátami.
-- Vytvára slovník parameters s kľúčmi a hodnotami reprezentujúcimi parametre pre model strojového učenia. Kľúče sú "temperature", "top_p", "do_sample" a "max_new_tokens" a ich hodnoty sú 0.6, 0.9, True a 200.
-- Vytvára ďalší slovník test_json so dvoma kľúčmi: "input_data" a "params". Hodnota "input_data" je ďalší slovník s kľúčmi "input_string" a "parameters". Hodnota "input_string" je zoznam obsahujúci prvú správu z DataFrame test_df. Hodnota "parameters" je slovník parameters vytvorený predtým. Hodnota "params" je prázdny slovník.
-- Otvára súbor sample_score.json
+    - Importuje modul json, ktorý poskytuje funkcie na prácu s JSON dátami.
+
+    - Vytvára slovník parameters s kľúčmi a hodnotami predstavujúcimi parametre pre model strojového učenia. Kľúče sú "temperature", "top_p", "do_sample" a "max_new_tokens" a ich hodnoty sú 0.6, 0.9, True a 200.
+
+    - Vytvára ďalší slovník test_json s dvoma kľúčmi: "input_data" a "params". Hodnota "input_data" je ďalší slovník s kľúčmi "input_string" a "parameters". Hodnota "input_string" je zoznam obsahujúci prvú správu z DataFrame test_df. Hodnota "parameters" je slovník parameters vytvorený predtým. Hodnota "params" je prázdny slovník.
+- Otvára súbor s názvom sample_score.json
 
 ```python
     # Import the json module, which provides functions to work with JSON data
@@ -830,15 +920,19 @@ Získame niekoľko ukážkových dát z testovacej množiny a odošleme ich na o
 
 ### Volanie endpointu
 
-1. Tento Python skript volá online endpoint v Azure Machine Learning na skórovanie JSON súboru. Tu je rozpis toho, čo robí:
+1. Tento Python skript volá online endpoint v Azure Machine Learning, aby ohodnotil JSON súbor. Tu je rozpis, čo robí:
 
-- Volá metódu invoke z vlastnosti online_endpoints objektu workspace_ml_client. Táto metóda slúži na odoslanie požiadavky na online endpoint a získanie odpovede.
-- Špecifikuje názov endpointu a nasadenia pomocou argumentov endpoint_name a deployment_name. V tomto prípade je názov endpointu uložený v premennej online_endpoint_name a názov nasadenia je "demo".
-- Špecifikuje cestu k JSON súboru, ktorý sa má skórovať, pomocou argumentu request_file. V tomto prípade je to súbor ./ultrachat_200k_dataset/sample_score.json.
-- Ukladá odpoveď z endpointu do premennej response.
-- Vypisuje surovú odpoveď.
+    - Volá metódu invoke vlastnosti online_endpoints objektu workspace_ml_client. Táto metóda slúži na odoslanie požiadavky na online endpoint a získanie odpovede.
 
-1. Zhrnutie: tento skript volá online endpoint v Azure Machine Learning na skórovanie JSON súboru a vypisuje odpoveď.
+    - Špecifikuje názov endpointu a nasadenia pomocou argumentov endpoint_name a deployment_name. V tomto prípade je názov endpointu uložený v premennej online_endpoint_name a názov nasadenia je "demo".
+
+    - Špecifikuje cestu k JSON súboru, ktorý sa má ohodnotiť, pomocou argumentu request_file. V tomto prípade je súbor ./ultrachat_200k_dataset/sample_score.json.
+
+    - Ukladá odpoveď z endpointu do premennej response.
+
+    - Vypisuje surovú odpoveď.
+
+1. Zhrnutie: tento skript volá online endpoint v Azure Machine Learning, aby ohodnotil JSON súbor a vypisuje odpoveď.
 
 ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
@@ -856,14 +950,17 @@ Získame niekoľko ukážkových dát z testovacej množiny a odošleme ich na o
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Vymazanie online endpointu
+## 9. Odstránenie online endpointu
 
-1. Nezabudnite vymazať online endpoint, inak vám bude bežať fakturácia za výpočtové zdroje použité endpointom. Tento riadok Python kódu vymazáva online endpoint v Azure Machine Learning. Tu je rozpis toho, čo robí:
+1. Nezabudnite odstrániť online endpoint, inak vám bude bežať fakturačný meter za výpočtové zdroje používané endpointom. Tento riadok Python kódu odstraňuje online endpoint v Azure Machine Learning. Tu je rozpis, čo robí:
 
-- Volá metódu begin_delete z vlastnosti online_endpoints objektu workspace_ml_client. Táto metóda slúži na začatie vymazania online endpointu.
-- Špecifikuje názov endpointu, ktorý sa má vymazať, pomocou argumentu name. V tomto prípade je názov endpointu uložený v premennej online_endpoint_name.
-- Volá metódu wait, aby počkal na dokončenie vymazávacej operácie. Ide o blokujúcu operáciu, ktorá zabráni pokračovaniu skriptu, kým sa vymazanie neukončí.
-- Zhrnutie: tento riadok kódu začína vymazanie online endpointu v Azure Machine Learning a čaká na dokončenie operácie.
+    - Volá metódu begin_delete vlastnosti online_endpoints objektu workspace_ml_client. Táto metóda spúšťa proces mazania online endpointu.
+
+    - Špecifikuje názov endpointu, ktorý sa má odstrániť, pomocou argumentu name. V tomto prípade je názov endpointu uložený v premennej online_endpoint_name.
+
+    - Volá metódu wait, aby počkal na dokončenie operácie mazania. Ide o blokujúcu operáciu, čo znamená, že skript nebude pokračovať, kým mazanie neskončí.
+
+    - Zhrnutie: tento riadok kódu spúšťa mazanie online endpointu v Azure Machine Learning a čaká na dokončenie operácie.
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -873,5 +970,5 @@ Získame niekoľko ukážkových dát z testovacej množiny a odošleme ich na o
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
-**Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, berte prosím na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

@@ -2,61 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-05-07T15:25:52+00:00",
+  "translation_date": "2025-07-16T17:34:43+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
   "language_code": "mo"
 }
 -->
-# Welcome to your VS Code Extension
+# 歡迎使用您的 VS Code 擴充功能
 
-## What's in the folder
+## 資料夾內容
 
-* This folder contains all of the files necessary for your extension.
-* `package.json` - manifest file where you declare your extension and command.
-  * The sample plugin registers a command and defines its title and command name. This lets VS Code display the command in the command palette without needing to load the plugin immediately.
-* `src/extension.ts` - main file where you implement your command.
-  * The file exports one function, `activate`, which runs the very first time your extension activates (in this case, when the command is executed). Inside `activate` we call `registerCommand`.
-  * We pass the function implementing the command as the second argument to `registerCommand`.
+* 此資料夾包含您擴充功能所需的所有檔案。
+* `package.json` - 這是宣告擴充功能和指令的清單檔案。
+  * 範例外掛會註冊一個指令並定義其標題和指令名稱。透過這些資訊，VS Code 可以在指令面板中顯示該指令，但尚未需要載入外掛。
+* `src/extension.ts` - 這是主要檔案，您將在此實作指令的功能。
+  * 該檔案匯出一個函式 `activate`，當擴充功能第一次被啟用時（本例中是執行指令時）會呼叫它。在 `activate` 函式內，我們呼叫 `registerCommand`。
+  * 我們將包含指令實作的函式作為第二個參數傳給 `registerCommand`。
 
-## Setup
+## 設定
 
-* Install the recommended extensions (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, and dbaeumer.vscode-eslint)
+* 安裝推薦的擴充功能（amodio.tsl-problem-matcher、ms-vscode.extension-test-runner 和 dbaeumer.vscode-eslint）
 
-## Get up and running straight away
+## 立即開始使用
 
-* Press `F5` to open a new window with your extension loaded.
-* Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `Hello World`.
-* Set breakpoints in your code inside `src/extension.ts` to debug your extension.
-* Find output from your extension in the debug console.
+* 按下 `F5` 開啟一個載入您擴充功能的新視窗。
+* 從指令面板（按下 `Ctrl+Shift+P` 或 Mac 上的 `Cmd+Shift+P`）執行您的指令，輸入 `Hello World`。
+* 在 `src/extension.ts` 中設定斷點以除錯您的擴充功能。
+* 在除錯主控台查看擴充功能的輸出。
 
-## Make changes
+## 進行修改
 
-* Relaunch the extension from the debug toolbar after modifying `src/extension.ts`.
-* You can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to apply your changes.
+* 修改 `src/extension.ts` 後，可以從除錯工具列重新啟動擴充功能。
+* 也可以重新載入 VS Code 視窗（`Ctrl+R` 或 Mac 上的 `Cmd+R`）來載入您的變更。
 
-## Explore the API
+## 探索 API
 
-* Open the full API set by opening the file `node_modules/@types/vscode/index.d.ts`.
+* 開啟 `node_modules/@types/vscode/index.d.ts` 檔案，即可查看完整的 API。
 
-## Run tests
+## 執行測試
 
-* Install the [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Run the "watch" task via the **Tasks: Run Task** command. Keep this running to ensure tests are discovered.
-* Open the Testing view from the activity bar and click the "Run Test" button, or use the hotkey `Ctrl/Cmd + ; A`
-* View test results in the Test Results view.
-* Modify `src/test/extension.test.ts` or add new test files inside the `test` folder.
-  * The test runner only considers files matching the name pattern `**.test.ts`.
-  * You can create folders inside `test` to organize your tests as you like.
+* 安裝 [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* 透過 **Tasks: Run Task** 指令執行「watch」任務。請確保此任務正在執行，否則可能無法偵測到測試。
+* 從活動列開啟測試視圖，點擊「Run Test」按鈕，或使用快速鍵 `Ctrl/Cmd + ; A`。
+* 在測試結果視圖中查看測試輸出。
+* 修改 `src/test/extension.test.ts` 或在 `test` 資料夾內建立新的測試檔案。
+  * 提供的測試執行器只會考慮符合 `**.test.ts` 命名模式的檔案。
+  * 您可以在 `test` 資料夾內建立子資料夾，自由組織測試。
 
-## Go further
+## 進階應用
 
-* Reduce extension size and improve startup time by [bundling your extension](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
-* [Publish your extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) on the VS Code extension marketplace.
-* Automate builds by setting up [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+* 透過[打包您的擴充功能](https://code.visualstudio.com/api/working-with-extensions/bundling-extension)來減少擴充功能大小並提升啟動速度。
+* 在 VS Code 擴充功能市集中[發佈您的擴充功能](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)。
+* 設定[持續整合](https://code.visualstudio.com/api/working-with-extensions/continuous-integration)來自動化建置流程。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-(Note: "mo" is not a recognized language code or standard language name. If you meant a specific language, please clarify so I can provide the correct translation.)
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。

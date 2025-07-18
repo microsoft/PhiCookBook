@@ -2,49 +2,49 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-09T11:20:13+00:00",
+  "translation_date": "2025-07-16T20:34:47+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "ms"
 }
 -->
-# تشغيل Phi-3 و Phi-4 على iOS باستخدام إطار عمل Apple MLX
+# Menjalankan Phi-3 dan Phi-4 pada iOS dengan Rangka Kerja Apple MLX
 
-يشرح هذا الدليل كيفية إنشاء تطبيق iOS يقوم بتشغيل نموذج Phi-3 أو Phi-4 مباشرة على الجهاز، باستخدام إطار عمل Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) هو إطار عمل التعلم الآلي الخاص بأبل والمُحسّن لأجهزة Apple Silicon.
+Tutorial ini menunjukkan cara untuk mencipta aplikasi iOS yang menjalankan model Phi-3 atau Phi-4 secara terus pada peranti, menggunakan rangka kerja Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) adalah rangka kerja pembelajaran mesin Apple yang dioptimumkan untuk cip Apple Silicon.
 
-## المتطلبات الأساسية
+## Prasyarat
 
-- macOS مع Xcode 16 (أو أحدث)
-- جهاز iOS 18 (أو أحدث) مع ذاكرة لا تقل عن 8 جيجابايت (iPhone أو iPad متوافق مع متطلبات Apple Intelligence، حيث تكون متطلبات Phi المكممة مشابهة)
-- معرفة أساسية بـ Swift و SwiftUI
+- macOS dengan Xcode 16 (atau lebih tinggi)
+- Peranti sasaran iOS 18 (atau lebih tinggi) dengan sekurang-kurangnya 8GB (iPhone atau iPad yang serasi dengan keperluan Apple Intelligence, kerana ia serupa dengan keperluan kuantisasi Phi)
+- pengetahuan asas tentang Swift dan SwiftUI
 
-## الخطوة 1: إنشاء مشروع iOS جديد
+## Langkah 1: Cipta Projek iOS Baru
 
-ابدأ بإنشاء مشروع iOS جديد في Xcode:
+Mulakan dengan mencipta projek iOS baru dalam Xcode:
 
-1. افتح Xcode واختر "Create a new Xcode project"
-2. اختر قالب "App"
-3. سمِّ مشروعك (مثلاً "Phi3-iOS-App") واختر SwiftUI كواجهة المستخدم
-4. اختر مكان حفظ المشروع
+1. lancarkan Xcode dan pilih "Create a new Xcode project"
+2. pilih "App" sebagai templat
+3. namakan projek anda (contohnya, "Phi3-iOS-App") dan pilih SwiftUI sebagai antara muka
+4. pilih lokasi untuk menyimpan projek anda
 
-## الخطوة 2: إضافة التبعيات المطلوبة
+## Langkah 2: Tambah Kebergantungan Diperlukan
 
-أضف [حزمة أمثلة MLX](https://github.com/ml-explore/mlx-swift-examples) التي تحتوي على جميع التبعيات والمساعدات اللازمة لتحميل النماذج مسبقًا وتنفيذ الاستدلال:
+Tambah pakej [MLX Examples](https://github.com/ml-explore/mlx-swift-examples) yang mengandungi semua kebergantungan dan pembantu yang diperlukan untuk memuatkan model dan menjalankan inferens:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-بينما حزمة [MLX Swift الأساسية](https://github.com/ml-explore/mlx-swift) تكفي للعمليات الأساسية على التنسورات والوظائف الأساسية للتعلم الآلي، توفر حزمة أمثلة MLX عدة مكونات إضافية مخصصة للعمل مع نماذج اللغة، وتسهيل عملية الاستدلال:
+Walaupun pakej asas [MLX Swift](https://github.com/ml-explore/mlx-swift) sudah mencukupi untuk operasi tensor teras dan fungsi ML asas, pakej MLX Examples menyediakan beberapa komponen tambahan yang direka untuk bekerja dengan model bahasa, dan memudahkan proses inferens:
 
-- أدوات تحميل النماذج التي تتعامل مع التنزيل من Hugging Face
-- دمج المقطّع اللغوي (tokenizer)
-- مساعدات الاستدلال لتوليد النصوص
-- تعريفات النماذج مُهيأة مسبقًا
+- utiliti pemuatan model yang mengendalikan muat turun dari Hugging Face
+- integrasi tokenizer
+- pembantu inferens untuk penjanaan teks
+- definisi model yang telah dikonfigurasikan terlebih dahulu
 
-## الخطوة 3: تكوين الصلاحيات
+## Langkah 3: Konfigurasikan Entitlements
 
-للسماح لتطبيقنا بتنزيل النماذج وتخصيص ذاكرة كافية، نحتاج لإضافة صلاحيات محددة. أنشئ ملف `.entitlements` لتطبيقك بالمحتوى التالي:
+Untuk membenarkan aplikasi kita memuat turun model dan memperuntukkan memori yang mencukupi, kita perlu menambah entitlements tertentu. Cipta fail `.entitlements` untuk aplikasi anda dengan kandungan berikut:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ CO_OP_TRANSLATOR_METADATA:
 </plist>
 ```
 
-> **ملاحظة:** صلاحية `com.apple.developer.kernel.increased-memory-limit` مهمة لتشغيل النماذج الكبيرة، لأنها تسمح للتطبيق بطلب ذاكرة أكثر مما هو مسموح عادةً.
+> **Note:** Entitlement `com.apple.developer.kernel.increased-memory-limit` penting untuk menjalankan model yang lebih besar, kerana ia membenarkan aplikasi meminta lebih banyak memori daripada yang biasanya dibenarkan.
 
-## الخطوة 4: إنشاء نموذج رسالة الدردشة
+## Langkah 4: Cipta Model Mesej Chat
 
-أولاً، دعنا ننشئ بنية بسيطة لتمثيل رسائل الدردشة:
+Mula-mula, mari kita cipta struktur asas untuk mewakili mesej chat kita:
 
 ```swift
 import SwiftUI
@@ -85,9 +85,9 @@ struct ChatMessage: Identifiable {
 }
 ```
 
-## الخطوة 5: تنفيذ ViewModel
+## Langkah 5: Laksanakan ViewModel
 
-بعد ذلك، سننشئ فئة `PhiViewModel` التي تتولى تحميل النموذج وتنفيذ الاستدلال:
+Seterusnya, kita akan cipta kelas `PhiViewModel` yang mengendalikan pemuatan model dan inferens:
 
 ```swift
 import MLX
@@ -248,23 +248,23 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-يعرض ViewModel نقاط التكامل الرئيسية مع MLX:
+ViewModel ini menunjukkan titik integrasi utama MLX:
 
-- ضبط حدود ذاكرة التخزين المؤقتة للـ GPU باستخدام `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- menetapkan had cache GPU dengan `MLX.GPU.set(cacheLimit:)` untuk mengoptimumkan penggunaan memori pada peranti mudah alih
+- menggunakan `LLMModelFactory` untuk memuat turun model mengikut permintaan dan memulakan model yang dioptimumkan MLX
+- mengakses parameter dan struktur model melalui `ModelContainer`
+- menggunakan penjanaan token demi token MLX melalui kaedah `MLXLMCommon.generate`
+- menguruskan proses inferens dengan tetapan suhu dan had token yang sesuai
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+Pendekatan penjanaan token secara streaming memberikan maklum balas segera kepada pengguna semasa model menjana teks. Ini serupa dengan cara model berasaskan pelayan berfungsi, yang menstrim token kembali kepada pengguna, tetapi tanpa kelewatan permintaan rangkaian.
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+Dari segi interaksi UI, dua fungsi utama adalah `loadModel()`, yang memulakan LLM, dan `fetchAIResponse()`, yang memproses input pengguna dan menjana respons AI.
 
-### Model format considerations
+### Pertimbangan format model
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Important:** Model Phi untuk MLX tidak boleh digunakan dalam format lalai atau GGUF mereka. Ia mesti ditukar ke format MLX, yang dikendalikan oleh komuniti MLX. Anda boleh mendapatkan model yang telah ditukar di [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`، حيث يشير إلى نموذج MLX محدد تم تحويله مسبقًا وسيتم تنزيله تلقائيًا:
+Pakej MLX Examples termasuk pendaftaran yang telah dikonfigurasikan untuk beberapa model, termasuk Phi-3. Apabila anda memanggil `ModelRegistry.phi3_5_4bit`, ia merujuk kepada model MLX yang telah ditukar yang akan dimuat turun secara automatik:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-يمكنك إنشاء تكوينات نموذج خاصة بك للإشارة إلى أي نموذج متوافق على Hugging Face. على سبيل المثال، لاستخدام Phi-4 mini بدلاً من ذلك، يمكنك تعريف تكوين خاص بك:
+Anda boleh mencipta konfigurasi model anda sendiri untuk merujuk mana-mana model yang serasi di Hugging Face. Contohnya, untuk menggunakan Phi-4 mini, anda boleh mentakrifkan konfigurasi anda sendiri:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **ملاحظة:** تم إضافة دعم Phi-4 إلى مستودع MLX Swift Examples في نهاية فبراير 2025 (في [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). وحتى مارس 2025، الإصدار الرسمي الأخير (2.21.2 من ديسمبر 2024) لا يتضمن دعمًا مدمجًا لـ Phi-4. لاستخدام نماذج Phi-4، ستحتاج إلى الإشارة إلى الحزمة مباشرة من الفرع الرئيسي:
+> **Note:** Sokongan Phi-4 ditambah ke repositori MLX Swift Examples pada akhir Februari 2025 (dalam [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). Sehingga Mac 2025, keluaran rasmi terkini (2.21.2 dari Disember 2024) tidak termasuk sokongan Phi-4 terbina dalam. Untuk menggunakan model Phi-4, anda perlu merujuk pakej terus dari cabang utama:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-هذا يمنحك الوصول إلى أحدث تكوينات النماذج، بما في ذلك Phi-4، قبل تضمينها في إصدار رسمي. يمكنك استخدام هذا الأسلوب لاستخدام إصدارات مختلفة من نماذج Phi أو حتى نماذج أخرى تم تحويلها إلى صيغة MLX.
+Ini memberi anda akses kepada konfigurasi model terkini, termasuk Phi-4, sebelum ia dimasukkan dalam keluaran rasmi. Anda boleh menggunakan pendekatan ini untuk menggunakan versi berbeza model Phi atau model lain yang telah ditukar ke format MLX.
 
-## الخطوة 6: إنشاء واجهة المستخدم
+## Langkah 6: Cipta UI
 
-دعنا ننفذ الآن واجهة دردشة بسيطة للتفاعل مع الـ ViewModel:
+Sekarang mari kita laksanakan antara muka chat ringkas untuk berinteraksi dengan view model kita:
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-تتكون واجهة المستخدم من ثلاثة مكونات رئيسية تعمل معًا لإنشاء واجهة دردشة أساسية. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` يوفر مؤشرًا بسيطًا متحركًا يظهر أن الذكاء الاصطناعي يعالج الطلب.
+UI terdiri daripada tiga komponen utama yang bekerjasama untuk mencipta antara muka chat asas. `ContentView` mencipta antara muka dua keadaan yang menunjukkan sama ada butang memuatkan atau antara muka chat bergantung pada kesediaan model. `MessageView` memaparkan mesej chat individu secara berbeza berdasarkan sama ada ia mesej pengguna (selari kanan, latar biru) atau respons model Phi (selari kiri, latar kelabu). `TypingIndicatorView` menyediakan penunjuk animasi ringkas untuk menunjukkan AI sedang memproses.
 
-## الخطوة 7: بناء وتشغيل التطبيق
+## Langkah 7: Membina dan Menjalankan Aplikasi
 
-نحن الآن جاهزون لبناء وتشغيل التطبيق.
+Kita kini bersedia untuk membina dan menjalankan aplikasi.
 
-> **هام!** MLX لا يدعم المحاكي. يجب تشغيل التطبيق على جهاز فعلي بمعالج Apple Silicon. راجع [هنا](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) لمزيد من المعلومات.
+> **Important!** MLX tidak menyokong simulator. Anda mesti menjalankan aplikasi pada peranti fizikal dengan cip Apple Silicon. Lihat [di sini](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) untuk maklumat lanjut.
 
-عند تشغيل التطبيق، اضغط على زر "Load model" لتنزيل وتهيئة نموذج Phi-3 (أو، حسب تكوينك، Phi-4). قد تستغرق هذه العملية بعض الوقت حسب سرعة اتصال الإنترنت، لأنها تتطلب تنزيل النموذج من Hugging Face. تنفيذنا يتضمن فقط مؤشر تحميل دوار، لكن يمكنك رؤية التقدم الفعلي في وحدة تحكم Xcode.
+Apabila aplikasi dilancarkan, ketik butang "Load model" untuk memuat turun dan memulakan model Phi-3 (atau, bergantung pada konfigurasi anda, Phi-4). Proses ini mungkin mengambil masa bergantung pada sambungan internet anda, kerana ia melibatkan muat turun model dari Hugging Face. Pelaksanaan kami hanya termasuk penunjuk putaran untuk menunjukkan pemuatan, tetapi anda boleh melihat kemajuan sebenar dalam konsol Xcode.
 
-بعد التحميل، يمكنك التفاعل مع النموذج عن طريق كتابة الأسئلة في حقل النص والضغط على زر الإرسال.
+Setelah dimuatkan, anda boleh berinteraksi dengan model dengan menaip soalan dalam medan teks dan mengetik butang hantar.
 
-إليك كيف يجب أن يعمل تطبيقنا على iPad Air M1:
+Berikut adalah bagaimana aplikasi kita sepatutnya berfungsi, berjalan pada iPad Air M1:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
-## الخاتمة
+## Kesimpulan
 
-وهذا كل شيء! باتباع هذه الخطوات، أنشأت تطبيق iOS يقوم بتشغيل نموذج Phi-3 (أو Phi-4) مباشرة على الجهاز باستخدام إطار عمل Apple MLX.
+Itulah dia! Dengan mengikuti langkah-langkah ini, anda telah mencipta aplikasi iOS yang menjalankan model Phi-3 (atau Phi-4) terus pada peranti menggunakan rangka kerja MLX Apple.
 
-تهانينا!
+Tahniah!
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

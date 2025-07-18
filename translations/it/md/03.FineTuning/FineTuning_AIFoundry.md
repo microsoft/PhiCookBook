@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:30:06+00:00",
+  "translation_date": "2025-07-17T06:03:54+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "it"
 }
 -->
-# Fine-tuning Phi-3 con Azure AI Foundry
+# Fine-tuning di Phi-3 con Azure AI Foundry
 
-Exploremos cómo ajustar el modelo de lenguaje Phi-3 Mini de Microsoft utilizando Azure AI Foundry. El fine-tuning te permite adaptar Phi-3 Mini a tareas específicas, haciéndolo aún más potente y consciente del contexto.
+Esploriamo come effettuare il fine-tuning del modello linguistico Phi-3 Mini di Microsoft utilizzando Azure AI Foundry. Il fine-tuning consente di adattare Phi-3 Mini a compiti specifici, rendendolo ancora più potente e consapevole del contesto.
 
-## Consideraciones
+## Considerazioni
 
-- **Capacidades:** ¿Qué modelos se pueden ajustar? ¿Qué puede hacer el modelo base tras el fine-tuning?
-- **Costo:** ¿Cuál es el modelo de precios para el fine-tuning?
-- **Personalización:** ¿Cuánto puedo modificar el modelo base y de qué maneras?
-- **Conveniencia:** ¿Cómo se realiza el fine-tuning? ¿Necesito escribir código personalizado? ¿Debo aportar mi propia capacidad de cómputo?
-- **Seguridad:** Los modelos ajustados pueden presentar riesgos de seguridad. ¿Existen mecanismos para evitar daños no intencionados?
+- **Capacità:** Quali modelli possono essere sottoposti a fine-tuning? Cosa può fare il modello base dopo il fine-tuning?
+- **Costo:** Qual è il modello di prezzo per il fine-tuning?
+- **Personalizzazione:** Quanto posso modificare il modello base – e in che modo?
+- **Comodità:** Come avviene concretamente il fine-tuning – devo scrivere codice personalizzato? Devo fornire la mia potenza di calcolo?
+- **Sicurezza:** I modelli fine-tuned possono presentare rischi di sicurezza – ci sono delle protezioni per evitare danni involontari?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.it.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.it.png)
 
-## Preparación para el fine-tuning
+## Preparazione al fine-tuning
 
-### Requisitos previos
+### Prerequisiti
 
 > [!NOTE]
-> Para los modelos de la familia Phi-3, la oferta de fine-tuning bajo el modelo pay-as-you-go solo está disponible para hubs creados en la región **East US 2**.
+> Per i modelli della famiglia Phi-3, l’offerta di fine-tuning pay-as-you-go è disponibile solo con hub creati nelle regioni **East US 2**.
 
-- Una suscripción de Azure. Si no tienes una, crea una [cuenta Azure de pago](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) para comenzar.
+- Un abbonamento Azure. Se non ne hai uno, crea un [account Azure a pagamento](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) per iniziare.
 
-- Un [proyecto AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- El control de acceso basado en roles de Azure (Azure RBAC) se usa para otorgar permisos en Azure AI Foundry. Para realizar los pasos de este artículo, tu cuenta debe tener asignado el __rol de Azure AI Developer__ en el grupo de recursos.
+- Un [progetto AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
+- I controlli di accesso basati sui ruoli di Azure (Azure RBAC) sono utilizzati per concedere l’accesso alle operazioni in Azure AI Foundry. Per eseguire i passaggi di questo articolo, il tuo account utente deve avere il __ruolo Azure AI Developer__ sul gruppo di risorse.
 
-### Registro del proveedor de suscripción
+### Registrazione del provider di sottoscrizione
 
-Verifica que la suscripción esté registrada con el proveedor de recursos `Microsoft.Network`.
+Verifica che la sottoscrizione sia registrata al provider di risorse `Microsoft.Network`.
 
-1. Inicia sesión en el [portal de Azure](https://portal.azure.com).
-1. Selecciona **Subscriptions** en el menú lateral.
-1. Selecciona la suscripción que quieres usar.
-1. Selecciona **AI project settings** > **Resource providers** en el menú lateral.
-1. Confirma que **Microsoft.Network** esté en la lista de proveedores de recursos. Si no, agrégalo.
+1. Accedi al [portale Azure](https://portal.azure.com).
+1. Seleziona **Sottoscrizioni** dal menu a sinistra.
+1. Seleziona la sottoscrizione che vuoi usare.
+1. Seleziona **Impostazioni progetto AI** > **Provider di risorse** dal menu a sinistra.
+1. Conferma che **Microsoft.Network** sia presente nella lista dei provider di risorse. In caso contrario, aggiungilo.
 
-### Preparación de datos
+### Preparazione dei dati
 
-Prepara tus datos de entrenamiento y validación para ajustar tu modelo. Estos conjuntos deben contener ejemplos de entrada y salida que reflejen cómo quieres que el modelo funcione.
+Prepara i dati di addestramento e di validazione per il fine-tuning del modello. I tuoi set di dati di addestramento e validazione devono contenere esempi di input e output che rappresentano come desideri che il modello si comporti.
 
-Asegúrate de que todos tus ejemplos de entrenamiento sigan el formato esperado para inferencia. Para un fine-tuning efectivo, utiliza un conjunto de datos equilibrado y diverso.
+Assicurati che tutti gli esempi di addestramento seguano il formato previsto per l’inferenza. Per un fine-tuning efficace, garantisci un dataset bilanciato e vario.
 
-Esto implica mantener un balance de datos, incluir distintos escenarios y refinar periódicamente los datos de entrenamiento para alinearlos con expectativas reales, lo que conduce a respuestas más precisas y equilibradas.
+Questo implica mantenere un equilibrio nei dati, includere diversi scenari e affinare periodicamente i dati di addestramento per allinearsi alle aspettative del mondo reale, portando a risposte del modello più accurate ed equilibrate.
 
-Diferentes tipos de modelos requieren formatos distintos para los datos de entrenamiento.
+Tipi diversi di modelli richiedono formati differenti per i dati di addestramento.
 
 ### Chat Completion
 
-Los datos de entrenamiento y validación que uses **deben** estar en formato JSON Lines (JSONL). Para `Phi-3-mini-128k-instruct`, el conjunto de datos para fine-tuning debe seguir el formato conversacional usado por la API de Chat completions.
+I dati di addestramento e validazione che usi **devono** essere formattati come un documento JSON Lines (JSONL). Per `Phi-3-mini-128k-instruct` il dataset per il fine-tuning deve essere formattato nel formato conversazionale usato dall’API Chat completions.
 
-### Ejemplo de formato de archivo
+### Esempio di formato file
 
 ```json
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Is Xbox better than PlayStation?"}, {"role": "assistant", "content": "I apologize, but I cannot provide personal opinions. My primary job is to assist you with any issues related to your Xbox device. Do you have any Xbox-related issues that need addressing?"}]}
@@ -65,174 +65,172 @@ Los datos de entrenamiento y validación que uses **deben** estar en formato JSO
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-El tipo de archivo soportado es JSON Lines. Los archivos se suben al datastore predeterminado y quedan disponibles en tu proyecto.
+Il tipo di file supportato è JSON Lines. I file vengono caricati nel datastore predefinito e resi disponibili nel tuo progetto.
 
-## Fine-tuning de Phi-3 con Azure AI Foundry
+## Fine-tuning di Phi-3 con Azure AI Foundry
 
-Azure AI Foundry te permite personalizar modelos de lenguaje grandes con tus propios conjuntos de datos mediante un proceso conocido como fine-tuning. Este proceso aporta un gran valor al permitir la personalización y optimización para tareas y aplicaciones específicas. Esto se traduce en mejor rendimiento, eficiencia en costos, menor latencia y resultados adaptados.
+Azure AI Foundry ti permette di personalizzare i modelli linguistici di grandi dimensioni sui tuoi dataset personali tramite un processo chiamato fine-tuning. Il fine-tuning offre un valore significativo permettendo la personalizzazione e l’ottimizzazione per compiti e applicazioni specifiche. Questo porta a prestazioni migliorate, efficienza nei costi, riduzione della latenza e output su misura.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.it.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.it.png)
 
-### Crear un nuevo proyecto
+### Creare un nuovo progetto
 
-1. Inicia sesión en [Azure AI Foundry](https://ai.azure.com).
+1. Accedi a [Azure AI Foundry](https://ai.azure.com).
 
-1. Selecciona **+New project** para crear un proyecto nuevo en Azure AI Foundry.
+1. Seleziona **+New project** per creare un nuovo progetto in Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.it.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.it.png)
 
-1. Realiza las siguientes tareas:
+1. Esegui le seguenti operazioni:
 
-    - Nombre del **Hub** del proyecto. Debe ser un valor único.
-    - Selecciona el **Hub** a utilizar (crea uno nuevo si es necesario).
+    - Nome **Hub** del progetto. Deve essere un valore univoco.
+    - Seleziona l’**Hub** da usare (creane uno nuovo se necessario).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.it.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.it.png)
 
-1. Para crear un nuevo hub, realiza lo siguiente:
+1. Esegui le seguenti operazioni per creare un nuovo hub:
 
-    - Ingresa el **Nombre del Hub**. Debe ser único.
-    - Selecciona tu **Suscripción** de Azure.
-    - Selecciona el **Grupo de recursos** (crea uno nuevo si es necesario).
-    - Selecciona la **Ubicación** que deseas usar.
-    - Selecciona **Connect Azure AI Services** (crea uno nuevo si es necesario).
-    - En **Connect Azure AI Search**, selecciona **Skip connecting**.
+    - Inserisci il **Nome Hub**. Deve essere un valore univoco.
+    - Seleziona la tua **Sottoscrizione** Azure.
+    - Seleziona il **Gruppo di risorse** da usare (creane uno nuovo se necessario).
+    - Seleziona la **Posizione** che desideri utilizzare.
+    - Seleziona i **Servizi Azure AI da connettere** (creane uno nuovo se necessario).
+    - Seleziona **Connetti Azure AI Search** su **Salta connessione**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.it.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.it.png)
 
-1. Selecciona **Next**.
-1. Selecciona **Create a project**.
+1. Seleziona **Avanti**.
+1. Seleziona **Crea un progetto**.
 
-### Preparación de datos
+### Preparazione dei dati
 
-Antes de hacer fine-tuning, reúne o crea un conjunto de datos relevante para tu tarea, como instrucciones de chat, pares de preguntas y respuestas, u otro texto pertinente. Limpia y preprocesa estos datos eliminando ruido, manejando valores faltantes y tokenizando el texto.
+Prima del fine-tuning, raccogli o crea un dataset rilevante per il tuo compito, come istruzioni di chat, coppie domanda-risposta o altri dati testuali pertinenti. Pulisci e pre-elabora questi dati rimuovendo rumore, gestendo valori mancanti e tokenizzando il testo.
 
-### Fine-tune de modelos Phi-3 en Azure AI Foundry
-
-> [!NOTE]
-> El fine-tuning de modelos Phi-3 actualmente solo está soportado en proyectos ubicados en East US 2.
-
-1. Selecciona **Model catalog** en la pestaña lateral izquierda.
-
-1. Escribe *phi-3* en la **barra de búsqueda** y selecciona el modelo phi-3 que desees usar.
-
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.it.png)
-
-1. Selecciona **Fine-tune**.
-
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.it.png)
-
-1. Ingresa el **Nombre del modelo fine-tuned**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.it.png)
-
-1. Selecciona **Next**.
-
-1. Realiza lo siguiente:
-
-    - Selecciona el **tipo de tarea** como **Chat completion**.
-    - Selecciona los **datos de entrenamiento** que quieres usar. Puedes subirlos a través de Azure AI Foundry o desde tu entorno local.
-
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.it.png)
-
-1. Selecciona **Next**.
-
-1. Sube los **datos de validación** que usarás o selecciona **Automatic split of training data**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.it.png)
-
-1. Selecciona **Next**.
-
-1. Realiza lo siguiente:
-
-    - Selecciona el **multiplicador de tamaño de batch** que deseas usar.
-    - Selecciona la **tasa de aprendizaje** que quieres usar.
-    - Selecciona la cantidad de **epochs** que deseas usar.
-
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.it.png)
-
-1. Selecciona **Submit** para iniciar el proceso de fine-tuning.
-
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.it.png)
-
-1. Una vez que el modelo esté fine-tuned, el estado aparecerá como **Completed**, como se muestra en la imagen. Ahora puedes desplegar el modelo y usarlo en tu aplicación, en el playground o en prompt flow. Para más información, consulta [Cómo desplegar la familia de modelos Phi-3 con Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
-
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.it.png)
+### Fine-tuning dei modelli Phi-3 in Azure AI Foundry
 
 > [!NOTE]
-> Para información más detallada sobre fine-tuning de Phi-3, visita [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Il fine-tuning dei modelli Phi-3 è attualmente supportato solo in progetti localizzati in East US 2.
 
-## Limpieza de tus modelos fine-tuned
+1. Seleziona **Catalogo modelli** dalla scheda laterale sinistra.
 
-Puedes eliminar un modelo fine-tuned desde la lista de modelos fine-tuned en [Azure AI Foundry](https://ai.azure.com) o desde la página de detalles del modelo. Selecciona el modelo fine-tuned que quieres borrar en la página de Fine-tuning y luego haz clic en el botón Delete para eliminarlo.
+1. Digita *phi-3* nella **barra di ricerca** e seleziona il modello phi-3 che desideri utilizzare.
 
-> [!NOTE]
-> No puedes eliminar un modelo personalizado si tiene un despliegue activo. Primero debes eliminar el despliegue antes de borrar el modelo personalizado.
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.it.png)
 
-## Costos y cuotas
+1. Seleziona **Fine-tune**.
 
-### Consideraciones sobre costos y cuotas para modelos Phi-3 fine-tuned como servicio
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.it.png)
 
-Los modelos Phi fine-tuned como servicio son ofrecidos por Microsoft e integrados con Azure AI Foundry. Puedes consultar los precios al [desplegar](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) o ajustar los modelos en la pestaña de Precios y términos del asistente de despliegue.
+1. Inserisci il **Nome del modello fine-tuned**.
 
-## Filtrado de contenido
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.it.png)
 
-Los modelos desplegados como servicio bajo el modelo pay-as-you-go están protegidos por Azure AI Content Safety. Al desplegarlos en endpoints en tiempo real, puedes optar por desactivar esta función. Con Azure AI Content Safety activado, tanto el prompt como la respuesta pasan por un conjunto de modelos de clasificación que detectan y previenen la generación de contenido dañino. El sistema de filtrado detecta y actúa sobre categorías específicas de contenido potencialmente dañino en entradas y salidas. Aprende más sobre [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+1. Seleziona **Avanti**.
 
-**Configuración del fine-tuning**
+1. Esegui le seguenti operazioni:
 
-Hiparámetros: Define hiparámetros como tasa de aprendizaje, tamaño de batch y número de epochs.
+    - Seleziona il **tipo di attività** su **Chat completion**.
+    - Seleziona i **dati di addestramento** che vuoi usare. Puoi caricarli tramite i dati di Azure AI Foundry o dal tuo ambiente locale.
 
-**Función de pérdida**
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.it.png)
 
-Elige la función de pérdida adecuada para tu tarea (por ejemplo, cross-entropy).
+1. Seleziona **Avanti**.
 
-**Optimizador**
+1. Carica i **dati di validazione** che vuoi usare oppure seleziona **Divisione automatica dei dati di addestramento**.
 
-Selecciona un optimizador (por ejemplo, Adam) para las actualizaciones durante el entrenamiento.
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.it.png)
 
-**Proceso de fine-tuning**
+1. Seleziona **Avanti**.
 
-- Cargar modelo preentrenado: Carga el checkpoint de Phi-3 Mini.
-- Añadir capas personalizadas: Agrega capas específicas para la tarea (por ejemplo, cabeza de clasificación para instrucciones de chat).
+1. Esegui le seguenti operazioni:
 
-**Entrenar el modelo**
+    - Seleziona il **moltiplicatore della dimensione batch** che vuoi usare.
+    - Seleziona il **tasso di apprendimento** che vuoi usare.
+    - Seleziona il numero di **epoche** che vuoi usare.
 
-Ajusta el modelo con tu conjunto de datos preparado. Supervisa el progreso y ajusta los hiparámetros según sea necesario.
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.it.png)
 
-**Evaluación y validación**
+1. Seleziona **Invia** per avviare il processo di fine-tuning.
 
-Conjunto de validación: Divide tus datos en conjuntos de entrenamiento y validación.
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.it.png)
 
-**Evaluar desempeño**
+1. Una volta che il modello è stato fine-tuned, lo stato sarà visualizzato come **Completato**, come mostrato nell’immagine qui sotto. Ora puoi distribuire il modello e usarlo nella tua applicazione, nel playground o in prompt flow. Per maggiori informazioni, consulta [Come distribuire la famiglia di modelli linguistici piccoli Phi-3 con Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-Utiliza métricas como accuracy, F1-score o perplexity para evaluar el rendimiento.
-
-## Guardar el modelo fine-tuned
-
-**Checkpoint**
-
-Guarda el checkpoint del modelo fine-tuned para uso futuro.
-
-## Despliegue
-
-- Despliega como servicio web: Despliega tu modelo fine-tuned como servicio web en Azure AI Foundry.
-- Prueba el endpoint: Envía consultas de prueba al endpoint desplegado para verificar su funcionamiento.
-
-## Iterar y mejorar
-
-Itera: Si el rendimiento no es satisfactorio, ajusta hiparámetros, agrega más datos o aumenta los epochs.
-
-## Monitorear y refinar
-
-Monitorea continuamente el comportamiento del modelo y realiza ajustes según sea necesario.
-
-## Personalizar y extender
-
-Tareas personalizadas: Phi-3 Mini puede ajustarse para tareas más allá de instrucciones de chat. ¡Explora otros casos de uso!
-Experimenta: Prueba diferentes arquitecturas, combinaciones de capas y técnicas para mejorar el rendimiento.
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.it.png)
 
 > [!NOTE]
-> El fine-tuning es un proceso iterativo. ¡Experimenta, aprende y adapta tu modelo para lograr los mejores resultados en tu tarea específica!
+> Per informazioni più dettagliate sul fine-tuning di Phi-3, visita [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+
+## Pulizia dei modelli fine-tuned
+
+Puoi eliminare un modello fine-tuned dalla lista dei modelli di fine-tuning in [Azure AI Foundry](https://ai.azure.com) o dalla pagina dei dettagli del modello. Seleziona il modello fine-tuned da eliminare nella pagina Fine-tuning, quindi seleziona il pulsante Elimina per rimuoverlo.
+
+> [!NOTE]
+> Non puoi eliminare un modello personalizzato se ha una distribuzione esistente. Devi prima eliminare la distribuzione del modello prima di poter eliminare il modello personalizzato.
+
+## Costi e quote
+
+### Considerazioni su costi e quote per i modelli Phi-3 fine-tuned come servizio
+
+I modelli Phi fine-tuned come servizio sono offerti da Microsoft e integrati con Azure AI Foundry per l’uso. Puoi trovare i prezzi durante la [distribuzione](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) o il fine-tuning dei modelli nella scheda Prezzi e termini della procedura guidata di distribuzione.
+
+## Filtraggio dei contenuti
+
+I modelli distribuiti come servizio con pay-as-you-go sono protetti da Azure AI Content Safety. Quando distribuiti su endpoint in tempo reale, puoi scegliere di disabilitare questa funzionalità. Con Azure AI Content Safety abilitato, sia il prompt che la risposta passano attraverso un insieme di modelli di classificazione progettati per rilevare e prevenire l’output di contenuti dannosi. Il sistema di filtraggio dei contenuti rileva e agisce su categorie specifiche di contenuti potenzialmente dannosi sia nei prompt di input che nelle risposte generate. Scopri di più su [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+
+**Configurazione del Fine-Tuning**
+
+Iperparametri: Definisci iperparametri come tasso di apprendimento, dimensione batch e numero di epoche di addestramento.
+
+**Funzione di perdita**
+
+Scegli una funzione di perdita appropriata per il tuo compito (es. cross-entropy).
+
+**Ottimizzatore**
+
+Seleziona un ottimizzatore (es. Adam) per l’aggiornamento dei gradienti durante l’addestramento.
+
+**Processo di Fine-Tuning**
+
+- Carica modello pre-addestrato: carica il checkpoint di Phi-3 Mini.
+- Aggiungi layer personalizzati: aggiungi layer specifici per il compito (es. testa di classificazione per istruzioni di chat).
+
+**Addestra il modello**  
+Fine-tuning del modello usando il dataset preparato. Monitora il progresso dell’addestramento e regola gli iperparametri se necessario.
+
+**Valutazione e validazione**
+
+Set di validazione: dividi i dati in set di addestramento e validazione.
+
+**Valuta le prestazioni**
+
+Usa metriche come accuratezza, F1-score o perplexity per valutare le prestazioni del modello.
+
+## Salva il modello fine-tuned
+
+**Checkpoint**  
+Salva il checkpoint del modello fine-tuned per usi futuri.
+
+## Distribuzione
+
+- Distribuisci come servizio web: distribuisci il modello fine-tuned come servizio web in Azure AI Foundry.
+- Testa l’endpoint: invia query di prova all’endpoint distribuito per verificarne il funzionamento.
+
+## Itera e migliora
+
+Itera: se le prestazioni non sono soddisfacenti, ripeti il processo modificando iperparametri, aggiungendo dati o effettuando fine-tuning per ulteriori epoche.
+
+## Monitora e affina
+
+Monitora continuamente il comportamento del modello e affinalo secondo necessità.
+
+## Personalizza ed estendi
+
+Compiti personalizzati: Phi-3 Mini può essere fine-tuned per vari compiti oltre alle istruzioni di chat. Esplora altri casi d’uso!  
+Sperimenta: prova diverse architetture, combinazioni di layer e tecniche per migliorare le prestazioni.
+
+> [!NOTE]
+> Il fine-tuning è un processo iterativo. Sperimenta, impara e adatta il tuo modello per ottenere i migliori risultati per il tuo compito specifico!
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale umana. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

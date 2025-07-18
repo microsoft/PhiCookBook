@@ -2,58 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-05-09T21:56:54+00:00",
+  "translation_date": "2025-07-17T08:29:04+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
   "language_code": "ms"
 }
 -->
-## سيناريوهات التخصيص الدقيق
+## Senario Penalaan Halus
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.25759a0154a97ad90e43a6cace37d6bea87f0ac0236ada3ad5d4a1fbacc3bdf7.ms.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.ms.png)
 
-**المنصة** تشمل تقنيات مختلفة مثل Azure AI Foundry وAzure Machine Learning وأدوات الذكاء الاصطناعي وKaito وONNX Runtime.
+**Platform** Ini merangkumi pelbagai teknologi seperti Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, dan ONNX Runtime.
 
-**البنية التحتية** تشمل المعالج المركزي (CPU) وFPGA، وهما ضروريان لعملية التخصيص الدقيق. دعني أريك الرموز الخاصة بكل من هذه التقنيات.
+**Infrastruktur** Ini merangkumi CPU dan FPGA, yang penting untuk proses penalaan halus. Saya akan tunjukkan ikon untuk setiap teknologi ini.
 
-**الأدوات والأُطُر** تشمل ONNX Runtime وONNX Runtime. دعني أريك الرموز الخاصة بكل من هذه التقنيات.  
-[Insert icons for ONNX Runtime and ONNX Runtime]
+**Alat & Rangka Kerja** Ini merangkumi ONNX Runtime dan ONNX Runtime. Saya akan tunjukkan ikon untuk setiap teknologi ini.  
+[Masukkan ikon untuk ONNX Runtime dan ONNX Runtime]
 
-تتضمن عملية التخصيص الدقيق باستخدام تقنيات Microsoft مكونات وأدوات مختلفة. من خلال فهم هذه التقنيات واستخدامها، يمكننا تخصيص تطبيقاتنا بشكل فعال وابتكار حلول أفضل.
+Proses penalaan halus dengan teknologi Microsoft melibatkan pelbagai komponen dan alat. Dengan memahami dan menggunakan teknologi ini, kita dapat menala aplikasi dengan berkesan dan mencipta penyelesaian yang lebih baik.
 
-## النموذج كخدمة
+## Model sebagai Perkhidmatan
 
-قم بتخصيص النموذج باستخدام التخصيص المستضاف، دون الحاجة إلى إنشاء وإدارة الحوسبة.
+Tala halus model menggunakan penalaan halus yang dihoskan, tanpa perlu mencipta dan menguruskan pengkomputeran.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.6184d80a336ea9d7bb67a581e9e5d0b021cafdffff7ba257c2012e2123e0d77e.ms.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.ms.png)
 
-التخصيص بدون خادم متاح لنماذج Phi-3-mini وPhi-3-medium، مما يمكّن المطورين من تخصيص النماذج بسرعة وسهولة لسيناريوهات السحابة والحافة دون الحاجة لترتيب الحوسبة. كما أعلنا أن Phi-3-small متوفر الآن من خلال عرض Models-as-a-Service لدينا، مما يتيح للمطورين البدء بسرعة وسهولة في تطوير الذكاء الاصطناعي دون الحاجة لإدارة البنية التحتية الأساسية.
+Penalaan halus tanpa pelayan tersedia untuk model Phi-3-mini dan Phi-3-medium, membolehkan pembangun menyesuaikan model dengan cepat dan mudah untuk senario awan dan edge tanpa perlu mengatur pengkomputeran. Kami juga telah mengumumkan bahawa Phi-3-small kini tersedia melalui tawaran Models-as-a-Service kami supaya pembangun dapat memulakan pembangunan AI dengan cepat dan mudah tanpa perlu menguruskan infrastruktur asas.
 
-## النموذج كمنصة
+## Model sebagai Platform
 
-يقوم المستخدمون بإدارة الحوسبة الخاصة بهم من أجل تخصيص نماذجهم.
+Pengguna menguruskan pengkomputeran mereka sendiri untuk menala halus model mereka.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.cf8b08ef05bf57f362da90834be87562502f4370de4a7325a9fb03b8c008e5e7.ms.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.ms.png)
 
-[Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
+[Contoh Penalaan Halus](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## سيناريوهات التخصيص الدقيق
+## Senario Penalaan Halus
 
 | | | | | | | |
 |-|-|-|-|-|-|-|
-|السيناريو|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|تكييف نماذج LLM المدربة مسبقًا لمهام أو مجالات محددة|نعم|نعم|نعم|نعم|نعم|نعم|
-|التخصيص لمهام معالجة اللغة الطبيعية مثل تصنيف النص، التعرف على الكيانات المسماة، والترجمة الآلية|نعم|نعم|نعم|نعم|نعم|نعم|
-|التخصيص لمهام الأسئلة والأجوبة|نعم|نعم|نعم|نعم|نعم|نعم|
-|التخصيص لتوليد ردود شبيهة بالبشر في الدردشة الآلية|نعم|نعم|نعم|نعم|نعم|نعم|
-|التخصيص لتوليد الموسيقى، الفن، أو أشكال أخرى من الإبداع|نعم|نعم|نعم|نعم|نعم|نعم|
-|تقليل التكاليف الحسابية والمالية|نعم|نعم|لا|نعم|نعم|لا|
-|تقليل استخدام الذاكرة|لا|نعم|لا|نعم|نعم|نعم|
-|استخدام عدد أقل من المعاملات لتخصيص فعال|لا|نعم|نعم|لا|لا|نعم|
-|شكل فعال من حيث الذاكرة لتوازي البيانات يسمح بالوصول إلى الذاكرة المجمعة لجميع أجهزة GPU المتاحة|لا|لا|لا|نعم|نعم|نعم|
+|Senario|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
+|Menyesuaikan LLM yang telah dilatih untuk tugasan atau domain tertentu|Ya|Ya|Ya|Ya|Ya|Ya|
+|Penalaan halus untuk tugasan NLP seperti klasifikasi teks, pengecaman entiti bernama, dan terjemahan mesin|Ya|Ya|Ya|Ya|Ya|Ya|
+|Penalaan halus untuk tugasan QA|Ya|Ya|Ya|Ya|Ya|Ya|
+|Penalaan halus untuk menghasilkan respons seperti manusia dalam chatbot|Ya|Ya|Ya|Ya|Ya|Ya|
+|Penalaan halus untuk menghasilkan muzik, seni, atau bentuk kreativiti lain|Ya|Ya|Ya|Ya|Ya|Ya|
+|Mengurangkan kos pengkomputeran dan kewangan|Ya|Ya|Tidak|Ya|Ya|Tidak|
+|Mengurangkan penggunaan memori|Tidak|Ya|Tidak|Ya|Ya|Ya|
+|Menggunakan parameter yang lebih sedikit untuk penalaan halus yang cekap|Tidak|Ya|Ya|Tidak|Tidak|Ya|
+|Bentuk paralelisme data yang cekap memori yang memberikan akses kepada jumlah memori GPU bagi semua peranti GPU yang tersedia|Tidak|Tidak|Tidak|Ya|Ya|Ya|
 
-## أمثلة على أداء التخصيص الدقيق
+## Contoh Prestasi Penalaan Halus
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.9dbf84557eef43e011eb7cadf51f51686f9245f7953e2712a27095ab7d18a6d1.ms.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.ms.png)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat kritikal, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

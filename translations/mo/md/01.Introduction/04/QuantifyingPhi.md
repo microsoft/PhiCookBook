@@ -2,54 +2,50 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
-  "translation_date": "2025-05-07T14:49:45+00:00",
+  "translation_date": "2025-07-16T21:42:48+00:00",
   "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "mo"
 }
 -->
-# **Quantifying Phi Family**
+# **Phi 家族量化**
 
-Model quantization means mapping the parameters (like weights and activation values) in a neural network model from a large range (usually continuous) to a smaller, finite range. This technique reduces the model’s size and computational load, improving efficiency in resource-limited environments such as mobile or embedded devices. Quantization compresses the model by lowering parameter precision but introduces some accuracy loss. Therefore, it’s important to balance model size, computational cost, and precision during quantization. Common methods include fixed-point and floating-point quantization. Choose the right strategy based on your specific scenario and needs.
+模型量化是指將神經網絡模型中的參數（如權重和激活值）從較大的數值範圍（通常是連續值範圍）映射到較小的有限數值範圍的過程。這項技術可以減少模型的大小和計算複雜度，提升模型在資源受限環境（如行動裝置或嵌入式系統）中的運行效率。模型量化透過降低參數的精度來實現壓縮，但同時也會帶來一定的精度損失。因此，在量化過程中，需要在模型大小、計算複雜度和精度之間取得平衡。常見的量化方法包括定點量化、浮點量化等。您可以根據具體場景和需求選擇合適的量化策略。
 
-We aim to deploy GenAI models on edge devices, enabling more devices like mobiles, AI PC/Copilot+PC, and traditional IoT devices to enter GenAI scenarios. With quantized models, deployment can be tailored to different edge devices. Together with model acceleration frameworks and hardware vendor quantization models, we can create better SLM application scenarios.
+我們希望將 GenAI 模型部署到邊緣設備，讓更多設備能進入 GenAI 場景，例如行動裝置、AI PC/Copilot+PC 以及傳統物聯網設備。透過量化模型，我們可以根據不同設備將其部署到不同的邊緣設備。結合硬體廠商提供的模型加速框架和量化模型，我們能打造更優秀的 SLM 應用場景。
 
-In quantization, different precisions exist (INT4, INT8, FP16, FP32). Below is an overview of commonly used precisions:
+在量化場景中，我們有不同的精度選擇（INT4、INT8、FP16、FP32）。以下是常用量化精度的說明：
 
 ### **INT4**
 
-INT4 quantization is an aggressive method that converts model weights and activations into 4-bit integers. Due to the smaller range and lower precision, INT4 usually causes greater accuracy loss. However, compared to INT8, it further reduces storage and computational demands. INT4 is relatively rare in practice because too low precision can significantly degrade model performance. Also, not all hardware supports INT4 operations, so hardware compatibility must be considered when choosing this method.
+INT4 量化是一種激進的量化方法，將模型的權重和激活值量化為 4 位元整數。由於表示範圍較小且精度較低，INT4 量化通常會帶來較大的精度損失。然而，相較於 INT8 量化，INT4 量化能進一步降低模型的存儲需求和計算複雜度。需要注意的是，INT4 量化在實際應用中較為罕見，因為過低的精度可能導致模型性能顯著下降。此外，並非所有硬體都支援 INT4 運算，因此在選擇量化方法時需考慮硬體相容性。
 
 ### **INT8**
 
-INT8 quantization converts model weights and activations from floating point to 8-bit integers. Although INT8’s range and precision are lower, it significantly reduces storage and computation needs. The model’s weights and activations undergo quantization with scaling and offset to preserve floating point information as much as possible. During inference, these values are dequantized back to floating point for calculations, then re-quantized to INT8 for the next step. This approach provides adequate accuracy in most cases while maintaining high computational efficiency.
+INT8 量化是將模型的權重和激活值從浮點數轉換為 8 位元整數的過程。雖然 INT8 整數表示的數值範圍較小且精度較低，但能顯著降低存儲和計算需求。在 INT8 量化中，模型的權重和激活值會經過量化處理，包括縮放和偏移，以盡可能保留原始浮點資訊。在推理過程中，這些量化值會被反量化回浮點數進行計算，然後再量化回 INT8 以進行下一步運算。此方法在大多數應用中能提供足夠的精度，同時保持高效的計算效率。
 
 ### **FP16**
 
-FP16, or 16-bit floating point (float16), halves memory usage compared to 32-bit float (float32), which is advantageous in large-scale deep learning. FP16 allows loading bigger models or handling more data within the same GPU memory limits. As modern GPUs increasingly support FP16 operations, it can also speed up computation. However, FP16 has lower precision, which can sometimes cause numerical instability or precision loss.
+FP16 格式，即 16 位元浮點數（float16），相較於 32 位元浮點數（float32）可將記憶體佔用減半，這在大規模深度學習應用中具有顯著優勢。FP16 格式允許在相同 GPU 記憶體限制下載入更大的模型或處理更多資料。隨著現代 GPU 硬體持續支援 FP16 運算，使用 FP16 格式也可能帶來計算速度的提升。然而，FP16 格式也有其固有缺點，即精度較低，可能在某些情況下導致數值不穩定或精度損失。
 
 ### **FP32**
 
-FP32 offers higher precision and accurately represents a wide range of values. It’s preferred for complex mathematical operations or when high-precision results are needed. However, higher accuracy means more memory usage and longer computation times. For large deep learning models with many parameters and huge data, FP32 may lead to insufficient GPU memory or slower inference.
+FP32 格式提供較高的精度，能準確表示廣泛的數值範圍。在執行複雜數學運算或需要高精度結果的場景中，FP32 格式是首選。然而，高精度也意味著更多的記憶體使用和較長的計算時間。對於大型深度學習模型，尤其是當模型參數眾多且資料量龐大時，FP32 格式可能導致 GPU 記憶體不足或推理速度下降。
 
-On mobile or IoT devices, Phi-3.x models can be converted to INT4, while AI PC / Copilot PC can use higher precisions like INT8, FP16, or FP32.
+在行動裝置或物聯網設備上，我們可以將 Phi-3.x 模型轉換為 INT4，而 AI PC / Copilot PC 則可使用較高精度如 INT8、FP16、FP32。
 
-Currently, different hardware vendors offer frameworks supporting generative models, such as Intel's OpenVINO, Qualcomm's QNN, Apple's MLX, and Nvidia's CUDA, combined with model quantization for local deployment.
+目前，不同硬體廠商有不同的框架支援生成模型，例如 Intel 的 OpenVINO、Qualcomm 的 QNN、Apple 的 MLX 以及 Nvidia 的 CUDA 等，結合模型量化完成本地部署。
 
-Technically, we support various formats after quantization, like PyTorch / Tensorflow formats, GGUF, and ONNX. I have compared GGUF and ONNX formats and their application scenarios. I recommend the ONNX quantization format due to its strong support from both model frameworks and hardware. In this chapter, we focus on ONNX Runtime for GenAI, OpenVINO, and Apple MLX for model quantization (if you have better methods, feel free to contribute via PR).
+在技術層面，量化後我們支援不同格式，如 PyTorch / Tensorflow 格式、GGUF 及 ONNX。我已做過 GGUF 與 ONNX 的格式比較及應用場景分析。這裡推薦 ONNX 量化格式，因其從模型框架到硬體都有良好支援。本章將聚焦於使用 ONNX Runtime for GenAI、OpenVINO 及 Apple MLX 進行模型量化（如果您有更好的方法，也歡迎透過提交 PR 與我們分享）。
 
-**This chapter includes**
+**本章節包含**
 
-1. [Quantizing Phi-3.5 / 4 using llama.cpp](./UsingLlamacppQuantifyingPhi.md)
+1. [使用 llama.cpp 量化 Phi-3.5 / 4](./UsingLlamacppQuantifyingPhi.md)
 
-2. [Quantizing Phi-3.5 / 4 using Generative AI extensions for onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
+2. [使用 onnxruntime 的生成式 AI 擴展量化 Phi-3.5 / 4](./UsingORTGenAIQuantifyingPhi.md)
 
-3. [Quantizing Phi-3.5 / 4 using Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
+3. [使用 Intel OpenVINO 量化 Phi-3.5 / 4](./UsingIntelOpenVINOQuantifyingPhi.md)
 
-4. [Quantizing Phi-3.5 / 4 using Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
+4. [使用 Apple MLX 框架量化 Phi-3.5 / 4](./UsingAppleMLXQuantifyingPhi.md)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language or dialect "mo" refers to? This will help me provide the correct translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

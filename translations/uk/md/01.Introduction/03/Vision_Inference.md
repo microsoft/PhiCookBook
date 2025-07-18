@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-07-09T20:01:03+00:00",
+  "translation_date": "2025-07-16T21:40:51+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "uk"
 }
@@ -27,7 +27,7 @@ pip install torch -U
 pip install flash-attn --no-build-isolation
 ```
 
-Створіть новий Notebook. Для виконання прикладів рекомендується спочатку створити наступний вміст.
+Створіть новий Notebook. Щоб виконати приклади, рекомендується спочатку створити наступний вміст.
 
 ```python
 from PIL import Image
@@ -80,7 +80,7 @@ response = processor.batch_decode(generate_ids,
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
 ```
 
-## **2. OCR з Phi-3-Vision**
+## **2. OCR за допомогою Phi-3-Vision**
 
 Окрім аналізу зображення, ми також можемо витягувати інформацію з нього. Це процес OCR, для якого раніше потрібно було писати складний код.
 

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-05-07T10:14:44+00:00",
+  "translation_date": "2025-07-16T17:05:31+00:00",
   "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "es"
 }
@@ -30,10 +30,10 @@ Antes de comenzar, asegúrate de cumplir con los siguientes requisitos:
 
 ## Instalación
 
-1. Crea un nuevo flow en tu proyecto de Azure AI Studio usando el archivo flow.yaml.
+1. Crea un nuevo flujo en tu proyecto de Azure AI Studio usando el archivo flow.yaml.
 2. Despliega un modelo Phi3 desde tu catálogo de modelos de Azure AI y crea la conexión con tu proyecto. [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
 3. Crea el índice vectorial en Azure AI Search usando cualquier documento que prefieras. [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. Despliega el flow en un endpoint gestionado y úsalo en el archivo prompt-flow-frontend.py. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+4. Despliega el flujo en un endpoint gestionado y úsalo en el archivo prompt-flow-frontend.py. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
 5. Clona el repositorio:
 
     ```sh
@@ -48,7 +48,7 @@ Antes de comenzar, asegúrate de cumplir con los siguientes requisitos:
     docker build -t prompt-flow-frontend.py .
     ```
 
-7. Sube la imagen Docker al Azure Container Registry:
+7. Sube la imagen Docker a Azure Container Registry:
 
     ```sh
     az acr login --name yourregistry
@@ -74,5 +74,5 @@ Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148
 
 Artículo completo: [RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
-**Aviso Legal**:  
+**Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

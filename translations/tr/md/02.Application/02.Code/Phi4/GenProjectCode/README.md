@@ -2,27 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:50:15+00:00",
+  "translation_date": "2025-07-17T04:45:21+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "tr"
 }
 -->
-## **Phi-4-mini-mm ile kod üretme**
+## **Phi-4-mini-mm ile kod oluşturma**
 
-Phi-4-mini, Phi Ailesi’nin güçlü kodlama yeteneklerini sürdürüyor. Kodlama ile ilgili sorular sormak için Prompt’u kullanabilirsiniz. Tabii, güçlü mantık yeteneği eklendikten sonra, gereksinimlere göre projeler oluşturmak gibi daha güçlü kodlama yeteneklerine sahip oldu. Örneğin, aşağıdaki gibi gereksinimlere göre projeler oluşturabilirsiniz:
+Phi-4-mini, Phi Ailesi'nin güçlü kodlama yeteneklerini sürdürüyor. Kodlama ile ilgili sorular sormak için Prompt'u kullanabilirsiniz. Elbette, güçlü mantık yürütme yeteneği eklendikten sonra, gereksinimlere göre proje oluşturmak gibi daha güçlü kodlama yeteneklerine sahip oldu. Örneğin, gereksinimlere göre projeler oluşturmak:
 
 ### **Gereksinim**
 
 Bir Alışveriş Sepeti Uygulaması oluşturun
 
 - Aşağıdaki metodlara sahip bir API Rest oluşturun:
-    - Sayfa kaydırma ve limit kullanarak bira listesini alın.
-    - ID’ye göre bira detaylarını alın.
-    - İsim, açıklama, slogan, yiyecek eşleştirmeleri ve fiyat bazında bira araması yapın.
+    - Sayfa ofseti ve limit kullanarak bira listesini alın.
+    - ID ile bira detaylarını alın.
+    - İsim, açıklama, slogan, yiyecek eşleştirmeleri ve fiyata göre bira arayın.
 - Ana sayfada ürün listesi oluşturun.
     - Ürünleri filtrelemek için bir arama çubuğu oluşturun.
     - Kullanıcı bir ürüne tıkladığında açıklama sayfasına yönlendirin.
-- (Opsiyonel) Ürünleri fiyata göre filtrelemek için bir dilimleyici oluşturun.
+- (İsteğe bağlı) Ürünleri fiyata göre filtrelemek için bir dilimleyici.
 - Bir alışveriş sepeti oluşturun.
     - Ürünleri sepete ekleyin.
     - Ürünleri sepetten çıkarın.
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalar nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

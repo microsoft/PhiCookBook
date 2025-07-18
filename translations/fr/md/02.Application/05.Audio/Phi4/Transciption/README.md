@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-05-07T14:26:51+00:00",
+  "translation_date": "2025-07-17T05:10:21+00:00",
   "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "fr"
 }
 -->
 ## **Extraction de transcriptions audio avec Phi-4-multimodal**
 
-Phi-4-multimodal est un modèle multimodal complet capable d’utiliser l’audio en plus du texte et des images. Voyons comment l’utiliser.
+Phi-4-multimodal est un modèle multimodal complet qui peut utiliser l’audio en plus du texte et des images. Voyons comment l’utiliser.
 
 
 ```python
@@ -66,4 +66,4 @@ print(response)
 ```
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

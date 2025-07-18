@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-09T04:45:29+00:00",
+  "translation_date": "2025-07-16T16:26:38+00:00",
   "source_file": "code/04.Finetuning/olive-ort-example/README.md",
   "language_code": "sv"
 }
 -->
-# Fine-tune Phi3 med Olive
+# Finjustera Phi3 med Olive
 
-I det här exemplet använder du Olive för att:
+I det här exemplet kommer du att använda Olive för att:
 
 1. Finjustera en LoRA-adapter för att klassificera fraser som Sad, Joy, Fear, Surprise.
 1. Slå samman adaptervikterna med basmodellen.
 1. Optimera och kvantisera modellen till `int4`.
 
-Vi visar också hur du kan inferera den finjusterade modellen med ONNX Runtime (ORT) Generate API.
+Vi visar också hur du kan göra inferens med den finjusterade modellen med hjälp av ONNX Runtime (ORT) Generate API.
 
-> **⚠️ För finjustering behöver du ha en lämplig GPU tillgänglig – till exempel en A10, V100, A100.**
+> **⚠️ För finjustering behöver du ha en lämplig GPU tillgänglig - till exempel en A10, V100, A100.**
 
 ## 💾 Installera
 
@@ -28,7 +28,7 @@ conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-Installera sedan Olive och beroenden för ett finjusteringsarbetsflöde:
+Installera sedan Olive och beroenden för ett finjusteringsflöde:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -37,23 +37,23 @@ pip install -r requirements.txt
 ```
 
 ## 🧪 Finjustera Phi3 med Olive
-[Olive-konfigurationsfilen](../../../../../code/04.Finetuning/olive-ort-example/phrase-classification.json) innehåller ett *arbetsflöde* med följande *steg*:
+[Olive-konfigurationsfilen](../../../../../code/04.Finetuning/olive-ort-example/phrase-classification.json) innehåller ett *workflow* med följande *steg*:
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-På en övergripande nivå kommer detta arbetsflöde att:
+På en övergripande nivå kommer detta workflow att:
 
 1. Finjustera Phi3 (i 150 steg, vilket du kan ändra) med data från [dataset/data-classification.json](../../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json).
 1. Slå samman LoRA-adaptervikterna med basmodellen. Detta ger dig en enda modellfil i ONNX-format.
 1. Model Builder optimerar modellen för ONNX runtime *och* kvantiserar modellen till `int4`.
 
-För att köra arbetsflödet, kör:
+För att köra workflow, kör:
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-När Olive är klar finns din optimerade och finjusterade `int4` Phi3-modell tillgänglig i: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
+När Olive är klar finns din optimerade `int4` finjusterade Phi3-modell tillgänglig i: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
 ## 🧑‍💻 Integrera finjusterad Phi3 i din applikation
 

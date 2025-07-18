@@ -2,47 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-07T10:16:39+00:00",
+  "translation_date": "2025-07-16T16:51:10+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "de"
 }
 -->
 # phi3ext README
 
-Dies ist das README für deine Erweiterung "phi3ext". Nachdem du eine kurze Beschreibung geschrieben hast, empfehlen wir, die folgenden Abschnitte aufzunehmen.
+Dies ist das README für deine Erweiterung "phi3ext". Nachdem du eine kurze Beschreibung geschrieben hast, empfehlen wir, die folgenden Abschnitte einzufügen.
 
 ## Features
 
-Beschreibe die spezifischen Funktionen deiner Erweiterung, einschließlich Screenshots der Erweiterung in Aktion. Die Bildpfade sind relativ zu dieser README-Datei.
+Beschreibe die spezifischen Funktionen deiner Erweiterung, einschließlich Screenshots während der Nutzung der Erweiterung. Die Bildpfade sind relativ zu dieser README-Datei.
 
-Zum Beispiel, wenn du in deinem Erweiterungsprojektordner einen Unterordner für Bilder hast:
+Zum Beispiel, wenn du im Arbeitsbereich deines Erweiterungsprojekts einen Unterordner für Bilder hast:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tipp: Viele beliebte Erweiterungen verwenden Animationen. Das ist eine großartige Möglichkeit, deine Erweiterung zu präsentieren! Wir empfehlen kurze, fokussierte Animationen, die leicht zu verfolgen sind.
+> [!TIP] Viele beliebte Erweiterungen verwenden Animationen. Das ist eine großartige Möglichkeit, deine Erweiterung zu präsentieren! Wir empfehlen kurze, fokussierte Animationen, die leicht zu verfolgen sind.
 
 ## Requirements
 
-Wenn du Anforderungen oder Abhängigkeiten hast, füge einen Abschnitt hinzu, der diese Anforderungen und die Installation sowie Konfiguration beschreibt.
+Falls du Anforderungen oder Abhängigkeiten hast, füge einen Abschnitt hinzu, der diese beschreibt und erklärt, wie man sie installiert und konfiguriert.
 
 ## Extension Settings
 
-Falls deine Erweiterung VS Code Einstellungen über den `contributes.configuration` Erweiterungspunkt hinzufügt, solltest du diese hier aufführen.
+Wenn deine Erweiterung über den Erweiterungspunkt `contributes.configuration` VS Code-Einstellungen hinzufügt, solltest du diese hier aufführen.
 
 Zum Beispiel:
 
-Diese Erweiterung stellt folgende Einstellungen bereit:
+Diese Erweiterung trägt folgende Einstellungen bei:
 
 * `myExtension.enable`: Aktiviert/deaktiviert diese Erweiterung.
-* `myExtension.thing`: Setze auf `blah`, um etwas zu tun.
+* `myExtension.thing`: Setze diesen Wert auf `blah`, um etwas zu tun.
 
 ## Known Issues
 
-Das Aufzeigen bekannter Probleme kann helfen, dass Nutzer nicht mehrfach dieselben Probleme melden.
+Das Aufzeigen bekannter Probleme kann helfen, dass Nutzer nicht wiederholt dieselben Probleme melden.
 
 ## Release Notes
 
-Nutzer schätzen es, wenn du bei Updates deiner Erweiterung Versionshinweise bereitstellst.
+Nutzer schätzen es, wenn du beim Aktualisieren deiner Erweiterung Release Notes bereitstellst.
 
 ### 1.0.0
 
@@ -60,17 +60,17 @@ Funktionen X, Y und Z hinzugefügt.
 
 ## Following extension guidelines
 
-Stelle sicher, dass du die Erweiterungsrichtlinien gelesen hast und bewährte Methoden bei der Erstellung deiner Erweiterung befolgst.
+Stelle sicher, dass du die Erweiterungsrichtlinien gelesen hast und bewährte Methoden bei der Erstellung von Erweiterungen befolgst.
 
 * [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Du kannst Visual Studio Code verwenden, um dein README zu schreiben. Hier sind einige nützliche Tastenkombinationen im Editor:
+Du kannst Visual Studio Code verwenden, um dein README zu schreiben. Hier sind einige nützliche Editor-Tastenkombinationen:
 
 * Editor teilen (`Cmd+\` auf macOS oder `Ctrl+\` auf Windows und Linux).
 * Vorschau umschalten (`Shift+Cmd+V` auf macOS oder `Shift+Ctrl+V` auf Windows und Linux).
-* Drücke `Ctrl+Space` (Windows, Linux, macOS), um eine Liste der Markdown-Snippets anzuzeigen.
+* Drücke `Ctrl+Space` (Windows, Linux, macOS), um eine Liste der Markdown-Code-Snippets anzuzeigen.
 
 ## For more information
 

@@ -2,18 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:42:39+00:00",
+  "translation_date": "2025-07-17T07:59:40+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "it"
 }
 -->
-# **Fine-tuning di Phi-3 con il framework Apple MLX**
+# **Fine-tuning di Phi-3 con Apple MLX Framework**
 
-Possiamo completare il fine-tuning combinato con Lora tramite la riga di comando del framework Apple MLX. (Se vuoi saperne di più sul funzionamento del framework MLX, leggi [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+Possiamo completare il fine-tuning combinato con Lora tramite la riga di comando del framework Apple MLX. (Se vuoi saperne di più sul funzionamento del MLX Framework, leggi [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+
 
 ## **1. Preparazione dei dati**
 
-Di default, il framework MLX richiede il formato jsonl per train, test ed eval, e si combina con Lora per completare i lavori di fine-tuning.
+Di default, il MLX Framework richiede il formato jsonl per train, test ed eval, e si combina con Lora per completare i lavori di fine-tuning.
+
 
 ### ***Nota:***
 
@@ -29,11 +31,12 @@ Di default, il framework MLX richiede il formato jsonl per train, test ed eval, 
 
 ```
 
-2. Nel nostro esempio usiamo i dati di [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), ma la quantità di dati è relativamente scarsa, quindi i risultati del fine-tuning potrebbero non essere ottimali. Si consiglia agli utenti di utilizzare dati migliori basati sui propri scenari per completare il processo.
+2. Nel nostro esempio utilizziamo i dati di [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), ma la quantità di dati è relativamente limitata, quindi i risultati del fine-tuning potrebbero non essere ottimali. Si consiglia agli utenti di utilizzare dati migliori basati sui propri scenari per completare il processo.
 
-3. Il formato dati è combinato con il template di Phi-3
+3. Il formato dei dati è combinato con il template di Phi-3
 
 Scarica i dati da questo [link](../../../../code/04.Finetuning/mlx), assicurati di includere tutti i file .jsonl nella cartella ***data***
+
 
 ## **2. Fine-tuning nel terminale**
 
@@ -49,9 +52,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Nota:***
 
-1. Questo è fine-tuning LoRA, il framework MLX non supporta QLoRA
+1. Questo è un fine-tuning LoRA, il framework MLX non ha pubblicato QLoRA
 
-2. Puoi modificare config.yaml per cambiare alcuni argomenti, come
+2. Puoi modificare config.yaml per cambiare alcuni argomenti, ad esempio
 
 
 ```yaml
@@ -132,7 +135,7 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Esegui il fine-tuning adapter per testare**
+## **3. Esegui il fine-tuning adapter per il test**
 
 Puoi eseguire il fine-tuning adapter nel terminale, così 
 
@@ -154,6 +157,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Puoi provare a confrontare i risultati del fine-tuning con quelli del modello originale
 
+
 ## **4. Unire gli adapter per generare nuovi modelli**
 
 
@@ -163,7 +167,7 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Eseguire modelli di fine-tuning quantizzati con ollama**
+## **5. Esecuzione di modelli di fine-tuning quantizzati con ollama**
 
 Prima dell’uso, configura il tuo ambiente llama.cpp
 
@@ -207,7 +211,7 @@ Esegui il comando nel terminale
 
 ```
 
-Congratulazioni! Hai padroneggiato il fine-tuning con il framework MLX
+Congratulazioni! Hai padroneggiato il fine-tuning con il MLX Framework
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si consiglia la traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali fraintendimenti o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

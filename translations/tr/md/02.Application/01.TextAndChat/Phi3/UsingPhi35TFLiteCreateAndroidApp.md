@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:48:42+00:00",
+  "translation_date": "2025-07-17T02:52:31+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "tr"
 }
@@ -13,25 +13,25 @@ Bu, Microsoft Phi-3.5 tflite modellerini kullanan bir Android örneğidir.
 
 ## **📚 Bilgi**
 
-Android LLM Inference API, Android uygulamaları için büyük dil modellerini (LLM) tamamen cihaz üzerinde çalıştırmanıza olanak tanır. Bu sayede metin oluşturma, doğal dil biçiminde bilgi alma ve belgeleri özetleme gibi çeşitli görevleri gerçekleştirebilirsiniz. Bu görev, birden fazla metin-temelli büyük dil modelini destekler, böylece en yeni cihaz üzeri üretken yapay zeka modellerini Android uygulamalarınıza uygulayabilirsiniz.
+Android LLM Inference API, Android uygulamaları için büyük dil modellerini (LLM) tamamen cihaz üzerinde çalıştırmanıza olanak tanır. Bu sayede metin oluşturma, doğal dilde bilgi alma ve belgeleri özetleme gibi çeşitli görevleri gerçekleştirebilirsiniz. Bu görev, birden fazla metin-temelli büyük dil modelini yerleşik olarak destekler, böylece en yeni cihaz içi üretken yapay zeka modellerini Android uygulamalarınıza uygulayabilirsiniz.
 
-Googld AI Edge Torch, PyTorch modellerini .tflite formatına dönüştürmeyi destekleyen bir Python kütüphanesidir ve bu modeller TensorFlow Lite ve MediaPipe ile çalıştırılabilir. Bu sayede Android, iOS ve IoT uygulamaları için modeller tamamen cihaz üzerinde çalıştırılabilir. AI Edge Torch geniş CPU desteği sunar ve başlangıçta GPU ile NPU desteği sağlar. AI Edge Torch, torch.export() üzerine inşa edilerek PyTorch ile sıkı entegrasyon hedefler ve Core ATen operatörlerinin iyi bir kapsamını sağlar.
+Google AI Edge Torch, PyTorch modellerini .tflite formatına dönüştürmeyi destekleyen bir Python kütüphanesidir. Bu format, TensorFlow Lite ve MediaPipe ile çalıştırılabilir. Bu sayede Android, iOS ve IoT uygulamaları için modeller tamamen cihaz üzerinde çalıştırılabilir. AI Edge Torch geniş CPU desteği sunar ve başlangıçta GPU ile NPU desteği sağlar. AI Edge Torch, torch.export() üzerine inşa edilerek PyTorch ile yakın entegrasyon sağlamayı ve Core ATen operatörlerini iyi kapsayacak şekilde geliştirilmiştir.
 
 ## **🪬 Kılavuz**
 
-### **🔥 Microsoft Phi-3.5’i tflite formatına dönüştürme**
+### **🔥 Microsoft Phi-3.5 modelini tflite formatına dönüştürme**
 
 0. Bu örnek Android 14+ içindir.
 
-1. Python 3.10.12 yükleyin
+1. Python 3.10.12 kurun.
 
-***Öneri:*** Python ortamınızı kurmak için conda kullanın
+***Öneri:*** Python ortamınızı kurmak için conda kullanabilirsiniz.
 
-2. Ubuntu 20.04 / 22.04 (lütfen [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) projesine odaklanın)
+2. Ubuntu 20.04 / 22.04 (lütfen [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) üzerine odaklanın)
 
-***Öneri:*** Ortamınızı oluşturmak için Azure Linux VM veya 3. taraf bulut VM kullanın
+***Öneri:*** Ortamınızı oluşturmak için Azure Linux VM veya üçüncü taraf bulut VM kullanabilirsiniz.
 
-3. Linux bash’inize gidin ve Python kütüphanesini yükleyin
+3. Linux bash terminalinize gidin ve Python kütüphanesini kurun
 
 ```bash
 
@@ -47,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Hugging face’den Microsoft-3.5-Instruct modelini indirin
+4. Hugging Face’den Microsoft-3.5-Instruct modelini indirin
 
 ```bash
 
@@ -57,7 +57,7 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. Microsoft Phi-3.5’i tflite formatına dönüştürün
+5. Microsoft Phi-3.5 modelini tflite formatına dönüştürün
 
 ```bash
 
@@ -65,9 +65,9 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 Microsoft Phi-3.5’i Android Mediapipe Paketine dönüştürme**
+### **🔥 Microsoft Phi-3.5 modelini Android Mediapipe Paketine dönüştürme**
 
-Lütfen öncelikle mediapipe’i kurun
+Öncelikle mediapipe’i kurun
 
 ```bash
 
@@ -108,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Android kodunuzu çalıştırma**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.tr.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.tr.png)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

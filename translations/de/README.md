@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:00:00+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T14:50:52+00:00",
   "source_file": "README.md",
   "language_code": "de"
 }
@@ -25,7 +25,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi ist eine Reihe von Open-Source-KI-Modellen, die von Microsoft entwickelt wurden.
 
-Phi ist derzeit das leistungsstärkste und kosteneffizienteste kleine Sprachmodell (SLM) mit sehr guten Ergebnissen in Mehrsprachigkeit, logischem Denken, Text-/Chat-Generierung, Programmierung, Bildern, Audio und weiteren Anwendungsfällen.
+Phi ist derzeit das leistungsstärkste und kosteneffizienteste kleine Sprachmodell (SLM) mit sehr guten Ergebnissen in den Bereichen Mehrsprachigkeit, logisches Denken, Text-/Chat-Generierung, Programmierung, Bilder, Audio und weiteren Anwendungsfällen.
 
 Du kannst Phi in der Cloud oder auf Edge-Geräten einsetzen und mit begrenzter Rechenleistung einfach generative KI-Anwendungen erstellen.
 
@@ -34,11 +34,11 @@ Folge diesen Schritten, um mit diesen Ressourcen zu starten:
 2. **Klon das Repository**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Tritt der Microsoft AI Discord Community bei und tausche dich mit Experten und anderen Entwicklern aus**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.de.png)
 
-## 🌐 Mehrsprachige Unterstützung
+### 🌐 Mehrsprachige Unterstützung
 
-### Unterstützt durch GitHub Action (Automatisiert & immer aktuell)
+#### Unterstützt durch GitHub Action (Automatisiert & immer aktuell)
 
 [Französisch](../fr/README.md) | [Spanisch](../es/README.md) | [Deutsch](./README.md) | [Russisch](../ru/README.md) | [Arabisch](../ar/README.md) | [Persisch (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinesisch (vereinfacht)](../zh/README.md) | [Chinesisch (traditionell, Macau)](../mo/README.md) | [Chinesisch (traditionell, Hongkong)](../hk/README.md) | [Chinesisch (traditionell, Taiwan)](../tw/README.md) | [Japanisch](../ja/README.md) | [Koreanisch](../ko/README.md) | [Hindi](../hi/README.md)  
 [Bengalisch](../bn/README.md) | [Marathi](../mr/README.md) | [Nepalesisch](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugiesisch (Portugal)](../pt/README.md) | [Portugiesisch (Brasilien)](../br/README.md) | [Italienisch](../it/README.md) | [Polnisch](../pl/README.md) | [Türkisch](../tr/README.md) | [Griechisch](../el/README.md) | [Thailändisch](../th/README.md) | [Schwedisch](../sv/README.md) | [Dänisch](../da/README.md) | [Norwegisch](../no/README.md) | [Finnisch](../fi/README.md) | [Niederländisch](../nl/README.md) | [Hebräisch](../he/README.md) | [Vietnamesisch](../vi/README.md) | [Indonesisch](../id/README.md) | [Malaiisch](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Suaheli](../sw/README.md) | [Ungarisch](../hu/README.md) | [Tschechisch](../cs/README.md) | [Slowakisch](../sk/README.md) | [Rumänisch](../ro/README.md) | [Bulgarisch](../bg/README.md) | [Serbisch (Kyrillisch)](../sr/README.md) | [Kroatisch](../hr/README.md) | [Slowenisch](../sl/README.md)
@@ -74,7 +74,7 @@ Folge diesen Schritten, um mit diesen Ressourcen zu starten:
     - [Inference Phi auf lokalem Server](./md/01.Introduction/03/Local_Server_Inference.md)  
     - [Inference Phi auf Remote-Server mit AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
     - [Inference Phi mit Rust](./md/01.Introduction/03/Rust_Inference.md)  
-    - [Inference Phi–Vision lokal](./md/01.Introduction/03/Vision_Inference.md)  
+    - [Inference Phi – Vision lokal](./md/01.Introduction/03/Vision_Inference.md)  
     - [Inference Phi mit Kaito AKS, Azure Containers (offizielle Unterstützung)](./md/01.Introduction/03/Kaito_Inference.md)  
 -  [Quantisierung der Phi-Familie](./md/01.Introduction/04/QuantifyingPhi.md)  
     - [Quantisierung von Phi-3.5 / 4 mit llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
@@ -94,13 +94,13 @@ Folge diesen Schritten, um mit diesen Ressourcen zu starten:
   - Text- & Chat-Anwendungen  
     - Phi-4 Beispiele 🆕  
       - [📓] [Chat mit Phi-4-mini ONNX Modell](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)  
-      - [Chat mit Phi-4 lokalem ONNX Modell .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
+      - [Chat mit lokalem Phi-4 ONNX Modell .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
       - [Chat .NET Konsolen-App mit Phi-4 ONNX unter Verwendung von Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)  
     - Phi-3 / 3.5 Beispiele  
       - [Lokaler Chatbot im Browser mit Phi3, ONNX Runtime Web und WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
       - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
       - [Multi-Modell – Interaktives Phi-3-mini und OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
-      - [MLFlow – Wrapper erstellen und Phi-3 mit MLFlow verwenden](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
+      - [MLFlow – Wrapper erstellen und Phi-3 mit MLFlow nutzen](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
       - [Modelloptimierung – Wie man das Phi-3-mini Modell für ONNX Runtime Web mit Olive optimiert](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
       - [WinUI3 App mit Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)  
       - [WinUI3 Multi-Modell KI-gestützte Notizen-App Beispiel](https://github.com/microsoft/ai-powered-notes-winui3-sample)
@@ -116,7 +116,7 @@ Folge diesen Schritten, um mit diesen Ressourcen zu starten:
 
 - Azure AI Inference SDK Codebasierte Beispiele  
   - Phi-4 Beispiele 🆕  
-    - [📓] [Projektcode generieren mit Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)  
+    - [📓] [Generiere Projektcode mit Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)  
   - Phi-3 / 3.5 Beispiele  
     - [Erstelle deinen eigenen Visual Studio Code GitHub Copilot Chat mit Microsoft Phi-3 Familie](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)  
     - [Erstelle deinen eigenen Visual Studio Code Chat Copilot Agent mit Phi-3.5 durch GitHub Modelle](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)  
@@ -137,7 +137,7 @@ Folge diesen Schritten, um mit diesen Ressourcen zu starten:
   - Phi-3 / 3.5 Beispiele  
     - [📓][Phi-3-vision Bild-Text-zu-Text](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
     - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)  
-    - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
+    - [📓][Phi-3-vision CLIP Einbettung](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
     - [DEMO: Phi-3 Recycling](https://github.com/jennifermarsman/PhiRecycling/)  
     - [Phi-3-vision - Visueller Sprachassistent - mit Phi3-Vision und OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)  
     - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)  
@@ -169,7 +169,7 @@ Folge diesen Schritten, um mit diesen Ressourcen zu starten:
 - Multimodale Mischbeispiele  
   - Phi-4 Beispiele 🆕  
     - [📓] [Verwendung von Phi-4-multimodal als Technologie-Journalist](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)  
-    - [.NET Konsolenanwendung mit Phi-4-multimodal zur Bildanalyse](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)  
+    - [.NET Konsolenanwendung mit Phi-4-multimodal zur Analyse von Bildern](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)  
 
 - Feinabstimmung Phi Beispiele  
   - [Feinabstimmungsszenarien](./md/03.FineTuning/FineTuning_Scenarios.md)  
@@ -182,22 +182,22 @@ Folge diesen Schritten, um mit diesen Ressourcen zu starten:
   - [Feinabstimmung von Phi-3 mit Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)  
   - [Feinabstimmung von Phi-3 mit Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)  
   - [Feinabstimmung mit Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)  
-  - [Hands-On Lab zur Feinabstimmung mit Microsoft Olive](./md/03.FineTuning/olive-lab/readme.md)  
+  - [Feinabstimmung mit Microsoft Olive Hands-On Lab](./md/03.FineTuning/olive-lab/readme.md)  
   - [Feinabstimmung von Phi-3-vision mit Weights and Bias](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)  
   - [Feinabstimmung von Phi-3 mit Apple MLX Framework](./md/03.FineTuning/FineTuning_MLX.md)  
   - [Feinabstimmung von Phi-3-vision (offizielle Unterstützung)](./md/03.FineTuning/FineTuning_Vision.md)  
   - [Feinabstimmung von Phi-3 mit Kaito AKS, Azure Containers (offizielle Unterstützung)](./md/03.FineTuning/FineTuning_Kaito.md)  
   - [Feinabstimmung von Phi-3 und 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)  
 
-- Hands-On Lab  
+- Hands-on Lab  
   - [Erkundung modernster Modelle: LLMs, SLMs, lokale Entwicklung und mehr](https://github.com/microsoft/aitour-exploring-cutting-edge-models)  
   - [NLP-Potenzial freisetzen: Feinabstimmung mit Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)  
 
 - Wissenschaftliche Forschungsarbeiten und Veröffentlichungen  
   - [Textbooks Are All You Need II: phi-1.5 technischer Bericht](https://arxiv.org/abs/2309.05463)  
-  - [Phi-3 Technischer Bericht: Ein leistungsfähiges Sprachmodell lokal auf deinem Telefon](https://arxiv.org/abs/2404.14219)  
+  - [Phi-3 Technischer Bericht: Ein leistungsstarkes Sprachmodell lokal auf deinem Telefon](https://arxiv.org/abs/2404.14219)  
   - [Phi-4 Technischer Bericht](https://arxiv.org/abs/2412.08905)  
-  - [Phi-4-Mini Technischer Bericht: Kompakte, aber leistungsstarke multimodale Sprachmodelle mittels Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)  
+  - [Phi-4-Mini Technischer Bericht: Kompakte, aber leistungsstarke multimodale Sprachmodelle durch Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)  
   - [Optimierung kleiner Sprachmodelle für In-Vehicle Function-Calling](https://arxiv.org/abs/2501.02342)  
   - [(WhyPHI) Feinabstimmung von PHI-3 für Multiple-Choice-Fragen: Methodik, Ergebnisse und Herausforderungen](https://arxiv.org/abs/2501.01588)
 - [Phi-4-reasoning Technischer Bericht](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)  
@@ -217,7 +217,7 @@ Jedes Modell verfügt über einen eigenen Playground, um das Modell zu testen: [
 Sie können lernen, wie man Microsoft Phi verwendet und wie man End-to-End-Lösungen auf verschiedenen Hardwaregeräten erstellt. Um Phi selbst zu erleben, beginnen Sie damit, mit dem Modell zu experimentieren und Phi für Ihre Szenarien mithilfe des [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) anzupassen. Weitere Informationen finden Sie unter Erste Schritte mit [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 **Playground**  
-Jedes Modell verfügt über einen eigenen [Playground, um das Modell zu testen](/md/02.QuickStart/GitHubModel_QuickStart.md).
+Jedes Modell verfügt über einen eigenen [Playground zum Testen des Modells](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 ### Phi auf Hugging Face
 
@@ -226,10 +226,10 @@ Sie finden das Modell auch auf [Hugging Face](https://huggingface.co/microsoft).
 **Playground**  
 [Hugging Chat Playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
-## Verantwortungsbewusste KI
+## Responsible AI
 
 Microsoft verpflichtet sich, unseren Kunden zu helfen, unsere KI-Produkte verantwortungsvoll zu nutzen, unsere Erkenntnisse zu teilen und vertrauensbasierte Partnerschaften durch Tools wie Transparency Notes und Impact Assessments aufzubauen. Viele dieser Ressourcen finden Sie unter [https://aka.ms/RAI](https://aka.ms/RAI).  
-Der Ansatz von Microsoft für verantwortungsbewusste KI basiert auf unseren KI-Prinzipien Fairness, Zuverlässigkeit und Sicherheit, Datenschutz und Sicherheit, Inklusivität, Transparenz und Verantwortlichkeit.
+Der Ansatz von Microsoft für verantwortungsvolle KI basiert auf unseren KI-Prinzipien Fairness, Zuverlässigkeit und Sicherheit, Datenschutz und Sicherheit, Inklusivität, Transparenz und Verantwortlichkeit.
 
 Groß angelegte Modelle für natürliche Sprache, Bilder und Sprache – wie die in diesem Beispiel verwendeten – können sich potenziell unfair, unzuverlässig oder anstößig verhalten und dadurch Schaden verursachen. Bitte konsultieren Sie die [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text), um über Risiken und Einschränkungen informiert zu sein.
 
@@ -245,4 +245,4 @@ Dieses Projekt kann Marken oder Logos von Projekten, Produkten oder Dienstleistu
 Die Verwendung von Microsoft-Marken oder -Logos in modifizierten Versionen dieses Projekts darf nicht zu Verwechslungen führen oder eine Microsoft-Unterstützung suggerieren. Die Nutzung von Marken oder Logos Dritter unterliegt den jeweiligen Richtlinien dieser Dritten.
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

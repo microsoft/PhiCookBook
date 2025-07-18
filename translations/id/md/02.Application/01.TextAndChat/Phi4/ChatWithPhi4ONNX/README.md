@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:02:53+00:00",
+  "translation_date": "2025-07-17T03:18:31+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "id"
 }
 -->
-# **Ngobrol dengan Phi-4-mini ONNX**
+# **Chat dengan Phi-4-mini ONNX**
 
-***ONNX*** adalah format terbuka yang dibuat untuk merepresentasikan model pembelajaran mesin. ONNX mendefinisikan seperangkat operator umum - blok bangunan dari model pembelajaran mesin dan pembelajaran mendalam - serta format file umum agar pengembang AI dapat menggunakan model dengan berbagai framework, alat, runtime, dan compiler.
+***ONNX*** adalah format terbuka yang dibuat untuk merepresentasikan model pembelajaran mesin. ONNX mendefinisikan satu set operator umum - blok bangunan dari model pembelajaran mesin dan pembelajaran mendalam - serta format file umum untuk memungkinkan pengembang AI menggunakan model dengan berbagai framework, alat, runtime, dan compiler.
 
-Kami berharap dapat menerapkan model AI generatif pada perangkat edge dan menggunakannya dalam lingkungan dengan daya komputasi terbatas atau offline. Sekarang kami bisa mencapai tujuan ini dengan mengonversi model secara terkuantisasi. Kami dapat mengonversi model terkuantisasi ke format GGUF atau ONNX.
+Kami berharap dapat menerapkan model AI generatif pada perangkat edge dan menggunakannya dalam lingkungan dengan daya komputasi terbatas atau offline. Sekarang kita bisa mencapai tujuan ini dengan mengonversi model secara terkuantisasi. Kita dapat mengonversi model terkuantisasi ke format GGUF atau ONNX.
 
-Microsoft Olive dapat membantu Anda mengonversi SLM ke format ONNX terkuantisasi. Metode untuk mencapai konversi model ini sangat sederhana
+Microsoft Olive dapat membantu Anda mengonversi SLM ke format ONNX terkuantisasi. Metode untuk melakukan konversi model ini sangat sederhana
 
 **Pasang Microsoft Olive SDK**
 
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Dukungan Konversi CPU ONNX**
+**Dukungan ONNX CPU**
 
 ```bash
 
@@ -37,7 +37,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Catatan*** contoh ini menggunakan CPU
 
 
-### **Inferensi Model Phi-4-mini ONNX Dengan ONNX Runtime GenAI**
+### **Inferensi Model Phi-4-mini ONNX dengan ONNX Runtime GenAI**
 
 - **Pasang ONNX Runtime GenAI**
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi yang sangat penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

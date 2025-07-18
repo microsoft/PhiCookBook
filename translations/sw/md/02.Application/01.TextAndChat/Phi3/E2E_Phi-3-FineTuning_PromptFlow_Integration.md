@@ -2,124 +2,124 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-05-09T17:43:58+00:00",
+  "translation_date": "2025-07-17T00:40:22+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "sw"
 }
 -->
-# Fine-tune na Kuunganisha modeli za Phi-3 za kawaida na Prompt flow
+# Fine-tune na Unganisha modeli za Phi-3 za Kipekee na Prompt flow
 
-Mfano huu wa mwisho-mwisho (E2E) umejengwa kwa mwongozo wa "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" kutoka Microsoft Tech Community. Unatoa maelezo ya mchakato wa kufine-tune, kuweka kwenye uzalishaji, na kuunganisha modeli za Phi-3 za kawaida na Prompt flow.
+Mfano huu wa mwisho hadi mwisho (E2E) unategemea mwongozo wa "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" kutoka Microsoft Tech Community. Unatoa maelezo ya mchakato wa kurekebisha, kupeleka, na kuunganisha modeli za Phi-3 za kipekee na Prompt flow.
 
 ## Muhtasari
 
-Katika mfano huu wa E2E, utajifunza jinsi ya kufine-tune modeli ya Phi-3 na kuunganisha na Prompt flow. Kwa kutumia Azure Machine Learning na Prompt flow, utaanzisha mtiririko wa kazi wa kuweka na kutumia modeli za AI za kawaida. Mfano huu wa E2E umegawanywa katika matukio matatu:
+Katika mfano huu wa E2E, utajifunza jinsi ya kurekebisha modeli ya Phi-3 na kuuiunganisha na Prompt flow. Kwa kutumia Azure Machine Learning na Prompt flow utaanzisha mtiririko wa kazi wa kupeleka na kutumia modeli za AI za kipekee. Mfano huu wa E2E umegawanywa katika matukio matatu:
 
-**Mtukio wa 1: Tengeneza rasilimali za Azure na Jiandae kwa fine-tuning**
+**Mtukio 1: Tengeneza rasilimali za Azure na Jiandae kwa kurekebisha**
 
-**Mtukio wa 2: Fine-tune modeli ya Phi-3 na Iweke kwenye Azure Machine Learning Studio**
+**Mtukio 2: Rekebisha modeli ya Phi-3 na Peleka katika Azure Machine Learning Studio**
 
-**Mtukio wa 3: Unganisha na Prompt flow na Zungumza na modeli yako ya kawaida**
+**Mtukio 3: Unganisha na Prompt flow na Zungumza na modeli yako ya kipekee**
 
 Hapa kuna muhtasari wa mfano huu wa E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.dfeb1f15c7d3c8989fb267a05ac83a25485a7230bde037df9d3d92336afc1993.sw.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.sw.png)
 
-### Jedwali la Maudhui
+### Jedwali la Yaliyomo
 
-1. **[Mtukio wa 1: Tengeneza rasilimali za Azure na Jiandae kwa fine-tuning](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Mtukio 1: Tengeneza rasilimali za Azure na Jiandae kwa kurekebisha](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Tengeneza Azure Machine Learning Workspace](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Omba viwango vya GPU katika Azure Subscription](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Omba vigezo vya GPU katika Azure Subscription](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Ongeza ugawaji wa jukumu](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Sanidi mradi](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Jiandae na dataset kwa fine-tuning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Tengeneza mradi](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Jiandae na seti ya data kwa ajili ya kurekebisha](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Mtukio wa 2: Fine-tune modeli ya Phi-3 na Iweke kwenye Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Sanidi Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Fine-tune modeli ya Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Weka modeli iliyofine-tune](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Mtukio 2: Rekebisha modeli ya Phi-3 na Peleka katika Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Tengeneza Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Rekebisha modeli ya Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Peleka modeli iliyorekebishwa](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Mtukio wa 3: Unganisha na Prompt flow na Zungumza na modeli yako ya kawaida](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Unganisha modeli ya Phi-3 ya kawaida na Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Zungumza na modeli yako ya kawaida](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Mtukio 3: Unganisha na Prompt flow na Zungumza na modeli yako ya kipekee](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Unganisha modeli ya Phi-3 ya kipekee na Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Zungumza na modeli yako ya kipekee](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## Mtukio wa 1: Tengeneza rasilimali za Azure na Jiandae kwa fine-tuning
+## Mtukio 1: Tengeneza rasilimali za Azure na Jiandae kwa kurekebisha
 
 ### Tengeneza Azure Machine Learning Workspace
 
-1. Andika *azure machine learning* kwenye **upau wa utafutaji** juu ya ukurasa wa portal na chagua **Azure Machine Learning** kutoka kwa chaguzi zinazojitokeza.
+1. Andika *azure machine learning* katika **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Azure Machine Learning** kutoka kwa chaguzi zinazojitokeza.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.321cff72d18a51c06dee2db7463868f3ca6619559a5d68b7795d70f4a8b3a683.sw.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.sw.png)
 
 1. Chagua **+ Create** kutoka kwenye menyu ya urambazaji.
 
 1. Chagua **New workspace** kutoka kwenye menyu ya urambazaji.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.9bd9208488fcf38226fc8d3cefffecb2cb14f414f6d8d982492c1bde8634e24a.sw.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.sw.png)
 
 1. Fanya kazi zifuatazo:
 
-    - Chagua Azure **Subscription** yako.
-    - Chagua **Resource group** unayotaka kutumia (tengeneza mpya ikiwa inahitajika).
-    - Ingiza **Workspace Name**. Lazima iwe jina la kipekee.
-    - Chagua **Region** unayotaka kutumia.
-    - Chagua **Storage account** unayotaka kutumia (tengeneza mpya ikiwa inahitajika).
-    - Chagua **Key vault** unayotaka kutumia (tengeneza mpya ikiwa inahitajika).
-    - Chagua **Application insights** unayotaka kutumia (tengeneza mpya ikiwa inahitajika).
-    - Chagua **Container registry** unayotaka kutumia (tengeneza mpya ikiwa inahitajika).
+    - Chagua **Subscription** yako ya Azure.
+    - Chagua **Resource group** utakayotumia (tengeneza mpya ikiwa inahitajika).
+    - Weka **Workspace Name**. Lazima iwe jina la kipekee.
+    - Chagua **Region** unayotaka kuitumia.
+    - Chagua **Storage account** utakayotumia (tengeneza mpya ikiwa inahitajika).
+    - Chagua **Key vault** utakayotumia (tengeneza mpya ikiwa inahitajika).
+    - Chagua **Application insights** utakayotumia (tengeneza mpya ikiwa inahitajika).
+    - Chagua **Container registry** utakayotumia (tengeneza mpya ikiwa inahitajika).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.b2ebbef59952cd17d16b1f82adc252bf7616f8638d451e3c6595ffefe44f2cfa.sw.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.sw.png)
 
 1. Chagua **Review + Create**.
 
 1. Chagua **Create**.
 
-### Omba viwango vya GPU katika Azure Subscription
+### Omba vigezo vya GPU katika Azure Subscription
 
-Katika mfano huu wa E2E, utatumia *Standard_NC24ads_A100_v4 GPU* kwa fine-tuning, ambayo inahitaji ombi la kiwango, na *Standard_E4s_v3* CPU kwa kuweka kwenye uzalishaji, ambayo haihitaji ombi la kiwango.
+Katika mfano huu wa E2E, utatumia *Standard_NC24ads_A100_v4 GPU* kwa ajili ya kurekebisha, ambayo inahitaji ombi la vigezo, na *Standard_E4s_v3* CPU kwa ajili ya upeleka, ambayo haihitaji ombi la vigezo.
 
 > [!NOTE]
 >
-> Subscriptions za Pay-As-You-Go pekee (aina ya kawaida ya subscription) ndizo zinazostahili kupata GPU; subscriptions za benefit hazijaungwa mkono kwa sasa.
+> Subscription za Pay-As-You-Go pekee (aina ya kawaida ya subscription) ndizo zinazostahili kugawiwa GPU; subscription za faida hazijaungwa mkono kwa sasa.
 >
-> Kwa wale wanaotumia subscriptions za benefit (kama Visual Studio Enterprise Subscription) au wale wanaotaka kujaribu haraka mchakato wa fine-tuning na deployment, mwongozo huu pia unatoa mwongozo wa kufine-tune kwa dataset ndogo kwa kutumia CPU. Hata hivyo, ni muhimu kuelewa kuwa matokeo ya fine-tuning ni bora zaidi wakati unatumia GPU na datasets kubwa.
+> Kwa wale wanaotumia subscription za faida (kama Visual Studio Enterprise Subscription) au wale wanaotaka kujaribu haraka mchakato wa kurekebisha na kupeleka, mafunzo haya pia yanatoa mwongozo wa kurekebisha kwa kutumia seti ndogo ya data kwa CPU. Hata hivyo, ni muhimu kuelewa kuwa matokeo ya kurekebisha ni bora zaidi wakati unatumia GPU na seti kubwa za data.
 
 1. Tembelea [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Fanya kazi zifuatazo kuomba kiwango cha *Standard NCADSA100v4 Family*:
+1. Fanya kazi zifuatazo kuomba vigezo vya *Standard NCADSA100v4 Family*:
 
-    - Chagua **Quota** kutoka kwenye tab ya upande wa kushoto.
-    - Chagua **Virtual machine family** unayotaka kutumia. Kwa mfano, chagua **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, ambayo inajumuisha *Standard_NC24ads_A100_v4* GPU.
+    - Chagua **Quota** kutoka kwenye tab upande wa kushoto.
+    - Chagua **Virtual machine family** utakayotumia. Kwa mfano, chagua **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, ambayo inajumuisha *Standard_NC24ads_A100_v4* GPU.
     - Chagua **Request quota** kutoka kwenye menyu ya urambazaji.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.ddf063c7cda9799b8ef6fbde6c3c796201578fe9078feb1c624ed75c7705ad18.sw.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.sw.png)
 
-    - Kwenye ukurasa wa Request quota, ingiza **New cores limit** unayotaka kutumia. Kwa mfano, 24.
-    - Kwenye ukurasa wa Request quota, chagua **Submit** kuomba kiwango cha GPU.
+    - Ndani ya ukurasa wa Request quota, weka **New cores limit** unayotaka kutumia. Kwa mfano, 24.
+    - Ndani ya ukurasa wa Request quota, chagua **Submit** kuomba vigezo vya GPU.
 
 > [!NOTE]
-> Unaweza kuchagua GPU au CPU inayokufaa kwa mahitaji yako kwa kuangalia hati ya [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
+> Unaweza kuchagua GPU au CPU inayofaa kwa mahitaji yako kwa kurejelea hati ya [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
 ### Ongeza ugawaji wa jukumu
 
-Ili kufine-tune na kuweka modeli zako kwenye uzalishaji, lazima kwanza utengeneze User Assigned Managed Identity (UAI) na uipe ruhusa zinazofaa. UAI hii itatumika kwa uthibitishaji wakati wa deployment.
+Ili kurekebisha na kupeleka modeli zako, lazima kwanza utengeneze User Assigned Managed Identity (UAI) na uipe ruhusa zinazofaa. UAI hii itatumika kwa uthibitishaji wakati wa upeleka.
 
-#### Tengeneza User Assigned Managed Identity(UAI)
+#### Tengeneza User Assigned Managed Identity (UAI)
 
-1. Andika *managed identities* kwenye **upau wa utafutaji** juu ya ukurasa wa portal na chagua **Managed Identities** kutoka kwenye chaguzi zinazojitokeza.
+1. Andika *managed identities* katika **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Managed Identities** kutoka kwa chaguzi zinazojitokeza.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.8bf5dc5a4fa3e852f897ec1a983e506c2bc7b7113d159598bf0adeb66d20a5c4.sw.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.sw.png)
 
 1. Chagua **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.025632b7b54fe323f7d38edabbae05dd23f4665d0731f7143719c27c32e7e84f.sw.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.sw.png)
 
 1. Fanya kazi zifuatazo:
 
-    - Chagua Azure **Subscription** yako.
-    - Chagua **Resource group** unayotaka kutumia (tengeneza mpya ikiwa inahitajika).
-    - Chagua **Region** unayotaka kutumia.
-    - Ingiza **Name**. Lazima iwe jina la kipekee.
+    - Chagua **Subscription** yako ya Azure.
+    - Chagua **Resource group** utakayotumia (tengeneza mpya ikiwa inahitajika).
+    - Chagua **Region** unayotaka kuitumia.
+    - Weka **Name**. Lazima iwe jina la kipekee.
 
 1. Chagua **Review + create**.
 
@@ -129,91 +129,91 @@ Ili kufine-tune na kuweka modeli zako kwenye uzalishaji, lazima kwanza utengenez
 
 1. Nenda kwenye rasilimali ya Managed Identity uliyotengeneza.
 
-1. Chagua **Azure role assignments** kutoka kwenye tab ya upande wa kushoto.
+1. Chagua **Azure role assignments** kutoka kwenye tab upande wa kushoto.
 
 1. Chagua **+Add role assignment** kutoka kwenye menyu ya urambazaji.
 
-1. Kwenye ukurasa wa Add role assignment, fanya kazi zifuatazo:
+1. Ndani ya ukurasa wa Add role assignment, fanya kazi zifuatazo:
     - Chagua **Scope** kuwa **Resource group**.
-    - Chagua Azure **Subscription** yako.
-    - Chagua **Resource group** unayotaka kutumia.
+    - Chagua **Subscription** yako ya Azure.
+    - Chagua **Resource group** utakayotumia.
     - Chagua **Role** kuwa **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.8936866326c7cdc3b876f14657e03422cca9dbff8b193dd541a693ce34407b26.sw.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.sw.png)
 
 1. Chagua **Save**.
 
 #### Ongeza ugawaji wa jukumu la Storage Blob Data Reader kwa Managed Identity
 
-1. Andika *storage accounts* kwenye **upau wa utafutaji** juu ya ukurasa wa portal na chagua **Storage accounts** kutoka kwenye chaguzi zinazojitokeza.
+1. Andika *storage accounts* katika **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Storage accounts** kutoka kwa chaguzi zinazojitokeza.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.83554a27ff3edb5099ee3fbf7f467b843dabcc0e0e5fbb829a341eab3469ffa5.sw.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.sw.png)
 
 1. Chagua akaunti ya kuhifadhi inayohusiana na Azure Machine Learning workspace uliyotengeneza. Kwa mfano, *finetunephistorage*.
 
 1. Fanya kazi zifuatazo kufikia ukurasa wa Add role assignment:
 
     - Nenda kwenye akaunti ya Azure Storage uliyotengeneza.
-    - Chagua **Access Control (IAM)** kutoka kwenye tab ya upande wa kushoto.
+    - Chagua **Access Control (IAM)** kutoka kwenye tab upande wa kushoto.
     - Chagua **+ Add** kutoka kwenye menyu ya urambazaji.
     - Chagua **Add role assignment** kutoka kwenye menyu ya urambazaji.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.4fef55886792c7e860da4c5a808044e6f7067fb5694f3ed4819a5758c6cc574e.sw.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.sw.png)
 
-1. Kwenye ukurasa wa Add role assignment, fanya kazi zifuatazo:
+1. Ndani ya ukurasa wa Add role assignment, fanya kazi zifuatazo:
 
-    - Kwenye ukurasa wa Role, andika *Storage Blob Data Reader* kwenye **upau wa utafutaji** na chagua **Storage Blob Data Reader** kutoka kwenye chaguzi zinazojitokeza.
-    - Kwenye ukurasa wa Role, chagua **Next**.
-    - Kwenye ukurasa wa Members, chagua **Assign access to** **Managed identity**.
-    - Kwenye ukurasa wa Members, chagua **+ Select members**.
-    - Kwenye ukurasa wa Select managed identities, chagua Azure **Subscription** yako.
-    - Kwenye ukurasa wa Select managed identities, chagua **Managed identity** kwa **Manage Identity**.
-    - Kwenye ukurasa wa Select managed identities, chagua Manage Identity uliyotengeneza. Kwa mfano, *finetunephi-managedidentity*.
-    - Kwenye ukurasa wa Select managed identities, chagua **Select**.
+    - Ndani ya ukurasa wa Role, andika *Storage Blob Data Reader* katika **kisanduku cha utafutaji** na chagua **Storage Blob Data Reader** kutoka kwa chaguzi zinazojitokeza.
+    - Ndani ya ukurasa wa Role, chagua **Next**.
+    - Ndani ya ukurasa wa Members, chagua **Assign access to** **Managed identity**.
+    - Ndani ya ukurasa wa Members, chagua **+ Select members**.
+    - Ndani ya ukurasa wa Select managed identities, chagua **Subscription** yako ya Azure.
+    - Ndani ya ukurasa wa Select managed identities, chagua **Managed identity** kuwa **Manage Identity**.
+    - Ndani ya ukurasa wa Select managed identities, chagua Manage Identity uliyotengeneza. Kwa mfano, *finetunephi-managedidentity*.
+    - Ndani ya ukurasa wa Select managed identities, chagua **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.fffa802e4e6ce2de4fe50e64d37d3f2ef268c2ee16f30ec6f92bd1829b5f19c1.sw.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.sw.png)
 
 1. Chagua **Review + assign**.
 
 #### Ongeza ugawaji wa jukumu la AcrPull kwa Managed Identity
 
-1. Andika *container registries* kwenye **upau wa utafutaji** juu ya ukurasa wa portal na chagua **Container registries** kutoka kwenye chaguzi zinazojitokeza.
+1. Andika *container registries* katika **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Container registries** kutoka kwa chaguzi zinazojitokeza.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.62e58403d73d16a0cc715571c8a7b4105a0e97b1422aa5f26106aff1c0e8a47d.sw.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.sw.png)
 
-1. Chagua container registry inayohusiana na Azure Machine Learning workspace. Kwa mfano, *finetunephicontainerregistries*
+1. Chagua rejista ya kontena inayohusiana na Azure Machine Learning workspace. Kwa mfano, *finetunephicontainerregistries*
 
 1. Fanya kazi zifuatazo kufikia ukurasa wa Add role assignment:
 
-    - Chagua **Access Control (IAM)** kutoka kwenye tab ya upande wa kushoto.
+    - Chagua **Access Control (IAM)** kutoka kwenye tab upande wa kushoto.
     - Chagua **+ Add** kutoka kwenye menyu ya urambazaji.
     - Chagua **Add role assignment** kutoka kwenye menyu ya urambazaji.
 
-1. Kwenye ukurasa wa Add role assignment, fanya kazi zifuatazo:
+1. Ndani ya ukurasa wa Add role assignment, fanya kazi zifuatazo:
 
-    - Kwenye ukurasa wa Role, andika *AcrPull* kwenye **upau wa utafutaji** na chagua **AcrPull** kutoka kwenye chaguzi zinazojitokeza.
-    - Kwenye ukurasa wa Role, chagua **Next**.
-    - Kwenye ukurasa wa Members, chagua **Assign access to** **Managed identity**.
-    - Kwenye ukurasa wa Members, chagua **+ Select members**.
-    - Kwenye ukurasa wa Select managed identities, chagua Azure **Subscription** yako.
-    - Kwenye ukurasa wa Select managed identities, chagua **Managed identity** kwa **Manage Identity**.
-    - Kwenye ukurasa wa Select managed identities, chagua Manage Identity uliyotengeneza. Kwa mfano, *finetunephi-managedidentity*.
-    - Kwenye ukurasa wa Select managed identities, chagua **Select**.
+    - Ndani ya ukurasa wa Role, andika *AcrPull* katika **kisanduku cha utafutaji** na chagua **AcrPull** kutoka kwa chaguzi zinazojitokeza.
+    - Ndani ya ukurasa wa Role, chagua **Next**.
+    - Ndani ya ukurasa wa Members, chagua **Assign access to** **Managed identity**.
+    - Ndani ya ukurasa wa Members, chagua **+ Select members**.
+    - Ndani ya ukurasa wa Select managed identities, chagua **Subscription** yako ya Azure.
+    - Ndani ya ukurasa wa Select managed identities, chagua **Managed identity** kuwa **Manage Identity**.
+    - Ndani ya ukurasa wa Select managed identities, chagua Manage Identity uliyotengeneza. Kwa mfano, *finetunephi-managedidentity*.
+    - Ndani ya ukurasa wa Select managed identities, chagua **Select**.
     - Chagua **Review + assign**.
 
-### Sanidi mradi
+### Tengeneza mradi
 
-Sasa, utatengeneza folda ya kufanya kazi ndani yake na kuanzisha mazingira ya virtual kwa ajili ya kuandaa programu inayowasiliana na watumiaji na kutumia historia ya mazungumzo iliyohifadhiwa kutoka Azure Cosmos DB kutoa majibu.
+Sasa, utatengeneza folda ya kufanya kazi ndani yake na kuanzisha mazingira ya virtual ili kuendeleza programu inayowasiliana na watumiaji na kutumia historia ya mazungumzo iliyohifadhiwa kutoka Azure Cosmos DB kutoa majibu.
 
 #### Tengeneza folda ya kufanya kazi ndani yake
 
-1. Fungua dirisha la terminal na andika amri ifuatayo kutengeneza folda yenye jina *finetune-phi* katika njia ya default.
+1. Fungua dirisha la terminal na andika amri ifuatayo kutengeneza folda iitwayo *finetune-phi* katika njia ya chaguo-msingi.
 
     ```console
     mkdir finetune-phi
     ```
 
-1. Andika amri ifuatayo ndani ya terminal kuingia kwenye folda ya *finetune-phi* uliyotengeneza.
+1. Andika amri ifuatayo ndani ya terminal yako kuingia kwenye folda ya *finetune-phi* uliyotengeneza.
 
     ```console
     cd finetune-phi
@@ -221,25 +221,23 @@ Sasa, utatengeneza folda ya kufanya kazi ndani yake na kuanzisha mazingira ya vi
 
 #### Tengeneza mazingira ya virtual
 
-1. Andika amri ifuatayo ndani ya terminal kutengeneza mazingira ya virtual yenye jina *.venv*.
+1. Andika amri ifuatayo ndani ya terminal yako kutengeneza mazingira ya virtual iitwayo *.venv*.
 
     ```console
     python -m venv .venv
     ```
 
-1. Andika amri ifuatayo ndani ya terminal kuwasha mazingira ya virtual.
+1. Andika amri ifuatayo ndani ya terminal yako kuanzisha mazingira ya virtual.
 
     ```console
     .venv\Scripts\activate.bat
     ```
-
 > [!NOTE]
 >
-> Ikiwa imefanikiwa, utapata kuona *(.venv)* kabla ya alama ya amri.
-
+> Ikiwa imefanikiwa, unapaswa kuona *(.venv)* kabla ya alama ya amri.
 #### Sakinisha vifurushi vinavyohitajika
 
-1. Andika amri ifuatayo ndani ya terminal kusakinisha vifurushi vinavyohitajika.
+1. Andika amri zifuatazo ndani ya terminal yako kusakinisha vifurushi vinavyohitajika.
 
     ```console
     pip install datasets==2.19.1
@@ -250,20 +248,20 @@ Sasa, utatengeneza folda ya kufanya kazi ndani yake na kuanzisha mazingira ya vi
     pip install promptflow==1.12.0
     ```
 
-#### Tengeneza faili za mradi
+#### Unda faili za mradi
 
-Katika zoezi hili, utatengeneza faili muhimu kwa mradi wetu. Faili hizi ni pamoja na scripts za kupakua dataset, kusanidi mazingira ya Azure Machine Learning, kufine-tune modeli ya Phi-3, na kuweka modeli iliyofine-tune. Pia utatengeneza faili ya *conda.yml* kwa ajili ya kuanzisha mazingira ya fine-tuning.
+Katika zoezi hili, utaunda faili muhimu kwa mradi wetu. Faili hizi zinajumuisha skiripti za kupakua seti ya data, kuanzisha mazingira ya Azure Machine Learning, kurekebisha mfano wa Phi-3, na kupeleka mfano uliorekebishwa. Pia utaunda faili la *conda.yml* kuweka mazingira ya kurekebisha.
 
 Katika zoezi hili, utafanya:
 
-- Tengeneza faili *download_dataset.py* kupakua dataset.
-- Tengeneza faili *setup_ml.py* kusanidi mazingira ya Azure Machine Learning.
-- Tengeneza faili *fine_tune.py* ndani ya folda *finetuning_dir* kufine-tune modeli ya Phi-3 kwa kutumia dataset.
-- Tengeneza faili *conda.yml* kusanidi mazingira ya fine-tuning.
-- Tengeneza faili *deploy_model.py* kuweka modeli iliyofine-tune.
-- Tengeneza faili *integrate_with_promptflow.py*, kuunganisha modeli iliyofine-tune na kutekeleza modeli kwa kutumia Prompt flow.
-- Tengeneza faili *flow.dag.yml*, kuanzisha muundo wa mtiririko wa kazi kwa Prompt flow.
-- Tengeneza faili *config.py* kuingiza taarifa za Azure.
+- Unda faili la *download_dataset.py* kupakua seti ya data.
+- Unda faili la *setup_ml.py* kuanzisha mazingira ya Azure Machine Learning.
+- Unda faili la *fine_tune.py* ndani ya folda ya *finetuning_dir* kurekebisha mfano wa Phi-3 kwa kutumia seti ya data.
+- Unda faili la *conda.yml* kuweka mazingira ya kurekebisha.
+- Unda faili la *deploy_model.py* kupeleka mfano uliorekebishwa.
+- Unda faili la *integrate_with_promptflow.py* kuunganisha mfano uliorekebishwa na kuendesha mfano kwa kutumia Prompt flow.
+- Unda faili la *flow.dag.yml* kuweka muundo wa mtiririko wa kazi kwa Prompt flow.
+- Unda faili la *config.py* kuingiza taarifa za Azure.
 
 > [!NOTE]
 >
@@ -285,31 +283,31 @@ Katika zoezi hili, utafanya:
 
 1. Fungua **Visual Studio Code**.
 
-1. Chagua **File** kutoka kwenye menyu kuu.
+1. Chagua **File** kutoka kwenye menyu.
 
 1. Chagua **Open Folder**.
 
-1. Chagua folda ya *finetune-phi* uliyotengeneza, iliyopo katika *C:\Users\yourUserName\finetune-phi*.
+1. Chagua folda ya *finetune-phi* uliyounda, iliyoko kwenye *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1f7f0f79e5d4d62e546e906e1ce5a480cd98d06062ce292b7b99c6cfcd434fdf.sw.png)
+    ![Fungua folda ya mradi.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.sw.png)
 
-1. Kwenye upande wa kushoto wa Visual Studio Code, bofya kulia na chagua **New File** kutengeneza faili mpya yenye jina *download_dataset.py*.
+1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia na chagua **New File** kuunda faili mpya iitwayo *download_dataset.py*.
 
-1. Kwenye upande wa kushoto wa Visual Studio Code, bofya kulia na chagua **New File** kutengeneza faili mpya yenye jina *setup_ml.py*.
+1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia na chagua **New File** kuunda faili mpya iitwayo *setup_ml.py*.
 
-1. Kwenye upande wa kushoto wa Visual Studio Code, bofya kulia na chagua **New File** kutengeneza faili mpya yenye jina *deploy_model.py*.
+1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia na chagua **New File** kuunda faili mpya iitwayo *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.40698c2e0415929e7b6dc2b30925677e413f965bac4134d3aefa0b44d443deaf.sw.png)
+    ![Unda faili mpya.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.sw.png)
 
-1. Kwenye upande wa kushoto, bofya kulia na chagua **New Folder** kutengeneza folda mpya yenye jina *finetuning_dir*.
+1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia na chagua **New Folder** kuunda folda mpya iitwayo *finetuning_dir*.
 
-1. Ndani ya folda ya *finetuning_dir*, tengeneza faili mpya yenye jina *fine_tune.py*.
+1. Katika folda ya *finetuning_dir*, unda faili mpya iitwayo *fine_tune.py*.
 
-#### Tengeneza na Sanidi faili *conda.yml*
+#### Unda na Sanidi faili la *conda.yml*
 
-1. Kwenye upande wa kushoto wa Visual Studio Code, bofya kulia na chagua **New File** kutengeneza faili mpya yenye jina *conda.yml*.
+1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia na chagua **New File** kuunda faili mpya iitwayo *conda.yml*.
 
-1. Ongeza msimbo ufuatao kwenye faili ya *conda.yml* kuanzisha mazingira ya fine-tuning kwa modeli ya Phi-3.
+1. Ongeza msimbo ufuatao kwenye faili la *conda.yml* kuweka mazingira ya kurekebisha mfano wa Phi-3.
 
     ```yml
     name: phi-3-training-env
@@ -335,11 +333,11 @@ Katika zoezi hili, utafanya:
           - azureml-mlflow==1.57.0
     ```
 
-#### Tengeneza na Sanidi faili *config.py*
+#### Unda na Sanidi faili la *config.py*
 
-1. Kwenye upande wa kushoto wa Visual Studio Code, bofya kulia na chagua **New File** kutengeneza faili mpya yenye jina *config.py*.
+1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia na chagua **New File** kuunda faili mpya iitwayo *config.py*.
 
-1. Ongeza msimbo ufuatao kwenye faili ya *config.py* kuingiza taarifa zako za Azure.
+1. Ongeza msimbo ufuatao kwenye faili la *config.py* kuingiza taarifa zako za Azure.
 
     ```python
     # Azure settings
@@ -367,37 +365,44 @@ Katika zoezi hili, utafanya:
     AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri" # "https://{your-endpoint-name}.{your-region}.inference.ml.azure.com/score"
     ```
 
-#### Ongeza m
-![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.sw.png)
+#### Ongeza vigezo vya mazingira ya Azure
 
-1. Fanya kazi zifuatazo ili kuongeza Jina la Azure Workspace:
+1. Fanya yafuatayo kuongeza Azure Subscription ID:
 
-    - Elekea kwenye rasilimali ya Azure Machine Learning uliyotengeneza.
-    - Nakili na ubandike jina la akaunti yako kwenye faili *config.py*.
+    - Andika *subscriptions* kwenye **kibandiko cha utafutaji** juu ya ukurasa wa portal na chagua **Subscriptions** kutoka kwenye chaguzi zinazojitokeza.
+    - Chagua Azure Subscription unayotumia kwa sasa.
+    - Nakili na bandika Subscription ID yako kwenye faili la *config.py*.
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.sw.png)
+    ![Tafuta subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.sw.png)
 
-1. Fanya kazi zifuatazo ili kuongeza Jina la Azure Resource Group:
+1. Fanya yafuatayo kuongeza Azure Workspace Name:
 
-    - Elekea kwenye rasilimali ya Azure Machine Learning uliyotengeneza.
-    - Nakili na ubandike Jina la Azure Resource Group yako kwenye faili *config.py*.
+    - Nenda kwenye rasilimali ya Azure Machine Learning uliyounda.
+    - Nakili na bandika jina la akaunti yako kwenye faili la *config.py*.
 
-    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.sw.png)
+    ![Tafuta jina la Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.sw.png)
 
-2. Fanya kazi zifuatazo ili kuongeza Jina la Azure Managed Identity
+1. Fanya yafuatayo kuongeza Azure Resource Group Name:
 
-    - Elekea kwenye rasilimali ya Managed Identities uliyotengeneza.
-    - Nakili na ubandike jina la Azure Managed Identity yako kwenye faili *config.py*.
+    - Nenda kwenye rasilimali ya Azure Machine Learning uliyounda.
+    - Nakili na bandika jina la Azure Resource Group yako kwenye faili la *config.py*.
 
-    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.sw.png)
+    ![Tafuta jina la resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.sw.png)
 
-### Andaa dataset kwa ajili ya fine-tuning
+2. Fanya yafuatayo kuongeza jina la Azure Managed Identity
 
-Katika zoezi hili, utatekeleza faili *download_dataset.py* kupakua datasets za *ULTRACHAT_200k* kwenye mazingira yako ya ndani. Baadaye, utatumia datasets hizi kufine-tunea modeli ya Phi-3 ndani ya Azure Machine Learning.
+    - Nenda kwenye rasilimali ya Managed Identities uliyounda.
+    - Nakili na bandika jina la Azure Managed Identity yako kwenye faili la *config.py*.
 
-#### Pakua dataset yako kwa kutumia *download_dataset.py*
+    ![Tafuta UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.sw.png)
 
-1. Fungua faili *download_dataset.py* katika Visual Studio Code.
+### Andaa seti ya data kwa ajili ya kurekebisha
+
+Katika zoezi hili, utaendesha faili la *download_dataset.py* kupakua seti ya data ya *ULTRACHAT_200k* kwenye mazingira yako ya ndani. Kisha utatumia seti hii kurekebisha mfano wa Phi-3 katika Azure Machine Learning.
+
+#### Pakua seti yako ya data kwa kutumia *download_dataset.py*
+
+1. Fungua faili la *download_dataset.py* katika Visual Studio Code.
 
 1. Ongeza msimbo ufuatao ndani ya *download_dataset.py*.
 
@@ -466,32 +471,32 @@ Katika zoezi hili, utatekeleza faili *download_dataset.py* kupakua datasets za *
 
 > [!TIP]
 >
-> **Mwongozo wa kufine-tunea kwa dataset ndogo ukitumia CPU**
+> **Mwongozo wa kurekebisha kwa seti ndogo ya data kwa kutumia CPU**
 >
-> Ikiwa unataka kutumia CPU kwa fine-tuning, njia hii ni bora kwa wale wenye usajili wa faida (kama Visual Studio Enterprise Subscription) au kwa haraka kujaribu mchakato wa fine-tuning na deployment.
+> Ikiwa unataka kutumia CPU kwa ajili ya kurekebisha, njia hii ni bora kwa wale wenye usajili wa faida (kama Visual Studio Enterprise Subscription) au kwa kujaribu haraka mchakato wa kurekebisha na kupeleka.
 >
-> Badilisha `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
+> Badilisha `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` na `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. Andika amri ifuatayo kwenye terminal yako kuendesha script na kupakua dataset kwenye mazingira yako ya ndani.
+1. Andika amri ifuatayo ndani ya terminal yako kuendesha skiripti na kupakua seti ya data kwenye mazingira yako ya ndani.
 
     ```console
     python download_data.py
     ```
 
-1. Hakiki kuwa datasets zimehifadhiwa kwa mafanikio kwenye saraka yako ya *finetune-phi/data*.
+1. Hakikisha seti za data zimehifadhiwa kwa mafanikio kwenye saraka ya *finetune-phi/data* ya eneo lako.
 
 > [!NOTE]
 >
-> **Ukubwa wa dataset na muda wa fine-tuning**
+> **Ukubwa wa seti ya data na muda wa kurekebisha**
 >
-> Katika mfano huu wa E2E, unatumia asilimia 1 tu ya dataset (`train_sft[:1%]`). Hii inapunguza sana kiasi cha data, na kuharakisha mchakato wa kupakia na fine-tuning. Unaweza kurekebisha asilimia hii kupata uwiano mzuri kati ya muda wa mafunzo na utendaji wa modeli. Kutumia sehemu ndogo ya dataset hupunguza muda unaohitajika kwa fine-tuning, na kufanya mchakato uwe rahisi kwa mfano wa E2E.
+> Katika mfano huu wa E2E, unatumia asilimia 1 tu ya seti ya data (`train_sft[:1%]`). Hii inapunguza kiasi cha data kwa kiasi kikubwa, na kuharakisha mchakato wa kupakia na kurekebisha. Unaweza kubadilisha asilimia hii kupata usawa mzuri kati ya muda wa mafunzo na utendaji wa mfano. Kutumia sehemu ndogo ya seti ya data hupunguza muda unaohitajika kwa kurekebisha, na kufanya mchakato kuwa rahisi kwa mfano wa E2E.
 
-## Hali ya 2: Fine-tune modeli ya Phi-3 na kuiteka kwenye Azure Machine Learning Studio
+## Hali ya 2: Rekebisha mfano wa Phi-3 na Upeleke katika Azure Machine Learning Studio
 
-### Weka Azure CLI
+### Sanidi Azure CLI
 
-Unahitaji kuweka Azure CLI ili kuthibitisha mazingira yako. Azure CLI inakuwezesha kusimamia rasilimali za Azure moja kwa moja kupitia mstari wa amri na inatoa vibali vinavyohitajika kwa Azure Machine Learning kufikia rasilimali hizi. Kuanzia, install [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+Unahitaji kusanidi Azure CLI kuthibitisha mazingira yako. Azure CLI inakuwezesha kusimamia rasilimali za Azure moja kwa moja kutoka kwenye mstari wa amri na hutoa sifa zinazohitajika kwa Azure Machine Learning kufikia rasilimali hizi. Ili kuanza, sakinisha [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
 1. Fungua dirisha la terminal na andika amri ifuatayo kuingia kwenye akaunti yako ya Azure.
 
@@ -499,30 +504,30 @@ Unahitaji kuweka Azure CLI ili kuthibitisha mazingira yako. Azure CLI inakuwezes
     az login
     ```
 
-1. Chagua akaunti yako ya Azure unayotaka kutumia.
+1. Chagua akaunti yako ya Azure kutumia.
 
-1. Chagua usajili wako wa Azure unayotaka kutumia.
+1. Chagua usajili wako wa Azure kutumia.
 
-    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.sw.png)
+    ![Tafuta jina la resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.sw.png)
 
 > [!TIP]
 >
-> Ikiwa unapata shida kuingia Azure, jaribu kutumia device code. Fungua terminal na andika amri ifuatayo kuingia kwenye akaunti yako ya Azure:
+> Ikiwa unapata shida kuingia Azure, jaribu kutumia nambari ya kifaa. Fungua dirisha la terminal na andika amri ifuatayo kuingia kwenye akaunti yako ya Azure:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### Fine-tune modeli ya Phi-3
+### Rekebisha mfano wa Phi-3
 
-Katika zoezi hili, utafine-tunea modeli ya Phi-3 kwa kutumia dataset uliopokea. Kwanza, utaeleza mchakato wa fine-tuning katika faili *fine_tune.py*. Kisha, utasanidi mazingira ya Azure Machine Learning na kuanzisha mchakato wa fine-tuning kwa kuendesha faili *setup_ml.py*. Script hii inahakikisha kuwa fine-tuning inafanyika ndani ya mazingira ya Azure Machine Learning.
+Katika zoezi hili, utarekebisha mfano wa Phi-3 kwa kutumia seti ya data iliyotolewa. Kwanza, utaelezea mchakato wa kurekebisha katika faili la *fine_tune.py*. Kisha, utasanidi mazingira ya Azure Machine Learning na kuanzisha mchakato wa kurekebisha kwa kuendesha faili la *setup_ml.py*. Skiripti hii inahakikisha kurekebisha kunafanyika ndani ya mazingira ya Azure Machine Learning.
 
-Kwa kuendesha *setup_ml.py*, utaendesha mchakato wa fine-tuning ndani ya mazingira ya Azure Machine Learning.
+Kwa kuendesha *setup_ml.py*, utaendesha mchakato wa kurekebisha ndani ya mazingira ya Azure Machine Learning.
 
-#### Ongeza msimbo kwenye faili *fine_tune.py*
+#### Ongeza msimbo kwenye faili la *fine_tune.py*
 
-1. Elekea kwenye folda ya *finetuning_dir* na fungua faili *fine_tune.py* katika Visual Studio Code.
+1. Nenda kwenye folda ya *finetuning_dir* na fungua faili la *fine_tune.py* katika Visual Studio Code.
 
 1. Ongeza msimbo ufuatao ndani ya *fine_tune.py*.
 
@@ -677,19 +682,19 @@ Kwa kuendesha *setup_ml.py*, utaendesha mchakato wa fine-tuning ndani ya mazingi
 
     ```
 
-1. Hifadhi na funga faili *fine_tune.py*.
+1. Hifadhi na funga faili la *fine_tune.py*.
 
 > [!TIP]
-> **Unaweza kufine-tunea modeli ya Phi-3.5**
+> **Unaweza kurekebisha mfano wa Phi-3.5**
 >
-> Katika faili *fine_tune.py*, unaweza kubadilisha shamba la `pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name` kwenye script yako.
+> Katika faili la *fine_tune.py*, unaweza kubadilisha `pretrained_model_name` kutoka `"microsoft/Phi-3-mini-4k-instruct"` kwenda mfano wowote unayotaka kurekebisha. Kwa mfano, ukibadilisha kuwa `"microsoft/Phi-3.5-mini-instruct"`, utatumia mfano wa Phi-3.5-mini-instruct kwa kurekebisha. Ili kupata na kutumia jina la mfano unaopendelea, tembelea [Hugging Face](https://huggingface.co/), tafuta mfano unaovutiwa nao, kisha nakili na bandika jina lake kwenye sehemu ya `pretrained_model_name` katika skiripti yako.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.":::
+> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Rekebisha Phi-3.5.":::
 >
 
-#### Ongeza msimbo kwenye faili *setup_ml.py*
+#### Ongeza msimbo kwenye faili la *setup_ml.py*
 
-1. Fungua faili *setup_ml.py* katika Visual Studio Code.
+1. Fungua faili la *setup_ml.py* katika Visual Studio Code.
 
 1. Ongeza msimbo ufuatao ndani ya *setup_ml.py*.
 
@@ -818,7 +823,7 @@ Kwa kuendesha *setup_ml.py*, utaendesha mchakato wa fine-tuning ndani ya mazingi
 
     ```
 
-1. Badilisha `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `LOCATION` kwa maelezo yako maalum.
+1. Badilisha `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, na `LOCATION` kwa maelezo yako maalum.
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -830,13 +835,13 @@ Kwa kuendesha *setup_ml.py*, utaendesha mchakato wa fine-tuning ndani ya mazingi
 
 > [!TIP]
 >
-> **Mwongozo wa kufine-tunea kwa dataset ndogo ukitumia CPU**
+> **Mwongozo wa kurekebisha kwa seti ndogo ya data kwa kutumia CPU**
 >
-> Ikiwa unataka kutumia CPU kwa fine-tuning, njia hii ni bora kwa wale wenye usajili wa faida (kama Visual Studio Enterprise Subscription) au kwa haraka kujaribu mchakato wa fine-tuning na deployment.
+> Ikiwa unataka kutumia CPU kwa ajili ya kurekebisha, njia hii ni bora kwa wale wenye usajili wa faida (kama Visual Studio Enterprise Subscription) au kwa kujaribu haraka mchakato wa kurekebisha na kupeleka.
 >
-> 1. Fungua faili *setup_ml*.
-> 1. Badilisha `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
-> 1. Replace `LOCATION` kwa maelezo yako maalum.
+> 1. Fungua faili la *setup_ml*.
+> 1. Badilisha `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, na `DOCKER_IMAGE_NAME` kama ifuatavyo. Ikiwa huna ufikiaji wa *Standard_E16s_v3*, unaweza kutumia mfano sawa wa CPU au kuomba idadi mpya.
+> 1. Badilisha `LOCATION` kwa maelezo yako maalum.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -847,35 +852,35 @@ Kwa kuendesha *setup_ml.py*, utaendesha mchakato wa fine-tuning ndani ya mazingi
 >    ```
 >
 
-1. Andika amri ifuatayo kuendesha script ya *setup_ml.py* na kuanzisha mchakato wa fine-tuning ndani ya Azure Machine Learning.
+1. Andika amri ifuatayo kuendesha skiripti la *setup_ml.py* na kuanza mchakato wa kurekebisha ndani ya Azure Machine Learning.
 
     ```python
     python setup_ml.py
     ```
 
-1. Katika zoezi hili, umefanikiwa kufine-tunea modeli ya Phi-3 kwa kutumia Azure Machine Learning. Kwa kuendesha script ya *setup_ml.py*, umeanzisha mazingira ya Azure Machine Learning na kuanzisha mchakato wa fine-tuning uliobainishwa katika faili *fine_tune.py*. Tafadhali kumbuka kuwa mchakato wa fine-tuning unaweza kuchukua muda mrefu. Baada ya kuendesha `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
+1. Katika zoezi hili, umefanikiwa kurekebisha mfano wa Phi-3 kwa kutumia Azure Machine Learning. Kwa kuendesha skiripti la *setup_ml.py*, umeanzisha mazingira ya Azure Machine Learning na kuanzisha mchakato wa kurekebisha uliobainishwa katika faili la *fine_tune.py*. Tafadhali fahamu kuwa mchakato wa kurekebisha unaweza kuchukua muda mrefu. Baada ya kuendesha amri `python setup_ml.py`, unahitaji kusubiri mchakato ukamilike. Unaweza kufuatilia hali ya kazi ya kurekebisha kwa kufuata kiungo kilichotolewa kwenye terminal kwenda kwenye portal ya Azure Machine Learning.
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.a28c8552f7b7bc088ccd67dd0c522f7fc1944048d3554bb1b24f95a1169ad538.sw.png)
+    ![Tazama kazi ya kurekebisha.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.sw.png)
 
-### Deploy the fine-tuned model
+### Peleka mfano uliorekebishwa
 
-To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+Ili kuunganisha mfano uliorekebishwa wa Phi-3 na Prompt Flow, unahitaji kupeleka mfano ili uweze kupatikana kwa ajili ya utambuzi wa wakati halisi. Mchakato huu unahusisha kusajili mfano, kuunda endpoint mtandaoni, na kupeleka mfano.
 
-#### Set the model name, endpoint name, and deployment name for deployment
+#### Weka jina la mfano, jina la endpoint, na jina la upeleka kwa ajili ya upeleka
 
-1. Open *config.py* file.
+1. Fungua faili la *config.py*.
 
-1. Replace `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` with the desired name for your model.
+1. Badilisha `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` na jina unalotaka kwa mfano wako.
 
-1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
+1. Badilisha `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` na jina unalotaka kwa endpoint yako.
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` kwa jina unalotaka kwa deployment yako.
+1. Badilisha `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` na jina unalotaka kwa upeleka wako.
 
-#### Ongeza msimbo kwenye faili *deploy_model.py*
+#### Ongeza msimbo kwenye faili la *deploy_model.py*
 
-Kuendesha faili *deploy_model.py* kunaendesha mchakato mzima wa deployment moja kwa moja. Inasajili modeli, inaunda endpoint, na kutekeleza deployment kulingana na mipangilio iliyowekwa katika faili config.py, ambayo ni pamoja na jina la modeli, jina la endpoint, na jina la deployment.
+Kuendesha faili la *deploy_model.py* kunaendesha mchakato mzima wa upeleka moja kwa moja. Hii inasajili mfano, kuunda endpoint, na kuendesha upeleka kulingana na mipangilio iliyowekwa kwenye faili la *config.py*, ikijumuisha jina la mfano, jina la endpoint, na jina la upeleka.
 
-1. Fungua faili *deploy_model.py* katika Visual Studio Code.
+1. Fungua faili la *deploy_model.py* katika Visual Studio Code.
 
 1. Ongeza msimbo ufuatao ndani ya *deploy_model.py*.
 
@@ -1043,61 +1048,62 @@ Kuendesha faili *deploy_model.py* kunaendesha mchakato mzima wa deployment moja 
 
     ```
 
-1. Fanya kazi zifuatazo kupata `JOB_NAME`:
+1. Fanya yafuatayo kupata `JOB_NAME`:
 
-    - Navigate to Azure Machine Learning resource that you created.
-    - Select **Studio web URL** to open the Azure Machine Learning workspace.
-    - Select **Jobs** from the left side tab.
-    - Select the experiment for fine-tuning. For example, *finetunephi*.
-    - Select the job that you created.
-    - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+    - Nenda kwenye rasilimali ya Azure Machine Learning uliyounda.
+    - Chagua **Studio web URL** kufungua eneo la kazi la Azure Machine Learning.
+    - Chagua **Jobs** kutoka kwenye tabia ya upande wa kushoto.
+    - Chagua jaribio la kurekebisha. Kwa mfano, *finetunephi*.
+    - Chagua kazi uliyounda.
+- Nakili na ubandike Jina la kazi yako kwenye `JOB_NAME = "your-job-name"` katika faili *deploy_model.py*.
 
-1. Replace `COMPUTE_INSTANCE_TYPE` kwa maelezo yako maalum.
+1. Badilisha `COMPUTE_INSTANCE_TYPE` na maelezo yako maalum.
 
-1. Andika amri ifuatayo kuendesha script ya *deploy_model.py* na kuanza mchakato wa deployment ndani ya Azure Machine Learning.
+1. Andika amri ifuatayo kuendesha script ya *deploy_model.py* na kuanzisha mchakato wa uanzishaji katika Azure Machine Learning.
 
     ```python
     python deploy_model.py
     ```
 
+
 > [!WARNING]
-> Ili kuepuka malipo ya ziada kwenye akaunti yako, hakikisha umefuta endpoint uliounda katika Azure Machine Learning workspace.
+> Ili kuepuka malipo ya ziada kwenye akaunti yako, hakikisha unafuta endpoint uliouunda katika Azure Machine Learning workspace.
 >
 
-#### Angalia hali ya deployment katika Azure Machine Learning Workspace
+#### Angalia hali ya uanzishaji katika Azure Machine Learning Workspace
 
 1. Tembelea [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Elekea kwenye Azure Machine Learning workspace uliyotengeneza.
+1. Nenda kwenye Azure Machine Learning workspace uliyounda.
 
 1. Chagua **Studio web URL** kufungua Azure Machine Learning workspace.
 
 1. Chagua **Endpoints** kutoka kwenye tab upande wa kushoto.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.sw.png)
+    ![Chagua endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.sw.png)
 
-2. Chagua endpoint uliounda.
+2. Chagua endpoint uliouunda.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.sw.png)
+    ![Chagua endpoints uliounda.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.sw.png)
 
-3. Ukurasa huu, unaweza kusimamia endpoints zilizoundwa wakati wa mchakato wa deployment.
+3. Ukurasa huu unaweza kusimamia endpoints zilizoundwa wakati wa mchakato wa uanzishaji.
 
 ## Hali ya 3: Unganisha na Prompt flow na Chat na modeli yako maalum
 
 ### Unganisha modeli maalum ya Phi-3 na Prompt flow
 
-Baada ya kufanikisha deployment ya modeli yako iliyofine-tunewa, sasa unaweza kuunganisha na Prompt flow ili kutumia modeli yako katika programu za wakati halisi, kuruhusu kazi mbalimbali za mwingiliano na modeli yako maalum ya Phi-3.
+Baada ya kufanikisha kuanzisha modeli yako iliyofanyiwa fine-tuning, sasa unaweza kuunganisha na Prompt flow ili kutumia modeli yako katika programu za wakati halisi, kuruhusu aina mbalimbali za kazi za mwingiliano na modeli yako maalum ya Phi-3.
 
-#### Weka api key na endpoint uri ya modeli iliyofine-tunewa ya Phi-3
+#### Weka api key na endpoint uri ya modeli iliyofanyiwa fine-tuning ya Phi-3
 
-1. Elekea kwenye Azure Machine Learning workspace uliyotengeneza.
+1. Nenda kwenye Azure Machine Learning workspace uliyounda.
 1. Chagua **Endpoints** kutoka kwenye tab upande wa kushoto.
 1. Chagua endpoint uliounda.
-1. Chagua **Consume** kutoka kwenye menyu ya navigation.
-1. Nakili na ubandike **REST endpoint** yako kwenye faili *config.py*, ukibadilisha `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` kwa **Primary key** yako.
+1. Chagua **Consume** kutoka kwenye menyu ya urambazaji.
+1. Nakili na ubandike **REST endpoint** yako kwenye faili *config.py*, ukibadilisha `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` na **REST endpoint** yako.
+1. Nakili na ubandike **Primary key** yako kwenye faili *config.py*, ukibadilisha `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` na **Primary key** yako.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.sw.png)
+    ![Nakili api key na endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.sw.png)
 
 #### Ongeza msimbo kwenye faili *flow.dag.yml*
 
@@ -1198,15 +1204,15 @@ Baada ya kufanikisha deployment ya modeli yako iliyofine-tunewa, sasa unaweza ku
 
 ### Chat na modeli yako maalum
 
-1. Andika amri ifuatayo kuendesha script ya *deploy_model.py* na kuanza mchakato wa deployment ndani ya Azure Machine Learning.
+1. Andika amri ifuatayo kuendesha script ya *deploy_model.py* na kuanzisha mchakato wa uanzishaji katika Azure Machine Learning.
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. Hapa kuna mfano wa matokeo: Sasa unaweza kuchat na modeli yako maalum ya Phi-3. Inashauriwa kuuliza maswali yanayohusiana na data iliyotumika kwa fine-tuning.
+1. Hapa kuna mfano wa matokeo: Sasa unaweza kuzungumza na modeli yako maalum ya Phi-3. Inashauriwa kuuliza maswali yanayohusiana na data iliyotumika kwa fine-tuning.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.sw.png)
+    ![Mfano wa prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.sw.png)
 
-**Kisahafu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya mama inapaswa kuzingatiwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

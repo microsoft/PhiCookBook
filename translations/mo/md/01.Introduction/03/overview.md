@@ -2,38 +2,38 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-05-07T14:42:13+00:00",
+  "translation_date": "2025-07-16T21:07:36+00:00",
   "source_file": "md/01.Introduction/03/overview.md",
   "language_code": "mo"
 }
 -->
-Phi-3-mini ၏အကြောင်းအရာတွင်၊ inference ဆိုသည်မှာ မော်ဒယ်ကို အသုံးပြု၍ input ဒေတာအပေါ် အခြေခံကာ ခန့်မှန်းချက်များ သို့မဟုတ် output များ ဖန်တီးခြင်းဖြစ်သည်။ Phi-3-mini နှင့် ၎င်း၏ inference စွမ်းရည်များအကြောင်း ပိုမိုအသေးစိတ် ဖော်ပြပေးလိုပါသည်။
+在 Phi-3-mini 的背景下，推理指的是使用模型根據輸入數據進行預測或生成輸出的過程。讓我為您介紹更多關於 Phi-3-mini 及其推理能力的細節。
 
-Phi-3-mini သည် Microsoft မှ ထုတ်ပြန်သော Phi-3 စီးရီးမော်ဒယ်များအတွင်း ပါဝင်သည်။ ဤမော်ဒယ်များသည် Small Language Models (SLMs) အတွက် အလားအလာအသစ်များ ဖန်တီးရန် ရည်ရွယ်ထားသည်။
+Phi-3-mini 是微軟發布的 Phi-3 系列模型的一部分。這些模型旨在重新定義小型語言模型（SLMs）的可能性。
 
-Phi-3-mini နှင့် ၎င်း၏ inference စွမ်းရည်များအကြောင်း အချက်အလက်အချို့မှာ -
+以下是關於 Phi-3-mini 及其推理能力的一些重點：
 
-## **Phi-3-mini အကျဉ်းချုပ်**
-- Phi-3-mini ၏ parameter အရွယ်အစားမှာ 3.8 ဘီလီယံဖြစ်သည်။
-- ယင်းသည် ရိုးရာ ကွန်ပျူတာပစ္စည်းများတွင်သာမက မိုဘိုင်းပစ္စည်းများနှင့် IoT ပစ္စည်းများကဲ့သို့သော edge ပစ္စည်းများတွင်ပါ ပြေးနိုင်သည်။
-- Phi-3-mini ထုတ်ပြန်ခြင်းဖြင့် လူတစ်ဦးချင်းစီနှင့် စီးပွားရေးလုပ်ငန်းများသည် SLM များကို မတူညီသော hardware ပစ္စည်းများပေါ်တွင် တပ်ဆင်အသုံးပြုနိုင်ခြင်း၊ အထူးသဖြင့် အရင်းအမြစ်ကန့်သတ်ထားသော ပတ်ဝန်းကျင်များတွင် အသုံးပြုနိုင်ခြင်း ဖြစ်သည်။
-- ယင်းသည် ရိုးရာ PyTorch format၊ gguf format ၏ quantized ဗားရှင်းနှင့် ONNX-based quantized ဗားရှင်းတို့အပါအဝင် မော်ဒယ်ဖော်မတ်မျိုးစုံကို ထောက်ပံ့သည်။
+## **Phi-3-mini 概述：**
+- Phi-3-mini 擁有 38 億個參數。
+- 它不僅能在傳統計算設備上運行，還能在邊緣設備如行動裝置和物聯網設備上運行。
+- Phi-3-mini 的發布使個人和企業能夠在不同硬體設備上部署 SLM，特別是在資源有限的環境中。
+- 支援多種模型格式，包括傳統的 PyTorch 格式、量化後的 gguf 格式，以及基於 ONNX 的量化版本。
 
-## **Phi-3-mini ကို အသုံးပြုခြင်း**
-Phi-3-mini ကို အသုံးပြုရန် Semantic Kernel ကို Copilot application တစ်ခုတွင် အသုံးပြုနိုင်သည်။ Semantic Kernel သည် Azure OpenAI Service၊ Hugging Face တွင်ရှိသော open-source မော်ဒယ်များနှင့် local မော်ဒယ်များနှင့် ယေဘုယျအားဖြင့် ကိုက်ညီသည်။
-quantized မော်ဒယ်များကို ခေါ်ယူရန် Ollama သို့မဟုတ် LlamaEdge ကိုလည်း အသုံးပြုနိုင်သည်။ Ollama သည် တစ်ဦးချင်း အသုံးပြုသူများအား quantized မော်ဒယ်မျိုးစုံကို ခေါ်ယူခွင့်ပြုသည်၊ LlamaEdge သည် GGUF မော်ဒယ်များအတွက် cross-platform အသုံးပြုနိုင်မှုကို ပံ့ပိုးပေးသည်။
+## **存取 Phi-3-mini：**
+要存取 Phi-3-mini，您可以在 Copilot 應用中使用 [Semantic Kernel](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo)。Semantic Kernel 通常與 Azure OpenAI 服務、Hugging Face 上的開源模型以及本地模型相容。
+您也可以使用 [Ollama](https://ollama.com) 或 [LlamaEdge](https://llamaedge.com) 來調用量化模型。Ollama 允許個人用戶調用不同的量化模型，而 LlamaEdge 則提供 GGUF 模型的跨平台支援。
 
-## **Quantized မော်ဒယ်များ**
-အများပြည်သူသည် local inference အတွက် quantized မော်ဒယ်များကို ပိုမိုနှစ်သက်ကြသည်။ ဥပမာအားဖြင့် Ollama ဖြင့် Phi-3 ကို တိုက်ရိုက် run ပြုလုပ်နိုင်သလို၊ Modelfile ကို အသုံးပြု၍ offline တွင်လည်း ပြင်ဆင်နိုင်သည်။ Modelfile တွင် GGUF ဖိုင်လမ်းကြောင်းနှင့် prompt ဖော်မတ်ကို ဖော်ပြထားသည်။
+## **量化模型：**
+許多用戶偏好使用量化模型進行本地推理。例如，您可以直接使用 Ollama 運行 Phi-3，或透過 Modelfile 離線配置。Modelfile 指定 GGUF 檔案路徑和提示格式。
 
-## **Generative AI ၏ အခွင့်အလမ်းများ**
-Phi-3-mini ကဲ့သို့ SLM များပေါင်းစပ်ခြင်းဖြင့် generative AI အတွက် အသစ်အဆန်းများ ဖန်တီးနိုင်သည်။ inference သည် ပထမဆုံးအဆင့်သာဖြစ်ပြီး၊ ၎င်းမော်ဒယ်များကို အရင်းအမြစ်ကန့်သတ်ထားသော၊ latency ကန့်သတ်ထားသော၊ သက်သာမှုကန့်သတ်ထားသော ပတ်ဝန်းကျင်များတွင် မတူညီသော လုပ်ငန်းများအတွက် အသုံးပြုနိုင်သည်။
+## **生成式 AI 的可能性：**
+結合像 Phi-3-mini 這樣的 SLM，為生成式 AI 開啟了新的可能性。推理只是第一步；這些模型可用於資源受限、延遲要求高及成本受限的多種任務。
 
-## **Phi-3-mini ဖြင့် Generative AI ကို ဖွင့်လှစ်ခြင်း: Inference နှင့် Deployment လမ်းညွှန်**
-Semantic Kernel, Ollama/LlamaEdge, နှင့် ONNX Runtime ကို အသုံးပြု၍ Phi-3-mini မော်ဒယ်များကို ရယူခြင်းနှင့် inference ပြုလုပ်ခြင်း၊ မတူညီသော လျှောက်လွှာအခြေအနေများတွင် generative AI ၏ အခွင့်အလမ်းများကို ရှာဖွေပါ။
+## **利用 Phi-3-mini 解鎖生成式 AI：推理與部署指南**  
+學習如何使用 Semantic Kernel、Ollama/LlamaEdge 及 ONNX Runtime 存取並推理 Phi-3-mini 模型，探索生成式 AI 在各種應用場景中的潛力。
 
-**Features**
-phi3-mini မော်ဒယ်ကို အောက်ပါတွင် inference ပြုလုပ်နိုင်သည်-
+**功能**  
+在以下平台推理 phi3-mini 模型：
 
 - [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)
 - [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
@@ -41,7 +41,7 @@ phi3-mini မော်ဒယ်ကို အောက်ပါတွင် infer
 - [ONNX Runtime](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx?WT.mc_id=aiml-138114-kinfeylo)
 - [iOS](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios?WT.mc_id=aiml-138114-kinfeylo)
 
-အကျဉ်းချုပ်အားဖြင့် Phi-3-mini သည် ဖန်တီးမှု AI ကို မတူညီသော မော်ဒယ်ဖော်မတ်များနှင့် လျှောက်လွှာအခြေအနေများတွင် လေ့လာအသုံးချရန် ဖန်တီးသူများအား အခွင့်အလမ်းများ ပေးစွမ်းသည်။
+總結來說，Phi-3-mini 讓開發者能探索不同的模型格式，並在多種應用場景中發揮生成式 AI 的潛力。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

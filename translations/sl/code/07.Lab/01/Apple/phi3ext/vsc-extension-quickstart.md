@@ -2,59 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-05-09T05:11:03+00:00",
+  "translation_date": "2025-07-16T17:04:41+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md",
   "language_code": "sl"
 }
 -->
-# Dobrodošli u vašu VS Code ekstenziju
+# Dobrodošli v vaši razširitvi za VS Code
 
-## Šta se nalazi u fascikli
+## Kaj je v mapi
 
-* Ova fascikla sadrži sve fajlove potrebne za vašu ekstenziju.
-* `package.json` - ovo je manifest fajl u kojem deklarišete vašu ekstenziju i komandu.
-  * Primer dodatka registruje komandu i definiše njen naslov i ime komande. Sa ovim informacijama VS Code može prikazati komandu u paleti komandi. Još uvek nije potrebno učitavati dodatak.
-* `src/extension.ts` - ovo je glavni fajl gde ćete implementirati vašu komandu.
-  * Fajl eksportuje jednu funkciju, `activate`, koja se poziva prvi put kada se ekstenzija aktivira (u ovom slučaju izvršavanjem komande). Unutar funkcije `activate` pozivamo `registerCommand`.
-  * Funkciju koja sadrži implementaciju komande prosleđujemo kao drugi parametar funkciji `registerCommand`.
+* Ta mapa vsebuje vse datoteke, potrebne za vašo razširitev.
+* `package.json` - to je manifestna datoteka, v kateri deklarirate svojo razširitev in ukaz.
+  * Vzorec vtičnika registrira ukaz in določi njegov naslov ter ime ukaza. S temi informacijami lahko VS Code prikaže ukaz v ukazni paleti. Vtičnika še ni treba naložiti.
+* `src/extension.ts` - to je glavna datoteka, kjer boste implementirali svoj ukaz.
+  * Datoteka izvozi eno funkcijo, `activate`, ki se pokliče prvič, ko je razširitev aktivirana (v tem primeru z izvajanjem ukaza). Znotraj funkcije `activate` pokličemo `registerCommand`.
+  * Funkcijo, ki vsebuje implementacijo ukaza, posredujemo kot drugi parameter funkciji `registerCommand`.
 
-## Podešavanje
+## Namestitev
 
-* instalirajte preporučene ekstenzije (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, i dbaeumer.vscode-eslint)
+* Namestite priporočene razširitve (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner in dbaeumer.vscode-eslint)
 
+## Zaženite takoj
 
-## Počnite odmah
+* Pritisnite `F5`, da odprete novo okno z naloženo vašo razširitvijo.
+* Zaženite svoj ukaz iz ukazne palete s pritiskom na (`Ctrl+Shift+P` ali `Cmd+Shift+P` na Macu) in vtipkajte `Hello World`.
+* Nastavite točke prekinitve v kodi znotraj `src/extension.ts` za razhroščevanje razširitve.
+* Izhod vaše razširitve poiščite v konzoli za razhroščevanje.
 
-* Pritisnite `F5` da otvorite novi prozor sa učitanom vašom ekstenzijom.
-* Pokrenite vašu komandu iz palete komandi pritiskom na (`Ctrl+Shift+P` ili `Cmd+Shift+P` na Mac-u) i kucanjem `Hello World`.
-* Postavite tačke prekida u kodu unutar `src/extension.ts` da biste debugovali vašu ekstenziju.
-* Pronađite izlaz iz vaše ekstenzije u debug konzoli.
+## Naredite spremembe
 
-## Napravite izmene
+* Razširitev lahko ponovno zaženete iz orodne vrstice za razhroščevanje po spremembah kode v `src/extension.ts`.
+* Prav tako lahko osvežite (`Ctrl+R` ali `Cmd+R` na Macu) okno VS Code z vašo razširitvijo, da naložite spremembe.
 
-* Možete ponovo pokrenuti ekstenziju sa debug trake nakon što izmenite kod u `src/extension.ts`.
-* Takođe možete ponovo učitati (`Ctrl+R` ili `Cmd+R` na Mac-u) VS Code prozor sa vašom ekstenzijom da biste učitali izmene.
+## Raziščite API
 
+* Celoten nabor našega API-ja lahko odprete z odpiranjem datoteke `node_modules/@types/vscode/index.d.ts`.
 
-## Istražite API
+## Zaženite teste
 
-* Možete otvoriti kompletan skup našeg API-ja kada otvorite fajl `node_modules/@types/vscode/index.d.ts`.
+* Namestite [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* Zaženite nalogo "watch" preko ukaza **Tasks: Run Task**. Poskrbite, da teče, sicer testi morda ne bodo odkriti.
+* Odprite pogled Testing iz stranske vrstice in kliknite gumb "Run Test" ali uporabite bližnjico `Ctrl/Cmd + ; A`
+* Rezultate testov si oglejte v pogledu Test Results.
+* Spremembe naredite v `src/test/extension.test.ts` ali ustvarite nove testne datoteke znotraj mape `test`.
+  * Zagotovljeni testni izvajalec bo upošteval samo datoteke, ki ustrezajo vzorcu imena `**.test.ts`.
+  * Znotraj mape `test` lahko ustvarite podmape za poljubno organizacijo testov.
 
-## Pokrenite testove
+## Pojdite korak dlje
 
-* Instalirajte [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Pokrenite zadatak "watch" preko komande **Tasks: Run Task**. Uverite se da je pokrenut, jer u suprotnom testovi možda neće biti pronađeni.
-* Otvorite Testing prikaz sa trake aktivnosti i kliknite na dugme Run Test, ili koristite prečicu `Ctrl/Cmd + ; A`
-* Pogledajte rezultate testova u Test Results prikazu.
-* Pravite izmene u `src/test/extension.test.ts` ili kreirajte nove test fajlove unutar `test` fascikle.
-  * Dostavljeni test runner će uzimati u obzir samo fajlove koji odgovaraju obrascu imena `**.test.ts`.
-  * Možete kreirati fascikle unutar `test` fascikle da organizujete vaše testove kako želite.
+* Zmanjšajte velikost razširitve in izboljšajte čas zagona z [združevanjem razširitve](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
+* [Objavite svojo razširitev](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) na tržnici razširitev VS Code.
+* Avtomatizirajte gradnje z nastavitvijo [neprekinjene integracije](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
 
-## Idite dalje
-
-* Smanjite veličinu ekstenzije i poboljšajte vreme pokretanja [pakovanjem vaše ekstenzije](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
-* [Objavite vašu ekstenziju](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) na VS Code marketplace-u.
-* Automatizujte buildove podešavanjem [kontinuirane integracije](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
-
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

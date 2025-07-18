@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:51:37+00:00",
+  "translation_date": "2025-07-17T04:46:56+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "hu"
 }
 -->
 ## **Phi-4-mini-mm használata kód generálásához**
 
-A Phi-4-mini továbbviszi a Phi család erős kódolási képességeit. Prompt segítségével kérdéseket tehetsz fel a kódolással kapcsolatban. Természetesen a fejlett érvelési képesség hozzáadásával még erősebb kódolási képességekkel rendelkezik, például képes projektek generálására a követelmények alapján. Például projekt generálása a követelmények szerint, mint például:
+A Phi-4-mini folytatja a Phi Family erős kódolási képességeit. Prompt segítségével kérdéseket tehetsz fel a kódolással kapcsolatban. Természetesen, a fejlett érvelési képesség hozzáadásával még erősebb kódolási képességekkel rendelkezik, például képes projektek generálására a követelmények alapján. Például generálhat projekteket az alábbi igények szerint:
 
 ### **Követelmény**
 
-Készíts egy Bevásárlókosár alkalmazást
+Hozz létre egy Bevásárlókosár alkalmazást
 
-- Hozz létre egy API Rest-ot a következő metódusokkal:
-    - Listázd a söröket oldal eltolással és limit megadásával.
-    - Szerezz be sör részleteket az azonosító alapján.
-    - Keress sört név, leírás, szlogen, ételpárosítások és ár alapján.
+- Készíts egy API Rest-et a következő metódusokkal:
+    - Szerezd be a sörök listáját oldal eltolással és limit megadásával.
+    - Szerezd be a sör részleteit azonosító alapján.
+    - Keresés sörre név, leírás, szlogen, ételpárosítások és ár szerint.
 - Hozz létre egy terméklistát a főoldalon.
     - Készíts egy keresősávot a termékek szűréséhez.
     - Navigálj a leírás oldalra, amikor a felhasználó rákattint egy termékre.
-- (Opcionális) Ár szerinti szűrő létrehozása.
-- Készíts egy bevásárlókosarat.
-    - Termékek hozzáadása a kosárhoz.
-    - Termékek eltávolítása a kosárból.
-    - A kosárban lévő termékek összárának kiszámítása.
+- (Opcionális) Ár szerinti szűrő a termékekhez.
+- Hozz létre egy bevásárlókosarat.
+    - Adj termékeket a kosárhoz.
+    - Távolíts el termékeket a kosárból.
+    - Számold ki a kosárban lévő termékek összárát.
 
-### **Példa kód - Python**
+### **Minta kód - Python**
 
 
 ```python
@@ -139,5 +139,5 @@ print(response)
 
 ```
 
-**Felelősség kizárása**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hivatalos forrásnak. Fontos információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

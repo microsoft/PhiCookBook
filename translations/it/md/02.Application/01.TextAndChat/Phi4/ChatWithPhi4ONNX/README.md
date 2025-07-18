@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:01:42+00:00",
+  "translation_date": "2025-07-17T03:17:08+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "it"
 }
 -->
 # **Chat con Phi-4-mini ONNX**
 
-***ONNX*** es un formato abierto diseñado para representar modelos de aprendizaje automático. ONNX define un conjunto común de operadores, los bloques básicos de los modelos de machine learning y deep learning, y un formato de archivo común para que los desarrolladores de IA puedan usar modelos con una variedad de frameworks, herramientas, runtimes y compiladores.
+***ONNX*** è un formato aperto creato per rappresentare modelli di machine learning. ONNX definisce un insieme comune di operatori - i mattoni fondamentali dei modelli di machine learning e deep learning - e un formato file comune per permettere agli sviluppatori di AI di utilizzare modelli con diversi framework, strumenti, runtime e compilatori.
 
-Nuestro objetivo es desplegar modelos de IA generativa en dispositivos edge y usarlos en entornos con recursos limitados o sin conexión. Ahora podemos lograr esto convirtiendo el modelo de manera cuantificada. Podemos convertir el modelo cuantificado a formato GGUF o ONNX.
+L’obiettivo è distribuire modelli di AI generativa su dispositivi edge e usarli in ambienti con potenza di calcolo limitata o offline. Ora possiamo raggiungere questo obiettivo convertendo il modello in modo quantizzato. Possiamo convertire il modello quantizzato in formato GGUF o ONNX.
 
-Microsoft Olive puede ayudarte a convertir SLM a formato ONNX cuantificado. El método para lograr la conversión del modelo es muy sencillo.
+Microsoft Olive può aiutarti a convertire SLM in formato ONNX quantizzato. Il metodo per effettuare la conversione del modello è molto semplice.
 
-**Instalar Microsoft Olive SDK**
+**Installa Microsoft Olive SDK**
 
 
 ```bash
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Convertir soporte ONNX para CPU**
+**Supporto per la conversione ONNX su CPU**
 
 ```bash
 
@@ -34,12 +34,12 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Nota*** este ejemplo utiliza CPU
+***Nota*** questo esempio utilizza la CPU
 
 
-### **Inferencia del modelo Phi-4-mini ONNX con ONNX Runtime GenAI**
+### **Inferenza del modello Phi-4-mini ONNX con ONNX Runtime GenAI**
 
-- **Instalar ONNX Runtime GenAI**
+- **Installa ONNX Runtime GenAI**
 
 ```bash
 
@@ -47,9 +47,9 @@ pip install --pre onnxruntime-genai
 
 ```
 
-- **Código en Python**
+- **Codice Python**
 
-*Esta es la versión 0.5.2 de ONNX Runtime GenAI*
+*Questa è la versione 0.5.2 di ONNX Runtime GenAI*
 
 ```python
 
@@ -105,7 +105,7 @@ while not generator.is_done():
 ```
 
 
-*Esta es la versión 0.6.0 de ONNX Runtime GenAI*
+*Questa è la versione 0.6.0 di ONNX Runtime GenAI*
 
 ```python
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di considerare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un esperto umano. Non ci assumiamo alcuna responsabilità per eventuali incomprensioni o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

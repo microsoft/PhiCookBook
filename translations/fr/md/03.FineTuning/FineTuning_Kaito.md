@@ -2,40 +2,39 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-07T13:38:05+00:00",
+  "translation_date": "2025-07-17T06:17:52+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "fr"
 }
 -->
-## Affinage avec Kaito 
+## Affinage avec Kaito
 
-[Kaito](https://github.com/Azure/kaito) est un opérateur qui automatise le déploiement des modèles d'inférence IA/ML dans un cluster Kubernetes.
+[Kaito](https://github.com/Azure/kaito) est un opérateur qui automatise le déploiement des modèles d'inférence AI/ML dans un cluster Kubernetes.
 
-Kaito se distingue des principales méthodes de déploiement de modèles basées sur des infrastructures de machines virtuelles par les points clés suivants :
+Kaito présente les différences clés suivantes par rapport à la plupart des méthodologies classiques de déploiement de modèles basées sur des infrastructures de machines virtuelles :
 
 - Gestion des fichiers modèles via des images conteneurs. Un serveur http est fourni pour effectuer des appels d'inférence en utilisant la bibliothèque de modèles.
-- Évite d'ajuster les paramètres de déploiement pour correspondre au matériel GPU en proposant des configurations prédéfinies.
-- Provisionnement automatique des nœuds GPU selon les besoins du modèle.
-- Hébergement des images de modèles volumineux dans le Microsoft Container Registry (MCR) public, si la licence le permet.
+- Évite d'ajuster les paramètres de déploiement pour s'adapter au matériel GPU grâce à des configurations prédéfinies.
+- Provisionnement automatique des nœuds GPU en fonction des besoins du modèle.
+- Hébergement des images de modèles volumineux dans le Microsoft Container Registry (MCR) public si la licence le permet.
 
-Avec Kaito, le processus d’intégration de modèles d’inférence IA volumineux dans Kubernetes est grandement simplifié.
-
+Avec Kaito, le processus d’intégration de grands modèles d’inférence AI dans Kubernetes est largement simplifié.
 
 ## Architecture
 
-Kaito suit le modèle classique de conception Kubernetes Custom Resource Definition (CRD) / contrôleur. L’utilisateur gère une ressource personnalisée `workspace` qui décrit les besoins GPU et la spécification d’inférence. Les contrôleurs Kaito automatisent le déploiement en conciliant la ressource personnalisée `workspace`.
+Kaito suit le modèle classique de conception Kubernetes Custom Resource Definition (CRD)/contrôleur. L’utilisateur gère une ressource personnalisée `workspace` qui décrit les besoins en GPU et la spécification d’inférence. Les contrôleurs Kaito automatisent le déploiement en conciliant la ressource personnalisée `workspace`.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Architecture de Kaito">
+  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
 La figure ci-dessus présente une vue d’ensemble de l’architecture Kaito. Ses principaux composants sont :
 
-- **Contrôleur Workspace** : Il concilie la ressource personnalisée `workspace`, crée des ressources personnalisées `machine` (expliquées ci-dessous) pour déclencher le provisionnement automatique des nœuds, et crée la charge de travail d’inférence (`deployment` ou `statefulset`) selon les configurations prédéfinies du modèle.
-- **Contrôleur de provisionnement de nœuds** : Ce contrôleur s’appelle *gpu-provisioner* dans le [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Il utilise le CRD `machine` issu de [Karpenter](https://sigs.k8s.io/karpenter) pour interagir avec le contrôleur workspace. Il s’intègre aux API Azure Kubernetes Service (AKS) pour ajouter de nouveaux nœuds GPU au cluster AKS.
+- **Workspace controller** : Il concilie la ressource personnalisée `workspace`, crée des ressources personnalisées `machine` (expliquées ci-dessous) pour déclencher le provisionnement automatique des nœuds, et crée la charge de travail d’inférence (`deployment` ou `statefulset`) basée sur les configurations prédéfinies du modèle.
+- **Node provisioner controller** : Le nom du contrôleur est *gpu-provisioner* dans le [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Il utilise le CRD `machine` issu de [Karpenter](https://sigs.k8s.io/karpenter) pour interagir avec le workspace controller. Il s’intègre aux API Azure Kubernetes Service (AKS) pour ajouter de nouveaux nœuds GPU au cluster AKS.  
 > Note : Le [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) est un composant open source. Il peut être remplacé par d’autres contrôleurs s’ils supportent les API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
-## Vidéo de présentation 
-[Regarder la démo de Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+## Vidéo de présentation  
+[Regarder la démo Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## Installation
 
@@ -94,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-L’état du workspace peut être suivi avec la commande suivante. Lorsque la colonne WORKSPACEREADY devient `True`, le modèle est déployé avec succès.
+Le statut du workspace peut être suivi en exécutant la commande suivante. Lorsque la colonne WORKSPACEREADY devient `True`, le modèle a été déployé avec succès.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -102,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Ensuite, vous pouvez récupérer l’IP du service d’inférence dans le cluster et utiliser un pod temporaire `curl` pour tester le point de terminaison du service dans le cluster.
+Ensuite, vous pouvez récupérer l’IP du service d’inférence dans le cluster et utiliser un pod temporaire `curl` pour tester le point d’accès du service dans le cluster.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -114,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle humaine. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

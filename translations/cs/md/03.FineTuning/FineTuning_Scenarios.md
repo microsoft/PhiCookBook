@@ -2,58 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-05-09T21:57:32+00:00",
+  "translation_date": "2025-07-17T08:29:54+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
   "language_code": "cs"
 }
 -->
-## Fine Tuning Scenarios
+## Scénáře doladění
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.25759a0154a97ad90e43a6cace37d6bea87f0ac0236ada3ad5d4a1fbacc3bdf7.cs.png)
+![Doladění s MS službami](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.cs.png)
 
-**Platforma** Obuhvata razne tehnologije kao što su Azure AI Foundry, Azure Machine Learning, AI alati, Kaito i ONNX Runtime.
+**Platforma** Zahrnuje různé technologie jako Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito a ONNX Runtime.
 
-**Infrastruktura** Obuhvata CPU i FPGA, koji su ključni za proces fino podešavanja. Pogledajmo ikone za svaku od ovih tehnologija.
+**Infrastruktura** Zahrnuje CPU a FPGA, které jsou nezbytné pro proces doladění. Ukážu vám ikony pro každou z těchto technologií.
 
-**Alati i Okviri** Obuhvataju ONNX Runtime i ONNX Runtime. Pogledajmo ikone za svaku od ovih tehnologija.  
-[Insert icons for ONNX Runtime and ONNX Runtime]
+**Nástroje a frameworky** Zahrnuje ONNX Runtime a ONNX Runtime. Ukážu vám ikony pro každou z těchto technologií.  
+[Vložte ikony pro ONNX Runtime a ONNX Runtime]
 
-Proces fino podešavanja sa Microsoft tehnologijama uključuje različite komponente i alate. Razumevanjem i korišćenjem ovih tehnologija, možemo efikasno fino podesiti naše aplikacije i kreirati bolje rešenja.
+Proces doladění s technologiemi Microsoftu zahrnuje různé komponenty a nástroje. Díky pochopení a využití těchto technologií můžeme efektivně doladit naše aplikace a vytvářet lepší řešení.
 
-## Model as Service
+## Model jako služba
 
-Fino podesite model koristeći hostovano fino podešavanje, bez potrebe za kreiranjem i upravljanjem računarstvom.
+Doladění modelu pomocí hostovaného doladění, bez nutnosti vytvářet a spravovat výpočetní prostředky.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.6184d80a336ea9d7bb67a581e9e5d0b021cafdffff7ba257c2012e2123e0d77e.cs.png)
+![MaaS doladění](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.cs.png)
 
-Serverless fino podešavanje je dostupno za Phi-3-mini i Phi-3-medium modele, omogućavajući programerima da brzo i lako prilagode modele za cloud i edge scenarije, bez potrebe za organizovanjem računarstva. Takođe smo najavili da je Phi-3-small sada dostupan kroz naš Models-as-a-Service servis, tako da programeri mogu brzo i lako započeti sa AI razvojem bez upravljanja osnovnom infrastrukturom.
+Serverless doladění je dostupné pro modely Phi-3-mini a Phi-3-medium, což umožňuje vývojářům rychle a snadno přizpůsobit modely pro cloudové a edge scénáře bez nutnosti zajišťovat výpočetní kapacity. Také jsme oznámili, že Phi-3-small je nyní dostupný prostřednictvím naší nabídky Models-as-a-Service, takže vývojáři mohou rychle a jednoduše začít s vývojem AI bez nutnosti spravovat podkladovou infrastrukturu.
 
-## Model as a Platform
+## Model jako platforma
 
-Korisnici sami upravljaju svojim računarstvom kako bi fino podesili svoje modele.
+Uživatelé spravují vlastní výpočetní prostředky, aby mohli doladit své modely.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.cf8b08ef05bf57f362da90834be87562502f4370de4a7325a9fb03b8c008e5e7.cs.png)
+![Maap doladění](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.cs.png)
 
-[Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
+[Ukázka doladění](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
-## Fine Tuning Scenarios
+## Scénáře doladění
 
 | | | | | | | |
 |-|-|-|-|-|-|-|
-|Scenario|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
-|Prilagođavanje prethodno obučenih LLM modela specifičnim zadacima ili domenima|Yes|Yes|Yes|Yes|Yes|Yes|
-|Fino podešavanje za NLP zadatke kao što su klasifikacija teksta, prepoznavanje imenovanih entiteta i mašinski prevod|Yes|Yes|Yes|Yes|Yes|Yes|
-|Fino podešavanje za QA zadatke|Yes|Yes|Yes|Yes|Yes|Yes|
-|Fino podešavanje za generisanje odgovora sličnih ljudskim u chatbotovima|Yes|Yes|Yes|Yes|Yes|Yes|
-|Fino podešavanje za generisanje muzike, umetnosti ili drugih oblika kreativnosti|Yes|Yes|Yes|Yes|Yes|Yes|
-|Smanjenje računarskih i finansijskih troškova|Yes|Yes|No|Yes|Yes|No|
-|Smanjenje potrošnje memorije|No|Yes|No|Yes|Yes|Yes|
-|Korišćenje manjeg broja parametara za efikasno fino podešavanje|No|Yes|Yes|No|No|Yes|
-|Memorijski efikasna forma paralelizma podataka koja omogućava pristup zbirnoj GPU memoriji svih dostupnih GPU uređaja|No|No|No|Yes|Yes|Yes|
+|Scénář|LoRA|QLoRA|PEFT|DeepSpeed|ZeRO|DORA|
+|Přizpůsobení předtrénovaných LLM konkrétním úkolům nebo doménám|Ano|Ano|Ano|Ano|Ano|Ano|
+|Doladění pro NLP úkoly jako klasifikace textu, rozpoznávání pojmenovaných entit a strojový překlad|Ano|Ano|Ano|Ano|Ano|Ano|
+|Doladění pro úkoly QA|Ano|Ano|Ano|Ano|Ano|Ano|
+|Doladění pro generování lidsky znějících odpovědí v chatbotech|Ano|Ano|Ano|Ano|Ano|Ano|
+|Doladění pro generování hudby, umění nebo jiných forem kreativity|Ano|Ano|Ano|Ano|Ano|Ano|
+|Snížení výpočetních a finančních nákladů|Ano|Ano|Ne|Ano|Ano|Ne|
+|Snížení využití paměti|Ne|Ano|Ne|Ano|Ano|Ano|
+|Použití méně parametrů pro efektivní doladění|Ne|Ano|Ano|Ne|Ne|Ano|
+|Paměťově efektivní forma datové paralelnosti, která umožňuje přístup k agregované GPU paměti všech dostupných GPU zařízení|Ne|Ne|Ne|Ano|Ano|Ano|
 
-## Fine Tuning Performance Examples
+## Příklady výkonu doladění
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.9dbf84557eef43e011eb7cadf51f51686f9245f7953e2712a27095ab7d18a6d1.cs.png)
+![Výkon doladění](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.cs.png)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

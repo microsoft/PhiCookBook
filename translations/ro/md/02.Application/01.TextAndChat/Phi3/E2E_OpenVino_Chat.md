@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-05-09T16:00:31+00:00",
+  "translation_date": "2025-07-16T23:07:17+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
   "language_code": "ro"
 }
@@ -15,18 +15,18 @@ Acest cod exportă un model în format OpenVINO, îl încarcă și îl foloseșt
    ```bash
    optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6 --sym --trust-remote-code ./model/phi3-instruct/int4
    ```  
-   - Această comandă folosește `optimum-cli` tool to export a model to the OpenVINO format, which is optimized for efficient inference.
-   - The model being exported is `"microsoft/Phi-3-mini-4k-instruct"`, and it's set up for the task of generating text based on past context.
-   - The weights of the model are quantized to 4-bit integers (`int4`), which helps reduce the model size and speed up processing.
-   - Other parameters like `group-size`, `ratio`, and `sym` are used to fine-tune the quantization process.
-   - The exported model is saved in the directory `./model/phi3-instruct/int4`.
+   - Această comandă folosește instrumentul `optimum-cli` pentru a exporta un model în format OpenVINO, optimizat pentru inferență eficientă.  
+   - Modelul exportat este `"microsoft/Phi-3-mini-4k-instruct"` și este configurat pentru generarea de text pe baza contextului anterior.  
+   - Greutățile modelului sunt cuantificate la întregi pe 4 biți (`int4`), ceea ce ajută la reducerea dimensiunii modelului și la accelerarea procesării.  
+   - Alți parametri precum `group-size`, `ratio` și `sym` sunt folosiți pentru a ajusta procesul de cuantificare.  
+   - Modelul exportat este salvat în directorul `./model/phi3-instruct/int4`.
 
 2. **Importarea Bibliotecilor Necesare**:  
    ```python
    from transformers import AutoConfig, AutoTokenizer
    from optimum.intel.openvino import OVModelForCausalLM
    ```  
-   - Aceste linii importă clase din modulul `transformers` library and the `optimum.intel.openvino`, necesare pentru încărcarea și utilizarea modelului.
+   - Aceste linii importă clase din biblioteca `transformers` și modulul `optimum.intel.openvino`, necesare pentru încărcarea și utilizarea modelului.
 
 3. **Configurarea Directorului Modelului și a Setărilor**:  
    ```python
@@ -37,8 +37,8 @@ Acest cod exportă un model în format OpenVINO, îl încarcă și îl foloseșt
        "CACHE_DIR": ""
    }
    ```  
-   - `model_dir` specifies where the model files are stored.
-   - `ov_config` este un dicționar care configurează modelul OpenVINO pentru a prioritiza latența scăzută, a folosi un singur flux de inferență și a nu utiliza un director de cache.
+   - `model_dir` specifică locația fișierelor modelului.  
+   - `ov_config` este un dicționar care configurează modelul OpenVINO pentru a prioritiza latența scăzută, a folosi un singur flux de inferență și a nu utiliza un director cache.
 
 4. **Încărcarea Modelului**:  
    ```python
@@ -50,7 +50,7 @@ Acest cod exportă un model în format OpenVINO, îl încarcă și îl foloseșt
        trust_remote_code=True,
    )
    ```  
-   - Această linie încarcă modelul din directorul specificat, folosind setările definite anterior. Permite și executarea codului de la distanță dacă este necesar.
+   - Această linie încarcă modelul din directorul specificat, folosind setările de configurare definite anterior. De asemenea, permite executarea codului de la distanță dacă este necesar.
 
 5. **Încărcarea Tokenizer-ului**:  
    ```python
@@ -64,7 +64,7 @@ Acest cod exportă un model în format OpenVINO, îl încarcă și îl foloseșt
        "add_special_tokens": False
    }
    ```  
-   - Acest dicționar specifică faptul că tokenii speciali nu trebuie adăugați la ieșirea tokenizată.
+   - Acest dicționar specifică faptul că tokenii speciali nu trebuie adăugați la rezultatul tokenizării.
 
 7. **Definirea Promptului**:  
    ```python
@@ -88,7 +88,7 @@ Acest cod exportă un model în format OpenVINO, îl încarcă și îl foloseșt
     ```python
     decoded_answer = tok.batch_decode(answer, skip_special_tokens=True)[0]
     ```  
-    - Această linie convertește tokenii generați înapoi într-un șir lizibil, sărind peste tokenii speciali, și preia primul rezultat.
+    - Această linie convertește tokenii generați înapoi într-un șir lizibil de oameni, sărind peste tokenii speciali, și preia primul rezultat.
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să țineți cont că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

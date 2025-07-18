@@ -2,46 +2,46 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-05-09T12:33:44+00:00",
+  "translation_date": "2025-07-16T21:13:18+00:00",
   "source_file": "md/01.Introduction/03/overview.md",
   "language_code": "sr"
 }
 -->
-U kontekstu Phi-3-mini, inferencija se odnosi na proces korišćenja modela za pravljenje predviđanja ili generisanje izlaza na osnovu ulaznih podataka. Dozvolite mi da vam pružim više detalja o Phi-3-mini i njegovim mogućnostima inferencije.
+У контексту Phi-3-mini, инференција се односи на процес коришћења модела за прављење предвиђања или генерисање резултата на основу улазних података. Дозволите ми да вам пружим више детаља о Phi-3-mini и његовим могућностима инференције.
 
-Phi-3-mini je deo Phi-3 serije modela koje je izdao Microsoft. Ovi modeli su dizajnirani da redefinišu šta je moguće sa malim jezičkim modelima (SLM).
+Phi-3-mini је део Phi-3 серије модела које је објавио Microsoft. Ови модели су дизајнирани да преиспитају шта је могуће са малим језичким моделима (SLM).
 
-Evo nekoliko ključnih tačaka o Phi-3-mini i njegovim mogućnostima inferencije:
+Ево неколико кључних тачака о Phi-3-mini и његовим могућностима инференције:
 
-## **Pregled Phi-3-mini:**
-- Phi-3-mini ima veličinu od 3,8 milijardi parametara.
-- Može da radi ne samo na tradicionalnim računarima, već i na edge uređajima kao što su mobilni telefoni i IoT uređaji.
-- Objavljivanje Phi-3-mini omogućava pojedincima i preduzećima da implementiraju SLM-ove na različitim hardverskim uređajima, naročito u uslovima sa ograničenim resursima.
-- Podržava različite formate modela, uključujući tradicionalni PyTorch format, kvantizovanu verziju gguf formata i ONNX baziranu kvantizovanu verziju.
+## **Преглед Phi-3-mini:**
+- Phi-3-mini има величину параметара од 3,8 милијарди.
+- Може да ради не само на традиционалним рачунарским уређајима већ и на edge уређајима као што су мобилни уређаји и IoT уређаји.
+- Објављивање Phi-3-mini омогућава појединцима и предузећима да имплементирају SLM на различитим хардверским уређајима, посебно у окружењима са ограниченим ресурсима.
+- Подржава различите формате модела, укључујући традиционални PyTorch формат, квантовану верзију gguf формата и ONNX базирану квантовану верзију.
 
-## **Pristup Phi-3-mini:**
-Da biste pristupili Phi-3-mini, možete koristiti [Semantic Kernel](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) u Copilot aplikaciji. Semantic Kernel je uglavnom kompatibilan sa Azure OpenAI servisom, open-source modelima sa Hugging Face i lokalnim modelima.
-Takođe možete koristiti [Ollama](https://ollama.com) ili [LlamaEdge](https://llamaedge.com) za pozivanje kvantizovanih modela. Ollama omogućava pojedinačnim korisnicima da pozivaju različite kvantizovane modele, dok LlamaEdge pruža multiplatformsku dostupnost za GGUF modele.
+## **Приступ Phi-3-mini:**
+Да бисте приступили Phi-3-mini, можете користити [Semantic Kernel](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) у Copilot апликацији. Semantic Kernel је генерално компатибилан са Azure OpenAI Service, open-source моделима на Hugging Face и локалним моделима.  
+Такође можете користити [Ollama](https://ollama.com) или [LlamaEdge](https://llamaedge.com) за позивање квантованих модела. Ollama омогућава појединцима да позивају различите квантоване моделе, док LlamaEdge пружа крос-платформску доступност за GGUF моделе.
 
-## **Kvantizovani modeli:**
-Mnogi korisnici preferiraju korišćenje kvantizovanih modela za lokalnu inferenciju. Na primer, možete direktno pokrenuti Ollama za Phi-3 ili ga konfigurisati offline koristeći Modelfile. Modelfile specificira putanju do GGUF fajla i format prompta.
+## **Квантовани модели:**
+Многи корисници више воле да користе квантоване моделе за локалну инференцију. На пример, можете директно покренути Ollama run Phi-3 или га конфигурисати офлајн користећи Modelfile. Modelfile одређује путању до GGUF фајла и формат упита.
 
-## **Mogućnosti generativne AI:**
-Kombinovanjem SLM-ova poput Phi-3-mini otvaraju se nove mogućnosti za generativnu AI. Inferencija je samo prvi korak; ovi modeli mogu se koristiti za razne zadatke u okruženjima sa ograničenim resursima, gde je važna latencija i kontrola troškova.
+## **Могућности генеративне вештачке интелигенције:**
+Комбинација SLM као што је Phi-3-mini отвара нове могућности за генеративну вештачку интелигенцију. Инференција је само први корак; ови модели се могу користити за разне задатке у окружењима са ограниченим ресурсима, у сценаријима где је важна латенција и у ситуацијама са ограниченим трошковима.
 
-## **Otključavanje generativne AI sa Phi-3-mini: Vodič za inferenciju i implementaciju**
-Naučite kako da koristite Semantic Kernel, Ollama/LlamaEdge i ONNX Runtime za pristup i inferenciju Phi-3-mini modela, i istražite mogućnosti generativne AI u različitim scenarijima primene.
+## **Откључавање генеративне вештачке интелигенције са Phi-3-mini: Водич за инференцију и имплементацију**  
+Сазнајте како да користите Semantic Kernel, Ollama/LlamaEdge и ONNX Runtime за приступ и инференцију Phi-3-mini модела, и истражите могућности генеративне вештачке интелигенције у различитим апликационим сценаријима.
 
-**Karakteristike**
-Inferencija phi3-mini modela u:
+**Карактеристике**  
+Инференција phi3-mini модела у:
 
-- [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)
-- [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
-- [LlamaEdge WASM](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo)
-- [ONNX Runtime](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx?WT.mc_id=aiml-138114-kinfeylo)
-- [iOS](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios?WT.mc_id=aiml-138114-kinfeylo)
+- [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)  
+- [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)  
+- [LlamaEdge WASM](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo)  
+- [ONNX Runtime](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx?WT.mc_id=aiml-138114-kinfeylo)  
+- [iOS](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios?WT.mc_id=aiml-138114-kinfeylo)  
 
-Ukratko, Phi-3-mini omogućava programerima da istraže različite formate modela i iskoriste generativnu AI u raznim scenarijima primene.
+Укратко, Phi-3-mini омогућава програмерима да истраже различите формате модела и искористе генеративну вештачку интелигенцију у разним апликационим сценаријима.
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

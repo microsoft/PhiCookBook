@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-09T04:46:48+00:00",
+  "translation_date": "2025-07-16T16:27:58+00:00",
   "source_file": "code/04.Finetuning/olive-ort-example/README.md",
   "language_code": "hu"
 }
 -->
-# Fine-tune Phi3 Olive használatával
+# Phi3 finomhangolása Olive segítségével
 
-Ebben a példában az Olive segítségével:
+Ebben a példában az Olive-t fogod használni, hogy:
 
-1. Finomhangolunk egy LoRA adaptert, hogy a kifejezéseket Sad, Joy, Fear, Surprise kategóriákba sorolja.
-1. Egyesítjük az adapter súlyait az alapmodellbe.
-1. Optimalizáljuk és kvantáljuk a modellt `int4` formátumba.
+1. Finomhangolj egy LoRA adaptert, amely a kifejezéseket Sad, Joy, Fear, Surprise kategóriákba sorolja.
+1. Egyesítsd az adapter súlyait az alapmodellbe.
+1. Optimalizáld és kvantáld a modellt `int4` formátumba.
 
-Megmutatjuk azt is, hogyan lehet az ONNX Runtime (ORT) Generate API segítségével lekérdezni a finomhangolt modellt.
+Megmutatjuk azt is, hogyan lehet a finomhangolt modellt az ONNX Runtime (ORT) Generate API segítségével használni.
 
-> **⚠️ Finomhangoláshoz megfelelő GPU szükséges – például A10, V100, A100.**
+> **⚠️ A finomhangoláshoz megfelelő GPU szükséges – például A10, V100, A100.**
 
 ## 💾 Telepítés
 
@@ -41,21 +41,21 @@ Az [Olive konfigurációs fájl](../../../../../code/04.Finetuning/olive-ort-exa
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-Röviden, ez a workflow a következőket végzi el:
+Magas szinten ez a folyamat a következőket végzi el:
 
-1. Finomhangolja a Phi3 modellt (150 lépésben, amit módosíthatsz) a [dataset/data-classification.json](../../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json) adatok felhasználásával.
-1. Egyesíti a LoRA adapter súlyait az alapmodellbe, így egyetlen ONNX formátumú modell áll rendelkezésre.
-1. A Model Builder optimalizálja a modellt az ONNX runtime-hoz, *és* kvantálja `int4` formátumba.
+1. Finomhangolja a Phi3-at (150 lépésig, amit módosíthatsz) a [dataset/data-classification.json](../../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json) adatok alapján.
+1. Egyesíti a LoRA adapter súlyait az alapmodellbe. Így egyetlen ONNX formátumú modell áll majd rendelkezésedre.
+1. A Model Builder optimalizálja a modellt az ONNX runtime-hoz *és* kvantálja `int4` formátumba.
 
-A workflow futtatásához használd:
+A workflow futtatásához használd a következőt:
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-Amikor az Olive befejezte, az optimalizált `int4` formátumú finomhangolt Phi3 modell elérhető a következő helyen: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
+Amikor az Olive befejezte, az optimalizált, `int4` finomhangolt Phi3 modell elérhető itt: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-## 🧑‍💻 Finomhangolt Phi3 integrálása az alkalmazásodba
+## 🧑‍💻 A finomhangolt Phi3 integrálása az alkalmazásodba
 
 Az alkalmazás futtatásához:
 
@@ -63,7 +63,7 @@ Az alkalmazás futtatásához:
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-A válasznak egyetlen szóból álló osztályozásnak kell lennie a kifejezésre (Sad/Joy/Fear/Surprise).
+A válasznak egyetlen szó szerinti osztályozásnak kell lennie a kifejezésre (Sad/Joy/Fear/Surprise).
 
-**Felelősségkizárás**:  
-Ez a dokumentum az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

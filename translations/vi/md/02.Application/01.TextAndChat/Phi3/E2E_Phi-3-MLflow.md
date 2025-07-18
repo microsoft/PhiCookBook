@@ -2,57 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:38:59+00:00",
+  "translation_date": "2025-07-17T02:33:42+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "vi"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) là một nền tảng mã nguồn mở được thiết kế để quản lý toàn bộ vòng đời học máy.
+[MLflow](https://mlflow.org/) là một nền tảng mã nguồn mở được thiết kế để quản lý toàn bộ vòng đời của máy học.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.vi.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.vi.png)
 
-MLFlow được sử dụng để quản lý vòng đời ML, bao gồm thử nghiệm, tái hiện, triển khai và một kho trung tâm cho mô hình. Hiện tại MLFlow cung cấp bốn thành phần.
+MLFlow được sử dụng để quản lý vòng đời ML, bao gồm thí nghiệm, khả năng tái tạo, triển khai và một kho lưu trữ mô hình trung tâm. Hiện tại MLflow cung cấp bốn thành phần.
 
-- **MLflow Tracking:** Ghi lại và truy vấn các thử nghiệm, mã, cấu hình dữ liệu và kết quả.
-- **MLflow Projects:** Đóng gói mã khoa học dữ liệu dưới dạng có thể tái hiện trên bất kỳ nền tảng nào.
-- **Mlflow Models:** Triển khai các mô hình học máy trong các môi trường phục vụ đa dạng.
-- **Model Registry:** Lưu trữ, chú thích và quản lý các mô hình trong kho trung tâm.
+- **MLflow Tracking:** Ghi lại và truy vấn các thí nghiệm, mã nguồn, cấu hình dữ liệu và kết quả.
+- **MLflow Projects:** Đóng gói mã khoa học dữ liệu dưới định dạng có thể tái tạo trên bất kỳ nền tảng nào.
+- **Mlflow Models:** Triển khai các mô hình máy học trong nhiều môi trường phục vụ khác nhau.
+- **Model Registry:** Lưu trữ, chú thích và quản lý các mô hình trong một kho trung tâm.
 
-Nó bao gồm các khả năng để theo dõi thử nghiệm, đóng gói mã thành các lần chạy có thể tái tạo, và chia sẻ cũng như triển khai mô hình. MLFlow được tích hợp trong Databricks và hỗ trợ nhiều thư viện ML khác nhau, giúp nó không phụ thuộc vào thư viện cụ thể nào. Bạn có thể sử dụng nó với bất kỳ thư viện học máy nào và trong bất kỳ ngôn ngữ lập trình nào, vì nó cung cấp API REST và CLI cho sự tiện lợi.
+Nó bao gồm các khả năng theo dõi thí nghiệm, đóng gói mã thành các lần chạy có thể tái tạo, cũng như chia sẻ và triển khai mô hình. MLFlow được tích hợp trong Databricks và hỗ trợ nhiều thư viện ML, giúp nó không phụ thuộc vào thư viện cụ thể nào. Bạn có thể sử dụng nó với bất kỳ thư viện máy học nào và trong bất kỳ ngôn ngữ lập trình nào, vì nó cung cấp API REST và CLI để thuận tiện.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.vi.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.vi.png)
 
 Các tính năng chính của MLFlow bao gồm:
 
-- **Experiment Tracking:** Ghi lại và so sánh các tham số và kết quả.
-- **Model Management:** Triển khai mô hình lên các nền tảng phục vụ và suy luận khác nhau.
+- **Theo dõi thí nghiệm:** Ghi lại và so sánh các tham số và kết quả.
+- **Quản lý mô hình:** Triển khai mô hình lên các nền tảng phục vụ và suy luận khác nhau.
 - **Model Registry:** Quản lý vòng đời của các mô hình MLflow một cách hợp tác, bao gồm phiên bản và chú thích.
 - **Projects:** Đóng gói mã ML để chia sẻ hoặc sử dụng trong sản xuất.
-MLFlow cũng hỗ trợ vòng lặp MLOps, bao gồm chuẩn bị dữ liệu, đăng ký và quản lý mô hình, đóng gói mô hình để thực thi, triển khai dịch vụ và giám sát mô hình. Nó nhằm đơn giản hóa quá trình chuyển từ nguyên mẫu sang quy trình sản xuất, đặc biệt trong môi trường đám mây và edge.
+
+MLFlow cũng hỗ trợ vòng lặp MLOps, bao gồm chuẩn bị dữ liệu, đăng ký và quản lý mô hình, đóng gói mô hình để thực thi, triển khai dịch vụ và giám sát mô hình. Mục tiêu là đơn giản hóa quá trình chuyển từ nguyên mẫu sang quy trình sản xuất, đặc biệt trong môi trường đám mây và edge.
 
 ## Kịch bản E2E - Xây dựng wrapper và sử dụng Phi-3 như một mô hình MLFlow
 
-Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác nhau để xây dựng một wrapper cho mô hình ngôn ngữ nhỏ Phi-3 (SLM) và sau đó chạy nó như một mô hình MLFlow, có thể là chạy cục bộ hoặc trên đám mây, ví dụ như trong workspace Azure Machine Learning.
+Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác nhau để xây dựng một wrapper cho mô hình ngôn ngữ nhỏ Phi-3 (SLM) và sau đó chạy nó như một mô hình MLFlow, có thể chạy cục bộ hoặc trên đám mây, ví dụ như trong workspace Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.vi.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.vi.png)
 
 | Dự án | Mô tả | Vị trí |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline là lựa chọn đơn giản nhất để xây dựng wrapper nếu bạn muốn sử dụng mô hình HuggingFace với flavor thử nghiệm transformers của MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | Tại thời điểm viết, transformer pipeline chưa hỗ trợ tạo wrapper MLFlow cho các mô hình HuggingFace ở định dạng ONNX, ngay cả với gói Python experimental optimum. Trong những trường hợp như vậy, bạn có thể tự xây dựng wrapper Python tùy chỉnh cho MLFlow mode | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline là lựa chọn đơn giản nhất để xây dựng wrapper nếu bạn muốn sử dụng mô hình HuggingFace với flavour transformers thử nghiệm của MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | Tại thời điểm viết, transformer pipeline chưa hỗ trợ tạo wrapper MLFlow cho các mô hình HuggingFace ở định dạng ONNX, ngay cả với gói Python experimental optimum. Trong những trường hợp như vậy, bạn có thể tự xây dựng wrapper Python tùy chỉnh cho chế độ MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Dự án: Transformer Pipeline
 
-1. Bạn sẽ cần các gói Python liên quan từ MLFlow và HuggingFace:
+1. Bạn cần cài đặt các gói Python liên quan từ MLFlow và HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Tiếp theo, bạn nên khởi tạo một transformer pipeline bằng cách tham chiếu đến mô hình Phi-3 mục tiêu trong registry HuggingFace. Như có thể thấy trong thẻ mô hình của _Phi-3-mini-4k-instruct_, nhiệm vụ của nó là loại “Text Generation”:
+2. Tiếp theo, bạn nên khởi tạo một transformer pipeline bằng cách tham chiếu đến mô hình Phi-3 mục tiêu trong registry của HuggingFace. Như có thể thấy từ thẻ mô hình _Phi-3-mini-4k-instruct_, nhiệm vụ của nó thuộc loại “Text Generation”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -61,7 +62,7 @@ Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác
     )
     ```
 
-3. Bây giờ bạn có thể lưu pipeline transformer của mô hình Phi-3 vào định dạng MLFlow và cung cấp các thông tin bổ sung như đường dẫn lưu artifacts, cấu hình mô hình cụ thể và loại API suy luận:
+3. Bây giờ bạn có thể lưu pipeline transformer của mô hình Phi-3 dưới định dạng MLFlow và cung cấp thêm các chi tiết như đường dẫn lưu trữ artifacts, cấu hình mô hình cụ thể và loại API suy luận:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -74,7 +75,7 @@ Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác
 
 ## Dự án: Custom Python Wrapper
 
-1. Ở đây chúng ta có thể sử dụng API generate() của [ONNX Runtime của Microsoft](https://github.com/microsoft/onnxruntime-genai) cho việc suy luận mô hình ONNX và mã hóa / giải mã token. Bạn cần chọn gói _onnxruntime_genai_ phù hợp với máy tính mục tiêu, ví dụ dưới đây hướng tới CPU:
+1. Ở đây chúng ta có thể sử dụng API generate() của [ONNX Runtime của Microsoft](https://github.com/microsoft/onnxruntime-genai) để thực hiện suy luận mô hình ONNX và mã hóa/giải mã token. Bạn cần chọn gói _onnxruntime_genai_ phù hợp với môi trường tính toán mục tiêu, ví dụ dưới đây là cho CPU:
 
     ``` Python
     import mlflow
@@ -82,7 +83,7 @@ Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác
     import onnxruntime_genai as og
     ```
 
-1. Lớp tùy chỉnh của chúng ta triển khai hai phương thức: _load_context()_ để khởi tạo **mô hình ONNX** của Phi-3 Mini 4K Instruct, **tham số generator** và **tokenizer**; và _predict()_ để tạo token đầu ra cho prompt được cung cấp:
+1. Lớp tùy chỉnh của chúng ta triển khai hai phương thức: _load_context()_ để khởi tạo **mô hình ONNX** của Phi-3 Mini 4K Instruct, **tham số generator** và **tokenizer**; và _predict()_ để tạo các token đầu ra dựa trên prompt được cung cấp:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -130,7 +131,7 @@ Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác
 
 ## Chữ ký của các mô hình MLFlow được tạo
 
-1. Ở bước 3 của dự án Transformer Pipeline phía trên, chúng ta đặt nhiệm vụ của mô hình MLFlow là “_llm/v1/chat_”. Hướng dẫn này tạo ra wrapper API cho mô hình, tương thích với OpenAI’s Chat API như dưới đây:
+1. Ở bước 3 của dự án Transformer Pipeline phía trên, chúng ta đã đặt nhiệm vụ của mô hình MLFlow là “_llm/v1/chat_”. Hướng dẫn này tạo ra một wrapper API cho mô hình, tương thích với OpenAI Chat API như dưới đây:
 
     ``` Python
     {inputs: 
@@ -141,13 +142,13 @@ Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác
       None}
     ```
 
-1. Kết quả là, bạn có thể gửi prompt theo định dạng sau:
+1. Kết quả là bạn có thể gửi prompt của mình theo định dạng sau:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Sau đó, sử dụng xử lý hậu kỳ tương thích OpenAI API, ví dụ _response[0][‘choices’][0][‘message’][‘content’]_, để làm đẹp đầu ra thành dạng như sau:
+1. Sau đó, sử dụng xử lý hậu kỳ tương thích với OpenAI API, ví dụ _response[0][‘choices’][0][‘message’][‘content’]_, để làm đẹp đầu ra thành dạng như sau:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -157,7 +158,7 @@ Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. Ở bước 3 của dự án Custom Python Wrapper phía trên, ta cho phép gói MLFlow tạo chữ ký mô hình từ ví dụ đầu vào đã cho. Chữ ký wrapper MLFlow của ta sẽ trông như sau:
+1. Ở bước 3 của dự án Custom Python Wrapper phía trên, chúng ta cho phép gói MLFlow tạo chữ ký mô hình dựa trên một ví dụ đầu vào. Chữ ký wrapper MLFlow của chúng ta sẽ trông như sau:
 
     ``` Python
     {inputs: 
@@ -168,7 +169,7 @@ Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác
       None}
     ```
 
-1. Do đó, prompt của ta cần chứa khóa dictionary "prompt", tương tự như sau:
+1. Vì vậy, prompt của chúng ta cần chứa khóa dictionary "prompt", tương tự như sau:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
@@ -187,4 +188,4 @@ Trong ví dụ E2E này, chúng ta sẽ trình bày hai cách tiếp cận khác
     ```
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ nguyên bản nên được xem là nguồn thông tin chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-07-09T20:02:28+00:00",
+  "translation_date": "2025-07-16T20:25:59+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "en"
 }
@@ -28,18 +28,18 @@ Start by creating a new iOS project in Xcode:
 
 ## Step 2: Add Required Dependencies
 
-Add the [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples), which includes all the necessary dependencies and helpers for preloading models and running inference:
+Add the [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples), which contains all the necessary dependencies and helpers for preloading models and running inference:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-While the base [MLX Swift package](https://github.com/ml-explore/mlx-swift) covers core tensor operations and basic ML features, the MLX Examples package adds several components designed for working with language models and simplifying inference:
+While the base [MLX Swift package](https://github.com/ml-explore/mlx-swift) is sufficient for core tensor operations and basic ML functionality, the MLX Examples package offers several additional components designed for working with language models and simplifying the inference process:
 
 - utilities for loading models that handle downloading from Hugging Face
 - tokenizer integration
-- helpers for text generation inference
+- inference helpers for text generation
 - pre-configured model definitions
 
 ## Step 3: Configure Entitlements
@@ -63,7 +63,7 @@ To allow the app to download models and allocate enough memory, you need to add 
 </plist>
 ```
 
-> **Note:** The `com.apple.developer.kernel.increased-memory-limit` entitlement is crucial for running larger models, as it lets the app request more memory than usual.
+> **Note:** The `com.apple.developer.kernel.increased-memory-limit` entitlement is crucial for running larger models, as it lets the app request more memory than normally allowed.
 
 ## Step 4: Create the Chat Message Model
 
@@ -87,7 +87,7 @@ struct ChatMessage: Identifiable {
 
 ## Step 5: Implement the ViewModel
 
-Next, create the `PhiViewModel` class that handles loading the model and running inference:
+Next, create the `PhiViewModel` class that handles model loading and inference:
 
 ```swift
 import MLX
@@ -248,21 +248,21 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-The ViewModel highlights key MLX integration points:
+The ViewModel highlights the main MLX integration points:
 
-- setting GPU cache limits with `MLX.GPU.set(cacheLimit:)` to optimize memory use on mobile devices
+- setting GPU cache limits with `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
 - using `LLMModelFactory` to download the model on demand and initialize the MLX-optimized model
-- accessing the model’s parameters and structure via the `ModelContainer`
-- using MLX’s token-by-token generation with the `MLXLMCommon.generate` method
-- managing inference with appropriate temperature settings and token limits
+- accessing the model’s parameters and structure through the `ModelContainer`
+- leveraging MLX’s token-by-token generation via the `MLXLMCommon.generate` method
+- managing the inference process with appropriate temperature settings and token limits
 
-Streaming token generation provides immediate feedback to users as the model generates text. This mimics how server-based models stream tokens back to users, but without network latency.
+Streaming token generation provides immediate feedback to users as the model generates text. This mimics how server-based models work by streaming tokens back to the user, but without network latency.
 
-For UI interaction, the two main functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+For UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
 
 ### Model format considerations
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which the MLX community handles. Pre-converted models are available at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is maintained by the MLX community. Pre-converted models are available at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
 The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`, it points to a specific pre-converted MLX model that will be downloaded automatically:
 
@@ -298,7 +298,7 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-This lets you access the latest model configurations, including Phi-4, before they’re included in an official release. You can use this method to work with different versions of Phi models or other models converted to the MLX format.
+This lets you access the latest model configurations, including Phi-4, before they are included in an official release. You can use this method to work with different versions of Phi models or other models converted to the MLX format.
 
 ## Step 6: Create the UI
 
@@ -429,17 +429,17 @@ struct TypingIndicatorView: View {
 
 ```
 
-The UI has three main parts working together to create a basic chat interface. `ContentView` shows either a loading button or the chat interface depending on whether the model is ready. `MessageView` displays individual chat messages differently based on whether they’re user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` shows a simple animated indicator while the AI is processing.
+The UI consists of three main components working together to create a basic chat interface. `ContentView` provides a two-state interface that shows either a loading button or the chat interface depending on whether the model is ready. `MessageView` displays individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` shows a simple animated indicator to signal that the AI is processing.
 
 ## Step 7: Building and Running the App
 
-You’re now ready to build and run the app.
+You are now ready to build and run the app.
 
-> **Important!** MLX does not support the simulator. You must run the app on a physical device with an Apple Silicon chip. See [here](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) for details.
+> **Important!** MLX does not support the simulator. You must run the app on a physical device with an Apple Silicon chip. See [here](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) for more details.
 
-When the app launches, tap the "Load model" button to download and initialize the Phi-3 (or, depending on your setup, Phi-4) model. This may take some time depending on your internet speed, as it downloads the model from Hugging Face. Our example shows only a spinner during loading, but you can see detailed progress in the Xcode console.
+When the app launches, tap the "Load model" button to download and initialize the Phi-3 (or, depending on your setup, Phi-4) model. This may take some time depending on your internet connection, as it downloads the model from Hugging Face. Our implementation shows only a spinner during loading, but you can see the actual progress in the Xcode console.
 
-Once loaded, you can chat with the model by typing questions in the text field and tapping the send button.
+Once loaded, you can interact with the model by typing questions in the text field and tapping the send button.
 
 Here’s how the app should behave running on an iPad Air M1:
 

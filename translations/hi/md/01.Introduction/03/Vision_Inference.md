@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-08T06:01:50+00:00",
+  "translation_date": "2025-07-16T21:37:01+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "hi"
 }
 -->
 # **स्थानीय स्तर पर Inference Phi-3-Vision**
 
-Phi-3-vision-128k-instruct Phi-3 को केवल भाषा समझने तक सीमित नहीं रखता, बल्कि इसे दुनिया को दृष्टिगत रूप से देखने में भी सक्षम बनाता है। Phi-3-vision-128k-instruct के माध्यम से, हम विभिन्न दृष्टिगत समस्याओं को हल कर सकते हैं, जैसे OCR, तालिका विश्लेषण, वस्तु पहचान, चित्र का वर्णन आदि। हम आसानी से ऐसे कार्य पूरे कर सकते हैं जिनके लिए पहले बहुत अधिक डेटा प्रशिक्षण की आवश्यकता होती थी। नीचे Phi-3-vision-128k-instruct द्वारा संदर्भित संबंधित तकनीकें और आवेदन परिदृश्य दिए गए हैं।
+Phi-3-vision-128k-instruct Phi-3 को केवल भाषा समझने तक सीमित नहीं रखता, बल्कि इसे दुनिया को दृष्टिगत रूप से देखने में भी सक्षम बनाता है। Phi-3-vision-128k-instruct के माध्यम से, हम विभिन्न दृश्य समस्याओं को हल कर सकते हैं, जैसे OCR, तालिका विश्लेषण, वस्तु पहचान, चित्र का वर्णन आदि। हम आसानी से ऐसे कार्य पूरे कर सकते हैं जिनके लिए पहले बहुत अधिक डेटा प्रशिक्षण की आवश्यकता होती थी। नीचे Phi-3-vision-128k-instruct द्वारा संदर्भित संबंधित तकनीकें और अनुप्रयोग परिदृश्य दिए गए हैं।
 
 ## **0. तैयारी**
 
-कृपया सुनिश्चित करें कि उपयोग से पहले निम्नलिखित Python लाइब्रेरीज़ इंस्टॉल हो चुकी हों (Python 3.10+ की सलाह दी जाती है)
+कृपया सुनिश्चित करें कि उपयोग से पहले निम्नलिखित Python लाइब्रेरीज़ इंस्टॉल हो चुकी हैं (Python 3.10+ की सिफारिश की जाती है)
 
 ```bash
 pip install transformers -U
@@ -27,7 +27,7 @@ pip install torch -U
 pip install flash-attn --no-build-isolation
 ```
 
-एक नया Notebook बनाएं। उदाहरणों को पूरा करने के लिए, सबसे पहले निम्नलिखित सामग्री बनाना बेहतर होगा।
+एक नया Notebook बनाएं। उदाहरणों को पूरा करने के लिए, यह सुझाव दिया जाता है कि आप पहले निम्नलिखित सामग्री बनाएं।
 
 ```python
 from PIL import Image
@@ -49,9 +49,9 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. Phi-3-Vision के साथ छवि विश्लेषण**
+## **1. Phi-3-Vision के साथ छवि का विश्लेषण करें**
 
-हम चाहते हैं कि AI हमारी तस्वीरों की सामग्री का विश्लेषण कर सके और संबंधित विवरण दे सके
+हम चाहते हैं कि AI हमारी तस्वीरों की सामग्री का विश्लेषण कर सके और संबंधित विवरण प्रदान करे
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Notebook में निम्नलिखित स्क्रिप्ट चलाकर हम संबंधित उत्तर प्राप्त कर सकते हैं
+हम Notebook में निम्नलिखित स्क्रिप्ट चलाकर संबंधित उत्तर प्राप्त कर सकते हैं
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. Phi-3-Vision के साथ OCR**
 
-छवि का विश्लेषण करने के अलावा, हम छवि से जानकारी भी निकाल सकते हैं। यह OCR प्रक्रिया है, जिसे पूरा करने के लिए पहले जटिल कोड लिखना पड़ता था।
+छवि का विश्लेषण करने के अलावा, हम छवि से जानकारी भी निकाल सकते हैं। यह OCR प्रक्रिया है जिसे पूरा करने के लिए हमें पहले जटिल कोड लिखना पड़ता था।
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. कई छवियों की तुलना**
 
-Phi-3 Vision कई छवियों की तुलना का समर्थन करता है। हम इस मॉडल का उपयोग करके छवियों के बीच अंतर खोज सकते हैं।
+Phi-3 Vision कई छवियों की तुलना का समर्थन करता है। हम इस मॉडल का उपयोग छवियों के बीच अंतर खोजने के लिए कर सकते हैं।
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **अस्वीकरण**:  
-यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया ध्यान दें कि स्वचालित अनुवाद में त्रुटियाँ या असंगतियाँ हो सकती हैं। मूल दस्तावेज़ को उसकी मूल भाषा में प्रामाणिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए पेशेवर मानव अनुवाद की सिफारिश की जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम उत्तरदायी नहीं हैं।
+यह दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) का उपयोग करके अनुवादित किया गया है। जबकि हम सटीकता के लिए प्रयासरत हैं, कृपया ध्यान दें कि स्वचालित अनुवादों में त्रुटियाँ या अशुद्धियाँ हो सकती हैं। मूल दस्तावेज़ अपनी मूल भाषा में ही अधिकारिक स्रोत माना जाना चाहिए। महत्वपूर्ण जानकारी के लिए, पेशेवर मानव अनुवाद की सलाह दी जाती है। इस अनुवाद के उपयोग से उत्पन्न किसी भी गलतफहमी या गलत व्याख्या के लिए हम जिम्मेदार नहीं हैं।

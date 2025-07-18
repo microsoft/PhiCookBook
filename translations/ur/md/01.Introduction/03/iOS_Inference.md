@@ -2,31 +2,31 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-07T14:29:32+00:00",
+  "translation_date": "2025-07-16T20:18:19+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "ur"
 }
 -->
 # **iOS میں Inference Phi-3**
 
-Phi-3-mini مائیکروسافٹ کی نئی ماڈلز کی سیریز ہے جو ایج ڈیوائسز اور IoT ڈیوائسز پر Large Language Models (LLMs) کی تعیناتی کو ممکن بناتی ہے۔ Phi-3-mini iOS، Android، اور Edge Device تعیناتیوں کے لیے دستیاب ہے، جس سے generative AI کو BYOD ماحول میں تعینات کیا جا سکتا ہے۔ ذیل میں ایک مثال دی گئی ہے کہ iOS پر Phi-3-mini کو کیسے تعینات کیا جائے۔
+Phi-3-mini مائیکروسافٹ کی نئی ماڈلز کی سیریز ہے جو ایج ڈیوائسز اور IoT ڈیوائسز پر Large Language Models (LLMs) کی تعیناتی ممکن بناتی ہے۔ Phi-3-mini iOS، Android، اور Edge Device تعیناتیوں کے لیے دستیاب ہے، جس سے generative AI کو BYOD ماحول میں تعینات کیا جا سکتا ہے۔ ذیل میں ایک مثال دی گئی ہے کہ iOS پر Phi-3-mini کو کیسے تعینات کیا جائے۔
 
 ## **1. تیاری**
 
 - **a.** macOS 14+
 - **b.** Xcode 15+
 - **c.** iOS SDK 17.x (iPhone 14 A16 یا اس سے زیادہ)
-- **d.** Python 3.10+ انسٹال کریں (Conda تجویز کیا جاتا ہے)
+- **d.** Python 3.10+ انسٹال کریں (Conda کی سفارش کی جاتی ہے)
 - **e.** Python لائبریری انسٹال کریں: `python-flatbuffers`
 - **f.** CMake انسٹال کریں
 
 ### Semantic Kernel اور Inference
 
-Semantic Kernel ایک ایپلیکیشن فریم ورک ہے جو آپ کو Azure OpenAI Service، OpenAI ماڈلز، اور یہاں تک کہ لوکل ماڈلز کے ساتھ مطابقت رکھنے والی ایپلیکیشنز بنانے کی اجازت دیتا ہے۔ Semantic Kernel کے ذریعے لوکل سروسز تک رسائی آپ کے خود میزبانی کردہ Phi-3-mini ماڈل سرور کے ساتھ آسان انضمام کو ممکن بناتی ہے۔
+Semantic Kernel ایک ایپلیکیشن فریم ورک ہے جو آپ کو Azure OpenAI Service، OpenAI ماڈلز، اور یہاں تک کہ لوکل ماڈلز کے ساتھ مطابقت رکھنے والی ایپلیکیشنز بنانے کی اجازت دیتا ہے۔ Semantic Kernel کے ذریعے لوکل سروسز تک رسائی آپ کے خود میزبانی کردہ Phi-3-mini ماڈل سرور کے ساتھ آسان انضمام ممکن بناتی ہے۔
 
 ### Ollama یا LlamaEdge کے ساتھ Quantized ماڈلز کو کال کرنا
 
-بہت سے صارفین ماڈلز کو لوکل چلانے کے لیے quantized ماڈلز استعمال کرنا پسند کرتے ہیں۔ [Ollama](https://ollama.com) اور [LlamaEdge](https://llamaedge.com) صارفین کو مختلف quantized ماڈلز کال کرنے کی سہولت دیتے ہیں:
+بہت سے صارفین quantized ماڈلز کو لوکل چلانے کے لیے ترجیح دیتے ہیں۔ [Ollama](https://ollama.com) اور [LlamaEdge](https://llamaedge.com) صارفین کو مختلف quantized ماڈلز کو کال کرنے کی سہولت دیتے ہیں:
 
 #### **Ollama**
 
@@ -41,9 +41,9 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-اگر آپ ایک ساتھ کلاؤڈ اور ایج ڈیوائسز دونوں میں `gguf` استعمال کرنا چاہتے ہیں، تو LlamaEdge ایک بہترین آپشن ہے۔
+اگر آپ `gguf` کو بیک وقت کلاؤڈ اور ایج ڈیوائسز پر استعمال کرنا چاہتے ہیں، تو LlamaEdge ایک بہترین انتخاب ہے۔
 
-## **2. iOS کے لیے ONNX Runtime کمپائل کرنا**
+## **2. iOS کے لیے ONNX Runtime کو کمپائل کرنا**
 
 ```bash
 
@@ -59,19 +59,19 @@ cd ../
 
 ### **نوٹس**
 
-- **a.** کمپائل کرنے سے پہلے، یقینی بنائیں کہ Xcode صحیح طریقے سے ترتیب دیا گیا ہے اور ٹرمینل میں اسے فعال ڈویلپر ڈائریکٹری کے طور پر سیٹ کریں:
+- **a.** کمپائل کرنے سے پہلے، یقینی بنائیں کہ Xcode صحیح طریقے سے ترتیب دیا گیا ہے اور اسے ٹرمینل میں فعال ڈویلپر ڈائریکٹری کے طور پر سیٹ کریں:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime کو مختلف پلیٹ فارمز کے لیے کمپائل کرنے کی ضرورت ہے۔ iOS کے لیے، آپ `arm64` or `x86_64` کے لیے کمپائل کر سکتے ہیں۔
+- **b.** ONNX Runtime کو مختلف پلیٹ فارمز کے لیے کمپائل کرنا ضروری ہے۔ iOS کے لیے، آپ `arm64` یا `x86_64` کے لیے کمپائل کر سکتے ہیں۔
 
-- **c.** کمپائلنگ کے لیے تازہ ترین iOS SDK استعمال کرنا بہتر ہے۔ تاہم، اگر آپ کو پچھلے SDKs کے ساتھ مطابقت کی ضرورت ہو تو پرانا ورژن بھی استعمال کیا جا سکتا ہے۔
+- **c.** کمپائل کرنے کے لیے تازہ ترین iOS SDK استعمال کرنے کی سفارش کی جاتی ہے۔ تاہم، اگر آپ کو پچھلے SDKs کے ساتھ مطابقت کی ضرورت ہو تو پرانا ورژن بھی استعمال کیا جا سکتا ہے۔
 
-## **3. iOS کے لیے ONNX Runtime کے ساتھ Generative AI کمپائل کرنا**
+## **3. iOS کے لیے ONNX Runtime کے ساتھ Generative AI کو کمپائل کرنا**
 
-> **نوٹ:** چونکہ ONNX Runtime کے ساتھ Generative AI پریویو میں ہے، براہ کرم ممکنہ تبدیلیوں سے آگاہ رہیں۔
+> **Note:** چونکہ ONNX Runtime کے ساتھ Generative AI ابھی پریویو میں ہے، ممکنہ تبدیلیوں سے آگاہ رہیں۔
 
 ```bash
 
@@ -99,15 +99,15 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **4. Xcode میں App ایپلیکیشن بنائیں**
+## **4. Xcode میں ایک App ایپلیکیشن بنائیں**
 
-میں نے App کی ترقی کے لیے Objective-C کو منتخب کیا، کیونکہ ONNX Runtime C++ API کے ساتھ Generative AI استعمال کرتے وقت Objective-C بہتر مطابقت رکھتا ہے۔ یقیناً، آپ Swift bridging کے ذریعے متعلقہ کالز بھی مکمل کر سکتے ہیں۔
+میں نے App کی ترقی کے لیے Objective-C کو منتخب کیا، کیونکہ ONNX Runtime C++ API کے ساتھ Generative AI استعمال کرتے ہوئے، Objective-C بہتر مطابقت رکھتا ہے۔ ظاہر ہے، آپ Swift bridging کے ذریعے متعلقہ کالز بھی مکمل کر سکتے ہیں۔
 
 ![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.ur.png)
 
 ## **5. ONNX quantized INT4 ماڈل کو App ایپلیکیشن پروجیکٹ میں کاپی کریں**
 
-ہمیں ONNX فارمیٹ میں INT4 quantization ماڈل درآمد کرنا ہے، جسے پہلے ڈاؤن لوڈ کرنا ضروری ہے۔
+ہمیں ONNX فارمیٹ میں INT4 quantization ماڈل درآمد کرنا ہوگا، جسے پہلے ڈاؤن لوڈ کرنا ضروری ہے۔
 
 ![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.ur.png)
 
@@ -119,17 +119,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 > **نوٹس:**
 
-- **a.** متعلقہ C++ ہیڈر فائلز پروجیکٹ میں شامل کریں۔
+- **a.** متعلقہ C++ ہیڈر فائلز کو پروجیکٹ میں شامل کریں۔
 
   ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.ur.png)
 
-- **b.** Objective-C++ سپورٹ کو فعال کرنے کے لیے `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Xcode میں `onnxruntime-genai` ڈائنامک لائبریری کو شامل کریں۔
 
   ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.ur.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **c.** ٹیسٹنگ کے لیے C Samples کوڈ استعمال کریں۔ آپ مزید فعالیت کے لیے ChatUI جیسی اضافی خصوصیات بھی شامل کر سکتے ہیں۔
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` شامل کریں۔
+- **d.** چونکہ آپ کو اپنے پروجیکٹ میں C++ استعمال کرنا ہے، `ViewController.m` کا نام تبدیل کر کے `ViewController.mm` کریں تاکہ Objective-C++ کی حمایت فعال ہو جائے۔
 
 ```objc
 
@@ -160,11 +160,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **7. ایپلیکیشن چلانا**
 
-ایک بار سیٹ اپ مکمل ہو جائے، آپ ایپلیکیشن چلا کر Phi-3-mini ماڈل inference کے نتائج دیکھ سکتے ہیں۔
+ایک بار سیٹ اپ مکمل ہونے کے بعد، آپ ایپلیکیشن چلا کر Phi-3-mini ماڈل inference کے نتائج دیکھ سکتے ہیں۔
 
 ![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.ur.jpg)
 
 مزید نمونہ کوڈ اور تفصیلی ہدایات کے لیے، [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ملاحظہ کریں۔
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کی کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ ہم اس ترجمہ کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**دستخطی دستبرداری**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

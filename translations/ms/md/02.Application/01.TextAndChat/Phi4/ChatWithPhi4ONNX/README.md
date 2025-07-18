@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:02:58+00:00",
+  "translation_date": "2025-07-17T03:18:37+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "ms"
 }
 -->
-# **Chat with Phi-4-mini ONNX**
+# **Bual dengan Phi-4-mini ONNX**
 
-***ONNX*** es un formato abierto diseñado para representar modelos de aprendizaje automático. ONNX define un conjunto común de operadores, que son los bloques básicos de los modelos de aprendizaje automático y aprendizaje profundo, así como un formato de archivo común que permite a los desarrolladores de IA utilizar modelos con una variedad de frameworks, herramientas, entornos de ejecución y compiladores.
+***ONNX*** adalah format terbuka yang dibina untuk mewakili model pembelajaran mesin. ONNX mentakrifkan satu set operator yang sama - blok binaan model pembelajaran mesin dan pembelajaran mendalam - serta format fail yang seragam untuk membolehkan pembangun AI menggunakan model dengan pelbagai rangka kerja, alat, runtime, dan penyusun.
 
-Esperamos desplegar modelos de IA generativa en dispositivos edge y usarlos en entornos con capacidad de cómputo limitada o sin conexión. Ahora podemos lograr este objetivo convirtiendo el modelo de manera cuantificada. Podemos convertir el modelo cuantificado a formato GGUF o ONNX.
+Kami berharap dapat melaksanakan model AI generatif pada peranti edge dan menggunakannya dalam persekitaran dengan kuasa pengkomputeran terhad atau luar talian. Kini kami boleh mencapai matlamat ini dengan menukar model secara kuantisasi. Kami boleh menukar model yang dikuantisasi ke format GGUF atau ONNX.
 
-Microsoft Olive puede ayudarte a convertir SLM a formato ONNX cuantificado. El método para realizar la conversión del modelo es muy sencillo.
+Microsoft Olive boleh membantu anda menukar SLM ke format ONNX yang dikuantisasi. Kaedah untuk mencapai penukaran model adalah sangat mudah
 
-**Instalar Microsoft Olive SDK**
+**Pasang Microsoft Olive SDK**
 
 
 ```bash
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Convertir soporte ONNX para CPU**
+**Sokongan Penukaran CPU ONNX**
 
 ```bash
 
@@ -34,12 +34,12 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Nota*** este ejemplo usa CPU
+***Nota*** contoh ini menggunakan CPU
 
 
-### **Inferencia del modelo Phi-4-mini ONNX con ONNX Runtime GenAI**
+### **Inferens Model Phi-4-mini ONNX Dengan ONNX Runtime GenAI**
 
-- **Instalar ONNX Runtime GenAI**
+- **Pasang ONNX Runtime GenAI**
 
 ```bash
 
@@ -47,9 +47,9 @@ pip install --pre onnxruntime-genai
 
 ```
 
-- **Código en Python**
+- **Kod Python**
 
-*Esta es la versión 0.5.2 de ONNX Runtime GenAI*
+*Ini adalah versi ONNX Runtime GenAI 0.5.2*
 
 ```python
 
@@ -105,7 +105,7 @@ while not generator.is_done():
 ```
 
 
-*Esta es la versión 0.6.0 de ONNX Runtime GenAI*
+*Ini adalah versi ONNX Runtime GenAI 0.6.0*
 
 ```python
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

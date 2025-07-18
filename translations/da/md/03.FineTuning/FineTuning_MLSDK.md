@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:16:09+00:00",
+  "translation_date": "2025-07-17T07:28:27+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "da"
 }
 -->
-## Hvordan man bruger chat-completion komponenter fra Azure ML systemregistret til at finjustere en model
+## Hvordan man bruger chat-completion komponenter fra Azure ML systemregisteret til at finjustere en model
 
 I dette eksempel vil vi foretage finjustering af Phi-3-mini-4k-instruct modellen for at fuldføre en samtale mellem 2 personer ved hjælp af ultrachat_200k datasættet.
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.da.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.da.png)
 
-Eksemplet vil vise dig, hvordan du udfører finjustering ved brug af Azure ML SDK og Python, og derefter deployere den finjusterede model til en online endpoint for realtidsinferens.
+Eksemplet vil vise dig, hvordan du udfører finjustering ved hjælp af Azure ML SDK og Python, og derefter implementerer den finjusterede model til en online endpoint for realtidsinference.
 
 ### Træningsdata
 
@@ -21,7 +21,7 @@ Vi vil bruge ultrachat_200k datasættet. Dette er en kraftigt filtreret version 
 
 ### Model
 
-Vi vil bruge Phi-3-mini-4k-instruct modellen til at vise, hvordan brugere kan finjustere en model til chat-completion opgaven. Hvis du har åbnet denne notebook fra et specifikt modelkort, husk at erstatte det specifikke modelnavn.
+Vi vil bruge Phi-3-mini-4k-instruct modellen for at vise, hvordan brugeren kan finjustere en model til chat-completion opgaven. Hvis du har åbnet denne notebook fra et specifikt modelkort, husk at erstatte det specifikke modelnavn.
 
 ### Opgaver
 
@@ -29,25 +29,25 @@ Vi vil bruge Phi-3-mini-4k-instruct modellen til at vise, hvordan brugere kan fi
 - Vælg og undersøg træningsdata.
 - Konfigurer finjusteringsjobbet.
 - Kør finjusteringsjobbet.
-- Gennemgå trænings- og evalueringsmetrikker.
+- Gennemgå trænings- og evalueringsmålinger.
 - Registrer den finjusterede model.
-- Deploy den finjusterede model til realtidsinferens.
+- Implementer den finjusterede model til realtidsinference.
 - Ryd op i ressourcer.
 
 ## 1. Opsæt forudsætninger
 
 - Installer afhængigheder
-- Forbind til AzureML Workspace. Læs mere under opsæt SDK autentificering. Erstat <WORKSPACE_NAME>, <RESOURCE_GROUP> og <SUBSCRIPTION_ID> nedenfor.
-- Forbind til azureml systemregistret
-- Angiv et valgfrit eksperimentnavn
+- Forbind til AzureML Workspace. Læs mere under set up SDK authentication. Erstat <WORKSPACE_NAME>, <RESOURCE_GROUP> og <SUBSCRIPTION_ID> nedenfor.
+- Forbind til azureml systemregisteret
+- Sæt et valgfrit eksperimentnavn
 - Tjek eller opret compute.
 
 > [!NOTE]
-> Krav: En enkelt GPU-node kan have flere GPU-kort. For eksempel har en node af Standard_NC24rs_v3 4 NVIDIA V100 GPU'er, mens Standard_NC12s_v3 har 2 NVIDIA V100 GPU'er. Se dokumentationen for mere information. Antallet af GPU-kort per node sættes i parameteren gpus_per_node nedenfor. At sætte denne værdi korrekt sikrer udnyttelse af alle GPU'er i noden. De anbefalede GPU compute SKUs kan findes her og her.
+> Krav: En enkelt GPU-node kan have flere GPU-kort. For eksempel har en node af Standard_NC24rs_v3 4 NVIDIA V100 GPU’er, mens Standard_NC12s_v3 har 2 NVIDIA V100 GPU’er. Se dokumentationen for denne information. Antallet af GPU-kort pr. node sættes i parameteren gpus_per_node nedenfor. At sætte denne værdi korrekt sikrer udnyttelse af alle GPU’er i noden. De anbefalede GPU compute SKUs kan findes her og her.
 
 ### Python biblioteker
 
-Installer afhængigheder ved at køre cellen nedenfor. Dette er ikke et valgfrit trin, hvis du kører i et nyt miljø.
+Installer afhængigheder ved at køre nedenstående celle. Dette er ikke et valgfrit trin, hvis du kører i et nyt miljø.
 
 ```bash
 pip install azure-ai-ml
@@ -59,19 +59,19 @@ pip install azureml-mlflow
 
 ### Interaktion med Azure ML
 
-1. Dette Python script bruges til at interagere med Azure Machine Learning (Azure ML) servicen. Her er en gennemgang af hvad det gør:
+1. Dette Python-script bruges til at interagere med Azure Machine Learning (Azure ML) tjenesten. Her er en gennemgang af, hvad det gør:
 
     - Det importerer nødvendige moduler fra azure.ai.ml, azure.identity og azure.ai.ml.entities pakkerne. Det importerer også time modulet.
 
-    - Det forsøger at autentificere ved hjælp af DefaultAzureCredential(), som giver en forenklet autentificeringsoplevelse for hurtigt at komme i gang med udvikling af applikationer i Azure cloud. Hvis dette fejler, falder det tilbage til InteractiveBrowserCredential(), som giver en interaktiv login prompt.
+    - Det forsøger at autentificere ved hjælp af DefaultAzureCredential(), som giver en forenklet autentificeringsoplevelse for hurtigt at komme i gang med at udvikle applikationer, der kører i Azure skyen. Hvis dette fejler, falder det tilbage til InteractiveBrowserCredential(), som giver en interaktiv login prompt.
 
     - Det forsøger derefter at oprette en MLClient instans ved hjælp af from_config metoden, som læser konfigurationen fra standard konfigurationsfilen (config.json). Hvis dette fejler, opretter det en MLClient instans ved manuelt at angive subscription_id, resource_group_name og workspace_name.
 
-    - Det opretter en anden MLClient instans, denne gang for Azure ML registret med navnet "azureml". Dette register er hvor modeller, finjusteringspipelines og miljøer gemmes.
+    - Det opretter en anden MLClient instans, denne gang for Azure ML registeret med navnet "azureml". Dette register er hvor modeller, finjusteringspipelines og miljøer gemmes.
 
     - Det sætter experiment_name til "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Det genererer et unikt tidsstempel ved at konvertere den aktuelle tid (i sekunder siden epoch, som et flydende tal) til et heltal og derefter til en streng. Dette tidsstempel kan bruges til at skabe unikke navne og versioner.
+    - Det genererer et unikt tidsstempel ved at konvertere den aktuelle tid (i sekunder siden epoken, som et flydende tal) til et heltal og derefter til en streng. Dette tidsstempel kan bruges til at skabe unikke navne og versioner.
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -112,20 +112,20 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. Vælg en foundation model til finjustering
+## 2. Vælg en grundmodel til finjustering
 
-1. Phi-3-mini-4k-instruct er en 3,8 milliarder parametre stor, letvægts, topmoderne open model bygget på datasæt brugt til Phi-2. Modellen tilhører Phi-3 model-familien, og Mini-versionen findes i to varianter 4K og 128K, som er den kontekstlængde (i tokens), den kan håndtere. Vi skal finjustere modellen til vores specifikke formål for at kunne bruge den. Du kan browse disse modeller i Model Catalog i AzureML Studio, filtreret på chat-completion opgaven. I dette eksempel bruger vi Phi-3-mini-4k-instruct modellen. Hvis du har åbnet denne notebook for en anden model, skal du erstatte modelnavnet og versionen tilsvarende.
+1. Phi-3-mini-4k-instruct er en 3,8 milliarder parametre stor, letvægts, topmoderne open model bygget på datasæt brugt til Phi-2. Modellen tilhører Phi-3 model familien, og Mini-versionen findes i to varianter 4K og 128K, som er kontekstlængden (i tokens), den kan understøtte. Vi skal finjustere modellen til vores specifikke formål for at kunne bruge den. Du kan browse disse modeller i Model Catalog i AzureML Studio ved at filtrere på chat-completion opgaven. I dette eksempel bruger vi Phi-3-mini-4k-instruct modellen. Hvis du har åbnet denne notebook for en anden model, skal du erstatte modelnavnet og versionen tilsvarende.
 
     > [!NOTE]
-    > model id egenskaben for modellen. Denne vil blive sendt som input til finjusteringsjobbet. Den findes også som Asset ID feltet på model-detaljesiden i AzureML Studio Model Catalog.
+    > model id egenskaben for modellen. Denne vil blive brugt som input til finjusteringsjobbet. Den findes også som Asset ID feltet på model-detaljesiden i AzureML Studio Model Catalog.
 
-2. Dette Python script interagerer med Azure Machine Learning (Azure ML) servicen. Her er en gennemgang af hvad det gør:
+2. Dette Python-script interagerer med Azure Machine Learning (Azure ML) tjenesten. Her er en gennemgang af, hvad det gør:
 
     - Det sætter model_name til "Phi-3-mini-4k-instruct".
 
-    - Det bruger get metoden på models egenskaben af registry_ml_client objektet til at hente den seneste version af modellen med det angivne navn fra Azure ML registret. get metoden kaldes med to argumenter: navnet på modellen og en label, som angiver at den seneste version af modellen skal hentes.
+    - Det bruger get metoden på models egenskaben af registry_ml_client objektet til at hente den seneste version af modellen med det angivne navn fra Azure ML registeret. get metoden kaldes med to argumenter: navnet på modellen og et label, der angiver, at den seneste version af modellen skal hentes.
 
-    - Det printer en besked til konsollen, der angiver navn, version og id for den model, der skal bruges til finjustering. format metoden på strengen bruges til at indsætte navn, version og id for modellen i beskeden. Navn, version og id tilgås som egenskaber på foundation_model objektet.
+    - Det printer en besked til konsollen, der angiver navnet, versionen og id’et på den model, der skal bruges til finjustering. format metoden på strengen bruges til at indsætte navn, version og id på modellen i beskeden. Navn, version og id på modellen tilgås som egenskaber på foundation_model objektet.
 
     ```python
     # Set the model name
@@ -143,29 +143,29 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. Opret en compute til brug for jobbet
+## 3. Opret en compute, der skal bruges til jobbet
 
-Finetune jobbet fungerer KUN med GPU compute. Størrelsen på computen afhænger af, hvor stor modellen er, og i de fleste tilfælde kan det være svært at identificere den rette compute til jobbet. I denne celle guider vi brugeren til at vælge den rigtige compute til jobbet.
-
-> [!NOTE]
-> De nedenfor listede computes fungerer med den mest optimerede konfiguration. Ændringer i konfigurationen kan føre til Cuda Out Of Memory fejl. I sådanne tilfælde prøv at opgradere computen til en større størrelse.
+Finjusteringsjobbet fungerer KUN med GPU compute. Størrelsen på computen afhænger af, hvor stor modellen er, og i de fleste tilfælde kan det være svært at identificere den rette compute til jobbet. I denne celle guider vi brugeren til at vælge den rette compute til jobbet.
 
 > [!NOTE]
-> Når du vælger compute_cluster_size nedenfor, skal du sikre dig, at computen er tilgængelig i din resourcegruppe. Hvis en bestemt compute ikke er tilgængelig, kan du anmode om adgang til compute ressourcerne.
+> De computere, der er listet nedenfor, fungerer med den mest optimerede konfiguration. Enhver ændring i konfigurationen kan føre til Cuda Out Of Memory fejl. I sådanne tilfælde prøv at opgradere computen til en større størrelse.
+
+> [!NOTE]
+> Når du vælger compute_cluster_size nedenfor, skal du sikre dig, at computen er tilgængelig i din resource group. Hvis en bestemt compute ikke er tilgængelig, kan du anmode om adgang til compute ressourcerne.
 
 ### Tjek af model for finjusteringssupport
 
-1. Dette Python script interagerer med en Azure Machine Learning (Azure ML) model. Her er en gennemgang af hvad det gør:
+1. Dette Python-script interagerer med en Azure Machine Learning (Azure ML) model. Her er en gennemgang af, hvad det gør:
 
-    - Det importerer ast modulet, som tilbyder funktioner til at behandle træer af Python abstrakt syntaksgrammatik.
+    - Det importerer ast modulet, som giver funktioner til at behandle træer af Python abstrakt syntaks grammatik.
 
-    - Det tjekker om foundation_model objektet (som repræsenterer en model i Azure ML) har et tag ved navn finetune_compute_allow_list. Tags i Azure ML er nøgle-værdi par, som du kan oprette og bruge til at filtrere og sortere modeller.
+    - Det tjekker, om foundation_model objektet (som repræsenterer en model i Azure ML) har et tag med navnet finetune_compute_allow_list. Tags i Azure ML er nøgle-værdi par, som du kan oprette og bruge til at filtrere og sortere modeller.
 
-    - Hvis finetune_compute_allow_list tagget er til stede, bruger det ast.literal_eval funktionen til sikkert at parse taggets værdi (en streng) til en Python liste. Denne liste tildeles til variablen computes_allow_list. Det printer derefter en besked om, at en compute bør oprettes fra listen.
+    - Hvis finetune_compute_allow_list tagget er til stede, bruger det ast.literal_eval funktionen til sikkert at parse taggets værdi (en streng) til en Python liste. Denne liste tildeles derefter variablen computes_allow_list. Det printer derefter en besked, der angiver, at en compute skal oprettes fra listen.
 
-    - Hvis finetune_compute_allow_list tagget ikke er til stede, sætter det computes_allow_list til None og printer en besked om, at finetune_compute_allow_list tagget ikke er en del af modellens tags.
+    - Hvis finetune_compute_allow_list tagget ikke er til stede, sættes computes_allow_list til None og der printes en besked, der angiver, at finetune_compute_allow_list tagget ikke er en del af modellens tags.
 
-    - Kort sagt tjekker dette script for et specifikt tag i modellens metadata, konverterer taggets værdi til en liste hvis det findes, og giver brugeren feedback.
+    - Samlet set tjekker dette script for et specifikt tag i modellens metadata, konverterer taggets værdi til en liste, hvis det findes, og giver feedback til brugeren.
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -188,19 +188,19 @@ Finetune jobbet fungerer KUN med GPU compute. Størrelsen på computen afhænger
 
 ### Tjek af Compute Instance
 
-1. Dette Python script interagerer med Azure Machine Learning (Azure ML) service og udfører flere tjek på en compute instans. Her er en gennemgang af hvad det gør:
+1. Dette Python-script interagerer med Azure Machine Learning (Azure ML) tjenesten og udfører flere tjek på en compute instans. Her er en gennemgang af, hvad det gør:
 
     - Det forsøger at hente compute instansen med navnet gemt i compute_cluster fra Azure ML workspace. Hvis compute instansens provisioning status er "failed", kaster det en ValueError.
 
-    - Det tjekker om computes_allow_list ikke er None. Hvis det ikke er det, konverterer det alle compute størrelser i listen til små bogstaver og tjekker om størrelsen på den aktuelle compute instans er i listen. Hvis ikke, kaster det en ValueError.
+    - Det tjekker, om computes_allow_list ikke er None. Hvis den ikke er det, konverterer den alle compute størrelser i listen til små bogstaver og tjekker, om størrelsen på den aktuelle compute instans er i listen. Hvis ikke, kaster den en ValueError.
 
-    - Hvis computes_allow_list er None, tjekker det om størrelsen på compute instansen er i en liste af ikke-understøttede GPU VM størrelser. Hvis ja, kaster det en ValueError.
+    - Hvis computes_allow_list er None, tjekker den, om størrelsen på compute instansen er i en liste over ikke-understøttede GPU VM størrelser. Hvis det er tilfældet, kaster den en ValueError.
 
-    - Det henter en liste over alle tilgængelige compute størrelser i workspace. Derefter itererer det over denne liste, og for hver compute størrelse tjekker det om navnet matcher størrelsen på den aktuelle compute instans. Hvis ja, henter det antallet af GPU'er for den compute størrelse og sætter gpu_count_found til True.
+    - Den henter en liste over alle tilgængelige compute størrelser i workspace. Den itererer derefter over denne liste, og for hver compute størrelse tjekker den, om navnet matcher størrelsen på den aktuelle compute instans. Hvis det gør, henter den antallet af GPU’er for den compute størrelse og sætter gpu_count_found til True.
 
-    - Hvis gpu_count_found er True, printer det antallet af GPU'er i compute instansen. Hvis ikke, kaster det en ValueError.
+    - Hvis gpu_count_found er True, printer den antallet af GPU’er i compute instansen. Hvis gpu_count_found er False, kaster den en ValueError.
 
-    - Samlet set udfører dette script flere tjek på en compute instans i et Azure ML workspace, inklusiv tjek af provisioning status, størrelse i forhold til en tilladelsesliste eller benægtelsesliste, og antallet af GPU'er.
+    - Samlet set udfører dette script flere tjek på en compute instans i et Azure ML workspace, herunder tjek af provisioning status, størrelse mod en tilladelsesliste eller en benægtelsesliste, og antallet af GPU’er den har.
 
     ```python
     # Print the exception message
@@ -271,28 +271,28 @@ Finetune jobbet fungerer KUN med GPU compute. Størrelsen på computen afhænger
 
 ## 4. Vælg datasættet til finjustering af modellen
 
-1. Vi bruger ultrachat_200k datasættet. Datasættet har fire splits, velegnet til Supervised finetuning (sft).
-Generation ranking (gen). Antallet af eksempler per split vises som følger:
+1. Vi bruger ultrachat_200k datasættet. Datasættet har fire splits, egnet til Supervised fine-tuning (sft).
+Generation ranking (gen). Antallet af eksempler pr. split vises som følger:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. De næste par celler viser grundlæggende databehandling til finjustering:
+1. De næste par celler viser grundlæggende dataforberedelse til finjustering:
 
 ### Visualiser nogle datarækker
 
-Vi ønsker at dette eksempel skal køre hurtigt, så vi gemmer train_sft, test_sft filer indeholdende 5% af de allerede trimmede rækker. Det betyder, at den finjusterede model vil have lavere nøjagtighed, og derfor bør den ikke bruges i produktion.
-download-dataset.py bruges til at downloade ultrachat_200k datasættet og transformere datasættet til et format, som finetune pipeline komponenten kan bruge. Da datasættet er stort, har vi kun en del af datasættet her.
+Vi ønsker, at dette eksempel skal køre hurtigt, så gem train_sft, test_sft filer, der indeholder 5% af de allerede beskårne rækker. Det betyder, at den finjusterede model vil have lavere nøjagtighed, og derfor bør den ikke bruges i virkelige scenarier.
+download-dataset.py bruges til at downloade ultrachat_200k datasættet og transformere datasættet til et format, som finjusteringspipeline komponenten kan bruge. Da datasættet også er stort, har vi her kun en del af datasættet.
 
 1. Kørsel af nedenstående script downloader kun 5% af dataene. Dette kan øges ved at ændre dataset_split_pc parameteren til ønsket procentdel.
 
     > [!NOTE]
-    > Nogle sprogmodeller har forskellige sprogkoder, og derfor bør kolonnenavne i datasættet afspejle dette.
+    > Nogle sprogmodeller har forskellige sprogkoder, og derfor bør kolonnenavnene i datasættet afspejle dette.
 
-1. Her er et eksempel på, hvordan dataene bør se ud
-Chat-completion datasættet er gemt i parquet format, hvor hver post bruger følgende skema:
+1. Her er et eksempel på, hvordan dataene skal se ud
+chat-completion datasættet er gemt i parquet format, hvor hver post bruger følgende skema:
 
     - Dette er et JSON (JavaScript Object Notation) dokument, som er et populært dataudvekslingsformat. Det er ikke eksekverbar kode, men en måde at gemme og transportere data på. Her er en gennemgang af strukturen:
 
@@ -304,7 +304,7 @@ Chat-completion datasættet er gemt i parquet format, hvor hver post bruger føl
     - "role": Denne nøgle indeholder en strengværdi, der repræsenterer rollen for den enhed, der sendte beskeden. Det kan være enten "user" eller "assistant".
     - "prompt_id": Denne nøgle indeholder en strengværdi, der repræsenterer en unik identifikator for prompten.
 
-1. I dette specifikke JSON dokument repræsenteres en samtale, hvor en bruger beder en AI-assistent om at skabe en hovedperson til en dystopisk historie. Assistenten svarer, og brugeren beder derefter om flere detaljer. Assistenten accepterer at give flere detaljer. Hele samtalen er tilknyttet et specifikt prompt id.
+1. I dette specifikke JSON dokument repræsenteres en samtale, hvor en bruger beder en AI-assistent om at skabe en hovedperson til en dystopisk historie. Assistenten svarer, og brugeren beder derefter om flere detaljer. Assistenten accepterer at give flere detaljer. Hele samtalen er knyttet til en specifik prompt id.
 
     ```python
     {
@@ -344,17 +344,17 @@ Chat-completion datasættet er gemt i parquet format, hvor hver post bruger føl
     }
     ```
 
-### Download Data
+### Download data
 
-1. Dette Python script bruges til at downloade et datasæt ved hjælp af et hjælpe-script kaldet download-dataset.py. Her er en gennemgang af hvad det gør:
+1. Dette Python-script bruges til at downloade et datasæt ved hjælp af et hjælpe-script kaldet download-dataset.py. Her er en gennemgang af, hvad det gør:
 
-    - Det importerer os modulet, som giver en platformuafhængig måde at bruge operativsystemfunktioner på.
+    - Det importerer os modulet, som giver en platformuafhængig måde at bruge operativsystemafhængig funktionalitet på.
 
-    - Det bruger os.system funktionen til at køre download-dataset.py scriptet i shell med specifikke kommandolinjeargumenter. Argumenterne angiver hvilket datasæt der skal downloades (HuggingFaceH4/ultrachat_200k), mappen det skal downloades til (ultrachat_200k_dataset), og procentdelen af datasættet til split (5). os.system funktionen returnerer exit status for kommandoen; denne status gemmes i exit_status variablen.
+    - Det bruger os.system funktionen til at køre download-dataset.py scriptet i shell med specifikke kommandolinjeargumenter. Argumenterne angiver datasættet, der skal downloades (HuggingFaceH4/ultrachat_200k), mappen det skal downloades til (ultrachat_200k_dataset), og procentdelen af datasættet, der skal splittes (5). os.system funktionen returnerer exit status for den kommando, den kørte; denne status gemmes i exit_status variablen.
 
-    - Det tjekker om exit_status ikke er 0. I Unix-lignende systemer betyder en exit status på 0 normalt, at en kommando lykkedes, mens alle andre tal indikerer en fejl. Hvis exit_status ikke er 0, kaster det en Exception med en besked om, at der var en fejl ved download af datasættet.
+    - Det tjekker, om exit_status ikke er 0. I Unix-lignende operativsystemer indikerer en exit status på 0 normalt, at en kommando er lykkedes, mens ethvert andet tal indikerer en fejl. Hvis exit_status ikke er 0, kaster det en Exception med en besked, der angiver, at der var en fejl ved download af datasættet.
 
-    - Samlet set kører dette script en kommando til at downloade et datasæt ved hjælp af et hjælpe-script og kaster en undtagelse, hvis kommandoen fejler.
+    - Samlet set kører dette script en kommando for at downloade et datasæt ved hjælp af et hjælpe-script, og det kaster en undtagelse, hvis kommandoen fejler.
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -374,21 +374,20 @@ Chat-completion datasættet er gemt i parquet format, hvor hver post bruger føl
         raise Exception("Error downloading dataset")
     ```
 
-### Indlæs data i en DataFrame
+### Indlæsning af data i en DataFrame
 
-1. Dette Python script indlæser en JSON Lines fil i en pandas DataFrame og viser de første 5 rækker. Her er en gennemgang af hvad det gør:
+1. Dette Python-script indlæser en JSON Lines fil i en pandas DataFrame og viser de første 5 rækker. Her er en gennemgang af, hvad det gør:
 
-    - Det importerer pandas biblioteket, som er et kraftfuldt datahåndterings- og analysebibliotek.
+    - Det importerer pandas biblioteket, som er et kraftfuldt bibliotek til datamanipulation og analyse.
 
-    - Det sætter maksimal kolonnebredde i pandas' display-indstillinger til 0. Det betyder, at hele teksten i hver kolonne vises uden afkortning, når DataFrame printes.
+    - Det sætter den maksimale kolonnebredde for pandas’ visningsindstillinger til 0. Det betyder, at hele teksten i hver kolonne vises uden afkortning, når DataFrame printes.
 
-    - Det bruger pd.read_json funktionen til at indlæse train_sft.jsonl filen fra ultrachat_200k_dataset mappen til en DataFrame. lines=True angiver, at filen er i JSON Lines format, hvor hver linje er et separat JSON objekt.
+    - Det bruger pd.read_json funktionen til at indlæse train_sft.jsonl filen fra ultrachat_200k_dataset mappen til en DataFrame. Argumentet lines=True angiver, at filen er i JSON Lines format, hvor hver linje er et separat JSON objekt.
+- Den bruger head-metoden til at vise de første 5 rækker i DataFrame. Hvis DataFrame har færre end 5 rækker, vises alle.
 
-    - Det bruger head metoden til at vise de første 5 rækker af DataFrame. Hvis DataFrame har færre end 5 rækker, vises alle.
+- Kort sagt indlæser dette script en JSON Lines-fil i en DataFrame og viser de første 5 rækker med fuld kolonne tekst.
 
-    - Samlet set indlæser dette script en JSON Lines fil i en DataFrame og viser de første 5 rækker med fuld kolonnetekst.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -405,47 +404,48 @@ Chat-completion datasættet er gemt i parquet format, hvor hver post bruger føl
     df.head()
     ```
 
-## 5. Indsend finjusteringsjobbet ved at bruge modellen og data som input
+## 5. Indsend finjusteringsjobbet med modellen og data som input
 
-Opret jobbet, der bruger chat-completion pipeline komponenten. Lær mere om alle parametre, der understøttes til finjustering.
+Opret jobbet, der bruger chat-completion pipeline-komponenten. Lær mere om alle de parametre, der understøttes til finjustering.
 
 ### Definer finjusteringsparametre
 
-1. Finjusteringsparametre kan grupperes i 2 kategorier - træningsparametre og optimeringsparametre.
+1. Finjusteringsparametre kan opdeles i 2 kategorier - træningsparametre og optimeringsparametre
 
 1. Træningsparametre definerer træningsaspekter såsom -
 
-    - Optimereren, scheduler der skal bruges
-    - Metrikken der skal optimeres under finjustering
-    - Antal træningssteps og batch-størrelse osv.
-    - Optimeringsparametre hjælper med at optimere GPU hukommelsen og effektiv brug af compute ressourcer.
+    - Den optimizer og scheduler, der skal bruges
+    - Den metrik, der skal optimeres under finjusteringen
+    - Antal træningssteps, batch-størrelse osv.
+    - Optimeringsparametre hjælper med at optimere GPU-hukommelsen og effektivt udnytte compute-ressourcerne.
 
 1. Nedenfor er nogle af parametrene, der hører til denne kategori. Optimeringsparametrene varierer for hver model og pakkes med modellen for at håndtere disse variationer.
 
-    - Aktivér deepspeed og LoRA
-    - Aktivér mixed precision træning
-    - Aktivér multi-node træning
+    - Aktiver deepspeed og LoRA
+    - Aktiver mixed precision træning
+    - Aktiver multi-node træning
+
 
 > [!NOTE]
-> Supervised finetuning kan føre til tab af alignment eller katastrofalt glemsel. Vi anbefaler at tjekke for dette problem og køre en alignment fase efter finjustering.
+> Supervised finetuning kan resultere i tab af alignment eller katastrofalt glem. Vi anbefaler at tjekke for dette problem og køre en alignment-fase efter finjusteringen.
 
 ### Finjusteringsparametre
 
-1. Dette Python script opsætter parametre til finjustering af en maskinlæringsmodel. Her er en gennemgang af hvad det gør:
+1. Dette Python-script opsætter parametre til finjustering af en maskinlæringsmodel. Her er en oversigt over, hvad det gør:
 
-    - Det opsætter standard træningsparametre såsom antal trænings-epoker, batch-størrelser til træning og evaluering, læringsrate og type af læringsrate scheduler.
+    - Det sætter standard træningsparametre som antal trænings-epoker, batch-størrelser til træning og evaluering, læringsrate og type af læringsrate-scheduler.
 
-    - Det opsætter standard optimeringsparametre såsom om Layer-wise Relevance Propagation (LoRa) og DeepSpeed skal anvendes, og DeepSpeed stadiet.
+    - Det sætter standard optimeringsparametre som om Layer-wise Relevance Propagation (LoRa) og DeepSpeed skal anvendes, samt DeepSpeed-stadiet.
 
-    - Det kombinerer trænings- og optimeringsparametrene i et enkelt dictionary kaldet finetune_parameters.
+    - Det kombinerer trænings- og optimeringsparametrene i en enkelt ordbog kaldet finetune_parameters.
 
-    - Det tjekker om foundation_model har model-specifikke standardparametre. Hvis ja, printer det en advarselsbesked og opdaterer finetune_parameters dictionary med disse model-specifikke standarder. ast.literal_eval funktionen bruges til at konvertere model-specifikke standarder fra en streng til et Python dictionary.
+    - Det tjekker, om foundation_model har model-specifikke standardparametre. Hvis ja, udskriver det en advarselsbesked og opdaterer finetune_parameters med disse model-specifikke standarder. Funktionen ast.literal_eval bruges til at konvertere model-specifikke standarder fra en streng til en Python-ordbog.
 
-    - Det printer det endelige sæt af finjusteringsparametre, der vil blive brugt til kørslen.
+    - Det udskriver det endelige sæt af finjusteringsparametre, der vil blive brugt til kørslen.
 
-    - Samlet set opsætter og viser dette script parametrene til finjustering af en maskinlæringsmodel, med mulighed for at overskrive standardparametre med model-specifikke.
+    - Kort sagt opsætter og viser dette script parametrene til finjustering af en maskinlæringsmodel med mulighed for at overskrive standardparametre med model-specifikke.
 
-    ```python
+```python
     # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
     training_parameters = dict(
         num_train_epochs=3,
@@ -484,10 +484,23 @@ Opret jobbet, der bruger chat-completion pipeline komponenten. Lær mere om alle
 
 ### Træningspipeline
 
-1. Dette Python script definerer en funktion til at generere et display-navn for en maskinlærings træningspipeline, og kalder derefter denne funktion for at generere og printe display-navnet. Her er en gennemgang af hvad det gør:
+1. Dette Python-script definerer en funktion til at generere et visningsnavn for en maskinlærings træningspipeline og kalder derefter denne funktion for at generere og udskrive visningsnavnet. Her er en oversigt over, hvad det gør:
 
+1. Funktionen get_pipeline_display_name defineres. Denne funktion genererer et visningsnavn baseret på forskellige parametre relateret til træningspipelinens opsætning.
 
-training pipeline baseret på forskellige parametre, og derefter udskrive dette visningsnavn. ```python
+1. Inde i funktionen beregnes den samlede batch-størrelse ved at multiplicere batch-størrelsen pr. enhed, antallet af gradient-akkumuleringssteps, antallet af GPU'er pr. node og antallet af noder, der bruges til finjustering.
+
+1. Den henter forskellige andre parametre såsom typen af læringsrate-scheduler, om DeepSpeed anvendes, DeepSpeed-stadiet, om Layer-wise Relevance Propagation (LoRa) anvendes, grænsen for antal model-checkpoints, der skal gemmes, og maksimal sekvenslængde.
+
+1. Den konstruerer en streng, der inkluderer alle disse parametre adskilt af bindestreger. Hvis DeepSpeed eller LoRa anvendes, indeholder strengen henholdsvis "ds" efterfulgt af DeepSpeed-stadiet eller "lora". Hvis ikke, indeholder den "nods" eller "nolora".
+
+1. Funktionen returnerer denne streng, som fungerer som visningsnavnet for træningspipelinjen.
+
+1. Efter funktionen er defineret, kaldes den for at generere visningsnavnet, som derefter udskrives.
+
+1. Kort sagt genererer dette script et visningsnavn for en maskinlærings træningspipeline baseret på forskellige parametre og udskriver dette navn.
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -542,24 +555,27 @@ training pipeline baseret på forskellige parametre, og derefter udskrive dette 
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
-### Konfigurering af Pipeline
+### Konfigurering af pipeline
 
-Dette Python-script definerer og konfigurerer en machine learning pipeline ved hjælp af Azure Machine Learning SDK. Her er en oversigt over, hvad det gør:
+Dette Python-script definerer og konfigurerer en maskinlæringspipeline ved hjælp af Azure Machine Learning SDK. Her er en oversigt over, hvad det gør:
 
 1. Det importerer nødvendige moduler fra Azure AI ML SDK.
-1. Det henter en pipeline-komponent med navnet "chat_completion_pipeline" fra registreringsdatabasen.
-1. Det definerer et pipeline-job ved hjælp af `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+1. Det henter en pipeline-komponent med navnet "chat_completion_pipeline" fra registret.
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+1. Det definerer et pipeline-job ved hjælp af `@pipeline` dekoratoren og funktionen `create_pipeline`. Navnet på pipelinen sættes til `pipeline_display_name`.
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. Inde i `create_pipeline` funktionen initialiseres den hentede pipeline-komponent med forskellige parametre, herunder modelsti, compute-klynger til forskellige stadier, datasæt-opdelinger til træning og test, antal GPU'er til finjustering og andre finjusteringsparametre.
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. Outputtet fra finjusteringsjobbet mappes til outputtet af pipeline-jobbet. Dette gøres, så den finjusterede model nemt kan registreres, hvilket er nødvendigt for at deployere modellen til en online- eller batch-endpoint.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False`, hvilket betyder, at pipelinen stopper, hvis et trin fejler.
-1. Kort sagt definerer og konfigurerer dette script en machine learning pipeline til en chat completion-opgave ved hjælp af Azure Machine Learning SDK.
+1. En instans af pipelinen oprettes ved at kalde `create_pipeline` funktionen.
+
+1. `force_rerun` indstillingen for pipelinen sættes til `True`, hvilket betyder, at cachede resultater fra tidligere jobs ikke vil blive brugt.
+
+1. `continue_on_step_failure` indstillingen sættes til `False`, hvilket betyder, at pipelinen stopper, hvis et trin fejler.
+
+1. Kort sagt definerer og konfigurerer dette script en maskinlæringspipeline til en chat completion-opgave ved hjælp af Azure Machine Learning SDK.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -612,13 +628,15 @@ Dette Python-script definerer og konfigurerer en machine learning pipeline ved h
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### Indsend Jobbet
+### Indsend jobbet
 
-1. Dette Python-script sender et machine learning pipeline-job til en Azure Machine Learning workspace og venter derefter på, at jobbet bliver færdigt. Her er en oversigt over, hvad det gør:
+1. Dette Python-script indsender et maskinlærings pipeline-job til en Azure Machine Learning workspace og venter derefter på, at jobbet bliver færdigt. Her er en oversigt over, hvad det gør:
 
-- Det kalder create_or_update metoden på jobs-objektet i workspace_ml_client for at indsende pipeline-jobbet. Pipelinen, der skal køres, specificeres af pipeline_object, og eksperimentet, hvor jobbet køres, specificeres af experiment_name.
-- Det kalder derefter stream metoden på jobs-objektet i workspace_ml_client for at vente på, at pipeline-jobbet er færdigt. Jobbet, der skal vente på, specificeres af name-attributten i pipeline_job-objektet.
-- Kort sagt sender dette script et machine learning pipeline-job til en Azure Machine Learning workspace og venter derefter på, at jobbet er færdigt.
+    - Det kalder create_or_update metoden på jobs-objektet i workspace_ml_client for at indsende pipeline-jobbet. Pipelinjen, der skal køres, specificeres af pipeline_object, og eksperimentet, som jobbet kører under, specificeres af experiment_name.
+
+    - Det kalder derefter stream metoden på jobs-objektet i workspace_ml_client for at vente på, at pipeline-jobbet bliver færdigt. Jobbet, der skal ventes på, specificeres af name-attributten på pipeline_job objektet.
+
+    - Kort sagt indsender dette script et maskinlærings pipeline-job til en Azure Machine Learning workspace og venter på, at jobbet bliver færdigt.
 
 ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
@@ -635,21 +653,27 @@ Dette Python-script definerer og konfigurerer en machine learning pipeline ved h
 
 ## 6. Registrer den finjusterede model i workspace
 
-Vi vil registrere modellen fra outputtet af finjusteringsjobbet. Dette vil spore linjen mellem den finjusterede model og finjusteringsjobbet. Finjusteringsjobbet sporer desuden linjen til grundmodellen, data og træningskoden.
+Vi vil registrere modellen fra outputtet af finjusteringsjobbet. Dette vil spore slægtskabet mellem den finjusterede model og finjusteringsjobbet. Finjusteringsjobbet sporer yderligere slægtskabet til foundation-modellen, data og træningskode.
 
 ### Registrering af ML-modellen
 
-1. Dette Python-script registrerer en machine learning-model, som er trænet i en Azure Machine Learning pipeline. Her er en oversigt over, hvad det gør:
+1. Dette Python-script registrerer en maskinlæringsmodel, der blev trænet i en Azure Machine Learning pipeline. Her er en oversigt over, hvad det gør:
 
-- Det importerer nødvendige moduler fra Azure AI ML SDK.
-- Det tjekker, om trained_model outputtet er tilgængeligt fra pipeline-jobbet ved at kalde get metoden på jobs-objektet i workspace_ml_client og tilgå dets outputs-attribut.
-- Det konstruerer en sti til den trænede model ved at formatere en streng med navnet på pipeline-jobbet og navnet på outputtet ("trained_model").
-- Det definerer et navn til den finjusterede model ved at tilføje "-ultrachat-200k" til det oprindelige modelnavn og erstatte alle skråstreger med bindestreger.
-- Det forbereder registreringen af modellen ved at oprette et Model-objekt med forskellige parametre, inklusive stien til modellen, typen af modellen (MLflow model), navnet og versionen af modellen samt en beskrivelse af modellen.
-- Det registrerer modellen ved at kalde create_or_update metoden på models-objektet i workspace_ml_client med Model-objektet som argument.
-- Det udskriver den registrerede model.
+    - Det importerer nødvendige moduler fra Azure AI ML SDK.
 
-1. Kort sagt registrerer dette script en machine learning-model, der er trænet i en Azure Machine Learning pipeline.
+    - Det tjekker, om trained_model outputtet er tilgængeligt fra pipeline-jobbet ved at kalde get metoden på jobs-objektet i workspace_ml_client og tilgå dets outputs-attribut.
+
+    - Det konstruerer en sti til den trænede model ved at formatere en streng med navnet på pipeline-jobbet og navnet på outputtet ("trained_model").
+
+    - Det definerer et navn til den finjusterede model ved at tilføje "-ultrachat-200k" til det oprindelige modelnavn og erstatte eventuelle skråstreger med bindestreger.
+
+    - Det forbereder registreringen af modellen ved at oprette et Model-objekt med forskellige parametre, herunder stien til modellen, typen af modellen (MLflow model), navnet og versionen af modellen samt en beskrivelse af modellen.
+
+    - Det registrerer modellen ved at kalde create_or_update metoden på models-objektet i workspace_ml_client med Model-objektet som argument.
+
+    - Det udskriver den registrerede model.
+
+1. Kort sagt registrerer dette script en maskinlæringsmodel, der blev trænet i en Azure Machine Learning pipeline.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -691,18 +715,21 @@ Vi vil registrere modellen fra outputtet af finjusteringsjobbet. Dette vil spore
     print("registered model: \n", registered_model)
     ```
 
-## 7. Udrul den finjusterede model til en online endpoint
+## 7. Deploy den finjusterede model til en online endpoint
 
-Online endpoints giver en holdbar REST API, som kan bruges til at integrere med applikationer, der skal bruge modellen.
+Online endpoints giver en holdbar REST API, som kan bruges til integration med applikationer, der skal bruge modellen.
 
 ### Administrer Endpoint
 
 1. Dette Python-script opretter en managed online endpoint i Azure Machine Learning for en registreret model. Her er en oversigt over, hvad det gør:
 
-- Det importerer nødvendige moduler fra Azure AI ML SDK.
-- Det definerer et unikt navn til den online endpoint ved at tilføje et tidsstempel til strengen "ultrachat-completion-".
-- Det forbereder oprettelsen af online endpointen ved at oprette et ManagedOnlineEndpoint-objekt med forskellige parametre, inklusive navnet på endpointen, en beskrivelse af endpointen og autentificeringsmetoden ("key").
-- Det opretter online endpointen ved at kalde begin_create_or_update metoden på workspace_ml_client med ManagedOnlineEndpoint-objektet som argument. Derefter venter det på, at oprettelsesprocessen er færdig ved at kalde wait metoden.
+    - Det importerer nødvendige moduler fra Azure AI ML SDK.
+
+    - Det definerer et unikt navn til den online endpoint ved at tilføje et tidsstempel til strengen "ultrachat-completion-".
+
+    - Det forbereder oprettelsen af den online endpoint ved at oprette et ManagedOnlineEndpoint-objekt med forskellige parametre, herunder endpoint-navn, en beskrivelse af endpointen og autentificeringsmetoden ("key").
+
+    - Det opretter den online endpoint ved at kalde begin_create_or_update metoden på workspace_ml_client med ManagedOnlineEndpoint-objektet som argument. Derefter venter det på, at oprettelsesoperationen bliver færdig ved at kalde wait metoden.
 
 1. Kort sagt opretter dette script en managed online endpoint i Azure Machine Learning for en registreret model.
 
@@ -734,22 +761,29 @@ Online endpoints giver en holdbar REST API, som kan bruges til at integrere med 
     ```
 
 > [!NOTE]
-> Du kan finde listen over SKU'er, der understøttes til udrulning her - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> Du kan finde listen over SKU'er, der understøttes til deployment her - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### Udrulning af ML-model
+### Deploy ML-model
 
-1. Dette Python-script udruller en registreret machine learning-model til en managed online endpoint i Azure Machine Learning. Her er en oversigt over, hvad det gør:
+1. Dette Python-script deployerer en registreret maskinlæringsmodel til en managed online endpoint i Azure Machine Learning. Her er en oversigt over, hvad det gør:
 
-- Det importerer ast-modulet, som giver funktioner til at behandle træer af Pythons abstrakte syntaksgrammatik.
-- Det sætter instanstypen for udrulningen til "Standard_NC6s_v3".
-- Det tjekker, om tagget inference_compute_allow_list findes i grundmodellen. Hvis det gør, konverterer det taggets værdi fra en streng til en Python-liste og tildeler det til inference_computes_allow_list. Hvis ikke, sættes inference_computes_allow_list til None.
-- Det tjekker, om den angivne instanstype er i tilladelseslisten. Hvis ikke, udskriver det en besked, der beder brugeren om at vælge en instanstype fra tilladelseslisten.
-- Det forbereder oprettelsen af udrulningen ved at oprette et ManagedOnlineDeployment-objekt med forskellige parametre, inklusive navnet på udrulningen, navnet på endpointen, ID'et på modellen, instanstypen og antallet, indstillinger for liveness probe og request-indstillinger.
-- Det opretter udrulningen ved at kalde begin_create_or_update metoden på workspace_ml_client med ManagedOnlineDeployment-objektet som argument. Derefter venter det på, at oprettelsesprocessen er færdig ved at kalde wait metoden.
-- Det sætter trafikken på endpointen til at dirigere 100% af trafikken til "demo" udrulningen.
-- Det opdaterer endpointen ved at kalde begin_create_or_update metoden på workspace_ml_client med endpoint-objektet som argument. Derefter venter det på, at opdateringsprocessen er færdig ved at kalde result metoden.
+    - Det importerer ast-modulet, som giver funktioner til at behandle træer af Python abstrakt syntaksgrammatik.
 
-1. Kort sagt udruller dette script en registreret machine learning-model til en managed online endpoint i Azure Machine Learning.
+    - Det sætter instanstypen til deployment til "Standard_NC6s_v3".
+
+    - Det tjekker, om tagget inference_compute_allow_list findes i foundation_model. Hvis det gør, konverterer det taggets værdi fra en streng til en Python-liste og tildeler den til inference_computes_allow_list. Hvis ikke, sættes inference_computes_allow_list til None.
+
+    - Det tjekker, om den specificerede instanstype er i tilladelseslisten. Hvis ikke, udskrives en besked, der beder brugeren vælge en instanstype fra tilladelseslisten.
+
+    - Det forbereder oprettelsen af deployment ved at oprette et ManagedOnlineDeployment-objekt med forskellige parametre, herunder navnet på deployment, endpoint-navnet, model-ID, instanstype og antal, liveness probe-indstillinger og request-indstillinger.
+
+    - Det opretter deployment ved at kalde begin_create_or_update metoden på workspace_ml_client med ManagedOnlineDeployment-objektet som argument. Derefter venter det på, at oprettelsesoperationen bliver færdig ved at kalde wait metoden.
+
+    - Det sætter trafikken på endpointen til at dirigere 100% af trafikken til "demo" deployment.
+
+    - Det opdaterer endpointen ved at kalde begin_create_or_update metoden på workspace_ml_client med endpoint-objektet som argument. Derefter venter det på, at opdateringsoperationen bliver færdig ved at kalde result metoden.
+
+1. Kort sagt deployerer dette script en registreret maskinlæringsmodel til en managed online endpoint i Azure Machine Learning.
 
 ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -804,16 +838,19 @@ Online endpoints giver en holdbar REST API, som kan bruges til at integrere med 
 
 ## 8. Test endpointen med eksempeldata
 
-Vi vil hente noget eksempeldata fra testdatasættet og indsende det til online endpointen for inferens. Vi vil derefter vise de scorerede labels sammen med de korrekte labels.
+Vi henter noget eksempeldata fra testdatasættet og sender det til online endpointen for inferens. Vi viser derefter de scorede labels sammen med de korrekte labels.
 
-### Læsning af resultaterne
+### Læsning af resultater
 
 1. Dette Python-script læser en JSON Lines-fil ind i en pandas DataFrame, tager et tilfældigt udsnit og nulstiller indekset. Her er en oversigt over, hvad det gør:
 
-- Det læser filen ./ultrachat_200k_dataset/test_gen.jsonl ind i en pandas DataFrame. read_json funktionen bruges med argumentet lines=True, fordi filen er i JSON Lines-format, hvor hver linje er et separat JSON-objekt.
-- Det tager et tilfældigt udsnit på 1 række fra DataFrame'en. sample funktionen bruges med argumentet n=1 for at angive antallet af tilfældige rækker, der skal vælges.
-- Det nulstiller DataFrame'ens indeks. reset_index funktionen bruges med argumentet drop=True for at fjerne det oprindelige indeks og erstatte det med et nyt indeks med standard heltalsværdier.
-- Det viser de første 2 rækker af DataFrame'en ved hjælp af head funktionen med argumentet 2. Da DataFrame'en dog kun indeholder én række efter udvælgelsen, vil det kun vise denne ene række.
+    - Det læser filen ./ultrachat_200k_dataset/test_gen.jsonl ind i en pandas DataFrame. read_json funktionen bruges med argumentet lines=True, fordi filen er i JSON Lines-format, hvor hver linje er et separat JSON-objekt.
+
+    - Det tager et tilfældigt udsnit på 1 række fra DataFrame. sample funktionen bruges med n=1 for at angive antallet af tilfældige rækker, der skal vælges.
+
+    - Det nulstiller DataFrames indeks. reset_index funktionen bruges med drop=True for at fjerne det oprindelige indeks og erstatte det med et nyt indeks med standard heltalsværdier.
+
+    - Det viser de første 2 rækker i DataFrame ved hjælp af head funktionen med argumentet 2. Men da DataFrame kun indeholder én række efter udvælgelsen, vises kun denne ene række.
 
 1. Kort sagt læser dette script en JSON Lines-fil ind i en pandas DataFrame, tager et tilfældigt udsnit på 1 række, nulstiller indekset og viser den første række.
 
@@ -843,10 +880,12 @@ Vi vil hente noget eksempeldata fra testdatasættet og indsende det til online e
 
 1. Dette Python-script opretter et JSON-objekt med specifikke parametre og gemmer det i en fil. Her er en oversigt over, hvad det gør:
 
-- Det importerer json-modulet, som giver funktioner til at arbejde med JSON-data.
-- Det opretter en ordbog parameters med nøgler og værdier, der repræsenterer parametre for en machine learning-model. Nøglerne er "temperature", "top_p", "do_sample" og "max_new_tokens", og deres tilsvarende værdier er 0.6, 0.9, True og 200.
-- Det opretter en anden ordbog test_json med to nøgler: "input_data" og "params". Værdien af "input_data" er en anden ordbog med nøglerne "input_string" og "parameters". Værdien af "input_string" er en liste, der indeholder den første besked fra test_df DataFrame'en. Værdien af "parameters" er den tidligere oprettede parameters-ordbog. Værdien af "params" er en tom ordbog.
-- Det åbner en fil med navnet sample_score.json
+    - Det importerer json-modulet, som giver funktioner til at arbejde med JSON-data.
+
+    - Det opretter en ordbog parameters med nøgler og værdier, der repræsenterer parametre for en maskinlæringsmodel. Nøglerne er "temperature", "top_p", "do_sample" og "max_new_tokens", og deres tilsvarende værdier er 0.6, 0.9, True og 200.
+
+    - Det opretter en anden ordbog test_json med to nøgler: "input_data" og "params". Værdien af "input_data" er en anden ordbog med nøglerne "input_string" og "parameters". Værdien af "input_string" er en liste, der indeholder den første besked fra test_df DataFrame. Værdien af "parameters" er den tidligere oprettede parameters-ordbog. Værdien af "params" er en tom ordbog.
+- Den åbner en fil med navnet sample_score.json
 
 ```python
     # Import the json module, which provides functions to work with JSON data
@@ -880,17 +919,21 @@ Vi vil hente noget eksempeldata fra testdatasættet og indsende det til online e
         json.dump(test_json, f)
     ```
 
-### Kalde Endpoint
+### Kald af endpoint
 
-1. Dette Python-script kalder en online endpoint i Azure Machine Learning for at score en JSON-fil. Her er en oversigt over, hvad det gør:
+1. Dette Python-script kalder et online endpoint i Azure Machine Learning for at score en JSON-fil. Her er en gennemgang af, hvad det gør:
 
-- Det kalder invoke metoden på online_endpoints-egenskaben af workspace_ml_client objektet. Denne metode bruges til at sende en anmodning til en online endpoint og få et svar.
-- Det angiver navnet på endpointen og udrulningen med argumenterne endpoint_name og deployment_name. I dette tilfælde er endpoint-navnet gemt i variablen online_endpoint_name, og udrulningsnavnet er "demo".
-- Det angiver stien til JSON-filen, der skal scores, med argumentet request_file. I dette tilfælde er filen ./ultrachat_200k_dataset/sample_score.json.
-- Det gemmer svaret fra endpointen i variablen response.
-- Det udskriver det rå svar.
+    - Det kalder invoke-metoden på online_endpoints-egenskaben af workspace_ml_client-objektet. Denne metode bruges til at sende en forespørgsel til et online endpoint og modtage et svar.
 
-1. Kort sagt kalder dette script en online endpoint i Azure Machine Learning for at score en JSON-fil og udskriver svaret.
+    - Det angiver navnet på endpointet og deployment med argumenterne endpoint_name og deployment_name. I dette tilfælde er endpoint-navnet gemt i variablen online_endpoint_name, og deployment-navnet er "demo".
+
+    - Det angiver stien til JSON-filen, der skal scores, med argumentet request_file. I dette tilfælde er filen ./ultrachat_200k_dataset/sample_score.json.
+
+    - Det gemmer svaret fra endpointet i variablen response.
+
+    - Det udskriver det rå svar.
+
+1. Kort sagt kalder dette script et online endpoint i Azure Machine Learning for at score en JSON-fil og udskriver svaret.
 
 ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
@@ -908,14 +951,17 @@ Vi vil hente noget eksempeldata fra testdatasættet og indsende det til online e
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Slet den online endpoint
+## 9. Slet det online endpoint
 
-1. Glem ikke at slette den online endpoint, ellers vil du lade betalingsmåleren køre for den compute, som endpointen bruger. Denne linje Python-kode sletter en online endpoint i Azure Machine Learning. Her er en oversigt over, hvad den gør:
+1. Glem ikke at slette det online endpoint, ellers vil du fortsætte med at blive opkrævet for den compute, som endpointet bruger. Denne linje Python-kode sletter et online endpoint i Azure Machine Learning. Her er en gennemgang af, hvad den gør:
 
-- Det kalder begin_delete metoden på online_endpoints-egenskaben af workspace_ml_client objektet. Denne metode bruges til at starte sletningen af en online endpoint.
-- Det angiver navnet på endpointen, der skal slettes, med argumentet name. I dette tilfælde er endpoint-navnet gemt i variablen online_endpoint_name.
-- Det kalder wait metoden for at vente på, at sletteprocessen er færdig. Dette er en blokkerende operation, hvilket betyder, at scriptet ikke fortsætter, før sletningen er fuldført.
-- Kort sagt starter denne linje kode sletningen af en online endpoint i Azure Machine Learning og venter på, at operationen er færdig.
+    - Den kalder begin_delete-metoden på online_endpoints-egenskaben af workspace_ml_client-objektet. Denne metode bruges til at starte sletningen af et online endpoint.
+
+    - Den angiver navnet på det endpoint, der skal slettes, med argumentet name. I dette tilfælde er endpoint-navnet gemt i variablen online_endpoint_name.
+
+    - Den kalder wait-metoden for at vente på, at sletteoperationen bliver færdig. Dette er en blokkerende operation, hvilket betyder, at scriptet ikke fortsætter, før sletningen er fuldført.
+
+    - Kort sagt starter denne kode sletningen af et online endpoint i Azure Machine Learning og venter på, at operationen bliver færdig.
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -926,4 +972,4 @@ Vi vil hente noget eksempeldata fra testdatasættet og indsende det til online e
     ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

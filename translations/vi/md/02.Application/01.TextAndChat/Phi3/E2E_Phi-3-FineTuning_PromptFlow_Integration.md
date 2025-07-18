@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-05-09T17:39:56+00:00",
+  "translation_date": "2025-07-17T00:36:24+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "vi"
 }
 -->
-# Tinh chỉnh và tích hợp các mô hình Phi-3 tùy chỉnh với Prompt flow
+# Tinh chỉnh và Tích hợp các mô hình Phi-3 tùy chỉnh với Prompt flow
 
-Mẫu end-to-end (E2E) này dựa trên hướng dẫn "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" từ Microsoft Tech Community. Nó giới thiệu các quy trình tinh chỉnh, triển khai và tích hợp các mô hình Phi-3 tùy chỉnh với Prompt flow.
+Mẫu end-to-end (E2E) này dựa trên hướng dẫn "[Tinh chỉnh và Tích hợp các mô hình Phi-3 tùy chỉnh với Prompt Flow: Hướng dẫn từng bước](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" từ Microsoft Tech Community. Nó giới thiệu các quy trình tinh chỉnh, triển khai và tích hợp các mô hình Phi-3 tùy chỉnh với Prompt flow.
 
 ## Tổng quan
 
 Trong mẫu E2E này, bạn sẽ học cách tinh chỉnh mô hình Phi-3 và tích hợp nó với Prompt flow. Bằng cách tận dụng Azure Machine Learning và Prompt flow, bạn sẽ thiết lập một quy trình làm việc để triển khai và sử dụng các mô hình AI tùy chỉnh. Mẫu E2E này được chia thành ba kịch bản:
 
-**Kịch bản 1: Thiết lập tài nguyên Azure và Chuẩn bị cho tinh chỉnh**
+**Kịch bản 1: Thiết lập tài nguyên Azure và Chuẩn bị cho việc tinh chỉnh**
 
 **Kịch bản 2: Tinh chỉnh mô hình Phi-3 và Triển khai trong Azure Machine Learning Studio**
 
@@ -23,16 +23,16 @@ Trong mẫu E2E này, bạn sẽ học cách tinh chỉnh mô hình Phi-3 và t�
 
 Dưới đây là tổng quan về mẫu E2E này.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.dfeb1f15c7d3c8989fb267a05ac83a25485a7230bde037df9d3d92336afc1993.vi.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.vi.png)
 
 ### Mục lục
 
-1. **[Kịch bản 1: Thiết lập tài nguyên Azure và Chuẩn bị cho tinh chỉnh](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Kịch bản 1: Thiết lập tài nguyên Azure và Chuẩn bị cho việc tinh chỉnh](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Tạo Azure Machine Learning Workspace](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Yêu cầu hạn mức GPU trong Azure Subscription](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Thêm phân quyền vai trò](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Thiết lập dự án](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Chuẩn bị bộ dữ liệu cho tinh chỉnh](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Chuẩn bị bộ dữ liệu cho việc tinh chỉnh](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. **[Kịch bản 2: Tinh chỉnh mô hình Phi-3 và Triển khai trong Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Thiết lập Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
@@ -43,32 +43,32 @@ Dưới đây là tổng quan về mẫu E2E này.
     - [Tích hợp mô hình Phi-3 tùy chỉnh với Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Trò chuyện với mô hình tùy chỉnh của bạn](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## Kịch bản 1: Thiết lập tài nguyên Azure và Chuẩn bị cho tinh chỉnh
+## Kịch bản 1: Thiết lập tài nguyên Azure và Chuẩn bị cho việc tinh chỉnh
 
 ### Tạo Azure Machine Learning Workspace
 
 1. Gõ *azure machine learning* vào **thanh tìm kiếm** ở đầu trang portal và chọn **Azure Machine Learning** trong các tùy chọn hiện ra.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.321cff72d18a51c06dee2db7463868f3ca6619559a5d68b7795d70f4a8b3a683.vi.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.vi.png)
 
-1. Chọn **+ Create** trong menu điều hướng.
+1. Chọn **+ Create** từ menu điều hướng.
 
-1. Chọn **New workspace** trong menu điều hướng.
+1. Chọn **New workspace** từ menu điều hướng.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.9bd9208488fcf38226fc8d3cefffecb2cb14f414f6d8d982492c1bde8634e24a.vi.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.vi.png)
 
 1. Thực hiện các bước sau:
 
     - Chọn **Subscription** Azure của bạn.
     - Chọn **Resource group** để sử dụng (tạo mới nếu cần).
-    - Nhập **Workspace Name**. Phải là giá trị duy nhất.
+    - Nhập **Workspace Name**. Tên này phải là duy nhất.
     - Chọn **Region** bạn muốn sử dụng.
     - Chọn **Storage account** để sử dụng (tạo mới nếu cần).
     - Chọn **Key vault** để sử dụng (tạo mới nếu cần).
     - Chọn **Application insights** để sử dụng (tạo mới nếu cần).
     - Chọn **Container registry** để sử dụng (tạo mới nếu cần).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.b2ebbef59952cd17d16b1f82adc252bf7616f8638d451e3c6595ffefe44f2cfa.vi.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.vi.png)
 
 1. Chọn **Review + Create**.
 
@@ -76,25 +76,25 @@ Dưới đây là tổng quan về mẫu E2E này.
 
 ### Yêu cầu hạn mức GPU trong Azure Subscription
 
-Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* để tinh chỉnh, yêu cầu phải có hạn mức, và *Standard_E4s_v3* CPU để triển khai, không cần yêu cầu hạn mức.
+Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* để tinh chỉnh, điều này yêu cầu phải gửi yêu cầu hạn mức, và *Standard_E4s_v3* CPU để triển khai, không cần yêu cầu hạn mức.
 
 > [!NOTE]
 >
-> Chỉ các subscription Pay-As-You-Go (loại subscription tiêu chuẩn) mới đủ điều kiện cấp phát GPU; các subscription ưu đãi hiện không được hỗ trợ.
+> Chỉ các subscription loại Pay-As-You-Go (loại subscription tiêu chuẩn) mới đủ điều kiện cấp phát GPU; các subscription ưu đãi hiện chưa được hỗ trợ.
 >
-> Đối với người dùng subscription ưu đãi (như Visual Studio Enterprise Subscription) hoặc những ai muốn thử nhanh quy trình tinh chỉnh và triển khai, hướng dẫn này cũng cung cấp cách tinh chỉnh với bộ dữ liệu nhỏ dùng CPU. Tuy nhiên, kết quả tinh chỉnh sẽ tốt hơn nhiều khi dùng GPU với bộ dữ liệu lớn hơn.
+> Đối với những người dùng subscription ưu đãi (như Visual Studio Enterprise Subscription) hoặc muốn thử nhanh quy trình tinh chỉnh và triển khai, hướng dẫn này cũng cung cấp cách tinh chỉnh với bộ dữ liệu nhỏ sử dụng CPU. Tuy nhiên, cần lưu ý rằng kết quả tinh chỉnh sẽ tốt hơn nhiều khi sử dụng GPU với bộ dữ liệu lớn hơn.
 
 1. Truy cập [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Thực hiện các bước sau để yêu cầu hạn mức cho *Standard NCADSA100v4 Family*:
+1. Thực hiện các bước sau để yêu cầu hạn mức *Standard NCADSA100v4 Family*:
 
     - Chọn **Quota** từ tab bên trái.
     - Chọn **Virtual machine family** muốn sử dụng. Ví dụ, chọn **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, bao gồm GPU *Standard_NC24ads_A100_v4*.
-    - Chọn **Request quota** trong menu điều hướng.
+    - Chọn **Request quota** từ menu điều hướng.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.ddf063c7cda9799b8ef6fbde6c3c796201578fe9078feb1c624ed75c7705ad18.vi.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.vi.png)
 
-    - Trong trang Request quota, nhập **New cores limit** bạn muốn dùng. Ví dụ, 24.
+    - Trong trang Request quota, nhập **New cores limit** bạn muốn sử dụng. Ví dụ, 24.
     - Trong trang Request quota, chọn **Submit** để gửi yêu cầu hạn mức GPU.
 
 > [!NOTE]
@@ -102,24 +102,24 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
 
 ### Thêm phân quyền vai trò
 
-Để tinh chỉnh và triển khai mô hình, trước tiên bạn phải tạo một User Assigned Managed Identity (UAI) và gán quyền phù hợp. UAI này sẽ được dùng để xác thực trong quá trình triển khai.
+Để tinh chỉnh và triển khai mô hình, bạn cần tạo một User Assigned Managed Identity (UAI) và gán cho nó các quyền phù hợp. UAI này sẽ được sử dụng để xác thực trong quá trình triển khai.
 
 #### Tạo User Assigned Managed Identity (UAI)
 
 1. Gõ *managed identities* vào **thanh tìm kiếm** ở đầu trang portal và chọn **Managed Identities** trong các tùy chọn hiện ra.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.8bf5dc5a4fa3e852f897ec1a983e506c2bc7b7113d159598bf0adeb66d20a5c4.vi.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.vi.png)
 
 1. Chọn **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.025632b7b54fe323f7d38edabbae05dd23f4665d0731f7143719c27c32e7e84f.vi.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.vi.png)
 
 1. Thực hiện các bước sau:
 
     - Chọn **Subscription** Azure của bạn.
     - Chọn **Resource group** để sử dụng (tạo mới nếu cần).
     - Chọn **Region** bạn muốn sử dụng.
-    - Nhập **Name**. Phải là giá trị duy nhất.
+    - Nhập **Name**. Tên này phải là duy nhất.
 
 1. Chọn **Review + create**.
 
@@ -127,19 +127,19 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
 
 #### Thêm phân quyền vai trò Contributor cho Managed Identity
 
-1. Điều hướng đến Managed Identity bạn vừa tạo.
+1. Điều hướng đến tài nguyên Managed Identity bạn vừa tạo.
 
 1. Chọn **Azure role assignments** từ tab bên trái.
 
-1. Chọn **+ Add role assignment** trong menu điều hướng.
+1. Chọn **+Add role assignment** từ menu điều hướng.
 
 1. Trong trang Add role assignment, thực hiện các bước sau:
     - Chọn **Scope** là **Resource group**.
     - Chọn **Subscription** Azure của bạn.
-    - Chọn **Resource group** muốn sử dụng.
+    - Chọn **Resource group** để sử dụng.
     - Chọn **Role** là **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.8936866326c7cdc3b876f14657e03422cca9dbff8b193dd541a693ce34407b26.vi.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.vi.png)
 
 1. Chọn **Save**.
 
@@ -147,31 +147,31 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
 
 1. Gõ *storage accounts* vào **thanh tìm kiếm** ở đầu trang portal và chọn **Storage accounts** trong các tùy chọn hiện ra.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.83554a27ff3edb5099ee3fbf7f467b843dabcc0e0e5fbb829a341eab3469ffa5.vi.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.vi.png)
 
 1. Chọn tài khoản lưu trữ liên kết với Azure Machine Learning workspace bạn đã tạo. Ví dụ, *finetunephistorage*.
 
-1. Thực hiện các bước sau để đến trang Add role assignment:
+1. Thực hiện các bước sau để điều hướng đến trang Add role assignment:
 
-    - Điều hướng đến tài khoản lưu trữ Azure bạn đã tạo.
+    - Điều hướng đến tài khoản Azure Storage bạn đã tạo.
     - Chọn **Access Control (IAM)** từ tab bên trái.
-    - Chọn **+ Add** trong menu điều hướng.
-    - Chọn **Add role assignment** trong menu điều hướng.
+    - Chọn **+ Add** từ menu điều hướng.
+    - Chọn **Add role assignment** từ menu điều hướng.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.4fef55886792c7e860da4c5a808044e6f7067fb5694f3ed4819a5758c6cc574e.vi.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.vi.png)
 
 1. Trong trang Add role assignment, thực hiện các bước sau:
 
     - Trong trang Role, gõ *Storage Blob Data Reader* vào **thanh tìm kiếm** và chọn **Storage Blob Data Reader** trong các tùy chọn hiện ra.
-    - Chọn **Next**.
+    - Trong trang Role, chọn **Next**.
     - Trong trang Members, chọn **Assign access to** là **Managed identity**.
-    - Chọn **+ Select members**.
+    - Trong trang Members, chọn **+ Select members**.
     - Trong trang Select managed identities, chọn **Subscription** Azure của bạn.
-    - Chọn **Managed identity** là **Manage Identity**.
-    - Chọn Manage Identity bạn đã tạo. Ví dụ, *finetunephi-managedidentity*.
-    - Chọn **Select**.
+    - Trong trang Select managed identities, chọn **Managed identity** là **Manage Identity**.
+    - Trong trang Select managed identities, chọn Managed Identity bạn đã tạo. Ví dụ, *finetunephi-managedidentity*.
+    - Trong trang Select managed identities, chọn **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.fffa802e4e6ce2de4fe50e64d37d3f2ef268c2ee16f30ec6f92bd1829b5f19c1.vi.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.vi.png)
 
 1. Chọn **Review + assign**.
 
@@ -179,35 +179,35 @@ Trong mẫu E2E này, bạn sẽ sử dụng *Standard_NC24ads_A100_v4 GPU* đ�
 
 1. Gõ *container registries* vào **thanh tìm kiếm** ở đầu trang portal và chọn **Container registries** trong các tùy chọn hiện ra.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.62e58403d73d16a0cc715571c8a7b4105a0e97b1422aa5f26106aff1c0e8a47d.vi.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.vi.png)
 
 1. Chọn container registry liên kết với Azure Machine Learning workspace. Ví dụ, *finetunephicontainerregistries*
 
-1. Thực hiện các bước sau để đến trang Add role assignment:
+1. Thực hiện các bước sau để điều hướng đến trang Add role assignment:
 
     - Chọn **Access Control (IAM)** từ tab bên trái.
-    - Chọn **+ Add** trong menu điều hướng.
-    - Chọn **Add role assignment** trong menu điều hướng.
+    - Chọn **+ Add** từ menu điều hướng.
+    - Chọn **Add role assignment** từ menu điều hướng.
 
 1. Trong trang Add role assignment, thực hiện các bước sau:
 
     - Trong trang Role, gõ *AcrPull* vào **thanh tìm kiếm** và chọn **AcrPull** trong các tùy chọn hiện ra.
-    - Chọn **Next**.
+    - Trong trang Role, chọn **Next**.
     - Trong trang Members, chọn **Assign access to** là **Managed identity**.
-    - Chọn **+ Select members**.
+    - Trong trang Members, chọn **+ Select members**.
     - Trong trang Select managed identities, chọn **Subscription** Azure của bạn.
-    - Chọn **Managed identity** là **Manage Identity**.
-    - Chọn Manage Identity bạn đã tạo. Ví dụ, *finetunephi-managedidentity*.
-    - Chọn **Select**.
+    - Trong trang Select managed identities, chọn **Managed identity** là **Manage Identity**.
+    - Trong trang Select managed identities, chọn Managed Identity bạn đã tạo. Ví dụ, *finetunephi-managedidentity*.
+    - Trong trang Select managed identities, chọn **Select**.
     - Chọn **Review + assign**.
 
 ### Thiết lập dự án
 
-Bây giờ, bạn sẽ tạo một thư mục làm việc và thiết lập môi trường ảo để phát triển chương trình tương tác với người dùng và sử dụng lịch sử trò chuyện lưu trữ từ Azure Cosmos DB làm cơ sở trả lời.
+Bây giờ, bạn sẽ tạo một thư mục làm việc và thiết lập môi trường ảo để phát triển chương trình tương tác với người dùng và sử dụng lịch sử trò chuyện được lưu trữ từ Azure Cosmos DB để hỗ trợ phản hồi.
 
 #### Tạo thư mục làm việc
 
-1. Mở cửa sổ terminal và gõ lệnh sau để tạo thư mục tên *finetune-phi* trong đường dẫn mặc định.
+1. Mở cửa sổ terminal và gõ lệnh sau để tạo thư mục có tên *finetune-phi* trong đường dẫn mặc định.
 
     ```console
     mkdir finetune-phi
@@ -221,7 +221,7 @@ Bây giờ, bạn sẽ tạo một thư mục làm việc và thiết lập môi
 
 #### Tạo môi trường ảo
 
-1. Gõ lệnh sau trong terminal để tạo môi trường ảo tên *.venv*.
+1. Gõ lệnh sau trong terminal để tạo môi trường ảo có tên *.venv*.
 
     ```console
     python -m venv .venv
@@ -232,11 +232,9 @@ Bây giờ, bạn sẽ tạo một thư mục làm việc và thiết lập môi
     ```console
     .venv\Scripts\activate.bat
     ```
-
 > [!NOTE]
 >
-> Nếu thành công, bạn sẽ thấy *(.venv)* hiển thị trước dấu nhắc lệnh.
-
+> Nếu thành công, bạn sẽ thấy *(.venv)* xuất hiện trước dấu nhắc lệnh.
 #### Cài đặt các gói cần thiết
 
 1. Gõ các lệnh sau trong terminal để cài đặt các gói cần thiết.
@@ -250,20 +248,20 @@ Bây giờ, bạn sẽ tạo một thư mục làm việc và thiết lập môi
     pip install promptflow==1.12.0
     ```
 
-#### Tạo các file dự án
+#### Tạo các tệp dự án
 
-Trong bài tập này, bạn sẽ tạo các file cần thiết cho dự án. Bao gồm các script để tải bộ dữ liệu, thiết lập môi trường Azure Machine Learning, tinh chỉnh mô hình Phi-3, và triển khai mô hình đã tinh chỉnh. Bạn cũng sẽ tạo file *conda.yml* để thiết lập môi trường tinh chỉnh.
+Trong bài tập này, bạn sẽ tạo các tệp cần thiết cho dự án của chúng ta. Các tệp này bao gồm các script để tải bộ dữ liệu, thiết lập môi trường Azure Machine Learning, tinh chỉnh mô hình Phi-3, và triển khai mô hình đã được tinh chỉnh. Bạn cũng sẽ tạo một tệp *conda.yml* để thiết lập môi trường tinh chỉnh.
 
 Trong bài tập này, bạn sẽ:
 
-- Tạo file *download_dataset.py* để tải bộ dữ liệu.
-- Tạo file *setup_ml.py* để thiết lập môi trường Azure Machine Learning.
-- Tạo file *fine_tune.py* trong thư mục *finetuning_dir* để tinh chỉnh mô hình Phi-3 với bộ dữ liệu.
-- Tạo file *conda.yml* để thiết lập môi trường tinh chỉnh.
-- Tạo file *deploy_model.py* để triển khai mô hình đã tinh chỉnh.
-- Tạo file *integrate_with_promptflow.py* để tích hợp mô hình đã tinh chỉnh và chạy mô hình với Prompt flow.
-- Tạo file flow.dag.yml để thiết lập cấu trúc workflow cho Prompt flow.
-- Tạo file *config.py* để nhập thông tin Azure.
+- Tạo tệp *download_dataset.py* để tải bộ dữ liệu.
+- Tạo tệp *setup_ml.py* để thiết lập môi trường Azure Machine Learning.
+- Tạo tệp *fine_tune.py* trong thư mục *finetuning_dir* để tinh chỉnh mô hình Phi-3 sử dụng bộ dữ liệu.
+- Tạo tệp *conda.yml* để thiết lập môi trường tinh chỉnh.
+- Tạo tệp *deploy_model.py* để triển khai mô hình đã được tinh chỉnh.
+- Tạo tệp *integrate_with_promptflow.py* để tích hợp mô hình đã tinh chỉnh và thực thi mô hình bằng Prompt flow.
+- Tạo tệp flow.dag.yml để thiết lập cấu trúc workflow cho Prompt flow.
+- Tạo tệp *config.py* để nhập thông tin Azure.
 
 > [!NOTE]
 >
@@ -289,27 +287,27 @@ Trong bài tập này, bạn sẽ:
 
 1. Chọn **Open Folder**.
 
-1. Chọn thư mục *finetune-phi* bạn đã tạo, nằm ở *C:\Users\yourUserName\finetune-phi*.
+1. Chọn thư mục *finetune-phi* mà bạn đã tạo, nằm ở *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1f7f0f79e5d4d62e546e906e1ce5a480cd98d06062ce292b7b99c6cfcd434fdf.vi.png)
+    ![Mở thư mục dự án.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.vi.png)
 
-1. Trong khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New File** để tạo file mới tên *download_dataset.py*.
+1. Ở khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New File** để tạo tệp mới tên *download_dataset.py*.
 
-1. Trong khung bên trái, nhấp chuột phải và chọn **New File** để tạo file mới tên *setup_ml.py*.
+1. Ở khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New File** để tạo tệp mới tên *setup_ml.py*.
 
-1. Trong khung bên trái, nhấp chuột phải và chọn **New File** để tạo file mới tên *deploy_model.py*.
+1. Ở khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New File** để tạo tệp mới tên *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.40698c2e0415929e7b6dc2b30925677e413f965bac4134d3aefa0b44d443deaf.vi.png)
+    ![Tạo tệp mới.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.vi.png)
 
-1. Trong khung bên trái, nhấp chuột phải và chọn **New Folder** để tạo thư mục mới tên *finetuning_dir*.
+1. Ở khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New Folder** để tạo thư mục mới tên *finetuning_dir*.
 
-1. Trong thư mục *finetuning_dir*, tạo file mới tên *fine_tune.py*.
+1. Trong thư mục *finetuning_dir*, tạo tệp mới tên *fine_tune.py*.
 
-#### Tạo và cấu hình file *conda.yml*
+#### Tạo và cấu hình tệp *conda.yml*
 
-1. Trong khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New File** để tạo file mới tên *conda.yml*.
+1. Ở khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New File** để tạo tệp mới tên *conda.yml*.
 
-1. Thêm đoạn mã sau vào file *conda.yml* để thiết lập môi trường tinh chỉnh cho mô hình Phi-3.
+1. Thêm đoạn mã sau vào tệp *conda.yml* để thiết lập môi trường tinh chỉnh cho mô hình Phi-3.
 
     ```yml
     name: phi-3-training-env
@@ -335,11 +333,11 @@ Trong bài tập này, bạn sẽ:
           - azureml-mlflow==1.57.0
     ```
 
-#### Tạo và cấu hình file *config.py*
+#### Tạo và cấu hình tệp *config.py*
 
-1. Trong khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New File** để tạo file mới tên *config.py*.
+1. Ở khung bên trái của Visual Studio Code, nhấp chuột phải và chọn **New File** để tạo tệp mới tên *config.py*.
 
-1. Thêm đoạn mã sau vào file *config.py* để nhập thông tin Azure của bạn.
+1. Thêm đoạn mã sau vào tệp *config.py* để nhập thông tin Azure của bạn.
 
     ```python
     # Azure settings
@@ -369,41 +367,42 @@ Trong bài tập này, bạn sẽ:
 
 #### Thêm biến môi trường Azure
 
-1. Thực hiện các bước sau để thêm Subscription ID Azure:
+1. Thực hiện các bước sau để thêm Azure Subscription ID:
 
     - Gõ *subscriptions* vào **thanh tìm kiếm** ở đầu trang portal và chọn **Subscriptions** trong các tùy chọn hiện ra.
-    - Chọn Subscription Azure bạn đang sử dụng.
-    - Sao chép và dán Subscription ID vào file *config.py*.
-![Tìm subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.vi.png)
+    - Chọn Azure Subscription bạn đang sử dụng.
+    - Sao chép và dán Subscription ID vào tệp *config.py*.
 
-1. Thực hiện các bước sau để thêm Tên Azure Workspace:
+    ![Tìm subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.vi.png)
 
-    - Điều hướng đến tài nguyên Azure Machine Learning mà bạn đã tạo.
-    - Sao chép và dán tên tài khoản của bạn vào file *config.py*.
-
-    ![Tìm tên Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.vi.png)
-
-1. Thực hiện các bước sau để thêm Tên Azure Resource Group:
+1. Thực hiện các bước sau để thêm tên Azure Workspace:
 
     - Điều hướng đến tài nguyên Azure Machine Learning mà bạn đã tạo.
-    - Sao chép và dán Tên Azure Resource Group của bạn vào file *config.py*.
+    - Sao chép và dán tên tài khoản của bạn vào tệp *config.py*.
 
-    ![Tìm tên resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.vi.png)
+    ![Tìm tên Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.vi.png)
 
-2. Thực hiện các bước sau để thêm tên Azure Managed Identity
+1. Thực hiện các bước sau để thêm tên Azure Resource Group:
+
+    - Điều hướng đến tài nguyên Azure Machine Learning mà bạn đã tạo.
+    - Sao chép và dán tên Azure Resource Group vào tệp *config.py*.
+
+    ![Tìm tên resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.vi.png)
+
+2. Thực hiện các bước sau để thêm tên Azure Managed Identity:
 
     - Điều hướng đến tài nguyên Managed Identities mà bạn đã tạo.
-    - Sao chép và dán tên Azure Managed Identity của bạn vào file *config.py*.
+    - Sao chép và dán tên Azure Managed Identity vào tệp *config.py*.
 
-    ![Tìm UAI.](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.vi.png)
+    ![Tìm UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.vi.png)
 
-### Chuẩn bị dataset để fine-tune
+### Chuẩn bị bộ dữ liệu cho việc tinh chỉnh
 
-Trong bài tập này, bạn sẽ chạy file *download_dataset.py* để tải về bộ dữ liệu *ULTRACHAT_200k* về môi trường cục bộ. Sau đó, bạn sẽ dùng bộ dữ liệu này để fine-tune mô hình Phi-3 trên Azure Machine Learning.
+Trong bài tập này, bạn sẽ chạy tệp *download_dataset.py* để tải bộ dữ liệu *ULTRACHAT_200k* về môi trường cục bộ. Sau đó, bạn sẽ sử dụng bộ dữ liệu này để tinh chỉnh mô hình Phi-3 trong Azure Machine Learning.
 
-#### Tải dataset bằng *download_dataset.py*
+#### Tải bộ dữ liệu bằng *download_dataset.py*
 
-1. Mở file *download_dataset.py* trong Visual Studio Code.
+1. Mở tệp *download_dataset.py* trong Visual Studio Code.
 
 1. Thêm đoạn mã sau vào *download_dataset.py*.
 
@@ -472,34 +471,34 @@ Trong bài tập này, bạn sẽ chạy file *download_dataset.py* để tải 
 
 > [!TIP]
 >
-> **Hướng dẫn fine-tune với dataset nhỏ trên CPU**
+> **Hướng dẫn tinh chỉnh với bộ dữ liệu tối thiểu sử dụng CPU**
 >
-> Nếu bạn muốn dùng CPU để fine-tune, cách này phù hợp với những người có subscription ưu đãi (như Visual Studio Enterprise Subscription) hoặc để thử nhanh quá trình fine-tune và triển khai.
+> Nếu bạn muốn sử dụng CPU để tinh chỉnh, cách này phù hợp với những người có đăng ký ưu đãi (như Visual Studio Enterprise Subscription) hoặc để nhanh chóng thử nghiệm quá trình tinh chỉnh và triển khai.
 >
-> Thay `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
+> Thay `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` bằng `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. Gõ lệnh sau trong terminal để chạy script và tải dataset về môi trường cục bộ.
+1. Gõ lệnh sau trong terminal để chạy script và tải bộ dữ liệu về môi trường cục bộ.
 
     ```console
     python download_data.py
     ```
 
-1. Kiểm tra xem dataset đã được lưu thành công trong thư mục *finetune-phi/data* trên máy của bạn.
+1. Kiểm tra xem bộ dữ liệu đã được lưu thành công trong thư mục *finetune-phi/data* trên máy bạn chưa.
 
 > [!NOTE]
 >
-> **Kích thước dataset và thời gian fine-tune**
+> **Kích thước bộ dữ liệu và thời gian tinh chỉnh**
 >
-> Trong ví dụ E2E này, bạn chỉ dùng 1% dataset (`train_sft[:1%]`). Điều này giảm đáng kể lượng dữ liệu, giúp tăng tốc quá trình upload và fine-tune. Bạn có thể điều chỉnh tỉ lệ phần trăm để cân bằng giữa thời gian huấn luyện và hiệu năng mô hình. Dùng tập con nhỏ hơn giúp quá trình fine-tune ngắn hơn, dễ quản lý hơn cho ví dụ E2E.
+> Trong ví dụ E2E này, bạn chỉ sử dụng 1% bộ dữ liệu (`train_sft[:1%]`). Điều này giảm đáng kể lượng dữ liệu, giúp tăng tốc quá trình tải lên và tinh chỉnh. Bạn có thể điều chỉnh tỷ lệ phần trăm để cân bằng giữa thời gian huấn luyện và hiệu suất mô hình. Sử dụng tập con nhỏ hơn giúp giảm thời gian tinh chỉnh, làm cho quá trình dễ quản lý hơn trong ví dụ E2E.
 
-## Kịch bản 2: Fine-tune mô hình Phi-3 và triển khai trong Azure Machine Learning Studio
+## Kịch bản 2: Tinh chỉnh mô hình Phi-3 và Triển khai trong Azure Machine Learning Studio
 
 ### Thiết lập Azure CLI
 
-Bạn cần thiết lập Azure CLI để xác thực môi trường. Azure CLI cho phép bạn quản lý tài nguyên Azure trực tiếp từ dòng lệnh và cung cấp thông tin xác thực cần thiết để Azure Machine Learning truy cập tài nguyên. Để bắt đầu, hãy cài đặt [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+Bạn cần thiết lập Azure CLI để xác thực môi trường. Azure CLI cho phép bạn quản lý tài nguyên Azure trực tiếp từ dòng lệnh và cung cấp thông tin xác thực cần thiết để Azure Machine Learning truy cập các tài nguyên này. Để bắt đầu, hãy cài đặt [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
-1. Mở cửa sổ terminal và gõ lệnh sau để đăng nhập vào tài khoản Azure.
+1. Mở cửa sổ terminal và gõ lệnh sau để đăng nhập vào tài khoản Azure của bạn.
 
     ```console
     az login
@@ -507,28 +506,28 @@ Bạn cần thiết lập Azure CLI để xác thực môi trường. Azure CLI 
 
 1. Chọn tài khoản Azure bạn muốn sử dụng.
 
-1. Chọn subscription Azure bạn muốn dùng.
+1. Chọn subscription Azure bạn muốn sử dụng.
 
-    ![Tìm tên resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.vi.png)
+    ![Tìm tên resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.vi.png)
 
 > [!TIP]
 >
-> Nếu bạn gặp khó khăn khi đăng nhập Azure, hãy thử dùng mã thiết bị. Mở terminal và gõ lệnh sau để đăng nhập:
+> Nếu bạn gặp khó khăn khi đăng nhập Azure, hãy thử sử dụng mã thiết bị. Mở terminal và gõ lệnh sau để đăng nhập vào tài khoản Azure:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### Fine-tune mô hình Phi-3
+### Tinh chỉnh mô hình Phi-3
 
-Trong bài tập này, bạn sẽ fine-tune mô hình Phi-3 sử dụng dataset đã cung cấp. Trước tiên, bạn sẽ định nghĩa quá trình fine-tune trong file *fine_tune.py*. Sau đó, cấu hình môi trường Azure Machine Learning và khởi chạy quá trình fine-tune bằng cách chạy file *setup_ml.py*. Script này đảm bảo quá trình fine-tune diễn ra trong môi trường Azure Machine Learning.
+Trong bài tập này, bạn sẽ tinh chỉnh mô hình Phi-3 sử dụng bộ dữ liệu đã cung cấp. Đầu tiên, bạn sẽ định nghĩa quá trình tinh chỉnh trong tệp *fine_tune.py*. Sau đó, bạn sẽ cấu hình môi trường Azure Machine Learning và khởi chạy quá trình tinh chỉnh bằng cách chạy tệp *setup_ml.py*. Script này đảm bảo quá trình tinh chỉnh diễn ra trong môi trường Azure Machine Learning.
 
-Chạy *setup_ml.py* sẽ bắt đầu quá trình fine-tune trong môi trường Azure Machine Learning.
+Bằng cách chạy *setup_ml.py*, bạn sẽ thực thi quá trình tinh chỉnh trong môi trường Azure Machine Learning.
 
-#### Thêm mã vào file *fine_tune.py*
+#### Thêm mã vào tệp *fine_tune.py*
 
-1. Điều hướng đến thư mục *finetuning_dir* và mở file *fine_tune.py* trong Visual Studio Code.
+1. Điều hướng đến thư mục *finetuning_dir* và mở tệp *fine_tune.py* trong Visual Studio Code.
 
 1. Thêm đoạn mã sau vào *fine_tune.py*.
 
@@ -683,19 +682,19 @@ Chạy *setup_ml.py* sẽ bắt đầu quá trình fine-tune trong môi trườn
 
     ```
 
-1. Lưu và đóng file *fine_tune.py*.
+1. Lưu và đóng tệp *fine_tune.py*.
 
 > [!TIP]
-> **Bạn có thể fine-tune mô hình Phi-3.5**
+> **Bạn có thể tinh chỉnh mô hình Phi-3.5**
 >
-> Trong file *fine_tune.py*, bạn có thể thay đổi trường `pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name` trong script của bạn.
+> Trong tệp *fine_tune.py*, bạn có thể thay đổi `pretrained_model_name` từ `"microsoft/Phi-3-mini-4k-instruct"` sang bất kỳ mô hình nào bạn muốn tinh chỉnh. Ví dụ, nếu bạn đổi thành `"microsoft/Phi-3.5-mini-instruct"`, bạn sẽ sử dụng mô hình Phi-3.5-mini-instruct để tinh chỉnh. Để tìm và sử dụng tên mô hình bạn thích, hãy truy cập [Hugging Face](https://huggingface.co/), tìm kiếm mô hình bạn quan tâm, rồi sao chép và dán tên đó vào trường `pretrained_model_name` trong script của bạn.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.":::
+> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Tinh chỉnh Phi-3.5.":::
 >
 
-#### Thêm mã vào file *setup_ml.py*
+#### Thêm mã vào tệp *setup_ml.py*
 
-1. Mở file *setup_ml.py* trong Visual Studio Code.
+1. Mở tệp *setup_ml.py* trong Visual Studio Code.
 
 1. Thêm đoạn mã sau vào *setup_ml.py*.
 
@@ -824,7 +823,7 @@ Chạy *setup_ml.py* sẽ bắt đầu quá trình fine-tune trong môi trườn
 
     ```
 
-1. Thay thế `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `LOCATION` bằng thông tin cụ thể của bạn.
+1. Thay thế `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, và `LOCATION` bằng thông tin cụ thể của bạn.
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -836,13 +835,13 @@ Chạy *setup_ml.py* sẽ bắt đầu quá trình fine-tune trong môi trườn
 
 > [!TIP]
 >
-> **Hướng dẫn fine-tune với dataset nhỏ trên CPU**
+> **Hướng dẫn tinh chỉnh với bộ dữ liệu tối thiểu sử dụng CPU**
 >
-> Nếu bạn muốn dùng CPU để fine-tune, cách này phù hợp với những người có subscription ưu đãi (như Visual Studio Enterprise Subscription) hoặc để thử nhanh quá trình fine-tune và triển khai.
+> Nếu bạn muốn sử dụng CPU để tinh chỉnh, cách này phù hợp với những người có đăng ký ưu đãi (như Visual Studio Enterprise Subscription) hoặc để nhanh chóng thử nghiệm quá trình tinh chỉnh và triển khai.
 >
-> 1. Mở file *setup_ml*.
-> 1. Thay thế `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
-> 1. Replace `LOCATION` bằng thông tin cụ thể của bạn.
+> 1. Mở tệp *setup_ml*.
+> 1. Thay thế `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, và `DOCKER_IMAGE_NAME` bằng các giá trị sau. Nếu bạn không có quyền truy cập *Standard_E16s_v3*, bạn có thể dùng một instance CPU tương đương hoặc yêu cầu tăng hạn mức mới.
+> 1. Thay thế `LOCATION` bằng thông tin cụ thể của bạn.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -853,35 +852,35 @@ Chạy *setup_ml.py* sẽ bắt đầu quá trình fine-tune trong môi trườn
 >    ```
 >
 
-1. Gõ lệnh sau để chạy script *setup_ml.py* và bắt đầu quá trình fine-tune trong Azure Machine Learning.
+1. Gõ lệnh sau để chạy script *setup_ml.py* và bắt đầu quá trình tinh chỉnh trong Azure Machine Learning.
 
     ```python
     python setup_ml.py
     ```
 
-1. Trong bài tập này, bạn đã fine-tune thành công mô hình Phi-3 sử dụng Azure Machine Learning. Bằng cách chạy script *setup_ml.py*, bạn đã thiết lập môi trường Azure Machine Learning và khởi động quá trình fine-tune được định nghĩa trong file *fine_tune.py*. Lưu ý rằng quá trình fine-tune có thể mất khá nhiều thời gian. Sau khi chạy `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
+1. Trong bài tập này, bạn đã tinh chỉnh thành công mô hình Phi-3 sử dụng Azure Machine Learning. Bằng cách chạy script *setup_ml.py*, bạn đã thiết lập môi trường Azure Machine Learning và khởi chạy quá trình tinh chỉnh được định nghĩa trong tệp *fine_tune.py*. Lưu ý rằng quá trình tinh chỉnh có thể mất khá nhiều thời gian. Sau khi chạy lệnh `python setup_ml.py`, bạn cần chờ cho quá trình hoàn tất. Bạn có thể theo dõi trạng thái công việc tinh chỉnh bằng cách truy cập liên kết được cung cấp trong terminal đến portal Azure Machine Learning.
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.a28c8552f7b7bc088ccd67dd0c522f7fc1944048d3554bb1b24f95a1169ad538.vi.png)
+    ![Xem công việc tinh chỉnh.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.vi.png)
 
-### Deploy the fine-tuned model
+### Triển khai mô hình đã tinh chỉnh
 
-To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+Để tích hợp mô hình Phi-3 đã tinh chỉnh với Prompt Flow, bạn cần triển khai mô hình để có thể truy cập cho việc suy luận thời gian thực. Quá trình này bao gồm đăng ký mô hình, tạo endpoint trực tuyến và triển khai mô hình.
 
-#### Set the model name, endpoint name, and deployment name for deployment
+#### Thiết lập tên mô hình, tên endpoint và tên triển khai cho việc triển khai
 
-1. Open *config.py* file.
+1. Mở tệp *config.py*.
 
-1. Replace `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` with the desired name for your model.
+1. Thay thế `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` bằng tên mô hình bạn muốn đặt.
 
-1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
+1. Thay thế `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` bằng tên endpoint bạn muốn đặt.
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` với tên bạn muốn cho deployment.
+1. Thay thế `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` bằng tên triển khai bạn muốn đặt.
 
-#### Thêm mã vào file *deploy_model.py*
+#### Thêm mã vào tệp *deploy_model.py*
 
-Chạy file *deploy_model.py* sẽ tự động hóa toàn bộ quá trình triển khai. Nó đăng ký mô hình, tạo endpoint và thực hiện triển khai dựa trên các thiết lập trong file config.py, bao gồm tên mô hình, tên endpoint và tên deployment.
+Chạy tệp *deploy_model.py* sẽ tự động hóa toàn bộ quá trình triển khai. Nó đăng ký mô hình, tạo endpoint và thực hiện triển khai dựa trên các thiết lập trong tệp config.py, bao gồm tên mô hình, tên endpoint và tên triển khai.
 
-1. Mở file *deploy_model.py* trong Visual Studio Code.
+1. Mở tệp *deploy_model.py* trong Visual Studio Code.
 
 1. Thêm đoạn mã sau vào *deploy_model.py*.
 
@@ -1051,20 +1050,21 @@ Chạy file *deploy_model.py* sẽ tự động hóa toàn bộ quá trình tri�
 
 1. Thực hiện các bước sau để lấy `JOB_NAME`:
 
-    - Navigate to Azure Machine Learning resource that you created.
-    - Select **Studio web URL** to open the Azure Machine Learning workspace.
-    - Select **Jobs** from the left side tab.
-    - Select the experiment for fine-tuning. For example, *finetunephi*.
-    - Select the job that you created.
-    - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+    - Điều hướng đến tài nguyên Azure Machine Learning mà bạn đã tạo.
+    - Chọn **Studio web URL** để mở workspace Azure Machine Learning.
+    - Chọn **Jobs** từ tab bên trái.
+    - Chọn experiment dùng để tinh chỉnh, ví dụ *finetunephi*.
+    - Chọn công việc bạn đã tạo.
+- Sao chép và dán tên công việc của bạn vào `JOB_NAME = "your-job-name"` trong file *deploy_model.py*.
 
-1. Replace `COMPUTE_INSTANCE_TYPE` với thông tin cụ thể của bạn.
+1. Thay thế `COMPUTE_INSTANCE_TYPE` bằng thông tin cụ thể của bạn.
 
 1. Gõ lệnh sau để chạy script *deploy_model.py* và bắt đầu quá trình triển khai trong Azure Machine Learning.
 
     ```python
     python deploy_model.py
     ```
+
 
 > [!WARNING]
 > Để tránh phát sinh chi phí không mong muốn, hãy chắc chắn xóa endpoint đã tạo trong workspace Azure Machine Learning.
@@ -1078,32 +1078,32 @@ Chạy file *deploy_model.py* sẽ tự động hóa toàn bộ quá trình tri�
 
 1. Chọn **Studio web URL** để mở workspace Azure Machine Learning.
 
-1. Chọn **Endpoints** ở tab bên trái.
+1. Chọn **Endpoints** từ tab bên trái.
 
-    ![Chọn endpoints.](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.vi.png)
+    ![Chọn endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.vi.png)
 
 2. Chọn endpoint mà bạn đã tạo.
 
-    ![Chọn endpoint bạn đã tạo.](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.vi.png)
+    ![Chọn endpoint bạn đã tạo.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.vi.png)
 
-3. Tại trang này, bạn có thể quản lý các endpoint đã tạo trong quá trình triển khai.
+3. Tại trang này, bạn có thể quản lý các endpoint được tạo trong quá trình triển khai.
 
 ## Kịch bản 3: Tích hợp với Prompt flow và trò chuyện với mô hình tùy chỉnh của bạn
 
 ### Tích hợp mô hình Phi-3 tùy chỉnh với Prompt flow
 
-Sau khi triển khai thành công mô hình fine-tune, bạn có thể tích hợp nó với Prompt flow để sử dụng mô hình trong các ứng dụng thời gian thực, hỗ trợ nhiều tác vụ tương tác với mô hình Phi-3 tùy chỉnh của bạn.
+Sau khi triển khai thành công mô hình fine-tuned, bạn có thể tích hợp nó với Prompt flow để sử dụng mô hình trong các ứng dụng thời gian thực, cho phép thực hiện nhiều tác vụ tương tác với mô hình Phi-3 tùy chỉnh của bạn.
 
-#### Thiết lập api key và endpoint uri của mô hình Phi-3 fine-tune
+#### Thiết lập api key và endpoint uri của mô hình Phi-3 fine-tuned
 
 1. Điều hướng đến workspace Azure Machine Learning mà bạn đã tạo.
-1. Chọn **Endpoints** ở tab bên trái.
+1. Chọn **Endpoints** từ tab bên trái.
 1. Chọn endpoint mà bạn đã tạo.
-1. Chọn **Consume** trong menu điều hướng.
-1. Sao chép và dán **REST endpoint** vào file *config.py*, thay thế `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` bằng **Primary key** của bạn.
+1. Chọn **Consume** từ menu điều hướng.
+1. Sao chép và dán **REST endpoint** vào file *config.py*, thay thế `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` bằng **REST endpoint** của bạn.
+1. Sao chép và dán **Primary key** vào file *config.py*, thay thế `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` bằng **Primary key** của bạn.
 
-    ![Sao chép api key và endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.vi.png)
+    ![Sao chép api key và endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.vi.png)
 
 #### Thêm mã vào file *flow.dag.yml*
 
@@ -1210,9 +1210,9 @@ Sau khi triển khai thành công mô hình fine-tune, bạn có thể tích h�
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. Đây là ví dụ kết quả: Bây giờ bạn có thể trò chuyện với mô hình Phi-3 tùy chỉnh của mình. Khuyến nghị đặt câu hỏi dựa trên dữ liệu đã dùng để fine-tune.
+1. Đây là ví dụ kết quả: Bây giờ bạn có thể trò chuyện với mô hình Phi-3 tùy chỉnh của mình. Nên đặt câu hỏi dựa trên dữ liệu đã dùng để fine-tune.
 
-    ![Ví dụ prompt flow.](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.vi.png)
+    ![Ví dụ Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.vi.png)
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn chính xác và có thẩm quyền. Đối với các thông tin quan trọng, nên sử dụng dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

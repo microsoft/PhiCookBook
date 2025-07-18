@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-07T10:16:47+00:00",
+  "translation_date": "2025-07-16T16:51:02+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "es"
 }
@@ -19,7 +19,7 @@ Por ejemplo, si tienes una carpeta de imágenes dentro del espacio de trabajo de
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> [!TIP] Muchas extensiones populares usan animaciones. ¡Es una excelente manera de mostrar tu extensión! Recomendamos animaciones cortas y enfocadas para facilitar su seguimiento.
+> TIP: Muchas extensiones populares usan animaciones. ¡Es una excelente manera de mostrar tu extensión! Recomendamos animaciones cortas y enfocadas para facilitar su seguimiento.
 
 ## Requirements
 
@@ -33,12 +33,12 @@ Por ejemplo:
 
 Esta extensión contribuye con las siguientes configuraciones:
 
-* `myExtension.enable`: habilita o deshabilita esta extensión.
-* `myExtension.thing`: configúralo en `blah` para hacer algo.
+* `myExtension.enable`: Habilita o deshabilita esta extensión.
+* `myExtension.thing`: Configura a `blah` para hacer algo.
 
 ## Known Issues
 
-Señalar problemas conocidos puede ayudar a reducir que los usuarios abran repetidamente los mismos problemas sobre tu extensión.
+Indicar problemas conocidos puede ayudar a reducir que los usuarios abran repetidamente los mismos reportes.
 
 ## Release Notes
 
@@ -60,15 +60,15 @@ Se añadieron las funcionalidades X, Y y Z.
 
 ## Following extension guidelines
 
-Asegúrate de haber leído las pautas de extensión y seguir las mejores prácticas para crear extensiones.
+Asegúrate de haber leído las directrices para extensiones y seguir las mejores prácticas para crear extensiones.
 
 * [Extensión Guidelines](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Puedes usar Visual Studio Code para escribir tu README. Aquí tienes algunos atajos útiles del editor:
+Puedes usar Visual Studio Code para redactar tu README. Aquí tienes algunos atajos útiles del editor:
 
-* Dividir el editor (`Cmd+\` en macOS o `Ctrl+\` en Windows y Linux).
+* Dividir editor (`Cmd+\` en macOS o `Ctrl+\` en Windows y Linux).
 * Alternar vista previa (`Shift+Cmd+V` en macOS o `Shift+Ctrl+V` en Windows y Linux).
 * Presiona `Ctrl+Space` (Windows, Linux, macOS) para ver la lista de fragmentos de código Markdown.
 
@@ -80,4 +80,4 @@ Puedes usar Visual Studio Code para escribir tu README. Aquí tienes algunos ata
 **¡Disfrútalo!**
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.

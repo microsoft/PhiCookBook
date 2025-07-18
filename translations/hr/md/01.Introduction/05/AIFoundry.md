@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-05-09T15:04:58+00:00",
+  "translation_date": "2025-07-16T22:34:12+00:00",
   "source_file": "md/01.Introduction/05/AIFoundry.md",
   "language_code": "hr"
 }
 -->
 # **Korištenje Azure AI Foundry za evaluaciju**
 
-![aistudo](../../../../../translated_images/AIFoundry.61da8c74bccc0241ce9a4cb53a170912245871de9235043afcb796ccbc076fdc.hr.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.hr.png)
 
-Kako evaluirati svoju generativnu AI aplikaciju koristeći [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Bilo da procjenjujete jednokratne ili višekratne razgovore, Azure AI Foundry pruža alate za ocjenu performansi i sigurnosti modela.
+Kako evaluirati svoju generativnu AI aplikaciju koristeći [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Bilo da procjenjujete jednokratne ili višekratne razgovore, Azure AI Foundry nudi alate za procjenu performansi i sigurnosti modela.
 
-![aistudo](../../../../../translated_images/AIPortfolio.5aaa2b25e9157624a4542fe041d66a96a1c1ec6007e4e5aadd926c6ec8ce18b3.hr.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.hr.png)
 
 ## Kako evaluirati generativne AI aplikacije s Azure AI Foundry
 Za detaljnije upute pogledajte [Azure AI Foundry dokumentaciju](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
@@ -26,30 +26,30 @@ Evo koraka za početak:
 
 - Testni skup podataka u CSV ili JSON formatu.
 - Implementirani generativni AI model (kao što su Phi-3, GPT 3.5, GPT 4 ili Davinci modeli).
-- Runtime okruženje s računalnim instancom za pokretanje evaluacije.
+- Runtime s računalnim instancom za izvođenje evaluacije.
 
 ## Ugrađene metrike evaluacije
 
-Azure AI Foundry omogućuje evaluaciju kako jednokratnih tako i složenih višekratnih razgovora.  
-Za Retrieval Augmented Generation (RAG) scenarije, gdje je model temeljen na specifičnim podacima, možete procijeniti performanse koristeći ugrađene metrike evaluacije.  
-Također, moguće je evaluirati opće jednokratne scenarije odgovaranja na pitanja (ne-RAG).
+Azure AI Foundry omogućuje evaluaciju jednokratnih i složenih višekratnih razgovora.  
+Za Retrieval Augmented Generation (RAG) scenarije, gdje je model utemeljen na specifičnim podacima, možete procijeniti performanse koristeći ugrađene metrike evaluacije.  
+Također, moguće je evaluirati opće scenarije jednokratnog odgovaranja na pitanja (ne-RAG).
 
 ## Kreiranje evaluacijskog pokretanja
 
-Iz sučelja Azure AI Foundry, idite na stranicu Evaluate ili Prompt Flow.  
-Slijedite čarobnjak za kreiranje evaluacije kako biste postavili evaluacijsko pokretanje. Unesite opcionalni naziv za evaluaciju.  
+U Azure AI Foundry sučelju, idite na stranicu Evaluate ili Prompt Flow.  
+Slijedite čarobnjak za kreiranje evaluacije kako biste postavili evaluacijsko pokretanje. Po želji unesite naziv evaluacije.  
 Odaberite scenarij koji odgovara ciljevima vaše aplikacije.  
 Izaberite jednu ili više metrika evaluacije za procjenu izlaza modela.
 
 ## Prilagođeni evaluacijski tijek (opcionalno)
 
-Za veću fleksibilnost, možete uspostaviti prilagođeni tijek evaluacije. Prilagodite proces evaluacije prema svojim specifičnim potrebama.
+Za veću fleksibilnost, možete postaviti prilagođeni evaluacijski tijek. Prilagodite proces evaluacije prema svojim specifičnim potrebama.
 
 ## Pregled rezultata
 
-Nakon pokretanja evaluacije, evidentirajte, pregledajte i analizirajte detaljne metrike evaluacije u Azure AI Foundry. Dobijte uvid u mogućnosti i ograničenja vaše aplikacije.
+Nakon izvođenja evaluacije, zabilježite, pregledajte i analizirajte detaljne metrike evaluacije u Azure AI Foundry. Steknite uvid u mogućnosti i ograničenja vaše aplikacije.
 
-**Note** Azure AI Foundry je trenutno u javnoj preview verziji, stoga ga koristite za eksperimentiranje i razvojne svrhe. Za produkcijske zadatke razmotrite druge opcije. Za više detalja i korak-po-korak upute, proučite službenu [AI Foundry dokumentaciju](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
+**Note** Azure AI Foundry je trenutno u javnoj pretpreglednoj fazi, stoga ga koristite za eksperimentiranje i razvoj. Za produkcijske zadatke razmotrite druge opcije. Istražite službenu [AI Foundry dokumentaciju](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) za više detalja i korak-po-korak upute.
 
-**Izjava o odricanju odgovornosti**:  
-Ovaj dokument preveden je pomoću AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+**Odricanje od odgovornosti**:  
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

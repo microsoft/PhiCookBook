@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:14:42+00:00",
+  "translation_date": "2025-07-16T21:38:24+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "sv"
 }
 -->
-# **Inference Phi-3-Vision lokalt**
+# **Inferens Phi-3-Vision lokalt**
 
-Phi-3-vision-128k-instruct gör det möjligt för Phi-3 att inte bara förstå språk, utan också se världen visuellt. Genom Phi-3-vision-128k-instruct kan vi lösa olika visuella problem, som OCR, tabellanalys, objektigenkänning, beskriva bilden osv. Vi kan enkelt utföra uppgifter som tidigare krävde mycket dataträning. Nedan följer relaterade tekniker och användningsscenarier som nämns av Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct gör det möjligt för Phi-3 att inte bara förstå språk, utan också se världen visuellt. Genom Phi-3-vision-128k-instruct kan vi lösa olika visuella problem, som OCR, tabellanalys, objektigenkänning, beskriva bilder med mera. Vi kan enkelt utföra uppgifter som tidigare krävde mycket dataträning. Nedan följer relaterade tekniker och användningsscenarier som nämns av Phi-3-vision-128k-instruct
 
-## **0. Förberedelse**
+## **0. Förberedelser**
 
 Se till att följande Python-bibliotek är installerade innan användning (Python 3.10+ rekommenderas)
 
@@ -27,7 +27,7 @@ Det rekommenderas att använda ***CUDA 11.6+*** och installera flatten
 pip install flash-attn --no-build-isolation
 ```
 
-Skapa en ny Notebook. För att kunna följa exemplen är det rekommenderat att du först skapar följande innehåll.
+Skapa en ny Notebook. För att kunna genomföra exemplen rekommenderas att du först skapar följande innehåll.
 
 ```python
 from PIL import Image
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR med Phi-3-Vision**
 
-Utöver att analysera bilden kan vi också extrahera information från bilden. Detta är OCR-processen som vi tidigare behövde skriva komplex kod för att klara av.
+Förutom att analysera bilden kan vi också extrahera information från bilden. Detta är OCR-processen som vi tidigare behövde skriva komplex kod för att genomföra.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Jämförelse av flera bilder**
 
-Phi-3 Vision stödjer jämförelse av flera bilder. Vi kan använda denna modell för att hitta skillnaderna mellan bilderna.
+Phi-3 Vision stödjer jämförelse av flera bilder. Vi kan använda denna modell för att hitta skillnader mellan bilderna.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

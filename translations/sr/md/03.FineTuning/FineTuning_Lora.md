@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-05-09T20:48:28+00:00",
+  "translation_date": "2025-07-17T06:36:12+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "sr"
 }
 -->
-# **Fino podešavanje Phi-3 sa Lora**
+# **Фајн-тјунинг Phi-3 помоћу Lora**
 
-Fino podešavanje Microsoftovog Phi-3 Mini jezičkog modela korišćenjem [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) na prilagođenom skupu podataka za instrukcije za ćaskanje.
+Фајн-тјунинг Microsoft-овог Phi-3 Mini језичког модела користећи [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) на прилагођеном скупу упутстава за ћаскање.
 
-LORA pomaže u poboljšanju razumevanja konverzacije i generisanja odgovora.
+LORA ће помоћи у побољшању разумевања разговора и генерисања одговора.
 
-## Korak po korak vodič za fino podešavanje Phi-3 Mini:
+## Корак по корак водич како фајн-тјунирати Phi-3 Mini:
 
-**Uvozi i podešavanje**
+**Увоз и подешавање**
 
-Instalacija loralib
+Инсталирање loralib
 
 ```
 pip install loralib
@@ -26,10 +26,10 @@ pip install loralib
 
 ```
 
-Počni uvozom neophodnih biblioteka kao što su datasets, transformers, peft, trl i torch.  
-Podesi logovanje za praćenje procesa treniranja.
+Почните увозом потребних библиотека као што су datasets, transformers, peft, trl и torch.  
+Подесите логовање како бисте пратили процес тренинга.
 
-Možeš izabrati da prilagodiš neke slojeve zamenjujući ih verzijama iz loralib. Za sada podržavamo samo nn.Linear, nn.Embedding i nn.Conv2d. Takođe podržavamo MergedLinear za slučajeve kada jedan nn.Linear predstavlja više slojeva, kao što je u nekim implementacijama qkv projekcije pažnje (pogledaj Dodatne napomene za više detalja).
+Можете изабрати да прилагодите неке слојеве заменом њихових имплементација оним из loralib. Тренутно подржавамо само nn.Linear, nn.Embedding и nn.Conv2d. Такође подржавамо MergedLinear за случајеве када један nn.Linear представља више слојева, као што је у неким имплементацијама пројекције qkv у attention-у (погледајте Додатне напомене за више детаља).
 
 ```
 # ===== Before =====
@@ -47,7 +47,7 @@ import loralib as lora
 layer = lora.Linear(in_features, out_features, r=16)
 ```
 
-Pre nego što počne petlja za treniranje, označi samo LoRA parametre kao trenabilne.
+Пре почетка тренинг петље, означите само LoRA параметре као оне који се могу тренирати.
 
 ```
 import loralib as lora
@@ -58,7 +58,7 @@ lora.mark_only_lora_as_trainable(model)
 for batch in dataloader:
 ```
 
-Kada se čuva checkpoint, generiši state_dict koji sadrži samo LoRA parametre.
+Када чувате чекпоинт, генеришите state_dict који садржи само LoRA параметре.
 
 ```
 # ===== Before =====
@@ -69,7 +69,7 @@ Kada se čuva checkpoint, generiši state_dict koji sadrži samo LoRA parametre.
 torch.save(lora.lora_state_dict(model), checkpoint_path)
 ```
 
-Kada se učitava checkpoint pomoću load_state_dict, obavezno postavi strict=False.
+Када учитавате чекпоинт користећи load_state_dict, обавезно подесите strict=False.
 
 ```
 # Load the pretrained checkpoint first
@@ -78,30 +78,30 @@ model.load_state_dict(torch.load('ckpt_pretrained.pt'), strict=False)
 model.load_state_dict(torch.load('ckpt_lora.pt'), strict=False)
 ```
 
-Sada treniranje može da se nastavi kao i obično.
+Сада тренинг може да се настави као и обично.
 
-**Hiparametri**
+**Хиперпараметри**
 
-Definiši dva rečnika: training_config i peft_config. training_config sadrži hiparampetre za treniranje, kao što su stopa učenja, veličina batch-a i podešavanja za logovanje.
+Дефинишите два речника: training_config и peft_config. training_config садржи хиперпараметре за тренинг, као што су learning rate, batch size и подешавања логовања.
 
-peft_config definiše LoRA povezane parametre poput ranga, dropout-a i tipa zadatka.
+peft_config одређује LoRA параметре као што су rank, dropout и тип задатка.
 
-**Učitavanje modela i tokenizatora**
+**Учитавање модела и токенизера**
 
-Navedi putanju do prethodno treniranog Phi-3 modela (npr. "microsoft/Phi-3-mini-4k-instruct"). Konfiguriši podešavanja modela, uključujući korišćenje keša, tip podataka (bfloat16 za mešanu preciznost) i implementaciju pažnje.
+Назначите путању до претходно обученог Phi-3 модела (нпр. "microsoft/Phi-3-mini-4k-instruct"). Конфигуришите подешавања модела, укључујући коришћење кеша, тип података (bfloat16 за мешовиту прецизност) и имплементацију attention-а.
 
-**Trening**
+**Тренинг**
 
-Fino podešavanje Phi-3 modela koristeći prilagođeni skup instrukcija za ćaskanje. Iskoristi LoRA podešavanja iz peft_config za efikasnu adaptaciju. Prati napredak treniranja pomoću specificirane strategije logovanja.  
-Evaluacija i čuvanje: Proceni fino podešeni model.  
-Čuvaj checkpoint-e tokom treniranja za kasniju upotrebu.
+Фајн-тјунирајте Phi-3 модел користећи прилагођени скуп упутстава за ћаскање. Искористите LoRA подешавања из peft_config за ефикасну адаптацију. Пратите напредак тренинга користећи назначену стратегију логовања.  
+Евалуација и чување: Процените фајн-тјунирани модел.  
+Чувајте чекпоинтове током тренинга за каснију употребу.
 
-**Primeri**
-- [Saznaj više sa ovim primerom notebook-a](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
-- [Primer Python skripte za fino podešavanje](../../../../code/03.Finetuning/FineTrainingScript.py)  
-- [Primer fino podešavanja na Hugging Face Hub-u sa LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
-- [Primer Hugging Face Model Card - LORA Fine Tuning primer](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
-- [Primer fino podešavanja na Hugging Face Hub-u sa QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
+**Примери**  
+- [Сазнајте више уз овај пример notebook-а](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
+- [Пример Python скрипте за фајн-тјунинг](../../../../code/03.Finetuning/FineTrainingScript.py)  
+- [Пример фајн-тјунинга на Hugging Face Hub-у са LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
+- [Пример Hugging Face Model Card - LORA фајн-тјунинг пример](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
+- [Пример фајн-тјунинга на Hugging Face Hub-у са QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде прецизан, молимо имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

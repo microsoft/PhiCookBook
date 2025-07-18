@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-07T13:07:42+00:00",
+  "translation_date": "2025-07-17T05:30:01+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "fr"
 }
 -->
-## GitHub Models - Bêta publique limitée
+## Modèles GitHub - Bêta publique limitée
 
 Bienvenue sur [GitHub Models](https://github.com/marketplace/models) ! Tout est prêt pour que vous puissiez explorer les modèles d’IA hébergés sur Azure AI.
 
@@ -17,7 +17,7 @@ Pour plus d’informations sur les modèles disponibles sur GitHub Models, consu
 
 ## Modèles disponibles
 
-Chaque modèle dispose d’un espace de test dédié ainsi que d’exemples de code
+Chaque modèle dispose d’un espace de test dédié et d’exemples de code
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,7 +37,7 @@ Chaque modèle dispose d’un espace de test dédié ainsi que d’exemples de c
 
 ## Premiers pas
 
-Quelques exemples de base sont prêts à être exécutés. Vous les trouverez dans le répertoire samples. Si vous souhaitez aller directement à votre langage préféré, les exemples sont disponibles dans les langages suivants :
+Quelques exemples simples sont prêts à être exécutés. Vous les trouverez dans le répertoire samples. Si vous souhaitez aller directement à votre langage préféré, les exemples sont disponibles dans les langages suivants :
 
 - Python
 - JavaScript
@@ -47,14 +47,14 @@ Un environnement Codespaces dédié est également disponible pour exécuter les
 
 ![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.fr.png)
 
-## Exemples de code
+## Exemple de code
 
 Voici des extraits de code pour quelques cas d’usage. Pour plus d’informations sur Azure AI Inference SDK, consultez la documentation complète et les exemples.
 
 ## Configuration
 
 1. Créez un jeton d’accès personnel  
-Vous n’avez pas besoin d’attribuer de permissions au jeton. Notez que ce jeton sera envoyé à un service Microsoft.
+Vous n’avez pas besoin d’attribuer de permissions au jeton. Notez que le jeton sera envoyé à un service Microsoft.
 
 Pour utiliser les extraits de code ci-dessous, créez une variable d’environnement pour définir votre jeton comme clé pour le code client.
 
@@ -76,15 +76,15 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 
 ## Exemple Python
 
-### Installation des dépendances  
-Installez Azure AI Inference SDK via pip (Requis : Python >=3.8) :
+### Installer les dépendances  
+Installez Azure AI Inference SDK avec pip (Nécessite : Python >=3.8) :
 
 ```
 pip install azure-ai-inference
 ```  
 ### Exécuter un exemple simple
 
-Cet exemple montre un appel basique à l’API de complétion de chat. Il utilise le point d’accès d’inférence du modèle GitHub AI et votre jeton GitHub. L’appel est synchrone.
+Cet exemple montre un appel basique à l’API de complétion de chat. Il utilise le point de terminaison d’inférence du modèle IA GitHub et votre jeton GitHub. L’appel est synchrone.
 
 ```
 import os
@@ -150,7 +150,7 @@ print(response.choices[0].message.content)
 
 ### Diffuser la sortie
 
-Pour une meilleure expérience utilisateur, il est conseillé de diffuser la réponse du modèle afin que le premier token apparaisse rapidement et éviter d’attendre de longues réponses.
+Pour une meilleure expérience utilisateur, vous souhaiterez diffuser la réponse du modèle afin que le premier token apparaisse rapidement et éviter d’attendre les réponses longues.
 
 ```
 import os
@@ -185,7 +185,7 @@ client.close()
 ```  
 ## JavaScript
 
-### Installation des dépendances
+### Installer les dépendances
 
 Installez Node.js.
 
@@ -210,7 +210,7 @@ Pour chaque extrait de code ci-dessous, copiez le contenu dans un fichier sample
 
 ### Exécuter un exemple simple
 
-Cet exemple montre un appel basique à l’API de complétion de chat. Il utilise le point d’accès d’inférence du modèle GitHub AI et votre jeton GitHub. L’appel est synchrone.
+Cet exemple montre un appel basique à l’API de complétion de chat. Il utilise le point de terminaison d’inférence du modèle IA GitHub et votre jeton GitHub. L’appel est synchrone.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -293,7 +293,7 @@ main().catch((err) => {
 ```
 
 ### Diffuser la sortie  
-Pour une meilleure expérience utilisateur, il est conseillé de diffuser la réponse du modèle afin que le premier token apparaisse rapidement et éviter d’attendre de longues réponses.
+Pour une meilleure expérience utilisateur, vous souhaiterez diffuser la réponse du modèle afin que le premier token apparaisse rapidement et éviter d’attendre les réponses longues.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -403,7 +403,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 ```  
 ### Diffuser la sortie
 
-Voici un exemple d’appel à l’endpoint avec diffusion de la réponse.
+Voici un exemple d’appel au point de terminaison avec diffusion de la réponse.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -429,17 +429,17 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.fr.png)
 
-Les [limites de débit pour le playground et l’utilisation gratuite de l’API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sont conçues pour vous permettre d’expérimenter les modèles et de prototyper votre application IA. Pour dépasser ces limites et faire évoluer votre application, vous devez provisionner des ressources depuis un compte Azure et vous authentifier via ce compte plutôt qu’avec votre jeton personnel GitHub. Vous n’aurez pas besoin de modifier autre chose dans votre code. Utilisez ce lien pour découvrir comment dépasser les limites du niveau gratuit dans Azure AI.
+Les [limites de débit pour le playground et l’utilisation gratuite de l’API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sont conçues pour vous permettre d’expérimenter avec les modèles et de prototyper votre application IA. Pour dépasser ces limites et faire évoluer votre application, vous devez provisionner des ressources depuis un compte Azure et vous authentifier via ce compte plutôt qu’avec votre jeton d’accès personnel GitHub. Vous n’avez rien d’autre à modifier dans votre code. Utilisez ce lien pour découvrir comment dépasser les limites du niveau gratuit dans Azure AI.
 
 ### Informations importantes
 
-Gardez à l’esprit qu’en interagissant avec un modèle, vous expérimentez avec de l’IA, donc des erreurs de contenu peuvent survenir.
+Gardez à l’esprit qu’en interagissant avec un modèle, vous expérimentez avec de l’IA, donc des erreurs de contenu sont possibles.
 
 Cette fonctionnalité est soumise à diverses limites (nombre de requêtes par minute, par jour, tokens par requête, requêtes simultanées) et n’est pas conçue pour des cas d’usage en production.
 
-GitHub Models utilise Azure AI Content Safety. Ces filtres ne peuvent pas être désactivés dans l’expérience GitHub Models. Si vous utilisez des modèles via un service payant, configurez vos filtres de contenu selon vos besoins.
+GitHub Models utilise Azure AI Content Safety. Ces filtres ne peuvent pas être désactivés dans l’expérience GitHub Models. Si vous choisissez d’utiliser les modèles via un service payant, configurez vos filtres de contenu selon vos besoins.
 
-Ce service est soumis aux conditions de pré-lancement de GitHub.
+Ce service est soumis aux Conditions de pré-lancement de GitHub.
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

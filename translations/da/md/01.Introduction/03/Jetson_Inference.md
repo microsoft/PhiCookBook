@@ -2,24 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-05-09T11:39:11+00:00",
+  "translation_date": "2025-07-16T20:43:02+00:00",
   "source_file": "md/01.Introduction/03/Jetson_Inference.md",
   "language_code": "da"
 }
 -->
 # **Inference Phi-3 på Nvidia Jetson**
 
-Nvidia Jetson er en serie af indlejrede computerboards fra Nvidia. Jetson TK1, TX1 og TX2 modellerne har alle en Tegra-processor (eller SoC) fra Nvidia, som integrerer en ARM-arkitektur central processor (CPU). Jetson er et lavt strømforbrugssystem designet til at accelerere maskinlæringsapplikationer. Nvidia Jetson bruges af professionelle udviklere til at skabe banebrydende AI-produkter på tværs af alle brancher, samt af studerende og entusiaster til praktisk AI-læring og til at lave fantastiske projekter. SLM er implementeret i edge-enheder som Jetson, hvilket muliggør bedre anvendelse af industrielle generative AI-applikationsscenarier.
+Nvidia Jetson er en serie af indlejrede computerenheder fra Nvidia. Jetson TK1, TX1 og TX2 modellerne har alle en Tegra-processor (eller SoC) fra Nvidia, som integrerer en ARM-arkitektur centralenhed (CPU). Jetson er et lavenergisytem designet til at accelerere maskinlæringsapplikationer. Nvidia Jetson bruges af professionelle udviklere til at skabe banebrydende AI-produkter på tværs af alle brancher, samt af studerende og entusiaster til praktisk AI-læring og til at lave imponerende projekter. SLM implementeres i edge-enheder som Jetson, hvilket muliggør bedre anvendelse af industrielle generative AI-scenarier.
 
 ## Deployment på NVIDIA Jetson:
-Udviklere, der arbejder med autonome robotter og indlejrede enheder, kan drage fordel af Phi-3 Mini. Phi-3’s relativt lille størrelse gør den ideel til edge-udrulning. Parametrene er omhyggeligt finjusteret under træning, hvilket sikrer høj nøjagtighed i svarene.
+Udviklere, der arbejder med autonome robotter og indlejrede enheder, kan drage fordel af Phi-3 Mini. Phi-3’s relativt lille størrelse gør den ideel til edge-udrulning. Parametrene er omhyggeligt finjusteret under træningen for at sikre høj nøjagtighed i svarene.
 
 ### TensorRT-LLM Optimering:
-NVIDIAs [TensorRT-LLM bibliotek](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) optimerer inferens af store sprogmodeller. Det understøtter Phi-3 Minis lange kontekstvindue, hvilket forbedrer både gennemløb og latenstid. Optimeringer inkluderer teknikker som LongRoPE, FP8 og inflight batching.
+NVIDIAs [TensorRT-LLM bibliotek](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) optimerer inferens af store sprogmodeller. Det understøtter Phi-3 Minis lange kontekstvindue og forbedrer både gennemløb og latenstid. Optimeringer inkluderer teknikker som LongRoPE, FP8 og inflight batching.
 
-### Tilgængelighed og Udrulning:
-Udviklere kan udforske Phi-3 Mini med 128K kontekstvindue på [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Den leveres som en NVIDIA NIM, en microservice med en standard API, som kan udrulles hvor som helst. Derudover findes [TensorRT-LLM implementeringerne på GitHub](https://github.com/NVIDIA/TensorRT-LLM).
-
+### Tilgængelighed og Deployment:
+Udviklere kan udforske Phi-3 Mini med 128K kontekstvindue på [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Den leveres som en NVIDIA NIM, en mikrotjeneste med et standard API, der kan deployeres hvor som helst. Derudover findes [TensorRT-LLM implementeringerne på GitHub](https://github.com/NVIDIA/TensorRT-LLM).
 
 ## **1. Forberedelse**
 
@@ -35,13 +34,13 @@ d. Python 3.8+
 
 Vi kan vælge [Ollama](https://ollama.com) eller [LlamaEdge](https://llamaedge.com)
 
-Hvis du vil bruge gguf både i skyen og på edge-enheder samtidig, kan LlamaEdge forstås som WasmEdge (WasmEdge er en letvægts, højtydende og skalerbar WebAssembly runtime, der er egnet til cloud-native, edge og decentraliserede applikationer. Den understøtter serverløse applikationer, indlejrede funktioner, microservices, smart contracts og IoT-enheder. Du kan udrulle gguf’s kvantitative model til edge-enheder og skyen via LlamaEdge.
+Hvis du ønsker at bruge gguf både i skyen og på edge-enheder samtidig, kan LlamaEdge forstås som WasmEdge (WasmEdge er en letvægts, højtydende og skalerbar WebAssembly runtime, der er velegnet til cloud native, edge og decentraliserede applikationer. Den understøtter serverløse applikationer, indlejrede funktioner, mikrotjenester, smart contracts og IoT-enheder). Du kan deployere gguf’s kvantitative model til edge-enheder og skyen via LlamaEdge.
 
-![llamaedge](../../../../../translated_images/llamaedge.1356a35c809c5e9d89d8168db0c92161e87f5e2c34831f2fad800f00fc4e74dc.da.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.da.jpg)
 
-Her er trinene til at bruge
+Her er trinene til brug:
 
-1. Installer og download de relevante biblioteker og filer
+1. Installer og download relaterede biblioteker og filer
 
 ```bash
 
@@ -67,11 +66,11 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Her er resultatet af kørslen
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.66eb2acd7f14e814437879522158b9531ae7c955014d48d0708d0e4ce6ac94a6.da.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.da.png)
 
 ***Eksempelkode*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
-Sammenfattende repræsenterer Phi-3 Mini et stort fremskridt inden for sprogmodellering, der kombinerer effektivitet, kontekstforståelse og NVIDIAs optimeringsevner. Uanset om du bygger robotter eller edge-applikationer, er Phi-3 Mini et kraftfuldt værktøj at kende til.
+Sammenfattende repræsenterer Phi-3 Mini et stort fremskridt inden for sprogmodellering, der kombinerer effektivitet, kontekstforståelse og NVIDIAs optimeringskompetencer. Uanset om du bygger robotter eller edge-applikationer, er Phi-3 Mini et stærkt værktøj at kende til.
 
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

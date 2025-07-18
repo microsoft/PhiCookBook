@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:53:36+00:00",
+  "translation_date": "2025-07-17T04:50:36+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "vi"
 }
 -->
-## **Sử dụng Phi-4-mini-reasoning(3.8b) hoặc Phi-4-reasoning(14b) như Chuyên gia Lập luận**
+## **Sử dụng Phi-4-mini-reasoning(3.8b) hoặc Phi-4-reasoning(14b) làm Chuyên gia Lý luận**
 
-Hãy cùng xem khả năng lập luận mạnh mẽ của nó qua Phi-4-mini-reasoning hoặc Phi-4-mini-reasoning.
+Hãy cùng xem khả năng lý luận mạnh mẽ của nó thông qua Phi-4-mini-reasoning hoặc Phi-4-mini-reasoning.
 
 
 ```python
@@ -50,4 +50,4 @@ print(outputs[0])
 ```
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn chính xác và có thẩm quyền. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

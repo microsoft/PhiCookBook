@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-05-09T22:46:00+00:00",
+  "translation_date": "2025-07-17T10:41:28+00:00",
   "source_file": "md/04.HOL/dotnet/readme.md",
   "language_code": "sk"
 }
 -->
-﻿## Vitajte v Phi laboratóriách používajúcich C#
+## Vitajte v Phi laboratóriách používajúcich C#
 
 K dispozícii je výber laboratórií, ktoré ukazujú, ako integrovať rôzne výkonné verzie Phi modelov v prostredí .NET.
 
@@ -15,15 +15,15 @@ K dispozícii je výber laboratórií, ktoré ukazujú, ako integrovať rôzne v
 
 Pred spustením ukážky sa uistite, že máte nainštalované nasledovné:
 
-**.NET 9:** Overte, či máte na svojom zariadení nainštalovanú [najnovšiu verziu .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo).
+**.NET 9:** Skontrolujte, či máte na svojom počítači nainštalovanú [najnovšiu verziu .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo).
 
-**(Voliteľné) Visual Studio alebo Visual Studio Code:** Budete potrebovať IDE alebo editor kódu, ktorý vie spúšťať .NET projekty. Odporúčame [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) alebo [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo).
+**(Voliteľné) Visual Studio alebo Visual Studio Code:** Budete potrebovať IDE alebo editor kódu, ktorý dokáže spúšťať .NET projekty. Odporúčame [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) alebo [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo).
 
-**Použitie git:** lokálne si naklonujte jednu z dostupných verzií Phi-3, Phi3.5 alebo Phi-4 z [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
+**Použitie git:** naklonujte lokálne jednu z dostupných verzií Phi-3, Phi3.5 alebo Phi-4 z [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
 
-**Stiahnite Phi-4 ONNX modely** do svojho lokálneho počítača:
+**Stiahnite si Phi-4 ONNX modely** do svojho počítača:
 
-### prejdite do priečinka, kde chcete uložiť modely
+### prejdite do priečinka, kde chcete modely uložiť
 
 ```bash
 cd c:\phi\models
@@ -43,7 +43,7 @@ git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 ```
 
-**Stiahnite Phi-3 ONNX modely** do svojho lokálneho počítača:
+**Stiahnite si Phi-3 ONNX modely** do svojho počítača:
 
 ### naklonujte a stiahnite Phi-3 mini 4K instruct model a Phi-3 vision 128K model
 
@@ -61,24 +61,24 @@ Hlavné riešenie obsahuje niekoľko ukážkových laboratórií, ktoré demonš
 
 | Projekt | Model | Popis |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 alebo Phi-3.5 | Ukážková konzolová chat aplikácia, ktorá umožňuje používateľovi klásť otázky. Projekt načíta lokálny ONNX Phi-3 model pomocou `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
-| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
-| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Semantic Kernel` libraries. |
-| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntimeGenAI` libraries and implements the `IChatClient` from `Microsoft.Extensions.AI`. |
-| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Sample console chat that allows the user to ask questions. The chat implements memory. |
-| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | This is a sample project that uses a local Phi-4 model to analyze images showing the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 |This is a sample project that uses a local Phi-4 model to analyze an audio file, generate the transcript of the file and show the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 alebo Phi-3.5 | Ukážkový konzolový chat, ktorý umožňuje používateľovi klásť otázky. Projekt načítava lokálny ONNX Phi-3 model pomocou knižníc `Microsoft.ML.OnnxRuntime`. |
+| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 alebo Phi-3.5 | Ukážkový konzolový chat, ktorý umožňuje používateľovi klásť otázky. Projekt načítava lokálny ONNX Phi-3 model pomocou knižníc `Microsoft.Semantic.Kernel`. |
+| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 alebo Phi-3.5 | Ukážkový projekt, ktorý používa lokálny phi3 vision model na analýzu obrázkov. Projekt načítava lokálny ONNX Phi-3 Vision model pomocou knižníc `Microsoft.ML.OnnxRuntime`. |
+| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 alebo Phi-3.5 | Ukážkový projekt, ktorý používa lokálny phi3 vision model na analýzu obrázkov. Projekt načítava lokálny ONNX Phi-3 Vision model pomocou knižníc `Microsoft.ML.OnnxRuntime`. Projekt tiež ponúka menu s rôznymi možnosťami interakcie s používateľom. | 
+| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Ukážkový konzolový chat, ktorý umožňuje používateľovi klásť otázky. Projekt načítava lokálny ONNX Phi-4 model pomocou knižníc `Microsoft.ML.OnnxRuntime`. |
+| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Ukážkový konzolový chat, ktorý umožňuje používateľovi klásť otázky. Projekt načítava lokálny ONNX Phi-4 model pomocou knižníc `Semantic Kernel`. |
+| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Ukážkový konzolový chat, ktorý umožňuje používateľovi klásť otázky. Projekt načítava lokálny ONNX Phi-4 model pomocou knižníc `Microsoft.ML.OnnxRuntimeGenAI` a implementuje `IChatClient` z `Microsoft.Extensions.AI`. |
+| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Ukážkový konzolový chat, ktorý umožňuje používateľovi klásť otázky. Chat využíva pamäť. |
+| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | Ukážkový projekt, ktorý používa lokálny Phi-4 model na analýzu obrázkov a zobrazuje výsledok v konzole. Projekt načítava lokálny Phi-4-`multimodal-instruct-onnx` model pomocou knižníc `Microsoft.ML.OnnxRuntime`. |
+| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 | Ukážkový projekt, ktorý používa lokálny Phi-4 model na analýzu audio súboru, generuje prepis súboru a zobrazuje výsledok v konzole. Projekt načítava lokálny Phi-4-`multimodal-instruct-onnx` model pomocou knižníc `Microsoft.ML.OnnxRuntime`. |
 
-## How to Run the Projects
+## Ako spustiť projekty
 
-To run the projects, follow these steps:
+Na spustenie projektov postupujte podľa týchto krokov:
 
-1. Clone the repository to your local machine.
+1. Naklonujte repozitár do svojho počítača.
 
-1. Open a terminal and navigate to the desired project. In example, let's run `LabsPhi4-Chat-01OnnxRuntime`.
+1. Otvorte terminál a prejdite do požadovaného projektu. Napríklad spustíme `LabsPhi4-Chat-01OnnxRuntime`.
 
     ```bash
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
@@ -103,4 +103,4 @@ To run the projects, follow these steps:
    ```
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

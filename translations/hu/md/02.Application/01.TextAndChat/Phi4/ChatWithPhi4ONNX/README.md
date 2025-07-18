@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:03:16+00:00",
+  "translation_date": "2025-07-17T03:18:58+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "hu"
 }
 -->
 # **Chat Phi-4-mini ONNX-szal**
 
-***ONNX*** egy nyílt formátum, amely gépi tanulási modellek ábrázolására készült. Az ONNX meghatároz egy közös operátorkészletet – a gépi tanulási és mélytanulási modellek építőköveit –, valamint egy egységes fájlformátumot, amely lehetővé teszi az AI fejlesztők számára, hogy különböző keretrendszerekkel, eszközökkel, futtatókörnyezetekkel és fordítókkal használják a modelleket.
+***ONNX*** egy nyílt formátum, amely gépi tanulási modellek ábrázolására szolgál. Az ONNX egy közös operátorkészletet határoz meg – a gépi tanulás és mélytanulás modellek építőköveit –, valamint egy egységes fájlformátumot, amely lehetővé teszi az AI fejlesztők számára, hogy különböző keretrendszerekkel, eszközökkel, futtatókörnyezetekkel és fordítóprogramokkal használják a modelleket.
 
-Célunk, hogy generatív AI modelleket telepítsünk élő eszközökre, és korlátozott számítási kapacitású vagy offline környezetben használjuk őket. Ezt most már elérhetjük a modell kvantált formába történő átalakításával. A kvantált modellt átkonvertálhatjuk GGUF vagy ONNX formátumba.
+Célunk, hogy generatív AI modelleket telepítsünk élő eszközökre, és korlátozott számítási kapacitású vagy offline környezetben használjuk őket. Ezt mostantól elérhetjük a modell kvantált formában történő átalakításával. A kvantált modellt GGUF vagy ONNX formátumba konvertálhatjuk.
 
 A Microsoft Olive segíthet az SLM kvantált ONNX formátumba történő átalakításában. A modellkonverzió elérése nagyon egyszerű.
 
@@ -37,7 +37,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Megjegyzés*** ez a példa CPU-t használ
 
 
-### **Phi-4-mini ONNX modell inferálása ONNX Runtime GenAI-vel**
+### **Phi-4-mini ONNX modell inferálása ONNX Runtime GenAI-val**
 
 - **ONNX Runtime GenAI telepítése**
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén javasolt szakmai, emberi fordítást igénybe venni. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

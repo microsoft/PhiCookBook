@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-05-07T14:04:47+00:00",
+  "translation_date": "2025-07-17T00:10:19+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "zh"
 }
 -->
 # 使用 Prompt flow 微调并集成自定义 Phi-3 模型
 
-本端到端（E2E）示例基于微软技术社区的指南“[使用 Prompt Flow 微调并集成自定义 Phi-3 模型：逐步指南](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)”。它介绍了微调、部署和使用 Prompt flow 集成自定义 Phi-3 模型的流程。
+本端到端（E2E）示例基于微软技术社区的指南“[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)”。介绍了微调、部署及通过 Prompt flow 集成自定义 Phi-3 模型的流程。
 
-## 概览
+## 概述
 
-在本端到端示例中，您将学习如何微调 Phi-3 模型并将其与 Prompt flow 集成。通过利用 Azure 机器学习和 Prompt flow，您将建立一个用于部署和使用自定义 AI 模型的工作流。本示例分为三个场景：
+在本 E2E 示例中，您将学习如何微调 Phi-3 模型并将其与 Prompt flow 集成。通过利用 Azure 机器学习和 Prompt flow，您将建立一个用于部署和使用自定义 AI 模型的工作流。本示例分为三个场景：
 
 **场景 1：设置 Azure 资源并准备微调**
 
 **场景 2：微调 Phi-3 模型并在 Azure 机器学习工作室中部署**
 
-**场景 3：与 Prompt flow 集成并与您的自定义模型对话**
+**场景 3：与 Prompt flow 集成并与您的自定义模型聊天**
 
-以下是本端到端示例的总体架构。
+以下是本 E2E 示例的整体架构。
 
 ![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.zh.png)
 
@@ -39,9 +39,9 @@ CO_OP_TRANSLATOR_METADATA:
     - [微调 Phi-3 模型](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [部署微调后的模型](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[场景 3：与 Prompt flow 集成并与自定义模型对话](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [将自定义 Phi-3 模型与 Prompt flow 集成](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [与您的自定义模型对话](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[场景 3：与 Prompt flow 集成并与您的自定义模型聊天](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [将自定义 Phi-3 模型集成到 Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [与您的自定义模型聊天](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 ## 场景 1：设置 Azure 资源并准备微调
 
@@ -57,56 +57,56 @@ CO_OP_TRANSLATOR_METADATA:
 
     ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.zh.png)
 
-1. 完成以下操作：
+1. 执行以下操作：
 
     - 选择您的 Azure **订阅**。
-    - 选择要使用的 **资源组**（如有需要，可新建）。
+    - 选择要使用的 **资源组**（如有需要可新建）。
     - 输入 **工作区名称**，必须唯一。
     - 选择您想使用的 **区域**。
-    - 选择要使用的 **存储帐户**（如有需要，可新建）。
-    - 选择要使用的 **密钥保管库**（如有需要，可新建）。
-    - 选择要使用的 **应用程序洞察**（如有需要，可新建）。
-    - 选择要使用的 **容器注册表**（如有需要，可新建）。
+    - 选择要使用的 **存储帐户**（如有需要可新建）。
+    - 选择要使用的 **密钥保管库**（如有需要可新建）。
+    - 选择要使用的 **应用程序洞察**（如有需要可新建）。
+    - 选择要使用的 **容器注册表**（如有需要可新建）。
 
     ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.zh.png)
 
-1. 选择 **审核 + 创建**。
+1. 选择 **查看 + 创建**。
 
 1. 选择 **创建**。
 
 ### 申请 Azure 订阅中的 GPU 配额
 
-在本端到端示例中，微调将使用 *Standard_NC24ads_A100_v4 GPU*，这需要申请配额；部署将使用 *Standard_E4s_v3* CPU，无需申请配额。
+在本 E2E 示例中，您将使用 *Standard_NC24ads_A100_v4 GPU* 进行微调，该 GPU 需要申请配额；部署时使用 *Standard_E4s_v3* CPU，无需申请配额。
 
 > [!NOTE]
 >
 > 只有按需付费订阅（标准订阅类型）有资格申请 GPU 配额，福利订阅目前不支持。
 >
-> 对于使用福利订阅（如 Visual Studio 企业订阅）或希望快速测试微调和部署流程的用户，本教程还提供了使用 CPU 和最小数据集进行微调的指导。但需要注意的是，使用 GPU 和较大数据集时，微调效果会显著更好。
+> 对于使用福利订阅（如 Visual Studio Enterprise 订阅）或希望快速测试微调和部署流程的用户，本教程也提供了使用 CPU 和最小数据集进行微调的指导。但需要注意的是，使用 GPU 和更大数据集时微调效果会显著更好。
 
 1. 访问 [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)。
 
-1. 按照以下步骤申请 *Standard NCADSA100v4 Family* 配额：
+1. 执行以下操作申请 *Standard NCADSA100v4 Family* 配额：
 
-    - 从左侧标签中选择 **配额**。
+    - 从左侧标签选择 **配额**。
     - 选择要使用的 **虚拟机系列**，例如选择包含 *Standard_NC24ads_A100_v4* GPU 的 **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**。
-    - 从导航菜单中选择 **申请配额**。
+    - 从导航菜单选择 **申请配额**。
 
         ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.zh.png)
 
-    - 在申请配额页面中，输入您想申请的 **新核心限制**，例如 24。
-    - 点击 **提交** 申请 GPU 配额。
+    - 在申请配额页面中，输入您想使用的 **新核心限制**，例如 24。
+    - 在申请配额页面中，选择 **提交** 以申请 GPU 配额。
 
 > [!NOTE]
-> 您可以参考文档 [Azure 虚拟机规格](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist) 选择适合您需求的 GPU 或 CPU。
+> 您可以参考文档 [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist) 选择适合您需求的 GPU 或 CPU。
 
 ### 添加角色分配
 
-要微调和部署模型，您必须先创建一个用户分配的托管身份（User Assigned Managed Identity，UAI），并为其分配相应权限。此 UAI 将用于部署时的身份验证。
+要微调和部署模型，您必须先创建一个用户分配托管身份（User Assigned Managed Identity，UAI），并为其分配相应权限。该 UAI 将用于部署时的身份验证。
 
-#### 创建用户分配的托管身份（UAI）
+#### 创建用户分配托管身份（UAI）
 
-1. 在门户页面顶部的**搜索栏**中输入 *managed identities*，然后从出现的选项中选择 **托管身份**。
+1. 在门户页面顶部的**搜索栏**中输入 *managed identities*，然后从出现的选项中选择 **Managed Identities**。
 
     ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.zh.png)
 
@@ -114,31 +114,30 @@ CO_OP_TRANSLATOR_METADATA:
 
     ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.zh.png)
 
-1. 完成以下操作：
+1. 执行以下操作：
 
     - 选择您的 Azure **订阅**。
-    - 选择要使用的 **资源组**（如有需要，可新建）。
+    - 选择要使用的 **资源组**（如有需要可新建）。
     - 选择您想使用的 **区域**。
     - 输入 **名称**，必须唯一。
 
-1. 选择 **审核 + 创建**。
+1. 选择 **查看 + 创建**。
 
-1. 选择 **创建**。
+1. 选择 **+ 创建**。
 
 #### 为托管身份添加 Contributor 角色分配
 
 1. 导航到您创建的托管身份资源。
 
-1. 从左侧标签中选择 **Azure 角色分配**。
+1. 从左侧标签选择 **Azure 角色分配**。
 
-1. 从导航菜单中选择 **+ 添加角色分配**。
+1. 从导航菜单选择 **+ 添加角色分配**。
 
-1. 在添加角色分配页面，完成以下操作：
-
+1. 在添加角色分配页面，执行以下操作：
     - 将 **作用域** 设置为 **资源组**。
     - 选择您的 Azure **订阅**。
     - 选择要使用的 **资源组**。
-    - 选择 **角色** 为 **Contributor**。
+    - 将 **角色** 设置为 **Contributor**。
 
     ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.zh.png)
 
@@ -146,69 +145,69 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### 为托管身份添加 Storage Blob Data Reader 角色分配
 
-1. 在门户页面顶部的**搜索栏**中输入 *storage accounts*，然后从出现的选项中选择 **存储帐户**。
+1. 在门户页面顶部的**搜索栏**中输入 *storage accounts*，然后从出现的选项中选择 **Storage accounts**。
 
     ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.zh.png)
 
-1. 选择与您创建的 Azure 机器学习工作区关联的存储帐户。例如，*finetunephistorage*。
+1. 选择与您创建的 Azure 机器学习工作区关联的存储帐户，例如 *finetunephistorage*。
 
-1. 按照以下步骤导航到添加角色分配页面：
+1. 执行以下操作进入添加角色分配页面：
 
-    - 打开您创建的 Azure 存储帐户。
-    - 从左侧标签中选择 **访问控制（IAM）**。
-    - 从导航菜单中选择 **+ 添加**。
+    - 导航到您创建的 Azure 存储帐户。
+    - 从左侧标签选择 **访问控制 (IAM)**。
+    - 从导航菜单选择 **+ 添加**。
     - 选择 **添加角色分配**。
 
     ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.zh.png)
 
-1. 在添加角色分配页面，完成以下操作：
+1. 在添加角色分配页面，执行以下操作：
 
-    - 在角色页面的搜索栏中输入 *Storage Blob Data Reader*，并从选项中选择它。
+    - 在角色页面的**搜索栏**中输入 *Storage Blob Data Reader*，并从选项中选择 **Storage Blob Data Reader**。
     - 选择 **下一步**。
-    - 在成员页面中，选择 **分配访问权限给** **托管身份**。
+    - 在成员页面，选择 **分配访问权限给** **托管身份**。
     - 选择 **+ 选择成员**。
     - 在选择托管身份页面，选择您的 Azure **订阅**。
-    - 选择 **托管身份**。
+    - 选择 **托管身份** 类型。
     - 选择您创建的托管身份，例如 *finetunephi-managedidentity*。
     - 选择 **选择**。
 
     ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.zh.png)
 
-1. 选择 **审核 + 分配**。
+1. 选择 **查看 + 分配**。
 
 #### 为托管身份添加 AcrPull 角色分配
 
-1. 在门户页面顶部的**搜索栏**中输入 *container registries*，然后从出现的选项中选择 **容器注册表**。
+1. 在门户页面顶部的**搜索栏**中输入 *container registries*，然后从出现的选项中选择 **Container registries**。
 
     ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.zh.png)
 
-1. 选择与 Azure 机器学习工作区关联的容器注册表。例如，*finetunephicontainerregistries*。
+1. 选择与 Azure 机器学习工作区关联的容器注册表，例如 *finetunephicontainerregistries*。
 
-1. 按照以下步骤导航到添加角色分配页面：
+1. 执行以下操作进入添加角色分配页面：
 
-    - 从左侧标签中选择 **访问控制（IAM）**。
-    - 从导航菜单中选择 **+ 添加**。
+    - 从左侧标签选择 **访问控制 (IAM)**。
+    - 从导航菜单选择 **+ 添加**。
     - 选择 **添加角色分配**。
 
-1. 在添加角色分配页面，完成以下操作：
+1. 在添加角色分配页面，执行以下操作：
 
-    - 在角色页面的搜索栏中输入 *AcrPull*，并从选项中选择它。
+    - 在角色页面的**搜索栏**中输入 *AcrPull*，并从选项中选择 **AcrPull**。
     - 选择 **下一步**。
-    - 在成员页面中，选择 **分配访问权限给** **托管身份**。
+    - 在成员页面，选择 **分配访问权限给** **托管身份**。
     - 选择 **+ 选择成员**。
     - 在选择托管身份页面，选择您的 Azure **订阅**。
-    - 选择 **托管身份**。
+    - 选择 **托管身份** 类型。
     - 选择您创建的托管身份，例如 *finetunephi-managedidentity*。
     - 选择 **选择**。
-    - 选择 **审核 + 分配**。
+    - 选择 **查看 + 分配**。
 
 ### 设置项目
 
-现在，您将创建一个文件夹用于开发，并搭建一个虚拟环境，用于编写与用户交互、并利用 Azure Cosmos DB 中的聊天记录作为上下文的程序。
+现在，您将创建一个文件夹用于工作，并设置一个虚拟环境来开发一个程序，该程序与用户交互并使用来自 Azure Cosmos DB 的存储聊天记录来辅助回答。
 
 #### 创建工作文件夹
 
-1. 打开终端窗口，输入以下命令，在默认路径下创建一个名为 *finetune-phi* 的文件夹。
+1. 打开终端窗口，输入以下命令在默认路径下创建一个名为 *finetune-phi* 的文件夹。
 
     ```console
     mkdir finetune-phi
@@ -222,7 +221,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### 创建虚拟环境
 
-1. 在终端中输入以下命令，创建名为 *.venv* 的虚拟环境。
+1. 在终端中输入以下命令，创建一个名为 *.venv* 的虚拟环境。
 
     ```console
     python -m venv .venv
@@ -233,14 +232,12 @@ CO_OP_TRANSLATOR_METADATA:
     ```console
     .venv\Scripts\activate.bat
     ```
-
 > [!NOTE]
 >
-> 如果成功，命令提示符前会显示 *(.venv)*。
+> 如果成功，你应该会在命令提示符前看到 *(.venv)*。
+#### 安装所需的软件包
 
-#### 安装所需包
-
-1. 在终端中输入以下命令，安装所需的包。
+1. 在终端中输入以下命令以安装所需的软件包。
 
     ```console
     pip install datasets==2.19.1
@@ -253,22 +250,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### 创建项目文件
 
-在本练习中，您将创建项目的关键文件，包括下载数据集的脚本、设置 Azure 机器学习环境、微调 Phi-3 模型、部署微调后的模型的脚本，以及用于配置微调环境的 *conda.yml* 文件。
+在本练习中，您将创建项目的核心文件。这些文件包括用于下载数据集、设置 Azure 机器学习环境、微调 Phi-3 模型以及部署微调模型的脚本。您还将创建一个 *conda.yml* 文件来配置微调环境。
 
-本练习将完成以下文件创建：
+在本练习中，您将：
 
-- 创建 *download_dataset.py* 用于下载数据集。
-- 创建 *setup_ml.py* 用于设置 Azure 机器学习环境。
-- 在 *finetuning_dir* 文件夹中创建 *fine_tune.py*，用于使用数据集微调 Phi-3 模型。
-- 创建 *conda.yml* 文件，用于配置微调环境。
-- 创建 *deploy_model.py* 用于部署微调后的模型。
-- 创建 *integrate_with_promptflow.py*，用于集成微调模型并通过 Prompt flow 执行模型。
-- 创建 *flow.dag.yml* 文件，配置 Prompt flow 的工作流结构。
-- 创建 *config.py* 文件，填写 Azure 相关信息。
+- 创建一个 *download_dataset.py* 文件用于下载数据集。
+- 创建一个 *setup_ml.py* 文件用于设置 Azure 机器学习环境。
+- 在 *finetuning_dir* 文件夹中创建一个 *fine_tune.py* 文件，使用数据集微调 Phi-3 模型。
+- 创建一个 *conda.yml* 文件来配置微调环境。
+- 创建一个 *deploy_model.py* 文件用于部署微调后的模型。
+- 创建一个 *integrate_with_promptflow.py* 文件，将微调模型集成并通过 Prompt flow 执行模型。
+- 创建一个 flow.dag.yml 文件，设置 Prompt flow 的工作流结构。
+- 创建一个 *config.py* 文件，填写 Azure 相关信息。
 
 > [!NOTE]
 >
-> 完整文件夹结构：
+> 完整的文件夹结构：
 >
 > ```text
 > └── YourUserName
@@ -290,27 +287,27 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 选择 **打开文件夹**。
 
-1. 选择您创建的 *finetune-phi* 文件夹，路径类似于 *C:\Users\yourUserName\finetune-phi*。
+1. 选择您创建的 *finetune-phi* 文件夹，路径为 *C:\Users\yourUserName\finetune-phi*。
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.zh.png)
+    ![打开项目文件夹。](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.zh.png)
 
-1. 在 Visual Studio Code 左侧面板，右键点击空白处，选择 **新建文件**，创建 *download_dataset.py*。
+1. 在 Visual Studio Code 左侧面板中右键点击，选择 **新建文件**，创建名为 *download_dataset.py* 的文件。
 
-1. 同样方式，创建 *setup_ml.py* 文件。
+1. 在左侧面板中右键点击，选择 **新建文件**，创建名为 *setup_ml.py* 的文件。
 
-1. 同样方式，创建 *deploy_model.py* 文件。
+1. 在左侧面板中右键点击，选择 **新建文件**，创建名为 *deploy_model.py* 的文件。
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.zh.png)
+    ![创建新文件。](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.zh.png)
 
-1. 右键左侧面板，选择 **新建文件夹**，创建名为 *finetuning_dir* 的文件夹。
+1. 在左侧面板中右键点击，选择 **新建文件夹**，创建名为 *finetuning_dir* 的文件夹。
 
-1. 在 *finetuning_dir* 文件夹内，创建 *fine_tune.py* 文件。
+1. 在 *finetuning_dir* 文件夹中，创建一个名为 *fine_tune.py* 的新文件。
 
 #### 创建并配置 *conda.yml* 文件
 
-1. 在左侧面板右键选择 **新建文件**，创建 *conda.yml* 文件。
+1. 在左侧面板中右键点击，选择 **新建文件**，创建名为 *conda.yml* 的文件。
 
-1. 将以下代码添加到 *conda.yml* 文件，用于设置 Phi-3 模型的微调环境。
+1. 将以下代码添加到 *conda.yml* 文件中，用于配置 Phi-3 模型的微调环境。
 
     ```yml
     name: phi-3-training-env
@@ -338,9 +335,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### 创建并配置 *config.py* 文件
 
-1. 在左侧面板右键选择 **新建文件**，创建 *config.py* 文件。
+1. 在左侧面板中右键点击，选择 **新建文件**，创建名为 *config.py* 的文件。
 
-1. 将以下代码添加到 *config.py* 文件，填写您的 Azure 信息。
+1. 将以下代码添加到 *config.py* 文件中，填写您的 Azure 信息。
 
     ```python
     # Azure settings
@@ -372,28 +369,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 按照以下步骤添加 Azure 订阅 ID：
 
-    - 在门户页面顶部的**搜索栏**中输入 *subscriptions*，并选择 **订阅**。
+    - 在门户页面顶部的 **搜索栏** 输入 *subscriptions*，并从出现的选项中选择 **Subscriptions**。
     - 选择您当前使用的 Azure 订阅。
-    - 复制并粘贴您的订阅 ID 到 *config.py* 文件中。
-![查找订阅 ID。](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.zh.png)
+    - 将订阅 ID 复制并粘贴到 *config.py* 文件中。
 
-1. 执行以下操作以添加 Azure Workspace 名称：
+    ![查找订阅 ID。](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.zh.png)
 
-    - 导航到您创建的 Azure 机器学习资源。
+1. 按照以下步骤添加 Azure 工作区名称：
+
+    - 进入您创建的 Azure 机器学习资源。
     - 将您的账户名称复制并粘贴到 *config.py* 文件中。
 
     ![查找 Azure 机器学习名称。](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.zh.png)
 
-1. 执行以下操作以添加 Azure 资源组名称：
+1. 按照以下步骤添加 Azure 资源组名称：
 
-    - 导航到您创建的 Azure 机器学习资源。
+    - 进入您创建的 Azure 机器学习资源。
     - 将您的 Azure 资源组名称复制并粘贴到 *config.py* 文件中。
 
     ![查找资源组名称。](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.zh.png)
 
-2. 执行以下操作以添加 Azure 托管身份名称：
+2. 按照以下步骤添加 Azure 托管身份名称：
 
-    - 导航到您创建的托管身份资源。
+    - 进入您创建的托管身份资源。
     - 将您的 Azure 托管身份名称复制并粘贴到 *config.py* 文件中。
 
     ![查找 UAI。](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.zh.png)
@@ -473,32 +471,32 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> **使用 CPU 和最小数据集进行微调的建议**
+> **使用 CPU 进行最小数据集微调的指导**
 >
-> 如果您想使用 CPU 进行微调，这种方法非常适合拥有特权订阅（如 Visual Studio Enterprise 订阅）或希望快速测试微调和部署流程的用户。
+> 如果您想使用 CPU 进行微调，这种方法适合拥有福利订阅（如 Visual Studio Enterprise 订阅）或想快速测试微调和部署流程的用户。
 >
-> 将 `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')` 替换为更适合的值。
+> 将 `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` 替换为 `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. 在终端中输入以下命令，运行脚本并将数据集下载到本地环境。
+1. 在终端中输入以下命令运行脚本，将数据集下载到本地环境。
 
     ```console
     python download_data.py
     ```
 
-1. 确认数据集已成功保存到本地 *finetune-phi/data* 目录。
+1. 确认数据集已成功保存到本地的 *finetune-phi/data* 目录。
 
 > [!NOTE]
 >
-> **数据集大小和微调时间**
+> **数据集大小与微调时间**
 >
-> 在此端到端示例中，您仅使用了数据集的 1% (`train_sft[:1%]`)。这大幅减少了数据量，加快了上传和微调的速度。您可以调整比例以找到训练时间和模型性能之间的最佳平衡。使用较小的数据子集能显著缩短微调时间，使端到端示例更易管理。
+> 在此端到端示例中，您仅使用了数据集的 1%（`train_sft[:1%]`）。这大大减少了数据量，加快了上传和微调的速度。您可以调整百分比，以在训练时间和模型性能之间找到合适的平衡。使用较小的数据子集可以缩短微调所需时间，使端到端示例更易于管理。
 
-## 场景 2：微调 Phi-3 模型并在 Azure 机器学习 Studio 部署
+## 场景 2：微调 Phi-3 模型并在 Azure 机器学习工作室中部署
 
 ### 设置 Azure CLI
 
-您需要设置 Azure CLI 来认证您的环境。Azure CLI 允许您直接从命令行管理 Azure 资源，并提供 Azure 机器学习访问这些资源所需的凭据。要开始，请安装 [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)。
+您需要设置 Azure CLI 来验证您的环境。Azure CLI 允许您直接从命令行管理 Azure 资源，并为 Azure 机器学习提供访问这些资源所需的凭据。开始前请安装 [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
 1. 打开终端窗口，输入以下命令登录您的 Azure 账户。
 
@@ -514,7 +512,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> 如果登录 Azure 遇到问题，可以尝试使用设备代码登录。打开终端窗口，输入以下命令登录您的 Azure 账户：
+> 如果登录 Azure 时遇到问题，可以尝试使用设备代码登录。打开终端窗口，输入以下命令登录您的 Azure 账户：
 >
 > ```console
 > az login --use-device-code
@@ -523,11 +521,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### 微调 Phi-3 模型
 
-在本练习中，您将使用提供的数据集微调 Phi-3 模型。首先，在 *fine_tune.py* 文件中定义微调过程。然后，配置 Azure 机器学习环境，并通过运行 *setup_ml.py* 文件启动微调过程。该脚本确保微调在 Azure 机器学习环境中进行。
+在本练习中，您将使用提供的数据集微调 Phi-3 模型。首先，您将在 *fine_tune.py* 文件中定义微调流程。然后，您将配置 Azure 机器学习环境，并通过运行 *setup_ml.py* 文件启动微调过程。该脚本确保微调在 Azure 机器学习环境中进行。
 
-运行 *setup_ml.py* 后，微调过程将在 Azure 机器学习环境中执行。
+通过运行 *setup_ml.py*，您将在 Azure 机器学习环境中执行微调过程。
 
-#### 在 *fine_tune.py* 文件中添加代码
+#### 向 *fine_tune.py* 文件添加代码
 
 1. 进入 *finetuning_dir* 文件夹，在 Visual Studio Code 中打开 *fine_tune.py* 文件。
 
@@ -689,12 +687,12 @@ CO_OP_TRANSLATOR_METADATA:
 > [!TIP]
 > **您可以微调 Phi-3.5 模型**
 >
-> 在 *fine_tune.py* 文件中，您可以更改脚本中的 `pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name` 字段。
+> 在 *fine_tune.py* 文件中，您可以将 `pretrained_model_name` 从 `"microsoft/Phi-3-mini-4k-instruct"` 更改为任何您想微调的模型。例如，将其改为 `"microsoft/Phi-3.5-mini-instruct"`，即可使用 Phi-3.5-mini-instruct 模型进行微调。要查找并使用您喜欢的模型名称，请访问 [Hugging Face](https://huggingface.co/)，搜索感兴趣的模型，然后将其名称复制粘贴到脚本中的 `pretrained_model_name` 字段。
 >
 > :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="微调 Phi-3.5。":::
 >
 
-#### 在 *setup_ml.py* 文件中添加代码
+#### 向 *setup_ml.py* 文件添加代码
 
 1. 在 Visual Studio Code 中打开 *setup_ml.py* 文件。
 
@@ -825,7 +823,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. 用您的具体信息替换 `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `LOCATION`。
+1. 用您的具体信息替换 `COMPUTE_INSTANCE_TYPE`、`COMPUTE_NAME` 和 `LOCATION`。
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -837,13 +835,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> **使用 CPU 和最小数据集进行微调的建议**
+> **使用 CPU 进行最小数据集微调的指导**
 >
-> 如果您想使用 CPU 进行微调，这种方法非常适合拥有特权订阅（如 Visual Studio Enterprise 订阅）或希望快速测试微调和部署流程的用户。
+> 如果您想使用 CPU 进行微调，这种方法适合拥有福利订阅（如 Visual Studio Enterprise 订阅）或想快速测试微调和部署流程的用户。
 >
 > 1. 打开 *setup_ml* 文件。
-> 1. 用您的具体信息替换 `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
-> 1. Replace `LOCATION`。
+> 2. 将 `COMPUTE_INSTANCE_TYPE`、`COMPUTE_NAME` 和 `DOCKER_IMAGE_NAME` 替换为以下内容。如果您无法使用 *Standard_E16s_v3*，可以使用等效的 CPU 实例或申请新的配额。
+> 3. 将 `LOCATION` 替换为您的具体信息。
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -860,27 +858,27 @@ CO_OP_TRANSLATOR_METADATA:
     python setup_ml.py
     ```
 
-1. 在本练习中，您已成功使用 Azure 机器学习微调了 Phi-3 模型。通过运行 *setup_ml.py* 脚本，您设置了 Azure 机器学习环境并启动了 *fine_tune.py* 文件中定义的微调过程。请注意，微调过程可能需要相当长的时间。运行命令时，请将 `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
+1. 在本练习中，您已成功使用 Azure 机器学习微调了 Phi-3 模型。通过运行 *setup_ml.py* 脚本，您设置了 Azure 机器学习环境并启动了 *fine_tune.py* 文件中定义的微调过程。请注意，微调过程可能需要较长时间。运行 `python setup_ml.py` 命令后，您需要等待过程完成。您可以通过终端中提供的链接，进入 Azure 机器学习门户监控微调作业状态。
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.zh.png)
+    ![查看微调作业。](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.zh.png)
 
-### Deploy the fine-tuned model
+### 部署微调模型
 
-To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+为了将微调后的 Phi-3 模型与 Prompt Flow 集成，您需要部署模型，使其可用于实时推理。此过程包括注册模型、创建在线端点以及部署模型。
 
-#### Set the model name, endpoint name, and deployment name for deployment
+#### 设置模型名称、端点名称和部署名称
 
-1. Open *config.py* file.
+1. 打开 *config.py* 文件。
 
-1. Replace `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` with the desired name for your model.
+1. 将 `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` 替换为您想要的模型名称。
 
-1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
+1. 将 `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` 替换为您想要的端点名称。
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` 替换为您期望的部署名称。
+1. 将 `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` 替换为您想要的部署名称。
 
-#### 在 *deploy_model.py* 文件中添加代码
+#### 向 *deploy_model.py* 文件添加代码
 
-运行 *deploy_model.py* 文件可以自动完成整个部署流程。它会注册模型、创建端点，并根据 *config.py* 文件中指定的设置（包括模型名称、端点名称和部署名称）执行部署。
+运行 *deploy_model.py* 文件将自动完成整个部署流程。它会根据 *config.py* 文件中指定的模型名称、端点名称和部署名称，注册模型、创建端点并执行部署。
 
 1. 在 Visual Studio Code 中打开 *deploy_model.py* 文件。
 
@@ -1050,36 +1048,37 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
     ```
 
-1. 根据您的具体信息，完成 `JOB_NAME`:
+1. 按照以下步骤获取 `JOB_NAME`：
 
-    - Navigate to Azure Machine Learning resource that you created.
-    - Select **Studio web URL** to open the Azure Machine Learning workspace.
-    - Select **Jobs** from the left side tab.
-    - Select the experiment for fine-tuning. For example, *finetunephi*.
-    - Select the job that you created.
-    - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+    - 进入您创建的 Azure 机器学习资源。
+    - 选择 **Studio web URL** 打开 Azure 机器学习工作区。
+    - 从左侧标签中选择 **Jobs**。
+    - 选择微调实验，例如 *finetunephi*。
+    - 选择您创建的作业。
+- 将您的作业名称复制并粘贴到 *deploy_model.py* 文件中的 `JOB_NAME = "your-job-name"`。
 
-1. Replace `COMPUTE_INSTANCE_TYPE`。
+1. 将 `COMPUTE_INSTANCE_TYPE` 替换为您的具体信息。
 
-1. 输入以下命令运行 *deploy_model.py* 脚本，启动 Azure 机器学习中的部署流程。
+1. 输入以下命令运行 *deploy_model.py* 脚本，开始在 Azure 机器学习中部署。
 
     ```python
     python deploy_model.py
     ```
 
+
 > [!WARNING]
-> 为避免产生额外费用，请确保删除 Azure 机器学习工作区中创建的端点。
+> 为避免产生额外费用，请确保删除在 Azure 机器学习工作区中创建的端点。
 >
 
 #### 在 Azure 机器学习工作区检查部署状态
 
 1. 访问 [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)。
 
-1. 导航到您创建的 Azure 机器学习工作区。
+1. 进入您创建的 Azure 机器学习工作区。
 
 1. 选择 **Studio web URL** 打开 Azure 机器学习工作区。
 
-1. 从左侧标签选择 **Endpoints**。
+1. 从左侧标签中选择 **Endpoints**。
 
     ![选择端点。](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.zh.png)
 
@@ -1087,26 +1086,26 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
     ![选择您创建的端点。](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.zh.png)
 
-3. 在此页面中，您可以管理部署过程中创建的端点。
+3. 在此页面，您可以管理部署过程中创建的端点。
 
-## 场景 3：与 Prompt flow 集成并与您的自定义模型对话
+## 场景 3：与 Prompt flow 集成并与您的自定义模型聊天
 
-### 将自定义 Phi-3 模型集成到 Prompt flow
+### 将自定义 Phi-3 模型与 Prompt flow 集成
 
-成功部署微调模型后，您现在可以将其集成到 Prompt flow 中，以便在实时应用中使用您的模型，实现各种交互式任务。
+成功部署微调模型后，您现在可以将其与 Prompt flow 集成，在实时应用中使用您的模型，实现多种交互式任务，充分发挥自定义 Phi-3 模型的能力。
 
 #### 设置微调 Phi-3 模型的 api key 和 endpoint uri
 
-1. 导航到您创建的 Azure 机器学习工作区。
-1. 从左侧标签选择 **Endpoints**。
+1. 进入您创建的 Azure 机器学习工作区。
+1. 从左侧标签中选择 **Endpoints**。
 1. 选择您创建的端点。
 1. 从导航菜单中选择 **Consume**。
-1. 将您的 **REST endpoint** 复制并粘贴到 *config.py* 文件中，替换 `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"`，并填写您的 **Primary key**。
+1. 将您的 **REST endpoint** 复制并粘贴到 *config.py* 文件中，替换 `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` 为您的 **REST endpoint**。
+1. 将您的 **Primary key** 复制并粘贴到 *config.py* 文件中，替换 `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` 为您的 **Primary key**。
 
     ![复制 api key 和 endpoint uri。](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.zh.png)
 
-#### 在 *flow.dag.yml* 文件中添加代码
+#### 向 *flow.dag.yml* 文件添加代码
 
 1. 在 Visual Studio Code 中打开 *flow.dag.yml* 文件。
 
@@ -1133,7 +1132,7 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
         input_data: ${inputs.input_data}
     ```
 
-#### 在 *integrate_with_promptflow.py* 文件中添加代码
+#### 向 *integrate_with_promptflow.py* 文件添加代码
 
 1. 在 Visual Studio Code 中打开 *integrate_with_promptflow.py* 文件。
 
@@ -1203,17 +1202,17 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
     ```
 
-### 与您的自定义模型对话
+### 与您的自定义模型聊天
 
-1. 输入以下命令运行 *deploy_model.py* 脚本，启动 Azure 机器学习中的部署流程。
+1. 输入以下命令运行 *deploy_model.py* 脚本，开始在 Azure 机器学习中部署。
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. 以下是示例结果：现在，您可以与自定义 Phi-3 模型进行对话。建议基于用于微调的数据提出问题。
+1. 以下是结果示例：现在您可以与自定义 Phi-3 模型聊天。建议基于用于微调的数据提问。
 
     ![Prompt flow 示例。](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.zh.png)
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言版本的文件应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

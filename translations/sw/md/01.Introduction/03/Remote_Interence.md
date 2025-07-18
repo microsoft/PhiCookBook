@@ -2,69 +2,69 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:44:52+00:00",
+  "translation_date": "2025-07-16T21:21:24+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "sw"
 }
 -->
-# Remote Inferencing na modeli iliyoboreshwa
+# Utabiri wa Mbali kwa kutumia modeli iliyoboreshwa
 
-Baada ya adapters kufundishwa katika mazingira ya mbali, tumia programu rahisi ya Gradio kuingiliana na modeli.
+Baada ya adapters kufunzwa katika mazingira ya mbali, tumia programu rahisi ya Gradio kuwasiliana na modeli.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.sw.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.sw.png)
 
-### Kuweka Rasilimali za Azure  
-Unahitaji kuanzisha Rasilimali za Azure kwa ajili ya inferencing ya mbali kwa kutekeleza `AI Toolkit: Provision Azure Container Apps for inference` kutoka kwenye command palette. Wakati wa usanidi huu, utaombwa kuchagua Azure Subscription yako na resource group.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.sw.png)
-
-Kwa kawaida, subscription na resource group kwa inferencing zinapaswa kuendana na zile zilizotumika kwa fine-tuning. Inferencing itatumia Azure Container App Environment ile ile na kupata modeli na model adapter zilizohifadhiwa katika Azure Files, ambazo zilitengenezwa wakati wa hatua ya fine-tuning.
+### Kuweka Rasilimali za Azure
+Unahitaji kuanzisha Rasilimali za Azure kwa ajili ya utabiri wa mbali kwa kutekeleza amri ya `AI Toolkit: Provision Azure Container Apps for inference` kutoka kwenye orodha ya amri. Wakati wa usanidi huu, utaombwa kuchagua Usajili wako wa Azure na kundi la rasilimali.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.sw.png)
+   
+Kwa kawaida, usajili na kundi la rasilimali kwa ajili ya utabiri yanapaswa kufanana na yale yaliyotumika kwa ajili ya uboreshaji. Utabiri utatumia Mazingira ya Azure Container App sawa na kufikia modeli na adapter ya modeli iliyohifadhiwa katika Azure Files, ambazo zilitengenezwa wakati wa hatua ya uboreshaji. 
 
 ## Kutumia AI Toolkit
 
-### Uwekaji kwa ajili ya Inferencing  
-Ikiwa unataka kurekebisha msimbo wa inferencing au upya load modeli ya inferencing, tafadhali tekeleza amri ya `AI Toolkit: Deploy for inference`. Hii italinganisha msimbo wako wa hivi karibuni na ACA na kuanzisha tena replica.
+### Uwekaji kwa ajili ya Utabiri  
+Ikiwa unataka kurekebisha msimbo wa utabiri au kupakia tena modeli ya utabiri, tafadhali tekeleza amri ya `AI Toolkit: Deploy for inference`. Hii italinganisha msimbo wako wa hivi karibuni na ACA na kuanzisha tena nakala.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.sw.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.sw.png)
 
-Baada ya uwekaji kufanikiwa, modeli sasa iko tayari kutathminiwa kwa kutumia endpoint hii.
+Baada ya utekelezaji kufanikiwa, modeli sasa iko tayari kwa tathmini kwa kutumia kiunganishi hiki.
 
-### Kufikia Inference API
+### Kupata API ya Utabiri
 
-Unaweza kufikia inference API kwa kubofya kitufe cha "*Go to Inference Endpoint*" kinachoonekana kwenye taarifa ya VSCode. Vinginevyo, endpoint ya web API inaweza kupatikana chini ya `ACA_APP_ENDPOINT` katika `./infra/inference.config.json` na katika paneli ya output.
+Unaweza kufikia API ya utabiri kwa kubofya kitufe cha "*Go to Inference Endpoint*" kinachoonyeshwa kwenye taarifa ya VSCode. Vinginevyo, kiunganishi cha API ya wavuti kinaweza kupatikana chini ya `ACA_APP_ENDPOINT` katika `./infra/inference.config.json` na kwenye paneli ya matokeo.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.sw.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.sw.png)
 
-> **Note:** Endpoint ya inferencing inaweza kuchukua dakika chache kuwa tayari kabisa.
+> **Note:** Kiunganishi cha utabiri kinaweza kuchukua dakika chache kabla ya kuwa tayari kabisa.
 
-## Vipengele vya Inferencing Vilivyomo Katika Template
+## Vipengele vya Utabiri Vilivyomo Katika Kiolezo
 
-| Folder | Yaliyomo |
+| Folda | Yaliyomo |
 | ------ |--------- |
-| `infra` | Ina mipangilio yote muhimu kwa shughuli za mbali. |
-| `infra/provision/inference.parameters.json` | Inahifadhi vigezo vya bicep templates, vinavyotumika kwa kuanzisha rasilimali za Azure kwa inferencing. |
-| `infra/provision/inference.bicep` | Ina templates za kuanzisha rasilimali za Azure kwa inferencing. |
-| `infra/inference.config.json` | Faili la usanidi, lililotengenezwa na amri ya `AI Toolkit: Provision Azure Container Apps for inference`. Linatumika kama ingizo kwa command palettes nyingine za mbali. |
+| `infra` | Ina mipangilio yote muhimu kwa ajili ya shughuli za mbali. |
+| `infra/provision/inference.parameters.json` | Ina vigezo vya templates za bicep, vinavyotumika kwa kuweka rasilimali za Azure kwa ajili ya utabiri. |
+| `infra/provision/inference.bicep` | Ina templates za kuweka rasilimali za Azure kwa ajili ya utabiri. |
+| `infra/inference.config.json` | Faili la usanidi, lililotengenezwa na amri ya `AI Toolkit: Provision Azure Container Apps for inference`. Linatumika kama ingizo kwa orodha nyingine za amri za mbali. |
 
-### Kutumia AI Toolkit kuandaa Azure Resource Provision  
+### Kutumia AI Toolkit kusanidi Utoaji wa Rasilimali za Azure
 Sanidi [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Toa Azure Container Apps kwa inferencing` command.
+Amri ya `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+Unaweza kupata vigezo vya usanidi katika faili `./infra/provision/inference.parameters.json`. Hapa kuna maelezo:
+| Kigezo | Maelezo |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | Hizi ni amri za kuanzisha API ya wavuti. |
+| `maximumInstanceCount` | Kigezo hiki kinaweka uwezo wa juu wa nakala za GPU. |
+| `location` | Hii ni eneo ambapo rasilimali za Azure zinaanzishwa. Thamani ya kawaida ni ile ile ya eneo la kundi la rasilimali lililochaguliwa. |
+| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | Vigezo hivi vinatumika kwa kutoa majina ya rasilimali za Azure kwa ajili ya utoaji. Kwa kawaida, vitakuwa sawa na jina la rasilimali za uboreshaji. Unaweza kuingiza jina jipya la rasilimali ambalo halijatumiwa ili kuunda rasilimali zako za jina la kipekee, au unaweza kuingiza jina la rasilimali ya Azure iliyopo tayari ikiwa unataka kuitumia. Kwa maelezo zaidi, rejea sehemu ya [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### Kutumia Rasilimali za Azure Zilizopo
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Kwa kawaida, utoaji wa utabiri hutumia Mazingira ya Azure Container App, Akaunti ya Hifadhi, Azure File Share, na Azure Log Analytics ambazo zilitumika kwa uboreshaji. Azure Container App tofauti huundwa mahsusi kwa API ya utabiri.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` faili. Kisha, endesha amri ya `AI Toolkit: Provision Azure Container Apps for inference` kutoka kwenye command palette. Hii itasasisha rasilimali yoyote iliyobainishwa na kuunda zile ambazo hazipo.
+Ikiwa umebadilisha rasilimali za Azure wakati wa hatua ya uboreshaji au unataka kutumia rasilimali zako za Azure zilizopo kwa utabiri, eleza majina yao katika faili `./infra/inference.parameters.json`. Kisha, endesha amri ya `AI Toolkit: Provision Azure Container Apps for inference` kutoka kwenye orodha ya amri. Hii itasasisha rasilimali zozote zilizotajwa na kuunda zile ambazo hazipo.
 
-Kwa mfano, kama una mazingira ya Azure container yaliyopo, faili yako ya `./infra/finetuning.parameters.json` inapaswa kuonekana kama ifuatavyo:
+Kwa mfano, ikiwa una mazingira ya Azure container yaliyopo, faili yako ya `./infra/finetuning.parameters.json` inapaswa kuonekana kama ifuatavyo:
 
 ```json
 {
@@ -83,8 +83,8 @@ Kwa mfano, kama una mazingira ya Azure container yaliyopo, faili yako ya `./infr
   }
 ```
 
-### Usanidi wa Mikono  
-Ikiwa unapendelea kusanidi rasilimali za Azure kwa mikono, unaweza kutumia faili za bicep zilizotolewa katika `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` faili.
+### Utoaji wa Mikono  
+Ikiwa unapendelea kusanidi rasilimali za Azure kwa mikono, unaweza kutumia faili za bicep zilizopo katika folda za `./infra/provision`. Ikiwa tayari umeanzisha na kusanidi rasilimali zote za Azure bila kutumia orodha ya amri ya AI Toolkit, unaweza tu kuingiza majina ya rasilimali katika faili ya `inference.config.json`.
 
 Kwa mfano:
 
@@ -99,5 +99,5 @@ Kwa mfano:
 }
 ```
 
-**Kang’amuzi**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei lawama kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

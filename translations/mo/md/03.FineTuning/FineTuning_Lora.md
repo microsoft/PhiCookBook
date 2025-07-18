@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-05-07T13:30:56+00:00",
+  "translation_date": "2025-07-17T06:28:22+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "mo"
 }
 -->
-# **Fine-tuning Phi-3 with Lora**
+# **使用 Lora 微調 Phi-3**
 
-Fine-tuning Microsoft's Phi-3 Mini language model using [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) on a custom chat instruction dataset.
+使用 [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) 在自訂聊天指令資料集上微調微軟的 Phi-3 Mini 語言模型。
 
-LORA will help improve conversational understanding and response generation.
+LORA 有助於提升對話理解與回應生成能力。
 
-## Step-by-step guide on how to fine-tune Phi-3 Mini:
+## Phi-3 Mini 微調逐步指南：
 
-**Imports and Setup**
+**匯入與設定**
 
-Installing loralib
+安裝 loralib
 
 ```
 pip install loralib
@@ -26,10 +26,10 @@ pip install loralib
 
 ```
 
-Start by importing essential libraries such as datasets, transformers, peft, trl, and torch.  
-Set up logging to monitor the training progress.
+首先匯入必要的函式庫，如 datasets、transformers、peft、trl 和 torch。
+設定日誌以追蹤訓練過程。
 
-You can choose to adapt certain layers by swapping them with versions implemented in loralib. Currently, we support nn.Linear, nn.Embedding, and nn.Conv2d. Additionally, MergedLinear is supported for cases where a single nn.Linear represents multiple layers, like some attention qkv projection implementations (see Additional Notes for details).
+你可以選擇透過替換部分層為 loralib 實作的對應層來進行調整。目前僅支援 nn.Linear、nn.Embedding 和 nn.Conv2d。我們也支援 MergedLinear，適用於單一 nn.Linear 代表多層的情況，例如某些注意力 qkv 投影的實作（詳見附註）。
 
 ```
 # ===== Before =====
@@ -47,7 +47,7 @@ import loralib as lora
 layer = lora.Linear(in_features, out_features, r=16)
 ```
 
-Before starting the training loop, make sure only LoRA parameters are marked as trainable.
+在訓練迴圈開始前，僅標記 LoRA 參數為可訓練。
 
 ```
 import loralib as lora
@@ -58,18 +58,18 @@ lora.mark_only_lora_as_trainable(model)
 for batch in dataloader:
 ```
 
-When saving a checkpoint, create a state_dict that contains only LoRA parameters.
+儲存檢查點時，產生只包含 LoRA 參數的 state_dict。
 
 ```
 # ===== Before =====
 # torch.save(model.state_dict(), checkpoint_path)
-```  
+```
 ```
 # ===== After =====
 torch.save(lora.lora_state_dict(model), checkpoint_path)
 ```
 
-When loading a checkpoint with load_state_dict, remember to set strict=False.
+使用 load_state_dict 載入檢查點時，請務必設定 strict=False。
 
 ```
 # Load the pretrained checkpoint first
@@ -78,30 +78,30 @@ model.load_state_dict(torch.load('ckpt_pretrained.pt'), strict=False)
 model.load_state_dict(torch.load('ckpt_lora.pt'), strict=False)
 ```
 
-Now you can proceed with training as usual.
+現在即可照常進行訓練。
 
-**Hyperparameters**
+**超參數**
 
-Define two dictionaries: training_config and peft_config.  
-training_config includes training hyperparameters such as learning rate, batch size, and logging options.
+定義兩個字典：training_config 和 peft_config。training_config 包含訓練的超參數，如學習率、批次大小及日誌設定。
 
-peft_config contains LoRA-specific settings like rank, dropout, and task type.
+peft_config 指定 LoRA 相關參數，如 rank、dropout 和任務類型。
 
-**Model and Tokenizer Loading**
+**模型與分詞器載入**
 
-Specify the path to the pre-trained Phi-3 model (e.g., "microsoft/Phi-3-mini-4k-instruct"). Configure model options including cache usage, data type (bfloat16 for mixed precision), and attention implementation.
+指定預訓練 Phi-3 模型的路徑（例如 "microsoft/Phi-3-mini-4k-instruct"）。配置模型設定，包括快取使用、資料類型（混合精度使用 bfloat16）及注意力實作。
 
-**Training**
+**訓練**
 
-Fine-tune the Phi-3 model using your custom chat instruction dataset. Use the LoRA parameters from peft_config for efficient adaptation. Track training progress with the configured logging strategy.  
-Evaluation and Saving: Evaluate the fine-tuned model and save checkpoints during training for future use.
+使用自訂聊天指令資料集微調 Phi-3 模型。利用 peft_config 中的 LoRA 設定進行高效調整。透過指定的日誌策略監控訓練進度。
+評估與儲存：評估微調後的模型。
+訓練過程中儲存檢查點以供後續使用。
 
-**Samples**  
-- [Learn More with this sample notebook](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
-- [Example of Python FineTuning Sample](../../../../code/03.Finetuning/FineTrainingScript.py)  
-- [Example of Hugging Face Hub Fine Tuning with LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
-- [Example Hugging Face Model Card - LORA Fine Tuning Sample](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
-- [Example of Hugging Face Hub Fine Tuning with QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
+**範例**
+- [使用此範例筆記本深入了解](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
+- [Python 微調範例](../../../../code/03.Finetuning/FineTrainingScript.py)
+- [Hugging Face Hub 使用 LORA 微調範例](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
+- [Hugging Face 模型卡範例 - LORA 微調](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)
+- [Hugging Face Hub 使用 QLORA 微調範例](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
-**Disclaimer**:  
-Dis dokument has ben translaited using AI translait service [Co-op Translator](https://github.com/Azure/co-op-translator). Wail wi strive for accuracy, plies be awair dat automated translaits may contain errors or inaccuracies. Di original dokument in its native language shud be considered di authoritative source. For critical information, professional human translait is recommended. Wi ar not liable for any misunderstandings or misinterpretations arising from di use of dis translait.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

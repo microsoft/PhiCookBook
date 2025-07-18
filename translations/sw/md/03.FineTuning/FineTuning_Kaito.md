@@ -2,47 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:42:28+00:00",
+  "translation_date": "2025-07-17T06:24:26+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "sw"
 }
 -->
-## Kurekebisha kwa Kaito
+## Kurekebisha kwa Undani na Kaito
 
-[Kaito](https://github.com/Azure/kaito) ni operator inayotoa utaratibu wa kuendesha modeli za AI/ML kwenye Kubernetes cluster.
+[Kaito](https://github.com/Azure/kaito) ni operatori inayot automatisha uanzishaji wa modeli za AI/ML katika klasta ya Kubernetes.
 
-Kaito ina tofauti kuu zifuatazo ikilinganishwa na mbinu nyingi za kawaida za kupeleka modeli zinazotegemea miundombinu ya virtual machine:
+Kaito ina tofauti kuu zifuatazo ikilinganishwa na mbinu nyingi za kawaida za uanzishaji wa modeli zinazotegemea miundombinu ya mashine za virtuali:
 
-- Kusimamia faili za modeli kwa kutumia picha za container. Server ya http hutolewa kwa ajili ya kuita inference kwa kutumia maktaba ya modeli.
-- Kuepuka kubadilisha vigezo vya deployment ili kuendana na vifaa vya GPU kwa kutoa mipangilio ya awali.
-- Kujipangia node za GPU kiotomatiki kulingana na mahitaji ya modeli.
+- Kusimamia faili za modeli kwa kutumia picha za kontena. Seva ya http hutolewa kwa ajili ya kufanya miito ya inference kwa kutumia maktaba ya modeli.
+- Kuepuka kurekebisha vigezo vya uanzishaji ili kuendana na vifaa vya GPU kwa kutoa mipangilio iliyowekwa awali.
+- Kujitengenezea nodi za GPU kiotomatiki kulingana na mahitaji ya modeli.
 - Kuhifadhi picha kubwa za modeli katika Microsoft Container Registry (MCR) ya umma ikiwa leseni inaruhusu.
 
-Kutumia Kaito, mchakato wa kuingiza modeli kubwa za AI kwenye Kubernetes umefanywa rahisi sana.
+Kwa kutumia Kaito, mchakato wa kuingiza modeli kubwa za AI katika Kubernetes umefanywa rahisi sana.
 
 ## Mimarisho
 
-Kaito hufuata muundo wa kawaida wa Kubernetes Custom Resource Definition (CRD)/controller. Mtumiaji husimamia rasilimali maalum ya `workspace` inayobainisha mahitaji ya GPU na maelezo ya inference. Kaito controllers hufanya deployment kiotomatiki kwa kusawazisha rasilimali maalum ya `workspace`.
+Kaito hufuata muundo wa kawaida wa Kubernetes Custom Resource Definition (CRD)/controller. Mtumiaji husimamia rasilimali maalum ya `workspace` inayobainisha mahitaji ya GPU na maelezo ya inference. Kaito controllers hufanya uanzishaji kiotomatiki kwa kusawazisha rasilimali maalum ya `workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-Mchoro huu unaonyesha muhtasari wa miundombinu ya Kaito. Vipengele vikuu ni:
+Mchoro hapo juu unaonyesha muhtasari wa usanifu wa Kaito. Sehemu zake kuu ni:
 
-- **Workspace controller**: Husaidia kusawazisha rasilimali maalum ya `workspace`, kuunda rasilimali maalum za `machine` (zitakazobainishwa baadaye) ili kuanzisha upangaji wa node kiotomatiki, na kuunda mzigo wa inference (`deployment` au `statefulset`) kulingana na mipangilio ya awali ya modeli.
-- **Node provisioner controller**: Jina la controller ni *gpu-provisioner* katika [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Inatumia CRD ya `machine` kutoka [Karpenter](https://sigs.k8s.io/karpenter) kuwasiliana na workspace controller. Inashirikiana na API za Azure Kubernetes Service (AKS) kuongeza node mpya za GPU kwenye cluster ya AKS.
-> Note: The [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ni sehemu ya chanzo huria. Inaweza kubadilishwa na controllers nyingine ikiwa zinaunga mkono API za [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Workspace controller**: Husawazisha rasilimali maalum ya `workspace`, huunda rasilimali maalum za `machine` (zilizoelezwa hapa chini) ili kuanzisha utoaji wa nodi kiotomatiki, na huunda mzigo wa inference (`deployment` au `statefulset`) kulingana na mipangilio ya modeli iliyowekwa awali.
+- **Node provisioner controller**: Jina la controller ni *gpu-provisioner* katika [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Inatumia CRD ya `machine` inayotokana na [Karpenter](https://sigs.k8s.io/karpenter) kuwasiliana na workspace controller. Inajumuika na APIs za Azure Kubernetes Service (AKS) kuongeza nodi mpya za GPU kwenye klasta ya AKS.  
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ni sehemu ya chanzo huria. Inaweza kubadilishwa na controllers wengine ikiwa wanaunga mkono APIs za [Karpenter-core](https://sigs.k8s.io/karpenter).
 
-## Video ya Muhtasari
-[Tazama Demo ya Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+## Video ya Muhtasari  
+[Tazama Onyesho la Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
-## Usanidi
+## Ufungaji
 
-Tafadhali angalia mwongozo wa usakinishaji [hapa](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Tafadhali angalia mwongozo wa ufungaji [hapa](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Anza Haraka
 
-Baada ya kusanidi Kaito, mtu anaweza kujaribu amri zifuatazo kuanzisha huduma ya kurekebisha modeli.
+Baada ya kufunga Kaito, mtu anaweza kujaribu amri zifuatazo kuanzisha huduma ya kurekebisha kwa undani.
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-Hali ya workspace inaweza kufuatiliwa kwa kutumia amri ifuatayo. Wakati safu ya WORKSPACEREADY inakuwa `True`, modeli imesakinishwa kwa mafanikio.
+Hali ya workspace inaweza kufuatiliwa kwa kuendesha amri ifuatayo. Wakati safu ya WORKSPACEREADY inakuwa `True`, modeli imesakinishwa kwa mafanikio.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Baadaye, mtu anaweza kupata cluster ip ya huduma ya inference na kutumia pod ya muda ya `curl` kujaribu endpoint ya huduma ndani ya cluster.
+Baadaye, mtu anaweza kupata IP ya huduma ya inference ya klasta na kutumia pod ya muda ya `curl` kujaribu kiunganishi cha huduma ndani ya klasta.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -112,5 +112,5 @@ export CLUSTERIP=$(kubectl get svc workspace-tuning-phi-3 -o jsonpath="{.spec.cl
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Kiondoa lawama**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubeba uwajibikaji wowote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

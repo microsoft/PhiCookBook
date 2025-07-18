@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-07T10:45:56+00:00",
+  "translation_date": "2025-07-16T21:35:50+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "de"
 }
 -->
 # **Inference Phi-3-Vision lokal**
 
-Phi-3-vision-128k-instruct ermöglicht es Phi-3, nicht nur Sprache zu verstehen, sondern die Welt auch visuell wahrzunehmen. Mit Phi-3-vision-128k-instruct können wir verschiedene visuelle Aufgaben lösen, wie z. B. OCR, Tabellenanalyse, Objekterkennung, Bildbeschreibungen usw. Aufgaben, die früher viel Datenaufwand erforderten, lassen sich jetzt einfach erledigen. Im Folgenden sind relevante Techniken und Anwendungsfälle aufgeführt, die von Phi-3-vision-128k-instruct genutzt werden.
+Phi-3-vision-128k-instruct ermöglicht es Phi-3, nicht nur Sprache zu verstehen, sondern die Welt auch visuell wahrzunehmen. Mit Phi-3-vision-128k-instruct können wir verschiedene visuelle Aufgaben lösen, wie z. B. OCR, Tabellenanalyse, Objekterkennung, Bildbeschreibung usw. Aufgaben, die früher viel Daten-Training erforderten, lassen sich nun einfach erledigen. Im Folgenden sind die zugehörigen Techniken und Anwendungsszenarien aufgeführt, die von Phi-3-vision-128k-instruct genutzt werden.
 
 ## **0. Vorbereitung**
 
-Bitte stelle sicher, dass die folgenden Python-Bibliotheken vor der Nutzung installiert sind (Python 3.10+ wird empfohlen)
+Bitte stellen Sie sicher, dass die folgenden Python-Bibliotheken vor der Nutzung installiert sind (Python 3.10+ wird empfohlen)
 
 ```bash
 pip install transformers -U
@@ -27,7 +27,7 @@ Es wird empfohlen, ***CUDA 11.6+*** zu verwenden und flatten zu installieren
 pip install flash-attn --no-build-isolation
 ```
 
-Erstelle ein neues Notebook. Um die Beispiele auszuführen, solltest du zunächst den folgenden Inhalt anlegen.
+Erstellen Sie ein neues Notebook. Um die Beispiele auszuführen, sollten Sie zunächst den folgenden Inhalt anlegen.
 
 ```python
 from PIL import Image
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Bildanalyse mit Phi-3-Vision**
 
-Wir möchten, dass die KI den Inhalt unserer Bilder analysieren und passende Beschreibungen liefern kann.
+Wir möchten, dass die KI den Inhalt unserer Bilder analysiert und passende Beschreibungen liefert
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Die relevanten Antworten erhalten wir, indem wir das folgende Skript im Notebook ausführen.
+Die relevanten Antworten erhalten wir, indem wir das folgende Skript im Notebook ausführen
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR mit Phi-3-Vision**
 
-Neben der Bildanalyse können wir auch Informationen aus dem Bild extrahieren. Dabei handelt es sich um den OCR-Prozess, für den wir früher komplexen Code schreiben mussten.
+Neben der Bildanalyse können wir auch Informationen aus dem Bild extrahieren. Dies ist der OCR-Prozess, für den wir früher komplexen Code schreiben mussten.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

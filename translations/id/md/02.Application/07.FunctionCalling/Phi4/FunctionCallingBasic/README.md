@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:08:56+00:00",
+  "translation_date": "2025-07-17T05:16:25+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "id"
 }
 -->
 ## **Pemanggilan fungsi di Phi-4-mini**
 
-Pemanggilan fungsi pertama kali muncul di keluarga Phi Family, dan sekarang kamu bisa menggunakannya melalui Phi-4-mini.
+Pemanggilan fungsi pertama kali muncul di keluarga Phi Family, dan sekarang Anda bisa menggunakannya melalui Phi-4-mini.
 
-Contoh ini menunjukkan simulasi hasil Premier League. Tujuannya adalah agar Phi-4-mini dapat menyampaikan informasi pertandingan secara real-time. Berikut adalah kode contohnya:
+Contoh ini menunjukkan simulasi hasil Premier League. Tujuannya adalah agar Phi-4-mini dapat memberikan informasi pertandingan secara real-time. Berikut adalah contoh kodenya:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

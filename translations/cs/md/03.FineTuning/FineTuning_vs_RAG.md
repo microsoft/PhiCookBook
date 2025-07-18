@@ -2,30 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e4e010400c2918557b36bb932a14004c",
-  "translation_date": "2025-05-09T22:17:05+00:00",
+  "translation_date": "2025-07-17T09:31:12+00:00",
   "source_file": "md/03.FineTuning/FineTuning_vs_RAG.md",
   "language_code": "cs"
 }
 -->
-## Finetuning vs RAG
+## Doladění vs RAG
 
 ## Retrieval Augmented Generation
 
-RAG combines data retrieval with text generation. Both structured and unstructured enterprise data are stored in a vector database. When searching for relevant information, related summaries and content are retrieved to form a context, which is then used alongside the text completion capabilities of LLM/SLM to generate content.
+RAG je kombinace vyhledávání dat a generování textu. Strukturovaná i nestrukturovaná data firmy jsou uložena ve vektorové databázi. Při hledání relevantního obsahu se najde souhrn a obsah, které tvoří kontext, a ten se spojí s textovou generací LLM/SLM pro vytvoření výsledného textu.
 
-## RAG Process
-![FinetuningvsRAG](../../../../translated_images/rag.36e7cb856f120334d577fde60c6a5d7c5eecae255dac387669303d30b4b3efa4.cs.png)
+## Proces RAG
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.cs.png)
 
-## Fine-tuning
-Fine-tuning improves a specific model. It doesn’t require starting from the model algorithm itself, but it does require continuous data accumulation. If you want more precise terminology and language expression in industry applications, fine-tuning is the better choice. However, if your data changes frequently, fine-tuning can become complex.
+## Doladění
+Doladění vychází ze zlepšení konkrétního modelu. Není potřeba začínat od algoritmu modelu, ale je nutné průběžně sbírat data. Pokud chcete přesnější terminologii a jazykové vyjádření v průmyslových aplikacích, doladění je lepší volba. Pokud se ale vaše data často mění, doladění může být složité.
 
-## How to choose
-If your answer requires integrating external data, RAG is the best option.
+## Jak vybrat
+Pokud naše odpověď vyžaduje zapojení externích dat, RAG je nejlepší volba.
 
-If you need to deliver stable and precise industry knowledge, fine-tuning is a good choice. RAG focuses on retrieving relevant content but might not always capture specialized nuances perfectly.
+Pokud potřebujete stabilní a přesné průmyslové znalosti, doladění bude vhodnější. RAG upřednostňuje vytažení relevantního obsahu, ale nemusí vždy zachytit specializované nuance.
 
-Fine-tuning demands a high-quality dataset, and if the data scope is small, it won’t make much difference. RAG offers more flexibility.  
-Fine-tuning is a black box, somewhat metaphysical, making it difficult to understand the internal workings. RAG, on the other hand, makes it easier to trace the data source, which helps effectively address hallucinations or content errors and provides better transparency.
+Doladění vyžaduje kvalitní datovou sadu, a pokud jde jen o malý rozsah dat, nebude mít velký efekt. RAG je flexibilnější.  
+Doladění je černá skříňka, něco jako metafyzika, a je těžké pochopit jeho vnitřní mechanismus. RAG naopak usnadňuje dohledání zdroje dat, což pomáhá efektivně korigovat halucinace nebo chyby v obsahu a zajišťuje lepší průhlednost.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

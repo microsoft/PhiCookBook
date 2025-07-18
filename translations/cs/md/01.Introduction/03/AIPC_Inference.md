@@ -2,45 +2,45 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-05-09T10:34:12+00:00",
+  "translation_date": "2025-07-16T20:06:44+00:00",
   "source_file": "md/01.Introduction/03/AIPC_Inference.md",
   "language_code": "cs"
 }
 -->
-# **推理 Phi-3 在 AI PC 上的应用**
+# **Inference Phi-3 na AI PC**
 
-随着生成式 AI 的进步以及边缘设备硬件性能的提升，越来越多的生成式 AI 模型可以集成到用户自带设备（BYOD）中。AI PC 就是其中一种。从 2024 年起，Intel、AMD 和 Qualcomm 与 PC 制造商合作，通过硬件改进推出支持本地化生成式 AI 模型部署的 AI PC。本节将重点介绍 Intel AI PC 以及如何在 Intel AI PC 上部署 Phi-3。
+S rozvojem generativní AI a zlepšováním hardwarových schopností edge zařízení může být stále více generativních AI modelů integrováno do uživatelských zařízení typu Bring Your Own Device (BYOD). AI PC patří mezi tyto modely. Od roku 2024 spolupracují Intel, AMD a Qualcomm s výrobci PC na zavedení AI PC, která usnadňují nasazení lokalizovaných generativních AI modelů prostřednictvím hardwarových úprav. V této diskusi se zaměříme na Intel AI PC a prozkoumáme, jak nasadit Phi-3 na Intel AI PC.
 
-### 什么是 NPU
+### Co je NPU
 
-NPU（神经网络处理单元）是集成在更大 SoC 中的专用处理器，专门用于加速神经网络运算和 AI 任务。与通用 CPU 和 GPU 不同，NPU 针对数据驱动的并行计算进行了优化，非常高效地处理大量多媒体数据，如视频和图像，以及神经网络的数据处理。它们特别擅长处理 AI 相关任务，例如语音识别、视频通话中的背景虚化，以及照片或视频编辑中的目标检测等。
+NPU (Neural Processing Unit) je specializovaný procesor nebo výpočetní jednotka na větším SoC, navržená speciálně pro zrychlení operací neuronových sítí a AI úloh. Na rozdíl od univerzálních CPU a GPU jsou NPUs optimalizovány pro paralelní výpočty založené na datech, což je činí velmi efektivními při zpracování obrovského množství multimediálních dat, jako jsou videa a obrázky, a při zpracování dat pro neuronové sítě. Jsou obzvláště schopné zvládat AI úkoly, jako je rozpoznávání řeči, rozostření pozadí během videohovorů nebo procesy úprav fotografií či videí, například detekce objektů.
 
-## NPU 与 GPU 的区别
+## NPU vs GPU
 
-虽然许多 AI 和机器学习任务都运行在 GPU 上，但 GPU 与 NPU 之间存在关键区别。
-GPU 以其并行计算能力著称，但并非所有 GPU 在图形处理之外的任务中效率都很高。相比之下，NPU 是专为神经网络复杂计算设计的，因此在 AI 任务中表现尤为出色。
+I když mnoho AI a strojového učení běží na GPU, existuje zásadní rozdíl mezi GPU a NPU.  
+GPU jsou známé svými paralelními výpočetními schopnostmi, ale ne všechny GPU jsou stejně efektivní mimo oblast zpracování grafiky. NPU jsou naopak navrženy přímo pro složité výpočty spojené s operacemi neuronových sítí, což je činí velmi efektivními pro AI úkoly.
 
-总结来说，NPU 是推动 AI 计算加速的数学高手，在 AI PC 的新时代中扮演着关键角色！
+Stručně řečeno, NPUs jsou matematickými experty, kteří výrazně zrychlují AI výpočty, a hrají klíčovou roli v nastupující éře AI PC!
 
-***本示例基于 Intel 最新的 Intel Core Ultra 处理器***
+***Tento příklad je založen na nejnovějším procesoru Intel Core Ultra***
 
-## **1. 使用 NPU 运行 Phi-3 模型**
+## **1. Použití NPU pro spuštění modelu Phi-3**
 
-Intel® NPU 设备是集成在 Intel 客户端 CPU 中的 AI 推理加速器，从 Intel® Core™ Ultra 代（前称 Meteor Lake）开始支持。它支持能效高的人工神经网络任务执行。
+Zařízení Intel® NPU je AI inference akcelerátor integrovaný s Intel klientskými CPU, počínaje generací Intel® Core™ Ultra (dříve známou jako Meteor Lake). Umožňuje energeticky efektivní provádění úloh umělých neuronových sítí.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.cs.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.cs.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.cs.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.cs.png)
 
-**Intel NPU 加速库**
+**Intel NPU Acceleration Library**
 
-Intel NPU 加速库 [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) 是一个 Python 库，旨在利用 Intel 神经网络处理单元（NPU）的计算能力，提高应用程序的运行效率。
+Knihovna Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) je Python knihovna navržená pro zvýšení efektivity vašich aplikací využitím výkonu Intel Neural Processing Unit (NPU) k provádění rychlých výpočtů na kompatibilním hardwaru.
 
-在搭载 Intel® Core™ Ultra 处理器的 AI PC 上运行 Phi-3-mini 示例。
+Příklad Phi-3-mini na AI PC poháněném procesory Intel® Core™ Ultra.
 
 ![DemoPhiIntelAIPC](../../../../../imgs/01/03/AIPC/aipcphi3-mini.gif)
 
-使用 pip 安装 Python 库
+Nainstalujte Python knihovnu pomocí pip
 
 ```bash
 
@@ -48,11 +48,11 @@ Intel NPU 加速库 [https://github.com/intel/intel-npu-acceleration-library](ht
 
 ```
 
-***注意*** 项目仍在开发中，但参考模型已相当完善。
+***Poznámka*** Projekt je stále ve vývoji, ale referenční model je již velmi kompletní.
 
-### **使用 Intel NPU 加速库运行 Phi-3**
+### **Spuštění Phi-3 s Intel NPU Acceleration Library**
 
-使用 Intel NPU 加速时，该库不会影响传统的编码流程。你只需使用该库对原始 Phi-3 模型进行量化，如 FP16、INT8、INT4 等，例如：
+Při použití Intel NPU akcelerace tato knihovna neovlivňuje tradiční proces kódování. Stačí použít tuto knihovnu k kvantizaci původního modelu Phi-3, například FP16, INT8, INT4, například
 
 ```python
 from transformers import AutoTokenizer, pipeline,TextStreamer
@@ -72,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-量化成功后，继续调用 NPU 运行 Phi-3 模型。
+Po úspěšné kvantizaci pokračujte ve spuštění, které zavolá NPU pro běh modelu Phi-3.
 
 ```python
 generation_args = {
@@ -96,51 +96,51 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-执行时，可以通过任务管理器查看 NPU 的运行状态。
+Při spouštění kódu můžeme sledovat stav běhu NPU přes Správce úloh
 
-![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.cs.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.cs.png)
 
-***示例*** ：[AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
+***Ukázky*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
-## **2. 使用 DirectML + ONNX Runtime 运行 Phi-3 模型**
+## **2. Použití DirectML + ONNX Runtime pro spuštění modelu Phi-3**
 
-### **什么是 DirectML**
+### **Co je DirectML**
 
-[DirectML](https://github.com/microsoft/DirectML) 是一个高性能的硬件加速 DirectX 12 机器学习库。DirectML 为广泛支持的硬件和驱动提供 GPU 加速，支持包括 AMD、Intel、NVIDIA 和 Qualcomm 等厂商的所有支持 DirectX 12 的 GPU。
+[DirectML](https://github.com/microsoft/DirectML) je vysoce výkonná, hardwarově akcelerovaná knihovna DirectX 12 pro strojové učení. DirectML poskytuje GPU akceleraci pro běžné úlohy strojového učení na široké škále podporovaného hardwaru a ovladačů, včetně všech GPU kompatibilních s DirectX 12 od výrobců jako AMD, Intel, NVIDIA a Qualcomm.
 
-作为独立使用时，DirectML API 是低级别的 DirectX 12 库，适合高性能、低延迟的应用，如框架、游戏及其他实时应用。DirectML 与 Direct3D 12 的无缝互操作性、低开销及跨硬件的兼容性，使其非常适合在追求高性能且需要结果可靠可预测的机器学习加速场景。
+Používaný samostatně je DirectML API nízkoúrovňová knihovna DirectX 12 vhodná pro vysoce výkonné aplikace s nízkou latencí, jako jsou frameworky, hry a další aplikace v reálném čase. Bezproblémová interoperabilita DirectML s Direct3D 12, nízká režie a konzistence napříč hardwarem činí DirectML ideálním pro zrychlení strojového učení, když je požadován vysoký výkon a spolehlivost výsledků napříč různým hardwarem.
 
-***注意*** ：最新的 DirectML 已支持 NPU(https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
+***Poznámka*** : Nejnovější DirectML již podporuje NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
-### DirectML 与 CUDA 的能力和性能比较：
+### DirectML a CUDA z hlediska schopností a výkonu:
 
-**DirectML** 是微软开发的机器学习库，旨在加速 Windows 设备上的机器学习任务，包括台式机、笔记本和边缘设备。
-- 基于 DX12：DirectML 构建于 DirectX 12 之上，支持广泛的 GPU，包括 NVIDIA 和 AMD。
-- 支持范围广：利用 DX12，DirectML 可在任何支持 DX12 的 GPU 上运行，包括集成 GPU。
-- 图像处理：DirectML 通过神经网络处理图像及其他数据，适用于图像识别、目标检测等任务。
-- 安装简单：配置 DirectML 简单，无需 GPU 厂商特定的 SDK 或库。
-- 性能表现：某些情况下，DirectML 性能优异，甚至比 CUDA 更快，尤其是特定工作负载。
-- 限制：但在某些情况下，尤其是 float16 大批量处理时，性能可能不及 CUDA。
+**DirectML** je knihovna pro strojové učení vyvinutá společností Microsoft. Je navržena pro zrychlení úloh strojového učení na zařízeních s Windows, včetně desktopů, notebooků a edge zařízení.  
+- Založeno na DX12: DirectML je postaveno na DirectX 12 (DX12), který poskytuje širokou podporu hardwaru napříč GPU, včetně NVIDIA a AMD.  
+- Širší podpora: Díky využití DX12 může DirectML pracovat s jakýmkoli GPU podporujícím DX12, včetně integrovaných GPU.  
+- Zpracování obrazu: DirectML zpracovává obrázky a další data pomocí neuronových sítí, což je vhodné pro úlohy jako rozpoznávání obrazu, detekce objektů a další.  
+- Snadná instalace: Nastavení DirectML je jednoduché a nevyžaduje specifické SDK nebo knihovny od výrobců GPU.  
+- Výkon: V některých případech DirectML dosahuje dobrého výkonu a může být rychlejší než CUDA, zejména u určitých úloh.  
+- Omezení: Nicméně existují situace, kdy může být DirectML pomalejší, zejména u velkých dávkových velikostí ve formátu float16.
 
-**CUDA** 是 NVIDIA 的并行计算平台和编程模型，使开发者能利用 NVIDIA GPU 的强大计算能力进行通用计算，包括机器学习和科学模拟。
-- NVIDIA 专属：CUDA 紧密集成 NVIDIA GPU，专为其设计。
-- 高度优化：针对 GPU 加速任务性能卓越，尤其是 NVIDIA GPU。
-- 广泛使用：许多机器学习框架和库（如 TensorFlow、PyTorch）支持 CUDA。
-- 可定制性：开发者可针对特定任务调优 CUDA 设置，获得最佳性能。
-- 限制：依赖 NVIDIA 硬件，限制了跨不同 GPU 的兼容性。
+**CUDA** je paralelní výpočetní platforma a programovací model od NVIDIA. Umožňuje vývojářům využít výkon NVIDIA GPU pro obecné výpočty, včetně strojového učení a vědeckých simulací.  
+- Specifické pro NVIDIA: CUDA je úzce integrováno s NVIDIA GPU a je pro ně speciálně navrženo.  
+- Vysoce optimalizované: Poskytuje vynikající výkon pro úlohy akcelerované GPU, zejména na NVIDIA GPU.  
+- Široce používané: Mnoho frameworků a knihoven pro strojové učení (např. TensorFlow a PyTorch) podporuje CUDA.  
+- Přizpůsobení: Vývojáři mohou ladit nastavení CUDA pro konkrétní úlohy, což může vést k optimálnímu výkonu.  
+- Omezení: Závislost na hardwaru NVIDIA může být omezující, pokud chcete širší kompatibilitu s různými GPU.
 
-### 选择 DirectML 还是 CUDA
+### Výběr mezi DirectML a CUDA
 
-选择 DirectML 或 CUDA 取决于具体使用场景、硬件条件和偏好。
-若追求更广泛的兼容性和简易配置，DirectML 是不错选择；如果拥有 NVIDIA GPU 且需要极致性能，CUDA 仍是强有力的方案。总之，两者各有优缺点，建议根据需求和硬件环境权衡选择。
+Volba mezi DirectML a CUDA závisí na vašem konkrétním použití, dostupném hardwaru a preferencích.  
+Pokud hledáte širší kompatibilitu a snadnou instalaci, může být DirectML dobrou volbou. Pokud však máte NVIDIA GPU a potřebujete vysoce optimalizovaný výkon, CUDA zůstává silným kandidátem. Obě technologie mají své výhody i nevýhody, proto zvažte své požadavky a dostupný hardware při rozhodování.
 
-### **使用 ONNX Runtime 实现生成式 AI**
+### **Generativní AI s ONNX Runtime**
 
-在 AI 时代，模型的可移植性至关重要。ONNX Runtime 可轻松将训练好的模型部署到不同设备。开发者无需关心推理框架，使用统一的 API 即可完成模型推理。在生成式 AI 领域，ONNX Runtime 也进行了代码优化 (https://onnxruntime.ai/docs/genai/)。通过优化后的 ONNX Runtime，量化的生成式 AI 模型可在不同终端推理。ONNX Runtime 支持通过 Python、C#、C / C++ 调用生成式 AI 模型 API，iPhone 部署则可利用 C++ 版本的 ONNX Runtime API。
+V éře AI je přenositelnost AI modelů velmi důležitá. ONNX Runtime umožňuje snadné nasazení natrénovaných modelů na různá zařízení. Vývojáři nemusí řešit konkrétní inference framework a používají jednotné API pro dokončení inference modelu. V éře generativní AI také ONNX Runtime provádí optimalizaci kódu (https://onnxruntime.ai/docs/genai/). Díky optimalizovanému ONNX Runtime může být kvantizovaný generativní AI model inferován na různých koncových zařízeních. V Generative AI s ONNX Runtime můžete inference AI modelu provádět přes Python, C#, C/C++. Nasazení na iPhone může využít C++ API Generative AI s ONNX Runtime.
 
-[示例代码](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
+[Ukázkový kód](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
-***编译生成式 AI 的 ONNX Runtime 库***
+***Kompilace generativní AI s ONNX Runtime knihovnou***
 
 ```bash
 
@@ -179,7 +179,7 @@ python build.py --use_dml
 
 ```
 
-**安装库**
+**Instalace knihovny**
 
 ```bash
 
@@ -187,21 +187,21 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-运行效果如下
+Toto je výsledek běhu
 
-![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.cs.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.cs.png)
 
-***示例*** ：[AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
+***Ukázky*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
-## **3. 使用 Intel OpenVINO 运行 Phi-3 模型**
+## **3. Použití Intel OpenVino pro spuštění modelu Phi-3**
 
-### **什么是 OpenVINO**
+### **Co je OpenVINO**
 
-[OpenVINO](https://github.com/openvinotoolkit/openvino) 是一个开源工具包，用于优化和部署深度学习模型。它提升了来自 TensorFlow、PyTorch 等主流框架的视觉、音频和语言模型的深度学习性能。OpenVINO 支持 CPU 和 GPU 组合运行 Phi-3 模型。
+[OpenVINO](https://github.com/openvinotoolkit/openvino) je open-source nástrojový balík pro optimalizaci a nasazení modelů hlubokého učení. Poskytuje zrychlení výkonu hlubokého učení pro modely z oblasti vidění, zvuku a jazyka z populárních frameworků jako TensorFlow, PyTorch a dalších. Začněte s OpenVINO. OpenVINO lze také použít v kombinaci s CPU a GPU pro spuštění modelu Phi-3.
 
-***注意*** ：目前 OpenVINO 尚不支持 NPU。
+***Poznámka***: V současné době OpenVINO nepodporuje NPU.
 
-### **安装 OpenVINO 库**
+### **Instalace OpenVINO knihovny**
 
 ```bash
 
@@ -213,9 +213,9 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-### **使用 OpenVINO 运行 Phi-3**
+### **Spuštění Phi-3 s OpenVINO**
 
-与 NPU 类似，OpenVINO 通过运行量化模型完成生成式 AI 模型调用。首先需要对 Phi-3 模型进行量化，并通过命令行工具 optimum-cli 完成模型量化。
+Stejně jako u NPU, OpenVINO provádí volání generativních AI modelů spuštěním kvantizovaných modelů. Nejprve je potřeba model Phi-3 kvantizovat a dokončit kvantizaci modelu přes příkazový řádek pomocí optimum-cli.
 
 **INT4**
 
@@ -233,11 +233,11 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ```
 
-转换后的格式示例如下
+převedený formát vypadá takto
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.cs.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.cs.png)
 
-通过 OVModelForCausalLM 加载模型路径(model_dir)、相关配置(ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) 和硬件加速设备(GPU.0)
+Načtěte cesty k modelu (model_dir), související konfigurace (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) a hardwarově akcelerovaná zařízení (GPU.0) přes OVModelForCausalLM
 
 ```python
 
@@ -251,13 +251,13 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-执行时，可通过任务管理器查看 GPU 的运行状态
+Při spouštění kódu můžeme sledovat stav běhu GPU přes Správce úloh
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.cs.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.cs.png)
 
-***示例*** ：[AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
+***Ukázky*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***注意*** ：上述三种方法各有优势，但建议在 AI PC 推理中优先使用 NPU 加速。
+### ***Poznámka*** : Výše uvedené tři metody mají každá své výhody, ale pro inference na AI PC se doporučuje použít akceleraci NPU.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

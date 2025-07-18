@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:31:42+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T15:19:43+00:00",
   "source_file": "README.md",
   "language_code": "nl"
 }
 -->
-# Phi Kookboek: Praktische Voorbeelden met Microsoft’s Phi Modellen
+# Phi Kookboek: Praktische Voorbeelden met Microsofts Phi Modellen
 
 [![Open en gebruik de voorbeelden in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)  
 [![Open in Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
@@ -17,9 +17,9 @@ CO_OP_TRANSLATOR_METADATA:
 [![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)  
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
-[![GitHub volgers](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)  
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)  
 [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
-[![GitHub sterren](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
 
 [![Azure AI Community Discord](https://dcbadge.vercel.app/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
@@ -34,11 +34,11 @@ Volg deze stappen om aan de slag te gaan met deze bronnen:
 2. **Clone de Repository**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Word lid van de Microsoft AI Discord Community en ontmoet experts en mede-ontwikkelaars**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.nl.png)
 
-## 🌐 Meertalige Ondersteuning
+### 🌐 Meertalige Ondersteuning
 
-### Ondersteund via GitHub Action (Geautomatiseerd & Altijd Up-to-Date)
+#### Ondersteund via GitHub Action (Geautomatiseerd & Altijd Up-to-Date)
 
 [Frans](../fr/README.md) | [Spaans](../es/README.md) | [Duits](../de/README.md) | [Russisch](../ru/README.md) | [Arabisch](../ar/README.md) | [Perzisch (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinees (Vereenvoudigd)](../zh/README.md) | [Chinees (Traditioneel, Macau)](../mo/README.md) | [Chinees (Traditioneel, Hong Kong)](../hk/README.md) | [Chinees (Traditioneel, Taiwan)](../tw/README.md) | [Japans](../ja/README.md) | [Koreaans](../ko/README.md) | [Hindi](../hi/README.md)  
 [Bengaals](../bn/README.md) | [Marathi](../mr/README.md) | [Nepalees](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugees (Portugal)](../pt/README.md) | [Portugees (Brazilië)](../br/README.md) | [Italiaans](../it/README.md) | [Pools](../pl/README.md) | [Turks](../tr/README.md) | [Grieks](../el/README.md) | [Thais](../th/README.md) | [Zweeds](../sv/README.md) | [Deens](../da/README.md) | [Noors](../no/README.md) | [Fins](../fi/README.md) | [Nederlands](./README.md) | [Hebreeuws](../he/README.md) | [Vietnamees](../vi/README.md) | [Indonesisch](../id/README.md) | [Maleis](../ms/README.md) | [Tagalog (Filipijns)](../tl/README.md) | [Swahili](../sw/README.md) | [Hongaars](../hu/README.md) | [Tsjechisch](../cs/README.md) | [Slowaaks](../sk/README.md) | [Roemeens](../ro/README.md) | [Bulgaars](../bg/README.md) | [Servisch (Cyrillisch)](../sr/README.md) | [Kroatisch](../hr/README.md) | [Sloveens](../sl/README.md)
@@ -71,12 +71,12 @@ Volg deze stappen om aan de slag te gaan met deze bronnen:
     - [Inference Phi op Jetson](./md/01.Introduction/03/Jetson_Inference.md)  
     - [Inference Phi op AI PC](./md/01.Introduction/03/AIPC_Inference.md)  
     - [Inference Phi met Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)  
-    - [Inference Phi op Lokale Server](./md/01.Introduction/03/Local_Server_Inference.md)  
-    - [Inference Phi op Afstand Server met AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
+    - [Inference Phi op een lokale server](./md/01.Introduction/03/Local_Server_Inference.md)  
+    - [Inference Phi op een remote server met AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
     - [Inference Phi met Rust](./md/01.Introduction/03/Rust_Inference.md)  
     - [Inference Phi--Vision lokaal](./md/01.Introduction/03/Vision_Inference.md)  
     - [Inference Phi met Kaito AKS, Azure Containers (officiële ondersteuning)](./md/01.Introduction/03/Kaito_Inference.md)  
--  [Quantificeren van Phi Familie](./md/01.Introduction/04/QuantifyingPhi.md)  
+-  [Quantificeren van de Phi Familie](./md/01.Introduction/04/QuantifyingPhi.md)  
     - [Quantizen van Phi-3.5 / 4 met llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
     - [Quantizen van Phi-3.5 / 4 met Generative AI extensies voor onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
     - [Quantizen van Phi-3.5 / 4 met Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
@@ -97,7 +97,7 @@ Volg deze stappen om aan de slag te gaan met deze bronnen:
       - [Chat met Phi-4 lokaal ONNX Model .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
       - [Chat .NET Console App met Phi-4 ONNX via Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)  
     - Phi-3 / 3.5 Voorbeelden  
-      - [Lokale Chatbot in de browser met Phi3, ONNX Runtime Web en WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
+      - [Lokale chatbot in de browser met Phi3, ONNX Runtime Web en WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
       - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
       - [Multi Model - Interactieve Phi-3-mini en OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
       - [MLFlow - Een wrapper bouwen en Phi-3 gebruiken met MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
@@ -193,14 +193,14 @@ Volg deze stappen om aan de slag te gaan met deze bronnen:
 
 - Hands-on Lab
   - [Ontdek baanbrekende modellen: LLMs, SLMs, lokale ontwikkeling en meer](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
-  - [Ontgrendel NLP-potentieel: Fijn afstemmen met Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
+  - [NLP potentieel ontsluiten: Fijn afstemmen met Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
 
 - Academische Onderzoeksartikelen en Publicaties
   - [Textbooks Are All You Need II: phi-1.5 technisch rapport](https://arxiv.org/abs/2309.05463)
-  - [Phi-3 Technisch Rapport: Een zeer capabel taalmodel lokaal op je telefoon](https://arxiv.org/abs/2404.14219)
+  - [Phi-3 Technisch Rapport: Een krachtig taalmodel lokaal op je telefoon](https://arxiv.org/abs/2404.14219)
   - [Phi-4 Technisch Rapport](https://arxiv.org/abs/2412.08905)
   - [Phi-4-Mini Technisch Rapport: Compact maar krachtig multimodaal taalmodel via Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
-  - [Optimalisatie van kleine taalmodellen voor in-voertuig functie-aanroepen](https://arxiv.org/abs/2501.02342)
+  - [Optimaliseren van kleine taalmodellen voor in-voertuig function-calling](https://arxiv.org/abs/2501.02342)
   - [(WhyPHI) Fijn afstemmen van PHI-3 voor multiple-choice vraagbeantwoording: methodologie, resultaten en uitdagingen](https://arxiv.org/abs/2501.01588)
 - [Phi-4-reasoning Technisch Rapport](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)  
 - [Phi-4-mini-reasoning Technisch Rapport](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
@@ -228,23 +228,23 @@ Je kunt het model ook vinden op [Hugging Face](https://huggingface.co/microsoft)
 **Playground**  
 [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
-## Verantwoorde AI
+## Verantwoord AI
 
 Microsoft zet zich in om onze klanten te helpen onze AI-producten op een verantwoorde manier te gebruiken, onze inzichten te delen en vertrouwen op te bouwen via tools zoals Transparency Notes en Impact Assessments. Veel van deze bronnen zijn te vinden op [https://aka.ms/RAI](https://aka.ms/RAI).  
-De aanpak van Microsoft voor verantwoorde AI is gebaseerd op onze AI-principes: eerlijkheid, betrouwbaarheid en veiligheid, privacy en beveiliging, inclusiviteit, transparantie en verantwoordelijkheid.
+De aanpak van Microsoft voor verantwoord AI is gebaseerd op onze AI-principes: eerlijkheid, betrouwbaarheid en veiligheid, privacy en beveiliging, inclusiviteit, transparantie en verantwoordelijkheid.
 
 Grote taal-, beeld- en spraakmodellen - zoals die in dit voorbeeld - kunnen zich mogelijk op een oneerlijke, onbetrouwbare of aanstootgevende manier gedragen, wat schade kan veroorzaken. Raadpleeg de [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) om geïnformeerd te zijn over risico’s en beperkingen.
 
-De aanbevolen aanpak om deze risico’s te beperken is het opnemen van een veiligheidssysteem in je architectuur dat schadelijk gedrag kan detecteren en voorkomen. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) biedt een onafhankelijke beschermingslaag die schadelijke door gebruikers en AI gegenereerde inhoud in applicaties en diensten kan detecteren. Azure AI Content Safety bevat tekst- en beeld-API’s waarmee je schadelijk materiaal kunt opsporen. Binnen Azure AI Foundry kun je met de Content Safety-service voorbeeldcode bekijken, verkennen en uitproberen om schadelijke inhoud in verschillende modaliteiten te detecteren. De volgende [quickstart-documentatie](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) begeleidt je bij het maken van verzoeken aan de service.
+De aanbevolen aanpak om deze risico’s te beperken is het opnemen van een veiligheidssysteem in je architectuur dat schadelijk gedrag kan detecteren en voorkomen. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) biedt een onafhankelijke beschermingslaag die schadelijke door gebruikers of AI gegenereerde inhoud in applicaties en diensten kan detecteren. Azure AI Content Safety bevat tekst- en beeld-API’s waarmee je schadelijk materiaal kunt opsporen. Binnen Azure AI Foundry kun je met de Content Safety-service voorbeeldcode bekijken, verkennen en uitproberen om schadelijke inhoud in verschillende modaliteiten te detecteren. De volgende [quickstart documentatie](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) begeleidt je bij het maken van verzoeken aan de service.
 
-Een ander aspect om rekening mee te houden is de algehele prestatie van de applicatie. Bij multimodale en multimodel-applicaties verstaan we onder prestatie dat het systeem presteert zoals jij en je gebruikers verwachten, inclusief het niet genereren van schadelijke output. Het is belangrijk om de prestaties van je gehele applicatie te beoordelen met behulp van [Performance and Quality en Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Je kunt ook zelf evaluators maken en gebruiken met [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
+Een ander aspect om rekening mee te houden is de algehele prestatie van de applicatie. Bij multimodale en multimodel-applicaties betekent prestatie dat het systeem presteert zoals jij en je gebruikers verwachten, inclusief het niet genereren van schadelijke output. Het is belangrijk om de prestaties van je gehele applicatie te beoordelen met behulp van [Performance and Quality en Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Je kunt ook zelf evaluators maken en gebruiken met [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Je kunt je AI-applicatie evalueren in je ontwikkelomgeving met de [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Met een testdataset of een doel worden de generaties van je generatieve AI-applicatie kwantitatief gemeten met ingebouwde evaluators of evaluators naar keuze. Om te beginnen met de Azure AI Evaluation SDK en je systeem te evalueren, kun je de [quickstart-gids](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) volgen. Nadat je een evaluatieronde hebt uitgevoerd, kun je [de resultaten visualiseren in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Je kunt je AI-applicatie evalueren in je ontwikkelomgeving met de [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Met een testdataset of een doel worden de generaties van je generatieve AI-applicatie kwantitatief gemeten met ingebouwde evaluators of evaluators naar keuze. Om te beginnen met de Azure AI Evaluation SDK en je systeem te evalueren, kun je de [quickstart gids](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk) volgen. Na het uitvoeren van een evaluatieronde kun je [de resultaten visualiseren in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Handelsmerken
 
-Dit project kan handelsmerken of logo’s bevatten van projecten, producten of diensten. Het geautoriseerd gebruik van Microsoft-handelsmerken of logo’s is onderworpen aan en moet voldoen aan de [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Het gebruik van Microsoft-handelsmerken of logo’s in gewijzigde versies van dit project mag geen verwarring veroorzaken of impliceren dat Microsoft het sponsort. Elk gebruik van handelsmerken of logo’s van derden is onderworpen aan het beleid van die derden.
+Dit project kan handelsmerken of logo’s bevatten van projecten, producten of diensten. Het geautoriseerd gebruik van Microsoft-handelsmerken of logo’s is onderhevig aan en moet voldoen aan de [Microsoft Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Het gebruik van Microsoft-handelsmerken of logo’s in gewijzigde versies van dit project mag geen verwarring veroorzaken of impliceren dat Microsoft het sponsort. Elk gebruik van handelsmerken of logo’s van derden is onderhevig aan het beleid van die derden.
 
 **Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

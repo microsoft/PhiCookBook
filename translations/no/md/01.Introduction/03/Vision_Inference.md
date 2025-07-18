@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:15:13+00:00",
+  "translation_date": "2025-07-16T21:38:38+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "no"
 }
 -->
 # **Inferens Phi-3-Vision lokalt**
 
-Phi-3-vision-128k-instruct gjør at Phi-3 ikke bare kan forstå språk, men også se verden visuelt. Gjennom Phi-3-vision-128k-instruct kan vi løse ulike visuelle problemer, som OCR, tabelanalyse, objektgjenkjenning, beskrive bilder osv. Vi kan enkelt utføre oppgaver som tidligere krevde mye datatrening. Følgende er relaterte teknikker og bruksområder som Phi-3-vision-128k-instruct refererer til.
+Phi-3-vision-128k-instruct gjør det mulig for Phi-3 å ikke bare forstå språk, men også se verden visuelt. Gjennom Phi-3-vision-128k-instruct kan vi løse ulike visuelle oppgaver, som OCR, tabellanalyse, objektgjenkjenning, beskrive bilder osv. Vi kan enkelt utføre oppgaver som tidligere krevde mye datatrening. Følgende er relaterte teknikker og bruksområder som Phi-3-vision-128k-instruct refererer til.
 
 ## **0. Forberedelser**
 
@@ -27,7 +27,7 @@ Det anbefales å bruke ***CUDA 11.6+*** og installere flatten
 pip install flash-attn --no-build-isolation
 ```
 
-Opprett en ny Notebook. For å fullføre eksemplene anbefales det å først lage følgende innhold.
+Opprett en ny Notebook. For å fullføre eksemplene anbefales det at du først lager følgende innhold.
 
 ```python
 from PIL import Image
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR med Phi-3-Vision**
 
-I tillegg til å analysere bildet, kan vi også hente ut informasjon fra bildet. Dette er OCR-prosessen som vi tidligere måtte skrive komplisert kode for å gjennomføre.
+I tillegg til å analysere bildet, kan vi også hente ut informasjon fra bildet. Dette er OCR-prosessen som vi tidligere måtte skrive komplisert kode for å fullføre.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på dets opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:42:57+00:00",
+  "translation_date": "2025-07-17T06:25:02+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "sk"
 }
 -->
-## Doladenie pomocou Kaito
+## Doladenie s Kaito
 
-[Kaito](https://github.com/Azure/kaito) je operátor, ktorý automatizuje nasadenie AI/ML inference modelov v Kubernetes klastri.
+[Kaito](https://github.com/Azure/kaito) je operátor, ktorý automatizuje nasadenie AI/ML inferenčných modelov v Kubernetes klastri.
 
 Kaito má oproti väčšine bežných metód nasadzovania modelov postavených na infraštruktúre virtuálnych strojov tieto kľúčové odlišnosti:
 
-- Spravuje modelové súbory pomocou kontajnerových obrazov. HTTP server je poskytovaný na vykonávanie inference volaní pomocou modelovej knižnice.
-- Vyhýba sa ladenie parametrov nasadenia na mieru GPU hardvéru vďaka prednastaveným konfiguráciám.
+- Spravuje modelové súbory pomocou kontajnerových obrazov. Poskytuje HTTP server na vykonávanie inferenčných volaní pomocou knižnice modelov.
+- Vyhýba sa ladeniu parametrov nasadenia podľa GPU hardvéru vďaka prednastaveným konfiguráciám.
 - Automaticky zabezpečuje GPU uzly podľa požiadaviek modelu.
-- Umožňuje hosťovanie veľkých modelových obrazov v verejnom Microsoft Container Registry (MCR), ak to licencia povoľuje.
+- Umožňuje hosťovanie veľkých modelových obrazov v verejnom Microsoft Container Registry (MCR), ak to licencia umožňuje.
 
-Použitím Kaito je pracovný postup nasadzovania veľkých AI inference modelov v Kubernetes výrazne zjednodušený.
+Použitím Kaito je proces zavádzania veľkých AI inferenčných modelov v Kubernetes výrazne zjednodušený.
 
 ## Architektúra
 
-Kaito nasleduje klasický návrhový vzor Kubernetes Custom Resource Definition (CRD)/controller. Používateľ spravuje `workspace` custom resource, ktorý popisuje požiadavky na GPU a špecifikáciu inferencie. Kaito controllery automatizujú nasadenie tým, že zosúladia stav `workspace` custom resource.
+Kaito nasleduje klasický dizajnový vzor Kubernetes Custom Resource Definition (CRD)/controller. Používateľ spravuje vlastný zdroj `workspace`, ktorý popisuje požiadavky na GPU a špecifikáciu inferencie. Kaito controllery automatizujú nasadenie tým, že synchronizujú stav vlastného zdroja `workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-Vyššie uvedený obrázok predstavuje prehľad architektúry Kaito. Jej hlavné komponenty zahŕňajú:
+Na obrázku vyššie je zobrazený prehľad architektúry Kaito. Jej hlavné komponenty zahŕňajú:
 
-- **Workspace controller**: Zosúlaďuje `workspace` custom resource, vytvára `machine` (popísané nižšie) custom resources na spustenie automatického zabezpečenia uzlov a vytvára inference workload (`deployment` alebo `statefulset`) na základe prednastavení modelu.
-- **Node provisioner controller**: Controller sa volá *gpu-provisioner* v [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Používa `machine` CRD pochádzajúci z [Karpenter](https://sigs.k8s.io/karpenter) na komunikáciu s workspace controllerom. Integruje sa s Azure Kubernetes Service (AKS) API na pridávanie nových GPU uzlov do AKS klastra.
+- **Workspace controller**: Synchronizuje vlastný zdroj `workspace`, vytvára vlastné zdroje `machine` (vysvetlené nižšie) na spustenie automatického zabezpečenia uzlov a vytvára inferenčné pracovné zaťaženie (`deployment` alebo `statefulset`) na základe prednastavených konfigurácií modelu.
+- **Node provisioner controller**: Tento controller sa nazýva *gpu-provisioner* v [gpu-provisioner helm charte](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Používa CRD `machine` pochádzajúci z [Karpenter](https://sigs.k8s.io/karpenter) na komunikáciu s workspace controllerom. Integruje sa s Azure Kubernetes Service (AKS) API na pridávanie nových GPU uzlov do AKS klastra.
 > Poznámka: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) je open source komponent. Môže byť nahradený inými controllermi, ak podporujú [Karpenter-core](https://sigs.k8s.io/karpenter) API.
 
 ## Prehľadové video  
@@ -38,7 +38,7 @@ Vyššie uvedený obrázok predstavuje prehľad architektúry Kaito. Jej hlavné
 
 ## Inštalácia
 
-Prosím, skontrolujte inštalačný návod [tu](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Inštalačný návod nájdete [tu](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Rýchly štart
 
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Následne môžete zistiť cluster IP inferenčnej služby a použiť dočasný `curl` pod na otestovanie endpointu služby v klastri.
+Následne môžete zistiť cluster IP inferenčnej služby a použiť dočasný `curl` pod na otestovanie koncového bodu služby v klastri.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -112,5 +112,5 @@ export CLUSTERIP=$(kubectl get svc workspace-tuning-phi-3 -o jsonpath="{.spec.cl
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, berte na vedomie, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

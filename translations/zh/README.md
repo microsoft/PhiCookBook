@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:05:01+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T14:56:17+00:00",
   "source_file": "README.md",
   "language_code": "zh"
 }
@@ -34,11 +34,11 @@ Phi目前是最强大且性价比最高的小型语言模型（SLM），在多�
 2. **克隆仓库**：`git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**加入微软AI Discord社区，结识专家和开发者**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![封面](../../imgs/cover.png)
+![封面](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.zh.png)
 
-## 🌐 多语言支持
+### 🌐 多语言支持
 
-### 通过GitHub Action支持（自动且始终保持最新）
+#### 通过GitHub Action支持（自动且始终保持最新）
 
 [法语](../fr/README.md) | [西班牙语](../es/README.md) | [德语](../de/README.md) | [俄语](../ru/README.md) | [阿拉伯语](../ar/README.md) | [波斯语（法尔西语）](../fa/README.md) | [乌尔都语](../ur/README.md) | [中文（简体）](./README.md) | [中文（繁体，澳门）](../mo/README.md) | [中文（繁体，香港）](../hk/README.md) | [中文（繁体，台湾）](../tw/README.md) | [日语](../ja/README.md) | [韩语](../ko/README.md) | [印地语](../hi/README.md)  
 [孟加拉语](../bn/README.md) | [马拉地语](../mr/README.md) | [尼泊尔语](../ne/README.md) | [旁遮普语（古鲁姆基）](../pa/README.md) | [葡萄牙语（葡萄牙）](../pt/README.md) | [葡萄牙语（巴西）](../br/README.md) | [意大利语](../it/README.md) | [波兰语](../pl/README.md) | [土耳其语](../tr/README.md) | [希腊语](../el/README.md) | [泰语](../th/README.md) | [瑞典语](../sv/README.md) | [丹麦语](../da/README.md) | [挪威语](../no/README.md) | [芬兰语](../fi/README.md) | [荷兰语](../nl/README.md) | [希伯来语](../he/README.md) | [越南语](../vi/README.md) | [印尼语](../id/README.md) | [马来语](../ms/README.md) | [他加禄语（菲律宾语）](../tl/README.md) | [斯瓦希里语](../sw/README.md) | [匈牙利语](../hu/README.md) | [捷克语](../cs/README.md) | [斯洛伐克语](../sk/README.md) | [罗马尼亚语](../ro/README.md) | [保加利亚语](../bg/README.md) | [塞尔维亚语（西里尔字母）](../sr/README.md) | [克罗地亚语](../hr/README.md) | [斯洛文尼亚语](../sl/README.md)
@@ -72,12 +72,12 @@ Phi目前是最强大且性价比最高的小型语言模型（SLM），在多�
   - [AI PC上的Phi推理](./md/01.Introduction/03/AIPC_Inference.md)  
   - [使用Apple MLX框架进行Phi推理](./md/01.Introduction/03/MLX_Inference.md)  
   - [本地服务器上的Phi推理](./md/01.Introduction/03/Local_Server_Inference.md)  
-  - [使用AI Toolkit在远程服务器上推理Phi](./md/01.Introduction/03/Remote_Interence.md)  
+  - [使用AI Toolkit进行远程服务器上的Phi推理](./md/01.Introduction/03/Remote_Interence.md)  
   - [使用Rust进行Phi推理](./md/01.Introduction/03/Rust_Inference.md)  
   - [本地Phi视觉推理](./md/01.Introduction/03/Vision_Inference.md)  
   - [使用Kaito AKS、Azure容器（官方支持）进行Phi推理](./md/01.Introduction/03/Kaito_Inference.md)
 
-- [Phi家族量化](./md/01.Introduction/04/QuantifyingPhi.md)  
+- Phi家族量化  
   - [使用llama.cpp量化Phi-3.5 / 4](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
   - [使用onnxruntime的生成式AI扩展量化Phi-3.5 / 4](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
   - [使用Intel OpenVINO量化Phi-3.5 / 4](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
@@ -95,15 +95,15 @@ Phi目前是最强大且性价比最高的小型语言模型（SLM），在多�
   - 文本与聊天应用  
     - Phi-4示例 🆕  
       - [📓] [使用Phi-4-mini ONNX模型聊天](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)  
-      - [使用Phi-4本地ONNX模型的聊天.NET示例](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
-      - [使用Phi-4 ONNX和Semantic Kernel的.NET控制台聊天应用](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)  
+      - [使用Phi-4本地ONNX模型的.NET聊天](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
+      - [使用语义内核的Phi-4 ONNX .NET控制台聊天应用](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)  
     - Phi-3 / 3.5示例  
       - [基于Phi3、ONNX Runtime Web和WebGPU的浏览器本地聊天机器人](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
-      - [OpenVino聊天示例](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
+      - [OpenVino聊天](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
       - [多模型 - 交互式Phi-3-mini和OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
       - [MLFlow - 构建包装器并使用Phi-3与MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
       - [模型优化 - 如何使用Olive优化Phi-3-min模型以适配ONNX Runtime Web](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
-      - [WinUI3应用示例，使用Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)  
+      - [使用Phi-3 mini-4k-instruct-onnx的WinUI3应用](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)  
       - [WinUI3多模型AI驱动笔记应用示例](https://github.com/microsoft/ai-powered-notes-winui3-sample)
 - [使用 Prompt flow 微调并集成自定义 Phi-3 模型](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
 - [在 Azure AI Foundry 中使用 Prompt flow 微调并集成自定义 Phi-3 模型](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
@@ -159,16 +159,14 @@ Phi目前是最强大且性价比最高的小型语言模型（SLM），在多�
 
 - MOE 示例  
   - Phi-3 / 3.5 示例  
-    - [📓] [Phi-3.5 专家混合模型（MoEs）社交媒体示例](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
-    - [📓] [使用 NVIDIA NIM Phi-3 MOE、Azure AI Search 和 LlamaIndex 构建检索增强生成（RAG）管道](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
-
+    - [📓] [Phi-3.5 专家混合模型 (MoEs) 社交媒体示例](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
+    - [📓] [使用 NVIDIA NIM Phi-3 MOE、Azure AI Search 和 LlamaIndex 构建检索增强生成 (RAG) 流水线](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
 - 函数调用示例  
   - Phi-4 示例 🆕  
     - [📓] [使用 Phi-4-mini 的函数调用](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
     - [📓] [使用函数调用创建多代理，基于 Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
     - [📓] [使用 Ollama 的函数调用](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
     - [📓] [使用 ONNX 的函数调用](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)  
-
 - 多模态混合示例  
   - Phi-4 示例 🆕  
     - [📓] [将 Phi-4-multimodal 用作科技记者](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)  
@@ -210,37 +208,37 @@ Phi目前是最强大且性价比最高的小型语言模型（SLM），在多�
 
 ### Azure AI Foundry 上的 Phi
 
-您可以了解如何使用 Microsoft Phi 以及如何在不同硬件设备上构建端到端解决方案。想亲自体验 Phi，可以先通过 [Azure AI Foundry Azure AI 模型目录](https://aka.ms/phi3-azure-ai) 试玩模型并根据您的场景定制 Phi。更多信息请参见 [Azure AI Foundry 快速入门](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)。
+您可以了解如何使用 Microsoft Phi 以及如何在不同硬件设备上构建端到端解决方案。想亲自体验 Phi，可以先通过[Azure AI Foundry Azure AI 模型目录](https://aka.ms/phi3-azure-ai)试玩模型并根据您的场景定制 Phi。更多信息请参见[Azure AI Foundry 快速入门](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)。
 
-**试玩场**
-每个模型都有专属的试玩场，用于测试模型：[Azure AI Playground](https://aka.ms/try-phi3)。
+**Playground**  
+每个模型都有专门的 playground 用于测试模型，[Azure AI Playground](https://aka.ms/try-phi3)。
 
 ### GitHub 上的 Phi 模型
 
-您可以了解如何使用 Microsoft Phi 以及如何在不同硬件设备上构建端到端解决方案。想亲自体验 Phi，可以先通过 [GitHub 模型目录](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo) 试玩模型并根据您的场景定制 Phi。更多信息请参见 [GitHub 模型目录快速入门](/md/02.QuickStart/GitHubModel_QuickStart.md)。
+您可以了解如何使用 Microsoft Phi 以及如何在不同硬件设备上构建端到端解决方案。想亲自体验 Phi，可以先通过[GitHub 模型目录](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo)试玩模型并根据您的场景定制 Phi。更多信息请参见[GitHub 模型目录快速入门](/md/02.QuickStart/GitHubModel_QuickStart.md)。
 
-**试玩场**
-每个模型都有专属的[试玩场用于测试模型](/md/02.QuickStart/GitHubModel_QuickStart.md)。
+**Playground**  
+每个模型都有专门的[playground 用于测试模型](/md/02.QuickStart/GitHubModel_QuickStart.md)。
 
 ### Hugging Face 上的 Phi
 
-您也可以在 [Hugging Face](https://huggingface.co/microsoft) 找到该模型。
+您也可以在[Hugging Face](https://huggingface.co/microsoft)找到该模型。
 
-**试玩场**
-[Hugging Chat 试玩场](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
+**Playground**  
+[Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
 ## 负责任的 AI
 
-微软致力于帮助客户负责任地使用我们的 AI 产品，分享我们的经验，并通过透明度说明和影响评估等工具建立基于信任的合作关系。许多相关资源可在 [https://aka.ms/RAI](https://aka.ms/RAI) 找到。  
+微软致力于帮助客户负责任地使用我们的 AI 产品，分享我们的经验，并通过透明度说明和影响评估等工具建立基于信任的合作关系。许多相关资源可在[https://aka.ms/RAI](https://aka.ms/RAI)找到。  
 微软的负责任 AI 方法基于我们的 AI 原则：公平性、可靠性与安全性、隐私与安全、包容性、透明度和问责制。
 
-大规模的自然语言、图像和语音模型——如本示例中使用的模型——可能会表现出不公平、不可靠或冒犯性的行为，从而造成伤害。请查阅 [Azure OpenAI 服务透明度说明](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text)，了解相关风险和限制。
+大规模的自然语言、图像和语音模型——如本示例中使用的模型——可能会表现出不公平、不可靠或冒犯性的行为，从而造成伤害。请查阅[Azure OpenAI 服务透明度说明](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text)，了解相关风险和限制。
 
-推荐的风险缓解方法是在架构中包含安全系统，能够检测并防止有害行为。[Azure AI 内容安全](https://learn.microsoft.com/azure/ai-services/content-safety/overview) 提供独立的保护层，能够检测应用和服务中的有害用户生成内容和 AI 生成内容。Azure AI 内容安全包括文本和图像 API，允许您检测有害内容。在 Azure AI Foundry 中，内容安全服务允许您查看、探索并试用跨不同模态检测有害内容的示例代码。以下[快速入门文档](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest)将指导您如何向该服务发起请求。
+推荐的风险缓解方法是在架构中包含安全系统，能够检测并防止有害行为。[Azure AI 内容安全](https://learn.microsoft.com/azure/ai-services/content-safety/overview)提供了独立的保护层，能够检测应用和服务中的有害用户生成内容和 AI 生成内容。Azure AI 内容安全包括文本和图像 API，允许您检测有害内容。在 Azure AI Foundry 中，内容安全服务允许您查看、探索并试用跨不同模态检测有害内容的示例代码。以下[快速入门文档](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest)指导您如何向该服务发起请求。
 
 另一个需要考虑的方面是整体应用性能。对于多模态和多模型应用，我们认为性能意味着系统能够按您和用户的预期运行，包括不生成有害输出。评估整体应用性能时，建议使用[性能与质量以及风险与安全评估器](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in)。您也可以创建并使用[自定义评估器](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators)进行评估。
 
-您可以在开发环境中使用[Azure AI 评估 SDK](https://microsoft.github.io/promptflow/index.html)评估您的 AI 应用。无论是测试数据集还是目标，您的生成式 AI 应用输出都可以通过内置评估器或您选择的自定义评估器进行定量测量。想要开始使用 Azure AI 评估 SDK 评估系统，可以参考[快速入门指南](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk)。执行评估后，您可以在 [Azure AI Foundry 中可视化结果](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)。
+您可以在开发环境中使用[Azure AI 评估 SDK](https://microsoft.github.io/promptflow/index.html)评估您的 AI 应用。无论是测试数据集还是目标，您的生成式 AI 应用输出都可以通过内置评估器或您选择的自定义评估器进行量化测量。要开始使用 Azure AI 评估 SDK 评估系统，请参阅[快速入门指南](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk)。执行评估运行后，您可以在[Azure AI Foundry 中可视化结果](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)。
 
 ## 商标
 
@@ -248,4 +246,4 @@ Phi目前是最强大且性价比最高的小型语言模型（SLM），在多�
 在本项目的修改版本中使用微软商标或标识不得引起混淆或暗示微软的赞助。任何第三方商标或标识的使用均须遵守相应第三方的政策。
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

@@ -2,42 +2,42 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-07T10:44:09+00:00",
+  "translation_date": "2025-07-16T20:47:21+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "ar"
 }
 -->
 ## الاستدلال مع Kaito
 
-[Kaito](https://github.com/Azure/kaito) هو مشغل يقوم بأتمتة نشر نموذج الاستدلال AI/ML داخل عنقود Kubernetes.
+[Kaito](https://github.com/Azure/kaito) هو مشغل يقوم بأتمتة نشر نماذج الاستدلال في الذكاء الاصطناعي/التعلم الآلي داخل عنقود Kubernetes.
 
-يمتاز Kaito بالميزات التالية مقارنة بمعظم طرق نشر النماذج الشائعة المبنية على بنى الأجهزة الافتراضية:
+يمتاز Kaito بالميزات التالية مقارنة بمعظم طرق نشر النماذج الشائعة المبنية على بنى الآلات الافتراضية:
 
-- إدارة ملفات النموذج باستخدام صور الحاويات. يتم توفير خادم http لإجراء استدعاءات الاستدلال باستخدام مكتبة النموذج.
+- إدارة ملفات النماذج باستخدام صور الحاويات. يتم توفير خادم http لإجراء استدعاءات الاستدلال باستخدام مكتبة النموذج.
 - تجنب ضبط معلمات النشر لتناسب أجهزة GPU من خلال توفير إعدادات مسبقة.
-- التزويد التلقائي لعقد GPU بناءً على متطلبات النموذج.
+- توفير عقد GPU تلقائيًا بناءً على متطلبات النموذج.
 - استضافة صور النماذج الكبيرة في سجل الحاويات العام لمايكروسوفت (MCR) إذا سمحت الرخصة بذلك.
 
-باستخدام Kaito، يصبح سير العمل الخاص بإدخال نماذج استدلال AI الكبيرة في Kubernetes أبسط بكثير.
+باستخدام Kaito، يتم تبسيط سير العمل الخاص بإدخال نماذج استدلال الذكاء الاصطناعي الكبيرة في Kubernetes بشكل كبير.
 
 ## البنية المعمارية
 
-يتبع Kaito نمط تصميم Kubernetes الكلاسيكي لتعريف الموارد المخصصة (CRD)/المتحكم. يدير المستخدم موردًا مخصصًا `workspace` يصف متطلبات GPU ومواصفات الاستدلال. يقوم متحكمو Kaito بأتمتة النشر من خلال التوفيق بين مورد `workspace` المخصص.
+يتبع Kaito نمط تصميم تعريف الموارد المخصصة (CRD) / المتحكم الكلاسيكي في Kubernetes. يدير المستخدم موردًا مخصصًا يسمى `workspace` يصف متطلبات GPU ومواصفات الاستدلال. يقوم متحكمو Kaito بأتمتة النشر من خلال التوفيق بين مورد `workspace` المخصص.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-الشكل أعلاه يعرض نظرة عامة على بنية Kaito. تتكون مكوناته الرئيسية من:
+تعرض الصورة أعلاه نظرة عامة على بنية Kaito. وتتكون مكوناته الرئيسية من:
 
-- **متحكم مساحة العمل**: يقوم بتوفيق مورد `workspace` المخصص، ويُنشئ موارد مخصصة `machine` (مشروحة أدناه) لتحفيز التزويد التلقائي للعقد، ويُنشئ عبء عمل الاستدلال (`deployment` أو `statefulset`) بناءً على إعدادات النموذج المسبقة.
-- **متحكم مزود العقد**: اسم المتحكم هو *gpu-provisioner* في [مخطط helm الخاص بـ gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). يستخدم CRD `machine` المنشأ من [Karpenter](https://sigs.k8s.io/karpenter) للتفاعل مع متحكم مساحة العمل. يتكامل مع APIs خدمة Azure Kubernetes (AKS) لإضافة عقد GPU جديدة إلى عنقود AKS.
-> ملاحظة: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) هو مكون مفتوح المصدر. يمكن استبداله بمتحكمات أخرى إذا كانت تدعم APIs [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **متحكم workspace**: يقوم بتوفيق مورد `workspace` المخصص، وينشئ موارد مخصصة `machine` (موضحة أدناه) لتحفيز توفير العقد تلقائيًا، وينشئ عبء عمل الاستدلال (`deployment` أو `statefulset`) بناءً على إعدادات النموذج المسبقة.
+- **متحكم توفير العقد**: اسم المتحكم هو *gpu-provisioner* في [مخطط helm الخاص بـ gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). يستخدم CRD الخاص بـ `machine` المستمد من [Karpenter](https://sigs.k8s.io/karpenter) للتفاعل مع متحكم workspace. يتكامل مع واجهات برمجة تطبيقات Azure Kubernetes Service (AKS) لإضافة عقد GPU جديدة إلى عنقود AKS.
+> ملاحظة: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) هو مكون مفتوح المصدر. يمكن استبداله بمتحكمات أخرى إذا كانت تدعم واجهات برمجة تطبيقات [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## التثبيت
 
 يرجى مراجعة إرشادات التثبيت [هنا](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## بدء سريع لاستدلال Phi-3  
+## بدء سريع لاستدلال Phi-3
 [كود عينة لاستدلال Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-يمكن متابعة حالة مساحة العمل بتنفيذ الأمر التالي. عندما تصبح قيمة العمود WORKSPACEREADY هي `True`، يكون النموذج قد تم نشره بنجاح.
+يمكن تتبع حالة workspace بتنفيذ الأمر التالي. عندما تصبح قيمة العمود WORKSPACEREADY `True`، يكون النموذج قد تم نشره بنجاح.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-يمكن متابعة حالة مساحة العمل بتنفيذ الأمر التالي. عندما تصبح قيمة العمود WORKSPACEREADY هي `True`، يكون النموذج قد تم نشره بنجاح.
+يمكن تتبع حالة workspace بتنفيذ الأمر التالي. عندما تصبح قيمة العمود WORKSPACEREADY `True`، يكون النموذج قد تم نشره بنجاح.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -174,5 +174,5 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**تنويه**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي والمعتمد. للمعلومات الحساسة أو الهامة، يُنصح بالترجمة الاحترافية بواسطة مترجم بشري. نحن غير مسؤولين عن أي سوء فهم أو تفسير خاطئ ناتج عن استخدام هذه الترجمة.
+**إخلاء المسؤولية**:  
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

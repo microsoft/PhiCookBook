@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:43:28+00:00",
+  "translation_date": "2025-07-17T08:00:45+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "da"
 }
 -->
 # **Finjustering af Phi-3 med Apple MLX Framework**
 
-Vi kan gennemføre finjustering kombineret med Lora via Apple MLX frameworkets kommandolinje. (Hvis du vil vide mere om, hvordan MLX Framework fungerer, kan du læse [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+Vi kan udføre finjustering kombineret med Lora via Apple MLX frameworkets kommandolinje. (Hvis du vil vide mere om, hvordan MLX Framework fungerer, kan du læse [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
 
 ## **1. Forberedelse af data**
 
-Som standard kræver MLX Framework jsonl-format for train, test og eval, og det kombineres med Lora for at fuldføre finjusteringsopgaver.
+Som standard kræver MLX Framework jsonl-format for train, test og eval, og kombineres med Lora for at fuldføre finjusteringsopgaver.
 
 
 ### ***Note:***
@@ -35,12 +35,12 @@ Som standard kræver MLX Framework jsonl-format for train, test og eval, og det 
 
 3. Dataformatet er kombineret med Phi-3 skabelonen
 
-Download venligst data fra dette [link](../../../../code/04.Finetuning/mlx), og sørg for at inkludere alle .jsonl filer i ***data*** mappen
+Download venligst data fra dette [link](../../../../code/04.Finetuning/mlx), sørg for at inkludere alle .jsonl filer i ***data*** mappen
 
 
 ## **2. Finjustering i din terminal**
 
-Kør denne kommando i terminalen
+Kør venligst denne kommando i terminalen
 
 
 ```bash
@@ -125,7 +125,7 @@ lora_parameters:
 
 ```
 
-Kør denne kommando i terminalen
+Kør venligst denne kommando i terminalen
 
 
 ```bash
@@ -158,7 +158,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 Du kan prøve at sammenligne resultaterne af finjusteringen med den oprindelige model
 
 
-## **4. Merge adapters for at generere nye modeller**
+## **4. Sammenflet adaptere for at generere nye modeller**
 
 
 ```bash
@@ -188,7 +188,7 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 1. Understøtter nu kvantisering konvertering af fp32, fp16 og INT 8
 
-2. Den merged model mangler tokenizer.model, hent den venligst fra https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Den sammenflettede model mangler tokenizer.model, hent den venligst fra https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
 sæt en [Ollma Model](https://ollama.com/)
 
@@ -200,7 +200,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Kør kommandoen i terminalen
+kør kommando i terminalen
 
 
 ```bash
@@ -214,4 +214,4 @@ Kør kommandoen i terminalen
 Tillykke! Du mestrer finjustering med MLX Framework
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

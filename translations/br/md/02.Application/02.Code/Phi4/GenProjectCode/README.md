@@ -2,27 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:49:58+00:00",
+  "translation_date": "2025-07-17T04:45:01+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "br"
 }
 -->
 ## **Usando Phi-4-mini-mm para gerar código**
 
-Phi-4-mini mantém as fortes capacidades de codificação da Família Phi. Você pode usar o Prompt para fazer perguntas relacionadas à programação. Claro, após adicionar uma forte habilidade de raciocínio, ele possui capacidades de codificação ainda mais avançadas, como gerar projetos conforme os requisitos. Por exemplo, gerar projetos conforme as especificações, como:
+Phi-4-mini mantém as fortes capacidades de codificação da Família Phi. Você pode usar Prompt para fazer perguntas relacionadas a programação. Claro, após adicionar a forte habilidade de raciocínio, ele possui capacidades de codificação ainda mais avançadas, como gerar projetos conforme os requisitos. Por exemplo, gerar projetos conforme as necessidades, como:
 
 ### **Requisito**
 
-Criar um aplicativo de Carrinho de Compras
+Criar um App de Carrinho de Compras
 
 - Criar uma API Rest com os seguintes métodos:
-    - Obter uma lista de cervejas usando página, deslocamento e limite.
+    - Obter uma lista de cervejas usando página, offset e limite.
     - Obter detalhes da cerveja pelo id.
-    - Buscar cerveja por nome, descrição, slogan, combinações com comida e preço.
+    - Buscar cerveja por nome, descrição, slogan, harmonização com alimentos e preço.
 - Criar uma lista de produtos na página principal.
     - Criar uma barra de busca para filtrar produtos.
     - Navegar para a página de descrição quando o usuário clicar em um produto.
-- (Opcional) Filtro para produtos por preço.
+- (Opcional) Filtro para filtrar produtos por preço.
 - Criar um carrinho de compras.
     - Adicionar produtos ao carrinho.
     - Remover produtos do carrinho.
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

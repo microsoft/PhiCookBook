@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T14:04:55+00:00",
+  "translation_date": "2025-07-16T22:04:46+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "sl"
 }
 -->
-# **Quantizing Phi-3.5 using Intel OpenVINO**
+# **Kvantilizacija Phi-3.5 z uporabo Intel OpenVINO**
 
-Intel je najtradicionalnejši proizvajalec CPU-jev z veliko uporabniki. Z vzponom strojnega učenja in globokega učenja se je Intel prav tako vključil v tekmo za pospeševanje AI. Za inferenco modelov Intel ne uporablja le GPU-jev in CPU-jev, ampak tudi NPU-je.
+Intel je najbolj tradicionalni proizvajalec CPU-jev z veliko uporabniki. Z razmahom strojnega učenja in globokega učenja se je Intel pridružil tudi tekmi za pospeševanje AI. Za inferenco modelov Intel ne uporablja le GPU-jev in CPU-jev, ampak tudi NPU-je.
 
-Upamo, da bomo Phi-3.x družino namestili na končni napravi, z željo, da postane najpomembnejši del AI PC in Copilot PC. Nalaganje modela na končni strani je odvisno od sodelovanja različnih proizvajalcev strojne opreme. Ta poglavje se osredotoča predvsem na uporabo Intel OpenVINO kot kvantitativnega modela.
+Upamo, da bomo družino Phi-3.x lahko namestili na končni strani, saj želimo postati najpomembnejši del AI računalnika in Copilot računalnika. Nalaganje modela na končni strani je odvisno od sodelovanja različnih proizvajalcev strojne opreme. To poglavje se osredotoča predvsem na uporabo Intel OpenVINO kot kvantitativnega modela.
 
 ## **Kaj je OpenVINO**
 
-OpenVINO je odprtokodni komplet orodij za optimizacijo in nameščanje modelov globokega učenja od oblaka do roba. Pospešuje inferenco globokega učenja v različnih primerih uporabe, kot so generativni AI, video, zvok in jezik z modeli iz priljubljenih okvirjev, kot so PyTorch, TensorFlow, ONNX in drugi. Pretvarja in optimizira modele ter jih namešča na različne Intel® strojne opreme in okolja, lokalno ali na napravi, v brskalniku ali v oblaku.
+OpenVINO je odprtokodni komplet orodij za optimizacijo in nameščanje modelov globokega učenja od oblaka do roba. Pospešuje inferenco globokega učenja v različnih primerih uporabe, kot so generativna AI, video, zvok in jezik, z modeli iz priljubljenih ogrodij, kot so PyTorch, TensorFlow, ONNX in drugi. Pretvarja in optimizira modele ter jih namešča na kombinacijo Intel® strojne opreme in okolij, lokalno ali na napravi, v brskalniku ali v oblaku.
 
 Zdaj lahko z OpenVINO hitro kvantizirate GenAI model na Intel strojni opremi in pospešite referenco modela.
 
-OpenVINO sedaj podpira kvantizacijsko pretvorbo Phi-3.5-Vision in Phi-3.5 Instruct.
+OpenVINO zdaj podpira kvantizacijsko pretvorbo Phi-3.5-Vision in Phi-3.5 Instruct.
 
 ### **Nastavitev okolja**
 
-Prosimo, zagotovite, da so nameščene naslednje odvisnosti okolja, to je requirement.txt
+Poskrbite, da so nameščene naslednje odvisnosti okolja, to je requirement.txt
 
 ```txt
 
@@ -36,9 +36,9 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **Kvantizacija Phi-3.5-Instruct z uporabo OpenVINO**
+### **Kvantilizacija Phi-3.5-Instruct z OpenVINO**
 
-V Terminalu zaženite ta skript
+V terminalu zaženite ta skript
 
 ```bash
 
@@ -52,7 +52,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **Kvantizacija Phi-3.5-Vision z uporabo OpenVINO**
+### **Kvantilizacija Phi-3.5-Vision z OpenVINO**
 
 Zaženite ta skript v Pythonu ali Jupyter labu
 
@@ -90,19 +90,19 @@ if not out_dir.exists():
 
 ```
 
-### **🤖 Vzorci za Phi-3.5 z Intel OpenVINO**
+### **🤖 Primeri za Phi-3.5 z Intel OpenVINO**
 
-| Labs    | Predstavitev | Pojdi |
+| Laboratoriji    | Predstavitev | Pojdi |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Predstavitev Phi-3.5 Instruct  | Naučite se, kako uporabljati Phi-3.5 Instruct v vašem AI PC-ju    |  [Pojdi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Predstavitev Phi-3.5 Vision (slika) | Naučite se, kako uporabiti Phi-3.5 Vision za analizo slike v vašem AI PC-ju      |  [Pojdi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Predstavitev Phi-3.5 Vision (video)   | Naučite se, kako uporabiti Phi-3.5 Vision za analizo videa v vašem AI PC-ju    |  [Pojdi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Predstavitev Phi-3.5 Instruct  | Naučite se, kako uporabljati Phi-3.5 Instruct v vašem AI računalniku    |  [Pojdi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Predstavitev Phi-3.5 Vision (slika) | Naučite se, kako uporabiti Phi-3.5 Vision za analizo slike v vašem AI računalniku      |  [Pojdi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Predstavitev Phi-3.5 Vision (video)   | Naučite se, kako uporabiti Phi-3.5 Vision za analizo slike v vašem AI računalniku    |  [Pojdi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **Viri**
 
-1. Več o Intel OpenVINO preberite na [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
+1. Več o Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
 2. Intel OpenVINO GitHub repozitorij [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

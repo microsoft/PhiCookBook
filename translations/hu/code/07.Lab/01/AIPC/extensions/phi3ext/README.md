@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T04:53:20+00:00",
+  "translation_date": "2025-07-16T16:37:51+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
   "language_code": "hu"
 }
 -->
 # phi3ext README
 
-Ez a te "phi3ext" kiterjesztésed README fájlja. A rövid leírás után javasoljuk, hogy tartalmazza a következő fejezeteket.
+Ez a te "phi3ext" bővítményed README fájlja. A rövid leírás után javasoljuk, hogy tartalmazza a következő szakaszokat.
 
 ## Features
 
-Írd le a kiterjesztésed konkrét funkcióit, beleértve a kiterjesztés működését bemutató képernyőképeket. A képek elérési útja ehhez a README fájlhoz képest értendő.
+Írd le a bővítményed konkrét funkcióit, beleértve a bővítmény működéséről készült képernyőképeket. A képek elérési útja ehhez a README fájlhoz képest értendő.
 
-Például, ha a kiterjesztés projektmappádban van egy képek almappa:
+Például, ha a bővítmény projekt munkaterületén belül van egy képek almappa:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> TIP: Sok népszerű kiterjesztés használ animációkat. Ez nagyszerű módja annak, hogy bemutasd a kiterjesztésedet! Rövid, fókuszált animációkat ajánlunk, amelyek könnyen követhetők.
+> Tipp: Sok népszerű bővítmény animációkat használ. Ez egy remek módja annak, hogy bemutasd a bővítményedet! Rövid, fókuszált animációkat ajánlunk, amelyek könnyen követhetők.
 
 ## Requirements
 
-Ha vannak követelményeid vagy függőségeid, adj meg egy fejezetet, amely leírja ezeket, valamint azt, hogyan kell telepíteni és konfigurálni őket.
+Ha vannak követelményeid vagy függőségeid, adj hozzá egy szakaszt, amely leírja ezeket, valamint azok telepítésének és beállításának módját.
 
 ## Extension Settings
 
-Ha a kiterjesztésed `contributes.configuration` bővítési ponton keresztül bármilyen VS Code beállítást hozzáad, tüntesd fel itt.
+Ha a bővítményed `contributes.configuration` bővítési ponton keresztül hozzáad bármilyen VS Code beállítást, azt is tüntesd fel.
 
 Például:
 
-Ez a kiterjesztés a következő beállításokat járul hozzá:
+Ez a bővítmény a következő beállításokat adja hozzá:
 
-* `myExtension.enable`: A kiterjesztés engedélyezése vagy letiltása.
-* `myExtension.thing`: Állítsd `blah`-ra, hogy valamit végrehajts.
+* `myExtension.enable`: A bővítmény engedélyezése/letiltása.
+* `myExtension.thing`: Állítsd `blah` értékre, hogy valamit csináljon.
 
 ## Known Issues
 
-Az ismert problémák feltüntetése segíthet csökkenteni a felhasználók által ismételten feltett kérdéseket a kiterjesztéssel kapcsolatban.
+Az ismert problémák feltüntetése segít csökkenteni, hogy a felhasználók ismételten ugyanazokat a hibákat jelentsék.
 
 ## Release Notes
 
-A felhasználók értékelni fogják, ha frissítéskor megadod a kiadási megjegyzéseket.
+A felhasználók értékelik, ha a bővítmény frissítésekor megadod a kiadási megjegyzéseket.
 
 ### 1.0.0
 
-Első kiadás...
+Kezdeti kiadás...
 
 ### 1.0.1
 
@@ -54,23 +54,23 @@ Javítva a # problémája.
 
 ### 1.1.0
 
-Hozzáadva az X, Y és Z funkció.
+Hozzáadva az X, Y és Z funkciók.
 
 ---
 
 ## Following extension guidelines
 
-Győződj meg róla, hogy elolvastad a kiterjesztési irányelveket, és követed a legjobb gyakorlatokat a kiterjesztés készítése során.
+Győződj meg róla, hogy elolvastad a bővítmény útmutatót, és követed a legjobb gyakorlatokat a bővítmény készítése során.
 
 * [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Visual Studio Code-dal is írhatod a README fájlodat. Íme néhány hasznos szerkesztőbillentyűparancs:
+A README fájlodat Visual Studio Code-ban is írhatod. Íme néhány hasznos szerkesztő gyorsbillentyű:
 
 * Szerkesztő megosztása (`Cmd+\` macOS-en vagy `Ctrl+\` Windows és Linux alatt).
 * Előnézet váltása (`Shift+Cmd+V` macOS-en vagy `Shift+Ctrl+V` Windows és Linux alatt).
-* Nyomd meg `Ctrl+Space` (Windows, Linux, macOS) a Markdown kódrészletek listájának megtekintéséhez.
+* Nyomd meg a `Ctrl+Space`-t (Windows, Linux, macOS) a Markdown kódrészletek listájának megtekintéséhez.
 
 ## For more information
 
@@ -80,4 +80,4 @@ Visual Studio Code-dal is írhatod a README fájlodat. Íme néhány hasznos sze
 **Jó szórakozást!**
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

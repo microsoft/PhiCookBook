@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-07T13:45:04+00:00",
+  "translation_date": "2025-07-17T04:42:53+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "fr"
 }
 -->
-## **Utilisation de Phi-4-mini-mm pour générer du code**
+## **Utiliser Phi-4-mini-mm pour générer du code**
 
-Phi-4-mini poursuit les solides capacités de codage de la famille Phi. Vous pouvez utiliser Prompt pour poser des questions liées au codage. Bien sûr, après avoir intégré une forte capacité de raisonnement, il dispose de capacités de codage renforcées, comme générer des projets selon les exigences. Par exemple, générer des projets selon les besoins, tels que :
+Phi-4-mini poursuit les solides capacités de codage de la famille Phi. Vous pouvez utiliser Prompt pour poser des questions liées au codage. Bien sûr, après avoir ajouté une forte capacité de raisonnement, il dispose de capacités de codage encore plus avancées, comme générer des projets selon les besoins. Par exemple, générer des projets selon les exigences, tels que :
 
 ### **Exigence**
 
 Créer une application de panier d'achat
 
 - Créer une API Rest avec les méthodes suivantes :
-    - Obtenir une liste de bières en utilisant le décalage de page et la limite.
-    - Obtenir les détails d'une bière par son id.
+    - Obtenir une liste de bières en utilisant la pagination avec offset et limite.
+    - Obtenir les détails d’une bière par id.
     - Rechercher une bière par nom, description, slogan, accords mets et prix.
 - Créer une liste de produits sur la page principale.
     - Créer une barre de recherche pour filtrer les produits.
-    - Naviguer vers la page de description lorsque l'utilisateur clique sur un produit.
-- (Optionnel) Un slicer pour filtrer les produits par prix.
-- Créer un panier d'achat.
+    - Naviguer vers la page de description lorsque l’utilisateur clique sur un produit.
+- (Optionnel) Slicer pour filtrer les produits par prix.
+- Créer un panier d’achat.
     - Ajouter des produits au panier.
     - Retirer des produits du panier.
     - Calculer le prix total des produits dans le panier.
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de faire appel à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

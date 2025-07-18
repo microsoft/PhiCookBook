@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:14:56+00:00",
+  "translation_date": "2025-07-16T21:38:31+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "da"
 }
 -->
 # **Inference Phi-3-Vision lokalt**
 
-Phi-3-vision-128k-instruct gør det muligt for Phi-3 ikke kun at forstå sprog, men også at se verden visuelt. Gennem Phi-3-vision-128k-instruct kan vi løse forskellige visuelle problemer, såsom OCR, tabelanalyse, objektgenkendelse, beskrive billeder osv. Vi kan nemt udføre opgaver, som tidligere krævede meget data-træning. Følgende er relaterede teknikker og anvendelsesscenarier, som Phi-3-vision-128k-instruct refererer til.
+Phi-3-vision-128k-instruct gør det muligt for Phi-3 ikke kun at forstå sprog, men også at se verden visuelt. Gennem Phi-3-vision-128k-instruct kan vi løse forskellige visuelle opgaver, såsom OCR, tabelanalyse, objektgenkendelse, beskrive billeder osv. Vi kan nemt udføre opgaver, som tidligere krævede omfattende datatræning. Nedenfor er relaterede teknikker og anvendelsesscenarier, som Phi-3-vision-128k-instruct refererer til.
 
 ## **0. Forberedelse**
 
-Sørg for, at følgende Python-biblioteker er installeret før brug (Python 3.10+ anbefales)
+Sørg for, at følgende Python-biblioteker er installeret inden brug (Python 3.10+ anbefales)
 
 ```bash
 pip install transformers -U
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Analyser billedet med Phi-3-Vision**
 
-Vi ønsker, at AI skal kunne analysere indholdet af vores billeder og give relevante beskrivelser
+Vi ønsker, at AI skal kunne analysere indholdet i vores billeder og give relevante beskrivelser
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritiske oplysninger anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

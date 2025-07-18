@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-05-09T22:13:01+00:00",
+  "translation_date": "2025-07-17T09:18:37+00:00",
   "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "sw"
 }
 -->
 ## Karibu kwenye AI Toolkit kwa VS Code
 
-[AI Toolkit kwa VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) huleta pamoja mifano mbalimbali kutoka Azure AI Studio Catalog na katalogi nyingine kama Hugging Face. Toolkit hii hufanya kazi za kawaida za maendeleo ya kujenga programu za AI kwa kutumia zana na mifano ya AI inayozalisha kwa njia rahisi kupitia:
+[AI Toolkit kwa VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) huleta pamoja mifano mbalimbali kutoka Azure AI Studio Catalog na katalogi nyingine kama Hugging Face. Kitengo hiki hurahisisha kazi za kawaida za maendeleo kwa kujenga programu za AI kwa kutumia zana na mifano ya AI inayozalisha kupitia:
 - Anza na ugunduzi wa modeli na uwanja wa majaribio.
-- Urekebishaji wa modeli na utabiri kwa kutumia rasilimali za kompyuta za ndani.
-- Urekebishaji wa mbali na utabiri kwa kutumia rasilimali za Azure
+- Urekebishaji wa modeli na utambuzi kwa kutumia rasilimali za kompyuta za ndani.
+- Urekebishaji wa mbali na utambuzi kwa kutumia rasilimali za Azure
 
-[Sanidi AI Toolkit kwa VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[Sakinisha AI Toolkit kwa VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.sw.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.sw.png)
 
 
-**[Private Preview]** Utoaji wa huduma kwa bonyeza moja kwa Azure Container Apps kuendesha urekebishaji wa modeli na utabiri kwenye wingu.
+**[Private Preview]** Utoaji kwa bonyeza moja kwa Azure Container Apps kuendesha urekebishaji wa modeli na utambuzi katika wingu.
 
 Sasa tuanze na maendeleo ya programu yako ya AI:
 
@@ -28,36 +28,36 @@ Sasa tuanze na maendeleo ya programu yako ya AI:
   - [Maandalizi](../../../../md/03.FineTuning)
   - [Washa Conda](../../../../md/03.FineTuning)
   - [Urekebishaji wa modeli msingi tu](../../../../md/03.FineTuning)
-  - [Urekebishaji wa modeli na utabiri](../../../../md/03.FineTuning)
-  - [Urekebishaji wa modeli](../../../../md/03.FineTuning)
+  - [Urekebishaji wa modeli na utambuzi](../../../../md/03.FineTuning)
+  - [Urekebishaji wa Modeli](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
   - [Mifano na Rasilimali za Urekebishaji](../../../../md/03.FineTuning)
 - [**\[Private Preview\]** Maendeleo ya Mbali](../../../../md/03.FineTuning)
-  - [Mahitaji ya Awali](../../../../md/03.FineTuning)
+  - [Mahitaji ya awali](../../../../md/03.FineTuning)
   - [Kuweka Mradi wa Maendeleo ya Mbali](../../../../md/03.FineTuning)
   - [Toa Rasilimali za Azure](../../../../md/03.FineTuning)
-  - [\[Hiari\] Ongeza Token ya Huggingface kwenye Siri ya Azure Container App](../../../../md/03.FineTuning)
+  - [\[Hiari\] Ongeza Tokeni ya Huggingface kwenye Siri ya Azure Container App](../../../../md/03.FineTuning)
   - [Endesha Urekebishaji](../../../../md/03.FineTuning)
-  - [Toa Endpoint ya Utabiri](../../../../md/03.FineTuning)
-  - [Sambaza Endpoint ya Utabiri](../../../../md/03.FineTuning)
+  - [Toa Kituo cha Utambuzi](../../../../md/03.FineTuning)
+  - [Tangaza Kituo cha Utambuzi](../../../../md/03.FineTuning)
   - [Matumizi ya Juu](../../../../md/03.FineTuning)
 
 ## Maendeleo ya Ndani
 ### Maandalizi
 
 1. Hakikisha dereva wa NVIDIA amesakinishwa kwenye mwenyeji.
-2. Endesha `huggingface-cli login`, ikiwa unatumia HF kwa matumizi ya dataset.
-3. Maelezo ya mipangilio ya ufunguo `Olive` kwa chochote kinachobadilisha matumizi ya kumbukumbu.
+2. Endesha `huggingface-cli login`, ikiwa unatumia HF kwa matumizi ya seti ya data
+3. Maelezo ya mipangilio ya ufunguo wa `Olive` kwa chochote kinachobadilisha matumizi ya kumbukumbu.
 
 ### Washa Conda
-Kwa kuwa tunatumia mazingira ya WSL na yanashirikiwa, unahitaji kuwasha mazingira ya conda kwa mkono. Baada ya hatua hii unaweza kuendesha urekebishaji au utabiri.
+Kwa kuwa tunatumia mazingira ya WSL na yanashirikiwa, unahitaji kuwasha mazingira ya conda kwa mkono. Baada ya hatua hii unaweza kuendesha urekebishaji au utambuzi.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
 ### Urekebishaji wa modeli msingi tu
-Ili kujaribu modeli msingi bila urekebishaji unaweza kuendesha amri hii baada ya kuwasha conda.
+Ili kujaribu tu modeli msingi bila urekebishaji, unaweza kuendesha amri hii baada ya kuwasha conda.
 
 ```bash
 cd inference
@@ -67,17 +67,17 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### Urekebishaji wa modeli na utabiri
+### Urekebishaji wa modeli na utambuzi
 
-Mara tu eneo la kazi linapofunguliwa kwenye kontena la maendeleo, fungua terminal (njia ya msingi ni mizizi ya mradi), kisha endesha amri hapa chini kurekebisha LLM kwenye dataset iliyochaguliwa.
+Mara tu nafasi ya kazi itakapo funguliwa katika kontena la maendeleo, fungua terminal (njia ya chaguo-msingi ni mzizi wa mradi), kisha endesha amri ifuatayo kurekebisha LLM kwenye seti ya data iliyochaguliwa.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-Checkpoint na modeli ya mwisho zitawekwa katika `models` folder.
+Pointi za kuhifadhi na modeli ya mwisho zitawekwa kwenye folda ya `models`.
 
-Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`.
+Ifuatayo endesha utambuzi kwa kutumia modeli iliyorekebishwa kupitia mazungumzo katika `console`, `kivinjari cha wavuti` au `prompt flow`.
 
 ```bash
 cd inference
@@ -90,93 +90,92 @@ python console_chat.py
 python gradio_chat.py
 ```
 
-Ili kutumia `prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
+Ili kutumia `prompt flow` katika VS Code, tafadhali rejea [Mwongozo wa Kuanzisha Haraka](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
 
-### Model Fine-tuning
+### Urekebishaji wa Modeli
 
-Next, download the following model depending on the availability of a GPU on your device.
+Ifuatayo, pakua modeli ifuatayo kulingana na upatikanaji wa GPU kwenye kifaa chako.
 
-To initiate the local fine-tuning session using QLoRA, select a model you want to fine-tune from our catalog.
-| Platform(s) | GPU available | Model name | Size (GB) |
+Ili kuanzisha kikao cha urekebishaji wa ndani kwa kutumia QLoRA, chagua modeli unayotaka kurekebisha kutoka kwenye katalogi yetu.
+| Jukwaa | GPU inapatikana | Jina la modeli | Ukubwa (GB) |
 |---------|---------|--------|--------|
-| Windows | Yes | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
-| Linux | Yes | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
-| Windows<br>Linux | No | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
+| Windows | Ndiyo | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
+| Linux | Ndiyo | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
+| Windows<br>Linux | Hapana | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
 
-**_Note_** You do not need an Azure Account to download the models
+**_Kumbuka_** Huna haja ya Akaunti ya Azure kupakua mifano
 
-The Phi3-mini (int4) model is approximately 2GB-3GB in size. Depending on your network speed, it could take a few minutes to download.
+Modeli ya Phi3-mini (int4) ni takriban ukubwa wa 2GB-3GB. Kulingana na kasi ya mtandao wako, inaweza kuchukua dakika chache kupakua.
 
-Start by selecting a project name and location.
-Next, select a model from the model catalog. You will be prompted to download the project template. You can then click "Configure Project" to adjust various settings.
+Anza kwa kuchagua jina la mradi na mahali pa kuhifadhi.
+Ifuatayo, chagua modeli kutoka katalogi ya modeli. Utaombwa kupakua kiolezo cha mradi. Kisha unaweza kubofya "Configure Project" kurekebisha mipangilio mbalimbali.
 
-### Microsoft Olive 
+### Microsoft Olive
 
-We use [Olive](https://microsoft.github.io/Olive/why-olive.html) to run QLoRA fine-tuning on a PyTorch model from our catalog. All of the settings are preset with the default values to optimize to run the fine-tuning process locally with optimized use of memory, but it can be adjusted for your scenario.
+Tunatumia [Olive](https://microsoft.github.io/Olive/why-olive.html) kuendesha urekebishaji wa QLoRA kwenye modeli ya PyTorch kutoka katalogi yetu. Mipangilio yote imewekwa awali kwa thamani za chaguo-msingi ili kuboresha mchakato wa urekebishaji wa ndani kwa matumizi bora ya kumbukumbu, lakini inaweza kubadilishwa kulingana na hali yako.
 
-### Fine Tuning Samples and Resoures
+### Mifano na Rasilimali za Urekebishaji
 
-- [Fine tuning Getting Started Guide](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
-- [Fine tuning with a HuggingFace Dataset](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
-- [Fine tuning with Simple DataSet](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
+- [Mwongozo wa Kuanzisha Urekebishaji](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
+- [Urekebishaji kwa kutumia Dataset ya HuggingFace](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
+- [Urekebishaji kwa kutumia Dataset Rahisi](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
 
-## **[Private Preview]** Remote Development
+## **[Private Preview]** Maendeleo ya Mbali
 
-### Prerequisites
+### Mahitaji ya awali
 
-1. To run the model fine-tuning in your remote Azure Container App Environment, make sure your subscription has enough GPU capacity. Submit a [support ticket](https://azure.microsoft.com/support/create-ticket/) to request the required capacity for your application. [Get More Info about GPU capacity](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
-2. If you are using private dataset on HuggingFace, make sure you have a [HuggingFace account](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) and [generate an access token](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
-3. Enable Remote Fine-tuning and Inference feature flag in the AI Toolkit for VS Code
-   1. Open the VS Code Settings by selecting *File -> Preferences -> Settings*.
-   2. Navigate to *Extensions* and select *AI Toolkit*.
-   3. Select the *"Enable Remote Fine-tuning And Inference"* option.
-   4. Reload VS Code to take effect.
+1. Ili kuendesha urekebishaji wa modeli katika Mazingira yako ya Azure Container App ya mbali, hakikisha usajili wako una uwezo wa GPU wa kutosha. Tuma [tiketi ya msaada](https://azure.microsoft.com/support/create-ticket/) kuomba uwezo unaohitajika kwa programu yako. [Pata Taarifa Zaidi kuhusu uwezo wa GPU](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
+2. Ikiwa unatumia seti ya data binafsi kwenye HuggingFace, hakikisha una [akaunti ya HuggingFace](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) na [tengeneza tokeni ya upatikanaji](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
+3. Washa kipengele cha Remote Fine-tuning na Inference katika AI Toolkit kwa VS Code
+   1. Fungua Mipangilio ya VS Code kwa kuchagua *File -> Preferences -> Settings*.
+   2. Nenda kwenye *Extensions* na chagua *AI Toolkit*.
+   3. Chagua chaguo la *"Enable Remote Fine-tuning And Inference"*.
+   4. Reload VS Code ili mabadiliko yafanyike kazi.
 
-- [Remote Fine tuning](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
+- [Urekebishaji wa Mbali](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
 
-### Setting Up a Remote Development Project
-1. Execute the command palette `AI Toolkit: Focus on Resource View`.
-2. Navigate to *Model Fine-tuning* to access the model catalog. Assign a name to your project and select its location on your machine. Then, hit the *"Configure Project"* button.
-3. Project Configuration
-    1. Avoid enabling the *"Fine-tune locally"* option.
-    2. The Olive configuration settings will appear with pre-set default values. Please adjust and fill in these configurations as required.
-    3. Move on to *Generate Project*. This stage leverages WSL and involves setting up a new Conda environment, preparing for future updates that include Dev Containers.
-4. Click on *"Relaunch Window In Workspace"* to open your remote development project.
+### Kuweka Mradi wa Maendeleo ya Mbali
+1. Endesha amri ya palette `AI Toolkit: Focus on Resource View`.
+2. Nenda kwenye *Model Fine-tuning* kufikia katalogi ya modeli. Weka jina la mradi wako na chagua mahali pa kuhifadhi kwenye mashine yako. Kisha, bonyeza kitufe cha *"Configure Project"*.
+3. Mipangilio ya Mradi
+    1. Epuka kuwasha chaguo la *"Fine-tune locally"*.
+    2. Mipangilio ya Olive itaonekana ikiwa na thamani za awali zilizowekwa. Tafadhali rekebisha na jaza mipangilio hii kama inavyohitajika.
+    3. Endelea na *Generate Project*. Hatua hii inatumia WSL na inahusisha kuanzisha mazingira mapya ya Conda, kujiandaa kwa masasisho yajayo yanayojumuisha Dev Containers.
+4. Bonyeza *"Relaunch Window In Workspace"* kufungua mradi wako wa maendeleo ya mbali.
 
-> **Note:** The project currently works either locally or remotely within the AI Toolkit for VS Code. If you choose *"Fine-tune locally"* during project creation, it will operate exclusively in WSL without remote development capabilities. On the other hand, if you forego enabling *"Fine-tune locally"*, the project will be restricted to the remote Azure Container App environment.
+> **Kumbuka:** Mradi huu kwa sasa unafanya kazi ama ndani au kwa mbali ndani ya AI Toolkit kwa VS Code. Ikiwa utachagua *"Fine-tune locally"* wakati wa kuanzisha mradi, utaendesha tu ndani ya WSL bila uwezo wa maendeleo ya mbali. Kwa upande mwingine, ukiacha kuwasha *"Fine-tune locally"*, mradi utakuwa kwa mazingira ya mbali ya Azure Container App pekee.
 
-### Provision Azure Resources
-To get started, you need to provision the Azure Resource for remote fine-tuning. Do this by running the `AI Toolkit: Provision Azure Container Apps job for fine-tuning` from the command palette.
+### Toa Rasilimali za Azure
+Ili kuanza, unahitaji kutoa Rasilimali za Azure kwa urekebishaji wa mbali. Fanya hivyo kwa kuendesha amri ya `AI Toolkit: Provision Azure Container Apps job for fine-tuning` kutoka kwenye amri ya palette.
 
-Monitor the progress of the provision through the link displayed in the output channel.
+Fuatilia maendeleo ya utoaji kupitia kiungo kinachoonyeshwa kwenye chaneli ya matokeo.
 
-### [Optional] Add Huggingface Token to the Azure Container App Secret
-If you're using private HuggingFace dataset, set your HuggingFace token as an environment variable to avoid the need for manual login on the Hugging Face Hub.
-You can do this using the `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning command`. With this command, you can set the secret name as [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) and use your Hugging Face token as the secret value.
+### [Hiari] Ongeza Tokeni ya Huggingface kwenye Siri ya Azure Container App
+Ikiwa unatumia seti ya data binafsi ya HuggingFace, weka tokeni yako ya HuggingFace kama mabadiliko ya mazingira ili kuepuka hitaji la kuingia kwa mkono kwenye Hugging Face Hub.
+Unaweza kufanya hivi kwa kutumia amri ya `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning`. Kwa amri hii, unaweza kuweka jina la siri kama [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) na tumia tokeni yako ya Hugging Face kama thamani ya siri.
 
-### Run Fine-tuning
-To start the remote fine-tuning job, execute the `AI Toolkit: Run fine-tuning` command.
+### Endesha Urekebishaji
+Ili kuanza kazi ya urekebishaji wa mbali, endesha amri ya `AI Toolkit: Run fine-tuning`.
 
-To view the system and console logs, you can visit the Azure portal using the link in the output panel (more steps at [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Or, you can view the console logs directly in the VSCode output panel by running the command `AI Toolkit: Show the running fine-tuning job streaming logs`. 
-> **Note:** The job might be queued due to insufficient resources. If the log is not displayed, execute the `AI Toolkit: Show the running fine-tuning job streaming logs` command, wait for a while and then execute the command again to re-connect to the streaming log.
+Ili kuona kumbukumbu za mfumo na console, unaweza kutembelea portal ya Azure kwa kutumia kiungo kilicho kwenye paneli ya matokeo (hatua zaidi ziko kwenye [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Au, unaweza kuona kumbukumbu za console moja kwa moja kwenye paneli ya matokeo ya VSCode kwa kuendesha amri `AI Toolkit: Show the running fine-tuning job streaming logs`.
+> **Kumbuka:** Kazi inaweza kuwekwa kwenye foleni kutokana na rasilimali zisizotosheleza. Ikiwa kumbukumbu haionekani, endesha amri `AI Toolkit: Show the running fine-tuning job streaming logs`, subiri kidogo kisha endesha tena amri hiyo kuunganishwa tena na kumbukumbu zinazoendelea.
 
-During this process, QLoRA will be used for fine-tuning, and will create LoRA adapters for the model to use during inference.
-The results of the fine-tuning will be stored in the Azure Files.
+Wakati wa mchakato huu, QLoRA itatumika kwa urekebishaji, na itaunda LoRA adapters kwa modeli kutumia wakati wa utambuzi.
+Matokeo ya urekebishaji yatahifadhiwa katika Azure Files.
 
-### Provision Inference Endpoint
-After the adapters are trained in the remote environment, use a simple Gradio application to interact with the model.
-Similar to the fine-tuning process, you need to set up the Azure Resources for remote inference by executing the `AI Toolkit: Provision Azure Container Apps for inference` from the command palette.
+### Toa Kituo cha Utambuzi
+Baada ya adapters kufunzwa katika mazingira ya mbali, tumia programu rahisi ya Gradio kuingiliana na modeli.
+Kama ilivyo kwa mchakato wa urekebishaji, unahitaji kuweka Rasilimali za Azure kwa utambuzi wa mbali kwa kuendesha amri ya `AI Toolkit: Provision Azure Container Apps for inference` kutoka kwenye amri ya palette.
 
-By default, the subscription and the resource group for inference should match those used for fine-tuning. The inference will use the same Azure Container App Environment and access the model and model adapter stored in Azure Files, which were generated during the fine-tuning step. 
+Kwa kawaida, usajili na kundi la rasilimali kwa utambuzi vinapaswa kufanana na vilivyotumika kwa urekebishaji. Utambuzi utatumia Mazingira yale yale ya Azure Container App na kufikia modeli na adapter ya modeli iliyohifadhiwa katika Azure Files, ambayo ilizalishwa wakati wa hatua ya urekebishaji.
 
+### Tangaza Kituo cha Utambuzi
+Ikiwa unataka kurekebisha msimbo wa utambuzi au kupakia tena modeli ya utambuzi, tafadhali endesha amri ya `AI Toolkit: Deploy for inference`. Hii italinganisha msimbo wako wa hivi karibuni na Azure Container App na kuanzisha tena nakala.
 
-### Deploy the Inference Endpoint
-If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
-
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` na kwenye paneli ya matokeo. Sasa uko tayari kutathmini modeli kwa kutumia endpoint hii.
+Mara baada ya utekelezaji kufanikiwa, unaweza kufikia API ya utambuzi kwa kubofya kitufe cha "*Go to Inference Endpoint*" kinachoonyeshwa kwenye taarifa ya VSCode. Au, kiungo cha API ya wavuti kinaweza kupatikana chini ya `ACA_APP_ENDPOINT` katika `./infra/inference.config.json` na kwenye paneli ya matokeo. Sasa uko tayari kutathmini modeli kwa kutumia kituo hiki.
 
 ### Matumizi ya Juu
-Kwa maelezo zaidi kuhusu maendeleo ya mbali kwa AI Toolkit, rejea [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) na [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference) nyaraka.
+Kwa maelezo zaidi kuhusu maendeleo ya mbali kwa AI Toolkit, rejea nyaraka za [Urekebishaji wa mifano kwa mbali](https://aka.ms/ai-toolkit/remote-provision) na [Utambuzi kwa modeli iliyorekebishwa](https://aka.ms/ai-toolkit/remote-inference).
 
-**Kifungu cha Msamaha**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kwamba tafsiri za moja kwa moja zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na watu inashauriwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

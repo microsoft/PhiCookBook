@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T05:04:15+00:00",
+  "translation_date": "2025-07-16T16:55:05+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "nl"
 }
 -->
 # phi3ext README
 
-Dit is de README voor jouw extensie "phi3ext". Nadat je een korte beschrijving hebt geschreven, raden we aan om de volgende secties op te nemen.
+Dit is de README van je extensie "phi3ext". Na een korte beschrijving raden we aan de volgende secties op te nemen.
 
 ## Features
 
@@ -19,15 +19,15 @@ Bijvoorbeeld, als je een map met afbeeldingen hebt in je extensieproject:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> TIP: Veel populaire extensies gebruiken animaties. Dit is een geweldige manier om je extensie te laten zien! We raden korte, gerichte animaties aan die gemakkelijk te volgen zijn.
+> [!TIP] Veel populaire extensies gebruiken animaties. Dit is een geweldige manier om je extensie te laten zien! We raden korte, gerichte animaties aan die makkelijk te volgen zijn.
 
 ## Requirements
 
-Als je vereisten of afhankelijkheden hebt, voeg dan een sectie toe waarin je deze beschrijft en uitlegt hoe ze geïnstalleerd en geconfigureerd moeten worden.
+Als je vereisten of afhankelijkheden hebt, voeg dan een sectie toe waarin je deze beschrijft en uitlegt hoe je ze installeert en configureert.
 
 ## Extension Settings
 
-Als je extensie via `contributes.configuration` extensiepunten instellingen aan VS Code toevoegt, neem deze dan hier op.
+Als je extensie via het `contributes.configuration` extensiepunt instellingen aan VS Code toevoegt, neem die dan hier op.
 
 Bijvoorbeeld:
 
@@ -38,15 +38,15 @@ Deze extensie draagt de volgende instellingen bij:
 
 ## Known Issues
 
-Het benoemen van bekende problemen kan helpen om te voorkomen dat gebruikers dezelfde problemen meerdere keren melden.
+Het benoemen van bekende problemen helpt om te voorkomen dat gebruikers dezelfde problemen meerdere keren melden.
 
 ## Release Notes
 
-Gebruikers waarderen het als je release-opmerkingen toevoegt bij het updaten van je extensie.
+Gebruikers waarderen het als je bij updates release notes toevoegt.
 
 ### 1.0.0
 
-Eerste release...
+Eerste release ...
 
 ### 1.0.1
 
@@ -62,22 +62,22 @@ Functies X, Y en Z toegevoegd.
 
 Zorg ervoor dat je de extensierichtlijnen hebt gelezen en de beste praktijken voor het maken van extensies volgt.
 
-* [Extensierichtlijnen](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Je kunt Visual Studio Code gebruiken om je README te schrijven. Hier zijn enkele handige editor-sneltoetsen:
+Je kunt Visual Studio Code gebruiken om je README te schrijven. Hier zijn een paar handige editor sneltoetsen:
 
 * Editor splitsen (`Cmd+\` op macOS of `Ctrl+\` op Windows en Linux).
 * Voorbeeldweergave schakelen (`Shift+Cmd+V` op macOS of `Shift+Ctrl+V` op Windows en Linux).
-* Druk op `Ctrl+Space` (Windows, Linux, macOS) om een lijst met Markdown-codefragmenten te bekijken.
+* Druk op `Ctrl+Space` (Windows, Linux, macOS) om een lijst met Markdown snippets te zien.
 
 ## For more information
 
-* [Markdown-ondersteuning in Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Markdown syntax reference](https://help.github.com/articles/markdown-basics/)
+* [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
 
 **Veel plezier!**
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

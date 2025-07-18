@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-07T13:42:19+00:00",
+  "translation_date": "2025-07-17T05:14:24+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "zh"
 }
 -->
 ## **Phi-4-mini中的函数调用**
 
-函数调用最早出现在Phi Family系列中，现在你可以通过Phi-4-mini使用它。
+函数调用最早出现在Phi Family系列中，现在你可以通过Phi-4-mini来使用它。
 
-这个示例展示了英超联赛结果的模拟。目标是让Phi-4-mini提供实时的比赛信息。下面是示例代码：
+这个示例演示了英超联赛结果的模拟。目标是让Phi-4-mini提供实时的比赛信息。下面是示例代码：
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **免责声明**：  
-本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始语言版本的文件应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译而成。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

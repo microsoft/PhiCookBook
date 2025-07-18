@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:18:43+00:00",
+  "translation_date": "2025-07-17T05:37:48+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "da"
 }
 -->
 ## GitHub Models - Begrænset offentlig beta
 
-Velkommen til [GitHub Models](https://github.com/marketplace/models)! Vi har alt klar til, at du kan udforske AI-modeller hostet på Azure AI.
+Velkommen til [GitHub Models](https://github.com/marketplace/models)! Vi har alt klar til dig, så du kan udforske AI-modeller hostet på Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.da.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.da.png)
 
-For mere information om de modeller, der er tilgængelige på GitHub Models, kan du se [GitHub Model Marketplace](https://github.com/marketplace/models)
+For mere information om de modeller, der er tilgængelige på GitHub Models, se [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Tilgængelige modeller
 
-Hver model har en dedikeret playground og eksempel-kode
+Hver model har en dedikeret playground og eksempelkode
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,7 +37,7 @@ Hver model har en dedikeret playground og eksempel-kode
 
 ## Kom godt i gang
 
-Der er nogle grundlæggende eksempler klar til dig, som du kan køre. Du kan finde dem i samples-mappen. Hvis du vil springe direkte til dit foretrukne sprog, kan du finde eksemplerne i følgende sprog:
+Der er nogle grundlæggende eksempler klar til dig at køre. Du kan finde dem i samples-mappen. Hvis du vil springe direkte til dit foretrukne sprog, kan du finde eksemplerne i følgende sprog:
 
 - Python
 - JavaScript
@@ -45,18 +45,18 @@ Der er nogle grundlæggende eksempler klar til dig, som du kan køre. Du kan fin
 
 Der findes også et dedikeret Codespaces-miljø til at køre samples og modeller.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.da.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.da.png)
 
-## Eksempel-kode
+## Eksempelkode
 
-Nedenfor er kodeeksempler til nogle få anvendelsestilfælde. For yderligere information om Azure AI Inference SDK, se den fulde dokumentation og eksempler.
+Nedenfor er eksempler på kode til nogle få brugsscenarier. For yderligere information om Azure AI Inference SDK, se fuld dokumentation og eksempler.
 
 ## Opsætning
 
-1. Opret et personligt adgangstoken  
-Du behøver ikke give nogen tilladelser til tokenet. Bemærk, at tokenet sendes til en Microsoft-tjeneste.
+1. Opret en personlig adgangstoken  
+Du behøver ikke give nogen tilladelser til tokenet. Bemærk, at tokenet vil blive sendt til en Microsoft-tjeneste.
 
-For at bruge kodeeksemplerne nedenfor, opret en miljøvariabel for at sætte dit token som nøgle for klientkoden.
+For at bruge kodeeksemplerne nedenfor, opret en miljøvariabel, der sætter dit token som nøgle for klientkoden.
 
 Hvis du bruger bash:  
 ```
@@ -72,7 +72,7 @@ Hvis du bruger Windows kommandoprompt:
 
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
-```
+```  
 
 ## Python-eksempel
 
@@ -84,7 +84,7 @@ pip install azure-ai-inference
 ```  
 ### Kør et grundlæggende kodeeksempel
 
-Dette eksempel viser et simpelt kald til chat completion API’en. Det bruger GitHub AI model inference endpoint og dit GitHub-token. Kaldet er synkront.
+Dette eksempel viser et grundlæggende kald til chat completion API’en. Det bruger GitHub AI model inference endpoint og dit GitHub-token. Kaldet er synkront.
 
 ```
 import os
@@ -189,7 +189,7 @@ client.close()
 
 Installer Node.js.
 
-Kopiér følgende tekstlinjer og gem dem som en fil package.json i din mappe.
+Kopier følgende tekstlinjer og gem dem som en fil package.json i din mappe.
 
 ```
 {
@@ -210,7 +210,7 @@ For hvert af kodeeksemplerne nedenfor, kopier indholdet til en fil sample.js og 
 
 ### Kør et grundlæggende kodeeksempel
 
-Dette eksempel viser et simpelt kald til chat completion API’en. Det bruger GitHub AI model inference endpoint og dit GitHub-token. Kaldet er synkront.
+Dette eksempel viser et grundlæggende kald til chat completion API’en. Det bruger GitHub AI model inference endpoint og dit GitHub-token. Kaldet er synkront.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -425,21 +425,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## GRATIS brug og begrænsninger for GitHub Models
+## GRATIS brug og grænser for GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.da.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.da.png)
 
-[Begrænsningerne for playground og gratis API-brug](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) er designet til at hjælpe dig med at eksperimentere med modeller og prototype din AI-applikation. For brug ud over disse grænser, og for at skalere din applikation, skal du tildele ressourcer fra en Azure-konto og autentificere derfra i stedet for med dit personlige GitHub-adgangstoken. Du behøver ikke ændre noget andet i din kode. Brug dette link for at finde ud af, hvordan du kan gå ud over gratisgrænserne i Azure AI.
+[Rate limits for playground og gratis API-brug](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) er designet til at hjælpe dig med at eksperimentere med modeller og prototype din AI-applikation. For brug ud over disse grænser, og for at skalere din applikation, skal du tildele ressourcer fra en Azure-konto og autentificere derfra i stedet for med dit GitHub personlige adgangstoken. Du behøver ikke ændre noget andet i din kode. Brug dette link for at finde ud af, hvordan du går ud over gratisgrænserne i Azure AI.
 
 ### Oplysninger
 
-Husk, når du interagerer med en model, eksperimenterer du med AI, så indholdsfejl kan forekomme.
+Husk, at når du interagerer med en model, eksperimenterer du med AI, så fejl i indhold kan forekomme.
 
-Funktionen er underlagt forskellige begrænsninger (inklusive forespørgsler pr. minut, forespørgsler pr. dag, tokens pr. forespørgsel og samtidige forespørgsler) og er ikke designet til produktionsbrug.
+Funktionen er underlagt forskellige begrænsninger (herunder anmodninger pr. minut, anmodninger pr. dag, tokens pr. anmodning og samtidige anmodninger) og er ikke designet til produktionsbrug.
 
 GitHub Models bruger Azure AI Content Safety. Disse filtre kan ikke slås fra som en del af GitHub Models-oplevelsen. Hvis du vælger at bruge modeller gennem en betalt tjeneste, skal du konfigurere dine indholdsfiltre, så de opfylder dine krav.
 
 Denne tjeneste er underlagt GitHubs Pre-release Terms.
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

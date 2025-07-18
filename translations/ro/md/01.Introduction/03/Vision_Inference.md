@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:18:28+00:00",
+  "translation_date": "2025-07-16T21:40:09+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "ro"
 }
 -->
 # **Inferență Phi-3-Vision locală**
 
-Phi-3-vision-128k-instruct îi permite lui Phi-3 să nu doar înțeleagă limbajul, ci și să vadă lumea vizual. Prin Phi-3-vision-128k-instruct, putem rezolva diverse probleme vizuale, cum ar fi OCR, analiza tabelelor, recunoașterea obiectelor, descrierea imaginilor etc. Putem finaliza cu ușurință sarcini care anterior necesitau multă pregătire pe date. Mai jos sunt tehnicile și scenariile de aplicare asociate citate de Phi-3-vision-128k-instruct.
+Phi-3-vision-128k-instruct îi permite lui Phi-3 să nu înțeleagă doar limbajul, ci și să vadă lumea vizual. Prin Phi-3-vision-128k-instruct, putem rezolva diverse probleme vizuale, cum ar fi OCR, analiza tabelelor, recunoașterea obiectelor, descrierea imaginilor etc. Putem finaliza cu ușurință sarcini care anterior necesitau multă pregătire pe date. Mai jos sunt tehnici și scenarii de aplicare asociate cu Phi-3-vision-128k-instruct.
 
 ## **0. Pregătire**
 
@@ -21,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-Este recomandat să folosiți ***CUDA 11.6+*** și să instalați flatten
+Se recomandă utilizarea ***CUDA 11.6+*** și instalarea flatten
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-Creați un Notebook nou. Pentru a finaliza exemplele, se recomandă să creați mai întâi următorul conținut.
+Creați un Notebook nou. Pentru a finaliza exemplele, este recomandat să creați mai întâi următorul conținut.
 
 ```python
 from PIL import Image
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Putem obține răspunsurile relevante rulând următorul script în Notebook
+Putem obține răspunsurile relevante executând următorul script în Notebook
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR cu Phi-3-Vision**
 
-Pe lângă analiza imaginii, putem și extrage informații din imagine. Acesta este procesul OCR pe care înainte trebuia să-l realizăm cu cod complex.
+Pe lângă analiza imaginii, putem extrage și informații din imagine. Acesta este procesul OCR pe care înainte trebuia să-l realizăm prin cod complex.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Compararea mai multor imagini**
 
-Phi-3 Vision suportă compararea mai multor imagini. Putem folosi acest model pentru a găsi diferențele dintre imagini.
+Phi-3 Vision suportă compararea mai multor imagini. Putem folosi acest model pentru a identifica diferențele dintre imagini.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să țineți cont că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

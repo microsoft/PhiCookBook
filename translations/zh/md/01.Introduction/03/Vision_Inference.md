@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-07T14:38:19+00:00",
+  "translation_date": "2025-07-16T21:36:24+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "zh"
 }
 -->
 # **本地推理 Phi-3-Vision**
 
-Phi-3-vision-128k-instruct 不仅让 Phi-3 能理解语言，还能“看见”世界。通过 Phi-3-vision-128k-instruct，我们可以解决各种视觉问题，比如 OCR、表格分析、物体识别、图片描述等。许多过去需要大量数据训练才能完成的任务，现在都能轻松搞定。以下是 Phi-3-vision-128k-instruct 涉及的相关技术和应用场景。
+Phi-3-vision-128k-instruct 不仅让 Phi-3 能理解语言，还能“看见”世界。通过 Phi-3-vision-128k-instruct，我们可以解决各种视觉问题，比如 OCR、表格分析、物体识别、图片描述等。许多以前需要大量数据训练才能完成的任务，现在都能轻松实现。以下是 Phi-3-vision-128k-instruct 相关的技术和应用场景。
 
 ## **0. 准备工作**
 
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. 使用 Phi-3-Vision 分析图片**
 
-我们希望 AI 能够分析图片内容，并给出相关描述
+我们希望 AI 能分析图片内容并给出相关描述
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. 使用 Phi-3-Vision 进行 OCR**
 
-除了分析图片，我们还可以从图片中提取信息。这就是过去需要写复杂代码才能完成的 OCR 过程。
+除了分析图片，我们还可以从图片中提取信息。这就是 OCR 过程，以前需要写复杂代码才能完成。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -112,9 +112,9 @@ response = processor.batch_decode(generate_ids,
 The title of the book is "ALONE" and the author is Morgan Maxwell.
 ```
 
-## **3. 多张图片对比**
+## **3. 多图比较**
 
-Phi-3 Vision 支持多张图片的对比。我们可以用这个模型找出图片之间的差异。
+Phi-3 Vision 支持多张图片的比较。我们可以用这个模型找出图片之间的差异。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **免责声明**：  
-本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译而成。尽管我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言的原文应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

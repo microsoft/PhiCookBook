@@ -2,93 +2,94 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-07T15:17:24+00:00",
+  "translation_date": "2025-07-16T15:47:52+00:00",
   "source_file": "code/03.Finetuning/olive-lab/readme.md",
   "language_code": "mo"
 }
 -->
-# Lab. Optimize AI models for on-device inference
+# 實驗室：優化 AI 模型以進行裝置端推論
 
-## Introduction 
+## 介紹
 
-> [!IMPORTANT]
-> This lab requires an **Nvidia A10 or A100 GPU** with associated drivers and CUDA toolkit (version 12+) installed.
+> [!IMPORTANT]  
+> 本實驗室需要配備 **Nvidia A10 或 A100 GPU**，並安裝相應的驅動程式及 CUDA 工具包（版本 12 以上）。
 
-> [!NOTE]
-> This is a **35-minute** lab that will give you a hands-on introduction to the core concepts of optimizing models for on-device inference using OLIVE.
+> [!NOTE]  
+> 這是一個 **35 分鐘** 的實驗室，將帶您實作體驗使用 OLIVE 進行裝置端推論模型優化的核心概念。
 
-## Learning Objectives
+## 學習目標
 
-By the end of this lab, you will be able to use OLIVE to:
+完成本實驗室後，您將能夠使用 OLIVE：
 
-- Quantize an AI Model using the AWQ quantization method.
-- Fine-tune an AI model for a specific task.
-- Generate LoRA adapters (fine-tuned model) for efficient on-device inference on the ONNX Runtime.
+- 使用 AWQ 量化方法對 AI 模型進行量化。
+- 針對特定任務微調 AI 模型。
+- 生成 LoRA 適配器（微調模型），以便在 ONNX Runtime 上高效進行裝置端推論。
 
-### What is Olive
+### 什麼是 Olive
 
-Olive (*O*NNX *live*) is a model optimization toolkit with accompanying CLI that enables you to ship models for the ONNX runtime +++https://onnxruntime.ai+++ with quality and performance.
+Olive（*O*NNX *live*）是一套模型優化工具包，搭配 CLI，讓您能夠為 ONNX runtime +++https://onnxruntime.ai+++ 發佈具備品質與效能的模型。
 
-![Olive Flow](../../../../../translated_images/olive-flow.a47985655a756dcba73521511ea42eef359509a3a33cbd4b9ac04ba433287b80.mo.png)
+![Olive 流程圖](../../../../../translated_images/olive-flow.a47985655a756dcba73521511ea42eef359509a3a33cbd4b9ac04ba433287b80.mo.png)
 
-The input to Olive is typically a PyTorch or Hugging Face model and the output is an optimized ONNX model that runs on a device (deployment target) using the ONNX runtime. Olive optimizes the model for the deployment target’s AI accelerator (NPU, GPU, CPU) provided by hardware vendors such as Qualcomm, AMD, Nvidia or Intel.
+Olive 的輸入通常是 PyTorch 或 Hugging Face 模型，輸出則是可在執行 ONNX runtime 的裝置（部署目標）上執行的優化 ONNX 模型。Olive 會針對部署目標的 AI 加速器（NPU、GPU、CPU）進行優化，這些硬體由 Qualcomm、AMD、Nvidia 或 Intel 等廠商提供。
 
-Olive runs a *workflow*, which is a sequence of individual model optimization tasks called *passes* — example passes include: model compression, graph capture, quantization, graph optimization. Each pass has parameters that can be adjusted to achieve the best metrics, like accuracy and latency, which are evaluated by a corresponding evaluator. Olive uses a search strategy with an algorithm to auto-tune each pass individually or sets of passes together.
+Olive 執行一個 *工作流程*，該流程是由一連串稱為 *passes* 的模型優化任務依序組成——例如：模型壓縮、圖形捕捉、量化、圖形優化。每個 pass 都有一組可調整的參數，以達成最佳指標（如準確度和延遲），這些指標由相應的評估器評估。Olive 採用搜尋策略，利用搜尋演算法逐一或同時自動調整每個 pass。
 
-#### Benefits of Olive
+#### Olive 的優點
 
-- **Save time and reduce frustration** from trial-and-error manual experiments with various techniques for graph optimization, compression, and quantization. Define your quality and performance goals and let Olive find the best model automatically.
-- **40+ built-in model optimization components** covering state-of-the-art methods in quantization, compression, graph optimization, and fine-tuning.
-- **User-friendly CLI** for common optimization tasks such as olive quantize, olive auto-opt, olive finetune.
-- Built-in model packaging and deployment support.
-- Supports generating models for **Multi LoRA serving**.
-- Create workflows using YAML/JSON to coordinate optimization and deployment tasks.
-- **Hugging Face** and **Azure AI** integration.
-- Built-in **caching** system to **reduce costs**.
+- **減少手動嘗試錯誤的挫折與時間**，無需自行實驗各種圖形優化、壓縮和量化技術。定義您的品質與效能限制，讓 Olive 自動為您尋找最佳模型。
+- **內建 40 多種模型優化元件**，涵蓋量化、壓縮、圖形優化與微調的尖端技術。
+- **易用的 CLI**，適用於常見模型優化任務，例如 olive quantize、olive auto-opt、olive finetune。
+- 內建模型封裝與部署功能。
+- 支援生成 **多重 LoRA 服務** 的模型。
+- 使用 YAML/JSON 建構工作流程，協調模型優化與部署任務。
+- 整合 **Hugging Face** 與 **Azure AI**。
+- 內建 **快取** 機制，幫助 **節省成本**。
 
-## Lab Instructions
-> [!NOTE]
-> Make sure you have provisioned your Azure AI Hub and Project and set up your A100 compute as described in Lab 1.
+## 實驗室指引
 
-### Step 0: Connect to your Azure AI Compute
+> [!NOTE]  
+> 請確保您已依照實驗室 1 的指示，完成 Azure AI Hub 與專案的設定，並配置好 A100 計算資源。
 
-Connect to the Azure AI compute using the remote feature in **VS Code.** 
+### 步驟 0：連接至您的 Azure AI 計算資源
 
-1. Open your **VS Code** desktop app:
-1. Open the **command palette** using **Shift+Ctrl+P**
-1. Search for **AzureML - remote: Connect to compute instance in New Window**.
-1. Follow the prompts to connect to the Compute, selecting your Azure Subscription, Resource Group, Project, and Compute name set up in Lab 1.
-1. Once connected, your Azure ML Compute node will appear in the **bottom left of Visual Studio Code** `><Azure ML: Compute Name`
+您將使用 **VS Code** 的遠端功能連接至 Azure AI 計算資源。
 
-### Step 1: Clone this repo
+1. 開啟您的 **VS Code** 桌面應用程式。  
+2. 使用 **Shift+Ctrl+P** 開啟 **命令面板**。  
+3. 在命令面板中搜尋 **AzureML - remote: Connect to compute instance in New Window**。  
+4. 按照畫面指示連接計算資源，過程中需選擇您的 Azure 訂閱、資源群組、專案及您在實驗室 1 中設定的計算名稱。  
+5. 連接成功後，您會在 Visual Code 左下角看到 `><Azure ML: Compute Name`。
 
-Open a new terminal in VS Code with **Ctrl+J** and clone this repo:
+### 步驟 1：複製此儲存庫
 
-In the terminal you will see the prompt
+在 VS Code 中，您可以使用 **Ctrl+J** 開啟新的終端機，並複製此儲存庫：
+
+終端機中應顯示提示：
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
-```
-Clone the solution 
+```  
+複製解決方案
 
 ```bash
 cd ~/localfiles
 git clone https://github.com/microsoft/phi-3cookbook.git
 ```
 
-### Step 2: Open Folder in VS Code
+### 步驟 2：在 VS Code 中開啟資料夾
 
-Run the following command in the terminal to open VS Code in the relevant folder, which will launch a new window:
+在終端機執行以下指令，即可在新視窗中開啟相關資料夾：
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
 ```
 
-Alternatively, open the folder via **File** > **Open Folder**.
+或者，您也可以透過選單 **檔案** > **開啟資料夾** 來開啟。
 
-### Step 3: Dependencies
+### 步驟 3：安裝相依套件
 
-Open a terminal in your Azure AI Compute instance in VS Code (tip: **Ctrl+J**) and run the following commands to install dependencies:
+在 VS Code 中的 Azure AI 計算實例開啟終端機（提示：**Ctrl+J**），執行以下指令安裝相依套件：
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -98,35 +99,36 @@ az extension remove -n azure-cli-ml
 az extension add -n ml
 ```
 
-> [!NOTE]
-> Installing all dependencies will take about 5 minutes.
+> [!NOTE]  
+> 安裝所有相依套件約需 5 分鐘。
 
-In this lab, you’ll download and upload models to the Azure AI Model catalog. To access the catalog, log in to Azure with:
+本實驗室將下載並上傳模型至 Azure AI 模型目錄。為了存取模型目錄，您需要登入 Azure：
 
 ```bash
 az login
 ```
 
-> [!NOTE]
-> During login, you will be prompted to select your subscription. Make sure to choose the subscription provided for this lab.
+> [!NOTE]  
+> 登入時系統會要求您選擇訂閱，請務必選擇本實驗室提供的訂閱。
 
-### Step 4: Execute Olive commands 
+### 步驟 4：執行 Olive 指令
 
-Open a terminal in your Azure AI Compute instance in VS Code (tip: **Ctrl+J**) and activate the `olive-ai` conda environment:
+在 VS Code 中的 Azure AI 計算實例開啟終端機（提示：**Ctrl+J**），並確保已啟動 `olive-ai` conda 環境：
 
 ```bash
 conda activate olive-ai
 ```
 
-Then run the following Olive commands in the terminal.
+接著，在命令列執行以下 Olive 指令。
 
-1. **Inspect the data:** In this example, you will fine-tune the Phi-3.5-Mini model to specialize in answering travel-related questions. The code below shows the first few records of the dataset in JSON lines format:
-   
+1. **檢視資料：** 本範例將微調 Phi-3.5-Mini 模型，使其專精於回答旅遊相關問題。以下程式碼會顯示資料集的前幾筆記錄，資料格式為 JSON lines：
+
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **Quantize the model:** Before training, quantize the model using Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ quantizes model weights considering the activations during inference, which better preserves accuracy compared to traditional methods.
-    
+
+2. **量化模型：** 在訓練模型前，先使用以下指令進行量化，採用稱為 Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++ 的技術。AWQ 透過考慮推論時產生的激活值來量化模型權重，這表示量化過程會考慮激活值的實際資料分布，較傳統權重量化方法更能保留模型準確度。
+
     ```bash
     olive quantize \
        --model_name_or_path microsoft/Phi-3.5-mini-instruct \
@@ -135,13 +137,13 @@ Then run the following Olive commands in the terminal.
        --output_path models/phi/awq \
        --log_level 1
     ```
-    
-    AWQ quantization takes about **8 minutes** and reduces the model size from approximately **7.5GB to 2.5GB**.
-   
-   In this lab, we demonstrate how to input models from Hugging Face (e.g., `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
 
-1. **Train the model:** Next, the `olive finetune` command fine-tunes the quantized model. Quantizing *before* fine-tuning yields better accuracy since fine-tuning recovers some accuracy lost during quantization.
-    
+    AWQ 量化約需 **8 分鐘**，可將模型大小從約 7.5GB 減少至約 2.5GB。
+
+    本實驗室示範如何從 Hugging Face 輸入模型（例如：`microsoft/Phi-3.5-mini-instruct`），但 Olive 也允許您從 Azure AI 目錄輸入模型，只需將 `model_name_or_path` 參數更新為 Azure AI 資產 ID（例如：`azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`）。
+
+3. **訓練模型：** 接著，使用 `olive finetune` 指令微調量化後的模型。先量化再微調能比先微調後量化獲得更佳準確度，因為微調過程會彌補部分量化造成的損失。
+
     ```bash
     olive finetune \
         --method lora \
@@ -153,10 +155,10 @@ Then run the following Olive commands in the terminal.
         --output_path ./models/phi/ft \
         --log_level 1
     ```
-    
-    Fine-tuning (100 steps) takes about **6 minutes**.
 
-1. **Optimize:** After training, optimize the model using Olive’s `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` arguments. For this lab, we will use CPU.
+    微調約需 **6 分鐘**（共 100 步）。
+
+4. **優化模型：** 模型訓練完成後，使用 Olive 的 `auto-opt` 指令優化模型，該指令會捕捉 ONNX 圖形並自動執行多項優化，透過壓縮與融合提升 CPU 上的模型效能。值得注意的是，您也可以透過更新 `--device` 與 `--provider` 參數，針對 NPU 或 GPU 進行優化，但本實驗室以 CPU 為例。
 
     ```bash
     olive auto-opt \
@@ -168,12 +170,12 @@ Then run the following Olive commands in the terminal.
        --output_path models/phi/onnx-ao \
        --log_level 1
     ```
-    
-    Optimization takes about **5 minutes**.
 
-### Step 5: Model inference quick test
+    優化約需 **5 分鐘**。
 
-To test inference, create a Python file named **app.py** in your folder and paste the following code:
+### 步驟 5：模型推論快速測試
+
+為測試模型推論，在資料夾中建立名為 **app.py** 的 Python 檔案，並貼上以下程式碼：
 
 ```python
 import onnxruntime_genai as og
@@ -209,28 +211,28 @@ while not generator.is_done():
 print("\n")
 ```
 
-Run the script using:
+使用以下指令執行程式：
 
 ```bash
 python app.py
 ```
 
-### Step 6: Upload model to Azure AI
+### 步驟 6：將模型上傳至 Azure AI
 
-Uploading your model to an Azure AI repository lets your team share the model and manages version control. To upload, run:
+將模型上傳至 Azure AI 模型庫，可讓開發團隊成員共享模型，並管理模型版本。執行以下指令上傳模型：
 
-> [!NOTE]
-> Update the `{}` placeholders with the name of your resource group and Azure AI Project Name. 
+> [!NOTE]  
+> 請將 `{}` 佔位符替換為您的資源群組名稱與 Azure AI 專案名稱。
 
-To find your resource group `"resourceGroup"` and Azure AI Project name in the command below:
+若要查詢您的資源群組 `"resourceGroup"` 與 Azure AI 專案名稱，請執行：
 
 ```
 az ml workspace show
 ```
 
-Alternatively, go to +++ai.azure.com+++ and select **management center** > **project** > **overview**
+或前往 +++ai.azure.com+++，選擇 **管理中心** > **專案** > **總覽**。
 
-Replace the `{}` placeholders with your resource group and Azure AI Project names.
+將 `{}` 佔位符替換為您的資源群組名稱與 Azure AI 專案名稱。
 
 ```bash
 az ml model create \
@@ -241,7 +243,7 @@ az ml model create \
     --workspace-name {PROJECT_NAME}
 ```
 
-You can then view and deploy your uploaded model at https://ml.azure.com/model/list
+您可於 https://ml.azure.com/model/list 查看已上傳的模型並進行部署。
 
-**Disclaimer**:  
-Thiz documént haz bin translaited yusing AI translaition serviz [Co-op Translator](https://github.com/Azure/co-op-translator). Whil wi striv for accurasi, pliz bi awér dat otomaited translaitions may contain erors or inakuracis. Th original documént in its nativ langwaj shud bi considérd th authoritativ sours. For kritikál informátion, proféshonal hyuman translaition iz rekoménded. Wi ar not liabl for eni misandérstandings or misinterpretéshons arising from th yus of this translaition.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

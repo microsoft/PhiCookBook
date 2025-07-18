@@ -2,244 +2,242 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-05-09T17:53:38+00:00",
+  "translation_date": "2025-07-17T00:49:22+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "sl"
 }
 -->
-# Fine-tune karna aura Prompt flow ke sath custom Phi-3 models integrate karna
+# Prilagodite in integrirajte lastne modele Phi-3 s Prompt flow
 
-Ee end-to-end (E2E) example Microsoft Tech Community ke guide "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" par adharit ba. Isme fine-tuning, deployment, aura custom Phi-3 models ke Prompt flow ke sath integration ke process samjhae gail ba.
+Ta celovit (E2E) primer temelji na vodiču "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" iz Microsoft Tech Community. Predstavlja postopke prilagajanja, nameščanja in integracije lastnih modelov Phi-3 s Prompt flow.
 
-## Overview
+## Pregled
 
-Is E2E example me, aap sikhbai ki kaise Phi-3 model ke fine-tune karal jaawe aura Prompt flow ke sath integrate karal jaawe. Azure Machine Learning aura Prompt flow ke istemal karke, aap ek workflow banai ke deployment aura custom AI models ke use ke liye. Ee E2E example tin scenario me batwara ba:
+V tem E2E primeru se boste naučili, kako prilagoditi model Phi-3 in ga integrirati s Prompt flow. Z uporabo Azure Machine Learning in Prompt flow boste vzpostavili delovni tok za nameščanje in uporabo lastnih AI modelov. Ta E2E primer je razdeljen na tri scenarije:
 
-**Scenario 1: Azure resources set up karein aura fine-tuning ke taiyaar ho jaayi**
+**Scenarij 1: Nastavitev Azure virov in priprava na prilagajanje**
 
-**Scenario 2: Phi-3 model ke fine-tune karal jaayi aura Azure Machine Learning Studio me deploy karal jaayi**
+**Scenarij 2: Prilagoditev modela Phi-3 in nameščanje v Azure Machine Learning Studio**
 
-**Scenario 3: Prompt flow ke sath integrate karal jaayi aura apne custom model se baat kari**
+**Scenarij 3: Integracija s Prompt flow in pogovor z vašim lastnim modelom**
 
-Ee E2E example ke ek overview dekh li.
+Tukaj je pregled tega E2E primera.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.dfeb1f15c7d3c8989fb267a05ac83a25485a7230bde037df9d3d92336afc1993.sl.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.sl.png)
 
-### Table of Contents
+### Kazalo
 
-1. **[Scenario 1: Azure resources set up karein aura fine-tuning ke taiyaar ho jaayi](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Azure Machine Learning Workspace banai](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Azure Subscription me GPU quotas ke request kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Role assignment jodi](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Project set up kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Fine-tuning ke liye dataset taiyaar kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenarij 1: Nastavitev Azure virov in priprava na prilagajanje](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Ustvarite Azure Machine Learning delovno okolje](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Zahtevajte GPU kvote v Azure naročnini](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Dodajte dodelitev vlog](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Nastavite projekt](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Pripravite podatkovni niz za prilagajanje](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 2: Phi-3 model ke fine-tune kari aura Azure Machine Learning Studio me deploy kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Azure CLI set up kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Phi-3 model ke fine-tune kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Fine-tuned model ke deploy kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenarij 2: Prilagodite model Phi-3 in ga namestite v Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Nastavite Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Prilagodite model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Namestite prilagojeni model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 3: Prompt flow ke sath integrate kari aura apne custom model se baat kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Custom Phi-3 model ke Prompt flow ke sath integrate kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Apne custom model se baat kari](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Scenarij 3: Integrirajte s Prompt flow in se pogovarjajte z vašim lastnim modelom](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Integrirajte lastni model Phi-3 s Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Pogovarjajte se z vašim lastnim modelom](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## Scenario 1: Azure resources set up kari aura fine-tuning ke taiyaar ho jaayi
+## Scenarij 1: Nastavitev Azure virov in priprava na prilagajanje
 
-### Azure Machine Learning Workspace banai
+### Ustvarite Azure Machine Learning delovno okolje
 
-1. Portal page ke upar ke **search bar** me *azure machine learning* type kari aur jo options aayen, unme se **Azure Machine Learning** chuni.
+1. V iskalno vrstico na vrhu portala vpišite *azure machine learning* in izberite **Azure Machine Learning** med prikazanimi možnostmi.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.321cff72d18a51c06dee2db7463868f3ca6619559a5d68b7795d70f4a8b3a683.sl.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.sl.png)
 
-1. Navigation menu se **+ Create** chuni.
+1. Izberite **+ Create** v navigacijskem meniju.
 
-1. Navigation menu se **New workspace** chuni.
+1. Izberite **New workspace** v navigacijskem meniju.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.9bd9208488fcf38226fc8d3cefffecb2cb14f414f6d8d982492c1bde8634e24a.sl.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.sl.png)
 
-1. Nimn kaam kari:
+1. Izvedite naslednje korake:
 
-    - Apna Azure **Subscription** chuni.
-    - Istemal ke liye **Resource group** chuni (jarurat par naya banai).
-    - **Workspace Name** daali, jo ki unique ho.
-    - Apna pasand ke **Region** chuni.
-    - Istemal ke liye **Storage account** chuni (jarurat par naya banai).
-    - Istemal ke liye **Key vault** chuni (jarurat par naya banai).
-    - Istemal ke liye **Application insights** chuni (jarurat par naya banai).
-    - Istemal ke liye **Container registry** chuni (jarurat par naya banai).
+    - Izberite vašo Azure **Subscription**.
+    - Izberite **Resource group**, ki jo želite uporabiti (po potrebi ustvarite novo).
+    - Vnesite **Workspace Name**. Mora biti edinstveno ime.
+    - Izberite **Region**, ki ga želite uporabiti.
+    - Izberite **Storage account**, ki ga želite uporabiti (po potrebi ustvarite novega).
+    - Izberite **Key vault**, ki ga želite uporabiti (po potrebi ustvarite novega).
+    - Izberite **Application insights**, ki ga želite uporabiti (po potrebi ustvarite novega).
+    - Izberite **Container registry**, ki ga želite uporabiti (po potrebi ustvarite novega).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.b2ebbef59952cd17d16b1f82adc252bf7616f8638d451e3c6595ffefe44f2cfa.sl.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.sl.png)
 
-1. **Review + Create** chuni.
+1. Izberite **Review + Create**.
 
-1. **Create** chuni.
+1. Izberite **Create**.
 
-### Azure Subscription me GPU quotas ke request kari
+### Zahtevajte GPU kvote v Azure naročnini
 
-Is E2E example me, fine-tuning ke liye *Standard_NC24ads_A100_v4 GPU* ke istemal karab, jiske liye quota request karna zaroori ba, aur deployment ke liye *Standard_E4s_v3* CPU ke istemal karab, jiske liye quota request ke jarurat nahi ba.
+V tem E2E primeru boste za prilagajanje uporabili *Standard_NC24ads_A100_v4 GPU*, ki zahteva zahtevo za kvoto, za nameščanje pa *Standard_E4s_v3* CPU, ki kvote ne zahteva.
 
 > [!NOTE]
 >
-> Keval Pay-As-You-Go subscriptions (standard subscription type) GPU allocation ke liye eligible ba; benefit subscriptions abhi supported nahi ba.
+> GPU dodelitev je na voljo samo za naročnine Pay-As-You-Go (standardni tip naročnine); naročnine z ugodnostmi trenutno niso podprte.
 >
-> Jo log benefit subscriptions (jaise Visual Studio Enterprise Subscription) use karat ba ya jald se fine-tuning aur deployment process test karna chaht ba, unke liye ee tutorial CPU ke sath minimal dataset pe fine-tuning ke bhi guidance deta. Lekin yaad rahe ki GPU ke sath bada dataset pe fine-tuning ke results kaafi behtar milat ba.
+> Za tiste, ki uporabljajo naročnine z ugodnostmi (kot je Visual Studio Enterprise Subscription) ali želijo hitro preizkusiti postopek prilagajanja in nameščanja, ta vodič ponuja tudi navodila za prilagajanje z minimalnim podatkovnim nizom na CPU. Pomembno pa je vedeti, da so rezultati prilagajanja bistveno boljši, če uporabljate GPU z večjimi podatkovnimi nizi.
 
-1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) par jaayi.
+1. Obiščite [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. *Standard NCADSA100v4 Family* quota ke request kare ke liye nimn kaam kari:
+1. Izvedite naslednje korake za zahtevo kvote *Standard NCADSA100v4 Family*:
 
-    - Baaye taraf ke tab se **Quota** chuni.
-    - Jo **Virtual machine family** chahi, uske chuni. Jaise, **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, jisme *Standard_NC24ads_A100_v4* GPU shamil ba.
-    - Navigation menu se **Request quota** chuni.
+    - Izberite **Quota** v levem zavihku.
+    - Izberite **Virtual machine family**, ki jo želite uporabiti. Na primer, izberite **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, ki vključuje *Standard_NC24ads_A100_v4* GPU.
+    - Izberite **Request quota** v navigacijskem meniju.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.ddf063c7cda9799b8ef6fbde6c3c796201578fe9078feb1c624ed75c7705ad18.sl.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.sl.png)
 
-    - Request quota page me, apne jarurat ke mutabiq **New cores limit** daali. Jaise, 24.
-    - Request quota page me, **Submit** chuni GPU quota ke liye request bheje ke.
+    - Na strani Request quota vnesite **New cores limit**, ki ga želite uporabiti. Na primer, 24.
+    - Na strani Request quota izberite **Submit** za oddajo zahteve za GPU kvoto.
 
 > [!NOTE]
-> Apne jarurat ke hisaab se GPU ya CPU chune ke liye [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist) document dekhi.
+> Za izbiro primernega GPU ali CPU za vaše potrebe si lahko pomagate z dokumentacijo [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
-### Role assignment jodi
+### Dodajte dodelitev vlog
 
-Apne models ke fine-tune aur deploy kare ke pehle, ek User Assigned Managed Identity (UAI) banai aur uske sahi permissions di. Ee UAI deployment ke dauran authentication ke liye istemal hoga.
+Za prilagajanje in nameščanje modelov morate najprej ustvariti User Assigned Managed Identity (UAI) in ji dodeliti ustrezna dovoljenja. Ta UAI bo uporabljena za preverjanje pristnosti med nameščanjem.
 
-#### User Assigned Managed Identity (UAI) banai
+#### Ustvarite User Assigned Managed Identity (UAI)
 
-1. Portal page ke upar ke **search bar** me *managed identities* type kari aur jo options aayen, unme se **Managed Identities** chuni.
+1. V iskalno vrstico na vrhu portala vpišite *managed identities* in izberite **Managed Identities** med prikazanimi možnostmi.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.8bf5dc5a4fa3e852f897ec1a983e506c2bc7b7113d159598bf0adeb66d20a5c4.sl.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.sl.png)
 
-1. **+ Create** chuni.
+1. Izberite **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.025632b7b54fe323f7d38edabbae05dd23f4665d0731f7143719c27c32e7e84f.sl.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.sl.png)
 
-1. Nimn kaam kari:
+1. Izvedite naslednje korake:
 
-    - Apna Azure **Subscription** chuni.
-    - Istemal ke liye **Resource group** chuni (jarurat par naya banai).
-    - Apna pasand ke **Region** chuni.
-    - **Name** daali, jo ki unique ho.
+    - Izberite vašo Azure **Subscription**.
+    - Izberite **Resource group**, ki jo želite uporabiti (po potrebi ustvarite novo).
+    - Izberite **Region**, ki ga želite uporabiti.
+    - Vnesite **Name**. Mora biti edinstveno ime.
 
-1. **Review + create** chuni.
+1. Izberite **Review + create**.
 
-1. **+ Create** chuni.
+1. Izberite **+ Create**.
 
-#### Managed Identity me Contributor role assignment jodi
+#### Dodajte dodelitev vloge Contributor za Managed Identity
 
-1. Apne banaye gail Managed Identity resource par jaayi.
+1. Pojdite do vira Managed Identity, ki ste ga ustvarili.
 
-1. Baaye taraf ke tab se **Azure role assignments** chuni.
+1. Izberite **Azure role assignments** v levem zavihku.
 
-1. Navigation menu se **+Add role assignment** chuni.
+1. Izberite **+Add role assignment** v navigacijskem meniju.
 
-1. Add role assignment page me nimn kaam kari:
-    - **Scope** ke liye **Resource group** chuni.
-    - Apna Azure **Subscription** chuni.
-    - Istemal ke liye **Resource group** chuni.
-    - **Role** me **Contributor** chuni.
+1. Na strani Add role assignment izvedite naslednje korake:
+    - Izberite **Scope** na **Resource group**.
+    - Izberite vašo Azure **Subscription**.
+    - Izberite **Resource group**, ki jo želite uporabiti.
+    - Izberite **Role** na **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.8936866326c7cdc3b876f14657e03422cca9dbff8b193dd541a693ce34407b26.sl.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.sl.png)
 
-1. **Save** chuni.
+1. Izberite **Save**.
 
-#### Managed Identity me Storage Blob Data Reader role assignment jodi
+#### Dodajte dodelitev vloge Storage Blob Data Reader za Managed Identity
 
-1. Portal page ke upar ke **search bar** me *storage accounts* type kari aur jo options aayen, unme se **Storage accounts** chuni.
+1. V iskalno vrstico na vrhu portala vpišite *storage accounts* in izberite **Storage accounts** med prikazanimi možnostmi.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.83554a27ff3edb5099ee3fbf7f467b843dabcc0e0e5fbb829a341eab3469ffa5.sl.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.sl.png)
 
-1. Us storage account ke chuni jo apne Azure Machine Learning workspace ke sath juda ba. Jaise, *finetunephistorage*.
+1. Izberite storage account, ki je povezan z Azure Machine Learning delovnim okoljem, ki ste ga ustvarili. Na primer, *finetunephistorage*.
 
-1. Nimn kaam kari taaki Add role assignment page tak pahuche:
+1. Izvedite naslednje korake za navigacijo do strani Add role assignment:
 
-    - Apne banaye gail Azure Storage account par jaayi.
-    - Baaye taraf ke tab se **Access Control (IAM)** chuni.
-    - Navigation menu se **+ Add** chuni.
-    - Navigation menu se **Add role assignment** chuni.
+    - Pojdite do Azure Storage account, ki ste ga ustvarili.
+    - Izberite **Access Control (IAM)** v levem zavihku.
+    - Izberite **+ Add** v navigacijskem meniju.
+    - Izberite **Add role assignment** v navigacijskem meniju.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.4fef55886792c7e860da4c5a808044e6f7067fb5694f3ed4819a5758c6cc574e.sl.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.sl.png)
 
-1. Add role assignment page me nimn kaam kari:
+1. Na strani Add role assignment izvedite naslednje korake:
 
-    - Role page me, **search bar** me *Storage Blob Data Reader* type kari aur jo options aayen, unme se **Storage Blob Data Reader** chuni.
-    - Role page me **Next** chuni.
-    - Members page me **Assign access to** me **Managed identity** chuni.
-    - Members page me **+ Select members** chuni.
-    - Select managed identities page me apna Azure **Subscription** chuni.
-    - Select managed identities page me **Managed identity** ke liye **Manage Identity** chuni.
-    - Select managed identities page me apne banaye gail Manage Identity chuni. Jaise, *finetunephi-managedidentity*.
-    - Select managed identities page me **Select** chuni.
+    - V polje za iskanje na strani Role vpišite *Storage Blob Data Reader* in izberite **Storage Blob Data Reader** med prikazanimi možnostmi.
+    - Izberite **Next**.
+    - Na strani Members izberite **Assign access to** **Managed identity**.
+    - Izberite **+ Select members**.
+    - Na strani Select managed identities izberite vašo Azure **Subscription**.
+    - Izberite **Managed identity** kot **Manage Identity**.
+    - Izberite Manage Identity, ki ste jo ustvarili. Na primer, *finetunephi-managedidentity*.
+    - Izberite **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.fffa802e4e6ce2de4fe50e64d37d3f2ef268c2ee16f30ec6f92bd1829b5f19c1.sl.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.sl.png)
 
-1. **Review + assign** chuni.
+1. Izberite **Review + assign**.
 
-#### Managed Identity me AcrPull role assignment jodi
+#### Dodajte dodelitev vloge AcrPull za Managed Identity
 
-1. Portal page ke upar ke **search bar** me *container registries* type kari aur jo options aayen, unme se **Container registries** chuni.
+1. V iskalno vrstico na vrhu portala vpišite *container registries* in izberite **Container registries** med prikazanimi možnostmi.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.62e58403d73d16a0cc715571c8a7b4105a0e97b1422aa5f26106aff1c0e8a47d.sl.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.sl.png)
 
-1. Jo container registry apne Azure Machine Learning workspace ke sath juda ba, uske chuni. Jaise, *finetunephicontainerregistries*.
+1. Izberite container registry, ki je povezan z Azure Machine Learning delovnim okoljem. Na primer, *finetunephicontainerregistries*
 
-1. Nimn kaam kari taaki Add role assignment page tak pahuche:
+1. Izvedite naslednje korake za navigacijo do strani Add role assignment:
 
-    - Baaye taraf ke tab se **Access Control (IAM)** chuni.
-    - Navigation menu se **+ Add** chuni.
-    - Navigation menu se **Add role assignment** chuni.
+    - Izberite **Access Control (IAM)** v levem zavihku.
+    - Izberite **+ Add** v navigacijskem meniju.
+    - Izberite **Add role assignment** v navigacijskem meniju.
 
-1. Add role assignment page me nimn kaam kari:
+1. Na strani Add role assignment izvedite naslednje korake:
 
-    - Role page me **search bar** me *AcrPull* type kari aur jo options aayen, unme se **AcrPull** chuni.
-    - Role page me **Next** chuni.
-    - Members page me **Assign access to** me **Managed identity** chuni.
-    - Members page me **+ Select members** chuni.
-    - Select managed identities page me apna Azure **Subscription** chuni.
-    - Select managed identities page me **Managed identity** ke liye **Manage Identity** chuni.
-    - Select managed identities page me apne banaye gail Manage Identity chuni. Jaise, *finetunephi-managedidentity*.
-    - Select managed identities page me **Select** chuni.
-    - **Review + assign** chuni.
+    - V polje za iskanje na strani Role vpišite *AcrPull* in izberite **AcrPull** med prikazanimi možnostmi.
+    - Izberite **Next**.
+    - Na strani Members izberite **Assign access to** **Managed identity**.
+    - Izberite **+ Select members**.
+    - Na strani Select managed identities izberite vašo Azure **Subscription**.
+    - Izberite **Managed identity** kot **Manage Identity**.
+    - Izberite Manage Identity, ki ste jo ustvarili. Na primer, *finetunephi-managedidentity*.
+    - Izberite **Select**.
+    - Izberite **Review + assign**.
 
-### Project set up kari
+### Nastavite projekt
 
-Ab, aap ek folder banai jisme kaam karab aur ek virtual environment set up kari jisme aap user ke sath interact kar sake ke program develop karab, jo Azure Cosmos DB me stored chat history ke use karke apne jawab de.
+Zdaj boste ustvarili mapo za delo in nastavili virtualno okolje za razvoj programa, ki bo komuniciral z uporabniki in uporabljal shranjeno zgodovino pogovorov iz Azure Cosmos DB za oblikovanje odgovorov.
 
-#### Kaam ke liye folder banai
+#### Ustvarite mapo za delo
 
-1. Terminal kholi aur nimn command type kari taaki default path me *finetune-phi* naam ke folder ban jaayi.
+1. Odprite terminal in vnesite naslednji ukaz za ustvarjanje mape z imenom *finetune-phi* v privzeti poti.
 
     ```console
     mkdir finetune-phi
     ```
 
-1. Terminal me nimn command type kari taaki apne banaye gail *finetune-phi* folder me jaa saki.
+1. V terminalu vnesite naslednji ukaz, da se premaknete v mapo *finetune-phi*, ki ste jo ustvarili.
 
     ```console
     cd finetune-phi
     ```
 
-#### Virtual environment banai
+#### Ustvarite virtualno okolje
 
-1. Terminal me nimn command type kari taaki *.venv* naam ke virtual environment ban jaayi.
+1. V terminalu vnesite naslednji ukaz za ustvarjanje virtualnega okolja z imenom *.venv*.
 
     ```console
     python -m venv .venv
     ```
 
-1. Terminal me nimn command type kari taaki virtual environment activate ho jaayi.
+1. V terminalu vnesite naslednji ukaz za aktivacijo virtualnega okolja.
 
     ```console
     .venv\Scripts\activate.bat
     ```
-
 > [!NOTE]
 >
-> Agar sahi se kaam karat ba, to command prompt ke pahile *(.venv)* dikhai dega.
+> Če je uspelo, bi morali pred pozivom ukaza videti *(.venv)*.
+#### Namestite potrebne pakete
 
-#### Jaruri packages install kari
-
-1. Terminal me nimn command type kari taaki jaruri packages install ho jaayen.
+1. V terminal vnesite naslednje ukaze za namestitev potrebnih paketov.
 
     ```console
     pip install datasets==2.19.1
@@ -250,24 +248,24 @@ Ab, aap ek folder banai jisme kaam karab aur ek virtual environment set up kari 
     pip install promptflow==1.12.0
     ```
 
-#### Project files banai
+#### Ustvarite projektne datoteke
 
-Is exercise me, aap project ke jaruri files banayenge. Ee files me dataset download kare ke script, Azure Machine Learning environment set up kare ke script, Phi-3 model ke fine-tune kare ke script, aur fine-tuned model ke deploy kare ke script shamil ba. Saath hi, fine-tuning environment set up kare ke liye *conda.yml* file bhi banayenge.
+V tej vaji boste ustvarili osnovne datoteke za naš projekt. Te datoteke vključujejo skripte za prenos podatkovnega nabora, nastavitev okolja Azure Machine Learning, fino prilagajanje modela Phi-3 in nameščanje fino prilagojenega modela. Prav tako boste ustvarili datoteko *conda.yml* za nastavitev okolja za fino prilagajanje.
 
-Is exercise me aap:
+V tej vaji boste:
 
-- *download_dataset.py* file banayenge dataset download kare ke liye.
-- *setup_ml.py* file banayenge Azure Machine Learning environment set up kare ke liye.
-- *finetuning_dir* folder ke andar *fine_tune.py* file banayenge, jisme dataset ke use karke Phi-3 model ke fine-tune karenge.
-- *conda.yml* file banayenge fine-tuning environment set up kare ke liye.
-- *deploy_model.py* file banayenge fine-tuned model deploy kare ke liye.
-- *integrate_with_promptflow.py* file banayenge, jisme fine-tuned model ke Prompt flow ke sath integrate karenge aur model chalayenge.
-- *flow.dag.yml* file banayenge, jo Prompt flow ke workflow structure set up karega.
-- *config.py* file banayenge, jisme Azure ke information daalenge.
+- Ustvarili datoteko *download_dataset.py* za prenos podatkovnega nabora.
+- Ustvarili datoteko *setup_ml.py* za nastavitev okolja Azure Machine Learning.
+- Ustvarili datoteko *fine_tune.py* v mapi *finetuning_dir* za fino prilagajanje modela Phi-3 z uporabo podatkovnega nabora.
+- Ustvarili datoteko *conda.yml* za nastavitev okolja za fino prilagajanje.
+- Ustvarili datoteko *deploy_model.py* za nameščanje fino prilagojenega modela.
+- Ustvarili datoteko *integrate_with_promptflow.py* za integracijo fino prilagojenega modela in izvajanje modela s pomočjo Prompt flow.
+- Ustvarili datoteko flow.dag.yml za nastavitev strukture delovnega toka za Prompt flow.
+- Ustvarili datoteko *config.py* za vnos Azure podatkov.
 
 > [!NOTE]
 >
-> Poora folder structure:
+> Celotna struktura mape:
 >
 > ```text
 > └── YourUserName
@@ -283,33 +281,33 @@ Is exercise me aap:
 > .        └── setup_ml.py
 > ```
 
-1. **Visual Studio Code** kholi.
+1. Odprite **Visual Studio Code**.
 
-1. Menu bar me **File** chuni.
+1. Izberite **File** v menijski vrstici.
 
-1. **Open Folder** chuni.
+1. Izberite **Open Folder**.
 
-1. Apne banaye gail *finetune-phi* folder chuni, jo ki *C:\Users\yourUserName\finetune-phi* me ba.
+1. Izberite mapo *finetune-phi*, ki ste jo ustvarili, in se nahaja na *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1f7f0f79e5d4d62e546e906e1ce5a480cd98d06062ce292b7b99c6cfcd434fdf.sl.png)
+    ![Odprite mapo projekta.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.sl.png)
 
-1. Visual Studio Code ke left pane me right-click kari aur **New File** chuni, fir *download_dataset.py* naam ke file banayi.
+1. V levem delu Visual Studio Code z desnim klikom izberite **New File** in ustvarite novo datoteko z imenom *download_dataset.py*.
 
-1. Left pane me right-click kari aur **New File** chuni, fir *setup_ml.py* naam ke file banayi.
+1. V levem delu Visual Studio Code z desnim klikom izberite **New File** in ustvarite novo datoteko z imenom *setup_ml.py*.
 
-1. Left pane me right-click kari aur **New File** chuni, fir *deploy_model.py* naam ke file banayi.
+1. V levem delu Visual Studio Code z desnim klikom izberite **New File** in ustvarite novo datoteko z imenom *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.40698c2e0415929e7b6dc2b30925677e413f965bac4134d3aefa0b44d443deaf.sl.png)
+    ![Ustvarite novo datoteko.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.sl.png)
 
-1. Left pane me right-click kari aur **New Folder** chuni, fir *finetuning_dir* naam ke folder banayi.
+1. V levem delu Visual Studio Code z desnim klikom izberite **New Folder** in ustvarite novo mapo z imenom *finetuning_dir*.
 
-1. *finetuning_dir* folder ke andar, ek naya file *fine_tune.py* banayi.
+1. V mapi *finetuning_dir* ustvarite novo datoteko z imenom *fine_tune.py*.
 
-#### *conda.yml* file banai aur configure kari
+#### Ustvarite in konfigurirajte datoteko *conda.yml*
 
-1. Left pane me right-click kari aur **New File** chuni, fir *conda.yml* file banayi.
+1. V levem delu Visual Studio Code z desnim klikom izberite **New File** in ustvarite novo datoteko z imenom *conda.yml*.
 
-1. *conda.yml* file me nimn code daali taaki Phi-3 model ke fine-tuning environment set up ho jaayi.
+1. V datoteko *conda.yml* dodajte naslednjo kodo za nastavitev okolja za fino prilagajanje modela Phi-3.
 
     ```yml
     name: phi-3-training-env
@@ -335,11 +333,11 @@ Is exercise me aap:
           - azureml-mlflow==1.57.0
     ```
 
-#### *config.py* file banai aur configure kari
+#### Ustvarite in konfigurirajte datoteko *config.py*
 
-1. Left pane me right-click kari aur **New File** chuni, fir *config.py* file banayi.
+1. V levem delu Visual Studio Code z desnim klikom izberite **New File** in ustvarite novo datoteko z imenom *config.py*.
 
-1. *config.py* file me nimn code daali taaki apna Azure ke information daal saki.
+1. V datoteko *config.py* dodajte naslednjo kodo za vnos vaših Azure podatkov.
 
     ```python
     # Azure settings
@@ -367,45 +365,46 @@ Is exercise me aap:
     AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri" # "https://{your-endpoint-name}.{your-region}.inference.ml.azure.com/score"
     ```
 
-#### Azure environment variables jodi
+#### Dodajte Azure okoljske spremenljivke
 
-1. Azure Subscription ID jodne ke liye nimn kaam kari:
+1. Izvedite naslednje korake za dodajanje Azure Subscription ID:
 
-    - Portal page ke upar ke **search bar** me *subscriptions* type kari aur jo options aayen, unme se **Subscriptions** chuni.
-    - Apna jo Azure Subscription chalawat bani, uske chuni.
-    - Apna Subscription ID copy kari aur *config.py* file me paste kari.
-![Najdi id الاشتراك.](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.sl.png)
+    - V **iskalno vrstico** na vrhu portala vnesite *subscriptions* in izberite **Subscriptions** iz prikazanih možnosti.
+    - Izberite Azure naročnino, ki jo trenutno uporabljate.
+    - Kopirajte in prilepite vaš Subscription ID v datoteko *config.py*.
 
-1. سوّ المهام التالية عشان تضيف اسم Azure Workspace:
+    ![Poiščite ID naročnine.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.sl.png)
 
-    - روح لمورد Azure Machine Learning اللي سويته.
-    - انسخ والصق اسم حسابك في ملف *config.py*.
+1. Izvedite naslednje korake za dodajanje imena Azure Workspace:
 
-    ![لقِ اسم Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.sl.png)
+    - Pojdite do Azure Machine Learning vira, ki ste ga ustvarili.
+    - Kopirajte in prilepite ime vašega delovnega prostora v datoteko *config.py*.
 
-1. سوّ المهام التالية عشان تضيف اسم Azure Resource Group:
+    ![Poiščite ime Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.sl.png)
 
-    - روح لمورد Azure Machine Learning اللي سويته.
-    - انسخ والصق اسم Azure Resource Group في ملف *config.py*.
+1. Izvedite naslednje korake za dodajanje imena Azure Resource Group:
 
-    ![لقِ اسم مجموعة الموارد.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.sl.png)
+    - Pojdite do Azure Machine Learning vira, ki ste ga ustvarili.
+    - Kopirajte in prilepite ime vaše Azure Resource Group v datoteko *config.py*.
 
-2. سوّ المهام التالية عشان تضيف اسم Azure Managed Identity
+    ![Poiščite ime skupine virov.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.sl.png)
 
-    - روح لمورد Managed Identities اللي سويته.
-    - انسخ والصق اسم Azure Managed Identity في ملف *config.py*.
+2. Izvedite naslednje korake za dodajanje imena Azure Managed Identity:
 
-    ![لقِ UAI.](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.sl.png)
+    - Pojdite do vira Managed Identities, ki ste ga ustvarili.
+    - Kopirajte in prilepite ime vaše Azure Managed Identity v datoteko *config.py*.
 
-### جهز مجموعة البيانات للفاين تيونينج
+    ![Poiščite UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.sl.png)
 
-في هذا التمرين، بتشغل ملف *download_dataset.py* عشان تنزل مجموعة بيانات *ULTRACHAT_200k* على جهازك المحلي. بعدها بتستخدم هالمجموعة عشان تفاين تيون نموذج Phi-3 في Azure Machine Learning.
+### Pripravite podatkovni nabor za fino prilagajanje
 
-#### نزّل مجموعة البيانات باستخدام *download_dataset.py*
+V tej vaji boste zagnali datoteko *download_dataset.py*, da prenesete podatkovni nabor *ULTRACHAT_200k* v vaše lokalno okolje. Nato boste uporabili ta podatkovni nabor za fino prilagajanje modela Phi-3 v Azure Machine Learning.
 
-1. افتح ملف *download_dataset.py* في Visual Studio Code.
+#### Prenesite podatkovni nabor z uporabo *download_dataset.py*
 
-1. أضف الكود التالي في *download_dataset.py*.
+1. Odprite datoteko *download_dataset.py* v Visual Studio Code.
+
+1. V datoteko *download_dataset.py* dodajte naslednjo kodo.
 
     ```python
     import json
@@ -472,65 +471,65 @@ Is exercise me aap:
 
 > [!TIP]
 >
-> **نصيحة للفاين تيونينج باستخدام مجموعة بيانات صغيرة على CPU**
+> **Navodila za fino prilagajanje z minimalnim podatkovnim naborom na CPU**
 >
-> إذا حاب تستخدم CPU للفاين تيونينج، هالطريقة مناسبة للمشتركين اللي عندهم اشتراكات مميزة (مثل Visual Studio Enterprise Subscription) أو إذا تبي تختبر العملية بسرعة.
+> Če želite za fino prilagajanje uporabiti CPU, je ta pristop idealen za tiste z naročninami z ugodnostmi (kot je Visual Studio Enterprise Subscription) ali za hitro testiranje postopka fino prilagajanja in nameščanja.
 >
-> بدّل `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
+> Zamenjajte `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` z `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. اكتب الأمر التالي في التيرمنال عشان تشغل السكريبت وتنزل مجموعة البيانات على جهازك المحلي.
+1. V terminal vnesite naslednji ukaz za zagon skripte in prenos podatkovnega nabora v lokalno okolje.
 
     ```console
     python download_data.py
     ```
 
-1. تأكد إن المجموعات تم حفظها بنجاح في مجلد *finetune-phi/data* على جهازك.
+1. Preverite, da so bili podatkovni nabori uspešno shranjeni v lokalno mapo *finetune-phi/data*.
 
 > [!NOTE]
 >
-> **حجم مجموعة البيانات ووقت الفاين تيونينج**
+> **Velikost podatkovnega nabora in čas fino prilagajanja**
 >
-> في هالعينة الكاملة، تستخدم بس 1% من مجموعة البيانات (`train_sft[:1%]`). هالشي يقلل كمية البيانات بشكل كبير، ويسرّع الرفع وعملية الفاين تيونينج. تقدر تعدل النسبة عشان تلاقي التوازن المناسب بين وقت التدريب وأداء النموذج. استخدام جزء صغير من البيانات يقلل وقت الفاين تيونينج، ويخلي العملية أسهل للعينة الكاملة.
+> V tem E2E primeru uporabljate le 1 % podatkovnega nabora (`train_sft[:1%]`). To znatno zmanjša količino podatkov, kar pospeši tako nalaganje kot proces fino prilagajanja. Delež lahko prilagodite, da najdete pravo ravnovesje med časom učenja in zmogljivostjo modela. Uporaba manjšega podnabora podatkov zmanjša čas, potreben za fino prilagajanje, kar proces naredi bolj obvladljiv za E2E primer.
 
-## السيناريو 2: فاين تيون نموذج Phi-3 ونشره في Azure Machine Learning Studio
+## Scenarij 2: Fino prilagodite model Phi-3 in ga namestite v Azure Machine Learning Studio
 
-### جهز Azure CLI
+### Nastavite Azure CLI
 
-لازم تضبط Azure CLI عشان توثق بيئتك. Azure CLI يتيح لك إدارة موارد Azure من خلال سطر الأوامر ويوفر بيانات الاعتماد اللازمة لـ Azure Machine Learning عشان توصل للموارد. للبدء، نزّل [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+Za avtentikacijo vašega okolja morate nastaviti Azure CLI. Azure CLI omogoča upravljanje Azure virov neposredno iz ukazne vrstice in zagotavlja poverilnice, potrebne za dostop Azure Machine Learning do teh virov. Za začetek namestite [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
-1. افتح نافذة التيرمنال واكتب الأمر التالي لتسجيل الدخول لحساب Azure.
+1. Odprite terminal in vnesite naslednji ukaz za prijavo v vaš Azure račun.
 
     ```console
     az login
     ```
 
-1. اختر حساب Azure اللي تبي تستخدمه.
+1. Izberite vaš Azure račun za uporabo.
 
-1. اختر اشتراك Azure اللي تبي تستخدمه.
+1. Izberite vašo Azure naročnino za uporabo.
 
-    ![لقِ اسم مجموعة الموارد.](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.sl.png)
+    ![Poiščite ime skupine virov.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.sl.png)
 
 > [!TIP]
 >
-> إذا واجهت صعوبة في تسجيل الدخول لـ Azure، جرّب تستخدم رمز الجهاز. افتح نافذة تيرمنال واكتب الأمر التالي لتسجيل الدخول:
+> Če imate težave s prijavo v Azure, poskusite uporabiti kodo naprave. Odprite terminal in vnesite naslednji ukaz za prijavo v vaš Azure račun:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### فاين تيون نموذج Phi-3
+### Fino prilagodite model Phi-3
 
-في هذا التمرين، بتفان تيون نموذج Phi-3 باستخدام مجموعة البيانات اللي عندك. أول شيء، بتحدد عملية الفاين تيونينج في ملف *fine_tune.py*. بعدها، بتضبط بيئة Azure Machine Learning وتبدأ عملية الفاين تيونينج بتشغيل ملف *setup_ml.py*. هالسكريبت يضمن إن الفاين تيون يصير داخل بيئة Azure Machine Learning.
+V tej vaji boste fino prilagodili model Phi-3 z uporabo danega podatkovnega nabora. Najprej boste definirali postopek fino prilagajanja v datoteki *fine_tune.py*. Nato boste konfigurirali okolje Azure Machine Learning in začeli postopek fino prilagajanja z zagonom datoteke *setup_ml.py*. Ta skripta zagotavlja, da se fino prilagajanje izvede znotraj okolja Azure Machine Learning.
 
-بتشغيل *setup_ml.py*، بتبدأ عملية الفاين تيونينج في بيئة Azure Machine Learning.
+Z zagonom *setup_ml.py* boste zagnali postopek fino prilagajanja v okolju Azure Machine Learning.
 
-#### أضف الكود في ملف *fine_tune.py*
+#### Dodajte kodo v datoteko *fine_tune.py*
 
-1. انتقل لمجلد *finetuning_dir* وافتح ملف *fine_tune.py* في Visual Studio Code.
+1. Pojdite v mapo *finetuning_dir* in odprite datoteko *fine_tune.py* v Visual Studio Code.
 
-1. أضف الكود التالي في *fine_tune.py*.
+1. V datoteko *fine_tune.py* dodajte naslednjo kodo.
 
     ```python
     import argparse
@@ -683,21 +682,21 @@ Is exercise me aap:
 
     ```
 
-1. احفظ واغلق ملف *fine_tune.py*.
+1. Shranite in zaprite datoteko *fine_tune.py*.
 
 > [!TIP]
-> **تقدر تفاين تيون نموذج Phi-3.5**
+> **Fino lahko prilagodite tudi model Phi-3.5**
 >
-> في ملف *fine_tune.py*، تقدر تغيّر حقل `pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name` في السكريبت حقك.
+> V datoteki *fine_tune.py* lahko spremenite `pretrained_model_name` iz `"microsoft/Phi-3-mini-4k-instruct"` v kateri koli model, ki ga želite fino prilagoditi. Na primer, če ga spremenite v `"microsoft/Phi-3.5-mini-instruct"`, boste za fino prilagajanje uporabili model Phi-3.5-mini-instruct. Za iskanje in uporabo imena modela, ki vam ustreza, obiščite [Hugging Face](https://huggingface.co/), poiščite želeni model in nato kopirajte ter prilepite njegovo ime v polje `pretrained_model_name` v vaši skripti.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="فاين تيون Phi-3.5.":::
+> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fino prilagodite Phi-3.5.":::
 >
 
-#### أضف الكود في ملف *setup_ml.py*
+#### Dodajte kodo v datoteko *setup_ml.py*
 
-1. افتح ملف *setup_ml.py* في Visual Studio Code.
+1. Odprite datoteko *setup_ml.py* v Visual Studio Code.
 
-1. أضف الكود التالي في *setup_ml.py*.
+1. V datoteko *setup_ml.py* dodajte naslednjo kodo.
 
     ```python
     import logging
@@ -824,7 +823,7 @@ Is exercise me aap:
 
     ```
 
-1. استبدل `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `LOCATION` بتفاصيلك الخاصة.
+1. Zamenjajte `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` in `LOCATION` z vašimi podatki.
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -836,13 +835,13 @@ Is exercise me aap:
 
 > [!TIP]
 >
-> **نصيحة للفاين تيونينج باستخدام مجموعة بيانات صغيرة على CPU**
+> **Navodila za fino prilagajanje z minimalnim podatkovnim naborom na CPU**
 >
-> إذا تبي تستخدم CPU للفاين تيونينج، هالطريقة مناسبة للمشتركين اللي عندهم اشتراكات مميزة (مثل Visual Studio Enterprise Subscription) أو إذا تبي تختبر العملية بسرعة.
+> Če želite za fino prilagajanje uporabiti CPU, je ta pristop idealen za tiste z naročninami z ugodnostmi (kot je Visual Studio Enterprise Subscription) ali za hitro testiranje postopka fino prilagajanja in nameščanja.
 >
-> 1. افتح ملف *setup_ml*.
-> 1. استبدل `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
-> 1. Replace `LOCATION` بتفاصيلك الخاصة.
+> 1. Odprite datoteko *setup_ml*.
+> 2. Zamenjajte `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` in `DOCKER_IMAGE_NAME` z naslednjim. Če nimate dostopa do *Standard_E16s_v3*, lahko uporabite ustrezno CPU instanco ali zaprosite za nov kvoto.
+> 3. Zamenjajte `LOCATION` z vašimi podatki.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -853,37 +852,37 @@ Is exercise me aap:
 >    ```
 >
 
-1. اكتب الأمر التالي لتشغيل سكريبت *setup_ml.py* وبدء عملية الفاين تيونينج في Azure Machine Learning.
+1. V terminal vnesite naslednji ukaz za zagon skripte *setup_ml.py* in začetek postopka fino prilagajanja v Azure Machine Learning.
 
     ```python
     python setup_ml.py
     ```
 
-1. في هذا التمرين، نجحت في فاين تيون نموذج Phi-3 باستخدام Azure Machine Learning. بتشغيل سكريبت *setup_ml.py*، ضبطت بيئة Azure Machine Learning وبدأت عملية الفاين تيونينج اللي عرّفتها في ملف *fine_tune.py*. لاحظ إن عملية الفاين تيونينج ممكن تاخذ وقت طويل. بعد تشغيل الأمر `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
+1. V tej vaji ste uspešno fino prilagodili model Phi-3 z uporabo Azure Machine Learning. Z zagonom skripte *setup_ml.py* ste nastavili okolje Azure Machine Learning in začeli postopek fino prilagajanja, definiran v datoteki *fine_tune.py*. Upoštevajte, da lahko postopek fino prilagajanja traja precej časa. Po zagonu ukaza `python setup_ml.py` morate počakati, da se postopek zaključi. Status naloge fino prilagajanja lahko spremljate preko povezave, ki je prikazana v terminalu in vodi do portala Azure Machine Learning.
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.a28c8552f7b7bc088ccd67dd0c522f7fc1944048d3554bb1b24f95a1169ad538.sl.png)
+    ![Oglejte si nalogo fino prilagajanja.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.sl.png)
 
-### Deploy the fine-tuned model
+### Namestite fino prilagojen model
 
-To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+Za integracijo fino prilagojenega modela Phi-3 s Prompt Flow morate model namestiti, da bo dostopen za izvajanje v realnem času. Ta postopek vključuje registracijo modela, ustvarjanje spletne točke in nameščanje modela.
 
-#### Set the model name, endpoint name, and deployment name for deployment
+#### Nastavite ime modela, ime končne točke in ime nameščanja
 
-1. Open *config.py* file.
+1. Odprite datoteko *config.py*.
 
-1. Replace `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` with the desired name for your model.
+1. Zamenjajte `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` z želenim imenom vašega modela.
 
-1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
+1. Zamenjajte `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` z želenim imenom vaše končne točke.
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` استخدم الاسم اللي تبيه للنشر.
+1. Zamenjajte `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` z želenim imenom vašega nameščanja.
 
-#### أضف الكود في ملف *deploy_model.py*
+#### Dodajte kodo v datoteko *deploy_model.py*
 
-تشغيل ملف *deploy_model.py* يسهّل عملية النشر كاملة. يسجل النموذج، ينشئ نقطة نهاية، وينفذ النشر بناءً على الإعدادات في ملف config.py، اللي يشمل اسم النموذج، اسم نقطة النهاية، واسم النشر.
+Zagon datoteke *deploy_model.py* avtomatizira celoten postopek nameščanja. Registrira model, ustvari končno točko in izvede nameščanje na podlagi nastavitev, določenih v datoteki *config.py*, ki vključujejo ime modela, ime končne točke in ime nameščanja.
 
-1. افتح ملف *deploy_model.py* في Visual Studio Code.
+1. Odprite datoteko *deploy_model.py* v Visual Studio Code.
 
-1. أضف الكود التالي في *deploy_model.py*.
+1. V datoteko *deploy_model.py* dodajte naslednjo kodo.
 
     ```python
     import logging
@@ -1049,67 +1048,68 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
     ```
 
-1. سوّ المهام التالية عشان تحدد `JOB_NAME`:
+1. Izvedite naslednje korake za pridobitev `JOB_NAME`:
 
-    - Navigate to Azure Machine Learning resource that you created.
-    - Select **Studio web URL** to open the Azure Machine Learning workspace.
-    - Select **Jobs** from the left side tab.
-    - Select the experiment for fine-tuning. For example, *finetunephi*.
-    - Select the job that you created.
-    - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+    - Pojdite do vira Azure Machine Learning, ki ste ga ustvarili.
+    - Izberite **Studio web URL** za odprtje delovnega prostora Azure Machine Learning.
+    - Izberite **Jobs** v levem meniju.
+    - Izberite eksperiment za fino prilagajanje, na primer *finetunephi*.
+    - Izberite nalogo, ki ste jo ustvarili.
+- Kopirajte in prilepite ime vaše naloge v `JOB_NAME = "your-job-name"` v datoteki *deploy_model.py*.
 
-1. Replace `COMPUTE_INSTANCE_TYPE` بتفاصيلك الخاصة.
+1. Zamenjajte `COMPUTE_INSTANCE_TYPE` z vašimi specifičnimi podatki.
 
-1. اكتب الأمر التالي لتشغيل سكريبت *deploy_model.py* وبدء عملية النشر في Azure Machine Learning.
+1. Vnesite naslednji ukaz za zagon skripte *deploy_model.py* in začetek procesa nameščanja v Azure Machine Learning.
 
     ```python
     python deploy_model.py
     ```
 
+
 > [!WARNING]
-> عشان تتجنب رسوم إضافية على حسابك، تأكد من حذف نقطة النهاية اللي أنشأتها في Azure Machine Learning workspace.
+> Da se izognete dodatnim stroškom na vašem računu, poskrbite, da izbrišete ustvarjeni endpoint v delovnem prostoru Azure Machine Learning.
 >
 
-#### راجع حالة النشر في Azure Machine Learning Workspace
+#### Preverite stanje nameščanja v delovnem prostoru Azure Machine Learning
 
-1. زور [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Obiščite [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. ادخل على Azure Machine Learning workspace اللي سويته.
+1. Pomaknite se do delovnega prostora Azure Machine Learning, ki ste ga ustvarili.
 
-1. اختر **Studio web URL** عشان تفتح Azure Machine Learning workspace.
+1. Izberite **Studio web URL** za odprtje delovnega prostora Azure Machine Learning.
 
-1. اختر **Endpoints** من القائمة الجانبية.
+1. Izberite **Endpoints** v levem zavihku.
 
-    ![اختر نقاط النهاية.](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.sl.png)
+    ![Izberite endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.sl.png)
 
-2. اختر نقطة النهاية اللي أنشأتها.
+2. Izberite endpoint, ki ste ga ustvarili.
 
-    ![اختر نقاط النهاية اللي أنشأتها.](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.sl.png)
+    ![Izberite endpoint, ki ste ga ustvarili.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.sl.png)
 
-3. في هالصفحة، تقدر تدير نقاط النهاية اللي تم إنشاؤها أثناء عملية النشر.
+3. Na tej strani lahko upravljate z endpointi, ustvarjenimi med procesom nameščanja.
 
-## السيناريو 3: دمج مع Prompt flow والدردشة مع نموذجك المخصص
+## Scenarij 3: Integracija s Prompt flow in pogovor z vašim prilagojenim modelom
 
-### دمج نموذج Phi-3 المخصص مع Prompt flow
+### Integracija prilagojenega modela Phi-3 s Prompt flow
 
-بعد ما نشرت نموذجك المفاين تيون بنجاح، تقدر الآن تدمجه مع Prompt flow عشان تستخدم نموذجك في تطبيقات الوقت الحقيقي، مما يتيح لك تنفيذ مهام تفاعلية متنوعة مع نموذج Phi-3 المخصص.
+Po uspešnem nameščanju vašega fino nastavljanega modela ga lahko zdaj integrirate s Prompt flow, da uporabite vaš model v aplikacijah v realnem času, kar omogoča različne interaktivne naloge z vašim prilagojenim modelom Phi-3.
 
-#### اضبط مفتاح api و URI نقطة النهاية لنموذج Phi-3 المفاين تيون
+#### Nastavite api ključ in endpoint uri fino nastavljenega modela Phi-3
 
-1. ادخل على Azure Machine Learning workspace اللي سويته.
-1. اختر **Endpoints** من القائمة الجانبية.
-1. اختر نقطة النهاية اللي أنشأتها.
-1. اختر **Consume** من قائمة التنقل.
-1. انسخ والصق **REST endpoint** في ملف *config.py*، واستبدل `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` بالمفتاح الأساسي (**Primary key**).
+1. Pomaknite se do delovnega prostora Azure Machine Learning, ki ste ga ustvarili.
+1. Izberite **Endpoints** v levem zavihku.
+1. Izberite endpoint, ki ste ga ustvarili.
+1. Izberite **Consume** v navigacijskem meniju.
+1. Kopirajte in prilepite vaš **REST endpoint** v datoteko *config.py*, tako da zamenjate `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` z vašim **REST endpoint**.
+1. Kopirajte in prilepite vaš **Primary key** v datoteko *config.py*, tako da zamenjate `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` z vašim **Primary key**.
 
-    ![انسخ مفتاح api و URI نقطة النهاية.](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.sl.png)
+    ![Kopirajte api ključ in endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.sl.png)
 
-#### أضف الكود في ملف *flow.dag.yml*
+#### Dodajte kodo v datoteko *flow.dag.yml*
 
-1. افتح ملف *flow.dag.yml* في Visual Studio Code.
+1. Odprite datoteko *flow.dag.yml* v Visual Studio Code.
 
-1. أضف الكود التالي في *flow.dag.yml*.
+1. Dodajte naslednjo kodo v *flow.dag.yml*.
 
     ```yml
     inputs:
@@ -1132,11 +1132,11 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
         input_data: ${inputs.input_data}
     ```
 
-#### أضف الكود في ملف *integrate_with_promptflow.py*
+#### Dodajte kodo v datoteko *integrate_with_promptflow.py*
 
-1. افتح ملف *integrate_with_promptflow.py* في Visual Studio Code.
+1. Odprite datoteko *integrate_with_promptflow.py* v Visual Studio Code.
 
-1. أضف الكود التالي في *integrate_with_promptflow.py*.
+1. Dodajte naslednjo kodo v *integrate_with_promptflow.py*.
 
     ```python
     import logging
@@ -1202,17 +1202,17 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
     ```
 
-### دردش مع نموذجك المخصص
+### Pogovor z vašim prilagojenim modelom
 
-1. اكتب الأمر التالي لتشغيل سكريبت *deploy_model.py* وبدء عملية النشر في Azure Machine Learning.
+1. Vnesite naslednji ukaz za zagon skripte *deploy_model.py* in začetek procesa nameščanja v Azure Machine Learning.
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. هذا مثال للنتائج: الحين تقدر تدردش مع نموذج Phi-3 المخصص. يُنصح تسأل أسئلة مبنية على البيانات اللي استخدمتها في الفاين تيونينج.
+1. Tukaj je primer rezultatov: Zdaj lahko klepetate z vašim prilagojenim modelom Phi-3. Priporočljivo je postavljati vprašanja, ki temeljijo na podatkih, uporabljenih za fino nastavljanje.
 
-    ![مثال Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.sl.png)
+    ![Primer Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.sl.png)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku naj se šteje za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

@@ -2,44 +2,44 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-05-08T06:10:54+00:00",
+  "translation_date": "2025-07-16T22:06:52+00:00",
   "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "hk"
 }
 -->
-# **用 llama.cpp 量化 Phi 系列**
+# **使用 llama.cpp 量化 Phi 系列**
 
-## **咩係 llama.cpp**
+## **什麼是 llama.cpp**
 
-llama.cpp 係一個主要用 C++ 撰寫嘅開源軟件庫，專門用嚟對各種大型語言模型（LLMs），例如 Llama，進行推理。佢嘅主要目標係喺唔同硬件上提供頂尖嘅 LLM 推理效能，同時簡化設定流程。另外，呢個庫亦有 Python 綁定，提供高階嘅文本補全 API 同埋一個兼容 OpenAI 嘅網絡伺服器。
+llama.cpp 是一個主要以 C++ 編寫的開源軟件庫，能對多種大型語言模型（LLMs），例如 Llama，進行推理。它的主要目標是在各種硬件上以最少的設定提供先進的 LLM 推理效能。此外，該庫還提供 Python 綁定，提供高階的文字補全 API 以及與 OpenAI 相容的網頁伺服器。
 
-llama.cpp 嘅核心目標係喺本地或者雲端，喺各種硬件上用最少嘅設定實現先進嘅 LLM 推理效能。
+llama.cpp 的核心目標是讓 LLM 推理能在本地及雲端多種硬件上，以最少設定達到頂尖效能。
 
-- 純 C/C++ 實現，無需任何依賴
-- Apple Silicon 原生支援，透過 ARM NEON、Accelerate 同 Metal 框架優化
-- 支援 x86 架構嘅 AVX、AVX2 同 AVX512
-- 支援 1.5-bit、2-bit、3-bit、4-bit、5-bit、6-bit 同 8-bit 整數量化，加快推理同減少記憶體使用
-- 自訂 CUDA 核心，支援 NVIDIA GPU 運行 LLM（AMD GPU 透過 HIP 支援）
-- 支援 Vulkan 同 SYCL 後端
-- CPU+GPU 混合推理，部分加速超出 VRAM 容量嘅大型模型
+- 純 C/C++ 實作，無任何依賴
+- Apple Silicon 支援完善，透過 ARM NEON、Accelerate 和 Metal 框架優化
+- 支援 x86 架構的 AVX、AVX2 和 AVX512
+- 支援 1.5-bit、2-bit、3-bit、4-bit、5-bit、6-bit 及 8-bit 整數量化，加快推理速度並減少記憶體使用
+- 自訂 CUDA 核心支援 NVIDIA GPU 運行 LLM（AMD GPU 支援透過 HIP）
+- 支援 Vulkan 和 SYCL 後端
+- CPU+GPU 混合推理，可部分加速超出 VRAM 容量的模型
 
-## **用 llama.cpp 量化 Phi-3.5**
+## **使用 llama.cpp 量化 Phi-3.5**
 
-Phi-3.5-Instruct 模型可以用 llama.cpp 量化，但 Phi-3.5-Vision 同 Phi-3.5-MoE 暫時未支援。llama.cpp 轉換嘅格式係 gguf，呢個格式亦係目前最廣泛使用嘅量化格式。
+Phi-3.5-Instruct 模型可以用 llama.cpp 進行量化，但 Phi-3.5-Vision 和 Phi-3.5-MoE 尚未支援。llama.cpp 轉換的格式是 gguf，這也是目前最廣泛使用的量化格式。
 
-Hugging Face 上有大量量化咗嘅 GGUF 格式模型。AI Foundry、Ollama 同 LlamaEdge 都係用 llama.cpp，所以 GGUF 模型都好常用。
+Hugging Face 上有大量量化的 GGUF 格式模型。AI Foundry、Ollama 和 LlamaEdge 都依賴 llama.cpp，因此 GGUF 模型也經常被使用。
 
-### **咩係 GGUF**
+### **什麼是 GGUF**
 
-GGUF 係一種二進制格式，專為快速載入同保存模型而優化，非常適合推理使用。GGUF 係為 GGML 同其他執行器設計。GGUF 係由 @ggerganov 開發，佢亦係 llama.cpp 嘅作者，一個流行嘅 C/C++ LLM 推理框架。原本喺 PyTorch 等框架開發嘅模型，可以轉換成 GGUF 格式，用喺呢啲引擎上。
+GGUF 是一種二進位格式，優化了模型的快速載入與儲存，使其在推理時非常高效。GGUF 設計用於 GGML 及其他執行器。GGUF 由 @ggerganov 開發，他同時也是 llama.cpp 的開發者，llama.cpp 是一個流行的 C/C++ LLM 推理框架。最初在 PyTorch 等框架開發的模型，可以轉換成 GGUF 格式以供這些引擎使用。
 
-### **ONNX 同 GGUF 比較**
+### **ONNX 與 GGUF 的比較**
 
-ONNX 係一種傳統嘅機器學習／深度學習格式，喺唔同 AI 框架有好好嘅支援，亦適合用喺邊緣設備。GGUF 基於 llama.cpp，可以話係 GenAI 時代嘅產物。兩者用途相似。如果你想喺嵌入式硬件同應用層面獲得更好效能，ONNX 可能係你嘅選擇。如果你用 llama.cpp 衍生嘅框架同技術，GGUF 會更合適。
+ONNX 是傳統的機器學習／深度學習格式，在多種 AI 框架中有良好支援，且在邊緣裝置上有不錯的應用場景。GGUF 則是基於 llama.cpp，算是生成式 AI 時代的新產物。兩者用途相似。如果你追求嵌入式硬件和應用層的更佳效能，ONNX 可能是你的選擇；若你使用 llama.cpp 的衍生框架和技術，GGUF 可能更合適。
 
-### **用 llama.cpp 量化 Phi-3.5-Instruct**
+### **使用 llama.cpp 量化 Phi-3.5-Instruct**
 
-**1. 環境設定**
+**1. 環境配置**
 
 
 ```bash
@@ -55,7 +55,7 @@ make -j8
 
 **2. 量化**
 
-用 llama.cpp 將 Phi-3.5-Instruct 轉成 FP16 GGUF
+使用 llama.cpp 將 Phi-3.5-Instruct 轉換為 FP16 GGUF
 
 
 ```bash
@@ -64,7 +64,7 @@ make -j8
 
 ```
 
-量化成 INT4
+將 Phi-3.5 量化為 INT4
 
 
 ```bash
@@ -87,7 +87,7 @@ pip install llama-cpp-python -U
 
 ***注意***
 
-如果用 Apple Silicon，請咁樣安裝 llama-cpp-python
+如果你使用 Apple Silicon，請用以下方式安裝 llama-cpp-python
 
 
 ```bash
@@ -109,9 +109,9 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 ## **資源**
 
-1. 深入了解 llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
-2. 深入了解 onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
-3. 深入了解 GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
+1. 了解更多 llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+2. 了解更多 onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+3. 了解更多 GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
 **免責聲明**：  
-本文件乃使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原文文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用此翻譯而引起的任何誤解或誤釋承擔責任。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

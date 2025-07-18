@@ -2,58 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:36:50+00:00",
+  "translation_date": "2025-07-17T02:30:52+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "pl"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) to otwarta platforma zaprojektowana do zarządzania pełnym cyklem życia uczenia maszynowego.
+[MLflow](https://mlflow.org/) to otwartoźródłowa platforma zaprojektowana do zarządzania pełnym cyklem życia uczenia maszynowego.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.pl.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.pl.png)
 
-MLFlow służy do zarządzania cyklem życia ML, obejmującym eksperymentowanie, odtwarzalność, wdrażanie oraz centralny rejestr modeli. Obecnie MLFlow oferuje cztery komponenty.
+MLFlow służy do zarządzania cyklem życia ML, obejmującym eksperymentowanie, powtarzalność, wdrażanie oraz centralny rejestr modeli. Obecnie MLflow oferuje cztery komponenty.
 
-- **MLflow Tracking:** Rejestruj i wyszukuj eksperymenty, kod, konfigurację danych i wyniki.
-- **MLflow Projects:** Pakuje kod data science w formacie umożliwiającym odtworzenie uruchomień na dowolnej platformie.
+- **MLflow Tracking:** Rejestruj i przeszukuj eksperymenty, kod, konfiguracje danych oraz wyniki.
+- **MLflow Projects:** Pakuj kod data science w formacie umożliwiającym odtworzenie uruchomień na dowolnej platformie.
 - **Mlflow Models:** Wdrażaj modele uczenia maszynowego w różnych środowiskach serwujących.
 - **Model Registry:** Przechowuj, komentuj i zarządzaj modelami w centralnym repozytorium.
 
-Platforma oferuje funkcje śledzenia eksperymentów, pakowania kodu w odtwarzalne uruchomienia oraz udostępniania i wdrażania modeli. MLFlow jest zintegrowany z Databricks i wspiera wiele bibliotek ML, dzięki czemu jest niezależny od konkretnej biblioteki. Można go używać z dowolną biblioteką uczenia maszynowego i w dowolnym języku programowania, ponieważ udostępnia REST API oraz CLI dla wygody.
+Platforma oferuje funkcje śledzenia eksperymentów, pakowania kodu w powtarzalne uruchomienia oraz udostępniania i wdrażania modeli. MLFlow jest zintegrowany z Databricks i wspiera różne biblioteki ML, dzięki czemu jest niezależny od konkretnej biblioteki. Można go używać z dowolną biblioteką uczenia maszynowego i w dowolnym języku programowania, ponieważ udostępnia REST API oraz CLI dla wygody.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.pl.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.pl.png)
 
 Kluczowe cechy MLFlow to:
 
 - **Śledzenie eksperymentów:** Rejestruj i porównuj parametry oraz wyniki.
 - **Zarządzanie modelami:** Wdrażaj modele na różnych platformach serwujących i inferencyjnych.
-- **Model Registry:** Współpracuj przy zarządzaniu cyklem życia modeli MLflow, w tym wersjonowaniem i adnotacjami.
+- **Model Registry:** Współpracuj przy zarządzaniu cyklem życia modeli MLflow, w tym wersjonowanie i adnotacje.
 - **Projects:** Pakuj kod ML do udostępniania lub produkcyjnego użytku.
 
-MLFlow wspiera także pętlę MLOps, obejmującą przygotowanie danych, rejestrację i zarządzanie modelami, pakowanie modeli do uruchomienia, wdrażanie usług oraz monitorowanie modeli. Celem jest uproszczenie przejścia od prototypu do produkcyjnego workflow, zwłaszcza w środowiskach chmurowych i edge.
+MLFlow wspiera również pętlę MLOps, która obejmuje przygotowanie danych, rejestrację i zarządzanie modelami, pakowanie modeli do wykonania, wdrażanie usług oraz monitorowanie modeli. Celem jest uproszczenie przejścia od prototypu do produkcyjnego workflow, szczególnie w środowiskach chmurowych i edge.
 
 ## Scenariusz E2E – Budowa wrappera i użycie Phi-3 jako modelu MLFlow
 
-W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera wokół małego modelu językowego Phi-3 (SLM) i uruchomienia go jako modelu MLFlow lokalnie lub w chmurze, np. w Azure Machine Learning workspace.
+W tym przykładzie E2E pokażemy dwa różne podejścia do budowy wrappera wokół małego modelu językowego Phi-3 (SLM), a następnie uruchomimy go jako model MLFlow lokalnie lub w chmurze, np. w Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.pl.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.pl.png)
 
 | Projekt | Opis | Lokalizacja |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline to najprostsza opcja na zbudowanie wrappera, jeśli chcesz użyć modelu HuggingFace z eksperymentalnym flavour transformerów MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | W momencie pisania, transformer pipeline nie wspierał generowania wrappera MLFlow dla modeli HuggingFace w formacie ONNX, nawet z eksperymentalnym pakietem optimum Python. W takich przypadkach możesz zbudować własny, niestandardowy wrapper Python dla MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline to najprostsza opcja budowy wrappera, jeśli chcesz użyć modelu HuggingFace z eksperymentalnym flavour transformerów MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | W momencie pisania, transformer pipeline nie wspierał generowania wrappera MLFlow dla modeli HuggingFace w formacie ONNX, nawet z eksperymentalnym pakietem optimum Python. W takich przypadkach możesz zbudować własny, niestandardowy wrapper Python dla trybu MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Projekt: Transformer Pipeline
 
-1. Potrzebujesz odpowiednich pakietów Python z MLFlow i HuggingFace:
+1. Będziesz potrzebować odpowiednich pakietów Python z MLFlow i HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Następnie powinieneś zainicjować transformer pipeline, odwołując się do docelowego modelu Phi-3 w rejestrze HuggingFace. Jak widać w karcie modelu _Phi-3-mini-4k-instruct_, jego zadanie to „Text Generation”:
+2. Następnie powinieneś zainicjować pipeline transformera, odwołując się do docelowego modelu Phi-3 w rejestrze HuggingFace. Jak widać z karty modelu _Phi-3-mini-4k-instruct_, jego zadanie to „Text Generation”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera 
     )
     ```
 
-3. Teraz możesz zapisać transformer pipeline modelu Phi-3 w formacie MLFlow, podając dodatkowe informacje, takie jak docelowa ścieżka artefaktów, konkretne ustawienia konfiguracji modelu oraz typ API inferencyjnego:
+3. Teraz możesz zapisać pipeline transformera modelu Phi-3 w formacie MLFlow i podać dodatkowe szczegóły, takie jak docelowa ścieżka artefaktów, specyficzne ustawienia konfiguracji modelu oraz typ API inferencyjnego:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -75,7 +75,7 @@ W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera 
 
 ## Projekt: Custom Python Wrapper
 
-1. Tutaj możemy wykorzystać Microsoftowy [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) do inferencji modelu ONNX oraz kodowania/dekodowania tokenów. Musisz wybrać pakiet _onnxruntime_genai_ dla docelowego środowiska obliczeniowego, w poniższym przykładzie skierowanym na CPU:
+1. Tutaj możemy wykorzystać [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) Microsoftu do inferencji modelu ONNX oraz kodowania/dekodowania tokenów. Musisz wybrać pakiet _onnxruntime_genai_ dla docelowego środowiska obliczeniowego, w poniższym przykładzie skierowanym na CPU:
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera 
     import onnxruntime_genai as og
     ```
 
-1. Nasza niestandardowa klasa implementuje dwie metody: _load_context()_, która inicjalizuje **model ONNX** Phi-3 Mini 4K Instruct, **parametry generatora** oraz **tokenizer**; oraz _predict()_, która generuje tokeny wyjściowe dla podanego promptu:
+1. Nasza niestandardowa klasa implementuje dwie metody: _load_context()_ do inicjalizacji **modelu ONNX** Phi-3 Mini 4K Instruct, **parametrów generatora** oraz **tokenizera**; oraz _predict()_ do generowania tokenów wyjściowych dla podanego promptu:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera 
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Teraz możesz użyć funkcji _mlflow.pyfunc.log_model()_ do wygenerowania niestandardowego wrappera Python (w formacie pickle) dla modelu Phi-3 wraz z oryginalnym modelem ONNX i wymaganymi zależnościami:
+1. Teraz możesz użyć funkcji _mlflow.pyfunc.log_model()_ do wygenerowania niestandardowego wrappera Python (w formacie pickle) dla modelu Phi-3, wraz z oryginalnym modelem ONNX i wymaganymi zależnościami:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -131,7 +131,7 @@ W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera 
 
 ## Sygnatury wygenerowanych modeli MLFlow
 
-1. W kroku 3 projektu Transformer Pipeline powyżej ustawiliśmy zadanie modelu MLFlow na „_llm/v1/chat_”. Taka instrukcja generuje wrapper API modelu kompatybilny z OpenAI Chat API, jak pokazano poniżej:
+1. W kroku 3 projektu Transformer Pipeline powyżej ustawiliśmy zadanie modelu MLFlow na „_llm/v1/chat_”. Taka instrukcja generuje wrapper API modelu, kompatybilny z OpenAI Chat API, jak pokazano poniżej:
 
     ``` Python
     {inputs: 
@@ -142,13 +142,13 @@ W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera 
       None}
     ```
 
-1. W efekcie możesz przesłać prompt w następującym formacie:
+1. W efekcie możesz przesłać swój prompt w następującym formacie:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Następnie użyj post-processingu kompatybilnego z OpenAI API, np. _response[0][‘choices’][0][‘message’][‘content’]_, aby upiększyć wynik do postaci takiej jak poniżej:
+1. Następnie użyj kompatybilnego z OpenAI API post-processingu, np. _response[0][‘choices’][0][‘message’][‘content’]_, aby upiększyć wynik do czegoś takiego:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera 
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. W kroku 3 projektu Custom Python Wrapper powyżej pozwalamy pakietowi MLFlow na wygenerowanie sygnatury modelu na podstawie przykładowego wejścia. Sygnatura naszego wrappera MLFlow będzie wyglądać tak:
+1. W kroku 3 projektu Custom Python Wrapper powyżej pozwalamy pakietowi MLFlow wygenerować sygnaturę modelu na podstawie podanego przykładu wejściowego. Sygnatura naszego wrappera MLFlow będzie wyglądać tak:
 
     ``` Python
     {inputs: 
@@ -169,13 +169,13 @@ W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera 
       None}
     ```
 
-1. Zatem nasz prompt powinien zawierać klucz słownika "prompt", podobnie jak poniżej:
+1. Zatem nasz prompt musi zawierać klucz słownika "prompt", podobnie jak tutaj:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Wyjście modelu zostanie wtedy zwrócone w formacie string:
+1. Wyjście modelu zostanie wtedy zwrócone w formacie tekstowym:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -188,4 +188,4 @@ W tym przykładzie E2E zaprezentujemy dwa różne podejścia do budowy wrappera 
     ```
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy wszelkich starań, aby tłumaczenie było jak najdokładniejsze, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

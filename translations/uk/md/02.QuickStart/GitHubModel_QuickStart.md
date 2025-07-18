@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-07-09T20:08:46+00:00",
+  "translation_date": "2025-07-17T05:43:38+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "uk"
 }
 -->
 ## GitHub Models - Обмежена публічна бета
 
-Ласкаво просимо до [GitHub Models](https://github.com/marketplace/models)! Усе готово для вас, щоб досліджувати AI-моделі, розміщені на Azure AI.
+Ласкаво просимо до [GitHub Models](https://github.com/marketplace/models)! Усе готово, щоб ви могли досліджувати AI-моделі, розміщені на Azure AI.
 
-![GitHubModel](../../../../imgs/01/02/02/GitHub_ModelCatalog.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.uk.png)
 
 Для отримання додаткової інформації про моделі, доступні на GitHub Models, перегляньте [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Також є спеціальне середовище Codespaces для запуску прикладів і моделей.
 
-![Getting Started](../../../../imgs/01/02/02/GitHub_ModelGetStarted.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.uk.png)
 
 ## Приклад коду
 
@@ -190,7 +190,7 @@ client.close()
 
 Встановіть Node.js.
 
-Скопіюйте наведені нижче рядки тексту і збережіть їх у файлі package.json у вашій папці.
+Скопіюйте наведені рядки тексту та збережіть їх у файлі package.json у вашій папці.
 
 ```
 {
@@ -205,7 +205,7 @@ client.close()
 
 Примітка: @azure/core-sse потрібен лише для потокової передачі відповіді чат-завершень.
 
-Відкрийте термінал у цій папці і виконайте npm install.
+Відкрийте термінал у цій папці та виконайте npm install.
 
 Для кожного з наведених нижче фрагментів коду скопіюйте вміст у файл sample.js і запустіть командою node sample.js.
 
@@ -431,7 +431,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Безкоштовне використання та обмеження швидкості для GitHub Models
 
-![Model Catalog](../../../../imgs/01/02/02/GitHub_Model.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.uk.png)
 
 [Обмеження швидкості для майданчика та безкоштовного використання API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) призначені для того, щоб ви могли експериментувати з моделями та прототипувати свій AI-додаток. Для використання понад ці ліміти та масштабування додатку потрібно виділити ресурси з облікового запису Azure та аутентифікуватися через нього замість персонального токена GitHub. Вам не потрібно змінювати інший код. Використайте це посилання, щоб дізнатися, як вийти за межі безкоштовного рівня в Azure AI.
 

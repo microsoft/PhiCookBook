@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:17:45+00:00",
+  "translation_date": "2025-07-17T05:36:34+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "tr"
 }
@@ -11,13 +11,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 [GitHub Modelleri](https://github.com/marketplace/models)'ne hoş geldiniz! Azure AI üzerinde barındırılan Yapay Zeka Modellerini keşfetmeniz için her şey hazır ve sizi bekliyor.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.tr.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.tr.png)
 
-GitHub Modelleri’nde bulunan modeller hakkında daha fazla bilgi için [GitHub Model Marketplace](https://github.com/marketplace/models)’i inceleyebilirsiniz.
+GitHub Modellerinde bulunan Modeller hakkında daha fazla bilgi için [GitHub Model Marketplace](https://github.com/marketplace/models) sayfasını inceleyebilirsiniz.
 
 ## Mevcut Modeller
 
-Her modelin özel bir çalışma alanı ve örnek kodu vardır.
+Her model için özel bir deneme alanı ve örnek kod bulunmaktadır.
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,7 +37,7 @@ Her modelin özel bir çalışma alanı ve örnek kodu vardır.
 
 ## Başlarken
 
-Çalıştırmanız için hazır birkaç temel örnek mevcut. Bunları samples dizininde bulabilirsiniz. Favori programlama dilinize doğrudan geçmek isterseniz, örnekleri aşağıdaki dillerde bulabilirsiniz:
+Çalıştırmanız için hazır birkaç temel örnek bulunmaktadır. Bunları samples dizininde bulabilirsiniz. Favori programlama dilinize doğrudan geçmek isterseniz, örnekler aşağıdaki dillerde mevcuttur:
 
 - Python
 - JavaScript
@@ -45,7 +45,7 @@ Her modelin özel bir çalışma alanı ve örnek kodu vardır.
 
 Ayrıca örnekleri ve modelleri çalıştırmak için özel bir Codespaces Ortamı da bulunmaktadır.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.tr.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.tr.png)
 
 ## Örnek Kod
 
@@ -53,35 +53,38 @@ Aşağıda bazı kullanım senaryoları için örnek kod parçacıkları yer alm
 
 ## Kurulum
 
-1. Kişisel erişim tokenı oluşturun  
-Token için herhangi bir izin vermeniz gerekmez. Token bir Microsoft servisine gönderilecektir.
+1. Kişisel erişim belirteci oluşturun  
+Belirtece herhangi bir izin vermeniz gerekmez. Belirtecin bir Microsoft servisine gönderileceğini unutmayın.
 
-Aşağıdaki kod parçacıklarını kullanmak için, tokenınızı client kodu için anahtar olarak ayarlayacak bir ortam değişkeni oluşturun.
+Aşağıdaki kod parçacıklarını kullanmak için, belirtecinizi istemci kodu için anahtar olarak ayarlayan bir ortam değişkeni oluşturun.
 
-Eğer bash kullanıyorsanız:  
+Bash kullanıyorsanız:  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 Powershell kullanıyorsanız:  
+
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
+
 Windows komut istemcisindeyseniz:  
+
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
-```
+```  
 
 ## Python Örneği
 
 ### Bağımlılıkları yükleyin  
-Azure AI Inference SDK’yı pip ile yükleyin (Gereksinim: Python >=3.8):  
+Azure AI Inference SDK'yı pip ile yükleyin (Gereksinim: Python >=3.8):
+
 ```
 pip install azure-ai-inference
-```
+```  
+### Temel bir kod örneği çalıştırın
 
-### Basit bir kod örneği çalıştırın
-
-Bu örnek, chat tamamlayıcı API’ye temel bir çağrı yapmayı gösterir. GitHub AI model çıkarım uç noktasını ve GitHub tokenınızı kullanır. Çağrı eşzamanlıdır.
+Bu örnek, chat completion API'sine temel bir çağrıyı gösterir. GitHub AI model çıkarım uç noktasını ve GitHub belirtecinizi kullanır. Çağrı eşzamanlıdır.
 
 ```
 import os
@@ -113,9 +116,9 @@ response = client.complete(
 print(response.choices[0].message.content)
 ```
 
-### Çok turlu sohbet yürütün
+### Çok turlu sohbet çalıştırın
 
-Bu örnek, chat tamamlayıcı API ile çok turlu bir sohbeti gösterir. Bir sohbet uygulamasında modeli kullanırken, sohbet geçmişini yönetmeniz ve modele en güncel mesajları göndermeniz gerekir.
+Bu örnek, chat completion API ile çok turlu bir sohbeti gösterir. Modeli bir sohbet uygulaması için kullanırken, sohbet geçmişini yönetmeniz ve modele en son mesajları göndermeniz gerekir.
 
 ```
 import os
@@ -147,7 +150,7 @@ print(response.choices[0].message.content)
 
 ### Çıktıyı akış halinde alın
 
-Daha iyi bir kullanıcı deneyimi için modelin yanıtını akış halinde almayı tercih edersiniz; böylece ilk token erken görünür ve uzun yanıtlar için beklemek zorunda kalmazsınız.
+Daha iyi bir kullanıcı deneyimi için, modelin yanıtını akış halinde almak istersiniz; böylece ilk token erken görünür ve uzun yanıtlar için beklemek zorunda kalmazsınız.
 
 ```
 import os
@@ -185,9 +188,9 @@ client.close()
 
 ### Bağımlılıkları yükleyin
 
-Node.js’i kurun.
+Node.js'i yükleyin.
 
-Aşağıdaki metin satırlarını kopyalayıp klasörünüzün içine package.json adlı bir dosya olarak kaydedin.
+Aşağıdaki metin satırlarını kopyalayıp klasörünüzün içine package.json dosyası olarak kaydedin.
 
 ```
 {
@@ -200,15 +203,15 @@ Aşağıdaki metin satırlarını kopyalayıp klasörünüzün içine package.js
 }
 ```
 
-Not: @azure/core-sse yalnızca chat tamamlayıcı yanıtlarını akış halinde almak istediğinizde gereklidir.
+Not: @azure/core-sse yalnızca chat completion yanıtını akış halinde aldığınızda gereklidir.
 
-Bu klasörde bir terminal açın ve npm install komutunu çalıştırın.
+Bu klasörde bir terminal penceresi açın ve npm install komutunu çalıştırın.
 
-Aşağıdaki her kod parçacığını sample.js adlı bir dosyaya yapıştırın ve node sample.js ile çalıştırın.
+Aşağıdaki her kod parçacığı için içeriği sample.js dosyasına yapıştırın ve node sample.js ile çalıştırın.
 
-### Basit bir kod örneği çalıştırın
+### Temel bir kod örneği çalıştırın
 
-Bu örnek, chat tamamlayıcı API’ye temel bir çağrı yapmayı gösterir. GitHub AI model çıkarım uç noktasını ve GitHub tokenınızı kullanır. Çağrı eşzamanlıdır.
+Bu örnek, chat completion API'sine temel bir çağrıyı gösterir. GitHub AI model çıkarım uç noktasını ve GitHub belirtecinizi kullanır. Çağrı eşzamanlıdır.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -247,9 +250,9 @@ main().catch((err) => {
 });
 ```
 
-### Çok turlu sohbet yürütün
+### Çok turlu sohbet çalıştırın
 
-Bu örnek, chat tamamlayıcı API ile çok turlu bir sohbeti gösterir. Bir sohbet uygulamasında modeli kullanırken, sohbet geçmişini yönetmeniz ve modele en güncel mesajları göndermeniz gerekir.
+Bu örnek, chat completion API ile çok turlu bir sohbeti gösterir. Modeli bir sohbet uygulaması için kullanırken, sohbet geçmişini yönetmeniz ve modele en son mesajları göndermeniz gerekir.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,7 +295,7 @@ main().catch((err) => {
 
 ### Çıktıyı akış halinde alın
 
-Daha iyi bir kullanıcı deneyimi için modelin yanıtını akış halinde almayı tercih edersiniz; böylece ilk token erken görünür ve uzun yanıtlar için beklemek zorunda kalmazsınız.
+Daha iyi bir kullanıcı deneyimi için, modelin yanıtını akış halinde almak istersiniz; böylece ilk token erken görünür ve uzun yanıtlar için beklemek zorunda kalmazsınız.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -348,9 +351,9 @@ main().catch((err) => {
 
 ## REST
 
-### Basit bir kod örneği çalıştırın
+### Temel bir kod örneği çalıştırın
 
-Aşağıdakini bir shell’e yapıştırın:
+Aşağıdakini bir shell'e yapıştırın:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -371,9 +374,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-### Çok turlu sohbet yürütün
+### Çok turlu sohbet çalıştırın
 
-Chat tamamlayıcı API’yi çağırın ve sohbet geçmişini gönderin:
+Chat completion API'sini çağırın ve sohbet geçmişini gönderin:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -428,19 +431,19 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GitHub Modelleri için ÜCRETSİZ Kullanım ve Oran Sınırları
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.tr.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.tr.png)
 
-[Playground ve ücretsiz API kullanımı için oran sınırları](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits), modellerle denemeler yapmanıza ve yapay zeka uygulamanızın prototipini oluşturmanıza yardımcı olmak amacıyla konulmuştur. Bu sınırların ötesinde kullanım için ve uygulamanızı ölçeklendirmek istediğinizde, bir Azure hesabından kaynak sağlamanız ve kimlik doğrulamasını GitHub kişisel erişim tokenınız yerine oradan yapmanız gerekir. Kodunuzda başka bir değişiklik yapmanıza gerek yoktur. Ücretsiz katman sınırlarını aşmanın yollarını Azure AI’de keşfetmek için bu bağlantıyı kullanabilirsiniz.
+[Deneme alanı ve ücretsiz API kullanımı için oran sınırları](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits), modellerle denemeler yapmanızı ve yapay zeka uygulamanızın prototipini oluşturmanızı kolaylaştırmak içindir. Bu sınırların ötesinde kullanım ve uygulamanızı ölçeklendirmek için Azure hesabından kaynak sağlamanız ve kimlik doğrulamasını GitHub kişisel erişim belirteciniz yerine oradan yapmanız gerekir. Kodunuzda başka bir değişiklik yapmanıza gerek yoktur. Ücretsiz katman sınırlarını Azure AI’da nasıl aşacağınızı öğrenmek için bu bağlantıyı kullanabilirsiniz.
 
 ### Açıklamalar
 
-Bir modelle etkileşimde bulunurken yapay zeka ile deneme yaptığınızı unutmayın, bu yüzden içerik hataları olabilir.
+Bir modelle etkileşimde bulunurken yapay zeka ile deneme yaptığınızı unutmayın, bu nedenle içerik hataları olabilir.
 
-Özellik çeşitli sınırlamalara tabidir (dakika başı istek sayısı, günlük istek sayısı, istek başına token sayısı, eşzamanlı istekler gibi) ve üretim kullanım senaryoları için tasarlanmamıştır.
+Özellik çeşitli sınırlamalara tabidir (dakikadaki istek sayısı, günlük istek sayısı, istek başına token sayısı ve eşzamanlı istekler dahil) ve üretim kullanımı için tasarlanmamıştır.
 
-GitHub Modelleri Azure AI İçerik Güvenliği kullanır. Bu filtreler, GitHub Modelleri deneyiminin bir parçası olarak kapatılamaz. Ücretli bir hizmet aracılığıyla modelleri kullanmaya karar verirseniz, içerik filtrelerinizi ihtiyaçlarınıza göre yapılandırmanız gerekir.
+GitHub Modelleri Azure AI İçerik Güvenliği kullanır. Bu filtreler GitHub Modelleri deneyiminin bir parçası olarak kapatılamaz. Ücretli bir hizmet üzerinden modelleri kullanmaya karar verirseniz, içerik filtrelerinizi gereksinimlerinize göre yapılandırmanız gerekir.
 
 Bu hizmet GitHub’ın Ön Sürüm Şartları kapsamındadır.
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

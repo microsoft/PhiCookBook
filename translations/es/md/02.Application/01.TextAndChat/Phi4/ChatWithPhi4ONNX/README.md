@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-07T11:13:07+00:00",
+  "translation_date": "2025-07-17T03:15:01+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "es"
 }
 -->
-# **Chatea con Phi-4-mini ONNX**
+# **Chat con Phi-4-mini ONNX**
 
-***ONNX*** es un formato abierto diseñado para representar modelos de aprendizaje automático. ONNX define un conjunto común de operadores, los bloques fundamentales de los modelos de aprendizaje automático y aprendizaje profundo, y un formato de archivo común para permitir que los desarrolladores de IA usen modelos con una variedad de frameworks, herramientas, entornos de ejecución y compiladores.
+***ONNX*** es un formato abierto diseñado para representar modelos de aprendizaje automático. ONNX define un conjunto común de operadores, que son los bloques básicos de los modelos de machine learning y deep learning, además de un formato de archivo estándar que permite a los desarrolladores de IA usar modelos con una variedad de frameworks, herramientas, runtimes y compiladores.
 
-Esperamos desplegar modelos de IA generativa en dispositivos edge y usarlos en entornos con capacidad de cómputo limitada o sin conexión. Ahora podemos lograr este objetivo convirtiendo el modelo de forma cuantificada. Podemos convertir el modelo cuantificado a formato GGUF o ONNX.
+Nuestro objetivo es desplegar modelos de IA generativa en dispositivos edge y utilizarlos en entornos con recursos limitados o sin conexión. Ahora podemos lograr esto convirtiendo el modelo de forma cuantificada. Podemos convertir el modelo cuantificado a formato GGUF o ONNX.
 
-Microsoft Olive puede ayudarte a convertir SLM al formato ONNX cuantificado. El método para lograr la conversión del modelo es muy sencillo.
+Microsoft Olive puede ayudarte a convertir SLM a formato ONNX cuantificado. El método para realizar la conversión del modelo es muy sencillo.
 
 **Instalar Microsoft Olive SDK**
 
@@ -158,5 +158,5 @@ while not generator.is_done():
 
 ```
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

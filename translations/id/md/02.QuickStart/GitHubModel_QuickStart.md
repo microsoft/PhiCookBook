@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:20:06+00:00",
+  "translation_date": "2025-07-17T05:39:37+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "id"
 }
 -->
 ## GitHub Models - Beta Publik Terbatas
 
-Selamat datang di [GitHub Models](https://github.com/marketplace/models)! Kami sudah siap untuk Anda jelajahi Model AI yang dihosting di Azure AI.
+Selamat datang di [GitHub Models](https://github.com/marketplace/models)! Kami sudah menyiapkan semuanya agar Anda bisa menjelajahi Model AI yang dihosting di Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.id.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.id.png)
 
 Untuk informasi lebih lanjut tentang Model yang tersedia di GitHub Models, lihat [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Model yang Tersedia
 
-Setiap model memiliki playground dan contoh kode khusus
+Setiap model memiliki playground khusus dan contoh kode
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,38 +37,38 @@ Setiap model memiliki playground dan contoh kode khusus
 
 ## Memulai
 
-Ada beberapa contoh dasar yang siap untuk Anda jalankan. Anda bisa menemukannya di direktori samples. Jika ingin langsung ke bahasa favorit Anda, contoh-contoh tersedia dalam bahasa berikut:
+Ada beberapa contoh dasar yang siap untuk Anda jalankan. Anda bisa menemukannya di direktori samples. Jika ingin langsung ke bahasa favorit Anda, contoh-contoh tersebut tersedia dalam bahasa berikut:
 
 - Python
 - JavaScript
 - cURL
 
-Juga tersedia lingkungan Codespaces khusus untuk menjalankan samples dan model.
+Tersedia juga lingkungan Codespaces khusus untuk menjalankan contoh dan model.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.id.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.id.png)
 
 ## Contoh Kode
 
-Berikut adalah potongan kode contoh untuk beberapa kasus penggunaan. Untuk informasi lebih lengkap tentang Azure AI Inference SDK, lihat dokumentasi lengkap dan contoh-contohnya.
+Berikut adalah potongan kode contoh untuk beberapa kasus penggunaan. Untuk informasi lebih lengkap tentang Azure AI Inference SDK, lihat dokumentasi dan contoh lengkap.
 
 ## Setup
 
 1. Buat personal access token  
-Anda tidak perlu memberikan izin apapun ke token tersebut. Perlu diketahui token akan dikirim ke layanan Microsoft.
+Anda tidak perlu memberikan izin apapun pada token tersebut. Perlu diingat token akan dikirim ke layanan Microsoft.
 
-Untuk menggunakan potongan kode di bawah, buat variabel lingkungan untuk mengatur token Anda sebagai kunci untuk kode klien.
+Untuk menggunakan potongan kode di bawah, buat variabel lingkungan untuk menyimpan token Anda sebagai kunci untuk kode klien.
 
-Jika Anda menggunakan bash:  
+Jika menggunakan bash:  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-Jika Anda menggunakan powershell:  
+Jika menggunakan powershell:  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 
-Jika Anda menggunakan command prompt Windows:  
+Jika menggunakan command prompt Windows:  
 
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
@@ -77,14 +77,14 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 ## Contoh Python
 
 ### Instal dependensi  
-Pasang Azure AI Inference SDK menggunakan pip (Persyaratan: Python >=3.8):
+Instal Azure AI Inference SDK menggunakan pip (Memerlukan: Python >=3.8):
 
 ```
 pip install azure-ai-inference
 ```  
 ### Jalankan contoh kode dasar
 
-Contoh ini menunjukkan pemanggilan dasar ke API chat completion. Ini menggunakan endpoint inference model AI GitHub dan token GitHub Anda. Pemanggilan ini bersifat sinkron.
+Contoh ini menunjukkan panggilan dasar ke API chat completion. Ini menggunakan endpoint inferensi model AI GitHub dan token GitHub Anda. Panggilan ini bersifat sinkron.
 
 ```
 import os
@@ -150,7 +150,7 @@ print(response.choices[0].message.content)
 
 ### Streaming output
 
-Untuk pengalaman pengguna yang lebih baik, Anda bisa melakukan streaming respons model sehingga token pertama muncul lebih cepat dan Anda tidak perlu menunggu respons panjang.
+Untuk pengalaman pengguna yang lebih baik, Anda ingin melakukan streaming respons model agar token pertama muncul lebih cepat dan menghindari menunggu respons yang lama.
 
 ```
 import os
@@ -182,12 +182,13 @@ for update in response:
         print(update.choices[0].delta.content or "", end="")
 
 client.close()
-```  
+```
+
 ## JavaScript
 
 ### Instal dependensi
 
-Pasang Node.js.
+Instal Node.js.
 
 Salin baris teks berikut dan simpan sebagai file package.json di dalam folder Anda.
 
@@ -210,7 +211,7 @@ Untuk setiap potongan kode di bawah, salin isinya ke file sample.js dan jalankan
 
 ### Jalankan contoh kode dasar
 
-Contoh ini menunjukkan pemanggilan dasar ke API chat completion. Ini menggunakan endpoint inference model AI GitHub dan token GitHub Anda. Pemanggilan ini bersifat sinkron.
+Contoh ini menunjukkan panggilan dasar ke API chat completion. Ini menggunakan endpoint inferensi model AI GitHub dan token GitHub Anda. Panggilan ini bersifat sinkron.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -293,7 +294,7 @@ main().catch((err) => {
 ```
 
 ### Streaming output  
-Untuk pengalaman pengguna yang lebih baik, Anda bisa melakukan streaming respons model sehingga token pertama muncul lebih cepat dan Anda tidak perlu menunggu respons panjang.
+Untuk pengalaman pengguna yang lebih baik, Anda ingin melakukan streaming respons model agar token pertama muncul lebih cepat dan menghindari menunggu respons yang lama.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -351,7 +352,7 @@ main().catch((err) => {
 
 ### Jalankan contoh kode dasar
 
-Tempelkan yang berikut ke shell:
+Tempelkan berikut ini ke shell:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -427,19 +428,19 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Penggunaan GRATIS dan Batasan Rate untuk GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.id.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.id.png)
 
-[Batasan rate untuk playground dan penggunaan API gratis](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) dimaksudkan untuk membantu Anda bereksperimen dengan model dan membuat prototipe aplikasi AI Anda. Untuk penggunaan di luar batas tersebut, dan untuk membawa aplikasi Anda ke skala besar, Anda harus menyediakan sumber daya dari akun Azure, dan melakukan autentikasi dari sana, bukan menggunakan personal access token GitHub Anda. Anda tidak perlu mengubah apapun di kode Anda. Gunakan tautan ini untuk mengetahui cara melewati batasan tier gratis di Azure AI.
+[Batasan rate untuk playground dan penggunaan API gratis](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) dimaksudkan untuk membantu Anda bereksperimen dengan model dan membuat prototipe aplikasi AI Anda. Untuk penggunaan di luar batas tersebut, dan untuk membawa aplikasi Anda ke skala yang lebih besar, Anda harus menyediakan sumber daya dari akun Azure, dan melakukan autentikasi dari sana, bukan menggunakan personal access token GitHub Anda. Anda tidak perlu mengubah apapun di kode Anda. Gunakan tautan ini untuk mengetahui cara melewati batasan free tier di Azure AI.
 
 ### Pengungkapan
 
-Ingat, saat berinteraksi dengan model Anda sedang bereksperimen dengan AI, jadi kesalahan konten bisa terjadi.
+Ingatlah saat berinteraksi dengan model Anda sedang bereksperimen dengan AI, sehingga kesalahan konten mungkin terjadi.
 
 Fitur ini memiliki berbagai batasan (termasuk permintaan per menit, permintaan per hari, token per permintaan, dan permintaan bersamaan) dan tidak dirancang untuk kasus penggunaan produksi.
 
-GitHub Models menggunakan Azure AI Content Safety. Filter ini tidak bisa dimatikan sebagai bagian dari pengalaman GitHub Models. Jika Anda memutuskan menggunakan model melalui layanan berbayar, harap konfigurasikan filter konten sesuai kebutuhan Anda.
+GitHub Models menggunakan Azure AI Content Safety. Filter ini tidak dapat dimatikan sebagai bagian dari pengalaman GitHub Models. Jika Anda memutuskan menggunakan model melalui layanan berbayar, harap konfigurasikan filter konten Anda sesuai kebutuhan.
 
 Layanan ini berada di bawah Ketentuan Pra-rilis GitHub.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau kesalahan tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

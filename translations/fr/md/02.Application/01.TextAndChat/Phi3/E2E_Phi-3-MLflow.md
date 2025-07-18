@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-07T13:57:03+00:00",
+  "translation_date": "2025-07-17T02:25:02+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "fr"
 }
@@ -17,21 +17,21 @@ MLFlow est utilisé pour gérer le cycle de vie du ML, incluant l’expérimenta
 
 - **MLflow Tracking :** Enregistrer et interroger les expériences, le code, la configuration des données et les résultats.
 - **MLflow Projects :** Emballer le code data science dans un format permettant de reproduire les exécutions sur n’importe quelle plateforme.
-- **Mlflow Models :** Déployer des modèles de machine learning dans différents environnements de service.
+- **Mlflow Models :** Déployer des modèles de machine learning dans divers environnements de service.
 - **Model Registry :** Stocker, annoter et gérer les modèles dans un dépôt central.
 
-Il inclut des fonctionnalités pour suivre les expériences, empaqueter le code en exécutions reproductibles, partager et déployer les modèles. MLFlow est intégré à Databricks et supporte une variété de bibliothèques ML, ce qui le rend agnostique à la bibliothèque utilisée. Il peut être utilisé avec n’importe quelle bibliothèque de machine learning et dans n’importe quel langage de programmation, grâce à une API REST et une interface en ligne de commande pour plus de commodité.
+Il inclut des fonctionnalités pour suivre les expériences, empaqueter le code en exécutions reproductibles, ainsi que partager et déployer des modèles. MLFlow est intégré à Databricks et supporte une variété de bibliothèques ML, ce qui le rend indépendant de la bibliothèque utilisée. Il peut être utilisé avec n’importe quelle bibliothèque de machine learning et dans n’importe quel langage de programmation, grâce à une API REST et une interface en ligne de commande pour plus de commodité.
 
 ![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.fr.png)
 
-Les principales fonctionnalités de MLFlow comprennent :
+Les principales fonctionnalités de MLFlow incluent :
 
 - **Suivi des expériences :** Enregistrer et comparer les paramètres et résultats.
-- **Gestion des modèles :** Déployer les modèles sur diverses plateformes de service et d’inférence.
-- **Model Registry :** Gérer collaborativement le cycle de vie des MLflow Models, incluant la gestion des versions et les annotations.
-- **Projects :** Emballer le code ML pour le partager ou l’utiliser en production.
+- **Gestion des modèles :** Déployer des modèles sur différentes plateformes de service et d’inférence.
+- **Model Registry :** Gérer collaborativement le cycle de vie des modèles MLflow, incluant la gestion des versions et les annotations.
+- **Projects :** Emballer le code ML pour le partage ou la mise en production.
 
-MLFlow prend également en charge la boucle MLOps, qui comprend la préparation des données, l’enregistrement et la gestion des modèles, l’emballage des modèles pour l’exécution, le déploiement des services et la surveillance des modèles. Son objectif est de simplifier le passage du prototype au workflow de production, notamment dans les environnements cloud et edge.
+MLFlow supporte également la boucle MLOps, qui comprend la préparation des données, l’enregistrement et la gestion des modèles, l’empaquetage des modèles pour l’exécution, le déploiement des services et la surveillance des modèles. Son objectif est de simplifier le passage du prototype au workflow de production, notamment dans les environnements cloud et edge.
 
 ## Scénario E2E - Création d’un wrapper et utilisation de Phi-3 comme modèle MLFlow
 
@@ -42,7 +42,7 @@ Dans cet exemple E2E, nous allons démontrer deux approches différentes pour cr
 | Projet | Description | Emplacement |
 | ------------ | ----------- | -------- |
 | Transformer Pipeline | Transformer Pipeline est l’option la plus simple pour créer un wrapper si vous souhaitez utiliser un modèle HuggingFace avec la saveur expérimentale transformers de MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | Au moment de la rédaction, le pipeline transformer ne supportait pas la génération de wrapper MLFlow pour les modèles HuggingFace au format ONNX, même avec le package Python expérimental optimum. Pour ce genre de cas, vous pouvez créer votre propre wrapper Python personnalisé pour le mode MLFlow | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Custom Python Wrapper | Au moment de la rédaction, le pipeline transformer ne supportait pas la génération de wrapper MLFlow pour les modèles HuggingFace au format ONNX, même avec le package expérimental optimum Python. Pour ce type de cas, vous pouvez créer votre propre wrapper Python personnalisé pour le mode MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Projet : Transformer Pipeline
 
@@ -53,7 +53,7 @@ Dans cet exemple E2E, nous allons démontrer deux approches différentes pour cr
     import transformers
     ```
 
-2. Ensuite, vous devez initialiser un pipeline transformer en faisant référence au modèle Phi-3 ciblé dans le registre HuggingFace. Comme on peut le voir dans la fiche modèle de _Phi-3-mini-4k-instruct_, sa tâche est de type « Génération de texte » :
+2. Ensuite, vous devez initialiser un pipeline transformer en faisant référence au modèle Phi-3 cible dans le registre HuggingFace. Comme on peut le voir dans la fiche modèle de _Phi-3-mini-4k-instruct_, sa tâche est de type « Génération de texte » :
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ Dans cet exemple E2E, nous allons démontrer deux approches différentes pour cr
     )
     ```
 
-3. Vous pouvez maintenant sauvegarder le pipeline transformer de votre modèle Phi-3 au format MLFlow en fournissant des détails supplémentaires comme le chemin des artefacts cibles, les paramètres spécifiques de configuration du modèle et le type d’API d’inférence :
+3. Vous pouvez maintenant sauvegarder le pipeline transformer de votre modèle Phi-3 au format MLFlow et fournir des détails supplémentaires tels que le chemin des artefacts cibles, des paramètres spécifiques de configuration du modèle et le type d’API d’inférence :
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -75,7 +75,7 @@ Dans cet exemple E2E, nous allons démontrer deux approches différentes pour cr
 
 ## Projet : Custom Python Wrapper
 
-1. Nous pouvons ici utiliser l’API generate() de [ONNX Runtime de Microsoft](https://github.com/microsoft/onnxruntime-genai) pour l’inférence du modèle ONNX ainsi que l’encodage/décodage des tokens. Vous devez choisir le package _onnxruntime_genai_ adapté à votre environnement de calcul, l’exemple ci-dessous ciblant le CPU :
+1. Nous pouvons ici utiliser l’API [ONNX Runtime generate()](https://github.com/microsoft/onnxruntime-genai) de Microsoft pour l’inférence du modèle ONNX ainsi que pour l’encodage/décodage des tokens. Vous devez choisir le package _onnxruntime_genai_ adapté à votre environnement de calcul, l’exemple ci-dessous ciblant le CPU :
 
     ``` Python
     import mlflow
@@ -114,7 +114,7 @@ Dans cet exemple E2E, nous allons démontrer deux approches différentes pour cr
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Vous pouvez maintenant utiliser la fonction _mlflow.pyfunc.log_model()_ pour générer un wrapper Python personnalisé (au format pickle) pour le modèle Phi-3, avec le modèle ONNX original et les dépendances requises :
+1. Vous pouvez maintenant utiliser la fonction _mlflow.pyfunc.log_model()_ pour générer un wrapper Python personnalisé (au format pickle) pour le modèle Phi-3, avec le modèle ONNX original et les dépendances nécessaires :
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -131,7 +131,7 @@ Dans cet exemple E2E, nous allons démontrer deux approches différentes pour cr
 
 ## Signatures des modèles MLFlow générés
 
-1. Dans l’étape 3 du projet Transformer Pipeline ci-dessus, nous avons défini la tâche du modèle MLFlow à « _llm/v1/chat_ ». Cette instruction génère un wrapper API pour le modèle, compatible avec l’API Chat d’OpenAI comme montré ci-dessous :
+1. Dans l’étape 3 du projet Transformer Pipeline ci-dessus, nous avons défini la tâche du modèle MLFlow à « _llm/v1/chat_ ». Cette instruction génère un wrapper API du modèle, compatible avec l’API Chat d’OpenAI comme montré ci-dessous :
 
     ``` Python
     {inputs: 
@@ -142,13 +142,13 @@ Dans cet exemple E2E, nous allons démontrer deux approches différentes pour cr
       None}
     ```
 
-1. En conséquence, vous pouvez soumettre votre prompt au format suivant :
+1. En conséquence, vous pouvez soumettre votre prompt dans le format suivant :
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Ensuite, utilisez un post-traitement compatible avec l’API OpenAI, par exemple _response[0][‘choices’][0][‘message’][‘content’]_, pour embellir votre sortie comme ceci :
+1. Puis, utilisez un post-traitement compatible avec l’API OpenAI, par exemple _response[0][‘choices’][0][‘message’][‘content’]_, pour embellir votre sortie comme ceci :
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -169,7 +169,7 @@ Dans cet exemple E2E, nous allons démontrer deux approches différentes pour cr
       None}
     ```
 
-1. Ainsi, notre prompt devra contenir une clé dictionnaire "prompt", similaire à ceci :
+1. Ainsi, notre prompt devra contenir la clé de dictionnaire "prompt", similaire à ceci :
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
@@ -188,4 +188,4 @@ Dans cet exemple E2E, nous allons démontrer deux approches différentes pour cr
     ```
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

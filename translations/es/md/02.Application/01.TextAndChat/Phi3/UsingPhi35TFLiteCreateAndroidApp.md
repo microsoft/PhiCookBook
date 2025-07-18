@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-07T11:12:46+00:00",
+  "translation_date": "2025-07-17T02:49:19+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "es"
 }
 -->
 # **Usando Microsoft Phi-3.5 tflite para crear una app Android**
 
-Este es un ejemplo para Android usando modelos Microsoft Phi-3.5 tflite.
+Este es un ejemplo para Android que utiliza los modelos Microsoft Phi-3.5 tflite.
 
 ## **📚 Conocimientos**
 
-Android LLM Inference API te permite ejecutar modelos de lenguaje grandes (LLMs) completamente en el dispositivo para aplicaciones Android, que puedes usar para realizar una amplia variedad de tareas, como generar texto, obtener información en lenguaje natural y resumir documentos. La tarea ofrece soporte integrado para múltiples modelos grandes de texto a texto, para que puedas aplicar los últimos modelos generativos de IA en el dispositivo a tus apps Android.
+La API de inferencia LLM para Android te permite ejecutar modelos de lenguaje grandes (LLMs) completamente en el dispositivo para aplicaciones Android, lo que puedes usar para realizar una amplia variedad de tareas, como generar texto, recuperar información en lenguaje natural y resumir documentos. La tarea ofrece soporte integrado para múltiples modelos de lenguaje grandes de texto a texto, para que puedas aplicar los últimos modelos generativos de IA en el dispositivo a tus apps Android.
 
-Googld AI Edge Torch es una biblioteca de Python que soporta la conversión de modelos PyTorch a formato .tflite, que luego pueden ejecutarse con TensorFlow Lite y MediaPipe. Esto habilita aplicaciones para Android, iOS y IoT que pueden ejecutar modelos completamente en el dispositivo. AI Edge Torch ofrece amplia cobertura para CPU, con soporte inicial para GPU y NPU. AI Edge Torch busca integrarse estrechamente con PyTorch, basándose en torch.export() y proporcionando buena cobertura de los operadores Core ATen.
+Googld AI Edge Torch es una biblioteca de Python que soporta la conversión de modelos PyTorch a formato .tflite, que luego pueden ejecutarse con TensorFlow Lite y MediaPipe. Esto permite aplicaciones para Android, iOS y IoT que pueden ejecutar modelos completamente en el dispositivo. AI Edge Torch ofrece amplia cobertura para CPU, con soporte inicial para GPU y NPU. AI Edge Torch busca integrarse estrechamente con PyTorch, basándose en torch.export() y proporcionando buena cobertura de los operadores Core ATen.
 
 ## **🪬 Guía**
 
@@ -29,9 +29,9 @@ Googld AI Edge Torch es una biblioteca de Python que soporta la conversión de m
 
 2. Ubuntu 20.04 / 22.04 (por favor enfócate en [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Sugerencia:*** Usa una VM Linux en Azure o una VM en la nube de terceros para crear tu entorno
+***Sugerencia:*** usa una VM Linux de Azure o una VM en la nube de terceros para crear tu entorno
 
-3. Ve a tu bash en Linux, para instalar la librería Python
+3. Ve a tu bash de Linux para instalar la librería de Python
 
 ```bash
 
@@ -47,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Descarga Microsoft-3.5-Instruct desde Hugging face
+4. Descarga Microsoft-3.5-Instruct desde Hugging Face
 
 ```bash
 
@@ -67,7 +67,7 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ### **🔥 Convertir Microsoft Phi-3.5 a Android Mediapipe Bundle**
 
-Por favor instala mediapipe primero
+Por favor, instala mediapipe primero
 
 ```bash
 
@@ -110,5 +110,5 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.es.png)
 
-**Aviso Legal**:  
+**Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

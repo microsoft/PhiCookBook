@@ -2,50 +2,50 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
-  "translation_date": "2025-05-09T13:40:44+00:00",
+  "translation_date": "2025-07-16T21:51:11+00:00",
   "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "sl"
 }
 -->
-# **Phi Family ke Matra**
+# **Kvantificiranje družine Phi**
 
-Model quantization ka matlab hai neural network model ke parameters (jaise weights aur activation values) ko ek bade value range (aksar continuous value range) se chhote aur seemit value range mein map karna. Yeh technique model ke size aur computational complexity ko kam karti hai aur mobile devices ya embedded systems jaise resource-sankuchit environments mein model ki operating efficiency badhati hai. Model quantization parameters ki precision kam karke compression prapt karta hai, lekin isse thodi accuracy ki chhoot bhi hoti hai. Isliye quantization process mein model size, computational complexity, aur precision ke beech santulan banana zaroori hota hai. Common quantization methods mein fixed-point quantization, floating-point quantization shamil hain. Aap apne specific scenario aur zaroorat ke hisaab se upyukt quantization strategy chun sakte hain.
+Kvantizacija modela se nanaša na postopek preslikave parametrov (kot so uteži in vrednosti aktivacije) v nevronskem omrežju iz širokega območja vrednosti (običajno zveznega) v manjše končno območje vrednosti. Ta tehnologija lahko zmanjša velikost in računsko zahtevnost modela ter izboljša učinkovitost delovanja modela v okoljih z omejenimi viri, kot so mobilne naprave ali vgrajeni sistemi. Kvantizacija modela doseže stiskanje z zmanjšanjem natančnosti parametrov, vendar hkrati prinaša določeno izgubo natančnosti. Zato je pri kvantizacijskem postopku potrebno uravnotežiti velikost modela, računsko zahtevnost in natančnost. Pogoste metode kvantizacije vključujejo kvantizacijo s fiksno vejico, kvantizacijo s plavajočo vejico itd. Izbrati je treba ustrezno strategijo kvantizacije glede na specifičen scenarij in potrebe.
 
-Hum GenAI model ko edge devices par deploy karna chahte hain taaki adhik devices GenAI scenarios mein shamil ho sakein, jaise mobile devices, AI PC/Copilot+PC, aur traditional IoT devices. Quantization model ke madhyam se hum ise alag-alag edge devices par deploy kar sakte hain, alag devices ke hisaab se. Hardware manufacturers dwara diye gaye model acceleration framework aur quantization model ke saath milkar, hum behtar SLM application scenarios tayar kar sakte hain.
+Želimo namestiti GenAI modele na robne naprave in omogočiti več napravam vstop v GenAI scenarije, kot so mobilne naprave, AI PC/Copilot+PC in tradicionalne IoT naprave. S pomočjo kvantiziranih modelov jih lahko namestimo na različne robne naprave glede na posamezno napravo. V kombinaciji z ogrodjem za pospeševanje modelov in kvantiziranimi modeli, ki jih zagotavljajo proizvajalci strojne opreme, lahko ustvarimo boljše aplikacijske scenarije SLM.
 
-Quantization scenario mein, humare paas alag-alag precisions hain (INT4, INT8, FP16, FP32). Neeche aam taur par upyog hone wali quantization precisions ka varnan hai.
+V kvantizacijskem scenariju imamo različne natančnosti (INT4, INT8, FP16, FP32). Spodaj je razlaga pogosto uporabljenih natančnosti kvantizacije.
 
 ### **INT4**
 
-INT4 quantization ek atyadhik quantization method hai jo model ke weights aur activation values ko 4-bit integers mein convert karta hai. INT4 quantization mein precision ka loss zyada hota hai kyunki iska representation range chhota aur precision kam hota hai. Lekin INT8 ke mukable, INT4 quantization model ke storage aur computational complexity ko aur bhi kam kar sakta hai. Dhyan rahe ki practical applications mein INT4 quantization kam hi hota hai, kyunki bahut kam accuracy se model ki performance bahut gir sakti hai. Saath hi, sabhi hardware INT4 operations ko support nahi karte, isliye quantization method chunne se pehle hardware compatibility ka dhyan rakhna zaroori hai.
+INT4 kvantizacija je radikalna metoda kvantizacije, ki uteži in vrednosti aktivacije modela pretvori v 4-bitne cele števke. INT4 kvantizacija običajno povzroči večjo izgubo natančnosti zaradi manjšega območja predstavitve in nižje natančnosti. Vendar pa v primerjavi z INT8 kvantizacijo INT4 še dodatno zmanjša zahteve po shranjevanju in računsko zahtevnost modela. Pomembno je opozoriti, da je INT4 kvantizacija v praksi razmeroma redka, saj lahko prenizka natančnost povzroči znatno poslabšanje zmogljivosti modela. Poleg tega ne podpirajo vse strojne opreme INT4 operacij, zato je pri izbiri metode kvantizacije treba upoštevati združljivost s strojno opremo.
 
 ### **INT8**
 
-INT8 quantization mein model ke weights aur activations ko floating point numbers se 8-bit integers mein badla jata hai. INT8 integers ka numerical range chhota aur precision kam hota hai, lekin yeh storage aur calculation ki maang ko bahut kam kar deta hai. INT8 quantization mein weights aur activations scaling aur offset ke zariye quantize kiye jate hain taaki original floating point information zyada se zyada bani rahe. Inference ke dauran, yeh quantized values phir se floating point mein dequantize hoti hain calculation ke liye, aur agle kadam ke liye dobara INT8 mein quantize ki jati hain. Yeh method adhiktar applications mein paryapt accuracy aur uchit computational efficiency pradan karta hai.
+INT8 kvantizacija je postopek pretvorbe uteži in aktivacij modela iz plavajočih vejic v 8-bitne cele števke. Čeprav je numerično območje, ki ga predstavljajo INT8 števke, manjše in manj natančno, lahko znatno zmanjša zahteve po shranjevanju in izračunih. Pri INT8 kvantizaciji uteži in vrednosti aktivacije modela potekajo skozi kvantizacijski postopek, ki vključuje skaliranje in premik, da se ohrani čim več prvotnih informacij plavajoče vejice. Med inferenco se te kvantizirane vrednosti dekvantizirajo nazaj v plavajoče vejice za izračun, nato pa ponovno kvantizirajo v INT8 za naslednji korak. Ta metoda zagotavlja zadostno natančnost v večini aplikacij ob ohranjanju visoke računske učinkovitosti.
 
 ### **FP16**
 
-FP16 format, yaani 16-bit floating point numbers (float16), 32-bit floating point numbers (float32) ke mukable memory ka aadha upyog karta hai, jo bade deep learning applications mein mahatvapurn fayda hai. FP16 format se aap bade models load kar sakte hain ya adhik data process kar sakte hain, wahi GPU memory ki seema mein. Aadhunik GPU hardware FP16 operations ko support karta hai, jisse computing speed mein bhi sudhar ho sakta hai. Lekin FP16 ka apna ek nuksan hai - iska precision kam hota hai, jo kuch cases mein numerical instability ya precision loss la sakta hai.
+FP16 format, torej 16-bitna plavajoča vejica (float16), zmanjša porabo pomnilnika za polovico v primerjavi z 32-bitno plavajočo vejico (float32), kar ima pomembne prednosti pri velikih aplikacijah globokega učenja. FP16 format omogoča nalaganje večjih modelov ali obdelavo več podatkov znotraj istih omejitev pomnilnika GPU. Ker sodobna GPU strojna oprema vse bolj podpira FP16 operacije, lahko uporaba FP16 formata prinese tudi izboljšave v hitrosti izračunov. Vendar ima FP16 format tudi svoje pomanjkljivosti, predvsem nižjo natančnost, kar lahko v nekaterih primerih vodi do numerične nestabilnosti ali izgube natančnosti.
 
 ### **FP32**
 
-FP32 format adhik precision deta hai aur wide range ke values ko accurately represent karta hai. Jab complex mathematical operations ki zaroorat ho ya high-precision results chahiye ho, tab FP32 format pasand kiya jata hai. Lekin zyada accuracy ka matlab zyada memory istemal aur lambi calculation time bhi hota hai. Bade deep learning models mein, jahan parameters aur data bahut adhik ho, FP32 format GPU memory ki kami ya inference speed mein girawat ka karan ban sakta hai.
+FP32 format zagotavlja višjo natančnost in lahko natančno predstavlja širok razpon vrednosti. V scenarijih, kjer se izvajajo kompleksne matematične operacije ali so potrebni rezultati z visoko natančnostjo, je FP32 format prednostna izbira. Vendar pa višja natančnost pomeni tudi večjo porabo pomnilnika in daljši čas izračuna. Pri velikih modelih globokega učenja, zlasti kadar je veliko parametrov modela in ogromno podatkov, lahko FP32 format povzroči pomanjkanje pomnilnika GPU ali upočasnitev inferenčne hitrosti.
 
-Mobile devices ya IoT devices par, hum Phi-3.x models ko INT4 mein convert kar sakte hain, jabki AI PC / Copilot PC jaise devices higher precision jaise INT8, FP16, FP32 ka upyog kar sakte hain.
+Na mobilnih napravah ali IoT napravah lahko modele Phi-3.x pretvorimo v INT4, medtem ko AI PC / Copilot PC lahko uporabljajo višje natančnosti, kot so INT8, FP16, FP32.
 
-Aajkal alag hardware manufacturers ke paas generative models ke liye alag frameworks hain, jaise Intel ka OpenVINO, Qualcomm ka QNN, Apple ka MLX, aur Nvidia ka CUDA, jo model quantization ke saath milkar local deployment poora karte hain.
+Trenutno različni proizvajalci strojne opreme podpirajo generativne modele z različnimi ogrodji, kot so Intelov OpenVINO, Qualcommov QNN, Applov MLX in Nvidijin CUDA, ki jih kombiniramo s kvantizacijo modelov za lokalno namestitev.
 
-Technology ke roop mein, quantization ke baad humare paas alag format support hote hain, jaise PyTorch / Tensorflow format, GGUF, aur ONNX. Maine GGUF aur ONNX ke beech format comparison aur application scenarios kiye hain. Yahan main ONNX quantization format recommend karta hoon, jiska model framework se lekar hardware tak achha support hai. Is adhyaay mein, hum ONNX Runtime for GenAI, OpenVINO, aur Apple MLX ka upyog karte hue model quantization par kendrit rahenge (agar aapke paas koi behtar tareeka ho to PR ke zariye humein de sakte hain).
+Na tehnični ravni imamo po kvantizaciji podporo za različne formate, kot so PyTorch / Tensorflow format, GGUF in ONNX. Izvedel sem primerjavo formatov in aplikacijskih scenarijev med GGUF in ONNX. Tukaj priporočam ONNX kvantizacijski format, ki ima dobro podporo od ogrodja modela do strojne opreme. V tem poglavju se bomo osredotočili na ONNX Runtime za GenAI, OpenVINO in Apple MLX za izvedbo kvantizacije modelov (če imate boljši način, nam ga lahko posredujete z oddajo PR).
 
-**Is adhyaay mein shamil hain**
+**To poglavje vključuje**
 
-1. [Quantizing Phi-3.5 / 4 using llama.cpp](./UsingLlamacppQuantifyingPhi.md)
+1. [Kvantizacija Phi-3.5 / 4 z uporabo llama.cpp](./UsingLlamacppQuantifyingPhi.md)
 
-2. [Quantizing Phi-3.5 / 4 using Generative AI extensions for onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
+2. [Kvantizacija Phi-3.5 / 4 z uporabo Generative AI razširitev za onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
 
-3. [Quantizing Phi-3.5 / 4 using Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
+3. [Kvantizacija Phi-3.5 / 4 z uporabo Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
 
-4. [Quantizing Phi-3.5 / 4 using Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
+4. [Kvantizacija Phi-3.5 / 4 z uporabo Apple MLX ogrodja](./UsingAppleMLXQuantifyingPhi.md)
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku naj velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

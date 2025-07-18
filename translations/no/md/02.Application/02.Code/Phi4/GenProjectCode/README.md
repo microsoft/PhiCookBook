@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:50:46+00:00",
+  "translation_date": "2025-07-17T04:45:55+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "no"
 }
 -->
-## **Bruke Phi-4-mini-mm for å generere kode**
+## **Bruke Phi-4-mini-mm til å generere kode**
 
-Phi-4-mini fortsetter de sterke kodingsevner til Phi-familien. Du kan bruke Prompt til å stille spørsmål relatert til koding. Selvfølgelig, etter å ha lagt til sterk resonnementsevne, har den sterkere kodingsevner, som å generere prosjekter i henhold til krav. For eksempel, generere prosjekter i henhold til krav, som:
+Phi-4-mini fortsetter de sterke kodingsevnen til Phi-familien. Du kan bruke Prompt til å stille spørsmål relatert til koding. Selvfølgelig, etter å ha lagt til sterk resonnementsevne, har den enda sterkere kodingsevner, som å generere prosjekter basert på krav. For eksempel, generere prosjekter i henhold til krav, som:
 
 ### **Krav**
 
 Lag en handlekurv-app
 
 - Lag en API Rest med følgende metoder:
-    - Hent en liste over øl ved å bruke sideoffset og limit.
+    - Hent en liste over øl ved bruk av sideoffset og begrensning.
     - Hent øldetaljer etter id.
-    - Søk etter øl basert på navn, beskrivelse, slagord, matparinger og pris.
+    - Søk etter øl etter navn, beskrivelse, slagord, matparinger og pris.
 - Lag en produktliste på hovedsiden.
     - Lag en søkefelt for å filtrere produkter.
     - Naviger til beskrivelsessiden når brukeren klikker på et produkt.
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved bruk av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på det opprinnelige språket bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

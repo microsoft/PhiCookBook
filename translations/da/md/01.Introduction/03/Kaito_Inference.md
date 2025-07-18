@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:53:41+00:00",
+  "translation_date": "2025-07-16T20:51:11+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "da"
 }
@@ -11,34 +11,34 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Kaito](https://github.com/Azure/kaito) er en operator, der automatiserer AI/ML inference model-udrulning i et Kubernetes-kluster.
 
-Kaito har følgende centrale forskelle sammenlignet med de fleste af de gængse model-udrulningsmetoder, der er bygget oven på virtuelle maskine-infrastrukturer:
+Kaito har følgende væsentlige forskelle sammenlignet med de fleste mainstream metoder til model-udrulning, som er bygget oven på virtuelle maskine-infrastrukturer:
 
 - Håndter model-filer ved hjælp af containerbilleder. En http-server leveres til at udføre inference-kald ved hjælp af modellens bibliotek.
 - Undgå at justere udrulningsparametre for at passe til GPU-hardware ved at tilbyde forudindstillede konfigurationer.
-- Automatisk provisioning af GPU-noder baseret på modelkrav.
-- Vært for store modelbilleder i den offentlige Microsoft Container Registry (MCR), hvis licensen tillader det.
+- Automatisk provisionering af GPU-noder baseret på modelkrav.
+- Værter store modelbilleder i den offentlige Microsoft Container Registry (MCR), hvis licensen tillader det.
 
-Ved at bruge Kaito forenkles arbejdsprocessen med at onboarde store AI-inferencemodeller i Kubernetes i høj grad.
+Med Kaito bliver workflowen for onboarding af store AI inference-modeller i Kubernetes i høj grad forenklet.
 
 ## Arkitektur
 
-Kaito følger det klassiske Kubernetes Custom Resource Definition(CRD)/controller designmønster. Brugeren administrerer en `workspace` custom resource, som beskriver GPU-kravene og inference-specifikationen. Kaito-controllerne automatiserer udrulningen ved at afstemme `workspace` custom resource.
+Kaito følger det klassiske Kubernetes Custom Resource Definition (CRD)/controller designmønster. Brugeren styrer en `workspace` custom resource, som beskriver GPU-kravene og inference-specifikationen. Kaito-controllere automatiserer udrulningen ved at reconciliere `workspace` custom resource.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-Figuren ovenfor viser en oversigt over Kaito-arkitekturen. Dens hovedkomponenter består af:
+Figuren ovenfor viser et overblik over Kaito-arkitekturen. Dens hovedkomponenter består af:
 
-- **Workspace controller**: Den afstemmer `workspace` custom resource, opretter `machine` (forklaret nedenfor) custom resources for at udløse automatisk node-provisionering og opretter inference workload (`deployment` eller `statefulset`) baseret på modelens forudindstillede konfigurationer.
-- **Node provisioner controller**: Controllerens navn er *gpu-provisioner* i [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Den bruger `machine` CRD, som stammer fra [Karpenter](https://sigs.k8s.io/karpenter), til at kommunikere med workspace-controlleren. Den integreres med Azure Kubernetes Service (AKS) APIs for at tilføje nye GPU-noder til AKS-klusteret.
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) er en open source-komponent. Den kan erstattes af andre controllere, hvis de understøtter [Karpenter-core](https://sigs.k8s.io/karpenter) APIs.
+- **Workspace controller**: Den reconciler `workspace` custom resource, opretter `machine` (forklaret nedenfor) custom resources for at udløse automatisk node-provisionering, og opretter inference workload (`deployment` eller `statefulset`) baseret på modelens forudindstillede konfigurationer.
+- **Node provisioner controller**: Controllerens navn er *gpu-provisioner* i [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Den bruger `machine` CRD, som stammer fra [Karpenter](https://sigs.k8s.io/karpenter), til at interagere med workspace controlleren. Den integreres med Azure Kubernetes Service (AKS) API’er for at tilføje nye GPU-noder til AKS-klusteret.
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) er en open source-komponent. Den kan erstattes af andre controllere, hvis de understøtter [Karpenter-core](https://sigs.k8s.io/karpenter) API’er.
 
 ## Installation
 
-Se installationsvejledningen [her](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Se venligst installationsvejledningen [her](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Hurtig start Inference Phi-3
-[Eksempelkode Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+[Sample Code Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -91,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Dernæst kan man finde inference-service’s cluster ip og bruge en midlertidig `curl` pod til at teste service-endpointet i klusteret.
+Herefter kan man finde inference-service’s cluster IP og bruge en midlertidig `curl` pod til at teste service-endpointet i klusteret.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -106,7 +106,7 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 Efter installation af Kaito kan man prøve følgende kommandoer for at starte en inference-service.
 
-[Eksempelkode Inference Phi-3 med Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Sample Code Inference Phi-3 med Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -163,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Dernæst kan man finde inference-service’s cluster ip og bruge en midlertidig `curl` pod til at teste service-endpointet i klusteret.
+Herefter kan man finde inference-service’s cluster IP og bruge en midlertidig `curl` pod til at teste service-endpointet i klusteret.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

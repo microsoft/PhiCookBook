@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-05-07T14:08:57+00:00",
+  "translation_date": "2025-07-16T23:02:05+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
   "language_code": "mo"
 }
 -->
-[OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
+[OpenVino Chat 範例](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
-Este código exporta un modelo al formato OpenVINO, lo carga y lo usa para generar una respuesta a un prompt dado.
+這段程式碼將模型匯出為 OpenVINO 格式，載入後用來根據給定的提示產生回應。
 
-1. **Exportando el Modelo**:  
+1. **匯出模型**：
    ```bash
    optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6 --sym --trust-remote-code ./model/phi3-instruct/int4
-   ```  
-   - Este comando utiliza `optimum-cli` tool to export a model to the OpenVINO format, which is optimized for efficient inference.
-   - The model being exported is `"microsoft/Phi-3-mini-4k-instruct"`, and it's set up for the task of generating text based on past context.
-   - The weights of the model are quantized to 4-bit integers (`int4`), which helps reduce the model size and speed up processing.
-   - Other parameters like `group-size`, `ratio`, and `sym` are used to fine-tune the quantization process.
-   - The exported model is saved in the directory `./model/phi3-instruct/int4`.
+   ```
+   - 此指令使用 `optimum-cli` 工具將模型匯出為 OpenVINO 格式，該格式針對高效推論進行優化。
+   - 匯出的模型是 `"microsoft/Phi-3-mini-4k-instruct"`，用於根據過去上下文生成文字的任務。
+   - 模型權重被量化為 4 位元整數（`int4`），有助於減少模型大小並加快處理速度。
+   - 其他參數如 `group-size`、`ratio` 和 `sym` 用來微調量化過程。
+   - 匯出的模型會儲存在目錄 `./model/phi3-instruct/int4`。
 
-2. **Importando las Bibliotecas Necesarias**:  
+2. **匯入必要的函式庫**：
    ```python
    from transformers import AutoConfig, AutoTokenizer
    from optimum.intel.openvino import OVModelForCausalLM
-   ```  
-   - Estas líneas importan clases del módulo `transformers` library and the `optimum.intel.openvino`, que son necesarias para cargar y usar el modelo.
+   ```
+   - 這些程式碼行從 `transformers` 函式庫和 `optimum.intel.openvino` 模組匯入類別，這些是載入和使用模型所需的。
 
-3. **Configurando el Directorio del Modelo y la Configuración**:  
+3. **設定模型目錄與配置**：
    ```python
    model_dir = './model/phi3-instruct/int4'
    ov_config = {
@@ -36,11 +36,11 @@ Este código exporta un modelo al formato OpenVINO, lo carga y lo usa para gener
        "NUM_STREAMS": "1",
        "CACHE_DIR": ""
    }
-   ```  
-   - `model_dir` specifies where the model files are stored.
-   - `ov_config` es un diccionario que configura el modelo OpenVINO para priorizar baja latencia, usar un solo stream de inferencia y no utilizar un directorio de caché.
+   ```
+   - `model_dir` 指定模型檔案所在的位置。
+   - `ov_config` 是一個字典，用來設定 OpenVINO 模型優先低延遲、使用單一推論串流，且不使用快取目錄。
 
-4. **Cargando el Modelo**:  
+4. **載入模型**：
    ```python
    ov_model = OVModelForCausalLM.from_pretrained(
        model_dir,
@@ -49,50 +49,46 @@ Este código exporta un modelo al formato OpenVINO, lo carga y lo usa para gener
        config=AutoConfig.from_pretrained(model_dir, trust_remote_code=True),
        trust_remote_code=True,
    )
-   ```  
-   - Esta línea carga el modelo desde el directorio especificado, usando la configuración definida anteriormente. También permite la ejecución remota de código si es necesario.
+   ```
+   - 這行程式碼從指定目錄載入模型，並使用先前定義的配置設定。若有需要，也允許遠端程式碼執行。
 
-5. **Cargando el Tokenizer**:  
+5. **載入分詞器**：
    ```python
    tok = AutoTokenizer.from_pretrained(model_dir, trust_remote_code=True)
-   ```  
-   - Esta línea carga el tokenizer, que se encarga de convertir el texto en tokens que el modelo puede entender.
+   ```
+   - 這行程式碼載入分詞器，負責將文字轉換成模型能理解的標記。
 
-6. **Configurando los Argumentos del Tokenizer**:  
+6. **設定分詞器參數**：
    ```python
    tokenizer_kwargs = {
        "add_special_tokens": False
    }
-   ```  
-   - Este diccionario especifica que no se deben agregar tokens especiales al resultado tokenizado.
+   ```
+   - 這個字典指定不在分詞結果中加入特殊標記。
 
-7. **Definiendo el Prompt**:  
+7. **定義提示語句**：
    ```python
    prompt = "<|system|>You are a helpful AI assistant.<|end|><|user|>can you introduce yourself?<|end|><|assistant|>"
-   ```  
-   - Esta cadena establece un prompt de conversación donde el usuario le pide al asistente AI que se presente.
+   ```
+   - 這段字串設定一個對話提示，使用者請 AI 助手自我介紹。
 
-8. **Tokenizando el Prompt**:  
+8. **對提示進行分詞**：
    ```python
    input_tokens = tok(prompt, return_tensors="pt", **tokenizer_kwargs)
-   ```  
-   - Esta línea convierte el prompt en tokens que el modelo puede procesar, devolviendo el resultado como tensores de PyTorch.
+   ```
+   - 這行程式碼將提示轉換成模型可處理的標記，並以 PyTorch 張量形式回傳。
 
-9. **Generando una Respuesta**:  
+9. **產生回應**：
    ```python
    answer = ov_model.generate(**input_tokens, max_new_tokens=1024)
-   ```  
-   - Esta línea usa el modelo para generar una respuesta basada en los tokens de entrada, con un máximo de 1024 tokens nuevos.
+   ```
+   - 這行程式碼使用模型根據輸入標記生成回應，最多產生 1024 個新標記。
 
-10. **Decodificando la Respuesta**:  
+10. **解碼回應**：
     ```python
     decoded_answer = tok.batch_decode(answer, skip_special_tokens=True)[0]
-    ```  
-    - Esta línea convierte los tokens generados de nuevo en una cadena legible para humanos, omitiendo cualquier token especial, y obtiene el primer resultado.
+    ```
+    - 這行程式碼將生成的標記轉回可讀文字，跳過任何特殊標記，並取得第一個結果。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-If by "mo" you mean a specific language or dialect, please clarify which language "mo" refers to, so I can provide the correct translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-07T14:52:22+00:00",
+  "translation_date": "2025-07-16T22:13:52+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "fr"
 }
@@ -63,9 +63,9 @@ cd models
 4. Téléchargez ce fichier dans le dossier models  
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
-5. Allez dans le terminal
+5. Ouvrez le terminal
 
-    Convertissez le support ONNX avec FP32
+    Convertissez le modèle ONNX avec support FP32
 
 ```bash
 
@@ -81,13 +81,13 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 3. Il est important de considérer une IA plus responsable, donc après la conversion de quantification du modèle, il est recommandé de réaliser des tests de résultats plus approfondis.
 
-4. En quantifiant le modèle CPU INT4, nous pouvons le déployer sur des appareils Edge, ce qui offre de meilleures possibilités d’application. Ainsi, nous avons finalisé Phi-3.5-Instruct autour de INT4.
+4. En quantifiant le modèle CPU INT4, nous pouvons le déployer sur des appareils Edge, ce qui offre de meilleures opportunités d’application. Ainsi, nous avons finalisé Phi-3.5-Instruct autour de INT4.
 
 ## **Ressources**
 
-1. Pour en savoir plus sur Generative AI extensions for onnxruntime : [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. En savoir plus sur Generative AI extensions for onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. Dépôt GitHub de Generative AI extensions for onnxruntime : [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
+2. Dépôt GitHub de Generative AI extensions for onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatisées peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

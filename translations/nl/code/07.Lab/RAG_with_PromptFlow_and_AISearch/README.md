@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-05-09T05:13:24+00:00",
+  "translation_date": "2025-07-16T17:09:21+00:00",
   "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "nl"
 }
@@ -19,21 +19,21 @@ In dit voorbeeld implementeren we een Retrieval Augmented Generation (RAG) appli
 
 ## Vereisten
 
-Zorg ervoor dat je aan de volgende voorwaarden voldoet voordat je begint:
+Voordat je begint, zorg ervoor dat je aan de volgende voorwaarden voldoet:
 
 - Docker geïnstalleerd op je lokale machine.
-- Een Azure-account met rechten om container resources te maken en beheren.
+- Een Azure-account met rechten om containerresources te maken en beheren.
 - Een Azure AI Studio en Azure AI Search instantie.
-- Een embedding model om je index te maken (kan een Azure OpenAI embedding zijn of een OS-model uit de catalogus).
+- Een embeddingmodel om je index te maken (dit kan een Azure OpenAI embedding zijn of een OS-model uit de catalogus).
 - Python 3.8 of hoger geïnstalleerd op je lokale machine.
 - Een Azure Container Registry (of een andere registry naar keuze).
 
 ## Installatie
 
-1. Maak een nieuwe flow aan in je Azure AI Studio Project met behulp van het flow.yaml bestand.
-2. Implementeer een Phi3 Model uit je Azure AI modelcatalogus en maak de verbinding met je project. [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
-3. Maak de vectorindex aan in Azure AI Search met elk document naar keuze. [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. Implementeer de flow op een beheerd endpoint en gebruik deze in het prompt-flow-frontend.py bestand. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+1. Maak een nieuwe flow aan in je Azure AI Studio-project met behulp van het flow.yaml bestand.
+2. Implementeer een Phi3 Model vanuit je Azure AI modelcatalogus en maak de verbinding met je project. [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
+3. Maak de vectorindex aan in Azure AI Search met een document naar keuze. [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
+4. Implementeer de flow op een managed endpoint en gebruik deze in het prompt-flow-frontend.py bestand. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
 5. Clone de repository:
 
     ```sh
@@ -75,4 +75,4 @@ Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148
 Volledig artikel: [RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

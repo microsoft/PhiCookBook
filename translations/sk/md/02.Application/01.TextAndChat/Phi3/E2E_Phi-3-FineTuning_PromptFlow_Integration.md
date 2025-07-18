@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-05-09T17:48:14+00:00",
+  "translation_date": "2025-07-17T00:43:43+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "sk"
 }
 -->
-# Doladiť a integrovať vlastné modely Phi-3 s Prompt flow
+# Doladte a integrujte vlastné modely Phi-3 s Prompt flow
 
-Tento kompletný (E2E) príklad je založený na návode "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" z Microsoft Tech Community. Predstavuje procesy doladenia, nasadenia a integrácie vlastných modelov Phi-3 s Prompt flow.
+Tento komplexný (E2E) príklad je založený na návode "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" z Microsoft Tech Community. Predstavuje procesy doladenia, nasadenia a integrácie vlastných modelov Phi-3 s Prompt flow.
 
 ## Prehľad
 
-V tomto E2E príklade sa naučíte, ako doladiť model Phi-3 a integrovať ho s Prompt flow. Využitím Azure Machine Learning a Prompt flow vytvoríte pracovný tok na nasadenie a používanie vlastných AI modelov. Tento príklad je rozdelený do troch scénarov:
+V tomto E2E príklade sa naučíte, ako doladiť model Phi-3 a integrovať ho s Prompt flow. Využitím Azure Machine Learning a Prompt flow si vytvoríte pracovný tok na nasadenie a používanie vlastných AI modelov. Tento E2E príklad je rozdelený do troch scenárov:
 
 **Scenár 1: Nastavenie Azure zdrojov a príprava na doladenie**
 
 **Scenár 2: Doladenie modelu Phi-3 a nasadenie v Azure Machine Learning Studio**
 
-**Scenár 3: Integrácia s Prompt flow a komunikácia s vlastným modelom**
+**Scenár 3: Integrácia s Prompt flow a chatovanie s vlastným modelom**
 
 Tu je prehľad tohto E2E príkladu.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.dfeb1f15c7d3c8989fb267a05ac83a25485a7230bde037df9d3d92336afc1993.sk.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.sk.png)
 
 ### Obsah
 
@@ -39,25 +39,25 @@ Tu je prehľad tohto E2E príkladu.
     - [Doladenie modelu Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Nasadenie doladeného modelu](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenár 3: Integrácia s Prompt flow a komunikácia s vlastným modelom](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[Scenár 3: Integrácia s Prompt flow a chatovanie s vlastným modelom](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Integrácia vlastného modelu Phi-3 s Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Komunikácia s vlastným modelom](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Chatovanie s vlastným modelom](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 ## Scenár 1: Nastavenie Azure zdrojov a príprava na doladenie
 
 ### Vytvorenie Azure Machine Learning Workspace
 
-1. Do **vyhľadávacieho panela** v hornej časti portálu zadajte *azure machine learning* a zo zobrazenej ponuky vyberte **Azure Machine Learning**.
+1. Do **vyhľadávacieho panela** v hornej časti portálu zadajte *azure machine learning* a zo zobrazených možností vyberte **Azure Machine Learning**.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.321cff72d18a51c06dee2db7463868f3ca6619559a5d68b7795d70f4a8b3a683.sk.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.sk.png)
 
 1. V navigačnom menu vyberte **+ Create**.
 
 1. V navigačnom menu vyberte **New workspace**.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.9bd9208488fcf38226fc8d3cefffecb2cb14f414f6d8d982492c1bde8634e24a.sk.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.sk.png)
 
-1. Vykonajte nasledovné kroky:
+1. Vykonajte nasledujúce kroky:
 
     - Vyberte svoju Azure **Subscription**.
     - Vyberte **Resource group**, ktorú chcete použiť (v prípade potreby vytvorte novú).
@@ -65,10 +65,10 @@ Tu je prehľad tohto E2E príkladu.
     - Vyberte **Region**, ktorý chcete použiť.
     - Vyberte **Storage account**, ktorý chcete použiť (v prípade potreby vytvorte nový).
     - Vyberte **Key vault**, ktorý chcete použiť (v prípade potreby vytvorte nový).
-    - Vyberte **Application insights**, ktorý chcete použiť (v prípade potreby vytvorte nový).
+    - Vyberte **Application insights**, ktoré chcete použiť (v prípade potreby vytvorte nové).
     - Vyberte **Container registry**, ktorý chcete použiť (v prípade potreby vytvorte nový).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.b2ebbef59952cd17d16b1f82adc252bf7616f8638d451e3c6595ffefe44f2cfa.sk.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.sk.png)
 
 1. Vyberte **Review + Create**.
 
@@ -76,48 +76,48 @@ Tu je prehľad tohto E2E príkladu.
 
 ### Žiadosť o GPU kvóty v Azure Subscription
 
-V tomto E2E príklade použijete *Standard_NC24ads_A100_v4 GPU* na doladenie, čo vyžaduje žiadosť o kvótu, a *Standard_E4s_v3* CPU na nasadenie, čo kvótu nevyžaduje.
+V tomto E2E príklade použijete *Standard_NC24ads_A100_v4 GPU* na doladenie, čo vyžaduje žiadosť o kvótu, a *Standard_E4s_v3* CPU na nasadenie, ktoré žiadosť o kvótu nevyžaduje.
 
 > [!NOTE]
 >
-> GPU sú prideľované len pre Pay-As-You-Go subscription (štandardný typ subscription); benefitné subscription zatiaľ nie sú podporované.
+> GPU alokácia je dostupná len pre predplatné typu Pay-As-You-Go; benefitné predplatné momentálne nie je podporované.
 >
-> Pre používateľov benefitných subscription (napr. Visual Studio Enterprise Subscription) alebo tých, ktorí chcú rýchlo otestovať doladenie a nasadenie, tento návod ponúka aj možnosť doladenia s minimálnym datasetom na CPU. Treba však počítať s tým, že výsledky doladenia sú výrazne lepšie pri použití GPU a väčších datasetov.
+> Pre používateľov benefitných predplatných (napríklad Visual Studio Enterprise Subscription) alebo tých, ktorí chcú rýchlo otestovať proces doladenia a nasadenia, tento návod poskytuje aj možnosť doladenia s minimálnym datasetom na CPU. Treba však mať na pamäti, že výsledky doladenia sú výrazne lepšie pri použití GPU s väčšími datasetmi.
 
 1. Navštívte [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Vykonajte nasledujúce kroky na žiadosť o kvótu pre *Standard NCADSA100v4 Family*:
+1. Vykonajte nasledujúce kroky na žiadosť o kvótu *Standard NCADSA100v4 Family*:
 
     - Vyberte **Quota** v ľavom menu.
-    - Vyberte **Virtual machine family** na použitie, napríklad **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, ktorá obsahuje *Standard_NC24ads_A100_v4* GPU.
+    - Vyberte **Virtual machine family**, napríklad **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, ktorá obsahuje *Standard_NC24ads_A100_v4* GPU.
     - Vyberte **Request quota** v navigačnom menu.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.ddf063c7cda9799b8ef6fbde6c3c796201578fe9078feb1c624ed75c7705ad18.sk.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.sk.png)
 
-    - Na stránke Request quota zadajte požadovaný limit **New cores limit**, napríklad 24.
-    - Na stránke Request quota vyberte **Submit** pre odoslanie žiadosti o GPU kvótu.
+    - Na stránke Request quota zadajte **New cores limit**, napríklad 24.
+    - Na stránke Request quota vyberte **Submit** na odoslanie žiadosti o GPU kvótu.
 
 > [!NOTE]
-> Podľa potreby si môžete vybrať vhodný GPU alebo CPU podľa dokumentu [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
+> Pre výber vhodného GPU alebo CPU podľa vašich potrieb sa môžete riadiť dokumentáciou [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
 ### Pridanie priradenia rolí
 
-Na doladenie a nasadenie modelov musíte najprv vytvoriť User Assigned Managed Identity (UAI) a priradiť jej príslušné povolenia. Táto UAI sa použije na autentifikáciu počas nasadenia.
+Na doladenie a nasadenie modelov musíte najskôr vytvoriť User Assigned Managed Identity (UAI) a priradiť jej potrebné oprávnenia. Táto UAI bude použitá na autentifikáciu počas nasadenia.
 
 #### Vytvorenie User Assigned Managed Identity (UAI)
 
-1. Do **vyhľadávacieho panela** v hornej časti portálu zadajte *managed identities* a zo zobrazenej ponuky vyberte **Managed Identities**.
+1. Do **vyhľadávacieho panela** v hornej časti portálu zadajte *managed identities* a zo zobrazených možností vyberte **Managed Identities**.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.8bf5dc5a4fa3e852f897ec1a983e506c2bc7b7113d159598bf0adeb66d20a5c4.sk.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.sk.png)
 
 1. Vyberte **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.025632b7b54fe323f7d38edabbae05dd23f4665d0731f7143719c27c32e7e84f.sk.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.sk.png)
 
 1. Vykonajte nasledujúce kroky:
 
     - Vyberte svoju Azure **Subscription**.
-    - Vyberte **Resource group** na použitie (v prípade potreby vytvorte novú).
+    - Vyberte **Resource group**, ktorú chcete použiť (v prípade potreby vytvorte novú).
     - Vyberte **Region**, ktorý chcete použiť.
     - Zadajte **Name**. Musí byť jedinečný.
 
@@ -125,44 +125,44 @@ Na doladenie a nasadenie modelov musíte najprv vytvoriť User Assigned Managed 
 
 1. Vyberte **+ Create**.
 
-#### Pridanie priradenia roly Contributor Managed Identity
+#### Pridanie priradenia roly Contributor k Managed Identity
 
-1. Prejdite do zdroja Managed Identity, ktorý ste vytvorili.
+1. Prejdite na zdroj Managed Identity, ktorý ste vytvorili.
 
-1. Vyberte **Azure role assignments** v ľavom menu.
+1. V ľavom menu vyberte **Azure role assignments**.
 
-1. Vyberte **+Add role assignment** v navigačnom menu.
+1. V navigačnom menu vyberte **+Add role assignment**.
 
 1. Na stránke Add role assignment vykonajte nasledujúce kroky:
-    - Vyberte **Scope** na **Resource group**.
+    - Nastavte **Scope** na **Resource group**.
     - Vyberte svoju Azure **Subscription**.
-    - Vyberte **Resource group** na použitie.
+    - Vyberte **Resource group**, ktorú chcete použiť.
     - Vyberte rolu **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.8936866326c7cdc3b876f14657e03422cca9dbff8b193dd541a693ce34407b26.sk.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.sk.png)
 
 1. Vyberte **Save**.
 
-#### Pridanie priradenia roly Storage Blob Data Reader Managed Identity
+#### Pridanie priradenia roly Storage Blob Data Reader k Managed Identity
 
-1. Do **vyhľadávacieho panela** v hornej časti portálu zadajte *storage accounts* a zo zobrazenej ponuky vyberte **Storage accounts**.
+1. Do **vyhľadávacieho panela** v hornej časti portálu zadajte *storage accounts* a zo zobrazených možností vyberte **Storage accounts**.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.83554a27ff3edb5099ee3fbf7f467b843dabcc0e0e5fbb829a341eab3469ffa5.sk.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.sk.png)
 
-1. Vyberte storage account, ktorý je prepojený s Azure Machine Learning workspace, ktorý ste vytvorili. Napríklad *finetunephistorage*.
+1. Vyberte storage účet, ktorý je prepojený s Azure Machine Learning workspace, ktorý ste vytvorili. Napríklad *finetunephistorage*.
 
-1. Prejdite nasledovne na stránku Add role assignment:
+1. Vykonajte nasledujúce kroky na navigáciu do stránky Add role assignment:
 
-    - Prejdite do Azure Storage account, ktorý ste vytvorili.
-    - Vyberte **Access Control (IAM)** v ľavom menu.
-    - Vyberte **+ Add** v navigačnom menu.
+    - Prejdite do Azure Storage účtu, ktorý ste vytvorili.
+    - V ľavom menu vyberte **Access Control (IAM)**.
+    - V navigačnom menu vyberte **+ Add**.
     - Vyberte **Add role assignment**.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.4fef55886792c7e860da4c5a808044e6f7067fb5694f3ed4819a5758c6cc574e.sk.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.sk.png)
 
-1. Na stránke Add role assignment vykonajte nasledovné:
+1. Na stránke Add role assignment vykonajte nasledujúce kroky:
 
-    - Do vyhľadávacieho panela na stránke Role zadajte *Storage Blob Data Reader* a vyberte túto rolu.
+    - Do vyhľadávacieho panela na stránke Role zadajte *Storage Blob Data Reader* a vyberte **Storage Blob Data Reader**.
     - Vyberte **Next**.
     - Na stránke Members vyberte **Assign access to** **Managed identity**.
     - Vyberte **+ Select members**.
@@ -171,27 +171,27 @@ Na doladenie a nasadenie modelov musíte najprv vytvoriť User Assigned Managed 
     - Vyberte Managed Identity, ktorú ste vytvorili, napríklad *finetunephi-managedidentity*.
     - Vyberte **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.fffa802e4e6ce2de4fe50e64d37d3f2ef268c2ee16f30ec6f92bd1829b5f19c1.sk.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.sk.png)
 
 1. Vyberte **Review + assign**.
 
-#### Pridanie priradenia roly AcrPull Managed Identity
+#### Pridanie priradenia roly AcrPull k Managed Identity
 
-1. Do **vyhľadávacieho panela** v hornej časti portálu zadajte *container registries* a zo zobrazenej ponuky vyberte **Container registries**.
+1. Do **vyhľadávacieho panela** v hornej časti portálu zadajte *container registries* a zo zobrazených možností vyberte **Container registries**.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.62e58403d73d16a0cc715571c8a7b4105a0e97b1422aa5f26106aff1c0e8a47d.sk.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.sk.png)
 
 1. Vyberte container registry, ktorý je prepojený s Azure Machine Learning workspace. Napríklad *finetunephicontainerregistries*.
 
-1. Prejdite nasledovne na stránku Add role assignment:
+1. Vykonajte nasledujúce kroky na navigáciu do stránky Add role assignment:
 
-    - Vyberte **Access Control (IAM)** v ľavom menu.
-    - Vyberte **+ Add** v navigačnom menu.
+    - V ľavom menu vyberte **Access Control (IAM)**.
+    - V navigačnom menu vyberte **+ Add**.
     - Vyberte **Add role assignment**.
 
-1. Na stránke Add role assignment vykonajte nasledovné:
+1. Na stránke Add role assignment vykonajte nasledujúce kroky:
 
-    - Do vyhľadávacieho panela na stránke Role zadajte *AcrPull* a vyberte túto rolu.
+    - Do vyhľadávacieho panela na stránke Role zadajte *AcrPull* a vyberte **AcrPull**.
     - Vyberte **Next**.
     - Na stránke Members vyberte **Assign access to** **Managed identity**.
     - Vyberte **+ Select members**.
@@ -203,7 +203,7 @@ Na doladenie a nasadenie modelov musíte najprv vytvoriť User Assigned Managed 
 
 ### Nastavenie projektu
 
-Teraz vytvoríte priečinok na prácu a nastavíte virtuálne prostredie na vývoj programu, ktorý komunikuje s používateľmi a používa uloženú históriu chatov z Azure Cosmos DB na informovanie svojich odpovedí.
+Teraz vytvoríte priečinok, v ktorom budete pracovať, a nastavíte virtuálne prostredie na vývoj programu, ktorý komunikuje s používateľmi a využíva uloženú históriu chatu z Azure Cosmos DB na informovanie svojich odpovedí.
 
 #### Vytvorenie pracovného priečinka
 
@@ -213,7 +213,7 @@ Teraz vytvoríte priečinok na prácu a nastavíte virtuálne prostredie na výv
     mkdir finetune-phi
     ```
 
-1. V termináli zadajte príkaz na presun do priečinka *finetune-phi*, ktorý ste vytvorili.
+1. V termináli zadajte nasledujúci príkaz na presun do priečinka *finetune-phi*, ktorý ste vytvorili.
 
     ```console
     cd finetune-phi
@@ -221,25 +221,23 @@ Teraz vytvoríte priečinok na prácu a nastavíte virtuálne prostredie na výv
 
 #### Vytvorenie virtuálneho prostredia
 
-1. V termináli zadajte príkaz na vytvorenie virtuálneho prostredia s názvom *.venv*.
+1. V termináli zadajte nasledujúci príkaz na vytvorenie virtuálneho prostredia s názvom *.venv*.
 
     ```console
     python -m venv .venv
     ```
 
-1. V termináli zadajte príkaz na aktiváciu virtuálneho prostredia.
+1. V termináli zadajte nasledujúci príkaz na aktiváciu virtuálneho prostredia.
 
     ```console
     .venv\Scripts\activate.bat
     ```
-
 > [!NOTE]
 >
-> Ak to funguje, mali by ste vidieť *(.venv)* pred príkazovým riadkom.
+> Ak to fungovalo, mali by ste vidieť *(.venv)* pred príkazovým riadkom.
+#### Inštalácia potrebných balíkov
 
-#### Inštalácia potrebných balíčkov
-
-1. V termináli zadajte nasledujúce príkazy na inštaláciu potrebných balíčkov.
+1. Zadajte nasledujúce príkazy do terminálu na inštaláciu potrebných balíkov.
 
     ```console
     pip install datasets==2.19.1
@@ -252,18 +250,18 @@ Teraz vytvoríte priečinok na prácu a nastavíte virtuálne prostredie na výv
 
 #### Vytvorenie súborov projektu
 
-V tomto cvičení vytvoríte základné súbory nášho projektu. Tieto súbory obsahujú skripty na stiahnutie datasetu, nastavenie prostredia Azure Machine Learning, doladenie modelu Phi-3 a nasadenie doladeného modelu. Tiež vytvoríte súbor *conda.yml* na nastavenie prostredia pre doladenie.
+V tomto cvičení vytvoríte základné súbory pre náš projekt. Tieto súbory obsahujú skripty na stiahnutie datasetu, nastavenie prostredia Azure Machine Learning, doladenie modelu Phi-3 a nasadenie doladeného modelu. Tiež vytvoríte súbor *conda.yml* na nastavenie prostredia pre doladenie.
 
-V tomto cvičení:
+V tomto cvičení budete:
 
-- Vytvoríte súbor *download_dataset.py* na stiahnutie datasetu.
-- Vytvoríte súbor *setup_ml.py* na nastavenie Azure Machine Learning prostredia.
-- V priečinku *finetuning_dir* vytvoríte súbor *fine_tune.py* na doladenie modelu Phi-3 pomocou datasetu.
-- Vytvoríte súbor *conda.yml* na nastavenie prostredia pre doladenie.
-- Vytvoríte súbor *deploy_model.py* na nasadenie doladeného modelu.
-- Vytvoríte súbor *integrate_with_promptflow.py* na integráciu doladeného modelu a jeho spustenie pomocou Prompt flow.
-- Vytvoríte súbor *flow.dag.yml* na nastavenie štruktúry pracovného toku pre Prompt flow.
-- Vytvoríte súbor *config.py* na zadanie informácií o Azure.
+- Vytvoriť súbor *download_dataset.py* na stiahnutie datasetu.
+- Vytvoriť súbor *setup_ml.py* na nastavenie prostredia Azure Machine Learning.
+- Vytvoriť súbor *fine_tune.py* v priečinku *finetuning_dir* na doladenie modelu Phi-3 pomocou datasetu.
+- Vytvoriť súbor *conda.yml* na nastavenie prostredia pre doladenie.
+- Vytvoriť súbor *deploy_model.py* na nasadenie doladeného modelu.
+- Vytvoriť súbor *integrate_with_promptflow.py* na integráciu doladeného modelu a jeho spustenie pomocou Prompt flow.
+- Vytvoriť súbor *flow.dag.yml* na nastavenie štruktúry workflow pre Prompt flow.
+- Vytvoriť súbor *config.py* na zadanie informácií o Azure.
 
 > [!NOTE]
 >
@@ -289,25 +287,25 @@ V tomto cvičení:
 
 1. Vyberte **Open Folder**.
 
-1. Vyberte priečinok *finetune-phi*, ktorý ste vytvorili, nachádzajúci sa v *C:\Users\yourUserName\finetune-phi*.
+1. Vyberte priečinok *finetune-phi*, ktorý ste vytvorili, nachádza sa na *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1f7f0f79e5d4d62e546e906e1ce5a480cd98d06062ce292b7b99c6cfcd434fdf.sk.png)
+    ![Otvoriť priečinok projektu.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.sk.png)
 
-1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom myši a vyberte **New File** na vytvorenie nového súboru s názvom *download_dataset.py*.
+1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom a vyberte **New File** na vytvorenie nového súboru s názvom *download_dataset.py*.
 
-1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom myši a vyberte **New File** na vytvorenie nového súboru s názvom *setup_ml.py*.
+1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom a vyberte **New File** na vytvorenie nového súboru s názvom *setup_ml.py*.
 
-1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom myši a vyberte **New File** na vytvorenie nového súboru s názvom *deploy_model.py*.
+1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom a vyberte **New File** na vytvorenie nového súboru s názvom *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.40698c2e0415929e7b6dc2b30925677e413f965bac4134d3aefa0b44d443deaf.sk.png)
+    ![Vytvoriť nový súbor.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.sk.png)
 
-1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom myši a vyberte **New Folder** na vytvorenie nového priečinka s názvom *finetuning_dir*.
+1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom a vyberte **New Folder** na vytvorenie nového priečinka s názvom *finetuning_dir*.
 
 1. V priečinku *finetuning_dir* vytvorte nový súbor s názvom *fine_tune.py*.
 
 #### Vytvorenie a konfigurácia súboru *conda.yml*
 
-1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom myši a vyberte **New File** na vytvorenie súboru *conda.yml*.
+1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom a vyberte **New File** na vytvorenie nového súboru s názvom *conda.yml*.
 
 1. Pridajte nasledujúci kód do súboru *conda.yml* na nastavenie prostredia pre doladenie modelu Phi-3.
 
@@ -337,7 +335,7 @@ V tomto cvičení:
 
 #### Vytvorenie a konfigurácia súboru *config.py*
 
-1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom myši a vyberte **New File** na vytvorenie súboru *config.py*.
+1. V ľavom paneli Visual Studio Code kliknite pravým tlačidlom a vyberte **New File** na vytvorenie nového súboru s názvom *config.py*.
 
 1. Pridajte nasledujúci kód do súboru *config.py* na zadanie vašich Azure informácií.
 
@@ -371,39 +369,42 @@ V tomto cvičení:
 
 1. Vykonajte nasledujúce kroky na pridanie Azure Subscription ID:
 
-    - Do **vy
-![Nájdite ID predplatného.](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.sk.png)
+    - Do **vyhľadávacieho panela** v hornej časti portálu zadajte *subscriptions* a vyberte **Subscriptions** z ponuky.
+    - Vyberte Azure Subscription, ktorú aktuálne používate.
+    - Skopírujte a vložte vaše Subscription ID do súboru *config.py*.
+
+    ![Nájsť subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.sk.png)
 
 1. Vykonajte nasledujúce kroky na pridanie názvu Azure Workspace:
 
-    - Prejdite na zdroj Azure Machine Learning, ktorý ste vytvorili.
-    - Skopírujte a vložte názov svojho účtu do súboru *config.py*.
+    - Prejdite na Azure Machine Learning zdroj, ktorý ste vytvorili.
+    - Skopírujte a vložte názov vášho workspace do súboru *config.py*.
 
-    ![Nájdite názov Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.sk.png)
+    ![Nájsť názov Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.sk.png)
 
 1. Vykonajte nasledujúce kroky na pridanie názvu Azure Resource Group:
 
-    - Prejdite na zdroj Azure Machine Learning, ktorý ste vytvorili.
-    - Skopírujte a vložte názov svojej Azure Resource Group do súboru *config.py*.
+    - Prejdite na Azure Machine Learning zdroj, ktorý ste vytvorili.
+    - Skopírujte a vložte názov Azure Resource Group do súboru *config.py*.
 
-    ![Nájdite názov resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.sk.png)
+    ![Nájsť názov resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.sk.png)
 
-2. Vykonajte nasledujúce kroky na pridanie názvu Azure Managed Identity
+2. Vykonajte nasledujúce kroky na pridanie názvu Azure Managed Identity:
 
-    - Prejdite na zdroj Managed Identities, ktorý ste vytvorili.
-    - Skopírujte a vložte názov svojej Azure Managed Identity do súboru *config.py*.
+    - Prejdite na Managed Identities zdroj, ktorý ste vytvorili.
+    - Skopírujte a vložte názov Azure Managed Identity do súboru *config.py*.
 
-    ![Nájdite UAI.](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.sk.png)
+    ![Nájsť UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.sk.png)
 
-### Pripravte dataset na doladenie
+### Príprava datasetu na doladenie
 
-V tomto cvičení spustíte súbor *download_dataset.py*, aby ste stiahli datasety *ULTRACHAT_200k* do svojho lokálneho prostredia. Následne tieto datasety použijete na doladenie modelu Phi-3 v Azure Machine Learning.
+V tomto cvičení spustíte súbor *download_dataset.py* na stiahnutie datasetu *ULTRACHAT_200k* do vášho lokálneho prostredia. Tento dataset potom použijete na doladenie modelu Phi-3 v Azure Machine Learning.
 
-#### Stiahnite svoj dataset pomocou *download_dataset.py*
+#### Stiahnutie datasetu pomocou *download_dataset.py*
 
 1. Otvorte súbor *download_dataset.py* vo Visual Studio Code.
 
-1. Pridajte nasledujúci kód do *download_dataset.py*.
+1. Pridajte nasledujúci kód do súboru *download_dataset.py*.
 
     ```python
     import json
@@ -472,46 +473,46 @@ V tomto cvičení spustíte súbor *download_dataset.py*, aby ste stiahli datase
 >
 > **Návod na doladenie s minimálnym datasetom pomocou CPU**
 >
-> Ak chcete použiť CPU na doladenie, tento prístup je ideálny pre tých, ktorí majú benefitové predplatné (napríklad Visual Studio Enterprise Subscription) alebo chcú rýchlo otestovať proces doladenia a nasadenia.
+> Ak chcete použiť CPU na doladenie, tento prístup je ideálny pre tých, ktorí majú benefitné predplatné (napríklad Visual Studio Enterprise Subscription) alebo chcú rýchlo otestovať proces doladenia a nasadenia.
 >
-> Nahraďte `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
+> Nahraďte `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` za `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. Zadajte nasledujúci príkaz v termináli na spustenie skriptu a stiahnutie datasetu do lokálneho prostredia.
+1. Zadajte nasledujúci príkaz do terminálu na spustenie skriptu a stiahnutie datasetu do lokálneho prostredia.
 
     ```console
     python download_data.py
     ```
 
-1. Overte, že datasety boli úspešne uložené do lokálneho priečinka *finetune-phi/data*.
+1. Overte, či boli dataset uložené úspešne do lokálneho priečinka *finetune-phi/data*.
 
 > [!NOTE]
 >
 > **Veľkosť datasetu a čas doladenia**
 >
-> V tomto E2E príklade používate len 1 % datasetu (`train_sft[:1%]`). To výrazne znižuje množstvo dát, čím sa zrýchľuje nahrávanie aj samotný proces doladenia. Môžete upraviť percento, aby ste našli správnu rovnováhu medzi časom trénovania a výkonom modelu. Použitie menšej časti datasetu skracuje čas potrebný na doladenie, čo robí proces zvládnuteľnejším pre E2E príklad.
+> V tomto E2E príklade používate iba 1 % datasetu (`train_sft[:1%]`). To výrazne znižuje množstvo dát, čím sa zrýchľuje nahrávanie aj proces doladenia. Môžete upraviť percento podľa potreby, aby ste našli správnu rovnováhu medzi časom tréningu a výkonom modelu. Použitie menšej časti datasetu znižuje čas potrebný na doladenie, čo robí proces zvládnuteľnejším pre E2E príklad.
 
 ## Scenár 2: Doladenie modelu Phi-3 a nasadenie v Azure Machine Learning Studio
 
 ### Nastavenie Azure CLI
 
-Je potrebné nastaviť Azure CLI na autentifikáciu vášho prostredia. Azure CLI umožňuje spravovať Azure zdroje priamo z príkazového riadku a poskytuje prihlasovacie údaje potrebné pre Azure Machine Learning na prístup k týmto zdrojom. Na začiatok nainštalujte [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+Je potrebné nastaviť Azure CLI na autentifikáciu vášho prostredia. Azure CLI umožňuje spravovať Azure zdroje priamo z príkazového riadku a poskytuje prihlasovacie údaje potrebné pre Azure Machine Learning na prístup k týmto zdrojom. Na začiatok si nainštalujte [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
-1. Otvorte terminálové okno a zadajte nasledujúci príkaz na prihlásenie do svojho Azure účtu.
+1. Otvorte terminálové okno a zadajte nasledujúci príkaz na prihlásenie do vášho Azure účtu.
 
     ```console
     az login
     ```
 
-1. Vyberte svoj Azure účet, ktorý chcete použiť.
+1. Vyberte Azure účet, ktorý chcete použiť.
 
-1. Vyberte Azure predplatné, ktoré chcete použiť.
+1. Vyberte Azure subscription, ktorú chcete použiť.
 
-    ![Nájdite názov resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.sk.png)
+    ![Nájsť názov resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.sk.png)
 
 > [!TIP]
 >
-> Ak máte problém s prihlásením do Azure, skúste použiť prihlasovanie cez device code. Otvorte terminál a zadajte nasledujúci príkaz na prihlásenie do Azure účtu:
+> Ak máte problémy s prihlásením do Azure, skúste použiť device code. Otvorte terminál a zadajte nasledujúci príkaz na prihlásenie do Azure účtu:
 >
 > ```console
 > az login --use-device-code
@@ -520,15 +521,15 @@ Je potrebné nastaviť Azure CLI na autentifikáciu vášho prostredia. Azure CL
 
 ### Doladenie modelu Phi-3
 
-V tomto cvičení doladíte model Phi-3 pomocou poskytnutého datasetu. Najskôr definujete proces doladenia v súbore *fine_tune.py*. Potom nakonfigurujete prostredie Azure Machine Learning a spustíte proces doladenia pomocou súboru *setup_ml.py*. Tento skript zabezpečí, že doladenie prebehne v prostredí Azure Machine Learning.
+V tomto cvičení doladíte model Phi-3 pomocou poskytnutého datasetu. Najprv definujete proces doladenia v súbore *fine_tune.py*. Potom nakonfigurujete prostredie Azure Machine Learning a spustíte proces doladenia spustením súboru *setup_ml.py*. Tento skript zabezpečí, že doladenie prebehne v prostredí Azure Machine Learning.
 
 Spustením *setup_ml.py* spustíte proces doladenia v prostredí Azure Machine Learning.
 
-#### Pridajte kód do súboru *fine_tune.py*
+#### Pridanie kódu do súboru *fine_tune.py*
 
 1. Prejdite do priečinka *finetuning_dir* a otvorte súbor *fine_tune.py* vo Visual Studio Code.
 
-1. Pridajte nasledujúci kód do *fine_tune.py*.
+1. Pridajte nasledujúci kód do súboru *fine_tune.py*.
 
     ```python
     import argparse
@@ -684,18 +685,18 @@ Spustením *setup_ml.py* spustíte proces doladenia v prostredí Azure Machine L
 1. Uložte a zatvorte súbor *fine_tune.py*.
 
 > [!TIP]
-> **Doladiť môžete aj model Phi-3.5**
+> **Môžete doladiť model Phi-3.5**
 >
-> V súbore *fine_tune.py* môžete zmeniť hodnotu `pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name` vo vašom skripte.
+> V súbore *fine_tune.py* môžete zmeniť `pretrained_model_name` z `"microsoft/Phi-3-mini-4k-instruct"` na akýkoľvek model, ktorý chcete doladiť. Napríklad, ak ho zmeníte na `"microsoft/Phi-3.5-mini-instruct"`, použijete model Phi-3.5-mini-instruct na doladenie. Ak chcete nájsť a použiť preferovaný názov modelu, navštívte [Hugging Face](https://huggingface.co/), vyhľadajte model, ktorý vás zaujíma, a skopírujte jeho názov do poľa `pretrained_model_name` vo vašom skripte.
 >
 > :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Doladenie Phi-3.5.":::
 >
 
-#### Pridajte kód do súboru *setup_ml.py*
+#### Pridanie kódu do súboru *setup_ml.py*
 
 1. Otvorte súbor *setup_ml.py* vo Visual Studio Code.
 
-1. Pridajte nasledujúci kód do *setup_ml.py*.
+1. Pridajte nasledujúci kód do súboru *setup_ml.py*.
 
     ```python
     import logging
@@ -822,7 +823,7 @@ Spustením *setup_ml.py* spustíte proces doladenia v prostredí Azure Machine L
 
     ```
 
-1. Nahraďte `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `LOCATION` vašimi konkrétnymi údajmi.
+1. Nahraďte `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` a `LOCATION` vašimi konkrétnymi údajmi.
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -836,11 +837,11 @@ Spustením *setup_ml.py* spustíte proces doladenia v prostredí Azure Machine L
 >
 > **Návod na doladenie s minimálnym datasetom pomocou CPU**
 >
-> Ak chcete použiť CPU na doladenie, tento prístup je ideálny pre tých, ktorí majú benefitové predplatné (napríklad Visual Studio Enterprise Subscription) alebo chcú rýchlo otestovať proces doladenia a nasadenia.
+> Ak chcete použiť CPU na doladenie, tento prístup je ideálny pre tých, ktorí majú benefitné predplatné (napríklad Visual Studio Enterprise Subscription) alebo chcú rýchlo otestovať proces doladenia a nasadenia.
 >
 > 1. Otvorte súbor *setup_ml*.
-> 1. Nahraďte `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
-> 1. Replace `LOCATION` vašimi konkrétnymi údajmi.
+> 2. Nahraďte `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` a `DOCKER_IMAGE_NAME` nasledovne. Ak nemáte prístup k *Standard_E16s_v3*, môžete použiť ekvivalentný CPU inštanciu alebo požiadať o nový kvót.
+> 3. Nahraďte `LOCATION` vašimi konkrétnymi údajmi.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -857,31 +858,31 @@ Spustením *setup_ml.py* spustíte proces doladenia v prostredí Azure Machine L
     python setup_ml.py
     ```
 
-1. V tomto cvičení ste úspešne doladili model Phi-3 pomocou Azure Machine Learning. Spustením skriptu *setup_ml.py* ste nastavili prostredie Azure Machine Learning a spustili proces doladenia definovaný v súbore *fine_tune.py*. Upozorňujeme, že doladenie môže trvať pomerne dlho. Po spustení `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
+1. V tomto cvičení ste úspešne doladili model Phi-3 pomocou Azure Machine Learning. Spustením skriptu *setup_ml.py* ste nastavili prostredie Azure Machine Learning a spustili proces doladenia definovaný v súbore *fine_tune.py*. Upozorňujeme, že proces doladenia môže trvať značný čas. Po spustení príkazu `python setup_ml.py` musíte počkať na dokončenie procesu. Stav doladenia môžete sledovať pomocou odkazu v termináli, ktorý vedie do portálu Azure Machine Learning.
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.a28c8552f7b7bc088ccd67dd0c522f7fc1944048d3554bb1b24f95a1169ad538.sk.png)
+    ![Zobraziť úlohu doladenia.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.sk.png)
 
-### Deploy the fine-tuned model
+### Nasadenie doladeného modelu
 
-To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+Na integráciu doladeného modelu Phi-3 s Prompt Flow je potrebné model nasadiť, aby bol dostupný pre inferenciu v reálnom čase. Tento proces zahŕňa registráciu modelu, vytvorenie online endpointu a nasadenie modelu.
 
-#### Set the model name, endpoint name, and deployment name for deployment
+#### Nastavenie názvu modelu, endpointu a nasadenia pre deployment
 
-1. Open *config.py* file.
+1. Otvorte súbor *config.py*.
 
-1. Replace `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` with the desired name for your model.
+1. Nahraďte `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` požadovaným názvom vášho modelu.
 
-1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
+1. Nahraďte `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` požadovaným názvom vášho endpointu.
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` zadajte požadované meno pre vaše nasadenie.
+1. Nahraďte `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` požadovaným názvom vášho nasadenia.
 
-#### Pridajte kód do súboru *deploy_model.py*
+#### Pridanie kódu do súboru *deploy_model.py*
 
-Spustením súboru *deploy_model.py* automatizujete celý proces nasadenia. Tento súbor zaregistruje model, vytvorí endpoint a vykoná nasadenie na základe nastavení v súbore config.py, ktorý obsahuje názov modelu, názov endpointu a názov nasadenia.
+Spustením súboru *deploy_model.py* sa automatizuje celý proces nasadenia. Skript zaregistruje model, vytvorí endpoint a vykoná nasadenie na základe nastavení v súbore *config.py*, ktorý obsahuje názov modelu, endpointu a nasadenia.
 
 1. Otvorte súbor *deploy_model.py* vo Visual Studio Code.
 
-1. Pridajte nasledujúci kód do *deploy_model.py*.
+1. Pridajte nasledujúci kód do súboru *deploy_model.py*.
 
     ```python
     import logging
@@ -1049,14 +1050,14 @@ Spustením súboru *deploy_model.py* automatizujete celý proces nasadenia. Tent
 
 1. Vykonajte nasledujúce kroky na získanie `JOB_NAME`:
 
-    - Navigate to Azure Machine Learning resource that you created.
-    - Select **Studio web URL** to open the Azure Machine Learning workspace.
-    - Select **Jobs** from the left side tab.
-    - Select the experiment for fine-tuning. For example, *finetunephi*.
-    - Select the job that you created.
-    - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+    - Prejdite na Azure Machine Learning zdroj, ktorý ste vytvorili.
+    - Vyberte **Studio web URL** na otvorenie Azure Machine Learning workspace.
+    - Vyberte **Jobs** z ľavého panelu.
+    - Vyberte experiment pre doladenie, napríklad *finetunephi*.
+    - Vyberte úlohu, ktorú ste vytvorili.
+- Skopírujte a vložte názov svojej úlohy do `JOB_NAME = "your-job-name"` v súbore *deploy_model.py*.
 
-1. Replace `COMPUTE_INSTANCE_TYPE` s vašimi konkrétnymi údajmi.
+1. Nahraďte `COMPUTE_INSTANCE_TYPE` svojimi konkrétnymi údajmi.
 
 1. Zadajte nasledujúci príkaz na spustenie skriptu *deploy_model.py* a začatie procesu nasadenia v Azure Machine Learning.
 
@@ -1064,25 +1065,26 @@ Spustením súboru *deploy_model.py* automatizujete celý proces nasadenia. Tent
     python deploy_model.py
     ```
 
+
 > [!WARNING]
-> Aby ste predišli ďalším poplatkom na vašom účte, nezabudnite odstrániť vytvorený endpoint v Azure Machine Learning workspace.
+> Aby ste predišli dodatočným poplatkom na svojom účte, nezabudnite vymazať vytvorený endpoint v pracovnom priestore Azure Machine Learning.
 >
 
-#### Skontrolujte stav nasadenia v Azure Machine Learning Workspace
+#### Skontrolujte stav nasadenia v pracovnom priestore Azure Machine Learning
 
 1. Navštívte [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Prejdite do Azure Machine Learning workspace, ktorý ste vytvorili.
+1. Prejdite do pracovného priestoru Azure Machine Learning, ktorý ste vytvorili.
 
-1. Vyberte **Studio web URL** na otvorenie Azure Machine Learning workspace.
+1. Vyberte **Studio web URL** pre otvorenie pracovného priestoru Azure Machine Learning.
 
 1. Vyberte **Endpoints** v ľavom paneli.
 
-    ![Vyberte endpoints.](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.sk.png)
+    ![Vyberte endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.sk.png)
 
 2. Vyberte endpoint, ktorý ste vytvorili.
 
-    ![Vyberte vytvorený endpoint.](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.sk.png)
+    ![Vyberte endpoint, ktorý ste vytvorili.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.sk.png)
 
 3. Na tejto stránke môžete spravovať endpointy vytvorené počas procesu nasadenia.
 
@@ -1090,18 +1092,18 @@ Spustením súboru *deploy_model.py* automatizujete celý proces nasadenia. Tent
 
 ### Integrácia vlastného modelu Phi-3 s Prompt flow
 
-Po úspešnom nasadení doladeného modelu ho teraz môžete integrovať s Prompt flow, aby ste mohli svoj model používať v reálnych aplikáciách a realizovať rôzne interaktívne úlohy s vlastným modelom Phi-3.
+Po úspešnom nasadení vášho doladeného modelu ho teraz môžete integrovať s Prompt flow, aby ste mohli svoj model používať v reálnych aplikáciách a umožnili tak rôzne interaktívne úlohy s vaším vlastným modelom Phi-3.
 
-#### Nastavte api key a endpoint uri doladeného modelu Phi-3
+#### Nastavte api kľúč a endpoint uri doladeného modelu Phi-3
 
-1. Prejdite do Azure Machine Learning workspace, ktorý ste vytvorili.
+1. Prejdite do pracovného priestoru Azure Machine Learning, ktorý ste vytvorili.
 1. Vyberte **Endpoints** v ľavom paneli.
 1. Vyberte endpoint, ktorý ste vytvorili.
 1. Vyberte **Consume** v navigačnom menu.
-1. Skopírujte a vložte **REST endpoint** do súboru *config.py*, pričom nahraďte `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` vaším **Primárnym kľúčom**.
+1. Skopírujte a vložte svoj **REST endpoint** do súboru *config.py*, nahradzujúc `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` vaším **REST endpointom**.
+1. Skopírujte a vložte svoj **Primary key** do súboru *config.py*, nahradzujúc `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` vaším **Primary key**.
 
-    ![Skopírujte api key a endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.sk.png)
+    ![Skopírujte api kľúč a endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.sk.png)
 
 #### Pridajte kód do súboru *flow.dag.yml*
 
@@ -1200,7 +1202,7 @@ Po úspešnom nasadení doladeného modelu ho teraz môžete integrovať s Promp
 
     ```
 
-### Chatovanie s vlastným modelom
+### Chatovanie s vaším vlastným modelom
 
 1. Zadajte nasledujúci príkaz na spustenie skriptu *deploy_model.py* a začatie procesu nasadenia v Azure Machine Learning.
 
@@ -1208,9 +1210,9 @@ Po úspešnom nasadení doladeného modelu ho teraz môžete integrovať s Promp
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. Tu je príklad výsledkov: Teraz môžete chatovať so svojím vlastným modelom Phi-3. Odporúča sa klásť otázky založené na dátach použitých na doladenie.
+1. Tu je príklad výsledkov: Teraz môžete chatovať s vaším vlastným modelom Phi-3. Odporúča sa klásť otázky založené na dátach použitých na doladenie.
 
-    ![Príklad Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.sk.png)
+    ![Príklad Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.sk.png)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

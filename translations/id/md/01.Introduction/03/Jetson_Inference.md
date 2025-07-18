@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-05-09T11:41:54+00:00",
+  "translation_date": "2025-07-16T20:44:01+00:00",
   "source_file": "md/01.Introduction/03/Jetson_Inference.md",
   "language_code": "id"
 }
 -->
 # **Inference Phi-3 di Nvidia Jetson**
 
-Nvidia Jetson adalah serangkaian papan komputasi tertanam dari Nvidia. Model Jetson TK1, TX1, dan TX2 semuanya menggunakan prosesor Tegra (atau SoC) dari Nvidia yang mengintegrasikan unit pemrosesan pusat (CPU) dengan arsitektur ARM. Jetson adalah sistem berdaya rendah yang dirancang untuk mempercepat aplikasi pembelajaran mesin. Nvidia Jetson digunakan oleh pengembang profesional untuk menciptakan produk AI terobosan di berbagai industri, serta oleh pelajar dan penggemar untuk pembelajaran AI secara langsung dan membuat proyek-proyek menarik. SLM diterapkan di perangkat edge seperti Jetson, yang memungkinkan implementasi skenario aplikasi AI generatif industri yang lebih baik.
+Nvidia Jetson adalah rangkaian papan komputasi embedded dari Nvidia. Model Jetson TK1, TX1, dan TX2 semuanya menggunakan prosesor Tegra (atau SoC) dari Nvidia yang mengintegrasikan unit pemrosesan pusat (CPU) dengan arsitektur ARM. Jetson adalah sistem berdaya rendah yang dirancang untuk mempercepat aplikasi pembelajaran mesin. Nvidia Jetson digunakan oleh pengembang profesional untuk menciptakan produk AI terobosan di berbagai industri, serta oleh pelajar dan penggemar untuk pembelajaran AI secara langsung dan membuat proyek-proyek menakjubkan. SLM diterapkan pada perangkat edge seperti Jetson, yang memungkinkan implementasi skenario aplikasi AI generatif industri yang lebih baik.
 
 ## Deployment di NVIDIA Jetson:
-Pengembang yang bekerja pada robotika otonom dan perangkat tertanam dapat memanfaatkan Phi-3 Mini. Ukuran Phi-3 yang relatif kecil membuatnya ideal untuk deployment di edge. Parameter telah disetel dengan cermat selama pelatihan, memastikan akurasi tinggi dalam respons.
+Pengembang yang bekerja pada robotika otonom dan perangkat embedded dapat memanfaatkan Phi-3 Mini. Ukuran Phi-3 yang relatif kecil membuatnya ideal untuk deployment di edge. Parameter telah disetel dengan cermat selama pelatihan, memastikan akurasi tinggi dalam respons.
 
 ### Optimasi TensorRT-LLM:
-Perpustakaan [TensorRT-LLM NVIDIA](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) mengoptimalkan inferensi model bahasa besar. Ini mendukung jendela konteks panjang Phi-3 Mini, meningkatkan throughput dan latensi. Optimasi meliputi teknik seperti LongRoPE, FP8, dan inflight batching.
+[TensorRT-LLM library](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) dari NVIDIA mengoptimalkan inferensi model bahasa besar. Library ini mendukung jendela konteks panjang Phi-3 Mini, meningkatkan throughput dan latensi. Optimasi mencakup teknik seperti LongRoPE, FP8, dan inflight batching.
 
 ### Ketersediaan dan Deployment:
-Pengembang dapat menjelajahi Phi-3 Mini dengan jendela konteks 128K di [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Ini dikemas sebagai NVIDIA NIM, sebuah microservice dengan API standar yang bisa di-deploy di mana saja. Selain itu, ada juga [implementasi TensorRT-LLM di GitHub](https://github.com/NVIDIA/TensorRT-LLM).
+Pengembang dapat mengeksplorasi Phi-3 Mini dengan jendela konteks 128K di [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Phi-3 Mini dikemas sebagai NVIDIA NIM, sebuah microservice dengan API standar yang dapat dideploy di mana saja. Selain itu, ada [implementasi TensorRT-LLM di GitHub](https://github.com/NVIDIA/TensorRT-LLM).
 
 ## **1. Persiapan**
 
@@ -34,9 +34,9 @@ d. Python 3.8+
 
 Kita bisa memilih [Ollama](https://ollama.com) atau [LlamaEdge](https://llamaedge.com)
 
-Jika ingin menggunakan gguf di cloud dan perangkat edge secara bersamaan, LlamaEdge bisa dipahami sebagai WasmEdge (WasmEdge adalah runtime WebAssembly yang ringan, berperforma tinggi, dan skalabel yang cocok untuk aplikasi cloud native, edge, dan terdesentralisasi. Mendukung aplikasi serverless, fungsi tertanam, microservices, smart contracts, dan perangkat IoT. Anda dapat mendistribusikan model kuantitatif gguf ke perangkat edge dan cloud melalui LlamaEdge).
+Jika ingin menggunakan gguf di cloud dan perangkat edge secara bersamaan, LlamaEdge bisa dipahami sebagai WasmEdge (WasmEdge adalah runtime WebAssembly yang ringan, berperforma tinggi, dan skalabel, cocok untuk aplikasi cloud native, edge, dan terdesentralisasi. Mendukung aplikasi serverless, fungsi embedded, microservices, smart contracts, dan perangkat IoT). Anda dapat mendepoy model kuantitatif gguf ke perangkat edge dan cloud melalui LlamaEdge.
 
-![llamaedge](../../../../../translated_images/llamaedge.1356a35c809c5e9d89d8168db0c92161e87f5e2c34831f2fad800f00fc4e74dc.id.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.id.jpg)
 
 Berikut langkah-langkah penggunaannya
 
@@ -66,11 +66,11 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Berikut hasil jalannya
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.66eb2acd7f14e814437879522158b9531ae7c955014d48d0708d0e4ce6ac94a6.id.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.id.png)
 
 ***Kode contoh*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
-Singkatnya, Phi-3 Mini merupakan lompatan maju dalam pemodelan bahasa, menggabungkan efisiensi, kesadaran konteks, dan keunggulan optimasi dari NVIDIA. Baik Anda membangun robot atau aplikasi edge, Phi-3 Mini adalah alat yang kuat untuk diketahui.
+Singkatnya, Phi-3 Mini merupakan lompatan maju dalam pemodelan bahasa, menggabungkan efisiensi, kesadaran konteks, dan keunggulan optimasi dari NVIDIA. Baik Anda membangun robot atau aplikasi edge, Phi-3 Mini adalah alat yang sangat berguna untuk diketahui.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

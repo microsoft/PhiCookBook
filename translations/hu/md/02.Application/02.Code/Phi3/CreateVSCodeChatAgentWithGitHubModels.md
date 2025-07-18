@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:08:49+00:00",
+  "translation_date": "2025-07-17T03:29:27+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "hu"
 }
 -->
-# **Hozd létre saját Visual Studio Code Chat Copilot Agent-ed Phi-3.5-tel a GitHub Models segítségével**
+# **Hozd létre saját Visual Studio Code Chat Copilot Agentedet a Phi-3.5-tel a GitHub Models segítségével**
 
-Használod a Visual Studio Code Copilotot? Különösen a Chatben különböző agenteket használhatsz, hogy javítsd a projektek létrehozásának, írásának és karbantartásának képességét a Visual Studio Code-ban. A Visual Studio Code egy API-t biztosít, amely lehetővé teszi cégek és egyének számára, hogy üzleti igényeik alapján különböző agenteket hozzanak létre, bővítve azok képességeit különféle sajátos területeken. Ebben a cikkben a GitHub Models **Phi-3.5-mini-instruct (128k)** és **Phi-3.5-vision-instruct (128k)** modelljeire fókuszálunk, hogy elkészítsd saját Visual Studio Code Agentedet.
+Használod a Visual Studio Code Copilotot? Különösen a Chat funkcióban különböző agenteket használhatsz, hogy javítsd a projektek létrehozásának, írásának és karbantartásának képességét a Visual Studio Code-ban. A Visual Studio Code egy API-t biztosít, amely lehetővé teszi cégek és egyének számára, hogy üzleti igényeik alapján különböző agenteket hozzanak létre, ezzel bővítve képességeiket különféle szakterületeken. Ebben a cikkben a GitHub Models **Phi-3.5-mini-instruct (128k)** és **Phi-3.5-vision-instruct (128k)** modelljeire fókuszálunk, hogy elkészítsd saját Visual Studio Code Agentedet.
 
 ## **A Phi-3.5-ről a GitHub Models-en**
 
-Tudjuk, hogy a Phi-3/3.5-mini-instruct a Phi-3/3.5 családban erős kódértési és generálási képességekkel rendelkezik, és előnyökkel bír a Gemma-2-9b és Mistral-Nemo-12B-instruct-2407 modellekkel szemben.
+Tudjuk, hogy a Phi-3/3.5-mini-instruct a Phi-3/3.5 családban erős kódértési és generálási képességekkel rendelkezik, és előnyökkel bír a Gemma-2-9b és a Mistral-Nemo-12B-instruct-2407 modellekkel szemben.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.hu.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.hu.png)
 
-A legfrissebb GitHub Models már elérhetővé teszi a Phi-3.5-mini-instruct (128k) és Phi-3.5-vision-instruct (128k) modelleket. A fejlesztők az OpenAI SDK, az Azure AI Inference SDK és a REST API segítségével érhetik el őket.
+A legújabb GitHub Models már elérhetővé teszi a Phi-3.5-mini-instruct (128k) és a Phi-3.5-vision-instruct (128k) modelleket. A fejlesztők az OpenAI SDK-n, az Azure AI Inference SDK-n és a REST API-n keresztül férhetnek hozzájuk.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.hu.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.hu.png)
 
-***Megjegyzés:*** Ajánlott az Azure AI Inference SDK használata, mert ez jobban tud váltani az Azure Model Catalog és a termelési környezet között.
+***Megjegyzés:*** Ajánlott itt az Azure AI Inference SDK használata, mert a gyártási környezetben jobban tud váltani az Azure Model Cataloggal.
 
-Az alábbiakban a **Phi-3.5-mini-instruct (128k)** és a **Phi-3.5-vision-instruct (128k)** kódgenerálási szcenárióban elért eredményei láthatók a GitHub Models-zel való integráció után, és ezek szolgálnak az alábbi példák alapjául.
+Az alábbiakban a **Phi-3.5-mini-instruct (128k)** és a **Phi-3.5-vision-instruct (128k)** kódgenerálási eredményei láthatók a GitHub Models-hez való csatlakozás után, valamint előkészítjük a következő példákat.
 
 **Demo: GitHub Models Phi-3.5-mini-instruct (128k) kód generálása Prompt alapján** ([kattints ide](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
@@ -32,29 +32,29 @@ Az alábbiakban a **Phi-3.5-mini-instruct (128k)** és a **Phi-3.5-vision-instru
 
 ## **A GitHub Copilot Chat Agent-ről**
 
-A GitHub Copilot Chat Agent különböző feladatokat képes elvégezni különféle projekt szcenáriókban a kód alapján. A rendszer négy agentet tartalmaz: workspace, github, terminal, vscode
+A GitHub Copilot Chat Agent különböző feladatokat képes elvégezni különböző projekt szcenáriókban a kód alapján. A rendszer négy agentből áll: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.hu.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.hu.png)
 
-Az agent nevének '@' jellel való megadásával gyorsan elvégezheted a hozzá tartozó feladatokat. Vállalatok számára, ha üzleti igényekhez kapcsolódó tartalmakat, például követelményeket, kódolást, teszt specifikációkat és kiadást adsz hozzá, erősebb vállalati privát funkciókat érhetsz el a GitHub Copilot segítségével.
+Az agent nevének '@' jellel történő megadásával gyorsan elvégezheted a hozzá tartozó feladatokat. Vállalatok számára, ha hozzáadod saját üzleti tartalmadat, például követelményeket, kódolást, teszt specifikációkat és kiadást, akkor erősebb vállalati privát funkciókat érhetsz el a GitHub Copilot alapjain.
 
-A Visual Studio Code Chat Agent most hivatalosan is kiadta API-ját, amely lehetővé teszi vállalatok vagy vállalati fejlesztők számára, hogy különböző szoftver üzleti ökoszisztémák alapján fejlesszenek agenteket. A Visual Studio Code Extension Development fejlesztési módjára építve könnyedén hozzáférhetsz a Visual Studio Code Chat Agent API interfészéhez. Ezen a folyamaton alapulhat a fejlesztés.
+A Visual Studio Code Chat Agent most hivatalosan is kiadta az API-ját, amely lehetővé teszi vállalatok vagy vállalati fejlesztők számára, hogy különböző szoftver üzleti ökoszisztémák alapján fejlesszenek agenteket. A Visual Studio Code Extension fejlesztési módszerén alapulva könnyen hozzáférhetsz a Visual Studio Code Chat Agent API felületéhez. Ezen a folyamaton alapulva fejleszthetünk.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.hu.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.hu.png)
 
-A fejlesztési szcenárió támogatja harmadik féltől származó modell API-k (például GitHub Models, Azure Model Catalog, valamint nyílt forráskódú modellekre épülő saját szolgáltatások) elérését, és használhatóak a GitHub Copilot által biztosított gpt-35-turbo, gpt-4 és gpt-4o modellek is.
+A fejlesztési szcenárió támogatja harmadik fél modell API-khoz való hozzáférést (például GitHub Models, Azure Model Catalog, és nyílt forráskódú modellekre épülő saját szolgáltatások), valamint használhatja a GitHub Copilot által biztosított gpt-35-turbo, gpt-4 és gpt-4o modelleket is.
 
-## **Agent hozzáadása @phicoding névvel Phi-3.5 alapján**
+## **Agent hozzáadása @phicoding néven Phi-3.5 alapokon**
 
-Megpróbáljuk integrálni a Phi-3.5 programozási képességeit, hogy kódírást, képgenerálás kódját és egyéb feladatokat elvégezzünk. Létrehozunk egy Phi-3.5 köré épülő Agentet - @PHI, a következő funkciókkal:
+Megpróbáljuk integrálni a Phi-3.5 programozási képességeit, hogy kódírást, képgeneráláshoz kapcsolódó kódot és egyéb feladatokat végezzünk el. Elkészítünk egy Phi-3.5 köré épülő Agentet - @PHI, az alábbi funkciókkal:
 
-1. Önbemutató generálása a GitHub Copilot által biztosított GPT-4o alapján a **@phicoding /help** parancson keresztül
+1. Önbemutató generálása a GitHub Copilot által biztosított GPT-4o alapján a **@phicoding /help** parancs segítségével
 
-2. Különböző programozási nyelvekhez kód generálása a **Phi-3.5-mini-instruct (128k)** modell alapján a **@phicoding /gen** parancs segítségével
+2. Kód generálása különböző programozási nyelveken a **Phi-3.5-mini-instruct (128k)** modell alapján a **@phicoding /gen** parancs segítségével
 
-3. Kód generálása a **Phi-3.5-vision-instruct (128k)** és képalapú kiegészítés a **@phicoding /image** parancs által
+3. Kód generálása a **Phi-3.5-vision-instruct (128k)** modell és kép alapján a **@phicoding /image** parancs segítségével
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.hu.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.hu.png)
 
 ## **Kapcsolódó lépések**
 
@@ -65,7 +65,7 @@ Megpróbáljuk integrálni a Phi-3.5 programozási képességeit, hogy kódírá
 npm install --global yo generator-code 
 
 ```
-2. Hozz létre egy Visual Studio Code Extension plugint (Typescript fejlesztési módban, neve phiext)
+2. Hozz létre egy Visual Studio Code Extension plugint (Typescript fejlesztési módban, phiext néven)
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. Nyisd meg a létrehozott projektet és módosítsd a package.json fájlt. Itt találhatók a kapcsolódó utasítások és konfigurációk, valamint a GitHub Models konfigurációja. Figyelj rá, hogy ide kell beillesztened a GitHub Models tokenedet.
+3. Nyisd meg a létrehozott projektet és módosítsd a package.json-t. Itt találhatók a kapcsolódó utasítások és konfigurációk, valamint a GitHub Models konfigurációja. Figyelj rá, hogy ide be kell illesztened a GitHub Models tokenedet.
 
 ```json
 
@@ -364,29 +364,29 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.hu.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.hu.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.hu.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.hu.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.hu.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.hu.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.hu.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.hu.png)
 
-A mintakód letölthető innen: [kattints ide](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Letöltheted a mintakódot: [kattints ide](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **Források**
 
 1. Regisztráció a GitHub Models-re [https://gh.io/models](https://gh.io/models)
 
-2. Ismerkedés a Visual Studio Code Extension fejlesztéssel [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. Tanulj meg Visual Studio Code Extension fejlesztést [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. Ismerkedés a Visual Studio Code Copilot Chat API-val [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. Ismerd meg a Visual Studio Code Copilot Chat API-t [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) használatával készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

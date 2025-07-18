@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:19:53+00:00",
+  "translation_date": "2025-07-17T05:39:21+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "vi"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Chào mừng bạn đến với [GitHub Models](https://github.com/marketplace/models)! Chúng tôi đã chuẩn bị sẵn sàng để bạn khám phá các Mô hình AI được lưu trữ trên Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.vi.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.vi.png)
 
-Để biết thêm thông tin về các Mô hình có trên GitHub Models, hãy tham khảo [GitHub Model Marketplace](https://github.com/marketplace/models)
+Để biết thêm thông tin về các Mô hình có trên GitHub Models, hãy xem tại [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Các Mô hình Có sẵn
 
@@ -37,26 +37,26 @@ Mỗi mô hình đều có một khu vực thử nghiệm riêng và mã mẫu �
 
 ## Bắt đầu
 
-Có một số ví dụ cơ bản sẵn sàng để bạn chạy. Bạn có thể tìm thấy chúng trong thư mục samples. Nếu bạn muốn chuyển thẳng đến ngôn ngữ yêu thích, các ví dụ có thể được tìm thấy trong các Ngôn ngữ sau:
+Có một vài ví dụ cơ bản sẵn sàng để bạn chạy thử. Bạn có thể tìm thấy chúng trong thư mục samples. Nếu bạn muốn đi thẳng đến ngôn ngữ yêu thích, các ví dụ có sẵn cho các ngôn ngữ sau:
 
 - Python
 - JavaScript
 - cURL
 
-Ngoài ra còn có một Môi trường Codespaces chuyên biệt để chạy các mẫu và mô hình.
+Ngoài ra còn có một môi trường Codespaces riêng để chạy các mẫu và mô hình.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.vi.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.vi.png)
 
-## Mã mẫu
+## Mã Mẫu
 
 Dưới đây là các đoạn mã ví dụ cho một số trường hợp sử dụng. Để biết thêm thông tin về Azure AI Inference SDK, xem tài liệu đầy đủ và các mẫu.
 
-## Cài đặt
+## Thiết lập
 
-1. Tạo token truy cập cá nhân  
-Bạn không cần cấp quyền gì cho token. Lưu ý rằng token sẽ được gửi đến dịch vụ của Microsoft.
+1. Tạo một personal access token  
+Bạn không cần cấp quyền nào cho token này. Lưu ý rằng token sẽ được gửi đến một dịch vụ của Microsoft.
 
-Để sử dụng các đoạn mã bên dưới, hãy tạo biến môi trường để đặt token của bạn làm khóa cho mã client.
+Để sử dụng các đoạn mã dưới đây, hãy tạo một biến môi trường để đặt token của bạn làm khóa cho mã client.
 
 Nếu bạn dùng bash:  
 ```
@@ -74,9 +74,9 @@ Nếu bạn dùng Windows command prompt:
 set GITHUB_TOKEN=<your-github-token-goes-here>
 ```  
 
-## Ví dụ Python
+## Mẫu Python
 
-### Cài đặt các phụ thuộc  
+### Cài đặt phụ thuộc  
 Cài đặt Azure AI Inference SDK bằng pip (Yêu cầu: Python >=3.8):
 
 ```
@@ -84,7 +84,7 @@ pip install azure-ai-inference
 ```  
 ### Chạy ví dụ mã cơ bản
 
-Ví dụ này minh họa một cuộc gọi cơ bản đến API hoàn thành chat. Nó sử dụng endpoint suy luận mô hình AI GitHub và token GitHub của bạn. Cuộc gọi này là đồng bộ.
+Ví dụ này minh họa một cuộc gọi cơ bản đến API chat completion. Nó sử dụng endpoint suy luận mô hình AI của GitHub và token GitHub của bạn. Cuộc gọi là đồng bộ.
 
 ```
 import os
@@ -116,9 +116,9 @@ response = client.complete(
 print(response.choices[0].message.content)
 ```
 
-### Chạy hội thoại nhiều lượt
+### Chạy hội thoại đa lượt
 
-Ví dụ này minh họa một cuộc hội thoại nhiều lượt với API hoàn thành chat. Khi dùng mô hình cho ứng dụng chat, bạn cần quản lý lịch sử cuộc hội thoại và gửi các tin nhắn mới nhất đến mô hình.
+Ví dụ này minh họa một cuộc hội thoại đa lượt với API chat completion. Khi sử dụng mô hình cho ứng dụng chat, bạn cần quản lý lịch sử cuộc hội thoại và gửi các tin nhắn mới nhất đến mô hình.
 
 ```
 import os
@@ -148,9 +148,9 @@ response = client.complete(messages=messages, model=model_name)
 print(response.choices[0].message.content)
 ```
 
-### Phát trực tiếp kết quả
+### Truyền dữ liệu đầu ra theo luồng
 
-Để có trải nghiệm người dùng tốt hơn, bạn nên phát trực tiếp phản hồi từ mô hình để token đầu tiên hiển thị sớm và tránh phải chờ đợi các phản hồi dài.
+Để cải thiện trải nghiệm người dùng, bạn sẽ muốn truyền dữ liệu phản hồi của mô hình theo luồng để token đầu tiên xuất hiện sớm và tránh phải chờ đợi phản hồi dài.
 
 ```
 import os
@@ -182,14 +182,15 @@ for update in response:
         print(update.choices[0].delta.content or "", end="")
 
 client.close()
-```  
+```
+
 ## JavaScript
 
-### Cài đặt các phụ thuộc
+### Cài đặt phụ thuộc
 
 Cài đặt Node.js.
 
-Sao chép các dòng dưới đây và lưu vào file package.json trong thư mục của bạn.
+Sao chép các dòng sau và lưu thành file package.json trong thư mục của bạn.
 
 ```
 {
@@ -202,15 +203,15 @@ Sao chép các dòng dưới đây và lưu vào file package.json trong thư m�
 }
 ```
 
-Lưu ý: @azure/core-sse chỉ cần khi bạn phát trực tiếp phản hồi hoàn thành chat.
+Lưu ý: @azure/core-sse chỉ cần khi bạn truyền dữ liệu phản hồi chat completion theo luồng.
 
 Mở cửa sổ terminal trong thư mục này và chạy npm install.
 
-Với mỗi đoạn mã bên dưới, sao chép nội dung vào file sample.js và chạy bằng lệnh node sample.js.
+Với mỗi đoạn mã dưới đây, sao chép nội dung vào file sample.js và chạy bằng lệnh node sample.js.
 
 ### Chạy ví dụ mã cơ bản
 
-Ví dụ này minh họa một cuộc gọi cơ bản đến API hoàn thành chat. Nó sử dụng endpoint suy luận mô hình AI GitHub và token GitHub của bạn. Cuộc gọi này là đồng bộ.
+Ví dụ này minh họa một cuộc gọi cơ bản đến API chat completion. Nó sử dụng endpoint suy luận mô hình AI của GitHub và token GitHub của bạn. Cuộc gọi là đồng bộ.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -249,9 +250,9 @@ main().catch((err) => {
 });
 ```
 
-### Chạy hội thoại nhiều lượt
+### Chạy hội thoại đa lượt
 
-Ví dụ này minh họa một cuộc hội thoại nhiều lượt với API hoàn thành chat. Khi dùng mô hình cho ứng dụng chat, bạn cần quản lý lịch sử cuộc hội thoại và gửi các tin nhắn mới nhất đến mô hình.
+Ví dụ này minh họa một cuộc hội thoại đa lượt với API chat completion. Khi sử dụng mô hình cho ứng dụng chat, bạn cần quản lý lịch sử cuộc hội thoại và gửi các tin nhắn mới nhất đến mô hình.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,8 +293,9 @@ main().catch((err) => {
 });
 ```
 
-### Phát trực tiếp kết quả  
-Để có trải nghiệm người dùng tốt hơn, bạn nên phát trực tiếp phản hồi từ mô hình để token đầu tiên hiển thị sớm và tránh phải chờ đợi các phản hồi dài.
+### Truyền dữ liệu đầu ra theo luồng
+
+Để cải thiện trải nghiệm người dùng, bạn sẽ muốn truyền dữ liệu phản hồi của mô hình theo luồng để token đầu tiên xuất hiện sớm và tránh phải chờ đợi phản hồi dài.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -370,10 +372,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
-### Chạy hội thoại nhiều lượt
+```
 
-Gọi API hoàn thành chat và truyền lịch sử chat:
+### Chạy hội thoại đa lượt
+
+Gọi API chat completion và truyền lịch sử cuộc hội thoại:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -400,10 +403,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
-### Phát trực tiếp kết quả
+```
 
-Đây là ví dụ gọi endpoint và phát trực tiếp phản hồi.
+### Truyền dữ liệu đầu ra theo luồng
+
+Đây là ví dụ gọi endpoint và truyền dữ liệu phản hồi theo luồng.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -427,19 +431,19 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Sử dụng MIỄN PHÍ và Giới hạn tốc độ cho GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.vi.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.vi.png)
 
-[Giới hạn tốc độ cho khu vực thử nghiệm và API miễn phí](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) nhằm giúp bạn thử nghiệm các mô hình và phát triển ứng dụng AI. Để sử dụng vượt quá giới hạn này và mở rộng ứng dụng, bạn phải cấp phát tài nguyên từ tài khoản Azure và xác thực từ đó thay vì dùng token truy cập cá nhân GitHub. Bạn không cần thay đổi gì khác trong mã của mình. Sử dụng liên kết này để tìm hiểu cách vượt qua giới hạn miễn phí trong Azure AI.
+[Giới hạn tốc độ cho khu vực thử nghiệm và sử dụng API miễn phí](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) được thiết kế để giúp bạn thử nghiệm các mô hình và tạo nguyên mẫu ứng dụng AI. Để sử dụng vượt quá các giới hạn này và mở rộng ứng dụng của bạn, bạn cần cấp phát tài nguyên từ tài khoản Azure và xác thực từ đó thay vì dùng personal access token của GitHub. Bạn không cần thay đổi gì khác trong mã của mình. Sử dụng liên kết này để tìm hiểu cách vượt qua giới hạn tầng miễn phí trong Azure AI.
 
-### Lưu ý
+### Thông báo
 
-Hãy nhớ rằng khi tương tác với mô hình, bạn đang thử nghiệm AI nên có thể xảy ra sai sót về nội dung.
+Hãy nhớ rằng khi tương tác với mô hình, bạn đang thử nghiệm AI, nên có thể xảy ra sai sót về nội dung.
 
-Tính năng này bị giới hạn bởi nhiều yếu tố (bao gồm số yêu cầu mỗi phút, mỗi ngày, token mỗi yêu cầu, và số yêu cầu đồng thời) và không thiết kế cho các trường hợp sử dụng sản xuất.
+Tính năng này có các giới hạn khác nhau (bao gồm số yêu cầu mỗi phút, số yêu cầu mỗi ngày, số token mỗi yêu cầu và số yêu cầu đồng thời) và không được thiết kế cho các trường hợp sử dụng sản xuất.
 
-GitHub Models sử dụng Azure AI Content Safety. Các bộ lọc này không thể tắt trong trải nghiệm GitHub Models. Nếu bạn quyết định sử dụng mô hình qua dịch vụ trả phí, vui lòng cấu hình bộ lọc nội dung theo yêu cầu của bạn.
+GitHub Models sử dụng Azure AI Content Safety. Các bộ lọc này không thể tắt trong trải nghiệm GitHub Models. Nếu bạn quyết định sử dụng mô hình qua dịch vụ trả phí, vui lòng cấu hình bộ lọc nội dung phù hợp với yêu cầu của bạn.
 
-Dịch vụ này đang trong điều khoản Phát hành trước của GitHub.
+Dịch vụ này đang trong điều khoản Pre-release của GitHub.
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn thông tin chính xác nhất. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

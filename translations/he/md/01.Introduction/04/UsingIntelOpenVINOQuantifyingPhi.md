@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T13:58:55+00:00",
+  "translation_date": "2025-07-16T22:02:46+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "he"
 }
 -->
-# **כיווץ Phi-3.5 באמצעות Intel OpenVINO**
+# **כימות Phi-3.5 באמצעות Intel OpenVINO**
 
-Intel היא יצרנית ה-CPU המסורתית ביותר עם משתמשים רבים. עם עליית הלמידה המכונה והלמידה העמוקה, Intel גם הצטרפה לתחרות להאצת AI. עבור אינפרנס של מודלים, Intel לא משתמשת רק ב-GPUs ו-CPUs, אלא גם ב-NPUs.
+Intel היא יצרנית המעבדים המסורתית ביותר עם משתמשים רבים. עם עליית הלמידה המכונה והלמידה העמוקה, Intel הצטרפה גם היא לתחרות להאצת AI. עבור אינפרנס של מודלים, Intel לא משתמשת רק ב-GPUs ו-CPUs, אלא גם ב-NPUs.
 
-אנו מקווים לפרוס את משפחת Phi-3.x בקצה הקצה, בתקווה להפוך לחלק החשוב ביותר במחשב AI ובמחשב Copilot. טעינת המודל בקצה תלויה בשיתוף פעולה עם יצרני חומרה שונים. פרק זה מתמקד בעיקר בתרחיש היישום של Intel OpenVINO כמודל כמותי.
+אנו מקווים לפרוס את משפחת Phi-3.x בצד הקצה, בתקווה שתהפוך לחלק החשוב ביותר במחשב AI ובמחשב Copilot. טעינת המודל בצד הקצה תלויה בשיתוף פעולה בין יצרני חומרה שונים. פרק זה מתמקד בעיקר בתרחיש השימוש של Intel OpenVINO כמודל כמותי.
 
 ## **מה זה OpenVINO**
 
-OpenVINO הוא כלי קוד פתוח לאופטימיזציה ופריסה של מודלים ללמידה עמוקה מהענן ועד הקצה. הוא מאיץ אינפרנס של למידה עמוקה במגוון תרחישים, כמו AI גנרטיבי, וידאו, אודיו ושפה עם מודלים ממסגרות פופולריות כמו PyTorch, TensorFlow, ONNX ועוד. המרת מודלים ואופטימיזציה שלהם, ופריסה במגוון חומרות וסביבות של Intel®, מקומית ומכשירית, בדפדפן או בענן.
+OpenVINO הוא ערכת כלים בקוד פתוח לאופטימיזציה ופריסה של מודלים ללמידה עמוקה מהענן ועד הקצה. הוא מאיץ אינפרנס של למידה עמוקה במגוון תרחישים, כגון AI גנרטיבי, וידאו, אודיו ושפה, עם מודלים ממסגרות פופולריות כמו PyTorch, TensorFlow, ONNX ועוד. ממיר ומאופטם מודלים, ומפרוס על מגוון חומרות וסביבות של Intel®, הן מקומית והן במכשיר, בדפדפן או בענן.
 
-כעת עם OpenVINO, ניתן במהירות לכווץ את מודל ה-GenAI בחומרת Intel ולהאיץ את הרפרנס למודל.
+כעת עם OpenVINO, ניתן במהירות לכמת את מודל ה-GenAI בחומרת Intel ולהאיץ את רפרנס המודל.
 
-כעת OpenVINO תומך בהמרת כיווץ של Phi-3.5-Vision ו-Phi-3.5 Instruct
+כעת OpenVINO תומך בהמרת כימות של Phi-3.5-Vision ו-Phi-3.5 Instruct
 
 ### **הגדרת סביבה**
 
-אנא ודא שהתקנת את התלויות הבאות בסביבה, זהו requirement.txt
+אנא ודא שהתקנת את התלויות הבאות בסביבה, זהו הקובץ requirement.txt
 
 ```txt
 
@@ -36,7 +36,7 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **כיווץ Phi-3.5-Instruct באמצעות OpenVINO**
+### **כימות Phi-3.5-Instruct באמצעות OpenVINO**
 
 בטרמינל, אנא הרץ את הסקריפט הבא
 
@@ -52,7 +52,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **כיווץ Phi-3.5-Vision באמצעות OpenVINO**
+### **כימות Phi-3.5-Vision באמצעות OpenVINO**
 
 אנא הרץ את הסקריפט הזה ב-Python או ב-Jupyter lab
 
@@ -92,11 +92,11 @@ if not out_dir.exists():
 
 ### **🤖 דוגמאות ל-Phi-3.5 עם Intel OpenVINO**
 
-| מעבדות    | הקדמה | עבור ל- |
+| מעבדות    | הקדמה | מעבר |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | למד כיצד להשתמש ב-Phi-3.5 Instruct במחשב AI שלך    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (תמונה) | למד כיצד להשתמש ב-Phi-3.5 Vision לניתוח תמונות במחשב AI שלך      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (וידאו)   | למד כיצד להשתמש ב-Phi-3.5 Vision לניתוח וידאו במחשב AI שלך    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | למד כיצד להשתמש ב-Phi-3.5 Instruct במחשב ה-AI שלך    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (תמונה) | למד כיצד להשתמש ב-Phi-3.5 Vision לניתוח תמונות במחשב ה-AI שלך      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (וידאו)   | למד כיצד להשתמש ב-Phi-3.5 Vision לניתוח וידאו במחשב ה-AI שלך    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **משאבים**
 
@@ -105,4 +105,4 @@ if not out_dir.exists():
 2. מאגר GitHub של Intel OpenVINO [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי הבנות או פרשנויות שגויות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

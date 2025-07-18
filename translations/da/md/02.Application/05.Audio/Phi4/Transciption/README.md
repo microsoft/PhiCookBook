@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-05-09T20:06:17+00:00",
+  "translation_date": "2025-07-17T05:12:16+00:00",
   "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "da"
 }
 -->
-## **Udtrækning af lydtransskriptioner ved hjælp af Phi-4-multimodal**
+## **Udtrækning af lydtransskriptioner med Phi-4-multimodal**
 
-Phi-4-multimodal er en fuld-modal model, der kan bruge lyd ud over tekst og billeder. Lad os se, hvordan man bruger den.
+Phi-4-multimodal er en fuldmodal model, der kan bruge lyd ud over tekst og billeder. Lad os se, hvordan man bruger den.
 
 
 ```python
@@ -66,4 +66,4 @@ print(response)
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

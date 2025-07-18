@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-05-09T20:06:56+00:00",
+  "translation_date": "2025-07-17T05:12:57+00:00",
   "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "sw"
 }
 -->
-## **Kutoa maandishi ya sauti kwa kutumia Phi-4-multimodal**
+## **Kuchukua maandishi ya sauti kwa kutumia Phi-4-multimodal**
 
-Phi-4-multimodal ni mfano wa modal kamili unaoweza kutumia sauti pamoja na maandishi na picha. Hebu tuone jinsi ya kuutumia.  
+Phi-4-multimodal ni mfano wa modal kamili unaoweza kutumia sauti pamoja na maandishi na picha. Tuchunguze jinsi ya kuutumia. 
 
 
 ```python
@@ -65,5 +65,5 @@ print(response)
 
 ```
 
-**Kasi ya maelezo:**  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

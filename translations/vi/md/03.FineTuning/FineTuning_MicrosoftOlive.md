@@ -2,54 +2,54 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:53:21+00:00",
+  "translation_date": "2025-07-17T06:48:05+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "vi"
 }
 -->
 # **Tinh chỉnh Phi-3 với Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) là một công cụ tối ưu hóa mô hình nhận biết phần cứng dễ sử dụng, kết hợp các kỹ thuật hàng đầu trong ngành về nén mô hình, tối ưu hóa và biên dịch.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) là một công cụ tối ưu hóa mô hình nhận biết phần cứng dễ sử dụng, kết hợp các kỹ thuật hàng đầu trong ngành về nén, tối ưu và biên dịch mô hình.
 
 Nó được thiết kế để đơn giản hóa quá trình tối ưu hóa các mô hình học máy, đảm bảo tận dụng hiệu quả nhất các kiến trúc phần cứng cụ thể.
 
-Dù bạn làm việc trên các ứng dụng đám mây hay thiết bị biên, Olive giúp bạn tối ưu hóa mô hình một cách dễ dàng và hiệu quả.
+Dù bạn làm việc trên các ứng dụng đám mây hay thiết bị biên, Olive giúp bạn tối ưu mô hình một cách dễ dàng và hiệu quả.
 
-## Các tính năng chính:
-- Olive tổng hợp và tự động hóa các kỹ thuật tối ưu hóa cho các mục tiêu phần cứng mong muốn.
-- Không có một kỹ thuật tối ưu hóa nào phù hợp cho mọi trường hợp, nên Olive cho phép mở rộng bằng cách cho phép các chuyên gia trong ngành tích hợp các sáng tạo tối ưu hóa của họ.
+## Tính năng chính:
+- Olive tổng hợp và tự động hóa các kỹ thuật tối ưu cho các mục tiêu phần cứng mong muốn.
+- Không có một kỹ thuật tối ưu nào phù hợp cho mọi trường hợp, vì vậy Olive cho phép mở rộng bằng cách cho phép các chuyên gia trong ngành tích hợp các sáng tạo tối ưu của họ.
 
 ## Giảm công sức kỹ thuật:
-- Các nhà phát triển thường phải học và sử dụng nhiều bộ công cụ riêng biệt của các nhà cung cấp phần cứng để chuẩn bị và tối ưu mô hình đã huấn luyện cho triển khai.
-- Olive đơn giản hóa trải nghiệm này bằng cách tự động hóa các kỹ thuật tối ưu hóa cho phần cứng mong muốn.
+- Các nhà phát triển thường phải học và sử dụng nhiều bộ công cụ riêng biệt của các nhà cung cấp phần cứng để chuẩn bị và tối ưu mô hình đã huấn luyện trước khi triển khai.
+- Olive đơn giản hóa trải nghiệm này bằng cách tự động hóa các kỹ thuật tối ưu cho phần cứng mong muốn.
 
-## Giải pháp tối ưu hóa đầu-cuối sẵn sàng sử dụng:
+## Giải pháp tối ưu đầu-cuối sẵn sàng sử dụng:
 
 Bằng cách kết hợp và tinh chỉnh các kỹ thuật tích hợp, Olive cung cấp một giải pháp thống nhất cho tối ưu hóa đầu-cuối.
-Nó xem xét các giới hạn như độ chính xác và độ trễ trong khi tối ưu hóa mô hình.
+Nó cân nhắc các ràng buộc như độ chính xác và độ trễ trong quá trình tối ưu mô hình.
 
 ## Sử dụng Microsoft Olive để tinh chỉnh
 
-Microsoft Olive là một công cụ tối ưu hóa mô hình mã nguồn mở rất dễ sử dụng, có thể bao phủ cả tinh chỉnh và tham chiếu trong lĩnh vực trí tuệ nhân tạo tạo sinh. Chỉ cần cấu hình đơn giản, kết hợp với việc sử dụng các mô hình ngôn ngữ nhỏ mã nguồn mở và môi trường runtime liên quan (AzureML / GPU cục bộ, CPU, DirectML), bạn có thể hoàn thành việc tinh chỉnh hoặc tham chiếu mô hình thông qua tối ưu hóa tự động, và tìm ra mô hình tốt nhất để triển khai lên đám mây hoặc trên các thiết bị biên. Giúp doanh nghiệp xây dựng các mô hình ngành dọc riêng trên tại chỗ và trên đám mây.
+Microsoft Olive là một công cụ tối ưu hóa mô hình mã nguồn mở rất dễ sử dụng, có thể bao phủ cả tinh chỉnh và tham chiếu trong lĩnh vực trí tuệ nhân tạo sinh tạo. Chỉ cần cấu hình đơn giản, kết hợp với việc sử dụng các mô hình ngôn ngữ nhỏ mã nguồn mở và môi trường runtime liên quan (AzureML / GPU, CPU cục bộ, DirectML), bạn có thể hoàn thành việc tinh chỉnh hoặc tham chiếu mô hình thông qua tối ưu hóa tự động, và tìm ra mô hình tốt nhất để triển khai lên đám mây hoặc trên các thiết bị biên. Giúp doanh nghiệp xây dựng các mô hình chuyên ngành riêng của mình tại chỗ và trên đám mây.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.vi.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.vi.png)
 
 ## Tinh chỉnh Phi-3 với Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.vi.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.vi.png)
 
-## Ví dụ và mã mẫu Phi-3 Olive
-Trong ví dụ này bạn sẽ dùng Olive để:
+## Mã mẫu và ví dụ Phi-3 Olive
+Trong ví dụ này, bạn sẽ sử dụng Olive để:
 
-- Tinh chỉnh một bộ chuyển đổi LoRA để phân loại các cụm từ thành Sad, Joy, Fear, Surprise.
-- Hợp nhất trọng số bộ chuyển đổi vào mô hình cơ sở.
-- Tối ưu hóa và lượng tử hóa mô hình thành int4.
+- Tinh chỉnh một bộ điều chỉnh LoRA để phân loại các cụm từ thành Buồn, Vui, Sợ hãi, Ngạc nhiên.
+- Hợp nhất trọng số bộ điều chỉnh vào mô hình gốc.
+- Tối ưu và lượng tử hóa mô hình thành int4.
 
-[Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
+[Mã mẫu](../../code/03.Finetuning/olive-ort-example/README.md)
 
 ### Cài đặt Microsoft Olive
 
-Việc cài đặt Microsoft Olive rất đơn giản, và cũng có thể cài cho CPU, GPU, DirectML, và Azure ML
+Việc cài đặt Microsoft Olive rất đơn giản, có thể cài cho CPU, GPU, DirectML và Azure ML
 
 ```bash
 pip install olive-ai
@@ -67,13 +67,13 @@ Nếu bạn muốn chạy mô hình ONNX với GPU, bạn có thể dùng
 pip install olive-ai[gpu]
 ```
 
-Nếu bạn muốn dùng Azure ML, dùng
+Nếu bạn muốn sử dụng Azure ML, dùng
 
 ```python
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
-**Lưu ý**
+**Lưu ý**  
 Yêu cầu hệ điều hành: Ubuntu 20.04 / 22.04
 
 ### **Config.json của Microsoft Olive**
@@ -82,11 +82,11 @@ Sau khi cài đặt, bạn có thể cấu hình các thiết lập riêng cho t
 
 **1. Dữ liệu**
 
-Trên Microsoft Olive, có thể hỗ trợ huấn luyện trên dữ liệu cục bộ và dữ liệu đám mây, và có thể cấu hình trong phần thiết lập.
+Trên Microsoft Olive, có thể hỗ trợ huấn luyện với dữ liệu cục bộ và dữ liệu đám mây, có thể cấu hình trong phần cài đặt.
 
 *Cài đặt dữ liệu cục bộ*
 
-Bạn có thể đơn giản thiết lập bộ dữ liệu cần huấn luyện để tinh chỉnh, thường ở định dạng json, và điều chỉnh theo mẫu dữ liệu. Điều này cần được tùy chỉnh dựa trên yêu cầu của mô hình (ví dụ, điều chỉnh theo định dạng yêu cầu của Microsoft Phi-3-mini. Nếu bạn có các mô hình khác, vui lòng tham khảo định dạng tinh chỉnh cần thiết của các mô hình đó để xử lý)
+Bạn có thể dễ dàng thiết lập bộ dữ liệu cần huấn luyện để tinh chỉnh, thường ở định dạng json, và điều chỉnh theo mẫu dữ liệu. Việc này cần được điều chỉnh dựa trên yêu cầu của mô hình (ví dụ, điều chỉnh theo định dạng yêu cầu của Microsoft Phi-3-mini. Nếu bạn có các mô hình khác, vui lòng tham khảo định dạng tinh chỉnh cần thiết của các mô hình đó để xử lý)
 
 ```json
 
@@ -119,9 +119,9 @@ Bạn có thể đơn giản thiết lập bộ dữ liệu cần huấn luyện
     ],
 ```
 
-**Cài đặt nguồn dữ liệu đám mây**
+*Cài đặt nguồn dữ liệu đám mây*
 
-Bằng cách liên kết kho dữ liệu của Azure AI Studio/Azure Machine Learning Service để truy cập dữ liệu trên đám mây, bạn có thể chọn nhập các nguồn dữ liệu khác nhau vào Azure AI Studio/Azure Machine Learning Service thông qua Microsoft Fabric và Azure Data làm nguồn hỗ trợ cho việc tinh chỉnh dữ liệu.
+Bằng cách liên kết kho dữ liệu của Azure AI Studio/Azure Machine Learning Service để truy cập dữ liệu trên đám mây, bạn có thể chọn nhập các nguồn dữ liệu khác nhau vào Azure AI Studio/Azure Machine Learning Service thông qua Microsoft Fabric và Azure Data làm hỗ trợ cho việc tinh chỉnh dữ liệu.
 
 ```json
 
@@ -168,7 +168,7 @@ Bằng cách liên kết kho dữ liệu của Azure AI Studio/Azure Machine Lea
 
 **2. Cấu hình tính toán**
 
-Nếu cần chạy cục bộ, bạn có thể dùng trực tiếp tài nguyên dữ liệu cục bộ. Nếu cần dùng tài nguyên của Azure AI Studio / Azure Machine Learning Service, bạn cần cấu hình các tham số Azure liên quan, tên máy tính, v.v.
+Nếu bạn cần chạy cục bộ, có thể sử dụng trực tiếp tài nguyên dữ liệu cục bộ. Nếu cần dùng tài nguyên của Azure AI Studio / Azure Machine Learning Service, bạn cần cấu hình các tham số Azure liên quan, tên tài nguyên tính toán, v.v.
 
 ```json
 
@@ -201,7 +201,7 @@ Nếu cần chạy cục bộ, bạn có thể dùng trực tiếp tài nguyên 
 
 ***Lưu ý***
 
-Do chạy qua container trên Azure AI Studio/Azure Machine Learning Service, môi trường cần thiết phải được cấu hình. Việc này được cấu hình trong conda.yaml.
+Vì chạy qua container trên Azure AI Studio/Azure Machine Learning Service, môi trường cần thiết phải được cấu hình. Việc này được cấu hình trong file conda.yaml.
 
 ```yaml
 
@@ -236,9 +236,9 @@ dependencies:
 
 **3. Chọn SLM của bạn**
 
-Bạn có thể dùng mô hình trực tiếp từ Hugging face, hoặc kết hợp trực tiếp với Model Catalog của Azure AI Studio / Azure Machine Learning để chọn mô hình sử dụng. Trong ví dụ mã dưới đây, chúng tôi dùng Microsoft Phi-3-mini làm ví dụ.
+Bạn có thể sử dụng mô hình trực tiếp từ Hugging Face, hoặc kết hợp trực tiếp với Model Catalog của Azure AI Studio / Azure Machine Learning để chọn mô hình sử dụng. Trong ví dụ mã dưới đây, chúng ta sẽ dùng Microsoft Phi-3-mini làm ví dụ.
 
-Nếu bạn có mô hình cục bộ, bạn có thể dùng cách này
+Nếu bạn có mô hình cục bộ, có thể dùng cách này
 
 ```json
 
@@ -256,7 +256,7 @@ Nếu bạn có mô hình cục bộ, bạn có thể dùng cách này
     },
 ```
 
-Nếu bạn muốn dùng mô hình từ Azure AI Studio / Azure Machine Learning Service, bạn có thể dùng cách này
+Nếu bạn muốn dùng mô hình từ Azure AI Studio / Azure Machine Learning Service, có thể dùng cách này
 
 ```json
 
@@ -283,16 +283,16 @@ Nếu bạn muốn dùng mô hình từ Azure AI Studio / Azure Machine Learning
     },
 ```
 
-**Lưu ý:**
-Cần tích hợp với Azure AI Studio / Azure Machine Learning Service, nên khi thiết lập mô hình, vui lòng tham khảo số phiên bản và các tên liên quan.
+**Lưu ý:**  
+Chúng ta cần tích hợp với Azure AI Studio / Azure Machine Learning Service, nên khi thiết lập mô hình, vui lòng tham khảo số phiên bản và tên liên quan.
 
-Tất cả mô hình trên Azure cần được đặt thành PyTorch.MLflow
+Tất cả mô hình trên Azure cần được đặt ở dạng PyTorch.MLflow
 
-Bạn cần có tài khoản Hugging face và liên kết key với giá trị Key của Azure AI Studio / Azure Machine Learning
+Bạn cần có tài khoản Hugging Face và liên kết khóa với giá trị Key của Azure AI Studio / Azure Machine Learning
 
 **4. Thuật toán**
 
-Microsoft Olive bao bọc rất tốt các thuật toán tinh chỉnh Lora và QLora. Bạn chỉ cần cấu hình một số tham số liên quan. Ở đây tôi lấy QLora làm ví dụ.
+Microsoft Olive đóng gói rất tốt các thuật toán tinh chỉnh Lora và QLora. Bạn chỉ cần cấu hình một số tham số liên quan. Ở đây tôi lấy QLora làm ví dụ.
 
 ```json
         "lora": {
@@ -329,10 +329,10 @@ Microsoft Olive bao bọc rất tốt các thuật toán tinh chỉnh Lora và Q
         },
 ```
 
-Nếu bạn muốn chuyển đổi lượng tử hóa, nhánh chính của Microsoft Olive đã hỗ trợ phương pháp onnxruntime-genai. Bạn có thể cấu hình theo nhu cầu:
+Nếu bạn muốn chuyển đổi lượng tử hóa, nhánh chính của Microsoft Olive đã hỗ trợ phương pháp onnxruntime-genai. Bạn có thể thiết lập theo nhu cầu:
 
-1. hợp nhất trọng số adapter vào mô hình cơ sở
-2. chuyển đổi mô hình sang mô hình onnx với độ chính xác yêu cầu bởi ModelBuilder
+1. Hợp nhất trọng số adapter vào mô hình gốc  
+2. Chuyển mô hình sang onnx với độ chính xác yêu cầu bằng ModelBuilder
 
 ví dụ như chuyển sang lượng tử hóa INT4
 
@@ -350,9 +350,8 @@ ví dụ như chuyển sang lượng tử hóa INT4
 ```
 
 **Lưu ý**  
-- Nếu bạn dùng QLoRA, hiện tại không hỗ trợ chuyển đổi lượng tử hóa của ONNXRuntime-genai.
-
-- Cần lưu ý rằng bạn có thể thiết lập các bước trên theo nhu cầu của mình. Không nhất thiết phải cấu hình đầy đủ các bước trên. Tùy theo nhu cầu, bạn có thể dùng trực tiếp các bước của thuật toán mà không cần tinh chỉnh. Cuối cùng bạn cần cấu hình các engine liên quan.
+- Nếu bạn dùng QLoRA, hiện tại chưa hỗ trợ chuyển đổi lượng tử hóa của ONNXRuntime-genai.  
+- Cần lưu ý rằng bạn có thể thiết lập các bước trên theo nhu cầu riêng. Không nhất thiết phải cấu hình đầy đủ tất cả các bước trên. Tùy theo nhu cầu, bạn có thể dùng trực tiếp các bước thuật toán mà không cần tinh chỉnh. Cuối cùng bạn cần cấu hình các engine liên quan.
 
 ```json
 
@@ -369,11 +368,11 @@ ví dụ như chuyển sang lượng tử hóa INT4
 
 **5. Hoàn thành tinh chỉnh**
 
-Trên dòng lệnh, chạy trong thư mục chứa olive-config.json
+Trên dòng lệnh, thực thi trong thư mục chứa olive-config.json
 
 ```bash
 olive run --config olive-config.json  
 ```
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn chính xác và có thẩm quyền. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

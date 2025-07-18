@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-09T19:29:46+00:00",
+  "translation_date": "2025-07-17T04:51:45+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "en"
 }
@@ -17,7 +17,7 @@ The code above automates this process by:
 2. Creating a prompt that instructs the model to generate the required Python code.  
 3. Sending the prompt to the model and collecting the generated code.  
 4. Extracting and running the generated code.  
-5. Displaying the original and processed images.
+5. Displaying the original and processed images.  
 
 This approach leverages the power of AI to automate image processing tasks, making it easier and faster to achieve your goals. 
 

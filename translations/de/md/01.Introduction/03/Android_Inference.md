@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-05-07T10:43:55+00:00",
+  "translation_date": "2025-07-16T20:10:41+00:00",
   "source_file": "md/01.Introduction/03/Android_Inference.md",
   "language_code": "de"
 }
@@ -19,15 +19,15 @@ Lassen Sie uns erkunden, wie Sie Inferenz mit Phi-3-mini auf Android-Geräten du
 
 Sie können es mit dem Hugging Face Connector in Semantic Kernel kombinieren. Siehe dazu diesen [Beispielcode](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
 
-Standardmäßig entspricht es der Modell-ID auf Hugging Face. Sie können jedoch auch eine lokal erstellte Phi-3-mini-Modellinstanz anbinden.
+Standardmäßig entspricht dies der Modell-ID auf Hugging Face. Sie können jedoch auch eine lokal erstellte Phi-3-mini-Modellinstanz anbinden.
 
 ### Aufruf quantisierter Modelle mit Ollama oder LlamaEdge
 
-Viele Nutzer bevorzugen quantisierte Modelle, um Modelle lokal auszuführen. [Ollama](https://ollama.com/) und [LlamaEdge](https://llamaedge.com) ermöglichen es einzelnen Anwendern, verschiedene quantisierte Modelle zu verwenden:
+Viele Nutzer bevorzugen quantisierte Modelle, um Modelle lokal auszuführen. [Ollama](https://ollama.com/) und [LlamaEdge](https://llamaedge.com) ermöglichen es einzelnen Anwendern, verschiedene quantisierte Modelle aufzurufen:
 
 #### Ollama
 
-Sie können `ollama run Phi-3` direkt ausführen oder es offline konfigurieren, indem Sie eine `Modelfile` mit dem Pfad zu Ihrer `.gguf`-Datei erstellen.
+Sie können direkt `ollama run Phi-3` ausführen oder es offline konfigurieren, indem Sie eine `Modelfile` mit dem Pfad zu Ihrer `.gguf`-Datei erstellen.
 
 ```gguf
 FROM {Add your gguf file path}
@@ -40,15 +40,15 @@ PARAMETER num_ctx 4096
 
 #### LlamaEdge
 
-Wenn Sie `.gguf`-Dateien gleichzeitig in der Cloud und auf Edge-Geräten nutzen möchten, ist LlamaEdge eine ausgezeichnete Wahl. Sie können diesen [Beispielcode](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) zur Orientierung verwenden.
+Wenn Sie `.gguf`-Dateien gleichzeitig in der Cloud und auf Edge-Geräten verwenden möchten, ist LlamaEdge eine ausgezeichnete Wahl. Sie können sich an diesem [Beispielcode](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) orientieren, um loszulegen.
 
-### Installation und Ausführung auf Android-Handys
+### Installation und Ausführung auf Android-Smartphones
 
-1. **Laden Sie die MLC Chat App** (kostenlos) für Android herunter.  
+1. **Laden Sie die MLC Chat App** (kostenlos) für Android-Smartphones herunter.  
 2. Laden Sie die APK-Datei (148MB) herunter und installieren Sie sie auf Ihrem Gerät.  
-3. Starten Sie die MLC Chat App. Dort sehen Sie eine Liste von KI-Modellen, darunter Phi-3-mini.
+3. Starten Sie die MLC Chat App. Sie sehen eine Liste von KI-Modellen, darunter Phi-3-mini.
 
-Zusammenfassend eröffnet Phi-3-mini spannende Möglichkeiten für generative KI auf Edge-Geräten, und Sie können seine Funktionen auf Android erkunden.
+Zusammenfassend eröffnet Phi-3-mini spannende Möglichkeiten für generative KI auf Edge-Geräten, und Sie können seine Funktionen jetzt auf Android erkunden.
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

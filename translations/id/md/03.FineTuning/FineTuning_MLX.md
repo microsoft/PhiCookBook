@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:44:16+00:00",
+  "translation_date": "2025-07-17T08:01:49+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "id"
 }
 -->
 # **Fine-tuning Phi-3 dengan Apple MLX Framework**
 
-Kita dapat menyelesaikan Fine-tuning yang dikombinasikan dengan Lora melalui command line Apple MLX framework. (Jika ingin tahu lebih lanjut tentang cara kerja MLX Framework, silakan baca [Inference Phi-3 dengan Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+Kita dapat menyelesaikan Fine-tuning yang dikombinasikan dengan Lora melalui command line Apple MLX framework. (Jika Anda ingin tahu lebih banyak tentang cara kerja MLX Framework, silakan baca [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
 
 ## **1. Persiapan Data**
 
-Secara default, MLX Framework membutuhkan format jsonl untuk train, test, dan eval, serta dikombinasikan dengan Lora untuk menyelesaikan pekerjaan fine-tuning.
+Secara default, MLX Framework membutuhkan format jsonl untuk train, test, dan eval, dan dikombinasikan dengan Lora untuk menyelesaikan pekerjaan fine-tuning.
 
 
-### ***Note:***
+### ***Catatan:***
 
-1. format data jsonl ：
+1. Format data jsonl ：
 
 
 ```json
@@ -31,11 +31,11 @@ Secara default, MLX Framework membutuhkan format jsonl untuk train, test, dan ev
 
 ```
 
-2. Contoh kami menggunakan [data TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), namun jumlah datanya relatif kurang, sehingga hasil fine-tuning belum tentu terbaik. Disarankan para pembelajar menggunakan data yang lebih baik sesuai skenario masing-masing untuk menyelesaikan.
+2. Contoh kami menggunakan [data TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), namun jumlah datanya relatif kurang, sehingga hasil fine-tuning tidak selalu optimal. Disarankan agar pembelajar menggunakan data yang lebih baik sesuai dengan skenario masing-masing untuk menyelesaikan.
 
 3. Format data dikombinasikan dengan template Phi-3
 
-Silakan unduh data dari [link ini](../../../../code/04.Finetuning/mlx), pastikan semua .jsonl dalam folder ***data*** sudah termasuk
+Silakan unduh data dari [tautan ini](../../../../code/04.Finetuning/mlx), pastikan semua file .jsonl ada di folder ***data***
 
 
 ## **2. Fine-tuning di terminal Anda**
@@ -50,7 +50,7 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 ```
 
 
-## ***Note:***
+## ***Catatan:***
 
 1. Ini adalah fine-tuning LoRA, MLX framework belum merilis QLoRA
 
@@ -169,7 +169,7 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ## **5. Menjalankan model fine-tuning terkuantisasi menggunakan ollama**
 
-Sebelum digunakan, silakan konfigurasi lingkungan llama.cpp Anda
+Sebelum digunakan, silakan konfigurasikan lingkungan llama.cpp Anda
 
 
 ```bash
@@ -184,13 +184,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:*** 
+***Catatan:*** 
 
 1. Sekarang mendukung konversi kuantisasi fp32, fp16, dan INT 8
 
 2. Model yang digabungkan tidak menyertakan tokenizer.model, silakan unduh dari https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-atur [Ollama Model](https://ollama.com/)
+setel [Ollma Model](https://ollama.com/)
 
 
 ```txt
@@ -214,4 +214,4 @@ jalankan perintah di terminal
 Selamat! Kuasai fine-tuning dengan MLX Framework
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

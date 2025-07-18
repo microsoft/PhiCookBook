@@ -2,18 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:43:53+00:00",
+  "translation_date": "2025-07-17T08:01:14+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "nl"
 }
 -->
 # **Fine-tunen van Phi-3 met Apple MLX Framework**
 
-We kunnen fine-tunen in combinatie met Lora uitvoeren via de commandoregel van het Apple MLX Framework. (Wil je meer weten over de werking van het MLX Framework, lees dan [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+We kunnen fine-tunen in combinatie met Lora voltooien via de Apple MLX framework commandoregel. (Als je meer wilt weten over de werking van het MLX Framework, lees dan [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
-## **1. Gegevensvoorbereiding**
 
-Standaard vereist het MLX Framework dat de train-, test- en eval-bestanden in jsonl-formaat zijn, en wordt gecombineerd met Lora om fine-tuning taken uit te voeren.
+## **1. Voorbereiding van data**
+
+Standaard vereist het MLX Framework het jsonl-formaat voor train, test en eval, en wordt gecombineerd met Lora om fine-tuning taken uit te voeren.
+
 
 ### ***Note:***
 
@@ -29,15 +31,16 @@ Standaard vereist het MLX Framework dat de train-, test- en eval-bestanden in js
 
 ```
 
-2. In ons voorbeeld gebruiken we de [data van TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), maar de hoeveelheid data is relatief beperkt, dus zijn de fine-tuning resultaten niet per se optimaal. Het wordt aanbevolen dat gebruikers betere data gebruiken die passen bij hun eigen scenario’s.
+2. Ons voorbeeld gebruikt [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), maar de hoeveelheid data is relatief beperkt, dus de fine-tuning resultaten zijn niet per se optimaal. Het wordt aanbevolen dat gebruikers betere data gebruiken op basis van hun eigen scenario’s om fine-tuning te voltooien.
 
 3. Het dataformaat is gecombineerd met de Phi-3 template
 
-Download de data via deze [link](../../../../code/04.Finetuning/mlx), zorg ervoor dat je alle .jsonl bestanden in de ***data*** map meeneemt.
+Download de data via deze [link](../../../../code/04.Finetuning/mlx), zorg dat je alle .jsonl bestanden in de ***data*** map hebt
+
 
 ## **2. Fine-tunen in je terminal**
 
-Voer dit commando uit in de terminal:
+Voer dit commando uit in de terminal
 
 
 ```bash
@@ -122,7 +125,7 @@ lora_parameters:
 
 ```
 
-Voer dit commando uit in de terminal:
+Voer dit commando uit in de terminal
 
 
 ```bash
@@ -134,7 +137,7 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ## **3. Fine-tuning adapter testen**
 
-Je kunt de fine-tuning adapter in de terminal draaien, bijvoorbeeld zo:
+Je kunt de fine-tuning adapter in de terminal draaien, bijvoorbeeld zo 
 
 
 ```bash
@@ -143,7 +146,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-en het originele model draaien om de resultaten te vergelijken
+en het originele model draaien om de resultaten te vergelijken 
 
 
 ```bash
@@ -152,7 +155,8 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Je kunt proberen de resultaten van de fine-tuning te vergelijken met die van het originele model.
+Je kunt proberen de resultaten van fine-tuning te vergelijken met het originele model
+
 
 ## **4. Adapters samenvoegen om nieuwe modellen te genereren**
 
@@ -163,7 +167,7 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Kwantitatieve fine-tuning modellen draaien met ollama**
+## **5. Gequantificeerde fine-tuning modellen draaien met ollama**
 
 Configureer eerst je llama.cpp omgeving
 
@@ -180,13 +184,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:***
+***Note:*** 
 
-1. Ondersteunt nu quantization conversie van fp32, fp16 en INT8
+1. Ondersteunt nu quantisatieconversie van fp32, fp16 en INT 8
 
-2. Het samengevoegde model mist tokenizer.model, download dit via https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Het samengevoegde model mist tokenizer.model, download deze via https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-Stel een [Ollama Model](https://ollama.com/) in
+stel een [Ollma Model](https://ollama.com/) in
 
 
 ```txt
@@ -196,7 +200,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Voer het commando uit in de terminal
+voer het commando uit in de terminal
 
 
 ```bash
@@ -207,7 +211,7 @@ Voer het commando uit in de terminal
 
 ```
 
-Gefeliciteerd! Je beheerst fine-tunen met het MLX Framework
+Gefeliciteerd! Je beheerst fine-tuning met het MLX Framework
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal geldt als de gezaghebbende bron. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

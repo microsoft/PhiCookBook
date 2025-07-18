@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-09T11:15:11+00:00",
+  "translation_date": "2025-07-16T20:32:26+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "th"
 }
 -->
 # การรัน Phi-3 และ Phi-4 บน iOS ด้วย Apple MLX Framework
 
-บทแนะนำนี้จะแสดงวิธีสร้างแอป iOS ที่รันโมเดล Phi-3 หรือ Phi-4 บนอุปกรณ์โดยตรง โดยใช้ Apple MLX framework [MLX](https://opensource.apple.com/projects/mlx/) คือเฟรมเวิร์ก machine learning ของ Apple ที่ออกแบบมาเพื่อให้เหมาะกับชิป Apple Silicon
+บทแนะนำนี้จะแสดงวิธีสร้างแอป iOS ที่รันโมเดล Phi-3 หรือ Phi-4 บนอุปกรณ์โดยตรง โดยใช้ Apple MLX framework [MLX](https://opensource.apple.com/projects/mlx/) คือเฟรมเวิร์กแมชชีนเลิร์นนิงของ Apple ที่ปรับแต่งมาเพื่อชิป Apple Silicon
 
-## สิ่งที่ต้องมี
+## สิ่งที่ต้องเตรียม
 
 - macOS พร้อม Xcode 16 (หรือสูงกว่า)
-- อุปกรณ์เป้าหมาย iOS 18 (หรือสูงกว่า) ที่มี RAM อย่างน้อย 8GB (iPhone หรือ iPad ที่รองรับความต้องการ Apple Intelligence ซึ่งจะคล้ายกับความต้องการของโมเดล Phi ที่ถูกควอนไทซ์)
+- อุปกรณ์เป้าหมาย iOS 18 (หรือสูงกว่า) ที่มี RAM อย่างน้อย 8GB (iPhone หรือ iPad ที่รองรับข้อกำหนด Apple Intelligence ซึ่งจะใกล้เคียงกับข้อกำหนดของ Phi ที่ถูกควอนไทซ์)
 - ความรู้พื้นฐานเกี่ยวกับ Swift และ SwiftUI
 
 ## ขั้นตอนที่ 1: สร้างโปรเจกต์ iOS ใหม่
@@ -22,27 +22,27 @@ CO_OP_TRANSLATOR_METADATA:
 เริ่มต้นด้วยการสร้างโปรเจกต์ iOS ใหม่ใน Xcode:
 
 1. เปิด Xcode แล้วเลือก "Create a new Xcode project"
-2. เลือก "App" เป็นเทมเพลต
+2. เลือกเทมเพลตเป็น "App"
 3. ตั้งชื่อโปรเจกต์ของคุณ (เช่น "Phi3-iOS-App") และเลือก SwiftUI เป็นอินเทอร์เฟซ
-4. เลือกตำแหน่งที่จะบันทึกโปรเจกต์
+4. เลือกที่เก็บโปรเจกต์
 
 ## ขั้นตอนที่ 2: เพิ่ม Dependencies ที่จำเป็น
 
-เพิ่ม [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples) ซึ่งมี dependencies และ helpers ที่จำเป็นสำหรับการโหลดโมเดลล่วงหน้าและการทำ inference:
+เพิ่ม [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples) ซึ่งมี dependencies และตัวช่วยทั้งหมดสำหรับการโหลดโมเดลล่วงหน้าและการทำ inference:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-แม้ว่า [MLX Swift package](https://github.com/ml-explore/mlx-swift) จะเพียงพอสำหรับการทำ tensor operations และฟังก์ชันพื้นฐานของ ML แต่ MLX Examples package จะมีคอมโพเนนต์เพิ่มเติมที่ออกแบบมาเพื่อการทำงานกับ language models และช่วยให้งาน inference ง่ายขึ้น:
+แม้ว่า [MLX Swift package](https://github.com/ml-explore/mlx-swift) จะเพียงพอสำหรับการทำงาน tensor พื้นฐานและฟังก์ชัน ML เบื้องต้น แต่ MLX Examples package จะมีส่วนประกอบเพิ่มเติมที่ออกแบบมาเพื่อทำงานกับโมเดลภาษา และช่วยให้งาน inference ง่ายขึ้น:
 
-- เครื่องมือช่วยโหลดโมเดลที่จัดการการดาวน์โหลดจาก Hugging Face
-- การผนวกรวม tokenizer
-- helpers สำหรับการสร้างข้อความ
-- คอนฟิกโมเดลที่ตั้งค่าไว้ล่วงหน้า
+- เครื่องมือโหลดโมเดลที่จัดการการดาวน์โหลดจาก Hugging Face
+- การผนวก tokenizer
+- ตัวช่วยสำหรับการสร้างข้อความ
+- การกำหนดโมเดลที่ตั้งค่าล่วงหน้า
 
-## ขั้นตอนที่ 3: ตั้งค่า Entitlements
+## ขั้นตอนที่ 3: กำหนด Entitlements
 
 เพื่อให้แอปของเราสามารถดาวน์โหลดโมเดลและจัดสรรหน่วยความจำได้เพียงพอ เราต้องเพิ่ม entitlements เฉพาะ สร้างไฟล์ `.entitlements` สำหรับแอปของคุณโดยมีเนื้อหาดังนี้:
 
@@ -63,11 +63,11 @@ CO_OP_TRANSLATOR_METADATA:
 </plist>
 ```
 
-> **Note:** entitlement `com.apple.developer.kernel.increased-memory-limit` มีความสำคัญสำหรับการรันโมเดลขนาดใหญ่ เพราะช่วยให้แอปขอหน่วยความจำมากกว่าปกติได้
+> **Note:** entitlement `com.apple.developer.kernel.increased-memory-limit` มีความสำคัญสำหรับการรันโมเดลขนาดใหญ่ เพราะช่วยให้แอปขอหน่วยความจำได้มากกว่าปกติ
 
 ## ขั้นตอนที่ 4: สร้างโมเดลข้อความแชท
 
-เริ่มจากสร้างโครงสร้างพื้นฐานเพื่อแทนข้อความแชทของเรา:
+เริ่มด้วยการสร้างโครงสร้างพื้นฐานเพื่อแทนข้อความแชทของเรา:
 
 ```swift
 import SwiftUI
@@ -87,7 +87,7 @@ struct ChatMessage: Identifiable {
 
 ## ขั้นตอนที่ 5: เขียน ViewModel
 
-ถัดไป เราจะสร้างคลาส `PhiViewModel` ที่จัดการการโหลดโมเดลและการทำ inference:
+ต่อไปเราจะสร้างคลาส `PhiViewModel` ที่จัดการการโหลดโมเดลและการทำ inference:
 
 ```swift
 import MLX
@@ -248,23 +248,23 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-ViewModel นี้แสดงจุดสำคัญของการผนวกรวม MLX:
+ViewModel นี้แสดงจุดเชื่อมต่อสำคัญของ MLX:
 
-- การตั้งค่าขีดจำกัดแคช GPU ด้วย `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- กำหนดขีดจำกัดแคช GPU ด้วย `MLX.GPU.set(cacheLimit:)` เพื่อเพิ่มประสิทธิภาพการใช้หน่วยความจำบนอุปกรณ์มือถือ
+- ใช้ `LLMModelFactory` เพื่อดาวน์โหลดโมเดลตามความต้องการและเริ่มต้นโมเดลที่ปรับแต่งด้วย MLX
+- เข้าถึงพารามิเตอร์และโครงสร้างของโมเดลผ่าน `ModelContainer`
+- ใช้การสร้างข้อความทีละโทเค็นของ MLX ผ่านเมธอด `MLXLMCommon.generate`
+- จัดการกระบวนการ inference ด้วยการตั้งค่า temperature และขีดจำกัดโทเค็นที่เหมาะสม
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+การสร้างโทเค็นแบบสตรีมมิ่งช่วยให้ผู้ใช้ได้รับผลลัพธ์ทันทีขณะที่โมเดลกำลังสร้างข้อความ ซึ่งคล้ายกับโมเดลที่รันบนเซิร์ฟเวอร์ที่ส่งโทเค็นกลับมาแบบสตรีม แต่ไม่มีความหน่วงของการร้องขอผ่านเครือข่าย
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+ในแง่ของการโต้ตอบ UI ฟังก์ชันสำคัญสองอย่างคือ `loadModel()` ที่เริ่มต้น LLM และ `fetchAIResponse()` ที่ประมวลผลอินพุตของผู้ใช้และสร้างคำตอบจาก AI
 
-### Model format considerations
+### ข้อควรพิจารณาเกี่ยวกับรูปแบบโมเดล
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Important:** โมเดล Phi สำหรับ MLX ไม่สามารถใช้ในรูปแบบเริ่มต้นหรือ GGUF ได้ ต้องแปลงเป็นรูปแบบ MLX ซึ่งชุมชน MLX จะดูแลการแปลงนี้ คุณสามารถหาโมเดลที่แปลงแล้วได้ที่ [huggingface.co/mlx-community](https://huggingface.co/mlx-community)
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit` ซึ่งอ้างอิงโมเดล MLX ที่ถูกแปลงไว้ล่วงหน้าตัวหนึ่งที่จะถูกดาวน์โหลดโดยอัตโนมัติ:
+MLX Examples package มีการลงทะเบียนโมเดลที่ตั้งค่าล่วงหน้าหลายตัว รวมถึง Phi-3 เมื่อคุณเรียก `ModelRegistry.phi3_5_4bit` จะอ้างอิงโมเดล MLX ที่แปลงไว้ล่วงหน้าและดาวน์โหลดโดยอัตโนมัติ:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-คุณสามารถสร้างคอนฟิกโมเดลของตัวเองเพื่อชี้ไปยังโมเดลที่เข้ากันได้บน Hugging Face ได้ เช่น หากต้องการใช้ Phi-4 mini แทน ก็สามารถกำหนดคอนฟิกของตัวเองได้ดังนี้:
+คุณสามารถสร้างการกำหนดค่าโมเดลของตัวเองเพื่อชี้ไปยังโมเดลที่เข้ากันได้บน Hugging Face ได้ เช่น หากต้องการใช้ Phi-4 mini แทน คุณสามารถกำหนดการตั้งค่าของคุณเองได้ดังนี้:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Note:** การรองรับ Phi-4 ถูกเพิ่มเข้ามาใน MLX Swift Examples repository ปลายเดือนกุมภาพันธ์ 2025 (ใน [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)) ณ เดือนมีนาคม 2025 รุ่นล่าสุดที่ออกอย่างเป็นทางการ (2.21.2 จากธันวาคม 2024) ยังไม่มีการรองรับ Phi-4 แบบ built-in หากต้องการใช้โมเดล Phi-4 คุณต้องอ้างอิงแพ็กเกจโดยตรงจาก main branch:
+> **Note:** การรองรับ Phi-4 ถูกเพิ่มเข้ามาใน MLX Swift Examples repository ปลายเดือนกุมภาพันธ์ 2025 (ใน [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)) ปัจจุบัน ณ มีนาคม 2025 รุ่นทางการล่าสุด (2.21.2 จากธันวาคม 2024) ยังไม่มีการรองรับ Phi-4 ในตัว หากต้องการใช้โมเดล Phi-4 คุณต้องอ้างอิงแพ็กเกจโดยตรงจาก main branch:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-วิธีนี้จะช่วยให้คุณเข้าถึงคอนฟิกโมเดลล่าสุด รวมถึง Phi-4 ก่อนที่จะถูกรวมใน release อย่างเป็นทางการ คุณสามารถใช้วิธีนี้เพื่อใช้งานเวอร์ชันต่าง ๆ ของโมเดล Phi หรือโมเดลอื่น ๆ ที่ถูกแปลงเป็นฟอร์แมต MLX
+วิธีนี้ช่วยให้คุณเข้าถึงการกำหนดค่าโมเดลล่าสุด รวมถึง Phi-4 ก่อนที่จะถูกรวมในรุ่นทางการ คุณสามารถใช้วิธีนี้เพื่อใช้เวอร์ชันต่าง ๆ ของโมเดล Phi หรือแม้แต่โมเดลอื่น ๆ ที่ถูกแปลงเป็นรูปแบบ MLX
 
 ## ขั้นตอนที่ 6: สร้าง UI
 
-ตอนนี้มาสร้างอินเทอร์เฟซแชทง่าย ๆ เพื่อโต้ตอบกับ view model ของเรากัน:
+ตอนนี้เราจะสร้างอินเทอร์เฟซแชทง่าย ๆ เพื่อโต้ตอบกับ view model ของเรา:
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-UI ประกอบด้วยสามส่วนหลักที่ทำงานร่วมกันเพื่อสร้างอินเทอร์เฟซแชทพื้นฐาน `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` มีตัวบ่งชี้แบบเคลื่อนไหวง่าย ๆ เพื่อแสดงว่า AI กำลังประมวลผล
+UI ประกอบด้วยส่วนประกอบหลักสามส่วนที่ทำงานร่วมกันเพื่อสร้างอินเทอร์เฟซแชทพื้นฐาน `ContentView` สร้างอินเทอร์เฟซสองสถานะที่แสดงปุ่มโหลดโมเดลหรืออินเทอร์เฟซแชทขึ้นอยู่กับความพร้อมของโมเดล `MessageView` แสดงข้อความแชทแต่ละข้อความแตกต่างกันตามว่าเป็นข้อความของผู้ใช้ (ชิดขวา พื้นหลังสีน้ำเงิน) หรือคำตอบจากโมเดล Phi (ชิดซ้าย พื้นหลังสีเทา) ส่วน `TypingIndicatorView` แสดงตัวบ่งชี้แบบเคลื่อนไหวง่าย ๆ เพื่อแสดงว่า AI กำลังประมวลผล
 
 ## ขั้นตอนที่ 7: สร้างและรันแอป
 
 ตอนนี้เราพร้อมที่จะสร้างและรันแอปแล้ว
 
-> **Important!** MLX ไม่รองรับ simulator คุณต้องรันแอปบนอุปกรณ์จริงที่ใช้ชิป Apple Silicon ดูรายละเอียดเพิ่มเติมได้ที่ [นี่](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS)
+> **Important!** MLX ไม่รองรับการรันบน simulator คุณต้องรันแอปบนอุปกรณ์จริงที่ใช้ชิป Apple Silicon ดูข้อมูลเพิ่มเติมได้ที่ [นี่](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS)
 
-เมื่อแอปรันขึ้นมา ให้แตะปุ่ม "Load model" เพื่อดาวน์โหลดและเริ่มต้นโมเดล Phi-3 (หรือ Phi-4 ตามคอนฟิกของคุณ) กระบวนการนี้อาจใช้เวลาขึ้นอยู่กับความเร็วอินเทอร์เน็ต เพราะต้องดาวน์โหลดโมเดลจาก Hugging Face การใช้งานของเรามีเพียง spinner เพื่อแสดงสถานะการโหลด แต่คุณสามารถดูความคืบหน้าในคอนโซลของ Xcode ได้
+เมื่อแอปรันขึ้นมา ให้แตะปุ่ม "Load model" เพื่อดาวน์โหลดและเริ่มต้นโมเดล Phi-3 (หรือ Phi-4 ตามการตั้งค่าของคุณ) กระบวนการนี้อาจใช้เวลาขึ้นอยู่กับความเร็วอินเทอร์เน็ต เพราะต้องดาวน์โหลดโมเดลจาก Hugging Face การใช้งานของเราจะแสดงเพียงสปินเนอร์ระหว่างโหลด แต่คุณสามารถดูความคืบหน้าได้ในคอนโซลของ Xcode
 
-เมื่อโหลดเสร็จ คุณก็สามารถโต้ตอบกับโมเดลโดยพิมพ์คำถามในช่องข้อความแล้วกดปุ่มส่งได้เลย
+เมื่อโหลดเสร็จแล้ว คุณสามารถโต้ตอบกับโมเดลได้โดยพิมพ์คำถามในช่องข้อความและกดปุ่มส่ง
 
-นี่คือลักษณะการทำงานของแอปบน iPad Air M1:
+นี่คือลักษณะการทำงานของแอปเรา ขณะรันบน iPad Air M1:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
 ## สรุป
 
-แค่นี้แหละ! โดยทำตามขั้นตอนเหล่านี้ คุณก็ได้สร้างแอป iOS ที่รันโมเดล Phi-3 (หรือ Phi-4) บนอุปกรณ์โดยตรงด้วย Apple MLX framework
+เท่านี้ก็เสร็จเรียบร้อย! โดยทำตามขั้นตอนเหล่านี้ คุณได้สร้างแอป iOS ที่รันโมเดล Phi-3 (หรือ Phi-4) บนอุปกรณ์โดยตรงโดยใช้ Apple MLX framework
 
 ขอแสดงความยินดี!
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อน เอกสารต้นฉบับในภาษาดั้งเดิมถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ควรใช้บริการแปลโดยมนุษย์ผู้เชี่ยวชาญ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใด ๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:49:05+00:00",
+  "translation_date": "2025-07-17T02:53:00+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "sv"
 }
@@ -13,9 +13,9 @@ Detta är ett Android-exempel som använder Microsoft Phi-3.5 tflite-modeller.
 
 ## **📚 Kunskap**
 
-Android LLM Inference API låter dig köra stora språkmodeller (LLMs) helt på enheten för Android-appar, vilket du kan använda för att utföra en mängd olika uppgifter, såsom att generera text, hämta information i naturligt språk och sammanfatta dokument. Uppgiften har inbyggt stöd för flera text-till-text stora språkmodeller, så att du kan använda de senaste generativa AI-modellerna direkt på enheten i dina Android-appar.
+Android LLM Inference API låter dig köra stora språkmodeller (LLMs) helt på enheten för Android-appar, vilket du kan använda för att utföra en mängd olika uppgifter, som att generera text, hämta information i naturligt språk och sammanfatta dokument. Uppgiften har inbyggt stöd för flera text-till-text stora språkmodeller, så att du kan använda de senaste generativa AI-modellerna direkt på enheten i dina Android-appar.
 
-Googld AI Edge Torch är ett pythonbibliotek som stöder konvertering av PyTorch-modeller till .tflite-format, vilket sedan kan köras med TensorFlow Lite och MediaPipe. Detta möjliggör appar för Android, iOS och IoT som kan köra modeller helt på enheten. AI Edge Torch erbjuder bred CPU-täckning, med initialt stöd för GPU och NPU. AI Edge Torch strävar efter att integreras nära med PyTorch, bygger på torch.export() och ger god täckning av Core ATen-operatorer.
+Googld AI Edge Torch är ett Python-bibliotek som stödjer konvertering av PyTorch-modeller till .tflite-format, vilket sedan kan köras med TensorFlow Lite och MediaPipe. Detta möjliggör appar för Android, iOS och IoT som kan köra modeller helt på enheten. AI Edge Torch erbjuder bred CPU-täckning, med initialt stöd för GPU och NPU. AI Edge Torch strävar efter att integreras nära med PyTorch, bygger på torch.export() och ger bra täckning av Core ATen-operatorer.
 
 ## **🪬 Riktlinje**
 
@@ -29,9 +29,9 @@ Googld AI Edge Torch är ett pythonbibliotek som stöder konvertering av PyTorch
 
 2. Ubuntu 20.04 / 22.04 (fokusera på [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Förslag:*** Använd Azure Linux VM eller moln-VM från tredje part för att skapa din miljö
+***Förslag:*** Använd Azure Linux VM eller tredjeparts moln-vm för att skapa din miljö
 
-3. Gå till din Linux bash för att installera Python-bibliotek
+3. Gå till din Linux bash för att installera Python-biblioteket
 
 ```bash
 
@@ -67,7 +67,7 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ### **🔥 Konvertera Microsoft Phi-3.5 till Android Mediapipe Bundle**
 
-installera mediapipe först
+vänligen installera mediapipe först
 
 ```bash
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 Använd adb push för att skicka task-modellen till din Android-enhets sökväg**
+### **🔥 Använd adb push för att överföra task-modellen till din Android-enhets sökväg**
 
 ```bash
 
@@ -108,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Köra din Android-kod**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.sv.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.sv.png)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

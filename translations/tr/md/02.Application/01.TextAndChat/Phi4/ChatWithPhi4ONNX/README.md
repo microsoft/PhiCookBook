@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:01:53+00:00",
+  "translation_date": "2025-07-17T03:17:23+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "tr"
 }
 -->
 # **Phi-4-mini ONNX ile Sohbet**
 
-***ONNX***, makine öğrenimi modellerini temsil etmek için oluşturulmuş açık bir formattır. ONNX, makine öğrenimi ve derin öğrenme modellerinin yapı taşları olan ortak bir operatör seti ve AI geliştiricilerin modelleri çeşitli frameworkler, araçlar, çalışma zamanları ve derleyicilerle kullanabilmesini sağlayan ortak bir dosya formatı tanımlar.
+***ONNX***, makine öğrenimi modellerini temsil etmek için oluşturulmuş açık bir formattır. ONNX, makine öğrenimi ve derin öğrenme modellerinin yapı taşları olan ortak bir operatör seti ve AI geliştiricilerinin modelleri çeşitli frameworkler, araçlar, çalışma zamanları ve derleyicilerle kullanabilmesini sağlayan ortak bir dosya formatı tanımlar.
 
-Generatif AI modellerini uç cihazlarda çalıştırmayı ve sınırlı hesaplama gücü veya çevrimdışı ortamlarda kullanmayı hedefliyoruz. Artık bu hedefe, modeli kuantize ederek ulaşabiliyoruz. Kuantize edilmiş modeli GGUF veya ONNX formatına dönüştürebiliriz.
+Üretken AI modellerini uç cihazlarda çalıştırmayı ve sınırlı hesaplama gücü veya çevrimdışı ortamlarda kullanmayı hedefliyoruz. Artık bu hedefe, modeli kuantize ederek ulaşabiliyoruz. Kuantize edilmiş modeli GGUF veya ONNX formatına dönüştürebiliriz.
 
-Microsoft Olive, SLM’yi kuantize ONNX formatına dönüştürmenize yardımcı olabilir. Model dönüşümünü gerçekleştirme yöntemi çok basittir.
+Microsoft Olive, SLM’yi kuantize ONNX formatına dönüştürmenize yardımcı olabilir. Model dönüşümünü gerçekleştirme yöntemi oldukça basittir.
 
-**Microsoft Olive SDK’yı Kurun**
+**Microsoft Olive SDK’yı Yükleyin**
 
 
 ```bash
@@ -37,9 +37,9 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Not*** bu örnek CPU kullanmaktadır
 
 
-### **Phi-4-mini ONNX Modelini ONNX Runtime GenAI ile Çalıştırma**
+### **ONNX Runtime GenAI ile Phi-4-mini ONNX Modelini Çıkarım Yapma**
 
-- **ONNX Runtime GenAI’yi Kurun**
+- **ONNX Runtime GenAI’yi Yükleyin**
 
 ```bash
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilindeki haliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

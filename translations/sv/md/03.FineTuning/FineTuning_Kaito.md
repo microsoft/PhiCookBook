@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:40:58+00:00",
+  "translation_date": "2025-07-17T06:22:36+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "sv"
 }
@@ -11,30 +11,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Kaito](https://github.com/Azure/kaito) är en operator som automatiserar distributionen av AI/ML-inferensmodeller i en Kubernetes-kluster.
 
-Kaito har följande viktiga skillnader jämfört med de flesta vanliga metoder för modelldistribution som bygger på virtuella maskin-infrastrukturer:
+Kaito har följande viktiga skillnader jämfört med de flesta vanliga metoder för modellutplacering som bygger på virtuella maskinmiljöer:
 
-- Hanterar modelfiler med hjälp av containerbilder. En http-server tillhandahålls för att utföra inferensanrop med modellbiblioteket.
+- Hanterar modelfiler med hjälp av containerbilder. En HTTP-server tillhandahålls för att utföra inferensanrop med modellbiblioteket.
 - Undviker att justera distributionsparametrar för att passa GPU-hårdvara genom att erbjuda förinställda konfigurationer.
 - Auto-provisionerar GPU-noder baserat på modellens krav.
-- Hostar stora modellbilder i den publika Microsoft Container Registry (MCR) om licensen tillåter.
+- Värd för stora modellbilder i den publika Microsoft Container Registry (MCR) om licensen tillåter.
 
 Med Kaito förenklas arbetsflödet för att ta in stora AI-inferensmodeller i Kubernetes avsevärt.
 
-
 ## Arkitektur
 
-Kaito följer det klassiska Kubernetes Custom Resource Definition(CRD)/controller-designmönstret. Användaren hanterar en `workspace` custom resource som beskriver GPU-kraven och inferensspecifikationen. Kaito-kontrollerna automatiserar distributionen genom att synkronisera `workspace` custom resource.
+Kaito följer det klassiska Kubernetes Custom Resource Definition (CRD)/controller-designmönstret. Användaren hanterar en `workspace` custom resource som beskriver GPU-kraven och inferensspecifikationen. Kaito-kontrollerna automatiserar distributionen genom att synkronisera `workspace` custom resource.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-Figuren ovan visar en översikt av Kaito-arkitekturen. Dess huvudkomponenter består av:
+Figuren ovan visar en översikt av Kaito-arkitekturen. Dess huvudsakliga komponenter består av:
 
-- **Workspace controller**: Den synkroniserar `workspace` custom resource, skapar `machine` (förklaras nedan) custom resources för att trigga automatisk node-provisionering, och skapar inferensarbetsbelastningen (`deployment` eller `statefulset`) baserat på modellens förinställda konfigurationer.
-- **Node provisioner controller**: Kontrolleraren heter *gpu-provisioner* i [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Den använder `machine` CRD som kommer från [Karpenter](https://sigs.k8s.io/karpenter) för att kommunicera med workspace controller. Den integreras med Azure Kubernetes Service (AKS) API:er för att lägga till nya GPU-noder i AKS-klustret.
+- **Workspace controller**: Den synkroniserar `workspace` custom resource, skapar `machine` (förklaras nedan) custom resources för att trigga automatisk nodprovisionering och skapar inferensarbetsbelastningen (`deployment` eller `statefulset`) baserat på modellens förinställda konfigurationer.
+- **Node provisioner controller**: Kontrollen heter *gpu-provisioner* i [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Den använder `machine` CRD som kommer från [Karpenter](https://sigs.k8s.io/karpenter) för att interagera med workspace-kontrollern. Den integreras med Azure Kubernetes Service (AKS) API:er för att lägga till nya GPU-noder i AKS-klustret.
 > Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) är en öppen källkodskomponent. Den kan ersättas av andra controllers om de stödjer [Karpenter-core](https://sigs.k8s.io/karpenter) API:er.
 
-## Översiktsvideo
+## Översiktsvideo  
 [Titta på Kaito-demo](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## Installation
@@ -102,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Därefter kan man hitta inferenstjänstens kluster-ip och använda en temporär `curl` pod för att testa tjänstens endpoint i klustret.
+Därefter kan man hitta inferenstjänstens kluster-IP och använda en temporär `curl`-pod för att testa tjänstens endpoint i klustret.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -114,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår från användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

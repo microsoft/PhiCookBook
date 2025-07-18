@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:49:20+00:00",
+  "translation_date": "2025-07-17T02:53:17+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "no"
 }
@@ -15,7 +15,7 @@ Dette er et Android-eksempel som bruker Microsoft Phi-3.5 tflite-modeller.
 
 Android LLM Inference API lar deg kjøre store språkmodeller (LLMs) helt på enheten for Android-applikasjoner, som du kan bruke til å utføre et bredt spekter av oppgaver, som å generere tekst, hente informasjon i naturlig språkform og oppsummere dokumenter. Oppgaven har innebygd støtte for flere tekst-til-tekst store språkmodeller, slik at du kan bruke de nyeste generative AI-modellene på enheten i Android-appene dine.
 
-Googld AI Edge Torch er et python-bibliotek som støtter konvertering av PyTorch-modeller til .tflite-format, som deretter kan kjøres med TensorFlow Lite og MediaPipe. Dette muliggjør applikasjoner for Android, iOS og IoT som kan kjøre modeller helt på enheten. AI Edge Torch tilbyr bred CPU-støtte, med innledende GPU- og NPU-støtte. AI Edge Torch søker å integrere tett med PyTorch, bygger videre på torch.export() og gir god dekning av Core ATen-operatører.
+Google AI Edge Torch er et Python-bibliotek som støtter konvertering av PyTorch-modeller til .tflite-format, som deretter kan kjøres med TensorFlow Lite og MediaPipe. Dette muliggjør applikasjoner for Android, iOS og IoT som kan kjøre modeller helt på enheten. AI Edge Torch tilbyr bred CPU-støtte, med innledende GPU- og NPU-støtte. AI Edge Torch søker å integreres tett med PyTorch, bygger på torch.export() og gir god dekning av Core ATen-operatører.
 
 ## **🪬 Veiledning**
 
@@ -25,13 +25,13 @@ Googld AI Edge Torch er et python-bibliotek som støtter konvertering av PyTorch
 
 1. Installer Python 3.10.12
 
-***Forslag:*** bruk conda for å installere ditt Python-miljø
+***Forslag:*** bruk conda for å installere Python-miljøet ditt
 
-2. Ubuntu 20.04 / 22.04 (vennligst se på [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
+2. Ubuntu 20.04 / 22.04 (fokuser på [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Forslag:*** Bruk Azure Linux VM eller en tredjeparts cloud VM for å opprette miljøet ditt
+***Forslag:*** Bruk Azure Linux VM eller tredjeparts sky-VM for å opprette miljøet ditt
 
-3. Gå til din Linux bash for å installere Python-biblioteket
+3. Gå til Linux bash for å installere Python-biblioteket
 
 ```bash
 
@@ -47,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Last ned Microsoft-3.5-Instruct fra Hugging face
+4. Last ned Microsoft-3.5-Instruct fra Hugging Face
 
 ```bash
 
@@ -67,7 +67,7 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ### **🔥 Konverter Microsoft Phi-3.5 til Android Mediapipe Bundle**
 
-vennligst installer mediapipe først
+Installer mediapipe først
 
 ```bash
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-kjør denne koden i [din notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
+Kjør denne koden i [din notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
 
 ```python
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 Bruk adb push for å overføre task-modellen til Android-enheten din**
+### **🔥 Bruk adb push for å overføre modell til Android-enhetens sti**
 
 ```bash
 
@@ -108,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Kjør Android-koden din**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.no.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.no.png)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

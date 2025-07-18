@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:53:34+00:00",
+  "translation_date": "2025-07-17T06:48:29+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "id"
 }
@@ -11,37 +11,37 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) adalah alat optimasi model yang mudah digunakan dan sadar perangkat keras yang menggabungkan teknik-teknik terdepan di industri dalam kompresi model, optimasi, dan kompilasi.
 
-Alat ini dirancang untuk menyederhanakan proses optimasi model machine learning, memastikan penggunaan arsitektur perangkat keras tertentu secara paling efisien.
+Alat ini dirancang untuk mempermudah proses optimasi model machine learning, memastikan pemanfaatan arsitektur perangkat keras secara efisien.
 
 Baik Anda bekerja pada aplikasi berbasis cloud atau perangkat edge, Olive memungkinkan Anda mengoptimalkan model dengan mudah dan efektif.
 
 ## Fitur Utama:
 - Olive menggabungkan dan mengotomatisasi teknik optimasi untuk target perangkat keras yang diinginkan.
-- Tidak ada satu teknik optimasi yang cocok untuk semua skenario, sehingga Olive memungkinkan perluasan dengan memberi ruang bagi para ahli industri untuk menambahkan inovasi optimasi mereka.
+- Tidak ada satu teknik optimasi yang cocok untuk semua skenario, sehingga Olive memungkinkan perluasan dengan membolehkan para ahli industri untuk menambahkan inovasi optimasi mereka.
 
-## Mengurangi Upaya Engineering:
-- Pengembang seringkali harus mempelajari dan menggunakan berbagai toolchain khusus vendor perangkat keras untuk mempersiapkan dan mengoptimalkan model yang sudah dilatih untuk deployment.
+## Mengurangi Upaya Rekayasa:
+- Pengembang sering kali harus mempelajari dan menggunakan berbagai toolchain spesifik vendor perangkat keras untuk mempersiapkan dan mengoptimalkan model yang sudah dilatih agar siap digunakan.
 - Olive menyederhanakan pengalaman ini dengan mengotomatisasi teknik optimasi untuk perangkat keras yang diinginkan.
 
-## Solusi Optimasi End-to-End Siap Pakai:
+## Solusi Optimasi E2E Siap Pakai:
 
-Dengan menggabungkan dan menyetel teknik yang terintegrasi, Olive menawarkan solusi terpadu untuk optimasi end-to-end.
+Dengan menggabungkan dan menyetel teknik-teknik terintegrasi, Olive menawarkan solusi terpadu untuk optimasi end-to-end.
 Alat ini mempertimbangkan batasan seperti akurasi dan latensi saat mengoptimalkan model.
 
 ## Menggunakan Microsoft Olive untuk fine-tuning
 
-Microsoft Olive adalah alat optimasi model open source yang sangat mudah digunakan dan dapat mencakup baik fine-tuning maupun referensi dalam bidang kecerdasan buatan generatif. Hanya diperlukan konfigurasi sederhana, dikombinasikan dengan penggunaan model bahasa kecil open source dan lingkungan runtime terkait (AzureML / GPU lokal, CPU, DirectML), Anda dapat menyelesaikan fine-tuning atau referensi model melalui optimasi otomatis, dan menemukan model terbaik untuk dideploy ke cloud atau perangkat edge. Memungkinkan perusahaan membangun model vertikal industri mereka sendiri baik di on-premises maupun di cloud.
+Microsoft Olive adalah alat optimasi model open source yang sangat mudah digunakan dan dapat mencakup fine-tuning serta referensi di bidang kecerdasan buatan generatif. Hanya diperlukan konfigurasi sederhana, dikombinasikan dengan penggunaan model bahasa kecil open source dan lingkungan runtime terkait (AzureML / GPU lokal, CPU, DirectML), Anda dapat menyelesaikan fine-tuning atau referensi model melalui optimasi otomatis, dan menemukan model terbaik untuk diterapkan di cloud atau perangkat edge. Memungkinkan perusahaan membangun model vertikal industri mereka sendiri baik secara on-premises maupun di cloud.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.id.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.id.png)
 
-## Phi-3 Fine Tuning dengan Microsoft Olive
+## Fine Tuning Phi-3 dengan Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.id.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.id.png)
 
 ## Contoh Kode dan Contoh Phi-3 Olive
 Dalam contoh ini Anda akan menggunakan Olive untuk:
 
-- Fine-tune adapter LoRA untuk mengklasifikasikan frasa menjadi Sad, Joy, Fear, Surprise.
+- Fine-tune adapter LoRA untuk mengklasifikasikan frasa ke dalam kategori Sedih, Senang, Takut, Terkejut.
 - Menggabungkan bobot adapter ke dalam model dasar.
 - Mengoptimalkan dan mengkuantisasi model menjadi int4.
 
@@ -78,7 +78,7 @@ Persyaratan OS: Ubuntu 20.04 / 22.04
 
 ### **Config.json Microsoft Olive**
 
-Setelah instalasi, Anda dapat mengkonfigurasi pengaturan spesifik model yang berbeda melalui file Config, termasuk data, komputasi, pelatihan, deployment, dan pembuatan model.
+Setelah instalasi, Anda dapat mengonfigurasi pengaturan spesifik model yang berbeda melalui file Config, termasuk data, komputasi, pelatihan, deployment, dan pembuatan model.
 
 **1. Data**
 
@@ -86,7 +86,7 @@ Di Microsoft Olive, pelatihan dengan data lokal dan data cloud dapat didukung, d
 
 *Pengaturan data lokal*
 
-Anda dapat dengan mudah mengatur dataset yang perlu dilatih untuk fine-tuning, biasanya dalam format json, dan menyesuaikannya dengan template data. Ini perlu disesuaikan berdasarkan kebutuhan model (misalnya, disesuaikan dengan format yang dibutuhkan oleh Microsoft Phi-3-mini. Jika Anda memiliki model lain, silakan merujuk pada format fine-tuning yang diperlukan oleh model lain untuk diproses)
+Anda dapat dengan mudah mengatur dataset yang perlu dilatih untuk fine-tuning, biasanya dalam format json, dan menyesuaikannya dengan template data. Ini perlu disesuaikan berdasarkan kebutuhan model (misalnya, menyesuaikan dengan format yang dibutuhkan oleh Microsoft Phi-3-mini. Jika Anda memiliki model lain, silakan merujuk pada format fine-tuning yang diperlukan model tersebut untuk pemrosesan)
 
 ```json
 
@@ -121,7 +121,7 @@ Anda dapat dengan mudah mengatur dataset yang perlu dilatih untuk fine-tuning, b
 
 **Pengaturan sumber data cloud**
 
-Dengan menghubungkan datastore Azure AI Studio/Azure Machine Learning Service untuk mengakses data di cloud, Anda dapat memilih untuk memasukkan berbagai sumber data ke Azure AI Studio/Azure Machine Learning Service melalui Microsoft Fabric dan Azure Data sebagai dukungan untuk fine-tuning data.
+Dengan menghubungkan datastore dari Azure AI Studio/Azure Machine Learning Service untuk mengakses data di cloud, Anda dapat memilih untuk memasukkan berbagai sumber data ke Azure AI Studio/Azure Machine Learning Service melalui Microsoft Fabric dan Azure Data sebagai dukungan untuk fine-tuning data.
 
 ```json
 
@@ -166,9 +166,9 @@ Dengan menghubungkan datastore Azure AI Studio/Azure Machine Learning Service un
     
 ```
 
-**2. Konfigurasi Komputasi**
+**2. Konfigurasi komputasi**
 
-Jika Anda perlu menggunakan lokal, Anda bisa langsung memakai sumber daya data lokal. Jika perlu menggunakan sumber daya Azure AI Studio / Azure Machine Learning Service, Anda harus mengkonfigurasi parameter Azure terkait, nama komputasi, dan lain-lain.
+Jika Anda ingin menggunakan lokal, Anda dapat langsung menggunakan sumber daya data lokal. Jika ingin menggunakan sumber daya Azure AI Studio / Azure Machine Learning Service, Anda perlu mengonfigurasi parameter Azure terkait, nama komputasi, dan lain-lain.
 
 ```json
 
@@ -201,7 +201,7 @@ Jika Anda perlu menggunakan lokal, Anda bisa langsung memakai sumber daya data l
 
 ***Perhatian***
 
-Karena dijalankan melalui container di Azure AI Studio/Azure Machine Learning Service, lingkungan yang dibutuhkan harus dikonfigurasi. Ini dikonfigurasi dalam environment conda.yaml.
+Karena dijalankan melalui container di Azure AI Studio/Azure Machine Learning Service, lingkungan yang dibutuhkan harus dikonfigurasi. Ini diatur dalam environment conda.yaml.
 
 ```yaml
 
@@ -236,7 +236,7 @@ dependencies:
 
 **3. Pilih SLM Anda**
 
-Anda bisa menggunakan model langsung dari Hugging face, atau menggabungkannya langsung dengan Model Catalog Azure AI Studio / Azure Machine Learning untuk memilih model yang digunakan. Dalam contoh kode di bawah ini kami menggunakan Microsoft Phi-3-mini sebagai contoh.
+Anda dapat menggunakan model langsung dari Hugging Face, atau menggabungkannya langsung dengan Model Catalog dari Azure AI Studio / Azure Machine Learning untuk memilih model yang akan digunakan. Dalam contoh kode di bawah ini, kami menggunakan Microsoft Phi-3-mini sebagai contoh.
 
 Jika Anda memiliki model secara lokal, Anda dapat menggunakan metode ini
 
@@ -286,13 +286,13 @@ Jika Anda ingin menggunakan model dari Azure AI Studio / Azure Machine Learning 
 **Perhatian:**  
 Kita perlu integrasi dengan Azure AI Studio / Azure Machine Learning Service, jadi saat mengatur model, harap perhatikan nomor versi dan penamaan terkait.
 
-Semua model di Azure harus diset ke PyTorch.MLflow
+Semua model di Azure harus disetel ke PyTorch.MLflow
 
-Anda harus memiliki akun Hugging face dan mengikat kunci ke nilai Key Azure AI Studio / Azure Machine Learning
+Anda perlu memiliki akun Hugging Face dan mengikat kunci ke nilai Key di Azure AI Studio / Azure Machine Learning
 
 **4. Algoritma**
 
-Microsoft Olive membungkus algoritma fine-tuning Lora dan QLora dengan sangat baik. Yang perlu Anda konfigurasi hanyalah beberapa parameter terkait. Di sini saya menggunakan QLora sebagai contoh.
+Microsoft Olive membungkus algoritma fine-tuning Lora dan QLora dengan sangat baik. Yang perlu Anda konfigurasi hanyalah beberapa parameter terkait. Di sini saya ambil contoh QLora.
 
 ```json
         "lora": {
@@ -329,12 +329,12 @@ Microsoft Olive membungkus algoritma fine-tuning Lora dan QLora dengan sangat ba
         },
 ```
 
-Jika Anda ingin konversi kuantisasi, cabang utama Microsoft Olive sudah mendukung metode onnxruntime-genai. Anda dapat mengaturnya sesuai kebutuhan:
+Jika Anda ingin melakukan konversi kuantisasi, cabang utama Microsoft Olive sudah mendukung metode onnxruntime-genai. Anda dapat mengaturnya sesuai kebutuhan:
 
-1. gabungkan bobot adapter ke dalam model dasar  
-2. Konversi model ke model onnx dengan presisi yang dibutuhkan menggunakan ModelBuilder
+1. menggabungkan bobot adapter ke model dasar  
+2. Mengonversi model ke model onnx dengan presisi yang dibutuhkan oleh ModelBuilder
 
-misalnya mengkonversi ke INT4 yang telah dikuantisasi
+misalnya mengonversi ke kuantisasi INT4
 
 ```json
 
@@ -350,8 +350,9 @@ misalnya mengkonversi ke INT4 yang telah dikuantisasi
 ```
 
 **Perhatian**  
-- Jika Anda menggunakan QLoRA, konversi kuantisasi ONNXRuntime-genai belum didukung saat ini.  
-- Perlu dicatat bahwa Anda dapat mengatur langkah-langkah di atas sesuai kebutuhan sendiri. Tidak wajib mengkonfigurasi semua langkah tersebut secara lengkap. Tergantung kebutuhan, Anda dapat langsung menggunakan langkah algoritma tanpa fine-tuning. Akhirnya, Anda perlu mengkonfigurasi engine terkait.
+- Jika Anda menggunakan QLoRA, konversi kuantisasi ONNXRuntime-genai belum didukung untuk saat ini.
+
+- Perlu dicatat bahwa Anda dapat mengatur langkah-langkah di atas sesuai kebutuhan sendiri. Tidak wajib mengonfigurasi semua langkah tersebut secara lengkap. Sesuai kebutuhan, Anda bisa langsung menggunakan langkah algoritma tanpa fine-tuning. Terakhir, Anda perlu mengonfigurasi engine terkait.
 
 ```json
 
@@ -375,4 +376,4 @@ olive run --config olive-config.json
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

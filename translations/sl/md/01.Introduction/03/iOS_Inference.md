@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-09T11:07:57+00:00",
+  "translation_date": "2025-07-16T20:25:19+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "sl"
 }
 -->
-# **Inference Phi-3 v iOS**
+# **Inferenca Phi-3 na iOS**
 
-Phi-3-mini je nova serija modelov iz Microsofta, ki omogoča namestitev velikih jezikovnih modelov (LLM) na robne naprave in IoT naprave. Phi-3-mini je na voljo za iOS, Android in Edge Device namestitve, kar omogoča uporabo generativne AI v BYOD okoljih. Naslednji primer prikazuje, kako namestiti Phi-3-mini na iOS.
+Phi-3-mini je nova serija modelov iz Microsofta, ki omogoča nameščanje velikih jezikovnih modelov (LLM) na robne naprave in IoT naprave. Phi-3-mini je na voljo za iOS, Android in Edge Device namestitve, kar omogoča uporabo generativne umetne inteligence v BYOD okoljih. Naslednji primer prikazuje, kako namestiti Phi-3-mini na iOS.
 
 ## **1. Priprava**
 
 - **a.** macOS 14+
 - **b.** Xcode 15+
 - **c.** iOS SDK 17.x (iPhone 14 A16 ali novejši)
-- **d.** Namestite Python 3.10+ (priporočeno Conda)
+- **d.** Namestite Python 3.10+ (priporočamo Conda)
 - **e.** Namestite Python knjižnico: `python-flatbuffers`
 - **f.** Namestite CMake
 
 ### Semantic Kernel in inferenca
 
-Semantic Kernel je aplikacijski okvir, ki omogoča ustvarjanje aplikacij, združljivih z Azure OpenAI Service, OpenAI modeli in celo lokalnimi modeli. Dostop do lokalnih storitev preko Semantic Kernel omogoča enostavno integracijo z vašo samostojno gostujočo Phi-3-mini strežnikom modelov.
+Semantic Kernel je aplikacijski okvir, ki omogoča ustvarjanje aplikacij, združljivih z Azure OpenAI Service, OpenAI modeli in celo lokalnimi modeli. Dostop do lokalnih storitev preko Semantic Kernel omogoča enostavno integracijo z vašim samostojno gostovanim strežnikom modela Phi-3-mini.
 
-### Klic kvantiziranih modelov z Ollama ali LlamaEdge
+### Klicanje kvantiziranih modelov z Ollama ali LlamaEdge
 
 Veliko uporabnikov raje uporablja kvantizirane modele za lokalno izvajanje. [Ollama](https://ollama.com) in [LlamaEdge](https://llamaedge.com) omogočata klic različnih kvantiziranih modelov:
 
 #### **Ollama**
 
-Lahko zaženete `ollama run phi3` neposredno ali ga konfigurirate brez povezave. Ustvarite Modelfile s potjo do vaše datoteke `gguf`. Primer kode za zagon kvantiziranega modela Phi-3-mini:
+Lahko zaženete `ollama run phi3` neposredno ali ga konfigurirate brez povezave. Ustvarite Modelfile s potjo do vaše `gguf` datoteke. Primer kode za zagon kvantiziranega modela Phi-3-mini:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -57,17 +57,17 @@ cd ../
 
 ```
 
-### **Opomba**
+### **Obvestilo**
 
-- **a.** Pred prevajanjem preverite, da je Xcode pravilno konfiguriran in nastavite ga kot aktivni razvojni imenik v terminalu:
+- **a.** Pred prevajanjem se prepričajte, da je Xcode pravilno nastavljen in ga nastavite kot aktivni razvojni imenik v terminalu:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime je treba prevesti za različne platforme. Za iOS lahko prevedete za `arm64` or `x86_64`.
+- **b.** ONNX Runtime je treba prevesti za različne platforme. Za iOS lahko prevajate za `arm64` ali `x86_64`.
 
-- **c.** Priporočljivo je uporabiti najnovejši iOS SDK za prevajanje. Vendar pa lahko uporabite tudi starejšo različico, če potrebujete združljivost s prejšnjimi SDK-ji.
+- **c.** Priporočamo uporabo najnovejše različice iOS SDK za prevajanje. Vendar lahko uporabite tudi starejšo različico, če potrebujete združljivost s prejšnjimi SDK-ji.
 
 ## **3. Prevajanje Generative AI z ONNX Runtime za iOS**
 
@@ -101,35 +101,35 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. Ustvarite aplikacijo v Xcode**
 
-Izbral sem Objective-C kot način razvoja aplikacije, ker je uporaba Generative AI z ONNX Runtime C++ API-jem v Objective-C bolj združljiva. Seveda lahko povezane klice izvedete tudi preko Swift bridginga.
+Izbral sem Objective-C kot način razvoja aplikacije, ker je uporaba Generative AI z ONNX Runtime C++ API-jem v Objective-C bolj združljiva. Seveda lahko ustrezne klice izvedete tudi preko Swift bridginga.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.sl.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.sl.png)
 
-## **5. Kopirajte kvantizirani INT4 ONNX model v projekt aplikacije**
+## **5. Kopirajte ONNX kvantizirani INT4 model v projekt aplikacije**
 
-Potrebno je uvoziti INT4 kvantizacijski model v ONNX formatu, ki ga je potrebno najprej prenesti
+Potrebno je uvoziti INT4 kvantizacijski model v ONNX formatu, ki ga je treba najprej prenesti.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.sl.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.sl.png)
 
-Po prenosu ga morate dodati v imenik Resources v projektu v Xcode.
+Po prenosu ga dodajte v mapo Resources v projektu v Xcode.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.sl.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.sl.png)
 
 ## **6. Dodajanje C++ API v ViewControllers**
 
-> **Opomba:**
+> **Obvestilo:**
 
-- **a.** Dodajte ustrezne C++ header datoteke v projekt.
+- **a.** Dodajte ustrezne C++ glave datotek v projekt.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.sl.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.sl.png)
 
-- **b.** Vključite `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Vključite dinamično knjižnico `onnxruntime-genai` v Xcode.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.sl.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.sl.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **c.** Za testiranje uporabite C vzorčno kodo. Dodate lahko tudi dodatne funkcije, kot je ChatUI, za večjo funkcionalnost.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` za omogočanje podpore Objective-C++.
+- **d.** Ker boste v projektu uporabljali C++, preimenujte `ViewController.m` v `ViewController.mm`, da omogočite podporo za Objective-C++.
 
 ```objc
 
@@ -160,11 +160,11 @@ Po prenosu ga morate dodati v imenik Resources v projektu v Xcode.
 
 ## **7. Zagon aplikacije**
 
-Ko je nastavitev končana, lahko zaženete aplikacijo in si ogledate rezultate inferenc modela Phi-3-mini.
+Ko je nastavitev končana, lahko zaženete aplikacijo in si ogledate rezultate inference modela Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.sl.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.sl.jpg)
 
-Za več primerov kode in podrobna navodila obiščite [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+Za več vzorčne kode in podrobna navodila obiščite [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvorni jezik je treba obravnavati kot avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

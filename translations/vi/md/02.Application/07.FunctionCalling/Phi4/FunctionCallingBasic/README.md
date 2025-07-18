@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:08:51+00:00",
+  "translation_date": "2025-07-17T05:16:21+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "vi"
 }
 -->
 ## **Gọi hàm trong Phi-4-mini**
 
-Gọi hàm lần đầu tiên xuất hiện trong dòng Phi Family, và bây giờ bạn có thể sử dụng nó qua Phi-4-mini.
+Gọi hàm lần đầu xuất hiện trong họ Phi Family, và bây giờ bạn có thể sử dụng nó qua Phi-4-mini.
 
-Ví dụ này minh họa việc mô phỏng kết quả Premier League. Mục tiêu là để Phi-4-mini cung cấp thông tin trận đấu theo thời gian thực. Dưới đây là đoạn mã mẫu:
+Ví dụ này minh họa việc mô phỏng kết quả Premier League. Mục tiêu là để Phi-4-mini cung cấp thông tin trận đấu theo thời gian thực. Dưới đây là đoạn mã mẫu: 
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được xem là nguồn thông tin chính thức. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

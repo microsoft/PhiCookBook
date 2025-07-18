@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-07-09T19:37:53+00:00",
+  "translation_date": "2025-07-16T22:46:18+00:00",
   "source_file": "md/01.Introduction/05/ResponsibleAI.md",
   "language_code": "en"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Overview of Microsoft Responsible AI 
 
-![RAIPrinciples](../../../../../imgs/01/05/RAI/RAIPrinciples.png)
+![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d336830630939a5130a22b3f9e1f633773562f83fed08a50520.en.png)
 
 **Ethical principles** 
 
@@ -37,7 +37,7 @@ Ensuring AI systems are reliable and safe is essential. Microsoft focuses on dev
 
 **Fairness in AI** 
 
-Microsoft Responsible AI acknowledges that AI systems can reinforce biases if trained on biased data or algorithms. The initiative provides guidance to develop fair AI systems that do not discriminate based on race, gender, age, or other factors.
+Microsoft Responsible AI acknowledges that AI systems can reinforce biases if trained on biased data or algorithms. The initiative provides guidance for creating fair AI systems that do not discriminate based on race, gender, age, or other factors.
 
 **Privacy and security** 
 
@@ -79,7 +79,7 @@ Azure AI Foundry offers pre-built and customizable APIs and models covering a wi
 
 **Prompt Flow** 
 
-Prompt Flow in Azure AI Foundry lets you create conversational AI experiences by designing and managing conversational flows, making it easier to build chatbots, virtual assistants, and other interactive applications.
+Prompt Flow in Azure AI Foundry lets you design conversational AI experiences. It helps you create and manage conversational flows, making it easier to build chatbots, virtual assistants, and other interactive applications.
 
 **Retrieval Augmented Generation (RAG)** 
 

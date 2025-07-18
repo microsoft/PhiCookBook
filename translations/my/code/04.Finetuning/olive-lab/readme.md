@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-07-09T20:14:16+00:00",
+  "translation_date": "2025-07-16T16:22:21+00:00",
   "source_file": "code/04.Finetuning/olive-lab/readme.md",
   "language_code": "my"
 }
@@ -15,57 +15,57 @@ CO_OP_TRANSLATOR_METADATA:
 > ဒီ lab မှာ **Nvidia A10 သို့မဟုတ် A100 GPU** နဲ့ အတူ driver တွေနဲ့ CUDA toolkit (version 12+) တပ်ဆင်ထားဖို့ လိုအပ်ပါတယ်။
 
 > [!NOTE]
-> ဒီ lab က **၃၅ မိနစ်** ကြာပြီး OLIVE ကို အသုံးပြုပြီး on-device inference အတွက် မော်ဒယ်များကို optimize လုပ်ခြင်း၏ အခြေခံအကြောင်းအရာများကို လက်တွေ့ လေ့လာသင်ကြားပေးမှာ ဖြစ်ပါတယ်။
+> ဒီ lab က **၃၅ မိနစ်** ကြာပြီး OLIVE ကို အသုံးပြုပြီး on-device inference အတွက် မော်ဒယ်များကို optimize လုပ်ခြင်း၏ အခြေခံအကြောင်းအရာများကို လက်တွေ့ လေ့လာသင်ယူနိုင်မယ့် lab ဖြစ်ပါတယ်။
 
-## သင်ယူရမည့် ရည်မှန်းချက်များ
+## သင်ယူရမယ့် ရည်မှန်းချက်များ
 
-ဒီ lab အပြီးမှာ OLIVE ကို အသုံးပြုပြီး -
+ဒီ lab ပြီးဆုံးတဲ့အချိန်မှာ OLIVE ကို အသုံးပြုပြီး -
 
-- AWQ quantization နည်းလမ်းဖြင့် AI မော်ဒယ်ကို Quantize လုပ်နိုင်မည်။
-- AI မော်ဒယ်ကို အထူးတာဝန်အတွက် Fine-tune လုပ်နိုင်မည်။
-- ONNX Runtime ပေါ်တွင် ထိရောက်စွာ on-device inference ပြုလုပ်နိုင်ရန် LoRA adapters (fine-tuned model) များကို ဖန်တီးနိုင်မည်။
+- AWQ quantization နည်းလမ်းဖြင့် AI မော်ဒယ်ကို Quantize လုပ်နိုင်ပါမယ်။
+- AI မော်ဒယ်ကို အထူးတာဝန်အတွက် Fine-tune လုပ်နိုင်ပါမယ်။
+- ONNX Runtime ပေါ်မှာ ထိရောက်စွာ on-device inference လုပ်နိုင်ဖို့ LoRA adapters (fine-tuned model) ကို ဖန်တီးနိုင်ပါမယ်။
 
 ### Olive ဆိုတာဘာလဲ
 
-Olive (*O*NNX *live*) သည် ONNX runtime +++https://onnxruntime.ai+++ အတွက် မော်ဒယ်များကို အရည်အသွေးနှင့် စွမ်းဆောင်ရည်ကောင်းမွန်စွာ ပို့ဆောင်နိုင်ရန် မော်ဒယ် optimize လုပ်ရာတွင် အသုံးပြုသော toolkit တစ်ခုဖြစ်ပြီး CLI ပါဝင်သည်။
+Olive (*O*NNX *live*) ဆိုတာ ONNX runtime +++https://onnxruntime.ai+++ အတွက် မော်ဒယ်များကို အရည်အသွေးနဲ့ စွမ်းဆောင်ရည်ကောင်းစွာ ဖြန့်ချိနိုင်ဖို့ အသုံးပြုတဲ့ မော်ဒယ် optimize လုပ်တဲ့ toolkit တစ်ခုဖြစ်ပြီး CLI ပါဝင်ပါတယ်။
 
-![Olive Flow](../../../../../code/04.Finetuning/olive-lab/images/olive-flow.png)
+![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2462b631b8aa862093b595bb89064fa33e6d4fa90f937f52d.my.png)
 
-Olive သို့ input အနေဖြင့် ပုံမှန်အားဖြင့် PyTorch သို့မဟုတ် Hugging Face မော်ဒယ်တစ်ခုကို ထည့်သွင်းပြီး output အနေဖြင့် ONNX runtime ပေါ်တွင် အကောင်အထည်ဖော်မည့် optimized ONNX မော်ဒယ်ကို ထုတ်ပေးသည်။ Olive သည် deployment target အဖြစ် သတ်မှတ်ထားသော စက်ပစ္စည်း၏ AI accelerator (NPU, GPU, CPU) ကို Qualcomm, AMD, Nvidia သို့မဟုတ် Intel ကဲ့သို့သော hardware vendor များမှ ပံ့ပိုးပေးသည့်အတိုင်း မော်ဒယ်ကို optimize လုပ်ပေးသည်။
+Olive ရဲ့ input အနေနဲ့ ပုံမှန်အားဖြင့် PyTorch သို့မဟုတ် Hugging Face မော်ဒယ်တစ်ခုကို အသုံးပြုပြီး output အနေနဲ့ ONNX runtime ပေါ်မှာ အကောင်အထည်ဖော်မယ့် optimized ONNX မော်ဒယ်တစ်ခု ထွက်ရှိလာပါတယ်။ Olive က မော်ဒယ်ကို deployment target ရဲ့ AI accelerator (NPU, GPU, CPU) အတွက် optimize လုပ်ပေးပြီး Qualcomm, AMD, Nvidia သို့မဟုတ် Intel ကဲ့သို့သော hardware vendor များမှ ပံ့ပိုးပေးတဲ့ accelerator များအတွက် အထူးပြုလုပ်ပါတယ်။
 
-Olive သည် *workflow* တစ်ခုကို အကောင်အထည်ဖော်ပြီး၊ workflow သည် *passes* ဟုခေါ်သော မော်ဒယ် optimize လုပ်ခြင်းဆိုင်ရာ တစ်ခုချင်းစီသော အဆင့်များ၏ အစဉ်လိုက် စဉ်ဆက်ဖြစ်သည်။ ဥပမာ passes များမှာ မော်ဒယ်ဖိအားချခြင်း၊ graph capture, quantization, graph optimization တို့ဖြစ်သည်။ Pass တစ်ခုစီတွင် parameter များရှိပြီး accuracy နှင့် latency ကဲ့သို့သော metrics များကို အကောင်းဆုံးရရှိရန် တိုက်ရိုက်ပြင်ဆင်နိုင်သည်။ Olive သည် search algorithm တစ်ခုကို အသုံးပြုပြီး pass တစ်ခုချင်းစီ သို့မဟုတ် pass များစုစုပေါင်းကို auto-tune လုပ်ပေးသည်။
+Olive က *workflow* တစ်ခုကို အကောင်အထည်ဖော်ပြီး workflow ဆိုတာက မော်ဒယ် optimize လုပ်တဲ့ တစ်ခုချင်းစီလုပ်ငန်းစဉ်များ (passes) ကို အစဉ်လိုက် ဆောင်ရွက်ခြင်းဖြစ်ပါတယ်။ ဥပမာ passes တွေမှာ မော်ဒယ်ဖိအားချခြင်း၊ graph capture, quantization, graph optimization စတဲ့ လုပ်ငန်းစဉ်များ ပါဝင်ပါတယ်။ Pass တစ်ခုစီမှာ parameter များရှိပြီး အကောင်းဆုံး စံနှုန်းများ (accuracy နဲ့ latency) ရရှိအောင် တိုင်းတာသူ evaluator တွေရဲ့ အကဲဖြတ်ချက်အရ တိုက်ရိုက် ပြင်ဆင်နိုင်ပါတယ်။ Olive က search algorithm တစ်ခုကို အသုံးပြုပြီး pass တစ်ခုချင်းစီ သို့မဟုတ် pass များစုစုပေါင်းကို auto-tune လုပ်ပေးပါတယ်။
 
-#### Olive ၏ အကျိုးကျေးဇူးများ
+#### Olive ရဲ့ အကျိုးကျေးဇူးများ
 
-- graph optimization, compression နှင့် quantization နည်းလမ်းများကို လက်တွေ့စမ်းသပ်ရာတွင် trial-and-error manual experimentation မှ ဖြစ်ပေါ်နိုင်သည့် စိတ်ညစ်မှုနှင့် အချိန်ကုန်ကျမှုကို လျော့နည်းစေသည်။ သင့်ရဲ့ quality နှင့် performance ကန့်သတ်ချက်များကို သတ်မှတ်ပြီး Olive ကို အကောင်းဆုံး မော်ဒယ်ကို အလိုအလျောက် ရှာဖွေစေပါ။
-- quantization, compression, graph optimization နှင့် finetuning ဆိုင်ရာ နောက်ဆုံးပေါ်နည်းပညာများကို ဖုံးလွှမ်းသည့် **40+ built-in model optimization components** များပါဝင်သည်။
-- မော်ဒယ် optimize လုပ်ခြင်းဆိုင်ရာ ပုံမှန်လုပ်ငန်းများအတွက် အသုံးပြုရ လွယ်ကူသော CLI ရှိသည်။ ဥပမာ - olive quantize, olive auto-opt, olive finetune။
-- မော်ဒယ် package ပြုလုပ်ခြင်းနှင့် deployment ကို built-in ဖြင့် ပံ့ပိုးသည်။
-- **Multi LoRA serving** အတွက် မော်ဒယ်များ ဖန်တီးပေးနိုင်သည်။
-- YAML/JSON အသုံးပြုပြီး မော်ဒယ် optimize နှင့် deployment လုပ်ငန်းစဉ်များကို စီမံခန့်ခွဲနိုင်သည်။
-- **Hugging Face** နှင့် **Azure AI** ပေါင်းစည်းမှု။
-- ကုန်ကျစရိတ် လျော့ချရန် built-in **caching** mechanism ပါဝင်သည်။
+- graph optimization, compression နဲ့ quantization နည်းလမ်းမျိုးစုံကို လက်တွေ့စမ်းသပ်ရာမှာ trial-and-error manual လုပ်ရတဲ့ စိတ်ညစ်မှုနဲ့ အချိန်ကုန်မှုကို လျော့နည်းစေပါတယ်။ သင့်ရဲ့ quality နဲ့ performance ကန့်သတ်ချက်များကို သတ်မှတ်ပြီး Olive ကို အကောင်းဆုံး မော်ဒယ်ကို အလိုအလျောက် ရှာဖွေစေပါ။
+- quantization, compression, graph optimization နဲ့ finetuning နယ်ပယ်မှာ နောက်ဆုံးပေါ်နည်းပညာများ ပါဝင်တဲ့ **40+ built-in model optimization components** ရှိပါတယ်။
+- မော်ဒယ် optimize လုပ်ရာမှာ အသုံးပြုရ လွယ်ကူတဲ့ CLI ရှိပါတယ်။ ဥပမာ - olive quantize, olive auto-opt, olive finetune စသည်ဖြင့်။
+- မော်ဒယ် package လုပ်ခြင်းနဲ့ deployment ကို built-in ပံ့ပိုးပေးပါတယ်။
+- **Multi LoRA serving** အတွက် မော်ဒယ်ဖန်တီးခြင်းကို ထောက်ပံ့ပါတယ်။
+- YAML/JSON အသုံးပြုပြီး workflow များ ဖန်တီးကာ မော်ဒယ် optimize နဲ့ deployment လုပ်ငန်းစဉ်များကို စီမံခန့်ခွဲနိုင်ပါတယ်။
+- **Hugging Face** နဲ့ **Azure AI** ပေါင်းစပ်မှုရှိပါတယ်။
+- ကုန်ကျစရိတ် လျော့ချဖို့ built-in **caching** mechanism ပါဝင်ပါတယ်။
 
 ## Lab လမ်းညွှန်ချက်များ
 
 > [!NOTE]
-> Lab 1 အတိုင်း Azure AI Hub နှင့် Project ကို provision ပြုလုပ်ပြီး A100 compute ကို စနစ်တကျ ပြင်ဆင်ထားကြောင်း သေချာပါစေ။
+> Lab 1 အတိုင်း Azure AI Hub နဲ့ Project ကို provision လုပ်ပြီး A100 compute ကို စနစ်တကျ ပြင်ဆင်ထားဖို့ သေချာပါစေ။
 
-### အဆင့် 0: Azure AI Compute နှင့် ချိတ်ဆက်ခြင်း
+### အဆင့် 0: Azure AI Compute နဲ့ ချိတ်ဆက်ခြင်း
 
-**VS Code** ၏ remote feature ကို အသုံးပြုပြီး Azure AI compute နှင့် ချိတ်ဆက်ပါ။
+**VS Code** ရဲ့ remote feature ကို အသုံးပြုပြီး Azure AI compute နဲ့ ချိတ်ဆက်ပါ။
 
 1. **VS Code** desktop application ကို ဖွင့်ပါ။
 2. **Shift+Ctrl+P** ဖြင့် command palette ကို ဖွင့်ပါ။
-3. command palette တွင် **AzureML - remote: Connect to compute instance in New Window** ကို ရှာဖွေပါ။
-4. Azure Subscription, Resource Group, Project နှင့် Lab 1 တွင် သတ်မှတ်ထားသော Compute name ကို ရွေးချယ်ပြီး ချိတ်ဆက်ပါ။
-5. ချိတ်ဆက်ပြီးပါက Visual Code ၏ ဘယ်ဘက်အောက်ခြေတွင် `><Azure ML: Compute Name` ဟူ၍ ပြသမည်ဖြစ်သည်။
+3. command palette မှာ **AzureML - remote: Connect to compute instance in New Window** ကို ရှာပါ။
+4. Azure Subscription, Resource Group, Project နဲ့ Lab 1 မှာ ပြင်ဆင်ထားတဲ့ Compute name ကို ရွေးချယ်ပြီး ချိတ်ဆက်ပါ။
+5. ချိတ်ဆက်ပြီးရင် Visual Code ရဲ့ ဘယ်ဘက်အောက်ဆုံးမှာ `><Azure ML: Compute Name` လို့ ပြပါလိမ့်မယ်။
 
 ### အဆင့် 1: Repo ကို Clone လုပ်ခြင်း
 
-VS Code တွင် **Ctrl+J** ဖြင့် terminal အသစ်ဖွင့်ပြီး repo ကို clone လုပ်ပါ။
+VS Code မှာ **Ctrl+J** ဖြင့် terminal အသစ်ဖွင့်ပြီး repo ကို clone လုပ်ပါ။
 
-terminal တွင် prompt ကို တွေ့ရမည် -
+terminal မှာ prompt ကို တွေ့ရပါမယ်
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
@@ -77,19 +77,19 @@ cd ~/localfiles
 git clone https://github.com/microsoft/phi-3cookbook.git
 ```
 
-### အဆင့် 2: VS Code တွင် Folder ဖွင့်ခြင်း
+### အဆင့် 2: VS Code မှာ Folder ဖွင့်ခြင်း
 
-terminal တွင် အောက်ပါ command ကို ရိုက်ထည့်ပါ၊ ထို့နောက် window အသစ်တစ်ခု ဖွင့်မည်။
+terminal မှာ အောက်ပါ command ကို ရိုက်ထည့်ပြီး VS Code ကို သက်ဆိုင်ရာ folder နဲ့ ဖွင့်ပါ။ အဲဒါက နောက်ထပ် window တစ်ခု ဖွင့်ပေးပါလိမ့်မယ်။
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
 ```
 
-သို့မဟုတ် **File** > **Open Folder** ကို ရွေး၍ folder ကို ဖွင့်နိုင်သည်။
+ဒါမှမဟုတ် **File** > **Open Folder** ကို ရွေးပြီး folder ကို ဖွင့်နိုင်ပါတယ်။
 
 ### အဆင့် 3: Dependencies များ ထည့်သွင်းခြင်း
 
-VS Code ၏ Azure AI Compute Instance တွင် terminal ဖွင့်ပြီး (အကြံပြုချက် - **Ctrl+J**) အောက်ပါ command များကို ရိုက်ထည့်ကာ dependencies များ ထည့်သွင်းပါ။
+VS Code ရဲ့ Azure AI Compute Instance မှာ terminal ဖွင့်ပြီး (အကြံပြုချက် - **Ctrl+J**) အောက်ပါ command များကို ရိုက်ထည့်ကာ dependencies များ ထည့်သွင်းပါ။
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -100,34 +100,34 @@ az extension add -n ml
 ```
 
 > [!NOTE]
-> Dependencies များ ထည့်သွင်းရန် ~၅ မိနစ်ခန့် ကြာနိုင်သည်။
+> Dependencies များ ထည့်သွင်းဖို့ ~၅ မိနစ်ခန့် ကြာနိုင်ပါတယ်။
 
-ဒီ lab မှာ မော်ဒယ်များကို Azure AI Model catalog သို့ download နှင့် upload ပြုလုပ်မည်ဖြစ်သောကြောင့် Azure သို့ login ဝင်ရန်လိုအပ်သည်။
+ဒီ lab မှာ မော်ဒယ်များကို Azure AI Model catalog မှာ ဒေါင်းလုပ်လုပ်ပြီး upload လုပ်မှာဖြစ်တဲ့အတွက် Azure မှာ login ဝင်ထားဖို့ လိုအပ်ပါတယ်။
 
 ```bash
 az login
 ```
 
 > [!NOTE]
-> Login ဝင်စဉ်တွင် subscription ရွေးချယ်ရန် မေးမြန်းမည်ဖြစ်ပြီး lab အတွက် ပေးထားသော subscription ကို သေချာရွေးချယ်ပါ။
+> Login ဝင်တဲ့အချိန်မှာ subscription ရွေးချယ်ဖို့ မမေ့ပါနှင့်။ Lab အတွက် ပေးထားတဲ့ subscription ကို သေချာရွေးပါ။
 
 ### အဆင့် 4: Olive command များ အကောင်အထည်ဖော်ခြင်း
 
-VS Code ၏ Azure AI Compute Instance တွင် terminal ဖွင့်ပြီး `olive-ai` conda environment ကို ဖွင့်ထားကြောင်း သေချာစေပါ။
+VS Code ရဲ့ Azure AI Compute Instance မှာ terminal ဖွင့်ပြီး `olive-ai` conda environment ကို အလုပ်လုပ်နေစေပါ။
 
 ```bash
 conda activate olive-ai
 ```
 
-နောက်တစ်ဆင့်မှာ အောက်ပါ Olive command များကို command line တွင် အကောင်အထည်ဖော်ပါ။
+ပြီးရင် အောက်ပါ Olive command များကို command line မှာ အကောင်အထည်ဖော်ပါ။
 
-1. **ဒေတာကို စစ်ဆေးခြင်း:** ဤဥပမာတွင် Phi-3.5-Mini မော်ဒယ်ကို ခရီးသွားဆိုင်ရာ မေးခွန်းများကို ဖြေဆိုရာတွင် အထူးပြုရန် fine-tune လုပ်မည်ဖြစ်သည်။ အောက်ပါ code သည် JSON lines format ဖြင့် ရှိသော ဒေတာ၏ အစောပိုင်း မှတ်တမ်းများကို ပြသသည်။
+1. **ဒေတာကို စစ်ဆေးခြင်း:** ဤဥပမာမှာ Phi-3.5-Mini မော်ဒယ်ကို ခရီးသွားဆိုင်ရာ မေးခွန်းများကို ဖြေဆိုနိုင်အောင် fine-tune လုပ်မှာဖြစ်ပါတယ်။ အောက်ပါ code က JSON lines format နဲ့ ရှိတဲ့ dataset ရဲ့ စတင်အချို့ record များကို ပြသပါတယ်။
 
     ```bash
     head data/data_sample_travel.jsonl
     ```
 
-2. **မော်ဒယ်ကို Quantize လုပ်ခြင်း:** မော်ဒယ်ကို သင်ကြားမတိုင်မီ Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++ နည်းလမ်းဖြင့် quantize လုပ်မည်။ AWQ သည် inference အတွင်း ထုတ်လုပ်သော activations များကို စဉ်းစားကာ မော်ဒယ်၏ အလေးချိန်များကို quantize လုပ်သည်။ ဒါကြောင့် quantization လုပ်ငန်းစဉ်သည် activations တွင် ရှိသော ဒေတာဖြန့်ဖြူးမှုကို ထည့်သွင်းစဉ်းစားခြင်းဖြင့် မော်ဒယ်တိကျမှုကို ပိုမိုကောင်းမွန်စေသည်။
+2. **မော်ဒယ်ကို Quantize လုပ်ခြင်း:** မော်ဒယ်ကို သင်ကြားမလုပ်ခင် Active Aware Quantization (AWQ) နည်းလမ်း +++https://arxiv.org/abs/2306.00978+++ ကို အသုံးပြုပြီး quantize လုပ်ပါမယ်။ AWQ က inference အတွင်း ထုတ်လုပ်တဲ့ activation များကို ထည့်သွင်းစဉ်းစားပြီး မော်ဒယ်ရဲ့ weight များကို quantize လုပ်တာဖြစ်ပါတယ်။ ဒါကြောင့် ပုံမှန် weight quantization နည်းလမ်းများထက် မော်ဒယ်တိကျမှုကို ပိုမိုကောင်းမွန်စေပါတယ်။
 
     ```bash
     olive quantize \
@@ -138,11 +138,11 @@ conda activate olive-ai
        --log_level 1
     ```
 
-    AWQ quantization ပြီးမြောက်ရန် **~၈ မိနစ်** ကြာပြီး မော်ဒယ်အရွယ်အစားကို ~7.5GB မှ ~2.5GB သို့ လျော့နည်းစေမည်ဖြစ်သည်။
+    AWQ quantization ပြီးမြောက်ဖို့ **~၈ မိနစ်** ကြာပြီး မော်ဒယ်အရွယ်အစားကို **~7.5GB မှ ~2.5GB** သို့ လျော့နည်းစေပါမယ်။
 
-    ဒီ lab မှာ Hugging Face မှ မော်ဒယ်များ (ဥပမာ - `microsoft/Phi-3.5-mini-instruct`) ကို input အဖြစ် အသုံးပြုသော်လည်း Azure AI catalog မှ မော်ဒယ်များကို `model_name_or_path` argument ကို Azure AI asset ID (ဥပမာ - `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`) ဖြင့် ပြောင်းလဲ၍ input လုပ်နိုင်သည်။
+    ဒီ lab မှာ Hugging Face မှ မော်ဒယ်များ (ဥပမာ - `microsoft/Phi-3.5-mini-instruct`) ကို input အနေနဲ့ သုံးပြသထားပေမယ့် Olive က Azure AI catalog မှ မော်ဒယ်များကိုလည်း `model_name_or_path` argument ကို Azure AI asset ID (ဥပမာ - `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`) ဖြင့် ပြောင်းလဲသုံးနိုင်ပါတယ်။
 
-3. **မော်ဒယ်ကို သင်ကြားခြင်း:** နောက်တစ်ဆင့်မှာ `olive finetune` command ဖြင့် quantize လုပ်ပြီး မော်ဒယ်ကို fine-tune လုပ်မည်။ Quantize လုပ်ပြီးနောက် fine-tune လုပ်ခြင်းသည် fine-tune လုပ်ပြီးနောက် quantize လုပ်ခြင်းထက် တိကျမှုပိုမိုကောင်းမွန်စေသည်၊ အကြောင်းမှာ fine-tuning လုပ်စဉ် quantization မှ ဖြစ်ပေါ်သည့် အနုတ်လက္ခဏာများကို ပြန်လည်ပြုပြင်နိုင်ခြင်း ဖြစ်သည်။
+3. **မော်ဒယ်ကို သင်ကြားခြင်း:** နောက်တစ်ဆင့်မှာ `olive finetune` command က quantize လုပ်ပြီး မော်ဒယ်ကို fine-tune လုပ်ပေးပါမယ်။ Quantize လုပ်ပြီးနောက် fine-tune လုပ်ခြင်းက quantization မှာ ဖြစ်ပေါ်လာတဲ့ accuracy လျော့နည်းမှုကို ပြန်လည်ကောင်းမွန်စေပါတယ်။
 
     ```bash
     olive finetune \
@@ -156,9 +156,9 @@ conda activate olive-ai
         --log_level 1
     ```
 
-    Fine-tuning ပြီးမြောက်ရန် **~၆ မိနစ်** (၁၀၀ ခြေလှမ်း) ကြာသည်။
+    Fine-tuning ပြီးမြောက်ဖို့ **~၆ မိနစ်** (၁၀၀ steps) ကြာပါမယ်။
 
-4. **Optimize လုပ်ခြင်း:** မော်ဒယ်ကို သင်ကြားပြီးနောက် Olive ၏ `auto-opt` command ဖြင့် optimize လုပ်မည်။ ONNX graph ကို ဖမ်းဆီးပြီး မော်ဒယ်ကို CPU အတွက် ပိုမိုထိရောက်စေရန် compression နှင့် fusion များ ပြုလုပ်မည်ဖြစ်သည်။ အခြားစက်ပစ္စည်းများ (NPU, GPU) အတွက် optimize လုပ်လိုပါက `--device` နှင့် `--provider` arguments များကို ပြောင်းလဲနိုင်သော်လည်း ဒီ lab အတွက် CPU ကိုသာ အသုံးပြုမည်။
+4. **Optimize လုပ်ခြင်း:** မော်ဒယ်ကို သင်ကြားပြီးနောက် Olive ရဲ့ `auto-opt` command ကို အသုံးပြုပြီး ONNX graph ကို ဖမ်းဆီးကာ မော်ဒယ်ကို CPU အတွက် စွမ်းဆောင်ရည်တိုးတက်အောင် compression နဲ့ fusion များ ပြုလုပ်ပါမယ်။ အခြား device များ (NPU, GPU) အတွက် optimize လုပ်ချင်ရင် `--device` နဲ့ `--provider` arguments ကို ပြောင်းလဲနိုင်ပါတယ်။ ဒီ lab အတွက်တော့ CPU ကို သုံးမှာဖြစ်ပါတယ်။
 
     ```bash
     olive auto-opt \
@@ -171,11 +171,11 @@ conda activate olive-ai
        --log_level 1
     ```
 
-    Optimize ပြီးမြောက်ရန် **~၅ မိနစ်** ကြာသည်။
+    Optimize ပြီးမြောက်ဖို့ **~၅ မိနစ်** ကြာပါမယ်။
 
 ### အဆင့် 5: မော်ဒယ် inference အမြန်စမ်းသပ်ခြင်း
 
-မော်ဒယ် inference စမ်းသပ်ရန် သင့် folder တွင် **app.py** ဆိုသော Python ဖိုင်တစ်ခု ဖန်တီးပြီး အောက်ပါ code ကို ကူးထည့်ပါ။
+မော်ဒယ်ကို inference စမ်းသပ်ဖို့ သင့် folder ထဲမှာ **app.py** ဆိုတဲ့ Python ဖိုင်တစ်ခု ဖန်တီးပြီး အောက်ပါ code ကို ကူးထည့်ပါ။
 
 ```python
 import onnxruntime_genai as og
@@ -211,28 +211,28 @@ while not generator.is_done():
 print("\n")
 ```
 
-အောက်ပါ command ဖြင့် code ကို အကောင်အထည်ဖော်ပါ။
+အောက်ပါ command ဖြင့် code ကို run ပါ။
 
 ```bash
 python app.py
 ```
 
-### အဆင့် 6: မော်ဒယ်ကို Azure AI သို့ Upload လုပ်ခြင်း
+### အဆင့် 6: မော်ဒယ်ကို Azure AI သို့ upload လုပ်ခြင်း
 
-မော်ဒယ်ကို Azure AI model repository သို့ upload လုပ်ခြင်းဖြင့် သင့်ဖွံ့ဖြိုးတိုးတက်ရေးအဖွဲ့ဝင်များနှင့် မော်ဒယ်ကို မျှဝေခြင်းနှင့် မော်ဒယ် version control ကို စီမံခန့်ခွဲနိုင်သည်။ မော်ဒယ် upload လုပ်ရန် အောက်ပါ command ကို အသုံးပြုပါ။
+မော်ဒယ်ကို Azure AI model repository သို့ upload လုပ်ခြင်းက သင့်ဖွံ့ဖြိုးရေးအဖွဲ့ဝင်များနဲ့ မော်ဒယ်ကို မျှဝေဖို့နဲ့ မော်ဒယ် version control ကို စနစ်တကျ စီမံခန့်ခွဲဖို့ အထောက်အကူဖြစ်ပါတယ်။ မော်ဒယ် upload လုပ်ဖို့ အောက်ပါ command ကို run ပါ။
 
 > [!NOTE]
-> `{}` placeholders များကို သင့် resource group နာမည်နှင့် Azure AI Project နာမည်ဖြင့် ပြောင်းလဲထည့်သွင်းပါ။
+> `{}` placeholder များကို သင့် resource group နဲ့ Azure AI Project Name နဲ့ ပြောင်းလဲထည့်သွင်းပါ။
 
-resource group နာမည်နှင့် Azure AI Project နာမည် ရှာဖွေရန် အောက်ပါ command ကို အသုံးပြုပါ။
+resource group နဲ့ Azure AI Project name ကို ရှာဖွေရန် အောက်ပါ command ကို run ပါ။
 
 ```
 az ml workspace show
 ```
 
-သို့မဟုတ် +++ai.azure.com+++ သို့ သွား၍ **management center** > **project** > **overview** ကို ရွေးချယ်ပါ။
+သို့မဟုတ် +++ai.azure.com+++ သို့ ဝင်ပြီး **management center** > **project** > **overview** ကို ရွေးချယ်ပါ။
 
-`{}` placeholders များကို သင့် resource group နာမည်နှင့် Azure AI Project နာမည်ဖြင့် ပြောင်းလဲထည့်သွင်းပါ။
+`{}` placeholder များကို သင့် resource group နဲ့ Azure AI Project Name နဲ့ ပြောင်းလဲထည့်သွင်းပါ။
 
 ```bash
 az ml model create \
@@ -243,7 +243,7 @@ az ml model create \
     --workspace-name {PROJECT_NAME}
 ```
 
-သင့် upload လုပ်ထားသော မော်ဒယ်ကို https://ml.azure.com/model/list တွင် ကြည့်ရှုနိုင်ပြီး မော်ဒယ်ကို deploy လုပ်နိုင်ပါသည်။
+ပြီးရင် သင့် upload လုပ်ထားတဲ့ မော်ဒယ်ကို https://ml.azure.com/model/list မှာ ကြည့်ရှုနိုင်ပြီး deploy လုပ်နိုင်ပါပြီ။
 
 **အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ပညာရှင်များ၏ ပရော်ဖက်ရှင်နယ် ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မခံပါ။
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားနေသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းများတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။

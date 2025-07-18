@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-07-09T20:06:10+00:00",
+  "translation_date": "2025-07-16T21:23:43+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 This tutorial will guide you through performing inference using Rust and the [Candle ML framework](https://github.com/huggingface/candle) from HuggingFace. Using Rust for inference offers several benefits, especially compared to other programming languages. Rust is known for its high performance, comparable to C and C++. This makes it an excellent choice for inference tasks, which can be computationally demanding. This is largely due to zero-cost abstractions and efficient memory management without garbage collection overhead. Rust's cross-platform capabilities allow you to develop code that runs on various operating systems, including Windows, macOS, and Linux, as well as mobile platforms, without major changes to the codebase.
 
-Before starting this tutorial, make sure to [install Rust](https://www.rust-lang.org/tools/install), which includes the Rust compiler and Cargo, Rust’s package manager.
+The prerequisite for this tutorial is to [install Rust](https://www.rust-lang.org/tools/install), which includes the Rust compiler and Cargo, Rust’s package manager.
 
 ## Step 1: Create a New Rust Project
 
@@ -21,7 +21,7 @@ To create a new Rust project, run the following command in the terminal:
 cargo new phi-console-app
 ```
 
-This will generate an initial project structure with a `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+This creates an initial project structure with a `Cargo.toml` file and a `src` directory containing a `main.rs` file.
 
 Next, add the dependencies — specifically the `candle`, `hf-hub`, and `tokenizers` crates — to the `Cargo.toml` file:
 
@@ -41,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## Step 2: Configure Basic Parameters
 
-Inside the main.rs file, set up the initial parameters for inference. These will be hardcoded for simplicity, but you can adjust them as needed.
+Inside the main.rs file, set up the initial parameters for inference. These will be hardcoded for simplicity but can be adjusted as needed.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -59,7 +59,7 @@ let device = Device::Cpu;
 - **sample_len**: Specifies the maximum length of the generated text.
 - **top_p**: Used for nucleus sampling to limit the number of tokens considered at each step.
 - **repeat_last_n**: Determines how many recent tokens are considered when applying a penalty to avoid repetitive sequences.
-- **repeat_penalty**: The penalty value applied to discourage repeated tokens.
+- **repeat_penalty**: The penalty value to discourage repeated tokens.
 - **seed**: A random seed (using a fixed value can improve reproducibility).
 - **prompt**: The initial prompt text to start generation. Note that we ask the model to generate a haiku about ice hockey, wrapping it with special tokens to indicate the user and assistant parts of the conversation. The model will then complete the prompt with a haiku.
 - **device**: We use the CPU for computation in this example. Candle also supports running on GPU with CUDA and Metal.
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-We use the `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` file is used to tokenize our input text. Once downloaded, the model is cached, so the first run will be slow (downloading the 2.4GB model), but subsequent runs will be faster.
+We use the `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` file is used for tokenizing the input text. Once downloaded, the model is cached, so the first run will be slow (downloading the 2.4GB model), but subsequent runs will be faster.
 
 ## Step 4: Load Model
 
@@ -120,7 +120,7 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-Here, we tokenize the input prompt and prepare it for inference by converting it into a sequence of token IDs. We also initialize the `LogitsProcessor` to manage the sampling process (probability distribution over the vocabulary) based on the specified `temperature` and `top_p` values. Each token is converted into a tensor and passed through the model to obtain logits.
+Here, we tokenize the input prompt and prepare it for inference by converting it into a sequence of token IDs. We also initialize the `LogitsProcessor` to manage the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` values. Each token is converted into a tensor and passed through the model to get the logits.
 
 The loop processes each token in the prompt, updating the logits processor and preparing for the next token generation.
 

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:50:37+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T14:47:50+00:00",
   "source_file": "README.md",
   "language_code": "en"
 }
@@ -34,11 +34,11 @@ Follow these steps to get started with these resources:
 2. **Clone the Repository**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Join The Microsoft AI Discord Community to connect with experts and fellow developers**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.en.png)
 
-## 🌐 Multi-Language Support
+### 🌐 Multi-Language Support
 
-### Supported via GitHub Action (Automated & Always Up-to-Date)
+#### Supported via GitHub Action (Automated & Always Up-to-Date)
 
 [French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md)  
 [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
@@ -208,10 +208,10 @@ Follow these steps to get started with these resources:
 
 ### Phi on Azure AI Foundry
 
-Learn how to use Microsoft Phi and build end-to-end solutions across your various hardware devices. To try out Phi yourself, start by experimenting with the models and customizing Phi for your scenarios using the [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). You can find more information in Getting Started with [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
+Learn how to use Microsoft Phi and build end-to-end solutions across your various hardware devices. To try Phi yourself, start by experimenting with the models and customizing Phi for your scenarios using the [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). You can find more information in Getting Started with [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
 
 **Playground**  
-Each model has its own dedicated playground to test it on [Azure AI Playground](https://aka.ms/try-phi3).
+Each model has its own dedicated playground to test it out: [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi on GitHub Models
 
@@ -232,9 +232,9 @@ You can also find the model on [Hugging Face](https://huggingface.co/microsoft).
 Microsoft is committed to helping our customers use AI products responsibly, sharing our insights, and building trust-based partnerships through tools like Transparency Notes and Impact Assessments. Many of these resources are available at [https://aka.ms/RAI](https://aka.ms/RAI).  
 Microsoft’s approach to responsible AI is based on our AI principles of fairness, reliability and safety, privacy and security, inclusiveness, transparency, and accountability.
 
-Large-scale natural language, image, and speech models—like those used in this sample—can sometimes behave in ways that are unfair, unreliable, or offensive, potentially causing harm. Please refer to the [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) to understand the risks and limitations.
+Large-scale natural language, image, and speech models—like those used in this example—can sometimes behave in ways that are unfair, unreliable, or offensive, potentially causing harm. Please refer to the [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) to understand the risks and limitations.
 
-The recommended way to reduce these risks is to include a safety system in your architecture that can detect and prevent harmful behavior. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) offers an independent protection layer that can identify harmful user-generated and AI-generated content in applications and services. Azure AI Content Safety includes text and image APIs to detect harmful material. Within Azure AI Foundry, the Content Safety service lets you view, explore, and try sample code for detecting harmful content across different modalities. The following [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) guides you through making requests to the service.
+The recommended way to reduce these risks is to include a safety system in your architecture that can detect and prevent harmful behavior. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) offers an independent protection layer that can identify harmful user-generated and AI-generated content in applications and services. Azure AI Content Safety includes text and image APIs to detect harmful material. Within Azure AI Foundry, the Content Safety service lets you view, explore, and try sample code for detecting harmful content across different modalities. The following [quickstart guide](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) walks you through making requests to the service.
 
 Another important factor is overall application performance. For multi-modal and multi-model applications, performance means the system behaves as you and your users expect, including avoiding harmful outputs. It’s important to evaluate your application’s performance using [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). You can also create and evaluate with [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 

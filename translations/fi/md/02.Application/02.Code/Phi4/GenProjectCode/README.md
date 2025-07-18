@@ -2,31 +2,31 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:50:52+00:00",
+  "translation_date": "2025-07-17T04:46:00+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "fi"
 }
 -->
 ## **Phi-4-mini-mm:n käyttäminen koodin luomiseen**
 
-Phi-4-mini jatkaa Phi-perheen vahvoja koodausominaisuuksia. Voit käyttää Promptia esittääksesi koodaukseen liittyviä kysymyksiä. Tietysti, lisäämällä vahvan päättelykyvyn, sillä on entistä paremmat koodausominaisuudet, kuten projektien luominen vaatimusten mukaan. Esimerkiksi projektien luominen vaatimusten mukaisesti, kuten:
+Phi-4-mini jatkaa Phi-perheen vahvoja koodausominaisuuksia. Voit käyttää Promptia kysymysten esittämiseen koodaukseen liittyen. Tietysti, vahvan päättelykyvyn lisäämisen jälkeen sillä on entistä paremmat koodausominaisuudet, kuten projektien luominen vaatimusten mukaan. Esimerkiksi projektien luominen vaatimusten perusteella, kuten:
 
 ### **Vaatimus**
 
-Luo Ostoskori-sovellus
+Luo ostoskori-sovellus
 
-- Luo REST-API seuraavilla metodeilla:
-    - Hae olutlista käyttäen sivun siirtymää ja rajaa tuloksia.
+- Luo API Rest seuraavilla metodeilla:
+    - Hae olutlista sivun offsetin ja rajoituksen avulla.
     - Hae oluen tiedot id:n perusteella.
     - Etsi olutta nimen, kuvauksen, iskulauseen, ruokayhdistelmien ja hinnan perusteella.
 - Luo tuotelista pääsivulle.
     - Luo hakupalkki tuotteiden suodattamiseen.
     - Siirry kuvaussivulle, kun käyttäjä klikkaa tuotetta.
-- (Valinnainen) Liukusäädin tuotteiden suodattamiseen hinnan mukaan.
+- (Valinnainen) Hinta-suodatin tuotteiden suodattamiseen.
 - Luo ostoskori.
     - Lisää tuotteita koriin.
     - Poista tuotteita korista.
-    - Laske korissa olevien tuotteiden kokonaishinta.
+    - Laske tuotteiden kokonaishinta korissa.
 
 ### **Esimerkkikoodi - Python**
 
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

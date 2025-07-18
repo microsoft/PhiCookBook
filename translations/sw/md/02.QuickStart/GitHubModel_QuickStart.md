@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:20:45+00:00",
+  "translation_date": "2025-07-17T05:40:24+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "sw"
 }
 -->
 ## GitHub Models - Beta ya Umma Iliyopunguzwa
 
-Karibu kwenye [GitHub Models](https://github.com/marketplace/models)! Tuko tayari kabisa kukuwezesha kuchunguza Modeli za AI zilizo kwenye Azure AI.
+Karibu kwenye [GitHub Models](https://github.com/marketplace/models)! Tumeandaa kila kitu tayari kwa ajili yako kuchunguza Modeli za AI zinazohudumiwa kwenye Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.sw.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.sw.png)
 
-Kwa maelezo zaidi kuhusu Modeli zinazopatikana kwenye GitHub Models, tembelea [GitHub Model Marketplace](https://github.com/marketplace/models)
+Kwa maelezo zaidi kuhusu Modeli zinazopatikana kwenye GitHub Models, angalia [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Modeli Zinazopatikana
 
@@ -37,7 +37,7 @@ Kila modeli ina eneo la majaribio na mifano ya msimbo
 
 ## Kuanzia
 
-Kuna mifano michache rahisi tayari kwa ajili yako kuendesha. Unaweza kuipata katika saraka ya samples. Ikiwa unataka kuruka moja kwa moja kwenye lugha unayopenda, mifano ipo katika Lugha zifuatazo:
+Kuna mifano michache ya msingi tayari kwa ajili yako kuendesha. Unaweza kuipata kwenye saraka ya samples. Ikiwa unataka kwenda moja kwa moja kwenye lugha unayopenda, unaweza kupata mifano katika Lugha zifuatazo:
 
 - Python
 - JavaScript
@@ -45,16 +45,16 @@ Kuna mifano michache rahisi tayari kwa ajili yako kuendesha. Unaweza kuipata kat
 
 Pia kuna Mazingira maalum ya Codespaces kwa ajili ya kuendesha mifano na modeli.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.sw.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.sw.png)
 
-## Msimbo wa Mfano
+## Mifano ya Msimbo
 
-Hapa chini kuna vipande vya msimbo kwa matumizi mbalimbali. Kwa maelezo zaidi kuhusu Azure AI Inference SDK, angalia nyaraka kamili na mifano.
+Hapa chini ni vipande vya msimbo kwa baadhi ya matumizi. Kwa maelezo zaidi kuhusu Azure AI Inference SDK, angalia nyaraka kamili na mifano.
 
 ## Usanidi
 
-1. Tengeneza tokeni ya ufikiaji wa kibinafsi  
-Huhitaji kumpa ruhusa yoyote tokeni hiyo. Kumbuka tokeni itatumwa kwa huduma ya Microsoft.
+1. Tengeneza tokeni ya upatikanaji binafsi  
+Huhitaji kutoa ruhusa yoyote kwa tokeni. Kumbuka tokeni itatumwa kwa huduma ya Microsoft.
 
 Ili kutumia vipande vya msimbo hapa chini, tengeneza variable ya mazingira kuweka tokeni yako kama ufunguo kwa msimbo wa mteja.
 
@@ -62,7 +62,7 @@ Ikiwa unatumia bash:
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-Ikiwa uko powershell:  
+Ikiwa uko kwenye powershell:  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
@@ -76,15 +76,15 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 
 ## Mfano wa Python
 
-### Sakinisha tegemezi  
+### Sakinisha utegemezi  
 Sakinisha Azure AI Inference SDK kwa kutumia pip (Inahitaji: Python >=3.8):  
 
 ```
 pip install azure-ai-inference
 ```  
-### Endesha mfano rahisi wa msimbo
+### Endesha mfano wa msimbo wa msingi
 
-Mfano huu unaonyesha mwito rahisi kwa API ya chat completion. Unatumia endpoint ya GitHub AI model inference na tokeni yako ya GitHub. Mwito ni wa moja kwa moja (synchronous).
+Mfano huu unaonyesha wito wa msingi kwa API ya chat completion. Unatumia kiungo cha modeli ya AI ya GitHub na tokeni yako ya GitHub. Wito ni wa moja kwa moja (synchronous).
 
 ```
 import os
@@ -118,7 +118,7 @@ print(response.choices[0].message.content)
 
 ### Endesha mazungumzo ya mizunguko mingi
 
-Mfano huu unaonyesha mazungumzo ya mizunguko mingi kwa API ya chat completion. Unapotumia modeli kwa programu ya mazungumzo, utahitaji kusimamia historia ya mazungumzo na kutuma ujumbe wa hivi karibuni kwa modeli.
+Mfano huu unaonyesha mazungumzo ya mizunguko mingi na API ya chat completion. Unapotumia modeli kwa programu ya mazungumzo, utahitaji kusimamia historia ya mazungumzo hayo na kutuma ujumbe wa hivi karibuni kwa modeli.
 
 ```
 import os
@@ -150,7 +150,7 @@ print(response.choices[0].message.content)
 
 ### Pitia matokeo kwa mtiririko
 
-Kwa uzoefu bora wa mtumiaji, utataka kupitisha jibu la modeli kwa mtiririko ili tokeni ya kwanza ionekane mapema na kuepuka kusubiri majibu marefu.
+Kwa uzoefu bora wa mtumiaji, utataka kupitisha majibu ya modeli kwa mtiririko ili tokeni ya kwanza ionekane mapema na kuepuka kusubiri majibu marefu.
 
 ```
 import os
@@ -185,11 +185,11 @@ client.close()
 ```  
 ## JavaScript
 
-### Sakinisha tegemezi
+### Sakinisha utegemezi
 
 Sakinisha Node.js.
 
-Nakili mistari ifuatayo na uiweke kama faili package.json ndani ya folda yako.
+Nakili mistari ifuatayo ya maandishi na uiweke kama faili package.json ndani ya folda yako.
 
 ```
 {
@@ -202,15 +202,15 @@ Nakili mistari ifuatayo na uiweke kama faili package.json ndani ya folda yako.
 }
 ```
 
-Kumbuka: @azure/core-sse inahitajika tu wakati unapopita majibu ya chat completions.
+Kumbuka: @azure/core-sse inahitajika tu wakati unapitisha majibu ya chat completions kwa mtiririko.
 
 Fungua dirisha la terminal katika folda hii na endesha npm install.
 
-Kwa kila kipande cha msimbo hapa chini, nakili yaliyomo katika faili sample.js na uendeshe kwa node sample.js.
+Kwa kila kipande cha msimbo hapa chini, nakili yaliyomo kwenye faili sample.js na uendeshe kwa node sample.js.
 
-### Endesha mfano rahisi wa msimbo
+### Endesha mfano wa msimbo wa msingi
 
-Mfano huu unaonyesha mwito rahisi kwa API ya chat completion. Unatumia endpoint ya GitHub AI model inference na tokeni yako ya GitHub. Mwito ni wa moja kwa moja (synchronous).
+Mfano huu unaonyesha wito wa msingi kwa API ya chat completion. Unatumia kiungo cha modeli ya AI ya GitHub na tokeni yako ya GitHub. Wito ni wa moja kwa moja (synchronous).
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -251,7 +251,7 @@ main().catch((err) => {
 
 ### Endesha mazungumzo ya mizunguko mingi
 
-Mfano huu unaonyesha mazungumzo ya mizunguko mingi kwa API ya chat completion. Unapotumia modeli kwa programu ya mazungumzo, utahitaji kusimamia historia ya mazungumzo na kutuma ujumbe wa hivi karibuni kwa modeli.
+Mfano huu unaonyesha mazungumzo ya mizunguko mingi na API ya chat completion. Unapotumia modeli kwa programu ya mazungumzo, utahitaji kusimamia historia ya mazungumzo hayo na kutuma ujumbe wa hivi karibuni kwa modeli.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,9 +292,8 @@ main().catch((err) => {
 });
 ```
 
-### Pitia matokeo kwa mtiririko
-
-Kwa uzoefu bora wa mtumiaji, utataka kupitisha jibu la modeli kwa mtiririko ili tokeni ya kwanza ionekane mapema na kuepuka kusubiri majibu marefu.
+### Pitia matokeo kwa mtiririko  
+Kwa uzoefu bora wa mtumiaji, utataka kupitisha majibu ya modeli kwa mtiririko ili tokeni ya kwanza ionekane mapema na kuepuka kusubiri majibu marefu.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -350,7 +349,7 @@ main().catch((err) => {
 
 ## REST
 
-### Endesha mfano rahisi wa msimbo
+### Endesha mfano wa msimbo wa msingi
 
 Bandika yafuatayo kwenye shell:
 
@@ -404,7 +403,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 ```  
 ### Pitia matokeo kwa mtiririko
 
-Huu ni mfano wa kupiga mwito kwenye endpoint na kupitisha jibu kwa mtiririko.
+Huu ni mfano wa kupiga kiungo na kupitisha majibu kwa mtiririko.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -428,19 +427,19 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Matumizi ya BURE na Mipaka ya Kiwango kwa GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.sw.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.sw.png)
 
-[Mipaka ya kiwango kwa matumizi ya playground na API ya bure](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) yamekusudiwa kusaidia wewe kujaribu modeli na kutengeneza mfano wa programu yako ya AI. Kwa matumizi zaidi ya mipaka hiyo, na ili kupeleka programu yako kwa kiwango kikubwa, lazima utumie rasilimali kutoka kwa akaunti ya Azure, na uthibitishe kutoka huko badala ya tokeni yako ya ufikiaji wa kibinafsi ya GitHub. Huhitaji kubadilisha kitu kingine chochote kwenye msimbo wako. Tumia kiungo hiki kujifunza jinsi ya kuvuka mipaka ya kiwango cha bure katika Azure AI.
+[Mipaka ya kiwango kwa eneo la majaribio na matumizi ya bure ya API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) yamekusudiwa kusaidia kujaribu modeli na kuunda mfano wa programu yako ya AI. Kwa matumizi zaidi ya mipaka hiyo, na kupeleka programu yako kwa kiwango kikubwa, lazima upange rasilimali kutoka kwa akaunti ya Azure, na uthibitishe kutoka hapo badala ya tokeni yako ya upatikanaji binafsi ya GitHub. Huhitaji kubadilisha kitu kingine chochote kwenye msimbo wako. Tumia kiungo hiki kujifunza jinsi ya kupita mipaka ya kiwango cha bure katika Azure AI.
 
-### Tahadhari
+### Maelezo ya Onyo
 
-Kumbuka unapotumia modeli, una jaribu AI, hivyo makosa katika maudhui yanawezekana.
+Kumbuka unapoingiliana na modeli, unajaribu AI, hivyo makosa ya maudhui yanawezekana.
 
-Huduma hii ina mipaka mbalimbali (ikiwa ni pamoja na maombi kwa dakika, maombi kwa siku, tokeni kwa ombi, na maombi yanayofanyika kwa wakati mmoja) na haijaundwa kwa matumizi ya uzalishaji.
+Kipengele hiki kina mipaka mbalimbali (ikiwa ni pamoja na maombi kwa dakika, maombi kwa siku, tokeni kwa ombi, na maombi yanayofanyika kwa wakati mmoja) na hakijatengenezwa kwa matumizi ya uzalishaji.
 
-GitHub Models hutumia Azure AI Content Safety. Vichujio hivi haviwezi kuzimwa kama sehemu ya uzoefu wa GitHub Models. Ukiacha kutumia modeli kupitia huduma ya kulipwa, tafadhali sanifu vichujio vya maudhui kulingana na mahitaji yako.
+GitHub Models hutumia Azure AI Content Safety. Vichujio hivi haviwezi kuzimwa kama sehemu ya uzoefu wa GitHub Models. Ikiwa utaamua kutumia modeli kupitia huduma ya kulipwa, tafadhali sanidi vichujio vyako vya maudhui ili kukidhi mahitaji yako.
 
-Huduma hii iko chini ya Masharti ya Awali ya GitHub.
+Huduma hii iko chini ya Masharti ya Awali ya Kutolewa ya GitHub.
 
-**Kang’ang’a**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubeba jukumu lolote kwa kutoelewana au tafsiri mbaya zitokanazo na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

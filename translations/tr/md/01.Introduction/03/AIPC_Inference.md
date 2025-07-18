@@ -2,45 +2,45 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-05-09T10:15:37+00:00",
+  "translation_date": "2025-07-16T20:01:05+00:00",
   "source_file": "md/01.Introduction/03/AIPC_Inference.md",
   "language_code": "tr"
 }
 -->
 # **AI PC'de Phi-3 Çıkarımı**
 
-Üretken yapay zekâdaki ilerlemeler ve uç cihaz donanım kapasitelerindeki gelişmelerle birlikte, artık daha fazla sayıda üretken yapay zekâ modeli kullanıcıların Kendi Cihazını Getir (BYOD) cihazlarına entegre edilebiliyor. AI PC’ler de bu modeller arasında yer alıyor. 2024 itibarıyla Intel, AMD ve Qualcomm, PC üreticileriyle iş birliği yaparak donanım değişiklikleriyle yerel üretken yapay zekâ modellerinin dağıtımını kolaylaştıran AI PC’leri tanıttı. Bu yazıda, Intel AI PC’lerine odaklanarak Phi-3 modelinin Intel AI PC üzerinde nasıl çalıştırılacağını inceleyeceğiz.
+Üretken yapay zekâdaki gelişmeler ve uç cihaz donanım yeteneklerindeki iyileşmelerle birlikte, giderek daha fazla üretken yapay zekâ modeli kullanıcıların Kendi Cihazını Getir (BYOD) cihazlarına entegre edilebiliyor. AI PC'ler de bu modeller arasında yer alıyor. 2024 itibarıyla Intel, AMD ve Qualcomm, PC üreticileriyle iş birliği yaparak donanım değişiklikleriyle yerel üretken yapay zekâ modellerinin dağıtımını kolaylaştıran AI PC'leri tanıttı. Bu yazıda, Intel AI PC'lere odaklanacak ve Phi-3 modelinin Intel AI PC üzerinde nasıl dağıtılacağını inceleyeceğiz.
 
-### NPU Nedir?
+### NPU Nedir
 
-NPU (Sinir İşlem Birimi), sinir ağı işlemlerini ve yapay zekâ görevlerini hızlandırmak için tasarlanmış, daha büyük bir SoC üzerindeki özel bir işlemci veya işlem birimidir. Genel amaçlı CPU ve GPU'lardan farklı olarak, NPU'lar veri odaklı paralel hesaplama için optimize edilmiştir; bu da onları video ve resim gibi büyük multimedya verilerini ve sinir ağları için verileri işleme konusunda son derece verimli kılar. Konuşma tanıma, video görüşmelerde arka plan bulanıklığı ve nesne tespiti gibi fotoğraf veya video düzenleme işlemleri gibi yapay zekâ ile ilgili görevlerde özellikle başarılıdırlar.
+NPU (Sinir İşlem Birimi), daha büyük bir SoC üzerinde yapay sinir ağı işlemlerini ve yapay zekâ görevlerini hızlandırmak için özel olarak tasarlanmış bir işlemci veya işlem birimidir. Genel amaçlı CPU ve GPU'lardan farklı olarak, NPU'lar veri odaklı paralel hesaplama için optimize edilmiştir; bu sayede video ve görüntü gibi büyük multimedya verilerini ve sinir ağları için verileri işlemek konusunda oldukça verimlidirler. Konuşma tanıma, video görüşmelerde arka plan bulanıklaştırma ve nesne tespiti gibi fotoğraf veya video düzenleme süreçleri gibi yapay zekâ ile ilgili görevlerde özellikle başarılıdırlar.
 
 ## NPU ve GPU Karşılaştırması
 
-Birçok yapay zekâ ve makine öğrenimi işi GPU’lar üzerinde çalışırken, GPU ve NPU arasında önemli bir fark vardır.  
-GPU’lar paralel hesaplama yetenekleriyle bilinir, ancak tüm GPU’lar grafik işlemenin ötesinde aynı verimlilikte değildir. NPU’lar ise sinir ağı işlemlerinde yer alan karmaşık hesaplamalar için özel olarak tasarlanmıştır ve bu nedenle yapay zekâ görevlerinde çok daha etkilidir.
+Birçok yapay zekâ ve makine öğrenimi işi GPU'larda çalışsa da, GPU ve NPU arasında önemli bir fark vardır.  
+GPU'lar paralel hesaplama yetenekleriyle bilinir, ancak tüm GPU'lar grafik işleme dışındaki görevlerde aynı verimlilikte değildir. NPU'lar ise sinir ağı işlemlerinde yer alan karmaşık hesaplamalar için özel olarak tasarlanmıştır ve yapay zekâ görevlerinde çok daha etkilidir.
 
-Özetle, NPU’lar yapay zekâ hesaplamalarını hızlandıran matematik uzmanlarıdır ve AI PC’lerin yükselen döneminde önemli bir rol oynarlar!
+Özetle, NPU'lar yapay zekâ hesaplamalarını hızlandıran matematik uzmanlarıdır ve AI PC'lerin yükselen çağında önemli bir rol oynarlar!
 
-***Bu örnek, Intel’in en yeni Intel Core Ultra İşlemcisi temel alınarak hazırlanmıştır***
+***Bu örnek, Intel'in en yeni Intel Core Ultra İşlemcisi temel alınarak hazırlanmıştır***
 
 ## **1. Phi-3 Modelini Çalıştırmak için NPU Kullanımı**
 
-Intel® NPU cihazı, Intel® Core™ Ultra nesil CPU’lardan itibaren (önceden Meteor Lake olarak bilinen) Intel istemci CPU’larına entegre edilmiş bir yapay zekâ çıkarım hızlandırıcısıdır. Yapay sinir ağı görevlerinin enerji verimli şekilde yürütülmesini sağlar.
+Intel® NPU cihazı, Intel® Core™ Ultra nesil CPU'lardan (eski adıyla Meteor Lake) itibaren Intel istemci CPU'larına entegre edilmiş bir yapay zekâ çıkarım hızlandırıcısıdır. Yapay sinir ağı görevlerinin enerji verimli şekilde yürütülmesini sağlar.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.tr.png)
+![Gecikme](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.tr.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.tr.png)
+![Gecikme770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.tr.png)
 
 **Intel NPU Hızlandırma Kütüphanesi**
 
-Intel NPU Hızlandırma Kütüphanesi [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library), Intel Sinir İşlem Birimi’nin (NPU) gücünden yararlanarak uyumlu donanım üzerinde yüksek hızlı hesaplamalar yapmanızı sağlayan bir Python kütüphanesidir.
+Intel NPU Hızlandırma Kütüphanesi [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library), Intel Sinir İşlem Birimi (NPU) gücünden yararlanarak uyumlu donanımlarda yüksek hızlı hesaplamalar yapmanızı sağlayan Python kütüphanesidir.
 
-Intel® Core™ Ultra işlemcilerle güçlendirilmiş AI PC’de Phi-3-mini örneği.
+Intel® Core™ Ultra işlemcilerle güçlendirilmiş AI PC üzerinde Phi-3-mini örneği.
 
 ![DemoPhiIntelAIPC](../../../../../imgs/01/03/AIPC/aipcphi3-mini.gif)
 
-Python Kütüphanesini pip ile kurun
+Python Kütüphanesini pip ile yükleyin
 
 ```bash
 
@@ -50,9 +50,9 @@ Python Kütüphanesini pip ile kurun
 
 ***Not*** Proje hâlâ geliştirme aşamasında, ancak referans model oldukça tamamlanmış durumda.
 
-### **Intel NPU Hızlandırma Kütüphanesi ile Phi-3’ü Çalıştırmak**
+### **Intel NPU Hızlandırma Kütüphanesi ile Phi-3 Çalıştırma**
 
-Intel NPU hızlandırması kullanılırken, bu kütüphane geleneksel kodlama sürecini etkilemez. Sadece orijinal Phi-3 modelini FP16, INT8, INT4 gibi formatlarda kuantize etmek için bu kütüphaneyi kullanmanız gerekir.
+Intel NPU hızlandırması kullanıldığında, bu kütüphane geleneksel kodlama sürecini etkilemez. Orijinal Phi-3 modelini FP16, INT8, INT4 gibi biçimlerde kuantize etmek için sadece bu kütüphaneyi kullanmanız yeterlidir.
 
 ```python
 from transformers import AutoTokenizer, pipeline,TextStreamer
@@ -72,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-Kuantizasyon başarılı olduktan sonra, Phi-3 modelini çalıştırmak için NPU’yu çağırmaya devam edin.
+Kuantizasyon başarılı olduktan sonra, Phi-3 modelini çalıştırmak için NPU çağrısı yapılır.
 
 ```python
 generation_args = {
@@ -96,9 +96,9 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-Kod çalışırken, Görev Yöneticisi üzerinden NPU’nun çalışma durumunu izleyebiliriz.
+Kod çalıştırılırken, Görev Yöneticisi üzerinden NPU'nun çalışma durumu izlenebilir.
 
-![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.tr.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.tr.png)
 
 ***Örnekler*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -106,41 +106,41 @@ Kod çalışırken, Görev Yöneticisi üzerinden NPU’nun çalışma durumunu 
 
 ### **DirectML Nedir**
 
-[DirectML](https://github.com/microsoft/DirectML), makine öğrenimi için yüksek performanslı, donanım hızlandırmalı bir DirectX 12 kütüphanesidir. DirectML, AMD, Intel, NVIDIA ve Qualcomm gibi üreticilerin tüm DirectX 12 destekli GPU’ları dahil olmak üzere geniş bir donanım ve sürücü yelpazesinde yaygın makine öğrenimi görevlerine GPU hızlandırması sağlar.
+[DirectML](https://github.com/microsoft/DirectML), makine öğrenimi için yüksek performanslı, donanım hızlandırmalı bir DirectX 12 kütüphanesidir. DirectML, AMD, Intel, NVIDIA ve Qualcomm gibi üreticilerin tüm DirectX 12 destekli GPU'ları dahil olmak üzere geniş bir donanım ve sürücü yelpazesinde yaygın makine öğrenimi görevleri için GPU hızlandırması sağlar.
 
-Tek başına kullanıldığında, DirectML API’si düşük seviyeli bir DirectX 12 kütüphanesidir ve framework’ler, oyunlar ve diğer gerçek zamanlı uygulamalar gibi yüksek performanslı, düşük gecikmeli uygulamalar için uygundur. DirectML’in Direct3D 12 ile sorunsuz çalışması, düşük yükü ve donanım genelinde uyumluluğu, yüksek performans ve donanımda güvenilirlik gerektiren makine öğrenimi hızlandırmaları için ideal kılar.
+Tek başına kullanıldığında, DirectML API'si düşük seviyeli bir DirectX 12 kütüphanesidir ve frameworkler, oyunlar ve diğer gerçek zamanlı uygulamalar gibi yüksek performanslı, düşük gecikmeli uygulamalar için uygundur. DirectML'in Direct3D 12 ile sorunsuz birlikte çalışması, düşük ek yükü ve donanım genelinde uyumluluğu, yüksek performansın ve donanım genelinde güvenilir ve öngörülebilir sonuçların kritik olduğu durumlarda makine öğrenimini hızlandırmak için ideal kılar.
 
 ***Not*** : En son DirectML sürümü artık NPU desteği sunmaktadır (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
-### DirectML ve CUDA'nın Yetkinlikleri ve Performansları
+### DirectML ve CUDA'nın yetenekleri ve performans açısından karşılaştırılması:
 
-**DirectML**, Microsoft tarafından geliştirilen bir makine öğrenimi kütüphanesidir. Windows cihazlarda, masaüstü, dizüstü ve uç cihazlar dahil olmak üzere makine öğrenimi iş yüklerini hızlandırmak için tasarlanmıştır.  
+**DirectML**, Microsoft tarafından geliştirilen bir makine öğrenimi kütüphanesidir. Windows cihazlarda, masaüstü, dizüstü ve uç cihazlarda makine öğrenimi iş yüklerini hızlandırmak için tasarlanmıştır.  
 - DX12 Tabanlı: DirectML, DirectX 12 (DX12) üzerine inşa edilmiştir ve NVIDIA ile AMD dahil olmak üzere geniş GPU desteği sunar.  
-- Daha Geniş Destek: DX12 kullandığı için, DirectML DX12 destekleyen tüm GPU’larla, entegre GPU’lar dahil, çalışabilir.  
-- Görüntü İşleme: DirectML, görüntü tanıma, nesne tespiti gibi görevler için sinir ağlarıyla görüntü ve diğer verileri işler.  
+- Daha Geniş Destek: DX12 kullandığı için, DirectML DX12 destekleyen tüm GPU'larla, hatta entegre GPU'larla çalışabilir.  
+- Görüntü İşleme: DirectML, görüntü tanıma, nesne tespiti gibi görevler için sinir ağları kullanarak görüntü ve diğer verileri işler.  
 - Kurulum Kolaylığı: DirectML kurulumu basittir ve GPU üreticilerinden özel SDK veya kütüphane gerektirmez.  
-- Performans: Bazı durumlarda, özellikle belirli iş yüklerinde CUDA’dan daha hızlı çalışabilir.  
-- Sınırlamalar: Float16 büyük partiler için ise bazen daha yavaş olabilir.
+- Performans: Bazı durumlarda DirectML iyi performans gösterir ve belirli iş yüklerinde CUDA'dan daha hızlı olabilir.  
+- Sınırlamalar: Ancak, özellikle float16 büyük batch boyutlarında DirectML bazen daha yavaş olabilir.
 
-**CUDA**, NVIDIA’nın paralel hesaplama platformu ve programlama modelidir. Geliştiricilerin NVIDIA GPU’ların gücünü genel amaçlı hesaplamalar için kullanmasını sağlar.  
-- NVIDIA’ya Özel: CUDA, NVIDIA GPU’larla sıkı entegredir ve özel olarak onlar için tasarlanmıştır.  
-- Yüksek Optimizasyon: GPU hızlandırmalı görevlerde, özellikle NVIDIA GPU’larda mükemmel performans sağlar.  
-- Yaygın Kullanım: TensorFlow ve PyTorch gibi birçok makine öğrenimi framework’ü CUDA desteğine sahiptir.  
-- Özelleştirme: Geliştiriciler, CUDA ayarlarını belirli görevler için optimize edebilir, bu da en iyi performansı sağlar.  
-- Sınırlamalar: Ancak, CUDA’nın NVIDIA donanımına bağımlılığı, farklı GPU’larla geniş uyumluluğu kısıtlayabilir.
+**CUDA**, NVIDIA'nın paralel hesaplama platformu ve programlama modelidir. Geliştiricilerin NVIDIA GPU'larının gücünü genel amaçlı hesaplamalar, makine öğrenimi ve bilimsel simülasyonlar için kullanmasını sağlar.  
+- NVIDIA'ya Özel: CUDA, NVIDIA GPU'ları için sıkı entegrasyonla tasarlanmıştır.  
+- Yüksek Optimizasyon: NVIDIA GPU'larda hızlandırılmış görevler için mükemmel performans sunar.  
+- Yaygın Kullanım: TensorFlow ve PyTorch gibi birçok makine öğrenimi frameworkü CUDA desteğine sahiptir.  
+- Özelleştirme: Geliştiriciler CUDA ayarlarını belirli görevler için ince ayar yapabilir, böylece optimal performans elde edilir.  
+- Sınırlamalar: Ancak, CUDA'nın NVIDIA donanımına bağımlılığı, farklı GPU'larda geniş uyumluluk isteyenler için kısıtlayıcı olabilir.
 
-### DirectML ve CUDA Arasında Seçim Yapmak
+### DirectML ve CUDA Arasında Seçim
 
-DirectML ve CUDA arasında seçim, kullanım senaryonuza, donanımınıza ve tercihinize bağlıdır.  
-Daha geniş uyumluluk ve kolay kurulum istiyorsanız, DirectML iyi bir seçenek olabilir. Ancak NVIDIA GPU’larınız varsa ve yüksek optimize performans gerekiyorsa, CUDA güçlü bir tercih olmaya devam eder. Özetle, her iki teknoloji de güçlü ve zayıf yönlere sahip; karar verirken gereksinimlerinizi ve mevcut donanımınızı göz önünde bulundurun.
+DirectML ve CUDA arasında seçim, kullanım amacınıza, donanımınıza ve tercihinize bağlıdır.  
+Daha geniş uyumluluk ve kolay kurulum arıyorsanız DirectML iyi bir seçenek olabilir. Ancak NVIDIA GPU'larınız varsa ve yüksek optimize performans gerekiyorsa, CUDA güçlü bir tercihtir. Özetle, her iki teknoloji de avantaj ve dezavantajlara sahiptir; karar verirken ihtiyaçlarınızı ve mevcut donanımı göz önünde bulundurun.
 
 ### **ONNX Runtime ile Üretken Yapay Zekâ**
 
-Yapay zekâ çağında, AI modellerinin taşınabilirliği çok önemlidir. ONNX Runtime, eğitilmiş modelleri farklı cihazlara kolayca dağıtabilir. Geliştiriciler, çıkarım framework’üne odaklanmadan, tek bir API kullanarak model çıkarımı yapabilir. Üretken yapay zekâ çağında, ONNX Runtime kod optimizasyonu da gerçekleştirmiştir (https://onnxruntime.ai/docs/genai/). Optimizasyonlu ONNX Runtime sayesinde, kuantize edilmiş üretken yapay zekâ modelleri farklı cihazlarda çıkarım yapabilir. ONNX Runtime ile üretken yapay zekâda, Python, C#, C / C++ üzerinden model çıkarımı yapılabilir. Elbette, iPhone üzerinde dağıtımda C++’ın ONNX Runtime API’sinden faydalanılabilir.
+Yapay zekâ çağında, AI modellerinin taşınabilirliği çok önemlidir. ONNX Runtime, eğitilmiş modelleri farklı cihazlara kolayca dağıtabilir. Geliştiriciler çıkarım çerçevesine odaklanmadan, tek bir API kullanarak model çıkarımı yapabilirler. Üretken yapay zekâ çağında, ONNX Runtime ayrıca kod optimizasyonu da yapmaktadır (https://onnxruntime.ai/docs/genai/). Optimizasyonlu ONNX Runtime sayesinde, kuantize edilmiş üretken yapay zekâ modelleri farklı uç cihazlarda çıkarılabilir. ONNX Runtime ile üretken yapay zekâ model API'si Python, C#, C/C++ dillerinde kullanılabilir. Tabii ki, iPhone üzerinde dağıtımda C++'ın ONNX Runtime API'sinden faydalanılabilir.
 
 [Örnek Kod](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
-***ONNX Runtime üretken yapay zekâ kütüphanesini derleyin***
+***ONNX Runtime kütüphanesini derleme***
 
 ```bash
 
@@ -179,7 +179,7 @@ python build.py --use_dml
 
 ```
 
-**Kütüphaneyi yükleyin**
+**Kütüphaneyi yükleme**
 
 ```bash
 
@@ -187,9 +187,9 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-Çalıştırma sonucu bu şekildedir
+Çalıştırma sonucu
 
-![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.tr.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.tr.png)
 
 ***Örnekler*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -197,11 +197,11 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ### **OpenVINO Nedir**
 
-[OpenVINO](https://github.com/openvinotoolkit/openvino), derin öğrenme modellerini optimize etmek ve dağıtmak için açık kaynaklı bir araç setidir. TensorFlow, PyTorch gibi popüler framework’lerden gelen görsel, ses ve dil modelleri için artırılmış derin öğrenme performansı sağlar. OpenVINO ile başlayın. OpenVINO ayrıca CPU ve GPU ile birlikte Phi-3 modelini çalıştırmak için de kullanılabilir.
+[OpenVINO](https://github.com/openvinotoolkit/openvino), derin öğrenme modellerini optimize etmek ve dağıtmak için açık kaynaklı bir araç setidir. TensorFlow, PyTorch gibi popüler frameworklerden gelen görsel, ses ve dil modelleri için derin öğrenme performansını artırır. OpenVINO ile başlayın. OpenVINO, CPU ve GPU ile birlikte Phi-3 modelini çalıştırmak için de kullanılabilir.
 
-***Not***: Şu anda OpenVINO NPU desteği sağlamamaktadır.
+***Not***: Şu anda OpenVINO NPU desteği sunmamaktadır.
 
-### **OpenVINO Kütüphanesini Kurma**
+### **OpenVINO Kütüphanesini Yükleme**
 
 ```bash
 
@@ -213,9 +213,9 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-### **OpenVINO ile Phi-3’ü Çalıştırmak**
+### **OpenVINO ile Phi-3 Çalıştırma**
 
-NPU gibi, OpenVINO da üretken yapay zekâ modellerinin çağrısını kuantize modelleri çalıştırarak tamamlar. Öncelikle Phi-3 modelini kuantize etmemiz gerekir ve optimum-cli aracılığıyla komut satırında model kuantizasyonunu tamamlarız.
+NPU gibi, OpenVINO da kuantize edilmiş modelleri çalıştırarak üretken yapay zekâ modellerinin çağrısını tamamlar. Öncelikle Phi-3 modelini kuantize etmemiz gerekir ve optimum-cli ile komut satırından model kuantizasyonu tamamlanır.
 
 **INT4**
 
@@ -233,11 +233,11 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ```
 
-Dönüştürülmüş format şu şekildedir
+Dönüştürülmüş format aşağıdaki gibidir
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.tr.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.tr.png)
 
-Model yollarını (model_dir), ilgili konfigürasyonları (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) ve donanım hızlandırmalı cihazları (GPU.0) OVModelForCausalLM üzerinden yükleyin
+Model yolları (model_dir), ilgili konfigürasyonlar (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) ve donanım hızlandırmalı cihazlar (GPU.0) OVModelForCausalLM aracılığıyla yüklenir.
 
 ```python
 
@@ -251,13 +251,13 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-Kod çalışırken, Görev Yöneticisi üzerinden GPU’nun çalışma durumunu izleyebiliriz
+Kod çalıştırılırken, Görev Yöneticisi üzerinden GPU'nun çalışma durumu izlenebilir.
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.tr.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.tr.png)
 
 ***Örnekler*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***Not*** : Yukarıdaki üç yöntemin her birinin kendi avantajları vardır, ancak AI PC çıkarımı için NPU hızlandırması kullanılması önerilir.
+### ***Not*** : Yukarıdaki üç yöntemin her birinin kendine özgü avantajları vardır, ancak AI PC çıkarımı için NPU hızlandırması kullanılması önerilir.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

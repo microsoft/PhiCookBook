@@ -2,58 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:39:23+00:00",
+  "translation_date": "2025-07-17T02:34:12+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "ms"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) היא פלטפורמה קוד פתוח שנועדה לנהל את מחזור החיים המלא של למידת מכונה.
+[MLflow](https://mlflow.org/) adalah platform sumber terbuka yang direka untuk menguruskan kitar hayat pembelajaran mesin dari awal hingga akhir.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.ms.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.ms.png)
 
-MLFlow משמשת לניהול מחזור החיים של למידת מכונה, כולל ניסויים, שחזור, פריסה ורישום מרכזי של מודלים. כיום MLflow מציעה ארבעה רכיבים.
+MLFlow digunakan untuk menguruskan kitar hayat ML, termasuk eksperimen, kebolehulangan, penyebaran dan pendaftaran model pusat. ML flow kini menawarkan empat komponen.
 
-- **MLflow Tracking:** תיעוד וחיפוש ניסויים, קוד, תצורת נתונים ותוצאות.
-- **MLflow Projects:** אריזת קוד מדעי נתונים בפורמט שמאפשר לשחזר הרצות על כל פלטפורמה.
-- **Mlflow Models:** פריסת מודלים של למידת מכונה בסביבות שונות.
-- **Model Registry:** אחסון, תיוג וניהול מודלים במאגר מרכזי.
+- **MLflow Tracking:** Merekod dan menyemak eksperimen, kod, konfigurasi data dan keputusan.
+- **MLflow Projects:** Membungkus kod sains data dalam format yang membolehkan pengulangan larian pada mana-mana platform.
+- **Mlflow Models:** Menyebarkan model pembelajaran mesin dalam pelbagai persekitaran perkhidmatan.
+- **Model Registry:** Menyimpan, memberi anotasi dan mengurus model dalam repositori pusat.
 
-הפלטפורמה כוללת יכולות למעקב אחרי ניסויים, אריזת קוד להרצות שניתן לשחזר, ושיתוף ופריסת מודלים. MLFlow משולבת ב-Databricks ותומכת במגוון ספריות למידת מכונה, מה שהופך אותה לנייטרלית לספריות. ניתן להשתמש בה עם כל ספריית למידת מכונה ובכל שפת תכנות, שכן היא מספקת REST API ו-CLI לנוחות.
+Ia merangkumi keupayaan untuk menjejak eksperimen, membungkus kod ke dalam larian yang boleh diulang, serta berkongsi dan menyebarkan model. MLFlow diintegrasikan ke dalam Databricks dan menyokong pelbagai perpustakaan ML, menjadikannya bebas perpustakaan. Ia boleh digunakan dengan mana-mana perpustakaan pembelajaran mesin dan dalam mana-mana bahasa pengaturcaraan, kerana ia menyediakan REST API dan CLI untuk kemudahan.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.ms.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.ms.png)
 
-תכונות מרכזיות של MLFlow כוללות:
+Ciri utama MLFlow termasuk:
 
-- **מעקב ניסויים:** תיעוד והשוואת פרמטרים ותוצאות.
-- **ניהול מודלים:** פריסת מודלים לפלטפורמות שירות והסקה שונות.
-- **Model Registry:** ניהול שיתופי של מחזור החיים של מודלים ב-MLflow, כולל ניהול גרסאות ותיוגים.
-- **Projects:** אריזת קוד ML לשיתוף או שימוש בפרודקשן.
+- **Penjejakan Eksperimen:** Merekod dan membandingkan parameter dan keputusan.
+- **Pengurusan Model:** Menyebarkan model ke pelbagai platform perkhidmatan dan inferens.
+- **Model Registry:** Mengurus secara kolaboratif kitar hayat Model MLflow, termasuk versi dan anotasi.
+- **Projects:** Membungkus kod ML untuk dikongsi atau digunakan dalam produksi.
 
-MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, רישום וניהול מודלים, אריזת מודלים להרצה, פריסת שירותים ומעקב אחר המודלים. המטרה היא לפשט את המעבר מפרוטוטייפ לזרימת עבודה בפרודקשן, במיוחד בסביבות ענן וקצה.
+MLFlow juga menyokong gelung MLOps, yang merangkumi penyediaan data, pendaftaran dan pengurusan model, pembungkusan model untuk pelaksanaan, penyebaran perkhidmatan, dan pemantauan model. Ia bertujuan untuk memudahkan proses peralihan dari prototaip ke aliran kerja produksi, terutamanya dalam persekitaran awan dan edge.
 
-## תרחיש E2E - בניית עטיפה ושימוש ב-Phi-3 כמודל MLFlow
+## Senario E2E - Membina pembalut dan menggunakan Phi-3 sebagai model MLFlow
 
-בדוגמה זו נציג שתי גישות שונות לבניית עטיפה סביב מודל השפה הקטן Phi-3 (SLM), ולאחר מכן להריץ אותו כמודל MLFlow, בין אם מקומית ובין אם בענן, למשל ב-Azure Machine Learning workspace.
+Dalam contoh E2E ini, kami akan menunjukkan dua pendekatan berbeza untuk membina pembalut di sekitar model bahasa kecil Phi-3 (SLM) dan kemudian menjalankannya sebagai model MLFlow sama ada secara tempatan atau di awan, contohnya, dalam ruang kerja Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.ms.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.ms.png)
 
-| פרויקט | תיאור | מיקום |
+| Projek | Penerangan | Lokasi |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline היא האפשרות הפשוטה ביותר לבניית עטיפה אם רוצים להשתמש במודל HuggingFace עם הטעם הניסיוני של MLFlow לטרנספורמרים. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | נכון למועד כתיבת שורות אלה, ה-Transformer Pipeline לא תמכה ביצירת עטיפת MLFlow למודלים של HuggingFace בפורמט ONNX, אפילו עם חבילת ה-optimum הניסיונית של Python. במקרים כאלה ניתן לבנות עטיפת Python מותאמת אישית עבור מצב MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline adalah pilihan paling mudah untuk membina pembalut jika anda ingin menggunakan model HuggingFace dengan rasa transformer eksperimen MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | Pada masa penulisan, pipeline transformer tidak menyokong penjanaan pembalut MLFlow untuk model HuggingFace dalam format ONNX, walaupun dengan pakej Python optimum eksperimen. Untuk kes seperti ini, anda boleh membina pembalut Python tersuai untuk mod MLFlow | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
-## פרויקט: Transformer Pipeline
+## Projek: Transformer Pipeline
 
-1. תזדקקו לחבילות Python הרלוונטיות מ-MLFlow ו-HuggingFace:
+1. Anda memerlukan pakej Python yang berkaitan dari MLFlow dan HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. לאחר מכן, יש לאתחל את ה-transformer pipeline על ידי התייחסות למודל Phi-3 הרצוי במאגר HuggingFace. כפי שניתן לראות מכרטיס המודל של _Phi-3-mini-4k-instruct_, המשימה שלו היא מסוג "Text Generation":
+2. Seterusnya, anda harus memulakan pipeline transformer dengan merujuk kepada model Phi-3 sasaran dalam daftar HuggingFace. Seperti yang dapat dilihat dari kad model _Phi-3-mini-4k-instruct_, tugasan model ini adalah jenis “Penjanaan Teks”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, �
     )
     ```
 
-3. כעת ניתן לשמור את ה-transformer pipeline של מודל Phi-3 בפורמט MLFlow ולספק פרטים נוספים כמו נתיב היעד לארטיפקטים, הגדרות קונפיגורציה ספציפיות למודל וסוג API לאינפרנס:
+3. Anda kini boleh menyimpan pipeline transformer model Phi-3 anda dalam format MLFlow dan memberikan butiran tambahan seperti laluan artifak sasaran, tetapan konfigurasi model tertentu dan jenis API inferens:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -73,9 +73,9 @@ MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, �
     )
     ```
 
-## פרויקט: Custom Python Wrapper
+## Projek: Custom Python Wrapper
 
-1. כאן נשתמש ב-API generate() של [ONNX Runtime](https://github.com/microsoft/onnxruntime-genai) מבית Microsoft עבור אינפרנס של מודל ONNX וקידוד/פענוח טוקנים. יש לבחור את חבילת _onnxruntime_genai_ המתאימה לסביבת החישוב שלכם, בדוגמה הבאה נבחר CPU:
+1. Di sini kita boleh menggunakan [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) Microsoft untuk inferens model ONNX dan pengekodan / penyahkodan token. Anda perlu memilih pakej _onnxruntime_genai_ untuk pengiraan sasaran anda, dengan contoh di bawah mensasarkan CPU:
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, �
     import onnxruntime_genai as og
     ```
 
-1. המחלקה המותאמת שלנו מממשת שתי שיטות: _load_context()_ לאתחול **מודל ONNX** של Phi-3 Mini 4K Instruct, **פרמטרים של הגנרטור** ו**טוקנייזר**; ו-_predict()_ ליצירת טוקנים פלט עבור הפקודה שניתנה:
+1. Kelas tersuai kami melaksanakan dua kaedah: _load_context()_ untuk memulakan **model ONNX** Phi-3 Mini 4K Instruct, **parameter penjana** dan **tokenizer**; dan _predict()_ untuk menjana token output bagi prompt yang diberikan:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, �
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. כעת ניתן להשתמש בפונקציה _mlflow.pyfunc.log_model()_ כדי ליצור עטיפת Python מותאמת אישית (בפורמט pickle) עבור מודל Phi-3, יחד עם מודל ה-ONNX המקורי ותלויות נדרשות:
+1. Anda kini boleh menggunakan fungsi _mlflow.pyfunc.log_model()_ untuk menjana pembalut Python tersuai (dalam format pickle) untuk model Phi-3, bersama model ONNX asal dan kebergantungan yang diperlukan:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -129,9 +129,9 @@ MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, �
     )
     ```
 
-## חתימות של מודלי MLFlow שנוצרו
+## Tandatangan model MLFlow yang dijana
 
-1. בשלב 3 של פרויקט Transformer Pipeline לעיל, הגדרנו את משימת מודל ה-MLFlow ל-“_llm/v1/chat_”. הוראה זו יוצרת עטיפת API למודל, שתואמת ל-OpenAI Chat API כפי שמוצג להלן:
+1. Dalam langkah 3 projek Transformer Pipeline di atas, kami menetapkan tugasan model MLFlow kepada “_llm/v1/chat_”. Arahan sedemikian menjana pembalut API model, serasi dengan OpenAI Chat API seperti yang ditunjukkan di bawah:
 
     ``` Python
     {inputs: 
@@ -142,13 +142,13 @@ MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, �
       None}
     ```
 
-1. כתוצאה מכך, ניתן לשלוח את הפקודה שלכם בפורמט הבא:
+1. Akibatnya, anda boleh menghantar prompt anda dalam format berikut:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. לאחר מכן, השתמשו בעיבוד פוסט תואם ל-OpenAI API, למשל _response[0][‘choices’][0][‘message’][‘content’]_, כדי לעצב את הפלט למשהו כזה:
+1. Kemudian, gunakan pemprosesan pasca yang serasi dengan OpenAI API, contohnya _response[0][‘choices’][0][‘message’][‘content’]_, untuk memperindah output anda menjadi seperti ini:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, �
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. בשלב 3 של פרויקט Custom Python Wrapper לעיל, אפשרנו לחבילת MLFlow ליצור את חתימת המודל מתוך דוגמת קלט נתונה. החתימה של עטיפת ה-MLFlow שלנו תיראה כך:
+1. Dalam langkah 3 projek Custom Python Wrapper di atas, kami membenarkan pakej MLFlow menjana tandatangan model daripada contoh input yang diberikan. Tandatangan pembalut MLFlow kami akan kelihatan seperti ini:
 
     ``` Python
     {inputs: 
@@ -169,13 +169,13 @@ MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, �
       None}
     ```
 
-1. לכן, הפקודה שלנו תצטרך לכלול את מפתח המילון "prompt", בדומה לכך:
+1. Jadi, prompt kami perlu mengandungi kunci kamus "prompt", serupa dengan ini:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. הפלט של המודל יינתן אז בפורמט מחרוזת:
+1. Output model akan diberikan dalam format rentetan:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -188,4 +188,4 @@ MLFlow תומכת גם בלולאת MLOps, שכוללת הכנת נתונים, �
     ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

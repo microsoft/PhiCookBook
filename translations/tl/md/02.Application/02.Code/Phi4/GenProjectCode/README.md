@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:51:25+00:00",
+  "translation_date": "2025-07-17T04:46:43+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "tl"
 }
 -->
 ## **Paggamit ng Phi-4-mini-mm para gumawa ng code**
 
-Pinapalawig ng Phi-4-mini ang malakas na kakayahan sa coding ng Phi Family. Maaari mong gamitin ang Prompt para magtanong tungkol sa coding. Siyempre, pagkatapos idagdag ang malakas na kakayahan sa pangangatwiran, mas lumakas ang kakayahan sa coding, tulad ng paggawa ng mga proyekto ayon sa mga pangangailangan. Halimbawa, gumawa ng mga proyekto ayon sa mga pangangailangan, tulad ng:
+Pinapalawig ng Phi-4-mini ang malakas na kakayahan sa pag-coding ng Phi Family. Maaari mong gamitin ang Prompt para magtanong tungkol sa coding. Siyempre, dahil nadagdagan ito ng matibay na kakayahan sa pangangatwiran, mas malakas ang kakayahan nitong gumawa ng code, tulad ng pagbuo ng mga proyekto ayon sa mga pangangailangan. Halimbawa, gumawa ng mga proyekto ayon sa mga pangangailangan, tulad ng:
 
 ### **Pangangailangan**
 
 Gumawa ng Shopping Cart App
 
-- Gumawa ng API Rest gamit ang mga sumusunod na pamamaraan:
+- Gumawa ng API Rest na may mga sumusunod na metodo:
     - Kunin ang listahan ng mga beer gamit ang page offset at limit.
     - Kunin ang detalye ng beer ayon sa id.
-    - Maghanap ng beer base sa pangalan, paglalarawan, tagline, food pairings, at presyo.
+    - Maghanap ng beer ayon sa pangalan, deskripsyon, tagline, food pairings, at presyo.
 - Gumawa ng listahan ng mga produkto sa pangunahing pahina.
     - Gumawa ng search bar para i-filter ang mga produkto.
-    - Mag-navigate sa pahina ng paglalarawan kapag nag-click ang user sa isang produkto.
+    - Mag-navigate sa pahina ng deskripsyon kapag nag-click ang user sa isang produkto.
 - (Opsyonal) Slicer para i-filter ang mga produkto ayon sa presyo.
 - Gumawa ng shopping cart.
     - Magdagdag ng mga produkto sa cart.
@@ -139,5 +139,5 @@ print(response)
 
 ```
 
-**Pagsasabi ng Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

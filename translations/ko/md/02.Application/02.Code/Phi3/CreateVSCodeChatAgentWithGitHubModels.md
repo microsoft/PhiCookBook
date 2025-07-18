@@ -2,57 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-08T05:28:17+00:00",
+  "translation_date": "2025-07-17T03:23:19+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "ko"
 }
 -->
 # **GitHub Models의 Phi-3.5로 나만의 Visual Studio Code Chat Copilot 에이전트 만들기**
 
-Visual Studio Code Copilot을 사용하고 계신가요? 특히 Chat에서는 다양한 에이전트를 활용해 Visual Studio Code 내에서 프로젝트를 생성, 작성, 유지보수하는 능력을 향상시킬 수 있습니다. Visual Studio Code는 기업과 개인이 각자의 비즈니스에 맞게 다양한 에이전트를 만들어 독자적인 분야에서 기능을 확장할 수 있는 API를 제공합니다. 이번 글에서는 GitHub Models의 **Phi-3.5-mini-instruct (128k)**와 **Phi-3.5-vision-instruct (128k)**를 중심으로 나만의 Visual Studio Code 에이전트를 만드는 방법을 다룹니다.
+Visual Studio Code Copilot을 사용하고 계신가요? 특히 Chat에서는 다양한 에이전트를 활용해 Visual Studio Code에서 프로젝트를 생성, 작성, 유지보수하는 능력을 향상시킬 수 있습니다. Visual Studio Code는 기업과 개인이 각자의 비즈니스에 맞는 다양한 에이전트를 만들어 특정 분야에서 기능을 확장할 수 있도록 API를 제공합니다. 이 글에서는 GitHub Models의 **Phi-3.5-mini-instruct (128k)**와 **Phi-3.5-vision-instruct (128k)**를 중심으로 나만의 Visual Studio Code 에이전트를 만드는 방법을 다룹니다.
 
 ## **GitHub Models의 Phi-3.5 소개**
 
-Phi-3/3.5 Family 중 Phi-3/3.5-mini-instruct는 뛰어난 코드 이해 및 생성 능력을 갖추고 있으며, Gemma-2-9b와 Mistral-Nemo-12B-instruct-2407보다 우수한 점이 있습니다.
+Phi-3/3.5 Family의 Phi-3/3.5-mini-instruct는 강력한 코드 이해 및 생성 능력을 갖추고 있으며, Gemma-2-9b와 Mistral-Nemo-12B-instruct-2407보다 우위에 있습니다.
 
 ![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.ko.png)
 
-최신 GitHub Models에서는 이미 Phi-3.5-mini-instruct (128k)와 Phi-3.5-vision-instruct (128k) 모델에 접근할 수 있습니다. 개발자는 OpenAI SDK, Azure AI Inference SDK, REST API를 통해 이 모델들을 사용할 수 있습니다.
+최신 GitHub Models는 이미 Phi-3.5-mini-instruct (128k)와 Phi-3.5-vision-instruct (128k) 모델에 접근할 수 있도록 지원합니다. 개발자는 OpenAI SDK, Azure AI Inference SDK, REST API를 통해 이 모델들을 사용할 수 있습니다.
 
 ![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.ko.png)
 
-***Note: *** 운영 환경에서 Azure Model Catalog와 원활히 연동하기 위해 Azure AI Inference SDK 사용을 권장합니다.
+***Note: *** 운영 환경에서 Azure Model Catalog와 원활하게 전환할 수 있기 때문에 Azure AI Inference SDK 사용을 권장합니다.
 
-아래는 GitHub Models와 연동 후 코드 생성 시나리오에서 **Phi-3.5-mini-instruct (128k)**와 **Phi-3.5-vision-instruct (128k)**의 결과이며, 이후 예제 준비에도 활용됩니다.
+아래는 GitHub Models와 연동한 후 코드 생성 시나리오에서의 **Phi-3.5-mini-instruct (128k)**와 **Phi-3.5-vision-instruct (128k)** 결과이며, 이후 예제 준비를 위한 내용입니다.
 
-**데모: GitHub Models Phi-3.5-mini-instruct (128k)로 프롬프트에서 코드 생성** ([여기 클릭](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**데모: GitHub Models Phi-3.5-mini-instruct (128k)로 프롬프트에서 코드 생성하기** ([여기 클릭](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**데모: GitHub Models Phi-3.5-vision-instruct (128k)로 이미지에서 코드 생성** ([여기 클릭](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**데모: GitHub Models Phi-3.5-vision-instruct (128k)로 이미지에서 코드 생성하기** ([여기 클릭](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 
-## **GitHub Copilot Chat Agent 소개**
+## **GitHub Copilot Chat 에이전트 소개**
 
-GitHub Copilot Chat Agent는 코드 기반으로 다양한 프로젝트 상황에서 여러 작업을 수행할 수 있습니다. 시스템은 workspace, github, terminal, vscode 네 가지 에이전트를 제공합니다.
+GitHub Copilot Chat 에이전트는 코드 기반으로 다양한 프로젝트 시나리오에서 여러 작업을 수행할 수 있습니다. 시스템에는 workspace, github, terminal, vscode 총 네 가지 에이전트가 있습니다.
 
 ![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.ko.png)
 
-에이전트 이름 앞에 ‘@’를 붙여 빠르게 해당 작업을 완료할 수 있습니다. 기업에서는 요구사항, 코딩, 테스트 명세, 릴리즈 등 비즈니스 관련 내용을 추가하면 GitHub Copilot 기반의 더욱 강력한 기업 전용 기능을 활용할 수 있습니다.
+에이전트 이름 앞에 ‘@’를 붙여 호출하면 해당 작업을 빠르게 수행할 수 있습니다. 기업의 경우 요구사항, 코딩, 테스트 명세, 릴리스 등 비즈니스 관련 내용을 추가하면 GitHub Copilot 기반의 더욱 강력한 기업 전용 기능을 활용할 수 있습니다.
 
-Visual Studio Code Chat Agent API가 공식 출시되어, 기업이나 기업 개발자가 다양한 소프트웨어 비즈니스 생태계에 맞춘 에이전트를 개발할 수 있게 되었습니다. Visual Studio Code Extension 개발 방식에 기반해 Visual Studio Code Chat Agent API 인터페이스에 쉽게 접근할 수 있습니다. 아래 과정을 통해 개발할 수 있습니다.
+Visual Studio Code Chat 에이전트는 이제 공식 API를 공개하여, 기업이나 기업 개발자가 다양한 소프트웨어 비즈니스 생태계에 맞춰 에이전트를 개발할 수 있게 되었습니다. Visual Studio Code Extension 개발 방식을 기반으로 Visual Studio Code Chat 에이전트 API 인터페이스에 쉽게 접근할 수 있습니다. 이 과정을 통해 개발할 수 있습니다.
 
 ![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.ko.png)
 
-개발 시나리오는 GitHub Models, Azure Model Catalog, 오픈소스 모델 기반 자체 서비스 등 타사 모델 API 접근을 지원하며, GitHub Copilot이 제공하는 gpt-35-turbo, gpt-4, gpt-4o 모델도 사용할 수 있습니다.
+개발 시나리오는 GitHub Models, Azure Model Catalog, 오픈소스 모델 기반 자체 구축 서비스 등 서드파티 모델 API 접근을 지원하며, GitHub Copilot이 제공하는 gpt-35-turbo, gpt-4, gpt-4o 모델도 사용할 수 있습니다.
 
-## **Phi-3.5 기반 에이전트 @phicoding 추가하기**
+## **Phi-3.5 기반 @phicoding 에이전트 추가하기**
 
-Phi-3.5의 프로그래밍 능력을 통합해 코드 작성, 이미지 기반 코드 생성 등 작업을 수행하는 에이전트 @PHI를 완성해 봅니다. 주요 기능은 다음과 같습니다.
+Phi-3.5의 프로그래밍 능력을 통합해 코드 작성, 이미지 생성 코드 등 다양한 작업을 수행하는 에이전트 @PHI를 완성해 봅니다. 주요 기능은 다음과 같습니다.
 
-1. **@phicoding /help** 명령어로 GitHub Copilot이 제공하는 GPT-4o 기반 자기소개 생성
+1. **@phicoding /help** 명령어를 통해 GitHub Copilot이 제공하는 GPT-4o 기반 자기소개 생성
 
-2. **@phicoding /gen** 명령어로 **Phi-3.5-mini-instruct (128k)**를 활용해 다양한 프로그래밍 언어 코드 생성
+2. **@phicoding /gen** 명령어로 **Phi-3.5-mini-instruct (128k)** 기반 다양한 프로그래밍 언어 코드 생성
 
-3. **@phicoding /image** 명령어로 **Phi-3.5-vision-instruct (128k)**와 이미지 완성 기반 코드 생성
+3. **@phicoding /image** 명령어로 **Phi-3.5-vision-instruct (128k)** 기반 이미지 분석 및 코드 생성
 
 ![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.ko.png)
 
@@ -74,7 +74,7 @@ yo code
 
 ```
 
-3. 생성한 프로젝트를 열고 package.json 수정. 관련 지침과 설정, GitHub Models 설정도 포함. GitHub Models 토큰을 반드시 추가해야 합니다.
+3. 생성한 프로젝트를 열고 package.json 수정. 관련 지침과 설정, GitHub Models 설정 포함. GitHub Models 토큰을 반드시 추가해야 합니다.
 
 ```json
 
@@ -379,15 +379,15 @@ export function deactivate() {}
 
 ![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.ko.png)
 
-샘플 코드는 여기에서 다운로드할 수 있습니다 :[클릭](../../../../../../code/09.UpdateSamples/Aug/vscode)
+샘플 코드는 여기서 다운로드할 수 있습니다 :[클릭](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
-## **자료**
+## **참고 자료**
 
 1. GitHub Models 가입 [https://gh.io/models](https://gh.io/models)
 
-2. Visual Studio Code Extension 개발 학습 [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. Visual Studio Code Extension 개발 배우기 [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. Visual Studio Code Copilot Chat API 학습 [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. Visual Studio Code Copilot Chat API 알아보기 [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서는 해당 언어로 된 원문이 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해서는 당사가 책임지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

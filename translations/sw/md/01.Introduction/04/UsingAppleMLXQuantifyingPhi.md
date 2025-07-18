@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-05-09T13:48:49+00:00",
+  "translation_date": "2025-07-16T21:56:42+00:00",
   "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
   "language_code": "sw"
 }
 -->
 # **Kukokotoa Phi-3.5 kwa kutumia Apple MLX Framework**
 
-MLX ni mfumo wa array kwa utafiti wa mashine ya kujifunza kwenye Apple silicon, uliotengenezwa na utafiti wa mashine ya kujifunza wa Apple.
+MLX ni mfumo wa safu kwa ajili ya utafiti wa mashine kujifunza kwenye Apple silicon, uliotolewa na utafiti wa mashine kujifunza wa Apple.
 
-MLX imetengenezwa na watafiti wa mashine ya kujifunza kwa ajili ya watafiti wa mashine ya kujifunza. Mfumo huu umebuniwa kuwa rafiki kwa mtumiaji, lakini bado wenye ufanisi wa kufundisha na kuendesha modeli. Ubunifu wa mfumo huu pia ni rahisi kifikra. Lengo letu ni kufanya iwe rahisi kwa watafiti kuongeza na kuboresha MLX ili kuchunguza haraka mawazo mapya.
+MLX imeundwa na watafiti wa mashine kujifunza kwa ajili ya watafiti wa mashine kujifunza. Mfumo huu umebuniwa kuwa rahisi kwa mtumiaji, lakini bado wenye ufanisi wa kufundisha na kuendesha mifano. Muundo wa mfumo huu pia ni rahisi kimsingi. Tunakusudia kufanya iwe rahisi kwa watafiti kuongeza na kuboresha MLX kwa lengo la kuchunguza haraka mawazo mapya.
 
-LLMs zinaweza kuharakishwa kwenye vifaa vya Apple Silicon kupitia MLX, na modeli zinaweza kuendeshwa kwa urahisi kiasili.
+LLMs zinaweza kuharakishwa kwenye vifaa vya Apple Silicon kupitia MLX, na mifano inaweza kuendeshwa kwa urahisi mahali hapa.
 
-Sasa Apple MLX Framework inaunga mkono mabadiliko ya quantization ya Phi-3.5-Instruct (**Apple MLX Framework support**), Phi-3.5-Vision (**MLX-VLM Framework support**), na Phi-3.5-MoE (**Apple MLX Framework support**). Hebu tujaribu ifuatayo:
+Sasa Apple MLX Framework inaunga mkono mabadiliko ya kukokotoa ya Phi-3.5-Instruct (**Apple MLX Framework support**), Phi-3.5-Vision (**MLX-VLM Framework support**), na Phi-3.5-MoE (**Apple MLX Framework support**). Hebu tujaribu sasa:
 
 ### **Phi-3.5-Instruct**
 
@@ -43,19 +43,19 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3.5-MoE-instruct  -q
 
 ### **🤖 Sampuli za Phi-3.5 na Apple MLX**
 
-| Maabara | Utangulizi | Nenda |
-| -------- | ------- | ------- |
-| 🚀 Maabara-Utangulizi Phi-3.5 Instruct | Jifunze jinsi ya kutumia Phi-3.5 Instruct na Apple MLX framework | [Nenda](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb) |
-| 🚀 Maabara-Utangulizi Phi-3.5 Vision (picha) | Jifunze jinsi ya kutumia Phi-3.5 Vision kuchambua picha kwa Apple MLX framework | [Nenda](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb) |
-| 🚀 Maabara-Utangulizi Phi-3.5 Vision (moE) | Jifunze jinsi ya kutumia Phi-3.5 MoE na Apple MLX framework | [Nenda](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb) |
+| Maabara    | Utangulizi | Nenda |
+| -------- | ------- |  ------- |
+| 🚀 Maabara-Utangulizi Phi-3.5 Instruct  | Jifunze jinsi ya kutumia Phi-3.5 Instruct na mfumo wa Apple MLX   |  [Go](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
+| 🚀 Maabara-Utangulizi Phi-3.5 Vision (picha) | Jifunze jinsi ya kutumia Phi-3.5 Vision kuchambua picha kwa kutumia mfumo wa Apple MLX     |  [Go](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
+| 🚀 Maabara-Utangulizi Phi-3.5 Vision (moE)   | Jifunze jinsi ya kutumia Phi-3.5 MoE na mfumo wa Apple MLX  |  [Go](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
 
 ## **Rasilimali**
 
 1. Jifunze kuhusu Apple MLX Framework [https://ml-explore.github.io/mlx/](https://ml-explore.github.io/mlx/)
 
-2. Repoti ya Apple MLX GitHub [https://github.com/ml-explore](https://github.com/ml-explore/mlx)
+2. Apple MLX GitHub Rep [https://github.com/ml-explore](https://github.com/ml-explore/mlx)
 
-3. Repo ya MLX-VLM GitHub [https://github.com/Blaizzy/mlx-vlm](https://github.com/Blaizzy/mlx-vlm)
+3. MLX-VLM GitHub Repo [https://github.com/Blaizzy/mlx-vlm](https://github.com/Blaizzy/mlx-vlm)
 
-**Kasi ya Kutojibu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna wajibu wowote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

@@ -2,16 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:09:08+00:00",
+  "translation_date": "2025-07-17T05:16:39+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "sw"
 }
 -->
-## **Kupiga simu za kazi katika Phi-4-mini**
+## **Kupiga simu ya function katika Phi-4-mini**
 
-Kupiga simu za kazi ilianza kwanza katika familia ya Phi, na sasa unaweza kuitumia kupitia Phi-4-mini.
+Kupiga simu ya function ilianza kwanza katika familia ya Phi Family, na sasa unaweza kuitumia kupitia Phi-4-mini.
 
-Mfano huu unaonyesha uigaji wa matokeo ya Ligi Kuu ya Uingereza. Lengo ni kwa Phi-4-mini kutoa taarifa za mchezo kwa wakati halisi. Hapa chini ni mfano wa msimbo:  
+Mfano huu unaonyesha jinsi ya kuiga matokeo ya Ligi Kuu. Lengo ni kwa Phi-4-mini kutoa taarifa za mechi kwa wakati halisi. Hapa chini ni mfano wa msimbo: 
+
+
 
 ```python
 
@@ -106,5 +108,5 @@ print(messages)
 
 ```
 
-**Kisahafu**:  
-Hati ya hati, hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Nyaraka ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inashauriwa. Hatuhusiki kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Msamaha**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

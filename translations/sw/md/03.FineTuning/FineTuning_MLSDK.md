@@ -2,52 +2,52 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:28:48+00:00",
+  "translation_date": "2025-07-17T07:39:16+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "sw"
 }
 -->
-## Jinsi ya kutumia vipengele vya chat-completion kutoka Azure ML system registry kufanyia mafunzo mfano
+## Jinsi ya kutumia vipengele vya chat-completion kutoka kwenye rejista ya mfumo wa Azure ML kufanyia modeli marekebisho
 
-Katika mfano huu tutafanya mafunzo ya kuongeza usahihi (fine tuning) wa mfano wa Phi-3-mini-4k-instruct ili kukamilisha mazungumzo kati ya watu 2 tukitumia dataset ya ultrachat_200k.
+Katika mfano huu tutafanya marekebisho ya modeli ya Phi-3-mini-4k-instruct ili kumalizia mazungumzo kati ya watu 2 tukitumia dataset ya ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.sw.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.sw.png)
 
-Mfano huu utaonyesha jinsi ya kufanya mafunzo ya kuongeza usahihi kwa kutumia Azure ML SDK na Python kisha kutuma mfano ulioboreshwa kwenye endpoint ya mtandaoni kwa ajili ya utambuzi wa wakati halisi.
+Mfano huu utaonyesha jinsi ya kufanya marekebisho kwa kutumia Azure ML SDK na Python kisha kupeleka modeli iliyorekebishwa kwenye endpoint mtandaoni kwa ajili ya utambuzi wa wakati halisi.
 
 ### Data ya Mafunzo
 
-Tutatumia dataset ya ultrachat_200k. Hii ni toleo lililosafishwa sana la dataset ya UltraChat na ilitumika kufundisha Zephyr-7B-β, mfano wa mazungumzo wa hali ya juu wa 7b.
+Tutatumia dataset ya ultrachat_200k. Hii ni toleo lililosafishwa sana la dataset ya UltraChat na ilitumika kufundisha Zephyr-7B-β, modeli ya mazungumzo ya hali ya juu yenye ukubwa wa 7b.
 
-### Mfano
+### Modeli
 
-Tutatumia mfano wa Phi-3-mini-4k-instruct kuonyesha jinsi mtumiaji anaweza kufanyia mafunzo mfano kwa kazi ya chat-completion. Ikiwa umefungua notebook hii kutoka kwenye kadi ya mfano maalum, kumbuka kubadilisha jina la mfano husika.
+Tutatumia modeli ya Phi-3-mini-4k-instruct kuonyesha jinsi mtumiaji anavyoweza kufanya marekebisho ya modeli kwa kazi ya chat-completion. Ikiwa umefungua daftari hili kutoka kwenye kadi ya modeli maalum, kumbuka kubadilisha jina la modeli husika.
 
 ### Kazi
 
-- Chagua mfano wa kufanyia mafunzo.
+- Chagua modeli ya kurekebisha.
 - Chagua na chunguza data ya mafunzo.
-- Sanidi kazi ya mafunzo ya kuongeza usahihi.
-- Endesha kazi ya mafunzo ya kuongeza usahihi.
-- Kagua takwimu za mafunzo na tathmini.
-- Sajili mfano ulioboreshwa.
-- Tuma mfano ulioboreshwa kwa utambuzi wa wakati halisi.
+- Sanidi kazi ya marekebisho.
+- Endesha kazi ya marekebisho.
+- Pitia vipimo vya mafunzo na tathmini.
+- Sajili modeli iliyorekebishwa.
+- Peleka modeli iliyorekebishwa kwa utambuzi wa wakati halisi.
 - Safisha rasilimali.
 
 ## 1. Andaa mahitaji ya awali
 
 - Sakinisha utegemezi
-- Ungana na AzureML Workspace. Jifunze zaidi kuhusu kusanidi uthibitishaji wa SDK. Badilisha <WORKSPACE_NAME>, <RESOURCE_GROUP> na <SUBSCRIPTION_ID> hapo chini.
-- Ungana na azureml system registry
-- Weka jina la jaribio (experiment) kama hiari
+- Unganisha na AzureML Workspace. Jifunze zaidi kuhusu kusanidi uthibitishaji wa SDK. Badilisha <WORKSPACE_NAME>, <RESOURCE_GROUP> na <SUBSCRIPTION_ID> hapa chini.
+- Unganisha na rejista ya mfumo ya azureml
+- Weka jina la jaribio kama hiari
 - Angalia au tengeneza compute.
 
 > [!NOTE]
-> Mahitaji ni node moja ya GPU inaweza kuwa na kadi nyingi za GPU. Kwa mfano, kwenye node moja ya Standard_NC24rs_v3 kuna GPUs 4 za NVIDIA V100 wakati kwenye Standard_NC12s_v3 kuna GPUs 2 za NVIDIA V100. Rejelea nyaraka kwa taarifa hii. Idadi ya kadi za GPU kwa node imewekwa katika param gpus_per_node hapo chini. Kuweka thamani hii kwa usahihi kutahakikisha matumizi ya GPUs zote kwenye node. SKUs za GPU compute zinazopendekezwa zinaweza kupatikana hapa na hapa.
+> Mahitaji ni node moja ya GPU inaweza kuwa na kadi nyingi za GPU. Kwa mfano, katika node moja ya Standard_NC24rs_v3 kuna GPUs 4 za NVIDIA V100 wakati katika Standard_NC12s_v3, kuna GPUs 2 za NVIDIA V100. Rejelea nyaraka kwa taarifa hii. Idadi ya kadi za GPU kwa node imewekwa katika param gpus_per_node hapa chini. Kuweka thamani hii kwa usahihi kutahakikisha matumizi ya GPUs zote kwenye node. SKU za GPU compute zinazopendekezwa zinaweza kupatikana hapa na hapa.
 
 ### Maktaba za Python
 
-Sakinisha utegemezi kwa kuendesha seli ifuatayo. Hii si hatua ya hiari ikiwa unafanya kazi katika mazingira mapya.
+Sakinisha utegemezi kwa kuendesha seli ifuatayo. Huu si hatua ya hiari ikiwa unafanya kazi katika mazingira mapya.
 
 ```bash
 pip install azure-ai-ml
@@ -59,19 +59,19 @@ pip install azureml-mlflow
 
 ### Kuingiliana na Azure ML
 
-1. Script hii ya Python hutumika kuingiliana na huduma ya Azure Machine Learning (Azure ML). Hapa ni muhtasari wa inavyofanya:
+1. Skripti hii ya Python inatumika kuingiliana na huduma ya Azure Machine Learning (Azure ML). Hapa kuna muhtasari wa inavyofanya:
 
-    - Inaingiza moduli muhimu kutoka azure.ai.ml, azure.identity, na azure.ai.ml.entities. Pia inaingiza moduli ya time.
+    - Inaingiza moduli muhimu kutoka kwa azure.ai.ml, azure.identity, na azure.ai.ml.entities. Pia inaingiza moduli ya time.
 
-    - Inajaribu kuthibitisha kwa kutumia DefaultAzureCredential(), ambayo hutoa njia rahisi ya uthibitishaji kwa kuanza haraka kuendeleza programu zinazotumia Azure cloud. Ikiwa hii itashindwa, inarudi kwenye InteractiveBrowserCredential(), ambayo hutoa dirisha la kuingia kwa mkato.
+    - Inajaribu kuthibitisha kwa kutumia DefaultAzureCredential(), ambayo hutoa uzoefu rahisi wa uthibitishaji kuanza haraka kuendeleza programu zinazotumia Azure cloud. Ikiwa hii itashindwa, inarudi kwa InteractiveBrowserCredential(), ambayo hutoa kiolesura cha kuingia kwa njia ya kivinjari.
 
-    - Kisha inajaribu kuunda mfano wa MLClient kwa kutumia njia ya from_config, inayosoma usanidi kutoka kwa faili ya chaguo-msingi (config.json). Ikiwa hii itashindwa, inaunda MLClient kwa kutoa subscription_id, resource_group_name, na workspace_name kwa mkono.
+    - Kisha inajaribu kuunda mfano wa MLClient kwa kutumia njia ya from_config, ambayo husoma usanidi kutoka kwa faili ya default config.json. Ikiwa hii itashindwa, huunda MLClient kwa kutoa subscription_id, resource_group_name, na workspace_name kwa mkono.
 
-    - Inaunda mfano mwingine wa MLClient, kwa sasa kwa registry ya Azure ML inayoitwa "azureml". Registry hii ndio mahali ambapo mifano, njia za mafunzo ya kuongeza usahihi, na mazingira huhifadhiwa.
+    - Inaunda mfano mwingine wa MLClient, wakati huu kwa rejista ya Azure ML iitwayo "azureml". Rejista hii ni mahali ambapo modeli, njia za marekebisho, na mazingira huhifadhiwa.
 
-    - Inaweka jina la jaribio (experiment_name) kuwa "chat_completion_Phi-3-mini-4k-instruct".
+    - Inaweka jina la jaribio kuwa "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Inazalisha alama ya kipekee ya wakati kwa kubadilisha wakati wa sasa (kwa sekunde tangu epoch, kama nambari ya desimali) kuwa nambari kamili kisha kuwa string. Alama hii inaweza kutumika kuunda majina na matoleo ya kipekee.
+    - Inazalisha alama ya wakati ya kipekee kwa kubadilisha wakati wa sasa (kwa sekunde tangu epoch, kama nambari ya desimali) kuwa nambari kamili kisha kuwa mfuatano wa herufi. Alama hii ya wakati inaweza kutumika kuunda majina na matoleo ya kipekee.
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -112,20 +112,20 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. Chagua mfano wa msingi wa kufanyia mafunzo
+## 2. Chagua modeli ya msingi ya kurekebisha
 
-1. Phi-3-mini-4k-instruct ni mfano mwepesi wa parameters 3.8B, wa kisasa wa wazi uliojengwa kwa kutumia datasets zilizotumika kwa Phi-2. Mfano huu ni sehemu ya familia ya modeli za Phi-3, na toleo la Mini linakuja katika aina mbili 4K na 128K ambazo ni urefu wa muktadha (kwa tokens) unaoweza kuhimili. Tunahitaji kufanyia mfano mafunzo maalum kwa ajili ya matumizi yetu. Unaweza kuvinjari mifano hii katika Katalogi ya Modeli katika AzureML Studio, ukichuja kwa kazi ya chat-completion. Katika mfano huu, tunatumia mfano wa Phi-3-mini-4k-instruct. Ikiwa umefungua notebook hii kwa mfano tofauti, badilisha jina la mfano na toleo ipasavyo.
+1. Phi-3-mini-4k-instruct ni modeli nyepesi yenye vigezo 3.8B, ya kisasa iliyojengwa kwa kutumia datasets zilizotumika kwa Phi-2. Modeli hii ni sehemu ya familia ya modeli za Phi-3, na toleo la Mini linakuja katika aina mbili 4K na 128K ambazo ni urefu wa muktadha (kwa tokeni) unaoweza kuunga mkono, tunahitaji kurekebisha modeli kwa madhumuni yetu maalum ili kuitumia. Unaweza kuvinjari modeli hizi katika Katalogi ya Modeli katika AzureML Studio, ukichuja kwa kazi ya chat-completion. Katika mfano huu, tunatumia modeli ya Phi-3-mini-4k-instruct. Ikiwa umefungua daftari hili kwa modeli tofauti, badilisha jina la modeli na toleo ipasavyo.
 
     > [!NOTE]
-    > sifa ya model id ya mfano. Hii itapitishwa kama ingizo kwa kazi ya mafunzo ya kuongeza usahihi. Inapatikana pia kama uwanja wa Asset ID katika ukurasa wa maelezo ya mfano katika AzureML Studio Model Catalog.
+    > sifa ya kitambulisho cha modeli. Hii itapitishwa kama ingizo kwa kazi ya marekebisho. Pia inapatikana kama sehemu ya Asset ID kwenye ukurasa wa maelezo ya modeli katika Katalogi ya Modeli ya AzureML Studio.
 
-2. Script hii ya Python inaingiliana na huduma ya Azure Machine Learning (Azure ML). Hapa ni muhtasari wa inavyofanya:
+2. Skripti hii ya Python inaingiliana na huduma ya Azure Machine Learning (Azure ML). Hapa kuna muhtasari wa inavyofanya:
 
     - Inaweka model_name kuwa "Phi-3-mini-4k-instruct".
 
-    - Inatumia njia ya get ya mali ya models ya registry_ml_client kupata toleo la hivi karibuni la mfano wenye jina lililotajwa kutoka kwa registry ya Azure ML. Njia ya get inaitwa kwa hoja mbili: jina la mfano na lebo inayobainisha kwamba toleo la hivi karibuni linapaswa kupatikana.
+    - Inatumia njia ya get ya mali ya models ya kitu registry_ml_client kupata toleo la hivi karibuni la modeli yenye jina lililotajwa kutoka kwenye rejista ya Azure ML. Njia ya get inaitwa kwa hoja mbili: jina la modeli na lebo inayosema toleo la hivi karibuni la modeli linapaswa kupatikana.
 
-    - Inachapisha ujumbe kwenye console unaoonyesha jina, toleo, na id ya mfano utakao tumika kwa mafunzo ya kuongeza usahihi. Njia ya format ya string hutumika kuingiza jina, toleo, na id ya mfano kwenye ujumbe. Jina, toleo, na id ya mfano hupatikana kama mali za foundation_model.
+    - Inachapisha ujumbe kwenye console unaoonyesha jina, toleo, na kitambulisho cha modeli itakayotumika kwa marekebisho. Njia ya format ya mfuatano wa herufi hutumika kuingiza jina, toleo, na kitambulisho cha modeli kwenye ujumbe. Jina, toleo, na kitambulisho cha modeli vinapatikana kama mali za kitu foundation_model.
 
     ```python
     # Set the model name
@@ -143,29 +143,29 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. Tengeneza compute itakayotumika na kazi
+## 3. Tengeneza compute itakayotumika kwa kazi
 
-Kazi ya finetune inafanya kazi TU na GPU compute. Ukubwa wa compute unategemea ukubwa wa mfano na mara nyingi huwa changamoto kuchagua compute sahihi kwa kazi. Katika seli hii, tunaelekeza mtumiaji jinsi ya kuchagua compute sahihi kwa kazi.
-
-> [!NOTE]
-> Compute zilizoorodheshwa hapa chini zinafanya kazi na usanidi ulioboreshwa zaidi. Mabadiliko yoyote kwenye usanidi yanaweza kusababisha kosa la Cuda Out Of Memory. Katika hali kama hizo, jaribu kuboresha compute kuwa kubwa zaidi.
+Kazi ya finetune inafanya kazi TU na compute ya GPU. Ukubwa wa compute unategemea ukubwa wa modeli na mara nyingi huwa vigumu kubaini compute sahihi kwa kazi. Katika seli hii, tunaelekeza mtumiaji kuchagua compute sahihi kwa kazi.
 
 > [!NOTE]
-> Unapochagua compute_cluster_size hapa chini, hakikisha compute inapatikana katika resource group yako. Ikiwa compute fulani haipatikani unaweza kuomba ruhusa ya kupata rasilimali za compute.
+> Compute zilizoorodheshwa hapa chini zinafanya kazi kwa usanidi ulioboreshwa zaidi. Mabadiliko yoyote kwenye usanidi yanaweza kusababisha kosa la Cuda Out Of Memory. Katika hali kama hizo, jaribu kuboresha compute hadi ukubwa mkubwa zaidi.
 
-### Kukagua Mfano kwa Msaada wa Mafunzo ya Kuongeza Usahihi
+> [!NOTE]
+> Wakati wa kuchagua compute_cluster_size hapa chini, hakikisha compute inapatikana katika resource group yako. Ikiwa compute fulani haipatikani unaweza kuomba ruhusa ya kupata rasilimali za compute.
 
-1. Script hii ya Python inaingiliana na mfano wa Azure Machine Learning (Azure ML). Hapa ni muhtasari wa inavyofanya:
+### Kukagua Modeli kwa Msaada wa Marekebisho
 
-    - Inaingiza moduli ya ast, inayotoa kazi za kushughulikia miti ya sarufi ya Python.
+1. Skripti hii ya Python inaingiliana na modeli ya Azure Machine Learning (Azure ML). Hapa kuna muhtasari wa inavyofanya:
 
-    - Inakagua kama foundation_model (ambayo ni mfano katika Azure ML) ina tag iitwayo finetune_compute_allow_list. Tags katika Azure ML ni jozi za key-value unazoweza kuunda na kutumia kuchuja na kupanga mifano.
+    - Inaingiza moduli ya ast, ambayo hutoa kazi za kuchakata miti ya sarufi ya Python.
 
-    - Ikiwa tag ya finetune_compute_allow_list ipo, inatumia ast.literal_eval kwa usalama kuchambua thamani ya tag (kama string) kuwa orodha ya Python. Orodha hii inahifadhiwa katika computes_allow_list. Kisha inachapisha ujumbe unaoonyesha compute inapaswa kuundwa kutoka kwenye orodha hiyo.
+    - Inakagua kama kitu foundation_model (kinachoonyesha modeli katika Azure ML) kina lebo iitwayo finetune_compute_allow_list. Lebo katika Azure ML ni jozi za funguo na thamani unazoweza kuunda na kutumia kuchuja na kupanga modeli.
 
-    - Ikiwa tag ya finetune_compute_allow_list haipo, inaweka computes_allow_list kuwa None na inachapisha ujumbe unaoonyesha tag hiyo haipo kwenye tags za mfano.
+    - Ikiwa lebo ya finetune_compute_allow_list ipo, inatumia ast.literal_eval kwa usalama kuchambua thamani ya lebo (mfuatano wa herufi) kuwa orodha ya Python. Orodha hii kisha inahifadhiwa kwenye variable computes_allow_list. Kisha inachapisha ujumbe unaoonyesha compute inapaswa kuundwa kutoka kwenye orodha hiyo.
 
-    - Kwa kifupi, script hii inakagua tag maalum katika metadata ya mfano, inageuza thamani ya tag kuwa orodha ikiwa ipo, na kutoa mrejesho kwa mtumiaji.
+    - Ikiwa lebo ya finetune_compute_allow_list haipo, inaweka computes_allow_list kuwa None na inachapisha ujumbe unaoonyesha lebo hiyo si sehemu ya lebo za modeli.
+
+    - Kwa muhtasari, skripti hii inakagua lebo maalum katika metadata ya modeli, kubadilisha thamani ya lebo kuwa orodha ikiwa ipo, na kutoa mrejesho kwa mtumiaji ipasavyo.
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -188,19 +188,19 @@ Kazi ya finetune inafanya kazi TU na GPU compute. Ukubwa wa compute unategemea u
 
 ### Kukagua Compute Instance
 
-1. Script hii ya Python inaingiliana na huduma ya Azure Machine Learning (Azure ML) na kufanya ukaguzi kadhaa kwenye compute instance. Hapa ni muhtasari wa inavyofanya:
+1. Skripti hii ya Python inaingiliana na huduma ya Azure Machine Learning (Azure ML) na kufanya ukaguzi kadhaa kwenye compute instance. Hapa kuna muhtasari wa inavyofanya:
 
-    - Inajaribu kupata compute instance yenye jina lililo kwenye compute_cluster kutoka Azure ML workspace. Ikiwa hali ya upangaji wa compute instance ni "failed", inarudisha ValueError.
+    - Inajaribu kupata compute instance yenye jina lililohifadhiwa katika compute_cluster kutoka kwa Azure ML workspace. Ikiwa hali ya utoaji wa compute instance ni "failed", inatoa ValueError.
 
-    - Inakagua kama computes_allow_list si None. Ikiwa siyo, hubadilisha ukubwa wa compute zote kwenye orodha kuwa herufi ndogo na kuangalia kama ukubwa wa compute instance ya sasa upo kwenye orodha. Ikiwa haupo, inarudisha ValueError.
+    - Inakagua kama computes_allow_list si None. Ikiwa siyo, hubadilisha ukubwa wote wa compute kwenye orodha kuwa herufi ndogo na kuangalia kama ukubwa wa compute instance ya sasa uko kwenye orodha. Ikiwa siyo, inatoa ValueError.
 
-    - Ikiwa computes_allow_list ni None, inakagua kama ukubwa wa compute instance upo kwenye orodha ya ukubwa wa GPU VM zisizotumiwa. Ikiwa upo, inarudisha ValueError.
+    - Ikiwa computes_allow_list ni None, inakagua kama ukubwa wa compute instance uko kwenye orodha ya ukubwa wa VM za GPU zisizotegemewa. Ikiwa uko, inatoa ValueError.
 
-    - Inapata orodha ya ukubwa wote wa compute zinazopatikana kwenye workspace. Kisha inazizunguka orodha hii, na kwa kila ukubwa wa compute, inakagua kama jina lake linafanana na ukubwa wa compute instance ya sasa. Ikiwa linafanana, inapata idadi ya GPUs kwa ukubwa huo wa compute na kuweka gpu_count_found kuwa True.
+    - Inapata orodha ya ukubwa wote wa compute zinazopatikana katika workspace. Kisha inazizunguka orodha hii, na kwa kila ukubwa wa compute, inakagua kama jina lake linafanana na ukubwa wa compute instance ya sasa. Ikiwa linafanana, inapata idadi ya GPUs kwa ukubwa huo wa compute na kuweka gpu_count_found kuwa True.
 
-    - Ikiwa gpu_count_found ni True, inachapisha idadi ya GPUs kwenye compute instance. Ikiwa ni False, inarudisha ValueError.
+    - Ikiwa gpu_count_found ni True, inachapisha idadi ya GPUs katika compute instance. Ikiwa ni False, inatoa ValueError.
 
-    - Kwa kifupi, script hii inafanya ukaguzi kadhaa kwenye compute instance katika Azure ML workspace, ikijumuisha ukaguzi wa hali ya upangaji, ukubwa dhidi ya orodha ya kuruhusu au kukanusha, na idadi ya GPUs iliyo nayo.
+    - Kwa muhtasari, skripti hii inafanya ukaguzi kadhaa kwenye compute instance katika Azure ML workspace, ikiwa ni pamoja na hali ya utoaji wake, ukubwa wake dhidi ya orodha ya kuruhusiwa au orodha ya marufuku, na idadi ya GPUs anazomiliki.
 
     ```python
     # Print the exception message
@@ -269,42 +269,42 @@ Kazi ya finetune inafanya kazi TU na GPU compute. Ukubwa wa compute unategemea u
         )
     ```
 
-## 4. Chagua dataset kwa ajili ya mafunzo ya kuongeza usahihi ya mfano
+## 4. Chagua dataset kwa ajili ya kurekebisha modeli
 
-1. Tunatumia dataset ya ultrachat_200k. Dataset ina sehemu nne, zinazofaa kwa Supervised fine-tuning (sft).
-Generation ranking (gen). Idadi ya mifano kwa kila sehemu inaonyeshwa kama ifuatavyo:
+1. Tunatumia dataset ya ultrachat_200k. Dataset ina mgawanyo nne, unaofaa kwa Supervised fine-tuning (sft).
+Uainishaji wa kizazi (gen). Idadi ya mifano kwa kila mgawanyo inaonyeshwa kama ifuatavyo:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. Seliseli kadhaa zinazofuata zinaonyesha maandalizi ya msingi ya data kwa ajili ya mafunzo ya kuongeza usahihi:
+1. Selifu chache zinazofuata zinaonyesha maandalizi ya msingi ya data kwa ajili ya marekebisho:
 
 ### Onyesha baadhi ya mistari ya data
 
-Tunataka sampuli hii ifanye kazi kwa haraka, hivyo hifadhi faili za train_sft, test_sft zenye 5% ya mistari iliyosafishwa tayari. Hii inamaanisha mfano ulioboreshwa utakuwa na usahihi mdogo, kwa hivyo haupaswi kutumika kwa matumizi halisi.
-download-dataset.py hutumika kupakua dataset ya ultrachat_200k na kuibadilisha kuwa muundo unaoweza kutumiwa na sehemu ya pipeline ya mafunzo ya kuongeza usahihi. Pia kwa kuwa dataset ni kubwa, hapa tunakuwa na sehemu tu ya dataset.
+Tunataka sampuli hii iendeshe haraka, hivyo hifadhi faili za train_sft, test_sft zenye asilimia 5 ya mistari iliyosagwa tayari. Hii inamaanisha modeli iliyorekebishwa itakuwa na usahihi mdogo, kwa hivyo haipaswi kutumika kwa matumizi halisi.
+download-dataset.py hutumika kupakua dataset ya ultrachat_200k na kubadilisha dataset kuwa muundo unaoweza kutumiwa na sehemu ya pipeline ya finetune. Pia kwa kuwa dataset ni kubwa, hapa tunayo sehemu tu ya dataset.
 
-1. Kuendesha script ifuatayo kunapakua tu 5% ya data. Hii inaweza kuongezwa kwa kubadilisha parameter ya dataset_split_pc hadi asilimia inayotaka.
+1. Kuendesha skripti ifuatayo kunapakua asilimia 5 tu ya data. Hii inaweza kuongezwa kwa kubadilisha parameter ya dataset_split_pc hadi asilimia inayotakiwa.
 
     > [!NOTE]
-    > Baadhi ya mifano ya lugha ina misimbo tofauti ya lugha na kwa hivyo majina ya safu kwenye dataset yanapaswa kuendana na hayo.
+    > Baadhi ya modeli za lugha zina misimbo tofauti ya lugha na kwa hivyo majina ya safu katika dataset yanapaswa kuakisi hayo.
 
 1. Hapa kuna mfano wa jinsi data inavyopaswa kuonekana
-Dataset ya chat-completion imehifadhiwa kwa muundo wa parquet na kila kipengele kinatumia skema ifuatayo:
+Dataset ya chat-completion imehifadhiwa kwa muundo wa parquet na kila rekodi ikifuata muundo ufuatao:
 
-    - Huu ni hati ya JSON (JavaScript Object Notation), ambayo ni muundo maarufu wa kubadilishana data. Si msimbo unaotekelezwa, bali ni njia ya kuhifadhi na kusafirisha data. Hapa ni muhtasari wa muundo wake:
+    - Huu ni hati ya JSON (JavaScript Object Notation), ambayo ni muundo maarufu wa kubadilishana data. Sio msimbo unaotekelezwa, bali ni njia ya kuhifadhi na kusafirisha data. Hapa kuna muhtasari wa muundo wake:
 
-    - "prompt": Hii ni ufunguo unaoshikilia thamani ya string inayowakilisha kazi au swali lililotolewa kwa msaidizi wa AI.
+    - "prompt": Hii ni funguo inayoshikilia thamani ya mfuatano wa herufi unaowakilisha kazi au swali lililotolewa kwa msaidizi wa AI.
 
-    - "messages": Huu ni safu ya vitu. Kila kitu kinawakilisha ujumbe katika mazungumzo kati ya mtumiaji na msaidizi wa AI. Kila kitu cha ujumbe kina funguo mbili:
+    - "messages": Hii ni funguo inayoshikilia safu ya vitu. Kila kitu kinawakilisha ujumbe katika mazungumzo kati ya mtumiaji na msaidizi wa AI. Kila kitu cha ujumbe kina funguo mbili:
 
-    - "content": Funguo hii ina thamani ya string inayowakilisha maudhui ya ujumbe.
-    - "role": Funguo hii ina thamani ya string inayowakilisha nafasi ya mtu aliyepeleka ujumbe. Inaweza kuwa "user" au "assistant".
-    - "prompt_id": Funguo hii ina thamani ya string inayowakilisha kitambulisho cha kipekee cha prompt.
+    - "content": Funguo hii ina thamani ya mfuatano wa herufi unaowakilisha maudhui ya ujumbe.
+    - "role": Funguo hii ina thamani ya mfuatano wa herufi unaowakilisha nafasi ya mhusika aliyemtuma ujumbe. Inaweza kuwa "user" au "assistant".
+    - "prompt_id": Funguo hii ina thamani ya mfuatano wa herufi unaowakilisha kitambulisho cha kipekee cha prompt.
 
-1. Katika hati hii maalum ya JSON, mazungumzo yanaonyeshwa ambapo mtumiaji anaomba msaidizi wa AI kuunda mhusika mkuu wa hadithi ya dystopian. Msaidizi anajibu, kisha mtumiaji anaomba maelezo zaidi. Msaidizi anakubali kutoa maelezo zaidi. Mazungumzo yote yanaambatana na prompt id maalum.
+1. Katika hati hii maalum ya JSON, mazungumzo yanaonyeshwa ambapo mtumiaji anaomba msaidizi wa AI kuunda mhusika mkuu wa hadithi ya hali mbaya. Msaidizi anajibu, na mtumiaji kisha anaomba maelezo zaidi. Msaidizi anakubali kutoa maelezo zaidi. Mazungumzo yote yanahusishwa na kitambulisho maalum cha prompt.
 
     ```python
     {
@@ -346,15 +346,15 @@ Dataset ya chat-completion imehifadhiwa kwa muundo wa parquet na kila kipengele 
 
 ### Pakua Data
 
-1. Script hii ya Python hutumika kupakua dataset kwa kutumia script ya msaada iitwayo download-dataset.py. Hapa ni muhtasari wa inavyofanya:
+1. Skripti hii ya Python hutumika kupakua dataset kwa kutumia skripti msaidizi iitwayo download-dataset.py. Hapa kuna muhtasari wa inavyofanya:
 
-    - Inaingiza moduli ya os, inayotoa njia ya kutumia vipengele vinavyotegemea mfumo wa uendeshaji.
+    - Inaingiza moduli ya os, ambayo hutoa njia ya kutumia vipengele vinavyotegemea mfumo wa uendeshaji.
 
-    - Inatumia os.system kuendesha script ya download-dataset.py kwenye shell na hoja maalum za mstari wa amri. Hoja zinaelezea dataset ya kupakua (HuggingFaceH4/ultrachat_200k), saraka ya kuipakulia (ultrachat_200k_dataset), na asilimia ya dataset kugawanywa (5). os.system inarudisha hali ya kutoka kwa amri iliyotekelezwa; hali hii huhifadhiwa katika exit_status.
+    - Inatumia os.system kuendesha skripti ya download-dataset.py kwenye shell na hoja maalum za mstari wa amri. Hoja hizi zinaelezea dataset ya kupakua (HuggingFaceH4/ultrachat_200k), saraka ya kupakulia (ultrachat_200k_dataset), na asilimia ya dataset kugawanywa (5). os.system hurudisha hali ya kutoka ya amri iliyotekelezwa; hali hii huhifadhiwa kwenye variable exit_status.
 
-    - Inakagua kama exit_status si 0. Katika mifumo ya uendeshaji kama Unix, hali ya kutoka 0 kawaida inaashiria amri imefanikiwa, vinginevyo inaashiria kosa. Ikiwa exit_status si 0, inarudisha Exception yenye ujumbe unaoonyesha kulikuwa na kosa la kupakua dataset.
+    - Inakagua kama exit_status si 0. Katika mifumo ya uendeshaji kama Unix, hali ya kutoka 0 kawaida inaonyesha amri imefanikiwa, wakati nambari nyingine yoyote inaonyesha kosa. Ikiwa exit_status si 0, inatoa Exception yenye ujumbe unaoonyesha kulikuwa na kosa la kupakua dataset.
 
-    - Kwa muhtasari, script hii inaendesha amri ya kupakua dataset kwa kutumia script ya msaada, na inarudisha kosa ikiwa amri itashindwa.
+    - Kwa muhtasari, skripti hii inaendesha amri ya kupakua dataset kwa kutumia skripti msaidizi, na inatoa kosa ikiwa amri itashindwa.
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -376,19 +376,18 @@ Dataset ya chat-completion imehifadhiwa kwa muundo wa parquet na kila kipengele 
 
 ### Kupakia Data katika DataFrame
 
-1. Script hii ya Python inapakia faili ya JSON Lines katika DataFrame ya pandas na kuonyesha mistari 5 ya kwanza. Hapa ni muhtasari wa inavyofanya:
+1. Skripti hii ya Python inapakia faili ya JSON Lines katika DataFrame ya pandas na kuonyesha mistari 5 ya kwanza. Hapa kuna muhtasari wa inavyofanya:
 
     - Inaingiza maktaba ya pandas, ambayo ni maktaba yenye nguvu ya usindikaji na uchambuzi wa data.
 
-    - Inaweka upana wa juu wa safu kwa chaguo za pandas kuonyesha data bila kukata maandishi.
+    - Inaweka upana wa safu wa juu kabisa kwa chaguo la maonyesho ya pandas kuwa 0. Hii inamaanisha maandishi kamili ya kila safu yataonyeshwa bila kukatwa wakati DataFrame itakapochapishwa. 
 
-    - Inatumia pd.read_json kupakia faili la train_sft.jsonl kutoka saraka ya ultrachat_200k_dataset kuwa DataFrame. Hoja lines=True inaonyesha faili ni katika muundo wa JSON Lines, ambapo kila mstari ni kitu tofauti cha JSON.
+    - Inatumia pd.read_json kupakia faili ya train_sft.jsonl kutoka saraka ya ultrachat_200k_dataset katika DataFrame. Hoja lines=True inaonyesha faili ni katika muundo wa JSON Lines, ambapo kila mstari ni kitu tofauti cha JSON.
+- Inatumia njia ya head kuonyesha mistari 5 ya kwanza ya DataFrame. Ikiwa DataFrame ina mistari chini ya 5, itaonyesha yote.
 
-    - Inatumia njia ya head kuonyesha mistari 5 ya kwanza ya DataFrame. Ikiwa DataFrame ina chini ya mistari 5, itaonyesha yote.
+- Kwa muhtasari, script hii inapakia faili la JSON Lines ndani ya DataFrame na kuonyesha mistari 5 ya kwanza ikiwa na maandishi kamili ya safu.
 
-    - Kwa muhtasari, script hii inapakia faili ya JSON Lines katika DataFrame na kuonyesha mistari 5 ya kwanza na maandishi kamili ya safu.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -405,38 +404,102 @@ Dataset ya chat-completion imehifadhiwa kwa muundo wa parquet na kila kipengele 
     df.head()
     ```
 
-## 5. Tuma kazi ya mafunzo ya kuongeza usahihi ukitumia mfano na data kama ingizo
+## 5. Tuma kazi ya fine tuning ukitumia modeli na data kama ingizo
 
-Tengeneza kazi inayotumia pipeline component ya chat-completion. Jifunze zaidi kuhusu vigezo vyote vinavyoungwa mkono kwa mafunzo ya kuongeza usahihi.
+Tengeneza kazi inayotumia sehemu ya pipeline ya chat-completion. Jifunze zaidi kuhusu vigezo vyote vinavyounga mkono fine tuning.
 
-### Tambua vigezo vya finetune
+### Eleza vigezo vya finetune
 
 1. Vigezo vya finetune vinaweza kugawanywa katika makundi 2 - vigezo vya mafunzo, vigezo vya uboreshaji
 
-1. Vigezo vya mafunzo vinaeleza vipengele vya mafunzo kama -
+1. Vigezo vya mafunzo vinaeleza mambo ya mafunzo kama vile -
 
     - Optimizer, scheduler ya kutumia
     - Kipimo cha kuboresha finetune
-    - Idadi ya hatua za mafunzo na ukubwa wa batch na kadhalika
-    - Vigezo vya uboreshaji husaidia kuboresha matumizi ya kumbukumbu ya GPU na kutumia rasilimali za compute kwa ufanisi.
+    - Idadi ya hatua za mafunzo na ukubwa wa batch n.k.
+    - Vigezo vya uboreshaji husaidia kuboresha matumizi ya kumbukumbu ya GPU na kutumia rasilimali za kompyuta kwa ufanisi.
 
-1. Hapa chini ni baadhi ya vigezo vinavyojumuishwa katika kundi hili. Vigezo vya uboreshaji hutofautiana kwa kila mfano na huambatanishwa na mfano kushughulikia tofauti hizi.
+1. Hapa chini ni baadhi ya vigezo vinavyohusiana na kundi hili. Vigezo vya uboreshaji hutofautiana kwa kila modeli na vimefungwa pamoja na modeli kushughulikia tofauti hizi.
 
     - Washa deepspeed na LoRA
-    - Washa mafunzo ya mchanganyiko wa usahihi (mixed precision)
-    - Washa mafunzo ya nodi nyingi
+    - Washa mafunzo ya mchanganyiko wa usahihi (mixed precision training)
+    - Washa mafunzo ya multi-node
 
 > [!NOTE]
-> Supervised finetuning inaweza kusababisha kupoteza muafaka au kusahau kabisa (catastrophic forgetting). Tunapendekeza kuangalia tatizo hili na kuendesha awamu ya muafaka baada ya kufanyia mafunzo.
+> Supervised finetuning inaweza kusababisha kupoteza mlingano au kusahau kwa ghafla. Tunapendekeza kuangalia tatizo hili na kuendesha hatua ya mlingano baada ya finetune.
 
 ### Vigezo vya Fine Tuning
 
-1. Script hii ya Python inaweka vigezo vya mafunzo ya kuongeza usahihi ya mfano wa machine learning. Hapa ni muhtasari wa inavyofanya:
+1. Script hii ya Python inaweka vigezo vya fine-tuning kwa modeli ya mashine ya kujifunza. Hapa kuna muhtasari wa inavyofanya:
 
-    - Inaweka vigezo vya msingi vya mafunzo kama idadi ya vipindi vya mafunzo (epochs), ukubwa wa batch kwa mafunzo na tathmini, kiwango cha kujifunza (learning rate), na aina ya ratiba ya kiwango cha kujifunza.
+    - Inaweka vigezo vya mafunzo vya msingi kama vile idadi ya epochs za mafunzo, ukubwa wa batch kwa mafunzo na tathmini, kiwango cha kujifunza, na aina ya scheduler ya kiwango cha kujifunza.
 
-    - Ina
-training pipeline kulingana na vigezo mbalimbali, kisha kuchapisha jina hili la onyesho. ```python
+    - Inaweka vigezo vya msingi vya uboreshaji kama vile kama Layer-wise Relevance Propagation (LoRa) na DeepSpeed zitumike, na hatua ya DeepSpeed.
+
+    - Inachanganya vigezo vya mafunzo na uboreshaji katika kamusi moja iitwayo finetune_parameters.
+
+    - Inakagua kama foundation_model ina vigezo vya msingi maalum vya modeli. Ikiwa ipo, inachapisha ujumbe wa onyo na kusasisha kamusi ya finetune_parameters na vigezo hivi maalum. Kazi ya ast.literal_eval hutumika kubadilisha vigezo maalum kutoka kwenye string hadi kamusi ya Python.
+
+    - Inachapisha seti ya mwisho ya vigezo vya fine-tuning vitakavyotumika kwa utekelezaji.
+
+    - Kwa muhtasari, script hii inaandaa na kuonyesha vigezo vya fine-tuning kwa modeli ya mashine ya kujifunza, na uwezo wa kubadilisha vigezo vya msingi na vya modeli maalum.
+
+```python
+    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    training_parameters = dict(
+        num_train_epochs=3,
+        per_device_train_batch_size=1,
+        per_device_eval_batch_size=1,
+        learning_rate=5e-6,
+        lr_scheduler_type="cosine",
+    )
+    
+    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    optimization_parameters = dict(
+        apply_lora="true",
+        apply_deepspeed="true",
+        deepspeed_stage=2,
+    )
+    
+    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    finetune_parameters = {**training_parameters, **optimization_parameters}
+    
+    # Check if the foundation_model has any model-specific default parameters
+    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
+    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    if "model_specific_defaults" in foundation_model.tags:
+        print("Warning! Model specific defaults exist. The defaults could be overridden.")
+        finetune_parameters.update(
+            ast.literal_eval(  # convert string to python dict
+                foundation_model.tags["model_specific_defaults"]
+            )
+        )
+    
+    # Print the final set of fine-tuning parameters that will be used for the run
+    print(
+        f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
+    )
+    ```
+
+### Pipeline ya Mafunzo
+
+1. Script hii ya Python inaeleza kazi ya kuunda jina la kuonyesha kwa pipeline ya mafunzo ya mashine ya kujifunza, kisha inaita kazi hii kuunda na kuchapisha jina hilo. Hapa kuna muhtasari wa inavyofanya:
+
+1. Kazi get_pipeline_display_name imefafanuliwa. Kazi hii huunda jina la kuonyesha kulingana na vigezo mbalimbali vinavyohusiana na pipeline ya mafunzo.
+
+1. Ndani ya kazi, inahesabu jumla ya ukubwa wa batch kwa kuzidisha ukubwa wa batch kwa kifaa, idadi ya hatua za mkusanyiko wa gradient, idadi ya GPUs kwa node, na idadi ya nodes zinazotumika kwa fine-tuning.
+
+1. Inapata vigezo vingine kama aina ya scheduler ya kiwango cha kujifunza, kama DeepSpeed inatumika, hatua ya DeepSpeed, kama Layer-wise Relevance Propagation (LoRa) inatumika, kikomo cha idadi ya checkpoints za modeli kuhifadhiwa, na urefu wa mfuatano wa juu kabisa.
+
+1. Inaunda mfuatano wa maneno unaojumuisha vigezo hivi vyote, vimegawanywa kwa alama za msalaba. Ikiwa DeepSpeed au LoRa inatumika, mfuatano unajumuisha "ds" ikifuatiwa na hatua ya DeepSpeed, au "lora", mtawalia. Ikiwa si hivyo, unajumuisha "nods" au "nolora", mtawalia.
+
+1. Kazi inarudisha mfuatano huu, ambao hutumika kama jina la kuonyesha kwa pipeline ya mafunzo.
+
+1. Baada ya kazi kufafanuliwa, inaitwa kuunda jina la kuonyesha, ambalo linachapishwa.
+
+1. Kwa muhtasari, script hii inaunda jina la kuonyesha kwa pipeline ya mafunzo ya mashine ya kujifunza kulingana na vigezo mbalimbali, kisha inachapisha jina hilo.
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -489,17 +552,31 @@ training pipeline kulingana na vigezo mbalimbali, kisha kuchapisha jina hili la 
     pipeline_display_name = get_pipeline_display_name()
     # Print the display name
     print(f"Display name used for the run: {pipeline_display_name}")
-    ``` ### Kusanidi Pipeline Hii script ya Python inafafanua na kusanidi pipeline ya mashine ya kujifunza kwa kutumia Azure Machine Learning SDK. Hapa kuna muhtasari wa inavyofanya: 1. Inaingiza moduli muhimu kutoka Azure AI ML SDK. 1. Inapata sehemu ya pipeline iitwayo "chat_completion_pipeline" kutoka kwenye rejista. 1. Inafafanua kazi ya pipeline kwa kutumia `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
+    ```
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+### Kusanidi Pipeline
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+Script hii ya Python inaeleza na kusanidi pipeline ya mashine ya kujifunza kwa kutumia Azure Machine Learning SDK. Hapa kuna muhtasari wa inavyofanya:
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. Inaingiza moduli muhimu kutoka Azure AI ML SDK.
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. Inapata sehemu ya pipeline iitwayo "chat_completion_pipeline" kutoka kwenye rejista.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False`, ambayo ina maana pipeline itasimama ikiwa hatua yoyote itashindwa. 1. Kwa muhtasari, script hii inafafanua na kusanidi pipeline ya mashine ya kujifunza kwa ajili ya kazi ya chat completion kwa kutumia Azure Machine Learning SDK. ```python
+1. Inaeleza kazi ya pipeline kwa kutumia dekoreta `@pipeline` na kazi `create_pipeline`. Jina la pipeline limewekwa kuwa `pipeline_display_name`.
+
+1. Ndani ya kazi `create_pipeline`, inanzisha sehemu ya pipeline iliyopatikana na vigezo mbalimbali, ikiwa ni pamoja na njia ya modeli, makundi ya kompyuta kwa hatua tofauti, mgawanyo wa dataset kwa mafunzo na majaribio, idadi ya GPUs za kutumia kwa fine-tuning, na vigezo vingine vya fine-tuning.
+
+1. Inaunganisha matokeo ya kazi ya fine-tuning na matokeo ya kazi ya pipeline. Hii inafanywa ili modeli iliyofinywa iweze kusajiliwa kwa urahisi, jambo linalohitajika kwa ajili ya kupeleka modeli kwenye endpoint ya mtandaoni au batch.
+
+1. Inaunda mfano wa pipeline kwa kuita kazi `create_pipeline`.
+
+1. Inaweka mipangilio ya `force_rerun` ya pipeline kuwa `True`, ikimaanisha matokeo yaliyohifadhiwa kutoka kazi za awali hayatatumika.
+
+1. Inaweka mipangilio ya `continue_on_step_failure` ya pipeline kuwa `False`, ikimaanisha pipeline itasimama ikiwa hatua yoyote itashindwa.
+
+1. Kwa muhtasari, script hii inaeleza na kusanidi pipeline ya mashine ya kujifunza kwa kazi ya chat completion kwa kutumia Azure Machine Learning SDK.
+
+```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
@@ -548,7 +625,19 @@ training pipeline kulingana na vigezo mbalimbali, kisha kuchapisha jina hili la 
     # Set continue on step failure to False
     # This means that the pipeline will stop if any step fails
     pipeline_object.settings.continue_on_step_failure = False
-    ``` ### Kuwasilisha Kazi 1. Hii script ya Python inawasilisha kazi ya pipeline ya mashine ya kujifunza kwa Azure Machine Learning workspace na kusubiri kazi hiyo kukamilika. Hapa kuna muhtasari wa inavyofanya: - Inaita njia ya create_or_update ya kitu cha jobs katika workspace_ml_client kuwasilisha kazi ya pipeline. Pipeline inayotekelezwa imeainishwa na pipeline_object, na jaribio ambalo kazi inafanyika chini yake limeainishwa na experiment_name. - Kisha inaita njia ya stream ya kitu cha jobs katika workspace_ml_client kusubiri kazi ya pipeline ikamilike. Kazi inayosubiriwa imeainishwa na sifa ya name ya pipeline_job. - Kwa muhtasari, script hii inawasilisha kazi ya pipeline ya mashine ya kujifunza kwa Azure Machine Learning workspace, kisha inasubiri kazi hiyo ikamilike. ```python
+    ```
+
+### Tuma Kazi
+
+1. Script hii ya Python inatuma kazi ya pipeline ya mashine ya kujifunza kwenye eneo la kazi la Azure Machine Learning na kisha kusubiri kazi hiyo kukamilika. Hapa kuna muhtasari wa inavyofanya:
+
+    - Inaita njia ya create_or_update ya kitu cha jobs katika workspace_ml_client kutuma kazi ya pipeline. Pipeline inayotekelezwa inaelezwa na pipeline_object, na jaribio ambalo kazi inatekelezwa chini yake linaelezwa na experiment_name.
+
+    - Kisha inaita njia ya stream ya kitu cha jobs katika workspace_ml_client kusubiri kazi ya pipeline kukamilika. Kazi inayosubiriwa inaelezwa na sifa ya name ya kitu cha pipeline_job.
+
+    - Kwa muhtasari, script hii inatuma kazi ya pipeline ya mashine ya kujifunza kwenye eneo la kazi la Azure Machine Learning, kisha inasubiri kazi hiyo kukamilika.
+
+```python
     # Submit the pipeline job to the Azure Machine Learning workspace
     # The pipeline to be run is specified by pipeline_object
     # The experiment under which the job is run is specified by experiment_name
@@ -559,7 +648,33 @@ training pipeline kulingana na vigezo mbalimbali, kisha kuchapisha jina hili la 
     # Wait for the pipeline job to complete
     # The job to wait for is specified by the name attribute of the pipeline_job object
     workspace_ml_client.jobs.stream(pipeline_job.name)
-    ``` ## 6. Sajili model iliyoboreshwa na workspace Tutasajili model kutoka kwa matokeo ya kazi ya fine tuning. Hii itafuatilia uhusiano kati ya model iliyoboreshwa na kazi ya fine tuning. Kazi ya fine tuning, zaidi ya hayo, inafuatilia uhusiano na model ya msingi, data na msimbo wa mafunzo. ### Kusajili Model ya ML 1. Hii script ya Python inasajili model ya mashine ya kujifunza ambayo ilifundishwa katika pipeline ya Azure Machine Learning. Hapa kuna muhtasari wa inavyofanya: - Inaingiza moduli muhimu kutoka Azure AI ML SDK. - Inakagua kama output ya trained_model inapatikana kutoka kwa kazi ya pipeline kwa kuita njia ya get ya kitu cha jobs katika workspace_ml_client na kufikia sifa yake ya outputs. - Inaunda njia ya model iliyofundishwa kwa kutengeneza mfuatano wa maandishi na jina la kazi ya pipeline na jina la output ("trained_model"). - Inafafanua jina la model iliyoboreshwa kwa kuongeza "-ultrachat-200k" kwenye jina la model asili na kubadilisha mikanda yoyote kuwa vibonye. - Inajiandaa kusajili model kwa kuunda kitu cha Model na vigezo mbalimbali, ikiwa ni pamoja na njia ya model, aina ya model (MLflow model), jina na toleo la model, na maelezo ya model. - Inasajili model kwa kuita njia ya create_or_update ya kitu cha models katika workspace_ml_client na Model kama hoja. - Inachapisha model iliyosajiliwa. 1. Kwa muhtasari, script hii inasajili model ya mashine ya kujifunza ambayo ilifundishwa katika pipeline ya Azure Machine Learning. ```python
+    ```
+
+## 6. Sajili modeli iliyofinywa na workspace
+
+Tutamsajili modeli kutoka matokeo ya kazi ya fine tuning. Hii itafuatilia uhusiano kati ya modeli iliyofinywa na kazi ya fine tuning. Kazi ya fine tuning, zaidi ya hayo, inafuatilia uhusiano na modeli ya msingi, data, na msimbo wa mafunzo.
+
+### Kusajili Modeli ya ML
+
+1. Script hii ya Python inasajili modeli ya mashine ya kujifunza iliyofunzwa katika pipeline ya Azure Machine Learning. Hapa kuna muhtasari wa inavyofanya:
+
+    - Inaingiza moduli muhimu kutoka Azure AI ML SDK.
+
+    - Inakagua kama matokeo ya trained_model yanapatikana kutoka kwa kazi ya pipeline kwa kuita njia ya get ya kitu cha jobs katika workspace_ml_client na kufikia sifa yake ya outputs.
+
+    - Inaunda njia ya faili ya modeli iliyofunzwa kwa kuunda mfuatano wa string kwa kutumia jina la kazi ya pipeline na jina la matokeo ("trained_model").
+
+    - Inaeleza jina la modeli iliyofinywa kwa kuongeza "-ultrachat-200k" kwenye jina la modeli asili na kubadilisha alama za slash kuwa msalaba.
+
+    - Inajiandaa kusajili modeli kwa kuunda kitu cha Model na vigezo mbalimbali, ikiwa ni pamoja na njia ya modeli, aina ya modeli (MLflow model), jina na toleo la modeli, na maelezo ya modeli.
+
+    - Inasajili modeli kwa kuita njia ya create_or_update ya kitu cha models katika workspace_ml_client kwa kutumia kitu cha Model kama hoja.
+
+    - Inachapisha modeli iliyosajiliwa.
+
+1. Kwa muhtasari, script hii inasajili modeli ya mashine ya kujifunza iliyofunzwa katika pipeline ya Azure Machine Learning.
+
+```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
@@ -597,7 +712,27 @@ training pipeline kulingana na vigezo mbalimbali, kisha kuchapisha jina hili la 
     
     # Print the registered model
     print("registered model: \n", registered_model)
-    ``` ## 7. Weka model iliyoboreshwa kwenye endpoint ya mtandaoni Endpoint za mtandaoni hutoa API thabiti ya REST ambayo inaweza kutumika kuunganishwa na programu zinazohitaji kutumia model. ### Kusimamia Endpoint 1. Hii script ya Python inaunda endpoint ya mtandaoni inayosimamiwa katika Azure Machine Learning kwa model iliyosajiliwa. Hapa kuna muhtasari wa inavyofanya: - Inaingiza moduli muhimu kutoka Azure AI ML SDK. - Inafafanua jina la kipekee la endpoint ya mtandaoni kwa kuongeza alama ya wakati kwenye mfuatano "ultrachat-completion-". - Inajiandaa kuunda endpoint ya mtandaoni kwa kuunda kitu cha ManagedOnlineEndpoint na vigezo mbalimbali, ikiwa ni pamoja na jina la endpoint, maelezo ya endpoint, na hali ya uthibitishaji ("key"). - Inaunda endpoint ya mtandaoni kwa kuita njia ya begin_create_or_update ya workspace_ml_client na kitu cha ManagedOnlineEndpoint kama hoja. Kisha inasubiri operesheni ya uundaji kukamilika kwa kuita njia ya wait. 1. Kwa muhtasari, script hii inaunda endpoint ya mtandaoni inayosimamiwa katika Azure Machine Learning kwa model iliyosajiliwa. ```python
+    ```
+
+## 7. Peleka modeli iliyofinywa kwenye endpoint ya mtandaoni
+
+Endpoints za mtandaoni hutoa API ya REST inayodumu ambayo inaweza kutumika kuunganishwa na programu zinazohitaji kutumia modeli.
+
+### Simamia Endpoint
+
+1. Script hii ya Python inaunda endpoint ya mtandaoni inayosimamiwa katika Azure Machine Learning kwa modeli iliyosajiliwa. Hapa kuna muhtasari wa inavyofanya:
+
+    - Inaingiza moduli muhimu kutoka Azure AI ML SDK.
+
+    - Inaeleza jina la kipekee la endpoint ya mtandaoni kwa kuongeza alama ya wakati kwenye mfuatano "ultrachat-completion-".
+
+    - Inajiandaa kuunda endpoint ya mtandaoni kwa kuunda kitu cha ManagedOnlineEndpoint na vigezo mbalimbali, ikiwa ni pamoja na jina la endpoint, maelezo ya endpoint, na hali ya uthibitishaji ("key").
+
+    - Inaunda endpoint ya mtandaoni kwa kuita njia ya begin_create_or_update ya workspace_ml_client kwa kutumia kitu cha ManagedOnlineEndpoint kama hoja. Kisha inasubiri operesheni ya uundaji kukamilika kwa kutumia njia ya wait.
+
+1. Kwa muhtasari, script hii inaunda endpoint ya mtandaoni inayosimamiwa katika Azure Machine Learning kwa modeli iliyosajiliwa.
+
+```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
@@ -622,32 +757,34 @@ training pipeline kulingana na vigezo mbalimbali, kisha kuchapisha jina hili la 
     # Create the online endpoint by calling the begin_create_or_update method of the workspace_ml_client with the ManagedOnlineEndpoint object as the argument
     # Then wait for the creation operation to complete by calling the wait method
     workspace_ml_client.begin_create_or_update(endpoint).wait()
-    ``` > [!NOTE]
-> Unaweza kupata hapa orodha ya SKU zinazoungwa mkono kwa ajili ya uanzishaji - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+    ```
 
-### Kuweka Model ya ML
+> [!NOTE]
+> Unaweza kupata hapa orodha ya SKU zinazounga mkono upeleka - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-1. Hii script ya Python inapeleka model iliyosajiliwa ya mashine ya kujifunza kwenye endpoint ya mtandaoni inayosimamiwa katika Azure Machine Learning. Hapa kuna muhtasari wa inavyofanya:
+### Kuweka ML Model Endpoint
 
-    - Inaingiza moduli ya ast, ambayo hutoa kazi za kushughulikia miti ya sarufi ya muundo wa Python.
+1. Script hii ya Python inapeleka modeli ya mashine ya kujifunza iliyosajiliwa kwenye endpoint ya mtandaoni inayosimamiwa katika Azure Machine Learning. Hapa kuna muhtasari wa inavyofanya:
 
-    - Inaweka aina ya kifaa cha kuanzisha kuwa "Standard_NC6s_v3".
+    - Inaingiza moduli ya ast, ambayo hutoa kazi za kushughulikia muundo wa sarufi ya Python.
 
-    - Inakagua kama tag ya inference_compute_allow_list ipo kwenye model ya msingi. Ikiwa ipo, hubadilisha thamani ya tag kutoka kwenye maandishi hadi orodha ya Python na kuiweka kwenye inference_computes_allow_list. Ikiwa haipo, inaweka inference_computes_allow_list kuwa None.
+    - Inaweka aina ya mfano kwa ajili ya upeleka kuwa "Standard_NC6s_v3".
 
-    - Inakagua kama aina ya kifaa kilichoainishwa kiko kwenye orodha ya kuruhusiwa. Ikiwa hakipo, inachapisha ujumbe ikimwomba mtumiaji kuchagua aina ya kifaa kutoka kwenye orodha ya kuruhusiwa.
+    - Inakagua kama tag ya inference_compute_allow_list ipo katika foundation model. Ikiwa ipo, hubadilisha thamani ya tag kutoka string hadi orodha ya Python na kuiweka kwenye inference_computes_allow_list. Ikiwa haipo, inaweka inference_computes_allow_list kuwa None.
 
-    - Inajiandaa kuunda uanzishaji kwa kuunda kitu cha ManagedOnlineDeployment na vigezo mbalimbali, ikiwa ni pamoja na jina la uanzishaji, jina la endpoint, ID ya model, aina na idadi ya kifaa, mipangilio ya liveness probe, na mipangilio ya maombi.
+    - Inakagua kama aina ya mfano iliyotajwa iko kwenye orodha ya kuruhusiwa. Ikiwa siyo, inachapisha ujumbe ikimwomba mtumiaji kuchagua aina ya mfano kutoka orodha ya kuruhusiwa.
 
-    - Inaunda uanzishaji kwa kuita njia ya begin_create_or_update ya workspace_ml_client na kitu cha ManagedOnlineDeployment kama hoja. Kisha inasubiri operesheni ya uundaji kukamilika kwa kuita njia ya wait.
+    - Inajiandaa kuunda upeleka kwa kuunda kitu cha ManagedOnlineDeployment na vigezo mbalimbali, ikiwa ni pamoja na jina la upeleka, jina la endpoint, kitambulisho cha modeli, aina na idadi ya mfano, mipangilio ya liveness probe, na mipangilio ya maombi.
 
-    - Inaweka trafiki ya endpoint kupeleka asilimia 100 ya trafiki kwa uanzishaji wa "demo".
+    - Inaunda upeleka kwa kuita njia ya begin_create_or_update ya workspace_ml_client kwa kutumia kitu cha ManagedOnlineDeployment kama hoja. Kisha inasubiri operesheni ya uundaji kukamilika kwa kutumia njia ya wait.
 
-    - Inasasisha endpoint kwa kuita njia ya begin_create_or_update ya workspace_ml_client na kitu cha endpoint kama hoja. Kisha inasubiri operesheni ya sasisho kukamilika kwa kuita njia ya result.
+    - Inaweka trafiki ya endpoint kupeleka asilimia 100 ya trafiki kwa upeleka wa "demo".
 
-1. Kwa muhtasari, script hii inapeleka model iliyosajiliwa ya mashine ya kujifunza kwenye endpoint ya mtandaoni inayosimamiwa katika Azure Machine Learning.
+    - Inasasisha endpoint kwa kuita njia ya begin_create_or_update ya workspace_ml_client kwa kutumia kitu cha endpoint kama hoja. Kisha inasubiri operesheni ya sasisho kukamilika kwa kutumia njia ya result.
 
-    ```python
+1. Kwa muhtasari, script hii inapeleka modeli ya mashine ya kujifunza iliyosajiliwa kwenye endpoint ya mtandaoni inayosimamiwa katika Azure Machine Learning.
+
+```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
     import ast
     
@@ -700,23 +837,23 @@ training pipeline kulingana na vigezo mbalimbali, kisha kuchapisha jina hili la 
 
 ## 8. Jaribu endpoint na data ya mfano
 
-Tutachukua baadhi ya data za mfano kutoka kwenye dataset ya majaribio na kuziwasilisha kwa endpoint ya mtandaoni kwa ajili ya utabiri. Kisha tutaonyesha alama zilizopimwa pamoja na alama halisi.
+Tutachukua baadhi ya data ya mfano kutoka dataset ya majaribio na kuituma kwenye endpoint ya mtandaoni kwa ajili ya utambuzi. Kisha tutaonyesha lebo zilizopimwa pamoja na lebo halisi.
 
 ### Kusoma matokeo
 
-1. Hii script ya Python inasoma faili ya JSON Lines ndani ya pandas DataFrame, kuchukua sampuli ya bahati nasibu, na kuweka upya index. Hapa kuna muhtasari wa inavyofanya:
+1. Script hii ya Python inasoma faili la JSON Lines ndani ya pandas DataFrame, kuchukua sampuli ya bahati nasibu, na kuweka upya index. Hapa kuna muhtasari wa inavyofanya:
 
-    - Inasoma faili ./ultrachat_200k_dataset/test_gen.jsonl ndani ya pandas DataFrame. Kazi ya read_json inatumiwa na hoja lines=True kwa sababu faili iko katika muundo wa JSON Lines, ambapo kila mstari ni kitu tofauti cha JSON.
+    - Inasoma faili ./ultrachat_200k_dataset/test_gen.jsonl ndani ya pandas DataFrame. Kazi ya read_json inatumika na hoja lines=True kwa sababu faili iko katika muundo wa JSON Lines, ambapo kila mstari ni kitu tofauti cha JSON.
 
-    - Inachukua sampuli ya bahati nasibu ya mistari 1 kutoka DataFrame. Kazi ya sample inatumiwa na hoja n=1 kuonyesha idadi ya mistari ya bahati nasibu kuchaguliwa.
+    - Inachukua sampuli ya bahati nasibu ya mstari 1 kutoka DataFrame. Kazi ya sample inatumika na hoja n=1 kuonyesha idadi ya mistari ya bahati nasibu kuchaguliwa.
 
-    - Inarejesha index ya DataFrame. Kazi ya reset_index inatumiwa na hoja drop=True kuondoa index ya awali na kuibadilisha na index mpya ya nambari za kawaida.
+    - Inapanga upya index ya DataFrame. Kazi ya reset_index inatumika na hoja drop=True kuondoa index ya awali na kuibadilisha na index mpya ya nambari za kawaida.
 
     - Inaonyesha mistari 2 ya kwanza ya DataFrame kwa kutumia kazi ya head na hoja 2. Hata hivyo, kwa kuwa DataFrame ina mstari mmoja tu baada ya sampuli, hii itaonyesha mstari huo mmoja tu.
 
-1. Kwa muhtasari, script hii inasoma faili ya JSON Lines ndani ya pandas DataFrame, kuchukua sampuli ya bahati nasibu ya mstari 1, kuweka upya index, na kuonyesha mstari wa kwanza.
+1. Kwa muhtasari, script hii inasoma faili la JSON Lines ndani ya pandas DataFrame, kuchukua sampuli ya bahati nasibu ya mstari 1, kuweka upya index, na kuonyesha mstari wa kwanza.
 
-    ```python
+```python
     # Import pandas library
     import pandas as pd
     
@@ -740,17 +877,16 @@ Tutachukua baadhi ya data za mfano kutoka kwenye dataset ya majaribio na kuziwas
 
 ### Tengeneza Kitu cha JSON
 
-1. Hii script ya Python inaunda kitu cha JSON kwa vigezo maalum na kuihifadhi kwenye faili. Hapa kuna muhtasari wa inavyofanya:
+1. Script hii ya Python inaunda kitu cha JSON chenye vigezo maalum na kuikagua kwenye faili. Hapa kuna muhtasari wa inavyofanya:
 
     - Inaingiza moduli ya json, ambayo hutoa kazi za kushughulikia data za JSON.
 
-    - Inaunda kamusi parameters yenye funguo na thamani zinazowakilisha vigezo vya model ya mashine ya kujifunza. Funguo ni "temperature", "top_p", "do_sample", na "max_new_tokens", na thamani zao ni 0.6, 0.9, True, na 200 mtawalia.
+    - Inaunda kamusi parameters yenye funguo na thamani zinazowakilisha vigezo vya modeli ya mashine ya kujifunza. Funguo ni "temperature", "top_p", "do_sample", na "max_new_tokens", na thamani zao ni 0.6, 0.9, True, na 200 mtawalia.
 
-    - Inaunda kamusi nyingine test_json yenye funguo mbili: "input_data" na "params". Thamani ya "input_data" ni kamusi nyingine yenye funguo "input_string" na "parameters". Thamani ya "input_string" ni orodha yenye ujumbe wa kwanza kutoka DataFrame ya test_df. Thamani ya "parameters" ni kamusi parameters iliyoundwa awali. Thamani ya "params" ni kamusi tupu.
+    - Inaunda kamusi nyingine test_json yenye funguo mbili: "input_data" na "params". Thamani ya "input_data" ni kamusi nyingine yenye funguo "input_string" na "parameters". Thamani ya "input_string" ni orodha inayojumuisha ujumbe wa kwanza kutoka DataFrame ya test_df. Thamani ya "parameters" ni kamusi parameters iliyoundwa awali. Thamani ya "params" ni kamusi tupu.
+- Inafungua faili liitwalo sample_score.json
 
-    - Inafungua faili iitwayo sample_score.json
-
-    ```python
+```python
     # Import the json module, which provides functions to work with JSON data
     import json
     
@@ -784,21 +920,21 @@ Tutachukua baadhi ya data za mfano kutoka kwenye dataset ya majaribio na kuziwas
 
 ### Kupiga Endpoint
 
-1. Hii script ya Python inapiga endpoint ya mtandaoni katika Azure Machine Learning ili kupima faili ya JSON. Hapa kuna muhtasari wa inavyofanya:
+1. Script hii ya Python inapiga endpoint mtandaoni katika Azure Machine Learning ili kupima faili la JSON. Hapa kuna muhtasari wa inavyofanya:
 
-    - Inaita njia ya invoke ya mali ya online_endpoints ya kitu workspace_ml_client. Njia hii hutumiwa kutuma ombi kwa endpoint ya mtandaoni na kupata jibu.
+    - Inaita njia ya invoke ya mali ya online_endpoints ya kitu workspace_ml_client. Njia hii hutumika kutuma ombi kwa endpoint mtandaoni na kupata jibu.
 
-    - Inaelezea jina la endpoint na uanzishaji kwa hoja za endpoint_name na deployment_name. Katika kesi hii, jina la endpoint limehifadhiwa katika variable online_endpoint_name na jina la uanzishaji ni "demo".
+    - Inaeleza jina la endpoint na deployment kwa kutumia hoja za endpoint_name na deployment_name. Katika kesi hii, jina la endpoint limehifadhiwa katika variable ya online_endpoint_name na jina la deployment ni "demo".
 
-    - Inaelezea njia ya faili ya JSON itakayopimwa kwa hoja request_file. Katika kesi hii, faili ni ./ultrachat_200k_dataset/sample_score.json.
+    - Inaeleza njia ya faili la JSON ambalo litapimwa kwa kutumia hoja ya request_file. Katika kesi hii, faili ni ./ultrachat_200k_dataset/sample_score.json.
 
-    - Inahifadhi jibu kutoka kwa endpoint katika variable response.
+    - Inahifadhi jibu kutoka kwa endpoint katika variable ya response.
 
     - Inachapisha jibu halisi.
 
-1. Kwa muhtasari, script hii inapiga endpoint ya mtandaoni katika Azure Machine Learning kupima faili ya JSON na kuchapisha jibu.
+1. Kwa muhtasari, script hii inapiga endpoint mtandaoni katika Azure Machine Learning ili kupima faili la JSON na kuchapisha jibu.
 
-    ```python
+```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
     # The `invoke` method of the `online_endpoints` property of the `workspace_ml_client` object is used to send a request to an online endpoint and get a response
     # The `endpoint_name` argument specifies the name of the endpoint, which is stored in the `online_endpoint_name` variable
@@ -814,19 +950,19 @@ Tutachukua baadhi ya data za mfano kutoka kwenye dataset ya majaribio na kuziwas
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Futa endpoint ya mtandaoni
+## 9. Futa endpoint mtandaoni
 
-1. Usisahau kufuta endpoint ya mtandaoni, vinginevyo utaacha mita ya bili ikitumia kwa ajili ya kompyuta inayotumika na endpoint. Mstari huu wa msimbo wa Python unafuta endpoint ya mtandaoni katika Azure Machine Learning. Hapa kuna muhtasari wa inavyofanya:
+1. Usisahau kufuta endpoint mtandaoni, vinginevyo utaacha mita ya malipo ikifanya kazi kwa ajili ya kompyuta inayotumika na endpoint. Mstari huu wa msimbo wa Python unafuta endpoint mtandaoni katika Azure Machine Learning. Hapa kuna muhtasari wa inavyofanya:
 
-    - Inaita njia ya begin_delete ya mali ya online_endpoints ya kitu workspace_ml_client. Njia hii hutumiwa kuanzisha kufuta endpoint ya mtandaoni.
+    - Inaita njia ya begin_delete ya mali ya online_endpoints ya kitu workspace_ml_client. Njia hii hutumika kuanza mchakato wa kufuta endpoint mtandaoni.
 
-    - Inaelezea jina la endpoint itakayofutwa kwa hoja ya name. Katika kesi hii, jina la endpoint limehifadhiwa katika variable online_endpoint_name.
+    - Inaeleza jina la endpoint itakayofutwa kwa kutumia hoja ya name. Katika kesi hii, jina la endpoint limehifadhiwa katika variable ya online_endpoint_name.
 
-    - Inaita njia ya wait kusubiri operesheni ya kufuta ikamilike. Hii ni operesheni ya kuzuia, ikimaanisha itazuia script kuendelea hadi kufutwa kumalizike.
+    - Inaita njia ya wait kusubiri mchakato wa kufuta ukamilike. Hii ni operesheni ya kuzuia, ikimaanisha itazuia script kuendelea hadi kufutwa kumalizike.
 
-    - Kwa muhtasari, mstari huu wa msimbo unaanza kufuta endpoint ya mtandaoni katika Azure Machine Learning na kusubiri operesheni ikamilike.
+    - Kwa muhtasari, mstari huu wa msimbo unaanza mchakato wa kufuta endpoint mtandaoni katika Azure Machine Learning na kusubiri mchakato ukamilike.
 
-    ```python
+```python
     # Delete the online endpoint in Azure Machine Learning
     # The `begin_delete` method of the `online_endpoints` property of the `workspace_ml_client` object is used to start the deletion of an online endpoint
     # The `name` argument specifies the name of the endpoint to be deleted, which is stored in the `online_endpoint_name` variable
@@ -834,5 +970,5 @@ Tutachukua baadhi ya data za mfano kutoka kwenye dataset ya majaribio na kuziwas
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
-**Kifunuo cha Majukumu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inapendekezwa. Hatubebei lawama kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Msamaha**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

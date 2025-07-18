@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:19:36+00:00",
+  "translation_date": "2025-07-16T21:40:36+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "sl"
 }
 -->
-# **Lokalni Inference Phi-3-Vision**
+# **Inferenca Phi-3-Vision lokalno**
 
-Phi-3-vision-128k-instruct omogoča Phi-3, da ne le razume jezik, ampak tudi vidi svet vizualno. Preko Phi-3-vision-128k-instruct lahko rešujemo različne vizualne izzive, kot so OCR, analiza tabel, prepoznavanje predmetov, opisovanje slik itd. Enostavno lahko opravimo naloge, ki so prej zahtevale veliko podatkov za učenje. Spodaj so navedene povezane tehnike in aplikacijski scenariji, ki jih navaja Phi-3-vision-128k-instruct.
+Phi-3-vision-128k-instruct omogoča Phi-3, da ne razume le jezika, ampak tudi vidi svet vizualno. S pomočjo Phi-3-vision-128k-instruct lahko rešujemo različne vizualne probleme, kot so OCR, analiza tabel, prepoznavanje predmetov, opis slike itd. Enostavno lahko opravimo naloge, ki so prej zahtevale veliko podatkov za učenje. Spodaj so navedene povezane tehnike in scenariji uporabe, ki jih navaja Phi-3-vision-128k-instruct.
 
 ## **0. Priprava**
 
-Pred uporabo poskrbite, da so naslednje Python knjižnice nameščene (priporočena je verzija Python 3.10+)
+Pred uporabo se prepričajte, da so nameščene naslednje Python knjižnice (priporočen Python 3.10+)
 
 ```bash
 pip install transformers -U
@@ -27,7 +27,7 @@ Priporočljivo je uporabljati ***CUDA 11.6+*** in namestiti flatten
 pip install flash-attn --no-build-isolation
 ```
 
-Ustvarite nov Notebook. Za izvedbo primerov je priporočljivo, da najprej pripravite naslednjo vsebino.
+Ustvarite nov Notebook. Za dokončanje primerov je priporočljivo, da najprej ustvarite naslednjo vsebino.
 
 ```python
 from PIL import Image
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Analiza slike s Phi-3-Vision**
 
-Želimo, da AI analizira vsebino naših slik in poda ustrezne opise
+Želimo, da AI lahko analizira vsebino naših slik in poda ustrezne opise
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Relevantne odgovore lahko dobimo z zagonom naslednjega skripta v Notebooku
+Ustrezne odgovore lahko dobimo z izvajanjem naslednjega skripta v Notebooku
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -149,5 +149,5 @@ Rezultat je
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvorni jezik je treba upoštevati kot avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

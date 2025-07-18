@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T13:58:35+00:00",
+  "translation_date": "2025-07-16T22:02:38+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "nl"
 }
 -->
-# **Quantizen van Phi-3.5 met Intel OpenVINO**
+# **Quantiseren van Phi-3.5 met Intel OpenVINO**
 
-Intel is de meest traditionele CPU-fabrikant met veel gebruikers. Met de opkomst van machine learning en deep learning is Intel ook de strijd aangegaan om AI-versnelling. Voor modelinference gebruikt Intel niet alleen GPU's en CPU's, maar ook NPU's.
+Intel is de meest traditionele CPU-fabrikant met veel gebruikers. Met de opkomst van machine learning en deep learning heeft Intel ook meegedaan aan de race voor AI-versnelling. Voor modelinference gebruikt Intel niet alleen GPU's en CPU's, maar ook NPU's.
 
-We hopen de Phi-3.x-familie aan de rand te kunnen inzetten, met de ambitie om het belangrijkste onderdeel te worden van AI-pc's en Copilot-pc's. Het laden van het model aan de rand hangt af van de samenwerking tussen verschillende hardwarefabrikanten. Dit hoofdstuk richt zich vooral op de toepassing van Intel OpenVINO als kwantitatief model.
+We hopen de Phi-3.x-familie aan de rand te kunnen inzetten, met de ambitie om het belangrijkste onderdeel te worden van AI-pc's en Copilot-pc's. Het laden van het model aan de rand hangt af van de samenwerking tussen verschillende hardwarefabrikanten. Dit hoofdstuk richt zich vooral op het toepassingsscenario van Intel OpenVINO als kwantitatief model.
 
 ## **Wat is OpenVINO**
 
-OpenVINO is een open-source toolkit voor het optimaliseren en inzetten van deep learning modellen van cloud tot edge. Het versnelt deep learning inference in verschillende toepassingen, zoals generatieve AI, video, audio en taal, met modellen uit populaire frameworks zoals PyTorch, TensorFlow, ONNX en meer. Converteer en optimaliseer modellen en zet ze in op een mix van Intel® hardware en omgevingen, zowel on-premises als op het apparaat, in de browser of in de cloud.
+OpenVINO is een open-source toolkit voor het optimaliseren en implementeren van deep learning-modellen van cloud tot edge. Het versnelt deep learning-inference in diverse toepassingen, zoals generatieve AI, video, audio en taal, met modellen uit populaire frameworks zoals PyTorch, TensorFlow, ONNX en meer. Converteer en optimaliseer modellen en zet ze in op een mix van Intel® hardware en omgevingen, on-premises en op het apparaat, in de browser of in de cloud.
 
-Met OpenVINO kun je nu snel GenAI-modellen kwantiseren op Intel-hardware en de modelreferentie versnellen.
+Met OpenVINO kun je nu snel het GenAI-model kwantiseren op Intel-hardware en de modelreferentie versnellen.
 
 OpenVINO ondersteunt nu de kwantisatieconversie van Phi-3.5-Vision en Phi-3.5 Instruct.
 
@@ -36,7 +36,7 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **Quantizen van Phi-3.5-Instruct met OpenVINO**
+### **Quantiseren van Phi-3.5-Instruct met OpenVINO**
 
 Voer dit script uit in de terminal
 
@@ -52,7 +52,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **Quantizen van Phi-3.5-Vision met OpenVINO**
+### **Quantiseren van Phi-3.5-Vision met OpenVINO**
 
 Voer dit script uit in Python of Jupyter lab
 
@@ -94,9 +94,9 @@ if not out_dir.exists():
 
 | Labs    | Introductie | Ga naar |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | Leer hoe je Phi-3.5 Instruct gebruikt op je AI-pc    |  [Ga](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (afbeelding) | Leer hoe je Phi-3.5 Vision gebruikt om afbeeldingen te analyseren op je AI-pc      |  [Ga](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | Leer hoe je Phi-3.5 Vision gebruikt om video te analyseren op je AI-pc    |  [Ga](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introductie Phi-3.5 Instruct  | Leer hoe je Phi-3.5 Instruct gebruikt op je AI-pc    |  [Ga](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introductie Phi-3.5 Vision (afbeelding) | Leer hoe je Phi-3.5 Vision gebruikt om afbeeldingen te analyseren op je AI-pc      |  [Ga](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introductie Phi-3.5 Vision (video)   | Leer hoe je Phi-3.5 Vision gebruikt om video’s te analyseren op je AI-pc    |  [Ga](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **Bronnen**
 
@@ -105,4 +105,4 @@ if not out_dir.exists():
 2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal dient als de gezaghebbende bron te worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

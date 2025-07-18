@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-07-09T19:05:07+00:00",
+  "translation_date": "2025-07-17T06:26:42+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Fine-tuning Microsoft's Phi-3 Mini language model using [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) on a custom chat instruction dataset.
 
-LoRA helps enhance conversational understanding and response generation.
+LoRA will help enhance conversational understanding and response generation.
 
 ## Step-by-step guide on how to fine-tune Phi-3 Mini:
 
@@ -29,7 +29,7 @@ pip install loralib
 Start by importing the necessary libraries such as datasets, transformers, peft, trl, and torch.  
 Set up logging to monitor the training process.
 
-You can choose to adapt certain layers by replacing them with versions implemented in loralib. Currently, we support nn.Linear, nn.Embedding, and nn.Conv2d. We also support a MergedLinear for cases where a single nn.Linear represents multiple layers, like in some implementations of the attention qkv projection (see Additional Notes for details).
+You can choose to adapt certain layers by replacing them with versions implemented in loralib. Currently, we only support nn.Linear, nn.Embedding, and nn.Conv2d. We also support a MergedLinear for cases where a single nn.Linear represents multiple layers, such as in some implementations of the attention qkv projection (see Additional Notes for more details).
 
 ```
 # ===== Before =====
@@ -82,9 +82,9 @@ Now you can proceed with training as usual.
 
 **Hyperparameters**
 
-Define two dictionaries: training_config and peft_config. training_config contains training hyperparameters like learning rate, batch size, and logging settings.
+Define two dictionaries: training_config and peft_config. training_config contains training hyperparameters such as learning rate, batch size, and logging settings.
 
-peft_config specifies LoRA-related parameters such as rank, dropout, and task type.
+peft_config specifies LoRA-related parameters like rank, dropout, and task type.
 
 **Model and Tokenizer Loading**
 
@@ -92,7 +92,7 @@ Specify the path to the pre-trained Phi-3 model (e.g., "microsoft/Phi-3-mini-4k-
 
 **Training**
 
-Fine-tune the Phi-3 model using the custom chat instruction dataset. Use the LoRA settings from peft_config for efficient adaptation. Track training progress with the chosen logging strategy.  
+Fine-tune the Phi-3 model using the custom chat instruction dataset. Use the LoRA settings from peft_config for efficient adaptation. Track training progress with the specified logging strategy.  
 Evaluation and Saving: Evaluate the fine-tuned model.  
 Save checkpoints during training for future use.
 

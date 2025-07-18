@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-07-09T20:05:34+00:00",
+  "translation_date": "2025-07-16T21:06:13+00:00",
   "source_file": "md/01.Introduction/03/overview.md",
   "language_code": "en"
 }
@@ -27,13 +27,13 @@ You can also use [Ollama](https://ollama.com) or [LlamaEdge](https://llamaedge.c
 Many users prefer to use quantized models for local inference. For example, you can directly run Ollama to run Phi-3 or configure it offline using a Modelfile. The Modelfile specifies the GGUF file path and the prompt format.
 
 ## **Generative AI Possibilities:**
-Combining SLMs like Phi-3-mini opens up new possibilities for generative AI. Inference is just the first step; these models can be used for various tasks in resource-constrained, latency-bound, and cost-constrained scenarios.
+Combining SLMs like Phi-3-mini opens up new possibilities for generative AI. Inference is just the first step; these models can be used for various tasks in resource-constrained, latency-sensitive, and cost-sensitive scenarios.
 
 ## **Unlocking Generative AI with Phi-3-mini: A Guide to Inference and Deployment**  
 Learn how to use Semantic Kernel, Ollama/LlamaEdge, and ONNX Runtime to access and infer Phi-3-mini models, and explore the possibilities of generative AI in various application scenarios.
 
 **Features**  
-Inference phi3-mini model in:
+Inference of phi3-mini model in:
 
 - [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)  
 - [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)  

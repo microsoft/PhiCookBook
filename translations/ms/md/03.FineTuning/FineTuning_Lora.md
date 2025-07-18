@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-05-09T20:47:16+00:00",
+  "translation_date": "2025-07-17T06:34:29+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "ms"
 }
 -->
-# **Настройка Phi-3 с помощью Lora**
+# **Penalaan Halus Phi-3 dengan Lora**
 
-Настройка языковой модели Phi-3 Mini от Microsoft с использованием [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) на основе пользовательского набора данных с инструкциями для чата.
+Penalaan halus model bahasa Phi-3 Mini Microsoft menggunakan [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) pada set data arahan sembang tersuai.
 
-LORA поможет улучшить понимание диалогов и генерацию ответов.
+LORA akan membantu meningkatkan pemahaman perbualan dan penjanaan respons.
 
-## Пошаговое руководство по настройке Phi-3 Mini:
+## Panduan langkah demi langkah untuk menala halus Phi-3 Mini:
 
-**Импорты и настройка**
+**Import dan Persediaan**
 
-Установка loralib
+Memasang loralib
 
 ```
 pip install loralib
@@ -26,10 +26,10 @@ pip install loralib
 
 ```
 
-Начните с импорта необходимых библиотек, таких как datasets, transformers, peft, trl и torch.  
-Настройте логирование для отслеживания процесса обучения.
+Mulakan dengan mengimport perpustakaan yang diperlukan seperti datasets, transformers, peft, trl, dan torch.  
+Sediakan logging untuk menjejak proses latihan.
 
-Вы можете выбрать адаптацию некоторых слоев, заменяя их на аналоги из loralib. На данный момент поддерживаются nn.Linear, nn.Embedding и nn.Conv2d. Также поддерживается MergedLinear для случаев, когда один nn.Linear представляет несколько слоев, например, в некоторых реализациях проекции qkv внимания (см. дополнительные примечания).
+Anda boleh memilih untuk menyesuaikan beberapa lapisan dengan menggantikannya dengan padanan yang dilaksanakan dalam loralib. Kami hanya menyokong nn.Linear, nn.Embedding, dan nn.Conv2d buat masa ini. Kami juga menyokong MergedLinear untuk kes di mana satu nn.Linear mewakili lebih daripada satu lapisan, seperti dalam beberapa pelaksanaan projeksi qkv perhatian (rujuk Nota Tambahan untuk maklumat lanjut).
 
 ```
 # ===== Before =====
@@ -47,7 +47,7 @@ import loralib as lora
 layer = lora.Linear(in_features, out_features, r=16)
 ```
 
-Перед началом цикла обучения отметьте только параметры LoRA как обучаемые.
+Sebelum gelung latihan bermula, tandakan hanya parameter LoRA sebagai boleh dilatih.
 
 ```
 import loralib as lora
@@ -58,7 +58,7 @@ lora.mark_only_lora_as_trainable(model)
 for batch in dataloader:
 ```
 
-При сохранении контрольной точки формируйте state_dict, который содержит только параметры LoRA.
+Apabila menyimpan checkpoint, hasilkan state_dict yang hanya mengandungi parameter LoRA.
 
 ```
 # ===== Before =====
@@ -69,7 +69,7 @@ for batch in dataloader:
 torch.save(lora.lora_state_dict(model), checkpoint_path)
 ```
 
-При загрузке контрольной точки с помощью load_state_dict обязательно установите strict=False.
+Apabila memuatkan checkpoint menggunakan load_state_dict, pastikan tetapkan strict=False.
 
 ```
 # Load the pretrained checkpoint first
@@ -78,30 +78,30 @@ model.load_state_dict(torch.load('ckpt_pretrained.pt'), strict=False)
 model.load_state_dict(torch.load('ckpt_lora.pt'), strict=False)
 ```
 
-Теперь обучение можно продолжать в обычном режиме.
+Sekarang latihan boleh diteruskan seperti biasa.
 
-**Гиперпараметры**
+**Hiperparameter**
 
-Определите два словаря: training_config и peft_config. training_config содержит гиперпараметры обучения, такие как скорость обучения, размер батча и настройки логирования.
+Tentukan dua kamus: training_config dan peft_config. training_config merangkumi hiperparameter untuk latihan, seperti kadar pembelajaran, saiz batch, dan tetapan logging.
 
-peft_config задаёт параметры, связанные с LoRA, например, ранг, dropout и тип задачи.
+peft_config menentukan parameter berkaitan LoRA seperti rank, dropout, dan jenis tugasan.
 
-**Загрузка модели и токенизатора**
+**Memuatkan Model dan Tokenizer**
 
-Укажите путь к предобученной модели Phi-3 (например, "microsoft/Phi-3-mini-4k-instruct"). Настройте параметры модели, включая использование кэша, тип данных (bfloat16 для смешанной точности) и реализацию внимания.
+Nyatakan laluan ke model Phi-3 yang telah dilatih sebelumnya (contoh, "microsoft/Phi-3-mini-4k-instruct"). Konfigurasikan tetapan model, termasuk penggunaan cache, jenis data (bfloat16 untuk ketepatan bercampur), dan pelaksanaan perhatian.
 
-**Обучение**
+**Latihan**
 
-Настраивайте модель Phi-3 на пользовательском наборе данных с инструкциями для чата. Используйте настройки LoRA из peft_config для эффективной адаптации. Следите за ходом обучения с помощью выбранной стратегии логирования.  
-Оценка и сохранение: проведите оценку настроенной модели.  
-Сохраняйте контрольные точки во время обучения для дальнейшего использования.
+Tala halus model Phi-3 menggunakan set data arahan sembang tersuai. Gunakan tetapan LoRA dari peft_config untuk penyesuaian yang cekap. Pantau kemajuan latihan menggunakan strategi logging yang ditetapkan.  
+Penilaian dan Penyimpanan: Nilai model yang telah ditala halus.  
+Simpan checkpoint semasa latihan untuk kegunaan kemudian.
 
-**Примеры**
-- [Подробнее с этим примером ноутбука](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
-- [Пример Python скрипта для тонкой настройки](../../../../code/03.Finetuning/FineTrainingScript.py)  
-- [Пример тонкой настройки с LORA на Hugging Face Hub](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
-- [Пример карточки модели Hugging Face - пример тонкой настройки LORA](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
-- [Пример тонкой настройки с QLORA на Hugging Face Hub](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
+**Contoh**  
+- [Ketahui Lebih Lanjut dengan nota contoh ini](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
+- [Contoh Skrip Penalaan Halus Python](../../../../code/03.Finetuning/FineTrainingScript.py)  
+- [Contoh Penalaan Halus Hugging Face Hub dengan LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
+- [Contoh Kad Model Hugging Face - Contoh Penalaan Halus LORA](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
+- [Contoh Penalaan Halus Hugging Face Hub dengan QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

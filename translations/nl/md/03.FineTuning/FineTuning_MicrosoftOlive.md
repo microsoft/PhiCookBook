@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:52:54+00:00",
+  "translation_date": "2025-07-17T06:47:08+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "nl"
 }
 -->
-# **Fijn afstemmen van Phi-3 met Microsoft Olive**
+# **Fine-tunen van Phi-3 met Microsoft Olive**
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) is een gebruiksvriendelijke hardware-bewuste tool voor modeloptimalisatie die toonaangevende technieken op het gebied van modelcompressie, optimalisatie en compilatie samenbrengt.
 
-Het is ontworpen om het proces van het optimaliseren van machine learning modellen te vereenvoudigen, zodat ze zo efficiënt mogelijk gebruikmaken van specifieke hardware-architecturen.
+Het is ontworpen om het proces van het optimaliseren van machine learning-modellen te vereenvoudigen, zodat ze zo efficiënt mogelijk gebruikmaken van specifieke hardware-architecturen.
 
 Of je nu werkt aan cloudgebaseerde applicaties of edge-apparaten, Olive stelt je in staat om je modellen moeiteloos en effectief te optimaliseren.
 
 ## Belangrijkste kenmerken:
 - Olive verzamelt en automatiseert optimalisatietechnieken voor gewenste hardwaredoelen.
-- Geen enkele optimalisatietechniek past in alle scenario’s, daarom maakt Olive uitbreidbaarheid mogelijk door experts in de industrie hun optimalisatie-innovaties te laten integreren.
+- Geen enkele optimalisatietechniek past in alle scenario’s, daarom biedt Olive uitbreidbaarheid zodat experts uit de industrie hun optimalisatie-innovaties kunnen integreren.
 
 ## Verminder engineering-inspanning:
-- Ontwikkelaars moeten vaak meerdere hardware-specifieke toolchains leren en gebruiken om getrainde modellen voor implementatie voor te bereiden en te optimaliseren.
+- Ontwikkelaars moeten vaak meerdere hardware-specifieke toolchains leren en gebruiken om getrainde modellen voor te bereiden en te optimaliseren voor deployment.
 - Olive vereenvoudigt deze ervaring door optimalisatietechnieken voor de gewenste hardware te automatiseren.
 
 ## Klaar-voor-gebruik end-to-end optimalisatieoplossing:
@@ -28,28 +28,28 @@ Of je nu werkt aan cloudgebaseerde applicaties of edge-apparaten, Olive stelt je
 Door geïntegreerde technieken samen te stellen en af te stemmen, biedt Olive een uniforme oplossing voor end-to-end optimalisatie.
 Het houdt rekening met beperkingen zoals nauwkeurigheid en latency tijdens het optimaliseren van modellen.
 
-## Gebruik van Microsoft Olive voor fijn afstemmen
+## Fine-tunen met Microsoft Olive
 
-Microsoft Olive is een zeer gebruiksvriendelijke open source tool voor modeloptimalisatie die zowel fijn afstemmen als referentie kan dekken binnen generatieve kunstmatige intelligentie. Het vereist alleen een eenvoudige configuratie, gecombineerd met het gebruik van open source kleine taalmodellen en bijbehorende runtime-omgevingen (AzureML / lokale GPU, CPU, DirectML). Zo kun je via automatische optimalisatie het model fijn afstemmen of als referentie gebruiken, en het beste model vinden om te implementeren in de cloud of op edge-apparaten. Hiermee kunnen bedrijven hun eigen verticale industriële modellen bouwen, zowel on-premises als in de cloud.
+Microsoft Olive is een zeer gebruiksvriendelijke open source tool voor modeloptimalisatie die zowel fine-tuning als referentie kan dekken op het gebied van generatieve kunstmatige intelligentie. Het vereist slechts een eenvoudige configuratie, gecombineerd met het gebruik van open source kleine taalmodellen en gerelateerde runtime-omgevingen (AzureML / lokale GPU, CPU, DirectML). Hiermee kun je fine-tuning of referentie van het model voltooien via automatische optimalisatie en het beste model vinden om te deployen naar de cloud of op edge-apparaten. Hiermee kunnen bedrijven hun eigen branchespecifieke modellen bouwen, zowel on-premises als in de cloud.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.nl.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.nl.png)
 
-## Phi-3 fijn afstemmen met Microsoft Olive
+## Phi-3 Fine Tuning met Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.nl.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.nl.png)
 
-## Phi-3 Olive voorbeeldcode en voorbeeld
+## Phi-3 Olive Voorbeeldcode en Voorbeeld
 In dit voorbeeld gebruik je Olive om:
 
-- Een LoRA-adapter fijn af te stemmen om zinnen te classificeren in Sad, Joy, Fear, Surprise.
-- De adaptergewichten te integreren in het basismodel.
+- Een LoRA-adapter te fine-tunen om zinnen te classificeren in Sad, Joy, Fear, Surprise.
+- De adaptergewichten samen te voegen met het basismodel.
 - Het model te optimaliseren en te quantiseren naar int4.
 
 [Voorbeeldcode](../../code/03.Finetuning/olive-ort-example/README.md)
 
 ### Microsoft Olive installeren
 
-Microsoft Olive is heel eenvoudig te installeren en kan ook worden geïnstalleerd voor CPU, GPU, DirectML en Azure ML.
+De installatie van Microsoft Olive is heel eenvoudig en kan ook worden geïnstalleerd voor CPU, GPU, DirectML en Azure ML.
 
 ```bash
 pip install olive-ai
@@ -61,32 +61,32 @@ Als je een ONNX-model op een CPU wilt draaien, kun je het volgende gebruiken:
 pip install olive-ai[cpu]
 ```
 
-Wil je een ONNX-model op een GPU draaien, dan kun je het volgende gebruiken:
+Als je een ONNX-model op een GPU wilt draaien, kun je het volgende gebruiken:
 
 ```python
 pip install olive-ai[gpu]
 ```
 
-Wil je Azure ML gebruiken, dan gebruik je:
+Als je Azure ML wilt gebruiken, gebruik dan:
 
 ```python
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
 **Let op**  
-Vereiste OS: Ubuntu 20.04 / 22.04
+OS-vereiste: Ubuntu 20.04 / 22.04
 
 ### **Config.json van Microsoft Olive**
 
-Na installatie kun je verschillende model-specifieke instellingen configureren via het Config-bestand, waaronder data, computing, training, deployment en modelgeneratie.
+Na installatie kun je verschillende modelspecifieke instellingen configureren via het Config-bestand, waaronder data, computing, training, deployment en modelgeneratie.
 
 **1. Data**
 
-Microsoft Olive ondersteunt training op lokale data en clouddata, en dit kan worden ingesteld in de configuratie.
+Op Microsoft Olive wordt training op lokale data en clouddata ondersteund en kan dit worden ingesteld in de configuratie.
 
 *Instellingen voor lokale data*
 
-Je kunt eenvoudig de dataset instellen die getraind moet worden voor fijn afstemmen, meestal in json-formaat, en aanpassen met een datatemplate. Dit moet worden aangepast op basis van de eisen van het model (bijvoorbeeld aanpassen aan het formaat dat Microsoft Phi-3-mini vereist. Voor andere modellen, raadpleeg de vereiste fijn afstem formaten van die modellen).
+Je kunt eenvoudig de dataset instellen die getraind moet worden voor fine-tuning, meestal in json-formaat, en aanpassen met de datatemplate. Dit moet worden aangepast op basis van de eisen van het model (bijvoorbeeld aangepast aan het formaat dat Microsoft Phi-3-mini vereist. Als je andere modellen hebt, raadpleeg dan de vereiste fine-tuningformaten van die modellen voor verwerking).
 
 ```json
 
@@ -119,9 +119,9 @@ Je kunt eenvoudig de dataset instellen die getraind moet worden voor fijn afstem
     ],
 ```
 
-**Instellingen voor clouddatasources**
+**Instellingen voor clouddata**
 
-Door de datastore van Azure AI Studio/Azure Machine Learning Service te koppelen, kun je data in de cloud gebruiken. Je kunt verschillende datasources via Microsoft Fabric en Azure Data koppelen aan Azure AI Studio/Azure Machine Learning Service als ondersteuning voor fijn afstemmen.
+Door de datastore van Azure AI Studio/Azure Machine Learning Service te koppelen aan de data in de cloud, kun je ervoor kiezen om verschillende databronnen via Microsoft Fabric en Azure Data te introduceren als ondersteuning voor fine-tuning.
 
 ```json
 
@@ -168,7 +168,7 @@ Door de datastore van Azure AI Studio/Azure Machine Learning Service te koppelen
 
 **2. Computing configuratie**
 
-Als je lokaal wilt werken, kun je direct lokale dataresources gebruiken. Wil je gebruikmaken van Azure AI Studio / Azure Machine Learning Service, dan moet je de relevante Azure-parameters, zoals de naam van de compute resources, configureren.
+Als je lokaal wilt werken, kun je direct lokale dataresources gebruiken. Wil je gebruikmaken van de resources van Azure AI Studio / Azure Machine Learning Service, dan moet je de relevante Azure-parameters, de naam van de compute resource, etc. configureren.
 
 ```json
 
@@ -201,7 +201,7 @@ Als je lokaal wilt werken, kun je direct lokale dataresources gebruiken. Wil je 
 
 ***Let op***
 
-Omdat het draait via een container op Azure AI Studio/Azure Machine Learning Service, moet de vereiste omgeving worden geconfigureerd. Dit wordt ingesteld in het conda.yaml environment.
+Omdat het draait via een container op Azure AI Studio/Azure Machine Learning Service, moet de benodigde omgeving worden geconfigureerd. Dit gebeurt in het conda.yaml-omgevingbestand.
 
 ```yaml
 
@@ -236,7 +236,7 @@ dependencies:
 
 **3. Kies je SLM**
 
-Je kunt het model direct van Hugging Face gebruiken, of het combineren met de Model Catalog van Azure AI Studio / Azure Machine Learning om het model te selecteren. In het onderstaande codevoorbeeld gebruiken we Microsoft Phi-3-mini als voorbeeld.
+Je kunt het model direct van Hugging Face gebruiken, of je kunt het combineren met de Model Catalog van Azure AI Studio / Azure Machine Learning om het model te selecteren. In het onderstaande codevoorbeeld gebruiken we Microsoft Phi-3-mini als voorbeeld.
 
 Als je het model lokaal hebt, kun je deze methode gebruiken:
 
@@ -256,7 +256,7 @@ Als je het model lokaal hebt, kun je deze methode gebruiken:
     },
 ```
 
-Wil je een model gebruiken van Azure AI Studio / Azure Machine Learning Service, dan gebruik je deze methode:
+Wil je een model gebruiken van Azure AI Studio / Azure Machine Learning Service, dan kun je deze methode gebruiken:
 
 ```json
 
@@ -284,7 +284,7 @@ Wil je een model gebruiken van Azure AI Studio / Azure Machine Learning Service,
 ```
 
 **Let op:**  
-We moeten integreren met Azure AI Studio / Azure Machine Learning Service, dus bij het instellen van het model moet je letten op de versienummers en gerelateerde namen.
+We moeten integreren met Azure AI Studio / Azure Machine Learning Service, dus bij het instellen van het model moet je letten op het versienummer en de bijbehorende naamgeving.
 
 Alle modellen op Azure moeten worden ingesteld op PyTorch.MLflow.
 
@@ -292,7 +292,7 @@ Je hebt een Hugging Face-account nodig en moet de sleutel koppelen aan de Key-wa
 
 **4. Algoritme**
 
-Microsoft Olive verpakt de Lora en QLora fijn afstemmingsalgoritmes heel goed. Je hoeft alleen enkele relevante parameters te configureren. Hier gebruik ik QLora als voorbeeld.
+Microsoft Olive verpakt Lora- en QLora-fine-tuningalgoritmes heel goed. Je hoeft alleen enkele relevante parameters te configureren. Hier neem ik QLora als voorbeeld.
 
 ```json
         "lora": {
@@ -329,12 +329,12 @@ Microsoft Olive verpakt de Lora en QLora fijn afstemmingsalgoritmes heel goed. J
         },
 ```
 
-Wil je quantisatie toepassen, dan ondersteunt de hoofdbranch van Microsoft Olive al de onnxruntime-genai methode. Je kunt dit instellen op basis van je wensen:
+Als je quantisatie wilt toepassen, ondersteunt de hoofdbranch van Microsoft Olive al de onnxruntime-genai methode. Je kunt dit instellen naar behoefte:
 
-1. Adaptergewichten samenvoegen in het basismodel  
+1. Adaptergewichten samenvoegen met het basismodel  
 2. Het model converteren naar een onnx-model met de vereiste precisie via ModelBuilder
 
-zoals converteren naar gequantiseerd INT4
+bijvoorbeeld converteren naar gequantiseerd INT4
 
 ```json
 
@@ -350,8 +350,8 @@ zoals converteren naar gequantiseerd INT4
 ```
 
 **Let op**  
-- Bij gebruik van QLoRA wordt de quantisatieconversie van ONNXRuntime-genai momenteel niet ondersteund.  
-- Het is belangrijk te benadrukken dat je bovenstaande stappen naar eigen behoefte kunt instellen. Het is niet noodzakelijk om alle stappen volledig te configureren. Afhankelijk van je wensen kun je ook direct de algoritmestappen gebruiken zonder fijn afstemmen. Uiteindelijk moet je wel de relevante engines configureren.
+- Als je QLoRA gebruikt, wordt quantisatieconversie met ONNXRuntime-genai voorlopig niet ondersteund.  
+- Het is belangrijk om te vermelden dat je bovenstaande stappen naar eigen behoefte kunt instellen. Het is niet noodzakelijk om alle stappen volledig te configureren. Afhankelijk van je behoeften kun je direct de stappen van het algoritme gebruiken zonder fine-tuning. Uiteindelijk moet je de relevante engines configureren.
 
 ```json
 
@@ -366,9 +366,9 @@ zoals converteren naar gequantiseerd INT4
     }
 ```
 
-**5. Fijn afstemmen voltooid**
+**5. Fine-tuning voltooid**
 
-Voer op de commandoregel uit in de map waar olive-config.json staat:
+Voer op de commandoregel het volgende uit in de directory van olive-config.json
 
 ```bash
 olive run --config olive-config.json  

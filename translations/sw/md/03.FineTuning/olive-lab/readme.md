@@ -2,74 +2,74 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T22:39:57+00:00",
+  "translation_date": "2025-07-17T10:24:48+00:00",
   "source_file": "md/03.FineTuning/olive-lab/readme.md",
   "language_code": "sw"
 }
 -->
-# Lab. Optimize AI models for on-device inference
+# Maabara. Boresha mifano ya AI kwa utambuzi wa kifaa
 
-## Introduction 
+## Utangulizi
 
 > [!IMPORTANT]
-> Lab hii inahitaji **Nvidia A10 au A100 GPU** pamoja na madereva yake na CUDA toolkit (toleo 12+) imewekwa.
+> Maabara hii inahitaji **Nvidia A10 au A100 GPU** pamoja na madereva na zana za CUDA (toleo 12+) zilizowekwa.
 
 > [!NOTE]
-> Huu ni mafunzo ya **dakika 35** yatakayokupa ufahamu wa vitendo kuhusu dhana kuu za kuboresha modeli kwa ajili ya on-device inference ukitumia OLIVE.
+> Hii ni maabara ya **dakika 35** itakayokupa utangulizi wa vitendo kuhusu dhana kuu za kuboresha mifano kwa utambuzi wa kifaa kwa kutumia OLIVE.
 
 ## Malengo ya Kujifunza
 
-Mwisho wa mafunzo haya, utaweza kutumia OLIVE kufanya:
+Mwisho wa maabara hii, utaweza kutumia OLIVE kufanya:
 
-- Kuquantize AI Model kwa kutumia njia ya AWQ quantization.
-- Kufanya fine-tune ya AI modeli kwa kazi maalum.
-- Kutengeneza LoRA adapters (modeli iliyofinyangwa) kwa inference bora kwenye kifaa kwa kutumia ONNX Runtime.
+- Kupanua Mfano wa AI kwa kutumia mbinu ya kuquantize ya AWQ.
+- Kufanya marekebisho ya kina kwa mfano wa AI kwa kazi maalum.
+- Kutengeneza viambatanisho vya LoRA (mfano uliorekebishwa) kwa utambuzi bora wa kifaa kwa kutumia ONNX Runtime.
 
 ### Olive ni Nini
 
-Olive (*O*NNX *live*) ni kifaa cha kuboresha modeli chenye CLI kinachokuwezesha kusafirisha modeli kwa ONNX runtime +++https://onnxruntime.ai+++ kwa ubora na utendaji.
+Olive (*O*NNX *live*) ni zana ya kuboresha mifano yenye CLI inayokuwezesha kusafirisha mifano kwa ONNX runtime +++https://onnxruntime.ai+++ kwa ubora na utendaji.
 
-![Olive Flow](../../../../../translated_images/olive-flow.9e6a284c256068568eb569a242b22dd2e7ec6e73f292d98272398739537ef513.sw.png)
+![Olive Flow](../../../../../translated_images/olive-flow.5daf97340275f8b61397e91430ff02724a2547937b352e7fdfc2f669c56dcd35.sw.png)
 
-Kuingia kwa Olive kawaida ni modeli ya PyTorch au Hugging Face na matokeo ni modeli ya ONNX iliyoboreshwa ambayo inatekelezwa kwenye kifaa kinachotumia ONNX runtime. Olive itaboresha modeli kwa ajili ya AI accelerator ya kifaa hicho (NPU, GPU, CPU) kinachotolewa na muuzaji wa vifaa kama Qualcomm, AMD, Nvidia au Intel.
+Kuingia kwa Olive kawaida ni mfano wa PyTorch au Hugging Face na matokeo ni mfano wa ONNX ulioboreshwa unaotekelezwa kwenye kifaa (lengo la usambazaji) kinachotumia ONNX runtime. Olive itaboresha mfano kwa kiendeshi cha AI cha lengo la usambazaji (NPU, GPU, CPU) kinachotolewa na muuzaji wa vifaa kama Qualcomm, AMD, Nvidia au Intel.
 
-Olive hufanya *workflow*, ambayo ni mfuatano wa kazi za kuboresha modeli zinazoitwa *passes* - mifano ya passes ni: kubana modeli, kunasa grafu, quantization, kuboresha grafu. Kila pass ina seti ya vigezo vinavyoweza kubadilishwa ili kupata viwango bora, kama usahihi na latency, vinavyopimwa na evaluator husika. Olive hutumia mkakati wa utafutaji kwa kutumia algorithm ya utafutaji kurekebisha kila pass moja baada ya nyingine au seti ya passes pamoja.
+Olive hufanya *mchakato wa kazi*, ambao ni mfuatano wa kazi za kuboresha mfano zinazoitwa *passes* - mifano ya passes ni pamoja na: kubana mfano, kunasa grafu, kuquantize, kuboresha grafu. Kila pass ina seti ya vigezo vinavyoweza kurekebishwa ili kufikia vipimo bora, kama usahihi na ucheleweshaji, vinavyopimwa na mtathmini husika. Olive hutumia mkakati wa utafutaji unaotumia algoriti ya utafutaji kurekebisha kila pass moja baada ya nyingine au seti ya passes pamoja.
 
-#### Manufaa ya Olive
+#### Faida za Olive
 
-- **Punguza usumbufu na muda** wa majaribio ya majaribio kwa mikono ya mbinu tofauti za kuboresha grafu, kubana na quantization. Eleza viwango vyako vya ubora na utendaji na uweke Olive iupate modeli bora kwako moja kwa moja.
-- **Vipengele 40+ vya kuboresha modeli** vinavyohusisha mbinu za kisasa za quantization, kubana, kuboresha grafu na fine-tuning.
-- **CLI rahisi kutumia** kwa kazi za kawaida za kuboresha modeli. Mfano, olive quantize, olive auto-opt, olive finetune.
-- Ufungaji na usambazaji wa modeli umejumuishwa.
-- Inasaidia kuzalisha modeli kwa ajili ya **Multi LoRA serving**.
-- Tengeneza workflows kwa kutumia YAML/JSON kuongoza kazi za kuboresha na kusambaza modeli.
-- Uunganisho na **Hugging Face** na **Azure AI**.
-- Mfumo wa **caching** umejumuishwa ili **kuokoa gharama**.
+- **Punguza hasira na muda** wa majaribio ya mikono ya jaribio-kosa kwa mbinu tofauti za kuboresha grafu, kubana na kuquantize. Weka vizingiti vyako vya ubora na utendaji na ruhusu Olive ipate mfano bora kwa ajili yako moja kwa moja.
+- **Vipengele 40+ vya kuboresha mifano vilivyojengwa ndani** vinavyoshughulikia mbinu za kisasa za kuquantize, kubana, kuboresha grafu na kurekebisha.
+- **CLI rahisi kutumia** kwa kazi za kawaida za kuboresha mfano. Kwa mfano, olive quantize, olive auto-opt, olive finetune.
+- Ufungaji na usambazaji wa mifano umejumuishwa.
+- Inasaidia kutengeneza mifano kwa **Huduma ya Multi LoRA**.
+- Tengeneza mchakato wa kazi kwa kutumia YAML/JSON kuandaa kazi za kuboresha na kusambaza mifano.
+- Muunganisho wa **Hugging Face** na **Azure AI**.
+- Mfumo wa **kushikilia (caching)** uliyojengwa ku **okoa gharama**.
 
-## Maelekezo ya Mafunzo
+## Maelekezo ya Maabara
 > [!NOTE]
-> Tafadhali hakikisha umeandaa Azure AI Hub na Mradi wako na umeanzisha A100 compute kama ilivyoelezwa katika Lab 1.
+> Tafadhali hakikisha umeandaa Azure AI Hub na Mradi wako na umeweka A100 compute kama ilivyoelezwa katika Maabara 1.
 
 ### Hatua 0: Unganisha na Azure AI Compute yako
 
-Utaungana na Azure AI compute kwa kutumia kipengele cha remote katika **VS Code.** 
+Utaunganisha na Azure AI compute kwa kutumia kipengele cha mbali katika **VS Code.**
 
-1. Fungua programu ya **VS Code** kwenye desktop:
+1. Fungua programu yako ya **VS Code** desktop:
 1. Fungua **command palette** kwa kutumia **Shift+Ctrl+P**
 1. Katika command palette tafuta **AzureML - remote: Connect to compute instance in New Window**.
-1. Fuata maelekezo kwenye skrini kuungana na Compute. Hii itahusisha kuchagua Azure Subscription yako, Resource Group, Mradi na Jina la Compute uliloanzisha katika Lab 1.
-1. Mara utakapounganishwa na Azure ML Compute node itajitokeza upande wa **chini kushoto wa Visual Code** `><Azure ML: Compute Name`
+1. Fuata maelekezo ya skrini kuungana na Compute. Hii itahusisha kuchagua Azure Subscription yako, Resource Group, Mradi na Jina la Compute uliloweka katika Maabara 1.
+1. Mara utakapounganishwa na Azure ML Compute node hii itaonyeshwa **chini kushoto katika Visual Code** `><Azure ML: Compute Name`
 
-### Hatua 1: Clone repo hii
+### Hatua 1: Nakili repo hii
 
-Katika VS Code, unaweza kufungua terminal mpya kwa **Ctrl+J** na ukaclone repo hii:
+Katika VS Code, unaweza kufungua terminal mpya kwa **Ctrl+J** na kunakili repo hii:
 
-Katika terminal utaona prompt
+Katika terminal utaona ombi
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
 ```
-Clone suluhisho
+Nakili suluhisho
 
 ```bash
 cd ~/localfiles
@@ -78,17 +78,17 @@ git clone https://github.com/microsoft/phi-3cookbook.git
 
 ### Hatua 2: Fungua Folda katika VS Code
 
-Ili kufungua VS Code katika folda husika tumia amri ifuatayo kwenye terminal, itafungua dirisha jipya:
+Ili kufungua VS Code katika folda husika tumia amri ifuatayo katika terminal, itafungua dirisha jipya:
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
 ```
 
-Vinginevyo, unaweza kufungua folda kwa kuchagua **File** > **Open Folder**. 
+Mbali na hilo, unaweza kufungua folda kwa kuchagua **File** > **Open Folder**.
 
-### Hatua 3: Dependencies
+### Hatua 3: Kutegemea
 
-Fungua terminal katika VS Code kwenye Azure AI Compute Instance yako (kumbuka: **Ctrl+J**) na fanya amri zifuatazo kusakinisha dependencies:
+Fungua dirisha la terminal katika VS Code kwenye Azure AI Compute Instance yako (kibofya: **Ctrl+J**) na tekeleza amri zifuatazo kufunga kutegemea:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -99,33 +99,33 @@ az extension add -n ml
 ```
 
 > [!NOTE]
-> Itachukua takriban dakika 5 kusakinisha dependencies zote.
+> Itachukua takriban dakika 5 kufunga kutegemea zote.
 
-Katika mafunzo haya utapakua na kupakia modeli kwenye Azure AI Model catalog. Ili kupata katalogi ya modeli, itabidi uingie Azure kwa kutumia:
+Katika maabara hii utapakua na kupakia mifano kwenye Azure AI Model catalog. Ili kupata katalogi ya mfano, utahitaji kuingia Azure kwa kutumia:
 
 ```bash
 az login
 ```
 
 > [!NOTE]
-> Wakati wa kuingia utaombwa kuchagua subscription yako. Hakikisha unachagua subscription iliyotolewa kwa mafunzo haya.
+> Wakati wa kuingia utaombwa kuchagua usajili wako. Hakikisha umeweka usajili ule uliopewa kwa maabara hii.
 
-### Hatua 4: Endesha amri za Olive
+### Hatua 4: Tekeleza amri za Olive
 
-Fungua terminal katika VS Code kwenye Azure AI Compute Instance yako (kumbuka: **Ctrl+J**) na hakikisha mazingira ya conda `olive-ai` yamewashwa:
+Fungua dirisha la terminal katika VS Code kwenye Azure AI Compute Instance yako (kibofya: **Ctrl+J**) na hakikisha mazingira ya conda `olive-ai` yamewashwa:
 
 ```bash
 conda activate olive-ai
 ```
 
-Kisha, endesha amri zifuatazo za Olive kwenye mstari wa amri.
+Kisha, tekeleza amri zifuatazo za Olive kwenye mstari wa amri.
 
-1. **Kagua data:** Katika mfano huu, utafanya fine-tune ya modeli ya Phi-3.5-Mini ili iwe maalum kujibu maswali yanayohusiana na usafiri. Msimbo huu unaonyesha rekodi za mwanzo za dataset, ambazo ziko katika muundo wa JSON lines:
+1. **Chunguza data:** Katika mfano huu, utarekebisha mfano wa Phi-3.5-Mini ili uwe maalum kwa kujibu maswali yanayohusiana na usafiri. Msimbo hapa chini unaonyesha rekodi chache za kwanza za dataset, ambazo ziko katika muundo wa mistari ya JSON:
    
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **Quantize modeli:** Kabla ya kufundisha modeli, kwanza unafanya quantize kwa kutumia amri ifuatayo inayotumia mbinu inayoitwa Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ huchanganua uzito wa modeli kwa kuzingatia aktivishaji zinazozalishwa wakati wa inference. Hii ina maana mchakato wa quantization unazingatia usambazaji halisi wa data katika aktivishaji, na hivyo kuhifadhi usahihi wa modeli zaidi ikilinganishwa na mbinu za jadi za quantization ya uzito.
+1. **Quantize mfano:** Kabla ya kufundisha mfano, kwanza unafanya kuquantize kwa amri ifuatayo inayotumia mbinu inayoitwa Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ huquantize uzito wa mfano kwa kuzingatia uanzishaji unaotokea wakati wa utambuzi. Hii ina maana mchakato wa kuquantize unazingatia usambazaji halisi wa data katika uanzishaji, na kusababisha uhifadhi bora wa usahihi wa mfano ikilinganishwa na mbinu za kawaida za kuquantize uzito.
     
     ```bash
     olive quantize \
@@ -136,11 +136,11 @@ Kisha, endesha amri zifuatazo za Olive kwenye mstari wa amri.
        --log_level 1
     ```
     
-    Inachukua takriban **dakika 8** kumaliza AWQ quantization, ambayo itapunguza ukubwa wa modeli kutoka takriban ~7.5GB hadi ~2.5GB.
+    Inachukua **takriban dakika 8** kukamilisha kuquantize kwa AWQ, ambayo itapunguza ukubwa wa mfano kutoka **takriban 7.5GB hadi takriban 2.5GB**.
    
-   Katika mafunzo haya, tunaonyesha jinsi ya kuingiza modeli kutoka Hugging Face (mfano: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
+   Katika maabara hii, tunakuonyesha jinsi ya kuingiza mifano kutoka Hugging Face (kwa mfano: `microsoft/Phi-3.5-mini-instruct`). Hata hivyo, Olive pia inaruhusu kuingiza mifano kutoka katalogi ya Azure AI kwa kubadilisha hoja ya `model_name_or_path` kuwa kitambulisho cha mali ya Azure AI (kwa mfano: `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
 
-1. **Train the model:** Next, the `olive finetune` amri hufinyanga modeli iliyoqantizewa. Kuquantize modeli *kabla* ya fine-tuning badala ya baada yake hutoa usahihi bora kwa kuwa mchakato wa fine-tuning hurudisha baadhi ya hasara iliyosababishwa na quantization.
+1. **Fundisha mfano:** Kisha, amri ya `olive finetune` inafundisha mfano uliquantize. Kuquantize mfano *kabla* ya kurekebisha kina badala ya baada ya hapo hutoa usahihi bora kwani mchakato wa kurekebisha kina hurudisha baadhi ya hasara kutoka kuquantize.
     
     ```bash
     olive finetune \
@@ -154,9 +154,9 @@ Kisha, endesha amri zifuatazo za Olive kwenye mstari wa amri.
         --log_level 1
     ```
     
-    Inachukua takriban **dakika 6** kumaliza Fine-tuning (kwa hatua 100).
+    Inachukua **takriban dakika 6** kukamilisha kurekebisha kina (kwa hatua 100).
 
-1. **Boresha:** Baada ya kufundisha modeli, sasa boresha modeli kwa kutumia amri za Olive `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` - lakini kwa mafunzo haya tutatumia CPU.
+1. **Boresha:** Baada ya mfano kufundishwa, sasa unaboresha mfano kwa kutumia amri ya `auto-opt` ya Olive, ambayo itakamata grafu ya ONNX na moja kwa moja kufanya maboresho kadhaa ili kuboresha utendaji wa mfano kwa CPU kwa kubana mfano na kufanya fusion. Inapaswa kutambuliwa, kwamba unaweza pia kuboresha kwa vifaa vingine kama NPU au GPU kwa kubadilisha hoja za `--device` na `--provider` - lakini kwa madhumuni ya maabara hii tutatumia CPU.
 
     ```bash
     olive auto-opt \
@@ -169,11 +169,11 @@ Kisha, endesha amri zifuatazo za Olive kwenye mstari wa amri.
        --log_level 1
     ```
     
-    Inachukua takriban **dakika 5** kumaliza uboreshaji.
+    Inachukua **takriban dakika 5** kukamilisha maboresho.
 
-### Hatua 5: Jaribio la haraka la inference ya modeli
+### Hatua 5: Jaribio la haraka la utambuzi wa mfano
 
-Ili kujaribu inference ya modeli, tengeneza faili la Python katika folda yako linaloitwa **app.py** na nakili na ubandike msimbo ufuatao:
+Ili kujaribu utambuzi wa mfano, tengeneza faili la Python katika folda yako liitwalo **app.py** na nakili na ubandike msimbo ufuatao:
 
 ```python
 import onnxruntime_genai as og
@@ -209,20 +209,20 @@ while not generator.is_done():
 print("\n")
 ```
 
-Endesha msimbo kwa kutumia:
+Tekeleza msimbo kwa kutumia:
 
 ```bash
 python app.py
 ```
 
-### Hatua 6: Pakia modeli kwenye Azure AI
+### Hatua 6: Pakia mfano kwenye Azure AI
 
-Kuweka modeli kwenye hifadhidata ya modeli ya Azure AI kunafanya modeli iweze kushirikiwa na wanachama wengine wa timu yako ya maendeleo na pia hurekodi toleo la modeli. Ili kupakia modeli tumia amri ifuatayo:
+Kupakia mfano kwenye hifadhi ya mfano ya Azure AI kunafanya mfano uweze kushirikiwa na wanachama wengine wa timu yako ya maendeleo na pia hushughulikia udhibiti wa matoleo ya mfano. Ili kupakia mfano tumia amri ifuatayo:
 
 > [!NOTE]
-> Sasisha `{}` placeholders with the name of your resource group and Azure AI Project Name. 
+> Sasisha sehemu za `{}` na jina la resource group yako na Jina la Mradi wa Azure AI.
 
-To find your resource group `"resourceGroup"` na jina la Mradi wa Azure AI, kisha tumia amri ifuatayo 
+Ili kupata resource group yako `"resourceGroup"` na Jina la Mradi wa Azure AI, tumia amri ifuatayo
 
 ```
 az ml workspace show
@@ -230,7 +230,7 @@ az ml workspace show
 
 Au kwa kwenda +++ai.azure.com+++ na kuchagua **management center** **project** **overview**
 
-Sasisha nafasi za `{}` kwa jina la resource group yako na Azure AI Project Name.
+Sasisha sehemu za `{}` na jina la resource group yako na Jina la Mradi wa Azure AI.
 
 ```bash
 az ml model create \
@@ -240,7 +240,7 @@ az ml model create \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
 ```
-Baada ya hapo utaweza kuona modeli uliyoipakia na kuitumia kusambaza kwenye https://ml.azure.com/model/list
+Baadaye utaweza kuona mfano uliopakiwa na kusambaza mfano wako kwenye https://ml.azure.com/model/list
 
-**Kiasi cha Majaribio**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asilia katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Msamaha**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

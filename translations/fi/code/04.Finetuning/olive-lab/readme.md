@@ -2,75 +2,75 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T04:39:27+00:00",
+  "translation_date": "2025-07-16T16:16:51+00:00",
   "source_file": "code/04.Finetuning/olive-lab/readme.md",
   "language_code": "fi"
 }
 -->
-# Lab. Optimoi AI-malleja laitekohtaisen inferenssin käyttöön
+# Lab. Optimoi tekoälymalleja laitekohtaisiin päätöksiin
 
 ## Johdanto
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > Tämä labra vaatii **Nvidia A10 tai A100 GPU:n** sekä siihen liittyvät ajurit ja CUDA-työkalupaketin (versio 12+) asennettuna.
 
-> [!NOTE]  
-> Tämä on **35 minuutin** labra, joka tarjoaa käytännönläheisen johdatuksen mallien optimoinnin ydinkäsitteisiin laitekohtaisen inferenssin käyttöön OLIVE:n avulla.
+> [!NOTE]
+> Tämä on **35 minuutin** labra, joka tarjoaa käytännönläheisen johdatuksen mallien optimoinnin ydinkäsitteisiin laitekohtaista päätöksentekoa varten OLIVE-työkalulla.
 
 ## Oppimistavoitteet
 
-Tämän labran jälkeen osaat käyttää OLIVE:a:
+Labran lopuksi osaat käyttää OLIVEa:
 
-- Kvantisointiin AI-mallille AWQ-kvantisointimenetelmällä.  
-- Hienosäätää AI-mallia tiettyä tehtävää varten.  
-- Luoda LoRA-adaptereita (hienosäädetty malli) tehokkaaseen laitekohtaiseen inferenssiin ONNX Runtime -ympäristössä.
+- Kvantisoimaan tekoälymallin AWQ-kvantisointimenetelmällä.
+- Hienosäätämään tekoälymallin tiettyyn tehtävään.
+- Luomaan LoRA-adaptereita (hienosäädetty malli) tehokkaaseen laitekohtaiseen päätöksentekoon ONNX Runtime -ympäristössä.
 
 ### Mikä on Olive
 
-Olive (*O*NNX *live*) on mallin optimointityökalu CLI-rajapinnalla, jonka avulla voit toimittaa malleja ONNX runtime +++https://onnxruntime.ai+++ -ympäristöön laadukkaasti ja tehokkaasti.
+Olive (*O*NNX *live*) on mallin optimointityökalu, johon kuuluu komentorivityökalu (CLI), jonka avulla voit toimittaa malleja ONNX Runtime +++https://onnxruntime.ai+++ -ympäristöön laadukkaasti ja tehokkaasti.
 
-![Olive Flow](../../../../../translated_images/olive-flow.e4682fa65f77777f49e884482fa8dd83eadcb90904fcb41a54093af85c330060.fi.png)
+![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2462b631b8aa862093b595bb89064fa33e6d4fa90f937f52d.fi.png)
 
-Olive saa syötteenä yleensä PyTorch- tai Hugging Face -mallin, ja tuloksena on optimoitu ONNX-malli, joka ajetaan laitteella (käyttöympäristössä) ONNX runtime -alustalla. Olive optimoi mallin käyttöympäristön AI-kiihdyttimelle (NPU, GPU, CPU), jota toimittaa laitevalmistaja kuten Qualcomm, AMD, Nvidia tai Intel.
+Olive ottaa syötteenä tyypillisesti PyTorch- tai Hugging Face -mallin ja tuottaa optimoidun ONNX-mallin, jota suoritetaan laitteella (käyttökohde) ONNX Runtime -ympäristössä. Olive optimoi mallin käyttökohteen tekoälykiihdyttimelle (NPU, GPU, CPU), jonka tarjoaa laitevalmistaja kuten Qualcomm, AMD, Nvidia tai Intel.
 
-Olive suorittaa *workflow’n*, joka on järjestetty sarja yksittäisiä mallin optimointitehtäviä eli *pass*-vaiheita — esimerkkeinä: mallin pakkaus, graafin tallennus, kvantisointi, graafin optimointi. Jokaisella pass-vaiheella on joukko parametreja, joita voi hienosäätää parhaan suorituskyvyn ja tarkkuuden saavuttamiseksi, joita arvioija mittaa. Olive käyttää hakustrategiaa, joka hyödyntää hakualgoritmia säätämään pass-vaiheita yksi kerrallaan tai ryhminä automaattisesti.
+Olive suorittaa *työnkulun*, joka on järjestetty sarja yksittäisiä mallin optimointitehtäviä, joita kutsutaan *passauksiksi*. Esimerkkejä passeista ovat: mallin pakkaus, graafin tallennus, kvantisointi, graafin optimointi. Jokaisella passauksella on joukko parametreja, joita voi säätää parhaan suorituskyvyn, kuten tarkkuuden ja viiveen, saavuttamiseksi. Olive käyttää hakualgoritmia, joka automaattisesti hienosäätää passeja yksitellen tai ryhminä.
 
-#### Olive:n edut
+#### Oliven hyödyt
 
-- **Vähentää turhautumista ja aikaa** kokeilemalla manuaalisesti erilaisia tekniikoita graafin optimointiin, pakkaamiseen ja kvantisointiin. Määrittele laatua ja suorituskykyä koskevat vaatimukset, niin Olive löytää automaattisesti parhaan mallin.
-- **Yli 40 sisäänrakennettua mallin optimointikomponenttia**, jotka kattavat uusimmat tekniikat kvantisoinnissa, pakkaamisessa, graafin optimoinnissa ja hienosäädössä.
-- **Helppokäyttöinen CLI** yleisimpiin mallin optimointitehtäviin, kuten olive quantize, olive auto-opt, olive finetune.
+- **Vähentää turhautumista ja aikaa** kokeilemalla manuaalisesti erilaisia tekniikoita graafin optimointiin, pakkaamiseen ja kvantisointiin. Määritä laatua ja suorituskykyä koskevat vaatimukset, ja Olive löytää automaattisesti parhaan mallin.
+- **Yli 40 sisäänrakennettua mallin optimointikomponenttia**, jotka kattavat uusimmat tekniikat kvantisoinnissa, pakkauksessa, graafin optimoinnissa ja hienosäädössä.
+- **Helppokäyttöinen komentorivityökalu** yleisiin mallin optimointitehtäviin, kuten olive quantize, olive auto-opt, olive finetune.
 - Mallin pakkaus ja käyttöönotto sisäänrakennettuina.
-- Tukee mallien generointia **Multi LoRA -palvelua varten**.
-- Workflowt voi rakentaa YAML/JSON-muodossa mallin optimoinnin ja käyttöönoton orkestrointiin.
-- Integroitu **Hugging Face** ja **Azure AI**.
-- Sisäänrakennettu **välimuistimekanismi** kustannusten säästämiseksi.
+- Tukee mallien luomista **Multi LoRA -palvelua varten**.
+- Työnkulkujen rakentaminen YAML/JSON-muodossa mallin optimoinnin ja käyttöönoton orkestrointiin.
+- **Hugging Face** ja **Azure AI** -integraatio.
+- Sisäänrakennettu **välimuistimekanismi** kustannusten **säästämiseksi**.
 
 ## Lab-ohjeet
 
-> [!NOTE]  
-> Varmista, että olet varannut Azure AI Hubin ja projektin sekä määrittänyt A100-laskennan Lab 1:n ohjeiden mukaisesti.
+> [!NOTE]
+> Varmista, että olet varannut Azure AI Hubin ja projektin sekä määrittänyt A100-laskennan Labra 1:n ohjeiden mukaisesti.
 
-### Vaihe 0: Yhdistä Azure AI Compute -laitteeseesi
+### Vaihe 0: Yhdistä Azure AI Compute -ympäristöösi
 
-Yhdistät Azure AI Compute -laitteeseen VS Code -etäyhteystoiminnolla.
+Yhdistät Azure AI Compute -ympäristöön käyttämällä etäyhteysominaisuutta **VS Codessa**.
 
-1. Avaa **VS Code** -työpöytäsovellus:  
-1. Avaa **komentopaletti** painamalla **Shift+Ctrl+P**  
-1. Etsi komentopaletista **AzureML - remote: Connect to compute instance in New Window**.  
-1. Seuraa näytön ohjeita yhdistääksesi laskentayksikköön. Valitse Azure-tilauksesi, resurssiryhmäsi, projektisi ja Lab 1:ssä määrittämäsi laskentayksikön nimi.  
-1. Kun olet yhdistänyt Azure ML Compute -solmuun, se näkyy **Visual Coden vasemmassa alakulmassa** `><Azure ML: Compute Name`
+1. Avaa **VS Code** -työpöytäsovellus.
+2. Avaa **komentopaletti** painamalla **Shift+Ctrl+P**.
+3. Etsi komentopalettista **AzureML - remote: Connect to compute instance in New Window**.
+4. Seuraa näytön ohjeita yhdistääksesi Compute-ympäristöön. Tämä sisältää Azure-tilauksesi, resurssiryhmäsi, projektisi ja Labra 1:ssä määrittämäsi Compute-nimen valinnan.
+5. Kun olet yhdistänyt Azure ML Compute -solmuun, se näkyy **Visual Coden vasemmassa alakulmassa** muodossa `><Azure ML: Compute Name`.
 
-### Vaihe 1: Klonaa tämä repo
+### Vaihe 1: Kloonaa tämä repositorio
 
-VS Codessa avaa uusi terminaali painamalla **Ctrl+J** ja klonaa tämä repo:
+VS Codessa voit avata uuden terminaalin painamalla **Ctrl+J** ja kloonata tämän repositorion:
 
-Terminaalissa näkyy kehotteesi
+Terminaalissa pitäisi näkyä kehotteesi
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
 ```  
-Klonaa ratkaisu  
+Kloonaa ratkaisu
 
 ```bash
 cd ~/localfiles
@@ -89,7 +89,7 @@ Vaihtoehtoisesti voit avata kansion valitsemalla **File** > **Open Folder**.
 
 ### Vaihe 3: Riippuvuudet
 
-Avaa terminaali VS Codessa Azure AI Compute -instanssissasi (vinkki: **Ctrl+J**) ja suorita seuraavat komennot riippuvuuksien asentamiseksi:
+Avaa terminaali VS Codessa Azure AI Compute -instanssissasi (vinkki: **Ctrl+J**) ja suorita seuraavat komennot asentaaksesi riippuvuudet:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -99,17 +99,17 @@ az extension remove -n azure-cli-ml
 az extension add -n ml
 ```
 
-> [!NOTE]  
+> [!NOTE]
 > Kaikkien riippuvuuksien asentaminen kestää noin 5 minuuttia.
 
-Tässä labrassa lataat ja lähetät malleja Azure AI Model -katalogiin. Jotta pääset käsiksi mallikatalogiin, sinun tulee kirjautua Azureen:
+Tässä labrassa lataat ja lataat malleja Azure AI Model -katalogiin. Päästäksesi käsiksi mallikatalogiin sinun tulee kirjautua Azureen seuraavalla komennolla:
 
 ```bash
 az login
 ```
 
-> [!NOTE]  
-> Kirjautuessasi sinulta pyydetään valitsemaan tilaus. Varmista, että valitset tämän labran käyttöön annetun tilauksen.
+> [!NOTE]
+> Kirjautumisen yhteydessä sinua pyydetään valitsemaan tilaus. Varmista, että valitset tämän labran käyttöön annetun tilauksen.
 
 ### Vaihe 4: Suorita Olive-komennot
 
@@ -119,15 +119,15 @@ Avaa terminaali VS Codessa Azure AI Compute -instanssissasi (vinkki: **Ctrl+J**)
 conda activate olive-ai
 ```
 
-Suorita seuraavaksi seuraavat Olive-komennot komentoriviltä.
+Suorita seuraavat Olive-komennot komentorivillä.
 
-1. **Tarkastele dataa:** Tässä esimerkissä hienosäädät Phi-3.5-Mini -mallia, jotta se erikoistuu matkailukysymyksiin vastaamiseen. Alla oleva koodi näyttää muutaman ensimmäisen tietueen datasetistä, joka on JSON lines -muodossa:
+1. **Tarkastele dataa:** Tässä esimerkissä hienosäädät Phi-3.5-Mini -mallia, jotta se erikoistuu vastaamaan matkailuun liittyviin kysymyksiin. Alla oleva koodi näyttää muutaman ensimmäisen tietueen datasetistä, joka on JSON lines -muodossa:
 
     ```bash
     head data/data_sample_travel.jsonl
     ```
 
-1. **Kvantisoi malli:** Ennen mallin koulutusta kvantisoit mallin seuraavalla komennolla, joka käyttää Active Aware Quantization (AWQ) -tekniikkaa +++https://arxiv.org/abs/2306.00978+++. AWQ kvantisoidaan mallin painot ottaen huomioon inferenssin aikana tuotetut aktivoinnit. Tämä tarkoittaa, että kvantisointiprosessi huomioi aktivointien todellisen datajakauman, mikä johtaa parempaan mallin tarkkuuden säilymiseen verrattuna perinteisiin painokvantisointimenetelmiin.
+2. **Kvantisoi malli:** Ennen mallin koulutusta kvantisoi se seuraavalla komennolla, joka käyttää Active Aware Quantization (AWQ) -tekniikkaa +++https://arxiv.org/abs/2306.00978+++. AWQ kvantisoi mallin painot ottamalla huomioon inferenssin aikana tuotetut aktivoinnit. Tämä tarkoittaa, että kvantisointiprosessi huomioi aktivointien todellisen datan jakauman, mikä säilyttää mallin tarkkuuden paremmin kuin perinteiset painokvantisointimenetelmät.
 
     ```bash
     olive quantize \
@@ -138,11 +138,11 @@ Suorita seuraavaksi seuraavat Olive-komennot komentoriviltä.
        --log_level 1
     ```
 
-    AWQ-kvantisointi kestää noin **8 minuuttia** ja se **pienentää mallin kokoa noin 7,5GB:stä 2,5GB:iin**.
+    AWQ-kvantisointi kestää noin **8 minuuttia** ja **pienentää mallin kokoa noin 7,5 GB:stä 2,5 GB:iin**.
 
-    Tässä labrassa näytämme, miten mallin voi syöttää Hugging Facesta (esimerkiksi: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
+    Tässä labrassa näytämme, miten malleja tuodaan Hugging Facesta (esim. `microsoft/Phi-3.5-mini-instruct`). Olive mahdollistaa myös mallien tuonnin Azure AI -katalogista päivittämällä `model_name_or_path` -argumentin Azure AI -resurssitunnukseen (esim. `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
 
-1. **Train the model:** Next, the `olive finetune` -komento hienosäätää kvantisoitua mallia). Mallin kvantisointi *ennen* hienosäätöä antaa paremman tarkkuuden, koska hienosäätöprosessi korjaa osan kvantisoinnin aiheuttamasta tarkkuuden heikkenemisestä.
+3. **Kouluta malli:** Seuraavaksi `olive finetune` -komento hienosäätää kvantisoidun mallin. Mallin kvantisointi *ennen* hienosäätöä antaa paremman tarkkuuden, koska hienosäätöprosessi palauttaa osan kvantisoinnista aiheutuneesta tarkkuuden menetyksestä.
 
     ```bash
     olive finetune \
@@ -158,7 +158,7 @@ Suorita seuraavaksi seuraavat Olive-komennot komentoriviltä.
 
     Hienosäätö kestää noin **6 minuuttia** (100 askelta).
 
-1. **Optimoi:** Mallin koulutuksen jälkeen optimoi malli Olive:n `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` -argumenteilla, mutta tässä labrassa käytämme CPU:ta.
+4. **Optimoi:** Kun malli on koulutettu, optimoi se Olive-komennolla `auto-opt`, joka tallentaa ONNX-graafin ja suorittaa automaattisesti useita optimointeja mallin suorituskyvyn parantamiseksi CPU:lla pakkaamalla mallia ja tekemällä fuusioita. Huomaa, että voit optimoida myös muille laitteille, kuten NPU:lle tai GPU:lle, päivittämällä `--device` ja `--provider` -argumentit, mutta tässä labrassa käytämme CPU:ta.
 
     ```bash
     olive auto-opt \
@@ -219,20 +219,20 @@ python app.py
 
 ### Vaihe 6: Lataa malli Azure AI:hin
 
-Mallin lataaminen Azure AI -mallivarastoon tekee mallista jaettavan kehitystiimisi jäsenten kanssa ja hallinnoi mallin versiointia. Lataa malli suorittamalla seuraava komento:
+Mallin lataaminen Azure AI -mallivarastoon tekee mallista jaettavan kehitystiimisi muiden jäsenten kanssa ja hoitaa myös mallin versionhallinnan. Lataa malli suorittamalla seuraava komento:
 
-> [!NOTE]  
-> Päivitä `{}` ` placeholders with the name of your resource group and Azure AI Project Name. 
+> [!NOTE]
+> Päivitä `{}`-paikkamerkit oman resurssiryhmäsi ja Azure AI -projektisi nimellä.
 
-To find your resource group ` "resourceGroup" ja Azure AI -projektin nimi ja suorita komento
+Löytääksesi resurssiryhmäsi `"resourceGroup"` ja Azure AI -projektisi nimen, suorita seuraava komento:
 
 ```
 az ml workspace show
 ```
 
-Vaihtoehtoisesti voit mennä osoitteeseen +++ai.azure.com+++ ja valita **management center** > **project** > **overview**
+Tai käy osoitteessa +++ai.azure.com+++ ja valitse **management center** > **project** > **overview**
 
-Päivitä `{}` paikkamerkit resurssiryhmäsi ja Azure AI -projektisi nimellä.
+Päivitä `{}`-paikkamerkit oman resurssiryhmäsi ja Azure AI -projektisi nimellä.
 
 ```bash
 az ml model create \
@@ -241,8 +241,9 @@ az ml model create \
     --path ./models/phi/onnx-ao \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
-```  
-Näet ladatun mallisi ja voit ottaa mallin käyttöön osoitteessa https://ml.azure.com/model/list
+```
+
+Voit sitten nähdä ladatun mallisi ja ottaa sen käyttöön osoitteessa https://ml.azure.com/model/list
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-07T10:53:16+00:00",
+  "translation_date": "2025-07-17T05:14:01+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "de"
 }
 -->
 ## **Funktionsaufrufe in Phi-4-mini**
 
-Funktionsaufrufe erschienen erstmals in der Phi Family und sind jetzt auch in Phi-4-mini verfügbar.
+Funktionsaufrufe sind erstmals in der Phi Family aufgetaucht, und jetzt kannst du sie auch in Phi-4-mini verwenden.
 
-Dieses Beispiel zeigt die Simulation von Premier-League-Ergebnissen. Das Ziel ist, dass Phi-4-mini Echtzeit-Spielinformationen liefert. Unten finden Sie den Beispielcode:
+Dieses Beispiel zeigt die Simulation von Premier-League-Ergebnissen. Das Ziel ist, dass Phi-4-mini Echtzeit-Spielinformationen liefert. Unten findest du den Beispielcode:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

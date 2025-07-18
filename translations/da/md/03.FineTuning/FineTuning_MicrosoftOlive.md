@@ -2,52 +2,52 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:52:12+00:00",
+  "translation_date": "2025-07-17T06:46:09+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "da"
 }
 -->
 # **Finjustering af Phi-3 med Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) er et brugervenligt hardware-bevidst modeloptimeringsværktøj, der samler branchens førende teknikker inden for modelkomprimering, optimering og kompilering.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) er et brugervenligt hardware-bevidst værktøj til modeloptimering, der samler branchens førende teknikker inden for modelkomprimering, optimering og kompilering.
 
-Det er designet til at forenkle processen med at optimere maskinlæringsmodeller og sikre, at de udnytter specifikke hardwarearkitekturer mest effektivt.
+Det er designet til at gøre processen med at optimere maskinlæringsmodeller mere effektiv og sikre, at de udnytter specifikke hardwarearkitekturer bedst muligt.
 
 Uanset om du arbejder med cloud-baserede applikationer eller edge-enheder, gør Olive det nemt og effektivt at optimere dine modeller.
 
 ## Nøglefunktioner:
 - Olive samler og automatiserer optimeringsteknikker til ønskede hardwaremål.
-- Ingen enkelt optimeringsteknik passer til alle scenarier, så Olive tillader udvidelser ved at lade brancheeksperter integrere deres optimeringsinnovationer.
+- Ingen enkelt optimeringsteknik passer til alle scenarier, så Olive tillader udvidelser ved at lade eksperter integrere deres egne optimeringsinnovationer.
 
-## Reducer ingeniørarbejdet:
-- Udviklere skal ofte lære og bruge flere hardware-leverandørspecifikke værktøjskæder for at forberede og optimere trænede modeller til deployment.
-- Olive forenkler denne proces ved at automatisere optimeringsteknikker for den ønskede hardware.
+## Reducer udviklingsindsatsen:
+- Udviklere skal ofte lære og bruge flere hardware-leverandørspecifikke værktøjskæder for at forberede og optimere trænede modeller til implementering.
+- Olive forenkler denne proces ved at automatisere optimeringsteknikker til den ønskede hardware.
 
 ## Klar-til-brug end-to-end optimeringsløsning:
 
 Ved at sammensætte og finjustere integrerede teknikker tilbyder Olive en samlet løsning til end-to-end optimering.
-Den tager hensyn til begrænsninger som nøjagtighed og latenstid, mens den optimerer modeller.
+Den tager hensyn til begrænsninger som nøjagtighed og latenstid under optimeringen af modeller.
 
 ## Brug af Microsoft Olive til finjustering
 
-Microsoft Olive er et meget brugervenligt open source modeloptimeringsværktøj, som kan håndtere både finjustering og reference inden for generativ kunstig intelligens. Det kræver kun enkel konfiguration, og kombineret med brugen af open source små sprogmodeller og relaterede runtime-miljøer (AzureML / lokal GPU, CPU, DirectML) kan du gennem automatisk optimering fuldføre finjustering eller reference af modellen og finde den bedste model til deployment i skyen eller på edge-enheder. Det giver virksomheder mulighed for at bygge deres egne branchespecifikke modeller både on-premises og i skyen.
+Microsoft Olive er et meget brugervenligt open source værktøj til modeloptimering, som kan dække både finjustering og reference inden for generativ kunstig intelligens. Det kræver kun enkel konfiguration, og i kombination med open source små sprogmodeller og tilhørende runtime-miljøer (AzureML / lokal GPU, CPU, DirectML) kan du gennem automatisk optimering fuldføre finjustering eller reference af modellen og finde den bedste model til implementering i skyen eller på edge-enheder. Det giver virksomheder mulighed for at bygge deres egne branchespecifikke modeller både lokalt og i skyen.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.da.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.da.png)
 
-## Phi-3 finjustering med Microsoft Olive
+## Phi-3 Finjustering med Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.da.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.da.png)
 
-## Phi-3 Olive eksempelkode og eksempel
+## Phi-3 Olive Eksempelkode og eksempel
 I dette eksempel vil du bruge Olive til at:
 
-- Finjustere en LoRA-adapter til at klassificere sætninger i Sad, Joy, Fear, Surprise.
+- Finjustere en LoRA-adapter til at klassificere sætninger som Sad, Joy, Fear, Surprise.
 - Flette adaptervægtningerne ind i basismodellen.
 - Optimere og kvantisere modellen til int4.
 
-[Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
+[Eksempelkode](../../code/03.Finetuning/olive-ort-example/README.md)
 
-### Opsæt Microsoft Olive
+### Opsætning af Microsoft Olive
 
 Installation af Microsoft Olive er meget enkel og kan også installeres til CPU, GPU, DirectML og Azure ML
 
@@ -78,7 +78,7 @@ OS-krav: Ubuntu 20.04 / 22.04
 
 ### **Microsoft Olives Config.json**
 
-Efter installation kan du konfigurere forskellige model-specifikke indstillinger via Config-filen, herunder data, beregning, træning, deployment og modelgenerering.
+Efter installation kan du konfigurere forskellige model-specifikke indstillinger via Config-filen, herunder data, beregning, træning, implementering og modelgenerering.
 
 **1. Data**
 
@@ -86,7 +86,7 @@ På Microsoft Olive kan træning på lokale data og cloud-data understøttes og 
 
 *Indstillinger for lokale data*
 
-Du kan nemt opsætte datasættet, der skal trænes til finjustering, normalt i json-format, og tilpasse det med dataskabelonen. Dette skal justeres efter modellens krav (for eksempel tilpasses til det format, som Microsoft Phi-3-mini kræver. Hvis du har andre modeller, henvises der til de nødvendige finjusteringsformater for disse modeller).
+Du kan nemt opsætte det datasæt, der skal trænes til finjustering, normalt i json-format, og tilpasse det med dataskabelonen. Dette skal justeres efter modellens krav (for eksempel tilpasses det format, som Microsoft Phi-3-mini kræver. Hvis du har andre modeller, henvises der til de nødvendige finjusteringsformater for disse modeller).
 
 ```json
 
@@ -121,7 +121,7 @@ Du kan nemt opsætte datasættet, der skal trænes til finjustering, normalt i j
 
 **Indstillinger for cloud-datakilder**
 
-Ved at forbinde datastore fra Azure AI Studio/Azure Machine Learning Service for at tilgå data i skyen, kan du vælge at importere forskellige datakilder til Azure AI Studio/Azure Machine Learning Service gennem Microsoft Fabric og Azure Data som støtte til finjustering af data.
+Ved at forbinde Azure AI Studio/Azure Machine Learning Service’s datastore til data i skyen, kan du vælge at importere forskellige datakilder til Azure AI Studio/Azure Machine Learning Service via Microsoft Fabric og Azure Data som støtte til finjustering.
 
 ```json
 
@@ -168,7 +168,7 @@ Ved at forbinde datastore fra Azure AI Studio/Azure Machine Learning Service for
 
 **2. Beregningskonfiguration**
 
-Hvis du ønsker lokal kørsel, kan du direkte bruge lokale dataressourcer. Hvis du skal bruge ressourcer fra Azure AI Studio / Azure Machine Learning Service, skal du konfigurere de relevante Azure-parametre, navn på beregningsressourcer osv.
+Hvis du ønsker lokal kørsel, kan du bruge lokale dataressourcer direkte. Hvis du vil bruge ressourcer fra Azure AI Studio / Azure Machine Learning Service, skal du konfigurere relevante Azure-parametre, navn på beregningsressourcer osv.
 
 ```json
 
@@ -201,7 +201,7 @@ Hvis du ønsker lokal kørsel, kan du direkte bruge lokale dataressourcer. Hvis 
 
 ***Bemærk***
 
-Da det kører via en container på Azure AI Studio/Azure Machine Learning Service, skal det nødvendige miljø konfigureres. Dette sker i conda.yaml miljøfilen.
+Da det kører via en container på Azure AI Studio/Azure Machine Learning Service, skal det nødvendige miljø konfigureres. Dette gøres i conda.yaml-miljøet.
 
 ```yaml
 
@@ -236,7 +236,7 @@ dependencies:
 
 **3. Vælg din SLM**
 
-Du kan bruge modellen direkte fra Hugging Face, eller du kan kombinere den med Model Catalog fra Azure AI Studio / Azure Machine Learning for at vælge den model, der skal bruges. I kodeeksemplet nedenfor bruger vi Microsoft Phi-3-mini som eksempel.
+Du kan bruge modellen direkte fra Hugging Face, eller du kan kombinere den med Model Catalog i Azure AI Studio / Azure Machine Learning for at vælge den model, du vil bruge. I kodeeksemplet nedenfor bruger vi Microsoft Phi-3-mini som eksempel.
 
 Hvis du har modellen lokalt, kan du bruge denne metode
 
@@ -284,7 +284,7 @@ Hvis du vil bruge en model fra Azure AI Studio / Azure Machine Learning Service,
 ```
 
 **Bemærk:**
-Vi skal integreres med Azure AI Studio / Azure Machine Learning Service, så når du opsætter modellen, henvises til versionsnummer og relevante navne.
+Vi skal integrere med Azure AI Studio / Azure Machine Learning Service, så ved opsætning af modellen henvises til versionsnummer og relevante navngivninger.
 
 Alle modeller på Azure skal sættes til PyTorch.MLflow
 
@@ -292,7 +292,7 @@ Du skal have en Hugging Face-konto og binde nøglen til Key-værdien i Azure AI 
 
 **4. Algoritme**
 
-Microsoft Olive indkapsler Lora og QLora finjusteringsalgoritmer rigtig godt. Alt, du skal konfigurere, er nogle relevante parametre. Her tager jeg QLora som eksempel.
+Microsoft Olive indkapsler Lora og QLora finjusteringsalgoritmer meget godt. Alt du skal konfigurere, er nogle relevante parametre. Her tager jeg QLora som eksempel.
 
 ```json
         "lora": {
@@ -329,10 +329,10 @@ Microsoft Olive indkapsler Lora og QLora finjusteringsalgoritmer rigtig godt. Al
         },
 ```
 
-Hvis du ønsker kvantiseringskonvertering, understøtter Microsoft Olive hovedgren allerede onnxruntime-genai-metoden. Du kan sætte det efter behov:
+Hvis du ønsker kvantiseringskonvertering, understøtter Microsoft Olive hovedgren allerede onnxruntime-genai metoden. Du kan sætte det efter behov:
 
-1. flet adaptervægtninger ind i basismodellen
-2. konverter modellen til onnx-model med den ønskede præcision via ModelBuilder
+1. flet adaptervægtninger ind i basismodellen  
+2. Konverter modellen til onnx-model med den ønskede præcision via ModelBuilder
 
 for eksempel konvertering til kvantiseret INT4
 
@@ -349,10 +349,10 @@ for eksempel konvertering til kvantiseret INT4
         }
 ```
 
-**Bemærk** 
+**Bemærk**  
 - Hvis du bruger QLoRA, understøttes kvantiseringskonvertering med ONNXRuntime-genai ikke på nuværende tidspunkt.
 
-- Det skal her pointeres, at du kan sætte ovenstående trin efter dine egne behov. Det er ikke nødvendigt at konfigurere alle trin fuldstændigt. Afhængigt af dine behov kan du direkte bruge algoritmetrinnene uden finjustering. Til sidst skal du konfigurere de relevante engines.
+- Det skal her påpeges, at du kan konfigurere ovenstående trin efter eget behov. Det er ikke nødvendigt at konfigurere alle trin fuldstændigt. Afhængigt af dine behov kan du direkte bruge algoritmetrinnene uden finjustering. Til sidst skal du konfigurere de relevante engines.
 
 ```json
 
@@ -376,4 +376,4 @@ olive run --config olive-config.json
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

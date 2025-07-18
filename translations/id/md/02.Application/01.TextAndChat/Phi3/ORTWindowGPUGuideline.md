@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-09T18:45:15+00:00",
+  "translation_date": "2025-07-17T02:45:31+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "id"
 }
 -->
 # **Panduan untuk OnnxRuntime GenAI Windows GPU**
 
-Panduan ini memberikan langkah-langkah untuk mengatur dan menggunakan ONNX Runtime (ORT) dengan GPU di Windows. Dirancang untuk membantu Anda memanfaatkan akselerasi GPU pada model Anda, meningkatkan kinerja dan efisiensi.
+Panduan ini memberikan langkah-langkah untuk mengatur dan menggunakan ONNX Runtime (ORT) dengan GPU di Windows. Tujuannya adalah membantu Anda memanfaatkan akselerasi GPU untuk model Anda, sehingga meningkatkan performa dan efisiensi.
 
 Dokumen ini memberikan panduan tentang:
 
-- Pengaturan Lingkungan: Instruksi pemasangan dependensi yang diperlukan seperti CUDA, cuDNN, dan ONNX Runtime.
-- Konfigurasi: Cara mengatur lingkungan dan ONNX Runtime untuk menggunakan sumber daya GPU secara efektif.
-- Tips Optimasi: Saran untuk menyetel pengaturan GPU Anda agar mendapatkan kinerja optimal.
+- Pengaturan Lingkungan: Instruksi untuk menginstal dependensi yang diperlukan seperti CUDA, cuDNN, dan ONNX Runtime.
+- Konfigurasi: Cara mengonfigurasi lingkungan dan ONNX Runtime agar dapat menggunakan sumber daya GPU secara efektif.
+- Tips Optimasi: Saran untuk menyetel pengaturan GPU Anda agar mendapatkan performa terbaik.
 
 ### **1. Python 3.10.x /3.11.8**
 
@@ -29,10 +29,9 @@ Dokumen ini memberikan panduan tentang:
 
    ```
 
-   ***Reminder*** Jika Anda pernah menginstal library ONNX untuk python, harap uninstall terlebih dahulu
+   ***Reminder*** Jika Anda sudah menginstal library ONNX untuk Python, harap uninstall terlebih dahulu
 
-### **2. Install CMake dengan winget**
-
+### **2. Instal CMake dengan winget**
 
    ```bash
 
@@ -40,14 +39,13 @@ Dokumen ini memberikan panduan tentang:
 
    ```
 
-### **3. Install Visual Studio 2022 - Desktop Development with C++**
+### **3. Instal Visual Studio 2022 - Desktop Development with C++**
 
    ***Note*** Jika Anda tidak ingin melakukan kompilasi, langkah ini bisa dilewati
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.id.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.id.png)
 
-
-### **4. Install Driver NVIDIA**
+### **4. Instal Driver NVIDIA**
 
 1. **Driver GPU NVIDIA**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
@@ -55,11 +53,11 @@ Dokumen ini memberikan panduan tentang:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** Harap gunakan pengaturan default saat proses instalasi
+***Reminder*** Gunakan pengaturan default saat proses instalasi
 
 ### **5. Atur Lingkungan NVIDIA**
 
-Salin file lib, bin, include dari NVIDIA CUDNN 9.4 ke NVIDIA CUDA 12.4 lib, bin, include
+Salin file lib, bin, include dari NVIDIA CUDNN 9.4 ke folder lib, bin, include NVIDIA CUDA 12.4
 
 - salin file dari *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* ke  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
@@ -67,9 +65,7 @@ Salin file lib, bin, include dari NVIDIA CUDNN 9.4 ke NVIDIA CUDA 12.4 lib, bin,
 
 - salin file dari *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* ke  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
-
-### **6. Download Phi-3.5-mini-instruct-onnx**
-
+### **6. Unduh Phi-3.5-mini-instruct-onnx**
 
    ```bash
 
@@ -87,26 +83,21 @@ Salin file lib, bin, include dari NVIDIA CUDNN 9.4 ke NVIDIA CUDA 12.4 lib, bin,
 
    Buka [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) dan jalankan
 
-
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.id.png)
-
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.id.png)
 
 ### **8. Kompilasi ORT GenAI GPU**
 
-
    ***Note*** 
    
-   1. Harap uninstall semua paket terkait onnx, onnxruntime, dan onnxruntime-genai terlebih dahulu
+   1. Harap uninstall semua yang berhubungan dengan onnx, onnxruntime, dan onnxruntime-genai terlebih dahulu
 
-   
    ```bash
 
    pip list 
    
    ```
 
-   Kemudian uninstall semua library onnxruntime seperti 
-
+   Kemudian uninstall semua library onnxruntime, misalnya
 
    ```bash
 
@@ -118,17 +109,13 @@ Salin file lib, bin, include dari NVIDIA CUDNN 9.4 ke NVIDIA CUDA 12.4 lib, bin,
    
    ```
 
-   2. Periksa dukungan Ekstensi Visual Studio 
+   2. Periksa dukungan Ekstensi Visual Studio
 
-   Periksa folder C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras untuk memastikan folder C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration ada. 
+   Cek folder C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras untuk memastikan folder C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration ada. 
    
-   Jika tidak ditemukan, cek folder driver toolkit CUDA lainnya dan salin folder visual_studio_integration beserta isinya ke C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
-
-
-
+   Jika tidak ditemukan, periksa folder driver toolkit CUDA lainnya dan salin folder visual_studio_integration beserta isinya ke C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
    - Jika Anda tidak ingin melakukan kompilasi, langkah ini bisa dilewati
-
 
    ```bash
 
@@ -136,17 +123,16 @@ Salin file lib, bin, include dari NVIDIA CUDNN 9.4 ke NVIDIA CUDA 12.4 lib, bin,
 
    ```
 
-   - Download [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
+   - Unduh [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - Ekstrak onnxruntime-win-x64-gpu-1.19.2.zip, lalu ganti nama foldernya menjadi **ort**, salin folder ort ke onnxruntime-genai
+   - Ekstrak onnxruntime-win-x64-gpu-1.19.2.zip, lalu ganti nama folder hasil ekstrak menjadi **ort**, kemudian salin folder ort ke dalam onnxruntime-genai
 
-   - Gunakan Windows Terminal, buka Developer Command Prompt for VS 2022 dan masuk ke onnxruntime-genai 
+   - Gunakan Windows Terminal, buka Developer Command Prompt for VS 2022 dan masuk ke folder onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.id.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.id.png)
 
-   - Kompilasi menggunakan lingkungan python Anda
+   - Kompilasi dengan lingkungan python Anda
 
-   
    ```bash
 
    cd onnxruntime-genai
@@ -161,4 +147,4 @@ Salin file lib, bin, include dari NVIDIA CUDNN 9.4 ke NVIDIA CUDA 12.4 lib, bin,
    ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

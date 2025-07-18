@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-09T10:59:46+00:00",
+  "translation_date": "2025-07-16T20:22:09+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "da"
 }
 -->
 # **Inference Phi-3 på iOS**
 
-Phi-3-mini er en ny modelserie fra Microsoft, der gør det muligt at implementere Large Language Models (LLMs) på edge-enheder og IoT-enheder. Phi-3-mini er tilgængelig til iOS, Android og Edge Device-implementeringer, hvilket gør det muligt at udrulle generativ AI i BYOD-miljøer. Følgende eksempel viser, hvordan man implementerer Phi-3-mini på iOS.
+Phi-3-mini er en ny serie modeller fra Microsoft, der muliggør implementering af Large Language Models (LLMs) på edge-enheder og IoT-enheder. Phi-3-mini er tilgængelig til iOS, Android og Edge Device-implementeringer, hvilket gør det muligt at deployere generativ AI i BYOD-miljøer. Følgende eksempel viser, hvordan man implementerer Phi-3-mini på iOS.
 
 ## **1. Forberedelse**
 
@@ -22,15 +22,15 @@ Phi-3-mini er en ny modelserie fra Microsoft, der gør det muligt at implementer
 
 ### Semantic Kernel og Inference
 
-Semantic Kernel er et applikationsframework, der giver dig mulighed for at skabe apps, der er kompatible med Azure OpenAI Service, OpenAI-modeller og endda lokale modeller. Adgang til lokale tjenester via Semantic Kernel gør det nemt at integrere med din selvhostede Phi-3-mini modelserver.
+Semantic Kernel er et applikationsframework, der gør det muligt at skabe applikationer kompatible med Azure OpenAI Service, OpenAI-modeller og endda lokale modeller. Adgang til lokale services via Semantic Kernel gør det nemt at integrere med din selvhostede Phi-3-mini modelserver.
 
 ### Kald af kvantiserede modeller med Ollama eller LlamaEdge
 
-Mange brugere foretrækker at bruge kvantiserede modeller til at køre modeller lokalt. [Ollama](https://ollama.com) og [LlamaEdge](https://llamaedge.com) giver brugere mulighed for at kalde forskellige kvantiserede modeller:
+Mange brugere foretrækker at bruge kvantiserede modeller for at køre modeller lokalt. [Ollama](https://ollama.com) og [LlamaEdge](https://llamaedge.com) giver brugere mulighed for at kalde forskellige kvantiserede modeller:
 
 #### **Ollama**
 
-Du kan køre `ollama run phi3` direkte eller konfigurere det offline. Opret en Modelfile med stien til din `gguf` fil. Eksempelkode til at køre Phi-3-mini kvantiserede model:
+Du kan køre `ollama run phi3` direkte eller konfigurere det offline. Opret en Modelfile med stien til din `gguf`-fil. Eksempelkode til at køre Phi-3-mini kvantiseret model:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -59,15 +59,15 @@ cd ../
 
 ### **Bemærk**
 
-- **a.** Før kompilering, sørg for at Xcode er korrekt konfigureret og sat som aktiv udvikler-mappe i terminalen:
+- **a.** Før kompilering, sørg for at Xcode er korrekt konfigureret og sat som aktiv udviklerkatalog i terminalen:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime skal kompileres til forskellige platforme. For iOS kan du kompilere til `arm64` or `x86_64`.
+- **b.** ONNX Runtime skal kompileres til forskellige platforme. For iOS kan du kompilere til `arm64` eller `x86_64`.
 
-- **c.** Det anbefales at bruge den nyeste iOS SDK til kompilering. Dog kan du også bruge en ældre version, hvis du har brug for kompatibilitet med tidligere SDK’er.
+- **c.** Det anbefales at bruge den nyeste iOS SDK til kompilering. Du kan dog også bruge en ældre version, hvis du har brug for kompatibilitet med tidligere SDK’er.
 
 ## **3. Kompilering af Generative AI med ONNX Runtime til iOS**
 
@@ -101,19 +101,19 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. Opret en App-applikation i Xcode**
 
-Jeg valgte Objective-C som udviklingsmetode til App’en, fordi brug af Generative AI med ONNX Runtime C++ API fungerer bedre med Objective-C. Selvfølgelig kan du også udføre de nødvendige kald via Swift bridging.
+Jeg valgte Objective-C som udviklingsmetode til appen, fordi brug af Generative AI med ONNX Runtime C++ API fungerer bedre med Objective-C. Selvfølgelig kan du også gennemføre de relevante kald via Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.da.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.da.png)
 
 ## **5. Kopiér den ONNX kvantiserede INT4-model til App-projektet**
 
 Vi skal importere INT4 kvantiseringsmodellen i ONNX-format, som først skal downloades.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.da.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.da.png)
 
-Efter download skal den tilføjes til Resources-mappen i projektet i Xcode.
+Efter download skal den tilføjes til projektets Resources-mappe i Xcode.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.da.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.da.png)
 
 ## **6. Tilføjelse af C++ API i ViewControllers**
 
@@ -121,15 +121,15 @@ Efter download skal den tilføjes til Resources-mappen i projektet i Xcode.
 
 - **a.** Tilføj de relevante C++ header-filer til projektet.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.da.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.da.png)
 
-- **b.** Inkluder `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Inkluder `onnxruntime-genai` dynamiske bibliotek i Xcode.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.da.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.da.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **c.** Brug C Samples-koden til test. Du kan også tilføje ekstra funktioner som ChatUI for mere funktionalitet.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` for at aktivere Objective-C++ support.
+- **d.** Da du skal bruge C++ i dit projekt, skal du omdøbe `ViewController.m` til `ViewController.mm` for at aktivere Objective-C++ support.
 
 ```objc
 
@@ -162,9 +162,9 @@ Efter download skal den tilføjes til Resources-mappen i projektet i Xcode.
 
 Når opsætningen er færdig, kan du køre applikationen for at se resultaterne af Phi-3-mini modelinference.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.da.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.da.jpg)
 
 For flere eksempelkoder og detaljerede instruktioner, besøg [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

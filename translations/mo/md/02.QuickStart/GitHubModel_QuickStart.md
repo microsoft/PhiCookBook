@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-07T13:08:55+00:00",
+  "translation_date": "2025-07-17T05:32:10+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "mo"
 }
 -->
-## GitHub Models - Limited Public Beta
+## GitHub Models - 限量公開測試版
 
-Welcome to [GitHub Models](https://github.com/marketplace/models)! Everything is set up and ready for you to explore AI Models hosted on Azure AI.
+歡迎來到 [GitHub Models](https://github.com/marketplace/models)！我們已經準備好讓你探索在 Azure AI 上託管的 AI 模型。
 
 ![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.mo.png)
 
-For more details about the Models available on GitHub Models, visit the [GitHub Model Marketplace](https://github.com/marketplace/models)
+想了解更多關於 GitHub Models 上可用模型的資訊，請參考 [GitHub Model Marketplace](https://github.com/marketplace/models)
 
-## Models Available
+## 可用模型
 
-Each model comes with its own playground and sample code
+每個模型都有專屬的試用環境和範例程式碼
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
-### Phi-3 Models in GitHub Model Catalog
+### GitHub Model Catalog 中的 Phi-3 模型
 
 [Phi-3-Medium-128k-Instruct](https://github.com/marketplace/models/azureml/Phi-3-medium-128k-instruct)
 
@@ -35,56 +35,57 @@ Each model comes with its own playground and sample code
 
 [Phi-3-small-8k-instruct](https://github.com/marketplace/models/azureml/Phi-3-small-8k-instruct)
 
-## Getting Started
+## 快速開始
 
-There are several basic examples ready for you to run. You can find them in the samples directory. If you want to jump directly to your preferred language, examples are available in the following languages:
+這裡有一些基本範例已經準備好讓你執行。你可以在 samples 目錄中找到它們。如果你想直接使用你喜歡的程式語言，以下是支援的語言範例：
 
 - Python
 - JavaScript
 - cURL
 
-There is also a dedicated Codespaces Environment for running the samples and models.
+此外，也有專門的 Codespaces 環境用來執行範例和模型。
 
 ![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.mo.png)
 
-## Sample Code
+## 範例程式碼
 
-Below are example code snippets for some common use cases. For more information about Azure AI Inference SDK, see the full documentation and samples.
+以下是幾個使用案例的範例程式碼片段。想了解更多關於 Azure AI Inference SDK 的資訊，請參考完整文件和範例。
 
-## Setup
+## 設定
 
-1. Create a personal access token  
-You don’t need to assign any permissions to the token. Note that the token will be sent to a Microsoft service.
+1. 建立個人存取權杖  
+你不需要為權杖設定任何權限。請注意，權杖會被傳送到 Microsoft 服務。
 
-To use the code snippets below, create an environment variable to set your token as the key for the client code.
+要使用以下程式碼片段，請建立一個環境變數，將你的權杖設為用戶端程式碼的金鑰。
 
-If you're using bash:  
+如果你使用 bash：  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-If you're in powershell:  
+如果你使用 powershell：  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 
-If you're using Windows command prompt:  
+如果你使用 Windows 命令提示字元：  
 
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
-```  
+```
 
-## Python Sample
+## Python 範例
 
-### Install dependencies  
-Install the Azure AI Inference SDK using pip (Requires: Python >=3.8):
+### 安裝相依套件  
+使用 pip 安裝 Azure AI Inference SDK（需求：Python >=3.8）：
 
 ```
 pip install azure-ai-inference
-```  
-### Run a basic code sample
+```
 
-This example shows a simple call to the chat completion API. It uses the GitHub AI model inference endpoint and your GitHub token. The call is synchronous.
+### 執行基本範例程式碼
+
+此範例示範如何呼叫 chat completion API。它使用 GitHub AI 模型推論端點和你的 GitHub 權杖。呼叫為同步方式。
 
 ```
 import os
@@ -116,9 +117,9 @@ response = client.complete(
 print(response.choices[0].message.content)
 ```
 
-### Run a multi-turn conversation
+### 執行多輪對話
 
-This example demonstrates a multi-turn conversation with the chat completion API. When using the model for a chat app, you need to manage the conversation history and send the latest messages to the model.
+此範例示範如何使用 chat completion API 進行多輪對話。當你用模型做聊天應用時，需要管理對話歷史並將最新訊息傳送給模型。
 
 ```
 import os
@@ -148,9 +149,9 @@ response = client.complete(messages=messages, model=model_name)
 print(response.choices[0].message.content)
 ```
 
-### Stream the output
+### 串流輸出
 
-For a smoother user experience, stream the model’s response so the first token appears quickly, avoiding long waits for responses.
+為了提供更好的使用體驗，你會想串流模型的回應，讓第一個 token 盡早顯示，避免等待冗長回應。
 
 ```
 import os
@@ -182,14 +183,15 @@ for update in response:
         print(update.choices[0].delta.content or "", end="")
 
 client.close()
-```  
+```
+
 ## JavaScript
 
-### Install dependencies
+### 安裝相依套件
 
-Install Node.js.
+安裝 Node.js。
 
-Copy the following text into a file named package.json inside your folder.
+將以下文字複製並存成 package.json 檔案於你的資料夾中。
 
 ```
 {
@@ -202,15 +204,15 @@ Copy the following text into a file named package.json inside your folder.
 }
 ```
 
-Note: @azure/core-sse is only needed when streaming chat completions.
+注意：@azure/core-sse 只在你串流 chat completion 回應時需要。
 
-Open a terminal in this folder and run npm install.
+在此資料夾開啟終端機並執行 npm install。
 
-For each of the code snippets below, copy the content into a file named sample.js and run it with node sample.js.
+以下每個程式碼片段，請複製內容到 sample.js 檔案，並用 node sample.js 執行。
 
-### Run a basic code sample
+### 執行基本範例程式碼
 
-This example shows a simple call to the chat completion API. It uses the GitHub AI model inference endpoint and your GitHub token. The call is synchronous.
+此範例示範如何呼叫 chat completion API。它使用 GitHub AI 模型推論端點和你的 GitHub 權杖。呼叫為同步方式。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -249,9 +251,9 @@ main().catch((err) => {
 });
 ```
 
-### Run a multi-turn conversation
+### 執行多輪對話
 
-This example demonstrates a multi-turn conversation with the chat completion API. When using the model for a chat app, you need to manage the conversation history and send the latest messages to the model.
+此範例示範如何使用 chat completion API 進行多輪對話。當你用模型做聊天應用時，需要管理對話歷史並將最新訊息傳送給模型。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,9 +294,9 @@ main().catch((err) => {
 });
 ```
 
-### Stream the output
+### 串流輸出
 
-For a smoother user experience, stream the model’s response so the first token appears quickly, avoiding long waits for responses.
+為了提供更好的使用體驗，你會想串流模型的回應，讓第一個 token 盡早顯示，避免等待冗長回應。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -350,9 +352,9 @@ main().catch((err) => {
 
 ## REST
 
-### Run a basic code sample
+### 執行基本範例程式碼
 
-Paste the following into a shell:
+將以下內容貼到 shell：
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -371,10 +373,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
-### Run a multi-turn conversation
+```
 
-Call the chat completion API and include the chat history:
+### 執行多輪對話
+
+呼叫 chat completion API 並傳送聊天歷史：
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -401,10 +404,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
-### Stream the output
+```
 
-Here’s an example of calling the endpoint and streaming the response.
+### 串流輸出
+
+這是呼叫端點並串流回應的範例。
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -426,25 +430,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## FREE Usage and Rate limits for GitHub Models
+## GitHub Models 免費使用與速率限制
 
 ![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.mo.png)
 
-The [rate limits for the playground and free API usage](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) are designed to help you experiment with models and prototype your AI application. To go beyond these limits and scale your app, you must provision resources from an Azure account and authenticate from there instead of using your GitHub personal access token. No other changes are needed in your code. Use this link to learn how to exceed the free tier limits in Azure AI.
+[playground 和免費 API 使用的速率限制](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) 是為了幫助你試驗模型和快速開發 AI 應用。若超出這些限制，並想將應用擴展到生產環境，必須從 Azure 帳戶配置資源，並從那裡進行驗證，而非使用 GitHub 個人存取權杖。你不需要更改程式碼的其他部分。請使用此連結了解如何突破 Azure AI 的免費層限制。
 
-### Disclosures
+### 免責聲明
 
-Keep in mind that when you interact with a model, you’re experimenting with AI, so content errors are possible.
+請記得，與模型互動時，你是在嘗試 AI 技術，因此內容可能會有錯誤。
 
-This feature has various limits (requests per minute, requests per day, tokens per request, concurrent requests) and isn’t intended for production workloads.
+此功能有多項限制（包括每分鐘請求數、每日請求數、每次請求的 token 數量及同時請求數），不適合用於生產環境。
 
-GitHub Models uses Azure AI Content Safety. These filters cannot be disabled as part of the GitHub Models experience. If you choose to use models through a paid service, please configure content filters according to your needs.
+GitHub Models 採用 Azure AI Content Safety。這些過濾器無法在 GitHub Models 體驗中關閉。如果你選擇透過付費服務使用模型，請自行設定內容過濾器以符合你的需求。
 
-This service is provided under GitHub’s Pre-release Terms.
+此服務遵循 GitHub 的預發布條款。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-(Note: "mo" is not a recognized language code or widely known language abbreviation. Could you please clarify which language "mo" refers to? For example, it might be a typo or abbreviation for a specific language like Moldovan, Maori, or something else.)
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-09T20:04:18+00:00",
+  "translation_date": "2025-07-16T20:25:48+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "uk"
 }
 -->
 # **Інференс Phi-3 на iOS**
 
-Phi-3-mini — це нова серія моделей від Microsoft, яка дозволяє розгортати великі мовні моделі (LLM) на пристроях на периферії та IoT-пристроях. Phi-3-mini доступна для iOS, Android та розгортання на Edge-пристроях, що дає змогу використовувати генеративний ШІ в BYOD-середовищах. Нижче наведено приклад, як розгорнути Phi-3-mini на iOS.
+Phi-3-mini — це нова серія моделей від Microsoft, яка дозволяє розгортати великі мовні моделі (LLM) на пристроях на периферії та IoT-пристроях. Phi-3-mini доступна для iOS, Android та розгортання на Edge-пристроях, що дає змогу використовувати генеративний ШІ у BYOD-середовищах. Нижче наведено приклад, як розгорнути Phi-3-mini на iOS.
 
 ## **1. Підготовка**
 
@@ -22,7 +22,7 @@ Phi-3-mini — це нова серія моделей від Microsoft, яка 
 
 ### Semantic Kernel та інференс
 
-Semantic Kernel — це фреймворк для створення додатків, сумісних з Azure OpenAI Service, моделями OpenAI та навіть локальними моделями. Використання локальних сервісів через Semantic Kernel дозволяє легко інтегрувати ваш власний сервер моделей Phi-3-mini.
+Semantic Kernel — це фреймворк для створення додатків, сумісних із Azure OpenAI Service, моделями OpenAI та навіть локальними моделями. Використання локальних сервісів через Semantic Kernel дозволяє легко інтегрувати власний сервер моделей Phi-3-mini.
 
 ### Виклик квантизованих моделей через Ollama або LlamaEdge
 
@@ -71,7 +71,7 @@ cd ../
 
 ## **3. Компіляція Generative AI з ONNX Runtime для iOS**
 
-> **Note:** Оскільки Generative AI з ONNX Runtime знаходиться в прев’ю, будьте готові до можливих змін.
+> **Note:** Оскільки Generative AI з ONNX Runtime знаходиться у прев’ю, будьте готові до можливих змін.
 
 ```bash
 
@@ -101,19 +101,19 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. Створення додатку в Xcode**
 
-Я обрав Objective-C для розробки додатку, оскільки використання Generative AI через ONNX Runtime C++ API краще сумісне з Objective-C. Звичайно, ви також можете реалізувати виклики через Swift bridging.
+Я обрав Objective-C для розробки додатку, оскільки використання Generative AI через ONNX Runtime C++ API краще сумісне з Objective-C. Звісно, можна також реалізувати виклики через Swift bridging.
 
-![xcode](../../../../../imgs/01/03/iOS/xcode.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.uk.png)
 
-## **5. Копіювання квантизованої INT4 моделі ONNX у проект додатку**
+## **5. Копіювання квантизованої моделі ONNX INT4 у проект додатку**
 
 Потрібно імпортувати модель квантизації INT4 у форматі ONNX, яку спочатку потрібно завантажити.
 
-![hf](../../../../../imgs/01/03/iOS/hf.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.uk.png)
 
 Після завантаження додайте її до каталогу Resources у проекті Xcode.
 
-![model](../../../../../imgs/01/03/iOS/model.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.uk.png)
 
 ## **6. Додавання C++ API у ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** Додайте відповідні заголовочні файли C++ до проекту.
 
-  ![Header File](../../../../../imgs/01/03/iOS/head.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.uk.png)
 
 - **b.** Підключіть динамічну бібліотеку `onnxruntime-genai` у Xcode.
 
-  ![Library](../../../../../imgs/01/03/iOS/lib.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.uk.png)
 
 - **c.** Використовуйте код з C Samples для тестування. Також можна додати додаткові функції, наприклад ChatUI, для розширення можливостей.
 
@@ -162,9 +162,9 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Після завершення налаштувань ви можете запустити додаток і побачити результати інференсу моделі Phi-3-mini.
 
-![Running Result](../../../../../imgs/01/03/iOS/result.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.uk.jpg)
 
-Для отримання додаткових прикладів коду та детальних інструкцій відвідайте [репозиторій Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+Для отримання додаткових прикладів коду та детальних інструкцій відвідайте репозиторій [Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **Відмова від відповідальності**:  
 Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.

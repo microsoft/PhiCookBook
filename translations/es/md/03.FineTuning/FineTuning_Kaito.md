@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-07T10:24:34+00:00",
+  "translation_date": "2025-07-17T06:18:00+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "es"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Kaito](https://github.com/Azure/kaito) es un operador que automatiza el despliegue de modelos de inferencia AI/ML en un clúster de Kubernetes.
 
-Kaito tiene las siguientes diferencias clave en comparación con la mayoría de las metodologías de despliegue de modelos convencionales basadas en infraestructuras de máquinas virtuales:
+Kaito presenta las siguientes diferencias clave en comparación con la mayoría de las metodologías convencionales de despliegue de modelos basadas en infraestructuras de máquinas virtuales:
 
 - Gestiona los archivos del modelo usando imágenes de contenedor. Se proporciona un servidor http para realizar llamadas de inferencia usando la biblioteca del modelo.
-- Evita ajustar parámetros de despliegue para adaptarse al hardware GPU mediante configuraciones preestablecidas.
-- Provisión automática de nodos GPU según los requerimientos del modelo.
-- Hospeda imágenes de modelos grandes en el Microsoft Container Registry (MCR) público si la licencia lo permite.
+- Evita ajustar parámetros de despliegue para adaptarse al hardware GPU mediante configuraciones predefinidas.
+- Provisión automática de nodos GPU según los requisitos del modelo.
+- Aloja imágenes de modelos grandes en el Microsoft Container Registry (MCR) público si la licencia lo permite.
 
-Con Kaito, el flujo de trabajo para integrar grandes modelos de inferencia AI en Kubernetes se simplifica considerablemente.
+Con Kaito, el flujo de trabajo para incorporar modelos grandes de inferencia AI en Kubernetes se simplifica considerablemente.
 
 ## Arquitectura
 
-Kaito sigue el patrón clásico de diseño Custom Resource Definition (CRD)/controlador de Kubernetes. El usuario gestiona un recurso personalizado `workspace` que describe los requisitos GPU y la especificación de inferencia. Los controladores de Kaito automatizan el despliegue reconciliando el recurso personalizado `workspace`.
+Kaito sigue el patrón clásico de diseño de Custom Resource Definition (CRD)/controlador de Kubernetes. El usuario gestiona un recurso personalizado `workspace` que describe los requisitos de GPU y la especificación de inferencia. Los controladores de Kaito automatizan el despliegue reconciliando el recurso personalizado `workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Arquitectura de Kaito" alt="Arquitectura de Kaito">
 </div>
 
-La figura anterior presenta una visión general de la arquitectura de Kaito. Sus componentes principales son:
+La figura anterior muestra una visión general de la arquitectura de Kaito. Sus componentes principales son:
 
-- **Controlador de workspace**: Reconcilia el recurso personalizado `workspace`, crea recursos personalizados `machine` (explicados más abajo) para activar la provisión automática de nodos, y crea la carga de trabajo de inferencia (`deployment` o `statefulset`) basada en las configuraciones preestablecidas del modelo.
-- **Controlador de provisión de nodos**: El nombre del controlador es *gpu-provisioner* en el [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Usa el CRD `machine` originado de [Karpenter](https://sigs.k8s.io/karpenter) para interactuar con el controlador de workspace. Se integra con las APIs de Azure Kubernetes Service (AKS) para añadir nuevos nodos GPU al clúster AKS.  
+- **Controlador de workspace**: Reconciliará el recurso personalizado `workspace`, crea recursos personalizados `machine` (explicados más adelante) para activar la provisión automática de nodos, y crea la carga de trabajo de inferencia (`deployment` o `statefulset`) basada en las configuraciones predefinidas del modelo.
+- **Controlador de provisión de nodos**: El nombre del controlador es *gpu-provisioner* en el [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Utiliza el CRD `machine` originado de [Karpenter](https://sigs.k8s.io/karpenter) para interactuar con el controlador de workspace. Se integra con las APIs de Azure Kubernetes Service (AKS) para añadir nuevos nodos GPU al clúster AKS.
 > Nota: El [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) es un componente de código abierto. Puede ser reemplazado por otros controladores si soportan las APIs de [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Video resumen  
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-El estado del workspace puede seguirse ejecutando el siguiente comando. Cuando la columna WORKSPACEREADY se vuelva `True`, el modelo se habrá desplegado correctamente.
+El estado del workspace puede ser monitoreado ejecutando el siguiente comando. Cuando la columna WORKSPACEREADY muestre `True`, el modelo se ha desplegado correctamente.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Luego, se puede obtener la IP del clúster del servicio de inferencia y usar un pod temporal `curl` para probar el endpoint del servicio dentro del clúster.
+A continuación, se puede obtener la IP del clúster del servicio de inferencia y usar un pod temporal `curl` para probar el endpoint del servicio dentro del clúster.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -112,5 +112,5 @@ export CLUSTERIP=$(kubectl get svc workspace-tuning-phi-3 -o jsonpath="{.spec.cl
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.

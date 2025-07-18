@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:42:36+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T15:29:19+00:00",
   "source_file": "README.md",
   "language_code": "sk"
 }
@@ -31,14 +31,14 @@ Model Phi môžete nasadiť do cloudu alebo na edge zariadenia a jednoducho vytv
 
 Postupujte podľa týchto krokov, aby ste začali využívať tieto zdroje:  
 1. **Forknite repozitár**: Kliknite na [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
-2. **Klonujte repozitár**: `git clone https://github.com/microsoft/PhiCookBook.git`  
+2. **Naklonujte repozitár**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Pridajte sa do Microsoft AI Discord komunity a spoznajte expertov a ďalších vývojárov**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.sk.png)
 
-## 🌐 Podpora viacerých jazykov
+### 🌐 Podpora viacerých jazykov
 
-### Podporované cez GitHub Action (automatizované a vždy aktuálne)
+#### Podporované cez GitHub Action (automatizované a vždy aktuálne)
 
 [Francúzština](../fr/README.md) | [Španielčina](../es/README.md) | [Nemčina](../de/README.md) | [Ruština](../ru/README.md) | [Arabčina](../ar/README.md) | [Perzština (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Čínština (zjednodušená)](../zh/README.md) | [Čínština (tradičná, Macau)](../mo/README.md) | [Čínština (tradičná, Hong Kong)](../hk/README.md) | [Čínština (tradičná, Taiwan)](../tw/README.md) | [Japončina](../ja/README.md) | [Kórejčina](../ko/README.md) | [Hindčina](../hi/README.md)  
 [Bengálčina](../bn/README.md) | [Maráthčina](../mr/README.md) | [Nepálčina](../ne/README.md) | [Pandžábčina (Gurmukhi)](../pa/README.md) | [Portugalčina (Portugalsko)](../pt/README.md) | [Portugalčina (Brazília)](../br/README.md) | [Taliančina](../it/README.md) | [Poľština](../pl/README.md) | [Turečtina](../tr/README.md) | [Gréčtina](../el/README.md) | [Thajčina](../th/README.md) | [Švédčina](../sv/README.md) | [Dánčina](../da/README.md) | [Nórčina](../no/README.md) | [Fínčina](../fi/README.md) | [Holandčina](../nl/README.md) | [Hebrejčina](../he/README.md) | [Vietnamčina](../vi/README.md) | [Indonézština](../id/README.md) | [Malajčina](../ms/README.md) | [Tagalog (Filipínčina)](../tl/README.md) | [Swahilčina](../sw/README.md) | [Maďarčina](../hu/README.md) | [Čeština](../cs/README.md) | [Slovenčina](./README.md) | [Rumunčina](../ro/README.md) | [Bulharčina](../bg/README.md) | [Srbčina (cyrilika)](../sr/README.md) | [Chorvátčina](../hr/README.md) | [Slovinčina](../sl/README.md)
@@ -52,43 +52,43 @@ Postupujte podľa týchto krokov, aby ste začali využívať tieto zdroje:
   - [Bezpečnosť AI pre modely Phi](./md/01.Introduction/01/01.AISafety.md)  
   - [Podpora hardvéru Phi](./md/01.Introduction/01/01.Hardwaresupport.md)  
   - [Modely Phi a ich dostupnosť na rôznych platformách](./md/01.Introduction/01/01.Edgeandcloud.md)  
-  - [Použitie Guidance-ai a Phi](./md/01.Introduction/01/01.Guidance.md)  
+  - [Používanie Guidance-ai a Phi](./md/01.Introduction/01/01.Guidance.md)  
   - [GitHub Marketplace modely](https://github.com/marketplace/models)  
   - [Azure AI katalóg modelov](https://ai.azure.com)
 
 - Inference Phi v rôznych prostrediach  
-  - [Hugging face](./md/01.Introduction/02/01.HF.md)  
-  - [GitHub modely](./md/01.Introduction/02/02.GitHubModel.md)  
-  - [Azure AI Foundry katalóg modelov](./md/01.Introduction/02/03.AzureAIFoundry.md)  
-  - [Ollama](./md/01.Introduction/02/04.Ollama.md)  
-  - [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)  
-  - [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)  
-  - [Foundry Local](./md/01.Introduction/02/07.FoundryLocal.md)
+    -  [Hugging face](./md/01.Introduction/02/01.HF.md)  
+    -  [GitHub modely](./md/01.Introduction/02/02.GitHubModel.md)  
+    -  [Azure AI Foundry katalóg modelov](./md/01.Introduction/02/03.AzureAIFoundry.md)  
+    -  [Ollama](./md/01.Introduction/02/04.Ollama.md)  
+    -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)  
+    -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)  
+    -  [Foundry Local](./md/01.Introduction/02/07.FoundryLocal.md)
 
 - Inference Phi Family  
-  - [Inference Phi na iOS](./md/01.Introduction/03/iOS_Inference.md)  
-  - [Inference Phi na Android](./md/01.Introduction/03/Android_Inference.md)  
-  - [Inference Phi na Jetson](./md/01.Introduction/03/Jetson_Inference.md)  
-  - [Inference Phi na AI PC](./md/01.Introduction/03/AIPC_Inference.md)  
-  - [Inference Phi s Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)  
-  - [Inference Phi na lokálnom serveri](./md/01.Introduction/03/Local_Server_Inference.md)  
-  - [Inference Phi na vzdialenom serveri pomocou AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
-  - [Inference Phi s Rust](./md/01.Introduction/03/Rust_Inference.md)  
-  - [Inference Phi – Vision lokálne](./md/01.Introduction/03/Vision_Inference.md)  
-  - [Inference Phi s Kaito AKS, Azure Containers (oficiálna podpora)](./md/01.Introduction/03/Kaito_Inference.md)  
-- [Kvantifikácia Phi Family](./md/01.Introduction/04/QuantifyingPhi.md)  
-  - [Kvantizácia Phi-3.5 / 4 pomocou llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
-  - [Kvantizácia Phi-3.5 / 4 pomocou Generative AI rozšírení pre onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
-  - [Kvantizácia Phi-3.5 / 4 pomocou Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
-  - [Kvantizácia Phi-3.5 / 4 pomocou Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+    - [Inference Phi na iOS](./md/01.Introduction/03/iOS_Inference.md)  
+    - [Inference Phi na Android](./md/01.Introduction/03/Android_Inference.md)  
+    - [Inference Phi na Jetson](./md/01.Introduction/03/Jetson_Inference.md)  
+    - [Inference Phi na AI PC](./md/01.Introduction/03/AIPC_Inference.md)  
+    - [Inference Phi s Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)  
+    - [Inference Phi na lokálnom serveri](./md/01.Introduction/03/Local_Server_Inference.md)  
+    - [Inference Phi na vzdialenom serveri pomocou AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
+    - [Inference Phi s Rust](./md/01.Introduction/03/Rust_Inference.md)  
+    - [Inference Phi – Vision lokálne](./md/01.Introduction/03/Vision_Inference.md)  
+    - [Inference Phi s Kaito AKS, Azure Containers (oficiálna podpora)](./md/01.Introduction/03/Kaito_Inference.md)  
+-  [Kvantifikácia Phi Family](./md/01.Introduction/04/QuantifyingPhi.md)  
+    - [Kvantifikácia Phi-3.5 / 4 pomocou llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
+    - [Kvantifikácia Phi-3.5 / 4 pomocou Generative AI rozšírení pre onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
+    - [Kvantifikácia Phi-3.5 / 4 pomocou Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
+    - [Kvantifikácia Phi-3.5 / 4 pomocou Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
 - Hodnotenie Phi  
-  - [Zodpovedná AI](./md/01.Introduction/05/ResponsibleAI.md)  
-  - [Azure AI Foundry pre hodnotenie](./md/01.Introduction/05/AIFoundry.md)  
-  - [Použitie Promptflow pre hodnotenie](./md/01.Introduction/05/Promptflow.md)
+    - [Zodpovedná AI](./md/01.Introduction/05/ResponsibleAI.md)  
+    - [Azure AI Foundry pre hodnotenie](./md/01.Introduction/05/AIFoundry.md)  
+    - [Použitie Promptflow pre hodnotenie](./md/01.Introduction/05/Promptflow.md)
 
 - RAG s Azure AI Search  
-  - [Ako používať Phi-4-mini a Phi-4-multimodal (RAG) s Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+    - [Ako používať Phi-4-mini a Phi-4-multimodal (RAG) s Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
 - Ukážky vývoja aplikácií Phi  
   - Textové a chatové aplikácie  
@@ -100,8 +100,8 @@ Postupujte podľa týchto krokov, aby ste začali využívať tieto zdroje:
       - [Lokálny chatbot v prehliadači s Phi3, ONNX Runtime Web a WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
       - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
       - [Multi Model – Interaktívny Phi-3-mini a OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
-      - [MLFlow – Vytvorenie wrappera a použitie Phi-3 s MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
-      - [Optimalizácia modelu – Ako optimalizovať Phi-3-min model pre ONNX Runtime Web pomocou Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
+      - [MLFlow – Vytváranie wrappera a používanie Phi-3 s MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
+      - [Optimalizácia modelu – Ako optimalizovať Phi-3-mini model pre ONNX Runtime Web pomocou Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
       - [WinUI3 aplikácia s Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)  
       - [WinUI3 Multi Model AI Powered Notes App ukážka](https://github.com/microsoft/ai-powered-notes-winui3-sample)
 - [Doladenie a integrácia vlastných modelov Phi-3 s Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
@@ -147,7 +147,7 @@ Postupujte podľa týchto krokov, aby ste začali využívať tieto zdroje:
     - [Menu založený Phi-3 Vision lokálny ONNX model pomocou Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)
 
 - Ukážky matematiky
-  - Phi-4-Mini-Flash-Reasoning-Instruct ukážky 🆕 [Matematická ukážka s Phi-4-Mini-Flash-Reasoning-Instruct](../../md/02.Application/09.Math/MathDemo.ipynb)
+  - Phi-4-Mini-Flash-Reasoning-Instruct ukážky 🆕 [Matematické demo s Phi-4-Mini-Flash-Reasoning-Instruct](../../md/02.Application/09.Math/MathDemo.ipynb)
 
 - Ukážky zvuku
   - Phi-4 ukážky 🆕
@@ -228,12 +228,12 @@ Model nájdete aj na [Hugging Face](https://huggingface.co/microsoft).
 **Playground**  
 [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
-## Zodpovedné AI
+## Zodpovedná AI
 
 Microsoft sa zaväzuje pomáhať svojim zákazníkom používať naše AI produkty zodpovedne, zdieľať naše poznatky a budovať dôveru prostredníctvom nástrojov ako Transparency Notes a Impact Assessments. Mnohé z týchto zdrojov nájdete na [https://aka.ms/RAI](https://aka.ms/RAI).  
-Prístup Microsoftu k zodpovednej AI je založený na našich princípoch AI: spravodlivosť, spoľahlivosť a bezpečnosť, súkromie a bezpečnosť, inkluzívnosť, transparentnosť a zodpovednosť.
+Prístup Microsoftu k zodpovednej AI je založený na našich princípoch AI: spravodlivosť, spoľahlivosť a bezpečnosť, ochrana súkromia a bezpečnosť, inkluzívnosť, transparentnosť a zodpovednosť.
 
-Veľké modely pre spracovanie prirodzeného jazyka, obrázkov a reči – ako tie použité v tomto príklade – môžu potenciálne vykazovať správanie, ktoré je nespravodlivé, nespoľahlivé alebo urážlivé, čo môže viesť k škodám. Pre informácie o rizikách a obmedzeniach si prosím prečítajte [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text).
+Veľké modely pre spracovanie prirodzeného jazyka, obrázkov a reči – ako tie použité v tomto príklade – môžu potenciálne vykazovať nespravodlivé, nespoľahlivé alebo urážlivé správanie, čo môže viesť k škodám. Pre informácie o rizikách a obmedzeniach si prosím prečítajte [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text).
 
 Odporúčaný prístup na zmiernenie týchto rizík je zahrnúť do vašej architektúry bezpečnostný systém, ktorý dokáže detegovať a zabrániť škodlivému správaniu. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) poskytuje nezávislú ochrannú vrstvu, ktorá dokáže detegovať škodlivý obsah vytvorený používateľmi aj AI v aplikáciách a službách. Azure AI Content Safety zahŕňa textové a obrazové API, ktoré umožňujú detekciu škodlivého materiálu. V rámci Azure AI Foundry služba Content Safety umožňuje prezerať, skúmať a vyskúšať ukážkový kód na detekciu škodlivého obsahu v rôznych modalitách. Nasledujúca [rýchla príručka](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) vás prevedie vytváraním požiadaviek na službu.
 
@@ -246,5 +246,5 @@ Svoju AI aplikáciu môžete hodnotiť vo vývojovom prostredí pomocou [Azure A
 Tento projekt môže obsahovať ochranné známky alebo logá projektov, produktov alebo služieb. Autorizované používanie ochranných známok alebo log Microsoftu podlieha a musí dodržiavať [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
 Použitie ochranných známok alebo log Microsoftu v upravených verziách tohto projektu nesmie viesť k zmätku ani naznačovať sponzorstvo Microsoftom. Použitie ochranných známok alebo log tretích strán podlieha pravidlám týchto tretích strán.
 
-**Vyhlásenie o zodpovednosti**:  
+**Zrieknutie sa zodpovednosti**:  
 Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

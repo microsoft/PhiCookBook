@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-08T05:00:49+00:00",
+  "translation_date": "2025-07-17T05:32:57+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "ja"
 }
 -->
 ## GitHub Models - 限定パブリックベータ
 
-[GitHub Models](https://github.com/marketplace/models)へようこそ！Azure AI上でホストされているAIモデルを探索できる環境が整っています。
+[GitHub Models](https://github.com/marketplace/models)へようこそ！Azure AI上でホストされているAIモデルをぜひご覧ください。
 
 ![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.ja.png)
 
@@ -37,13 +37,13 @@ GitHub Modelsで利用可能なモデルの詳細については、[GitHub Model
 
 ## はじめに
 
-すぐに実行できる基本的な例がいくつか用意されています。samplesディレクトリで見つけることができます。お好みの言語に直接ジャンプしたい場合は、以下の言語の例をご覧ください。
+すぐに実行できる基本的な例がいくつか用意されています。samplesディレクトリで見つけることができます。お好みの言語に直接ジャンプしたい場合は、以下の言語で例をご用意しています：
 
 - Python
 - JavaScript
 - cURL
 
-また、サンプルやモデルを実行するための専用のCodespaces環境も用意されています。
+また、サンプルやモデルを実行するための専用のCodespaces環境もあります。
 
 ![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.ja.png)
 
@@ -53,10 +53,10 @@ GitHub Modelsで利用可能なモデルの詳細については、[GitHub Model
 
 ## セットアップ
 
-1. パーソナルアクセストークンを作成します  
-トークンに特別な権限を付与する必要はありません。トークンはMicrosoftのサービスに送信されることに注意してください。
+1. パーソナルアクセストークンを作成する  
+トークンに権限を付与する必要はありません。トークンはMicrosoftのサービスに送信されることにご注意ください。
 
-以下のコードスニペットを使うには、環境変数としてトークンをクライアントコードのキーに設定してください。
+以下のコードスニペットを使うには、環境変数にトークンを設定してクライアントコードのキーとして使用してください。
 
 bashを使っている場合：  
 ```
@@ -74,7 +74,7 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 ## Pythonサンプル
 
 ### 依存関係のインストール  
-pipを使ってAzure AI Inference SDKをインストールします（Python 3.8以上が必要）：
+pipを使ってAzure AI Inference SDKをインストールします（Python >=3.8が必要です）：
 
 ```
 pip install azure-ai-inference
@@ -82,7 +82,7 @@ pip install azure-ai-inference
 
 ### 基本的なコードサンプルの実行
 
-このサンプルはchat completion APIへの基本的な呼び出しを示しています。GitHub AIモデルの推論エンドポイントとGitHubトークンを利用しています。呼び出しは同期的です。
+このサンプルはchat completion APIへの基本的な呼び出しを示しています。GitHub AIモデル推論エンドポイントとGitHubトークンを利用しています。呼び出しは同期的です。
 
 ```
 import os
@@ -116,7 +116,7 @@ print(response.choices[0].message.content)
 
 ### マルチターン会話の実行
 
-このサンプルはchat completion APIを使ったマルチターン会話を示しています。チャットアプリケーションでモデルを使う場合は、会話履歴を管理し最新のメッセージをモデルに送る必要があります。
+このサンプルはchat completion APIを使ったマルチターン会話を示しています。チャットアプリケーションでモデルを使う場合は、会話履歴を管理し、最新のメッセージをモデルに送る必要があります。
 
 ```
 import os
@@ -148,7 +148,7 @@ print(response.choices[0].message.content)
 
 ### 出力のストリーミング
 
-より良いユーザー体験のために、モデルの応答をストリーミングし、最初のトークンが早く表示されるようにして、長い応答を待つのを避けましょう。
+より良いユーザー体験のために、モデルの応答をストリーミングして最初のトークンを早く表示し、長い応答を待つのを避けることができます。
 
 ```
 import os
@@ -188,7 +188,7 @@ client.close()
 
 Node.jsをインストールしてください。
 
-以下のテキストをコピーして、フォルダ内にpackage.jsonとして保存してください。
+以下のテキストをコピーして、フォルダ内にpackage.jsonというファイル名で保存してください。
 
 ```
 {
@@ -201,15 +201,15 @@ Node.jsをインストールしてください。
 }
 ```
 
-注意：@azure/core-sseはチャット完了のレスポンスをストリーミングする場合のみ必要です。
+注：@azure/core-sseはチャット完了応答をストリーミングする場合のみ必要です。
 
 このフォルダでターミナルを開き、npm installを実行してください。
 
-以下のコードスニペットはそれぞれsample.jsにコピーし、node sample.jsで実行します。
+以下のコードスニペットは、それぞれsample.jsというファイルにコピーし、node sample.jsで実行してください。
 
 ### 基本的なコードサンプルの実行
 
-このサンプルはchat completion APIへの基本的な呼び出しを示しています。GitHub AIモデルの推論エンドポイントとGitHubトークンを利用しています。呼び出しは同期的です。
+このサンプルはchat completion APIへの基本的な呼び出しを示しています。GitHub AIモデル推論エンドポイントとGitHubトークンを利用しています。呼び出しは同期的です。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -250,7 +250,7 @@ main().catch((err) => {
 
 ### マルチターン会話の実行
 
-このサンプルはchat completion APIを使ったマルチターン会話を示しています。チャットアプリケーションでモデルを使う場合は、会話履歴を管理し最新のメッセージをモデルに送る必要があります。
+このサンプルはchat completion APIを使ったマルチターン会話を示しています。チャットアプリケーションでモデルを使う場合は、会話履歴を管理し、最新のメッセージをモデルに送る必要があります。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -293,7 +293,7 @@ main().catch((err) => {
 
 ### 出力のストリーミング
 
-より良いユーザー体験のために、モデルの応答をストリーミングし、最初のトークンが早く表示されるようにして、長い応答を待つのを避けましょう。
+より良いユーザー体験のために、モデルの応答をストリーミングして最初のトークンを早く表示し、長い応答を待つのを避けることができます。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -405,7 +405,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ### 出力のストリーミング
 
-エンドポイントを呼び出し、レスポンスをストリーミングする例です。
+エンドポイントを呼び出し、応答をストリーミングする例です。
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -431,17 +431,17 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.ja.png)
 
-[プレイグラウンドおよび無料API利用のレート制限](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits)は、モデルの実験やAIアプリケーションのプロトタイプ作成を支援するためのものです。これらの制限を超えて利用し、アプリケーションを本格運用するには、Azureアカウントでリソースをプロビジョニングし、GitHubのパーソナルアクセストークンではなくそちらから認証を行う必要があります。コードの他の部分を変更する必要はありません。Azure AIの無料枠を超える方法については、こちらのリンクをご参照ください。
+[プレイグラウンドと無料API利用のレート制限](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits)は、モデルを試したりAIアプリケーションのプロトタイプを作成するためのものです。これらの制限を超えて利用し、アプリケーションをスケールさせるには、Azureアカウントからリソースをプロビジョニングし、GitHubのパーソナルアクセストークンではなくそちらで認証する必要があります。コードの他の部分を変更する必要はありません。Azure AIで無料枠の制限を超える方法については、こちらのリンクをご利用ください。
 
-### 注意事項
+### 開示事項
 
-モデルと対話するときは、AIを実験していることを念頭に置いてください。内容に誤りが含まれる可能性があります。
+モデルとやり取りする際は、AIを試している段階であるため、内容に誤りが含まれる可能性があることを覚えておいてください。
 
-この機能はさまざまな制限（1分あたりのリクエスト数、1日あたりのリクエスト数、リクエストごとのトークン数、同時リクエスト数など）があり、本番用途向けではありません。
+この機能は様々な制限（1分あたりのリクエスト数、1日あたりのリクエスト数、1リクエストあたりのトークン数、同時リクエスト数など）があり、本番環境向けには設計されていません。
 
-GitHub ModelsはAzure AI Content Safetyを使用しています。これらのフィルターはGitHub Modelsの利用時にオフにできません。有料サービスでモデルを利用する場合は、要件に応じてコンテンツフィルターを設定してください。
+GitHub ModelsはAzure AI Content Safetyを使用しています。これらのフィルターはGitHub Modelsの体験の一部として無効にすることはできません。有料サービスでモデルを利用する場合は、コンテンツフィルターを要件に合わせて設定してください。
 
 このサービスはGitHubのプレリリース利用規約の対象です。
 
 **免責事項**：  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知おきください。原文の言語による文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の利用により生じたいかなる誤解や誤訳についても責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

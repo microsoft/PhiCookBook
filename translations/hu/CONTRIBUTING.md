@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:41:04+00:00",
+  "translation_date": "2025-07-16T14:44:57+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "hu"
 }
 -->
 # Hozzájárulás
 
-Ez a projekt szívesen fogad hozzájárulásokat és javaslatokat. A legtöbb hozzájáruláshoz el kell fogadnod egy Contributor License Agreement (CLA) nevű licencszerződést, amelyben kijelented, hogy jogodban áll, és ténylegesen megadod nekünk a jogot a hozzájárulásod használatára. Részletekért látogass el ide: [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+Ez a projekt szívesen fogad hozzájárulásokat és javaslatokat. A legtöbb hozzájáruláshoz el kell fogadnod egy Contributor License Agreement (CLA) nevű licencszerződést, amelyben kijelented, hogy jogodban áll, és ténylegesen megadod nekünk a hozzájárulásod használatának jogát. Részletekért látogass el ide: [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
 Amikor pull request-et nyújtasz be, egy CLA bot automatikusan megállapítja, hogy szükséges-e CLA-t benyújtanod, és ennek megfelelően jelöli meg a PR-t (például státusz ellenőrzés, komment). Egyszerűen kövesd a bot utasításait. Ezt csak egyszer kell megtenned az összes CLA-t használó repóban.
 
@@ -20,7 +20,7 @@ További információkért olvasd el a [Code of Conduct FAQ](https://opensource.
 
 ## Figyelmeztetések a hibajegyek létrehozásához
 
-Kérjük, ne nyiss GitHub hibajegyeket általános támogatási kérdések miatt, mivel a GitHub lista a funkciókérések és hibajelentések számára van fenntartva. Így könnyebben nyomon követhetjük a tényleges problémákat vagy hibákat a kódban, és a általános beszélgetéseket elkülöníthetjük a tényleges kódtól.
+Kérjük, ne nyiss GitHub hibajegyeket általános támogatási kérdések miatt, mivel a GitHub lista a funkciókérések és hibajelentések számára van fenntartva. Így könnyebben nyomon követhetjük a tényleges problémákat vagy hibákat a kódban, és a általános beszélgetést elkülöníthetjük a tényleges kódtól.
 
 ## Hogyan járulhatsz hozzá
 
@@ -44,11 +44,11 @@ Az összes dokumentum egységessége érdekében kérjük, használd az alábbi 
 
 - **URL formázás**: Minden URL-t zárj szögletes zárójelbe, majd kerek zárójelbe, szóközök nélkül. Például: `[példa](https://www.microsoft.com)`.
 
-- **Relatív linkek**: Használd a `./`-t relatív linkekhez, amelyek az aktuális könyvtárban lévő fájlokra vagy mappákra mutatnak, és a `../`-t a szülő könyvtárban lévőkre. Például: `[példa](../../elérési/út/fájl)` vagy `[példa](../../../elérési/út/fájl)`.
+- **Relatív linkek**: Használd a `./`-t a jelenlegi könyvtárban lévő fájlokra vagy mappákra mutató relatív linkekhez, és a `../`-t a szülő könyvtárban lévőkhöz. Például: `[példa](../../path/to/file)` vagy `[példa](../../../path/to/file)`.
 
-- **Nem ország-specifikus lokalizációk**: Ügyelj arra, hogy a linkjeid ne tartalmazzanak ország-specifikus lokalizációkat. Például kerüld az `/en-us/` vagy `/en/` használatát.
+- **Nem ország-specifikus lokalizációk**: Ügyelj arra, hogy a linkjeid ne tartalmazzanak ország-specifikus lokalizációkat. Például kerüld a `/en-us/` vagy `/en/` használatát.
 
-- **Képek tárolása**: Minden képet a `./imgs` mappában tárolj.
+- **Képtárolás**: Minden képet a `./imgs` mappában tárolj.
 
 - **Leíró képfájlnevek**: A képek neve legyen leíró jellegű, angol karakterekből, számokból és kötőjelekből álljon. Például: `example-image.jpg`.
 
@@ -61,19 +61,19 @@ Amikor pull request-et nyújtasz be, az alábbi munkafolyamatok futnak le a vál
 
 ### Check Broken Relative Paths
 
-Ez a munkafolyamat ellenőrzi, hogy az összes relatív elérési út helyes-e a fájljaidban.
+Ez a munkafolyamat ellenőrzi, hogy az összes relatív útvonal helyes-e a fájljaidban.
 
 1. Annak érdekében, hogy a linkjeid megfelelően működjenek, végezd el a következő lépéseket VS Code-ban:
     - Vidd az egeret bármelyik link fölé a fájljaidban.
     - Nyomd meg a **Ctrl + Klikk** kombinációt a link megnyitásához.
     - Ha a link helyileg nem működik, az elindítja a munkafolyamatot, és a GitHubon sem fog működni.
 
-1. A probléma javításához használd a VS Code által javasolt elérési útvonalakat:
+1. A probléma javításához használd a VS Code által javasolt útvonalakat:
     - Írd be a `./` vagy `../` karaktereket.
     - A VS Code felajánlja a választható lehetőségeket az általad beírt alapján.
-    - Kövesd az elérési utat úgy, hogy rákattintasz a kívánt fájlra vagy mappára, hogy biztosan helyes legyen az útvonal.
+    - Kövesd az útvonalat úgy, hogy rákattintasz a kívánt fájlra vagy mappára, hogy biztosan helyes legyen az útvonal.
 
-Miután hozzáadtad a helyes relatív elérési utat, mentsd el és push-old a változtatásokat.
+Miután hozzáadtad a helyes relatív útvonalat, mentsd el és push-old a változtatásokat.
 
 ### Check URLs Don't Have Locale
 
@@ -81,14 +81,14 @@ Ez a munkafolyamat ellenőrzi, hogy a webes URL-ek nem tartalmaznak ország-spec
 
 1. Az URL-ek ellenőrzéséhez végezd el a következőket:
 
-    - Ellenőrizd, hogy nincs-e `/en-us/`, `/en/` vagy bármilyen más nyelvi lokalizáció az URL-ekben.
+    - Nézd meg, hogy az URL-ekben nincs-e olyan szöveg, mint `/en-us/`, `/en/` vagy bármilyen más nyelvi lokalizáció.
     - Ha ezek nem szerepelnek az URL-ekben, akkor átmentél az ellenőrzésen.
 
 1. A probléma javításához végezd el a következőket:
-    - Nyisd meg a munkafolyamat által kiemelt fájlt.
-    - Távolítsd el az ország-specifikus lokalizációt az URL-ekből.
+    - Nyisd meg a munkafolyamat által kiemelt fájlútvonalat.
+    - Távolítsd el az ország lokalizációját az URL-ekből.
 
-Miután eltávolítottad a lokalizációt, mentsd el és push-old a változtatásokat.
+Miután eltávolítottad az ország lokalizációját, mentsd el és push-old a változtatásokat.
 
 ### Check Broken Urls
 
@@ -112,4 +112,4 @@ Miután javítottad az URL-eket, mentsd el és push-old a változtatásokat.
 > - **Átmeneti szerverproblémák:** Időszakos szerverleállások vagy karbantartások miatt az URL ideiglenesen nem elérhető a validálás során.
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

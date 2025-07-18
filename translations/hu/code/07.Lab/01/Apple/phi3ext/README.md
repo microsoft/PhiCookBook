@@ -2,47 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T05:05:12+00:00",
+  "translation_date": "2025-07-16T16:56:03+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "hu"
 }
 -->
 # phi3ext README
 
-Ez a te "phi3ext" bővítményed README-je. Rövid leírás után javasoljuk, hogy tartalmazza a következő részeket.
+Ez a te "phi3ext" bővítményed README fájlja. A rövid leírás után javasoljuk, hogy tartalmazza a következő szakaszokat.
 
 ## Features
 
-Írd le a bővítményed konkrét funkcióit, beleértve a bővítmény működését bemutató képernyőképeket. A képek elérési útja ehhez a README fájlhoz képest relatív.
+Írd le a bővítményed konkrét funkcióit, beleértve a bővítmény működéséről készült képernyőképeket. A képek elérési útja ehhez a README fájlhoz képest értendő.
 
-Például, ha a bővítményed projektmappájában van egy images almappa:
+Például, ha a bővítmény projekt munkaterületén belül van egy képek almappa:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tipp: Sok népszerű bővítmény animációkat használ. Ez egy remek módja annak, hogy bemutasd a bővítményedet! Rövid, fókuszált animációkat ajánlunk, hogy könnyen követhető legyen.
+> [!TIP] Sok népszerű bővítmény animációkat használ. Ez egy remek módja annak, hogy bemutasd a bővítményedet! Rövid, fókuszált animációkat ajánlunk, amelyek könnyen követhetők.
 
 ## Requirements
 
-Ha vannak bármilyen követelmények vagy függőségek, adj meg egy részt, amely leírja ezeket, valamint azok telepítésének és beállításának módját.
+Ha vannak követelményeid vagy függőségeid, adj hozzá egy szakaszt, amely leírja ezeket, valamint azok telepítésének és beállításának módját.
 
 ## Extension Settings
 
-Ha a bővítményed bármilyen VS Code beállítást ad hozzá `contributes.configuration` bővítési pont segítségével, akkor azt is tüntesd fel.
+Ha a bővítményed `contributes.configuration` bővítési ponton keresztül hozzáad bármilyen VS Code beállítást, azt is tüntesd fel.
 
 Például:
 
 Ez a bővítmény a következő beállításokat adja hozzá:
 
-* `myExtension.enable`: A bővítmény engedélyezése vagy letiltása.
-* `myExtension.thing`: Állítsd `blah`-ra, hogy valamit végrehajtson.
+* `myExtension.enable`: Engedélyezi vagy letiltja a bővítményt.
+* `myExtension.thing`: Állítsd `blah` értékre, hogy valamit csináljon.
 
 ## Known Issues
 
-A már ismert problémák feltüntetése segíthet csökkenteni, hogy a felhasználók ismételten megnyissák ugyanazokat a hibákat.
+Az ismert problémák feltüntetése segít csökkenteni, hogy a felhasználók ismételten ugyanazokat a hibákat jelentsék.
 
 ## Release Notes
 
-A felhasználók értékelni fogják, ha frissítéskor mellékelve van a kiadási megjegyzés.
+A felhasználók értékelik, ha a bővítmény frissítésekor megadod a kiadási megjegyzéseket.
 
 ### 1.0.0
 
@@ -50,11 +50,11 @@ Első kiadás...
 
 ### 1.0.1
 
-Javítottuk a # számú problémát.
+Javítva a # problémája.
 
 ### 1.1.0
 
-Hozzáadtuk az X, Y és Z funkciókat.
+Hozzáadva az X, Y és Z funkciók.
 
 ---
 
@@ -66,11 +66,11 @@ Győződj meg róla, hogy elolvastad a bővítmény útmutatót, és követed a 
 
 ## Working with Markdown
 
-A README-d megírásához használhatod a Visual Studio Code-ot. Íme néhány hasznos szerkesztőbillentyű:
+A README fájlodat Visual Studio Code-ban is írhatod. Íme néhány hasznos szerkesztő gyorsbillentyű:
 
 * Szerkesztő megosztása (`Cmd+\` macOS-en vagy `Ctrl+\` Windows és Linux alatt).
 * Előnézet váltása (`Shift+Cmd+V` macOS-en vagy `Shift+Ctrl+V` Windows és Linux alatt).
-* `Ctrl+Space` megnyomásával (Windows, Linux, macOS) megtekintheted a Markdown kódrészletek listáját.
+* Nyomd meg a `Ctrl+Space`-t (Windows, Linux, macOS) a Markdown kódrészletek listájának megtekintéséhez.
 
 ## For more information
 
@@ -79,5 +79,5 @@ A README-d megírásához használhatod a Visual Studio Code-ot. Íme néhány h
 
 **Jó szórakozást!**
 
-**Nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

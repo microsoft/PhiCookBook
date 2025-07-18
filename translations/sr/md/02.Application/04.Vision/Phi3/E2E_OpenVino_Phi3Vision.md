@@ -2,45 +2,45 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-05-09T20:02:44+00:00",
+  "translation_date": "2025-07-17T05:05:54+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
   "language_code": "sr"
 }
 -->
-Ovaj demo prikazuje kako koristiti unapred istreniran model za generisanje Python koda na osnovu slike i tekstualnog upita.
+Овај демо приказује како користити унапред обучени модел за генерисање Python кода на основу слике и текстуалног упита.
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)
 
-Evo objašnjenja korak po korak:
+Ево корак по корак објашњења:
 
-1. **Uvozi i podešavanje**:
-   - Potrebne biblioteke i moduli se uvoze, uključujući `requests`, `PIL` za obradu slika, i `transformers` za rukovanje modelom i procesiranje.
+1. **Увоз и подешавање**:
+   - Увезене су потребне библиотеке и модули, укључујући `requests`, `PIL` за обраду слика и `transformers` за рад са моделом и обрадом.
 
-2. **Učitavanje i prikaz slike**:
-   - Slika (`demo.png`) se otvara koristeći biblioteku `PIL` i prikazuje.
+2. **Учитавање и приказ слике**:
+   - Отвара се слика (`demo.png`) помоћу `PIL` библиотеке и приказује се.
 
-3. **Definisanje upita**:
-   - Kreira se poruka koja uključuje sliku i zahtev za generisanjem Python koda za obradu slike i njeno čuvanje koristeći `plt` (matplotlib).
+3. **Дефинисање упита**:
+   - Креира се порука која укључује слику и захтев за генерисање Python кода који обрађује слику и чува је користећи `plt` (matplotlib).
 
-4. **Učitavanje procesora**:
-   - `AutoProcessor` se učitava iz unapred istreniranog modela koji je smešten u direktorijumu `out_dir`. Ovaj procesor obrađuje tekstualne i slikovne ulaze.
+4. **Учитавање процесора**:
+   - `AutoProcessor` се учитава из унапред обученог модела који се налази у директоријуму `out_dir`. Овај процесор ће обрађивати текстуалне и сликовне уносе.
 
-5. **Kreiranje upita**:
-   - Metoda `apply_chat_template` se koristi za formatiranje poruke u upit pogodan za model.
+5. **Креирање упита**:
+   - Метод `apply_chat_template` се користи за форматирање поруке у упит погодан за модел.
 
-6. **Obrada ulaza**:
-   - Upit i slika se obrađuju u tensore koje model može razumeti.
+6. **Обрада уноса**:
+   - Упит и слика се претварају у тензоре које модел може да разуме.
 
-7. **Podešavanje argumenata za generisanje**:
-   - Definišu se argumenti za proces generisanja modela, uključujući maksimalan broj novih tokena koje treba generisati i da li se izlaz treba uzorkovati.
+7. **Подешавање аргумената за генерисање**:
+   - Дефинишу се аргументи за процес генерисања модела, укључујући максималан број нових токена и да ли ће се користити узорковање излаза.
 
-8. **Generisanje koda**:
-   - Model generiše Python kod na osnovu ulaza i argumenata za generisanje. `TextStreamer` se koristi za obradu izlaza, preskačući upit i specijalne tokene.
+8. **Генерисање кода**:
+   - Модел генерише Python код на основу уноса и аргумената за генерисање. `TextStreamer` се користи за обраду излаза, прескачући упит и специјалне токене.
 
-9. **Izlaz**:
-   - Generisani kod se štampa, koji bi trebalo da sadrži Python kod za obradu slike i njeno čuvanje kako je navedeno u upitu.
+9. **Излаз**:
+   - Исписује се генерисани код, који би требало да садржи Python код за обраду слике и њено чување као што је наведено у упиту.
 
-Ovaj demo pokazuje kako iskoristiti unapred istreniran model koristeći OpenVino za dinamičko generisanje koda na osnovu korisničkog unosa i slika.
+Овај демо показује како искористити унапред обучени модел користећи OpenVino за динамичко генерисање кода на основу корисничког уноса и слика.
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

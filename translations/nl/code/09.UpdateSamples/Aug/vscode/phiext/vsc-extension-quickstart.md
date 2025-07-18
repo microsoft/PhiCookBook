@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-05-09T05:39:09+00:00",
+  "translation_date": "2025-07-16T17:38:08+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
   "language_code": "nl"
 }
 -->
-# Welkom bij je VS Code Extension
+# Welkom bij je VS Code-extensie
 
 ## Wat zit er in de map
 
 * Deze map bevat alle bestanden die nodig zijn voor je extensie.
-* `package.json` - dit is het manifestbestand waarin je je extensie en command declareert.
-  * De voorbeeldplugin registreert een command en definieert de titel en de naam van het command. Met deze informatie kan VS Code het command tonen in de command palette. Het hoeft de plugin nog niet te laden.
-* `src/extension.ts` - dit is het hoofdbestand waar je de implementatie van je command levert.
-  * Het bestand exporteert één functie, `activate`, die wordt aangeroepen de allereerste keer dat je extensie wordt geactiveerd (in dit geval door het uitvoeren van het command). Binnen de `activate` functie roepen we `registerCommand` aan.
-  * We geven de functie met de implementatie van het command als tweede parameter door aan `registerCommand`.
+* `package.json` - dit is het manifestbestand waarin je je extensie en commando declareert.
+  * De voorbeeldplugin registreert een commando en definieert de titel en de naam van het commando. Met deze informatie kan VS Code het commando tonen in de commandopalet. De plugin hoeft nog niet geladen te worden.
+* `src/extension.ts` - dit is het hoofdbestand waarin je de implementatie van je commando schrijft.
+  * Het bestand exporteert één functie, `activate`, die wordt aangeroepen de allereerste keer dat je extensie wordt geactiveerd (in dit geval door het uitvoeren van het commando). Binnen de `activate` functie roepen we `registerCommand` aan.
+  * We geven de functie met de implementatie van het commando als tweede parameter door aan `registerCommand`.
 
 ## Installatie
 
@@ -25,14 +25,14 @@ CO_OP_TRANSLATOR_METADATA:
 ## Direct aan de slag
 
 * Druk op `F5` om een nieuw venster te openen met je extensie geladen.
-* Voer je command uit via de command palette door (`Ctrl+Shift+P` of `Cmd+Shift+P` op Mac) te drukken en `Hello World` te typen.
+* Voer je commando uit via de commandopalet door (`Ctrl+Shift+P` of `Cmd+Shift+P` op Mac) te drukken en `Hello World` te typen.
 * Zet breakpoints in je code in `src/extension.ts` om je extensie te debuggen.
 * Bekijk de output van je extensie in de debugconsole.
 
 ## Wijzigingen aanbrengen
 
 * Je kunt de extensie opnieuw starten vanuit de debugwerkbalk nadat je code in `src/extension.ts` hebt aangepast.
-* Je kunt ook het VS Code-venster herladen (`Ctrl+R` of `Cmd+R` op Mac) met je extensie om je wijzigingen te laden.
+* Je kunt ook het VS Code-venster met je extensie herladen (`Ctrl+R` of `Cmd+R` op Mac) om je wijzigingen te laden.
 
 ## Verken de API
 
@@ -41,11 +41,11 @@ CO_OP_TRANSLATOR_METADATA:
 ## Tests uitvoeren
 
 * Installeer de [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Voer de "watch" taak uit via de **Tasks: Run Task** command. Zorg dat deze actief is, anders worden tests mogelijk niet gevonden.
-* Open het Testing-venster via de activity bar en klik op de knop "Run Test", of gebruik de sneltoets `Ctrl/Cmd + ; A`
-* Bekijk de testresultaten in het Test Results-venster.
+* Voer de "watch" taak uit via de **Tasks: Run Task** opdracht. Zorg dat deze actief is, anders worden tests mogelijk niet gevonden.
+* Open de Testing-weergave via de activiteitenbalk en klik op de knop "Run Test", of gebruik de sneltoets `Ctrl/Cmd + ; A`
+* Bekijk de testresultaten in de Test Results-weergave.
 * Breng wijzigingen aan in `src/test/extension.test.ts` of maak nieuwe testbestanden aan in de `test` map.
-  * De meegeleverde test runner kijkt alleen naar bestanden die voldoen aan het naamgevingspatroon `**.test.ts`.
+  * De meegeleverde test runner kijkt alleen naar bestanden die voldoen aan het naam patroon `**.test.ts`.
   * Je kunt mappen aanmaken binnen de `test` map om je tests op elke gewenste manier te organiseren.
 
 ## Verder gaan
@@ -55,4 +55,4 @@ CO_OP_TRANSLATOR_METADATA:
 * Automatiseer builds door [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration) in te stellen.
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het oorspronkelijke document in de oorspronkelijke taal dient als de gezaghebbende bron te worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

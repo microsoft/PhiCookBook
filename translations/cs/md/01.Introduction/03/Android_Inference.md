@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-05-09T10:50:53+00:00",
+  "translation_date": "2025-07-16T20:15:39+00:00",
   "source_file": "md/01.Introduction/03/Android_Inference.md",
   "language_code": "cs"
 }
 -->
-# **Inference Phi-3 in Android**
+# **Inference Phi-3 na Androidu**
 
-Vamos a explorar cómo puedes realizar inferencias con Phi-3-mini en dispositivos Android. Phi-3-mini es una nueva serie de modelos de Microsoft que permite desplegar Large Language Models (LLMs) en dispositivos edge y dispositivos IoT.
+Pojďme se podívat, jak můžete provádět inference s Phi-3-mini na zařízeních s Androidem. Phi-3-mini je nová řada modelů od Microsoftu, která umožňuje nasazení velkých jazykových modelů (LLM) na edge zařízeních a IoT zařízeních.
 
-## Semantic Kernel y la Inferencia
+## Semantic Kernel a inference
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel) es un framework de aplicaciones que te permite crear aplicaciones compatibles con Azure OpenAI Service, modelos OpenAI e incluso modelos locales. Si eres nuevo en Semantic Kernel, te recomendamos revisar el [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
+[Semantic Kernel](https://github.com/microsoft/semantic-kernel) je aplikační framework, který vám umožní vytvářet aplikace kompatibilní s Azure OpenAI Service, OpenAI modely a dokonce i s lokálními modely. Pokud jste se Semantic Kernelem teprve začínáte, doporučujeme se podívat na [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
 
-### Para Acceder a Phi-3-mini Usando Semantic Kernel
+### Jak přistupovat k Phi-3-mini pomocí Semantic Kernel
 
-Puedes combinarlo con el Hugging Face Connector en Semantic Kernel. Consulta este [Código de Ejemplo](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
+Můžete ho zkombinovat s Hugging Face Connector v Semantic Kernel. Podívejte se na tento [ukázkový kód](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
 
-Por defecto, se corresponde con el ID del modelo en Hugging Face. Sin embargo, también puedes conectarte a un servidor de modelo Phi-3-mini construido localmente.
+Ve výchozím nastavení odpovídá model ID na Hugging Face. Nicméně se můžete také připojit k lokálně postavenému serveru modelu Phi-3-mini.
 
-### Llamar Modelos Cuantizados con Ollama o LlamaEdge
+### Volání kvantovaných modelů pomocí Ollama nebo LlamaEdge
 
-Muchos usuarios prefieren usar modelos cuantizados para ejecutar modelos localmente. [Ollama](https://ollama.com/) y [LlamaEdge](https://llamaedge.com) permiten a usuarios individuales llamar a diferentes modelos cuantizados:
+Mnoho uživatelů dává přednost používání kvantovaných modelů pro lokální běh modelů. [Ollama](https://ollama.com/) a [LlamaEdge](https://llamaedge.com) umožňují jednotlivým uživatelům volat různé kvantované modely:
 
 #### Ollama
 
-Puedes ejecutar directamente `ollama run Phi-3` o configurarlo sin conexión creando un `Modelfile` con la ruta a tu archivo `.gguf`.
+Můžete přímo spustit `ollama run Phi-3` nebo jej nakonfigurovat offline vytvořením `Modelfile` s cestou k vašemu `.gguf` souboru.
 
 ```gguf
 FROM {Add your gguf file path}
@@ -36,19 +36,19 @@ PARAMETER stop <|end|>
 PARAMETER num_ctx 4096
 ```
 
-[Código de Ejemplo](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
+[Ukázkový kód](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
 
 #### LlamaEdge
 
-Si quieres usar archivos `.gguf` en la nube y en dispositivos edge simultáneamente, LlamaEdge es una excelente opción. Puedes consultar este [código de ejemplo](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) para comenzar.
+Pokud chcete používat `.gguf` soubory současně v cloudu i na edge zařízeních, LlamaEdge je skvělá volba. Pro začátek se můžete podívat na tento [ukázkový kód](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo).
 
-### Instalar y Ejecutar en Teléfonos Android
+### Instalace a spuštění na telefonech s Androidem
 
-1. **Descarga la app MLC Chat** (Gratis) para teléfonos Android.  
-2. Descarga el archivo APK (148MB) e instálalo en tu dispositivo.  
-3. Abre la app MLC Chat. Verás una lista de modelos de IA, incluyendo Phi-3-mini.
+1. **Stáhněte si aplikaci MLC Chat** (zdarma) pro Android telefony.  
+2. Stáhněte APK soubor (148MB) a nainstalujte jej do svého zařízení.  
+3. Spusťte aplikaci MLC Chat. Uvidíte seznam AI modelů, včetně Phi-3-mini.
 
-En resumen, Phi-3-mini abre posibilidades emocionantes para la IA generativa en dispositivos edge, y puedes comenzar a explorar sus capacidades en Android.
+Shrnuto, Phi-3-mini otevírá vzrušující možnosti pro generativní AI na edge zařízeních a můžete začít objevovat jeho schopnosti na Androidu.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

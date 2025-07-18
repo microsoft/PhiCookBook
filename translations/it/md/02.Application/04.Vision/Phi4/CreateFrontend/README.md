@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-05-09T20:03:31+00:00",
+  "translation_date": "2025-07-17T05:08:13+00:00",
   "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "it"
 }
 -->
-## **Usa Phi-4-multimodal para leer imágenes y generar código**
+## **Usa Phi-4-multimodal per leggere immagini e generare codice**
 
-Phi-4-multimodal tiene potentes capacidades para leer imágenes. Vamos a intentar usar Python para implementar las siguientes funciones. La imagen es una página de ChatGPT.
+Phi-4-multimodal ha potenti capacità di lettura delle immagini. Proviamo a usare Python per implementare le seguenti funzioni. L'immagine è una pagina di ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.it.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.it.png)
 
-### **Código de ejemplo**
+### **Codice di esempio**
 
 
 
@@ -68,4 +68,4 @@ print(response)
 ```
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua madre deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

@@ -2,44 +2,44 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-05-09T14:15:24+00:00",
+  "translation_date": "2025-07-16T22:11:04+00:00",
   "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "ms"
 }
 -->
-# **كمية عائلة Phi باستخدام llama.cpp**
+# **Pengkuantitian Keluarga Phi menggunakan llama.cpp**
 
-## **ما هو llama.cpp**
+## **Apa itu llama.cpp**
 
-llama.cpp هو مكتبة برمجية مفتوحة المصدر مكتوبة بشكل رئيسي بلغة C++ تقوم بالتنفيذ على نماذج اللغة الكبيرة المختلفة (LLMs)، مثل Llama. الهدف الأساسي منها هو توفير أداء متقدم لتنفيذ LLM عبر مجموعة واسعة من الأجهزة مع إعداد بسيط. بالإضافة إلى ذلك، تتوفر روابط بايثون لهذه المكتبة، تقدم واجهة برمجة تطبيقات عالية المستوى لإكمال النص وخادم ويب متوافق مع OpenAI.
+llama.cpp adalah perpustakaan perisian sumber terbuka yang ditulis terutamanya dalam C++ yang menjalankan inferens pada pelbagai Model Bahasa Besar (LLM), seperti Llama. Matlamat utamanya adalah untuk menyediakan prestasi terkini bagi inferens LLM merentasi pelbagai jenis perkakasan dengan persediaan yang minimum. Selain itu, terdapat juga sambungan Python untuk perpustakaan ini, yang menawarkan API tahap tinggi untuk pelengkap teks dan pelayan web yang serasi dengan OpenAI.
 
-الهدف الرئيسي من llama.cpp هو تمكين تنفيذ LLM بأقل إعداد ممكن وأداء متقدم على مجموعة متنوعة من الأجهزة - محليًا وفي السحابة.
+Matlamat utama llama.cpp adalah untuk membolehkan inferens LLM dengan persediaan minimum dan prestasi terkini pada pelbagai jenis perkakasan - secara tempatan dan di awan.
 
-- تنفيذ بسيط بلغة C/C++ بدون أي تبعيات
-- دعم متميز لمعالجات Apple silicon - محسن باستخدام ARM NEON، Accelerate و Metal frameworks
-- دعم AVX، AVX2 و AVX512 لمعمارية x86
-- كميات صحيحة بدقة 1.5-بت، 2-بت، 3-بت، 4-بت، 5-بت، 6-بت، و8-بت لتسريع التنفيذ وتقليل استخدام الذاكرة
-- نوى CUDA مخصصة لتشغيل LLMs على بطاقات NVIDIA (دعم بطاقات AMD عبر HIP)
-- دعم خلفيات Vulkan و SYCL
-- تنفيذ هجين CPU+GPU لتسريع جزئي للنماذج الأكبر من سعة VRAM الكلية
+- Pelaksanaan C/C++ tulen tanpa sebarang kebergantungan
+- Apple silicon diberi keutamaan - dioptimumkan melalui ARM NEON, Accelerate dan rangka kerja Metal
+- Sokongan AVX, AVX2 dan AVX512 untuk seni bina x86
+- Pengkuantitian integer 1.5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit, dan 8-bit untuk inferens lebih pantas dan penggunaan memori yang dikurangkan
+- Kernel CUDA tersuai untuk menjalankan LLM pada GPU NVIDIA (sokongan untuk GPU AMD melalui HIP)
+- Sokongan backend Vulkan dan SYCL
+- Inferens hibrid CPU+GPU untuk mempercepatkan sebahagian model yang lebih besar daripada kapasiti VRAM keseluruhan
 
-## **كمية Phi-3.5 باستخدام llama.cpp**
+## **Pengkuantitian Phi-3.5 dengan llama.cpp**
 
-يمكن تنفيذ كمية نموذج Phi-3.5-Instruct باستخدام llama.cpp، لكن نماذج Phi-3.5-Vision و Phi-3.5-MoE غير مدعومة حتى الآن. الصيغة التي يحولها llama.cpp هي gguf، وهي أيضًا صيغة الكمية الأكثر استخدامًا.
+Model Phi-3.5-Instruct boleh dikuantitikan menggunakan llama.cpp, tetapi Phi-3.5-Vision dan Phi-3.5-MoE belum disokong lagi. Format yang ditukar oleh llama.cpp adalah gguf, yang juga merupakan format pengkuantitian yang paling banyak digunakan.
 
-هناك عدد كبير من النماذج بكميات صيغة GGUF على Hugging face. تعتمد AI Foundry و Ollama و LlamaEdge على llama.cpp، لذلك تُستخدم نماذج GGUF بشكل متكرر.
+Terdapat banyak model dalam format GGUF yang dikuantitikan di Hugging Face. AI Foundry, Ollama, dan LlamaEdge bergantung pada llama.cpp, jadi model GGUF juga sering digunakan.
 
-### **ما هو GGUF**
+### **Apa itu GGUF**
 
-GGUF هو صيغة ثنائية مصممة للتحميل والحفظ السريع للنماذج، مما يجعلها فعالة جدًا لأغراض التنفيذ. GGUF مصممة للاستخدام مع GGML وغيرها من المحركات. تم تطوير GGUF بواسطة @ggerganov الذي هو أيضًا مطور llama.cpp، إطار عمل شهير لتنفيذ LLM بلغة C/C++. يمكن تحويل النماذج التي تم تطويرها أولًا في أطر مثل PyTorch إلى صيغة GGUF لاستخدامها مع تلك المحركات.
+GGUF adalah format binari yang dioptimumkan untuk pemuatan dan penyimpanan model yang pantas, menjadikannya sangat cekap untuk tujuan inferens. GGUF direka untuk digunakan dengan GGML dan pelaksana lain. GGUF dibangunkan oleh @ggerganov yang juga merupakan pembangun llama.cpp, rangka kerja inferens LLM C/C++ yang popular. Model yang dibangunkan pada awalnya dalam rangka kerja seperti PyTorch boleh ditukar ke format GGUF untuk digunakan dengan enjin tersebut.
 
-### **ONNX مقابل GGUF**
+### **ONNX vs GGUF**
 
-ONNX هي صيغة تقليدية لتعلم الآلة / التعلم العميق، وتحظى بدعم جيد في أطر الذكاء الاصطناعي المختلفة ولها سيناريوهات استخدام جيدة في الأجهزة الطرفية. أما GGUF، فهي مبنية على llama.cpp ويمكن اعتبارها نتاج عصر GenAI. الاستخدامات متشابهة. إذا كنت تريد أداءً أفضل في الأجهزة المدمجة وطبقات التطبيقات، قد يكون ONNX خيارك. إذا كنت تستخدم إطار العمل والتقنيات المشتقة من llama.cpp، فقد تكون GGUF أفضل.
+ONNX adalah format pembelajaran mesin/pembelajaran mendalam tradisional, yang disokong dengan baik dalam pelbagai Rangka Kerja AI dan mempunyai senario penggunaan yang baik pada peranti tepi. Manakala GGUF, ia berasaskan llama.cpp dan boleh dikatakan dihasilkan dalam era GenAI. Kedua-duanya mempunyai kegunaan yang serupa. Jika anda mahukan prestasi lebih baik pada perkakasan terbenam dan lapisan aplikasi, ONNX mungkin pilihan anda. Jika anda menggunakan rangka kerja dan teknologi terbitan dari llama.cpp, maka GGUF mungkin lebih sesuai.
 
-### **كمية Phi-3.5-Instruct باستخدام llama.cpp**
+### **Pengkuantitian Phi-3.5-Instruct menggunakan llama.cpp**
 
-**1. إعداد البيئة**
+**1. Konfigurasi Persekitaran**
 
 
 ```bash
@@ -53,9 +53,9 @@ make -j8
 ```
 
 
-**2. الكمية**
+**2. Pengkuantitian**
 
-استخدام llama.cpp لتحويل Phi-3.5-Instruct إلى FP16 GGUF
+Menggunakan llama.cpp untuk menukar Phi-3.5-Instruct ke FP16 GGUF
 
 
 ```bash
@@ -64,7 +64,7 @@ make -j8
 
 ```
 
-كمية Phi-3.5 إلى INT4
+Pengkuantitian Phi-3.5 ke INT4
 
 
 ```bash
@@ -74,9 +74,9 @@ make -j8
 ```
 
 
-**3. الاختبار**
+**3. Ujian**
 
-تثبيت llama-cpp-python
+Pasang llama-cpp-python
 
 
 ```bash
@@ -85,9 +85,9 @@ pip install llama-cpp-python -U
 
 ```
 
-***ملاحظة*** 
+***Nota*** 
 
-إذا كنت تستخدم Apple Silicon، يرجى تثبيت llama-cpp-python بهذه الطريقة
+Jika anda menggunakan Apple Silicon, sila pasang llama-cpp-python seperti berikut
 
 
 ```bash
@@ -96,7 +96,7 @@ CMAKE_ARGS="-DLLAMA_METAL=on" pip install llama-cpp-python -U
 
 ```
 
-الاختبار
+Ujian 
 
 
 ```bash
@@ -107,11 +107,11 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 
 
-## **الموارد**
+## **Sumber**
 
-1. تعرف أكثر على llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
-2. تعرف أكثر على onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
-3. تعرف أكثر على GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
+1. Ketahui lebih lanjut tentang llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+2. Ketahui lebih lanjut tentang onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+3. Ketahui lebih lanjut tentang GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

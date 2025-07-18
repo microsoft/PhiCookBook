@@ -2,111 +2,111 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-05-09T19:58:41+00:00",
+  "translation_date": "2025-07-17T04:59:12+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "sr"
 }
 -->
-### Primer Scenarija
+### Пример сценарија
 
-Zamislite da imate sliku (`demo.png`) i želite da generišete Python kod koji obrađuje tu sliku i sačuva novu verziju (`phi-3-vision.jpg`).
+Замислите да имате слику (`demo.png`) и желите да генеришете Python код који обрађује ту слику и сачува нову верзију (`phi-3-vision.jpg`).
 
-Gore navedeni kod automatizuje ovaj proces tako što:
+Горњи код аутоматизује овај процес тако што:
 
-1. Podešava okruženje i potrebne konfiguracije.
-2. Kreira prompt koji modelu daje instrukcije da generiše neophodan Python kod.
-3. Šalje prompt modelu i prikuplja generisani kod.
-4. Izvlači i izvršava generisani kod.
-5. Prikazuje originalne i obrađene slike.
+1. Подешава окружење и неопходне конфигурације.
+2. Креира упит који моделу даје инструкције да генерише потребан Python код.
+3. Слање упита моделу и прикупљање генерисаног кода.
+4. Извлачи и покреће генерисани код.
+5. Приказује оригиналну и обрађену слику.
 
-Ovaj pristup koristi moć veštačke inteligencije da automatizuje zadatke obrade slika, čineći ih lakšim i bržim za postizanje željenih rezultata.
+Овај приступ користи снагу вештачке интелигенције да аутоматизује задатке обраде слика, чинећи их једноставнијим и бржим за извођење.
 
 [Sample Code Solution](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
 
-Hajde da korak po korak objasnimo šta ceo kod radi:
+Хајде да корак по корак разложимо шта цео код ради:
 
-1. **Instalirajte Potreban Paket**:
+1. **Инсталирање потребног пакета**:
     ```python
     !pip install langchain_nvidia_ai_endpoints -U
     ```
-    Ova komanda instalira paket `langchain_nvidia_ai_endpoints`, osiguravajući da imate najnoviju verziju.
+    Ова команда инсталира пакет `langchain_nvidia_ai_endpoints`, осигуравајући да је најновија верзија.
 
-2. **Uvezi Potrebne Module**:
+2. **Увоз неопходних модула**:
     ```python
     from langchain_nvidia_ai_endpoints import ChatNVIDIA
     import getpass
     import os
     import base64
     ```
-    Ovi importi donose potrebne module za interakciju sa NVIDIA AI endpoint-ima, sigurno rukovanje lozinkama, rad sa operativnim sistemom i enkodiranje/dekodiranje podataka u base64 formatu.
+    Ови увози доносе потребне модуле за интеракцију са NVIDIA AI endpoint-има, безбедно руковање лозинкама, рад са оперативним системом и кодирање/декодирање података у base64 формату.
 
-3. **Postavite API Ključ**:
+3. **Подешавање API кључа**:
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
     ```
-    Ovaj kod proverava da li je environment varijabla `NVIDIA_API_KEY` postavljena. Ako nije, traži od korisnika da unese svoj API ključ na siguran način.
+    Овај код проверава да ли је постављена `NVIDIA_API_KEY` променљива окружења. Ако није, тражи од корисника да безбедно унесе свој API кључ.
 
-4. **Definišite Model i Putanju do Slike**:
+4. **Дефинисање модела и путање до слике**:
     ```python
     model = 'microsoft/phi-3-vision-128k-instruct'
     chat = ChatNVIDIA(model=model)
     img_path = './imgs/demo.png'
     ```
-    Ovim se postavlja model koji će se koristiti, kreira instanca `ChatNVIDIA` sa zadatim modelom i definiše putanja do fajla sa slikom.
+    Овде се подешава модел који ће се користити, креира инстанца `ChatNVIDIA` са наведеним моделом и дефинише путања до слике.
 
-5. **Kreirajte Tekstualni Prompt**:
+5. **Креирање текстуалног упита**:
     ```python
     text = "Please create Python code for image, and use plt to save the new picture under imgs/ and name it phi-3-vision.jpg."
     ```
-    Ovim se definiše tekstualni prompt koji modelu daje instrukcije da generiše Python kod za obradu slike.
+    Овде се дефинише текстуални упит који моделу даје инструкције да генерише Python код за обраду слике.
 
-6. **Kodirajte Sliku u Base64**:
+6. **Кодирање слике у Base64**:
     ```python
     with open(img_path, "rb") as f:
         image_b64 = base64.b64encode(f.read()).decode()
     image = f'<img src="data:image/png;base64,{image_b64}" />'
     ```
-    Ovaj kod učitava fajl slike, kodira ga u base64 i kreira HTML image tag sa enkodiranim podacima.
+    Овај код чита слику, кодира је у base64 и креира HTML таг за слику са кодираним подацима.
 
-7. **Kombinujte Tekst i Sliku u Prompt**:
+7. **Комбинација текста и слике у упит**:
     ```python
     prompt = f"{text} {image}"
     ```
-    Ovim se tekstualni prompt i HTML image tag kombinuju u jedan string.
+    Овде се текстуални упит и HTML таг слике комбинују у један низ.
 
-8. **Generišite Kod Koristeći ChatNVIDIA**:
+8. **Генерисање кода коришћењем ChatNVIDIA**:
     ```python
     code = ""
     for chunk in chat.stream(prompt):
         print(chunk.content, end="")
         code += chunk.content
     ```
-    Ovaj kod šalje prompt u `ChatNVIDIA` model and collects the generated code in chunks, printing and appending each chunk to the `code` string.
+    Овај код шаље упит моделу `ChatNVIDIA` и прикупља генерисани код у деловима, штампајући и додајући сваки део у променљиву `code`.
 
-9. **Izvucite Python Kod iz Generisanog Sadržaja**:
+9. **Извлачење Python кода из генерисаног садржаја**:
     ```python
     begin = code.index('```python') + 9
     code = code[begin:]
     end = code.index('```')
     code = code[:end]
     ```
-    Ovim se iz generisanog sadržaja izvlači stvarni Python kod uklanjanjem markdown formata.
+    Овде се из генерисаног садржаја уклања markdown форматирање и извлачи стварни Python код.
 
-10. **Pokrenite Generisani Kod**:
+10. **Покретање генерисаног кода**:
     ```python
     import subprocess
     result = subprocess.run(["python", "-c", code], capture_output=True)
     ```
-    Ovim se pokreće izvučeni Python kod kao podproces i hvata njegov izlaz.
+    Овај код покреће издвојени Python код као subprocess и хвата његов излаз.
 
-11. **Prikažite Slike**:
+11. **Приказивање слика**:
     ```python
     from IPython.display import Image, display
     display(Image(filename='./imgs/phi-3-vision.jpg'))
     display(Image(filename='./imgs/demo.png'))
     ```
-    Ove linije prikazuju slike koristeći `IPython.display` modul.
+    Ове линије приказују слике користећи модул `IPython.display`.
 
-**Ограничење одговорности**:  
-Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне тумачења настала коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која могу настати коришћењем овог превода.

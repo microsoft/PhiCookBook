@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-07T15:24:28+00:00",
+  "translation_date": "2025-07-16T17:27:02+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "fr"
 }
 -->
 # phiext README
 
-Ceci est le README de votre extension "phiext". Après une brève description, nous recommandons d'inclure les sections suivantes.
+Ceci est le README de votre extension "phiext". Après une brève description, nous recommandons d’inclure les sections suivantes.
 
-## Features
+## Fonctionnalités
 
-Décrivez les fonctionnalités spécifiques de votre extension, y compris des captures d’écran de votre extension en action. Les chemins des images sont relatifs à ce fichier README.
+Décrivez les fonctionnalités spécifiques de votre extension, y compris des captures d’écran montrant votre extension en action. Les chemins des images sont relatifs à ce fichier README.
 
 Par exemple, s’il y a un sous-dossier images dans l’espace de travail de votre projet d’extension :
 
@@ -21,11 +21,11 @@ Par exemple, s’il y a un sous-dossier images dans l’espace de travail de vot
 
 > Tip : De nombreuses extensions populaires utilisent des animations. C’est un excellent moyen de mettre en valeur votre extension ! Nous recommandons des animations courtes et ciblées, faciles à suivre.
 
-## Requirements
+## Prérequis
 
-Si vous avez des exigences ou des dépendances, ajoutez une section décrivant celles-ci ainsi que la manière de les installer et de les configurer.
+Si vous avez des prérequis ou des dépendances, ajoutez une section décrivant ceux-ci ainsi que la manière de les installer et de les configurer.
 
-## Extension Settings
+## Paramètres de l’extension
 
 À inclure si votre extension ajoute des paramètres VS Code via le point d’extension `contributes.configuration`.
 
@@ -34,15 +34,15 @@ Par exemple :
 Cette extension apporte les paramètres suivants :
 
 * `myExtension.enable` : Activer/désactiver cette extension.
-* `myExtension.thing` : Réglez sur `blah` pour effectuer une action.
+* `myExtension.thing` : Définir sur `blah` pour faire quelque chose.
 
-## Known Issues
+## Problèmes connus
 
-Mentionner les problèmes connus peut aider à limiter les utilisateurs qui ouvriraient des problèmes en double concernant votre extension.
+Signaler les problèmes connus peut aider à limiter les doublons d’issues ouvertes par les utilisateurs concernant votre extension.
 
-## Release Notes
+## Notes de version
 
-Les utilisateurs apprécient les notes de version lorsque vous mettez à jour votre extension.
+Les utilisateurs apprécient les notes de version lors de la mise à jour de votre extension.
 
 ### 1.0.0
 
@@ -58,21 +58,21 @@ Ajout des fonctionnalités X, Y et Z.
 
 ---
 
-## Following extension guidelines
+## Respect des directives pour les extensions
 
 Assurez-vous d’avoir lu les directives pour les extensions et de suivre les bonnes pratiques pour créer votre extension.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Working with Markdown
+## Travailler avec Markdown
 
 Vous pouvez rédiger votre README avec Visual Studio Code. Voici quelques raccourcis clavier utiles pour l’éditeur :
 
 * Diviser l’éditeur (`Cmd+\` sur macOS ou `Ctrl+\` sur Windows et Linux).
 * Basculer l’aperçu (`Shift+Cmd+V` sur macOS ou `Shift+Ctrl+V` sur Windows et Linux).
-* Appuyez sur `Ctrl+Space` (Windows, Linux, macOS) pour afficher la liste des extraits Markdown.
+* Appuyez sur `Ctrl+Space` (Windows, Linux, macOS) pour voir une liste de snippets Markdown.
 
-## For more information
+## Pour plus d’informations
 
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
@@ -80,4 +80,4 @@ Vous pouvez rédiger votre README avec Visual Studio Code. Voici quelques raccou
 **Bonne utilisation !**
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle humaine est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou d'interprétations erronées résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-07T10:12:42+00:00",
+  "translation_date": "2025-07-16T17:27:15+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "de"
 }
 -->
 # phiext README
 
-Dies ist die README für deine Erweiterung „phiext“. Nach einer kurzen Beschreibung empfehlen wir, die folgenden Abschnitte einzufügen.
+Dies ist die README für deine Erweiterung "phiext". Nach einer kurzen Beschreibung empfehlen wir, die folgenden Abschnitte aufzunehmen.
 
 ## Features
 
-Beschreibe die speziellen Funktionen deiner Erweiterung, einschließlich Screenshots deiner Erweiterung in Aktion. Bildpfade sind relativ zu dieser README-Datei.
+Beschreibe die speziellen Funktionen deiner Erweiterung, inklusive Screenshots, die deine Erweiterung in Aktion zeigen. Die Bildpfade sind relativ zu dieser README-Datei.
 
-Zum Beispiel, wenn es einen Bilder-Unterordner im Arbeitsbereich deines Erweiterungsprojekts gibt:
+Zum Beispiel, wenn es einen Unterordner „images“ im Projektordner deiner Erweiterung gibt:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Viele beliebte Erweiterungen nutzen Animationen. Das ist eine hervorragende Möglichkeit, deine Erweiterung zu präsentieren! Wir empfehlen kurze, fokussierte Animationen, die leicht nachzuvollziehen sind.
+> Tip: Viele beliebte Erweiterungen nutzen Animationen. Das ist eine großartige Möglichkeit, deine Erweiterung zu präsentieren! Wir empfehlen kurze, fokussierte Animationen, die leicht nachzuvollziehen sind.
 
 ## Requirements
 
@@ -27,14 +27,14 @@ Falls du Anforderungen oder Abhängigkeiten hast, füge einen Abschnitt hinzu, d
 
 ## Extension Settings
 
-Füge dies hinzu, wenn deine Erweiterung VS Code Einstellungen über den `contributes.configuration` Erweiterungspunkt hinzufügt.
+Füge diesen Abschnitt hinzu, wenn deine Erweiterung VS Code-Einstellungen über den `contributes.configuration` Erweiterungspunkt hinzufügt.
 
 Zum Beispiel:
 
 Diese Erweiterung trägt folgende Einstellungen bei:
 
-* `myExtension.enable`: Diese Erweiterung aktivieren/deaktivieren.
-* `myExtension.thing`: Auf `blah` setzen, um etwas zu bewirken.
+* `myExtension.enable`: Aktiviert/deaktiviert diese Erweiterung.
+* `myExtension.thing`: Auf `blah` setzen, um etwas zu tun.
 
 ## Known Issues
 
@@ -60,17 +60,17 @@ Funktionen X, Y und Z hinzugefügt.
 
 ## Following extension guidelines
 
-Stelle sicher, dass du die Erweiterungsrichtlinien gelesen hast und die Best Practices für die Erstellung deiner Erweiterung einhältst.
+Stelle sicher, dass du die Erweiterungsrichtlinien gelesen hast und die Best Practices für die Erstellung deiner Erweiterung befolgst.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
 ## Working with Markdown
 
-Du kannst deine README mit Visual Studio Code verfassen. Hier einige nützliche Tastenkombinationen im Editor:
+Du kannst deine README mit Visual Studio Code verfassen. Hier sind einige nützliche Tastenkombinationen im Editor:
 
-* Editor teilen (`Cmd+\` auf macOS oder `Ctrl+\` unter Windows und Linux).
-* Vorschau umschalten (`Shift+Cmd+V` auf macOS oder `Shift+Ctrl+V` unter Windows und Linux).
-* Drücke `Ctrl+Space` (Windows, Linux, macOS), um eine Liste der Markdown-Snippets zu sehen.
+* Editor teilen (`Cmd+\` auf macOS oder `Ctrl+\` auf Windows und Linux).
+* Vorschau umschalten (`Shift+Cmd+V` auf macOS oder `Shift+Ctrl+V` auf Windows und Linux).
+* Drücke `Ctrl+Space` (Windows, Linux, macOS), um eine Liste von Markdown-Snippets zu sehen.
 
 ## For more information
 
@@ -80,4 +80,4 @@ Du kannst deine README mit Visual Studio Code verfassen. Hier einige nützliche 
 **Viel Spaß!**
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

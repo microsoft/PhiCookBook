@@ -2,57 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:36:26+00:00",
+  "translation_date": "2025-07-17T02:30:23+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "br"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) zo platforma digor-kodet evit merañ buhez-holl ar c'hiz-seurt kenkiz-seurt stummadur.
+[MLflow](https://mlflow.org/) é uma plataforma open-source projetada para gerenciar o ciclo de vida completo de machine learning.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.br.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.br.png)
 
-MLFlow a vez implijet evit merañ buhez ar c'hiz-seurt kenkiz-seurt, o tont da-heul ar c'houlzad, ar galloud da adober, ar stummadur hag ur rolloù modeloù kreñv. Bremañ, ML flow a ginnig pevar elfenn.
+MLFlow é usado para gerenciar o ciclo de vida de ML, incluindo experimentação, reprodutibilidade, deployment e um registro central de modelos. Atualmente, o MLflow oferece quatro componentes.
 
-- **MLflow Tracking:** Enskrivañ ha klask war an enklaskoù, ar c'hod, ar c'honfiguradur roadennoù ha disoc'hoù.
-- **MLflow Projects:** Paket kodoù skiantoù roadennoù evit adober runoù war pep lec'h.
-- **Mlflow Models:** Staliañ modeloù kenkiz-seurt er c'hentañ servij.
-- **Model Registry:** Merañ, merkañ ha miret modeloù e rollad-kreiz.
+- **MLflow Tracking:** Registrar e consultar experimentos, código, configuração de dados e resultados.
+- **MLflow Projects:** Empacotar código de ciência de dados em um formato que permita reproduzir execuções em qualquer plataforma.
+- **Mlflow Models:** Fazer deploy de modelos de machine learning em diversos ambientes de serving.
+- **Model Registry:** Armazenar, anotar e gerenciar modelos em um repositório central.
 
-Emañ o kinnig tu da heulañ enklaskoù, paket kodoù evit runoù adoberet, ha rannañ ha staliañ modeloù. MLFlow zo keveliet gant Databricks ha he deus skoazell evit meur a libaraire kenkiz-seurt, o lakaat e servij da vezañ digor d’ar libaraireoù. Gallout a ra bezañ implijet gant libaraire kenkiz-seurt pe brezhoneg programming e pep yezh, rak e kinnig ur REST API ha CLI evit aesaat ar servij.
+Ele inclui funcionalidades para rastrear experimentos, empacotar código em execuções reproduzíveis, além de compartilhar e fazer deploy de modelos. O MLFlow está integrado ao Databricks e suporta várias bibliotecas de ML, sendo agnóstico em relação a bibliotecas. Pode ser usado com qualquer biblioteca de machine learning e em qualquer linguagem de programação, pois oferece uma API REST e CLI para maior conveniência.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.br.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.br.png)
 
-Penaos a dalvez MLFlow:
+Principais recursos do MLFlow incluem:
 
-- **Heuliañ enklaskoù:** Enskrivañ ha kevreañ parametrou ha disoc'hoù.
-- **Merañ modeloù:** Staliañ modeloù war meur a servijer ha platformenn.
-- **Model Registry:** Merañ buhez modeloù MLflow en ur skipailh, en o mesk ar c'hemmadurezh ha merkañ.
-- **Projects:** Paket kod ML evit rannañ pe implij war produ.
-MLFlow a skoazell ivez ar c'houlzad MLOps, o tont da-barzh ober gant roadennoù, enrollañ ha merañ modeloù, paket modeloù evit oberiadur, staliañ servijoù, ha mererezh modeloù. Pal eo aesaat ar c'houlzad adalek ur prototyp da ur raktres produ, dreist-holl war c'hilou ha war skritelloù.
+- **Rastreamento de Experimentos:** Registrar e comparar parâmetros e resultados.
+- **Gerenciamento de Modelos:** Fazer deploy de modelos em diversas plataformas de serving e inferência.
+- **Model Registry:** Gerenciar colaborativamente o ciclo de vida dos modelos MLflow, incluindo versionamento e anotações.
+- **Projects:** Empacotar código de ML para compartilhamento ou uso em produção.
 
-## Senario E2E - Sevel un emglev ha implij Phi-3 evel model MLFlow
+O MLFlow também suporta o ciclo de MLOps, que inclui preparar dados, registrar e gerenciar modelos, empacotar modelos para execução, fazer deploy de serviços e monitorar modelos. O objetivo é simplificar o processo de transição de um protótipo para um fluxo de trabalho de produção, especialmente em ambientes de nuvem e edge.
 
-Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur model yezh bihan (SLM), ha da vont da redek anezhañ evel un model MLFlow pe war lec'hienn lec'hel pe war an neñv, da skouer e labour-douar Azure Machine Learning.
+## Cenário E2E - Construindo um wrapper e usando Phi-3 como modelo MLFlow
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.br.png)
+Neste exemplo E2E, vamos demonstrar duas abordagens diferentes para construir um wrapper em torno do modelo de linguagem pequena Phi-3 (SLM) e depois executá-lo como um modelo MLFlow, seja localmente ou na nuvem, por exemplo, no workspace do Azure Machine Learning.
 
-| Raktres | Deskrivadur | Lec'h |
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.br.png)
+
+| Projeto | Descrição | Localização |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline zo ar mod simplañ evit sevel un emglev ma fell deoc'h implij un model HuggingFace gant ar blas transformer eksperimentel MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | Er mare skridañ, pipeline transformer n’o deus ket skoazell da sevel emglev MLFlow evit modeloù HuggingFace e stumm ONNX, nemet gant ar pakad python optimum eksperimentel. E arvar-se, e c'hallit sevel ho emglev Python personel evit MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline é a opção mais simples para construir um wrapper se você quiser usar um modelo HuggingFace com o flavour experimental de transformers do MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | No momento da escrita, o transformer pipeline não suportava a geração de wrapper MLFlow para modelos HuggingFace em formato ONNX, mesmo com o pacote experimental optimum Python. Para casos como este, você pode construir seu próprio wrapper Python customizado para o modo MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
-## Raktres : Transformer Pipeline
+## Projeto: Transformer Pipeline
 
-1. Ret e vo deoc'h paketioù Python reizh eus MLFlow ha HuggingFace:
+1. Você precisará dos pacotes Python relevantes do MLFlow e HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Goude-se, e rankit krouiñ un pipeline transformer o lakaat e anv ar model Phi-3 e roll HuggingFace. Evel ma weler war levrenn ar model _Phi-3-mini-4k-instruct_, e labour evit "Generezh Testenn":
+2. Em seguida, você deve iniciar um pipeline transformer referenciando o modelo Phi-3 alvo no registro HuggingFace. Como pode ser visto no card do modelo _Phi-3-mini-4k-instruct_, sua tarefa é do tipo “Geração de Texto”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -61,7 +62,7 @@ Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur mo
     )
     ```
 
-3. Bremañ e c'hallit enrollañ pipeline transformer Phi-3 e stumm MLFlow ha reiñ roadennoù ouzhpenn evel lec'h ar c'hod, ar c'honfiguradur modeloù resis hag ar stumm API inferens:
+3. Agora você pode salvar o pipeline transformer do seu modelo Phi-3 no formato MLFlow e fornecer detalhes adicionais, como o caminho dos artefatos, configurações específicas do modelo e tipo de API de inferência:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -72,9 +73,9 @@ Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur mo
     )
     ```
 
-## Raktres : Custom Python Wrapper
+## Projeto: Custom Python Wrapper
 
-1. Aze e c'hallomp implijout ar [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) a Microsoft evit inferens ar model ONNX ha kodad tokenoù. Ret e vo dibab ar pakad _onnxruntime_genai_ evit ho skramm, ar skouer a-is a implij CPU:
+1. Podemos utilizar aqui a [API generate() do ONNX Runtime](https://github.com/microsoft/onnxruntime-genai) da Microsoft para inferência do modelo ONNX e codificação/decodificação de tokens. Você deve escolher o pacote _onnxruntime_genai_ para seu ambiente de computação alvo, com o exemplo abaixo direcionado para CPU:
 
     ``` Python
     import mlflow
@@ -82,7 +83,7 @@ Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur mo
     import onnxruntime_genai as og
     ```
 
-1. Hon klas personel a implij daou metod : _load_context()_ evit krouiñ **model ONNX** Phi-3 Mini 4K Instruct, **parametrou generadur** ha **tokenizer**; ha _predict()_ evit krouiñ tokenoù evit ar prompt roet:
+1. Nossa classe customizada implementa dois métodos: _load_context()_ para inicializar o **modelo ONNX** do Phi-3 Mini 4K Instruct, os **parâmetros do gerador** e o **tokenizer**; e _predict()_ para gerar tokens de saída para o prompt fornecido:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -113,7 +114,7 @@ Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur mo
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. A-benn-henn e c'hallit implijout _mlflow.pyfunc.log_model()_ evit krouiñ un emglev Python personel (e stumm pickle) evit model Phi-3, en o zouez ar model ONNX orin ha an dibaboù ret:
+1. Agora você pode usar a função _mlflow.pyfunc.log_model()_ para gerar um wrapper Python customizado (em formato pickle) para o modelo Phi-3, junto com o modelo ONNX original e as dependências necessárias:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -128,9 +129,9 @@ Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur mo
     )
     ```
 
-## Sinadoù modeloù MLFlow krouet
+## Assinaturas dos modelos MLFlow gerados
 
-1. Er 3vet devezh eus raktres Transformer Pipeline, hon eus lakaet pal ar model MLFlow da " _llm/v1/chat_ ". An instruktion-se a grou ur emglev API evit ar model, kevel ouzh OpenAI Chat API evel ma vez diskouezet a-is:
+1. No passo 3 do projeto Transformer Pipeline acima, definimos a tarefa do modelo MLFlow como “_llm/v1/chat_”. Essa instrução gera um wrapper de API para o modelo, compatível com a API de Chat da OpenAI, como mostrado abaixo:
 
     ``` Python
     {inputs: 
@@ -141,13 +142,13 @@ Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur mo
       None}
     ```
 
-1. Goude-se, e c'hallit kas ho prompt e stumm da-heul:
+1. Como resultado, você pode enviar seu prompt no seguinte formato:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. War-lerc'h, implijit post-processadenn kevel ouzh OpenAI API, da skouer _response[0][‘choices’][0][‘message’][‘content’]_, evit gwellañ ho produ evit ma vint evel-se:
+1. Depois, use o pós-processamento compatível com a API OpenAI, por exemplo, _response[0][‘choices’][0][‘message’][‘content’]_, para deixar sua saída mais apresentável, como neste exemplo:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -157,7 +158,7 @@ Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur mo
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. Er 3vet devezh eus raktres Custom Python Wrapper, e ro ar pakad MLFlow tu da grou sinadenn ar model diwar ur skouer input roet. Sinadenn hor emglev MLFlow a vo evel-se:
+1. No passo 3 do projeto Custom Python Wrapper acima, permitimos que o pacote MLFlow gere a assinatura do modelo a partir de um exemplo de entrada fornecido. A assinatura do nosso wrapper MLFlow ficará assim:
 
     ``` Python
     {inputs: 
@@ -168,13 +169,13 @@ Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur mo
       None}
     ```
 
-1. Gant-se, hor prompt a rankfe bezañ ur "prompt" e-barzh ur geriaoueg, evel-se:
+1. Portanto, nosso prompt precisará conter a chave do dicionário "prompt", semelhante a isto:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Disoc'hoù ar model a vo roet er stumm ur c'hrennadenn:
+1. A saída do modelo será então fornecida em formato string:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -187,4 +188,4 @@ Emañ ar sampl E2E-mañ o diskouez daou mod da sevel un emglev ouzh Phi-3, ur mo
     ```
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-09T05:27:36+00:00",
+  "translation_date": "2025-07-16T17:29:43+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "it"
 }
@@ -13,9 +13,9 @@ Questo è il README per la tua estensione "phiext". Dopo una breve descrizione, 
 
 ## Features
 
-Descrivi le caratteristiche specifiche della tua estensione, includendo screenshot della tua estensione in azione. I percorsi delle immagini sono relativi a questo file README.
+Descrivi le funzionalità specifiche della tua estensione, includendo screenshot della tua estensione in azione. I percorsi delle immagini sono relativi a questo file README.
 
-Ad esempio, se c’è una sottocartella immagini nel workspace del progetto della tua estensione:
+Ad esempio, se c’è una sottocartella immagini all’interno della cartella del progetto della tua estensione:
 
 \!\[feature X\]\(images/feature-x.png\)
 
@@ -34,11 +34,11 @@ Ad esempio:
 Questa estensione contribuisce con le seguenti impostazioni:
 
 * `myExtension.enable`: Abilita/disabilita questa estensione.
-* `myExtension.thing`: Imposta su `blah` per eseguire un’azione.
+* `myExtension.thing`: Imposta su `blah` per fare qualcosa.
 
 ## Known Issues
 
-Segnalare problemi noti può aiutare a evitare che gli utenti aprano issue duplicate per la tua estensione.
+Segnalare problemi noti può aiutare a limitare l’apertura di issue duplicate da parte degli utenti.
 
 ## Release Notes
 
@@ -50,7 +50,7 @@ Rilascio iniziale di ...
 
 ### 1.0.1
 
-Corretto problema #.
+Risolto problema #.
 
 ### 1.1.0
 
@@ -66,18 +66,18 @@ Assicurati di aver letto le linee guida per le estensioni e di seguire le best p
 
 ## Working with Markdown
 
-Puoi scrivere il tuo README usando Visual Studio Code. Ecco alcune scorciatoie da tastiera utili nell’editor:
+Puoi scrivere il tuo README usando Visual Studio Code. Ecco alcune scorciatoie da tastiera utili per l’editor:
 
 * Dividi l’editor (`Cmd+\` su macOS o `Ctrl+\` su Windows e Linux).
 * Attiva/disattiva anteprima (`Shift+Cmd+V` su macOS o `Shift+Ctrl+V` su Windows e Linux).
-* Premi `Ctrl+Space` (Windows, Linux, macOS) per vedere la lista degli snippet Markdown.
+* Premi `Ctrl+Space` (Windows, Linux, macOS) per vedere una lista di snippet Markdown.
 
 ## For more information
 
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Buon lavoro!**
+**Enjoy!**
 
-**Avvertenza**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un essere umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall'uso di questa traduzione.
+**Disclaimer**:  
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

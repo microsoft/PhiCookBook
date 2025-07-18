@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:08:38+00:00",
+  "translation_date": "2025-07-17T05:16:07+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "fi"
 }
 -->
-## **Funktiokutsu Phi-4-mini:ssä**
+## **Funktiokutsut Phi-4-minissä**
 
-Funktiokutsu esiintyi ensimmäisen kerran Phi Family -perheessä, ja nyt sitä voi käyttää Phi-4-mini:ssä.
+Funktiokutsut tulivat ensimmäisen kerran Phi Family -perheeseen, ja nyt voit käyttää niitä Phi-4-minin kautta.
 
-Tässä esimerkissä simuloidaan Valioliigan tuloksia. Tavoitteena on, että Phi-4-mini toimittaa reaaliaikaista pelitietoa. Alla on esimerkkikoodi: 
+Tässä esimerkissä simuloidaan Valioliigan tuloksia. Tavoitteena on, että Phi-4-mini toimittaa reaaliaikaista pelitietoa. Alla on esimerkkikoodi:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinkäsityksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

@@ -2,29 +2,29 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-09T11:13:47+00:00",
+  "translation_date": "2025-07-16T20:31:51+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "tr"
 }
 -->
 # iOS'ta Apple MLX Framework ile Phi-3 ve Phi-4 Çalıştırma
 
-Bu eğitim, Apple MLX framework'ünü kullanarak Phi-3 veya Phi-4 modelini cihaz üzerinde çalıştıran bir iOS uygulaması nasıl oluşturulur gösteriyor. [MLX](https://opensource.apple.com/projects/mlx/), Apple Silicon çipleri için optimize edilmiş Apple’ın makine öğrenimi framework’üdür.
+Bu eğitim, Apple MLX framework'ünü kullanarak Phi-3 veya Phi-4 modelini cihaz üzerinde çalıştıran bir iOS uygulamasının nasıl oluşturulacağını gösterir. [MLX](https://opensource.apple.com/projects/mlx/), Apple Silicon çipleri için optimize edilmiş Apple’ın makine öğrenimi framework’üdür.
 
-## Ön Koşullar
+## Gereksinimler
 
 - Xcode 16 (veya üzeri) yüklü macOS
-- En az 8GB belleğe sahip iOS 18 (veya üzeri) hedef cihaz (Apple Intelligence gereksinimlerini karşılayan iPhone veya iPad, çünkü bunlar quantized Phi gereksinimlerine benzer)
+- En az 8GB belleğe sahip iOS 18 (veya üzeri) hedef cihaz (Apple Intelligence gereksinimlerini karşılayan iPhone veya iPad, çünkü bunlar quantize edilmiş Phi gereksinimlerine benzer)
 - Swift ve SwiftUI hakkında temel bilgi
 
 ## Adım 1: Yeni Bir iOS Projesi Oluşturun
 
 Xcode’da yeni bir iOS projesi oluşturarak başlayın:
 
-1. Xcode’u açın ve "Create a new Xcode project" seçeneğini tıklayın  
-2. Şablon olarak "App" seçin  
-3. Projenize bir isim verin (örneğin, "Phi3-iOS-App") ve arayüz olarak SwiftUI’i seçin  
-4. Projenizi kaydedeceğiniz konumu belirleyin  
+1. Xcode’u açın ve "Create a new Xcode project" seçeneğini seçin
+2. Şablon olarak "App" seçin
+3. Projenize bir isim verin (örneğin, "Phi3-iOS-App") ve arayüz olarak SwiftUI’ı seçin
+4. Projenizi kaydetmek için bir konum belirleyin
 
 ## Adım 2: Gerekli Bağımlılıkları Ekleyin
 
@@ -35,12 +35,12 @@ Modelleri önceden yüklemek ve çıkarım yapmak için gerekli tüm bağımlıl
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-Temel [MLX Swift paketi](https://github.com/ml-explore/mlx-swift) çekirdek tensör işlemleri ve temel ML fonksiyonelliği için yeterli olsa da, MLX Examples paketi dil modelleriyle çalışmak ve çıkarım sürecini kolaylaştırmak için ek bileşenler sağlar:
+Temel [MLX Swift paketi](https://github.com/ml-explore/mlx-swift), çekirdek tensör işlemleri ve temel ML işlevselliği için yeterli olsa da, MLX Examples paketi dil modelleriyle çalışmak ve çıkarım sürecini kolaylaştırmak için ek bileşenler sunar:
 
-- Hugging Face’den indirmeyi yöneten model yükleme araçları  
-- Tokenizer entegrasyonu  
-- Metin üretimi için çıkarım yardımcıları  
-- Önceden yapılandırılmış model tanımları  
+- Hugging Face’den indirme işlemini yöneten model yükleme araçları
+- tokenizer entegrasyonu
+- metin üretimi için çıkarım yardımcıları
+- önceden yapılandırılmış model tanımları
 
 ## Adım 3: Yetkilendirmeleri Yapılandırın
 
@@ -63,7 +63,7 @@ Uygulamamızın modelleri indirebilmesi ve yeterli belleği ayırabilmesi için 
 </plist>
 ```
 
-> **Not:** `com.apple.developer.kernel.increased-memory-limit` yetkilendirmesi, daha büyük modellerin çalıştırılması için önemlidir; çünkü uygulamanın normalden daha fazla bellek talep etmesine izin verir.
+> **Not:** `com.apple.developer.kernel.increased-memory-limit` yetkilendirmesi, uygulamanın normalde izin verilenin üzerinde bellek talep etmesine olanak tanıdığı için daha büyük modellerin çalıştırılması açısından önemlidir.
 
 ## Adım 4: Sohbet Mesajı Modelini Oluşturun
 
@@ -87,7 +87,7 @@ struct ChatMessage: Identifiable {
 
 ## Adım 5: ViewModel’i Uygulayın
 
-Sonra, model yükleme ve çıkarımı yöneten `PhiViewModel` sınıfını oluşturacağız:
+Sonraki adımda, model yükleme ve çıkarımı yöneten `PhiViewModel` sınıfını oluşturacağız:
 
 ```swift
 import MLX
@@ -248,23 +248,23 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-ViewModel, temel MLX entegrasyon noktalarını gösterir:
+ViewModel, MLX entegrasyonunun temel noktalarını gösterir:
 
-- `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- mobil cihazlarda bellek kullanımını optimize etmek için `MLX.GPU.set(cacheLimit:)` ile GPU önbellek sınırlarının ayarlanması
+- modeli talep üzerine indirmek ve MLX optimize edilmiş modeli başlatmak için `LLMModelFactory` kullanımı
+- modelin parametrelerine ve yapısına `ModelContainer` üzerinden erişim
+- MLX’in token token üretimini `MLXLMCommon.generate` yöntemiyle kullanma
+- çıkarım sürecini uygun sıcaklık ayarları ve token limitleri ile yönetme
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+Akış halinde token üretimi, model metin üretirken kullanıcılara anlık geri bildirim sağlar. Bu, sunucu tabanlı modellerin tokenları kullanıcıya akıtmasına benzer, ancak ağ gecikmesi olmadan gerçekleşir.
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+Kullanıcı arayüzü etkileşimi açısından, iki temel fonksiyon vardır: LLM’i başlatan `loadModel()` ve kullanıcı girdisini işleyip AI yanıtları üreten `fetchAIResponse()`.
 
-### Model format considerations
+### Model formatı ile ilgili notlar
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Önemli:** MLX için Phi modelleri varsayılan veya GGUF formatında kullanılamaz. MLX formatına dönüştürülmeleri gerekir ve bu dönüşüm MLX topluluğu tarafından yapılır. Önceden dönüştürülmüş modelleri [huggingface.co/mlx-community](https://huggingface.co/mlx-community) adresinde bulabilirsiniz.
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit` ile GPU önbellek sınırlarını ayarlama; otomatik olarak indirilecek önceden dönüştürülmüş belirli bir MLX modeline referans verir:
+MLX Examples paketi, Phi-3 dahil olmak üzere birkaç model için önceden yapılandırılmış kayıtlar içerir. `ModelRegistry.phi3_5_4bit` çağrıldığında, otomatik olarak indirilecek belirli bir önceden dönüştürülmüş MLX modeline referans verir:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-Kendi model yapılandırmalarınızı oluşturup Hugging Face’deki uyumlu herhangi bir modele işaret edebilirsiniz. Örneğin, Phi-4 mini kullanmak için kendi yapılandırmanızı şöyle tanımlayabilirsiniz:
+Kendi model yapılandırmalarınızı Hugging Face üzerindeki uyumlu herhangi bir modele işaret edecek şekilde oluşturabilirsiniz. Örneğin, Phi-4 mini kullanmak isterseniz kendi yapılandırmanızı şöyle tanımlayabilirsiniz:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Not:** Phi-4 desteği, Şubat 2025 sonunda MLX Swift Examples deposuna eklendi ([PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). Mart 2025 itibarıyla Aralık 2024’ten 2.21.2 resmi sürümü yerleşik Phi-4 desteği içermiyor. Phi-4 modellerini kullanmak için paketi doğrudan ana dal üzerinden referans vermeniz gerekir:  
+> **Not:** Phi-4 desteği, Şubat 2025 sonunda MLX Swift Examples deposuna eklendi ([PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). Mart 2025 itibarıyla, Aralık 2024 tarihli en son resmi sürüm (2.21.2) yerleşik Phi-4 desteği içermez. Phi-4 modellerini kullanmak için paketi ana dal üzerinden doğrudan referans vermeniz gerekir:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-Bu sayede, resmi sürüme dahil edilmeden önce Phi-4 de dahil olmak üzere en güncel model yapılandırmalarına erişebilirsiniz. Bu yöntemi farklı Phi modellerinin veya MLX formatına dönüştürülmüş diğer modellerin çeşitli sürümlerini kullanmak için tercih edebilirsiniz.
+Bu yöntem, resmi sürüme dahil edilmeden önce Phi-4 dahil en güncel model yapılandırmalarına erişmenizi sağlar. Farklı Phi model sürümlerini veya MLX formatına dönüştürülmüş diğer modelleri kullanmak için bu yaklaşımı tercih edebilirsiniz.
 
 ## Adım 6: Kullanıcı Arayüzünü Oluşturun
 
-Şimdi ViewModel ile etkileşim kurmak için basit bir sohbet arayüzü uygulayalım:
+Şimdi, view modelimizle etkileşim kurmak için basit bir sohbet arayüzü uygulayalım:
 
 ```swift
 import SwiftUI
@@ -429,7 +429,7 @@ struct TypingIndicatorView: View {
 
 ```
 
-Arayüz, temel bir sohbet deneyimi oluşturmak için birlikte çalışan üç ana bileşenden oluşur. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` yapay zekanın işlemde olduğunu göstermek için basit animasyonlu bir gösterge sağlar.
+Arayüz, temel bir sohbet deneyimi oluşturmak için birlikte çalışan üç ana bileşenden oluşur. `ContentView`, model hazır olana kadar yükleme butonunu veya sohbet arayüzünü gösteren iki durumlu bir arayüz oluşturur. `MessageView`, kullanıcı mesajlarını (sağa hizalı, mavi arka plan) ve Phi model yanıtlarını (sola hizalı, gri arka plan) farklı şekilde render eder. `TypingIndicatorView` ise AI’nın işlemde olduğunu göstermek için basit bir animasyonlu gösterge sağlar.
 
 ## Adım 7: Uygulamayı Derleyip Çalıştırma
 
@@ -437,19 +437,19 @@ Artık uygulamayı derleyip çalıştırmaya hazırız.
 
 > **Önemli!** MLX simülatörü desteklemez. Uygulamayı Apple Silicon çipli gerçek bir cihazda çalıştırmalısınız. Daha fazla bilgi için [buraya](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) bakabilirsiniz.
 
-Uygulama açıldığında, Phi-3 (veya yapılandırmanıza bağlı olarak Phi-4) modelini indirmek ve başlatmak için "Load model" düğmesine dokunun. Bu işlem internet bağlantınıza bağlı olarak biraz zaman alabilir çünkü model Hugging Face’den indirilmektedir. Uygulamamız sadece yükleniyor göstergesi içerir, ancak gerçek ilerlemeyi Xcode konsolunda görebilirsiniz.
+Uygulama açıldığında, Phi-3 (veya yapılandırmanıza bağlı olarak Phi-4) modelini indirmek ve başlatmak için "Load model" butonuna dokunun. Bu işlem, modelin Hugging Face’den indirilmesini içerdiği için internet bağlantınıza bağlı olarak biraz zaman alabilir. Uygulamamızda sadece yükleme göstergesi (spinner) bulunmakta, ancak gerçek ilerlemeyi Xcode konsolunda görebilirsiniz.
 
-Model yüklendikten sonra, metin alanına sorular yazarak ve gönder düğmesine dokunarak model ile etkileşim kurabilirsiniz.
+Model yüklendikten sonra, metin alanına sorularınızı yazıp gönder butonuna dokunarak modelle etkileşime geçebilirsiniz.
 
-Uygulamamız iPad Air M1 üzerinde çalışırken şöyle görünmelidir:
+Uygulamamızın iPad Air M1 üzerinde çalışırken nasıl davrandığı aşağıdaki gibidir:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
 ## Sonuç
 
-İşte bu kadar! Bu adımları takip ederek, Apple’ın MLX framework’ünü kullanarak Phi-3 (veya Phi-4) modelini doğrudan cihazda çalıştıran bir iOS uygulaması oluşturmuş oldunuz.
+İşte bu kadar! Bu adımları takip ederek, Apple’ın MLX framework’ünü kullanarak Phi-3 (veya Phi-4) modelini doğrudan cihaz üzerinde çalıştıran bir iOS uygulaması oluşturmuş oldunuz.
 
 Tebrikler!
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

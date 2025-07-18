@@ -2,54 +2,54 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:55:13+00:00",
+  "translation_date": "2025-07-17T06:50:55+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "ro"
 }
 -->
 # **Fine-tuning Phi-3 cu Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) este un instrument ușor de utilizat pentru optimizarea modelelor, conștient de hardware, care reunește tehnici de top din industrie pentru compresia, optimizarea și compilarea modelelor.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) este un instrument ușor de folosit pentru optimizarea modelelor, conștient de hardware, care reunește tehnici de top din industrie în compresia, optimizarea și compilarea modelelor.
 
-Este conceput pentru a simplifica procesul de optimizare a modelelor de machine learning, asigurând o utilizare cât mai eficientă a arhitecturilor hardware specifice.
+Este conceput pentru a simplifica procesul de optimizare a modelelor de machine learning, asigurând utilizarea cât mai eficientă a arhitecturilor hardware specifice.
 
-Indiferent dacă lucrezi la aplicații în cloud sau pe dispozitive edge, Olive îți permite să optimizezi modelele fără efort și eficient.
+Indiferent dacă lucrezi cu aplicații în cloud sau pe dispozitive edge, Olive îți permite să optimizezi modelele cu ușurință și eficiență.
 
-## Caracteristici cheie:
+## Caracteristici principale:
 - Olive agregă și automatizează tehnici de optimizare pentru hardware-ul țintă dorit.
-- Nicio tehnică de optimizare nu se potrivește tuturor scenariilor, așa că Olive permite extensibilitate, oferind experților din industrie posibilitatea de a integra inovațiile lor în optimizare.
+- Nicio tehnică de optimizare nu se potrivește tuturor scenariilor, așa că Olive permite extinderea prin integrarea inovațiilor experților din industrie.
 
 ## Reducerea efortului de inginerie:
-- Dezvoltatorii trebuie adesea să învețe și să folosească mai multe toolchain-uri specifice vendorilor de hardware pentru a pregăti și optimiza modelele antrenate pentru implementare.
+- Dezvoltatorii trebuie adesea să învețe și să folosească mai multe toolchain-uri specifice furnizorilor de hardware pentru a pregăti și optimiza modelele antrenate pentru implementare.
 - Olive simplifică această experiență prin automatizarea tehnicilor de optimizare pentru hardware-ul dorit.
 
-## Soluție de optimizare E2E gata de utilizare:
+## Soluție E2E de optimizare gata de utilizare:
 
-Prin combinarea și reglarea tehnicilor integrate, Olive oferă o soluție unificată pentru optimizarea de la un capăt la altul.
+Prin combinarea și reglarea tehnicilor integrate, Olive oferă o soluție unificată pentru optimizarea end-to-end.
 Ia în considerare constrângeri precum acuratețea și latența în timpul optimizării modelelor.
 
 ## Utilizarea Microsoft Olive pentru fine-tuning
 
-Microsoft Olive este un instrument open source foarte ușor de folosit pentru optimizarea modelelor, care acoperă atât fine-tuning, cât și referințe în domeniul inteligenței artificiale generative. Necesită doar o configurare simplă, iar combinat cu utilizarea modelelor mici open source și a mediilor de runtime aferente (AzureML / GPU local, CPU, DirectML), poți realiza fine-tuning-ul sau referința modelului prin optimizare automată și găsi cel mai bun model pentru implementare în cloud sau pe dispozitive edge. Permite companiilor să-și construiască propriile modele verticale pe infrastructură locală și în cloud.
+Microsoft Olive este un instrument open source foarte ușor de folosit pentru optimizarea modelelor, care acoperă atât fine-tuning-ul, cât și referința în domeniul inteligenței artificiale generative. Necesită doar o configurare simplă, combinată cu utilizarea modelelor mici open source și a mediilor de rulare aferente (AzureML / GPU local, CPU, DirectML), permițând finalizarea fine-tuning-ului sau referinței modelului prin optimizare automată și găsirea celui mai bun model pentru implementare în cloud sau pe dispozitive edge. Permite companiilor să-și construiască propriile modele verticale de industrie on-premises și în cloud.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.ro.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.ro.png)
 
 ## Fine-tuning Phi-3 cu Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.ro.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.ro.png)
 
-## Exemplu de cod și demonstrație Phi-3 Olive
-În acest exemplu vei folosi Olive pentru:
+## Exemplu de cod și utilizare Phi-3 Olive
+În acest exemplu vei folosi Olive pentru a:
 
-- Fine-tuning unui adaptor LoRA pentru a clasifica fraze în Sad, Joy, Fear, Surprise.
-- Combinarea greutăților adaptorului în modelul de bază.
-- Optimizarea și cuantizarea modelului în int4.
+- Face fine-tuning unui adaptor LoRA pentru clasificarea frazelor în Sad, Joy, Fear, Surprise.
+- Îmbina greutățile adaptorului în modelul de bază.
+- Optimiza și cuantiza modelul în int4.
 
 [Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
 
-### Instalarea Microsoft Olive
+### Configurarea Microsoft Olive
 
-Instalarea Microsoft Olive este foarte simplă și poate fi realizată pentru CPU, GPU, DirectML și Azure ML
+Instalarea Microsoft Olive este foarte simplă și poate fi făcută pentru CPU, GPU, DirectML și Azure ML
 
 ```bash
 pip install olive-ai
@@ -67,18 +67,18 @@ Dacă vrei să rulezi un model ONNX pe GPU, poți folosi
 pip install olive-ai[gpu]
 ```
 
-Dacă dorești să folosești Azure ML, folosește
+Dacă vrei să folosești Azure ML, folosește
 
 ```python
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
-**Notă**  
-Cerințe OS: Ubuntu 20.04 / 22.04
+**Notă**
+Cerință OS: Ubuntu 20.04 / 22.04
 
-### **Config.json pentru Microsoft Olive**
+### **Config.json Microsoft Olive**
 
-După instalare, poți configura setări specifice fiecărui model prin fișierul Config, inclusiv date, calcul, antrenament, implementare și generare de modele.
+După instalare, poți configura setări specifice modelului prin fișierul Config, inclusiv date, calcul, antrenament, implementare și generare model.
 
 **1. Date**
 
@@ -86,7 +86,7 @@ Pe Microsoft Olive, antrenamentul pe date locale și în cloud este suportat și
 
 *Setări pentru date locale*
 
-Poți configura simplu setul de date care trebuie antrenat pentru fine-tuning, de obicei în format json, adaptându-l cu un șablon de date. Acest lucru trebuie ajustat în funcție de cerințele modelului (de exemplu, adaptat la formatul cerut de Microsoft Phi-3-mini. Dacă ai alte modele, consultă formatele necesare de fine-tuning pentru acestea).
+Poți configura simplu setul de date pentru fine-tuning, de obicei în format json, și îl adaptezi cu șablonul de date. Aceasta trebuie ajustată în funcție de cerințele modelului (de exemplu, adaptarea la formatul cerut de Microsoft Phi-3-mini. Dacă ai alte modele, te rugăm să consulți formatele necesare pentru fine-tuning ale altor modele).
 
 ```json
 
@@ -121,7 +121,7 @@ Poți configura simplu setul de date care trebuie antrenat pentru fine-tuning, d
 
 **Setări pentru surse de date în cloud**
 
-Prin conectarea datastore-ului Azure AI Studio/Azure Machine Learning Service pentru acces la datele din cloud, poți alege să imporți diferite surse de date în Azure AI Studio/Azure Machine Learning Service prin Microsoft Fabric și Azure Data, ca suport pentru fine-tuning.
+Prin conectarea datastore-ului Azure AI Studio/Azure Machine Learning Service pentru a accesa datele din cloud, poți alege să imporți diferite surse de date în Azure AI Studio/Azure Machine Learning Service prin Microsoft Fabric și Azure Data ca suport pentru fine-tuning.
 
 ```json
 
@@ -168,7 +168,7 @@ Prin conectarea datastore-ului Azure AI Studio/Azure Machine Learning Service pe
 
 **2. Configurarea calculului**
 
-Dacă dorești să folosești resurse locale, poți utiliza direct datele locale. Pentru utilizarea resurselor Azure AI Studio / Azure Machine Learning Service, trebuie să configurezi parametrii Azure relevanți, numele resurselor de calcul etc.
+Dacă dorești să folosești resurse locale, poți utiliza direct datele locale. Dacă vrei să folosești resursele Azure AI Studio / Azure Machine Learning Service, trebuie să configurezi parametrii Azure relevanți, numele resurselor de calcul etc.
 
 ```json
 
@@ -201,7 +201,7 @@ Dacă dorești să folosești resurse locale, poți utiliza direct datele locale
 
 ***Notă***
 
-Deoarece rulează printr-un container pe Azure AI Studio/Azure Machine Learning Service, mediul necesar trebuie configurat. Aceasta se face în fișierul conda.yaml.
+Pentru că rulează printr-un container pe Azure AI Studio/Azure Machine Learning Service, mediul necesar trebuie configurat. Aceasta se face în fișierul conda.yaml.
 
 ```yaml
 
@@ -234,9 +234,9 @@ dependencies:
 
 ```
 
-**3. Alege SLM-ul tău**
+**3. Alege-ți SLM-ul**
 
-Poți folosi modelul direct de pe Hugging Face sau îl poți combina cu Catalogul de modele din Azure AI Studio / Azure Machine Learning pentru a selecta modelul dorit. În exemplul de cod de mai jos vom folosi Microsoft Phi-3-mini.
+Poți folosi modelul direct de pe Hugging Face sau îl poți combina direct cu Catalogul de modele din Azure AI Studio / Azure Machine Learning pentru a selecta modelul dorit. În exemplul de cod de mai jos vom folosi Microsoft Phi-3-mini ca exemplu.
 
 Dacă ai modelul local, poți folosi această metodă
 
@@ -283,12 +283,12 @@ Dacă vrei să folosești un model din Azure AI Studio / Azure Machine Learning 
     },
 ```
 
-**Notă:**  
-Trebuie să integrăm cu Azure AI Studio / Azure Machine Learning Service, deci la configurarea modelului ține cont de versiune și denumiri aferente.
+**Notă:**
+Trebuie să integrăm cu Azure AI Studio / Azure Machine Learning Service, așa că la configurarea modelului, te rugăm să consulți numărul versiunii și denumirile aferente.
 
-Toate modelele din Azure trebuie setate ca PyTorch.MLflow.
+Toate modelele din Azure trebuie setate pe PyTorch.MLflow
 
-Trebuie să ai un cont Hugging Face și să legi cheia de valoarea Key din Azure AI Studio / Azure Machine Learning.
+Trebuie să ai un cont Hugging Face și să legi cheia de valoarea Key din Azure AI Studio / Azure Machine Learning
 
 **4. Algoritm**
 
@@ -329,9 +329,9 @@ Microsoft Olive încorporează foarte bine algoritmii de fine-tuning Lora și QL
         },
 ```
 
-Dacă dorești conversie prin cuantizare, ramura principală Microsoft Olive suportă deja metoda onnxruntime-genai. Poți seta conform nevoilor:
+Dacă dorești conversie prin cuantizare, ramura principală Microsoft Olive suportă deja metoda onnxruntime-genai. Poți seta în funcție de nevoi:
 
-1. combină greutățile adaptorului în modelul de bază  
+1. îmbină greutățile adaptorului în modelul de bază
 2. convertește modelul în model onnx cu precizia necesară folosind ModelBuilder
 
 de exemplu conversia în INT4 cuantizat
@@ -350,8 +350,9 @@ de exemplu conversia în INT4 cuantizat
 ```
 
 **Notă**  
-- Dacă folosești QLoRA, conversia prin cuantizare ONNXRuntime-genai nu este suportată momentan.  
-- Este important să menționez că poți configura pașii de mai sus în funcție de nevoile tale. Nu este obligatoriu să configurezi toate aceste etape complet. În funcție de cerințe, poți folosi direct pașii algoritmului fără fine-tuning. În final, trebuie să configurezi motoarele relevante.
+- Dacă folosești QLoRA, conversia prin cuantizare ONNXRuntime-genai nu este momentan suportată.
+
+- Trebuie menționat că poți configura pașii de mai sus după propriile nevoi. Nu este obligatoriu să configurezi complet toți acești pași. În funcție de necesități, poți folosi direct pașii algoritmului fără fine-tuning. În final, trebuie să configurezi motoarele relevante.
 
 ```json
 
@@ -368,11 +369,11 @@ de exemplu conversia în INT4 cuantizat
 
 **5. Finalizarea fine-tuning-ului**
 
-Din linia de comandă, execută în directorul unde se află olive-config.json
+Pe linia de comandă, execută în directorul cu olive-config.json
 
 ```bash
 olive run --config olive-config.json  
 ```
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să țineți cont că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea în urma utilizării acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

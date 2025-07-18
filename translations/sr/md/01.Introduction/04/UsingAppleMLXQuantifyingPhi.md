@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-05-09T13:51:03+00:00",
+  "translation_date": "2025-07-16T21:57:30+00:00",
   "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
   "language_code": "sr"
 }
 -->
-# **Kvantizacija Phi-3.5 korišćenjem Apple MLX Framework-a**
+# **Квантизација Phi-3.5 уз помоћ Apple MLX Framework-а**
 
-MLX je framework za mašinsko učenje na Apple silicijum uređajima, razvijen od strane Apple istraživača mašinskog učenja.
+MLX је фрејмворк за машинско учење на Apple силицијуму, развијен од стране Apple истраживача машинског учења.
 
-MLX je napravljen od strane istraživača mašinskog učenja za istraživače mašinskog učenja. Framework je osmišljen da bude jednostavan za korišćenje, a istovremeno efikasan za treniranje i primenu modela. Dizajn samog framework-a je takođe konceptualno jednostavan. Cilj nam je da olakšamo istraživačima da proširuju i unapređuju MLX kako bi brzo mogli da istražuju nove ideje.
+MLX је дизајниран од стране истраживача машинског учења за истраживаче машинског учења. Фрејмворк је намењен да буде једноставан за коришћење, али и ефикасан за тренирање и покретање модела. Сам дизајн фрејмворка је концептуално једноставан. Желимо да омогућимо истраживачима да лако проширују и унапређују MLX са циљем брзог испробавања нових идеја.
 
-LLM modeli mogu biti ubrzani na Apple Silicon uređajima pomoću MLX-a, a modeli se mogu vrlo lako pokretati lokalno.
+LLM модели могу бити убрзани на Apple Silicon уређајима преко MLX-а, а модели се могу покретати локално на веома згодан начин.
 
-Sada Apple MLX Framework podržava kvantizacionu konverziju Phi-3.5-Instruct (**Apple MLX Framework support**), Phi-3.5-Vision (**MLX-VLM Framework support**), i Phi-3.5-MoE (**Apple MLX Framework support**). Hajde da probate:
+Сада Apple MLX Framework подржава конверзију квантизације за Phi-3.5-Instruct (**подршка Apple MLX Framework-а**), Phi-3.5-Vision (**подршка MLX-VLM Framework-а**) и Phi-3.5-MoE (**подршка Apple MLX Framework-а**). Хајде да пробамо следеће:
 
 ### **Phi-3.5-Instruct**
 
@@ -41,21 +41,21 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3.5-MoE-instruct  -q
 
 ```
 
-### **🤖 Primeri za Phi-3.5 sa Apple MLX**
+### **🤖 Примери за Phi-3.5 уз Apple MLX**
 
-| Laboratorije    | Uvod | Kreni |
-| -------- | ------- |  ------- |
-| 🚀 Lab-Uvod Phi-3.5 Instruct  | Naučite kako da koristite Phi-3.5 Instruct sa Apple MLX framework-om   |  [Kreni](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
-| 🚀 Lab-Uvod Phi-3.5 Vision (slika) | Naučite kako da koristite Phi-3.5 Vision za analizu slika sa Apple MLX framework-om     |  [Kreni](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
-| 🚀 Lab-Uvod Phi-3.5 Vision (moE)   | Naučite kako da koristite Phi-3.5 MoE sa Apple MLX framework-om  |  [Kreni](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
+| Лабораторија | Увод | Иди |
+| -------- | ------- | ------- |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | Научите како да користите Phi-3.5 Instruct уз Apple MLX framework   |  [Иди](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (слика) | Научите како да користите Phi-3.5 Vision за анализу слика уз Apple MLX framework     |  [Иди](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (moE)   | Научите како да користите Phi-3.5 MoE уз Apple MLX framework  |  [Иди](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
 
-## **Resursi**
+## **Ресурси**
 
-1. Saznajte više o Apple MLX Framework-u [https://ml-explore.github.io/mlx/](https://ml-explore.github.io/mlx/)
+1. Сазнајте више о Apple MLX Framework-у [https://ml-explore.github.io/mlx/](https://ml-explore.github.io/mlx/)
 
-2. Apple MLX GitHub repozitorijum [https://github.com/ml-explore](https://github.com/ml-explore/mlx)
+2. Apple MLX GitHub репозиторијум [https://github.com/ml-explore](https://github.com/ml-explore/mlx)
 
-3. MLX-VLM GitHub repozitorijum [https://github.com/Blaizzy/mlx-vlm](https://github.com/Blaizzy/mlx-vlm)
+3. MLX-VLM GitHub репозиторијум [https://github.com/Blaizzy/mlx-vlm](https://github.com/Blaizzy/mlx-vlm)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на оригиналном језику треба сматрати ауторитетом. За критичне информације препоручује се професионални људски превод. Не сносимо одговорност за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

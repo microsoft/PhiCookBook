@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
-  "translation_date": "2025-05-09T16:28:04+00:00",
+  "translation_date": "2025-07-16T23:37:16+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
   "language_code": "tr"
 }
 -->
-# Azure AI Foundry'de Microsoft'un Sorumlu AI İlkelerine Odaklanarak İncelenmiş Phi-3 / Phi-3.5 Modelini Değerlendirme
+# Azure AI Foundry'de Microsoft'un Sorumlu AI İlkelerine Odaklanarak İnce Ayarlı Phi-3 / Phi-3.5 Modelini Değerlendirme
 
-Bu uçtan uca (E2E) örnek, Microsoft Tech Community'den "[Microsoft'un Sorumlu AI'sına Odaklanarak Azure AI Foundry'de İncelenmiş Phi-3 / 3.5 Modellerini Değerlendirme](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" rehberine dayanmaktadır.
+Bu uçtan uca (E2E) örnek, Microsoft Tech Community'den "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" rehberine dayanmaktadır.
 
 ## Genel Bakış
 
 ### Azure AI Foundry'de ince ayarlı Phi-3 / Phi-3.5 modelinin güvenlik ve performansını nasıl değerlendirebilirsiniz?
 
-Bir modeli ince ayarlamak bazen istenmeyen veya beklenmedik yanıtlar ortaya çıkarabilir. Modelin güvenli ve etkili kalmasını sağlamak için, modelin zararlı içerik üretme potansiyelini ve doğru, ilgili ve tutarlı yanıtlar verme yeteneğini değerlendirmek önemlidir. Bu eğitimde, Azure AI Foundry'de Prompt flow ile entegre edilmiş ince ayarlı Phi-3 / Phi-3.5 modelinin güvenlik ve performansını nasıl değerlendireceğinizi öğreneceksiniz.
+Bir modeli ince ayarlamak bazen istenmeyen veya beklenmedik yanıtlar üretebilir. Modelin güvenli ve etkili kalmasını sağlamak için, modelin zararlı içerik üretme potansiyelini ve doğru, ilgili ve tutarlı yanıtlar verme yeteneğini değerlendirmek önemlidir. Bu eğitimde, Azure AI Foundry'de Prompt flow ile entegre edilmiş ince ayarlı Phi-3 / Phi-3.5 modelinin güvenlik ve performansını nasıl değerlendireceğinizi öğreneceksiniz.
 
 İşte Azure AI Foundry'nin değerlendirme süreci.
 
-![Eğitimin mimarisi.](../../../../../../translated_images/architecture.99df2035c1c1a82e7f7d3aa3368e5940e46d27d35abd498166e55094298fce81.tr.png)
+![Eğitimin mimarisi.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.tr.png)
 
-*Resim Kaynağı: [Generatif AI uygulamalarının değerlendirilmesi](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*Görsel Kaynağı: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
 >
-> Phi-3 / Phi-3.5 hakkında daha ayrıntılı bilgi ve ek kaynakları keşfetmek için lütfen [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723) sayfasını ziyaret edin.
+> Phi-3 / Phi-3.5 hakkında daha ayrıntılı bilgi ve ek kaynaklar için lütfen [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723) sayfasını ziyaret edin.
 
-### Ön Koşullar
+### Gereksinimler
 
 - [Python](https://www.python.org/downloads)
 - [Azure aboneliği](https://azure.microsoft.com/free?wt.mc_id=studentamb_279723)
@@ -53,157 +53,156 @@ Bir modeli ince ayarlamak bazen istenmeyen veya beklenmedik yanıtlar ortaya ç�
 
 ### Güvenlik değerlendirmesine giriş
 
-AI modelinizin etik ve güvenli olduğundan emin olmak için, Microsoft'un Sorumlu AI İlkeleri doğrultusunda değerlendirilmesi çok önemlidir. Azure AI Foundry'de güvenlik değerlendirmeleri, modelinizin jailbreak saldırılarına karşı savunmasızlığını ve zararlı içerik üretme potansiyelini ölçmenize olanak tanır; bu da doğrudan bu ilkelere uygundur.
+AI modelinizin etik ve güvenli olduğundan emin olmak için, Microsoft'un Sorumlu AI İlkeleri doğrultusunda değerlendirilmesi çok önemlidir. Azure AI Foundry'de güvenlik değerlendirmeleri, modelinizin jailbreak saldırılarına karşı savunmasızlığını ve zararlı içerik üretme potansiyelini değerlendirmenize olanak tanır; bu da doğrudan bu ilkelere uygundur.
 
-![Güvenlik değerlendirmesi.](../../../../../../translated_images/safety-evaluation.91fdef98588aadf56e8043d04cd78d24aac1472d6c121a6289f60d50d1f33d42.tr.png)
+![Güvenlik değerlendirmesi.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.tr.png)
 
-*Resim Kaynağı: [Generatif AI uygulamalarının değerlendirilmesi](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*Görsel Kaynağı: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
-#### Microsoft'un Sorumlu AI İlkeleri
+#### Microsoft’un Sorumlu AI İlkeleri
 
-Teknik adımlara başlamadan önce, AI sistemlerinin sorumlu geliştirilmesi, dağıtımı ve işletilmesi için rehberlik eden etik bir çerçeve olan Microsoft'un Sorumlu AI İlkelerini anlamak önemlidir. Bu ilkeler, AI teknolojilerinin adil, şeffaf ve kapsayıcı şekilde tasarlanmasını, geliştirilmesini ve dağıtılmasını sağlar. Bu ilkeler, AI modellerinin güvenliğini değerlendirmek için temel oluşturur.
+Teknik adımlara başlamadan önce, Microsoft’un Sorumlu AI İlkeleri’ni anlamak önemlidir. Bu ilkeler, AI sistemlerinin sorumlu şekilde geliştirilmesi, dağıtılması ve işletilmesi için etik bir çerçeve sunar. AI teknolojilerinin adil, şeffaf ve kapsayıcı bir şekilde inşa edilmesini sağlar. Bu ilkeler, AI modellerinin güvenliğini değerlendirmek için temel oluşturur.
 
-Microsoft'un Sorumlu AI İlkeleri şunlardır:
+Microsoft’un Sorumlu AI İlkeleri şunlardır:
 
-- **Adalet ve Kapsayıcılık**: AI sistemleri herkese adil davranmalı ve benzer durumda olan grupları farklı şekillerde etkilemekten kaçınmalıdır. Örneğin, AI sistemleri tıbbi tedavi, kredi başvuruları veya istihdam konularında rehberlik sağlarken, benzer semptomlara, finansal duruma veya mesleki niteliklere sahip herkese aynı önerileri yapmalıdır.
+- **Adalet ve Kapsayıcılık**: AI sistemleri herkese adil davranmalı ve benzer durumdaki insan gruplarını farklı şekillerde etkilemekten kaçınmalıdır. Örneğin, AI sistemleri tıbbi tedavi, kredi başvuruları veya işe alım konularında rehberlik sağlarken, benzer semptomlara, finansal durumlara veya mesleki niteliklere sahip herkese aynı önerileri sunmalıdır.
 
-- **Güvenilirlik ve Güvenlik**: Güven oluşturmak için AI sistemlerinin güvenilir, güvenli ve tutarlı çalışması kritik önemdedir. Bu sistemler, tasarlandığı şekilde çalışabilmeli, beklenmeyen durumlara güvenli yanıt verebilmeli ve zararlı manipülasyona karşı dirençli olmalıdır. Davranışları ve karşılayabildikleri durumlar, geliştiricilerin tasarım ve test aşamasında öngördüğü durumları yansıtır.
+- **Güvenilirlik ve Güvenlik**: Güven oluşturmak için AI sistemlerinin güvenilir, güvenli ve tutarlı çalışması kritik önemdedir. Bu sistemler, tasarlandığı şekilde çalışabilmeli, beklenmedik durumlara güvenli yanıt verebilmeli ve zararlı manipülasyonlara karşı dirençli olmalıdır. Davranışları ve karşılayabildikleri durum çeşitliliği, geliştiricilerin tasarım ve test aşamasında öngördüğü senaryoları yansıtır.
 
-- **Şeffaflık**: AI sistemleri insanların hayatlarını derinden etkileyen kararlar alınmasına yardımcı olduğunda, insanların bu kararların nasıl verildiğini anlaması çok önemlidir. Örneğin, bir banka bir kişinin kredi değerliliğini belirlemek için AI sistemi kullanabilir. Bir şirket ise en nitelikli adayları belirlemek için AI sisteminden yararlanabilir.
+- **Şeffaflık**: AI sistemleri insanların hayatlarını derinden etkileyen kararlar verirken, insanların bu kararların nasıl alındığını anlaması çok önemlidir. Örneğin, bir banka bir kişinin kredi değerliliğini AI sistemiyle değerlendirirken veya bir şirket en uygun adayları seçmek için AI kullanırken şeffaflık gereklidir.
 
-- **Gizlilik ve Güvenlik**: AI yaygınlaştıkça, gizliliğin korunması ve kişisel ile ticari bilgilerin güvenliği daha önemli ve karmaşık hale geliyor. AI ile gizlilik ve veri güvenliği özel dikkat gerektirir çünkü AI sistemlerinin insanlarla ilgili doğru ve bilinçli tahminler yapabilmesi için verilere erişim şarttır.
+- **Gizlilik ve Güvenlik**: AI yaygınlaştıkça, kişisel ve kurumsal bilgilerin gizliliğinin korunması ve güvenliğinin sağlanması daha önemli ve karmaşık hale gelmektedir. AI sistemlerinin doğru ve bilinçli tahminler yapabilmesi için verilere erişim gereklidir; bu nedenle gizlilik ve veri güvenliği yakından takip edilmelidir.
 
-- **Hesap Verebilirlik**: AI sistemlerini tasarlayan ve dağıtan kişiler, sistemlerinin nasıl çalıştığından sorumlu olmalıdır. Kuruluşlar, hesap verebilirlik normları geliştirmek için sektör standartlarından yararlanmalıdır. Bu normlar, AI sistemlerinin insanların hayatlarını etkileyen kararların nihai otoritesi olmamasını ve insanların yüksek otonomlu AI sistemleri üzerinde anlamlı kontrol sahibi olmasını sağlar.
+- **Hesap Verebilirlik**: AI sistemlerini tasarlayan ve dağıtan kişiler, sistemlerinin nasıl çalıştığından sorumlu olmalıdır. Kuruluşlar, hesap verebilirlik normları geliştirmek için sektör standartlarından yararlanmalıdır. Bu normlar, AI sistemlerinin insanların hayatını etkileyen kararların nihai otoritesi olmamasını ve insanların yüksek derecede otonom AI sistemleri üzerinde anlamlı kontrolü sürdürmesini sağlar.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.93a32c6cd88ec3e57ec73a8c81717cd74ba27d2cd6d500097c82d79ac49726d7.tr.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.tr.png)
 
-*Resim Kaynağı: [Sorumlu AI Nedir?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
+*Görsel Kaynağı: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
-> Microsoft'un Sorumlu AI İlkeleri hakkında daha fazla bilgi edinmek için [Sorumlu AI Nedir?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723) sayfasını ziyaret edin.
+> Microsoft’un Sorumlu AI İlkeleri hakkında daha fazla bilgi için [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723) sayfasını ziyaret edin.
 
-#### Güvenlik ölçütleri
+#### Güvenlik metrikleri
 
-Bu eğitimde, Azure AI Foundry'nin güvenlik ölçütlerini kullanarak ince ayarlı Phi-3 modelinin güvenliğini değerlendireceksiniz. Bu ölçütler, modelin zararlı içerik üretme potansiyelini ve jailbreak saldırılarına karşı savunmasızlığını değerlendirmenize yardımcı olur. Güvenlik ölçütleri şunları içerir:
+Bu eğitimde, Azure AI Foundry'nin güvenlik metriklerini kullanarak ince ayarlı Phi-3 modelinin güvenliğini değerlendireceksiniz. Bu metrikler, modelin zararlı içerik üretme potansiyelini ve jailbreak saldırılarına karşı savunmasızlığını ölçmenize yardımcı olur. Güvenlik metrikleri şunlardır:
 
-- **Kendine Zarar Verici İçerik**: Modelin kendine zarar verici içerik üretme eğilimini değerlendirir.
+- **Kendine Zarar Verme İçeriği**: Modelin kendine zarar verme ile ilgili içerik üretme eğilimini değerlendirir.
 - **Nefret ve Adaletsiz İçerik**: Modelin nefret dolu veya adaletsiz içerik üretme eğilimini değerlendirir.
 - **Şiddet İçeriği**: Modelin şiddet içeren içerik üretme eğilimini değerlendirir.
 - **Cinsel İçerik**: Modelin uygunsuz cinsel içerik üretme eğilimini değerlendirir.
 
-Bu yönleri değerlendirmek, AI modelinin zararlı veya saldırgan içerik üretmemesini sağlar ve toplumsal değerler ile düzenleyici standartlarla uyumlu olmasını garanti eder.
+Bu yönlerin değerlendirilmesi, AI modelinin zararlı veya saldırgan içerik üretmemesini sağlar ve toplumsal değerler ile düzenleyici standartlarla uyumlu hale getirir.
 
-![Güvenliğe dayalı değerlendirme.](../../../../../../translated_images/evaluate-based-on-safety.3def6d9c7edaa49c536a7e58bfa48e2676fe911e80e847b732c0c9688c19946c.tr.png)
+![Güvenlik bazlı değerlendirme.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.tr.png)
 
 ### Performans değerlendirmesine giriş
 
-AI modelinizin beklendiği gibi performans gösterdiğinden emin olmak için, performans ölçütlerine göre değerlendirilmesi önemlidir. Azure AI Foundry'de performans değerlendirmeleri, modelinizin doğru, ilgili ve tutarlı yanıtlar üretme etkinliğini ölçmenize olanak tanır.
+AI modelinizin beklendiği gibi çalıştığından emin olmak için, performans metriklerine göre değerlendirilmesi önemlidir. Azure AI Foundry'de performans değerlendirmeleri, modelinizin doğru, ilgili ve tutarlı yanıtlar üretme etkinliğini ölçmenize olanak tanır.
 
-![Performans değerlendirmesi.](../../../../../../translated_images/performance-evaluation.692eccfdea40b8a399040a6304cfee03667b5a9a0636a7152565d806427ff6be.tr.png)
+![Performans değerlendirmesi.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.tr.png)
 
-*Resim Kaynağı: [Generatif AI uygulamalarının değerlendirilmesi](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
+*Görsel Kaynağı: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
-#### Performans ölçütleri
+#### Performans metrikleri
 
-Bu eğitimde, Azure AI Foundry'nin performans ölçütlerini kullanarak ince ayarlı Phi-3 / Phi-3.5 modelinin performansını değerlendireceksiniz. Bu ölçütler, modelin doğru, ilgili ve tutarlı yanıtlar üretme etkinliğini değerlendirmenize yardımcı olur. Performans ölçütleri şunları içerir:
+Bu eğitimde, Azure AI Foundry'nin performans metriklerini kullanarak ince ayarlı Phi-3 / Phi-3.5 modelinin performansını değerlendireceksiniz. Bu metrikler, modelin doğru, ilgili ve tutarlı yanıtlar üretme etkinliğini ölçmenize yardımcı olur. Performans metrikleri şunlardır:
 
-- **Dayanaklılık (Groundedness)**: Üretilen yanıtların giriş kaynağındaki bilgiyle ne kadar uyumlu olduğunu değerlendirir.
-- **Alaka Düzeyi (Relevance)**: Üretilen yanıtların sorulara ne kadar uygun olduğunu değerlendirir.
-- **Tutarlılık (Coherence)**: Üretilen metnin ne kadar akıcı, doğal ve insan diline benzer olduğunu değerlendirir.
+- **Dayanaklılık (Groundedness)**: Üretilen yanıtların giriş kaynağındaki bilgilerle ne kadar uyumlu olduğunu değerlendirir.
+- **Alaka Düzeyi (Relevance)**: Üretilen yanıtların verilen sorularla ne kadar ilgili olduğunu değerlendirir.
+- **Tutarlılık (Coherence)**: Üretilen metnin akıcılığını, doğal okunabilirliğini ve insan benzeri dil özelliklerini değerlendirir.
 - **Akıcılık (Fluency)**: Üretilen metnin dil yeterliliğini değerlendirir.
-- **GPT Benzerliği (GPT Similarity)**: Üretilen yanıt ile gerçek veri arasındaki benzerliği karşılaştırır.
+- **GPT Benzerliği (GPT Similarity)**: Üretilen yanıtı gerçek veriyle karşılaştırarak benzerliğini ölçer.
 - **F1 Skoru**: Üretilen yanıt ile kaynak veri arasındaki ortak kelimelerin oranını hesaplar.
 
-Bu ölçütler, modelin doğru, ilgili ve tutarlı yanıtlar üretme etkinliğini değerlendirmede size yardımcı olur.
+Bu metrikler, modelin doğru, ilgili ve tutarlı yanıtlar üretme etkinliğini değerlendirmenize yardımcı olur.
 
-![Performansa dayalı değerlendirme.](../../../../../../translated_images/evaluate-based-on-performance.16c477bfd4e547f34dd803492ce032fbdb3376a5dbd236042233e21e5b7f7f6a.tr.png)
+![Performans bazlı değerlendirme.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.tr.png)
 
 ## **Senaryo 2: Azure AI Foundry'de Phi-3 / Phi-3.5 modelini değerlendirme**
 
 ### Başlamadan önce
 
-Bu eğitim, önceki blog yazıları "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ve "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" makalelerinin devamıdır. Bu yazılarda, Azure AI Foundry'de Phi-3 / Phi-3.5 modelinin ince ayar sürecini ve Prompt flow ile entegrasyonunu adım adım inceledik.
+Bu eğitim, önceki blog yazıları "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" ve "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" yazılarının devamıdır. Bu yazılarda, Azure AI Foundry'de Phi-3 / Phi-3.5 modelinin ince ayar süreci ve Prompt flow ile entegrasyonu anlatılmıştır.
 
-Bu eğitimde, Azure AI Foundry'de değerlendirici olarak bir Azure OpenAI modeli dağıtacak ve ince ayarlı Phi-3 / Phi-3.5 modelinizi değerlendirmek için kullanacaksınız.
+Bu eğitimde, Azure AI Foundry'de bir değerlendirici olarak Azure OpenAI modelini dağıtacak ve ince ayarlı Phi-3 / Phi-3.5 modelinizi değerlendirmek için kullanacaksınız.
 
-Bu eğitime başlamadan önce, önceki eğitimlerde anlatıldığı şekilde aşağıdaki ön koşullara sahip olduğunuzdan emin olun:
+Bu eğitime başlamadan önce, önceki eğitimlerde açıklandığı gibi aşağıdaki gereksinimlere sahip olduğunuzdan emin olun:
 
 1. İnce ayarlı Phi-3 / Phi-3.5 modelini değerlendirmek için hazırlanmış bir veri seti.
-1. Azure Machine Learning üzerinde ince ayar yapılmış ve dağıtılmış bir Phi-3 / Phi-3.5 modeli.
+1. Azure Machine Learning'e dağıtılmış ve ince ayarlı Phi-3 / Phi-3.5 modeli.
 1. Azure AI Foundry'de ince ayarlı Phi-3 / Phi-3.5 modelinizle entegre edilmiş bir Prompt flow.
 
 > [!NOTE]
-> Önceki blog yazılarında indirilen **ULTRACHAT_200k** veri setinin data klasöründe bulunan *test_data.jsonl* dosyasını, ince ayarlı Phi-3 / Phi-3.5 modelini değerlendirmek için veri seti olarak kullanacaksınız.
+> Önceki blog yazılarında indirilen **ULTRACHAT_200k** veri setindeki data klasöründe bulunan *test_data.jsonl* dosyasını, ince ayarlı Phi-3 / Phi-3.5 modelini değerlendirmek için veri seti olarak kullanacaksınız.
 
 #### Azure AI Foundry'de Prompt flow ile özel Phi-3 / Phi-3.5 modelini entegre etme (Öncelikle kod yaklaşımı)
-
-> [!NOTE]
-> Eğer "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" başlığında anlatılan düşük kod yaklaşımını izlediyseniz, bu alıştırmayı atlayıp bir sonraki adıma geçebilirsiniz.
-> Ancak, Phi-3 / Phi-3.5 modelinizi ince ayar yapmak ve dağıtmak için "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" başlığında anlatılan kod öncelikli yaklaşımı kullandıysanız, modelinizi Prompt flow'a bağlama süreci biraz farklıdır. Bu süreci bu alıştırmada öğreneceksiniz.
-
-Devam etmek için, ince ayarlı Phi-3 / Phi-3.5 modelinizi Azure AI Foundry'de Prompt flow'a entegre etmeniz gerekiyor.
+> [!NOTE]  
+> "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" başlığında anlatılan düşük kod yaklaşımını takip ettiyseniz, bu alıştırmayı atlayabilir ve bir sonrakine geçebilirsiniz.  
+> Ancak, Phi-3 / Phi-3.5 modelinizi ince ayar yapmak ve dağıtmak için "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" başlığında anlatılan kod öncelikli yaklaşımı takip ettiyseniz, modelinizi Prompt flow’a bağlama süreci biraz farklıdır. Bu süreci bu alıştırmada öğreneceksiniz.
+İlerlemeniz için, ince ayar yapılmış Phi-3 / Phi-3.5 modelinizi Azure AI Foundry'deki Prompt flow’a entegre etmeniz gerekiyor.
 
 #### Azure AI Foundry Hub Oluşturma
 
-Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, Azure AI Foundry içinde birden fazla projeyi düzenlemenize ve yönetmenize olanak tanıyan bir Kaynak Grubu gibi çalışır.
+Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, Azure AI Foundry içinde birden fazla Projeyi organize edip yönetmenizi sağlayan bir Kaynak Grubu gibi çalışır.
 
-1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) sitesine giriş yapın.
+1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) adresine giriş yapın.
 
 1. Sol taraftaki sekmeden **All hubs** seçeneğini seçin.
 
 1. Navigasyon menüsünden **+ New hub** seçeneğini seçin.
 
-    ![Hub oluşturma.](../../../../../../translated_images/create-hub.1e304b20eb7e729735ac1c083fbaf6c02be763279b86af2540e8a001f2bf470b.tr.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.tr.png)
 
-1. Aşağıdaki işlemleri gerçekleştirin:
+1. Aşağıdaki işlemleri yapın:
 
     - **Hub name** girin. Bu benzersiz bir değer olmalıdır.
-    - Azure **Subscription**'ınızı seçin.
-    - Kullanmak istediğiniz **Resource group**'u seçin (gerekirse yeni bir tane oluşturun).
-    - Kullanmak istediğiniz **Location**'ı seçin.
-    - Kullanmak istediğiniz **Connect Azure AI Services**'i seçin (gerekirse yeni bir tane oluşturun).
-    - **Connect Azure AI Search** için **Skip connecting** seçeneğini işaretleyin.
-![Fill hub.](../../../../../../translated_images/fill-hub.bb8b648703e968da13d123e40a6fc76f2193f6c6b432d24036d2aa9e823ee813.tr.png)
+    - Azure **Subscription**’ınızı seçin.
+    - Kullanmak istediğiniz **Resource group**’u seçin (gerekirse yenisini oluşturun).
+    - Kullanmak istediğiniz **Location**’ı seçin.
+    - Kullanmak istediğiniz **Connect Azure AI Services**’i seçin (gerekirse yenisini oluşturun).
+    - **Connect Azure AI Search** için **Skip connecting** seçeneğini seçin.
 
-1. **Next**'i seçin.
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.tr.png)
+
+1. **Next** seçeneğini seçin.
 
 #### Azure AI Foundry Projesi Oluşturma
 
-1. Oluşturduğunuz Hub'da, sol taraftaki sekmeden **All projects**'i seçin.
+1. Oluşturduğunuz Hub’da, sol taraftaki sekmeden **All projects** seçeneğini seçin.
 
-1. Navigasyon menüsünden **+ New project**'i seçin.
+1. Navigasyon menüsünden **+ New project** seçeneğini seçin.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.tr.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.tr.png)
 
-1. **Project name** girin. Benzersiz bir değer olmalıdır.
+1. **Project name** girin. Bu benzersiz bir değer olmalıdır.
 
-    ![Create project.](../../../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.tr.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.tr.png)
 
-1. **Create a project**'i seçin.
+1. **Create a project** seçeneğini seçin.
 
-#### Fine-tuned Phi-3 / Phi-3.5 modeli için özel bağlantı ekleme
+#### İnce ayar yapılmış Phi-3 / Phi-3.5 modeli için özel bağlantı ekleme
 
-Özel Phi-3 / Phi-3.5 modelinizi Prompt flow ile entegre etmek için modelin endpoint ve anahtarını özel bir bağlantıda kaydetmeniz gerekir. Bu ayar, Prompt flow'da özel Phi-3 / Phi-3.5 modelinize erişimi sağlar.
+Özel Phi-3 / Phi-3.5 modelinizi Prompt flow ile entegre etmek için modelin endpoint ve anahtarını özel bir bağlantı olarak kaydetmeniz gerekir. Bu ayar, Prompt flow içinde özel Phi-3 / Phi-3.5 modelinize erişimi sağlar.
 
-#### Fine-tuned Phi-3 / Phi-3.5 modelinin api anahtarı ve endpoint uri'sini ayarlama
+#### İnce ayar yapılmış Phi-3 / Phi-3.5 modelinin api anahtarı ve endpoint uri’sini ayarlama
 
 1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) adresini ziyaret edin.
 
 1. Oluşturduğunuz Azure Machine learning çalışma alanına gidin.
 
-1. Sol taraftaki sekmeden **Endpoints**'i seçin.
+1. Sol taraftaki sekmeden **Endpoints** seçeneğini seçin.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.fc2852aa73fdb1531682b599c0b1f5b39a842f0a60fec7c8e941b3070ec6c463.tr.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.tr.png)
 
-1. Oluşturduğunuz endpoint'i seçin.
+1. Oluşturduğunuz endpoint’i seçin.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.e1cd34ec8ae5a3eca599be7c894b0738e243317960138984b32d8a3fe20f4380.tr.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.tr.png)
 
-1. Navigasyon menüsünden **Consume**'u seçin.
+1. Navigasyon menüsünden **Consume** seçeneğini seçin.
 
-1. **REST endpoint** ve **Primary key**'i kopyalayın.
+1. **REST endpoint** ve **Primary key**’inizi kopyalayın.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.f74d8aab513b5f540d2a219198fc5b7a3e64213497491bedb17f4bd039f16054.tr.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.tr.png)
 
 #### Özel Bağlantı Ekleme
 
@@ -211,58 +210,58 @@ Proje oluşturmadan önce bir Hub oluşturmanız gerekir. Hub, Azure AI Foundry 
 
 1. Oluşturduğunuz Azure AI Foundry projesine gidin.
 
-1. Oluşturduğunuz projede, sol taraftaki sekmeden **Settings**'i seçin.
+1. Oluşturduğunuz Projede, sol taraftaki sekmeden **Settings** seçeneğini seçin.
 
-1. **+ New connection**'ı seçin.
+1. **+ New connection** seçeneğini seçin.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.7ac97b4db6dc44c3d4f01a38b22fff11c3e88f75bcbf4d26999048a61a8729b2.tr.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.tr.png)
 
-1. Navigasyon menüsünden **Custom keys**'i seçin.
+1. Navigasyon menüsünden **Custom keys** seçeneğini seçin.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.b2e452da9ea19401c4b7c63fe2ec95a3a38fd13ae3e9fca37d431f0b7780d4da.tr.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.tr.png)
 
 1. Aşağıdaki işlemleri yapın:
 
-    - **+ Add key value pairs**'i seçin.
-    - Anahtar adı olarak **endpoint** girin ve Azure ML Studio'dan kopyaladığınız endpoint'i değer alanına yapıştırın.
-    - Tekrar **+ Add key value pairs**'i seçin.
-    - Anahtar adı olarak **key** girin ve Azure ML Studio'dan kopyaladığınız anahtarı değer alanına yapıştırın.
-    - Anahtarları ekledikten sonra, anahtarın görünmemesi için **is secret**'i seçin.
+    - **+ Add key value pairs** seçeneğini seçin.
+    - Anahtar adı olarak **endpoint** girin ve Azure ML Studio’dan kopyaladığınız endpoint’i değer alanına yapıştırın.
+    - Tekrar **+ Add key value pairs** seçeneğini seçin.
+    - Anahtar adı olarak **key** girin ve Azure ML Studio’dan kopyaladığınız anahtarı değer alanına yapıştırın.
+    - Anahtarları ekledikten sonra, anahtarın görünmesini engellemek için **is secret** seçeneğini işaretleyin.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.645b0c3ecf4a21f97a16ffafc9f25fedbb75a823cec5fc9dd778c3ab6130b4f0.tr.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.tr.png)
 
-1. **Add connection**'ı seçin.
+1. **Add connection** seçeneğini seçin.
 
 #### Prompt flow Oluşturma
 
-Azure AI Foundry'de özel bir bağlantı eklediniz. Şimdi aşağıdaki adımlarla bir Prompt flow oluşturacağız. Ardından, bu Prompt flow'u özel bağlantıya bağlayarak fine-tuned modeli Prompt flow içinde kullanacaksınız.
+Azure AI Foundry’da özel bir bağlantı eklediniz. Şimdi aşağıdaki adımları izleyerek bir Prompt flow oluşturacağız. Daha sonra bu Prompt flow’u özel bağlantıya bağlayarak ince ayar yapılmış modeli Prompt flow içinde kullanacaksınız.
 
 1. Oluşturduğunuz Azure AI Foundry projesine gidin.
 
-1. Sol taraftaki sekmeden **Prompt flow**'u seçin.
+1. Sol taraftaki sekmeden **Prompt flow** seçeneğini seçin.
 
-1. Navigasyon menüsünden **+ Create**'i seçin.
+1. Navigasyon menüsünden **+ Create** seçeneğini seçin.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.4d42246677cc7ba65feb3e2be4479620a2b1e6637a66847dc1047ca89cd02780.tr.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.tr.png)
 
-1. Navigasyon menüsünden **Chat flow**'u seçin.
+1. Navigasyon menüsünden **Chat flow** seçeneğini seçin.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.e818b610f36e93c5c9741911d7b95232164f01486cbb39a29d748c322bd62038.tr.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.tr.png)
 
-1. Kullanmak istediğiniz **Folder name** girin.
+1. Kullanmak istediğiniz **Folder name**’i girin.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.628d4a5d69122cfae9d66e9bccf0f2f38c595e90e456a3837c713aadeff6aa52.tr.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.tr.png)
 
-1. **Create**'i seçin.
+1. **Create** seçeneğini seçin.
 
-#### Özel Phi-3 / Phi-3.5 modeli ile sohbet etmek için Prompt flow'u ayarlama
+#### İnce ayar yapılmış Phi-3 / Phi-3.5 modelinizle sohbet etmek için Prompt flow’u ayarlama
 
-Fine-tuned Phi-3 / Phi-3.5 modelinizi Prompt flow'a entegre etmeniz gerekiyor. Ancak, mevcut Prompt flow bu amaç için tasarlanmamıştır. Bu nedenle, özel modeli entegre etmek için Prompt flow'u yeniden tasarlamanız gerekir.
+İnce ayar yapılmış Phi-3 / Phi-3.5 modelinizi Prompt flow’a entegre etmeniz gerekiyor. Ancak, mevcut Prompt flow bu amaç için tasarlanmamıştır. Bu nedenle, özel modelin entegrasyonunu sağlamak için Prompt flow’u yeniden tasarlamanız gerekir.
 
-1. Prompt flow'da mevcut akışı yeniden oluşturmak için aşağıdaki işlemleri yapın:
+1. Prompt flow içinde, mevcut akışı yeniden oluşturmak için aşağıdaki işlemleri yapın:
 
-    - **Raw file mode**'u seçin.
-    - *flow.dag.yml* dosyasındaki mevcut tüm kodu silin.
+    - **Raw file mode** seçeneğini seçin.
+    - *flow.dag.yml* dosyasındaki tüm mevcut kodu silin.
     - *flow.dag.yml* dosyasına aşağıdaki kodu ekleyin.
 
         ```yml
@@ -286,11 +285,11 @@ Fine-tuned Phi-3 / Phi-3.5 modelinizi Prompt flow'a entegre etmeniz gerekiyor. A
             input_data: ${inputs.input_data}
         ```
 
-    - **Save**'i seçin.
+    - **Save** seçeneğini seçin.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.e665df3117bf5411acf4d93bc8ecc405a984120c0ca7b944fe700601fdbac66f.tr.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.tr.png)
 
-1. Prompt flow'da özel Phi-3 / Phi-3.5 modelini kullanmak için *integrate_with_promptflow.py* dosyasına aşağıdaki kodu ekleyin.
+1. Prompt flow içinde özel Phi-3 / Phi-3.5 modelini kullanmak için *integrate_with_promptflow.py* dosyasına aşağıdaki kodu ekleyin.
 
     ```python
     import logging
@@ -351,51 +350,51 @@ Fine-tuned Phi-3 / Phi-3.5 modelinizi Prompt flow'a entegre etmeniz gerekiyor. A
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.8547c46c57a5354667f91578d7bca9cc2d0f5e1c4dadd59efa1ca18d6376e7a8.tr.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.tr.png)
 
 > [!NOTE]
-> Azure AI Foundry'de Prompt flow kullanımı hakkında daha detaylı bilgi için [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) sayfasına bakabilirsiniz.
+> Azure AI Foundry’de Prompt flow kullanımı hakkında daha detaylı bilgi için [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) sayfasına bakabilirsiniz.
 
-1. Modelinizle sohbeti etkinleştirmek için **Chat input**, **Chat output**'u seçin.
+1. Modelinizle sohbeti etkinleştirmek için **Chat input**, **Chat output** seçeneklerini seçin.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.4d094b2da9e817e0ef7b9fd5339d929b50364b430ecc476a39c885ae9e4dcb35.tr.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.tr.png)
 
-1. Artık özel Phi-3 / Phi-3.5 modelinizle sohbet etmeye hazırsınız. Bir sonraki alıştırmada Prompt flow'u nasıl başlatacağınızı ve fine-tuned Phi-3 / Phi-3.5 modelinizle sohbet etmek için nasıl kullanacağınızı öğreneceksiniz.
+1. Artık özel Phi-3 / Phi-3.5 modelinizle sohbet etmeye hazırsınız. Sonraki alıştırmada, Prompt flow’u nasıl başlatacağınızı ve ince ayar yapılmış Phi-3 / Phi-3.5 modelinizle sohbet etmek için nasıl kullanacağınızı öğreneceksiniz.
 
 > [!NOTE]
 >
-> Yeniden oluşturulan akış aşağıdaki görünüme benzemelidir:
+> Yeniden oluşturulan akış aşağıdaki görseldeki gibi olmalıdır:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.55ee258e205e3b686250c5fc480ffe8956eb9f4887f7b11e94a6720e0d032733.tr.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.tr.png)
 >
 
-#### Prompt flow'u Başlatma
+#### Prompt flow’u Başlatma
 
-1. Prompt flow'u başlatmak için **Start compute sessions**'ı seçin.
+1. Prompt flow’u başlatmak için **Start compute sessions** seçeneğini seçin.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.e7eb268344e2040fdee7b46a175d2fbd19477e0ab122ef563113828d03b03946.tr.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.tr.png)
 
-1. Parametreleri yenilemek için **Validate and parse input**'u seçin.
+1. Parametreleri yenilemek için **Validate and parse input** seçeneğini seçin.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.dffb16c78fc266e52d55582791d67a54d631c166a61d7ca57a258e00c2e14150.tr.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.tr.png)
 
 1. Oluşturduğunuz özel bağlantının **connection** değerini seçin. Örneğin, *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.5c7a570da52e12219d21fef02800b152d124722619f56064b172a84721603b52.tr.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.tr.png)
 
 #### Özel Phi-3 / Phi-3.5 modelinizle sohbet etme
 
-1. **Chat**'i seçin.
+1. **Chat** seçeneğini seçin.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.c255a13f678aa46d9601c54a81aa2e0d58c9e01a8c6ec7d86598438d8e19214d.tr.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.tr.png)
 
-1. İşte sonuçlara bir örnek: Artık özel Phi-3 / Phi-3.5 modelinizle sohbet edebilirsiniz. Fine-tuning için kullanılan verilere dayalı sorular sormanız önerilir.
+1. İşte sonuçlara bir örnek: Artık özel Phi-3 / Phi-3.5 modelinizle sohbet edebilirsiniz. İnce ayar için kullanılan verilere dayalı sorular sormanız önerilir.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.6da5e838c71f428b6d8aea9a0c655568354ae82babcdc87cd0f0d4edeee9d930.tr.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.tr.png)
 
 ### Phi-3 / Phi-3.5 modelini değerlendirmek için Azure OpenAI dağıtımı yapma
 
-Phi-3 / Phi-3.5 modelini Azure AI Foundry'de değerlendirmek için Azure OpenAI modelini dağıtmanız gerekir. Bu model, Phi-3 / Phi-3.5 modelinin performansını değerlendirmek için kullanılacaktır.
+Phi-3 / Phi-3.5 modelini Azure AI Foundry’de değerlendirmek için bir Azure OpenAI modeli dağıtmanız gerekir. Bu model, Phi-3 / Phi-3.5 modelinin performansını değerlendirmek için kullanılacaktır.
 
 #### Azure OpenAI Dağıtımı
 
@@ -403,119 +402,118 @@ Phi-3 / Phi-3.5 modelini Azure AI Foundry'de değerlendirmek için Azure OpenAI 
 
 1. Oluşturduğunuz Azure AI Foundry projesine gidin.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.84d119464c1bb0a8f5f9ab58012fa88304b0e3b0d6ddda444617424b2bb0d22e.tr.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.tr.png)
 
-1. Oluşturduğunuz projede, sol taraftaki sekmeden **Deployments**'ı seçin.
+1. Oluşturduğunuz Projede, sol taraftaki sekmeden **Deployments** seçeneğini seçin.
 
-1. Navigasyon menüsünden **+ Deploy model**'i seçin.
+1. Navigasyon menüsünden **+ Deploy model** seçeneğini seçin.
 
-1. **Deploy base model**'i seçin.
+1. **Deploy base model** seçeneğini seçin.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.91e6d9f9934e0e0c63116bd81a7628ea5ab37617f3e3b23a998a37c7f5aaba8b.tr.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.tr.png)
 
 1. Kullanmak istediğiniz Azure OpenAI modelini seçin. Örneğin, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.c0f0e8d4afe80525745b4e67b52ae0d23550da9130bc8d1aea8160be0e261399.tr.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.tr.png)
 
-1. **Confirm**'i seçin.
+1. **Confirm** seçeneğini seçin.
 
-### Azure AI Foundry'nin Prompt flow değerlendirmesi ile fine-tuned Phi-3 / Phi-3.5 modelini değerlendirme
+### Azure AI Foundry’nin Prompt flow değerlendirmesi ile ince ayar yapılmış Phi-3 / Phi-3.5 modelini değerlendirme
 
-### Yeni değerlendirme başlatma
+### Yeni bir değerlendirme başlatma
 
 1. [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) adresini ziyaret edin.
 
 1. Oluşturduğunuz Azure AI Foundry projesine gidin.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.84d119464c1bb0a8f5f9ab58012fa88304b0e3b0d6ddda444617424b2bb0d22e.tr.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.tr.png)
 
-1. Oluşturduğunuz projede, sol taraftaki sekmeden **Evaluation**'ı seçin.
+1. Oluşturduğunuz Projede, sol taraftaki sekmeden **Evaluation** seçeneğini seçin.
 
-1. Navigasyon menüsünden **+ New evaluation**'ı seçin.
-![Değerlendirmeyi seçin.](../../../../../../translated_images/select-evaluation.00ce489c57544e735170ae63682b293c3f5e362ded9d62b602ff0cf8e957287c.tr.png)
+1. Navigasyon menüsünden **+ New evaluation** seçeneğini seçin.
+
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.tr.png)
 
 1. **Prompt flow** değerlendirmesini seçin.
 
-    ![Prompt flow değerlendirmesini seçin.](../../../../../../translated_images/promptflow-evaluation.350729f9e70f59110aa0b425adcdf00b2d5382066144ac1cdf265fa1884808b2.tr.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.tr.png)
 
-1. Aşağıdaki görevleri gerçekleştirin:
+1. Aşağıdaki işlemleri yapın:
 
-    - Değerlendirme adını girin. Benzersiz bir değer olmalıdır.
-    - Görev türü olarak **Kontekstsiz soru ve cevap** seçin. Çünkü bu eğitimde kullanılan **UlTRACHAT_200k** veri seti kontekst içermez.
+    - Değerlendirme adını girin. Bu benzersiz bir değer olmalıdır.
+    - Görev türü olarak **Question and answer without context** seçin. Çünkü bu eğitimde kullanılan **ULTRACHAT_200k** veri seti bağlam içermemektedir.
     - Değerlendirmek istediğiniz prompt flow’u seçin.
 
-    ![Prompt flow değerlendirmesi.](../../../../../../translated_images/evaluation-setting1.772ca4e86a27e9c37d627e36c84c07b363a5d5229724f15596599d6b0f1d4ca1.tr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.tr.png)
 
-1. **İleri** seçeneğini tıklayın.
+1. **Next** seçeneğini seçin.
 
-1. Aşağıdaki görevleri gerçekleştirin:
+1. Aşağıdaki işlemleri yapın:
 
-    - Veri setinizi yüklemek için **Veri setinizi ekleyin** seçeneğini seçin. Örneğin, **ULTRACHAT_200k** veri setini indirirken dahil edilen *test_data.json1* gibi test veri dosyasını yükleyebilirsiniz.
-    - Veri setinize uygun **Veri seti sütununu** seçin. Örneğin, **ULTRACHAT_200k** veri setini kullanıyorsanız, veri seti sütunu olarak **${data.prompt}** seçin.
+    - Veri setini yüklemek için **Add your dataset** seçeneğini seçin. Örneğin, **ULTRACHAT_200k** veri setini indirirken dahil edilen *test_data.json1* test veri dosyasını yükleyebilirsiniz.
+    - Veri setinize uygun **Dataset column**’u seçin. Örneğin, **ULTRACHAT_200k** veri setini kullanıyorsanız, **${data.prompt}** sütununu seçin.
 
-    ![Prompt flow değerlendirmesi.](../../../../../../translated_images/evaluation-setting2.074e573f2ab245d37b12a9057b8fef349a552962f1ec3b23fd09734d4d653752.tr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.tr.png)
 
-1. **İleri** seçeneğini tıklayın.
+1. **Next** seçeneğini seçin.
 
-1. Performans ve kalite metriklerini yapılandırmak için aşağıdaki görevleri gerçekleştirin:
+1. Performans ve kalite metriklerini yapılandırmak için aşağıdaki işlemleri yapın:
 
     - Kullanmak istediğiniz performans ve kalite metriklerini seçin.
-    - Değerlendirme için oluşturduğunuz Azure OpenAI modelini seçin. Örneğin, **gpt-4o** seçin.
+    - Değerlendirme için oluşturduğunuz Azure OpenAI modelini seçin. Örneğin, **gpt-4o**.
 
-    ![Prompt flow değerlendirmesi.](../../../../../../translated_images/evaluation-setting3-1.7e26ae563c1312db5d1d21f8f44652243627f487df036ba27fe58d181102300d.tr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.tr.png)
 
-1. Risk ve güvenlik metriklerini yapılandırmak için aşağıdaki görevleri gerçekleştirin:
+1. Risk ve güvenlik metriklerini yapılandırmak için aşağıdaki işlemleri yapın:
 
     - Kullanmak istediğiniz risk ve güvenlik metriklerini seçin.
-    - Kusur oranını hesaplamak için kullanmak istediğiniz eşik değerini seçin. Örneğin, **Orta** seçin.
-    - **question** için **Veri kaynağı** olarak **{$data.prompt}** seçin.
-    - **answer** için **Veri kaynağı** olarak **{$run.outputs.answer}** seçin.
-    - **ground_truth** için **Veri kaynağı** olarak **{$data.message}** seçin.
+    - Hata oranını hesaplamak için kullanmak istediğiniz eşik değerini seçin. Örneğin, **Medium**.
+    - **question** için **Data source** olarak **{$data.prompt}** seçin.
+    - **answer** için **Data source** olarak **{$run.outputs.answer}** seçin.
+    - **ground_truth** için **Data source** olarak **{$data.message}** seçin.
 
-    ![Prompt flow değerlendirmesi.](../../../../../../translated_images/evaluation-setting3-2.185148a456f1edb7d0db874f765dc6bc34fec7e1b00833be81b0428af6d18233.tr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.tr.png)
 
-1. **İleri** seçeneğini tıklayın.
+1. **Next** seçeneğini seçin.
 
-1. Değerlendirmeyi başlatmak için **Gönder** seçeneğini tıklayın.
+1. Değerlendirmeyi başlatmak için **Submit** seçeneğini seçin.
 
-1. Değerlendirme tamamlanması biraz zaman alacaktır. İlerlemeyi **Değerlendirme** sekmesinden takip edebilirsiniz.
+1. Değerlendirme tamamlanana kadar biraz zaman alacaktır. İlerlemeyi **Evaluation** sekmesinden takip edebilirsiniz.
 
-### Değerlendirme Sonuçlarını İnceleyin
-
+### Değerlendirme Sonuçlarını İnceleme
 > [!NOTE]
-> Aşağıda sunulan sonuçlar değerlendirme sürecini göstermek amacıyla verilmiştir. Bu eğitimde, nispeten küçük bir veri seti üzerinde ince ayar yapılmış bir model kullandık; bu nedenle sonuçlar ideal olmayabilir. Gerçek sonuçlar, kullanılan veri setinin boyutu, kalitesi ve çeşitliliği ile modelin özel yapılandırmasına bağlı olarak önemli ölçüde değişebilir.
-
-Değerlendirme tamamlandıktan sonra performans ve güvenlik metrikleri için sonuçları inceleyebilirsiniz.
+> Aşağıda sunulan sonuçlar, değerlendirme sürecini göstermek amacıyla verilmiştir. Bu eğitimde, nispeten küçük bir veri seti üzerinde ince ayar yapılmış bir model kullanılmıştır; bu da optimal olmayan sonuçlara yol açabilir. Gerçek sonuçlar, kullanılan veri setinin boyutu, kalitesi ve çeşitliliği ile modelin özel yapılandırmasına bağlı olarak önemli ölçüde değişiklik gösterebilir.
+Değerlendirme tamamlandıktan sonra, performans ve güvenlik metrikleri için sonuçları inceleyebilirsiniz.
 
 1. Performans ve kalite metrikleri:
 
     - Modelin tutarlı, akıcı ve ilgili yanıtlar üretme etkinliğini değerlendirin.
 
-    ![Değerlendirme sonucu.](../../../../../../translated_images/evaluation-result-gpu.8e9decea0f5dd1250948982514bcde94bb2debba2b686be5e633f1aad093921f.tr.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.tr.png)
 
 1. Risk ve güvenlik metrikleri:
 
     - Modelin çıktılarının güvenli olduğundan ve Sorumlu AI İlkeleri ile uyumlu olduğundan emin olun; zararlı veya saldırgan içeriklerden kaçının.
 
-    ![Değerlendirme sonucu.](../../../../../../translated_images/evaluation-result-gpu-2.180e37b9669f3d31aade247bd38b87b15a2ef93b69a1633c4e4072946aadaa26.tr.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.tr.png)
 
 1. **Detaylı metrik sonuçlarını** görmek için aşağı kaydırabilirsiniz.
 
-    ![Değerlendirme sonucu.](../../../../../../translated_images/detailed-metrics-result.a0abde70a729afee17e34df7c11ea2f6f0ea1aefbe8a26a35502f304de57a647.tr.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.tr.png)
 
-1. Performans ve güvenlik metrikleri açısından özel Phi-3 / Phi-3.5 modelinizi değerlendirerek, modelin sadece etkili olmadığını aynı zamanda sorumlu AI uygulamalarına da uyduğunu doğrulayabilir ve gerçek dünya kullanımına hazır hale getirebilirsiniz.
+1. Özel Phi-3 / Phi-3.5 modelinizi hem performans hem de güvenlik metriklerine göre değerlendirerek, modelin sadece etkili olmadığını, aynı zamanda sorumlu AI uygulamalarına uygun olduğunu doğrulayabilir ve gerçek dünya kullanımı için hazır hale getirebilirsiniz.
 
 ## Tebrikler!
 
 ### Bu eğitimi tamamladınız
 
-Azure AI Foundry’de Prompt flow ile entegre edilmiş ince ayarlı Phi-3 modelini başarıyla değerlendirdiniz. Bu, AI modellerinizin sadece iyi performans göstermesini değil, aynı zamanda Microsoft’un Sorumlu AI ilkelerine uymasını sağlayarak güvenilir ve sağlam AI uygulamaları oluşturmanıza yardımcı olan önemli bir adımdır.
+Azure AI Foundry’de Prompt flow ile entegre edilmiş ince ayarlı Phi-3 modelini başarıyla değerlendirdiniz. Bu, AI modellerinizin sadece iyi performans göstermesini değil, aynı zamanda Microsoft’un Sorumlu AI ilkelerine uygun olmasını sağlayarak güvenilir ve sağlam AI uygulamaları geliştirmenize yardımcı olacak önemli bir adımdır.
 
-![Mimari.](../../../../../../translated_images/architecture.99df2035c1c1a82e7f7d3aa3368e5940e46d27d35abd498166e55094298fce81.tr.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.tr.png)
 
 ## Azure Kaynaklarını Temizleyin
 
-Hesabınıza ek ücret yansımaması için Azure kaynaklarınızı temizleyin. Azure portalına gidin ve aşağıdaki kaynakları silin:
+Hesabınıza ek ücret yansımaması için Azure kaynaklarınızı temizleyin. Azure portalına gidip aşağıdaki kaynakları silin:
 
 - Azure Machine learning kaynağı.
 - Azure Machine learning model uç noktası.
@@ -526,21 +524,21 @@ Hesabınıza ek ücret yansımaması için Azure kaynaklarınızı temizleyin. A
 
 #### Dokümantasyon
 
-- [Responsible AI dashboard kullanarak AI sistemlerini değerlendirme](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
-- [Generatif AI için değerlendirme ve izleme metrikleri](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
+- [Sorumlu AI panosunu kullanarak AI sistemlerini değerlendirin](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
+- [Üretken AI için değerlendirme ve izleme metrikleri](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
 - [Azure AI Foundry dokümantasyonu](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flow dokümantasyonu](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Eğitim İçeriği
 
 - [Microsoft’un Sorumlu AI Yaklaşımına Giriş](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry’a Giriş](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Azure AI Foundry’e Giriş](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Referans
 
 - [Sorumlu AI nedir?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
-- [Daha güvenli ve güvenilir generatif AI uygulamaları oluşturmanıza yardımcı olacak Azure AI’daki yeni araçların duyurusu](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
-- [Generatif AI uygulamalarının değerlendirilmesi](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
+- [Daha güvenli ve güvenilir üretken AI uygulamaları geliştirmenize yardımcı olacak Azure AI’daki yeni araçların duyurusu](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
+- [Üretken AI uygulamalarının değerlendirilmesi](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

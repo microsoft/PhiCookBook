@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:29:45+00:00",
+  "translation_date": "2025-07-16T22:20:28+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "tr"
 }
 -->
 ## **Model Builder kullanarak Phi-3.5 nasıl kuantize edilir**
 
-Model Builder artık Phi-3.5 Instruct ve Phi-3.5-Vision için ONNX model kuantizasyonunu destekliyor.
+Model Builder artık Phi-3.5 Instruct ve Phi-3.5-Vision için ONNX model kuantizasyonunu desteklemektedir.
 
 ### **Phi-3.5-Instruct**
 
@@ -52,7 +52,7 @@ cd models
 2. microsoft/Phi-3.5-vision-instruct modelini models klasörüne indirin  
 [https://huggingface.co/microsoft/Phi-3.5-vision-instruct](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
 
-3. Bu dosyaları Phi-3.5-vision-instruct klasörünüze indiriniz
+3. Lütfen bu dosyaları Phi-3.5-vision-instruct klasörünüze indirin
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json)
 
@@ -65,7 +65,7 @@ cd models
 
 5. Terminale gidin
 
-    FP32 destekli ONNX dönüşümünü yapın
+    FP32 ile ONNX desteğini dönüştürün
 
 ```bash
 
@@ -73,21 +73,21 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ```
 
-### **Not:**
+### **Notlar:**
 
-1. Model Builder şu anda Phi-3.5-Instruct ve Phi-3.5-Vision dönüşümünü destekliyor, ancak Phi-3.5-MoE desteklemiyor.
+1. Model Builder şu anda Phi-3.5-Instruct ve Phi-3.5-Vision dönüşümünü desteklemekte, ancak Phi-3.5-MoE desteklememektedir.
 
-2. ONNX kuantize modeli kullanmak için Generative AI extensions for onnxruntime SDK üzerinden erişebilirsiniz.
+2. ONNX’in kuantize edilmiş modelini kullanmak için Generative AI extensions for onnxruntime SDK üzerinden erişebilirsiniz.
 
-3. Daha sorumlu AI uygulamaları için, model kuantizasyon dönüşümünden sonra daha etkili sonuç testleri yapılması önerilir.
+3. Daha sorumlu yapay zeka için, model kuantizasyon dönüşümünden sonra daha etkili sonuç testleri yapılması önerilir.
 
-4. CPU INT4 modelini kuantize ederek, Edge cihazlara dağıtım yapabiliriz, bu da daha iyi uygulama senaryoları sunar. Böylece Phi-3.5-Instruct INT4 etrafında tamamlanmıştır.
+4. CPU INT4 modelini kuantize ederek, Edge Cihazlara dağıtım yapabiliriz; bu da daha iyi uygulama senaryoları sağlar. Bu nedenle Phi-3.5-Instruct INT4 çevresinde tamamlanmıştır.
 
 ## **Kaynaklar**
 
-1. Generative AI extensions for onnxruntime hakkında daha fazla bilgi için [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. Generative AI extensions for onnxruntime hakkında daha fazla bilgi edinin [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. Generative AI extensions for onnxruntime GitHub deposu [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
+2. Generative AI extensions for onnxruntime GitHub Deposu [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

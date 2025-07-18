@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:09:12+00:00",
+  "translation_date": "2025-07-17T05:16:44+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "hu"
 }
 -->
 ## **Függvényhívás a Phi-4-mini-ben**
 
-A függvényhívás először a Phi Family családban jelent meg, és most már a Phi-4-mini-ben is használható.
+A függvényhívás először a Phi Family családban jelent meg, és most már a Phi-4-mini segítségével is használható.
 
-Ez a példa a Premier League eredmények szimulációját mutatja be. A cél, hogy a Phi-4-mini valós idejű mérkőzésinformációkat szolgáltasson. Alább látható a minta kód: 
+Ez a példa a Premier League eredmények szimulációját mutatja be. A cél, hogy a Phi-4-mini valós idejű mérkőzésinformációkat szolgáltasson. Az alábbiakban a minta kód található:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvén tekintendő hivatalos forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

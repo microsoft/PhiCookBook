@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-09T05:27:44+00:00",
+  "translation_date": "2025-07-16T17:29:50+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "pl"
 }
 -->
 # phiext README
 
-To jest README dla twojego rozszerzenia "phiext". Po krótkim opisie zalecamy dodanie następujących sekcji.
+To jest plik README dla Twojego rozszerzenia "phiext". Po krótkim opisie zalecamy dodanie następujących sekcji.
 
 ## Features
 
-Opisz konkretne funkcje swojego rozszerzenia, w tym zrzuty ekranu pokazujące działanie rozszerzenia. Ścieżki do obrazów są względne względem tego pliku README.
+Opisz konkretne funkcje swojego rozszerzenia, w tym zrzuty ekranu pokazujące rozszerzenie w akcji. Ścieżki do obrazów są względne względem tego pliku README.
 
-Na przykład, jeśli w folderze projektu rozszerzenia znajduje się podfolder z obrazami:
+Na przykład, jeśli w Twoim projekcie rozszerzenia znajduje się podfolder z obrazami:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Wiele popularnych rozszerzeń korzysta z animacji. To świetny sposób, aby zaprezentować swoje rozszerzenie! Zalecamy krótkie, skupione animacje, które łatwo śledzić.
+> Tip: Wiele popularnych rozszerzeń korzysta z animacji. To świetny sposób, aby zaprezentować swoje rozszerzenie! Zalecamy krótkie, skoncentrowane animacje, które są łatwe do śledzenia.
 
 ## Requirements
 
@@ -27,18 +27,18 @@ Jeśli masz jakieś wymagania lub zależności, dodaj sekcję opisującą je ora
 
 ## Extension Settings
 
-Dodaj, jeśli twoje rozszerzenie dodaje jakieś ustawienia VS Code przez punkt rozszerzenia `contributes.configuration`.
+Dodaj tę sekcję, jeśli Twoje rozszerzenie dodaje ustawienia VS Code za pomocą punktu rozszerzenia `contributes.configuration`.
 
 Na przykład:
 
-To rozszerzenie wprowadza następujące ustawienia:
+To rozszerzenie dodaje następujące ustawienia:
 
 * `myExtension.enable`: Włącz/wyłącz to rozszerzenie.
 * `myExtension.thing`: Ustaw na `blah`, aby coś zrobić.
 
 ## Known Issues
 
-Wskazanie znanych problemów może pomóc ograniczyć zgłaszanie przez użytkowników duplikatów problemów dotyczących twojego rozszerzenia.
+Wskazanie znanych problemów może pomóc ograniczyć zgłaszanie przez użytkowników duplikatów problemów dotyczących Twojego rozszerzenia.
 
 ## Release Notes
 
@@ -60,13 +60,13 @@ Dodano funkcje X, Y i Z.
 
 ## Following extension guidelines
 
-Upewnij się, że zapoznałeś się z wytycznymi dla rozszerzeń i stosujesz najlepsze praktyki tworzenia swojego rozszerzenia.
+Upewnij się, że przeczytałeś wytyczne dotyczące rozszerzeń i stosujesz najlepsze praktyki przy tworzeniu swojego rozszerzenia.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
 ## Working with Markdown
 
-Możesz tworzyć README korzystając z Visual Studio Code. Oto kilka przydatnych skrótów klawiaturowych edytora:
+Możesz tworzyć swój README za pomocą Visual Studio Code. Oto kilka przydatnych skrótów klawiaturowych edytora:
 
 * Podziel edytor (`Cmd+\` na macOS lub `Ctrl+\` na Windows i Linux).
 * Przełącz podgląd (`Shift+Cmd+V` na macOS lub `Shift+Ctrl+V` na Windows i Linux).
@@ -80,4 +80,4 @@ Możesz tworzyć README korzystając z Visual Studio Code. Oto kilka przydatnych
 **Miłej pracy!**
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uważany za źródło wiarygodne. W przypadku istotnych informacji zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

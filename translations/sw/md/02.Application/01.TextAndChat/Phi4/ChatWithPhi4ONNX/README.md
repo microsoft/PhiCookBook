@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:03:11+00:00",
+  "translation_date": "2025-07-17T03:18:50+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "sw"
 }
 -->
-# **Chat na Phi-4-mini ONNX**
+# **Zungumza na Phi-4-mini ONNX**
 
-***ONNX*** ni muundo wazi uliotengenezwa kuwakilisha mifano ya mashine ya kujifunza. ONNX inafafanua seti ya kawaida ya waendeshaji - sehemu za msingi za mifano ya mashine ya kujifunza na ujifunzaji wa kina - pamoja na muundo wa faili wa kawaida ili kuwezesha watengenezaji wa AI kutumia mifano kwa mifumo mbalimbali, zana, runtimes, na kompyuta.
+***ONNX*** ni muundo wazi uliotengenezwa kuwakilisha mifano ya kujifunza mashine. ONNX inaelezea seti ya kawaida ya waendeshaji - vipengele vya msingi vya mifano ya kujifunza mashine na kujifunza kwa kina - pamoja na muundo wa faili wa kawaida unaowawezesha watengenezaji wa AI kutumia mifano hiyo kwa mifumo mbalimbali, zana, mazingira ya utekelezaji, na wakusanyaji.
 
-Tunatarajia kuweka mifano ya AI ya kizazi kwenye vifaa vya edge na kuitumia katika mazingira yenye nguvu ndogo za kompyuta au bila mtandao. Sasa tunaweza kufanikisha lengo hili kwa kubadilisha mfano kwa njia ya kuhesabu kwa kiwango kidogo. Tunaweza kubadilisha mfano ulihesabiwa kwa fomati ya GGUF au ONNX.
+Tunatarajia kuweka mifano ya AI ya kizazi kwenye vifaa vya edge na kuitumia katika mazingira yenye nguvu ndogo za kompyuta au bila mtandao. Sasa tunaweza kufanikisha lengo hili kwa kubadilisha mfano kwa njia ya kupunguza ukubwa. Tunaweza kubadilisha mfano uliopunguzwa kuwa muundo wa GGUF au ONNX.
 
-Microsoft Olive inaweza kusaidia kubadilisha SLM kuwa fomati ya ONNX iliyohesabiwa. Njia ya kufanikisha ubadilishaji wa mfano ni rahisi sana
+Microsoft Olive inaweza kusaidia kubadilisha SLM kuwa muundo wa ONNX uliopunguzwa. Njia ya kufanikisha uongofu wa mfano ni rahisi sana
 
 **Sakinisha Microsoft Olive SDK**
 
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Badilisha CPU ONNX Support**
+**Badilisha ONNX Inayounga Mkono CPU**
 
 ```bash
 
@@ -37,7 +37,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Note*** mfano huu unatumia CPU
 
 
-### **Fanya Inference ya Phi-4-mini ONNX Model Kwa ONNX Runtime GenAI**
+### **Fanya Utabiri wa Mfano wa Phi-4-mini ONNX kwa kutumia ONNX Runtime GenAI**
 
 - **Sakinisha ONNX Runtime GenAI**
 
@@ -158,5 +158,5 @@ while not generator.is_done():
 
 ```
 
-**Kang’amuzi**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebei dhima kwa kutokuelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

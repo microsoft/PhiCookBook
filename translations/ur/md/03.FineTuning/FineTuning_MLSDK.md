@@ -2,52 +2,52 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-07T13:21:29+00:00",
+  "translation_date": "2025-07-17T07:01:14+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "ur"
 }
 -->
-## כיצד להשתמש ברכיבי chat-completion מרגיסטר מערכת Azure ML כדי לכוונן מודל
+## Azure ML سسٹم رجسٹری سے chat-completion کمپونینٹس استعمال کر کے ماڈل کو fine tune کرنے کا طریقہ
 
-בדוגמה זו נבצע כוונון עדין למודל Phi-3-mini-4k-instruct כדי להשלים שיחה בין שני אנשים באמצעות מערך הנתונים ultrachat_200k.
+اس مثال میں ہم Phi-3-mini-4k-instruct ماڈل کی fine tuning کریں گے تاکہ ultrachat_200k ڈیٹاسیٹ استعمال کرتے ہوئے دو افراد کے درمیان گفتگو مکمل کی جا سکے۔
 
 ![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.ur.png)
 
-הדוגמה תראה כיצד לבצע כוונון עדין באמצעות Azure ML SDK ו-Python ואז לפרוס את המודל המכוונן לנקודת קצה מקוונת להסקת מסקנות בזמן אמת.
+یہ مثال آپ کو دکھائے گی کہ Azure ML SDK اور Python استعمال کرتے ہوئے fine tuning کیسے کی جاتی ہے اور پھر fine tuned ماڈل کو آن لائن اینڈپوائنٹ پر ریئل ٹائم inference کے لیے کیسے deploy کیا جاتا ہے۔
 
-### נתוני אימון
+### تربیتی ڈیٹا
 
-נשתמש במערך הנתונים ultrachat_200k. זהו גרסה מסוננת מאוד של מערך הנתונים UltraChat ששימשה לאימון Zephyr-7B-β, מודל שיחה מתקדם בגודל 7 מיליארד פרמטרים.
+ہم ultrachat_200k ڈیٹاسیٹ استعمال کریں گے۔ یہ UltraChat ڈیٹاسیٹ کا ایک سخت فلٹر شدہ ورژن ہے اور Zephyr-7B-β، جو ایک جدید 7b چیٹ ماڈل ہے، کی تربیت کے لیے استعمال ہوا تھا۔
 
-### מודל
+### ماڈل
 
-נשתמש במודל Phi-3-mini-4k-instruct כדי להראות כיצד משתמש יכול לכוונן מודל למשימת chat-completion. אם פתחת את המחברת הזו מכרטיס מודל ספציפי, זכור להחליף את שם המודל הספציפי.
+ہم Phi-3-mini-4k-instruct ماڈل استعمال کریں گے تاکہ دکھایا جا سکے کہ صارف کس طرح chat-completion ٹاسک کے لیے ماڈل کو fine tune کر سکتا ہے۔ اگر آپ نے یہ نوٹ بک کسی مخصوص ماڈل کارڈ سے کھولی ہے تو مخصوص ماڈل کا نام تبدیل کرنا یاد رکھیں۔
 
-### משימות
+### کام
 
-- לבחור מודל לכוונון עדין.
-- לבחור ולחקור את נתוני האימון.
-- להגדיר את משימת הכוונון העדין.
-- להריץ את משימת הכוונון העדין.
-- לסקור מדדי אימון והערכה.
-- לרשום את המודל המכוונן.
-- לפרוס את המודל המכוונן להסקה בזמן אמת.
-- לנקות משאבים.
+- fine tune کرنے کے لیے ماڈل منتخب کریں۔
+- تربیتی ڈیٹا منتخب کریں اور اس کا جائزہ لیں۔
+- fine tuning جاب کی ترتیب دیں۔
+- fine tuning جاب چلائیں۔
+- تربیتی اور تشخیصی میٹرکس کا جائزہ لیں۔
+- fine tuned ماڈل کو رجسٹر کریں۔
+- fine tuned ماڈل کو ریئل ٹائم inference کے لیے deploy کریں۔
+- وسائل کی صفائی کریں۔
 
-## 1. הגדרת דרישות מוקדמות
+## 1. ضروریات کی تیاری
 
-- התקן תלותיות
-- התחבר ל-AzureML Workspace. למידע נוסף ראה הגדרת אימות SDK. החלף את <WORKSPACE_NAME>, <RESOURCE_GROUP> ו-<SUBSCRIPTION_ID> למטה.
-- התחבר לרגיסטר מערכת azureml
-- הגדר שם ניסוי אופציונלי
-- בדוק או צור מחשוב.
+- dependencies انسٹال کریں
+- AzureML Workspace سے کنیکٹ کریں۔ مزید جاننے کے لیے set up SDK authentication دیکھیں۔ نیچے <WORKSPACE_NAME>, <RESOURCE_GROUP> اور <SUBSCRIPTION_ID> کو تبدیل کریں۔
+- azureml سسٹم رجسٹری سے کنیکٹ کریں
+- ایک اختیاری experiment نام سیٹ کریں
+- compute چیک کریں یا بنائیں۔
 
 > [!NOTE]
-> דרישות: צומת GPU יחיד יכול להכיל מספר כרטיסי GPU. לדוגמה, בצומת אחד של Standard_NC24rs_v3 יש 4 כרטיסי NVIDIA V100 בעוד שב-Standard_NC12s_v3 יש 2 כרטיסים כאלה. עיין בתיעוד למידע זה. מספר כרטיסי ה-GPU לכל צומת מוגדר בפרמטר gpus_per_node למטה. הגדרה נכונה של ערך זה תבטיח ניצול מלא של כל ה-GPU בצומת. ניתן למצוא SKU מומלצים למחשוב GPU כאן וכאן.
+> ایک واحد GPU نوڈ میں متعدد GPU کارڈز ہو سکتے ہیں۔ مثال کے طور پر، Standard_NC24rs_v3 کے ایک نوڈ میں 4 NVIDIA V100 GPUs ہوتے ہیں جبکہ Standard_NC12s_v3 میں 2 NVIDIA V100 GPUs ہوتے ہیں۔ اس معلومات کے لیے docs دیکھیں۔ ہر نوڈ میں GPU کارڈز کی تعداد نیچے param gpus_per_node میں سیٹ کی جاتی ہے۔ اس ویلیو کو درست سیٹ کرنا تمام GPUs کے استعمال کو یقینی بنائے گا۔ تجویز کردہ GPU compute SKUs یہاں اور یہاں دستیاب ہیں۔
 
-### ספריות Python
+### Python لائبریریز
 
-התקן תלותיות על ידי הרצת התא למטה. זה אינו שלב אופציונלי בסביבה חדשה.
+نیچے دیے گئے سیل کو چلائیں تاکہ dependencies انسٹال ہوں۔ اگر نیا ماحول استعمال کر رہے ہیں تو یہ قدم لازمی ہے۔
 
 ```bash
 pip install azure-ai-ml
@@ -57,21 +57,21 @@ pip install mlflow
 pip install azureml-mlflow
 ```
 
-### אינטראקציה עם Azure ML
+### Azure ML کے ساتھ تعامل
 
-1. סקריפט Python זה משמש לאינטראקציה עם שירות Azure Machine Learning (Azure ML). להלן פירוט מה הוא עושה:
+1. یہ Python اسکرپٹ Azure Machine Learning (Azure ML) سروس کے ساتھ تعامل کے لیے استعمال ہوتا ہے۔ اس کا خلاصہ درج ذیل ہے:
 
-    - מייבא מודולים נחוצים מ-packages azure.ai.ml, azure.identity ו-azure.ai.ml.entities. כמו כן מייבא את מודול time.
+    - یہ azure.ai.ml, azure.identity, اور azure.ai.ml.entities پیکجز سے ضروری ماڈیولز امپورٹ کرتا ہے۔ ساتھ ہی time ماڈیول بھی امپورٹ کرتا ہے۔
 
-    - מנסה לאמת באמצעות DefaultAzureCredential(), שמספק חווית אימות פשוטה להתחלת פיתוח יישומים הפועלים בענן Azure. אם זה נכשל, הוא מפנה ל-InteractiveBrowserCredential(), שמספקת תהליך התחברות אינטראקטיבי.
+    - یہ DefaultAzureCredential() کے ذریعے authentication کی کوشش کرتا ہے، جو Azure کلاؤڈ میں ایپلیکیشنز جلدی شروع کرنے کے لیے آسان authentication فراہم کرتا ہے۔ اگر یہ ناکام ہو جائے تو InteractiveBrowserCredential() استعمال کرتا ہے، جو انٹرایکٹو لاگ ان پرامپٹ دیتا ہے۔
 
-    - לאחר מכן מנסה ליצור מופע MLClient באמצעות from_config, שקורא את ההגדרות מקובץ ברירת המחדל (config.json). אם זה נכשל, הוא יוצר מופע MLClient על ידי מתן subscription_id, resource_group_name ו-workspace_name ידנית.
+    - پھر یہ from_config طریقہ استعمال کرتے ہوئے MLClient کا ایک انسٹانس بنانے کی کوشش کرتا ہے، جو default config فائل (config.json) سے کنفیگریشن پڑھتا ہے۔ اگر یہ ناکام ہو جائے تو subscription_id, resource_group_name, اور workspace_name دستی طور پر فراہم کر کے MLClient بناتا ہے۔
 
-    - יוצר מופע נוסף של MLClient עבור רגיסטר Azure ML בשם "azureml". רגיסטר זה משמש לאחסון מודלים, צינורות כוונון עדין וסביבות.
+    - ایک اور MLClient انسٹانس بناتا ہے، اس بار Azure ML رجسٹری "azureml" کے لیے۔ یہ رجسٹری ماڈلز، fine-tuning پائپ لائنز، اور ماحولیات کو ذخیرہ کرتی ہے۔
 
-    - מגדיר את experiment_name ל-"chat_completion_Phi-3-mini-4k-instruct".
+    - experiment_name کو "chat_completion_Phi-3-mini-4k-instruct" پر سیٹ کرتا ہے۔
 
-    - יוצר חותמת זמן ייחודית על ידי המרת הזמן הנוכחי (בשניות מאז האפוק, כמספר עשרוני) למספר שלם ואז למחרוזת. חותמת זמן זו משמשת ליצירת שמות וגרסאות ייחודיים.
+    - ایک منفرد timestamp بناتا ہے جو موجودہ وقت (epoch سے سیکنڈز میں، فلوٹنگ پوائنٹ نمبر کے طور پر) کو انٹیجر اور پھر سٹرنگ میں تبدیل کر کے حاصل کیا جاتا ہے۔ یہ timestamp منفرد نام اور ورژنز بنانے کے لیے استعمال ہو سکتا ہے۔
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -112,20 +112,20 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. בחר מודל בסיס לכוונון עדין
+## 2. fine tune کرنے کے لیے بنیاد ماڈل منتخب کریں
 
-1. Phi-3-mini-4k-instruct הוא מודל קל משקל עם 3.8 מיליארד פרמטרים, פתוח ומתקדם, שנבנה על מערכי הנתונים ששימשו את Phi-2. המודל שייך למשפחת מודלי Phi-3, וגרסת Mini מגיעה בשתי וריאציות: 4K ו-128K, שמתייחס לאורך ההקשר (במונחי טוקנים) שהמודל תומך בו. יש לכוונן את המודל למטרה הספציפית שלנו כדי להשתמש בו. ניתן לעיין במודלים אלו בקטלוג המודלים ב-AzureML Studio, עם סינון לפי משימת chat-completion. בדוגמה זו אנו משתמשים במודל Phi-3-mini-4k-instruct. אם פתחת מחברת זו למודל אחר, החלף את שם המודל והגרסה בהתאם.
+1. Phi-3-mini-4k-instruct ایک 3.8B پیرامیٹرز والا ہلکا پھلکا، جدید اوپن ماڈل ہے جو Phi-2 کے لیے استعمال ہونے والے ڈیٹاسیٹس پر بنایا گیا ہے۔ یہ ماڈل Phi-3 ماڈل فیملی سے تعلق رکھتا ہے، اور Mini ورژن دو اقسام میں آتا ہے: 4K اور 128K، جو اس کی سپورٹ کردہ کانٹیکسٹ لمبائی (ٹوکینز میں) ہے۔ ہمیں اسے اپنے مخصوص مقصد کے لیے fine tune کرنا ہوگا۔ آپ AzureML اسٹوڈیو کے ماڈل کیٹلاگ میں chat-completion ٹاسک کے تحت ان ماڈلز کو براؤز کر سکتے ہیں۔ اس مثال میں ہم Phi-3-mini-4k-instruct ماڈل استعمال کر رہے ہیں۔ اگر آپ نے یہ نوٹ بک کسی مختلف ماڈل کے لیے کھولی ہے تو ماڈل کا نام اور ورژن مناسب طریقے سے تبدیل کریں۔
 
     > [!NOTE]
-    > מאפיין id של המודל. זה יועבר כקלט למשימת הכוונון העדין. זמין גם כשדה Asset ID בדף פרטי המודל בקטלוג המודלים של AzureML Studio.
+    > ماڈل کی id پراپرٹی جو fine tuning جاب کو ان پٹ کے طور پر دی جائے گی۔ یہ AzureML اسٹوڈیو ماڈل کیٹلاگ کے ماڈل تفصیلات صفحہ میں Asset ID فیلڈ کے طور پر بھی دستیاب ہے۔
 
-2. סקריפט Python זה מתקשר עם שירות Azure Machine Learning (Azure ML). להלן פירוט מה הוא עושה:
+2. یہ Python اسکرپٹ Azure Machine Learning (Azure ML) سروس کے ساتھ تعامل کر رہا ہے۔ اس کا خلاصہ درج ذیل ہے:
 
-    - מגדיר את model_name ל-"Phi-3-mini-4k-instruct".
+    - model_name کو "Phi-3-mini-4k-instruct" پر سیٹ کرتا ہے۔
 
-    - משתמש במתודה get של models ברגיסטר_ml_client כדי לקבל את הגרסה העדכנית ביותר של המודל בשם זה מהרשום ב-Azure ML registry. המתודה נקראת עם שני ארגומנטים: שם המודל ותווית שמציינת לקבל את הגרסה העדכנית ביותר.
+    - registry_ml_client آبجیکٹ کی models پراپرٹی کے get طریقہ کو استعمال کرتے ہوئے Azure ML رجسٹری سے ماڈل کے تازہ ترین ورژن کو حاصل کرتا ہے۔ get طریقہ دو دلائل کے ساتھ کال کیا جاتا ہے: ماڈل کا نام اور ایک لیبل جو تازہ ترین ورژن حاصل کرنے کی نشاندہی کرتا ہے۔
 
-    - מדפיס הודעה לקונסולה שמציינת את השם, הגרסה וה-id של המודל שישמש לכוונון עדין. משתמש במתודת format של המחרוזת כדי להכניס את השם, הגרסה וה-id של המודל להודעה. השם, הגרסה וה-id ניגשים כמאפיינים של foundation_model.
+    - کنسول پر ایک پیغام پرنٹ کرتا ہے جس میں fine-tuning کے لیے استعمال ہونے والے ماڈل کا نام، ورژن، اور id شامل ہوتے ہیں۔ اس کے لیے سٹرنگ کے format طریقہ کا استعمال کیا جاتا ہے۔ ماڈل کی یہ خصوصیات foundation_model آبجیکٹ کی پراپرٹیز کے طور پر حاصل کی جاتی ہیں۔
 
     ```python
     # Set the model name
@@ -143,29 +143,29 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. צור מחשוב לשימוש במשימה
+## 3. جاب کے لیے compute بنائیں
 
-משימת הכוונון העדין פועלת רק עם מחשוב GPU. גודל המחשוב תלוי בגודל המודל וברוב המקרים קשה לזהות את המחשוב המתאים למשימה. בתא זה אנו מדריכים את המשתמש לבחור את המחשוב המתאים.
-
-> [!NOTE]
-> המחשובים המפורטים למטה פועלים עם התצורה האופטימלית ביותר. כל שינוי בתצורה עלול לגרום לשגיאת Cuda Out Of Memory. במקרים כאלה נסה לשדרג למחשוב גדול יותר.
+finetune جاب صرف GPU compute کے ساتھ کام کرتا ہے۔ compute کا سائز ماڈل کی جسامت پر منحصر ہوتا ہے اور اکثر صحیح compute کا انتخاب مشکل ہو جاتا ہے۔ اس سیل میں ہم صارف کو جاب کے لیے مناسب compute منتخب کرنے میں رہنمائی کرتے ہیں۔
 
 > [!NOTE]
-> בעת בחירת compute_cluster_size למטה, ודא שהמחשוב זמין בקבוצת המשאבים שלך. אם מחשוב מסוים אינו זמין, ניתן לבקש גישה למשאבי המחשוב.
+> نیچے دیے گئے computes سب سے بہتر کنفیگریشن کے ساتھ کام کرتے ہیں۔ کنفیگریشن میں کوئی تبدیلی Cuda Out Of Memory ایرر کا باعث بن سکتی ہے۔ ایسی صورت میں compute کو بڑے سائز میں اپ گریڈ کرنے کی کوشش کریں۔
 
-### בדיקת תמיכה בכוונון עדין למודל
+> [!NOTE]
+> compute_cluster_size منتخب کرتے وقت یقینی بنائیں کہ compute آپ کے resource group میں دستیاب ہو۔ اگر کوئی compute دستیاب نہیں ہے تو compute وسائل تک رسائی کے لیے درخواست دے سکتے ہیں۔
 
-1. סקריפט Python זה מתקשר למודל Azure Machine Learning (Azure ML). להלן פירוט מה הוא עושה:
+### fine tuning کی حمایت کے لیے ماڈل کی جانچ
 
-    - מייבא את מודול ast, המספק פונקציות לעיבוד עצי תחביר מופשט של Python.
+1. یہ Python اسکرپٹ Azure Machine Learning (Azure ML) ماڈل کے ساتھ تعامل کر رہا ہے۔ اس کا خلاصہ درج ذیل ہے:
 
-    - בודק אם לאובייקט foundation_model (המשקף מודל ב-Azure ML) יש תג בשם finetune_compute_allow_list. תגיות ב-Azure ML הן זוגות מפתח-ערך שניתן ליצור ולסנן באמצעותן מודלים.
+    - ast ماڈیول امپورٹ کرتا ہے، جو Python کے abstract syntax grammar کے درختوں کو پروسیس کرنے کے فنکشنز فراہم کرتا ہے۔
 
-    - אם תג finetune_compute_allow_list קיים, משתמש ב-ast.literal_eval כדי לפרש בבטחה את ערך התג (מחרוזת) לרשימת Python. רשימה זו מוקצת למשתנה computes_allow_list. לאחר מכן מדפיס הודעה שממליצה ליצור מחשוב מתוך הרשימה.
+    - چیک کرتا ہے کہ foundation_model آبجیکٹ (جو Azure ML میں ایک ماڈل کی نمائندگی کرتا ہے) کے پاس finetune_compute_allow_list نامی ٹیگ موجود ہے یا نہیں۔ Azure ML میں ٹیگز key-value جوڑے ہوتے ہیں جنہیں ماڈلز کو فلٹر اور ترتیب دینے کے لیے استعمال کیا جا سکتا ہے۔
 
-    - אם התג לא קיים, מגדיר את computes_allow_list ל-None ומדפיס הודעה שהתג אינו חלק מתגי המודל.
+    - اگر finetune_compute_allow_list ٹیگ موجود ہو تو ast.literal_eval فنکشن استعمال کر کے اس کی ویلیو (جو ایک سٹرنگ ہوتی ہے) کو محفوظ طریقے سے Python کی فہرست میں تبدیل کرتا ہے۔ یہ فہرست پھر computes_allow_list ویریبل کو دی جاتی ہے۔ پھر ایک پیغام پرنٹ کرتا ہے کہ compute اس فہرست سے بنایا جانا چاہیے۔
 
-    - לסיכום, הסקריפט בודק תג מסוים במטא-נתוני המודל, ממיר את ערכו לרשימה אם קיים, ומספק משוב למשתמש בהתאם.
+    - اگر ٹیگ موجود نہ ہو تو computes_allow_list کو None پر سیٹ کرتا ہے اور ایک پیغام پرنٹ کرتا ہے کہ finetune_compute_allow_list ٹیگ ماڈل کے ٹیگز کا حصہ نہیں ہے۔
+
+    - خلاصہ یہ کہ یہ اسکرپٹ ماڈل کے میٹا ڈیٹا میں مخصوص ٹیگ کی جانچ کر رہا ہے، اگر موجود ہو تو اس کی ویلیو کو فہرست میں تبدیل کر رہا ہے، اور صارف کو مناسب فیڈبیک دے رہا ہے۔
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -186,21 +186,21 @@ pip install azureml-mlflow
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### בדיקת מופע מחשוב
+### compute instance کی جانچ
 
-1. סקריפט Python זה מתקשר לשירות Azure Machine Learning (Azure ML) ומבצע מספר בדיקות על מופע מחשוב. להלן פירוט מה הוא עושה:
+1. یہ Python اسکرپٹ Azure Machine Learning (Azure ML) سروس کے ساتھ تعامل کر رہا ہے اور compute instance پر کئی چیکس کر رہا ہے۔ اس کا خلاصہ درج ذیل ہے:
 
-    - מנסה לקבל את מופע המחשוב בשם המאוחסן ב-compute_cluster מ-Azure ML workspace. אם מצב ההקצאה של המופע הוא "failed", הוא מעלה ValueError.
+    - Azure ML ورک اسپیس سے compute_cluster نام کے compute instance کو حاصل کرنے کی کوشش کرتا ہے۔ اگر compute instance کی provisioning state "failed" ہو تو ValueError اٹھاتا ہے۔
 
-    - בודק אם computes_allow_list אינו None. אם כן, ממיר את כל גדלי המחשוב ברשימה לאותיות קטנות ובודק אם גודל המופע הנוכחי נמצא ברשימה. אם לא, מעלה ValueError.
+    - چیک کرتا ہے کہ computes_allow_list None نہ ہو۔ اگر نہ ہو تو فہرست میں موجود compute سائزز کو چھوٹے حروف میں تبدیل کرتا ہے اور دیکھتا ہے کہ موجودہ compute instance کا سائز اس فہرست میں ہے یا نہیں۔ اگر نہیں تو ValueError اٹھاتا ہے۔
 
-    - אם computes_allow_list הוא None, בודק אם גודל המופע נמצא ברשימת גדלים של VM GPU שאינם נתמכים. אם כן, מעלה ValueError.
+    - اگر computes_allow_list None ہو تو چیک کرتا ہے کہ compute instance کا سائز unsupported GPU VM سائزز کی فہرست میں تو نہیں۔ اگر ہو تو ValueError اٹھاتا ہے۔
 
-    - מקבל רשימה של כל גדלי המחשוב הזמינים ב-workspace. עובר על הרשימה ובודק אם שם כל גודל תואם לגודל המופע הנוכחי. אם כן, מקבל את מספר ה-GPU של אותו גודל ומגדיר gpu_count_found ל-True.
+    - ورک اسپیس میں دستیاب تمام compute سائزز کی فہرست حاصل کرتا ہے۔ پھر ہر compute سائز کے لیے چیک کرتا ہے کہ آیا اس کا نام موجودہ compute instance کے سائز سے میل کھاتا ہے یا نہیں۔ اگر میل کھاتا ہے تو اس compute سائز کے GPUs کی تعداد حاصل کرتا ہے اور gpu_count_found کو True پر سیٹ کرتا ہے۔
 
-    - אם gpu_count_found הוא True, מדפיס את מספר ה-GPU במופע. אם False, מעלה ValueError.
+    - اگر gpu_count_found True ہو تو compute instance میں GPUs کی تعداد پرنٹ کرتا ہے۔ اگر False ہو تو ValueError اٹھاتا ہے۔
 
-    - לסיכום, הסקריפט מבצע בדיקות שונות על מופע מחשוב ב-Azure ML workspace, כולל בדיקת מצב הקצאה, גודל מול רשימות מורשות או אסורות, ומספר ה-GPU.
+    - خلاصہ یہ کہ یہ اسکرپٹ Azure ML ورک اسپیس میں compute instance کی provisioning state، سائز کی اجازت یا نا اجازت کی فہرست، اور GPUs کی تعداد کی جانچ کر رہا ہے۔
 
     ```python
     # Print the exception message
@@ -269,42 +269,42 @@ pip install azureml-mlflow
         )
     ```
 
-## 4. בחר את מערך הנתונים לכוונון עדין של המודל
+## 4. ماڈل کی fine-tuning کے لیے ڈیٹاسیٹ منتخب کریں
 
-1. אנו משתמשים במערך הנתונים ultrachat_200k. למערך הנתונים יש ארבע חלוקות, המתאימות לכוונון עדין מפוקח (sft).
-דירוג יצירה (gen). מספר הדוגמאות בכל חלוקה מוצג כך:
+1. ہم ultrachat_200k ڈیٹاسیٹ استعمال کرتے ہیں۔ اس ڈیٹاسیٹ کے چار حصے ہیں، جو Supervised fine-tuning (sft) کے لیے موزوں ہیں۔
+Generation ranking (gen)۔ ہر حصے میں مثالوں کی تعداد درج ذیل ہے:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. התאים הבאים מציגים הכנה בסיסית של נתונים לכוונון עדין:
+1. اگلے چند سیلز fine tuning کے لیے بنیادی ڈیٹا کی تیاری دکھاتے ہیں:
 
-### הצגת שורות נתונים
+### کچھ ڈیٹا کی قطاریں دیکھیں
 
-רוצים שהדוגמה תרוץ מהר, לכן נשמור קבצי train_sft ו-test_sft המכילים 5% מהשורות שכבר סוננו. משמעות הדבר היא שהמודל המכוונן יהיה פחות מדויק ולכן לא כדאי להשתמש בו במציאות.
-הסקריפט download-dataset.py משמש להורדת מערך הנתונים ultrachat_200k ולהמרת הנתונים לפורמט המתאים לצינור כוונון עדין. בנוסף, מאחר שהמערך גדול, כאן יש רק חלק ממנו.
+ہم چاہتے ہیں کہ یہ نمونہ جلدی چلے، اس لیے train_sft اور test_sft فائلیں محفوظ کریں جن میں پہلے سے چھنی ہوئی قطاروں کا 5% شامل ہو۔ اس کا مطلب ہے کہ fine tuned ماڈل کی درستگی کم ہوگی، لہٰذا اسے حقیقی دنیا میں استعمال نہیں کرنا چاہیے۔
+download-dataset.py اسکرپٹ ultrachat_200k ڈیٹاسیٹ ڈاؤن لوڈ کرنے اور ڈیٹاسیٹ کو finetune پائپ لائن کمپونینٹ کے قابل استعمال فارمیٹ میں تبدیل کرنے کے لیے استعمال ہوتا ہے۔ چونکہ ڈیٹاسیٹ بڑا ہے، اس لیے یہاں صرف اس کا ایک حصہ موجود ہے۔
 
-1. הרצת הסקריפט למטה מורידה רק 5% מהנתונים. ניתן להגדיל זאת על ידי שינוי הפרמטר dataset_split_pc לאחוז הרצוי.
+1. نیچے دیا گیا اسکرپٹ صرف 5% ڈیٹا ڈاؤن لوڈ کرتا ہے۔ اسے dataset_split_pc پیرامیٹر کی ویلیو تبدیل کر کے بڑھایا جا سکتا ہے۔
 
     > [!NOTE]
-    > למודלים בשפות שונות יש קודי שפה שונים ולכן שמות העמודות במערך הנתונים צריכים לשקף זאת.
+    > کچھ زبانوں کے ماڈلز کے مختلف زبان کوڈز ہوتے ہیں، اس لیے ڈیٹاسیٹ میں کالم کے نام بھی اسی کے مطابق ہونے چاہئیں۔
 
-1. להלן דוגמה למראה הנתונים
-מערך הנתונים של chat-completion מאוחסן בפורמט parquet כאשר כל רשומה משתמשת בסכימה הבאה:
+1. یہاں ایک مثال ہے کہ ڈیٹا کیسا دکھنا چاہیے
+chat-completion ڈیٹاسیٹ parquet فارمیٹ میں محفوظ ہے، جس میں ہر اندراج درج ذیل اسکیمہ استعمال کرتا ہے:
 
-    - זהו מסמך JSON (JavaScript Object Notation), פורמט פופולרי להחלפת מידע. זה אינו קוד להרצה, אלא דרך לאחסן ולהעביר נתונים. להלן פירוט המבנה:
+    - یہ JSON (JavaScript Object Notation) دستاویز ہے، جو ایک مقبول ڈیٹا تبادلے کا فارمیٹ ہے۔ یہ executable کوڈ نہیں بلکہ ڈیٹا ذخیرہ کرنے اور منتقل کرنے کا طریقہ ہے۔ اس کی ساخت کا خلاصہ درج ذیل ہے:
 
-    - "prompt": מפתח שמכיל מחרוזת המתארת משימה או שאלה שמופנית לעוזר AI.
+    - "prompt": یہ کلید ایک سٹرنگ ویلیو رکھتی ہے جو AI اسسٹنٹ کو دیا گیا ٹاسک یا سوال ظاہر کرتی ہے۔
 
-    - "messages": מפתח שמכיל מערך של אובייקטים. כל אובייקט מייצג הודעה בשיחה בין משתמש לעוזר AI. לכל הודעה שני מפתחות:
+    - "messages": یہ کلید objects کی ایک فہرست رکھتی ہے۔ ہر object ایک پیغام کی نمائندگی کرتا ہے جو صارف اور AI اسسٹنٹ کے درمیان گفتگو میں ہوتا ہے۔ ہر پیغام object کے دو کلیدیں ہوتی ہیں:
 
-    - "content": מפתח עם מחרוזת שמכילה את תוכן ההודעה.
-    - "role": מפתח עם מחרוזת שמייצגת את תפקיד השולח, "user" או "assistant".
-    - "prompt_id": מפתח שמכיל מזהה ייחודי להנחיה.
+    - "content": یہ کلید پیغام کے مواد کی سٹرنگ ویلیو رکھتی ہے۔
+    - "role": یہ کلید اس ہستی کا کردار ظاہر کرتی ہے جس نے پیغام بھیجا ہے۔ یہ "user" یا "assistant" ہو سکتا ہے۔
+    - "prompt_id": یہ کلید ایک منفرد شناخت کنندہ کی سٹرنگ ویلیو رکھتی ہے جو prompt کی نمائندگی کرتی ہے۔
 
-1. במסמך JSON זה, מוצגת שיחה שבה משתמש מבקש מהעוזר ליצור גיבור לסיפור דיסטופי. העוזר מגיב, והמשתמש מבקש פרטים נוספים. העוזר מסכים לספק פרטים נוספים. כל השיחה מקושרת למזהה הנחיה ספציפי.
+1. اس مخصوص JSON دستاویز میں ایک گفتگو دکھائی گئی ہے جہاں صارف AI اسسٹنٹ سے dystopian کہانی کے مرکزی کردار بنانے کو کہتا ہے۔ اسسٹنٹ جواب دیتا ہے، پھر صارف مزید تفصیلات مانگتا ہے۔ اسسٹنٹ مزید تفصیلات فراہم کرنے پر راضی ہو جاتا ہے۔ پوری گفتگو ایک مخصوص prompt id سے منسلک ہے۔
 
     ```python
     {
@@ -344,17 +344,17 @@ pip install azureml-mlflow
     }
     ```
 
-### הורדת נתונים
+### ڈیٹا ڈاؤن لوڈ کریں
 
-1. סקריפט Python זה משמש להורדת מערך נתונים באמצעות סקריפט עזר בשם download-dataset.py. להלן פירוט מה הוא עושה:
+1. یہ Python اسکرپٹ download-dataset.py نامی ہیلپر اسکرپٹ استعمال کرتے ہوئے ڈیٹاسیٹ ڈاؤن لوڈ کرنے کے لیے ہے۔ اس کا خلاصہ درج ذیل ہے:
 
-    - מייבא את מודול os, המספק ממשק נייד לתפקודי מערכת הפעלה.
+    - os ماڈیول امپورٹ کرتا ہے، جو آپریٹنگ سسٹم کی مخصوص فعالیت کے لیے پورٹیبل طریقہ فراہم کرتا ہے۔
 
-    - משתמש בפונקציה os.system להריץ את הסקריפט download-dataset.py עם ארגומנטים בשורת הפקודה. הארגומנטים מציינים את מערך הנתונים להורדה (HuggingFaceH4/ultrachat_200k), את התיקייה להורדה (ultrachat_200k_dataset), ואת אחוז החלוקה (5). הפונקציה מחזירה את סטטוס היציאה של הפקודה; סטטוס זה נשמר במשתנה exit_status.
+    - os.system فنکشن استعمال کرتا ہے تاکہ download-dataset.py اسکرپٹ کو شیل میں مخصوص کمانڈ لائن دلائل کے ساتھ چلایا جا سکے۔ دلائل میں ڈاؤن لوڈ کرنے والا ڈیٹاسیٹ (HuggingFaceH4/ultrachat_200k)، ڈاؤن لوڈ کرنے کی ڈائریکٹری (ultrachat_200k_dataset)، اور ڈیٹاسیٹ کے حصے کی فیصد (5) شامل ہیں۔ os.system کمانڈ کے ایگزٹ اسٹیٹس کو exit_status ویریبل میں محفوظ کرتا ہے۔
 
-    - בודק אם exit_status שונה מ-0. במערכות דמויות יוניקס, סטטוס 0 מציין הצלחה, ואחר מציין שגיאה. אם סטטוס שונה מ-0, מעלה חריגה עם הודעה על שגיאה בהורדת מערך הנתונים.
+    - چیک کرتا ہے کہ exit_status 0 نہیں ہے۔ Unix جیسے نظاموں میں 0 کا مطلب کامیابی ہوتا ہے، اور کوئی اور نمبر ایرر کی نشاندہی کرتا ہے۔ اگر exit_status 0 نہ ہو تو Exception اٹھاتا ہے جس میں ڈیٹاسیٹ ڈاؤن لوڈ کرنے میں خرابی کا پیغام ہوتا ہے۔
 
-    - לסיכום, הסקריפט מריץ פקודה להורדת מערך נתונים באמצעות סקריפט עזר ומעלה חריגה במקרה כשל.
+    - خلاصہ یہ کہ یہ اسکرپٹ ہیلپر اسکرپٹ کے ذریعے ڈیٹاسیٹ ڈاؤن لوڈ کرنے کے لیے کمانڈ چلا رہا ہے، اور اگر کمانڈ ناکام ہو تو استثناء اٹھاتا ہے۔
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -374,21 +374,20 @@ pip install azureml-mlflow
         raise Exception("Error downloading dataset")
     ```
 
-### טעינת נתונים ל-DataFrame
+### ڈیٹا کو DataFrame میں لوڈ کرنا
 
-1. סקריפט Python זה טוען קובץ JSON Lines ל-pandas DataFrame ומציג את 5 השורות הראשונות. להלן פירוט מה הוא עושה:
+1. یہ Python اسکرپٹ JSON Lines فائل کو pandas DataFrame میں لوڈ کر رہا ہے اور پہلے 5 قطاریں دکھا رہا ہے۔ اس کا خلاصہ درج ذیل ہے:
 
-    - מייבא את ספריית pandas, המאפשרת ניתוח ועיבוד נתונים עוצמתי.
+    - pandas لائبریری امپورٹ کرتا ہے، جو طاقتور ڈیٹا مینپولیشن اور تجزیہ کی لائبریری ہے۔
 
-    - מגדיר את רוחב העמודה המרבי להצגה ב-pandas ל-0, כלומר יציג את כל הטקסט בעמודות ללא קיצור.
+    - pandas کی display options میں زیادہ سے زیادہ کالم چوڑائی 0 پر سیٹ کرتا ہے، یعنی DataFrame پرنٹ کرتے وقت ہر کالم کا مکمل متن بغیر کٹاؤ کے دکھایا جائے گا۔
 
-    - משתמש בפונקציה pd.read_json לטעון את הקובץ train_sft.jsonl מתיקיית ultrachat_200k_dataset ל-DataFrame. הפרמטר lines=True מציין שמדובר בקובץ JSON Lines, שבו כל שורה היא אובייקט JSON נפרד.
+    - pd.read_json فنکشن استعمال کرتا ہے تاکہ ultrachat_200k_dataset ڈائریکٹری سے train_sft.jsonl فائل کو DataFrame میں لوڈ کرے۔ lines=True کا مطلب ہے کہ فائل JSON Lines فارمیٹ میں ہے، جہاں ہر لائن ایک الگ JSON آبجیکٹ ہوتی ہے۔
+- یہ head طریقہ استعمال کرتا ہے تاکہ DataFrame کی پہلی 5 قطاریں دکھائی جا سکیں۔ اگر DataFrame میں 5 سے کم قطاریں ہوں تو یہ تمام قطاریں دکھائے گا۔
 
-    - משתמש במתודת head להצגת 5 השורות הראשונות. אם יש פחות מ-5 שורות, יציג את כולן.
+- خلاصہ یہ ہے کہ یہ اسکرپٹ ایک JSON Lines فائل کو DataFrame میں لوڈ کر رہا ہے اور پہلی 5 قطاریں مکمل کالم متن کے ساتھ دکھا رہا ہے۔
 
-    - לסיכום, הסקריפט טוען קובץ JSON Lines ל-DataFrame ומציג את 5 השורות הראשונות עם טקסט מלא בעמודות.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -405,46 +404,102 @@ pip install azureml-mlflow
     df.head()
     ```
 
-## 5. הגש את משימת הכוונון העדין באמצעות המודל והנתונים כקלטים
+## 5. ماڈل اور ڈیٹا کو ان پٹ کے طور پر استعمال کرتے ہوئے fine tuning کا کام جمع کروائیں
 
-צור משימה המשתמשת ברכיב צינור chat-completion. למידע נוסף על כל הפרמטרים הנתמכים לכוונון עדין.
+وہ کام بنائیں جو chat-completion pipeline کمپونینٹ استعمال کرتا ہو۔ fine tuning کے لیے سپورٹ کیے گئے تمام پیرامیٹرز کے بارے میں مزید جانیں۔
 
-### הגדרת פרמטרי כוונון עדין
+### Fine tune کے پیرامیٹرز کی تعریف کریں
 
-1. פרמטרי הכוונון העדין נחלקים לשתי קטגוריות - פרמטרי אימון ופרמטרי אופטימיזציה
+1. Fine tune کے پیرامیٹرز کو دو زمروں میں تقسیم کیا جا سکتا ہے - training پیرامیٹرز، optimization پیرامیٹرز
 
-1. פרמטרי האימון מגדירים היבטים של האימון כגון -
+1. Training پیرامیٹرز تربیت کے پہلوؤں کی وضاحت کرتے ہیں جیسے -
 
-    - האופטימייזר, המתזמן לשימוש
-    - המדד לאופטימיזציה בכוונון העדין
-    - מספר שלבי האימון וגודל האצווה ועוד
-    - פרמטרי האופטימיזציה מסייעים באופטימיזציה של זיכרון ה-GPU ושימוש יעיל במשאבי המחשוב.
+    - استعمال ہونے والا optimizer، scheduler
+    - fine tune کو optimize کرنے کے لیے میٹرک
+    - تربیتی مراحل کی تعداد، batch size وغیرہ
+    - Optimization پیرامیٹرز GPU میموری کو بہتر بنانے اور compute وسائل کو مؤثر طریقے سے استعمال کرنے میں مدد دیتے ہیں۔
 
-1. להלן כמה מהפרמטרים בקטגוריה זו. פרמטרי האופטימיזציה משתנים בין מודלים ונכללים בחבילה עם המודל כדי לטפל בשינויים אלו.
+1. ذیل میں چند ایسے پیرامیٹرز دیے گئے ہیں جو اس زمرے سے تعلق رکھتے ہیں۔ optimization پیرامیٹرز ہر ماڈل کے لیے مختلف ہوتے ہیں اور ماڈل کے ساتھ پیک کیے جاتے ہیں تاکہ ان تبدیلیوں کو سنبھالا جا سکے۔
 
-    - הפעלת deepspeed ו-LoRA
-    - הפעלת אימון דיוק מעורב
-    - הפעלת אימון מרובה צמתים
+    - deepspeed اور LoRA کو فعال کریں
+    - mixed precision training کو فعال کریں
+    - multi-node training کو فعال کریں
 
 > [!NOTE]
-> כוונון מפוקח עלול לגרום לאובדן יישור או שכחה קטסטרופלית. מומלץ לבדוק בעיה זו ולהריץ שלב יישור לאחר הכוונון.
+> supervised fine tuning alignment کھونے یا شدید بھول جانے کا باعث بن سکتی ہے۔ ہم تجویز کرتے ہیں کہ اس مسئلے کی جانچ کریں اور fine tuning کے بعد alignment مرحلہ چلائیں۔
 
-### פרמטרי כוונון עדין
+### Fine Tuning کے پیرامیٹرز
 
-1. סקריפט Python זה מגדיר פרמטרים לכוונון עדין של מודל למידת מכונה. להלן פירוט מה הוא עושה:
+1. یہ Python اسکرپٹ ایک مشین لرننگ ماڈل کی fine tuning کے لیے پیرامیٹرز سیٹ کر رہا ہے۔ یہاں اس کا خلاصہ ہے:
 
-    - מגדיר פרמטרי אימון ברירת מחדל כמו מספר אפוקים, גדלי אצווה לאימון והערכה, שיעור הלמידה וסוג מתזמן שיעור הלמידה.
+    - یہ ڈیفالٹ training پیرامیٹرز سیٹ کرتا ہے جیسے تربیتی epochs کی تعداد، training اور evaluation کے لیے batch sizes، learning rate، اور learning rate scheduler کی قسم۔
 
-    - מגדיר פרמטרי אופטימיזציה ברירת מחדל כגון הפעלת LoRa ו-DeepSpeed, ושלב DeepSpeed.
+    - یہ ڈیفالٹ optimization پیرامیٹرز سیٹ کرتا ہے جیسے Layer-wise Relevance Propagation (LoRa) اور DeepSpeed کو اپلائی کرنا، اور DeepSpeed کا مرحلہ۔
 
-    - מאחד את פרמטרי האימון והאופטימיזציה למילון אחד בשם finetune_parameters.
+    - یہ training اور optimization پیرامیٹرز کو ایک dictionary میں جوڑتا ہے جسے finetune_parameters کہا جاتا ہے۔
 
-    - בודק אם ל-foundation_model יש פרמטרי ברירת מחדל ספציפיים למודל. אם כן, מדפיס אזהרה ומעדכן את finetune_parameters עם פרמטרים אלו. משתמש ב-ast.literal_eval כדי להמיר את הפרמטרים ממחרוזת למילון Python.
+    - یہ چیک کرتا ہے کہ foundation_model کے پاس کوئی ماڈل مخصوص ڈیفالٹ پیرامیٹرز ہیں یا نہیں۔ اگر ہیں تو ایک وارننگ پیغام پرنٹ کرتا ہے اور finetune_parameters dictionary کو ان ماڈل مخصوص ڈیفالٹس سے اپ ڈیٹ کرتا ہے۔ ast.literal_eval فنکشن ماڈل مخصوص ڈیفالٹس کو string سے Python dictionary میں تبدیل کرنے کے لیے استعمال ہوتا ہے۔
 
-    - מדפיס את קבוצת הפרמטרים הסופית שתשמש בהרצה.
+    - یہ fine tuning کے لیے استعمال ہونے والے حتمی پیرامیٹرز پرنٹ کرتا ہے۔
 
-    - לסיכום, הסקריפט מגדיר ומציג את פרמטרי הכוונ
-based on various parameters, and then printing this display name. ```python
+    - خلاصہ یہ ہے کہ یہ اسکرپٹ مشین لرننگ ماڈل کی fine tuning کے پیرامیٹرز سیٹ اور دکھا رہا ہے، اور ڈیفالٹ پیرامیٹرز کو ماڈل مخصوص پیرامیٹرز سے اوور رائیڈ کرنے کی صلاحیت رکھتا ہے۔
+
+```python
+    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    training_parameters = dict(
+        num_train_epochs=3,
+        per_device_train_batch_size=1,
+        per_device_eval_batch_size=1,
+        learning_rate=5e-6,
+        lr_scheduler_type="cosine",
+    )
+    
+    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    optimization_parameters = dict(
+        apply_lora="true",
+        apply_deepspeed="true",
+        deepspeed_stage=2,
+    )
+    
+    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    finetune_parameters = {**training_parameters, **optimization_parameters}
+    
+    # Check if the foundation_model has any model-specific default parameters
+    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
+    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    if "model_specific_defaults" in foundation_model.tags:
+        print("Warning! Model specific defaults exist. The defaults could be overridden.")
+        finetune_parameters.update(
+            ast.literal_eval(  # convert string to python dict
+                foundation_model.tags["model_specific_defaults"]
+            )
+        )
+    
+    # Print the final set of fine-tuning parameters that will be used for the run
+    print(
+        f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
+    )
+    ```
+
+### Training Pipeline
+
+1. یہ Python اسکرپٹ ایک فنکشن define کر رہا ہے جو مشین لرننگ training pipeline کے لیے display name بناتا ہے، اور پھر اس فنکشن کو کال کر کے display name generate اور پرنٹ کرتا ہے۔ یہاں اس کا خلاصہ ہے:
+
+1. get_pipeline_display_name فنکشن define کیا گیا ہے۔ یہ فنکشن training pipeline سے متعلق مختلف پیرامیٹرز کی بنیاد پر display name بناتا ہے۔
+
+1. فنکشن کے اندر، یہ کل batch size کا حساب لگاتا ہے جو per-device batch size، gradient accumulation steps کی تعداد، ہر node پر GPUs کی تعداد، اور fine tuning کے لیے استعمال ہونے والے nodes کی تعداد کو ضرب دے کر حاصل ہوتا ہے۔
+
+1. یہ دیگر پیرامیٹرز حاصل کرتا ہے جیسے learning rate scheduler کی قسم، DeepSpeed کا اطلاق، DeepSpeed کا مرحلہ، Layer-wise Relevance Propagation (LoRa) کا اطلاق، ماڈل checkpoints کی زیادہ سے زیادہ تعداد، اور زیادہ سے زیادہ sequence length۔
+
+1. یہ ایک سٹرنگ بناتا ہے جس میں یہ تمام پیرامیٹرز ہائفن سے جدا ہوتے ہیں۔ اگر DeepSpeed یا LoRa اپلائی کیا گیا ہو تو سٹرنگ میں "ds" کے بعد DeepSpeed کا مرحلہ یا "lora" شامل ہوتا ہے۔ اگر نہیں تو "nods" یا "nolora" شامل ہوتا ہے۔
+
+1. فنکشن یہ سٹرنگ واپس کرتا ہے جو training pipeline کے display name کے طور پر کام کرتی ہے۔
+
+1. فنکشن define ہونے کے بعد اسے کال کیا جاتا ہے تاکہ display name generate کیا جا سکے، جو پھر پرنٹ کیا جاتا ہے۔
+
+1. خلاصہ یہ ہے کہ یہ اسکرپٹ مختلف پیرامیٹرز کی بنیاد پر مشین لرننگ training pipeline کے لیے display name بناتا ہے اور اسے پرنٹ کرتا ہے۔
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -497,17 +552,31 @@ based on various parameters, and then printing this display name. ```python
     pipeline_display_name = get_pipeline_display_name()
     # Print the display name
     print(f"Display name used for the run: {pipeline_display_name}")
-    ``` ### Configuring Pipeline یہ Python اسکرپٹ Azure Machine Learning SDK کا استعمال کرتے ہوئے ایک مشین لرننگ پائپ لائن کو ڈیفائن اور کنفیگر کر رہا ہے۔ یہ اس کے کام کا خلاصہ ہے: 1. یہ Azure AI ML SDK سے ضروری ماڈیولز کو امپورٹ کرتا ہے۔ 1. یہ رجسٹری سے "chat_completion_pipeline" نامی پائپ لائن کمپونینٹ کو حاصل کرتا ہے۔ 1. یہ `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
+    ```
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+### Pipeline کی ترتیب
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+یہ Python اسکرپٹ Azure Machine Learning SDK استعمال کرتے ہوئے مشین لرننگ pipeline define اور configure کر رہا ہے۔ یہاں اس کا خلاصہ ہے:
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. یہ Azure AI ML SDK سے ضروری ماڈیولز import کرتا ہے۔
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. registry سے "chat_completion_pipeline" نامی pipeline component حاصل کرتا ہے۔
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False` کا استعمال کرتے ہوئے ایک پائپ لائن جاب ڈیفائن کرتا ہے، جس کا مطلب ہے کہ اگر کوئی بھی قدم ناکام ہو تو پائپ لائن رک جائے گی۔ 1. خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning SDK کا استعمال کرتے ہوئے چیٹ کمپلیشن ٹاسک کے لیے ایک مشین لرننگ پائپ لائن کو ڈیفائن اور کنفیگر کر رہا ہے۔ ```python
+1. `@pipeline` decorator اور `create_pipeline` فنکشن کے ذریعے pipeline job define کرتا ہے۔ pipeline کا نام `pipeline_display_name` رکھا گیا ہے۔
+
+1. `create_pipeline` فنکشن کے اندر، حاصل کردہ pipeline component کو مختلف پیرامیٹرز کے ساتھ initialize کرتا ہے، جن میں ماڈل کا path، مختلف مراحل کے لیے compute clusters، training اور testing کے لیے dataset splits، fine tuning کے لیے GPUs کی تعداد، اور دیگر fine tuning پیرامیٹرز شامل ہیں۔
+
+1. fine tuning job کے آؤٹ پٹ کو pipeline job کے آؤٹ پٹ سے map کرتا ہے تاکہ fine tuned ماڈل کو آسانی سے رجسٹر کیا جا سکے، جو کہ ماڈل کو online یا batch endpoint پر deploy کرنے کے لیے ضروری ہے۔
+
+1. `create_pipeline` فنکشن کو کال کر کے pipeline کی ایک instance بناتا ہے۔
+
+1. pipeline کی `force_rerun` سیٹنگ کو `True` پر سیٹ کرتا ہے، یعنی پچھلے کاموں کے cached نتائج استعمال نہیں ہوں گے۔
+
+1. pipeline کی `continue_on_step_failure` سیٹنگ کو `False` پر سیٹ کرتا ہے، یعنی اگر کوئی مرحلہ ناکام ہو تو pipeline رک جائے گا۔
+
+1. خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning SDK استعمال کرتے ہوئے chat completion ٹاسک کے لیے مشین لرننگ pipeline define اور configure کر رہا ہے۔
+
+```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
@@ -556,7 +625,19 @@ based on various parameters, and then printing this display name. ```python
     # Set continue on step failure to False
     # This means that the pipeline will stop if any step fails
     pipeline_object.settings.continue_on_step_failure = False
-    ``` ### Submit the Job 1. یہ Python اسکرپٹ Azure Machine Learning ورک اسپیس کو ایک مشین لرننگ پائپ لائن جاب سبمٹ کر رہا ہے اور پھر جاب کے مکمل ہونے کا انتظار کر رہا ہے۔ یہ اس کے کام کا خلاصہ ہے: - یہ workspace_ml_client کے jobs آبجیکٹ کی create_or_update میتھڈ کو کال کرتا ہے تاکہ پائپ لائن جاب سبمٹ کی جا سکے۔ چلانے کے لیے پائپ لائن pipeline_object سے مخصوص کی گئی ہے، اور جاب جس تجربے کے تحت چلائی جا رہی ہے وہ experiment_name سے معلوم ہوتی ہے۔ - پھر یہ workspace_ml_client کے jobs آبجیکٹ کی stream میتھڈ کو کال کرتا ہے تاکہ پائپ لائن جاب کے مکمل ہونے کا انتظار کیا جا سکے۔ انتظار کرنے والی جاب pipeline_job آبجیکٹ کے name اٹریبیوٹ سے مخصوص کی گئی ہے۔ - خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning ورک اسپیس کو مشین لرننگ پائپ لائن جاب سبمٹ کر رہا ہے اور پھر جاب کے مکمل ہونے کا انتظار کر رہا ہے۔ ```python
+    ```
+
+### کام جمع کروائیں
+
+1. یہ Python اسکرپٹ Azure Machine Learning workspace میں مشین لرننگ pipeline job جمع کروا رہا ہے اور پھر کام مکمل ہونے کا انتظار کر رہا ہے۔ یہاں اس کا خلاصہ ہے:
+
+    - یہ workspace_ml_client کے jobs object کی create_or_update میتھڈ کو کال کرتا ہے تاکہ pipeline job جمع کروایا جا سکے۔ چلانے کے لیے pipeline `pipeline_object` سے مخصوص ہے، اور تجربہ `experiment_name` سے۔
+
+    - پھر یہ workspace_ml_client کے jobs object کی stream میتھڈ کو کال کرتا ہے تاکہ pipeline job کے مکمل ہونے کا انتظار کرے۔ انتظار کرنے والا کام pipeline_job object کے name attribute سے مخصوص ہے۔
+
+    - خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning workspace میں مشین لرننگ pipeline job جمع کروا رہا ہے اور پھر اس کے مکمل ہونے کا انتظار کر رہا ہے۔
+
+```python
     # Submit the pipeline job to the Azure Machine Learning workspace
     # The pipeline to be run is specified by pipeline_object
     # The experiment under which the job is run is specified by experiment_name
@@ -567,7 +648,33 @@ based on various parameters, and then printing this display name. ```python
     # Wait for the pipeline job to complete
     # The job to wait for is specified by the name attribute of the pipeline_job object
     workspace_ml_client.jobs.stream(pipeline_job.name)
-    ``` ## 6. Register the fine tuned model with the workspace ہم fine tuning جاب کے آؤٹ پٹ سے ماڈل کو رجسٹر کریں گے۔ یہ fine tuned ماڈل اور fine tuning جاب کے درمیان lineage کو ٹریک کرے گا۔ fine tuning جاب مزید بنیاد ماڈل، ڈیٹا اور ٹریننگ کوڈ کے lineage کو بھی ٹریک کرتا ہے۔ ### Registering the ML Model 1. یہ Python اسکرپٹ Azure Machine Learning پائپ لائن میں ٹرینڈ کیے گئے مشین لرننگ ماڈل کو رجسٹر کر رہا ہے۔ یہ اس کے کام کا خلاصہ ہے: - یہ Azure AI ML SDK سے ضروری ماڈیولز کو امپورٹ کرتا ہے۔ - یہ چیک کرتا ہے کہ آیا pipeline job سے trained_model آؤٹ پٹ دستیاب ہے یا نہیں، جو workspace_ml_client کے jobs آبجیکٹ کی get میتھڈ کال کر کے اور اس کے outputs اٹریبیوٹ کو ایکسیس کر کے معلوم کیا جاتا ہے۔ - یہ پائپ لائن جاب کے نام اور آؤٹ پٹ ("trained_model") کے نام کو فارمیٹ کر کے ٹرینڈ ماڈل کا راستہ بناتا ہے۔ - یہ fine-tuned ماڈل کے لیے ایک نام ڈیفائن کرتا ہے جو اصل ماڈل کے نام کے آخر میں "-ultrachat-200k" لگا کر اور کسی بھی سلیش کو ہائفن سے بدل کر بنایا جاتا ہے۔ - یہ ماڈل کو رجسٹر کرنے کے لیے ایک Model آبجیکٹ تیار کرتا ہے جس میں ماڈل کا راستہ، ماڈل کی قسم (MLflow ماڈل)، ماڈل کا نام اور ورژن، اور ماڈل کی تفصیل شامل ہیں۔ - یہ workspace_ml_client کے models آبجیکٹ کی create_or_update میتھڈ کو کال کر کے ماڈل کو رجسٹر کرتا ہے، اور Model آبجیکٹ کو آرگیومنٹ کے طور پر دیتا ہے۔ - یہ رجسٹر شدہ ماڈل کو پرنٹ کرتا ہے۔ 1. خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning پائپ لائن میں ٹرینڈ کیے گئے مشین لرننگ ماڈل کو رجسٹر کر رہا ہے۔ ```python
+    ```
+
+## 6. fine tuned ماڈل کو workspace میں رجسٹر کریں
+
+ہم fine tuning job کے آؤٹ پٹ سے ماڈل کو رجسٹر کریں گے۔ یہ fine tuned ماڈل اور fine tuning job کے درمیان lineage کو ٹریک کرے گا۔ fine tuning job مزید foundation model، ڈیٹا اور training کوڈ کے ساتھ lineage کو ٹریک کرتا ہے۔
+
+### ML ماڈل کی رجسٹریشن
+
+1. یہ Python اسکرپٹ Azure Machine Learning pipeline میں تربیت یافتہ مشین لرننگ ماڈل کو رجسٹر کر رہا ہے۔ یہاں اس کا خلاصہ ہے:
+
+    - یہ Azure AI ML SDK سے ضروری ماڈیولز import کرتا ہے۔
+
+    - یہ چیک کرتا ہے کہ pipeline job سے trained_model آؤٹ پٹ دستیاب ہے یا نہیں، جو workspace_ml_client کے jobs object کی get میتھڈ کال کر کے اور اس کے outputs attribute تک رسائی حاصل کر کے کیا جاتا ہے۔
+
+    - یہ pipeline job کے نام اور آؤٹ پٹ ("trained_model") کے نام کے ساتھ ایک سٹرنگ format کر کے تربیت یافتہ ماڈل کا path بناتا ہے۔
+
+    - fine tuned ماڈل کے لیے ایک نام define کرتا ہے جو اصل ماڈل کے نام کے ساتھ "-ultrachat-200k" جوڑ کر اور کسی بھی سلیش کو ہائفن سے بدل کر بنایا جاتا ہے۔
+
+    - ماڈل کو رجسٹر کرنے کے لیے Model object بناتا ہے جس میں ماڈل کا path، ماڈل کی قسم (MLflow ماڈل)، ماڈل کا نام اور ورژن، اور ماڈل کی تفصیل شامل ہوتی ہے۔
+
+    - workspace_ml_client کے models object کی create_or_update میتھڈ کو Model object کے ساتھ کال کر کے ماڈل کو رجسٹر کرتا ہے۔
+
+    - رجسٹر شدہ ماڈل کو پرنٹ کرتا ہے۔
+
+1. خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning pipeline میں تربیت یافتہ مشین لرننگ ماڈل کو رجسٹر کر رہا ہے۔
+
+```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
@@ -605,7 +712,27 @@ based on various parameters, and then printing this display name. ```python
     
     # Print the registered model
     print("registered model: \n", registered_model)
-    ``` ## 7. Deploy the fine tuned model to an online endpoint آن لائن اینڈ پوائنٹس ایک مضبوط REST API فراہم کرتے ہیں جو ایپلیکیشنز کے ساتھ انٹیگریٹ کرنے کے لیے استعمال ہو سکتا ہے جو ماڈل کو استعمال کرنا چاہتی ہیں۔ ### Manage Endpoint 1. یہ Python اسکرپٹ Azure Machine Learning میں رجسٹر شدہ ماڈل کے لیے ایک منیجڈ آن لائن اینڈ پوائنٹ بنا رہا ہے۔ یہ اس کے کام کا خلاصہ ہے: - یہ Azure AI ML SDK سے ضروری ماڈیولز کو امپورٹ کرتا ہے۔ - یہ آن لائن اینڈ پوائنٹ کے لیے ایک منفرد نام ڈیفائن کرتا ہے جو "ultrachat-completion-" کے بعد ٹائم اسٹیمپ لگا کر بنایا جاتا ہے۔ - یہ ManagedOnlineEndpoint آبجیکٹ بنا کر آن لائن اینڈ پوائنٹ بنانے کی تیاری کرتا ہے، جس میں اینڈ پوائنٹ کا نام، تفصیل، اور authentication موڈ ("key") شامل ہیں۔ - یہ workspace_ml_client کی begin_create_or_update میتھڈ کو کال کر کے آن لائن اینڈ پوائنٹ بناتا ہے اور پھر wait میتھڈ کال کر کے اس کے مکمل ہونے کا انتظار کرتا ہے۔ 1. خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning میں رجسٹر شدہ ماڈل کے لیے ایک منیجڈ آن لائن اینڈ پوائنٹ بنا رہا ہے۔ ```python
+    ```
+
+## 7. fine tuned ماڈل کو online endpoint پر deploy کریں
+
+Online endpoints ایک پائیدار REST API فراہم کرتے ہیں جسے ان ایپلیکیشنز کے ساتھ انٹیگریٹ کیا جا سکتا ہے جنہیں ماڈل استعمال کرنا ہوتا ہے۔
+
+### Endpoint کا انتظام
+
+1. یہ Python اسکرپٹ Azure Machine Learning میں رجسٹر شدہ ماڈل کے لیے managed online endpoint بنا رہا ہے۔ یہاں اس کا خلاصہ ہے:
+
+    - یہ Azure AI ML SDK سے ضروری ماڈیولز import کرتا ہے۔
+
+    - online endpoint کے لیے ایک منفرد نام define کرتا ہے جو "ultrachat-completion-" کے ساتھ timestamp جوڑ کر بنایا جاتا ہے۔
+
+    - ManagedOnlineEndpoint object بناتا ہے جس میں endpoint کا نام، endpoint کی تفصیل، اور authentication mode ("key") شامل ہیں۔
+
+    - workspace_ml_client کی begin_create_or_update میتھڈ کو ManagedOnlineEndpoint object کے ساتھ کال کر کے online endpoint بناتا ہے اور پھر wait میتھڈ کال کر کے creation مکمل ہونے کا انتظار کرتا ہے۔
+
+1. خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning میں رجسٹر شدہ ماڈل کے لیے managed online endpoint بنا رہا ہے۔
+
+```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
@@ -630,32 +757,34 @@ based on various parameters, and then printing this display name. ```python
     # Create the online endpoint by calling the begin_create_or_update method of the workspace_ml_client with the ManagedOnlineEndpoint object as the argument
     # Then wait for the creation operation to complete by calling the wait method
     workspace_ml_client.begin_create_or_update(endpoint).wait()
-    ``` > [!NOTE]
+    ```
+
+> [!NOTE]
 > آپ یہاں deployment کے لیے سپورٹ کیے گئے SKU کی فہرست دیکھ سکتے ہیں - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### Deploying ML Model
+### ML ماڈل کی تعیناتی
 
-1. یہ Python اسکرپٹ Azure Machine Learning میں ایک رجسٹر شدہ مشین لرننگ ماڈل کو منیجڈ آن لائن اینڈ پوائنٹ پر ڈیپلائے کر رہا ہے۔ یہ اس کے کام کا خلاصہ ہے:
+1. یہ Python اسکرپٹ Azure Machine Learning میں managed online endpoint پر رجسٹر شدہ مشین لرننگ ماڈل کو deploy کر رہا ہے۔ یہاں اس کا خلاصہ ہے:
 
-    - یہ ast ماڈیول کو امپورٹ کرتا ہے، جو Python abstract syntax grammar کے درختوں کو پراسیس کرنے کے فنکشنز فراہم کرتا ہے۔
+    - یہ ast ماڈیول import کرتا ہے، جو Python abstract syntax grammar کے درختوں کو پروسیس کرنے کے فنکشنز فراہم کرتا ہے۔
 
-    - یہ ڈیپلائمنٹ کے لیے instance type کو "Standard_NC6s_v3" پر سیٹ کرتا ہے۔
+    - deployment کے لیے instance type کو "Standard_NC6s_v3" پر سیٹ کرتا ہے۔
 
-    - یہ چیک کرتا ہے کہ foundation model میں inference_compute_allow_list ٹیگ موجود ہے یا نہیں۔ اگر موجود ہو تو وہ اس کی ویلیو کو سٹرنگ سے Python لسٹ میں تبدیل کر کے inference_computes_allow_list کو اس سے اسائن کرتا ہے۔ اگر نہیں، تو inference_computes_allow_list کو None پر سیٹ کرتا ہے۔
+    - چیک کرتا ہے کہ foundation model میں inference_compute_allow_list ٹیگ موجود ہے یا نہیں۔ اگر ہے تو اس کی ویلیو کو string سے Python list میں تبدیل کر کے inference_computes_allow_list میں رکھتا ہے، ورنہ اسے None پر سیٹ کرتا ہے۔
 
-    - یہ چیک کرتا ہے کہ مخصوص instance type allow list میں ہے یا نہیں۔ اگر نہیں ہے تو یہ صارف کو allow list میں سے کوئی instance type منتخب کرنے کی ہدایت دیتا ہے۔
+    - چیک کرتا ہے کہ مخصوص instance type allow list میں ہے یا نہیں۔ اگر نہیں تو صارف کو allow list سے کوئی instance type منتخب کرنے کا پیغام دیتا ہے۔
 
-    - یہ ManagedOnlineDeployment آبجیکٹ بنا کر ڈیپلائمنٹ تیار کرتا ہے، جس میں ڈیپلائمنٹ کا نام، اینڈ پوائنٹ کا نام، ماڈل کا ID، instance type اور count، liveness probe سیٹنگز، اور request سیٹنگز شامل ہیں۔
+    - ManagedOnlineDeployment object بناتا ہے جس میں deployment کا نام، endpoint کا نام، ماڈل کا ID، instance type اور count، liveness probe کی سیٹنگز، اور request کی سیٹنگز شامل ہیں۔
 
-    - یہ workspace_ml_client کی begin_create_or_update میتھڈ کو کال کر کے ڈیپلائمنٹ بناتا ہے اور پھر wait میتھڈ کال کر کے اس کے مکمل ہونے کا انتظار کرتا ہے۔
+    - workspace_ml_client کی begin_create_or_update میتھڈ کو ManagedOnlineDeployment object کے ساتھ کال کر کے deployment بناتا ہے اور پھر wait میتھڈ کال کر کے creation مکمل ہونے کا انتظار کرتا ہے۔
 
-    - یہ اینڈ پوائنٹ کے ٹریفک کو سیٹ کرتا ہے تاکہ 100٪ ٹریفک "demo" ڈیپلائمنٹ کو جائے۔
+    - endpoint کے traffic کو 100% "demo" deployment کی طرف direct کرتا ہے۔
 
-    - یہ workspace_ml_client کی begin_create_or_update میتھڈ کو کال کر کے اینڈ پوائنٹ کو اپڈیٹ کرتا ہے اور پھر result میتھڈ کال کر کے اپڈیٹ کے مکمل ہونے کا انتظار کرتا ہے۔
+    - workspace_ml_client کی begin_create_or_update میتھڈ کو endpoint object کے ساتھ کال کر کے endpoint کو اپ ڈیٹ کرتا ہے اور پھر result میتھڈ کال کر کے اپ ڈیٹ مکمل ہونے کا انتظار کرتا ہے۔
 
-1. خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning میں ایک رجسٹر شدہ مشین لرننگ ماڈل کو منیجڈ آن لائن اینڈ پوائنٹ پر ڈیپلائے کر رہا ہے۔
+1. خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning میں managed online endpoint پر رجسٹر شدہ مشین لرننگ ماڈل کو deploy کر رہا ہے۔
 
-    ```python
+```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
     import ast
     
@@ -706,25 +835,25 @@ based on various parameters, and then printing this display name. ```python
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. Test the endpoint with sample data
+## 8. endpoint کو sample ڈیٹا کے ساتھ ٹیسٹ کریں
 
-ہم ٹیسٹ ڈیٹاسیٹ سے کچھ سیمپل ڈیٹا حاصل کریں گے اور inference کے لیے آن لائن اینڈ پوائنٹ کو سبمٹ کریں گے۔ پھر ہم scored labels کو ground truth labels کے ساتھ دکھائیں گے۔
+ہم test dataset سے کچھ sample ڈیٹا حاصل کریں گے اور inference کے لیے online endpoint کو بھیجیں گے۔ پھر scored labels کو ground truth labels کے ساتھ دکھائیں گے۔
 
-### Reading the results
+### نتائج پڑھنا
 
-1. یہ Python اسکرپٹ ایک JSON Lines فائل کو pandas DataFrame میں پڑھ رہا ہے، ایک رینڈم سیمپل لے رہا ہے، اور انڈیکس کو ری سیٹ کر رہا ہے۔ یہ اس کے کام کا خلاصہ ہے:
+1. یہ Python اسکرپٹ ایک JSON Lines فائل کو pandas DataFrame میں پڑھ رہا ہے، ایک random sample لے رہا ہے، اور index کو reset کر رہا ہے۔ یہاں اس کا خلاصہ ہے:
 
-    - یہ فائل ./ultrachat_200k_dataset/test_gen.jsonl کو pandas DataFrame میں پڑھتا ہے۔ read_json فنکشن lines=True آرگیومنٹ کے ساتھ استعمال کیا جاتا ہے کیونکہ فائل JSON Lines فارمیٹ میں ہے، جہاں ہر لائن ایک الگ JSON آبجیکٹ ہوتا ہے۔
+    - یہ فائل ./ultrachat_200k_dataset/test_gen.jsonl کو pandas DataFrame میں پڑھتا ہے۔ read_json فنکشن lines=True آرگیومنٹ کے ساتھ استعمال کیا گیا ہے کیونکہ فائل JSON Lines فارمیٹ میں ہے، جہاں ہر لائن ایک الگ JSON object ہوتی ہے۔
 
-    - یہ DataFrame سے 1 رینڈم قطار کا سیمپل لیتا ہے۔ sample فنکشن n=1 آرگیومنٹ کے ساتھ استعمال ہوتا ہے تاکہ منتخب کرنے کے لیے قطاروں کی تعداد بتائی جا سکے۔
+    - DataFrame سے 1 قطار کا random sample لیتا ہے۔ sample فنکشن n=1 آرگیومنٹ کے ساتھ استعمال کیا گیا ہے تاکہ منتخب کرنے والی قطاروں کی تعداد بتائی جا سکے۔
 
-    - یہ DataFrame کا انڈیکس ری سیٹ کرتا ہے۔ reset_index فنکشن drop=True آرگیومنٹ کے ساتھ استعمال ہوتا ہے تاکہ اصل انڈیکس کو ہٹا کر نیا ڈیفالٹ انٹیجر انڈیکس بنایا جا سکے۔
+    - DataFrame کا index reset کرتا ہے۔ reset_index فنکشن drop=True آرگیومنٹ کے ساتھ استعمال کیا گیا ہے تاکہ اصل index کو ہٹا کر نئے integer index سے بدل دیا جائے۔
 
-    - یہ DataFrame کی پہلی 2 قطاریں head فنکشن کے ساتھ دکھاتا ہے، آرگیومنٹ 2 کے ساتھ۔ تاہم، چونکہ سیمپل لینے کے بعد DataFrame میں صرف ایک قطار ہے، اس لیے صرف وہی ایک قطار دکھائی جائے گی۔
+    - DataFrame کی پہلی 2 قطاریں head فنکشن کے ساتھ دکھاتا ہے، لیکن چونکہ sample کے بعد DataFrame میں صرف ایک قطار ہے، اس لیے صرف وہی ایک قطار دکھائی جائے گی۔
 
-1. خلاصہ یہ ہے کہ یہ اسکرپٹ JSON Lines فائل کو pandas DataFrame میں پڑھ رہا ہے، 1 رینڈم قطار کا سیمپل لے رہا ہے، انڈیکس کو ری سیٹ کر رہا ہے، اور پہلی قطار دکھا رہا ہے۔
+1. خلاصہ یہ ہے کہ یہ اسکرپٹ JSON Lines فائل کو pandas DataFrame میں پڑھ رہا ہے، 1 قطار کا random sample لے رہا ہے، index reset کر رہا ہے، اور پہلی قطار دکھا رہا ہے۔
 
-    ```python
+```python
     # Import pandas library
     import pandas as pd
     
@@ -746,19 +875,18 @@ based on various parameters, and then printing this display name. ```python
     test_df.head(2)
     ```
 
-### Create JSON Object
+### JSON object بنائیں
 
-1. یہ Python اسکرپٹ مخصوص پیرا میٹرز کے ساتھ ایک JSON آبجیکٹ بنا رہا ہے اور اسے فائل میں محفوظ کر رہا ہے۔ یہ اس کے کام کا خلاصہ ہے:
+1. یہ Python اسکرپٹ مخصوص پیرامیٹرز کے ساتھ JSON object بنا رہا ہے اور اسے فائل میں محفوظ کر رہا ہے۔ یہاں اس کا خلاصہ ہے:
 
-    - یہ json ماڈیول کو امپورٹ کرتا ہے، جو JSON ڈیٹا کے ساتھ کام کرنے کے فنکشنز فراہم کرتا ہے۔
+    - یہ json ماڈیول import کرتا ہے، جو JSON ڈیٹا کے ساتھ کام کرنے کے فنکشنز فراہم کرتا ہے۔
 
-    - یہ parameters نامی ڈکشنری بناتا ہے جس میں مشین لرننگ ماڈل کے پیرا میٹرز کے لیے کیز اور ویلیوز شامل ہیں۔ کیز "temperature"، "top_p"، "do_sample"، اور "max_new_tokens" ہیں، اور ان کی متعلقہ ویلیوز بالترتیب 0.6، 0.9، True، اور 200 ہیں۔
+    - parameters نامی dictionary بناتا ہے جس میں مشین لرننگ ماڈل کے پیرامیٹرز شامل ہیں۔ keys "temperature"، "top_p"، "do_sample"، اور "max_new_tokens" ہیں، جن کی ویلیوز بالترتیب 0.6، 0.9، True، اور 200 ہیں۔
 
-    - یہ ایک اور ڈکشنری test_json بناتا ہے جس میں دو کیز ہیں: "input_data" اور "params"۔ "input_data" کی ویلیو ایک اور ڈکشنری ہے جس میں "input_string" اور "parameters" کیز شامل ہیں۔ "input_string" کی ویلیو ایک لسٹ ہے جس میں test_df DataFrame کا پہلا میسج شامل ہے۔ "parameters" کی ویلیو وہ parameters ڈکشنری ہے جو پہلے بنائی گئی۔ "params" کی ویلیو ایک خالی ڈکشنری ہے۔
+    - ایک اور dictionary test_json بناتا ہے جس میں دو keys ہیں: "input_data" اور "params"۔ "input_data" کی ویلیو ایک اور dictionary ہے جس میں keys "input_string" اور "parameters" ہیں۔ "input_string" کی ویلیو ایک فہرست ہے جس میں test_df DataFrame کا پہلا پیغام شامل ہے۔ "parameters" کی ویلیو parameters dictionary ہے جو پہلے بنائی گئی تھی۔ "params" کی ویلیو ایک خالی dictionary ہے۔
+- یہ sample_score.json نامی فائل کھولتا ہے
 
-    - یہ sample_score.json نامی فائل کو کھولتا ہے۔
-
-    ```python
+```python
     # Import the json module, which provides functions to work with JSON data
     import json
     
@@ -790,23 +918,23 @@ based on various parameters, and then printing this display name. ```python
         json.dump(test_json, f)
     ```
 
-### Invoking Endpoint
+### اینڈ پوائنٹ کو کال کرنا
 
-1. یہ Python اسکرپٹ Azure Machine Learning میں ایک آن لائن اینڈ پوائنٹ کو کال کر رہا ہے تاکہ ایک JSON فائل کو اسکور کیا جا سکے۔ یہ اس کے کام کا خلاصہ ہے:
+1. یہ Python اسکرپٹ Azure Machine Learning میں ایک آن لائن اینڈ پوائنٹ کو کال کر رہا ہے تاکہ JSON فائل کو اسکور کیا جا سکے۔ یہاں اس کے کام کی تفصیل ہے:
 
-    - یہ workspace_ml_client آبجیکٹ کی online_endpoints پراپرٹی کی invoke میتھڈ کو کال کرتا ہے۔ یہ میتھڈ آن لائن اینڈ پوائنٹ کو درخواست بھیجنے اور جواب حاصل کرنے کے لیے استعمال ہوتی ہے۔
+    - یہ workspace_ml_client آبجیکٹ کی online_endpoints پراپرٹی کے invoke میتھڈ کو کال کرتا ہے۔ یہ میتھڈ آن لائن اینڈ پوائنٹ کو درخواست بھیجنے اور جواب حاصل کرنے کے لیے استعمال ہوتا ہے۔
 
-    - یہ endpoint_name اور deployment_name آرگیومنٹس کے ذریعے اینڈ پوائنٹ اور ڈیپلائمنٹ کے نام کو مخصوص کرتا ہے۔ اس کیس میں، اینڈ پوائنٹ کا نام online_endpoint_name ویریبل میں محفوظ ہے اور ڈیپلائمنٹ کا نام "demo" ہے۔
+    - یہ endpoint_name اور deployment_name دلائل کے ذریعے اینڈ پوائنٹ اور ڈپلائمنٹ کے نام کی وضاحت کرتا ہے۔ اس کیس میں، اینڈ پوائنٹ کا نام online_endpoint_name ویری ایبل میں محفوظ ہے اور ڈپلائمنٹ کا نام "demo" ہے۔
 
-    - یہ request_file آرگیومنٹ کے ذریعے اس JSON فائل کا راستہ مخصوص کرتا ہے جسے اسکور کرنا ہے۔ اس کیس میں فائل ./ultrachat_200k_dataset/sample_score.json ہے۔
+    - یہ request_file دلیل کے ذریعے اس JSON فائل کا راستہ بتاتا ہے جسے اسکور کرنا ہے۔ اس کیس میں، فائل کا راستہ ./ultrachat_200k_dataset/sample_score.json ہے۔
 
-    - یہ اینڈ پوائنٹ سے جواب کو response ویریبل میں محفوظ کرتا ہے۔
+    - یہ اینڈ پوائنٹ سے موصولہ جواب کو response ویری ایبل میں محفوظ کرتا ہے۔
 
-    - یہ raw response کو پرنٹ کرتا ہے۔
+    - یہ خام جواب کو پرنٹ کرتا ہے۔
 
-1. خلاصہ یہ ہے کہ یہ اسکرپٹ Azure Machine Learning میں ایک آن لائن اینڈ پوائنٹ کو کال کر رہا ہے تاکہ JSON فائل کو اسکور کرے اور جواب کو پرنٹ کرے۔
+1. خلاصہ یہ کہ، یہ اسکرپٹ Azure Machine Learning میں ایک آن لائن اینڈ پوائنٹ کو کال کر کے JSON فائل کو اسکور کرتا ہے اور جواب کو پرنٹ کرتا ہے۔
 
-    ```python
+```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
     # The `invoke` method of the `online_endpoints` property of the `workspace_ml_client` object is used to send a request to an online endpoint and get a response
     # The `endpoint_name` argument specifies the name of the endpoint, which is stored in the `online_endpoint_name` variable
@@ -822,19 +950,19 @@ based on various parameters, and then printing this display name. ```python
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Delete the online endpoint
+## 9. آن لائن اینڈ پوائنٹ کو حذف کریں
 
-1. آن لائن اینڈ پوائنٹ کو حذف کرنا نہ بھولیں، ورنہ آپ استعمال شدہ کمپیوٹ کے لیے بلنگ جاری رہے گی۔ یہ Python کوڈ لائن Azure Machine Learning میں ایک آن لائن اینڈ پوائنٹ کو حذف کر رہی ہے۔ یہ اس کے کام کا خلاصہ ہے:
+1. آن لائن اینڈ پوائنٹ کو حذف کرنا نہ بھولیں، ورنہ آپ اس اینڈ پوائنٹ کے استعمال شدہ کمپیوٹ کے لیے بلنگ میٹر کو چلتا چھوڑ دیں گے۔ یہ Python کوڈ لائن Azure Machine Learning میں ایک آن لائن اینڈ پوائنٹ کو حذف کر رہی ہے۔ یہاں اس کے کام کی تفصیل ہے:
 
-    - یہ workspace_ml_client آبجیکٹ کی online_endpoints پراپرٹی کی begin_delete میتھڈ کو کال کرتا ہے۔ یہ میتھڈ آن لائن اینڈ پوائنٹ کے حذف کرنے کے عمل کو شروع کرتی ہے۔
+    - یہ workspace_ml_client آبجیکٹ کی online_endpoints پراپرٹی کے begin_delete میتھڈ کو کال کرتا ہے۔ یہ میتھڈ آن لائن اینڈ پوائنٹ کی حذف کاری شروع کرنے کے لیے استعمال ہوتا ہے۔
 
-    - یہ name آرگیومنٹ کے ذریعے حذف کیے جانے والے اینڈ پوائنٹ کا نام مخصوص کرتا ہے۔ اس کیس میں، اینڈ پوائنٹ کا نام online_endpoint_name ویریبل میں محفوظ ہے۔
+    - یہ name دلیل کے ذریعے حذف کیے جانے والے اینڈ پوائنٹ کا نام بتاتا ہے۔ اس کیس میں، اینڈ پوائنٹ کا نام online_endpoint_name ویری ایبل میں محفوظ ہے۔
 
-    - یہ wait میتھڈ کو کال کرتا ہے تاکہ حذف کرنے کے عمل کے مکمل ہونے کا انتظار کیا جا سکے۔ یہ ایک blocking آپریشن ہے، یعنی اس سے اسکرپٹ تب تک نہیں چلے گا جب تک حذف کا عمل مکمل نہ ہو جائے۔
+    - یہ wait میتھڈ کو کال کرتا ہے تاکہ حذف کاری کے عمل کے مکمل ہونے تک انتظار کیا جا سکے۔ یہ ایک بلاکنگ آپریشن ہے، یعنی اس سے اسکرپٹ تب تک آگے نہیں بڑھے گا جب تک حذف کاری مکمل نہ ہو جائے۔
 
-    - خلاصہ یہ ہے کہ یہ کوڈ لائن Azure Machine Learning میں ایک آن لائن اینڈ پوائنٹ کے حذف کرنے کے عمل کو شروع کر رہی ہے اور آپریشن کے مکمل ہونے کا انتظار کر رہی ہے۔
+    - خلاصہ یہ کہ، یہ کوڈ لائن Azure Machine Learning میں ایک آن لائن اینڈ پوائنٹ کی حذف کاری شروع کر رہی ہے اور اس عمل کے مکمل ہونے کا انتظار کر رہی ہے۔
 
-    ```python
+```python
     # Delete the online endpoint in Azure Machine Learning
     # The `begin_delete` method of the `online_endpoints` property of the `workspace_ml_client` object is used to start the deletion of an online endpoint
     # The `name` argument specifies the name of the endpoint to be deleted, which is stored in the `online_endpoint_name` variable
@@ -842,5 +970,5 @@ based on various parameters, and then printing this display name. ```python
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کا استعمال کرتے ہوئے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

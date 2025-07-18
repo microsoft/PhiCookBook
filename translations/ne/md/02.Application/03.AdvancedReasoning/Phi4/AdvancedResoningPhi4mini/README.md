@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:52:32+00:00",
+  "translation_date": "2025-07-17T04:49:26+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "ne"
 }
 -->
-## **Phi-4-mini-reasoning(3.8b) वा Phi-4-reasoning(14b) लाई Reasoning Expert को रूपमा प्रयोग गर्दै**
+## **Phi-4-mini-reasoning(3.8b) वा Phi-4-reasoning(14b) लाई Reasoning Expert को रूपमा प्रयोग गर्ने**
 
-Phi-4-mini-reasoning वा Phi-4-mini-reasoning मार्फत यसको बलियो reasoning क्षमता हेरौं।
+Phi-4-mini-reasoning वा Phi-4-mini-reasoning मार्फत यसको बलियो तर्क क्षमतामा एक नजर हेरौं।
 
 
 ```python
@@ -50,4 +50,4 @@ print(outputs[0])
 ```
 
 **अस्वीकरण**:  
-यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताको लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धिहरू हुन सक्छन्। मूल दस्तावेज़ यसको मूल भाषामा आधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीको लागि, पेशेवर मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।
+यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

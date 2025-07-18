@@ -2,115 +2,111 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-05-07T13:44:02+00:00",
+  "translation_date": "2025-07-17T04:53:11+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "mo"
 }
 -->
-### Example Scenario
+### 範例情境
 
-Imagine you have an image (`demo.png`) and you want to generate Python code that processes this image and saves a new version of it (`phi-3-vision.jpg`).
+假設你有一張圖片（`demo.png`），並且想要產生 Python 程式碼來處理這張圖片，並儲存一個新的版本（`phi-3-vision.jpg`）。
 
-The code above automates this process by:
+上述程式碼自動化了這個流程，步驟如下：
 
-1. Setting up the environment and necessary configurations.  
-2. Creating a prompt that instructs the model to generate the required Python code.  
-3. Sending the prompt to the model and collecting the generated code.  
-4. Extracting and running the generated code.  
-5. Displaying the original and processed images.
+1. 設定環境與必要的配置。
+2. 建立一個提示，指示模型產生所需的 Python 程式碼。
+3. 將提示傳送給模型並收集產生的程式碼。
+4. 擷取並執行產生的程式碼。
+5. 顯示原始圖片與處理後的圖片。
 
-This approach leverages the power of AI to automate image processing tasks, making it easier and faster to achieve your goals.
+這種方法利用 AI 的力量來自動化影像處理任務，使你更輕鬆且更快速地達成目標。
 
 [Sample Code Solution](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
 
-Let's break down what the entire code does step by step:
+讓我們一步步拆解整段程式碼的功能：
 
-1. **Install Required Package**:  
+1. **安裝所需套件**：
     ```python
     !pip install langchain_nvidia_ai_endpoints -U
-    ```  
-    This command installs the `langchain_nvidia_ai_endpoints` package, ensuring it's the latest version.
+    ```
+    這個指令會安裝 `langchain_nvidia_ai_endpoints` 套件，並確保是最新版本。
 
-2. **Import Necessary Modules**:  
+2. **匯入必要模組**：
     ```python
     from langchain_nvidia_ai_endpoints import ChatNVIDIA
     import getpass
     import os
     import base64
-    ```  
-    These imports bring in the necessary modules for interacting with the NVIDIA AI endpoints, handling passwords securely, interacting with the operating system, and encoding/decoding data in base64 format.
+    ```
+    這些匯入語句引入了與 NVIDIA AI 端點互動、密碼安全處理、作業系統操作，以及 base64 編碼/解碼相關的模組。
 
-3. **Set Up API Key**:  
+3. **設定 API 金鑰**：
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
-    ```  
-    This code checks if the `NVIDIA_API_KEY` environment variable is set. If not, it prompts the user to enter their API key securely.
+    ```
+    這段程式碼會檢查 `NVIDIA_API_KEY` 環境變數是否已設定，若沒有，則會安全地提示使用者輸入 API 金鑰。
 
-4. **Define Model and Image Path**:  
+4. **定義模型與圖片路徑**：
     ```python
     model = 'microsoft/phi-3-vision-128k-instruct'
     chat = ChatNVIDIA(model=model)
     img_path = './imgs/demo.png'
-    ```  
-    This sets the model to be used, creates an instance of `ChatNVIDIA` with the specified model, and defines the path to the image file.
+    ```
+    這裡設定要使用的模型，建立 `ChatNVIDIA` 實例，並定義圖片檔案的路徑。
 
-5. **Create Text Prompt**:  
+5. **建立文字提示**：
     ```python
     text = "Please create Python code for image, and use plt to save the new picture under imgs/ and name it phi-3-vision.jpg."
-    ```  
-    This defines a text prompt instructing the model to generate Python code for processing an image.
+    ```
+    這段定義了一個文字提示，指示模型產生用於處理圖片的 Python 程式碼。
 
-6. **Encode Image in Base64**:  
+6. **將圖片編碼為 Base64**：
     ```python
     with open(img_path, "rb") as f:
         image_b64 = base64.b64encode(f.read()).decode()
     image = f'<img src="data:image/png;base64,{image_b64}" />'
-    ```  
-    This code reads the image file, encodes it in base64, and creates an HTML image tag with the encoded data.
+    ```
+    這段程式碼讀取圖片檔案，將其編碼成 base64，並建立一個包含編碼資料的 HTML 圖片標籤。
 
-7. **Combine Text and Image into Prompt**:  
+7. **將文字與圖片結合成提示**：
     ```python
     prompt = f"{text} {image}"
-    ```  
-    This combines the text prompt and the HTML image tag into a single string.
+    ```
+    這裡將文字提示與 HTML 圖片標籤合併成一個字串。
 
-8. **Generate Code Using ChatNVIDIA**:  
+8. **使用 ChatNVIDIA 產生程式碼**：
     ```python
     code = ""
     for chunk in chat.stream(prompt):
         print(chunk.content, end="")
         code += chunk.content
-    ```  
-    This code sends the prompt to the `ChatNVIDIA` model and collects the generated code in chunks, printing and appending each chunk to the `code` string.
+    ```
+    這段程式碼將提示傳送給 `ChatNVIDIA` 模型，並以分段方式收集產生的程式碼，同時印出並附加到 `code` 字串中。
 
-9. **Extract Python Code from Generated Content**:  
+9. **從產生內容中擷取 Python 程式碼**：
     ```python
-    begin = code.index('```python') + 9  
-    code = code[begin:]  
+    begin = code.index('```python') + 9
+    code = code[begin:]
     end = code.index('```')
     code = code[:end]
-    ```  
-    This extracts the actual Python code from the generated content by removing the markdown formatting.
+    ```
+    這段程式碼透過移除 markdown 格式，擷取出真正的 Python 程式碼。
 
-10. **Run the Generated Code**:  
+10. **執行產生的程式碼**：
     ```python
     import subprocess
     result = subprocess.run(["python", "-c", code], capture_output=True)
-    ```  
-    This runs the extracted Python code as a subprocess and captures its output.
+    ```
+    這裡以子程序方式執行擷取出的 Python 程式碼，並捕捉其輸出。
 
-11. **Display Images**:  
+11. **顯示圖片**：
     ```python
     from IPython.display import Image, display
     display(Image(filename='./imgs/phi-3-vision.jpg'))
     display(Image(filename='./imgs/demo.png'))
-    ```  
-    These lines display the images using the `IPython.display` module.
+    ```
+    這些程式碼使用 `IPython.display` 模組來顯示圖片。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language "mo" refers to? It could stand for several languages or dialects (e.g., Moldovan, Mohawk, or others). Providing the full name or additional context will help me give you an accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

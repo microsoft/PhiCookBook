@@ -2,31 +2,31 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:52:18+00:00",
+  "translation_date": "2025-07-17T04:47:44+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "sl"
 }
 -->
 ## **Uporaba Phi-4-mini-mm za generiranje kode**
 
-Phi-4-mini nadaljuje močne zmožnosti kodiranja družine Phi. Lahko uporabiš Prompt za postavljanje vprašanj, povezanih s kodiranjem. Seveda, po dodajanju močne sposobnosti razmišljanja, ima še močnejše zmožnosti kodiranja, kot je generiranje projektov glede na zahteve. Na primer, generiranje projektov glede na zahteve, kot so:
+Phi-4-mini nadaljuje močne zmožnosti kodiranja družine Phi. Za vprašanja, povezana s kodiranjem, lahko uporabite Prompt. Seveda, po dodajanju močne sposobnosti razmišljanja, ima še močnejše zmožnosti kodiranja, kot je generiranje projektov glede na zahteve. Na primer, generiranje projektov glede na zahteve, kot so:
 
 ### **Zahteva**
 
-Ustvari aplikacijo Nakupovalna košarica
+Ustvarite aplikacijo Nakupovalni Voziček
 
-- Ustvari REST API z naslednjimi metodami:
-    - Pridobi seznam piv z uporabo strani, offseta in limita.
-    - Pridobi podrobnosti piva po id-ju.
-    - Iskanje piva po imenu, opisu, sloganih, kombinacijah s hrano in ceni.
-- Ustvari seznam izdelkov na glavni strani.
-    - Ustvari iskalno vrstico za filtriranje izdelkov.
-    - Preusmeri na stran z opisom, ko uporabnik klikne na izdelek.
-- (Neobvezno) Slicer za filtriranje izdelkov po ceni.
-- Ustvari nakupovalno košarico.
-    - Dodaj izdelke v košarico.
-    - Odstrani izdelke iz košarice.
-    - Izračunaj skupno ceno izdelkov v košarici.
+- Ustvarite API Rest z naslednjimi metodami:
+    - Pridobite seznam piv z uporabo strani, offseta in limita.
+    - Pridobite podrobnosti piva po id-ju.
+    - Iščite pivo po imenu, opisu, sloganih, kombinacijah hrane in ceni.
+- Ustvarite seznam izdelkov na glavni strani.
+    - Ustvarite iskalno vrstico za filtriranje izdelkov.
+    - Ob kliku na izdelek preusmerite na stran z opisom.
+- (Neobvezno) Drsnik za filtriranje izdelkov po ceni.
+- Ustvarite nakupovalni voziček.
+    - Dodajte izdelke v voziček.
+    - Odstranite izdelke iz vozička.
+    - Izračunajte skupno ceno izdelkov v vozičku.
 
 ### **Primer kode - Python**
 
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jezik je treba šteti za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

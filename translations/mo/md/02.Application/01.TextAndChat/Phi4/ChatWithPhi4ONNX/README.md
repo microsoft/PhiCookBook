@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-07T13:56:43+00:00",
+  "translation_date": "2025-07-17T03:15:46+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "mo"
 }
 -->
-# **Chat with Phi-4-mini ONNX**
+# **與 Phi-4-mini ONNX 聊天**
 
-***ONNX*** is an open format designed to represent machine learning models. ONNX defines a common set of operators—the building blocks of machine learning and deep learning models—and a standard file format to enable AI developers to use models across various frameworks, tools, runtimes, and compilers.
+***ONNX*** 是一種用於表示機器學習模型的開放格式。ONNX 定義了一組通用的運算子——機器學習和深度學習模型的基礎構件——以及一種通用的文件格式，使 AI 開發者能夠在多種框架、工具、運行時和編譯器中使用模型。
 
-We aim to deploy generative AI models on edge devices and use them in environments with limited computing power or offline. Now, we can achieve this by converting the model in a quantized way. The quantized model can be converted to GGUF or ONNX format.
+我們希望能在邊緣設備上部署生成式 AI 模型，並在有限的計算能力或離線環境中使用它們。現在，我們可以通過量化方式轉換模型來實現這個目標。我們可以將量化後的模型轉換為 GGUF 或 ONNX 格式。
 
-Microsoft Olive can assist you in converting SLM to quantized ONNX format. The method for model conversion is very straightforward.
+Microsoft Olive 可以幫助你將 SLM 轉換為量化的 ONNX 格式。實現模型轉換的方法非常簡單。
 
-**Install Microsoft Olive SDK**
+**安裝 Microsoft Olive SDK**
 
 
 ```bash
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Convert CPU ONNX Support**
+**轉換 CPU ONNX 支援**
 
 ```bash
 
@@ -34,12 +34,12 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Note*** this example uses CPU
+***注意*** 此範例使用 CPU
 
 
-### **Run Inference on Phi-4-mini ONNX Model With ONNX Runtime GenAI**
+### **使用 ONNX Runtime GenAI 推論 Phi-4-mini ONNX 模型**
 
-- **Install ONNX Runtime GenAI**
+- **安裝 ONNX Runtime GenAI**
 
 ```bash
 
@@ -47,9 +47,9 @@ pip install --pre onnxruntime-genai
 
 ```
 
-- **Python Code**
+- **Python 程式碼**
 
-*This is ONNX Runtime GenAI 0.5.2 version*
+*這是 ONNX Runtime GenAI 0.5.2 版本*
 
 ```python
 
@@ -105,7 +105,7 @@ while not generator.is_done():
 ```
 
 
-*This is ONNX Runtime GenAI 0.6.0 version*
+*這是 ONNX Runtime GenAI 0.6.0 版本*
 
 ```python
 
@@ -158,5 +158,5 @@ while not generator.is_done():
 
 ```
 
-**Disclaimer**:  
-Dis document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

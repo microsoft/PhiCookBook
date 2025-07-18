@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-07-09T19:30:42+00:00",
+  "translation_date": "2025-07-17T03:20:14+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "en"
 }
@@ -15,11 +15,11 @@ Are you using Visual Studio Code Copilot? Especially in Chat, you can use differ
 
 We know that Phi-3/3.5-mini-instruct in the Phi-3/3.5 Family has strong code understanding and generation capabilities, outperforming Gemma-2-9b and Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../imgs/02/phi35vscode/codegen.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.en.png)
 
-The latest GitHub Models already provide access to the Phi-3.5-mini-instruct (128k) and Phi-3.5-vision-instruct (128k) models. Developers can access them through the OpenAI SDK, Azure AI Inference SDK, and REST API.
+The latest GitHub Models now provide access to Phi-3.5-mini-instruct (128k) and Phi-3.5-vision-instruct (128k) models. Developers can access them through the OpenAI SDK, Azure AI Inference SDK, and REST API.
 
-![gh](../../../../../../imgs/02/phi35vscode/gh.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.en.png)
 
 ***Note:*** It is recommended to use the Azure AI Inference SDK here, as it better integrates with the Azure Model Catalog in production environments.
 
@@ -34,19 +34,19 @@ Below are the results of **Phi-3.5-mini-instruct (128k)** and **Phi-3.5-vision-i
 
 GitHub Copilot Chat Agent can handle various tasks across different project scenarios based on the code. The system includes four agents: workspace, github, terminal, vscode.
 
-![agent](../../../../../../imgs/02/phi35vscode/agent.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.en.png)
 
-By prefixing the agent’s name with ‘@’, you can quickly perform the corresponding tasks. For enterprises, by adding your own business-related content such as requirements, coding, test specifications, and releases, you can unlock more powerful private enterprise features based on GitHub Copilot.
+By prefixing the agent’s name with ‘@’, you can quickly perform the corresponding tasks. For enterprises, by adding your own business-related content such as requirements, coding, test specifications, and release processes, you can create more powerful private enterprise functions based on GitHub Copilot.
 
 Visual Studio Code Chat Agent has now officially released its API, allowing enterprises or enterprise developers to build agents tailored to different software business ecosystems. Using the Visual Studio Code Extension Development approach, you can easily access the Visual Studio Code Chat Agent API interface. We can develop based on this process.
 
-![diagram](../../../../../../imgs/02/phi35vscode/diagram.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.en.png)
 
 This development scenario supports access to third-party model APIs (such as GitHub Models, Azure Model Catalog, and self-hosted services based on open source models) and can also use the gpt-35-turbo, gpt-4, and gpt-4o models provided by GitHub Copilot.
 
 ## **Add an Agent @phicoding based on Phi-3.5**
 
-We aim to integrate the programming capabilities of Phi-3.5 to handle code writing, image generation code, and other tasks. We will build an Agent centered around Phi-3.5 - @PHI, with the following features:
+We aim to integrate the programming capabilities of Phi-3.5 to complete tasks like code writing, image generation code, and more. We created an Agent built around Phi-3.5 - @PHI, with the following features:
 
 1. Generate a self-introduction using GPT-4o provided by GitHub Copilot via the **@phicoding /help** command
 
@@ -54,7 +54,7 @@ We aim to integrate the programming capabilities of Phi-3.5 to handle code writi
 
 3. Generate code based on **Phi-3.5-vision-instruct (128k)** and complete image-based tasks via the **@phicoding /image** command
 
-![arch](../../../../../../imgs/02/phi35vscode/arch.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.en.png)
 
 ## **Related steps**
 
@@ -365,19 +365,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../imgs/02/phi35vscode/help.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.en.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../imgs/02/phi35vscode/agenthelp.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.en.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../imgs/02/phi35vscode/agentgen.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.en.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../imgs/02/phi35vscode/agentimage.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.en.png)
 
 You can download the sample code here: [click](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

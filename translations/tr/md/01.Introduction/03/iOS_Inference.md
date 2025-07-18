@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-09T10:57:40+00:00",
+  "translation_date": "2025-07-16T20:21:22+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "tr"
 }
 -->
 # **iOS'ta Phi-3 Çıkarımı**
 
-Phi-3-mini, Microsoft'un uç cihazlar ve IoT cihazlarında Büyük Dil Modelleri (LLM'ler) dağıtımını mümkün kılan yeni model serisidir. Phi-3-mini, iOS, Android ve Edge Cihaz dağıtımları için kullanılabilir ve BYOD ortamlarında üretken yapay zekanın kullanılmasını sağlar. Aşağıdaki örnek, Phi-3-mini'nin iOS'ta nasıl dağıtılacağını göstermektedir.
+Phi-3-mini, Microsoft’un kenar cihazlar ve IoT cihazlarında Büyük Dil Modelleri (LLM) dağıtımını mümkün kılan yeni bir model serisidir. Phi-3-mini, iOS, Android ve Kenar Cihaz dağıtımları için kullanılabilir ve BYOD ortamlarında üretken yapay zekanın dağıtılmasına olanak tanır. Aşağıdaki örnek, Phi-3-mini’nin iOS üzerinde nasıl dağıtılacağını göstermektedir.
 
 ## **1. Hazırlık**
 
 - **a.** macOS 14+
 - **b.** Xcode 15+
-- **c.** iOS SDK 17.x (iPhone 14 A16 veya üstü)
+- **c.** iOS SDK 17.x (iPhone 14 A16 veya daha üstü)
 - **d.** Python 3.10+ yükleyin (Conda önerilir)
-- **e.** Python kütüphanesini yükleyin: `python-flatbuffers`
+- **e.** Python kütüphanesi: `python-flatbuffers` yükleyin
 - **f.** CMake yükleyin
 
 ### Semantic Kernel ve Çıkarım
 
-Semantic Kernel, Azure OpenAI Service, OpenAI modelleri ve hatta yerel modellerle uyumlu uygulamalar oluşturmanızı sağlayan bir uygulama çerçevesidir. Semantic Kernel üzerinden yerel servislere erişmek, kendi barındırdığınız Phi-3-mini model sunucusu ile kolay entegrasyon sağlar.
+Semantic Kernel, Azure OpenAI Servisi, OpenAI modelleri ve hatta yerel modellerle uyumlu uygulamalar oluşturmanızı sağlayan bir uygulama çerçevesidir. Semantic Kernel üzerinden yerel servislere erişmek, kendi barındırdığınız Phi-3-mini model sunucusuyla kolay entegrasyon sağlar.
 
 ### Ollama veya LlamaEdge ile Kuantize Modelleri Çağırma
 
-Birçok kullanıcı, modelleri yerelde çalıştırmak için kuantize modelleri tercih eder. [Ollama](https://ollama.com) ve [LlamaEdge](https://llamaedge.com) farklı kuantize modelleri çağırmanızı sağlar:
+Birçok kullanıcı, modelleri yerelde çalıştırmak için kuantize modelleri tercih eder. [Ollama](https://ollama.com) ve [LlamaEdge](https://llamaedge.com), farklı kuantize modelleri çağırmanıza olanak tanır:
 
 #### **Ollama**
 
-`ollama run phi3`'i doğrudan çalıştırabilir veya çevrimdışı olarak yapılandırabilirsiniz. `gguf` dosyanızın yolunu içeren bir Modelfile oluşturun. Phi-3-mini kuantize modelini çalıştırmak için örnek kod:
+`ollama run phi3` komutunu doğrudan çalıştırabilir veya çevrimdışı yapılandırabilirsiniz. `gguf` dosyanızın yolunu içeren bir Modelfile oluşturun. Phi-3-mini kuantize modelini çalıştırmak için örnek kod:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -41,7 +41,7 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-`gguf`'yi hem bulut hem de uç cihazlarda aynı anda kullanmak isterseniz, LlamaEdge harika bir seçenektir.
+`gguf` dosyasını hem bulut hem de kenar cihazlarda aynı anda kullanmak istiyorsanız, LlamaEdge iyi bir seçenektir.
 
 ## **2. iOS için ONNX Runtime Derleme**
 
@@ -59,19 +59,19 @@ cd ../
 
 ### **Dikkat**
 
-- **a.** Derlemeden önce, Xcode'un doğru yapılandırıldığından emin olun ve terminalde aktif geliştirici dizini olarak ayarlayın:
+- **a.** Derlemeden önce, Xcode’un doğru yapılandırıldığından emin olun ve terminalde aktif geliştirici dizini olarak ayarlayın:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime farklı platformlar için derlenmelidir. iOS için `arm64` or `x86_64` için derleme yapabilirsiniz.
+- **b.** ONNX Runtime farklı platformlar için derlenmelidir. iOS için `arm64` veya `x86_64` derleyebilirsiniz.
 
-- **c.** Derleme için en güncel iOS SDK'nın kullanılması önerilir. Ancak, önceki SDK'larla uyumluluk gerekiyorsa daha eski bir sürüm de kullanılabilir.
+- **c.** Derleme için en güncel iOS SDK’yı kullanmanız önerilir. Ancak, önceki SDK’larla uyumluluk gerekiyorsa eski sürümleri de kullanabilirsiniz.
 
 ## **3. iOS için ONNX Runtime ile Üretken Yapay Zekayı Derleme**
 
-> **Not:** ONNX Runtime ile Üretken Yapay Zeka henüz önizleme aşamasında olduğundan, değişiklikler olabileceğini unutmayın.
+> **Not:** ONNX Runtime ile Üretken Yapay Zeka önizlemede olduğundan, değişiklikler olabileceğini unutmayın.
 
 ```bash
 
@@ -99,21 +99,21 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **4. Xcode'da Bir App Uygulaması Oluşturma**
+## **4. Xcode’da Bir Uygulama Oluşturma**
 
-App geliştirme yöntemi olarak Objective-C'yi seçtim çünkü ONNX Runtime C++ API ile Üretken Yapay Zeka kullanırken Objective-C daha uyumludur. Elbette, ilgili çağrıları Swift köprüsü ile de tamamlayabilirsiniz.
+Uygulama geliştirme yöntemi olarak Objective-C’yi seçtim, çünkü ONNX Runtime C++ API ile Üretken Yapay Zeka kullanırken Objective-C daha uyumludur. Tabii ki, ilgili çağrıları Swift köprüsü ile de tamamlayabilirsiniz.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.tr.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.tr.png)
 
-## **5. ONNX Kuantize INT4 Modelini App Projesine Kopyalama**
+## **5. ONNX Kuantize INT4 Modelini Uygulama Projesine Kopyalama**
 
-ONNX formatındaki INT4 kuantizasyon modelini projenize dahil etmeniz gerekiyor, önce indirmeniz gerekmektedir.
+ONNX formatındaki INT4 kuantizasyon modelini içe aktarmamız gerekiyor, öncelikle indirmeniz gerekir.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.tr.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.tr.png)
 
-İndirdikten sonra, Xcode'daki projenin Resources dizinine eklemeniz gerekir.
+İndirdikten sonra, Xcode’daki projenin Resources dizinine eklemeniz gerekiyor.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.tr.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.tr.png)
 
 ## **6. ViewControllers İçinde C++ API Ekleme**
 
@@ -121,15 +121,15 @@ ONNX formatındaki INT4 kuantizasyon modelini projenize dahil etmeniz gerekiyor,
 
 - **a.** İlgili C++ başlık dosyalarını projeye ekleyin.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.tr.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.tr.png)
 
-- **b.** Objective-C++ desteği için `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Xcode’da `onnxruntime-genai` dinamik kütüphanesini dahil edin.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.tr.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.tr.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **c.** Test için C Örnek kodlarını kullanabilirsiniz. Daha fazla işlevsellik için ChatUI gibi ek özellikler de ekleyebilirsiniz.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` dosyasını dahil edin.
+- **d.** Projede C++ kullanmanız gerektiğinden, `ViewController.m` dosyasının adını `ViewController.mm` olarak değiştirin, böylece Objective-C++ desteği etkinleşir.
 
 ```objc
 
@@ -160,11 +160,11 @@ ONNX formatındaki INT4 kuantizasyon modelini projenize dahil etmeniz gerekiyor,
 
 ## **7. Uygulamayı Çalıştırma**
 
-Kurulum tamamlandıktan sonra, Phi-3-mini model çıkarımının sonuçlarını görmek için uygulamayı çalıştırabilirsiniz.
+Kurulum tamamlandıktan sonra, Phi-3-mini model çıkarım sonuçlarını görmek için uygulamayı çalıştırabilirsiniz.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.tr.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.tr.jpg)
 
 Daha fazla örnek kod ve detaylı talimatlar için [Phi-3 Mini Samples deposunu](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ziyaret edin.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

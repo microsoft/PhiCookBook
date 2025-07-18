@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:21:41+00:00",
+  "translation_date": "2025-07-17T05:41:39+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "ro"
 }
 -->
-## GitHub Models - Beta Public Limitată
+## Modele GitHub - Beta Publică Limitată
 
 Bine ați venit la [GitHub Models](https://github.com/marketplace/models)! Totul este pregătit pentru ca tu să explorezi Modelele AI găzduite pe Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.ro.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.ro.png)
 
-Pentru mai multe informații despre Modelele disponibile pe GitHub Models, consultă [GitHub Model Marketplace](https://github.com/marketplace/models)
+Pentru mai multe informații despre modelele disponibile pe GitHub Models, consultă [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Modele Disponibile
 
-Fiecare model are un spațiu dedicat pentru testare și cod de exemplu
+Fiecare model are un spațiu dedicat de testare și cod exemplu
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,7 +37,7 @@ Fiecare model are un spațiu dedicat pentru testare și cod de exemplu
 
 ## Începutul
 
-Există câteva exemple de bază gata de rulare. Le poți găsi în directorul samples. Dacă vrei să treci direct la limbajul preferat, poți găsi exemplele în următoarele limbaje:
+Există câteva exemple de bază gata de rulat. Le poți găsi în directorul samples. Dacă vrei să sari direct la limbajul tău preferat, poți găsi exemplele în următoarele limbaje:
 
 - Python
 - JavaScript
@@ -45,11 +45,11 @@ Există câteva exemple de bază gata de rulare. Le poți găsi în directorul s
 
 Există și un mediu dedicat Codespaces pentru rularea exemplelor și modelelor.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.ro.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.ro.png)
 
-## Cod de Exemplu
+## Cod Exemplu
 
-Mai jos sunt fragmente de cod exemplu pentru câteva cazuri de utilizare. Pentru informații suplimentare despre Azure AI Inference SDK, consultă documentația completă și exemplele.
+Mai jos sunt fragmente de cod pentru câteva cazuri de utilizare. Pentru informații suplimentare despre Azure AI Inference SDK, consultă documentația completă și exemplele.
 
 ## Configurare
 
@@ -76,7 +76,7 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 
 ## Exemplu Python
 
-### Instalarea dependențelor  
+### Instalare dependențe  
 Instalează Azure AI Inference SDK folosind pip (Necesită: Python >=3.8):
 
 ```
@@ -84,7 +84,7 @@ pip install azure-ai-inference
 ```  
 ### Rulează un exemplu simplu de cod
 
-Acest exemplu demonstrează un apel simplu către API-ul de completare chat. Folosește endpoint-ul de inferență al modelului GitHub AI și token-ul tău GitHub. Apelul este sincron.
+Acest exemplu arată un apel de bază către API-ul de completare chat. Folosește endpoint-ul de inferență al modelului AI GitHub și token-ul tău GitHub. Apelul este sincron.
 
 ```
 import os
@@ -148,9 +148,9 @@ response = client.complete(messages=messages, model=model_name)
 print(response.choices[0].message.content)
 ```
 
-### Transmite răspunsul în flux
+### Transmite rezultatul în flux
 
-Pentru o experiență mai bună a utilizatorului, vei dori să transmiți răspunsul modelului în flux astfel încât primul token să apară rapid și să eviți să aștepți răspunsuri lungi.
+Pentru o experiență mai bună, vei dori să transmiți răspunsul modelului în flux, astfel încât primul token să apară rapid și să eviți așteptarea pentru răspunsuri lungi.
 
 ```
 import os
@@ -185,7 +185,7 @@ client.close()
 ```  
 ## JavaScript
 
-### Instalarea dependențelor
+### Instalare dependențe
 
 Instalează Node.js.
 
@@ -202,15 +202,15 @@ Copiază următoarele linii de text și salvează-le ca fișier package.json în
 }
 ```
 
-Notă: @azure/core-sse este necesar doar când transmiți răspunsurile chat completions în flux.
+Notă: @azure/core-sse este necesar doar când transmiți răspunsurile chat în flux.
 
-Deschide o fereastră de terminal în acest folder și rulează npm install.
+Deschide un terminal în acest folder și rulează npm install.
 
 Pentru fiecare fragment de cod de mai jos, copiază conținutul într-un fișier sample.js și rulează cu node sample.js.
 
 ### Rulează un exemplu simplu de cod
 
-Acest exemplu demonstrează un apel simplu către API-ul de completare chat. Folosește endpoint-ul de inferență al modelului GitHub AI și token-ul tău GitHub. Apelul este sincron.
+Acest exemplu arată un apel de bază către API-ul de completare chat. Folosește endpoint-ul de inferență al modelului AI GitHub și token-ul tău GitHub. Apelul este sincron.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,8 +292,8 @@ main().catch((err) => {
 });
 ```
 
-### Transmite răspunsul în flux  
-Pentru o experiență mai bună a utilizatorului, vei dori să transmiți răspunsul modelului în flux astfel încât primul token să apară rapid și să eviți să aștepți răspunsuri lungi.
+### Transmite rezultatul în flux  
+Pentru o experiență mai bună, vei dori să transmiți răspunsul modelului în flux, astfel încât primul token să apară rapid și să eviți așteptarea pentru răspunsuri lungi.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -373,7 +373,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 ```  
 ### Rulează o conversație multi-turn
 
-Apelează API-ul de completare chat și trimite istoricul conversației:
+Apelează API-ul de completare chat și transmite istoricul conversației:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -401,9 +401,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
-### Transmite răspunsul în flux
+### Transmite rezultatul în flux
 
-Acesta este un exemplu de apelare a endpoint-ului și transmitere în flux a răspunsului.
+Acesta este un exemplu de apelare a endpoint-ului și transmitere a răspunsului în flux.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -425,21 +425,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## Utilizare GRATUITĂ și Limite de rată pentru GitHub Models
+## Utilizare GRATUITĂ și limite de rată pentru GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.ro.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.ro.png)
 
-[Limitele de rată pentru playground și utilizarea gratuită a API-ului](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sunt menite să te ajute să experimentezi cu modelele și să creezi prototipuri pentru aplicația ta AI. Pentru utilizarea dincolo de aceste limite și pentru a scala aplicația, trebuie să aloci resurse dintr-un cont Azure și să te autentifici de acolo, în loc să folosești token-ul personal GitHub. Nu este nevoie să modifici nimic altceva în codul tău. Folosește acest link pentru a descoperi cum să depășești limitele gratuite în Azure AI.
+[Limitele de rată pentru playground și utilizarea gratuită a API-ului](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sunt menite să te ajute să experimentezi cu modelele și să prototipezi aplicația ta AI. Pentru utilizare dincolo de aceste limite și pentru a-ți scala aplicația, trebuie să aloci resurse dintr-un cont Azure și să te autentifici de acolo, în loc să folosești token-ul personal GitHub. Nu trebuie să modifici nimic altceva în codul tău. Folosește acest link pentru a descoperi cum să depășești limitele gratuite în Azure AI.
 
 ### Declarații
 
-Amintește-ți că atunci când interacționezi cu un model, experimentezi cu AI, deci pot apărea greșeli în conținut.
+Amintește-ți că atunci când interacționezi cu un model, experimentezi cu AI, deci pot apărea erori în conținut.
 
-Funcționalitatea este supusă unor limite diverse (inclusiv cereri pe minut, cereri pe zi, tokeni per cerere și cereri concurente) și nu este concepută pentru utilizare în producție.
+Funcționalitatea este supusă unor limite variate (inclusiv cereri pe minut, cereri pe zi, tokeni per cerere și cereri concurente) și nu este destinată pentru cazuri de utilizare în producție.
 
-GitHub Models folosește Azure AI Content Safety. Aceste filtre nu pot fi dezactivate în cadrul experienței GitHub Models. Dacă alegi să folosești modelele printr-un serviciu plătit, te rugăm să configurezi filtrele de conținut pentru a corespunde cerințelor tale.
+GitHub Models folosește Azure AI Content Safety. Aceste filtre nu pot fi dezactivate în cadrul experienței GitHub Models. Dacă alegi să folosești modelele printr-un serviciu plătit, te rugăm să configurezi filtrele de conținut conform cerințelor tale.
 
 Acest serviciu este oferit sub Termenii Pre-lansării GitHub.
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea în urma utilizării acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

@@ -2,113 +2,114 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-05-27T02:41:07+00:00",
+  "translation_date": "2025-07-16T14:37:18+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "hk"
 }
 -->
 # Contributing
 
-呢個項目歡迎大家嘅貢獻同建議。大部分嘅貢獻都需要你同意一份Contributor License Agreement (CLA)，聲明你有權利並且實際授權我哋使用你嘅貢獻。詳情請瀏覽 [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+本項目歡迎各位貢獻及提出建議。大部分貢獻都需要您同意一份
+Contributor License Agreement (CLA)，聲明您有權利並確實授權我們使用您的貢獻。詳情請參閱 [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-當你提交 pull request 嘅時候，CLA bot 會自動判斷你係咪需要提供 CLA，並且會適當地標示 PR（例如狀態檢查、評論）。只需跟隨 bot 嘅指示操作即可。你只需要喺所有使用我哋 CLA 嘅倉庫中做一次。
+當您提交 pull request 時，CLA 機械人會自動判斷您是否需要提供 CLA，並在 PR 上做出相應標示（例如狀態檢查、留言）。只要按照機械人提供的指示操作即可。您只需在所有使用我們 CLA 的倉庫中完成一次此流程。
 
 ## Code of Conduct
 
-呢個項目已經採用咗 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)。
-想了解更多，可以閱讀 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) 或者電郵聯絡 [opencode@microsoft.com](mailto:opencode@microsoft.com) 提問或提供意見。
+本項目已採用 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)。
+欲了解更多資訊，請閱讀 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) 或透過 [opencode@microsoft.com](mailto:opencode@microsoft.com) 聯絡我們，提出任何額外問題或意見。
 
 ## Cautions for creating issues
 
-請唔好喺 GitHub 開 general support 問題，因為 GitHub 嘅 issue list 係用嚟提交功能請求同埋報告錯誤。咁樣我哋可以更容易追蹤實際嘅問題或者程式錯誤，同時將一般討論同實際程式碼分開。
+請勿因一般支援問題而開啟 GitHub issue，GitHub 問題列表應用於功能請求及錯誤回報。如此一來，我們能更有效追蹤程式碼中的實際問題或錯誤，並將一般討論與程式碼問題分開。
 
 ## How to Contribute
 
 ### Pull Requests Guidelines
 
-當你向 Phi-3 CookBook 倉庫提交 pull request (PR) 嘅時候，請遵守以下指引：
+提交 pull request (PR) 至 Phi-3 CookBook 倉庫時，請遵循以下指引：
 
-- **Fork 倉庫**：喺你修改之前，請先將倉庫 fork 去你自己嘅帳戶。
+- **Fork 倉庫**：在進行修改前，請先將倉庫 fork 到您自己的帳號。
 
-- **分開嘅 pull requests (PR)**：
-  - 每種改動都應該分開提交，例如錯誤修正同文件更新應該係不同嘅 PR。
-  - 拼寫錯誤修正同細微嘅文件更新可以合併成一個 PR。
+- **分開提交不同類型的 PR**：
+  - 每種修改類型請分別提交 PR。例如，錯誤修正與文件更新應分開提交。
+  - 拼字錯誤修正及小幅文件更新可視情況合併成一個 PR。
 
-- **處理合併衝突**：如果你嘅 pull request 顯示有合併衝突，請先更新你本地嘅 `main` 分支，使佢同主倉庫保持一致，然後先做修改。
+- **處理合併衝突**：若您的 PR 顯示有合併衝突，請先更新本地的 `main` 分支，使其與主倉庫同步，再進行修改。
 
-- **翻譯提交**：提交翻譯嘅 PR 時，請確保翻譯資料夾包含原始資料夾所有檔案嘅翻譯。
+- **翻譯提交**：提交翻譯 PR 時，請確保翻譯資料夾包含原始資料夾中所有檔案的翻譯。
 
 ### Writing Guidelines
 
-為咗確保所有文件嘅一致性，請使用以下指引：
+為確保所有文件風格一致，請遵守以下指引：
 
-- **URL 格式**：所有 URL 請用方括號包住，跟住用括號括住 URL，內外唔好有多餘空格。例如：`[example](https://www.microsoft.com)`。
+- **URL 格式**：所有 URL 請用中括號包住文字，後接小括號包住網址，中間及內部不留空格。例如：`[example](https://www.microsoft.com)`。
 
-- **相對連結**：對於指向當前目錄嘅檔案或資料夾，使用 `./`；對於上層目錄嘅，使用 `../`。例如：`[example](../../path/to/file)` 或 `[example](../../../path/to/file)`。
+- **相對連結**：指向當前目錄的檔案或資料夾，請使用 `./`；指向上層目錄的，請使用 `../`。例如：`[example](../../path/to/file)` 或 `[example](../../../path/to/file)`。
 
-- **唔好用國家地區特定嘅語言版本**：確保你嘅連結唔包含國家地區特定嘅語言版本，例如避免使用 `/en-us/` 或 `/en/`。
+- **非國家特定語系**：請勿在連結中包含國家特定語系，如 `/en-us/` 或 `/en/`。
 
-- **圖片儲存**：所有圖片請儲存在 `./imgs` 資料夾。
+- **圖片存放**：所有圖片請存放於 `./imgs` 資料夾。
 
-- **描述性圖片命名**：用英文字符、數字同連字號命名圖片。例如：`example-image.jpg`。
+- **圖片命名**：圖片名稱請具描述性，使用英文字母、數字及連字號。例如：`example-image.jpg`。
 
 ## GitHub Workflows
 
-當你提交 pull request 時，以下工作流程會自動運行以驗證你嘅改動。請跟從以下指示，確保你嘅 PR 通過工作流程檢查：
+當您提交 pull request 時，以下工作流程會被觸發以驗證您的修改。請依照下列指示確保您的 PR 通過檢查：
 
 - [Check Broken Relative Paths](../..)
 - [Check URLs Don't Have Locale](../..)
 
 ### Check Broken Relative Paths
 
-呢個工作流程確保你文件中嘅所有相對路徑都正確。
+此工作流程確保您檔案中的所有相對路徑皆正確。
 
-1. 為咗確保你嘅連結正常，請喺 VS Code 做以下操作：
-    - 將滑鼠移到文件中嘅任何連結上。
-    - 按 **Ctrl + Click** 跳轉到該連結。
-    - 如果你點擊連結但本地唔工作，工作流程就會觸發，GitHub 上亦會無法使用。
+1. 請使用 VS Code 執行以下操作，確認連結是否正常：
+    - 將滑鼠移至檔案中的任一連結上方。
+    - 按下 **Ctrl + 點擊** 以跳轉連結。
+    - 若本地點擊連結無法正常開啟，該連結會觸發工作流程錯誤，且在 GitHub 上也無法使用。
 
-1. 為咗修正呢個問題，請用 VS Code 提供嘅路徑建議做以下操作：
+1. 若發現問題，請依照 VS Code 提供的路徑建議修正：
     - 輸入 `./` 或 `../`。
-    - VS Code 會根據你輸入嘅內容提示可用選項。
-    - 按想要嘅文件或資料夾選擇正確路徑。
+    - VS Code 會根據您輸入的內容提示可選擇的檔案或資料夾。
+    - 點擊所需檔案或資料夾，確保路徑正確。
 
-加咗正確嘅相對路徑後，記得儲存並推送改動。
+修正完相對路徑後，請儲存並推送您的修改。
 
 ### Check URLs Don't Have Locale
 
-呢個工作流程確保所有網頁 URL 裡面冇包含國家地區特定嘅語言版本。由於呢個倉庫係全球可訪問，確保 URL 裡面冇你國家地區嘅語言版本好重要。
+此工作流程確保所有網頁 URL 不包含國家特定語系。由於本倉庫全球可訪問，確保 URL 不含您所在國家的語系非常重要。
 
-1. 為咗驗證你嘅 URL 冇包含地區語言版本，請做以下檢查：
+1. 請檢查您的 URL 是否包含以下文字：
 
-    - 搜尋 URL 裡面有冇 `/en-us/`、`/en/` 或其他語言地區代碼。
-    - 如果 URL 裡冇呢啲內容，就通過咗檢查。
+    - `/en-us/`、`/en/` 或其他語言語系代碼。
+    - 若 URL 中沒有這些字串，即可通過此檢查。
 
-1. 修正方法：
-    - 打開工作流程標示嘅文件路徑。
-    - 從 URL 中移除地區語言代碼。
+1. 若有問題，請依照以下步驟修正：
+    - 開啟工作流程標示的檔案路徑。
+    - 移除 URL 中的國家語系部分。
 
-移除地區語言代碼後，記得儲存並推送改動。
+移除後，請儲存並推送您的修改。
 
 ### Check Broken Urls
 
-呢個工作流程確保你文件入面嘅所有網頁 URL 都能正常運作，並返回 200 狀態碼。
+此工作流程確保您檔案中的所有網頁 URL 都能正常運作並回傳 200 狀態碼。
 
-1. 為咗驗證你嘅 URL 正常運作，請檢查文件中 URL 嘅狀態。
+1. 請檢查檔案中 URL 的狀態是否正常。
 
-2. 修正損壞 URL 嘅方法：
-    - 打開包含損壞 URL 嘅文件。
-    - 更新 URL 至正確嘅地址。
+2. 若發現壞掉的 URL，請依照以下步驟修正：
+    - 開啟包含壞掉 URL 的檔案。
+    - 更新 URL 為正確的連結。
 
-修正 URL 後，記得儲存並推送改動。
+修正後，請儲存並推送您的修改。
 
 > [!NOTE]
 >
-> 有時候 URL 檢查可能會失敗，但連結其實仍然可用。呢啲情況可能因為：
+> 有時候 URL 檢查可能會失敗，但連結實際上仍可使用。這可能是因為：
 >
-> - **網絡限制**：GitHub actions 伺服器可能有限制，阻止訪問某啲 URL。
-> - **超時問題**：URL 回應時間太長可能會令工作流程出現超時錯誤。
-> - **臨時伺服器問題**：偶爾伺服器維護或停機可能令 URL 喺驗證期間暫時無法使用。
+> - **網路限制**：GitHub actions 伺服器可能有網路限制，無法存取某些 URL。
+> - **逾時問題**：回應時間過長的 URL 可能會觸發逾時錯誤。
+> - **暫時性伺服器問題**：伺服器偶爾維護或故障，可能導致驗證期間 URL 暫時無法使用。
 
 **免責聲明**：  
-本文件係用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。雖然我哋盡力確保準確，但自動翻譯可能會有錯誤或不準確嘅地方。原始文件嘅母語版本應視為權威來源。對於重要資訊，建議使用專業人工翻譯。我哋對因使用本翻譯而引起嘅任何誤解或錯誤解讀概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

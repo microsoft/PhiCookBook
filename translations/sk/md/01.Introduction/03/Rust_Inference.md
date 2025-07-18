@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T13:07:21+00:00",
+  "translation_date": "2025-07-16T21:33:17+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "sk"
 }
 -->
-# Viacplatformové inferovanie s Rustom
+# Inference naprieč platformami s Rustom
 
-Tento tutoriál nás prevedie procesom inferencie pomocou Rustu a [Candle ML frameworku](https://github.com/huggingface/candle) od HuggingFace. Použitie Rustu na inferenciu prináša niekoľko výhod, najmä v porovnaní s inými programovacími jazykmi. Rust je známy svojím vysokým výkonom, porovnateľným s C a C++. To z neho robí vynikajúcu voľbu pre úlohy inferencie, ktoré môžu byť výpočtovo náročné. Je to predovšetkým vďaka zero-cost abstrakciám a efektívnemu manažmentu pamäte, ktorý nevyužíva garbage collection. Rustove viacplatformové schopnosti umožňujú vývoj kódu, ktorý beží na rôznych operačných systémoch vrátane Windows, macOS a Linux, ako aj na mobilných operačných systémoch, bez výrazných zmien v kóde.
+Tento tutoriál nás prevedie procesom vykonávania inference pomocou Rustu a [Candle ML frameworku](https://github.com/huggingface/candle) od HuggingFace. Použitie Rustu na inference prináša niekoľko výhod, najmä v porovnaní s inými programovacími jazykmi. Rust je známy svojím vysokým výkonom, porovnateľným s C a C++. To z neho robí vynikajúcu voľbu pre úlohy inference, ktoré môžu byť výpočtovo náročné. Najmä je to spôsobené zero-cost abstrakciami a efektívnym manažmentom pamäte, ktorý nevyžaduje garbage collection. Rustove multiplatformové schopnosti umožňujú vývoj kódu, ktorý beží na rôznych operačných systémoch, vrátane Windows, macOS a Linux, ako aj na mobilných operačných systémoch, bez výrazných zmien v kóde.
 
 Predpokladom na sledovanie tohto tutoriálu je [inštalácia Rustu](https://www.rust-lang.org/tools/install), ktorá zahŕňa Rust kompilátor a Cargo, správcu balíčkov pre Rust.
 
@@ -21,9 +21,9 @@ Na vytvorenie nového Rust projektu spustite v termináli nasledujúci príkaz:
 cargo new phi-console-app
 ```
 
-Tým sa vygeneruje počiatočná štruktúra projektu so súborom `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Tým sa vygeneruje počiatočná štruktúra projektu s `Cargo.toml` súborom a adresárom `src`, ktorý obsahuje súbor `main.rs`.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml`:
+Ďalej pridáme naše závislosti - konkrétne crates `candle`, `hf-hub` a `tokenizers` - do súboru `Cargo.toml`:
 
 ```toml
 [package]
@@ -39,7 +39,7 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## Krok 2: Konfigurácia základných parametrov
+## Krok 2: Nastavenie základných parametrov
 
 V súbore main.rs nastavíme počiatočné parametre pre našu inferenciu. Všetky budú pre jednoduchosť pevne zakódované, ale môžeme ich podľa potreby upraviť.
 
@@ -57,11 +57,11 @@ let device = Device::Cpu;
 
 - **temperature**: Riadi náhodnosť procesu vzorkovania.
 - **sample_len**: Určuje maximálnu dĺžku generovaného textu.
-- **top_p**: Používa sa pri nucleus sampling na obmedzenie počtu tokenov, ktoré sa zvažujú v každom kroku.
-- **repeat_last_n**: Určuje počet tokenov, ktoré sa berú do úvahy pri aplikovaní penalizácie na zabránenie opakovaniu sekvencií.
-- **repeat_penalty**: Hodnota penalizácie na odradenie od opakovaných tokenov.
+- **top_p**: Používa sa pre nucleus sampling na obmedzenie počtu tokenov zvažovaných v každom kroku.
+- **repeat_last_n**: Určuje počet tokenov, ktoré sa berú do úvahy pri uplatňovaní penalizácie na zabránenie opakovaniu sekvencií.
+- **repeat_penalty**: Hodnota penalizácie na odrádzanie od opakovaných tokenov.
 - **seed**: Náhodné semeno (môžeme použiť konštantnú hodnotu pre lepšiu reprodukovateľnosť).
-- **prompt**: Počiatočný textový prompt na začatie generovania. Všimnite si, že žiadame model, aby vytvoril haiku o ľadovom hokeji, a prompt je obalený špeciálnymi tokenmi, ktoré označujú časti konverzácie používateľa a asistenta. Model potom prompt dokončí haiku.
+- **prompt**: Počiatočný text promptu na začatie generovania. Všimnite si, že žiadame model, aby vygeneroval haiku o ľadovom hokeji, a že ho obalíme špeciálnymi tokenmi na označenie častí konverzácie používateľa a asistenta. Model potom doplní prompt haiku.
 - **device**: V tomto príklade používame CPU na výpočty. Candle podporuje aj beh na GPU s CUDA a Metal.
 
 ## Krok 3: Stiahnutie/príprava modelu a tokenizéra
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Používame súbor `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` na tokenizáciu vstupného textu. Po stiahnutí je model uložený do cache, takže prvé spustenie bude pomalšie (keďže sa sťahuje 2,4 GB modelu), ale nasledujúce spustenia budú rýchlejšie.
+Používame API `hf_hub` na stiahnutie súborov modelu a tokenizéra z Hugging Face model hubu. Súbor `gguf` obsahuje kvantizované váhy modelu, zatiaľ čo súbor `tokenizer.json` sa používa na tokenizáciu vstupného textu. Po stiahnutí je model uložený v cache, takže prvé spustenie bude pomalšie (keďže sa sťahuje 2,4 GB modelu), ale následné spustenia budú rýchlejšie.
 
 ## Krok 4: Načítanie modelu
 
@@ -120,7 +120,7 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-V tomto kroku tokenizujeme vstupný prompt a pripravíme ho na inferenciu konverziou na sekvenciu ID tokenov. Tiež inicializujeme hodnoty `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`. Každý token sa konvertuje na tensor a prechádza modelom, aby sme získali logits.
+V tomto kroku tokenizujeme vstupný prompt a pripravíme ho na inferenciu konverziou na sekvenciu ID tokenov. Tiež inicializujeme `LogitsProcessor`, ktorý spracováva sampling (pravdepodobnostné rozdelenie nad slovníkom) na základe zadaných hodnôt `temperature` a `top_p`. Každý token sa konvertuje na tensor a prejde modelom, aby sme získali logits.
 
 Slučka spracováva každý token v prompte, aktualizuje logits processor a pripravuje sa na generovanie ďalšieho tokenu.
 
@@ -160,11 +160,10 @@ for index in 0..to_sample {
 }
 ```
 
-V inferenčnej slučke generujeme tokeny jeden po druhom, až kým nedosiahneme požadovanú dĺžku vzorky alebo nenarazíme na token konca sekvencie. Ďalší token sa konvertuje na tensor a prejde modelom, pričom logits sú spracované na aplikovanie penalizácií a vzorkovania. Následne sa token vyberie, dekóduje a pridá do sekvencie. 
+V inferenčnej slučke generujeme tokeny jeden po druhom, až kým nedosiahneme požadovanú dĺžku vzorky alebo nenarazíme na token konca sekvencie. Nasledujúci token sa konvertuje na tensor a prejde modelom, pričom logits sa spracujú na aplikovanie penalizácií a vzorkovania. Potom sa ďalší token vyberie, dekóduje a pridá do sekvencie.
+Aby sme predišli opakovaniu textu, aplikuje sa penalizácia na opakované tokeny na základe parametrov `repeat_last_n` a `repeat_penalty`.
 
-Aby sme predišli opakovaniu textu, aplikuje sa penalizácia na opakované tokeny podľa parametrov `repeat_last_n` and `repeat_penalty`.
-
-Nakoniec sa generovaný text vypisuje priebežne počas dekódovania, čo zabezpečuje streamovaný výstup v reálnom čase.
+Nakoniec sa generovaný text vypisuje počas dekódovania, čím sa zabezpečí výstup v reálnom čase.
 
 ## Krok 7: Spustenie aplikácie
 
@@ -174,7 +173,7 @@ Na spustenie aplikácie vykonajte v termináli nasledujúci príkaz:
 cargo run --release
 ```
 
-Malo by sa vytlačiť haiku o ľadovom hokeji generované modelom Phi-3. Niečo ako:
+Malo by sa vytlačiť haiku o ľadovom hokeji vygenerované modelom Phi-3. Niečo ako:
 
 ```
 Puck glides swiftly,  
@@ -192,7 +191,7 @@ Swish of sticks now alive.
 
 ## Záver
 
-Dodržiavaním týchto krokov môžeme vykonať generovanie textu pomocou modelu Phi-3 s Rustom a Candle v menej ako 100 riadkoch kódu. Kód sa stará o načítanie modelu, tokenizáciu a inferenciu, využívajúc tensory a spracovanie logits na generovanie zrozumiteľného textu na základe vstupného promptu.
+Dodržiavaním týchto krokov môžeme vykonať generovanie textu pomocou modelu Phi-3 s Rustom a Candle v menej než 100 riadkoch kódu. Kód sa stará o načítanie modelu, tokenizáciu a inferenciu, využívajúc tensory a spracovanie logits na generovanie zrozumiteľného textu na základe vstupného promptu.
 
 Táto konzolová aplikácia môže bežať na Windows, Linux a Mac OS. Vďaka prenosnosti Rustu môže byť kód tiež upravený na knižnicu, ktorá by bežala v mobilných aplikáciách (konzolové aplikácie tam predsa len nemôžeme spustiť).
 
@@ -305,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Poznámka: na spustenie tohto kódu na aarch64 Linux alebo aarch64 Windows pridajte súbor `.cargo/config` s nasledujúcim obsahom:
+Poznámka: aby ste mohli tento kód spustiť na aarch64 Linux alebo aarch64 Windows, pridajte súbor s názvom `.cargo/config` s nasledujúcim obsahom:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -319,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Viac príkladov použitia modelu Phi-3 s Rustom a Candle vrátane alternatívnych prístupov k inferencii nájdete v oficiálnom [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) repozitári.
+> Pre viac príkladov, ako používať model Phi-3 s Rustom a Candle vrátane alternatívnych prístupov k inferencii, môžete navštíviť oficiálne [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) repozitár.
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

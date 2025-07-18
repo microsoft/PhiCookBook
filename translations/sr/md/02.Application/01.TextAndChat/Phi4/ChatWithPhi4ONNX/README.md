@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:03:47+00:00",
+  "translation_date": "2025-07-17T03:19:35+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "sr"
 }
 -->
-# **Ćaskaj sa Phi-4-mini ONNX**
+# **Ћаскање са Phi-4-mini ONNX**
 
-***ONNX*** je otvoreni format napravljen za predstavljanje modela mašinskog učenja. ONNX definiše zajednički skup operatora - osnovnih elemenata modela mašinskog i dubokog učenja - i zajednički format fajla koji omogućava AI programerima da koriste modele sa različitim framework-ovima, alatima, runtime-ovima i kompajlerima.
+***ONNX*** је отворени формат направљен за представљање модела машинског учења. ONNX дефинише заједнички скуп оператора - основних грађевних блокова модела машинског и дубоког учења - као и заједнички формат фајла који омогућава AI програмерима да користе моделе са различитим оквирима, алатима, извршним окружењима и компајлерима.
 
-Nadamo se da ćemo moći da pokrenemo generativne AI modele na edge uređajima i koristimo ih u okruženjima sa ograničenom računalnom snagom ili offline. Sada možemo postići ovaj cilj konvertovanjem modela na kvantizovan način. Kvantizovani model možemo konvertovati u GGUF ili ONNX format.
+Надамо се да ћемо моћи да покрећемо генеративне AI моделе на уређајима на ивици мреже и користимо их у окружењима са ограниченом рачунарском снагом или ван мреже. Сада можемо постићи овај циљ конвертовањем модела на квантован начин. Можемо конвертовати квантовани модел у GGUF или ONNX формат.
 
-Microsoft Olive može pomoći da konvertujete SLM u kvantizovani ONNX format. Metod za konverziju modela je veoma jednostavan
+Microsoft Olive може помоћи у конверзији SLM у квантовани ONNX формат. Метод за постизање конверзије модела је веома једноставан
 
-**Instalirajte Microsoft Olive SDK**
+**Инсталирајте Microsoft Olive SDK**
 
 
 ```bash
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Konvertujte CPU ONNX podršku**
+**Конверзија CPU ONNX подршке**
 
 ```bash
 
@@ -34,12 +34,12 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Napomena*** ovaj primer koristi CPU
+***Напомена*** овај пример користи CPU
 
 
-### **Izvedite inferencu Phi-4-mini ONNX modela sa ONNX Runtime GenAI**
+### **Извођење Phi-4-mini ONNX модела са ONNX Runtime GenAI**
 
-- **Instalirajte ONNX Runtime GenAI**
+- **Инсталирајте ONNX Runtime GenAI**
 
 ```bash
 
@@ -47,9 +47,9 @@ pip install --pre onnxruntime-genai
 
 ```
 
-- **Python kod**
+- **Python код**
 
-*Ovo je ONNX Runtime GenAI verzija 0.5.2*
+*Ово је ONNX Runtime GenAI верзија 0.5.2*
 
 ```python
 
@@ -105,7 +105,7 @@ while not generator.is_done():
 ```
 
 
-*Ovo je ONNX Runtime GenAI verzija 0.6.0*
+*Ово је ONNX Runtime GenAI верзија 0.6.0*
 
 ```python
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било какве неспоразуме или погрешна тумачења настала употребом овог превода.
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

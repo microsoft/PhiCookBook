@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-07-09T19:09:33+00:00",
+  "translation_date": "2025-07-17T10:10:19+00:00",
   "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
   "language_code": "uk"
 }
@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Результат (моє середовище — Apple M1 Max, 64GB):
 
-![Terminal](../../../../../imgs/01/03/MLX/01.png)
+![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.uk.png)
 
 ### **3. Квантування Phi-3-mini з MLX у терміналі**
 
@@ -53,11 +53,11 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***Note：*** Модель можна квантувати за допомогою mlx_lm.convert, за замовчуванням використовується INT4. У цьому прикладі Phi-3-mini квантується до INT4.
+***Примітка:*** Модель можна квантувати за допомогою mlx_lm.convert, за замовчуванням використовується INT4. У цьому прикладі Phi-3-mini квантується до INT4.
 
 Модель можна квантувати через mlx_lm.convert, і за замовчуванням використовується INT4. У цьому прикладі Phi-3-mini квантується до INT4. Після квантування модель зберігається у стандартній директорії ./mlx_model
 
-Ми можемо протестувати квантизовану модель MLX з терміналу
+Ми можемо протестувати квантизовану модель з MLX через термінал
 
 
 ```bash
@@ -68,15 +68,15 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Результат:
 
-![INT4](../../../../../imgs/01/03/MLX/02.png)
+![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.uk.png)
 
 
 ### **4. Запуск Phi-3-mini з MLX у Jupyter Notebook**
 
 
-![Notebook](../../../../../imgs/01/03/MLX/03.png)
+![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.uk.png)
 
-***Note:*** Будь ласка, ознайомтеся з цим прикладом [натисніть тут](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
+***Примітка:*** Будь ласка, ознайомтеся з цим прикладом [натисніть тут](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
 
 ## **Ресурси**

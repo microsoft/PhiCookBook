@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-05-09T22:13:44+00:00",
+  "translation_date": "2025-07-17T09:21:00+00:00",
   "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "ro"
 }
 -->
 ## Bine ați venit la AI Toolkit pentru VS Code
 
-[AI Toolkit pentru VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) reunește diverse modele din Azure AI Studio Catalog și alte cataloage precum Hugging Face. Toolkit-ul simplifică sarcinile comune de dezvoltare pentru construirea aplicațiilor AI cu instrumente și modele generative AI prin:
+[AI Toolkit pentru VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) reunește diverse modele din Azure AI Studio Catalog și alte cataloage precum Hugging Face. Toolkit-ul simplifică sarcinile comune de dezvoltare pentru crearea aplicațiilor AI cu instrumente și modele generative AI prin:
 - Începeți cu descoperirea modelelor și zona de testare.
 - Ajustarea fină a modelelor și inferența folosind resurse locale de calcul.
 - Ajustarea fină și inferența la distanță folosind resurse Azure.
 
 [Instalează AI Toolkit pentru VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.ro.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.ro.png)
 
-**[Private Preview]** Provisionare cu un singur click pentru Azure Container Apps pentru a rula ajustarea fină și inferența modelelor în cloud.
+**[Private Preview]** Provisionare cu un singur clic pentru Azure Container Apps pentru a rula ajustarea fină și inferența modelelor în cloud.
 
-Acum să trecem la dezvoltarea aplicației tale AI:
+Acum să începem dezvoltarea aplicației tale AI:
 
 - [Bine ați venit la AI Toolkit pentru VS Code](../../../../md/03.FineTuning)
 - [Dezvoltare locală](../../../../md/03.FineTuning)
@@ -32,21 +32,21 @@ Acum să trecem la dezvoltarea aplicației tale AI:
   - [Microsoft Olive](../../../../md/03.FineTuning)
   - [Exemple și resurse pentru ajustare fină](../../../../md/03.FineTuning)
 - [**\[Private Preview\]** Dezvoltare la distanță](../../../../md/03.FineTuning)
-  - [Prerechizite](../../../../md/03.FineTuning)
+  - [Precondiții](../../../../md/03.FineTuning)
   - [Configurarea unui proiect de dezvoltare la distanță](../../../../md/03.FineTuning)
   - [Provisionare resurse Azure](../../../../md/03.FineTuning)
-  - [\[Opțional\] Adaugă token Huggingface în secretul Azure Container App](../../../../md/03.FineTuning)
+  - [\[Opțional\] Adăugare token Huggingface la secretul Azure Container App](../../../../md/03.FineTuning)
   - [Rulează ajustarea fină](../../../../md/03.FineTuning)
-  - [Provisionare endpoint pentru inferență](../../../../md/03.FineTuning)
-  - [Deploiază endpoint-ul pentru inferență](../../../../md/03.FineTuning)
+  - [Provisionare endpoint de inferență](../../../../md/03.FineTuning)
+  - [Deplasează endpoint-ul de inferență](../../../../md/03.FineTuning)
   - [Utilizare avansată](../../../../md/03.FineTuning)
 
 ## Dezvoltare locală
 ### Pregătiri
 
-1. Asigură-te că driverul NVIDIA este instalat pe gazdă.  
-2. Rulează `huggingface-cli login`, dacă folosești HF pentru utilizarea dataset-ului  
-3. Explicații pentru setările `Olive` care modifică utilizarea memoriei.
+1. Asigură-te că driverul NVIDIA este instalat pe gazdă.
+2. Rulează `huggingface-cli login`, dacă folosești HF pentru utilizarea dataset-ului.
+3. Explicații pentru setările cheii `Olive` referitoare la orice modifică utilizarea memoriei.
 
 ### Activează Conda
 Deoarece folosim mediul WSL și este partajat, trebuie să activezi manual mediul conda. După acest pas poți rula ajustarea fină sau inferența.
@@ -68,15 +68,15 @@ python gradio_chat.py --baseonly
 
 ### Ajustare fină și inferență a modelului
 
-După ce spațiul de lucru este deschis într-un container de dezvoltare, deschide un terminal (calea implicită este rădăcina proiectului), apoi rulează comanda de mai jos pentru a ajusta fin un LLM pe dataset-ul selectat.
+Odată ce spațiul de lucru este deschis într-un container de dezvoltare, deschide un terminal (calea implicită este rădăcina proiectului), apoi rulează comanda de mai jos pentru a ajusta fin un LLM pe dataset-ul selectat.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-Checkpoints-urile și modelul final vor fi salvate în `models` folder.
+Checkpoint-urile și modelul final vor fi salvate în folderul `models`.
 
-Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`.
+Apoi rulează inferența cu modelul ajustat fin prin chat-uri în `consolă`, `browser web` sau `prompt flow`.
 
 ```bash
 cd inference
@@ -89,93 +89,92 @@ python console_chat.py
 python gradio_chat.py
 ```
 
-Pentru a folosi `prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
+Pentru a folosi `prompt flow` în VS Code, consultă acest [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
 
-### Model Fine-tuning
+### Ajustare fină a modelului
 
-Next, download the following model depending on the availability of a GPU on your device.
+În continuare, descarcă modelul corespunzător în funcție de disponibilitatea unui GPU pe dispozitivul tău.
 
-To initiate the local fine-tuning session using QLoRA, select a model you want to fine-tune from our catalog.
-| Platform(s) | GPU available | Model name | Size (GB) |
+Pentru a iniția sesiunea locală de ajustare fină folosind QLoRA, selectează un model din catalogul nostru pe care dorești să-l ajustezi.
+| Platformă(e) | GPU disponibil | Nume model | Dimensiune (GB) |
 |---------|---------|--------|--------|
-| Windows | Yes | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
-| Linux | Yes | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
-| Windows<br>Linux | No | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
+| Windows | Da | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
+| Linux | Da | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
+| Windows<br>Linux | Nu | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
 
-**_Note_** You do not need an Azure Account to download the models
+**_Notă_** Nu ai nevoie de un cont Azure pentru a descărca modelele.
 
-The Phi3-mini (int4) model is approximately 2GB-3GB in size. Depending on your network speed, it could take a few minutes to download.
+Modelul Phi3-mini (int4) are aproximativ 2GB-3GB. În funcție de viteza rețelei, descărcarea poate dura câteva minute.
 
-Start by selecting a project name and location.
-Next, select a model from the model catalog. You will be prompted to download the project template. You can then click "Configure Project" to adjust various settings.
+Începe prin a selecta un nume și o locație pentru proiect.
+Apoi selectează un model din catalogul de modele. Vei fi invitat să descarci șablonul proiectului. Poți apoi să apeși pe „Configure Project” pentru a ajusta diverse setări.
 
-### Microsoft Olive 
+### Microsoft Olive
 
-We use [Olive](https://microsoft.github.io/Olive/why-olive.html) to run QLoRA fine-tuning on a PyTorch model from our catalog. All of the settings are preset with the default values to optimize to run the fine-tuning process locally with optimized use of memory, but it can be adjusted for your scenario.
+Folosim [Olive](https://microsoft.github.io/Olive/why-olive.html) pentru a rula ajustarea fină QLoRA pe un model PyTorch din catalogul nostru. Toate setările sunt presetate cu valorile implicite pentru a optimiza rularea procesului de ajustare fină local, cu utilizare optimizată a memoriei, dar pot fi ajustate pentru scenariul tău.
 
-### Fine Tuning Samples and Resoures
+### Exemple și resurse pentru ajustare fină
 
-- [Fine tuning Getting Started Guide](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
-- [Fine tuning with a HuggingFace Dataset](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
-- [Fine tuning with Simple DataSet](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
+- [Ghid de început pentru ajustare fină](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
+- [Ajustare fină cu un dataset HuggingFace](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
+- [Ajustare fină cu un dataset simplu](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
 
-## **[Private Preview]** Remote Development
+## **[Private Preview]** Dezvoltare la distanță
 
-### Prerequisites
+### Precondiții
 
-1. To run the model fine-tuning in your remote Azure Container App Environment, make sure your subscription has enough GPU capacity. Submit a [support ticket](https://azure.microsoft.com/support/create-ticket/) to request the required capacity for your application. [Get More Info about GPU capacity](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
-2. If you are using private dataset on HuggingFace, make sure you have a [HuggingFace account](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) and [generate an access token](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
-3. Enable Remote Fine-tuning and Inference feature flag in the AI Toolkit for VS Code
-   1. Open the VS Code Settings by selecting *File -> Preferences -> Settings*.
-   2. Navigate to *Extensions* and select *AI Toolkit*.
-   3. Select the *"Enable Remote Fine-tuning And Inference"* option.
-   4. Reload VS Code to take effect.
+1. Pentru a rula ajustarea fină a modelului în mediul tău Azure Container App la distanță, asigură-te că abonamentul tău are suficientă capacitate GPU. Trimite un [tichet de suport](https://azure.microsoft.com/support/create-ticket/) pentru a solicita capacitatea necesară aplicației tale. [Mai multe informații despre capacitatea GPU](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
+2. Dacă folosești un dataset privat pe HuggingFace, asigură-te că ai un [cont HuggingFace](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) și [generează un token de acces](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
+3. Activează flag-ul pentru funcționalitatea Remote Fine-tuning and Inference în AI Toolkit pentru VS Code
+   1. Deschide setările VS Code selectând *File -> Preferences -> Settings*.
+   2. Navighează la *Extensions* și selectează *AI Toolkit*.
+   3. Bifează opțiunea *"Enable Remote Fine-tuning And Inference"*.
+   4. Reîncarcă VS Code pentru ca modificările să intre în vigoare.
 
-- [Remote Fine tuning](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
+- [Ajustare fină la distanță](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
 
-### Setting Up a Remote Development Project
-1. Execute the command palette `AI Toolkit: Focus on Resource View`.
-2. Navigate to *Model Fine-tuning* to access the model catalog. Assign a name to your project and select its location on your machine. Then, hit the *"Configure Project"* button.
-3. Project Configuration
-    1. Avoid enabling the *"Fine-tune locally"* option.
-    2. The Olive configuration settings will appear with pre-set default values. Please adjust and fill in these configurations as required.
-    3. Move on to *Generate Project*. This stage leverages WSL and involves setting up a new Conda environment, preparing for future updates that include Dev Containers.
-4. Click on *"Relaunch Window In Workspace"* to open your remote development project.
+### Configurarea unui proiect de dezvoltare la distanță
+1. Execută paleta de comenzi `AI Toolkit: Focus on Resource View`.
+2. Navighează la *Model Fine-tuning* pentru a accesa catalogul de modele. Atribuie un nume proiectului și selectează locația pe mașina ta. Apoi apasă butonul *"Configure Project"*.
+3. Configurarea proiectului
+    1. Evită să activezi opțiunea *"Fine-tune locally"*.
+    2. Vor apărea setările de configurare Olive cu valorile implicite presetate. Ajustează și completează aceste setări după necesități.
+    3. Continuă cu *Generate Project*. Această etapă folosește WSL și implică configurarea unui nou mediu Conda, pregătind pentru viitoare actualizări care vor include Dev Containers.
+4. Apasă pe *"Relaunch Window In Workspace"* pentru a deschide proiectul tău de dezvoltare la distanță.
 
-> **Note:** The project currently works either locally or remotely within the AI Toolkit for VS Code. If you choose *"Fine-tune locally"* during project creation, it will operate exclusively in WSL without remote development capabilities. On the other hand, if you forego enabling *"Fine-tune locally"*, the project will be restricted to the remote Azure Container App environment.
+> **Notă:** Proiectul funcționează în prezent fie local, fie la distanță în AI Toolkit pentru VS Code. Dacă alegi *"Fine-tune locally"* la crearea proiectului, acesta va funcționa exclusiv în WSL fără capabilități de dezvoltare la distanță. Dacă nu activezi *"Fine-tune locally"*, proiectul va fi limitat la mediul Azure Container App la distanță.
 
-### Provision Azure Resources
-To get started, you need to provision the Azure Resource for remote fine-tuning. Do this by running the `AI Toolkit: Provision Azure Container Apps job for fine-tuning` from the command palette.
+### Provisionare resurse Azure
+Pentru a începe, trebuie să provisionezi resursa Azure pentru ajustarea fină la distanță. Fă acest lucru rulând comanda `AI Toolkit: Provision Azure Container Apps job for fine-tuning` din paleta de comenzi.
 
-Monitor the progress of the provision through the link displayed in the output channel.
+Monitorizează progresul provisionării prin linkul afișat în canalul de output.
 
-### [Optional] Add Huggingface Token to the Azure Container App Secret
-If you're using private HuggingFace dataset, set your HuggingFace token as an environment variable to avoid the need for manual login on the Hugging Face Hub.
-You can do this using the `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning command`. With this command, you can set the secret name as [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) and use your Hugging Face token as the secret value.
+### [Opțional] Adăugare token Huggingface la secretul Azure Container App
+Dacă folosești un dataset privat HuggingFace, setează token-ul HuggingFace ca variabilă de mediu pentru a evita autentificarea manuală pe Hugging Face Hub.
+Poți face acest lucru folosind comanda `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning`. Cu această comandă, setează numele secretului ca [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) și folosește token-ul tău Hugging Face ca valoare a secretului.
 
-### Run Fine-tuning
-To start the remote fine-tuning job, execute the `AI Toolkit: Run fine-tuning` command.
+### Rulează ajustarea fină
+Pentru a porni job-ul de ajustare fină la distanță, execută comanda `AI Toolkit: Run fine-tuning`.
 
-To view the system and console logs, you can visit the Azure portal using the link in the output panel (more steps at [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Or, you can view the console logs directly in the VSCode output panel by running the command `AI Toolkit: Show the running fine-tuning job streaming logs`. 
-> **Note:** The job might be queued due to insufficient resources. If the log is not displayed, execute the `AI Toolkit: Show the running fine-tuning job streaming logs` command, wait for a while and then execute the command again to re-connect to the streaming log.
+Pentru a vedea jurnalele sistemului și consola, poți accesa portalul Azure folosind linkul din panoul de output (mai multe detalii la [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Sau poți vizualiza jurnalele consolei direct în panoul de output VSCode rulând comanda `AI Toolkit: Show the running fine-tuning job streaming logs`.
+> **Notă:** Job-ul poate fi în coadă din cauza resurselor insuficiente. Dacă jurnalul nu este afișat, execută comanda `AI Toolkit: Show the running fine-tuning job streaming logs`, așteaptă puțin și apoi execută din nou comanda pentru a te reconecta la jurnalul în streaming.
 
-During this process, QLoRA will be used for fine-tuning, and will create LoRA adapters for the model to use during inference.
-The results of the fine-tuning will be stored in the Azure Files.
+În acest proces, QLoRA va fi folosit pentru ajustarea fină și va crea adaptoare LoRA pentru model, care vor fi utilizate în timpul inferenței.
+Rezultatele ajustării fine vor fi stocate în Azure Files.
 
-### Provision Inference Endpoint
-After the adapters are trained in the remote environment, use a simple Gradio application to interact with the model.
-Similar to the fine-tuning process, you need to set up the Azure Resources for remote inference by executing the `AI Toolkit: Provision Azure Container Apps for inference` from the command palette.
+### Provisionare endpoint de inferență
+După ce adaptoarele sunt antrenate în mediul la distanță, folosește o aplicație simplă Gradio pentru a interacționa cu modelul.
+Similar procesului de ajustare fină, trebuie să configurezi resursele Azure pentru inferență la distanță rulând comanda `AI Toolkit: Provision Azure Container Apps for inference` din paleta de comenzi.
 
-By default, the subscription and the resource group for inference should match those used for fine-tuning. The inference will use the same Azure Container App Environment and access the model and model adapter stored in Azure Files, which were generated during the fine-tuning step. 
+Implicit, abonamentul și grupul de resurse pentru inferență trebuie să fie aceleași cu cele folosite pentru ajustarea fină. Inferența va folosi același mediu Azure Container App și va accesa modelul și adaptorul modelului stocate în Azure Files, generate în timpul etapei de ajustare fină.
 
+### Deplasează endpoint-ul de inferență
+Dacă dorești să modifici codul de inferență sau să reîncarci modelul de inferență, execută comanda `AI Toolkit: Deploy for inference`. Aceasta va sincroniza codul tău cel mai recent cu Azure Container App și va reporni replica.
 
-### Deploy the Inference Endpoint
-If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
-
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` și în panoul de ieșire. Acum ești gata să evaluezi modelul folosind acest endpoint.
+Odată ce implementarea este finalizată cu succes, poți accesa API-ul de inferență făcând clic pe butonul „*Go to Inference Endpoint*” afișat în notificarea VSCode. Sau, endpoint-ul web API poate fi găsit sub `ACA_APP_ENDPOINT` în `./infra/inference.config.json` și în panoul de output. Acum ești gata să evaluezi modelul folosind acest endpoint.
 
 ### Utilizare avansată
 Pentru mai multe informații despre dezvoltarea la distanță cu AI Toolkit, consultă documentația [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) și [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference).
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot rezulta din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

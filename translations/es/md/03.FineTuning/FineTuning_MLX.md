@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-07T10:22:18+00:00",
+  "translation_date": "2025-07-17T07:56:22+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "es"
 }
 -->
-# **Ajuste fino de Phi-3 con Apple MLX Framework**
+# **Ajuste fino de Phi-3 con el framework Apple MLX**
 
-Podemos completar el ajuste fino combinado con Lora a través de la línea de comandos del Apple MLX Framework. (Si quieres saber más sobre el funcionamiento del MLX Framework, por favor lee [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+Podemos completar el ajuste fino combinado con Lora a través de la línea de comandos del framework Apple MLX. (Si quieres saber más sobre el funcionamiento del framework MLX, por favor lee [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
 
 
 ## **1. Preparación de datos**
 
-Por defecto, MLX Framework requiere el formato jsonl para train, test y eval, y se combina con Lora para completar los trabajos de ajuste fino.
+Por defecto, el framework MLX requiere el formato jsonl para train, test y eval, y se combina con Lora para completar los trabajos de ajuste fino.
 
 
-### ***Nota:***
+### ***Note:***
 
 1. Formato de datos jsonl ：
 
@@ -31,11 +31,11 @@ Por defecto, MLX Framework requiere el formato jsonl para train, test y eval, y 
 
 ```
 
-2. Nuestro ejemplo utiliza los datos de [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), pero la cantidad de datos es relativamente insuficiente, por lo que los resultados del ajuste fino no son necesariamente los mejores. Se recomienda que los usuarios utilicen datos mejores basados en sus propios escenarios para completarlo.
+2. Nuestro ejemplo usa los datos de [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), pero la cantidad de datos es relativamente insuficiente, por lo que los resultados del ajuste fino no son necesariamente los mejores. Se recomienda que los usuarios utilicen datos mejores basados en sus propios escenarios para completar el proceso.
 
 3. El formato de datos está combinado con la plantilla de Phi-3
 
-Por favor descarga los datos desde este [enlace](../../../../code/04.Finetuning/mlx), asegúrate de incluir todos los archivos .jsonl en la carpeta ***data***
+Por favor descarga los datos desde este [enlace](../../../../code/04.Finetuning/mlx), incluye todos los archivos .jsonl en la carpeta ***data***
 
 
 ## **2. Ajuste fino en tu terminal**
@@ -50,11 +50,11 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 ```
 
 
-## ***Nota:***
+## ***Note:***
 
-1. Este es un ajuste fino con LoRA, MLX framework no ha publicado QLoRA
+1. Este es un ajuste fino con LoRA, el framework MLX no ha publicado QLoRA
 
-2. Puedes modificar config.yaml para cambiar algunos argumentos, como
+2. Puedes configurar config.yaml para cambiar algunos argumentos, como
 
 
 ```yaml
@@ -184,9 +184,9 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Nota:*** 
+***Note:*** 
 
-1. Ahora soporta conversión de cuantización para fp32, fp16 y INT 8
+1. Ahora soporta conversión de cuantización para fp32, fp16 e INT 8
 
 2. El modelo fusionado no incluye tokenizer.model, por favor descárgalo desde https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
@@ -211,7 +211,7 @@ ejecuta el comando en la terminal
 
 ```
 
-¡Felicidades! Domina el ajuste fino con el MLX Framework
+¡Felicidades! Domina el ajuste fino con el framework MLX
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

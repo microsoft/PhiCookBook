@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-07T14:20:37+00:00",
+  "translation_date": "2025-07-17T02:39:57+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "mo"
 }
 -->
-# **Guideline for OnnxRuntime GenAI  Windows GPU**
+# **OnnxRuntime GenAI Windows GPU 指南**
 
-This guideline provides steps for setting up and using the ONNX Runtime (ORT) with GPUs on Windows. It's designed to help you leverage GPU acceleration for your models, improving performance and efficiency.
+本指南提供在 Windows 上使用 GPU 設置和運行 ONNX Runtime (ORT) 的步驟，幫助您利用 GPU 加速模型運算，提升效能與效率。
 
-The document provides guidance on:
+本文涵蓋內容包括：
 
-- Environment Setup: Instructions on installing the necessary dependencies like CUDA, cuDNN, and ONNX Runtime.
-- Configuration: How to configure the environment and ONNX Runtime to utilize GPU resources effectively.
-- Optimization Tips: Advice on how to fine-tune your GPU settings for optimal performance.
+- 環境設置：安裝 CUDA、cuDNN 及 ONNX Runtime 等必要依賴的說明。
+- 配置：如何設定環境與 ONNX Runtime 以有效使用 GPU 資源。
+- 優化建議：調整 GPU 設定以達到最佳效能的技巧。
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** 建议使用 [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) 作为你的 Python 环境
+   ***Note*** 建議使用 [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) 作為您的 Python 環境
 
    ```bash
 
@@ -29,9 +29,9 @@ The document provides guidance on:
 
    ```
 
-   ***Reminder*** 如果你已经安装了任何关于 python 的 ONNX 库，请先卸载它
+   ***Reminder*** 如果您已安裝任何與 python ONNX 相關的庫，請先卸載
 
-### **2. Install CMake with winget**
+### **2. 使用 winget 安裝 CMake**
 
    ```bash
 
@@ -39,13 +39,13 @@ The document provides guidance on:
 
    ```
 
-### **3. Install Visual Studio 2022 - Desktop Development with C++**
+### **3. 安裝 Visual Studio 2022 - 使用 C++ 的桌面開發**
 
-   ***Note*** 如果你不打算编译，可以跳过这一步
+   ***Note*** 如果不打算自行編譯，可以跳過此步驟
 
 ![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.mo.png)
 
-### **4. Install NVIDIA Driver**
+### **4. 安裝 NVIDIA 驅動程式**
 
 1. **NVIDIA GPU Driver**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
@@ -53,19 +53,19 @@ The document provides guidance on:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** 安装时请使用默认设置
+***Reminder*** 請使用預設安裝流程與設定
 
-### **5. Set NVIDIA Env**
+### **5. 設定 NVIDIA 環境變數**
 
-将 NVIDIA CUDNN 9.4 的 lib、bin、include 文件复制到 NVIDIA CUDA 12.4 的相应目录
+將 NVIDIA CUDNN 9.4 的 lib、bin、include 資料夾內容複製到 NVIDIA CUDA 12.4 對應的 lib、bin、include 資料夾中
 
-- 复制 *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* 下的文件到  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin*
+- 將 *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* 的檔案複製到 *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
-- 复制 *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* 下的文件到  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include*
+- 將 *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* 的檔案複製到 *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
 
-- 复制 *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* 下的文件到  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+- 將 *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* 的檔案複製到 *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
-### **6. Download Phi-3.5-mini-instruct-onnx**
+### **6. 下載 Phi-3.5-mini-instruct-onnx**
 
    ```bash
 
@@ -79,25 +79,26 @@ The document provides guidance on:
 
    ```
 
-### **7. Runing InferencePhi35Instruct.ipynb**
+### **7. 執行 InferencePhi35Instruct.ipynb**
 
-   打开 [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) 并执行
+   開啟 [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) 並執行
 
 ![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.mo.png)
 
-### **8. Compile ORT GenAI GPU**
+### **8. 編譯 ORT GenAI GPU**
 
    ***Note*** 
    
-   1. 请先卸载所有关于 onnx、onnxruntime 和 onnxruntime-genai 的包
+   1. 請先卸載所有與 onnx、onnxruntime 及 onnxruntime-genai 相關的套件
 
+   
    ```bash
 
    pip list 
    
    ```
 
-   然后卸载所有 onnxruntime 相关库，例如：
+   接著卸載所有 onnxruntime 相關的函式庫，例如：
 
    ```bash
 
@@ -109,13 +110,13 @@ The document provides guidance on:
    
    ```
 
-   2. 检查 Visual Studio 扩展支持
+   2. 檢查 Visual Studio 擴充功能支援
 
-   确认路径 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras 下存在 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration 文件夹。 
-   
-   如果没有找到，请检查其他 CUDA 工具包驱动文件夹，将 visual_studio_integration 文件夹及内容复制到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   確認 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras 目錄下有 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration 資料夾。
 
-   - 如果你不打算编译，可以跳过这一步
+   若找不到，請檢查其他 CUDA 工具包驅動資料夾，並將 visual_studio_integration 資料夾及其內容複製到 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+
+   - 如果不打算自行編譯，可以跳過此步驟
 
    ```bash
 
@@ -123,16 +124,17 @@ The document provides guidance on:
 
    ```
 
-   - 下载 [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
+   - 下載 [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - 解压 onnxruntime-win-x64-gpu-1.19.2.zip，重命名为 **ort**，并将 ort 文件夹复制到 onnxruntime-genai 目录
+   - 解壓 onnxruntime-win-x64-gpu-1.19.2.zip，並將資料夾重新命名為 **ort**，將 ort 資料夾複製到 onnxruntime-genai
 
-   - 使用 Windows Terminal，进入 VS 2022 的 Developer Command Prompt，切换到 onnxruntime-genai 目录
+   - 使用 Windows Terminal，開啟 VS 2022 的 Developer Command Prompt，並切換到 onnxruntime-genai 目錄
 
 ![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.mo.png)
 
-   - 使用你的 python 环境进行编译
+   - 使用您的 python 環境編譯
 
+   
    ```bash
 
    cd onnxruntime-genai
@@ -146,9 +148,5 @@ The document provides guidance on:
 
    ```
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-I’m not familiar with a language called “mo.” Could you please clarify which language or dialect you mean by “mo”? For example, it might be a language code, abbreviation, or shorthand for something else. This will help me provide an accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

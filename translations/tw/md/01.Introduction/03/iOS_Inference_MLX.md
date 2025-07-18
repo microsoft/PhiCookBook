@@ -2,49 +2,49 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-08T06:02:23+00:00",
+  "translation_date": "2025-07-16T20:28:39+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "tw"
 }
 -->
-# 在 iOS 上使用 Apple MLX Framework 運行 Phi-3 和 Phi-4
+# 在 iOS 上使用 Apple MLX 框架運行 Phi-3 和 Phi-4
 
-本教學示範如何使用 Apple MLX framework 在 iOS 裝置上執行 Phi-3 或 Phi-4 模型。[MLX](https://opensource.apple.com/projects/mlx/) 是 Apple 專為 Apple Silicon 晶片優化的機器學習框架。
+本教學示範如何使用 Apple MLX 框架建立一個 iOS 應用程式，能在裝置上運行 Phi-3 或 Phi-4 模型。[MLX](https://opensource.apple.com/projects/mlx/) 是 Apple 專為 Apple Silicon 晶片優化的機器學習框架。
 
-## 前置條件
+## 先決條件
 
-- macOS 且安裝 Xcode 16（或更新版本）
-- iOS 18（或更新版本）目標裝置，且至少 8GB 記憶體（iPhone 或 iPad，需符合 Apple Intelligence 要求，這些要求與量化後的 Phi 模型相似）
-- 基本 Swift 和 SwiftUI 知識
+- macOS 與 Xcode 16（或更新版本）
+- iOS 18（或更新版本）目標裝置，至少 8GB 記憶體（iPhone 或 iPad，需符合 Apple Intelligence 要求，這與量化後的 Phi 模型需求相似）
+- 基本的 Swift 和 SwiftUI 知識
 
 ## 步驟 1：建立新的 iOS 專案
 
-先在 Xcode 裡建立一個新的 iOS 專案：
+首先在 Xcode 中建立一個新的 iOS 專案：
 
-1. 開啟 Xcode，選擇「Create a new Xcode project」
+1. 啟動 Xcode，選擇「Create a new Xcode project」
 2. 選擇「App」作為範本
-3. 為專案命名（例如 "Phi3-iOS-App"），並選擇 SwiftUI 作為介面
+3. 為專案命名（例如「Phi3-iOS-App」），並選擇 SwiftUI 作為介面
 4. 選擇專案儲存位置
 
-## 步驟 2：加入必要的依賴套件
+## 步驟 2：加入所需的相依套件
 
-加入包含所有預載模型和推論所需依賴與輔助功能的 [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples)：
+加入包含所有必要相依與輔助工具的 [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples)，用於預載模型與執行推論：
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-雖然基礎的 [MLX Swift package](https://github.com/ml-explore/mlx-swift) 足以應付核心 tensor 運算和基本機器學習功能，但 MLX Examples package 提供了針對語言模型和推論流程的額外元件：
+雖然基礎的 [MLX Swift package](https://github.com/ml-explore/mlx-swift) 已足以支援核心張量運算與基本機器學習功能，但 MLX Examples package 提供了多個專為語言模型設計的額外元件，讓推論流程更簡便：
 
-- 處理從 Hugging Face 下載模型的載入工具
+- 處理從 Hugging Face 下載模型的工具
 - 分詞器整合
-- 文字生成推論輔助
-- 預先設定好的模型定義
+- 用於文字生成的推論輔助工具
+- 預先配置的模型定義
 
 ## 步驟 3：設定權限
 
-為了讓應用能下載模型並分配足夠記憶體，需要新增特定權限。為你的 app 建立一個 `.entitlements` 檔案，內容如下：
+為了讓應用程式能下載模型並分配足夠的記憶體，我們需要新增特定的權限。為你的應用程式建立一個 `.entitlements` 檔案，內容如下：
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ CO_OP_TRANSLATOR_METADATA:
 </plist>
 ```
 
-> **Note:** `com.apple.developer.kernel.increased-memory-limit` 權限對於執行較大型模型非常重要，因為它允許 app 請求比一般限制更高的記憶體。
+> **Note:** `com.apple.developer.kernel.increased-memory-limit` 權限對於運行較大型模型非常重要，因為它允許應用程式請求比平常更多的記憶體。
 
 ## 步驟 4：建立聊天訊息模型
 
-首先，我們建立一個基本結構來表示聊天訊息：
+首先，建立一個基本結構來表示聊天訊息：
 
 ```swift
 import SwiftUI
@@ -87,7 +87,7 @@ struct ChatMessage: Identifiable {
 
 ## 步驟 5：實作 ViewModel
 
-接著，我們建立負責模型載入和推論的 `PhiViewModel` 類別：
+接著，我們建立負責模型載入與推論的 `PhiViewModel` 類別：
 
 ```swift
 import MLX
@@ -248,23 +248,23 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-ViewModel 展示了主要的 MLX 整合點：
+這個 ViewModel 展示了 MLX 整合的關鍵點：
 
-- 使用 `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- 使用 `MLX.GPU.set(cacheLimit:)` 設定 GPU 快取限制，以優化行動裝置的記憶體使用
+- 利用 `LLMModelFactory` 按需下載模型並初始化 MLX 優化模型
+- 透過 `ModelContainer` 存取模型參數與結構
+- 使用 MLX 的逐詞生成方法 `MLXLMCommon.generate`
+- 以適當的溫度設定與詞元限制管理推論流程
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+串流式詞元生成方式能即時回饋使用者，類似伺服器端模型串流回傳詞元，但無需承受網路延遲。
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+在 UI 互動方面，兩個主要函式是 `loadModel()`，用於初始化 LLM，以及 `fetchAIResponse()`，用來處理使用者輸入並生成 AI 回應。
 
-### Model format considerations
+### 模型格式注意事項
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Important:** Phi 模型無法直接使用預設或 GGUF 格式於 MLX，必須轉換成 MLX 格式，這部分由 MLX 社群負責。你可以在 [huggingface.co/mlx-community](https://huggingface.co/mlx-community) 找到已轉換好的模型。
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit` 設定 GPU 快取限制，並參考特定的預轉換 MLX 模型，該模型會自動下載：
+MLX Examples package 已包含多個模型的預配置註冊，包括 Phi-3。當你呼叫 `ModelRegistry.phi3_5_4bit` 時，它會參考一個特定的預轉換 MLX 模型並自動下載：
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-你也可以建立自己的模型設定，指向 Hugging Face 上任何相容模型。例如，要使用 Phi-4 mini，可以定義自己的設定：
+你也可以自行建立模型配置，指向 Hugging Face 上任何相容的模型。例如，若要使用 Phi-4 mini，可以定義自己的配置：
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Note:** Phi-4 支援於 2025 年 2 月底加入 MLX Swift Examples 倉庫（參見 [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)）。截至 2025 年 3 月，官方最新版本（2024 年 12 月的 2.21.2）尚未內建 Phi-4 支援。若要使用 Phi-4 模型，需直接從主分支引用套件：
+> **Note:** Phi-4 支援於 2025 年 2 月底加入 MLX Swift Examples 倉庫（見 [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)）。截至 2025 年 3 月，最新官方版本（2024 年 12 月的 2.21.2）尚未內建 Phi-4 支援。若要使用 Phi-4 模型，需直接從主分支引用套件：
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-這讓你能在官方釋出前使用最新的模型設定（包含 Phi-4）。你也可以用此方式使用不同版本的 Phi 模型或其他已轉換成 MLX 格式的模型。
+這讓你能在官方版本釋出前，使用包含 Phi-4 的最新模型配置。你也可以用此方法使用不同版本的 Phi 模型，甚至其他已轉換成 MLX 格式的模型。
 
-## 步驟 6：建立使用者介面
+## 步驟 6：建立 UI
 
-現在我們實作一個簡單的聊天介面來與 view model 互動：
+現在來實作一個簡單的聊天介面，與我們的 ViewModel 互動：
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-UI 由三個主要元件組成，共同打造基本聊天介面。`ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` 提供簡單的動畫指示器，顯示 AI 正在處理中。
+UI 由三個主要元件組成，共同打造基本聊天介面。`ContentView` 根據模型是否準備好，顯示載入按鈕或聊天介面兩種狀態。`MessageView` 根據訊息來源不同，分別以右對齊藍底（使用者訊息）或左對齊灰底（Phi 模型回應）呈現。`TypingIndicatorView` 則提供簡單的動畫指示，顯示 AI 正在處理中。
 
 ## 步驟 7：建置並執行應用程式
 
 現在準備好建置並執行應用程式。
 
-> **Important!** MLX 不支援模擬器。必須在搭載 Apple Silicon 晶片的實體裝置上執行。更多資訊請見 [這裡](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS)。
+> **Important!** MLX 不支援模擬器，必須在搭載 Apple Silicon 晶片的實體裝置上執行。詳情請參考 [這裡](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS)。
 
-當應用啟動後，點擊「Load model」按鈕下載並初始化 Phi-3（或根據設定的 Phi-4）模型。此過程視網路速度而定，因為需要從 Hugging Face 下載模型。我們的實作只用轉圈指示載入中，但你可在 Xcode 控制台看到實際進度。
+應用程式啟動後，點擊「Load model」按鈕下載並初始化 Phi-3（或依配置為 Phi-4）模型。此過程視網路速度可能需要一些時間，因為需從 Hugging Face 下載模型。我們的實作僅有載入指示器，但你可以在 Xcode 主控台看到實際進度。
 
-載入完成後，即可在文字欄輸入問題並點擊送出按鈕與模型互動。
+載入完成後，即可在文字欄輸入問題並點擊送出，與模型互動。
 
-以下是應用在 iPad Air M1 上執行的示範：
+以下為應用程式在 iPad Air M1 上的執行情況示範：
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
-## 結論
+## 結語
 
-就這樣！照著這些步驟，你已經成功建立一個能在裝置上直接運行 Phi-3（或 Phi-4）模型的 iOS 應用，並且使用 Apple 的 MLX framework。
+就這樣！照著這些步驟，你已成功建立一個能直接在裝置上使用 Apple MLX 框架運行 Phi-3（或 Phi-4）模型的 iOS 應用程式。
 
 恭喜你！
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於提供準確的翻譯，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用此翻譯而產生之任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

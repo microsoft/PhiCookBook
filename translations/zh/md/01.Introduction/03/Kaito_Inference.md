@@ -2,43 +2,42 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-07T14:34:00+00:00",
+  "translation_date": "2025-07-16T20:47:52+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "zh"
 }
 -->
 ## 使用 Kaito 进行推理
 
-[Kaito](https://github.com/Azure/kaito) 是一个操作器，用于自动化在 Kubernetes 集群中部署 AI/ML 推理模型。
+[Kaito](https://github.com/Azure/kaito) 是一个操作器，用于在 Kubernetes 集群中自动化 AI/ML 推理模型的部署。
 
 与大多数基于虚拟机基础设施的主流模型部署方法相比，Kaito 具有以下主要优势：
 
-- 使用容器镜像管理模型文件。提供了一个 HTTP 服务器，用于通过模型库执行推理调用。
+- 使用容器镜像管理模型文件。提供一个 HTTP 服务器，利用模型库执行推理调用。
 - 通过预设配置避免调整部署参数以适配 GPU 硬件。
 - 根据模型需求自动配置 GPU 节点。
-- 如果许可证允许，可将大型模型镜像托管在公共的 Microsoft 容器注册表（MCR）中。
+- 如果许可允许，可将大型模型镜像托管在公共的 Microsoft Container Registry (MCR) 中。
 
 使用 Kaito，Kubernetes 中大型 AI 推理模型的接入流程大大简化。
 
 ## 架构
 
-Kaito 遵循经典的 Kubernetes 自定义资源定义（CRD）/控制器设计模式。用户管理一个 `workspace` 自定义资源，该资源描述了 GPU 需求和推理规范。Kaito 控制器通过协调 `workspace` 自定义资源自动完成部署。
-
+Kaito 遵循经典的 Kubernetes 自定义资源定义（CRD）/控制器设计模式。用户管理一个描述 GPU 需求和推理规范的 `workspace` 自定义资源。Kaito 控制器通过协调 `workspace` 自定义资源来自动化部署。
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito 架构" alt="Kaito 架构">
 </div>
 
 上图展示了 Kaito 的架构概览。其主要组件包括：
 
-- **Workspace controller**：协调 `workspace` 自定义资源，创建 `machine`（下文解释）自定义资源以触发节点自动配置，并根据模型预设配置创建推理工作负载（`deployment` 或 `statefulset`）。
-- **Node provisioner controller**：该控制器在 [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) 中名为 *gpu-provisioner*。它使用源自 [Karpenter](https://sigs.k8s.io/karpenter) 的 `machine` CRD 与 workspace controller 交互。它集成了 Azure Kubernetes Service（AKS）API，以向 AKS 集群添加新的 GPU 节点。  
+- **Workspace 控制器**：协调 `workspace` 自定义资源，创建 `machine`（如下文所述）自定义资源以触发节点自动配置，并基于模型预设配置创建推理工作负载（`deployment` 或 `statefulset`）。
+- **节点配置控制器**：该控制器在 [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) 中名为 *gpu-provisioner*。它使用源自 [Karpenter](https://sigs.k8s.io/karpenter) 的 `machine` CRD 与 workspace 控制器交互。它集成 Azure Kubernetes Service (AKS) API，向 AKS 集群添加新的 GPU 节点。
 > 注意：[ *gpu-provisioner*](https://github.com/Azure/gpu-provisioner) 是一个开源组件。如果其他控制器支持 [Karpenter-core](https://sigs.k8s.io/karpenter) API，也可以替换它。
 
 ## 安装
 
-请查看安装指南 [这里](https://github.com/Azure/kaito/blob/main/docs/installation.md)。
+请查看[这里](https://github.com/Azure/kaito/blob/main/docs/installation.md)的安装指南。
 
-## 快速开始 推理 Phi-3
+## 快速开始推理 Phi-3
 [推理 Phi-3 示例代码](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
@@ -176,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **免责声明**：  
-本文件已使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。尽管我们力求准确，但请注意自动翻译可能存在错误或不准确之处。原始语言版本的文件应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

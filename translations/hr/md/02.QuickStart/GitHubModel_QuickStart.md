@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:22:26+00:00",
+  "translation_date": "2025-07-17T05:42:44+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "hr"
 }
 -->
-## GitHub Models - Ograničena javna beta verzija
+## GitHub modeli - ograničena javna beta
 
-Dobrodošli na [GitHub Models](https://github.com/marketplace/models)! Sve je spremno za vas da istražite AI modele hostane na Azure AI.
+Dobrodošli na [GitHub Models](https://github.com/marketplace/models)! Sve je spremno za istraživanje AI modela hostanih na Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.hr.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.hr.png)
 
 Za više informacija o modelima dostupnim na GitHub Models, pogledajte [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Dostupni modeli
 
-Svaki model ima svoj vlastiti playground i primjere koda
+Svaki model ima vlastiti playground i primjere koda
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -43,20 +43,20 @@ Postoji nekoliko osnovnih primjera spremnih za pokretanje. Možete ih pronaći u
 - JavaScript
 - cURL
 
-Također postoji poseban Codespaces Environment za pokretanje primjera i modela.
+Također postoji namjensko Codespaces okruženje za pokretanje primjera i modela.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.hr.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.hr.png)
 
 ## Primjeri koda
 
-Ispod su primjeri koda za nekoliko slučajeva korištenja. Za dodatne informacije o Azure AI Inference SDK, pogledajte kompletnu dokumentaciju i primjere.
+Ispod su primjeri koda za nekoliko slučajeva upotrebe. Za dodatne informacije o Azure AI Inference SDK, pogledajte kompletnu dokumentaciju i primjere.
 
 ## Postavljanje
 
 1. Kreirajte personal access token  
-Ne morate davati nikakve dozvole tokenu. Imajte na umu da će token biti poslan Microsoftovoj usluzi.
+Nije potrebno davati nikakve dozvole tokenu. Imajte na umu da će token biti poslan Microsoftovoj usluzi.
 
-Za korištenje primjera koda ispod, kreirajte varijablu okoline i postavite svoj token kao ključ za klijentski kod.
+Za korištenje donjih primjera koda, kreirajte varijablu okruženja i postavite svoj token kao ključ za klijentski kod.
 
 Ako koristite bash:  
 ```
@@ -76,7 +76,7 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 
 ## Python primjer
 
-### Instalacija ovisnosti  
+### Instalirajte ovisnosti  
 Instalirajte Azure AI Inference SDK koristeći pip (zahtijeva: Python >=3.8):
 
 ```
@@ -84,7 +84,7 @@ pip install azure-ai-inference
 ```  
 ### Pokrenite osnovni primjer koda
 
-Ovaj primjer prikazuje osnovni poziv chat completion API-ja. Koristi GitHub AI model inference endpoint i vaš GitHub token. Poziv je sinkron.
+Ovaj primjer prikazuje osnovni poziv chat completion API-ja. Koristi GitHub AI model inference endpoint i vaš GitHub token. Poziv je sinkroni.
 
 ```
 import os
@@ -148,9 +148,9 @@ response = client.complete(messages=messages, model=model_name)
 print(response.choices[0].message.content)
 ```
 
-### Prijenos izlaza u streamu
+### Strimirajte izlaz
 
-Za bolje korisničko iskustvo, poželjet ćete streamati odgovor modela kako bi se prvi token pojavio ranije i izbjegli čekanje na duge odgovore.
+Za bolje korisničko iskustvo, poželjet ćete strimirati odgovor modela kako bi se prvi token pojavio brzo i izbjegli čekanje na duge odgovore.
 
 ```
 import os
@@ -182,15 +182,14 @@ for update in response:
         print(update.choices[0].delta.content or "", end="")
 
 client.close()
-```
-
+```  
 ## JavaScript
 
-### Instalacija ovisnosti
+### Instalirajte ovisnosti
 
 Instalirajte Node.js.
 
-Kopirajte sljedeće retke teksta i spremite ih kao datoteku package.json u vašem folderu.
+Kopirajte sljedeće retke teksta i spremite ih kao datoteku package.json u svoj direktorij.
 
 ```
 {
@@ -203,15 +202,15 @@ Kopirajte sljedeće retke teksta i spremite ih kao datoteku package.json u vaše
 }
 ```
 
-Napomena: @azure/core-sse je potreban samo ako streamate odgovor chat completion API-ja.
+Napomena: @azure/core-sse je potreban samo ako strimirate odgovor chat completiona.
 
-Otvorite terminal u ovom folderu i pokrenite npm install.
+Otvorite terminal u ovom direktoriju i pokrenite npm install.
 
-Za svaki od primjera koda ispod, kopirajte sadržaj u datoteku sample.js i pokrenite s node sample.js.
+Za svaki od donjih primjera koda, kopirajte sadržaj u datoteku sample.js i pokrenite s node sample.js.
 
 ### Pokrenite osnovni primjer koda
 
-Ovaj primjer prikazuje osnovni poziv chat completion API-ja. Koristi GitHub AI model inference endpoint i vaš GitHub token. Poziv je sinkron.
+Ovaj primjer prikazuje osnovni poziv chat completion API-ja. Koristi GitHub AI model inference endpoint i vaš GitHub token. Poziv je sinkroni.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -293,9 +292,8 @@ main().catch((err) => {
 });
 ```
 
-### Prijenos izlaza u streamu
-
-Za bolje korisničko iskustvo, poželjet ćete streamati odgovor modela kako bi se prvi token pojavio ranije i izbjegli čekanje na duge odgovore.
+### Strimirajte izlaz  
+Za bolje korisničko iskustvo, poželjet ćete strimirati odgovor modela kako bi se prvi token pojavio brzo i izbjegli čekanje na duge odgovore.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -403,9 +401,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
-### Prijenos izlaza u streamu
+### Strimirajte izlaz
 
-Ovo je primjer poziva endpointa i streamanja odgovora.
+Ovo je primjer poziva endpointa i strimiranja odgovora.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -427,21 +425,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## BESPLATNA upotreba i ograničenja za GitHub Models
+## BESPLATNA upotreba i ograničenja za GitHub modele
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.hr.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.hr.png)
 
-[Ograničenja brzine za playground i besplatnu API upotrebu](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) su namijenjena za eksperimentiranje s modelima i prototipiranje vaše AI aplikacije. Za korištenje izvan tih ograničenja i za skaliranje vaše aplikacije, morate osigurati resurse iz Azure računa i autentificirati se od tamo umjesto putem vašeg GitHub personal access tokena. Ne morate mijenjati ništa drugo u vašem kodu. Koristite ovaj link da saznate kako prijeći granice besplatnog sloja u Azure AI.
+[Ograničenja brzine za playground i besplatnu API upotrebu](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) namijenjena su da vam pomognu u eksperimentiranju s modelima i prototipiranju AI aplikacija. Za korištenje izvan tih ograničenja i za skaliranje vaše aplikacije, morate osigurati resurse iz Azure računa i autentificirati se preko njega umjesto preko vašeg GitHub personal access tokena. Ne morate mijenjati ništa drugo u svom kodu. Koristite ovaj link da saznate kako prijeći granice besplatnog sloja u Azure AI.
 
-### Obavijesti
+### Napomene
 
-Imajte na umu da kada radite s modelom, eksperimentirate s AI-jem, pa su moguće pogreške u sadržaju.
+Imajte na umu da kada komunicirate s modelom, eksperimentirate s AI-jem, pa su moguće pogreške u sadržaju.
 
-Funkcionalnost je podložna raznim ograničenjima (uključujući broj zahtjeva po minuti, dnevni broj zahtjeva, broj tokena po zahtjevu i istovremene zahtjeve) i nije namijenjena za produkcijsku upotrebu.
+Ova značajka podliježe različitim ograničenjima (uključujući broj zahtjeva po minuti, zahtjeve po danu, tokene po zahtjevu i istovremene zahtjeve) i nije namijenjena za produkcijsku upotrebu.
 
-GitHub Models koristi Azure AI Content Safety. Ovi filteri se ne mogu isključiti kao dio iskustva GitHub Models. Ako odlučite koristiti modele kroz plaćenu uslugu, molimo konfigurirajte svoje filtere sadržaja prema vašim potrebama.
+GitHub Models koristi Azure AI Content Safety. Ovi filteri se ne mogu isključiti kao dio GitHub Models iskustva. Ako odlučite koristiti modele kroz plaćenu uslugu, molimo konfigurirajte svoje filtere sadržaja prema svojim potrebama.
 
-Ova usluga je podložna GitHub Pre-release Terms.
+Ova usluga je podložna GitHub Pre-release uvjetima.
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakve nesporazume ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

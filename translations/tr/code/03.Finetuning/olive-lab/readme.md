@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T04:24:18+00:00",
+  "translation_date": "2025-07-16T15:52:35+00:00",
   "source_file": "code/03.Finetuning/olive-lab/readme.md",
   "language_code": "tr"
 }
 -->
-# Lab. Cihaz üzerinde çıkarım için AI modellerini optimize etme
+# Lab. Cihaz Üzerinde Çıkarım için AI Modellerini Optimize Etme
 
 ## Giriş
 
 > [!IMPORTANT]  
-> Bu laboratuvar için **Nvidia A10 veya A100 GPU** ve ilgili sürücüler ile CUDA araç seti (sürüm 12+) kurulmuş olmalıdır.
+> Bu laboratuvar için **Nvidia A10 veya A100 GPU** ve ilgili sürücüler ile CUDA araç seti (sürüm 12+) yüklü olmalıdır.
 
 > [!NOTE]  
-> Bu, OLIVE kullanarak cihaz üzerinde çıkarım için modelleri optimize etmenin temel kavramlarına pratik bir giriş sağlayan **35 dakikalık** bir laboratuvardır.
+> Bu, OLIVE kullanarak cihaz üzerinde çıkarım için modelleri optimize etmenin temel kavramlarını uygulamalı olarak öğreneceğiniz **35 dakikalık** bir laboratuvardır.
 
 ## Öğrenme Hedefleri
 
@@ -23,49 +23,49 @@ Bu laboratuvarın sonunda OLIVE kullanarak:
 
 - AWQ kuantizasyon yöntemiyle bir AI modelini kuantize edebileceksiniz.
 - Belirli bir görev için AI modelini ince ayar yapabileceksiniz.
-- ONNX Runtime üzerinde verimli cihaz içi çıkarım için LoRA adaptörleri (ince ayarlanmış model) oluşturabileceksiniz.
+- ONNX Runtime üzerinde verimli cihaz içi çıkarım için LoRA adaptörleri (ince ayarlı model) oluşturabileceksiniz.
 
 ### Olive Nedir
 
-Olive (*O*NNX *live*), ONNX runtime +++https://onnxruntime.ai+++ için modelleri kalite ve performansla dağıtmanızı sağlayan CLI destekli bir model optimizasyon araç setidir.
+Olive (*O*NNX *live*), ONNX runtime +++https://onnxruntime.ai+++ için modelleri kalite ve performansla teslim etmenizi sağlayan, CLI destekli bir model optimizasyon araç setidir.
 
-![Olive Flow](../../../../../translated_images/olive-flow.5beac74493fb2216eb8578519cfb1c4a1e752a3536bc755c4545bd0959634684.tr.png)
+![Olive Akışı](../../../../../translated_images/olive-flow.a47985655a756dcba73521511ea42eef359509a3a33cbd4b9ac04ba433287b80.tr.png)
 
-Olive’a genellikle PyTorch veya Hugging Face modeli girilir ve çıkışta cihazda (dağıtım hedefi) ONNX runtime üzerinde çalıştırılan optimize edilmiş bir ONNX modeli elde edilir. Olive, Qualcomm, AMD, Nvidia veya Intel gibi donanım sağlayıcılarının sunduğu AI hızlandırıcıları (NPU, GPU, CPU) için modeli hedef donanıma göre optimize eder.
+Olive’a genellikle bir PyTorch veya Hugging Face modeli girdi olarak verilir ve çıktı olarak ONNX runtime üzerinde çalışan optimize edilmiş bir ONNX modeli elde edilir. Olive, Qualcomm, AMD, Nvidia veya Intel gibi donanım sağlayıcılarının sunduğu AI hızlandırıcılar (NPU, GPU, CPU) için modeli hedef cihaza göre optimize eder.
 
-Olive, *workflow* denen sıralı model optimizasyon görevlerinden (*passes*) oluşan bir iş akışını yürütür – örnek görevler arasında model sıkıştırma, grafik yakalama, kuantizasyon, grafik optimizasyonu bulunur. Her görev, doğruluk ve gecikme gibi ölçütleri değerlendiren ilgili değerlendirici tarafından en iyi sonuçları elde etmek için ayarlanabilen parametreler içerir. Olive, her görevi tek tek veya görev gruplarını birlikte otomatik ayarlamak için bir arama algoritması kullanan bir arama stratejisi uygular.
+Olive, *workflow* adı verilen, sıralı model optimizasyon görevlerinden oluşan bir işlem yürütür. Bu görevler *passes* olarak adlandırılır; örnek olarak model sıkıştırma, grafik yakalama, kuantizasyon, grafik optimizasyonu verilebilir. Her pass, doğruluk ve gecikme gibi metrikleri optimize etmek için ayarlanabilen parametreler içerir. Olive, her pass’i tek tek veya bir grup olarak otomatik ayarlamak için bir arama algoritması kullanır.
 
-#### Olive’in Avantajları
+#### Olive’ın Faydaları
 
-- Grafik optimizasyonu, sıkıştırma ve kuantizasyon için farklı tekniklerle deneme-yanılma manuel denemelerindeki **zaman kaybını ve stresi azaltır**. Kalite ve performans kısıtlarınızı tanımlayın, Olive en iyi modeli otomatik bulsun.
+- Grafik optimizasyonu, sıkıştırma ve kuantizasyon için farklı tekniklerle deneme-yanılma yaparken yaşanan **zaman kaybı ve sıkıntıyı azaltır**. Kalite ve performans kısıtlarınızı belirleyin, Olive en iyi modeli otomatik bulsun.
 - Kuantizasyon, sıkıştırma, grafik optimizasyonu ve ince ayar alanlarında **40+ yerleşik model optimizasyon bileşeni**.
 - Yaygın model optimizasyon görevleri için **kullanımı kolay CLI**. Örneğin, olive quantize, olive auto-opt, olive finetune.
-- Model paketleme ve dağıtımı dahili.
-- **Multi LoRA servisi** için model üretimini destekler.
-- Model optimizasyon ve dağıtım görevlerini düzenlemek için YAML/JSON ile iş akışları oluşturma.
+- Model paketleme ve dağıtımı dahili olarak desteklenir.
+- **Multi LoRA servisi** için model oluşturmayı destekler.
+- Model optimizasyon ve dağıtım görevlerini düzenlemek için YAML/JSON ile workflow oluşturma.
 - **Hugging Face** ve **Azure AI** entegrasyonu.
-- Maliyetleri **düşürmek için** yerleşik **önbellekleme** mekanizması.
+- **Maliyet tasarrufu** sağlayan yerleşik **önbellekleme** mekanizması.
 
 ## Laboratuvar Talimatları
 
 > [!NOTE]  
-> Azure AI Hub ve Projenizi oluşturduğunuzdan ve A100 hesaplamanızı Lab 1’e göre yapılandırdığınızdan emin olun.
+> Azure AI Hub ve Projenizi oluşturduğunuzdan ve Lab 1’e göre A100 hesaplamanızı yapılandırdığınızdan emin olun.
 
 ### Adım 0: Azure AI Compute’a Bağlanma
 
-Azure AI compute’a **VS Code** içindeki uzak özellik kullanılarak bağlanacaksınız.
+Azure AI compute’a **VS Code**’un uzak bağlantı özelliği ile bağlanacaksınız.
 
 1. Masaüstü **VS Code** uygulamanızı açın:  
-1. **Shift+Ctrl+P** ile **komut paletini** açın  
-1. Komut paletinde **AzureML - remote: Connect to compute instance in New Window** arayın.  
-1. Azure Aboneliğinizi, Kaynak Grubunuzu, Projenizi ve Lab 1’de oluşturduğunuz Compute adını seçerek bağlantıyı tamamlayın.  
-1. Azure ML Compute düğümünüze bağlandığınızda, bu durum **VS Code’un sol alt köşesinde** görüntülenecektir `><Azure ML: Compute Name`
+2. **Shift+Ctrl+P** ile komut paletini açın  
+3. Komut paletinde **AzureML - remote: Connect to compute instance in New Window** arayın  
+4. Azure Aboneliğinizi, Kaynak Grubunuzu, Projenizi ve Lab 1’de oluşturduğunuz Compute adını seçerek bağlantıyı tamamlayın  
+5. Bağlandıktan sonra, Visual Code’un sol alt köşesinde `><Azure ML: Compute Name` görünecektir
 
 ### Adım 1: Bu repoyu klonlayın
 
-VS Code’da **Ctrl+J** ile yeni terminal açarak bu repoyu klonlayın:
+VS Code’da yeni bir terminal açmak için **Ctrl+J** kullanın ve bu repoyu klonlayın:
 
-Terminalde şu istemi göreceksiniz
+Terminalde şu istemi görmelisiniz:
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
@@ -77,19 +77,19 @@ cd ~/localfiles
 git clone https://github.com/microsoft/phi-3cookbook.git
 ```
 
-### Adım 2: VS Code’da Klasör Açma
+### Adım 2: VS Code’da Klasörü Açın
 
-Terminalde aşağıdaki komutu çalıştırarak ilgili klasörü açan yeni bir pencere açabilirsiniz:
+Terminalde aşağıdaki komutu çalıştırarak ilgili klasörde yeni bir VS Code penceresi açabilirsiniz:
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
 ```
 
-Alternatif olarak, **File** > **Open Folder** seçeneğiyle klasörü açabilirsiniz.
+Alternatif olarak, **Dosya** > **Klasör Aç** seçeneğiyle klasörü açabilirsiniz.
 
 ### Adım 3: Bağımlılıklar
 
-Azure AI Compute Instance’ınızda VS Code’da terminal açın (ipuç: **Ctrl+J**) ve bağımlılıkları yüklemek için aşağıdaki komutları çalıştırın:
+Azure AI Compute Instance’ınızda VS Code terminali açın (ipuç: **Ctrl+J**) ve bağımlılıkları yüklemek için aşağıdaki komutları çalıştırın:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -102,32 +102,32 @@ az extension add -n ml
 > [!NOTE]  
 > Tüm bağımlılıkların kurulması yaklaşık 5 dakika sürecektir.
 
-Bu laboratuvarda modelleri Azure AI Model kataloğundan indirip yükleyeceksiniz. Model kataloğuna erişebilmek için Azure’a giriş yapmanız gerekir:
+Bu laboratuvarda modelleri Azure AI Model kataloğuna indirip yükleyeceksiniz. Model kataloğuna erişmek için Azure’a giriş yapmanız gerekir:
 
 ```bash
 az login
 ```
 
 > [!NOTE]  
-> Giriş sırasında aboneliğinizi seçmeniz istenecek. Bu laboratuvar için sağlanan aboneliği seçtiğinizden emin olun.
+> Giriş sırasında aboneliğinizi seçmeniz istenecek. Laboratuvar için sağlanan aboneliği seçtiğinizden emin olun.
 
 ### Adım 4: Olive komutlarını çalıştırma
 
-VS Code’da Azure AI Compute Instance’ınızda terminal açın (ipuç: **Ctrl+J**) ve `olive-ai` conda ortamının etkin olduğundan emin olun:
+Azure AI Compute Instance’ınızda VS Code terminali açın (ipuç: **Ctrl+J**) ve `olive-ai` conda ortamının aktif olduğundan emin olun:
 
 ```bash
 conda activate olive-ai
 ```
 
-Ardından aşağıdaki Olive komutlarını komut satırında çalıştırın.
+Sonra aşağıdaki Olive komutlarını çalıştırın.
 
-1. **Veriyi inceleyin:** Bu örnekte, Phi-3.5-Mini modelini seyahatle ilgili soruları yanıtlamaya özel hale getirmek için ince ayar yapacaksınız. Aşağıdaki kod, JSON lines formatındaki veri kümesinin ilk birkaç kaydını gösterir:
+1. **Veriyi inceleyin:** Bu örnekte, seyahatle ilgili soruları yanıtlamaya özel Phi-3.5-Mini modelini ince ayar yapacaksınız. Aşağıdaki kod, JSON lines formatındaki veri setinin ilk birkaç kaydını gösterir:
 
     ```bash
     head data/data_sample_travel.jsonl
     ```
 
-1. **Modeli kuantize edin:** Modeli eğitmeden önce, Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++ adlı teknikle kuantize edeceksiniz. AWQ, çıkarım sırasında oluşan aktivasyonları dikkate alarak model ağırlıklarını kuantize eder. Bu, kuantizasyon sürecinin aktivasyonlardaki gerçek veri dağılımını göz önünde bulundurması anlamına gelir ve geleneksel ağırlık kuantizasyon yöntemlerine kıyasla model doğruluğunun daha iyi korunmasını sağlar.
+2. **Modeli kuantize edin:** Modeli eğitmeden önce, Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++ adlı bir teknik kullanan aşağıdaki komutla kuantize edersiniz. AWQ, çıkarım sırasında oluşan aktivasyonları dikkate alarak model ağırlıklarını kuantize eder. Bu sayede kuantizasyon süreci, aktivasyonlardaki gerçek veri dağılımını göz önünde bulundurarak, geleneksel ağırlık kuantizasyon yöntemlerine kıyasla model doğruluğunu daha iyi korur.
 
     ```bash
     olive quantize \
@@ -138,11 +138,11 @@ Ardından aşağıdaki Olive komutlarını komut satırında çalıştırın.
        --log_level 1
     ```
 
-    AWQ kuantizasyonunun tamamlanması **~8 dakika** sürer ve model boyutunu **~7.5GB’den ~2.5GB’ye düşürür**.
+    AWQ kuantizasyonu tamamlanması **~8 dakika** sürer ve model boyutunu **~7.5GB’den ~2.5GB’ye düşürür**.
 
-    Bu laboratuvarda, Hugging Face’den model almayı gösteriyoruz (örneğin: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
+    Bu laboratuvarda Hugging Face’den (örneğin: `microsoft/Phi-3.5-mini-instruct`) model almayı gösteriyoruz. Ancak Olive, `model_name_or_path` argümanını Azure AI varlık kimliği ile güncelleyerek Azure AI kataloğundan model almanıza da olanak tanır (örneğin: `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
 
-1. **Train the model:** Next, the `olive finetune` komutu kuantize edilmiş modeli ince ayar yapar). Modeli *ince ayar yapmadan önce* kuantize etmek, ince ayar sürecinin kuantizasyondan kaynaklanan kaybın bir kısmını telafi etmesi nedeniyle daha iyi doğruluk sağlar.
+3. **Modeli eğitin:** Sonra, `olive finetune` komutu kuantize edilmiş modeli ince ayar yapar. Modeli ince ayar yapmadan önce kuantize etmek, ince ayar sürecinin kuantizasyondan kaynaklanan kaybı kısmen telafi etmesi nedeniyle daha iyi doğruluk sağlar.
 
     ```bash
     olive finetune \
@@ -156,9 +156,9 @@ Ardından aşağıdaki Olive komutlarını komut satırında çalıştırın.
         --log_level 1
     ```
 
-    İnce ayar işlemi (100 adım ile) **~6 dakika** sürer.
+    İnce ayar (100 adımla) tamamlanması **~6 dakika** sürer.
 
-1. **Optimize edin:** Model eğitildikten sonra, Olive’ın `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` argümanlarını kullanarak modeli optimize edersiniz – ancak bu laboratuvar için CPU kullanacağız.
+4. **Optimize edin:** Model eğitildikten sonra, Olive’ın `auto-opt` komutunu kullanarak modeli optimize edin. Bu komut ONNX grafiğini yakalar ve modeli sıkıştırarak ve füzyonlar yaparak CPU performansını artırmak için otomatik optimizasyonlar gerçekleştirir. Başka cihazlar (NPU veya GPU gibi) için optimize etmek isterseniz `--device` ve `--provider` argümanlarını güncelleyebilirsiniz; ancak bu laboratuvarda CPU kullanacağız.
 
     ```bash
     olive auto-opt \
@@ -171,7 +171,7 @@ Ardından aşağıdaki Olive komutlarını komut satırında çalıştırın.
        --log_level 1
     ```
 
-    Optimizasyonun tamamlanması **~5 dakika** sürer.
+    Optimizasyon tamamlanması **~5 dakika** sürer.
 
 ### Adım 5: Model çıkarımını hızlı test etme
 
@@ -219,18 +219,20 @@ python app.py
 
 ### Adım 6: Modeli Azure AI’ya yükleme
 
-Modeli Azure AI model deposuna yüklemek, modelin geliştirme ekibinizin diğer üyeleriyle paylaşılmasını sağlar ve modelin sürüm kontrolünü yönetir. Modeli yüklemek için aşağıdaki komutu çalıştırın:
+Modeli Azure AI model deposuna yüklemek, modelinizi geliştirme ekibinizle paylaşmanızı sağlar ve modelin sürüm kontrolünü yönetir. Modeli yüklemek için aşağıdaki komutu çalıştırın:
 
 > [!NOTE]  
-> `{}` içindeki `resourceGroup` ve Azure AI Proje adını güncelleyerek aşağıdaki komutu çalıştırın
+> `{}` yer tutucularını kaynak grubunuzun ve Azure AI Proje Adınızın isimleriyle güncelleyin.
+
+Kaynak grubunuzu ve Azure AI Proje adınızı öğrenmek için şu komutu çalıştırın:
 
 ```
 az ml workspace show
 ```
 
-Alternatif olarak +++ai.azure.com+++ adresine gidip **management center** > **project** > **overview** seçeneğini kullanabilirsiniz.
+Ya da +++ai.azure.com+++ adresine gidip **management center** > **project** > **overview** seçeneğini kullanabilirsiniz.
 
-`{}` yer tutucularını kaynak grubunuzun ve Azure AI Proje adınızın isimleriyle değiştirin.
+`{}` yer tutucularını kaynak grubunuzun ve Azure AI Proje Adınızın isimleriyle güncelleyin.
 
 ```bash
 az ml model create \
@@ -243,4 +245,4 @@ az ml model create \
 Yüklediğiniz modeli https://ml.azure.com/model/list adresinde görebilir ve dağıtabilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalar nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

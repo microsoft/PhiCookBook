@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:06:03+00:00",
+  "translation_date": "2025-07-17T08:52:24+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "sw"
 }
 -->
 # Phi-3.5-vision finetuning recipe
 
-Hii ni msaada rasmi wa finetuning ya Phi-3.5-vision kwa kutumia maktaba za huggingface. Tafadhali `cd` kwenye saraka ya msimbo [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) kabla ya kuendesha amri zifuatazo.
+Hii ni msaada rasmi wa finetuning ya Phi-3.5-vision kwa kutumia maktaba za huggingface. Tafadhali `cd` kwenda kwenye saraka ya msimbo [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) kabla ya kuendesha amri zifuatazo.
 
-## Installation
+## Ufungaji
 
 ```bash
 # create a new conda environment
@@ -32,9 +32,9 @@ MAX_JOBS=32 pip install flash-attn==2.4.2 --no-build-isolation
 pip install bitsandbytes==0.43.1
 ```
 
-## Quick start
+## Anza haraka
 
-Tunatoa mifano miwili ya scripts za finetuning, moja kwa DocVQA na nyingine kwa uainishaji wa hateful meme.
+Tunatoa mifano miwili ya skripti za finetuning, moja kwa DocVQA na nyingine kwa uainishaji wa meme za chuki.
 
 Vifaa vya chini kabisa vilivyotumika ni 4x RTX8000 (48GB RAM kwa kila GPU)
 
@@ -43,21 +43,21 @@ Vifaa vya chini kabisa vilivyotumika ni 4x RTX8000 (48GB RAM kwa kila GPU)
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision sasa inasaidia rasmi ingizo la picha nyingi. Hapa kuna mfano wa finetuning NLVR2
+Phi-3.5-vision sasa inasaidia rasmi pembejeo za picha nyingi. Hapa kuna mfano wa finetuning NLVR2
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ```
 
-## Usage guide
+## Mwongozo wa matumizi
 
 Kulingana na vifaa, watumiaji wanaweza kuchagua mikakati tofauti ya finetuning. Tunasaidia
-full-finetuning (kwa Deepspeed Zero-2) na chaguo la kuweka vigezo vya kuona visivyobadilika, pamoja na LoRA (pamoja na 4bit QLoRA).
-Kwa ujumla, tunapendekeza kutumia full finetuning na flash attention na bf16 pale inapowezekana.
+full-finetuning (kwa Deepspeed Zero-2) na chaguo la kuzuia mabadiliko ya vigezo vya kuona, na LoRA (pamoja na 4bit QLoRA).
+Kwa ujumla, tunapendekeza kutumia full finetuning na flash attention na bf16 inapowezekana.
 
 ### mwongozo wa kubadilisha dataset yako maalum kuwa muundo unaohitajika
 
-Tunatumia dataset ya chini kabisa ya uainishaji video (sehemu ndogo ya UCF-101) kama mfano wa mwisho-ku-mwisho kuonyesha jinsi ya kubadilisha dataset yako maalum kuwa muundo unaohitajika na kufinetune Phi-3.5-vision juu yake.
+Tunatumia dataset ndogo ya uainishaji wa video (sehemu ya UCF-101) kama mfano wa mwisho-ku-mwisho kuonyesha jinsi ya kubadilisha dataset yako maalum kuwa muundo unaohitajika na kufinetune Phi-3.5-vision juu yake.
 
 ```bash
 # convert data
@@ -120,42 +120,42 @@ Kwa maelezo ya `jsonl`, kila mstari unapaswa kuwa kamusi kama ifuatavyo:
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Kumbuka kuwa `conversations` ni orodha, hivyo mazungumzo ya mizunguko mingi yanaweza kuungwa mkono ikiwa data kama hiyo ipo.
+Kumbuka kuwa `conversations` ni orodha, hivyo mazungumzo yenye mizunguko mingi yanaweza kuungwa mkono ikiwa data kama hiyo ipo.
 
-## Kuomba Azure GPU Quota
+## Kuomba Kiwango cha GPU cha Azure
 
 ### Masharti ya awali
 
-Akaunti ya Azure yenye cheo cha Contributor (au cheo kingine chenye ruhusa ya Contributor).
+Akaunti ya Azure yenye jukumu la Contributor (au jukumu jingine linalojumuisha upatikanaji wa Contributor).
 
-Kama huna akaunti ya Azure, tengeneza [akaunti ya bure kabla hujaanza](https://azure.microsoft.com).
+Kama huna akaunti ya Azure, tengeneza [akaunti ya bure kabla ya kuanza](https://azure.microsoft.com).
 
-### Kuomba ongezeko la quota
+### Omba ongezeko la kiwango
 
-Unaweza kuwasilisha ombi la ongezeko la quota moja kwa moja kutoka My quotas. Fuata hatua zilizo hapa chini kuomba ongezeko la quota. Kwa mfano huu, unaweza kuchagua quota yoyote inayoweza kubadilishwa katika usajili wako.
+Unaweza kuwasilisha ombi la ongezeko la kiwango moja kwa moja kutoka My quotas. Fuata hatua zilizo hapa chini kuomba ongezeko la kiwango. Kwa mfano huu, unaweza kuchagua kiwango chochote kinachoweza kubadilishwa katika usajili wako.
 
 Ingia kwenye [Azure portal](https://portal.azure.com).
 
 Andika "quotas" kwenye kisanduku cha utafutaji, kisha chagua Quotas.
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-Kwenye ukurasa wa Overview, chagua muuzaji, kama Compute au AML.
+Kwenye ukurasa wa Muhtasari, chagua mtoa huduma, kama Compute au AML.
 
-**Note** Kwa watoa huduma wote isipokuwa Compute, utaona safu ya Request increase badala ya safu ya Adjustable kama ilivyoelezwa hapa chini. Huko, unaweza kuomba ongezeko la quota maalum, au kuunda ombi la msaada kwa ajili ya ongezeko hilo.
+**Note** Kwa watoa huduma wote isipokuwa Compute, utaona safu ya Request increase badala ya safu ya Adjustable kama ilivyoelezwa hapa chini. Huko, unaweza kuomba ongezeko la kiwango fulani, au kuunda ombi la msaada kwa ajili ya ongezeko hilo.
 
-Kwenye ukurasa wa My quotas, chini ya Quota name, chagua quota unayotaka kuongeza. Hakikisha safu ya Adjustable inaonyesha Yes kwa quota hii.
+Kwenye ukurasa wa My quotas, chini ya Jina la Kiwango, chagua kiwango unachotaka kuongeza. Hakikisha safu ya Adjustable inaonyesha Ndiyo kwa kiwango hiki.
 
 Karibu juu ya ukurasa, chagua New Quota Request, kisha chagua Enter a new limit.
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-Katika dirisha la New Quota Request, ingiza thamani ya nambari kwa kikomo kipya cha quota, kisha chagua Submit.
+Kwenye dirisha la New Quota Request, ingiza thamani ya nambari kwa kikomo chako kipya cha kiwango, kisha chagua Submit.
 
-Ombi lako litapitiwa, na utajulishwa ikiwa ombi linaweza kutekelezwa. Hii kawaida hutokea ndani ya dakika chache.
+Ombi lako litapitiwa, na utajulishwa kama ombi linaweza kutimizwa. Hii kawaida hutokea ndani ya dakika chache.
 
-Kama ombi lako halitatekelezwa, utaona kiungo cha kuunda ombi la msaada. Ukitumia kiungo hiki, mhandisi wa msaada atakusaidia na ombi lako la ongezeko.
+Kama ombi lako halitatimizwa, utaona kiungo cha kuunda ombi la msaada. Unapotumia kiungo hiki, mhandisi wa msaada atakusaidia na ombi lako la ongezeko.
 
-## Mapendekezo ya Azure Compute GPU machine SKU
+## Mapendekezo ya SKU za Mashine za Azure Compute GPU
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -165,9 +165,9 @@ Kama ombi lako halitatekelezwa, utaona kiungo cha kuunda ombi la msaada. Ukitumi
 
 Hapa kuna mifano kadhaa:
 
-### Ikiwa una GPUs za A100 au H100
+### Ikiwa una GPU za A100 au H100
 
-Full finetuning kawaida huleta utendaji bora zaidi. Unaweza kutumia amri ifuatayo kufinetune Phi-3-V kwa uainishaji wa hateful memes.
+Full finetuning kawaida hutoa utendaji bora zaidi. Unaweza kutumia amri ifuatayo kufinetune Phi-3-V kwenye uainishaji wa meme za chuki.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -181,8 +181,8 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Ikiwa una Standard_ND40rs_v2 8x V100-32GB GPUs
 
-Bado inawezekana kufanya full finetune ya Phi-3-V kwa uainishaji wa hateful memes. Hata hivyo, tarajia
-kupata throughput ndogo zaidi ikilinganishwa na GPUs za A100 au H100 kutokana na ukosefu wa msaada wa flash attention.
+Bado inawezekana kufinetune kikamilifu Phi-3-V kwenye uainishaji wa meme za chuki. Hata hivyo, tarajia
+kupata throughput ya chini sana ikilinganishwa na GPU za A100 au H100 kutokana na ukosefu wa msaada wa flash attention.
 Usahihi pia unaweza kuathiriwa kutokana na ukosefu wa msaada wa bf16 (mafunzo ya mchanganyiko wa fp16 hutumika badala yake).
 
 ```bash
@@ -193,8 +193,8 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### Ikiwa huna ufikiaji wa GPUs za kituo cha data
-Lora inaweza kuwa chaguo lako pekee. Unaweza kutumia amri ifuatayo kufinetune Phi-3-V kwa uainishaji wa hateful memes.
+### Ikiwa huna upatikanaji wa GPU za kituo cha data
+Lora inaweza kuwa chaguo lako pekee. Unaweza kutumia amri ifuatayo kufinetune Phi-3-V kwenye uainishaji wa meme za chuki.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -204,7 +204,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-Kwa GPU za Turing+, QLoRA inasaidiwa
+Kwa GPU za Turing+ QLoRA inasaidiwa
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -236,8 +236,8 @@ full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
 Matokeo ya LoRA yatakuja hivi karibuni |  |  |  |  |  |  |  |  |
 
 ### NOTE
-Matokeo ya DocVQA na Hateful memes yaliyopo hapa chini yanatokana na toleo la awali (Phi-3-vision).
-Matokeo mapya ya Phi-3.5-vision yatasasishwa hivi karibuni.
+Matokeo ya DocVQA na meme za chuki yaliyo hapa chini yanatokana na toleo la awali (Phi-3-vision).
+Matokeo mapya na Phi-3.5-vision yatasasishwa hivi karibuni.
 
 ### DocVQA (NOTE: Phi-3-vision)
 
@@ -264,7 +264,7 @@ LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
 QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
-### Hateful memes (NOTE: Phi-3-vision)
+### Meme za chuki (NOTE: Phi-3-vision)
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -292,12 +292,12 @@ QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 Matokeo mapya ya kupima kasi na Phi-3.5-vision yatasasishwa hivi karibuni.
 
-Kupima kasi kunafanywa kwenye dataset ya DocVQA. Kiwango cha wastani cha mfuatano wa dataset hii ni
+Kupima kasi kunafanywa kwenye dataset ya DocVQA. Urefu wa wastani wa mfuatano wa dataset hii ni
 2443.23 tokens (kutumia `num_crops=16` kwa mfano wa picha).
 
 ### 8x A100-80GB (Ampere)
 
-Njia ya mafunzo | \# nodes | GPUs | flash attention | Ukubwa wa batch halisi | Throughput (img/s) | Kuongeza kasi | Kumbukumbu ya juu ya GPU (GB)
+Njia ya mafunzo | \# nodes | GPUs | flash attention | Ukubwa wa batch unaofanya kazi | Throughput (picha/s) | Kuongeza kasi | Kumbukumbu ya juu ya GPU (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
 full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
@@ -312,7 +312,7 @@ QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
 ### 8x V100-32GB (Volta)
 
-Njia ya mafunzo | \# nodes | GPUs | flash attention | Ukubwa wa batch halisi | Throughput (img/s) | Kuongeza kasi | Kumbukumbu ya juu ya GPU (GB)
+Njia ya mafunzo | \# nodes | GPUs | flash attention | Ukubwa wa batch unaofanya kazi | Throughput (picha/s) | Kuongeza kasi | Kumbukumbu ya juu ya GPU (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
 full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
@@ -322,8 +322,8 @@ LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
 ## Masuala yanayojulikana
 
-- Haiwezi kuendesha flash attention na fp16 (bf16 daima inapendekezwa inapopatikana, na GPUs zote zinazounga mkono flash attention pia zinaunga mkono bf16).
-- Haijaunga mkono kuhifadhi checkpoints za kati na kuendelea na mafunzo bado.
+- Haiwezi kuendesha flash attention na fp16 (bf16 daima inapendekezwa inapopatikana, na GPU zote zinazounga mkono flash attention pia zinaunga mkono bf16).
+- Haina msaada wa kuhifadhi checkpoints za kati na kuendelea na mafunzo bado.
 
-**Kasi ya Kutokuwajibika**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebwi dhamana kwa kutoelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

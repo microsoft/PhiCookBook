@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:28:52+00:00",
+  "translation_date": "2025-07-16T14:42:14+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "da"
 }
@@ -36,13 +36,13 @@ Når du indsender en pull request (PR) til Phi-3 CookBook repository, bedes du f
 
 - **Håndtering af merge-konflikter**: Hvis din pull request viser merge-konflikter, opdater da din lokale `main`-gren, så den matcher hovedrepositoryet, før du laver dine ændringer.
 
-- **Indsendelse af oversættelser**: Når du indsender en oversættelses-PR, skal du sikre, at oversættelsesmappen indeholder oversættelser for alle filer i den originale mappe.
+- **Indsendelse af oversættelser**: Når du indsender en oversættelses-PR, skal du sikre, at oversættelsesmappen indeholder oversættelser for alle filer i den oprindelige mappe.
 
 ### Skriveretningslinjer
 
 For at sikre konsistens på tværs af alle dokumenter, bedes du følge disse retningslinjer:
 
-- **URL-formatering**: Indsæt alle URLs i firkantede parenteser efterfulgt af parenteser, uden ekstra mellemrum omkring eller indeni. For eksempel: `[example](https://www.microsoft.com)`.
+- **URL-formatering**: Indsæt alle URL'er i firkantede parenteser efterfulgt af runde parenteser, uden ekstra mellemrum omkring eller indeni. For eksempel: `[example](https://www.microsoft.com)`.
 
 - **Relative links**: Brug `./` for relative links, der peger på filer eller mapper i den aktuelle mappe, og `../` for dem i en overordnet mappe. For eksempel: `[example](../../path/to/file)` eller `[example](../../../path/to/file)`.
 
@@ -54,7 +54,7 @@ For at sikre konsistens på tværs af alle dokumenter, bedes du følge disse ret
 
 ## GitHub Workflows
 
-Når du indsender en pull request, vil følgende workflows blive udløst for at validere ændringerne. Følg instruktionerne nedenfor for at sikre, at din pull request består workflow-tjek:
+Når du indsender en pull request, vil følgende workflows blive aktiveret for at validere ændringerne. Følg instruktionerne nedenfor for at sikre, at din pull request består workflow-tjek:
 
 - [Check Broken Relative Paths](../..)  
 - [Check URLs Don't Have Locale](../..)
@@ -64,7 +64,7 @@ Når du indsender en pull request, vil følgende workflows blive udløst for at 
 Denne workflow sikrer, at alle relative stier i dine filer er korrekte.
 
 1. For at sikre, at dine links fungerer korrekt, udfør følgende opgaver i VS Code:  
-    - Hold musen over et hvilket som helst link i dine filer.  
+    - Hold musen over et link i dine filer.  
     - Tryk på **Ctrl + Klik** for at navigere til linket.  
     - Hvis du klikker på et link, og det ikke virker lokalt, vil det udløse workflowet og heller ikke virke på GitHub.
 
@@ -79,25 +79,24 @@ Når du har tilføjet den korrekte relative sti, gem og push dine ændringer.
 
 Denne workflow sikrer, at web-URL'er ikke indeholder landespecifikke lokaliteter. Da dette repository er tilgængeligt globalt, er det vigtigt at sikre, at URL'er ikke indeholder din landslokalitet.
 
-1. For at verificere, at dine URL'er ikke har landelokaliteter, udfør følgende opgaver:
-
+1. For at kontrollere, at dine URL'er ikke har landespecifikke lokaliteter, udfør følgende:  
     - Tjek for tekst som `/en-us/`, `/en/` eller andre sproglokaliteter i URL'erne.  
     - Hvis disse ikke findes i dine URL'er, består du tjekket.
 
-1. For at rette dette problem, udfør følgende opgaver:  
+1. For at rette dette problem, udfør følgende:  
     - Åbn den filsti, som workflowet har markeret.  
-    - Fjern landelokaliteten fra URL'erne.
+    - Fjern landeslokaliteten fra URL'erne.
 
-Når du har fjernet landelokaliteten, gem og push dine ændringer.
+Når du har fjernet landeslokaliteten, gem og push dine ændringer.
 
 ### Check Broken Urls
 
 Denne workflow sikrer, at alle web-URL'er i dine filer fungerer og returnerer statuskode 200.
 
-1. For at verificere, at dine URL'er fungerer korrekt, udfør følgende opgaver:  
+1. For at kontrollere, at dine URL'er fungerer korrekt, udfør følgende:  
     - Tjek status for URL'erne i dine filer.
 
-2. For at rette eventuelle ødelagte URL'er, udfør følgende opgaver:  
+2. For at rette eventuelle ødelagte URL'er, udfør følgende:  
     - Åbn filen, der indeholder den ødelagte URL.  
     - Opdater URL'en til den korrekte.
 
@@ -109,7 +108,7 @@ Når du har rettet URL'erne, gem og push dine ændringer.
 >  
 > - **Netværksbegrænsninger:** GitHub actions-servere kan have netværksbegrænsninger, der forhindrer adgang til visse URL'er.  
 > - **Timeout-problemer:** URL'er, der tager for lang tid at svare, kan udløse en timeout-fejl i workflowet.  
-> - **Midlertidige serverproblemer:** Tilfældig servernedetid eller vedligeholdelse kan gøre en URL midlertidigt utilgængelig under valideringen.
+> - **Midlertidige serverproblemer:** Periodisk nedetid eller vedligeholdelse kan gøre en URL midlertidigt utilgængelig under valideringen.
 
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

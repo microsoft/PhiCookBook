@@ -2,48 +2,48 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:30:22+00:00",
+  "translation_date": "2025-07-17T07:40:36+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "hu"
 }
 -->
-## Hogyan használjuk az Azure ML rendszerregiszter chat-completion komponenseit modell finomhangolásához
+## Hogyan használjuk az Azure ML rendszerregiszter chat-kiegészítő komponenseit modell finomhangolásához
 
 Ebben a példában a Phi-3-mini-4k-instruct modellt finomhangoljuk, hogy egy két személy közötti beszélgetést fejezzen be az ultrachat_200k adathalmaz segítségével.
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.hu.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.hu.png)
 
-A példa bemutatja, hogyan végezhetünk finomhangolást az Azure ML SDK és Python segítségével, majd hogyan telepíthetjük a finomhangolt modellt valós idejű lekérdezésre egy online végpontra.
+A példa bemutatja, hogyan végezhetünk finomhangolást az Azure ML SDK és Python használatával, majd hogyan telepíthetjük a finomhangolt modellt egy online végpontra valós idejű lekérdezéshez.
 
 ### Tanító adatok
 
-Az ultrachat_200k adathalmazt használjuk. Ez az UltraChat adathalmaz erősen szűrt változata, amelyet a Zephyr-7B-β, egy csúcstechnológiás 7 milliárd paraméteres chat modell betanításához használtak.
+Az ultrachat_200k adathalmazt fogjuk használni. Ez az UltraChat adathalmaz erősen szűrt változata, amelyet a Zephyr-7B-β, egy csúcstechnológiás 7 milliárd paraméteres chat modell betanításához használtak.
 
 ### Modell
 
-A Phi-3-mini-4k-instruct modellt használjuk, hogy megmutassuk, hogyan lehet egy modellt finomhangolni chat-completion feladatra. Ha ezt a jegyzetfüzetet egy adott modell kártyájából nyitottad meg, ne felejtsd el lecserélni a modellspecifikus nevet.
+A Phi-3-mini-4k-instruct modellt használjuk, hogy megmutassuk, hogyan lehet egy modellt finomhangolni chat-kiegészítő feladatra. Ha ezt a jegyzetfüzetet egy adott modellkártyáról nyitottad meg, ne felejtsd el kicserélni a modellspecifikus nevet.
 
 ### Feladatok
 
 - Válassz egy modellt a finomhangoláshoz.
-- Válassz és vizsgáld meg a tanító adatokat.
+- Válaszd ki és vizsgáld meg a tanító adatokat.
 - Állítsd be a finomhangolási feladatot.
 - Futtasd a finomhangolási feladatot.
-- Tekintsd át a tanulási és értékelési mutatókat.
+- Tekintsd át a tanítási és értékelési mutatókat.
 - Regisztráld a finomhangolt modellt.
 - Telepítsd a finomhangolt modellt valós idejű lekérdezéshez.
-- Tisztítsd meg az erőforrásokat.
+- Takarítsd el az erőforrásokat.
 
 ## 1. Előfeltételek beállítása
 
 - Telepítsd a függőségeket
-- Csatlakozz az AzureML Workspace-hez. További információ a SDK hitelesítés beállításáról. Cseréld ki az alábbi <WORKSPACE_NAME>, <RESOURCE_GROUP> és <SUBSCRIPTION_ID> helyőrzőket.
+- Csatlakozz az AzureML munkaterülethez. További információkért lásd az SDK hitelesítés beállítását. Cseréld ki az alábbi <WORKSPACE_NAME>, <RESOURCE_GROUP> és <SUBSCRIPTION_ID> értékeket.
 - Csatlakozz az azureml rendszerregiszterhez
-- Állíts be opcionális kísérlet nevet
+- Állíts be opcionálisan egy kísérlet nevet
 - Ellenőrizd vagy hozd létre a számítási erőforrást.
 
 > [!NOTE]
-> Egyetlen GPU node több GPU kártyát is tartalmazhat. Például a Standard_NC24rs_v3 node-on 4 NVIDIA V100 GPU található, míg a Standard_NC12s_v3 node-on 2 NVIDIA V100 GPU van. Erről a dokumentációban találsz részleteket. A node-onkénti GPU kártyák számát az alábbi gpus_per_node paraméter határozza meg. Ennek helyes beállítása biztosítja az összes GPU kihasználását a node-ban. A javasolt GPU compute SKU-k itt és itt találhatók.
+> Egyetlen GPU csomópont több GPU kártyát is tartalmazhat. Például a Standard_NC24rs_v3 csomópontban 4 NVIDIA V100 GPU van, míg a Standard_NC12s_v3-ban 2 NVIDIA V100 GPU található. Erről további információ a dokumentációban. A csomópontonkénti GPU kártyák számát az alábbi gpus_per_node paraméter határozza meg. Ennek helyes beállítása biztosítja az összes GPU kihasználását a csomóponton. Az ajánlott GPU számítási SKU-k itt és itt találhatók.
 
 ### Python könyvtárak
 
@@ -59,19 +59,19 @@ pip install azureml-mlflow
 
 ### Kapcsolódás az Azure ML-hez
 
-1. Ez a Python szkript az Azure Machine Learning (Azure ML) szolgáltatással való interakcióra szolgál. A működése a következő:
+1. Ez a Python szkript az Azure Machine Learning (Azure ML) szolgáltatással való interakcióra szolgál. Íme, mit csinál:
 
-    - Importálja a szükséges modulokat az azure.ai.ml, azure.identity és azure.ai.ml.entities csomagokból, valamint a time modult.
+    - Importálja a szükséges modulokat az azure.ai.ml, azure.identity és azure.ai.ml.entities csomagokból. Emellett importálja a time modult is.
 
-    - Megpróbál bejelentkezni a DefaultAzureCredential() segítségével, amely egyszerűsített hitelesítést biztosít Azure környezetben futó alkalmazásokhoz. Ha ez nem sikerül, az InteractiveBrowserCredential()-re vált, amely interaktív bejelentkezési ablakot nyit.
+    - Megpróbál hitelesíteni a DefaultAzureCredential() segítségével, amely egyszerűsített hitelesítést biztosít az Azure felhőben futó alkalmazások gyors fejlesztéséhez. Ha ez nem sikerül, az InteractiveBrowserCredential()-re vált, amely interaktív bejelentkezési ablakot nyit.
 
-    - Ezután megpróbál létrehozni egy MLClient példányt a from_config metódussal, amely az alapértelmezett config fájlból (config.json) olvassa be a beállításokat. Ha ez nem sikerül, manuálisan hozza létre az MLClient-et a subscription_id, resource_group_name és workspace_name megadásával.
+    - Ezután megpróbál létrehozni egy MLClient példányt a from_config metódussal, amely az alapértelmezett config fájlból (config.json) olvassa be a beállításokat. Ha ez nem sikerül, manuálisan hoz létre MLClient példányt a subscription_id, resource_group_name és workspace_name megadásával.
 
-    - Egy másik MLClient példányt hoz létre az "azureml" nevű Azure ML regiszterhez, ahol a modellek, finomhangolási pipeline-ok és környezetek vannak tárolva.
+    - Létrehoz egy másik MLClient példányt az "azureml" nevű Azure ML rendszerregiszterhez. Ebben a regiszterben tárolják a modelleket, finomhangolási pipeline-okat és környezeteket.
 
     - Beállítja az experiment_name értékét "chat_completion_Phi-3-mini-4k-instruct"-ra.
 
-    - Egyedi időbélyeget generál a jelenlegi idő (másodpercben, lebegőpontos számként) egész számra konvertálásával, majd sztringgé alakításával. Ezt az időbélyeget egyedi nevek és verziók létrehozására használhatjuk.
+    - Egyedi időbélyeget generál az aktuális idő (másodpercben az epoch óta, lebegőpontos számként) egész számra konvertálásával, majd sztringgé alakításával. Ezt az időbélyeget egyedi nevek és verziók létrehozásához használhatjuk.
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -114,18 +114,18 @@ pip install azureml-mlflow
 
 ## 2. Válassz egy alapmodellt a finomhangoláshoz
 
-1. A Phi-3-mini-4k-instruct egy 3,8 milliárd paraméteres, könnyű, csúcstechnológiás nyílt modell, amely a Phi-2-höz használt adathalmazokra épül. A modell a Phi-3 családhoz tartozik, a Mini verzió pedig két változatban érhető el: 4K és 128K, ami a támogatott kontextushossz (tokenekben). A modellt a saját célunkra kell finomhangolni. Ezeket a modelleket megtekintheted az AzureML Studio Modell Katalógusában, szűrve a chat-completion feladatra. Ebben a példában a Phi-3-mini-4k-instruct modellt használjuk. Ha más modellhez nyitottad meg a jegyzetfüzetet, cseréld ki a modellt és verzióját ennek megfelelően.
+1. A Phi-3-mini-4k-instruct egy 3,8 milliárd paraméteres, könnyű, csúcstechnológiás nyílt modell, amely a Phi-2 modellhez használt adathalmazokon alapul. A modell a Phi-3 modellcsaládhoz tartozik, és a Mini verzió két változatban érhető el: 4K és 128K, ami a támogatott kontextushossz (tokenekben). A modellt a saját célunkra kell finomhangolni. Ezeket a modelleket megtekintheted az AzureML Studio Modell Katalógusában, a chat-kiegészítő feladatra szűrve. Ebben a példában a Phi-3-mini-4k-instruct modellt használjuk. Ha más modellhez nyitottad meg ezt a jegyzetfüzetet, cseréld ki a modell nevét és verzióját ennek megfelelően.
 
     > [!NOTE]
-    > A modell id tulajdonsága. Ezt adjuk át a finomhangolási feladatnak bemenetként. Ez megtalálható az AzureML Studio Modell Katalógus modell részletei között az Asset ID mezőben.
+    > A modell id tulajdonsága. Ezt adjuk majd meg bemenetként a finomhangolási feladatnak. Ez az Asset ID mezőként is elérhető a modell részletei között az AzureML Studio Modell Katalógusban.
 
-2. Ez a Python szkript az Azure Machine Learning (Azure ML) szolgáltatással lép kapcsolatba. A működése a következő:
+2. Ez a Python szkript az Azure Machine Learning (Azure ML) szolgáltatással kommunikál. Íme, mit csinál:
 
     - Beállítja a model_name értékét "Phi-3-mini-4k-instruct"-ra.
 
-    - A registry_ml_client models get metódusával lekéri a megadott nevű modell legújabb verzióját az Azure ML regiszterből. A get metódus két paraméterrel hívódik: a modell neve és egy címke, amely jelzi, hogy a legfrissebb verziót kérjük.
+    - A registry_ml_client objektum models tulajdonságának get metódusával lekéri a megadott nevű modell legfrissebb verzióját az Azure ML rendszerregiszterből. A get metódus két argumentummal hívódik: a modell neve és egy címke, amely azt jelzi, hogy a legfrissebb verziót kérjük.
 
-    - Kiír egy üzenetet a konzolra, amely jelzi a finomhangoláshoz használt modell nevét, verzióját és azonosítóját. A format metódussal illeszti be ezeket az értékeket az üzenetbe. A név, verzió és id a foundation_model objektum tulajdonságai.
+    - Kiír egy üzenetet a konzolra, amely tartalmazza a finomhangoláshoz használt modell nevét, verzióját és azonosítóját. A string format metódusa segítségével illeszti be ezeket az értékeket az üzenetbe. A modell neve, verziója és azonosítója a foundation_model objektum tulajdonságai.
 
     ```python
     # Set the model name
@@ -145,27 +145,27 @@ pip install azureml-mlflow
 
 ## 3. Hozz létre számítási erőforrást a feladathoz
 
-A finomhangolási feladat CSAK GPU számítást használ. A számítási erőforrás mérete a modell nagyságától függ, és sokszor nehéz megtalálni a megfelelő méretet. Ebben a cellában útmutatást adunk a megfelelő számítás kiválasztásához.
+A finomhangolási feladat CSAK GPU számításon működik. A számítási erőforrás mérete a modell méretétől függ, és sok esetben nehéz megtalálni a megfelelő erőforrást. Ebben a cellában segítünk a megfelelő számítási erőforrás kiválasztásában.
 
 > [!NOTE]
-> Az alábbi számítások a legoptimálisabb konfigurációval működnek. Bármilyen konfigurációs változtatás Cuda Out Of Memory hibához vezethet. Ilyen esetben próbáld meg nagyobb méretű számításra váltani.
+> Az alábbi számítási erőforrások a legoptimálisabb konfigurációval működnek. Bármilyen konfigurációváltoztatás Cuda Out Of Memory hibához vezethet. Ilyen esetekben próbáld meg nagyobb méretű számítást választani.
 
 > [!NOTE]
-> A compute_cluster_size kiválasztásakor győződj meg róla, hogy a számítási erőforrás elérhető a resource groupodban. Ha egy adott számítás nem elérhető, kérhetsz hozzáférést.
+> A compute_cluster_size kiválasztásakor győződj meg róla, hogy az adott számítási erőforrás elérhető a saját erőforráscsoportodban. Ha egy adott számítási erőforrás nem elérhető, kérhetsz hozzáférést.
 
 ### A modell finomhangolási támogatásának ellenőrzése
 
-1. Ez a Python szkript egy Azure Machine Learning (Azure ML) modellel lép kapcsolatba. A működése:
+1. Ez a Python szkript egy Azure Machine Learning (Azure ML) modellel kommunikál. Íme, mit csinál:
 
-    - Importálja az ast modult, amely a Python absztrakt szintaxisfájának feldolgozására szolgáló funkciókat tartalmaz.
+    - Importálja az ast modult, amely a Python absztrakt szintaxisfájának feldolgozásához nyújt funkciókat.
 
-    - Ellenőrzi, hogy a foundation_model objektum rendelkezik-e finetune_compute_allow_list nevű címkével. Az Azure ML-ben a címkék kulcs-érték párok, amelyeket a modellek szűrésére és rendezésére használhatunk.
+    - Ellenőrzi, hogy a foundation_model objektumnak (ami egy Azure ML modellt reprezentál) van-e finetune_compute_allow_list nevű címkéje. Az Azure ML címkék kulcs-érték párok, amelyeket modellek szűrésére és rendezésére használhatunk.
 
-    - Ha a finetune_compute_allow_list címke jelen van, az ast.literal_eval segítségével biztonságosan átalakítja a címke értékét (sztringet) Python listává, amelyet a computes_allow_list változóhoz rendel. Ezután kiír egy üzenetet, hogy a számítást a listából kell választani.
+    - Ha a finetune_compute_allow_list címke jelen van, az ast.literal_eval függvénnyel biztonságosan átalakítja a címke értékét (ami egy sztring) Python listává. Ezt a listát a computes_allow_list változóhoz rendeli. Ezután kiír egy üzenetet, hogy a számítási erőforrást ebből a listából kell létrehozni.
 
-    - Ha nincs ilyen címke, a computes_allow_list értéke None lesz, és erről tájékoztatást ad.
+    - Ha a finetune_compute_allow_list címke nem található, a computes_allow_list értékét None-ra állítja, és kiírja, hogy a címke nem része a modell címkéinek.
 
-    - Összefoglalva: a szkript ellenőrzi, hogy a modell metaadatai között van-e egy speciális címke, és ha igen, listaként értelmezi azt, majd visszajelzést ad.
+    - Összefoglalva, ez a szkript ellenőrzi a modell metaadataiban egy adott címke meglétét, ha van, listává alakítja az értékét, és visszajelzést ad a felhasználónak.
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -188,19 +188,19 @@ A finomhangolási feladat CSAK GPU számítást használ. A számítási erőfor
 
 ### Számítási példány ellenőrzése
 
-1. Ez a Python szkript az Azure Machine Learning (Azure ML) szolgáltatással lép kapcsolatba, és több ellenőrzést végez egy számítási példányon. A működése:
+1. Ez a Python szkript az Azure Machine Learning (Azure ML) szolgáltatással kommunikál, és több ellenőrzést végez egy számítási példányon. Íme, mit csinál:
 
-    - Megpróbálja lekérni a compute_cluster nevű számítási példányt az Azure ML workspace-ből. Ha a példány provisioning állapota "failed", hibát dob.
+    - Megpróbálja lekérni a compute_cluster nevű számítási példányt az Azure ML munkaterületről. Ha a példány provisioning állapota "failed", hibát dob.
 
-    - Ellenőrzi, hogy a computes_allow_list nem None-e. Ha nem, az összes méretet kisbetűssé alakítja, majd ellenőrzi, hogy a jelenlegi számítási példány mérete szerepel-e a listában. Ha nem, hibát dob.
+    - Ellenőrzi, hogy a computes_allow_list nem None-e. Ha nem az, az összes engedélyezett számítási méretet kisbetűssé alakítja, majd ellenőrzi, hogy a jelenlegi számítási példány mérete szerepel-e a listában. Ha nem, hibát dob.
 
-    - Ha a computes_allow_list None, akkor ellenőrzi, hogy a számítási példány mérete nem szerepel-e a nem támogatott GPU VM méretek listájában. Ha igen, hibát dob.
+    - Ha a computes_allow_list None, akkor ellenőrzi, hogy a számítási példány mérete nem szerepel-e az alátámasztatlan GPU VM méretek listájában. Ha igen, hibát dob.
 
-    - Lekéri az összes elérhető számítási méretet a workspace-ből, majd végigiterál rajtuk. Ha talál olyan méretet, amely megegyezik a jelenlegi számítás méretével, lekéri a GPU-k számát és gpu_count_found értéket True-ra állítja.
+    - Lekéri az összes elérhető számítási méret listáját a munkaterületen. Végigiterál ezen a listán, és ha talál olyan méretet, amely megegyezik a jelenlegi számítási példány méretével, lekéri az adott mérethez tartozó GPU-k számát, és beállítja a gpu_count_found változót True-ra.
 
-    - Ha gpu_count_found True, kiírja a GPU-k számát a számítási példányban. Ha False, hibát dob.
+    - Ha gpu_count_found True, kiírja a számítási példányban található GPU-k számát. Ha False, hibát dob.
 
-    - Összefoglalva: a szkript több ellenőrzést végez egy számítási példányon, beleértve az állapotát, méretét az engedélyezett vagy tiltott listák alapján, valamint a GPU-k számát.
+    - Összefoglalva, ez a szkript több ellenőrzést végez egy Azure ML munkaterületen lévő számítási példányon, beleértve a provisioning állapotát, méretét az engedélyezett vagy tiltott listák alapján, valamint a GPU-k számát.
 
     ```python
     # Print the exception message
@@ -271,7 +271,7 @@ A finomhangolási feladat CSAK GPU számítást használ. A számítási erőfor
 
 ## 4. Válaszd ki az adathalmazt a modell finomhangolásához
 
-1. Az ultrachat_200k adathalmazt használjuk. Az adathalmaz négy részre van bontva, amely alkalmas felügyelt finomhangolásra (sft). A példák száma az egyes részekben a következő:
+1. Az ultrachat_200k adathalmazt használjuk. Az adathalmaz négy részre van osztva, amelyek alkalmasak felügyelt finomhangolásra (sft). Generációs rangsorolás (gen). Az egyes részek példáinak száma a következő:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
@@ -280,32 +280,30 @@ A finomhangolási feladat CSAK GPU számítást használ. A számítási erőfor
 
 1. A következő néhány cella az alapvető adat-előkészítést mutatja be a finomhangoláshoz:
 
-### Néhány adat sor vizualizálása
+### Néhány adat sor megjelenítése
 
-Szeretnénk, ha ez a mintafuttatás gyors lenne, ezért a train_sft és test_sft fájlokat csak az eredeti adatok 5%-ával mentjük el. Ez azt jelenti, hogy a finomhangolt modell pontossága alacsonyabb lesz, így nem ajánlott valós használatra.
+A mintát gyors futtatás érdekében úgy mentjük el, hogy a train_sft és test_sft fájlok az eredeti adatok 5%-át tartalmazzák. Ez azt jelenti, hogy a finomhangolt modell pontossága alacsonyabb lesz, ezért nem ajánlott valós környezetben használni.
+A download-dataset.py segédprogram letölti az ultrachat_200k adathalmazt, és átalakítja azt a finomhangolási pipeline komponens által fogyasztható formátumba. Mivel az adathalmaz nagy, itt csak egy részét használjuk.
 
-A download-dataset.py szkript az ultrachat_200k adathalmaz letöltésére és a finomhangolási pipeline komponens számára feldolgozására szolgál. Mivel az adathalmaz nagy, itt csak egy részét használjuk.
-
-1. Az alábbi szkript csak az adatok 5%-át tölti le. Ez az érték a dataset_split_pc paraméter módosításával növelhető.
+1. Az alábbi szkript csak az adatok 5%-át tölti le. Ezt a dataset_split_pc paraméter módosításával növelheted a kívánt százalékra.
 
     > [!NOTE]
     > Egyes nyelvi modellek eltérő nyelvkódokat használnak, ezért az adathalmaz oszlopneveinek is ennek megfelelően kell tükrözniük ezt.
 
-1. Íme egy példa arra, hogy hogyan néz ki az adat:
+1. Íme egy példa arra, hogyan néz ki az adat
+A chat-kiegészítő adathalmaz parquet formátumban van tárolva, minden bejegyzés a következő sémát követi:
 
-A chat-completion adathalmaz parquet formátumban van tárolva, minden bejegyzés a következő sémát követi:
+    - Ez egy JSON (JavaScript Object Notation) dokumentum, amely egy népszerű adatcsere formátum. Nem futtatható kód, hanem adat tárolására és továbbítására szolgál. Íme a szerkezete:
 
-    - Ez egy JSON (JavaScript Object Notation) dokumentum, amely egy népszerű adatcsere formátum. Nem futtatható kód, hanem adat tárolására és továbbítására szolgál. A struktúrája:
+    - "prompt": Ez a kulcs egy sztring értéket tartalmaz, amely egy feladatot vagy kérdést jelöl az AI asszisztens felé.
 
-    - "prompt": Egy szöveg, amely egy feladatot vagy kérdést tartalmaz az AI asszisztens számára.
+    - "messages": Ez a kulcs egy objektumokból álló tömböt tartalmaz. Minden objektum egy üzenetet jelöl egy felhasználó és egy AI asszisztens közötti beszélgetésben. Minden üzenet objektumnak két kulcsa van:
 
-    - "messages": Egy objektum tömb, amely egy felhasználó és egy AI asszisztens közötti beszélgetés üzeneteit tartalmazza. Minden üzenet objektumnak két kulcsa van:
+    - "content": Ez a kulcs egy sztring értéket tartalmaz, amely az üzenet tartalmát jelöli.
+    - "role": Ez a kulcs egy sztring értéket tartalmaz, amely az üzenetet küldő entitás szerepét jelöli. Lehet "user" vagy "assistant".
+    - "prompt_id": Ez a kulcs egy sztring értéket tartalmaz, amely az adott prompt egyedi azonosítója.
 
-    - "content": Az üzenet szövege.
-    - "role": Az üzenetet küldő szerepe, lehet "user" vagy "assistant".
-    - "prompt_id": Egyedi azonosító a prompt számára.
-
-1. Ebben a JSON dokumentumban egy beszélgetés jelenik meg, ahol a felhasználó egy disztópikus történet főhősének létrehozását kéri az AI asszisztenstől. Az asszisztens válaszol, majd a felhasználó további részleteket kér, amire az asszisztens beleegyezik. Az egész beszélgetés egy adott prompt azonosítóhoz kötött.
+1. Ebben a konkrét JSON dokumentumban egy beszélgetés látható, ahol a felhasználó egy disztópikus történet főszereplőjének megalkotását kéri az AI asszisztenstől. Az asszisztens válaszol, majd a felhasználó további részleteket kér. Az asszisztens beleegyezik, hogy több részletet ad. Az egész beszélgetés egy adott prompt azonosítóhoz kapcsolódik.
 
     ```python
     {
@@ -347,15 +345,15 @@ A chat-completion adathalmaz parquet formátumban van tárolva, minden bejegyzé
 
 ### Adatok letöltése
 
-1. Ez a Python szkript egy letöltő szkriptet futtat a download-dataset.py segítségével. A működése:
+1. Ez a Python szkript egy segédprogramot, a download-dataset.py-t használja egy adathalmaz letöltésére. Íme, mit csinál:
 
-    - Importálja az os modult, amely hordozható módon teszi elérhetővé az operációs rendszer funkcióit.
+    - Importálja az os modult, amely hordozható módon biztosít operációs rendszer függő funkciókat.
 
-    - Az os.system függvénnyel futtatja a download-dataset.py szkriptet shell-ben, megadva a letöltendő adathalmaz nevét (HuggingFaceH4/ultrachat_200k), a célkönyvtárat (ultrachat_200k_dataset) és a letöltési százalékot (5). Az os.system visszatérési értéke az exit_status változóba kerül.
+    - Az os.system függvénnyel futtatja a download-dataset.py szkriptet a shellben, megadva a letöltendő adathalmazt (HuggingFaceH4/ultrachat_200k), a letöltési könyvtárat (ultrachat_200k_dataset) és az adathalmaz felosztásának százalékát (5). Az os.system a parancs kilépési státuszát adja vissza, amelyet az exit_status változóban tárol.
 
-    - Ellenőrzi, hogy az exit_status nem 0-e. Unix-szerű rendszereken a 0 sikeres futást jelez, más érték hibát. Ha hiba történt, kivételt dob.
+    - Ellenőrzi, hogy az exit_status nem 0-e. Unix-szerű rendszereken a 0 azt jelenti, hogy a parancs sikeresen lefutott, minden más érték hibát jelez. Ha nem 0, kivételt dob egy hibaüzenettel, amely jelzi, hogy hiba történt az adathalmaz letöltése során.
 
-    - Összefoglalva: ez a szkript egy segédprogrammal letölti az adathalmazt, és hibát jelez, ha a letöltés sikertelen.
+    - Összefoglalva, ez a szkript egy segédprogram segítségével letölt egy adathalmazt, és hibát jelez, ha a letöltés nem sikerül.
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -377,19 +375,18 @@ A chat-completion adathalmaz parquet formátumban van tárolva, minden bejegyzé
 
 ### Adatok betöltése DataFrame-be
 
-1. Ez a Python szkript JSON Lines fájlt tölt be pandas DataFrame-be és megjeleníti az első 5 sort. A működése:
+1. Ez a Python szkript egy JSON Lines fájlt tölt be egy pandas DataFrame-be, és megjeleníti az első 5 sort. Íme, mit csinál:
 
-    - Importálja a pandas könyvtárat, amely hatékony adatkezelési és elemzési eszköz.
+    - Importálja a pandas könyvtárat, amely egy erőteljes adatmanipulációs és elemző könyvtár.
 
-    - Beállítja a pandas megjelenítési opcióit úgy, hogy a oszlopok maximális szélessége 0 legyen, azaz a teljes szöveg látszódjon.
+    - Beállítja a pandas megjelenítési opciói között az oszlopok maximális szélességét 0-ra, ami azt jelenti, hogy az oszlopok teljes szövege megjelenik, nem lesz levágva, amikor a DataFrame-et kiírjuk.
 
-    - A pd.read_json függvénnyel betölti a train_sft.jsonl fájlt az ultrachat_200k_dataset könyvtárból. A lines=True paraméter jelzi, hogy JSON Lines formátumról van szó, ahol minden sor külön JSON objektum.
+    - A pd.read_json függvénnyel betölti a train_sft.jsonl fájlt az ultrachat_200k_dataset könyvtárból egy DataFrame-be.
+- A head metódust használja a DataFrame első 5 sorának megjelenítésére. Ha a DataFrame kevesebb, mint 5 sort tartalmaz, akkor az összes sort megjeleníti.
 
-    - A head metódussal megjeleníti az első 5 sort (vagy kevesebbet, ha kevesebb sor van).
+- Összefoglalva, ez a szkript egy JSON Lines fájlt tölt be egy DataFrame-be, és megjeleníti az első 5 sort a teljes oszlopszöveggel.
 
-    - Összefoglalva: betölti a JSON Lines fájlt DataFrame-be és megjeleníti az első 5 sort teljes oszlopszöveggel.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -406,25 +403,103 @@ A chat-completion adathalmaz parquet formátumban van tárolva, minden bejegyzé
     df.head()
     ```
 
-## 5. Küldd be a finomhangolási feladatot a modell és az adatok használatával
+## 5. Küldje be a finomhangolási feladatot a modell és az adatok megadásával
 
-Hozd létre a chat-completion pipeline komponenst használó feladatot. Tudj meg többet a finomhangolás támogatott paramétereiről.
+Hozza létre azt a feladatot, amely a chat-completion pipeline komponenst használja. Tudjon meg többet a finomhangoláshoz támogatott összes paraméterről.
 
-### Finomhangolási paraméterek definiálása
+### Finomhangolási paraméterek meghatározása
 
-1. A finomhangolási paraméterek két csoportra oszthatók – tanulási paraméterek és optimalizációs paraméterek.
+1. A finomhangolási paraméterek két kategóriába sorolhatók – tanítási paraméterek és optimalizációs paraméterek
 
-1. A tanulási paraméterek határozzák meg a tanulás részleteit, például:
+1. A tanítási paraméterek a tanítási folyamat szempontjait határozzák meg, például -
 
     - Az alkalmazott optimalizáló és ütemező
-    - A finomhangolás során optimalizálandó mérőszám
-    - A tanulási lépések száma, batch méret és egyéb beállítások
-    - Az optimalizációs paraméterek segítenek a GPU memória hatékony használatában és a számítási erőforrások kihasználásában.
+    - A finomhangolás optimalizálására szolgáló metrika
+    - A tanítási lépések száma, a batch méret és így tovább
+    - Az optimalizációs paraméterek segítenek a GPU memória optimalizálásában és a számítási erőforrások hatékony kihasználásában.
 
-1. Az alábbiakban néhány példa az optimalizációs paraméterekre, amelyek modellfüggőek és a modellhez csomagolva vannak a különbségek kezelésére:
+1. Az alábbiakban néhány paraméter található, amelyek ebbe a kategóriába tartoznak. Az optimalizációs paraméterek modellfüggőek, és a modellhez csomagolva kezelik ezeket a különbségeket.
+
+    - DeepSpeed és LoRA engedélyezése
+    - Vegyes precizitású tanítás engedélyezése
+    - Többcsomópontos tanítás engedélyezése
 
 
-training pipeline különböző paraméterek alapján, majd kiírja ezt a megjelenítendő nevet. ```python
+> [!NOTE]
+> A felügyelt finomhangolás eredményezhet eltérést az illeszkedésben vagy katasztrofális felejtést. Javasoljuk, hogy ellenőrizze ezt a problémát, és futtasson egy illeszkedési szakaszt a finomhangolás után.
+
+### Finomhangolási paraméterek
+
+1. Ez a Python szkript beállítja a gépi tanulási modell finomhangolásához szükséges paramétereket. Íme, mit csinál:
+
+    - Beállítja az alapértelmezett tanítási paramétereket, mint például a tanítási epochok száma, a tanítási és értékelési batch méretek, a tanulási ráta és a tanulási ráta ütemező típusa.
+
+    - Beállítja az alapértelmezett optimalizációs paramétereket, például hogy alkalmazza-e a Layer-wise Relevance Propagation-t (LoRa) és a DeepSpeed-et, valamint a DeepSpeed szintjét.
+
+    - Egyesíti a tanítási és optimalizációs paramétereket egyetlen szótárba, amelynek neve finetune_parameters.
+
+    - Ellenőrzi, hogy a foundation_model rendelkezik-e modell-specifikus alapértelmezett paraméterekkel. Ha igen, figyelmeztető üzenetet ír ki, és frissíti a finetune_parameters szótárat ezekkel a modell-specifikus alapértelmezettekkel. Az ast.literal_eval függvényt használja a modell-specifikus alapértelmezettek sztringből Python szótárrá alakításához.
+
+    - Kiírja a finomhangoláshoz használt végleges paramétereket.
+
+    - Összefoglalva, ez a szkript beállítja és megjeleníti a gépi tanulási modell finomhangolásához szükséges paramétereket, lehetőséget adva az alapértelmezett paraméterek modell-specifikus felülírására.
+
+```python
+    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    training_parameters = dict(
+        num_train_epochs=3,
+        per_device_train_batch_size=1,
+        per_device_eval_batch_size=1,
+        learning_rate=5e-6,
+        lr_scheduler_type="cosine",
+    )
+    
+    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    optimization_parameters = dict(
+        apply_lora="true",
+        apply_deepspeed="true",
+        deepspeed_stage=2,
+    )
+    
+    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    finetune_parameters = {**training_parameters, **optimization_parameters}
+    
+    # Check if the foundation_model has any model-specific default parameters
+    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
+    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    if "model_specific_defaults" in foundation_model.tags:
+        print("Warning! Model specific defaults exist. The defaults could be overridden.")
+        finetune_parameters.update(
+            ast.literal_eval(  # convert string to python dict
+                foundation_model.tags["model_specific_defaults"]
+            )
+        )
+    
+    # Print the final set of fine-tuning parameters that will be used for the run
+    print(
+        f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
+    )
+    ```
+
+### Tanítási pipeline
+
+1. Ez a Python szkript egy függvényt definiál, amely egy megjelenítendő nevet generál egy gépi tanulási tanítási pipeline számára, majd meghívja ezt a függvényt a név generálására és kiírására. Íme, mit csinál:
+
+1. Definiálja a get_pipeline_display_name függvényt, amely a tanítási pipeline különböző paraméterei alapján generál megjelenítendő nevet.
+
+1. A függvényen belül kiszámolja az összesített batch méretet úgy, hogy megszorozza az eszközönkénti batch méretet, a gradiens akumulációs lépések számát, a node-onkénti GPU-k számát és a finomhangoláshoz használt node-ok számát.
+
+1. Lekéri a tanulási ráta ütemező típusát, hogy alkalmazzák-e a DeepSpeed-et, a DeepSpeed szintjét, hogy alkalmazzák-e a Layer-wise Relevance Propagation-t (LoRa), a megtartandó modell checkpointok számának korlátját, valamint a maximális szekvencia hosszát.
+
+1. Összeállít egy sztringet, amely tartalmazza ezeket a paramétereket kötőjellel elválasztva. Ha DeepSpeed vagy LoRa alkalmazva van, a sztring tartalmazza a "ds" és a DeepSpeed szintjét, vagy "lora" szavakat. Ha nem, akkor "nods" vagy "nolora" szerepel benne.
+
+1. A függvény visszaadja ezt a sztringet, amely a tanítási pipeline megjelenítendő neve lesz.
+
+1. A függvény definiálása után meghívja azt a megjelenítendő név generálására, majd kiírja azt.
+
+1. Összefoglalva, ez a szkript egy gépi tanulási tanítási pipeline megjelenítendő nevét generálja különböző paraméterek alapján, majd kiírja azt.
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -481,22 +556,25 @@ training pipeline különböző paraméterek alapján, majd kiírja ezt a megjel
 
 ### Pipeline konfigurálása
 
-Ez a Python szkript egy gépi tanulási pipeline-t definiál és konfigurál az Azure Machine Learning SDK segítségével. Íme, mit csinál lépésről lépésre:
+Ez a Python szkript egy gépi tanulási pipeline-t definiál és konfigurál az Azure Machine Learning SDK segítségével. Íme, mit csinál:
 
 1. Importálja a szükséges modulokat az Azure AI ML SDK-ból.
-2. Lekéri a "chat_completion_pipeline" nevű pipeline komponenst a regiszterből.
-3. Definiál egy pipeline munkát a `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+1. Lekéri a "chat_completion_pipeline" nevű pipeline komponenst a regiszterből.
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+1. Definiál egy pipeline feladatot a `@pipeline` dekorátorral és a `create_pipeline` függvénnyel. A pipeline neve a `pipeline_display_name` lesz.
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. A `create_pipeline` függvényen belül inicializálja a lekért pipeline komponenst különböző paraméterekkel, beleértve a modell elérési útját, a különböző szakaszokhoz tartozó számítási klasztereket, a tanítási és tesztelési adathalmaz részeket, a finomhangoláshoz használt GPU-k számát és egyéb finomhangolási paramétereket.
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. Leképezi a finomhangolási feladat kimenetét a pipeline feladat kimenetére. Ez azért történik, hogy a finomhangolt modellt könnyen regisztrálni lehessen, ami szükséges a modell online vagy batch végpontra történő telepítéséhez.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False` használatával, ami azt jelenti, hogy a pipeline leáll, ha bármelyik lépés hibát jelez.
-4. Összefoglalva, ez a szkript egy gépi tanulási pipeline-t definiál és konfigurál chat befejező feladathoz az Azure Machine Learning SDK-val.
+1. Létrehozza a pipeline példányát a `create_pipeline` függvény meghívásával.
+
+1. Beállítja a pipeline `force_rerun` beállítását `True` értékre, ami azt jelenti, hogy a korábbi feladatok gyorsítótárazott eredményeit nem használja fel.
+
+1. Beállítja a pipeline `continue_on_step_failure` beállítását `False` értékre, vagyis a pipeline leáll, ha bármelyik lépés hibát jelez.
+
+1. Összefoglalva, ez a szkript egy gépi tanulási pipeline-t definiál és konfigurál egy chat completion feladathoz az Azure Machine Learning SDK segítségével.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -549,13 +627,15 @@ Ez a Python szkript egy gépi tanulási pipeline-t definiál és konfigurál az 
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### A munka beküldése
+### Feladat beküldése
 
-1. Ez a Python szkript egy gépi tanulási pipeline munkát küld be egy Azure Machine Learning munkaterületre, majd megvárja a munka befejezését. Íme, mit csinál:
+1. Ez a Python szkript egy gépi tanulási pipeline feladatot küld be egy Azure Machine Learning munkaterületre, majd várja a feladat befejezését. Íme, mit csinál:
 
-- Meghívja a workspace_ml_client jobs objektumának create_or_update metódusát, hogy beküldje a pipeline munkát. A futtatandó pipeline-t a pipeline_object határozza meg, az alá tartozó kísérletet pedig az experiment_name.
-- Ezután meghívja a workspace_ml_client jobs objektumának stream metódusát, hogy megvárja a pipeline munka befejezését. A várakozandó munka a pipeline_job objektum name attribútuma.
-- Összefoglalva, ez a szkript egy gépi tanulási pipeline munkát küld be az Azure Machine Learning munkaterületre, majd megvárja a munka befejezését.
+    - Meghívja a workspace_ml_client jobs objektumának create_or_update metódusát a pipeline feladat beküldéséhez. A futtatandó pipeline a pipeline_object, az alá tartozó kísérlet pedig az experiment_name.
+
+    - Ezután meghívja a workspace_ml_client jobs objektumának stream metódusát, hogy megvárja a pipeline feladat befejezését. A várakozás a pipeline_job objektum name attribútuma alapján történik.
+
+    - Összefoglalva, ez a szkript egy gépi tanulási pipeline feladatot küld be egy Azure Machine Learning munkaterületre, majd várja a feladat befejezését.
 
 ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
@@ -570,22 +650,29 @@ Ez a Python szkript egy gépi tanulási pipeline-t definiál és konfigurál az 
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. A finomhangolt modell regisztrálása a munkaterületen
+## 6. Regisztrálja a finomhangolt modellt a munkaterületen
 
-A finomhangolási munka kimenetéből regisztráljuk a modellt. Ez nyomon követi a kapcsolatot a finomhangolt modell és a finomhangolási munka között. A finomhangolási munka továbbá követi a kapcsolatot az alapmodelltől, az adatoktól és a tanító kódtól.
+A finomhangolási feladat kimenetéből regisztráljuk a modellt. Ez nyomon követi a kapcsolatot a finomhangolt modell és a finomhangolási feladat között. A finomhangolási feladat tovább követi a kapcsolatot az alapmodelltől, az adatoktól és a tanítási kódtól.
 
-### A gépi tanulási modell regisztrálása
+### ML modell regisztrálása
 
 1. Ez a Python szkript egy gépi tanulási modellt regisztrál, amelyet egy Azure Machine Learning pipeline-ban tanítottak. Íme, mit csinál:
 
-- Importálja a szükséges modulokat az Azure AI ML SDK-ból.
-- Ellenőrzi, hogy a pipeline munkából elérhető-e a trained_model kimenet a workspace_ml_client jobs objektumának get metódusával és az outputs attribútumán keresztül.
-- Összeállít egy elérési utat a tanított modellhez a pipeline munka neve és a "trained_model" kimenet neve alapján.
-- Meghatároz egy nevet a finomhangolt modellnek az eredeti modellnévhez hozzáfűzve a "-ultrachat-200k" végződést, és a perjeleket kötőjelekkel helyettesíti.
-- Előkészíti a modell regisztrálását egy Model objektum létrehozásával különféle paraméterekkel, beleértve az elérési utat, a modell típusát (MLflow modell), a modell nevét és verzióját, valamint a modell leírását.
-- Regisztrálja a modellt a workspace_ml_client models objektumának create_or_update metódusával, a Model objektumot átadva argumentumként.
-- Kiírja a regisztrált modellt.
-2. Összefoglalva, ez a szkript egy gépi tanulási modellt regisztrál, amelyet egy Azure Machine Learning pipeline-ban tanítottak.
+    - Importálja a szükséges modulokat az Azure AI ML SDK-ból.
+
+    - Ellenőrzi, hogy a pipeline feladatból elérhető-e a trained_model kimenet a workspace_ml_client jobs objektumának get metódusával és annak outputs attribútumával.
+
+    - Összeállít egy elérési utat a tanított modellhez a pipeline feladat nevének és a kimenet ("trained_model") nevének formázásával.
+
+    - Meghatároz egy nevet a finomhangolt modellnek úgy, hogy a modell eredeti nevéhez hozzáfűzi a "-ultrachat-200k" sztringet, és a perjeleket kötőjelekkel helyettesíti.
+
+    - Előkészíti a modell regisztrálását egy Model objektum létrehozásával, amely tartalmazza a modell elérési útját, típusát (MLflow modell), nevét, verzióját és leírását.
+
+    - Regisztrálja a modellt a workspace_ml_client models objektumának create_or_update metódusával, a Model objektumot átadva.
+
+    - Kiírja a regisztrált modellt.
+
+1. Összefoglalva, ez a szkript egy gépi tanulási modellt regisztrál, amelyet egy Azure Machine Learning pipeline-ban tanítottak.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -627,19 +714,23 @@ A finomhangolási munka kimenetéből regisztráljuk a modellt. Ez nyomon követ
     print("registered model: \n", registered_model)
     ```
 
-## 7. A finomhangolt modell telepítése online végpontra
+## 7. Telepítse a finomhangolt modellt online végpontra
 
-Az online végpontok tartós REST API-t biztosítanak, amely alkalmazásokkal integrálható a modell használatához.
+Az online végpontok tartós REST API-t biztosítanak, amelyet alkalmazások integrálására lehet használni, amelyeknek szükségük van a modell használatára.
 
 ### Végpont kezelése
 
 1. Ez a Python szkript egy kezelt online végpontot hoz létre az Azure Machine Learning-ben egy regisztrált modellhez. Íme, mit csinál:
 
-- Importálja a szükséges modulokat az Azure AI ML SDK-ból.
-- Egyedi nevet definiál az online végpontnak azzal, hogy egy időbélyeget fűz a "ultrachat-completion-" szöveghez.
-- Előkészíti az online végpont létrehozását egy ManagedOnlineEndpoint objektummal, amely tartalmazza a végpont nevét, leírását és az autentikációs módot ("key").
-- Létrehozza az online végpontot a workspace_ml_client begin_create_or_update metódusával, majd megvárja a létrehozási művelet befejezését a wait metódussal.
-2. Összefoglalva, ez a szkript egy kezelt online végpontot hoz létre az Azure Machine Learning-ben egy regisztrált modellhez.
+    - Importálja a szükséges modulokat az Azure AI ML SDK-ból.
+
+    - Egyedi nevet definiál az online végpontnak úgy, hogy a "ultrachat-completion-" sztringhez hozzáfűz egy időbélyeget.
+
+    - Előkészíti az online végpont létrehozását egy ManagedOnlineEndpoint objektum létrehozásával, amely tartalmazza a végpont nevét, leírását és az autentikációs módot ("key").
+
+    - Létrehozza az online végpontot a workspace_ml_client begin_create_or_update metódusával, majd megvárja a létrehozási művelet befejezését a wait metódussal.
+
+1. Összefoglalva, ez a szkript egy kezelt online végpontot hoz létre az Azure Machine Learning-ben egy regisztrált modellhez.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -668,22 +759,30 @@ Az online végpontok tartós REST API-t biztosítanak, amely alkalmazásokkal in
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
-> [!NOTE]  
-> Itt találod a telepítéshez támogatott SKU-k listáját - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> [!NOTE]
+> Itt található a telepítéshez támogatott SKU-k listája - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### Gépi tanulási modell telepítése
+### ML modell telepítése
 
 1. Ez a Python szkript egy regisztrált gépi tanulási modellt telepít egy kezelt online végpontra az Azure Machine Learning-ben. Íme, mit csinál:
 
-- Importálja az ast modult, amely funkciókat biztosít a Python absztrakt szintaxisfa feldolgozásához.
-- Beállítja a telepítés példány típusát "Standard_NC6s_v3"-ra.
-- Ellenőrzi, hogy az alapmodell tartalmazza-e az inference_compute_allow_list címkét. Ha igen, a címke értékét szövegből Python listává alakítja és hozzárendeli az inference_computes_allow_list változóhoz. Ha nem, None értéket ad neki.
-- Ellenőrzi, hogy a megadott példány típus szerepel-e az engedélyezett listában. Ha nem, kiír egy üzenetet, amelyben arra kéri a felhasználót, hogy válasszon az engedélyezett lista példány típusai közül.
-- Előkészíti a telepítést egy ManagedOnlineDeployment objektum létrehozásával, amely tartalmazza a telepítés nevét, a végpont nevét, a modell azonosítóját, a példány típusát és számát, az életképességi ellenőrzés beállításait és a kérések beállításait.
-- Létrehozza a telepítést a workspace_ml_client begin_create_or_update metódusával, majd megvárja a létrehozás befejezését a wait metódussal.
-- Beállítja a végpont forgalmát úgy, hogy a forgalom 100%-át a "demo" telepítéshez irányítsa.
-- Frissíti a végpontot a workspace_ml_client begin_create_or_update metódusával, majd megvárja a frissítés befejezését a result metódussal.
-2. Összefoglalva, ez a szkript egy regisztrált gépi tanulási modellt telepít egy kezelt online végpontra az Azure Machine Learning-ben.
+    - Importálja az ast modult, amely a Python absztrakt szintaxisfájának feldolgozásához nyújt funkciókat.
+
+    - Beállítja a telepítéshez használt példány típusát "Standard_NC6s_v3"-ra.
+
+    - Ellenőrzi, hogy a foundation model tartalmazza-e az inference_compute_allow_list címkét. Ha igen, a címke értékét sztringből Python listává alakítja, és hozzárendeli az inference_computes_allow_list változóhoz. Ha nem, akkor None értéket ad neki.
+
+    - Ellenőrzi, hogy a megadott példány típus szerepel-e az engedélyezett listán. Ha nem, üzenetet ír ki, amelyben arra kéri a felhasználót, hogy válasszon az engedélyezett lista elemei közül.
+
+    - Előkészíti a telepítést egy ManagedOnlineDeployment objektum létrehozásával, amely tartalmazza a telepítés nevét, a végpont nevét, a modell azonosítóját, a példány típusát és számát, az élő állapot ellenőrző beállításokat és a kérés beállításokat.
+
+    - Létrehozza a telepítést a workspace_ml_client begin_create_or_update metódusával, majd megvárja a létrehozási művelet befejezését a wait metódussal.
+
+    - Beállítja a végpont forgalmát úgy, hogy a forgalom 100%-át a "demo" telepítésre irányítsa.
+
+    - Frissíti a végpontot a workspace_ml_client begin_create_or_update metódusával, majd megvárja a frissítés befejezését a result metódussal.
+
+1. Összefoglalva, ez a szkript egy regisztrált gépi tanulási modellt telepít egy kezelt online végpontra az Azure Machine Learning-ben.
 
 ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -736,19 +835,23 @@ Az online végpontok tartós REST API-t biztosítanak, amely alkalmazásokkal in
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. A végpont tesztelése mintaadatokkal
+## 8. Tesztelje a végpontot mintaadatokkal
 
-Néhány mintaadatot fogunk lekérni a teszt adatállományból, és elküldjük az online végpontra inferenciára. Ezután megjelenítjük a pontozott címkéket a valós címkék mellett.
+Lekérünk néhány mintaadatot a teszt adathalmazból, és elküldjük az online végpontra inferenciára. Ezután megjelenítjük az előre jelzett címkéket a valós címkékkel együtt.
 
-### Az eredmények beolvasása
+### Eredmények olvasása
 
-1. Ez a Python szkript egy JSON Lines fájlt olvas be egy pandas DataFrame-be, vesz egy véletlenszerű mintát, majd visszaállítja az indexet. Íme, mit csinál:
+1. Ez a Python szkript egy JSON Lines fájlt olvas be egy pandas DataFrame-be, véletlenszerű mintát vesz, és visszaállítja az indexet. Íme, mit csinál:
 
-- Beolvassa a ./ultrachat_200k_dataset/test_gen.jsonl fájlt pandas DataFrame-be. A read_json függvényt a lines=True paraméterrel használja, mert a fájl JSON Lines formátumú, ahol minden sor külön JSON objektum.
-- Egy véletlenszerű mintát vesz 1 sorral a DataFrame-ből. A sample függvényt az n=1 paraméterrel hívja meg, hogy egy véletlenszerű sort válasszon ki.
-- Visszaállítja a DataFrame indexét a reset_index függvénnyel, drop=True paraméterrel, hogy eldobja az eredeti indexet és új, alapértelmezett egész szám indexet hozzon létre.
-- Megjeleníti a DataFrame első 2 sorát a head függvénnyel 2 paraméterrel. Mivel a minta csak egy sort tartalmaz, csak azt az egy sort jeleníti meg.
-2. Összefoglalva, ez a szkript egy JSON Lines fájlt olvas be egy pandas DataFrame-be, vesz egy véletlenszerű 1 soros mintát, visszaállítja az indexet és megjeleníti az első sort.
+    - Beolvassa a ./ultrachat_200k_dataset/test_gen.jsonl fájlt egy pandas DataFrame-be. A read_json függvényt a lines=True argumentummal használja, mert a fájl JSON Lines formátumú, ahol minden sor egy külön JSON objektum.
+
+    - Véletlenszerűen kiválaszt 1 sort a DataFrame-ből. A sample függvényt az n=1 argumentummal használja, hogy meghatározza a kiválasztandó sorok számát.
+
+    - Visszaállítja a DataFrame indexét. A reset_index függvényt a drop=True argumentummal használja, hogy eldobja az eredeti indexet, és új, alapértelmezett egész szám indexet hozzon létre.
+
+    - Megjeleníti a DataFrame első 2 sorát a head függvénnyel, 2-es argumentummal. Mivel azonban a DataFrame csak egy sort tartalmaz a mintavétel után, csak azt az egy sort jeleníti meg.
+
+1. Összefoglalva, ez a szkript egy JSON Lines fájlt olvas be egy pandas DataFrame-be, véletlenszerűen kiválaszt egy sort, visszaállítja az indexet, és megjeleníti az első sort.
 
 ```python
     # Import pandas library
@@ -774,11 +877,13 @@ Néhány mintaadatot fogunk lekérni a teszt adatállományból, és elküldjük
 
 ### JSON objektum létrehozása
 
-1. Ez a Python szkript egy JSON objektumot hoz létre specifikus paraméterekkel, és menti azt fájlba. Íme, mit csinál:
+1. Ez a Python szkript egy JSON objektumot hoz létre meghatározott paraméterekkel, és elmenti egy fájlba. Íme, mit csinál:
 
-- Importálja a json modult, amely funkciókat biztosít JSON adatok kezeléséhez.
-- Létrehoz egy parameters nevű szótárat, amely kulcsokat és értékeket tartalmaz a gépi tanulási modell paramétereihez. A kulcsok: "temperature", "top_p", "do_sample", és "max_new_tokens", értékeik rendre: 0.6, 0.9, True, és 200.
-- Létrehoz egy másik szótárt test_json néven, amely két kulcsot tartalmaz: "input_data" és "params". Az "input_data" egy másik szótár, melynek kulcsai "input_string" és "parameters". Az "input_string" egy lista, amely a test_df DataFrame első üzenetét tartalmazza. A "parameters" a korábban létrehozott parameters szótár. A "params" egy üres szótár.
+    - Importálja a json modult, amely JSON adatok kezelésére szolgáló funkciókat biztosít.
+
+    - Létrehoz egy parameters nevű szótárat, amely kulcsokat és értékeket tartalmaz, amelyek egy gépi tanulási modell paramétereit képviselik. A kulcsok: "temperature", "top_p", "do_sample" és "max_new_tokens", értékeik rendre 0.6, 0.9, True és 200.
+
+    - Létrehoz egy másik test_json nevű szótárat két kulccsal: "input_data" és "params". Az "input_data" értéke egy másik szótár, amely tartalmazza az "input_string" és "parameters" kulcsokat. Az "input_string" értéke egy
 - Megnyit egy sample_score.json nevű fájlt
 
 ```python
@@ -815,14 +920,19 @@ Néhány mintaadatot fogunk lekérni a teszt adatállományból, és elküldjük
 
 ### Végpont meghívása
 
-1. Ez a Python szkript meghív egy online végpontot az Azure Machine Learning-ben, hogy pontozzon egy JSON fájlt. Íme, mit csinál:
+1. Ez a Python szkript egy online végpontot hív meg az Azure Machine Learning-ben, hogy értékeljen egy JSON fájlt. Íme, mit csinál pontosan:
 
-- Meghívja a workspace_ml_client online_endpoints objektumának invoke metódusát, amely egy kérést küld az online végpontra és választ kap.
-- Megadja a végpont nevét és a telepítést az endpoint_name és deployment_name argumentumokkal. Ebben az esetben a végpont neve az online_endpoint_name változóban van, a telepítés neve pedig "demo".
-- Megadja a pontozandó JSON fájl elérési útját a request_file argumentumban, jelen esetben a ./ultrachat_200k_dataset/sample_score.json.
-- A választ eltárolja a response változóban.
-- Kiírja a nyers választ.
-2. Összefoglalva, ez a szkript meghív egy online végpontot az Azure Machine Learning-ben, hogy pontozzon egy JSON fájlt, majd kiírja a választ.
+    - Meghívja a workspace_ml_client objektum online_endpoints tulajdonságának invoke metódusát. Ezt a metódust arra használják, hogy kérés küldjenek egy online végponthoz, és választ kapjanak.
+
+    - Megadja a végpont és a telepítés nevét az endpoint_name és deployment_name argumentumokkal. Ebben az esetben a végpont neve az online_endpoint_name változóban van tárolva, a telepítés neve pedig "demo".
+
+    - Megadja a pontozandó JSON fájl elérési útját a request_file argumentummal. Ebben az esetben a fájl a ./ultrachat_200k_dataset/sample_score.json.
+
+    - Elmenti a végpont válaszát a response változóba.
+
+    - Kiírja a nyers választ.
+
+1. Összefoglalva, ez a szkript egy online végpontot hív meg az Azure Machine Learning-ben, hogy értékeljen egy JSON fájlt, majd kiírja a választ.
 
 ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
@@ -842,12 +952,15 @@ Néhány mintaadatot fogunk lekérni a teszt adatállományból, és elküldjük
 
 ## 9. Az online végpont törlése
 
-1. Ne felejtsd el törölni az online végpontot, különben a végpont által használt számítási erőforrások számlálója futni fog. Ez a Python sor egy online végpont törlését indítja el az Azure Machine Learning-ben. Íme, mit csinál:
+1. Ne felejtsd el törölni az online végpontot, különben a végpont által használt számítási erőforrások számlálója tovább fut. Ez a Python kódsor egy online végpont törlését indítja el az Azure Machine Learning-ben. Íme, mit csinál pontosan:
 
-- Meghívja a workspace_ml_client online_endpoints objektumának begin_delete metódusát, amely elindítja az online végpont törlését.
-- Megadja a törlendő végpont nevét a name argumentumban, amely jelen esetben az online_endpoint_name változóban van.
-- Meghívja a wait metódust, hogy megvárja a törlési művelet befejezését. Ez egy blokkoló művelet, vagyis megakadályozza a szkript további futását, amíg a törlés be nem fejeződik.
-- Összefoglalva, ez a kódsor elindítja egy online végpont törlését az Azure Machine Learning-ben és megvárja a művelet befejezését.
+    - Meghívja a workspace_ml_client objektum online_endpoints tulajdonságának begin_delete metódusát. Ezt a metódust arra használják, hogy elindítsák egy online végpont törlését.
+
+    - Megadja a törlendő végpont nevét a name argumentummal. Ebben az esetben a végpont neve az online_endpoint_name változóban van tárolva.
+
+    - Meghívja a wait metódust, hogy megvárja a törlési művelet befejeződését. Ez egy blokkoló művelet, vagyis megakadályozza, hogy a szkript folytatódjon, amíg a törlés be nem fejeződik.
+
+    - Összefoglalva, ez a kódsor elindítja egy online végpont törlését az Azure Machine Learning-ben, és megvárja a művelet befejezését.
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -858,4 +971,4 @@ Néhány mintaadatot fogunk lekérni a teszt adatállományból, és elküldjük
     ```
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:09:58+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T15:01:21+00:00",
   "source_file": "README.md",
   "language_code": "ko"
 }
@@ -29,16 +29,16 @@ Phi는 현재 가장 강력하고 비용 효율적인 소형 언어 모델(SLM)�
 
 Phi는 클라우드나 엣지 디바이스에 배포할 수 있으며, 제한된 컴퓨팅 자원으로도 손쉽게 생성형 AI 애플리케이션을 구축할 수 있습니다.
 
-이 리소스를 사용하기 위해 다음 단계를 따라 시작하세요:  
+이 리소스를 사용해 시작하려면 다음 단계를 따라주세요:  
 1. **저장소 포크하기**: 클릭 [![GitHub 포크](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
 2. **저장소 클론하기**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Microsoft AI Discord 커뮤니티에 참여하여 전문가 및 개발자들과 교류하기**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.ko.png)
 
-## 🌐 다국어 지원
+### 🌐 다국어 지원
 
-### GitHub Action을 통해 지원 (자동화 및 항상 최신 상태 유지)
+#### GitHub Action을 통해 지원 (자동화 및 항상 최신 상태 유지)
 
 [프랑스어](../fr/README.md) | [스페인어](../es/README.md) | [독일어](../de/README.md) | [러시아어](../ru/README.md) | [아랍어](../ar/README.md) | [페르시아어 (파르시)](../fa/README.md) | [우르두어](../ur/README.md) | [중국어 (간체)](../zh/README.md) | [중국어 (번체, 마카오)](../mo/README.md) | [중국어 (번체, 홍콩)](../hk/README.md) | [중국어 (번체, 대만)](../tw/README.md) | [일본어](../ja/README.md) | [한국어](./README.md) | [힌디어](../hi/README.md)  
 [벵골어](../bn/README.md) | [마라티어](../mr/README.md) | [네팔어](../ne/README.md) | [펀자브어 (구르무키)](../pa/README.md) | [포르투갈어 (포르투갈)](../pt/README.md) | [포르투갈어 (브라질)](../br/README.md) | [이탈리아어](../it/README.md) | [폴란드어](../pl/README.md) | [터키어](../tr/README.md) | [그리스어](../el/README.md) | [태국어](../th/README.md) | [스웨덴어](../sv/README.md) | [덴마크어](../da/README.md) | [노르웨이어](../no/README.md) | [핀란드어](../fi/README.md) | [네덜란드어](../nl/README.md) | [히브리어](../he/README.md) | [베트남어](../vi/README.md) | [인도네시아어](../id/README.md) | [말레이어](../ms/README.md) | [타갈로그어 (필리핀어)](../tl/README.md) | [스와힐리어](../sw/README.md) | [헝가리어](../hu/README.md) | [체코어](../cs/README.md) | [슬로바키아어](../sk/README.md) | [루마니아어](../ro/README.md) | [불가리아어](../bg/README.md) | [세르비아어 (키릴문자)](../sr/README.md) | [크로아티아어](../hr/README.md) | [슬로베니아어](../sl/README.md)
@@ -53,7 +53,7 @@ Phi는 클라우드나 엣지 디바이스에 배포할 수 있으며, 제한된
   - [Phi 하드웨어 지원](./md/01.Introduction/01/01.Hardwaresupport.md)  
   - [Phi 모델 및 플랫폼별 가용성](./md/01.Introduction/01/01.Edgeandcloud.md)  
   - [Guidance-ai와 Phi 사용하기](./md/01.Introduction/01/01.Guidance.md)  
-  - [GitHub 마켓플레이스 모델](https://github.com/marketplace/models)  
+  - [GitHub Marketplace 모델](https://github.com/marketplace/models)  
   - [Azure AI 모델 카탈로그](https://ai.azure.com)
 
 - 다양한 환경에서 Phi 추론  
@@ -89,7 +89,7 @@ Phi는 클라우드나 엣지 디바이스에 배포할 수 있으며, 제한된
   - [평가를 위한 Promptflow 사용법](./md/01.Introduction/05/Promptflow.md)
 
 - Azure AI Search와 함께하는 RAG  
-  - [Phi-4-mini 및 Phi-4-multimodal(RAG)를 Azure AI Search와 함께 사용하는 방법](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+  - [Phi-4-mini 및 Phi-4-multimodal(RAG)을 Azure AI Search와 함께 사용하는 방법](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
 - Phi 애플리케이션 개발 샘플  
   - 텍스트 및 채팅 애플리케이션  
@@ -159,37 +159,35 @@ Phi는 클라우드나 엣지 디바이스에 배포할 수 있으며, 제한된
 
 - MOE 샘플  
   - Phi-3 / 3.5 샘플  
-    - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) 소셜 미디어 샘플](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
+    - [📓] [Phi-3.5 Mixture of Experts 모델(MoEs) 소셜 미디어 샘플](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
     - [📓] [NVIDIA NIM Phi-3 MOE, Azure AI Search, LlamaIndex를 활용한 Retrieval-Augmented Generation (RAG) 파이프라인 구축](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
-
 - 함수 호출 샘플  
   - Phi-4 샘플 🆕  
     - [📓] [Phi-4-mini와 함께 함수 호출 사용하기](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
-    - [📓] [함수 호출을 사용해 Phi-4-mini로 다중 에이전트 만들기](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
+    - [📓] [Phi-4-mini로 다중 에이전트 생성 시 함수 호출 사용하기](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
     - [📓] [Ollama와 함께 함수 호출 사용하기](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
     - [📓] [ONNX와 함께 함수 호출 사용하기](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)  
-
 - 멀티모달 믹싱 샘플  
   - Phi-4 샘플 🆕  
     - [📓] [기술 기자로서 Phi-4-multimodal 사용하기](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)  
-    - [Phi-4-multimodal을 사용해 이미지를 분석하는 .NET 콘솔 애플리케이션](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)  
+    - [Phi-4-multimodal을 사용해 이미지 분석하는 .NET 콘솔 애플리케이션](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)  
 
-- Phi 미세 조정  
+- Phi 미세 조정 샘플  
   - [미세 조정 시나리오](./md/03.FineTuning/FineTuning_Scenarios.md)  
   - [미세 조정과 RAG 비교](./md/03.FineTuning/FineTuning_vs_RAG.md)  
   - [Phi-3를 산업 전문가로 만드는 미세 조정](./md/03.FineTuning/LetPhi3gotoIndustriy.md)  
-  - [VS Code용 AI Toolkit으로 Phi-3 미세 조정](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)  
-  - [Azure Machine Learning Service로 Phi-3 미세 조정](./md/03.FineTuning/Introduce_AzureML.md)  
-  - [Lora로 Phi-3 미세 조정](./md/03.FineTuning/FineTuning_Lora.md)  
-  - [QLora로 Phi-3 미세 조정](./md/03.FineTuning/FineTuning_Qlora.md)  
-  - [Azure AI Foundry로 Phi-3 미세 조정](./md/03.FineTuning/FineTuning_AIFoundry.md)  
-  - [Azure ML CLI/SDK로 Phi-3 미세 조정](./md/03.FineTuning/FineTuning_MLSDK.md)  
-  - [Microsoft Olive로 미세 조정](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)  
+  - [VS Code용 AI Toolkit으로 Phi-3 미세 조정하기](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)  
+  - [Azure Machine Learning Service로 Phi-3 미세 조정하기](./md/03.FineTuning/Introduce_AzureML.md)  
+  - [Lora로 Phi-3 미세 조정하기](./md/03.FineTuning/FineTuning_Lora.md)  
+  - [QLora로 Phi-3 미세 조정하기](./md/03.FineTuning/FineTuning_Qlora.md)  
+  - [Azure AI Foundry로 Phi-3 미세 조정하기](./md/03.FineTuning/FineTuning_AIFoundry.md)  
+  - [Azure ML CLI/SDK로 Phi-3 미세 조정하기](./md/03.FineTuning/FineTuning_MLSDK.md)  
+  - [Microsoft Olive로 미세 조정하기](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)  
   - [Microsoft Olive 실습 랩](./md/03.FineTuning/olive-lab/readme.md)  
-  - [Weights and Bias로 Phi-3-vision 미세 조정](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)  
-  - [Apple MLX 프레임워크로 Phi-3 미세 조정](./md/03.FineTuning/FineTuning_MLX.md)  
-  - [Phi-3-vision 공식 지원 미세 조정](./md/03.FineTuning/FineTuning_Vision.md)  
-  - [Kaito AKS, Azure Containers 공식 지원으로 Phi-3 미세 조정](./md/03.FineTuning/FineTuning_Kaito.md)  
+  - [Weights and Bias로 Phi-3-vision 미세 조정하기](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)  
+  - [Apple MLX 프레임워크로 Phi-3 미세 조정하기](./md/03.FineTuning/FineTuning_MLX.md)  
+  - [Phi-3-vision 미세 조정 (공식 지원)](./md/03.FineTuning/FineTuning_Vision.md)  
+  - [Kaito AKS, Azure Containers로 Phi-3 미세 조정 (공식 지원)](./md/03.FineTuning/FineTuning_Kaito.md)  
   - [Phi-3 및 3.5 Vision 미세 조정](https://github.com/2U1/Phi3-Vision-Finetune)  
 
 - 실습 랩  
@@ -200,7 +198,7 @@ Phi는 클라우드나 엣지 디바이스에 배포할 수 있으며, 제한된
   - [Textbooks Are All You Need II: phi-1.5 기술 보고서](https://arxiv.org/abs/2309.05463)  
   - [Phi-3 기술 보고서: 휴대폰에서 실행 가능한 고성능 언어 모델](https://arxiv.org/abs/2404.14219)  
   - [Phi-4 기술 보고서](https://arxiv.org/abs/2412.08905)  
-  - [Phi-4-Mini 기술 보고서: Mixture-of-LoRAs를 통한 작지만 강력한 멀티모달 언어 모델](https://arxiv.org/abs/2503.01743)  
+  - [Phi-4-Mini 기술 보고서: Mixture-of-LoRAs를 통한 작고 강력한 멀티모달 언어 모델](https://arxiv.org/abs/2503.01743)  
   - [차량 내 함수 호출 최적화를 위한 소형 언어 모델 연구](https://arxiv.org/abs/2501.02342)  
   - [(WhyPHI) 다지선다형 질문 응답을 위한 PHI-3 미세 조정: 방법론, 결과 및 과제](https://arxiv.org/abs/2501.01588)
 - [Phi-4-reasoning 기술 보고서](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
@@ -208,37 +206,37 @@ Phi는 클라우드나 엣지 디바이스에 배포할 수 있으며, 제한된
 
 ## Phi 모델 사용하기
 
-### Azure AI Foundry에서의 Phi
+### Azure AI Foundry에서 Phi 사용하기
 
-Microsoft Phi를 사용하는 방법과 다양한 하드웨어 장치에서 E2E 솔루션을 구축하는 방법을 배울 수 있습니다. 직접 Phi를 체험하려면 모델을 사용해보고, [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai)를 통해 시나리오에 맞게 Phi를 커스터마이징해보세요. 자세한 내용은 [Azure AI Foundry 시작하기](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)에서 확인할 수 있습니다.
+Microsoft Phi를 사용하는 방법과 다양한 하드웨어 장치에서 E2E 솔루션을 구축하는 방법을 배울 수 있습니다. Phi를 직접 경험해보고 싶다면, 모델을 직접 사용해보고 시나리오에 맞게 Phi를 커스터마이징해보세요. [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai)를 통해 시작할 수 있으며, 자세한 내용은 [Azure AI Foundry 시작하기](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)에서 확인할 수 있습니다.
 
-**플레이그라운드**  
-각 모델마다 전용 플레이그라운드가 있어 모델을 테스트할 수 있습니다. [Azure AI Playground](https://aka.ms/try-phi3)를 이용해보세요.
+**Playground**  
+각 모델마다 전용 playground가 있어 모델을 테스트할 수 있습니다. [Azure AI Playground](https://aka.ms/try-phi3)를 이용해보세요.
 
-### GitHub 모델에서의 Phi
+### GitHub 모델에서 Phi 사용하기
 
-Microsoft Phi를 사용하는 방법과 다양한 하드웨어 장치에서 E2E 솔루션을 구축하는 방법을 배울 수 있습니다. 직접 Phi를 체험하려면 모델을 사용해보고, [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo)를 통해 시나리오에 맞게 Phi를 커스터마이징해보세요. 자세한 내용은 [GitHub Model Catalog 시작하기](/md/02.QuickStart/GitHubModel_QuickStart.md)에서 확인할 수 있습니다.
+Microsoft Phi를 사용하는 방법과 다양한 하드웨어 장치에서 E2E 솔루션을 구축하는 방법을 배울 수 있습니다. Phi를 직접 경험해보고 싶다면, 모델을 직접 사용해보고 시나리오에 맞게 Phi를 커스터마이징해보세요. [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo)를 통해 시작할 수 있으며, 자세한 내용은 [GitHub Model Catalog 시작하기](/md/02.QuickStart/GitHubModel_QuickStart.md)에서 확인할 수 있습니다.
 
-**플레이그라운드**  
-각 모델마다 전용 [플레이그라운드에서 모델을 테스트할 수 있습니다](/md/02.QuickStart/GitHubModel_QuickStart.md).
+**Playground**  
+각 모델마다 전용 [playground가 있어 모델을 테스트할 수 있습니다](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
-### Hugging Face에서의 Phi
+### Hugging Face에서 Phi 사용하기
 
-모델은 [Hugging Face](https://huggingface.co/microsoft)에서도 찾을 수 있습니다.
+[Hugging Face](https://huggingface.co/microsoft)에서도 모델을 찾을 수 있습니다.
 
-**플레이그라운드**  
-[Hugging Chat 플레이그라운드](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
+**Playground**  
+[Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
 ## 책임 있는 AI
 
-Microsoft는 고객이 AI 제품을 책임감 있게 사용할 수 있도록 지원하며, 학습 내용을 공유하고 투명성 노트와 영향 평가 같은 도구를 통해 신뢰 기반의 파트너십을 구축하는 데 최선을 다하고 있습니다. 이러한 자료들은 [https://aka.ms/RAI](https://aka.ms/RAI)에서 확인할 수 있습니다.  
+Microsoft는 고객이 AI 제품을 책임감 있게 사용할 수 있도록 지원하며, 투명성 노트와 영향 평가 같은 도구를 통해 학습 내용을 공유하고 신뢰 기반의 파트너십을 구축하는 데 최선을 다하고 있습니다. 이러한 자료들은 [https://aka.ms/RAI](https://aka.ms/RAI)에서 확인할 수 있습니다.  
 Microsoft의 책임 있는 AI 접근법은 공정성, 신뢰성 및 안전성, 개인정보 보호 및 보안, 포용성, 투명성, 책임성이라는 AI 원칙에 기반하고 있습니다.
 
 이 샘플에서 사용된 대규모 자연어, 이미지, 음성 모델은 불공정하거나 신뢰할 수 없거나 불쾌감을 줄 수 있는 방식으로 작동할 가능성이 있으며, 이로 인해 피해가 발생할 수 있습니다. 위험과 한계에 대해 알고 싶다면 [Azure OpenAI 서비스 투명성 노트](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text)를 참고하세요.
 
-이러한 위험을 완화하기 위한 권장 방법은 아키텍처에 유해한 행동을 감지하고 방지할 수 있는 안전 시스템을 포함하는 것입니다. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview)는 애플리케이션과 서비스에서 사용자 생성 및 AI 생성 유해 콘텐츠를 감지할 수 있는 독립적인 보호 계층을 제공합니다. Azure AI Content Safety는 유해한 텍스트와 이미지를 감지할 수 있는 API를 포함하고 있습니다. Azure AI Foundry 내에서는 Content Safety 서비스를 통해 다양한 형태의 유해 콘텐츠를 탐색하고 샘플 코드를 시험해볼 수 있습니다. 다음 [빠른 시작 문서](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest)는 서비스에 요청을 보내는 방법을 안내합니다.
+이러한 위험을 완화하기 위한 권장 방법은 아키텍처에 안전 시스템을 포함시켜 해로운 행동을 감지하고 방지하는 것입니다. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview)는 애플리케이션과 서비스에서 사용자 생성 및 AI 생성 콘텐츠의 유해성을 감지할 수 있는 독립적인 보호 계층을 제공합니다. Azure AI Content Safety는 유해한 텍스트와 이미지를 감지할 수 있는 API를 포함하고 있습니다. Azure AI Foundry 내에서는 Content Safety 서비스를 통해 다양한 형태의 유해 콘텐츠를 탐색하고 샘플 코드를 시험해볼 수 있습니다. 다음 [빠른 시작 문서](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest)에서는 서비스에 요청을 보내는 방법을 안내합니다.
 
-또 다른 고려 사항은 전체 애플리케이션 성능입니다. 멀티모달 및 멀티모델 애플리케이션에서는 시스템이 사용자와 개발자가 기대하는 대로 작동하는지, 즉 유해한 출력을 생성하지 않는지를 성능의 기준으로 봅니다. 전체 애플리케이션의 성능을 평가하려면 [성능 및 품질, 위험 및 안전 평가자](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in)를 활용하는 것이 중요합니다. 또한 [사용자 정의 평가자](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators)를 만들어 평가할 수도 있습니다.
+또 다른 고려 사항은 전체 애플리케이션 성능입니다. 멀티모달 및 멀티모델 애플리케이션에서는 시스템이 사용자와 개발자가 기대하는 대로 작동하는지, 즉 유해한 출력을 생성하지 않는지를 성능의 기준으로 봅니다. 전체 애플리케이션의 성능을 평가할 때는 [성능 및 품질, 위험 및 안전 평가자](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in)를 활용하는 것이 중요합니다. 또한 [사용자 정의 평가자](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators)를 만들어 평가할 수도 있습니다.
 
 개발 환경에서 AI 애플리케이션을 평가하려면 [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html)를 사용할 수 있습니다. 테스트 데이터셋이나 목표값을 기준으로 생성된 AI 결과물을 내장 평가자 또는 원하는 사용자 정의 평가자를 통해 정량적으로 측정할 수 있습니다. Azure AI Evaluation SDK를 사용해 시스템을 평가하는 방법은 [빠른 시작 가이드](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk)를 참고하세요. 평가 실행 후에는 [Azure AI Foundry에서 결과를 시각화](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results)할 수 있습니다.
 

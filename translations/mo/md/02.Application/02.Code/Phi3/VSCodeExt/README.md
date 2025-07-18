@@ -2,115 +2,106 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-05-07T13:48:50+00:00",
+  "translation_date": "2025-07-17T03:34:43+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
   "language_code": "mo"
 }
 -->
-# **अपने खुद के Visual Studio Code GitHub Copilot Chat को Microsoft Phi-3 परिवार के साथ बनाएं**
+# **使用 Microsoft Phi-3 系列打造專屬的 Visual Studio Code GitHub Copilot Chat**
 
-क्या आपने GitHub Copilot Chat में workspace एजेंट का उपयोग किया है? क्या आप अपनी टीम का कोड एजेंट बनाना चाहते हैं? यह हैंड्स-ऑन लैब ओपन सोर्स मॉडल को मिलाकर एक एंटरप्राइज-स्तरीय कोड बिजनेस एजेंट बनाने की कोशिश करता है।
+你有使用過 GitHub Copilot Chat 中的 workspace agent 嗎？想打造自己團隊的程式碼助理嗎？這個實作實驗室希望結合開源模型，打造企業級的程式碼商業助理。
 
-## **बुनियाद**
+## **基礎介紹**
 
-### **Microsoft Phi-3 क्यों चुनें**
+### **為什麼選擇 Microsoft Phi-3**
 
-Phi-3 एक परिवार श्रृंखला है, जिसमें phi-3-mini, phi-3-small, और phi-3-medium शामिल हैं, जो टेक्स्ट जनरेशन, संवाद पूर्णता, और कोड जनरेशन के लिए विभिन्न प्रशिक्षण पैरामीटर पर आधारित हैं। इसके अलावा phi-3-vision भी है, जो विजन पर आधारित है। यह एंटरप्राइज या विभिन्न टीमों के लिए ऑफलाइन जनरेटिव AI समाधान बनाने के लिए उपयुक्त है।
+Phi-3 是一個系列家族，包含 phi-3-mini、phi-3-small 和 phi-3-medium，根據不同的訓練參數用於文字生成、對話完成和程式碼生成。還有基於 Vision 的 phi-3-vision。適合企業或不同團隊打造離線生成式 AI 解決方案。
 
-इस लिंक को पढ़ने की सलाह दी जाती है [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
+建議閱讀此連結 [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
 
 ### **Microsoft GitHub Copilot Chat**
 
-GitHub Copilot Chat एक्सटेंशन आपको एक चैट इंटरफ़ेस देता है, जिससे आप GitHub Copilot के साथ बातचीत कर सकते हैं और सीधे VS Code के अंदर कोडिंग से संबंधित सवालों के जवाब पा सकते हैं, बिना डॉक्यूमेंटेशन ब्राउज़ किए या ऑनलाइन फोरम खोजे।
+GitHub Copilot Chat 擴充功能提供一個聊天介面，讓你能直接在 VS Code 中與 GitHub Copilot 互動，並獲得與程式碼相關問題的解答，無需翻閱文件或搜尋線上論壇。
 
-Copilot Chat सिंटैक्स हाइलाइटिंग, इंडेंटेशन, और अन्य फॉर्मेटिंग फीचर्स का उपयोग कर सकता है ताकि जनरेट किए गए जवाब को स्पष्ट बनाया जा सके। उपयोगकर्ता के प्रश्न के प्रकार के आधार पर, परिणाम में उन संदर्भों के लिंक हो सकते हैं जिनका Copilot ने जवाब बनाने में उपयोग किया है, जैसे स्रोत कोड फाइलें या डॉक्यूमेंटेशन, या VS Code की कार्यक्षमता तक पहुंचने के लिए बटन।
+Copilot Chat 可能會使用語法高亮、縮排及其他格式化功能，讓生成的回應更清晰。根據使用者提問的類型，結果可能包含 Copilot 用來生成回應的上下文連結，如原始碼檔案或文件，或是用於存取 VS Code 功能的按鈕。
 
-- Copilot Chat आपके डेवलपर फ्लो में एकीकृत होता है और जहां जरूरत हो मदद देता है:
+- Copilot Chat 整合在你的開發流程中，隨時提供協助：
 
-- एडिटर या टर्मिनल से सीधे इनलाइन चैट शुरू करें ताकि कोडिंग के दौरान मदद मिल सके
+- 可直接從編輯器或終端機啟動內嵌聊天，讓你在編碼時獲得幫助
 
-- चैट व्यू का उपयोग करें ताकि आपके पास किसी भी समय AI असिस्टेंट मौजूद रहे
+- 使用 Chat 視窗，隨時有 AI 助理在旁協助
 
-- क्विक चैट लॉन्च करें ताकि एक त्वरित सवाल पूछकर फिर से अपने काम में लग जाएं
+- 啟動快速聊天，快速提問後繼續工作
 
-आप GitHub Copilot Chat को विभिन्न परिदृश्यों में उपयोग कर सकते हैं, जैसे:
+你可以在多種情境下使用 GitHub Copilot Chat，例如：
 
-- किसी समस्या को सबसे अच्छा कैसे हल करें, इस पर कोडिंग सवालों के जवाब देना
+- 回答如何最佳解決問題的程式碼問題
 
-- किसी और के कोड को समझाना और सुधार सुझाना
+- 解釋他人程式碼並提出改進建議
 
-- कोड फिक्स प्रस्तावित करना
+- 建議程式碼修正
 
-- यूनिट टेस्ट केस जनरेट करना
+- 生成單元測試案例
 
-- कोड डॉक्यूमेंटेशन जनरेट करना
+- 產生程式碼文件
 
-इस लिंक को पढ़ने की सलाह दी जाती है [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
-
+建議閱讀此連結 [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
 
 ###  **Microsoft GitHub Copilot Chat @workspace**
 
-Copilot Chat में **@workspace** का संदर्भ देने से आप अपने पूरे कोडबेस के बारे में सवाल पूछ सकते हैं। प्रश्न के आधार पर, Copilot बुद्धिमानी से प्रासंगिक फाइलें और प्रतीकों को खोजता है, जिन्हें वह अपने जवाब में लिंक और कोड उदाहरण के रूप में संदर्भित करता है।
+在 Copilot Chat 中使用 **@workspace**，可以讓你針對整個程式碼庫提問。根據問題，Copilot 會智能地檢索相關檔案和符號，並在回答中以連結和程式碼範例的形式引用。
 
-आपके सवाल का जवाब देने के लिए, **@workspace** उन स्रोतों को खोजता है जिनका उपयोग एक डेवलपर VS Code में कोडबेस नेविगेट करते समय करता है:
+為了回答你的問題，**@workspace** 會搜尋開發者在 VS Code 中瀏覽程式碼庫時會用到的相同來源：
 
-- वर्कस्पेस की सभी फाइलें, सिवाय उन फाइलों के जिन्हें .gitignore द्वारा नजरअंदाज किया गया हो
+- 工作區中的所有檔案，除了被 .gitignore 忽略的檔案
 
-- डायरेक्टरी संरचना जिसमें नेस्टेड फोल्डर और फाइल नाम शामिल हैं
+- 目錄結構，包括巢狀資料夾和檔案名稱
 
-- GitHub का कोड सर्च इंडेक्स, यदि वर्कस्पेस GitHub रिपॉजिटरी है और कोड सर्च द्वारा इंडेक्स किया गया है
+- 如果工作區是 GitHub 倉庫且已被代碼搜尋索引，則會使用 GitHub 的代碼搜尋索引
 
-- वर्कस्पेस में प्रतीक और परिभाषाएं
+- 工作區中的符號和定義
 
-- सक्रिय एडिटर में वर्तमान में चयनित या दिखाई दे रहे टेक्स्ट
+- 目前選取的文字或在活動編輯器中可見的文字
 
-ध्यान दें: यदि आप एक नजरअंदाज की गई फाइल खोलते हैं या उसमें टेक्स्ट चुनते हैं, तो .gitignore को बायपास किया जाता है।
+注意：如果你已開啟或選取了被忽略檔案中的文字，則會繞過 .gitignore。
 
-इस लिंक को पढ़ने की सलाह दी जाती है [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
+建議閱讀此連結 [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
 
+## **進一步了解本實驗室**
 
-## **इस लैब के बारे में अधिक जानें**
+GitHub Copilot 大幅提升企業的程式開發效率，每個企業都希望能客製化 GitHub Copilot 的相關功能。許多企業根據自身業務場景和開源模型，打造了類似 GitHub Copilot 的客製化擴充功能。對企業來說，客製化擴充功能更容易掌控，但這也會影響使用者體驗。畢竟 GitHub Copilot 在處理通用場景和專業性上功能更強大。如果能保持體驗一致，客製化企業自有擴充功能會更理想。GitHub Copilot Chat 提供相關 API，讓企業能在聊天體驗上擴展。維持一致的體驗並擁有客製功能，能帶來更佳的使用者體驗。
 
-GitHub Copilot ने एंटरप्राइज की प्रोग्रामिंग दक्षता में काफी सुधार किया है, और हर एंटरप्राइज GitHub Copilot की संबंधित क्षमताओं को कस्टमाइज़ करना चाहता है। कई एंटरप्राइज ने अपने व्यवसायिक परिदृश्यों और ओपन सोर्स मॉडल के आधार पर GitHub Copilot जैसे कस्टम एक्सटेंशन बनाए हैं। एंटरप्राइज के लिए, कस्टम एक्सटेंशन नियंत्रण में आसान होते हैं, लेकिन इससे उपयोगकर्ता अनुभव प्रभावित हो सकता है। आखिरकार, GitHub Copilot सामान्य परिदृश्यों और पेशेवरता से निपटने में अधिक सक्षम है। यदि अनुभव सुसंगत रखा जा सके, तो अपनी खुद की कस्टम एक्सटेंशन बनाना बेहतर होगा। GitHub Copilot Chat एंटरप्राइज को चैट अनुभव में विस्तार करने के लिए संबंधित API प्रदान करता है। सुसंगत अनुभव बनाए रखना और कस्टम क्षमताएं रखना बेहतर उपयोगकर्ता अनुभव है।
-
-यह लैब मुख्य रूप से Phi-3 मॉडल का उपयोग स्थानीय NPU और Azure हाइब्रिड के साथ मिलाकर GitHub Copilot Chat में एक कस्टम एजेंट ***@PHI3*** बनाने पर केंद्रित है, जो एंटरप्राइज डेवलपर्स को कोड जनरेशन ***(@PHI3 /gen)*** और इमेज आधारित कोड जनरेशन ***(@PHI3 /img)*** में मदद करता है।
+本實驗室主要使用 Phi-3 模型，結合本地 NPU 與 Azure 混合架構，在 GitHub Copilot Chat 中打造自訂 Agent ***@PHI3***，協助企業開發者完成程式碼生成***(@PHI3 /gen)***及基於影像生成程式碼***(@PHI3 /img)***。
 
 ![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d095fe0b942687287803c03933d2d1d439d14e10fa1442a864d.mo.png)
 
-### ***Note:*** 
+### ***注意：***
 
-यह लैब वर्तमान में Intel CPU और Apple Silicon के AIPC में लागू है। हम Qualcomm संस्करण के NPU को अपडेट करते रहेंगे।
+本實驗室目前在 Intel CPU 和 Apple Silicon 的 AIPC 上實作，我們將持續更新 Qualcomm 版本的 NPU。
 
+## **實驗室內容**
 
-## **लैब**
-
-
-| नाम | विवरण | AIPC | Apple |
+| 名稱 | 說明 | AIPC | Apple |
 | ------------ | ----------- | -------- |-------- |
-| Lab0 - Installations(✅) | संबंधित वातावरण और इंस्टॉलेशन टूल्स को कॉन्फ़िगर और इंस्टॉल करें | [Go](./HOL/AIPC/01.Installations.md) |[Go](./HOL/Apple/01.Installations.md) |
-| Lab1 - Run Prompt flow with Phi-3-mini (✅) | AIPC / Apple Silicon के साथ मिलकर, स्थानीय NPU का उपयोग करते हुए Phi-3-mini के माध्यम से कोड जनरेशन बनाएं | [Go](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Go](./HOL/Apple/02.PromptflowWithMLX.md) |
-| Lab2 - Deploy Phi-3-vision on Azure Machine Learning Service(✅) | Azure Machine Learning Service के Model Catalog - Phi-3-vision इमेज को डिप्लॉय करके कोड जनरेट करें | [Go](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Go](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
-| Lab3 - Create a @phi-3 agent in GitHub Copilot Chat(✅)  | GitHub Copilot Chat में एक कस्टम Phi-3 एजेंट बनाएं जो कोड जनरेशन, ग्राफ जनरेशन कोड, RAG आदि पूरा करे | [Go](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Go](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
-| Sample Code (✅)  | सैंपल कोड डाउनलोड करें | [Go](../../../../../../../code/07.Lab/01/AIPC) | [Go](../../../../../../../code/07.Lab/01/Apple) |
+| Lab0 - 安裝(✅) | 配置並安裝相關環境與安裝工具 | [前往](./HOL/AIPC/01.Installations.md) |[前往](./HOL/Apple/01.Installations.md) |
+| Lab1 - 使用 Phi-3-mini 執行 Prompt flow (✅) | 結合 AIPC / Apple Silicon，使用本地 NPU 透過 Phi-3-mini 進行程式碼生成 | [前往](./HOL/AIPC/02.PromptflowWithNPU.md) |  [前往](./HOL/Apple/02.PromptflowWithMLX.md) |
+| Lab2 - 在 Azure Machine Learning Service 部署 Phi-3-vision(✅) | 透過部署 Azure Machine Learning Service 的模型目錄 - Phi-3-vision 影像來生成程式碼 | [前往](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[前往](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
+| Lab3 - 在 GitHub Copilot Chat 中建立 @phi-3 agent(✅)  | 在 GitHub Copilot Chat 中建立自訂 Phi-3 agent，完成程式碼生成、圖形生成程式碼、RAG 等功能 | [前往](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [前往](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
+| 範例程式碼 (✅)  | 下載範例程式碼 | [前往](../../../../../../../code/07.Lab/01/AIPC) | [前往](../../../../../../../code/07.Lab/01/Apple) |
 
-
-## **संसाधन**
+## **資源**
 
 1. Phi-3 Cookbook [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook)
 
-2. GitHub Copilot के बारे में अधिक जानें [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
+2. 進一步了解 GitHub Copilot [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-3. GitHub Copilot Chat के बारे में अधिक जानें [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
+3. 進一步了解 GitHub Copilot Chat [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-4. GitHub Copilot Chat API के बारे में अधिक जानें [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
+4. 進一步了解 GitHub Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
 
-5. Azure AI Foundry के बारे में अधिक जानें [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
+5. 進一步了解 Azure AI Foundry [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
 
-6. Azure AI Foundry के Model Catalog के बारे में अधिक जानें [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
+6. 進一步了解 Azure AI Foundry 的模型目錄 [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language or code "mo" refers to? There are several possibilities (e.g., Moldovan, a constructed language, or something else). This will help me provide an accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤譯負責。

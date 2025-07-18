@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:44:46+00:00",
+  "translation_date": "2025-07-17T08:02:29+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "hu"
 }
 -->
-# **Phi-3 finomhangolása az Apple MLX Frameworkkel**
+# **Phi-3 finomhangolása az Apple MLX keretrendszerrel**
 
-Az Apple MLX framework parancssorán keresztül végezhetjük el a finomhangolást Lora kombinációjával. (Ha többet szeretnél megtudni az MLX Framework működéséről, olvasd el az [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md) dokumentumot)
+A finomhangolást Lora-val kombinálva az Apple MLX keretrendszer parancssorán keresztül végezhetjük el. (Ha többet szeretnél megtudni az MLX keretrendszer működéséről, kérlek olvasd el a [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md) dokumentumot)
 
 
 ## **1. Adatelőkészítés**
 
-Alapértelmezés szerint az MLX Framework a train, test és eval jsonl formátumot igényli, és Lora-val kombinálva végzi el a finomhangolási feladatokat.
+Alapértelmezés szerint az MLX keretrendszer jsonl formátumot igényel a train, test és eval fájlokhoz, és Lora-val kombinálva végzi el a finomhangolási feladatokat.
 
 
 ### ***Megjegyzés:***
@@ -31,11 +31,11 @@ Alapértelmezés szerint az MLX Framework a train, test és eval jsonl formátum
 
 ```
 
-2. Példánk a [TruthfulQA adatait](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv) használja, de az adat mennyisége viszonylag kevés, ezért a finomhangolás eredménye nem feltétlenül a legjobb. Ajánlott, hogy a tanulók saját szcenárióikhoz megfelelőbb adatokat használjanak.
+2. Példánkban a [TruthfulQA adatait](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv) használjuk, de az adatmennyiség viszonylag kevés, ezért a finomhangolás eredményei nem feltétlenül a legjobbak. Ajánlott, hogy a tanulók saját szcenáriójuk alapján jobb adatokat használjanak a finomhangoláshoz.
 
-3. Az adat formátuma a Phi-3 sablonnal van kombinálva
+3. Az adatformátum a Phi-3 sablonnal van kombinálva
 
-Kérjük, töltsd le az adatokat erről a [linkről](../../../../code/04.Finetuning/mlx), a ***data*** mappában minden .jsonl fájlt tartalmazzon
+Kérlek töltsd le az adatokat erről a [linkről](../../../../code/04.Finetuning/mlx), kérjük, hogy az összes .jsonl fájl legyen benne a ***data*** mappában
 
 
 ## **2. Finomhangolás a terminálban**
@@ -52,7 +52,7 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Megjegyzés:***
 
-1. Ez LoRA finomhangolás, az MLX framework nem publikált QLoRA-t
+1. Ez LoRA finomhangolás, az MLX keretrendszer nem publikált QLoRA-t
 
 2. A config.yaml fájlban beállíthatsz néhány argumentumot, például
 
@@ -137,7 +137,7 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ## **3. Finomhangolt adapter tesztelése**
 
-A finomhangolt adaptert így futtathatod a terminálban
+A finomhangolt adaptert a terminálban így futtathatod
 
 
 ```bash
@@ -155,7 +155,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Próbáld meg összehasonlítani a finomhangolt és az eredeti modell eredményeit
+Próbáld ki az összehasonlítást a finomhangolt és az eredeti modell között
 
 
 ## **4. Adapterek egyesítése új modellek létrehozásához**
@@ -169,7 +169,7 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ## **5. Kvantált finomhangolt modellek futtatása ollama-val**
 
-Használat előtt konfiguráld a llama.cpp környezetedet
+Használat előtt kérlek állítsd be a llama.cpp környezetedet
 
 
 ```bash
@@ -184,11 +184,11 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Megjegyzés:***
+***Megjegyzés:*** 
 
-1. Most támogatott a kvantálás fp32, fp16 és INT8 formátumokra
+1. Most támogatja az fp32, fp16 és INT 8 kvantálási átalakítást
 
-2. Az egyesített modellből hiányzik a tokenizer.model, kérjük töltsd le innen: https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Az egyesített modellből hiányzik a tokenizer.model, kérlek töltsd le innen: https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
 állíts be egy [Ollma Modelt](https://ollama.com/)
 
@@ -200,7 +200,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Futtasd a parancsot a terminálban
+futtasd a parancsot a terminálban
 
 
 ```bash
@@ -211,7 +211,7 @@ Futtasd a parancsot a terminálban
 
 ```
 
-Gratulálunk! Most már mesterien kezeled a finomhangolást az MLX Framework segítségével
+Gratulálunk! Most már mesterien kezeled a finomhangolást az MLX keretrendszerrel
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

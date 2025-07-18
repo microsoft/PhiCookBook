@@ -2,48 +2,48 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:22:24+00:00",
+  "translation_date": "2025-07-17T07:33:33+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "he"
 }
 -->
-## איך להשתמש ברכיבי chat-completion מרישום המערכת של Azure ML לכיול מדויק של מודל
+## כיצד להשתמש ברכיבי chat-completion מרישום המערכת של Azure ML לכוונון מדויק של מודל
 
-בדוגמה זו נבצע כיוונון מדויק למודל Phi-3-mini-4k-instruct להשלמת שיחה בין שני אנשים באמצעות מערך הנתונים ultrachat_200k.
+בדוגמה זו נבצע כוונון מדויק למודל Phi-3-mini-4k-instruct להשלמת שיחה בין שני אנשים באמצעות מערך הנתונים ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.he.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.he.png)
 
-הדוגמה תראה כיצד לבצע כיוונון מדויק בעזרת Azure ML SDK ו-Python, ולאחר מכן לפרוס את המודל המכוונן לנקודת קצה מקוונת לצורך הסקה בזמן אמת.
+הדוגמה תראה כיצד לבצע כוונון מדויק באמצעות Azure ML SDK ו-Python, ולאחר מכן לפרוס את המודל המכוונן לנקודת קצה מקוונת להסקת מסקנות בזמן אמת.
 
 ### נתוני אימון
 
-נשתמש במערך הנתונים ultrachat_200k. זהו גרסה מסוננת מאוד של מערך UltraChat ששימשה לאימון Zephyr-7B-β, מודל שיחה מתקדם בגודל 7 מיליארד פרמטרים.
+נשתמש במערך הנתונים ultrachat_200k. זהו גרסה מסוננת מאוד של מערך הנתונים UltraChat, ששימשה לאימון Zephyr-7B-β, מודל שיחה מתקדם בגודל 7 מיליארד פרמטרים.
 
 ### מודל
 
-נשתמש במודל Phi-3-mini-4k-instruct כדי להראות כיצד המשתמש יכול לכייל מודל למשימת השלמת שיחה. אם פתחתם את המחברת מכרטיס מודל ספציפי, זכרו להחליף את שם המודל הספציפי.
+נשתמש במודל Phi-3-mini-4k-instruct כדי להראות כיצד משתמש יכול לכוונן מודל למשימת השלמת שיחה. אם פתחתם פנקס זה מתוך כרטיס מודל ספציפי, זכרו להחליף את שם המודל הספציפי.
 
 ### משימות
 
-- לבחור מודל לכיוונון מדויק.
+- לבחור מודל לכוונון מדויק.
 - לבחור ולחקור את נתוני האימון.
-- להגדיר את משימת הכיוונון המדויק.
-- להריץ את משימת הכיוונון המדויק.
+- להגדיר את משימת הכוונון המדויק.
+- להריץ את משימת הכוונון המדויק.
 - לסקור מדדי אימון והערכה.
 - לרשום את המודל המכוונן.
-- לפרוס את המודל המכוונן להסקה בזמן אמת.
+- לפרוס את המודל המכוונן להסקת מסקנות בזמן אמת.
 - לנקות משאבים.
 
 ## 1. הגדרת דרישות מוקדמות
 
 - התקנת תלותיות
-- התחברות ל-AzureML Workspace. למידע נוסף ראו set up SDK authentication. החליפו את <WORKSPACE_NAME>, <RESOURCE_GROUP> ו-<SUBSCRIPTION_ID> להלן.
-- התחברות לרישום מערכת azureml
+- התחברות ל-AzureML Workspace. למידע נוסף ראו set up SDK authentication. החליפו את <WORKSPACE_NAME>, <RESOURCE_GROUP> ו-<SUBSCRIPTION_ID> למטה.
+- התחברות לרישום המערכת של azureml
 - הגדרת שם ניסוי אופציונלי
-- בדיקה או יצירת משאב מחשוב.
+- בדיקה או יצירת מחשוב.
 
 > [!NOTE]
-> דרישות: צומת GPU יחיד יכול להכיל מספר כרטיסי GPU. לדוגמה, ב-Standard_NC24rs_v3 יש 4 כרטיסי NVIDIA V100 בעוד שב-Standard_NC12s_v3 יש 2 כרטיסים כאלה. לעיין בתיעוד למידע נוסף. מספר כרטיסי ה-GPU לצומת מוגדר בפרמטר gpus_per_node למטה. הגדרה נכונה תבטיח שימוש מלא בכל כרטיסי ה-GPU בצומת. ניתן למצוא SKU מומלצים למחשוב GPU כאן וכאן.
+> דרישות: צומת GPU יחיד יכול להכיל מספר כרטיסי GPU. לדוגמה, בצומת אחד מסוג Standard_NC24rs_v3 יש 4 כרטיסי NVIDIA V100, בעוד שב-Standard_NC12s_v3 יש 2 כרטיסים כאלה. עיינו בתיעוד למידע זה. מספר כרטיסי ה-GPU לכל צומת מוגדר בפרמטר gpus_per_node למטה. הגדרה נכונה של ערך זה תבטיח שימוש בכל כרטיסי ה-GPU בצומת. ניתן למצוא את SKU המומלצים למחשוב GPU כאן וכאן.
 
 ### ספריות Python
 
@@ -59,15 +59,15 @@ pip install azureml-mlflow
 
 ### אינטראקציה עם Azure ML
 
-1. סקריפט ה-Python הזה משמש לאינטראקציה עם שירות Azure Machine Learning (Azure ML). להלן פירוט הפעולות:
+1. סקריפט Python זה משמש לאינטראקציה עם שירות Azure Machine Learning (Azure ML). להלן פירוט הפעולות:
 
-    - מייבא מודולים נדרשים מ-azure.ai.ml, azure.identity, ו-azure.ai.ml.entities. בנוסף מייבא את מודול time.
+    - מייבא מודולים נדרשים מ-packages azure.ai.ml, azure.identity, ו-azure.ai.ml.entities. כמו כן מייבא את מודול time.
 
-    - מנסה לאמת באמצעות DefaultAzureCredential(), שמספק חוויית אימות פשוטה להתחלת פיתוח מהיר בענן Azure. במקרה של כשל, חוזר ל-InteractiveBrowserCredential(), שמספק כניסה אינטראקטיבית.
+    - מנסה לאמת באמצעות DefaultAzureCredential(), שמספק חווית אימות פשוטה להתחלת פיתוח מהירה בענן Azure. אם זה נכשל, עובר ל-InteractiveBrowserCredential(), שמאפשר התחברות אינטראקטיבית בדפדפן.
 
-    - לאחר מכן מנסה ליצור מופע MLClient באמצעות from_config, שקורא את ההגדרות מקובץ ברירת המחדל (config.json). במקרה של כשל, יוצר MLClient על ידי מתן subscription_id, resource_group_name, ו-workspace_name ידנית.
+    - מנסה ליצור מופע MLClient באמצעות from_config, שקורא את ההגדרות מקובץ הקונפיגורציה (config.json). אם זה נכשל, יוצר MLClient באופן ידני עם subscription_id, resource_group_name ו-workspace_name.
 
-    - יוצר מופע נוסף של MLClient, הפעם לרישום Azure ML בשם "azureml". רישום זה משמש לאחסון מודלים, צינורות כיוונון, וסביבות.
+    - יוצר מופע MLClient נוסף, הפעם עבור רישום Azure ML בשם "azureml". רישום זה משמש לאחסון מודלים, צינורות כוונון מדויק וסביבות.
 
     - מגדיר את experiment_name ל-"chat_completion_Phi-3-mini-4k-instruct".
 
@@ -112,20 +112,20 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. בחירת מודל בסיס לכיוונון מדויק
+## 2. בחירת מודל בסיס לכוונון מדויק
 
-1. Phi-3-mini-4k-instruct הוא מודל קל משקל בגודל 3.8 מיליארד פרמטרים, מתקדם, המבוסס על מערכי נתונים ששימשו עבור Phi-2. המודל שייך למשפחת Phi-3, וגרסת Mini מגיעה בשני ואריאנטים 4K ו-128K, שהם אורך ההקשר (בטוקנים) הנתמך. יש לכייל את המודל למטרה הספציפית שלנו כדי להשתמש בו. ניתן לעיין במודלים אלו בקטלוג המודלים ב-AzureML Studio, עם סינון למשימת השלמת שיחה. בדוגמה זו, אנו משתמשים במודל Phi-3-mini-4k-instruct. אם פתחתם את המחברת למודל שונה, החליפו את שם המודל והגרסה בהתאם.
+1. Phi-3-mini-4k-instruct הוא מודל קל משקל עם 3.8 מיליארד פרמטרים, מתקדם, שנבנה על מערכי הנתונים ששימשו ל-Phi-2. המודל שייך למשפחת Phi-3, וגרסת Mini מגיעה בשתי וריאציות: 4K ו-128K, המייצגות את אורך ההקשר (במונחי טוקנים) שהמודל תומך בו. יש לכוונן את המודל למטרה הספציפית שלנו כדי להשתמש בו. ניתן לעיין במודלים אלה בקטלוג המודלים ב-AzureML Studio, עם סינון לפי משימת chat-completion. בדוגמה זו, אנו משתמשים במודל Phi-3-mini-4k-instruct. אם פתחתם פנקס זה עבור מודל אחר, החליפו את שם המודל והגרסה בהתאם.
 
     > [!NOTE]
-    > מזהה המודל (model id) ישמש כקלט למשימת הכיוונון המדויק. הוא זמין גם כשדה Asset ID בדף פרטי המודל בקטלוג המודלים של AzureML Studio.
+    > מזהה המודל (model id) הוא תכונה של המודל. הוא יועבר כקלט למשימת הכוונון המדויק. מזהה זה זמין גם בשדה Asset ID בדף פרטי המודל בקטלוג המודלים של AzureML Studio.
 
-2. סקריפט ה-Python הזה מתקשר עם שירות Azure Machine Learning. להלן פירוט הפעולות:
+2. סקריפט Python זה מתקשר עם שירות Azure Machine Learning (Azure ML). להלן פירוט הפעולות:
 
     - מגדיר את model_name ל-"Phi-3-mini-4k-instruct".
 
-    - משתמש בשיטת get של models ברישום registry_ml_client כדי לקבל את הגרסה האחרונה של המודל עם השם הנתון מרישום Azure ML. השיטה נקראת עם שני ארגומנטים: שם המודל ותווית שמציינת לקבל את הגרסה העדכנית ביותר.
+    - משתמש בשיטת get של models מתוך registry_ml_client כדי לקבל את הגרסה העדכנית ביותר של המודל עם השם שצויין מרישום Azure ML. השיטה get נקראת עם שני ארגומנטים: שם המודל ותווית שמציינת שיש לקבל את הגרסה העדכנית ביותר.
 
-    - מדפיס הודעה לקונסולה עם שם, גרסה, ומזהה המודל שישמשו לכיוונון מדויק. משתמש בשיטת format של מחרוזת להוספת הפרטים. השם, הגרסה, והמזהה ניגשים דרך מאפייני האובייקט foundation_model.
+    - מדפיס הודעה לקונסול עם שם, גרסה ומזהה המודל שישמש לכוונון המדויק. שיטת format של המחרוזת משמשת להוספת הערכים המתאימים. שם, גרסה ומזהה המודל ניגשים כתכונות של foundation_model.
 
     ```python
     # Set the model name
@@ -143,29 +143,29 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. יצירת משאב מחשוב לשימוש במשימה
+## 3. יצירת מחשוב לשימוש במשימה
 
-משימת הכיוונון המדויק פועלת רק עם מחשוב GPU. גודל המחשוב תלוי בגודל המודל וברוב המקרים קשה לזהות את המחשוב המתאים. בתא זה אנו מנחים את המשתמש לבחור את המחשוב הנכון למשימה.
-
-> [!NOTE]
-> המחשובים המפורטים להלן פועלים בתצורה המיטבית ביותר. כל שינוי בתצורה עלול לגרום לשגיאת Cuda Out Of Memory. במקרים כאלה, נסו לשדרג את המחשוב לגודל גדול יותר.
+משימת הכוונון המדויק פועלת רק עם מחשוב GPU. גודל המחשוב תלוי בגודל המודל, וברוב המקרים קשה לזהות את המחשוב המתאים למשימה. בתא זה אנו מדריכים את המשתמש לבחור את המחשוב הנכון.
 
 > [!NOTE]
-> בעת בחירת compute_cluster_size, ודאו שהמחשוב זמין בקבוצת המשאבים שלכם. אם מחשוב מסוים אינו זמין, ניתן לבקש גישה למשאבי המחשוב.
+> המחשובים המפורטים למטה פועלים עם התצורה המיטבית ביותר. כל שינוי בתצורה עלול לגרום לשגיאת Cuda Out Of Memory. במקרים כאלה, נסו לשדרג את המחשוב לגודל גדול יותר.
 
-### בדיקת תמיכה בכיוונון מדויק במודל
+> [!NOTE]
+> בעת בחירת compute_cluster_size למטה, ודאו שהמחשוב זמין בקבוצת המשאבים שלכם. אם מחשוב מסוים אינו זמין, ניתן לבקש גישה למשאבי המחשוב.
 
-1. סקריפט ה-Python הזה מתקשר למודל Azure ML. להלן פירוט הפעולות:
+### בדיקת תמיכה בכוונון מדויק במודל
 
-    - מייבא את מודול ast, המספק פונקציות לעיבוד עצי תחביר מופשט בפייתון.
+1. סקריפט Python זה מתקשר עם מודל Azure Machine Learning (Azure ML). להלן פירוט הפעולות:
 
-    - בודק אם לאובייקט foundation_model (המיוצג מודל ב-Azure ML) יש תג בשם finetune_compute_allow_list. תגיות ב-Azure ML הן זוגות מפתח-ערך שניתן ליצור ולהשתמש בהם לסינון ומיון מודלים.
+    - מייבא את מודול ast, המספק פונקציות לעיבוד עצי תחביר מופשט של Python.
 
-    - אם התג קיים, משתמש ב-ast.literal_eval כדי לפרש בבטחה את ערך התג (מחרוזת) לרשימת Python. רשימה זו מוקצית למשתנה computes_allow_list. לאחר מכן מדפיס הודעה שממליצה ליצור מחשוב מתוך הרשימה.
+    - בודק אם לאובייקט foundation_model (המשקף מודל ב-Azure ML) יש תג בשם finetune_compute_allow_list. תגיות ב-Azure ML הן זוגות מפתח-ערך שניתן ליצור ולהשתמש בהם לסינון ומיון מודלים.
 
-    - אם התג אינו קיים, מגדיר את computes_allow_list כ-None ומדפיס הודעה שהתג finetune_compute_allow_list אינו חלק מתגיות המודל.
+    - אם התג finetune_compute_allow_list קיים, משתמש בפונקציה ast.literal_eval כדי לפרש בבטחה את ערך התג (מחרוזת) לרשימת Python. רשימה זו מוקצית למשתנה computes_allow_list. לאחר מכן מדפיס הודעה שממליצה ליצור מחשוב מתוך הרשימה.
 
-    - לסיכום, הסקריפט בודק תג מסוים במטא-נתוני המודל, ממיר את ערכו לרשימה במידה וקיים, ומספק משוב למשתמש בהתאם.
+    - אם התג finetune_compute_allow_list אינו קיים, מגדיר את computes_allow_list ל-None ומדפיס הודעה שהתג אינו חלק מתגיות המודל.
+
+    - לסיכום, הסקריפט בודק תג מסוים במטא-דאטה של המודל, ממיר את ערך התג לרשימה אם קיים, ומספק משוב למשתמש בהתאם.
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -188,19 +188,19 @@ pip install azureml-mlflow
 
 ### בדיקת מופע מחשוב
 
-1. סקריפט ה-Python הזה מתקשר לשירות Azure ML ומבצע בדיקות שונות על מופע מחשוב. להלן פירוט הפעולות:
+1. סקריפט Python זה מתקשר עם שירות Azure Machine Learning (Azure ML) ומבצע מספר בדיקות על מופע מחשוב. להלן פירוט הפעולות:
 
-    - מנסה לאחזר את מופע המחשוב בשם המאוחסן ב-compute_cluster מתוך Azure ML workspace. אם מצב הפרוביזנינג של המופע הוא "failed", מעלה חריגת ValueError.
+    - מנסה לקבל את מופע המחשוב בשם המאוחסן ב-compute_cluster מתוך Azure ML workspace. אם מצב ההקצאה של המופע הוא "failed", מעלה שגיאת ValueError.
 
-    - בודק אם computes_allow_list אינו None. אם לא, ממיר את כל גדלי המחשוב ברשימה לאותיות קטנות ובודק אם גודל המופע הנוכחי נמצא ברשימה. אם לא, מעלה חריגת ValueError.
+    - בודק אם computes_allow_list אינו None. אם כן, ממיר את כל גדלי המחשוב ברשימה לאותיות קטנות ובודק אם גודל המופע הנוכחי נמצא ברשימה. אם לא, מעלה שגיאת ValueError.
 
-    - אם computes_allow_list הוא None, בודק אם גודל המופע נמצא ברשימת גדלים של GPU VM שאינם נתמכים. אם כן, מעלה חריגת ValueError.
+    - אם computes_allow_list הוא None, בודק אם גודל המופע נמצא ברשימת גדלים של VM GPU לא נתמכים. אם כן, מעלה שגיאת ValueError.
 
-    - מאחזר רשימה של כל גדלי המחשוב הזמינים ב-workspace. עובר על הרשימה, ובודק אם שם גודל המחשוב תואם לגודל המופע הנוכחי. אם כן, מאחזר את מספר ה-GPU עבור גודל זה ומגדיר gpu_count_found כ-True.
+    - מקבל רשימה של כל גדלי המחשוב הזמינים ב-workspace. עובר על הרשימה, ובודק אם שם הגודל תואם לגודל המופע הנוכחי. אם כן, מקבל את מספר כרטיסי ה-GPU עבור גודל זה ומגדיר gpu_count_found ל-True.
 
-    - אם gpu_count_found הוא True, מדפיס את מספר ה-GPU במופע המחשוב. אחרת, מעלה חריגת ValueError.
+    - אם gpu_count_found הוא True, מדפיס את מספר כרטיסי ה-GPU במופע המחשוב. אם לא, מעלה שגיאת ValueError.
 
-    - לסיכום, הסקריפט מבצע בדיקות שונות על מופע מחשוב ב-Azure ML, כולל בדיקת מצב הפרוביזנינג, גודל מול רשימות מותרות או אסורות, ומספר כרטיסי ה-GPU.
+    - לסיכום, הסקריפט מבצע בדיקות שונות על מופע מחשוב ב-Azure ML workspace, כולל בדיקת מצב הקצאה, גודל מול רשימת הרשאות או איסורים, ומספר כרטיסי ה-GPU.
 
     ```python
     # Print the exception message
@@ -269,41 +269,41 @@ pip install azureml-mlflow
         )
     ```
 
-## 4. בחירת מערך הנתונים לכיוונון המדויק של המודל
+## 4. בחירת מערך הנתונים לכוונון המדויק של המודל
 
-1. אנו משתמשים במערך הנתונים ultrachat_200k. למערך יש ארבעה חלקים, המתאימים לכיוונון מונחה (Supervised fine-tuning, sft). דירוג יצירה (generation ranking, gen). מספר הדוגמאות בכל חלק מוצג כך:
+1. אנו משתמשים במערך הנתונים ultrachat_200k. המערך מחולק לארבעה חלקים, המתאימים לכוונון מפוקח (Supervised fine-tuning - sft). דירוג יצירה (generation ranking - gen). מספר הדוגמאות בכל חלק מוצג להלן:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. התאים הבאים מציגים הכנה בסיסית של הנתונים לכיוונון:
+1. התאים הבאים מציגים הכנה בסיסית של הנתונים לכוונון מדויק:
 
-### הצגת שורות נתונים
+### הצגת שורות נתונים לדוגמה
 
-רוצים שהדוגמה תרוץ מהר, לכן נשמור את קבצי train_sft ו-test_sft שמכילים 5% מהשורות המסוננות. משמעות הדבר היא שהמודל המכוון יהיה פחות מדויק, ולכן לא מומלץ לשימוש בעולם האמיתי.  
-הסקריפט download-dataset.py משמש להורדת מערך ultrachat_200k ולהמרתו לפורמט שניתן להשתמש בו בצינור הכיוונון. מכיוון שהמערך גדול, כאן יש רק חלק ממנו.
+רוצים שהדוגמה תרוץ מהר, לכן נשמור את הקבצים train_sft ו-test_sft המכילים 5% מהשורות שכבר קוצצו. משמעות הדבר היא שהמודל המכוונן יהיה בעל דיוק נמוך יותר, ולכן לא ישמש לשימוש בעולם האמיתי.  
+הסקריפט download-dataset.py משמש להורדת מערך הנתונים ultrachat_200k ולהמרתו לפורמט שניתן לצריכה על ידי רכיב צינור הכוונון המדויק. מאחר שמערך הנתונים גדול, כאן יש רק חלק ממנו.
 
 1. הרצת הסקריפט למטה מורידה רק 5% מהנתונים. ניתן להגדיל זאת על ידי שינוי הפרמטר dataset_split_pc לאחוז הרצוי.
 
     > [!NOTE]
-    > לחלק ממודלי השפה יש קודי שפה שונים ולכן שמות העמודות במערך הנתונים צריכים לשקף זאת.
+    > למודלים של שפה מסוימים יש קודי שפה שונים, ולכן שמות העמודות במערך הנתונים צריכים לשקף זאת.
 
-1. דוגמה לאופן שבו הנתונים צריכים להיראות:  
-מערך הנתונים של השלמת שיחה מאוחסן בפורמט parquet, כאשר כל רשומה משתמשת בסכימה הבאה:
+1. דוגמה לאופן שבו הנתונים אמורים להיראות:  
+מערך הנתונים של השלמת שיחה מאוחסן בפורמט parquet כאשר כל רשומה משתמשת בסכימה הבאה:
 
-    - זהו מסמך JSON (JavaScript Object Notation), פורמט נפוץ להחלפת נתונים. זה אינו קוד להרצה, אלא דרך לאחסן ולהעביר נתונים. להלן פירוט המבנה:
+    - זהו מסמך JSON (JavaScript Object Notation), פורמט נפוץ להחלפת נתונים. זה לא קוד להרצה, אלא דרך לאחסן ולהעביר נתונים. להלן פירוט המבנה:
 
-    - "prompt": מפתח שמכיל מחרוזת שמייצגת משימה או שאלה המופנית לעוזר AI.
+    - "prompt": מפתח זה מחזיק מחרוזת המייצגת משימה או שאלה שהוצגה לעוזר AI.
 
-    - "messages": מפתח שמכיל מערך של אובייקטים. כל אובייקט מייצג הודעה בשיחה בין משתמש לעוזר AI. לכל הודעה שני מפתחות:
+    - "messages": מפתח זה מחזיק מערך של אובייקטים. כל אובייקט מייצג הודעה בשיחה בין משתמש לעוזר AI. לכל אובייקט הודעה שני מפתחות:
 
-    - "content": מחרוזת שמכילה את תוכן ההודעה.
-    - "role": מחרוזת שמציינת את תפקיד השולח, יכול להיות "user" או "assistant".
-    - "prompt_id": מחרוזת שמייצגת מזהה ייחודי לפרומפט.
+    - "content": מפתח זה מחזיק מחרוזת המייצגת את תוכן ההודעה.
+    - "role": מפתח זה מחזיק מחרוזת המייצגת את תפקיד השולח של ההודעה. יכול להיות "user" או "assistant".
+    - "prompt_id": מפתח זה מחזיק מחרוזת המייצגת מזהה ייחודי לפרומפט.
 
-1. במסמך JSON הספציפי הזה, מוצגת שיחה שבה משתמש מבקש מהעוזר ליצור דמות ראשית לסיפור דיסטופי. העוזר מגיב, והמשתמש מבקש פרטים נוספים. העוזר מסכים לספק את הפרטים. כל השיחה מקושרת למזהה פרומפט ספציפי.
+1. במסמך JSON הספציפי הזה, מוצגת שיחה שבה משתמש מבקש מהעוזר ליצור גיבור לסיפור דיסטופי. העוזר מגיב, והמשתמש מבקש פרטים נוספים. העוזר מסכים לספק פרטים נוספים. כל השיחה מקושרת למזהה פרומפט ספציפי.
 
     ```python
     {
@@ -343,17 +343,17 @@ pip install azureml-mlflow
     }
     ```
 
-### הורדת הנתונים
+### הורדת נתונים
 
-1. סקריפט Python זה משמש להורדת מערך נתונים בעזרת סקריפט עזר בשם download-dataset.py. להלן פירוט הפעולות:
+1. סקריפט Python זה משמש להורדת מערך נתונים באמצעות סקריפט עזר בשם download-dataset.py. להלן פירוט הפעולות:
 
-    - מייבא את מודול os, המספק ממשק לפונקציות מערכת הפעלה.
+    - מייבא את מודול os, המספק דרך ניידת להשתמש בפונקציות התלויות במערכת ההפעלה.
 
-    - משתמש ב-os.system להריץ את סקריפט download-dataset.py ב-shell עם ארגומנטים ספציפיים. הארגומנטים מגדירים את מערך הנתונים להורדה (HuggingFaceH4/ultrachat_200k), את התיקייה להורדה (ultrachat_200k_dataset), ואת אחוז הפיצול (5). הפונקציה מחזירה את סטטוס היציאה של הפקודה, המאוחסן ב-exit_status.
+    - משתמש בפונקציה os.system להריץ את הסקריפט download-dataset.py ב-shell עם ארגומנטים מסוימים בשורת הפקודה. הארגומנטים מציינים את מערך הנתונים להורדה (HuggingFaceH4/ultrachat_200k), את התיקייה להורדה אליה (ultrachat_200k_dataset), ואת אחוז החלוקה במערך הנתונים (5). הפונקציה os.system מחזירה את סטטוס היציאה של הפקודה; סטטוס זה נשמר במשתנה exit_status.
 
-    - בודק אם exit_status שונה מ-0. במערכות Unix, סטטוס 0 מציין הצלחה, וכל ערך אחר מצביע על שגיאה. במקרה של שגיאה, מעלה חריגה עם הודעה על תקלה בהורדת הנתונים.
+    - בודק אם exit_status שונה מ-0. במערכות הפעלה דמויות יוניקס, סטטוס יציאה 0 מציין הצלחה, וכל מספר אחר מציין שגיאה. אם exit_status שונה מ-0, מעלה חריגה עם הודעה על שגיאה בהורדת מערך הנתונים.
 
-    - לסיכום, הסקריפט מריץ פקודה להורדת מערך נתונים בעזרת סקריפט עזר ומטפל בשגיאות במידת הצורך.
+    - לסיכום, הסקריפט מריץ פקודה להורדת מערך נתונים באמצעות סקריפט עזר, ומעלה חריגה אם הפקודה נכשלה.
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -373,21 +373,20 @@ pip install azureml-mlflow
         raise Exception("Error downloading dataset")
     ```
 
-### טעינת הנתונים ל-DataFrame
+### טעינת נתונים ל-DataFrame
 
 1. סקריפט Python זה טוען קובץ JSON Lines לתוך pandas DataFrame ומציג את חמש השורות הראשונות. להלן פירוט הפעולות:
 
-    - מייבא את ספריית pandas, שהיא ספרייה עוצמתית לעיבוד וניתוח נתונים.
+    - מייבא את ספריית pandas, שהיא ספרייה חזקה לעיבוד וניתוח נתונים.
 
-    - מגדיר את רוחב העמודה המקסימלי להצגה בפנדס ל-0, כלומר הטקסט המלא של כל עמודה יוצג ללא קיצוץ.
+    - מגדיר את רוחב העמודה המקסימלי באפשרויות התצוגה של pandas ל-0. משמעות הדבר היא שהטקסט המלא של כל עמודה יוצג ללא קיצוץ בעת הדפסת ה-DataFrame. 
 
-    - משתמש בפונקציית pd.read_json כדי לטעון את הקובץ train_sft.jsonl מתיקיית ultrachat_200k_dataset ל-DataFrame. הפרמטר lines=True מציין שהקובץ בפורמט JSON Lines, שבו כל שורה היא אובייקט JSON נפרד.
+    - משתמש בפונקציה pd.read_json כדי לטעון את הקובץ train_sft.jsonl מתיקיית ultrachat_200k_dataset לתוך DataFrame. הפרמטר lines=True מציין שהקובץ בפורמט JSON Lines, שבו כל שורה היא אובייקט JSON נפרד.
+- הוא משתמש בשיטת head כדי להציג את 5 השורות הראשונות של ה-DataFrame. אם ל-DataFrame יש פחות מ-5 שורות, הוא יציג את כולן.
 
-    - משתמש ב-head להצגת חמש השורות הראשונות. אם יש פחות מ-5 שורות, יוצגו כולן.
+- לסיכום, הסקריפט הזה טוען קובץ JSON Lines ל-DataFrame ומציג את 5 השורות הראשונות עם הטקסט המלא של העמודות.
 
-    - לסיכום, הסקריפט טוען קובץ JSON Lines ל-DataFrame ומציג את חמש השורות הראשונות עם טקסט מלא בעמודות.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -404,48 +403,102 @@ pip install azureml-mlflow
     df.head()
     ```
 
-## 5. הגשת משימת הכיוונון המדויק תוך שימוש במודל ובנתונים כקלטים
+## 5. הגשת משימת ה-fine tuning באמצעות המודל והנתונים כקלטים
 
-יצירת המשימה שמשתמשת ברכיב צינור chat-completion. למידע נוסף על כל הפרמטרים הנתמכים לכיוונון מדויק.
+צור את המשימה שמשתמשת ברכיב pipeline של chat-completion. למידע נוסף על כל הפרמטרים הנתמכים ל-fine tuning.
 
-### הגדרת פרמטרי כיוונון
+### הגדרת פרמטרי fine tune
 
-1. פרמטרי הכיוונון מחולקים לשתי קטגוריות - פרמטרי אימון ופרמטרי אופטימיזציה.
+1. פרמטרי ה-fine tune יכולים להתחלק ל-2 קטגוריות - פרמטרי אימון, ופרמטרי אופטימיזציה
 
-1. פרמטרי האימון מגדירים היבטים של האימון כגון -
+1. פרמטרי האימון מגדירים את היבטי האימון כגון -
 
-    - האופטימייזר והמתזמן שישמשו
-    - המדד לשיפור הכיוונון
-    - מספר שלבי האימון וגודל האצווה וכן הלאה
+    - האופטימייזר, ה-scheduler שיש להשתמש בהם
+    - המדד לאופטימיזציה של ה-fine tune
+    - מספר שלבי האימון וגודל ה-batch וכן הלאה
     - פרמטרי האופטימיזציה מסייעים באופטימיזציה של זיכרון ה-GPU ושימוש יעיל במשאבי המחשוב.
 
-1. להלן כמה מהפרמטרים השייכים לקטגוריה זו. פרמטרי האופטימיזציה משתנים בין מודלים ומגיעים עם המודל כדי להתמודד עם שינויים אלו.
+1. להלן כמה מהפרמטרים השייכים לקטגוריה זו. פרמטרי האופטימיזציה משתנים בין מודלים ונארזים יחד עם המודל כדי להתמודד עם השינויים הללו.
 
     - הפעלת deepspeed ו-LoRA
-    - הפעלת אימון ברזולוציה מעורבת (mixed precision)
-    - הפעלת אימון בריבוי צמתים
+    - הפעלת אימון במדויק מעורב (mixed precision)
+    - הפעלת אימון מרובה-צמתים (multi-node)
 
 > [!NOTE]
-> כיוונון מונחה עלול לגרום לאיבוד יישור או שכחה קטסטרופלית. מומלץ לבדוק זאת ולהריץ שלב יישור לאחר הכיוונון.
+> אימון מפוקח עשוי לגרום לאובדן יישור או לשכחה קטסטרופלית. אנו ממליצים לבדוק בעיה זו ולהריץ שלב יישור לאחר ה-fine tune.
 
-### פרמטרי כיוונון מדויק
+### פרמטרי Fine Tuning
 
-1. סקריפט Python זה מגדיר פרמטרים לכיוונון מדויק של מודל למידת מכונה. להלן פירוט הפעולות:
+1. הסקריפט בפייתון הזה מגדיר פרמטרים ל-fine-tuning של מודל למידת מכונה. הנה פירוט של מה שהוא עושה:
 
-    - מגדיר פרמטרי אימון ברירת מחדל כגון מספר אפוקים, גדלי אצוות לאימון ולהערכה, קצב למידה וסוג מתזמן קצב הלמידה.
+    - הוא מגדיר פרמטרי אימון ברירת מחדל כמו מספר epochs לאימון, גדלי batch לאימון והערכה, שיעור הלמידה וסוג ה-scheduler של שיעור הלמידה.
 
-    - מגדיר פרמטרי אופטימיזציה ברירת מחדל כגון הפעלת LoRa ו-DeepSpeed, ושלב DeepSpeed.
+    - הוא מגדיר פרמטרי אופטימיזציה ברירת מחדל כמו האם להפעיל Layer-wise Relevance Propagation (LoRa) ו-DeepSpeed, ושלב ה-DeepSpeed.
 
-    - מאחד את פרמטרי האימון והאופטימיזציה למילון אחד בשם finetune_parameters.
+    - הוא משלב את פרמטרי האימון והאופטימיזציה למילון אחד בשם finetune_parameters.
 
-    - בודק אם ל-foundation_model יש פרמטרי ברירת מחדל ספציפיים למודל. אם כן, מדפיס אזהרה ומעדכן את finetune_parameters עם פרמטרים אלו. משתמש ב-ast.literal_eval להמרת המחרוזת למילון Python.
+    - הוא בודק אם ל-foundation_model יש פרמטרים ספציפיים למודל כברירת מחדל. אם כן, הוא מדפיס הודעת אזהרה ומעדכן את מילון finetune_parameters עם ברירות המחדל הספציפיות למודל. הפונקציה ast.literal_eval משמשת להמרת ברירות המחדל הספציפיות למודל ממחרוזת למילון פייתון.
 
-    - מדפיס את סט פרמטרי הכיוונון הסופי שישמש בהרצה.
+    - הוא מדפיס את קבוצת הפרמטרים הסופית של ה-fine-tuning שתשמש להרצה.
 
-    - לסיכום, הסקריפט מגדיר ומציג את פרמטרי הכיוונון המדויק עם אפשרות לעדכון פרמטרים ספציפיים למודל.
+    - לסיכום, הסקריפט מגדיר ומציג את הפרמטרים ל-fine-tuning של מודל למידת מכונה, עם אפשרות להחליף את ברירות המחדל בפרמטרים ספציפיים למודל.
 
+```python
+    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    training_parameters = dict(
+        num_train_epochs=3,
+        per_device_train_batch_size=1,
+        per_device_eval_batch_size=1,
+        learning_rate=5e-6,
+        lr_scheduler_type="cosine",
+    )
+    
+    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    optimization_parameters = dict(
+        apply_lora="true",
+        apply_deepspeed="true",
+        deepspeed_stage=2,
+    )
+    
+    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    finetune_parameters = {**training_parameters, **optimization_parameters}
+    
+    # Check if the foundation_model has any model-specific default parameters
+    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
+    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    if "model_specific_defaults" in foundation_model.tags:
+        print("Warning! Model specific defaults exist. The defaults could be overridden.")
+        finetune_parameters.update(
+            ast.literal_eval(  # convert string to python dict
+                foundation_model.tags["model_specific_defaults"]
+            )
+        )
+    
+    # Print the final set of fine-tuning parameters that will be used for the run
+    print(
+        f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
+    )
+    ```
 
-pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס את שם התצוגה הזה. ```python
+### Pipeline לאימון
+
+1. הסקריפט בפייתון הזה מגדיר פונקציה ליצירת שם תצוגה עבור pipeline לאימון למידת מכונה, ואז קורא לפונקציה זו כדי ליצור ולהדפיס את שם התצוגה. הנה פירוט של מה שהוא עושה:
+
+1. מוגדרת הפונקציה get_pipeline_display_name. פונקציה זו יוצרת שם תצוגה בהתבסס על פרמטרים שונים הקשורים ל-pipeline האימון.
+
+1. בתוך הפונקציה, היא מחשבת את גודל ה-batch הכולל על ידי הכפלת גודל ה-batch לכל מכשיר, מספר שלבי הצטברות הגרדיאנט, מספר ה-GPU לכל node, ומספר ה-nodes המשמשים ל-fine-tuning.
+
+1. היא שולפת פרמטרים נוספים כמו סוג ה-scheduler של שיעור הלמידה, האם DeepSpeed מופעל, שלב ה-DeepSpeed, האם Layer-wise Relevance Propagation (LoRa) מופעל, המגבלה על מספר נקודות הבדיקה של המודל לשמירה, ואורך הרצף המקסימלי.
+
+1. היא בונה מחרוזת הכוללת את כל הפרמטרים הללו, מופרדים בקווים מפרידים. אם DeepSpeed או LoRa מופעלים, המחרוזת כוללת "ds" ואחריו שלב ה-DeepSpeed, או "lora" בהתאמה. אם לא, היא כוללת "nods" או "nolora" בהתאמה.
+
+1. הפונקציה מחזירה את המחרוזת הזו, המשמשת כשם התצוגה של pipeline האימון.
+
+1. לאחר שהפונקציה מוגדרת, היא נקראת כדי ליצור את שם התצוגה, ואז מדפיסה אותו.
+
+1. לסיכום, הסקריפט יוצר שם תצוגה ל-pipeline אימון למידת מכונה בהתבסס על פרמטרים שונים, ואז מדפיס את שם התצוגה.
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -498,17 +551,31 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
     pipeline_display_name = get_pipeline_display_name()
     # Print the display name
     print(f"Display name used for the run: {pipeline_display_name}")
-    ``` ### הגדרת Pipeline סקריפט הפייתון הזה מגדיר ומגדיר pipeline ללמידת מכונה באמצעות Azure Machine Learning SDK. הנה פירוט של מה שהוא עושה: 1. מייבא מודולים נחוצים מ-Azure AI ML SDK. 1. מושך מרכיב pipeline בשם "chat_completion_pipeline" מהרשימה. 1. מגדיר עבודה של pipeline באמצעות `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
+    ```
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+### הגדרת ה-Pipeline
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+הסקריפט בפייתון הזה מגדיר ומגדיר pipeline למידת מכונה באמצעות Azure Machine Learning SDK. הנה פירוט של מה שהוא עושה:
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. מייבא מודולים נחוצים מ-Azure AI ML SDK.
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. מושך רכיב pipeline בשם "chat_completion_pipeline" מהרשימה.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False`, כלומר ה-pipeline יעצור אם כל שלב נכשל. 1. לסיכום, הסקריפט הזה מגדיר ומגדיר pipeline ללמידת מכונה למשימת השלמת שיחה באמצעות Azure Machine Learning SDK. ```python
+1. מגדיר משימת pipeline באמצעות הדקורטור `@pipeline` והפונקציה `create_pipeline`. שם ה-pipeline מוגדר כ-`pipeline_display_name`.
+
+1. בתוך הפונקציה `create_pipeline`, הוא מאתחל את רכיב ה-pipeline שנמשה עם פרמטרים שונים, כולל נתיב המודל, אשכולות מחשוב לשלבים שונים, חלוקות מערכי נתונים לאימון ובדיקה, מספר ה-GPU לשימוש ב-fine-tuning, ופרמטרים נוספים של fine-tuning.
+
+1. ממפה את הפלט של משימת ה-fine-tuning לפלט של משימת ה-pipeline. זה נעשה כדי לאפשר רישום קל של המודל המותאם, הנדרש לפריסת המודל לנקודת קצה מקוונת או אצווה.
+
+1. יוצר מופע של ה-pipeline על ידי קריאה לפונקציה `create_pipeline`.
+
+1. מגדיר את ההגדרה `force_rerun` של ה-pipeline ל-`True`, כלומר תוצאות מטמון ממשימות קודמות לא ישמשו.
+
+1. מגדיר את ההגדרה `continue_on_step_failure` של ה-pipeline ל-`False`, כלומר ה-pipeline ייפסק אם שלב כלשהו נכשל.
+
+1. לסיכום, הסקריפט מגדיר ומגדיר pipeline למידת מכונה למשימת השלמת שיחה באמצעות Azure Machine Learning SDK.
+
+```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.dsl import pipeline
     from azure.ai.ml import Input
@@ -557,7 +624,19 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
     # Set continue on step failure to False
     # This means that the pipeline will stop if any step fails
     pipeline_object.settings.continue_on_step_failure = False
-    ``` ### שליחת העבודה 1. סקריפט הפייתון הזה שולח עבודה של pipeline ללמידת מכונה לסביבת עבודה של Azure Machine Learning ואז מחכה לסיום העבודה. הנה פירוט של מה שהוא עושה: - קורא למתודה create_or_update של האובייקט jobs ב-workspace_ml_client כדי לשלוח את עבודת ה-pipeline. ה-pipeline שירוץ מוגדר על ידי pipeline_object, והניסוי תחתיו רץ מוגדר על ידי experiment_name. - לאחר מכן קורא למתודה stream של האובייקט jobs ב-workspace_ml_client כדי להמתין לסיום עבודת ה-pipeline. העבודה שמחכים לה מוגדרת על ידי התכונה name של האובייקט pipeline_job. - לסיכום, הסקריפט הזה שולח עבודה של pipeline ללמידת מכונה לסביבת עבודה של Azure Machine Learning ואז מחכה לסיום העבודה. ```python
+    ```
+
+### הגשת המשימה
+
+1. הסקריפט בפייתון הזה מגיש משימת pipeline למידת מכונה לסביבת עבודה של Azure Machine Learning ואז ממתין לסיום המשימה. הנה פירוט של מה שהוא עושה:
+
+    - קורא לפונקציה create_or_update של האובייקט jobs ב-workspace_ml_client כדי להגיש את משימת ה-pipeline. ה-pipeline להרצה מוגדר על ידי pipeline_object, והניסוי תחתיו מוגדר על ידי experiment_name.
+
+    - לאחר מכן קורא לפונקציה stream של האובייקט jobs ב-workspace_ml_client כדי להמתין לסיום משימת ה-pipeline. המשימה להמתין לה מוגדרת על ידי המאפיין name של האובייקט pipeline_job.
+
+    - לסיכום, הסקריפט מגיש משימת pipeline למידת מכונה לסביבת עבודה של Azure Machine Learning, ואז ממתין לסיום המשימה.
+
+```python
     # Submit the pipeline job to the Azure Machine Learning workspace
     # The pipeline to be run is specified by pipeline_object
     # The experiment under which the job is run is specified by experiment_name
@@ -568,7 +647,33 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
     # Wait for the pipeline job to complete
     # The job to wait for is specified by the name attribute of the pipeline_job object
     workspace_ml_client.jobs.stream(pipeline_job.name)
-    ``` ## 6. רישום המודל המכוונן בסביבת העבודה נרשום את המודל מהפלט של עבודת הכוונון המדויק. זה יעקוב אחרי הקשר בין המודל המכוונן לבין עבודת הכוונון. עבודת הכוונון, בנוסף, עוקבת אחרי הקשר למודל הבסיס, הנתונים וקוד האימון. ### רישום מודל ML 1. סקריפט הפייתון הזה רושם מודל למידת מכונה שאומן ב-pipeline של Azure Machine Learning. הנה פירוט של מה שהוא עושה: - מייבא מודולים נחוצים מ-Azure AI ML SDK. - בודק אם פלט trained_model זמין מעבודת ה-pipeline על ידי קריאה למתודה get של האובייקט jobs ב-workspace_ml_client וגישה לתכונת outputs שלו. - בונה נתיב למודל המאומן על ידי עיצוב מחרוזת עם שם עבודת ה-pipeline ושם הפלט ("trained_model"). - מגדיר שם למודל המכוונן על ידי הוספת "-ultrachat-200k" לשם המודל המקורי והחלפת כל הקווים המשולבים בקווים מנופים. - מתכונן לרישום המודל על ידי יצירת אובייקט Model עם פרמטרים שונים, כולל הנתיב למודל, סוג המודל (מודל MLflow), שם וגרסת המודל, ותיאור של המודל. - רושם את המודל על ידי קריאה למתודה create_or_update של האובייקט models ב-workspace_ml_client עם אובייקט ה-Model כארגומנט. - מדפיס את המודל שנרשם. 1. לסיכום, הסקריפט הזה רושם מודל למידת מכונה שאומן ב-pipeline של Azure Machine Learning. ```python
+    ```
+
+## 6. רישום המודל המותאם בסביבת העבודה
+
+נרשום את המודל מתוך הפלט של משימת ה-fine tuning. זה יעקוב אחרי הקשר בין המודל המותאם למשימת ה-fine tuning. משימת ה-fine tuning, בתורה, עוקבת אחרי הקשר למודל הבסיס, לנתונים ולקוד האימון.
+
+### רישום מודל ה-ML
+
+1. הסקריפט בפייתון הזה רושם מודל למידת מכונה שאומן ב-pipeline של Azure Machine Learning. הנה פירוט של מה שהוא עושה:
+
+    - מייבא מודולים נחוצים מ-Azure AI ML SDK.
+
+    - בודק אם הפלט trained_model זמין ממשימת ה-pipeline על ידי קריאה לפונקציה get של האובייקט jobs ב-workspace_ml_client וגישה למאפיין outputs שלו.
+
+    - בונה נתיב למודל המאומן על ידי עיצוב מחרוזת עם שם משימת ה-pipeline ושם הפלט ("trained_model").
+
+    - מגדיר שם למודל המותאם על ידי הוספת "-ultrachat-200k" לשם המקורי של המודל והחלפת כל הסלאשים בקווים מפרידים.
+
+    - מתכונן לרישום המודל על ידי יצירת אובייקט Model עם פרמטרים שונים, כולל הנתיב למודל, סוג המודל (MLflow model), שם וגרסת המודל, ותיאור המודל.
+
+    - רושם את המודל על ידי קריאה לפונקציה create_or_update של האובייקט models ב-workspace_ml_client עם אובייקט ה-Model כארגומנט.
+
+    - מדפיס את המודל שנרשם.
+
+1. לסיכום, הסקריפט רושם מודל למידת מכונה שאומן ב-pipeline של Azure Machine Learning.
+
+```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import Model
     from azure.ai.ml.constants import AssetTypes
@@ -606,7 +711,27 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
     
     # Print the registered model
     print("registered model: \n", registered_model)
-    ``` ## 7. פריסת המודל המכוונן לנקודת קצה מקוונת נקודות קצה מקוונות מספקות API REST עמיד שניתן להשתמש בו לשילוב עם אפליקציות שצריכות להשתמש במודל. ### ניהול נקודת קצה 1. סקריפט הפייתון הזה יוצר נקודת קצה מקוונת מנוהלת ב-Azure Machine Learning עבור מודל שנרשם. הנה פירוט של מה שהוא עושה: - מייבא מודולים נחוצים מ-Azure AI ML SDK. - מגדיר שם ייחודי לנקודת הקצה המקוונת על ידי הוספת חותמת זמן למחרוזת "ultrachat-completion-". - מתכונן ליצירת נקודת הקצה על ידי יצירת אובייקט ManagedOnlineEndpoint עם פרמטרים שונים, כולל שם הנקודה, תיאור הנקודה, ומצב האימות ("key"). - יוצר את נקודת הקצה על ידי קריאה למתודה begin_create_or_update של workspace_ml_client עם אובייקט ManagedOnlineEndpoint כארגומנט. לאחר מכן ממתין לסיום פעולת היצירה באמצעות המתודה wait. 1. לסיכום, הסקריפט הזה יוצר נקודת קצה מקוונת מנוהלת ב-Azure Machine Learning עבור מודל שנרשם. ```python
+    ```
+
+## 7. פריסת המודל המותאם לנקודת קצה מקוונת
+
+נקודות קצה מקוונות מספקות API REST עמיד שניתן להשתמש בו לשילוב עם יישומים שצריכים להשתמש במודל.
+
+### ניהול נקודת קצה
+
+1. הסקריפט בפייתון הזה יוצר נקודת קצה מקוונת מנוהלת ב-Azure Machine Learning עבור מודל שנרשם. הנה פירוט של מה שהוא עושה:
+
+    - מייבא מודולים נחוצים מ-Azure AI ML SDK.
+
+    - מגדיר שם ייחודי לנקודת הקצה המקוונת על ידי הוספת חותמת זמן למחרוזת "ultrachat-completion-".
+
+    - מתכונן ליצירת נקודת הקצה על ידי יצירת אובייקט ManagedOnlineEndpoint עם פרמטרים שונים, כולל שם הנקודה, תיאור הנקודה, ומצב אימות ("key").
+
+    - יוצר את נקודת הקצה המקוונת על ידי קריאה לפונקציה begin_create_or_update של workspace_ml_client עם אובייקט ManagedOnlineEndpoint כארגומנט. לאחר מכן ממתין לסיום הפעולה על ידי קריאה לפונקציה wait.
+
+1. לסיכום, הסקריפט יוצר נקודת קצה מקוונת מנוהלת ב-Azure Machine Learning עבור מודל שנרשם.
+
+```python
     # Import necessary modules from the Azure AI ML SDK
     from azure.ai.ml.entities import (
         ManagedOnlineEndpoint,
@@ -631,32 +756,34 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
     # Create the online endpoint by calling the begin_create_or_update method of the workspace_ml_client with the ManagedOnlineEndpoint object as the argument
     # Then wait for the creation operation to complete by calling the wait method
     workspace_ml_client.begin_create_or_update(endpoint).wait()
-    ``` > [!NOTE]
-> ניתן למצוא כאן את רשימת SKU הנתמכים לפריסה - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+    ```
+
+> [!NOTE]
+> ניתן למצוא כאן את רשימת ה-SKU הנתמכים לפריסה - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
 ### פריסת מודל ML
 
-1. סקריפט הפייתון הזה מפריס מודל למידת מכונה שנרשם לנקודת קצה מקוונת מנוהלת ב-Azure Machine Learning. הנה פירוט של מה שהוא עושה:
+1. הסקריפט בפייתון הזה מפרוס מודל למידת מכונה שנרשם לנקודת קצה מקוונת מנוהלת ב-Azure Machine Learning. הנה פירוט של מה שהוא עושה:
 
     - מייבא את המודול ast, המספק פונקציות לעיבוד עצי תחביר מופשט של פייתון.
 
     - מגדיר את סוג המופע לפריסה כ-"Standard_NC6s_v3".
 
-    - בודק אם התג inference_compute_allow_list קיים במודל הבסיס. אם כן, ממיר את ערך התג ממחרוזת לרשימת פייתון ומקצה אותו ל-inference_computes_allow_list. אם לא, מגדיר את inference_computes_allow_list כ-None.
+    - בודק אם התג inference_compute_allow_list קיים ב-foundation model. אם כן, הוא ממיר את ערך התג ממחרוזת לרשימת פייתון ומקצה אותו ל-inference_computes_allow_list. אם לא, הוא מגדיר את inference_computes_allow_list כ-None.
 
-    - בודק אם סוג המופע שצוין נמצא ברשימת ההרשאה. אם לא, מדפיס הודעה המבקשת מהמשתמש לבחור סוג מופע מתוך רשימת ההרשאה.
+    - בודק אם סוג המופע שצויין נמצא ברשימת ההרשאות. אם לא, הוא מדפיס הודעה שמבקשת מהמשתמש לבחור סוג מופע מתוך רשימת ההרשאות.
 
-    - מתכונן ליצור את הפריסה על ידי יצירת אובייקט ManagedOnlineDeployment עם פרמטרים שונים, כולל שם הפריסה, שם נקודת הקצה, מזהה המודל, סוג וכמות המופעים, הגדרות בדיקת חיים, והגדרות בקשות.
+    - מתכונן ליצירת הפריסה על ידי יצירת אובייקט ManagedOnlineDeployment עם פרמטרים שונים, כולל שם הפריסה, שם נקודת הקצה, מזהה המודל, סוג המופע ומספר המופעים, הגדרות בדיקת חיים (liveness probe), והגדרות בקשות.
 
-    - יוצר את הפריסה על ידי קריאה למתודה begin_create_or_update של workspace_ml_client עם אובייקט ManagedOnlineDeployment כארגומנט. לאחר מכן ממתין לסיום פעולת היצירה באמצעות המתודה wait.
+    - יוצר את הפריסה על ידי קריאה לפונקציה begin_create_or_update של workspace_ml_client עם אובייקט ManagedOnlineDeployment כארגומנט. לאחר מכן ממתין לסיום הפעולה על ידי קריאה לפונקציה wait.
 
-    - מגדיר את תעבורת נקודת הקצה כך ש-100% מהתעבורה תנותב לפריסת "demo".
+    - מגדיר את התנועה של נקודת הקצה כך שתפנה 100% מהתנועה לפריסת "demo".
 
-    - מעדכן את נקודת הקצה על ידי קריאה למתודה begin_create_or_update של workspace_ml_client עם אובייקט endpoint כארגומנט. לאחר מכן ממתין לסיום פעולת העדכון באמצעות המתודה result.
+    - מעדכן את נקודת הקצה על ידי קריאה לפונקציה begin_create_or_update של workspace_ml_client עם אובייקט נקודת הקצה כארגומנט. לאחר מכן ממתין לסיום העדכון על ידי קריאה לפונקציה result.
 
-1. לסיכום, הסקריפט הזה מפריס מודל למידת מכונה שנרשם לנקודת קצה מקוונת מנוהלת ב-Azure Machine Learning.
+1. לסיכום, הסקריפט מפרוס מודל למידת מכונה שנרשם לנקודת קצה מקוונת מנוהלת ב-Azure Machine Learning.
 
-    ```python
+```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
     import ast
     
@@ -709,23 +836,23 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
 
 ## 8. בדיקת נקודת הקצה עם נתוני דוגמה
 
-נמשוך כמה נתוני דוגמה ממאגר הנתונים של הבדיקה ונשלח לנקודת הקצה המקוונת לצורך אינפרנס. לאחר מכן נציג את התוויות המדורגות לצד התוויות האמיתיות.
+נשלוף נתוני דוגמה ממערך הנתונים לבדיקות ונגיש אותם לנקודת הקצה המקוונת לצורך אינפרנס. לאחר מכן נציג את התוויות המדורגות לצד התוויות האמיתיות.
 
 ### קריאת התוצאות
 
-1. סקריפט הפייתון הזה קורא קובץ JSON Lines לתוך pandas DataFrame, לוקח דגימה אקראית, ומאפס את האינדקס. הנה פירוט של מה שהוא עושה:
+1. הסקריפט בפייתון הזה קורא קובץ JSON Lines ל-DataFrame של pandas, לוקח דגימה אקראית, ומאפס את האינדקס. הנה פירוט של מה שהוא עושה:
 
-    - קורא את הקובץ ./ultrachat_200k_dataset/test_gen.jsonl לתוך pandas DataFrame. פונקציית read_json משמשת עם הפרמטר lines=True כי הקובץ בפורמט JSON Lines, שבו כל שורה היא אובייקט JSON נפרד.
+    - קורא את הקובץ ./ultrachat_200k_dataset/test_gen.jsonl ל-DataFrame של pandas. הפונקציה read_json משמשת עם הפרמטר lines=True כי הקובץ בפורמט JSON Lines, שבו כל שורה היא אובייקט JSON נפרד.
 
-    - לוקח דגימה אקראית של שורה אחת מה-DataFrame. פונקציית sample משמשת עם הפרמטר n=1 כדי לציין את מספר השורות האקראיות לבחירה.
+    - לוקח דגימה אקראית של שורה אחת מה-DataFrame. הפונקציה sample משמשת עם הפרמטר n=1 כדי לציין את מספר השורות האקראיות שיש לבחור.
 
-    - מאפס את האינדקס של ה-DataFrame. פונקציית reset_index משמשת עם הפרמטר drop=True כדי להסיר את האינדקס המקורי ולהחליפו באינדקס חדש של ערכי מספרים שלמים ברירת מחדל.
+    - מאפס את האינדקס של ה-DataFrame. הפונקציה reset_index משמשת עם הפרמטר drop=True כדי להסיר את האינדקס המקורי ולהחליפו באינדקס חדש של ערכי מספרים שלמים ברירת מחדל.
 
-    - מציג את שתי השורות הראשונות של ה-DataFrame באמצעות הפונקציה head עם הפרמטר 2. עם זאת, מכיוון שה-DataFrame מכיל רק שורה אחת לאחר הדגימה, יוצג רק שורה זו.
+    - מציג את 2 השורות הראשונות של ה-DataFrame באמצעות הפונקציה head עם הפרמטר 2. עם זאת, מאחר שה-DataFrame מכיל רק שורה אחת לאחר הדגימה, יוצג רק שורה זו.
 
-1. לסיכום, הסקריפט הזה קורא קובץ JSON Lines לתוך pandas DataFrame, לוקח דגימה אקראית של שורה אחת, מאפס את האינדקס, ומציג את השורה הראשונה.
-    
-    ```python
+1. לסיכום, הסקריפט קורא קובץ JSON Lines ל-DataFrame של pandas, לוקח דגימה אקראית של שורה אחת, מאפס את האינדקס, ומציג את השורה הראשונה.
+
+```python
     # Import pandas library
     import pandas as pd
     
@@ -749,17 +876,16 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
 
 ### יצירת אובייקט JSON
 
-1. סקריפט הפייתון הזה יוצר אובייקט JSON עם פרמטרים ספציפיים ושומר אותו לקובץ. הנה פירוט של מה שהוא עושה:
+1. הסקריפט בפייתון הזה יוצר אובייקט JSON עם פרמטרים ספציפיים ושומר אותו לקובץ. הנה פירוט של מה שהוא עושה:
 
-    - מייבא את מודול json, המספק פונקציות לעבודה עם נתוני JSON.
+    - מייבא את המודול json, המספק פונקציות לעבודה עם נתוני JSON.
 
-    - יוצר מילון parameters עם מפתחות וערכים שמייצגים פרמטרים למודל למידת מכונה. המפתחות הם "temperature", "top_p", "do_sample", ו-"max_new_tokens", והערכים המתאימים הם 0.6, 0.9, True, ו-200 בהתאמה.
+    - יוצר מילון parameters עם מפתחות וערכים המייצגים פרמטרים למודל למידת מכונה. המפתחות הם "temperature", "top_p", "do_sample", ו-"max_new_tokens", והערכים המתאימים הם 0.6, 0.9, True, ו-200 בהתאמה.
 
-    - יוצר מילון נוסף test_json עם שני מפתחות: "input_data" ו-"params". הערך של "input_data" הוא מילון נוסף עם המפתחות "input_string" ו-"parameters". הערך של "input_string" הוא רשימה שמכילה את ההודעה הראשונה מתוך test_df DataFrame. הערך של "parameters" הוא המילון parameters שנוצר קודם. הערך של "params" הוא מילון ריק.
+    - יוצר מילון נוסף test_json עם שני מפתחות: "input_data" ו-"params". הערך של "input_data" הוא מילון נוסף עם המפתחות "input_string" ו-"parameters". הערך של "input_string" הוא רשימה המכילה את ההודעה הראשונה מתוך ה-DataFrame test_df. הערך של "parameters" הוא המילון parameters שנוצר קודם. הערך של "params" הוא מילון ריק.
+- הוא פותח קובץ בשם sample_score.json
 
-    - פותח קובץ בשם sample_score.json
-    
-    ```python
+```python
     # Import the json module, which provides functions to work with JSON data
     import json
     
@@ -791,23 +917,23 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
         json.dump(test_json, f)
     ```
 
-### קריאת נקודת הקצה
+### קריאה לנקודת קצה
 
-1. סקריפט הפייתון הזה קורא לנקודת קצה מקוונת ב-Azure Machine Learning כדי לדרג קובץ JSON. הנה פירוט של מה שהוא עושה:
+1. סקריפט הפייתון הזה קורא לנקודת קצה מקוונת ב-Azure Machine Learning כדי לבצע ניקוד לקובץ JSON. הנה פירוט מה הוא עושה:
 
-    - קורא למתודה invoke של התכונה online_endpoints של האובייקט workspace_ml_client. מתודה זו משמשת לשליחת בקשה לנקודת קצה מקוונת וקבלת תגובה.
+    - הוא קורא למתודה invoke של התכונה online_endpoints של האובייקט workspace_ml_client. מתודה זו משמשת לשליחת בקשה לנקודת קצה מקוונת ולקבלת תגובה.
 
-    - מציין את שם נקודת הקצה והפריסה באמצעות הפרמטרים endpoint_name ו-deployment_name. במקרה זה, שם נקודת הקצה שמור במשתנה online_endpoint_name ושם הפריסה הוא "demo".
+    - הוא מגדיר את שם נקודת הקצה ואת הפריסה באמצעות הפרמטרים endpoint_name ו-deployment_name. במקרה זה, שם נקודת הקצה מאוחסן במשתנה online_endpoint_name ושם הפריסה הוא "demo".
 
-    - מציין את הנתיב לקובץ JSON שדורג באמצעות הפרמטר request_file. במקרה זה, הקובץ הוא ./ultrachat_200k_dataset/sample_score.json.
+    - הוא מגדיר את הנתיב לקובץ ה-JSON שצריך לנקד באמצעות הפרמטר request_file. במקרה זה, הקובץ הוא ./ultrachat_200k_dataset/sample_score.json.
 
-    - מאחסן את התגובה מנקודת הקצה במשתנה response.
+    - הוא מאחסן את התגובה מנקודת הקצה במשתנה response.
 
-    - מדפיס את התגובה הגולמית.
+    - הוא מדפיס את התגובה הגולמית.
 
-1. לסיכום, הסקריפט הזה קורא לנקודת קצה מקוונת ב-Azure Machine Learning כדי לדרג קובץ JSON ומדפיס את התגובה.
+1. לסיכום, הסקריפט קורא לנקודת קצה מקוונת ב-Azure Machine Learning כדי לנקד קובץ JSON ומדפיס את התגובה.
 
-    ```python
+```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
     # The `invoke` method of the `online_endpoints` property of the `workspace_ml_client` object is used to send a request to an online endpoint and get a response
     # The `endpoint_name` argument specifies the name of the endpoint, which is stored in the `online_endpoint_name` variable
@@ -825,17 +951,17 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
 
 ## 9. מחיקת נקודת הקצה המקוונת
 
-1. אל תשכחו למחוק את נקודת הקצה המקוונת, אחרת תמשיכו לשלם עבור השימוש במחשוב של נקודת הקצה. שורת קוד פייתון זו מוחקת נקודת קצה מקוונת ב-Azure Machine Learning. הנה פירוט של מה שהיא עושה:
+1. אל תשכחו למחוק את נקודת הקצה המקוונת, אחרת תמשיכו לצבור חיובים עבור המשאבים שהנקודה משתמשת בהם. שורת קוד פייתון זו מוחקת נקודת קצה מקוונת ב-Azure Machine Learning. הנה פירוט מה היא עושה:
 
-    - קוראת למתודה begin_delete של התכונה online_endpoints של האובייקט workspace_ml_client. מתודה זו משמשת להתחלת מחיקת נקודת קצה מקוונת.
+    - היא קוראת למתודה begin_delete של התכונה online_endpoints של האובייקט workspace_ml_client. מתודה זו משמשת להתחלת מחיקת נקודת קצה מקוונת.
 
-    - מציינת את שם נקודת הקצה שיימחק באמצעות הפרמטר name. במקרה זה, שם נקודת הקצה שמור במשתנה online_endpoint_name.
+    - היא מגדירה את שם נקודת הקצה למחיקה באמצעות הפרמטר name. במקרה זה, שם נקודת הקצה מאוחסן במשתנה online_endpoint_name.
 
-    - קוראת למתודה wait כדי להמתין לסיום פעולת המחיקה. זוהי פעולה חוסמת, כלומר תעצור את הרצת הסקריפט עד שהמחיקה תסתיים.
+    - היא קוראת למתודה wait כדי להמתין לסיום פעולת המחיקה. זוהי פעולה חוסמת, כלומר היא מונעת מהסקריפט להמשיך עד שהמחיקה מסתיימת.
 
-    - לסיכום, שורת קוד זו מתחילה את מחיקת נקודת קצה מקוונת ב-Azure Machine Learning וממתינה לסיום הפעולה.
+    - לסיכום, שורת קוד זו מתחילה את מחיקת נקודת הקצה המקוונת ב-Azure Machine Learning וממתינה לסיום הפעולה.
 
-    ```python
+```python
     # Delete the online endpoint in Azure Machine Learning
     # The `begin_delete` method of the `online_endpoints` property of the `workspace_ml_client` object is used to start the deletion of an online endpoint
     # The `name` argument specifies the name of the endpoint to be deleted, which is stored in the `online_endpoint_name` variable
@@ -844,4 +970,4 @@ pipeline אימון מבוסס על פרמטרים שונים, ואז מדפיס
     ```
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. יש להתייחס למסמך המקורי בשפת המקור כמקור הסמכות. למידע קריטי מומלץ להשתמש בתרגום מקצועי שנעשה על ידי אדם. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

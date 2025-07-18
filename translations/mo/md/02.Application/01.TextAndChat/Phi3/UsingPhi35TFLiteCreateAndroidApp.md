@@ -2,36 +2,36 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-07T14:07:53+00:00",
+  "translation_date": "2025-07-17T02:50:21+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "mo"
 }
 -->
-# **استعمال Microsoft Phi-3.5 tflite کے ذریعے Android ایپ بنانا**
+# **使用 Microsoft Phi-3.5 tflite 建立 Android 應用程式**
 
-یہ ایک Android سیمپل ہے جو Microsoft Phi-3.5 tflite ماڈلز استعمال کرتا ہے۔
+這是一個使用 Microsoft Phi-3.5 tflite 模型的 Android 範例。
 
-## **📚 معلومات**
+## **📚 知識**
 
-Android LLM Inference API آپ کو بڑے زبان کے ماڈلز (LLMs) کو مکمل طور پر ڈیوائس پر چلانے کی سہولت دیتا ہے، جس سے آپ مختلف قسم کے کام انجام دے سکتے ہیں، جیسے کہ متن تیار کرنا، قدرتی زبان میں معلومات حاصل کرنا، اور دستاویزات کا خلاصہ بنانا۔ یہ ٹاسک متعدد text-to-text بڑے زبان کے ماڈلز کی بلٹ ان سپورٹ فراہم کرتا ہے، تاکہ آپ جدید on-device generative AI ماڈلز کو اپنی Android ایپس میں استعمال کر سکیں۔
+Android LLM 推論 API 讓你能在 Android 裝置上完全離線執行大型語言模型（LLM），可用於多種任務，例如生成文字、以自然語言形式檢索資訊，以及文件摘要。此任務內建支援多種文字轉文字的大型語言模型，讓你能將最新的離線生成式 AI 模型應用於 Android 應用程式。
 
-Google AI Edge Torch ایک پائتھن لائبریری ہے جو PyTorch ماڈلز کو .tflite فارمیٹ میں تبدیل کرنے کی حمایت کرتی ہے، جسے پھر TensorFlow Lite اور MediaPipe کے ساتھ چلایا جا سکتا ہے۔ یہ Android، iOS اور IoT ایپلیکیشنز کے لیے ہے جو ماڈلز کو مکمل طور پر ڈیوائس پر چلانے کی صلاحیت رکھتی ہیں۔ AI Edge Torch وسیع CPU سپورٹ فراہم کرتا ہے، اور ابتدائی GPU اور NPU سپورٹ بھی شامل ہے۔ AI Edge Torch PyTorch کے ساتھ قریبی انضمام کا مقصد رکھتا ہے، torch.export() کے اوپر بنایا گیا ہے اور Core ATen آپریٹرز کی اچھی کوریج فراہم کرتا ہے۔
+Google AI Edge Torch 是一個 Python 函式庫，支援將 PyTorch 模型轉換成 .tflite 格式，之後可用 TensorFlow Lite 和 MediaPipe 執行。這使得 Android、iOS 和物聯網應用能完全在裝置端執行模型。AI Edge Torch 提供廣泛的 CPU 支援，並初步支援 GPU 和 NPU。AI Edge Torch 致力於與 PyTorch 緊密整合，基於 torch.export() 並提供良好的 Core ATen 運算子覆蓋。
 
-## **🪬 رہنما اصول**
+## **🪬 指南**
 
-### **🔥 Microsoft Phi-3.5 کو tflite میں تبدیل کرنا**
+### **🔥 將 Microsoft Phi-3.5 轉換為 tflite 支援**
 
-0. یہ سیمپل Android 14+ کے لیے ہے۔
+0. 本範例適用於 Android 14 以上版本
 
-1. Python 3.10.12 انسٹال کریں۔
+1. 安裝 Python 3.10.12
 
-***تجویز:*** conda استعمال کر کے Python ماحول انسٹال کریں۔
+***建議：*** 使用 conda 來建立你的 Python 環境
 
-2. Ubuntu 20.04 / 22.04 (براہ کرم [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) پر توجہ دیں)
+2. Ubuntu 20.04 / 22.04（請參考 [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch)）
 
-***تجویز:*** Azure Linux VM یا کسی 3rd پارٹی کلاؤڈ VM کا استعمال کریں تاکہ اپنا ماحول بنائیں۔
+***建議：*** 使用 Azure Linux VM 或第三方雲端虛擬機建立環境
 
-3. اپنے Linux bash میں جائیں اور Python لائبریری انسٹال کریں
+3. 進入你的 Linux bash，安裝 Python 函式庫
 
 ```bash
 
@@ -47,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Hugging face سے Microsoft-3.5-Instruct ڈاؤن لوڈ کریں
+4. 從 Hugging face 下載 Microsoft-3.5-Instruct
 
 ```bash
 
@@ -57,7 +57,7 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. Microsoft Phi-3.5 کو tflite میں تبدیل کریں
+5. 將 Microsoft Phi-3.5 轉換為 tflite
 
 ```bash
 
@@ -65,9 +65,9 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 Microsoft Phi-3.5 کو Android Mediapipe Bundle میں تبدیل کرنا**
+### **🔥 將 Microsoft Phi-3.5 轉換為 Android Mediapipe Bundle**
 
-براہ کرم پہلے mediapipe انسٹال کریں
+請先安裝 mediapipe
 
 ```bash
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-اس کوڈ کو [اپنے نوٹ بک](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb) میں چلائیں
+在你的 [notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb) 執行此程式碼
 
 ```python
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 adb push کے ذریعے ماڈل کو اپنے Android ڈیوائس کے راستے پر بھیجنا**
+### **🔥 使用 adb 將任務模型推送到你的 Android 裝置路徑**
 
 ```bash
 
@@ -106,9 +106,9 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ```
 
-### **🔥 اپنے Android کوڈ کو چلانا**
+### **🔥 執行你的 Android 程式碼**
 
 ![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.mo.png)
 
-**Disclaimer**:  
-Dis dokument haz bin translaited yusing AI translait serviz [Co-op Translator](https://github.com/Azure/co-op-translator). Wile wi stryv for akyurasy, pleez bi awair dat otomaytid translaitions mey contain erors or inakurysez. Da orijinal dokument in its naytiv langwaj shud bi konsidrd da autoritativ sors. For kritikul informashun, profeshunal hyuman translaiton iz rekomended. Wi ar not laybl for eni misanderstandings or misinterpretashuns arising from da yus of dis translaiton.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

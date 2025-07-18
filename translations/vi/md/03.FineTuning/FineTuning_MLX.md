@@ -2,22 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:44:07+00:00",
+  "translation_date": "2025-07-17T08:01:39+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "vi"
 }
 -->
 # **Tinh chỉnh Phi-3 với Apple MLX Framework**
 
-Chúng ta có thể hoàn thành việc Tinh chỉnh kết hợp với Lora thông qua dòng lệnh của Apple MLX framework. (Nếu bạn muốn tìm hiểu thêm về cách hoạt động của MLX Framework, vui lòng đọc [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
-
+Chúng ta có thể hoàn thành việc tinh chỉnh kết hợp với Lora thông qua dòng lệnh của Apple MLX framework. (Nếu bạn muốn tìm hiểu thêm về cách hoạt động của MLX Framework, vui lòng đọc [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
 
 ## **1. Chuẩn bị dữ liệu**
 
-Mặc định, MLX Framework yêu cầu định dạng jsonl cho train, test và eval, và kết hợp với Lora để hoàn thành các công việc tinh chỉnh.
+Theo mặc định, MLX Framework yêu cầu định dạng jsonl cho train, test và eval, đồng thời kết hợp với Lora để hoàn thành các công việc tinh chỉnh.
 
-
-### ***Note:***
+### ***Lưu ý:***
 
 1. Định dạng dữ liệu jsonl ：
 
@@ -31,12 +29,11 @@ Mặc định, MLX Framework yêu cầu định dạng jsonl cho train, test và
 
 ```
 
-2. Ví dụ của chúng tôi sử dụng [dữ liệu của TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), nhưng lượng dữ liệu khá hạn chế, nên kết quả tinh chỉnh có thể không phải là tốt nhất. Khuyến khích người học sử dụng dữ liệu phù hợp hơn dựa trên kịch bản của riêng mình để hoàn thành.
+2. Ví dụ của chúng tôi sử dụng dữ liệu từ [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), nhưng lượng dữ liệu khá hạn chế, nên kết quả tinh chỉnh có thể không phải là tốt nhất. Khuyến khích người học sử dụng dữ liệu phù hợp và chất lượng hơn dựa trên kịch bản của riêng mình để hoàn thành.
 
 3. Định dạng dữ liệu kết hợp với mẫu Phi-3
 
-Vui lòng tải dữ liệu từ [link này](../../../../code/04.Finetuning/mlx), bao gồm tất cả các file .jsonl trong thư mục ***data***
-
+Vui lòng tải dữ liệu từ [đường dẫn này](../../../../code/04.Finetuning/mlx), bao gồm tất cả các file .jsonl trong thư mục ***data***
 
 ## **2. Tinh chỉnh trên terminal của bạn**
 
@@ -50,9 +47,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 ```
 
 
-## ***Note:***
+## ***Lưu ý:***
 
-1. Đây là LoRA fine-tuning, MLX framework chưa phát hành QLoRA
+1. Đây là tinh chỉnh LoRA, MLX framework chưa phát hành QLoRA
 
 2. Bạn có thể chỉnh sửa config.yaml để thay đổi một số tham số, ví dụ như
 
@@ -135,9 +132,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Chạy Fine-tuning adapter để kiểm tra**
+## **3. Chạy adapter tinh chỉnh để kiểm tra**
 
-Bạn có thể chạy fine-tuning adapter trên terminal, như sau
+Bạn có thể chạy adapter tinh chỉnh trên terminal, như sau
 
 
 ```bash
@@ -155,7 +152,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Bạn có thể thử so sánh kết quả của Fine-tuning với mô hình gốc
+Bạn có thể thử so sánh kết quả của tinh chỉnh với mô hình gốc
 
 
 ## **4. Gộp các adapter để tạo mô hình mới**
@@ -167,7 +164,7 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Chạy mô hình fine-tuning đã lượng tử hóa bằng ollama**
+## **5. Chạy mô hình tinh chỉnh đã lượng tử hóa bằng ollama**
 
 Trước khi sử dụng, vui lòng cấu hình môi trường llama.cpp của bạn
 
@@ -184,13 +181,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:*** 
+***Lưu ý:*** 
 
-1. Hiện hỗ trợ chuyển đổi lượng tử fp32, fp16 và INT 8
+1. Hiện hỗ trợ chuyển đổi lượng tử cho fp32, fp16 và INT 8
 
-2. Mô hình sau khi gộp thiếu tokenizer.model, vui lòng tải về tại https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Mô hình đã gộp thiếu tokenizer.model, vui lòng tải về từ https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-cài đặt một [Ollma Model](https://ollama.com/)
+thiết lập một [Ollma Model](https://ollama.com/)
 
 
 ```txt
@@ -213,5 +210,5 @@ chạy lệnh trên terminal
 
 Chúc mừng! Bạn đã thành thạo tinh chỉnh với MLX Framework
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn chính thức. Đối với thông tin quan trọng, nên sử dụng dịch thuật chuyên nghiệp bởi con người. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

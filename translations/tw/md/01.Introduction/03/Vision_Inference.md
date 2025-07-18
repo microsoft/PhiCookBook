@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-08T06:01:38+00:00",
+  "translation_date": "2025-07-16T21:36:42+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "tw"
 }
 -->
-# **本地執行 Phi-3-Vision 推論**
+# **在本地進行 Phi-3-Vision 推理**
 
-Phi-3-vision-128k-instruct 不僅讓 Phi-3 能理解語言，還能以視覺方式認識世界。透過 Phi-3-vision-128k-instruct，我們可以解決各種視覺問題，例如 OCR、表格分析、物件辨識、描述圖片等。過去需要大量資料訓練的任務，現在都能輕鬆完成。以下是 Phi-3-vision-128k-instruct 引用的相關技術與應用場景。
+Phi-3-vision-128k-instruct 不僅讓 Phi-3 能理解語言，還能以視覺方式感知世界。透過 Phi-3-vision-128k-instruct，我們可以解決各種視覺問題，例如 OCR、表格分析、物體識別、圖片描述等。過去需要大量數據訓練才能完成的任務，現在都能輕鬆達成。以下是 Phi-3-vision-128k-instruct 引用的相關技術與應用場景。
 
 ## **0. 準備工作**
 
-請確認以下 Python 函式庫已安裝（建議使用 Python 3.10+）
+請確保已安裝以下 Python 函式庫（建議使用 Python 3.10+）
 
 ```bash
 pip install transformers -U
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-在 Notebook 執行以下程式碼，即可取得相關答案
+在 Notebook 中執行以下腳本，即可獲得相關答案
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. 使用 Phi-3-Vision 進行 OCR**
 
-除了分析圖片，我們還能從圖片中擷取資訊。這就是過去需要撰寫複雜程式碼才能完成的 OCR 流程。
+除了分析圖片，我們還能從圖片中提取資訊。這就是過去需要撰寫複雜程式碼才能完成的 OCR 流程。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. 多張圖片比較**
 
-Phi-3 Vision 支援多張圖片比較，我們可以利用此模型找出圖片間的差異。
+Phi-3 Vision 支援多張圖片的比較。我們可以利用此模型找出圖片間的差異。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於翻譯的準確性，但請注意，自動翻譯可能會包含錯誤或不準確之處。原始文件之母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯所引起之任何誤解或誤譯負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

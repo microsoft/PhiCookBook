@@ -2,80 +2,79 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-05-09T15:24:23+00:00",
+  "translation_date": "2025-07-16T22:45:31+00:00",
   "source_file": "md/01.Introduction/05/Promptflow.md",
   "language_code": "sl"
 }
 -->
 # **Predstavitev Promptflow**
 
-[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) je vizualno orodje za avtomatizacijo delovnih tokov, ki uporabnikom omogoča ustvarjanje avtomatiziranih potekov dela z uporabo vnaprej pripravljenih predlog in lastnih povezovalnikov. Namenjen je razvijalcem in poslovnim analitikom, da hitro zgradijo avtomatizirane procese za naloge, kot so upravljanje podatkov, sodelovanje in optimizacija procesov. S Prompt Flow lahko uporabniki enostavno povežejo različne storitve, aplikacije in sisteme ter avtomatizirajo kompleksne poslovne procese.
+[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) je vizualno orodje za avtomatizacijo delovnih tokov, ki uporabnikom omogoča ustvarjanje avtomatiziranih delovnih tokov z uporabo vnaprej pripravljenih predlog in prilagojenih konektorjev. Namenjen je razvijalcem in poslovnim analitikom, da hitro zgradijo avtomatizirane procese za naloge, kot so upravljanje podatkov, sodelovanje in optimizacija procesov. S Prompt Flow lahko uporabniki enostavno povežejo različne storitve, aplikacije in sisteme ter avtomatizirajo kompleksne poslovne procese.
 
-Microsoft Prompt Flow je zasnovan za poenostavitev celotnega razvojnega cikla AI aplikacij, ki temeljijo na velikih jezikovnih modelih (LLM). Ne glede na to, ali ustvarjate ideje, izdelujete prototipe, testirate, ocenjujete ali nameščate aplikacije na osnovi LLM, Prompt Flow poenostavi proces in omogoča izdelavo aplikacij LLM v produkcijski kakovosti.
+Microsoft Prompt Flow je zasnovan za poenostavitev celotnega razvojnega cikla AI aplikacij, ki temeljijo na velikih jezikovnih modelih (LLM). Ne glede na to, ali razvijate ideje, prototipe, testirate, ocenjujete ali uvajate aplikacije na osnovi LLM, Prompt Flow poenostavi postopek in vam omogoča izdelavo aplikacij LLM z industrijsko kakovostjo.
 
 ## Ključne funkcije in prednosti uporabe Microsoft Prompt Flow:
 
-**Interaktivno ustvarjanje**
+**Interaktivna izkušnja ustvarjanja**
 
-Prompt Flow prikazuje vizualno strukturo vašega poteka, kar olajša razumevanje in navigacijo po projektih.
-Nudi izkušnjo kodiranja podobno zvezku za učinkovito razvoj in odpravljanje napak potekov.
+Prompt Flow prikazuje vizualno strukturo vašega delovnega toka, kar olajša razumevanje in navigacijo po projektih.  
+Nudi izkušnjo kodiranja, podobno zvezku, za učinkovito razvoj in odpravljanje napak v delovnem toku.
 
-**Različice pozivov in prilagajanje**
+**Različice in prilagajanje pozivov**
 
-Ustvarjajte in primerjajte več različic pozivov za postopno izboljševanje. Ocenjujte uspešnost različnih pozivov in izberite najučinkovitejše.
+Ustvarite in primerjajte več različic pozivov, da omogočite iterativni proces izboljšav. Ocenite uspešnost različnih pozivov in izberite najučinkovitejše.
 
-**Vgrajeni evalvacijski poteki**
-
-Ocenite kakovost in učinkovitost svojih pozivov in potekov z vgrajenimi orodji za evalvacijo.
+**Vgrajeni evalvacijski delovni tokovi**  
+Ocenite kakovost in učinkovitost vaših pozivov in delovnih tokov z uporabo vgrajenih orodij za evalvacijo.  
 Razumite, kako dobro delujejo vaše aplikacije na osnovi LLM.
 
 **Obsežni viri**
 
-Prompt Flow vključuje knjižnico vgrajenih orodij, primerov in predlog. Ti viri so odličen začetek za razvoj, spodbujajo ustvarjalnost in pospešujejo proces.
+Prompt Flow vključuje knjižnico vgrajenih orodij, vzorcev in predlog. Ti viri služijo kot izhodišče za razvoj, spodbujajo ustvarjalnost in pospešujejo postopek.
 
 **Sodelovanje in pripravljenost za podjetja**
 
-Podpirajte timsko sodelovanje z omogočanjem več uporabnikom, da skupaj delajo na projektih za inženiring pozivov.
-Vzdržujte nadzor različic in učinkovito delite znanje. Poenostavite celoten proces inženiringa pozivov, od razvoja in evalvacije do uvajanja in spremljanja.
+Podpirajte timsko sodelovanje z omogočanjem več uporabnikom, da skupaj delajo na projektih pozivnega inženiringa.  
+Vzdržujte nadzor različic in učinkovito delite znanje. Poenostavite celoten proces pozivnega inženiringa, od razvoja in evalvacije do uvajanja in spremljanja.
 
 ## Evalvacija v Prompt Flow
 
-V Microsoft Prompt Flow ima evalvacija ključno vlogo pri ocenjevanju uspešnosti vaših AI modelov. Poglejmo, kako lahko prilagodite evalvacijske poteke in metrike znotraj Prompt Flow:
+V Microsoft Prompt Flow ima evalvacija ključno vlogo pri ocenjevanju uspešnosti vaših AI modelov. Oglejmo si, kako lahko prilagodite evalvacijske delovne tokove in metrike znotraj Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.93c453890f4088830217fa7308b1a589058ed499bbfff160c85676066b5cbf2d.sl.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.sl.png)
 
 **Razumevanje evalvacije v Prompt Flow**
 
-V Prompt Flow potek predstavlja zaporedje vozlišč, ki obdelujejo vhod in ustvarjajo izhod. Evalvacijski poteki so posebne vrste potekov, namenjene ocenjevanju uspešnosti izvedbe glede na določene kriterije in cilje.
+V Prompt Flow delovni tok predstavlja zaporedje vozlišč, ki obdelujejo vhodne podatke in ustvarjajo izhod. Evalvacijski delovni tokovi so posebne vrste delovnih tokov, namenjene ocenjevanju uspešnosti izvedbe na podlagi določenih kriterijev in ciljev.
 
-**Ključne značilnosti evalvacijskih potekov**
+**Ključne značilnosti evalvacijskih delovnih tokov**
 
-Običajno se izvajajo po poteku, ki ga testiramo, in uporabljajo njegove izhode. Izračunajo ocene ali metrike za merjenje uspešnosti testiranega poteka. Metrike lahko vključujejo natančnost, ocene relevantnosti ali druge ustrezne meritve.
+Običajno se izvajajo po testiranem delovnem toku in uporabljajo njegove izhode. Izračunajo ocene ali metrike za merjenje uspešnosti testiranega toka. Metrike lahko vključujejo natančnost, ocene relevantnosti ali druge ustrezne kazalnike.
 
-### Prilagajanje evalvacijskih potekov
+### Prilagajanje evalvacijskih delovnih tokov
 
 **Določanje vhodov**
 
-Evalvacijski poteki morajo sprejeti izhode testiranega poteka. Vhode določite podobno kot pri standardnih potekih.
-Na primer, če ocenjujete QnA potek, vhod poimenujte "answer". Če ocenjujete klasifikacijski potek, vhod poimenujte "category". Morda boste potrebovali tudi vhod za dejanske oznake (ground truth).
+Evalvacijski delovni tokovi morajo sprejeti izhode testiranega toka. Vhode definirajte podobno kot pri standardnih delovnih tokovih.  
+Na primer, če ocenjujete QnA tok, poimenujte vhod "answer". Če ocenjujete klasifikacijski tok, poimenujte vhod "category". Potrebni so lahko tudi vhodni podatki z dejanskimi oznakami (ground truth).
 
 **Izhodi in metrike**
 
-Evalvacijski poteki ustvarjajo rezultate, ki merijo uspešnost testiranega poteka. Metrike lahko izračunate s Pythonom ali LLM. Za beleženje relevantnih metrik uporabite funkcijo log_metric().
+Evalvacijski delovni tokovi proizvajajo rezultate, ki merijo uspešnost testiranega toka. Metrike lahko izračunate s pomočjo Pythona ali LLM. Za beleženje relevantnih metrik uporabite funkcijo log_metric().
 
-**Uporaba prilagojenih evalvacijskih potekov**
+**Uporaba prilagojenih evalvacijskih delovnih tokov**
 
-Razvijte lasten evalvacijski potek, prilagojen vašim nalogam in ciljem. Prilagodite metrike glede na cilje evalvacije.
-To prilagojeno evalvacijsko pot uporabite za serijske izvedbe pri obsežnem testiranju.
+Razvijte svoj evalvacijski delovni tok, prilagojen vašim specifičnim nalogam in ciljem. Prilagodite metrike glede na cilje evalvacije.  
+To prilagojeno evalvacijsko metodo uporabite za serijske izvedbe pri obsežnem testiranju.
 
 ## Vgrajene metode evalvacije
 
-Prompt Flow ponuja tudi vgrajene metode evalvacije.
-Lahko izvedete serijske teste in uporabite te metode za oceno uspešnosti poteka pri velikih zbirkah podatkov.
-Ogledate si lahko rezultate evalvacije, primerjate metrike in po potrebi ponovite postopek.
-Ne pozabite, evalvacija je ključna za zagotavljanje, da vaši AI modeli dosegajo želene kriterije in cilje. Za podrobna navodila o razvoju in uporabi evalvacijskih potekov v Microsoft Prompt Flow preglejte uradno dokumentacijo.
+Prompt Flow ponuja tudi vgrajene metode evalvacije.  
+Lahko pošljete serijske izvedbe in uporabite te metode za oceno uspešnosti vašega delovnega toka z velikimi nabori podatkov.  
+Ogledate si lahko rezultate evalvacije, primerjate metrike in po potrebi ponovite postopek.  
+Ne pozabite, da je evalvacija ključna za zagotavljanje, da vaši AI modeli izpolnjujejo želene kriterije in cilje. Za podrobna navodila o razvoju in uporabi evalvacijskih delovnih tokov v Microsoft Prompt Flow si oglejte uradno dokumentacijo.
 
-Na kratko, Microsoft Prompt Flow razvijalcem omogoča ustvarjanje visokokakovostnih aplikacij LLM z enostavnejšim inženiringom pozivov ter zagotavlja robustno razvojno okolje. Če delate z LLM, je Prompt Flow vredno orodje za raziskovanje. Oglejte si [Prompt Flow Evaluation Documents](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) za podrobna navodila o razvoju in uporabi evalvacijskih potekov v Microsoft Prompt Flow.
+Za povzetek, Microsoft Prompt Flow razvijalcem omogoča ustvarjanje visokokakovostnih aplikacij LLM z enostavnejšim pozivnim inženiringom in robustnim razvojnim okoljem. Če delate z LLM, je Prompt Flow dragoceno orodje za raziskovanje. Oglejte si [Prompt Flow Evaluation Documents](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) za podrobna navodila o razvoju in uporabi evalvacijskih delovnih tokov v Microsoft Prompt Flow.
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

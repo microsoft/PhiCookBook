@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-05-07T14:27:11+00:00",
+  "translation_date": "2025-07-17T05:10:55+00:00",
   "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "mo"
 }
 -->
-## **音频转录提取使用 Phi-4-multimodal**
+## **使用 Phi-4-multimodal 提取音訊文字記錄**
 
-Phi-4-multimodal 是一个全模态模型，除了文本和图像外，还能处理音频。让我们来看一下如何使用它。
+Phi-4-multimodal 是一個全模態模型，除了文字和圖片外，還能處理音訊。讓我們來看看如何使用它。  
 
 
 ```python
@@ -65,9 +65,5 @@ print(response)
 
 ```
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-(Note: "mo" is not a recognized language code or name in standard language lists. Could you please specify which language or dialect "mo" refers to? For example, is it a shorthand or abbreviation for a particular language?)
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

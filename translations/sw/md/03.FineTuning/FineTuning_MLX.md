@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:44:39+00:00",
+  "translation_date": "2025-07-17T08:02:17+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "sw"
 }
 -->
-# **Kufinyanga Phi-3 na Mfumo wa Apple MLX**
+# **Kufinywa kwa Phi-3 kwa kutumia Apple MLX Framework**
 
-Tunaweza kumaliza kufinyanga kwa kushirikiana na Lora kupitia mstari wa amri wa mfumo wa Apple MLX. (Kama unataka kujifunza zaidi kuhusu utendakazi wa Mfumo wa MLX, tafadhali soma [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+Tunaweza kumaliza kufinywa kwa pamoja na Lora kupitia mstari wa amri wa Apple MLX framework. (Kama unataka kujifunza zaidi kuhusu jinsi MLX Framework inavyofanya kazi, tafadhali soma [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
 
 ## **1. Maandalizi ya data**
 
-Kwa kawaida, Mfumo wa MLX unahitaji data katika muundo wa jsonl kwa ajili ya train, test, na eval, na unashirikiana na Lora kumaliza kazi za kufinyanga.
+Kwa kawaida, MLX Framework inahitaji data katika muundo wa jsonl kwa ajili ya train, test, na eval, na inachanganywa na Lora kumaliza kazi za kufinywa.
 
 
 ### ***Note:***
@@ -31,14 +31,14 @@ Kwa kawaida, Mfumo wa MLX unahitaji data katika muundo wa jsonl kwa ajili ya tra
 
 ```
 
-2. Mfano wetu unatumia [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), lakini kiasi cha data ni kidogo, kwa hivyo matokeo ya kufinyanga hayahakikishi kuwa bora zaidi. Inashauriwa wanafunzi watumie data bora kulingana na hali zao kukamilisha.
+2. Mfano wetu unatumia [data ya TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), lakini kiasi cha data ni kidogo, hivyo matokeo ya kufinywa hayahakikishi kuwa bora zaidi. Inapendekezwa wanafunzi watumie data bora kulingana na mazingira yao ili kumaliza kazi.
 
 3. Muundo wa data umeunganishwa na templeti ya Phi-3
 
-Tafadhali pakua data kutoka [hii link](../../../../code/04.Finetuning/mlx), hakikisha unajumuisha faili zote za .jsonl katika folda ya ***data***
+Tafadhali pakua data kutoka [kiungo hiki](../../../../code/04.Finetuning/mlx), hakikisha unajumuisha faili zote za .jsonl katika folda ya ***data***
 
 
-## **2. Kufinyanga kwenye terminal yako**
+## **2. Kufinywa kwenye terminal yako**
 
 Tafadhali endesha amri hii kwenye terminal
 
@@ -52,7 +52,7 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Note:***
 
-1. Hii ni kufinyanga kwa LoRA, Mfumo wa MLX haujatoa QLoRA
+1. Hii ni kufinywa kwa LoRA, MLX framework haijatoa QLoRA
 
 2. Unaweza kubadilisha config.yaml kubadilisha baadhi ya hoja, kama vile
 
@@ -135,9 +135,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Endesha fine-tuning adapter kwa ajili ya kujaribu**
+## **3. Endesha fine-tuning adapter kujaribu**
 
-Unaweza kuendesha fine-tuning adapter kwenye terminal, kama ifuatavyo 
+Unaweza kuendesha fine-tuning adapter kwenye terminal, kama hii 
 
 
 ```bash
@@ -155,10 +155,10 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Unaweza jaribu kulinganisha matokeo ya fine-tuning na modeli ya asili
+Unaweza kujaribu kulinganisha matokeo ya Fine-tuning na modeli ya asili
 
 
-## **4. Unganisha adapters kutengeneza modeli mpya**
+## **4. Unganisha adapters kuunda modeli mpya**
 
 
 ```bash
@@ -167,7 +167,7 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Kuendesha modeli za kufinyanga zilizo quantify kwa kutumia ollama**
+## **5. Kuendesha modeli za kufinywa zilizopimwa kwa kutumia ollama**
 
 Kabla ya kutumia, tafadhali sanidi mazingira yako ya llama.cpp
 
@@ -186,9 +186,9 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Note:*** 
 
-1. Sasa inaunga mkono mabadiliko ya quantization ya fp32, fp16 na INT 8
+1. Sasa inasaidia mabadiliko ya quantization ya fp32, fp16 na INT 8
 
-2. Modeli iliyounganishwa haijumuishi tokenizer.model, tafadhali ipakue kutoka https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Modeli iliyounganishwa haijajumuisha tokenizer.model, tafadhali pakua kutoka https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
 weka [Ollma Model](https://ollama.com/)
 
@@ -211,7 +211,7 @@ endesha amri kwenye terminal
 
 ```
 
-Hongera! Jifunze kufinyanga kwa ustadi na Mfumo wa MLX
+Hongera! Jifunze kufinywa kwa kina kwa kutumia MLX Framework
 
-**Kiasi cha kutoaminika**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatuna dhamana kwa maelewano au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

@@ -2,78 +2,78 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b62864faf628eb07f5231d4885555198",
-  "translation_date": "2025-05-08T05:43:03+00:00",
+  "translation_date": "2025-07-17T03:07:01+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md",
   "language_code": "hk"
 }
 -->
-# Phi-3.5-Instruct WebGPU RAG Chatbot
+# Phi-3.5-Instruct WebGPU RAG 聊天機械人
 
-## 展示 WebGPU 同 RAG 模式嘅示範
+## 展示 WebGPU 與 RAG 模式的示範
 
-RAG 模式用 Phi-3.5 Onnx Hosted model，結合 Retrieval-Augmented Generation 方法，將 Phi-3.5 模型同 ONNX hosting 嘅優勢整合，令 AI 部署更高效。呢個模式對於針對特定領域嘅任務做微調好有用，兼顧質素、成本效益同長文本理解能力。佢係 Azure AI 嘅一部分，提供多款易搵、易試、易用嘅模型，滿足唔同行業嘅定制需求。
+結合 Phi-3.5 Onnx 託管模型的 RAG 模式，採用檢索增強生成（Retrieval-Augmented Generation）方法，將 Phi-3.5 模型的強大功能與 ONNX 託管相結合，實現高效的 AI 部署。此模式對於針對特定領域任務進行模型微調非常有用，兼顧品質、成本效益及長上下文理解能力。它是 Azure AI 套件的一部分，提供多款易於尋找、試用及使用的模型，滿足各行各業的定制需求。
 
-## 乜嘢係 WebGPU  
-WebGPU 係一個現代網頁圖形 API，設計用嚟直接由瀏覽器高效地存取裝置嘅 GPU。佢係 WebGL 嘅後繼者，帶嚟幾個主要改進：
+## 什麼是 WebGPU  
+WebGPU 是一個現代化的網頁圖形 API，旨在直接從瀏覽器高效存取裝置的圖形處理器（GPU）。它是 WebGL 的後繼者，帶來多項重要改進：
 
-1. **兼容現代 GPU**：WebGPU 可以無縫配合最新嘅 GPU 架構，利用 Vulkan、Metal 同 Direct3D 12 等系統 API。
-2. **提升效能**：支援通用 GPU 運算同更快嘅操作，適合圖形渲染同機器學習任務。
-3. **先進功能**：WebGPU 提供更高級嘅 GPU 能力，令圖形同計算工作負載更複雜同動態。
-4. **減輕 JavaScript 負擔**：將更多任務交俾 GPU 處理，令 JavaScript 工作量大幅減少，提升效能同流暢度。
+1. **兼容現代 GPU**：WebGPU 專為與當代 GPU 架構無縫配合而設，利用 Vulkan、Metal 和 Direct3D 12 等系統 API。
+2. **提升效能**：支援通用 GPU 計算及更快的運算，適合圖形渲染與機器學習任務。
+3. **進階功能**：提供更豐富的 GPU 能力，支援更複雜且動態的圖形與計算工作負載。
+4. **減輕 JavaScript 負擔**：將更多任務交由 GPU 處理，大幅降低 JavaScript 的工作量，帶來更佳效能與流暢體驗。
 
-而家 WebGPU 已經支援 Google Chrome，仲有繼續開發擴展到其他平台。
+目前 WebGPU 已在 Google Chrome 等瀏覽器支援，並持續擴展至其他平台。
 
 ### 03.WebGPU  
 所需環境：
 
 **支援瀏覽器：**  
-- Google Chrome 113+  
-- Microsoft Edge 113+  
-- Safari 18 (macOS 15)  
-- Firefox Nightly。
+- Google Chrome 113 以上  
+- Microsoft Edge 113 以上  
+- Safari 18（macOS 15）  
+- Firefox Nightly  
 
 ### 啟用 WebGPU：
 
-- 喺 Chrome/Microsoft Edge
+- 在 Chrome/Microsoft Edge 中  
 
 啟用 `chrome://flags/#enable-unsafe-webgpu` 標誌。
 
-#### 打開瀏覽器：  
+#### 開啟瀏覽器：  
 啟動 Google Chrome 或 Microsoft Edge。
 
 #### 進入 Flags 頁面：  
-喺地址欄輸入 `chrome://flags`，然後按 Enter。
+在地址欄輸入 `chrome://flags`，按下 Enter。
 
 #### 搜尋標誌：  
-喺頁面頂部嘅搜尋框輸入 'enable-unsafe-webgpu'
+在頁面頂部的搜尋框輸入 'enable-unsafe-webgpu'。
 
 #### 啟用標誌：  
-喺結果中搵到 #enable-unsafe-webgpu 標誌。
+在結果列表中找到 #enable-unsafe-webgpu 標誌。
 
-喺旁邊嘅下拉選單揀選 Enabled。
+點擊旁邊的下拉選單，選擇 Enabled。
 
-#### 重啟瀏覽器：
+#### 重新啟動瀏覽器：  
 
-啟用標誌後，需要重啟瀏覽器先會生效。點擊頁面底部出現嘅 Relaunch 按鈕。
+啟用標誌後，需重新啟動瀏覽器以使更改生效。點擊頁面底部出現的 Relaunch 按鈕。
 
-- Linux 用戶啟動瀏覽器時加上 `--enable-features=Vulkan`。  
-- Safari 18 (macOS 15) 預設已啟用 WebGPU。  
-- Firefox Nightly 喺地址欄輸入 about:config，然後 `set dom.webgpu.enabled to true`。
+- Linux 系統請使用 `--enable-features=Vulkan` 參數啟動瀏覽器。  
+- Safari 18（macOS 15）預設已啟用 WebGPU。  
+- Firefox Nightly 輸入 about:config，將 `dom.webgpu.enabled` 設為 true。
 
-### 為 Microsoft Edge 設定 GPU
+### 為 Microsoft Edge 設定 GPU  
 
-以下係喺 Windows 上為 Microsoft Edge 設定高效能 GPU 嘅步驟：
+以下是在 Windows 上為 Microsoft Edge 設定高效能 GPU 的步驟：
 
-- **打開設定：** 點擊開始功能表，揀 Settings。  
-- **系統設定：** 去 System，然後揀 Display。  
-- **圖形設定：** 向下捲動，點擊 Graphics settings。  
-- **揀選應用程式：** 喺 “Choose an app to set preference” 底下，揀 Desktop app，跟住 Browse。  
-- **揀選 Edge：** 尋找 Edge 安裝資料夾（通常係 `C:\Program Files (x86)\Microsoft\Edge\Application`），揀 `msedge.exe`。  
-- **設定偏好：** 點 Options，揀 High performance，然後儲存。  
-咁樣可以確保 Microsoft Edge 使用你嘅高效能 GPU，提升表現。  
-- **重啟** 電腦令設定生效。
+- **開啟設定：** 點擊開始選單，選擇設定。  
+- **系統設定：** 進入系統，然後選擇顯示。  
+- **圖形設定：** 向下捲動並點擊圖形設定。  
+- **選擇應用程式：** 在「選擇要設定偏好的應用程式」中，選擇桌面應用程式，然後點擊瀏覽。  
+- **選擇 Edge：** 導航至 Edge 安裝資料夾（通常為 `C:\Program Files (x86)\Microsoft\Edge\Application`），選擇 `msedge.exe`。  
+- **設定偏好：** 點擊選項，選擇高效能，然後點擊儲存。  
+這樣可確保 Microsoft Edge 使用高效能 GPU 以提升效能。  
+- **重新啟動** 電腦以使設定生效。
 
-### 範例：請[點擊呢個連結](https://github.com/microsoft/aitour-exploring-cutting-edge-models/tree/main/src/02.ONNXRuntime/01.WebGPUChatRAG)
+### 範例：請[點擊此連結](https://github.com/microsoft/aitour-exploring-cutting-edge-models/tree/main/src/02.ONNXRuntime/01.WebGPUChatRAG)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯而成。雖然我哋努力確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件嘅母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我哋對因使用本翻譯而引起嘅任何誤解或誤釋概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

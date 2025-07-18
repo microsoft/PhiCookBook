@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-05-09T22:43:23+00:00",
+  "translation_date": "2025-07-17T10:36:04+00:00",
   "source_file": "md/04.HOL/dotnet/readme.md",
   "language_code": "it"
 }
 -->
-﻿## Benvenuto nei Phi labs con C#
+## Benvenuti ai Phi labs con C#
 
 È disponibile una selezione di lab che mostrano come integrare le potenti diverse versioni dei modelli Phi in un ambiente .NET.
 
@@ -15,13 +15,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Prima di eseguire l'esempio, assicurati di avere installato quanto segue:
 
-**.NET 9:** Verifica di avere installato sul tuo computer la [versione più recente di .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo).
+**.NET 9:** Verifica di avere installato la [versione più recente di .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) sulla tua macchina.
 
 **(Opzionale) Visual Studio o Visual Studio Code:** Ti servirà un IDE o un editor di codice in grado di eseguire progetti .NET. Si consiglia [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) o [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo).
 
 **Usando git** clona localmente una delle versioni disponibili Phi-3, Phi3.5 o Phi-4 da [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
 
-**Scarica i modelli Phi-4 ONNX** sul tuo computer:
+**Scarica i modelli Phi-4 ONNX** sulla tua macchina locale:
 
 ### naviga nella cartella dove salvare i modelli
 
@@ -43,7 +43,7 @@ git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 ```
 
-**Scarica i modelli Phi-3 ONNX** sul tuo computer:
+**Scarica i modelli Phi-3 ONNX** sulla tua macchina locale:
 
 ### clona e scarica il modello Phi-3 mini 4K instruct e il modello Phi-3 vision 128K
 
@@ -57,28 +57,28 @@ git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 
 ## Informazioni sui Labs
 
-La soluzione principale contiene diversi Labs di esempio che mostrano le capacità dei modelli Phi usando C#.
+La soluzione principale contiene diversi sample Labs che dimostrano le capacità dei modelli Phi usando C#.
 
 | Progetto | Modello | Descrizione |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 o Phi-3.5 | Chat console di esempio che permette all'utente di fare domande. Il progetto carica un modello ONNX Phi-3 locale usando `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
-| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
-| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Semantic Kernel` libraries. |
-| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntimeGenAI` libraries and implements the `IChatClient` from `Microsoft.Extensions.AI`. |
-| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Sample console chat that allows the user to ask questions. The chat implements memory. |
-| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | This is a sample project that uses a local Phi-4 model to analyze images showing the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 |This is a sample project that uses a local Phi-4 model to analyze an audio file, generate the transcript of the file and show the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 o Phi-3.5 | Chat console di esempio che permette all’utente di fare domande. Il progetto carica un modello ONNX Phi-3 locale usando le librerie `Microsoft.ML.OnnxRuntime`. |
+| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 o Phi-3.5 | Chat console di esempio che permette all’utente di fare domande. Il progetto carica un modello ONNX Phi-3 locale usando le librerie `Microsoft.Semantic.Kernel`. |
+| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 o Phi-3.5 | Progetto di esempio che utilizza un modello phi3 vision locale per analizzare immagini. Il progetto carica un modello ONNX Phi-3 Vision locale usando le librerie `Microsoft.ML.OnnxRuntime`. |
+| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 o Phi-3.5 | Progetto di esempio che utilizza un modello phi3 vision locale per analizzare immagini. Il progetto carica un modello ONNX Phi-3 Vision locale usando le librerie `Microsoft.ML.OnnxRuntime`. Il progetto presenta anche un menu con diverse opzioni per interagire con l’utente. | 
+| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Chat console di esempio che permette all’utente di fare domande. Il progetto carica un modello ONNX Phi-4 locale usando le librerie `Microsoft.ML.OnnxRuntime`. |
+| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Chat console di esempio che permette all’utente di fare domande. Il progetto carica un modello ONNX Phi-4 locale usando le librerie `Semantic Kernel`. |
+| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Chat console di esempio che permette all’utente di fare domande. Il progetto carica un modello ONNX Phi-4 locale usando le librerie `Microsoft.ML.OnnxRuntimeGenAI` e implementa `IChatClient` da `Microsoft.Extensions.AI`. |
+| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Chat console di esempio che permette all’utente di fare domande. La chat implementa la memoria. |
+| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | Progetto di esempio che utilizza un modello Phi-4 locale per analizzare immagini mostrando il risultato in console. Il progetto carica un modello Phi-4-`multimodal-instruct-onnx` locale usando le librerie `Microsoft.ML.OnnxRuntime`. |
+| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 | Progetto di esempio che utilizza un modello Phi-4 locale per analizzare un file audio, generare la trascrizione del file e mostrare il risultato in console. Il progetto carica un modello Phi-4-`multimodal-instruct-onnx` locale usando le librerie `Microsoft.ML.OnnxRuntime`. |
 
-## How to Run the Projects
+## Come eseguire i progetti
 
-To run the projects, follow these steps:
+Per eseguire i progetti, segui questi passaggi:
 
-1. Clone the repository to your local machine.
+1. Clona il repository sulla tua macchina locale.
 
-1. Open a terminal and navigate to the desired project. In example, let's run `LabsPhi4-Chat-01OnnxRuntime`.
+1. Apri un terminale e naviga nel progetto desiderato. Ad esempio, eseguiamo `LabsPhi4-Chat-01OnnxRuntime`.
 
     ```bash
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
@@ -90,7 +90,7 @@ To run the projects, follow these steps:
     dotnet run
     ```
 
-1. Il progetto di esempio richiede un input dall'utente e risponde usando il modello locale.
+1. Il progetto di esempio chiede un input all’utente e risponde usando il modello locale.
 
    La demo in esecuzione è simile a questa:
 
@@ -103,4 +103,4 @@ To run the projects, follow these steps:
    ```
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua madre deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

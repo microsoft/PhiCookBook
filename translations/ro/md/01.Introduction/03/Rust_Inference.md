@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T13:08:04+00:00",
+  "translation_date": "2025-07-16T21:33:34+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "ro"
 }
 -->
-# Cross-platform inference with Rust
+# Inferență cross-platform cu Rust
 
-Acest tutorial ne va ghida prin procesul de realizare a inferenței folosind Rust și [Candle ML framework](https://github.com/huggingface/candle) de la HuggingFace. Utilizarea Rust pentru inferență oferă mai multe avantaje, în special în comparație cu alte limbaje de programare. Rust este cunoscut pentru performanța sa ridicată, comparabilă cu cea a limbajelor C și C++. Acest lucru îl face o alegere excelentă pentru sarcini de inferență, care pot fi intensive din punct de vedere computațional. În special, acest lucru se datorează abstracțiilor fără costuri suplimentare și gestionării eficiente a memoriei, fără suprasarcină de garbage collection. Capacitățile cross-platform ale Rust permit dezvoltarea de cod care rulează pe diverse sisteme de operare, inclusiv Windows, macOS și Linux, precum și pe sisteme de operare mobile, fără modificări semnificative ale bazei de cod.
+Acest tutorial ne va ghida prin procesul de realizare a inferenței folosind Rust și [Candle ML framework](https://github.com/huggingface/candle) de la HuggingFace. Utilizarea Rust pentru inferență oferă mai multe avantaje, în special în comparație cu alte limbaje de programare. Rust este cunoscut pentru performanța sa ridicată, comparabilă cu cea a limbajelor C și C++. Acest lucru îl face o alegere excelentă pentru sarcinile de inferență, care pot fi intensive din punct de vedere computațional. În mod special, acest lucru se datorează abstracțiilor fără costuri suplimentare și gestionării eficiente a memoriei, care nu implică un colector de gunoi. Capacitățile cross-platform ale Rust permit dezvoltarea de cod care rulează pe diverse sisteme de operare, inclusiv Windows, macOS și Linux, precum și pe sisteme de operare mobile, fără modificări semnificative ale codului.
 
-Prerequisitul pentru a urma acest tutorial este să [instalați Rust](https://www.rust-lang.org/tools/install), care include compilatorul Rust și Cargo, managerul de pachete Rust.
+Precondiția pentru a urma acest tutorial este să [instalați Rust](https://www.rust-lang.org/tools/install), care include compilatorul Rust și Cargo, managerul de pachete Rust.
 
-## Step 1: Create a New Rust Project
+## Pasul 1: Creează un proiect Rust nou
 
-Pentru a crea un nou proiect Rust, executați următoarea comandă în terminal:
+Pentru a crea un proiect Rust nou, rulează următoarea comandă în terminal:
 
 ```bash
 cargo new phi-console-app
 ```
 
-Aceasta generează o structură inițială a proiectului cu un fișier `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Aceasta generează o structură inițială a proiectului cu un fișier `Cargo.toml` și un director `src` care conține un fișier `main.rs`.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml`:
+Următorul pas este să adăugăm dependențele noastre - și anume crate-urile `candle`, `hf-hub` și `tokenizers` - în fișierul `Cargo.toml`:
 
 ```toml
 [package]
@@ -39,9 +39,9 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## Step 2: Configure Basic Parameters
+## Pasul 2: Configurează parametrii de bază
 
-În fișierul main.rs, vom seta parametrii inițiali pentru inferența noastră. Toți vor fi hardcodați pentru simplitate, dar îi putem modifica după cum este necesar.
+În fișierul main.rs, vom seta parametrii inițiali pentru inferență. Toți vor fi hardcodați pentru simplitate, dar îi putem modifica după cum este necesar.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,16 +55,16 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: Controlează gradul de aleatorietate al procesului de eșantionare.
+- **temperature**: Controlează gradul de aleatoriu al procesului de eșantionare.
 - **sample_len**: Specifică lungimea maximă a textului generat.
-- **top_p**: Folosit pentru nucleus sampling pentru a limita numărul de tokeni considerați la fiecare pas.
-- **repeat_last_n**: Controlează numărul de tokeni luați în considerare pentru aplicarea unei penalizări pentru a preveni secvențele repetitive.
+- **top_p**: Folosit pentru eșantionarea nucleului (nucleus sampling) pentru a limita numărul de tokeni considerați la fiecare pas.
+- **repeat_last_n**: Controlează numărul de tokeni considerați pentru aplicarea unei penalizări pentru a preveni secvențele repetitive.
 - **repeat_penalty**: Valoarea penalizării pentru a descuraja tokenii repetați.
 - **seed**: O sămânță aleatorie (am putea folosi o valoare constantă pentru o reproducibilitate mai bună).
-- **prompt**: Textul inițial al promptului pentru a începe generarea. Observați că îi cerem modelului să genereze un haiku despre hochei pe gheață și că îl închidem între tokeni speciali pentru a indica părțile utilizatorului și asistentului în conversație. Modelul va completa promptul cu un haiku.
-- **device**: În acest exemplu folosim CPU-ul pentru calcul. Candle suportă rularea pe GPU cu CUDA și Metal de asemenea.
+- **prompt**: Textul inițial pentru a începe generarea. Observați că îi cerem modelului să genereze un haiku despre hochei pe gheață și că îl înconjurăm cu tokeni speciali pentru a indica părțile de utilizator și asistent ale conversației. Modelul va completa apoi promptul cu un haiku.
+- **device**: Folosim CPU pentru calcul în acest exemplu. Candle suportă și rularea pe GPU cu CUDA și Metal.
 
-## Step 3: Download/Prepare Model and Tokenizer
+## Pasul 3: Descarcă/Prepara modelul și tokenizer-ul
 
 ```rust
 let api = hf_hub::api::sync::Api::new()?;
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Folosim fișierul `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` pentru a tokeniza textul de intrare. Odată descărcat, modelul este stocat în cache, astfel că prima execuție va fi lentă (deoarece descarcă cei 2.4GB ai modelului), dar execuțiile următoare vor fi mai rapide.
+Folosim API-ul `hf_hub` pentru a descărca fișierele modelului și tokenizer-ului de pe Hugging Face model hub. Fișierul `gguf` conține greutățile modelului cuantificat, în timp ce fișierul `tokenizer.json` este folosit pentru tokenizarea textului de intrare. Odată descărcat, modelul este stocat în cache, astfel încât prima execuție va fi lentă (deoarece descarcă cei 2.4GB ai modelului), dar execuțiile următoare vor fi mai rapide.
 
-## Step 4: Load Model
+## Pasul 4: Încarcă modelul
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Încărcăm greutățile cuantificate ale modelului în memorie și inițializăm modelul Phi-3. Această etapă implică citirea greutăților modelului din fișierul `gguf` și configurarea modelului pentru inferență pe dispozitivul specificat (CPU în acest caz).
+Încărcăm greutățile modelului cuantificat în memorie și inițializăm modelul Phi-3. Acest pas implică citirea greutăților modelului din fișierul `gguf` și configurarea modelului pentru inferență pe dispozitivul specificat (CPU în acest caz).
 
-## Step 5: Process Prompt and Prepare for Inference
+## Pasul 5: Procesează promptul și pregătește pentru inferență
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-În această etapă, tokenizăm promptul de intrare și îl pregătim pentru inferență, convertindu-l într-o secvență de ID-uri de tokeni. De asemenea, inițializăm valorile `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`. Fiecare token este convertit într-un tensor și trecut prin model pentru a obține logits.
+În acest pas, tokenizăm promptul de intrare și îl pregătim pentru inferență prin convertirea lui într-o secvență de ID-uri de tokeni. De asemenea, inițializăm `LogitsProcessor` pentru a gestiona procesul de eșantionare (distribuția probabilităților peste vocabular) pe baza valorilor date pentru `temperature` și `top_p`. Fiecare token este convertit într-un tensor și trecut prin model pentru a obține logits.
 
 Buclează prin fiecare token din prompt, actualizând procesorul de logits și pregătind generarea următorului token.
 
-## Step 6: Inference
+## Pasul 6: Inferență
 
 ```rust
 for index in 0..to_sample {
@@ -160,14 +160,14 @@ for index in 0..to_sample {
 }
 ```
 
-În bucla de inferență, generăm tokeni unul câte unul până când atingem lungimea dorită a eșantionului sau întâlnim tokenul de sfârșit de secvență. Tokenul următor este convertit într-un tensor și trecut prin model, iar logits sunt procesați pentru aplicarea penalizărilor și eșantionării. Apoi tokenul următor este eșantionat, decodat și adăugat la secvență.
-Pentru a evita textul repetitiv, se aplică o penalizare tokenilor repetați pe baza parametrilor `repeat_last_n` and `repeat_penalty`.
+În bucla de inferență, generăm tokeni unul câte unul până când atingem lungimea dorită a eșantionului sau întâlnim tokenul de sfârșit de secvență. Tokenul următor este convertit într-un tensor și trecut prin model, în timp ce logits sunt procesați pentru a aplica penalizări și eșantionare. Apoi tokenul următor este eșantionat, decodat și adăugat la secvență.
+Pentru a evita textul repetitiv, se aplică o penalizare tokenilor repetați pe baza parametrilor `repeat_last_n` și `repeat_penalty`.
 
-În final, textul generat este afișat pe măsură ce este decodat, asigurând o ieșire în timp real.
+În final, textul generat este afișat pe măsură ce este decodat, asigurând un output în timp real, transmis în flux.
 
-## Step 7: Run the Application
+## Pasul 7: Rulează aplicația
 
-Pentru a rula aplicația, executați următoarea comandă în terminal:
+Pentru a rula aplicația, execută următoarea comandă în terminal:
 
 ```bash
 cargo run --release
@@ -189,13 +189,13 @@ On ice rink's silent stage it thrives—
 Swish of sticks now alive.
 ```
 
-## Conclusion
+## Concluzie
 
-Urmând acești pași, putem realiza generarea de text folosind modelul Phi-3 cu Rust și Candle în mai puțin de 100 de linii de cod. Codul gestionează încărcarea modelului, tokenizarea și inferența, folosind tensori și procesarea logits pentru a genera un text coerent pe baza promptului de intrare.
+Urmând acești pași, putem realiza generarea de text folosind modelul Phi-3 cu Rust și Candle în mai puțin de 100 de linii de cod. Codul gestionează încărcarea modelului, tokenizarea și inferența, folosind tensori și procesarea logits pentru a genera text coerent pe baza promptului de intrare.
 
-Această aplicație de consolă poate rula pe Windows, Linux și Mac OS. Datorită portabilității Rust, codul poate fi adaptat și într-o bibliotecă care să ruleze în aplicații mobile (nu putem rula aplicații de consolă acolo, până la urmă).
+Această aplicație de consolă poate rula pe Windows, Linux și Mac OS. Datorită portabilității Rust, codul poate fi adaptat și într-o bibliotecă care să ruleze în aplicații mobile (la urma urmei, nu putem rula aplicații de consolă acolo).
 
-## Appendix: full code
+## Anexă: cod complet
 
 ```rust
 use candle_core::{quantized::gguf_file, Device, Tensor};
@@ -304,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Notă: pentru a rula acest cod pe aarch64 Linux sau aarch64 Windows, adăugați un fișier numit `.cargo/config` cu următorul conținut:
+Notă: pentru a rula acest cod pe aarch64 Linux sau aarch64 Windows, adaugă un fișier numit `.cargo/config` cu următorul conținut:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Puteți vizita depozitul oficial [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) pentru mai multe exemple despre cum să folosiți modelul Phi-3 cu Rust și Candle, inclusiv abordări alternative pentru inferență.
+> Poți vizita depozitul oficial [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) pentru mai multe exemple despre cum să folosești modelul Phi-3 cu Rust și Candle, inclusiv abordări alternative pentru inferență.
 
-**Declinare a responsabilității**:  
+**Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

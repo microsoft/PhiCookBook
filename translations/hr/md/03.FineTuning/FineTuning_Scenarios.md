@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-05-09T21:58:17+00:00",
+  "translation_date": "2025-07-17T08:31:00+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
   "language_code": "hr"
 }
 -->
 ## Scenariji fino podešavanja
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.25759a0154a97ad90e43a6cace37d6bea87f0ac0236ada3ad5d4a1fbacc3bdf7.hr.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.hr.png)
 
-**Platforma** Obuhvaća razne tehnologije kao što su Azure AI Foundry, Azure Machine Learning, AI alati, Kaito i ONNX Runtime.
+**Platforma** Obuhvaća različite tehnologije poput Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito i ONNX Runtime.
 
-**Infrastruktura** Obuhvaća CPU i FPGA, koji su ključni za proces fino podešavanja. Dopustite da vam pokažem ikone za svaku od ovih tehnologija.
+**Infrastruktura** Uključuje CPU i FPGA, koji su ključni za proces fino podešavanja. Dopustite da vam pokažem ikone za svaku od ovih tehnologija.
 
-**Alati i okviri** Obuhvaćaju ONNX Runtime i ONNX Runtime. Dopustite da vam pokažem ikone za svaku od ovih tehnologija.  
+**Alati i okviri** Obuhvaća ONNX Runtime i ONNX Runtime. Dopustite da vam pokažem ikone za svaku od ovih tehnologija.  
 [Umetnite ikone za ONNX Runtime i ONNX Runtime]
 
 Proces fino podešavanja s Microsoft tehnologijama uključuje različite komponente i alate. Razumijevanjem i korištenjem ovih tehnologija možemo učinkovito fino podesiti naše aplikacije i stvoriti bolje rješenja.
@@ -24,15 +24,15 @@ Proces fino podešavanja s Microsoft tehnologijama uključuje različite kompone
 
 Fino podesite model koristeći hostano fino podešavanje, bez potrebe za kreiranjem i upravljanjem računalnim resursima.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.6184d80a336ea9d7bb67a581e9e5d0b021cafdffff7ba257c2012e2123e0d77e.hr.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.hr.png)
 
-Serverless fino podešavanje dostupno je za modele Phi-3-mini i Phi-3-medium, što omogućuje programerima brzo i jednostavno prilagođavanje modela za cloud i edge scenarije bez potrebe za organizacijom računalnih resursa. Također smo najavili da je Phi-3-small sada dostupan kroz našu ponudu Models-as-a-Service, pa programeri mogu brzo i jednostavno započeti s razvojem AI bez upravljanja osnovnom infrastrukturom.
+Serverless fino podešavanje dostupno je za modele Phi-3-mini i Phi-3-medium, omogućujući developerima brzo i jednostavno prilagođavanje modela za cloud i edge scenarije bez potrebe za organiziranjem računalnih resursa. Također smo najavili da je Phi-3-small sada dostupan kroz našu ponudu Models-as-a-Service, pa developeri mogu brzo i lako započeti s AI razvojem bez upravljanja osnovnom infrastrukturom.
 
 ## Model kao platforma
 
-Korisnici upravljaju vlastitim računalnim resursima kako bi fino podesili svoje modele.
+Korisnici sami upravljaju svojim računalnim resursima kako bi fino podesili svoje modele.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.cf8b08ef05bf57f362da90834be87562502f4370de4a7325a9fb03b8c008e5e7.hr.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.hr.png)
 
 [Primjer fino podešavanja](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -49,11 +49,11 @@ Korisnici upravljaju vlastitim računalnim resursima kako bi fino podesili svoje
 |Smanjenje računalnih i financijskih troškova|Da|Da|Ne|Da|Da|Ne|
 |Smanjenje potrošnje memorije|Ne|Da|Ne|Da|Da|Da|
 |Korištenje manjeg broja parametara za učinkovito fino podešavanje|Ne|Da|Da|Ne|Ne|Da|
-|Memorijski učinkoviti oblik paralelizma podataka koji omogućuje pristup ukupnoj GPU memoriji svih dostupnih GPU uređaja|Ne|Ne|Ne|Da|Da|Da|
+|Memorijski učinkovit oblik paralelizma podataka koji omogućuje pristup ukupnoj GPU memoriji svih dostupnih GPU uređaja|Ne|Ne|Ne|Da|Da|Da|
 
 ## Primjeri performansi fino podešavanja
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.9dbf84557eef43e011eb7cadf51f51686f9245f7953e2712a27095ab7d18a6d1.hr.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.hr.png)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je pomoću AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja proizašla iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

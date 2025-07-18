@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:25:51+00:00",
+  "translation_date": "2025-07-17T05:50:40+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "id"
 }
@@ -12,13 +12,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Ikhtisar
 
-Script ini menyiapkan dataset untuk machine learning dengan mengunduh gambar yang diperlukan, menyaring baris di mana pengunduhan gambar gagal, dan menyimpan dataset sebagai file CSV.
+Script ini menyiapkan dataset untuk machine learning dengan mengunduh gambar yang dibutuhkan, menyaring baris yang gagal mengunduh gambar, dan menyimpan dataset sebagai file CSV.
 
 ### Prasyarat
 
-Sebelum menjalankan script ini, pastikan telah menginstal pustaka berikut: `Pandas`, `Datasets`, `requests`, `PIL`, dan `io`. Anda juga perlu mengganti `'Insert_Your_Dataset'` pada baris 2 dengan nama dataset Anda dari Hugging Face.
+Sebelum menjalankan script ini, pastikan sudah menginstal library berikut: `Pandas`, `Datasets`, `requests`, `PIL`, dan `io`. Anda juga perlu mengganti `'Insert_Your_Dataset'` pada baris ke-2 dengan nama dataset Anda dari Hugging Face.
 
-Pustaka yang Diperlukan:
+Library yang dibutuhkan:
 
 ```python
 
@@ -34,41 +34,41 @@ from io import BytesIO
 
 Script ini melakukan langkah-langkah berikut:
 
-1. Mengunduh dataset dari Hugging Face menggunakan fungsi `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Mengunduh dataset dari Hugging Face menggunakan fungsi `load_dataset()`.
+2. Mengonversi dataset Hugging Face ke Pandas DataFrame agar lebih mudah dimanipulasi menggunakan metode `to_pandas()`.
+3. Membuat direktori untuk menyimpan dataset dan gambar.
+4. Menyaring baris yang gagal mengunduh gambar dengan cara mengiterasi setiap baris di DataFrame, mengunduh gambar menggunakan fungsi kustom `download_image()`, dan menambahkan baris yang lolos filter ke DataFrame baru bernama `filtered_rows`.
+5. Membuat DataFrame baru dengan baris yang sudah disaring dan menyimpannya ke disk sebagai file CSV.
+6. Mencetak pesan yang menunjukkan lokasi penyimpanan dataset dan gambar.
 
-### Custom Function
+### Fungsi Kustom
 
-The `download_image()` yang mengunduh gambar dari URL dan menyimpannya secara lokal menggunakan Pillow Image Library (PIL) dan modul `io`. Fungsi ini mengembalikan True jika gambar berhasil diunduh, dan False jika gagal. Fungsi ini juga akan memunculkan pengecualian dengan pesan error saat permintaan gagal.
+Fungsi `download_image()` mengunduh gambar dari URL dan menyimpannya secara lokal menggunakan Pillow Image Library (PIL) dan modul `io`. Fungsi ini mengembalikan True jika gambar berhasil diunduh, dan False jika gagal. Fungsi ini juga akan melemparkan exception dengan pesan error jika permintaan gagal.
 
-### Bagaimana Cara Kerjanya
+### Bagaimana cara kerjanya
 
 Fungsi download_image menerima dua parameter: image_url, yaitu URL gambar yang akan diunduh, dan save_path, yaitu jalur tempat gambar yang diunduh akan disimpan.
 
-Berikut cara kerja fungsi tersebut:
+Berikut cara kerja fungsi ini:
 
-Dimulai dengan membuat permintaan GET ke image_url menggunakan metode requests.get. Ini mengambil data gambar dari URL.
+Fungsi dimulai dengan melakukan permintaan GET ke image_url menggunakan metode requests.get. Ini mengambil data gambar dari URL tersebut.
 
-Baris response.raise_for_status() memeriksa apakah permintaan berhasil. Jika kode status respons menunjukkan kesalahan (misalnya, 404 - Not Found), maka akan memunculkan pengecualian. Ini memastikan bahwa kita hanya melanjutkan pengunduhan gambar jika permintaan berhasil.
+Baris response.raise_for_status() memeriksa apakah permintaan berhasil. Jika kode status respons menunjukkan error (misalnya, 404 - Not Found), maka akan melempar exception. Ini memastikan kita hanya melanjutkan mengunduh gambar jika permintaan berhasil.
 
-Data gambar kemudian diteruskan ke metode Image.open dari modul PIL (Python Imaging Library). Metode ini membuat objek Image dari data gambar.
+Data gambar kemudian diteruskan ke metode Image.open dari modul PIL (Python Imaging Library). Metode ini membuat objek Image dari data gambar tersebut.
 
-Baris image.save(save_path) menyimpan gambar ke save_path yang ditentukan. save_path harus mencakup nama file dan ekstensi yang diinginkan.
+Baris image.save(save_path) menyimpan gambar ke jalur save_path yang ditentukan. save_path harus mencakup nama file dan ekstensi yang diinginkan.
 
-Akhirnya, fungsi mengembalikan True untuk menunjukkan bahwa gambar berhasil diunduh dan disimpan. Jika terjadi pengecualian selama proses, fungsi menangkap pengecualian tersebut, mencetak pesan kesalahan yang menunjukkan kegagalan, dan mengembalikan False.
+Terakhir, fungsi mengembalikan True untuk menandakan gambar berhasil diunduh dan disimpan. Jika terjadi exception selama proses, fungsi akan menangkap exception tersebut, mencetak pesan error yang menunjukkan kegagalan, dan mengembalikan False.
 
-Fungsi ini berguna untuk mengunduh gambar dari URL dan menyimpannya secara lokal. Fungsi ini menangani kemungkinan kesalahan selama proses pengunduhan dan memberikan umpan balik apakah pengunduhan berhasil atau tidak.
+Fungsi ini berguna untuk mengunduh gambar dari URL dan menyimpannya secara lokal. Fungsi ini menangani kemungkinan error selama proses pengunduhan dan memberikan umpan balik apakah pengunduhan berhasil atau tidak.
 
-Perlu dicatat bahwa pustaka requests digunakan untuk membuat permintaan HTTP, pustaka PIL digunakan untuk bekerja dengan gambar, dan kelas BytesIO digunakan untuk menangani data gambar sebagai aliran byte.
+Perlu dicatat bahwa library requests digunakan untuk melakukan permintaan HTTP, library PIL digunakan untuk bekerja dengan gambar, dan kelas BytesIO digunakan untuk menangani data gambar sebagai aliran byte.
 
 
 ### Kesimpulan
 
-Script ini menyediakan cara yang praktis untuk menyiapkan dataset untuk machine learning dengan mengunduh gambar yang diperlukan, menyaring baris di mana pengunduhan gambar gagal, dan menyimpan dataset sebagai file CSV.
+Script ini menyediakan cara yang praktis untuk menyiapkan dataset untuk machine learning dengan mengunduh gambar yang dibutuhkan, menyaring baris yang gagal mengunduh gambar, dan menyimpan dataset sebagai file CSV.
 
 ### Contoh Script
 
@@ -136,4 +136,4 @@ print(f"Dataset and images saved to {dataset_dir}")
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi yang penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

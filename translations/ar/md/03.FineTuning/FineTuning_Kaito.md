@@ -2,47 +2,48 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-07T10:24:17+00:00",
+  "translation_date": "2025-07-17T06:18:31+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "ar"
 }
 -->
 ## الضبط الدقيق مع Kaito
 
-[Kaito](https://github.com/Azure/kaito) هو أوبريتور يقوم بأتمتة نشر نموذج الاستدلال AI/ML داخل عنقود Kubernetes.
+[Kaito](https://github.com/Azure/kaito) هو أوبريتور يقوم بأتمتة نشر نماذج الاستدلال في الذكاء الاصطناعي/التعلم الآلي داخل عنقود Kubernetes.
 
-يمتاز Kaito بالنقاط التالية مقارنة بمعظم طرق نشر النماذج الشائعة المبنية على بنى الآلات الافتراضية:
+يمتاز Kaito بالنقاط التالية مقارنة بمعظم طرق نشر النماذج الشائعة المبنية على بنى تحتية للآلات الافتراضية:
 
-- إدارة ملفات النموذج باستخدام صور الحاويات. يتم توفير خادم http لتنفيذ مكالمات الاستدلال باستخدام مكتبة النموذج.
-- تجنب تعديل معلمات النشر لتناسب أجهزة GPU عبر توفير إعدادات مسبقة الضبط.
+- إدارة ملفات النماذج باستخدام صور الحاويات. يتم توفير خادم http لتنفيذ استدعاءات الاستدلال باستخدام مكتبة النموذج.
+- تجنب ضبط معلمات النشر لتناسب عتاد GPU من خلال توفير إعدادات مسبقة.
 - توفير عقد GPU تلقائيًا بناءً على متطلبات النموذج.
-- استضافة صور النماذج الكبيرة في سجل حاويات Microsoft العام (MCR) إذا سمحت الرخصة بذلك.
+- استضافة صور النماذج الكبيرة في سجل الحاويات العام لمايكروسوفت (MCR) إذا سمحت الرخصة بذلك.
 
-باستخدام Kaito، تصبح عملية إدخال نماذج استدلال AI الكبيرة في Kubernetes أبسط بكثير.
+باستخدام Kaito، يتم تبسيط سير العمل الخاص بإدخال نماذج استدلال الذكاء الاصطناعي الكبيرة في Kubernetes بشكل كبير.
 
 ## البنية المعمارية
 
-يتبع Kaito نمط تصميم Kubernetes التقليدي Custom Resource Definition (CRD)/controller. يدير المستخدم موردًا مخصصًا `workspace` يصف متطلبات GPU ومواصفات الاستدلال. تقوم وحدات تحكم Kaito بأتمتة النشر من خلال التوفيق بين مورد `workspace` المخصص.
+يتبع Kaito نمط تصميم تعريف الموارد المخصصة (CRD) / المتحكم الكلاسيكي في Kubernetes. يدير المستخدم موردًا مخصصًا يسمى `workspace` يصف متطلبات GPU ومواصفات الاستدلال. يقوم متحكمو Kaito بأتمتة النشر من خلال التوفيق بين مورد `workspace` المخصص.
+
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-الشكل أعلاه يعرض نظرة عامة على بنية Kaito. وتتكون مكوناته الرئيسية من:
+الشكل أعلاه يعرض نظرة عامة على بنية Kaito. مكوناته الرئيسية تتضمن:
 
-- **وحدة تحكم مساحة العمل**: تقوم بتوفيق مورد `workspace` المخصص، وتُنشئ موارد مخصصة `machine` (موضحة أدناه) لتحفيز توفير العقد تلقائيًا، وتُنشئ عبء عمل الاستدلال (`deployment` أو `statefulset`) بناءً على الإعدادات المسبقة للنموذج.
-- **وحدة تحكم توفير العقد**: اسم الوحدة هو *gpu-provisioner* في [مخطط helm الخاص بـ gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). تستخدم CRD `machine` المستمدة من [Karpenter](https://sigs.k8s.io/karpenter) للتفاعل مع وحدة تحكم مساحة العمل. تتكامل مع واجهات برمجة تطبيقات Azure Kubernetes Service (AKS) لإضافة عقد GPU جديدة إلى عنقود AKS.
-> ملاحظة: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) هو مكون مفتوح المصدر. يمكن استبداله بوحدات تحكم أخرى إذا كانت تدعم واجهات برمجة تطبيقات [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **متحكم workspace**: يقوم بتوفيق مورد `workspace` المخصص، وينشئ موارد مخصصة `machine` (موضحة أدناه) لتحفيز توفير العقد تلقائيًا، وينشئ عبء عمل الاستدلال (`deployment` أو `statefulset`) بناءً على إعدادات النموذج المسبقة.
+- **متحكم توفير العقد**: اسم المتحكم هو *gpu-provisioner* في [مخطط helm الخاص بـ gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). يستخدم CRD الخاص بـ `machine` المستمد من [Karpenter](https://sigs.k8s.io/karpenter) للتفاعل مع متحكم workspace. يتكامل مع واجهات برمجة تطبيقات Azure Kubernetes Service (AKS) لإضافة عقد GPU جديدة إلى عنقود AKS.
+> ملاحظة: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) هو مكون مفتوح المصدر. يمكن استبداله بمتحكمات أخرى إذا كانت تدعم واجهات برمجة تطبيقات [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## فيديو نظرة عامة  
-[شاهد عرض Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+[شاهد عرض Kaito التوضيحي](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## التثبيت
 
-يرجى مراجعة دليل التثبيت [هنا](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+يرجى مراجعة إرشادات التثبيت [هنا](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## بداية سريعة
+## البداية السريعة
 
-بعد تثبيت Kaito، يمكن تجربة الأوامر التالية لبدء خدمة ضبط دقيق.
+بعد تثبيت Kaito، يمكن تجربة الأوامر التالية لبدء خدمة الضبط الدقيق.
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -93,7 +94,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-يمكن متابعة حالة مساحة العمل عبر تشغيل الأمر التالي. عندما يصبح عمود WORKSPACEREADY `True`، يكون النموذج قد تم نشره بنجاح.
+يمكن تتبع حالة workspace عبر تشغيل الأمر التالي. عندما تصبح قيمة عمود WORKSPACEREADY هي `True`، يكون النموذج قد تم نشره بنجاح.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +102,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-بعد ذلك، يمكن العثور على عنوان IP الخاص بخدمة الاستدلال في العنقود واستخدام بود `curl` مؤقت لاختبار نقطة النهاية الخاصة بالخدمة داخل العنقود.
+بعد ذلك، يمكن العثور على عنوان IP الخاص بخدمة الاستدلال في العنقود واستخدام بود `curl` مؤقت لاختبار نقطة نهاية الخدمة داخل العنقود.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -113,4 +114,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى جاهدين لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر المعتمد. للمعلومات الهامة، يُنصح بالترجمة الاحترافية البشرية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالاعتماد على الترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

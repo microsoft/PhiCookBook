@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:02:11+00:00",
+  "translation_date": "2025-07-17T03:17:44+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "sv"
 }
 -->
 # **Chatta med Phi-4-mini ONNX**
 
-***ONNX*** är ett öppet format som är utformat för att representera maskininlärningsmodeller. ONNX definierar en gemensam uppsättning operatorer – byggstenarna för maskininlärnings- och djupinlärningsmodeller – samt ett gemensamt filformat för att möjliggöra för AI-utvecklare att använda modeller med olika ramverk, verktyg, runtime-miljöer och kompilatorer.
+***ONNX*** är ett öppet format som är utformat för att representera maskininlärningsmodeller. ONNX definierar en gemensam uppsättning operatorer – byggstenarna i maskininlärnings- och djupinlärningsmodeller – samt ett gemensamt filformat för att möjliggöra för AI-utvecklare att använda modeller med olika ramverk, verktyg, körmiljöer och kompilatorer.
 
 Vi hoppas kunna distribuera generativa AI-modeller på edge-enheter och använda dem i miljöer med begränsad beräkningskraft eller offline. Nu kan vi uppnå detta mål genom att konvertera modellen på ett kvantiserat sätt. Vi kan konvertera den kvantiserade modellen till GGUF- eller ONNX-format.
 
-Microsoft Olive kan hjälpa dig att konvertera SLM till kvantiserat ONNX-format. Metoden för att uppnå modellkonvertering är väldigt enkel.
+Microsoft Olive kan hjälpa dig att konvertera SLM till kvantiserat ONNX-format. Metoden för att genomföra modellkonverteringen är mycket enkel.
 
 **Installera Microsoft Olive SDK**
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, var vänlig observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål ska betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

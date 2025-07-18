@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:09:00+00:00",
+  "translation_date": "2025-07-17T05:16:30+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "ms"
 }
 -->
-## **Вызов функций в Phi-4-mini**
+## **Panggilan fungsi dalam Phi-4-mini**
 
-Вызов функций впервые появился в семействе Phi, и теперь вы можете использовать его через Phi-4-mini.
+Panggilan fungsi mula diperkenalkan dalam keluarga Phi Family, dan kini anda boleh menggunakannya melalui Phi-4-mini.
 
-Этот пример демонстрирует симуляцию результатов Премьер-лиги. Цель — чтобы Phi-4-mini предоставлял информацию о матчах в реальном времени. Ниже приведён пример кода:
+Contoh ini menunjukkan simulasi keputusan Liga Perdana. Matlamatnya adalah supaya Phi-4-mini dapat menyampaikan maklumat permainan secara masa nyata. Berikut adalah contoh kod: 
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

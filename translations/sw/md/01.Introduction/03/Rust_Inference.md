@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T13:05:02+00:00",
+  "translation_date": "2025-07-16T21:32:32+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "sw"
 }
 -->
-# Uhakiki wa msalaba-jukwaa kwa kutumia Rust
+# Utabiri wa mtandao wa majukwaa mbalimbali kwa kutumia Rust
 
-Mafunzo haya yatatuongoza katika mchakato wa kufanya uhakiki kwa kutumia Rust na [Candle ML framework](https://github.com/huggingface/candle) kutoka HuggingFace. Kutumia Rust kwa uhakiki kuna faida kadhaa, hasa ikilinganishwa na lugha nyingine za programu. Rust inajulikana kwa utendaji wake wa juu, unaolinganishwa na C na C++. Hii inafanya kuwa chaguo bora kwa kazi za uhakiki, ambazo zinaweza kuwa na mzigo mkubwa wa kihesabu. Hii hasa inatokana na abstractions zisizo na gharama na usimamizi mzuri wa kumbukumbu, ambao hauhusishi mzigo wa ukusanyaji taka. Uwezo wa Rust wa kufanya kazi kwenye majukwaa mbalimbali unaruhusu kuendeleza msimbo unaoweza kuendesha kwenye mifumo tofauti ya uendeshaji, ikiwa ni pamoja na Windows, macOS, na Linux, pamoja na mifumo ya uendeshaji wa simu, bila mabadiliko makubwa kwenye msimbo.
+Mafunzo haya yatatuongoza kupitia mchakato wa kufanya utabiri kwa kutumia Rust na [mfumo wa Candle ML](https://github.com/huggingface/candle) kutoka HuggingFace. Kutumia Rust kwa utabiri kuna faida kadhaa, hasa ikilinganishwa na lugha nyingine za programu. Rust inajulikana kwa utendaji wake wa juu, unaolingana na ule wa C na C++. Hii inafanya kuwa chaguo bora kwa kazi za utabiri, ambazo zinaweza kuwa na mzigo mkubwa wa kihesabu. Hii hasa inatokana na utofauti wa gharama sifuri na usimamizi mzuri wa kumbukumbu, ambao hauhusishi mzigo wa ukusanyaji taka. Uwezo wa Rust wa kuendeshwa kwenye majukwaa mbalimbali unaruhusu maendeleo ya msimbo unaoweza kuendeshwa kwenye mifumo mbalimbali ya uendeshaji, ikiwa ni pamoja na Windows, macOS, na Linux, pamoja na mifumo ya uendeshaji ya simu, bila mabadiliko makubwa kwenye msimbo.
 
-Sharti la kufuata mafunzo haya ni [kufunga Rust](https://www.rust-lang.org/tools/install), ambayo inajumuisha compiler ya Rust na Cargo, meneja wa vifurushi vya Rust.
+Sharti la kufuata mafunzo haya ni [kusakinisha Rust](https://www.rust-lang.org/tools/install), ambayo inajumuisha mkusanyaji wa Rust na Cargo, meneja wa vifurushi vya Rust.
 
-## Hatua ya 1: Tengeneza Mradi Mpya wa Rust
+## Hatua ya 1: Unda Mradi Mpya wa Rust
 
-Ili kutengeneza mradi mpya wa Rust, endesha amri ifuatayo kwenye terminal:
+Ili kuunda mradi mpya wa Rust, tumia amri ifuatayo kwenye terminal:
 
 ```bash
 cargo new phi-console-app
 ```
 
-Hii itaunda muundo wa awali wa mradi ukiwa na faili la `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Hii itaunda muundo wa awali wa mradi wenye faili `Cargo.toml` na saraka ya `src` yenye faili `main.rs`.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml`:
+Ifuatayo, tutaongeza utegemezi wetu - yaani crates `candle`, `hf-hub` na `tokenizers` - kwenye faili `Cargo.toml`:
 
 ```toml
 [package]
@@ -41,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## Hatua ya 2: Sanidi Vigezo Msingi
 
-Ndani ya faili la main.rs, tutaweka vigezo vya awali kwa ajili ya uhakiki wetu. Vyote vitakuwa vimewekwa moja kwa moja kwa ajili ya urahisi, lakini tunaweza kuvibadilisha kadri inavyohitajika.
+Ndani ya faili `main.rs`, tutaweka vigezo vya awali kwa ajili ya utabiri wetu. Vyote vitakuwa vimeandikwa moja kwa moja kwa urahisi, lakini tunaweza kubadilisha kama inavyohitajika.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,16 +55,16 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: Huidhibiti nasibu ya mchakato wa sampuli.
+- **temperature**: Hudhibiti nasibu ya mchakato wa sampuli.
 - **sample_len**: Inaeleza urefu wa juu wa maandishi yatakayozalishwa.
-- **top_p**: Inatumika kwa sampuli ya nucleus kupunguza idadi ya tokeni zinazochunguzwa kwa kila hatua.
-- **repeat_last_n**: Huidhibiti idadi ya tokeni zinazochunguzwa kwa ajili ya kuweka adhabu kuzuia mfululizo wa kurudiwa.
-- **repeat_penalty**: Thamani ya adhabu kuzuia tokeni kurudiwa.
-- **seed**: Mbegu ya nasibu (tunaweza kutumia thamani thabiti kwa urudufu bora).
-- **prompt**: Maandishi ya awali ya kuanzisha uzalishaji. Angalia kuwa tunaomba modeli izalishe haiku kuhusu ice hockey, na tunazizunguka na tokeni maalum kuonyesha sehemu za mtumiaji na msaidizi katika mazungumzo. Modeli itakamilisha prompt na haiku.
-- **device**: Katika mfano huu tunatumia CPU kwa ajili ya hesabu. Candle pia inaunga mkono kutumia GPU kwa CUDA na Metal.
+- **top_p**: Inatumika kwa sampuli ya nyuklia ili kupunguza idadi ya tokeni zinazochukuliwa kwa kila hatua.
+- **repeat_last_n**: Hudhibiti idadi ya tokeni zinazochukuliwa kwa ajili ya kuweka adhabu ili kuzuia mfululizo wa kurudiwa.
+- **repeat_penalty**: Thamani ya adhabu ili kuzuia tokeni kurudiwa.
+- **seed**: Mchepuo wa nasibu (tunaweza kutumia thamani thabiti kwa urudufu bora).
+- **prompt**: Maandishi ya awali ya kuanzisha uzalishaji. Angalia kwamba tunaomba mfano uzalishe haiku kuhusu ice hockey, na tunazizunguka na tokeni maalum kuonyesha sehemu za mtumiaji na msaidizi wa mazungumzo. Mfano kisha utakamilisha prompt na haiku.
+- **device**: Tunatumia CPU kwa ajili ya hesabu katika mfano huu. Candle pia inaunga mkono kuendesha kwenye GPU kwa CUDA na Metal.
 
-## Hatua ya 3: Pakua/Tayarisha Modeli na Tokenizer
+## Hatua ya 3: Pakua/Tayarisha Mfano na Tokenizer
 
 ```rust
 let api = hf_hub::api::sync::Api::new()?;
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Tunatumia faili la `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` kwa ajili ya kugawanya maandishi yetu ya kuingiza. Mara baada ya kupakuliwa, modeli huhifadhiwa kwenye cache, hivyo utekelezaji wa kwanza utakuwa polepole (kwa sababu inapakua modeli yenye ukubwa wa 2.4GB) lakini utekelezaji unaofuata utakuwa haraka zaidi.
+Tunatumia API ya `hf_hub` kupakua faili za mfano na tokenizer kutoka kwenye hifadhi ya mfano ya Hugging Face. Faili la `gguf` lina uzito wa mfano uliopimwa, wakati faili la `tokenizer.json` linatumika kwa tokenizing ya maandishi yetu ya ingizo. Baada ya kupakuliwa, mfano huhifadhiwa kwenye cache, hivyo utekelezaji wa kwanza utakuwa polepole (kwa sababu unapakua GB 2.4 za mfano) lakini utekelezaji unaofuata utakuwa haraka zaidi.
 
-## Hatua ya 4: Pakia Modeli
+## Hatua ya 4: Pakia Mfano
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Tunapakia uzito wa modeli uliobadilishwa kuwa kidogo kwenye kumbukumbu na kuanzisha modeli ya Phi-3. Hatua hii inahusisha kusoma uzito wa modeli kutoka kwenye faili la `gguf` na kuandaa modeli kwa ajili ya uhakiki kwenye kifaa kilichobainishwa (CPU katika mfano huu).
+Tunapakia uzito wa mfano uliopimwa kwenye kumbukumbu na kuanzisha mfano wa Phi-3. Hatua hii inahusisha kusoma uzito wa mfano kutoka faili la `gguf` na kuandaa mfano kwa ajili ya utabiri kwenye kifaa kilichobainishwa (CPU katika kesi hii).
 
-## Hatua ya 5: Tumia Prompt na Andaa kwa ajili ya Uhakiki
+## Hatua ya 5: Chakata Prompt na Andaa kwa Utabiri
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-Katika hatua hii, tunagawanya prompt ya kuingiza na kuandaa kwa uhakiki kwa kuibadilisha kuwa mfuatano wa tokeni za kitambulisho. Pia tunaanzisha thamani za `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`. Kila tokeni hubadilishwa kuwa tensor na kupitishwa kwenye modeli kupata logits.
+Katika hatua hii, tunafanya tokenizing ya prompt ya ingizo na kuandaa kwa utabiri kwa kuibadilisha kuwa mfuatano wa vitambulisho vya tokeni. Pia tunaanzisha `LogitsProcessor` kushughulikia mchakato wa sampuli (mgawanyo wa uwezekano juu ya msamiati) kulingana na thamani za `temperature` na `top_p` zilizotolewa. Kila tokeni hubadilishwa kuwa tensor na kupitishwa kwenye mfano kupata logits.
 
-Mzunguko huu unashughulikia kila tokeni kwenye prompt, ukiboresha processor ya logits na kuandaa kwa ajili ya uzalishaji wa tokeni inayofuata.
+Mzunguko unashughulikia kila tokeni katika prompt, ukiboresha processor ya logits na kuandaa uzalishaji wa tokeni inayofuata.
 
-## Hatua ya 6: Uhakiki
+## Hatua ya 6: Utabiri
 
 ```rust
 for index in 0..to_sample {
@@ -160,20 +160,20 @@ for index in 0..to_sample {
 }
 ```
 
-Katika mzunguko wa uhakiki, tunazalisha tokeni moja baada ya nyingine hadi tufikie urefu wa sampuli uliohitajika au tukutane na tokeni ya mwisho wa mfuatano. Tokeni inayofuata hubadilishwa kuwa tensor na kupitishwa kwenye modeli, wakati logits zinashughulikiwa ili kuweka adhabu na sampuli. Kisha tokeni inayofuata huchaguliwa, kutafsiriwa, na kuongezwa kwenye mfuatano.
-Ili kuepuka maandishi yanayojirudia, adhabu hutolewa kwa tokeni zinazojirudia kulingana na vigezo vya `repeat_last_n` and `repeat_penalty`.
+Katika mzunguko wa utabiri, tunazalisha tokeni moja baada ya nyingine hadi tufikie urefu wa sampuli unaotakiwa au tukutane na tokeni ya mwisho wa mfuatano. Tokeni inayofuata hubadilishwa kuwa tensor na kupitishwa kwenye mfano, wakati logits zinashughulikiwa ili kutumia adhabu na sampuli. Kisha tokeni inayofuata huchaguliwa, kutafsiriwa, na kuongezwa kwenye mfuatano.
+Ili kuepuka maandishi yanayojirudia, adhabu hutumika kwa tokeni zinazojirudia kulingana na vigezo vya `repeat_last_n` na `repeat_penalty`.
 
-Mwishowe, maandishi yaliyotengenezwa yamechapishwa kadri yanavyotafsiriwa, kuhakikisha utoaji wa moja kwa moja wa matokeo kwa wakati halisi.
+Mwishowe, maandishi yaliyotengenezwa yachapishwe wakati yanapotafsiriwa, kuhakikisha utoaji wa moja kwa moja wa matokeo kwa wakati halisi.
 
 ## Hatua ya 7: Endesha Programu
 
-Ili kuendesha programu, fanya amri ifuatayo kwenye terminal:
+Ili kuendesha programu, tumia amri ifuatayo kwenye terminal:
 
 ```bash
 cargo run --release
 ```
 
-Hii inapaswa kuchapisha haiku kuhusu ice hockey iliyozalishwa na modeli ya Phi-3. Kitu kama:
+Hii inapaswa kuchapisha haiku kuhusu ice hockey iliyozalishwa na mfano wa Phi-3. Kitu kama:
 
 ```
 Puck glides swiftly,  
@@ -191,9 +191,9 @@ Swish of sticks now alive.
 
 ## Hitimisho
 
-Kwa kufuata hatua hizi, tunaweza kufanya uzalishaji wa maandishi kwa kutumia modeli ya Phi-3 kwa Rust na Candle chini ya mistari 100 ya msimbo. Msimbo unashughulikia upakiaji wa modeli, kugawanya maandishi, na uhakiki, ukitumia tensors na usindikaji wa logits kuunda maandishi yanayoeleweka kulingana na prompt ya kuingiza.
+Kwa kufuata hatua hizi, tunaweza kufanya uzalishaji wa maandishi kwa kutumia mfano wa Phi-3 kwa Rust na Candle chini ya mistari 100 ya msimbo. Msimbo unashughulikia upakiaji wa mfano, tokenizing, na utabiri, ukitumia tensors na usindikaji wa logits kuzalisha maandishi yenye muktadha kulingana na prompt ya ingizo.
 
-Programu hii ya console inaweza kuendeshwa kwenye Windows, Linux na Mac OS. Kutokana na usafirishaji wa Rust, msimbo pia unaweza kubadilishwa kuwa maktaba ambayo ingeweza kuendeshwa ndani ya programu za simu (hatuwezi kuendesha programu za console huko, baada ya yote).
+Programu hii ya console inaweza kuendeshwa kwenye Windows, Linux na Mac OS. Kwa sababu ya uhamaji wa Rust, msimbo pia unaweza kubadilishwa kuwa maktaba itakayoweza kuendeshwa ndani ya programu za simu (hatuwezi kuendesha programu za console hapo, kwa kweli).
 
 ## Kiambatisho: msimbo kamili
 
@@ -304,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Kumbuka: ili kuendesha msimbo huu kwenye aarch64 Linux au aarch64 Windows, ongeza faili liitwalo `.cargo/config` lenye maudhui ifuatayo:
+Kumbuka: ili kuendesha msimbo huu kwenye aarch64 Linux au aarch64 Windows, ongeza faili liitwalo `.cargo/config` lenye maudhui yafuatayo:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Unaweza kutembelea hifadhidata rasmi ya [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) kwa mifano zaidi jinsi ya kutumia modeli ya Phi-3 kwa Rust na Candle, pamoja na mbinu mbadala za uhakiki.
+> Unaweza kutembelea hifadhi rasmi ya [mifano ya Candle](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) kwa mifano zaidi ya jinsi ya kutumia mfano wa Phi-3 kwa Rust na Candle, ikiwa ni pamoja na mbinu mbadala za utabiri.
 
-**Kiasi cha Majadiliano**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asilia katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya mtaalamu wa kibinadamu inapendekezwa. Hatubeba jukumu lolote kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

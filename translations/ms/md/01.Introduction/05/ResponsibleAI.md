@@ -2,120 +2,120 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-05-09T15:42:16+00:00",
+  "translation_date": "2025-07-16T22:56:17+00:00",
   "source_file": "md/01.Introduction/05/ResponsibleAI.md",
   "language_code": "ms"
 }
 -->
-# **היכרות עם Responsible AI**
+# **Memperkenalkan AI Bertanggungjawab**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) היא יוזמה שמטרתה לסייע למפתחים ולארגונים לבנות מערכות בינה מלאכותית שקופות, אמינות ואחראיות. היוזמה מספקת הנחיות ומשאבים לפיתוח פתרונות AI אחראיים שמתיישבים עם עקרונות אתיים, כמו פרטיות, הוגנות ושקיפות. בנוסף, נסקור כמה מהאתגרים והנוהגים הטובים ביותר הקשורים לבניית מערכות AI אחראיות.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) adalah inisiatif yang bertujuan membantu pembangun dan organisasi membina sistem AI yang telus, boleh dipercayai, dan bertanggungjawab. Inisiatif ini menyediakan panduan dan sumber untuk membangunkan penyelesaian AI bertanggungjawab yang selaras dengan prinsip etika, seperti privasi, keadilan, dan ketelusan. Kami juga akan meneroka beberapa cabaran dan amalan terbaik yang berkaitan dengan pembinaan sistem AI bertanggungjawab.
 
-## סקירה של Microsoft Responsible AI
+## Gambaran Keseluruhan Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.e40f2a169a854832e885ce2659f3a913cfb393fa59b595ed57cfae9119694eb7.ms.png)
+![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d336830630939a5130a22b3f9e1f633773562f83fed08a50520.ms.png)
 
-**עקרונות אתיים**
+**Prinsip Etika**
 
-Microsoft Responsible AI מונחה על ידי סט עקרונות אתיים, כגון פרטיות, הוגנות, שקיפות, אחריות ובטיחות. עקרונות אלו נועדו להבטיח שמערכות AI מפותחות בצורה אתית ואחראית.
+Microsoft Responsible AI dipandu oleh satu set prinsip etika, seperti privasi, keadilan, ketelusan, akauntabiliti, dan keselamatan. Prinsip-prinsip ini direka untuk memastikan sistem AI dibangunkan secara etika dan bertanggungjawab.
 
-**AI שקוף**
+**AI Telus**
 
-Microsoft Responsible AI מדגישה את חשיבות השקיפות במערכות AI. זה כולל מתן הסברים ברורים על אופן פעולת מודלי ה-AI, וכן הבטחת נגישות ציבורית למקורות הנתונים והאלגוריתמים.
+Microsoft Responsible AI menekankan kepentingan ketelusan dalam sistem AI. Ini termasuk menyediakan penjelasan yang jelas tentang cara model AI berfungsi, serta memastikan sumber data dan algoritma boleh diakses oleh umum.
 
-**AI אחראי**
+**AI Bertanggungjawab**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) מקדמת פיתוח מערכות AI אחראיות, שיכולות לספק תובנות על האופן שבו מודלי ה-AI מקבלים החלטות. זה מסייע למשתמשים להבין ולבטוח בתוצאות המערכות.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) menggalakkan pembangunan sistem AI yang bertanggungjawab, yang dapat memberikan pandangan tentang bagaimana model AI membuat keputusan. Ini membantu pengguna memahami dan mempercayai hasil daripada sistem AI.
 
-**הכללה**
+**Inklusif**
 
-מערכות AI צריכות להיות מעוצבות לטובת כולם. מיקרוסופט שואפת ליצור AI כוללני שמתחשב בפרספקטיבות מגוונות ומונע הטיות או אפליה.
+Sistem AI harus direka untuk memberi manfaat kepada semua orang. Microsoft berhasrat untuk mencipta AI inklusif yang mengambil kira pelbagai perspektif dan mengelakkan bias atau diskriminasi.
 
-**אמינות ובטיחות**
+**Kebolehpercayaan dan Keselamatan**
 
-הבטחת אמינות ובטיחות של מערכות AI היא קריטית. מיקרוסופט מתמקדת בבניית מודלים חזקים שמבצעים באופן עקבי ומונעים תוצאות מזיקות.
+Memastikan sistem AI boleh dipercayai dan selamat adalah sangat penting. Microsoft memberi tumpuan kepada membina model yang kukuh yang berprestasi konsisten dan mengelakkan hasil yang merbahaya.
 
-**הוגנות ב-AI**
+**Keadilan dalam AI**
 
-Microsoft Responsible AI מכירה בכך שמערכות AI עלולות לשמר הטיות אם הן מאומנות על נתונים או אלגוריתמים מוטים. היוזמה מספקת הנחיות לפיתוח מערכות AI הוגנות שאינן מפלות על בסיס גורמים כמו גזע, מגדר או גיל.
+Microsoft Responsible AI mengakui bahawa sistem AI boleh mengekalkan bias jika dilatih menggunakan data atau algoritma yang berat sebelah. Inisiatif ini menyediakan panduan untuk membangunkan sistem AI yang adil dan tidak mendiskriminasi berdasarkan faktor seperti kaum, jantina, atau umur.
 
-**פרטיות ואבטחה**
+**Privasi dan keselamatan**
 
-Microsoft Responsible AI מדגישה את החשיבות בהגנה על פרטיות המשתמש ואבטחת הנתונים במערכות AI. זה כולל יישום הצפנת נתונים חזקה ובקרות גישה, וכן ביקורות תקופתיות לזיהוי פרצות אבטחה.
+Microsoft Responsible AI menekankan kepentingan melindungi privasi pengguna dan keselamatan data dalam sistem AI. Ini termasuk melaksanakan penyulitan data yang kukuh dan kawalan akses, serta menjalankan audit berkala ke atas sistem AI untuk mengesan kelemahan.
 
-**אחריות ואחראיות**
+**Akauntabiliti dan tanggungjawab**
 
-Microsoft Responsible AI מקדמת אחריות ואחראיות בפיתוח והטמעת AI. זה כולל הבטחת מודעות של מפתחים וארגונים לסיכונים הפוטנציאליים במערכות AI ונקיטת צעדים למזעורם.
+Microsoft Responsible AI menggalakkan akauntabiliti dan tanggungjawab dalam pembangunan dan pelaksanaan AI. Ini termasuk memastikan pembangun dan organisasi sedar akan risiko yang mungkin timbul daripada sistem AI, dan mengambil langkah untuk mengurangkan risiko tersebut.
 
-## נוהגים מומלצים לבניית מערכות AI אחראיות
+## Amalan Terbaik untuk Membina Sistem AI Bertanggungjawab
 
-**פיתוח מודלי AI באמצעות מערכי נתונים מגוונים**
+**Bangunkan model AI menggunakan set data yang pelbagai**
 
-כדי למנוע הטיות במערכות AI, חשוב להשתמש במערכי נתונים מגוונים המייצגים טווח רחב של נקודות מבט וניסיון.
+Untuk mengelakkan bias dalam sistem AI, adalah penting untuk menggunakan set data yang pelbagai yang mewakili pelbagai perspektif dan pengalaman.
 
-**שימוש בטכניקות AI ברורות להסבר**
+**Gunakan teknik AI yang boleh diterangkan**
 
-טכניקות AI ברורות להסבר יכולות לסייע למשתמשים להבין כיצד מודלי ה-AI מקבלים החלטות, מה שמגביר את האמון במערכת.
+Teknik AI yang boleh diterangkan membantu pengguna memahami bagaimana model AI membuat keputusan, yang boleh meningkatkan kepercayaan terhadap sistem.
 
-**ביצוע ביקורות תקופתיות לזיהוי פרצות במערכות AI**
+**Audit sistem AI secara berkala untuk mengesan kelemahan**
 
-ביקורות שוטפות של מערכות AI יכולות לסייע בזיהוי סיכונים ופרצות שיש לטפל בהם.
+Audit berkala ke atas sistem AI boleh membantu mengenal pasti risiko dan kelemahan yang perlu ditangani.
 
-**יישום הצפנת נתונים חזקה ובקרות גישה**
+**Laksanakan penyulitan data yang kukuh dan kawalan akses**
 
-הצפנת נתונים ובקרות גישה מסייעות להגן על פרטיות וביטחון המשתמשים במערכות AI.
+Penyulitan data dan kawalan akses membantu melindungi privasi dan keselamatan pengguna dalam sistem AI.
 
-**שמירה על עקרונות אתיים בפיתוח AI**
+**Ikuti prinsip etika dalam pembangunan AI**
 
-שמירה על עקרונות אתיים כמו הוגנות, שקיפות ואחריות יכולה לסייע בבניית אמון במערכות AI ולהבטיח פיתוח אחראי.
+Mengikuti prinsip etika seperti keadilan, ketelusan, dan akauntabiliti boleh membantu membina kepercayaan terhadap sistem AI dan memastikan ia dibangunkan secara bertanggungjawab.
 
-## שימוש ב-AI Foundry ל-Responsible AI
+## Menggunakan AI Foundry untuk AI Bertanggungjawab
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) היא פלטפורמה עוצמתית המאפשרת למפתחים וארגונים ליצור במהירות יישומים אינטליגנטיים, חדשניים, מוכנים לשוק ואחראיים. הנה כמה תכונות מרכזיות של Azure AI Foundry:
+[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) adalah platform yang berkuasa yang membolehkan pembangun dan organisasi mencipta aplikasi pintar, canggih, sedia pasaran, dan bertanggungjawab dengan pantas. Berikut adalah beberapa ciri dan keupayaan utama Azure AI Foundry:
 
-**APIs ומודלים מוכנים לשימוש**
+**API dan Model Sedia Pakai**
 
-Azure AI Foundry מספקת APIs ומודלים מוכנים לשימוש ומותאמים אישית. הם מכסים מגוון רחב של משימות AI, כולל AI גנרטיבי, עיבוד שפה טבעית לשיחות, חיפוש, ניטור, תרגום, דיבור, ראייה וקבלת החלטות.
+Azure AI Foundry menyediakan API dan model yang telah dibina dan boleh disesuaikan. Ini merangkumi pelbagai tugas AI, termasuk generatif AI, pemprosesan bahasa semula jadi untuk perbualan, carian, pemantauan, terjemahan, ucapan, penglihatan, dan pembuatan keputusan.
 
 **Prompt Flow**
 
-Prompt Flow ב-Azure AI Foundry מאפשר ליצור חוויות AI שיחתי. הוא מאפשר לעצב ולנהל זרימות שיחה, מה שמקל על בניית צ'טבוטים, עוזרים וירטואליים ויישומים אינטראקטיביים אחרים.
+Prompt flow dalam Azure AI Foundry membolehkan anda mencipta pengalaman AI perbualan. Ia membolehkan anda mereka bentuk dan mengurus aliran perbualan, memudahkan pembinaan chatbot, pembantu maya, dan aplikasi interaktif lain.
 
 **Retrieval Augmented Generation (RAG)**
 
-RAG היא טכניקה המשלבת גישות מבוססות שליפה וגנרטיביות. היא משפרת את איכות התגובות המופקות באמצעות ניצול ידע קיים (שליפה) ויצירה יצירתית (גנרטיבית).
+RAG adalah teknik yang menggabungkan pendekatan berasaskan pengambilan dan generatif. Ia meningkatkan kualiti respons yang dijana dengan memanfaatkan pengetahuan sedia ada (pengambilan) dan penjanaan kreatif (generasi).
 
-**מדדי הערכה וניטור ל-AI גנרטיבי**
+**Metik Penilaian dan Pemantauan untuk Generative AI**
 
-Azure AI Foundry מספקת כלים להערכת וניטור מודלים גנרטיביים. ניתן להעריך את ביצועיהם, הוגנותם ומדדים חשובים נוספים להבטחת הטמעה אחראית. בנוסף, אם יצרתם לוח בקרה, ניתן להשתמש בממשק ללא קוד ב-Azure Machine Learning Studio להתאמה אישית וליצירת לוח בקרה Responsible AI וכרטיס ניקוד מבוססי על [Repsonsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. כרטיס הניקוד הזה מסייע לשתף תובנות מרכזיות הקשורות להוגנות, חשיבות תכונות ושיקולי הטמעה אחראית עם בעלי עניין טכניים ולא טכניים כאחד.
+Azure AI Foundry menyediakan alat untuk menilai dan memantau model generatif AI. Anda boleh menilai prestasi, keadilan, dan metrik penting lain untuk memastikan pelaksanaan yang bertanggungjawab. Selain itu, jika anda telah mencipta papan pemuka, anda boleh menggunakan UI tanpa kod dalam Azure Machine Learning Studio untuk menyesuaikan dan menjana Papan Pemuka Responsible AI dan skor kad berkaitan berdasarkan [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python Libraries. Skor kad ini membantu anda berkongsi pandangan utama berkaitan keadilan, kepentingan ciri, dan pertimbangan pelaksanaan bertanggungjawab dengan pihak berkepentingan teknikal dan bukan teknikal.
 
-כדי להשתמש ב-AI Foundry עם Responsible AI, מומלץ לפעול לפי הנוהגים הבאים:
+Untuk menggunakan AI Foundry dengan AI bertanggungjawab, anda boleh mengikuti amalan terbaik berikut:
 
-**הגדרת הבעיה והמטרות של מערכת ה-AI**
+**Tentukan masalah dan objektif sistem AI anda**
 
-לפני תחילת תהליך הפיתוח, חשוב להגדיר בבירור את הבעיה או המטרה שהמערכת שואפת לפתור. זה יעזור לזהות את הנתונים, האלגוריתמים והמשאבים הדרושים לבניית מודל יעיל.
+Sebelum memulakan proses pembangunan, adalah penting untuk menentukan dengan jelas masalah atau objektif yang ingin diselesaikan oleh sistem AI anda. Ini akan membantu anda mengenal pasti data, algoritma, dan sumber yang diperlukan untuk membina model yang berkesan.
 
-**איסוף ועיבוד מקדים של נתונים רלוונטיים**
+**Kumpul dan pra-proses data yang relevan**
 
-איכות וכמות הנתונים בהם משתמשים לאימון מערכת AI משפיעים משמעותית על ביצועיה. לכן, חשוב לאסוף נתונים רלוונטיים, לנקותם, לעבדם מראש ולהבטיח שהם מייצגים את האוכלוסייה או הבעיה שברצונכם לפתור.
+Kualiti dan kuantiti data yang digunakan dalam latihan sistem AI boleh memberi kesan besar kepada prestasinya. Oleh itu, penting untuk mengumpul data yang relevan, membersihkannya, memprosesnya terlebih dahulu, dan memastikan ia mewakili populasi atau masalah yang ingin diselesaikan.
 
-**בחירת אלגוריתם הערכה מתאים**
+**Pilih penilaian yang sesuai**
 
-קיימים אלגוריתמי הערכה שונים. חשוב לבחור את האלגוריתם המתאים ביותר בהתבסס על הנתונים והבעיה שלכם.
+Terdapat pelbagai algoritma penilaian yang tersedia. Penting untuk memilih algoritma yang paling sesuai berdasarkan data dan masalah anda.
 
-**הערכת המודל ופירוש התוצאות**
+**Nilai dan tafsir model**
 
-לאחר בניית מודל AI, חשוב להעריך את ביצועיו באמצעות מדדים מתאימים ולפרש את התוצאות בשקיפות. זה יסייע לזהות הטיות או מגבלות במודל ולבצע שיפורים במידת הצורך.
+Setelah membina model AI, penting untuk menilai prestasinya menggunakan metrik yang sesuai dan mentafsir keputusan secara telus. Ini akan membantu anda mengenal pasti sebarang bias atau kekangan dalam model dan membuat penambahbaikan jika perlu.
 
-**הבטחת שקיפות והסבר**
+**Pastikan ketelusan dan kebolehtafsiran**
 
-מערכות AI צריכות להיות שקופות וברורות להסבר כדי שמשתמשים יבינו כיצד הן פועלות ואיך מתקבלות ההחלטות. זה חשוב במיוחד ליישומים בעלי השפעה משמעותית על חיי אדם, כמו בריאות, פיננסים ומערכות משפטיות.
+Sistem AI harus telus dan boleh diterangkan supaya pengguna dapat memahami cara ia berfungsi dan bagaimana keputusan dibuat. Ini amat penting untuk aplikasi yang memberi impak besar kepada kehidupan manusia, seperti dalam bidang kesihatan, kewangan, dan sistem perundangan.
 
-**ניטור ועדכון המודל**
+**Pantau dan kemas kini model**
 
-מערכות AI צריכות להיות במעקב מתמיד ולעבור עדכונים כדי להבטיח שהן נשארות מדויקות ויעילות לאורך זמן. זה דורש תחזוקה שוטפת, בדיקות ואימון מחודש של המודל.
+Sistem AI harus dipantau dan dikemas kini secara berterusan untuk memastikan ia kekal tepat dan berkesan dari masa ke masa. Ini memerlukan penyelenggaraan, ujian, dan latihan semula model secara berterusan.
 
-לסיכום, Microsoft Responsible AI היא יוזמה שמטרתה לסייע למפתחים וארגונים לבנות מערכות AI שקופות, אמינות ואחראיות. יש לזכור כי יישום אחראי של AI הוא קריטי, ו-Azure AI Foundry שואפת להפוך זאת לפרקטי בארגונים. באמצעות שמירה על עקרונות אתיים ונוהגים מומלצים, נוכל להבטיח שמערכות AI מפותחות ומוטמעות באופן אחראי שמביא תועלת לחברה כולה.
+Kesimpulannya, Microsoft Responsible AI adalah inisiatif yang bertujuan membantu pembangun dan organisasi membina sistem AI yang telus, boleh dipercayai, dan bertanggungjawab. Ingat bahawa pelaksanaan AI bertanggungjawab adalah penting, dan Azure AI Foundry bertujuan menjadikannya praktikal untuk organisasi. Dengan mengikuti prinsip etika dan amalan terbaik, kita dapat memastikan sistem AI dibangunkan dan dilaksanakan secara bertanggungjawab demi manfaat masyarakat keseluruhan.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

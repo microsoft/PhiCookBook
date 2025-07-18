@@ -2,108 +2,107 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-05-09T22:23:25+00:00",
+  "translation_date": "2025-07-17T09:47:17+00:00",
   "source_file": "md/03.FineTuning/Introduce_AzureML.md",
   "language_code": "cs"
 }
 -->
-# **Представление сервиса Azure Machine Learning**
+# **Představení služby Azure Machine Learning**
 
-[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) — это облачный сервис для ускорения и управления жизненным циклом проектов машинного обучения (ML).
+[Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) je cloudová služba pro urychlení a správu životního cyklu projektů strojového učení (ML).
 
-Профессионалы в области ML, дата-сайентисты и инженеры могут использовать его в своей повседневной работе для:
+Odborníci na ML, datoví vědci a inženýři ji mohou využívat ve svých každodenních pracovních postupech k:
 
-- Обучения и развертывания моделей.
-- Управления операциями машинного обучения (MLOps).
-- Вы можете создать модель в Azure Machine Learning или использовать модель, построенную на базе открытых платформ, таких как PyTorch, TensorFlow или scikit-learn.
-- Инструменты MLOps помогают отслеживать, дообучать и повторно развертывать модели.
+- Trénování a nasazení modelů.
+- Správě operací strojového učení (MLOps).
+- Můžete vytvořit model v Azure Machine Learning nebo použít model vytvořený na open-source platformě, jako jsou PyTorch, TensorFlow nebo scikit-learn.
+- Nástroje MLOps vám pomáhají sledovat, znovu trénovat a znovu nasazovat modely.
 
-## Для кого предназначен Azure Machine Learning?
+## Pro koho je Azure Machine Learning určeno?
 
-**Дата-сайентисты и ML-инженеры**
+**Datoví vědci a ML inženýři**
 
-Они могут использовать инструменты для ускорения и автоматизации своих повседневных задач.
-Azure ML предоставляет функции для обеспечения справедливости, объяснимости, отслеживания и аудита.
+Mohou využívat nástroje k urychlení a automatizaci svých každodenních pracovních postupů.  
+Azure ML nabízí funkce pro spravedlnost, vysvětlitelnost, sledování a auditovatelnost.
 
-**Разработчики приложений**
+**Vývojáři aplikací**  
+Mohou bezproblémově integrovat modely do aplikací nebo služeb.
 
-Они могут легко интегрировать модели в приложения или сервисы.
+**Vývojáři platformy**
 
-**Платформенные разработчики**
+Mají přístup k robustní sadě nástrojů podporovaných spolehlivými Azure Resource Manager API.  
+Tyto nástroje umožňují vytvářet pokročilé ML nástroje.
 
-Имеют доступ к мощному набору инструментов, поддерживаемых надежными API Azure Resource Manager.
-Эти инструменты позволяют создавать продвинутые ML-инструменты.
+**Podniky**
 
-**Корпоративные пользователи**
+Pracující v cloudu Microsoft Azure těží z dobře známé bezpečnosti a řízení přístupu na základě rolí.  
+Nastavte projekty pro kontrolu přístupu k chráněným datům a specifickým operacím.
 
-Работая в облаке Microsoft Azure, предприятия получают преимущества знакомой безопасности и контроля доступа на основе ролей.
-Можно настроить проекты для контроля доступа к защищённым данным и отдельным операциям.
+## Produktivita pro celý tým  
+Projekty ML často vyžadují tým s různorodými dovednostmi pro jejich tvorbu a údržbu.
 
-## Повышение продуктивности для всей команды
-Проекты ML часто требуют команду с разнообразными навыками для создания и поддержки решений.
+Azure ML poskytuje nástroje, které vám umožní:  
+- Spolupracovat s týmem prostřednictvím sdílených poznámkových bloků, výpočetních zdrojů, serverless výpočetních prostředí, dat a prostředí.  
+- Vyvíjet modely se zaměřením na spravedlnost, vysvětlitelnost, sledování a auditovatelnost, aby splňovaly požadavky na sledovatelnost a audit.  
+- Rychle a snadno nasazovat ML modely ve velkém měřítku a efektivně je spravovat a řídit pomocí MLOps.  
+- Spouštět úlohy strojového učení kdekoli s vestavěnou správou, bezpečností a dodržováním předpisů.
 
-Azure ML предоставляет инструменты, которые позволяют:
-- Сотрудничать с командой через совместные блокноты, вычислительные ресурсы, бессерверные вычисления, данные и среды.
-- Разрабатывать модели с учётом справедливости, объяснимости, отслеживания и аудита для выполнения требований по происхождению данных и соответствию.
-- Быстро и легко развёртывать ML-модели в масштабе, а также эффективно управлять ими с помощью MLOps.
-- Запускать ML-задачи в любом месте с встроенными функциями управления, безопасности и соответствия.
+## Nástroje platformy kompatibilní napříč prostředími
 
-## Кроссплатформенные инструменты
+Kdokoli v ML týmu může používat své oblíbené nástroje k dokončení práce.  
+Ať už provádíte rychlé experimenty, ladění hyperparametrů, vytváření pipeline nebo správu inferencí, můžete využít známá rozhraní, včetně:  
+- Azure Machine Learning Studio  
+- Python SDK (v2)  
+- Azure CLI (v2)  
+- Azure Resource Manager REST API
 
-Любой участник команды ML может использовать предпочитаемые инструменты для выполнения задач.
-Будь то быстрые эксперименты, подбор гиперпараметров, создание пайплайнов или управление выводами, доступны привычные интерфейсы:
-- Azure Machine Learning Studio
-- Python SDK (v2)
-- Azure CLI (v2)
-- Azure Resource Manager REST APIs
+Během ladění modelů a spolupráce v průběhu vývojového cyklu můžete sdílet a vyhledávat zdroje, aktiva a metriky přímo v uživatelském rozhraní Azure Machine Learning studia.
 
-По мере совершенствования моделей и совместной работы на протяжении всего цикла разработки, вы можете обмениваться и находить активы, ресурсы и метрики через UI Azure Machine Learning Studio.
+## **LLM/SLM v Azure ML**
 
-## **LLM/SLM в Azure ML**
+Azure ML přidalo mnoho funkcí souvisejících s LLM/SLM, které kombinují LLMOps a SLMOps a vytvářejí tak podnikovou platformu pro generativní umělou inteligenci.
 
-Azure ML добавил множество функций, связанных с LLM/SLM, объединяя LLMOps и SLMOps для создания корпоративной платформы генеративного искусственного интеллекта.
+### **Katalog modelů**
 
-### **Каталог моделей**
+Podnikové uživatele mohou nasazovat různé modely podle různých obchodních scénářů prostřednictvím Katalogu modelů a poskytovat služby jako Model jako služba (Model as Service) pro přístup podnikových vývojářů nebo uživatelů.
 
-Корпоративные пользователи могут развертывать разные модели под различные бизнес-сценарии через Каталог моделей и предоставлять сервисы как Model as Service для разработчиков и пользователей.
+![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.cs.png)
 
-![models](../../../../translated_images/models.2450411eac222e539ffb55785a8f550d01be1030bd8eb67c9c4f9ae4ca5d64be.cs.png)
+Katalog modelů v Azure Machine Learning studiu je centrem pro objevování a využívání široké škály modelů, které umožňují vytvářet aplikace generativní AI. Katalog obsahuje stovky modelů od poskytovatelů jako Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, včetně modelů trénovaných Microsoftem. Modely od jiných než Microsoft poskytovatelů jsou označovány jako Non-Microsoft Products podle podmínek Microsoft Product Terms a podléhají podmínkám přiloženým k modelu.
 
-Каталог моделей в Azure Machine Learning Studio — это центр для поиска и использования широкого спектра моделей, которые позволяют создавать приложения на основе генеративного ИИ. Каталог включает сотни моделей от таких провайдеров, как Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, включая модели, обученные Microsoft. Модели от провайдеров, отличных от Microsoft, считаются Non-Microsoft Products согласно условиям Microsoft и подчиняются условиям использования, предоставленным с моделью.
+### **Job Pipeline**
 
-### **Пайплайн заданий**
+Jádrem pipeline strojového učení je rozdělení kompletního úkolu strojového učení do vícestupňového pracovního postupu. Každý krok je zvládnutelná komponenta, kterou lze samostatně vyvíjet, optimalizovat, konfigurovat a automatizovat. Kroky jsou propojeny přes dobře definovaná rozhraní. Služba pipeline Azure Machine Learning automaticky koordinuje všechny závislosti mezi kroky pipeline.
 
-Основная идея пайплайна машинного обучения — разбить задачу на несколько шагов, каждый из которых является управляемым компонентом, который можно разрабатывать, оптимизировать, настраивать и автоматизировать отдельно. Шаги связаны через четко определённые интерфейсы. Сервис пайплайнов Azure Machine Learning автоматически управляет всеми зависимостями между шагами.
+Při doladění SLM / LLM můžeme spravovat data, trénink a generování prostřednictvím Pipeline.
 
-При тонкой настройке SLM / LLM мы можем управлять данными, обучением и процессами генерации через Pipeline.
-
-![finetuning](../../../../translated_images/finetuning.b52e4aa971dfd8d3c668db913a2b419380533bd3a920d227ec19c078b7b3f309.cs.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.cs.png)
 
 ### **Prompt flow**
 
-Преимущества использования Azure Machine Learning prompt flow  
-Azure Machine Learning prompt flow предлагает ряд преимуществ, которые помогают пользователям перейти от идеи к экспериментам и, в конечном итоге, к готовым к производству приложениям на основе LLM:
+Výhody používání Azure Machine Learning prompt flow  
+Azure Machine Learning prompt flow nabízí řadu výhod, které pomáhají uživatelům přejít od nápadu k experimentování a nakonec k produkčně připraveným aplikacím založeným na LLM:
 
-**Гибкость prompt engineering**
+**Agilita prompt engineeringu**
 
-Интерактивный опыт создания: prompt flow предоставляет визуальное представление структуры потока, позволяя легко понять и навигировать проектами. Также доступен опыт работы, похожий на блокнот, для эффективной разработки и отладки потоков.  
-Варианты настройки prompt: пользователи могут создавать и сравнивать несколько вариантов prompt, что способствует итеративному улучшению.
+Interaktivní prostředí pro tvorbu: Azure Machine Learning prompt flow poskytuje vizuální zobrazení struktury toku, které uživatelům umožňuje snadno pochopit a orientovat se ve svých projektech. Nabízí také prostředí podobné poznámkovému bloku pro efektivní vývoj a ladění toku.  
+Varianty pro ladění promptů: Uživatelé mohou vytvářet a porovnávat více variant promptů, což usnadňuje iterativní proces zdokonalování.
 
-Оценка: встроенные потоки оценки позволяют пользователям оценивать качество и эффективность своих prompt и потоков.
+Hodnocení: Vestavěné hodnotící toky umožňují uživatelům posoudit kvalitu a efektivitu jejich promptů a toků.
 
-Обширные ресурсы: prompt flow включает библиотеку встроенных инструментов, примеров и шаблонов, которые служат отправной точкой для разработки, вдохновляя и ускоряя процесс.
+Komplexní zdroje: Azure Machine Learning prompt flow obsahuje knihovnu vestavěných nástrojů, ukázek a šablon, které slouží jako výchozí bod pro vývoj, inspirují kreativitu a urychlují proces.
 
-**Готовность корпоративного уровня для приложений на основе LLM**
+**Podniková připravenost pro aplikace založené na LLM**
 
-Сотрудничество: prompt flow поддерживает командную работу, позволяя нескольким пользователям совместно работать над проектами prompt engineering, обмениваться знаниями и вести контроль версий.
+Spolupráce: Azure Machine Learning prompt flow podporuje týmovou spolupráci, umožňuje více uživatelům pracovat společně na projektech prompt engineeringu, sdílet znalosti a udržovat správu verzí.
 
-Единая платформа: prompt flow упрощает весь процесс prompt engineering — от разработки и оценки до развертывания и мониторинга. Пользователи могут без труда развертывать потоки как конечные точки Azure Machine Learning и отслеживать их производительность в реальном времени, обеспечивая оптимальную работу и постоянное улучшение.
+Vše v jednom: Azure Machine Learning prompt flow zjednodušuje celý proces prompt engineeringu od vývoje a hodnocení až po nasazení a monitorování. Uživatelé mohou snadno nasadit své toky jako Azure Machine Learning endpointy a sledovat jejich výkon v reálném čase, což zajišťuje optimální provoz a kontinuální zlepšování.
 
-Решения Azure Machine Learning для корпоративной готовности: prompt flow использует надежные корпоративные решения Azure Machine Learning, обеспечивая безопасную, масштабируемую и надежную основу для разработки, экспериментов и развертывания потоков.
+Řešení Azure Machine Learning pro podnikovou připravenost: Prompt flow využívá robustní podniková řešení Azure Machine Learning, která poskytují bezpečný, škálovatelný a spolehlivý základ pro vývoj, experimentování a nasazení toků.
 
-С помощью Azure Machine Learning prompt flow пользователи могут раскрыть гибкость prompt engineering, эффективно сотрудничать и использовать корпоративные решения для успешной разработки и развертывания приложений на базе LLM.
+S Azure Machine Learning prompt flow mohou uživatelé uvolnit svou agilitu v prompt engineeringu, efektivně spolupracovat a využívat podniková řešení pro úspěšný vývoj a nasazení aplikací založených na LLM.
 
-Объединяя вычислительные мощности, данные и различные компоненты Azure ML, корпоративные разработчики могут легко создавать собственные приложения искусственного интеллекта.
+Kombinací výpočetního výkonu, dat a různých komponent Azure ML mohou podnikoví vývojáři snadno vytvářet vlastní aplikace umělé inteligence.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

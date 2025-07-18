@@ -2,94 +2,94 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T04:41:41+00:00",
+  "translation_date": "2025-07-16T16:19:21+00:00",
   "source_file": "code/04.Finetuning/olive-lab/readme.md",
   "language_code": "hu"
 }
 -->
-# Laboratórium. AI modellek optimalizálása eszközön történő futtatáshoz
+# Labor. AI modellek optimalizálása eszközön történő futtatáshoz
 
 ## Bevezetés
 
 > [!IMPORTANT]
-> Ehhez a laborhoz szükséges egy **Nvidia A10 vagy A100 GPU**, valamint a hozzá tartozó driverek és a CUDA toolkit (12-es vagy újabb verzió) telepítve.
+> Ehhez a laborhoz **Nvidia A10 vagy A100 GPU** szükséges a megfelelő driverekkel és a CUDA toolkit (12-es vagy újabb verzió) telepítésével.
 
 > [!NOTE]
-> Ez egy **35 perces** labor, amely gyakorlati bevezetést nyújt az OLIVE segítségével történő eszközön futtatható modellek optimalizálásának alapfogalmaiba.
+> Ez egy **35 perces** labor, amely gyakorlati bevezetést nyújt az OLIVE használatával történő eszközön futó modellek optimalizálásának alapfogalmaiba.
 
 ## Tanulási célok
 
-A labor végére képes leszel OLIVE használatával:
+A labor végére képes leszel az OLIVE segítségével:
 
-- Egy AI modell kvantálására az AWQ kvantálási módszerrel.
-- Egy AI modell finomhangolására egy adott feladathoz.
-- LoRA adapterek (finomhangolt modell) generálására az ONNX Runtime-on történő hatékony eszközön futtatáshoz.
+- AI modell kvantálására az AWQ kvantálási módszerrel.
+- AI modell finomhangolására egy adott feladathoz.
+- LoRA adapterek (finomhangolt modell) generálására az ONNX Runtime hatékony eszközön futó inferenciájához.
 
 ### Mi az Olive
 
-Az Olive (*O*NNX *live*) egy modelloptimalizáló eszközkészlet, amelyhez parancssori felület (CLI) is tartozik, és amely lehetővé teszi modellek ONNX runtime +++https://onnxruntime.ai+++ számára történő szállítását minőség és teljesítmény mellett.
+Az Olive (*O*NNX *live*) egy modelloptimalizáló eszközkészlet, amelyhez tartozik egy parancssori felület (CLI), és amely lehetővé teszi, hogy minőségi és teljesítménybeli szempontból optimalizált modelleket szállíts az ONNX runtime +++https://onnxruntime.ai+++ számára.
 
-![Olive Flow](../../../../../translated_images/olive-flow.e4682fa65f77777f49e884482fa8dd83eadcb90904fcb41a54093af85c330060.hu.png)
+![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2462b631b8aa862093b595bb89064fa33e6d4fa90f937f52d.hu.png)
 
-Az Olive bemenete jellemzően egy PyTorch vagy Hugging Face modell, a kimenete pedig egy optimalizált ONNX modell, amelyet egy eszközön (telepítési célpont) futtatnak, amely az ONNX runtime-ot használja. Az Olive a telepítési célpont AI gyorsítójára (NPU, GPU, CPU) optimalizál, amelyet olyan hardvergyártók biztosítanak, mint a Qualcomm, AMD, Nvidia vagy Intel.
+Az Olive bemenete általában egy PyTorch vagy Hugging Face modell, a kimenete pedig egy optimalizált ONNX modell, amelyet egy eszközön (telepítési célpont) futtatnak, amely az ONNX runtime-ot használja. Az Olive a telepítési célpont AI gyorsítójához (NPU, GPU, CPU) igazítja az optimalizálást, amelyet olyan hardvergyártók biztosítanak, mint a Qualcomm, AMD, Nvidia vagy Intel.
 
-Az Olive egy *workflow*-t hajt végre, amely egy rendezett sorozata az egyes modelloptimalizációs feladatoknak, amelyeket *pass*-oknak nevezünk – például modell tömörítés, gráf rögzítés, kvantálás, gráf optimalizáció. Minden pass-hoz tartozik egy paraméterkészlet, amely finomhangolható a legjobb metrikák, például pontosság és késleltetés eléréséhez, amelyeket az adott értékelő mér. Az Olive keresési stratégiát alkalmaz, amely egy kereső algoritmust használ, hogy automatikusan hangolja be a pass-okat egyenként vagy csoportosan.
+Az Olive egy *workflow*-t hajt végre, ami egy rendezett sorozata az egyes modelloptimalizálási feladatoknak, amelyeket *pass*-oknak nevezünk – például modell tömörítés, gráf rögzítés, kvantálás, gráf optimalizálás. Minden pass-hoz tartozik egy paraméterkészlet, amely finomhangolható a legjobb metrikák, például pontosság és késleltetés eléréséhez, amelyeket a megfelelő értékelő mér. Az Olive keresési stratégiát alkalmaz, amely egy kereső algoritmust használ arra, hogy automatikusan hangolja be a pass-okat egyenként vagy csoportosan.
 
 #### Az Olive előnyei
 
-- **Csökkenti a frusztrációt és az időt** a különböző gráf optimalizációs, tömörítési és kvantálási technikák manuális próbálgatásával. Állítsd be a minőségi és teljesítménybeli elvárásaidat, és hagyd, hogy az Olive automatikusan megtalálja a legjobb modellt.
-- **40+ beépített modelloptimalizációs komponens**, amelyek lefedik a legmodernebb kvantálási, tömörítési, gráf optimalizációs és finomhangolási technikákat.
-- **Könnyen használható CLI** a gyakori modelloptimalizációs feladatokhoz. Például olive quantize, olive auto-opt, olive finetune.
-- Modell csomagolás és telepítés beépítve.
-- Támogatja a **Multi LoRA kiszolgálás** számára generált modelleket.
-- YAML/JSON segítségével összeállítható workflow-k a modelloptimalizáció és telepítés feladatainak koordinálására.
+- **Csökkenti a kézi próbálkozásokkal járó frusztrációt és időt** a gráf optimalizálás, tömörítés és kvantálás különböző technikáinak kipróbálásában. Határozd meg a minőségi és teljesítménybeli követelményeket, és az Olive automatikusan megtalálja a legjobb modellt.
+- **40+ beépített modelloptimalizáló komponens**, amelyek a legmodernebb kvantálási, tömörítési, gráf optimalizálási és finomhangolási technikákat fedik le.
+- **Könnyen használható CLI** a gyakori modelloptimalizálási feladatokhoz, például olive quantize, olive auto-opt, olive finetune.
+- Beépített modellcsomagolás és telepítés.
+- Támogatja a **Multi LoRA kiszolgálásra** alkalmas modellek generálását.
+- YAML/JSON segítségével felépíthetők workflow-k a modelloptimalizálási és telepítési feladatok összehangolására.
 - **Hugging Face** és **Azure AI** integráció.
 - Beépített **gyorsítótárazási** mechanizmus a **költségek csökkentésére**.
 
 ## Labor utasítások
 
 > [!NOTE]
-> Győződj meg róla, hogy az Azure AI Hub-odat és projektedet előkészítetted, valamint az A100 számítási erőforrásodat beállítottad az 1. labor szerint.
+> Kérjük, győződj meg róla, hogy az Azure AI Hub-ot és projektet létrehoztad, valamint az A100 számítási erőforrást beállítottad az 1. labor szerint.
 
 ### 0. lépés: Csatlakozás az Azure AI számítási erőforráshoz
 
-Az Azure AI számítási erőforráshoz a **VS Code** távoli funkciójával csatlakozol.
+Az Azure AI számítási erőforráshoz a **VS Code** távoli funkciójával csatlakozhatsz.
 
 1. Nyisd meg a **VS Code** asztali alkalmazást:
-1. Nyisd meg a **parancspalettát** a **Shift+Ctrl+P** billentyűkombinációval
+1. Nyisd meg a **parancspalettát** a **Shift+Ctrl+P** billentyűkombinációval.
 1. A parancspalettában keresd meg az **AzureML - remote: Connect to compute instance in New Window** parancsot.
-1. Kövesd a képernyőn megjelenő utasításokat a számítási erőforráshoz való csatlakozáshoz. Ez magában foglalja az Azure előfizetés, erőforráscsoport, projekt és a labor 1-ben beállított számítási erőforrás kiválasztását.
-1. Ha csatlakoztál az Azure ML számítási node-hoz, azt a **Visual Code bal alsó sarkában** látod majd `><Azure ML: Compute Name`
+1. Kövesd a képernyőn megjelenő utasításokat a számítási erőforráshoz való csatlakozáshoz. Ez magában foglalja az Azure előfizetés, erőforráscsoport, projekt és a 1. laborban beállított számítási erőforrás kiválasztását.
+1. Ha csatlakoztál az Azure ML számítási csomóponthoz, az megjelenik a **Visual Studio Code bal alsó sarkában** `><Azure ML: Compute Name` formában.
 
 ### 1. lépés: A repó klónozása
 
-A VS Code-ban nyiss egy új terminált a **Ctrl+J** segítségével, majd klónozd ezt a repót:
+A VS Code-ban nyiss egy új terminált a **Ctrl+J** billentyűkkel, és klónozd a repót:
 
 A terminálban megjelenik a prompt
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
 ```
-Klónozd a megoldást
+A megoldás klónozása
 
 ```bash
 cd ~/localfiles
 git clone https://github.com/microsoft/phi-3cookbook.git
 ```
 
-### 2. lépés: Mappa megnyitása VS Code-ban
+### 2. lépés: Mappa megnyitása a VS Code-ban
 
-A terminálban futtasd a következő parancsot, amely új ablakban megnyitja a mappát:
+A releváns mappa megnyitásához futtasd a következő parancsot a terminálban, amely új ablakot nyit:
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
 ```
 
-Alternatív megoldásként a **Fájl** > **Mappa megnyitása** menüpontból is megnyithatod a mappát.
+Alternatívaként megnyithatod a mappát a **Fájl** > **Mappa megnyitása** menüpontból is.
 
 ### 3. lépés: Függőségek telepítése
 
-Nyiss egy terminált a VS Code-ban az Azure AI számítási példányodon (tipp: **Ctrl+J**) és futtasd a következő parancsokat a függőségek telepítéséhez:
+Nyiss egy terminált a VS Code-ban az Azure AI számítási erőforráson (tipp: **Ctrl+J**), és futtasd a következő parancsokat a függőségek telepítéséhez:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -102,32 +102,31 @@ az extension add -n ml
 > [!NOTE]
 > A függőségek telepítése körülbelül 5 percet vesz igénybe.
 
-Ebben a laborban modelleket töltesz le és töltesz fel az Azure AI modell katalógusába. A modell katalógus eléréséhez jelentkezz be az Azure-ba a következő parancs segítségével:
+Ebben a laborban modelleket fogsz letölteni és feltölteni az Azure AI modell katalógusába. A katalógus eléréséhez jelentkezz be az Azure-ba a következő paranccsal:
 
 ```bash
 az login
 ```
 
 > [!NOTE]
-> Bejelentkezéskor ki kell választanod az előfizetésed. Győződj meg róla, hogy a laborhoz biztosított előfizetést választod ki.
+> A bejelentkezéskor ki kell választanod az előfizetésedet. Győződj meg róla, hogy a laborhoz biztosított előfizetést választod.
 
 ### 4. lépés: Olive parancsok futtatása
 
-Nyiss egy terminált a VS Code-ban az Azure AI számítási példányodon (tipp: **Ctrl+J**) és győződj meg róla, hogy az `olive-ai` conda környezet aktív:
+Nyiss egy terminált a VS Code-ban az Azure AI számítási erőforráson (tipp: **Ctrl+J**), és győződj meg róla, hogy az `olive-ai` conda környezet aktív:
 
 ```bash
 conda activate olive-ai
 ```
 
-Ezután futtasd az alábbi Olive parancsokat a parancssorban.
+Ezután futtasd a következő Olive parancsokat a parancssorban.
 
 1. **Adatok megtekintése:** Ebben a példában a Phi-3.5-Mini modellt finomhangolod, hogy utazással kapcsolatos kérdésekre specializálódjon. Az alábbi kód megjeleníti az adathalmaz első néhány rekordját, amelyek JSON lines formátumban vannak:
 
     ```bash
     head data/data_sample_travel.jsonl
     ```
-
-1. **Modell kvantálása:** A modell betanítása előtt először kvantálod az Active Aware Quantization (AWQ) technikával +++https://arxiv.org/abs/2306.00978+++. Az AWQ a modell súlyait úgy kvantálja, hogy figyelembe veszi az inferencia során keletkező aktivációkat. Ez azt jelenti, hogy a kvantálás a tényleges aktivációs adateloszlást veszi alapul, ami jobb pontosságmegőrzést eredményez a hagyományos súlykvantálási módszerekhez képest.
+1. **A modell kvantálása:** A modell betanítása előtt kvantáljuk az alábbi paranccsal, amely az Active Aware Quantization (AWQ) technikát használja +++https://arxiv.org/abs/2306.00978+++. Az AWQ a modell súlyait úgy kvantálja, hogy figyelembe veszi az inferencia során keletkező aktivációkat. Ez azt jelenti, hogy a kvantálási folyamat az aktivációk valós adateloszlását veszi alapul, ami jobb pontosságmegőrzést eredményez a hagyományos súlykvantálási módszerekhez képest.
 
     ```bash
     olive quantize \
@@ -138,11 +137,11 @@ Ezután futtasd az alábbi Olive parancsokat a parancssorban.
        --log_level 1
     ```
 
-    Az AWQ kvantálás befejezése körülbelül **8 percet** vesz igénybe, amely során a modell mérete **kb. 7,5GB-ról kb. 2,5GB-ra csökken**.
+    Az AWQ kvantálás **~8 percet** vesz igénybe, és a modell méretét **~7,5 GB-ról ~2,5 GB-ra csökkenti**.
 
-    Ebben a laborban azt mutatjuk meg, hogyan lehet modelleket bevinni a Hugging Face-ről (például: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
+    Ebben a laborban bemutatjuk, hogyan lehet modelleket betölteni a Hugging Face-ről (például: `microsoft/Phi-3.5-mini-instruct`). Az Olive azonban lehetővé teszi modellek betöltését az Azure AI katalógusból is, ha a `model_name_or_path` argumentumot Azure AI asset ID-re állítod (például: `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
 
-1. **Train the model:** Next, the `olive finetune` parancs finomhangolja a kvantált modellt. A modell kvantálása *finomhangolás előtt* jobb pontosságot eredményez, mert a finomhangolás részben visszanyeri a kvantálás okozta pontosságvesztést.
+1. **A modell betanítása:** Ezután az `olive finetune` parancs finomhangolja a kvantált modellt. A modell kvantálása *finomhangolás előtt* jobb pontosságot eredményez, mivel a finomhangolás részben visszanyeri a kvantálás okozta pontosságvesztést.
 
     ```bash
     olive finetune \
@@ -156,9 +155,9 @@ Ezután futtasd az alábbi Olive parancsokat a parancssorban.
         --log_level 1
     ```
 
-    A finomhangolás (100 lépéssel) körülbelül **6 percet** vesz igénybe.
+    A finomhangolás (100 lépés) **~6 percet** vesz igénybe.
 
-1. **Optimalizálás:** A betanított modellt most optimalizálod az Olive `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` argumentumaival – de a labor céljából CPU-t használunk.
+1. **Optimalizálás:** A betanított modellt az Olive `auto-opt` parancsával optimalizálod, amely rögzíti az ONNX gráfot, és automatikusan több optimalizálást végez a modell teljesítményének javítására CPU-n, például tömörítést és fúziókat. Megjegyzendő, hogy más eszközökre, például NPU-ra vagy GPU-ra is optimalizálhatsz, ha a `--device` és `--provider` argumentumokat módosítod – de ebben a laborban CPU-t használunk.
 
     ```bash
     olive auto-opt \
@@ -171,11 +170,11 @@ Ezután futtasd az alábbi Olive parancsokat a parancssorban.
        --log_level 1
     ```
 
-    Az optimalizálás körülbelül **5 percet** vesz igénybe.
+    Az optimalizálás **~5 percet** vesz igénybe.
 
-### 5. lépés: Modell inferencia gyors teszt
+### 5. lépés: Gyors teszt az inferenciához
 
-A modell inferencia teszteléséhez hozz létre egy Python fájlt a mappádban **app.py** néven, és másold be az alábbi kódot:
+A modell inferenciájának teszteléséhez hozz létre egy Python fájlt a mappádban **app.py** néven, és másold be a következő kódot:
 
 ```python
 import onnxruntime_genai as og
@@ -211,7 +210,7 @@ while not generator.is_done():
 print("\n")
 ```
 
-Futtasd a kódot a következő paranccsal:
+A kód futtatásához használd a következő parancsot:
 
 ```bash
 python app.py
@@ -219,20 +218,20 @@ python app.py
 
 ### 6. lépés: Modell feltöltése az Azure AI-ba
 
-A modell feltöltése az Azure AI modell tárába lehetővé teszi, hogy a modell megosztható legyen a fejlesztőcsapat többi tagjával, valamint kezeli a modell verziókövetését. A modell feltöltéséhez futtasd a következő parancsot:
+A modell feltöltése az Azure AI modell tárába lehetővé teszi, hogy a modell megosztható legyen a fejlesztőcsapat többi tagjával, és kezeli a verziókövetést is. A modell feltöltéséhez futtasd a következő parancsot:
 
 > [!NOTE]
-> Frissítsd a `{}` helyőrzőket az `` placeholders with the name of your resource group and Azure AI Project Name. 
+> Cseréld ki a `{}` helyőrzőket az erőforráscsoportod és az Azure AI projekted nevére.
 
-To find your resource group `resourceGroup` és az Azure AI projekt nevével, majd futtasd a parancsot
+Az erőforráscsoport és az Azure AI projekt nevének lekérdezéséhez futtasd a következő parancsot:
 
 ```
 az ml workspace show
 ```
 
-Vagy menj a +++ai.azure.com+++ oldalra, és válaszd a **management center** **project** **overview** menüpontot.
+Vagy látogass el a +++ai.azure.com+++ oldalra, és válaszd a **management center** > **project** > **overview** menüpontot.
 
-Töltsd ki a `{}` helyőrzőket az erőforráscsoport és az Azure AI projekt nevével.
+Cseréld ki a `{}` helyőrzőket az erőforráscsoportod és az Azure AI projekted nevére.
 
 ```bash
 az ml model create \
@@ -243,7 +242,7 @@ az ml model create \
     --workspace-name {PROJECT_NAME}
 ```
 
-Ezután megtekintheted a feltöltött modelljeidet, és telepítheted őket a https://ml.azure.com/model/list címen.
+Ezután megtekintheted a feltöltött modellt, és telepítheted azt a https://ml.azure.com/model/list címen.
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

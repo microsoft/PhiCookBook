@@ -2,70 +2,69 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-05-09T22:26:04+00:00",
+  "translation_date": "2025-07-17T09:55:54+00:00",
   "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
   "language_code": "br"
 }
 -->
-# **Lass Phi-3 ein Branchenexperte werden**
+# **Deixe o Phi-3 se tornar um especialista da indústria**
 
-Um das Phi-3-Modell in einer Branche einzusetzen, müssen branchenspezifische Geschäftsdaten in das Phi-3-Modell integriert werden. Wir haben zwei verschiedene Optionen: die erste ist RAG (Retrieval Augmented Generation) und die zweite Fine-Tuning.
+Para aplicar o modelo Phi-3 em um setor industrial, é necessário adicionar dados comerciais específicos da indústria ao modelo Phi-3. Temos duas opções diferentes: a primeira é RAG (Retrieval Augmented Generation) e a segunda é Fine Tuning.
 
 ## **RAG vs Fine-Tuning**
 
 ### **Retrieval Augmented Generation**
 
-RAG ist Datenabruf + Textgenerierung. Die strukturierten und unstrukturierten Daten des Unternehmens werden in der Vektordatenbank gespeichert. Bei der Suche nach relevantem Inhalt werden relevante Zusammenfassungen und Inhalte gefunden, um einen Kontext zu bilden, und die Textvervollständigungsfunktion von LLM/SLM wird kombiniert, um Inhalte zu generieren.
+RAG é a combinação de recuperação de dados + geração de texto. Os dados estruturados e não estruturados da empresa são armazenados no banco de dados vetorial. Ao buscar conteúdo relevante, o resumo e o conteúdo relacionados são encontrados para formar um contexto, e a capacidade de conclusão de texto do LLM/SLM é combinada para gerar o conteúdo.
 
 ### **Fine-tuning**
 
-Fine-Tuning basiert auf der Verbesserung eines bestimmten Modells. Es muss nicht beim Modellalgorithmus beginnen, aber es müssen kontinuierlich Daten gesammelt werden. Wenn Sie in Branchenanwendungen präzisere Terminologie und sprachliche Ausdrucksweise wünschen, ist Fine-Tuning die bessere Wahl. Wenn sich Ihre Daten jedoch häufig ändern, kann Fine-Tuning kompliziert werden.
+Fine-tuning é baseado na melhoria de um modelo específico. Não é necessário começar pelo algoritmo do modelo, mas os dados precisam ser acumulados continuamente. Se você deseja uma terminologia e expressão linguística mais precisas em aplicações industriais, fine-tuning é a melhor escolha. Porém, se seus dados mudam com frequência, o fine-tuning pode se tornar complicado.
 
-### **Wie man wählt**
+### **Como escolher**
 
-1. Wenn unsere Antwort die Einführung externer Daten erfordert, ist RAG die beste Wahl
+1. Se nossa resposta requer a introdução de dados externos, RAG é a melhor escolha
 
-2. Wenn Sie stabile und präzise Branchenkenntnisse ausgeben müssen, ist Fine-Tuning eine gute Wahl. RAG priorisiert das Abrufen relevanter Inhalte, trifft aber nicht immer die spezialisierten Nuancen genau.
+2. Se você precisa de uma saída estável e precisa de conhecimento específico da indústria, fine-tuning será uma boa opção. RAG prioriza puxar conteúdo relevante, mas pode não capturar sempre as nuances especializadas.
 
-3. Fine-Tuning benötigt einen hochwertigen Datensatz; bei nur einem kleinen Datenbereich macht es wenig Unterschied. RAG ist flexibler.
+3. Fine-tuning exige um conjunto de dados de alta qualidade, e se for apenas um pequeno conjunto de dados, não fará muita diferença. RAG é mais flexível.
 
-4. Fine-Tuning ist eine Blackbox, eine Metaphysik, und es ist schwer, den internen Mechanismus zu verstehen. RAG erleichtert es hingegen, die Datenquelle zu finden, wodurch Halluzinationen oder Inhaltsfehler effektiv angepasst und bessere Transparenz geboten werden.
+4. Fine-tuning é uma caixa preta, uma espécie de metafísica, e é difícil entender seu mecanismo interno. Já o RAG facilita encontrar a origem dos dados, permitindo ajustar de forma eficaz alucinações ou erros de conteúdo e oferecendo melhor transparência.
 
-### **Szenarien**
+### **Cenários**
 
-1. Vertikale Branchen benötigen spezifisches Fachvokabular und Ausdrucksweisen, ***Fine-Tuning*** ist hier die beste Wahl
+1. Indústrias verticais que exigem vocabulário e expressões profissionais específicas, ***Fine-tuning*** será a melhor escolha
 
-2. QA-Systeme, die verschiedene Wissenspunkte zusammenführen, ***RAG*** ist hier die beste Wahl
+2. Sistema de perguntas e respostas, envolvendo a síntese de diferentes pontos de conhecimento, ***RAG*** será a melhor escolha
 
-3. Die Kombination aus automatisiertem Geschäftsablauf ***RAG + Fine-Tuning*** ist die beste Wahl
+3. A combinação de fluxo de negócios automatizado ***RAG + Fine-tuning*** é a melhor escolha
 
-## **Wie man RAG nutzt**
+## **Como usar RAG**
 
-![rag](../../../../translated_images/rag.36e7cb856f120334d577fde60c6a5d7c5eecae255dac387669303d30b4b3efa4.br.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.br.png)
 
-Eine Vektordatenbank ist eine Sammlung von Daten, die in mathematischer Form gespeichert sind. Vektordatenbanken erleichtern es Machine-Learning-Modellen, sich an frühere Eingaben zu erinnern, und ermöglichen so den Einsatz von Machine Learning für Anwendungsfälle wie Suche, Empfehlungen und Textgenerierung. Daten können anhand von Ähnlichkeitsmaßen identifiziert werden, statt durch exakte Übereinstimmungen, was es Computermodellen erlaubt, den Kontext der Daten zu verstehen.
+Um banco de dados vetorial é uma coleção de dados armazenados em forma matemática. Bancos de dados vetoriais facilitam que modelos de aprendizado de máquina lembrem entradas anteriores, permitindo que o aprendizado de máquina seja usado para suportar casos de uso como busca, recomendações e geração de texto. Os dados podem ser identificados com base em métricas de similaridade, em vez de correspondências exatas, permitindo que os modelos computacionais entendam o contexto dos dados.
 
-Die Vektordatenbank ist der Schlüssel zur Realisierung von RAG. Wir können Daten durch Vektormodelle wie text-embedding-3, jina-ai-embedding usw. in Vektorspeicher umwandeln.
+O banco de dados vetorial é a chave para realizar o RAG. Podemos converter dados em armazenamento vetorial por meio de modelos vetoriais como text-embedding-3, jina-ai-embedding, etc.
 
-Mehr über die Erstellung von RAG-Anwendungen erfahren Sie unter [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?WT.mc_id=aiml-138114-kinfeylo)
+Saiba mais sobre como criar uma aplicação RAG em [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?WT.mc_id=aiml-138114-kinfeylo)
 
-## **Wie man Fine-tuning nutzt**
+## **Como usar Fine-tuning**
 
-Die gängigen Algorithmen beim Fine-Tuning sind Lora und QLora. Wie wählt man aus?
-- [Mehr erfahren mit diesem Beispiel-Notebook](../../../../code/04.Finetuning/Phi_3_Inference_Finetuning.ipynb)
-- [Beispiel eines Python FineTuning Samples](../../../../code/04.Finetuning/FineTrainingScript.py)
+Os algoritmos mais usados em Fine-tuning são Lora e QLora. Como escolher?
+- [Saiba mais com este notebook de exemplo](../../../../code/04.Finetuning/Phi_3_Inference_Finetuning.ipynb)
+- [Exemplo de FineTuning em Python](../../../../code/04.Finetuning/FineTrainingScript.py)
 
-### **Lora und QLora**
+### **Lora e QLora**
 
-![lora](../../../../translated_images/qlora.6aeba71122bc0c8d56ccf0bc36b861304939fee087f43c1fc6cc5c9cb8764725.br.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.br.png)
 
-LoRA (Low-Rank Adaptation) und QLoRA (Quantized Low-Rank Adaptation) sind Techniken, um große Sprachmodelle (LLMs) mittels Parameter Efficient Fine Tuning (PEFT) zu verfeinern. PEFT-Techniken sind darauf ausgelegt, Modelle effizienter zu trainieren als traditionelle Methoden.
+LoRA (Low-Rank Adaptation) e QLoRA (Quantized Low-Rank Adaptation) são técnicas usadas para fine-tuning de grandes modelos de linguagem (LLMs) utilizando Parameter Efficient Fine Tuning (PEFT). Técnicas PEFT são projetadas para treinar modelos de forma mais eficiente do que métodos tradicionais.  
+LoRA é uma técnica de fine-tuning independente que reduz o uso de memória aplicando uma aproximação de baixa ordem à matriz de atualização de pesos. Oferece tempos de treinamento rápidos e mantém desempenho próximo aos métodos tradicionais de fine-tuning.
 
-LoRA ist eine eigenständige Fine-Tuning-Technik, die den Speicherbedarf reduziert, indem sie eine Low-Rank-Approximation auf die Gewichtungs-Update-Matrix anwendet. Sie bietet schnelle Trainingszeiten und hält die Leistung nahe an traditionellen Fine-Tuning-Methoden.
+QLoRA é uma versão estendida do LoRA que incorpora técnicas de quantização para reduzir ainda mais o uso de memória. QLoRA quantiza a precisão dos parâmetros de peso no LLM pré-treinado para precisão de 4 bits, o que é mais eficiente em memória do que LoRA. No entanto, o treinamento com QLoRA é cerca de 30% mais lento que o LoRA devido às etapas adicionais de quantização e desquantização.
 
-QLoRA ist eine erweiterte Version von LoRA, die Quantisierungstechniken integriert, um den Speicherbedarf weiter zu senken. QLoRA quantisiert die Präzision der Gewichtungsparameter im vortrainierten LLM auf 4-Bit-Präzision, was speichereffizienter ist als LoRA. Allerdings ist das Training mit QLoRA etwa 30 % langsamer als mit LoRA aufgrund der zusätzlichen Quantisierungs- und Dequantisierungsschritte.
-
-QLoRA verwendet LoRA als Ergänzung, um Fehler zu korrigieren, die durch die Quantisierung entstehen. QLoRA ermöglicht das Fine-Tuning riesiger Modelle mit Milliarden von Parametern auf vergleichsweise kleinen, weit verbreiteten GPUs. Zum Beispiel kann QLoRA ein 70B-Parameter-Modell feinjustieren, das normalerweise 36 GPUs erfordern würde, mit nur 2 GPUs.
+QLoRA usa LoRA como um acessório para corrigir os erros introduzidos durante a quantização. QLoRA permite o fine-tuning de modelos massivos com bilhões de parâmetros em GPUs relativamente pequenas e disponíveis. Por exemplo, QLoRA pode fazer fine-tuning de um modelo de 70 bilhões de parâmetros que normalmente exigiria 36 GPUs, usando apenas 2 GPUs.
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se tradução profissional realizada por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

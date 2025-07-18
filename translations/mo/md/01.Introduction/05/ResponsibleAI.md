@@ -2,124 +2,120 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-05-07T14:44:55+00:00",
+  "translation_date": "2025-07-16T22:48:37+00:00",
   "source_file": "md/01.Introduction/05/ResponsibleAI.md",
   "language_code": "mo"
 }
 -->
-# **Presentar Responsible AI**
+# **介紹負責任的 AI**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) es una iniciativa que busca ayudar a desarrolladores y organizaciones a crear sistemas de IA que sean transparentes, confiables y responsables. La iniciativa ofrece orientación y recursos para desarrollar soluciones de IA responsables que se alineen con principios éticos, como la privacidad, la equidad y la transparencia. También exploraremos algunos de los desafíos y las mejores prácticas relacionados con la construcción de sistemas de IA responsables.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) 是一項旨在幫助開發者和組織打造透明、值得信賴且負責任的 AI 系統的計畫。該計畫提供指導和資源，協助開發符合隱私、公平性和透明度等倫理原則的負責任 AI 解決方案。我們也將探討建立負責任 AI 系統時所面臨的一些挑戰與最佳實踐。
 
-## Resumen de Microsoft Responsible AI
+## Microsoft Responsible AI 概覽
 
 ![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d336830630939a5130a22b3f9e1f633773562f83fed08a50520.mo.png)
 
-**Principios éticos**
+**倫理原則**
 
-Microsoft Responsible AI se guía por un conjunto de principios éticos, como la privacidad, la equidad, la transparencia, la responsabilidad y la seguridad. Estos principios están diseñados para garantizar que los sistemas de IA se desarrollen de manera ética y responsable.
+Microsoft Responsible AI 以一套倫理原則為指導，包括隱私、公平性、透明度、問責性和安全性。這些原則旨在確保 AI 系統以道德且負責任的方式開發。
 
-**IA transparente**
+**透明的 AI**
 
-Microsoft Responsible AI destaca la importancia de la transparencia en los sistemas de IA. Esto incluye ofrecer explicaciones claras sobre cómo funcionan los modelos de IA, así como asegurar que las fuentes de datos y los algoritmos estén disponibles públicamente.
+Microsoft Responsible AI 強調 AI 系統透明度的重要性，包括清楚說明 AI 模型的運作方式，並確保資料來源和演算法公開可查。
 
-**IA responsable**
+**負責任的 AI**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) promueve el desarrollo de sistemas de IA responsables, que puedan proporcionar información sobre cómo los modelos de IA toman decisiones. Esto ayuda a los usuarios a comprender y confiar en los resultados de los sistemas de IA.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) 推動開發具問責性的 AI 系統，能夠提供 AI 模型如何做出決策的洞見，幫助使用者理解並信任 AI 系統的輸出結果。
 
-**Inclusividad**
+**包容性**
 
-Los sistemas de IA deben diseñarse para beneficiar a todos. Microsoft busca crear una IA inclusiva que considere diversas perspectivas y evite sesgos o discriminación.
+AI 系統應設計為惠及所有人。Microsoft 致力打造包容性的 AI，考量多元觀點，避免偏見或歧視。
 
-**Confiabilidad y seguridad**
+**可靠性與安全性**
 
-Garantizar que los sistemas de IA sean confiables y seguros es fundamental. Microsoft se enfoca en construir modelos robustos que funcionen de manera constante y eviten resultados perjudiciales.
+確保 AI 系統的可靠性與安全性至關重要。Microsoft 專注於建立穩健的模型，確保其表現穩定且避免造成有害後果。
 
-**Equidad en la IA**
+**AI 的公平性**
 
-Microsoft Responsible AI reconoce que los sistemas de IA pueden perpetuar sesgos si se entrenan con datos o algoritmos sesgados. La iniciativa ofrece orientación para desarrollar sistemas de IA justos que no discriminen por factores como raza, género o edad.
+Microsoft Responsible AI 認識到若 AI 系統訓練於有偏見的資料或演算法，可能會延續偏見。該計畫提供指導，協助開發不因種族、性別或年齡等因素歧視的公平 AI 系統。
 
-**Privacidad y seguridad**
+**隱私與安全**
 
-Microsoft Responsible AI enfatiza la importancia de proteger la privacidad de los usuarios y la seguridad de los datos en los sistemas de IA. Esto incluye implementar cifrado de datos fuerte y controles de acceso, además de auditar regularmente los sistemas de IA para detectar vulnerabilidades.
+Microsoft Responsible AI 強調保護使用者隱私與資料安全的重要性，包括實施強化的資料加密與存取控制，並定期審核 AI 系統的安全漏洞。
 
-**Responsabilidad y rendición de cuentas**
+**問責與責任**
 
-Microsoft Responsible AI fomenta la responsabilidad y la rendición de cuentas en el desarrollo y despliegue de la IA. Esto implica asegurarse de que desarrolladores y organizaciones estén conscientes de los riesgos potenciales asociados con los sistemas de IA y tomen medidas para mitigarlos.
+Microsoft Responsible AI 推動 AI 開發與部署的問責與責任，確保開發者和組織了解 AI 系統潛在風險，並採取措施降低這些風險。
 
-## Mejores prácticas para construir sistemas de IA responsables
+## 建立負責任 AI 系統的最佳實踐
 
-**Desarrollar modelos de IA utilizando conjuntos de datos diversos**
+**使用多元資料集開發 AI 模型**
 
-Para evitar sesgos en los sistemas de IA, es importante usar conjuntos de datos variados que representen diferentes perspectivas y experiencias.
+為避免 AI 系統產生偏見，重要的是使用代表多元觀點和經驗的多元資料集。
 
-**Usar técnicas de IA explicable**
+**採用可解釋的 AI 技術**
 
-Las técnicas de IA explicable ayudan a los usuarios a entender cómo los modelos de IA toman decisiones, lo que puede aumentar la confianza en el sistema.
+可解釋的 AI 技術能幫助使用者理解 AI 模型如何做出決策，進而提升對系統的信任。
 
-**Auditar regularmente los sistemas de IA para detectar vulnerabilidades**
+**定期審核 AI 系統的安全漏洞**
 
-Las auditorías periódicas de los sistemas de IA pueden ayudar a identificar riesgos y vulnerabilidades que deben ser abordados.
+定期審核 AI 系統有助於發現需解決的潛在風險與漏洞。
 
-**Implementar cifrado fuerte de datos y controles de acceso**
+**實施強化的資料加密與存取控制**
 
-El cifrado de datos y los controles de acceso ayudan a proteger la privacidad y la seguridad de los usuarios en los sistemas de IA.
+資料加密與存取控制能有效保護 AI 系統中的使用者隱私與安全。
 
-**Seguir principios éticos en el desarrollo de IA**
+**遵循 AI 開發的倫理原則**
 
-Seguir principios éticos, como la equidad, la transparencia y la responsabilidad, contribuye a generar confianza en los sistemas de IA y asegura que se desarrollen de manera responsable.
+遵循公平、透明和問責等倫理原則，有助於建立對 AI 系統的信任，並確保其以負責任的方式開發。
 
-## Uso de AI Foundry para Responsible AI
+## 使用 AI Foundry 推動負責任 AI
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) es una plataforma potente que permite a desarrolladores y organizaciones crear rápidamente aplicaciones inteligentes, innovadoras, listas para el mercado y responsables. Aquí algunas características y capacidades clave de Azure AI Foundry:
+[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) 是一個強大的平台，讓開發者和組織能快速打造智能、先進、市場就緒且負責任的應用程式。以下是 Azure AI Foundry 的一些主要功能與特色：
 
-**APIs y modelos listos para usar**
+**即用型 API 與模型**
 
-Azure AI Foundry ofrece APIs y modelos preconstruidos y personalizables. Cubren una amplia gama de tareas de IA, incluyendo IA generativa, procesamiento de lenguaje natural para conversaciones, búsqueda, monitoreo, traducción, voz, visión y toma de decisiones.
+Azure AI Foundry 提供預建且可自訂的 API 與模型，涵蓋多種 AI 任務，包括生成式 AI、對話式自然語言處理、搜尋、監控、翻譯、語音、視覺及決策等。
 
 **Prompt Flow**
 
-Prompt Flow en Azure AI Foundry permite crear experiencias de IA conversacional. Facilita diseñar y gestionar flujos conversacionales, lo que simplifica la construcción de chatbots, asistentes virtuales y otras aplicaciones interactivas.
+Azure AI Foundry 的 Prompt Flow 讓您能創建對話式 AI 體驗，設計並管理對話流程，方便打造聊天機器人、虛擬助理及其他互動應用。
 
-**Retrieval Augmented Generation (RAG)**
+**檢索增強生成 (RAG)**
 
-RAG es una técnica que combina enfoques basados en recuperación y generación. Mejora la calidad de las respuestas generadas al aprovechar tanto el conocimiento preexistente (recuperación) como la generación creativa (generación).
+RAG 是結合檢索式與生成式方法的技術，透過利用既有知識（檢索）與創造性生成（生成）提升回應品質。
 
-**Métricas de evaluación y monitoreo para IA generativa**
+**生成式 AI 的評估與監控指標**
 
-Azure AI Foundry ofrece herramientas para evaluar y monitorear modelos de IA generativa. Puedes medir su rendimiento, equidad y otras métricas importantes para asegurar un despliegue responsable. Además, si has creado un panel de control, puedes usar la interfaz sin código en Azure Machine Learning Studio para personalizar y generar un Responsible AI Dashboard y la tarjeta de puntuación asociada basada en las bibliotecas Python del [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo). Esta tarjeta ayuda a compartir información clave relacionada con la equidad, la importancia de características y otras consideraciones para un despliegue responsable, tanto con partes interesadas técnicas como no técnicas.
+Azure AI Foundry 提供評估與監控生成式 AI 模型的工具，能評估其效能、公平性及其他重要指標，確保負責任的部署。此外，若您已建立儀表板，可使用 Azure Machine Learning Studio 的無程式碼介面，根據 [Repsonsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python 函式庫自訂並生成負責任 AI 儀表板及相關評分卡。此評分卡有助於與技術及非技術利害關係人分享關於公平性、特徵重要性及其他負責任部署考量的關鍵見解。
 
-Para usar AI Foundry con Responsible AI, puedes seguir estas mejores prácticas:
+使用 AI Foundry 推動負責任 AI 時，可遵循以下最佳實踐：
 
-**Definir el problema y los objetivos de tu sistema de IA**
+**明確定義 AI 系統的問題與目標**
 
-Antes de comenzar el desarrollo, es importante definir claramente el problema u objetivo que tu sistema de IA busca resolver. Esto te ayudará a identificar los datos, algoritmos y recursos necesarios para construir un modelo efectivo.
+在開發前，清楚定義 AI 系統欲解決的問題或目標，有助於識別所需的資料、演算法與資源，打造有效模型。
 
-**Recolectar y preprocesar datos relevantes**
+**收集並預處理相關資料**
 
-La calidad y cantidad de datos usados en el entrenamiento de un sistema de IA impactan significativamente su desempeño. Por eso, es importante recopilar datos relevantes, limpiarlos, preprocesarlos y asegurarse de que representen la población o el problema que intentas resolver.
+訓練 AI 系統所用資料的品質與數量，對其效能有重大影響。因此，需收集相關資料，進行清理與預處理，並確保資料能代表目標族群或問題。
 
-**Elegir la evaluación adecuada**
+**選擇適當的評估方法**
 
-Existen diversos algoritmos de evaluación disponibles. Es importante seleccionar el más apropiado según tus datos y problema.
+市面上有多種評估演算法，需根據資料與問題選擇最合適的演算法。
 
-**Evaluar e interpretar el modelo**
+**評估並解釋模型**
 
-Una vez construido el modelo de IA, es esencial evaluar su desempeño usando métricas adecuadas e interpretar los resultados de manera transparente. Esto ayuda a identificar sesgos o limitaciones y a realizar mejoras cuando sea necesario.
+建立模型後，應使用適當指標評估其效能，並以透明方式解釋結果，協助識別模型中的偏見或限制，並在必要時進行改進。
 
-**Asegurar transparencia y explicabilidad**
+**確保透明度與可解釋性**
 
-Los sistemas de IA deben ser transparentes y explicables para que los usuarios entiendan cómo funcionan y cómo se toman las decisiones. Esto es especialmente importante en aplicaciones con impacto significativo en vidas humanas, como salud, finanzas y sistemas legales.
+AI 系統應具備透明度與可解釋性，讓使用者了解其運作原理及決策過程。這對於對人類生活有重大影響的應用（如醫療、金融及法律系統）尤其重要。
 
-**Monitorear y actualizar el modelo**
+**持續監控並更新模型**
 
-Los sistemas de IA deben ser monitoreados y actualizados continuamente para mantener su precisión y eficacia a lo largo del tiempo. Esto requiere mantenimiento constante, pruebas y reentrenamiento del modelo.
+AI 系統需持續監控與更新，確保其長期保持準確與有效，這需要持續的維護、測試與再訓練。
 
-En conclusión, Microsoft Responsible AI es una iniciativa que busca ayudar a desarrolladores y organizaciones a crear sistemas de IA que sean transparentes, confiables y responsables. Recuerda que la implementación responsable de la IA es fundamental, y Azure AI Foundry busca hacerla práctica para las organizaciones. Siguiendo principios éticos y mejores prácticas, podemos garantizar que los sistemas de IA se desarrollen y desplieguen de manera responsable, beneficiando a la sociedad en su conjunto.
+總結來說，Microsoft Responsible AI 是一項協助開發者與組織打造透明、值得信賴且負責任 AI 系統的計畫。負責任的 AI 實踐至關重要，而 Azure AI Foundry 致力於讓組織能實際應用。透過遵循倫理原則與最佳實踐，我們能確保 AI 系統以負責任的方式開發與部署，造福整個社會。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language "mo" refers to? There are several possibilities (e.g., Moldovan, a constructed language, or another language code). Once confirmed, I can provide the translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

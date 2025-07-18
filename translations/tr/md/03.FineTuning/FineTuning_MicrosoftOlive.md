@@ -2,73 +2,73 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:51:11+00:00",
+  "translation_date": "2025-07-17T06:44:47+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "tr"
 }
 -->
 # **Microsoft Olive ile Phi-3 İnce Ayarı**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo), model sıkıştırma, optimizasyon ve derleme alanında sektör lideri teknikleri bir araya getiren, kullanımı kolay donanım farkındalıklı bir model optimizasyon aracıdır.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo), model sıkıştırma, optimizasyon ve derleme alanlarında sektör lideri teknikleri bir araya getiren, kullanımı kolay donanım farkındalıklı bir model optimizasyon aracıdır.
 
-Makine öğrenimi modellerinin optimize edilme sürecini kolaylaştırmak ve belirli donanım mimarilerinden en verimli şekilde yararlanmasını sağlamak için tasarlanmıştır.
+Makine öğrenimi modellerini optimize etme sürecini kolaylaştırmak ve belirli donanım mimarilerinden en verimli şekilde yararlanılmasını sağlamak için tasarlanmıştır.
 
-İster bulut tabanlı uygulamalar üzerinde çalışıyor olun, ister uç cihazlarda, Olive modellerinizi zahmetsiz ve etkili bir şekilde optimize etmenizi sağlar.
+İster bulut tabanlı uygulamalar üzerinde çalışıyor olun, ister uç cihazlarda, Olive modellerinizi zahmetsiz ve etkili bir şekilde optimize etmenize olanak tanır.
 
 ## Temel Özellikler:
-- Olive, hedeflenen donanım için optimizasyon tekniklerini toplar ve otomatikleştirir.
-- Tek bir optimizasyon tekniği tüm senaryolara uymadığından, Olive, sektör uzmanlarının kendi optimizasyon yeniliklerini entegre etmelerine olanak tanıyarak genişletilebilirlik sağlar.
+- Olive, hedef donanım için istenen optimizasyon tekniklerini bir araya getirir ve otomatikleştirir.
+- Tek bir optimizasyon tekniği tüm senaryolara uymaz; bu nedenle Olive, sektör uzmanlarının kendi optimizasyon yeniliklerini entegre etmelerine olanak tanıyarak genişletilebilirlik sağlar.
 
 ## Mühendislik Çabasını Azaltın:
-- Geliştiricilerin, eğitilmiş modelleri dağıtıma hazırlamak ve optimize etmek için genellikle birden fazla donanım tedarikçisine özgü araç zincirini öğrenip kullanmaları gerekir.
+- Geliştiriciler, eğitilmiş modelleri dağıtıma hazırlamak ve optimize etmek için genellikle birden fazla donanım tedarikçisine özgü araç zincirini öğrenmek ve kullanmak zorundadır.
 - Olive, istenen donanım için optimizasyon tekniklerini otomatikleştirerek bu deneyimi basitleştirir.
 
 ## Kullanıma Hazır Uçtan Uca Optimizasyon Çözümü:
 
-Entegre teknikleri birleştirip ayarlayarak, Olive uçtan uca optimizasyon için birleşik bir çözüm sunar.
-Model optimizasyonunda doğruluk ve gecikme gibi kısıtlamaları göz önünde bulundurur.
+Entegre teknikleri birleştirip ayarlayarak Olive, uçtan uca optimizasyon için birleşik bir çözüm sunar.
+Modeli optimize ederken doğruluk ve gecikme gibi kısıtlamaları dikkate alır.
 
 ## Microsoft Olive ile İnce Ayar Yapmak
 
-Microsoft Olive, generatif yapay zeka alanında hem ince ayar hem de referans için kapsam sağlayabilen çok kullanışlı açık kaynaklı bir model optimizasyon aracıdır. Sadece basit bir yapılandırma gerektirir, açık kaynak küçük dil modelleri ve ilgili çalışma zamanı ortamları (AzureML / yerel GPU, CPU, DirectML) ile birleştirildiğinde, otomatik optimizasyon yoluyla modeli ince ayar yapabilir veya referans alabilir ve buluta ya da uç cihazlara dağıtmak üzere en iyi modeli bulabilirsiniz. İşletmelerin kendi sektör dikey modellerini yerinde ve bulutta oluşturmalarına olanak tanır.
+Microsoft Olive, jeneratif yapay zeka alanında hem ince ayar hem de referans için kullanılabilen, kullanımı çok kolay açık kaynaklı bir model optimizasyon aracıdır. Sadece basit bir yapılandırma gerektirir; açık kaynak küçük dil modelleri ve ilgili çalışma zamanı ortamları (AzureML / yerel GPU, CPU, DirectML) ile birleştirildiğinde, otomatik optimizasyon yoluyla modelin ince ayarını veya referansını tamamlayabilir ve buluta ya da uç cihazlara dağıtmak için en iyi modeli bulabilirsiniz. İşletmelerin kendi sektör dikey modellerini hem yerel hem de bulut ortamında oluşturmasına olanak tanır.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.tr.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.tr.png)
 
 ## Microsoft Olive ile Phi-3 İnce Ayarı
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.tr.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.tr.png)
 
 ## Phi-3 Olive Örnek Kodu ve Örnek
 
-Bu örnekte Olive’ı kullanarak:
+Bu örnekte Olive kullanarak:
 
 - LoRA adaptörünü ince ayar yaparak ifadeleri Üzgün, Neşeli, Korku, Sürpriz olarak sınıflandıracaksınız.
 - Adaptör ağırlıklarını temel modele birleştireceksiniz.
 - Modeli optimize edip int4 formatında kuantize edeceksiniz.
 
-[Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
+[Örnek Kod](../../code/03.Finetuning/olive-ort-example/README.md)
 
 ### Microsoft Olive Kurulumu
 
-Microsoft Olive kurulumu çok basittir ve CPU, GPU, DirectML ve Azure ML için de kurulabilir.
+Microsoft Olive kurulumu çok basittir ve CPU, GPU, DirectML ve Azure ML için kurulabilir.
 
 ```bash
 pip install olive-ai
 ```
 
-ONNX modelini CPU ile çalıştırmak isterseniz
+Bir ONNX modelini CPU ile çalıştırmak isterseniz, şu komutu kullanabilirsiniz:
 
 ```bash
 pip install olive-ai[cpu]
 ```
 
-ONNX modelini GPU ile çalıştırmak isterseniz
+Bir ONNX modelini GPU ile çalıştırmak isterseniz, şu komutu kullanabilirsiniz:
 
 ```python
 pip install olive-ai[gpu]
 ```
 
-Azure ML kullanmak isterseniz
+Azure ML kullanmak isterseniz, şu komutu kullanabilirsiniz:
 
 ```python
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
@@ -79,15 +79,15 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 
 ### **Microsoft Olive Config.json**
 
-Kurulumdan sonra Config dosyası aracılığıyla veri, hesaplama, eğitim, dağıtım ve model oluşturma gibi model spesifik farklı ayarları yapılandırabilirsiniz.
+Kurulumdan sonra, Config dosyası aracılığıyla veri, hesaplama, eğitim, dağıtım ve model oluşturma dahil olmak üzere farklı modele özgü ayarları yapılandırabilirsiniz.
 
 **1. Veri**
 
-Microsoft Olive’da yerel veri ve bulut verisi üzerinde eğitim desteklenir ve ayarlarda yapılandırılabilir.
+Microsoft Olive üzerinde hem yerel veri hem de bulut verisi ile eğitim desteklenir ve ayarlarda yapılandırılabilir.
 
 *Yerel veri ayarları*
 
-İnce ayar için eğitilecek veri setini genellikle json formatında ve veri şablonuna uyacak şekilde kolayca ayarlayabilirsiniz. Bu, modelin gereksinimlerine göre (örneğin Microsoft Phi-3-mini’nin istediği formata uyarlamak gibi) ayarlanmalıdır. Başka modelleriniz varsa, ince ayar için gereken formatlar için ilgili modellere bakınız.
+İnce ayar için eğitilmesi gereken veri setini genellikle json formatında basitçe ayarlayabilir ve veri şablonuna uyarlayabilirsiniz. Bu, modelin gereksinimlerine göre ayarlanmalıdır (örneğin, Microsoft Phi-3-mini’nin gerektirdiği formata uyarlayın. Başka modelleriniz varsa, lütfen diğer modellerin ince ayar formatlarına bakarak işleyin).
 
 ```json
 
@@ -122,7 +122,7 @@ Microsoft Olive’da yerel veri ve bulut verisi üzerinde eğitim desteklenir ve
 
 **Bulut veri kaynağı ayarları**
 
-Azure AI Studio/Azure Machine Learning Service’in veri deposunu bağlayarak buluttaki verilere erişebilir, Microsoft Fabric ve Azure Data aracılığıyla farklı veri kaynaklarını Azure AI Studio/Azure Machine Learning Service’e entegre ederek ince ayar verisi için destek sağlayabilirsiniz.
+Azure AI Studio/Azure Machine Learning Service’in veri deposunu bağlayarak buluttaki verilere erişebilir, Microsoft Fabric ve Azure Data üzerinden farklı veri kaynaklarını Azure AI Studio/Azure Machine Learning Service’e entegre ederek ince ayar için veri desteği sağlayabilirsiniz.
 
 ```json
 
@@ -169,7 +169,7 @@ Azure AI Studio/Azure Machine Learning Service’in veri deposunu bağlayarak bu
 
 **2. Hesaplama yapılandırması**
 
-Yerelde çalışmanız gerekiyorsa doğrudan yerel veri kaynaklarını kullanabilirsiniz. Azure AI Studio / Azure Machine Learning Service kaynaklarını kullanmanız gerekiyorsa ilgili Azure parametrelerini, hesaplama gücü adını vb. yapılandırmalısınız.
+Yerel çalışmanız gerekiyorsa, doğrudan yerel veri kaynaklarını kullanabilirsiniz. Azure AI Studio / Azure Machine Learning Service kaynaklarını kullanmanız gerekiyorsa, ilgili Azure parametrelerini, hesaplama gücü adını vb. yapılandırmanız gerekir.
 
 ```json
 
@@ -202,7 +202,7 @@ Yerelde çalışmanız gerekiyorsa doğrudan yerel veri kaynaklarını kullanabi
 
 ***Dikkat***
 
-Azure AI Studio/Azure Machine Learning Service üzerinde bir konteyner aracılığıyla çalıştığı için gereken ortamın yapılandırılması gerekir. Bu, conda.yaml ortamında yapılandırılır.
+Azure AI Studio/Azure Machine Learning Service üzerinde konteyner aracılığıyla çalıştığı için gerekli ortamın yapılandırılması gerekir. Bu, conda.yaml ortamında yapılandırılır.
 
 ```yaml
 
@@ -235,11 +235,11 @@ dependencies:
 
 ```
 
-**3. SLM seçimi**
+**3. SLM Seçimi**
 
-Modeli doğrudan Hugging Face’den kullanabilir veya Azure AI Studio / Azure Machine Learning’in Model Kataloğu ile entegre ederek kullanacağınız modeli seçebilirsiniz. Aşağıdaki kod örneğinde Microsoft Phi-3-mini örnek olarak kullanılmıştır.
+Modeli doğrudan Hugging Face’den kullanabilir veya Azure AI Studio / Azure Machine Learning’in Model Kataloğu ile entegre ederek kullanmak istediğiniz modeli seçebilirsiniz. Aşağıdaki kod örneğinde Microsoft Phi-3-mini kullanılacaktır.
 
-Modeliniz yerel ise şu yöntemi kullanabilirsiniz
+Modeliniz yerel ise şu yöntemi kullanabilirsiniz:
 
 ```json
 
@@ -257,7 +257,7 @@ Modeliniz yerel ise şu yöntemi kullanabilirsiniz
     },
 ```
 
-Azure AI Studio / Azure Machine Learning Service’den model kullanmak isterseniz şu yöntemi kullanabilirsiniz
+Azure AI Studio / Azure Machine Learning Service’den bir model kullanmak isterseniz şu yöntemi kullanabilirsiniz:
 
 ```json
 
@@ -287,13 +287,13 @@ Azure AI Studio / Azure Machine Learning Service’den model kullanmak isterseni
 **Dikkat:**
 Azure AI Studio / Azure Machine Learning Service ile entegrasyon gereklidir, bu nedenle model kurulumunda sürüm numarası ve ilgili isimlendirmeye dikkat edin.
 
-Azure’daki tüm modeller PyTorch.MLflow olarak ayarlanmalıdır.
+Azure üzerindeki tüm modeller PyTorch.MLflow olarak ayarlanmalıdır.
 
-Hugging Face hesabınız olmalı ve anahtar Azure AI Studio / Azure Machine Learning’in Key değerine bağlanmalıdır.
+Bir Hugging Face hesabınız olmalı ve anahtarı Azure AI Studio / Azure Machine Learning’in Key değerine bağlamalısınız.
 
 **4. Algoritma**
 
-Microsoft Olive, Lora ve QLora ince ayar algoritmalarını çok iyi paketler. Yapmanız gereken sadece bazı ilgili parametreleri yapılandırmaktır. Burada QLora örneği verilmiştir.
+Microsoft Olive, Lora ve QLora ince ayar algoritmalarını çok iyi kapsar. Yapmanız gereken sadece bazı ilgili parametreleri yapılandırmaktır. Burada QLora örnek olarak alınmıştır.
 
 ```json
         "lora": {
@@ -332,10 +332,10 @@ Microsoft Olive, Lora ve QLora ince ayar algoritmalarını çok iyi paketler. Ya
 
 Kuantizasyon dönüşümü yapmak isterseniz, Microsoft Olive ana dalı onnxruntime-genai yöntemini desteklemektedir. İhtiyacınıza göre ayarlayabilirsiniz:
 
-1. Adaptör ağırlıklarını temel modele birleştir
-2. ModelBuilder ile modeli gereken hassasiyette onnx modeline dönüştür
+1. Adaptör ağırlıklarını temel modele birleştirin
+2. ModelBuilder ile modeli gereken hassasiyette onnx modeline dönüştürün
 
-Örneğin kuantize edilmiş INT4’e dönüştürmek gibi
+Örneğin, kuantize edilmiş INT4’e dönüştürme
 
 ```json
 
@@ -351,8 +351,8 @@ Kuantizasyon dönüşümü yapmak isterseniz, Microsoft Olive ana dalı onnxrunt
 ```
 
 **Dikkat**
-- QLoRA kullanıyorsanız, ONNXRuntime-genai’nin kuantizasyon dönüşümü şu anda desteklenmemektedir.
-- Burada belirtmek gerekir ki yukarıdaki adımları kendi ihtiyacınıza göre ayarlayabilirsiniz. Yukarıdaki tüm adımları tamamen yapılandırmanız gerekmez. İhtiyacınıza bağlı olarak, algoritmanın adımlarını ince ayar yapmadan doğrudan kullanabilirsiniz. Son olarak ilgili motorları yapılandırmanız gerekir.
+- QLoRA kullanıyorsanız, ONNXRuntime-genai kuantizasyon dönüşümü şu an desteklenmemektedir.
+- Burada belirtmek gerekir ki yukarıdaki adımları kendi ihtiyaçlarınıza göre ayarlayabilirsiniz. Tüm bu adımları tamamen yapılandırmak zorunda değilsiniz. İhtiyacınıza göre algoritmanın adımlarını doğrudan ince ayar yapmadan kullanabilirsiniz. Son olarak ilgili motorları yapılandırmanız gerekir.
 
 ```json
 
@@ -369,11 +369,11 @@ Kuantizasyon dönüşümü yapmak isterseniz, Microsoft Olive ana dalı onnxrunt
 
 **5. İnce ayar tamamlandı**
 
-Komut satırında, olive-config.json dosyasının bulunduğu dizinde çalıştırın
+Komut satırında, olive-config.json dosyasının bulunduğu dizinde şu komutu çalıştırın:
 
 ```bash
 olive run --config olive-config.json  
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yanlış yorumlamalardan dolayı sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

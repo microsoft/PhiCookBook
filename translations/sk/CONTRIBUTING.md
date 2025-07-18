@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:43:36+00:00",
+  "translation_date": "2025-07-16T14:45:31+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "sk"
 }
@@ -15,12 +15,12 @@ Keď odošlete pull request, CLA bot automaticky zistí, či je potrebné poskyt
 
 ## Kódex správania
 
-Tento projekt prijal [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
-Pre viac informácií si prečítajte [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) alebo kontaktujte [opencode@microsoft.com](mailto:opencode@microsoft.com) s ďalšími otázkami či pripomienkami.
+Tento projekt prijal [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
+Pre viac informácií si prečítajte [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) alebo kontaktujte [opencode@microsoft.com](mailto:opencode@microsoft.com) s ďalšími otázkami alebo pripomienkami.
 
 ## Upozornenia pri vytváraní issues
 
-Prosíme, neotvárajte GitHub issues pre všeobecné otázky podpory, pretože zoznam na GitHube by mal slúžiť na požiadavky na funkcie a hlásenia chýb. Takto môžeme ľahšie sledovať skutočné problémy alebo chyby v kóde a oddeliť všeobecnú diskusiu od samotného kódu.
+Prosíme, neotvárajte GitHub issues pre všeobecné otázky podpory, pretože zoznam na GitHub by mal byť používaný na požiadavky na funkcie a hlásenia chýb. Takto môžeme ľahšie sledovať skutočné problémy alebo chyby v kóde a oddeliť všeobecnú diskusiu od samotného kódu.
 
 ## Ako prispieť
 
@@ -28,25 +28,25 @@ Prosíme, neotvárajte GitHub issues pre všeobecné otázky podpory, pretože z
 
 Pri odosielaní pull requestu (PR) do repozitára Phi-3 CookBook, prosím, dodržujte nasledujúce pokyny:
 
-- **Forknite repozitár**: Vždy si najprv vytvorte fork repozitára na svoj účet pred vykonaním zmien.
+- **Forknite repozitár**: Vždy si najskôr forknete repozitár do svojho účtu pred vykonaním zmien.
 
 - **Oddelené pull requesty (PR)**:
-  - Každý typ zmeny odosielajte v samostatnom pull requeste. Napríklad opravy chýb a aktualizácie dokumentácie by mali byť v rôznych PR.
+  - Každý typ zmeny odosielajte v samostatnom pull requeste. Napríklad opravy chýb a aktualizácie dokumentácie by mali byť v samostatných PR.
   - Opravy preklepov a menšie aktualizácie dokumentácie je možné podľa potreby skombinovať do jedného PR.
 
 - **Riešenie konfliktov pri zlúčení**: Ak váš pull request vykazuje konflikty pri zlúčení, aktualizujte svoju lokálnu vetvu `main`, aby zodpovedala hlavnému repozitáru pred vykonaním zmien.
 
-- **Odosielanie prekladov**: Pri odosielaní PR s prekladom sa uistite, že priečinok s prekladmi obsahuje preklady všetkých súborov z pôvodného priečinka.
+- **Odosielanie prekladov**: Pri odosielaní prekladového PR sa uistite, že priečinok s prekladmi obsahuje preklady všetkých súborov z pôvodného priečinka.
 
 ### Pokyny na písanie
 
-Pre zabezpečenie jednotnosti vo všetkých dokumentoch používajte nasledujúce pravidlá:
+Pre zabezpečenie konzistencie vo všetkých dokumentoch používajte nasledujúce pravidlá:
 
-- **Formátovanie URL**: Všetky URL obklopte hranatými zátvorkami a za nimi dajte zátvorky bez medzier okolo alebo vo vnútri. Napríklad: `[example](https://www.microsoft.com)`.
+- **Formátovanie URL**: Všetky URL uzatvorte do hranatých zátvoriek, za ktorými nasledujú zátvorky bez medzier okolo alebo vo vnútri. Napríklad: `[example](https://www.microsoft.com)`.
 
 - **Relatívne odkazy**: Používajte `./` pre relatívne odkazy na súbory alebo priečinky v aktuálnom adresári a `../` pre tie v nadradenom adresári. Napríklad: `[example](../../path/to/file)` alebo `[example](../../../path/to/file)`.
 
-- **Nie krajinne špecifické lokality**: Uistite sa, že vaše odkazy neobsahujú krajinne špecifické lokality. Napríklad, vyhnite sa `/en-us/` alebo `/en/`.
+- **Nie lokálne špecifické jazyky**: Uistite sa, že vaše odkazy neobsahujú jazykové alebo krajinné špecifiká. Napríklad, vyhnite sa `/en-us/` alebo `/en/`.
 
 - **Ukladanie obrázkov**: Všetky obrázky ukladajte do priečinka `./imgs`.
 
@@ -57,38 +57,38 @@ Pre zabezpečenie jednotnosti vo všetkých dokumentoch používajte nasledujúc
 Keď odošlete pull request, spustia sa nasledujúce workflow na overenie zmien. Postupujte podľa pokynov nižšie, aby váš pull request prešiel kontrolami workflow:
 
 - [Kontrola nefunkčných relatívnych ciest](../..)
-- [Kontrola, či URL neobsahujú lokalitu](../..)
+- [Kontrola, či URL neobsahujú lokalizáciu](../..)
 
 ### Kontrola nefunkčných relatívnych ciest
 
 Tento workflow zabezpečuje, že všetky relatívne cesty vo vašich súboroch sú správne.
 
-1. Pre overenie funkčnosti odkazov vykonajte v VS Code nasledujúce kroky:
+1. Pre overenie správnosti odkazov vykonajte v VS Code nasledujúce kroky:
     - Najazdite kurzorom na ľubovoľný odkaz v súboroch.
     - Stlačte **Ctrl + Kliknutie** pre navigáciu na odkaz.
-    - Ak kliknete na odkaz a nefunguje lokálne, workflow sa spustí a odkaz nebude fungovať ani na GitHube.
+    - Ak kliknete na odkaz a nefunguje lokálne, workflow sa spustí a odkaz nebude fungovať ani na GitHub.
 
-1. Na opravu tohto problému vykonajte nasledujúce kroky podľa návrhov ciest od VS Code:
+1. Na opravu tohto problému vykonajte nasledujúce kroky s pomocou návrhov ciest od VS Code:
     - Napíšte `./` alebo `../`.
     - VS Code vám ponúkne dostupné možnosti podľa toho, čo ste zadali.
     - Postupujte podľa cesty kliknutím na požadovaný súbor alebo priečinok, aby ste sa uistili, že cesta je správna.
 
 Po pridaní správnej relatívnej cesty uložte a odošlite zmeny.
 
-### Kontrola, či URL neobsahujú lokalitu
+### Kontrola, či URL neobsahujú lokalizáciu
 
-Tento workflow zabezpečuje, že žiadna webová URL neobsahuje krajinne špecifickú lokalitu. Keďže je tento repozitár prístupný globálne, je dôležité, aby URL neobsahovali lokalitu vašej krajiny.
+Tento workflow zabezpečuje, že žiadna webová URL neobsahuje lokalizáciu špecifickú pre krajinu. Keďže je tento repozitár prístupný globálne, je dôležité, aby URL neobsahovali lokalizáciu vašej krajiny.
 
-1. Pre overenie, že vaše URL neobsahujú krajinné lokality, vykonajte nasledujúce kroky:
+1. Pre overenie, že vaše URL neobsahujú lokalizáciu krajiny, vykonajte nasledujúce kroky:
 
-    - Skontrolujte, či sa v URL nenachádza text ako `/en-us/`, `/en/` alebo iná jazyková lokalita.
-    - Ak tieto v URL nie sú, kontrolu prejdete.
+    - Skontrolujte, či sa v URL nenachádza text ako `/en-us/`, `/en/` alebo iná jazyková lokalizácia.
+    - Ak tieto texty v URL nie sú, kontrolu prejdete.
 
 1. Na opravu tohto problému vykonajte nasledujúce kroky:
-    - Otvorte súbor označený workflow.
-    - Odstráňte krajinnú lokalitu z URL.
+    - Otvorte súbor zvýraznený workflow.
+    - Odstráňte lokalizáciu krajiny z URL.
 
-Po odstránení krajinskej lokality uložte a odošlite zmeny.
+Po odstránení lokalizácie uložte a odošlite zmeny.
 
 ### Kontrola nefunkčných URL
 
@@ -98,7 +98,7 @@ Tento workflow zabezpečuje, že každá webová URL vo vašich súboroch funguj
     - Skontrolujte stav URL vo vašich súboroch.
 
 2. Na opravu nefunkčných URL vykonajte nasledujúce kroky:
-    - Otvorte súbor obsahujúci nefunkčnú URL.
+    - Otvorte súbor, ktorý obsahuje nefunkčnú URL.
     - Aktualizujte URL na správnu.
 
 Po oprave URL uložte a odošlite zmeny.
@@ -112,4 +112,4 @@ Po oprave URL uložte a odošlite zmeny.
 > - **Dočasné problémy so serverom:** Občasné výpadky alebo údržba servera môžu spôsobiť dočasnú nedostupnosť URL počas overovania.
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

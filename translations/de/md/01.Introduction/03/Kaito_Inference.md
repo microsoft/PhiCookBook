@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-07T10:44:19+00:00",
+  "translation_date": "2025-07-16T20:47:03+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "de"
 }
@@ -11,26 +11,26 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Kaito](https://github.com/Azure/kaito) ist ein Operator, der die Bereitstellung von AI/ML-Inferenzmodellen in einem Kubernetes-Cluster automatisiert.
 
-Kaito hebt sich durch folgende wesentliche Merkmale von den meisten gängigen Methoden zur Modellauslieferung ab, die auf virtuellen Maschinen basieren:
+Kaito unterscheidet sich in folgenden Punkten von den meisten gängigen Methoden zur Modellbereitstellung, die auf virtuellen Maschinen basieren:
 
-- Verwaltung von Modell-Dateien über Container-Images. Ein HTTP-Server wird bereitgestellt, um Inferenzaufrufe mit der Modellbibliothek durchzuführen.
+- Verwaltung der Modell-Dateien über Container-Images. Ein HTTP-Server wird bereitgestellt, um Inferenzaufrufe mit der Modellbibliothek durchzuführen.
 - Vermeidung der Anpassung von Bereitstellungsparametern an die GPU-Hardware durch vordefinierte Konfigurationen.
 - Automatische Bereitstellung von GPU-Knoten basierend auf den Modellanforderungen.
 - Hosting großer Modell-Images im öffentlichen Microsoft Container Registry (MCR), sofern die Lizenz dies erlaubt.
 
-Mit Kaito wird der Workflow zur Integration großer AI-Inferenzmodelle in Kubernetes deutlich vereinfacht.
+Mit Kaito wird der Workflow zur Integration großer AI-Inferenzmodelle in Kubernetes erheblich vereinfacht.
 
 ## Architektur
 
-Kaito folgt dem klassischen Kubernetes Custom Resource Definition (CRD)/Controller-Designmuster. Der Benutzer verwaltet eine `workspace` Custom Resource, die die GPU-Anforderungen und die Inferenzspezifikation beschreibt. Die Kaito-Controller automatisieren die Bereitstellung, indem sie die `workspace` Custom Resource abgleichen.
+Kaito folgt dem klassischen Kubernetes Custom Resource Definition (CRD)/Controller-Designmuster. Der Nutzer verwaltet eine `workspace` Custom Resource, die die GPU-Anforderungen und die Inferenzspezifikation beschreibt. Die Kaito-Controller automatisieren die Bereitstellung, indem sie die `workspace` Custom Resource abgleichen.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
 Die obige Abbildung zeigt einen Überblick über die Kaito-Architektur. Die Hauptkomponenten bestehen aus:
 
-- **Workspace-Controller**: Er gleicht die `workspace` Custom Resource ab, erstellt `machine` (unten erklärt) Custom Resources, um die automatische Bereitstellung von Knoten auszulösen, und erstellt die Inferenz-Workloads (`deployment` oder `statefulset`) basierend auf den vordefinierten Modellkonfigurationen.
-- **Node Provisioner Controller**: Der Controller heißt *gpu-provisioner* im [gpu-provisioner Helm Chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Er verwendet die `machine` CRD, die von [Karpenter](https://sigs.k8s.io/karpenter) stammt, um mit dem Workspace-Controller zu interagieren. Er integriert sich in die Azure Kubernetes Service (AKS) APIs, um neue GPU-Knoten zum AKS-Cluster hinzuzufügen.
+- **Workspace Controller**: Er gleicht die `workspace` Custom Resource ab, erstellt `machine` (unten erklärt) Custom Resources, um die automatische Bereitstellung von Knoten auszulösen, und erstellt die Inferenz-Workloads (`deployment` oder `statefulset`) basierend auf den vordefinierten Modellkonfigurationen.
+- **Node Provisioner Controller**: Der Controller heißt *gpu-provisioner* im [gpu-provisioner Helm Chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Er verwendet das `machine` CRD, das von [Karpenter](https://sigs.k8s.io/karpenter) stammt, um mit dem Workspace Controller zu interagieren. Er integriert sich in die Azure Kubernetes Service (AKS) APIs, um neue GPU-Knoten zum AKS-Cluster hinzuzufügen.
 > Hinweis: Der [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ist eine Open-Source-Komponente. Er kann durch andere Controller ersetzt werden, sofern diese die [Karpenter-core](https://sigs.k8s.io/karpenter) APIs unterstützen.
 
 ## Installation
@@ -104,7 +104,7 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 ## Schnellstart Inferenz Phi-3 mit Adaptern
 
-Nach der Installation von Kaito kann man folgende Befehle ausprobieren, um einen Inferenzdienst zu starten.
+Nach der Installation von Kaito kann man die folgenden Befehle ausprobieren, um einen Inferenzdienst zu starten.
 
 [Beispielcode Inferenz Phi-3 mit Adaptern](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

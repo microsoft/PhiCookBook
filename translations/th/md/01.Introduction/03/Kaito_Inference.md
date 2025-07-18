@@ -2,37 +2,37 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:52:51+00:00",
+  "translation_date": "2025-07-16T20:50:50+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "th"
 }
 -->
-## การทำ Inference กับ Kaito
+## การทำ Inference ด้วย Kaito
 
-[Kaito](https://github.com/Azure/kaito) คือ operator ที่ช่วยอัตโนมัติการ deploy โมเดล AI/ML inference ในคลัสเตอร์ Kubernetes
+[Kaito](https://github.com/Azure/kaito) คือ operator ที่ช่วยอัตโนมัติการติดตั้งโมเดล AI/ML สำหรับการทำ inference ในคลัสเตอร์ Kubernetes
 
-Kaito มีความแตกต่างสำคัญเมื่อเทียบกับวิธีการ deploy โมเดลหลักๆ ที่สร้างบนโครงสร้างพื้นฐานของ virtual machine ดังนี้:
+Kaito มีความแตกต่างที่สำคัญเมื่อเทียบกับวิธีการติดตั้งโมเดลทั่วไปที่ใช้โครงสร้างพื้นฐานแบบเครื่องเสมือน (virtual machine) ดังนี้:
 
-- จัดการไฟล์โมเดลโดยใช้ container images พร้อมให้บริการ http server สำหรับเรียก inference ผ่านไลบรารีโมเดล
-- ไม่ต้องปรับแต่งพารามิเตอร์ deployment เพื่อให้เหมาะกับฮาร์ดแวร์ GPU เพราะมีการตั้งค่าล่วงหน้าให้แล้ว
-- จัดสรร node GPU อัตโนมัติตามความต้องการของโมเดล
+- จัดการไฟล์โมเดลโดยใช้ container images พร้อมให้บริการ http server สำหรับเรียกใช้งาน inference ผ่านไลบรารีโมเดล
+- ไม่ต้องปรับแต่งพารามิเตอร์การติดตั้งให้เหมาะกับฮาร์ดแวร์ GPU โดยมีการตั้งค่าล่วงหน้าให้แล้ว
+- จัดเตรียมโหนด GPU อัตโนมัติตามความต้องการของโมเดล
 - โฮสต์ภาพโมเดลขนาดใหญ่ใน Microsoft Container Registry (MCR) สาธารณะ หากใบอนุญาตอนุญาตให้ทำได้
 
-ด้วย Kaito การทำงานในการนำเข้าโมเดล AI inference ขนาดใหญ่ใน Kubernetes จะง่ายขึ้นมาก
+ด้วย Kaito กระบวนการนำโมเดล AI ขนาดใหญ่เข้ามาใช้งานใน Kubernetes จะง่ายขึ้นมาก
 
 
 ## สถาปัตยกรรม
 
-Kaito ใช้รูปแบบการออกแบบ Kubernetes Custom Resource Definition(CRD)/controller แบบคลาสสิก ผู้ใช้จะจัดการกับ custom resource `workspace` ที่อธิบายความต้องการ GPU และสเปคของการทำ inference โดย controller ของ Kaito จะอัตโนมัติการ deploy โดยการประสาน `workspace` custom resource
+Kaito ใช้รูปแบบการออกแบบ Kubernetes Custom Resource Definition (CRD) และ controller แบบคลาสสิก ผู้ใช้จะจัดการ custom resource ชื่อ `workspace` ซึ่งระบุความต้องการ GPU และสเปคของการทำ inference จากนั้น Kaito controllers จะช่วยอัตโนมัติการติดตั้งโดยทำการ reconcile กับ custom resource `workspace`
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
 ภาพด้านบนแสดงภาพรวมสถาปัตยกรรมของ Kaito ส่วนประกอบหลักประกอบด้วย:
 
-- **Workspace controller**: ทำหน้าที่ประสาน `workspace` custom resource สร้าง `machine` (อธิบายด้านล่าง) custom resources เพื่อกระตุ้นการจัดสรร node อัตโนมัติ และสร้างงาน inference (`deployment` หรือ `statefulset`) ตามการตั้งค่าโมเดลล่วงหน้า
-- **Node provisioner controller**: ชื่อ controller คือ *gpu-provisioner* ใน [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) ใช้ `machine` CRD ที่มาจาก [Karpenter](https://sigs.k8s.io/karpenter) เพื่อสื่อสารกับ workspace controller และเชื่อมต่อกับ Azure Kubernetes Service (AKS) APIs เพื่อเพิ่ม node GPU ใหม่เข้าไปในคลัสเตอร์ AKS
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) เป็นคอมโพเนนต์โอเพนซอร์ส สามารถเปลี่ยนเป็น controller ตัวอื่นได้ถ้ารองรับ [Karpenter-core](https://sigs.k8s.io/karpenter) APIs
+- **Workspace controller**: ทำหน้าที่ reconcile custom resource `workspace` สร้าง custom resource `machine` (อธิบายด้านล่าง) เพื่อกระตุ้นการจัดเตรียมโหนดอัตโนมัติ และสร้าง workload สำหรับ inference (`deployment` หรือ `statefulset`) ตามการตั้งค่าล่วงหน้าของโมเดล
+- **Node provisioner controller**: ตัว controller นี้ชื่อ *gpu-provisioner* ใน [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) ใช้ `machine` CRD ที่มาจาก [Karpenter](https://sigs.k8s.io/karpenter) เพื่อสื่อสารกับ workspace controller และเชื่อมต่อกับ Azure Kubernetes Service (AKS) API เพื่อเพิ่มโหนด GPU ใหม่ในคลัสเตอร์ AKS
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) เป็นคอมโพเนนต์แบบโอเพนซอร์ส สามารถแทนที่ด้วย controller อื่นได้หากรองรับ API ของ [Karpenter-core](https://sigs.k8s.io/karpenter)
 
 ## การติดตั้ง
 
@@ -84,7 +84,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-สถานะ workspace สามารถติดตามได้โดยรันคำสั่งด้านล่าง เมื่อคอลัมน์ WORKSPACEREADY แสดงค่า `True` แสดงว่าโมเดลถูก deploy สำเร็จแล้ว
+สถานะของ workspace สามารถตรวจสอบได้โดยรันคำสั่งด้านล่าง เมื่อคอลัมน์ WORKSPACEREADY แสดงค่า `True` หมายความว่าโมเดลถูกติดตั้งเรียบร้อยแล้ว
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -92,7 +92,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-ถัดไป สามารถหาค่า cluster ip ของบริการ inference และใช้ pod ชั่วคราวที่รันคำสั่ง `curl` เพื่อทดสอบ endpoint ของบริการในคลัสเตอร์
+จากนั้นสามารถค้นหา cluster ip ของบริการ inference และใช้ pod ชั่วคราวที่มีคำสั่ง `curl` เพื่อทดสอบ endpoint ของบริการในคลัสเตอร์ได้
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -156,7 +156,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-สถานะ workspace สามารถติดตามได้โดยรันคำสั่งด้านล่าง เมื่อคอลัมน์ WORKSPACEREADY แสดงค่า `True` แสดงว่าโมเดลถูก deploy สำเร็จแล้ว
+สถานะของ workspace สามารถตรวจสอบได้โดยรันคำสั่งด้านล่าง เมื่อคอลัมน์ WORKSPACEREADY แสดงค่า `True` หมายความว่าโมเดลถูกติดตั้งเรียบร้อยแล้ว
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -164,7 +164,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-ถัดไป สามารถหาค่า cluster ip ของบริการ inference และใช้ pod ชั่วคราวที่รันคำสั่ง `curl` เพื่อทดสอบ endpoint ของบริการในคลัสเตอร์
+จากนั้นสามารถค้นหา cluster ip ของบริการ inference และใช้ pod ชั่วคราวที่มีคำสั่ง `curl` เพื่อทดสอบ endpoint ของบริการในคลัสเตอร์ได้
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -176,4 +176,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาด้วย AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้การแปลมีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อนได้ เอกสารต้นฉบับในภาษาต้นฉบับควรถือเป็นแหล่งข้อมูลที่ถูกต้องและเชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้การแปลโดยมนุษย์มืออาชีพ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

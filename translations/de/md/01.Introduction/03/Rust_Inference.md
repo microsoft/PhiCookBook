@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-07T10:42:36+00:00",
+  "translation_date": "2025-07-16T21:24:23+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "de"
 }
 -->
 # Plattformübergreifende Inferenz mit Rust
 
-Dieses Tutorial führt uns durch den Prozess der Inferenz mit Rust und dem [Candle ML Framework](https://github.com/huggingface/candle) von HuggingFace. Die Verwendung von Rust für Inferenz bietet einige Vorteile, insbesondere im Vergleich zu anderen Programmiersprachen. Rust ist bekannt für seine hohe Leistung, die mit der von C und C++ vergleichbar ist. Das macht es zu einer ausgezeichneten Wahl für Inferenzaufgaben, die oft rechenintensiv sind. Besonders hervorzuheben sind dabei die zero-cost Abstraktionen und das effiziente Speichermanagement ohne Garbage Collection. Die plattformübergreifenden Fähigkeiten von Rust ermöglichen die Entwicklung von Code, der auf verschiedenen Betriebssystemen wie Windows, macOS und Linux sowie auf mobilen Betriebssystemen läuft, ohne dass größere Änderungen am Code notwendig sind.
+Dieses Tutorial führt uns durch den Prozess der Inferenz mit Rust und dem [Candle ML Framework](https://github.com/huggingface/candle) von HuggingFace. Die Verwendung von Rust für Inferenz bietet mehrere Vorteile, insbesondere im Vergleich zu anderen Programmiersprachen. Rust ist bekannt für seine hohe Leistung, vergleichbar mit der von C und C++. Das macht es zu einer ausgezeichneten Wahl für Inferenzaufgaben, die oft rechenintensiv sind. Besonders hervorzuheben sind die zero-cost Abstraktionen und das effiziente Speichermanagement ohne Garbage Collection. Die plattformübergreifenden Fähigkeiten von Rust ermöglichen die Entwicklung von Code, der auf verschiedenen Betriebssystemen läuft, darunter Windows, macOS und Linux sowie mobile Betriebssysteme, ohne dass größere Änderungen am Code nötig sind.
 
-Voraussetzung, um diesem Tutorial zu folgen, ist die [Installation von Rust](https://www.rust-lang.org/tools/install), die den Rust-Compiler und Cargo, den Rust-Paketmanager, beinhaltet.
+Voraussetzung für dieses Tutorial ist die [Installation von Rust](https://www.rust-lang.org/tools/install), die den Rust-Compiler und Cargo, den Rust-Paketmanager, beinhaltet.
 
 ## Schritt 1: Neues Rust-Projekt erstellen
 
@@ -21,9 +21,9 @@ Um ein neues Rust-Projekt zu erstellen, führen Sie folgenden Befehl im Terminal
 cargo new phi-console-app
 ```
 
-Dies erzeugt eine erste Projektstruktur mit einer `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Dies erzeugt eine erste Projektstruktur mit einer `Cargo.toml`-Datei und einem `src`-Verzeichnis, das eine `main.rs`-Datei enthält.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` Datei:
+Als Nächstes fügen wir unsere Abhängigkeiten – nämlich die Crates `candle`, `hf-hub` und `tokenizers` – zur `Cargo.toml`-Datei hinzu:
 
 ```toml
 [package]
@@ -41,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## Schritt 2: Grundlegende Parameter konfigurieren
 
-Innerhalb der main.rs-Datei legen wir die Anfangsparameter für unsere Inferenz fest. Diese werden der Einfachheit halber fest kodiert, können aber bei Bedarf angepasst werden.
+In der Datei main.rs richten wir die Anfangsparameter für unsere Inferenz ein. Diese werden der Einfachheit halber fest codiert, können aber bei Bedarf angepasst werden.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -57,11 +57,11 @@ let device = Device::Cpu;
 
 - **temperature**: Steuert die Zufälligkeit des Sampling-Prozesses.
 - **sample_len**: Gibt die maximale Länge des generierten Textes an.
-- **top_p**: Wird für Nucleus-Sampling verwendet, um die Anzahl der für jeden Schritt betrachteten Token zu begrenzen.
-- **repeat_last_n**: Bestimmt, wie viele Token bei der Anwendung einer Strafe zur Vermeidung von Wiederholungen berücksichtigt werden.
-- **repeat_penalty**: Der Strafwert, um wiederholte Token zu entmutigen.
-- **seed**: Ein Zufallswert (wir könnten auch einen festen Wert für bessere Reproduzierbarkeit verwenden).
-- **prompt**: Der initiale Prompt-Text, mit dem die Generierung gestartet wird. Beachten Sie, dass wir das Modell bitten, ein Haiku über Eishockey zu generieren, und dass wir es mit speziellen Tokens umgeben, um die Benutzer- und Assistententeile des Gesprächs zu kennzeichnen. Das Modell vervollständigt dann den Prompt mit einem Haiku.
+- **top_p**: Wird für Nucleus Sampling verwendet, um die Anzahl der für jeden Schritt betrachteten Tokens zu begrenzen.
+- **repeat_last_n**: Bestimmt, wie viele Tokens für die Anwendung einer Strafe zur Vermeidung von Wiederholungen berücksichtigt werden.
+- **repeat_penalty**: Der Strafwert, um wiederholte Tokens zu entmutigen.
+- **seed**: Ein Zufallssamen (für bessere Reproduzierbarkeit könnte ein konstanter Wert verwendet werden).
+- **prompt**: Der Anfangstext, mit dem die Generierung startet. Beachten Sie, dass wir das Modell bitten, ein Haiku über Eishockey zu generieren, und dass wir es mit speziellen Tokens umgeben, um die Benutzer- und Assistentenanteile des Gesprächs zu kennzeichnen. Das Modell vervollständigt dann den Prompt mit einem Haiku.
 - **device**: In diesem Beispiel verwenden wir die CPU für die Berechnung. Candle unterstützt auch die Ausführung auf GPU mit CUDA und Metal.
 
 ## Schritt 3: Modell und Tokenizer herunterladen/vorbereiten
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Wir verwenden die `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` Datei zum Tokenisieren unseres Eingabetextes. Nach dem Download wird das Modell zwischengespeichert, sodass der erste Durchlauf langsam ist (da 2,4 GB Modell heruntergeladen werden), die folgenden Durchläufe aber schneller ablaufen.
+Wir verwenden die `hf_hub` API, um die Modell- und Tokenizer-Dateien vom Hugging Face Model Hub herunterzuladen. Die `gguf`-Datei enthält die quantisierten Modellgewichte, während die `tokenizer.json`-Datei für die Tokenisierung unseres Eingabetextes genutzt wird. Nach dem Download wird das Modell zwischengespeichert, sodass der erste Durchlauf langsam ist (da 2,4 GB Modell heruntergeladen werden), aber die folgenden Ausführungen schneller sind.
 
 ## Schritt 4: Modell laden
 
@@ -92,7 +92,7 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Wir laden die quantisierten Modellgewichte in den Speicher und initialisieren das Phi-3-Modell. Dieser Schritt beinhaltet das Einlesen der Modellgewichte aus der `gguf`-Datei und das Einrichten des Modells für die Inferenz auf dem angegebenen Gerät (hier CPU).
+Wir laden die quantisierten Modellgewichte in den Speicher und initialisieren das Phi-3 Modell. Dieser Schritt beinhaltet das Einlesen der Modellgewichte aus der `gguf`-Datei und das Einrichten des Modells für die Inferenz auf dem angegebenen Gerät (hier CPU).
 
 ## Schritt 5: Prompt verarbeiten und für Inferenz vorbereiten
 
@@ -120,7 +120,7 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-In diesem Schritt tokenisieren wir den Eingabe-Prompt und bereiten ihn für die Inferenz vor, indem wir ihn in eine Sequenz von Token-IDs umwandeln. Außerdem initialisieren wir die `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` Werte. Jeder Token wird in einen Tensor umgewandelt und durch das Modell geschickt, um die Logits zu erhalten.
+In diesem Schritt tokenisieren wir den Eingabeprompt und bereiten ihn für die Inferenz vor, indem wir ihn in eine Sequenz von Token-IDs umwandeln. Außerdem initialisieren wir den `LogitsProcessor`, der den Sampling-Prozess (Wahrscheinlichkeitsverteilung über den Wortschatz) basierend auf den angegebenen `temperature`- und `top_p`-Werten steuert. Jeder Token wird in einen Tensor umgewandelt und durch das Modell geleitet, um die Logits zu erhalten.
 
 Die Schleife verarbeitet jeden Token im Prompt, aktualisiert den LogitsProcessor und bereitet die Generierung des nächsten Tokens vor.
 
@@ -160,10 +160,10 @@ for index in 0..to_sample {
 }
 ```
 
-In der Inferenzschleife generieren wir Token nacheinander, bis wir die gewünschte Sample-Länge erreicht haben oder das End-of-Sequence-Token auftaucht. Der nächste Token wird in einen Tensor umgewandelt und durch das Modell geleitet, während die Logits verarbeitet werden, um Strafen und Sampling anzuwenden. Danach wird der nächste Token ausgewählt, decodiert und an die Sequenz angehängt.
-Um Wiederholungen zu vermeiden, wird basierend auf den Parametern `repeat_last_n` and `repeat_penalty` eine Strafe auf wiederholte Token angewandt.
+In der Inferenzschleife generieren wir Tokens einzeln, bis die gewünschte Sample-Länge erreicht ist oder ein End-of-Sequence-Token auftaucht. Der nächste Token wird in einen Tensor umgewandelt und durch das Modell geleitet, während die Logits verarbeitet werden, um Strafen und Sampling anzuwenden. Anschließend wird der nächste Token ausgewählt, decodiert und an die Sequenz angehängt.
+Um Wiederholungen zu vermeiden, wird eine Strafe auf wiederholte Tokens angewendet, basierend auf den Parametern `repeat_last_n` und `repeat_penalty`.
 
-Schließlich wird der generierte Text während der Decodierung ausgegeben, um eine Echtzeit-Stream-Ausgabe zu gewährleisten.
+Schließlich wird der generierte Text während der Decodierung ausgegeben, um eine gestreamte Echtzeitausgabe zu gewährleisten.
 
 ## Schritt 7: Anwendung ausführen
 
@@ -173,7 +173,7 @@ Um die Anwendung auszuführen, geben Sie folgenden Befehl im Terminal ein:
 cargo run --release
 ```
 
-Dies sollte ein Haiku über Eishockey ausgeben, das vom Phi-3-Modell generiert wurde. Etwa so:
+Dies sollte ein Haiku über Eishockey ausgeben, das vom Phi-3 Modell generiert wurde. Etwa so:
 
 ```
 Puck glides swiftly,  
@@ -191,11 +191,11 @@ Swish of sticks now alive.
 
 ## Fazit
 
-Wenn wir diese Schritte befolgen, können wir mit dem Phi-3-Modell in Rust und Candle Textgenerierung in weniger als 100 Codezeilen durchführen. Der Code übernimmt das Laden des Modells, die Tokenisierung und die Inferenz und nutzt Tensoren und Logits-Verarbeitung, um kohärenten Text basierend auf dem Eingabe-Prompt zu erzeugen.
+Mit diesen Schritten können wir Textgenerierung mit dem Phi-3 Modell in Rust und Candle in weniger als 100 Zeilen Code durchführen. Der Code übernimmt das Laden des Modells, die Tokenisierung und die Inferenz und nutzt Tensoren sowie Logits-Verarbeitung, um kohärenten Text basierend auf dem Eingabeprompt zu erzeugen.
 
-Diese Konsolenanwendung läuft unter Windows, Linux und Mac OS. Aufgrund der Portabilität von Rust kann der Code auch so angepasst werden, dass er als Bibliothek in mobilen Apps läuft (Konsolenanwendungen können dort ja nicht ausgeführt werden).
+Diese Konsolenanwendung läuft unter Windows, Linux und Mac OS. Aufgrund der Portabilität von Rust kann der Code auch zu einer Bibliothek angepasst werden, die in mobilen Apps läuft (Konsolenanwendungen sind dort schließlich nicht ausführbar).
 
-## Anhang: kompletter Code
+## Anhang: vollständiger Code
 
 ```rust
 use candle_core::{quantized::gguf_file, Device, Tensor};
@@ -318,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Für weitere Beispiele zur Nutzung des Phi-3-Modells mit Rust und Candle, einschließlich alternativer Inferenzansätze, besuchen Sie das offizielle [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) Repository.
+> Weitere Beispiele zur Verwendung des Phi-3 Modells mit Rust und Candle, einschließlich alternativer Ansätze zur Inferenz, finden Sie im offiziellen [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) Repository.
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Verwendung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

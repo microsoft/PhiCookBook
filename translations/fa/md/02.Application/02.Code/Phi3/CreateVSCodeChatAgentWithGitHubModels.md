@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-07T13:45:43+00:00",
+  "translation_date": "2025-07-17T03:21:36+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "fa"
 }
 -->
-# **ساخت عامل چت Visual Studio Code خودتان با Phi-3.5 از مدل‌های GitHub**
+# **ایجاد عامل چت Visual Studio Code خودتان با Phi-3.5 توسط GitHub Models**
 
-آیا از Visual Studio Code Copilot استفاده می‌کنید؟ به‌ویژه در بخش چت، می‌توانید از عوامل مختلفی بهره ببرید تا توانایی ایجاد، نوشتن و نگهداری پروژه‌ها در Visual Studio Code را بهبود ببخشید. Visual Studio Code یک API ارائه می‌دهد که به شرکت‌ها و افراد امکان می‌دهد عوامل مختلفی بر اساس کسب‌وکار خود بسازند تا قابلیت‌هایشان را در حوزه‌های تخصصی مختلف گسترش دهند. در این مقاله، تمرکز ما بر **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** از مدل‌های GitHub برای ساخت عامل Visual Studio Code خودتان خواهد بود.
+آیا از Visual Studio Code Copilot استفاده می‌کنید؟ به‌ویژه در بخش چت، می‌توانید از عوامل مختلفی برای بهبود توانایی ایجاد، نوشتن و نگهداری پروژه‌ها در Visual Studio Code بهره ببرید. Visual Studio Code یک API ارائه می‌دهد که به شرکت‌ها و افراد اجازه می‌دهد عوامل مختلفی بر اساس کسب‌وکار خود بسازند تا قابلیت‌هایشان را در حوزه‌های اختصاصی مختلف گسترش دهند. در این مقاله، تمرکز ما بر روی **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** از GitHub Models برای ساخت عامل Visual Studio Code خودتان خواهد بود.
 
-## **درباره Phi-3.5 در مدل‌های GitHub**
+## **درباره Phi-3.5 در GitHub Models**
 
-می‌دانیم که Phi-3/3.5-mini-instruct در خانواده Phi-3/3.5 دارای توانایی‌های قوی در درک و تولید کد است و نسبت به Gemma-2-9b و Mistral-Nemo-12B-instruct-2407 مزیت دارد.
+می‌دانیم که Phi-3/3.5-mini-instruct در خانواده Phi-3/3.5 توانایی‌های قوی در درک و تولید کد دارد و نسبت به Gemma-2-9b و Mistral-Nemo-12B-instruct-2407 مزیت‌هایی دارد.
 
 ![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.fa.png)
 
-جدیدترین مدل‌های GitHub هم‌اکنون دسترسی به مدل‌های Phi-3.5-mini-instruct (128k) و Phi-3.5-vision-instruct (128k) را فراهم کرده‌اند. توسعه‌دهندگان می‌توانند از طریق OpenAI SDK، Azure AI Inference SDK و REST API به آن‌ها دسترسی داشته باشند.
+جدیدترین GitHub Models دسترسی به مدل‌های Phi-3.5-mini-instruct (128k) و Phi-3.5-vision-instruct (128k) را فراهم کرده‌اند. توسعه‌دهندگان می‌توانند از طریق OpenAI SDK، Azure AI Inference SDK و REST API به آن‌ها دسترسی پیدا کنند.
 
 ![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.fa.png)
 
 ***توجه:*** توصیه می‌شود از Azure AI Inference SDK استفاده کنید، زیرا در محیط تولید بهتر می‌تواند با Azure Model Catalog جابجا شود.
 
-نتایج **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** در سناریوی تولید کد پس از اتصال به مدل‌های GitHub در ادامه آمده است و همچنین برای مثال‌های بعدی آماده شده‌اند.
+در ادامه نتایج **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** در سناریوی تولید کد پس از اتصال به GitHub Models آمده است و همچنین برای مثال‌های بعدی آماده شده‌اند.
 
-**دمو: تولید کد با Phi-3.5-mini-instruct (128k) مدل‌های GitHub از روی Prompt** ([اینجا کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**دمو: تولید کد توسط GitHub Models Phi-3.5-mini-instruct (128k) از روی Prompt** ([برای مشاهده اینجا کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**دمو: تولید کد با Phi-3.5-vision-instruct (128k) مدل‌های GitHub از روی تصویر** ([اینجا کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**دمو: تولید کد توسط GitHub Models Phi-3.5-vision-instruct (128k) از روی تصویر** ([برای مشاهده اینجا کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 
 ## **درباره عامل چت GitHub Copilot**
 
-عامل چت GitHub Copilot می‌تواند وظایف مختلفی را در سناریوهای پروژه مختلف بر اساس کد انجام دهد. سیستم شامل چهار عامل است: workspace، github، terminal، vscode
+عامل چت GitHub Copilot می‌تواند وظایف مختلفی را در سناریوهای پروژه متفاوت بر اساس کد انجام دهد. این سیستم چهار عامل دارد: workspace، github، terminal، vscode
 
 ![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.fa.png)
 
-با افزودن نام عامل به همراه ‘@’ می‌توانید سریعاً کار مربوطه را انجام دهید. برای شرکت‌ها، اگر محتوای مرتبط با کسب‌وکار خود مانند نیازمندی‌ها، کدنویسی، مشخصات تست و انتشار را اضافه کنید، می‌توانید قابلیت‌های خصوصی قدرتمندتری بر اساس GitHub Copilot داشته باشید.
+با اضافه کردن نام عامل به همراه ‘@’ می‌توانید به سرعت کار مربوطه را انجام دهید. برای شرکت‌ها، اگر محتوای مرتبط با کسب‌وکار خود مانند نیازمندی‌ها، کدنویسی، مشخصات تست و انتشار را اضافه کنید، می‌توانید قابلیت‌های خصوصی قدرتمندتری بر اساس GitHub Copilot داشته باشید.
 
-عامل چت Visual Studio Code اکنون API رسمی خود را منتشر کرده است که به شرکت‌ها یا توسعه‌دهندگان سازمانی اجازه می‌دهد عوامل مختلفی بر اساس اکوسیستم‌های نرم‌افزاری بسازند. بر اساس روش توسعه افزونه Visual Studio Code، می‌توانید به راحتی به رابط API عامل چت Visual Studio Code دسترسی پیدا کنید. ما می‌توانیم بر اساس این روند توسعه دهیم.
+عامل چت Visual Studio Code اکنون به‌طور رسمی API خود را منتشر کرده است که به شرکت‌ها یا توسعه‌دهندگان سازمانی اجازه می‌دهد عوامل مبتنی بر اکوسیستم‌های مختلف نرم‌افزاری بسازند. بر اساس روش توسعه افزونه Visual Studio Code، می‌توانید به راحتی به رابط API عامل چت Visual Studio Code دسترسی پیدا کنید. ما می‌توانیم بر اساس این روند توسعه دهیم.
 
 ![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.fa.png)
 
-سناریوی توسعه می‌تواند دسترسی به API مدل‌های شخص ثالث (مانند مدل‌های GitHub، Azure Model Catalog و سرویس‌های خودساخته بر اساس مدل‌های متن‌باز) را پشتیبانی کند و همچنین می‌توان از مدل‌های gpt-35-turbo، gpt-4 و gpt-4o ارائه شده توسط GitHub Copilot استفاده کرد.
+سناریوی توسعه می‌تواند از دسترسی به API مدل‌های شخص ثالث (مانند GitHub Models، Azure Model Catalog و سرویس‌های خودساخته بر اساس مدل‌های متن‌باز) پشتیبانی کند و همچنین می‌تواند از مدل‌های gpt-35-turbo، gpt-4 و gpt-4o ارائه شده توسط GitHub Copilot استفاده کند.
 
 ## **افزودن عامل @phicoding بر پایه Phi-3.5**
 
-ما سعی داریم توانایی‌های برنامه‌نویسی Phi-3.5 را برای انجام نوشتن کد، تولید کد از تصویر و سایر وظایف ادغام کنیم. یک عامل ساخته شده حول Phi-3.5 - @PHI را تکمیل می‌کنیم که برخی از قابلیت‌های آن به شرح زیر است:
+ما تلاش می‌کنیم توانایی‌های برنامه‌نویسی Phi-3.5 را برای تکمیل نوشتن کد، تولید کد از تصویر و سایر وظایف ادغام کنیم. یک عامل ساخته شده حول Phi-3.5 - @PHI را کامل کنیم، که برخی از قابلیت‌های آن عبارتند از:
 
 1. تولید معرفی‌نامه خودکار بر اساس GPT-4o ارائه شده توسط GitHub Copilot از طریق دستور **@phicoding /help**
 
@@ -65,7 +65,7 @@ CO_OP_TRANSLATOR_METADATA:
 npm install --global yo generator-code 
 
 ```
-2. ایجاد افزونه Visual Studio Code Extension (با حالت توسعه Typescript، به نام phiext)
+2. ایجاد افزونه Visual Studio Code (با حالت توسعه Typescript، با نام phiext)
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. باز کردن پروژه ساخته شده و اصلاح package.json. در اینجا دستورات و پیکربندی‌های مرتبط و همچنین پیکربندی مدل‌های GitHub قرار دارد. توجه کنید که باید توکن مدل‌های GitHub خود را اضافه کنید.
+3. پروژه ایجاد شده را باز کرده و package.json را ویرایش کنید. در اینجا دستورالعمل‌ها و پیکربندی‌های مرتبط و همچنین پیکربندی GitHub Models آمده است. توجه داشته باشید که باید توکن GitHub Models خود را اینجا اضافه کنید.
 
 ```json
 
@@ -191,7 +191,7 @@ yo code
 
 ```
 
-4. اصلاح فایل src/extension.ts
+4. ویرایش فایل src/extension.ts
 
 ```typescript
 
@@ -382,11 +382,11 @@ export function deactivate() {}
 
 ## **منابع**
 
-1. ثبت‌نام در مدل‌های GitHub [https://gh.io/models](https://gh.io/models)
+1. ثبت‌نام در GitHub Models [https://gh.io/models](https://gh.io/models)
 
-2. آموزش توسعه افزونه Visual Studio Code [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. یادگیری توسعه افزونه Visual Studio Code [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. آموزش درباره API چت Visual Studio Code Coilot [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. آشنایی با API چت Visual Studio Code Coilot [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما برای دقت تلاش می‌کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، توصیه می‌شود از ترجمه حرفه‌ای انسانی استفاده شود. ما مسئول هیچ گونه سوءتفاهم یا برداشت نادرستی که ناشی از استفاده از این ترجمه باشد، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.

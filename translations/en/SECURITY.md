@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "57f14126c1c6add76b3aef3844dfe4e3",
-  "translation_date": "2025-07-09T18:53:46+00:00",
+  "translation_date": "2025-07-16T15:37:42+00:00",
   "source_file": "SECURITY.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Microsoft takes the security of our software products and services seriously, including all source code repositories managed through our GitHub organizations, such as [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet), and [Xamarin](https://github.com/xamarin).
 
-If you believe you have discovered a security vulnerability in any Microsoft-owned repository that fits [Microsoft's definition of a security vulnerability](https://aka.ms/security.md/definition), please report it to us as described below.
+If you believe you have discovered a security vulnerability in any Microsoft-owned repository that fits [Microsoft's definition of a security vulnerability](https://aka.ms/security.md/definition), please report it to us as outlined below.
 
 ## Reporting Security Issues
 
@@ -21,13 +21,13 @@ Instead, report them to the Microsoft Security Response Center (MSRC) at [https:
 
 If you prefer to submit without logging in, send an email to [secure@microsoft.com](mailto:secure@microsoft.com). If possible, encrypt your message using our PGP key; you can download it from the [Microsoft Security Response Center PGP Key page](https://aka.ms/security.md/msrc/pgp).
 
-You should receive a response within 24 hours. If you don’t, please follow up via email to confirm we received your original message. Additional information is available at [microsoft.com/msrc](https://www.microsoft.com/msrc).
+You should receive a response within 24 hours. If you do not hear back for any reason, please follow up via email to confirm we received your original message. Additional information is available at [microsoft.com/msrc](https://www.microsoft.com/msrc).
 
 Please include the following information (as much as you can provide) to help us better understand the nature and scope of the potential issue:
 
   * Type of issue (e.g., buffer overflow, SQL injection, cross-site scripting, etc.)
   * Full paths of source file(s) related to the issue
-  * Location of the affected source code (tag/branch/commit or direct URL)
+  * The location of the affected source code (tag/branch/commit or direct URL)
   * Any special configuration needed to reproduce the issue
   * Step-by-step instructions to reproduce the issue
   * Proof-of-concept or exploit code (if available)

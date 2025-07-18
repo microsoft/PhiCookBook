@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-07T14:41:07+00:00",
+  "translation_date": "2025-07-16T21:25:47+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "mo"
 }
 -->
-# Cross-platform inference with Rust
+# 使用 Rust 進行跨平台推論
 
-This tutorial will guide us through the process of performing inference using Rust and the [Candle ML framework](https://github.com/huggingface/candle) from HuggingFace. Using Rust for inference offers several advantages, particularly when compared to other programming languages. Rust is known for its high performance, comparable to that of C and C++. This makes it an excellent choice for inference tasks, which can be computationally intensive. In particular, this is driven by the zero-cost abstractions and efficient memory management, which has no garbage collection overhead. Rust's cross-platform capabilities enable development of code that run on various operating systems, including Windows, macOS, and Linux, as well as mobile operating systems, without significant changes to the codebase.
+本教學將引導我們使用 Rust 以及 HuggingFace 的 [Candle ML 框架](https://github.com/huggingface/candle) 來執行推論。與其他程式語言相比，使用 Rust 進行推論有多項優勢。Rust 以其高效能著稱，效能可媲美 C 和 C++，因此非常適合計算密集的推論任務。這主要得益於其零成本抽象和高效的記憶體管理，且沒有垃圾回收的負擔。Rust 的跨平台能力使得開發的程式碼能在多種作業系統上運行，包括 Windows、macOS 和 Linux，以及行動作業系統，且不需對程式碼庫做重大修改。
 
-The prerequisite to follow this tutorial is to [install Rust](https://www.rust-lang.org/tools/install), which includes the Rust compiler and Cargo, the Rust package manager.
+要跟隨本教學，前提是先[安裝 Rust](https://www.rust-lang.org/tools/install)，其中包含 Rust 編譯器和 Rust 套件管理工具 Cargo。
 
-## Step 1: Create a New Rust Project
+## 步驟 1：建立新的 Rust 專案
 
-To create a new Rust project, run the following command in the terminal:
+在終端機中執行以下指令來建立新的 Rust 專案：
 
 ```bash
 cargo new phi-console-app
 ```
 
-This generates an initial project structure with a `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+此指令會產生一個初始專案結構，包含 `Cargo.toml` 檔案和一個 `src` 目錄，裡面有 `main.rs` 檔案。
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` file:
+接著，我們將在 `Cargo.toml` 檔案中加入所需的依賴套件——也就是 `candle`、`hf-hub` 和 `tokenizers` crates：
 
 ```toml
 [package]
@@ -39,9 +39,9 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## Step 2: Configure Basic Parameters
+## 步驟 2：設定基本參數
 
-Inside the main.rs file, we will set up the initial parameters for our inference. They are all going to be hardcoded for simplicity, but we can modify them as needed.
+在 main.rs 檔案中，我們會設定推論的初始參數。為了簡化起見，這些參數都會硬編碼，但我們可以根據需要進行修改。
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,16 +55,16 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: Controls the randomness of the sampling process.
-- **sample_len**: Specifies the maximum length of the generated text.
-- **top_p**: Used for nucleus sampling to limit the number of tokens considered for each step.
-- **repeat_last_n**: Controls the number of tokens considered for applying a penalty to prevent repetitive sequences.
-- **repeat_penalty**: The penalty value to discourage repeated tokens.
-- **seed**: A random seed (we could use a constant value for better reproducibility).
-- **prompt**: The initial prompt text to start the generation. Notice that we ask the model to generate a haiku about ice hockey, and that we wrap it with special tokens to indicate the user and assistant parts of the conversation. The model will then complete the prompt with a haiku.
-- **device**: We use the CPU for computation in this example. Candle supports running on GPU with CUDA and Metal as well.
+- **temperature**：控制取樣過程的隨機程度。
+- **sample_len**：指定生成文字的最大長度。
+- **top_p**：用於 nucleus 取樣，限制每一步考慮的詞彙數量。
+- **repeat_last_n**：控制考慮用於懲罰以防止重複序列的詞彙數量。
+- **repeat_penalty**：用來抑制重複詞彙的懲罰值。
+- **seed**：隨機種子（我們可以使用固定值以提高可重現性）。
+- **prompt**：生成的起始提示文字。注意，我們請模型生成一首關於冰球的俳句，並用特殊標記包裹以區分使用者和助理的對話部分。模型將根據提示完成俳句。
+- **device**：本範例使用 CPU 進行計算。Candle 也支援使用 CUDA 和 Metal 在 GPU 上運行。
 
-## Step 3: Download/Prepare Model and Tokenizer
+## 步驟 3：下載/準備模型與分詞器
 
 ```rust
 let api = hf_hub::api::sync::Api::new()?;
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-We use the `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` file is used for tokenizing our input text. Once downloaded the model is cached, so the first execution would be slow (as it downloads the 2.4GB of the model) but subsequent executions would be faster.
+我們使用 `hf_hub` API 從 Hugging Face 模型庫下載模型和分詞器檔案。`gguf` 檔案包含量化後的模型權重，而 `tokenizer.json` 用於將輸入文字分詞。下載後模型會被快取，因此第一次執行會較慢（因為要下載 2.4GB 的模型），但後續執行會更快。
 
-## Step 4: Load Model
+## 步驟 4：載入模型
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-We load the quantized model weights into memory and initialize the Phi-3 model. This step involves reading the model weights from the `gguf` file and setting up the model for inference on the specified device (CPU in this case).
+我們將量化後的模型權重載入記憶體，並初始化 Phi-3 模型。此步驟涉及從 `gguf` 檔案讀取模型權重，並在指定裝置（此例為 CPU）上設定模型以供推論。
 
-## Step 5: Process Prompt and Prepare for Inference
+## 步驟 5：處理提示並準備推論
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-In this step, we tokenize the input prompt and prepare it for inference by converting it into a sequence of token IDs. We also initialize the `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` values. Each token is converted into a tensor and passed through the model to get the logits.
+此步驟中，我們將輸入提示進行分詞，並轉換成詞彙 ID 序列以準備推論。我們也初始化 `LogitsProcessor`，根據設定的 `temperature` 和 `top_p` 參數來處理取樣過程（詞彙的機率分布）。每個詞彙會被轉成張量並送入模型以取得 logits。
 
-The loop processes each token in the prompt, updating the logits processor and preparing for the next token generation.
+迴圈會處理提示中的每個詞彙，更新 logits 處理器並準備下一個詞彙的生成。
 
-## Step 6: Inference
+## 步驟 6：推論
 
 ```rust
 for index in 0..to_sample {
@@ -160,20 +160,21 @@ for index in 0..to_sample {
 }
 ```
 
-In the inference loop, we generate tokens one by one until we reach the desired sample length or encounter the end-of-sequence token. The next token is converted to a tensor and passed through the model, while the logits are processed to apply penalties and sampling. Then the next token is sampled, decoded, and appended to the sequence.
-To avoid repetitive text, a penalty is applied to repeated tokens based on the `repeat_last_n` and `repeat_penalty` parameters.
+在推論迴圈中，我們逐字生成詞彙，直到達到指定的生成長度或遇到序列結束標記。下一個詞彙會被轉成張量並送入模型，logits 會被處理以應用懲罰和取樣。接著抽樣出下一個詞彙，解碼後加入序列中。
 
-Finally, the generated text is printed as it's decoded, ensuring streamed real-time output.
+為避免重複文字，會根據 `repeat_last_n` 和 `repeat_penalty` 參數對重複詞彙施加懲罰。
 
-## Step 7: Run the Application
+最後，生成的文字會在解碼時即時輸出，確保串流的即時顯示。
 
-To run the application, execute the following command in the terminal:
+## 步驟 7：執行應用程式
+
+在終端機中執行以下指令來執行應用程式：
 
 ```bash
 cargo run --release
 ```
 
-This should print a haiku about ice hockey generated by the Phi-3 model. Something like:
+這會印出由 Phi-3 模型生成的關於冰球的俳句。可能會是類似以下的內容：
 
 ```
 Puck glides swiftly,  
@@ -181,7 +182,7 @@ Blades on ice dance and clash—peace found
 in the cold battle.
 ```
 
-or
+或是
 
 ```
 Glistening puck glides in,
@@ -189,13 +190,13 @@ On ice rink's silent stage it thrives—
 Swish of sticks now alive.
 ```
 
-## Conclusion
+## 結論
 
-By following these steps, we can perform text generation using the Phi-3 model with Rust and Candle in under 100 lines of code. The code handles model loading, tokenization, and inference, leveraging tensors and logits processing to generate coherent text based on the input prompt.
+透過以上步驟，我們可以使用 Rust 和 Candle 在不到 100 行程式碼中完成 Phi-3 模型的文字生成。程式碼涵蓋模型載入、分詞和推論，利用張量和 logits 處理來根據輸入提示生成連貫的文字。
 
-This console application can run on Windows, Linux and Mac OS. Becuase of Rust's portability, the code can also be adapted to a library that would run inside mobile apps (we can't run console apps there, after all).
+此命令列應用程式可在 Windows、Linux 和 Mac OS 上執行。由於 Rust 的可攜性，程式碼也能改寫成可在行動應用中運行的函式庫（畢竟行動裝置無法直接執行命令列應用程式）。
 
-## Appendix: full code
+## 附錄：完整程式碼
 
 ```rust
 use candle_core::{quantized::gguf_file, Device, Tensor};
@@ -304,7 +305,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Note: in order to run this code on aarch64 Linux or aarch64 Windows, add a file named `.cargo/config` with the following content:
+注意：若要在 aarch64 Linux 或 aarch64 Windows 上執行此程式碼，請新增一個名為 `.cargo/config` 的檔案，內容如下：
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +319,7 @@ rustflags = [
 ]
 ```
 
-> You can visit the official [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) repository for more examples on how to use the Phi-3 model with Rust and Candle, including alternative approaches to inference.
+> 你可以造訪官方的 [Candle 範例](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) 倉庫，查看更多如何使用 Rust 和 Candle 搭配 Phi-3 模型的範例，包括其他推論方法。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

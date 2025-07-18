@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:52:00+00:00",
+  "translation_date": "2025-07-16T20:50:28+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "tr"
 }
@@ -11,34 +11,34 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Kaito](https://github.com/Azure/kaito), Kubernetes kümesinde AI/ML çıkarım modeli dağıtımını otomatikleştiren bir operatördür.
 
-Kaito, sanal makine altyapıları üzerine kurulu çoğu yaygın model dağıtım yöntemine kıyasla şu önemli farklılıklara sahiptir:
+Kaito, sanal makine altyapıları üzerine kurulu çoğu yaygın model dağıtım yöntemine kıyasla şu önemli farklara sahiptir:
 
 - Model dosyalarını konteyner imajları kullanarak yönetir. Model kütüphanesi üzerinden çıkarım çağrıları yapmak için bir http sunucusu sağlar.
-- Önceden ayarlanmış konfigürasyonlar sunarak GPU donanımına uyacak şekilde dağıtım parametrelerini ayarlama ihtiyacını ortadan kaldırır.
+- GPU donanımına uyacak şekilde dağıtım parametrelerini ayarlamaktan kaçınmak için önceden tanımlanmış yapılandırmalar sunar.
 - Model gereksinimlerine göre GPU düğümlerini otomatik olarak sağlar.
-- Lisans izin veriyorsa, büyük model imajlarını halka açık Microsoft Container Registry (MCR)’de barındırır.
+- Lisans izin veriyorsa, büyük model imajlarını Microsoft Container Registry (MCR) üzerinde barındırır.
 
-Kaito kullanarak, Kubernetes’te büyük AI çıkarım modellerinin entegrasyon süreci büyük ölçüde basitleştirilir.
+Kaito kullanarak, Kubernetes'te büyük AI çıkarım modellerinin entegrasyon iş akışı büyük ölçüde basitleşir.
 
 ## Mimari
 
-Kaito, klasik Kubernetes Custom Resource Definition(CRD)/controller tasarım desenini takip eder. Kullanıcı, GPU gereksinimlerini ve çıkarım spesifikasyonunu tanımlayan bir `workspace` özel kaynağını yönetir. Kaito controller’ları, `workspace` özel kaynağını uzlaştırarak dağıtımı otomatikleştirir.
+Kaito, klasik Kubernetes Custom Resource Definition (CRD)/controller tasarım desenini takip eder. Kullanıcı, GPU gereksinimlerini ve çıkarım spesifikasyonunu tanımlayan bir `workspace` özel kaynağını yönetir. Kaito controller'ları, `workspace` özel kaynağını uzlaştırarak dağıtımı otomatikleştirir.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito mimarisi" alt="Kaito mimarisi">
 </div>
 
-Yukarıdaki şekil Kaito mimarisinin genel görünümünü sunar. Başlıca bileşenleri şunlardır:
+Yukarıdaki şekil, Kaito mimarisinin genel görünümünü sunar. Ana bileşenleri şunlardır:
 
-- **Workspace controller**: `workspace` özel kaynağını uzlaştırır, düğüm otomatik sağlama tetiklemek için `machine` (aşağıda açıklanmıştır) özel kaynaklarını oluşturur ve model ön ayar konfigürasyonlarına dayanarak çıkarım iş yükünü (`deployment` veya `statefulset`) yaratır.
-- **Node provisioner controller**: Controller adı [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) içinde *gpu-provisioner* olarak geçer. Workspace controller ile etkileşim için [Karpenter](https://sigs.k8s.io/karpenter) kökenli `machine` CRD’sini kullanır. Azure Kubernetes Service (AKS) API’leri ile entegre olarak AKS kümesine yeni GPU düğümleri ekler.  
-> Not: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) açık kaynaklı bir bileşendir. Eğer desteklerse, [Karpenter-core](https://sigs.k8s.io/karpenter) API’lerini kullanan diğer controller’lar ile değiştirilebilir.
+- **Workspace controller**: `workspace` özel kaynağını uzlaştırır, düğüm otomatik sağlama tetiklemek için `machine` (aşağıda açıklanmıştır) özel kaynakları oluşturur ve model ön ayar yapılandırmalarına göre çıkarım iş yükünü (`deployment` veya `statefulset`) oluşturur.
+- **Node provisioner controller**: Controller'ın adı [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) içinde *gpu-provisioner* olarak geçer. [Karpenter](https://sigs.k8s.io/karpenter) kaynaklı `machine` CRD'sini kullanarak workspace controller ile etkileşime girer. Azure Kubernetes Service (AKS) API'leri ile entegre olarak AKS kümesine yeni GPU düğümleri ekler.
+> Not: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) açık kaynaklı bir bileşendir. Eğer destekliyorsa, [Karpenter-core](https://sigs.k8s.io/karpenter) API'lerini kullanan diğer controller'larla değiştirilebilir.
 
 ## Kurulum
 
-Lütfen kurulum rehberine [buradan](https://github.com/Azure/kaito/blob/main/docs/installation.md) bakınız.
+Kurulum rehberine [buradan](https://github.com/Azure/kaito/blob/main/docs/installation.md) ulaşabilirsiniz.
 
-## Hızlı Başlangıç Inference Phi-3  
-[Örnek Kod Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Hızlı Başlangıç Çıkarım Phi-3
+[Örnek Kod Çıkarım Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Workspace durumunu aşağıdaki komut ile takip edebilirsiniz. WORKSPACEREADY sütunu `True` olduğunda model başarıyla dağıtılmış demektir.
+Workspace durumunu aşağıdaki komutla takip edebilirsiniz. WORKSPACEREADY sütunu `True` olduğunda, model başarıyla dağıtılmış demektir.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Sonrasında, çıkarım servisi cluster IP’si bulunabilir ve geçici bir `curl` pod’u kullanılarak cluster içindeki servis uç noktası test edilebilir.
+Sonrasında, çıkarım servisinin küme IP'si bulunabilir ve geçici bir `curl` pod'u kullanılarak küme içindeki servis uç noktası test edilebilir.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Adaptörlerle Hızlı Başlangıç Inference Phi-3
+## Adaptörlerle Hızlı Başlangıç Çıkarım Phi-3
 
 Kaito kurulduktan sonra, çıkarım servisini başlatmak için aşağıdaki komutlar denenebilir.
 
-[Örnek Kod Adaptörlü Inference Phi-3](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Örnek Kod Adaptörlü Çıkarım Phi-3](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Workspace durumunu aşağıdaki komut ile takip edebilirsiniz. WORKSPACEREADY sütunu `True` olduğunda model başarıyla dağıtılmış demektir.
+Workspace durumunu aşağıdaki komutla takip edebilirsiniz. WORKSPACEREADY sütunu `True` olduğunda, model başarıyla dağıtılmış demektir.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Sonrasında, çıkarım servisi cluster IP’si bulunabilir ve geçici bir `curl` pod’u kullanılarak cluster içindeki servis uç noktası test edilebilir.
+Sonrasında, çıkarım servisinin küme IP'si bulunabilir ve geçici bir `curl` pod'u kullanılarak küme içindeki servis uç noktası test edilebilir.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

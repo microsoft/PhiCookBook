@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-09T20:06:57+00:00",
+  "translation_date": "2025-07-16T20:46:36+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "en"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Kaito offers the following key advantages compared to most mainstream model deployment methods built on virtual machine infrastructures:
 
-- Manage model files through container images. A HTTP server is provided to handle inference requests using the model library.
+- Manage model files using container images. An HTTP server is provided to handle inference requests using the model library.
 - Eliminate the need to tune deployment parameters for specific GPU hardware by offering preset configurations.
 - Automatically provision GPU nodes based on model requirements.
 - Host large model images in the public Microsoft Container Registry (MCR) if licensing permits.
@@ -30,8 +30,8 @@ Kaito follows the classic Kubernetes Custom Resource Definition (CRD)/controller
 
 The diagram above shows an overview of Kaito’s architecture. Its main components include:
 
-- **Workspace controller**: This controller reconciles the `workspace` custom resource, creates `machine` (explained below) custom resources to trigger node auto-provisioning, and creates the inference workload (`deployment` or `statefulset`) based on the model’s preset configurations.
-- **Node provisioner controller**: Known as *gpu-provisioner* in the [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner), this controller uses the `machine` CRD from [Karpenter](https://sigs.k8s.io/karpenter) to interact with the workspace controller. It integrates with Azure Kubernetes Service (AKS) APIs to add new GPU nodes to the AKS cluster. 
+- **Workspace controller**: It reconciles the `workspace` custom resource, creates `machine` (explained below) custom resources to trigger node auto-provisioning, and creates the inference workload (`deployment` or `statefulset`) based on the model’s preset configurations.
+- **Node provisioner controller**: This controller is called *gpu-provisioner* in the [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). It uses the `machine` CRD from [Karpenter](https://sigs.k8s.io/karpenter) to interact with the workspace controller. It integrates with Azure Kubernetes Service (AKS) APIs to add new GPU nodes to the AKS cluster. 
 > Note: The [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) is an open-source component. It can be replaced by other controllers if they support [Karpenter-core](https://sigs.k8s.io/karpenter) APIs.
 
 ## Installation
@@ -105,7 +105,7 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 ## Quick start Inference Phi-3 with adapters
 
-After installing Kaito, you can use the following commands to start an inference service.
+After installing Kaito, you can run the following commands to start an inference service.
 
 [Sample Code Inference Phi-3 with Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 

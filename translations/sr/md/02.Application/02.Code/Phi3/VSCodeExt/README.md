@@ -2,111 +2,111 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-05-09T19:17:47+00:00",
+  "translation_date": "2025-07-17T03:45:28+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
   "language_code": "sr"
 }
 -->
-# **Napravite sopstveni Visual Studio Code GitHub Copilot Chat sa Microsoft Phi-3 Family**
+# **Направите свој Visual Studio Code GitHub Copilot Chat са Microsoft Phi-3 породицом**
 
-Da li ste koristili workspace agenta u GitHub Copilot Chat-u? Želite li da napravite agenta za kod vaše tima? Ova praktična radionica ima za cilj da kombinuje open source model za izgradnju poslovnog agenta za kod na nivou preduzeća.
+Да ли сте користили workspace агента у GitHub Copilot Chat? Желите ли да направите агента за код вашег тима? Овај практични лабораторијски рад има за циљ да комбинује open source модел за изградњу пословног агента за код на нивоу предузећа.
 
-## **Osnove**
+## **Основа**
 
-### **Zašto odabrati Microsoft Phi-3**
+### **Зашто изабрати Microsoft Phi-3**
 
-Phi-3 je serija modela, koja uključuje phi-3-mini, phi-3-small i phi-3-medium, zasnovane na različitim parametrima treniranja za generisanje teksta, završavanje dijaloga i generisanje koda. Tu je i phi-3-vision baziran na Vision-u. Pogodan je za preduzeća ili različite timove za kreiranje offline generativnih AI rešenja.
+Phi-3 је серија модела која укључује phi-3-mini, phi-3-small и phi-3-medium, засноване на различитим параметрима тренинга за генерисање текста, завршетак дијалога и генерисање кода. Постоји и phi-3-vision заснован на Vision технологији. Погодан је за предузећа или различите тимове за креирање офлајн генеративних AI решења.
 
-Preporučuje se da pročitate ovaj link [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
+Препоручује се читање овог линка [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
 
 ### **Microsoft GitHub Copilot Chat**
 
-GitHub Copilot Chat ekstenzija vam pruža chat interfejs koji vam omogućava da komunicirate sa GitHub Copilot-om i dobijete odgovore na pitanja vezana za kodiranje direktno u VS Code, bez potrebe da pretražujete dokumentaciju ili online forume.
+GitHub Copilot Chat екстензија вам пружа интерфејс за ћаскање који вам омогућава интеракцију са GitHub Copilot-ом и добијање одговора на питања везана за програмирање директно унутар VS Code-а, без потребе да претражујете документацију или онлајн форуме.
 
-Copilot Chat može koristiti isticanje sintakse, uvlačenje i druge formate kako bi odgovor bio jasniji. U zavisnosti od tipa pitanja korisnika, rezultat može sadržavati linkove ka kontekstu koji je Copilot koristio za generisanje odgovora, poput fajlova izvornog koda ili dokumentacije, ili dugmad za pristup funkcionalnostima VS Code-a.
+Copilot Chat може користити истицање синтаксе, увлачење и друге формате како би одговор био јаснији. У зависности од типа питања корисника, резултат може садржати линкове ка контексту који је Copilot користио за генерисање одговора, као што су изворни код или документација, или дугмад за приступ функцијама VS Code-а.
 
-- Copilot Chat se integriše u vaš razvojni tok i pruža pomoć tamo gde vam treba:
+- Copilot Chat се интегрише у ваш развојни ток и пружа помоћ тамо где вам је потребна:
 
-- Pokrenite inline chat razgovor direktno iz editora ili terminala za pomoć dok kodirate
+- Започните inline разговор директно из едитора или терминала за помоћ док кодите
 
-- Koristite Chat prikaz da imate AI asistenta pored sebe koji vam može pomoći u svakom trenutku
+- Користите Chat приказ да имате AI асистента поред себе који вам помаже у сваком тренутку
 
-- Pokrenite Quick Chat da postavite brzo pitanje i vratite se na posao
+- Покрените Quick Chat да поставите брзо питање и вратите се свом раду
 
-Možete koristiti GitHub Copilot Chat u različitim scenarijima, kao što su:
+GitHub Copilot Chat можете користити у различитим сценаријима, као што су:
 
-- Odgovaranje na pitanja o kodiranju kako najbolje rešiti problem
+- Одговарање на питања о томе како најбоље решити проблем
 
-- Objašnjavanje tuđeg koda i predlaganje poboljšanja
+- Објашњавање туђег кода и предлагање побољшања
 
-- Predlaganje ispravki koda
+- Предлагање исправки кода
 
-- Generisanje test slučajeva
+- Генерисање јединичних тест случајева
 
-- Generisanje dokumentacije koda
+- Генерисање документације кода
 
-Preporučuje se da pročitate ovaj link [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
+Препоручује се читање овог линка [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
 
 
 ###  **Microsoft GitHub Copilot Chat @workspace**
 
-Korišćenje **@workspace** u Copilot Chat-u vam omogućava da postavljate pitanja u vezi sa celokupnim kodom vašeg projekta. Na osnovu pitanja, Copilot inteligentno pronalazi relevantne fajlove i simbole, koje zatim u svom odgovoru prikazuje kao linkove i primere koda.
+Референцирање **@workspace** у Copilot Chat-у вам омогућава да постављате питања у вези са целокупном базом кода. На основу питања, Copilot интелигентно проналази релевантне фајлове и симболе, које затим користи у одговору као линкове и примере кода.
 
-Da bi odgovorio na vaše pitanje, **@workspace** pretražuje iste izvore koje bi developer koristio prilikom navigacije kroz kod u VS Code-u:
+Да би одговорио на ваше питање, **@workspace** претражује исте изворе које би програмер користио приликом навигације кроз код у VS Code-у:
 
-- Svi fajlovi u workspace-u, osim onih koje .gitignore ignoriše
+- Сви фајлови у workspace-у, осим оних које .gitignore фајл игнорише
 
-- Struktura direktorijuma sa ugnježdenim imenima foldera i fajlova
+- Структура директоријума са угнежђеним именима фасцикли и фајлова
 
-- GitHub-ov indeks pretrage koda, ako je workspace GitHub repozitorijum i indeksiran je
+- GitHub-ов индекс претраге кода, ако је workspace GitHub репозиторијум и индексиран је код претраге
 
-- Simboli i definicije u workspace-u
+- Симболи и дефиниције у workspace-у
 
-- Trenutno selektovani ili vidljivi tekst u aktivnom editoru
+- Тренутно изабрани текст или видљиви текст у активном едитору
 
-Napomena: .gitignore se zaobilazi ako imate otvoren fajl ili selektovan tekst u ignorisanom fajlu.
+Напомена: .gitignore се игнорише ако имате отворен фајл или сте изабрали текст унутар игнорисаног фајла.
 
-Preporučuje se da pročitate ovaj link [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
-
-
-## **Više o ovoj radionici**
-
-GitHub Copilot je značajno unapredio efikasnost programiranja u preduzećima, i svako preduzeće želi da prilagodi relevantne funkcije GitHub Copilot-a. Mnoge firme su napravile prilagođene ekstenzije slične GitHub Copilot-u bazirane na svojim poslovnim scenarijima i open source modelima. Za preduzeća, prilagođene ekstenzije su lakše za kontrolu, ali to može uticati na korisničko iskustvo. GitHub Copilot ima snažnije funkcije za rad sa opštim scenarijima i profesionalnost. Ako se iskustvo može održati konzistentnim, bolje je napraviti sopstvenu prilagođenu ekstenziju. GitHub Copilot Chat pruža relevantne API-je za preduzeća da prošire Chat iskustvo. Održavanje konzistentnog iskustva uz prilagođene funkcije pruža bolje korisničko iskustvo.
-
-Ova radionica uglavnom koristi Phi-3 model u kombinaciji sa lokalnim NPU i Azure hibridom za izgradnju prilagođenog agenta u GitHub Copilot Chat-u ***@PHI3*** koji pomaže programerima u preduzećima u generisanju koda***(@PHI3 /gen)*** i generisanju koda na osnovu slika ***(@PHI3 /img)***.
-
-![PHI3](../../../../../../../translated_images/cover.410a18b85555fad4ca8bfb8f0b1776a96ae7f8eae1132b8f0c09d4b92b8e3365.sr.png)
-
-### ***Napomena:***
-
-Ova radionica je trenutno implementirana na AIPC Intel CPU i Apple Silicon platformama. Nastavićemo da ažuriramo verziju za Qualcomm NPU.
+Препоручује се читање овог линка [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
 
 
-## **Radionica**
+## **Сазнајте више о овом лабораторијском раду**
+
+GitHub Copilot је знатно побољшао ефикасност програмирања у предузећима, и свака компанија жели да прилагоди релевантне функције GitHub Copilot-а. Многа предузећа су прилагодила екстензије сличне GitHub Copilot-у на основу својих пословних сценарија и open source модела. За предузећа, прилагођене екстензије су лакше за контролу, али то утиче и на корисничко искуство. Ипак, GitHub Copilot има јаче функције за опште сценарије и професионалност. Ако се искуство може одржати конзистентним, боље је прилагодити сопствену екстензију предузећа. GitHub Copilot Chat пружа релевантне API-је за предузећа да прошире искуство ћаскања. Одржавање конзистентног искуства уз прилагођене функције пружа боље корисничко искуство.
+
+Овај лабораторијски рад углавном користи Phi-3 модел у комбинацији са локалним NPU и Azure хибридом за изградњу прилагођеног агента у GitHub Copilot Chat-у ***@PHI3*** који помаже развојним инжењерима у предузећима да заврше генерисање кода ***(@PHI3 /gen)*** и генеришу код на основу слика ***(@PHI3 /img)***.
+
+![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d095fe0b942687287803c03933d2d1d439d14e10fa1442a864d.sr.png)
+
+### ***Напомена:*** 
+
+Овај лабораторијски рад је тренутно имплементиран на AIPC Intel CPU и Apple Silicon. Наставићемо са ажурирањем Qualcomm верзије NPU.
 
 
-| Ime | Opis | AIPC | Apple |
+## **Лабораторија**
+
+
+| Назив | Опис | AIPC | Apple |
 | ------------ | ----------- | -------- |-------- |
-| Lab0 - Instalacije(✅) | Konfigurisanje i instalacija potrebnih okruženja i alata | [Idi](./HOL/AIPC/01.Installations.md) |[Idi](./HOL/Apple/01.Installations.md) |
-| Lab1 - Pokretanje Prompt flow sa Phi-3-mini (✅) | Kombinacija sa AIPC / Apple Silicon, korišćenje lokalnog NPU za kreiranje generisanja koda kroz Phi-3-mini | [Idi](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Idi](./HOL/Apple/02.PromptflowWithMLX.md) |
-| Lab2 - Deploy Phi-3-vision na Azure Machine Learning Service(✅) | Generisanje koda postavljanjem Model Catalog-a Azure Machine Learning Service - Phi-3-vision slike | [Idi](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Idi](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
-| Lab3 - Kreiranje @phi-3 agenta u GitHub Copilot Chat(✅)  | Kreiranje prilagođenog Phi-3 agenta u GitHub Copilot Chat-u za generisanje koda, generisanje grafova, RAG i slično | [Idi](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Idi](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
-| Sample Code (✅)  | Preuzimanje primera koda | [Idi](../../../../../../../code/07.Lab/01/AIPC) | [Idi](../../../../../../../code/07.Lab/01/Apple) |
+| Lab0 - Инсталације(✅) | Конфигурисање и инсталација релевантних окружења и алата за инсталацију | [Go](./HOL/AIPC/01.Installations.md) |[Go](./HOL/Apple/01.Installations.md) |
+| Lab1 - Покретање Prompt flow са Phi-3-mini (✅) | У комбинацији са AIPC / Apple Silicon, коришћење локалног NPU за креирање генерисања кода преко Phi-3-mini | [Go](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Go](./HOL/Apple/02.PromptflowWithMLX.md) |
+| Lab2 - Деплој Phi-3-vision на Azure Machine Learning Service(✅) | Генерисање кода деплојем Azure Machine Learning Service Model Catalog-а - Phi-3-vision слика | [Go](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Go](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
+| Lab3 - Креирање @phi-3 агента у GitHub Copilot Chat(✅)  | Креирање прилагођеног Phi-3 агента у GitHub Copilot Chat-у за завршетак генерисања кода, генерисање графикона, RAG и сл. | [Go](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Go](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
+| Пример кода (✅)  | Преузимање пример кода | [Go](../../../../../../../code/07.Lab/01/AIPC) | [Go](../../../../../../../code/07.Lab/01/Apple) |
 
 
-## **Resursi**
+## **Ресурси**
 
 1. Phi-3 Cookbook [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook)
 
-2. Saznajte više o GitHub Copilot-u [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
+2. Сазнајте више о GitHub Copilot-у [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-3. Saznajte više o GitHub Copilot Chat-u [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
+3. Сазнајте више о GitHub Copilot Chat-у [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-4. Saznajte više o GitHub Copilot Chat API-ju [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
+4. Сазнајте више о GitHub Copilot Chat API-ју [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
 
-5. Saznajte više o Azure AI Foundry [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
+5. Сазнајте више о Azure AI Foundry [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
 
-6. Saznajte više o Azure AI Foundry Model Catalog-u [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
+6. Сазнајте више о Azure AI Foundry Model Catalog-у [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала употребом овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

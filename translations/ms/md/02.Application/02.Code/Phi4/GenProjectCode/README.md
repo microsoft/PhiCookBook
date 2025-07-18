@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:51:19+00:00",
+  "translation_date": "2025-07-17T04:46:37+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "ms"
 }
 -->
-## **استفاده از Phi-4-mini-mm برای تولید کد**
+## **Menggunakan Phi-4-mini-mm untuk menjana kod**
 
-Phi-4-mini توانایی‌های قوی کدنویسی خانواده Phi را ادامه می‌دهد. شما می‌توانید با استفاده از Prompt سوالات مرتبط با کدنویسی بپرسید. البته، پس از افزودن قابلیت استدلال قوی، توانایی‌های کدنویسی آن نیز قوی‌تر شده است، مانند تولید پروژه‌ها بر اساس نیازها. برای مثال، تولید پروژه‌ها بر اساس نیازها، مانند:
+Phi-4-mini meneruskan keupayaan pengekodan yang hebat daripada Keluarga Phi. Anda boleh menggunakan Prompt untuk bertanya soalan berkaitan pengekodan. Sudah tentu, selepas menambah kebolehan berfikir yang kuat, ia mempunyai keupayaan pengekodan yang lebih hebat, seperti menjana projek mengikut keperluan. Contohnya, menjana projek mengikut keperluan, seperti:
 
-### **نیازمندی**
+### **Keperluan**
 
-ساخت یک اپلیکیشن سبد خرید
+Cipta Aplikasi Troli Membeli-belah
 
-- ایجاد یک API Rest با متدهای زیر:
-    - دریافت لیستی از انواع آبجو با استفاده از صفحه، آفست و محدودیت.
-    - دریافت جزئیات آبجو بر اساس شناسه.
-    - جستجو برای آبجو بر اساس نام، توضیحات، شعار، جفت‌های غذایی و قیمت.
-- ایجاد لیستی از محصولات در صفحه اصلی.
-    - ایجاد نوار جستجو برای فیلتر کردن محصولات.
-    - هدایت به صفحه توضیحات زمانی که کاربر روی محصول کلیک می‌کند.
-- (اختیاری) اسلایسر برای فیلتر کردن محصولات بر اساس قیمت.
-- ساخت یک سبد خرید.
-    - افزودن محصولات به سبد.
-    - حذف محصولات از سبد.
-    - محاسبه قیمت کل محصولات در سبد.
+- Cipta API Rest dengan kaedah berikut:
+    - Dapatkan senarai bir menggunakan offset halaman dan had.
+    - Dapatkan butiran bir mengikut id.
+    - Cari bir mengikut nama, penerangan, tagline, pasangan makanan, dan harga.
+- Cipta senarai produk di halaman utama.
+    - Cipta bar carian untuk menapis produk.
+    - Navigasi ke halaman penerangan apabila pengguna klik pada produk.
+- (Pilihan) Slicer untuk menapis produk mengikut harga.
+- Cipta troli membeli-belah.
+    - Tambah produk ke dalam troli.
+    - Keluarkan produk dari troli.
+    - Kira jumlah harga produk dalam troli.
 
-### **نمونه کد - پایتون**
+### **Contoh Kod - Python**
 
 
 ```python
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

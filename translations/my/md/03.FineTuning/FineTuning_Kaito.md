@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-07-09T18:57:11+00:00",
+  "translation_date": "2025-07-17T06:26:14+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "my"
 }
@@ -11,12 +11,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Kaito](https://github.com/Azure/kaito) သည် Kubernetes cluster အတွင်း AI/ML inference မော်ဒယ်များကို အလိုအလျောက် တပ်ဆင်ပေးသော operator တစ်ခုဖြစ်သည်။
 
-Kaito သည် virtual machine အခြေခံ အင်ဖရာစတပ်ချာများပေါ်တွင် တည်ဆောက်ထားသော မော်ဒယ် တပ်ဆင်မှုနည်းလမ်းများအများစုနှင့် နှိုင်းယှဉ်လျှင် အောက်ပါ အဓိက ကွဲပြားချက်များရှိသည်-
+Kaito သည် virtual machine အခြေခံ အင်ဖရာစတပ်ချာများပေါ်တွင် တည်ဆောက်ထားသော မော်ဒယ်တပ်ဆင်နည်းများအများစုနှင့် နှိုင်းယှဉ်လျှင် အောက်ပါ အထူးကွဲပြားချက်များရှိသည်-
 
 - မော်ဒယ်ဖိုင်များကို container image များဖြင့် စီမံခန့်ခွဲသည်။ မော်ဒယ်စာကြည့်တိုက်ကို အသုံးပြု၍ inference ခေါ်ဆိုမှုများ ပြုလုပ်ရန် http server တစ်ခု ပံ့ပိုးပေးသည်။
 - GPU hardware ကို ကိုက်ညီစေရန် deployment parameter များကို ချိန်ညှိရန် မလိုအပ်ဘဲ ရှိပြီးသား configuration များကို ပေးသည်။
-- မော်ဒယ်လိုအပ်ချက်အရ GPU node များကို အလိုအလျောက် provision ပြုလုပ်ပေးသည်။
-- လိုင်စင် ခွင့်ပြုပါက Microsoft Container Registry (MCR) တွင် ကြီးမားသော မော်ဒယ် image များကို တင်ဆက်ထားနိုင်သည်။
+- မော်ဒယ်လိုအပ်ချက်အရ GPU node များကို အလိုအလျောက် provision လုပ်ပေးသည်။
+- လိုင်စင်ခွင့်ရှိပါက Microsoft Container Registry (MCR) တွင် ကြီးမားသော မော်ဒယ် image များကို တင်ဆက်ထားနိုင်သည်။
 
 Kaito ကို အသုံးပြုခြင်းဖြင့် Kubernetes တွင် ကြီးမားသော AI inference မော်ဒယ်များကို တင်သွင်းခြင်းလုပ်ငန်းစဉ်ကို အလွန်လွယ်ကူစေသည်။
 
@@ -29,7 +29,7 @@ Kaito သည် ရိုးရာ Kubernetes Custom Resource Definition(CRD)/co
 
 အထက်ပါ ပုံသည် Kaito ဖွဲ့စည်းပုံ အနှစ်ချုပ်ကို ဖော်ပြထားသည်။ ၎င်း၏ အဓိက အစိတ်အပိုင်းများမှာ-
 
-- **Workspace controller**: `workspace` custom resource ကို ပြန်လည်ညှိနှိုင်းပြီး node auto provisioning ကို စတင်ရန် `machine` (အောက်တွင် ရှင်းပြထားသည်) custom resource များကို ဖန်တီးသည်။ မော်ဒယ် preset configuration များအရ inference workload (`deployment` သို့မဟုတ် `statefulset`) ကို ဖန်တီးပေးသည်။
+- **Workspace controller**: `workspace` custom resource ကို ပြန်လည်ညှိနှိုင်းပြီး node auto provisioning ကို စတင်ရန် `machine` (အောက်တွင်ရှင်းပြထားသည်) custom resource များကို ဖန်တီးသည်။ မော်ဒယ် preset configuration များအရ inference workload (`deployment` သို့မဟုတ် `statefulset`) ကို ဖန်တီးပေးသည်။
 - **Node provisioner controller**: controller ၏ အမည်မှာ [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) တွင် *gpu-provisioner* ဖြစ်သည်။ ၎င်းသည် [Karpenter](https://sigs.k8s.io/karpenter) မှ မူလရရှိသော `machine` CRD ကို အသုံးပြု၍ workspace controller နှင့် ဆက်သွယ်သည်။ Azure Kubernetes Service(AKS) API များနှင့် ပေါင်းစည်းကာ AKS cluster တွင် GPU node အသစ်များ ထည့်သွင်းပေးသည်။
 > Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) သည် open source component ဖြစ်သည်။ [Karpenter-core](https://sigs.k8s.io/karpenter) API များကို ထောက်ပံ့သော အခြား controller များဖြင့် အစားထိုးနိုင်သည်။
 
@@ -38,7 +38,7 @@ Kaito သည် ရိုးရာ Kubernetes Custom Resource Definition(CRD)/co
 
 ## တပ်ဆင်ခြင်း
 
-တပ်ဆင်ခြင်း လမ်းညွှန်ကို [ဒီမှာ](https://github.com/Azure/kaito/blob/main/docs/installation.md) စစ်ဆေးပါ။
+တပ်ဆင်ခြင်း လမ်းညွှန်ကို [ဒီနေရာမှာ](https://github.com/Azure/kaito/blob/main/docs/installation.md) စစ်ဆေးပါ။
 
 ## အမြန်စတင်ခြင်း
 

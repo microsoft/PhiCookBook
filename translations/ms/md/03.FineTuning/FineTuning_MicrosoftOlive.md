@@ -2,91 +2,91 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:53:47+00:00",
+  "translation_date": "2025-07-17T06:48:53+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "ms"
 }
 -->
-# **כיוונון עדין של Phi-3 עם Microsoft Olive**
+# **Penalaan Halus Phi-3 dengan Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) היא כלי אופטימיזציה מודלי המודע לחומרה, שקל לשימוש, שמאגד טכניקות מובילות בתעשייה לדחיסה, אופטימיזציה וקומפילציה של מודלים.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) adalah alat pengoptimuman model yang peka kepada perkakasan dan mudah digunakan yang menggabungkan teknik terkemuka dalam industri merangkumi pemampatan model, pengoptimuman, dan penyusunan.
 
-היא נועדה לפשט את תהליך אופטימיזציית מודלי למידת מכונה, ולהבטיח שימוש יעיל ככל האפשר בארכיטקטורות חומרה ספציפיות.
+Ia direka untuk memudahkan proses mengoptimumkan model pembelajaran mesin, memastikan penggunaan yang paling cekap bagi seni bina perkakasan tertentu.
 
-בין אם אתם עובדים על יישומים בענן או במכשירי קצה, Olive מאפשרת לכם לבצע אופטימיזציה למודלים שלכם בקלות וביעילות.
+Sama ada anda bekerja pada aplikasi berasaskan awan atau peranti edge, Olive membolehkan anda mengoptimumkan model anda dengan mudah dan berkesan.
 
-## תכונות עיקריות:
-- Olive מאחדת ומאוטומטת טכניקות אופטימיזציה עבור יעדי חומרה ספציפיים.
-- אין טכניקת אופטימיזציה אחת שמתאימה לכל התרחישים, לכן Olive מאפשרת הרחבה על ידי חיבור חידושים אופטימיזציה של מומחים בתעשייה.
+## Ciri-ciri Utama:
+- Olive mengumpul dan mengautomasikan teknik pengoptimuman untuk sasaran perkakasan yang dikehendaki.
+- Tiada satu teknik pengoptimuman yang sesuai untuk semua senario, jadi Olive membenarkan kebolehsambungan dengan membolehkan pakar industri menyambungkan inovasi pengoptimuman mereka.
 
-## צמצום מאמץ ההנדסה:
-- מפתחים לעיתים צריכים ללמוד ולהשתמש במספר ערכות כלים ייחודיות לספקי חומרה שונים כדי להכין ולאופטם מודלים מאומנים לפריסה.
-- Olive מפשטת את החוויה הזו על ידי אוטומציה של טכניקות האופטימיזציה עבור החומרה הרצויה.
+## Kurangkan Usaha Kejuruteraan:
+- Pembangun sering perlu mempelajari dan menggunakan pelbagai rantaian alat khusus vendor perkakasan untuk menyediakan dan mengoptimumkan model terlatih bagi pengeluaran.
+- Olive memudahkan pengalaman ini dengan mengautomasikan teknik pengoptimuman untuk perkakasan yang dikehendaki.
 
-## פתרון אופטימיזציה מקצה-לקצה מוכן לשימוש:
+## Penyelesaian Pengoptimuman E2E Sedia Digunakan:
 
-באמצעות קומפוזיציה וכיוונון של טכניקות משולבות, Olive מציעה פתרון מאוחד לאופטימיזציה מקצה-לקצה.
-היא מתחשבת במגבלות כמו דיוק ושהייה בזמן האופטימיזציה של המודלים.
+Dengan menggabungkan dan melaras teknik bersepadu, Olive menawarkan penyelesaian sehenti untuk pengoptimuman hujung ke hujung.
+Ia mengambil kira kekangan seperti ketepatan dan kelewatan semasa mengoptimumkan model.
 
-## שימוש ב-Microsoft Olive לכיוונון עדין
+## Menggunakan Microsoft Olive untuk Penalaan Halus
 
-Microsoft Olive היא כלי קוד פתוח לאופטימיזציית מודלים, קל מאוד לשימוש, שיכול לכסות גם כיוונון עדין וגם רפרנס בתחום הבינה המלאכותית הגנרטיבית. נדרשת רק קונפיגורציה פשוטה, בשילוב עם שימוש במודלים קטנים של שפה בקוד פתוח וסביבות ריצה קשורות (AzureML / GPU מקומי, CPU, DirectML), כך שניתן להשלים את הכיוונון העדין או הרפרנס של המודל דרך אופטימיזציה אוטומטית, ולמצוא את המודל הטוב ביותר לפריסה בענן או במכשירי קצה. מאפשר לארגונים לבנות מודלים אנכיים תעשייתיים משלהם הן מקומית והן בענן.
+Microsoft Olive adalah alat pengoptimuman model sumber terbuka yang sangat mudah digunakan yang boleh merangkumi kedua-dua penalaan halus dan rujukan dalam bidang kecerdasan buatan generatif. Ia hanya memerlukan konfigurasi ringkas, digabungkan dengan penggunaan model bahasa kecil sumber terbuka dan persekitaran runtime berkaitan (AzureML / GPU tempatan, CPU, DirectML), anda boleh menyelesaikan penalaan halus atau rujukan model melalui pengoptimuman automatik, dan mencari model terbaik untuk dikerahkan ke awan atau pada peranti edge. Membolehkan perusahaan membina model vertikal industri mereka sendiri secara on-premises dan di awan.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.ms.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.ms.png)
 
-## כיוונון עדין של Phi-3 עם Microsoft Olive
+## Penalaan Halus Phi-3 dengan Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.ms.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.ms.png)
 
-## קוד לדוגמה ודוגמה ל-Phi-3 Olive
-בדוגמה זו תשתמשו ב-Olive כדי:
+## Contoh Kod dan Contoh Phi-3 Olive
+Dalam contoh ini anda akan menggunakan Olive untuk:
 
-- לכוונן עדין מתאם LoRA לסיווג ביטויים ל-Sad, Joy, Fear, Surprise.
-- למזג את משקלי המתאם לתוך המודל הבסיסי.
-- לאופטם וכוונן את המודל ל-int4.
+- Menala halus penyesuai LoRA untuk mengklasifikasikan frasa ke dalam kategori Sedih, Gembira, Takut, Terkejut.
+- Menggabungkan berat penyesuai ke dalam model asas.
+- Mengoptimumkan dan Mengkuantisasi model ke dalam int4.
 
 [Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
 
-### התקנת Microsoft Olive
+### Pasang Microsoft Olive
 
-התקנת Microsoft Olive פשוטה מאוד, וניתן להתקין אותה עבור CPU, GPU, DirectML ו-Azure ML
+Pemasangan Microsoft Olive sangat mudah, dan juga boleh dipasang untuk CPU, GPU, DirectML, dan Azure ML
 
 ```bash
 pip install olive-ai
 ```
 
-אם ברצונכם להריץ מודל ONNX על CPU, ניתן להשתמש ב
+Jika anda ingin menjalankan model ONNX dengan CPU, anda boleh menggunakan
 
 ```bash
 pip install olive-ai[cpu]
 ```
 
-אם ברצונכם להריץ מודל ONNX על GPU, ניתן להשתמש ב
+Jika anda ingin menjalankan model ONNX dengan GPU, anda boleh menggunakan
 
 ```python
 pip install olive-ai[gpu]
 ```
 
-אם ברצונכם להשתמש ב-Azure ML, השתמשו ב
+Jika anda ingin menggunakan Azure ML, gunakan
 
 ```python
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
-**הערה**
-דרישות מערכת הפעלה: Ubuntu 20.04 / 22.04
+**Perhatian**  
+Keperluan OS: Ubuntu 20.04 / 22.04
 
-### **קובץ Config.json של Microsoft Olive**
+### **Config.json Microsoft Olive**
 
-לאחר ההתקנה, ניתן להגדיר הגדרות ספציפיות למודל דרך קובץ הקונפיגורציה, כולל נתונים, חישוב, אימון, פריסה ויצירת מודל.
+Selepas pemasangan, anda boleh mengkonfigurasi tetapan khusus model yang berbeza melalui fail Config, termasuk data, pengkomputeran, latihan, pengeluaran, dan penjanaan model.
 
-**1. נתונים**
+**1. Data**
 
-ב-Microsoft Olive, ניתן לתמוך באימון על נתונים מקומיים ונתוני ענן, וניתן להגדיר זאת בהגדרות.
+Pada Microsoft Olive, latihan pada data tempatan dan data awan boleh disokong, dan boleh dikonfigurasi dalam tetapan.
 
-*הגדרות נתונים מקומיים*
+*Tetapan data tempatan*
 
-ניתן להגדיר בקלות את מערך הנתונים שיש לאמן לכיוונון עדין, בדרך כלל בפורמט json, ולהתאים אותו לתבנית הנתונים. יש להתאים זאת בהתאם לדרישות המודל (לדוגמה, להתאים לפורמט הדרוש ל-Microsoft Phi-3-mini. אם יש לכם מודלים אחרים, יש לעיין בדרישות הכיוונון העדין של אותם מודלים לעיבוד)
+Anda boleh dengan mudah menyediakan set data yang perlu dilatih untuk penalaan halus, biasanya dalam format json, dan sesuaikan dengan templat data. Ini perlu disesuaikan berdasarkan keperluan model (contohnya, sesuaikan dengan format yang diperlukan oleh Microsoft Phi-3-mini. Jika anda mempunyai model lain, sila rujuk format penalaan halus yang diperlukan oleh model lain untuk pemprosesan)
 
 ```json
 
@@ -119,9 +119,9 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
     ],
 ```
 
-**הגדרות מקור נתוני ענן**
+**Tetapan sumber data awan**
 
-על ידי קישור מחסן הנתונים של Azure AI Studio/Azure Machine Learning Service לנתונים בענן, ניתן לבחור להכניס מקורות נתונים שונים ל-Azure AI Studio/Azure Machine Learning Service דרך Microsoft Fabric ו-Azure Data כתמיכה לכיוונון הנתונים.
+Dengan menghubungkan stor data Azure AI Studio/Azure Machine Learning Service untuk mengakses data di awan, anda boleh memilih untuk memperkenalkan pelbagai sumber data ke Azure AI Studio/Azure Machine Learning Service melalui Microsoft Fabric dan Azure Data sebagai sokongan untuk penalaan halus data.
 
 ```json
 
@@ -166,9 +166,9 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
     
 ```
 
-**2. הגדרת חישוב**
+**2. Konfigurasi Pengkomputeran**
 
-אם יש צורך להריץ מקומית, ניתן להשתמש ישירות במשאבי הנתונים המקומיים. אם רוצים להשתמש במשאבי Azure AI Studio / Azure Machine Learning Service, יש להגדיר את הפרמטרים הרלוונטיים של Azure, שם החישוב וכו'.
+Jika anda perlu menggunakan sumber tempatan, anda boleh terus menggunakan sumber data tempatan. Jika anda perlu menggunakan sumber Azure AI Studio / Azure Machine Learning Service, anda perlu mengkonfigurasi parameter Azure yang berkaitan, nama kuasa pengkomputeran, dan lain-lain.
 
 ```json
 
@@ -199,9 +199,9 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
     },
 ```
 
-***הערה***
+***Perhatian***
 
-מאחר שההרצה מתבצעת דרך מכולה ב-Azure AI Studio/Azure Machine Learning Service, יש להגדיר את סביבת העבודה הדרושה. הגדרה זו מתבצעת בקובץ conda.yaml.
+Kerana ia dijalankan melalui kontena di Azure AI Studio/Azure Machine Learning Service, persekitaran yang diperlukan perlu dikonfigurasi. Ini dikonfigurasi dalam persekitaran conda.yaml.
 
 ```yaml
 
@@ -234,11 +234,11 @@ dependencies:
 
 ```
 
-**3. בחירת SLM**
+**3. Pilih SLM anda**
 
-ניתן להשתמש במודל ישירות מ-Hugging face, או לשלב אותו עם קטלוג המודלים של Azure AI Studio / Azure Machine Learning כדי לבחור את המודל הרצוי. בדוגמת הקוד למטה נשתמש ב-Microsoft Phi-3-mini כדוגמה.
+Anda boleh menggunakan model terus dari Hugging face, atau anda boleh menggabungkannya terus dengan Katalog Model Azure AI Studio / Azure Machine Learning untuk memilih model yang hendak digunakan. Dalam contoh kod di bawah, kami akan menggunakan Microsoft Phi-3-mini sebagai contoh.
 
-אם יש לכם את המודל מקומית, ניתן להשתמש בשיטה זו
+Jika anda mempunyai model secara tempatan, anda boleh menggunakan kaedah ini
 
 ```json
 
@@ -256,7 +256,7 @@ dependencies:
     },
 ```
 
-אם רוצים להשתמש במודל מ-Azure AI Studio / Azure Machine Learning Service, ניתן להשתמש בשיטה זו
+Jika anda ingin menggunakan model dari Azure AI Studio / Azure Machine Learning Service, anda boleh menggunakan kaedah ini
 
 ```json
 
@@ -283,16 +283,16 @@ dependencies:
     },
 ```
 
-**הערה:**
-יש אינטגרציה עם Azure AI Studio / Azure Machine Learning Service, לכן בעת הגדרת המודל יש לעיין במספר הגרסה והשמות הרלוונטיים.
+**Perhatian:**  
+Kita perlu berintegrasi dengan Azure AI Studio / Azure Machine Learning Service, jadi semasa menyediakan model, sila rujuk nombor versi dan penamaan berkaitan.
 
-כל המודלים ב-Azure צריכים להיות מוגדרים כ-PyTorch.MLflow
+Semua model di Azure perlu ditetapkan kepada PyTorch.MLflow
 
-יש צורך בחשבון Hugging face ולחבר את המפתח לערך המפתח של Azure AI Studio / Azure Machine Learning
+Anda perlu mempunyai akaun Hugging face dan mengikat kunci kepada nilai Kunci Azure AI Studio / Azure Machine Learning
 
-**4. אלגוריתם**
+**4. Algoritma**
 
-Microsoft Olive מכילה היטב את אלגוריתמי כיוונון LoRA ו-QLora. כל מה שצריך להגדיר הם כמה פרמטרים רלוונטיים. כאן נשתמש ב-QLora כדוגמה.
+Microsoft Olive membungkus algoritma penalaan halus Lora dan QLora dengan sangat baik. Apa yang anda perlu konfigurasi hanyalah beberapa parameter berkaitan. Di sini saya ambil QLora sebagai contoh.
 
 ```json
         "lora": {
@@ -329,12 +329,12 @@ Microsoft Olive מכילה היטב את אלגוריתמי כיוונון LoRA 
         },
 ```
 
-אם רוצים המרת כימות, הסניף הראשי של Microsoft Olive כבר תומך בשיטת onnxruntime-genai. ניתן להגדיר זאת לפי הצורך:
+Jika anda ingin penukaran kuantisasi, cawangan utama Microsoft Olive sudah menyokong kaedah onnxruntime-genai. Anda boleh menetapkannya mengikut keperluan anda:
 
-1. למזג את משקלי המתאם לתוך המודל הבסיסי
-2. להמיר את המודל למודל onnx עם הדיוק הנדרש באמצעות ModelBuilder
+1. gabungkan berat penyesuai ke dalam model asas  
+2. Tukar model kepada model onnx dengan ketepatan yang diperlukan oleh ModelBuilder
 
-כמו המרה ל-INT4 מכוונן
+contohnya menukar kepada kuantisasi INT4
 
 ```json
 
@@ -349,10 +349,10 @@ Microsoft Olive מכילה היטב את אלגוריתמי כיוונון LoRA 
         }
 ```
 
-**הערה**
-- אם משתמשים ב-QLoRA, המרת הכימות של ONNXRuntime-genai אינה נתמכת כרגע.
+**Perhatian**  
+- Jika anda menggunakan QLoRA, penukaran kuantisasi ONNXRuntime-genai buat masa ini tidak disokong.
 
-- יש לציין שניתן להגדיר את השלבים שלמעלה לפי הצורך. אין חובה להגדיר את כל השלבים במלואם. בהתאם לצורך, ניתן להשתמש ישירות בשלבי האלגוריתם ללא כיוונון עדין. בסופו של דבר יש להגדיר את המנועים הרלוונטיים.
+- Perlu dinyatakan di sini bahawa anda boleh menetapkan langkah-langkah di atas mengikut keperluan sendiri. Tidak perlu mengkonfigurasi sepenuhnya semua langkah di atas. Bergantung pada keperluan anda, anda boleh terus menggunakan langkah algoritma tanpa penalaan halus. Akhir sekali, anda perlu mengkonfigurasi enjin yang berkaitan.
 
 ```json
 
@@ -367,13 +367,13 @@ Microsoft Olive מכילה היטב את אלגוריתמי כיוונון LoRA 
     }
 ```
 
-**5. סיום הכיוונון העדין**
+**5. Penalaan halus selesai**
 
-בשורת הפקודה, להריץ בתיקיית olive-config.json
+Di baris arahan, jalankan dalam direktori olive-config.json
 
 ```bash
 olive run --config olive-config.json  
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,31 +2,31 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:09:38+00:00",
+  "translation_date": "2025-07-17T07:23:07+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "tr"
 }
 -->
 ## Azure ML sistem kayıt defterinden chat-completion bileşenlerini kullanarak bir modeli ince ayar yapmak
 
-Bu örnekte, Phi-3-mini-4k-instruct modelinin, ultrachat_200k veri seti kullanılarak iki kişi arasındaki sohbeti tamamlaması için ince ayarını yapacağız.
+Bu örnekte, ultrachat_200k veri setini kullanarak 2 kişi arasındaki bir sohbeti tamamlamak için Phi-3-mini-4k-instruct modelinin ince ayarını yapacağız.
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.tr.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.tr.png)
 
 Örnek, Azure ML SDK ve Python kullanarak ince ayar yapmayı ve ardından ince ayarlı modeli gerçek zamanlı çıkarım için çevrimiçi bir uç noktaya dağıtmayı gösterecek.
 
 ### Eğitim verisi
 
-Ultrachat_200k veri setini kullanacağız. Bu, UltraChat veri setinin yoğun filtrelenmiş bir versiyonudur ve Zephyr-7B-β adlı, en son teknoloji 7b sohbet modeli eğitmek için kullanılmıştır.
+ultrachat_200k veri setini kullanacağız. Bu, UltraChat veri setinin yoğun şekilde filtrelenmiş bir versiyonudur ve Zephyr-7B-β adlı, son teknoloji 7b sohbet modeli eğitmek için kullanılmıştır.
 
 ### Model
 
-Kullanıcıların chat-completion görevi için bir modeli nasıl ince ayar yapabileceğini göstermek amacıyla Phi-3-mini-4k-instruct modelini kullanacağız. Eğer bu not defterini belirli bir model kartından açtıysanız, model adını ona göre değiştirmeniz gerektiğini unutmayın.
+Kullanıcının chat-completion görevi için bir modeli nasıl ince ayar yapabileceğini göstermek için Phi-3-mini-4k-instruct modelini kullanacağız. Bu not defterini belirli bir model kartından açtıysanız, model adını değiştirmeyi unutmayın.
 
 ### Görevler
 
 - İnce ayar yapılacak modeli seçin.
-- Eğitim verisini seçin ve inceleyin.
+- Eğitim verisini seçin ve keşfedin.
 - İnce ayar işini yapılandırın.
 - İnce ayar işini çalıştırın.
 - Eğitim ve değerlendirme metriklerini gözden geçirin.
@@ -34,20 +34,20 @@ Kullanıcıların chat-completion görevi için bir modeli nasıl ince ayar yapa
 - İnce ayarlı modeli gerçek zamanlı çıkarım için dağıtın.
 - Kaynakları temizleyin.
 
-## 1. Ön koşulları kurma
+## 1. Önkoşulları ayarlama
 
 - Bağımlılıkları yükleyin
-- AzureML Workspace'e bağlanın. SDK kimlik doğrulamasını kurmak için daha fazlasını öğrenin. Aşağıda <WORKSPACE_NAME>, <RESOURCE_GROUP> ve <SUBSCRIPTION_ID> yerlerini değiştirin.
+- AzureML Workspace’e bağlanın. SDK kimlik doğrulamasını ayarlama hakkında daha fazla bilgi edinin. Aşağıdaki <WORKSPACE_NAME>, <RESOURCE_GROUP> ve <SUBSCRIPTION_ID> yer tutucularını değiştirin.
 - azureml sistem kayıt defterine bağlanın
 - İsteğe bağlı bir deney adı belirleyin
-- Compute'u kontrol edin veya oluşturun.
+- Hesaplama kaynağını kontrol edin veya oluşturun.
 
 > [!NOTE]
-> Gereksinimler tek bir GPU düğümü birden fazla GPU kartına sahip olabilir. Örneğin, Standard_NC24rs_v3 düğümünde 4 NVIDIA V100 GPU bulunurken, Standard_NC12s_v3 düğümünde 2 NVIDIA V100 GPU vardır. Bu bilgiler için dokümantasyona bakınız. Düğüm başına GPU kart sayısı aşağıdaki gpus_per_node parametresinde ayarlanır. Bu değerin doğru ayarlanması, düğümdeki tüm GPU'ların kullanılmasını sağlar. Önerilen GPU compute SKU'ları burada ve burada bulunabilir.
+> Gereksinimler: Tek bir GPU düğümü birden fazla GPU kartına sahip olabilir. Örneğin, Standard_NC24rs_v3 düğümünde 4 NVIDIA V100 GPU bulunurken, Standard_NC12s_v3 düğümünde 2 NVIDIA V100 GPU vardır. Bu bilgi için dokümantasyona bakın. Düğüm başına GPU kart sayısı aşağıdaki gpus_per_node parametresinde ayarlanır. Bu değerin doğru ayarlanması, düğümdeki tüm GPU’ların kullanılmasını sağlar. Önerilen GPU hesaplama SKU’ları burada ve burada bulunabilir.
 
 ### Python Kütüphaneleri
 
-Aşağıdaki hücreyi çalıştırarak bağımlılıkları yükleyin. Bu, yeni bir ortamda çalıştırılıyorsa isteğe bağlı olmayan bir adımdır.
+Aşağıdaki hücreyi çalıştırarak bağımlılıkları yükleyin. Bu, yeni bir ortamda çalıştırılıyorsa isteğe bağlı bir adım değildir.
 
 ```bash
 pip install azure-ai-ml
@@ -63,15 +63,15 @@ pip install azureml-mlflow
 
     - azure.ai.ml, azure.identity ve azure.ai.ml.entities paketlerinden gerekli modülleri içe aktarır. Ayrıca time modülünü de içe aktarır.
 
-    - DefaultAzureCredential() kullanarak kimlik doğrulama yapmaya çalışır. Bu, Azure bulutunda uygulama geliştirmeye hızlı başlamak için basitleştirilmiş bir kimlik doğrulama deneyimi sağlar. Eğer bu başarısız olursa, etkileşimli bir giriş istemi sağlayan InteractiveBrowserCredential()'a geçer.
+    - DefaultAzureCredential() kullanarak kimlik doğrulaması yapmaya çalışır; bu, Azure bulutunda çalışan uygulamaları hızlıca geliştirmek için basitleştirilmiş bir kimlik doğrulama deneyimi sağlar. Başarısız olursa, etkileşimli bir giriş istemi sağlayan InteractiveBrowserCredential()’a geçer.
 
-    - Ardından, varsayılan config dosyasından (config.json) yapılandırmayı okuyarak MLClient örneği oluşturmayı dener. Başarısız olursa, subscription_id, resource_group_name ve workspace_name manuel olarak verilerek MLClient örneği oluşturur.
+    - Ardından, varsayılan yapılandırma dosyasından (config.json) ayarları okuyarak MLClient örneği oluşturmayı dener. Başarısız olursa, subscription_id, resource_group_name ve workspace_name manuel olarak verilerek MLClient örneği oluşturur.
 
-    - Azure ML kayıt defteri "azureml" için başka bir MLClient örneği oluşturur. Bu kayıt defteri modellerin, ince ayar boru hatlarının ve ortamların saklandığı yerdir.
+    - Azure ML kayıt defteri olan "azureml" için başka bir MLClient örneği oluşturur. Bu kayıt defteri, modellerin, ince ayar boru hatlarının ve ortamların saklandığı yerdir.
 
-    - experiment_name değişkenini "chat_completion_Phi-3-mini-4k-instruct" olarak ayarlar.
+    - experiment_name değerini "chat_completion_Phi-3-mini-4k-instruct" olarak ayarlar.
 
-    - Şu anki zamanı (epoch'tan itibaren geçen saniye olarak, float türünde) tam sayıya ve ardından string'e çevirerek benzersiz bir zaman damgası oluşturur. Bu zaman damgası, benzersiz isimler ve sürümler oluşturmak için kullanılabilir.
+    - Şu anki zamanı (epoch’tan beri geçen saniye olarak, ondalıklı sayı) tam sayıya çevirip string’e dönüştürerek benzersiz bir zaman damgası oluşturur. Bu zaman damgası, benzersiz isimler ve sürümler oluşturmak için kullanılabilir.
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -112,20 +112,20 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. İnce ayar yapmak için temel modeli seçin
+## 2. İnce ayar yapılacak temel modeli seçme
 
-1. Phi-3-mini-4k-instruct, 3.8 milyar parametreli, hafif, en son teknoloji açık modeldir ve Phi-2 için kullanılan veri setleri üzerine inşa edilmiştir. Model Phi-3 model ailesine aittir ve Mini versiyonu, destekleyebileceği bağlam uzunluğu (token cinsinden) olan 4K ve 128K olmak üzere iki varyantta gelir. Modeli kullanmak için özel amacımıza göre ince ayar yapmamız gerekir. Bu modelleri AzureML Studio'daki Model Kataloğu'nda chat-completion görevi ile filtreleyerek inceleyebilirsiniz. Bu örnekte Phi-3-mini-4k-instruct modelini kullanıyoruz. Farklı bir model için bu not defterini açtıysanız, model adı ve sürümünü buna göre değiştirin.
+1. Phi-3-mini-4k-instruct, 3.8 milyar parametreli, hafif ve son teknoloji açık bir modeldir; Phi-2 için kullanılan veri setleri üzerine inşa edilmiştir. Model, Phi-3 model ailesine aittir ve Mini versiyonu, destekleyebileceği bağlam uzunluğu (token cinsinden) olarak 4K ve 128K olmak üzere iki varyantta gelir. Amacımıza uygun kullanabilmek için modeli ince ayar yapmamız gerekir. Bu modelleri AzureML Studio’daki Model Kataloğu’nda chat-completion görevi filtresiyle inceleyebilirsiniz. Bu örnekte Phi-3-mini-4k-instruct modelini kullanıyoruz. Eğer bu not defterini farklı bir model için açtıysanız, model adı ve sürümünü uygun şekilde değiştirin.
 
     > [!NOTE]
-    > Modelin id özelliği. Bu, ince ayar işine girdi olarak verilecektir. Ayrıca AzureML Studio Model Kataloğu'ndaki model detay sayfasında Asset ID alanında bulunabilir.
+    > Modelin id özelliği. Bu, ince ayar işine girdi olarak verilecektir. Ayrıca AzureML Studio Model Kataloğu’ndaki model detayları sayfasında Asset ID alanı olarak da bulunabilir.
 
-2. Bu Python betiği Azure Machine Learning (Azure ML) servisi ile etkileşim halindedir. İşte yaptığı işlemlerin özeti:
+2. Bu Python betiği, Azure Machine Learning (Azure ML) servisi ile etkileşim kurar. İşte yaptığı işlemlerin özeti:
 
-    - model_name değişkenini "Phi-3-mini-4k-instruct" olarak ayarlar.
+    - model_name değerini "Phi-3-mini-4k-instruct" olarak ayarlar.
 
-    - registry_ml_client nesnesinin models özelliğinin get metodunu kullanarak Azure ML kayıt defterinden belirtilen isimdeki modelin en son sürümünü alır. get metodu iki argümanla çağrılır: modelin adı ve modelin en son sürümünün alınacağını belirten bir etiket.
+    - registry_ml_client nesnesinin models özelliğinin get metodunu kullanarak, Azure ML kayıt defterinden belirtilen isimdeki modelin en son sürümünü alır. get metodu iki argümanla çağrılır: modelin adı ve en son sürümün alınacağını belirten bir etiket.
 
-    - İnce ayar için kullanılacak modelin adı, sürümü ve id'sini konsola yazdırır. String'in format metodu, modelin adı, sürümü ve id'sini mesaj içine yerleştirmek için kullanılır. Modelin adı, sürümü ve id'si foundation_model nesnesinin özellikleri olarak erişilir.
+    - İnce ayar için kullanılacak modelin adı, sürümü ve id’sini konsola yazdırır. string’in format metodu, modelin adı, sürümü ve id’sini mesaj içine yerleştirmek için kullanılır. Bu özellikler foundation_model nesnesinden alınır.
 
     ```python
     # Set the model name
@@ -143,29 +143,29 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. İş için kullanılacak compute oluşturun
+## 3. İş için kullanılacak hesaplama kaynağı oluşturma
 
-İnce ayar işi SADECE GPU compute ile çalışır. Compute boyutu, modelin büyüklüğüne bağlıdır ve çoğu durumda doğru compute'u belirlemek zor olabilir. Bu hücrede, kullanıcıya iş için doğru compute'u seçmesi için rehberlik edilir.
-
-> [!NOTE]
-> Aşağıda listelenen compute'lar en optimize yapılandırma ile çalışır. Yapılandırmadaki herhangi bir değişiklik, Cuda Out Of Memory hatasına yol açabilir. Böyle durumlarda, compute'u daha büyük bir boyuta yükseltmeyi deneyin.
+İnce ayar işi SADECE GPU hesaplama ile çalışır. Hesaplama boyutu, modelin büyüklüğüne bağlıdır ve çoğu durumda doğru hesaplamayı seçmek zor olabilir. Bu hücrede kullanıcıya iş için doğru hesaplamayı seçmesi konusunda rehberlik edilir.
 
 > [!NOTE]
-> compute_cluster_size seçilirken, compute'un kaynak grubunuzda mevcut olduğundan emin olun. Belirli bir compute mevcut değilse, compute kaynaklarına erişim talebinde bulunabilirsiniz.
+> Aşağıda listelenen hesaplamalar en optimize yapılandırma ile çalışır. Yapılandırmadaki herhangi bir değişiklik Cuda Out Of Memory hatasına yol açabilir. Böyle durumlarda, hesaplamayı daha büyük bir boyuta yükseltmeyi deneyin.
+
+> [!NOTE]
+> Aşağıdaki compute_cluster_size seçilirken, hesabın kaynak grubunda bu hesaplamanın mevcut olduğundan emin olun. Belirli bir hesaplama mevcut değilse, hesaplama kaynaklarına erişim talebinde bulunabilirsiniz.
 
 ### İnce Ayar Desteği için Modeli Kontrol Etme
 
-1. Bu Python betiği Azure Machine Learning (Azure ML) modeline etkileşimde bulunur. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, Azure Machine Learning (Azure ML) modeline etkileşimde bulunur. İşte yaptığı işlemlerin özeti:
 
     - Python soyut sözdizimi ağacını işlemek için fonksiyonlar sağlayan ast modülünü içe aktarır.
 
-    - foundation_model nesnesinde finetune_compute_allow_list adında bir etiket (tag) olup olmadığını kontrol eder. Azure ML'deki etiketler, modelleri filtrelemek ve sıralamak için oluşturulan anahtar-değer çiftleridir.
+    - foundation_model nesnesinin (Azure ML’de bir modeli temsil eder) finetune_compute_allow_list adlı bir etikete sahip olup olmadığını kontrol eder. Azure ML’de etiketler, modelleri filtrelemek ve sıralamak için kullanılan anahtar-değer çiftleridir.
 
-    - Eğer finetune_compute_allow_list etiketi varsa, ast.literal_eval fonksiyonunu kullanarak bu etiketin değerini (string) güvenli bir şekilde Python listesine dönüştürür. Bu liste computes_allow_list değişkenine atanır. Ardından, listeden compute oluşturulması gerektiğini belirten bir mesaj yazdırır.
+    - Eğer finetune_compute_allow_list etiketi varsa, ast.literal_eval fonksiyonunu kullanarak etiketin değerini (string) güvenli şekilde Python listesine dönüştürür. Bu liste computes_allow_list değişkenine atanır. Ardından, listeden bir hesaplama oluşturulması gerektiğini belirten bir mesaj yazdırır.
 
-    - Eğer finetune_compute_allow_list etiketi yoksa, computes_allow_list değişkenini None yapar ve bu etiketin modelin etiketleri arasında olmadığını belirten bir mesaj yazdırır.
+    - Eğer finetune_compute_allow_list etiketi yoksa, computes_allow_list None olarak ayarlanır ve etiketin model etiketleri arasında olmadığına dair bir mesaj yazdırılır.
 
-    - Özetle, bu betik modelin meta verilerinde belirli bir etiketi kontrol eder, varsa değerini listeye dönüştürür ve kullanıcıya bilgi verir.
+    - Özetle, bu betik modelin meta verilerinde belirli bir etiketi kontrol eder, varsa değerini listeye çevirir ve kullanıcıya bilgi verir.
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -186,21 +186,21 @@ pip install azureml-mlflow
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### Compute Örneğini Kontrol Etme
+### Hesaplama Örneğini Kontrol Etme
 
-1. Bu Python betiği Azure Machine Learning (Azure ML) servisi ile etkileşimde bulunur ve bir compute örneği üzerinde çeşitli kontroller yapar. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, Azure Machine Learning (Azure ML) servisi ile etkileşimde bulunur ve bir hesaplama örneği üzerinde çeşitli kontroller yapar. İşte yaptığı işlemlerin özeti:
 
-    - compute_cluster değişkeninde saklanan isimle Azure ML çalışma alanından compute örneğini almaya çalışır. Compute örneğinin provisioning durumu "failed" ise ValueError yükseltir.
+    - compute_cluster değişkeninde saklanan isimle Azure ML çalışma alanından hesaplama örneğini almaya çalışır. Eğer hesaplama örneğinin provisioning durumu "failed" ise, ValueError hatası fırlatır.
 
-    - computes_allow_list None değilse, listedeki tüm compute boyutlarını küçük harfe çevirir ve mevcut compute örneğinin boyutunun bu listede olup olmadığını kontrol eder. Eğer yoksa ValueError yükseltir.
+    - computes_allow_list None değilse, listedeki tüm hesaplama boyutlarını küçük harfe çevirir ve mevcut hesaplama örneğinin boyutunun listede olup olmadığını kontrol eder. Değilse, ValueError hatası fırlatır.
 
-    - computes_allow_list None ise, compute örneğinin boyutunun desteklenmeyen GPU VM boyutları listesinde olup olmadığını kontrol eder. Eğer varsa ValueError yükseltir.
+    - computes_allow_list None ise, hesaplama örneğinin boyutunun desteklenmeyen GPU VM boyutları listesinde olup olmadığını kontrol eder. Eğer varsa, ValueError hatası fırlatır.
 
-    - Çalışma alanındaki tüm kullanılabilir compute boyutlarını alır. Liste üzerinde döner ve her compute boyutunun adı mevcut compute örneğinin boyutuna eşit mi diye kontrol eder. Eşitse, o compute boyutundaki GPU sayısını alır ve gpu_count_found değişkenini True yapar.
+    - Çalışma alanındaki tüm mevcut hesaplama boyutlarının listesini alır. Bu liste üzerinde döner ve her hesaplama boyutunun adı mevcut hesaplama örneğinin boyutuyla eşleşiyorsa, o hesaplama boyutundaki GPU sayısını alır ve gpu_count_found değişkenini True yapar.
 
-    - Eğer gpu_count_found True ise, compute örneğindeki GPU sayısını yazdırır. Değilse ValueError yükseltir.
+    - gpu_count_found True ise, hesaplama örneğindeki GPU sayısını yazdırır. False ise, ValueError hatası fırlatır.
 
-    - Özetle, bu betik Azure ML çalışma alanındaki bir compute örneği üzerinde provisioning durumu, boyutunun izin verilen veya yasaklanan listelerde olup olmadığı ve GPU sayısı gibi kontroller yapar.
+    - Özetle, bu betik Azure ML çalışma alanındaki bir hesaplama örneği üzerinde provisioning durumu, boyutun izin verilen veya yasaklanan listede olup olmadığı ve GPU sayısı gibi kontroller yapar.
 
     ```python
     # Print the exception message
@@ -269,42 +269,41 @@ pip install azureml-mlflow
         )
     ```
 
-## 4. Modelin ince ayarı için veri setini seçin
+## 4. Modeli ince ayar yapmak için veri setini seçme
 
-1. ultrachat_200k veri setini kullanıyoruz. Veri seti, Denetimli ince ayar (sft) için uygun dört parçaya bölünmüştür.
-Üretim sıralaması (gen). Parçalar başına örnek sayısı aşağıdaki gibidir:
+1. ultrachat_200k veri setini kullanıyoruz. Veri seti, Denetimli ince ayar (sft) için uygun dört parçaya ayrılmıştır. Üretim sıralaması (gen). Parçalar başına örnek sayısı aşağıdaki gibidir:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. Sonraki birkaç hücre, ince ayar için temel veri hazırlama işlemlerini gösterir:
+1. Sonraki birkaç hücre, ince ayar için temel veri hazırlığını gösterir:
 
 ### Bazı veri satırlarını görselleştirme
 
-Bu örneğin hızlı çalışmasını istediğimiz için, zaten kırpılmış satırların %5'ini içeren train_sft, test_sft dosyalarını kaydediyoruz. Bu, ince ayarlı modelin daha düşük doğruluğa sahip olacağı anlamına gelir, bu yüzden gerçek dünyada kullanılmamalıdır.
-download-dataset.py, ultrachat_200k veri setini indirip veri setini ince ayar boru hattı bileşeni tarafından kullanılabilir formata dönüştürmek için kullanılır. Ayrıca veri seti büyük olduğu için burada sadece bir kısmı vardır.
+Bu örneğin hızlı çalışmasını istiyoruz, bu yüzden zaten kırpılmış satırların %5’ini içeren train_sft ve test_sft dosyalarını kaydediyoruz. Bu, ince ayarlı modelin doğruluğunun daha düşük olacağı anlamına gelir, bu yüzden gerçek dünyada kullanılmamalıdır.  
+download-dataset.py, ultrachat_200k veri setini indirip veri setini ince ayar boru hattı bileşeni tarafından kullanılabilir formata dönüştürmek için kullanılır. Ayrıca veri seti büyük olduğu için burada sadece bir kısmı bulunmaktadır.
 
-1. Aşağıdaki betiği çalıştırmak sadece verinin %5'ini indirir. Bu oran dataset_split_pc parametresi değiştirilerek artırılabilir.
+1. Aşağıdaki betik sadece verinin %5’ini indirir. Bu oran dataset_split_pc parametresi değiştirilerek artırılabilir.
 
     > [!NOTE]
-    > Bazı dil modellerinin farklı dil kodları vardır, bu yüzden veri setindeki sütun isimleri buna göre olmalıdır.
+    > Bazı dil modellerinin farklı dil kodları vardır, bu yüzden veri setindeki sütun adları da buna uygun olmalıdır.
 
-1. Verilerin nasıl görünmesi gerektiğine dair bir örnek:
-Chat-completion veri seti parquet formatında saklanır ve her kayıt aşağıdaki şemayı kullanır:
+1. Verinin nasıl görünmesi gerektiğine dair bir örnek:  
+Chat-completion veri seti, her girişin aşağıdaki şemayı kullandığı parquet formatında saklanır:
 
-    - Bu, JSON (JavaScript Nesne Gösterimi) formatında bir dokümandır; popüler bir veri alışveriş formatıdır. Çalıştırılabilir kod değil, veri depolama ve taşıma yöntemidir. Yapısı şöyledir:
+    - Bu, popüler bir veri değişim formatı olan JSON (JavaScript Object Notation) belgesidir. Çalıştırılabilir kod değil, veri depolama ve taşıma biçimidir. Yapısının özeti:
 
     - "prompt": AI asistanına yöneltilen görev veya soruyu temsil eden bir string değeri tutar.
 
-    - "messages": Kullanıcı ile AI asistanı arasındaki bir konuşmadaki mesajları temsil eden nesneler dizisini tutar. Her mesaj nesnesi iki anahtar içerir:
+    - "messages": Bir dizi nesne tutar. Her nesne, kullanıcı ile AI asistanı arasındaki bir konuşmadaki mesajı temsil eder. Her mesaj nesnesinin iki anahtarı vardır:
 
-    - "content": Mesajın içeriğini temsil eden string.
-    - "role": Mesajı gönderenin rolünü temsil eden string, "user" veya "assistant" olabilir.
-    - "prompt_id": Her prompt için benzersiz kimlik tutan string.
+    - "content": Mesajın içeriğini temsil eden string değer.
+    - "role": Mesajı gönderen varlığın rolünü temsil eden string değer. "user" veya "assistant" olabilir.
+    - "prompt_id": Prompt için benzersiz bir tanımlayıcıyı temsil eden string değer.
 
-1. Bu JSON dokümanında, bir kullanıcı distopik bir hikaye için bir başrol oluşturmasını AI asistana ister. Asistan yanıt verir, kullanıcı daha fazla detay ister ve asistan kabul eder. Tüm konuşma belirli bir prompt id ile ilişkilidir.
+1. Bu özel JSON belgesinde, bir kullanıcı distopik bir hikaye için bir kahraman yaratmasını AI asistanından ister. Asistan yanıt verir, kullanıcı daha fazla detay ister ve asistan daha fazla detay sağlamayı kabul eder. Tüm konuşma belirli bir prompt id ile ilişkilidir.
 
     ```python
     {
@@ -348,13 +347,13 @@ Chat-completion veri seti parquet formatında saklanır ve her kayıt aşağıda
 
 1. Bu Python betiği, download-dataset.py adlı yardımcı betiği kullanarak bir veri seti indirir. İşte yaptığı işlemlerin özeti:
 
-    - İşletim sistemi fonksiyonlarını sağlayan os modülünü içe aktarır.
+    - İşletim sistemi bağımlı işlevler sağlayan os modülünü içe aktarır.
 
-    - os.system fonksiyonunu kullanarak download-dataset.py betiğini belirli komut satırı argümanlarıyla çalıştırır. Argümanlar indirilecek veri setini (HuggingFaceH4/ultrachat_200k), indirileceği dizini (ultrachat_200k_dataset) ve veri setinin yüzde kaçının indirileceğini (5) belirtir. os.system fonksiyonu komutun çıkış durumunu döndürür; bu durum exit_status değişkenine atanır.
+    - os.system fonksiyonunu kullanarak download-dataset.py betiğini belirli komut satırı argümanlarıyla kabukta çalıştırır. Argümanlar indirilecek veri setini (HuggingFaceH4/ultrachat_200k), indirileceği dizini (ultrachat_200k_dataset) ve veri setinin yüzde kaçının indirileceğini (5) belirtir. os.system fonksiyonu çalıştırılan komutun çıkış durumunu döndürür; bu durum exit_status değişkenine atanır.
 
-    - exit_status 0 değilse, yani komut başarısızsa, veri seti indirilirken hata olduğunu belirten bir Exception yükseltir.
+    - exit_status 0 değilse, veri seti indirilirken hata olduğunu belirten bir Exception fırlatır.
 
-    - Özetle, bu betik bir yardımcı betiği kullanarak veri setini indirir ve komut başarısızsa hata verir.
+    - Özetle, bu betik bir yardımcı betik kullanarak veri seti indirir ve komut başarısız olursa hata verir.
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -374,21 +373,20 @@ Chat-completion veri seti parquet formatında saklanır ve her kayıt aşağıda
         raise Exception("Error downloading dataset")
     ```
 
-### Veriyi DataFrame'e Yükleme
+### Veriyi DataFrame’e Yükleme
 
-1. Bu Python betiği, JSON Lines formatındaki bir dosyayı pandas DataFrame'e yükler ve ilk 5 satırı gösterir. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, JSON Lines formatındaki bir dosyayı pandas DataFrame’e yükler ve ilk 5 satırı gösterir. İşte yaptığı işlemlerin özeti:
 
-    - Güçlü veri işleme ve analiz kütüphanesi pandas'ı içe aktarır.
+    - Güçlü bir veri işleme ve analiz kütüphanesi olan pandas’ı içe aktarır.
 
-    - pandas'ın gösterim ayarlarında maksimum sütun genişliğini 0 yapar. Bu, DataFrame yazdırılırken her sütunun tam metninin kesilmeden gösterilmesini sağlar.
+    - pandas’ın görüntüleme seçeneklerinde maksimum sütun genişliğini 0 olarak ayarlar. Bu, DataFrame yazdırılırken sütunların tam metninin kesilmeden gösterilmesini sağlar.
 
-    - pd.read_json fonksiyonunu kullanarak ultrachat_200k_dataset dizinindeki train_sft.jsonl dosyasını DataFrame'e yükler. lines=True argümanı, dosyanın her satırının ayrı bir JSON nesnesi olduğu JSON Lines formatında olduğunu belirtir.
+    - pd.read_json fonksiyonunu kullanarak ultrachat_200k_dataset dizinindeki train_sft.jsonl dosyasını DataFrame olarak yükler. lines=True argümanı, dosyanın JSON Lines formatında olduğunu belirtir; yani her satır ayrı bir JSON nesnesidir.
+- DataFrame’in ilk 5 satırını göstermek için head metodunu kullanır. Eğer DataFrame 5’ten az satıra sahipse, tüm satırları gösterir.
 
-    - head metodu ile DataFrame'in ilk 5 satırını gösterir. Eğer satır sayısı 5'ten azsa tüm satırları gösterir.
+- Özetle, bu betik bir JSON Lines dosyasını DataFrame’e yüklüyor ve tam sütun metniyle ilk 5 satırı gösteriyor.
 
-    - Özetle, bu betik JSON Lines dosyasını DataFrame'e yükler ve ilk 5 satırı tam metinle birlikte gösterir.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -407,45 +405,46 @@ Chat-completion veri seti parquet formatında saklanır ve her kayıt aşağıda
 
 ## 5. Model ve veriyi girdiler olarak kullanarak ince ayar işini gönderme
 
-Chat-completion boru hattı bileşenini kullanan işi oluşturun. İnce ayar için desteklenen tüm parametreler hakkında daha fazla bilgi edinin.
+Chat-completion pipeline bileşenini kullanan işi oluşturun. İnce ayar için desteklenen tüm parametreler hakkında daha fazla bilgi edinin.
 
-### İnce Ayar Parametrelerini Tanımlama
+### İnce ayar parametrelerini tanımlama
 
 1. İnce ayar parametreleri iki kategoriye ayrılabilir - eğitim parametreleri, optimizasyon parametreleri
 
-1. Eğitim parametreleri, eğitimin çeşitli yönlerini tanımlar:
+1. Eğitim parametreleri, eğitimin şu yönlerini tanımlar -
 
     - Kullanılacak optimizer, scheduler
-    - İnce ayarın optimize edeceği metrik
-    - Eğitim adımları sayısı, batch boyutu vb.
-    - Optimizasyon parametreleri, GPU belleğini optimize etmeye ve compute kaynaklarını etkin kullanmaya yardımcı olur.
+    - İnce ayarı optimize etmek için metrik
+    - Eğitim adımı sayısı, batch boyutu vb.
+    - Optimizasyon parametreleri, GPU belleğini optimize etmeye ve hesaplama kaynaklarını etkili kullanmaya yardımcı olur.
 
-1. Aşağıda bu kategoriye ait bazı parametreler yer almaktadır. Optimizasyon parametreleri modelden modele farklılık gösterir ve bu farklılıklar modeli paketleyen bileşenle birlikte gelir.
+1. Aşağıda bu kategoriye ait bazı parametreler yer almaktadır. Optimizasyon parametreleri her model için farklıdır ve bu farklılıkları yönetmek için modelle birlikte paketlenir.
 
-    - Deepspeed ve LoRA'yı etkinleştir
-    - Karışık hassasiyetli eğitimi etkinleştir
+    - Deepspeed ve LoRA’yı etkinleştir
+    - Karışık hassasiyet eğitimini etkinleştir
     - Çok düğümlü eğitimi etkinleştir
 
+
 > [!NOTE]
-> Denetimli ince ayar hizalamayı kaybetmeye veya felaket unutmaya yol açabilir. Bu sorunu kontrol etmenizi ve ince ayardan sonra hizalama aşaması çalıştırmanızı öneririz.
+> Denetimli ince ayar hizalamayı kaybetmeye veya felaket unutmaya yol açabilir. Bu sorunu kontrol etmenizi ve ince ayardan sonra bir hizalama aşaması çalıştırmanızı öneririz.
 
 ### İnce Ayar Parametreleri
 
-1. Bu Python betiği, bir makine öğrenmesi modelini ince ayar için parametreleri ayarlamaktadır. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, bir makine öğrenimi modelini ince ayar için parametreler ayarlıyor. İşte yaptığı işlemlerin özeti:
 
-    - Eğitim parametreleri olarak varsayılan eğitim epoch sayısı, eğitim ve değerlendirme batch boyutları, öğrenme hızı ve öğrenme hızı scheduler türü gibi parametreleri ayarlar.
+    - Eğitim epoch sayısı, eğitim ve değerlendirme için batch boyutları, öğrenme hızı ve öğrenme hızı scheduler türü gibi varsayılan eğitim parametrelerini ayarlar.
 
-    - Optimizasyon parametreleri olarak LoRa ve DeepSpeed uygulanıp uygulanmayacağı ve DeepSpeed aşaması gibi ayarları yapar.
+    - Layer-wise Relevance Propagation (LoRa) ve DeepSpeed uygulanıp uygulanmayacağı ve DeepSpeed aşaması gibi varsayılan optimizasyon parametrelerini ayarlar.
 
     - Eğitim ve optimizasyon parametrelerini finetune_parameters adlı tek bir sözlükte birleştirir.
 
-    - Eğer foundation_model model-özel varsayılan parametrelere sahipse, bir uyarı mesajı yazdırır ve bu model-özel varsayılanları ast.literal_eval ile sözlüğe dönüştürüp finetune_parameters sözlüğünü günceller.
+    - foundation_model’un model-özel varsayılan parametreleri olup olmadığını kontrol eder. Varsa, bir uyarı mesajı yazdırır ve finetune_parameters sözlüğünü bu model-özel varsayılanlarla günceller. ast.literal_eval fonksiyonu, model-özel varsayılanları string’den Python sözlüğüne dönüştürmek için kullanılır.
 
-    - İnce ayar için kullanılacak nihai parametreleri yazdırır.
+    - Çalıştırma için kullanılacak nihai ince ayar parametrelerini yazdırır.
 
-    - Özetle, bu betik makine öğrenmesi modeli için ince ayar parametrelerini ayarlayıp gösterir, varsayılan parametrelerin model-özel parametrelerle üzerine yazılmasına izin verir.
+    - Özetle, bu betik bir makine öğrenimi modelini ince ayar için parametreleri ayarlıyor ve gösteriyor, varsayılan parametrelerin model-özel olanlarla üzerine yazılmasına izin veriyor.
 
-    ```python
+```python
     # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
     training_parameters = dict(
         num_train_epochs=3,
@@ -482,14 +481,25 @@ Chat-completion boru hattı bileşenini kullanan işi oluşturun. İnce ayar iç
     )
     ```
 
-### Eğitim Boru Hattı
+### Eğitim Pipeline’ı
 
-1. Bu Python betiği, makine öğrenmesi eğitim boru hattı için bir görüntüleme adı oluşturma fonksiyonu tanımlar ve ardından bu fonksiyonu çağırarak görüntüleme adını oluşturur ve yazdırır. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, bir makine öğrenimi eğitim pipeline’ı için görüntüleme adı oluşturacak bir fonksiyon tanımlıyor ve ardından bu fonksiyonu çağırarak görüntüleme adını oluşturup yazdırıyor. İşte yaptığı işlemlerin özeti:
 
-    1. get_pipeline_display_name fonksiyonu tanımlanır. Bu fonksiyon, eğitim boru hattı ile ilgili çeşitli parametrelere dayanarak bir görüntüleme adı oluşturur.
+1. get_pipeline_display_name fonksiyonu tanımlanır. Bu fonksiyon, eğitim pipeline’ıyla ilgili çeşitli parametrelere dayanarak bir görüntüleme adı oluşturur.
 
-    2. Fonksiyon içinde, toplam batch boyutu cihaz başına batch boy
-çeşitli parametrelere dayalı eğitim hattı ve ardından bu görüntüleme adını yazdırma. ```python
+1. Fonksiyon içinde, toplam batch boyutu, cihaz başına batch boyutu, gradyan biriktirme adımı sayısı, düğüm başına GPU sayısı ve ince ayar için kullanılan düğüm sayısı çarpılarak hesaplanır.
+
+1. Öğrenme hızı scheduler türü, DeepSpeed uygulanıp uygulanmadığı, DeepSpeed aşaması, Layer-wise Relevance Propagation (LoRa) uygulanıp uygulanmadığı, saklanacak model checkpoint sayısı sınırı ve maksimum dizi uzunluğu gibi diğer parametreler alınır.
+
+1. Tüm bu parametreleri içeren, tirelerle ayrılmış bir string oluşturulur. DeepSpeed veya LoRa uygulanıyorsa, string sırasıyla "ds" ve DeepSpeed aşaması veya "lora" içerir. Uygulanmıyorsa "nods" veya "nolora" içerir.
+
+1. Fonksiyon, eğitim pipeline’ı için görüntüleme adı olarak kullanılacak bu string’i döndürür.
+
+1. Fonksiyon tanımlandıktan sonra çağrılır ve oluşturulan görüntüleme adı yazdırılır.
+
+1. Özetle, bu betik çeşitli parametrelere dayanarak bir makine öğrenimi eğitim pipeline’ı için görüntüleme adı oluşturur ve bu adı yazdırır.
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -544,24 +554,27 @@ Chat-completion boru hattı bileşenini kullanan işi oluşturun. İnce ayar iç
     print(f"Display name used for the run: {pipeline_display_name}")
     ```
 
-### Pipeline'ı Yapılandırma
+### Pipeline’ı Yapılandırma
 
-Bu Python betiği, Azure Machine Learning SDK kullanarak bir makine öğrenimi pipeline'ı tanımlıyor ve yapılandırıyor. İşte yaptığı işlemlerin özeti:
+Bu Python betiği, Azure Machine Learning SDK kullanarak bir makine öğrenimi pipeline’ı tanımlıyor ve yapılandırıyor. İşte yaptığı işlemlerin özeti:
 
-1. Azure AI ML SDK'dan gerekli modülleri içe aktarır.
-2. Kayıt defterinden "chat_completion_pipeline" adlı bir pipeline bileşenini alır.
-3. `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
+1. Azure AI ML SDK’dan gerekli modülleri içe aktarır.
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+1. Kayıt defterinden "chat_completion_pipeline" adlı pipeline bileşenini alır.
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+1. `@pipeline` dekoratörü ve `create_pipeline` fonksiyonunu kullanarak bir pipeline işi tanımlar. Pipeline’ın adı `pipeline_display_name` olarak ayarlanır.
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. `create_pipeline` fonksiyonu içinde, alınan pipeline bileşeni model yolu, farklı aşamalar için hesaplama kümeleri, eğitim ve test için veri seti bölümleri, ince ayar için kullanılacak GPU sayısı ve diğer ince ayar parametreleri dahil çeşitli parametrelerle başlatılır.
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. İnce ayar işinin çıktısı pipeline işinin çıktısına eşlenir. Bu, ince ayarlı modelin kolayca kaydedilmesini sağlar; bu da modeli çevrimiçi veya toplu uç noktaya dağıtmak için gereklidir.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False` kullanarak bir pipeline işi tanımlar; bu, herhangi bir adım başarısız olursa pipeline'ın duracağı anlamına gelir.
-4. Özetle, bu betik Azure Machine Learning SDK kullanarak sohbet tamamlama görevi için bir makine öğrenimi pipeline'ı tanımlayıp yapılandırmaktadır.
+1. `create_pipeline` fonksiyonu çağrılarak pipeline örneği oluşturulur.
+
+1. Pipeline’ın `force_rerun` ayarı `True` olarak belirlenir; böylece önceki işlerin önbelleğe alınmış sonuçları kullanılmaz.
+
+1. Pipeline’ın `continue_on_step_failure` ayarı `False` olarak belirlenir; böylece herhangi bir adım başarısız olursa pipeline durur.
+
+1. Özetle, bu betik Azure Machine Learning SDK kullanarak bir sohbet tamamlama görevi için makine öğrenimi pipeline’ı tanımlar ve yapılandırır.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -614,13 +627,15 @@ Bu Python betiği, Azure Machine Learning SDK kullanarak bir makine öğrenimi p
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### İş Gönderme
+### İşi Gönderme
 
-1. Bu Python betiği, Azure Machine Learning çalışma alanına bir makine öğrenimi pipeline işi gönderir ve iş tamamlanana kadar bekler. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, bir makine öğrenimi pipeline işini Azure Machine Learning çalışma alanına gönderir ve iş tamamlanana kadar bekler. İşte yaptığı işlemlerin özeti:
 
-- workspace_ml_client içindeki jobs nesnesinin create_or_update metodunu çağırarak pipeline işini gönderir. Çalıştırılacak pipeline pipeline_object ile, işin çalıştırıldığı deney ise experiment_name ile belirtilir.
-- Ardından, jobs nesnesinin stream metodunu çağırarak pipeline işinin tamamlanmasını bekler. Beklenecek iş, pipeline_job nesnesinin name özelliği ile belirtilir.
-- Özetle, bu betik Azure Machine Learning çalışma alanına bir makine öğrenimi pipeline işi gönderir ve iş tamamlanana kadar bekler.
+    - workspace_ml_client içindeki jobs nesnesinin create_or_update metodunu çağırarak pipeline işini gönderir. Çalıştırılacak pipeline `pipeline_object` ile, işin koşulacağı deney ise `experiment_name` ile belirtilir.
+
+    - Ardından workspace_ml_client içindeki jobs nesnesinin stream metodunu çağırarak pipeline işinin tamamlanmasını bekler. Beklenecek iş, `pipeline_job` nesnesinin name özelliği ile belirtilir.
+
+    - Özetle, bu betik bir makine öğrenimi pipeline işini Azure Machine Learning çalışma alanına gönderir ve iş tamamlanana kadar bekler.
 
 ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
@@ -635,23 +650,29 @@ Bu Python betiği, Azure Machine Learning SDK kullanarak bir makine öğrenimi p
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. İncelenmiş modeli çalışma alanına kaydetme
+## 6. İnce ayarlı modeli çalışma alanına kaydetme
 
-İncelenmiş işin çıktısından modeli kaydedeceğiz. Bu, ince ayarlanmış model ile ince ayar işi arasında izlenebilirlik sağlar. İnce ayar işi ayrıca temel model, veri ve eğitim kodu ile izlenebilirliği takip eder.
+İnce ayar işinin çıktısından modeli kaydedeceğiz. Bu, ince ayarlı model ile ince ayar işi arasında soy ağacını takip eder. İnce ayar işi ise temel model, veri ve eğitim kodu ile soy ağacını takip eder.
 
 ### ML Modelini Kaydetme
 
-1. Bu Python betiği, Azure Machine Learning pipeline'ında eğitilmiş bir makine öğrenimi modelini kaydediyor. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, Azure Machine Learning pipeline’ında eğitilmiş bir makine öğrenimi modelini kaydediyor. İşte yaptığı işlemlerin özeti:
 
-- Azure AI ML SDK'dan gerekli modülleri içe aktarır.
-- workspace_ml_client içindeki jobs nesnesinin get metodunu çağırarak pipeline işinden trained_model çıktısının mevcut olup olmadığını kontrol eder ve outputs özelliğine erişir.
-- Pipeline işinin adı ve çıktı adı ("trained_model") kullanılarak eğitilmiş modele giden bir yol oluşturur.
-- Orijinal model adına "-ultrachat-200k" ekleyerek ve varsa eğik çizgileri tire ile değiştirerek ince ayarlanmış model için bir ad tanımlar.
-- Model nesnesi oluşturarak modeli kaydetmeye hazırlanır; bu nesne modelin yolu, türü (MLflow modeli), adı, versiyonu ve açıklaması gibi parametreleri içerir.
-- workspace_ml_client içindeki models nesnesinin create_or_update metodunu çağırarak modeli kaydeder.
-- Kaydedilen modeli yazdırır.
+    - Azure AI ML SDK’dan gerekli modülleri içe aktarır.
 
-1. Özetle, bu betik Azure Machine Learning pipeline'ında eğitilmiş bir makine öğrenimi modelini kaydetmektedir.
+    - Pipeline işinden `trained_model` çıktısının mevcut olup olmadığını kontrol etmek için workspace_ml_client içindeki jobs nesnesinin get metodunu çağırır ve outputs özelliğine erişir.
+
+    - Pipeline işinin adı ve çıktı adı ("trained_model") kullanılarak eğitilmiş modele giden bir yol oluşturur.
+
+    - İnce ayarlı model için bir isim tanımlar; orijinal model adına "-ultrachat-200k" ekler ve varsa eğik çizgileri tire ile değiştirir.
+
+    - Modeli kaydetmek için Model nesnesi oluşturur; model yolu, model türü (MLflow modeli), model adı ve versiyonu ile model açıklaması gibi parametreleri içerir.
+
+    - workspace_ml_client içindeki models nesnesinin create_or_update metodunu çağırarak modeli kaydeder.
+
+    - Kaydedilen modeli yazdırır.
+
+1. Özetle, bu betik Azure Machine Learning pipeline’ında eğitilmiş bir makine öğrenimi modelini kaydediyor.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -693,20 +714,23 @@ Bu Python betiği, Azure Machine Learning SDK kullanarak bir makine öğrenimi p
     print("registered model: \n", registered_model)
     ```
 
-## 7. İncelenmiş modeli çevrimiçi uç noktaya dağıtma
+## 7. İnce ayarlı modeli çevrimiçi uç noktaya dağıtma
 
-Çevrimiçi uç noktalar, modelin kullanılmasını gerektiren uygulamalarla entegre edilebilen kalıcı bir REST API sağlar.
+Çevrimiçi uç noktalar, modeli kullanması gereken uygulamalarla entegre etmek için dayanıklı bir REST API sağlar.
 
 ### Uç Noktayı Yönetme
 
-1. Bu Python betiği, Azure Machine Learning'de kayıtlı model için yönetilen bir çevrimiçi uç nokta oluşturuyor. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, Azure Machine Learning’de kayıtlı bir model için yönetilen bir çevrimiçi uç nokta oluşturuyor. İşte yaptığı işlemlerin özeti:
 
-- Azure AI ML SDK'dan gerekli modülleri içe aktarır.
-- "ultrachat-completion-" ifadesine zaman damgası ekleyerek benzersiz bir çevrimiçi uç nokta adı tanımlar.
-- Uç nokta adı, açıklaması ve kimlik doğrulama modu ("key") gibi parametrelerle ManagedOnlineEndpoint nesnesi oluşturarak uç nokta yaratmaya hazırlanır.
-- workspace_ml_client içindeki begin_create_or_update metodunu ManagedOnlineEndpoint nesnesi ile çağırarak uç noktayı oluşturur ve wait metodunu çağırarak oluşturma işleminin tamamlanmasını bekler.
+    - Azure AI ML SDK’dan gerekli modülleri içe aktarır.
 
-1. Özetle, bu betik Azure Machine Learning'de kayıtlı model için yönetilen bir çevrimiçi uç nokta oluşturuyor.
+    - "ultrachat-completion-" stringine zaman damgası ekleyerek benzersiz bir çevrimiçi uç nokta adı tanımlar.
+
+    - Uç noktayı oluşturmak için ManagedOnlineEndpoint nesnesi oluşturur; uç nokta adı, açıklaması ve kimlik doğrulama modu ("key") gibi parametreleri içerir.
+
+    - workspace_ml_client içindeki begin_create_or_update metodunu çağırarak çevrimiçi uç noktayı oluşturur ve wait metoduyla oluşturma işleminin tamamlanmasını bekler.
+
+1. Özetle, bu betik Azure Machine Learning’de kayıtlı bir model için yönetilen bir çevrimiçi uç nokta oluşturuyor.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -735,23 +759,30 @@ Bu Python betiği, Azure Machine Learning SDK kullanarak bir makine öğrenimi p
     workspace_ml_client.begin_create_or_update(endpoint).wait()
     ```
 
-> [!NOTE]  
-> Burada dağıtım için desteklenen SKU'ların listesini bulabilirsiniz - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> [!NOTE]
+> Dağıtım için desteklenen SKU’ların listesine buradan ulaşabilirsiniz - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
 ### ML Modelini Dağıtma
 
-1. Bu Python betiği, kayıtlı bir makine öğrenimi modelini Azure Machine Learning'de yönetilen bir çevrimiçi uç noktaya dağıtıyor. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, kayıtlı bir makine öğrenimi modelini Azure Machine Learning’de yönetilen bir çevrimiçi uç noktaya dağıtıyor. İşte yaptığı işlemlerin özeti:
 
-- Python soyut sözdizimi ağacı işlemleri için fonksiyonlar sağlayan ast modülünü içe aktarır.
-- Dağıtım için instance türünü "Standard_NC6s_v3" olarak ayarlar.
-- Temel modelde inference_compute_allow_list etiketi varsa, bu etiketi string'den Python listesine çevirir ve inference_computes_allow_list değişkenine atar; yoksa None olarak ayarlar.
-- Belirtilen instance türünün izin verilen listede olup olmadığını kontrol eder. Değilse, kullanıcıya izin verilen listeden bir instance türü seçmesini isteyen bir mesaj yazdırır.
-- Dağıtımı oluşturmak için, dağıtım adı, uç nokta adı, model ID'si, instance türü ve sayısı, canlılık yoklama ayarları ve istek ayarları gibi parametrelerle ManagedOnlineDeployment nesnesi oluşturur.
-- workspace_ml_client içindeki begin_create_or_update metodunu ManagedOnlineDeployment nesnesi ile çağırarak dağıtımı oluşturur ve wait metodunu çağırarak oluşturma işleminin tamamlanmasını bekler.
-- Uç noktadaki trafiği "demo" dağıtımına %100 yönlendirir.
-- workspace_ml_client içindeki begin_create_or_update metodunu uç nokta nesnesi ile çağırarak uç noktayı günceller ve result metodunu çağırarak güncellemenin tamamlanmasını bekler.
+    - Python soyut sözdizimi ağacı işlemleri için fonksiyonlar sağlayan ast modülünü içe aktarır.
 
-1. Özetle, bu betik kayıtlı bir makine öğrenimi modelini Azure Machine Learning'de yönetilen bir çevrimiçi uç noktaya dağıtmaktadır.
+    - Dağıtım için örnek türünü "Standard_NC6s_v3" olarak ayarlar.
+
+    - foundation_model içinde inference_compute_allow_list etiketi varsa, bu etiketi string’den Python listesine dönüştürür ve inference_computes_allow_list değişkenine atar; yoksa None olarak ayarlar.
+
+    - Belirtilen örnek türünün izin verilen listede olup olmadığını kontrol eder. Değilse, kullanıcıdan izin verilen listeden bir örnek türü seçmesini isteyen bir mesaj yazdırır.
+
+    - Dağıtımı oluşturmak için ManagedOnlineDeployment nesnesi oluşturur; dağıtım adı, uç nokta adı, model ID’si, örnek türü ve sayısı, canlılık denetimi ayarları ve istek ayarları gibi parametreleri içerir.
+
+    - workspace_ml_client içindeki begin_create_or_update metodunu çağırarak dağıtımı oluşturur ve wait metoduyla oluşturma işleminin tamamlanmasını bekler.
+
+    - Uç noktanın trafiğini %100 "demo" dağıtımına yönlendirir.
+
+    - workspace_ml_client içindeki begin_create_or_update metodunu çağırarak uç noktayı günceller ve result metoduyla güncelleme işleminin tamamlanmasını bekler.
+
+1. Özetle, bu betik kayıtlı bir makine öğrenimi modelini Azure Machine Learning’de yönetilen bir çevrimiçi uç noktaya dağıtıyor.
 
 ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -806,18 +837,21 @@ Bu Python betiği, Azure Machine Learning SDK kullanarak bir makine öğrenimi p
 
 ## 8. Uç noktayı örnek verilerle test etme
 
-Test veri kümesinden bazı örnek veriler alıp çevrimiçi uç noktaya çıkarım için göndereceğiz. Ardından tahmin edilen etiketleri gerçek etiketlerle birlikte göstereceğiz.
+Test veri setinden bazı örnek veriler alacağız ve çıkarım için çevrimiçi uç noktaya göndereceğiz. Ardından tahmin edilen etiketleri gerçek etiketlerle birlikte göstereceğiz.
 
 ### Sonuçları Okuma
 
-1. Bu Python betiği, bir JSON Lines dosyasını pandas DataFrame olarak okur, rastgele bir örnek alır ve indeksleri sıfırlar. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, bir JSON Lines dosyasını pandas DataFrame’e okuyor, rastgele bir örnek alıyor ve indeksleri sıfırlıyor. İşte yaptığı işlemlerin özeti:
 
-- ./ultrachat_200k_dataset/test_gen.jsonl dosyasını pandas DataFrame olarak okur. read_json fonksiyonu lines=True argümanı ile kullanılır çünkü dosya JSON Lines formatındadır; her satır ayrı bir JSON nesnesidir.
-- DataFrame'den 1 satır rastgele örnek alır. sample fonksiyonu n=1 argümanı ile çağrılır.
-- DataFrame'in indeksini sıfırlar. reset_index fonksiyonu drop=True argümanı ile orijinal indeksi atar ve varsayılan tam sayı indeksleriyle değiştirir.
-- head fonksiyonu 2 argümanı ile DataFrame'in ilk 2 satırını gösterir. Ancak örnekleme sonrası DataFrame sadece 1 satır içerdiğinden sadece o satır gösterilir.
+    - ./ultrachat_200k_dataset/test_gen.jsonl dosyasını pandas DataFrame olarak okur. Dosya JSON Lines formatında olduğu için read_json fonksiyonuna lines=True argümanı verilir; her satır ayrı bir JSON nesnesidir.
 
-1. Özetle, bu betik bir JSON Lines dosyasını pandas DataFrame olarak okur, 1 satır rastgele örnek alır, indeksi sıfırlar ve ilk satırı gösterir.
+    - DataFrame’den rastgele 1 satır örnek alır. sample fonksiyonuna n=1 argümanı verilir.
+
+    - DataFrame’in indeksini sıfırlar. reset_index fonksiyonuna drop=True argümanı verilir; böylece orijinal indeks atılır ve varsayılan tam sayı indeksleri atanır.
+
+    - head fonksiyonuyla DataFrame’in ilk 2 satırını gösterir. Ancak örnekleme sonrası DataFrame sadece 1 satır içerdiğinden, sadece o satır gösterilir.
+
+1. Özetle, bu betik bir JSON Lines dosyasını pandas DataFrame’e okuyor, 1 satırlık rastgele örnek alıyor, indeksleri sıfırlıyor ve ilk satırı gösteriyor.
 
 ```python
     # Import pandas library
@@ -843,12 +877,14 @@ Test veri kümesinden bazı örnek veriler alıp çevrimiçi uç noktaya çıkar
 
 ### JSON Nesnesi Oluşturma
 
-1. Bu Python betiği, belirli parametrelerle bir JSON nesnesi oluşturur ve bunu bir dosyaya kaydeder. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, belirli parametrelerle bir JSON nesnesi oluşturuyor ve bunu bir dosyaya kaydediyor. İşte yaptığı işlemlerin özeti:
 
-- JSON verileri ile çalışmak için fonksiyonlar sağlayan json modülünü içe aktarır.
-- Bir makine öğrenimi modeli için parametreleri temsil eden anahtar ve değerlerden oluşan parameters sözlüğünü oluşturur. Anahtarlar "temperature", "top_p", "do_sample" ve "max_new_tokens" olup karşılık gelen değerleri sırasıyla 0.6, 0.9, True ve 200'dür.
-- İkinci bir sözlük olan test_json'u oluşturur; iki anahtarı vardır: "input_data" ve "params". "input_data" başka bir sözlük olup içinde "input_string" ve "parameters" anahtarları bulunur. "input_string" değeri test_df DataFrame'indeki ilk mesajı içeren bir liste, "parameters" ise az önce oluşturulan parameters sözlüğüdür. "params" ise boş bir sözlüktür.
-- sample_score.json adlı bir dosya açar.
+    - JSON verileriyle çalışmak için json modülünü içe aktarır.
+
+    - Bir makine öğrenimi modeli için parametreleri temsil eden bir sözlük oluşturur; anahtarlar "temperature", "top_p", "do_sample" ve "max_new_tokens" olup, karşılık gelen değerler sırasıyla 0.6, 0.9, True ve 200’dür.
+
+    - İki anahtar içeren başka bir sözlük oluşturur: "input_data" ve "params". "input_data" değeri, "input_string" ve "parameters" anahtarlarını içeren başka bir sözlüktür. "input_string" değeri, test_df DataFrame’inden ilk mesajı içeren bir listedir. "parameters" ise az önce oluşturulan parameters sözlüğüdür. "params" ise boş bir sözlüktür.
+- sample_score.json adlı bir dosya açar
 
 ```python
     # Import the json module, which provides functions to work with JSON data
@@ -882,17 +918,21 @@ Test veri kümesinden bazı örnek veriler alıp çevrimiçi uç noktaya çıkar
         json.dump(test_json, f)
     ```
 
-### Uç Noktayı Çağırma
+### Endpoint Çağırma
 
-1. Bu Python betiği, Azure Machine Learning'deki bir çevrimiçi uç noktayı JSON dosyasını puanlamak için çağırır. İşte yaptığı işlemlerin özeti:
+1. Bu Python betiği, Azure Machine Learning'de çevrimiçi bir endpoint'i çağırarak bir JSON dosyasını puanlıyor. İşte yaptığı işlemlerin özeti:
 
-- workspace_ml_client nesnesinin online_endpoints özelliğinin invoke metodunu çağırır. Bu metod, çevrimiçi uç noktaya istek gönderip yanıt almak için kullanılır.
-- endpoint_name ve deployment_name argümanlarıyla uç nokta ve dağıtım isimlerini belirtir. Bu durumda uç nokta adı online_endpoint_name değişkeninde, dağıtım adı ise "demo" olarak ayarlanmıştır.
-- request_file argümanı ile puanlanacak JSON dosyasının yolunu belirtir. Bu durumda dosya ./ultrachat_200k_dataset/sample_score.json'dur.
-- Uç noktadan dönen yanıtı response değişkenine atar.
-- Ham yanıtı yazdırır.
+    - workspace_ml_client nesnesinin online_endpoints özelliğinin invoke metodunu çağırır. Bu metod, çevrimiçi bir endpoint'e istek göndermek ve yanıt almak için kullanılır.
 
-1. Özetle, bu betik Azure Machine Learning'deki bir çevrimiçi uç noktayı JSON dosyasını puanlamak için çağırır ve yanıtı yazdırır.
+    - endpoint_name ve deployment_name argümanları ile endpoint ve dağıtım adını belirtir. Bu durumda, endpoint adı online_endpoint_name değişkeninde saklanıyor ve dağıtım adı "demo".
+
+    - request_file argümanı ile puanlanacak JSON dosyasının yolunu belirtir. Bu durumda dosya ./ultrachat_200k_dataset/sample_score.json.
+
+    - Endpoint'ten gelen yanıtı response değişkeninde saklar.
+
+    - Ham yanıtı yazdırır.
+
+1. Özetle, bu betik Azure Machine Learning'de çevrimiçi bir endpoint'i çağırarak bir JSON dosyasını puanlıyor ve yanıtı yazdırıyor.
 
 ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
@@ -910,14 +950,17 @@ Test veri kümesinden bazı örnek veriler alıp çevrimiçi uç noktaya çıkar
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Çevrimiçi uç noktayı silme
+## 9. Çevrimiçi endpoint'i silme
 
-1. Çevrimiçi uç noktayı silmeyi unutmayın; aksi halde uç nokta tarafından kullanılan hesaplama için faturalandırma devam eder. Bu Python kod satırı, Azure Machine Learning'de bir çevrimiçi uç noktayı siler. İşte yaptığı işlemlerin özeti:
+1. Çevrimiçi endpoint'i silmeyi unutmayın, aksi takdirde endpoint tarafından kullanılan hesaplama için faturalandırma sayacı çalışmaya devam eder. Bu Python kod satırı, Azure Machine Learning'de bir çevrimiçi endpoint'i siliyor. İşte yaptığı işlemlerin özeti:
 
-- workspace_ml_client nesnesinin online_endpoints özelliğinin begin_delete metodunu çağırır. Bu metod, bir çevrimiçi uç noktanın silinmesini başlatır.
-- Silinecek uç noktanın adını name argümanı ile belirtir. Bu durumda uç nokta adı online_endpoint_name değişkenindedir.
-- wait metodunu çağırarak silme işleminin tamamlanmasını bekler. Bu engelleyen bir işlemdir; yani silme tamamlanana kadar betik devam etmez.
-- Özetle, bu kod satırı Azure Machine Learning'de bir çevrimiçi uç noktanın silinmesini başlatır ve işlemin tamamlanmasını bekler.
+    - workspace_ml_client nesnesinin online_endpoints özelliğinin begin_delete metodunu çağırır. Bu metod, bir çevrimiçi endpoint'in silinmesini başlatmak için kullanılır.
+
+    - name argümanı ile silinecek endpoint'in adını belirtir. Bu durumda endpoint adı online_endpoint_name değişkeninde saklanıyor.
+
+    - wait metodunu çağırarak silme işleminin tamamlanmasını bekler. Bu, engelleyen bir işlemdir; yani silme tamamlanana kadar betiğin devam etmesini engeller.
+
+    - Özetle, bu kod satırı Azure Machine Learning'de bir çevrimiçi endpoint'in silinmesini başlatıyor ve işlemin tamamlanmasını bekliyor.
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -928,4 +971,4 @@ Test veri kümesinden bazı örnek veriler alıp çevrimiçi uç noktaya çıkar
     ```
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

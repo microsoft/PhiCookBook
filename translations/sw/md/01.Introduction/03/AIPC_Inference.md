@@ -2,44 +2,45 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-05-09T10:31:22+00:00",
+  "translation_date": "2025-07-16T20:05:58+00:00",
   "source_file": "md/01.Introduction/03/AIPC_Inference.md",
   "language_code": "sw"
 }
 -->
-# **Kutafsiri Phi-3 katika AI PC**
+# **Inference Phi-3 katika AI PC**
 
-Pamoja na maendeleo ya AI ya kizazi kipya na kuboresha uwezo wa vifaa vya edge, idadi kubwa ya mifano ya AI ya kizazi sasa inaweza kuunganishwa kwenye vifaa vya watumiaji vya Bring Your Own Device (BYOD). AI PC ni mojawapo ya mifano hii. Kuanzia mwaka 2024, Intel, AMD, na Qualcomm wameungana na wazalishaji wa PC kuanzisha AI PC zinazorahisisha usambazaji wa mifano ya AI ya kizazi kwa kutumia mabadiliko ya vifaa. Katika mjadala huu, tutazingatia Intel AI PC na kuchunguza jinsi ya kuendesha Phi-3 kwenye Intel AI PC.
+Kwa maendeleo ya AI ya kizazi na kuboresha uwezo wa vifaa vya edge, idadi kubwa ya mifano ya AI ya kizazi sasa inaweza kuunganishwa kwenye vifaa vya Watumiaji wa Bring Your Own Device (BYOD). AI PCs ni miongoni mwa mifano hii. Kuanzia mwaka 2024, Intel, AMD, na Qualcomm wameungana na watengenezaji wa PC kuanzisha AI PCs zinazorahisisha uanzishaji wa mifano ya AI ya kizazi iliyoko eneo kupitia mabadiliko ya vifaa. Katika mjadala huu, tutazingatia AI PCs za Intel na kuchunguza jinsi ya kuendesha Phi-3 kwenye AI PC ya Intel.
 
 ### NPU ni Nini
 
-NPU (Neural Processing Unit) ni processor au kitengo cha usindikaji kilichojitolea kwenye SoC kubwa kilichoundwa mahsusi kuharakisha shughuli za mitandao ya neva na kazi za AI. Tofauti na CPU na GPU za matumizi ya jumla, NPU zimeboreshwa kwa ajili ya kompyuta sambamba inayotegemea data, hivyo hufanya kazi kwa ufanisi mkubwa katika kusindika data kubwa za multimedia kama video na picha pamoja na kusindika data za mitandao ya neva. NPU ni hodari hasa katika kushughulikia kazi za AI kama utambuzi wa sauti, kuficha nyuma katika simu za video, na mchakato wa kuhariri picha au video kama kugundua vitu.
+NPU (Neural Processing Unit) ni processor maalum au kitengo cha usindikaji kilichojumuishwa kwenye SoC kubwa kilichoundwa mahsusi kwa ajili ya kuharakisha shughuli za mitandao ya neva na kazi za AI. Tofauti na CPU na GPU za matumizi ya jumla, NPUs zimeboreshwa kwa kompyuta sambamba inayotegemea data, na hivyo kuwa na ufanisi mkubwa katika kusindika data kubwa za multimedia kama video na picha pamoja na data za mitandao ya neva. Ni hodari hasa katika kushughulikia kazi zinazohusiana na AI, kama utambuzi wa sauti, kuficha mandharinyuma katika simu za video, na mchakato wa kuhariri picha au video kama kugundua vitu.
 
 ## NPU dhidi ya GPU
 
-Wakati kazi nyingi za AI na ujifunzaji wa mashine zinaendeshwa kwenye GPU, kuna tofauti muhimu kati ya GPU na NPU. GPU zinajulikana kwa uwezo wao wa kompyuta sambamba, lakini si GPU zote zina ufanisi sawa zaidi ya kusindika michoro. NPU, kwa upande mwingine, zimeundwa mahsusi kwa ajili ya hesabu tata zinazohusiana na shughuli za mitandao ya neva, na hivyo kuwa na ufanisi mkubwa kwa kazi za AI.
+Ingawa kazi nyingi za AI na mashine za kujifunza zinaendeshwa kwenye GPUs, kuna tofauti muhimu kati ya GPUs na NPUs.  
+GPUs zinajulikana kwa uwezo wao wa kompyuta sambamba, lakini si GPUs zote zina ufanisi sawa zaidi ya kusindika picha. NPUs, kwa upande mwingine, zimeundwa mahsusi kwa ajili ya hesabu ngumu zinazohusiana na shughuli za mitandao ya neva, na hivyo kuwa na ufanisi mkubwa kwa kazi za AI.
 
-Kwa muhtasari, NPU ni wataalamu wa hisabati wanaoimarisha kasi ya mahesabu ya AI, na wanachukua nafasi muhimu katika zama mpya za AI PC!
+Kwa muhtasari, NPUs ni wataalamu wa hisabati wanaoimarisha hesabu za AI, na wanachukua nafasi muhimu katika enzi mpya ya AI PCs!
 
-***Mfano huu unategemea Processor ya Intel Core Ultra ya hivi karibuni ya Intel***
+***Mfano huu unategemea Processor mpya ya Intel Core Ultra***
 
 ## **1. Tumia NPU kuendesha mfano wa Phi-3**
 
-Kifaa cha Intel® NPU ni kiimarishaji cha AI inference kilichojumuishwa na CPU za Intel za wateja, kuanzia kizazi cha Intel® Core™ Ultra (awali kilijulikana kama Meteor Lake). Hutoa utekelezaji wa kazi za mitandao ya neva kwa matumizi ya nishati kwa ufanisi.
+Kifaa cha Intel® NPU ni kiimarishaji cha inference ya AI kilichojumuishwa na CPU za Intel kwa wateja, kuanzia kizazi cha Intel® Core™ Ultra (ambacho awali kilijulikana kama Meteor Lake). Hutoa utekelezaji wa kazi za mitandao ya neva kwa ufanisi wa nishati.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.sw.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.sw.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.sw.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.sw.png)
 
-**Maktaba ya Kuongeza Kasi ya Intel NPU**
+**Maktaba ya Kuimarisha Intel NPU**
 
-Maktaba ya Kuongeza Kasi ya Intel NPU [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) ni maktaba ya Python iliyoundwa kuongeza ufanisi wa programu zako kwa kutumia nguvu ya Intel Neural Processing Unit (NPU) kufanya mahesabu ya kasi kwenye vifaa vinavyolingana.
+Maktaba ya Intel NPU Acceleration [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) ni maktaba ya Python iliyoundwa kuongeza ufanisi wa programu zako kwa kutumia nguvu ya Intel Neural Processing Unit (NPU) kufanya hesabu za kasi kwenye vifaa vinavyolingana.
 
-Mfano wa Phi-3-mini kwenye AI PC inayotumia processor za Intel® Core™ Ultra.
+Mfano wa Phi-3-mini kwenye AI PC inayotumia processors za Intel® Core™ Ultra.
 
 ![DemoPhiIntelAIPC](../../../../../imgs/01/03/AIPC/aipcphi3-mini.gif)
 
-Sakinisha Maktaba ya Python kwa pip
+Sakinisha Maktaba ya Python kwa kutumia pip
 
 ```bash
 
@@ -47,11 +48,11 @@ Sakinisha Maktaba ya Python kwa pip
 
 ```
 
-***Kumbuka*** Mradi bado uko katika hatua ya maendeleo, lakini mfano wa rejea tayari uko kamili sana.
+***Kumbuka*** Mradi bado uko katika hatua za maendeleo, lakini mfano wa rejea tayari uko kamili sana.
 
-### **Kuendesha Phi-3 kwa kutumia Maktaba ya Kuongeza Kasi ya Intel NPU**
+### **Kuendesha Phi-3 kwa kutumia Maktaba ya Kuimarisha Intel NPU**
 
-Kwa kutumia kuongeza kasi ya Intel NPU, maktaba hii haibadilishi mchakato wa kawaida wa ukodishaji. Unahitaji tu kutumia maktaba hii kuhimilisha mfano wa asili wa Phi-3, kama FP16, INT8, INT4, kama ifuatavyo
+Kwa kutumia kuimarisha kwa Intel NPU, maktaba hii haibadilishi mchakato wa kawaida wa encoding. Unahitaji tu kutumia maktaba hii kuquantize mfano wa awali wa Phi-3, kama FP16, INT8, INT4, kama ifuatavyo
 
 ```python
 from transformers import AutoTokenizer, pipeline,TextStreamer
@@ -71,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-Baada ya ukodishaji kufanikiwa, endelea kuitisha NPU kuendesha mfano wa Phi-3.
+Baada ya kuquantize kufanikiwa, endelea na kuitisha NPU kuendesha mfano wa Phi-3.
 
 ```python
 generation_args = {
@@ -95,9 +96,9 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-Wakati wa kuendesha msimbo, tunaweza kuona hali ya uendeshaji ya NPU kupitia Meneja wa Kazi
+Wakati wa kuendesha msimbo, tunaweza kuona hali ya uendeshaji ya NPU kupitia Task Manager
 
-![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.sw.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.sw.png)
 
 ***Mifano*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -105,36 +106,37 @@ Wakati wa kuendesha msimbo, tunaweza kuona hali ya uendeshaji ya NPU kupitia Men
 
 ### **DirectML ni Nini**
 
-[DirectML](https://github.com/microsoft/DirectML) ni maktaba yenye utendaji wa juu, iliyoongezwa kasi kwa vifaa kwa kutumia DirectX 12 kwa ajili ya ujifunzaji wa mashine. DirectML hutoa kuongeza kasi ya GPU kwa kazi za kawaida za ujifunzaji wa mashine kwa vifaa na madereva mbalimbali yanayoungwa mkono, ikiwa ni pamoja na GPU zote zinazoweza kutumia DirectX 12 kutoka kwa wauzaji kama AMD, Intel, NVIDIA, na Qualcomm.
+[DirectML](https://github.com/microsoft/DirectML) ni maktaba ya DirectX 12 yenye utendaji wa juu na kuimarishwa na vifaa kwa ajili ya mashine za kujifunza. DirectML hutoa kuimarisha kwa GPU kwa kazi za kawaida za mashine za kujifunza kwenye aina mbalimbali za vifaa na madereva yanayounga mkono, ikiwa ni pamoja na GPUs zote zinazounga mkono DirectX 12 kutoka kwa wauzaji kama AMD, Intel, NVIDIA, na Qualcomm.
 
-Inapotumika pekee, API ya DirectML ni maktaba ya chini ya kiwango ya DirectX 12 na inafaa kwa matumizi ya utendaji wa juu, latency ya chini kama mifumo, michezo, na programu nyingine za wakati halisi. Uendeshaji mzuri wa DirectML na Direct3D 12 pamoja na mzigo mdogo na ulinganifu katika vifaa mbalimbali hufanya DirectML kuwa chaguo bora kwa kuongeza kasi ya ujifunzaji wa mashine wakati utendaji wa juu unahitajika na matokeo ya kuaminika na yanayotarajiwa kwa vifaa mbalimbali ni muhimu.
+Inapotumika pekee, API ya DirectML ni maktaba ya chini ya kiwango ya DirectX 12 na inafaa kwa programu zenye utendaji wa juu na ucheleweshaji mdogo kama mifumo, michezo, na programu nyingine za wakati halisi. Uunganishaji wa DirectML na Direct3D 12 pamoja na mzigo wake mdogo na ulinganifu wa vifaa hufanya DirectML kuwa chaguo bora kwa kuharakisha mashine za kujifunza wakati utendaji wa juu unahitajika, na uaminifu pamoja na utabiri wa matokeo kwenye vifaa mbalimbali ni muhimu.
 
 ***Kumbuka*** : DirectML ya hivi karibuni tayari inaunga mkono NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
-### DirectML na CUDA kulingana na uwezo na utendaji wao:
+### DirectML na CUDA kwa uwezo na utendaji wao:
 
-**DirectML** ni maktaba ya ujifunzaji wa mashine iliyotengenezwa na Microsoft. Imeundwa kuongeza kasi ya kazi za ujifunzaji wa mashine kwenye vifaa vya Windows, ikiwa ni pamoja na kompyuta za mezani, kompyuta za mkononi, na vifaa vya edge.
-- Imejengwa juu ya DirectX 12 (DX12), ambayo hutoa msaada mpana wa vifaa kwa GPU, ikiwa ni pamoja na NVIDIA na AMD.
-- Msaada Mpana: Kwa kuwa inatumia DX12, DirectML inaweza kufanya kazi na GPU yoyote inayounga mkono DX12, hata GPU zilizojumuishwa.
-- Usindikaji wa Picha: DirectML husindika picha na data nyingine kwa kutumia mitandao ya neva, na hivyo kufaa kwa kazi kama utambuzi wa picha, kugundua vitu, na zaidi.
-- Rahisi Kuanzisha: Kuanzisha DirectML ni rahisi, na haihitaji SDK maalum au maktaba kutoka kwa wazalishaji wa GPU.
-- Utendaji: Katika baadhi ya kesi, DirectML hufanya kazi vizuri na inaweza kuwa haraka kuliko CUDA, hasa kwa kazi fulani.
-- Mipaka: Hata hivyo, kuna wakati DirectML inaweza kuwa polepole, hasa kwa ukubwa mkubwa wa batch za float16.
+**DirectML** ni maktaba ya mashine za kujifunza iliyotengenezwa na Microsoft. Imeundwa kuharakisha kazi za mashine za kujifunza kwenye vifaa vya Windows, ikiwa ni pamoja na desktop, laptop, na vifaa vya edge.  
+- Imejengwa juu ya DirectX 12 (DX12), ambayo hutoa msaada mpana wa vifaa kwa GPUs, ikiwa ni pamoja na NVIDIA na AMD.  
+- Msaada Mpana: Kwa kutumia DX12, DirectML inaweza kufanya kazi na GPU yoyote inayounga mkono DX12, hata GPU zilizojumuishwa.  
+- Usindikaji wa Picha: DirectML husindika picha na data nyingine kwa kutumia mitandao ya neva, na hivyo kufaa kwa kazi kama utambuzi wa picha, kugundua vitu, na zaidi.  
+- Rahisi Kusakinisha: Kusanidi DirectML ni rahisi, na haitaji SDK maalum au maktaba kutoka kwa watengenezaji wa GPU.  
+- Utendaji: Katika baadhi ya kesi, DirectML hufanya kazi vizuri na inaweza kuwa haraka zaidi kuliko CUDA, hasa kwa kazi fulani.  
+- Mipaka: Hata hivyo, kuna matukio ambapo DirectML inaweza kuwa polepole, hasa kwa ukubwa mkubwa wa batch za float16.
 
-**CUDA** ni jukwaa la kompyuta sambamba na mfano wa programu la NVIDIA. Linawezesha watengenezaji kutumia nguvu za GPU za NVIDIA kwa kompyuta za matumizi ya jumla, ikiwa ni pamoja na ujifunzaji wa mashine na simulizi za kisayansi.
-- Maalum kwa NVIDIA: CUDA imeunganishwa kwa karibu na GPU za NVIDIA na imeundwa mahsusi kwao.
-- Imeboreshwa Sana: Hutoa utendaji mzuri kwa kazi zinazoongezwa kasi na GPU, hasa kwa kutumia GPU za NVIDIA.
-- Inatumiwa Sana: Maktaba na mifumo mingi ya ujifunzaji wa mashine (kama TensorFlow na PyTorch) inaunga mkono CUDA.
-- Urekebishaji: Watengenezaji wanaweza kuboresha mipangilio ya CUDA kwa kazi maalum, ambayo inaweza kusababisha utendaji bora.
-- Mipaka: Hata hivyo, utegemezi wa CUDA kwa vifaa vya NVIDIA unaweza kuwa kizuizi ikiwa unataka msaada mpana kwa GPU tofauti.
+**CUDA** ni jukwaa la kompyuta sambamba na mfano wa programu wa NVIDIA. Inawawezesha watengenezaji kutumia nguvu za GPUs za NVIDIA kwa kompyuta za matumizi ya jumla, ikiwa ni pamoja na mashine za kujifunza na majaribio ya kisayansi.  
+- Maalum kwa NVIDIA: CUDA imeunganishwa kwa karibu na GPUs za NVIDIA na imeundwa mahsusi kwao.  
+- Imeboreshwa Sana: Hutoa utendaji bora kwa kazi zinazotumia GPU, hasa kwa kutumia GPUs za NVIDIA.  
+- Inatumiwa Sana: Maktaba na mifumo mingi ya mashine za kujifunza (kama TensorFlow na PyTorch) inaunga mkono CUDA.  
+- Urekebishaji: Watengenezaji wanaweza kurekebisha mipangilio ya CUDA kwa kazi maalum, ambayo inaweza kuleta utendaji bora.  
+- Mipaka: Hata hivyo, utegemezi wa CUDA kwa vifaa vya NVIDIA unaweza kuwa kikwazo ikiwa unahitaji ulinganifu mpana kwa GPUs tofauti.
 
 ### Kuchagua Kati ya DirectML na CUDA
 
-Chaguo kati ya DirectML na CUDA kinategemea matumizi yako maalum, upatikanaji wa vifaa, na mapendeleo yako. Ikiwa unatafuta msaada mpana na urahisi wa kuanzisha, DirectML inaweza kuwa chaguo zuri. Hata hivyo, ikiwa una GPU za NVIDIA na unahitaji utendaji ulioboreshwa sana, CUDA bado ni chaguo imara. Kwa muhtasari, DirectML na CUDA zote zina nguvu na udhaifu wao, hivyo zingatia mahitaji yako na vifaa vilivyopo wakati wa kufanya uamuzi.
+Chaguo kati ya DirectML na CUDA kinategemea matumizi yako maalum, upatikanaji wa vifaa, na mapendeleo.  
+Ikiwa unatafuta ulinganifu mpana na urahisi wa usanidi, DirectML inaweza kuwa chaguo zuri. Hata hivyo, ikiwa una GPUs za NVIDIA na unahitaji utendaji ulioboreshwa sana, CUDA bado ni chaguo imara. Kwa muhtasari, DirectML na CUDA zote zina nguvu na udhaifu wake, hivyo zingatia mahitaji yako na vifaa vilivyopo wakati wa kufanya uamuzi.
 
-### **AI ya Kizazi na ONNX Runtime**
+### **AI ya Kizazi kwa kutumia ONNX Runtime**
 
-Katika zama za AI, uhamaji wa mifano ya AI ni muhimu sana. ONNX Runtime inaweza kwa urahisi kusambaza mifano iliyofunzwa kwa vifaa tofauti. Watengenezaji hawahitaji kuzingatia mfumo wa inference na hutumia API moja kumaliza inference ya mfano. Katika zama za AI ya kizazi, ONNX Runtime pia imefanya uboreshaji wa msimbo (https://onnxruntime.ai/docs/genai/). Kupitia ONNX Runtime iliyoboreshwa, mfano wa AI wa kizazi ulihimilishwa unaweza kufanyiwa inference kwenye vifaa tofauti. Katika AI ya Kizazi na ONNX Runtime, unaweza kutumia API ya mfano wa AI kupitia Python, C#, C / C++. Bila shaka, usambazaji kwenye iPhone unaweza kutumia API ya AI ya Kizazi ya ONNX Runtime ya C++.
+Katika enzi ya AI, uhamaji wa mifano ya AI ni muhimu sana. ONNX Runtime inaweza kwa urahisi kuanzisha mifano iliyofunzwa kwenye vifaa tofauti. Watengenezaji hawahitaji kuzingatia mfumo wa inference na hutumia API moja kwa ajili ya kumaliza inference ya mfano. Katika enzi ya AI ya kizazi, ONNX Runtime pia imefanya uboreshaji wa msimbo (https://onnxruntime.ai/docs/genai/). Kupitia ONNX Runtime iliyoboreshwa, mfano wa AI wa kizazi uliopunguzwa unaweza kufanyiwa inference kwenye vifaa tofauti. Katika AI ya Kizazi kwa ONNX Runtime, unaweza kutumia API ya mfano wa AI kupitia Python, C#, C / C++. Bila shaka, uanzishaji kwenye iPhone unaweza kutumia API ya AI ya Kizazi ya ONNX Runtime ya C++.
 
 [Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
@@ -185,9 +187,9 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-Hii ni matokeo ya kuendesha
+Huu ni matokeo ya kuendesha
 
-![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.sw.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.sw.png)
 
 ***Mifano*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -195,9 +197,9 @@ Hii ni matokeo ya kuendesha
 
 ### **OpenVINO ni Nini**
 
-[OpenVINO](https://github.com/openvinotoolkit/openvino) ni kifaa cha chanzo wazi cha kuboresha na kusambaza mifano ya ujifunzaji wa kina. Hutoa utendaji ulioboreshwa wa ujifunzaji wa kina kwa mifano ya kuona, sauti, na lugha kutoka kwa mifumo maarufu kama TensorFlow, PyTorch, na zaidi. Anza na OpenVINO. OpenVINO pia inaweza kutumika kwa pamoja na CPU na GPU kuendesha mfano wa Phi3.
+[OpenVINO](https://github.com/openvinotoolkit/openvino) ni kifaa cha chanzo huria kwa ajili ya kuboresha na kuanzisha mifano ya kujifunza kwa kina. Hutoa utendaji ulioboreshwa wa kujifunza kwa kina kwa mifano ya kuona, sauti, na lugha kutoka kwa mifumo maarufu kama TensorFlow, PyTorch, na mingine. Anza na OpenVINO. OpenVINO pia inaweza kutumika kwa pamoja na CPU na GPU kuendesha mfano wa Phi-3.
 
-***Kumbuka***: Kwa sasa, OpenVINO haijiungi na NPU.
+***Kumbuka***: Hivi sasa, OpenVINO haijiungi na NPU.
 
 ### **Sakinisha Maktaba ya OpenVINO**
 
@@ -213,7 +215,7 @@ Hii ni matokeo ya kuendesha
 
 ### **Kuendesha Phi-3 kwa kutumia OpenVINO**
 
-Kama NPU, OpenVINO inakamilisha kuitisha mifano ya AI ya kizazi kwa kuendesha mifano iliyohimilishwa. Tunahitaji kuhimilisha mfano wa Phi-3 kwanza na kukamilisha ukodishaji wa mfano kwenye mstari wa amri kupitia optimum-cli
+Kama NPU, OpenVINO hufanikisha kuitisha mifano ya AI ya kizazi kwa kuendesha mifano iliyopunguzwa. Tunahitaji kwanza kuquantize mfano wa Phi-3 na kukamilisha kuquantize mfano kupitia mstari wa amri kwa kutumia optimum-cli
 
 **INT4**
 
@@ -233,9 +235,9 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 muundo uliobadilishwa, kama huu
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.sw.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.sw.png)
 
-Pakia njia za mfano (model_dir), usanidi unaohusiana (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), na vifaa vilivyoongezwa kasi vya vifaa (GPU.0) kupitia OVModelForCausalLM
+Pakia njia za mfano (model_dir), usanidi unaohusiana (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), na vifaa vilivyoimarishwa na vifaa (GPU.0) kupitia OVModelForCausalLM
 
 ```python
 
@@ -249,13 +251,13 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-Wakati wa kuendesha msimbo, tunaweza kuona hali ya uendeshaji ya GPU kupitia Meneja wa Kazi
+Wakati wa kuendesha msimbo, tunaweza kuona hali ya uendeshaji ya GPU kupitia Task Manager
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.sw.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.sw.png)
 
 ***Mifano*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***Kumbuka*** : Njia tatu zilizo hapo juu zina faida zao, lakini inapendekezwa kutumia kuongeza kasi ya NPU kwa inference ya AI PC.
+### ***Kumbuka*** : Njia tatu zilizo hapo juu zina faida zao, lakini inashauriwa kutumia kuimarisha NPU kwa inference ya AI PC.
 
-**Kang’amuzi**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuwa sahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo halali. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatubebeki wajibu wowote kwa kutokuelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

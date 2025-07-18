@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:43:45+00:00",
+  "translation_date": "2025-07-17T08:01:03+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "fi"
 }
 -->
 # **Phi-3:n hienosäätö Apple MLX Frameworkilla**
 
-Voimme suorittaa hienosäädön yhdistettynä Loraan Apple MLX Frameworkin komentorivillä. (Jos haluat tietää lisää MLX Frameworkin toiminnasta, lue [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+Voimme suorittaa hienosäädön yhdessä Loran kanssa Apple MLX Frameworkin komentoriviltä. (Jos haluat tietää lisää MLX Frameworkin toiminnasta, lue [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
 
 
 ## **1. Datan valmistelu**
@@ -19,7 +19,7 @@ Oletuksena MLX Framework vaatii train-, test- ja eval-tiedostot jsonl-muodossa, 
 
 ### ***Note:***
 
-1. jsonl-datamuoto:
+1. jsonl-datan muoto:
 
 
 ```json
@@ -31,14 +31,14 @@ Oletuksena MLX Framework vaatii train-, test- ja eval-tiedostot jsonl-muodossa, 
 
 ```
 
-2. Esimerkissämme käytämme [TruthfulQA:n dataa](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), mutta datamäärä on melko rajallinen, joten hienosäädön tulokset eivät välttämättä ole parhaat. Suosittelemme käyttämään laadukkaampaa dataa oman käyttötarkoituksen mukaan.
+2. Esimerkissämme käytämme [TruthfulQA:n dataa](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), mutta datan määrä on melko rajallinen, joten hienosäätötulokset eivät välttämättä ole parhaat mahdolliset. Suosittelemme oppijoita käyttämään parempaa dataa oman käyttötarkoituksensa mukaan.
 
-3. Datamuoto on yhdistetty Phi-3-mallipohjaan.
+3. Datan muoto on yhdistetty Phi-3-mallipohjaan
 
-Lataa data tästä [linkistä](../../../../code/04.Finetuning/mlx), sisällytä kaikki .jsonl-tiedostot ***data***-kansioon.
+Lataa data tästä [linkistä](../../../../code/04.Finetuning/mlx), muista sisällyttää kaikki .jsonl-tiedostot ***data***-kansioon
 
 
-## **2. Hienosäätö terminaalissa**
+## **2. Hienosäätö terminaalissasi**
 
 Suorita tämä komento terminaalissa
 
@@ -52,9 +52,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Note:***
 
-1. Tämä on LoRA-hienosäätö, MLX framework ei tue QLoRA:ta
+1. Tämä on LoRA-hienosäätö, MLX Framework ei julkaise QLoRA:ta
 
-2. Voit muokata config.yaml-tiedostoa muuttaaksesi joitain asetuksia, kuten
+2. Voit muokata config.yaml-tiedostoa muuttaaksesi joitakin asetuksia, kuten
 
 
 ```yaml
@@ -135,9 +135,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Hienosäätöadapterin testaus**
+## **3. Hienosäätöadapterin ajaminen testaukseen**
 
-Voit ajaa hienosäätöadapterin terminaalissa näin:
+Voit ajaa hienosäätöadapterin terminaalissa näin
 
 
 ```bash
@@ -155,10 +155,10 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Voit vertailla hienosäädön tuloksia alkuperäiseen malliin
+Voit kokeilla vertailla hienosäädön tuloksia alkuperäiseen malliin
 
 
-## **4. Adapterien yhdistäminen uuden mallin luomiseksi**
+## **4. Adapterien yhdistäminen uusien mallien luomiseksi**
 
 
 ```bash
@@ -186,11 +186,11 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Note:***
 
-1. Tuki kvantisoinnin muunnokselle fp32, fp16 ja INT 8
+1. Nyt tuetaan kvantisointimuunnoksia fp32:lle, fp16:lle ja INT8:lle
 
-2. Yhdistetystä mallista puuttuu tokenizer.model, lataa se osoitteesta https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Yhdistetyssä mallissa puuttuu tokenizer.model, lataa se osoitteesta https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-määritä [Ollama Model](https://ollama.com/)
+Aseta [Ollama Model](https://ollama.com/)
 
 
 ```txt
@@ -214,4 +214,4 @@ Suorita komento terminaalissa
 Onnittelut! Olet hallinnut hienosäädön MLX Frameworkilla
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäisellä kielellä tulisi pitää auktoritatiivisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

@@ -2,60 +2,60 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:35:42+00:00",
+  "translation_date": "2025-07-17T06:11:01+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "sw"
 }
 -->
-# Kuongeza ufanisi Phi-3 kwa kutumia Azure AI Foundry
+# Kurekebisha Phi-3 kwa Azure AI Foundry
 
-Hebu tuchunguze jinsi ya kuongeza ufanisi wa mfano wa lugha wa Microsoft Phi-3 Mini kwa kutumia Azure AI Foundry. Kuongeza ufanisi kunakuwezesha kubadilisha Phi-3 Mini kwa kazi maalum, kuifanya iwe na nguvu zaidi na kuelewa muktadha vyema.
+Tuchunguze jinsi ya kurekebisha mfano wa lugha wa Microsoft Phi-3 Mini kwa kutumia Azure AI Foundry. Kurekebisha kunakuwezesha kuendana na Phi-3 Mini kwa kazi maalum, na kuufanya kuwa na nguvu zaidi na kuelewa muktadha vyema.
 
-## Mambo ya kuzingatia
+## Mambo ya Kuzingatia
 
-- **Uwezo:** Ni modeli gani zinaweza kuongezwa ufanisi? Mfano msingi unaweza kuongezwa ufanisi kufanya nini?
-- **Gharama:** Mfano wa bei ya kuongeza ufanisi ni upi?
-- **Urekebishaji:** Naweza kubadilisha kiasi gani mfano msingi – na kwa njia gani?
-- **Urahisi:** Kuongeza ufanisi hufanyika vipi – je, nahitaji kuandika msimbo maalum? Je, nahitaji kuleta kompyuta yangu mwenyewe?
-- **Usalama:** Modeli zilizoongezwa ufanisi zinajulikana kuwa na hatari za usalama – kuna kinga zozote za kuzuia madhara yasiyotakikana?
+- **Uwezo:** Ni mifano gani inaweza kurekebishwa? Mfano wa msingi unaweza kurekebishwa kufanya nini?
+- **Gharama:** Mfano wa bei kwa kurekebisha ni upi?
+- **Uwezo wa Kubadilika:** Naweza kubadilisha kiasi gani mfano wa msingi – na kwa njia gani?
+- **Urahisi:** Kurekebisha hufanyika vipi – je, nahitaji kuandika msimbo maalum? Je, nahitaji kuleta kompyuta yangu?
+- **Usalama:** Mifano iliyorekebishwa inajulikana kuwa na hatari za usalama – je, kuna kinga zozote za kuzuia madhara yasiyokusudiwa?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.sw.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.sw.png)
 
-## Maandalizi ya kuongeza ufanisi
+## Maandalizi ya Kurekebisha
 
-### Mahitaji ya awali
+### Masharti ya Awali
 
 > [!NOTE]
-> Kwa modeli za familia ya Phi-3, ofa ya kuongeza ufanisi kwa malipo kulingana na matumizi inapatikana tu kwa hubs zilizoundwa katika mikoa ya **East US 2**.
+> Kwa mifano ya familia ya Phi-3, ofa ya kurekebisha kwa malipo ya matumizi inapatikana tu kwa vituo vilivyoundwa katika maeneo ya **East US 2**.
 
 - Usajili wa Azure. Ikiwa huna usajili wa Azure, tengeneza [akaunti ya Azure yenye malipo](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) kuanza.
 
 - Mradi wa [AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Udhibiti wa ruhusa wa Azure (Azure RBAC) hutumika kutoa ruhusa kwa shughuli katika Azure AI Foundry. Ili kutekeleza hatua katika makala hii, akaunti yako ya mtumiaji lazima iwe na __Azure AI Developer role__ kwenye kundi la rasilimali.
+- Udhibiti wa ruhusa za Azure (Azure RBAC) hutumika kutoa ruhusa kwa shughuli katika Azure AI Foundry. Ili kufanya hatua katika makala hii, akaunti yako ya mtumiaji lazima ipewe __Azure AI Developer role__ kwenye kundi la rasilimali.
 
 ### Usajili wa mtoa huduma wa usajili
 
-Hakikisha usajili umefanywa kwa mtoa huduma wa rasilimali `Microsoft.Network`.
+Thibitisha usajili uko kwenye mtoa huduma wa rasilimali `Microsoft.Network`.
 
 1. Ingia kwenye [Azure portal](https://portal.azure.com).
 1. Chagua **Subscriptions** kutoka kwenye menyu ya kushoto.
 1. Chagua usajili unaotaka kutumia.
 1. Chagua **AI project settings** > **Resource providers** kutoka kwenye menyu ya kushoto.
-1. Thibitisha kwamba **Microsoft.Network** ipo kwenye orodha ya watoa huduma wa rasilimali. Vinginevyo, ongeza.
+1. Thibitisha kuwa **Microsoft.Network** iko kwenye orodha ya watoa huduma wa rasilimali. Vinginevyo, ongeza.
 
-### Maandalizi ya data
+### Maandalizi ya Data
 
-Tayarisha data yako ya mafunzo na uthibitishaji ili kuongeza ufanisi wa mfano wako. Seti za data za mafunzo na uthibitishaji zinajumuisha mifano ya ingizo na matokeo unayotaka mfano ufanye.
+Tayarisha data zako za mafunzo na uthibitishaji ili kurekebisha mfano wako. Seti zako za data za mafunzo na uthibitishaji zinajumuisha mifano ya ingizo na matokeo unayotaka mfano ufanye.
 
-Hakikisha mifano yote ya mafunzo inafuata muundo unaotarajiwa kwa ajili ya utambuzi. Ili kuongeza ufanisi wa modeli kwa ufanisi, hakikisha dataset ni yenye usawa na aina mbalimbali.
+Hakikisha mifano yote ya mafunzo inafuata muundo unaotarajiwa kwa utambuzi. Ili kurekebisha mifano kwa ufanisi, hakikisha seti ya data ni yenye usawa na tofauti.
 
-Hii inahusisha kudumisha usawa wa data, kujumuisha hali mbalimbali, na kuboresha mara kwa mara data ya mafunzo ili kuendana na matarajio halisi, na hatimaye kusababisha majibu sahihi na yenye usawa kutoka kwa mfano.
+Hii inahusisha kudumisha usawa wa data, kujumuisha hali mbalimbali, na mara kwa mara kusafisha data za mafunzo ili ziendane na matarajio halisi, na hatimaye kusababisha majibu sahihi na yenye usawa zaidi kutoka kwa mfano.
 
-Aina tofauti za modeli zinahitaji muundo tofauti wa data ya mafunzo.
+Aina tofauti za mifano zinahitaji muundo tofauti wa data za mafunzo.
 
-### Kukamilisha mazungumzo
+### Kukamilisha Mazungumzo
 
-Data ya mafunzo na uthibitishaji unayotumia **lazima** iwe katika muundo wa hati ya JSON Lines (JSONL). Kwa `Phi-3-mini-128k-instruct` dataset ya kuongeza ufanisi lazima iwe katika muundo wa mazungumzo unaotumika na API ya Kukamilisha mazungumzo.
+Data za mafunzo na uthibitishaji unazotumia **zinapaswa** kuwa katika muundo wa hati ya JSON Lines (JSONL). Kwa `Phi-3-mini-128k-instruct` seti ya data ya kurekebisha lazima iwe katika muundo wa mazungumzo unaotumika na API ya Kukamilisha Mazungumzo.
 
 ### Mfano wa muundo wa faili
 
@@ -67,137 +67,136 @@ Data ya mafunzo na uthibitishaji unayotumia **lazima** iwe katika muundo wa hati
 
 Aina ya faili inayoungwa mkono ni JSON Lines. Faili hupakiwa kwenye hifadhi ya kawaida na kupatikana katika mradi wako.
 
-## Kuongeza ufanisi Phi-3 kwa kutumia Azure AI Foundry
+## Kurekebisha Phi-3 kwa Azure AI Foundry
 
-Azure AI Foundry inakuwezesha kubinafsisha modeli kubwa za lugha kwa kutumia seti zako za data kupitia mchakato unaojulikana kama kuongeza ufanisi. Kuongeza ufanisi kunaleta faida kubwa kwa kuwezesha ubinafsishaji na uboreshaji kwa kazi na matumizi maalum. Hii huleta utendaji bora, ufanisi wa gharama, kuchelewesha kidogo, na matokeo yaliyobinafsishwa.
+Azure AI Foundry inakuwezesha kubinafsisha mifano mikubwa ya lugha kwa seti zako binafsi za data kwa kutumia mchakato unaojulikana kama kurekebisha. Kurekebisha kunatoa thamani kubwa kwa kuwezesha ubinafsishaji na uboreshaji kwa kazi na matumizi maalum. Hii huleta utendaji bora, ufanisi wa gharama, kupunguza ucheleweshaji, na matokeo yaliyobinafsishwa.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.sw.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.sw.png)
 
 ### Tengeneza Mradi Mpya
 
 1. Ingia kwenye [Azure AI Foundry](https://ai.azure.com).
 
-1. Chagua **+New project** kuanzisha mradi mpya katika Azure AI Foundry.
+1. Chagua **+New project** kuunda mradi mpya katika Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.sw.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.sw.png)
 
 1. Fanya kazi zifuatazo:
 
-    - Jina la mradi **Hub name**. Lazima liwe la kipekee.
-    - Chagua **Hub** ya kutumia (tengeneza mpya ikiwa inahitajika).
+    - Jina la **Hub** la mradi. Lazima liwe la kipekee.
+    - Chagua **Hub** unayotaka kutumia (unda mpya ikiwa inahitajika).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.sw.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.sw.png)
 
 1. Fanya kazi zifuatazo kuunda hub mpya:
 
-    - Weka **Hub name**. Lazima liwe la kipekee.
-    - Chagua **Subscription** ya Azure.
-    - Chagua **Resource group** ya kutumia (tengeneza mpya ikiwa inahitajika).
+    - Weka **Jina la Hub**. Lazima liwe la kipekee.
+    - Chagua **Subscription** yako ya Azure.
+    - Chagua **Resource group** unayotaka kutumia (unda mpya ikiwa inahitajika).
     - Chagua **Location** unayotaka kutumia.
-    - Chagua **Connect Azure AI Services** kutumia (tengeneza mpya ikiwa inahitajika).
+    - Chagua **Connect Azure AI Services** unayotaka kutumia (unda mpya ikiwa inahitajika).
     - Chagua **Connect Azure AI Search** kisha **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.sw.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.sw.png)
 
 1. Chagua **Next**.
 1. Chagua **Create a project**.
 
 ### Maandalizi ya Data
 
-Kabla ya kuongeza ufanisi, kusanya au tengeneza seti ya data inayohusiana na kazi yako, kama maelekezo ya mazungumzo, maswali na majibu, au aina nyingine yoyote ya data ya maandishi inayofaa. Safisha na andaa data hii kwa kuondoa kelele, kushughulikia thamani zilizokosekana, na kugawanya maneno.
+Kabla ya kurekebisha, kusanya au tengeneza seti ya data inayohusiana na kazi yako, kama vile maelekezo ya mazungumzo, maswali na majibu, au data nyingine muhimu ya maandishi. Safisha na andaa data hii kwa kuondoa kelele, kushughulikia thamani zilizokosekana, na kugawanya maandishi vipande vidogo.
 
-### Ongeza ufanisi wa modeli za Phi-3 katika Azure AI Foundry
+### Rekebisha mifano ya Phi-3 katika Azure AI Foundry
 
 > [!NOTE]
-> Kuongeza ufanisi kwa modeli za Phi-3 kwa sasa kunasaidiwa katika miradi iliyoko East US 2.
+> Kurekebisha mifano ya Phi-3 kwa sasa kunasaidiwa katika miradi iliyoko East US 2.
 
-1. Chagua **Model catalog** kutoka kwenye tab ya upande wa kushoto.
+1. Chagua **Model catalog** kutoka kwenye kichupo cha upande wa kushoto.
 
-1. Andika *phi-3* katika **search bar** na chagua mfano wa phi-3 unayotaka kutumia.
+1. Andika *phi-3* kwenye **search bar** na chagua mfano wa phi-3 unayotaka kutumia.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.sw.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.sw.png)
 
 1. Chagua **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.sw.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.sw.png)
 
-1. Weka **Fine-tuned model name**.
+1. Weka **Jina la mfano uliorekebishwa**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.sw.png)
-
-1. Chagua **Next**.
-
-1. Fanya yafuatayo:
-
-    - Chagua **task type** kuwa **Chat completion**.
-    - Chagua **Training data** unayotaka kutumia. Unaweza kuipakia kupitia data ya Azure AI Foundry au kutoka kwa mazingira yako ya ndani.
-
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.sw.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.sw.png)
 
 1. Chagua **Next**.
 
-1. Pakia **Validation data** unayotaka kutumia, au unaweza kuchagua **Automatic split of training data**.
+1. Fanya kazi zifuatazo:
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.sw.png)
+    - Chagua aina ya **kazi** kuwa **Chat completion**.
+    - Chagua **Data ya Mafunzo** unayotaka kutumia. Unaweza kuipakia kupitia data ya Azure AI Foundry au kutoka mazingira yako ya ndani.
+
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.sw.png)
 
 1. Chagua **Next**.
 
-1. Fanya yafuatayo:
+1. Pakia **Data ya Uthibitishaji** unayotaka kutumia, au unaweza kuchagua **Automatic split of training data**.
 
-    - Chagua **Batch size multiplier** unayotaka kutumia.
-    - Chagua **Learning rate** unayotaka kutumia.
-    - Chagua **Epochs** unayotaka kutumia.
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.sw.png)
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.sw.png)
+1. Chagua **Next**.
 
-1. Chagua **Submit** kuanza mchakato wa kuongeza ufanisi.
+1. Fanya kazi zifuatazo:
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.sw.png)
+    - Chagua **Kiwango cha ukubwa wa kundi (Batch size multiplier)** unayotaka kutumia.
+    - Chagua **Kiwango cha kujifunza (Learning rate)** unayotaka kutumia.
+    - Chagua **Idadi ya mizunguko (Epochs)** unayotaka kutumia.
 
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.sw.png)
 
-1. Mara mfano wako unapoongezwa ufanisi, hali yake itaonekana kama **Completed**, kama ilivyo kwenye picha hapa chini. Sasa unaweza kupeleka mfano na kuutumia katika programu yako, kwenye playground, au katika prompt flow. Kwa maelezo zaidi, angalia [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Chagua **Submit** kuanza mchakato wa kurekebisha.
 
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.sw.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.sw.png)
+
+1. Mara mfano wako utakaporekebishwa, hali itakuwa **Completed**, kama inavyoonyeshwa kwenye picha hapa chini. Sasa unaweza kupeleka mfano na kuutumia katika programu yako, kwenye playground, au katika prompt flow. Kwa maelezo zaidi, angalia [Jinsi ya kupeleka familia ya mifano midogo ya lugha ya Phi-3 kwa Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.sw.png)
 
 > [!NOTE]
-> Kwa maelezo zaidi kuhusu kuongeza ufanisi wa Phi-3, tafadhali tembelea [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Kwa maelezo zaidi kuhusu kurekebisha Phi-3, tafadhali tembelea [Kurekebisha mifano ya Phi-3 katika Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
-## Kusafisha modeli zako zilizoongezwa ufanisi
+## Kusafisha mifano yako iliyorekebishwa
 
-Unaweza kufuta mfano ulioboreshwa kutoka kwenye orodha ya modeli za kuongeza ufanisi katika [Azure AI Foundry](https://ai.azure.com) au kutoka kwenye ukurasa wa maelezo ya mfano. Chagua mfano ulioboreshwa kufuta kutoka ukurasa wa Fine-tuning, kisha chagua kitufe cha Delete kufuta mfano ulioboreshwa.
+Unaweza kufuta mfano uliorekebishwa kutoka kwenye orodha ya mifano iliyorekebishwa katika [Azure AI Foundry](https://ai.azure.com) au kutoka kwenye ukurasa wa maelezo ya mfano. Chagua mfano uliorekebishwa wa kufuta kutoka kwenye ukurasa wa Kurekebisha, kisha chagua kitufe cha Futa kufuta mfano uliorekebishwa.
 
 > [!NOTE]
-> Huwezi kufuta mfano uliobinafsishwa ikiwa una uenezaji uliopo. Lazima kwanza ufute uenezaji wa mfano kabla ya kufuta mfano uliobinafsishwa.
+> Huwezi kufuta mfano wa kawaida ikiwa una usambazaji uliopo. Lazima kwanza ufute usambazaji wa mfano wako kabla hujafuta mfano wako wa kawaida.
 
 ## Gharama na vikwazo
 
-### Mambo ya kuzingatia kuhusu gharama na vikwazo kwa modeli za Phi-3 zilizoongezwa ufanisi kama huduma
+### Mambo ya kuzingatia gharama na vikwazo kwa mifano ya Phi-3 iliyorekebishwa kama huduma
 
-Modeli za Phi zilizoongezwa ufanisi kama huduma hutolewa na Microsoft na kuunganishwa na Azure AI Foundry kwa matumizi. Unaweza kupata bei wakati wa [kupeleka](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) au kuongeza ufanisi wa modeli chini ya kichupo cha Pricing and terms kwenye mtaalamu wa uenezaji.
+Mifano ya Phi iliyorekebishwa kama huduma hutolewa na Microsoft na kuunganishwa na Azure AI Foundry kwa matumizi. Unaweza kupata bei wakati wa [kupeleka](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) au kurekebisha mifano chini ya kichupo cha Bei na masharti kwenye mtaalamu wa kupeleka.
 
 ## Kuchuja maudhui
 
-Modeli zilizotumika kama huduma kwa malipo kulingana na matumizi zinalindwa na Azure AI Content Safety. Zikitumika kwenye vituo vya wakati halisi, unaweza kuchagua kutotumia kipengele hiki. Ukiwa na Azure AI content safety imewezeshwa, maelekezo na majibu hupitia kupitia mchanganyiko wa modeli za upangaji lengo la kugundua na kuzuia maudhui hatarishi. Mfumo wa kuchuja maudhui hugundua na kuchukua hatua kwa makundi maalum ya maudhui yanayoweza kuwa hatari katika maelekezo ya ingizo na majibu ya matokeo. Jifunze zaidi kuhusu [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Mifano inayotumika kama huduma kwa malipo ya matumizi inalindwa na Azure AI Content Safety. Inapopelekwa kwenye vituo vya wakati halisi, unaweza kuchagua kutotumia uwezo huu. Ukiwa na Azure AI content safety imewezeshwa, maelekezo na matokeo hupitia mchanganyiko wa mifano ya uainishaji inayolenga kugundua na kuzuia utoaji wa maudhui hatarishi. Mfumo wa kuchuja maudhui hugundua na kuchukua hatua kwa makundi maalum ya maudhui yanayoweza kuwa hatari katika maelekezo ya ingizo na matokeo ya utoaji. Jifunze zaidi kuhusu [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
-**Mipangilio ya Kuongeza Ufanisi**
+**Mipangilio ya Kurekebisha**
 
-Hyperparameters: Fafanua hyperparameters kama kiwango cha kujifunza, ukubwa wa batch, na idadi ya epochs za mafunzo.
+Hyperparameters: Bainisha hyperparameters kama kiwango cha kujifunza, ukubwa wa kundi, na idadi ya mizunguko ya mafunzo.
 
 **Kazi ya Hasara**
 
 Chagua kazi ya hasara inayofaa kwa kazi yako (mfano, cross-entropy).
 
-**Optimizer**
+**Mrekebishaji**
 
-Chagua optimizer (mfano, Adam) kwa masasisho ya gradient wakati wa mafunzo.
+Chagua mrekebishaji (mfano, Adam) kwa masasisho ya gradient wakati wa mafunzo.
 
-**Mchakato wa Kuongeza Ufanisi**
+**Mchakato wa Kurekebisha**
 
-- Pakua Mfano Uliofunzwa Awali: Pakua checkpoint ya Phi-3 Mini.
+- Pakua Mfano Uliopangwa Awali: Pakua checkpoint ya Phi-3 Mini.
 - Ongeza Tabaka Maalum: Ongeza tabaka maalum kwa kazi (mfano, kichwa cha uainishaji kwa maelekezo ya mazungumzo).
 
-**Fanya Mafunzo kwa Mfano**
-Ongeza ufanisi wa mfano kwa kutumia dataset uliyoandaa. Fuata maendeleo ya mafunzo na rekebisha hyperparameters inapohitajika.
+**Fanya Mafunzo ya Mfano**  
+Rekebisha mfano kwa kutumia seti yako ya data iliyotayarishwa. Fuata maendeleo ya mafunzo na rekebisha hyperparameters inapohitajika.
 
 **Tathmini na Uthibitishaji**
 
@@ -205,21 +204,21 @@ Seti ya Uthibitishaji: Gawanya data yako kuwa seti za mafunzo na uthibitishaji.
 
 **Tathmini Utendaji**
 
-Tumia vipimo kama usahihi, F1-score, au perplexity kutathmini utendaji wa mfano.
+Tumia vipimo kama usahihi, alama ya F1, au ugumu wa kuelewa (perplexity) kutathmini utendaji wa mfano.
 
-## Hifadhi Mfano Ulioboreshwa
+## Hifadhi Mfano Uliorekebishwa
 
-**Checkpoint**
-Hifadhi checkpoint ya mfano ulioboreshwa kwa matumizi ya baadaye.
+**Checkpoint**  
+Hifadhi checkpoint ya mfano uliorekebishwa kwa matumizi ya baadaye.
 
-## Uenezaji
+## Utekelezaji
 
-- Peleka kama Huduma ya Wavuti: Peleka mfano ulioboreshwa kama huduma ya wavuti katika Azure AI Foundry.
-- Jaribu Kituo: Tuma maswali ya majaribio kwenye kituo kilichopelekwa ili kuthibitisha utendaji wake.
+- Tekeleza kama Huduma ya Wavuti: Tekeleza mfano uliorekebishwa kama huduma ya wavuti katika Azure AI Foundry.
+- Jaribu Kituo cha Huduma: Tuma maswali ya majaribio kwenye kituo kilichotekelezwa kuthibitisha utendaji wake.
 
 ## Rudia na Boresha
 
-Rudia: Ikiwa utendaji haujakidhi matarajio, rudia kwa kurekebisha hyperparameters, kuongeza data zaidi, au kuongeza mafunzo kwa epochs zaidi.
+Rudia: Ikiwa utendaji haujitoshelezi, rudia kwa kurekebisha hyperparameters, kuongeza data zaidi, au kurekebisha kwa mizunguko zaidi.
 
 ## Fuata na Boresha
 
@@ -227,11 +226,11 @@ Endelea kufuatilia tabia ya mfano na uboreshe inapohitajika.
 
 ## Binafsisha na Panua
 
-Kazi Maalum: Phi-3 Mini inaweza kuongezwa ufanisi kwa kazi mbalimbali zaidi ya maelekezo ya mazungumzo. Chunguza matumizi mengine!
-Jaribu: Jaribu usanifu tofauti, mchanganyiko wa tabaka, na mbinu za kuboresha utendaji.
+Kazi Maalum: Phi-3 Mini inaweza kurekebishwa kwa kazi mbalimbali zaidi ya maelekezo ya mazungumzo. Chunguza matumizi mengine!  
+Jaribu: Jaribu miundo tofauti, mchanganyiko wa tabaka, na mbinu mbalimbali kuboresha utendaji.
 
 > [!NOTE]
-> Kuongeza ufanisi ni mchakato unaorudiwa. Jaribu, jifunze, na badilisha mfano wako kufikia matokeo bora kwa kazi yako maalum!
+> Kurekebisha ni mchakato wa kurudia. Jaribu, jifunze, na rekebisha mfano wako kufikia matokeo bora kwa kazi yako maalum!
 
-**Kiasi cha majibu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za moja kwa moja zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatutawajibika kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

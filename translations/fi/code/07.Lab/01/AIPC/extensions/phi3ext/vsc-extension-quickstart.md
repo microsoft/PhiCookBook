@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
-  "translation_date": "2025-05-09T04:57:04+00:00",
+  "translation_date": "2025-07-16T16:44:18+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
   "language_code": "fi"
 }
@@ -15,46 +15,46 @@ CO_OP_TRANSLATOR_METADATA:
 * `package.json` - tämä on manifestitiedosto, jossa määrittelet laajennuksesi ja komennon.
   * Esimerkkilaajennus rekisteröi komennon ja määrittelee sen otsikon sekä komennon nimen. Näiden tietojen avulla VS Code voi näyttää komennon komentopalettissa. Laajennusta ei vielä tarvitse ladata.
 * `src/extension.ts` - tämä on pääasiallinen tiedosto, jossa toteutat komennon toiminnallisuuden.
-  * Tiedosto vie ulos yhden funktion, `activate`, joka kutsutaan ensimmäisellä kerralla, kun laajennus aktivoituu (tässä tapauksessa komennon suorittamisen yhteydessä). `activate`-funktion sisällä kutsumme `registerCommand`.
-  * Toimitamme komennon toteutuksen sisältävän funktion toisena parametrina `registerCommand`-funktiolle.
+  * Tiedosto vie yhden funktion, `activate`, joka kutsutaan ensimmäisellä kerralla, kun laajennus aktivoidaan (tässä tapauksessa komennon suorittamisen yhteydessä). `activate`-funktion sisällä kutsumme `registerCommand`-funktiota.
+  * Toisena parametrina `registerCommand`-funktiolle annamme funktion, joka sisältää komennon toteutuksen.
 
 ## Asennus
 
-* asenna suositellut laajennukset (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner ja dbaeumer.vscode-eslint)
+* Asenna suositellut laajennukset (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner ja dbaeumer.vscode-eslint)
 
 
-## Pääset alkuun heti
+## Käynnistä heti
 
 * Paina `F5` avataksesi uuden ikkunan, jossa laajennuksesi on ladattu.
-* Suorita komento komentopaletista painamalla (`Ctrl+Shift+P` tai Macillä `Cmd+Shift+P`) ja kirjoittamalla `Hello World`.
-* Aseta taukopisteitä koodiisi tiedostossa `src/extension.ts` laajennuksen virheenkorjausta varten.
-* Löydät laajennuksen tulosteen virheenkorjauskonsolista.
+* Suorita komento komentopalettista painamalla (`Ctrl+Shift+P` tai Macilla `Cmd+Shift+P`) ja kirjoittamalla `Hello World`.
+* Aseta taukokohtia koodiin tiedostossa `src/extension.ts` laajennuksen virheenkorjausta varten.
+* Löydät laajennuksesi tulosteen virheenkorjauskonsolista.
 
 ## Tee muutoksia
 
-* Voit käynnistää laajennuksen uudelleen virheenkorjaustyökaluriviltä muutettuasi koodia tiedostossa `src/extension.ts`.
-* Voit myös ladata uudelleen (`Ctrl+R` tai Macillä `Cmd+R`) VS Code -ikkunan laajennuksesi kanssa, jotta muutokset tulevat voimaan.
+* Voit käynnistää laajennuksen uudelleen virheenkorjaustyökaluriviltä sen jälkeen, kun olet muuttanut koodia tiedostossa `src/extension.ts`.
+* Voit myös ladata VS Code -ikkunan uudelleen (`Ctrl+R` tai Macilla `Cmd+R`), jolloin laajennuksesi muutokset tulevat voimaan.
 
 
-## Tutustu APIin
+## Tutustu API:in
 
 * Voit avata koko API-kokoelman avaamalla tiedoston `node_modules/@types/vscode/index.d.ts`.
 
 ## Suorita testit
 
 * Asenna [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Suorita "watch"-tehtävä komennolla **Tasks: Run Task**. Varmista, että se on käynnissä, muuten testejä ei välttämättä löydetä.
-* Avaa Testausnäkymä aktiviteettipalkista ja napsauta "Run Test" -painiketta tai käytä pikanäppäintä `Ctrl/Cmd + ; A`.
+* Suorita "watch"-tehtävä komennolla **Tasks: Run Task**. Varmista, että se on käynnissä, muuten testejä ei välttämättä löydy.
+* Avaa Testing-näkymä toimintopalkista ja klikkaa "Run Test" -painiketta tai käytä pikanäppäintä `Ctrl/Cmd + ; A`
 * Näet testitulokset Test Results -näkymässä.
-* Tee muutoksia tiedostoon `src/test/extension.test.ts` tai luo uusia testitiedostoja kansioon `test`.
-  * Toimitettu testiajuri käsittelee vain tiedostoja, joiden nimi vastaa kaavaa `**.test.ts`.
-  * Voit luoda alikansioita kansioon `test` järjestelläksesi testejäsi haluamallasi tavalla.
+* Tee muutoksia tiedostoon `src/test/extension.test.ts` tai luo uusia testitiedostoja `test`-kansioon.
+  * Tarjottu testiajo suorittaa vain tiedostot, joiden nimi vastaa kaavaa `**.test.ts`.
+  * Voit luoda kansioita `test`-kansioon järjestelläksesi testejä haluamallasi tavalla.
 
 ## Mene pidemmälle
 
-* Pienennä laajennuksen kokoa ja nopeuta käynnistysaikaa [paketoimalla laajennuksesi](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo).
-* [Julkaise laajennuksesi](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo) VS Code -laajennusmarkkinapaikalla.
-* Automatisoi käännökset asettamalla [jatkuva integraatio](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo).
+* Pienennä laajennuksen kokoa ja paranna käynnistysaikaa [paketoimalla laajennuksesi](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo).
+* [Julkaise laajennuksesi](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo) VS Code -laajennusmarkkinapaikassa.
+* Automatisoi käännökset asettamalla [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo).
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäinen asiakirja omalla kielellään on pidettävä virallisena lähteenä. Tärkeissä asioissa suositellaan ammattilaisen tekemää ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

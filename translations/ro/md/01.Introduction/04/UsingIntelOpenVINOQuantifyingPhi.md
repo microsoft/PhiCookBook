@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T14:03:08+00:00",
+  "translation_date": "2025-07-16T22:04:09+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "ro"
 }
@@ -11,19 +11,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 Intel este cel mai tradițional producător de procesoare CPU, cu mulți utilizatori. Odată cu creșterea învățării automate și a învățării profunde, Intel a intrat și el în competiția pentru accelerarea AI. Pentru inferența modelelor, Intel folosește nu doar GPU-uri și CPU-uri, ci și NPU-uri.
 
-Ne dorim să implementăm familia Phi-3.x pe dispozitivele finale, sperând să devină partea cea mai importantă a PC-ului AI și a PC-ului Copilot. Încărcarea modelului pe dispozitivul final depinde de cooperarea dintre diverși producători de hardware. Acest capitol se concentrează în principal pe scenariul de aplicare a Intel OpenVINO ca model cuantificat.
+Ne dorim să implementăm familia Phi-3.x pe dispozitivele finale, sperând să devină cea mai importantă componentă a PC-urilor AI și Copilot PC. Încărcarea modelului pe dispozitivul final depinde de colaborarea dintre diferiți producători de hardware. Acest capitol se concentrează în principal pe scenariul de aplicare al Intel OpenVINO ca model cuantificat.
 
 ## **Ce este OpenVINO**
 
-OpenVINO este un set de instrumente open-source pentru optimizarea și implementarea modelelor de învățare profundă de la cloud până la edge. Accelerează inferența deep learning în diverse cazuri de utilizare, cum ar fi AI generativ, video, audio și limbaj, cu modele din framework-uri populare precum PyTorch, TensorFlow, ONNX și altele. Convertește și optimizează modelele, și le implementează pe o combinație de hardware Intel® și medii, local sau pe dispozitiv, în browser sau în cloud.
+OpenVINO este un set de instrumente open-source pentru optimizarea și implementarea modelelor de învățare profundă de la cloud la edge. Accelerează inferența deep learning în diverse cazuri de utilizare, cum ar fi AI generativ, video, audio și limbaj, cu modele din framework-uri populare precum PyTorch, TensorFlow, ONNX și altele. Convertește și optimizează modelele și le implementează pe o combinație de hardware și medii Intel®, fie on-premises, pe dispozitiv, în browser sau în cloud.
 
 Acum, cu OpenVINO, poți cuantifica rapid modelul GenAI pe hardware Intel și accelera referința modelului.
 
-În prezent, OpenVINO suportă conversia pentru cuantificare a Phi-3.5-Vision și Phi-3.5 Instruct.
+În prezent, OpenVINO suportă conversia prin cuantificare pentru Phi-3.5-Vision și Phi-3.5 Instruct.
 
 ### **Configurarea mediului**
 
-Te rugăm să te asiguri că următoarele dependențe de mediu sunt instalate, acestea sunt în requirement.txt
+Asigură-te că următoarele dependențe de mediu sunt instalate, acestea sunt în requirement.txt
 
 ```txt
 
@@ -38,7 +38,7 @@ openvino-genai>=2024.3.0.0
 
 ### **Cuantificarea Phi-3.5-Instruct folosind OpenVINO**
 
-În Terminal, rulează acest script
+În Terminal, te rugăm să rulezi acest script
 
 ```bash
 
@@ -54,7 +54,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ### **Cuantificarea Phi-3.5-Vision folosind OpenVINO**
 
-Rulează acest script în Python sau Jupyter lab
+Te rugăm să rulezi acest script în Python sau Jupyter lab
 
 ```python
 
@@ -104,5 +104,5 @@ if not out_dir.exists():
 
 2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

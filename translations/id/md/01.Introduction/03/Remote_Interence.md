@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:43:46+00:00",
+  "translation_date": "2025-07-16T21:20:50+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "id"
 }
@@ -11,60 +11,60 @@ CO_OP_TRANSLATOR_METADATA:
 
 Setelah adapter dilatih di lingkungan jarak jauh, gunakan aplikasi Gradio sederhana untuk berinteraksi dengan model.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.id.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.id.png)
 
-### Menyediakan Sumber Daya Azure
-Anda perlu menyiapkan Sumber Daya Azure untuk inferensi jarak jauh dengan menjalankan `AI Toolkit: Provision Azure Container Apps for inference` dari command palette. Selama proses ini, Anda akan diminta memilih Azure Subscription dan resource group.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.id.png)
+### Menyediakan Sumber Daya Azure  
+Anda perlu menyiapkan Sumber Daya Azure untuk inferensi jarak jauh dengan menjalankan perintah `AI Toolkit: Provision Azure Container Apps for inference` dari command palette. Selama proses ini, Anda akan diminta untuk memilih Azure Subscription dan resource group Anda.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.id.png)
    
-Secara default, subscription dan resource group untuk inferensi harus sesuai dengan yang digunakan untuk fine-tuning. Inferensi akan menggunakan Azure Container App Environment yang sama dan mengakses model serta adapter model yang disimpan di Azure Files, yang dibuat selama langkah fine-tuning.
+Secara default, subscription dan resource group untuk inferensi harus sama dengan yang digunakan saat fine-tuning. Inferensi akan menggunakan Azure Container App Environment yang sama dan mengakses model serta adapter model yang disimpan di Azure Files, yang dibuat selama langkah fine-tuning.
 
 ## Menggunakan AI Toolkit
 
 ### Deployment untuk Inferensi  
 Jika Anda ingin mengubah kode inferensi atau memuat ulang model inferensi, jalankan perintah `AI Toolkit: Deploy for inference`. Ini akan menyinkronkan kode terbaru Anda dengan ACA dan me-restart replika.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.id.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.id.png)
 
 Setelah deployment berhasil, model siap untuk dievaluasi menggunakan endpoint ini.
 
 ### Mengakses API Inferensi
 
-Anda dapat mengakses API inferensi dengan mengklik tombol "*Go to Inference Endpoint*" yang muncul di notifikasi VSCode. Alternatifnya, endpoint web API dapat ditemukan di bawah `ACA_APP_ENDPOINT` di `./infra/inference.config.json` dan di panel output.
+Anda dapat mengakses API inferensi dengan mengklik tombol "*Go to Inference Endpoint*" yang muncul di notifikasi VSCode. Alternatifnya, endpoint web API dapat ditemukan di bawah `ACA_APP_ENDPOINT` dalam file `./infra/inference.config.json` dan di panel output.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.id.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.id.png)
 
-> **Catatan:** Endpoint inferensi mungkin memerlukan beberapa menit untuk bisa beroperasi sepenuhnya.
+> **Note:** Endpoint inferensi mungkin membutuhkan beberapa menit agar dapat beroperasi sepenuhnya.
 
 ## Komponen Inferensi yang Termasuk dalam Template
 
 | Folder | Isi |
-| ------ |--------- |
+| ------ |-----|
 | `infra` | Berisi semua konfigurasi yang diperlukan untuk operasi jarak jauh. |
 | `infra/provision/inference.parameters.json` | Menyimpan parameter untuk template bicep, digunakan untuk penyediaan sumber daya Azure untuk inferensi. |
 | `infra/provision/inference.bicep` | Berisi template untuk penyediaan sumber daya Azure untuk inferensi. |
-| `infra/inference.config.json` | File konfigurasi, yang dihasilkan oleh perintah `AI Toolkit: Provision Azure Container Apps for inference`. Digunakan sebagai input untuk command palette jarak jauh lainnya. |
+| `infra/inference.config.json` | File konfigurasi, yang dihasilkan oleh perintah `AI Toolkit: Provision Azure Container Apps for inference`. Digunakan sebagai input untuk perintah jarak jauh lainnya. |
 
-### Menggunakan AI Toolkit untuk mengonfigurasi Provision Azure Resource
+### Menggunakan AI Toolkit untuk Mengonfigurasi Penyediaan Sumber Daya Azure  
 Konfigurasikan [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Sediakan Azure Container Apps untuk inferensi` command.
+Perintah `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
-| --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+Anda dapat menemukan parameter konfigurasi di file `./infra/provision/inference.parameters.json`. Berikut detailnya:  
+| Parameter | Deskripsi |
+| --------- |---------- |
+| `defaultCommands` | Perintah untuk memulai web API. |
+| `maximumInstanceCount` | Parameter ini mengatur kapasitas maksimum instance GPU. |
+| `location` | Lokasi di mana sumber daya Azure akan disediakan. Nilai default sama dengan lokasi resource group yang dipilih. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | Parameter ini digunakan untuk memberi nama sumber daya Azure yang akan disediakan. Secara default, nama-nama ini sama dengan nama sumber daya fine-tuning. Anda dapat memasukkan nama sumber daya baru yang belum digunakan untuk membuat sumber daya dengan nama kustom, atau memasukkan nama sumber daya Azure yang sudah ada jika ingin menggunakannya. Untuk detail, lihat bagian [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### Menggunakan Sumber Daya Azure yang Sudah Ada
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Secara default, penyediaan inferensi menggunakan Azure Container App Environment, Storage Account, Azure File Share, dan Azure Log Analytics yang sama dengan yang digunakan saat fine-tuning. Azure Container App yang terpisah dibuat khusus untuk API inferensi.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` file. Kemudian, jalankan perintah `AI Toolkit: Provision Azure Container Apps for inference` dari command palette. Ini akan memperbarui sumber daya yang sudah ada dan membuat yang belum tersedia.
+Jika Anda telah menyesuaikan sumber daya Azure selama langkah fine-tuning atau ingin menggunakan sumber daya Azure Anda sendiri untuk inferensi, tentukan nama-nama tersebut di file `./infra/inference.parameters.json`. Kemudian, jalankan perintah `AI Toolkit: Provision Azure Container Apps for inference` dari command palette. Ini akan memperbarui sumber daya yang ditentukan dan membuat sumber daya yang belum ada.
 
-Misalnya, jika Anda memiliki lingkungan container Azure yang sudah ada, file `./infra/finetuning.parameters.json` Anda harus terlihat seperti ini:
+Sebagai contoh, jika Anda memiliki lingkungan container Azure yang sudah ada, file `./infra/finetuning.parameters.json` Anda akan terlihat seperti ini:
 
 ```json
 {
@@ -83,10 +83,10 @@ Misalnya, jika Anda memiliki lingkungan container Azure yang sudah ada, file `./
   }
 ```
 
-### Provision Manual  
-Jika Anda lebih memilih untuk mengonfigurasi sumber daya Azure secara manual, Anda dapat menggunakan file bicep yang disediakan di folder `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`.
+### Penyediaan Manual  
+Jika Anda lebih memilih mengonfigurasi sumber daya Azure secara manual, Anda dapat menggunakan file bicep yang disediakan di folder `./infra/provision`. Jika Anda sudah menyiapkan dan mengonfigurasi semua sumber daya Azure tanpa menggunakan command palette AI Toolkit, Anda cukup memasukkan nama sumber daya di file `inference.config.json`.
 
-Contohnya:
+Sebagai contoh:
 
 ```json
 {
@@ -100,4 +100,4 @@ Contohnya:
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk memberikan terjemahan yang akurat, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi yang penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

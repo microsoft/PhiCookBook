@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-07T10:53:37+00:00",
+  "translation_date": "2025-07-17T03:21:24+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "ar"
 }
 -->
 # **أنشئ وكيل دردشة خاص بك في Visual Studio Code باستخدام Phi-3.5 من GitHub Models**
 
-هل تستخدم Visual Studio Code Copilot؟ خصوصًا في الدردشة، يمكنك استخدام وكلاء مختلفين لتحسين القدرة على إنشاء وكتابة وصيانة المشاريع في Visual Studio Code. يوفر Visual Studio Code واجهة برمجة تطبيقات (API) تسمح للشركات والأفراد بإنشاء وكلاء مختلفين بناءً على أعمالهم لتوسيع قدراتهم في مجالات متخصصة مختلفة. في هذه المقالة، سنركز على **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** من GitHub Models لإنشاء وكيل Visual Studio Code خاص بك.
+هل تستخدم Visual Studio Code Copilot؟ خاصة في الدردشة، يمكنك استخدام وكلاء مختلفين لتحسين القدرة على إنشاء وكتابة وصيانة المشاريع في Visual Studio Code. يوفر Visual Studio Code واجهة برمجة تطبيقات (API) تتيح للشركات والأفراد إنشاء وكلاء مختلفين بناءً على أعمالهم لتوسيع قدراتهم في مجالات متخصصة مختلفة. في هذه المقالة، سنركز على **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** من GitHub Models لإنشاء وكيل Visual Studio Code خاص بك.
 
 ## **حول Phi-3.5 في GitHub Models**
 
-نعلم أن Phi-3/3.5-mini-instruct في عائلة Phi-3/3.5 يمتلك قدرات قوية في فهم وتوليد الكود، وله مزايا مقارنة بـ Gemma-2-9b و Mistral-Nemo-12B-instruct-2407.
+نعلم أن Phi-3/3.5-mini-instruct في عائلة Phi-3/3.5 يمتلك قدرات قوية في فهم وتوليد الأكواد، وله مزايا مقارنة بـ Gemma-2-9b و Mistral-Nemo-12B-instruct-2407.
 
 ![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.ar.png)
 
-توفر أحدث نماذج GitHub Models بالفعل إمكانية الوصول إلى نماذج Phi-3.5-mini-instruct (128k) و Phi-3.5-vision-instruct (128k). يمكن للمطورين الوصول إليها عبر OpenAI SDK، و Azure AI Inference SDK، و REST API.
+توفر أحدث نماذج GitHub Models بالفعل إمكانية الوصول إلى نماذج Phi-3.5-mini-instruct (128k) و Phi-3.5-vision-instruct (128k). يمكن للمطورين الوصول إليها من خلال OpenAI SDK، و Azure AI Inference SDK، و REST API.
 
 ![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.ar.png)
 
-***Note: *** يُنصح باستخدام Azure AI Inference SDK هنا، لأنه يمكنه التبديل بشكل أفضل مع Azure Model Catalog في بيئة الإنتاج
+***ملاحظة:*** يُنصح باستخدام Azure AI Inference SDK هنا، لأنه يمكنه التبديل بشكل أفضل مع Azure Model Catalog في بيئة الإنتاج.
 
-فيما يلي نتائج **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** في سيناريو توليد الكود بعد الربط مع GitHub Models، وكذلك التحضير للأمثلة التالية
+فيما يلي نتائج **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** في سيناريو توليد الأكواد بعد الربط مع GitHub Models، وكذلك التحضير للأمثلة التالية.
 
-**عرض توضيحي: توليد كود بواسطة GitHub Models Phi-3.5-mini-instruct (128k) من خلال Prompt** ([انقر هنا](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**عرض توضيحي: توليد كود من Prompt باستخدام GitHub Models Phi-3.5-mini-instruct (128k)** ([اضغط هنا](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**عرض توضيحي: توليد كود بواسطة GitHub Models Phi-3.5-vision-instruct (128k) من خلال صورة** ([انقر هنا](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**عرض توضيحي: توليد كود من صورة باستخدام GitHub Models Phi-3.5-vision-instruct (128k)** ([اضغط هنا](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 
 ## **حول وكيل دردشة GitHub Copilot**
 
-يمكن لوكيل دردشة GitHub Copilot إكمال مهام مختلفة في سيناريوهات مشاريع متعددة بناءً على الكود. يحتوي النظام على أربعة وكلاء: workspace، github، terminal، vscode
+يمكن لوكيل دردشة GitHub Copilot إتمام مهام مختلفة في سيناريوهات مشاريع متنوعة بناءً على الكود. يحتوي النظام على أربعة وكلاء: workspace، github، terminal، vscode
 
 ![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.ar.png)
 
-بإضافة اسم الوكيل مع ‘@’، يمكنك إتمام العمل المقابل بسرعة. بالنسبة للشركات، إذا أضفت محتوى خاص بأعمالك مثل المتطلبات، الترميز، مواصفات الاختبار، والإصدار، يمكنك الحصول على وظائف خاصة أكثر قوة للشركات بناءً على GitHub Copilot.
+بإضافة اسم الوكيل مع ‘@’، يمكنك إتمام العمل المقابل بسرعة. بالنسبة للمؤسسات، إذا أضفت محتوى متعلقًا بأعمالك مثل المتطلبات، الترميز، مواصفات الاختبار، والإصدار، يمكنك الحصول على وظائف خاصة أكثر قوة للمؤسسات بناءً على GitHub Copilot.
 
-تم الآن إصدار API الخاص بوكيل دردشة Visual Studio Code رسميًا، مما يتيح للشركات أو مطوري الشركات تطوير وكلاء بناءً على أنظمة بيئية برمجية مختلفة. بناءً على طريقة تطوير Visual Studio Code Extension، يمكنك بسهولة الوصول إلى واجهة برمجة تطبيقات وكيل دردشة Visual Studio Code. يمكننا التطوير بناءً على هذه العملية
+تم الآن إصدار واجهة برمجة التطبيقات (API) لوكيل دردشة Visual Studio Code رسميًا، مما يسمح للمؤسسات أو مطوري المؤسسات بتطوير وكلاء بناءً على أنظمة بيئية مختلفة لأعمال البرمجيات. بناءً على طريقة تطوير امتدادات Visual Studio Code، يمكنك بسهولة الوصول إلى واجهة API لوكيل دردشة Visual Studio Code. يمكننا التطوير بناءً على هذه العملية.
 
 ![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.ar.png)
 
-يمكن لسيناريو التطوير دعم الوصول إلى APIs نماذج الطرف الثالث (مثل GitHub Models، Azure Model Catalog، والخدمات المبنية ذاتيًا على نماذج مفتوحة المصدر) ويمكن أيضًا استخدام نماذج gpt-35-turbo، gpt-4، و gpt-4o المقدمة من GitHub Copilot.
+يمكن لسيناريو التطوير دعم الوصول إلى واجهات برمجة تطبيقات نماذج الطرف الثالث (مثل GitHub Models، Azure Model Catalog، والخدمات المبنية ذاتيًا على نماذج مفتوحة المصدر) ويمكن أيضًا استخدام نماذج gpt-35-turbo، gpt-4، و gpt-4o المقدمة من GitHub Copilot.
 
 ## **إضافة وكيل @phicoding مبني على Phi-3.5**
 
-نحاول دمج قدرات البرمجة لـ Phi-3.5 لإتمام كتابة الكود، توليد كود الصور، ومهام أخرى. إكمال وكيل مبني حول Phi-3.5 - @PHI، وفيما يلي بعض الوظائف
+نحاول دمج قدرات البرمجة لـ Phi-3.5 لإتمام كتابة الأكواد، توليد أكواد من الصور، ومهام أخرى. إكمال وكيل مبني حول Phi-3.5 - @PHI، وفيما يلي بعض الوظائف:
 
 1. توليد مقدمة ذاتية بناءً على GPT-4o المقدم من GitHub Copilot عبر الأمر **@phicoding /help**
 
@@ -58,15 +58,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **الخطوات المتعلقة**
 
-1. تثبيت دعم تطوير ملحق Visual Studio Code باستخدام npm
+1. تثبيت دعم تطوير امتدادات Visual Studio Code باستخدام npm
 
 ```bash
 
 npm install --global yo generator-code 
 
 ```
-2. إنشاء ملحق Visual Studio Code (باستخدام وضع تطوير Typescript، باسم phiext)
-
+2. إنشاء إضافة امتداد Visual Studio Code (باستخدام وضع تطوير Typescript، باسم phiext)
 
 ```bash
 
@@ -74,8 +73,7 @@ yo code
 
 ```
 
-3. فتح المشروع المُنشأ وتعديل package.json. فيما يلي التعليمات والتكوينات ذات الصلة، بالإضافة إلى تكوين GitHub Models. لاحظ أنه يجب إضافة رمز GitHub Models الخاص بك هنا.
-
+3. افتح المشروع الذي تم إنشاؤه وعدل package.json. هنا التعليمات والتكوينات المتعلقة، بالإضافة إلى تكوين GitHub Models. لاحظ أنه يجب إضافة رمز GitHub Models الخاص بك هنا.
 
 ```json
 
@@ -194,7 +192,6 @@ yo code
 ```
 
 4. تعديل src/extension.ts
-
 
 ```typescript
 
@@ -377,21 +374,19 @@ export function deactivate() {}
 
 ![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.ar.png)
 
-
 ***@phicoding /image***
 
 ![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.ar.png)
 
-
-يمكنك تحميل كود العينة :[انقر هنا](../../../../../../code/09.UpdateSamples/Aug/vscode)
+يمكنك تحميل كود العينة: [اضغط هنا](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **الموارد**
 
-1. التسجيل في GitHub Models [https://gh.io/models](https://gh.io/models)
+1. سجل في GitHub Models [https://gh.io/models](https://gh.io/models)
 
-2. تعلم تطوير ملحق Visual Studio Code [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. تعلّم تطوير امتدادات Visual Studio Code [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. التعرف على واجهة برمجة تطبيقات دردشة Visual Studio Code Coilot [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. تعرّف على واجهة برمجة تطبيقات دردشة Visual Studio Code Coilot [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **إخلاء المسؤولية**:  
-تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الرسمي والمعتمد. بالنسبة للمعلومات الحساسة، يُنصح بالترجمة المهنية البشرية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.
+تمت ترجمة هذا المستند باستخدام خدمة الترجمة الآلية [Co-op Translator](https://github.com/Azure/co-op-translator). بينما نسعى لتحقيق الدقة، يرجى العلم أن الترجمات الآلية قد تحتوي على أخطاء أو عدم دقة. يجب اعتبار المستند الأصلي بلغته الأصلية المصدر الموثوق به. للمعلومات الهامة، يُنصح بالترجمة البشرية المهنية. نحن غير مسؤولين عن أي سوء فهم أو تفسير ناتج عن استخدام هذه الترجمة.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-07T10:44:35+00:00",
+  "translation_date": "2025-07-16T20:46:54+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "es"
 }
@@ -13,12 +13,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 Kaito presenta las siguientes diferencias clave en comparación con la mayoría de las metodologías convencionales de despliegue de modelos basadas en infraestructuras de máquinas virtuales:
 
-- Gestiona los archivos del modelo usando imágenes de contenedores. Se proporciona un servidor http para realizar llamadas de inferencia utilizando la biblioteca del modelo.
-- Evita ajustar parámetros de despliegue para adaptarse al hardware GPU mediante configuraciones preestablecidas.
+- Gestiona los archivos del modelo usando imágenes de contenedor. Se proporciona un servidor http para realizar llamadas de inferencia utilizando la biblioteca del modelo.
+- Evita ajustar parámetros de despliegue para adaptarse al hardware GPU mediante configuraciones predefinidas.
 - Provisión automática de nodos GPU según los requisitos del modelo.
 - Aloja imágenes de modelos grandes en el Microsoft Container Registry (MCR) público si la licencia lo permite.
 
-Con Kaito, el flujo de trabajo para incorporar grandes modelos de inferencia AI en Kubernetes se simplifica considerablemente.
+Con Kaito, el flujo de trabajo para incorporar modelos grandes de inferencia AI en Kubernetes se simplifica considerablemente.
 
 ## Arquitectura
 
@@ -27,11 +27,11 @@ Kaito sigue el patrón clásico de diseño de Custom Resource Definition (CRD)/c
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Arquitectura de Kaito" alt="Arquitectura de Kaito">
 </div>
 
-La figura anterior presenta una visión general de la arquitectura de Kaito. Sus componentes principales consisten en:
+La figura anterior muestra una visión general de la arquitectura de Kaito. Sus componentes principales son:
 
-- **Controlador de workspace**: Reconciliará el recurso personalizado `workspace`, crea recursos personalizados `machine` (explicados más adelante) para activar la provisión automática de nodos, y crea la carga de trabajo de inferencia (`deployment` o `statefulset`) basada en las configuraciones preestablecidas del modelo.
-- **Controlador de provisión de nodos**: El nombre del controlador es *gpu-provisioner* en el [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Utiliza el CRD `machine` originado de [Karpenter](https://sigs.k8s.io/karpenter) para interactuar con el controlador de workspace. Se integra con las APIs de Azure Kubernetes Service (AKS) para añadir nuevos nodos GPU al clúster AKS. 
-> Nota: El componente [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) es de código abierto. Puede ser reemplazado por otros controladores si soportan las APIs de [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Controlador Workspace**: Reconciliará el recurso personalizado `workspace`, crea recursos personalizados `machine` (explicados más adelante) para activar la provisión automática de nodos, y crea la carga de trabajo de inferencia (`deployment` o `statefulset`) basada en las configuraciones predefinidas del modelo.
+- **Controlador de provisión de nodos**: El nombre del controlador es *gpu-provisioner* en el [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Utiliza el CRD `machine` originado de [Karpenter](https://sigs.k8s.io/karpenter) para interactuar con el controlador workspace. Se integra con las APIs de Azure Kubernetes Service (AKS) para añadir nuevos nodos GPU al clúster AKS.
+> Nota: El [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) es un componente de código abierto. Puede ser reemplazado por otros controladores si soportan las APIs de [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Instalación
 
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-El estado del workspace puede ser monitoreado ejecutando el siguiente comando. Cuando la columna WORKSPACEREADY se vuelve `True`, el modelo se ha desplegado correctamente.
+El estado del workspace puede ser monitoreado ejecutando el siguiente comando. Cuando la columna WORKSPACEREADY muestre `True`, el modelo se ha desplegado correctamente.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Luego, se puede obtener la IP del servicio de inferencia en el clúster y usar un pod temporal `curl` para probar el endpoint del servicio dentro del clúster.
+Luego, se puede obtener la IP del servicio de inferencia en el clúster y usar un pod temporal con `curl` para probar el endpoint del servicio dentro del clúster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-El estado del workspace puede ser monitoreado ejecutando el siguiente comando. Cuando la columna WORKSPACEREADY se vuelve `True`, el modelo se ha desplegado correctamente.
+El estado del workspace puede ser monitoreado ejecutando el siguiente comando. Cuando la columna WORKSPACEREADY muestre `True`, el modelo se ha desplegado correctamente.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Luego, se puede obtener la IP del servicio de inferencia en el clúster y usar un pod temporal `curl` para probar el endpoint del servicio dentro del clúster.
+Luego, se puede obtener la IP del servicio de inferencia en el clúster y usar un pod temporal con `curl` para probar el endpoint del servicio dentro del clúster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -174,5 +174,5 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

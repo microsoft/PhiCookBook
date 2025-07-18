@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-05-09T20:46:25+00:00",
+  "translation_date": "2025-07-17T06:33:05+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "no"
 }
 -->
 # **Finjustering av Phi-3 med Lora**
 
-Finjustering av Microsofts Phi-3 Mini språkmodell ved bruk av [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) på et tilpasset chat-instruksjonsdatasett.
+Finjustering av Microsofts språkmodell Phi-3 Mini ved hjelp av [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) på et tilpasset chat-instruksjonsdatasett.
 
-LORA vil hjelpe med å forbedre samtaleforståelse og responsgenerering.
+LORA vil bidra til å forbedre samtaleforståelse og responsgenerering.
 
-## Trinnvis guide for hvordan man finjusterer Phi-3 Mini:
+## Trinnvis guide for hvordan du finjusterer Phi-3 Mini:
 
 **Imports og oppsett**
 
-Installasjon av loralib
+Installere loralib
 
 ```
 pip install loralib
@@ -26,10 +26,10 @@ pip install loralib
 
 ```
 
-Begynn med å importere nødvendige biblioteker som datasets, transformers, peft, trl og torch.  
+Start med å importere nødvendige biblioteker som datasets, transformers, peft, trl og torch.  
 Sett opp logging for å følge treningsprosessen.
 
-Du kan velge å tilpasse enkelte lag ved å erstatte dem med tilsvarende implementasjoner i loralib. Vi støtter foreløpig kun nn.Linear, nn.Embedding og nn.Conv2d. Vi støtter også MergedLinear for tilfeller der ett nn.Linear representerer flere lag, slik som i noen implementasjoner av attention qkv-projeksjonen (se Tilleggsnotater for mer informasjon).
+Du kan velge å tilpasse noen lag ved å erstatte dem med tilsvarende implementert i loralib. Vi støtter foreløpig kun nn.Linear, nn.Embedding og nn.Conv2d. Vi støtter også MergedLinear for tilfeller der en enkelt nn.Linear representerer mer enn ett lag, slik som i noen implementasjoner av attention qkv-projeksjonen (se Tilleggsnotater for mer informasjon).
 
 ```
 # ===== Before =====
@@ -47,7 +47,7 @@ import loralib as lora
 layer = lora.Linear(in_features, out_features, r=16)
 ```
 
-Før treningsløkken starter, marker kun LoRA-parametrene som trenbare.
+Før treningsløkken starter, merk kun LoRA-parametere som trenbare.
 
 ```
 import loralib as lora
@@ -82,19 +82,19 @@ Nå kan treningen fortsette som vanlig.
 
 **Hyperparametere**
 
-Definer to ordbøker: training_config og peft_config. training_config inneholder hyperparametere for treningen, som læringsrate, batch-størrelse og logging-innstillinger.
+Definer to ordbøker: training_config og peft_config. training_config inneholder hyperparametere for trening, som læringsrate, batch-størrelse og loggingsinnstillinger.
 
-peft_config spesifiserer LoRA-relaterte parametere som rank, dropout og task type.
+peft_config spesifiserer LoRA-relaterte parametere som rank, dropout og oppgavetype.
 
-**Modell- og tokenizer-lasting**
+**Modell- og tokenizerlasting**
 
-Angi stien til den forhåndstrente Phi-3 modellen (f.eks. "microsoft/Phi-3-mini-4k-instruct"). Konfigurer modellinnstillinger, inkludert cache-bruk, datatype (bfloat16 for mixed precision) og implementasjon av attention.
+Spesifiser stien til den forhåndstrente Phi-3-modellen (f.eks. "microsoft/Phi-3-mini-4k-instruct"). Konfigurer modellinnstillinger, inkludert cache-bruk, datatype (bfloat16 for mixed precision) og implementasjon av attention.
 
 **Trening**
 
-Finjuster Phi-3 modellen ved hjelp av det tilpassede chat-instruksjonsdatasettet. Bruk LoRA-innstillingene fra peft_config for effektiv tilpasning. Overvåk treningsfremdriften med den angitte logging-strategien.  
+Finjuster Phi-3-modellen ved hjelp av det tilpassede chat-instruksjonsdatasettet. Bruk LoRA-innstillingene fra peft_config for effektiv tilpasning. Overvåk treningsfremdriften med den angitte loggestrategien.  
 Evaluering og lagring: Evaluer den finjusterte modellen.  
-Lagre sjekkpunkter under treningen for senere bruk.
+Lagre sjekkpunkter under trening for senere bruk.
 
 **Eksempler**
 - [Lær mer med denne eksempelnotatboken](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
@@ -104,4 +104,4 @@ Lagre sjekkpunkter under treningen for senere bruk.
 - [Eksempel på Hugging Face Hub Fine Tuning med QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på det opprinnelige språket bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår fra bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

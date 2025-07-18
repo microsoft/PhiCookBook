@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:16:14+00:00",
+  "translation_date": "2025-07-16T21:39:11+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "vi"
 }
 -->
-# **Suy luận Phi-3-Vision trên máy địa phương**
+# **Suy luận Phi-3-Vision trên máy cục bộ**
 
-Phi-3-vision-128k-instruct cho phép Phi-3 không chỉ hiểu ngôn ngữ mà còn nhìn thấy thế giới một cách trực quan. Thông qua Phi-3-vision-128k-instruct, chúng ta có thể giải quyết các vấn đề hình ảnh khác nhau, như OCR, phân tích bảng, nhận diện đối tượng, mô tả hình ảnh, v.v. Chúng ta có thể dễ dàng hoàn thành các tác vụ trước đây đòi hỏi nhiều dữ liệu huấn luyện. Dưới đây là các kỹ thuật liên quan và các kịch bản ứng dụng được trích dẫn bởi Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct cho phép Phi-3 không chỉ hiểu ngôn ngữ mà còn có thể nhìn thấy thế giới một cách trực quan. Thông qua Phi-3-vision-128k-instruct, chúng ta có thể giải quyết các vấn đề hình ảnh khác nhau, như OCR, phân tích bảng, nhận diện đối tượng, mô tả hình ảnh, v.v. Chúng ta có thể dễ dàng hoàn thành các nhiệm vụ trước đây đòi hỏi nhiều dữ liệu huấn luyện. Dưới đây là các kỹ thuật và kịch bản ứng dụng liên quan được trích dẫn bởi Phi-3-vision-128k-instruct
 
 ## **0. Chuẩn bị**
 
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Phân tích hình ảnh với Phi-3-Vision**
 
-Chúng ta muốn AI có thể phân tích nội dung hình ảnh và đưa ra mô tả phù hợp
+Chúng ta muốn AI có thể phân tích nội dung của hình ảnh và đưa ra các mô tả phù hợp
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Chúng ta có thể lấy câu trả lời liên quan bằng cách chạy đoạn mã sau trong Notebook
+Chúng ta có thể nhận được câu trả lời liên quan bằng cách chạy đoạn mã sau trong Notebook
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. So sánh nhiều hình ảnh**
 
-Phi-3 Vision hỗ trợ so sánh nhiều hình ảnh. Chúng ta có thể sử dụng mô hình này để tìm sự khác biệt giữa các hình ảnh.
+Phi-3 Vision hỗ trợ so sánh nhiều hình ảnh. Chúng ta có thể dùng mô hình này để tìm ra sự khác biệt giữa các hình ảnh.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -149,5 +149,5 @@ Kết quả là
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc sai sót. Tài liệu gốc bằng ngôn ngữ nguyên bản nên được xem là nguồn tham khảo chính xác nhất. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

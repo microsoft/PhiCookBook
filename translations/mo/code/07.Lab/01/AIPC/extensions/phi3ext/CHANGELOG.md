@@ -2,24 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-05-07T15:19:37+00:00",
+  "translation_date": "2025-07-16T16:29:52+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/CHANGELOG.md",
   "language_code": "mo"
 }
 -->
-# Change Log
+# 變更日誌
 
-All notable changes to the "phi3ext" extension will be documented in this file.
+所有 "phi3ext" 擴充功能的重要變更都會記錄在此文件中。
 
-Please refer to [Keep a Changelog](http://keepachangelog.com/) for guidance on how to structure this file.
+請參考 [保持變更日誌](http://keepachangelog.com/) 了解如何撰寫此文件的建議。
 
-## [Unreleased]
+## [未發佈]
 
-- Initial release
+- 初始版本
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language or dialect "mo" refers to? This will help me provide the correct translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-09T04:33:58+00:00",
+  "translation_date": "2025-07-16T16:05:33+00:00",
   "source_file": "code/03.Finetuning/olive-ort-example/README.md",
   "language_code": "cs"
 }
 -->
-// Fine-tune Phi3 using Olive
+# Doladění Phi3 pomocí Olive
 
-// In this example you'll use Olive to:
+V tomto příkladu použijete Olive k:
 
-// 1. Fine-tune a LoRA adapter to classify phrases into Sad, Joy, Fear, Surprise.
-// 2. Merge the adapter weights into the base model.
-// 3. Optimize and Quantize the model into `int4`.
+1. Doladění LoRA adaptéru pro klasifikaci frází do kategorií Smutek, Radost, Strach, Překvapení.
+1. Sloučení vah adaptéru do základního modelu.
+1. Optimalizaci a kvantizaci modelu do formátu `int4`.
 
-// We'll also show you how to inference the fine-tuned model using the ONNX Runtime (ORT) Generate API.
+Ukážeme vám také, jak provést inferenci doladěného modelu pomocí ONNX Runtime (ORT) Generate API.
 
-// > **⚠️ For Fine-tuning, you'll need to have a suitable GPU available - for example, an A10, V100, A100.**
+> **⚠️ Pro doladění je potřeba mít k dispozici vhodnou GPU - například A10, V100, A100.**
 
-/* 💾 Install */
+## 💾 Instalace
 
-// Create a new Python virtual environment (for example, using `conda`):
+Vytvořte nové Python virtuální prostředí (například pomocí `conda`):
 
 ```bash
 conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-// Next, install the Olive and the dependencies for a fine-tuning workflow:
+Dále nainstalujte Olive a závislosti pro doladění:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -36,35 +36,34 @@ pip install olive-ai[gpu]
 pip install -r requirements.txt
 ```
 
-/* 🧪 Fine-tune Phi3 using Olive */
+## 🧪 Doladění Phi3 pomocí Olive
+[Konfigurační soubor Olive](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) obsahuje *workflow* se následujícími *kroky*:
 
-// The [Olive configuration file](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) contains a *workflow* with the following *passes*:
+Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-// Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
+Ve zkratce tento workflow:
 
-// At a high-level, this workflow will:
+1. Doladí Phi3 (po dobu 150 kroků, což můžete upravit) pomocí dat z [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json).
+1. Sloučí váhy LoRA adaptéru do základního modelu. Výsledkem bude jeden modelový artefakt ve formátu ONNX.
+1. Model Builder optimalizuje model pro ONNX runtime *a* kvantizuje model do `int4`.
 
-// 1. Fine-tune Phi3 (for 150 steps, which you can modify) using the [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json) data.
-// 2. Merge the LoRA adapter weights into the base model. This will give you a single model artifact in the ONNX format.
-// 3. Model Builder will optimize the model for the ONNX runtime *and* quantize the model into `int4`.
-
-// To execute the workflow, run:
+Pro spuštění workflow použijte:
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-// When Olive has completed, you're optimized `int4` fine-tuned Phi3 model is available in: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
+Po dokončení Olive je váš optimalizovaný a kvantizovaný `int4` doladěný model Phi3 dostupný v: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-/* 🧑‍💻 Integrate fine-tuned Phi3 into your application */
+## 🧑‍💻 Integrace doladěného Phi3 do vaší aplikace
 
-// To run the app:
+Pro spuštění aplikace:
 
 ```bash
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-// This response should be a single word classification of the phrase (Sad/Joy/Fear/Surprise).
+Odpověď by měla být jednoslovná klasifikace fráze (Smutek/Radost/Strach/Překvapení).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo mylné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

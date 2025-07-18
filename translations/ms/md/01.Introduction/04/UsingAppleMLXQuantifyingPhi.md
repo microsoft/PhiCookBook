@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-05-09T13:48:05+00:00",
+  "translation_date": "2025-07-16T21:56:26+00:00",
   "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
   "language_code": "ms"
 }
 -->
-# **Quantizando Phi-3.5 usando o Apple MLX Framework**
+# **Pengkuantitian Phi-3.5 menggunakan Rangka Kerja Apple MLX**
 
-MLX é uma estrutura de arrays para pesquisa em aprendizado de máquina no Apple silicon, desenvolvida pela equipe de pesquisa em aprendizado de máquina da Apple.
+MLX adalah rangka kerja tatasusunan untuk penyelidikan pembelajaran mesin pada cip Apple silicon, dibawa kepada anda oleh penyelidikan pembelajaran mesin Apple.
 
-MLX foi criada por pesquisadores de aprendizado de máquina para pesquisadores da área. O framework é pensado para ser fácil de usar, mas ainda assim eficiente para treinar e implementar modelos. O design do framework é também conceitualmente simples. Nosso objetivo é facilitar para que pesquisadores possam estender e melhorar o MLX, permitindo explorar rapidamente novas ideias.
+MLX direka oleh penyelidik pembelajaran mesin untuk penyelidik pembelajaran mesin. Rangka kerja ini bertujuan untuk mesra pengguna, tetapi masih cekap untuk melatih dan melaksanakan model. Reka bentuk rangka kerja itu sendiri juga mudah dari segi konsep. Kami berhasrat untuk memudahkan penyelidik mengembangkan dan memperbaiki MLX dengan matlamat untuk meneroka idea baru dengan pantas.
 
-LLMs podem ser acelerados em dispositivos Apple Silicon por meio do MLX, e os modelos podem ser executados localmente de forma muito prática.
+LLM boleh dipercepatkan pada peranti Apple Silicon melalui MLX, dan model boleh dijalankan secara tempatan dengan sangat mudah.
 
-Atualmente, o Apple MLX Framework suporta a conversão de quantização do Phi-3.5-Instruct (**Apple MLX Framework support**), Phi-3.5-Vision (**MLX-VLM Framework support**), e Phi-3.5-MoE (**Apple MLX Framework support**). Vamos experimentar a seguir:
+Kini Rangka Kerja Apple MLX menyokong penukaran kuantisasi bagi Phi-3.5-Instruct (**Sokongan Rangka Kerja Apple MLX**), Phi-3.5-Vision (**Sokongan Rangka Kerja MLX-VLM**), dan Phi-3.5-MoE (**Sokongan Rangka Kerja Apple MLX**). Mari cuba seterusnya:
 
 ### **Phi-3.5-Instruct**
 
@@ -41,21 +41,21 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3.5-MoE-instruct  -q
 
 ```
 
-### **🤖 Exemplos para Phi-3.5 com Apple MLX**
+### **🤖 Contoh untuk Phi-3.5 dengan Apple MLX**
 
-| Laboratórios    | Apresentação | Acessar |
+| Makmal    | Pengenalan | Pergi |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Apresentação Phi-3.5 Instruct  | Aprenda como usar Phi-3.5 Instruct com o Apple MLX framework   |  [Go](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
-| 🚀 Lab-Apresentação Phi-3.5 Vision (imagem) | Aprenda como usar Phi-3.5 Vision para analisar imagens com o Apple MLX framework     |  [Go](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
-| 🚀 Lab-Apresentação Phi-3.5 Vision (moE)   | Aprenda como usar Phi-3.5 MoE com o Apple MLX framework  |  [Go](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
+| 🚀 Makmal-Pengenalan Phi-3.5 Instruct  | Pelajari cara menggunakan Phi-3.5 Instruct dengan rangka kerja Apple MLX   |  [Pergi](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
+| 🚀 Makmal-Pengenalan Phi-3.5 Vision (imej) | Pelajari cara menggunakan Phi-3.5 Vision untuk menganalisis imej dengan rangka kerja Apple MLX     |  [Pergi](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
+| 🚀 Makmal-Pengenalan Phi-3.5 Vision (moE)   | Pelajari cara menggunakan Phi-3.5 MoE dengan rangka kerja Apple MLX  |  [Pergi](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
 
-## **Recursos**
+## **Sumber**
 
-1. Saiba mais sobre o Apple MLX Framework [https://ml-explore.github.io/mlx/](https://ml-explore.github.io/mlx/)
+1. Ketahui tentang Rangka Kerja Apple MLX [https://ml-explore.github.io/mlx/](https://ml-explore.github.io/mlx/)
 
-2. Repositório Apple MLX no GitHub [https://github.com/ml-explore](https://github.com/ml-explore/mlx)
+2. Repositori GitHub Apple MLX [https://github.com/ml-explore](https://github.com/ml-explore/mlx)
 
-3. Repositório MLX-VLM no GitHub [https://github.com/Blaizzy/mlx-vlm](https://github.com/Blaizzy/mlx-vlm)
+3. Repositori GitHub MLX-VLM [https://github.com/Blaizzy/mlx-vlm](https://github.com/Blaizzy/mlx-vlm)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

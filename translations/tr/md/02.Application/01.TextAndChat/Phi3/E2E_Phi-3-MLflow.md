@@ -2,46 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:37:03+00:00",
+  "translation_date": "2025-07-17T02:31:08+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "tr"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) uçtan uca makine öğrenimi yaşam döngüsünü yönetmek için tasarlanmış açık kaynaklı bir platformdur.
+[MLflow](https://mlflow.org/), uçtan uca makine öğrenimi yaşam döngüsünü yönetmek için tasarlanmış açık kaynaklı bir platformdur.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.tr.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.tr.png)
 
-MLFlow, deney, tekrarlanabilirlik, dağıtım ve merkezi model kayıt defteri dahil olmak üzere ML yaşam döngüsünü yönetmek için kullanılır. MLflow şu anda dört bileşen sunmaktadır.
+MLFlow, deneyler, tekrarlanabilirlik, dağıtım ve merkezi model kayıt defteri dahil olmak üzere ML yaşam döngüsünü yönetmek için kullanılır. MLflow şu anda dört bileşen sunmaktadır.
 
 - **MLflow Tracking:** Deneyleri, kodu, veri yapılandırmasını ve sonuçları kaydetme ve sorgulama.
-- **MLflow Projects:** Veri bilimi kodunu herhangi bir platformda çalıştırmayı tekrarlanabilir hale getiren formatta paketleme.
+- **MLflow Projects:** Veri bilimi kodunu herhangi bir platformda çalıştırılabilir şekilde paketleme.
 - **Mlflow Models:** Makine öğrenimi modellerini çeşitli servis ortamlarında dağıtma.
-- **Model Registry:** Modelleri merkezi bir depoda saklama, not ekleme ve yönetme.
+- **Model Registry:** Modelleri merkezi bir depoda saklama, notlandırma ve yönetme.
 
-Deneyleri takip etme, kodu tekrarlanabilir çalıştırmalara paketleme ve modelleri paylaşma ve dağıtma yeteneklerini içerir. MLFlow, Databricks ile entegredir ve çeşitli ML kütüphanelerini destekleyerek kütüphane bağımsızlığı sağlar. Herhangi bir makine öğrenimi kütüphanesi ve programlama dili ile kullanılabilir, çünkü kullanım kolaylığı için REST API ve CLI sunar.
+Deneyleri takip etme, kodu tekrarlanabilir çalıştırmalara paketleme ve modelleri paylaşma ve dağıtma yeteneklerini içerir. MLFlow, Databricks ile entegre olup çeşitli ML kütüphanelerini destekler, böylece kütüphane bağımsızdır. Herhangi bir makine öğrenimi kütüphanesi ve programlama dili ile kullanılabilir; kullanım kolaylığı için REST API ve CLI sağlar.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.tr.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.tr.png)
 
 MLFlow’un temel özellikleri şunlardır:
 
 - **Deney Takibi:** Parametreleri ve sonuçları kaydetme ve karşılaştırma.
 - **Model Yönetimi:** Modelleri çeşitli servis ve çıkarım platformlarına dağıtma.
-- **Model Kayıt Defteri:** MLflow Modellerinin yaşam döngüsünü, versiyonlama ve notlar dahil olmak üzere ortaklaşa yönetme.
-- **Projeler:** ML kodunu paylaşım veya üretim kullanımı için paketleme.  
-MLFlow ayrıca veri hazırlama, modelleri kaydetme ve yönetme, modelleri çalıştırma için paketleme, servisleri dağıtma ve modelleri izleme gibi MLOps döngüsünü destekler. Özellikle bulut ve uç ortamlarında prototipten üretim iş akışına geçiş sürecini basitleştirmeyi hedefler.
+- **Model Kayıt Defteri:** MLflow Modellerinin yaşam döngüsünü, sürümlemeyi ve notlandırmayı iş birliği içinde yönetme.
+- **Projeler:** ML kodunu paylaşım veya üretim kullanımı için paketleme.
+
+MLFlow ayrıca veri hazırlama, modelleri kaydetme ve yönetme, modelleri çalıştırma için paketleme, servisleri dağıtma ve modelleri izleme gibi MLOps döngüsünü destekler. Özellikle bulut ve uç ortamlarında prototipten üretim iş akışına geçiş sürecini basitleştirmeyi amaçlar.
 
 ## Uçtan Uca Senaryo - Phi-3 için bir sarmalayıcı oluşturma ve MLFlow modeli olarak kullanma
 
-Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı sarmalayıcı oluşturma yaklaşımını göstereceğiz ve ardından bunu MLFlow modeli olarak ya yerel ya da bulutta, örneğin Azure Machine Learning çalışma alanında çalıştıracağız.
+Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı sarmalayıcı oluşturma yaklaşımını ve ardından bunu MLFlow modeli olarak yerel veya bulutta, örneğin Azure Machine Learning çalışma alanında çalıştırmayı göstereceğiz.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.tr.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.tr.png)
 
 | Proje | Açıklama | Konum |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline, MLFlow’un deneysel transformers çeşidi ile HuggingFace modeli kullanmak istiyorsanız sarmalayıcı oluşturmanın en kolay yoludur. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | Yazım sırasında, transformer pipeline ONNX formatındaki HuggingFace modelleri için MLFlow sarmalayıcı oluşturmayı desteklemiyordu, hatta deneysel optimum Python paketi ile bile. Böyle durumlarda, MLFlow modu için özel Python sarmalayıcınızı oluşturabilirsiniz. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | HuggingFace modeli MLFlow’un deneysel transformers çeşidi ile kullanmak istiyorsanız, sarmalayıcı oluşturmanın en kolay yolu Transformer Pipeline’dır. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Özel Python Sarmalayıcı | Yazım sırasında, transformer pipeline HuggingFace modelleri için ONNX formatında MLFlow sarmalayıcı oluşturmayı desteklemiyordu, hatta deneysel optimum Python paketi ile bile. Böyle durumlarda, MLFlow modu için kendi özel Python sarmalayıcınızı oluşturabilirsiniz. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Proje: Transformer Pipeline
 
@@ -52,7 +53,7 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
     import transformers
     ```
 
-2. Sonra, HuggingFace kayıt defterindeki hedef Phi-3 modeline referans vererek bir transformer pipeline başlatmalısınız. _Phi-3-mini-4k-instruct_ model kartından görülebileceği gibi, görevi “Metin Üretimi” türündendir:
+2. Sonra, HuggingFace kayıt defterindeki hedef Phi-3 modeline referans vererek bir transformer pipeline başlatmalısınız. _Phi-3-mini-4k-instruct_ model kartından görülebileceği gibi, görevi “Metin Üretimi” türündedir:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -61,7 +62,7 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
     )
     ```
 
-3. Şimdi Phi-3 modelinizin transformer pipeline’ını MLFlow formatında kaydedebilir ve hedef artefakt yolu, belirli model yapılandırma ayarları ve çıkarım API türü gibi ek detaylar verebilirsiniz:
+3. Artık Phi-3 modelinizin transformer pipeline’unu MLFlow formatında kaydedebilir ve hedef artefakt yolu, belirli model yapılandırma ayarları ve çıkarım API türü gibi ek detaylar verebilirsiniz:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -72,9 +73,9 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
     )
     ```
 
-## Proje: Custom Python Wrapper
+## Proje: Özel Python Sarmalayıcı
 
-1. Burada Microsoft’un [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai)’sini ONNX modelin çıkarımı ve token kodlama / kod çözme için kullanabiliriz. Hedef hesaplama için _onnxruntime_genai_ paketini seçmelisiniz, aşağıdaki örnek CPU hedeflemektedir:
+1. Burada Microsoft’un [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai)’sini ONNX modelinin çıkarımı ve token kodlama / çözme işlemleri için kullanabiliriz. Hedef hesaplama için _onnxruntime_genai_ paketini seçmelisiniz, aşağıdaki örnek CPU hedeflemektedir:
 
     ``` Python
     import mlflow
@@ -82,7 +83,7 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
     import onnxruntime_genai as og
     ```
 
-1. Özel sınıfımız iki metot uygular: Phi-3 Mini 4K Instruct **ONNX modeli**, **üreteç parametreleri** ve **tokenizer**’ı başlatmak için _load_context()_; verilen prompt için çıktı tokenları üretmek için _predict()_:
+1. Özel sınıfımız iki metot uygular: _load_context()_, Phi-3 Mini 4K Instruct **ONNX modeli**, **üreteç parametreleri** ve **tokenizer**’ı başlatmak için; ve _predict()_, verilen prompt için çıktı tokenları üretmek için:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -113,7 +114,7 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Şimdi _mlflow.pyfunc.log_model()_ fonksiyonunu kullanarak Phi-3 modeli için orijinal ONNX modeli ve gerekli bağımlılıklarla birlikte özel Python sarmalayıcıyı (pickle formatında) oluşturabilirsiniz:
+1. Artık _mlflow.pyfunc.log_model()_ fonksiyonunu kullanarak Phi-3 modeli için orijinal ONNX modeli ve gerekli bağımlılıklarla birlikte özel Python sarmalayıcıyı (pickle formatında) oluşturabilirsiniz:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -130,7 +131,7 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
 
 ## Oluşturulan MLFlow modellerinin imzaları
 
-1. Yukarıdaki Transformer Pipeline projesinin 3. adımında, MLFlow modelinin görevini “_llm/v1/chat_” olarak belirledik. Bu talimat, aşağıda gösterildiği gibi OpenAI’nin Chat API’si ile uyumlu bir model API sarmalayıcısı oluşturur:
+1. Yukarıdaki Transformer Pipeline projesinin 3. adımında, MLFlow modelinin görevini “_llm/v1/chat_” olarak ayarladık. Bu talimat, aşağıda gösterildiği gibi OpenAI’nin Chat API’si ile uyumlu bir model API sarmalayıcısı oluşturur:
 
     ``` Python
     {inputs: 
@@ -147,7 +148,7 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Ardından, OpenAI API uyumlu son işleme kullanarak, örneğin _response[0][‘choices’][0][‘message’][‘content’]_ ile çıktınızı şu şekilde güzelleştirebilirsiniz:
+1. Ardından, OpenAI API uyumlu son işlemeyi, örneğin _response[0][‘choices’][0][‘message’][‘content’]_ kullanarak çıktınızı şu şekilde güzelleştirebilirsiniz:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -157,7 +158,7 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. Yukarıdaki Custom Python Wrapper projesinin 3. adımında, MLFlow paketinin verilen bir giriş örneğinden model imzası oluşturmasına izin verdik. MLFlow sarmalayıcımızın imzası şöyle görünecek:
+1. Yukarıdaki Özel Python Sarmalayıcı projesinin 3. adımında, MLFlow paketinin verilen bir giriş örneğinden modelin imzasını oluşturmasına izin verdik. MLFlow sarmalayıcımızın imzası şöyle görünecektir:
 
     ``` Python
     {inputs: 
@@ -168,7 +169,7 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
       None}
     ```
 
-1. Bu yüzden prompt’umuz, aşağıdaki gibi "prompt" anahtarını içeren bir sözlük olmalıdır:
+1. Yani, prompt’umuz "prompt" sözlük anahtarını içermelidir, şöyle:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
@@ -187,4 +188,4 @@ Bu uçtan uca örnekte, Phi-3 küçük dil modeli (SLM) etrafında iki farklı s
     ```
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

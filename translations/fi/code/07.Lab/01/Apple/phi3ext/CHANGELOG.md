@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-05-09T05:00:51+00:00",
+  "translation_date": "2025-07-16T16:49:27+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
   "language_code": "fi"
 }
 -->
-# Muutokset
+# Muutospäiväkirja
 
-Kaikki merkittävät muutokset "phi3ext"-laajennuksiin dokumentoidaan tässä tiedostossa.
+Kaikki merkittävät muutokset "phi3ext"-laajennuksiin kirjataan tähän tiedostoon.
 
-Katso ohjeita tiedoston rakentamiseen osoitteesta [保持变更日志](http://keepachangelog.com/).
+Katso ohjeita tiedoston laatimiseen osoitteesta [保持变更日志](http://keepachangelog.com/).
 
 ## [Julkaisematon]
 
-- Ensimmäinen versio
+- Alkuperäinen versio
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai virhetulkintojen seurauksista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

@@ -2,73 +2,73 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-05-09T17:45:42+00:00",
+  "translation_date": "2025-07-17T00:41:28+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "hu"
 }
 -->
 # Egyedi Phi-3 modellek finomhangolása és integrálása Prompt flow-val
 
-Ez az end-to-end (E2E) minta a Microsoft Tech Community "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" útmutatóján alapul. Bemutatja az egyedi Phi-3 modellek finomhangolásának, telepítésének és Prompt flow-val való integrálásának lépéseit.
+Ez az end-to-end (E2E) példa a Microsoft Tech Community "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" útmutatóján alapul. Bemutatja az egyedi Phi-3 modellek finomhangolásának, telepítésének és Prompt flow-val való integrálásának folyamatát.
 
 ## Áttekintés
 
-Ebben az E2E mintában megtanulhatod, hogyan finomhangold a Phi-3 modellt, és hogyan integráld azt a Prompt flow-val. Az Azure Machine Learning és a Prompt flow segítségével felállíthatsz egy munkafolyamatot az egyedi MI modellek telepítéséhez és használatához. Ez az E2E minta három forgatókönyvre van bontva:
+Ebben az E2E példában megtanulhatod, hogyan finomhangold a Phi-3 modellt és hogyan integráld azt a Prompt flow-val. Az Azure Machine Learning és a Prompt flow segítségével létrehozhatsz egy munkafolyamatot az egyedi AI modellek telepítésére és használatára. Ez az E2E példa három forgatókönyvre van bontva:
 
-**1. Forgatókönyv: Azure erőforrások beállítása és előkészítés a finomhangoláshoz**
+**1. forgatókönyv: Azure erőforrások beállítása és előkészítés a finomhangoláshoz**
 
-**2. Forgatókönyv: Phi-3 modell finomhangolása és telepítése az Azure Machine Learning Studioban**
+**2. forgatókönyv: Phi-3 modell finomhangolása és telepítése az Azure Machine Learning Studioban**
 
-**3. Forgatókönyv: Integráció Prompt flow-val és csevegés az egyedi modellel**
+**3. forgatókönyv: Integráció a Prompt flow-val és csevegés az egyedi modellel**
 
-Íme az E2E minta áttekintése.
+Íme egy áttekintés erről az E2E példáról.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.dfeb1f15c7d3c8989fb267a05ac83a25485a7230bde037df9d3d92336afc1993.hu.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.hu.png)
 
 ### Tartalomjegyzék
 
-1. **[1. Forgatókönyv: Azure erőforrások beállítása és előkészítés a finomhangoláshoz](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[1. forgatókönyv: Azure erőforrások beállítása és előkészítés a finomhangoláshoz](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Azure Machine Learning Workspace létrehozása](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [GPU kvóták igénylése az Azure előfizetésben](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Szerepkör hozzárendelés hozzáadása](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Projekt beállítása](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Adathalmaz előkészítése a finomhangoláshoz](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Adatkészlet előkészítése a finomhangoláshoz](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[2. Forgatókönyv: Phi-3 modell finomhangolása és telepítése az Azure Machine Learning Studioban](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[2. forgatókönyv: Phi-3 modell finomhangolása és telepítése az Azure Machine Learning Studioban](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [Azure CLI beállítása](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Phi-3 modell finomhangolása](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Finomhangolt modell telepítése](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[3. Forgatókönyv: Integráció Prompt flow-val és csevegés az egyedi modellel](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Egyedi Phi-3 modell integrálása Prompt flow-val](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Csevegés az egyedi modellel](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[3. forgatókönyv: Integráció a Prompt flow-val és csevegés az egyedi modelleddel](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Egyedi Phi-3 modell integrálása a Prompt flow-val](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Csevegés az egyedi modelleddel](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## 1. Forgatókönyv: Azure erőforrások beállítása és előkészítés a finomhangoláshoz
+## 1. forgatókönyv: Azure erőforrások beállítása és előkészítés a finomhangoláshoz
 
 ### Azure Machine Learning Workspace létrehozása
 
-1. Írd be az *azure machine learning* kifejezést a portál oldal tetején található **keresősávba**, majd válaszd ki az **Azure Machine Learning** opciót.
+1. Írd be a *azure machine learning* kifejezést a portál oldal tetején található **keresősávba**, majd válaszd ki az opciók közül az **Azure Machine Learning**-et.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.321cff72d18a51c06dee2db7463868f3ca6619559a5d68b7795d70f4a8b3a683.hu.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.hu.png)
 
 1. Válaszd a navigációs menüből a **+ Create** lehetőséget.
 
-1. Válaszd a navigációs menüből az **Új munkaterület** opciót.
+1. Válaszd a navigációs menüből az **Új workspace** opciót.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.9bd9208488fcf38226fc8d3cefffecb2cb14f414f6d8d982492c1bde8634e24a.hu.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.hu.png)
 
-1. Végezd el a következő beállításokat:
+1. Végezze el a következő lépéseket:
 
     - Válaszd ki az Azure **Előfizetésedet**.
     - Válaszd ki a használni kívánt **Erőforráscsoportot** (ha szükséges, hozz létre újat).
-    - Írd be a **Munkaterület nevét**. Ez egyedi érték kell legyen.
-    - Válaszd ki a kívánt **Régiót**.
+    - Add meg a **Workspace nevét**. Egyedi értéknek kell lennie.
+    - Válaszd ki a használni kívánt **Régiót**.
     - Válaszd ki a használni kívánt **Tárolófiókot** (ha szükséges, hozz létre újat).
     - Válaszd ki a használni kívánt **Kulcstárat** (ha szükséges, hozz létre újat).
     - Válaszd ki a használni kívánt **Application Insights**-t (ha szükséges, hozz létre újat).
     - Válaszd ki a használni kívánt **Konténerregisztert** (ha szükséges, hozz létre újat).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.b2ebbef59952cd17d16b1f82adc252bf7616f8638d451e3c6595ffefe44f2cfa.hu.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.hu.png)
 
 1. Válaszd a **Review + Create** lehetőséget.
 
@@ -76,50 +76,50 @@ Ebben az E2E mintában megtanulhatod, hogyan finomhangold a Phi-3 modellt, és h
 
 ### GPU kvóták igénylése az Azure előfizetésben
 
-Ebben az E2E mintában a finomhangoláshoz a *Standard_NC24ads_A100_v4 GPU*-t fogod használni, ami kvótaigényt támaszt, míg a telepítéshez a *Standard_E4s_v3* CPU-t, amihez nem szükséges kvótaigénylés.
+Ebben az E2E példában a finomhangoláshoz a *Standard_NC24ads_A100_v4 GPU*-t fogod használni, ami kvótaigényt igényel, míg a telepítéshez a *Standard_E4s_v3* CPU-t, amihez nem szükséges kvótaigénylés.
 
 > [!NOTE]
 >
-> Csak a Pay-As-You-Go típusú előfizetések jogosultak GPU-kiosztásra; az előnyös előfizetések jelenleg nem támogatottak.
+> Csak a Pay-As-You-Go előfizetések (az alapértelmezett előfizetési típus) jogosultak GPU kiosztásra; a kedvezményes előfizetések jelenleg nem támogatottak.
 >
-> Azok számára, akik előnyös előfizetést használnak (például Visual Studio Enterprise Subscription), vagy gyorsan szeretnék kipróbálni a finomhangolást és telepítést, ez az útmutató útmutatást ad egy minimális adathalmazzal CPU-n történő finomhangoláshoz is. Fontos azonban megjegyezni, hogy a finomhangolás eredményei jelentősen jobbak, ha GPU-t használsz nagyobb adathalmazzal.
+> Azok számára, akik kedvezményes előfizetést használnak (például Visual Studio Enterprise Subscription), vagy gyorsan szeretnék kipróbálni a finomhangolás és telepítés folyamatát, ez az útmutató CPU-val történő finomhangolásra is ad útmutatást minimális adatkészlettel. Fontos azonban megjegyezni, hogy a finomhangolás eredményei jelentősen jobbak, ha GPU-t használsz nagyobb adatkészletekkel.
 
 1. Látogass el az [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) oldalra.
 
-1. A *Standard NCADSA100v4 Family* kvóta igényléséhez végezd el a következő lépéseket:
+1. Végezze el a következő lépéseket a *Standard NCADSA100v4 Family* kvóta igényléséhez:
 
-    - Válaszd a bal oldali menüben a **Quota** lehetőséget.
-    - Válaszd ki a használni kívánt **Virtuális gép családot**. Például a **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**-t, amely tartalmazza a *Standard_NC24ads_A100_v4* GPU-t.
-    - Válaszd a navigációs menüből a **Request quota** opciót.
+    - Válaszd a bal oldali menüből a **Quota** lehetőséget.
+    - Válaszd ki a használni kívánt **Virtuális gép családot**. Például válaszd a **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** opciót, amely tartalmazza a *Standard_NC24ads_A100_v4* GPU-t.
+    - Válaszd a navigációs menüből a **Request quota** lehetőséget.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.ddf063c7cda9799b8ef6fbde6c3c796201578fe9078feb1c624ed75c7705ad18.hu.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.hu.png)
 
-    - A Request quota oldalon add meg a kívánt **Új magkorlátot** (pl. 24).
-    - Válaszd a **Submit** gombot a GPU kvóta igényléséhez.
+    - A Request quota oldalon add meg az általad kívánt **Új magok számát**. Például 24.
+    - A Request quota oldalon válaszd a **Submit** gombot a GPU kvóta igényléséhez.
 
 > [!NOTE]
-> Szükség szerint a megfelelő GPU vagy CPU kiválasztásához tekintsd meg a [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist) dokumentációt.
+> Az igényeidnek megfelelő GPU vagy CPU kiválasztásához lásd a [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist) dokumentumot.
 
 ### Szerepkör hozzárendelés hozzáadása
 
-A modellek finomhangolásához és telepítéséhez először létre kell hoznod egy User Assigned Managed Identity-t (UAI), és megfelelő jogosultságokat kell hozzárendelned. Ezt az UAI-t fogjuk használni hitelesítéshez a telepítés során.
+A modellek finomhangolásához és telepítéséhez először létre kell hoznod egy User Assigned Managed Identity-t (UAI), és hozzá kell rendelned a megfelelő jogosultságokat. Ezt az UAI-t fogod használni az autentikációhoz a telepítés során.
 
 #### User Assigned Managed Identity (UAI) létrehozása
 
-1. Írd be a *managed identities* kifejezést a portál tetején található **keresősávba**, majd válaszd ki a **Managed Identities** opciót.
+1. Írd be a *managed identities* kifejezést a portál oldal tetején található **keresősávba**, majd válaszd ki az opciók közül a **Managed Identities**-t.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.8bf5dc5a4fa3e852f897ec1a983e506c2bc7b7113d159598bf0adeb66d20a5c4.hu.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.hu.png)
 
-1. Válaszd a **+ Create** gombot.
+1. Válaszd a **+ Create** lehetőséget.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.025632b7b54fe323f7d38edabbae05dd23f4665d0731f7143719c27c32e7e84f.hu.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.hu.png)
 
-1. Végezd el a következő beállításokat:
+1. Végezze el a következő lépéseket:
 
     - Válaszd ki az Azure **Előfizetésedet**.
     - Válaszd ki a használni kívánt **Erőforráscsoportot** (ha szükséges, hozz létre újat).
-    - Válaszd ki a kívánt **Régiót**.
-    - Írd be a **Nevedet**. Egyedi érték kell legyen.
+    - Válaszd ki a használni kívánt **Régiót**.
+    - Add meg a **Nevet**. Egyedi értéknek kell lennie.
 
 1. Válaszd a **Review + create** lehetőséget.
 
@@ -127,87 +127,87 @@ A modellek finomhangolásához és telepítéséhez először létre kell hoznod
 
 #### Contributor szerepkör hozzárendelése a Managed Identity-hez
 
-1. Navigálj el a létrehozott Managed Identity erőforráshoz.
+1. Navigálj a létrehozott Managed Identity erőforráshoz.
 
-1. Válaszd a bal oldali menüben az **Azure role assignments** opciót.
+1. Válaszd a bal oldali menüből az **Azure role assignments** lehetőséget.
 
 1. Válaszd a navigációs menüből a **+Add role assignment** lehetőséget.
 
-1. Az Add role assignment oldalon végezd el a következő beállításokat:
-    - Állítsd a **Scope**-ot **Resource group**-ra.
+1. Az Add role assignment oldalon végezd el a következőket:
+    - Állítsd be a **Scope**-ot **Resource group**-ra.
     - Válaszd ki az Azure **Előfizetésedet**.
     - Válaszd ki a használni kívánt **Erőforráscsoportot**.
     - Válaszd ki a **Contributor** szerepkört.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.8936866326c7cdc3b876f14657e03422cca9dbff8b193dd541a693ce34407b26.hu.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.hu.png)
 
 1. Válaszd a **Save** gombot.
 
 #### Storage Blob Data Reader szerepkör hozzárendelése a Managed Identity-hez
 
-1. Írd be a *storage accounts* kifejezést a portál tetején található **keresősávba**, majd válaszd ki a **Storage accounts** opciót.
+1. Írd be a *storage accounts* kifejezést a portál oldal tetején található **keresősávba**, majd válaszd ki az opciók közül a **Storage accounts**-ot.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.83554a27ff3edb5099ee3fbf7f467b843dabcc0e0e5fbb829a341eab3469ffa5.hu.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.hu.png)
 
-1. Válaszd ki azt a tárolófiókot, amely az Azure Machine Learning munkaterülethez tartozik, amit létrehoztál. Például *finetunephistorage*.
+1. Válaszd ki azt a tárolófiókot, amely az általad létrehozott Azure Machine Learning workspace-hez tartozik. Például *finetunephistorage*.
 
-1. A szerepkör hozzárendelés oldalára navigáláshoz végezd el a következő lépéseket:
+1. Végezze el a következő lépéseket az Add role assignment oldal eléréséhez:
 
-    - Navigálj az Azure Storage fiókhoz.
-    - Válaszd a bal oldali menüben az **Access Control (IAM)** lehetőséget.
-    - Válaszd a navigációs menüből a **+ Add** gombot.
-    - Válaszd a **Add role assignment** opciót.
+    - Navigálj az általad létrehozott Azure Storage fiókhoz.
+    - Válaszd a bal oldali menüből az **Access Control (IAM)** lehetőséget.
+    - Válaszd a navigációs menüből a **+ Add** lehetőséget.
+    - Válaszd a **Add role assignment** lehetőséget.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.4fef55886792c7e860da4c5a808044e6f7067fb5694f3ed4819a5758c6cc574e.hu.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.hu.png)
 
 1. Az Add role assignment oldalon végezd el a következőket:
 
-    - Írd be a *Storage Blob Data Reader* kifejezést a **keresősávba**, majd válaszd ki a megjelenő lehetőségek közül.
-    - Kattints a **Next** gombra.
+    - A Role oldalon írd be a keresősávba a *Storage Blob Data Reader* kifejezést, majd válaszd ki a megjelenő opciók közül a **Storage Blob Data Reader**-t.
+    - A Role oldalon válaszd a **Next** gombot.
     - A Members oldalon válaszd az **Assign access to** mezőnél a **Managed identity** opciót.
-    - Kattints a **+ Select members** gombra.
+    - A Members oldalon válaszd a **+ Select members** lehetőséget.
     - A Select managed identities oldalon válaszd ki az Azure **Előfizetésedet**.
-    - Válaszd ki a **Managed identity**-t, amely a **Manage Identity** kategóriába tartozik.
-    - Válaszd ki a létrehozott Managed Identity-t, például *finetunephi-managedidentity*.
-    - Kattints a **Select** gombra.
+    - A Select managed identities oldalon válaszd ki a **Managed identity**-t, amely a **Manage Identity**.
+    - A Select managed identities oldalon válaszd ki a létrehozott Managed Identity-t. Például *finetunephi-managedidentity*.
+    - A Select managed identities oldalon válaszd a **Select** gombot.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.fffa802e4e6ce2de4fe50e64d37d3f2ef268c2ee16f30ec6f92bd1829b5f19c1.hu.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.hu.png)
 
-1. Válaszd a **Review + assign** gombot.
+1. Válaszd a **Review + assign** lehetőséget.
 
 #### AcrPull szerepkör hozzárendelése a Managed Identity-hez
 
-1. Írd be a *container registries* kifejezést a portál tetején található **keresősávba**, majd válaszd ki a **Container registries** opciót.
+1. Írd be a *container registries* kifejezést a portál oldal tetején található **keresősávba**, majd válaszd ki az opciók közül a **Container registries**-t.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.62e58403d73d16a0cc715571c8a7b4105a0e97b1422aa5f26106aff1c0e8a47d.hu.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.hu.png)
 
-1. Válaszd ki a konténerregisztert, amely az Azure Machine Learning munkaterülethez tartozik. Például *finetunephicontainerregistries*.
+1. Válaszd ki azt a konténerregisztert, amely az Azure Machine Learning workspace-hez tartozik. Például *finetunephicontainerregistries*.
 
-1. A szerepkör hozzárendelés oldalára navigáláshoz végezd el a következő lépéseket:
+1. Végezze el a következő lépéseket az Add role assignment oldal eléréséhez:
 
-    - Válaszd a bal oldali menüben az **Access Control (IAM)** lehetőséget.
-    - Kattints a navigációs menüből a **+ Add** gombra.
-    - Válaszd a **Add role assignment** opciót.
+    - Válaszd a bal oldali menüből az **Access Control (IAM)** lehetőséget.
+    - Válaszd a navigációs menüből a **+ Add** lehetőséget.
+    - Válaszd a **Add role assignment** lehetőséget.
 
-1. Az Add role assignment oldalon végezd el a következő beállításokat:
+1. Az Add role assignment oldalon végezd el a következőket:
 
-    - Írd be az *AcrPull* kifejezést a **keresősávba**, majd válaszd ki a megjelenő lehetőségek közül.
-    - Kattints a **Next** gombra.
+    - A Role oldalon írd be a keresősávba az *AcrPull* kifejezést, majd válaszd ki a megjelenő opciók közül az **AcrPull**-t.
+    - A Role oldalon válaszd a **Next** gombot.
     - A Members oldalon válaszd az **Assign access to** mezőnél a **Managed identity** opciót.
-    - Kattints a **+ Select members** gombra.
+    - A Members oldalon válaszd a **+ Select members** lehetőséget.
     - A Select managed identities oldalon válaszd ki az Azure **Előfizetésedet**.
-    - Válaszd ki a **Managed identity**-t, amely a **Manage Identity** kategóriába tartozik.
-    - Válaszd ki a létrehozott Managed Identity-t, például *finetunephi-managedidentity*.
-    - Kattints a **Select** gombra.
-    - Válaszd a **Review + assign** gombot.
+    - A Select managed identities oldalon válaszd ki a **Managed identity**-t, amely a **Manage Identity**.
+    - A Select managed identities oldalon válaszd ki a létrehozott Managed Identity-t. Például *finetunephi-managedidentity*.
+    - A Select managed identities oldalon válaszd a **Select** gombot.
+    - Válaszd a **Review + assign** lehetőséget.
 
 ### Projekt beállítása
 
-Most létrehozol egy mappát a munkához, és beállítasz egy virtuális környezetet, hogy fejleszthess egy programot, amely felhasználókkal kommunikál, és az Azure Cosmos DB-ben tárolt csevegési előzményeket használja a válaszaihoz.
+Most létrehozol egy mappát, ahol dolgozhatsz, és beállítasz egy virtuális környezetet, hogy fejleszthess egy olyan programot, amely felhasználókkal kommunikál, és az Azure Cosmos DB-ben tárolt csevegési előzményeket használja válaszaihoz.
 
 #### Mappa létrehozása a munkához
 
-1. Nyiss meg egy terminált, és írd be a következő parancsot egy *finetune-phi* nevű mappa létrehozásához az alapértelmezett útvonalon.
+1. Nyiss meg egy terminálablakot, és írd be a következő parancsot egy *finetune-phi* nevű mappa létrehozásához az alapértelmezett útvonalon.
 
     ```console
     mkdir finetune-phi
@@ -232,14 +232,12 @@ Most létrehozol egy mappát a munkához, és beállítasz egy virtuális körny
     ```console
     .venv\Scripts\activate.bat
     ```
-
 > [!NOTE]
 >
-> Ha sikeres volt, a parancssor előtt megjelenik a *(.venv)* jelzés.
-
+> Ha sikerült, a parancssor előtt meg kell jelennie a *(.venv)* jelzésnek.
 #### Szükséges csomagok telepítése
 
-1. Írd be a következő parancsokat a terminálba a szükséges csomagok telepítéséhez.
+1. Írd be a következő parancsokat a terminálodba a szükséges csomagok telepítéséhez.
 
     ```console
     pip install datasets==2.19.1
@@ -252,48 +250,161 @@ Most létrehozol egy mappát a munkához, és beállítasz egy virtuális körny
 
 #### Projektfájlok létrehozása
 
-Ebben a gyakorlatban létrehozod a projekt alapvető fájljait. Ezek a fájlok tartalmazzák a letöltő szkriptet az adathalmazhoz, az Azure Machine Learning környezet beállítását, a Phi-3 modell finomhangolását, valamint a finomhangolt modell telepítését. Emellett létrehozol egy *conda.yml* fájlt a finomhangolási környezet beállításához.
+Ebben a gyakorlatban létrehozod a projektünk alapvető fájljait. Ezek a fájlok tartalmazzák az adatletöltő szkripteket, az Azure Machine Learning környezet beállítását, a Phi-3 modell finomhangolását, valamint a finomhangolt modell telepítését. Emellett létrehozol egy *conda.yml* fájlt is a finomhangolási környezet beállításához.
 
-Ebben a gyakorlatban:
+Ebben a gyakorlatban a következőket fogod megtenni:
 
-- Létrehozol egy *download_dataset.py* fájlt az adathalmaz letöltéséhez.
+- Létrehozol egy *download_dataset.py* fájlt az adatletöltéshez.
 - Létrehozol egy *setup_ml.py* fájlt az Azure Machine Learning környezet beállításához.
-- Létrehozol egy *fine_tune.py* fájlt a *finetuning_dir* mappában a Phi-3 modell finomhangolásához az adathalmaz segítségével.
+- Létrehozol egy *fine_tune.py* fájlt a *finetuning_dir* mappában, amely a Phi-3 modell finomhangolásáért felel az adathalmaz segítségével.
 - Létrehozol egy *conda.yml* fájlt a finomhangolási környezet beállításához.
 - Létrehozol egy *deploy_model.py* fájlt a finomhangolt modell telepítéséhez.
-- Létrehozol egy *integrate_with_promptflow.py* fájlt a finomhangolt modell integrálásához és futtatás
-![Előfizetési azonosító keresése.](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.hu.png)
+- Létrehozol egy *integrate_with_promptflow.py* fájlt a finomhangolt modell integrálásához és futtatásához Prompt Flow segítségével.
+- Létrehozol egy *flow.dag.yml* fájlt a Prompt Flow munkafolyamat struktúrájának beállításához.
+- Létrehozol egy *config.py* fájlt az Azure információk megadásához.
 
-1. Végezze el a következő lépéseket az Azure Workspace név hozzáadásához:
+> [!NOTE]
+>
+> Teljes mappastruktúra:
+>
+> ```text
+> └── YourUserName
+> .    └── finetune-phi
+> .        ├── finetuning_dir
+> .        │      └── fine_tune.py
+> .        ├── conda.yml
+> .        ├── config.py
+> .        ├── deploy_model.py
+> .        ├── download_dataset.py
+> .        ├── flow.dag.yml
+> .        ├── integrate_with_promptflow.py
+> .        └── setup_ml.py
+> ```
 
-    - Navigáljon az Ön által létrehozott Azure Machine Learning erőforráshoz.
-    - Másolja be a fióknevét a *config.py* fájlba.
+1. Nyisd meg a **Visual Studio Code**-ot.
 
-    ![Azure Machine Learning név keresése.](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.hu.png)
+1. Válaszd a menüsorban a **File** menüpontot.
 
-1. Végezze el a következő lépéseket az Azure Resource Group név hozzáadásához:
+1. Válaszd az **Open Folder** opciót.
 
-    - Navigáljon az Ön által létrehozott Azure Machine Learning erőforráshoz.
-    - Másolja be az Azure Resource Group nevét a *config.py* fájlba.
+1. Válaszd ki a *finetune-phi* mappát, amelyet létrehoztál, és amely a *C:\Users\yourUserName\finetune-phi* helyen található.
 
-    ![Erőforráscsoport név keresése.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.hu.png)
+    ![Projektmappa megnyitása.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.hu.png)
 
-2. Végezze el a következő lépéseket az Azure Managed Identity név hozzáadásához
+1. A Visual Studio Code bal oldali paneljén kattints jobb gombbal, majd válaszd az **New File** lehetőséget, és hozd létre a *download_dataset.py* fájlt.
 
-    - Navigáljon a létrehozott Managed Identities erőforráshoz.
-    - Másolja be az Azure Managed Identity nevét a *config.py* fájlba.
+1. A bal oldali panelen kattints jobb gombbal, válaszd az **New File** opciót, és hozd létre a *setup_ml.py* fájlt.
 
-    ![UAI keresése.](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.hu.png)
+1. A bal oldali panelen kattints jobb gombbal, válaszd az **New File** opciót, és hozd létre a *deploy_model.py* fájlt.
 
-### Adatkészlet előkészítése finomhangoláshoz
+    ![Új fájl létrehozása.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.hu.png)
 
-Ebben a gyakorlatban lefuttatja a *download_dataset.py* fájlt, hogy letöltse az *ULTRACHAT_200k* adatkészleteket a helyi környezetébe. Ezt az adatkészletet használja majd a Phi-3 modell finomhangolásához az Azure Machine Learningben.
+1. A bal oldali panelen kattints jobb gombbal, válaszd az **New Folder** lehetőséget, és hozd létre a *finetuning_dir* mappát.
 
-#### Töltse le az adatkészletet a *download_dataset.py* segítségével
+1. A *finetuning_dir* mappában hozz létre egy új fájlt *fine_tune.py* néven.
 
-1. Nyissa meg a *download_dataset.py* fájlt a Visual Studio Code-ban.
+#### *conda.yml* fájl létrehozása és konfigurálása
 
-1. Illessze be a következő kódot a *download_dataset.py* fájlba.
+1. A Visual Studio Code bal oldali paneljén kattints jobb gombbal, válaszd az **New File** lehetőséget, és hozd létre a *conda.yml* fájlt.
+
+1. Másold be a következő kódot a *conda.yml* fájlba a Phi-3 modell finomhangolási környezetének beállításához.
+
+    ```yml
+    name: phi-3-training-env
+    channels:
+      - defaults
+      - conda-forge
+    dependencies:
+      - python=3.10
+      - pip
+      - numpy<2.0
+      - pip:
+          - torch==2.4.0
+          - torchvision==0.19.0
+          - trl==0.8.6
+          - transformers==4.41
+          - datasets==2.21.0
+          - azureml-core==1.57.0
+          - azure-storage-blob==12.19.0
+          - azure-ai-ml==1.16
+          - azure-identity==1.17.1
+          - accelerate==0.33.0
+          - mlflow==2.15.1
+          - azureml-mlflow==1.57.0
+    ```
+
+#### *config.py* fájl létrehozása és konfigurálása
+
+1. A Visual Studio Code bal oldali paneljén kattints jobb gombbal, válaszd az **New File** lehetőséget, és hozd létre a *config.py* fájlt.
+
+1. Másold be a következő kódot a *config.py* fájlba, hogy megadd az Azure adataidat.
+
+    ```python
+    # Azure settings
+    AZURE_SUBSCRIPTION_ID = "your_subscription_id"
+    AZURE_RESOURCE_GROUP_NAME = "your_resource_group_name" # "TestGroup"
+
+    # Azure Machine Learning settings
+    AZURE_ML_WORKSPACE_NAME = "your_workspace_name" # "finetunephi-workspace"
+
+    # Azure Managed Identity settings
+    AZURE_MANAGED_IDENTITY_CLIENT_ID = "your_azure_managed_identity_client_id"
+    AZURE_MANAGED_IDENTITY_NAME = "your_azure_managed_identity_name" # "finetunephi-mangedidentity"
+    AZURE_MANAGED_IDENTITY_RESOURCE_ID = f"/subscriptions/{AZURE_SUBSCRIPTION_ID}/resourceGroups/{AZURE_RESOURCE_GROUP_NAME}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{AZURE_MANAGED_IDENTITY_NAME}"
+
+    # Dataset file paths
+    TRAIN_DATA_PATH = "data/train_data.jsonl"
+    TEST_DATA_PATH = "data/test_data.jsonl"
+
+    # Fine-tuned model settings
+    AZURE_MODEL_NAME = "your_fine_tuned_model_name" # "finetune-phi-model"
+    AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name" # "finetune-phi-endpoint"
+    AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name" # "finetune-phi-deployment"
+
+    AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"
+    AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri" # "https://{your-endpoint-name}.{your-region}.inference.ml.azure.com/score"
+    ```
+
+#### Azure környezeti változók hozzáadása
+
+1. Hajtsd végre a következő lépéseket az Azure Subscription ID hozzáadásához:
+
+    - Írd be a *subscriptions* kifejezést a portál oldal tetején található **keresősávba**, majd válaszd ki a megjelenő lehetőségek közül a **Subscriptions** menüpontot.
+    - Válaszd ki az aktuálisan használt Azure előfizetésedet.
+    - Másold ki és illeszd be az előfizetés azonosítóját a *config.py* fájlba.
+
+    ![Előfizetés azonosítójának megkeresése.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.hu.png)
+
+1. Hajtsd végre a következő lépéseket az Azure Workspace név hozzáadásához:
+
+    - Navigálj az általad létrehozott Azure Machine Learning erőforráshoz.
+    - Másold ki és illeszd be a munkaterület nevét a *config.py* fájlba.
+
+    ![Azure Machine Learning név megkeresése.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.hu.png)
+
+1. Hajtsd végre a következő lépéseket az Azure Resource Group név hozzáadásához:
+
+    - Navigálj az általad létrehozott Azure Machine Learning erőforráshoz.
+    - Másold ki és illeszd be az Azure Resource Group nevét a *config.py* fájlba.
+
+    ![Erőforráscsoport név megkeresése.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.hu.png)
+
+2. Hajtsd végre a következő lépéseket az Azure Managed Identity név hozzáadásához:
+
+    - Navigálj a létrehozott Managed Identities erőforráshoz.
+    - Másold ki és illeszd be az Azure Managed Identity nevét a *config.py* fájlba.
+
+    ![UAI megkeresése.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.hu.png)
+
+### Adathalmaz előkészítése finomhangoláshoz
+
+Ebben a gyakorlatban lefuttatod a *download_dataset.py* fájlt, hogy letöltsd az *ULTRACHAT_200k* adathalmazokat a helyi környezetedbe. Ezt követően ezt az adathalmazt fogod használni a Phi-3 modell finomhangolásához az Azure Machine Learningben.
+
+#### Adathalmaz letöltése a *download_dataset.py* segítségével
+
+1. Nyisd meg a *download_dataset.py* fájlt a Visual Studio Code-ban.
+
+1. Másold be a következő kódot a *download_dataset.py* fájlba.
 
     ```python
     import json
@@ -360,48 +471,48 @@ Ebben a gyakorlatban lefuttatja a *download_dataset.py* fájlt, hogy letöltse a
 
 > [!TIP]
 >
-> **Útmutató minimális adatkészlettel történő finomhangoláshoz CPU használatával**
+> **Útmutató minimális adathalmazzal történő finomhangoláshoz CPU használatával**
 >
-> Ha CPU-t szeretne használni a finomhangoláshoz, ez a megközelítés ideális azoknak, akik rendelkeznek előnyös előfizetéssel (például Visual Studio Enterprise Subscription), vagy gyorsan szeretnék tesztelni a finomhangolási és telepítési folyamatot.
+> Ha CPU-t szeretnél használni a finomhangoláshoz, ez a megközelítés ideális azok számára, akik rendelkeznek előfizetéses jogosultságokkal (például Visual Studio Enterprise Subscription), vagy gyorsan szeretnék tesztelni a finomhangolási és telepítési folyamatot.
 >
-> Cserélje ki a `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')` sort.
+> Cseréld le a `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` sort erre: `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. Írja be a következő parancsot a terminálba a szkript futtatásához és az adatkészlet letöltéséhez a helyi környezetbe.
+1. Írd be a következő parancsot a terminálodba a szkript futtatásához és az adathalmaz letöltéséhez a helyi környezetedbe.
 
     ```console
     python download_data.py
     ```
 
-1. Ellenőrizze, hogy az adatkészletek sikeresen elmentésre kerültek-e a helyi *finetune-phi/data* könyvtárba.
+1. Ellenőrizd, hogy az adathalmazok sikeresen elmentésre kerültek-e a helyi *finetune-phi/data* könyvtárba.
 
 > [!NOTE]
 >
-> **Adatkészlet mérete és a finomhangolás időtartama**
+> **Adathalmaz mérete és finomhangolási idő**
 >
-> Ebben a teljes körű mintában csak az adatkészlet 1%-át használja (`train_sft[:1%]`). Ez jelentősen csökkenti az adatmennyiséget, így gyorsítva mind a feltöltést, mind a finomhangolást. Állítsa be a százalékos arányt, hogy megtalálja az optimális egyensúlyt a tanítási idő és a modell teljesítménye között. Az adatkészlet kisebb részhalmazának használata lerövidíti a finomhangolás idejét, így kezelhetőbbé teszi a folyamatot egy teljes körű mintában.
+> Ebben az E2E példában csak az adathalmaz 1%-át használod (`train_sft[:1%]`). Ez jelentősen csökkenti az adatmennyiséget, így gyorsítva az adatfeltöltést és a finomhangolást. A százalékos arányt módosíthatod, hogy megtaláld az optimális egyensúlyt a tanítási idő és a modell teljesítménye között. Az adathalmaz kisebb részhalmazának használata lerövidíti a finomhangolás idejét, így kezelhetőbbé téve a folyamatot egy E2E mintában.
 
-## 2. Forgatókönyv: Phi-3 modell finomhangolása és telepítése az Azure Machine Learning Studioban
+## 2. forgatókönyv: Phi-3 modell finomhangolása és telepítése az Azure Machine Learning Studioban
 
 ### Azure CLI beállítása
 
-Az Azure CLI-t be kell állítania a környezet hitelesítéséhez. Az Azure CLI lehetővé teszi az Azure erőforrások közvetlen kezelését a parancssorból, és biztosítja az Azure Machine Learning számára szükséges hitelesítő adatokat az erőforrások eléréséhez. A kezdéshez telepítse az [Azure CLI-t](https://learn.microsoft.com/cli/azure/install-azure-cli).
+Az Azure CLI-t be kell állítanod, hogy hitelesítsd a környezetedet. Az Azure CLI lehetővé teszi, hogy parancssorból kezeld az Azure erőforrásokat, és biztosítja az Azure Machine Learning számára szükséges hitelesítő adatokat az erőforrások eléréséhez. A kezdéshez telepítsd az [Azure CLI-t](https://learn.microsoft.com/cli/azure/install-azure-cli).
 
-1. Nyisson meg egy terminálablakot, és írja be a következő parancsot az Azure fiókba történő bejelentkezéshez.
+1. Nyiss egy terminálablakot, és írd be a következő parancsot az Azure fiókodba való bejelentkezéshez.
 
     ```console
     az login
     ```
 
-1. Válassza ki az Azure fiókját.
+1. Válaszd ki az Azure fiókodat.
 
-1. Válassza ki az Azure előfizetését.
+1. Válaszd ki az Azure előfizetésedet.
 
-    ![Erőforráscsoport név keresése.](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.hu.png)
+    ![Erőforráscsoport név megkeresése.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.hu.png)
 
 > [!TIP]
 >
-> Ha problémája van az Azure-ba való bejelentkezéssel, próbáljon meg eszközkódos bejelentkezést használni. Nyisson meg egy terminált, és írja be a következő parancsot az Azure fiókba történő bejelentkezéshez:
+> Ha problémád van az Azure-ba való bejelentkezéssel, próbáld meg eszközkód használatával. Nyiss egy terminált, és írd be a következő parancsot az Azure fiókodba való bejelentkezéshez:
 >
 > ```console
 > az login --use-device-code
@@ -410,15 +521,15 @@ Az Azure CLI-t be kell állítania a környezet hitelesítéséhez. Az Azure CLI
 
 ### Phi-3 modell finomhangolása
 
-Ebben a gyakorlatban a megadott adatkészlet segítségével finomhangolja a Phi-3 modellt. Először definiálja a finomhangolási folyamatot a *fine_tune.py* fájlban. Ezután konfigurálja az Azure Machine Learning környezetet, és elindítja a finomhangolási folyamatot a *setup_ml.py* fájl futtatásával. Ez a szkript biztosítja, hogy a finomhangolás az Azure Machine Learning környezetében történjen.
+Ebben a gyakorlatban a Phi-3 modellt fogod finomhangolni a megadott adathalmaz segítségével. Először definiálod a finomhangolási folyamatot a *fine_tune.py* fájlban. Ezután konfigurálod az Azure Machine Learning környezetet, és elindítod a finomhangolást a *setup_ml.py* fájl futtatásával. Ez a szkript biztosítja, hogy a finomhangolás az Azure Machine Learning környezetében történjen.
 
-A *setup_ml.py* futtatásával elindítja a finomhangolási folyamatot az Azure Machine Learning környezetben.
+A *setup_ml.py* futtatásával elindítod a finomhangolási folyamatot az Azure Machine Learning környezetében.
 
 #### Kód hozzáadása a *fine_tune.py* fájlhoz
 
-1. Navigáljon a *finetuning_dir* mappába, és nyissa meg a *fine_tune.py* fájlt a Visual Studio Code-ban.
+1. Navigálj a *finetuning_dir* mappába, és nyisd meg a *fine_tune.py* fájlt a Visual Studio Code-ban.
 
-1. Illessze be a következő kódot a *fine_tune.py* fájlba.
+1. Másold be a következő kódot a *fine_tune.py* fájlba.
 
     ```python
     import argparse
@@ -571,21 +682,21 @@ A *setup_ml.py* futtatásával elindítja a finomhangolási folyamatot az Azure 
 
     ```
 
-1. Mentse el és zárja be a *fine_tune.py* fájlt.
+1. Mentsd el és zárd be a *fine_tune.py* fájlt.
 
 > [!TIP]
 > **Phi-3.5 modell finomhangolása is lehetséges**
 >
-> A *fine_tune.py* fájlban megváltoztathatja a `pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name` mezőt a szkriptben.
+> A *fine_tune.py* fájlban megváltoztathatod a `pretrained_model_name` értékét `"microsoft/Phi-3-mini-4k-instruct"`-ról bármely más modellre, amelyet finomhangolni szeretnél. Például, ha `"microsoft/Phi-3.5-mini-instruct"`-ra változtatod, akkor a Phi-3.5-mini-instruct modellt fogod használni a finomhangoláshoz. A kívánt modell nevét megtalálhatod és kimásolhatod a [Hugging Face](https://huggingface.co/) oldalról, majd beillesztheted a `pretrained_model_name` mezőbe a szkriptedben.
 >
 > :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Phi-3.5 finomhangolása.":::
 >
 
 #### Kód hozzáadása a *setup_ml.py* fájlhoz
 
-1. Nyissa meg a *setup_ml.py* fájlt a Visual Studio Code-ban.
+1. Nyisd meg a *setup_ml.py* fájlt a Visual Studio Code-ban.
 
-1. Illessze be a következő kódot a *setup_ml.py* fájlba.
+1. Másold be a következő kódot a *setup_ml.py* fájlba.
 
     ```python
     import logging
@@ -712,7 +823,7 @@ A *setup_ml.py* futtatásával elindítja a finomhangolási folyamatot az Azure 
 
     ```
 
-1. Cserélje ki a `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `LOCATION` helyőrzőket a saját adataira.
+1. Cseréld ki a `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` és `LOCATION` értékeket a saját adataidra.
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -724,13 +835,13 @@ A *setup_ml.py* futtatásával elindítja a finomhangolási folyamatot az Azure 
 
 > [!TIP]
 >
-> **Útmutató minimális adatkészlettel történő finomhangoláshoz CPU használatával**
+> **Útmutató minimális adathalmazzal történő finomhangoláshoz CPU használatával**
 >
-> Ha CPU-t szeretne használni a finomhangoláshoz, ez a megközelítés ideális azoknak, akik előnyös előfizetéssel rendelkeznek (például Visual Studio Enterprise Subscription), vagy gyorsan szeretnék tesztelni a finomhangolási és telepítési folyamatot.
+> Ha CPU-t szeretnél használni a finomhangoláshoz, ez a megközelítés ideális azok számára, akik rendelkeznek előfizetéses jogosultságokkal (például Visual Studio Enterprise Subscription), vagy gyorsan szeretnék tesztelni a finomhangolási és telepítési folyamatot.
 >
-> 1. Nyissa meg a *setup_ml* fájlt.
-> 1. Cserélje ki a `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
-> 1. Replace `LOCATION` helyőrzőket a saját adataira.
+> 1. Nyisd meg a *setup_ml* fájlt.
+> 1. Cseréld le a `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` és `DOCKER_IMAGE_NAME` értékeket az alábbiakra. Ha nincs hozzáférésed a *Standard_E16s_v3* típushoz, használhatsz egy hasonló CPU példányt, vagy kérhetsz új kvótát.
+> 1. Cseréld le a `LOCATION` értéket a saját adataidra.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -741,37 +852,37 @@ A *setup_ml.py* futtatásával elindítja a finomhangolási folyamatot az Azure 
 >    ```
 >
 
-1. Írja be a következő parancsot a *setup_ml.py* szkript futtatásához és a finomhangolási folyamat elindításához az Azure Machine Learningben.
+1. Írd be a következő parancsot a *setup_ml.py* szkript futtatásához és a finomhangolási folyamat elindításához az Azure Machine Learningben.
 
     ```python
     python setup_ml.py
     ```
 
-1. Ebben a gyakorlatban sikeresen finomhangolta a Phi-3 modellt az Azure Machine Learning segítségével. A *setup_ml.py* szkript futtatásával beállította az Azure Machine Learning környezetet, és elindította a *fine_tune.py* fájlban definiált finomhangolási folyamatot. Vegye figyelembe, hogy a finomhangolás jelentős időt vehet igénybe. A `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
+1. Ebben a gyakorlatban sikeresen finomhangoltad a Phi-3 modellt az Azure Machine Learning segítségével. A *setup_ml.py* futtatásával beállítottad az Azure Machine Learning környezetet, és elindítottad a *fine_tune.py* fájlban definiált finomhangolási folyamatot. Felhívjuk a figyelmed, hogy a finomhangolás jelentős időt vehet igénybe. A `python setup_ml.py` parancs futtatása után várnod kell a folyamat befejezésére. A finomhangolási feladat állapotát a terminálban megjelenő linkre kattintva az Azure Machine Learning portálon követheted nyomon.
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.a28c8552f7b7bc088ccd67dd0c522f7fc1944048d3554bb1b24f95a1169ad538.hu.png)
+    ![Finomhangolási feladat megtekintése.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.hu.png)
 
-### Deploy the fine-tuned model
+### A finomhangolt modell telepítése
 
-To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+Ahhoz, hogy a finomhangolt Phi-3 modellt integráld a Prompt Flow-val, telepítened kell a modellt, hogy valós idejű lekérdezésekhez elérhető legyen. Ez a folyamat magában foglalja a modell regisztrálását, egy online végpont létrehozását és a modell telepítését.
 
-#### Set the model name, endpoint name, and deployment name for deployment
+#### Modellnév, végpontnév és telepítésnév beállítása a telepítéshez
 
-1. Open *config.py* file.
+1. Nyisd meg a *config.py* fájlt.
 
-1. Replace `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` with the desired name for your model.
+1. Cseréld le az `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` értéket a kívánt modellnévre.
 
-1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
+1. Cseréld le az `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` értéket a kívánt végpontnévre.
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` parancs futtatása után adja meg a kívánt nevet a telepítéshez.
+1. Cseréld le az `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` értéket a kívánt telepítésnévre.
 
 #### Kód hozzáadása a *deploy_model.py* fájlhoz
 
-A *deploy_model.py* fájl futtatása automatizálja az egész telepítési folyamatot. Regisztrálja a modellt, létrehozza a végpontot, és végrehajtja a telepítést a config.py fájlban megadott beállítások alapján, amelyek tartalmazzák a modell nevét, a végpont nevét és a telepítés nevét.
+A *deploy_model.py* fájl futtatásával automatizálod a teljes telepítési folyamatot. Ez regisztrálja a modellt, létrehozza a végpontot, és végrehajtja a telepítést a *config.py* fájlban megadott beállítások alapján, amelyek tartalmazzák a modell nevét, a végpont nevét és a telepítés nevét.
 
-1. Nyissa meg a *deploy_model.py* fájlt a Visual Studio Code-ban.
+1. Nyisd meg a *deploy_model.py* fájlt a Visual Studio Code-ban.
 
-1. Illessze be a következő kódot a *deploy_model.py* fájlba.
+1. Másold be a következő kódot a *deploy_model.py* fájlba.
 
     ```python
     import logging
@@ -937,67 +1048,66 @@ A *deploy_model.py* fájl futtatása automatizálja az egész telepítési folya
 
     ```
 
-1. Végezze el a következő lépéseket a `JOB_NAME`:
+1. Hajtsd végre a következő lépéseket a `JOB_NAME` megszerzéséhez:
 
-    - Navigate to Azure Machine Learning resource that you created.
-    - Select **Studio web URL** to open the Azure Machine Learning workspace.
-    - Select **Jobs** from the left side tab.
-    - Select the experiment for fine-tuning. For example, *finetunephi*.
-    - Select the job that you created.
-    - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+    - Navigálj az általad létrehozott Azure Machine Learning erőforráshoz.
+    - Válaszd ki a **Studio web URL**-t az Azure Machine Learning munkaterület megnyitásához.
+    - Válaszd ki a
+- Másold be a munkád nevét a `JOB_NAME = "your-job-name"` változóba a *deploy_model.py* fájlban.
 
-1. Replace `COMPUTE_INSTANCE_TYPE` saját adatokkal történő kitöltéséhez.
+1. Cseréld ki a `COMPUTE_INSTANCE_TYPE` értékét a saját adataidra.
 
-1. Írja be a következő parancsot a *deploy_model.py* szkript futtatásához és a telepítési folyamat elindításához az Azure Machine Learningben.
+1. Írd be a következő parancsot a *deploy_model.py* szkript futtatásához, és indítsd el a telepítési folyamatot az Azure Machine Learning-ben.
 
     ```python
     python deploy_model.py
     ```
 
+
 > [!WARNING]
-> Az extra költségek elkerülése érdekében győződjön meg róla, hogy törli a létrehozott végpontot az Azure Machine Learning munkaterületen.
+> Az extra költségek elkerülése érdekében győződj meg róla, hogy törlöd a létrehozott végpontot az Azure Machine Learning munkaterületen.
 >
 
-#### A telepítés állapotának ellenőrzése az Azure Machine Learning munkaterületen
+#### Ellenőrizd a telepítés állapotát az Azure Machine Learning munkaterületen
 
-1. Látogasson el az [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) oldalra.
+1. Látogass el az [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) oldalra.
 
-1. Navigáljon az Ön által létrehozott Azure Machine Learning munkaterületre.
+1. Navigálj ahhoz az Azure Machine Learning munkaterülethez, amit létrehoztál.
 
-1. Válassza a **Studio web URL** lehetőséget az Azure Machine Learning munkaterület megnyitásához.
+1. Válaszd ki a **Studio web URL**-t az Azure Machine Learning munkaterület megnyitásához.
 
-1. A bal oldali menüből válassza az **Endpoints** lehetőséget.
+1. A bal oldali menüből válaszd az **Endpoints** lehetőséget.
 
-    ![Válassza az endpoints lehetőséget.](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.hu.png)
+    ![Válaszd ki a végpontokat.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.hu.png)
 
-2. Válassza ki a létrehozott végpontot.
+2. Válaszd ki a létrehozott végpontot.
 
-    ![Válassza ki a létrehozott végpontot.](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.hu.png)
+    ![Válaszd ki a létrehozott végpontot.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.hu.png)
 
-3. Ezen az oldalon kezelheti a telepítési folyamat során létrehozott végpontokat.
+3. Ezen az oldalon kezelheted a telepítés során létrehozott végpontokat.
 
-## 3. Forgatókönyv: Integráció a Prompt flow-val és csevegés az egyedi modellel
+## 3. forgatókönyv: Integráció a Prompt flow-val és csevegés az egyedi modelleddel
 
-### Egyedi Phi-3 modell integrálása a Prompt flow-val
+### Integráld az egyedi Phi-3 modellt a Prompt flow-val
 
-A finomhangolt modell sikeres telepítése után integrálhatja azt a Prompt flow-val, hogy valós idejű alkalmazásokban használhassa, lehetővé téve különféle interaktív feladatok elvégzését az egyedi Phi-3 modellel.
+A finomhangolt modell sikeres telepítése után most integrálhatod azt a Prompt flow-val, hogy valós idejű alkalmazásokban használd, és különféle interaktív feladatokat végezhess az egyedi Phi-3 modelleddel.
 
-#### Állítsa be az api kulcsot és a végpont URI-t a finomhangolt Phi-3 modellhez
+#### Állítsd be a finomhangolt Phi-3 modell api kulcsát és végpont URI-ját
 
-1. Navigáljon az Ön által létrehozott Azure Machine Learning munkaterületre.
-1. Válassza az **Endpoints** lehetőséget a bal oldali menüből.
-1. Válassza ki a létrehozott végpontot.
-1. Válassza a **Consume** lehetőséget a navigációs menüben.
-1. Másolja be a **REST endpoint** értékét a *config.py* fájlba, és cserélje le az `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` értékeket a saját **Primary key** értékére.
+1. Navigálj az általad létrehozott Azure Machine Learning munkaterületre.
+1. A bal oldali menüből válaszd az **Endpoints** lehetőséget.
+1. Válaszd ki a létrehozott végpontot.
+1. A navigációs menüből válaszd a **Consume** lehetőséget.
+1. Másold be a **REST endpoint**-ot a *config.py* fájlba, cseréld le az `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` értéket a saját **REST endpoint**-odra.
+1. Másold be a **Primary key**-t a *config.py* fájlba, cseréld le az `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` értéket a saját **Primary key**-edre.
 
-    ![API kulcs és végpont URI másolása.](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.hu.png)
+    ![Másold ki az api kulcsot és a végpont URI-t.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.hu.png)
 
-#### Kód hozzáadása a *flow.dag.yml* fájlhoz
+#### Adj hozzá kódot a *flow.dag.yml* fájlhoz
 
-1. Nyissa meg a *flow.dag.yml* fájlt a Visual Studio Code-ban.
+1. Nyisd meg a *flow.dag.yml* fájlt a Visual Studio Code-ban.
 
-1. Illessze be a következő kódot a *flow.dag.yml* fájlba.
+1. Illeszd be a következő kódot a *flow.dag.yml* fájlba.
 
     ```yml
     inputs:
@@ -1020,11 +1130,11 @@ A finomhangolt modell sikeres telepítése után integrálhatja azt a Prompt flo
         input_data: ${inputs.input_data}
     ```
 
-#### Kód hozzáadása az *integrate_with_promptflow.py* fájlhoz
+#### Adj hozzá kódot az *integrate_with_promptflow.py* fájlhoz
 
-1. Nyissa meg az *integrate_with_promptflow.py* fájlt a Visual Studio Code-ban.
+1. Nyisd meg az *integrate_with_promptflow.py* fájlt a Visual Studio Code-ban.
 
-1. Illessze be a következő kódot az *integrate_with_promptflow.py* fájlba.
+1. Illeszd be a következő kódot az *integrate_with_promptflow.py* fájlba.
 
     ```python
     import logging
@@ -1090,17 +1200,17 @@ A finomhangolt modell sikeres telepítése után integrálhatja azt a Prompt flo
 
     ```
 
-### Csevegés az egyedi modellel
+### Csevegj az egyedi modelleddel
 
-1. Írja be a következő parancsot a *deploy_model.py* szkript futtatásához és a telepítési folyamat elindításához az Azure Machine Learningben.
+1. Írd be a következő parancsot a *deploy_model.py* szkript futtatásához, és indítsd el a telepítési folyamatot az Azure Machine Learning-ben.
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. Íme egy példa az eredményekre: Most már cseveghet az egyedi Phi-3 modellel. Ajánlott olyan kérdéseket feltenni, amelyek az adatkészletből származnak, amelyet a finomhangoláshoz használt.
+1. Íme egy példa az eredményekre: most már cseveghetsz az egyedi Phi-3 modelleddel. Ajánlott olyan kérdéseket feltenni, amelyek a finomhangoláshoz használt adatokra épülnek.
 
-    ![Prompt flow példa.](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.hu.png)
+    ![Prompt flow példa.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.hu.png)
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hivatalos forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

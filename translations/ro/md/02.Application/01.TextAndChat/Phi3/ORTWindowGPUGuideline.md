@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-09T18:46:37+00:00",
+  "translation_date": "2025-07-17T02:47:12+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "ro"
 }
 -->
 # **Ghid pentru OnnxRuntime GenAI Windows GPU**
 
-Acest ghid oferă pașii pentru configurarea și utilizarea ONNX Runtime (ORT) cu GPU-uri pe Windows. Este conceput pentru a vă ajuta să profitați de accelerarea GPU pentru modelele dvs., îmbunătățind performanța și eficiența.
+Acest ghid oferă pașii pentru configurarea și utilizarea ONNX Runtime (ORT) cu GPU-uri pe Windows. Este conceput pentru a te ajuta să profiți de accelerarea GPU pentru modelele tale, îmbunătățind performanța și eficiența.
 
 Documentul oferă îndrumări privind:
 
 - Configurarea mediului: Instrucțiuni pentru instalarea dependențelor necesare precum CUDA, cuDNN și ONNX Runtime.
-- Configurare: Cum să configurați mediul și ONNX Runtime pentru a utiliza eficient resursele GPU.
-- Sfaturi de optimizare: Recomandări pentru ajustarea setărilor GPU pentru performanțe optime.
+- Configurarea: Cum să configurezi mediul și ONNX Runtime pentru a utiliza eficient resursele GPU.
+- Sfaturi de optimizare: Recomandări pentru ajustarea setărilor GPU pentru performanță optimă.
 
 ### **1. Python 3.10.x /3.11.8**
 
@@ -29,7 +29,7 @@ Documentul oferă îndrumări privind:
 
    ```
 
-   ***Reminder*** Dacă aveți instalată vreo bibliotecă Python ONNX, vă rugăm să o dezinstalați
+   ***Reminder*** Dacă ai instalat vreo bibliotecă ONNX pentru Python, te rugăm să o dezinstalezi
 
 ### **2. Instalare CMake cu winget**
 
@@ -41,9 +41,9 @@ Documentul oferă îndrumări privind:
 
 ### **3. Instalare Visual Studio 2022 - Desktop Development cu C++**
 
-   ***Note*** Dacă nu doriți să compilați, puteți sări peste acest pas
+   ***Note*** Dacă nu dorești să compilezi, poți sări peste acest pas
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.ro.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.ro.png)
 
 ### **4. Instalare driver NVIDIA**
 
@@ -53,19 +53,19 @@ Documentul oferă îndrumări privind:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** Vă rugăm să folosiți setările implicite în timpul instalării
+***Reminder*** Te rugăm să folosești setările implicite în timpul instalării
 
-### **5. Setare mediu NVIDIA**
+### **5. Configurare mediu NVIDIA**
 
-Copiați fișierele lib, bin, include din NVIDIA CUDNN 9.4 în NVIDIA CUDA 12.4 lib, bin, include
+Copiază fișierele lib, bin, include din NVIDIA CUDNN 9.4 în folderele corespunzătoare din NVIDIA CUDA 12.4
 
-- copiați fișierele din *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* în *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
+- copiază fișierele din *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* în *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
-- copiați fișierele din *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* în *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
+- copiază fișierele din *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* în *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
 
-- copiați fișierele din *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* în *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
+- copiază fișierele din *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* în *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
-### **6. Descărcare Phi-3.5-mini-instruct-onnx**
+### **6. Descarcă Phi-3.5-mini-instruct-onnx**
 
    ```bash
 
@@ -79,17 +79,17 @@ Copiați fișierele lib, bin, include din NVIDIA CUDNN 9.4 în NVIDIA CUDA 12.4 
 
    ```
 
-### **7. Rulare InferencePhi35Instruct.ipynb**
+### **7. Rularea InferencePhi35Instruct.ipynb**
 
-   Deschideți [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) și executați
+   Deschide [Notebook-ul](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) și execută-l
 
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.ro.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.ro.png)
 
 ### **8. Compilare ORT GenAI GPU**
 
    ***Note*** 
    
-   1. Vă rugăm să dezinstalați toate pachetele legate de onnx, onnxruntime și onnxruntime-genai înainte de toate
+   1. Te rugăm să dezinstalezi mai întâi toate pachetele legate de onnx, onnxruntime și onnxruntime-genai
 
    ```bash
 
@@ -97,7 +97,7 @@ Copiați fișierele lib, bin, include din NVIDIA CUDNN 9.4 în NVIDIA CUDA 12.4 
    
    ```
 
-   Apoi dezinstalați toate bibliotecile onnxruntime, de exemplu
+   Apoi dezinstalează toate bibliotecile onnxruntime, de exemplu:
 
    ```bash
 
@@ -109,13 +109,13 @@ Copiați fișierele lib, bin, include din NVIDIA CUDNN 9.4 în NVIDIA CUDA 12.4 
    
    ```
 
-   2. Verificați suportul extensiei Visual Studio 
+   2. Verifică suportul extensiei Visual Studio
 
-   Verificați în C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras dacă există folderul C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
+   Verifică în C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras dacă există folderul C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
    
-   Dacă nu este găsit, verificați în alte foldere ale toolkit-ului CUDA și copiați folderul visual_studio_integration și conținutul său în C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   Dacă nu îl găsești, caută în alte foldere ale toolkit-ului CUDA și copiază folderul visual_studio_integration și conținutul său în C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
-   - Dacă nu doriți să compilați, puteți sări peste acest pas
+   - Dacă nu dorești să compilezi, poți sări peste acest pas
 
    ```bash
 
@@ -123,15 +123,15 @@ Copiați fișierele lib, bin, include din NVIDIA CUDNN 9.4 în NVIDIA CUDA 12.4 
 
    ```
 
-   - Descărcați [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
+   - Descarcă [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - Dezarhivați onnxruntime-win-x64-gpu-1.19.2.zip, redenumiți-l în **ort**, apoi copiați folderul ort în onnxruntime-genai
+   - Dezarhivează onnxruntime-win-x64-gpu-1.19.2.zip, redenumește folderul în **ort** și copiază-l în onnxruntime-genai
 
-   - Folosind Windows Terminal, deschideți Developer Command Prompt pentru VS 2022 și accesați onnxruntime-genai
+   - Folosind Windows Terminal, deschide Developer Command Prompt pentru VS 2022 și navighează la onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.ro.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.ro.png)
 
-   - Compilați cu mediul dvs. Python
+   - Compilează folosind mediul tău Python
 
    ```bash
 
@@ -146,5 +146,5 @@ Copiați fișierele lib, bin, include din NVIDIA CUDNN 9.4 în NVIDIA CUDA 12.4 
 
    ```
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să fiți conștienți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

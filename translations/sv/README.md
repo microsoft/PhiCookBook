@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:26:43+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T15:15:27+00:00",
   "source_file": "README.md",
   "language_code": "sv"
 }
@@ -25,29 +25,29 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi är en serie open source AI-modeller utvecklade av Microsoft.
 
-Phi är för närvarande den mest kraftfulla och kostnadseffektiva lilla språkmodellen (SLM), med mycket bra resultat inom flerspråkighet, resonemang, text-/chattgenerering, kodning, bilder, ljud och andra användningsområden.
+Phi är för närvarande den mest kraftfulla och kostnadseffektiva lilla språkmodellen (SLM), med mycket bra resultat inom flerspråkighet, resonemang, text-/chattgenerering, kodning, bilder, ljud och andra scenarier.
 
-Du kan distribuera Phi i molnet eller på edge-enheter, och du kan enkelt bygga generativa AI-applikationer med begränsad beräkningskraft.
+Du kan distribuera Phi till molnet eller till edge-enheter, och du kan enkelt bygga generativa AI-applikationer med begränsad beräkningskraft.
 
 Följ dessa steg för att komma igång med dessa resurser:  
 1. **Forka Repositoryt**: Klicka [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
 2. **Klona Repositoryt**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Gå med i Microsoft AI Discord Community och träffa experter och andra utvecklare**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.sv.png)
 
-## 🌐 Flerspråkigt stöd
+### 🌐 Flerspråkigt stöd
 
-### Stöds via GitHub Action (Automatiserat & Alltid uppdaterat)
+#### Stöds via GitHub Action (Automatiserat & Alltid uppdaterat)
 
 [Franska](../fr/README.md) | [Spanska](../es/README.md) | [Tyska](../de/README.md) | [Ryska](../ru/README.md) | [Arabiska](../ar/README.md) | [Persiska (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Kinesiska (Förenklad)](../zh/README.md) | [Kinesiska (Traditionell, Macau)](../mo/README.md) | [Kinesiska (Traditionell, Hong Kong)](../hk/README.md) | [Kinesiska (Traditionell, Taiwan)](../tw/README.md) | [Japanska](../ja/README.md) | [Koreanska](../ko/README.md) | [Hindi](../hi/README.md)  
-[Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugisiska (Portugal)](../pt/README.md) | [Portugisiska (Brasilien)](../br/README.md) | [Italienska](../it/README.md) | [Polska](../pl/README.md) | [Turkiska](../tr/README.md) | [Grekiska](../el/README.md) | [Thailändska](../th/README.md) | [Svenska](./README.md) | [Danska](../da/README.md) | [Norska](../no/README.md) | [Finska](../fi/README.md) | [Holländska](../nl/README.md) | [Hebreiska](../he/README.md) | [Vietnamesiska](../vi/README.md) | [Indonesiska](../id/README.md) | [Malajiska](../ms/README.md) | [Tagalog (Filippinska)](../tl/README.md) | [Swahili](../sw/README.md) | [Ungerska](../hu/README.md) | [Tjeckiska](../cs/README.md) | [Slovakiska](../sk/README.md) | [Rumänska](../ro/README.md) | [Bulgariska](../bg/README.md) | [Serbiska (Kyrilliska)](../sr/README.md) | [Kroatiska](../hr/README.md) | [Slovenska](../sl/README.md)
+[Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugisiska (Portugal)](../pt/README.md) | [Portugisiska (Brasilien)](../br/README.md) | [Italienska](../it/README.md) | [Polska](../pl/README.md) | [Turkiska](../tr/README.md) | [Grekiska](../el/README.md) | [Thailändska](../th/README.md) | [Svenska](./README.md) | [Danska](../da/README.md) | [Norska](../no/README.md) | [Finska](../fi/README.md) | [Nederländska](../nl/README.md) | [Hebreiska](../he/README.md) | [Vietnamesiska](../vi/README.md) | [Indonesiska](../id/README.md) | [Malajiska](../ms/README.md) | [Tagalog (Filippinska)](../tl/README.md) | [Swahili](../sw/README.md) | [Ungerska](../hu/README.md) | [Tjeckiska](../cs/README.md) | [Slovakiska](../sk/README.md) | [Rumänska](../ro/README.md) | [Bulgariska](../bg/README.md) | [Serbiska (Kyrilliska)](../sr/README.md) | [Kroatiska](../hr/README.md) | [Slovenska](../sl/README.md)
 
 ## Innehållsförteckning
 
 - Introduktion  
   - [Välkommen till Phi-familjen](./md/01.Introduction/01/01.PhiFamily.md)  
-  - [Ställa in din miljö](./md/01.Introduction/01/01.EnvironmentSetup.md)  
+  - [Sätta upp din miljö](./md/01.Introduction/01/01.EnvironmentSetup.md)  
   - [Förstå viktiga teknologier](./md/01.Introduction/01/01.Understandingtech.md)  
   - [AI-säkerhet för Phi-modeller](./md/01.Introduction/01/01.AISafety.md)  
   - [Phi hårdvarustöd](./md/01.Introduction/01/01.Hardwaresupport.md)  
@@ -90,13 +90,13 @@ Följ dessa steg för att komma igång med dessa resurser:
 - RAG med Azure AI Search  
     - [Hur man använder Phi-4-mini och Phi-4-multimodal (RAG) med Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
-- Exempel på utveckling av Phi-applikationer  
-  - Text- och chattapplikationer  
-    - Phi-4-exempel 🆕  
+- Exempel på Phi-applikationsutveckling  
+  - Text- & chattapplikationer  
+    - Phi-4 Exempel 🆕  
       - [📓] [Chatta med Phi-4-mini ONNX-modell](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)  
       - [Chatta med Phi-4 lokal ONNX-modell .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
       - [Chat .NET Console App med Phi-4 ONNX med Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)  
-    - Phi-3 / 3.5-exempel  
+    - Phi-3 / 3.5 Exempel  
       - [Lokal chatbot i webbläsaren med Phi3, ONNX Runtime Web och WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
       - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
       - [Multi Model - Interaktiv Phi-3-mini och OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
@@ -158,7 +158,7 @@ Följ dessa steg för att komma igång med dessa resurser:
 
 - MOE-exempel  
   - Phi-3 / 3.5-exempel  
-    - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) sociala medier-exempel](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
+    - [📓] [Phi-3.5 Mixture of Experts-modeller (MoEs) sociala medier-exempel](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
     - [📓] [Bygga en Retrieval-Augmented Generation (RAG) pipeline med NVIDIA NIM Phi-3 MOE, Azure AI Search och LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
 
 - Funktionanrops-exempel  
@@ -176,7 +176,7 @@ Följ dessa steg för att komma igång med dessa resurser:
 - Finjustering av Phi-exempel  
   - [Finjusteringsscenarier](./md/03.FineTuning/FineTuning_Scenarios.md)  
   - [Finjustering vs RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)  
-  - [Finjustera Phi-3 för att bli en branschexpert](./md/03.FineTuning/LetPhi3gotoIndustriy.md)  
+  - [Finjustera för att låta Phi-3 bli en branschexpert](./md/03.FineTuning/LetPhi3gotoIndustriy.md)  
   - [Finjustera Phi-3 med AI Toolkit för VS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)  
   - [Finjustera Phi-3 med Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)  
   - [Finjustera Phi-3 med Lora](./md/03.FineTuning/FineTuning_Lora.md)  
@@ -200,7 +200,7 @@ Följ dessa steg för att komma igång med dessa resurser:
   - [Phi-3 teknisk rapport: En mycket kapabel språkmodell lokalt på din telefon](https://arxiv.org/abs/2404.14219)  
   - [Phi-4 teknisk rapport](https://arxiv.org/abs/2412.08905)  
   - [Phi-4-Mini teknisk rapport: Kompakta men kraftfulla multimodala språkmodeller via Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)  
-  - [Optimera små språkmodeller för inbyggda funktionanrop i fordon](https://arxiv.org/abs/2501.02342)  
+  - [Optimera små språkmodeller för in-vehicle function-calling](https://arxiv.org/abs/2501.02342)  
   - [(WhyPHI) Finjustering av PHI-3 för flervalsfrågor: Metodik, resultat och utmaningar](https://arxiv.org/abs/2501.01588)
 - [Phi-4-reasoning Technical Report](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)  
 - [Phi-4-mini-reasoning Technical Report](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
@@ -209,14 +209,14 @@ Följ dessa steg för att komma igång med dessa resurser:
 
 ### Phi på Azure AI Foundry
 
-Du kan lära dig hur du använder Microsoft Phi och hur du bygger E2E-lösningar på dina olika hårdvaruenheter. För att själv uppleva Phi, börja med att testa modellerna och anpassa Phi för dina scenarier med hjälp av [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Du kan läsa mer i Kom igång med [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
+Du kan lära dig hur du använder Microsoft Phi och hur du bygger E2E-lösningar på dina olika hårdvaruenheter. För att själv prova Phi, börja med att leka med modellerna och anpassa Phi för dina scenarier med hjälp av [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Du kan läsa mer i Kom igång med [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md)
 
 **Playground**  
 Varje modell har en dedikerad playground för att testa modellen [Azure AI Playground](https://aka.ms/try-phi3).
 
-### Phi på GitHub-modeller
+### Phi på GitHub Models
 
-Du kan lära dig hur du använder Microsoft Phi och hur du bygger E2E-lösningar på dina olika hårdvaruenheter. För att själv uppleva Phi, börja med att testa modellen och anpassa Phi för dina scenarier med hjälp av [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Du kan läsa mer i Kom igång med [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
+Du kan lära dig hur du använder Microsoft Phi och hur du bygger E2E-lösningar på dina olika hårdvaruenheter. För att själv prova Phi, börja med att leka med modellen och anpassa Phi för dina scenarier med hjälp av [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Du kan läsa mer i Kom igång med [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md)
 
 **Playground**  
 Varje modell har en dedikerad [playground för att testa modellen](/md/02.QuickStart/GitHubModel_QuickStart.md).
@@ -230,7 +230,7 @@ Du kan också hitta modellen på [Hugging Face](https://huggingface.co/microsoft
 
 ## Ansvarsfull AI
 
-Microsoft är engagerade i att hjälpa våra kunder att använda våra AI-produkter på ett ansvarsfullt sätt, dela med oss av våra erfarenheter och bygga förtroendebaserade partnerskap genom verktyg som Transparency Notes och Impact Assessments. Många av dessa resurser finns på [https://aka.ms/RAI](https://aka.ms/RAI).  
+Microsoft är engagerat i att hjälpa våra kunder att använda våra AI-produkter på ett ansvarsfullt sätt, dela med oss av våra erfarenheter och bygga förtroendebaserade partnerskap genom verktyg som Transparency Notes och Impact Assessments. Många av dessa resurser finns på [https://aka.ms/RAI](https://aka.ms/RAI).  
 Microsofts syn på ansvarsfull AI grundar sig i våra AI-principer om rättvisa, tillförlitlighet och säkerhet, integritet och säkerhet, inkludering, transparens och ansvarstagande.
 
 Storskaliga modeller för naturligt språk, bild och tal – som de som används i detta exempel – kan potentiellt bete sig på sätt som är orättvisa, opålitliga eller stötande, vilket i sin tur kan orsaka skada. Vänligen se [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) för att få information om risker och begränsningar.
@@ -244,7 +244,7 @@ Du kan utvärdera din AI-applikation i din utvecklingsmiljö med hjälp av [Azur
 ## Varumärken
 
 Detta projekt kan innehålla varumärken eller logotyper för projekt, produkter eller tjänster. Auktoriserad användning av Microsofts varumärken eller logotyper måste följa [Microsofts riktlinjer för varumärken och varumärkesanvändning](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Användning av Microsofts varumärken eller logotyper i modifierade versioner av detta projekt får inte skapa förvirring eller antyda Microsofts sponsring. All användning av tredjeparts varumärken eller logotyper är föremål för dessa tredjeparts policyer.
+Användning av Microsofts varumärken eller logotyper i modifierade versioner av detta projekt får inte orsaka förvirring eller antyda Microsofts sponsring. All användning av tredjeparts varumärken eller logotyper är föremål för dessa tredjeparters policyer.
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

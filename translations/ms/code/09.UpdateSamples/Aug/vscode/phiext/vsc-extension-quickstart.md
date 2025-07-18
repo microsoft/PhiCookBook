@@ -2,59 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-05-09T05:40:55+00:00",
+  "translation_date": "2025-07-16T17:38:49+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
   "language_code": "ms"
 }
 -->
-# Welcome to your VS Code Extension
+# Selamat datang ke Sambungan VS Code anda
 
-## What's in the folder
+## Apa yang ada dalam folder
 
-* This folder contains all of the files necessary for your extension.
-* `package.json` - this is the manifest file where you declare your extension and command.
-  * The sample plugin registers a command and defines its title and command name. With this information VS Code can show the command in the command palette. It doesn’t need to load the plugin yet.
-* `src/extension.ts` - this is the main file where you will implement your command.
-  * The file exports one function, `activate`, which is called the very first time your extension is activated (in this case by running the command). Inside the `activate` function we call `registerCommand`.
-  * We pass the function containing the command implementation as the second argument to `registerCommand`.
+* Folder ini mengandungi semua fail yang diperlukan untuk sambungan anda.
+* `package.json` - ini adalah fail manifest di mana anda mengisytiharkan sambungan dan arahan anda.
+  * Plugin contoh mendaftar satu arahan dan menetapkan tajuk serta nama arahan tersebut. Dengan maklumat ini, VS Code boleh memaparkan arahan dalam palet arahan. Ia tidak perlu memuatkan plugin terlebih dahulu.
+* `src/extension.ts` - ini adalah fail utama di mana anda akan menyediakan pelaksanaan arahan anda.
+  * Fail ini mengeksport satu fungsi, `activate`, yang dipanggil kali pertama sambungan anda diaktifkan (dalam kes ini dengan menjalankan arahan). Di dalam fungsi `activate` kita memanggil `registerCommand`.
+  * Kita menghantar fungsi yang mengandungi pelaksanaan arahan sebagai parameter kedua kepada `registerCommand`.
 
-## Setup
+## Persediaan
 
-* install the recommended extensions (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, and dbaeumer.vscode-eslint)
+* pasang sambungan yang disyorkan (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, dan dbaeumer.vscode-eslint)
 
+## Mulakan dengan segera
 
-## Get up and running straight away
+* Tekan `F5` untuk membuka tetingkap baru dengan sambungan anda dimuatkan.
+* Jalankan arahan anda dari palet arahan dengan menekan (`Ctrl+Shift+P` atau `Cmd+Shift+P` pada Mac) dan taip `Hello World`.
+* Tetapkan titik henti dalam kod anda di dalam `src/extension.ts` untuk menyahpepijat sambungan anda.
+* Cari output dari sambungan anda dalam konsol debug.
 
-* Press `F5` to open a new window with your extension loaded.
-* Run your command from the command palette by pressing (`Ctrl+Shift+P` or `Cmd+Shift+P` on Mac) and typing `Hello World`.
-* Set breakpoints in your code inside `src/extension.ts` to debug your extension.
-* Find output from your extension in the debug console.
+## Buat perubahan
 
-## Make changes
+* Anda boleh melancarkan semula sambungan dari bar alat debug selepas menukar kod dalam `src/extension.ts`.
+* Anda juga boleh memuat semula (`Ctrl+R` atau `Cmd+R` pada Mac) tetingkap VS Code dengan sambungan anda untuk memuatkan perubahan anda.
 
-* You can relaunch the extension from the debug toolbar after modifying code in `src/extension.ts`.
-* You can also reload (`Ctrl+R` or `Cmd+R` on Mac) the VS Code window with your extension to apply your changes.
+## Terokai API
 
+* Anda boleh membuka set penuh API kami apabila anda membuka fail `node_modules/@types/vscode/index.d.ts`.
 
-## Explore the API
+## Jalankan ujian
 
-* You can open the complete set of our API by opening the file `node_modules/@types/vscode/index.d.ts`.
+* Pasang [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* Jalankan tugas "watch" melalui arahan **Tasks: Run Task**. Pastikan ia berjalan, jika tidak ujian mungkin tidak ditemui.
+* Buka paparan Testing dari bar aktiviti dan klik butang "Run Test", atau gunakan kekunci pintas `Ctrl/Cmd + ; A`
+* Lihat output keputusan ujian dalam paparan Test Results.
+* Buat perubahan pada `src/test/extension.test.ts` atau cipta fail ujian baru dalam folder `test`.
+  * Pelari ujian yang disediakan hanya akan mempertimbangkan fail yang sepadan dengan corak nama `**.test.ts`.
+  * Anda boleh mencipta folder dalam folder `test` untuk menyusun ujian anda mengikut cara yang anda mahu.
 
-## Run tests
+## Terokai lebih jauh
 
-* Install the [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Run the "watch" task via the **Tasks: Run Task** command. Make sure this is running, or tests might not be discovered.
-* Open the Testing view from the activity bar and click the "Run Test" button, or use the hotkey `Ctrl/Cmd + ; A`
-* See the test results output in the Test Results view.
-* Modify `src/test/extension.test.ts` or create new test files inside the `test` folder.
-  * The provided test runner will only consider files matching the name pattern `**.test.ts`.
-  * You can create folders inside the `test` folder to organize your tests however you want.
-
-## Go further
-
-* Reduce the extension size and improve startup time by [bundling your extension](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
-* [Publish your extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) on the VS Code extension marketplace.
-* Automate builds by setting up [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+* Kurangkan saiz sambungan dan tingkatkan masa permulaan dengan [menggabungkan sambungan anda](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
+* [Terbitkan sambungan anda](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) di pasaran sambungan VS Code.
+* Automatikkan binaan dengan menyediakan [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

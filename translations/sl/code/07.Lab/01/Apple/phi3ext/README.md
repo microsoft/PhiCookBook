@@ -2,82 +2,82 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T05:06:12+00:00",
+  "translation_date": "2025-07-16T16:57:03+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "sl"
 }
 -->
 # phi3ext README
 
-Ih extension "phi3ext" README. Pashcha likhne chhoto boicha hoile, amra poramorsho di ei bisoyguli add korar.
+To je README za tvojo razširitev "phi3ext". Po kratkem opisu priporočamo, da vključiš naslednje razdelke.
 
 ## Features
 
-Tomar extension-er specific feature gula boro kore bole dao, extension cholte thaka screenshot shoho. Chobi path ei README file-er relative.
+Opisi konkretne funkcionalnosti tvoje razširitve, vključno z zaslonskimi posnetki med delovanjem razširitve. Pot do slik je relativna glede na ta README dokument.
 
-Uddharon shorup, jodi tomar extension project workspace-er moddhe ekta image subfolder thake:
+Na primer, če imaš v delovnem prostoru razširitve podmapo za slike:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> TIP: Onk popular extension animation use kore. Eta tomar extension dekhano ekta bhalo upay! Amra choto, focused animation recommend kori, ja follow kora sohoj.
+> Namig: Veliko priljubljenih razširitev uporablja animacije. To je odličen način za predstavitev tvoje razširitve! Priporočamo kratke, osredotočene animacije, ki so enostavne za spremljanje.
 
 ## Requirements
 
-Jodi kono requirement ba dependency thake, ekta section add koro jekhane ei requirement gula o install/configure kora niye kotha bola ache.
+Če imaš kakršnekoli zahteve ali odvisnosti, dodaj razdelek, ki jih opisuje in pojasnjuje, kako jih namestiti in nastaviti.
 
 ## Extension Settings
 
-Jodi tomar extension `contributes.configuration` extension point diye kono VS Code setting add kore, shegulo include koro.
+Če tvoja razširitev preko `contributes.configuration` doda kakšne nastavitve v VS Code, jih vključite tukaj.
 
-Uddharon:
+Na primer:
 
-Ei extension nicher settings contribute kore:
+Ta razširitev prispeva naslednje nastavitve:
 
-* `myExtension.enable`: Ei extension on/off kora jabe.
-* `myExtension.thing`: `blah` set kore kichu kora jabe.
+* `myExtension.enable`: omogoči/onemogoči to razširitev.
+* `myExtension.thing`: nastavi na `blah` za izvedbo določene funkcije.
 
 ## Known Issues
 
-Known issue gula bolle user-der bar bar same problem niye asha kom hobe.
+Navajanje znanih težav pomaga zmanjšati število ponavljajočih se vprašanj uporabnikov o tvoji razširitvi.
 
 ## Release Notes
 
-User-ra extension update korar somoy release note peye khushi hobe.
+Uporabniki bodo hvaležni, če ob posodobitvah razširitve priložiš opombe o izdaji.
 
 ### 1.0.0
 
-Prothom release ...
+Prva izdaja ...
 
 ### 1.0.1
 
-Issue # fix kora hoyeche.
+Popravljena težava #.
 
 ### 1.1.0
 
-Feature X, Y, Z add kora hoyeche.
+Dodane funkcije X, Y in Z.
 
 ---
 
 ## Following extension guidelines
 
-Nischit koro je tumi extension guidelines porecho ebong best practice follow korcho extension toiri korar jonno.
+Poskrbi, da si prebral smernice za razširitve in upošteval najboljše prakse pri ustvarjanju razširitev.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+* [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Tumi Visual Studio Code diye README likhte paro. Ekhane kichu useful editor shortcut ache:
+README lahko pišeš v Visual Studio Code. Tukaj je nekaj uporabnih bližnjic urejevalnika:
 
-* Split editor (`Cmd+\` macOS e ba `Ctrl+\` Windows o Linux e).
-* Toggle preview (`Shift+Cmd+V` macOS e ba `Shift+Ctrl+V` Windows o Linux e).
-* Press `Ctrl+Space` (Windows, Linux, macOS) dekhte Markdown snippet list.
+* Razdeli urejevalnik (`Cmd+\` na macOS ali `Ctrl+\` na Windows in Linux).
+* Preklopi predogled (`Shift+Cmd+V` na macOS ali `Shift+Ctrl+V` na Windows in Linux).
+* Pritisni `Ctrl+Space` (Windows, Linux, macOS) za ogled seznama Markdown odrezkov kode.
 
 ## For more information
 
-* [Visual Studio Code Markdown support](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Markdown syntax reference](https://help.github.com/articles/markdown-basics/)
+* [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Uživaj!**
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za kakršnekoli nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

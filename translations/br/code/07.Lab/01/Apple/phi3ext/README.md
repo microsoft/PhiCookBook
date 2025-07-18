@@ -2,39 +2,39 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T05:02:49+00:00",
+  "translation_date": "2025-07-16T16:53:40+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "br"
 }
 -->
 # phi3ext README
 
-Esta é a README da sua extensão "phi3ext". Após uma breve descrição, recomendamos incluir as seguintes seções.
+Este é o README da sua extensão "phi3ext". Após uma breve descrição, recomendamos incluir as seguintes seções.
 
 ## Features
 
-Descreva as funcionalidades específicas da sua extensão, incluindo capturas de tela da extensão em execução. Os caminhos das imagens são relativos a este arquivo README.
+Descreva as funcionalidades específicas da sua extensão, incluindo capturas de tela da extensão em funcionamento. Os caminhos das imagens são relativos a este arquivo README.
 
-Por exemplo, se houver uma pasta de imagens dentro do seu espaço de trabalho da extensão:
+Por exemplo, se você tiver uma pasta de imagens dentro do seu espaço de trabalho do projeto da extensão:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Dica: muitas extensões populares usam animações. Essa é uma ótima forma de mostrar sua extensão! Recomendamos animações curtas e focadas para facilitar o acompanhamento.
+> Dica: muitas extensões populares usam animações. Essa é uma ótima forma de mostrar sua extensão! Recomendamos animações curtas e focadas, fáceis de acompanhar.
 
 ## Requirements
 
-Se você tiver quaisquer requisitos ou dependências, adicione uma seção que descreva esses requisitos e como instalá-los e configurá-los.
+Se você tiver quaisquer requisitos ou dependências, adicione uma seção para descrever esses requisitos e como instalá-los e configurá-los.
 
 ## Extension Settings
 
-Se sua extensão adicionou alguma configuração do VS Code via `contributes.configuration` extension point, inclua-as aqui.
+Se sua extensão adiciona alguma configuração do VS Code via o ponto de contribuição `contributes.configuration`, inclua-as aqui.
 
 Por exemplo:
 
 Esta extensão contribui com as seguintes configurações:
 
 * `myExtension.enable`: habilita/desabilita esta extensão.
-* `myExtension.thing`: configure para `blah` para fazer algo.
+* `myExtension.thing`: defina como `blah` para fazer algo.
 
 ## Known Issues
 
@@ -50,7 +50,7 @@ Lançamento inicial...
 
 ### 1.0.1
 
-Corrigido o problema #.
+Correção do problema #.
 
 ### 1.1.0
 
@@ -60,7 +60,7 @@ Adicionadas as funcionalidades X, Y e Z.
 
 ## Following extension guidelines
 
-Certifique-se de que você leu as diretrizes de extensão e segue as melhores práticas para criar extensões.
+Certifique-se de que você leu as diretrizes de extensão e seguiu as melhores práticas para criar extensões.
 
 * [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
@@ -70,14 +70,14 @@ Você pode usar o Visual Studio Code para escrever seu README. Aqui estão algun
 
 * Dividir editor (`Cmd+\` no macOS ou `Ctrl+\` no Windows e Linux).
 * Alternar visualização (`Shift+Cmd+V` no macOS ou `Shift+Ctrl+V` no Windows e Linux).
-* Pressione `Ctrl+Space` (Windows, Linux, macOS) para ver a lista de snippets Markdown.
+* Pressione `Ctrl+Space` (Windows, Linux, macOS) para ver a lista de snippets de Markdown.
 
 ## For more information
 
-* [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
+* [Suporte a Markdown no Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Referência de sintaxe Markdown](https://help.github.com/articles/markdown-basics/)
 
 **Aproveite!**
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

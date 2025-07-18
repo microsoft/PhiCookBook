@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:43:12+00:00",
+  "translation_date": "2025-07-17T08:00:24+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "th"
 }
 -->
 # **การปรับแต่ง Phi-3 ด้วย Apple MLX Framework**
 
-เราสามารถทำการปรับแต่ง Fine-tuning ร่วมกับ Lora ผ่านคำสั่งใน Apple MLX Framework ได้ (ถ้าต้องการทราบรายละเอียดเพิ่มเติมเกี่ยวกับการใช้งาน MLX Framework กรุณาอ่าน [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+เราสามารถทำการปรับแต่ง (Fine-tuning) ร่วมกับ Lora ผ่านคำสั่งใน Apple MLX Framework ได้ (หากต้องการทราบรายละเอียดเพิ่มเติมเกี่ยวกับการทำงานของ MLX Framework กรุณาอ่าน [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
 
 ## **1. การเตรียมข้อมูล**
 
-โดยค่าเริ่มต้น MLX Framework ต้องการข้อมูลในรูปแบบ jsonl สำหรับ train, test และ eval และจะนำมารวมกับ Lora เพื่อทำงาน fine-tuning ให้เสร็จสมบูรณ์
+โดยค่าเริ่มต้น MLX Framework ต้องการข้อมูลในรูปแบบ jsonl สำหรับ train, test และ eval และจะใช้ร่วมกับ Lora เพื่อทำงานปรับแต่งโมเดลให้เสร็จสมบูรณ์
 
 ### ***Note:***
 
@@ -29,16 +29,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ```
 
-2. ตัวอย่างของเราใช้ข้อมูลจาก [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv) แต่ปริมาณข้อมูลยังไม่เพียงพอ จึงทำให้ผลลัพธ์จากการ fine-tuning อาจไม่ดีที่สุด แนะนำให้ผู้เรียนใช้ข้อมูลที่เหมาะสมกับสถานการณ์ของตัวเองเพื่อให้ได้ผลลัพธ์ที่ดีกว่า
+2. ตัวอย่างของเราใช้ข้อมูลจาก [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv) แต่ปริมาณข้อมูลค่อนข้างน้อย จึงทำให้ผลลัพธ์การปรับแต่งอาจไม่ดีที่สุด แนะนำให้ผู้เรียนใช้ข้อมูลที่เหมาะสมกับสถานการณ์ของตนเองเพื่อให้ได้ผลลัพธ์ที่ดีกว่า
 
-3. รูปแบบข้อมูลจะรวมกับเทมเพลตของ Phi-3
+3. รูปแบบข้อมูลจะต้องสอดคล้องกับเทมเพลตของ Phi-3
 
-กรุณาดาวน์โหลดข้อมูลจากลิงก์นี้ [link](../../../../code/04.Finetuning/mlx) โดยให้รวมไฟล์ .jsonl ทั้งหมดในโฟลเดอร์ ***data***
+กรุณาดาวน์โหลดข้อมูลจาก [ลิงก์นี้](../../../../code/04.Finetuning/mlx) โดยให้รวมไฟล์ .jsonl ทั้งหมดในโฟลเดอร์ ***data***
 
+## **2. การปรับแต่งในเทอร์มินัลของคุณ**
 
-## **2. การ Fine-tuning ผ่าน terminal ของคุณ**
-
-โปรดรันคำสั่งนี้ใน terminal
+กรุณารันคำสั่งนี้ในเทอร์มินัล
 
 
 ```bash
@@ -50,9 +49,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Note:***
 
-1. นี่คือการ fine-tuning แบบ LoRA โดย MLX framework ยังไม่ได้ปล่อย QLoRA
+1. นี่คือการปรับแต่งแบบ LoRA โดย MLX framework ยังไม่ได้ปล่อย QLoRA
 
-2. คุณสามารถตั้งค่า config.yaml เพื่อเปลี่ยนแปลงอาร์กิวเมนต์บางส่วน เช่น
+2. คุณสามารถตั้งค่า config.yaml เพื่อเปลี่ยนแปลงอาร์กิวเมนต์บางอย่าง เช่น
 
 
 ```yaml
@@ -123,7 +122,7 @@ lora_parameters:
 
 ```
 
-โปรดรันคำสั่งนี้ใน terminal
+กรุณารันคำสั่งนี้ในเทอร์มินัล
 
 
 ```bash
@@ -133,9 +132,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. รัน Fine-tuning adapter เพื่อทดสอบ**
+## **3. ทดสอบการรัน Fine-tuning adapter**
 
-คุณสามารถรัน fine-tuning adapter ใน terminal ได้แบบนี้
+คุณสามารถรัน fine-tuning adapter ในเทอร์มินัลได้ดังนี้
 
 
 ```bash
@@ -154,7 +153,6 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 ```
 
 คุณสามารถลองเปรียบเทียบผลลัพธ์ของ Fine-tuning กับโมเดลต้นฉบับได้
-
 
 ## **4. รวม adapters เพื่อสร้างโมเดลใหม่**
 
@@ -184,9 +182,9 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Note:*** 
 
-1. ตอนนี้รองรับการแปลง quantization สำหรับ fp32, fp16 และ INT 8
+1. ตอนนี้รองรับการแปลง quantization ของ fp32, fp16 และ INT 8
 
-2. โมเดลที่รวมแล้วจะไม่มี tokenizer.model กรุณาดาวน์โหลดจาก https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. โมเดลที่รวมแล้วจะไม่มี tokenizer.model กรุณาดาวน์โหลดได้จาก https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
 ตั้งค่า [Ollma Model](https://ollama.com/)
 
@@ -198,7 +196,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-รันคำสั่งใน terminal
+รันคำสั่งในเทอร์มินัล
 
 
 ```bash
@@ -209,7 +207,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-ยินดีด้วย! คุณชำนาญการ fine-tuning ด้วย MLX Framework แล้ว
+ยินดีด้วย! คุณเชี่ยวชาญการปรับแต่งด้วย MLX Framework แล้ว
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารฉบับนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้มีความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางควรถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลฉบับนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

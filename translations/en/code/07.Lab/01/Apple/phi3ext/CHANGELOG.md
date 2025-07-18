@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-07-09T20:12:59+00:00",
+  "translation_date": "2025-07-16T16:47:22+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
   "language_code": "en"
 }
 -->
 # Changelog
 
-All significant changes to the "phi3ext" extension will be recorded in this file.
+All significant changes to the "phi3ext" extensions will be recorded in this file.
 
 Please refer to [Keep a Changelog](http://keepachangelog.com/) for guidance on how to structure this file.
 

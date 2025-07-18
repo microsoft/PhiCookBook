@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:05:25+00:00",
+  "translation_date": "2025-07-17T08:51:01+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "ms"
 }
 -->
-# Phi-3.5-vision finetuning recipe
+# Resipi penalaan halus Phi-3.5-vision
 
-This is the official guide for finetuning Phi-3.5-vision using huggingface libraries.  
-Please `cd` to the code directory [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) before running the commands below.
+Ini adalah sokongan rasmi untuk penalaan halus Phi-3.5-vision menggunakan perpustakaan huggingface.  
+Sila `cd` ke direktori kod [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) sebelum menjalankan arahan berikut.
 
-## Installation
+## Pemasangan
 
 ```bash
 # create a new conda environment
@@ -33,31 +33,32 @@ MAX_JOBS=32 pip install flash-attn==2.4.2 --no-build-isolation
 pip install bitsandbytes==0.43.1
 ```
 
-## Quick start
+## Mula dengan cepat
 
-We provide two example finetuning scripts, one for DocVQA and one for hateful meme classification.
+Kami menyediakan dua skrip contoh penalaan halus, satu untuk DocVQA dan satu untuk klasifikasi meme kebencian.
 
-Minimal hardware tested: 4x RTX8000 (48GB RAM per GPU)
+Perkakasan minimum yang diuji menggunakan 4x RTX8000 (48GB RAM setiap GPU)
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision now officially supports multi-image inputs. Here’s an example for finetuning NLVR2:
+Phi-3.5-vision kini secara rasmi menyokong input berbilang imej. Berikut adalah contoh untuk penalaan halus NLVR2
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ```
 
-## Usage guide
+## Panduan penggunaan
 
-Depending on your hardware, you can choose different finetuning strategies. We support full finetuning (with Deepspeed Zero-2), optionally freezing vision parameters, and LoRA (including 4bit QLoRA).  
-In general, we recommend full finetuning with flash attention and bf16 whenever possible.
+Bergantung pada perkakasan, pengguna boleh memilih strategi penalaan halus yang berbeza. Kami menyokong  
+penalaan halus penuh (dengan Deepspeed Zero-2) dengan pilihan parameter visi yang dibekukan, dan LoRA (termasuk 4bit QLoRA).  
+Secara umum, kami mengesyorkan menggunakan penalaan halus penuh dengan flash attention dan bf16 bila boleh.
 
-### Guide for converting your custom dataset to the required format
+### panduan untuk menukar dataset tersuai anda ke format yang diperlukan
 
-We use a minimal video classification dataset (a subset of UCF-101) as an end-to-end example to show how to convert your custom dataset to the required format and fine-tune Phi-3.5-vision on it.
+Kami menggunakan dataset klasifikasi video minimum (subset UCF-101) sebagai contoh menyeluruh untuk menunjukkan cara menukar dataset tersuai anda ke format yang diperlukan dan menala halus Phi-3.5-vision ke atasnya.
 
 ```bash
 # convert data
@@ -67,7 +68,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-The converted data will look like this:
+Data yang telah ditukar akan kelihatan seperti ini:
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -113,49 +114,49 @@ The converted data will look like this:
 34 directories, 3 files
 ```
 
-For the `jsonl` annotation, each line should be a dictionary like this:
+Untuk anotasi `jsonl`, setiap baris harus berupa kamus seperti:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Note that `conversations` is a list, so multi-turn conversations can be supported if you have such data.
+Perlu diingat bahawa `conversations` adalah senarai, jadi perbualan berbilang giliran boleh disokong jika data sebegini tersedia.
 
-## Requesting Azure GPU Quota 
+## Memohon Kuota GPU Azure
 
-### Prerequisites
+### Prasyarat
 
-An Azure account with the Contributor role (or another role that includes Contributor access).
+Akaun Azure dengan peranan Contributor (atau peranan lain yang termasuk akses Contributor).
 
-If you don’t have an Azure account, create a [free account before you begin](https://azure.microsoft.com).
+Jika anda belum mempunyai akaun Azure, buat [akaun percuma sebelum anda mula](https://azure.microsoft.com).
 
-### Request a quota increase
+### Memohon peningkatan kuota
 
-You can request a quota increase directly from My quotas. Follow these steps to request an increase. For this example, select any adjustable quota in your subscription.
+Anda boleh menghantar permohonan untuk peningkatan kuota terus dari My quotas. Ikuti langkah di bawah untuk memohon peningkatan kuota. Untuk contoh ini, anda boleh memilih mana-mana kuota yang boleh disesuaikan dalam langganan anda.
 
-Sign in to the [Azure portal](https://portal.azure.com).
+Log masuk ke [portal Azure](https://portal.azure.com).
 
-Type “quotas” into the search box, then select Quotas.  
+Masukkan "quotas" dalam kotak carian, kemudian pilih Quotas.  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-On the Overview page, select a provider, such as Compute or AML.
+Pada halaman Overview, pilih penyedia, seperti Compute atau AML.
 
-**Note:** For all providers other than Compute, you’ll see a Request increase column instead of the Adjustable column described below. There you can request an increase for a specific quota or create a support request.
+**Note** Untuk semua penyedia selain Compute, anda akan melihat lajur Request increase dan bukannya lajur Adjustable seperti yang diterangkan di bawah. Di sana, anda boleh memohon peningkatan untuk kuota tertentu, atau membuat permintaan sokongan untuk peningkatan tersebut.
 
-On the My quotas page, under Quota name, select the quota you want to increase. Make sure the Adjustable column shows Yes for this quota.
+Pada halaman My quotas, di bawah Quota name, pilih kuota yang anda ingin tingkatkan. Pastikan lajur Adjustable menunjukkan Yes untuk kuota ini.
 
-Near the top of the page, select New Quota Request, then select Enter a new limit.
+Di bahagian atas halaman, pilih New Quota Request, kemudian pilih Enter a new limit.
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-In the New Quota Request pane, enter a numerical value for your new quota limit, then select Submit.
+Dalam panel New Quota Request, masukkan nilai nombor untuk had kuota baru anda, kemudian pilih Submit.
 
-Your request will be reviewed, and you’ll be notified if it can be fulfilled. This usually happens within a few minutes.
+Permohonan anda akan disemak, dan anda akan diberitahu jika permohonan boleh dipenuhi. Ini biasanya berlaku dalam beberapa minit.
 
-If your request isn’t fulfilled, you’ll see a link to create a support request. Using this link, a support engineer will assist you with your request.
+Jika permohonan anda tidak dipenuhi, anda akan melihat pautan untuk membuat permintaan sokongan. Apabila anda menggunakan pautan ini, jurutera sokongan akan membantu anda dengan permohonan peningkatan anda.
 
-## Azure Compute GPU machine SKU suggestions
+## Cadangan SKU mesin GPU Azure Compute
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -163,11 +164,11 @@ If your request isn’t fulfilled, you’ll see a link to create a support reque
 
 [Standard_ND40rs_v2](https://learn.microsoft.com/azure/virtual-machines/ndv2-series)
 
-Here are some examples:
+Berikut adalah beberapa contoh:
 
-### If you have A100 or H100 GPUs
+### Jika anda mempunyai GPU A100 atau H100
 
-Full finetuning usually gives the best performance. Use the following command to finetune Phi-3-V on hateful memes classification.
+Penalaan halus penuh biasanya memberikan prestasi terbaik. Anda boleh menggunakan arahan berikut untuk menala halus Phi-3-V pada klasifikasi meme kebencian.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -179,10 +180,11 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --bf16
 ```
 
-### If you have Standard_ND40rs_v2 8x V100-32GB GPUs
+### Jika anda mempunyai Standard_ND40rs_v2 8x V100-32GB GPUs
 
-You can still fully finetune Phi-3-V on hateful memes classification. However, expect much lower throughput compared to A100 or H100 GPUs due to the lack of flash attention support.  
-Accuracy might also be affected because bf16 is not supported (fp16 mixed-precision training is used instead).
+Masih boleh menala halus penuh Phi-3-V pada klasifikasi meme kebencian. Namun, jangkaan  
+kelajuan jauh lebih rendah berbanding GPU A100 atau H100 kerana tiada sokongan flash attention.  
+Ketepatan juga mungkin terjejas kerana tiada sokongan bf16 (latihan presisi campuran fp16 digunakan sebagai gantinya).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -192,9 +194,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### If you don’t have access to data center GPUs
+### Jika anda tidak mempunyai akses ke GPU pusat data
 
-LoRA might be your only option. Use the following command to finetune Phi-3-V on hateful memes classification.
+LoRA mungkin satu-satunya pilihan anda. Anda boleh menggunakan arahan berikut untuk menala halus Phi-3-V pada klasifikasi meme kebencian.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -204,7 +206,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-For Turing+ GPUs, QLoRA is supported.
+Untuk GPU Turing+ , QLoRA disokong
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -215,7 +217,7 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## Suggested hyperparameters and expected accuracy
+## Hiperparameter yang dicadangkan dan ketepatan dijangka
 
 ### NLVR2
 
@@ -230,16 +232,15 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | Frozen vision model | Data type | LoRA rank | LoRA alpha | Batch size | Learning rate | Epochs | Accuracy
---- | --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
-LoRA results coming soon |  |  |  |  |  |  |  |  |
+Kaedah latihan | Model visi dibekukan | jenis data | pangkat LoRA | alpha LoRA | saiz batch | kadar pembelajaran | epoch | Ketepatan  
+--- | --- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |  
+full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |  
+Keputusan LoRA akan datang tidak lama lagi |  |  |  |  |  |  |  |  |
 
-### NOTE
-
-The DocVQA and Hateful memes results below are based on the previous version (Phi-3-vision).  
-New results with Phi-3.5-vision will be updated soon.
+### NOTE  
+Keputusan DocVQA dan meme kebencian di bawah adalah berdasarkan versi sebelumnya (Phi-3-vision).  
+Keputusan baru dengan Phi-3.5-vision akan dikemas kini tidak lama lagi.
 
 ### DocVQA (NOTE: Phi-3-vision)
 
@@ -255,18 +256,18 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | Data type | LoRA rank | LoRA alpha | Batch size | Learning rate | Epochs | ANLS
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
-full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
-frozen image model | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
-frozen image model | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
-LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
-LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
-QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
+Kaedah latihan | jenis data | pangkat LoRA | alpha LoRA | saiz batch | kadar pembelajaran | epoch | ANLS  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |  
+full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |  
+model imej dibekukan | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |  
+model imej dibekukan | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |  
+LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |  
+LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |  
+QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |  
 QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
-### Hateful memes (NOTE: Phi-3-vision)
+### Meme kebencian (NOTE: Phi-3-vision)
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -279,52 +280,53 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | Data type | LoRA rank | LoRA alpha | Batch size | Learning rate | Epochs | Accuracy
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
-full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
-frozen image model | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
-frozen image model | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
-LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
-LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
-QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
+Kaedah latihan | jenis data | pangkat LoRA | alpha LoRA | saiz batch | kadar pembelajaran | epoch | Ketepatan  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |  
+full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |  
+model imej dibekukan | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |  
+model imej dibekukan | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |  
+LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |  
+LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |  
+QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |  
 QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
-## Speed benchmarking (NOTE: Phi-3-vision)
+## Penanda aras kelajuan (NOTE: Phi-3-vision)
 
-New benchmarking results with Phi-3.5-vision will be updated soon.
+Keputusan penanda aras baru dengan Phi-3.5-vision akan dikemas kini tidak lama lagi.
 
-Speed benchmarking was performed on the DocVQA dataset. The average sequence length of this dataset is 2443.23 tokens (using `num_crops=16` for the image model).
+Penanda aras kelajuan dijalankan pada dataset DocVQA. Purata panjang urutan dataset ini  
+adalah 2443.23 token (menggunakan `num_crops=16` untuk model imej).
 
 ### 8x A100-80GB (Ampere)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
-full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
-full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29
-full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26
-frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29
-frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27
-LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50
-LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16
-QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32
-QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
+Kaedah latihan | \# nod | GPU | flash attention | Saiz batch berkesan | Kelajuan (img/s) | Peningkatan kelajuan | Memori GPU maksimum (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42  
+full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36  
+full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29  
+full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26  
+model imej dibekukan | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29  
+model imej dibekukan | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27  
+LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50  
+LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16  
+QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32  
+QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10  
 
 ### 8x V100-32GB (Volta)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
-full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
-full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
-frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27
-LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
+Kaedah latihan | \# nod | GPU | flash attention | Saiz batch berkesan | Kelajuan (img/s) | Peningkatan kelajuan | Memori GPU maksimum (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32  
+full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32  
+full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32  
+model imej dibekukan | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27  
+LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30  
 
-## Known issues
+## Isu yang diketahui
 
-- Flash attention cannot run with fp16 (bf16 is always recommended when available, and all GPUs supporting flash attention also support bf16).  
-- Saving intermediate checkpoints and resuming training is not supported yet.
+- Tidak boleh menjalankan flash attention dengan fp16 (bf16 sentiasa disyorkan jika tersedia, dan semua GPU yang menyokong flash attention juga menyokong bf16).  
+- Tidak menyokong penyimpanan checkpoint sementara dan menyambung semula latihan buat masa ini.
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

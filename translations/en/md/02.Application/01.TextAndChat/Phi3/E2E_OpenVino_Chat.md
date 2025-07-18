@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-07-09T19:12:55+00:00",
+  "translation_date": "2025-07-16T23:00:40+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
   "language_code": "en"
 }
@@ -15,11 +15,11 @@ This code exports a model to the OpenVINO format, loads it, and uses it to gener
    ```bash
    optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6 --sym --trust-remote-code ./model/phi3-instruct/int4
    ```  
-   - This command uses the `optimum-cli` tool to export a model to the OpenVINO format, optimized for efficient inference.  
-   - The model being exported is `"microsoft/Phi-3-mini-4k-instruct"`, designed for text generation based on previous context.  
+   - This command uses the `optimum-cli` tool to export a model to the OpenVINO format, which is optimized for efficient inference.  
+   - The model being exported is `"microsoft/Phi-3-mini-4k-instruct"`, and it's configured for the task of generating text based on previous context.  
    - The model weights are quantized to 4-bit integers (`int4`), which helps reduce the model size and speed up processing.  
    - Additional parameters like `group-size`, `ratio`, and `sym` are used to fine-tune the quantization process.  
-   - The exported model is saved in the `./model/phi3-instruct/int4` directory.
+   - The exported model is saved in the directory `./model/phi3-instruct/int4`.
 
 2. **Importing Necessary Libraries**:  
    ```python
@@ -38,7 +38,7 @@ This code exports a model to the OpenVINO format, loads it, and uses it to gener
    }
    ```  
    - `model_dir` specifies the location of the model files.  
-   - `ov_config` is a dictionary configuring the OpenVINO model to prioritize low latency, use a single inference stream, and disable the cache directory.
+   - `ov_config` is a dictionary that configures the OpenVINO model to prioritize low latency, use a single inference stream, and disable the cache directory.
 
 4. **Loading the Model**:  
    ```python

@@ -2,46 +2,46 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f1ff728038c4f554b660a36b76cbdd6e",
-  "translation_date": "2025-05-08T06:04:01+00:00",
+  "translation_date": "2025-07-16T21:07:45+00:00",
   "source_file": "md/01.Introduction/03/overview.md",
   "language_code": "hk"
 }
 -->
-喺Phi-3-mini嘅背景下，inference指用模型根據輸入數據作出預測或生成輸出嘅過程。等我詳細講下Phi-3-mini同佢嘅inference能力。
+在 Phi-3-mini 的背景下，推理指的是使用模型根據輸入數據進行預測或生成輸出的過程。讓我為你介紹更多關於 Phi-3-mini 及其推理能力的細節。
 
-Phi-3-mini係Microsoft發佈嘅Phi-3系列模型之一。呢啲模型係為咗重新定義小型語言模型（SLMs）嘅可能性而設計。
+Phi-3-mini 是微軟推出的 Phi-3 系列模型之一。這些模型旨在重新定義小型語言模型（SLMs）的可能性。
 
-以下係關於Phi-3-mini同佢inference能力嘅重點：
+以下是關於 Phi-3-mini 及其推理能力的一些重點：
 
-## **Phi-3-mini 簡介：**
-- Phi-3-mini有38億個參數。
-- 除咗可以喺傳統計算設備運行，仲可以喺邊緣設備，例如手機同物聯網設備運行。
-- Phi-3-mini嘅發佈令個人同企業可以喺唔同硬件設備部署SLMs，特別係喺資源有限嘅環境。
-- 支援多種模型格式，包括傳統PyTorch格式、量化版嘅gguf格式同基於ONNX嘅量化版本。
+## **Phi-3-mini 概覽：**
+- Phi-3-mini 擁有 38 億個參數。
+- 它不僅能在傳統計算設備上運行，還能在邊緣設備如手機和物聯網設備上運行。
+- Phi-3-mini 的發布使個人和企業能夠在不同硬件設備上部署 SLM，特別是在資源有限的環境中。
+- 支援多種模型格式，包括傳統的 PyTorch 格式、量化後的 gguf 格式，以及基於 ONNX 的量化版本。
 
-## **點樣使用Phi-3-mini：**
-想用Phi-3-mini，可以喺Copilot應用程式入面用[Semantic Kernel](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo)。Semantic Kernel一般兼容Azure OpenAI Service、Hugging Face嘅開源模型同本地模型。
-你亦可以用[Ollama](https://ollama.com)或者[LlamaEdge](https://llamaedge.com)去調用量化模型。Ollama方便個人用戶調用唔同嘅量化模型，而LlamaEdge提供跨平台嘅GGUF模型支援。
+## **如何使用 Phi-3-mini：**
+你可以在 Copilot 應用中使用 [Semantic Kernel](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) 來存取 Phi-3-mini。Semantic Kernel 通常兼容 Azure OpenAI 服務、Hugging Face 上的開源模型以及本地模型。
+你也可以使用 [Ollama](https://ollama.com) 或 [LlamaEdge](https://llamaedge.com) 來調用量化模型。Ollama 允許個人用戶調用不同的量化模型，而 LlamaEdge 則提供跨平台的 GGUF 模型支援。
 
 ## **量化模型：**
-好多用戶鍾意用量化模型嚟做本地inference。例如，你可以直接用Ollama跑Phi-3，或者用Modelfile離線配置。Modelfile會指定GGUF文件路徑同prompt格式。
+許多用戶偏好使用量化模型進行本地推理。例如，你可以直接用 Ollama 運行 Phi-3，或透過 Modelfile 離線配置。Modelfile 指定 GGUF 文件路徑和提示格式。
 
-## **生成式AI嘅可能性：**
-將Phi-3-mini呢啲SLMs結合起嚟，為生成式AI帶嚟新嘅可能性。inference只係第一步；呢啲模型可以用喺資源有限、延遲要求高同成本受限嘅場景做唔同任務。
+## **生成式 AI 的可能性：**
+結合像 Phi-3-mini 這樣的 SLM，為生成式 AI 開啟了新的可能性。推理只是第一步；這些模型可用於資源受限、延遲要求高及成本受限的多種任務。
 
-## **用Phi-3-mini解鎖生成式AI：Inference同部署指南**  
-學識點用Semantic Kernel、Ollama/LlamaEdge同ONNX Runtime去存取同推理Phi-3-mini模型，探索生成式AI喺唔同應用場景嘅可能性。
+## **利用 Phi-3-mini 解鎖生成式 AI：推理與部署指南**  
+學習如何使用 Semantic Kernel、Ollama/LlamaEdge 及 ONNX Runtime 存取並推理 Phi-3-mini 模型，探索生成式 AI 在各種應用場景中的潛力。
 
-**功能**
-喺以下平台推理phi3-mini模型：
+**功能**  
+在以下平台推理 phi3-mini 模型：
 
-- [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)
-- [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
-- [LlamaEdge WASM](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo)
-- [ONNX Runtime](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx?WT.mc_id=aiml-138114-kinfeylo)
-- [iOS](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios?WT.mc_id=aiml-138114-kinfeylo)
+- [Semantic Kernel](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo)  
+- [Ollama](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)  
+- [LlamaEdge WASM](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo)  
+- [ONNX Runtime](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx?WT.mc_id=aiml-138114-kinfeylo)  
+- [iOS](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios?WT.mc_id=aiml-138114-kinfeylo)  
 
-總括嚟講，Phi-3-mini令開發者可以探索唔同模型格式，並喺唔同應用場景利用生成式AI。
+總結來說，Phi-3-mini 讓開發者能探索不同的模型格式，並在多種應用場景中發揮生成式 AI 的潛力。
 
 **免責聲明**：  
-本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯而成。雖然我們致力於準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不會對因使用此翻譯而引起的任何誤解或誤釋負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

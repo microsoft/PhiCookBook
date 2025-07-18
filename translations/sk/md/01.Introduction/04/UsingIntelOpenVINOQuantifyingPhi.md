@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T14:02:38+00:00",
+  "translation_date": "2025-07-16T22:04:00+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "sk"
 }
 -->
-# **Kvantilizácia Phi-3.5 pomocou Intel OpenVINO**
+# **Kvantizácia Phi-3.5 pomocou Intel OpenVINO**
 
-Intel je najtradičnejší výrobca CPU s množstvom používateľov. S nástupom strojového učenia a hlbokého učenia sa Intel tiež zapojil do súťaže o akceleráciu AI. Pre inferenciu modelov Intel používa nielen GPU a CPU, ale aj NPU.
+Intel je najtradičnejší výrobca CPU s množstvom používateľov. S nástupom strojového učenia a hlbokého učenia sa Intel tiež zapojil do súťaže o zrýchlenie AI. Pre inferenciu modelov Intel využíva nielen GPU a CPU, ale aj NPU.
 
-Chceme nasadiť rodinu Phi-3.x na koncovom zariadení s cieľom stať sa najdôležitejšou súčasťou AI PC a Copilot PC. Na načítanie modelu na koncovom zariadení závisí spolupráca rôznych výrobcov hardvéru. Táto kapitola sa zameriava hlavne na aplikačný scenár Intel OpenVINO ako kvantitatívneho modelu.
+Dúfame, že nasadíme rodinu Phi-3.x na koncovej strane, s cieľom stať sa najdôležitejšou súčasťou AI PC a Copilot PC. Načítanie modelu na koncovej strane závisí od spolupráce rôznych výrobcov hardvéru. Táto kapitola sa zameriava hlavne na aplikačný scenár Intel OpenVINO ako kvantitatívneho modelu.
 
 ## **Čo je OpenVINO**
 
-OpenVINO je open-source nástrojový balík na optimalizáciu a nasadenie hlbokých učebných modelov od cloudu až po edge. Urýchľuje inferenciu hlbokého učenia v rôznych prípadoch použitia, ako sú generatívna AI, video, audio a jazyk, s modelmi z populárnych frameworkov ako PyTorch, TensorFlow, ONNX a ďalších. Konvertujte a optimalizujte modely a nasadzujte ich na rôzne Intel® hardvérové platformy a prostredia, lokálne aj na zariadeniach, v prehliadači alebo v cloude.
+OpenVINO je open-source nástrojový balík na optimalizáciu a nasadenie modelov hlbokého učenia od cloudu po edge. Umožňuje zrýchlenie inferencie hlbokého učenia v rôznych prípadoch použitia, ako sú generatívna AI, video, audio a jazyk, s modelmi z populárnych frameworkov ako PyTorch, TensorFlow, ONNX a ďalších. Konvertujte a optimalizujte modely a nasadzujte ich na rôzne Intel® hardvérové platformy a prostredia, či už lokálne, na zariadení, v prehliadači alebo v cloude.
 
-S OpenVINO teraz môžete rýchlo kvantizovať GenAI model na Intel hardvéri a zrýchliť referenčný model.
+S OpenVINO teraz môžete rýchlo kvantizovať GenAI model na Intel hardvéri a zrýchliť referenciu modelu.
 
-OpenVINO teraz podporuje kvantizačnú konverziu Phi-3.5-Vision a Phi-3.5 Instruct.
+OpenVINO teraz podporuje konverziu kvantizácie Phi-3.5-Vision a Phi-3.5 Instruct.
 
 ### **Nastavenie prostredia**
 
-Uistite sa, že máte nainštalované nasledujúce závislosti, toto je requirement.txt
+Uistite sa, že máte nainštalované nasledujúce závislosti prostredia, toto je requirement.txt
 
 ```txt
 
@@ -36,9 +36,9 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **Kvantilizácia Phi-3.5-Instruct pomocou OpenVINO**
+### **Kvantizácia Phi-3.5-Instruct pomocou OpenVINO**
 
-V Termináli spustite tento skript
+V termináli spustite tento skript
 
 ```bash
 
@@ -52,9 +52,9 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **Kvantilizácia Phi-3.5-Vision pomocou OpenVINO**
+### **Kvantizácia Phi-3.5-Vision pomocou OpenVINO**
 
-Skript spustite v Pythone alebo Jupyter labe
+Skript spustite v Pythone alebo Jupyter lab
 
 ```python
 
@@ -92,11 +92,11 @@ if not out_dir.exists():
 
 ### **🤖 Ukážky pre Phi-3.5 s Intel OpenVINO**
 
-| Laboratóriá | Popis | Prejsť |
-| -------- | ------- | ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct | Naučte sa, ako používať Phi-3.5 Instruct vo vašom AI PC | [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb) |
-| 🚀 Lab-Introduce Phi-3.5 Vision (obrázok) | Naučte sa, ako používať Phi-3.5 Vision na analýzu obrázkov vo vašom AI PC | [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb) |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video) | Naučte sa, ako používať Phi-3.5 Vision na analýzu videa vo vašom AI PC | [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb) |
+| Laboratóriá    | Popis | Spustiť |
+| -------- | ------- |  ------- |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | Naučte sa, ako používať Phi-3.5 Instruct vo vašom AI PC    |  [Spustiť](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (obrázok) | Naučte sa, ako používať Phi-3.5 Vision na analýzu obrázkov vo vašom AI PC      |  [Spustiť](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | Naučte sa, ako používať Phi-3.5 Vision na analýzu videa vo vašom AI PC    |  [Spustiť](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **Zdroje**
 
@@ -105,4 +105,4 @@ if not out_dir.exists():
 2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, majte prosím na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

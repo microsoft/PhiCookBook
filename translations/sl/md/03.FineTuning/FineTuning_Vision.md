@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:08:53+00:00",
+  "translation_date": "2025-07-17T08:57:04+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "sl"
 }
 -->
-# Phi-3.5-vision finetuning recipe
+# Phi-3.5-vision recept za fino nastavljanje
 
-Phi-3.5-vision finetuning ki official support huggingface libraries ke saath hai.  
-Kisi bhi command ko chalane se pehle, kripya `cd` se code directory [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) mein jaayein.
+To je uradna podpora za fino nastavljanje Phi-3.5-vision z uporabo knjižnic huggingface.  
+Pred zagonom naslednjih ukazov se prosim premaknite v imenik s kodo [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning).
 
-## Installation
+## Namestitev
 
 ```bash
 # create a new conda environment
@@ -33,31 +33,32 @@ MAX_JOBS=32 pip install flash-attn==2.4.2 --no-build-isolation
 pip install bitsandbytes==0.43.1
 ```
 
-## Quick start
+## Hiter začetek
 
-Hum do example finetuning scripts dete hain, ek DocVQA ke liye aur ek hateful meme classification ke liye.
+Ponujamo dva primerna skripta za fino nastavljanje, enega za DocVQA in enega za klasifikacijo sovražnih memov.
 
-Minimal hardware jisme test kiya gaya hai: 4x RTX8000 (48GB RAM har GPU par)
+Minimalna testirana strojna oprema: 4x RTX8000 (48GB RAM na GPU)
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision ab officially multi-image inputs ko support karta hai. Yahan NLVR2 ke liye finetuning ka ek example hai:
+Phi-3.5-vision sedaj uradno podpira več slik kot vhod. Tukaj je primer za fino nastavljanje NLVR2.
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ```
 
-## Usage guide
+## Navodila za uporabo
 
-Hardware ke hisaab se, users alag finetuning strategies chun sakte hain. Hum full-finetuning (Deepspeed Zero-2 ke saath) support karte hain jisme vision parameters ko optionally freeze kiya ja sakta hai, aur LoRA (including 4bit QLoRA) bhi.  
-Aam taur par, hum recommend karte hain ki jab bhi mumkin ho, full finetuning flash attention aur bf16 ke saath use karein.
+Glede na strojno opremo lahko uporabniki izberejo različne strategije fino nastavljanja. Podpiramo  
+polno fino nastavljanje (z Deepspeed Zero-2) z opcijsko zamrznjenimi parametri vida, ter LoRA (vključno s 4bit QLoRA).  
+Na splošno priporočamo uporabo polnega fino nastavljanja z flash attention in bf16, kadar je to mogoče.
 
-### Apne custom dataset ko required format mein convert karne ka guide
+### Navodila za pretvorbo lastnega nabora podatkov v zahtevan format
 
-Hum ek chhota video classification dataset (UCF-101 ka subset) ka end-to-end example use karte hain taaki dikhaya ja sake ki apne custom dataset ko required format mein kaise convert karein aur Phi-3.5-vision par kaise finetune karein.
+Kot primer od začetka do konca uporabljamo minimalni video klasifikacijski nabor podatkov (podnabor UCF-101), da pokažemo, kako pretvoriti svoj nabor podatkov v zahtevan format in na njem fino nastaviti Phi-3.5-vision.
 
 ```bash
 # convert data
@@ -67,7 +68,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-Convert kiya hua data kuch is tarah dikhega:
+Pretvorjeni podatki bodo izgledali takole:
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -113,61 +114,61 @@ Convert kiya hua data kuch is tarah dikhega:
 34 directories, 3 files
 ```
 
-`jsonl` annotation ke liye, har line ek dictionary honi chahiye, jaise:
+Za `jsonl` anotacijo naj bo vsaka vrstica slovar, kot je:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Dhyan dein ki `conversations` ek list hai, isliye agar aise data available ho to multi-turn conversation support ki ja sakti hai.
+Upoštevajte, da je `conversations` seznam, zato je podprta tudi večkratna izmenjava pogovora, če so takšni podatki na voljo.
 
-## Azure GPU Quota ka request karna
+## Zahteva za Azure GPU kvoto
 
-### Prerequisites
+### Predpogoji
 
-Ek Azure account jisme Contributor role ho (ya koi aur role jisme Contributor access shamil ho).
+Azure račun z vlogo Contributor (ali drugo vlogo, ki vključuje dostop Contributor).
 
-Agar aapke paas Azure account nahi hai, to [free account banayein shuru karne se pehle](https://azure.microsoft.com).
+Če še nimate Azure računa, si ustvarite [brezplačen račun pred začetkom](https://azure.microsoft.com).
 
-### Quota increase ka request karein
+### Zahteva za povečanje kvote
 
-Aap My quotas se directly quota increase ka request bhej sakte hain. Neeche diye gaye steps ko follow karte hue quota increase ke liye request karein. Is example mein, aap apne subscription ke kisi bhi adjustable quota ko select kar sakte hain.
+Zahtevo za povečanje kvote lahko oddate neposredno iz My quotas. Sledite spodnjim korakom za zahtevo povečanja kvote. Za ta primer lahko izberete katerokoli prilagodljivo kvoto v svoji naročnini.
 
-[Azure portal](https://portal.azure.com) mein sign in karein.
+Prijavite se v [Azure portal](https://portal.azure.com).
 
-Search box mein "quotas" type karein, phir Quotas ko select karein.  
+V iskalno polje vpišite "quotas" in izberite Quotas.  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-Overview page par, kisi provider ko select karein, jaise Compute ya AML.
+Na strani Overview izberite ponudnika, na primer Compute ali AML.
 
-**Note** Compute ke alawa sabhi providers ke liye aapko Request increase column dikhega, jo neeche diye gaye Adjustable column se alag hai. Wahan aap specific quota ke liye increase request kar sakte hain, ya support request bana sakte hain.
+**Opomba** Za vse ponudnike razen Compute boste videli stolpec Request increase namesto stolpca Adjustable, kot je opisano spodaj. Tam lahko zahtevate povečanje določene kvote ali ustvarite podporno zahtevo za povečanje.
 
-My quotas page par, Quota name ke neeche us quota ko select karein jise aap badhana chahte hain. Dhyan dein ki Adjustable column mein is quota ke liye Yes likha ho.
+Na strani My quotas pod Quota name izberite kvoto, ki jo želite povečati. Prepričajte se, da stolpec Adjustable za to kvoto prikazuje Da.
 
-Page ke upar, New Quota Request select karein, phir Enter a new limit ko select karein.
+Na vrhu strani izberite New Quota Request, nato Enter a new limit.
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-New Quota Request pane mein, apni nayi quota limit ke liye numerical value dalein, phir Submit karein.
+V oknu New Quota Request vnesite številčno vrednost za novo omejitev kvote in izberite Submit.
 
-Aapka request review kiya jayega, aur aapko notification milega ki request poori ho sakti hai ya nahi. Yeh aam taur par kuch minutes mein hota hai.
+Vaša zahteva bo pregledana in obveščeni boste, če je mogoče zahtevo izpolniti. To običajno traja nekaj minut.
 
-Agar aapka request poora nahi hota, to aapko support request banane ka link milega. Is link ka use karte hue, ek support engineer aapki madad karega.
+Če zahteva ni izpolnjena, boste videli povezavo za ustvarjanje podporne zahteve. Ko uporabite to povezavo, vam bo podporni inženir pomagal pri vaši zahtevi za povečanje.
 
-## Azure Compute GPU machine SKU suggestions
+## Priporočene SKU za Azure Compute GPU stroje
 
-[ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
+[ND A100 v4-serija](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
-[ND H100 v5-series](https://learn.microsoft.com/azure/virtual-machines/nd-h100-v5-series)
+[ND H100 v5-serija](https://learn.microsoft.com/azure/virtual-machines/nd-h100-v5-series)
 
 [Standard_ND40rs_v2](https://learn.microsoft.com/azure/virtual-machines/ndv2-series)
 
-Kuch examples yeh hain:
+Tukaj je nekaj primerov:
 
-### Agar aapke paas A100 ya H100 GPUs hain
+### Če imate A100 ali H100 GPU-je
 
-Full finetuning aam taur par sabse accha performance deta hai. Aap neeche diye gaye command se Phi-3-V ko hateful memes classification par finetune kar sakte hain.
+Polno fino nastavljanje običajno prinese najboljše rezultate. Za fino nastavljanje Phi-3-V na klasifikacijo sovražnih memov lahko uporabite naslednji ukaz.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -179,10 +180,11 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --bf16
 ```
 
-### Agar aapke paas Standard_ND40rs_v2 8x V100-32GB GPUs hain
+### Če imate Standard_ND40rs_v2 8x V100-32GB GPU-je
 
-Phi-3-V ko hateful memes classification par full finetune karna abhi bhi mumkin hai. Lekin A100 ya H100 GPUs ke mukable mein throughput bahut kam hoga kyunki flash attention support nahi hai.  
-Accuracy bhi bf16 support ke na hone ki wajah se prabhavit ho sakti hai (isme fp16 mixed-precision training use hoti hai).
+Še vedno je mogoče popolnoma fino nastaviti Phi-3-V na klasifikacijo sovražnih memov. Vendar pričakujte  
+much nižjo prepustnost v primerjavi z A100 ali H100 GPU-ji zaradi pomanjkanja podpore za flash attention.  
+Natančnost je lahko prav tako prizadeta zaradi pomanjkanja podpore za bf16 (namesto tega se uporablja fp16 mešano natančnost).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -192,9 +194,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### Agar aapke paas data center GPUs ki access nahi hai
+### Če nimate dostopa do GPU-jev v podatkovnem centru
 
-To LoRA hi aapka ek matra option ho sakta hai. Aap neeche diye gaye command se Phi-3-V ko hateful memes classification par finetune kar sakte hain.
+LoRA je morda vaša edina možnost. Za fino nastavljanje Phi-3-V na klasifikacijo sovražnih memov lahko uporabite naslednji ukaz.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -204,7 +206,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-Turing+ GPU ke liye, QLoRA support kiya jata hai.
+Za Turing+ GPU-je je podprt QLoRA.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -215,7 +217,7 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## Suggested hyperparameters aur expected accuracy
+## Priporočeni hiperparametri in pričakovana natančnost
 
 ### NLVR2
 
@@ -230,17 +232,17 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | Frozen vision model | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy  
+Metoda učenja | Zamrznjen model vida | tip podatkov | LoRA rang | LoRA alfa | velikost serije | hitrost učenja | epoh | Natančnost  
 --- | --- | --- | --- | --- | --- | --- | --- | --- |  
-full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |  
-full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |  
-LoRA results comming soon |  |  |  |  |  |  |  |  |
+full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |  
+full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |  
+Rezultati LoRA kmalu |  |  |  |  |  |  |  |  |
 
-### NOTE  
-Neeche diye gaye DocVQA aur Hateful memes ke results purane version (Phi-3-vision) par based hain.  
-Naye results Phi-3.5-vision ke saath jald update kiye jayenge.
+### OPOMBA  
+Spodnji rezultati za DocVQA in sovražne meme temeljijo na prejšnji različici (Phi-3-vision).  
+Novi rezultati s Phi-3.5-vision bodo kmalu posodobljeni.
 
-### DocVQA (NOTE: Phi-3-vision)
+### DocVQA (OPOMBA: Phi-3-vision)
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -254,18 +256,18 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | ANLS  
+Metoda učenja | tip podatkov | LoRA rang | LoRA alfa | velikost serije | hitrost učenja | epoh | ANLS  
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |  
 full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |  
-frozen image model| bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |  
-frozen image model| fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |  
+zamrznjen model slike | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |  
+zamrznjen model slike | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |  
 LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |  
 LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |  
 QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |  
 QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
-### Hateful memes (NOTE: Phi-3-vision)
+### Sovražni memi (OPOMBA: Phi-3-vision)
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -278,33 +280,34 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy  
+Metoda učenja | tip podatkov | LoRA rang | LoRA alfa | velikost serije | hitrost učenja | epoh | Natančnost  
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |  
 full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |  
-frozen image model| bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |  
-frozen image model| fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |  
+zamrznjen model slike | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |  
+zamrznjen model slike | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |  
 LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |  
 LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |  
 QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |  
 QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
-## Speed benchmarking (NOTE: Phi-3-vision)
+## Merjenje hitrosti (OPOMBA: Phi-3-vision)
 
-Naye benchmarking results Phi-3.5-vision ke saath jald update kiye jayenge.
+Novi rezultati merjenja hitrosti s Phi-3.5-vision bodo kmalu posodobljeni.
 
-Speed benchmarking DocVQA dataset par kiya gaya hai. Is dataset ka average sequence length 2443.23 tokens hai (image model ke liye `num_crops=16` use karte hue).
+Merjenje hitrosti je izvedeno na naboru podatkov DocVQA. Povprečna dolžina sekvence tega nabora je  
+2443.23 tokenov (uporabljen `num_crops=16` za slikovni model).
 
 ### 8x A100-80GB (Ampere)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)  
+Metoda učenja | \# vozlišč | GPU-ji | flash attention | Učinkovita velikost serije | Prepustnost (slik/s) | Pospešek | Največji pomnilnik GPU (GB)  
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42  
 full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36  
 full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29  
 full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26  
-frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29  
-frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27  
+zamrznjen model slike | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29  
+zamrznjen model slike | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27  
 LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50  
 LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16  
 QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32  
@@ -312,18 +315,18 @@ QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
 ### 8x V100-32GB (Volta)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)  
+Metoda učenja | \# vozlišč | GPU-ji | flash attention | Učinkovita velikost serije | Prepustnost (slik/s) | Pospešek | Največji pomnilnik GPU (GB)  
 --- | --- | --- | --- | --- | --- | --- | --- |  
-full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32  
+full-finetuning | 1 | 8 |  | 64 | 2.462 |  1x | ~32  
 full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32  
 full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32  
-frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27  
+zamrznjen model slike | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27  
 LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30  
 
-## Known issues
+## Znane težave
 
-- Flash attention fp16 ke saath chal nahi paata (bf16 hamesha recommend kiya jata hai jab available ho, aur jitne bhi GPUs flash attention support karte hain, wo bf16 bhi support karte hain).  
-- Abhi tak intermediate checkpoints save karna aur training resume karna supported nahi hai.
+- Flash attention ni mogoče zagnati z fp16 (bf16 je vedno priporočljiv, kadar je na voljo, in vsi GPU-ji, ki podpirajo flash attention, podpirajo tudi bf16).  
+- Trenutno ni podprto shranjevanje vmesnih kontrolnih točk in nadaljevanje učenja.
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

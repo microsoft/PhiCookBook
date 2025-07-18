@@ -2,42 +2,42 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:54:05+00:00",
+  "translation_date": "2025-07-16T20:51:21+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "no"
 }
 -->
 ## Inference med Kaito
 
-[Kaito](https://github.com/Azure/kaito) er en operator som automatiserer AI/ML inferensmodellutrulling i et Kubernetes-kluster.
+[Kaito](https://github.com/Azure/kaito) er en operator som automatiserer distribusjon av AI/ML-inferensmodeller i et Kubernetes-kluster.
 
-Kaito har følgende viktige forskjeller sammenlignet med de fleste av de vanlige metodene for modellutrulling som er bygget på virtuelle maskin-infrastrukturer:
+Kaito har følgende viktige forskjeller sammenlignet med de fleste vanlige metoder for modell-distribusjon som er bygget på virtuelle maskin-infrastrukturer:
 
-- Håndter modellfiler ved hjelp av containerbilder. En HTTP-server tilbys for å utføre inferensanrop ved bruk av modellbiblioteket.
-- Unngå å justere utrullingsparametere for å tilpasse GPU-maskinvaren ved å tilby forhåndsinnstilte konfigurasjoner.
-- Automatisk opprettelse av GPU-noder basert på modellens krav.
-- Host store modellbilder i det offentlige Microsoft Container Registry (MCR) hvis lisensen tillater det.
+- Håndterer modellfiler ved hjelp av containerbilder. En HTTP-server tilbys for å utføre inferensanrop ved bruk av modellbiblioteket.
+- Unngår behovet for å justere distribusjonsparametere for å tilpasse GPU-maskinvaren ved å tilby forhåndsinnstilte konfigurasjoner.
+- Automatisk provisjonering av GPU-noder basert på modellens krav.
+- Vert store modellbilder i det offentlige Microsoft Container Registry (MCR) hvis lisensen tillater det.
 
-Med Kaito blir arbeidsflyten for å onboarde store AI-inferensmodeller i Kubernetes i stor grad forenklet.
+Med Kaito blir arbeidsflyten for å ta i bruk store AI-inferensmodeller i Kubernetes i stor grad forenklet.
 
 ## Arkitektur
 
-Kaito følger det klassiske Kubernetes Custom Resource Definition (CRD)/controller designmønsteret. Brukeren styrer en `workspace` custom resource som beskriver GPU-kravene og inferensspesifikasjonen. Kaito-kontrollere automatiserer utrullingen ved å reconcile `workspace` custom resource.
+Kaito følger det klassiske Kubernetes Custom Resource Definition (CRD)/controller-designmønsteret. Brukeren administrerer en `workspace` custom resource som beskriver GPU-kravene og inferensspesifikasjonen. Kaito-kontrollere automatiserer distribusjonen ved å synkronisere `workspace` custom resource.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
 Figuren over viser en oversikt over Kaito-arkitekturen. Hovedkomponentene består av:
 
-- **Workspace controller**: Den reconciler `workspace` custom resource, oppretter `machine` (forklart nedenfor) custom resources for å trigge automatisk node-provisjonering, og oppretter inferensarbeidsbelastningen (`deployment` eller `statefulset`) basert på modellens forhåndskonfigurasjoner.
-- **Node provisioner controller**: Controllerens navn er *gpu-provisioner* i [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Den bruker `machine` CRD som stammer fra [Karpenter](https://sigs.k8s.io/karpenter) for å kommunisere med workspace controller. Den integreres med Azure Kubernetes Service (AKS) API-er for å legge til nye GPU-noder i AKS-klusteret.
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) er en åpen kildekode-komponent. Den kan erstattes av andre controllere hvis de støtter [Karpenter-core](https://sigs.k8s.io/karpenter) API-er.
+- **Workspace controller**: Den synkroniserer `workspace` custom resource, oppretter `machine` (forklart nedenfor) custom resources for å utløse automatisk node-provisjonering, og oppretter inferensarbeidsbelastningen (`deployment` eller `statefulset`) basert på modellens forhåndskonfigurasjoner.
+- **Node provisioner controller**: Controlleren heter *gpu-provisioner* i [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Den bruker `machine` CRD som stammer fra [Karpenter](https://sigs.k8s.io/karpenter) for å kommunisere med workspace controller. Den integreres med Azure Kubernetes Service (AKS) API-er for å legge til nye GPU-noder i AKS-klusteret.
+> Merk: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) er en åpen kildekode-komponent. Den kan erstattes av andre controllere hvis de støtter [Karpenter-core](https://sigs.k8s.io/karpenter) API-er.
 
 ## Installasjon
 
-Vennligst sjekk installasjonsveiledningen [her](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Vennligst se installasjonsveiledningen [her](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Rask start Inference Phi-3
+## Kom i gang med Inference Phi-3
 [Eksempelkode Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Status for workspace kan følges ved å kjøre følgende kommando. Når WORKSPACEREADY-kolonnen viser `True`, er modellen utrullet med suksess.
+Status for workspace kan følges ved å kjøre følgende kommando. Når kolonnen WORKSPACEREADY viser `True`, er modellen distribuert med suksess.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Deretter kan man finne klyngens IP-adresse for inferenstjenesten og bruke en midlertidig `curl`-pod for å teste tjenesteendepunktet i klyngen.
+Deretter kan man finne inferenstjenestens cluster-ip og bruke en midlertidig `curl`-pod for å teste tjenesteendepunktet i klusteret.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Rask start Inference Phi-3 med adaptere
+## Kom i gang med Inference Phi-3 med adapters
 
 Etter å ha installert Kaito, kan man prøve følgende kommandoer for å starte en inferenstjeneste.
 
-[Eksempelkode Inference Phi-3 med Adaptere](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Eksempelkode Inference Phi-3 med Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Status for workspace kan følges ved å kjøre følgende kommando. Når WORKSPACEREADY-kolonnen viser `True`, er modellen utrullet med suksess.
+Status for workspace kan følges ved å kjøre følgende kommando. Når kolonnen WORKSPACEREADY viser `True`, er modellen distribuert med suksess.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Deretter kan man finne klyngens IP-adresse for inferenstjenesten og bruke en midlertidig `curl`-pod for å teste tjenesteendepunktet i klyngen.
+Deretter kan man finne inferenstjenestens cluster-ip og bruke en midlertidig `curl`-pod for å teste tjenesteendepunktet i klusteret.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på dets opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

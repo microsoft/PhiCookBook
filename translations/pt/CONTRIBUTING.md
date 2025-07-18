@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:18:52+00:00",
+  "translation_date": "2025-07-16T14:39:57+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "pt"
 }
@@ -15,8 +15,8 @@ Quando submeter um pull request, um bot de CLA irá automaticamente determinar s
 
 ## Código de Conduta
 
-Este projeto adotou o [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-Para mais informações, leia o [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) ou contacte [opencode@microsoft.com](mailto:opencode@microsoft.com) para quaisquer perguntas ou comentários adicionais.
+Este projeto adotou o [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
+Para mais informações, leia as [Perguntas Frequentes sobre o Código de Conduta](https://opensource.microsoft.com/codeofconduct/faq/) ou contacte [opencode@microsoft.com](mailto:opencode@microsoft.com) para quaisquer questões ou comentários adicionais.
 
 ## Cuidados ao criar issues
 
@@ -30,27 +30,27 @@ Ao submeter um pull request (PR) para o repositório Phi-3 CookBook, por favor s
 
 - **Fork do Repositório**: Faça sempre um fork do repositório para a sua própria conta antes de fazer as suas modificações.
 
-- **Pull requests (PR) separados**:
-  - Submeta cada tipo de alteração num pull request separado. Por exemplo, correções de bugs e atualizações de documentação devem ser submetidas em PRs diferentes.
+- **Pull requests separados (PR)**:
+  - Submeta cada tipo de alteração num pull request separado. Por exemplo, correções de bugs e atualizações de documentação devem ser submetidas em PRs distintos.
   - Correções de erros tipográficos e pequenas atualizações de documentação podem ser combinadas num único PR quando apropriado.
 
 - **Resolver conflitos de merge**: Se o seu pull request apresentar conflitos de merge, atualize a sua branch local `main` para refletir o repositório principal antes de fazer as suas modificações.
 
-- **Submissões de traduções**: Ao submeter um PR de tradução, certifique-se de que a pasta de tradução inclui traduções para todos os ficheiros da pasta original.
+- **Submissões de traduções**: Ao submeter um PR de tradução, assegure-se de que a pasta de tradução inclui traduções para todos os ficheiros da pasta original.
 
 ### Diretrizes de Escrita
 
 Para garantir consistência em todos os documentos, por favor use as seguintes diretrizes:
 
-- **Formatação de URLs**: Envolva todas as URLs entre colchetes seguidos de parênteses, sem espaços extras à volta ou dentro deles. Por exemplo: `[example](https://www.microsoft.com)`.
+- **Formatação de URLs**: Envolva todas as URLs entre colchetes seguidos de parênteses, sem espaços extras à volta ou dentro deles. Por exemplo: `[exemplo](https://www.microsoft.com)`.
 
-- **Links relativos**: Use `./` para links relativos que apontam para ficheiros ou pastas no diretório atual, e `../` para os que estão num diretório superior. Por exemplo: `[example](../../path/to/file)` ou `[example](../../../path/to/file)`.
+- **Links relativos**: Use `./` para links relativos que apontam para ficheiros ou pastas no diretório atual, e `../` para os que apontam para um diretório pai. Por exemplo: `[exemplo](../../caminho/para/ficheiro)` ou `[exemplo](../../../caminho/para/ficheiro)`.
 
 - **Locales não específicos de país**: Certifique-se de que os seus links não incluem locales específicos de país. Por exemplo, evite `/en-us/` ou `/en/`.
 
 - **Armazenamento de imagens**: Guarde todas as imagens na pasta `./imgs`.
 
-- **Nomes descritivos para imagens**: Nomeie as imagens de forma descritiva usando caracteres em inglês, números e hífens. Por exemplo: `example-image.jpg`.
+- **Nomes descritivos para imagens**: Nomeie as imagens de forma descritiva usando caracteres em inglês, números e hífens. Por exemplo: `exemplo-imagem.jpg`.
 
 ## Workflows do GitHub
 
@@ -112,4 +112,4 @@ Depois de corrigir as URLs, guarde e envie as suas alterações.
 > - **Problemas temporários do servidor:** Eventuais períodos de indisponibilidade ou manutenção do servidor podem tornar uma URL temporariamente inacessível durante a validação.
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações erradas decorrentes da utilização desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

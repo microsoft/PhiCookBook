@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-07-09T19:37:06+00:00",
+  "translation_date": "2025-07-16T22:34:52+00:00",
   "source_file": "md/01.Introduction/05/Promptflow.md",
   "language_code": "en"
 }
@@ -17,8 +17,8 @@ Microsoft Prompt Flow is built to streamline the entire development cycle of AI 
 
 **Interactive Authoring Experience**
 
-Prompt Flow offers a visual layout of your flow’s structure, making it easy to understand and navigate your projects.  
-It provides a notebook-style coding experience for efficient flow development and debugging.
+Prompt Flow offers a visual view of your flow’s structure, making it easy to understand and navigate your projects.  
+It provides a notebook-like coding experience for efficient flow development and debugging.
 
 **Prompt Variants and Tuning**
 
@@ -42,7 +42,7 @@ Maintain version control and share knowledge efficiently. Streamline the entire 
 
 In Microsoft Prompt Flow, evaluation is key to measuring how well your AI models perform. Let’s look at how you can customize evaluation flows and metrics within Prompt Flow:
 
-![PFVizualise](../../../../../imgs/01/05/PromptFlow/pfvisualize.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.en.png)
 
 **Understanding Evaluation in Prompt Flow**
 

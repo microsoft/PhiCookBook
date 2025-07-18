@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:52:49+00:00",
+  "translation_date": "2025-07-16T22:27:08+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "sl"
 }
 -->
-## **Kako uporabljati Model Builder za kvantizacijo Phi-3.5**
+## **Kako uporabiti Model Builder za kvantizacijo Phi-3.5**
 
 Model Builder zdaj podpira kvantizacijo ONNX modelov za Phi-3.5 Instruct in Phi-3.5-Vision
 
 ### **Phi-3.5-Instruct**
 
-**CPU pospešena konverzija kvantiziranega INT 4**
+**Pretvorba kvantiziranega INT4 pospešena s CPU**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**CUDA pospešena konverzija kvantiziranega INT 4**
+**Pretvorba kvantiziranega INT4 pospešena s CUDA**
 
 ```bash
 
@@ -65,7 +65,7 @@ cd models
 
 5. Odprite terminal
 
-    Konvertirajte ONNX podporo z FP32
+    Pretvorite ONNX model s podporo FP32
 
 ```bash
 
@@ -73,21 +73,21 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ```
 
-### **Opomba：**
+### **Opomba:**
 
-1. Model Builder trenutno podpira konverzijo Phi-3.5-Instruct in Phi-3.5-Vision, ne pa Phi-3.5-MoE
+1. Model Builder trenutno podpira pretvorbo Phi-3.5-Instruct in Phi-3.5-Vision, ne pa Phi-3.5-MoE
 
-2. Za uporabo ONNX kvantiziranega modela lahko uporabite Generative AI extensions for onnxruntime SDK
+2. Za uporabo kvantiziranega ONNX modela lahko uporabite Generative AI extensions for onnxruntime SDK
 
-3. Zaradi odgovorne uporabe AI je priporočljivo po kvantizaciji modela opraviti temeljitejše testiranje rezultatov
+3. Zaradi odgovorne uporabe AI priporočamo, da po kvantizaciji modela izvedete temeljitejše testiranje rezultatov
 
-4. S kvantizacijo CPU INT4 modela ga lahko namestimo na Edge naprave, kar omogoča boljše aplikacijske scenarije, zato smo zaključili delo okoli Phi-3.5-Instruct v INT 4
+4. S kvantizacijo CPU INT4 modela ga lahko namestimo na Edge naprave, kar omogoča boljše scenarije uporabe, zato smo zaključili Phi-3.5-Instruct okoli INT4
 
 ## **Viri**
 
 1. Več o Generative AI extensions for onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. GitHub repozitorij Generative AI extensions for onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
+2. Generative AI extensions for onnxruntime GitHub repozitorij [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

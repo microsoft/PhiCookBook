@@ -1,13 +1,13 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:37:31+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T15:24:45+00:00",
   "source_file": "README.md",
   "language_code": "tl"
 }
 -->
-# Phi Cookbook: Mga Praktikal na Halimbawa gamit ang mga Phi Models ng Microsoft
+# Phi Cookbook: Mga Praktikal na Halimbawa gamit ang Phi Models ng Microsoft
 
 [![Buksan at gamitin ang mga halimbawa sa GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)  
 [![Buksan sa Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
@@ -34,11 +34,11 @@ Sundin ang mga hakbang na ito para makapagsimula gamit ang mga resources na ito:
 2. **I-clone ang Repository**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Sumali sa Microsoft AI Discord Community at makipagkilala sa mga eksperto at kapwa developer**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.tl.png)
 
-## 🌐 Suporta sa Maramihang Wika
+### 🌐 Suporta sa Maramihang Wika
 
-### Sinusuportahan sa pamamagitan ng GitHub Action (Awtomatiko at Palaging Napapanahon)
+#### Sinusuportahan sa pamamagitan ng GitHub Action (Awtomatiko at Palaging Napapanahon)
 
 [French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md)  
 [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](./README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](../bg/README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
@@ -49,9 +49,9 @@ Sundin ang mga hakbang na ito para makapagsimula gamit ang mga resources na ito:
   - [Maligayang pagdating sa Phi Family](./md/01.Introduction/01/01.PhiFamily.md)  
   - [Pagsasaayos ng iyong kapaligiran](./md/01.Introduction/01/01.EnvironmentSetup.md)  
   - [Pag-unawa sa mga Pangunahing Teknolohiya](./md/01.Introduction/01/01.Understandingtech.md)  
-  - [AI Safety para sa mga Phi Models](./md/01.Introduction/01/01.AISafety.md)  
+  - [AI Safety para sa Phi Models](./md/01.Introduction/01/01.AISafety.md)  
   - [Suporta sa Hardware ng Phi](./md/01.Introduction/01/01.Hardwaresupport.md)  
-  - [Mga Phi Models at Availability sa iba't ibang platform](./md/01.Introduction/01/01.Edgeandcloud.md)  
+  - [Phi Models at Availability sa iba't ibang platform](./md/01.Introduction/01/01.Edgeandcloud.md)  
   - [Paggamit ng Guidance-ai at Phi](./md/01.Introduction/01/01.Guidance.md)  
   - [GitHub Marketplace Models](https://github.com/marketplace/models)  
   - [Azure AI Model Catalog](https://ai.azure.com)
@@ -74,9 +74,8 @@ Sundin ang mga hakbang na ito para makapagsimula gamit ang mga resources na ito:
   - [Inference ng Phi sa Local Server](./md/01.Introduction/03/Local_Server_Inference.md)  
   - [Inference ng Phi sa Remote Server gamit ang AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
   - [Inference ng Phi gamit ang Rust](./md/01.Introduction/03/Rust_Inference.md)  
-  - [Inference ng Phi--Vision sa Local](./md/01.Introduction/03/Vision_Inference.md)  
-  - [Inference ng Phi gamit ang Kaito AKS, Azure Containers (opisyal na suporta)](./md/01.Introduction/03/Kaito_Inference.md)
-
+  - [Inference ng Phi--Vision sa Lokal](./md/01.Introduction/03/Vision_Inference.md)  
+  - [Inference ng Phi gamit ang Kaito AKS, Azure Containers (opisyal na suporta)](./md/01.Introduction/03/Kaito_Inference.md)  
 - [Pag-quantify ng Phi Family](./md/01.Introduction/04/QuantifyingPhi.md)  
   - [Pag-quantize ng Phi-3.5 / 4 gamit ang llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
   - [Pag-quantize ng Phi-3.5 / 4 gamit ang Generative AI extensions para sa onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
@@ -161,12 +160,13 @@ Sundin ang mga hakbang na ito para makapagsimula gamit ang mga resources na ito:
   - Phi-3 / 3.5 Samples  
     - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) Social Media Sample](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
     - [📓] [Paggawa ng Retrieval-Augmented Generation (RAG) Pipeline gamit ang NVIDIA NIM Phi-3 MOE, Azure AI Search, at LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
+    -  
 - Function Calling Samples  
   - Phi-4 Samples 🆕  
-    - [📓] [Paggamit ng Function Calling gamit ang Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
+    - [📓] [Paggamit ng Function Calling kasama ang Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
     - [📓] [Paggamit ng Function Calling para gumawa ng multi-agents gamit ang Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
-    - [📓] [Paggamit ng Function Calling gamit ang Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
-    - [📓] [Paggamit ng Function Calling gamit ang ONNX](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)  
+    - [📓] [Paggamit ng Function Calling kasama ang Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
+    - [📓] [Paggamit ng Function Calling kasama ang ONNX](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)  
 - Multimodal Mixing Samples  
   - Phi-4 Samples 🆕  
     - [📓] [Paggamit ng Phi-4-multimodal bilang isang Technology journalist](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)  
@@ -232,13 +232,13 @@ Maaari mo ring makita ang modelo sa [Hugging Face](https://huggingface.co/micros
 Nangangako ang Microsoft na tulungan ang aming mga customer na gamitin ang aming mga AI na produkto nang responsable, ibahagi ang aming mga natutunan, at bumuo ng mga partnership na nakabase sa tiwala sa pamamagitan ng mga kasangkapang tulad ng Transparency Notes at Impact Assessments. Marami sa mga ito ay matatagpuan sa [https://aka.ms/RAI](https://aka.ms/RAI).  
 Ang pamamaraan ng Microsoft sa responsible AI ay nakabatay sa aming mga prinsipyo ng AI na katarungan, pagiging maaasahan at kaligtasan, privacy at seguridad, pagiging inklusibo, transparency, at pananagutan.
 
-Ang mga malalaking modelo ng natural na wika, larawan, at pagsasalita - tulad ng mga ginamit sa halimbawang ito - ay maaaring kumilos sa mga paraan na hindi patas, hindi maaasahan, o nakakasakit, na maaaring magdulot ng pinsala. Mangyaring sumangguni sa [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) upang maging pamilyar sa mga panganib at limitasyon.
+Ang mga malalaking modelo sa natural na wika, larawan, at pagsasalita - tulad ng mga ginamit sa halimbawang ito - ay maaaring kumilos sa mga paraan na hindi patas, hindi maaasahan, o nakakasakit, na maaaring magdulot ng pinsala. Mangyaring tingnan ang [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) upang maging pamilyar sa mga panganib at limitasyon.
 
-Ang inirerekomendang paraan upang mabawasan ang mga panganib na ito ay ang paglalagay ng safety system sa iyong arkitektura na kayang tuklasin at pigilan ang mapanganib na pag-uugali. Nagbibigay ang [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ng isang independiyenteng layer ng proteksyon, na kayang tuklasin ang mapanganib na nilalaman na ginawa ng user at AI sa mga aplikasyon at serbisyo. Kasama sa Azure AI Content Safety ang mga text at image API na nagpapahintulot sa iyo na matukoy ang mga mapanganib na materyal. Sa loob ng Azure AI Foundry, pinapayagan ka ng Content Safety service na makita, suriin, at subukan ang mga sample code para sa pagtuklas ng mapanganib na nilalaman sa iba’t ibang modality. Ang sumusunod na [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ay gagabay sa iyo kung paano gumawa ng mga request sa serbisyo.
+Ang inirerekomendang paraan upang mabawasan ang mga panganib na ito ay ang paglalagay ng safety system sa iyong arkitektura na kayang tuklasin at pigilan ang mapanganib na pag-uugali. Nagbibigay ang [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ng isang independiyenteng layer ng proteksyon, na kayang tuklasin ang mapanganib na nilalaman na ginawa ng user at AI sa mga aplikasyon at serbisyo. Kasama sa Azure AI Content Safety ang mga text at image API na nagpapahintulot sa iyo na matukoy ang mga mapanganib na materyal. Sa loob ng Azure AI Foundry, pinapayagan ka ng Content Safety service na tingnan, galugarin, at subukan ang mga sample code para sa pagtuklas ng mapanganib na nilalaman sa iba’t ibang modality. Ang sumusunod na [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ay gagabay sa iyo sa paggawa ng mga request sa serbisyo.
 
 Isa pang aspeto na dapat isaalang-alang ay ang pangkalahatang performance ng aplikasyon. Sa mga multi-modal at multi-model na aplikasyon, ang performance ay nangangahulugang gumagana ang sistema ayon sa inaasahan mo at ng iyong mga user, kabilang ang hindi paglikha ng mapanganib na output. Mahalaga na suriin ang performance ng iyong kabuuang aplikasyon gamit ang [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Mayroon ka ring kakayahang gumawa at magsuri gamit ang [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Maaari mong suriin ang iyong AI application sa iyong development environment gamit ang [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Sa pamamagitan ng test dataset o target, ang mga generative AI application generations mo ay sinusukat nang kwantitatibo gamit ang built-in evaluators o custom evaluators na iyong pinili. Para makapagsimula gamit ang azure ai evaluation sdk para suriin ang iyong sistema, maaari mong sundan ang [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Kapag naisagawa mo na ang evaluation run, maaari mong [ipakita ang mga resulta sa Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Maaari mong suriin ang iyong AI application sa iyong development environment gamit ang [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Sa pamamagitan ng isang test dataset o target, sinusukat nang kwantitatibo ang mga generative AI application generations gamit ang built-in evaluators o custom evaluators na iyong pinili. Para makapagsimula gamit ang azure ai evaluation sdk upang suriin ang iyong sistema, maaari mong sundan ang [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Kapag naisagawa mo na ang evaluation run, maaari mong [ipakita ang mga resulta sa Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Trademarks
 

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-09T04:47:36+00:00",
+  "translation_date": "2025-07-16T16:28:45+00:00",
   "source_file": "code/04.Finetuning/olive-ort-example/README.md",
   "language_code": "hr"
 }
@@ -11,17 +11,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 U ovom primjeru koristit ćete Olive za:
 
-1. Fino podešavanje LoRA adaptera za klasifikaciju fraza u Sad, Joy, Fear, Surprise.
+1. Fino podešavanje LoRA adaptera za klasifikaciju fraza u Tužno, Radost, Strah, Iznenađenje.
 1. Spajanje težina adaptera u osnovni model.
 1. Optimizaciju i kvantizaciju modela u `int4`.
 
-Također ćemo vam pokazati kako izvesti inferenciju fino podešenog modela koristeći ONNX Runtime (ORT) Generate API.
+Također ćemo vam pokazati kako izvršiti inferenciju fino podešenog modela koristeći ONNX Runtime (ORT) Generate API.
 
 > **⚠️ Za fino podešavanje potrebno je imati odgovarajuću GPU karticu - na primjer, A10, V100, A100.**
 
 ## 💾 Instalacija
 
-Kreirajte novi Python virtualni okoliš (na primjer, koristeći `conda`):
+Kreirajte novo Python virtualno okruženje (na primjer, koristeći `conda`):
 
 ```bash
 conda create -n olive-ai python=3.11
@@ -41,13 +41,13 @@ pip install -r requirements.txt
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-Na visokoj razini, ovaj tijek rada će:
+Na visokoj razini, ovaj workflow će:
 
 1. Fino podesiti Phi3 (za 150 koraka, što možete promijeniti) koristeći podatke iz [dataset/data-classification.json](../../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json).
-1. Spojiti težine LoRA adaptera u osnovni model. Time ćete dobiti jedinstveni model u ONNX formatu.
+1. Spojiti težine LoRA adaptera u osnovni model. Time ćete dobiti jedan model u ONNX formatu.
 1. Model Builder će optimizirati model za ONNX runtime *i* kvantizirati model u `int4`.
 
-Za pokretanje tijeka rada, pokrenite:
+Za pokretanje workflowa, izvršite:
 
 ```bash
 olive run --config phrase-classification.json
@@ -55,7 +55,7 @@ olive run --config phrase-classification.json
 
 Kada Olive završi, vaš optimizirani `int4` fino podešeni Phi3 model bit će dostupan u: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-## 🧑‍💻 Integrirajte fino podešeni Phi3 u vašu aplikaciju
+## 🧑‍💻 Integracija fino podešenog Phi3 u vašu aplikaciju
 
 Za pokretanje aplikacije:
 
@@ -63,7 +63,7 @@ Za pokretanje aplikacije:
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-Odgovor bi trebao biti jedinstvena klasifikacija fraze (Sad/Joy/Fear/Surprise).
+Ovaj odgovor trebao bi biti jedinstvena riječ koja klasificira frazu (Tužno/Radost/Strah/Iznenađenje).
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo osigurati točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za važne informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

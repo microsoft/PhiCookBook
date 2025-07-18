@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-09T19:01:33+00:00",
+  "translation_date": "2025-07-17T08:31:54+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "en"
 }
@@ -142,7 +142,7 @@ Enter "quotas" into the search box, then select Quotas.
 
 On the Overview page, select a provider, such as Compute or AML.
 
-**Note** For all providers other than Compute, you'll see a Request increase column instead of the Adjustable column described below. There, you can request an increase for a specific quota or create a support request for the increase.
+**Note** For all providers other than Compute, you'll see a Request increase column instead of the Adjustable column described below. There, you can request an increase for a specific quota, or create a support request for the increase.
 
 On the My quotas page, under Quota name, select the quota you want to increase. Make sure the Adjustable column shows Yes for this quota.
 
@@ -184,7 +184,7 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 It is still possible to fully finetune Phi-3-V on hateful memes classification. However, expect  
 much lower throughput compared to A100 or H100 GPUs due to the lack of flash attention support.  
-Accuracy might also be affected because bf16 is not supported (fp16 mixed-precision training is used instead).
+Accuracy could also be affected because bf16 is not supported (fp16 mixed-precision training is used instead).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -232,10 +232,10 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | Frozen vision model | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
---- | --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
+Training method | Frozen vision model | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy  
+--- | --- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40  
+full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20  
 LoRA results coming soon |  |  |  |  |  |  |  |  |
 
 ### NOTE  
@@ -256,16 +256,16 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | ANLS
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
-full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
-frozen image model | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
-frozen image model | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
-LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
-LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
-QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
-QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
+Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | ANLS  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65  
+full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60  
+frozen image model | bf16 | - | - | 64 | 1e-4 | 2 | 79.19  
+frozen image model | fp16 | - | - | 64 | 1e-4 | 2 | 78.74  
+LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46  
+LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34  
+QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85  
+QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85  
 
 ### Hateful memes (NOTE: Phi-3-vision)
 
@@ -280,16 +280,16 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
-full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
-frozen image model | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
-frozen image model | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
-LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
-LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
-QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
-QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
+Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4  
+full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4  
+frozen image model | bf16 | - | - | 64 | 1e-4 | 3 | 79.4  
+frozen image model | fp16 | - | - | 64 | 1e-4 | 3 | 78.6  
+LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6  
+LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2  
+QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0  
+QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8  
 
 ## Speed benchmarking (NOTE: Phi-3-vision)
 
@@ -300,28 +300,28 @@ is 2443.23 tokens (using `num_crops=16` for the image model).
 
 ### 8x A100-80GB (Ampere)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
-full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
-full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29
-full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26
-frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29
-frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27
-LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50
-LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16
-QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32
-QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
+Training method | # nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | 1 | 8 |  | 64 | 5.041 | 1x | ~42  
+full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36  
+full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29  
+full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26  
+frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29  
+frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27  
+LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50  
+LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16  
+QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32  
+QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10  
 
 ### 8x V100-32GB (Volta)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
-full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
-full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
-frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27
-LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
+Training method | # nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | 1 | 8 |  | 64 | 2.462 | 1x | ~32  
+full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32  
+full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32  
+frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27  
+LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30  
 
 ## Known issues
 

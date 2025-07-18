@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:11:37+00:00",
+  "translation_date": "2025-07-16T21:37:08+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "bn"
 }
 -->
-# **স্থানীয়ভাবে Phi-3-Vision এর ইনফারেন্স**
+# **লোকাল-এ Inference Phi-3-Vision**
 
-Phi-3-vision-128k-instruct Phi-3 কে কেবল ভাষা বুঝতে সাহায্য করে না, বরং ভিজ্যুয়ালি বিশ্বকে দেখতে সক্ষম করে। Phi-3-vision-128k-instruct এর মাধ্যমে আমরা বিভিন্ন ভিজ্যুয়াল সমস্যা যেমন OCR, টেবিল বিশ্লেষণ, অবজেক্ট শনাক্তকরণ, ছবি বর্ণনা ইত্যাদি সমাধান করতে পারি। পূর্বে যেসব কাজের জন্য প্রচুর ডেটা ট্রেনিং দরকার ছিল, সেগুলো এখন সহজেই সম্পন্ন করা যায়। নিচে Phi-3-vision-128k-instruct দ্বারা উল্লেখিত সম্পর্কিত প্রযুক্তি এবং অ্যাপ্লিকেশন সিচুয়েশনগুলি দেওয়া হলো।
+Phi-3-vision-128k-instruct Phi-3 কে শুধু ভাষা বুঝতে সাহায্য করে না, বরং এটি দৃষ্টিকোণ থেকেও বিশ্বকে দেখতে সক্ষম করে। Phi-3-vision-128k-instruct এর মাধ্যমে আমরা বিভিন্ন ভিজ্যুয়াল সমস্যা সমাধান করতে পারি, যেমন OCR, টেবিল বিশ্লেষণ, অবজেক্ট সনাক্তকরণ, ছবি বর্ণনা ইত্যাদি। পূর্বে যেসব কাজের জন্য প্রচুর ডেটা ট্রেনিং প্রয়োজন হত, সেগুলো এখন সহজেই সম্পন্ন করা যায়। নিচে Phi-3-vision-128k-instruct দ্বারা উল্লেখিত সম্পর্কিত প্রযুক্তি এবং অ্যাপ্লিকেশন পরিস্থিতি দেওয়া হলো।
 
 ## **0. প্রস্তুতি**
 
-ব্যবহারের আগে দয়া করে নিশ্চিত করুন যে নিম্নলিখিত Python লাইব্রেরিগুলো ইনস্টল করা হয়েছে (Python 3.10+ ব্যবহার করার পরামর্শ দেওয়া হয়)
+ব্যবহারের আগে নিশ্চিত করুন যে নিচের Python লাইব্রেরিগুলো ইনস্টল করা হয়েছে (Python 3.10+ ব্যবহার করার পরামর্শ দেওয়া হয়)
 
 ```bash
 pip install transformers -U
@@ -21,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-***CUDA 11.6+*** ব্যবহার করার এবং flatten ইনস্টল করার পরামর্শ দেওয়া হয়
+***CUDA 11.6+*** ব্যবহার করার পরামর্শ দেওয়া হয় এবং flatten ইনস্টল করুন
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-একটি নতুন Notebook তৈরি করুন। উদাহরণগুলো সম্পূর্ণ করতে, প্রথমে নিচের বিষয়বস্তু তৈরি করা ভালো।
+একটি নতুন Notebook তৈরি করুন। উদাহরণগুলো সম্পন্ন করার জন্য প্রথমে নিচের বিষয়বস্তু তৈরি করা উত্তম।
 
 ```python
 from PIL import Image
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Notebook এ নিচের স্ক্রিপ্টটি চালিয়ে আমরা প্রাসঙ্গিক উত্তর পেতে পারি
+Notebook-এ নিচের স্ক্রিপ্টটি চালিয়ে আমরা প্রাসঙ্গিক উত্তর পেতে পারি
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. Phi-3-Vision দিয়ে OCR**
 
-ছবি বিশ্লেষণের পাশাপাশি, আমরা ছবির থেকে তথ্যও বের করতে পারি। এটি হল OCR প্রক্রিয়া, যা আগে জটিল কোড লিখে সম্পন্ন করতে হতো।
+ছবি বিশ্লেষণের পাশাপাশি, আমরা ছবির থেকে তথ্যও বের করতে পারি। এটি OCR প্রক্রিয়া, যা আগে জটিল কোড লিখে সম্পন্ন করতে হত।
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -106,7 +106,7 @@ response = processor.batch_decode(generate_ids,
 
 ```
 
-ফলাফল হল
+ফলাফল হলো
 
 ```txt
 The title of the book is "ALONE" and the author is Morgan Maxwell.
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. একাধিক ছবির তুলনা**
 
-Phi-3 Vision একাধিক ছবির তুলনাকে সমর্থন করে। আমরা এই মডেলটি ব্যবহার করে ছবিগুলোর মধ্যে পার্থক্য খুঁজে পেতে পারি।
+Phi-3 Vision একাধিক ছবির তুলনাকে সমর্থন করে। আমরা এই মডেল ব্যবহার করে ছবিগুলোর মধ্যে পার্থক্য খুঁজে পেতে পারি।
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -143,11 +143,11 @@ generate_ids = generate_ids[:, inputs['input_ids'].shape[1]:]
 response = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_up_tokenization_spaces=False)[0]
 ```
 
-ফলাফল হল
+ফলাফল হলো
 
 ```txt
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
 **অস্বীকৃতি**:  
-এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা ভুল থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায় প্রামাণিক উৎস হিসেবে বিবেচনা করা উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ সুপারিশ করা হয়। এই অনুবাদের ব্যবহার থেকে উদ্ভূত কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।
+এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ গ্রহণ করার পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।

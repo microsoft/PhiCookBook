@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:41:45+00:00",
+  "translation_date": "2025-07-17T06:23:33+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "he"
 }
 -->
 ## כיוונון עדין עם Kaito
 
-[Kaito](https://github.com/Azure/kaito) הוא אופרטור שמבצע אוטומציה לפריסת מודלי AI/ML בקלאסטר Kubernetes.
+[Kaito](https://github.com/Azure/kaito) הוא אופרטור שמאוטומט את פריסת מודלי AI/ML להסקת מסקנות בתוך אשכול Kubernetes.
 
-ל-Kaito יש הבדלים מרכזיים לעומת רוב שיטות הפריסה הנפוצות של מודלים, המבוססות על תשתיות של מכונות וירטואליות:
+ל-Kaito יש הבדלים מרכזיים לעומת רוב שיטות הפריסה המקובלות המבוססות על תשתיות של מכונות וירטואליות:
 
-- ניהול קבצי המודל באמצעות תמונות מכולה. שרת HTTP מסופק לביצוע קריאות אינפרנס דרך ספריית המודל.
-- הימנעות מכיוונון פרמטרי הפריסה להתאמה לחומרת GPU באמצעות תצורות מוגדרות מראש.
+- ניהול קבצי המודל באמצעות תמונות קונטיינר. שרת http מסופק לביצוע קריאות הסקה באמצעות ספריית המודל.
+- הימנעות מכיוונון פרמטרי פריסה להתאמה לחומרת GPU על ידי מתן תצורות מוגדרות מראש.
 - פריסה אוטומטית של צמתים עם GPU בהתאם לדרישות המודל.
-- אחסון תמונות מודל גדולות ברישום המכולות הציבורי של מיקרוסופט (MCR) אם הרישיון מאפשר זאת.
+- אחסון תמונות מודל גדולות ברישום הקונטיינרים הציבורי של מיקרוסופט (MCR) אם הרישיון מאפשר זאת.
 
-באמצעות Kaito, תהליך העלאת מודלי אינפרנס גדולים ל-Kubernetes הופך לפשוט בהרבה.
+באמצעות Kaito, תהליך העלאת מודלי הסקה גדולים ל-Kubernetes הופך לפשוט בהרבה.
 
 ## ארכיטקטורה
 
-Kaito עוקב אחרי תבנית העיצוב הקלאסית של Kubernetes Custom Resource Definition (CRD)/controller. המשתמש מנהל משאב מותאם אישית `workspace` שמתאר את דרישות ה-GPU ואת מפרט האינפרנס. בקרי Kaito יבצעו אוטומציה לפריסה על ידי התאמת משאב ה-`workspace` המותאם אישית.  
+Kaito פועל לפי דפוס העיצוב הקלאסי של Kubernetes Custom Resource Definition (CRD) ושל בקר (controller). המשתמש מנהל משאב מותאם אישית מסוג `workspace` שמתאר את דרישות ה-GPU ואת מפרט ההסקה. בקרי Kaito יאוטומטו את הפריסה על ידי התאמת משאב ה-`workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-התמונה שלמעלה מציגה סקירה של ארכיטקטורת Kaito. הרכיבים המרכזיים שלה כוללים:
+התמונה למעלה מציגה סקירה של ארכיטקטורת Kaito. הרכיבים המרכזיים שלה כוללים:
 
-- **בקר סביבת העבודה**: מתאם את משאב ה-`workspace` המותאם אישית, יוצר משאבים מותאמים אישית `machine` (מוסבר בהמשך) כדי להפעיל פריסת צמתים אוטומטית, ויוצר את עומס העבודה של האינפרנס (`deployment` או `statefulset`) בהתבסס על תצורות המודל המוגדרות מראש.
-- **בקר פריסת הצמתים**: שם הבקר הוא *gpu-provisioner* ב-[gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). הוא משתמש ב-`machine` CRD שמקורו ב-[Karpenter](https://sigs.k8s.io/karpenter) כדי לתקשר עם בקר סביבת העבודה. משתלב עם APIs של Azure Kubernetes Service (AKS) להוספת צמתים עם GPU חדשים לקלאסטר AKS.  
-> Note: ה-[*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) הוא רכיב קוד פתוח. ניתן להחליפו בבקרים אחרים אם הם תומכים ב-APIs של [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **בקר Workspace**: מתאם את משאב ה-`workspace`, יוצר משאבים מותאמים אישית מסוג `machine` (מוסבר בהמשך) כדי להפעיל פריסה אוטומטית של צמתים, ויוצר את עומס העבודה של ההסקה (`deployment` או `statefulset`) בהתבסס על תצורות המודל המוגדרות מראש.
+- **בקר Node provisioner**: שם הבקר הוא *gpu-provisioner* ב-[gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). הוא משתמש ב-CRD מסוג `machine` שמקורו ב-[Karpenter](https://sigs.k8s.io/karpenter) כדי לתקשר עם בקר ה-workspace. הוא משתלב עם ממשקי ה-API של Azure Kubernetes Service (AKS) להוספת צמתים עם GPU חדשים לאשכול AKS.
+> הערה: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) הוא רכיב בקוד פתוח. ניתן להחליפו בבקרים אחרים אם הם תומכים בממשקי ה-API של [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## סרטון סקירה  
 [צפו בדמו של Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## התקנה
 
-אנא עיינו בהנחיות ההתקנה [כאן](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+אנא עיינו במדריך ההתקנה [כאן](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## התחלה מהירה
 
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-ניתן לעקוב אחרי מצב סביבת העבודה באמצעות הרצת הפקודה הבאה. כאשר עמודת WORKSPACEREADY הופכת ל-`True`, המודל הופעל בהצלחה.
+ניתן לעקוב אחרי מצב ה-workspace על ידי הרצת הפקודה הבאה. כאשר העמודה WORKSPACEREADY הופכת ל-`True`, המודל הוצב בהצלחה.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-בהמשך, ניתן למצוא את כתובת ה-IP של שירות האינפרנס ולהשתמש בפוד `curl` זמני כדי לבדוק את נקודת הקצה של השירות בקלאסטר.
+לאחר מכן, ניתן למצוא את כתובת ה-IP של שירות ההסקה באשכול ולהשתמש בפוד `curl` זמני כדי לבדוק את נקודת הקצה של השירות בתוך האשכול.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -113,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי של אדם. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

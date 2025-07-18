@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-07T13:36:29+00:00",
+  "translation_date": "2025-07-17T08:36:44+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "mo"
 }
 -->
-# Phi-3.5-vision finetuning recipe
+# Phi-3.5-vision 微調指南
 
-នេះគឺជាការគាំទ្រផ្លូវការសម្រាប់ការបង្រួមបង្រួម Phi-3.5-vision ដោយប្រើបណ្ណាល័យ huggingface។
-សូម `cd` ទៅកាន់ថតកូដ [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) មុនពេលដំណើរការបញ្ជា ខាងក្រោម។
+這是使用 huggingface 函式庫對 Phi-3.5-vision 進行微調的官方支援。
+請在執行以下指令前，先 `cd` 到程式碼目錄 [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning)。
 
-## Installation
+## 安裝
 
 ```bash
 # create a new conda environment
@@ -33,31 +33,32 @@ MAX_JOBS=32 pip install flash-attn==2.4.2 --no-build-isolation
 pip install bitsandbytes==0.43.1
 ```
 
-## Quick start
+## 快速開始
 
-យើងផ្ដល់ជូនស្គ្រីបបង្រួមបង្រួមពីរដែលជាឧទាហរណ៍ មួយសម្រាប់ DocVQA និងមួយសម្រាប់ចាត់ថ្នាក់ hateful meme។
+我們提供兩個範例微調腳本，一個用於 DocVQA，另一個用於仇恨迷因分類。
 
-ឧបករណ៍ធ្វើតេស្តអប្បបរមា 4x RTX8000 (48GB RAM ក្នុងមួយ GPU)
+最低硬體測試為 4x RTX8000（每張 GPU 48GB 記憶體）
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision ឥឡូវគាំទ្រពហុរូបភាពជាផ្លូវការហើយ។ នេះជាឧទាហរណ៍សម្រាប់បង្រួមបង្រួម NLVR2
+Phi-3.5-vision 現已正式支援多圖輸入。以下是微調 NLVR2 的範例。
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ```
 
-## Usage guide
+## 使用指南
 
-អាស្រ័យលើឧបករណ៍របស់អ្នក អ្នកប្រើអាចជ្រើសយុទ្ធសាស្ត្របង្រួមបង្រួមខុសគ្នា។ យើងគាំទ្រការបង្រួមបង្រួមពេញលេញ (ជាមួយ Deepspeed Zero-2) ដែលអាចជាប់ប្លុក vision parameters ឬមិនបានជាប់, និង LoRA (រួមមាន 4bit QLoRA)។
-ជាទូទៅ យើងផ្ដល់អនុសាសន៍ឲ្យប្រើការបង្រួមបង្រួមពេញលេញជាមួយ flash attention និង bf16 នៅពេលអាចធ្វើបាន។
+根據硬體條件，使用者可選擇不同的微調策略。我們支援
+全微調（搭配 Deepspeed Zero-2），可選擇凍結視覺參數，以及 LoRA（包含 4bit QLoRA）。
+一般建議盡可能使用搭配 flash attention 與 bf16 的全微調。
 
-### ការណែនាំសម្រាប់បម្លែង dataset ផ្ទាល់ខ្លួនរបស់អ្នកទៅទ្រង់ទ្រាយត្រូវការ
+### 自訂資料集轉換格式指南
 
-យើងប្រើ dataset ចំណាត់ថ្នាក់វីដេអូអប្បបរមា (ជាផ្នែកតូចនៃ UCF-101) ជាឧទាហរណ៍ពីដើមដល់ចុង ដើម្បីបង្ហាញពីវិធីបម្លែង dataset ផ្ទាល់ខ្លួនរបស់អ្នកទៅទ្រង់ទ្រាយត្រូវការ និងបង្រួមបង្រួម Phi-3.5-vision លើវា។
+我們以最小化的影片分類資料集（UCF-101 的子集）作為端到端範例，示範如何將自訂資料集轉換成所需格式，並在其上微調 Phi-3.5-vision。
 
 ```bash
 # convert data
@@ -67,7 +68,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-ទិន្នន័យបម្លែងនឹងមានរូបរាងដូចខាងក្រោម៖
+轉換後的資料會長這樣：
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -113,49 +114,49 @@ torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/co
 34 directories, 3 files
 ```
 
-សម្រាប់អនុសាសន៍ `jsonl` រៀងរាល់បន្ទាត់គួរតែជាភាសាដាក់បញ្ជីដូចជា:
+對於 `jsonl` 標註，每行應為一個字典，如下：
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-សូមចំណាំថា `conversations` គឺជាបញ្ជី មុនដូច្នេះអាចគាំទ្រការសន្ទនាច្រើនជំហាន ប្រសិនបើមានទិន្នន័យដូច្នេះ។
+請注意，`conversations` 是一個列表，因此若有多輪對話資料，也能支援。
 
-## Requesting Azure GPU Quota 
+## 申請 Azure GPU 配額
 
-### Prerequisites
+### 前置條件
 
-គណនី Azure ដែលមានតួនាទី Contributor (ឬតួនាទីផ្សេងទៀតដែលរួមបញ្ចូលការចូលដំណើរការជា Contributor)។
+擁有 Azure 帳號且具備 Contributor 角色（或包含 Contributor 權限的其他角色）。
 
-បើអ្នកមិនមានគណនី Azure សូមបង្កើត [គណនីឥតគិតថ្លៃមុនចាប់ផ្តើម](https://azure.microsoft.com)។
+若尚無 Azure 帳號，請先[免費註冊帳號](https://azure.microsoft.com)。
 
-### Request a quota increase
+### 申請配額提升
 
-អ្នកអាចដាក់សំណើសុំបន្ថែមគុណភាពដោយផ្ទាល់ពី My quotas។ អនុវត្តតាមជំហានខាងក្រោមដើម្បីស្នើសុំបន្ថែមគុណភាព។ សម្រាប់ឧទាហរណ៍នេះ អ្នកអាចជ្រើសគុណភាពដែលអាចកែប្រែបានណាមួយក្នុងការជាវរបស់អ្នក។
+您可以直接從「My quotas」提交配額提升申請。以下步驟示範如何申請配額提升。此範例中，您可選擇訂閱中任何可調整的配額。
 
-ចូលទៅកាន់ [Azure portal](https://portal.azure.com)។
+登入 [Azure 入口網站](https://portal.azure.com)。
 
-វាយ "quotas" ក្នុងប្រអប់ស្វែងរក បន្ទាប់មកជ្រើស Quotas។
+在搜尋框輸入「quotas」，然後選擇 Quotas。
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-នៅលើទំព័រ Overview ជ្រើសអ្នកផ្គត់ផ្គង់មួយដូចជា Compute ឬ AML។
+在 Overview 頁面，選擇一個供應商，例如 Compute 或 AML。
 
-**Note** សម្រាប់អ្នកផ្គត់ផ្គង់ទាំងអស់ក្រៅពី Compute អ្នកនឹងឃើញជួរឈរមួយឈ្មោះ Request increase ជំនួសជួរឈរដែលអាចកែប្រែបានដែលបានពិពណ៌នាខាងក្រោម។ នៅទីនោះ អ្នកអាចស្នើសុំបន្ថែមសម្រាប់គុណភាពជាក់លាក់ ឬបង្កើតសំណើសុំគាំទ្រសម្រាប់ការបន្ថែម។
+**注意** 除 Compute 外，其他供應商會顯示「Request increase」欄位，而非下方所述的「Adjustable」欄位。您可在此申請特定配額提升，或建立支援請求。
 
-នៅលើទំព័រ My quotas ក្រោម Quota name ជ្រើសគុណភាពដែលអ្នកចង់បន្ថែម។ ប្រាកដថាជួរឈរដែលអាចកែប្រែបានបង្ហាញ Yes សម្រាប់គុណភាពនេះ។
+在 My quotas 頁面，於 Quota name 下選擇欲提升的配額。確認該配額的 Adjustable 欄位顯示 Yes。
 
-នៅជិតផ្នែកខាងលើនៃទំព័រ ជ្រើស New Quota Request បន្ទាប់មកជ្រើស Enter a new limit។
+頁面上方點選 New Quota Request，接著選擇 Enter a new limit。
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-នៅក្នុងផ្ទាំង New Quota Request វាយតម្លៃជាចំនួនសម្រាប់កំណត់គុណភាពថ្មីរបស់អ្នក បន្ទាប់មកជ្រើស Submit។
+在 New Quota Request 面板中，輸入新的數值限制，然後點選 Submit。
 
-សំណើរបស់អ្នកនឹងត្រូវបានពិនិត្យ និងអ្នកនឹងទទួលបានការជូនដំណឹងបើសំណើអាចបំពេញបាន។ វាជាទូទៅកើតឡើងក្នុងរយៈពេលប៉ុន្មាននាទី។
+您的申請將被審核，若可通過，系統會通知您。通常幾分鐘內即可完成。
 
-បើសំណើរបស់អ្នកមិនត្រូវបានបំពេញ អ្នកនឹងឃើញតំណភ្ជាប់សម្រាប់បង្កើតសំណើសុំគាំទ្រ។ នៅពេលអ្នកប្រើតំណនេះ វិស្វករគាំទ្រនឹងជួយអ្នកក្នុងការស្នើសុំបន្ថែមនេះ។
+若申請未通過，會顯示建立支援請求的連結。使用該連結後，支援工程師會協助您完成配額提升申請。
 
-## Azure Compute GPU machine SKU suggestions
+## Azure 計算 GPU 機器 SKU 建議
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -163,11 +164,11 @@ torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/co
 
 [Standard_ND40rs_v2](https://learn.microsoft.com/azure/virtual-machines/ndv2-series)
 
-នេះជាឧទាហរណ៍ខ្លះៗ៖
+以下為幾個範例：
 
-### ប្រសិនបើអ្នកមាន GPU A100 ឬ H100
+### 如果您有 A100 或 H100 GPU
 
-ការបង្រួមបង្រួមពេញលេញជាទូទៅផ្តល់សមត្ថភាពល្អបំផុត។ អ្នកអាចប្រើបញ្ជា ខាងក្រោមដើម្បីបង្រួមបង្រួម Phi-3-V សម្រាប់ចាត់ថ្នាក់ hateful memes។
+全微調通常能達到最佳效能。您可以使用以下指令微調 Phi-3-V 於仇恨迷因分類任務。
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -179,9 +180,10 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --bf16
 ```
 
-### ប្រសិនបើអ្នកមាន Standard_ND40rs_v2 8x V100-32GB GPUs
+### 如果您有 Standard_ND40rs_v2 8x V100-32GB GPU
 
-វានៅតែអាចបង្រួមបង្រួមពេញលេញ Phi-3-V សម្រាប់ចាត់ថ្នាក់ hateful memes បាន។ ទោះជាយ៉ាងណា សូមរំពឹងថាមាន throughput ទាបជាងយ៉ាងខ្លាំង ប្រៀបធៀបនឹង GPU A100 ឬ H100 ដោយសារមិនគាំទ្រការប្រើ flash attention។ ការពិតប្រាកដក៏អាចមានផលប៉ះពាល់ផង ដោយសារមិនគាំទ្រប្រភេទ bf16 (ប្រើការបណ្តុះបណ្តាល fp16 mixed-precision ជំនួស)។
+仍可對仇恨迷因分類進行全微調，但由於不支援 flash attention，吞吐量會比 A100 或 H100 低很多。
+同時因不支援 bf16，改用 fp16 混合精度訓練，準確度可能也會受到影響。
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -191,9 +193,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### ប្រសិនបើអ្នកមិនអាចប្រើ GPU នៅ data center បាន
+### 如果您無法使用資料中心 GPU
 
-LoRA ប្រហែលជាជម្រើសតែមួយរបស់អ្នក។ អ្នកអាចប្រើបញ្ជា ខាងក្រោមដើម្បីបង្រួមបង្រួម Phi-3-V សម្រាប់ចាត់ថ្នាក់ hateful memes។
+LoRA 可能是您的唯一選擇。您可以使用以下指令微調 Phi-3-V 於仇恨迷因分類。
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -203,7 +205,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-សម្រាប់ GPU Turing+ គាំទ្រ QLoRA
+對於 Turing+ GPU，支援 QLoRA。
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -214,7 +216,8 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## Suggested hyperparameters and expected accuracy
+## 建議超參數與預期準確度
+
 ### NLVR2
 
 ```bash
@@ -228,17 +231,17 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | Frozen vision model | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
+訓練方法 | 凍結視覺模型 | 資料型態 | LoRA rank | LoRA alpha | 批次大小 | 學習率 | 訓練輪數 | 準確度
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
-LoRA results comming soon |  |  |  |  |  |  |  |  |
+full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
+full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
+LoRA 結果即將公布 |  |  |  |  |  |  |  |  |
 
-### NOTE
-លទ្ធផល DocVQA និង Hateful memes ខាងក្រោមផ្អែកលើកំណែចាស់ (Phi-3-vision)។
-លទ្ធផលថ្មីជាមួយ Phi-3.5-vision នឹងត្រូវបានធ្វើបច្ចុប្បន្នភាពឆាប់ៗនេះ។
+### 注意
+以下 DocVQA 與仇恨迷因結果基於舊版本（Phi-3-vision）。
+Phi-3.5-vision 的新結果將會盡快更新。
 
-### DocVQA (NOTE: Phi-3-vision)
+### DocVQA（注意：Phi-3-vision）
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -252,18 +255,18 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | ANLS
+訓練方法 | 資料型態 | LoRA rank | LoRA alpha | 批次大小 | 學習率 | 訓練輪數 | ANLS
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
 full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
-frozen image model| bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
-frozen image model| fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
+凍結影像模型 | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
+凍結影像模型 | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
 LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
 LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
 QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
-### Hateful memes (NOTE: Phi-3-vision)
+### 仇恨迷因（注意：Phi-3-vision）
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -276,56 +279,52 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
+訓練方法 | 資料型態 | LoRA rank | LoRA alpha | 批次大小 | 學習率 | 訓練輪數 | 準確度
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
 full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
-frozen image model| bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
-frozen image model| fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
+凍結影像模型 | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
+凍結影像模型 | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
 LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
 LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
 QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
 QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
-## Speed benchmarking (NOTE: Phi-3-vision)
+## 效能基準測試（注意：Phi-3-vision）
 
-លទ្ធផលប៉ាន់ប្រមាណល្បឿនថ្មីជាមួយ Phi-3.5-vision នឹងត្រូវបានធ្វើបច្ចុប្បន្នភាពឆាប់ៗនេះ។
+Phi-3.5-vision 的新基準測試結果將會盡快更新。
 
-ការប៉ាន់ប្រមាណល្បឿនត្រូវបានអនុវត្តលើ dataset DocVQA។ ប្រវែងជួរដំណើរការមធ្យមនៃ dataset នេះគឺ 2443.23 tokens (ប្រើ `num_crops=16` សម្រាប់ម៉ូដែលរូបភាព)។
+效能基準測試在 DocVQA 資料集上進行。該資料集的平均序列長度為 2443.23 個 token（影像模型使用 `num_crops=16`）。
 
-### 8x A100-80GB (Ampere)
+### 8x A100-80GB（Ampere）
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
+訓練方法 | 節點數 | GPU 數量 | flash attention | 有效批次大小 | 吞吐量（張圖/秒） | 加速比 | GPU 記憶體峰值（GB）
 --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
-full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
-full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29
-full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26
-frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29
-frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27
-LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50
-LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16
-QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32
-QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
+full-finetuning | 1 | 8 |  | 64 | 5.041 | 1x | 約42
+full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | 約36
+full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | 約29
+full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | 約26
+凍結影像模型 | 1 | 8 |  | 64 | 17.578 | 3.49x | 約29
+凍結影像模型 | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | 約27
+LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | 約50
+LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | 約16
+QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | 約32
+QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | 約10
 
-### 8x V100-32GB (Volta)
+### 8x V100-32GB（Volta）
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
+訓練方法 | 節點數 | GPU 數量 | flash attention | 有效批次大小 | 吞吐量（張圖/秒） | 加速比 | GPU 記憶體峰值（GB）
 --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
-full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
-full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
-frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27
-LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
+full-finetuning | 1 | 8 |  | 64 | 2.462 | 1x | 約32
+full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | 約32
+full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | 約32
+凍結影像模型 | 1 | 8 |  | 64 | 8.942 | 3.63x | 約27
+LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | 約30
 
-## Known issues
+## 已知問題
 
-- មិនអាចប្រើ flash attention ជាមួយ fp16 បាន (bf16 តែងតែត្រូវបានផ្ដល់អាទិភាពនៅពេលមាន, ហើយ GPU ទាំងអស់ដែលគាំទ្រការប្រើ flash attention ក៏គាំទ្រការប្រើ bf16 ផងដែរ)។
-- មិនគាំទ្រការសន្សំ checkpoint មធ្យម និងបន្តបណ្តុះបណ្តាលនៅឡើយទេ។
+- fp16 無法搭配 flash attention 運行（建議有條件時皆使用 bf16，所有支援 flash attention 的 GPU 也都支援 bf16）。
+- 目前尚不支援儲存中間檢查點並繼續訓練。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language or code "mo" refers to? There are several possibilities (e.g., Moldovan, a constructed language, or something else). This will help me provide an accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

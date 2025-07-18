@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:52:11+00:00",
+  "translation_date": "2025-07-17T04:47:39+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "hr"
 }
 -->
 ## **Korištenje Phi-4-mini-mm za generiranje koda**
 
-Phi-4-mini nastavlja snažne mogućnosti kodiranja Phi Family. Možete koristiti Prompt za postavljanje pitanja vezanih uz kodiranje. Naravno, nakon dodavanja snažne sposobnosti rezoniranja, ima još bolje mogućnosti kodiranja, kao što je generiranje projekata prema zahtjevima. Na primjer, generiranje projekata prema zahtjevima, kao što su:
+Phi-4-mini nastavlja snažne mogućnosti kodiranja iz Phi Family. Možete koristiti Prompt za postavljanje pitanja vezanih uz kodiranje. Naravno, uz dodatak snažne sposobnosti rezoniranja, ima i jače mogućnosti kodiranja, poput generiranja projekata prema zahtjevima. Na primjer, generiranje projekata prema zahtjevima, kao što su:
 
 ### **Zahtjev**
 
-Napravite aplikaciju za košaricu za kupovinu
+Izradite aplikaciju za košaricu za kupovinu
 
-- Napravite REST API s sljedećim metodama:
-    - Dohvati listu piva koristeći page offset i limit.
+- Izradite REST API s sljedećim metodama:
+    - Dohvati popis piva koristeći page offset i limit.
     - Dohvati detalje piva prema id-u.
-    - Pretraži pivo po imenu, opisu, tagline-u, uparivanju hrane i cijeni.
-- Napravite listu proizvoda na glavnoj stranici.
-    - Napravite traku za pretraživanje za filtriranje proizvoda.
-    - Navigirajte na stranicu opisa kada korisnik klikne na proizvod.
-- (Opcionalno) Slicer za filtriranje proizvoda prema cijeni.
-- Napravite košaricu za kupovinu.
+    - Pretraži pivo po imenu, opisu, taglineu, uparivanju s hranom i cijeni.
+- Izradite popis proizvoda na glavnoj stranici.
+    - Izradite tražilicu za filtriranje proizvoda.
+    - Preusmjerite na stranicu s opisom kada korisnik klikne na proizvod.
+- (Opcionalno) Slicer za filtriranje proizvoda po cijeni.
+- Izradite košaricu za kupovinu.
     - Dodajte proizvode u košaricu.
     - Uklonite proizvode iz košarice.
     - Izračunajte ukupnu cijenu proizvoda u košarici.
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Odricanje od odgovornosti**:  
-Ovaj je dokument preveden korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili kriva tumačenja proizašla iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

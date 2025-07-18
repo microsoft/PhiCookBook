@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-05-09T15:30:36+00:00",
+  "translation_date": "2025-07-16T22:52:18+00:00",
   "source_file": "md/01.Introduction/05/ResponsibleAI.md",
   "language_code": "it"
 }
 -->
 # **Introduzione a Responsible AI**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) è un’iniziativa che mira ad aiutare sviluppatori e organizzazioni a creare sistemi di intelligenza artificiale trasparenti, affidabili e responsabili. L’iniziativa offre linee guida e risorse per sviluppare soluzioni di AI responsabile che rispettino principi etici come la privacy, l’equità e la trasparenza. Esploreremo anche alcune delle sfide e delle migliori pratiche legate alla costruzione di sistemi di AI responsabile.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) è un’iniziativa che mira ad aiutare sviluppatori e organizzazioni a creare sistemi di intelligenza artificiale trasparenti, affidabili e responsabili. L’iniziativa offre linee guida e risorse per sviluppare soluzioni di AI responsabile che rispettino principi etici come la privacy, l’equità e la trasparenza. Esploreremo anche alcune delle sfide e delle migliori pratiche associate alla costruzione di sistemi di AI responsabile.
 
 ## Panoramica di Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.e40f2a169a854832e885ce2659f3a913cfb393fa59b595ed57cfae9119694eb7.it.png)
+![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d336830630939a5130a22b3f9e1f633773562f83fed08a50520.it.png)
 
 **Principi etici**
 
-Microsoft Responsible AI si basa su un insieme di principi etici, come privacy, equità, trasparenza, responsabilità e sicurezza. Questi principi sono pensati per garantire che i sistemi di AI siano sviluppati in modo etico e responsabile.
+Microsoft Responsible AI si basa su un insieme di principi etici, come privacy, equità, trasparenza, responsabilità e sicurezza. Questi principi sono pensati per garantire che i sistemi di AI vengano sviluppati in modo etico e responsabile.
 
 **AI trasparente**
 
@@ -25,7 +25,7 @@ Microsoft Responsible AI sottolinea l’importanza della trasparenza nei sistemi
 
 **AI responsabile**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) promuove lo sviluppo di sistemi di AI responsabili, in grado di fornire informazioni su come i modelli prendono decisioni. Questo aiuta gli utenti a comprendere e a fidarsi dei risultati prodotti dall’AI.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) promuove lo sviluppo di sistemi di AI responsabili, in grado di fornire informazioni su come i modelli di AI prendono decisioni. Questo aiuta gli utenti a comprendere e fidarsi dei risultati prodotti dai sistemi di AI.
 
 **Inclusività**
 
@@ -33,89 +33,89 @@ I sistemi di AI dovrebbero essere progettati per beneficiare tutti. Microsoft pu
 
 **Affidabilità e sicurezza**
 
-Garantire che i sistemi di AI siano affidabili e sicuri è fondamentale. Microsoft si concentra sulla costruzione di modelli robusti, che offrano prestazioni costanti ed evitino risultati dannosi.
+Garantire che i sistemi di AI siano affidabili e sicuri è fondamentale. Microsoft si concentra sulla costruzione di modelli robusti che offrano prestazioni costanti e prevengano risultati dannosi.
 
 **Equità nell’AI**
 
-Microsoft Responsible AI riconosce che i sistemi di AI possono perpetuare pregiudizi se addestrati su dati o algoritmi parziali. L’iniziativa fornisce indicazioni per sviluppare sistemi di AI equi, che non discriminino in base a fattori come razza, genere o età.
+Microsoft Responsible AI riconosce che i sistemi di AI possono perpetuare pregiudizi se addestrati su dati o algoritmi parziali. L’iniziativa fornisce indicazioni per sviluppare sistemi di AI equi che non discriminino in base a fattori come razza, genere o età.
 
 **Privacy e sicurezza**
 
-Microsoft Responsible AI sottolinea l’importanza di proteggere la privacy degli utenti e la sicurezza dei dati nei sistemi di AI. Questo include l’implementazione di forti crittografie e controlli di accesso, oltre a regolari verifiche di vulnerabilità.
+Microsoft Responsible AI sottolinea l’importanza di proteggere la privacy degli utenti e la sicurezza dei dati nei sistemi di AI. Ciò include l’implementazione di una forte crittografia dei dati e controlli di accesso, oltre a effettuare regolari audit per individuare vulnerabilità.
 
-**Responsabilità e rendicontazione**
+**Responsabilità e rendicontabilità**
 
 Microsoft Responsible AI promuove la responsabilità nello sviluppo e nell’implementazione dell’AI. Ciò significa assicurarsi che sviluppatori e organizzazioni siano consapevoli dei rischi potenziali associati ai sistemi di AI e adottino misure per mitigarli.
 
 ## Migliori pratiche per costruire sistemi di AI responsabile
 
-**Sviluppare modelli AI utilizzando set di dati diversificati**
+**Sviluppare modelli di AI utilizzando set di dati diversificati**
 
 Per evitare pregiudizi nei sistemi di AI, è importante utilizzare set di dati diversificati che rappresentino una varietà di prospettive ed esperienze.
 
-**Usare tecniche di AI spiegabile**
+**Utilizzare tecniche di AI spiegabile**
 
-Le tecniche di AI spiegabile aiutano gli utenti a capire come i modelli prendono decisioni, aumentando così la fiducia nel sistema.
+Le tecniche di AI spiegabile aiutano gli utenti a comprendere come i modelli di AI prendono decisioni, aumentando così la fiducia nel sistema.
 
-**Eseguire regolarmente audit sui sistemi di AI per individuare vulnerabilità**
+**Effettuare regolarmente audit dei sistemi di AI per individuare vulnerabilità**
 
 Audit regolari dei sistemi di AI possono aiutare a identificare rischi e vulnerabilità che devono essere affrontati.
 
 **Implementare una forte crittografia dei dati e controlli di accesso**
 
-La crittografia e i controlli di accesso contribuiscono a proteggere la privacy e la sicurezza degli utenti nei sistemi di AI.
+La crittografia dei dati e i controlli di accesso contribuiscono a proteggere la privacy e la sicurezza degli utenti nei sistemi di AI.
 
 **Seguire i principi etici nello sviluppo dell’AI**
 
 Seguire principi etici come equità, trasparenza e responsabilità aiuta a costruire fiducia nei sistemi di AI e a garantire che vengano sviluppati in modo responsabile.
 
-## Usare AI Foundry per Responsible AI
+## Utilizzo di AI Foundry per Responsible AI
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) è una piattaforma potente che permette a sviluppatori e organizzazioni di creare rapidamente applicazioni intelligenti, all’avanguardia, pronte per il mercato e responsabili. Ecco alcune caratteristiche e funzionalità chiave di Azure AI Foundry:
+[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) è una piattaforma potente che consente a sviluppatori e organizzazioni di creare rapidamente applicazioni intelligenti, all’avanguardia, pronte per il mercato e responsabili. Ecco alcune caratteristiche e funzionalità chiave di Azure AI Foundry:
 
 **API e modelli pronti all’uso**
 
-Azure AI Foundry offre API e modelli predefiniti e personalizzabili, coprendo una vasta gamma di compiti di AI, tra cui AI generativa, elaborazione del linguaggio naturale per conversazioni, ricerca, monitoraggio, traduzione, riconoscimento vocale, visione e decisioni.
+Azure AI Foundry offre API e modelli predefiniti e personalizzabili. Coprono un’ampia gamma di compiti di AI, tra cui AI generativa, elaborazione del linguaggio naturale per conversazioni, ricerca, monitoraggio, traduzione, riconoscimento vocale, visione e supporto alle decisioni.
 
 **Prompt Flow**
 
-Prompt Flow in Azure AI Foundry consente di creare esperienze di AI conversazionale. Permette di progettare e gestire flussi conversazionali, facilitando la creazione di chatbot, assistenti virtuali e altre applicazioni interattive.
+Prompt flow in Azure AI Foundry permette di creare esperienze di AI conversazionale. Consente di progettare e gestire flussi conversazionali, facilitando la costruzione di chatbot, assistenti virtuali e altre applicazioni interattive.
 
 **Retrieval Augmented Generation (RAG)**
 
-RAG è una tecnica che combina approcci basati sul recupero di informazioni e sulla generazione creativa. Migliora la qualità delle risposte generate sfruttando sia conoscenze preesistenti (retrieval) sia la generazione creativa (generation).
+RAG è una tecnica che combina approcci basati sul recupero di informazioni e sulla generazione creativa. Migliora la qualità delle risposte generate sfruttando sia conoscenze preesistenti (recupero) sia la generazione creativa (generazione).
 
 **Metriche di valutazione e monitoraggio per AI generativa**
 
-Azure AI Foundry offre strumenti per valutare e monitorare modelli di AI generativa. È possibile misurarne le prestazioni, l’equità e altre metriche importanti per assicurare un’implementazione responsabile. Inoltre, se hai creato una dashboard, puoi usare l’interfaccia no-code di Azure Machine Learning Studio per personalizzare e generare una Responsible AI Dashboard e relativa scorecard basata sulle librerie Python del [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo). Questa scorecard aiuta a condividere con stakeholder tecnici e non tecnici informazioni chiave su equità, importanza delle caratteristiche e altre considerazioni per un’implementazione responsabile.
+Azure AI Foundry fornisce strumenti per valutare e monitorare i modelli di AI generativa. È possibile analizzare le loro prestazioni, equità e altre metriche importanti per garantire un’implementazione responsabile. Inoltre, se hai creato una dashboard, puoi utilizzare l’interfaccia no-code in Azure Machine Learning Studio per personalizzare e generare una Responsible AI Dashboard e la relativa scorecard basata sulle librerie Python del [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo). Questa scorecard aiuta a condividere con stakeholder tecnici e non tecnici informazioni chiave relative a equità, importanza delle caratteristiche e altre considerazioni per un’implementazione responsabile.
 
-Per usare AI Foundry con un approccio responsabile, puoi seguire queste migliori pratiche:
+Per utilizzare AI Foundry con un approccio responsabile, puoi seguire queste migliori pratiche:
 
-**Definire il problema e gli obiettivi del sistema AI**
+**Definire il problema e gli obiettivi del sistema di AI**
 
-Prima di iniziare lo sviluppo, è importante definire chiaramente il problema o l’obiettivo che il sistema AI intende risolvere. Questo aiuta a identificare dati, algoritmi e risorse necessari per costruire un modello efficace.
+Prima di iniziare lo sviluppo, è importante definire chiaramente il problema o l’obiettivo che il sistema di AI intende risolvere. Questo aiuta a identificare i dati, gli algoritmi e le risorse necessari per costruire un modello efficace.
 
 **Raccogliere e preprocessare dati rilevanti**
 
-La qualità e quantità dei dati utilizzati per l’addestramento influenzano significativamente le prestazioni di un sistema AI. È quindi fondamentale raccogliere dati pertinenti, pulirli, preprocessarli e assicurarsi che rappresentino la popolazione o il problema da affrontare.
+La qualità e la quantità dei dati utilizzati per addestrare un sistema di AI influenzano significativamente le sue prestazioni. È quindi fondamentale raccogliere dati pertinenti, pulirli, preprocessarli e assicurarsi che rappresentino la popolazione o il problema da affrontare.
 
 **Scegliere la valutazione appropriata**
 
-Esistono diversi algoritmi di valutazione; è importante scegliere quello più adatto in base ai dati e al problema specifico.
+Esistono diversi algoritmi di valutazione disponibili. È importante selezionare quello più adatto in base ai dati e al problema specifico.
 
 **Valutare e interpretare il modello**
 
-Una volta costruito il modello AI, è importante valutarne le prestazioni con metriche adeguate e interpretare i risultati in modo trasparente. Questo aiuta a identificare eventuali bias o limiti e a migliorare il modello dove necessario.
+Dopo aver costruito un modello di AI, è essenziale valutarne le prestazioni con metriche appropriate e interpretare i risultati in modo trasparente. Questo aiuta a individuare eventuali pregiudizi o limiti del modello e a migliorarlo quando necessario.
 
 **Garantire trasparenza e spiegabilità**
 
-I sistemi di AI devono essere trasparenti e spiegabili, così che gli utenti possano capire come funzionano e come vengono prese le decisioni. Questo è particolarmente importante in ambiti con impatti significativi sulla vita delle persone, come sanità, finanza e giustizia.
+I sistemi di AI devono essere trasparenti e spiegabili, in modo che gli utenti possano capire come funzionano e come vengono prese le decisioni. Questo è particolarmente importante per applicazioni che hanno un impatto significativo sulla vita delle persone, come sanità, finanza e sistemi legali.
 
 **Monitorare e aggiornare il modello**
 
-I sistemi di AI devono essere monitorati e aggiornati costantemente per mantenere accuratezza ed efficacia nel tempo. Ciò richiede manutenzione continua, test e riaddestramento del modello.
+I sistemi di AI devono essere monitorati e aggiornati continuamente per mantenere accuratezza ed efficacia nel tempo. Ciò richiede manutenzione, test e riaddestramento costanti del modello.
 
-In conclusione, Microsoft Responsible AI è un’iniziativa che supporta sviluppatori e organizzazioni nella creazione di sistemi di AI trasparenti, affidabili e responsabili. Ricorda che implementare un’AI responsabile è fondamentale, e Azure AI Foundry mira a renderla concreta e praticabile per le organizzazioni. Seguendo principi etici e best practice, possiamo garantire che i sistemi di AI siano sviluppati e utilizzati in modo responsabile, a beneficio dell’intera società.
+In conclusione, Microsoft Responsible AI è un’iniziativa che aiuta sviluppatori e organizzazioni a costruire sistemi di AI trasparenti, affidabili e responsabili. Ricorda che l’implementazione responsabile dell’AI è fondamentale, e Azure AI Foundry mira a renderla pratica per le organizzazioni. Seguendo principi etici e migliori pratiche, possiamo garantire che i sistemi di AI vengano sviluppati e utilizzati in modo responsabile, a beneficio della società nel suo complesso.
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali incomprensioni o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

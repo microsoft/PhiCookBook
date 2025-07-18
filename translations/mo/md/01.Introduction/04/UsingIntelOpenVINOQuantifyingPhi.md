@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-07T14:48:15+00:00",
+  "translation_date": "2025-07-16T21:59:29+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "mo"
 }
 -->
-# **Quantizing Phi-3.5 using Intel OpenVINO**
+# **使用 Intel OpenVINO 量化 Phi-3.5**
 
-Intel es el fabricante de CPU más tradicional con muchos usuarios. Con el auge del aprendizaje automático y el aprendizaje profundo, Intel también se ha sumado a la competencia por la aceleración de IA. Para la inferencia de modelos, Intel no solo utiliza GPUs y CPUs, sino también NPUs.
+Intel 是最傳統的 CPU 製造商，擁有眾多用戶。隨著機器學習和深度學習的興起，Intel 也加入了 AI 加速的競爭。對於模型推理，Intel 不僅使用 GPU 和 CPU，還使用 NPU。
 
-Esperamos desplegar la familia Phi-3.x en el extremo, con la intención de convertirse en la parte más importante de las PC de IA y las PC Copilot. La carga del modelo en el extremo depende de la cooperación de diferentes fabricantes de hardware. Este capítulo se centra principalmente en el escenario de aplicación de Intel OpenVINO como modelo cuantitativo.
+我們希望將 Phi-3.x 系列部署在終端設備上，期望成為 AI PC 和 Copilot PC 最重要的部分。終端設備上的模型加載依賴於不同硬體製造商的合作。本章主要聚焦於 Intel OpenVINO 作為量化模型的應用場景。
 
-## **¿Qué es OpenVINO?**
+## **什麼是 OpenVINO**
 
-OpenVINO es un conjunto de herramientas de código abierto para optimizar y desplegar modelos de aprendizaje profundo desde la nube hasta el borde. Acelera la inferencia de aprendizaje profundo en diversos casos de uso, como IA generativa, video, audio y lenguaje, con modelos de frameworks populares como PyTorch, TensorFlow, ONNX y más. Convierte y optimiza modelos, y despliega en una mezcla de hardware y entornos Intel®, ya sea localmente, en el dispositivo, en el navegador o en la nube.
+OpenVINO 是一套開源工具包，用於優化和部署從雲端到邊緣的深度學習模型。它加速了各種應用場景下的深度學習推理，如生成式 AI、視頻、音頻和語言，支援來自 PyTorch、TensorFlow、ONNX 等熱門框架的模型。可轉換並優化模型，並在多種 Intel® 硬體和環境中部署，無論是在本地、設備端、瀏覽器還是雲端。
 
-Con OpenVINO, ahora puedes cuantizar rápidamente el modelo GenAI en hardware Intel y acelerar la referencia del modelo.
+現在，透過 OpenVINO，您可以快速在 Intel 硬體上量化 GenAI 模型並加速模型參考。
 
-Actualmente OpenVINO soporta la conversión de cuantización de Phi-3.5-Vision y Phi-3.5 Instruct.
+目前 OpenVINO 支援 Phi-3.5-Vision 和 Phi-3.5 Instruct 的量化轉換。
 
-### **Configuración del entorno**
+### **環境設置**
 
-Por favor asegúrate de que las siguientes dependencias del entorno estén instaladas, este es requirement.txt
+請確保已安裝以下環境依賴，這是 requirement.txt
 
 ```txt
 
@@ -36,9 +36,9 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **Cuantizando Phi-3.5-Instruct usando OpenVINO**
+### **使用 OpenVINO 量化 Phi-3.5-Instruct**
 
-En la terminal, ejecuta este script
+在終端機中，請執行此腳本
 
 ```bash
 
@@ -52,9 +52,9 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **Cuantizando Phi-3.5-Vision usando OpenVINO**
+### **使用 OpenVINO 量化 Phi-3.5-Vision**
 
-Ejecuta este script en Python o Jupyter lab
+請在 Python 或 Jupyter lab 中執行此腳本
 
 ```python
 
@@ -90,23 +90,19 @@ if not out_dir.exists():
 
 ```
 
-### **🤖 Ejemplos para Phi-3.5 con Intel OpenVINO**
+### **🤖 Phi-3.5 與 Intel OpenVINO 範例**
 
-| Labs    | Introducción | Ir |
+| 實驗室    | 介紹 | 前往 |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | Aprende cómo usar Phi-3.5 Instruct en tu PC de IA    |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (imagen) | Aprende cómo usar Phi-3.5 Vision para analizar imágenes en tu PC de IA      |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | Aprende cómo usar Phi-3.5 Vision para analizar videos en tu PC de IA    |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | 學習如何在您的 AI PC 中使用 Phi-3.5 Instruct    |  [前往](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (影像) | 學習如何使用 Phi-3.5 Vision 在您的 AI PC 中分析影像      |  [前往](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (影片)   | 學習如何使用 Phi-3.5 Vision 在您的 AI PC 中分析影片    |  [前往](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
-## **Recursos**
+## **資源**
 
-1. Aprende más sobre Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
+1. 了解更多 Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
-2. Repositorio GitHub de Intel OpenVINO [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
+2. Intel OpenVINO GitHub 倉庫 [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language or code "mo" refers to? It is not clear which language "mo" indicates. If you mean Moldovan (Romanian), or another language, please confirm so I can provide an accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

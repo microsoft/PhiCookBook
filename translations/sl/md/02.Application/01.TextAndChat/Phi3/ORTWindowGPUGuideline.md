@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-09T18:47:26+00:00",
+  "translation_date": "2025-07-17T02:48:13+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "sl"
 }
 -->
-# **OnnxRuntime GenAI Windows GPU සඳහා මාර්ගෝපදේශය**
+# **Navodila za OnnxRuntime GenAI Windows GPU**
 
-මෙම මාර්ගෝපදේශය Windows හි GPU සමඟ ONNX Runtime (ORT) සකස් කර භාවිතා කිරීම සඳහා පියවර ලබා දෙයි. ඔබේ ආකෘති සඳහා GPU වේගවත් කිරීමෙන් කාර්යක්ෂමතාව සහ කාර්ය සාධනය වැඩි දියුණු කර ගැනීමට මෙය උපකාරී වේ.
+Ta navodila opisujejo korake za nastavitev in uporabo ONNX Runtime (ORT) z GPU-ji na Windows. Namenjena so, da vam pomagajo izkoristiti pospeševanje z GPU za vaše modele, kar izboljša zmogljivost in učinkovitost.
 
-ලේඛනයේ අන්තර්ගතය:
+Dokument vsebuje navodila za:
 
-- පරිසර සකස් කිරීම: CUDA, cuDNN සහ ONNX Runtime වැනි අවශ්‍ය උපකරණ ස්ථාපනය කිරීමේ උපදෙස්.
-- සැකසුම්: GPU සම්පත් කාර්යක්ෂමව භාවිතා කිරීමට පරිසරය සහ ONNX Runtime සැකසීම.
-- කාර්යක්ෂමතා වැඩිදියුණු කිරීමේ උපදෙස්: ඔබගේ GPU සැකසුම් හොඳම ප්‍රතිදානය සඳහා සුදුසු ලෙස වෙනස් කිරීමේ උපදෙස්.
+- Nastavitev okolja: Navodila za namestitev potrebnih odvisnosti, kot so CUDA, cuDNN in ONNX Runtime.
+- Konfiguracijo: Kako nastaviti okolje in ONNX Runtime za učinkovito uporabo GPU virov.
+- Nasvete za optimizacijo: Priporočila za fino nastavitev GPU nastavitev za optimalno delovanje.
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** Python පරිසරයක් ලෙස [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) භාවිතා කිරීමට යෝජනා කරයි
+   ***Note*** Priporočamo uporabo [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) kot vaše Python okolje
 
    ```bash
 
@@ -29,9 +29,9 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   ***Reminder*** Python ONNX පුස්තකාලය කිසිවක් ස්ථාපනය කර තිබේ නම්, ඒවා ඉවත් කරන්න
+   ***Reminder*** Če imate nameščeno katerokoli Python ONNX knjižnico, jo prosim odstranite
 
-### **2. CMake winget මඟින් ස්ථාපනය කරන්න**
+### **2. Namestitev CMake z winget**
 
    ```bash
 
@@ -39,13 +39,13 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-### **3. Visual Studio 2022 - Desktop Development with C++ ස්ථාපනය කරන්න**
+### **3. Namestitev Visual Studio 2022 - Desktop Development with C++**
 
-   ***Note*** ඔබට සංකලනය කිරීමට අවශ්‍ය නැත්නම් මෙම පියවර මඟහැරිය හැක
+   ***Note*** Če ne želite prevajati, lahko ta korak preskočite
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.sl.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.sl.png)
 
-### **4. NVIDIA ධාවකය ස්ථාපනය කරන්න**
+### **4. Namestitev NVIDIA gonilnika**
 
 1. **NVIDIA GPU Driver**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
@@ -53,19 +53,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** ස්ථාපන ක්‍රියාවලිය සඳහා පෙරනිමි සැකසුම් භාවිතා කරන්න
+***Reminder*** Prosimo, uporabite privzete nastavitve med namestitvijo
 
-### **5. NVIDIA පරිසරය සකසන්න**
+### **5. Nastavitev NVIDIA okolja**
 
-NVIDIA CUDNN 9.4 හි lib, bin, include ෆෝල්ඩර් CUDA 12.4 හි lib, bin, include වෙත පිටපත් කරන්න
+Kopirajte NVIDIA CUDNN 9.4 datoteke iz map lib, bin, include v ustrezne mape NVIDIA CUDA 12.4
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* ෆයිල් *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'* වෙත පිටපත් කරන්න
+- kopirajte datoteke iz *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* v *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* ෆයිල් *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'* වෙත පිටපත් කරන්න
+- kopirajte datoteke iz *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* v *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* ෆයිල් *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* වෙත පිටපත් කරන්න
+- kopirajte datoteke iz *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* v *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
-### **6. Phi-3.5-mini-instruct-onnx බාගන්න**
+### **6. Prenos Phi-3.5-mini-instruct-onnx**
 
    ```bash
 
@@ -79,17 +79,17 @@ NVIDIA CUDNN 9.4 හි lib, bin, include ෆෝල්ඩර් CUDA 12.4 හි
 
    ```
 
-### **7. InferencePhi35Instruct.ipynb ධාවනය කරන්න**
+### **7. Zagon InferencePhi35Instruct.ipynb**
 
-   [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) විවෘත කර ක්‍රියාත්මක කරන්න
+   Odprite [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) in ga zaženite
 
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.sl.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.sl.png)
 
-### **8. ORT GenAI GPU සංකලනය කරන්න**
+### **8. Prevajanje ORT GenAI GPU**
 
    ***Note*** 
    
-   1. පළමුව onnx, onnxruntime සහ onnxruntime-genai සම්බන්ධ සියලුම දේ ඉවත් කරන්න
+   1. Najprej odstranite vse pakete, povezane z onnx, onnxruntime in onnxruntime-genai
 
    ```bash
 
@@ -97,7 +97,7 @@ NVIDIA CUDNN 9.4 හි lib, bin, include ෆෝල්ඩර් CUDA 12.4 හි
    
    ```
 
-   පසුව සියලු onnxruntime පුස්තකාල ඉවත් කරන්න, උදාහරණයක් ලෙස:
+   Nato odstranite vse onnxruntime knjižnice, npr.
 
    ```bash
 
@@ -109,13 +109,13 @@ NVIDIA CUDNN 9.4 හි lib, bin, include ෆෝල්ඩර් CUDA 12.4 හි
    
    ```
 
-   2. Visual Studio විස්තාරක සහය පරීක්ෂා කරන්න
+   2. Preverite podporo Visual Studio Extension
 
-   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras හි C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration ෆෝල්ඩරය තිබේදැයි පරීක්ෂා කරන්න.
+   Preverite mapo C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras, da zagotovite, da obstaja C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
+   
+   Če ni najdena, preverite druge mape Cuda toolkit gonilnikov in kopirajte mapo visual_studio_integration ter njeno vsebino v C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
-   නොමැතිනම්, අනෙක් CUDA toolkit ධාවක ෆෝල්ඩර පරීක්ෂා කර visual_studio_integration ෆෝල්ඩරය සහ අන්තර්ගතය C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration වෙත පිටපත් කරන්න
-
-   - සංකලනය කිරීමට අවශ්‍ය නොවන්නේ නම් මෙම පියවර මඟහැරිය හැක
+   - Če ne želite prevajati, lahko ta korak preskočite
 
    ```bash
 
@@ -123,15 +123,15 @@ NVIDIA CUDNN 9.4 හි lib, bin, include ෆෝල්ඩර් CUDA 12.4 හි
 
    ```
 
-   - [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip) බාගන්න
+   - Prenesite [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - onnxruntime-win-x64-gpu-1.19.2.zip විහිදා **ort** ලෙස නැවත නම් කර onnxruntime-genai වෙත ort ෆෝල්ඩරය පිටපත් කරන්න
+   - Razširite onnxruntime-win-x64-gpu-1.19.2.zip, preimenujte mapo v **ort** in jo kopirajte v onnxruntime-genai
 
-   - Windows Terminal භාවිතා කර VS 2022 සඳහා Developer Command Prompt වෙත ගොස් onnxruntime-genai වෙත යන්න
+   - Uporabite Windows Terminal, odprite Developer Command Prompt za VS 2022 in pojdite v onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.sl.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.sl.png)
 
-   - ඔබගේ python පරිසරයෙන් එය සංකලනය කරන්න
+   - Prevedite z vašim Python okoljem
 
    ```bash
 
@@ -146,5 +146,5 @@ NVIDIA CUDNN 9.4 හි lib, bin, include ෆෝල්ඩර් CUDA 12.4 හි
 
    ```
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku naj velja za zanesljiv vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

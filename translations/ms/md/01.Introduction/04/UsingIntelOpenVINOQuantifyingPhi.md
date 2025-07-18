@@ -2,28 +2,29 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T14:00:03+00:00",
+  "translation_date": "2025-07-16T22:03:12+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "ms"
 }
 -->
-# **استخدام Intel OpenVINO لتكميم Phi-3.5**
+# **Mengkuantifikasi Phi-3.5 menggunakan Intel OpenVINO**
 
-تُعتبر Intel من أقدم مصنعي وحدات المعالجة المركزية ولديها العديد من المستخدمين. مع تزايد استخدام التعلم الآلي والتعلم العميق، انضمت Intel أيضًا إلى سباق تسريع الذكاء الاصطناعي. في استدلال النماذج، لا تستخدم Intel فقط وحدات المعالجة الرسومية ووحدات المعالجة المركزية، بل تستخدم أيضًا وحدات المعالجة العصبية (NPU).
+Intel adalah pengeluar CPU yang paling tradisional dengan ramai pengguna. Dengan kemunculan pembelajaran mesin dan pembelajaran mendalam, Intel juga telah menyertai persaingan untuk pecutan AI. Untuk inferens model, Intel bukan sahaja menggunakan GPU dan CPU, tetapi juga menggunakan NPU.
 
-نأمل في نشر عائلة Phi-3.x على الطرف النهائي، مع الطموح لتصبح الجزء الأهم في أجهزة AI PC و Copilot PC. تحميل النموذج على الطرف النهائي يعتمد على تعاون مختلف مصنعي الأجهزة. يركز هذا الفصل بشكل رئيسي على سيناريو تطبيق Intel OpenVINO كنموذج كمي.
+Kami berharap dapat melaksanakan Keluarga Phi-3.x di sisi akhir, dengan harapan menjadi bahagian paling penting dalam PC AI dan PC Copilot. Pemuatan model di sisi akhir bergantung pada kerjasama pelbagai pengeluar perkakasan. Bab ini memberi tumpuan utama kepada senario aplikasi Intel OpenVINO sebagai model kuantitatif.
 
-## **ما هو OpenVINO**
 
-OpenVINO هو مجموعة أدوات مفتوحة المصدر لتحسين ونشر نماذج التعلم العميق من السحابة إلى الطرف النهائي. يسرع استدلال التعلم العميق في مختلف حالات الاستخدام، مثل الذكاء الاصطناعي التوليدي، الفيديو، الصوت، واللغة باستخدام نماذج من أُطر عمل شهيرة مثل PyTorch، TensorFlow، ONNX، وغيرها. يمكنك تحويل وتحسين النماذج، ونشرها عبر مجموعة متنوعة من أجهزة وبرمجيات Intel®، سواء في بيئة محلية أو على الجهاز، في المتصفح أو في السحابة.
+## **Apa itu OpenVINO**
 
-الآن مع OpenVINO، يمكنك بسرعة تكميم نموذج GenAI على أجهزة Intel وتسريع استدلال النموذج.
+OpenVINO adalah toolkit sumber terbuka untuk mengoptimumkan dan melaksanakan model pembelajaran mendalam dari awan ke tepi. Ia mempercepatkan inferens pembelajaran mendalam merentasi pelbagai kes penggunaan, seperti AI generatif, video, audio, dan bahasa dengan model dari rangka kerja popular seperti PyTorch, TensorFlow, ONNX, dan lain-lain. Tukar dan optimakan model, dan laksanakan merentasi gabungan perkakasan dan persekitaran Intel®, sama ada di premis dan peranti, dalam pelayar atau di awan.
 
-يدعم OpenVINO الآن تحويل التكميم لنماذج Phi-3.5-Vision و Phi-3.5 Instruct
+Kini dengan OpenVINO, anda boleh dengan cepat mengkuantifikasi model GenAI dalam perkakasan Intel dan mempercepatkan rujukan model.
 
-### **إعداد البيئة**
+Kini OpenVINO menyokong penukaran kuantisasi bagi Phi-3.5-Vision dan Phi-3.5 Instruct
 
-يرجى التأكد من تثبيت تبعيات البيئة التالية، هذا هو ملف requirement.txt
+### **Persediaan Persekitaran**
+
+Sila pastikan kebergantungan persekitaran berikut dipasang, ini adalah requirement.txt 
 
 ```txt
 
@@ -36,9 +37,10 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **تكميم Phi-3.5-Instruct باستخدام OpenVINO**
+### **Mengkuantifikasi Phi-3.5-Instruct menggunakan OpenVINO**
 
-في الطرفية، يرجى تشغيل هذا السكربت
+Di Terminal, sila jalankan skrip ini
+
 
 ```bash
 
@@ -52,9 +54,9 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **تكميم Phi-3.5-Vision باستخدام OpenVINO**
+### **Mengkuantifikasi Phi-3.5-Vision menggunakan OpenVINO**
 
-يرجى تشغيل هذا السكربت في Python أو Jupyter lab
+Sila jalankan skrip ini dalam Python atau Jupyter lab
 
 ```python
 
@@ -90,19 +92,21 @@ if not out_dir.exists():
 
 ```
 
-### **🤖 عينات لـ Phi-3.5 مع Intel OpenVINO**
+### **🤖 Contoh untuk Phi-3.5 dengan Intel OpenVINO**
 
-| المختبرات  | التعريف | ابدأ |
-| -------- | ------- | ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | تعلّم كيفية استخدام Phi-3.5 Instruct في جهاز AI PC الخاص بك    |  [اذهب](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (صورة) | تعلّم كيفية استخدام Phi-3.5 Vision لتحليل الصور في جهاز AI PC الخاص بك      |  [اذهب](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (فيديو)   | تعلّم كيفية استخدام Phi-3.5 Vision لتحليل الفيديو في جهاز AI PC الخاص بك    |  [اذهب](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| Makmal    | Pengenalan | Pergi |
+| -------- | ------- |  ------- |
+| 🚀 Lab-Pengenalan Phi-3.5 Instruct  | Pelajari cara menggunakan Phi-3.5 Instruct dalam PC AI anda    |  [Pergi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Pengenalan Phi-3.5 Vision (imej) | Pelajari cara menggunakan Phi-3.5 Vision untuk menganalisis imej dalam PC AI anda      |  [Pergi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Pengenalan Phi-3.5 Vision (video)   | Pelajari cara menggunakan Phi-3.5 Vision untuk menganalisis imej dalam PC AI anda    |  [Pergi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
-## **المصادر**
 
-1. تعرّف أكثر على Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
-2. مستودع Intel OpenVINO على GitHub [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
+## **Sumber**
+
+1. Ketahui lebih lanjut mengenai Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
+
+2. Repositori GitHub Intel OpenVINO [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat kritikal, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

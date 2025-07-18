@@ -2,57 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:41:27+00:00",
+  "translation_date": "2025-07-17T02:36:46+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "hr"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) je open-source platforma dizajnirana za upravljanje kompletnim životnim ciklusom strojnog učenja.
+[MLflow](https://mlflow.org/) je open-source platforma dizajnirana za upravljanje cjelokupnim životnim ciklusom strojnog učenja.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.hr.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.hr.png)
 
-MLFlow se koristi za upravljanje životnim ciklusom ML-a, uključujući eksperimentiranje, reproduktivnost, implementaciju i centralni registar modela. MLflow trenutno nudi četiri komponente.
+MLFlow se koristi za upravljanje životnim ciklusom strojnog učenja, uključujući eksperimentiranje, reproducibilnost, implementaciju i centralni registar modela. Trenutno MLflow nudi četiri komponente.
 
-- **MLflow Tracking:** Snimanje i upit eksperimenta, koda, konfiguracije podataka i rezultata.
-- **MLflow Projects:** Pakiranje data science koda u format koji omogućava reprodukciju pokretanja na bilo kojoj platformi.
-- **Mlflow Models:** Implementacija modela strojnog učenja u različitim okruženjima za servisiranje.
+- **MLflow Tracking:** Evidentiranje i pretraživanje eksperimenata, koda, konfiguracije podataka i rezultata.
+- **MLflow Projects:** Pakiranje koda za podatkovnu znanost u format koji omogućuje reproduciranje pokretanja na bilo kojoj platformi.
+- **Mlflow Models:** Implementacija modela strojnog učenja u različitim okruženjima za posluživanje.
 - **Model Registry:** Pohrana, označavanje i upravljanje modelima u centralnom spremištu.
 
-Obuhvaća mogućnosti za praćenje eksperimenata, pakiranje koda u reproducibilne pokrete, te dijeljenje i implementaciju modela. MLFlow je integriran u Databricks i podržava razne ML biblioteke, čineći ga neovisnim o biblioteci. Može se koristiti s bilo kojom bibliotekom strojnog učenja i u bilo kojem programskom jeziku, jer pruža REST API i CLI za praktičnost.
+Uključuje mogućnosti za praćenje eksperimenata, pakiranje koda u reproducibilne pokrete te dijeljenje i implementaciju modela. MLFlow je integriran u Databricks i podržava razne ML biblioteke, što ga čini neovisnim o biblioteci. Može se koristiti s bilo kojom bibliotekom strojnog učenja i u bilo kojem programskom jeziku, jer pruža REST API i CLI radi praktičnosti.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.hr.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.hr.png)
 
 Ključne značajke MLFlow uključuju:
 
-- **Praćenje eksperimenata:** Snimanje i usporedba parametara i rezultata.
-- **Upravljanje modelima:** Implementacija modela na različite platforme za servisiranje i inferenciju.
-- **Model Registry:** Zajedničko upravljanje životnim ciklusom MLflow modela, uključujući verzioniranje i anotacije.
-- **Projects:** Pakiranje ML koda za dijeljenje ili produkcijsku upotrebu.  
-MLFlow također podržava MLOps petlju, koja uključuje pripremu podataka, registraciju i upravljanje modelima, pakiranje modela za izvršavanje, implementaciju servisa i nadzor modela. Cilj je pojednostaviti proces prelaska od prototipa do produkcijskog tijeka rada, posebno u cloud i edge okruženjima.
+- **Praćenje eksperimenata:** Evidentiranje i usporedba parametara i rezultata.
+- **Upravljanje modelima:** Implementacija modela na različite platforme za posluživanje i izvođenje.
+- **Model Registry:** Zajedničko upravljanje životnim ciklusom MLflow modela, uključujući verzioniranje i označavanje.
+- **Projects:** Pakiranje ML koda za dijeljenje ili produkcijsku upotrebu.
 
-## E2E Scenario - Izgradnja wrappera i korištenje Phi-3 kao MLFlow modela
+MLFlow također podržava MLOps ciklus, koji uključuje pripremu podataka, registraciju i upravljanje modelima, pakiranje modela za izvršavanje, implementaciju servisa i nadzor modela. Cilj mu je pojednostaviti prijelaz od prototipa do produkcijskog tijeka rada, osobito u cloud i edge okruženjima.
 
-U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko malog jezičnog modela Phi-3 (SLM), a zatim njegovo pokretanje kao MLFlow modela lokalno ili u oblaku, npr. u Azure Machine Learning workspace-u.
+## E2E scenarij - Izrada omotača i korištenje Phi-3 kao MLFlow modela
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.hr.png)
+U ovom E2E primjeru prikazat ćemo dva različita pristupa izradi omotača oko malog jezičnog modela Phi-3 (SLM) i njegovo pokretanje kao MLFlow modela lokalno ili u oblaku, npr. u Azure Machine Learning radnom prostoru.
+
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.hr.png)
 
 | Projekt | Opis | Lokacija |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline je najjednostavnija opcija za izgradnju wrappera ako želite koristiti HuggingFace model s eksperimentalnim transformers okusom MLFlowa. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | U trenutku pisanja, transformer pipeline nije podržavao generiranje MLFlow wrappera za HuggingFace modele u ONNX formatu, čak ni s eksperimentalnim optimum Python paketom. Za takve slučajeve možete izgraditi vlastiti Python wrapper za MLFlow model. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline je najjednostavnija opcija za izradu omotača ako želite koristiti HuggingFace model s eksperimentalnim transformers okusom MLFlow-a. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | U trenutku pisanja, transformer pipeline nije podržavao generiranje MLFlow omotača za HuggingFace modele u ONNX formatu, čak ni s eksperimentalnim optimum Python paketom. Za takve slučajeve možete izraditi vlastiti Python omotač za MLFlow model. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Projekt: Transformer Pipeline
 
-1. Trebat će vam relevantni Python paketi iz MLFlowa i HuggingFacea:
+1. Trebat će vam odgovarajući Python paketi iz MLFlow i HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Zatim biste trebali inicijalizirati transformer pipeline pozivajući ciljanu Phi-3 verziju modela u HuggingFace registru. Kao što se vidi iz kartice modela _Phi-3-mini-4k-instruct_, njegov zadatak je tipa „Text Generation“:
+2. Zatim biste trebali inicijalizirati transformer pipeline pozivajući ciljani Phi-3 model iz HuggingFace registra. Kao što se vidi iz kartice modela _Phi-3-mini-4k-instruct_, njegov zadatak je tipa „Text Generation“:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -61,7 +62,7 @@ U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko
     )
     ```
 
-3. Sada možete spremiti transformer pipeline vašeg Phi-3 modela u MLFlow format i dati dodatne detalje kao što su ciljna putanja artefakata, specifične konfiguracije modela i tip inference API-ja:
+3. Sada možete spremiti transformer pipeline vašeg Phi-3 modela u MLFlow format i pružiti dodatne detalje poput ciljne putanje artefakata, specifičnih postavki konfiguracije modela i tipa inference API-ja:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -74,7 +75,7 @@ U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko
 
 ## Projekt: Custom Python Wrapper
 
-1. Ovdje možemo koristiti Microsoftov [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) za inferenciju ONNX modela i kodiranje/dekodiranje tokena. Trebate odabrati _onnxruntime_genai_ paket za ciljnu računsku jedinicu, u donjem primjeru je to CPU:
+1. Ovdje možemo iskoristiti Microsoftov [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) za izvođenje inferencije ONNX modela i kodiranje/dekodiranje tokena. Morate odabrati _onnxruntime_genai_ paket za ciljanu računalnu platformu, a u donjem primjeru je cilj CPU:
 
     ``` Python
     import mlflow
@@ -82,7 +83,7 @@ U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko
     import onnxruntime_genai as og
     ```
 
-1. Naša prilagođena klasa implementira dvije metode: _load_context()_ za inicijalizaciju **ONNX modela** Phi-3 Mini 4K Instruct, **parametara generatora** i **tokenizera**; te _predict()_ za generiranje izlaznih tokena za zadani prompt:
+1. Naša prilagođena klasa implementira dvije metode: _load_context()_ za inicijalizaciju **ONNX modela** Phi-3 Mini 4K Instruct, **parametara generatora** i **tokenizatora**; te _predict()_ za generiranje izlaznih tokena za zadani prompt:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -113,7 +114,7 @@ U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Sada možete koristiti funkciju _mlflow.pyfunc.log_model()_ za generiranje prilagođenog Python wrappera (u pickle formatu) za Phi-3 model, zajedno s originalnim ONNX modelom i potrebnim ovisnostima:
+1. Sada možete koristiti funkciju _mlflow.pyfunc.log_model()_ za generiranje prilagođenog Python omotača (u pickle formatu) za Phi-3 model, zajedno s izvornim ONNX modelom i potrebnim ovisnostima:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -130,7 +131,7 @@ U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko
 
 ## Potpisi generiranih MLFlow modela
 
-1. U koraku 3 projekta Transformer Pipeline gore, postavili smo zadatak MLFlow modela na „_llm/v1/chat_“. Takva uputa generira API wrapper modela kompatibilan s OpenAI Chat API-jem, kao što je prikazano dolje:
+1. U koraku 3 projekta Transformer Pipeline gore, postavili smo zadatak MLFlow modela na „_llm/v1/chat_“. Takva uputa generira API omotač modela, kompatibilan s OpenAI Chat API-jem kao što je prikazano dolje:
 
     ``` Python
     {inputs: 
@@ -147,7 +148,7 @@ U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Zatim, koristite OpenAI API-kompatibilnu postprocesiranje, npr. _response[0][‘choices’][0][‘message’][‘content’]_, kako biste ulaz uredili u nešto poput ovoga:
+1. Zatim koristite postprocesiranje kompatibilno s OpenAI API-jem, npr. _response[0][‘choices’][0][‘message’][‘content’]_, kako biste ulazni odgovor oblikovali u nešto poput ovoga:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -157,7 +158,7 @@ U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. U koraku 3 projekta Custom Python Wrapper gore, dopuštamo MLFlow paketu da generira potpis modela iz danog primjera ulaza. Potpis našeg MLFlow wrappera izgledat će ovako:
+1. U koraku 3 projekta Custom Python Wrapper gore, dopuštamo MLFlow paketu da generira potpis modela na temelju danog primjera ulaza. Potpis našeg MLFlow omotača izgledat će ovako:
 
     ``` Python
     {inputs: 
@@ -174,7 +175,7 @@ U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Izlaz modela bit će tada dostavljen u obliku stringa:
+1. Izlaz modela tada će biti dan u obliku stringa:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -187,4 +188,4 @@ U ovom E2E primjeru pokazat ćemo dva različita pristupa izgradnji wrappera oko
     ```
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je korištenjem AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazumevanja ili kriva tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

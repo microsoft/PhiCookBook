@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T04:23:58+00:00",
+  "translation_date": "2025-07-16T15:52:17+00:00",
   "source_file": "code/03.Finetuning/olive-lab/readme.md",
   "language_code": "pl"
 }
@@ -12,65 +12,65 @@ CO_OP_TRANSLATOR_METADATA:
 ## Wprowadzenie
 
 > [!IMPORTANT]  
-> To laboratorium wymaga **karty graficznej Nvidia A10 lub A100** z zainstalowanymi odpowiednimi sterownikami i zestawem narzędzi CUDA (wersja 12+).
+> To laboratorium wymaga **karty graficznej Nvidia A10 lub A100** z zainstalowanymi odpowiednimi sterownikami oraz zestawem narzędzi CUDA (wersja 12+).
 
 > [!NOTE]  
-> To jest **35-minutowe** laboratorium, które pozwoli Ci praktycznie zapoznać się z podstawowymi koncepcjami optymalizacji modeli pod kątem inferencji na urządzeniu przy użyciu OLIVE.
+> To jest **35-minutowe** laboratorium, które pozwoli Ci praktycznie poznać podstawowe koncepcje optymalizacji modeli do inferencji na urządzeniu za pomocą OLIVE.
 
 ## Cele nauki
 
-Po zakończeniu tego laboratorium będziesz potrafił używać OLIVE do:
+Po ukończeniu tego laboratorium będziesz potrafił używać OLIVE do:
 
-- Kwantyzacji modelu AI metodą kwantyzacji AWQ.  
-- Dostrajenia modelu AI do konkretnego zadania.  
-- Generowania adapterów LoRA (dostrojony model) dla efektywnej inferencji na urządzeniu za pomocą ONNX Runtime.
+- Kwantyzacji modelu AI metodą AWQ.
+- Dostosowania modelu AI do konkretnego zadania.
+- Generowania adapterów LoRA (modeli dostrojonych) do efektywnej inferencji na urządzeniu za pomocą ONNX Runtime.
 
 ### Czym jest Olive
 
-Olive (*O*NNX *live*) to zestaw narzędzi do optymalizacji modeli wraz z towarzyszącym CLI, który umożliwia dostarczanie modeli dla środowiska ONNX runtime +++https://onnxruntime.ai+++ z zachowaniem jakości i wydajności.
+Olive (*O*NNX *live*) to zestaw narzędzi do optymalizacji modeli wraz z CLI, który umożliwia dostarczanie modeli dla środowiska ONNX runtime +++https://onnxruntime.ai+++ z zachowaniem jakości i wydajności.
 
-![Olive Flow](../../../../../translated_images/olive-flow.5beac74493fb2216eb8578519cfb1c4a1e752a3536bc755c4545bd0959634684.pl.png)
+![Olive Flow](../../../../../translated_images/olive-flow.a47985655a756dcba73521511ea42eef359509a3a33cbd4b9ac04ba433287b80.pl.png)
 
-Wejściem do Olive jest zazwyczaj model PyTorch lub Hugging Face, a wyjściem jest zoptymalizowany model ONNX, który jest uruchamiany na urządzeniu (cel wdrożenia) z działającym środowiskiem ONNX runtime. Olive optymalizuje model pod kątem akceleratora AI (NPU, GPU, CPU) dostarczonego przez producenta sprzętu, takiego jak Qualcomm, AMD, Nvidia czy Intel.
+Wejściem do Olive jest zazwyczaj model PyTorch lub Hugging Face, a wyjściem zoptymalizowany model ONNX, który jest wykonywany na urządzeniu (docelowym środowisku wdrożeniowym) z uruchomionym ONNX runtime. Olive optymalizuje model pod kątem akceleratora AI (NPU, GPU, CPU) dostarczonego przez producenta sprzętu, takiego jak Qualcomm, AMD, Nvidia czy Intel.
 
-Olive wykonuje *workflow*, czyli uporządkowany ciąg zadań optymalizacji modelu zwanych *passes* – przykładowe passes to: kompresja modelu, przechwytywanie grafu, kwantyzacja, optymalizacja grafu. Każdy pass ma zestaw parametrów, które można dostroić, aby osiągnąć najlepsze metryki, np. dokładność i opóźnienie, oceniane przez odpowiedni evaluator. Olive stosuje strategię poszukiwania, która wykorzystuje algorytm do automatycznego dostrajania kolejno każdego pass lub zestawu pass.
+Olive wykonuje *workflow*, czyli uporządkowaną sekwencję pojedynczych zadań optymalizacji modelu zwanych *passes* – przykładowe passes to: kompresja modelu, przechwytywanie grafu, kwantyzacja, optymalizacja grafu. Każdy pass ma zestaw parametrów, które można dostroić, aby osiągnąć najlepsze metryki, takie jak dokładność i opóźnienie, oceniane przez odpowiedni evaluator. Olive stosuje strategię wyszukiwania, która wykorzystuje algorytm do automatycznego dostrajania każdego pass pojedynczo lub zestawu passów razem.
 
 #### Zalety Olive
 
-- **Zmniejszenie frustracji i czasu** na ręczne eksperymenty metodami prób i błędów w optymalizacji grafu, kompresji i kwantyzacji. Zdefiniuj swoje ograniczenia jakości i wydajności, a Olive automatycznie znajdzie najlepszy model dla Ciebie.  
-- **Ponad 40 wbudowanych komponentów optymalizacji modeli**, obejmujących najnowsze techniki kwantyzacji, kompresji, optymalizacji grafu i dostrajania.  
-- **Łatwe w użyciu CLI** do powszechnych zadań optymalizacji modeli, np. olive quantize, olive auto-opt, olive finetune.  
-- Wbudowane pakowanie i wdrażanie modeli.  
-- Obsługa generowania modeli dla **Multi LoRA serving**.  
-- Budowanie workflow za pomocą YAML/JSON do organizacji zadań optymalizacji i wdrażania modeli.  
-- Integracja z **Hugging Face** i **Azure AI**.  
-- Wbudowany mechanizm **cache’owania** dla **oszczędności kosztów**.
+- **Zmniejsza frustrację i czas** związany z ręcznym eksperymentowaniem metodami optymalizacji grafu, kompresji i kwantyzacji. Określ swoje wymagania dotyczące jakości i wydajności, a Olive automatycznie znajdzie najlepszy model.
+- **Ponad 40 wbudowanych komponentów optymalizacji modeli** obejmujących najnowsze techniki kwantyzacji, kompresji, optymalizacji grafu i dostrajania.
+- **Łatwe w użyciu CLI** do typowych zadań optymalizacji modeli, np. olive quantize, olive auto-opt, olive finetune.
+- Wbudowane pakowanie i wdrażanie modeli.
+- Obsługa generowania modeli dla **Multi LoRA serving**.
+- Tworzenie workflow za pomocą YAML/JSON do orkiestracji zadań optymalizacji i wdrażania modeli.
+- Integracja z **Hugging Face** i **Azure AI**.
+- Wbudowany mechanizm **cache’owania** pozwalający **oszczędzać koszty**.
 
 ## Instrukcje do laboratorium
 
 > [!NOTE]  
-> Upewnij się, że masz skonfigurowany Azure AI Hub i projekt oraz przygotowany obliczeniowy klaster A100 zgodnie z Lab 1.
+> Upewnij się, że masz skonfigurowany Azure AI Hub i projekt oraz ustawiony obliczeniowy węzeł A100 zgodnie z Lab 1.
 
-### Krok 0: Połącz się ze swoim Azure AI Compute
+### Krok 0: Połącz się z Azure AI Compute
 
-Połączysz się z obliczeniami Azure AI używając funkcji zdalnego dostępu w **VS Code**.
+Połączysz się z Azure AI compute za pomocą funkcji zdalnej w **VS Code**.
 
-1. Otwórz aplikację **VS Code** na komputerze.  
-1. Otwórz **paletę poleceń** za pomocą **Shift+Ctrl+P**.  
-1. W palecie poleceń wyszukaj **AzureML - remote: Connect to compute instance in New Window**.  
-1. Postępuj zgodnie z instrukcjami wyświetlanymi na ekranie, aby połączyć się z obliczeniami. Będzie to wymagało wybrania subskrypcji Azure, grupy zasobów, projektu i nazwy klastra obliczeniowego skonfigurowanego w Lab 1.  
-1. Po połączeniu z węzłem Azure ML Compute pojawi się to w **lewem dolnym rogu Visual Studio Code** `><Azure ML: Compute Name`
+1. Otwórz aplikację **VS Code** na komputerze.
+2. Otwórz **paletę poleceń** za pomocą **Shift+Ctrl+P**.
+3. W palecie poleceń wyszukaj **AzureML - remote: Connect to compute instance in New Window**.
+4. Postępuj zgodnie z instrukcjami na ekranie, aby połączyć się z Compute. Będzie to wymagało wybrania subskrypcji Azure, grupy zasobów, projektu oraz nazwy Compute, które ustawiłeś w Lab 1.
+5. Po połączeniu z węzłem Azure ML Compute, jego nazwa pojawi się w **lewym dolnym rogu Visual Studio Code** jako `><Azure ML: Compute Name`.
 
 ### Krok 1: Sklonuj repozytorium
 
-W VS Code możesz otworzyć nowy terminal za pomocą **Ctrl+J** i sklonować to repozytorium:
+W VS Code otwórz nowy terminal za pomocą **Ctrl+J** i sklonuj to repozytorium:
 
-W terminalu pojawi się zachęta
+W terminalu powinien pojawić się prompt
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
 ```  
-Sklonuj rozwiązanie  
+Sklonuj rozwiązanie
 
 ```bash
 cd ~/localfiles
@@ -79,17 +79,17 @@ git clone https://github.com/microsoft/phi-3cookbook.git
 
 ### Krok 2: Otwórz folder w VS Code
 
-Aby otworzyć VS Code w odpowiednim folderze, wykonaj następujące polecenie w terminalu, które otworzy nowe okno:
+Aby otworzyć VS Code w odpowiednim folderze, wykonaj poniższe polecenie w terminalu, które otworzy nowe okno:
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
 ```
 
-Alternatywnie możesz otworzyć folder wybierając **Plik** > **Otwórz folder**.
+Alternatywnie możesz otworzyć folder, wybierając **Plik** > **Otwórz folder**.
 
 ### Krok 3: Zależności
 
-Otwórz okno terminala w VS Code na Twoim Azure AI Compute Instance (skrót: **Ctrl+J**) i wykonaj poniższe polecenia, aby zainstalować zależności:
+Otwórz terminal w VS Code na swoim Azure AI Compute Instance (skrót: **Ctrl+J**) i wykonaj poniższe polecenia, aby zainstalować zależności:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -102,18 +102,18 @@ az extension add -n ml
 > [!NOTE]  
 > Instalacja wszystkich zależności zajmie około 5 minut.
 
-W tym laboratorium będziesz pobierać i przesyłać modele do katalogu modeli Azure AI. Aby mieć dostęp do katalogu modeli, musisz zalogować się do Azure używając:
+W tym laboratorium będziesz pobierać i przesyłać modele do katalogu modeli Azure AI. Aby uzyskać dostęp do katalogu modeli, musisz zalogować się do Azure za pomocą:
 
 ```bash
 az login
 ```
 
 > [!NOTE]  
-> Podczas logowania zostaniesz poproszony o wybranie subskrypcji. Upewnij się, że wybierasz tę przypisaną do tego laboratorium.
+> Podczas logowania zostaniesz poproszony o wybranie subskrypcji. Upewnij się, że wybierasz subskrypcję przypisaną do tego laboratorium.
 
 ### Krok 4: Wykonaj polecenia Olive
 
-Otwórz terminal w VS Code na swoim Azure AI Compute Instance (skrót: **Ctrl+J**) i upewnij się, że środowisko conda `olive-ai` jest aktywne:
+Otwórz terminal w VS Code na swoim Azure AI Compute Instance (skrót: **Ctrl+J**) i upewnij się, że środowisko `olive-ai` jest aktywne:
 
 ```bash
 conda activate olive-ai
@@ -121,13 +121,13 @@ conda activate olive-ai
 
 Następnie wykonaj poniższe polecenia Olive w wierszu poleceń.
 
-1. **Sprawdź dane:** W tym przykładzie będziesz dostrajać model Phi-3.5-Mini, aby był specjalistą od odpowiadania na pytania związane z podróżami. Poniższy kod wyświetla pierwsze rekordy zbioru danych w formacie JSON lines:
+1. **Sprawdź dane:** W tym przykładzie dostroisz model Phi-3.5-Mini, aby specjalizował się w odpowiadaniu na pytania związane z podróżami. Poniższy kod wyświetla pierwsze rekordy zbioru danych w formacie JSON lines:
 
     ```bash
     head data/data_sample_travel.jsonl
     ```
 
-1. **Kwantyzuj model:** Przed trenowaniem modelu najpierw wykonaj kwantyzację za pomocą polecenia używającego techniki Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ kwantyzuje wagi modelu biorąc pod uwagę aktywacje generowane podczas inferencji. Oznacza to, że proces kwantyzacji uwzględnia rzeczywisty rozkład danych w aktywacjach, co pozwala lepiej zachować dokładność modelu w porównaniu do tradycyjnych metod kwantyzacji wag.
+2. **Kwantyzuj model:** Przed trenowaniem modelu najpierw wykonaj kwantyzację za pomocą polecenia wykorzystującego technikę Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ kwantyzuje wagi modelu, biorąc pod uwagę aktywacje generowane podczas inferencji. Oznacza to, że proces kwantyzacji uwzględnia rzeczywisty rozkład danych w aktywacjach, co pozwala lepiej zachować dokładność modelu w porównaniu do tradycyjnych metod kwantyzacji wag.
 
     ```bash
     olive quantize \
@@ -138,11 +138,11 @@ Następnie wykonaj poniższe polecenia Olive w wierszu poleceń.
        --log_level 1
     ```
 
-    Kwantyzacja AWQ zajmuje **około 8 minut** i **zmniejsza rozmiar modelu z ~7,5GB do ~2,5GB**.
+    Kwantyzacja AWQ zajmuje około **8 minut** i **zmniejsza rozmiar modelu z ~7,5GB do ~2,5GB**.
 
-    W tym laboratorium pokazujemy, jak wczytać modele z Hugging Face (np. `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
+    W tym laboratorium pokazujemy, jak wprowadzać modele z Hugging Face (np. `microsoft/Phi-3.5-mini-instruct`). Olive pozwala również na wprowadzanie modeli z katalogu Azure AI, aktualizując argument `model_name_or_path` na identyfikator zasobu Azure AI (np. `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
 
-1. **Train the model:** Next, the `olive finetune` to polecenie dostraja kwantyzowany model. Kwantyzacja modelu *przed* dostrajaniem daje lepszą dokładność, ponieważ proces dostrajania odzyskuje część utraty wynikającej z kwantyzacji.
+3. **Trenuj model:** Następnie polecenie `olive finetune` dostraja skwantyzowany model. Kwantyzacja *przed* dostrajaniem daje lepszą dokładność, ponieważ proces dostrajania odzyskuje część utraconej precyzji po kwantyzacji.
 
     ```bash
     olive finetune \
@@ -156,9 +156,9 @@ Następnie wykonaj poniższe polecenia Olive w wierszu poleceń.
         --log_level 1
     ```
 
-    Dostrajanie (z 100 krokami) trwa **około 6 minut**.
+    Fine-tuning trwa około **6 minut** (100 kroków).
 
-1. **Optymalizuj:** Po wytrenowaniu modelu możesz go zoptymalizować używając polecenia Olive `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` – w tym laboratorium użyjemy CPU.
+4. **Optymalizuj:** Po wytrenowaniu modelu zoptymalizuj go za pomocą polecenia `auto-opt` Olive, które przechwytuje graf ONNX i automatycznie wykonuje szereg optymalizacji poprawiających wydajność modelu na CPU poprzez kompresję i fuzje. Możesz też optymalizować pod inne urządzenia, takie jak NPU czy GPU, zmieniając argumenty `--device` i `--provider` – jednak w tym laboratorium używamy CPU.
 
     ```bash
     olive auto-opt \
@@ -171,7 +171,7 @@ Następnie wykonaj poniższe polecenia Olive w wierszu poleceń.
        --log_level 1
     ```
 
-    Optymalizacja zajmie **około 5 minut**.
+    Optymalizacja zajmuje około **5 minut**.
 
 ### Krok 5: Szybki test inferencji modelu
 
@@ -219,20 +219,20 @@ python app.py
 
 ### Krok 6: Prześlij model do Azure AI
 
-Przesłanie modelu do repozytorium modeli Azure AI pozwala na dzielenie się modelem z innymi członkami zespołu oraz zarządzanie wersjami modelu. Aby przesłać model, wykonaj następujące polecenie:
+Przesłanie modelu do repozytorium modeli Azure AI umożliwia dzielenie się modelem z innymi członkami zespołu oraz zarządzanie wersjami modelu. Aby przesłać model, uruchom następujące polecenie:
 
 > [!NOTE]  
-> Zaktualizuj `{}`` placeholders with the name of your resource group and Azure AI Project Name. 
+> Zaktualizuj miejsca `{}` nazwą swojej grupy zasobów oraz nazwą projektu Azure AI.
 
-To find your resource group ` z nazwą grupy zasobów i nazwą projektu Azure AI, a następnie uruchom polecenie
+Aby znaleźć swoją grupę zasobów `"resourceGroup"` i nazwę projektu Azure AI, uruchom poniższe polecenie:
 
 ```
 az ml workspace show
 ```
 
-Możesz też przejść na +++ai.azure.com+++ i wybrać **management center** > **project** > **overview**
+Lub przejdź na +++ai.azure.com+++ i wybierz **management center** > **project** > **overview**.
 
-Zamień `{}` na nazwę swojej grupy zasobów oraz nazwę projektu Azure AI.
+Zaktualizuj miejsca `{}` nazwą swojej grupy zasobów oraz nazwą projektu Azure AI.
 
 ```bash
 az ml model create \
@@ -241,9 +241,8 @@ az ml model create \
     --path ./models/phi/onnx-ao \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
-```
-
-Następnie możesz zobaczyć przesłany model i wdrożyć go na stronie https://ml.azure.com/model/list
+```  
+Następnie możesz zobaczyć przesłany model i wdrożyć go pod adresem https://ml.azure.com/model/list
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o krytycznym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

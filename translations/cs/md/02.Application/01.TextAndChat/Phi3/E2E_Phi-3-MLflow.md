@@ -2,58 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:40:13+00:00",
+  "translation_date": "2025-07-17T02:35:19+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "cs"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) — это платформа с открытым исходным кодом, предназначенная для управления полным циклом разработки машинного обучения.
+[MLflow](https://mlflow.org/) je open-source platforma navržená pro správu celého životního cyklu strojového učení.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.cs.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.cs.png)
 
-MLFlow используется для управления жизненным циклом ML, включая эксперименты, воспроизводимость, развертывание и центральный реестр моделей. В настоящее время MLflow предлагает четыре компонента.
+MLFlow se používá ke správě životního cyklu ML, včetně experimentování, reprodukovatelnosti, nasazení a centrálního registru modelů. MLflow aktuálně nabízí čtyři komponenty.
 
-- **MLflow Tracking:** Запись и запрос экспериментов, кода, конфигураций данных и результатов.
-- **MLflow Projects:** Упаковка кода для Data Science в формате, позволяющем воспроизводить запуски на любой платформе.
-- **Mlflow Models:** Развертывание моделей машинного обучения в различных средах обслуживания.
-- **Model Registry:** Хранение, аннотирование и управление моделями в центральном репозитории.
+- **MLflow Tracking:** Zaznamenávání a dotazování experimentů, kódu, konfigurace dat a výsledků.
+- **MLflow Projects:** Balení datově vědeckého kódu do formátu, který umožňuje reprodukovat běhy na jakékoli platformě.
+- **Mlflow Models:** Nasazení modelů strojového učení v různých prostředích pro servírování.
+- **Model Registry:** Ukládání, anotace a správa modelů v centrálním úložišti.
 
-Платформа включает возможности для отслеживания экспериментов, упаковки кода в воспроизводимые запуски, а также совместного использования и развертывания моделей. MLFlow интегрирован с Databricks и поддерживает множество библиотек ML, что делает его независимым от конкретной библиотеки. Его можно использовать с любой библиотекой машинного обучения и на любом языке программирования, так как он предоставляет REST API и CLI для удобства.
+Obsahuje funkce pro sledování experimentů, balení kódu do reprodukovatelných běhů a sdílení a nasazení modelů. MLFlow je integrován do Databricks a podporuje různé ML knihovny, díky čemuž je nezávislý na konkrétní knihovně. Lze jej použít s jakoukoli knihovnou strojového učení a v jakémkoli programovacím jazyce, protože poskytuje REST API a CLI pro pohodlí.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.cs.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.cs.png)
 
-Основные возможности MLFlow включают:
+Hlavní vlastnosti MLFlow zahrnují:
 
-- **Отслеживание экспериментов:** Запись и сравнение параметров и результатов.
-- **Управление моделями:** Развертывание моделей на различных платформах обслуживания и инференса.
-- **Model Registry:** Совместное управление жизненным циклом моделей MLflow, включая версионирование и аннотации.
-- **Projects:** Упаковка ML-кода для совместного использования или промышленного использования.
+- **Sledování experimentů:** Zaznamenávání a porovnávání parametrů a výsledků.
+- **Správa modelů:** Nasazení modelů na různé platformy pro servírování a inferenci.
+- **Model Registry:** Spolupráce na správě životního cyklu MLflow modelů, včetně verzování a anotací.
+- **Projects:** Balení ML kódu pro sdílení nebo produkční použití.
 
-MLFlow также поддерживает цикл MLOps, который включает подготовку данных, регистрацию и управление моделями, упаковку моделей для выполнения, развертывание сервисов и мониторинг моделей. Цель — упростить переход от прототипа к производственному процессу, особенно в облачных и edge-средах.
+MLFlow také podporuje MLOps cyklus, který zahrnuje přípravu dat, registraci a správu modelů, balení modelů pro spuštění, nasazení služeb a monitorování modelů. Cílem je zjednodušit přechod od prototypu k produkčnímu workflow, zejména v cloudových a edge prostředích.
 
-## E2E Scenario - Создание обёртки и использование Phi-3 как модели MLFlow
+## E2E scénář – Vytvoření wrapperu a použití Phi-3 jako MLFlow modelu
 
-В этом E2E примере мы продемонстрируем два различных подхода к созданию обёртки вокруг малой языковой модели Phi-3 (SLM), а затем запуск её как модели MLFlow локально или в облаке, например, в Azure Machine Learning workspace.
+V tomto E2E příkladu ukážeme dva různé přístupy k vytvoření wrapperu kolem malého jazykového modelu Phi-3 (SLM) a jeho spuštění jako MLFlow modelu buď lokálně, nebo v cloudu, například v Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.cs.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.cs.png)
 
-| Проект | Описание | Расположение |
+| Projekt | Popis | Umístění |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline — самый простой способ создать обёртку, если вы хотите использовать модель HuggingFace с экспериментальным flavour трансформеров MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | На момент написания, transformer pipeline не поддерживал генерацию обёртки MLFlow для моделей HuggingFace в формате ONNX, даже с экспериментальным пакетом optimum Python. В таких случаях можно создать свою собственную обёртку на Python для MLFlow модели. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline je nejjednodušší možnost, jak vytvořit wrapper, pokud chcete použít HuggingFace model s experimentální variantou MLFlow pro transformery. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | V době psaní tento transformer pipeline nepodporoval generování MLFlow wrapperu pro HuggingFace modely v ONNX formátu, ani s experimentálním balíčkem optimum Python. Pro takové případy můžete vytvořit vlastní Python wrapper pro MLFlow model. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
-## Проект: Transformer Pipeline
+## Projekt: Transformer Pipeline
 
-1. Вам понадобятся соответствующие пакеты Python из MLFlow и HuggingFace:
+1. Budete potřebovat příslušné Python balíčky z MLFlow a HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Далее нужно инициализировать transformer pipeline, указав целевую модель Phi-3 из реестра HuggingFace. Как видно из карточки модели _Phi-3-mini-4k-instruct_, её задача — «Генерация текста» (Text Generation):
+2. Dále byste měli inicializovat transformer pipeline odkazem na cílový Phi-3 model v registru HuggingFace. Jak je vidět z modelové karty _Phi-3-mini-4k-instruct_, jeho úkol je typu „Text Generation“:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ MLFlow также поддерживает цикл MLOps, который вкл
     )
     ```
 
-3. Теперь вы можете сохранить transformer pipeline модели Phi-3 в формате MLFlow и указать дополнительные параметры, такие как путь к артефактам, конкретные настройки модели и тип API для инференса:
+3. Nyní můžete uložit transformer pipeline modelu Phi-3 do formátu MLFlow a zadat další detaily, jako je cílová cesta pro artefakty, specifická nastavení modelu a typ inference API:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -73,9 +73,9 @@ MLFlow также поддерживает цикл MLOps, который вкл
     )
     ```
 
-## Проект: Custom Python Wrapper
+## Projekt: Custom Python Wrapper
 
-1. Здесь мы можем использовать API generate() из Microsoft [ONNX Runtime](https://github.com/microsoft/onnxruntime-genai) для инференса ONNX модели и кодирования/декодирования токенов. Для вашей целевой вычислительной платформы выбирайте пакет _onnxruntime_genai_, в примере ниже — для CPU:
+1. Zde můžeme využít Microsoft API [ONNX Runtime generate()](https://github.com/microsoft/onnxruntime-genai) pro inferenci ONNX modelu a kódování/dekódování tokenů. Pro cílový výpočet si vyberete balíček _onnxruntime_genai_, v níže uvedeném příkladu je cílem CPU:
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ MLFlow также поддерживает цикл MLOps, который вкл
     import onnxruntime_genai as og
     ```
 
-1. Наш кастомный класс реализует два метода: _load_context()_ для инициализации **ONNX модели** Phi-3 Mini 4K Instruct, **параметров генератора** и **токенизатора**; и _predict()_ для генерации выходных токенов по заданному промпту:
+1. Naše vlastní třída implementuje dvě metody: _load_context()_ pro inicializaci **ONNX modelu** Phi-3 Mini 4K Instruct, **parametrů generátoru** a **tokenizéru**; a _predict()_ pro generování výstupních tokenů na základě zadaného promptu:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ MLFlow также поддерживает цикл MLOps, который вкл
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Теперь можно использовать функцию _mlflow.pyfunc.log_model()_ для создания кастомной обёртки на Python (в формате pickle) для модели Phi-3 вместе с оригинальной ONNX моделью и необходимыми зависимостями:
+1. Nyní můžete použít funkci _mlflow.pyfunc.log_model()_ k vytvoření vlastního Python wrapperu (ve formátu pickle) pro model Phi-3 spolu s původním ONNX modelem a potřebnými závislostmi:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -129,9 +129,9 @@ MLFlow также поддерживает цикл MLOps, который вкл
     )
     ```
 
-## Подписи сгенерированных моделей MLFlow
+## Signatury generovaných MLFlow modelů
 
-1. В шаге 3 проекта Transformer Pipeline выше мы задали задачу MLFlow модели как “_llm/v1/chat_”. Такая инструкция генерирует API-обёртку модели, совместимую с OpenAI Chat API, как показано ниже:
+1. V kroku 3 projektu Transformer Pipeline výše jsme nastavili úkol MLFlow modelu na „_llm/v1/chat_“. Takové nastavení generuje API wrapper modelu, kompatibilní s OpenAI Chat API, jak je ukázáno níže:
 
     ``` Python
     {inputs: 
@@ -142,13 +142,13 @@ MLFlow также поддерживает цикл MLOps, который вкл
       None}
     ```
 
-1. В результате вы можете отправлять промпт в следующем формате:
+1. Výsledkem je, že můžete odeslat svůj prompt v následujícím formátu:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Затем используйте постобработку, совместимую с OpenAI API, например, _response[0][‘choices’][0][‘message’][‘content’]_, чтобы привести вывод к удобочитаемому виду:
+1. Poté použijte post-processing kompatibilní s OpenAI API, např. _response[0][‘choices’][0][‘message’][‘content’]_, pro úpravu výstupu do podoby jako je tato:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ MLFlow также поддерживает цикл MLOps, который вкл
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. В шаге 3 проекта Custom Python Wrapper выше мы позволяем пакету MLFlow автоматически сгенерировать подпись модели на основе заданного примера входных данных. Подпись нашей обёртки MLFlow будет выглядеть так:
+1. V kroku 3 projektu Custom Python Wrapper výše umožňujeme balíčku MLFlow vygenerovat signaturu modelu z daného vstupního příkladu. Signatura našeho MLFlow wrapperu bude vypadat takto:
 
     ``` Python
     {inputs: 
@@ -169,13 +169,13 @@ MLFlow также поддерживает цикл MLOps, который вкл
       None}
     ```
 
-1. Следовательно, наш промпт должен содержать ключ словаря "prompt", примерно так:
+1. Náš prompt by tedy měl obsahovat klíč slovníku "prompt", podobně jako zde:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Вывод модели будет представлен в виде строки:
+1. Výstup modelu bude pak poskytnut ve formátu řetězce:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -188,4 +188,4 @@ MLFlow также поддерживает цикл MLOps, который вкл
     ```
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

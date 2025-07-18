@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:15:59+00:00",
+  "translation_date": "2025-07-16T21:38:58+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "he"
 }
 -->
-# **Inference Phi-3-Vision ב־Local**
+# **Inference Phi-3-Vision באופן מקומי**
 
-Phi-3-vision-128k-instruct מאפשר ל־Phi-3 לא רק להבין שפה, אלא גם לראות את העולם בצורה ויזואלית. באמצעות Phi-3-vision-128k-instruct, נוכל לפתור בעיות ויזואליות שונות, כמו OCR, ניתוח טבלאות, זיהוי עצמים, תיאור תמונות ועוד. ניתן להשלים בקלות משימות שבעבר דרשו הרבה אימוני נתונים. להלן טכניקות ותרחישי שימוש שצוטטו על ידי Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct מאפשר ל-Phi-3 לא רק להבין שפה, אלא גם לראות את העולם בצורה ויזואלית. באמצעות Phi-3-vision-128k-instruct, ניתן לפתור בעיות ויזואליות שונות, כמו OCR, ניתוח טבלאות, זיהוי אובייקטים, תיאור תמונות ועוד. ניתן להשלים משימות בקלות שהיו דורשות בעבר כמויות גדולות של נתוני אימון. להלן טכניקות ותסריטי שימוש הקשורים ל-Phi-3-vision-128k-instruct
 
 ## **0. הכנה**
 
-אנא ודא שהספריות הבאות של Python מותקנות לפני השימוש (מומלץ Python 3.10+)
+אנא ודא שהספריות הבאות של Python מותקנות לפני השימוש (מומלץ Python 3.10 ומעלה)
 
 ```bash
 pip install transformers -U
@@ -21,7 +21,7 @@ pip install datasets -U
 pip install torch -U
 ```
 
-מומלץ להשתמש ב־***CUDA 11.6+*** ולהתקין את flatten
+מומלץ להשתמש ב-***CUDA 11.6 ומעלה*** ולהתקין את flatten
 
 ```bash
 pip install flash-attn --no-build-isolation
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. ניתוח תמונה עם Phi-3-Vision**
 
-אנו רוצים שה־AI יוכל לנתח את תוכן התמונות שלנו ולספק תיאורים רלוונטיים
+רוצים שה-AI יוכל לנתח את תוכן התמונות שלנו ולספק תיאורים רלוונטיים
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR עם Phi-3-Vision**
 
-בנוסף לניתוח התמונה, נוכל גם לחלץ מידע מהתמונה. זהו תהליך ה־OCR שלפניו היינו צריכים לכתוב קוד מסובך כדי להשלים.
+בנוסף לניתוח התמונה, ניתן גם לחלץ מידע מהתמונה. זהו תהליך ה-OCR שבעבר היינו צריכים לכתוב קוד מורכב כדי להשלים.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -112,9 +112,9 @@ response = processor.batch_decode(generate_ids,
 The title of the book is "ALONE" and the author is Morgan Maxwell.
 ```
 
-## **3. השוואת תמונות מרובות**
+## **3. השוואת מספר תמונות**
 
-Phi-3 Vision תומך בהשוואת מספר תמונות. נוכל להשתמש במודל זה כדי למצוא את ההבדלים בין התמונות.
+Phi-3 Vision תומך בהשוואת מספר תמונות. ניתן להשתמש במודל זה כדי למצוא את ההבדלים בין התמונות.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו הוא המקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

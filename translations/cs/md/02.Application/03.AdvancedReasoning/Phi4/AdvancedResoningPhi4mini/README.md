@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:54:02+00:00",
+  "translation_date": "2025-07-17T04:51:03+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "cs"
 }
 -->
-## **Verwendung von Phi-4-mini-reasoning(3.8b) oder Phi-4-reasoning(14b) als Reasoning Expert**
+## **Použití Phi-4-mini-reasoning(3.8b) nebo Phi-4-reasoning(14b) jako experta na uvažování**
 
-Werfen wir einen Blick auf seine starke Schlussfolgerungsfähigkeit durch Phi-4-mini-reasoning oder Phi-4-mini-reasoning.
+Pojďme se podívat na jeho silnou schopnost uvažování prostřednictvím Phi-4-mini-reasoning nebo Phi-4-mini-reasoning.
 
 
 ```python
@@ -50,4 +50,4 @@ print(outputs[0])
 ```
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T12:55:07+00:00",
+  "translation_date": "2025-07-16T21:29:23+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "tr"
 }
 -->
 # Rust ile Çok Platformlu Çıkarım
 
-Bu eğitim, Rust ve HuggingFace’in [Candle ML framework](https://github.com/huggingface/candle) kullanarak çıkarım yapma sürecinde bize rehberlik edecek. Rust ile çıkarım yapmak, özellikle diğer programlama dilleriyle karşılaştırıldığında birçok avantaj sunar. Rust, C ve C++ ile karşılaştırılabilir yüksek performansıyla bilinir. Bu da hesaplama açısından yoğun olan çıkarım görevleri için mükemmel bir seçim yapar. Özellikle, sıfır maliyetli soyutlamalar ve çöp toplayıcı yükü olmayan verimli bellek yönetimi bunu mümkün kılar. Rust’ın çok platformlu özellikleri, Windows, macOS ve Linux gibi çeşitli işletim sistemlerinde ve ayrıca mobil işletim sistemlerinde kodun önemli değişiklikler olmadan çalışmasını sağlar.
+Bu eğitimde, Rust ve HuggingFace’in [Candle ML framework](https://github.com/huggingface/candle) kullanarak çıkarım yapma sürecini öğreneceğiz. Rust ile çıkarım yapmak, özellikle diğer programlama dilleriyle karşılaştırıldığında birçok avantaj sunar. Rust, C ve C++ ile karşılaştırılabilir yüksek performansıyla bilinir. Bu da hesaplama açısından yoğun olan çıkarım görevleri için mükemmel bir seçim olmasını sağlar. Özellikle sıfır maliyetli soyutlamalar ve çöp toplayıcı yükü olmayan verimli bellek yönetimi bunu mümkün kılar. Rust’ın çok platformlu yetenekleri, Windows, macOS ve Linux gibi çeşitli işletim sistemlerinde ve mobil işletim sistemlerinde kod tabanında büyük değişiklik yapmadan çalışabilen kod geliştirmeyi sağlar.
 
-Bu eğitimi takip etmek için ön koşul, Rust derleyicisi ve paket yöneticisi Cargo’yu içeren [Rust’u yüklemek](https://www.rust-lang.org/tools/install) olacaktır.
+Bu eğitimi takip etmek için öncelikle [Rust’u kurmanız](https://www.rust-lang.org/tools/install) gerekir; bu kurulum Rust derleyicisi ve Rust paket yöneticisi Cargo’yu içerir.
 
-## Adım 1: Yeni Bir Rust Projesi Oluşturma
+## Adım 1: Yeni Bir Rust Projesi Oluşturun
 
 Yeni bir Rust projesi oluşturmak için terminalde aşağıdaki komutu çalıştırın:
 
@@ -21,9 +21,9 @@ Yeni bir Rust projesi oluşturmak için terminalde aşağıdaki komutu çalışt
 cargo new phi-console-app
 ```
 
-Bu, `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Bu, `Cargo.toml` dosyası ve içinde `main.rs` dosyası bulunan `src` dizini ile birlikte başlangıç bir proje yapısı oluşturur.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` dosyasını içeren başlangıç proje yapısını oluşturur:
+Sonraki adımda, bağımlılıklarımızı — yani `candle`, `hf-hub` ve `tokenizers` crate’lerini — `Cargo.toml` dosyasına ekleyeceğiz:
 
 ```toml
 [package]
@@ -39,9 +39,9 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## Adım 2: Temel Parametreleri Yapılandırma
+## Adım 2: Temel Parametreleri Yapılandırın
 
-main.rs dosyası içinde, çıkarım için başlangıç parametrelerini ayarlayacağız. Basitlik adına hepsi sabit kodlanacak, ancak gerektiğinde değiştirebiliriz.
+`main.rs` dosyasının içinde çıkarım için başlangıç parametrelerini ayarlayacağız. Basitlik adına hepsi sabit kodlanacak, ancak ihtiyaç duydukça değiştirebiliriz.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -56,12 +56,12 @@ let device = Device::Cpu;
 ```
 
 - **temperature**: Örnekleme sürecinin rastgeleliğini kontrol eder.
-- **sample_len**: Oluşturulan metnin maksimum uzunluğunu belirtir.
-- **top_p**: Her adım için dikkate alınan token sayısını sınırlamak amacıyla nükleus örneklemede kullanılır.
+- **sample_len**: Oluşturulacak metnin maksimum uzunluğunu belirtir.
+- **top_p**: Her adımda dikkate alınacak token sayısını sınırlamak için nucleus sampling’de kullanılır.
 - **repeat_last_n**: Tekrarlayan dizileri önlemek için ceza uygulanacak token sayısını kontrol eder.
 - **repeat_penalty**: Tekrarlanan tokenları caydırmak için uygulanan ceza değeri.
-- **seed**: Rastgele tohum (daha iyi tekrarlanabilirlik için sabit bir değer kullanılabilir).
-- **prompt**: Oluşturmayı başlatmak için başlangıç metni. Modelden buz hokeyi hakkında bir haiku oluşturmasını istiyoruz ve kullanıcı ile asistan bölümlerini belirtmek için özel tokenlarla sarıyoruz. Model daha sonra prompt’u bir haiku ile tamamlayacak.
+- **seed**: Rastgelelik için kullanılan tohum (daha iyi tekrarlanabilirlik için sabit bir değer kullanılabilir).
+- **prompt**: Oluşturmayı başlatmak için başlangıç metni. Modelden buz hokeyi hakkında bir haiku oluşturmasını istiyoruz ve konuşmanın kullanıcı ve asistan kısımlarını belirtmek için özel tokenlarla sarıyoruz. Model, ardından prompt’u bir haiku ile tamamlayacak.
 - **device**: Bu örnekte hesaplama için CPU kullanıyoruz. Candle, CUDA ve Metal ile GPU üzerinde çalışmayı da destekler.
 
 ## Adım 3: Model ve Tokenizer’ı İndir/Hazırla
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Girdi metnimizi tokenize etmek için `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` dosyasını kullanıyoruz. Model indirildikten sonra önbelleğe alınır, bu yüzden ilk çalıştırma yavaş olacaktır (2.4GB’lık model indirildiği için) ancak sonraki çalıştırmalar daha hızlı olacaktır.
+Model ve tokenizer dosyalarını Hugging Face model hub’dan indirmek için `hf_hub` API’sini kullanıyoruz. `gguf` dosyası kuantize edilmiş model ağırlıklarını içerirken, `tokenizer.json` dosyası giriş metnimizi token’lara ayırmak için kullanılır. İndirildikten sonra model önbelleğe alınır, bu yüzden ilk çalıştırma yavaş olur (modelin 2.4GB’lık kısmı indirildiği için), ancak sonraki çalıştırmalar daha hızlı olur.
 
 ## Adım 4: Modeli Yükle
 
@@ -92,7 +92,7 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Kuantize edilmiş model ağırlıklarını belleğe yüklüyor ve Phi-3 modelini başlatıyoruz. Bu adım, `gguf` dosyasından model ağırlıklarının okunmasını ve belirtilen cihazda (bu örnekte CPU) çıkarım için modelin kurulmasını içerir.
+Kuantize edilmiş model ağırlıklarını belleğe yüklüyor ve Phi-3 modelini başlatıyoruz. Bu adım, `gguf` dosyasından model ağırlıklarının okunmasını ve belirtilen cihazda (bu örnekte CPU) çıkarım için modelin hazırlanmasını içerir.
 
 ## Adım 5: Prompt’u İşle ve Çıkarım İçin Hazırla
 
@@ -120,9 +120,9 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-Bu adımda, giriş prompt’unu tokenize edip token ID dizisine dönüştürerek çıkarıma hazırlıyoruz. Ayrıca `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` değerlerini başlatıyoruz. Her token tensöre dönüştürülüp modelden logits almak için geçirilir.
+Bu adımda, giriş prompt’unu token’lara ayırıyor ve token ID dizisine dönüştürerek çıkarım için hazırlıyoruz. Ayrıca, verilen `temperature` ve `top_p` değerlerine göre örnekleme sürecini (kelime dağarcığı üzerindeki olasılık dağılımını) yönetmek için `LogitsProcessor`’ı başlatıyoruz. Her token tensöre dönüştürülüp modelden geçirilerek logits elde edilir.
 
-Döngü, prompt’taki her tokenı işler, logits işlemcisini günceller ve sonraki token oluşturma için hazırlar.
+Döngü, prompt’taki her token’ı işler, logits processor’ı günceller ve sonraki token oluşturma için hazırlık yapar.
 
 ## Adım 6: Çıkarım
 
@@ -160,10 +160,10 @@ for index in 0..to_sample {
 }
 ```
 
-Çıkarım döngüsünde, istenen örnek uzunluğuna ulaşana veya dizinin sonu tokenına rastlayana kadar tokenlar tek tek oluşturulur. Sonraki token tensöre dönüştürülüp modelden geçirilirken, logits ceza ve örnekleme uygulamak için işlenir. Sonra bir sonraki token örneklenir, çözümlenir ve diziye eklenir.  
-Tekrarlayan metni önlemek için, `repeat_last_n` and `repeat_penalty` parametrelerine bağlı olarak tekrar eden tokenlara ceza uygulanır.
+Çıkarım döngüsünde, istenen örnek uzunluğuna ulaşana veya dizinin sonu token’ına rastlayana kadar token’lar tek tek oluşturulur. Sonraki token tensöre dönüştürülüp modelden geçirilirken, logits işlenerek ceza ve örnekleme uygulanır. Ardından bir sonraki token örneklenir, çözümlenir ve diziye eklenir.  
+Tekrarlayan metni önlemek için, `repeat_last_n` ve `repeat_penalty` parametrelerine göre tekrarlanan tokenlara ceza uygulanır.
 
-Son olarak, oluşturulan metin çözümlendikçe yazdırılır, böylece gerçek zamanlı akış sağlanır.
+Son olarak, oluşturulan metin çözümlendikçe yazdırılır ve böylece gerçek zamanlı akış sağlanır.
 
 ## Adım 7: Uygulamayı Çalıştır
 
@@ -191,9 +191,9 @@ Swish of sticks now alive.
 
 ## Sonuç
 
-Bu adımları izleyerek, Rust ve Candle ile Phi-3 modeli kullanarak 100 satırın altında metin oluşturma yapabiliriz. Kod, model yükleme, tokenizasyon ve çıkarımı yönetir; tensörler ve logits işleme kullanarak giriş prompt’una dayalı tutarlı metin üretir.
+Bu adımları takip ederek, Phi-3 modeli ile Rust ve Candle kullanarak 100 satırın altında kodla metin oluşturabiliriz. Kod, model yükleme, tokenizasyon ve çıkarımı yönetir; tensörler ve logits işleme kullanarak giriş prompt’una dayalı tutarlı metin üretir.
 
-Bu konsol uygulaması Windows, Linux ve Mac OS üzerinde çalışabilir. Rust’ın taşınabilirliği sayesinde, kod mobil uygulamalar içinde çalışacak bir kütüphaneye de uyarlanabilir (sonuçta konsol uygulamalarını orada çalıştıramıyoruz).
+Bu konsol uygulaması Windows, Linux ve Mac OS üzerinde çalışabilir. Rust’ın taşınabilirliği sayesinde, kod mobil uygulamalar içinde çalışacak bir kütüphaneye de uyarlanabilir (sonuçta orada konsol uygulaması çalıştıramayız).
 
 ## Ek: Tam Kod
 
@@ -304,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Not: Bu kodu aarch64 Linux veya aarch64 Windows üzerinde çalıştırmak için, aşağıdaki içeriğe sahip `.cargo/config` adlı bir dosya ekleyin:
+Not: Bu kodu aarch64 Linux veya aarch64 Windows üzerinde çalıştırmak için, `.cargo/config` adlı bir dosya oluşturup içine aşağıdaki içeriği ekleyin:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Phi-3 modelini Rust ve Candle ile kullanmaya dair alternatif çıkarım yaklaşımları dahil daha fazla örnek için resmi [Candle örnekleri](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) deposunu ziyaret edebilirsiniz.
+> Phi-3 modelini Rust ve Candle ile kullanmaya dair daha fazla örnek ve çıkarım için alternatif yaklaşımlar görmek isterseniz, resmi [Candle örnekleri](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) deposunu ziyaret edebilirsiniz.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilindeki haliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

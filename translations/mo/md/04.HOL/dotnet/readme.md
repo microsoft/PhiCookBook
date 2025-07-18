@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-05-07T13:10:12+00:00",
+  "translation_date": "2025-07-17T10:32:24+00:00",
   "source_file": "md/04.HOL/dotnet/readme.md",
   "language_code": "mo"
 }
 -->
-﻿## ברוכים הבאים למעבדות Phi עם C#
+﻿## 歡迎使用 C# 的 Phi 實驗室
 
-יש מבחר מעבדות שמדגימות כיצד לשלב את הגרסאות השונות והעוצמתיות של דגמי Phi בסביבת .NET.
+這裡有一系列實驗室示範如何在 .NET 環境中整合不同版本的強大 Phi 模型。
 
-## דרישות מוקדמות
+## 先決條件
 
-לפני הרצת הדוגמה, ודא שיש ברשותך את הדברים הבאים מותקנים:
+在執行範例之前，請確保您已安裝以下項目：
 
-**.NET 9:** ודא שהתקנת את [הגרסה העדכנית ביותר של .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) במחשב שלך.
+**.NET 9：** 請確認您的電腦已安裝[最新版本的 .NET](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo)。
 
-**(אופציונלי) Visual Studio או Visual Studio Code:** תזדקק ל-IDE או עורך קוד שיכול להריץ פרויקטים של .NET. מומלץ להשתמש ב-[Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) או [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo).
+**（可選）Visual Studio 或 Visual Studio Code：** 您需要一個能執行 .NET 專案的 IDE 或程式碼編輯器。建議使用[Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo)或[Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo)。
 
-**שימוש ב-git** – שיכפל באופן מקומי אחת מגרסאות Phi-3, Phi3.5 או Phi-4 הזמינות מ-[Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
+**使用 git** 從 [Hugging Face](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c) 本地克隆 Phi-3、Phi3.5 或 Phi-4 版本之一。
 
-**הורדת דגמי Phi-4 ONNX** למחשב המקומי שלך:
+**下載 Phi-4 ONNX 模型** 到您的本機：
 
-### נווט לתיקייה לאחסון הדגמים
+### 導航到存放模型的資料夾
 
 ```bash
 cd c:\phi\models
 ```
 
-### הוסף תמיכה ב-lfs
+### 新增 lfs 支援
 
 ```bash
 git lfs install 
 ```
 
-### שיכפל והורד את דגם Phi-4 mini instruct ואת דגם Phi-4 multi modal
+### 克隆並下載 Phi-4 mini instruct 模型和 Phi-4 多模態模型
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
@@ -43,9 +43,9 @@ git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 ```
 
-**הורדת דגמי Phi-3 ONNX** למחשב המקומי שלך:
+**下載 Phi-3 ONNX 模型** 到您的本機：
 
-### שיכפל והורד את דגם Phi-3 mini 4K instruct ואת דגם Phi-3 vision 128K
+### 克隆並下載 Phi-3 mini 4K instruct 模型和 Phi-3 vision 128K 模型
 
 ```bash
 git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
@@ -53,46 +53,46 @@ git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 ```
 
-**חשוב:** הדגמות הנוכחיות מתוכננות להשתמש בגרסאות ONNX של הדגם. השלבים הקודמים משכפלים את הדגמים הבאים.
+**重要提示：** 目前的示範設計是使用模型的 ONNX 版本。上述步驟會克隆以下模型。
 
-## אודות המעבדות
+## 關於實驗室
 
-הפתרון הראשי כולל מספר מעבדות לדוגמה שמדגימות את היכולות של דגמי Phi באמצעות C#.
+主解決方案包含多個示範實驗室，展示如何使用 C# 操作 Phi 模型的功能。
 
-| פרויקט | דגם | תיאור |
+| 專案 | 模型 | 說明 |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 או Phi-3.5 | דוגמת שיחה בקונסולה שמאפשרת למשתמש לשאול שאלות. הפרויקט טוען דגם ONNX מקומי של Phi-3 באמצעות `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
-| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
-| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Semantic Kernel` libraries. |
-| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntimeGenAI` libraries and implements the `IChatClient` from `Microsoft.Extensions.AI`. |
-| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Sample console chat that allows the user to ask questions. The chat implements memory. |
-| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | This is a sample project that uses a local Phi-4 model to analyze images showing the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 |This is a sample project that uses a local Phi-4 model to analyze an audio file, generate the transcript of the file and show the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 或 Phi-3.5 | 範例主控台聊天，允許使用者提問。專案使用 `Microsoft.ML.OnnxRuntime` 函式庫載入本地 ONNX Phi-3 模型。 |
+| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 或 Phi-3.5 | 範例主控台聊天，允許使用者提問。專案使用 `Microsoft.Semantic.Kernel` 函式庫載入本地 ONNX Phi-3 模型。 |
+| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 或 Phi-3.5 | 範例專案，使用本地 phi3 視覺模型分析圖片。專案使用 `Microsoft.ML.OnnxRuntime` 函式庫載入本地 ONNX Phi-3 視覺模型。 |
+| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 或 Phi-3.5 | 範例專案，使用本地 phi3 視覺模型分析圖片。專案使用 `Microsoft.ML.OnnxRuntime` 函式庫載入本地 ONNX Phi-3 視覺模型。專案同時提供一個選單，讓使用者進行互動。 | 
+| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | 範例主控台聊天，允許使用者提問。專案使用 `Microsoft.ML.OnnxRuntime` 函式庫載入本地 ONNX Phi-4 模型。 |
+| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | 範例主控台聊天，允許使用者提問。專案使用 `Semantic Kernel` 函式庫載入本地 ONNX Phi-4 模型。 |
+| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | 範例主控台聊天，允許使用者提問。專案使用 `Microsoft.ML.OnnxRuntimeGenAI` 函式庫載入本地 ONNX Phi-4 模型，並實作 `Microsoft.Extensions.AI` 的 `IChatClient`。 |
+| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | 範例主控台聊天，允許使用者提問。聊天功能包含記憶體。 |
+| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | 範例專案，使用本地 Phi-4 模型分析圖片並在主控台顯示結果。專案使用 `Microsoft.ML.OnnxRuntime` 函式庫載入本地 Phi-4-`multimodal-instruct-onnx` 模型。 |
+| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 | 範例專案，使用本地 Phi-4 模型分析音訊檔案，產生文字稿並在主控台顯示結果。專案使用 `Microsoft.ML.OnnxRuntime` 函式庫載入本地 Phi-4-`multimodal-instruct-onnx` 模型。 |
 
-## How to Run the Projects
+## 如何執行專案
 
-To run the projects, follow these steps:
+執行專案請依照以下步驟：
 
-1. Clone the repository to your local machine.
+1. 將儲存庫克隆到您的本機。
 
-1. Open a terminal and navigate to the desired project. In example, let's run `LabsPhi4-Chat-01OnnxRuntime`.
+1. 開啟終端機並切換到想執行的專案資料夾。例如，我們執行 `LabsPhi4-Chat-01OnnxRuntime`。
 
     ```bash
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
     ```
 
-1. הרץ את הפרויקט עם הפקודה
+1. 使用以下指令執行專案
 
     ```bash
     dotnet run
     ```
 
-1. דוגמת הפרויקט מבקשת קלט מהמשתמש ומשיבה באמצעות המודל המקומי.
+1. 範例專案會要求使用者輸入，並使用本地模型回覆。
 
-   הדמו הרץ דומה לזה:
+   執行中的示範類似以下畫面：
 
    ```bash
    PS D:\phi\PhiCookBook\md\04.HOL\dotnet\src\LabsPhi4-Chat-01OnnxRuntime> dotnet run
@@ -102,5 +102,5 @@ To run the projects, follow these steps:
    Q:
    ```
 
-**Disclaimer**:  
-Dis document haz been translated usin AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, pleez be aware dat automated translations may contain errors or inaccuracies. Da original document in its native language should be considered da authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from da use of dis translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

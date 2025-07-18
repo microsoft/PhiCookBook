@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-07T14:38:04+00:00",
+  "translation_date": "2025-07-16T21:35:56+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "ru"
 }
 -->
-# **Запуск Phi-3-Vision локально**
+# **Инференс Phi-3-Vision локально**
 
-Phi-3-vision-128k-instruct позволяет Phi-3 не только понимать язык, но и видеть окружающий мир визуально. С помощью Phi-3-vision-128k-instruct мы можем решать различные визуальные задачи, такие как OCR, анализ таблиц, распознавание объектов, описание изображений и др. Теперь можно легко выполнять задачи, для которых раньше требовалось много данных и обучения. Ниже приведены связанные техники и сценарии применения, упомянутые в Phi-3-vision-128k-instruct.
+Phi-3-vision-128k-instruct позволяет Phi-3 не только понимать язык, но и видеть мир визуально. С помощью Phi-3-vision-128k-instruct мы можем решать различные визуальные задачи, такие как OCR, анализ таблиц, распознавание объектов, описание изображений и т.д. Теперь можно легко выполнять задачи, которые раньше требовали большого объема данных для обучения. Ниже приведены связанные техники и сценарии применения, упомянутые в Phi-3-vision-128k-instruct.
 
 ## **0. Подготовка**
 
@@ -49,7 +49,7 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. Анализ изображения с помощью Phi-3-Vision**
+## **1. Анализ изображения с Phi-3-Vision**
 
 Мы хотим, чтобы ИИ мог анализировать содержимое наших изображений и давать соответствующие описания
 
@@ -80,7 +80,7 @@ response = processor.batch_decode(generate_ids,
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
 ```
 
-## **2. OCR с помощью Phi-3-Vision**
+## **2. OCR с Phi-3-Vision**
 
 Помимо анализа изображения, мы также можем извлекать информацию из изображения. Это процесс OCR, для которого раньше приходилось писать сложный код.
 
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Сравнение нескольких изображений**
 
-Phi-3 Vision поддерживает сравнение нескольких изображений. С помощью этой модели мы можем находить различия между изображениями.
+Phi-3 Vision поддерживает сравнение нескольких изображений. Мы можем использовать эту модель, чтобы найти различия между изображениями.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Отказ от ответственности**:  
-Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, пожалуйста, учитывайте, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется использовать профессиональный перевод, выполненный человеком. Мы не несем ответственности за любые недоразумения или неверные толкования, возникшие в результате использования данного перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

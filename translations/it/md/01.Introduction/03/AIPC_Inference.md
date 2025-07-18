@@ -2,39 +2,39 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-05-09T10:13:34+00:00",
+  "translation_date": "2025-07-16T20:00:19+00:00",
   "source_file": "md/01.Introduction/03/AIPC_Inference.md",
   "language_code": "it"
 }
 -->
 # **Inferenza Phi-3 su AI PC**
 
-Con l’avanzamento dell’AI generativa e il miglioramento delle capacità hardware dei dispositivi edge, un numero crescente di modelli di AI generativa può ora essere integrato nei dispositivi Bring Your Own Device (BYOD) degli utenti. Gli AI PC sono tra questi modelli. A partire dal 2024, Intel, AMD e Qualcomm hanno collaborato con i produttori di PC per introdurre AI PC che facilitano il deployment di modelli di AI generativa localizzati tramite modifiche hardware. In questa discussione, ci concentreremo sugli AI PC Intel e esploreremo come distribuire Phi-3 su un AI PC Intel.
+Con l’avanzamento dell’AI generativa e il miglioramento delle capacità hardware dei dispositivi edge, un numero sempre maggiore di modelli di AI generativa può ora essere integrato nei dispositivi Bring Your Own Device (BYOD) degli utenti. Gli AI PC rientrano tra questi modelli. A partire dal 2024, Intel, AMD e Qualcomm hanno collaborato con i produttori di PC per introdurre AI PC che facilitano il deployment di modelli di AI generativa localizzati tramite modifiche hardware. In questa discussione, ci concentreremo sugli AI PC Intel ed esploreremo come distribuire Phi-3 su un AI PC Intel.
 
 ### Cos’è una NPU
 
-Una NPU (Neural Processing Unit) è un processore dedicato o un’unità di elaborazione integrata in un SoC più grande, progettata specificamente per accelerare le operazioni di reti neurali e i compiti di AI. A differenza delle CPU e GPU generiche, le NPU sono ottimizzate per un calcolo parallelo basato sui dati, rendendole molto efficienti nell’elaborazione di grandi quantità di dati multimediali come video e immagini, oltre che nell’elaborazione di dati per reti neurali. Sono particolarmente abili nel gestire compiti legati all’AI, come il riconoscimento vocale, lo sfocamento dello sfondo nelle videochiamate e processi di editing foto o video come il rilevamento degli oggetti.
+Una NPU (Neural Processing Unit) è un processore dedicato o unità di elaborazione integrata in un SoC più grande, progettata specificamente per accelerare le operazioni di reti neurali e i compiti di AI. A differenza delle CPU e GPU generiche, le NPU sono ottimizzate per il calcolo parallelo basato sui dati, rendendole molto efficienti nell’elaborazione di grandi quantità di dati multimediali come video e immagini e nell’elaborazione di dati per reti neurali. Sono particolarmente abili nel gestire compiti legati all’AI, come il riconoscimento vocale, la sfocatura dello sfondo nelle videochiamate e i processi di editing di foto o video come il rilevamento degli oggetti.
 
 ## NPU vs GPU
 
-Sebbene molti carichi di lavoro di AI e machine learning girino su GPU, c’è una distinzione importante tra GPU e NPU.  
-Le GPU sono note per le loro capacità di calcolo parallelo, ma non tutte le GPU sono ugualmente efficienti al di fuori dell’elaborazione grafica. Le NPU, invece, sono costruite appositamente per i calcoli complessi coinvolti nelle operazioni delle reti neurali, risultando quindi molto efficaci per i compiti di AI.
+Sebbene molti carichi di lavoro di AI e machine learning vengano eseguiti su GPU, esiste una differenza fondamentale tra GPU e NPU.  
+Le GPU sono note per le loro capacità di calcolo parallelo, ma non tutte le GPU sono ugualmente efficienti oltre l’elaborazione grafica. Le NPU, invece, sono progettate appositamente per i calcoli complessi coinvolti nelle operazioni delle reti neurali, rendendole molto efficaci per i compiti di AI.
 
 In sintesi, le NPU sono gli esperti matematici che potenziano i calcoli AI, e giocano un ruolo chiave nell’era emergente degli AI PC!
 
-***Questo esempio si basa sull’ultimo processore Intel Core Ultra***
+***Questo esempio si basa sull’ultimo processore Intel Core Ultra di Intel***
 
 ## **1. Usare la NPU per eseguire il modello Phi-3**
 
-Il dispositivo Intel® NPU è un acceleratore di inferenza AI integrato con le CPU client Intel, a partire dalla generazione Intel® Core™ Ultra (precedentemente nota come Meteor Lake). Permette l’esecuzione energeticamente efficiente di compiti di reti neurali artificiali.
+Il dispositivo Intel® NPU è un acceleratore di inferenza AI integrato con le CPU client Intel, a partire dalla generazione di CPU Intel® Core™ Ultra (precedentemente nota come Meteor Lake). Permette l’esecuzione energeticamente efficiente di compiti di reti neurali artificiali.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.it.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.it.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.it.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.it.png)
 
 **Intel NPU Acceleration Library**
 
-La Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) è una libreria Python progettata per aumentare l’efficienza delle tue applicazioni sfruttando la potenza della Neural Processing Unit (NPU) Intel per eseguire calcoli ad alta velocità su hardware compatibile.
+La Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) è una libreria Python progettata per aumentare l’efficienza delle tue applicazioni sfruttando la potenza della Intel Neural Processing Unit (NPU) per eseguire calcoli ad alta velocità su hardware compatibile.
 
 Esempio di Phi-3-mini su AI PC alimentato da processori Intel® Core™ Ultra.
 
@@ -48,11 +48,11 @@ Installa la libreria Python con pip
 
 ```
 
-***Nota*** Il progetto è ancora in fase di sviluppo, ma il modello di riferimento è già molto completo.
+***Nota*** Il progetto è ancora in sviluppo, ma il modello di riferimento è già molto completo.
 
 ### **Eseguire Phi-3 con Intel NPU Acceleration Library**
 
-Usando l’accelerazione Intel NPU, questa libreria non modifica il processo di encoding tradizionale. Devi solo usare questa libreria per quantizzare il modello Phi-3 originale, ad esempio in FP16, INT8, INT4, come
+Utilizzando l’accelerazione Intel NPU, questa libreria non influisce sul processo di codifica tradizionale. Devi solo usare questa libreria per quantizzare il modello originale Phi-3, ad esempio FP16, INT8, INT4, come
 
 ```python
 from transformers import AutoTokenizer, pipeline,TextStreamer
@@ -72,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-Dopo che la quantizzazione è avvenuta con successo, continua l’esecuzione chiamando la NPU per eseguire il modello Phi-3.
+Dopo che la quantizzazione è avvenuta con successo, continua l’esecuzione per chiamare la NPU e far girare il modello Phi-3.
 
 ```python
 generation_args = {
@@ -96,9 +96,9 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-Durante l’esecuzione del codice, possiamo monitorare lo stato di funzionamento della NPU tramite il Task Manager
+Durante l’esecuzione del codice, possiamo visualizzare lo stato di funzionamento della NPU tramite il Task Manager
 
-![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.it.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.it.png)
 
 ***Esempi*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -106,39 +106,39 @@ Durante l’esecuzione del codice, possiamo monitorare lo stato di funzionamento
 
 ### **Cos’è DirectML**
 
-[DirectML](https://github.com/microsoft/DirectML) è una libreria DirectX 12 ad alte prestazioni e accelerata hardware per il machine learning. DirectML fornisce accelerazione GPU per i comuni compiti di machine learning su un’ampia gamma di hardware e driver supportati, incluse tutte le GPU compatibili con DirectX 12 di vendor come AMD, Intel, NVIDIA e Qualcomm.
+[DirectML](https://github.com/microsoft/DirectML) è una libreria DirectX 12 ad alte prestazioni e accelerata hardware per il machine learning. DirectML fornisce accelerazione GPU per i comuni compiti di machine learning su un’ampia gamma di hardware e driver supportati, inclusi tutti i GPU compatibili con DirectX 12 di produttori come AMD, Intel, NVIDIA e Qualcomm.
 
-Quando usata da sola, l’API DirectML è una libreria DirectX 12 a basso livello ed è adatta per applicazioni ad alte prestazioni e bassa latenza come framework, giochi e altre applicazioni in tempo reale. L’interoperabilità fluida di DirectML con Direct3D 12, il suo basso overhead e la conformità su diversi hardware rendono DirectML ideale per accelerare il machine learning quando si desidera alte prestazioni e al contempo affidabilità e prevedibilità dei risultati su vari dispositivi.
+Quando usata da sola, l’API DirectML è una libreria DirectX 12 a basso livello ed è adatta per applicazioni ad alte prestazioni e bassa latenza come framework, giochi e altre applicazioni in tempo reale. L’interoperabilità senza soluzione di continuità di DirectML con Direct3D 12, così come il suo basso overhead e la conformità su diversi hardware, rendono DirectML ideale per accelerare il machine learning quando si desidera sia alte prestazioni sia affidabilità e prevedibilità dei risultati su diversi hardware.
 
-***Nota*** : L’ultima versione di DirectML supporta già NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
+***Nota*** : L’ultima versione di DirectML supporta già le NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
 ### DirectML e CUDA in termini di capacità e prestazioni:
 
 **DirectML** è una libreria di machine learning sviluppata da Microsoft. È progettata per accelerare i carichi di lavoro di machine learning su dispositivi Windows, inclusi desktop, laptop e dispositivi edge.  
-- Basata su DX12: DirectML è costruita sopra DirectX 12 (DX12), che offre un ampio supporto hardware per GPU, incluse NVIDIA e AMD.  
-- Supporto più ampio: sfruttando DX12, DirectML può funzionare con qualsiasi GPU che supporta DX12, comprese le GPU integrate.  
-- Elaborazione immagini: DirectML elabora immagini e altri dati usando reti neurali, risultando adatta a compiti come riconoscimento immagini, rilevamento oggetti e altro.  
-- Facilità di configurazione: configurare DirectML è semplice e non richiede SDK o librerie specifiche dai produttori di GPU.  
-- Prestazioni: in alcuni casi, DirectML offre buone prestazioni e può essere più veloce di CUDA, specialmente per certi carichi di lavoro.  
-- Limitazioni: tuttavia, ci sono situazioni in cui DirectML può essere più lento, in particolare con batch di grandi dimensioni in float16.
+- Basata su DX12: DirectML è costruita sopra DirectX 12 (DX12), che offre un ampio supporto hardware su GPU, inclusi NVIDIA e AMD.  
+- Supporto più ampio: Poiché sfrutta DX12, DirectML può funzionare con qualsiasi GPU che supporti DX12, anche GPU integrate.  
+- Elaborazione immagini: DirectML elabora immagini e altri dati usando reti neurali, rendendola adatta a compiti come riconoscimento immagini, rilevamento oggetti e altro.  
+- Facilità di configurazione: Configurare DirectML è semplice e non richiede SDK o librerie specifiche dai produttori di GPU.  
+- Prestazioni: In alcuni casi, DirectML offre buone prestazioni e può essere più veloce di CUDA, specialmente per certi carichi di lavoro.  
+- Limitazioni: Tuttavia, ci sono casi in cui DirectML può essere più lento, in particolare per batch di grandi dimensioni in float16.
 
-**CUDA** è la piattaforma di calcolo parallelo e modello di programmazione di NVIDIA. Permette agli sviluppatori di sfruttare la potenza delle GPU NVIDIA per il calcolo generale, inclusi machine learning e simulazioni scientifiche.  
-- Specifico NVIDIA: CUDA è strettamente integrato con le GPU NVIDIA ed è progettato specificamente per esse.  
-- Altamente ottimizzato: offre prestazioni eccellenti per compiti accelerati su GPU, specialmente con GPU NVIDIA.  
-- Ampiamente usato: molti framework e librerie di machine learning (come TensorFlow e PyTorch) supportano CUDA.  
-- Personalizzazione: gli sviluppatori possono ottimizzare le impostazioni CUDA per compiti specifici, ottenendo prestazioni ottimali.  
-- Limitazioni: tuttavia, la dipendenza da hardware NVIDIA può limitare la compatibilità con GPU di altri produttori.
+**CUDA** è la piattaforma di calcolo parallelo e modello di programmazione di NVIDIA. Permette agli sviluppatori di sfruttare la potenza delle GPU NVIDIA per il calcolo generico, incluso il machine learning e le simulazioni scientifiche.  
+- Specifico per NVIDIA: CUDA è strettamente integrato con le GPU NVIDIA ed è progettato specificamente per esse.  
+- Altamente ottimizzato: Offre prestazioni eccellenti per compiti accelerati da GPU, specialmente con GPU NVIDIA.  
+- Ampiamente usato: Molti framework e librerie di machine learning (come TensorFlow e PyTorch) supportano CUDA.  
+- Personalizzazione: Gli sviluppatori possono ottimizzare le impostazioni CUDA per compiti specifici, ottenendo prestazioni ottimali.  
+- Limitazioni: Tuttavia, la dipendenza da hardware NVIDIA può essere limitante se si desidera una compatibilità più ampia con diverse GPU.
 
 ### Scegliere tra DirectML e CUDA
 
-La scelta tra DirectML e CUDA dipende dal caso d’uso specifico, dalla disponibilità hardware e dalle preferenze.  
-Se cerchi compatibilità più ampia e facilità di configurazione, DirectML può essere una buona scelta. Se invece disponi di GPU NVIDIA e necessiti di prestazioni altamente ottimizzate, CUDA rimane una scelta forte. In sintesi, entrambi hanno punti di forza e debolezze, quindi valuta i tuoi requisiti e l’hardware disponibile prima di decidere.
+La scelta tra DirectML e CUDA dipende dal tuo caso d’uso specifico, dalla disponibilità hardware e dalle preferenze.  
+Se cerchi una compatibilità più ampia e facilità di configurazione, DirectML potrebbe essere una buona scelta. Tuttavia, se disponi di GPU NVIDIA e hai bisogno di prestazioni altamente ottimizzate, CUDA rimane un’opzione valida. In sintesi, sia DirectML che CUDA hanno punti di forza e debolezze, quindi valuta i tuoi requisiti e l’hardware disponibile prima di decidere.
 
 ### **AI generativa con ONNX Runtime**
 
-Nell’era dell’AI, la portabilità dei modelli AI è molto importante. ONNX Runtime consente di distribuire facilmente modelli addestrati su dispositivi diversi. Gli sviluppatori non devono preoccuparsi del framework di inferenza e possono usare un’API unificata per completare l’inferenza del modello. Nell’era dell’AI generativa, ONNX Runtime ha anche effettuato ottimizzazioni del codice (https://onnxruntime.ai/docs/genai/). Grazie all’ONNX Runtime ottimizzato, il modello di AI generativa quantizzato può essere inferito su terminali differenti. Con Generative AI con ONNX Runtime, puoi utilizzare l’API di inferenza del modello AI tramite Python, C#, C/C++. Naturalmente, il deployment su iPhone può sfruttare l’API Generative AI con ONNX Runtime in C++.
+Nell’era dell’AI, la portabilità dei modelli AI è molto importante. ONNX Runtime permette di distribuire facilmente modelli addestrati su dispositivi diversi. Gli sviluppatori non devono preoccuparsi del framework di inferenza e possono usare un’API unificata per completare l’inferenza del modello. Nell’era dell’AI generativa, ONNX Runtime ha anche effettuato ottimizzazioni del codice (https://onnxruntime.ai/docs/genai/). Grazie a ONNX Runtime ottimizzato, il modello di AI generativa quantizzato può essere inferito su diversi terminali. Con Generative AI con ONNX Runtime, puoi inferire modelli AI tramite API in Python, C#, C/C++. Naturalmente, il deployment su iPhone può sfruttare l’API Generative AI con ONNX Runtime in C++.
 
-[Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
+[Codice di esempio](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
 ***Compilare la libreria generative AI con ONNX Runtime***
 
@@ -179,7 +179,7 @@ python build.py --use_dml
 
 ```
 
-**Installare la libreria**
+**Installa la libreria**
 
 ```bash
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Questo è il risultato dell’esecuzione
 
-![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.it.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.it.png)
 
 ***Esempi*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -197,9 +197,9 @@ Questo è il risultato dell’esecuzione
 
 ### **Cos’è OpenVINO**
 
-[OpenVINO](https://github.com/openvinotoolkit/openvino) è un toolkit open source per ottimizzare e distribuire modelli di deep learning. Offre prestazioni accelerate per modelli di visione, audio e linguaggio provenienti da framework popolari come TensorFlow, PyTorch e altri. Inizia con OpenVINO. OpenVINO può essere utilizzato anche in combinazione con CPU e GPU per eseguire il modello Phi-3.
+[OpenVINO](https://github.com/openvinotoolkit/openvino) è un toolkit open-source per ottimizzare e distribuire modelli di deep learning. Offre prestazioni potenziate per modelli di visione, audio e linguaggio provenienti da framework popolari come TensorFlow, PyTorch e altri. Inizia con OpenVINO. OpenVINO può anche essere usato in combinazione con CPU e GPU per eseguire il modello Phi-3.
 
-***Nota***: Attualmente OpenVINO non supporta la NPU.
+***Nota***: Attualmente, OpenVINO non supporta le NPU.
 
 ### **Installare la libreria OpenVINO**
 
@@ -215,7 +215,7 @@ Questo è il risultato dell’esecuzione
 
 ### **Eseguire Phi-3 con OpenVINO**
 
-Come per la NPU, OpenVINO completa la chiamata ai modelli di AI generativa eseguendo modelli quantizzati. È necessario quantizzare prima il modello Phi-3 e completare la quantizzazione tramite la riga di comando con optimum-cli
+Come per la NPU, OpenVINO completa la chiamata ai modelli di AI generativa eseguendo modelli quantizzati. È necessario quantizzare prima il modello Phi-3 e completare la quantizzazione del modello da linea di comando tramite optimum-cli
 
 **INT4**
 
@@ -233,9 +233,9 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ```
 
-il formato convertito, come questo
+Il formato convertito, come questo
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.it.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.it.png)
 
 Carica i percorsi del modello (model_dir), le configurazioni correlate (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) e i dispositivi hardware accelerati (GPU.0) tramite OVModelForCausalLM
 
@@ -251,13 +251,13 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-Durante l’esecuzione del codice, possiamo monitorare lo stato di funzionamento della GPU tramite il Task Manager
+Durante l’esecuzione del codice, possiamo visualizzare lo stato di funzionamento della GPU tramite il Task Manager
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.it.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.it.png)
 
 ***Esempi*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***Nota*** : I tre metodi sopra hanno ciascuno i loro vantaggi, ma si consiglia di usare l’accelerazione NPU per l’inferenza su AI PC.
+### ***Nota*** : I tre metodi sopra hanno ciascuno i propri vantaggi, ma si consiglia di utilizzare l’accelerazione NPU per l’inferenza su AI PC.
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda la traduzione professionale effettuata da un esperto umano. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
