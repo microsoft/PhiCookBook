@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-09T04:33:27+00:00",
+  "translation_date": "2025-07-16T16:05:02+00:00",
   "source_file": "code/03.Finetuning/olive-ort-example/README.md",
   "language_code": "ms"
 }
 -->
-# Fine-tune Phi3 using Olive
+# Laraskan Phi3 menggunakan Olive
 
-In this example you'll use Olive to:
+Dalam contoh ini, anda akan menggunakan Olive untuk:
 
-1. Fine-tune a LoRA adapter to classify phrases into Sad, Joy, Fear, Surprise.  
-1. Merge the adapter weights into the base model.  
-1. Optimize and Quantize the model into `int4`.
+1. Laraskan penyesuai LoRA untuk mengklasifikasikan frasa kepada Sedih, Gembira, Takut, Terkejut.
+1. Gabungkan berat penyesuai ke dalam model asas.
+1. Optimumkan dan Kuantisasi model ke dalam `int4`.
 
-We'll also show you how to inference the fine-tuned model using the ONNX Runtime (ORT) Generate API.
+Kami juga akan tunjukkan cara untuk inferens model yang telah dilaras menggunakan ONNX Runtime (ORT) Generate API.
 
-> **⚠️ For Fine-tuning, you'll need to have a suitable GPU available - for example, an A10, V100, A100.**
+> **⚠️ Untuk Larasan, anda perlu mempunyai GPU yang sesuai - contohnya, A10, V100, A100.**
 
-## 💾 Install
+## 💾 Pasang
 
-Create a new Python virtual environment (for example, using `conda`):
+Buat persekitaran maya Python baru (contohnya, menggunakan `conda`):
 
 ```bash
 conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-Next, install the Olive and the dependencies for a fine-tuning workflow:
+Seterusnya, pasang Olive dan kebergantungan untuk aliran kerja larasan:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -36,34 +36,34 @@ pip install olive-ai[gpu]
 pip install -r requirements.txt
 ```
 
-## 🧪 Fine-tune Phi3 using Olive
-The [Olive configuration file](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) contains a *workflow* with the following *passes*:
+## 🧪 Laraskan Phi3 menggunakan Olive
+Fail [konfigurasi Olive](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) mengandungi *aliran kerja* dengan *langkah* berikut:
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-At a high-level, this workflow will:
+Secara ringkas, aliran kerja ini akan:
 
-1. Fine-tune Phi3 (for 150 steps, which you can modify) using the [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json) data.  
-1. Merge the LoRA adapter weights into the base model. This will give you a single model artifact in the ONNX format.  
-1. Model Builder will optimize the model for the ONNX runtime *and* quantize the model into `int4`.
+1. Laraskan Phi3 (selama 150 langkah, yang boleh anda ubah) menggunakan data [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json).
+1. Gabungkan berat penyesuai LoRA ke dalam model asas. Ini akan menghasilkan satu artifak model dalam format ONNX.
+1. Model Builder akan mengoptimumkan model untuk runtime ONNX *dan* mengkuantisasi model ke dalam `int4`.
 
-To execute the workflow, run:
+Untuk menjalankan aliran kerja, jalankan:
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-When Olive has completed, you're optimized `int4` fine-tuned Phi3 model is available in: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
+Apabila Olive selesai, model Phi3 yang telah dilaras dan dioptimumkan `int4` anda boleh didapati di: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-## 🧑‍💻 Integrate fine-tuned Phi3 into your application 
+## 🧑‍💻 Integrasikan Phi3 yang telah dilaras ke dalam aplikasi anda
 
-To run the app:
+Untuk menjalankan aplikasi:
 
 ```bash
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-This response should be a single word classification of the phrase (Sad/Joy/Fear/Surprise).
+Respons ini sepatutnya berupa klasifikasi satu perkataan bagi frasa tersebut (Sedih/Gembira/Takut/Terkejut).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

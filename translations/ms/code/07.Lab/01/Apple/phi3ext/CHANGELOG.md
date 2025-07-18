@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-05-09T05:01:13+00:00",
+  "translation_date": "2025-07-16T16:49:48+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
   "language_code": "ms"
 }
 -->
-# Changelog
+# Log Perubahan
 
-All significant changes to the "phi3ext" extensions will be recorded in this file.
+Semua perubahan penting untuk sambungan "phi3ext" akan direkodkan dalam fail ini.
 
-Please refer to [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+Sila rujuk [Keep a Changelog](http://keepachangelog.com/) untuk panduan tentang cara menyusun fail ini.
 
-## [Unreleased]
+## [Belum Diterbitkan]
 
-- Initial version
+- Versi awal
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

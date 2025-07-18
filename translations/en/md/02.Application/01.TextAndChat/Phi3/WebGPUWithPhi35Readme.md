@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b62864faf628eb07f5231d4885555198",
-  "translation_date": "2025-07-09T19:10:50+00:00",
+  "translation_date": "2025-07-17T03:05:01+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md",
   "language_code": "en"
 }
@@ -11,10 +11,10 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Demo for showcasing WebGPU and RAG Pattern
 
-The RAG Pattern with the Phi-3.5 Onnx Hosted model uses the Retrieval-Augmented Generation approach, combining the strengths of Phi-3.5 models with ONNX hosting for efficient AI deployments. This pattern is key for fine-tuning models on domain-specific tasks, offering a balance of quality, cost-efficiency, and long-context understanding. It’s part of Azure AI’s portfolio, providing a wide range of models that are easy to find, test, and use, meeting the customization needs of various industries.
+The RAG Pattern with the Phi-3.5 Onnx Hosted model uses the Retrieval-Augmented Generation approach, combining the strengths of Phi-3.5 models with ONNX hosting for efficient AI deployment. This pattern is key for fine-tuning models on domain-specific tasks, offering a balance of quality, cost-efficiency, and long-context understanding. It’s part of Azure AI’s portfolio, providing a wide range of models that are easy to find, test, and use, meeting the customization needs of various industries.
 
 ## What is WebGPU  
-WebGPU is a modern web graphics API designed to give direct and efficient access to a device’s graphics processing unit (GPU) from web browsers. It is meant to replace WebGL, offering several important improvements:
+WebGPU is a modern web graphics API designed to give direct, efficient access to a device’s graphics processing unit (GPU) from web browsers. It is meant to replace WebGL, offering several important improvements:
 
 1. **Compatibility with Modern GPUs**: WebGPU is designed to work smoothly with current GPU architectures, using system APIs like Vulkan, Metal, and Direct3D 12.
 2. **Improved Performance**: It supports general-purpose GPU computing and faster operations, making it suitable for both graphics rendering and machine learning tasks.
@@ -67,9 +67,10 @@ Follow these steps to configure a high-performance GPU for Microsoft Edge on Win
 - **Open Settings:** Click the Start menu and select Settings.  
 - **System Settings:** Go to System, then Display.  
 - **Graphics Settings:** Scroll down and click Graphics settings.  
-- **Choose App:** Under “Choose an app to set preference,” select Desktop app and then Browse.  
+- **Choose App:** Under “Choose an app to set preference,” select Desktop app, then click Browse.  
 - **Select Edge:** Navigate to the Edge installation folder (usually `C:\Program Files (x86)\Microsoft\Edge\Application`) and select `msedge.exe`.  
-- **Set Preference:** Click Options, choose High performance, and then click Save.  
+- **Set Preference:** Click Options, choose High performance, then click Save.  
+
 This ensures Microsoft Edge uses your high-performance GPU for better performance.  
 - **Restart** your computer for these settings to take effect.
 

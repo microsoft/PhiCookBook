@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-07T13:45:36+00:00",
+  "translation_date": "2025-07-17T04:43:45+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "mo"
 }
 -->
-## **Phi-4-mini-mm ашиглан код үүсгэх**
+## **使用 Phi-4-mini-mm 生成程式碼**
 
-Phi-4-mini нь Phi Family-ийн хүчтэй код бичих чадварыг үргэлжлүүлдэг. Та Prompt ашиглан кодтой холбоотой асуулт асууж болно. Мэдээж, хүчтэй логик чадвар нэмэгдсэнээр илүү хүчтэй код бичих чадвартай болсон бөгөөд шаардлагын дагуу төслүүд үүсгэх боломжтой. Жишээ нь, шаардлагын дагуу төслүүд үүсгэх, тухайлбал:
+Phi-4-mini 延續了 Phi 家族強大的程式編寫能力。你可以使用 Prompt 來詢問與程式相關的問題。當然，加入了強大的推理能力後，它的程式編寫能力更強，例如能根據需求生成專案。舉例來說，根據需求生成專案，如下：
 
-### **Шаардлага**
+### **需求**
 
-Худалдан авах сагсны апп үүсгэх
+建立一個購物車應用程式
 
-- Дараах аргуудтай API Rest үүсгэх:
-    - Хуудас, offset, limit ашиглан шар айрагны жагсаалт авах.
-    - id-аар шар айрагны дэлгэрэнгүй мэдээлэл авах.
-    - Нэр, тайлбар, уриа үг, хоолны хослол, үнэ ашиглан шар айраг хайх.
-- Гол хуудсан дээр бүтээгдэхүүний жагсаалт үүсгэх.
-    - Бүтээгдэхүүн шүүх хайлтын самбар үүсгэх.
-    - Хэрэглэгч бүтээгдэхүүн дээр дарвал тайлбарын хуудсанд шилжих.
-- (Сонголт) Үнээр бүтээгдэхүүн шүүх Slicer.
-- Худалдан авах сагс үүсгэх.
-    - Бүтээгдэхүүн сагсанд нэмэх.
-    - Бүтээгдэхүүн сагснаас хасах.
-    - Сагс дахь бүтээгдэхүүний нийт үнийг тооцоолох.
+- 建立一個 API Rest，包含以下方法：
+    - 使用頁碼偏移和限制取得啤酒清單。
+    - 透過 id 取得啤酒詳細資料。
+    - 依名稱、描述、標語、搭配食物及價格搜尋啤酒。
+- 在主頁建立產品清單。
+    - 建立搜尋欄以篩選產品。
+    - 使用者點擊產品時導向描述頁面。
+- （選擇性）使用切片器依價格篩選產品。
+- 建立購物車。
+    - 將產品加入購物車。
+    - 從購物車移除產品。
+    - 計算購物車中產品的總價。
 
-### **Жишээ код - Python**
+### **範例程式碼 - Python**
 
 
 ```python
@@ -139,5 +139,5 @@ print(response)
 
 ```
 
-**Disclaimer**:  
-Thiz documont haz been translaytid uzing AI translaytion serviz [Co-op Translator](https://github.com/Azure/co-op-translator). Wile we striv for akkuracy, pleez be awar that otomaytid translaytions may contain erors or inakuraseez. The orijinal documont in its native langwaj shud be konsidrd the authoritativ sorce. For kritikal informashun, profeshunal hyuman translaytion is rekomended. We ar not laybl for eny misunderstandings or misinterpretayshuns arising from the yuz of this translaytion.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

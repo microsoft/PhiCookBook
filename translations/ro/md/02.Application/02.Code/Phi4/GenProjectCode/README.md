@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:51:54+00:00",
+  "translation_date": "2025-07-17T04:47:16+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "ro"
 }
 -->
 ## **Folosirea Phi-4-mini-mm pentru generarea de cod**
 
-Phi-4-mini continuă capacitățile puternice de programare ale familiei Phi. Poți folosi Prompt pentru a pune întrebări legate de programare. Desigur, după adăugarea unei abilități puternice de raționament, are capacități de codare și mai avansate, cum ar fi generarea de proiecte conform cerințelor. De exemplu, generarea de proiecte conform cerințelor, cum ar fi:
+Phi-4-mini continuă capacitățile puternice de programare ale familiei Phi. Poți folosi Prompt pentru a pune întrebări legate de programare. Desigur, după adăugarea unei puternice capacități de raționament, are abilități și mai puternice de codare, cum ar fi generarea de proiecte conform cerințelor. De exemplu, generarea de proiecte conform cerințelor, cum ar fi:
 
 ### **Cerință**
 
 Creează o aplicație de coș de cumpărături
 
 - Creează un API Rest cu următoarele metode:
-    - Obține o listă de beri folosind pagina, offset și limită.
+    - Obține o listă de beri folosind offset și limită pentru paginare.
     - Obține detalii despre bere după id.
-    - Caută bere după nume, descriere, slogan, potriviri culinare și preț.
+    - Caută bere după nume, descriere, slogan, asocieri culinare și preț.
 - Creează o listă de produse pe pagina principală.
     - Creează o bară de căutare pentru filtrarea produselor.
     - Navighează către pagina de descriere când utilizatorul face clic pe un produs.
@@ -28,7 +28,7 @@ Creează o aplicație de coș de cumpărături
     - Elimină produse din coș.
     - Calculează prețul total al produselor din coș.
 
-### **Cod exemplu - Python**
+### **Exemplu de cod - Python**
 
 
 ```python
@@ -139,5 +139,5 @@ print(response)
 
 ```
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să țineți cont că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

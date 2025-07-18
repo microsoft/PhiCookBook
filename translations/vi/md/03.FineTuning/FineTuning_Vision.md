@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:04:30+00:00",
+  "translation_date": "2025-07-17T08:49:57+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "vi"
 }
 -->
 # Phi-3.5-vision finetuning recipe
 
-Đây là hỗ trợ chính thức cho việc finetuning Phi-3.5-vision sử dụng thư viện huggingface.  
-Vui lòng `cd` đến thư mục code [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) trước khi chạy các lệnh dưới đây.
+Đây là hướng dẫn chính thức để tinh chỉnh Phi-3.5-vision sử dụng thư viện huggingface.  
+Vui lòng `cd` vào thư mục mã nguồn [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) trước khi chạy các lệnh dưới đây.
 
-## Installation
+## Cài đặt
 
 ```bash
 # create a new conda environment
@@ -33,9 +33,9 @@ MAX_JOBS=32 pip install flash-attn==2.4.2 --no-build-isolation
 pip install bitsandbytes==0.43.1
 ```
 
-## Quick start
+## Bắt đầu nhanh
 
-Chúng tôi cung cấp hai script finetuning mẫu, một cho DocVQA và một cho phân loại hateful meme.
+Chúng tôi cung cấp hai script ví dụ để tinh chỉnh, một cho DocVQA và một cho phân loại meme thù địch.
 
 Phần cứng tối thiểu đã thử nghiệm trên 4x RTX8000 (48GB RAM mỗi GPU)
 
@@ -44,21 +44,21 @@ Phần cứng tối thiểu đã thử nghiệm trên 4x RTX8000 (48GB RAM mỗi
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision hiện chính thức hỗ trợ đầu vào nhiều hình ảnh. Dưới đây là ví dụ finetuning NLVR2
+Phi-3.5-vision hiện chính thức hỗ trợ đầu vào đa hình ảnh. Dưới đây là ví dụ tinh chỉnh cho NLVR2
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ```
 
-## Usage guide
+## Hướng dẫn sử dụng
 
-Tùy thuộc vào phần cứng, người dùng có thể chọn các chiến lược finetuning khác nhau. Chúng tôi hỗ trợ  
-full-finetuning (với Deepspeed Zero-2) với tùy chọn đóng băng các tham số vision, và LoRA (bao gồm cả 4bit QLoRA).  
-Nói chung, chúng tôi khuyên dùng full finetuning với flash attention và bf16 khi có thể.
+Tùy thuộc vào phần cứng, người dùng có thể chọn các chiến lược tinh chỉnh khác nhau. Chúng tôi hỗ trợ  
+full-finetuning (với Deepspeed Zero-2) có thể tùy chọn đóng băng các tham số vision, và LoRA (bao gồm cả QLoRA 4bit).  
+Nói chung, chúng tôi khuyến nghị sử dụng full finetuning với flash attention và bf16 khi có thể.
 
 ### Hướng dẫn chuyển đổi dataset tùy chỉnh sang định dạng yêu cầu
 
-Chúng tôi dùng một dataset phân loại video tối giản (một phần của UCF-101) làm ví dụ từ đầu đến cuối để minh họa cách chuyển dataset tùy chỉnh sang định dạng yêu cầu và finetune Phi-3.5-vision trên đó.
+Chúng tôi sử dụng một dataset phân loại video tối giản (một phần của UCF-101) làm ví dụ đầu-cuối để minh họa cách chuyển đổi dataset tùy chỉnh sang định dạng yêu cầu và tinh chỉnh Phi-3.5-vision trên đó.
 
 ```bash
 # convert data
@@ -68,7 +68,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-Dữ liệu đã chuyển đổi sẽ trông như sau:
+Dữ liệu sau khi chuyển đổi sẽ trông như sau:
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -114,48 +114,49 @@ Dữ liệu đã chuyển đổi sẽ trông như sau:
 34 directories, 3 files
 ```
 
-Với annotation `jsonl`, mỗi dòng nên là một dictionary như sau:
+Đối với phần chú thích `jsonl`, mỗi dòng nên là một dictionary như sau:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Lưu ý rằng `conversations` là một danh sách, do đó có thể hỗ trợ hội thoại nhiều lượt nếu dữ liệu như vậy có sẵn.
+Lưu ý rằng `conversations` là một danh sách, do đó có thể hỗ trợ hội thoại đa lượt nếu dữ liệu như vậy có sẵn.
 
-## Requesting Azure GPU Quota 
+## Yêu cầu tăng hạn mức GPU Azure
 
-### Prerequisites
+### Điều kiện tiên quyết
 
-Một tài khoản Azure với vai trò Contributor (hoặc vai trò khác có quyền Contributor).
+Một tài khoản Azure với vai trò Contributor (hoặc vai trò khác bao gồm quyền Contributor).
 
 Nếu bạn chưa có tài khoản Azure, hãy tạo [tài khoản miễn phí trước khi bắt đầu](https://azure.microsoft.com).
 
-### Request a quota increase
+### Yêu cầu tăng hạn mức
 
-Bạn có thể gửi yêu cầu tăng quota trực tiếp từ My quotas. Làm theo các bước dưới đây để yêu cầu tăng quota. Ví dụ này bạn có thể chọn bất kỳ quota có thể điều chỉnh trong subscription của mình.
+Bạn có thể gửi yêu cầu tăng hạn mức trực tiếp từ My quotas. Làm theo các bước dưới đây để yêu cầu tăng hạn mức. Ví dụ này bạn có thể chọn bất kỳ hạn mức có thể điều chỉnh nào trong subscription của bạn.
 
 Đăng nhập vào [Azure portal](https://portal.azure.com).
 
 Nhập "quotas" vào ô tìm kiếm, sau đó chọn Quotas.  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-Ở trang Overview, chọn một nhà cung cấp, ví dụ Compute hoặc AML.
+Trên trang Overview, chọn một nhà cung cấp, ví dụ Compute hoặc AML.
 
-**Note** Với tất cả nhà cung cấp ngoài Compute, bạn sẽ thấy cột Request increase thay vì cột Adjustable như mô tả bên dưới. Tại đây, bạn có thể yêu cầu tăng quota cụ thể hoặc tạo yêu cầu hỗ trợ cho việc tăng.
+**Lưu ý** Đối với tất cả nhà cung cấp ngoài Compute, bạn sẽ thấy cột Request increase thay vì cột Adjustable như mô tả bên dưới. Tại đó, bạn có thể yêu cầu tăng hạn mức cụ thể hoặc tạo yêu cầu hỗ trợ để tăng hạn mức.
 
-Ở trang My quotas, dưới Quota name, chọn quota bạn muốn tăng. Đảm bảo cột Adjustable hiển thị Yes cho quota đó.
+Trên trang My quotas, dưới Quota name, chọn hạn mức bạn muốn tăng. Đảm bảo cột Adjustable hiển thị Yes cho hạn mức này.
 
-Gần đầu trang, chọn New Quota Request, sau đó chọn Enter a new limit.  
+Gần đầu trang, chọn New Quota Request, sau đó chọn Enter a new limit.
+
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-Trong bảng New Quota Request, nhập giá trị số cho giới hạn quota mới, sau đó chọn Submit.
+Trong bảng New Quota Request, nhập giá trị số cho hạn mức mới, sau đó chọn Submit.
 
-Yêu cầu của bạn sẽ được xem xét và bạn sẽ nhận được thông báo nếu yêu cầu được chấp thuận. Thường quá trình này diễn ra trong vài phút.
+Yêu cầu của bạn sẽ được xem xét và bạn sẽ nhận được thông báo nếu yêu cầu được chấp thuận. Thông thường điều này diễn ra trong vài phút.
 
-Nếu yêu cầu không được chấp thuận, bạn sẽ thấy liên kết để tạo yêu cầu hỗ trợ. Khi sử dụng liên kết này, kỹ sư hỗ trợ sẽ giúp bạn với yêu cầu tăng quota.
+Nếu yêu cầu không được chấp thuận, bạn sẽ thấy liên kết để tạo yêu cầu hỗ trợ. Khi sử dụng liên kết này, kỹ sư hỗ trợ sẽ giúp bạn với yêu cầu tăng hạn mức.
 
-## Azure Compute GPU machine SKU suggestions
+## Gợi ý SKU máy tính GPU Azure
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -167,7 +168,7 @@ Dưới đây là một số ví dụ:
 
 ### Nếu bạn có GPU A100 hoặc H100
 
-Full finetuning thường cho hiệu suất tốt nhất. Bạn có thể dùng lệnh sau để finetune Phi-3-V trên phân loại hateful memes.
+Full finetuning thường cho hiệu suất tốt nhất. Bạn có thể dùng lệnh sau để tinh chỉnh Phi-3-V cho phân loại meme thù địch.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -181,9 +182,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Nếu bạn có Standard_ND40rs_v2 8x V100-32GB GPUs
 
-Bạn vẫn có thể full finetune Phi-3-V trên phân loại hateful memes. Tuy nhiên, hãy chuẩn bị  
-hiệu suất thấp hơn nhiều so với GPU A100 hoặc H100 do không hỗ trợ flash attention.  
-Độ chính xác cũng có thể bị ảnh hưởng do không hỗ trợ bf16 (thay vào đó dùng fp16 mixed-precision training).
+Vẫn có thể tinh chỉnh đầy đủ Phi-3-V cho phân loại meme thù địch. Tuy nhiên, hãy kỳ vọng  
+thông lượng thấp hơn nhiều so với GPU A100 hoặc H100 do không hỗ trợ flash attention.  
+Độ chính xác cũng có thể bị ảnh hưởng do không hỗ trợ bf16 (thay vào đó sử dụng huấn luyện mixed-precision fp16).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -193,9 +194,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### Nếu bạn không có quyền truy cập GPU trong data center
+### Nếu bạn không có quyền truy cập GPU trung tâm dữ liệu
 
-LoRA có thể là lựa chọn duy nhất của bạn. Bạn có thể dùng lệnh sau để finetune Phi-3-V trên phân loại hateful memes.
+LoRA có thể là lựa chọn duy nhất của bạn. Bạn có thể dùng lệnh sau để tinh chỉnh Phi-3-V cho phân loại meme thù địch.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -205,7 +206,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-Với GPU Turing+ thì QLoRA được hỗ trợ
+Đối với GPU Turing+ hỗ trợ QLoRA
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -216,7 +217,7 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## Suggested hyperparameters and expected accuracy
+## Các siêu tham số đề xuất và độ chính xác dự kiến
 
 ### NLVR2
 
@@ -231,17 +232,17 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Phương pháp huấn luyện | Đóng băng mô hình vision | loại dữ liệu | LoRA rank | LoRA alpha | kích thước batch | learning rate | epochs | Độ chính xác  
+Phương pháp huấn luyện | Mô hình vision đóng băng | loại dữ liệu | LoRA rank | LoRA alpha | kích thước batch | learning rate | epochs | Độ chính xác  
 --- | --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |  
 full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |  
 Kết quả LoRA sẽ sớm được cập nhật |  |  |  |  |  |  |  |  |
 
-### NOTE  
-Kết quả DocVQA và Hateful memes bên dưới dựa trên phiên bản trước (Phi-3-vision).  
+### LƯU Ý  
+Kết quả DocVQA và Hateful memes dưới đây dựa trên phiên bản trước (Phi-3-vision).  
 Kết quả mới với Phi-3.5-vision sẽ được cập nhật sớm.
 
-### DocVQA (NOTE: Phi-3-vision)
+### DocVQA (LƯU Ý: Phi-3-vision)
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -259,14 +260,14 @@ Phương pháp huấn luyện | loại dữ liệu | LoRA rank | LoRA alpha | k�
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |  
 full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |  
-Đóng băng mô hình ảnh| bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |  
-Đóng băng mô hình ảnh| fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |  
+mô hình ảnh đóng băng | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |  
+mô hình ảnh đóng băng | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |  
 LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |  
 LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |  
 QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |  
 QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
-### Hateful memes (NOTE: Phi-3-vision)
+### Hateful memes (LƯU Ý: Phi-3-vision)
 
 ```bash
 torchrun --nproc_per_node=4 \
@@ -283,29 +284,29 @@ Phương pháp huấn luyện | loại dữ liệu | LoRA rank | LoRA alpha | k�
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |  
 full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |  
-Đóng băng mô hình ảnh| bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |  
-Đóng băng mô hình ảnh| fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |  
+mô hình ảnh đóng băng | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |  
+mô hình ảnh đóng băng | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |  
 LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |  
 LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |  
 QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |  
 QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
-## Speed benchmarking (NOTE: Phi-3-vision)
+## Đo hiệu năng (LƯU Ý: Phi-3-vision)
 
-Kết quả benchmark mới với Phi-3.5-vision sẽ được cập nhật sớm.
+Kết quả đo hiệu năng mới với Phi-3.5-vision sẽ được cập nhật sớm.
 
-Benchmark tốc độ được thực hiện trên dataset DocVQA. Độ dài chuỗi trung bình của dataset này là 2443.23 tokens (sử dụng `num_crops=16` cho mô hình ảnh).
+Đo hiệu năng được thực hiện trên dataset DocVQA. Độ dài trung bình chuỗi của dataset này là 2443.23 token (sử dụng `num_crops=16` cho mô hình ảnh).
 
 ### 8x A100-80GB (Ampere)
 
-Phương pháp huấn luyện | \# nodes | GPUs | flash attention | Kích thước batch hiệu quả | Throughput (img/s) | Tăng tốc | Bộ nhớ GPU đỉnh (GB)  
+Phương pháp huấn luyện | \# nodes | GPUs | flash attention | Kích thước batch hiệu quả | Thông lượng (ảnh/s) | Tăng tốc | Bộ nhớ GPU đỉnh (GB)  
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42  
 full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36  
 full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29  
 full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26  
-Đóng băng mô hình ảnh | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29  
-Đóng băng mô hình ảnh | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27  
+mô hình ảnh đóng băng | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29  
+mô hình ảnh đóng băng | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27  
 LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50  
 LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16  
 QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32  
@@ -313,18 +314,18 @@ QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
 ### 8x V100-32GB (Volta)
 
-Phương pháp huấn luyện | \# nodes | GPUs | flash attention | Kích thước batch hiệu quả | Throughput (img/s) | Tăng tốc | Bộ nhớ GPU đỉnh (GB)  
+Phương pháp huấn luyện | \# nodes | GPUs | flash attention | Kích thước batch hiệu quả | Thông lượng (ảnh/s) | Tăng tốc | Bộ nhớ GPU đỉnh (GB)  
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32  
 full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32  
 full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32  
-Đóng băng mô hình ảnh | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27  
+mô hình ảnh đóng băng | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27  
 LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30  
 
-## Known issues
+## Các vấn đề đã biết
 
 - Không thể chạy flash attention với fp16 (luôn khuyến nghị dùng bf16 khi có, và tất cả GPU hỗ trợ flash attention cũng hỗ trợ bf16).  
 - Hiện chưa hỗ trợ lưu checkpoint trung gian và tiếp tục huấn luyện.
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn chính xác và đáng tin cậy. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

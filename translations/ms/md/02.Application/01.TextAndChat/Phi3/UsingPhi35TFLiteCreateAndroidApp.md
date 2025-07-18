@@ -2,36 +2,36 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:50:04+00:00",
+  "translation_date": "2025-07-17T02:54:11+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "ms"
 }
 -->
-# **استفاده از Microsoft Phi-3.5 tflite برای ساخت اپلیکیشن اندروید**
+# **Menggunakan Microsoft Phi-3.5 tflite untuk membuat aplikasi Android**
 
-این یک نمونه اندروید است که از مدل‌های Microsoft Phi-3.5 tflite استفاده می‌کند.
+Ini adalah contoh Android yang menggunakan model Microsoft Phi-3.5 tflite.
 
-## **📚 دانش**
+## **📚 Pengetahuan**
 
-Android LLM Inference API به شما امکان می‌دهد مدل‌های بزرگ زبان (LLM) را به‌طور کامل روی دستگاه اندروید اجرا کنید، که می‌توانید برای انجام طیف گسترده‌ای از وظایف مانند تولید متن، بازیابی اطلاعات به صورت زبان طبیعی و خلاصه‌سازی اسناد استفاده کنید. این قابلیت پشتیبانی داخلی از چندین مدل بزرگ زبان متن به متن دارد، بنابراین می‌توانید جدیدترین مدل‌های تولیدی AI روی دستگاه را در اپلیکیشن‌های اندروید خود به کار ببرید.
+Android LLM Inference API membolehkan anda menjalankan model bahasa besar (LLM) sepenuhnya di peranti untuk aplikasi Android, yang boleh digunakan untuk melaksanakan pelbagai tugasan, seperti menjana teks, mendapatkan maklumat dalam bentuk bahasa semula jadi, dan meringkaskan dokumen. Tugasan ini menyediakan sokongan terbina dalam untuk pelbagai model bahasa besar teks-ke-teks, supaya anda boleh menggunakan model AI generatif terkini yang berjalan di peranti untuk aplikasi Android anda.
 
-Google AI Edge Torch یک کتابخانه پایتون است که از تبدیل مدل‌های PyTorch به فرمت .tflite پشتیبانی می‌کند، که سپس می‌توان آن‌ها را با TensorFlow Lite و MediaPipe اجرا کرد. این امکان را برای اپلیکیشن‌های اندروید، iOS و IoT فراهم می‌کند که مدل‌ها را به‌طور کامل روی دستگاه اجرا کنند. AI Edge Torch پوشش گسترده‌ای از CPUها ارائه می‌دهد و پشتیبانی اولیه از GPU و NPU را دارد. AI Edge Torch به دنبال ادغام نزدیک با PyTorch است، با استفاده از torch.export() و ارائه پوشش خوب برای اپراتورهای Core ATen.
+Google AI Edge Torch adalah perpustakaan python yang menyokong penukaran model PyTorch ke format .tflite, yang kemudiannya boleh dijalankan dengan TensorFlow Lite dan MediaPipe. Ini membolehkan aplikasi untuk Android, iOS dan IoT yang boleh menjalankan model sepenuhnya di peranti. AI Edge Torch menawarkan liputan CPU yang luas, dengan sokongan awal untuk GPU dan NPU. AI Edge Torch berusaha untuk integrasi rapat dengan PyTorch, dibina di atas torch.export() dan menyediakan liputan yang baik untuk operator Core ATen.
 
-## **🪬 راهنما**
+## **🪬 Panduan**
 
-### **🔥 تبدیل Microsoft Phi-3.5 به پشتیبانی tflite**
+### **🔥 Tukar Microsoft Phi-3.5 ke sokongan tflite**
 
-0. این نمونه برای اندروید 14 به بالا است
+0. Contoh ini untuk Android 14+
 
-1. نصب Python 3.10.12
+1. Pasang Python 3.10.12
 
-***پیشنهاد:*** استفاده از conda برای نصب محیط پایتون خود
+***Cadangan:*** gunakan conda untuk memasang persekitaran Python anda
 
-2. Ubuntu 20.04 / 22.04 (لطفاً روی [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) تمرکز کنید)
+2. Ubuntu 20.04 / 22.04 (sila fokus pada [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***پیشنهاد:*** استفاده از Azure Linux VM یا VM ابری شخص ثالث برای ایجاد محیط خود
+***Cadangan:*** Gunakan Azure Linux VM atau VM awan pihak ketiga untuk mencipta persekitaran anda
 
-3. به bash لینوکس خود بروید و کتابخانه پایتون را نصب کنید
+3. Pergi ke bash Linux anda, untuk memasang perpustakaan Python
 
 ```bash
 
@@ -47,7 +47,7 @@ pip install -e .
 
 ```
 
-4. دانلود Microsoft-3.5-Instruct از Hugging face
+4. Muat turun Microsoft-3.5-Instruct dari Hugging face
 
 ```bash
 
@@ -57,7 +57,7 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. تبدیل Microsoft Phi-3.5 به tflite
+5. Tukar Microsoft Phi-3.5 ke tflite
 
 ```bash
 
@@ -65,9 +65,9 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 تبدیل Microsoft Phi-3.5 به بسته Mediapipe اندروید**
+### **🔥 Tukar Microsoft Phi-3.5 ke Bundle Mediapipe Android**
 
-لطفاً ابتدا mediapipe را نصب کنید
+Sila pasang mediapipe terlebih dahulu
 
 ```bash
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-این کد را در [دفترچه یادداشت خود](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb) اجرا کنید
+Jalankan kod ini di [notebook anda](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
 
 ```python
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 استفاده از adb push برای انتقال مدل به مسیر دستگاه اندروید شما**
+### **🔥 Gunakan adb push untuk memindahkan model tugasan ke laluan peranti Android anda**
 
 ```bash
 
@@ -106,9 +106,9 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ```
 
-### **🔥 اجرای کد اندروید شما**
+### **🔥 Menjalankan kod Android anda**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.ms.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.ms.png)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:40:08+00:00",
+  "translation_date": "2025-07-17T06:21:41+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "it"
 }
 -->
-## Messa a punto con Kaito
+## Fine-Tuning con Kaito
 
 [Kaito](https://github.com/Azure/kaito) è un operatore che automatizza il deployment di modelli di inferenza AI/ML in un cluster Kubernetes.
 
 Kaito presenta le seguenti differenze chiave rispetto alla maggior parte delle metodologie di deployment di modelli basate su infrastrutture di macchine virtuali:
 
-- Gestisce i file modello utilizzando immagini container. Viene fornito un server http per effettuare chiamate di inferenza usando la libreria modello.
+- Gestisce i file dei modelli utilizzando immagini container. Viene fornito un server http per eseguire chiamate di inferenza usando la libreria del modello.
 - Evita di dover regolare i parametri di deployment per adattarsi all’hardware GPU grazie a configurazioni preimpostate.
-- Provisiona automaticamente i nodi GPU in base alle esigenze del modello.
-- Ospita immagini di modelli di grandi dimensioni nel Microsoft Container Registry (MCR) pubblico, se la licenza lo permette.
+- Provvede automaticamente ai nodi GPU in base ai requisiti del modello.
+- Ospita immagini di modelli di grandi dimensioni nel Microsoft Container Registry (MCR) pubblico, se la licenza lo consente.
 
-Con Kaito, il flusso di lavoro per integrare modelli di inferenza AI di grandi dimensioni in Kubernetes è notevolmente semplificato.
+Con Kaito, il flusso di lavoro per l’integrazione di grandi modelli di inferenza AI in Kubernetes è notevolmente semplificato.
 
 ## Architettura
 
@@ -29,9 +29,9 @@ Kaito segue il classico pattern di progettazione Kubernetes Custom Resource Defi
 
 La figura sopra mostra una panoramica dell’architettura di Kaito. I suoi componenti principali sono:
 
-- **Workspace controller**: Riconcilia la risorsa personalizzata `workspace`, crea risorse personalizzate `machine` (spiegate più avanti) per attivare il provisioning automatico dei nodi, e crea il workload di inferenza (`deployment` o `statefulset`) basandosi sulle configurazioni preimpostate del modello.
-- **Node provisioner controller**: Il controller si chiama *gpu-provisioner* nel [grafico helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Utilizza la CRD `machine` proveniente da [Karpenter](https://sigs.k8s.io/karpenter) per interagire con il workspace controller. Si integra con le API di Azure Kubernetes Service (AKS) per aggiungere nuovi nodi GPU al cluster AKS.
-> Note: Il componente open source [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) può essere sostituito da altri controller se supportano le API [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Workspace controller**: Riconcilia la risorsa personalizzata `workspace`, crea risorse personalizzate `machine` (spiegate di seguito) per attivare il provisioning automatico dei nodi e crea il carico di lavoro di inferenza (`deployment` o `statefulset`) basandosi sulle configurazioni preimpostate del modello.
+- **Node provisioner controller**: Il controller si chiama *gpu-provisioner* nel [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Utilizza il CRD `machine` originato da [Karpenter](https://sigs.k8s.io/karpenter) per interagire con il workspace controller. Si integra con le API di Azure Kubernetes Service (AKS) per aggiungere nuovi nodi GPU al cluster AKS.
+> Nota: Il [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) è un componente open source. Può essere sostituito da altri controller se supportano le API di [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Video panoramica  
 [Guarda la demo di Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
@@ -42,7 +42,7 @@ Consulta la guida all’installazione [qui](https://github.com/Azure/kaito/blob/
 
 ## Avvio rapido
 
-Dopo aver installato Kaito, si possono provare i seguenti comandi per avviare un servizio di messa a punto.
+Dopo aver installato Kaito, è possibile provare i seguenti comandi per avviare un servizio di fine-tuning.
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Successivamente, si può recuperare l’indirizzo IP del servizio di inferenza nel cluster e utilizzare un pod `curl` temporaneo per testare l’endpoint del servizio all’interno del cluster.
+Successivamente, è possibile trovare l’IP del servizio di inferenza nel cluster e utilizzare un pod temporaneo `curl` per testare l’endpoint del servizio all’interno del cluster.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -113,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l’accuratezza, si prega di considerare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:38:17+00:00",
+  "translation_date": "2025-07-17T02:32:54+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "fi"
 }
@@ -11,49 +11,49 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) on avoimen lähdekoodin alusta, joka on suunniteltu hallitsemaan koneoppimisen koko elinkaarta.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.fi.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.fi.png)
 
-MLFlowa käytetään ML-elinkaaren hallintaan, mukaan lukien kokeilut, toistettavuus, käyttöönotto ja keskitetty mallirekisteri. MLflow tarjoaa tällä hetkellä neljä komponenttia.
+MLFlowa käytetään koneoppimisen elinkaaren hallintaan, mukaan lukien kokeilut, toistettavuus, käyttöönotto ja keskitetty mallirekisteri. MLflow tarjoaa tällä hetkellä neljä komponenttia.
 
 - **MLflow Tracking:** Tallenna ja hae kokeiluja, koodia, datakonfiguraatioita ja tuloksia.
 - **MLflow Projects:** Pakkaa data-analytiikan koodi muotoon, jolla ajot voidaan toistaa millä tahansa alustalla.
-- **Mlflow Models:** Ota käyttöön koneoppimismalleja monipuolisissa palveluympäristöissä.
+- **Mlflow Models:** Ota koneoppimismallit käyttöön erilaisissa palveluympäristöissä.
 - **Model Registry:** Tallenna, kommentoi ja hallitse malleja keskitetysti.
 
-Se sisältää ominaisuuksia kokeilujen seuraamiseen, koodin pakkaamiseen toistettaviksi ajoiksi sekä mallien jakamiseen ja käyttöönottoon. MLFlow on integroitu Databricksiin ja tukee useita ML-kirjastoja, joten se on kirjasto-riippumaton. Sitä voi käyttää minkä tahansa koneoppimiskirjaston kanssa ja missä tahansa ohjelmointikielessä, sillä se tarjoaa REST API:n ja CLI:n käytettävyyden vuoksi.
+Se sisältää ominaisuuksia kokeilujen seurantaan, koodin pakkaamiseen toistettaviksi ajoiksi sekä mallien jakamiseen ja käyttöönottoon. MLFlow on integroitu Databricksiin ja tukee monia koneoppimiskirjastoja, joten se on kirjasto-riippumaton. Sitä voi käyttää minkä tahansa koneoppimiskirjaston kanssa ja millä tahansa ohjelmointikielellä, sillä se tarjoaa REST-rajapinnan ja komentorivityökalun helppokäyttöisyyttä varten.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.fi.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.fi.png)
 
-MLFlow:n keskeiset ominaisuudet ovat:
+MLFlow:n keskeisiä ominaisuuksia ovat:
 
-- **Kokeilujen seuranta:** Tallenna ja vertaile parametreja ja tuloksia.
+- **Kokeilujen seuranta:** Tallenna ja vertaa parametreja ja tuloksia.
 - **Mallien hallinta:** Ota mallit käyttöön eri palvelu- ja päättelyalustoilla.
-- **Model Registry:** Yhteistyössä hallitse MLflow-mallien elinkaarta, mukaan lukien versiointi ja kommentointi.
-- **Projects:** Pakkaa ML-koodi jakamista tai tuotantokäyttöä varten.
+- **Model Registry:** Hallitse yhteistyössä MLflow-mallien elinkaarta, mukaan lukien versiointi ja kommentointi.
+- **Projects:** Pakkaa koneoppimiskoodi jakamista tai tuotantokäyttöä varten.
 
-MLFlow tukee myös MLOps-silmukkaa, joka kattaa datan valmistelun, mallien rekisteröinnin ja hallinnan, mallien pakkaamisen suoritusta varten, palveluiden käyttöönoton ja mallien seurannan. Sen tavoitteena on yksinkertaistaa siirtymistä prototyypistä tuotantotyönkulkuun, erityisesti pilvi- ja reunaympäristöissä.
+MLFlow tukee myös MLOps-silmukkaa, joka sisältää datan valmistelun, mallien rekisteröinnin ja hallinnan, mallien pakkaamisen suoritusta varten, palveluiden käyttöönoton ja mallien seurannan. Sen tavoitteena on yksinkertaistaa siirtymistä prototyypistä tuotantotyönkulkuun, erityisesti pilvi- ja reunaympäristöissä.
 
 ## E2E-skenaario – Wrapperin rakentaminen ja Phi-3:n käyttäminen MLFlow-mallina
 
-Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pienelle kielimallille (SLM) ja ajaa sitä MLFlow-mallina joko paikallisesti tai pilvessä, esimerkiksi Azure Machine Learning -työtilassa.
+Tässä E2E-esimerkissä demonstroimme kahta eri lähestymistapaa wrapperin rakentamiseen Phi-3-pienelle kielimallille (SLM) ja sen ajamiseen MLFlow-mallina joko paikallisesti tai pilvessä, esimerkiksi Azure Machine Learning -työtilassa.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.fi.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.fi.png)
 
 | Projekti | Kuvaus | Sijainti |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline on helpoin tapa rakentaa wrapper, jos haluat käyttää HuggingFace-mallia MLFlow:n kokeellisella transformers-ominaisuudella. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Transformer Pipeline | Transformer Pipeline on helpoin tapa rakentaa wrapper, jos haluat käyttää HuggingFace-mallia MLFlow’n kokeellisella transformers-versiolla. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
 | Custom Python Wrapper | Kirjoitushetkellä transformer pipeline ei tukenut MLFlow-wrapperin generointia HuggingFace-malleille ONNX-muodossa, edes kokeellisen optimum Python -paketin kanssa. Tällaisissa tapauksissa voit rakentaa oman Python-wrapperin MLFlow-mallille. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Projekti: Transformer Pipeline
 
-1. Tarvitset asiaankuuluvat Python-paketit MLFlow:sta ja HuggingFacesta:
+1. Tarvitset asianmukaiset Python-kirjastot MLFlow’sta ja HuggingFacesta:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Seuraavaksi sinun tulee käynnistää transformer pipeline viittaamalla kohdemalliin Phi-3 HuggingFacen rekisterissä. Kuten _Phi-3-mini-4k-instruct_-mallikortista näkyy, sen tehtävä on “Tekstin generointi”:
+2. Seuraavaksi sinun tulee käynnistää transformer pipeline viittaamalla kohdemalliin Phi-3 HuggingFace-rekisterissä. Kuten _Phi-3-mini-4k-instruct_-mallikortista näkyy, sen tehtävä on “Tekstin generointi”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pi
     )
     ```
 
-3. Nyt voit tallentaa Phi-3-mallisi transformer pipelinen MLFlow-muotoon ja antaa lisätietoja, kuten kohdeartifaktien polun, mallin erityisasetukset ja inferenssi-API-tyypin:
+3. Voit nyt tallentaa Phi-3-mallisi transformer-pipelinen MLFlow-muodossa ja antaa lisätietoja, kuten kohdeartifaktien polun, mallin erityiset konfiguraatioasetukset ja päättely-API-tyypin:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -75,7 +75,7 @@ Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pi
 
 ## Projekti: Custom Python Wrapper
 
-1. Tässä voimme hyödyntää Microsoftin [ONNX Runtime generate() API:a](https://github.com/microsoft/onnxruntime-genai) ONNX-mallin inferenssiin sekä tokenien koodaukseen ja dekoodaukseen. Sinun tulee valita _onnxruntime_genai_ -paketti kohdelaitteellesi, alla oleva esimerkki kohdistuu CPU:hun:
+1. Tässä voimme hyödyntää Microsoftin [ONNX Runtime generate() APIa](https://github.com/microsoft/onnxruntime-genai) ONNX-mallin päättelyyn sekä tokenien koodaukseen ja dekoodaukseen. Sinun tulee valita _onnxruntime_genai_ -paketti kohdelaitteellesi, alla oleva esimerkki kohdistuu CPU:hun:
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pi
     import onnxruntime_genai as og
     ```
 
-1. Mukautettu luokkamme toteuttaa kaksi metodia: _load_context()_, jolla alustetaan Phi-3 Mini 4K Instructin **ONNX-malli**, **generaattorin parametrit** ja **tokenisoija**; sekä _predict()_, joka tuottaa lähtötokenit annetulle kehotteelle:
+1. Oma luokkamme toteuttaa kaksi metodia: _load_context()_, jolla alustetaan **ONNX-malli** Phi-3 Mini 4K Instructille, **generaattorin parametrit** ja **tokenisaattori**; sekä _predict()_, jolla generoidaan ulostulotokenit annetulle kehotteelle:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pi
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Nyt voit käyttää _mlflow.pyfunc.log_model()_ -funktiota luodaksesi mukautetun Python-wrapperin (pickle-muodossa) Phi-3-mallille, alkuperäisen ONNX-mallin ja tarvittavat riippuvuudet mukaan lukien:
+1. Voit nyt käyttää _mlflow.pyfunc.log_model()_ -funktiota luodaksesi oman Python-wrapperin (pickle-muodossa) Phi-3-mallille, alkuperäisen ONNX-mallin ja tarvittavien riippuvuuksien kanssa:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -131,7 +131,7 @@ Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pi
 
 ## Generoitujen MLFlow-mallien allekirjoitukset
 
-1. Transformer Pipeline -projektin kohdassa 3 asetimme MLFlow-mallin tehtäväksi “_llm/v1/chat_”. Tällainen ohje luo mallin API-wrapperin, joka on yhteensopiva OpenAI:n Chat API:n kanssa, kuten alla näkyy:
+1. Transformer Pipeline -projektin vaiheessa 3 asetimme MLFlow-mallin tehtäväksi “_llm/v1/chat_”. Tämä ohje luo mallin API-wrapperin, joka on yhteensopiva OpenAI:n Chat API:n kanssa, kuten alla näkyy:
 
     ``` Python
     {inputs: 
@@ -148,7 +148,7 @@ Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pi
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Sitten voit käyttää OpenAI API -yhteensopivaa jälkikäsittelyä, esimerkiksi _response[0][‘choices’][0][‘message’][‘content’]_, kaunistamaan tulostasi esimerkiksi näin:
+1. Käytä sitten OpenAI API -yhteensopivaa jälkikäsittelyä, esimerkiksi _response[0][‘choices’][0][‘message’][‘content’]_, kaunistamaan tulostasi esimerkiksi näin:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pi
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. Custom Python Wrapper -projektin kohdassa 3 annamme MLFlow-paketin generoida mallin allekirjoituksen annetusta syöte-esimerkistä. MLFlow-wrapperimme allekirjoitus näyttää tältä:
+1. Custom Python Wrapper -projektin vaiheessa 3 annamme MLFlow-paketin generoida mallin allekirjoituksen annetusta syöte-esimerkistä. MLFlow-wrapperimme allekirjoitus näyttää tältä:
 
     ``` Python
     {inputs: 
@@ -169,13 +169,13 @@ Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pi
       None}
     ```
 
-1. Joten kehotteemme täytyy sisältää "prompt"-sanakirjan avain, esimerkiksi näin:
+1. Joten kehotteemme tulisi sisältää "prompt"-sanakirjan avain, kuten tässä:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Mallin tulos annetaan sitten merkkijonona:
+1. Mallin ulostulo annetaan sitten merkkijonona:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -188,4 +188,4 @@ Tässä E2E-esimerkissä demonstroimme kahta eri tapaa rakentaa wrapper Phi-3-pi
     ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä tulee katsoa viralliseksi lähteeksi. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

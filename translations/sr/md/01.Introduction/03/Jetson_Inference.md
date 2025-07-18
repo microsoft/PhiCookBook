@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-05-09T11:46:31+00:00",
+  "translation_date": "2025-07-16T20:45:40+00:00",
   "source_file": "md/01.Introduction/03/Jetson_Inference.md",
   "language_code": "sr"
 }
 -->
-# **Inferencija Phi-3 na Nvidia Jetson-u**
+# **Инференција Phi-3 на Nvidia Jetson**
 
-Nvidia Jetson je serija ugrađenih računarskih ploča kompanije Nvidia. Modeli Jetson TK1, TX1 i TX2 svi koriste Tegra procesor (ili SoC) iz Nvidije koji integriše ARM arhitekturu centralne procesorske jedinice (CPU). Jetson je sistem niske potrošnje energije i dizajniran je za ubrzavanje aplikacija mašinskog učenja. Nvidia Jetson koriste profesionalni programeri za kreiranje revolucionarnih AI proizvoda u svim industrijama, kao i studenti i entuzijasti za praktično učenje AI i pravljenje impresivnih projekata. SLM je implementiran na edge uređajima poput Jetson-a, što omogućava bolje primene industrijskih generativnih AI scenarija.
+Nvidia Jetson је серија уграђених рачунарских плоча компаније Nvidia. Модели Jetson TK1, TX1 и TX2 сви користе Tegra процесор (или SoC) из Nvidia који интегрише ARM архитектуру централне процесорске јединице (CPU). Jetson је систем ниске потрошње енергије и дизајниран је за убрзавање апликација машинског учења. Nvidia Jetson користе професионални програмери за креирање револуционарних AI производа у свим индустријама, као и студенти и ентузијасти за практично учење AI и прављење импресивних пројеката. SLM се примењује на уређајима на ивици мреже као што је Jetson, што омогућава бољу имплементацију индустријских сценарија генеративне AI примене.
 
-## Implementacija na NVIDIA Jetson:
-Programeri koji rade na autonomnoj robotici i ugrađenim uređajima mogu koristiti Phi-3 Mini. Relativno mala veličina Phi-3 čini ga idealnim za edge implementacije. Parametri su pažljivo podešeni tokom treniranja, što garantuje visoku tačnost odgovora.
+## Деплојмент на NVIDIA Jetson:
+Програмери који раде на аутономној роботики и уграђеним уређајима могу искористити Phi-3 Mini. Релативно мала величина Phi-3 чини га идеалним за деплојмент на ивици мреже. Параметри су пажљиво подешени током тренинга, што обезбеђује високу прецизност у одговорима.
 
-### TensorRT-LLM Optimizacija:
-NVIDIA-ina [TensorRT-LLM biblioteka](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) optimizuje inferencu velikih jezičkih modela. Podržava dugi kontekst prozor Phi-3 Mini modela, poboljšavajući kako protok tako i latenciju. Optimizacije uključuju tehnike kao što su LongRoPE, FP8 i inflight batching.
+### TensorRT-LLM оптимизација:
+NVIDIA-ина [TensorRT-LLM библиотека](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) оптимизује инференцију великих језичких модела. Подржава дуги контекстни прозор Phi-3 Mini, побољшавајући и пропусност и латенцију. Оптимизације укључују технике као што су LongRoPE, FP8 и inflight batching.
 
-### Dostupnost i implementacija:
-Programeri mogu istražiti Phi-3 Mini sa 128K kontekst prozorom na [NVIDIA AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Model je pakovan kao NVIDIA NIM, mikroservis sa standardnim API-jem koji može biti implementiran bilo gde. Takođe, dostupne su [TensorRT-LLM implementacije na GitHub-u](https://github.com/NVIDIA/TensorRT-LLM).
+### Доступност и деплојмент:
+Програмери могу испробати Phi-3 Mini са 128K контекстним прозором на [NVIDIA AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Пакован је као NVIDIA NIM, микросервис са стандардним API-јем који се може деплојовати било где. Поред тога, ту су и [TensorRT-LLM имплементације на GitHub-у](https://github.com/NVIDIA/TensorRT-LLM).
 
-## **1. Priprema**
+## **1. Припрема**
 
 a. Jetson Orin NX / Jetson NX
 
@@ -30,17 +30,17 @@ c. Cuda 11.8
 
 d. Python 3.8+
 
-## **2. Pokretanje Phi-3 na Jetson-u**
+## **2. Покретање Phi-3 на Jetson**
 
-Možemo izabrati [Ollama](https://ollama.com) ili [LlamaEdge](https://llamaedge.com)
+Можемо изабрати [Ollama](https://ollama.com) или [LlamaEdge](https://llamaedge.com)
 
-Ako želite da koristite gguf istovremeno u oblaku i na edge uređajima, LlamaEdge se može posmatrati kao WasmEdge (WasmEdge je lagan, visokoperformansni, skalabilni WebAssembly runtime pogodan za cloud native, edge i decentralizovane aplikacije. Podržava serverless aplikacije, ugrađene funkcije, mikroservise, pametne ugovore i IoT uređaje. Možete implementirati kvantitativni model gguf-a na edge uređaje i u oblak preko LlamaEdge).
+Ако желите да користите gguf и у облаку и на уређајима на ивици мреже истовремено, LlamaEdge се може схватити као WasmEdge (WasmEdge је лагано, високо перформантно и скалабилно WebAssembly окружење погодно за cloud native, edge и децентрализоване апликације. Подржава serverless апликације, уграђене функције, микросервисе, паметне уговоре и IoT уређаје). Можете деплојовати квантитативни модел gguf на уређаје на ивици и у облак преко LlamaEdge.
 
-![llamaedge](../../../../../translated_images/llamaedge.1356a35c809c5e9d89d8168db0c92161e87f5e2c34831f2fad800f00fc4e74dc.sr.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.sr.jpg)
 
-Evo koraka za korišćenje
+Ево корака за коришћење
 
-1. Instalirajte i preuzmite potrebne biblioteke i fajlove
+1. Инсталирајте и преузмите релевантне библиотеке и фајлове
 
 ```bash
 
@@ -54,9 +54,9 @@ tar xzf chatbot-ui.tar.gz
 
 ```
 
-**Napomena**: llama-api-server.wasm i chatbot-ui moraju biti u istom direktorijumu
+**Напомена**: llama-api-server.wasm и chatbot-ui морају бити у истом директоријуму
 
-2. Pokrenite skripte u terminalu
+2. Покрените скрипте у терминалу
 
 ```bash
 
@@ -64,13 +64,13 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 ```
 
-Evo rezultata pokretanja
+Ово је резултат покретања
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.66eb2acd7f14e814437879522158b9531ae7c955014d48d0708d0e4ce6ac94a6.sr.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.sr.png)
 
-***Primer koda*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
+***Пример кода*** [Phi-3 mini WASM Notebook пример](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
-Ukratko, Phi-3 Mini predstavlja veliki iskorak u modeliranju jezika, kombinujući efikasnost, svest o kontekstu i NVIDIA-ine optimizacione sposobnosti. Bilo da pravite robote ili edge aplikacije, Phi-3 Mini je moćan alat koji treba imati na umu.
+Укратко, Phi-3 Mini представља велики искорак у моделовању језика, комбинујући ефикасност, свест о контексту и NVIDIA-ину оптимизациону снагу. Без обзира да ли правите роботе или апликације на ивици мреже, Phi-3 Mini је моћан алат који треба имати на уму.
 
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне интерпретације које произилазе из употребе овог превода.
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

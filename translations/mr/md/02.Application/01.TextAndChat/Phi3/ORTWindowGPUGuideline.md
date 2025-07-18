@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-09T18:42:04+00:00",
+  "translation_date": "2025-07-17T02:41:34+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "mr"
 }
 -->
-# **OnnxRuntime GenAI Windows GPU साठी मार्गदर्शक तत्त्वे**
+# **OnnxRuntime GenAI Windows GPU साठी मार्गदर्शक**
 
-हा मार्गदर्शक Windows वर GPU सह ONNX Runtime (ORT) सेटअप आणि वापरण्याच्या पायऱ्या देतो. तुमच्या मॉडेलसाठी GPU वेग वाढवण्यासाठी आणि कार्यक्षमता सुधारण्यासाठी हा मदत करतो.
+हा मार्गदर्शक Windows वर GPU सह ONNX Runtime (ORT) सेटअप आणि वापरण्याच्या पायऱ्या देतो. यामुळे तुम्हाला तुमच्या मॉडेलसाठी GPU वेग वाढवण्याचा फायदा घेता येईल, ज्यामुळे कामगिरी आणि कार्यक्षमता सुधारेल.
 
 हे दस्तऐवज खालील बाबींवर मार्गदर्शन करतो:
 
 - पर्यावरण सेटअप: CUDA, cuDNN आणि ONNX Runtime सारख्या आवश्यक अवलंबनांची स्थापना कशी करावी याचे निर्देश.
 - कॉन्फिगरेशन: GPU संसाधने प्रभावीपणे वापरण्यासाठी पर्यावरण आणि ONNX Runtime कसे कॉन्फिगर करावे.
-- ऑप्टिमायझेशन टिप्स: सर्वोत्तम कार्यक्षमतेसाठी GPU सेटिंग्ज कसे सुधारायचे याबाबत सल्ला.
+- ऑप्टिमायझेशन टिप्स: सर्वोत्तम कामगिरीसाठी GPU सेटिंग्ज कशा सुधाराव्यात याबाबत सल्ला.
 
 ### **1. Python 3.10.x /3.11.8**
 
-   ***Note*** Python पर्यावरणासाठी [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) वापरण्याचा सल्ला दिला आहे
+   ***Note*** तुमच्या Python पर्यावरणासाठी [miniforge](https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Windows-x86_64.exe) वापरण्याचा सल्ला दिला आहे
 
    ```bash
 
@@ -29,9 +29,9 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   ***Reminder*** जर तुम्ही आधी Python ONNX लायब्ररी काहीही इंस्टॉल केली असेल तर ती अनइंस्टॉल करा
+   ***Reminder*** जर तुम्ही Python ONNX लायब्ररी आधीच इन्स्टॉल केली असेल तर ती अनइन्स्टॉल करा
 
-### **2. winget वापरून CMake इंस्टॉल करा**
+### **2. winget वापरून CMake इन्स्टॉल करा**
 
    ```bash
 
@@ -39,13 +39,13 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-### **3. Visual Studio 2022 - Desktop Development with C++ इंस्टॉल करा**
+### **3. Visual Studio 2022 - Desktop Development with C++ इन्स्टॉल करा**
 
-   ***Note*** जर तुम्हाला compile करायचे नसेल तर हा टप्पा वगळू शकता
+   ***Note*** जर तुम्हाला कंपाईल करायचे नसेल तर हा टप्पा वगळू शकता
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.mr.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.mr.png)
 
-### **4. NVIDIA ड्रायव्हर इंस्टॉल करा**
+### **4. NVIDIA ड्रायव्हर इन्स्टॉल करा**
 
 1. **NVIDIA GPU Driver**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
@@ -53,17 +53,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Reminder*** इंस्टॉलेशन प्रक्रियेत डिफॉल्ट सेटिंग्ज वापरा
+***Reminder*** इन्स्टॉलेशन प्रक्रियेत डीफॉल्ट सेटिंग्ज वापरा
 
 ### **5. NVIDIA पर्यावरण सेट करा**
 
-NVIDIA CUDNN 9.4 चे lib, bin, include फोल्डर्स NVIDIA CUDA 12.4 च्या lib, bin, include मध्ये कॉपी करा
+NVIDIA CUDNN 9.4 च्या lib, bin, include फोल्डरमधील फायली NVIDIA CUDA 12.4 च्या lib, bin, include मध्ये कॉपी करा
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* येथील फाइल्स *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'* मध्ये कॉपी करा
+- *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* मधील फायली *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'* मध्ये कॉपी करा
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* येथील फाइल्स *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'* मध्ये कॉपी करा
+- *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* मधील फायली *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'* मध्ये कॉपी करा
 
-- *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* येथील फाइल्स *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* मध्ये कॉपी करा
+- *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* मधील फायली *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'* मध्ये कॉपी करा
 
 ### **6. Phi-3.5-mini-instruct-onnx डाउनलोड करा**
 
@@ -83,13 +83,13 @@ NVIDIA CUDNN 9.4 चे lib, bin, include फोल्डर्स NVIDIA CUDA 1
 
    [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) उघडा आणि चालवा
 
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.mr.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.mr.png)
 
 ### **8. ORT GenAI GPU कंपाईल करा**
 
    ***Note*** 
-
-   1. आधी सर्व onnx, onnxruntime आणि onnxruntime-genai अनइंस्टॉल करा
+   
+   1. सर्व onnx, onnxruntime आणि onnxruntime-genai आधी अनइन्स्टॉल करा
 
    ```bash
 
@@ -97,7 +97,7 @@ NVIDIA CUDNN 9.4 चे lib, bin, include फोल्डर्स NVIDIA CUDA 1
    
    ```
 
-   नंतर सर्व onnxruntime लायब्ररी अनइंस्टॉल करा जसे की
+   नंतर सर्व onnxruntime लायब्ररी अनइन्स्टॉल करा, उदा. 
 
    ```bash
 
@@ -111,9 +111,9 @@ NVIDIA CUDNN 9.4 चे lib, bin, include फोल्डर्स NVIDIA CUDA 1
 
    2. Visual Studio Extension सपोर्ट तपासा
 
-   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras मध्ये पाहा की C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration आहे का.
+   C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras मध्ये जाऊन तपासा की C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration आहे का. 
 
-   नसेल तर इतर CUDA toolkit ड्रायव्हर फोल्डर्स तपासा आणि visual_studio_integration फोल्डर आणि त्यातील सामग्री C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration मध्ये कॉपी करा
+   नसेल तर इतर CUDA toolkit ड्रायव्हर फोल्डरमध्ये तपासा आणि visual_studio_integration फोल्डर आणि त्यातील फायली C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration मध्ये कॉपी करा
 
    - जर तुम्हाला कंपाईल करायचे नसेल तर हा टप्पा वगळू शकता
 
@@ -127,9 +127,9 @@ NVIDIA CUDNN 9.4 चे lib, bin, include फोल्डर्स NVIDIA CUDA 1
 
    - onnxruntime-win-x64-gpu-1.19.2.zip अनझिप करा, त्याचे नाव **ort** असे बदला आणि ort फोल्डर onnxruntime-genai मध्ये कॉपी करा
 
-   - Windows Terminal वापरून Developer Command Prompt for VS 2022 मध्ये जा आणि onnxruntime-genai मध्ये जा
+   - Windows Terminal वापरून Developer Command Prompt for VS 2022 मध्ये जा आणि onnxruntime-genai फोल्डरमध्ये जा
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.mr.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.mr.png)
 
    - तुमच्या Python पर्यावरणासह ते कंपाईल करा
 
@@ -147,4 +147,4 @@ NVIDIA CUDNN 9.4 चे lib, bin, include फोल्डर्स NVIDIA CUDA 1
    ```
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, तरी कृपया लक्षात ठेवा की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेत त्रुटी असू शकतात. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाची माहिती असल्यास व्यावसायिक मानवी अनुवाद शिफारसीय आहे. या अनुवादाच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

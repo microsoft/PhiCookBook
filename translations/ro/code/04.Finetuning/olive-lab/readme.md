@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T04:42:34+00:00",
+  "translation_date": "2025-07-16T16:20:25+00:00",
   "source_file": "code/04.Finetuning/olive-lab/readme.md",
   "language_code": "ro"
 }
@@ -11,53 +11,54 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Introducere
 
-> [!IMPORTANT]
-> Acest laborator necesită un **GPU Nvidia A10 sau A100** cu driverele aferente și toolkit-ul CUDA (versiunea 12+) instalate.
+> [!IMPORTANT]  
+> Acest laborator necesită un **GPU Nvidia A10 sau A100** cu driverele asociate și toolkit-ul CUDA (versiunea 12+) instalate.
 
-> [!NOTE]
-> Acesta este un laborator de **35 de minute** care îți oferă o introducere practică în conceptele de bază pentru optimizarea modelelor pentru inferență pe dispozitiv folosind OLIVE.
+> [!NOTE]  
+> Acesta este un laborator de **35 de minute** care îți va oferi o introducere practică în conceptele de bază pentru optimizarea modelelor pentru inferență pe dispozitiv folosind OLIVE.
 
 ## Obiective de învățare
 
-La finalul acestui laborator vei putea să folosești OLIVE pentru a:
+La finalul acestui laborator, vei putea folosi OLIVE pentru a:
 
-- Quantiza un model AI folosind metoda de cuantizare AWQ.
-- Ajusta fin un model AI pentru o sarcină specifică.
+- Quantiza un model AI folosind metoda de cuantizare AWQ.  
+- Ajusta fin un model AI pentru o sarcină specifică.  
 - Genera adaptoare LoRA (model ajustat fin) pentru inferență eficientă pe dispozitiv folosind ONNX Runtime.
 
 ### Ce este Olive
 
-Olive (*O*NNX *live*) este un toolkit de optimizare a modelelor cu CLI asociat care îți permite să livrezi modele pentru ONNX runtime +++https://onnxruntime.ai+++ cu calitate și performanță.
+Olive (*O*NNX *live*) este un toolkit de optimizare a modelelor, însoțit de o interfață CLI, care îți permite să livrezi modele pentru ONNX runtime +++https://onnxruntime.ai+++ cu calitate și performanță.
 
-![Olive Flow](../../../../../translated_images/olive-flow.e4682fa65f77777f49e884482fa8dd83eadcb90904fcb41a54093af85c330060.ro.png)
+![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2462b631b8aa862093b595bb89064fa33e6d4fa90f937f52d.ro.png)
 
-Input-ul pentru Olive este de obicei un model PyTorch sau Hugging Face, iar output-ul este un model ONNX optimizat care este executat pe un dispozitiv (ținta de implementare) ce rulează ONNX runtime. Olive va optimiza modelul pentru acceleratorul AI al țintei de implementare (NPU, GPU, CPU) furnizat de un producător hardware precum Qualcomm, AMD, Nvidia sau Intel.
+Inputul pentru Olive este de obicei un model PyTorch sau Hugging Face, iar outputul este un model ONNX optimizat, care este executat pe un dispozitiv (ținta de implementare) ce rulează ONNX runtime. Olive optimizează modelul pentru acceleratorul AI al țintei de implementare (NPU, GPU, CPU) oferit de un furnizor hardware precum Qualcomm, AMD, Nvidia sau Intel.
 
-Olive execută un *workflow*, care este o succesiune ordonată de sarcini individuale de optimizare a modelului numite *passes* - exemple de passes includ: compresia modelului, capturarea grafului, cuantizarea, optimizarea grafului. Fiecare pass are un set de parametri care pot fi ajustați pentru a obține cele mai bune metrici, cum ar fi acuratețea și latența, evaluate de evaluatorul respectiv. Olive folosește o strategie de căutare care utilizează un algoritm pentru a regla automat fiecare pass pe rând sau un set de passes împreună.
+Olive execută un *workflow*, care este o secvență ordonată de sarcini individuale de optimizare a modelului numite *passes* – exemple de passes includ: compresia modelului, capturarea grafului, cuantizarea, optimizarea grafului. Fiecare pass are un set de parametri ce pot fi ajustați pentru a obține cele mai bune metrici, cum ar fi acuratețea și latența, evaluate de evaluatorul respectiv. Olive folosește o strategie de căutare care utilizează un algoritm pentru a regla automat fiecare pass pe rând sau un set de passes împreună.
 
 #### Beneficiile Olive
 
-- **Reducerea frustrării și a timpului** petrecut în experimentări manuale de tip trial-and-error cu diferite tehnici pentru optimizarea grafului, compresie și cuantizare. Definește-ți constrângerile de calitate și performanță și lasă Olive să găsească automat cel mai bun model pentru tine.
-- **Peste 40 de componente integrate de optimizare a modelelor** care acoperă tehnici de ultimă oră în cuantizare, compresie, optimizarea grafului și ajustare fină.
-- **CLI ușor de folosit** pentru sarcini comune de optimizare a modelelor. De exemplu, olive quantize, olive auto-opt, olive finetune.
-- Ambalare și implementare a modelelor integrate.
-- Suportă generarea de modele pentru **Multi LoRA serving**.
-- Construiește fluxuri de lucru folosind YAML/JSON pentru a orchestra sarcinile de optimizare și implementare a modelelor.
-- Integrare cu **Hugging Face** și **Azure AI**.
+- **Reduce frustrarea și timpul** experimentării manuale prin încercări și erori cu diferite tehnici de optimizare a grafului, compresie și cuantizare. Definește-ți constrângerile de calitate și performanță și lasă Olive să găsească automat cel mai bun model pentru tine.  
+- **Peste 40 de componente integrate de optimizare a modelelor** care acoperă tehnici de ultimă generație în cuantizare, compresie, optimizarea grafului și ajustare fină.  
+- **CLI ușor de folosit** pentru sarcini comune de optimizare a modelelor. De exemplu, olive quantize, olive auto-opt, olive finetune.  
+- Ambalare și implementare a modelelor integrate.  
+- Suport pentru generarea modelelor pentru **servire Multi LoRA**.  
+- Construiește workflow-uri folosind YAML/JSON pentru a orchestra sarcinile de optimizare și implementare a modelelor.  
+- Integrare cu **Hugging Face** și **Azure AI**.  
 - Mecanism integrat de **caching** pentru a **reduce costurile**.
 
-## Instrucțiuni laborator
-> [!NOTE]
-> Asigură-te că ai provisionat Azure AI Hub și proiectul tău și ai configurat compute-ul A100 conform laboratorului 1.
+## Instrucțiuni pentru laborator
+
+> [!NOTE]  
+> Asigură-te că ai provisionat Azure AI Hub și Proiectul și ai configurat calculul A100 conform Laboratorului 1.
 
 ### Pasul 0: Conectează-te la Azure AI Compute
 
-Te vei conecta la compute-ul Azure AI folosind funcția remote din **VS Code.**
+Te vei conecta la calculul Azure AI folosind funcția remote din **VS Code**.
 
-1. Deschide aplicația desktop **VS Code**:
-2. Deschide **command palette** folosind **Shift+Ctrl+P**
-3. În command palette caută **AzureML - remote: Connect to compute instance in New Window**.
-4. Urmează instrucțiunile de pe ecran pentru a te conecta la Compute. Va trebui să selectezi Azure Subscription, Resource Group, Proiectul și numele Compute-ului configurat în laboratorul 1.
+1. Deschide aplicația desktop **VS Code**:  
+2. Deschide **command palette** folosind **Shift+Ctrl+P**  
+3. În command palette caută **AzureML - remote: Connect to compute instance in New Window**.  
+4. Urmează instrucțiunile de pe ecran pentru a te conecta la Compute. Va trebui să selectezi abonamentul Azure, grupul de resurse, proiectul și numele calculului configurat în Laboratorul 1.  
 5. Odată conectat la nodul Azure ML Compute, acesta va fi afișat în **colțul din stânga jos al Visual Code** `><Azure ML: Compute Name`
 
 ### Pasul 1: Clonează acest repo
@@ -68,7 +69,7 @@ Te vei conecta la compute-ul Azure AI folosind funcția remote din **VS Code.**
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
-```
+```  
 Clonează soluția
 
 ```bash
@@ -78,7 +79,7 @@ git clone https://github.com/microsoft/phi-3cookbook.git
 
 ### Pasul 2: Deschide folderul în VS Code
 
-Pentru a deschide VS Code în folderul relevant execută următoarea comandă în terminal, care va deschide o fereastră nouă:
+Pentru a deschide VS Code în folderul relevant, execută următoarea comandă în terminal, care va deschide o fereastră nouă:
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
@@ -88,7 +89,7 @@ Alternativ, poți deschide folderul selectând **File** > **Open Folder**.
 
 ### Pasul 3: Dependențe
 
-Deschide un terminal în VS Code pe instanța ta Azure AI Compute (sfat: **Ctrl+J**) și execută următoarele comenzi pentru a instala dependențele:
+Deschide o fereastră de terminal în VS Code în instanța ta Azure AI Compute (sugestie: **Ctrl+J**) și execută următoarele comenzi pentru a instala dependențele:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -98,21 +99,21 @@ az extension remove -n azure-cli-ml
 az extension add -n ml
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > Instalarea tuturor dependențelor va dura aproximativ 5 minute.
 
-În acest laborator vei descărca și încărca modele în catalogul de modele Azure AI. Pentru a accesa catalogul de modele, trebuie să te autentifici în Azure folosind:
+În acest laborator vei descărca și încărca modele în catalogul de modele Azure AI. Pentru a putea accesa catalogul de modele, trebuie să te autentifici în Azure folosind:
 
 ```bash
 az login
 ```
 
-> [!NOTE]
-> La autentificare ți se va cere să selectezi abonamentul. Asigură-te că selectezi abonamentul furnizat pentru acest laborator.
+> [!NOTE]  
+> La autentificare ți se va cere să selectezi abonamentul. Asigură-te că setezi abonamentul cel oferit pentru acest laborator.
 
 ### Pasul 4: Execută comenzile Olive
 
-Deschide un terminal în VS Code pe instanța ta Azure AI Compute (sfat: **Ctrl+J**) și asigură-te că mediul `olive-ai` conda este activat:
+Deschide o fereastră de terminal în VS Code în instanța ta Azure AI Compute (sugestie: **Ctrl+J**) și asigură-te că mediul conda `olive-ai` este activat:
 
 ```bash
 conda activate olive-ai
@@ -120,13 +121,14 @@ conda activate olive-ai
 
 Apoi, execută următoarele comenzi Olive în linia de comandă.
 
-1. **Inspectează datele:** În acest exemplu vei ajusta fin modelul Phi-3.5-Mini pentru a fi specializat în răspunsuri la întrebări legate de călătorii. Codul de mai jos afișează primele înregistrări din setul de date, care sunt în format JSON lines:
-   
+1. **Inspectează datele:** În acest exemplu, vei ajusta fin modelul Phi-3.5-Mini astfel încât să fie specializat în răspunsuri la întrebări legate de călătorii. Codul de mai jos afișează primele câteva înregistrări din setul de date, care sunt în format JSON lines:
+
     ```bash
     head data/data_sample_travel.jsonl
     ```
-2. **Quantizează modelul:** Înainte de antrenarea modelului, îl cuantizezi cu comanda următoare care folosește o tehnică numită Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ cuantizează greutățile modelului ținând cont de activările produse în timpul inferenței. Aceasta înseamnă că procesul de cuantizare ia în calcul distribuția reală a datelor în activări, ceea ce duce la o păstrare mai bună a acurateței modelului comparativ cu metodele tradiționale de cuantizare a greutăților.
-    
+
+2. **Quantizează modelul:** Înainte de antrenarea modelului, îl cuantizezi folosind comanda de mai jos care utilizează o tehnică numită Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ cuantizează greutățile modelului ținând cont de activările produse în timpul inferenței. Aceasta înseamnă că procesul de cuantizare ia în considerare distribuția reală a datelor în activări, ceea ce duce la o păstrare mai bună a acurateței modelului comparativ cu metodele tradiționale de cuantizare a greutăților.
+
     ```bash
     olive quantize \
        --model_name_or_path microsoft/Phi-3.5-mini-instruct \
@@ -135,13 +137,13 @@ Apoi, execută următoarele comenzi Olive în linia de comandă.
        --output_path models/phi/awq \
        --log_level 1
     ```
-    
-    Procesul de cuantizare AWQ durează aproximativ **8 minute** și va **reduce dimensiunea modelului de la ~7.5GB la ~2.5GB**.
-   
-   În acest laborator îți arătăm cum să imporți modele din Hugging Face (de exemplu: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
 
-1. **Train the model:** Next, the `olive finetune` ajustează fin modelul cuantizat. Cuantizarea modelului *înainte* de ajustarea fină, în loc de după, oferă o acuratețe mai bună deoarece procesul de ajustare fină recuperează o parte din pierderea cauzată de cuantizare.
-    
+    Procesul de cuantizare AWQ durează aproximativ **8 minute** și va **reduce dimensiunea modelului de la ~7.5GB la ~2.5GB**.
+
+    În acest laborator îți arătăm cum să introduci modele din Hugging Face (de exemplu: `microsoft/Phi-3.5-mini-instruct`). Totuși, Olive permite și introducerea modelelor din catalogul Azure AI actualizând argumentul `model_name_or_path` cu un ID de asset Azure AI (de exemplu: `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
+
+3. **Antrenează modelul:** Următoarea comandă `olive finetune` ajustează fin modelul cuantizat. Cuantizarea modelului *înainte* de ajustarea fină, în loc de după, oferă o acuratețe mai bună deoarece procesul de ajustare fină recuperează o parte din pierderea cauzată de cuantizare.
+
     ```bash
     olive finetune \
         --method lora \
@@ -153,10 +155,10 @@ Apoi, execută următoarele comenzi Olive în linia de comandă.
         --output_path ./models/phi/ft \
         --log_level 1
     ```
-    
-    Ajustarea fină (cu 100 de pași) durează aproximativ **6 minute**.
 
-3. **Optimizează:** După ce modelul este antrenat, îl optimizezi folosind argumentele `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` ale Olive - însă pentru acest laborator vom folosi CPU.
+    Ajustarea fină durează aproximativ **6 minute** (cu 100 de pași).
+
+4. **Optimizează:** După ce modelul este antrenat, îl optimizezi folosind comanda `auto-opt` a Olive, care va captura graful ONNX și va efectua automat o serie de optimizări pentru a îmbunătăți performanța modelului pe CPU prin comprimare și fuziuni. Este important de menționat că poți optimiza și pentru alte dispozitive precum NPU sau GPU actualizând argumentele `--device` și `--provider` – dar pentru acest laborator vom folosi CPU.
 
     ```bash
     olive auto-opt \
@@ -168,12 +170,12 @@ Apoi, execută următoarele comenzi Olive în linia de comandă.
        --output_path models/phi/onnx-ao \
        --log_level 1
     ```
-    
+
     Optimizarea durează aproximativ **5 minute**.
 
-### Pasul 5: Test rapid de inferență al modelului
+### Pasul 5: Test rapid de inferență a modelului
 
-Pentru a testa inferența modelului, creează un fișier Python în folderul tău numit **app.py** și copiază următorul cod:
+Pentru a testa inferența modelului, creează un fișier Python în folderul tău numit **app.py** și copiază codul următor:
 
 ```python
 import onnxruntime_genai as og
@@ -217,18 +219,20 @@ python app.py
 
 ### Pasul 6: Încarcă modelul în Azure AI
 
-Încărcarea modelului în depozitul de modele Azure AI face modelul partajabil cu ceilalți membri ai echipei tale de dezvoltare și gestionează controlul versiunilor modelului. Pentru a încărca modelul, rulează următoarea comandă:
+Încărcarea modelului într-un depozit de modele Azure AI face modelul partajabil cu alți membri ai echipei tale de dezvoltare și gestionează controlul versiunilor modelului. Pentru a încărca modelul, rulează următoarea comandă:
 
-> [!NOTE]
-> Actualizează valorile `{}` pentru `resourceGroup` și numele proiectului Azure AI, apoi rulează comanda
+> [!NOTE]  
+> Actualizează placeholder-ele `{}` cu numele grupului tău de resurse și al Proiectului Azure AI.
+
+Pentru a găsi grupul tău de resurse `"resourceGroup"` și numele Proiectului Azure AI, rulează următoarea comandă:
 
 ```
 az ml workspace show
 ```
 
-Sau accesează +++ai.azure.com+++ și selectează **management center** **project** **overview**
+Sau accesează +++ai.azure.com+++ și selectează **management center** > **project** > **overview**
 
-Actualizează valorile `{}` cu numele grupului tău de resurse și numele proiectului Azure AI.
+Actualizează placeholder-ele `{}` cu numele grupului tău de resurse și al Proiectului Azure AI.
 
 ```bash
 az ml model create \
@@ -237,9 +241,8 @@ az ml model create \
     --path ./models/phi/onnx-ao \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
-```
+```  
+Apoi poți vedea modelul încărcat și îl poți implementa la https://ml.azure.com/model/list
 
-Poți apoi să vezi modelul încărcat și să îl implementezi la https://ml.azure.com/model/list
-
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să țineți cont că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea în urma utilizării acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

@@ -2,82 +2,82 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-09T05:30:49+00:00",
+  "translation_date": "2025-07-16T17:32:43+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "sr"
 }
 -->
 # phiext README
 
-Ovo je README za vašu ekstenziju "phiext". Nakon kratkog opisa, preporučujemo da uključite sledeće sekcije.
+Ово је README за вашу екстензију "phiext". Након кратког описа, препоручујемо да укључите следеће секције.
 
-## Features
+## Карактеристике
 
-Opišite specifične funkcije vaše ekstenzije, uključujući snimke ekrana vaše ekstenzije u akciji. Putanje do slika su relativne u odnosu na ovaj README fajl.
+Опишите специфичне карактеристике ваше екстензије укључујући снимке екрана ваше екстензије у раду. Путеви до слика су релативни у односу на овај README фајл.
 
-Na primer, ako postoji podfolder sa slikama u radnom prostoru vašeg projekta ekstenzije:
+На пример, ако постоји подфолдер са сликама у радном простору вашег пројекта екстензије:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Mnoge popularne ekstenzije koriste animacije. Ovo je odličan način da prikažete vašu ekstenziju! Preporučujemo kratke, fokusirane animacije koje je lako pratiti.
+> Tip: Многе популарне екстензије користе анимације. Ово је одличан начин да представите вашу екстензију! Препоручујемо кратке, фокусиране анимације које је лако пратити.
 
-## Requirements
+## Захтеви
 
-Ako imate neke zahteve ili zavisnosti, dodajte sekciju u kojoj opisujete šta je potrebno i kako ih instalirati i podesiti.
+Ако имате неке захтеве или зависности, додајте секцију у којој описујете те захтеве и како их инсталирати и конфигурисати.
 
-## Extension Settings
+## Подешавања екстензије
 
-Uključite ovu sekciju ako vaša ekstenzija dodaje bilo kakva VS Code podešavanja preko `contributes.configuration` extension point.
+Укључите ако ваша екстензија додаје нека VS Code подешавања преко `contributes.configuration` тачке екстензије.
 
-Na primer:
+На пример:
 
-Ova ekstenzija doprinosi sledećim podešavanjima:
+Ова екстензија додаје следећа подешавања:
 
-* `myExtension.enable`: Omogući/onemogući ovu ekstenziju.
-* `myExtension.thing`: Podesite na `blah` da biste nešto uradili.
+* `myExtension.enable`: Омогући/онемогући ову екстензију.
+* `myExtension.thing`: Поставите на `blah` да бисте нешто урадили.
 
-## Known Issues
+## Познати проблеми
 
-Isticanje poznatih problema može pomoći da korisnici ne otvaraju duplikate prijava problema vezanih za vašu ekstenziju.
+Истичући познате проблеме можете помоћи да корисници не отварају дупликате проблема везаних за вашу екстензију.
 
-## Release Notes
+## Белешке о издањима
 
-Korisnici cene beleške o izdanjima dok ažurirate vašu ekstenziju.
+Корисници цене белешке о издањима док ажурирате вашу екстензију.
 
 ### 1.0.0
 
-Početno izdanje ...
+Почетно издање ...
 
 ### 1.0.1
 
-Ispravljen problem #.
+Поправљен проблем #.
 
 ### 1.1.0
 
-Dodate funkcije X, Y i Z.
+Додате карактеристике X, Y и Z.
 
 ---
 
-## Following extension guidelines
+## Прати се смернице за екстензије
 
-Uverite se da ste pročitali smernice za ekstenzije i da sledite najbolje prakse za kreiranje vaše ekstenzije.
+Уверите се да сте прочитали смернице за екстензије и да пратите најбоље праксе за креирање ваше екстензије.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Working with Markdown
+## Рад са Markdown-ом
 
-README možete pisati koristeći Visual Studio Code. Evo nekoliko korisnih prečica na tastaturi za uređivač:
+Можете писати ваш README користећи Visual Studio Code. Ево неких корисних тастатурних пречица у уређивачу:
 
-* Podelite uređivač (`Cmd+\` na macOS-u ili `Ctrl+\` na Windows-u i Linux-u).
-* Uključite/isključite pregled (`Shift+Cmd+V` na macOS-u ili `Shift+Ctrl+V` na Windows-u i Linux-u).
-* Pritisnite `Ctrl+Space` (Windows, Linux, macOS) da vidite listu Markdown šablona.
+* Подели уређивач (`Cmd+\` на macOS или `Ctrl+\` на Windows и Linux).
+* Пребаци преглед (`Shift+Cmd+V` на macOS или `Shift+Ctrl+V` на Windows и Linux).
+* Притисните `Ctrl+Space` (Windows, Linux, macOS) да видите листу Markdown исечака.
 
-## For more information
+## За више информација
 
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Uživajte!**
+**Уживајте!**
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде прецизан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетом. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

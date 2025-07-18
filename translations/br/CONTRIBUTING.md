@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:20:02+00:00",
+  "translation_date": "2025-07-16T14:40:11+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "br"
 }
@@ -20,7 +20,7 @@ Para mais informações, leia o [Code of Conduct FAQ](https://opensource.microso
 
 ## Cuidados ao criar issues
 
-Por favor, não abra issues no GitHub para dúvidas gerais de suporte, pois a lista do GitHub deve ser usada para solicitações de recursos e relatórios de bugs. Assim, podemos acompanhar mais facilmente problemas reais ou bugs no código e manter a discussão geral separada do código em si.
+Por favor, não abra issues no GitHub para dúvidas gerais de suporte, pois a lista do GitHub deve ser usada para solicitações de funcionalidades e relatórios de bugs. Assim, podemos acompanhar mais facilmente problemas reais ou bugs no código e manter a discussão geral separada do código em si.
 
 ## Como Contribuir
 
@@ -31,10 +31,10 @@ Ao enviar um pull request (PR) para o repositório Phi-3 CookBook, siga as diret
 - **Faça um fork do repositório**: Sempre faça um fork do repositório para sua própria conta antes de fazer suas modificações.
 
 - **Pull requests separados (PR)**:
-  - Envie cada tipo de alteração em um pull request separado. Por exemplo, correções de bugs e atualizações de documentação devem ser enviadas em PRs diferentes.
+  - Envie cada tipo de alteração em um pull request separado. Por exemplo, correções de bugs e atualizações de documentação devem ser enviadas em PRs distintos.
   - Correções de erros de digitação e pequenas atualizações de documentação podem ser combinadas em um único PR quando apropriado.
 
-- **Resolver conflitos de merge**: Se seu pull request apresentar conflitos de merge, atualize sua branch local `main` para refletir o repositório principal antes de fazer suas modificações.
+- **Resolver conflitos de merge**: Se seu pull request apresentar conflitos de merge, atualize sua branch `main` local para refletir o repositório principal antes de fazer suas modificações.
 
 - **Envio de traduções**: Ao enviar um PR de tradução, certifique-se de que a pasta de tradução inclua traduções para todos os arquivos da pasta original.
 

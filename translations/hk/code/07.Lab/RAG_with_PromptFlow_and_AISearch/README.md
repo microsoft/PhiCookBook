@@ -2,39 +2,39 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-05-08T06:41:59+00:00",
+  "translation_date": "2025-07-16T17:06:32+00:00",
   "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "hk"
 }
 -->
-## RAG 同 PromptFlow 同 AISearch
+## RAG 與 PromptFlow 及 AISearch
 
-呢個例子會示範點樣用 Phi3 做 SLM，用 AI Search 做 vectorDB，同用 Prompt Flow 做低碼編排，去實現 Retrieval Augmented Generation (RAG) 應用。
+在此範例中，我們將實作一個結合 Phi3 作為 SLM、AI Search 作為向量資料庫，以及 Prompt Flow 作為低代碼協調器的檢索增強生成（RAG）應用程式。
 
 ## 功能
 
-- 用 Docker 輕鬆部署。
-- 可擴展嘅架構，適合處理 AI 工作流程。
-- 用 Prompt Flow 嘅低碼方法。
+- 使用 Docker 輕鬆部署。
+- 可擴展的架構以處理 AI 工作流程。
+- 使用 Prompt Flow 的低代碼方式。
 
 ## 先決條件
 
-開始之前，請確保你符合以下要求：
+開始之前，請確保您已符合以下要求：
 
-- 本地機有安裝 Docker。
-- 有 Azure 帳戶，並有權限去建立同管理容器資源。
-- 有 Azure AI Studio 同 Azure AI Search 實例。
-- 有一個用嚟建立索引嘅 embedding 模型（可以係 Azure OpenAI embedding，或者目錄入面嘅開源模型）。
-- 本地機安裝咗 Python 3.8 或以上版本。
-- 有 Azure Container Registry（或者你自己選擇嘅 registry）。
+- 本機已安裝 Docker。
+- 擁有可建立及管理容器資源的 Azure 帳戶權限。
+- 擁有 Azure AI Studio 及 Azure AI Search 實例。
+- 一個用於建立索引的嵌入模型（可使用 Azure OpenAI 嵌入模型或目錄中的開源模型）。
+- 本機已安裝 Python 3.8 或更新版本。
+- 一個 Azure Container Registry（或您選擇的任何註冊中心）。
 
 ## 安裝
 
-1. 用 flow.yaml 檔喺你嘅 Azure AI Studio Project 裡面建立一個新嘅 flow。
-2. 從你嘅 Azure AI 模型目錄部署一個 Phi3 Model，並同你嘅 project 建立連接。[Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
-3. 喺 Azure AI Search 用你揀嘅任何文件建立 vector 索引。[Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. 喺管理嘅 endpoint 上部署 flow，然後喺 prompt-flow-frontend.py 檔使用佢。[Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
-5. Clone 呢個 repository：
+1. 使用 flow.yaml 檔案在您的 Azure AI Studio 專案中建立新的流程。
+2. 從 Azure AI 模型目錄部署 Phi3 模型，並建立與專案的連接。[部署 Phi-3 作為模型即服務](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
+3. 使用您選擇的任何文件，在 Azure AI Search 上建立向量索引。[在 Azure AI Search 上建立向量索引](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
+4. 在受管端點部署流程，並在 prompt-flow-frontend.py 檔案中使用它。[在線端點部署流程](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+5. 克隆此儲存庫：
 
     ```sh
     git clone [[https://github.com/yourusername/prompt-flow-frontend.git](https://github.com/microsoft/Phi-3CookBook.git)](https://github.com/microsoft/Phi-3CookBook.git)
@@ -42,13 +42,13 @@ CO_OP_TRANSLATOR_METADATA:
     cd code/07.Lab/RAG with PromptFlow and AISearch
     ```
 
-6. 建立 Docker 映像檔：
+6. 建置 Docker 映像檔：
 
     ```sh
     docker build -t prompt-flow-frontend.py .
     ```
 
-7. 將 Docker 映像推送到 Azure Container Registry：
+7. 將 Docker 映像檔推送至 Azure Container Registry：
 
     ```sh
     az acr login --name yourregistry
@@ -60,19 +60,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 使用方法
 
-1. 運行 Docker 容器：
+1. 執行 Docker 容器：
 
     ```sh
     docker run -p 8501:8501 yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-2. 喺瀏覽器打開 `http://localhost:8501` 使用應用程式。
+2. 在瀏覽器中開啟 `http://localhost:8501` 存取應用程式。
 
-## 聯絡
+## 聯絡方式
 
 Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148/)
 
 完整文章：[RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我哋致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件嘅母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我哋對因使用此翻譯而引致嘅任何誤解或誤釋概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

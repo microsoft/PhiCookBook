@@ -2,27 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-05-07T14:37:40+00:00",
+  "translation_date": "2025-07-16T21:01:11+00:00",
   "source_file": "md/01.Introduction/03/MLX_Inference.md",
   "language_code": "mo"
 }
 -->
-# **Inference Phi-3 עם מסגרת Apple MLX**
+# **使用 Apple MLX 框架推論 Phi-3**
 
-## **מהי מסגרת MLX**
+## **什麼是 MLX 框架**
 
-MLX היא מסגרת מערך למחקר למידת מכונה על שבבי Apple, מבית Apple machine learning research.
+MLX 是一個針對 Apple 硅芯片上機器學習研究的陣列框架，由 Apple 機器學習研究團隊開發。
 
-MLX עוצבה על ידי חוקרי למידת מכונה עבור חוקרי למידת מכונה. המסגרת מיועדת להיות ידידותית למשתמש, אך עדיין יעילה לאימון והפעלת מודלים. העיצוב של המסגרת עצמה גם פשוט מבחינה קונספטואלית. אנו שואפים להקל על החוקרים להרחיב ולשפר את MLX במטרה לחקור במהירות רעיונות חדשים.
+MLX 是由機器學習研究人員為機器學習研究人員設計。這個框架旨在使用者友好，同時在訓練和部署模型時保持高效。框架本身的設計概念也相當簡單。我們希望讓研究人員能輕鬆擴展和改進 MLX，以便快速探索新想法。
 
-ניתן להאיץ מודלים גדולים (LLMs) במכשירי Apple Silicon דרך MLX, והמודלים יכולים לרוץ מקומית בנוחות רבה.
+透過 MLX，LLM 可以在 Apple 硅芯片設備上加速運行，並且模型可以非常方便地在本地執行。
 
-## **שימוש ב-MLX ל-inference של Phi-3-mini**
+## **使用 MLX 推論 Phi-3-mini**
 
-### **1. הקמת סביבת MLX**
+### **1. 設定你的 MLX 環境**
 
 1. Python 3.11.x  
-2. התקנת ספריית MLX
+2. 安裝 MLX 函式庫
 
 
 ```bash
@@ -31,7 +31,7 @@ pip install mlx-lm
 
 ```
 
-### **2. הרצת Phi-3-mini בטרמינל עם MLX**
+### **2. 在終端機使用 MLX 運行 Phi-3-mini**
 
 
 ```bash
@@ -40,11 +40,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-התוצאה (הסביבה שלי היא Apple M1 Max, 64GB) היא
+結果（我的環境是 Apple M1 Max，64GB）如下
 
 ![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.mo.png)
 
-### **3. כימות Phi-3-mini עם MLX בטרמינל**
+### **3. 在終端機使用 MLX 量化 Phi-3-mini**
 
 
 ```bash
@@ -53,11 +53,11 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***Note：*** ניתן לכמת את המודל דרך mlx_lm.convert, והכימות ברירת המחדל הוא INT4. בדוגמה זו כימות Phi-3-mini ל-INT4
+***Note：*** 模型可以透過 mlx_lm.convert 進行量化，預設量化為 INT4。此範例將 Phi-3-mini 量化為 INT4。
 
-ניתן לכמת את המודל דרך mlx_lm.convert, והכימות ברירת המחדל הוא INT4. בדוגמה זו הכוונה לכמת את Phi-3-mini ל-INT4. לאחר הכימות, המודל יישמר בתיקיית ברירת המחדל ./mlx_model
+模型可以透過 mlx_lm.convert 進行量化，預設量化為 INT4。此範例是將 Phi-3-mini 量化成 INT4。量化後，模型會儲存在預設目錄 ./mlx_model 中。
 
-ניתן לבדוק את המודל המכווץ עם MLX מהטרמינל
+我們可以從終端機測試使用 MLX 量化後的模型
 
 
 ```bash
@@ -66,28 +66,24 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ```
 
-התוצאה היא
+結果如下
 
 ![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.mo.png)
 
 
-### **4. הרצת Phi-3-mini עם MLX ב-Jupyter Notebook**
+### **4. 在 Jupyter Notebook 使用 MLX 運行 Phi-3-mini**
 
 
 ![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.mo.png)
 
-***Note:*** אנא קראו את הדוגמה הזו [click this link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
+***Note:*** 請閱讀此範例 [點此連結](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
 
-## **משאבים**
+## **資源**
 
-1. למידה על מסגרת Apple MLX [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)
+1. 了解 Apple MLX 框架 [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)
 
-2. מאגר GitHub של Apple MLX [https://github.com/ml-explore](https://github.com/ml-explore)
+2. Apple MLX GitHub 倉庫 [https://github.com/ml-explore](https://github.com/ml-explore)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-It appears you requested a translation to "mo." Could you please clarify what language or dialect "mo" refers to? This will help me provide an accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

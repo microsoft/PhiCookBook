@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:38:44+00:00",
+  "translation_date": "2025-07-16T21:18:34+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "pl"
 }
@@ -11,60 +11,60 @@ CO_OP_TRANSLATOR_METADATA:
 
 Po wytrenowaniu adapterów w środowisku zdalnym, użyj prostej aplikacji Gradio, aby wchodzić w interakcję z modelem.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.pl.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.pl.png)
 
 ### Przygotowanie zasobów Azure  
-Musisz skonfigurować zasoby Azure do zdalnego wnioskowania, wykonując `AI Toolkit: Provision Azure Container Apps for inference` z palety poleceń. Podczas tego procesu zostaniesz poproszony o wybranie subskrypcji Azure oraz grupy zasobów.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.pl.png)
+Musisz skonfigurować zasoby Azure do zdalnego wnioskowania, wykonując polecenie `AI Toolkit: Provision Azure Container Apps for inference` z palety poleceń. Podczas tej konfiguracji zostaniesz poproszony o wybranie subskrypcji Azure oraz grupy zasobów.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.pl.png)
 
-Domyślnie subskrypcja i grupa zasobów dla wnioskowania powinny być takie same, jak te używane podczas dostrajania. Wnioskowanie będzie korzystać z tego samego środowiska Azure Container App oraz uzyska dostęp do modelu i adaptera modelu przechowywanych w Azure Files, które zostały wygenerowane podczas etapu dostrajania.
+Domyślnie subskrypcja i grupa zasobów dla wnioskowania powinny być takie same, jak te użyte podczas dostrajania. Wnioskowanie będzie korzystać z tego samego środowiska Azure Container App oraz uzyska dostęp do modelu i adaptera modelu przechowywanych w Azure Files, które zostały wygenerowane podczas etapu dostrajania.
 
 ## Korzystanie z AI Toolkit
 
 ### Wdrażanie do wnioskowania  
-Jeśli chcesz zmodyfikować kod wnioskowania lub ponownie załadować model wnioskowania, wykonaj polecenie `AI Toolkit: Deploy for inference`. Spowoduje to synchronizację najnowszego kodu z ACA oraz restart repliki.
+Jeśli chcesz zmodyfikować kod wnioskowania lub ponownie załadować model wnioskowania, wykonaj polecenie `AI Toolkit: Deploy for inference`. Spowoduje to synchronizację najnowszego kodu z ACA i ponowne uruchomienie repliki.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.pl.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.pl.png)
 
-Po pomyślnym wdrożeniu model jest gotowy do oceny za pomocą tego endpointu.
+Po pomyślnym wdrożeniu model jest gotowy do oceny za pomocą tego punktu końcowego.
 
 ### Dostęp do API wnioskowania
 
-Do API wnioskowania możesz uzyskać dostęp, klikając przycisk "*Go to Inference Endpoint*" wyświetlany w powiadomieniu VSCode. Alternatywnie, endpoint web API znajdziesz pod `ACA_APP_ENDPOINT` w `./infra/inference.config.json` oraz na panelu wyników.
+Do API wnioskowania możesz uzyskać dostęp, klikając przycisk "*Go to Inference Endpoint*" wyświetlany w powiadomieniu VSCode. Alternatywnie, adres punktu końcowego API webowego znajdziesz pod `ACA_APP_ENDPOINT` w pliku `./infra/inference.config.json` oraz w panelu wyjściowym.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.pl.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.pl.png)
 
-> **Note:** Endpoint wnioskowania może wymagać kilku minut, aby stać się w pełni operacyjnym.
+> **Note:** Punkt końcowy wnioskowania może wymagać kilku minut, aby stać się w pełni operacyjnym.
 
 ## Komponenty wnioskowania zawarte w szablonie
 
 | Folder | Zawartość |
 | ------ | --------- |
-| `infra` | Zawiera wszystkie niezbędne konfiguracje do zdalnych operacji. |
-| `infra/provision/inference.parameters.json` | Przechowuje parametry dla szablonów bicep, używanych do przygotowania zasobów Azure do wnioskowania. |
-| `infra/provision/inference.bicep` | Zawiera szablony do przygotowania zasobów Azure do wnioskowania. |
-| `infra/inference.config.json` | Plik konfiguracyjny, wygenerowany przez polecenie `AI Toolkit: Provision Azure Container Apps for inference`. Służy jako wejście dla innych poleceń zdalnych z palety. |
+| `infra` | Zawiera wszystkie niezbędne konfiguracje do operacji zdalnych. |
+| `infra/provision/inference.parameters.json` | Zawiera parametry dla szablonów bicep, używane do przygotowania zasobów Azure dla wnioskowania. |
+| `infra/provision/inference.bicep` | Zawiera szablony do przygotowania zasobów Azure dla wnioskowania. |
+| `infra/inference.config.json` | Plik konfiguracyjny, wygenerowany przez polecenie `AI Toolkit: Provision Azure Container Apps for inference`. Służy jako dane wejściowe dla innych poleceń zdalnych. |
 
-### Konfiguracja Provisioningu zasobów Azure za pomocą AI Toolkit  
+### Konfiguracja przygotowania zasobów Azure za pomocą AI Toolkit  
 Skonfiguruj [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Przygotuj Azure Container Apps do wnioskowania, edytując plik ` command.
+Wykonaj polecenie `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
-| --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+Parametry konfiguracyjne znajdziesz w pliku `./infra/provision/inference.parameters.json`. Oto szczegóły:  
+| Parametr | Opis |
+| -------- | ---- |
+| `defaultCommands` | Komendy do uruchomienia API webowego. |
+| `maximumInstanceCount` | Maksymalna liczba instancji GPU. |
+| `location` | Lokalizacja, w której będą przygotowane zasoby Azure. Domyślnie jest to ta sama lokalizacja, co wybrana grupa zasobów. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | Parametry służące do nadawania nazw zasobom Azure podczas przygotowania. Domyślnie są takie same jak nazwy zasobów użytych podczas dostrajania. Możesz podać nową, nieużywaną nazwę, aby utworzyć własne zasoby o niestandardowych nazwach, lub podać nazwę już istniejącego zasobu Azure, jeśli chcesz go użyć. Szczegóły znajdziesz w sekcji [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### Korzystanie z istniejących zasobów Azure
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Domyślnie przygotowanie wnioskowania korzysta z tego samego środowiska Azure Container App, konta Storage, udziału Azure File Share oraz Azure Log Analytics, które były używane podczas dostrajania. Osobna aplikacja Azure Container App jest tworzona wyłącznie dla API wnioskowania.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json. Następnie uruchom polecenie `AI Toolkit: Provision Azure Container Apps for inference` z palety poleceń. To zaktualizuje wskazane zasoby i utworzy te, których brakuje.
+Jeśli dostosowałeś zasoby Azure podczas etapu dostrajania lub chcesz użyć własnych istniejących zasobów Azure do wnioskowania, podaj ich nazwy w pliku `./infra/inference.parameters.json`. Następnie uruchom polecenie `AI Toolkit: Provision Azure Container Apps for inference` z palety poleceń. Spowoduje to aktualizację wskazanych zasobów oraz utworzenie brakujących.
 
-Na przykład, jeśli masz już istniejące środowisko kontenerowe Azure, plik `./infra/finetuning.parameters.json` powinien wyglądać tak:
+Na przykład, jeśli masz istniejące środowisko kontenerowe Azure, twój plik `./infra/finetuning.parameters.json` powinien wyglądać tak:
 
 ```json
 {
@@ -84,7 +84,7 @@ Na przykład, jeśli masz już istniejące środowisko kontenerowe Azure, plik `
 ```
 
 ### Ręczne przygotowanie  
-Jeśli wolisz ręcznie skonfigurować zasoby Azure, możesz skorzystać z dostarczonych plików bicep w folderze `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`.
+Jeśli wolisz ręcznie skonfigurować zasoby Azure, możesz użyć dostarczonych plików bicep w folderach `./infra/provision`. Jeśli już skonfigurowałeś wszystkie zasoby Azure bez użycia palety poleceń AI Toolkit, wystarczy, że wpiszesz nazwy zasobów w pliku `inference.config.json`.
 
 Na przykład:
 
@@ -100,4 +100,4 @@ Na przykład:
 ```
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być traktowany jako autorytatywne źródło. W przypadku informacji o kluczowym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

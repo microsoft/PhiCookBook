@@ -2,47 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-07T13:38:22+00:00",
+  "translation_date": "2025-07-17T06:18:54+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "ur"
 }
 -->
-## Fine-Tuning with Kaito 
+## Kaito کے ساتھ فائن ٹیوننگ
 
 [Kaito](https://github.com/Azure/kaito) ایک آپریٹر ہے جو Kubernetes کلسٹر میں AI/ML inference ماڈل کی تعیناتی کو خودکار بناتا ہے۔
 
-Kaito کے پاس درج ذیل اہم خصوصیات ہیں جو زیادہ تر مین اسٹریم ماڈل تعیناتی کے طریقہ کار سے مختلف ہیں جو ورچوئل مشین انفراسٹرکچر پر مبنی ہوتے ہیں:
+Kaito کے درج ذیل اہم فرق ہیں جو زیادہ تر روایتی ماڈل تعیناتی کے طریقوں سے مختلف ہیں جو ورچوئل مشین انفراسٹرکچر پر مبنی ہوتے ہیں:
 
-- ماڈل فائلز کو container images کے ذریعے منظم کریں۔ ماڈل لائبریری استعمال کرتے ہوئے inference کالز کرنے کے لیے ایک http سرور فراہم کیا جاتا ہے۔
-- GPU ہارڈویئر کے مطابق deployment parameters کو tune کرنے کی ضرورت نہیں کیونکہ پری سیٹ کنفیگریشنز فراہم کی جاتی ہیں۔
-- ماڈل کی ضروریات کی بنیاد پر GPU نوڈز کو خودکار طریقے سے مہیا کریں۔
-- اگر لائسنس اجازت دیتا ہے تو بڑے ماڈل امیجز کو Microsoft Container Registry (MCR) میں میزبانی کریں۔
+- ماڈل فائلز کو container images کے ذریعے منظم کرنا۔ ماڈل لائبریری کے ذریعے inference کالز کرنے کے لیے ایک http سرور فراہم کیا جاتا ہے۔
+- GPU ہارڈویئر کے مطابق تعیناتی کے پیرامیٹرز کو ایڈجسٹ کرنے کی ضرورت نہیں، کیونکہ پری سیٹ کنفیگریشنز مہیا کی جاتی ہیں۔
+- ماڈل کی ضروریات کے مطابق GPU نوڈز خودکار طور پر فراہم کرنا۔
+- اگر لائسنس اجازت دیتا ہے تو بڑے ماڈل امیجز کو Microsoft Container Registry (MCR) میں ہوسٹ کرنا۔
 
-Kaito استعمال کرتے ہوئے، Kubernetes میں بڑے AI inference ماڈلز کو onboard کرنے کا ورک فلو بہت آسان ہو جاتا ہے۔
+Kaito کے استعمال سے Kubernetes میں بڑے AI inference ماڈلز کو شامل کرنے کا ورک فلو کافی آسان ہو جاتا ہے۔
 
-## Architecture
+## فن تعمیر
 
-Kaito کلاسک Kubernetes Custom Resource Definition (CRD)/controller ڈیزائن پیٹرن کی پیروی کرتا ہے۔ یوزر ایک `workspace` custom resource کو manage کرتا ہے جو GPU کی ضروریات اور inference کی وضاحت بیان کرتا ہے۔ Kaito controllers تعیناتی کو خودکار بنائیں گے `workspace` custom resource کو reconcile کر کے۔
+Kaito کلاسیکی Kubernetes Custom Resource Definition (CRD)/controller ڈیزائن پیٹرن کی پیروی کرتا ہے۔ صارف ایک `workspace` کسٹم ریسورس کو منظم کرتا ہے جو GPU کی ضروریات اور inference کی وضاحت بیان کرتا ہے۔ Kaito کنٹرولرز `workspace` کسٹم ریسورس کو reconcile کر کے تعیناتی کو خودکار بناتے ہیں۔
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-اوپر دیا گیا خاکہ Kaito کے architecture کا جائزہ پیش کرتا ہے۔ اس کے اہم اجزاء درج ذیل ہیں:
+اوپر دی گئی تصویر Kaito کے فن تعمیر کا جائزہ پیش کرتی ہے۔ اس کے اہم اجزاء درج ذیل ہیں:
 
-- **Workspace controller**: یہ `workspace` custom resource کو reconcile کرتا ہے، نوڈ آٹو پروویژننگ کو trigger کرنے کے لیے `machine` (نیچے وضاحت کی گئی) custom resources بناتا ہے، اور ماڈل کے پری سیٹ کنفیگریشنز کی بنیاد پر inference workload (`deployment` یا `statefulset`) تخلیق کرتا ہے۔
-- **Node provisioner controller**: اس controller کا نام [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) میں *gpu-provisioner* ہے۔ یہ [Karpenter](https://sigs.k8s.io/karpenter) سے ماخوذ `machine` CRD استعمال کرتا ہے تاکہ workspace controller کے ساتھ تعامل کرے۔ یہ Azure Kubernetes Service (AKS) APIs کے ساتھ مربوط ہوتا ہے تاکہ AKS کلسٹر میں نئے GPU نوڈز شامل کیے جا سکیں۔
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ایک اوپن سورس کمپونینٹ ہے۔ اگر دوسرے controllers [Karpenter-core](https://sigs.k8s.io/karpenter) APIs کی حمایت کرتے ہوں تو اسے تبدیل کیا جا سکتا ہے۔
+- **Workspace controller**: یہ `workspace` کسٹم ریسورس کو reconcile کرتا ہے، `machine` (نیچے وضاحت کی گئی ہے) کسٹم ریسورسز بناتا ہے تاکہ نوڈ کی خودکار فراہمی کو متحرک کیا جا سکے، اور ماڈل کی پری سیٹ کنفیگریشنز کی بنیاد پر inference ورک لوڈ (`deployment` یا `statefulset`) تخلیق کرتا ہے۔
+- **Node provisioner controller**: اس کنٹرولر کا نام [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) میں *gpu-provisioner* ہے۔ یہ `machine` CRD استعمال کرتا ہے جو [Karpenter](https://sigs.k8s.io/karpenter) سے ماخوذ ہے تاکہ workspace controller کے ساتھ تعامل کرے۔ یہ Azure Kubernetes Service (AKS) APIs کے ساتھ مربوط ہو کر AKS کلسٹر میں نئے GPU نوڈز شامل کرتا ہے۔
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) ایک اوپن سورس کمپونینٹ ہے۔ اگر دوسرے کنٹرولرز [Karpenter-core](https://sigs.k8s.io/karpenter) APIs کی حمایت کرتے ہیں تو انہیں اس کی جگہ استعمال کیا جا سکتا ہے۔
 
-## Overview video 
-[Watch the Kaito Demo](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+## جائزہ ویڈیو  
+[Kaito ڈیمو دیکھیں](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
-## Installation
+## تنصیب
 
-براہ کرم انسٹالیشن کی رہنمائی [یہاں](https://github.com/Azure/kaito/blob/main/docs/installation.md) چیک کریں۔
+براہ کرم تنصیب کی رہنمائی [یہاں](https://github.com/Azure/kaito/blob/main/docs/installation.md) دیکھیں۔
 
-## Quick start
+## فوری آغاز
 
-Kaito انسٹال کرنے کے بعد، کوئی درج ذیل کمانڈز آزما سکتا ہے تاکہ fine-tuning سروس شروع کی جا سکے۔
+Kaito انسٹال کرنے کے بعد، فائن ٹیوننگ سروس شروع کرنے کے لیے درج ذیل کمانڈز آزما سکتے ہیں۔
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-ورک اسپیس کی حالت کو درج ذیل کمانڈ چلا کر ٹریک کیا جا سکتا ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے، تو ماڈل کامیابی سے تعینات ہو چکا ہوتا ہے۔
+workspace کی حالت کو درج ذیل کمانڈ چلا کر ٹریک کیا جا سکتا ہے۔ جب WORKSPACEREADY کالم `True` ہو جائے، تو ماڈل کامیابی سے تعینات ہو چکا ہوتا ہے۔
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-اس کے بعد، inference سروس کے کلسٹر IP کو تلاش کریں اور عارضی `curl` پوڈ استعمال کر کے کلسٹر میں سروس اینڈپوائنٹ کی جانچ کریں۔
+اس کے بعد، inference سروس کا کلسٹر IP معلوم کیا جا سکتا ہے اور عارضی `curl` پوڈ کے ذریعے کلسٹر میں سروس اینڈ پوائنٹ کی جانچ کی جا سکتی ہے۔
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -112,5 +112,5 @@ export CLUSTERIP=$(kubectl get svc workspace-tuning-phi-3 -o jsonpath="{.spec.cl
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-**ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجموں میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ورانہ انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

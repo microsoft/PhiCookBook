@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T13:05:53+00:00",
+  "translation_date": "2025-07-16T21:32:46+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "hu"
 }
 -->
-# Cross-platform következtetés Rust nyelven
+# Többplatformos inferencia Rusttal
 
-Ez a bemutató végigvezet minket a Rust és a HuggingFace [Candle ML keretrendszerének](https://github.com/huggingface/candle) használatán a következtetés végrehajtásához. A Rust használata a következtetéshez több előnnyel jár, különösen más programozási nyelvekhez képest. A Rust híres a kiemelkedő teljesítményéről, amely összevethető a C és C++ nyelvekével. Ez kiváló választássá teszi a következtetési feladatokhoz, amelyek számításigényesek lehetnek. Különösen a nulla költségű absztrakciók és a hatékony memóriakezelés járul hozzá ehhez, hiszen nincs szemétgyűjtési overhead. A Rust platformok közötti képességei lehetővé teszik olyan kód fejlesztését, amely különböző operációs rendszereken fut, beleértve a Windowst, macOS-t és Linuxot, valamint mobil operációs rendszereket, anélkül, hogy jelentős változtatásokat kellene eszközölni a kódbázison.
+Ez a bemutató végigvezet minket az inferencia folyamatán Rust és a HuggingFace [Candle ML keretrendszer](https://github.com/huggingface/candle) használatával. A Rust használata az inferenciához több előnnyel jár, különösen más programozási nyelvekhez képest. A Rust híres a magas teljesítményéről, amely összehasonlítható a C és C++ nyelvekével. Ez kiváló választássá teszi az inferencia feladatokhoz, amelyek számításigényesek lehetnek. Különösen ennek alapja a nulla költségű absztrakciók és a hatékony memória-kezelés, amely nem igényel szemétgyűjtést. A Rust többplatformos képességei lehetővé teszik olyan kód fejlesztését, amely különböző operációs rendszereken fut, beleértve a Windowst, macOS-t és Linuxot, valamint mobil operációs rendszereket is, anélkül, hogy jelentős változtatásokat kellene végezni a kódbázison.
 
 A bemutató követéséhez előfeltétel a [Rust telepítése](https://www.rust-lang.org/tools/install), amely tartalmazza a Rust fordítót és a Cargo csomagkezelőt.
 
 ## 1. lépés: Új Rust projekt létrehozása
 
-Új Rust projekt létrehozásához futtasd a következő parancsot a terminálban:
+Új Rust projekt létrehozásához futtassuk a következő parancsot a terminálban:
 
 ```bash
 cargo new phi-console-app
 ```
 
-Ez létrehoz egy alap projekt struktúrát egy `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Ez létrehoz egy kezdeti projektstruktúrát egy `Cargo.toml` fájllal és egy `src` könyvtárral, amely tartalmaz egy `main.rs` fájlt.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` fájllal:
+Ezután hozzáadjuk a függőségeinket – nevezetesen a `candle`, `hf-hub` és `tokenizers` crate-eket – a `Cargo.toml` fájlhoz:
 
 ```toml
 [package]
@@ -39,9 +39,9 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## 2. lépés: Alapvető paraméterek beállítása
+## 2. lépés: Alapparaméterek beállítása
 
-A main.rs fájlban beállítjuk a következtetés kezdeti paramétereit. Ezek egyszerűség kedvéért mind keménykódoltak lesznek, de szükség szerint módosíthatók.
+A main.rs fájlban beállítjuk az inferencia kezdeti paramétereit. Ezek egyszerűség kedvéért mind keménykódoltak lesznek, de szükség szerint módosíthatók.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -57,12 +57,12 @@ let device = Device::Cpu;
 
 - **temperature**: Szabályozza a mintavétel véletlenszerűségét.
 - **sample_len**: Meghatározza a generált szöveg maximális hosszát.
-- **top_p**: Nucleus mintavételhez használatos, korlátozza az egy lépésben figyelembe vett tokenek számát.
-- **repeat_last_n**: Meghatározza, hány token figyelhető meg az ismétlődések büntetéséhez.
-- **repeat_penalty**: Az ismétlődő tokenek visszatartására szolgáló büntetési érték.
-- **seed**: Véletlenszerű mag (konstans érték is használható a jobb reprodukálhatóság érdekében).
-- **prompt**: A generálás kezdeti promptja. Észrevehető, hogy a modellt arra kérjük, hogy egy jégkorongról szóló haikut generáljon, és különleges tokenekkel jelöljük a felhasználó és az asszisztens beszélgetési részeit. A modell ezután kiegészíti a promptot a haikuval.
-- **device**: Ebben a példában a CPU-t használjuk a számításhoz. A Candle támogatja a GPU-s futtatást CUDA és Metal segítségével is.
+- **top_p**: Nucleus mintavételhez használatos, korlátozza az egyes lépésekben figyelembe vett tokenek számát.
+- **repeat_last_n**: Meghatározza, hány tokenre alkalmazzon büntetést az ismétlődések elkerülése érdekében.
+- **repeat_penalty**: A büntetés értéke az ismétlődő tokenek visszaszorítására.
+- **seed**: Véletlenszám-generátor mag (konstans érték is használható a jobb reprodukálhatóság érdekében).
+- **prompt**: A generálás kezdeti szövege. Vegyük észre, hogy a modellt arra kérjük, hogy egy jégkorongról szóló haikut generáljon, és speciális tokenekkel jelöljük a felhasználó és az asszisztens részeit a beszélgetésben. A modell ezt követően befejezi a promptot egy haikuval.
+- **device**: Ebben a példában a CPU-t használjuk a számításhoz. A Candle támogatja a futtatást GPU-n is CUDA és Metal segítségével.
 
 ## 3. lépés: Modell és tokenizáló letöltése/előkészítése
 
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-A `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` fájlt használjuk a bemeneti szöveg tokenizálásához. A modell letöltése után az gyorsítótárba kerül, így az első futtatás lassabb lesz (mivel letölti a 2,4 GB-os modellt), de a további futtatások gyorsabbak lesznek.
+Az `hf_hub` API-t használjuk a modell és a tokenizáló fájlok letöltésére a Hugging Face modell hubból. A `gguf` fájl tartalmazza a kvantált modell súlyokat, míg a `tokenizer.json` fájl a bemeneti szöveg tokenizálásához szükséges. A letöltés után a modell gyorsítótárazódik, így az első futtatás lassabb lesz (mivel letölti a 2,4 GB-os modellt), de a későbbi futtatások gyorsabbak lesznek.
 
 ## 4. lépés: Modell betöltése
 
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Betöltjük a kvantált modell súlyokat a memóriába, és inicializáljuk a Phi-3 modellt. Ez a lépés magában foglalja a modell súlyok beolvasását a `gguf` fájlból, és a modell előkészítését a megadott eszközön (jelen esetben CPU) történő következtetéshez.
+Betöltjük a kvantált modell súlyokat a memóriába, és inicializáljuk a Phi-3 modellt. Ez a lépés magában foglalja a modell súlyok beolvasását a `gguf` fájlból, és a modell előkészítését az inferenciára a megadott eszközön (jelen esetben CPU).
 
-## 5. lépés: Prompt feldolgozása és előkészítés a következtetéshez
+## 5. lépés: Prompt feldolgozása és előkészítés az inferenciához
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-Ebben a lépésben tokenizáljuk a bemeneti promptot, és előkészítjük a következtetéshez úgy, hogy tokenazonosítók sorozatává alakítjuk. Inicializáljuk továbbá a `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` értékeket. Minden token egy tenzorrá alakul, és a modellen keresztül fut, hogy megkapjuk a logitokat.
+Ebben a lépésben tokenizáljuk a bemeneti promptot, és előkészítjük az inferenciához úgy, hogy tokenazonosítók sorozatává alakítjuk. Inicializáljuk a `LogitsProcessor`-t is, amely kezeli a mintavételi folyamatot (valószínűségi eloszlás a szókészleten) a megadott `temperature` és `top_p` értékek alapján. Minden tokent tenzorrá alakítunk, és átvezetjük a modellen, hogy megkapjuk a logitokat.
 
-A ciklus feldolgozza a prompt minden tokenjét, frissíti a logit processzort, és előkészíti a következő token generálását.
+A ciklus feldolgozza a prompt minden tokenjét, frissíti a logits processzort, és előkészíti a következő token generálását.
 
-## 6. lépés: Következtetés
+## 6. lépés: Inferencia
 
 ```rust
 for index in 0..to_sample {
@@ -160,20 +160,20 @@ for index in 0..to_sample {
 }
 ```
 
-A következtetési ciklusban tokeneket generálunk egyenként, amíg el nem érjük a kívánt mintahosszt vagy meg nem találjuk a szekvencia végét jelző tokent. A következő token tenzorrá alakul, és átmegy a modellen, miközben a logitokat feldolgozzuk, hogy büntetéseket és mintavételt alkalmazzunk. Ezután a következő tokent kiválasztjuk, dekódoljuk, és hozzáfűzzük a szekvenciához.  
-Az ismétlődő szöveg elkerülése érdekében büntetést alkalmazunk az ismétlődő tokenekre a `repeat_last_n` and `repeat_penalty` paraméterek alapján.
+Az inferencia ciklusban tokeneket generálunk egyenként, amíg el nem érjük a kívánt mintahosszt vagy meg nem találjuk a szekvencia végét jelző tokent. A következő tokent tenzorrá alakítjuk, és átvezetjük a modellen, miközben a logitokat feldolgozzuk a büntetések és mintavétel alkalmazásához. Ezután a következő tokent mintavételezzük, dekódoljuk, és hozzáfűzzük a sorozathoz.
+Az ismétlődő szöveg elkerülése érdekében büntetést alkalmazunk az ismétlődő tokenekre a `repeat_last_n` és `repeat_penalty` paraméterek alapján.
 
-Végül a generált szöveg folyamatosan kiírásra kerül, így valós idejű streamelt outputot kapunk.
+Végül a generált szöveget folyamatosan kiírjuk, biztosítva a valós idejű, folyamatos megjelenítést.
 
 ## 7. lépés: Az alkalmazás futtatása
 
-Az alkalmazás futtatásához írd be a következő parancsot a terminálba:
+Az alkalmazás futtatásához adjuk ki a következő parancsot a terminálban:
 
 ```bash
 cargo run --release
 ```
 
-Ennek egy jégkorongról szóló haikut kell kiírnia, amit a Phi-3 modell generált. Valami ilyesmit:
+Ez ki fog írni egy jégkorongról szóló haikut, amelyet a Phi-3 modell generált. Valami ilyesmit:
 
 ```
 Puck glides swiftly,  
@@ -191,9 +191,9 @@ Swish of sticks now alive.
 
 ## Összegzés
 
-Ezeknek a lépéseknek a követésével szöveg generálást végezhetünk a Phi-3 modellel Rust és Candle segítségével kevesebb, mint 100 sor kódban. A kód kezeli a modell betöltését, tokenizálást és a következtetést, kihasználva a tenzorokat és a logit feldolgozást, hogy koherens szöveget generáljon a bemeneti prompt alapján.
+Ezeknek a lépéseknek a követésével kevesebb mint 100 sor kódban végezhetünk szöveggenerálást a Phi-3 modellel Rust és Candle segítségével. A kód kezeli a modell betöltését, tokenizálást és az inferenciát, kihasználva a tenzorokat és a logit feldolgozást, hogy koherens szöveget generáljon a bemeneti prompt alapján.
 
-Ez a konzolos alkalmazás Windows, Linux és Mac OS rendszereken futtatható. A Rust hordozhatóságának köszönhetően a kód könnyen adaptálható olyan könyvtárrá, amely mobil alkalmazásokban is futtatható (hiszen konzolos alkalmazásokat ott nem futtathatunk).
+Ez a konzolos alkalmazás futtatható Windows, Linux és Mac OS rendszereken. A Rust hordozhatósága miatt a kód könnyen átalakítható olyan könyvtárrá, amely mobilalkalmazásokban is futtatható (hiszen konzolos alkalmazásokat ott nem futtathatunk).
 
 ## Függelék: teljes kód
 
@@ -304,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Megjegyzés: ahhoz, hogy ezt a kódot aarch64 Linuxon vagy aarch64 Windowson futtasd, adj hozzá egy `.cargo/config` nevű fájlt a következő tartalommal:
+Megjegyzés: a kód futtatásához aarch64 Linuxon vagy aarch64 Windowson adjunk hozzá egy `.cargo/config` nevű fájlt a következő tartalommal:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> További példákért a Phi-3 modell Rust és Candle használatára, beleértve alternatív következtetési módszereket, látogass el a hivatalos [Candle példák](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) tárházába.
+> További példákért a Phi-3 modell Rust és Candle használatára, beleértve alternatív inferencia megközelítéseket, látogassuk meg a hivatalos [Candle példák](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) tárolóját.
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

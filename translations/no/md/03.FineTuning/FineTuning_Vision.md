@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:03:06+00:00",
+  "translation_date": "2025-07-17T08:47:47+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "no"
 }
@@ -44,7 +44,7 @@ Minimal maskinvare testet på 4x RTX8000 (48GB RAM per GPU)
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision støtter nå offisielt multi-bilde input. Her er et eksempel på finjustering for NLVR2
+Phi-3.5-vision støtter nå offisielt multi-bilde input. Her er et eksempel på finjustering av NLVR2
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -52,13 +52,13 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## Brukerveiledning
 
-Avhengig av maskinvaren kan brukere velge forskjellige finjusteringsstrategier. Vi støtter  
+Avhengig av maskinvaren kan brukere velge ulike finjusteringsstrategier. Vi støtter  
 full finjustering (med Deepspeed Zero-2) med valgfritt frosne visuelle parametere, og LoRA (inkludert 4bit QLoRA).  
 Generelt anbefaler vi å bruke full finjustering med flash attention og bf16 når det er mulig.
 
 ### Veiledning for å konvertere ditt eget datasett til ønsket format
 
-Vi bruker et minimalt videoklassifiseringsdatasett (et delsett av UCF-101) som et ende-til-ende eksempel for å vise hvordan du konverterer ditt eget datasett til ønsket format og finjusterer Phi-3.5-vision på det.
+Vi bruker et minimalt videoklassifiseringsdatasett (en delmengde av UCF-101) som et ende-til-ende eksempel for å vise hvordan du konverterer ditt eget datasett til ønsket format og finjusterer Phi-3.5-vision på det.
 
 ```bash
 # convert data
@@ -114,14 +114,14 @@ De konverterte dataene vil se slik ut:
 34 directories, 3 files
 ```
 
-For `jsonl`-annotasjonen skal hver linje være et ordbokslignende objekt som dette:
+For `jsonl`-annotasjonen skal hver linje være et ordbokobjekt som:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Merk at `conversations` er en liste, så fleromgangssamtaler kan støttes hvis slik data er tilgjengelig.
+Merk at `conversations` er en liste, så flertrinns samtaler kan støttes hvis slik data er tilgjengelig.
 
 ## Søke om Azure GPU-kvote
 
@@ -133,7 +133,7 @@ Hvis du ikke har en Azure-konto, opprett en [gratis konto før du begynner](http
 
 ### Be om økning av kvote
 
-Du kan sende inn en forespørsel om kvoteøkning direkte fra Mine kvoter. Følg trinnene nedenfor for å be om en økning for en kvote. For dette eksempelet kan du velge hvilken som helst justerbar kvote i abonnementet ditt.
+Du kan sende inn en forespørsel om kvoteøkning direkte fra Mine kvoter. Følg stegene nedenfor for å be om økning av en kvote. For dette eksempelet kan du velge hvilken som helst justerbar kvote i abonnementet ditt.
 
 Logg inn på [Azure-portalen](https://portal.azure.com).
 
@@ -144,23 +144,23 @@ På Oversikt-siden velger du en leverandør, som Compute eller AML.
 
 **Merk** For alle leverandører unntatt Compute, vil du se en kolonne for Request increase i stedet for Adjustable-kolonnen som er beskrevet nedenfor. Der kan du be om økning for en spesifikk kvote, eller opprette en supportforespørsel for økningen.
 
-På siden Mine kvoter, under Kvotenavn, velg kvoten du ønsker å øke. Sørg for at Adjustable-kolonnen viser Ja for denne kvoten.
+På siden Mine kvoter, under Kvotenavn, velg kvoten du ønsker å øke. Sørg for at kolonnen Adjustable viser Ja for denne kvoten.
 
-Nær toppen av siden, velg Ny kvoteforspørsel, og deretter Velg Angi en ny grense.
+Nær toppen av siden velger du Ny kvoteforspørsel, og deretter Velg Angi en ny grense.
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-I panelet Ny kvoteforspørsel, skriv inn en numerisk verdi for din nye kvotegrense, og velg deretter Send inn.
+I panelet Ny kvoteforspørsel skriver du inn en numerisk verdi for din nye kvotegrense, og velger deretter Send inn.
 
-Forespørselen din vil bli gjennomgått, og du vil bli varslet hvis den kan innfris. Dette skjer vanligvis innen få minutter.
+Forespørselen din vil bli vurdert, og du vil bli varslet om forespørselen kan innfris. Dette skjer vanligvis innen noen få minutter.
 
-Hvis forespørselen ikke blir innfridd, vil du se en lenke for å opprette en supportforespørsel. Når du bruker denne lenken, vil en supportingeniør hjelpe deg med økningsforespørselen.
+Hvis forespørselen ikke innfris, vil du se en lenke for å opprette en supportforespørsel. Når du bruker denne lenken, vil en supportingeniør hjelpe deg med økningsforespørselen.
 
 ## Forslag til Azure Compute GPU-maskin SKU
 
-[ND A100 v4-serie](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
+[ND A100 v4-serien](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
-[ND H100 v5-serie](https://learn.microsoft.com/azure/virtual-machines/nd-h100-v5-series)
+[ND H100 v5-serien](https://learn.microsoft.com/azure/virtual-machines/nd-h100-v5-series)
 
 [Standard_ND40rs_v2](https://learn.microsoft.com/azure/virtual-machines/ndv2-series)
 
@@ -180,10 +180,11 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --bf16
 ```
 
-### Hvis du har Standard_ND40rs_v2 med 8x V100-32GB GPUer
+### Hvis du har Standard_ND40rs_v2 8x V100-32GB GPUer
 
-Det er fortsatt mulig å fullfinjustere Phi-3-V på hatefulle memes-klassifisering. Forvent imidlertid mye lavere gjennomstrømning sammenlignet med A100 eller H100 GPUer på grunn av manglende støtte for flash attention.  
-Nøyaktigheten kan også påvirkes på grunn av manglende bf16-støtte (fp16 blandet presisjonstrening brukes i stedet).
+Det er fortsatt mulig å fullfinjustere Phi-3-V på hatefulle memes-klassifisering. Forvent imidlertid  
+mye lavere gjennomstrømning sammenlignet med A100 eller H100 GPUer på grunn av manglende støtte for flash attention.  
+Nøyaktigheten kan også påvirkes på grunn av manglende bf16-støtte (fp16 mixed-precision trening brukes i stedet).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -195,7 +196,7 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Hvis du ikke har tilgang til datasenter-GPUer
 
-LoRA kan være ditt eneste alternativ. Du kan bruke følgende kommando for å finjustere Phi-3-V på hatefulle memes-klassifisering.
+LoRA kan være ditt eneste valg. Du kan bruke følgende kommando for å finjustere Phi-3-V på hatefulle memes-klassifisering.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -216,7 +217,8 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## Foreslåtte hyperparametere og forventet nøyaktighet  
+## Foreslåtte hyperparametere og forventet nøyaktighet
+
 ### NLVR2
 
 ```bash
@@ -230,7 +232,7 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Treningsmetode | Frosset visjonsmodell | datatype | LoRA-rang | LoRA alfa | batchstørrelse | læringsrate | epoker | Nøyaktighet  
+Treningsmetode | Frosset visjonsmodell | datatype | LoRA-rang | LoRA alpha | batch-størrelse | læringsrate | epoker | Nøyaktighet  
 --- | --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |  
 full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |  
@@ -254,7 +256,7 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Treningsmetode | datatype | LoRA-rang | LoRA alfa | batchstørrelse | læringsrate | epoker | ANLS  
+Treningsmetode | datatype | LoRA-rang | LoRA alpha | batch-størrelse | læringsrate | epoker | ANLS  
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |  
 full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |  
@@ -278,7 +280,7 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Treningsmetode | datatype | LoRA-rang | LoRA alfa | batchstørrelse | læringsrate | epoker | Nøyaktighet  
+Treningsmetode | datatype | LoRA-rang | LoRA alpha | batch-størrelse | læringsrate | epoker | Nøyaktighet  
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |  
 full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |  
@@ -293,12 +295,12 @@ QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 Nye benchmarkresultater med Phi-3.5-vision vil bli oppdatert snart.
 
-Hastighetsbenchmarking er utført på DocVQA-datasettet. Gjennomsnittlig sekvenslengde i dette datasettet  
-er 2443.23 tokens (ved bruk av `num_crops=16` for bildemodellen).
+Hastighetsbenchmarking er utført på DocVQA-datasettet. Gjennomsnittlig sekvenslengde for dette datasettet  
+er 2443,23 tokens (med `num_crops=16` for bildemodellen).
 
 ### 8x A100-80GB (Ampere)
 
-Treningsmetode | \# noder | GPUer | flash attention | Effektiv batchstørrelse | Gjennomstrømning (bilder/s) | Hastighetsøkning | Maks GPU-minne (GB)  
+Treningsmetode | \# noder | GPUer | flash attention | Effektiv batch-størrelse | Gjennomstrømning (img/s) | Hastighetsøkning | Maks GPU-minne (GB)  
 --- | --- | --- | --- | --- | --- | --- | --- |  
 full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42  
 full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36  
@@ -313,9 +315,9 @@ QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
 ### 8x V100-32GB (Volta)
 
-Treningsmetode | \# noder | GPUer | flash attention | Effektiv batchstørrelse | Gjennomstrømning (bilder/s) | Hastighetsøkning | Maks GPU-minne (GB)  
+Treningsmetode | \# noder | GPUer | flash attention | Effektiv batch-størrelse | Gjennomstrømning (img/s) | Hastighetsøkning | Maks GPU-minne (GB)  
 --- | --- | --- | --- | --- | --- | --- | --- |  
-full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32  
+full-finetuning | 1 | 8 |  | 64 | 2.462 |  1x | ~32  
 full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32  
 full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32  
 frosset bildemodell | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27  
@@ -323,8 +325,8 @@ LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
 ## Kjente problemer
 
-- Kan ikke kjøre flash attention med fp16 (bf16 anbefales alltid når det er tilgjengelig, og alle GPUer som støtter flash attention støtter også bf16).  
-- Støtter foreløpig ikke lagring av mellomliggende sjekkpunkter eller gjenopptakelse av trening.
+- Kan ikke kjøre flash attention med fp16 (bf16 anbefales alltid når tilgjengelig, og alle GPUer som støtter flash attention støtter også bf16).  
+- Støtter ikke lagring av mellomlagrede sjekkpunkter og gjenopptakelse av trening ennå.
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

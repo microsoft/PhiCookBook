@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-05-09T22:13:33+00:00",
+  "translation_date": "2025-07-17T09:20:30+00:00",
   "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "sk"
 }
 -->
 ## Vitajte v AI Toolkite pre VS Code
 
-[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) spája rôzne modely z Azure AI Studio Catalog a ďalších katalógov ako Hugging Face. Toolkit zjednodušuje bežné vývojové úlohy pri tvorbe AI aplikácií s generatívnymi AI nástrojmi a modelmi prostredníctvom:
+[AI Toolkit pre VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) spája rôzne modely z Azure AI Studio Catalog a ďalších katalógov ako Hugging Face. Toolkit zjednodušuje bežné vývojové úlohy pri tvorbe AI aplikácií s generatívnymi AI nástrojmi a modelmi prostredníctvom:
 - Začnite objavovaním modelov a ich testovaním v playgrounde.
-- Ladenie modelov a inferencia pomocou lokálnych výpočtových zdrojov.
-- Vzdialené ladenie a inferencia využitím Azure zdrojov.
+- Doladenie modelov a inferencia pomocou lokálnych výpočtových zdrojov.
+- Vzdialené doladenie a inferencia pomocou Azure zdrojov.
 
-[Inštalujte AI Toolkit pre VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[Nainštalujte AI Toolkit pre VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.sk.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.sk.png)
 
 
-**[Private Preview]** Jedným kliknutím nasadíte Azure Container Apps na spustenie ladenia modelov a inferencie v cloude.
+**[Private Preview]** Jedným kliknutím nasadenie Azure Container Apps na spustenie doladenia modelov a inferencie v cloude.
 
-Poďme sa pustiť do vývoja vašej AI aplikácie:
+Poďme sa teraz pustiť do vývoja vašej AI aplikácie:
 
 - [Vitajte v AI Toolkite pre VS Code](../../../../md/03.FineTuning)
 - [Lokálny vývoj](../../../../md/03.FineTuning)
   - [Prípravy](../../../../md/03.FineTuning)
   - [Aktivácia Conda](../../../../md/03.FineTuning)
-  - [Len ladenie základného modelu](../../../../md/03.FineTuning)
-  - [Ladenie modelu a inferencia](../../../../md/03.FineTuning)
-  - [Ladenie modelu](../../../../md/03.FineTuning)
+  - [Len doladenie základného modelu](../../../../md/03.FineTuning)
+  - [Doladenie modelu a inferencia](../../../../md/03.FineTuning)
+  - [Doladenie modelu](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [Príklady a zdroje pre ladenie](../../../../md/03.FineTuning)
+  - [Ukážky a zdroje pre doladenie](../../../../md/03.FineTuning)
 - [**\[Private Preview\]** Vzdialený vývoj](../../../../md/03.FineTuning)
   - [Predpoklady](../../../../md/03.FineTuning)
   - [Nastavenie projektu pre vzdialený vývoj](../../../../md/03.FineTuning)
-  - [Provision Azure Resources](../../../../md/03.FineTuning)
-  - [\[Voliteľné\] Pridanie Huggingface tokenu do tajomstiev Azure Container App](../../../../md/03.FineTuning)
-  - [Spustenie ladenia](../../../../md/03.FineTuning)
-  - [Provision Inference Endpoint](../../../../md/03.FineTuning)
+  - [Provision Azure zdrojov](../../../../md/03.FineTuning)
+  - [\[Voliteľné\] Pridanie Huggingface tokenu do Azure Container App Secret](../../../../md/03.FineTuning)
+  - [Spustenie doladenia](../../../../md/03.FineTuning)
+  - [Provision inference endpointu](../../../../md/03.FineTuning)
   - [Nasadenie inference endpointu](../../../../md/03.FineTuning)
   - [Pokročilé použitie](../../../../md/03.FineTuning)
 
 ## Lokálny vývoj
 ### Prípravy
 
-1. Uistite sa, že ovládač NVIDIA je nainštalovaný na hostiteľskom počítači.
-2. Spustite `huggingface-cli login`, ak používate HF na využitie datasetu.
-3. `Olive` kľúčové nastavenia vysvetľujúce všetko, čo mení využitie pamäte.
+1. Uistite sa, že na hostiteľskom počítači je nainštalovaný NVIDIA ovládač.
+2. Spustite `huggingface-cli login`, ak používate HF na prácu s datasetmi.
+3. Vysvetlenie nastavení kľúčov `Olive` pre všetko, čo ovplyvňuje využitie pamäte.
 
 ### Aktivácia Conda
-Keďže používame WSL prostredie, ktoré je zdieľané, je potrebné manuálne aktivovať conda prostredie. Po tomto kroku môžete spustiť ladenie alebo inferenciu.
+Keďže používame WSL prostredie, ktoré je zdieľané, je potrebné manuálne aktivovať conda prostredie. Po tomto kroku môžete spustiť doladenie alebo inferenciu.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### Len ladenie základného modelu
-Ak chcete len vyskúšať základný model bez ladenia, môžete po aktivácii conda spustiť tento príkaz.
+### Len doladenie základného modelu
+Ak chcete len vyskúšať základný model bez doladenia, po aktivácii conda spustite tento príkaz.
 
 ```bash
 cd inference
@@ -67,17 +67,17 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### Ladenie modelu a inferencia
+### Doladenie modelu a inferencia
 
-Keď je pracovný priestor otvorený v dev kontajneri, otvorte terminál (predvolená cesta je koreň projektu) a spustite nasledujúci príkaz na doladenie LLM na vybranom datasete.
+Keď je pracovný priestor otvorený v dev kontejnery, otvorte terminál (predvolená cesta je koreň projektu) a spustite nižšie uvedený príkaz na doladenie LLM na vybranom datasete.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-Checkpointy a finálny model budú uložené v `models` folder.
+Kontrolné body a finálny model budú uložené v priečinku `models`.
 
-Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`.
+Následne spustite inferenciu s doladeným modelom cez chaty v `console`, `web browser` alebo `prompt flow`.
 
 ```bash
 cd inference
@@ -90,93 +90,92 @@ python console_chat.py
 python gradio_chat.py
 ```
 
-Na použitie `prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
+Ak chcete použiť `prompt flow` vo VS Code, pozrite si tento [Rýchly štart](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
 
-### Model Fine-tuning
+### Doladenie modelu
 
-Next, download the following model depending on the availability of a GPU on your device.
+Ďalej si stiahnite nasledujúci model podľa dostupnosti GPU na vašom zariadení.
 
-To initiate the local fine-tuning session using QLoRA, select a model you want to fine-tune from our catalog.
-| Platform(s) | GPU available | Model name | Size (GB) |
+Na spustenie lokálnej doladenej relácie pomocou QLoRA vyberte model, ktorý chcete doladiť z nášho katalógu.
+| Platforma(y) | Dostupné GPU | Názov modelu | Veľkosť (GB) |
 |---------|---------|--------|--------|
-| Windows | Yes | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
-| Linux | Yes | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
-| Windows<br>Linux | No | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
+| Windows | Áno | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
+| Linux | Áno | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
+| Windows<br>Linux | Nie | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
 
-**_Note_** You do not need an Azure Account to download the models
+**_Poznámka_** Na stiahnutie modelov nepotrebujete Azure účet.
 
-The Phi3-mini (int4) model is approximately 2GB-3GB in size. Depending on your network speed, it could take a few minutes to download.
+Model Phi3-mini (int4) má približne 2GB-3GB. V závislosti od rýchlosti siete môže stiahnutie trvať niekoľko minút.
 
-Start by selecting a project name and location.
-Next, select a model from the model catalog. You will be prompted to download the project template. You can then click "Configure Project" to adjust various settings.
+Začnite výberom názvu projektu a jeho umiestnenia.
+Potom vyberte model z katalógu modelov. Budete vyzvaní na stiahnutie šablóny projektu. Následne kliknite na "Configure Project" pre úpravu rôznych nastavení.
 
-### Microsoft Olive 
+### Microsoft Olive
 
-We use [Olive](https://microsoft.github.io/Olive/why-olive.html) to run QLoRA fine-tuning on a PyTorch model from our catalog. All of the settings are preset with the default values to optimize to run the fine-tuning process locally with optimized use of memory, but it can be adjusted for your scenario.
+Používame [Olive](https://microsoft.github.io/Olive/why-olive.html) na spustenie QLoRA doladenia na PyTorch modeli z nášho katalógu. Všetky nastavenia sú prednastavené na optimalizované hodnoty pre lokálne doladenie s efektívnym využitím pamäte, no môžete ich prispôsobiť podľa svojho scenára.
 
-### Fine Tuning Samples and Resoures
+### Ukážky a zdroje pre doladenie
 
-- [Fine tuning Getting Started Guide](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
-- [Fine tuning with a HuggingFace Dataset](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
-- [Fine tuning with Simple DataSet](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
+- [Sprievodca začiatkom doladenia](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
+- [Doladenie s HuggingFace Datasetom](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
+- [Doladenie s jednoduchým datasetom](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
 
-## **[Private Preview]** Remote Development
+## **[Private Preview]** Vzdialený vývoj
 
-### Prerequisites
+### Predpoklady
 
-1. To run the model fine-tuning in your remote Azure Container App Environment, make sure your subscription has enough GPU capacity. Submit a [support ticket](https://azure.microsoft.com/support/create-ticket/) to request the required capacity for your application. [Get More Info about GPU capacity](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
-2. If you are using private dataset on HuggingFace, make sure you have a [HuggingFace account](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) and [generate an access token](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
-3. Enable Remote Fine-tuning and Inference feature flag in the AI Toolkit for VS Code
-   1. Open the VS Code Settings by selecting *File -> Preferences -> Settings*.
-   2. Navigate to *Extensions* and select *AI Toolkit*.
-   3. Select the *"Enable Remote Fine-tuning And Inference"* option.
-   4. Reload VS Code to take effect.
+1. Ak chcete spustiť doladenie modelu vo vašom vzdialenom Azure Container App prostredí, uistite sa, že váš subscription má dostatočnú kapacitu GPU. Podajte [support ticket](https://azure.microsoft.com/support/create-ticket/) na požiadanie potrebnej kapacity pre vašu aplikáciu. [Viac informácií o kapacite GPU](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
+2. Ak používate súkromný dataset na HuggingFace, uistite sa, že máte [HuggingFace účet](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) a [vygenerovaný prístupový token](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
+3. Aktivujte vo VS Code v AI Toolkite funkciu Remote Fine-tuning and Inference
+   1. Otvorte nastavenia VS Code cez *File -> Preferences -> Settings*.
+   2. Prejdite do *Extensions* a vyberte *AI Toolkit*.
+   3. Zapnite možnosť *"Enable Remote Fine-tuning And Inference"*.
+   4. Reštartujte VS Code, aby sa zmeny prejavili.
 
-- [Remote Fine tuning](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
+- [Vzdialené doladenie](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
 
-### Setting Up a Remote Development Project
-1. Execute the command palette `AI Toolkit: Focus on Resource View`.
-2. Navigate to *Model Fine-tuning* to access the model catalog. Assign a name to your project and select its location on your machine. Then, hit the *"Configure Project"* button.
-3. Project Configuration
-    1. Avoid enabling the *"Fine-tune locally"* option.
-    2. The Olive configuration settings will appear with pre-set default values. Please adjust and fill in these configurations as required.
-    3. Move on to *Generate Project*. This stage leverages WSL and involves setting up a new Conda environment, preparing for future updates that include Dev Containers.
-4. Click on *"Relaunch Window In Workspace"* to open your remote development project.
+### Nastavenie projektu pre vzdialený vývoj
+1. Spustite príkazovú paletu `AI Toolkit: Focus on Resource View`.
+2. Prejdite do *Model Fine-tuning* pre prístup ku katalógu modelov. Priraďte názov projektu a vyberte jeho umiestnenie na vašom zariadení. Potom kliknite na tlačidlo *"Configure Project"*.
+3. Konfigurácia projektu
+    1. Neaktivujte možnosť *"Fine-tune locally"*.
+    2. Zobrazia sa nastavenia Olive s prednastavenými hodnotami. Upravte a vyplňte tieto nastavenia podľa potreby.
+    3. Pokračujte kliknutím na *Generate Project*. Tento krok využíva WSL a zahŕňa vytvorenie nového Conda prostredia, pripravujúc sa na budúce aktualizácie vrátane Dev Containers.
+4. Kliknite na *"Relaunch Window In Workspace"* pre otvorenie vášho vzdialeného vývojového projektu.
 
-> **Note:** The project currently works either locally or remotely within the AI Toolkit for VS Code. If you choose *"Fine-tune locally"* during project creation, it will operate exclusively in WSL without remote development capabilities. On the other hand, if you forego enabling *"Fine-tune locally"*, the project will be restricted to the remote Azure Container App environment.
+> **Poznámka:** Projekt momentálne funguje buď lokálne, alebo vzdialene v AI Toolkite pre VS Code. Ak pri vytváraní projektu zvolíte *"Fine-tune locally"*, bude fungovať výhradne v WSL bez možnosti vzdialeného vývoja. Ak túto možnosť neaktivujete, projekt bude obmedzený na vzdialené Azure Container App prostredie.
 
-### Provision Azure Resources
-To get started, you need to provision the Azure Resource for remote fine-tuning. Do this by running the `AI Toolkit: Provision Azure Container Apps job for fine-tuning` from the command palette.
+### Provision Azure zdrojov
+Na začiatok je potrebné provision Azure zdroj pre vzdialené doladenie. Urobíte to spustením príkazu `AI Toolkit: Provision Azure Container Apps job for fine-tuning` z príkazovej palety.
 
-Monitor the progress of the provision through the link displayed in the output channel.
+Sledujte priebeh provisionu cez odkaz zobrazený v output kanáli.
 
-### [Optional] Add Huggingface Token to the Azure Container App Secret
-If you're using private HuggingFace dataset, set your HuggingFace token as an environment variable to avoid the need for manual login on the Hugging Face Hub.
-You can do this using the `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning command`. With this command, you can set the secret name as [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) and use your Hugging Face token as the secret value.
+### [Voliteľné] Pridanie Huggingface tokenu do Azure Container App Secret
+Ak používate súkromný dataset HuggingFace, nastavte svoj HuggingFace token ako environmentálnu premennú, aby ste sa vyhli manuálnemu prihlasovaniu na Hugging Face Hub.
+Môžete to urobiť pomocou príkazu `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning`. Pri tomto príkaze nastavte názov tajomstva na [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) a použite svoj Hugging Face token ako hodnotu tajomstva.
 
-### Run Fine-tuning
-To start the remote fine-tuning job, execute the `AI Toolkit: Run fine-tuning` command.
+### Spustenie doladenia
+Na spustenie vzdialenej doladenej úlohy vykonajte príkaz `AI Toolkit: Run fine-tuning`.
 
-To view the system and console logs, you can visit the Azure portal using the link in the output panel (more steps at [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Or, you can view the console logs directly in the VSCode output panel by running the command `AI Toolkit: Show the running fine-tuning job streaming logs`. 
-> **Note:** The job might be queued due to insufficient resources. If the log is not displayed, execute the `AI Toolkit: Show the running fine-tuning job streaming logs` command, wait for a while and then execute the command again to re-connect to the streaming log.
+Pre zobrazenie systémových a konzolových logov môžete navštíviť Azure portál cez odkaz v output paneli (viac krokov v [Zobrazenie a dotazovanie logov na Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Alebo môžete zobraziť konzolové logy priamo vo VSCode output paneli spustením príkazu `AI Toolkit: Show the running fine-tuning job streaming logs`.
+> **Poznámka:** Úloha môže byť v čakacej dobe kvôli nedostatku zdrojov. Ak sa log nezobrazuje, spustite príkaz `AI Toolkit: Show the running fine-tuning job streaming logs`, chvíľu počkajte a potom príkaz zopakujte pre opätovné pripojenie k streamu logov.
 
-During this process, QLoRA will be used for fine-tuning, and will create LoRA adapters for the model to use during inference.
-The results of the fine-tuning will be stored in the Azure Files.
+Počas tohto procesu sa na doladenie použije QLoRA, ktorá vytvorí LoRA adaptéry pre model na použitie počas inferencie.
+Výsledky doladenia budú uložené v Azure Files.
 
-### Provision Inference Endpoint
-After the adapters are trained in the remote environment, use a simple Gradio application to interact with the model.
-Similar to the fine-tuning process, you need to set up the Azure Resources for remote inference by executing the `AI Toolkit: Provision Azure Container Apps for inference` from the command palette.
+### Provision inference endpointu
+Po natrénovaní adaptérov vo vzdialenom prostredí použite jednoduchú Gradio aplikáciu na interakciu s modelom.
+Podobne ako pri doladení, je potrebné nastaviť Azure zdroje pre vzdialenú inferenciu spustením príkazu `AI Toolkit: Provision Azure Container Apps for inference` z príkazovej palety.
 
-By default, the subscription and the resource group for inference should match those used for fine-tuning. The inference will use the same Azure Container App Environment and access the model and model adapter stored in Azure Files, which were generated during the fine-tuning step. 
+Predvolene by subscription a resource group pre inferenciu mali byť rovnaké ako tie použité pri doladení. Inferencia bude využívať rovnaké Azure Container App prostredie a pristupovať k modelu a adaptérovi uloženým v Azure Files, ktoré boli vytvorené počas doladenia.
 
+### Nasadenie inference endpointu
+Ak chcete upraviť inferenčný kód alebo znovu načítať inferenčný model, spustite príkaz `AI Toolkit: Deploy for inference`. Týmto sa synchronizuje váš najnovší kód s Azure Container App a reštartuje sa replika.
 
-### Deploy the Inference Endpoint
-If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
-
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` a v paneli výstupu. Teraz ste pripravení model vyhodnotiť pomocou tohto endpointu.
+Po úspešnom nasadení môžete pristupovať k inference API kliknutím na tlačidlo "*Go to Inference Endpoint*" v notifikácii VSCode. Alebo webový API endpoint nájdete pod `ACA_APP_ENDPOINT` v súbore `./infra/inference.config.json` a v output paneli. Teraz ste pripravení na vyhodnotenie modelu pomocou tohto endpointu.
 
 ### Pokročilé použitie
-Pre viac informácií o vzdialenom vývoji s AI Toolkit sa pozrite na dokumentáciu [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) a [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference).
+Pre viac informácií o vzdialenom vývoji s AI Toolkit pozrite dokumentáciu [Doladenie modelov na diaľku](https://aka.ms/ai-toolkit/remote-provision) a [Inferencia s doladeným modelom](https://aka.ms/ai-toolkit/remote-inference).
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

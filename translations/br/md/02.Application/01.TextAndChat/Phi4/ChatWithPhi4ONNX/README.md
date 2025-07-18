@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:01:36+00:00",
+  "translation_date": "2025-07-17T03:17:02+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "br"
 }
 -->
 # **Converse com Phi-4-mini ONNX**
 
-***ONNX*** é um formato aberto criado para representar modelos de aprendizado de máquina. ONNX define um conjunto comum de operadores - os blocos de construção dos modelos de aprendizado de máquina e aprendizado profundo - e um formato de arquivo comum para permitir que desenvolvedores de IA utilizem modelos com uma variedade de frameworks, ferramentas, runtimes e compiladores.
+***ONNX*** é um formato aberto criado para representar modelos de aprendizado de máquina. ONNX define um conjunto comum de operadores - os blocos de construção dos modelos de aprendizado de máquina e aprendizado profundo - e um formato de arquivo padrão para permitir que desenvolvedores de IA utilizem modelos com uma variedade de frameworks, ferramentas, runtimes e compiladores.
 
-Esperamos implantar modelos de IA generativa em dispositivos de borda e usá-los em ambientes com poder computacional limitado ou offline. Agora podemos alcançar esse objetivo convertendo o modelo de forma quantizada. Podemos converter o modelo quantizado para o formato GGUF ou ONNX.
+Nosso objetivo é implantar modelos de IA generativa em dispositivos de borda e usá-los em ambientes com poder computacional limitado ou offline. Agora podemos alcançar essa meta convertendo o modelo de forma quantizada. Podemos converter o modelo quantizado para os formatos GGUF ou ONNX.
 
-Microsoft Olive pode ajudar você a converter SLM para o formato ONNX quantizado. O método para realizar a conversão do modelo é muito simples
+Microsoft Olive pode ajudar você a converter SLM para o formato ONNX quantizado. O método para realizar a conversão do modelo é muito simples.
 
 **Instale o Microsoft Olive SDK**
 
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Converta para Suporte ONNX em CPU**
+**Suporte para conversão ONNX em CPU**
 
 ```bash
 
@@ -34,7 +34,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Note*** este exemplo usa CPU
+***Nota*** este exemplo utiliza CPU
 
 
 ### **Inferência do Modelo Phi-4-mini ONNX com ONNX Runtime GenAI**
@@ -47,7 +47,7 @@ pip install --pre onnxruntime-genai
 
 ```
 
-- **Código Python**
+- **Código em Python**
 
 *Esta é a versão 0.5.2 do ONNX Runtime GenAI*
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

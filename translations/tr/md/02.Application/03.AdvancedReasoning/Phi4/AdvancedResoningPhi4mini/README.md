@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:52:58+00:00",
+  "translation_date": "2025-07-17T04:49:54+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "tr"
 }
 -->
-## **Phi-4-mini-reasoning(3.8b) veya Phi-4-reasoning(14b) ile Akıl Yürütme Uzmanı Olarak Kullanımı**
+## **Phi-4-mini-reasoning(3.8b) veya Phi-4-reasoning(14b) ile Akıl Yürütme Uzmanı Olarak Kullanma**
 
-Phi-4-mini-reasoning veya Phi-4-reasoning aracılığıyla güçlü akıl yürütme yeteneğine bir göz atalım.
+Phi-4-mini-reasoning veya Phi-4-mini-reasoning aracılığıyla güçlü akıl yürütme yeteneğine bir göz atalım.
 
 
 ```python
@@ -50,4 +50,4 @@ print(outputs[0])
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba sarf etsek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

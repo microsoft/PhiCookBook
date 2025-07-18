@@ -2,70 +2,70 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:08:11+00:00",
+  "translation_date": "2025-07-17T03:28:41+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "ms"
 }
 -->
-# **إنشاء وكيل Visual Studio Code Chat Copilot خاص بك باستخدام Phi-3.5 من GitHub Models**
+# **Cipta Ejen Visual Studio Code Chat Copilot Anda Sendiri dengan Phi-3.5 oleh GitHub Models**
 
-هل تستخدم Visual Studio Code Copilot؟ خصوصًا في الدردشة، يمكنك استخدام وكلاء مختلفين لتحسين القدرة على إنشاء وكتابة وصيانة المشاريع في Visual Studio Code. يوفر Visual Studio Code API يسمح للشركات والأفراد بإنشاء وكلاء مختلفين بناءً على أعمالهم لتوسيع قدراتهم في مجالات متخصصة مختلفة. في هذه المقالة، سنركز على **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** من GitHub Models لإنشاء وكيل Visual Studio Code خاص بك.
+Adakah anda menggunakan Visual Studio Code Copilot? Terutamanya dalam Chat, anda boleh menggunakan ejen yang berbeza untuk meningkatkan keupayaan mencipta, menulis, dan menyelenggara projek dalam Visual Studio Code. Visual Studio Code menyediakan API yang membolehkan syarikat dan individu mencipta ejen yang berbeza berdasarkan perniagaan mereka untuk mengembangkan keupayaan dalam pelbagai bidang proprietari. Dalam artikel ini, kita akan fokus pada **Phi-3.5-mini-instruct (128k)** dan **Phi-3.5-vision-instruct (128k)** daripada GitHub Models untuk mencipta Ejen Visual Studio Code anda sendiri.
 
-## **حول Phi-3.5 في GitHub Models**
+## **Mengenai Phi-3.5 pada GitHub Models**
 
-نعلم أن Phi-3/3.5-mini-instruct في عائلة Phi-3/3.5 يمتلك قدرات قوية في فهم وتوليد الأكواد، وله مزايا مقارنة بـ Gemma-2-9b و Mistral-Nemo-12B-instruct-2407.
+Kita tahu bahawa Phi-3/3.5-mini-instruct dalam Keluarga Phi-3/3.5 mempunyai keupayaan pemahaman dan penjanaan kod yang kukuh, dan mempunyai kelebihan berbanding Gemma-2-9b dan Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.ms.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.ms.png)
 
-توفر أحدث نماذج GitHub Models إمكانية الوصول إلى نماذج Phi-3.5-mini-instruct (128k) و Phi-3.5-vision-instruct (128k). يمكن للمطورين الوصول إليها من خلال OpenAI SDK، و Azure AI Inference SDK، و REST API.
+GitHub Models terkini sudah menyediakan akses kepada model Phi-3.5-mini-instruct (128k) dan Phi-3.5-vision-instruct (128k). Pembangun boleh mengaksesnya melalui OpenAI SDK, Azure AI Inference SDK, dan REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.ms.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.ms.png)
 
-***ملاحظة:*** يُنصح باستخدام Azure AI Inference SDK هنا، لأنه يمكنه التبديل بشكل أفضل مع Azure Model Catalog في بيئة الإنتاج
+***Nota:*** Disarankan menggunakan Azure AI Inference SDK di sini, kerana ia boleh bertukar dengan lebih baik menggunakan Azure Model Catalog dalam persekitaran pengeluaran.
 
-فيما يلي نتائج **Phi-3.5-mini-instruct (128k)** و **Phi-3.5-vision-instruct (128k)** في سيناريو توليد الأكواد بعد الربط مع GitHub Models، وكذلك للتحضير للأمثلة التالية
+Berikut adalah hasil **Phi-3.5-mini-instruct (128k)** dan **Phi-3.5-vision-instruct (128k)** dalam senario penjanaan kod selepas disambungkan dengan GitHub Models, serta persediaan untuk contoh-contoh berikut.
 
-**عرض تجريبي: GitHub Models Phi-3.5-mini-instruct (128k) توليد كود من خلال Prompt** ([انقر هنا](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-mini-instruct (128k) menjana kod dari Prompt** ([klik pautan ini](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**عرض تجريبي: GitHub Models Phi-3.5-vision-instruct (128k) توليد كود من صورة** ([انقر هنا](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-vision-instruct (128k) menjana kod dari Imej** ([klik pautan ini](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 
-## **حول GitHub Copilot Chat Agent**
+## **Mengenai GitHub Copilot Chat Agent**
 
-يمكن لوكيل GitHub Copilot Chat إكمال مهام مختلفة في سيناريوهات مشاريع متعددة بناءً على الكود. يحتوي النظام على أربعة وكلاء: workspace، github، terminal، vscode
+GitHub Copilot Chat Agent boleh melengkapkan pelbagai tugasan dalam pelbagai senario projek berdasarkan kod. Sistem ini mempunyai empat ejen: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.ms.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.ms.png)
 
-بإضافة اسم الوكيل مسبوقًا بـ ‘@’، يمكنك إتمام العمل المقابل بسرعة. بالنسبة للشركات، إذا أضفت محتوى متعلقًا بأعمالك مثل المتطلبات، التكويد، مواصفات الاختبار، والإصدار، يمكنك الحصول على وظائف خاصة أكثر قوة للشركات بناءً على GitHub Copilot.
+Dengan menambah nama ejen dengan ‘@’, anda boleh menyelesaikan kerja yang sepadan dengan cepat. Untuk perusahaan, jika anda menambah kandungan berkaitan perniagaan anda seperti keperluan, pengekodan, spesifikasi ujian, dan pelepasan, anda boleh mempunyai fungsi peribadi perusahaan yang lebih berkuasa berdasarkan GitHub Copilot.
 
-تم إصدار API الخاص بـ Visual Studio Code Chat Agent رسميًا الآن، مما يسمح للشركات أو مطوري الشركات بتطوير وكلاء بناءً على أنظمة أعمال البرمجيات المختلفة. بناءً على طريقة تطوير Visual Studio Code Extension، يمكنك بسهولة الوصول إلى واجهة API الخاصة بـ Visual Studio Code Chat Agent. يمكننا التطوير بناءً على هذه العملية
+Visual Studio Code Chat Agent kini secara rasmi telah mengeluarkan API-nya, membolehkan perusahaan atau pembangun perusahaan membangunkan ejen berdasarkan ekosistem perniagaan perisian yang berbeza. Berdasarkan kaedah pembangunan Visual Studio Code Extension Development, anda boleh dengan mudah mengakses antara muka API Visual Studio Code Chat Agent. Kita boleh membangunkan berdasarkan proses ini.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.ms.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.ms.png)
 
-يدعم سيناريو التطوير الوصول إلى API نماذج الطرف الثالث (مثل GitHub Models، Azure Model Catalog، والخدمات المبنية ذاتيًا على نماذج مفتوحة المصدر) ويمكنه أيضًا استخدام نماذج gpt-35-turbo، gpt-4، و gpt-4o المقدمة من GitHub Copilot.
+Senario pembangunan boleh menyokong akses kepada API model pihak ketiga (seperti GitHub Models, Azure Model Catalog, dan perkhidmatan binaan sendiri berdasarkan model sumber terbuka) dan juga boleh menggunakan model gpt-35-turbo, gpt-4, dan gpt-4o yang disediakan oleh GitHub Copilot.
 
-## **إضافة وكيل @phicoding مبني على Phi-3.5**
+## **Tambah Ejen @phicoding berdasarkan Phi-3.5**
 
-نحاول دمج قدرات البرمجة لـ Phi-3.5 لإكمال كتابة الكود، وتوليد كود من الصور، ومهام أخرى. إكمال وكيل مبني حول Phi-3.5 - @PHI، وفيما يلي بعض الوظائف
+Kami cuba mengintegrasikan keupayaan pengaturcaraan Phi-3.5 untuk melengkapkan penulisan kod, penjanaan kod imej dan tugasan lain. Lengkapkan Ejen yang dibina berasaskan Phi-3.5 - @PHI, berikut adalah beberapa fungsi
 
-1. توليد مقدمة ذاتية بناءً على GPT-4o المقدم من GitHub Copilot من خلال الأمر **@phicoding /help**
+1. Menjana pengenalan diri berdasarkan GPT-4o yang disediakan oleh GitHub Copilot melalui arahan **@phicoding /help**
 
-2. توليد كود بلغات برمجة مختلفة بناءً على **Phi-3.5-mini-instruct (128k)** من خلال الأمر **@phicoding /gen**
+2. Menjana kod untuk pelbagai bahasa pengaturcaraan berdasarkan **Phi-3.5-mini-instruct (128k)** melalui arahan **@phicoding /gen**
 
-3. توليد كود بناءً على **Phi-3.5-vision-instruct (128k)** وإكمال الصور من خلال الأمر **@phicoding /image**
+3. Menjana kod berdasarkan **Phi-3.5-vision-instruct (128k)** dan pelengkap imej melalui arahan **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.ms.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.ms.png)
 
-## **الخطوات ذات الصلة**
+## **Langkah Berkaitan**
 
-1. تثبيت دعم تطوير امتدادات Visual Studio Code باستخدام npm
+1. Pasang sokongan pembangunan Visual Studio Code Extension menggunakan npm
 
 ```bash
 
 npm install --global yo generator-code 
 
 ```
-2. إنشاء إضافة Visual Studio Code Extension (باستخدام وضع تطوير Typescript، باسم phiext)
+2. Cipta plugin Visual Studio Code Extension (menggunakan mod pembangunan Typescript, dinamakan phiext)
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. افتح المشروع الذي تم إنشاؤه وعدل package.json. هنا التعليمات والتكوينات ذات الصلة، بالإضافة إلى تكوين GitHub Models. لاحظ أنه يجب إضافة رمز GitHub Models الخاص بك هنا.
+3. Buka projek yang dicipta dan ubah package.json. Berikut adalah arahan dan konfigurasi berkaitan, serta konfigurasi GitHub Models. Perlu diingat anda perlu menambah token GitHub Models anda di sini.
 
 ```json
 
@@ -191,7 +191,7 @@ yo code
 
 ```
 
-4. تعديل src/extension.ts
+4. Ubah src/extension.ts
 
 ```typescript
 
@@ -360,33 +360,33 @@ export function deactivate() {}
 
 ```
 
-6. التشغيل
+6. Menjalankan
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.ms.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.ms.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.ms.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.ms.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.ms.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.ms.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.ms.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.ms.png)
 
-يمكنك تنزيل كود العينة: [انقر هنا](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Anda boleh muat turun kod contoh :[klik](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
-## **المصادر**
+## **Sumber**
 
-1. التسجيل في GitHub Models [https://gh.io/models](https://gh.io/models)
+1. Daftar GitHub Models [https://gh.io/models](https://gh.io/models)
 
-2. تعلم تطوير امتدادات Visual Studio Code [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. Belajar Pembangunan Visual Studio Code Extension [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. التعرف على Visual Studio Code Coilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. Ketahui tentang Visual Studio Code Coilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

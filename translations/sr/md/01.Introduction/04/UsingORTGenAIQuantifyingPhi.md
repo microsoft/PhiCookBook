@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:50:34+00:00",
+  "translation_date": "2025-07-16T22:26:30+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "sr"
 }
 -->
-## **Kako koristiti Model Builder za kvantizaciju Phi-3.5**
+## **Како користити Model Builder за квантовање Phi-3.5**
 
-Model Builder sada podržava kvantizaciju ONNX modela za Phi-3.5 Instruct i Phi-3.5-Vision
+Model Builder сада подржава квантовање ONNX модела за Phi-3.5 Instruct и Phi-3.5-Vision
 
 ### **Phi-3.5-Instruct**
 
-**Konverzija kvantizovanog INT4 ubrzana na CPU**
+**CPU убрзана конверзија квантованог INT4**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**Konverzija kvantizovanog INT4 ubrzana na CUDA**
+**CUDA убрзана конверзија квантованог INT4**
 
 ```bash
 
@@ -39,7 +39,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 **Phi-3.5-vision-instruct-onnx-cpu-fp32**
 
-1. Podesite okruženje u terminalu
+1. Подесите окружење у терминалу
 
 ```bash
 
@@ -49,10 +49,10 @@ cd models
 
 ```
 
-2. Preuzmite microsoft/Phi-3.5-vision-instruct u folder models  
+2. Преузмите microsoft/Phi-3.5-vision-instruct у фасциклу models  
 [https://huggingface.co/microsoft/Phi-3.5-vision-instruct](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
 
-3. Molimo preuzmite ove fajlove u vaš Phi-3.5-vision-instruct folder
+3. Молимо преузмите ове фајлове у вашу Phi-3.5-vision-instruct фасциклу
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json)
 
@@ -60,12 +60,12 @@ cd models
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py)
 
-4. Preuzmite ovaj fajl u folder models  
+4. Преузмите овај фајл у фасциклу models  
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
-5. Otvorite terminal
+5. Идите у терминал
 
-    Konvertujte ONNX podršku sa FP32
+    Конвертујте ONNX подршку са FP32
 
 ```bash
 
@@ -73,21 +73,21 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ```
 
-### **Napomena:**
+### **Напомена:**
 
-1. Model Builder trenutno podržava konverziju Phi-3.5-Instruct i Phi-3.5-Vision, ali ne i Phi-3.5-MoE
+1. Model Builder тренутно подржава конверзију Phi-3.5-Instruct и Phi-3.5-Vision, али не и Phi-3.5-MoE
 
-2. Da biste koristili kvantizovani ONNX model, možete ga koristiti preko Generative AI extensions for onnxruntime SDK
+2. Да бисте користили квантовани ONNX модел, можете га користити преко Generative AI extensions for onnxruntime SDK
 
-3. Potrebno je da vodimo računa o odgovornijoj AI, pa se nakon kvantizacije modela preporučuje detaljnije testiranje rezultata
+3. Потребно је размотрити одговорнији приступ AI-ју, па се након конверзије модела препоручује спровођење детаљнијег тестирања резултата
 
-4. Kvantizacijom CPU INT4 modela možemo ga implementirati na Edge uređaje, što otvara bolje scenarije primene, tako da smo završili Phi-3.5-Instruct u INT4 formatu
+4. Квантовањем CPU INT4 модела можемо га распоредити на Edge уређаје, што пружа боље сценарије примене, па смо завршили Phi-3.5-Instruct око INT4
 
-## **Resursi**
+## **Ресурси**
 
-1. Saznajte više o Generative AI extensions for onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. Сазнајте више о Generative AI extensions for onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. GitHub repozitorijum Generative AI extensions for onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
+2. Generative AI extensions for onnxruntime GitHub репозиторијум [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Не сносимо одговорност за било какве неспоразуме или погрешна тумачења која произилазе из коришћења овог превода.
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

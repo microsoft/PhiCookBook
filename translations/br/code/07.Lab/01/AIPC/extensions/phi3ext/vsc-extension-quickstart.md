@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
-  "translation_date": "2025-05-09T04:55:27+00:00",
+  "translation_date": "2025-07-16T16:42:44+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
   "language_code": "br"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## O que tem na pasta
 
-* Esta pasta contém todos os arquivos necessários para sua extensão.
+* Esta pasta contém todos os arquivos necessários para a sua extensão.
 * `package.json` - este é o arquivo de manifesto onde você declara sua extensão e comando.
   * O plugin de exemplo registra um comando e define seu título e nome do comando. Com essas informações, o VS Code pode mostrar o comando na paleta de comandos. Ainda não é necessário carregar o plugin.
 * `src/extension.ts` - este é o arquivo principal onde você vai implementar seu comando.
@@ -22,19 +22,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 * instale as extensões recomendadas (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner e dbaeumer.vscode-eslint)
 
-
 ## Comece a usar imediatamente
 
 * Pressione `F5` para abrir uma nova janela com sua extensão carregada.
 * Execute seu comando pela paleta de comandos pressionando (`Ctrl+Shift+P` ou `Cmd+Shift+P` no Mac) e digitando `Hello World`.
 * Defina pontos de interrupção no seu código dentro de `src/extension.ts` para depurar sua extensão.
-* Veja a saída da sua extensão no console de depuração.
+* Encontre a saída da sua extensão no console de depuração.
 
 ## Faça alterações
 
-* Você pode relançar a extensão pela barra de ferramentas de depuração após modificar o código em `src/extension.ts`.
-* Também pode recarregar (`Ctrl+R` ou `Cmd+R` no Mac) a janela do VS Code com sua extensão para aplicar as mudanças.
-
+* Você pode relançar a extensão pela barra de ferramentas de depuração após alterar o código em `src/extension.ts`.
+* Também é possível recarregar (`Ctrl+R` ou `Cmd+R` no Mac) a janela do VS Code com sua extensão para carregar suas alterações.
 
 ## Explore a API
 
@@ -43,12 +41,12 @@ CO_OP_TRANSLATOR_METADATA:
 ## Execute testes
 
 * Instale o [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Execute a tarefa "watch" via o comando **Tasks: Run Task**. Certifique-se de que está rodando, ou os testes podem não ser detectados.
+* Execute a tarefa "watch" via o comando **Tasks: Run Task**. Certifique-se de que ela esteja rodando, ou os testes podem não ser detectados.
 * Abra a visualização de Testes na barra de atividades e clique no botão "Run Test", ou use o atalho `Ctrl/Cmd + ; A`
 * Veja o resultado dos testes na visualização Test Results.
 * Faça alterações em `src/test/extension.test.ts` ou crie novos arquivos de teste dentro da pasta `test`.
-  * O test runner fornecido só considerará arquivos que correspondam ao padrão de nome `**.test.ts`.
-  * Você pode criar pastas dentro da `test` para organizar seus testes da forma que desejar.
+  * O test runner fornecido só considera arquivos que correspondam ao padrão de nome `**.test.ts`.
+  * Você pode criar pastas dentro da pasta `test` para organizar seus testes da forma que preferir.
 
 ## Vá além
 
@@ -57,4 +55,4 @@ CO_OP_TRANSLATOR_METADATA:
 * Automatize builds configurando [Integração Contínua](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo).
 
 **Aviso Legal**:  
-Este documento foi traduzido usando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

@@ -2,58 +2,54 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-05-07T14:43:13+00:00",
+  "translation_date": "2025-07-16T22:29:11+00:00",
   "source_file": "md/01.Introduction/05/AIFoundry.md",
   "language_code": "mo"
 }
 -->
-# **استخدام Azure AI Foundry للتقييم**
+# **使用 Azure AI Foundry 進行評估**
 
 ![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.mo.png)
 
-كيفية تقييم تطبيق الذكاء الاصطناعي التوليدي الخاص بك باستخدام [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). سواء كنت تقوم بتقييم محادثات ذات دور واحد أو متعددة الأدوار، يوفر Azure AI Foundry أدوات لتقييم أداء النموذج والسلامة.
+如何使用 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) 評估您的生成式 AI 應用程式。無論您是在評估單輪還是多輪對話，Azure AI Foundry 都提供了評估模型效能與安全性的工具。
 
 ![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.mo.png)
 
-## كيفية تقييم تطبيقات الذكاء الاصطناعي التوليدي باستخدام Azure AI Foundry
-لمزيد من التعليمات التفصيلية، راجع [توثيق Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## 如何使用 Azure AI Foundry 評估生成式 AI 應用程式
+更多詳細說明請參考 [Azure AI Foundry 文件](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
-فيما يلي الخطوات للبدء:
+以下是開始的步驟：
 
-## تقييم نماذج الذكاء الاصطناعي التوليدي في Azure AI Foundry
+## 在 Azure AI Foundry 中評估生成式 AI 模型
 
-**المتطلبات الأساسية**
+**先決條件**
 
-- مجموعة بيانات اختبار بصيغة CSV أو JSON.
-- نموذج ذكاء اصطناعي توليدي منشور (مثل Phi-3، GPT 3.5، GPT 4، أو نماذج Davinci).
-- بيئة تشغيل مع جهاز حوسبة لتشغيل التقييم.
+- 一份 CSV 或 JSON 格式的測試資料集。
+- 已部署的生成式 AI 模型（例如 Phi-3、GPT 3.5、GPT 4 或 Davinci 模型）。
+- 一個具備運算實例的執行環境，用於執行評估。
 
-## مقاييس التقييم المدمجة
+## 內建評估指標
 
-يتيح Azure AI Foundry تقييم المحادثات ذات الدور الواحد والمعقدة متعددة الأدوار.
-بالنسبة لسيناريوهات Retrieval Augmented Generation (RAG)، حيث يكون النموذج مستندًا إلى بيانات محددة، يمكنك تقييم الأداء باستخدام مقاييس التقييم المدمجة.
-بالإضافة إلى ذلك، يمكنك تقييم سيناريوهات الإجابة على الأسئلة ذات الدور الواحد العامة (غير RAG).
+Azure AI Foundry 支援評估單輪及複雜的多輪對話。
+針對 Retrieval Augmented Generation (RAG) 場景，模型基於特定資料，您可以使用內建評估指標來評估效能。
+此外，也能評估一般的單輪問答場景（非 RAG）。
 
-## إنشاء جلسة تقييم
+## 建立評估執行
 
-من واجهة Azure AI Foundry، انتقل إلى صفحة Evaluate أو صفحة Prompt Flow.
-اتبع معالج إنشاء التقييم لإعداد جلسة تقييم. يمكنك إدخال اسم اختياري للتقييم.
-اختر السيناريو الذي يتوافق مع أهداف تطبيقك.
-حدد مقياسًا واحدًا أو أكثر لتقييم مخرجات النموذج.
+在 Azure AI Foundry 使用者介面中，前往 Evaluate 頁面或 Prompt Flow 頁面。
+依照評估建立精靈設定評估執行，並可選擇為評估命名。
+選擇符合您應用目標的場景。
+挑選一個或多個評估指標來評估模型輸出。
 
-## سير تقييم مخصص (اختياري)
+## 自訂評估流程（選用）
 
-للمزيد من المرونة، يمكنك إنشاء سير تقييم مخصص. قم بتخصيص عملية التقييم وفقًا لمتطلباتك الخاصة.
+若需更高彈性，您可以建立自訂評估流程，根據您的需求調整評估過程。
 
-## عرض النتائج
+## 查看結果
 
-بعد تشغيل التقييم، قم بتسجيل وعرض وتحليل مقاييس التقييم التفصيلية في Azure AI Foundry. احصل على رؤى حول قدرات وقيود تطبيقك.
+執行評估後，您可以在 Azure AI Foundry 中記錄、查看並分析詳細的評估指標，深入了解應用程式的能力與限制。
 
-**Note** Azure AI Foundry حاليًا في المعاينة العامة، لذا استخدمه لأغراض التجربة والتطوير. للعمليات الإنتاجية، فكر في خيارات أخرى. استكشف التوثيق الرسمي لـ [AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) لمزيد من التفاصيل والتعليمات خطوة بخطوة.
+**Note** Azure AI Foundry 目前處於公開預覽階段，建議用於實驗和開發用途。若用於正式生產環境，請考慮其他方案。更多細節及逐步說明，請參考官方 [AI Foundry 文件](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo)。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what language or code "mo" refers to? There are multiple possibilities (e.g., Moldovan, a constructed language, or something else). Once confirmed, I can provide the accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

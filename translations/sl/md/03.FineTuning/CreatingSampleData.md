@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:27:35+00:00",
+  "translation_date": "2025-07-17T05:52:56+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "sl"
 }
 -->
-# Generate Image Data Set by downloading DataSet from Hugging Face and associated images
+# Ustvarjanje nabora slikovnih podatkov z nalaganjem DataSet-a iz Hugging Face in pripadajočih slik
 
 
-### Overview
+### Pregled
 
-Ta skripta pripravi podatkovni niz za strojno učenje tako, da prenese potrebne slike, odstrani vrstice, kjer prenos slike ni uspel, in shrani podatkovni niz kot CSV datoteko.
+Ta skripta pripravi nabor podatkov za strojno učenje tako, da prenese potrebne slike, odstrani vrstice, kjer prenos slike ni uspel, in shrani nabor podatkov kot CSV datoteko.
 
-### Prerequisites
+### Zahteve
 
-Pred zagonom te skripte poskrbite, da imate nameščene naslednje knjižnice: `Pandas`, `Datasets`, `requests`, `PIL` in `io`. Prav tako morate v vrstici 2 zamenjati `'Insert_Your_Dataset'` z imenom vašega podatkovnega niza iz Hugging Face.
+Pred zagonom te skripte poskrbite, da imate nameščene naslednje knjižnice: `Pandas`, `Datasets`, `requests`, `PIL` in `io`. Prav tako boste morali v vrstici 2 zamenjati `'Insert_Your_Dataset'` z imenom vašega nabora podatkov iz Hugging Face.
 
-Required Libraries:
+Zahtevane knjižnice:
 
 ```python
 
@@ -30,47 +30,48 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### Functionality
+### Funkcionalnost
 
 Skripta izvede naslednje korake:
 
-1. Prenese podatkovni niz iz Hugging Face z uporabo `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Prenese nabor podatkov iz Hugging Face z uporabo funkcije `load_dataset()`.
+2. Pretvori Hugging Face nabor podatkov v Pandas DataFrame za lažje upravljanje z metodo `to_pandas()`.
+3. Ustvari mape za shranjevanje nabora podatkov in slik.
+4. Odstrani vrstice, kjer prenos slike ni uspel, tako da pregleda vsako vrstico v DataFrame, prenese sliko z uporabo prilagojene funkcije `download_image()` in filtrirano vrstico doda v nov DataFrame z imenom `filtered_rows`.
+5. Ustvari nov DataFrame s filtriranimi vrsticami in ga shrani na disk kot CSV datoteko.
+6. Izpiše sporočilo, kje so bili nabor podatkov in slike shranjeni.
 
-### Custom Function
+### Prilagojena funkcija
 
-The `download_image()` funkcija prenese sliko z URL-ja in jo shrani lokalno z uporabo knjižnice Pillow Image (PIL) in modula `io`. Funkcija vrne True, če je bila slika uspešno prenesena, sicer False. V primeru neuspeha pri zahtevi funkcija sproži izjemo z ustreznim sporočilom o napaki.
+Funkcija `download_image()` prenese sliko z URL-ja in jo shrani lokalno z uporabo knjižnice Pillow Image Library (PIL) in modula `io`. Vrne True, če je bila slika uspešno prenesena, sicer False. Funkcija ob neuspehu zahteve sproži izjemo z ustreznim sporočilom o napaki.
 
-### How does this work
+### Kako to deluje
 
-Funkcija download_image sprejme dva parametra: image_url, kar je URL slike za prenos, in save_path, kar je pot, kamor bo prenesena slika shranjena.
+Funkcija download_image prejme dva parametra: image_url, kar je URL slike za prenos, in save_path, kar je pot, kamor bo prenesena slika shranjena.
 
 Tako deluje funkcija:
 
-Najprej izvede GET zahtevo na image_url z metodo requests.get. S tem pridobi podatke slike s URL-ja.
+Najprej izvede GET zahtevo na image_url z metodo requests.get. S tem pridobi podatke slike z URL-ja.
 
-Vrstica response.raise_for_status() preveri, ali je bila zahteva uspešna. Če statusna koda odgovora kaže na napako (npr. 404 - Ni najdeno), bo sprožila izjemo. To zagotavlja, da nadaljujemo z nalaganjem slike samo, če je bila zahteva uspešna.
+Vrstica response.raise_for_status() preveri, ali je bila zahteva uspešna. Če statusna koda odgovora kaže na napako (npr. 404 - Ni najdeno), sproži izjemo. To zagotavlja, da nadaljujemo z nalaganjem slike le, če je bila zahteva uspešna.
 
-Podatki slike se nato posredujejo metodi Image.open iz PIL (Python Imaging Library) modula. Ta metoda ustvari Image objekt iz podatkov slike.
+Podatki slike se nato posredujejo metodi Image.open iz modula PIL (Python Imaging Library). Ta metoda ustvari Image objekt iz podatkov slike.
 
-Vrstica image.save(save_path) shrani sliko na določeno pot save_path. Pot mora vključevati želeno ime datoteke in pripono.
+Vrstica image.save(save_path) shrani sliko na določeno pot save_path. Pot save_path mora vsebovati želeno ime datoteke in pripono.
 
-Na koncu funkcija vrne True, da označi, da je bila slika uspešno prenesena in shranjena. Če med postopkom pride do izjeme, jo ujame, izpiše sporočilo o napaki in vrne False.
+Na koncu funkcija vrne True, kar pomeni, da je bila slika uspešno prenesena in shranjena. Če med postopkom pride do izjeme, jo funkcija ujame, izpiše sporočilo o napaki in vrne False.
 
-Ta funkcija je uporabna za prenos slik z URL-jev in njihovo lokalno shranjevanje. Obvladuje morebitne napake med prenosom in poda povratno informacijo o uspešnosti prenosa.
+Ta funkcija je uporabna za prenos slik z URL-jev in njihovo lokalno shranjevanje. Obvladuje morebitne napake med prenosom in zagotavlja povratno informacijo o uspešnosti prenosa.
 
-Pomembno je vedeti, da knjižnica requests služi za HTTP zahteve, PIL za delo s slikami, razred BytesIO pa za upravljanje podatkov slike kot toka bajtov.
+Pomembno je vedeti, da knjižnica requests omogoča HTTP zahteve, knjižnica PIL omogoča delo s slikami, razred BytesIO pa omogoča obdelavo slikovnih podatkov kot toka bajtov.
 
 
-### Conclusion
 
-Ta skripta omogoča enostavno pripravo podatkovnega niza za strojno učenje z nalaganjem potrebnih slik, odstranjevanjem vrstic z neuspešnim prenosom in shranjevanjem podatkovnega niza kot CSV datoteko.
+### Zaključek
 
-### Sample Script
+Ta skripta ponuja priročen način za pripravo nabora podatkov za strojno učenje z nalaganjem potrebnih slik, odstranjevanjem vrstic, kjer prenos slike ni uspel, in shranjevanjem nabora podatkov kot CSV datoteko.
+
+### Primer skripte
 
 ```python
 import os
@@ -129,11 +130,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Sample Code Download 
+### Primer prenosa kode  
 [Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### Sample Data Set
+### Primer nabora podatkov  
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazumevanja ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

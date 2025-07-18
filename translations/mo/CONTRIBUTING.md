@@ -2,117 +2,112 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-05-27T02:40:54+00:00",
+  "translation_date": "2025-07-16T14:37:04+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "mo"
 }
 -->
 # Contributing
 
-This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+此專案歡迎貢獻與建議。大多數貢獻需要您同意一份Contributor License Agreement (CLA)，聲明您有權利且確實授權我們使用您的貢獻。詳細資訊請參閱 [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
+當您提交 pull request 時，CLA 機器人會自動判斷您是否需要提供 CLA，並適當標註 PR（例如狀態檢查、留言）。只要依照機器人指示操作即可。您在所有使用我們 CLA 的倉庫中只需完成一次。
 
 ## Code of Conduct
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information read the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+本專案已採用 [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/)。
+欲了解更多資訊，請閱讀 [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) 或透過 [opencode@microsoft.com](mailto:opencode@microsoft.com) 聯絡我們，提出任何額外問題或意見。
 
 ## Cautions for creating issues
 
-Please do not open GitHub issues for general support questions as the GitHub list should be used for feature requests and bug reports. This way we can more easily track actual issues or bugs from the code and keep the general discussion separate from the actual code.
+請勿針對一般支援問題開啟 GitHub issue，GitHub 列表應用於功能請求與錯誤回報。如此一來，我們能更有效追蹤程式碼中的實際問題或錯誤，並將一般討論與程式碼問題分開。
 
 ## How to Contribute
 
 ### Pull Requests Guidelines
 
-When submitting a pull request (PR) to the Phi-3 CookBook repository, please use the following guidelines:
+提交 pull request (PR) 至 Phi-3 CookBook 倉庫時，請遵循以下指引：
 
-- **Fork the Repository**: Always fork the repository to your own account before making your modifications.
+- **Fork 倉庫**：在進行修改前，請先將倉庫 fork 至您自己的帳號。
 
-- **Separate pull requests (PR)**:
-  - Submit each type of change in its own pull request. For example, bug fixes and documentation updates should be submitted in separate PRs.
-  - Typo fixes and minor documentation updates can be combined into a single PR where appropriate.
+- **分開提交 PR**：
+  - 每種變更請分別提交獨立的 PR。例如，錯誤修正與文件更新應分開提交。
+  - 拼字錯誤修正與小幅文件更新可視情況合併成一個 PR。
 
-- **Handle merge conflicts**: If your pull request shows merge conflicts, update your local `main` branch to mirror the main repository before making your modifications.
+- **處理合併衝突**：若您的 PR 顯示合併衝突，請先更新本地的 `main` 分支，使其與主倉庫同步，再進行修改。
 
-- **Translation submissions**: When submitting a translation PR, ensure that the translation folder includes translations for all files in the original folder.
+- **翻譯提交**：提交翻譯 PR 時，請確保翻譯資料夾包含原始資料夾中所有檔案的翻譯。
 
 ### Writing Guidelines
 
-To ensure consistency across all documents, please use the following guidelines:
+為確保所有文件風格一致，請遵守以下指引：
 
-- **URL formatting**: Wrap all URLs in square brackets followed by parentheses, without any extra spaces around or inside them. For example: `[example](https://www.microsoft.com)`.
+- **URL 格式**：所有 URL 請用中括號包住文字，後接小括號包住網址，且中間及內部不留空格。例如：`[example](https://www.microsoft.com)`。
 
-- **Relative links**: Use `./` for relative links pointing to files or folders in the current directory, and `../` for those in a parent directory. For example: `[example](../../path/to/file)` or `[example](../../../path/to/file)`.
+- **相對連結**：指向當前目錄的檔案或資料夾，請使用 `./`；指向上層目錄的，請使用 `../`。例如：`[example](../../path/to/file)` 或 `[example](../../../path/to/file)`。
 
-- **Not Country-Specific locales**: Ensure that your links do not include country-specific locales. For example, avoid `/en-us/` or `/en/`.
+- **非國家特定語系**：請確保連結中不包含國家特定語系，如避免 `/en-us/` 或 `/en/`。
 
-- **Image storage**: Store all images in the `./imgs` folder.
+- **圖片存放**：所有圖片請存放於 `./imgs` 資料夾。
 
-- **Descriptive image names**: Name images descriptively using English characters, numbers, and dashes. For example: `example-image.jpg`.
+- **圖片命名**：圖片名稱請具描述性，使用英文字母、數字及連字號。例如：`example-image.jpg`。
 
 ## GitHub Workflows
 
-When you submit a pull request, the following workflows will be triggered to validate the changes. Follow the instructions below to ensure your pull request passes the workflow checks:
+當您提交 pull request 時，以下工作流程會被觸發以驗證變更。請依照下列指示確保您的 PR 通過檢查：
 
 - [Check Broken Relative Paths](../..)
 - [Check URLs Don't Have Locale](../..)
 
 ### Check Broken Relative Paths
 
-This workflow ensures that all relative paths in your files are correct.
+此工作流程確保您檔案中的所有相對路徑皆正確。
 
-1. To make sure your links are working properly, perform the following tasks using VS Code:
-    - Hover over any link in your files.
-    - Press **Ctrl + Click** to navigate to the link.
-    - If you click on a link and it doesn't work locally, it will trigger the workflow and not work on GitHub.
+1. 為確保連結正常，請使用 VS Code 執行以下操作：
+    - 將滑鼠移至檔案中的任一連結上。
+    - 按下 **Ctrl + 點擊** 以跳轉連結。
+    - 若本地點擊連結無法開啟，將觸發工作流程，且在 GitHub 上也無法使用。
 
-1. To fix this issue, perform the following tasks using the path suggestions provided by VS Code:
-    - Type `./` or `../`.
-    - VS Code will prompt you to choose from the available options based on what you typed.
-    - Follow the path by clicking on the desired file or folder to ensure your path is correct.
+1. 若發現問題，請依照 VS Code 提供的路徑建議修正：
+    - 輸入 `./` 或 `../`。
+    - VS Code 會根據輸入提示可選擇的檔案或資料夾。
+    - 點擊所需檔案或資料夾，確保路徑正確。
 
-Once you have added the correct relative path, save and push your changes.
+修正完相對路徑後，請儲存並推送變更。
 
 ### Check URLs Don't Have Locale
 
-This workflow ensures that any web URL doesn't include a country-specific locale. As this repository is accessible globally, it is important to ensure that URLs do not contain your country's locale.
+此工作流程確保所有網頁 URL 不包含國家特定語系。由於此倉庫全球可訪問，確保 URL 不含您所在國家的語系非常重要。
 
-1. To verify that your URLs don't have country locales, perform the following tasks:
+1. 驗證 URL 是否含有國家語系，請檢查：
+    - URL 中是否有 `/en-us/`、`/en/` 或其他語言語系字串。
+    - 若無，則通過此檢查。
 
-    - Check for text like `/en-us/`, `/en/`, or any other language locale in the URLs.
-    - If these are not present in your URLs, then you will pass this check.
+1. 若有問題，請依照以下步驟修正：
+    - 開啟工作流程標示的檔案路徑。
+    - 移除 URL 中的國家語系。
 
-1. To fix this issue, perform the following tasks:
-    - Open the file path highlighted by the workflow.
-    - Remove the country locale from the URLs.
-
-Once you remove the country locale, save and push your changes.
+移除後，請儲存並推送變更。
 
 ### Check Broken Urls
 
-This workflow ensures that any web URL in your files is working and returning 200 status code.
+此工作流程確保您檔案中的所有網頁 URL 都能正常運作並回傳 200 狀態碼。
 
-1. To verify that your URLs are working correctly, perform the following tasks:
-    - Check the status of the URLs in your files.
+1. 驗證 URL 是否正常，請檢查檔案中 URL 的狀態。
 
-2. To fix any broken URLs, perform the following tasks:
-    - Open the file that contains the broken URL.
-    - Update the URL to the correct one.
+2. 若有壞掉的 URL，請依照以下步驟修正：
+    - 開啟包含壞掉 URL 的檔案。
+    - 更新 URL 為正確的連結。
 
-Once you have fixed the URLs, save and push your changes.
+修正後，請儲存並推送變更。
 
 > [!NOTE]
 >
-> There may be cases where the URL check fails even though the link is accessible. This can happen for several reasons, including:
+> 有時候 URL 檢查可能會失敗，但連結實際上仍可使用。這可能是因為：
 >
-> - **Network restrictions:** GitHub actions servers may have network restrictions that prevent access to certain URLs.
-> - **Timeout issues:** URLs that take too long to respond may trigger a timeout error in the workflow.
-> - **Temporary server issues:** Occasional server downtime or maintenance can make a URL temporarily unavailable during validation.
+> - **網路限制**：GitHub actions 伺服器可能有網路限制，無法存取某些 URL。
+> - **逾時問題**：回應時間過長的 URL 可能會觸發工作流程逾時錯誤。
+> - **暫時性伺服器問題**：伺服器偶爾停機或維護，可能導致驗證期間 URL 暫時無法使用。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-Could you please clarify what you mean by "mo"? Are you referring to a specific language or dialect? If you can specify, I will be happy to assist with the translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

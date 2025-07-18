@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-05-09T19:57:38+00:00",
+  "translation_date": "2025-07-17T04:57:56+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "tl"
 }
 -->
 ### Halimbawa ng Senaryo
 
-Isipin mo na mayroon kang isang larawan (`demo.png`) at nais mong gumawa ng Python code na magpoproseso sa larawang ito at magsasave ng bagong bersyon nito (`phi-3-vision.jpg`).
+Isipin na mayroon kang isang larawan (`demo.png`) at nais mong gumawa ng Python code na magpoproseso sa larawang ito at magsa-save ng bagong bersyon nito (`phi-3-vision.jpg`).
 
 Ang code sa itaas ay awtomatikong ginagawa ang prosesong ito sa pamamagitan ng:
 
-1. Pagsasaayos ng kapaligiran at mga kinakailangang setting.
-2. Paggawa ng prompt na nagsasabi sa modelo na gumawa ng kinakailangang Python code.
+1. Pagsasaayos ng kapaligiran at mga kinakailangang konfigurasyon.
+2. Paglikha ng prompt na nag-uutos sa modelo na gumawa ng kinakailangang Python code.
 3. Pagpapadala ng prompt sa modelo at pagkolekta ng nagawang code.
 4. Pagkuha at pagpapatakbo ng nagawang code.
 5. Pagpapakita ng orihinal at naprosesong mga larawan.
 
-Ginagamit ng pamamaraang ito ang lakas ng AI upang gawing awtomatiko ang mga gawain sa pagpoproseso ng larawan, kaya mas madali at mabilis mong makamit ang iyong mga layunin.
+Ginagamit ng pamamaraang ito ang kapangyarihan ng AI para gawing awtomatiko ang mga gawain sa pagpoproseso ng larawan, na nagpapadali at nagpapabilis sa pag-abot ng iyong mga layunin.
 
 [Sample Code Solution](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
 
-Hatiin natin kung ano ang ginagawa ng buong code, hakbang-hakbang:
+Hatiin natin ang ginagawa ng buong code nang hakbang-hakbang:
 
 1. **I-install ang Kinakailangang Package**:
     ```python
@@ -31,21 +31,21 @@ Hatiin natin kung ano ang ginagawa ng buong code, hakbang-hakbang:
     ```
     Ini-install ng utos na ito ang `langchain_nvidia_ai_endpoints` package, tinitiyak na ito ay ang pinakabagong bersyon.
 
-2. **I-import ang mga Kinakailangang Module**:
+2. **I-import ang Mga Kinakailangang Module**:
     ```python
     from langchain_nvidia_ai_endpoints import ChatNVIDIA
     import getpass
     import os
     import base64
     ```
-    Dinadala ng mga import na ito ang mga module na kailangan para makipag-ugnayan sa NVIDIA AI endpoints, ligtas na paghawak ng password, pakikipag-ugnayan sa operating system, at pag-encode/decode ng data sa base64 na format.
+    Dinadala ng mga import na ito ang mga kinakailangang module para makipag-ugnayan sa NVIDIA AI endpoints, ligtas na paghawak ng mga password, pakikipag-ugnayan sa operating system, at pag-encode/decode ng data sa base64 na format.
 
 3. **I-set Up ang API Key**:
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
     ```
-    Sinusuri ng code na ito kung naka-set ang `NVIDIA_API_KEY` environment variable. Kung hindi, hinihingi nito sa user na ipasok nang ligtas ang kanilang API key.
+    Tinitingnan ng code na ito kung naka-set ang `NVIDIA_API_KEY` environment variable. Kung hindi, hinihikayat nito ang user na ligtas na ilagay ang kanilang API key.
 
 4. **Itakda ang Modelo at Path ng Larawan**:
     ```python
@@ -53,13 +53,13 @@ Hatiin natin kung ano ang ginagawa ng buong code, hakbang-hakbang:
     chat = ChatNVIDIA(model=model)
     img_path = './imgs/demo.png'
     ```
-    Itinatakda nito ang modelong gagamitin, gumagawa ng instance ng `ChatNVIDIA` gamit ang tinukoy na modelo, at inilalagay ang path ng file ng larawan.
+    Itinatakda nito ang modelong gagamitin, lumilikha ng instance ng `ChatNVIDIA` gamit ang tinukoy na modelo, at tinutukoy ang path ng file ng larawan.
 
 5. **Gumawa ng Text Prompt**:
     ```python
     text = "Please create Python code for image, and use plt to save the new picture under imgs/ and name it phi-3-vision.jpg."
     ```
-    Itinatakda nito ang isang text prompt na nagsasabi sa modelo na gumawa ng Python code para iproseso ang larawan.
+    Itinatakda nito ang isang text prompt na nag-uutos sa modelo na gumawa ng Python code para sa pagpoproseso ng larawan.
 
 6. **I-encode ang Larawan sa Base64**:
     ```python
@@ -67,7 +67,7 @@ Hatiin natin kung ano ang ginagawa ng buong code, hakbang-hakbang:
         image_b64 = base64.b64encode(f.read()).decode()
     image = f'<img src="data:image/png;base64,{image_b64}" />'
     ```
-    Binabasa ng code na ito ang file ng larawan, ini-encode ito sa base64, at gumagawa ng HTML image tag gamit ang naka-encode na data.
+    Binabasa ng code na ito ang file ng larawan, ini-encode ito sa base64, at lumilikha ng isang HTML image tag gamit ang naka-encode na data.
 
 7. **Pagsamahin ang Text at Larawan sa Prompt**:
     ```python
@@ -82,7 +82,7 @@ Hatiin natin kung ano ang ginagawa ng buong code, hakbang-hakbang:
         print(chunk.content, end="")
         code += chunk.content
     ```
-    Ipinapadala ng code na ito ang prompt sa `ChatNVIDIA` model and collects the generated code in chunks, printing and appending each chunk to the `code` string.
+    Ipinapadala ng code na ito ang prompt sa `ChatNVIDIA` na modelo at kinokolekta ang nagawang code nang paunti-unti, ipinapakita at idinadagdag ang bawat bahagi sa string na `code`.
 
 9. **Kunin ang Python Code mula sa Nagawang Nilalaman**:
     ```python
@@ -109,4 +109,4 @@ Hatiin natin kung ano ang ginagawa ng buong code, hakbang-hakbang:
     Ipinapakita ng mga linyang ito ang mga larawan gamit ang `IPython.display` module.
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang serbisyong AI na pagsasalin [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, mangyaring tandaan na ang awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na opisyal na sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasaling-tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa kanyang sariling wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

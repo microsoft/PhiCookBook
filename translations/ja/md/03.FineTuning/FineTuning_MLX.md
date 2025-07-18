@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-08T05:14:35+00:00",
+  "translation_date": "2025-07-17T07:58:01+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "ja"
 }
@@ -19,7 +19,7 @@ Apple MLXフレームワークのコマンドラインを通じて、Loraと組�
 
 ### ***Note:***
 
-1. jsonlデータ形式 ：
+1. jsonlデータ形式：
 
 
 ```json
@@ -31,16 +31,16 @@ Apple MLXフレームワークのコマンドラインを通じて、Loraと組�
 
 ```
 
-2. 例として[TruthfulQAのデータ](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)を使用していますが、データ量が比較的少ないため、ファインチューニング結果が必ずしも最良とは限りません。学習者は自身のシナリオに基づいてより良いデータを使うことをおすすめします。
+2. 例として[TruthfulQAのデータ](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)を使用していますが、データ量が比較的少ないため、ファインチューニングの結果が必ずしも最良とは限りません。学習者は自身のシナリオに基づいてより良いデータを使うことを推奨します。
 
-3. データ形式はPhi-3テンプレートと組み合わせています
+3. データ形式はPhi-3のテンプレートと組み合わせています
 
-この[リンク](../../../../code/04.Finetuning/mlx)からデータをダウンロードしてください。***data***フォルダ内のすべての.jsonlを含めてください。
+この[リンク](../../../../code/04.Finetuning/mlx)からデータをダウンロードしてください。***data***フォルダ内のすべての.jsonlを含めてください
 
 
 ## **2. ターミナルでのファインチューニング**
 
-ターミナルで次のコマンドを実行してください
+ターミナルで以下のコマンドを実行してください
 
 
 ```bash
@@ -54,7 +54,7 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 1. これはLoRAファインチューニングであり、MLXフレームワークはQLoRAを公開していません
 
-2. config.yamlを設定して、一部の引数を変更できます。例えば
+2. config.yamlでいくつかの引数を変更できます。例えば
 
 
 ```yaml
@@ -125,7 +125,7 @@ lora_parameters:
 
 ```
 
-ターミナルで次のコマンドを実行してください
+ターミナルで以下のコマンドを実行してください
 
 
 ```bash
@@ -155,7 +155,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-ファインチューニング後の結果と元のモデルの結果を比較してみましょう
+ファインチューニングモデルと元のモデルの結果を比較してみてください
 
 
 ## **4. アダプターをマージして新しいモデルを生成**
@@ -186,9 +186,9 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Note:*** 
 
-1. 現在、fp32、fp16、INT8の量子化変換に対応しています
+1. 現在、fp32、fp16、INT8の量子化変換をサポートしています
 
-2. マージされたモデルにはtokenizer.modelが含まれていないため、https://huggingface.co/microsoft/Phi-3-mini-4k-instruct からダウンロードしてください
+2. マージされたモデルにはtokenizer.modelが含まれていません。https://huggingface.co/microsoft/Phi-3-mini-4k-instruct からダウンロードしてください
 
 [Ollma Model](https://ollama.com/)を設定してください
 
@@ -214,4 +214,4 @@ PARAMETER stop "<|end|>"
 おめでとうございます！MLXフレームワークでのファインチューニングをマスターしました
 
 **免責事項**：  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の母国語版が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても責任を負いかねますのでご了承ください。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

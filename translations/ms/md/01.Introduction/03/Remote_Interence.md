@@ -2,69 +2,69 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:44:09+00:00",
+  "translation_date": "2025-07-16T21:21:01+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "ms"
 }
 -->
-# Remote Inferencing with the fine-tuned model
+# Inferens Jauh dengan model yang telah disesuaikan
 
-After the adapters are trained in the remote environment, use a simple Gradio application to interact with the model.
+Selepas penyesuaian adapter dilakukan dalam persekitaran jauh, gunakan aplikasi Gradio yang ringkas untuk berinteraksi dengan model.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.ms.png)
+![Penyesuaian selesai](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.ms.png)
 
-### Provision Azure Resources
-You need to set up the Azure Resources for remote inference by executing the `AI Toolkit: Provision Azure Container Apps for inference` from the command palette. During this setup, you will be asked to select your Azure Subscription and resource group.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.ms.png)
+### Menyediakan Sumber Azure  
+Anda perlu menyediakan Sumber Azure untuk inferens jauh dengan menjalankan `AI Toolkit: Provision Azure Container Apps for inference` dari palet arahan. Semasa penyediaan ini, anda akan diminta untuk memilih Langganan Azure dan kumpulan sumber anda.  
+![Menyediakan Sumber Inferens](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.ms.png)
    
-By default, the subscription and the resource group for inference should match those used for fine-tuning. The inference will use the same Azure Container App Environment and access the model and model adapter stored in Azure Files, which were generated during the fine-tuning step. 
+Secara lalai, langganan dan kumpulan sumber untuk inferens harus sama dengan yang digunakan untuk penyesuaian. Inferens akan menggunakan Persekitaran Azure Container App yang sama dan mengakses model serta adapter model yang disimpan dalam Azure Files, yang dihasilkan semasa langkah penyesuaian. 
 
-## Using AI Toolkit 
+## Menggunakan AI Toolkit 
 
-### Deployment for Inference  
-If you want to update the inference code or reload the inference model, please run the `AI Toolkit: Deploy for inference` command. This will sync your latest code with ACA and restart the replica.  
+### Penyebaran untuk Inferens  
+Jika anda ingin mengubah kod inferens atau memuat semula model inferens, sila jalankan arahan `AI Toolkit: Deploy for inference`. Ini akan menyelaraskan kod terkini anda dengan ACA dan memulakan semula replika.  
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.ms.png)
+![Sebarkan untuk inferens](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.ms.png)
 
-Once the deployment completes successfully, the model will be ready for evaluation through this endpoint.
+Selepas penyebaran berjaya, model kini sedia untuk dinilai menggunakan titik akhir ini.
 
-### Accessing the Inference API
+### Mengakses API Inferens
 
-You can access the inference API by clicking the "*Go to Inference Endpoint*" button shown in the VSCode notification. Alternatively, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` and in the output panel.
+Anda boleh mengakses API inferens dengan mengklik butang "*Go to Inference Endpoint*" yang dipaparkan dalam notifikasi VSCode. Sebagai alternatif, titik akhir web API boleh didapati di bawah `ACA_APP_ENDPOINT` dalam `./infra/inference.config.json` dan dalam panel output.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.ms.png)
+![Titik Akhir Aplikasi](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.ms.png)
 
-> **Note:** The inference endpoint might take a few minutes before it becomes fully operational.
+> **Note:** Titik akhir inferens mungkin memerlukan beberapa minit untuk beroperasi sepenuhnya.
 
-## Inference Components Included in the Template
+## Komponen Inferens yang Termasuk dalam Templat
  
-| Folder | Contents |
+| Folder | Kandungan |
 | ------ |--------- |
-| `infra` | Contains all necessary configurations for remote operations. |
-| `infra/provision/inference.parameters.json` | Holds parameters for the bicep templates, used for provisioning Azure resources for inference. |
-| `infra/provision/inference.bicep` | Contains templates for provisioning Azure resources for inference. |
-| `infra/inference.config.json` | The configuration file, generated by the `AI Toolkit: Provision Azure Container Apps for inference` command. It is used as input for other remote command palettes. |
+| `infra` | Mengandungi semua konfigurasi yang diperlukan untuk operasi jauh. |
+| `infra/provision/inference.parameters.json` | Memegang parameter untuk templat bicep, digunakan untuk penyediaan sumber Azure bagi inferens. |
+| `infra/provision/inference.bicep` | Mengandungi templat untuk penyediaan sumber Azure bagi inferens. |
+| `infra/inference.config.json` | Fail konfigurasi, dijana oleh arahan `AI Toolkit: Provision Azure Container Apps for inference`. Ia digunakan sebagai input untuk palet arahan jauh yang lain. |
 
-### Using AI Toolkit to configure Azure Resource Provision
-Configure the [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+### Menggunakan AI Toolkit untuk mengkonfigurasi Penyediaan Sumber Azure  
+Konfigurasikan [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Provision Azure Container Apps for inference using ` command.
+Jalankan arahan `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+Anda boleh dapati parameter konfigurasi dalam fail `./infra/provision/inference.parameters.json`. Berikut adalah butirannya:
+| Parameter | Penerangan |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | Ini adalah arahan untuk memulakan web API. |
+| `maximumInstanceCount` | Parameter ini menetapkan kapasiti maksimum instans GPU. |
+| `location` | Lokasi di mana sumber Azure disediakan. Nilai lalai adalah sama dengan lokasi kumpulan sumber yang dipilih. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | Parameter ini digunakan untuk menamakan sumber Azure yang akan disediakan. Secara lalai, ia akan sama dengan nama sumber penyesuaian. Anda boleh masukkan nama sumber baru yang belum digunakan untuk mencipta sumber dengan nama tersendiri, atau masukkan nama sumber Azure yang sudah wujud jika anda ingin menggunakannya. Untuk maklumat lanjut, rujuk bahagian [Menggunakan Sumber Azure yang sedia ada](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### Menggunakan Sumber Azure yang Sedia Ada
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Secara lalai, penyediaan inferens menggunakan Persekitaran Azure Container App, Akaun Penyimpanan, Azure File Share, dan Azure Log Analytics yang sama seperti yang digunakan untuk penyesuaian. Satu Azure Container App yang berasingan dicipta khusus untuk API inferens. 
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` file. Then, run the `AI Toolkit: Provision Azure Container Apps for inference` command from the command palette. This updates any specified resources and creates any missing ones.
+Jika anda telah mengubah suai sumber Azure semasa langkah penyesuaian atau ingin menggunakan sumber Azure sedia ada anda untuk inferens, nyatakan nama mereka dalam fail `./infra/inference.parameters.json`. Kemudian, jalankan arahan `AI Toolkit: Provision Azure Container Apps for inference` dari palet arahan. Ini akan mengemas kini mana-mana sumber yang ditentukan dan mencipta mana-mana yang belum ada.
 
-For example, if you already have an Azure container environment, your `./infra/finetuning.parameters.json` should look like this:
+Sebagai contoh, jika anda mempunyai persekitaran kontena Azure yang sedia ada, fail `./infra/finetuning.parameters.json` anda harus kelihatan seperti ini:
 
 ```json
 {
@@ -83,10 +83,10 @@ For example, if you already have an Azure container environment, your `./infra/f
   }
 ```
 
-### Manual Provision  
-If you prefer to manually configure the Azure resources, you can use the provided bicep files in the `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` file.
+### Penyediaan Manual  
+Jika anda lebih suka mengkonfigurasi sumber Azure secara manual, anda boleh menggunakan fail bicep yang disediakan dalam folder `./infra/provision`. Jika anda sudah menyediakan dan mengkonfigurasi semua sumber Azure tanpa menggunakan palet arahan AI Toolkit, anda hanya perlu masukkan nama sumber dalam fail `inference.config.json`.
 
-For example:
+Sebagai contoh:
 
 ```json
 {

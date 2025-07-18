@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:43:33+00:00",
+  "translation_date": "2025-07-17T06:25:49+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "hr"
 }
 -->
 ## Fine-Tuning s Kaitom
 
-[Kaito](https://github.com/Azure/kaito) je operator koji automatizira implementaciju AI/ML modela za inferenciju u Kubernetes klasteru.
+[Kaito](https://github.com/Azure/kaito) je operator koji automatizira implementaciju AI/ML modela za inferencu u Kubernetes klasteru.
 
-Kaito se razlikuje od većine glavnih metodologija za implementaciju modela baziranih na virtualnim mašinama po sljedećem:
+Kaito se razlikuje od većine uobičajenih metoda implementacije modela temeljenih na virtualnim strojevima po sljedećem:
 
-- Upravljanje datotekama modela pomoću kontejnerskih slika. HTTP server je dostupan za izvođenje inferencijskih poziva koristeći biblioteku modela.
-- Izbjegavanje podešavanja parametara implementacije za prilagodbu GPU hardveru pružanjem unaprijed definiranih konfiguracija.
-- Automatsko osiguravanje GPU čvorova na temelju zahtjeva modela.
-- Hostanje velikih slika modela u javnom Microsoft Container Registry (MCR) ako licenca to dopušta.
+- Upravljanje datotekama modela putem kontejnerskih slika. HTTP server je dostupan za izvođenje inferencijskih poziva koristeći biblioteku modela.
+- Izbjegavanje podešavanja parametara implementacije za prilagodbu GPU hardveru kroz unaprijed postavljene konfiguracije.
+- Automatsko osiguravanje GPU čvorova prema zahtjevima modela.
+- Hostanje velikih slika modela u javnom Microsoft Container Registryju (MCR) ako licenca to dopušta.
 
-Korištenjem Kaitoa, proces uvođenja velikih AI modela za inferenciju u Kubernetes znatno je pojednostavljen.
-
+Korištenjem Kaitoa, proces uvođenja velikih AI modela za inferencu u Kubernetes znatno je pojednostavljen.
 
 ## Arhitektura
 
-Kaito prati klasični Kubernetes Custom Resource Definition (CRD)/controller dizajn obrazac. Korisnik upravlja `workspace` prilagođenim resursom koji opisuje zahtjeve za GPU i specifikaciju inferencije. Kaito kontroleri automatiziraju implementaciju usklađivanjem `workspace` prilagođenog resursa.
+Kaito slijedi klasični Kubernetes dizajn uz Custom Resource Definition (CRD)/controller. Korisnik upravlja `workspace` prilagođenim resursom koji opisuje zahtjeve za GPU i specifikaciju inferencije. Kaito kontroleri automatiziraju implementaciju usklađivanjem `workspace` prilagođenog resursa.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
 Gornja slika prikazuje pregled arhitekture Kaitoa. Njegove glavne komponente su:
 
-- **Workspace controller**: Usklađuje `workspace` prilagođeni resurs, kreira `machine` (objašnjeno u nastavku) prilagođene resurse za pokretanje automatskog osiguravanja čvorova i kreira inferencijski workload (`deployment` ili `statefulset`) na temelju unaprijed definiranih konfiguracija modela.
-- **Node provisioner controller**: Kontroler se zove *gpu-provisioner* u [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Koristi `machine` CRD koji potječe iz [Karpenter](https://sigs.k8s.io/karpenter) za interakciju s workspace controllerom. Integrira se s Azure Kubernetes Service (AKS) API-jima za dodavanje novih GPU čvorova u AKS klaster. 
+- **Workspace controller**: Usklađuje `workspace` prilagođeni resurs, kreira `machine` (objašnjeno dolje) prilagođene resurse za pokretanje automatskog osiguravanja čvorova i kreira inferencijski workload (`deployment` ili `statefulset`) temeljen na unaprijed postavljenim konfiguracijama modela.
+- **Node provisioner controller**: Kontroler se zove *gpu-provisioner* u [gpu-provisioner helm chartu](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Koristi `machine` CRD koji potječe iz [Karpentera](https://sigs.k8s.io/karpenter) za interakciju s workspace controllerom. Integrira se s Azure Kubernetes Service (AKS) API-jima za dodavanje novih GPU čvorova u AKS klaster.
 > Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) je open source komponenta. Može se zamijeniti drugim kontrolerima ako podržavaju [Karpenter-core](https://sigs.k8s.io/karpenter) API-je.
 
 ## Pregledni video  
-[Pogledajte Kaito Demo](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+[Pogledajte Kaito demo](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+
 ## Instalacija
 
 Molimo provjerite upute za instalaciju [ovdje](https://github.com/Azure/kaito/blob/main/docs/installation.md).
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-Status workspacea možete pratiti izvođenjem sljedeće naredbe. Kada stupac WORKSPACEREADY postane `True`, model je uspješno implementiran.
+Status workspacea možete pratiti pokretanjem sljedeće naredbe. Kada stupac WORKSPACEREADY postane `True`, model je uspješno implementiran.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Zatim možete pronaći cluster IP inferencijskog servisa i koristiti privremeni `curl` pod za testiranje servisne točke u klasteru.
+Zatim možete pronaći cluster IP inferencijskog servisa i koristiti privremeni `curl` pod za testiranje endpointa servisa unutar klastera.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -113,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakva nesporazumevanja ili pogrešne interpretacije koje proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

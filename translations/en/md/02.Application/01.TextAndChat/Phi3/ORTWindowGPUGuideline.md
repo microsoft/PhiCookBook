@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-09T19:28:15+00:00",
+  "translation_date": "2025-07-17T02:38:02+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "en"
 }
@@ -41,9 +41,9 @@ The document covers:
 
 ### **3. Install Visual Studio 2022 - Desktop Development with C++**
 
-   ***Note*** You can skip this step if you don’t want to compile
+   ***Note*** You can skip this step if you don’t need to compile
 
-![CPP](../../../../../../imgs/02/pfonnx/01.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.en.png)
 
 ### **4. Install NVIDIA Driver**
 
@@ -83,13 +83,13 @@ Copy NVIDIA CUDNN 9.4 lib, bin, and include files to NVIDIA CUDA 12.4 lib, bin, 
 
    Open [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) and run it
 
-![RESULT](../../../../../../imgs/02/pfonnx/02.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.en.png)
 
 ### **8. Compile ORT GenAI GPU**
 
    ***Note*** 
    
-   1. Please uninstall all ONNX, onnxruntime, and onnxruntime-genai packages first
+   1. Please uninstall all onnx, onnxruntime, and onnxruntime-genai packages first
 
    ```bash
 
@@ -111,9 +111,9 @@ Copy NVIDIA CUDNN 9.4 lib, bin, and include files to NVIDIA CUDA 12.4 lib, bin, 
 
    2. Check Visual Studio Extension support 
 
-   Verify that *C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras* contains *visual_studio_integration*. 
-
-   If it’s missing, check other CUDA toolkit driver folders and copy the *visual_studio_integration* folder and its contents to *C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration*
+   Verify that the folder C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras contains the folder visual_studio_integration at C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
+   
+   If it’s missing, check other CUDA toolkit driver folders and copy the visual_studio_integration folder and its contents to C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
    - You can skip this step if you don’t want to compile
 
@@ -127,9 +127,9 @@ Copy NVIDIA CUDNN 9.4 lib, bin, and include files to NVIDIA CUDA 12.4 lib, bin, 
 
    - Unzip onnxruntime-win-x64-gpu-1.19.2.zip, rename the folder to **ort**, and copy the ort folder into onnxruntime-genai
 
-   - Using Windows Terminal, open Developer Command Prompt for VS 2022 and navigate to onnxruntime-genai
+   - Using Windows Terminal, open the Developer Command Prompt for VS 2022 and navigate to onnxruntime-genai
 
-![RESULT](../../../../../../imgs/02/pfonnx/03.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.en.png)
 
    - Compile it using your Python environment
 

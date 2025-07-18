@@ -2,24 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:45:26+00:00",
+  "translation_date": "2025-07-17T08:03:21+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "sr"
 }
 -->
-# **Fino podešavanje Phi-3 sa Apple MLX Framework-om**
+# **Фајн-тунинг Phi-3 уз Apple MLX Framework**
 
-Fino podešavanje u kombinaciji sa Lora možemo završiti putem komandne linije Apple MLX framework-a. (Ako želite da saznate više o radu MLX Framework-a, molimo pročitajte [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+Фајн-тунинг у комбинацији са Lora можемо извршити преко командне линије Apple MLX Framework-а. (Ако желите да сазнате више о раду MLX Framework-а, молимо прочитајте [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
 
+## **1. Припрема података**
 
-## **1. Priprema podataka**
+Подразумевано, MLX Framework захтева jsonl формат за train, test и eval, и користи се у комбинацији са Lora за извршење фајн-тунинг задатака.
 
-Po defaultu, MLX Framework zahteva jsonl format za train, test i eval, i kombinuje se sa Lora za završetak poslova fino podešavanja.
+### ***Note:***
 
-
-### ***Napomena:***
-
-1. jsonl format podataka ：
+1. jsonl формат података ：
 
 
 ```json
@@ -31,16 +29,15 @@ Po defaultu, MLX Framework zahteva jsonl format za train, test i eval, i kombinu
 
 ```
 
-2. Naš primer koristi [TruthfulQA podatke](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), ali količina podataka je relativno nedovoljna, pa rezultati fino podešavanja nisu nužno najbolji. Preporučuje se da korisnici koriste bolje podatke prema sopstvenim scenarijima.
+2. У нашем примеру користимо [TruthfulQA податке](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), али количина података је релативно мала, па резултати фајн-тунинга не морају бити најбољи. Препоручује се да корисници користе боље податке прилагођене својим сценаријима.
 
-3. Format podataka je kombinovan sa Phi-3 šablonom
+3. Формат података је усклађен са Phi-3 шаблоном
 
-Molimo preuzmite podatke sa ovog [linka](../../../../code/04.Finetuning/mlx), uključite sve .jsonl fajlove u ***data*** folderu
+Молимо преузмите податке са овог [линка](../../../../code/04.Finetuning/mlx), укључујући све .jsonl фајлове у ***data*** фолдеру
 
+## **2. Фајн-тунинг у вашем терминалу**
 
-## **2. Fino podešavanje u vašem terminalu**
-
-Pokrenite ovu komandu u terminalu
+Покрените ову команду у терминалу
 
 
 ```bash
@@ -50,11 +47,11 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 ```
 
 
-## ***Napomena:***
+## ***Note:***
 
-1. Ovo je LoRA fino podešavanje, MLX framework nije objavio QLoRA
+1. Ово је LoRA фајн-тунинг, MLX framework није објавио QLoRA
 
-2. Možete podesiti config.yaml da promenite neke argumente, kao što su
+2. Можете подесити config.yaml да промените неке параметре, као што су
 
 
 ```yaml
@@ -125,7 +122,7 @@ lora_parameters:
 
 ```
 
-Pokrenite ovu komandu u terminalu
+Покрените ову команду у терминалу
 
 
 ```bash
@@ -135,9 +132,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Pokretanje fino podešenog adaptera za testiranje**
+## **3. Покретање фајн-тунинг адаптера за тестирање**
 
-Možete pokrenuti fino podešeni adapter u terminalu, ovako
+Фајн-тунинг адаптер можете покренути у терминалу, овако
 
 
 ```bash
@@ -146,7 +143,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-i pokrenuti originalni model za poređenje rezultata
+и покрените оригинални модел за поређење резултата
 
 
 ```bash
@@ -155,10 +152,9 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Možete pokušati da uporedite rezultate fino podešavanja sa originalnim modelom
+Можете упоредити резултате фајн-тунинга са оригиналним моделом
 
-
-## **4. Spajanje adaptera za generisanje novih modela**
+## **4. Споји адаптере да бисте генерисали нове моделе**
 
 
 ```bash
@@ -167,9 +163,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Pokretanje kvantizovanih fino podešenih modela koristeći ollama**
+## **5. Покретање квантованих фајн-тунинг модела уз помоћ ollama**
 
-Pre upotrebe, molimo konfigurišite vaš llama.cpp okruženje
+Пре коришћења, молимо конфигуришите ваше llama.cpp окружење
 
 
 ```bash
@@ -184,13 +180,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Napomena:*** 
+***Note:*** 
 
-1. Sada je podržana kvantizacija konverzije fp32, fp16 i INT 8
+1. Сада је подржана квантизација конверзије fp32, fp16 и INT 8
 
-2. Spojeni model nema tokenizer.model, molimo preuzmite ga sa https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Спојени модел нема tokenizer.model, молимо преузмите га са https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-podesite [Ollma Model](https://ollama.com/)
+подесите [Ollma Model](https://ollama.com/)
 
 
 ```txt
@@ -200,7 +196,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-pokrenite komandu u terminalu
+покрените команду у терминалу
 
 
 ```bash
@@ -211,7 +207,7 @@ pokrenite komandu u terminalu
 
 ```
 
-Čestitamo! Savladali ste fino podešavanje sa MLX Framework-om
+Честитамо! Савладали сте фајн-тунинг уз MLX Framework
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала употребом овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

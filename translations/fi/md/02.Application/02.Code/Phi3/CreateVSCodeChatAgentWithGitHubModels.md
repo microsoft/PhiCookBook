@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:07:06+00:00",
+  "translation_date": "2025-07-17T03:27:22+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "fi"
 }
 -->
-# **Luo oma Visual Studio Code Chat Copilot -agenttisi Phi-3.5:n avulla GitHub-malleilla**
+# **Luo oma Visual Studio Code Chat Copilot -agenttisi Phi-3.5:llä GitHub-malleista**
 
-Käytätkö Visual Studio Code Copilotia? Erityisesti Chatissa voit käyttää erilaisia agentteja parantaaksesi projektien luomista, kirjoittamista ja ylläpitoa Visual Studio Codessa. Visual Studio Code tarjoaa API:n, jonka avulla yritykset ja yksityishenkilöt voivat luoda erilaisia agentteja liiketoimintansa pohjalta laajentaakseen kyvykkyyksiään eri omistusoikeudellisilla aloilla. Tässä artikkelissa keskitymme GitHub-mallien **Phi-3.5-mini-instruct (128k)** ja **Phi-3.5-vision-instruct (128k)** malleihin oman Visual Studio Code -agentin luomiseksi.
+Käytätkö Visual Studio Code Copilotia? Erityisesti Chat-tilassa voit hyödyntää erilaisia agentteja parantaaksesi projektien luomista, kirjoittamista ja ylläpitoa Visual Studio Codessa. Visual Studio Code tarjoaa API:n, jonka avulla yritykset ja yksityishenkilöt voivat luoda erilaisia agentteja liiketoimintansa pohjalta laajentaakseen kyvykkyyksiään eri omistusoikeudellisilla aloilla. Tässä artikkelissa keskitymme GitHub-mallien **Phi-3.5-mini-instruct (128k)** ja **Phi-3.5-vision-instruct (128k)** malleihin oman Visual Studio Code -agenttisi luomiseksi.
 
 ## **Tietoa Phi-3.5:stä GitHub-malleissa**
 
-Tiedämme, että Phi-3/3.5-mini-instruct Phi-3/3.5 -perheessä omaa vahvat koodin ymmärrys- ja generointikyvyt, ja se on etulyöntiasemassa verrattuna Gemma-2-9b:hen ja Mistral-Nemo-12B-instruct-2407:ään.
+Tiedämme, että Phi-3/3.5-mini-instruct Phi-3/3.5 -perheessä omaa vahvat koodin ymmärrys- ja generointikyvyt, ja se on edellä Gemma-2-9b:tä sekä Mistral-Nemo-12B-instruct-2407:ää.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.fi.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.fi.png)
 
 Uusimmat GitHub-mallit tarjoavat jo pääsyn Phi-3.5-mini-instruct (128k) ja Phi-3.5-vision-instruct (128k) malleihin. Kehittäjät voivat käyttää niitä OpenAI SDK:n, Azure AI Inference SDK:n ja REST API:n kautta.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.fi.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.fi.png)
 
-***Note: *** Suositellaan käyttää Azure AI Inference SDK:ta tässä, koska sen avulla vaihto Azure Model Catalogin kanssa tuotantoympäristössä toimii paremmin.
+***Note:*** Suositellaan käyttämään Azure AI Inference SDK:ta, koska se mahdollistaa paremman vaihdon Azure Model Catalogin kanssa tuotantoympäristössä.
 
 Seuraavassa on **Phi-3.5-mini-instruct (128k)** ja **Phi-3.5-vision-instruct (128k)** mallien tulokset koodin generointitilanteessa GitHub-malleihin yhdistämisen jälkeen, sekä valmistautuminen seuraaviin esimerkkeihin.
 
@@ -32,29 +32,29 @@ Seuraavassa on **Phi-3.5-mini-instruct (128k)** ja **Phi-3.5-vision-instruct (12
 
 ## **Tietoa GitHub Copilot Chat Agentista**
 
-GitHub Copilot Chat Agent pystyy suorittamaan erilaisia tehtäviä eri projektiskenaarioissa koodin pohjalta. Järjestelmässä on neljä agenttia: workspace, github, terminal, vscode
+GitHub Copilot Chat Agent pystyy suorittamaan erilaisia tehtäviä eri projektitilanteissa koodin pohjalta. Järjestelmässä on neljä agenttia: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.fi.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.fi.png)
 
-Lisäämällä agentin nimen eteen ‘@’, voit nopeasti suorittaa vastaavan tehtävän. Yrityksille, jos lisäät oman liiketoimintaan liittyvän sisällön, kuten vaatimukset, koodauksen, testausmäärittelyt ja julkaisut, voit saada tehokkaampia yrityksen yksityisiä toimintoja GitHub Copilotin pohjalta.
+Lisäämällä agentin nimen eteen ‘@’ voit nopeasti suorittaa vastaavan tehtävän. Yrityksille, jos lisäät omaan liiketoimintaan liittyvää sisältöä kuten vaatimuksia, koodausta, testausmäärittelyjä ja julkaisua, voit saada tehokkaampia yrityksen yksityisiä toimintoja GitHub Copilotin pohjalta.
 
-Visual Studio Code Chat Agent on nyt virallisesti julkaissut API:nsa, mikä mahdollistaa yrityksille tai yrityskehittäjille agenttien kehittämisen eri ohjelmisto-liiketoimintaekosysteemien pohjalta. Visual Studio Code Extension Development -kehitysmenetelmän avulla pääset helposti käsiksi Visual Studio Code Chat Agentin API:n rajapintaan. Voimme kehittää tämän prosessin pohjalta.
+Visual Studio Code Chat Agent on nyt virallisesti julkaissut API:nsa, joka mahdollistaa yrityksille tai yrityskehittäjille agenttien kehittämisen eri ohjelmistoliiketoiminnan ekosysteemien pohjalta. Visual Studio Code Extension Development -kehitystavan avulla pääset helposti käsiksi Visual Studio Code Chat Agent API:n rajapintaan. Voimme kehittää tämän prosessin pohjalta.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.fi.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.fi.png)
 
-Kehitysskenaariossa voidaan tukea kolmannen osapuolen mallien API:iden käyttöä (kuten GitHub Models, Azure Model Catalog ja itse rakennetut palvelut avoimen lähdekoodin mallien pohjalta) ja myös käyttää GitHub Copilotin tarjoamia gpt-35-turbo, gpt-4 ja gpt-4o malleja.
+Kehitystilanne tukee kolmannen osapuolen mallien API-pääsyä (kuten GitHub Models, Azure Model Catalog ja itse rakennettavat palvelut avoimen lähdekoodin mallien pohjalta) ja voi myös käyttää GitHub Copilotin tarjoamia gpt-35-turbo, gpt-4 ja gpt-4o malleja.
 
 ## **Lisää Agentti @phicoding Phi-3.5:n pohjalta**
 
-Yritämme integroida Phi-3.5:n ohjelmointikyvyt suorittaaksemme koodin kirjoittamista, kuvan perusteella koodin generointia ja muita tehtäviä. Valmistamme Phi-3.5:n ympärille rakennetun agentin - @PHI, tässä joitakin toimintoja:
+Yritämme yhdistää Phi-3.5:n ohjelmointikyvyt koodin kirjoittamiseen, kuvan generointikoodiin ja muihin tehtäviin. Täydellinen Phi-3.5:n ympärille rakennettu Agentti - @PHI, tässä joitakin toimintoja:
 
-1. Luo itsensä esittely GPT-4o:n avulla, jonka tarjoaa GitHub Copilot komennolla **@phicoding /help**
+1. Luo itseesittely GPT-4o:n pohjalta, jonka tarjoaa GitHub Copilot komennolla **@phicoding /help**
 
-2. Generoi koodia eri ohjelmointikielille käyttäen **Phi-3.5-mini-instruct (128k)** mallia komennolla **@phicoding /gen**
+2. Luo koodia eri ohjelmointikielille **Phi-3.5-mini-instruct (128k)** pohjalta komennolla **@phicoding /gen**
 
-3. Generoi koodia kuvan perusteella ja täydentää kuvia käyttäen **Phi-3.5-vision-instruct (128k)** mallia komennolla **@phicoding /image**
+3. Luo koodia **Phi-3.5-vision-instruct (128k)** ja kuvan täydentämisen pohjalta komennolla **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.fi.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.fi.png)
 
 ## **Liittyvät vaiheet**
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. Avaa luotu projekti ja muokkaa package.json -tiedostoa. Tässä ovat liittyvät ohjeet ja asetukset sekä GitHub Models -asetukset. Huomaa, että sinun täytyy lisätä oma GitHub Models -token tähän.
+3. Avaa luotu projekti ja muokkaa package.json-tiedostoa. Tässä ovat liittyvät ohjeet ja asetukset sekä GitHub Models -asetukset. Huomaa, että sinun tulee lisätä GitHub Models -token tähän.
 
 ```json
 
@@ -360,33 +360,33 @@ export function deactivate() {}
 
 ```
 
-6. Suoritus
+6. Käynnistä
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.fi.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.fi.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.fi.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.fi.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.fi.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.fi.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.fi.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.fi.png)
 
-Voit ladata esimerkkikoodin: [klikkaa tästä](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Voit ladata esimerkkikoodin: [klikkaa](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **Resurssit**
 
 1. Rekisteröidy GitHub Models -palveluun [https://gh.io/models](https://gh.io/models)
 
-2. Opettele Visual Studio Code Extension Development [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. Opi Visual Studio Code Extension Development [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. Tutustu Visual Studio Code Copilot Chat API:iin [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. Tutustu Visual Studio Code Copilot Chat API:in [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

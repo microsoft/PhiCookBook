@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-07-09T20:15:22+00:00",
+  "translation_date": "2025-07-16T15:44:58+00:00",
   "source_file": "code/03.Finetuning/olive-lab/readme.md",
   "language_code": "en"
 }
@@ -27,13 +27,13 @@ By the end of this lab, you will be able to use OLIVE to:
 
 ### What is Olive
 
-Olive (*O*NNX *live*) is a model optimization toolkit with a CLI that enables you to deliver models for the ONNX runtime +++https://onnxruntime.ai+++ with improved quality and performance.
+Olive (*O*NNX *live*) is a model optimization toolkit with a CLI that enables you to deploy models for the ONNX runtime +++https://onnxruntime.ai+++ with improved quality and performance.
 
-![Olive Flow](../../../../../code/03.Finetuning/olive-lab/images/olive-flow.png)
+![Olive Flow](../../../../../translated_images/olive-flow.a47985655a756dcba73521511ea42eef359509a3a33cbd4b9ac04ba433287b80.en.png)
 
 The input to Olive is usually a PyTorch or Hugging Face model, and the output is an optimized ONNX model that runs on a device (deployment target) using the ONNX runtime. Olive optimizes the model for the deployment target’s AI accelerator (NPU, GPU, CPU) provided by hardware vendors like Qualcomm, AMD, Nvidia, or Intel.
 
-Olive runs a *workflow*, which is an ordered sequence of individual model optimization tasks called *passes* — examples include model compression, graph capture, quantization, and graph optimization. Each pass has parameters that can be tuned to achieve the best metrics, such as accuracy and latency, which are evaluated by the corresponding evaluator. Olive uses a search strategy with a search algorithm to auto-tune each pass individually or a set of passes together.
+Olive runs a *workflow*, which is an ordered sequence of individual model optimization tasks called *passes* — examples include model compression, graph capture, quantization, and graph optimization. Each pass has parameters that can be tuned to achieve the best metrics, such as accuracy and latency, which are evaluated by the corresponding evaluator. Olive uses a search strategy with an algorithm to auto-tune each pass individually or a set of passes together.
 
 #### Benefits of Olive
 
@@ -99,7 +99,7 @@ az extension add -n ml
 ```
 
 > [!NOTE]
-> It will take about 5 minutes to install all dependencies.
+> It will take about 5 minutes to install all the dependencies.
 
 In this lab, you will download and upload models to the Azure AI Model catalog. To access the model catalog, you need to log in to Azure using:
 
@@ -112,7 +112,7 @@ az login
 
 ### Step 4: Execute Olive commands 
 
-Open a terminal window in VS Code on your Azure AI Compute Instance (tip: **Ctrl+J**) and ensure the `olive-ai` conda environment is activated:
+Open a terminal window in VS Code on your Azure AI Compute Instance (tip: **Ctrl+J**) and make sure the `olive-ai` conda environment is activated:
 
 ```bash
 conda activate olive-ai
@@ -120,7 +120,7 @@ conda activate olive-ai
 
 Next, run the following Olive commands in the command line.
 
-1. **Inspect the data:** In this example, you will fine-tune the Phi-3.5-Mini model to specialize it in answering travel-related questions. The code below displays the first few records of the dataset, which are in JSON lines format:
+1. **Inspect the data:** In this example, you will fine-tune the Phi-3.5-Mini model to specialize it in answering travel-related questions. The code below shows the first few records of the dataset, which are in JSON lines format:
 
     ```bash
     head data/data_sample_travel.jsonl
@@ -137,11 +137,11 @@ Next, run the following Olive commands in the command line.
        --log_level 1
     ```
 
-    It takes about **8 minutes** to complete the AWQ quantization, which will **reduce the model size from ~7.5GB to ~2.5GB**.
+    The AWQ quantization takes about **8 minutes** to complete and will **reduce the model size from ~7.5GB to ~2.5GB**.
 
-    In this lab, we show how to input models from Hugging Face (for example: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example: `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
+    In this lab, we show how to input models from Hugging Face (for example: `microsoft/Phi-3.5-mini-instruct`). However, Olive also supports inputting models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example: `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
 
-3. **Train the model:** Next, the `olive finetune` command fine-tunes the quantized model. Quantizing the model *before* fine-tuning rather than after results in better accuracy because the fine-tuning process recovers some of the loss caused by quantization.
+3. **Train the model:** Next, the `olive finetune` command fine-tunes the quantized model. Quantizing the model *before* fine-tuning rather than after results in better accuracy because fine-tuning recovers some of the accuracy lost during quantization.
 
     ```bash
     olive finetune \
@@ -155,9 +155,9 @@ Next, run the following Olive commands in the command line.
         --log_level 1
     ```
 
-    It takes about **6 minutes** to complete fine-tuning (with 100 steps).
+    Fine-tuning takes about **6 minutes** to complete (with 100 steps).
 
-4. **Optimize:** After training, optimize the model using Olive’s `auto-opt` command, which captures the ONNX graph and automatically performs several optimizations to improve model performance on CPU by compressing the model and applying fusions. Note that you can also optimize for other devices such as NPU or GPU by updating the `--device` and `--provider` arguments — but for this lab, we will use CPU.
+4. **Optimize:** After training, optimize the model using Olive’s `auto-opt` command, which captures the ONNX graph and automatically applies several optimizations to improve model performance on CPU by compressing the model and performing fusions. Note that you can also optimize for other devices such as NPU or GPU by updating the `--device` and `--provider` arguments — but for this lab, we will use CPU.
 
     ```bash
     olive auto-opt \
@@ -170,7 +170,7 @@ Next, run the following Olive commands in the command line.
        --log_level 1
     ```
 
-    It takes about **5 minutes** to complete the optimization.
+    Optimization takes about **5 minutes** to complete.
 
 ### Step 5: Model inference quick test
 

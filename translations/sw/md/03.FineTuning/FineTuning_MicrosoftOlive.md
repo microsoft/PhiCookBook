@@ -2,66 +2,66 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:54:17+00:00",
+  "translation_date": "2025-07-17T06:49:30+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "sw"
 }
 -->
-# **Kufinyanisha Phi-3 na Microsoft Olive**
+# **Kurekebisha Phi-3 kwa Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) ni chombo rahisi kinachojali vifaa cha kuboresha mifano kinachojumuisha mbinu bora za sekta katika kusindika mifano, kuboresha, na kuandaa.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) ni chombo rahisi cha kuboresha modeli kinachojali vifaa ambacho huunganisha mbinu bora za sekta katika usimbuaji, uboreshaji, na mkusanyiko wa modeli.
 
-Imeundwa kurahisisha mchakato wa kuboresha mifano ya mashine ya kujifunza, kuhakikisha inatumia vifaa maalum kwa ufanisi zaidi.
+Imeundwa ili kurahisisha mchakato wa kuboresha modeli za mashine za kujifunza, kuhakikisha zinatumia kwa ufanisi zaidi miundo maalum ya vifaa.
 
-Iwe unafanya kazi kwenye programu za wingu au vifaa vya edge, Olive inakuwezesha kuboresha mifano yako kwa urahisi na ufanisi.
+Iwe unafanya kazi kwenye programu za wingu au vifaa vya edge, Olive inakuwezesha kuboresha modeli zako kwa urahisi na kwa ufanisi.
 
 ## Sifa Muhimu:
-- Olive hukusanya na kuendesha kiotomatiki mbinu za kuboresha kwa ajili ya vifaa unavyotaka.
-- Hakuna mbinu moja inayofaa kwa kila hali, hivyo Olive inaruhusu upanuzi kwa wataalamu wa sekta kuingiza mbinu zao za ubunifu.
+- Olive hukusanya na kuendesha mbinu za uboreshaji kwa malengo maalum ya vifaa.
+- Hakuna mbinu moja ya uboreshaji inayofaa kwa kila hali, hivyo Olive huruhusu upanuzi kwa kuwapa wataalamu wa sekta uwezo wa kuingiza ubunifu wao wa uboreshaji.
 
 ## Punguza Juhudi za Uhandisi:
-- Waendelezaji mara nyingi wanahitaji kujifunza na kutumia zana nyingi za wauzaji wa vifaa kutayarisha na kuboresha mifano iliyofunzwa kwa ajili ya utekelezaji.
-- Olive hurahisisha uzoefu huu kwa kuendesha kiotomatiki mbinu za kuboresha kwa vifaa vinavyotakiwa.
+- Waendelezaji mara nyingi wanahitaji kujifunza na kutumia zana mbalimbali za wauzaji wa vifaa ili kuandaa na kuboresha modeli zilizofunzwa kwa ajili ya utekelezaji.
+- Olive hurahisisha uzoefu huu kwa kuendesha mbinu za uboreshaji kwa vifaa vinavyotakiwa.
 
-## Suluhisho Tayari la Uboreshaji wa Kilele hadi Kilele:
+## Suluhisho Tayari la Uboreshaji wa Mwisho-mwisho:
 
-Kwa kuunganisha na kusanifu mbinu mbalimbali, Olive hutoa suluhisho moja kwa moja la uboreshaji wa mwisho hadi mwisho.
-Inazingatia vikwazo kama usahihi na ucheleweshaji wakati wa kuboresha mifano.
+Kwa kuunganisha na kurekebisha mbinu zilizojumuishwa, Olive hutoa suluhisho moja kwa uboreshaji wa mwisho-mwisho.
+Inazingatia vizingiti kama usahihi na ucheleweshaji wakati wa kuboresha modeli.
 
-## Kutumia Microsoft Olive kufinyanisha
+## Kutumia Microsoft Olive kwa kurekebisha
 
-Microsoft Olive ni chombo rahisi sana cha chanzo huria cha kuboresha mifano kinachoweza kufunika kufinyanisha na marejeleo katika uwanja wa akili bandia ya kizazi. Inahitaji tu usanidi rahisi, ikichanganywa na matumizi ya mifano midogo ya lugha ya chanzo huria na mazingira yanayohusiana ya runtime (AzureML / GPU ya ndani, CPU, DirectML), unaweza kumaliza kufinyanisha au marejeleo ya mfano kupitia uboreshaji wa kiotomatiki, na kupata mfano bora wa kupeleka kwenye wingu au vifaa vya edge. Inaruhusu makampuni kujenga mifano yao ya sekta mahali pa kazi na kwenye wingu.
+Microsoft Olive ni chombo rahisi sana cha chanzo huria cha kuboresha modeli kinachoweza kufunika kurekebisha na marejeleo katika uwanja wa akili bandia ya kizazi. Inahitaji tu usanidi rahisi, ikichanganywa na matumizi ya modeli ndogo za lugha za chanzo huria na mazingira yanayohusiana ya utekelezaji (AzureML / GPU ya ndani, CPU, DirectML), unaweza kukamilisha kurekebisha au marejeleo ya modeli kupitia uboreshaji wa moja kwa moja, na kupata modeli bora ya kupeleka kwenye wingu au kwenye vifaa vya edge. Inaruhusu makampuni kujenga modeli zao za sekta mahususi ndani ya makazi na kwenye wingu.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.sw.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.sw.png)
 
-## Kufinyanisha Phi-3 na Microsoft Olive
+## Kurekebisha Phi-3 kwa Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.sw.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.sw.png)
 
 ## Mfano wa Msimbo wa Phi-3 Olive na Mfano
-Katika mfano huu utatumia Olive kufanya:
+Katika mfano huu utatumia Olive ili:
 
-- Kufinyanisha kiambatanisho cha LoRA ili kuainisha misemo kuwa Huzuni, Furaha, Hofu, Mshangao.
-- Kuunganisha uzito wa kiambatanisho kwenye mfano msingi.
-- Kuboresha na Kubadilisha mfano kuwa int4.
+- Kurekebisha kiambatisho cha LoRA kwa ajili ya kuainisha misemo kuwa Huzuni, Furaha, Hofu, Mshangao.
+- Kuunganisha uzito wa kiambatisho kwenye modeli msingi.
+- Kuboresha na Kupanua modeli hadi int4.
 
 [Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
 
 ### Sanidi Microsoft Olive
 
-Usanidi wa Microsoft Olive ni rahisi sana, na pia unaweza kusanikishwa kwa CPU, GPU, DirectML, na Azure ML
+Usanidi wa Microsoft Olive ni rahisi sana, na pia unaweza kusakinishwa kwa CPU, GPU, DirectML, na Azure ML
 
 ```bash
 pip install olive-ai
 ```
 
-Ikiwa unataka kuendesha mfano wa ONNX kwa CPU, unaweza tumia
+Ikiwa unataka kuendesha modeli ya ONNX kwa CPU, unaweza kutumia
 
 ```bash
 pip install olive-ai[cpu]
 ```
 
-Ikiwa unataka kuendesha mfano wa ONNX kwa GPU, unaweza tumia
+Ikiwa unataka kuendesha modeli ya ONNX kwa GPU, unaweza kutumia
 
 ```python
 pip install olive-ai[gpu]
@@ -73,20 +73,20 @@ Ikiwa unataka kutumia Azure ML, tumia
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
-**Notice**  
+**Kumbuka**
 Mahitaji ya OS: Ubuntu 20.04 / 22.04
 
 ### **Config.json ya Microsoft Olive**
 
-Baada ya usakinishaji, unaweza kusanidi mipangilio tofauti maalum ya mfano kupitia faili la Config, ikiwa ni pamoja na data, kompyuta, mafunzo, utekelezaji, na uzalishaji wa mfano.
+Baada ya usakinishaji, unaweza kusanidi mipangilio tofauti maalum ya modeli kupitia faili la Config, ikiwa ni pamoja na data, kompyuta, mafunzo, utekelezaji, na uzalishaji wa modeli.
 
 **1. Data**
 
-Katika Microsoft Olive, mafunzo yanaweza kufanywa kwa data ya ndani na data ya wingu, na inaweza kusanidiwa katika mipangilio.
+Katika Microsoft Olive, mafunzo kwa data ya ndani na data ya wingu yanaweza kuungwa mkono, na yanaweza kusanidiwa katika mipangilio.
 
 *Mipangilio ya data ya ndani*
 
-Unaweza kuweka seti ya data inayohitajika kufunzwa kwa kufinyanisha, kawaida katika muundo wa json, na kuiendana na kiolezo cha data. Hii inahitaji kurekebishwa kulingana na mahitaji ya mfano (kwa mfano, kuifanya iwe muundo unaotakiwa na Microsoft Phi-3-mini. Ikiwa una mifano mingine, tafadhali rejea muundo unaohitajika wa kufinyanisha mifano mingine kwa usindikaji)
+Unaweza kwa urahisi kuweka seti ya data inayohitaji kufunzwa kwa ajili ya kurekebisha, kawaida katika muundo wa json, na kuibadilisha kwa kutumia kiolezo cha data. Hii inahitaji kurekebishwa kulingana na mahitaji ya modeli (kwa mfano, kuibadilisha kwa muundo unaotakiwa na Microsoft Phi-3-mini. Ikiwa una modeli nyingine, tafadhali rejelea muundo unaohitajika wa kurekebisha modeli nyingine kwa usindikaji)
 
 ```json
 
@@ -121,7 +121,7 @@ Unaweza kuweka seti ya data inayohitajika kufunzwa kwa kufinyanisha, kawaida kat
 
 **Mipangilio ya chanzo cha data ya wingu**
 
-Kwa kuunganisha duka la data la Azure AI Studio/Azure Machine Learning Service kuunganisha data kwenye wingu, unaweza kuchagua kuleta vyanzo tofauti vya data kwenye Azure AI Studio/Azure Machine Learning Service kupitia Microsoft Fabric na Azure Data kama msaada wa kufinyanisha data.
+Kwa kuunganisha hifadhi ya data ya Azure AI Studio/Azure Machine Learning Service kuunganisha data iliyoko kwenye wingu, unaweza kuchagua kuleta vyanzo tofauti vya data kwenye Azure AI Studio/Azure Machine Learning Service kupitia Microsoft Fabric na Azure Data kama msaada wa kurekebisha data.
 
 ```json
 
@@ -168,7 +168,7 @@ Kwa kuunganisha duka la data la Azure AI Studio/Azure Machine Learning Service k
 
 **2. Mipangilio ya kompyuta**
 
-Ikiwa unahitaji kuwa ndani, unaweza kutumia rasilimali za data za ndani moja kwa moja. Ikiwa unahitaji kutumia rasilimali za Azure AI Studio / Azure Machine Learning Service, unahitaji kusanidi vigezo husika vya Azure, jina la nguvu ya kompyuta, n.k.
+Ikiwa unahitaji kuwa wa ndani, unaweza kutumia rasilimali za data za ndani moja kwa moja. Ikiwa unahitaji kutumia rasilimali za Azure AI Studio / Azure Machine Learning Service, unahitaji kusanidi vigezo husika vya Azure, jina la nguvu ya kompyuta, n.k.
 
 ```json
 
@@ -199,9 +199,9 @@ Ikiwa unahitaji kuwa ndani, unaweza kutumia rasilimali za data za ndani moja kwa
     },
 ```
 
-***Notice***
+***Kumbuka***
 
-Kwa kuwa inatekelezwa kupitia kontena kwenye Azure AI Studio/Azure Machine Learning Service, mazingira yanayohitajika yanapaswa kusanidiwa. Hii inafanywa katika mazingira ya conda.yaml.
+Kwa kuwa inatekelezwa kupitia kontena kwenye Azure AI Studio/Azure Machine Learning Service, mazingira yanayohitajika yanahitaji kusanidiwa. Hii inafanywa katika mazingira ya conda.yaml.
 
 ```yaml
 
@@ -236,9 +236,9 @@ dependencies:
 
 **3. Chagua SLM yako**
 
-Unaweza kutumia mfano moja kwa moja kutoka Hugging face, au unaweza kuunganisha moja kwa moja na Katalogi ya Mfano ya Azure AI Studio / Azure Machine Learning kuchagua mfano wa kutumia. Katika mfano wa msimbo hapa chini tutatumia Microsoft Phi-3-mini kama mfano.
+Unaweza kutumia modeli moja kwa moja kutoka Hugging face, au unaweza kuunganisha moja kwa moja na Katalogi ya Modeli ya Azure AI Studio / Azure Machine Learning kuchagua modeli ya kutumia. Katika mfano wa msimbo hapa chini tutatumia Microsoft Phi-3-mini kama mfano.
 
-Ikiwa una mfano ndani ya kompyuta, unaweza tumia njia hii
+Ikiwa una modeli kwa ndani, unaweza kutumia njia hii
 
 ```json
 
@@ -256,7 +256,7 @@ Ikiwa una mfano ndani ya kompyuta, unaweza tumia njia hii
     },
 ```
 
-Ikiwa unataka kutumia mfano kutoka Azure AI Studio / Azure Machine Learning Service, unaweza tumia njia hii
+Ikiwa unataka kutumia modeli kutoka Azure AI Studio / Azure Machine Learning Service, unaweza kutumia njia hii
 
 ```json
 
@@ -283,16 +283,16 @@ Ikiwa unataka kutumia mfano kutoka Azure AI Studio / Azure Machine Learning Serv
     },
 ```
 
-**Notice:**  
-Tunahitaji kuunganishwa na Azure AI Studio / Azure Machine Learning Service, hivyo wakati wa kusanidi mfano, tafadhali rejea nambari ya toleo na majina yanayohusiana.
+**Kumbuka:**
+Tunahitaji kuunganishwa na Azure AI Studio / Azure Machine Learning Service, hivyo wakati wa kusanidi modeli, tafadhali rejelea nambari ya toleo na majina yanayohusiana.
 
-Mifano yote kwenye Azure inapaswa kuwekwa kuwa PyTorch.MLflow
+Modeli zote kwenye Azure zinahitaji kuwekwa kuwa PyTorch.MLflow
 
-Unahitaji kuwa na akaunti ya Hugging face na kufunga funguo kwa Thamani ya Funguo ya Azure AI Studio / Azure Machine Learning
+Unahitaji kuwa na akaunti ya Hugging face na kufunga ufunguo kwenye Thamani ya Key ya Azure AI Studio / Azure Machine Learning
 
-**4. Algorithm**
+**4. Algoriti**
 
-Microsoft Olive imefunga vizuri algorithms za kufinyanisha Lora na QLora. Unachohitaji ni kusanidi vigezo vinavyohusiana. Hapa nitachukua QLora kama mfano.
+Microsoft Olive inafunga vizuri algoriti za kurekebisha za Lora na QLora. Unachohitaji kusanidi ni baadhi ya vigezo husika. Hapa nitachukua QLora kama mfano.
 
 ```json
         "lora": {
@@ -329,12 +329,12 @@ Microsoft Olive imefunga vizuri algorithms za kufinyanisha Lora na QLora. Unacho
         },
 ```
 
-Ikiwa unataka kubadilisha kuwa quantization, tawi kuu la Microsoft Olive tayari linaunga mkono njia ya onnxruntime-genai. Unaweza kuisanidi kulingana na mahitaji yako:
+Ikiwa unataka mabadiliko ya upunguzaji, tawi kuu la Microsoft Olive tayari linaunga mkono njia ya onnxruntime-genai. Unaweza kuisanidi kulingana na mahitaji yako:
 
-1. Unganisha uzito wa kiambatanisho kwenye mfano msingi  
-2. Badilisha mfano kuwa mfano wa onnx kwa usahihi unaotakiwa kwa kutumia ModelBuilder
+1. Unganisha uzito wa kiambatisho kwenye modeli msingi
+2. Badilisha modeli kuwa modeli ya onnx yenye usahihi unaohitajika kwa ModelBuilder
 
-kama vile kubadilisha kuwa quantized INT4
+kama vile kubadilisha kuwa INT4 iliyopunguzwa
 
 ```json
 
@@ -349,10 +349,10 @@ kama vile kubadilisha kuwa quantized INT4
         }
 ```
 
-**Notice**  
-- Ikiwa unatumia QLoRA, ubadilishaji wa quantization wa ONNXRuntime-genai bado hauungi mkono kwa sasa.
+**Kumbuka**
+- Ikiwa unatumia QLoRA, mabadiliko ya upunguzaji ya ONNXRuntime-genai kwa sasa hayasaidii.
 
-- Inapaswa kuangaziwa hapa kuwa unaweza kusanidi hatua hizo kulingana na mahitaji yako. Haina lazima kusanidi hatua zote hapo juu kikamilifu. Kulingana na mahitaji yako, unaweza kutumia hatua za algorithm moja kwa moja bila kufinyanisha. Mwisho unahitaji kusanidi engines zinazohusiana
+- Inapaswa kuangaziwa hapa kwamba unaweza kusanidi hatua zilizo juu kulingana na mahitaji yako binafsi. Sio lazima kusanidi hatua zote hapo juu kikamilifu. Kulingana na mahitaji yako, unaweza kutumia hatua za algoriti moja kwa moja bila kurekebisha. Mwishowe unahitaji kusanidi injini husika
 
 ```json
 
@@ -367,7 +367,7 @@ kama vile kubadilisha kuwa quantized INT4
     }
 ```
 
-**5. Kufinyanisha kumekamilika**
+**5. Kamilisha kurekebisha**
 
 Katika mstari wa amri, tekeleza katika saraka ya olive-config.json
 
@@ -375,5 +375,5 @@ Katika mstari wa amri, tekeleza katika saraka ya olive-config.json
 olive run --config olive-config.json  
 ```
 
-**Kasi ya Majibu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu na ya binadamu inashauriwa. Hatuhusiki kwa maelewano au tafsiri potofu zitakazotokea kutokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

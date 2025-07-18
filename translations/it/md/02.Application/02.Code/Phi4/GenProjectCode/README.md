@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:50:03+00:00",
+  "translation_date": "2025-07-17T04:45:07+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "it"
 }
 -->
-## **Utilizzo di Phi-4-mini-mm per generare codice**
+## **Usare Phi-4-mini-mm per generare codice**
 
-Phi-4-mini continua le potenti capacità di codifica della famiglia Phi. Puoi usare Prompt per fare domande relative al coding. Naturalmente, dopo aver aggiunto una forte capacità di ragionamento, ha capacità di codifica ancora più avanzate, come generare progetti in base ai requisiti. Ad esempio, generare progetti secondo le specifiche, come:
+Phi-4-mini continua le potenti capacità di coding della famiglia Phi. Puoi usare Prompt per fare domande relative al coding. Naturalmente, dopo aver aggiunto una forte capacità di ragionamento, ha capacità di coding ancora più avanzate, come generare progetti in base ai requisiti. Ad esempio, generare progetti secondo le specifiche, come:
 
 ### **Requisito**
 
-Crea un'app per il carrello della spesa
+Crea un'app Carrello della Spesa
 
-- Crea un API Rest con i seguenti metodi:
+- Crea un'API Rest con i seguenti metodi:
     - Ottieni una lista di birre usando pagina, offset e limite.
-    - Ottieni i dettagli della birra tramite id.
+    - Ottieni i dettagli di una birra tramite id.
     - Cerca birre per nome, descrizione, slogan, abbinamenti con cibo e prezzo.
 - Crea una lista di prodotti nella pagina principale.
     - Crea una barra di ricerca per filtrare i prodotti.
-    - Naviga alla pagina di descrizione quando l’utente clicca su un prodotto.
+    - Naviga alla pagina di descrizione quando l'utente clicca su un prodotto.
 - (Opzionale) Slicer per filtrare i prodotti per prezzo.
 - Crea un carrello della spesa.
     - Aggiungi prodotti al carrello.
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l'accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale umana. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall'uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bd0afcb627d5754038537758315cbad7",
-  "translation_date": "2025-05-09T05:25:22+00:00",
+  "translation_date": "2025-07-16T17:25:27+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/CHANGELOG.md",
   "language_code": "da"
 }
 -->
 # Change Log
 
-Alle væsentlige ændringer i "phiext" udvidelsen vil blive dokumenteret i denne fil.
+Alle væsentlige ændringer til "phiext"-udvidelsen vil blive dokumenteret i denne fil.
 
 Se [Keep a Changelog](http://keepachangelog.com/) for anbefalinger til, hvordan denne fil kan struktureres.
 

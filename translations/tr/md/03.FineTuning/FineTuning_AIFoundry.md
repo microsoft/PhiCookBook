@@ -2,56 +2,56 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:30:52+00:00",
+  "translation_date": "2025-07-17T06:04:54+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "tr"
 }
 -->
-# Azure AI Foundry ile Phi-3 İnce Ayarı
+# Azure AI Foundry ile Phi-3 Modelini İnce Ayarlama
 
-Microsoft’un Phi-3 Mini dil modelini Azure AI Foundry kullanarak nasıl ince ayar yapabileceğimizi keşfedelim. İnce ayar, Phi-3 Mini’yi belirli görevlere uyarlamanıza olanak tanır ve böylece modeli daha güçlü ve bağlama duyarlı hale getirir.
+Microsoft’un Phi-3 Mini dil modelini Azure AI Foundry kullanarak nasıl ince ayarlayabileceğimizi keşfedelim. İnce ayar, Phi-3 Mini’yi belirli görevlere uyarlamanıza olanak tanır ve böylece modeli daha güçlü ve bağlama duyarlı hale getirir.
 
-## Dikkate Alınması Gerekenler
+## Dikkat Edilmesi Gerekenler
 
-- **Yetenekler:** Hangi modeller ince ayar yapılabilir? Temel model ne tür görevler için ince ayarlanabilir?
+- **Yetenekler:** Hangi modeller ince ayar yapılabilir? Temel model hangi görevler için ince ayarlanabilir?
 - **Maliyet:** İnce ayar için fiyatlandırma modeli nedir?
 - **Özelleştirilebilirlik:** Temel modeli ne kadar ve nasıl değiştirebilirim?
-- **Kolaylık:** İnce ayar nasıl gerçekleşir – özel kod yazmam gerekir mi? Kendi hesaplama kaynaklarımı getirmem gerekir mi?
-- **Güvenlik:** İnce ayarlanmış modellerin güvenlik riskleri olduğu biliniyor – istenmeyen zararlara karşı koruma önlemleri var mı?
+- **Kullanım Kolaylığı:** İnce ayar nasıl gerçekleşir – özel kod yazmam gerekir mi? Kendi hesaplama kaynaklarımı getirmem gerekir mi?
+- **Güvenlik:** İnce ayarlanmış modellerin güvenlik riskleri olduğu biliniyor – istenmeyen zararlara karşı koruma için herhangi bir önlem var mı?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.tr.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.tr.png)
 
 ## İnce Ayar İçin Hazırlık
 
 ### Ön Koşullar
 
 > [!NOTE]
-> Phi-3 ailesi modelleri için, kullandıkça öde modeli ince ayar seçeneği yalnızca **East US 2** bölgelerinde oluşturulan hub’lar ile kullanılabilir.
+> Phi-3 ailesi modeller için, kullan-at modeliyle ince ayar yalnızca **East US 2** bölgelerinde oluşturulan hub’lar için geçerlidir.
 
 - Bir Azure aboneliği. Azure aboneliğiniz yoksa, başlamak için bir [ücretli Azure hesabı](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) oluşturun.
 
 - Bir [AI Foundry projesi](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure rol tabanlı erişim kontrolleri (Azure RBAC), Azure AI Foundry’deki işlemlere erişim sağlamak için kullanılır. Bu makaledeki adımları gerçekleştirmek için kullanıcı hesabınızın kaynak grubunda __Azure AI Developer rolü__ atanmış olmalıdır.
+- Azure rol tabanlı erişim kontrolleri (Azure RBAC), Azure AI Foundry’deki işlemlere erişim vermek için kullanılır. Bu makaledeki adımları gerçekleştirmek için kullanıcı hesabınıza kaynak grubunda __Azure AI Developer rolü__ atanmış olmalıdır.
 
 ### Abonelik sağlayıcı kaydı
 
 Aboneliğin `Microsoft.Network` kaynak sağlayıcısına kayıtlı olduğunu doğrulayın.
 
 1. [Azure portalına](https://portal.azure.com) giriş yapın.
-1. Sol menüden **Subscriptions**’ı seçin.
+1. Sol menüden **Subscriptions** (Abonelikler) seçeneğini seçin.
 1. Kullanmak istediğiniz aboneliği seçin.
-1. Sol menüden **AI project settings** > **Resource providers**’ı seçin.
-1. Listede **Microsoft.Network**’ün olduğundan emin olun. Yoksa ekleyin.
+1. Sol menüden **AI project settings** > **Resource providers** seçeneğini seçin.
+1. **Microsoft.Network** kaynak sağlayıcılar listesinde varsa onaylayın, yoksa ekleyin.
 
 ### Veri hazırlığı
 
-Modelinizi ince ayar için eğitmek ve doğrulamak üzere verilerinizi hazırlayın. Eğitim ve doğrulama veri setleriniz, modelin nasıl performans göstermesini istediğinize dair giriş ve çıkış örneklerinden oluşur.
+Modelinizi ince ayarlamak için eğitim ve doğrulama verilerinizi hazırlayın. Eğitim ve doğrulama veri setleriniz, modelin nasıl performans göstermesini istediğinize dair giriş ve çıkış örneklerinden oluşur.
 
 Tüm eğitim örneklerinizin çıkarım için beklenen formatta olduğundan emin olun. Modelleri etkili şekilde ince ayarlamak için dengeli ve çeşitli bir veri seti kullanın.
 
-Bu, veri dengesini korumak, farklı senaryoları dahil etmek ve eğitim verisini zaman içinde gerçek dünya beklentilerine göre düzenli olarak iyileştirmek anlamına gelir; böylece daha doğru ve dengeli model çıktıları elde edilir.
+Bu, veri dengesini korumayı, farklı senaryoları dahil etmeyi ve eğitim verilerini gerçek dünya beklentilerine göre periyodik olarak iyileştirmeyi içerir; böylece daha doğru ve dengeli model yanıtları elde edilir.
 
-Farklı model türleri, farklı eğitim veri formatları gerektirir.
+Farklı model türleri farklı eğitim veri formatları gerektirir.
 
 ### Chat Completion
 
@@ -69,118 +69,118 @@ Desteklenen dosya türü JSON Lines’dır. Dosyalar varsayılan veri deposuna y
 
 ## Azure AI Foundry ile Phi-3 İnce Ayarı
 
-Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince ayar yapmanızı sağlar. İnce ayar, belirli görev ve uygulamalar için özelleştirme ve optimizasyon imkanı sunarak önemli faydalar sağlar. Bu sayede performans artar, maliyetler düşer, gecikme azalır ve çıktılar kişiselleştirilir.
+Azure AI Foundry, büyük dil modellerini kişisel veri setlerinize göre ince ayarlamanıza olanak tanır. İnce ayar, belirli görevler ve uygulamalar için özelleştirme ve optimizasyon sağlayarak önemli faydalar sunar. Bu, geliştirilmiş performans, maliyet etkinliği, azalan gecikme süresi ve kişiselleştirilmiş çıktılar anlamına gelir.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.tr.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.tr.png)
 
 ### Yeni Proje Oluşturma
 
 1. [Azure AI Foundry](https://ai.azure.com) sitesine giriş yapın.
 
-1. Azure AI Foundry’de yeni proje oluşturmak için **+New project** seçeneğini tıklayın.
+1. Azure AI Foundry’da yeni proje oluşturmak için **+New project** seçeneğini tıklayın.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.tr.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.tr.png)
 
-1. Aşağıdaki adımları gerçekleştirin:
+1. Aşağıdaki işlemleri yapın:
 
     - Proje **Hub adı**. Benzersiz bir değer olmalıdır.
     - Kullanılacak **Hub**’ı seçin (gerekirse yenisini oluşturun).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.tr.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.tr.png)
 
-1. Yeni bir hub oluşturmak için şu adımları yapın:
+1. Yeni bir hub oluşturmak için aşağıdaki adımları gerçekleştirin:
 
     - **Hub adı** girin. Benzersiz olmalıdır.
     - Azure **Aboneliğinizi** seçin.
     - Kullanılacak **Kaynak grubunu** seçin (gerekirse yenisini oluşturun).
     - Kullanmak istediğiniz **Konumu** seçin.
-    - Kullanmak istediğiniz **Connect Azure AI Services**’i seçin (gerekirse yenisini oluşturun).
-    - **Connect Azure AI Search** için **Bağlantıyı atla** seçeneğini işaretleyin.
+    - Kullanmak istediğiniz **Azure AI Hizmetlerini Bağla** seçeneğini seçin (gerekirse yenisini oluşturun).
+    - **Azure AI Arama Bağlantısını** **Bağlantıyı atla** olarak seçin.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.tr.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.tr.png)
 
-1. **Next**’i seçin.
-1. **Create a project**’i seçin.
+1. **Next** seçeneğine tıklayın.
+1. **Create a project** seçeneğini seçin.
 
 ### Veri Hazırlığı
 
-İnce ayar yapmadan önce, görevle ilgili bir veri seti toplayın veya oluşturun; örneğin sohbet talimatları, soru-cevap çiftleri veya diğer ilgili metin verileri. Verileri temizleyin ve ön işleme tabi tutun; gürültüyü kaldırın, eksik değerleri yönetin ve metni token’lara ayırın.
+İnce ayar öncesinde, sohbet talimatları, soru-cevap çiftleri veya ilgili diğer metin verileri gibi görevinizle alakalı bir veri seti toplayın veya oluşturun. Bu veriyi temizleyin, eksik değerleri işleyin ve metni token’lara ayırın.
 
 ### Azure AI Foundry’de Phi-3 modellerini ince ayarlama
 
 > [!NOTE]
-> Phi-3 modellerinin ince ayarı şu anda sadece East US 2 bölgesindeki projelerde desteklenmektedir.
+> Phi-3 modellerinin ince ayarı şu anda yalnızca East US 2 bölgesindeki projelerde desteklenmektedir.
 
-1. Sol taraftaki sekmeden **Model catalog**’u seçin.
+1. Sol taraftaki sekmeden **Model catalog** seçeneğini seçin.
 
 1. **Arama çubuğuna** *phi-3* yazın ve kullanmak istediğiniz phi-3 modelini seçin.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.tr.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.tr.png)
 
 1. **Fine-tune** seçeneğini tıklayın.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.tr.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.tr.png)
 
-1. **Fine-tuned model name** girin.
+1. **Fine-tuned model name** (İnce ayarlı model adı) girin.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.tr.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.tr.png)
 
-1. **Next**’i seçin.
+1. **Next** seçeneğine tıklayın.
 
 1. Aşağıdaki işlemleri yapın:
 
-    - **Görev türü** olarak **Chat completion**’ı seçin.
-    - Kullanmak istediğiniz **Eğitim verisini** seçin. Azure AI Foundry verileri üzerinden veya yerel ortamınızdan yükleyebilirsiniz.
+    - **Görev türü** olarak **Chat completion** seçin.
+    - Kullanmak istediğiniz **Eğitim verisini** seçin. Azure AI Foundry veri deposundan veya yerel ortamınızdan yükleyebilirsiniz.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.tr.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.tr.png)
 
-1. **Next**’i seçin.
+1. **Next** seçeneğine tıklayın.
 
-1. Kullanmak istediğiniz **Doğrulama verisini** yükleyin veya **Eğitim verisinin otomatik bölünmesi**’ni seçin.
+1. Kullanmak istediğiniz **Doğrulama verisini** yükleyin veya **Eğitim verisinin otomatik bölünmesi** seçeneğini seçin.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.tr.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.tr.png)
 
-1. **Next**’i seçin.
+1. **Next** seçeneğine tıklayın.
 
 1. Aşağıdaki ayarları yapın:
 
-    - Kullanmak istediğiniz **Batch size multiplier**’ı seçin.
-    - Kullanmak istediğiniz **Learning rate**’i seçin.
-    - Kullanmak istediğiniz **Epoch** sayısını belirleyin.
+    - Kullanmak istediğiniz **Batch size multiplier** (Toplu iş boyutu çarpanı).
+    - Kullanmak istediğiniz **Learning rate** (Öğrenme hızı).
+    - Kullanmak istediğiniz **Epochs** (Eğitim döngüsü sayısı).
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.tr.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.tr.png)
 
-1. İnce ayar işlemini başlatmak için **Submit**’e tıklayın.
+1. İnce ayar işlemini başlatmak için **Submit** seçeneğine tıklayın.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.tr.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.tr.png)
 
-1. Modeliniz ince ayar yapıldıktan sonra durumu **Completed** olarak görüntülenecektir. Artık modeli dağıtabilir ve kendi uygulamanızda, playground’da veya prompt flow’da kullanabilirsiniz. Daha fazla bilgi için bkz. [Azure AI Foundry ile Phi-3 ailesi küçük dil modellerini dağıtma](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Modeliniz ince ayarlandıktan sonra durumu **Completed** olarak gösterilecektir. Artık modeli dağıtabilir ve kendi uygulamanızda, playground’da veya prompt flow’da kullanabilirsiniz. Daha fazla bilgi için bkz. [Azure AI Foundry ile Phi-3 ailesi küçük dil modellerinin dağıtımı](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.tr.png)
-
-> [!NOTE]
-> Phi-3 ince ayarı hakkında daha detaylı bilgi için lütfen [Azure AI Foundry’de Phi-3 modellerini ince ayarlama](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) sayfasını ziyaret edin.
-
-## İnce Ayarlı Modellerinizi Temizleme
-
-İnce ayar yapılmış bir modeli, [Azure AI Foundry](https://ai.azure.com) içindeki ince ayar model listesinden veya model detay sayfasından silebilirsiniz. İnce ayar sayfasından silmek istediğiniz modeli seçin ve ardından Sil butonuna tıklayın.
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.tr.png)
 
 > [!NOTE]
-> Var olan bir dağıtımı olan özel modelleri silemezsiniz. Önce model dağıtımınızı silmeniz gerekir, ardından özel modelinizi silebilirsiniz.
+> Phi-3 ince ayarı hakkında daha ayrıntılı bilgi için lütfen [Azure AI Foundry’de Phi-3 modellerini ince ayarlama](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) sayfasını ziyaret edin.
 
-## Maliyet ve Kota
+## İnce ayarlanmış modellerinizi temizleme
 
-### Hizmet olarak ince ayar yapılmış Phi-3 modelleri için maliyet ve kota değerlendirmeleri
+İnce ayarlanmış bir modeli [Azure AI Foundry](https://ai.azure.com) içindeki ince ayar model listesinden veya model detay sayfasından silebilirsiniz. İnce ayar sayfasından silmek istediğiniz modeli seçin ve ardından Sil düğmesine tıklayın.
 
-Hizmet olarak ince ayar yapılmış Phi modelleri Microsoft tarafından sunulur ve Azure AI Foundry ile entegre edilmiştir. Fiyatlandırmayı [model dağıtımı](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) veya ince ayar sırasında dağıtım sihirbazındaki Fiyatlandırma ve koşullar sekmesinde bulabilirsiniz.
+> [!NOTE]
+> Var olan bir dağıtımı olan özel modeli silemezsiniz. Önce model dağıtımınızı silmeniz gerekir.
 
-## İçerik Filtreleme
+## Maliyet ve kota
 
-Kullandıkça öde modeliyle hizmet olarak dağıtılan modeller, Azure AI Content Safety ile korunur. Gerçek zamanlı uç noktalara dağıtıldığında bu özelliği devre dışı bırakabilirsiniz. Azure AI içerik güvenliği etkin olduğunda, hem prompt hem de tamamlamalar, zararlı içeriklerin tespit ve engellenmesi amacıyla bir sınıflandırma modelleri topluluğundan geçer. İçerik filtreleme sistemi, hem giriş promptlarında hem de çıktı tamamlamalarında potansiyel olarak zararlı içerik kategorilerini tespit eder ve gerekli önlemleri alır. Daha fazla bilgi için bkz. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+### Hizmet olarak ince ayarlanmış Phi-3 modelleri için maliyet ve kota
 
-**İnce Ayar Konfigürasyonu**
+Hizmet olarak ince ayarlanmış Phi modelleri Microsoft tarafından sunulur ve Azure AI Foundry ile entegredir. Modelleri [dağıtırken](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) veya ince ayar yaparken fiyatlandırmayı dağıtım sihirbazındaki Fiyatlandırma ve koşullar sekmesinde bulabilirsiniz.
 
-Öğrenme hızı, batch boyutu ve eğitim epoch sayısı gibi hiperparametreleri tanımlayın.
+## İçerik filtreleme
+
+Kullan-at modeliyle hizmet olarak dağıtılan modeller Azure AI Content Safety tarafından korunur. Gerçek zamanlı uç noktalara dağıtıldığında bu özelliği devre dışı bırakabilirsiniz. Azure AI içerik güvenliği etkinleştirildiğinde, hem istem hem de çıktı, zararlı içeriklerin tespiti ve önlenmesi için bir sınıflandırma modelleri topluluğundan geçer. İçerik filtreleme sistemi, hem giriş istemlerinde hem de çıktı tamamlamalarında potansiyel zararlı içerik kategorilerini tespit eder ve önlem alır. Daha fazla bilgi için bkz. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+
+**İnce Ayar Yapılandırması**
+
+Hiperparametreler: Öğrenme hızı, batch boyutu ve eğitim epoch sayısı gibi hiperparametreleri tanımlayın.
 
 **Kayıp Fonksiyonu**
 
@@ -193,34 +193,34 @@ Eğitim sırasında gradyan güncellemeleri için bir optimizatör seçin (örne
 **İnce Ayar Süreci**
 
 - Önceden Eğitilmiş Modeli Yükle: Phi-3 Mini kontrol noktasını yükleyin.
-- Özel Katmanlar Ekle: Göreve özel katmanlar ekleyin (örneğin, sohbet talimatları için sınıflandırma başlığı).
+- Özel Katmanlar Ekle: Göreve özgü katmanlar ekleyin (örneğin, sohbet talimatları için sınıflandırma başlığı).
 
 **Modeli Eğitme**
 
-Hazırladığınız veri setiyle modeli ince ayar yapın. Eğitim ilerlemesini izleyin ve gerekirse hiperparametreleri ayarlayın.
+Hazırladığınız veri setiyle modeli ince ayarlayın. Eğitim ilerlemesini izleyin ve gerekirse hiperparametreleri ayarlayın.
 
 **Değerlendirme ve Doğrulama**
 
-Doğrulama Seti: Verilerinizi eğitim ve doğrulama setlerine bölün.
+Doğrulama Seti: Verilerinizi eğitim ve doğrulama setlerine ayırın.
 
 **Performansı Değerlendir**
 
-Model performansını doğruluk, F1 skoru veya perplexity gibi metriklerle değerlendirin.
+Model performansını doğruluk, F1 skoru veya perplexity gibi metriklerle ölçün.
 
-## İnce Ayarlı Modeli Kaydetme
+## İnce Ayarlanmış Modeli Kaydetme
 
 **Kontrol Noktası**
 
-İnce ayarlı model kontrol noktasını gelecekte kullanmak üzere kaydedin.
+İnce ayarlanmış model kontrol noktasını gelecekte kullanmak üzere kaydedin.
 
 ## Dağıtım
 
-- Web Hizmeti Olarak Dağıtım: İnce ayarlı modelinizi Azure AI Foundry’de web hizmeti olarak dağıtın.
-- Uç Noktayı Test Etme: Dağıtılan uç noktaya test sorguları göndererek işlevselliğini doğrulayın.
+- Web Hizmeti Olarak Dağıtın: İnce ayarlanmış modelinizi Azure AI Foundry’de web hizmeti olarak dağıtın.
+- Uç Noktayı Test Edin: Dağıtılan uç noktaya test sorguları göndererek işlevselliğini doğrulayın.
 
-## Yineleme ve İyileştirme
+## Tekrarlama ve İyileştirme
 
-Yineleme: Performans yeterli değilse, hiperparametreleri ayarlayarak, daha fazla veri ekleyerek veya ek epoch’lar için ince ayar yaparak süreci tekrarlayın.
+Tekrarlayın: Performans tatmin edici değilse, hiperparametreleri ayarlayarak, daha fazla veri ekleyerek veya ek epoch’lar ile ince ayar yaparak süreci tekrarlayın.
 
 ## İzleme ve İyileştirme
 
@@ -228,11 +228,11 @@ Modelin davranışını sürekli izleyin ve gerektiğinde iyileştirin.
 
 ## Özelleştirme ve Genişletme
 
-Özel Görevler: Phi-3 Mini, sohbet talimatlarının ötesinde çeşitli görevler için ince ayar yapılabilir. Diğer kullanım senaryolarını keşfedin!
-Deney Yapın: Performansı artırmak için farklı mimariler, katman kombinasyonları ve teknikler deneyin.
+Özel Görevler: Phi-3 Mini, sohbet talimatlarının ötesinde çeşitli görevler için ince ayarlanabilir. Diğer kullanım senaryolarını keşfedin!
+Deneyler: Performansı artırmak için farklı mimariler, katman kombinasyonları ve teknikler deneyin.
 
 > [!NOTE]
-> İnce ayar yinelemeli bir süreçtir. Deney yapın, öğrenin ve modelinizi belirli göreviniz için en iyi sonuçları elde edecek şekilde uyarlayın!
+> İnce ayar yinelemeli bir süreçtir. Deneyin, öğrenin ve modelinizi belirli göreviniz için en iyi sonuçları elde edecek şekilde uyarlayın!
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilindeki haliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek herhangi bir yanlış anlama veya yorumlama nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

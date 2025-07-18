@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e0a07fd2a30fe2af30b1373df207a5bf",
-  "translation_date": "2025-05-08T05:16:01+00:00",
+  "translation_date": "2025-07-17T08:06:40+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md",
   "language_code": "hk"
 }
 -->
-# Phi-3-Vision-128K-Instruct 項目概覽
+# Phi-3-Vision-128K-Instruct 專案概覽
 
-## 模型簡介
+## 模型介紹
 
-Phi-3-Vision-128K-Instruct 係呢個項目嘅核心，一個輕量化、先進嘅多模態模型。佢屬於 Phi-3 模型家族，支持最高 128,000 個 token 嘅上下文長度。模型喺一個多元化嘅數據集上訓練，包括合成數據同經過嚴格篩選嘅公開網站內容，重點係高質素、需要推理嘅內容。訓練過程包含監督式微調同直接偏好優化，確保模型準確跟隨指示，並且有完善嘅安全措施。
+Phi-3-Vision-128K-Instruct 是一款輕量級、先進的多模態模型，是本專案的核心。它屬於 Phi-3 模型家族，支援最高 128,000 個 token 的上下文長度。該模型訓練於多元化資料集，包含合成數據及經過嚴格篩選的公開網站資料，重點在於高品質且具推理性的內容。訓練過程涵蓋監督式微調與直接偏好優化，確保模型能精準遵循指令，同時具備強健的安全機制。
 
-## 創建樣本數據嘅重要原因：
+## 建立範例資料的重要性有以下幾點：
 
-1. **測試**：樣本數據可以喺唔影響真實數據嘅情況下，測試應用喺唔同場景嘅表現。呢點喺開發同測試階段尤其重要。
+1. **測試**：範例資料讓你能在不同情境下測試應用程式，而不會影響真實資料。這在開發與測試階段尤其重要。
 
-2. **性能調校**：用模擬真實數據規模同複雜度嘅樣本數據，可以識別性能瓶頸，從而優化應用。
+2. **效能調校**：使用模擬真實資料規模與複雜度的範例資料，可以幫助找出效能瓶頸並優化應用程式。
 
-3. **原型設計**：樣本數據可以用嚟做原型同模擬，有助理解用戶需求同收集反饋。
+3. **原型設計**：範例資料可用於製作原型與模型，有助於理解使用者需求並收集回饋。
 
-4. **數據分析**：喺數據科學領域，樣本數據經常用於探索性分析、模型訓練同算法測試。
+4. **資料分析**：在資料科學領域，範例資料常用於探索性資料分析、模型訓練及演算法測試。
 
-5. **安全**：喺開發同測試環境用樣本數據，有助防止意外洩漏敏感真實數據。
+5. **安全性**：在開發與測試環境使用範例資料，有助於避免敏感真實資料的意外外洩。
 
-6. **學習**：學習新技術或工具時，使用樣本數據可以實踐所學。
+6. **學習**：學習新技術或工具時，使用範例資料能提供實務操作的機會。
 
-記住，樣本數據嘅質素對以上活動影響重大，佢嘅結構同變異性應盡量貼近真實數據。
+請記得，範例資料的品質會大幅影響上述活動，應盡可能在結構與變異性上接近真實資料。
 
-### 樣本數據創建
+### 範例資料建立
 [Generate DataSet Script](./CreatingSampleData.md)
 
-## 數據集
+## 資料集
 
-一個好嘅樣本數據集例子係 [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States)（喺 Huggingface 有提供）。  
-Burberry 產品嘅樣本數據集，連同產品分類、價格同標題嘅元數據，總共有 3,040 行，每行代表一件獨特產品。呢個數據集可以用嚟測試模型理解同解讀視覺數據嘅能力，生成捕捉細緻視覺細節同品牌特徵嘅描述性文本。
+一個不錯的範例資料集是 [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States)（可於 Huggingface 取得）。  
+這個 Burberry 產品範例資料集包含產品類別、價格與標題等元資料，共有 3,040 筆資料，每筆代表一個獨特產品。此資料集讓我們能測試模型理解與詮釋視覺資料的能力，生成能捕捉細緻視覺細節及品牌特性的描述文字。
 
-**Note:** 你可以用任何包含圖片嘅數據集。
+**Note:** 你可以使用任何包含圖片的資料集。
 
 ## 複雜推理
 
-模型需要根據圖片推理價格同命名。呢點唔單止要識別視覺特徵，仲要理解呢啲特徵喺產品價值同品牌定位上嘅含義。透過從圖片合成準確嘅文字描述，項目展示咗整合視覺數據喺提升模型喺現實應用中表現同多功能性嘅潛力。
+模型需要僅憑圖片推理價格與命名，這不僅要求模型辨識視覺特徵，還要理解這些特徵在產品價值與品牌上的意涵。透過從圖片合成精確的文字描述，本專案展示了結合視覺資料提升模型在實務應用中表現與多樣性的潛力。
 
 ## Phi-3 Vision 架構
 
-模型架構係 Phi-3 嘅多模態版本。佢同時處理文本同圖片數據，將呢啲輸入整合成一個統一序列，方便全面理解同生成任務。模型用獨立嘅嵌入層處理文本同圖片。文本 token 會轉成密集向量，圖片則透過 CLIP vision 模型抽取特徵嵌入。之後將圖片嵌入投影到同文本嵌入相同維度，確保可以無縫整合。
+模型架構是 Phi-3 的多模態版本，能同時處理文字與圖片資料，將這些輸入整合成統一序列，以進行全面的理解與生成任務。模型對文字與圖片分別使用不同的嵌入層。文字 token 會轉換成密集向量，圖片則透過 CLIP 視覺模型提取特徵嵌入。接著將圖片嵌入投影至與文字嵌入相同維度，確保能無縫整合。
 
-## 文本同圖片嵌入整合
+## 文字與圖片嵌入的整合
 
-文本序列入面嘅特殊 token 用嚟標示插入圖片嵌入嘅位置。處理時，呢啲特殊 token 會被對應嘅圖片嵌入替換，令模型可以將文本同圖片當作一條序列處理。我哋嘅數據集 prompt 用咗特殊嘅 <|image|> token 格式如下：
+文字序列中的特殊 token 用來標示圖片嵌入應插入的位置。處理時，這些特殊 token 會被對應的圖片嵌入取代，使模型能將文字與圖片視為單一序列。資料集的提示格式使用特殊的 <|image|> token，如下所示：
 
 ```python
 text = f"<|user|>\n<|image_1|>What is shown in this image?<|end|><|assistant|>\nProduct: {row['title']}, Category: {row['category3_code']}, Full Price: {row['full_price']}<|end|>"
 ```
 
 ## 範例程式碼
-- [Phi-3-Vision Training Script](../../../../code/03.Finetuning/Phi-3-vision-Trainingscript.py)
-- [Weights and Bias Example walkthrough](https://wandb.ai/byyoung3/mlnews3/reports/How-to-fine-tune-Phi-3-vision-on-a-custom-dataset--Vmlldzo4MTEzMTg3)
+- [Phi-3-Vision 訓練腳本](../../../../code/03.Finetuning/Phi-3-vision-Trainingscript.py)
+- [Weights and Bias 範例教學](https://wandb.ai/byyoung3/mlnews3/reports/How-to-fine-tune-Phi-3-vision-on-a-custom-dataset--Vmlldzo4MTEzMTg3)
 
 **免責聲明**：  
-本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。雖然我們力求準確，但請注意自動翻譯可能包含錯誤或不準確之處。原文文件的母語版本應被視為權威來源。對於重要資料，建議使用專業人工翻譯。我們不對因使用此翻譯而引致的任何誤解或誤釋負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

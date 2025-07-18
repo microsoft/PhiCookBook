@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-07T13:26:15+00:00",
+  "translation_date": "2025-07-17T07:56:12+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "fr"
 }
@@ -11,13 +11,16 @@ CO_OP_TRANSLATOR_METADATA:
 
 Nous pouvons réaliser l’affinage combiné avec Lora via la ligne de commande du framework Apple MLX. (Si vous souhaitez en savoir plus sur le fonctionnement du framework MLX, veuillez lire [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
 
+
 ## **1. Préparation des données**
 
-Par défaut, le framework MLX requiert un format jsonl pour train, test et eval, et s’associe avec Lora pour effectuer les tâches d’affinage.
+Par défaut, le framework MLX requiert le format jsonl pour les jeux de données train, test et eval, et s’associe à Lora pour effectuer les tâches d’affinage.
+
 
 ### ***Note :***
 
 1. Format des données jsonl :
+
 
 ```json
 
@@ -28,15 +31,17 @@ Par défaut, le framework MLX requiert un format jsonl pour train, test et eval,
 
 ```
 
-2. Notre exemple utilise les données de [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), mais la quantité de données est relativement limitée, donc les résultats d’affinage ne sont pas forcément optimaux. Il est recommandé aux apprenants d’utiliser des données plus adaptées à leurs propres cas d’usage.
+2. Notre exemple utilise les données de [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), mais la quantité de données est relativement limitée, donc les résultats d’affinage ne sont pas forcément optimaux. Il est recommandé aux apprenants d’utiliser des données plus adaptées à leur propre contexte pour obtenir de meilleurs résultats.
 
-3. Le format des données est combiné avec le template Phi-3.
+3. Le format des données est conforme au modèle Phi-3
 
-Veuillez télécharger les données depuis ce [lien](../../../../code/04.Finetuning/mlx), en incluant tous les fichiers .jsonl dans le dossier ***data***.
+Veuillez télécharger les données depuis ce [lien](../../../../code/04.Finetuning/mlx), en incluant tous les fichiers .jsonl dans le dossier ***data***
+
 
 ## **2. Affinage dans votre terminal**
 
-Veuillez exécuter cette commande dans le terminal :
+Veuillez exécuter cette commande dans le terminal
+
 
 ```bash
 
@@ -44,11 +49,13 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ```
 
+
 ## ***Note :***
 
-1. Il s’agit d’un affinage LoRA, le framework MLX ne publie pas QLoRA.
+1. Il s’agit d’un affinage LoRA, le framework MLX ne publie pas QLoRA
 
-2. Vous pouvez modifier config.yaml pour changer certains arguments, par exemple :
+2. Vous pouvez modifier config.yaml pour changer certains paramètres, par exemple
+
 
 ```yaml
 
@@ -118,7 +125,8 @@ lora_parameters:
 
 ```
 
-Veuillez exécuter cette commande dans le terminal :
+Veuillez exécuter cette commande dans le terminal
+
 
 ```bash
 
@@ -126,9 +134,11 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ```
 
+
 ## **3. Tester l’adaptateur d’affinage**
 
 Vous pouvez lancer l’adaptateur d’affinage dans le terminal, comme ceci :
+
 
 ```bash
 
@@ -138,15 +148,18 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 et exécuter le modèle original pour comparer les résultats :
 
+
 ```bash
 
 python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2048 --prompt "Why do chameleons change colors? " --eos-token "<|end|>"    
 
 ```
 
-Vous pouvez essayer de comparer les résultats de l’affinage avec le modèle original.
+Vous pouvez essayer de comparer les résultats de l’affinage avec ceux du modèle original
+
 
 ## **4. Fusionner les adaptateurs pour générer de nouveaux modèles**
+
 
 ```bash
 
@@ -157,6 +170,7 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 ## **5. Exécuter les modèles affinés quantifiés avec ollama**
 
 Avant utilisation, veuillez configurer votre environnement llama.cpp
+
 
 ```bash
 
@@ -170,13 +184,14 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note :***
+***Note :*** 
 
-1. La conversion de quantification supporte désormais fp32, fp16 et INT 8.
+1. Supporte désormais la conversion en quantification fp32, fp16 et INT 8
 
 2. Le modèle fusionné ne contient pas tokenizer.model, veuillez le télécharger depuis https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-Configurez un [Ollama Model](https://ollama.com/)
+Configurer un [Ollma Model](https://ollama.com/)
+
 
 ```txt
 
@@ -185,7 +200,8 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Exécutez la commande dans le terminal :
+Exécutez la commande dans le terminal
+
 
 ```bash
 
@@ -195,7 +211,7 @@ Exécutez la commande dans le terminal :
 
 ```
 
-Félicitations ! Vous maîtrisez l’affinage avec le framework MLX.
+Félicitations ! Vous maîtrisez l’affinage avec le framework MLX
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous ne saurions être tenus responsables de tout malentendu ou mauvaise interprétation résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T13:06:44+00:00",
+  "translation_date": "2025-07-16T21:33:04+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "cs"
 }
 -->
-# Cross-platform inference with Rust
+# Inference napříč platformami s Rustem
 
-This tutorial will guide us through the process of performing inference using Rust and the [Candle ML framework](https://github.com/huggingface/candle) from HuggingFace. Using Rust for inference offers several advantages, particularly when compared to other programming languages. Rust is known for its high performance, comparable to that of C and C++. This makes it an excellent choice for inference tasks, which can be computationally intensive. In particular, this is driven by the zero-cost abstractions and efficient memory management, which has no garbage collection overhead. Rust's cross-platform capabilities enable development of code that run on various operating systems, including Windows, macOS, and Linux, as well as mobile operating systems, without significant changes to the codebase.
+Tento tutoriál nás provede procesem inference pomocí Rustu a [Candle ML frameworku](https://github.com/huggingface/candle) od HuggingFace. Použití Rustu pro inference přináší několik výhod, zejména ve srovnání s jinými programovacími jazyky. Rust je známý svou vysokou výkonností, srovnatelnou s C a C++. Díky tomu je skvělou volbou pro úlohy inference, které mohou být výpočetně náročné. Hlavními faktory jsou zero-cost abstrakce a efektivní správa paměti bez režie garbage collectoru. Rust také umožňuje psát kód, který běží na různých operačních systémech, včetně Windows, macOS a Linuxu, stejně jako na mobilních platformách, aniž by bylo potřeba výrazně měnit zdrojový kód.
 
-The prerequisite to follow this tutorial is to [install Rust](https://www.rust-lang.org/tools/install), which includes the Rust compiler and Cargo, the Rust package manager.
+Předpokladem pro sledování tohoto tutoriálu je [instalace Rustu](https://www.rust-lang.org/tools/install), která zahrnuje Rust kompilátor a Cargo, správce balíčků pro Rust.
 
-## Step 1: Create a New Rust Project
+## Krok 1: Vytvoření nového Rust projektu
 
-To create a new Rust project, run the following command in the terminal:
+Pro vytvoření nového Rust projektu spusťte v terminálu následující příkaz:
 
 ```bash
 cargo new phi-console-app
 ```
 
-This generates an initial project structure with a `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Tím se vygeneruje počáteční struktura projektu s `Cargo.toml` souborem a složkou `src`, která obsahuje soubor `main.rs`.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` file:
+Dále přidáme naše závislosti – konkrétně crate `candle`, `hf-hub` a `tokenizers` – do souboru `Cargo.toml`:
 
 ```toml
 [package]
@@ -39,9 +39,9 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## Step 2: Configure Basic Parameters
+## Krok 2: Nastavení základních parametrů
 
-Inside the main.rs file, we will set up the initial parameters for our inference. They are all going to be hardcoded for simplicity, but we can modify them as needed.
+V souboru main.rs nastavíme počáteční parametry pro naši inferenci. Pro jednoduchost je všechny nastavíme přímo v kódu, ale můžeme je podle potřeby upravit.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,16 +55,16 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: Controla la aleatoriedad del proceso de muestreo.
-- **sample_len**: Especifica la longitud máxima del texto generado.
-- **top_p**: Se usa para el muestreo de núcleo para limitar el número de tokens considerados en cada paso.
-- **repeat_last_n**: Controla la cantidad de tokens considerados para aplicar una penalización que evite secuencias repetitivas.
-- **repeat_penalty**: Valor de penalización para desalentar tokens repetidos.
-- **seed**: Una semilla aleatoria (podemos usar un valor constante para mejor reproducibilidad).
-- **prompt**: El texto inicial para comenzar la generación. Observa que pedimos al modelo generar un haiku sobre hockey sobre hielo, y que lo envolvemos con tokens especiales para indicar las partes de usuario y asistente en la conversación. El modelo completará el prompt con un haiku.
-- **device**: Usamos la CPU para el cálculo en este ejemplo. Candle también soporta ejecución en GPU con CUDA y Metal.
+- **temperature**: Řídí náhodnost procesu vzorkování.
+- **sample_len**: Udává maximální délku generovaného textu.
+- **top_p**: Používá se pro nucleus sampling, omezuje počet tokenů zvažovaných v každém kroku.
+- **repeat_last_n**: Určuje počet tokenů, které se berou v úvahu při uplatňování penalizace za opakování.
+- **repeat_penalty**: Hodnota penalizace, která snižuje pravděpodobnost opakovaných tokenů.
+- **seed**: Náhodné semínko (můžeme použít konstantní hodnotu pro lepší reprodukovatelnost).
+- **prompt**: Počáteční textový prompt pro spuštění generování. Všimněte si, že žádáme model o vytvoření haiku o ledním hokeji a prompt je obalen speciálními tokeny, které označují části konverzace uživatele a asistenta. Model pak prompt doplní haiku.
+- **device**: V tomto příkladu používáme CPU pro výpočty. Candle podporuje také běh na GPU s CUDA a Metal.
 
-## Step 3: Download/Prepare Model and Tokenizer
+## Krok 3: Stažení/Příprava modelu a tokenizeru
 
 ```rust
 let api = hf_hub::api::sync::Api::new()?;
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Usamos el archivo `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` para tokenizar nuestro texto de entrada. Una vez descargado, el modelo queda en caché, por lo que la primera ejecución será lenta (ya que descarga los 2.4GB del modelo), pero las siguientes serán más rápidas.
+Používáme API `hf_hub` ke stažení modelu a tokenizeru z Hugging Face model hubu. Soubor `gguf` obsahuje kvantizované váhy modelu, zatímco `tokenizer.json` slouží k tokenizaci vstupního textu. Po stažení je model uložen do cache, takže první spuštění bude pomalejší (kvůli stažení 2,4 GB modelu), ale další běhy už budou rychlejší.
 
-## Step 4: Load Model
+## Krok 4: Načtení modelu
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Cargamos los pesos cuantizados del modelo en memoria e inicializamos el modelo Phi-3. Este paso implica leer los pesos del archivo `gguf` y preparar el modelo para inferencia en el dispositivo especificado (CPU en este caso).
+Načteme kvantizované váhy modelu do paměti a inicializujeme model Phi-3. Tento krok zahrnuje čtení vah z `gguf` souboru a přípravu modelu pro inferenci na zvoleném zařízení (v tomto případě CPU).
 
-## Step 5: Process Prompt and Prepare for Inference
+## Krok 5: Zpracování promptu a příprava na inferenci
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-En este paso, tokenizamos el prompt de entrada y lo preparamos para la inferencia convirtiéndolo en una secuencia de IDs de tokens. También inicializamos los valores de `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`. Cada token se convierte en un tensor y se pasa por el modelo para obtener los logits.
+V tomto kroku tokenizujeme vstupní prompt a připravíme ho pro inferenci převedením na sekvenci ID tokenů. Také inicializujeme `LogitsProcessor`, který bude řídit proces vzorkování (pravděpodobnostní rozdělení přes slovník) na základě nastavených hodnot `temperature` a `top_p`. Každý token je převeden na tensor a předán modelu pro získání logits.
 
-El ciclo procesa cada token del prompt, actualizando el procesador de logits y preparando la generación del siguiente token.
+Smyčka zpracovává každý token v promptu, aktualizuje logits processor a připravuje se na generování dalšího tokenu.
 
-## Step 6: Inference
+## Krok 6: Inference
 
 ```rust
 for index in 0..to_sample {
@@ -160,20 +160,20 @@ for index in 0..to_sample {
 }
 ```
 
-En el ciclo de inferencia, generamos tokens uno a uno hasta alcanzar la longitud deseada o encontrar el token de fin de secuencia. El siguiente token se convierte en tensor y se pasa por el modelo, mientras los logits se procesan para aplicar penalizaciones y muestreo. Luego, el siguiente token es muestreado, decodificado y añadido a la secuencia.
-Para evitar texto repetitivo, se aplica una penalización a tokens repetidos basada en los parámetros `repeat_last_n` and `repeat_penalty`.
+V inferenční smyčce generujeme tokeny jeden po druhém, dokud nedosáhneme požadované délky nebo nenarazíme na token konce sekvence. Další token je převeden na tensor a předán modelu, logits jsou zpracovány s aplikací penalizací a vzorkování. Poté je token vybrán, dekódován a přidán do sekvence.
+Abychom předešli opakujícím se textům, aplikuje se penalizace na opakované tokeny podle parametrů `repeat_last_n` a `repeat_penalty`.
 
-Finalmente, el texto generado se imprime a medida que se decodifica, asegurando una salida en tiempo real.
+Nakonec je generovaný text průběžně vytištěn, což zajišťuje výstup v reálném čase.
 
-## Step 7: Run the Application
+## Krok 7: Spuštění aplikace
 
-To run the application, execute the following command in the terminal:
+Pro spuštění aplikace zadejte v terminálu následující příkaz:
 
 ```bash
 cargo run --release
 ```
 
-Esto debería imprimir un haiku sobre hockey sobre hielo generado por el modelo Phi-3. Algo como:
+Mělo by se zobrazit haiku o ledním hokeji vygenerované modelem Phi-3. Něco jako:
 
 ```
 Puck glides swiftly,  
@@ -181,7 +181,7 @@ Blades on ice dance and clash—peace found
 in the cold battle.
 ```
 
-o
+nebo
 
 ```
 Glistening puck glides in,
@@ -189,13 +189,13 @@ On ice rink's silent stage it thrives—
 Swish of sticks now alive.
 ```
 
-## Conclusion
+## Závěr
 
-By following these steps, we can perform text generation using the Phi-3 model with Rust and Candle in under 100 lines of code. The code handles model loading, tokenization, and inference, leveraging tensors and logits processing to generate coherent text based on the input prompt.
+Díky těmto krokům můžeme generovat text pomocí modelu Phi-3 v Rustu a Candle v méně než 100 řádcích kódu. Kód se stará o načtení modelu, tokenizaci a inferenci, využívá tensory a zpracování logits k vytvoření koherentního textu na základě vstupního promptu.
 
-This console application can run on Windows, Linux and Mac OS. Becuase of Rust's portability, the code can also be adapted to a library that would run inside mobile apps (we can't run console apps there, after all).
+Tato konzolová aplikace může běžet na Windows, Linuxu i Mac OS. Díky přenositelnosti Rustu lze kód také upravit na knihovnu, která poběží v mobilních aplikacích (koneckonců tam konzolové aplikace spustit nelze).
 
-## Appendix: full code
+## Příloha: kompletní kód
 
 ```rust
 use candle_core::{quantized::gguf_file, Device, Tensor};
@@ -304,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Note: in order to run this code on aarch64 Linux or aarch64 Windows, add a file named `.cargo/config` with the following content:
+Poznámka: pro spuštění tohoto kódu na aarch64 Linuxu nebo aarch64 Windows přidejte soubor `.cargo/config` s následujícím obsahem:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> You can visit the official [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) repository for more examples on how to use the Phi-3 model with Rust and Candle, including alternative approaches to inference.
+> Pro více příkladů, jak používat model Phi-3 s Rustem a Candle, včetně alternativních přístupů k inferenci, můžete navštívit oficiální repozitář [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo chybné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

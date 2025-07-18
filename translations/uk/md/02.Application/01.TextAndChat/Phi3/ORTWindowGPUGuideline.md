@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-07-09T19:28:40+00:00",
+  "translation_date": "2025-07-17T02:48:49+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "uk"
 }
@@ -13,9 +13,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Документ містить рекомендації щодо:
 
-- Налаштування середовища: Інструкції з встановлення необхідних залежностей, таких як CUDA, cuDNN та ONNX Runtime.
-- Конфігурації: Як налаштувати середовище та ONNX Runtime для ефективного використання ресурсів GPU.
-- Поради з оптимізації: Рекомендації щодо тонкого налаштування параметрів GPU для досягнення максимальної продуктивності.
+- Налаштування середовища: інструкції з встановлення необхідних залежностей, таких як CUDA, cuDNN та ONNX Runtime.
+- Конфігурації: як налаштувати середовище та ONNX Runtime для ефективного використання ресурсів GPU.
+- Поради з оптимізації: рекомендації щодо тонкого налаштування параметрів GPU для досягнення максимальної продуктивності.
 
 ### **1. Python 3.10.x /3.11.8**
 
@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   ***Reminder*** Якщо у вас встановлені будь-які бібліотеки ONNX для Python, будь ласка, видаліть їх
+   ***Reminder*** Якщо у вас встановлена будь-яка бібліотека ONNX для Python, будь ласка, видаліть її
 
 ### **2. Встановлення CMake за допомогою winget**
 
@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** Якщо ви не плануєте компілювати, цей крок можна пропустити
 
-![CPP](../../../../../../imgs/02/pfonnx/01.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.uk.png)
 
 ### **4. Встановлення драйвера NVIDIA**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    Відкрийте [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) та виконайте
 
-![RESULT](../../../../../../imgs/02/pfonnx/02.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.uk.png)
 
 ### **8. Компіляція ORT GenAI GPU**
 
@@ -127,9 +127,9 @@ CO_OP_TRANSLATOR_METADATA:
 
    - Розпакуйте onnxruntime-win-x64-gpu-1.19.2.zip, перейменуйте папку на **ort** та скопіюйте її до onnxruntime-genai
 
-   - Використовуючи Windows Terminal, відкрийте Developer Command Prompt для VS 2022 та перейдіть до onnxruntime-genai
+   - Використовуючи Windows Terminal, відкрийте Developer Command Prompt для VS 2022 і перейдіть до onnxruntime-genai
 
-![RESULT](../../../../../../imgs/02/pfonnx/03.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.uk.png)
 
    - Скомпілюйте з вашим Python середовищем
 

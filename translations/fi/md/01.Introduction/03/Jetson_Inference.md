@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-05-09T11:40:03+00:00",
+  "translation_date": "2025-07-16T20:43:21+00:00",
   "source_file": "md/01.Introduction/03/Jetson_Inference.md",
   "language_code": "fi"
 }
 -->
-# **Phi-3-päätelmät Nvidia Jetsoneilla**
+# **Inference Phi-3 Nvidia Jetsoneissa**
 
-Nvidia Jetson on sarja sulautettuja tietokonealustoja Nvidialta. Jetson TK1, TX1 ja TX2 -malleissa on kaikki Nvidia Tegra -prosessori (tai SoC), joka sisältää ARM-arkkitehtuurin keskusyksikön (CPU). Jetson on vähävirrankulutuksinen järjestelmä, joka on suunniteltu koneoppimissovellusten nopeuttamiseen. Nvidia Jetsonia käyttävät ammattilaiskehittäjät luodakseen uraauurtavia tekoälytuotteita eri toimialoille sekä opiskelijat ja harrastajat saadakseen käytännön kokemusta tekoälystä ja tehdäkseen upeita projekteja. SLM on otettu käyttöön reunalaitteissa, kuten Jetsonissa, mikä mahdollistaa teollisten generatiivisten tekoälysovellusten paremman toteutuksen.
+Nvidia Jetson on sarja sulautettuja tietokonealustoja Nvidialta. Jetson TK1, TX1 ja TX2 -mallit sisältävät kaikki Nvidian Tegra-prosessorin (tai SoC:n), joka yhdistää ARM-arkkitehtuurin keskusyksikön (CPU). Jetson on vähävirrankulutuksinen järjestelmä, joka on suunniteltu koneoppimissovellusten kiihdyttämiseen. Nvidia Jetsonia käyttävät ammattilaiskehittäjät luodakseen läpimurtoteknologioita tekoälyn alalla eri toimialoilla, sekä opiskelijat ja harrastajat käytännön tekoälyoppimiseen ja upeiden projektien tekemiseen. SLM on otettu käyttöön reunalaitteissa, kuten Jetsoneissa, mikä mahdollistaa teollisten generatiivisten tekoälysovellusten paremman toteutuksen.
 
-## Käyttöönotto NVIDIA Jetsoneilla:
-Autonomisten robottien ja sulautettujen laitteiden kehittäjät voivat hyödyntää Phi-3 Miniä. Phi-3:n suhteellisen pieni koko tekee siitä ihanteellisen reunalaitteisiin. Parametrit on huolellisesti viritetty koulutuksen aikana, mikä takaa korkean tarkkuuden vastauksissa.
+## Käyttöönotto NVIDIA Jetsoneissa:
+Autonomisten robotiikka- ja sulautettujen laitteiden kehittäjät voivat hyödyntää Phi-3 Miniä. Phi-3:n suhteellisen pieni koko tekee siitä ihanteellisen reunalaitteisiin. Parametrit on hienosäädetty tarkasti koulutuksen aikana, mikä takaa korkean tarkkuuden vastauksissa.
 
-### TensorRT-LLM-optimointi:
-NVIDIAn [TensorRT-LLM-kirjasto](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) optimoi suurten kielimallien päätelmiä. Se tukee Phi-3 Minin pitkää konteksti-ikkunaa, parantaen sekä läpimenokykyä että viivettä. Optimointitekniikoihin kuuluvat LongRoPE, FP8 ja inflight batching.
+### TensorRT-LLM Optimointi:
+NVIDIAn [TensorRT-LLM kirjasto](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) optimoi suurten kielimallien päättelyn. Se tukee Phi-3 Minin pitkää kontekstikkunaa, parantaen sekä läpimenoa että viivettä. Optimointeihin kuuluvat tekniikat kuten LongRoPE, FP8 ja inflight batching.
 
 ### Saatavuus ja käyttöönotto:
-Kehittäjät voivat tutustua Phi-3 Miniin 128K konteksti-ikkunalla osoitteessa [NVIDIA AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Se on paketoitu NVIDIA NIM -mikropalveluksi, jossa on standardoitu API ja jonka voi ottaa käyttöön missä tahansa. Lisäksi [TensorRT-LLM:n toteutukset GitHubissa](https://github.com/NVIDIA/TensorRT-LLM).
+Kehittäjät voivat tutustua Phi-3 Miniin 128K kontekstikkunalla osoitteessa [NVIDIA AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Se on paketoitu NVIDIA NIM:inä, mikropalveluna, jolla on standardoitu API ja jonka voi ottaa käyttöön missä tahansa. Lisäksi [TensorRT-LLM toteutukset GitHubissa](https://github.com/NVIDIA/TensorRT-LLM).
 
 ## **1. Valmistelut**
 
@@ -30,15 +30,15 @@ c. Cuda 11.8
 
 d. Python 3.8+
 
-## **2. Phi-3:n ajaminen Jetsonilla**
+## **2. Phi-3:n ajaminen Jetsoneissa**
 
-Voimme valita [Ollaman](https://ollama.com) tai [LlamaEdgen](https://llamaedge.com)
+Voimme valita [Ollama](https://ollama.com) tai [LlamaEdge](https://llamaedge.com)
 
-Jos haluat käyttää gguf:ää sekä pilvessä että reunalaitteissa samanaikaisesti, LlamaEdgeä voi pitää WasmEdgenä (WasmEdge on kevyt, suorituskykyinen ja skaalautuva WebAssembly-ajoympäristö, joka sopii pilvi-native-, reuna- ja hajautettuihin sovelluksiin. Se tukee serverless-sovelluksia, upotettuja toimintoja, mikropalveluita, älysopimuksia ja IoT-laitteita. Voit ottaa gguf:n kvantitatiivisen mallin käyttöön reunalaitteissa ja pilvessä LlamaEdgen kautta.
+Jos haluat käyttää gguf:ia sekä pilvessä että reunalaitteissa samanaikaisesti, LlamaEdgeä voi ymmärtää WasmEdgenä (WasmEdge on kevyt, suorituskykyinen ja skaalautuva WebAssembly-ajoympäristö, joka sopii pilvipohjaisiin, reunalaitteisiin ja hajautettuihin sovelluksiin. Se tukee serverless-sovelluksia, sulautettuja toimintoja, mikropalveluita, älysopimuksia ja IoT-laitteita. Voit ottaa gguf:n kvantitatiivisen mallin käyttöön reunalaitteissa ja pilvessä LlamaEdgen kautta.
 
-![llamaedge](../../../../../translated_images/llamaedge.1356a35c809c5e9d89d8168db0c92161e87f5e2c34831f2fad800f00fc4e74dc.fi.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.fi.jpg)
 
-Näin käytät:
+Tässä ovat käyttöohjeet:
 
 1. Asenna ja lataa tarvittavat kirjastot ja tiedostot
 
@@ -56,7 +56,7 @@ tar xzf chatbot-ui.tar.gz
 
 **Huom:** llama-api-server.wasm ja chatbot-ui tulee olla samassa hakemistossa
 
-2. Aja skriptit terminaalissa
+2. Suorita skriptit terminaalissa
 
 ```bash
 
@@ -64,13 +64,13 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 ```
 
-Tässä ajon tulos
+Tässä on ajon tulos
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.66eb2acd7f14e814437879522158b9531ae7c955014d48d0708d0e4ce6ac94a6.fi.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.fi.png)
 
 ***Esimerkkikoodi*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
-Yhteenvetona Phi-3 Mini edustaa merkittävää harppausta kielimallinnuksessa, yhdistäen tehokkuuden, kontekstin ymmärryksen ja NVIDIAn optimointiosaamisen. Olitpa rakentamassa robotteja tai reunasovelluksia, Phi-3 Mini on voimakas työkalu, joka kannattaa tuntea.
+Yhteenvetona Phi-3 Mini edustaa merkittävää harppausta kielimallinnuksessa, yhdistäen tehokkuuden, kontekstin ymmärryksen ja NVIDIAn optimointiosaamisen. Olitpa rakentamassa robotteja tai reunasovelluksia, Phi-3 Mini on tehokas työkalu, joka kannattaa ottaa huomioon.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tästä käännöksestä mahdollisesti aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

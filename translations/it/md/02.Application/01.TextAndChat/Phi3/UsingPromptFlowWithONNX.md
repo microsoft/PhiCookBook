@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-  "translation_date": "2025-05-09T18:52:26+00:00",
+  "translation_date": "2025-07-17T02:59:54+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
   "language_code": "it"
 }
@@ -11,57 +11,57 @@ CO_OP_TRANSLATOR_METADATA:
 
 Il documento seguente è un esempio di come utilizzare PromptFlow con ONNX (Open Neural Network Exchange) per sviluppare applicazioni AI basate sui modelli Phi-3.
 
-PromptFlow è una suite di strumenti di sviluppo progettata per semplificare il ciclo di sviluppo end-to-end di applicazioni AI basate su LLM (Large Language Model), dalla ideazione e prototipazione fino a test e valutazione.
+PromptFlow è una suite di strumenti di sviluppo progettata per semplificare l’intero ciclo di sviluppo di applicazioni AI basate su LLM (Large Language Model), dalla fase di ideazione e prototipazione fino a test e valutazione.
 
 Integrando PromptFlow con ONNX, gli sviluppatori possono:
 
-- Ottimizzare le prestazioni del modello: sfruttare ONNX per un'inferenza e un deployment efficienti del modello.
+- Ottimizzare le prestazioni del modello: sfruttare ONNX per un’inferenza e un deployment efficienti del modello.
 - Semplificare lo sviluppo: utilizzare PromptFlow per gestire il flusso di lavoro e automatizzare le attività ripetitive.
 - Migliorare la collaborazione: facilitare una migliore collaborazione tra i membri del team offrendo un ambiente di sviluppo unificato.
 
-**Prompt flow** è una suite di strumenti di sviluppo progettata per semplificare l’intero ciclo di sviluppo di applicazioni AI basate su LLM, dall’ideazione, prototipazione, test, valutazione fino al deployment in produzione e monitoraggio. Rende molto più semplice l’ingegneria dei prompt e ti permette di costruire app LLM con qualità da produzione.
+**Prompt flow** è una suite di strumenti di sviluppo pensata per semplificare l’intero ciclo di sviluppo di applicazioni AI basate su LLM, dall’ideazione, prototipazione, test, valutazione fino al deployment in produzione e monitoraggio. Rende molto più semplice l’ingegneria dei prompt e permette di costruire app LLM con qualità da produzione.
 
-Prompt flow può connettersi a OpenAI, Azure OpenAI Service e modelli personalizzabili (Huggingface, LLM/SLM locali). L’obiettivo è distribuire il modello ONNX quantizzato di Phi-3.5 nelle applicazioni locali. Prompt flow può aiutarci a pianificare meglio il nostro business e completare soluzioni locali basate su Phi-3.5. In questo esempio, combineremo ONNX Runtime GenAI Library per realizzare la soluzione Prompt flow basata su GPU Windows.
+Prompt flow può connettersi a OpenAI, Azure OpenAI Service e modelli personalizzabili (Huggingface, LLM/SLM locali). L’obiettivo è distribuire il modello ONNX quantizzato di Phi-3.5 su applicazioni locali. Prompt flow ci aiuta a pianificare meglio il nostro business e a completare soluzioni locali basate su Phi-3.5. In questo esempio, combineremo ONNX Runtime GenAI Library per realizzare la soluzione Prompt flow basata su GPU Windows.
 
 ## **Installazione**
 
 ### **ONNX Runtime GenAI per GPU Windows**
 
-Consulta questa guida per configurare ONNX Runtime GenAI per GPU Windows [clicca qui](./ORTWindowGPUGuideline.md)
+Leggi questa guida per configurare ONNX Runtime GenAI per GPU Windows [clicca qui](./ORTWindowGPUGuideline.md)
 
 ### **Configurare Prompt flow in VSCode**
 
 1. Installa l’estensione Prompt flow per VS Code
 
-![pfvscode](../../../../../../translated_images/pfvscode.79f42ae5dd93ed35c19d6d978ae75831fef40e0b8440ee48b893b5a0597d2260.it.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.it.png)
 
-2. Dopo aver installato l’estensione Prompt flow per VS Code, clicca sull’estensione e scegli **Installation dependencies** seguendo questa guida per installare il Prompt flow SDK nel tuo ambiente
+2. Dopo aver installato l’estensione Prompt flow per VS Code, clicca sull’estensione e scegli **Installation dependencies**; segui questa guida per installare il Prompt flow SDK nel tuo ambiente
 
-![pfsetup](../../../../../../translated_images/pfsetup.0c82d99c7760aac29833b37faf4329e67e22279b1c5f37a73724dfa9ebaa32ee.it.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.it.png)
 
 3. Scarica il [Codice di esempio](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) e apri questo esempio con VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.7bf40b133a558d86356dd6bc0e480bad2659d9c5364823dae9b3e6784e6f2d25.it.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.it.png)
 
 4. Apri **flow.dag.yaml** per selezionare il tuo ambiente Python
 
-![pfdag](../../../../../../translated_images/pfdag.c5eb356fa3a96178cd594de9a5da921c4bbe646a9946f32aa20d344ccbeb51a0.it.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.it.png)
 
-   Apri **chat_phi3_ort.py** per modificare la posizione del modello Phi-3.5-instruct ONNX
+   Apri **chat_phi3_ort.py** per modificare la posizione del tuo modello Phi-3.5-instruct ONNX
 
-![pfphi](../../../../../../translated_images/pfphi.fff4b0afea47c92c8481174dbf3092823906fca5b717fc642f78947c3e5bbb39.it.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.it.png)
 
 5. Esegui il tuo prompt flow per il test
 
-Apri **flow.dag.yaml** e clicca sull’editor visuale
+Apri **flow.dag.yaml** e clicca su visual editor
 
-![pfv](../../../../../../translated_images/pfv.7af6ecd65784a98558b344ba69b5ba6233876823fb435f163e916a632394fc1e.it.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.it.png)
 
-dopo aver cliccato, esegui per testare
+dopo aver cliccato, esegui il flusso per testarlo
 
-![pfflow](../../../../../../translated_images/pfflow.9697e0fda67794bb0cf4b78d52e6f5a42002eec935bc2519933064afbbdd34f0.it.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.it.png)
 
-1. Puoi eseguire batch nel terminale per verificare ulteriori risultati
+1. Puoi eseguire batch nel terminale per verificare più risultati
 
 
 ```bash
@@ -70,10 +70,10 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 ```
 
-Puoi controllare i risultati nel browser predefinito
+Puoi controllare i risultati nel tuo browser predefinito
 
 
-![pfresult](../../../../../../translated_images/pfresult.972eb57dd5bec646e1aa01148991ba8959897efea396e42cf9d7df259444878d.it.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.it.png)
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o inesattezze. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

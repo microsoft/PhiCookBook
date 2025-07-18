@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-05-09T22:12:41+00:00",
+  "translation_date": "2025-07-17T09:17:31+00:00",
   "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "ms"
 }
 -->
-## Welcome to AI Toolkit for VS Code
+## Selamat Datang ke AI Toolkit untuk VS Code
 
-[AI Toolkit for VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) объединяет различные модели из Azure AI Studio Catalog и других каталогов, таких как Hugging Face. Этот набор инструментов упрощает основные задачи разработки для создания AI-приложений с использованием генеративных AI-инструментов и моделей благодаря:
-- Началу работы с поиском моделей и площадкой для экспериментов.
-- Тонкой настройке моделей и инференсу с использованием локальных вычислительных ресурсов.
-- Удалённой тонкой настройке и инференсу с использованием ресурсов Azure.
+[AI Toolkit untuk VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) menggabungkan pelbagai model dari Azure AI Studio Catalog dan katalog lain seperti Hugging Face. Toolkit ini memudahkan tugasan pembangunan biasa untuk membina aplikasi AI dengan alat dan model AI generatif melalui:
+- Mula dengan penemuan model dan playground.
+- Penalaan halus model dan inferens menggunakan sumber pengkomputeran tempatan.
+- Penalaan halus dan inferens jauh menggunakan sumber Azure
 
-[Установить AI Toolkit для VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[Pasang AI Toolkit untuk VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.ms.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.ms.png)
 
 
-**[Private Preview]** Одно-кликовое развертывание для Azure Container Apps для запуска тонкой настройки моделей и инференса в облаке.
+**[Private Preview]** Penyediaan satu klik untuk Azure Container Apps bagi menjalankan penalaan halus model dan inferens di awan.
 
-Теперь давайте приступим к разработке вашего AI-приложения:
+Sekarang mari kita mulakan pembangunan aplikasi AI anda:
 
-- [Welcome to AI Toolkit for VS Code](../../../../md/03.FineTuning)
-- [Local Development](../../../../md/03.FineTuning)
-  - [Preparations](../../../../md/03.FineTuning)
-  - [Activate Conda](../../../../md/03.FineTuning)
-  - [Base model fine-tuning only](../../../../md/03.FineTuning)
-  - [Model fine-tuning and inferencing](../../../../md/03.FineTuning)
-  - [Model Fine-tuning](../../../../md/03.FineTuning)
+- [Selamat Datang ke AI Toolkit untuk VS Code](../../../../md/03.FineTuning)
+- [Pembangunan Tempatan](../../../../md/03.FineTuning)
+  - [Persediaan](../../../../md/03.FineTuning)
+  - [Aktifkan Conda](../../../../md/03.FineTuning)
+  - [Penalaan halus model asas sahaja](../../../../md/03.FineTuning)
+  - [Penalaan halus model dan inferens](../../../../md/03.FineTuning)
+  - [Penalaan Halus Model](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [Fine Tuning Samples and Resoures](../../../../md/03.FineTuning)
-- [**\[Private Preview\]** Remote Development](../../../../md/03.FineTuning)
-  - [Prerequisites](../../../../md/03.FineTuning)
-  - [Setting Up a Remote Development Project](../../../../md/03.FineTuning)
-  - [Provision Azure Resources](../../../../md/03.FineTuning)
-  - [\[Optional\] Add Huggingface Token to the Azure Container App Secret](../../../../md/03.FineTuning)
-  - [Run Fine-tuning](../../../../md/03.FineTuning)
-  - [Provision Inference Endpoint](../../../../md/03.FineTuning)
-  - [Deploy the Inference Endpoint](../../../../md/03.FineTuning)
-  - [Advanced usage](../../../../md/03.FineTuning)
+  - [Contoh dan Sumber Penalaan Halus](../../../../md/03.FineTuning)
+- [**\[Private Preview\]** Pembangunan Jauh](../../../../md/03.FineTuning)
+  - [Prasyarat](../../../../md/03.FineTuning)
+  - [Menyediakan Projek Pembangunan Jauh](../../../../md/03.FineTuning)
+  - [Sediakan Sumber Azure](../../../../md/03.FineTuning)
+  - [\[Pilihan\] Tambah Token Huggingface ke Azure Container App Secret](../../../../md/03.FineTuning)
+  - [Jalankan Penalaan Halus](../../../../md/03.FineTuning)
+  - [Sediakan Titik Akhir Inferens](../../../../md/03.FineTuning)
+  - [Sebarkan Titik Akhir Inferens](../../../../md/03.FineTuning)
+  - [Penggunaan Lanjutan](../../../../md/03.FineTuning)
 
-## Local Development
-### Preparations
+## Pembangunan Tempatan
+### Persediaan
 
-1. Убедитесь, что драйвер NVIDIA установлен на хосте.
-2. Запустите `huggingface-cli login`, если вы используете HF для работы с датасетами.
-3. `Olive` — объяснения ключевых настроек, которые влияют на использование памяти.
+1. Pastikan pemacu NVIDIA dipasang pada hos.
+2. Jalankan `huggingface-cli login`, jika anda menggunakan HF untuk penggunaan dataset
+3. Penjelasan tetapan kunci `Olive` untuk apa-apa yang mengubah penggunaan memori.
 
-### Activate Conda
-Поскольку мы используем WSL-среду, которая является общей, необходимо вручную активировать conda окружение. После этого шага можно запускать тонкую настройку или инференс.
+### Aktifkan Conda
+Oleh kerana kita menggunakan persekitaran WSL yang dikongsi, anda perlu mengaktifkan persekitaran conda secara manual. Selepas langkah ini, anda boleh menjalankan penalaan halus atau inferens.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### Base model fine-tuning only
-Если вы хотите просто попробовать базовую модель без тонкой настройки, выполните эту команду после активации conda.
+### Penalaan halus model asas sahaja
+Untuk mencuba model asas tanpa penalaan halus, anda boleh jalankan arahan ini selepas mengaktifkan conda.
 
 ```bash
 cd inference
@@ -67,17 +67,17 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### Model fine-tuning and inferencing
+### Penalaan halus model dan inferens
 
-После открытия рабочего пространства в dev-контейнере откройте терминал (по умолчанию путь — корень проекта) и выполните команду ниже для тонкой настройки LLM на выбранном датасете.
+Setelah ruang kerja dibuka dalam dev container, buka terminal (laluan lalai adalah akar projek), kemudian jalankan arahan di bawah untuk menala halus LLM pada dataset yang dipilih.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-Чекпоинты и финальная модель будут сохранены в `models` folder.
+Checkpoint dan model akhir akan disimpan dalam folder `models`.
 
-Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`.
+Seterusnya jalankan inferens dengan model yang telah ditala halus melalui chat dalam `console`, `web browser` atau `prompt flow`.
 
 ```bash
 cd inference
@@ -90,93 +90,92 @@ python console_chat.py
 python gradio_chat.py
 ```
 
-Чтобы использовать `prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
+Untuk menggunakan `prompt flow` dalam VS Code, sila rujuk [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html) ini.
 
-### Model Fine-tuning
+### Penalaan Halus Model
 
-Next, download the following model depending on the availability of a GPU on your device.
+Seterusnya, muat turun model berikut bergantung pada ketersediaan GPU pada peranti anda.
 
-To initiate the local fine-tuning session using QLoRA, select a model you want to fine-tune from our catalog.
-| Platform(s) | GPU available | Model name | Size (GB) |
-|---------|---------|--------|--------|
-| Windows | Yes | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
-| Linux | Yes | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
-| Windows<br>Linux | No | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
+Untuk memulakan sesi penalaan halus tempatan menggunakan QLoRA, pilih model yang anda ingin tala halus dari katalog kami.
+| Platform | GPU tersedia | Nama model | Saiz (GB) |
+|---------|--------------|------------|-----------|
+| Windows | Ya           | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
+| Linux   | Ya           | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
+| Windows<br>Linux | Tidak | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
 
-**_Note_** You do not need an Azure Account to download the models
+**_Nota_** Anda tidak memerlukan Akaun Azure untuk memuat turun model
 
-The Phi3-mini (int4) model is approximately 2GB-3GB in size. Depending on your network speed, it could take a few minutes to download.
+Model Phi3-mini (int4) bersaiz kira-kira 2GB-3GB. Bergantung pada kelajuan rangkaian anda, ia mungkin mengambil masa beberapa minit untuk dimuat turun.
 
-Start by selecting a project name and location.
-Next, select a model from the model catalog. You will be prompted to download the project template. You can then click "Configure Project" to adjust various settings.
+Mulakan dengan memilih nama projek dan lokasi.
+Seterusnya, pilih model dari katalog model. Anda akan diminta untuk memuat turun templat projek. Kemudian anda boleh klik "Configure Project" untuk melaraskan pelbagai tetapan.
 
-### Microsoft Olive 
+### Microsoft Olive
 
-We use [Olive](https://microsoft.github.io/Olive/why-olive.html) to run QLoRA fine-tuning on a PyTorch model from our catalog. All of the settings are preset with the default values to optimize to run the fine-tuning process locally with optimized use of memory, but it can be adjusted for your scenario.
+Kami menggunakan [Olive](https://microsoft.github.io/Olive/why-olive.html) untuk menjalankan penalaan halus QLoRA pada model PyTorch dari katalog kami. Semua tetapan telah ditetapkan dengan nilai lalai untuk mengoptimumkan proses penalaan halus secara tempatan dengan penggunaan memori yang dioptimumkan, tetapi ia boleh disesuaikan mengikut senario anda.
 
-### Fine Tuning Samples and Resoures
+### Contoh dan Sumber Penalaan Halus
 
-- [Fine tuning Getting Started Guide](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
-- [Fine tuning with a HuggingFace Dataset](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
-- [Fine tuning with Simple DataSet](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
+- [Panduan Memulakan Penalaan Halus](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
+- [Penalaan Halus dengan Dataset HuggingFace](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
+- [Penalaan Halus dengan Dataset Mudah](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
 
-## **[Private Preview]** Remote Development
+## **[Private Preview]** Pembangunan Jauh
 
-### Prerequisites
+### Prasyarat
 
-1. To run the model fine-tuning in your remote Azure Container App Environment, make sure your subscription has enough GPU capacity. Submit a [support ticket](https://azure.microsoft.com/support/create-ticket/) to request the required capacity for your application. [Get More Info about GPU capacity](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
-2. If you are using private dataset on HuggingFace, make sure you have a [HuggingFace account](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) and [generate an access token](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
-3. Enable Remote Fine-tuning and Inference feature flag in the AI Toolkit for VS Code
-   1. Open the VS Code Settings by selecting *File -> Preferences -> Settings*.
-   2. Navigate to *Extensions* and select *AI Toolkit*.
-   3. Select the *"Enable Remote Fine-tuning And Inference"* option.
-   4. Reload VS Code to take effect.
+1. Untuk menjalankan penalaan halus model dalam Persekitaran Azure Container App jauh anda, pastikan langganan anda mempunyai kapasiti GPU yang mencukupi. Hantar [tiket sokongan](https://azure.microsoft.com/support/create-ticket/) untuk memohon kapasiti yang diperlukan bagi aplikasi anda. [Dapatkan Maklumat Lanjut tentang kapasiti GPU](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
+2. Jika anda menggunakan dataset peribadi di HuggingFace, pastikan anda mempunyai [akaun HuggingFace](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) dan [hasilkan token akses](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
+3. Aktifkan ciri Remote Fine-tuning and Inference dalam AI Toolkit untuk VS Code
+   1. Buka Tetapan VS Code dengan memilih *File -> Preferences -> Settings*.
+   2. Navigasi ke *Extensions* dan pilih *AI Toolkit*.
+   3. Pilih pilihan *"Enable Remote Fine-tuning And Inference"*.
+   4. Muat semula VS Code untuk berkuat kuasa.
 
-- [Remote Fine tuning](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
+- [Penalaan Halus Jauh](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
 
-### Setting Up a Remote Development Project
-1. Execute the command palette `AI Toolkit: Focus on Resource View`.
-2. Navigate to *Model Fine-tuning* to access the model catalog. Assign a name to your project and select its location on your machine. Then, hit the *"Configure Project"* button.
-3. Project Configuration
-    1. Avoid enabling the *"Fine-tune locally"* option.
-    2. The Olive configuration settings will appear with pre-set default values. Please adjust and fill in these configurations as required.
-    3. Move on to *Generate Project*. This stage leverages WSL and involves setting up a new Conda environment, preparing for future updates that include Dev Containers.
-4. Click on *"Relaunch Window In Workspace"* to open your remote development project.
+### Menyediakan Projek Pembangunan Jauh
+1. Jalankan palet arahan `AI Toolkit: Focus on Resource View`.
+2. Navigasi ke *Model Fine-tuning* untuk mengakses katalog model. Tetapkan nama projek anda dan pilih lokasinya pada mesin anda. Kemudian, tekan butang *"Configure Project"*.
+3. Konfigurasi Projek
+    1. Elakkan mengaktifkan pilihan *"Fine-tune locally"*.
+    2. Tetapan konfigurasi Olive akan muncul dengan nilai lalai yang telah ditetapkan. Sila laraskan dan isi konfigurasi ini mengikut keperluan.
+    3. Teruskan ke *Generate Project*. Tahap ini menggunakan WSL dan melibatkan penyediaan persekitaran Conda baru, bersedia untuk kemas kini masa depan yang termasuk Dev Containers.
+4. Klik pada *"Relaunch Window In Workspace"* untuk membuka projek pembangunan jauh anda.
 
-> **Note:** The project currently works either locally or remotely within the AI Toolkit for VS Code. If you choose *"Fine-tune locally"* during project creation, it will operate exclusively in WSL without remote development capabilities. On the other hand, if you forego enabling *"Fine-tune locally"*, the project will be restricted to the remote Azure Container App environment.
+> **Nota:** Projek ini kini berfungsi sama ada secara tempatan atau jauh dalam AI Toolkit untuk VS Code. Jika anda memilih *"Fine-tune locally"* semasa penciptaan projek, ia hanya akan beroperasi dalam WSL tanpa keupayaan pembangunan jauh. Sebaliknya, jika anda tidak mengaktifkan *"Fine-tune locally"*, projek akan terhad kepada persekitaran Azure Container App jauh.
 
-### Provision Azure Resources
-To get started, you need to provision the Azure Resource for remote fine-tuning. Do this by running the `AI Toolkit: Provision Azure Container Apps job for fine-tuning` from the command palette.
+### Sediakan Sumber Azure
+Untuk memulakan, anda perlu menyediakan Sumber Azure untuk penalaan halus jauh. Lakukan ini dengan menjalankan `AI Toolkit: Provision Azure Container Apps job for fine-tuning` dari palet arahan.
 
-Monitor the progress of the provision through the link displayed in the output channel.
+Pantau kemajuan penyediaan melalui pautan yang dipaparkan dalam saluran output.
 
-### [Optional] Add Huggingface Token to the Azure Container App Secret
-If you're using private HuggingFace dataset, set your HuggingFace token as an environment variable to avoid the need for manual login on the Hugging Face Hub.
-You can do this using the `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning command`. With this command, you can set the secret name as [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) and use your Hugging Face token as the secret value.
+### [Pilihan] Tambah Token Huggingface ke Azure Container App Secret
+Jika anda menggunakan dataset HuggingFace peribadi, tetapkan token HuggingFace anda sebagai pembolehubah persekitaran untuk mengelakkan keperluan log masuk manual di Hugging Face Hub.
+Anda boleh melakukan ini menggunakan arahan `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning`. Dengan arahan ini, anda boleh menetapkan nama rahsia sebagai [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) dan menggunakan token Hugging Face anda sebagai nilai rahsia.
 
-### Run Fine-tuning
-To start the remote fine-tuning job, execute the `AI Toolkit: Run fine-tuning` command.
+### Jalankan Penalaan Halus
+Untuk memulakan tugasan penalaan halus jauh, jalankan arahan `AI Toolkit: Run fine-tuning`.
 
-To view the system and console logs, you can visit the Azure portal using the link in the output panel (more steps at [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Or, you can view the console logs directly in the VSCode output panel by running the command `AI Toolkit: Show the running fine-tuning job streaming logs`. 
-> **Note:** The job might be queued due to insufficient resources. If the log is not displayed, execute the `AI Toolkit: Show the running fine-tuning job streaming logs` command, wait for a while and then execute the command again to re-connect to the streaming log.
+Untuk melihat log sistem dan konsol, anda boleh melawat portal Azure menggunakan pautan dalam panel output (langkah lanjut di [Lihat dan Kuiri Log di Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Atau, anda boleh melihat log konsol terus dalam panel output VSCode dengan menjalankan arahan `AI Toolkit: Show the running fine-tuning job streaming logs`.
+> **Nota:** Tugasan mungkin beratur kerana kekurangan sumber. Jika log tidak dipaparkan, jalankan arahan `AI Toolkit: Show the running fine-tuning job streaming logs`, tunggu sebentar dan jalankan semula arahan untuk menyambung semula ke log streaming.
 
-During this process, QLoRA will be used for fine-tuning, and will create LoRA adapters for the model to use during inference.
-The results of the fine-tuning will be stored in the Azure Files.
+Semasa proses ini, QLoRA akan digunakan untuk penalaan halus, dan akan mencipta penyesuai LoRA untuk model digunakan semasa inferens.
+Keputusan penalaan halus akan disimpan dalam Azure Files.
 
-### Provision Inference Endpoint
-After the adapters are trained in the remote environment, use a simple Gradio application to interact with the model.
-Similar to the fine-tuning process, you need to set up the Azure Resources for remote inference by executing the `AI Toolkit: Provision Azure Container Apps for inference` from the command palette.
+### Sediakan Titik Akhir Inferens
+Selepas penyesuai dilatih dalam persekitaran jauh, gunakan aplikasi Gradio mudah untuk berinteraksi dengan model.
+Sama seperti proses penalaan halus, anda perlu menyediakan Sumber Azure untuk inferens jauh dengan menjalankan `AI Toolkit: Provision Azure Container Apps for inference` dari palet arahan.
 
-By default, the subscription and the resource group for inference should match those used for fine-tuning. The inference will use the same Azure Container App Environment and access the model and model adapter stored in Azure Files, which were generated during the fine-tuning step. 
+Secara lalai, langganan dan kumpulan sumber untuk inferens harus sama dengan yang digunakan untuk penalaan halus. Inferens akan menggunakan Persekitaran Azure Container App yang sama dan mengakses model serta penyesuai model yang disimpan dalam Azure Files, yang dihasilkan semasa langkah penalaan halus.
 
+### Sebarkan Titik Akhir Inferens
+Jika anda ingin mengubah kod inferens atau memuat semula model inferens, sila jalankan arahan `AI Toolkit: Deploy for inference`. Ini akan menyelaraskan kod terkini anda dengan Azure Container App dan memulakan semula replika.
 
-### Deploy the Inference Endpoint
-If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
+Setelah penyebaran berjaya, anda boleh mengakses API inferens dengan mengklik butang "*Go to Inference Endpoint*" yang dipaparkan dalam notifikasi VSCode. Atau, titik akhir API web boleh didapati di bawah `ACA_APP_ENDPOINT` dalam `./infra/inference.config.json` dan dalam panel output. Anda kini bersedia untuk menilai model menggunakan titik akhir ini.
 
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` и панель вывода. Теперь вы готовы оценивать модель, используя этот endpoint.
-
-### Advanced usage
-Для дополнительной информации по удалённой разработке с AI Toolkit обратитесь к документации [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) и [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference).
+### Penggunaan Lanjutan
+Untuk maklumat lanjut mengenai pembangunan jauh dengan AI Toolkit, rujuk dokumentasi [Penalaan Halus model secara jauh](https://aka.ms/ai-toolkit/remote-provision) dan [Inferens dengan model yang telah ditala halus](https://aka.ms/ai-toolkit/remote-inference).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

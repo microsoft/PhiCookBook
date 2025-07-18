@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:40:16+00:00",
+  "translation_date": "2025-07-17T06:21:52+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "pl"
 }
@@ -13,32 +13,32 @@ CO_OP_TRANSLATOR_METADATA:
 
 Kaito wyróżnia się na tle większości popularnych metod wdrażania modeli opartych na infrastrukturze maszyn wirtualnych dzięki następującym cechom:
 
-- Zarządzanie plikami modeli za pomocą obrazów kontenerów. Udostępniany jest serwer http do wykonywania wywołań inferencyjnych z wykorzystaniem biblioteki modeli.
+- Zarządzanie plikami modeli za pomocą obrazów kontenerów. Udostępniany jest serwer http do wykonywania wywołań inferencji z użyciem biblioteki modelu.
 - Unikanie dostrajania parametrów wdrożenia pod sprzęt GPU dzięki gotowym konfiguracjom.
 - Automatyczne przydzielanie węzłów GPU na podstawie wymagań modelu.
-- Hostowanie dużych obrazów modeli w publicznym Microsoft Container Registry (MCR), jeśli pozwala na to licencja.
+- Przechowywanie dużych obrazów modeli w publicznym Microsoft Container Registry (MCR), jeśli pozwala na to licencja.
 
 Dzięki Kaito proces wdrażania dużych modeli AI do inferencji w Kubernetes jest znacznie uproszczony.
 
 ## Architektura
 
-Kaito opiera się na klasycznym wzorcu projektowym Kubernetes Custom Resource Definition (CRD)/kontroler. Użytkownik zarządza zasobem niestandardowym `workspace`, który opisuje wymagania dotyczące GPU oraz specyfikację inferencji. Kontrolery Kaito automatyzują wdrożenie poprzez uzgadnianie zasobu niestandardowego `workspace`.
+Kaito opiera się na klasycznym wzorcu projektowym Kubernetes Custom Resource Definition (CRD)/kontroler. Użytkownik zarządza niestandardowym zasobem `workspace`, który opisuje wymagania dotyczące GPU oraz specyfikację inferencji. Kontrolery Kaito automatyzują wdrożenie, synchronizując stan zasobu `workspace`.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Architektura Kaito" alt="Architektura Kaito">
+  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-Powyższy rysunek przedstawia przegląd architektury Kaito. Główne jej elementy to:
+Powyższy rysunek przedstawia ogólny przegląd architektury Kaito. Główne jej komponenty to:
 
-- **Kontroler Workspace**: Uzgadnia zasób niestandardowy `workspace`, tworzy zasoby niestandardowe `machine` (opisane poniżej) w celu wywołania automatycznego przydzielania węzłów oraz tworzy obciążenie inferencyjne (`deployment` lub `statefulset`) na podstawie gotowych konfiguracji modelu.
-- **Kontroler przydzielania węzłów**: Kontroler nazywa się *gpu-provisioner* w [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Wykorzystuje CRD `machine` pochodzący z [Karpenter](https://sigs.k8s.io/karpenter) do komunikacji z kontrolerem workspace. Integruje się z API Azure Kubernetes Service (AKS), aby dodawać nowe węzły GPU do klastra AKS.
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) jest komponentem open source. Może zostać zastąpiony przez inne kontrolery, jeśli obsługują API [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Kontroler Workspace**: Synchronizuje niestandardowy zasób `workspace`, tworzy niestandardowe zasoby `machine` (opisane poniżej) w celu wywołania automatycznego przydzielania węzłów oraz tworzy obciążenie inferencyjne (`deployment` lub `statefulset`) na podstawie gotowych konfiguracji modelu.
+- **Kontroler przydzielania węzłów**: Kontroler o nazwie *gpu-provisioner* w [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Wykorzystuje CRD `machine` pochodzący z [Karpenter](https://sigs.k8s.io/karpenter) do współpracy z kontrolerem workspace. Integruje się z API Azure Kubernetes Service (AKS), aby dodawać nowe węzły GPU do klastra AKS.
+> Uwaga: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) to komponent open source. Może zostać zastąpiony innymi kontrolerami, jeśli obsługują API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Film przeglądowy  
 [Obejrzyj demo Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## Instalacja
 
-Proszę sprawdzić instrukcję instalacji [tutaj](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Proszę zapoznać się z instrukcją instalacji [tutaj](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Szybki start
 
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-Status workspace można śledzić za pomocą następującego polecenia. Gdy kolumna WORKSPACEREADY stanie się `True`, model został pomyślnie wdrożony.
+Status workspace można śledzić, wykonując następujące polecenie. Gdy kolumna WORKSPACEREADY zmieni się na `True`, model został pomyślnie wdrożony.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -113,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w jego języku źródłowym powinien być traktowany jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

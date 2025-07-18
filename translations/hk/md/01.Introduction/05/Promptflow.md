@@ -2,81 +2,82 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-05-08T06:07:00+00:00",
+  "translation_date": "2025-07-16T22:36:48+00:00",
   "source_file": "md/01.Introduction/05/Promptflow.md",
   "language_code": "hk"
 }
 -->
 # **介紹 Promptflow**
 
-[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) 係一個視覺化工作流程自動化工具，容許用戶用預設嘅模板同自訂連接器去建立自動化工作流程。佢設計目標係方便開發者同業務分析員快速建立自動化流程，應用於數據管理、協作同流程優化等任務。用 Prompt Flow，用戶可以輕鬆連接唔同嘅服務、應用程式同系統，自動化複雜嘅業務流程。
+[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) 是一款視覺化工作流程自動化工具，讓用戶能夠利用預建範本和自訂連接器來創建自動化工作流程。它旨在幫助開發人員和業務分析師快速建立自動化流程，應用於資料管理、協作及流程優化等任務。透過 Prompt Flow，用戶可以輕鬆連接不同的服務、應用程式和系統，並自動化複雜的業務流程。
 
-Microsoft Prompt Flow 係專為簡化由大型語言模型（LLMs）驅動嘅 AI 應用程式嘅端到端開發週期而設。無論你係構思、原型設計、測試、評估定部署基於 LLM 嘅應用，Prompt Flow 都可以令流程更簡單，幫你打造具生產質素嘅 LLM 應用。
+Microsoft Prompt Flow 專為簡化由大型語言模型（LLMs）驅動的 AI 應用程式的端到端開發週期而設計。無論你是在構思、原型設計、測試、評估還是部署基於 LLM 的應用程式，Prompt Flow 都能簡化流程，幫助你打造具備生產品質的 LLM 應用。
 
-## Microsoft Prompt Flow 嘅主要功能同優點：
+## 使用 Microsoft Prompt Flow 的主要功能與優勢：
 
 **互動式創作體驗**
 
-Prompt Flow 提供工作流程結構嘅視覺化展示，方便理解同瀏覽你嘅項目。  
-佢提供類似筆記本嘅編碼體驗，提升工作流程開發同除錯效率。
+Prompt Flow 提供工作流程結構的視覺化呈現，讓你輕鬆理解並瀏覽專案。
+它提供類似筆記本的編碼體驗，提升工作流程開發與除錯的效率。
 
-**Prompt 變體同調校**
+**提示變體與調整**
 
-可以建立同比較多個 prompt 變體，促進反覆優化過程。評估唔同 prompt 嘅表現，揀出最有效果嘅。
+建立並比較多個提示變體，促進反覆優化的過程。評估不同提示的表現，選擇最有效的版本。
 
-**內置評估流程**
+**內建評估流程**
 
-利用內置嘅評估工具，評估你嘅 prompt 同工作流程嘅質素同效果。  
-了解你基於 LLM 嘅應用表現幾好。
+利用內建的評估工具，評估你的提示和工作流程的品質與效能。
+了解你的基於 LLM 的應用程式表現如何。
 
-**全面資源**
+**豐富資源**
 
-Prompt Flow 包含一系列內置工具、範例同模板。呢啲資源係開發起點，激發創意同加快流程。
+Prompt Flow 包含內建工具庫、範例和範本，這些資源可作為開發起點，激發創意並加速流程。
 
-**協作同企業級準備**
+**協作與企業級準備**
 
-支援團隊協作，容許多位用戶一齊做 prompt 工程項目。  
-維持版本控制，有效分享知識。簡化整個 prompt 工程流程，從開發、評估到部署同監控。
+支援團隊協作，允許多位用戶共同參與提示工程專案。
+維護版本控制並有效分享知識。簡化整個提示工程流程，從開發、評估到部署與監控。
 
-## Prompt Flow 入面嘅評估
+## Prompt Flow 中的評估
 
-喺 Microsoft Prompt Flow 入面，評估係評定你嘅 AI 模型表現嘅關鍵步驟。依家一齊睇下點樣喺 Prompt Flow 入面自訂評估流程同指標：
+在 Microsoft Prompt Flow 中，評估在判斷 AI 模型表現上扮演關鍵角色。讓我們來看看如何在 Prompt Flow 中自訂評估流程和指標：
 
 ![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.hk.png)
 
-**了解 Prompt Flow 入面嘅評估**
+**理解 Prompt Flow 中的評估**
 
-喺 Prompt Flow，flow 代表一連串節點，負責處理輸入同產生輸出。評估流程係特別設計用嚟根據特定標準同目標評估執行結果嘅流程。
+在 Prompt Flow 裡，工作流程代表一連串節點，負責處理輸入並產生輸出。評估流程是專門用來根據特定標準和目標評估執行結果表現的特殊流程。
 
-**評估流程嘅主要特點**
+**評估流程的主要特點**
 
-通常會喺被測試嘅流程執行後運行，使用其輸出。佢哋會計算分數或指標，衡量被測流程嘅表現。指標可以包括準確度、相關性分數或其他相關量度。
+通常會在被測試的流程執行後運行，使用其輸出結果。
+計算分數或指標來衡量被測流程的表現。指標可以包括準確率、相關性分數或其他相關衡量標準。
 
 ### 自訂評估流程
 
 **定義輸入**
 
-評估流程需要接收被測流程嘅輸出。定義輸入同一般流程一樣。  
-例如，評估 QnA 流程時，可以將輸入命名為「answer」。評估分類流程時，輸入可以叫「category」。可能亦需要實際標籤（ground truth）作為輸入。
+評估流程需要接收被測流程的輸出。輸入定義方式與一般流程相同。
+例如，若你在評估 QnA 流程，輸入可命名為「answer」。若評估分類流程，輸入可命名為「category」。有時也需要真實標籤（ground truth）作為輸入。
 
-**輸出同指標**
+**輸出與指標**
 
-評估流程會產生衡量被測流程表現嘅結果。指標可以用 Python 或 LLM 計算。用 log_metric() 函數記錄相關指標。
+評估流程會產生衡量被測流程表現的結果。指標可透過 Python 或 LLM 計算。使用 log_metric() 函數來記錄相關指標。
 
 **使用自訂評估流程**
 
-根據你嘅任務同目標，開發專屬嘅評估流程。根據評估目標自訂指標。  
-將呢個自訂評估流程應用於批量執行，進行大規模測試。
+開發符合你特定任務和目標的自訂評估流程。
+根據評估目標調整指標。
+將此自訂評估流程應用於批次執行，以進行大規模測試。
 
-## 內置評估方法
+## 內建評估方法
 
-Prompt Flow 亦提供內置嘅評估方法。  
-你可以提交批量執行，利用呢啲方法評估流程喺大數據集上嘅表現。  
-查看評估結果、比較指標，並按需要反覆優化。  
-記住，評估係確保 AI 模型達到預期標準同目標嘅重要環節。詳情請參考官方文件，了解喺 Microsoft Prompt Flow 入面開發同使用評估流程嘅指引。
+Prompt Flow 也提供內建的評估方法。
+你可以提交批次執行，並使用這些方法評估工作流程在大型資料集上的表現。
+查看評估結果、比較指標，並根據需要反覆優化。
+請記得，評估對確保 AI 模型達到預期標準和目標至關重要。詳細的開發與使用評估流程說明，請參考官方文件。
 
-總結，Microsoft Prompt Flow 幫助開發者簡化 prompt 工程，提供穩健嘅開發環境，從而打造高質素嘅 LLM 應用。如果你係做 LLM 相關工作，Prompt Flow 係一個值得探索嘅好工具。  
-詳閱 [Prompt Flow Evaluation Documents](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) 了解開發同使用評估流程嘅詳細說明。
+總結來說，Microsoft Prompt Flow 透過簡化提示工程並提供強大的開發環境，賦能開發者打造高品質的 LLM 應用程式。如果你正在使用 LLM，Prompt Flow 是值得探索的利器。詳情請參考 [Prompt Flow 評估文件](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo)。
 
 **免責聲明**：  
-本文件係用AI翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。雖然我哋努力確保準確性，但請注意自動翻譯可能會有錯誤或不準確嘅地方。原文文件嘅母語版本應視為權威來源。對於重要資訊，建議使用專業人工翻譯。我哋對因使用此翻譯而引起嘅任何誤解或誤釋概不負責。
+本文件乃使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

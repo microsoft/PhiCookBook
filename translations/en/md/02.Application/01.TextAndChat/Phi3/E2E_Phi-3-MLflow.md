@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-07-09T19:11:25+00:00",
+  "translation_date": "2025-07-17T02:24:47+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "en"
 }
@@ -11,18 +11,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) is an open-source platform designed to manage the entire machine learning lifecycle.
 
-![MLFlow](../../../../../../imgs/02/mlflow/MlFlowmlops.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.en.png)
 
 MLflow is used to manage the ML lifecycle, including experimentation, reproducibility, deployment, and a central model registry. MLflow currently offers four components:
 
-- **MLflow Tracking:** Record and query experiments, code, data configurations, and results.
-- **MLflow Projects:** Package data science code in a format that allows runs to be reproduced on any platform.
+- **MLflow Tracking:** Record and query experiments, code, data configuration, and results.
+- **MLflow Projects:** Package data science code in a format that allows reproducing runs on any platform.
 - **MLflow Models:** Deploy machine learning models in various serving environments.
 - **Model Registry:** Store, annotate, and manage models in a central repository.
 
 It includes features for tracking experiments, packaging code into reproducible runs, and sharing and deploying models. MLflow is integrated into Databricks and supports a wide range of ML libraries, making it library-agnostic. It can be used with any machine learning library and in any programming language, as it provides a REST API and CLI for convenience.
 
-![MLFlow](../../../../../../imgs/02/mlflow/MLflow2.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.en.png)
 
 Key features of MLflow include:
 
@@ -37,12 +37,12 @@ MLflow also supports the MLOps loop, which includes preparing data, registering 
 
 In this end-to-end example, we will demonstrate two different approaches to building a wrapper around the Phi-3 small language model (SLM) and then running it as an MLflow model either locally or in the cloud, for example, in an Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../imgs/02/mlflow/MlFlow1.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.en.png)
 
 | Project | Description | Location |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline is the easiest option to build a wrapper if you want to use a HuggingFace model with MLflow’s experimental transformers flavor. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | At the time of writing, the transformer pipeline did not support MLflow wrapper generation for HuggingFace models in ONNX format, even with the experimental optimum Python package. In cases like this, you can build your own custom Python wrapper for MLflow models. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | The Transformer Pipeline is the easiest way to build a wrapper if you want to use a HuggingFace model with MLflow’s experimental transformers flavor. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | At the time of writing, the transformer pipeline did not support MLflow wrapper generation for HuggingFace models in ONNX format, even with the experimental optimum Python package. In such cases, you can build your own custom Python wrapper for MLflow models. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Project: Transformer Pipeline
 
@@ -53,7 +53,7 @@ In this end-to-end example, we will demonstrate two different approaches to buil
     import transformers
     ```
 
-2. Next, initiate a transformer pipeline by referring to the target Phi-3 model in the HuggingFace registry. As shown in the _Phi-3-mini-4k-instruct_ model card, its task is “Text Generation”:
+2. Next, initialize a transformer pipeline by referring to the target Phi-3 model in the HuggingFace registry. As shown in the _Phi-3-mini-4k-instruct_ model card, its task is “Text Generation”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ In this end-to-end example, we will demonstrate two different approaches to buil
     )
     ```
 
-3. You can now save your Phi-3 model’s transformer pipeline in MLflow format and provide additional details such as the target artifacts path, specific model configuration settings, and inference API type:
+3. Now you can save your Phi-3 model’s transformer pipeline in MLflow format and provide additional details such as the target artifacts path, specific model configuration settings, and inference API type:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -75,7 +75,7 @@ In this end-to-end example, we will demonstrate two different approaches to buil
 
 ## Project: Custom Python Wrapper
 
-1. Here, we can use Microsoft's [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) for inference with the ONNX model and for token encoding/decoding. You should select the _onnxruntime_genai_ package for your target compute; the example below targets CPU:
+1. Here, we use Microsoft's [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) for inference and token encoding/decoding of the ONNX model. You should select the _onnxruntime_genai_ package for your target compute; the example below targets CPU:
 
     ``` Python
     import mlflow
@@ -169,7 +169,7 @@ In this end-to-end example, we will demonstrate two different approaches to buil
       None}
     ```
 
-1. So, our prompt needs to include a "prompt" dictionary key, similar to this:
+1. Therefore, our prompt needs to include a "prompt" dictionary key, similar to this:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}

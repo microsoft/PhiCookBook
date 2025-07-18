@@ -2,58 +2,59 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:09:15+00:00",
+  "translation_date": "2025-07-17T03:29:58+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "sk"
 }
 -->
 # **Vytvorte si vlastného agenta Visual Studio Code Chat Copilot s Phi-3.5 od GitHub Models**
 
-Používate Visual Studio Code Copilot? Najmä v chate môžete využiť rôznych agentov na zlepšenie schopnosti vytvárať, písať a udržiavať projekty vo Visual Studio Code. Visual Studio Code poskytuje API, ktoré umožňuje firmám a jednotlivcom vytvárať rôznych agentov podľa ich podnikania, aby rozšírili svoje možnosti v rôznych špecializovaných oblastiach. V tomto článku sa zameriame na **Phi-3.5-mini-instruct (128k)** a **Phi-3.5-vision-instruct (128k)** od GitHub Models na vytvorenie vlastného agenta pre Visual Studio Code.
+Používate Visual Studio Code Copilot? Najmä v Chate môžete využiť rôznych agentov na zlepšenie schopnosti vytvárať, písať a udržiavať projekty vo Visual Studio Code. Visual Studio Code poskytuje API, ktoré umožňuje firmám a jednotlivcom vytvárať rôznych agentov podľa ich podnikania a rozširovať ich schopnosti v rôznych špecializovaných oblastiach. V tomto článku sa zameriame na **Phi-3.5-mini-instruct (128k)** a **Phi-3.5-vision-instruct (128k)** od GitHub Models, aby ste si mohli vytvoriť vlastného agenta pre Visual Studio Code.
 
 ## **O Phi-3.5 na GitHub Models**
 
-Vieme, že Phi-3/3.5-mini-instruct v rodine Phi-3/3.5 má silné schopnosti porozumenia a generovania kódu a má výhody oproti Gemma-2-9b a Mistral-Nemo-12B-instruct-2407.
+Vieme, že Phi-3/3.5-mini-instruct z rodiny Phi-3/3.5 má silné schopnosti porozumenia a generovania kódu a má výhody oproti Gemma-2-9b a Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.sk.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.sk.png)
 
 Najnovšie GitHub Models už poskytujú prístup k modelom Phi-3.5-mini-instruct (128k) a Phi-3.5-vision-instruct (128k). Vývojári k nim môžu pristupovať cez OpenAI SDK, Azure AI Inference SDK a REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.sk.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.sk.png)
 
-***Note: *** Odporúča sa použiť Azure AI Inference SDK, pretože v produkčnom prostredí lepšie prepína s Azure Model Catalog.
+***Poznámka:*** Odporúča sa tu používať Azure AI Inference SDK, pretože lepšie prepína s Azure Model Catalog v produkčnom prostredí.
 
-Nižšie sú výsledky **Phi-3.5-mini-instruct (128k)** a **Phi-3.5-vision-instruct (128k)** v scenári generovania kódu po napojení na GitHub Models, ktoré zároveň slúžia ako príprava na nasledujúce príklady.
+Nižšie sú výsledky **Phi-3.5-mini-instruct (128k)** a **Phi-3.5-vision-instruct (128k)** v scenári generovania kódu po prepojení s GitHub Models, a zároveň príprava na nasledujúce príklady.
 
 **Demo: GitHub Models Phi-3.5-mini-instruct (128k) generuje kód z Promptu** ([kliknite na tento odkaz](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
 **Demo: GitHub Models Phi-3.5-vision-instruct (128k) generuje kód z obrázka** ([kliknite na tento odkaz](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
-## **O GitHub Copilot Chat Agent**
+
+## **O GitHub Copilot Chat Agentovi**
 
 GitHub Copilot Chat Agent dokáže dokončiť rôzne úlohy v rôznych projektových scenároch na základe kódu. Systém má štyroch agentov: workspace, github, terminal, vscode.
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.sk.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.sk.png)
 
-Pridaním mena agenta s ‘@’ môžete rýchlo dokončiť príslušnú prácu. Pre firmy, ak pridáte vlastný obsah súvisiaci s biznisom ako požiadavky, kódovanie, testovacie špecifikácie a vydanie, môžete získať silnejšie firemné súkromné funkcie založené na GitHub Copilot.
+Pridaním mena agenta s ‘@’ môžete rýchlo dokončiť príslušnú prácu. Pre firmy, ak pridáte vlastný obsah súvisiaci s podnikaním, ako sú požiadavky, kódovanie, testovacie špecifikácie a vydania, môžete mať silnejšie súkromné podnikové funkcie založené na GitHub Copilot.
 
-Visual Studio Code Chat Agent už oficiálne vydal svoje API, ktoré umožňuje firmám alebo firemným vývojárom vytvárať agentov založených na rôznych softvérových biznis ekosystémoch. Na základe vývojovej metódy Visual Studio Code Extension Development môžete jednoducho pristupovať k rozhraniu Visual Studio Code Chat Agent API. Môžeme vyvíjať na základe tohto procesu.
+Visual Studio Code Chat Agent teraz oficiálne vydal svoje API, ktoré umožňuje firmám alebo firemným vývojárom vyvíjať agentov založených na rôznych softvérových podnikových ekosystémoch. Na základe vývojovej metódy Visual Studio Code Extension Development môžete jednoducho pristupovať k rozhraniu Visual Studio Code Chat Agent API. Môžeme vyvíjať na základe tohto procesu.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.sk.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.sk.png)
 
-Vývojový scenár podporuje prístup k API tretích strán (napríklad GitHub Models, Azure Model Catalog a vlastné služby založené na open source modeloch) a zároveň môže používať modely gpt-35-turbo, gpt-4 a gpt-4o poskytované GitHub Copilot.
+Vývojový scenár podporuje prístup k API tretích strán modelov (ako GitHub Models, Azure Model Catalog a vlastné služby založené na open source modeloch) a tiež môže používať modely gpt-35-turbo, gpt-4 a gpt-4o poskytované GitHub Copilot.
 
 ## **Pridajte agenta @phicoding založeného na Phi-3.5**
 
-Snažíme sa integrovať programátorské schopnosti Phi-3.5 na dokončenie písania kódu, generovania kódu z obrázkov a ďalších úloh. Vytvorte agenta postaveného okolo Phi-3.5 - @PHI, tu sú niektoré funkcie:
+Snažíme sa integrovať programovacie schopnosti Phi-3.5 na dokončenie písania kódu, generovania kódu z obrázkov a ďalších úloh. Dokončite agenta postaveného okolo Phi-3.5 - @PHI, tu sú niektoré funkcie:
 
-1. Vygeneruje predstavenie na základe GPT-4o poskytovaného GitHub Copilot cez príkaz **@phicoding /help**
+1. Generovanie sebapredstavenia na základe GPT-4o poskytovaného GitHub Copilot cez príkaz **@phicoding /help**
 
-2. Vygeneruje kód pre rôzne programovacie jazyky na základe **Phi-3.5-mini-instruct (128k)** cez príkaz **@phicoding /gen**
+2. Generovanie kódu pre rôzne programovacie jazyky na základe **Phi-3.5-mini-instruct (128k)** cez príkaz **@phicoding /gen**
 
-3. Vygeneruje kód na základe **Phi-3.5-vision-instruct (128k)** a dokončenie obrázkov cez príkaz **@phicoding /image**
+3. Generovanie kódu na základe **Phi-3.5-vision-instruct (128k)** a doplnenie obrázkov cez príkaz **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.sk.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.sk.png)
 
 ## **Súvisiace kroky**
 
@@ -64,8 +65,7 @@ Snažíme sa integrovať programátorské schopnosti Phi-3.5 na dokončenie pís
 npm install --global yo generator-code 
 
 ```
-
-2. Vytvorte Visual Studio Code Extension plugin (používajúc Typescript vývojový režim, pomenovaný phiext)
+2. Vytvorte plugin Visual Studio Code Extension (používajte vývojový režim Typescript, pomenovaný phiext)
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. Otvorte vytvorený projekt a upravte package.json. Tu sú súvisiace inštrukcie a konfigurácie, vrátane nastavenia GitHub Models. Pozor, musíte sem pridať svoj GitHub Models token.
+3. Otvorte vytvorený projekt a upravte package.json. Tu sú súvisiace inštrukcie a konfigurácie, vrátane konfigurácie GitHub Models. Upozorňujeme, že tu musíte pridať svoj GitHub Models token.
 
 ```json
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.sk.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.sk.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.sk.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.sk.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.sk.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.sk.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.sk.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.sk.png)
 
 Môžete si stiahnuť ukážkový kód: [kliknite](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
@@ -386,7 +386,7 @@ Môžete si stiahnuť ukážkový kód: [kliknite](../../../../../../code/09.Upd
 
 2. Naučte sa vývoj Visual Studio Code Extension [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. Zoznámte sa s Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. Spoznajte Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, berte prosím na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

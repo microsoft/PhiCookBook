@@ -2,58 +2,59 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:05:52+00:00",
+  "translation_date": "2025-07-17T03:25:55+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "tr"
 }
 -->
-# **Kendi Visual Studio Code Chat Copilot Ajanınızı Phi-3.5 ile GitHub Modelleri Kullanarak Oluşturun**
+# **GitHub Modelleri ile Phi-3.5 kullanarak kendi Visual Studio Code Chat Copilot Ajanınızı Oluşturun**
 
-Visual Studio Code Copilot kullanıyor musunuz? Özellikle Chat’te, Visual Studio Code’da projeler oluşturma, yazma ve sürdürme yeteneklerini geliştirmek için farklı ajanlar kullanabilirsiniz. Visual Studio Code, şirketlerin ve bireylerin kendi işlerine göre farklı ajanlar oluşturup çeşitli özel alanlarda yeteneklerini genişletmelerine olanak tanıyan bir API sunar. Bu yazıda, kendi Visual Studio Code Ajanınızı oluşturmak için GitHub Modelleri’nin **Phi-3.5-mini-instruct (128k)** ve **Phi-3.5-vision-instruct (128k)** modellerine odaklanacağız.
+Visual Studio Code Copilot kullanıyor musunuz? Özellikle Chat bölümünde, Visual Studio Code’da projeleri oluşturma, yazma ve sürdürme yeteneğini geliştirmek için farklı ajanlar kullanabilirsiniz. Visual Studio Code, şirketlerin ve bireylerin işlerine göre farklı ajanlar oluşturmasına olanak tanıyan bir API sağlar ve böylece farklı özel alanlarda yeteneklerini genişletebilirler. Bu yazıda, GitHub Modelleri’nin **Phi-3.5-mini-instruct (128k)** ve **Phi-3.5-vision-instruct (128k)** modellerine odaklanarak kendi Visual Studio Code Ajanınızı nasıl oluşturacağınızı anlatacağız.
 
-## **GitHub Modelleri Üzerindeki Phi-3.5 Hakkında**
+## **GitHub Modellerindeki Phi-3.5 Hakkında**
 
-Phi-3/3.5 Ailesindeki Phi-3/3.5-mini-instruct’in güçlü kod anlama ve üretme yeteneklerine sahip olduğunu ve Gemma-2-9b ile Mistral-Nemo-12B-instruct-2407 modellerine kıyasla avantajları olduğunu biliyoruz.
+Phi-3/3.5 Ailesindeki Phi-3/3.5-mini-instruct modelinin güçlü kod anlama ve üretme yeteneklerine sahip olduğunu ve Gemma-2-9b ile Mistral-Nemo-12B-instruct-2407 modellerine göre avantajları olduğunu biliyoruz.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.tr.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.tr.png)
 
-En güncel GitHub Modelleri, Phi-3.5-mini-instruct (128k) ve Phi-3.5-vision-instruct (128k) modellerine erişim sunuyor. Geliştiriciler, OpenAI SDK, Azure AI Inference SDK ve REST API aracılığıyla bu modellere ulaşabilir.
+En son GitHub Modelleri, Phi-3.5-mini-instruct (128k) ve Phi-3.5-vision-instruct (128k) modellerine erişim sağlamaktadır. Geliştiriciler bu modellere OpenAI SDK, Azure AI Inference SDK ve REST API üzerinden ulaşabilirler.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.tr.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.tr.png)
 
-***Note:*** Burada Azure AI Inference SDK kullanılması önerilir, çünkü üretim ortamında Azure Model Kataloğu ile daha iyi geçiş yapabilir.
+***Not:*** Üretim ortamında Azure Model Catalog ile daha iyi geçiş yapabildiği için burada Azure AI Inference SDK kullanılması önerilir.
 
-Aşağıda, GitHub Modelleri ile entegre edildikten sonra kod üretimi senaryosunda **Phi-3.5-mini-instruct (128k)** ve **Phi-3.5-vision-instruct (128k)** modellerinin sonuçları yer almakta, ayrıca sonraki örnekler için hazırlık yapılmıştır.
+Aşağıda, GitHub Modelleri ile entegre edildikten sonra kod üretme senaryosunda **Phi-3.5-mini-instruct (128k)** ve **Phi-3.5-vision-instruct (128k)** modellerinin sonuçları yer almakta ve sonraki örnekler için hazırlık yapılmaktadır.
 
-**Demo: GitHub Modelleri Phi-3.5-mini-instruct (128k) ile Prompt’tan kod üretimi** ([bu bağlantıya tıklayın](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Demo: GitHub Modelleri Phi-3.5-mini-instruct (128k) ile Prompt’tan Kod Üretimi** ([bu bağlantıya tıklayın](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**Demo: GitHub Modelleri Phi-3.5-vision-instruct (128k) ile Görüntüden kod üretimi** ([bu bağlantıya tıklayın](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Demo: GitHub Modelleri Phi-3.5-vision-instruct (128k) ile Görüntüden Kod Üretimi** ([bu bağlantıya tıklayın](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+
 
 ## **GitHub Copilot Chat Ajanı Hakkında**
 
-GitHub Copilot Chat Ajanı, kod tabanlı farklı proje senaryolarında çeşitli görevleri tamamlayabilir. Sistem dört ajan içerir: workspace, github, terminal, vscode
+GitHub Copilot Chat Ajanı, kod temelinde farklı proje senaryolarında çeşitli görevleri tamamlayabilir. Sistem dört ajan içerir: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.tr.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.tr.png)
 
-Ajan adını ‘@’ ile ekleyerek ilgili işi hızlıca tamamlayabilirsiniz. Şirketler için, gereksinimler, kodlama, test spesifikasyonları ve sürüm gibi kendi işlerine dair içerikler ekleyerek GitHub Copilot tabanlı daha güçlü kurumsal özel fonksiyonlar oluşturabilirsiniz.
+Ajan adını ‘@’ ile ekleyerek ilgili işi hızlıca tamamlayabilirsiniz. Kuruluşlar için, gereksinimler, kodlama, test spesifikasyonları ve sürüm gibi kendi işlerine dair içerikleri ekleyerek GitHub Copilot tabanlı daha güçlü kurumsal özel fonksiyonlara sahip olunabilir.
 
-Visual Studio Code Chat Ajanı artık resmi olarak API’sini yayınladı; bu sayede şirketler veya kurumsal geliştiriciler farklı yazılım iş ekosistemlerine dayalı ajanlar geliştirebilir. Visual Studio Code Extension Development geliştirme yöntemi temel alınarak, Visual Studio Code Chat Ajan API arayüzüne kolayca erişebilirsiniz. Bu süreç üzerinden geliştirme yapabiliriz.
+Visual Studio Code Chat Ajanı artık resmi olarak API’sini yayınladı ve bu sayede şirketler veya kurumsal geliştiriciler farklı yazılım iş ekosistemlerine dayalı ajanlar geliştirebilir. Visual Studio Code Extension Development geliştirme yöntemi temel alınarak, Visual Studio Code Chat Ajan API arayüzüne kolayca erişilebilir. Bu süreç üzerinden geliştirme yapabiliriz.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.tr.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.tr.png)
 
-Geliştirme senaryosu, üçüncü taraf model API’lerine (GitHub Modelleri, Azure Model Kataloğu ve açık kaynak modellerine dayalı kendi hizmetleriniz gibi) erişimi destekler ve ayrıca GitHub Copilot tarafından sunulan gpt-35-turbo, gpt-4 ve gpt-4o modellerini kullanabilir.
+Geliştirme senaryosu, üçüncü taraf model API’lerine (örneğin GitHub Modelleri, Azure Model Catalog ve açık kaynak modeller üzerine kurulu kendi servisleriniz) erişimi destekler ve ayrıca GitHub Copilot tarafından sağlanan gpt-35-turbo, gpt-4 ve gpt-4o modellerini kullanabilir.
 
 ## **Phi-3.5 Tabanlı @phicoding Ajanı Ekleme**
 
-Phi-3.5’in programlama yeteneklerini kod yazma, görüntüden kod üretme ve diğer görevleri tamamlamak için entegre etmeye çalışıyoruz. Phi-3.5 çevresinde oluşturulmuş @PHI adlı bir Ajan tamamlandı, işte bazı özellikleri:
+Phi-3.5’in programlama yeteneklerini kod yazma, görüntüden kod üretme ve diğer görevleri tamamlamak için entegre etmeye çalışıyoruz. Phi-3.5 etrafında oluşturulmuş bir Ajan - @PHI tamamlandı, işte bazı fonksiyonları:
 
-1. **@phicoding /help** komutu ile GitHub Copilot tarafından sağlanan GPT-4o’ya dayalı bir öz tanıtım oluşturur.
+1. GitHub Copilot tarafından sağlanan GPT-4o tabanlı kendini tanıtma metni oluşturma, **@phicoding /help** komutu ile
 
-2. **@phicoding /gen** komutu ile **Phi-3.5-mini-instruct (128k)** tabanlı farklı programlama dilleri için kod üretir.
+2. **Phi-3.5-mini-instruct (128k)** tabanlı farklı programlama dilleri için kod üretme, **@phicoding /gen** komutu ile
 
-3. **@phicoding /image** komutu ile **Phi-3.5-vision-instruct (128k)** ve görüntü tamamlama kullanarak kod üretir.
+3. **Phi-3.5-vision-instruct (128k)** ve görüntü tamamlama tabanlı kod üretme, **@phicoding /image** komutu ile
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.tr.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.tr.png)
 
 ## **İlgili Adımlar**
 
@@ -63,8 +64,8 @@ Phi-3.5’in programlama yeteneklerini kod yazma, görüntüden kod üretme ve d
 
 npm install --global yo generator-code 
 
-```  
-2. Visual Studio Code Extension eklentisi oluşturun (Typescript geliştirme modu kullanarak, adı phiext)
+```
+2. Visual Studio Code Extension eklentisi oluşturun (Typescript geliştirme modu kullanarak, adı phiext olsun)
 
 ```bash
 
@@ -72,7 +73,7 @@ yo code
 
 ```
 
-3. Oluşturulan projeyi açın ve package.json dosyasını düzenleyin. İlgili talimatlar ve konfigürasyonlar ile GitHub Modelleri yapılandırması burada yer alır. GitHub Modelleri token’ınızı eklemeniz gerektiğine dikkat edin.
+3. Oluşturduğunuz projeyi açın ve package.json dosyasını düzenleyin. Burada ilgili talimatlar ve konfigürasyonlar ile GitHub Modelleri ayarları yer almakta. GitHub Modelleri token’ınızı buraya eklemeniz gerektiğini unutmayın.
 
 ```json
 
@@ -363,29 +364,29 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.tr.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.tr.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.tr.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.tr.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.tr.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.tr.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.tr.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.tr.png)
 
-Örnek kodu indirebilirsiniz: [tıklayın](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Örnek kodları indirebilirsiniz: [tıklayın](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **Kaynaklar**
 
-1. GitHub Modelleri kaydı [https://gh.io/models](https://gh.io/models)
+1. GitHub Modellerine kayıt olun [https://gh.io/models](https://gh.io/models)
 
-2. Visual Studio Code Extension Geliştirme öğrenimi [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. Visual Studio Code Extension Geliştirmeyi öğrenin [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. Visual Studio Code Copilot Chat API hakkında bilgi [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. Visual Studio Code Copilot Chat API hakkında bilgi edinin [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

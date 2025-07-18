@@ -2,46 +2,46 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:37:54+00:00",
+  "translation_date": "2025-07-17T02:32:24+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "da"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) er en open source-platform designet til at håndtere hele livscyklussen for maskinlæring.
+[MLflow](https://mlflow.org/) er en open source-platform designet til at håndtere hele maskinlæringslivscyklussen.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.da.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.da.png)
 
-MLFlow bruges til at styre ML-livscyklussen, herunder eksperimenter, reproducerbarhed, udrulning og et centralt modelregister. MLflow tilbyder i øjeblikket fire komponenter.
+MLFlow bruges til at styre ML-livscyklussen, herunder eksperimenter, reproducerbarhed, implementering og et centralt modelregister. MLflow tilbyder i øjeblikket fire komponenter.
 
-- **MLflow Tracking:** Registrer og forespørg på eksperimenter, kode, data-konfiguration og resultater.
-- **MLflow Projects:** Pak data science-kode ind i et format, der kan reproducere kørsel på enhver platform.
-- **Mlflow Models:** Udrul maskinlæringsmodeller i forskellige serveringsmiljøer.
-- **Model Registry:** Gem, annoter og administrer modeller i et centralt arkiv.
+- **MLflow Tracking:** Registrer og forespørg på eksperimenter, kode, datakonfiguration og resultater.
+- **MLflow Projects:** Pak data science-kode i et format, der kan reproducere kørsel på enhver platform.
+- **Mlflow Models:** Implementer maskinlæringsmodeller i forskellige serveringsmiljøer.
+- **Model Registry:** Gem, annoter og administrer modeller i et centralt lager.
 
-Det inkluderer funktioner til at spore eksperimenter, pakke kode til reproducerbare kørsel og dele og udrulle modeller. MLFlow er integreret i Databricks og understøtter en række ML-biblioteker, hvilket gør det bibliotek-agnostisk. Det kan bruges med ethvert maskinlæringsbibliotek og i ethvert programmeringssprog, da det tilbyder en REST API og CLI for nemheds skyld.
+Det inkluderer funktioner til at spore eksperimenter, pakke kode til reproducerbare kørsel og dele og implementere modeller. MLFlow er integreret i Databricks og understøtter en række ML-biblioteker, hvilket gør det bibliotek-uafhængigt. Det kan bruges med ethvert maskinlæringsbibliotek og i ethvert programmeringssprog, da det tilbyder en REST API og CLI for nemheds skyld.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.da.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.da.png)
 
 Nøglefunktioner i MLFlow inkluderer:
 
-- **Experiment Tracking:** Registrer og sammenlign parametre og resultater.
-- **Model Management:** Udrul modeller til forskellige serverings- og inferensplatforme.
-- **Model Registry:** Samarbejd om at administrere livscyklussen for MLflow Models, inklusiv versionering og annotationer.
+- **Eksperimentsporing:** Registrer og sammenlign parametre og resultater.
+- **Modelstyring:** Implementer modeller til forskellige serverings- og inferensplatforme.
+- **Model Registry:** Samarbejd om at administrere livscyklussen for MLflow-modeller, inklusive versionsstyring og annotationer.
 - **Projects:** Pak ML-kode til deling eller produktion.
-MLFlow understøtter også MLOps-løkken, som inkluderer forberedelse af data, registrering og styring af modeller, pakning af modeller til eksekvering, udrulning af services og overvågning af modeller. Det har til formål at forenkle processen med at gå fra prototype til produktionsworkflow, især i cloud- og edge-miljøer.
+MLFlow understøtter også MLOps-loopet, som inkluderer forberedelse af data, registrering og styring af modeller, pakning af modeller til eksekvering, implementering af services og overvågning af modeller. Det har til formål at forenkle processen med at gå fra prototype til produktionsworkflow, især i cloud- og edge-miljøer.
 
-## E2E Scenario - Bygning af en wrapper og brug af Phi-3 som en MLFlow-model
+## E2E-scenarie - Bygning af en wrapper og brug af Phi-3 som en MLFlow-model
 
 I dette E2E-eksempel vil vi demonstrere to forskellige tilgange til at bygge en wrapper omkring Phi-3 lille sprogmodel (SLM) og derefter køre den som en MLFlow-model enten lokalt eller i skyen, f.eks. i Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.da.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.da.png)
 
 | Projekt | Beskrivelse | Placering |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline er den nemmeste mulighed for at bygge en wrapper, hvis du vil bruge en HuggingFace-model med MLFlow’s eksperimentelle transformers-flavour. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | På tidspunktet for skrivningen understøttede transformer pipeline ikke MLFlow-wrapper-generering for HuggingFace-modeller i ONNX-format, selv med den eksperimentelle optimum Python-pakke. Til sådanne tilfælde kan du bygge din egen custom Python-wrapper til MLFlow-mode | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline er den nemmeste mulighed for at bygge en wrapper, hvis du vil bruge en HuggingFace-model med MLFlows eksperimentelle transformers-smag. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | På tidspunktet for skrivningen understøttede transformer pipeline ikke MLFlow-wrappergenerering for HuggingFace-modeller i ONNX-format, selv med det eksperimentelle optimum Python-pakke. Til sådanne tilfælde kan du bygge din egen custom Python-wrapper til MLFlow-model | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Projekt: Transformer Pipeline
 
@@ -52,7 +52,7 @@ I dette E2E-eksempel vil vi demonstrere to forskellige tilgange til at bygge en 
     import transformers
     ```
 
-2. Dernæst skal du initialisere en transformer pipeline ved at referere til den ønskede Phi-3-model i HuggingFace-registret. Som det kan ses på modelkortet for _Phi-3-mini-4k-instruct_, er dens opgave af typen “Text Generation”:
+2. Dernæst skal du initialisere en transformer pipeline ved at henvise til den ønskede Phi-3-model i HuggingFace-registreret. Som det kan ses fra _Phi-3-mini-4k-instruct_’s modelkort, er dens opgave af typen “Text Generation”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -61,7 +61,7 @@ I dette E2E-eksempel vil vi demonstrere to forskellige tilgange til at bygge en 
     )
     ```
 
-3. Nu kan du gemme din Phi-3 models transformer pipeline i MLFlow-format og angive yderligere detaljer som mål for artefaktstien, specifikke modelkonfigurationsindstillinger og inferens-API-type:
+3. Du kan nu gemme din Phi-3-modells transformer pipeline i MLFlow-format og angive yderligere detaljer som mål for artefaktsti, specifikke modelkonfigurationsindstillinger og inferens-API-type:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -74,7 +74,7 @@ I dette E2E-eksempel vil vi demonstrere to forskellige tilgange til at bygge en 
 
 ## Projekt: Custom Python Wrapper
 
-1. Her kan vi bruge Microsofts [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) til inferens og token-encoding/-decoding af ONNX-modellen. Du skal vælge _onnxruntime_genai_-pakken til din målcompute, i eksemplet nedenfor er CPU valgt:
+1. Her kan vi bruge Microsofts [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) til inferens og token-enkodning/dekodning for ONNX-modellen. Du skal vælge _onnxruntime_genai_-pakken til din målcompute, med nedenstående eksempel rettet mod CPU:
 
     ``` Python
     import mlflow
@@ -147,7 +147,7 @@ I dette E2E-eksempel vil vi demonstrere to forskellige tilgange til at bygge en 
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Derefter kan du bruge OpenAI API-kompatibel efterbehandling, f.eks. _response[0][‘choices’][0][‘message’][‘content’]_, til at gøre output mere læsbart som dette:
+1. Brug derefter OpenAI API-kompatibel efterbehandling, f.eks. _response[0][‘choices’][0][‘message’][‘content’]_, for at gøre dit output pænere, som dette:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -157,7 +157,7 @@ I dette E2E-eksempel vil vi demonstrere to forskellige tilgange til at bygge en 
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. I trin 3 i Custom Python Wrapper-projektet ovenfor tillader vi MLFlow-pakken at generere modellens signatur ud fra et givet inputeksempel. Vores MLFlow-wrapper-signatur vil se således ud:
+1. I trin 3 i Custom Python Wrapper-projektet ovenfor tillader vi MLFlow-pakken at generere modellens signatur ud fra et givet inputeksempel. Vores MLFlow-wrapper’s signatur vil se sådan ud:
 
     ``` Python
     {inputs: 
@@ -168,13 +168,13 @@ I dette E2E-eksempel vil vi demonstrere to forskellige tilgange til at bygge en 
       None}
     ```
 
-1. Så vores prompt skal indeholde en "prompt"-nøgle i dictionary-format, lignende dette:
+1. Så vores prompt skal indeholde "prompt"-ordbogsnøglen, lignende denne:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Modellens output vil derefter blive leveret som en streng:
+1. Modellens output vil derefter blive leveret i strengformat:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -187,4 +187,4 @@ I dette E2E-eksempel vil vi demonstrere to forskellige tilgange til at bygge en 
     ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

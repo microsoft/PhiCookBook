@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T12:00:03+00:00",
+  "translation_date": "2025-07-16T20:53:31+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "bg"
 }
 -->
-## Извличане на заключения с Kaito
+## Извеждане с Kaito
 
-[Kaito](https://github.com/Azure/kaito) е оператор, който автоматизира разгръщането на AI/ML модели за извличане на заключения в Kubernetes клъстер.
+[Kaito](https://github.com/Azure/kaito) е оператор, който автоматизира разгръщането на AI/ML модели за извеждане в Kubernetes клъстер.
 
-Kaito има следните основни предимства в сравнение с повечето популярни методологии за разгръщане на модели, базирани на виртуални машини:
+Kaito има следните ключови предимства в сравнение с повечето основни методологии за разгръщане на модели, базирани на виртуални машини:
 
-- Управление на файловете с модели чрез контейнерни образи. Осигурен е HTTP сървър за извършване на извиквания за извличане на заключения, използвайки библиотеката с модели.
-- Избягване на настройка на параметрите за разгръщане, за да паснат на GPU хардуера, чрез предоставяне на предварително зададени конфигурации.
-- Автоматично осигуряване на GPU възли според изискванията на модела.
-- Хостване на големи образи на модели в публичния Microsoft Container Registry (MCR), ако лицензът го позволява.
+- Управлява файловете на модела чрез контейнерни образи. Предоставя HTTP сървър за извършване на извеждащи заявки чрез библиотеката на модела.
+- Избягва настройването на параметрите за разгръщане според GPU хардуера, като предлага предварително зададени конфигурации.
+- Автоматично осигурява GPU възли според изискванията на модела.
+- Хоства големи образи на модели в публичния Microsoft Container Registry (MCR), ако лицензът го позволява.
 
-С помощта на Kaito, процесът на интегриране на големи AI модели за извличане на заключения в Kubernetes е значително опростен.
+С помощта на Kaito, процесът на интегриране на големи AI модели за извеждане в Kubernetes е значително опростен.
 
 ## Архитектура
 
-Kaito следва класическия дизайн на Kubernetes Custom Resource Definition (CRD)/controller. Потребителят управлява `workspace` custom resource, който описва изискванията за GPU и спецификацията за извличане на заключения. Kaito контролерите автоматизират разгръщането чрез синхронизиране на `workspace` custom resource.
+Kaito следва класическия дизайн на Kubernetes Custom Resource Definition (CRD)/controller. Потребителят управлява персонализиран ресурс `workspace`, който описва изискванията за GPU и спецификацията за извеждане. Контролерите на Kaito автоматизират разгръщането чрез синхронизиране на персонализирания ресурс `workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-Горната илюстрация представя общия преглед на архитектурата на Kaito. Основните ѝ компоненти са:
+Горната илюстрация представя общия преглед на архитектурата на Kaito. Основните му компоненти са:
 
-- **Workspace controller**: Синхронизира `workspace` custom resource, създава `machine` (описани по-долу) custom resources за задействане на автоматичното осигуряване на възли и създава работното натоварване за извличане на заключения (`deployment` или `statefulset`) на база предварително зададените конфигурации на модела.
-- **Node provisioner controller**: Контролерът се нарича *gpu-provisioner* в [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Той използва `machine` CRD, произхождащ от [Karpenter](https://sigs.k8s.io/karpenter), за взаимодействие с workspace controller. Интегрира се с Azure Kubernetes Service (AKS) API-та за добавяне на нови GPU възли към AKS клъстера. 
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) е отворен компонент с отворен код. Може да бъде заменен с други контролери, ако поддържат [Karpenter-core](https://sigs.k8s.io/karpenter) API-та.
+- **Workspace controller**: Синхронизира персонализирания ресурс `workspace`, създава персонализирани ресурси `machine` (описани по-долу), за да задейства автоматичното осигуряване на възли, и създава извеждащата работна натовареност (`deployment` или `statefulset`) според предварително зададените конфигурации на модела.
+- **Node provisioner controller**: Контролерът се нарича *gpu-provisioner* в [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Той използва `machine` CRD, произхождащ от [Karpenter](https://sigs.k8s.io/karpenter), за взаимодействие с workspace контролера. Интегрира се с Azure Kubernetes Service (AKS) API, за да добавя нови GPU възли към AKS клъстера.
+> Забележка: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) е отворен компонент с отворен код. Може да бъде заменен с други контролери, ако поддържат [Karpenter-core](https://sigs.k8s.io/karpenter) API.
 
 ## Инсталация
 
-Моля, проверете указанията за инсталация [тук](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Моля, вижте указанията за инсталация [тук](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Бърз старт за извличане на заключения Phi-3
-[Примерен код за извличане на заключения Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Бърз старт за извеждане Phi-3
+[Примерен код за извеждане Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Статусът на workspace може да се следи чрез изпълнение на следната команда. Когато колоната WORKSPACEREADY стане `True`, моделът е успешно разположен.
+Статусът на workspace може да се проследи чрез изпълнение на следната команда. Когато колоната WORKSPACEREADY стане `True`, моделът е успешно разположен.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-След това може да се намери cluster IP-то на услугата за извличане на заключения и да се използва временен `curl` pod за тестване на крайна точка на услугата в клъстера.
+След това може да се намери cluster IP на извеждащата услуга и да се използва временен `curl` pod за тестване на крайна точка на услугата в клъстера.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Бърз старт за извличане на заключения Phi-3 с адаптери
+## Бърз старт за извеждане Phi-3 с адаптери
 
-След инсталиране на Kaito, може да се изпълнят следните команди, за да се стартира услуга за извличане на заключения.
+След инсталиране на Kaito, може да се опитат следните команди за стартиране на извеждаща услуга.
 
-[Примерен код за извличане на заключения Phi-3 с адаптери](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Примерен код за извеждане Phi-3 с адаптери](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Статусът на workspace може да се следи чрез изпълнение на следната команда. Когато колоната WORKSPACEREADY стане `True`, моделът е успешно разположен.
+Статусът на workspace може да се проследи чрез изпълнение на следната команда. Когато колоната WORKSPACEREADY стане `True`, моделът е успешно разположен.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-След това може да се намери cluster IP-то на услугата за извличане на заключения и да се използва временен `curl` pod за тестване на крайна точка на услугата в клъстера.
+След това може да се намери cluster IP на извеждащата услуга и да се използва временен `curl` pod за тестване на крайна точка на услугата в клъстера.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.

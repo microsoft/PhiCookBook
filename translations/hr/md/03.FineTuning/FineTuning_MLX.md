@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:45:35+00:00",
+  "translation_date": "2025-07-17T08:03:34+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "hr"
 }
 -->
-# **Fine-tuning Phi-3 s Apple MLX Frameworkom**
+# **Fino podešavanje Phi-3 s Apple MLX Frameworkom**
 
-Fine-tuning u kombinaciji s Lora možemo izvršiti putem naredbenog retka Apple MLX frameworka. (Ako želite saznati više o radu MLX Frameworka, pročitajte [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+Fino podešavanje u kombinaciji s Lora možemo izvršiti putem naredbenog retka Apple MLX Frameworka. (Ako želite saznati više o radu MLX Frameworka, molimo pročitajte [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
 
 
 ## **1. Priprema podataka**
 
-Prema zadanim postavkama, MLX Framework zahtijeva jsonl format za train, test i eval, a koristi se u kombinaciji s Lora za dovršetak fine-tuning zadataka.
+Po defaultu, MLX Framework zahtijeva jsonl format za train, test i eval, a u kombinaciji s Lora dovršava zadatke fino podešavanja.
 
 
 ### ***Note:***
 
-1. jsonl format podataka：
+1. jsonl format podataka ：
 
 
 ```json
@@ -31,14 +31,14 @@ Prema zadanim postavkama, MLX Framework zahtijeva jsonl format za train, test i 
 
 ```
 
-2. U našem primjeru koristimo [TruthfulQA podatke](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), ali količina podataka je relativno mala, pa rezultati fine-tuninga nisu nužno najbolji. Preporučuje se da korisnici koriste kvalitetnije podatke prilagođene vlastitim scenarijima.
+2. U našem primjeru koristimo [TruthfulQA podatke](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), no količina podataka je relativno nedovoljna, stoga rezultati fino podešavanja nisu nužno najbolji. Preporučuje se da korisnici koriste kvalitetnije podatke prilagođene vlastitim scenarijima.
 
-3. Format podataka je kombiniran s Phi-3 predloškom
+3. Format podataka je usklađen s Phi-3 predloškom
 
 Molimo preuzmite podatke s ovog [linka](../../../../code/04.Finetuning/mlx), uključite sve .jsonl datoteke u ***data*** mapu
 
 
-## **2. Fine-tuning u vašem terminalu**
+## **2. Fino podešavanje u vašem terminalu**
 
 Pokrenite ovu naredbu u terminalu
 
@@ -52,9 +52,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Note:***
 
-1. Ovo je LoRA fine-tuning, MLX framework još nije objavio QLoRA
+1. Ovo je LoRA fino podešavanje, MLX framework nije objavio QLoRA
 
-2. Možete podesiti config.yaml za promjenu nekih argumenata, na primjer
+2. Možete podesiti config.yaml za promjenu nekih argumenata, kao što su
 
 
 ```yaml
@@ -135,9 +135,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Pokretanje fine-tuning adaptera za testiranje**
+## **3. Pokretanje fino podešenog adaptera za testiranje**
 
-Možete pokrenuti fine-tuning adapter u terminalu, ovako
+Fino podešeni adapter možete pokrenuti u terminalu, ovako 
 
 
 ```bash
@@ -146,7 +146,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-i pokrenuti originalni model za usporedbu rezultata
+i pokrenuti originalni model za usporedbu rezultata 
 
 
 ```bash
@@ -155,7 +155,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Možete pokušati usporediti rezultate fine-tuninga s originalnim modelom
+Možete pokušati usporediti rezultate fino podešavanja s originalnim modelom
 
 
 ## **4. Spajanje adaptera za generiranje novih modela**
@@ -167,9 +167,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Pokretanje kvantiziranih fine-tuning modela pomoću ollama**
+## **5. Pokretanje kvantiziranih fino podešenih modela pomoću ollama**
 
-Prije korištenja, konfigurirajte svoje llama.cpp okruženje
+Prije korištenja, konfigurirajte svoj llama.cpp okoliš
 
 
 ```bash
@@ -184,13 +184,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:***
+***Note:*** 
 
-1. Trenutno se podržava kvantizacija fp32, fp16 i INT 8
+1. Sada je podržana kvantizacija za fp32, fp16 i INT 8
 
 2. Spojeni model nema tokenizer.model, molimo preuzmite ga s https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-postavite [Ollama Model](https://ollama.com/)
+postavite [Ollma Model](https://ollama.com/)
 
 
 ```txt
@@ -211,7 +211,7 @@ pokrenite naredbu u terminalu
 
 ```
 
-Čestitamo! Savladali ste fine-tuning s MLX Frameworkom
+Čestitamo! Savladali ste fino podešavanje s MLX Frameworkom
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-07T10:46:27+00:00",
+  "translation_date": "2025-07-16T21:58:28+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "es"
 }
@@ -11,19 +11,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 Intel es el fabricante de CPU más tradicional con muchos usuarios. Con el auge del aprendizaje automático y el aprendizaje profundo, Intel también se ha sumado a la competencia por la aceleración de IA. Para la inferencia de modelos, Intel no solo utiliza GPUs y CPUs, sino también NPUs.
 
-Esperamos desplegar la familia Phi-3.x en el extremo, con la intención de convertirse en la parte más importante del PC de IA y el PC Copilot. La carga del modelo en el extremo depende de la cooperación de diferentes fabricantes de hardware. Este capítulo se centra principalmente en el escenario de aplicación de Intel OpenVINO como modelo cuantitativo.
+Esperamos desplegar la familia Phi-3.x en el dispositivo final, con la intención de convertirse en la parte más importante del PC de IA y del PC Copiloto. La carga del modelo en el dispositivo final depende de la cooperación de diferentes fabricantes de hardware. Este capítulo se centra principalmente en el escenario de aplicación de Intel OpenVINO como modelo cuantitativo.
 
 ## **Qué es OpenVINO**
 
-OpenVINO es un kit de herramientas de código abierto para optimizar y desplegar modelos de aprendizaje profundo desde la nube hasta el edge. Acelera la inferencia de aprendizaje profundo en diversos casos de uso, como IA generativa, video, audio y lenguaje, con modelos de frameworks populares como PyTorch, TensorFlow, ONNX y más. Convierte y optimiza modelos, y despliega a través de una combinación de hardware y entornos Intel®, tanto on-premises como en el dispositivo, en el navegador o en la nube.
+OpenVINO es un conjunto de herramientas de código abierto para optimizar y desplegar modelos de aprendizaje profundo desde la nube hasta el borde. Acelera la inferencia de aprendizaje profundo en diversos casos de uso, como IA generativa, video, audio y lenguaje, con modelos de frameworks populares como PyTorch, TensorFlow, ONNX y más. Convierte y optimiza modelos, y despliega en una combinación de hardware y entornos Intel®, ya sea localmente, en el dispositivo, en el navegador o en la nube.
 
-Ahora con OpenVINO, puedes cuantificar rápidamente el modelo GenAI en hardware Intel y acelerar la referencia del modelo.
+Ahora, con OpenVINO, puedes cuantificar rápidamente el modelo GenAI en hardware Intel y acelerar la referencia del modelo.
 
 Actualmente OpenVINO soporta la conversión de cuantificación de Phi-3.5-Vision y Phi-3.5 Instruct.
 
 ### **Configuración del entorno**
 
-Por favor, asegúrate de tener instaladas las siguientes dependencias de entorno, este es requirement.txt
+Por favor, asegúrate de que las siguientes dependencias del entorno estén instaladas, este es el requirement.txt
 
 ```txt
 
@@ -38,7 +38,7 @@ openvino-genai>=2024.3.0.0
 
 ### **Cuantificación de Phi-3.5-Instruct usando OpenVINO**
 
-En la terminal, ejecuta este script
+En la Terminal, ejecuta este script
 
 ```bash
 
@@ -94,9 +94,9 @@ if not out_dir.exists():
 
 | Laboratorios    | Introducción | Ir |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | Aprende a usar Phi-3.5 Instruct en tu PC de IA    |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (imagen) | Aprende a usar Phi-3.5 Vision para analizar imágenes en tu PC de IA      |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | Aprende a usar Phi-3.5 Vision para analizar video en tu PC de IA    |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introducción Phi-3.5 Instruct  | Aprende cómo usar Phi-3.5 Instruct en tu PC de IA    |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introducción Phi-3.5 Vision (imagen) | Aprende cómo usar Phi-3.5 Vision para analizar imágenes en tu PC de IA      |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introducción Phi-3.5 Vision (video)   | Aprende cómo usar Phi-3.5 Vision para analizar video en tu PC de IA    |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **Recursos**
 
@@ -104,5 +104,5 @@ if not out_dir.exists():
 
 2. Repositorio GitHub de Intel OpenVINO [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-07-09T20:09:46+00:00",
+  "translation_date": "2025-07-16T17:33:18+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "uk"
 }
@@ -66,7 +66,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Робота з Markdown
 
-Ви можете створювати README, використовуючи Visual Studio Code. Ось кілька корисних комбінацій клавіш редактора:
+Ви можете створювати README за допомогою Visual Studio Code. Ось кілька корисних комбінацій клавіш редактора:
 
 * Розділити редактор (`Cmd+\` на macOS або `Ctrl+\` на Windows і Linux).
 * Перемикати попередній перегляд (`Shift+Cmd+V` на macOS або `Shift+Ctrl+V` на Windows і Linux).
@@ -77,7 +77,7 @@ CO_OP_TRANSLATOR_METADATA:
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Насолоджуйтесь!**
+**Насолоджуйтеся!**
 
 **Відмова від відповідальності**:  
 Цей документ було перекладено за допомогою сервісу автоматичного перекладу [Co-op Translator](https://github.com/Azure/co-op-translator). Хоча ми прагнемо до точності, будь ласка, майте на увазі, що автоматичні переклади можуть містити помилки або неточності. Оригінальний документ рідною мовою слід вважати авторитетним джерелом. Для критично важливої інформації рекомендується звертатися до професійного людського перекладу. Ми не несемо відповідальності за будь-які непорозуміння або неправильні тлумачення, що виникли внаслідок використання цього перекладу.

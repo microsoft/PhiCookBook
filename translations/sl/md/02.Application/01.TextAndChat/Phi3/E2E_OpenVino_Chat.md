@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-05-09T16:02:00+00:00",
+  "translation_date": "2025-07-16T23:07:55+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
   "language_code": "sl"
 }
 -->
-[OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
+[OpenVino Chat Primer](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
 Ta koda izvozi model v OpenVINO format, ga naloži in uporabi za generiranje odgovora na dano vprašanje.
 
@@ -15,18 +15,18 @@ Ta koda izvozi model v OpenVINO format, ga naloži in uporabi za generiranje odg
    ```bash
    optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6 --sym --trust-remote-code ./model/phi3-instruct/int4
    ```
-   - Ta ukaz uporablja `optimum-cli` tool to export a model to the OpenVINO format, which is optimized for efficient inference.
-   - The model being exported is `"microsoft/Phi-3-mini-4k-instruct"`, and it's set up for the task of generating text based on past context.
-   - The weights of the model are quantized to 4-bit integers (`int4`), which helps reduce the model size and speed up processing.
-   - Other parameters like `group-size`, `ratio`, and `sym` are used to fine-tune the quantization process.
-   - The exported model is saved in the directory `./model/phi3-instruct/int4`.
+   - Ta ukaz uporablja orodje `optimum-cli` za izvoz modela v OpenVINO format, ki je optimiziran za učinkovito sklepanje.
+   - Model, ki se izvaža, je `"microsoft/Phi-3-mini-4k-instruct"` in je nastavljen za nalogo generiranja besedila na podlagi preteklega konteksta.
+   - Teže modela so kvantizirane na 4-bitne cele števke (`int4`), kar pomaga zmanjšati velikost modela in pospešiti obdelavo.
+   - Drugi parametri, kot so `group-size`, `ratio` in `sym`, se uporabljajo za natančnejše nastavljanje procesa kvantizacije.
+   - Izvoženi model je shranjen v imenik `./model/phi3-instruct/int4`.
 
 2. **Uvoz potrebnih knjižnic**:
    ```python
    from transformers import AutoConfig, AutoTokenizer
    from optimum.intel.openvino import OVModelForCausalLM
    ```
-   - Ti ukazi uvozijo razrede iz modula `transformers` library and the `optimum.intel.openvino`, ki so potrebni za nalaganje in uporabo modela.
+   - Ti ukazi uvozijo razrede iz knjižnice `transformers` in modula `optimum.intel.openvino`, ki so potrebni za nalaganje in uporabo modela.
 
 3. **Nastavitev imenika modela in konfiguracije**:
    ```python
@@ -37,8 +37,8 @@ Ta koda izvozi model v OpenVINO format, ga naloži in uporabi za generiranje odg
        "CACHE_DIR": ""
    }
    ```
-   - `model_dir` specifies where the model files are stored.
-   - `ov_config` je slovar, ki nastavi OpenVINO model za prioriteto nizke zakasnitve, uporabo enega inferenčnega toka in brez uporabe predpomnilnika.
+   - `model_dir` določa, kje so shranjene datoteke modela.
+   - `ov_config` je slovar, ki konfigurira OpenVINO model za prednost nizke zakasnitve, uporabo enega toka sklepanja in neuporabo predpomnilnika.
 
 4. **Nalaganje modela**:
    ```python
@@ -50,13 +50,13 @@ Ta koda izvozi model v OpenVINO format, ga naloži in uporabi za generiranje odg
        trust_remote_code=True,
    )
    ```
-   - Ta vrstica naloži model iz določenega imenika, pri čemer uporabi prej definirane nastavitve konfiguracije. Omogoča tudi oddaljeno izvajanje kode, če je potrebno.
+   - Ta vrstica naloži model iz določenega imenika z uporabo prej definiranih nastavitev konfiguracije. Prav tako omogoča izvajanje oddaljene kode, če je potrebno.
 
 5. **Nalaganje tokenizerja**:
    ```python
    tok = AutoTokenizer.from_pretrained(model_dir, trust_remote_code=True)
    ```
-   - Ta vrstica naloži tokenizer, ki pretvarja besedilo v tokene, ki jih model razume.
+   - Ta vrstica naloži tokenizer, ki je odgovoren za pretvorbo besedila v tokene, ki jih model lahko razume.
 
 6. **Nastavitev argumentov tokenizerja**:
    ```python
@@ -64,13 +64,13 @@ Ta koda izvozi model v OpenVINO format, ga naloži in uporabi za generiranje odg
        "add_special_tokens": False
    }
    ```
-   - Ta slovar določa, da posebni tokeni ne smejo biti dodani v tokeniziran izhod.
+   - Ta slovar določa, da se posebni tokeni ne dodajajo v tokeniziran izhod.
 
-7. **Definiranje poziva**:
+7. **Definiranje poziva (prompt)**:
    ```python
    prompt = "<|system|>You are a helpful AI assistant.<|end|><|user|>can you introduce yourself?<|end|><|assistant|>"
    ```
-   - Ta niz nastavi pogovorni poziv, kjer uporabnik vpraša AI pomočnika, naj se predstavi.
+   - Ta niz nastavi pogovorni poziv, kjer uporabnik prosi AI asistenta, naj se predstavi.
 
 8. **Tokenizacija poziva**:
    ```python
@@ -88,7 +88,7 @@ Ta koda izvozi model v OpenVINO format, ga naloži in uporabi za generiranje odg
     ```python
     decoded_answer = tok.batch_decode(answer, skip_special_tokens=True)[0]
     ```
-    - Ta vrstica pretvori generirane tokene nazaj v berljiv niz, preskoči posebne tokene in pridobi prvi rezultat.
+    - Ta vrstica pretvori generirane tokene nazaj v berljiv niz, pri čemer preskoči posebne tokene, in pridobi prvi rezultat.
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za strojno prevajanje AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

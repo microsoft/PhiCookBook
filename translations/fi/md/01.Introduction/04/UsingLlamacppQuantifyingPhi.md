@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-05-09T14:12:58+00:00",
+  "translation_date": "2025-07-16T22:10:12+00:00",
   "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "fi"
 }
@@ -11,31 +11,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **Mikä on llama.cpp**
 
-llama.cpp on avoimen lähdekoodin ohjelmistokirjasto, joka on pääosin kirjoitettu C++:lla ja suorittaa päättelyä erilaisilla suurilla kielimalleilla (LLM), kuten Llama. Sen päätavoitteena on tarjota huipputason suorituskyky LLM-päättelyyn monenlaisilla laitteistoilla mahdollisimman vähäisellä asennuksella. Lisäksi kirjasto tarjoaa Python-sidoksia, jotka tarjoavat korkean tason API:n tekstin täydentämiseen sekä OpenAI-yhteensopivan verkkopalvelimen.
+llama.cpp on avoimen lähdekoodin ohjelmistokirjasto, joka on pääasiassa kirjoitettu C++:lla ja suorittaa päättelyä erilaisilla suurilla kielimalleilla (LLM), kuten Llama. Sen päätavoitteena on tarjota huipputason suorituskyky LLM-päättelyyn laajalla valikoimalla laitteistoja mahdollisimman vähäisellä asennuksella. Lisäksi tälle kirjastolle on saatavilla Python-kirjasto, joka tarjoaa korkean tason API:n tekstin täydentämiseen sekä OpenAI-yhteensopivan web-palvelimen.
 
-llama.cpp:n päätavoite on mahdollistaa LLM-päättely minimaalisella asennuksella ja huipputason suorituskyvyllä laajalla laitteistovalikoimalla – paikallisesti ja pilvessä.
+llama.cpp:n päätavoite on mahdollistaa LLM-päättely vähäisellä asennuksella ja huipputason suorituskyvyllä monenlaisilla laitteistoilla – paikallisesti ja pilvessä.
 
 - Pelkkä C/C++-toteutus ilman riippuvuuksia
-- Apple silicon on ensiluokkainen – optimoitu ARM NEONin, Acceleraten ja Metalin avulla
+- Apple Silicon on ensiluokkainen tuki – optimoitu ARM NEONin, Acceleraten ja Metal-kehysten avulla
 - AVX, AVX2 ja AVX512 -tuki x86-arkkitehtuureille
-- 1.5-bittinen, 2-bittinen, 3-bittinen, 4-bittinen, 5-bittinen, 6-bittinen ja 8-bittinen kokonaislukukvantisointi nopeampaan päättelyyn ja pienempään muistinkäyttöön
-- Mukautetut CUDA-kernelit LLM:ien ajamiseen NVIDIA-GPU:illa (AMD-GPU-tuki HIPin kautta)
+- 1,5-bittinen, 2-bittinen, 3-bittinen, 4-bittinen, 5-bittinen, 6-bittinen ja 8-bittinen kokonaislukukvantisointi nopeampaan päättelyyn ja pienempään muistinkäyttöön
+- Räätälöidyt CUDA-ytimet LLM-mallien ajamiseen NVIDIA-GPU:illa (AMD-GPU-tuki HIPin kautta)
 - Vulkan- ja SYCL-taustatuki
-- CPU+GPU-hybridi päättely, joka osittain kiihdyttää malleja, jotka ovat suurempia kuin käytettävissä oleva VRAM-kapasiteetti
+- CPU+GPU-hybridi-päättely osittaiseen nopeutukseen malleille, jotka ovat suurempia kuin käytettävissä oleva VRAM
 
-## **Phi-3.5:n kvantisointi käyttäen llama.cpp:tä**
+## **Phi-3.5 kvantisointi llama.cpp:llä**
 
-Phi-3.5-Instruct-malli voidaan kvantisoida llama.cpp:llä, mutta Phi-3.5-Vision ja Phi-3.5-MoE eivät ole vielä tuettuja. llama.cpp:n muuntama formaatti on gguf, joka on myös laajimmin käytetty kvantisointiformaatti.
+Phi-3.5-Instruct-malli voidaan kvantisoida käyttäen llama.cpp:tä, mutta Phi-3.5-Vision ja Phi-3.5-MoE eivät ole vielä tuettuja. llama.cpp muuntaa mallin gguf-muotoon, joka on myös yleisimmin käytetty kvantisointimuoto.
 
-Hugging Facessa on suuri määrä kvantisoituja GGUF-muotoisia malleja. AI Foundry, Ollama ja LlamaEdge käyttävät llama.cpp:tä, joten GGUF-malleja käytetään myös usein.
+Hugging Face -palvelussa on suuri määrä kvantisoituja GGUF-muotoisia malleja. AI Foundry, Ollama ja LlamaEdge käyttävät llama.cpp:tä, joten GGUF-malleja käytetään usein myös heidän yhteydessä.
 
 ### **Mikä on GGUF**
 
-GGUF on binäärimuoto, joka on optimoitu mallien nopeaan lataukseen ja tallennukseen, tehden siitä erittäin tehokkaan päättelykäyttöön. GGUF on suunniteltu käytettäväksi GGML:n ja muiden suoritinten kanssa. GGUF:n on kehittänyt @ggerganov, joka on myös llama.cpp:n kehittäjä, suosittu C/C++-pohjainen LLM-päättelykehys. Alkujaan PyTorchin kaltaisissa kehyksissä kehitetyt mallit voidaan muuntaa GGUF-muotoon käytettäväksi näissä moottoreissa.
+GGUF on binäärimuoto, joka on optimoitu mallien nopeaan lataamiseen ja tallentamiseen, tehden siitä erittäin tehokkaan päättelyä varten. GGUF on suunniteltu käytettäväksi GGML:n ja muiden suorittimien kanssa. GGUF:n on kehittänyt @ggerganov, joka on myös llama.cpp:n kehittäjä, suosittu C/C++ LLM-päättelykehys. Alun perin PyTorchin kaltaisissa kehyksissä kehitetyt mallit voidaan muuntaa GGUF-muotoon käytettäväksi näissä moottoreissa.
 
 ### **ONNX vs GGUF**
 
-ONNX on perinteinen koneoppimisen/syväoppimisen formaatti, jota tuetaan hyvin eri tekoälykehyksissä ja jolla on hyviä käyttötarkoituksia reunalaitteissa. GGUF perustuu llama.cpp:hen ja voidaan sanoa, että se on syntynyt GenAI-aikakaudella. Molemmilla on samankaltaisia käyttötarkoituksia. Jos haluat paremman suorituskyvyn sulautetussa laitteistossa ja sovelluskerroksissa, ONNX voi olla valintasi. Jos käytät llama.cpp:n johdannaista kehystä ja teknologiaa, GGUF voi olla parempi.
+ONNX on perinteinen koneoppimisen/syväoppimisen formaatti, jota tuetaan hyvin eri tekoälykehyksissä ja jolla on hyvät käyttötarkoitukset reunalaitteissa. GGUF puolestaan perustuu llama.cpp:hen ja voidaan sanoa, että se on syntynyt GenAI-aikakaudella. Molemmilla on samankaltaisia käyttötarkoituksia. Jos haluat paremman suorituskyvyn sulautetussa laitteistossa ja sovelluskerroksissa, ONNX voi olla valintasi. Jos käytät llama.cpp:n johdannaista kehystä ja teknologiaa, GGUF voi olla parempi vaihtoehto.
 
 ### **Phi-3.5-Instructin kvantisointi käyttäen llama.cpp:tä**
 
@@ -55,7 +55,7 @@ make -j8
 
 **2. Kvantisointi**
 
-Phi-3.5-Instructin muuntaminen FP16 GGUF:ksi käyttäen llama.cpp:tä
+Käyttämällä llama.cpp:tä muunna Phi-3.5-Instruct FP16 GGUF -muotoon
 
 
 ```bash
@@ -64,7 +64,7 @@ Phi-3.5-Instructin muuntaminen FP16 GGUF:ksi käyttäen llama.cpp:tä
 
 ```
 
-Phi-3.5:n kvantisointi INT4-muotoon
+Phi-3.5 kvantisointi INT4-muotoon
 
 
 ```bash
@@ -109,9 +109,9 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 ## **Resurssit**
 
-1. Lisätietoa llama.cpp:stä [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)  
-2. Lisätietoa onnxruntimesta [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)  
-3. Lisätietoa GGUF:stä [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
+1. Lisätietoja llama.cpp:stä [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+2. Lisätietoja onnxruntimesta [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+3. Lisätietoja GGUF:stä [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on pidettävä auktoriteettisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tästä käännöksestä aiheutuvista väärinkäsityksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

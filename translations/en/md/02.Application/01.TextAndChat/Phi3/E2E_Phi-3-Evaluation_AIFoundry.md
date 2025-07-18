@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
-  "translation_date": "2025-07-09T19:18:09+00:00",
+  "translation_date": "2025-07-16T23:08:29+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
   "language_code": "en"
 }
@@ -19,7 +19,7 @@ Fine-tuning a model can sometimes lead to unintended or undesired responses. To 
 
 Here is Azure AI Foundry's evaluation process.
 
-![Architecture of tutorial.](../../../../../../imgs/02/Evaluation-AIFoundry/architecture.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.en.png)
 
 *Image Source: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -53,70 +53,70 @@ Here is Azure AI Foundry's evaluation process.
 
 ### Introduction to safety evaluation
 
-To ensure that your AI model is ethical and safe, it's crucial to evaluate it against Microsoft's Responsible AI Principles. In Azure AI Foundry, safety evaluations allow you to assess your model’s vulnerability to jailbreak attacks and its potential to generate harmful content, which directly aligns with these principles.
+To ensure that your AI model is ethical and safe, it's crucial to evaluate it against Microsoft's Responsible AI Principles. In Azure AI Foundry, safety evaluations allow you to assess your model’s vulnerability to jailbreak attacks and its potential to generate harmful content, which aligns directly with these principles.
 
-![Safety evaluation.](../../../../../../imgs/02/Evaluation-AIFoundry/safety-evaluation.png)
+![Safety evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.en.png)
 
 *Image Source: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 #### Microsoft’s Responsible AI Principles
 
-Before starting the technical steps, it's important to understand Microsoft's Responsible AI Principles, an ethical framework designed to guide the responsible development, deployment, and operation of AI systems. These principles guide the responsible design, development, and deployment of AI systems, ensuring that AI technologies are built in a way that is fair, transparent, and inclusive. These principles form the foundation for evaluating the safety of AI models.
+Before starting the technical steps, it's important to understand Microsoft's Responsible AI Principles, an ethical framework designed to guide the responsible development, deployment, and operation of AI systems. These principles ensure AI technologies are built fairly, transparently, and inclusively. They form the foundation for evaluating AI model safety.
 
 Microsoft's Responsible AI Principles include:
 
-- **Fairness and Inclusiveness**: AI systems should treat everyone fairly and avoid impacting similar groups of people differently. For example, when AI systems provide guidance on medical treatment, loan applications, or employment, they should make the same recommendations to everyone with similar symptoms, financial situations, or professional qualifications.
+- **Fairness and Inclusiveness**: AI systems should treat everyone fairly and avoid treating similar groups differently. For example, when AI systems provide guidance on medical treatment, loan applications, or employment, they should make consistent recommendations for people with similar symptoms, financial situations, or qualifications.
 
-- **Reliability and Safety**: To build trust, AI systems must operate reliably, safely, and consistently. These systems should function as originally designed, respond safely to unexpected conditions, and resist harmful manipulation. Their behavior and the range of conditions they can handle reflect the situations developers anticipated during design and testing.
+- **Reliability and Safety**: To build trust, AI systems must operate reliably, safely, and consistently. They should function as designed, respond safely to unexpected situations, and resist harmful manipulation. Their behavior and the range of conditions they handle reflect the scenarios developers anticipated during design and testing.
 
-- **Transparency**: When AI systems influence decisions that significantly affect people's lives, it's essential that people understand how those decisions were made. For example, a bank might use an AI system to decide if a person is creditworthy. A company might use AI to determine the most qualified candidates to hire.
+- **Transparency**: When AI systems influence decisions with significant impacts on people’s lives, it’s essential that people understand how those decisions were made. For example, a bank might use AI to decide creditworthiness, or a company might use AI to select the most qualified job candidates.
 
-- **Privacy and Security**: As AI becomes more widespread, protecting privacy and securing personal and business information becomes increasingly important and complex. With AI, privacy and data security require close attention because access to data is essential for AI systems to make accurate and informed predictions and decisions about people.
+- **Privacy and Security**: As AI becomes more widespread, protecting privacy and securing personal and business data becomes increasingly important and complex. AI requires careful attention to privacy and data security because access to data is essential for making accurate and informed predictions and decisions.
 
-- **Accountability**: The people who design and deploy AI systems must be accountable for how their systems operate. Organizations should follow industry standards to develop accountability norms. These norms ensure AI systems aren't the final authority on decisions affecting people's lives and that humans maintain meaningful control over highly autonomous AI systems.
+- **Accountability**: Those who design and deploy AI systems must be accountable for how their systems operate. Organizations should follow industry standards to establish accountability norms. These norms ensure AI systems are not the final authority on decisions affecting people’s lives and that humans maintain meaningful control over highly autonomous AI systems.
 
-![Fill hub.](../../../../../../imgs/02/Evaluation-AIFoundry/responsibleai2.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.en.png)
 
 *Image Source: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
-> To learn more about Microsoft's Responsible AI Principles, visit the [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723).
+> To learn more about Microsoft's Responsible AI Principles, visit [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723).
 
 #### Safety metrics
 
-In this tutorial, you will evaluate the safety of the fine-tuned Phi-3 model using Azure AI Foundry's safety metrics. These metrics help you assess the model's potential to generate harmful content and its vulnerability to jailbreak attacks. The safety metrics include:
+In this tutorial, you will evaluate the safety of the fine-tuned Phi-3 model using Azure AI Foundry's safety metrics. These metrics help assess the model's potential to generate harmful content and its vulnerability to jailbreak attacks. The safety metrics include:
 
-- **Self-harm-related Content**: Assesses whether the model tends to produce content related to self-harm.
-- **Hateful and Unfair Content**: Assesses whether the model tends to produce hateful or unfair content.
-- **Violent Content**: Assesses whether the model tends to produce violent content.
-- **Sexual Content**: Assesses whether the model tends to produce inappropriate sexual content.
+- **Self-harm-related Content**: Checks if the model tends to produce content related to self-harm.
+- **Hateful and Unfair Content**: Checks if the model tends to produce hateful or unfair content.
+- **Violent Content**: Checks if the model tends to produce violent content.
+- **Sexual Content**: Checks if the model tends to produce inappropriate sexual content.
 
-Evaluating these aspects ensures the AI model does not produce harmful or offensive content, aligning it with societal values and regulatory standards.
+Evaluating these aspects ensures the AI model does not generate harmful or offensive content, aligning it with societal values and regulatory standards.
 
-![Evaluate based on safety.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluate-based-on-safety.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.en.png)
 
 ### Introduction to performance evaluation
 
-To ensure your AI model performs as expected, it's important to evaluate it against performance metrics. In Azure AI Foundry, performance evaluations allow you to assess your model's effectiveness in generating accurate, relevant, and coherent responses.
+To ensure your AI model performs as expected, it’s important to evaluate it against performance metrics. In Azure AI Foundry, performance evaluations help you assess your model’s effectiveness in generating accurate, relevant, and coherent responses.
 
-![Safety evaluation.](../../../../../../imgs/02/Evaluation-AIFoundry/performance-evaluation.png)
+![Safety evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.en.png)
 
 *Image Source: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 #### Performance metrics
 
-In this tutorial, you will evaluate the performance of the fine-tuned Phi-3 / Phi-3.5 model using Azure AI Foundry's performance metrics. These metrics help you assess the model's effectiveness in generating accurate, relevant, and coherent responses. The performance metrics include:
+In this tutorial, you will evaluate the performance of the fine-tuned Phi-3 / Phi-3.5 model using Azure AI Foundry's performance metrics. These metrics help assess the model’s ability to generate accurate, relevant, and coherent responses. The performance metrics include:
 
-- **Groundedness**: Measures how well the generated answers align with the information from the input source.
-- **Relevance**: Measures how pertinent the generated responses are to the given questions.
-- **Coherence**: Measures how smoothly the generated text flows, reads naturally, and resembles human-like language.
+- **Groundedness**: Measures how well the generated answers align with the input source information.
+- **Relevance**: Measures how pertinent the generated responses are to the questions asked.
+- **Coherence**: Measures how smoothly the generated text flows, reads naturally, and resembles human language.
 - **Fluency**: Measures the language proficiency of the generated text.
 - **GPT Similarity**: Compares the generated response with the ground truth for similarity.
-- **F1 Score**: Calculates the ratio of shared words between the generated response and the source data.
+- **F1 Score**: Calculates the overlap ratio of words between the generated response and the source data.
 
-These metrics help you evaluate the model's effectiveness in generating accurate, relevant, and coherent responses.
+These metrics help evaluate the model’s effectiveness in producing accurate, relevant, and coherent responses.
 
-![Evaluate based on performance.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluate-based-on-performance.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.en.png)
 
 ## **Scenario 2: Evaluating the Phi-3 / Phi-3.5 model in Azure AI Foundry**
 
@@ -126,7 +126,7 @@ This tutorial follows the previous blog posts, "[Fine-Tune and Integrate Custom 
 
 In this tutorial, you will deploy an Azure OpenAI model as an evaluator in Azure AI Foundry and use it to evaluate your fine-tuned Phi-3 / Phi-3.5 model.
 
-Before starting this tutorial, make sure you have the following prerequisites, as described in the previous tutorials:
+Before starting, ensure you have the following prerequisites, as described in the previous tutorials:
 
 1. A prepared dataset to evaluate the fine-tuned Phi-3 / Phi-3.5 model.
 1. A Phi-3 / Phi-3.5 model that has been fine-tuned and deployed to Azure Machine Learning.
@@ -138,45 +138,45 @@ Before starting this tutorial, make sure you have the following prerequisites, a
 #### Integrate the custom Phi-3 / Phi-3.5 model with Prompt flow in Azure AI Foundry (Code first approach)
 > [!NOTE]  
 > If you followed the low-code approach described in "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", you can skip this exercise and move on to the next one.  
-> However, if you used the code-first approach outlined in "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" to fine-tune and deploy your Phi-3 / Phi-3.5 model, the way you connect your model to Prompt Flow is a bit different. You will learn how to do this in this exercise.
+> However, if you used the code-first approach outlined in "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" to fine-tune and deploy your Phi-3 / Phi-3.5 model, the process for connecting your model to Prompt Flow is a bit different. You will learn how to do this in this exercise.
 To proceed, you need to integrate your fine-tuned Phi-3 / Phi-3.5 model into Prompt flow in Azure AI Foundry.
 
 #### Create Azure AI Foundry Hub
 
-You need to create a Hub before creating the Project. A Hub acts like a Resource Group, allowing you to organize and manage multiple Projects within Azure AI Foundry.
+You need to create a Hub before creating the Project. A Hub functions like a Resource Group, allowing you to organize and manage multiple Projects within Azure AI Foundry.
 
-1. Sign in [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
+1. Sign in to [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
 1. Select **All hubs** from the left side tab.
 
 1. Select **+ New hub** from the navigation menu.
 
-    ![Create hub.](../../../../../../imgs/02/Evaluation-AIFoundry/create-hub.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.en.png)
 
-1. Perform the following tasks:
+1. Complete the following:
 
-    - Enter **Hub name**. It must be a unique value.
+    - Enter a **Hub name**. It must be unique.
     - Select your Azure **Subscription**.
-    - Select the **Resource group** to use (create a new one if needed).
-    - Select the **Location** you'd like to use.
+    - Choose the **Resource group** to use (create a new one if needed).
+    - Select the **Location** you want to use.
     - Select the **Connect Azure AI Services** to use (create a new one if needed).
-    - Select **Connect Azure AI Search** to **Skip connecting**.
+    - For **Connect Azure AI Search**, choose **Skip connecting**.
 
-    ![Fill hub.](../../../../../../imgs/02/Evaluation-AIFoundry/fill-hub.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.en.png)
 
 1. Select **Next**.
 
 #### Create Azure AI Foundry Project
 
-1. In the Hub that you created, select **All projects** from the left side tab.
+1. In the Hub you created, select **All projects** from the left side tab.
 
 1. Select **+ New project** from the navigation menu.
 
-    ![Select new project.](../../../../../../imgs/03/AIFoundry/select-new-project.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.en.png)
 
-1. Enter **Project name**. It must be a unique value.
+1. Enter a **Project name**. It must be unique.
 
-    ![Create project.](../../../../../../imgs/03/AIFoundry/create-project.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.en.png)
 
 1. Select **Create a project**.
 
@@ -184,51 +184,51 @@ You need to create a Hub before creating the Project. A Hub acts like a Resource
 
 To integrate your custom Phi-3 / Phi-3.5 model with Prompt flow, you need to save the model's endpoint and key in a custom connection. This setup ensures access to your custom Phi-3 / Phi-3.5 model in Prompt flow.
 
-#### Set api key and endpoint uri of the fine-tuned Phi-3 / Phi-3.5 model
+#### Set API key and endpoint URI of the fine-tuned Phi-3 / Phi-3.5 model
 
 1. Visit [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Navigate to the Azure Machine learning workspace that you created.
+1. Navigate to the Azure Machine Learning workspace you created.
 
 1. Select **Endpoints** from the left side tab.
 
-    ![Select endpoints.](../../../../../../imgs/02/Evaluation-AIFoundry/select-endpoints.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.en.png)
 
-1. Select the endpoint that you created.
+1. Select the endpoint you created.
 
-    ![Select endpoints.](../../../../../../imgs/02/Evaluation-AIFoundry/select-endpoint-created.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.en.png)
 
 1. Select **Consume** from the navigation menu.
 
 1. Copy your **REST endpoint** and **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../imgs/02/Evaluation-AIFoundry/copy-endpoint-key.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.en.png)
 
 #### Add the Custom Connection
 
 1. Visit [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigate to the Azure AI Foundry project that you created.
+1. Navigate to the Azure AI Foundry project you created.
 
-1. In the Project that you created, select **Settings** from the left side tab.
+1. In the Project, select **Settings** from the left side tab.
 
 1. Select **+ New connection**.
 
-    ![Select new connection.](../../../../../../imgs/02/Evaluation-AIFoundry/select-new-connection.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.en.png)
 
 1. Select **Custom keys** from the navigation menu.
 
-    ![Select custom keys.](../../../../../../imgs/02/Evaluation-AIFoundry/select-custom-keys.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.en.png)
 
-1. Perform the following tasks:
+1. Complete the following:
 
     - Select **+ Add key value pairs**.
     - For the key name, enter **endpoint** and paste the endpoint you copied from Azure ML Studio into the value field.
     - Select **+ Add key value pairs** again.
     - For the key name, enter **key** and paste the key you copied from Azure ML Studio into the value field.
-    - After adding the keys, select **is secret** to prevent the key from being exposed.
+    - After adding the keys, select **is secret** to keep the key hidden.
 
-    ![Add connection.](../../../../../../imgs/02/Evaluation-AIFoundry/add-connection.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.en.png)
 
 1. Select **Add connection**.
 
@@ -236,29 +236,29 @@ To integrate your custom Phi-3 / Phi-3.5 model with Prompt flow, you need to sav
 
 You have added a custom connection in Azure AI Foundry. Now, let's create a Prompt flow using the following steps. Then, you will connect this Prompt flow to the custom connection to use the fine-tuned model within the Prompt flow.
 
-1. Navigate to the Azure AI Foundry project that you created.
+1. Navigate to the Azure AI Foundry project you created.
 
 1. Select **Prompt flow** from the left side tab.
 
 1. Select **+ Create** from the navigation menu.
 
-    ![Select Promptflow.](../../../../../../imgs/02/Evaluation-AIFoundry/select-promptflow.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.en.png)
 
 1. Select **Chat flow** from the navigation menu.
 
-    ![Select chat flow.](../../../../../../imgs/02/Evaluation-AIFoundry/select-flow-type.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.en.png)
 
-1. Enter **Folder name** to use.
+1. Enter a **Folder name** to use.
 
-    ![Select chat flow.](../../../../../../imgs/02/Evaluation-AIFoundry/enter-name.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.en.png)
 
 1. Select **Create**.
 
 #### Set up Prompt flow to chat with your custom Phi-3 / Phi-3.5 model
 
-You need to integrate the fine-tuned Phi-3 / Phi-3.5 model into a Prompt flow. However, the existing Prompt flow provided is not designed for this purpose. Therefore, you must redesign the Prompt flow to enable the integration of the custom model.
+You need to integrate the fine-tuned Phi-3 / Phi-3.5 model into a Prompt flow. However, the existing Prompt flow provided is not designed for this purpose. Therefore, you must redesign the Prompt flow to enable integration of the custom model.
 
-1. In the Prompt flow, perform the following tasks to rebuild the existing flow:
+1. In the Prompt flow, rebuild the existing flow by doing the following:
 
     - Select **Raw file mode**.
     - Delete all existing code in the *flow.dag.yml* file.
@@ -287,7 +287,7 @@ You need to integrate the fine-tuned Phi-3 / Phi-3.5 model into a Prompt flow. H
 
     - Select **Save**.
 
-    ![Select raw file mode.](../../../../../../imgs/02/Evaluation-AIFoundry/select-raw-file-mode.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.en.png)
 
 1. Add the following code to *integrate_with_promptflow.py* to use the custom Phi-3 / Phi-3.5 model in Prompt flow.
 
@@ -350,14 +350,14 @@ You need to integrate the fine-tuned Phi-3 / Phi-3.5 model into a Prompt flow. H
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../imgs/02/Evaluation-AIFoundry/paste-promptflow-code.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.en.png)
 
 > [!NOTE]
-> For more detailed information on using Prompt flow in Azure AI Foundry, you can refer to [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> For more detailed information on using Prompt flow in Azure AI Foundry, see [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. Select **Chat input**, **Chat output** to enable chat with your model.
+1. Select **Chat input** and **Chat output** to enable chatting with your model.
 
-    ![Select Input Output.](../../../../../../imgs/02/Evaluation-AIFoundry/select-input-output.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.en.png)
 
 1. Now you are ready to chat with your custom Phi-3 / Phi-3.5 model. In the next exercise, you will learn how to start Prompt flow and use it to chat with your fine-tuned Phi-3 / Phi-3.5 model.
 
@@ -365,56 +365,56 @@ You need to integrate the fine-tuned Phi-3 / Phi-3.5 model into a Prompt flow. H
 >
 > The rebuilt flow should look like the image below:
 >
-> ![Flow example](../../../../../../imgs/02/Evaluation-AIFoundry/graph-example.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.en.png)
 >
 
 #### Start Prompt flow
 
 1. Select **Start compute sessions** to start Prompt flow.
 
-    ![Start compute session.](../../../../../../imgs/02/Evaluation-AIFoundry/start-compute-session.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.en.png)
 
-1. Select **Validate and parse input** to renew parameters.
+1. Select **Validate and parse input** to refresh parameters.
 
-    ![Validate input.](../../../../../../imgs/02/Evaluation-AIFoundry/validate-input.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.en.png)
 
 1. Select the **Value** of the **connection** to the custom connection you created. For example, *connection*.
 
-    ![Connection.](../../../../../../imgs/02/Evaluation-AIFoundry/select-connection.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.en.png)
 
 #### Chat with your custom Phi-3 / Phi-3.5 model
 
 1. Select **Chat**.
 
-    ![Select chat.](../../../../../../imgs/02/Evaluation-AIFoundry/select-chat.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.en.png)
 
-1. Here's an example of the results: Now you can chat with your custom Phi-3 / Phi-3.5 model. It is recommended to ask questions based on the data used for fine-tuning.
+1. Here’s an example of the results: Now you can chat with your custom Phi-3 / Phi-3.5 model. It’s recommended to ask questions based on the data used for fine-tuning.
 
-    ![Chat with prompt flow.](../../../../../../imgs/02/Evaluation-AIFoundry/chat-with-promptflow.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.en.png)
 
 ### Deploy Azure OpenAI to evaluate the Phi-3 / Phi-3.5 model
 
-To evaluate the Phi-3 / Phi-3.5 model in Azure AI Foundry, you need to deploy an Azure OpenAI model. This model will be used to evaluate the performance of the Phi-3 / Phi-3.5 model.
+To evaluate the Phi-3 / Phi-3.5 model in Azure AI Foundry, you need to deploy an Azure OpenAI model. This model will be used to assess the performance of the Phi-3 / Phi-3.5 model.
 
 #### Deploy Azure OpenAI
 
 1. Sign in to [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigate to the Azure AI Foundry project that you created.
+1. Navigate to the Azure AI Foundry project you created.
 
-    ![Select Project.](../../../../../../imgs/02/Evaluation-AIFoundry/select-project-created.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.en.png)
 
-1. In the Project that you created, select **Deployments** from the left side tab.
+1. In the Project, select **Deployments** from the left side tab.
 
 1. Select **+ Deploy model** from the navigation menu.
 
 1. Select **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../imgs/02/Evaluation-AIFoundry/deploy-openai-model.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.en.png)
 
-1. Select the Azure OpenAI model you'd like to use. For example, **gpt-4o**.
+1. Select the Azure OpenAI model you want to use. For example, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../imgs/02/Evaluation-AIFoundry/select-openai-model.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.en.png)
 
 1. Select **Confirm**.
 
@@ -424,61 +424,61 @@ To evaluate the Phi-3 / Phi-3.5 model in Azure AI Foundry, you need to deploy an
 
 1. Visit [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
-1. Navigate to the Azure AI Foundry project that you created.
+1. Navigate to the Azure AI Foundry project you created.
 
-    ![Select Project.](../../../../../../imgs/02/Evaluation-AIFoundry/select-project-created.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.en.png)
 
-1. In the Project that you created, select **Evaluation** from the left side tab.
+1. In the Project, select **Evaluation** from the left side tab.
 
 1. Select **+ New evaluation** from the navigation menu.
 
-    ![Select evaluation.](../../../../../../imgs/02/Evaluation-AIFoundry/select-evaluation.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.en.png)
 
 1. Select **Prompt flow** evaluation.
 
-    ![Select Prompt flow evaluation.](../../../../../../imgs/02/Evaluation-AIFoundry/promptflow-evaluation.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.en.png)
 
-1. Perform the following tasks:
+1. Complete the following:
 
-    - Enter the evaluation name. It must be a unique value.
-    - Select **Question and answer without context** as the task type. Because the **ULTRACHAT_200k** dataset used in this tutorial does not contain context.
-    - Select the prompt flow you'd like to evaluate.
+    - Enter an evaluation name. It must be unique.
+    - Select **Question and answer without context** as the task type, since the **ULTRACHAT_200k** dataset used in this tutorial does not include context.
+    - Select the prompt flow you want to evaluate.
 
-    ![Prompt flow evaluation.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-setting1.png)
-
-1. Select **Next**.
-
-1. Perform the following tasks:
-
-    - Select **Add your dataset** to upload the dataset. For example, you can upload the test dataset file, such as *test_data.json1*, which is included when you download the **ULTRACHAT_200k** dataset.
-    - Select the appropriate **Dataset column** that matches your dataset. For example, if you are using the **ULTRACHAT_200k** dataset, select **${data.prompt}** as the dataset column.
-
-    ![Prompt flow evaluation.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-setting2.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.en.png)
 
 1. Select **Next**.
 
-1. Perform the following tasks to configure the performance and quality metrics:
+1. Complete the following:
 
-    - Select the performance and quality metrics you'd like to use.
-    - Select the Azure OpenAI model that you created for evaluation. For example, select **gpt-4o**.
+    - Select **Add your dataset** to upload the dataset. For example, upload the test dataset file like *test_data.json1*, included with the **ULTRACHAT_200k** dataset.
+    - Choose the appropriate **Dataset column** that matches your dataset. For example, if using the **ULTRACHAT_200k** dataset, select **${data.prompt}** as the dataset column.
 
-    ![Prompt flow evaluation.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-setting3-1.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.en.png)
 
-1. Perform the following tasks to configure the risk and safety metrics:
+1. Select **Next**.
 
-    - Select the risk and safety metrics you'd like to use.
-    - Select the threshold to calculate the defect rate you'd like to use. For example, select **Medium**.
-    - For **question**, select **Data source** to **{$data.prompt}**.
-    - For **answer**, select **Data source** to **{$run.outputs.answer}**.
-    - For **ground_truth**, select **Data source** to **{$data.message}**.
+1. Configure the performance and quality metrics:
 
-    ![Prompt flow evaluation.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-setting3-2.png)
+    - Select the performance and quality metrics you want to use.
+    - Select the Azure OpenAI model you created for evaluation. For example, **gpt-4o**.
+
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.en.png)
+
+1. Configure the risk and safety metrics:
+
+    - Select the risk and safety metrics you want to use.
+    - Choose the threshold for calculating the defect rate. For example, select **Medium**.
+    - For **question**, set **Data source** to **{$data.prompt}**.
+    - For **answer**, set **Data source** to **{$run.outputs.answer}**.
+    - For **ground_truth**, set **Data source** to **{$data.message}**.
+
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.en.png)
 
 1. Select **Next**.
 
 1. Select **Submit** to start the evaluation.
 
-1. The evaluation will take some time to complete. You can monitor the progress in the **Evaluation** tab.
+1. The evaluation will take some time to complete. You can monitor progress in the **Evaluation** tab.
 
 ### Review the Evaluation Results
 > [!NOTE]
@@ -489,19 +489,19 @@ Once the evaluation is complete, you can review the results for both performance
 
     - Assess the model’s ability to generate coherent, fluent, and relevant responses.
 
-    ![Evaluation result.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-result-gpu.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.en.png)
 
 1. Risk and safety metrics:
 
     - Verify that the model’s outputs are safe and comply with Responsible AI Principles, avoiding any harmful or offensive content.
 
-    ![Evaluation result.](../../../../../../imgs/02/Evaluation-AIFoundry/evaluation-result-gpu-2.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.en.png)
 
 1. You can scroll down to see the **Detailed metrics result**.
 
-    ![Evaluation result.](../../../../../../imgs/02/Evaluation-AIFoundry/detailed-metrics-result.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.en.png)
 
-1. By evaluating your custom Phi-3 / Phi-3.5 model on both performance and safety metrics, you can ensure the model is not only effective but also follows responsible AI practices, making it ready for real-world deployment.
+1. By evaluating your custom Phi-3 / Phi-3.5 model on both performance and safety metrics, you can ensure the model is not only effective but also follows responsible AI practices, making it ready for real-world use.
 
 ## Congratulations!
 
@@ -509,7 +509,7 @@ Once the evaluation is complete, you can review the results for both performance
 
 You have successfully evaluated the fine-tuned Phi-3 model integrated with Prompt flow in Azure AI Foundry. This is a crucial step to ensure your AI models not only perform well but also align with Microsoft’s Responsible AI principles, helping you build trustworthy and reliable AI applications.
 
-![Architecture.](../../../../../../imgs/02/Evaluation-AIFoundry/architecture.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.en.png)
 
 ## Clean Up Azure Resources
 

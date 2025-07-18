@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-07T14:38:11+00:00",
+  "translation_date": "2025-07-16T21:36:17+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "ur"
 }
 -->
-# **مقامی سطح پر Inference Phi-3-Vision**
+# **مقامی طور پر Inference Phi-3-Vision**
 
-Phi-3-vision-128k-instruct نہ صرف زبان کو سمجھنے کی صلاحیت دیتا ہے بلکہ دنیا کو بصری طور پر دیکھنے کی بھی اجازت دیتا ہے۔ Phi-3-vision-128k-instruct کے ذریعے ہم مختلف بصری مسائل حل کر سکتے ہیں، جیسے OCR، جدول کا تجزیہ، اشیاء کی شناخت، تصویر کی وضاحت وغیرہ۔ ہم آسانی سے ایسے کام مکمل کر سکتے ہیں جن کے لیے پہلے بہت زیادہ ڈیٹا کی تربیت کی ضرورت ہوتی تھی۔ ذیل میں Phi-3-vision-128k-instruct کے حوالے سے متعلقہ تکنیکیں اور اطلاقی منظرنامے دیے گئے ہیں۔
+Phi-3-vision-128k-instruct نہ صرف زبان کو سمجھنے کی صلاحیت دیتا ہے بلکہ دنیا کو بصری طور پر دیکھنے کی بھی اجازت دیتا ہے۔ Phi-3-vision-128k-instruct کے ذریعے ہم مختلف بصری مسائل حل کر سکتے ہیں، جیسے OCR، جدول کا تجزیہ، اشیاء کی شناخت، تصویر کی وضاحت وغیرہ۔ ہم آسانی سے وہ کام مکمل کر سکتے ہیں جن کے لیے پہلے بہت زیادہ ڈیٹا ٹریننگ کی ضرورت ہوتی تھی۔ درج ذیل Phi-3-vision-128k-instruct کی جانب سے دی گئی متعلقہ تکنیکیں اور اطلاقی منظرنامے ہیں۔
 
 ## **0. تیاری**
 
-براہ کرم استعمال سے پہلے درج ذیل Python لائبریریاں انسٹال ہونے کی تصدیق کریں (Python 3.10+ کی سفارش کی جاتی ہے)
+براہ کرم استعمال سے پہلے یقینی بنائیں کہ درج ذیل Python لائبریریاں انسٹال ہو چکی ہیں (Python 3.10+ کی سفارش کی جاتی ہے)
 
 ```bash
 pip install transformers -U
@@ -21,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-تجویز کی جاتی ہے کہ ***CUDA 11.6+*** استعمال کریں اور flatten انسٹال کریں
+***CUDA 11.6+*** استعمال کرنے اور flatten انسٹال کرنے کی سفارش کی جاتی ہے
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-نیا Notebook بنائیں۔ مثالیں مکمل کرنے کے لیے، سفارش کی جاتی ہے کہ آپ پہلے درج ذیل مواد تیار کریں۔
+ایک نیا Notebook بنائیں۔ مثالیں مکمل کرنے کے لیے، سفارش کی جاتی ہے کہ آپ پہلے درج ذیل مواد تیار کریں۔
 
 ```python
 from PIL import Image
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Phi-3-Vision کے ساتھ تصویر کا تجزیہ**
 
-ہم چاہتے ہیں کہ AI ہماری تصاویر کے مواد کا تجزیہ کر سکے اور متعلقہ وضاحتیں فراہم کرے
+ہم چاہتے ہیں کہ AI ہماری تصاویر کے مواد کا تجزیہ کر سکے اور متعلقہ وضاحتیں دے سکے
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. متعدد تصاویر کا موازنہ**
 
-Phi-3 Vision متعدد تصاویر کے موازنہ کی حمایت کرتا ہے۔ ہم اس ماڈل کا استعمال تصاویر کے درمیان فرق تلاش کرنے کے لیے کر سکتے ہیں۔
+Phi-3 Vision متعدد تصاویر کے موازنہ کی حمایت کرتا ہے۔ ہم اس ماڈل کو تصاویر کے درمیان فرق تلاش کرنے کے لیے استعمال کر سکتے ہیں۔
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -149,5 +149,5 @@ response = processor.batch_decode(generate_ids, skip_special_tokens=True, clean_
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-**دستخطی**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجموں میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی مستند ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

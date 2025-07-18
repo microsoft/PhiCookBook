@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-09T11:01:32+00:00",
+  "translation_date": "2025-07-16T20:22:54+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "he"
 }
 -->
-# **Inference Phi-3 ב-iOS**
+# **הסקת מסקנות Phi-3 ב-iOS**
 
-Phi-3-mini היא סדרת דגמים חדשה של Microsoft שמאפשרת פריסה של Large Language Models (LLMs) במכשירי קצה ומכשירי IoT. Phi-3-mini זמינה לפריסות iOS, Android ו-Edge Device, ומאפשרת פריסה של AI גנרטיבי בסביבות BYOD. הדוגמה הבאה ממחישה כיצד לפרוס את Phi-3-mini ב-iOS.
+Phi-3-mini היא סדרת דגמים חדשה של מיקרוסופט שמאפשרת פריסה של מודלים גדולים של שפה (LLMs) במכשירי קצה ומכשירי IoT. Phi-3-mini זמינה לפריסות ב-iOS, אנדרואיד ומכשירי קצה, ומאפשרת לפרוס בינה מלאכותית גנרטיבית בסביבות BYOD. הדוגמה הבאה מראה כיצד לפרוס את Phi-3-mini ב-iOS.
 
 ## **1. הכנה**
 
 - **א.** macOS 14+
 - **ב.** Xcode 15+
-- **ג.** iOS SDK 17.x (iPhone 14 A16 או חדש יותר)
-- **ד.** התקן Python 3.10+ (מומלץ Conda)
-- **ה.** התקן את ספריית ה-Python: `python-flatbuffers`
-- **ו.** התקן CMake
+- **ג.** iOS SDK 17.x (אייפון 14 A16 או חדש יותר)
+- **ד.** התקנת Python 3.10+ (מומלץ Conda)
+- **ה.** התקנת ספריית Python: `python-flatbuffers`
+- **ו.** התקנת CMake
 
-### Semantic Kernel ו-Inference
+### Semantic Kernel והסקת מסקנות
 
-Semantic Kernel הוא מסגרת יישומים שמאפשרת יצירת יישומים התואמים ל-Azure OpenAI Service, דגמי OpenAI, ואפילו דגמים מקומיים. גישה לשירותים מקומיים דרך Semantic Kernel מאפשרת אינטגרציה קלה עם שרת הדגם Phi-3-mini המופעל בעצמך.
+Semantic Kernel הוא מסגרת אפליקציה שמאפשרת ליצור אפליקציות התואמות ל-Azure OpenAI Service, מודלים של OpenAI ואפילו מודלים מקומיים. גישה לשירותים מקומיים דרך Semantic Kernel מאפשרת אינטגרציה פשוטה עם שרת מודל Phi-3-mini המארח בעצמך.
 
-### קריאה לדגמים מקוונטים עם Ollama או LlamaEdge
+### קריאה למודלים מקוונטים עם Ollama או LlamaEdge
 
-משתמשים רבים מעדיפים להשתמש בדגמים מקוונטים כדי להריץ דגמים מקומית. [Ollama](https://ollama.com) ו-[LlamaEdge](https://llamaedge.com) מאפשרים למשתמשים לקרוא לדגמים מקוונטים שונים:
+רבים מהמשתמשים מעדיפים להשתמש במודלים מקוונטים כדי להריץ מודלים באופן מקומי. [Ollama](https://ollama.com) ו-[LlamaEdge](https://llamaedge.com) מאפשרים למשתמשים לקרוא למודלים מקוונטים שונים:
 
 #### **Ollama**
 
-ניתן להריץ את `ollama run phi3` ישירות או להגדיר אותה במצב לא מקוון. צור Modelfile עם הנתיב לקובץ `gguf` שלך. קוד לדוגמה להרצת דגם Phi-3-mini מקוון:
+ניתן להריץ `ollama run phi3` ישירות או להגדיר אותו במצב לא מקוון. יש ליצור Modelfile עם הנתיב לקובץ `gguf` שלך. דוגמת קוד להרצת מודל Phi-3-mini מקוונט:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -43,7 +43,7 @@ PARAMETER num_ctx 4096
 
 אם ברצונך להשתמש ב-`gguf` גם בענן וגם במכשירי קצה בו זמנית, LlamaEdge היא אפשרות מצוינת.
 
-## **2. קומפילציה של ONNX Runtime עבור iOS**
+## **2. הידור ONNX Runtime ל-iOS**
 
 ```bash
 
@@ -59,19 +59,19 @@ cd ../
 
 ### **הערה**
 
-- **א.** לפני הקומפילציה, ודא ש-Xcode מוגדר כראוי והגדר אותו כספריית המפתח הפעילה בטרמינל:
+- **א.** לפני ההידור, ודא ש-Xcode מוגדר כראוי והגדר אותו כספריית המפתחים הפעילה בטרמינל:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **ב.** יש לקמפל את ONNX Runtime לפלטפורמות שונות. עבור iOS, ניתן לקמפל ל-`arm64` or `x86_64`.
+- **ב.** יש להדר את ONNX Runtime לפלטפורמות שונות. עבור iOS, ניתן להדר ל-`arm64` או `x86_64`.
 
-- **ג.** מומלץ להשתמש בגרסת iOS SDK העדכנית ביותר לקומפילציה, אך ניתן להשתמש גם בגרסאות ישנות יותר לצורך תאימות.
+- **ג.** מומלץ להשתמש בגרסת ה-iOS SDK העדכנית ביותר להידור. עם זאת, ניתן להשתמש גם בגרסה ישנה יותר אם נדרשת תאימות עם SDKים קודמים.
 
-## **3. קומפילציה של Generative AI עם ONNX Runtime עבור iOS**
+## **3. הידור Generative AI עם ONNX Runtime ל-iOS**
 
-> **הערה:** מאחר ש-Generative AI עם ONNX Runtime נמצא בגרסת תצוגה מוקדמת, יש לקחת בחשבון שינויים אפשריים.
+> **Note:** מאחר ש-Generative AI עם ONNX Runtime נמצא בגרסת תצוגה מוקדמת, יש לקחת בחשבון שינויים אפשריים.
 
 ```bash
 
@@ -101,35 +101,35 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. יצירת אפליקציית App ב-Xcode**
 
-בחרתי ב-Objective-C כשיטת פיתוח האפליקציה, מאחר שבשימוש עם Generative AI דרך ONNX Runtime C++ API, Objective-C תואם טוב יותר. כמובן, ניתן גם לבצע קריאות רלוונטיות דרך Swift bridging.
+בחרתי ב-Objective-C כשיטת פיתוח האפליקציה, כי בשימוש עם Generative AI דרך ONNX Runtime C++ API, Objective-C תואם יותר. כמובן, ניתן גם להשלים קריאות רלוונטיות דרך גישור Swift.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.he.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.he.png)
 
-## **5. העתקת דגם ONNX מקוון INT4 לפרויקט אפליקציית ה-App**
+## **5. העתקת מודל ONNX מקוונט INT4 לפרויקט האפליקציה**
 
-יש לייבא את דגם הקווניזציה INT4 בפורמט ONNX, שצריך להוריד קודם לכן
+יש לייבא את מודל הקוונטיזציה INT4 בפורמט ONNX, שצריך להוריד קודם.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.he.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.he.png)
 
 לאחר ההורדה, יש להוסיף אותו לתיקיית Resources של הפרויקט ב-Xcode.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.he.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.he.png)
 
-## **6. הוספת ה-API של C++ ב-ViewControllers**
+## **6. הוספת API של C++ ב-ViewControllers**
 
 > **הערה:**
 
 - **א.** הוסף את קבצי הכותרת המתאימים של C++ לפרויקט.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.he.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.he.png)
 
-- **ב.** כלול את `onnxruntime-genai` dynamic library in Xcode.
+- **ב.** כלול את ספריית ה-dynamic `onnxruntime-genai` ב-Xcode.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.he.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.he.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **ג.** השתמש בקוד דוגמאות C לצורך בדיקות. ניתן גם להוסיף תכונות נוספות כמו ChatUI לפונקציונליות מורחבת.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` כדי לאפשר תמיכה ב-Objective-C++.
+- **ד.** מאחר ויש צורך להשתמש ב-C++ בפרויקט, שנה את שם הקובץ `ViewController.m` ל-`ViewController.mm` כדי לאפשר תמיכה ב-Objective-C++.
 
 ```objc
 
@@ -160,11 +160,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **7. הרצת האפליקציה**
 
-לאחר שההגדרות הושלמו, ניתן להריץ את האפליקציה ולראות את תוצאות ה-inference של דגם Phi-3-mini.
+לאחר השלמת ההגדרות, ניתן להריץ את האפליקציה ולראות את תוצאות ההסקה של מודל Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.he.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.he.jpg)
 
-לקוד לדוגמה נוסף והוראות מפורטות, בקר ב-[Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+לקוד דוגמאות נוסף והוראות מפורטות, בקרו ב-[מאגר דוגמאות Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו הוא המקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי אנושי. איננו אחראים לכל אי-הבנה או פרשנות שגויה הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

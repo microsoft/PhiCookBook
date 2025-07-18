@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-07T13:25:20+00:00",
+  "translation_date": "2025-07-17T05:44:04+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "fr"
 }
 -->
-# Générer un jeu de données d’images en téléchargeant le DataSet depuis Hugging Face et les images associées
+# Générer un jeu de données d’images en téléchargeant un DataSet depuis Hugging Face et les images associées
 
 
 ### Vue d’ensemble
 
-Ce script prépare un jeu de données pour le machine learning en téléchargeant les images nécessaires, en filtrant les lignes où le téléchargement des images échoue, et en enregistrant le jeu de données au format CSV.
+Ce script prépare un jeu de données pour l’apprentissage automatique en téléchargeant les images nécessaires, en filtrant les lignes où le téléchargement des images échoue, et en sauvegardant le jeu de données au format CSV.
 
 ### Prérequis
 
-Avant d’exécuter ce script, assurez-vous d’avoir installé les bibliothèques suivantes : `Pandas`, `Datasets`, `requests`, `PIL` et `io`. Vous devrez également remplacer `'Insert_Your_Dataset'` à la ligne 2 par le nom de votre dataset provenant de Hugging Face.
+Avant d’exécuter ce script, assurez-vous d’avoir installé les bibliothèques suivantes : `Pandas`, `Datasets`, `requests`, `PIL` et `io`. Vous devrez également remplacer `'Insert_Your_Dataset'` à la ligne 2 par le nom de votre jeu de données provenant de Hugging Face.
 
 Bibliothèques requises :
 
@@ -32,18 +32,18 @@ from io import BytesIO
 
 ### Fonctionnalités
 
-Le script réalise les étapes suivantes :
+Le script effectue les étapes suivantes :
 
-1. Télécharge le dataset depuis Hugging Face en utilisant la fonction `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Télécharge le jeu de données depuis Hugging Face en utilisant la fonction `load_dataset()`.
+2. Convertit le jeu de données Hugging Face en DataFrame Pandas pour une manipulation plus aisée grâce à la méthode `to_pandas()`.
+3. Crée les répertoires pour sauvegarder le jeu de données et les images.
+4. Filtre les lignes où le téléchargement des images échoue en parcourant chaque ligne du DataFrame, téléchargeant l’image avec la fonction personnalisée `download_image()`, et en ajoutant les lignes valides à un nouveau DataFrame nommé `filtered_rows`.
+5. Crée un nouveau DataFrame avec les lignes filtrées et le sauvegarde sur disque au format CSV.
+6. Affiche un message indiquant où le jeu de données et les images ont été enregistrés.
 
-### Custom Function
+### Fonction personnalisée
 
-The `download_image()` télécharge une image depuis une URL et la sauvegarde localement en utilisant la bibliothèque Pillow Image Library (PIL) et le module `io`. Elle retourne True si l’image est téléchargée avec succès, et False sinon. La fonction lève aussi une exception avec le message d’erreur lorsque la requête échoue.
+La fonction `download_image()` télécharge une image depuis une URL et la sauvegarde localement en utilisant la bibliothèque Pillow (PIL) et le module `io`. Elle retourne True si l’image est téléchargée avec succès, et False sinon. La fonction lève également une exception avec le message d’erreur lorsque la requête échoue.
 
 ### Comment ça fonctionne
 
@@ -51,24 +51,25 @@ La fonction download_image prend deux paramètres : image_url, qui est l’URL d
 
 Voici comment fonctionne la fonction :
 
-Elle commence par effectuer une requête GET vers image_url avec la méthode requests.get. Cela récupère les données de l’image depuis l’URL.
+Elle commence par effectuer une requête GET vers image_url en utilisant la méthode requests.get. Cela récupère les données de l’image depuis l’URL.
 
-La ligne response.raise_for_status() vérifie si la requête a réussi. Si le code de statut de la réponse indique une erreur (par exemple, 404 - Non trouvé), elle lève une exception. Cela garantit que nous ne poursuivons le téléchargement de l’image que si la requête a abouti.
+La ligne response.raise_for_status() vérifie si la requête a réussi. Si le code de statut de la réponse indique une erreur (par exemple, 404 - Non trouvé), une exception sera levée. Cela garantit que le téléchargement de l’image ne se poursuit que si la requête a réussi.
 
 Les données de l’image sont ensuite passées à la méthode Image.open du module PIL (Python Imaging Library). Cette méthode crée un objet Image à partir des données.
 
-La ligne image.save(save_path) enregistre l’image à l’emplacement spécifié par save_path. Le chemin doit inclure le nom de fichier souhaité et son extension.
+La ligne image.save(save_path) enregistre l’image à l’emplacement spécifié par save_path. Le save_path doit inclure le nom de fichier et l’extension souhaités.
 
 Enfin, la fonction retourne True pour indiquer que l’image a été téléchargée et sauvegardée avec succès. Si une exception survient durant le processus, elle est interceptée, un message d’erreur indiquant l’échec est affiché, et la fonction retourne False.
 
-Cette fonction est utile pour télécharger des images depuis des URL et les enregistrer localement. Elle gère les erreurs potentielles lors du téléchargement et fournit un retour sur la réussite ou non de l’opération.
+Cette fonction est utile pour télécharger des images depuis des URL et les enregistrer localement. Elle gère les erreurs potentielles lors du téléchargement et fournit un retour sur la réussite ou non du téléchargement.
 
-Il est important de noter que la bibliothèque requests est utilisée pour faire des requêtes HTTP, la bibliothèque PIL sert à manipuler les images, et la classe BytesIO est utilisée pour gérer les données de l’image sous forme de flux d’octets.
+Il est important de noter que la bibliothèque requests est utilisée pour effectuer les requêtes HTTP, la bibliothèque PIL pour manipuler les images, et la classe BytesIO pour gérer les données de l’image sous forme de flux d’octets.
+
 
 
 ### Conclusion
 
-Ce script offre une méthode pratique pour préparer un jeu de données pour le machine learning en téléchargeant les images nécessaires, en filtrant les lignes où le téléchargement des images échoue, et en sauvegardant le dataset au format CSV.
+Ce script offre un moyen simple de préparer un jeu de données pour l’apprentissage automatique en téléchargeant les images nécessaires, en filtrant les lignes où le téléchargement échoue, et en sauvegardant le jeu de données au format CSV.
 
 ### Script d’exemple
 
@@ -136,4 +137,4 @@ print(f"Dataset and images saved to {dataset_dir}")
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d'origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

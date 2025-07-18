@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-07-09T19:31:30+00:00",
+  "translation_date": "2025-07-17T03:32:02+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
   "language_code": "en"
 }
 -->
 # **Build your own Visual Studio Code GitHub Copilot Chat with Microsoft Phi-3 Family**
 
-Have you tried the workspace agent in GitHub Copilot Chat? Want to create a custom code agent for your team? This hands-on lab aims to combine open source models to build an enterprise-grade code assistant.
+Have you tried the workspace agent in GitHub Copilot Chat? Want to create a custom code agent for your team? This hands-on lab aims to combine open source models to build an enterprise-grade code business agent.
 
 ## **Foundation**
 
@@ -23,9 +23,9 @@ Recommended reading: [https://github.com/microsoft/PhiCookBook/blob/main/md/01.I
 
 The GitHub Copilot Chat extension provides a chat interface that lets you interact with GitHub Copilot and get coding-related answers directly inside VS Code, without needing to browse documentation or search forums.
 
-Copilot Chat may use syntax highlighting, indentation, and other formatting to make responses clearer. Depending on your question, the response might include links to context Copilot used, like source files or docs, or buttons to access VS Code features.
+Copilot Chat may use syntax highlighting, indentation, and other formatting to make responses clearer. Depending on your question, the response might include links to context Copilot used, like source code files or documentation, or buttons to access VS Code features.
 
-- Copilot Chat fits into your development workflow and helps where you need it:
+- Copilot Chat fits into your developer workflow and helps where you need it:
 
 - Start an inline chat directly from the editor or terminal for coding help
 
@@ -47,9 +47,9 @@ You can use GitHub Copilot Chat for:
 
 Recommended reading: [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
 
-###  **Microsoft GitHub Copilot Chat @workspace**
+### **Microsoft GitHub Copilot Chat @workspace**
 
-Using **@workspace** in Copilot Chat lets you ask questions about your entire codebase. Based on your query, Copilot smartly retrieves relevant files and symbols, referencing them in its answers as links and code snippets.
+Using **@workspace** in Copilot Chat lets you ask questions about your entire codebase. Based on your query, Copilot smartly retrieves relevant files and symbols, referencing them in its answer with links and code examples.
 
 To answer your question, **@workspace** searches the same sources a developer would when navigating a codebase in VS Code:
 
@@ -69,13 +69,13 @@ Recommended reading: [[https://code.visualstudio.com/docs/copilot/copilot-chat](
 
 ## **Learn more about this Lab**
 
-GitHub Copilot has significantly boosted programming efficiency in enterprises, and many want to customize its features. Many companies have built custom Extensions similar to GitHub Copilot based on their own business needs and open source models. Custom Extensions are easier to control but can impact user experience. After all, GitHub Copilot excels in handling general scenarios and professional tasks. Keeping a consistent experience while customizing enterprise-specific features offers a better user experience. GitHub Copilot Chat provides APIs for enterprises to extend the Chat experience. Maintaining consistency while adding custom features leads to a better user experience.
+GitHub Copilot has significantly boosted programming efficiency in enterprises, and many want to customize its features. Many companies have built custom Extensions similar to GitHub Copilot tailored to their business needs using open source models. Custom Extensions are easier to control but can impact user experience. After all, GitHub Copilot excels in handling general scenarios and professional tasks. Maintaining a consistent experience while customizing features offers a better user experience. GitHub Copilot Chat provides APIs for enterprises to extend the Chat experience. Keeping a consistent experience with custom features is ideal.
 
-This lab mainly uses the Phi-3 model combined with local NPU and Azure hybrid deployment to build a custom Agent in GitHub Copilot Chat ***@PHI3*** to assist enterprise developers with code generation ***(@PHI3 /gen)*** and image-based code generation ***(@PHI3 /img)***.
+This lab mainly uses the Phi-3 model combined with local NPU and Azure hybrid to build a custom Agent in GitHub Copilot Chat ***@PHI3*** to assist enterprise developers with code generation ***(@PHI3 /gen)*** and image-based code generation ***(@PHI3 /img)***.
 
-![PHI3](../../../../../../../imgs/02/vscodeext/cover.png)
+![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d095fe0b942687287803c03933d2d1d439d14e10fa1442a864d.en.png)
 
-### ***Note:*** 
+### ***Note:***
 
 This lab currently runs on Intel CPU AIPC and Apple Silicon. We will continue updating with a Qualcomm NPU version.
 
@@ -83,7 +83,7 @@ This lab currently runs on Intel CPU AIPC and Apple Silicon. We will continue up
 
 | Name | Description | AIPC | Apple |
 | ------------ | ----------- | -------- |-------- |
-| Lab0 - Installations(✅) | Set up and install required environments and tools | [Go](./HOL/AIPC/01.Installations.md) |[Go](./HOL/Apple/01.Installations.md) |
+| Lab0 - Installations(✅) | Set up and install related environments and tools | [Go](./HOL/AIPC/01.Installations.md) |[Go](./HOL/Apple/01.Installations.md) |
 | Lab1 - Run Prompt flow with Phi-3-mini (✅) | Use local NPU with AIPC / Apple Silicon to create code generation via Phi-3-mini | [Go](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Go](./HOL/Apple/02.PromptflowWithMLX.md) |
 | Lab2 - Deploy Phi-3-vision on Azure Machine Learning Service(✅) | Generate code by deploying Phi-3-vision image from Azure Machine Learning Service’s Model Catalog | [Go](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Go](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
 | Lab3 - Create a @phi-3 agent in GitHub Copilot Chat(✅)  | Build a custom Phi-3 agent in GitHub Copilot Chat for code generation, graph code generation, RAG, and more | [Go](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Go](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |

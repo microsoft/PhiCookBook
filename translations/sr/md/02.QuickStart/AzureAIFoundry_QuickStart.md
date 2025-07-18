@@ -2,95 +2,94 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3a1e48b628022485aac989c9f733e792",
-  "translation_date": "2025-05-09T20:15:18+00:00",
+  "translation_date": "2025-07-17T05:28:26+00:00",
   "source_file": "md/02.QuickStart/AzureAIFoundry_QuickStart.md",
   "language_code": "sr"
 }
 -->
-# **Korišćenje Phi-3 u Azure AI Foundry**
+# **Коришћење Phi-3 у Azure AI Foundry**
 
-Sa razvojem Generativne AI, cilj nam je da koristimo jedinstvenu platformu za upravljanje različitim LLM i SLM modelima, integraciju podataka preduzeća, fine-tuning/RAG operacije i evaluaciju različitih poslovnih procesa nakon integracije LLM i SLM, kako bi generativna AI mogla bolje da podrži pametne aplikacije. [Azure AI Foundry](https://ai.azure.com) je platforma za generativne AI aplikacije na nivou preduzeća.
+Са развојем генеративне вештачке интелигенције, желимо да користимо јединствену платформу за управљање различитим LLM и SLM моделима, интеграцију података предузећа, фино подешавање/RAG операције и процену различитих пословних процеса након интеграције LLM и SLM, како би се паметне апликације засноване на генеративној вештачкој интелигенцији боље реализовале. [Azure AI Foundry](https://ai.azure.com) је платформа за примену генеративне вештачке интелигенције на нивоу предузећа.
 
-![aistudo](../../../../translated_images/aifoundry_home.ffa4fe13d11f26171097f8666a1db96ac0979ffa1adde80374c60d1136c7e1de.sr.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.sr.png)
 
-Uz Azure AI Foundry, možete evaluirati odgovore velikih jezičkih modela (LLM) i orkestrirati komponente aplikacija sa prompt flow za bolje performanse. Platforma omogućava skalabilnost za jednostavnu transformaciju prototipa u punopravnu produkciju. Kontinuirano praćenje i usavršavanje podržavaju dugoročni uspeh.
+Помоћу Azure AI Foundry можете процењивати одговоре великих језичких модела (LLM) и оркестрирати компоненте апликација са prompt flow-ом ради бољих перформанси. Платформа омогућава лаку скалабилност за трансформацију прототипа у пуну производњу. Континуирано праћење и унапређење подржавају дугорочни успех.
 
-Brzo možemo da implementiramo Phi-3 model na Azure AI Foundry kroz jednostavne korake, a zatim koristiti Azure AI Foundry za radove vezane za Phi-3 kao što su Playground/Chat, fine-tuning, evaluacija i druge aktivnosti.
+Модел Phi-3 можемо брзо поставити на Azure AI Foundry кроз једноставне кораке, а затим користити Azure AI Foundry за завршетак повезаних активности као што су Playground/Chat, фино подешавање, процена и друго.
 
-## **1. Priprema**
+## **1. Припрема**
 
-Ako već imate instaliran [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) na vašem računaru, korišćenje ovog šablona je jednostavno kao pokretanje ove komande u novom direktorijumu.
+Ако већ имате инсталиран [Azure Developer CLI](https://learn.microsoft.com/azure/developer/azure-developer-cli/overview?WT.mc_id=aiml-138114-kinfeylo) на свом рачунару, коришћење овог шаблона је једноставно као покретање ове команде у новом директоријуму.
 
-## Ručno kreiranje
+## Ручно креирање
 
-Kreiranje Microsoft Azure AI Foundry projekta i hub-a je odličan način da organizujete i upravljate svojim AI radom. Evo korak-po-korak vodiča za početak:
+Креирање Microsoft Azure AI Foundry пројекта и хаба је одличан начин да организујете и управљате својим AI радом. Ево корак по корак упутства за почетак:
 
-### Kreiranje projekta u Azure AI Foundry
+### Креирање пројекта у Azure AI Foundry
 
-1. **Idite na Azure AI Foundry**: Prijavite se na portal Azure AI Foundry.
-2. **Kreirajte projekat**:
-   - Ako ste u nekom projektu, izaberite "Azure AI Foundry" u gornjem levom uglu stranice da biste prešli na početnu stranu.
-   - Izaberite "+ Create project".
-   - Unesite ime projekta.
-   - Ako imate hub, on će biti podrazumevano izabran. Ako imate pristup više hub-ova, možete izabrati drugi sa padajuće liste. Ako želite da napravite novi hub, izaberite "Create new hub" i unesite ime.
-   - Izaberite "Create".
+1. **Идите на Azure AI Foundry**: Пријавите се на портал Azure AI Foundry.
+2. **Креирајте пројекат**:
+   - Ако сте унутар неког пројекта, изаберите „Azure AI Foundry“ у горњем левом углу странице да бисте отишли на почетну страницу.
+   - Изаберите „+ Create project“.
+   - Унесите име пројекта.
+   - Ако већ имате хаб, он ће бити подразумевано изабран. Ако имате приступ више хабова, можете изабрати други из падајућег менија. Ако желите да креирате нови хаб, изаберите „Create new hub“ и унесите име.
+   - Изаберите „Create“.
 
-### Kreiranje hub-a u Azure AI Foundry
+### Креирање хаба у Azure AI Foundry
 
-1. **Idite na Azure AI Foundry**: Prijavite se sa vašim Azure nalogom.
-2. **Kreirajte hub**:
-   - Izaberite Management center iz levog menija.
-   - Izaberite "All resources", zatim strelicu pored "+ New project" i izaberite "+ New hub".
-   - U dijalogu "Create a new hub" unesite ime za vaš hub (npr. contoso-hub) i po potrebi izmenite ostala polja.
-   - Izaberite "Next", pregledajte informacije i zatim izaberite "Create".
+1. **Идите на Azure AI Foundry**: Пријавите се са својим Azure налогом.
+2. **Креирајте хаб**:
+   - Изаберите Management center из левог менија.
+   - Изаберите „All resources“, затим стрелицу поред „+ New project“ и изаберите „+ New hub“.
+   - У дијалогу „Create a new hub“ унесите име за ваш хаб (нпр. contoso-hub) и по потреби измените остала поља.
+   - Изаберите „Next“, прегледајте информације, па изаберите „Create“.
 
-Za detaljnije upute, možete pogledati zvaničnu [Microsoft dokumentaciju](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
+За детаљнија упутства можете погледати званичну [Microsoft документацију](https://learn.microsoft.com/azure/ai-studio/how-to/create-projects).
 
-Nakon uspešnog kreiranja, možete pristupiti studiju koji ste napravili preko [ai.azure.com](https://ai.azure.com/)
+Након успешног креирања, приступ студију који сте направили можете добити преко [ai.azure.com](https://ai.azure.com/)
 
-Na jednom AI Foundry može biti više projekata. Napravite projekat u AI Foundry kao pripremu.
+На једном AI Foundry-ју може бити више пројеката. Креирајте пројекат у AI Foundry-ју као припрему.
 
-Kreirajte Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
+Креирајте Azure AI Foundry [QuickStarts](https://learn.microsoft.com/azure/ai-studio/quickstarts/get-started-code)
 
+## **2. Постављање Phi модела у Azure AI Foundry**
 
-## **2. Implementacija Phi modela u Azure AI Foundry**
+Кликните на опцију Explore у пројекту да уђете у Model Catalog и изаберите Phi-3
 
-Kliknite na opciju Explore u okviru projekta da uđete u Model Catalog i izaberete Phi-3
+Изаберите Phi-3-mini-4k-instruct
 
-Izaberite Phi-3-mini-4k-instruct
-
-Kliknite 'Deploy' da biste implementirali Phi-3-mini-4k-instruct model
+Кликните „Deploy“ да бисте поставили Phi-3-mini-4k-instruct модел
 
 > [!NOTE]
 >
-> Možete izabrati računarsku snagu prilikom implementacije
+> При постављању можете изабрати рачунарску снагу
 
-## **3. Playground Chat Phi u Azure AI Foundry**
+## **3. Playground Chat Phi у Azure AI Foundry**
 
-Idite na stranicu za implementaciju, izaberite Playground i ćaskajte sa Phi-3 u Azure AI Foundry
+Идите на страницу постављања, изаберите Playground и ћаскајте са Phi-3 у Azure AI Foundry
 
-## **4. Implementacija modela iz Azure AI Foundry**
+## **4. Постављање модела из Azure AI Foundry**
 
-Da biste implementirali model iz Azure Model Catalog-a, pratite sledeće korake:
+Да бисте поставили модел из Azure Model Catalog-а, пратите ове кораке:
 
-- Prijavite se u Azure AI Foundry.
-- Izaberite model koji želite da implementirate iz Azure AI Foundry model kataloga.
-- Na stranici sa detaljima modela izaberite Deploy, zatim Serverless API sa Azure AI Content Safety.
-- Izaberite projekat u kojem želite da implementirate modele. Da biste koristili Serverless API, vaš workspace mora biti u regionu East US 2 ili Sweden Central. Možete prilagoditi ime implementacije.
-- Na čarobnjaku za implementaciju izaberite Pricing and terms da saznate o cenama i uslovima korišćenja.
-- Izaberite Deploy. Sačekajte da implementacija bude spremna i da budete preusmereni na stranicu Deployments.
-- Izaberite Open in playground da započnete interakciju sa modelom.
-- Možete se vratiti na stranicu Deployments, izabrati implementaciju i zabeležiti endpoint-ov Target URL i Secret Key, koje možete koristiti za pozivanje implementacije i generisanje odgovora.
-- Detalje o endpoint-u, URL i pristupnim ključevima uvek možete pronaći u Build tabu, u sekciji Components pod Deployments.
+- Пријавите се у Azure AI Foundry.
+- Изаберите модел који желите да поставите из Azure AI Foundry каталога модела.
+- На страници са детаљима модела изаберите Deploy, а затим Serverless API са Azure AI Content Safety.
+- Изаберите пројекат у који желите да поставите модел. Да бисте користили Serverless API, ваш workspace мора бити у региону East US 2 или Sweden Central. Можете прилагодити име постављања.
+- У чаробњаку за постављање изаберите Pricing and terms да бисте сазнали о ценама и условима коришћења.
+- Изаберите Deploy. Сачекајте да постављање буде спремно и да будете преусмерени на страницу Deployments.
+- Изаберите Open in playground да почнете интеракцију са моделом.
+- Можете се вратити на страницу Deployments, изабрати постављање и забележити Target URL и Secret Key, које можете користити за позив постављања и генерисање одговора.
+- Увек можете пронаћи детаље о endpoint-у, URL и приступне кључеве тако што ћете отићи на Build таб и изабрати Deployments у одељку Components.
 
 > [!NOTE]
-> Imajte na umu da vaš nalog mora imati Azure AI Developer ulogu na Resource Group-u da biste mogli da izvršavate ove korake.
+> Имајте у виду да ваш налог мора имати Azure AI Developer улогу са дозволама на Resource Group да бисте извршили ове кораке.
 
-## **5. Korišćenje Phi API-ja u Azure AI Foundry**
+## **5. Коришћење Phi API у Azure AI Foundry**
 
-Možete pristupiti https://{Your project name}.region.inference.ml.azure.com/swagger.json preko Postman GET zahteva i kombinovati ga sa Key-om da biste se upoznali sa dostupnim interfejsima
+Можете приступити https://{Your project name}.region.inference.ml.azure.com/swagger.json преко Postman GET захтева и комбиновати га са Key-ом да бисте сазнали о доступним интерфејсима
 
-Vrlo lako možete dobiti parametre zahteva, kao i parametre odgovora.
+Веома је једноставно добити параметре захтева, као и параметре одговора.
 
-**Ограничење одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране стручног човека. Нисмо одговорни за било каква неспоразума или погрешна тумачења која могу настати употребом овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

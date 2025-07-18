@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-09T19:45:56+00:00",
+  "translation_date": "2025-07-16T21:58:04+00:00",
   "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
   "language_code": "uk"
 }
@@ -46,7 +46,7 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3.5-MoE-instruct  -q
 | Лабораторії    | Опис | Перейти |
 | -------- | ------- |  ------- |
 | 🚀 Лабораторія: Вступ до Phi-3.5 Instruct  | Дізнайтеся, як використовувати Phi-3.5 Instruct з Apple MLX framework   |  [Перейти](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-instruct.ipynb)    |
-| 🚀 Лабораторія: Вступ до Phi-3.5 Vision (зображення) | Дізнайтеся, як аналізувати зображення за допомогою Phi-3.5 Vision та Apple MLX framework     |  [Перейти](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
+| 🚀 Лабораторія: Вступ до Phi-3.5 Vision (зображення) | Дізнайтеся, як використовувати Phi-3.5 Vision для аналізу зображень з Apple MLX framework     |  [Перейти](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-vision.ipynb)    |
 | 🚀 Лабораторія: Вступ до Phi-3.5 Vision (moE)   | Дізнайтеся, як використовувати Phi-3.5 MoE з Apple MLX framework  |  [Перейти](../../../../../code/09.UpdateSamples/Aug/mlx-phi35-moe.ipynb)    |
 
 ## **Ресурси**

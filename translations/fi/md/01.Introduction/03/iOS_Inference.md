@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-09T11:00:41+00:00",
+  "translation_date": "2025-07-16T20:22:30+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "fi"
 }
 -->
-# **Phi-3-päätelmien teko iOS:llä**
+# **Phi-3-päätelmä iOS:llä**
 
-Phi-3-mini on Microsoftin uusi mallisarja, joka mahdollistaa suurten kielimallien (LLM) käyttöönoton reunalaitteissa ja IoT-laitteissa. Phi-3-mini on saatavilla iOS:lle, Androidille ja reunalaitteiden käyttöönottoon, mikä mahdollistaa generatiivisen tekoälyn hyödyntämisen BYOD-ympäristöissä. Seuraava esimerkki näyttää, miten Phi-3-mini otetaan käyttöön iOS:llä.
+Phi-3-mini on Microsoftin uusi mallisarja, joka mahdollistaa suurten kielimallien (LLM) käyttöönoton reunalaitteissa ja IoT-laitteissa. Phi-3-mini on saatavilla iOS:lle, Androidille ja reunalaitteille, mikä mahdollistaa generatiivisen tekoälyn käyttöönoton BYOD-ympäristöissä. Seuraava esimerkki näyttää, miten Phi-3-mini otetaan käyttöön iOS:llä.
 
 ## **1. Valmistelut**
 
 - **a.** macOS 14+
 - **b.** Xcode 15+
 - **c.** iOS SDK 17.x (iPhone 14 A16 tai uudempi)
-- **d.** Asenna Python 3.10+ (Conda suositeltava)
+- **d.** Asenna Python 3.10+ (Conda suositeltu)
 - **e.** Asenna Python-kirjasto: `python-flatbuffers`
 - **f.** Asenna CMake
 
 ### Semantic Kernel ja päättely
 
-Semantic Kernel on sovelluskehys, jonka avulla voit luoda sovelluksia, jotka toimivat Azure OpenAI -palvelun, OpenAI-mallien ja jopa paikallisten mallien kanssa. Paikallisiin palveluihin pääsy Semantic Kernelin kautta mahdollistaa helpon integraation itse ylläpitämääsi Phi-3-mini-mallipalvelimeen.
+Semantic Kernel on sovelluskehys, jonka avulla voit luoda sovelluksia, jotka toimivat Azure OpenAI -palvelun, OpenAI-mallien ja jopa paikallisten mallien kanssa. Paikallisiin palveluihin pääseminen Semantic Kernelin kautta mahdollistaa helpon integraation itse ylläpitämääsi Phi-3-mini-mallipalvelimeen.
 
 ### Kvantisoitujen mallien kutsuminen Ollamalla tai LlamaEdgellä
 
-Monet käyttäjät suosivat kvantisoituja malleja mallien paikalliseen suorittamiseen. [Ollama](https://ollama.com) ja [LlamaEdge](https://llamaedge.com) tarjoavat mahdollisuuden kutsua erilaisia kvantisoituja malleja:
+Monet käyttäjät suosivat kvantisoitujen mallien käyttöä mallien paikalliseen suorittamiseen. [Ollama](https://ollama.com) ja [LlamaEdge](https://llamaedge.com) tarjoavat mahdollisuuden kutsua erilaisia kvantisoituja malleja:
 
 #### **Ollama**
 
-Voit ajaa `ollama run phi3` suoraan tai konfiguroida sen offline-tilassa. Luo Modelfile, jossa on polku `gguf`-tiedostoon. Esimerkkikoodi Phi-3-mini-kvantisoidun mallin ajamiseen:
+Voit suorittaa `ollama run phi3` suoraan tai määrittää sen offline-tilassa. Luo Modelfile, jossa on polku `gguf`-tiedostoosi. Esimerkkikoodi Phi-3-mini kvantisoidun mallin suorittamiseen:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -41,7 +41,7 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-Jos haluat käyttää `gguf` sekä pilvessä että reunalaitteissa samanaikaisesti, LlamaEdge on erinomainen vaihtoehto.
+Jos haluat käyttää `gguf`-tiedostoa sekä pilvessä että reunalaitteissa samanaikaisesti, LlamaEdge on erinomainen vaihtoehto.
 
 ## **2. ONNX Runtime -kääntäminen iOS:lle**
 
@@ -59,19 +59,19 @@ cd ../
 
 ### **Huomio**
 
-- **a.** Ennen kääntämistä varmista, että Xcode on oikein konfiguroitu ja asetettu aktiiviseksi kehittäjäkansioksi terminaalissa:
+- **a.** Ennen kääntämistä varmista, että Xcode on oikein konfiguroitu ja asetettu aktiiviseksi kehittäjähakemistoksi terminaalissa:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime pitää kääntää eri alustoille. iOS:lle voit kääntää `arm64` or `x86_64`.
+- **b.** ONNX Runtime täytyy kääntää eri alustoille. iOS:lle voit kääntää `arm64`- tai `x86_64`-arkkitehtuurille.
 
-- **c.** Suositeltavaa on käyttää uusinta iOS SDK:ta kääntämiseen, mutta voit käyttää myös vanhempaa versiota, jos tarvitset yhteensopivuutta aiempien SDK-versioiden kanssa.
+- **c.** Suositeltavaa on käyttää uusinta iOS SDK:ta käännöksessä, mutta voit käyttää myös vanhempaa versiota, jos tarvitset yhteensopivuutta aiempien SDK-versioiden kanssa.
 
-## **3. Generatiivisen tekoälyn kääntäminen ONNX Runtime -alustalla iOS:lle**
+## **3. Generatiivisen tekoälyn kääntäminen ONNX Runtime -ympäristössä iOS:lle**
 
-> **Note:** Koska generatiivinen tekoäly ONNX Runtime -alustalla on esikatseluvaiheessa, olethan tietoinen mahdollisista muutoksista.
+> **Note:** Koska Generative AI ONNX Runtime -ympäristössä on vielä esikatseluvaiheessa, ole tietoinen mahdollisista muutoksista.
 
 ```bash
 
@@ -101,35 +101,35 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. Luo App-sovellus Xcodessa**
 
-Valitsin Objective-C:n sovelluskehityksen menetelmäksi, koska generatiivisen tekoälyn käyttö ONNX Runtime C++ -rajapinnan kanssa toimii paremmin Objective-C:n kanssa. Tietenkin voit myös hoitaa tarvittavat kutsut Swift-sillan kautta.
+Valitsin Objective-C:n sovelluskehitykseen, koska Generative AI ONNX Runtime C++ API:n kanssa Objective-C on paremmin yhteensopiva. Tietenkin voit myös tehdä vastaavat kutsut Swift-sillan kautta.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.fi.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.fi.png)
 
-## **5. Kopioi ONNX-kvantisoitu INT4-malli App-sovellusprojektiin**
+## **5. Kopioi ONNX kvantisoitu INT4 -malli App-sovellusprojektiin**
 
-Meidän täytyy tuoda ONNX-muotoinen INT4-kvantisoitu malli, joka tulee ensin ladata.
+Meidän täytyy tuoda INT4-kvantisointimalli ONNX-muodossa, joka täytyy ensin ladata.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.fi.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.fi.png)
 
-Latauksen jälkeen malli lisätään projektin Resources-kansioon Xcodessa.
+Lataamisen jälkeen lisää se projektin Resources-kansioon Xcodessa.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.fi.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.fi.png)
 
-## **6. C++-rajapinnan lisääminen ViewControllers-luokkiin**
+## **6. Lisää C++ API ViewControllers-luokkiin**
 
 > **Huomio:**
 
 - **a.** Lisää vastaavat C++-otsikkotiedostot projektiin.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.fi.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.fi.png)
 
-- **b.** Sisällytä `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Sisällytä `onnxruntime-genai`-dynaaminen kirjasto Xcode-projektiin.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.fi.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.fi.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **c.** Käytä C-esimerkkikoodia testaukseen. Voit myös lisätä lisäominaisuuksia, kuten ChatUI:n, laajempaan toiminnallisuuteen.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` Objective-C++-tuen aktivoimiseksi.
+- **d.** Koska projektissasi täytyy käyttää C++:aa, nimeä `ViewController.m` uudelleen muotoon `ViewController.mm` Objective-C++ -tuen aktivoimiseksi.
 
 ```objc
 
@@ -158,13 +158,13 @@ Latauksen jälkeen malli lisätään projektin Resources-kansioon Xcodessa.
 
 ```
 
-## **7. Sovelluksen ajaminen**
+## **7. Sovelluksen suorittaminen**
 
-Kun asetukset ovat valmiit, voit ajaa sovelluksen ja nähdä Phi-3-mini-mallin päättelytulokset.
+Kun asennus on valmis, voit käynnistää sovelluksen ja nähdä Phi-3-mini-mallin päätelmän tulokset.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.fi.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.fi.jpg)
 
-Lisää esimerkkikoodeja ja yksityiskohtaiset ohjeet löytyvät [Phi-3 Mini Samples -repositoriosta](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+Lisää esimerkkikoodeja ja yksityiskohtaiset ohjeet löydät [Phi-3 Mini Samples -varastosta](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta ole hyvä ja huomioi, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää ensisijaisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinkäsityksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

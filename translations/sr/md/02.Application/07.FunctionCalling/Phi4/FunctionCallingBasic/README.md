@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:09:34+00:00",
+  "translation_date": "2025-07-17T05:17:09+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "sr"
 }
 -->
-## **Pozivanje funkcija u Phi-4-mini**
+## **Позив функција у Phi-4-mini**
 
-Pozivanje funkcija se prvi put pojavilo u Phi Family porodici, a sada ga možete koristiti i kroz Phi-4-mini.
+Позив функција се први пут појавио у Phi Family породici, а сада га можете користити и у Phi-4-mini.
 
-Ovaj primer prikazuje simulaciju rezultata Premijer lige. Cilj je da Phi-4-mini isporuči informacije o utakmicama u realnom vremenu. Ispod se nalazi primer koda:
+Овај пример показује симулацију резултата Премијер лиге. Циљ је да Phi-4-mini пружи информације о утакмицама у реалном времену. Испод је пример кода:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала употребом овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

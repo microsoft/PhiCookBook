@@ -2,50 +2,50 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
-  "translation_date": "2025-05-09T13:39:07+00:00",
+  "translation_date": "2025-07-16T21:50:43+00:00",
   "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "sr"
 }
 -->
-# **Kvantifikacija Phi porodice**
+# **Квантификација Phi породице**
 
-Kvantifikacija modela odnosi se na proces mapiranja parametara (kao što su težine i vrednosti aktivacije) u neuronskoj mreži sa širokog opsega vrednosti (obično kontinuirani opseg) na manji konačni opseg vrednosti. Ova tehnologija može smanjiti veličinu i računsku složenost modela, kao i poboljšati efikasnost rada modela u okruženjima sa ograničenim resursima, poput mobilnih uređaja ili ugrađenih sistema. Kvantifikacija modela postiže kompresiju smanjenjem preciznosti parametara, ali uvodi i određeni gubitak preciznosti. Zbog toga je u procesu kvantifikacije potrebno balansirati veličinu modela, računsku složenost i preciznost. Uobičajene metode kvantifikacije uključuju kvantifikaciju sa fiksnom tačkom, kvantifikaciju sa pokretnom tačkom i slično. Možete izabrati odgovarajuću strategiju kvantifikacije u zavisnosti od specifičnog scenarija i potreba.
+Квантификација модела односи се на процес мапирања параметара (као што су тежине и вредности активације) у неуронској мрежи са широког опсега вредности (обично континуираног опсега) на мањи, коначни опсег вредности. Ова технологија може смањити величину и рачунску сложеност модела и побољшати ефикасност рада модела у окружењима са ограниченим ресурсима, као што су мобилни уређаји или уграђени системи. Квантификација модела постиже компресију смањењем прецизности параметара, али уводи и одређени губитак прецизности. Због тога је у процесу квантификације неопходно постићи баланс између величине модела, рачунске сложености и прецизности. Уобичајене методе квантификације укључују квантификацију фиксне тачке, квантификацију покретне тачке и слично. Можете одабрати одговарајућу стратегију квантификације у зависности од конкретног сценарија и потреба.
 
-Nadamo se da ćemo GenAI modele implementirati na edge uređaje i omogućiti većem broju uređaja da uđu u GenAI scenarije, kao što su mobilni uređaji, AI PC/Copilot+PC i tradicionalni IoT uređaji. Kroz kvantifikovane modele možemo ih rasporediti na različite edge uređaje u zavisnosti od vrste uređaja. U kombinaciji sa framework-om za ubrzanje modela i kvantifikacionim modelom koje obezbeđuju proizvođači hardvera, možemo izgraditi bolje SLM aplikacione scenarije.
+Надамо се да ћемо GenAI модел моћи да имплементирамо на ивици мреже (edge devices) и омогућимо више уређаја да уђу у GenAI сценарије, као што су мобилни уређаји, AI PC/Copilot+PC и традиционални IoT уређаји. Кроз квантификацију модела можемо га распоредити на различите ивичне уређаје у зависности од уређаја. У комбинацији са оквиром за убрзање модела и квантификационим моделом који пружају произвођачи хардвера, можемо изградити боље SLM апликационе сценарије.
 
-U scenariju kvantifikacije imamo različite preciznosti (INT4, INT8, FP16, FP32). Sledeće je objašnjenje najčešće korišćenih preciznosti kvantifikacije.
+У сценарију квантификације имамо различите прецизности (INT4, INT8, FP16, FP32). Испод је објашњење најчешће коришћених прецизности квантификације.
 
 ### **INT4**
 
-INT4 kvantifikacija je radikalna metoda kvantifikacije koja pretvara težine i vrednosti aktivacije modela u 4-bitne celine brojeve. INT4 kvantifikacija obično rezultira većim gubitkom preciznosti zbog manjeg opsega predstavljanja i niže preciznosti. Ipak, u poređenju sa INT8 kvantifikacijom, INT4 može dodatno smanjiti zahteve za skladištenjem i računsku složenost modela. Važno je napomenuti da se INT4 kvantifikacija retko koristi u praktičnim primenama, jer previše niska preciznost može značajno narušiti performanse modela. Takođe, nije sav hardver kompatibilan sa INT4 operacijama, pa treba uzeti u obzir kompatibilnost hardvera pri izboru metode kvantifikacije.
+INT4 квантификација је радикалан метод који квантификује тежине и вредности активације модела у 4-битне целобројне вредности. INT4 квантификација обично доводи до већег губитка прецизности због мањег опсега представљања и ниже прецизности. Међутим, у поређењу са INT8 квантификацијом, INT4 може додатно смањити захтеве за складиштењем и рачунску сложеност модела. Треба напоменути да је INT4 квантификација релативно ретка у практичним применама, јер превише ниска прецизност може значајно утицати на перформансе модела. Поред тога, неки хардвер не подржава INT4 операције, па је потребно узети у обзир компатибилност хардвера приликом избора методе квантификације.
 
 ### **INT8**
 
-INT8 kvantifikacija je proces pretvaranja težina i aktivacija modela iz brojeva sa pokretnom tačkom u 8-bitne celine brojeve. Iako je numerički opseg INT8 manji i manje precizan, ova metoda značajno smanjuje zahteve za skladištenjem i proračunima. Tokom INT8 kvantifikacije, težine i vrednosti aktivacije modela prolaze kroz proces kvantifikacije koji uključuje skaliranje i pomeranje, kako bi se sačuvale informacije iz originalnih brojeva sa pokretnom tačkom. Tokom inferencije, ovi kvantifikovani podaci se dekvantifikuju nazad u brojeve sa pokretnom tačkom za proračun, a zatim ponovo kvantifikuju u INT8 za sledeći korak. Ova metoda pruža dovoljnu preciznost u većini primena uz održavanje visoke računarske efikasnosti.
+INT8 квантификација је процес претварања тежина и активација модела из покретне тачке у 8-битне целобројне вредности. Иако је нумерички опсег који INT8 представља мањи и мање прецизан, овај метод значајно смањује захтеве за складиштењем и рачунањем. У INT8 квантификацији, тежине и вредности активације пролазе кроз процес квантификације који укључује скалирање и офсет како би се што више сачувале оригиналне информације из покретне тачке. Током извођења, ове квантификоване вредности се деквантификују назад у вредности покретне тачке за израчунавање, а затим поново квантификују у INT8 за следећи корак. Овај метод пружа довољну прецизност у већини апликација уз одржавање високе рачунске ефикасности.
 
 ### **FP16**
 
-FP16 format, odnosno 16-bitni brojevi sa pokretnom tačkom (float16), smanjuje zauzeće memorije za pola u poređenju sa 32-bitnim brojevima sa pokretnom tačkom (float32), što predstavlja značajnu prednost u velikim dubokim neuronskim mrežama. FP16 format omogućava učitavanje većih modela ili obradu većih količina podataka unutar istih memorijskih ograničenja GPU-a. Kako savremeni GPU hardver sve bolje podržava FP16 operacije, korišćenje FP16 formata može doneti i poboljšanja u brzini računanja. Ipak, FP16 ima i svoje mane, pre svega nižu preciznost, što može dovesti do numeričke nestabilnosti ili gubitka preciznosti u nekim slučajevima.
+FP16 формат, односно 16-битни бројеви покретне тачке (float16), смањује заузетост меморије за половину у односу на 32-битне бројеве покретне тачке (float32), што има значајне предности у великим дубоким учењима. FP16 формат омогућава учитавање већих модела или обраду више података у оквиру истих ограничења GPU меморије. Како савремени GPU хардвер све више подржава FP16 операције, коришћење FP16 формата може донети и побољшања у брзини израчунавања. Међутим, FP16 формат има и своје урођене недостатке, односно нижу прецизност, што може довести до нумеричке нестабилности или губитка прецизности у неким случајевима.
 
 ### **FP32**
 
-FP32 format pruža veću preciznost i može tačno predstaviti širok spektar vrednosti. U scenarijima gde se izvode složene matematičke operacije ili je potrebna visoka preciznost rezultata, FP32 format je poželjan. Međutim, veća preciznost znači i veće korišćenje memorije i duže vreme računanja. Za velike duboke neuronske mreže, naročito kada postoji mnogo parametara modela i velika količina podataka, FP32 može dovesti do nedostatka memorije na GPU-u ili usporenja u brzini inferencije.
+FP32 формат пружа већу прецизност и може тачно представити широк опсег вредности. У сценаријима где се изводе сложене математичке операције или је потребан висок ниво прецизности, FP32 формат је пожељан. Међутим, висока прецизност такође значи већу потрошњу меморије и дужи временски период израчунавања. За велике дубоке моделе, посебно када има много параметара и огромну количину података, FP32 формат може изазвати недостатак GPU меморије или смањење брзине извођења.
 
-Na mobilnim ili IoT uređajima možemo konvertovati Phi-3.x modele u INT4, dok AI PC / Copilot PC mogu koristiti veće preciznosti kao što su INT8, FP16, FP32.
+На мобилним уређајима или IoT уређајима можемо конвертовати Phi-3.x моделе у INT4, док AI PC / Copilot PC могу користити већу прецизност као што су INT8, FP16, FP32.
 
-Trenutno različiti proizvođači hardvera imaju različite framework-e za podršku generativnim modelima, kao što su Intel OpenVINO, Qualcomm QNN, Apple MLX i Nvidia CUDA, koji se kombinuju sa kvantifikacijom modela za lokalnu implementaciju.
+Тренутно различити произвођачи хардвера имају различите оквире за подршку генеративним моделима, као што су Intel OpenVINO, Qualcomm QNN, Apple MLX и Nvidia CUDA, итд., у комбинацији са квантификацијом модела за локалну имплементацију.
 
-Sa tehničke strane, nakon kvantifikacije imamo podršku za različite formate, kao što su PyTorch / Tensorflow format, GGUF i ONNX. Napravio sam poređenje formata i aplikativnih scenarija između GGUF i ONNX. Ovde preporučujem ONNX format kvantifikacije, koji ima dobru podršku od framework-a modela do hardvera. U ovom poglavlju fokusiraćemo se na ONNX Runtime za GenAI, OpenVINO i Apple MLX za izvođenje kvantifikacije modela (ako imate bolji način, možete nam ga poslati putem PR-a).
+У технолошком смислу, након квантификације подржавамо различите формате, као што су PyTorch / Tensorflow формат, GGUF и ONNX. Направио сам поређење формата и сценарија примене између GGUF и ONNX. Овде препоручујем ONNX квантификациони формат, који има добру подршку од оквира модела до хардвера. У овом поглављу ћемо се фокусирати на ONNX Runtime за GenAI, OpenVINO и Apple MLX за извођење квантификације модела (ако имате бољи начин, можете нам га послати кроз PR).
 
-**Ovo poglavlje uključuje**
+**Ово поглавље укључује**
 
-1. [Kvantifikacija Phi-3.5 / 4 koristeći llama.cpp](./UsingLlamacppQuantifyingPhi.md)
+1. [Квантификација Phi-3.5 / 4 коришћењем llama.cpp](./UsingLlamacppQuantifyingPhi.md)
 
-2. [Kvantifikacija Phi-3.5 / 4 koristeći Generative AI ekstenzije za onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
+2. [Квантификација Phi-3.5 / 4 коришћењем Generative AI екстензија за onnxruntime](./UsingORTGenAIQuantifyingPhi.md)
 
-3. [Kvantifikacija Phi-3.5 / 4 koristeći Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
+3. [Квантификација Phi-3.5 / 4 коришћењем Intel OpenVINO](./UsingIntelOpenVINOQuantifyingPhi.md)
 
-4. [Kvantifikacija Phi-3.5 / 4 koristeći Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
+4. [Квантификација Phi-3.5 / 4 коришћењем Apple MLX Framework](./UsingAppleMLXQuantifyingPhi.md)
 
-**Ограничење одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешна тумачења која могу настати коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

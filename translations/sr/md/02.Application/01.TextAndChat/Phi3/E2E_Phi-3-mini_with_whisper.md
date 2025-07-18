@@ -2,108 +2,108 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "006e8cf75211d3297f24e1b22e38955f",
-  "translation_date": "2025-05-09T18:34:41+00:00",
+  "translation_date": "2025-07-17T02:23:21+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md",
   "language_code": "sr"
 }
 -->
-# Interaktivni Phi 3 Mini 4K Instruct Chatbot sa Whisper-om
+# Interactive Phi 3 Mini 4K Instruct Chatbot са Whisper-ом
 
-## Pregled
+## Преглед
 
-Interaktivni Phi 3 Mini 4K Instruct Chatbot je alat koji korisnicima omogućava da komuniciraju sa Microsoft Phi 3 Mini 4K instruct demo-om koristeći tekstualni ili audio unos. Chatbot se može koristiti za razne zadatke, kao što su prevođenje, vremenske prognoze i prikupljanje opštih informacija.
+Interactive Phi 3 Mini 4K Instruct Chatbot је алат који омогућава корисницима да комуницирају са Microsoft Phi 3 Mini 4K instruct демо-ом користећи текст или аудио унос. Четбот се може користити за разне задатке, као што су превођење, временске информације и опште прикупљање података.
 
-### Početak rada
+### Почетак рада
 
-Da biste koristili ovaj chatbot, pratite sledeća uputstva:
+Да бисте користили овај четбот, једноставно пратите ове кораке:
 
-1. Otvorite novi [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)
-2. U glavnom prozoru beležnice videćete interfejs chatbox-a sa poljem za unos teksta i dugmetom "Send".
-3. Za korišćenje chatbota baziranog na tekstu, jednostavno unesite poruku u polje za unos teksta i kliknite na dugme "Send". Chatbot će odgovoriti audio fajlom koji može biti direktno pušten iz same beležnice.
+1. Отворите нови [E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb)
+2. У главном прозору нотебоока видећете интерфејс четбокса са пољем за унос текста и дугметом „Send“.
+3. Да бисте користили четбот заснован на тексту, једноставно укуцајте поруку у поље за унос текста и кликните на дугме „Send“. Четбот ће одговорити аудио фајлом који се може репродуковати директно унутар нотебоока.
 
-**Note**: Ovaj alat zahteva GPU i pristup Microsoft Phi-3 i OpenAI Whisper modelima, koji se koriste za prepoznavanje govora i prevođenje.
+**Note**: Овај алат захтева GPU и приступ Microsoft Phi-3 и OpenAI Whisper моделима, који се користе за препознавање говора и превођење.
 
-### Zahtevi za GPU
+### Захтеви за GPU
 
-Za pokretanje ovog demo-a potrebno je 12GB memorije na GPU.
+За покретање овог демо-а потребно је 12 ГБ GPU меморије.
 
-Zahtevi za memoriju prilikom pokretanja **Microsoft-Phi-3-Mini-4K instruct** demo-a na GPU-u zavise od nekoliko faktora, kao što su veličina ulaznih podataka (audio ili tekst), jezik koji se koristi za prevođenje, brzina modela i dostupna memorija na GPU-u.
+Захтеви за меморију приликом покретања **Microsoft-Phi-3-Mini-4K instruct** демо-а на GPU-у зависе од више фактора, као што су величина улазних података (аудио или текст), језик који се користи за превођење, брзина модела и расположива меморија на GPU-у.
 
-Generalno, Whisper model je dizajniran da radi na GPU-ima. Preporučena minimalna količina memorije za pokretanje Whisper modela je 8 GB, ali može podržati i veće količine memorije po potrebi.
+Уопштено, Whisper модел је дизајниран за рад на GPU-овима. Препоручена минимална количина GPU меморије за покретање Whisper модела је 8 ГБ, али може да поднесе и веће количине меморије ако је потребно.
 
-Važno je napomenuti da obrada velikih količina podataka ili veliki broj zahteva na model može zahtevati više GPU memorije i/ili može izazvati probleme sa performansama. Preporučuje se da testirate svoj slučaj upotrebe sa različitim konfiguracijama i pratite korišćenje memorije kako biste odredili optimalna podešavanja za vaše specifične potrebe.
+Важно је напоменути да покретање великог обима података или великог броја захтева на моделу може захтевати више GPU меморије и/или изазвати проблеме са перформансама. Препоручује се да тестирате свој случај употребе са различитим конфигурацијама и пратите коришћење меморије како бисте одредили оптимална подешавања за ваше специфичне потребе.
 
-## E2E primer za Interaktivni Phi 3 Mini 4K Instruct Chatbot sa Whisper-om
+## E2E пример за Interactive Phi 3 Mini 4K Instruct Chatbot са Whisper-ом
 
-Jupyter beležnica pod nazivom [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) pokazuje kako koristiti Microsoft Phi 3 Mini 4K instruct Demo za generisanje teksta iz audio ili pisanog teksta. Beležnica definiše nekoliko funkcija:
+Jupyter notebook под називом [Interactive Phi 3 Mini 4K Instruct Chatbot with Whisper](https://github.com/microsoft/Phi-3CookBook/blob/main/code/06.E2E/E2E_Phi-3-mini-4k-instruct-Whispser_Demo.ipynb) показује како користити Microsoft Phi 3 Mini 4K instruct Demo за генерисање текста из аудио или писаног уноса. Нотебоок дефинише неколико функција:
 
-1. `tts_file_name(text)`: Ova funkcija generiše ime fajla na osnovu ulaznog teksta za čuvanje generisanog audio fajla.
-1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Ova funkcija koristi Edge TTS API za generisanje audio fajla iz liste delova ulaznog teksta. Ulazni parametri su lista delova, brzina govora, ime glasa i putanja za čuvanje generisanog audio fajla.
-1. `talk(input_text)`: Ova funkcija generiše audio fajl koristeći Edge TTS API i čuva ga pod slučajnim imenom u direktorijumu /content/audio. Ulazni parametar je tekst koji se konvertuje u govor.
-1. `run_text_prompt(message, chat_history)`: Ova funkcija koristi Microsoft Phi 3 Mini 4K instruct demo za generisanje audio fajla iz unosa poruke i dodaje ga u istoriju četa.
-1. `run_audio_prompt(audio, chat_history)`: Ova funkcija pretvara audio fajl u tekst koristeći Whisper model API i prosleđuje ga funkciji `run_text_prompt()`.
-1. Kod pokreće Gradio aplikaciju koja omogućava korisnicima da komuniciraju sa Phi 3 Mini 4K instruct demo-om bilo unošenjem poruka ili otpremanjem audio fajlova. Izlaz se prikazuje kao tekstualna poruka unutar aplikacije.
+1. `tts_file_name(text)`: Ова функција генерише име фајла на основу улазног текста за чување генерисаног аудио фајла.
+1. `edge_free_tts(chunks_list,speed,voice_name,save_path)`: Ова функција користи Edge TTS API за генерисање аудио фајла из листе делова улазног текста. Улазни параметри су листа делова, брзина говора, име гласа и путања за чување генерисаног аудио фајла.
+1. `talk(input_text)`: Ова функција генерише аудио фајл користећи Edge TTS API и чува га под случајним именом у директоријуму /content/audio. Улазни параметар је текст који се претвара у говор.
+1. `run_text_prompt(message, chat_history)`: Ова функција користи Microsoft Phi 3 Mini 4K instruct демо за генерисање аудио фајла из улазне поруке и додаје га у историју чет-а.
+1. `run_audio_prompt(audio, chat_history)`: Ова функција претвара аудио фајл у текст користећи Whisper модел API и прослеђује га функцији `run_text_prompt()`.
+1. Код покреће Gradio апликацију која омогућава корисницима да комуницирају са Phi 3 Mini 4K instruct демо-ом тако што ће уносити поруке или отпремати аудио фајлове. Излаз се приказује као текстуална порука у апликацији.
 
-## Rešavanje problema
+## Решавање проблема
 
-Instalacija Cuda GPU drajvera
+Инсталација Cuda GPU драјвера
 
-1. Proverite da li su vaše Linux aplikacije ažurirane
+1. Уверите се да су ваше Linux апликације ажурне
 
     ```bash
     sudo apt update
     ```
 
-1. Instalirajte Cuda drajvere
+1. Инсталирајте Cuda драјвере
 
     ```bash
     sudo apt install nvidia-cuda-toolkit
     ```
 
-1. Registrujte lokaciju cuda drajvera
+1. Региструјте локацију cuda драјвера
 
     ```bash
     echo /usr/lib64-nvidia/ >/etc/ld.so.conf.d/libcuda.conf; ldconfig
     ```
 
-1. Provera veličine Nvidia GPU memorije (Potrebno 12GB GPU memorije)
+1. Провера величине Nvidia GPU меморије (Потребно 12GB GPU меморије)
 
     ```bash
     nvidia-smi
     ```
 
-1. Pražnjenje keša: Ako koristite PyTorch, možete pozvati torch.cuda.empty_cache() da oslobodite svu neiskorišćenu keš memoriju kako bi je mogle koristiti druge GPU aplikacije
+1. Празна кеш меморија: Ако користите PyTorch, можете позвати torch.cuda.empty_cache() да ослободите сву неискоришћену кеш меморију како би могла да се користи од стране других GPU апликација
 
     ```python
     torch.cuda.empty_cache() 
     ```
 
-1. Provera Nvidia Cuda
+1. Провера Nvidia Cuda
 
     ```bash
     nvcc --version
     ```
 
-1. Obavite sledeće korake da biste kreirali Hugging Face token.
+1. Извршите следеће кораке да бисте креирали Hugging Face токен.
 
-    - Idite na [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
-    - Izaberite **New token**.
-    - Unesite naziv projekta (**Name**) koji želite da koristite.
-    - Izaberite **Type** na **Write**.
+    - Идите на [Hugging Face Token Settings page](https://huggingface.co/settings/tokens?WT.mc_id=aiml-137032-kinfeylo).
+    - Изаберите **New token**.
+    - Унесите име пројекта које желите да користите.
+    - Изаберите **Type** као **Write**.
 
 > **Note**
 >
-> Ako dobijete sledeću grešku:
+> Ако наиђете на следећу грешку:
 >
 > ```bash
 > /sbin/ldconfig.real: Can't create temporary cache file /etc/ld.so.cache~: Permission denied 
 > ```
 >
-> Da biste rešili ovaj problem, unesite sledeću komandu u terminal.
+> Да бисте решили проблем, укуцајте следећу команду у вашем терминалу.
 >
 > ```bash
 > sudo ldconfig
 > ```
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из употребе овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

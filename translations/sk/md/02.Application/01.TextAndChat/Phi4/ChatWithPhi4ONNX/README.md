@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:03:28+00:00",
+  "translation_date": "2025-07-17T03:19:12+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "sk"
 }
 -->
 # **Chat s Phi-4-mini ONNX**
 
-***ONNX*** je otvorený formát vytvorený na reprezentáciu modelov strojového učenia. ONNX definuje spoločnú sadu operátorov – stavebných blokov modelov strojového a hlbokého učenia – a spoločný formát súborov, ktorý umožňuje vývojárom AI používať modely s rôznymi frameworkmi, nástrojmi, runtime prostrediami a kompilátormi.
+***ONNX*** je otvorený formát určený na reprezentáciu modelov strojového učenia. ONNX definuje spoločnú sadu operátorov – základných stavebných prvkov modelov strojového a hlbokého učenia – a spoločný formát súborov, ktorý umožňuje vývojárom AI používať modely v rôznych frameworkoch, nástrojoch, runtime prostrediach a kompilátoroch.
 
-Dúfame, že nasadíme generatívne AI modely na edge zariadenia a využijeme ich v prostrediach s obmedzeným výpočtovým výkonom alebo offline. Teraz môžeme tento cieľ dosiahnuť konverziou modelu kvantizovaným spôsobom. Kvantizovaný model môžeme previesť do formátu GGUF alebo ONNX.
+Naším cieľom je nasadiť generatívne AI modely na edge zariadeniach a využívať ich v prostrediach s obmedzeným výpočtovým výkonom alebo offline. Tento cieľ môžeme dosiahnuť konverziou modelu do kvantizovanej podoby. Kvantizovaný model môžeme previesť do formátu GGUF alebo ONNX.
 
-Microsoft Olive vám môže pomôcť previesť SLM do kvantizovaného ONNX formátu. Spôsob, ako dosiahnuť konverziu modelu, je veľmi jednoduchý.
+Microsoft Olive vám pomôže previesť SLM do kvantizovaného ONNX formátu. Metóda konverzie modelu je veľmi jednoduchá.
 
-**Inštalujte Microsoft Olive SDK**
+**Inštalácia Microsoft Olive SDK**
 
 
 ```bash
@@ -37,7 +37,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Poznámka*** tento príklad používa CPU
 
 
-### **Inference Phi-4-mini ONNX modelu pomocou ONNX Runtime GenAI**
+### **Inference Phi-4-mini ONNX modelu s ONNX Runtime GenAI**
 
 - **Inštalácia ONNX Runtime GenAI**
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, majte prosím na pamäti, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Pôvodný dokument v jeho rodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

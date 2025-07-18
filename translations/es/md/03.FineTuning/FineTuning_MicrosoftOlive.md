@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-07T10:32:59+00:00",
+  "translation_date": "2025-07-17T06:37:52+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "es"
 }
 -->
 # **Ajuste fino de Phi-3 con Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) es una herramienta fácil de usar para la optimización de modelos consciente del hardware que reúne técnicas líderes en la industria en compresión, optimización y compilación de modelos.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) es una herramienta de optimización de modelos consciente del hardware, fácil de usar, que reúne técnicas líderes en la industria en compresión, optimización y compilación de modelos.
 
-Está diseñada para simplificar el proceso de optimización de modelos de aprendizaje automático, asegurando el uso más eficiente de arquitecturas de hardware específicas.
+Está diseñada para simplificar el proceso de optimización de modelos de aprendizaje automático, asegurando que aprovechen al máximo arquitecturas de hardware específicas.
 
-Ya sea que trabajes en aplicaciones en la nube o en dispositivos edge, Olive te permite optimizar tus modelos de manera sencilla y eficaz.
+Ya sea que trabajes en aplicaciones en la nube o en dispositivos edge, Olive te permite optimizar tus modelos de manera sencilla y efectiva.
 
 ## Características principales:
 - Olive agrega y automatiza técnicas de optimización para los objetivos de hardware deseados.
-- Ninguna técnica de optimización única se adapta a todos los escenarios, por lo que Olive permite la extensibilidad al habilitar que expertos de la industria integren sus innovaciones en optimización.
+- No existe una técnica de optimización única para todos los escenarios, por lo que Olive permite la extensibilidad al habilitar que expertos de la industria integren sus innovaciones en optimización.
 
 ## Reduce el esfuerzo de ingeniería:
 - Los desarrolladores a menudo necesitan aprender y utilizar múltiples cadenas de herramientas específicas de proveedores de hardware para preparar y optimizar modelos entrenados para su despliegue.
-- Olive simplifica esta experiencia automatizando técnicas de optimización para el hardware deseado.
+- Olive simplifica esta experiencia automatizando las técnicas de optimización para el hardware deseado.
 
 ## Solución de optimización E2E lista para usar:
 
-Componiendo y ajustando técnicas integradas, Olive ofrece una solución unificada para la optimización de extremo a extremo.
-Tiene en cuenta restricciones como precisión y latencia durante la optimización de modelos.
+Al combinar y ajustar técnicas integradas, Olive ofrece una solución unificada para la optimización de extremo a extremo.
+Tiene en cuenta restricciones como precisión y latencia mientras optimiza los modelos.
 
 ## Uso de Microsoft Olive para ajuste fino
 
-Microsoft Olive es una herramienta de código abierto muy fácil de usar para optimización de modelos que cubre tanto ajuste fino como referencia en el campo de la inteligencia artificial generativa. Solo requiere una configuración sencilla, combinada con el uso de modelos de lenguaje pequeño de código abierto y entornos de ejecución relacionados (AzureML / GPU local, CPU, DirectML), puedes completar el ajuste fino o referencia del modelo mediante optimización automática, y encontrar el mejor modelo para desplegar en la nube o en dispositivos edge. Permite a las empresas construir sus propios modelos verticales de industria tanto on-premises como en la nube.
+Microsoft Olive es una herramienta de optimización de modelos de código abierto muy fácil de usar que puede cubrir tanto el ajuste fino como la referencia en el campo de la inteligencia artificial generativa. Solo requiere una configuración sencilla, combinada con el uso de modelos de lenguaje pequeños de código abierto y entornos de ejecución relacionados (AzureML / GPU local, CPU, DirectML), puedes completar el ajuste fino o la referencia del modelo mediante optimización automática, y encontrar el mejor modelo para desplegar en la nube o en dispositivos edge. Permite a las empresas construir sus propios modelos verticales industriales tanto on-premises como en la nube.
 
 ![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.es.png)
 
@@ -41,7 +41,7 @@ Microsoft Olive es una herramienta de código abierto muy fácil de usar para op
 ## Código de ejemplo y muestra de Phi-3 Olive
 En este ejemplo usarás Olive para:
 
-- Ajustar finamente un adaptador LoRA para clasificar frases en Tristeza, Alegría, Miedo, Sorpresa.
+- Ajustar fino un adaptador LoRA para clasificar frases en Tristeza, Alegría, Miedo, Sorpresa.
 - Fusionar los pesos del adaptador en el modelo base.
 - Optimizar y cuantizar el modelo a int4.
 
@@ -73,16 +73,16 @@ Si quieres usar Azure ML, usa
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
-**Aviso**
-Requisitos del SO: Ubuntu 20.04 / 22.04
+**Aviso**  
+Requisito del SO: Ubuntu 20.04 / 22.04
 
 ### **Config.json de Microsoft Olive**
 
-Después de la instalación, puedes configurar diferentes ajustes específicos del modelo a través del archivo Config, incluyendo datos, cómputo, entrenamiento, despliegue y generación de modelos.
+Después de la instalación, puedes configurar diferentes ajustes específicos del modelo a través del archivo Config, incluyendo datos, computación, entrenamiento, despliegue y generación de modelos.
 
 **1. Datos**
 
-En Microsoft Olive, se puede entrenar con datos locales y en la nube, y esto se puede configurar en los ajustes.
+En Microsoft Olive, se puede entrenar con datos locales y en la nube, y esto puede configurarse en los ajustes.
 
 *Configuración de datos locales*
 
@@ -119,9 +119,9 @@ Puedes configurar fácilmente el conjunto de datos que se necesita para el ajust
     ],
 ```
 
-**Configuración de fuentes de datos en la nube**
+**Configuración de fuente de datos en la nube**
 
-Al enlazar el datastore de Azure AI Studio/Azure Machine Learning Service para conectar los datos en la nube, puedes elegir introducir diferentes fuentes de datos a Azure AI Studio/Azure Machine Learning Service a través de Microsoft Fabric y Azure Data como soporte para el ajuste fino.
+Al vincular el datastore de Azure AI Studio/Azure Machine Learning Service para enlazar los datos en la nube, puedes elegir introducir diferentes fuentes de datos a Azure AI Studio/Azure Machine Learning Service a través de Microsoft Fabric y Azure Data como soporte para el ajuste fino de los datos.
 
 ```json
 
@@ -166,9 +166,9 @@ Al enlazar el datastore de Azure AI Studio/Azure Machine Learning Service para c
     
 ```
 
-**2. Configuración de cómputo**
+**2. Configuración de computación**
 
-Si necesitas trabajar localmente, puedes usar directamente los recursos de datos locales. Si necesitas usar los recursos de Azure AI Studio / Azure Machine Learning Service, debes configurar los parámetros relevantes de Azure, nombre de la capacidad de cómputo, etc.
+Si necesitas trabajar localmente, puedes usar directamente recursos de datos locales. Si necesitas usar recursos de Azure AI Studio / Azure Machine Learning Service, debes configurar los parámetros relevantes de Azure, nombre de la potencia de cómputo, etc.
 
 ```json
 
@@ -201,7 +201,7 @@ Si necesitas trabajar localmente, puedes usar directamente los recursos de datos
 
 ***Aviso***
 
-Como se ejecuta mediante un contenedor en Azure AI Studio/Azure Machine Learning Service, se debe configurar el entorno requerido. Esto se configura en el archivo conda.yaml.
+Como se ejecuta a través de un contenedor en Azure AI Studio/Azure Machine Learning Service, es necesario configurar el entorno requerido. Esto se configura en el entorno conda.yaml.
 
 ```yaml
 
@@ -256,7 +256,7 @@ Si tienes el modelo localmente, puedes usar este método
     },
 ```
 
-Si quieres usar un modelo desde Azure AI Studio / Azure Machine Learning Service, puedes usar este método
+Si quieres usar un modelo de Azure AI Studio / Azure Machine Learning Service, puedes usar este método
 
 ```json
 
@@ -283,10 +283,10 @@ Si quieres usar un modelo desde Azure AI Studio / Azure Machine Learning Service
     },
 ```
 
-**Aviso:**
-Necesitamos integrarnos con Azure AI Studio / Azure Machine Learning Service, así que al configurar el modelo, por favor revisa el número de versión y los nombres relacionados.
+**Aviso:**  
+Necesitamos integrarnos con Azure AI Studio / Azure Machine Learning Service, así que al configurar el modelo, consulta el número de versión y los nombres relacionados.
 
-Todos los modelos en Azure deben estar configurados como PyTorch.MLflow
+Todos los modelos en Azure deben configurarse como PyTorch.MLflow
 
 Necesitas tener una cuenta de Hugging Face y vincular la clave al valor Key de Azure AI Studio / Azure Machine Learning
 
@@ -329,10 +329,10 @@ Microsoft Olive encapsula muy bien los algoritmos de ajuste fino Lora y QLora. S
         },
 ```
 
-Si quieres realizar conversión de cuantización, la rama principal de Microsoft Olive ya soporta el método onnxruntime-genai. Puedes configurarlo según tus necesidades:
+Si quieres conversión de cuantización, la rama principal de Microsoft Olive ya soporta el método onnxruntime-genai. Puedes configurarlo según tus necesidades:
 
 1. fusionar los pesos del adaptador en el modelo base  
-2. convertir el modelo a modelo onnx con la precisión requerida usando ModelBuilder
+2. convertir el modelo a modelo onnx con la precisión requerida mediante ModelBuilder
 
 como por ejemplo convertir a INT4 cuantizado
 
@@ -350,9 +350,9 @@ como por ejemplo convertir a INT4 cuantizado
 ```
 
 **Aviso**  
-- Si usas QLoRA, la conversión de cuantización con ONNXRuntime-genai no está soportada por el momento.
+- Si usas QLoRA, la conversión de cuantización de ONNXRuntime-genai no está soportada por el momento.
 
-- Cabe señalar que puedes configurar los pasos anteriores según tus necesidades. No es necesario configurar todos los pasos completamente. Dependiendo de tus necesidades, puedes usar directamente los pasos del algoritmo sin ajuste fino. Finalmente, debes configurar los motores relevantes.
+- Cabe señalar que puedes configurar los pasos anteriores según tus propias necesidades. No es necesario configurar completamente todos estos pasos. Dependiendo de tus requerimientos, puedes usar directamente los pasos del algoritmo sin ajuste fino. Finalmente, necesitas configurar los motores relevantes.
 
 ```json
 
@@ -367,13 +367,13 @@ como por ejemplo convertir a INT4 cuantizado
     }
 ```
 
-**5. Ajuste fino terminado**
+**5. Ajuste fino finalizado**
 
-En la línea de comandos, ejecuta en el directorio donde está olive-config.json
+En la línea de comandos, ejecuta en el directorio de olive-config.json
 
 ```bash
 olive run --config olive-config.json  
 ```
 
-**Aviso Legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos responsabilizamos por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

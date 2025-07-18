@@ -2,91 +2,91 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:55:41+00:00",
+  "translation_date": "2025-07-17T06:51:34+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "sr"
 }
 -->
-# **Fino podešavanje Phi-3 uz Microsoft Olive**
+# **Фино подешавање Phi-3 уз Microsoft Olive**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) je jednostavan za korišćenje alat za optimizaciju modela koji je svestan hardvera i koji objedinjuje vodeće tehnike iz industrije za kompresiju, optimizaciju i kompajliranje modela.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) је једноставан алат за оптимизацију модела који је свестран према хардверу и обједињује водеће индустријске технике у области компресије, оптимизације и компилације модела.
 
-Dizajniran je da pojednostavi proces optimizacije modela mašinskog učenja, osiguravajući da modeli maksimalno efikasno koriste specifične hardverske arhitekture.
+Дизајниран је да поједностави процес оптимизације модела машинског учења, обезбеђујући њихову најефикаснију употребу на одређеним хардверским архитектурама.
 
-Bilo da radite na aplikacijama u oblaku ili na uređajima na ivici mreže, Olive vam omogućava da lako i efikasno optimizujete svoje modele.
+Без обзира да ли радите на апликацијама у облаку или на уређајима на ивици мреже, Olive вам омогућава да лако и ефикасно оптимизујете своје моделе.
 
-## Ključne karakteristike:
-- Olive objedinjuje i automatizuje tehnike optimizacije za željene hardverske ciljeve.
-- Pošto nijedna tehnika optimizacije ne odgovara svim situacijama, Olive omogućava proširenje tako što stručnjaci iz industrije mogu da dodaju svoje inovacije u optimizaciji.
+## Кључне карактеристике:
+- Olive окупља и аутоматизује технике оптимизације за жељене хардверске платформе.
+- Једна техника оптимизације не одговара свим сценаријима, па Olive омогућава проширивост тако што стручњацима из индустрије дозвољава да убаце своје иновације у оптимизацији.
 
-## Smanjite inženjerski napor:
-- Programeri često moraju da nauče i koriste više alatki specifičnih za različite hardverske proizvođače da bi pripremili i optimizovali trenirane modele za implementaciju.
-- Olive pojednostavljuje ovaj proces automatizacijom tehnika optimizacije za željeni hardver.
+## Смањите инжењерски напор:
+- Програмери често морају да науче и користе више алата специфичних за различите хардверске произвођаче како би припремили и оптимизовали обучене моделе за имплементацију.
+- Olive поједностављује овај процес аутоматизујући технике оптимизације за жељени хардвер.
 
-## Spremno za upotrebu E2E rešenje za optimizaciju:
+## Спремно за употребу E2E решење за оптимизацију:
 
-Kombinovanjem i podešavanjem integrisanih tehnika, Olive nudi jedinstveno rešenje za end-to-end optimizaciju.
-Uzimaju se u obzir ograničenja poput tačnosti i latencije tokom optimizacije modela.
+Комбинујући и подешавајући интегрисане технике, Olive нуди јединствено решење за оптимизацију од почетка до краја.
+У обзир узима ограничења као што су прецизност и латенција током оптимизације модела.
 
-## Korišćenje Microsoft Olive za fino podešavanje
+## Коришћење Microsoft Olive за фино подешавање
 
-Microsoft Olive je vrlo jednostavan za korišćenje open source alat za optimizaciju modela koji može pokriti kako fino podešavanje tako i referencu u oblasti generativne veštačke inteligencije. Potrebna je samo jednostavna konfiguracija, u kombinaciji sa korišćenjem open source malih jezičkih modela i odgovarajućih runtime okruženja (AzureML / lokalni GPU, CPU, DirectML), i možete završiti fino podešavanje ili referencu modela kroz automatsku optimizaciju, te pronaći najbolji model za implementaciju u oblak ili na uređaje na ivici mreže. Omogućava preduzećima da izgrade svoje industrijske vertikalne modele lokalno i u oblaku.
+Microsoft Olive је веома једноставан алат отвореног кода за оптимизацију модела који покрива и фино подешавање и референце у области генеративне вештачке интелигенције. Захтева само једноставну конфигурацију, у комбинацији са коришћењем отворених малих језичких модела и релевантних окружења за извршавање (AzureML / локални GPU, CPU, DirectML), омогућавајући вам да завршите фино подешавање или референцу модела кроз аутоматску оптимизацију и пронађете најбољи модел за имплементацију у облаку или на уређајима на ивици мреже. Омогућава предузећима да граде своје индустријске вертикалне моделе локално и у облаку.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.sr.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.sr.png)
 
-## Fino podešavanje Phi-3 uz Microsoft Olive
+## Фино подешавање Phi-3 уз Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.sr.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.sr.png)
 
-## Primer koda i primer Phi-3 Olive
-U ovom primeru koristićete Olive da:
+## Phi-3 Olive пример кода и пример
+У овом примеру ћете користити Olive да:
 
-- Fino podesite LoRA adapter za klasifikaciju fraza u kategorije Tužan, Radost, Strah, Iznenađenje.
-- Spojite težine adaptera u osnovni model.
-- Optimizujete i kvantizujete model u int4.
+- Фино подесите LoRA адаптер за класификацију фраза у категорије Туга, Радост, Страх, Изненађење.
+- Спојите тежине адаптера у основни модел.
+- Оптимизујете и квантујете модел у int4.
 
-[Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
+[Пример кода](../../code/03.Finetuning/olive-ort-example/README.md)
 
-### Instalacija Microsoft Olive
+### Подешавање Microsoft Olive
 
-Instalacija Microsoft Olive je vrlo jednostavna, i može se instalirati za CPU, GPU, DirectML i Azure ML.
+Инсталација Microsoft Olive је врло једноставна, и може се инсталирати за CPU, GPU, DirectML и Azure ML
 
 ```bash
 pip install olive-ai
 ```
 
-Ako želite da pokrenete ONNX model na CPU-u, možete koristiti
+Ако желите да покренете ONNX модел на CPU-у, можете користити
 
 ```bash
 pip install olive-ai[cpu]
 ```
 
-Ako želite da pokrenete ONNX model na GPU-u, možete koristiti
+Ако желите да покренете ONNX модел на GPU-у, можете користити
 
 ```python
 pip install olive-ai[gpu]
 ```
 
-Ako želite da koristite Azure ML, koristite
+Ако желите да користите Azure ML, користите
 
 ```python
 pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 ```
 
-**Napomena**  
-Zahtevi za OS: Ubuntu 20.04 / 22.04
+**Напомена**  
+Захтеви за ОС: Ubuntu 20.04 / 22.04
 
 ### **Microsoft Olive Config.json**
 
-Nakon instalacije, možete konfigurisati različite postavke specifične za model kroz Config fajl, uključujući podatke, računarske resurse, treniranje, implementaciju i generisanje modela.
+Након инсталације, можете конфигурисати различита подешавања специфична за модел преко Config фајла, укључујући податке, рачунарске ресурсе, тренинг, имплементацију и генерисање модела.
 
-**1. Podaci**
+**1. Податци**
 
-Na Microsoft Olive se podržava treniranje na lokalnim i cloud podacima, što se može podesiti u konfiguraciji.
+На Microsoft Olive платформи, тренинг на локалним и облачним подацима је подржан и може се конфигурисати у подешавањима.
 
-*Podešavanje lokalnih podataka*
+*Подешавања локалних података*
 
-Jednostavno možete podesiti skup podataka za treniranje za fino podešavanje, obično u json formatu, i prilagoditi ga prema šablonu podataka. Ovo treba prilagoditi zahtevima modela (na primer, prilagoditi formatu koji zahteva Microsoft Phi-3-mini. Ako imate druge modele, molimo pogledajte potrebne formate za fino podešavanje drugih modela).
+Једноставно можете подесити скуп података који треба да се користи за фино подешавање, обично у json формату, и прилагодити га уз помоћ шаблона података. Ово треба прилагодити у складу са захтевима модела (на пример, прилагодити формату који захтева Microsoft Phi-3-mini. Ако користите друге моделе, молимо погледајте потребне формате за фино подешавање тих модела)
 
 ```json
 
@@ -119,9 +119,9 @@ Jednostavno možete podesiti skup podataka za treniranje za fino podešavanje, o
     ],
 ```
 
-**Podešavanje izvora podataka u oblaku**
+**Подешавања извора облачних података**
 
-Povezivanjem skladišta podataka Azure AI Studio/Azure Machine Learning Service za pristup podacima u oblaku, možete birati različite izvore podataka u Azure AI Studio/Azure Machine Learning Service putem Microsoft Fabric i Azure Data kao podršku za fino podešavanje podataka.
+Повезивањем складишта података Azure AI Studio/Azure Machine Learning Service за приступ подацима у облаку, можете изабрати да увезете различите изворе података у Azure AI Studio/Azure Machine Learning Service преко Microsoft Fabric и Azure Data као подршку за фино подешавање.
 
 ```json
 
@@ -166,9 +166,9 @@ Povezivanjem skladišta podataka Azure AI Studio/Azure Machine Learning Service 
     
 ```
 
-**2. Računarska konfiguracija**
+**2. Конфигурација рачунарских ресурса**
 
-Ako želite da radite lokalno, možete direktno koristiti lokalne resurse podataka. Ako koristite Azure AI Studio / Azure Machine Learning Service, potrebno je podesiti relevantne Azure parametre, ime računarske snage i slično.
+Ако желите да радите локално, можете директно користити локалне ресурсе података. Ако желите да користите ресурсе Azure AI Studio / Azure Machine Learning Service, потребно је да конфигуришете релевантне Azure параметре, име рачунарске снаге и слично.
 
 ```json
 
@@ -199,9 +199,9 @@ Ako želite da radite lokalno, možete direktno koristiti lokalne resurse podata
     },
 ```
 
-***Napomena***
+***Напомена***
 
-Pošto se izvršava kroz kontejner na Azure AI Studio/Azure Machine Learning Service, potrebno je konfigurisati okruženje. Ovo se podešava u conda.yaml fajlu.
+Пошто се покреће кроз контејнер на Azure AI Studio/Azure Machine Learning Service, потребно је конфигурисати захтевано окружење. Ово се подешава у conda.yaml окружењу.
 
 ```yaml
 
@@ -234,11 +234,11 @@ dependencies:
 
 ```
 
-**3. Izbor SLM**
+**3. Избор вашег SLM**
 
-Model možete direktno koristiti sa Hugging Face-a, ili ga možete povezati sa Model Catalog-om Azure AI Studio / Azure Machine Learning da biste izabrali model. U donjem primeru koristićemo Microsoft Phi-3-mini kao primer.
+Можете користити модел директно са Hugging face, или га повезати са Model Catalog-ом Azure AI Studio / Azure Machine Learning да бисте изабрали модел за коришћење. У примеру кода испод користићемо Microsoft Phi-3-mini као пример.
 
-Ako imate model lokalno, možete koristiti ovaj način
+Ако имате модел локално, можете користити овај начин
 
 ```json
 
@@ -256,7 +256,7 @@ Ako imate model lokalno, možete koristiti ovaj način
     },
 ```
 
-Ako želite da koristite model iz Azure AI Studio / Azure Machine Learning Service, možete koristiti ovaj način
+Ако желите да користите модел из Azure AI Studio / Azure Machine Learning Service, можете користити овај начин
 
 ```json
 
@@ -283,16 +283,16 @@ Ako želite da koristite model iz Azure AI Studio / Azure Machine Learning Servi
     },
 ```
 
-**Napomena:**  
-Potrebna je integracija sa Azure AI Studio / Azure Machine Learning Service, pa prilikom podešavanja modela obratite pažnju na verziju i relevantne nazive.
+**Напомена:**  
+Потребна је интеграција са Azure AI Studio / Azure Machine Learning Service, па приликом подешавања модела обратите пажњу на верзију и релевантна имена.
 
-Svi modeli na Azure-u moraju biti podešeni kao PyTorch.MLflow
+Сви модели на Azure-у морају бити подешени као PyTorch.MLflow
 
-Potrebno je imati Hugging Face nalog i povezati ključ sa Key vrednošću Azure AI Studio / Azure Machine Learning.
+Потребно је да имате Hugging face налог и да повежете кључ са Key вредношћу Azure AI Studio / Azure Machine Learning
 
-**4. Algoritam**
+**4. Алгоритам**
 
-Microsoft Olive vrlo dobro enkapsulira Lora i QLora algoritme za fino podešavanje. Potrebno je samo podesiti neke relevantne parametre. Ovde uzimam QLora kao primer.
+Microsoft Olive веома добро обухвата Lora и QLora алгоритме за фино подешавање. Потребно је само да конфигуришете неке релевантне параметре. Овде узимамо QLora као пример.
 
 ```json
         "lora": {
@@ -329,12 +329,12 @@ Microsoft Olive vrlo dobro enkapsulira Lora i QLora algoritme za fino podešavan
         },
 ```
 
-Ako želite kvantizaciju, glavni branch Microsoft Olive već podržava onnxruntime-genai metodu. Možete podesiti prema svojim potrebama:
+Ако желите конверзију квантизације, главна грана Microsoft Olive већ подржава onnxruntime-genai метод. Можете га подесити према својим потребама:
 
-1. spojite težine adaptera u osnovni model  
-2. konvertujte model u onnx model sa potrebnom preciznošću pomoću ModelBuilder-a
+1. спојити тежине адаптера у основни модел  
+2. конвертовати модел у onnx модел са потребном прецизношћу помоћу ModelBuilder-а
 
-na primer konverzija u kvantizovani INT4
+на пример, конверзија у квантизовани INT4
 
 ```json
 
@@ -349,10 +349,9 @@ na primer konverzija u kvantizovani INT4
         }
 ```
 
-**Napomena**  
-- Ako koristite QLoRA, kvantizacija pomoću ONNXRuntime-genai trenutno nije podržana.
-
-- Važno je napomenuti da gore navedene korake možete prilagoditi svojim potrebama. Nije neophodno da kompletno podesite sve korake. U zavisnosti od potreba, možete direktno koristiti korake algoritma bez fino podešavanja. Na kraju je potrebno podesiti relevantne engine-e.
+**Напомена**  
+- Ако користите QLoRA, тренутно није подржана квантизација преко ONNXRuntime-genai.  
+- Важно је напоменути да горе наведене кораке можете подесити према својим потребама. Није неопходно да конфигуришете све кораке у потпуности. У зависности од потреба, можете директно користити кораке алгоритма без фино подешавања. На крају је потребно конфигурисати релевантне енџине.
 
 ```json
 
@@ -367,13 +366,13 @@ na primer konverzija u kvantizovani INT4
     }
 ```
 
-**5. Završetak fino podešavanja**
+**5. Завршено фино подешавање**
 
-Na komandnoj liniji, pokrenite u direktorijumu gde se nalazi olive-config.json
+На командној линији, покрените у директоријуму са olive-config.json
 
 ```bash
 olive run --config olive-config.json  
 ```
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да превод буде прецизан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било какве неспоразуме или погрешне тумачења настала коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која могу настати коришћењем овог превода.

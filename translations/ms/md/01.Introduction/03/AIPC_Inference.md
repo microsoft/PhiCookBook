@@ -2,45 +2,45 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-05-09T10:28:53+00:00",
+  "translation_date": "2025-07-16T20:05:16+00:00",
   "source_file": "md/01.Introduction/03/AIPC_Inference.md",
   "language_code": "ms"
 }
 -->
-# **استدلال Phi-3 در کامپیوتر هوش مصنوعی**
+# **Inferens Phi-3 dalam AI PC**
 
-با پیشرفت هوش مصنوعی مولد و بهبود قابلیت‌های سخت‌افزاری دستگاه‌های لبه‌ای، تعداد بیشتری از مدل‌های هوش مصنوعی مولد اکنون می‌توانند در دستگاه‌های Bring Your Own Device (BYOD) کاربران ادغام شوند. کامپیوترهای هوش مصنوعی از جمله این مدل‌ها هستند. از سال ۲۰۲۴، شرکت‌های Intel، AMD و Qualcomm با تولیدکنندگان کامپیوتر همکاری کرده‌اند تا کامپیوترهای هوش مصنوعی را معرفی کنند که از طریق تغییرات سخت‌افزاری، استقرار مدل‌های مولد هوش مصنوعی محلی را تسهیل می‌کنند. در این بحث، تمرکز ما بر روی کامپیوترهای هوش مصنوعی Intel است و نحوه استقرار Phi-3 روی این کامپیوترها را بررسی می‌کنیم.
+Dengan kemajuan AI generatif dan peningkatan keupayaan perkakasan peranti edge, semakin banyak model AI generatif kini boleh diintegrasikan ke dalam peranti Bring Your Own Device (BYOD) pengguna. AI PC adalah antara model-model ini. Bermula pada tahun 2024, Intel, AMD, dan Qualcomm telah bekerjasama dengan pengeluar PC untuk memperkenalkan AI PC yang memudahkan penyebaran model AI generatif tempatan melalui pengubahsuaian perkakasan. Dalam perbincangan ini, kita akan fokus pada Intel AI PC dan meneroka cara untuk menyebarkan Phi-3 pada Intel AI PC.
 
-### NPU چیست
+### Apa itu NPU
 
-NPU (واحد پردازش عصبی) یک پردازنده یا واحد پردازش اختصاصی در یک SoC بزرگ‌تر است که به طور خاص برای تسریع عملیات شبکه‌های عصبی و وظایف هوش مصنوعی طراحی شده است. برخلاف CPU و GPUهای عمومی، NPUها برای محاسبات موازی مبتنی بر داده بهینه شده‌اند و در پردازش حجم عظیمی از داده‌های چندرسانه‌ای مانند ویدیوها و تصاویر و همچنین داده‌های شبکه‌های عصبی بسیار کارآمد هستند. آن‌ها به خصوص در انجام وظایف مرتبط با هوش مصنوعی مانند تشخیص گفتار، تار کردن پس‌زمینه در تماس‌های ویدیویی و فرآیندهای ویرایش عکس یا ویدیو مانند شناسایی اشیاء مهارت دارند.
+NPU (Neural Processing Unit) adalah pemproses khusus atau unit pemprosesan dalam SoC yang lebih besar yang direka khas untuk mempercepatkan operasi rangkaian neural dan tugasan AI. Berbeza dengan CPU dan GPU am, NPU dioptimumkan untuk pengkomputeran selari berasaskan data, menjadikannya sangat cekap dalam memproses data multimedia besar seperti video dan imej serta memproses data untuk rangkaian neural. Ia sangat mahir dalam mengendalikan tugasan berkaitan AI, seperti pengecaman suara, kabur latar belakang dalam panggilan video, dan proses penyuntingan foto atau video seperti pengesanan objek.
 
-## تفاوت NPU و GPU
+## NPU vs GPU
 
-اگرچه بسیاری از بارهای کاری هوش مصنوعی و یادگیری ماشین روی GPU اجرا می‌شوند، تفاوت مهمی بین GPU و NPU وجود دارد.
-GPUها به دلیل قابلیت‌های محاسبات موازی شناخته شده‌اند، اما همه GPUها در پردازش فراتر از گرافیک به یک اندازه کارآمد نیستند. از طرف دیگر، NPUها به طور خاص برای محاسبات پیچیده مرتبط با عملیات شبکه‌های عصبی ساخته شده‌اند که آن‌ها را برای وظایف هوش مصنوعی بسیار مؤثر می‌کند.
+Walaupun banyak beban kerja AI dan pembelajaran mesin dijalankan pada GPU, terdapat perbezaan penting antara GPU dan NPU.  
+GPU terkenal dengan keupayaan pengkomputeran selari mereka, tetapi tidak semua GPU sama cekap dalam memproses selain grafik. Sebaliknya, NPU dibina khusus untuk pengiraan kompleks yang terlibat dalam operasi rangkaian neural, menjadikannya sangat berkesan untuk tugasan AI.
 
-خلاصه اینکه، NPUها نابغه‌های ریاضی هستند که سرعت محاسبات هوش مصنوعی را افزایش می‌دهند و نقش کلیدی در عصر نوظهور کامپیوترهای هوش مصنوعی ایفا می‌کنند!
+Secara ringkas, NPU adalah pakar matematik yang mempercepatkan pengiraan AI, dan mereka memainkan peranan penting dalam era AI PC yang sedang muncul!
 
-***این مثال بر اساس جدیدترین پردازنده Intel Core Ultra اینتل است***
+***Contoh ini berdasarkan Pemproses Intel Core Ultra terkini dari Intel***
 
-## **۱. استفاده از NPU برای اجرای مدل Phi-3**
+## **1. Gunakan NPU untuk menjalankan model Phi-3**
 
-دستگاه Intel® NPU یک شتاب‌دهنده استنتاج هوش مصنوعی است که در CPUهای کلاینت اینتل، از نسل Intel® Core™ Ultra (که قبلاً به نام Meteor Lake شناخته می‌شد) یکپارچه شده است. این دستگاه اجرای انرژی‌موثر وظایف شبکه عصبی مصنوعی را ممکن می‌سازد.
+Peranti Intel® NPU adalah pemecut inferens AI yang diintegrasikan dengan CPU klien Intel, bermula dari generasi CPU Intel® Core™ Ultra (dahulunya dikenali sebagai Meteor Lake). Ia membolehkan pelaksanaan tugas rangkaian neural buatan dengan cekap tenaga.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.ms.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.ms.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.ms.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.ms.png)
 
-**کتابخانه شتاب‌دهنده Intel NPU**
+**Perpustakaan Pemecutan Intel NPU**
 
-کتابخانه شتاب‌دهنده Intel NPU [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) یک کتابخانه پایتون است که برای افزایش کارایی برنامه‌های شما با استفاده از قدرت واحد پردازش عصبی اینتل (NPU) جهت انجام محاسبات با سرعت بالا روی سخت‌افزارهای سازگار طراحی شده است.
+Perpustakaan Pemecutan Intel NPU [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) adalah perpustakaan Python yang direka untuk meningkatkan kecekapan aplikasi anda dengan memanfaatkan kuasa Intel Neural Processing Unit (NPU) untuk melakukan pengiraan berkelajuan tinggi pada perkakasan yang serasi.
 
-مثال Phi-3-mini روی کامپیوتر هوش مصنوعی مجهز به پردازنده‌های Intel® Core™ Ultra.
+Contoh Phi-3-mini pada AI PC yang dikuasakan oleh pemproses Intel® Core™ Ultra.
 
 ![DemoPhiIntelAIPC](../../../../../imgs/01/03/AIPC/aipcphi3-mini.gif)
 
-نصب کتابخانه پایتون با pip
+Pasang Perpustakaan Python menggunakan pip
 
 ```bash
 
@@ -48,11 +48,11 @@ GPUها به دلیل قابلیت‌های محاسبات موازی شناخت
 
 ```
 
-***توجه*** پروژه هنوز در حال توسعه است، اما مدل مرجع در حال حاضر بسیار کامل است.
+***Nota*** Projek ini masih dalam pembangunan, tetapi model rujukan sudah sangat lengkap.
 
-### **اجرای Phi-3 با کتابخانه شتاب‌دهنده Intel NPU**
+### **Menjalankan Phi-3 dengan Perpustakaan Pemecutan Intel NPU**
 
-با استفاده از شتاب‌دهی Intel NPU، این کتابخانه فرآیند کدگذاری سنتی را تحت تأثیر قرار نمی‌دهد. شما تنها نیاز دارید مدل اصلی Phi-3 را با این کتابخانه کم‌حجم (quantize) کنید، مانند FP16، INT8، INT4، به صورت زیر:
+Dengan menggunakan pemecutan Intel NPU, perpustakaan ini tidak menjejaskan proses pengekodan tradisional. Anda hanya perlu menggunakan perpustakaan ini untuk mengkuantifikasi model Phi-3 asal, seperti FP16, INT8, INT4, contohnya
 
 ```python
 from transformers import AutoTokenizer, pipeline,TextStreamer
@@ -72,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-پس از موفقیت در کم‌حجمی، اجرای ادامه دهید تا NPU را برای اجرای مدل Phi-3 فراخوانی کنید.
+Setelah kuantifikasi berjaya, teruskan pelaksanaan untuk memanggil NPU menjalankan model Phi-3.
 
 ```python
 generation_args = {
@@ -96,51 +96,51 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-هنگام اجرای کد، می‌توانید وضعیت اجرای NPU را از طریق Task Manager مشاهده کنید.
+Semasa menjalankan kod, kita boleh melihat status operasi NPU melalui Pengurus Tugas
 
-![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.ms.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.ms.png)
 
-***نمونه‌ها*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
+***Contoh*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
-## **۲. استفاده از DirectML + ONNX Runtime برای اجرای مدل Phi-3**
+## **2. Gunakan DirectML + ONNX Runtime untuk menjalankan Model Phi-3**
 
-### **DirectML چیست**
+### **Apa itu DirectML**
 
-[DirectML](https://github.com/microsoft/DirectML) یک کتابخانه DirectX 12 با عملکرد بالا و شتاب سخت‌افزاری برای یادگیری ماشین است. DirectML شتاب GPU را برای وظایف رایج یادگیری ماشین در طیف گسترده‌ای از سخت‌افزارها و درایورها فراهم می‌کند، از جمله تمام GPUهای سازگار با DirectX 12 از سازندگانی مانند AMD، Intel، NVIDIA و Qualcomm.
+[DirectML](https://github.com/microsoft/DirectML) adalah perpustakaan DirectX 12 berprestasi tinggi yang dipercepatkan oleh perkakasan untuk pembelajaran mesin. DirectML menyediakan pemecutan GPU untuk tugasan pembelajaran mesin biasa merentasi pelbagai perkakasan dan pemacu yang disokong, termasuk semua GPU yang menyokong DirectX 12 dari vendor seperti AMD, Intel, NVIDIA, dan Qualcomm.
 
-وقتی به صورت مستقل استفاده شود، API DirectML یک کتابخانه سطح پایین DirectX 12 است و برای برنامه‌های با عملکرد بالا و تأخیر کم مانند فریم‌ورک‌ها، بازی‌ها و برنامه‌های زمان واقعی مناسب است. همکاری بی‌وقفه DirectML با Direct3D 12 و همچنین سربار کم و تطابق آن در سخت‌افزارها، DirectML را برای تسریع یادگیری ماشین ایده‌آل می‌کند، زمانی که هم عملکرد بالا مورد نظر است و هم قابلیت اطمینان و پیش‌بینی‌پذیری نتایج در سخت‌افزارهای مختلف اهمیت دارد.
+Apabila digunakan secara berdiri sendiri, API DirectML adalah perpustakaan DirectX 12 tahap rendah dan sesuai untuk aplikasi berprestasi tinggi dan latensi rendah seperti rangka kerja, permainan, dan aplikasi masa nyata lain. Interoperabiliti lancar DirectML dengan Direct3D 12 serta overhead rendah dan kesesuaian merentasi perkakasan menjadikan DirectML ideal untuk mempercepat pembelajaran mesin apabila prestasi tinggi diingini, dan kebolehpercayaan serta kebolehramalan keputusan merentasi perkakasan adalah kritikal.
 
-***توجه*** : جدیدترین نسخه DirectML هم اکنون از NPU پشتیبانی می‌کند (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
+***Nota*** : DirectML terkini sudah menyokong NPU (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
-### مقایسه DirectML و CUDA از نظر قابلیت‌ها و عملکرد:
+### DirectML dan CUDA dari segi keupayaan dan prestasi:
 
-**DirectML** کتابخانه یادگیری ماشینی است که توسط مایکروسافت توسعه یافته است. این کتابخانه برای تسریع بارهای کاری یادگیری ماشین روی دستگاه‌های ویندوزی از جمله دسکتاپ، لپ‌تاپ و دستگاه‌های لبه‌ای طراحی شده است.
-- مبتنی بر DX12: DirectML بر پایه DirectX 12 ساخته شده که پشتیبانی سخت‌افزاری گسترده‌ای روی GPUها از جمله NVIDIA و AMD فراهم می‌کند.
-- پشتیبانی گسترده‌تر: چون از DX12 استفاده می‌کند، DirectML می‌تواند با هر GPU که از DX12 پشتیبانی می‌کند، حتی GPUهای مجتمع کار کند.
-- پردازش تصویر: DirectML تصاویر و داده‌های دیگر را با استفاده از شبکه‌های عصبی پردازش می‌کند، که آن را برای وظایفی مانند شناسایی تصویر، تشخیص اشیاء و غیره مناسب می‌کند.
-- سهولت راه‌اندازی: راه‌اندازی DirectML ساده است و نیازی به SDK یا کتابخانه‌های خاص از سازندگان GPU ندارد.
-- عملکرد: در برخی موارد، DirectML عملکرد خوبی دارد و می‌تواند سریع‌تر از CUDA باشد، به خصوص برای برخی بارهای کاری خاص.
-- محدودیت‌ها: با این حال، مواردی وجود دارد که DirectML ممکن است کندتر باشد، به ویژه برای اندازه دسته‌های بزرگ float16.
+**DirectML** adalah perpustakaan pembelajaran mesin yang dibangunkan oleh Microsoft. Ia direka untuk mempercepat beban kerja pembelajaran mesin pada peranti Windows, termasuk desktop, komputer riba, dan peranti edge.  
+- Berasaskan DX12: DirectML dibina di atas DirectX 12 (DX12), yang menyediakan sokongan perkakasan yang luas merentasi GPU, termasuk NVIDIA dan AMD.  
+- Sokongan Lebih Luas: Oleh kerana menggunakan DX12, DirectML boleh berfungsi dengan mana-mana GPU yang menyokong DX12, termasuk GPU terintegrasi.  
+- Pemprosesan Imej: DirectML memproses imej dan data lain menggunakan rangkaian neural, sesuai untuk tugasan seperti pengecaman imej, pengesanan objek, dan lain-lain.  
+- Mudah Dipasang: Pemasangan DirectML mudah dan tidak memerlukan SDK atau perpustakaan khusus dari pengeluar GPU.  
+- Prestasi: Dalam beberapa kes, DirectML berprestasi baik dan boleh lebih pantas daripada CUDA, terutamanya untuk beban kerja tertentu.  
+- Had: Namun, terdapat situasi di mana DirectML mungkin lebih perlahan, terutamanya untuk saiz batch besar float16.
 
-**CUDA** پلتفرم محاسبات موازی و مدل برنامه‌نویسی NVIDIA است. این پلتفرم به توسعه‌دهندگان اجازه می‌دهد تا قدرت GPUهای NVIDIA را برای محاسبات عمومی، از جمله یادگیری ماشین و شبیه‌سازی‌های علمی به کار گیرند.
-- اختصاصی NVIDIA: CUDA به طور کامل با GPUهای NVIDIA یکپارچه شده و مخصوص آن‌ها طراحی شده است.
-- بهینه‌سازی بالا: برای وظایف شتاب‌یافته GPU به خصوص روی GPUهای NVIDIA عملکرد عالی ارائه می‌دهد.
-- استفاده گسترده: بسیاری از فریم‌ورک‌ها و کتابخانه‌های یادگیری ماشین (مانند TensorFlow و PyTorch) از CUDA پشتیبانی می‌کنند.
-- قابلیت سفارشی‌سازی: توسعه‌دهندگان می‌توانند تنظیمات CUDA را برای وظایف خاص بهینه کنند که منجر به عملکرد بهتر می‌شود.
-- محدودیت‌ها: وابستگی CUDA به سخت‌افزار NVIDIA می‌تواند محدودکننده باشد اگر بخواهید سازگاری گسترده‌تری با GPUهای مختلف داشته باشید.
+**CUDA** adalah platform pengkomputeran selari dan model pengaturcaraan NVIDIA. Ia membolehkan pembangun memanfaatkan kuasa GPU NVIDIA untuk pengkomputeran tujuan umum, termasuk pembelajaran mesin dan simulasi saintifik.  
+- Khusus NVIDIA: CUDA diintegrasikan rapat dengan GPU NVIDIA dan direka khusus untuknya.  
+- Sangat Dioptimumkan: Ia menyediakan prestasi cemerlang untuk tugasan dipercepatkan GPU, terutamanya menggunakan GPU NVIDIA.  
+- Digunakan Secara Meluas: Banyak rangka kerja dan perpustakaan pembelajaran mesin (seperti TensorFlow dan PyTorch) menyokong CUDA.  
+- Penyesuaian: Pembangun boleh melaras tetapan CUDA untuk tugasan tertentu, yang boleh membawa kepada prestasi optimum.  
+- Had: Walau bagaimanapun, kebergantungan CUDA pada perkakasan NVIDIA boleh menjadi had jika anda mahukan keserasian lebih luas merentasi GPU berbeza.
 
-### انتخاب بین DirectML و CUDA
+### Memilih Antara DirectML dan CUDA
 
-انتخاب بین DirectML و CUDA بستگی به کاربرد خاص شما، سخت‌افزار موجود و ترجیحات شما دارد.
-اگر به دنبال سازگاری گسترده‌تر و راه‌اندازی آسان هستید، DirectML گزینه خوبی است. اما اگر GPUهای NVIDIA دارید و به عملکرد بهینه شده بالا نیاز دارید، CUDA همچنان گزینه قوی‌ای است. خلاصه اینکه هر دو DirectML و CUDA نقاط قوت و ضعف خود را دارند، بنابراین هنگام تصمیم‌گیری نیازها و سخت‌افزار موجود خود را در نظر بگیرید.
+Pilihan antara DirectML dan CUDA bergantung pada kes penggunaan khusus anda, ketersediaan perkakasan, dan keutamaan.  
+Jika anda mencari keserasian lebih luas dan kemudahan pemasangan, DirectML mungkin pilihan yang baik. Namun, jika anda mempunyai GPU NVIDIA dan memerlukan prestasi yang sangat dioptimumkan, CUDA kekal sebagai pilihan kukuh. Secara ringkas, kedua-dua DirectML dan CUDA mempunyai kelebihan dan kekurangan masing-masing, jadi pertimbangkan keperluan dan perkakasan yang ada sebelum membuat keputusan.
 
-### **هوش مصنوعی مولد با ONNX Runtime**
+### **AI Generatif dengan ONNX Runtime**
 
-در عصر هوش مصنوعی، قابلیت انتقال مدل‌های هوش مصنوعی بسیار مهم است. ONNX Runtime به سادگی امکان استقرار مدل‌های آموزش‌دیده روی دستگاه‌های مختلف را فراهم می‌کند. توسعه‌دهندگان نیازی به توجه به چارچوب استنتاج ندارند و با استفاده از یک API یکپارچه، استنتاج مدل را انجام می‌دهند. در عصر هوش مصنوعی مولد، ONNX Runtime همچنین بهینه‌سازی کد انجام داده است (https://onnxruntime.ai/docs/genai/). از طریق ONNX Runtime بهینه‌شده، مدل‌های هوش مصنوعی مولد کم‌حجم شده می‌توانند روی دستگاه‌های مختلف استنتاج شوند. در Generative AI with ONNX Runtime، می‌توانید API مدل هوش مصنوعی را از طریق پایتون، C#، C / C++ فراخوانی کنید. البته، استقرار روی آیفون می‌تواند از API Generative AI with ONNX Runtime با C++ بهره ببرد.
+Dalam era AI, kebolehpindahan model AI sangat penting. ONNX Runtime memudahkan penyebaran model terlatih ke pelbagai peranti. Pembangun tidak perlu risau tentang rangka kerja inferens dan boleh menggunakan API seragam untuk melengkapkan inferens model. Dalam era AI generatif, ONNX Runtime juga telah melakukan pengoptimuman kod (https://onnxruntime.ai/docs/genai/). Melalui ONNX Runtime yang dioptimumkan, model AI generatif yang telah dikuantifikasi boleh dijalankan pada pelbagai terminal. Dalam AI Generatif dengan ONNX Runtime, anda boleh menggunakan API model AI melalui Python, C#, C / C++. Sudah tentu, penyebaran pada iPhone boleh memanfaatkan API AI Generatif ONNX Runtime dalam C++.
 
-[نمونه کد](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
+[Contoh Kod](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
-***کامپایل کتابخانه هوش مصنوعی مولد با ONNX Runtime***
+***Menyusun perpustakaan AI generatif dengan ONNX Runtime***
 
 ```bash
 
@@ -179,7 +179,7 @@ python build.py --use_dml
 
 ```
 
-**نصب کتابخانه**
+**Pasang perpustakaan**
 
 ```bash
 
@@ -187,21 +187,21 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-این نتیجه اجرای آن است
+Ini adalah hasil pelaksanaan
 
-![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.ms.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.ms.png)
 
-***نمونه‌ها*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
+***Contoh*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
-## **۳. استفاده از Intel OpenVino برای اجرای مدل Phi-3**
+## **3. Gunakan Intel OpenVino untuk menjalankan Model Phi-3**
 
-### **OpenVINO چیست**
+### **Apa itu OpenVINO**
 
-[OpenVINO](https://github.com/openvinotoolkit/openvino) یک کیت ابزار متن‌باز برای بهینه‌سازی و استقرار مدل‌های یادگیری عمیق است. این کیت عملکرد یادگیری عمیق را برای مدل‌های بینایی، صوت و زبان از فریم‌ورک‌های محبوب مانند TensorFlow، PyTorch و غیره افزایش می‌دهد. با OpenVINO شروع کنید. OpenVINO همچنین می‌تواند در ترکیب با CPU و GPU برای اجرای مدل Phi-3 استفاده شود.
+[OpenVINO](https://github.com/openvinotoolkit/openvino) adalah toolkit sumber terbuka untuk mengoptimum dan menyebarkan model pembelajaran mendalam. Ia menyediakan prestasi pembelajaran mendalam yang dipertingkatkan untuk model penglihatan, audio, dan bahasa dari rangka kerja popular seperti TensorFlow, PyTorch, dan lain-lain. Mulakan dengan OpenVINO. OpenVINO juga boleh digunakan bersama CPU dan GPU untuk menjalankan model Phi-3.
 
-***توجه***: در حال حاضر OpenVINO از NPU پشتیبانی نمی‌کند.
+***Nota***: Pada masa ini, OpenVINO tidak menyokong NPU.
 
-### **نصب کتابخانه OpenVINO**
+### **Pasang Perpustakaan OpenVINO**
 
 ```bash
 
@@ -213,9 +213,9 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-### **اجرای Phi-3 با OpenVINO**
+### **Menjalankan Phi-3 dengan OpenVINO**
 
-مانند NPU، OpenVINO با اجرای مدل‌های کم‌حجم شده مدل‌های هوش مصنوعی مولد را فراخوانی می‌کند. ابتدا باید مدل Phi-3 را کم‌حجم (quantize) کنیم و کم‌حجمی مدل را از طریق خط فرمان با optimum-cli انجام دهیم.
+Seperti NPU, OpenVINO melengkapkan panggilan model AI generatif dengan menjalankan model kuantitatif. Kita perlu mengkuantifikasi model Phi-3 terlebih dahulu dan melengkapkan kuantifikasi model melalui baris arahan menggunakan optimum-cli
 
 **INT4**
 
@@ -233,11 +233,11 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ```
 
-فرمت تبدیل شده به شکل زیر است
+format yang ditukar, seperti ini
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.ms.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.ms.png)
 
-مسیر مدل‌ها (model_dir)، پیکربندی‌های مرتبط (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) و دستگاه‌های شتاب‌دهنده سخت‌افزاری (GPU.0) را از طریق OVModelForCausalLM بارگذاری کنید.
+Muatkan laluan model (model_dir), konfigurasi berkaitan (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), dan peranti dipercepatkan perkakasan (GPU.0) melalui OVModelForCausalLM
 
 ```python
 
@@ -251,13 +251,13 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-هنگام اجرای کد، می‌توانید وضعیت اجرای GPU را از طریق Task Manager مشاهده کنید.
+Semasa menjalankan kod, kita boleh melihat status operasi GPU melalui Pengurus Tugas
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.ms.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.ms.png)
 
-***نمونه‌ها*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
+***Contoh*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***توجه*** : هر سه روش بالا مزایای خود را دارند، اما توصیه می‌شود برای استنتاج در کامپیوتر هوش مصنوعی از شتاب‌دهی NPU استفاده شود.
+### ***Nota*** : Ketiga-tiga kaedah di atas mempunyai kelebihan masing-masing, tetapi disyorkan menggunakan pemecutan NPU untuk inferens AI PC.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

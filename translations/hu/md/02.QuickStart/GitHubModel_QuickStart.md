@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:20:59+00:00",
+  "translation_date": "2025-07-17T05:40:40+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "hu"
 }
 -->
-## GitHub Models - Korlátozott nyilvános béta
+## GitHub Modellek – Korlátozott Nyilvános Béta
 
-Üdvözlünk a [GitHub Models](https://github.com/marketplace/models) oldalán! Minden készen áll, hogy felfedezd az Azure AI-n futó AI modelleket.
+Üdvözlünk a [GitHub Modellek](https://github.com/marketplace/models) oldalán! Minden készen áll, hogy felfedezd az Azure AI-n futó AI modelleket.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.hu.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.hu.png)
 
-További információkért a GitHub Models által kínált modellekről, nézd meg a [GitHub Model Marketplace](https://github.com/marketplace/models) oldalt.
+További információkért a GitHub Modelleken elérhető modellekről, nézd meg a [GitHub Model Marketplace](https://github.com/marketplace/models) oldalt.
 
-## Elérhető modellek
+## Elérhető Modellek
 
 Minden modellhez külön játszótér és példa kód tartozik.
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
-### Phi-3 modellek a GitHub Model Katalógusban
+### Phi-3 Modellek a GitHub Model Katalógusban
 
 [Phi-3-Medium-128k-Instruct](https://github.com/marketplace/models/azureml/Phi-3-medium-128k-instruct)
 
@@ -37,7 +37,7 @@ Minden modellhez külön játszótér és példa kód tartozik.
 
 ## Első lépések
 
-Néhány alap példa készen áll a futtatásra. Ezeket a samples mappában találod. Ha inkább egy adott nyelvvel szeretnél azonnal dolgozni, az alábbi nyelvekhez találsz példákat:
+Néhány alap példa már készen áll a futtatásra. Ezeket a samples könyvtárban találod. Ha egyből a kedvenc nyelveden szeretnél dolgozni, az alábbi nyelveken érheted el a példákat:
 
 - Python
 - JavaScript
@@ -45,30 +45,30 @@ Néhány alap példa készen áll a futtatásra. Ezeket a samples mappában tal�
 
 Van egy dedikált Codespaces környezet is a példák és modellek futtatásához.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.hu.png)
+![Első lépések](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.hu.png)
 
 ## Példa kód
 
-Az alábbiakban néhány példa kódrészletet találsz különböző felhasználási esetekhez. Az Azure AI Inference SDK-ról további információkat és példákat a teljes dokumentációban találsz.
+Az alábbiakban néhány példa kódrészletet találsz különböző felhasználási esetekhez. További információkért az Azure AI Inference SDK-ról, nézd meg a teljes dokumentációt és a példákat.
 
 ## Beállítás
 
 1. Hozz létre egy személyes hozzáférési tokent  
-Nem szükséges külön engedélyeket adni a tokennek. Figyelem, a token egy Microsoft szolgáltatásnak lesz elküldve.
+Nem szükséges engedélyeket adni a tokennek. Fontos, hogy a token egy Microsoft szolgáltatáshoz kerül elküldésre.
 
-A lenti kódrészletek használatához állíts be egy környezeti változót, amely a tokenedet tartalmazza, így a kliens kód ezt használhatja kulcsként.
+A lentebb található kódrészletek használatához hozz létre egy környezeti változót, amelyben a tokenedet a kliens kód kulcsaként állítod be.
 
 Ha bash-t használsz:  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-Ha powershell-t használsz:  
+Ha PowerShell-ben vagy:  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 
-Ha Windows parancssort használsz:  
+Ha Windows parancssorban vagy:  
 
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
@@ -77,14 +77,14 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 ## Python példa
 
 ### Függőségek telepítése  
-Telepítsd az Azure AI Inference SDK-t pip segítségével (Szükséges: Python >=3.8):
+Telepítsd az Azure AI Inference SDK-t pip-pel (Szükséges: Python >=3.8):
 
 ```
 pip install azure-ai-inference
 ```  
-### Egy alapvető példa futtatása
+### Egy alap példa futtatása
 
-Ez a példa bemutat egy egyszerű hívást a chat completion API-hoz. A GitHub AI modell inferencia végpontját és a GitHub tokenedet használja. A hívás szinkron.
+Ez a példa egy egyszerű hívást mutat be a chat completion API-hoz. A GitHub AI modell inferencia végpontját és a GitHub tokenedet használja. A hívás szinkron.
 
 ```
 import os
@@ -118,7 +118,7 @@ print(response.choices[0].message.content)
 
 ### Többfordulós beszélgetés futtatása
 
-Ez a példa bemutat egy többfordulós beszélgetést a chat completion API-val. Chat alkalmazás esetén neked kell kezelni a beszélgetés előzményeit, és az utolsó üzeneteket küldeni a modellnek.
+Ez a példa egy többfordulós beszélgetést mutat be a chat completion API-val. Chat alkalmazás esetén neked kell kezelni a beszélgetés előzményeit, és a legfrissebb üzeneteket elküldeni a modellnek.
 
 ```
 import os
@@ -150,7 +150,7 @@ print(response.choices[0].message.content)
 
 ### Kimenet streamelése
 
-Jobb felhasználói élmény érdekében érdemes a modell válaszát streamelni, hogy az első tokenek korán megjelenjenek, és ne kelljen hosszú válaszokra várni.
+Jobb felhasználói élmény érdekében érdemes streamelni a modell válaszát, hogy az első tokenek hamar megjelenjenek, és ne kelljen hosszú válaszokra várni.
 
 ```
 import os
@@ -190,7 +190,7 @@ client.close()
 
 Telepítsd a Node.js-t.
 
-Másold be a következő szöveget egy package.json nevű fájlba a mappádban.
+Másold be az alábbi sorokat egy package.json nevű fájlba a mappádban.
 
 ```
 {
@@ -203,15 +203,15 @@ Másold be a következő szöveget egy package.json nevű fájlba a mappádban.
 }
 ```
 
-Megjegyzés: az @azure/core-sse csak akkor szükséges, ha a chat completion válaszát streamelni szeretnéd.
+Megjegyzés: az @azure/core-sse csak akkor szükséges, ha streamelni szeretnéd a chat completion válaszokat.
 
 Nyiss egy terminált ebben a mappában, és futtasd az npm install parancsot.
 
-Az alábbi kódrészleteket másold be egy sample.js nevű fájlba, és futtasd a node sample.js parancsal.
+A lentebb található kódrészleteket másold be egy sample.js nevű fájlba, majd futtasd a node sample.js parancsot.
 
-### Egy alapvető példa futtatása
+### Egy alap példa futtatása
 
-Ez a példa bemutat egy egyszerű hívást a chat completion API-hoz. A GitHub AI modell inferencia végpontját és a GitHub tokenedet használja. A hívás szinkron.
+Ez a példa egy egyszerű hívást mutat be a chat completion API-hoz. A GitHub AI modell inferencia végpontját és a GitHub tokenedet használja. A hívás szinkron.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -252,7 +252,7 @@ main().catch((err) => {
 
 ### Többfordulós beszélgetés futtatása
 
-Ez a példa bemutat egy többfordulós beszélgetést a chat completion API-val. Chat alkalmazás esetén neked kell kezelni a beszélgetés előzményeit, és az utolsó üzeneteket küldeni a modellnek.
+Ez a példa egy többfordulós beszélgetést mutat be a chat completion API-val. Chat alkalmazás esetén neked kell kezelni a beszélgetés előzményeit, és a legfrissebb üzeneteket elküldeni a modellnek.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -295,7 +295,7 @@ main().catch((err) => {
 
 ### Kimenet streamelése
 
-Jobb felhasználói élmény érdekében érdemes a modell válaszát streamelni, hogy az első tokenek korán megjelenjenek, és ne kelljen hosszú válaszokra várni.
+Jobb felhasználói élmény érdekében érdemes streamelni a modell válaszát, hogy az első tokenek hamar megjelenjenek, és ne kelljen hosszú válaszokra várni.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -351,9 +351,9 @@ main().catch((err) => {
 
 ## REST
 
-### Egy alapvető példa futtatása
+### Egy alap példa futtatása
 
-Illeszd be a következőt egy shell-be:
+Illeszd be a következőt egy shellbe:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -372,10 +372,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
+
 ### Többfordulós beszélgetés futtatása
 
-Hívd meg a chat completion API-t és küldd el a beszélgetés előzményeit:
+Hívd meg a chat completion API-t, és add át a beszélgetés előzményeit:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -402,10 +403,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
+
 ### Kimenet streamelése
 
-Ez egy példa a végpont hívására és a válasz streamelésére.
+Ez egy példa az endpoint hívására és a válasz streamelésére.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -427,21 +429,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## INGYENES használat és korlátozások a GitHub Modellekhez
+## INGYENES használat és korlátok a GitHub Modellekhez
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.hu.png)
+![Model Katalógus](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.hu.png)
 
-A [játszótér és az ingyenes API használatának korlátai](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) arra szolgálnak, hogy kísérletezhess a modellekkel és prototípust készíthess az AI alkalmazásodhoz. Ezeken a határokon túl, ha élesben szeretnéd használni az alkalmazást és méretezni, akkor Azure fiókból kell erőforrásokat biztosítanod, és onnan kell hitelesítened a GitHub személyes hozzáférési token helyett. A kódodban más változtatásra nincs szükség. Ezen a linken megtalálod, hogyan léphetsz túl az ingyenes szint korlátain az Azure AI-ban.
+A [játszótér és az ingyenes API használat](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) korlátai arra szolgálnak, hogy kísérletezhess a modellekkel és prototípust készíthess az AI alkalmazásodhoz. Ezeken a korlátokon túl, és ha skálázni szeretnéd az alkalmazásodat, Azure fiókból kell erőforrásokat biztosítanod, és onnan hitelesítened a GitHub személyes hozzáférési token helyett. A kódodban egyéb változtatásra nincs szükség. Használd ezt a linket, hogy megtudd, hogyan léphetsz túl az ingyenes szint korlátain az Azure AI-ban.
 
 ### Figyelmeztetések
 
-Ne feledd, hogy amikor egy modellel dolgozol, akkor AI-val kísérletezel, így előfordulhatnak tartalmi hibák.
+Ne feledd, hogy amikor egy modellel dolgozol, AI-val kísérletezel, így előfordulhatnak tartalmi hibák.
 
-A szolgáltatás különböző korlátokkal rendelkezik (pl. kérések percenként, naponta, tokenek kérésenként, párhuzamos kérések száma), és nem alkalmas éles használatra.
+A funkció különböző korlátok alá esik (például percenkénti, napi kérések száma, tokenek száma kérésenként, párhuzamos kérések), és nem alkalmas éles használatra.
 
-A GitHub Models az Azure AI Content Safety-t használja. Ezeket a szűrőket nem lehet kikapcsolni a GitHub Models használata közben. Ha fizetős szolgáltatáson keresztül szeretnél modelleket alkalmazni, kérjük, állítsd be a tartalomszűrőket az igényeidnek megfelelően.
+A GitHub Modellek az Azure AI Content Safety-t használják. Ezek a szűrők nem kapcsolhatók ki a GitHub Modellek használata során. Ha fizetős szolgáltatáson keresztül használod a modelleket, kérjük, állítsd be a tartalomszűrőket az igényeidnek megfelelően.
 
-Ez a szolgáltatás a GitHub előzetes kiadási feltételei szerint működik.
+Ez a szolgáltatás a GitHub Előzetes kiadási feltételei alatt áll.
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

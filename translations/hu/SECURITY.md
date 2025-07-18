@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "57f14126c1c6add76b3aef3844dfe4e3",
-  "translation_date": "2025-05-09T04:20:38+00:00",
+  "translation_date": "2025-07-16T15:43:14+00:00",
   "source_file": "SECURITY.md",
   "language_code": "hu"
 }
 -->
 ## Biztonság
 
-A Microsoft komolyan veszi szoftvertermékeink és szolgáltatásaink biztonságát, ideértve az összes, GitHub szervezeteinken keresztül kezelt forráskód-tárat is, amelyek között megtalálhatók a [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet) és [Xamarin](https://github.com/xamarin).
+A Microsoft komolyan veszi szoftvertermékeink és szolgáltatásaink biztonságát, ideértve az összes, GitHub szervezeteinken keresztül kezelt forráskód-tárat is, amelyek közé tartozik a [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet) és [Xamarin](https://github.com/xamarin).
 
-Ha úgy gondolja, hogy biztonsági sérülékenységet talált bármely Microsoft tulajdonában lévő tárolóban, amely megfelel a [Microsoft biztonsági sérülékenység definíciójának](https://aka.ms/security.md/definition), kérjük, jelezze nekünk az alábbiak szerint.
+Ha úgy gondolja, hogy biztonsági sebezhetőséget talált bármely Microsoft tulajdonában lévő tárban, amely megfelel a [Microsoft biztonsági sebezhetőség definíciójának](https://aka.ms/security.md/definition), kérjük, jelezze nekünk az alábbiak szerint.
 
 ## Biztonsági problémák bejelentése
 
-**Kérjük, ne jelentse a biztonsági sérülékenységeket nyilvános GitHub issue-kon keresztül.**
+**Kérjük, ne jelentsen biztonsági sebezhetőségeket nyilvános GitHub issue-kon keresztül.**
 
-Ehelyett kérjük, jelentse azokat a Microsoft Security Response Centernek (MSRC) a [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report) címen.
+Ehelyett kérjük, jelentse a Microsoft Security Response Centernek (MSRC) a [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report) címen.
 
-Ha bejelentkezés nélkül szeretné elküldeni a jelentést, írjon e-mailt a [secure@microsoft.com](mailto:secure@microsoft.com) címre. Ha lehetséges, titkosítsa az üzenetet a PGP kulcsunkkal; letöltheti azt a [Microsoft Security Response Center PGP Key oldaláról](https://aka.ms/security.md/msrc/pgp).
+Ha inkább bejelentést tenne bejelentkezés nélkül, küldjön e-mailt a [secure@microsoft.com](mailto:secure@microsoft.com) címre. Ha lehetséges, titkosítsa üzenetét a PGP kulcsunkkal; kérjük, töltse le a [Microsoft Security Response Center PGP Key oldaláról](https://aka.ms/security.md/msrc/pgp).
 
-Általában 24 órán belül választ fog kapni. Ha valamilyen okból nem érkezik válasz, kérjük, kövesse az e-mailt, hogy megbizonyosodjunk arról, hogy megkaptuk az eredeti üzenetét. További információk találhatók a [microsoft.com/msrc](https://www.microsoft.com/msrc) oldalon.
+Választ 24 órán belül kell kapnia. Ha valamilyen okból mégsem kap választ, kérjük, kövesse nyomon e-mailben, hogy megbizonyosodjunk arról, hogy megkaptuk az eredeti üzenetét. További információk találhatók a [microsoft.com/msrc](https://www.microsoft.com/msrc) oldalon.
 
-Kérjük, mellékelje az alábbi kért információkat (amennyit csak tud), hogy jobban megérthessük a lehetséges probléma jellegét és kiterjedését:
+Kérjük, hogy a jobb megértés érdekében a lehető legtöbb alábbi információt mellékelje a bejelentéshez:
 
-  * Probléma típusa (pl. puffer túlcsordulás, SQL injekció, cross-site scripting, stb.)
-  * A forrásfájl(ok) teljes elérési útjai, amelyekhez a probléma kapcsolódik
+  * A probléma típusa (pl. puffer túlcsordulás, SQL injekció, cross-site scripting stb.)
+  * A probléma megjelenéséhez kapcsolódó forrásfájl(ok) teljes elérési útja
   * Az érintett forráskód helye (tag/branch/commit vagy közvetlen URL)
-  * Bármilyen speciális konfiguráció, ami szükséges a probléma reprodukálásához
+  * Bármilyen speciális konfiguráció, amely szükséges a probléma reprodukálásához
   * Lépésről lépésre útmutató a probléma reprodukálásához
-  * Bizonyító vagy exploit kód (ha lehetséges)
-  * A probléma hatása, beleértve, hogy egy támadó hogyan használhatná ki
+  * Bizonyító koncepció vagy exploit kód (ha lehetséges)
+  * A probléma hatása, beleértve, hogy egy támadó hogyan használhatná ki a sebezhetőséget
 
-Ezek az információk segítenek minket a jelentés gyorsabb feldolgozásában.
+Ezek az információk segítenek minket abban, hogy gyorsabban feldolgozzuk a bejelentést.
 
-Ha hibadíj program keretében jelent, a minél részletesebb jelentések magasabb díjazáshoz vezethetnek. Kérjük, látogassa meg a [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty) oldalát az aktív programjainkról szóló részletekért.
+Ha hibavadászatra jelentkezik, a részletesebb jelentések magasabb jutalmat eredményezhetnek. Kérjük, látogasson el a [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty) oldalra, ahol további részleteket talál aktív programjainkról.
 
 ## Előnyben részesített nyelvek
 
@@ -43,7 +43,7 @@ Kommunikációnk során az angol nyelvet részesítjük előnyben.
 
 ## Irányelv
 
-A Microsoft követi a [Koordinált Sérülékenységközlést](https://aka.ms/security.md/cvd) elvét.
+A Microsoft követi a [Koordinált Sebezhetőség Közlése](https://aka.ms/security.md/cvd) elvét.
 
-**Felelősségkizárás**:  
-Ez a dokumentum az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Kritikus információk esetén javasolt szakmai, emberi fordítás igénybevétele. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

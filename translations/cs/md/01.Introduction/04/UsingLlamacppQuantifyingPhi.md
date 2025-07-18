@@ -2,44 +2,44 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-05-09T14:17:25+00:00",
+  "translation_date": "2025-07-16T22:11:46+00:00",
   "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "cs"
 }
 -->
-# **Quantizando la familia Phi usando llama.cpp**
+# **Kvantilace rodiny Phi pomocí llama.cpp**
 
-## **Qué es llama.cpp**
+## **Co je llama.cpp**
 
-llama.cpp es una biblioteca de software de código abierto escrita principalmente en C++ que realiza inferencia en varios Modelos de Lenguaje Grande (LLMs), como Llama. Su objetivo principal es ofrecer un rendimiento de última generación para la inferencia de LLM en una amplia variedad de hardware con una configuración mínima. Además, existen enlaces en Python para esta biblioteca, que proporcionan una API de alto nivel para la finalización de texto y un servidor web compatible con OpenAI.
+llama.cpp je open-source softwarová knihovna primárně napsaná v C++, která provádí inferenci na různých velkých jazykových modelech (LLM), jako je Llama. Jejím hlavním cílem je poskytovat špičkový výkon při inferenci LLM na široké škále hardwaru s minimální konfigurací. K dispozici jsou také Python bindingy, které nabízejí vysoce úrovňové API pro doplňování textu a webový server kompatibilní s OpenAI.
 
-El objetivo principal de llama.cpp es permitir la inferencia de LLM con una configuración mínima y un rendimiento de vanguardia en una gran variedad de hardware, tanto localmente como en la nube.
+Hlavním cílem llama.cpp je umožnit inferenci LLM s minimální konfigurací a špičkovým výkonem na různorodém hardwaru – lokálně i v cloudu.
 
-- Implementación pura en C/C++ sin dependencias
-- Apple silicon es un ciudadano de primera clase: optimizado mediante ARM NEON, Accelerate y frameworks Metal
-- Soporte AVX, AVX2 y AVX512 para arquitecturas x86
-- Cuantización entera de 1.5, 2, 3, 4, 5, 6 y 8 bits para acelerar la inferencia y reducir el uso de memoria
-- Kernels CUDA personalizados para ejecutar LLMs en GPUs NVIDIA (soporte para GPUs AMD mediante HIP)
-- Soporte para backends Vulkan y SYCL
-- Inferencia híbrida CPU+GPU para acelerar parcialmente modelos más grandes que la capacidad total de VRAM
+- Čistá implementace v C/C++ bez závislostí
+- Apple silicon je plnohodnotně podporován – optimalizace pomocí ARM NEON, Accelerate a Metal frameworků
+- Podpora AVX, AVX2 a AVX512 pro architektury x86
+- Kvantizace na 1,5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit a 8-bit celá čísla pro rychlejší inferenci a snížení paměťové náročnosti
+- Vlastní CUDA kernely pro běh LLM na NVIDIA GPU (podpora AMD GPU přes HIP)
+- Podpora backendů Vulkan a SYCL
+- Hybridní inference CPU+GPU pro částečné zrychlení modelů větších než celková kapacita VRAM
 
-## **Cuantizando Phi-3.5 con llama.cpp**
+## **Kvantilace Phi-3.5 pomocí llama.cpp**
 
-El modelo Phi-3.5-Instruct puede ser cuantizado usando llama.cpp, pero Phi-3.5-Vision y Phi-3.5-MoE aún no están soportados. El formato convertido por llama.cpp es gguf, que también es el formato de cuantización más utilizado.
+Model Phi-3.5-Instruct lze kvantizovat pomocí llama.cpp, ale Phi-3.5-Vision a Phi-3.5-MoE zatím nejsou podporovány. Formát, do kterého llama.cpp převádí, je gguf, což je také nejrozšířenější formát kvantizace.
 
-Existen muchos modelos cuantizados en formato GGUF en Hugging Face. AI Foundry, Ollama y LlamaEdge dependen de llama.cpp, por lo que los modelos GGUF también son frecuentemente usados.
+Na Hugging Face je k dispozici velké množství kvantizovaných modelů ve formátu GGUF. AI Foundry, Ollama a LlamaEdge spoléhají na llama.cpp, takže modely GGUF jsou často využívány.
 
-### **Qué es GGUF**
+### **Co je GGUF**
 
-GGUF es un formato binario optimizado para la carga y guardado rápidos de modelos, haciéndolo muy eficiente para propósitos de inferencia. GGUF está diseñado para usarse con GGML y otros ejecutores. GGUF fue desarrollado por @ggerganov, quien también es el desarrollador de llama.cpp, un popular framework de inferencia LLM en C/C++. Los modelos inicialmente desarrollados en frameworks como PyTorch pueden convertirse al formato GGUF para usarse con estos motores.
+GGUF je binární formát optimalizovaný pro rychlé načítání a ukládání modelů, což ho činí velmi efektivním pro inferenci. GGUF je navržen pro použití s GGML a dalšími vykonavateli. GGUF vyvinul @ggerganov, který je také autorem llama.cpp, populárního C/C++ frameworku pro inferenci LLM. Modely původně vyvinuté v rámci jako PyTorch lze převést do formátu GGUF pro použití s těmito enginy.
 
 ### **ONNX vs GGUF**
 
-ONNX es un formato tradicional de machine learning/deep learning, bien soportado en diferentes frameworks de IA y con buenos casos de uso en dispositivos edge. En cuanto a GGUF, está basado en llama.cpp y se puede decir que fue creado en la era GenAI. Ambos tienen usos similares. Si buscas mejor rendimiento en hardware embebido y capas de aplicación, ONNX puede ser tu elección. Si usas el framework derivado y tecnología de llama.cpp, entonces GGUF puede ser mejor.
+ONNX je tradiční formát pro strojové učení a hluboké učení, který je dobře podporován v různých AI frameworcích a má dobré využití v edge zařízeních. GGUF je založen na llama.cpp a dá se říct, že vznikl v éře GenAI. Oba mají podobné využití. Pokud chcete lepší výkon na embedded hardwaru a aplikačních vrstvách, může být ONNX vaší volbou. Pokud používáte odvozený framework a technologie llama.cpp, pak může být lepší GGUF.
 
-### **Cuantización de Phi-3.5-Instruct usando llama.cpp**
+### **Kvantilace Phi-3.5-Instruct pomocí llama.cpp**
 
-**1. Configuración del entorno**
+**1. Konfigurace prostředí**
 
 
 ```bash
@@ -53,9 +53,9 @@ make -j8
 ```
 
 
-**2. Cuantización**
+**2. Kvantizace**
 
-Usando llama.cpp convierte Phi-3.5-Instruct a FP16 GGUF
+Pomocí llama.cpp převést Phi-3.5-Instruct do FP16 GGUF
 
 
 ```bash
@@ -64,7 +64,7 @@ Usando llama.cpp convierte Phi-3.5-Instruct a FP16 GGUF
 
 ```
 
-Cuantizando Phi-3.5 a INT4
+Kvantilace Phi-3.5 na INT4
 
 
 ```bash
@@ -74,9 +74,9 @@ Cuantizando Phi-3.5 a INT4
 ```
 
 
-**3. Pruebas**
+**3. Testování**
 
-Instala llama-cpp-python
+Nainstalujte llama-cpp-python
 
 
 ```bash
@@ -85,9 +85,9 @@ pip install llama-cpp-python -U
 
 ```
 
-***Nota*** 
+***Poznámka*** 
 
-Si usas Apple Silicon, instala llama-cpp-python así
+Pokud používáte Apple Silicon, nainstalujte llama-cpp-python takto
 
 
 ```bash
@@ -96,7 +96,7 @@ CMAKE_ARGS="-DLLAMA_METAL=on" pip install llama-cpp-python -U
 
 ```
 
-Pruebas
+Testování 
 
 
 ```bash
@@ -107,11 +107,11 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 
 
-## **Recursos**
+## **Zdroje**
 
-1. Aprende más sobre llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
-2. Aprende más sobre onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
-3. Aprende más sobre GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
+1. Více o llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+2. Více o onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+3. Více o GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo chybné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

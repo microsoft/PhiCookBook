@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-07-09T19:08:18+00:00",
+  "translation_date": "2025-07-17T06:37:19+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "en"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) is an easy-to-use hardware-aware model optimization tool that combines industry-leading techniques in model compression, optimization, and compilation.
 
-It is designed to simplify the process of optimizing machine learning models, ensuring they efficiently utilize specific hardware architectures.
+It’s designed to simplify the process of optimizing machine learning models, ensuring they make the most efficient use of specific hardware architectures.
 
-Whether you're working on cloud applications or edge devices, Olive lets you optimize your models easily and effectively.
+Whether you’re working on cloud-based applications or edge devices, Olive lets you optimize your models quickly and effectively.
 
 ## Key Features:
 - Olive integrates and automates optimization techniques tailored for specific hardware targets.
@@ -30,16 +30,16 @@ It considers constraints like accuracy and latency while optimizing models.
 
 ## Using Microsoft Olive for Fine-tuning
 
-Microsoft Olive is a very user-friendly open-source model optimization tool that supports both fine-tuning and inference in the field of generative AI. With simple configuration, combined with open-source small language models and related runtime environments (AzureML / local GPU, CPU, DirectML), you can complete model fine-tuning or inference through automatic optimization, and find the best model to deploy on the cloud or edge devices. This enables enterprises to build their own industry-specific models both on-premises and in the cloud.
+Microsoft Olive is a very user-friendly open source model optimization tool that supports both fine-tuning and inference in the field of generative AI. With simple configuration, combined with open source small language models and related runtime environments (AzureML / local GPU, CPU, DirectML), you can complete fine-tuning or inference through automatic optimization, and find the best model to deploy on the cloud or edge devices. This enables enterprises to build their own industry-specific models both on-premises and in the cloud.
 
-![intro](../../../../imgs/03/ft/intro.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.en.png)
 
 ## Phi-3 Fine Tuning with Microsoft Olive
 
-![FinetuningwithOlive](../../../../imgs/03/ft/olivefinetune.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.en.png)
 
 ## Phi-3 Olive Sample Code and Example
-In this example, you'll use Olive to:
+In this example, you’ll use Olive to:
 
 - Fine-tune a LoRA adapter to classify phrases into Sad, Joy, Fear, Surprise.
 - Merge the adapter weights into the base model.
@@ -49,7 +49,7 @@ In this example, you'll use Olive to:
 
 ### Setup Microsoft Olive
 
-Installing Microsoft Olive is very simple and supports CPU, GPU, DirectML, and Azure ML.
+Installing Microsoft Olive is very straightforward and supports CPU, GPU, DirectML, and Azure ML.
 
 ```bash
 pip install olive-ai
@@ -76,17 +76,17 @@ pip install git+https://github.com/microsoft/Olive#egg=olive-ai[azureml]
 **Notice**  
 OS requirement: Ubuntu 20.04 / 22.04
 
-### **Microsoft Olive's Config.json**
+### **Microsoft Olive’s Config.json**
 
-After installation, you can configure various model-specific settings through the Config file, including data, computing, training, deployment, and model generation.
+After installation, you can configure various model-specific settings through the Config file, including data, compute, training, deployment, and model generation.
 
 **1. Data**
 
-Microsoft Olive supports training on both local and cloud data, configurable in the settings.
+Microsoft Olive supports training on both local and cloud data, which can be configured in the settings.
 
 *Local data settings*
 
-You can easily set up the dataset for fine-tuning, usually in JSON format, and adapt it using the data template. This should be adjusted based on the model’s requirements (for example, adapting it to the format required by Microsoft Phi-3-mini. For other models, please refer to their specific fine-tuning format requirements).
+You can simply set up the dataset for fine-tuning, usually in JSON format, and adapt it using the data template. This should be adjusted based on the model’s requirements (for example, adapt it to the format required by Microsoft Phi-3-mini. For other models, please refer to their specific fine-tuning format requirements).
 
 ```json
 
@@ -166,9 +166,9 @@ By linking the datastore of Azure AI Studio/Azure Machine Learning Service, you 
     
 ```
 
-**2. Computing configuration**
+**2. Compute configuration**
 
-If you want to run locally, you can use local data resources directly. If you want to use Azure AI Studio / Azure Machine Learning Service resources, you need to configure the relevant Azure parameters, compute resource names, etc.
+If you want to run locally, you can use local data resources directly. If you want to use Azure AI Studio / Azure Machine Learning Service resources, you need to configure the relevant Azure parameters, compute cluster name, etc.
 
 ```json
 
@@ -236,7 +236,7 @@ dependencies:
 
 **3. Choose your SLM**
 
-You can use a model directly from Hugging Face, or select a model from the Azure AI Studio / Azure Machine Learning Model Catalog. In the example below, we use Microsoft Phi-3-mini.
+You can use a model directly from Hugging Face, or combine it with the Model Catalog of Azure AI Studio / Azure Machine Learning to select the model. In the example below, we use Microsoft Phi-3-mini.
 
 If you have the model locally, you can use this method:
 
@@ -334,7 +334,7 @@ If you want quantization conversion, the main branch of Microsoft Olive already 
 1. Merge adapter weights into the base model  
 2. Convert the model to an ONNX model with the required precision using ModelBuilder
 
-For example, converting to quantized INT4:
+For example, converting to quantized INT4.
 
 ```json
 
@@ -351,7 +351,7 @@ For example, converting to quantized INT4:
 
 **Notice**  
 - If you use QLoRA, quantization conversion with ONNXRuntime-genai is currently not supported.  
-- You can configure the above steps according to your needs. It is not necessary to complete all steps. Depending on your requirements, you can directly use the algorithm steps without fine-tuning. Finally, you need to configure the relevant engines.
+- You can configure the above steps according to your needs. It’s not necessary to complete all steps. Depending on your requirements, you can directly use the algorithm steps without fine-tuning. Finally, you need to configure the relevant engines.
 
 ```json
 

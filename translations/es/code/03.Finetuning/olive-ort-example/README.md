@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-07T10:17:57+00:00",
+  "translation_date": "2025-07-16T16:00:54+00:00",
   "source_file": "code/03.Finetuning/olive-ort-example/README.md",
   "language_code": "es"
 }
@@ -13,9 +13,9 @@ En este ejemplo usarás Olive para:
 
 1. Ajustar finamente un adaptador LoRA para clasificar frases en Tristeza, Alegría, Miedo, Sorpresa.  
 1. Fusionar los pesos del adaptador en el modelo base.  
-1. Optimizar y cuantizar el modelo en `int4`.
+1. Optimizar y cuantizar el modelo a `int4`.  
 
-También te mostraremos cómo inferir con el modelo ajustado usando la API Generate de ONNX Runtime (ORT).
+También te mostraremos cómo hacer inferencias con el modelo ajustado usando la API Generate de ONNX Runtime (ORT).
 
 > **⚠️ Para el ajuste fino, necesitarás tener una GPU adecuada disponible - por ejemplo, una A10, V100, A100.**
 
@@ -37,15 +37,15 @@ pip install -r requirements.txt
 ```
 
 ## 🧪 Ajustar finamente Phi3 usando Olive  
-El [archivo de configuración de Olive](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) contiene un *workflow* con los siguientes *pasos*:
+El [archivo de configuración de Olive](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) contiene un *workflow* con las siguientes *etapas*:
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
 A grandes rasgos, este flujo de trabajo hará lo siguiente:
 
-1. Ajustar finamente Phi3 (por 150 pasos, que puedes modificar) usando los datos de [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json).  
+1. Ajustar finamente Phi3 (durante 150 pasos, que puedes modificar) usando los datos de [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json).  
 1. Fusionar los pesos del adaptador LoRA en el modelo base. Esto te dará un único artefacto de modelo en formato ONNX.  
-1. Model Builder optimizará el modelo para el runtime ONNX *y* cuantizará el modelo en `int4`.
+1. Model Builder optimizará el modelo para ONNX Runtime *y* cuantizará el modelo a `int4`.  
 
 Para ejecutar el flujo de trabajo, corre:
 
@@ -55,7 +55,7 @@ olive run --config phrase-classification.json
 
 Cuando Olive termine, tu modelo Phi3 ajustado y optimizado en `int4` estará disponible en: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-## 🧑‍💻 Integra Phi3 ajustado finamente en tu aplicación
+## 🧑‍💻 Integra el Phi3 ajustado en tu aplicación
 
 Para ejecutar la app:
 
@@ -63,7 +63,7 @@ Para ejecutar la app:
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-La respuesta debe ser una clasificación de una sola palabra de la frase (Sad/Joy/Fear/Surprise).
+La respuesta debe ser una clasificación de una sola palabra para la frase (Tristeza/Alegría/Miedo/Sorpresa).
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

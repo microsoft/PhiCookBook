@@ -2,69 +2,70 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:45:13+00:00",
+  "translation_date": "2025-07-16T21:21:36+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "hu"
 }
 -->
 # Távoli inferencia a finomhangolt modellel
 
-Miután az adaptereket betanítottuk a távoli környezetben, egy egyszerű Gradio alkalmazással léphetünk kapcsolatba a modellel.
+Miután az adaptereket a távoli környezetben betanítottuk, egy egyszerű Gradio alkalmazással léphetünk kapcsolatba a modellel.
 
-![Finomhangolás kész](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.hu.png)
+![Finomhangolás befejezve](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.hu.png)
 
 ### Azure erőforrások előkészítése  
-A távoli inferenciához be kell állítanod az Azure erőforrásokat az `AI Toolkit: Provision Azure Container Apps for inference` parancs futtatásával a parancspalettából. A folyamat során ki kell választanod az Azure előfizetésedet és az erőforráscsoportot.  
-![Inferenciához erőforrás biztosítása](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.hu.png)
+A távoli inferencia beállításához futtassa az `AI Toolkit: Provision Azure Container Apps for inference` parancsot a parancspalettából. A beállítás során ki kell választania az Azure-előfizetését és az erőforráscsoportot.  
+![Inferenciához erőforrás előkészítése](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.hu.png)
 
-Alapértelmezés szerint az inferenciához használt előfizetésnek és erőforráscsoportnak egyeznie kell a finomhangoláshoz használtakkal. Az inferencia ugyanazt az Azure Container App környezetet fogja használni, és eléri a finomhangolás során Azure Files-ban tárolt modellt és adaptert.
+Alapértelmezés szerint az inferenciához használt előfizetésnek és erőforráscsoportnak meg kell egyeznie a finomhangoláshoz használtakkal. Az inferencia ugyanazt az Azure Container App környezetet használja, és hozzáfér a finomhangolás során létrehozott modellhez és adapterhez, amelyek az Azure Files-ban vannak tárolva.
 
 ## AI Toolkit használata
 
 ### Telepítés inferenciához  
-Ha módosítani szeretnéd az inferencia kódját vagy újra betölteni az inferencia modellt, futtasd az `AI Toolkit: Deploy for inference` parancsot. Ez szinkronizálja a legfrissebb kódodat az ACA-val, és újraindítja a replikát.
+Ha módosítani szeretné az inferencia kódját vagy újratölteni az inferencia modellt, futtassa az `AI Toolkit: Deploy for inference` parancsot. Ez szinkronizálja a legfrissebb kódot az ACA-val, és újraindítja a replikát.
 
-![Inferenciához telepítés](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.hu.png)
+![Inferenciához telepítés](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.hu.png)
 
 A telepítés sikeres befejezése után a modell készen áll az értékelésre ezen a végponton keresztül.
 
-### Inferencia API elérése
+### Az inferencia API elérése
 
-Az inferencia API eléréséhez kattints a VSCode értesítésében megjelenő "*Go to Inference Endpoint*" gombra. Alternatív megoldásként a web API végpont megtalálható az `ACA_APP_ENDPOINT` alatt az `./infra/inference.config.json`-ban és a kimeneti panelen.
+Az inferencia API-hoz a VSCode értesítésében megjelenő "*Go to Inference Endpoint*" gombra kattintva férhet hozzá. Alternatív megoldásként a web API végpont megtalálható az `ACA_APP_ENDPOINT` alatt a `./infra/inference.config.json` fájlban, illetve a kimeneti panelen.
 
-![Alkalmazás végpont](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.hu.png)
+![Alkalmazás végpont](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.hu.png)
 
-> **Megjegyzés:** Az inferencia végpontnak eltarthat egy pár percig, míg teljesen működőképes lesz.
+> **Megjegyzés:** Az inferencia végpontnak eltarthat néhány percig, mire teljesen működőképes lesz.
 
-## Az inferencia komponensei a sablonban
+## Az inferencia komponensei, amelyek a sablonban szerepelnek
 
 | Mappa | Tartalom |
 | ------ |--------- |
-| `infra` | Minden szükséges konfigurációt tartalmaz a távoli műveletekhez. |
-| `infra/provision/inference.parameters.json` | Paramétereket tartalmaz a bicep sablonokhoz, amelyek az Azure erőforrások előkészítéséhez szükségesek inferenciához. |
-| `infra/provision/inference.bicep` | Az Azure erőforrások előkészítéséhez szükséges sablonokat tartalmazza inferenciához. |
-| `infra/inference.config.json` | A konfigurációs fájl, amelyet az `AI Toolkit: Provision Azure Container Apps for inference` parancs generál. Más távoli parancspaletták bemeneteként szolgál. |
+| `infra` | Tartalmazza az összes szükséges konfigurációt a távoli működéshez. |
+| `infra/provision/inference.parameters.json` | Paramétereket tartalmaz a bicep sablonokhoz, amelyeket az Azure erőforrások inferenciához történő előkészítéséhez használnak. |
+| `infra/provision/inference.bicep` | Azure erőforrások inferenciához történő előkészítéséhez használt sablonokat tartalmaz. |
+| `infra/inference.config.json` | Konfigurációs fájl, amelyet az `AI Toolkit: Provision Azure Container Apps for inference` parancs generál. Más távoli parancsok bemeneteként szolgál. |
 
-### AI Toolkit használata az Azure erőforrás előkészítésének beállításához  
-Állítsd be az [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) bővítményt.
+### AI Toolkit használata az Azure erőforrások előkészítéséhez  
+Konfigurálja az [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) bővítményt.
 
-Az Azure Container Apps inferenciához való előkészítése: ` command.
+Futtassa az `Provision Azure Container Apps for inference` parancsot.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+A konfigurációs paraméterek megtalálhatók a `./infra/provision/inference.parameters.json` fájlban. Íme a részletek:
+
+| Paraméter | Leírás |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | Ezek a parancsok indítják el a web API-t. |
+| `maximumInstanceCount` | Ez a paraméter határozza meg a GPU példányok maximális számát. |
+| `location` | Az Azure erőforrások helyszíne. Alapértelmezett értéke megegyezik a kiválasztott erőforráscsoport helyével. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | Ezek a paraméterek az Azure erőforrások elnevezésére szolgálnak az előkészítés során. Alapértelmezés szerint megegyeznek a finomhangoláshoz használt erőforrások nevével. Megadhat új, még nem használt nevet egyedi erőforrások létrehozásához, vagy megadhat egy már létező Azure erőforrás nevét, ha azt szeretné használni. Részletekért lásd a [Már létező Azure erőforrások használata](../../../../../md/01.Introduction/03) részt. |
 
-### Using Existing Azure Resources
+### Már létező Azure erőforrások használata
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Alapértelmezés szerint az inferencia előkészítés ugyanazt az Azure Container App környezetet, Storage Accountot, Azure File Share-t és Azure Log Analytics-et használja, mint a finomhangolás. Az inferencia API számára külön Azure Container App jön létre.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json fájlban. Ezután futtasd az `AI Toolkit: Provision Azure Container Apps for inference` parancsot a parancspalettából. Ez frissíti a megadott erőforrásokat és létrehozza a hiányzókat.
+Ha a finomhangolás során testreszabta az Azure erőforrásokat, vagy saját meglévő Azure erőforrásait szeretné használni az inferenciához, adja meg azok nevét a `./infra/inference.parameters.json` fájlban. Ezután futtassa az `AI Toolkit: Provision Azure Container Apps for inference` parancsot a parancspalettából. Ez frissíti a megadott erőforrásokat, és létrehozza a hiányzókat.
 
-Például, ha már rendelkezel Azure konténer környezettel, akkor a `./infra/finetuning.parameters.json` fájlod valahogy így nézzen ki:
+Például, ha már van meglévő Azure konténer környezete, a `./infra/finetuning.parameters.json` fájl így nézhet ki:
 
 ```json
 {
@@ -84,7 +85,7 @@ Például, ha már rendelkezel Azure konténer környezettel, akkor a `./infra/f
 ```
 
 ### Manuális előkészítés  
-Ha inkább kézzel szeretnéd beállítani az Azure erőforrásokat, használhatod a `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` fájlban található bicep fájlokat.
+Ha inkább manuálisan szeretné beállítani az Azure erőforrásokat, használhatja a `./infra/provision` mappában található bicep fájlokat. Ha már beállította és konfigurálta az összes Azure erőforrást az AI Toolkit parancspaletta használata nélkül, egyszerűen írja be az erőforrások nevét az `inference.config.json` fájlba.
 
 Például:
 
@@ -100,4 +101,4 @@ Például:
 ```
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

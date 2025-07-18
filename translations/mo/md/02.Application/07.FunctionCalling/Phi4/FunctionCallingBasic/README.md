@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-07T13:42:27+00:00",
+  "translation_date": "2025-07-17T05:14:28+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "mo"
 }
 -->
-## **Функцияны шақыру Phi-4-mini-де**
+## **Phi-4-mini 中的函式呼叫**
 
-Функцияны шақыру алғаш рет Phi Family отбасында пайда болды, енді оны Phi-4-mini арқылы қолдануға болады.
+函式呼叫最早出現在 Phi Family 系列中，現在你也可以在 Phi-4-mini 中使用它。
 
-Бұл мысалда Премьер-лига нәтижелерін модельдеу көрсетілген. Мақсат - Phi-4-mini нақты уақыттағы ойын ақпаратын жеткізу. Төменде мысал коды берілген:
+這個範例展示了英超聯賽結果的模擬。目標是讓 Phi-4-mini 提供即時的比賽資訊。以下是範例程式碼：
 
 
 
@@ -108,5 +108,5 @@ print(messages)
 
 ```
 
-**Disclaimer**:  
-Dis document haz been translated uzing AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive fo accuracy, please be aware dat automated translations may contain errors or inaccuracies. Da original document in its native language should be considered da authoritative source. Fo critical information, professional human translation is recommended. We are not liable fo any misunderstandings or misinterpretations arising from da use of dis translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

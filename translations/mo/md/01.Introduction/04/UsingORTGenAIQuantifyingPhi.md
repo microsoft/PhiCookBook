@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-07T14:53:58+00:00",
+  "translation_date": "2025-07-16T22:16:11+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "mo"
 }
 -->
-## **Model Builder ໃຊ້ຢ່າງໃດເພື່ອ quantizing Phi-3.5**
+## **如何使用 Model Builder 量化 Phi-3.5**
 
-Model Builder ຕອບຮັບການ quantization ໂປຣແມງ ONNX ສຳລັບ Phi-3.5 Instruct ແລະ Phi-3.5-Vision ແລ້ວ
+Model Builder 現在支援 Phi-3.5 Instruct 和 Phi-3.5-Vision 的 ONNX 模型量化。
 
 ### **Phi-3.5-Instruct**
 
-**ການແປງດ້ວຍການເຊື່ອມຕໍ່ CPU ດ້ວຍ quantized INT 4**
+**CPU 加速的 INT4 量化轉換**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**ການແປງດ້ວຍການເຊື່ອມຕໍ່ CUDA ດ້ວຍ quantized INT 4**
+**CUDA 加速的 INT4 量化轉換**
 
 ```bash
 
@@ -39,7 +39,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 **Phi-3.5-vision-instruct-onnx-cpu-fp32**
 
-1. ຕັ້ງຄ່າສິ່ງແວພາຍໃນ terminal
+1. 在終端機設定環境
 
 ```bash
 
@@ -49,10 +49,10 @@ cd models
 
 ```
 
-2. ດາວໂຫຼດ microsoft/Phi-3.5-vision-instruct ໃນໂຟນເດີ models  
+2. 在 models 資料夾下載 microsoft/Phi-3.5-vision-instruct  
 [https://huggingface.co/microsoft/Phi-3.5-vision-instruct](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
 
-3. ກະລຸນາດາວໂຫຼດໄຟລ໌ເຫຼົ່ານີ້ໄປທີ່ໂຟນເດີ Phi-3.5-vision-instruct ຂອງທ່ານ
+3. 請將以下檔案下載到你的 Phi-3.5-vision-instruct 資料夾中
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json)
 
@@ -60,12 +60,12 @@ cd models
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py)
 
-4. ດາວໂຫຼດໄຟລ໌ນີ້ໄປທີ່ໂຟນເດີ models  
+4. 將此檔案下載到 models 資料夾  
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
-5. ໄປທີ່ terminal
+5. 回到終端機
 
-    ແປງ ONNX ໃຫ້ຮອງຮັບ FP32
+    轉換支援 FP32 的 ONNX 模型
 
 ```bash
 
@@ -73,25 +73,23 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ```
 
-### **Note：**
+### **注意：**
 
-1. Model Builder ປັດຈຸບັນສາມາດແປງ Phi-3.5-Instruct ແລະ Phi-3.5-Vision ໄດ້ ແຕ່ບໍ່ສາມາດແປງ Phi-3.5-MoE
+1. Model Builder 目前支援 Phi-3.5-Instruct 和 Phi-3.5-Vision 的轉換，但不支援 Phi-3.5-MoE
 
-2. ເພື່ອໃຊ້ໂປຣແມງ quantized ຂອງ ONNX ທ່ານສາມາດໃຊ້ຜ່ານ Generative AI extensions for onnxruntime SDK
+2. 若要使用 ONNX 的量化模型，可以透過 Generative AI extensions for onnxruntime SDK 使用
 
-3. ພວກເຮົາຈຳເປັນຕ້ອງພິຈາລະນາ AI ທີ່ຮັບຜິດຊອບຫຼາຍຂຶ້ນ, ຫຼັງຈາກການແປງ model ຄວນທົດສອບຜົນລັບຢ່າງມີປະສິດທິພາບ
+3. 我們需要更負責任的 AI，因此在模型量化轉換後，建議進行更有效的結果測試
 
-4. ໂດຍການ quantize ໂປຣແມງ CPU INT4, ພວກເຮົາສາມາດນຳໄປ deploy ໃສ່ Edge Device ໄດ້, ມີສະພາບການນໍາໃຊ້ທີ່ດີກວ່າ, ດັ່ງນັ້ນພວກເຮົາໄດ້ສຳເລັດ Phi-3.5-Instruct ໃນຮູບແບບ INT 4 ແລ້ວ
+4. 透過量化 CPU INT4 模型，我們可以將其部署到 Edge 裝置，這樣有更好的應用場景，因此我們已完成 Phi-3.5-Instruct 的 INT4 量化
 
-## **ຊັບພະຍາກອນ**
+## **資源**
 
-1. ຮຽນຮູ້ເພີ່ມເຕີມເກັບ Generative AI extensions for onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. 了解更多關於 Generative AI extensions for onnxruntime  
+[https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. Generative AI extensions for onnxruntime GitHub Repo [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
+2. Generative AI extensions for onnxruntime GitHub 倉庫  
+[https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-(Note: "mo" is not a recognized language code or widely known language name. Could you please clarify which language "mo" refers to? This will help me provide an accurate translation.)
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

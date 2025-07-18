@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cba62af5dffbdc4eed3a3290f30949fd",
-  "translation_date": "2025-05-09T20:07:00+00:00",
+  "translation_date": "2025-07-17T05:13:01+00:00",
   "source_file": "md/02.Application/05.Audio/Phi4/Transciption/README.md",
   "language_code": "hu"
 }
 -->
-## **Hangfelvételek átiratainak kinyerése Phi-4-multimodállal**
+## **Hangfelvételek átiratainak kinyerése Phi-4-multimodal segítségével**
 
-A Phi-4-multimodál egy teljesen multimodális modell, amely a szöveg és képek mellett hanganyagot is képes feldolgozni. Nézzük meg, hogyan használhatjuk. 
+A Phi-4-multimodal egy teljesen multimodális modell, amely a szöveg és képek mellett hanganyagot is képes feldolgozni. Nézzük meg, hogyan használhatjuk. 
 
 
 ```python
@@ -66,4 +66,4 @@ print(response)
 ```
 
 **Jogi nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

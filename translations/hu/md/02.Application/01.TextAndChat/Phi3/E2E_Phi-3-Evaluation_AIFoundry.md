@@ -2,30 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
-  "translation_date": "2025-05-09T17:10:17+00:00",
+  "translation_date": "2025-07-16T23:51:39+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
   "language_code": "hu"
 }
 -->
 # Finomhangolt Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry-ban, a Microsoft Felelős MI elveire fókuszálva
 
-Ez az end-to-end (E2E) példa a Microsoft Tech Community "[Finomhangolt Phi-3 / 3.5 modellek értékelése az Azure AI Foundry-ban, a Microsoft Felelős MI elveire fókuszálva](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" útmutatóján alapul.
+Ez az end-to-end (E2E) példa a Microsoft Tech Community "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" útmutatóján alapul.
 
 ## Áttekintés
 
-### Hogyan értékelhetjük egy finomhangolt Phi-3 / Phi-3.5 modell biztonságát és teljesítményét az Azure AI Foundry-ban?
+### Hogyan értékelheted a finomhangolt Phi-3 / Phi-3.5 modell biztonságát és teljesítményét az Azure AI Foundry-ban?
 
-Egy modell finomhangolása néha nem kívánt vagy váratlan válaszokat eredményezhet. Annak érdekében, hogy a modell biztonságos és hatékony maradjon, fontos felmérni, hogy képes-e káros tartalmak generálására, valamint hogy mennyire pontos, releváns és koherens válaszokat ad. Ebben a bemutatóban megtanulhatod, hogyan értékeld a finomhangolt Phi-3 / Phi-3.5 modell biztonságát és teljesítményét, amely a Prompt flow-val integrálva működik az Azure AI Foundry-ban.
+Egy modell finomhangolása néha nem kívánt vagy váratlan válaszokat eredményezhet. Annak érdekében, hogy a modell biztonságos és hatékony maradjon, fontos értékelni a káros tartalom generálására való hajlamát, valamint a pontos, releváns és koherens válaszok előállításának képességét. Ebben a bemutatóban megtanulod, hogyan értékelheted a finomhangolt Phi-3 / Phi-3.5 modellt, amely a Prompt flow-val integrálva működik az Azure AI Foundry-ban.
 
 Íme az Azure AI Foundry értékelési folyamata.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.99df2035c1c1a82e7f7d3aa3368e5940e46d27d35abd498166e55094298fce81.hu.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.hu.png)
 
 *Kép forrása: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
 >
-> További részletes információkért és további forrásokért a Phi-3 / Phi-3.5 modellekről, kérjük, látogasd meg a [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723) oldalt.
+> Részletesebb információkért és további forrásokért a Phi-3 / Phi-3.5 modellekről látogasd meg a [Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?wt.mc_id=studentamb_279723) oldalt.
 
 ### Előfeltételek
 
@@ -45,7 +45,7 @@ Egy modell finomhangolása néha nem kívánt vagy váratlan válaszokat eredmé
 
     - [Mielőtt elkezdenéd](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Azure OpenAI telepítése a Phi-3 / Phi-3.5 modell értékeléséhez](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [A finomhangolt Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry Prompt flow értékelésével](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Finomhangolt Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry Prompt flow értékelésével](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
 1. [Gratulálunk!](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -53,146 +53,156 @@ Egy modell finomhangolása néha nem kívánt vagy váratlan válaszokat eredmé
 
 ### Bevezetés a biztonsági értékelésbe
 
-Annak érdekében, hogy az AI modell etikus és biztonságos legyen, elengedhetetlen, hogy a Microsoft Felelős MI elvei szerint értékeljük. Az Azure AI Foundry-ban a biztonsági értékelések lehetővé teszik a modell sebezhetőségének felmérését jailbreak támadásokkal szemben, valamint annak vizsgálatát, hogy képes-e káros tartalmak generálására, ami közvetlenül kapcsolódik ezekhez az elvekhez.
+Annak érdekében, hogy az MI modell etikus és biztonságos legyen, elengedhetetlen, hogy a Microsoft Felelős MI elvei alapján értékeljük. Az Azure AI Foundry-ban a biztonsági értékelések lehetővé teszik, hogy felmérd a modell sebezhetőségét a jailbreak támadásokkal szemben, valamint a káros tartalom generálásának kockázatát, ami közvetlenül összhangban áll ezekkel az elvekkel.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.91fdef98588aadf56e8043d04cd78d24aac1472d6c121a6289f60d50d1f33d42.hu.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.hu.png)
 
 *Kép forrása: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 #### A Microsoft Felelős MI elvei
 
-A technikai lépések megkezdése előtt fontos megérteni a Microsoft Felelős MI elveit, amelyek egy etikai keretrendszert alkotnak az AI rendszerek felelős fejlesztéséhez, bevezetéséhez és működtetéséhez. Ezek az elvek irányt mutatnak az AI rendszerek tervezésében, fejlesztésében és bevezetésében, biztosítva, hogy az AI technológiák igazságosak, átláthatóak és befogadóak legyenek. Ezek az elvek képezik az AI modellek biztonságának értékelésének alapját.
+A technikai lépések megkezdése előtt fontos megérteni a Microsoft Felelős MI elveit, amelyek egy etikai keretrendszert alkotnak az MI rendszerek felelős fejlesztéséhez, bevezetéséhez és működtetéséhez. Ezek az elvek irányt mutatnak az MI rendszerek felelős tervezéséhez, fejlesztéséhez és bevezetéséhez, biztosítva, hogy az MI technológiák igazságosak, átláthatóak és befogadóak legyenek. Ezek az elvek képezik az MI modellek biztonságának értékelésének alapját.
 
 A Microsoft Felelős MI elvei a következők:
 
-- **Méltányosság és Befogadás**: Az AI rendszereknek mindenkivel igazságosan kell bánniuk, és kerülniük kell, hogy hasonló helyzetű csoportokat eltérő módon érintsenek. Például, amikor az AI rendszerek orvosi kezelési tanácsokat, hitelkérelmeket vagy állásajánlatokat adnak, ugyanazokat az ajánlásokat kell megfogalmazniuk mindenkinek, aki hasonló tünetekkel, pénzügyi helyzettel vagy szakmai képesítéssel rendelkezik.
+- **Igazságosság és befogadás**: Az MI rendszereknek mindenkit igazságosan kell kezelniük, és el kell kerülniük, hogy hasonló helyzetben lévő csoportokat eltérően érintsenek. Például, amikor az MI rendszerek orvosi kezelési tanácsokat, hitelkérelmeket vagy állásajánlatokat adnak, ugyanazokat a javaslatokat kell adniuk mindenkinek, akinek hasonló tünetei, pénzügyi helyzete vagy szakmai képesítései vannak.
 
-- **Megbízhatóság és Biztonság**: A bizalom építéséhez elengedhetetlen, hogy az AI rendszerek megbízhatóan, biztonságosan és következetesen működjenek. Ezeknek a rendszereknek képesnek kell lenniük arra, hogy az eredeti tervek szerint működjenek, biztonságosan reagáljanak váratlan helyzetekre, és ellenálljanak káros manipulációnak. Viselkedésük és az általuk kezelhető különféle helyzetek a tervezők által előre látott körülményeket tükrözik.
+- **Megbízhatóság és biztonság**: A bizalom kiépítéséhez elengedhetetlen, hogy az MI rendszerek megbízhatóan, biztonságosan és következetesen működjenek. Ezeknek a rendszereknek képesnek kell lenniük arra, hogy az eredeti tervek szerint működjenek, biztonságosan reagáljanak váratlan helyzetekre, és ellenálljanak káros manipulációnak. Viselkedésük és a kezelhető helyzetek köre tükrözi a fejlesztők által a tervezés és tesztelés során előre látott szituációkat.
 
-- **Átláthatóság**: Amikor az AI rendszerek olyan döntések meghozatalában segítenek, amelyek jelentős hatással vannak az emberek életére, kritikus, hogy az érintettek megértsék, hogyan születnek ezek a döntések. Például egy bank AI rendszert használhat annak eldöntésére, hogy valaki hitelképes-e. Egy cég AI rendszert alkalmazhat a legalkalmasabb jelöltek kiválasztására.
+- **Átláthatóság**: Amikor az MI rendszerek olyan döntések meghozatalában segítenek, amelyek jelentős hatással vannak az emberek életére, elengedhetetlen, hogy az emberek megértsék, hogyan születtek ezek a döntések. Például egy bank MI rendszert használhat annak eldöntésére, hogy valaki hitelképes-e. Egy cég MI rendszert alkalmazhat a legalkalmasabb jelöltek kiválasztására.
 
-- **Adatvédelem és Biztonság**: Az AI térnyerésével egyre fontosabbá és összetettebbé válik a magánélet védelme és a személyes, valamint üzleti adatok biztonsága. Az AI esetében különösen oda kell figyelni az adatvédelemre és az adatbiztonságra, mivel az adatokhoz való hozzáférés elengedhetetlen az AI rendszerek pontos és megalapozott előrejelzéseihez és döntéseihez.
+- **Adatvédelem és biztonság**: Az MI egyre elterjedtebbé válásával az adatvédelem és az üzleti, valamint személyes információk védelme egyre fontosabbá és összetettebbé válik. Az MI esetében az adatvédelem és az adatbiztonság különös figyelmet igényel, mert az adatokhoz való hozzáférés elengedhetetlen ahhoz, hogy az MI rendszerek pontos és megalapozott előrejelzéseket és döntéseket hozzanak az emberekről.
 
-- **Felelősségre vonhatóság**: Az AI rendszereket tervező és bevezető személyeknek felelősséget kell vállalniuk rendszereik működéséért. A szervezeteknek iparági szabványokat kell alkalmazniuk a felelősségvállalási normák kialakításához. Ezek a normák biztosíthatják, hogy az AI rendszerek ne legyenek az emberek életét érintő döntések végső hatóságai, és hogy az emberek megőrizzék a jelentős mértékű kontrollt a nagyfokú autonómiával rendelkező AI rendszerek felett.
+- **Felelősségre vonhatóság**: Az MI rendszerek tervezőinek és bevezetőinek felelősséget kell vállalniuk a rendszereik működéséért. A szervezeteknek iparági szabványokra kell támaszkodniuk a felelősségre vonhatóság normáinak kialakításához. Ezek a normák biztosíthatják, hogy az MI rendszerek ne legyenek az utolsó döntéshozók olyan ügyekben, amelyek emberek életét érintik. Emellett biztosíthatják, hogy az emberek megőrizzék a jelentős kontrollt a nagymértékben autonóm MI rendszerek felett.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.93a32c6cd88ec3e57ec73a8c81717cd74ba27d2cd6d500097c82d79ac49726d7.hu.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.hu.png)
 
 *Kép forrása: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
-> Ha többet szeretnél megtudni a Microsoft Felelős MI elveiről, látogasd meg a [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723) oldalt.
+> A Microsoft Felelős MI elveiről további információkért látogasd meg a [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723) oldalt.
 
-#### Biztonsági mérőszámok
+#### Biztonsági mutatók
 
-Ebben a bemutatóban az Azure AI Foundry biztonsági mérőszámaival értékeled a finomhangolt Phi-3 modell biztonságát. Ezek a mérőszámok segítenek felmérni a modell káros tartalmak generálására való hajlamát és sebezhetőségét jailbreak támadásokkal szemben. A biztonsági mérőszámok a következők:
+Ebben a bemutatóban az Azure AI Foundry biztonsági mutatóit használva értékeled a finomhangolt Phi-3 modell biztonságát. Ezek a mutatók segítenek felmérni a modell káros tartalom generálására való hajlamát és a jailbreak támadásokkal szembeni sebezhetőségét. A biztonsági mutatók a következők:
 
-- **Önkárosító tartalom**: Felméri, hogy a modell hajlamos-e önkárosító tartalmak generálására.
-- **Gyűlöletkeltő és méltánytalan tartalom**: Felméri, hogy a modell hajlamos-e gyűlöletkeltő vagy méltánytalan tartalmak előállítására.
-- **Erőszakos tartalom**: Felméri, hogy a modell hajlamos-e erőszakos tartalmak generálására.
-- **Szexuális tartalom**: Felméri, hogy a modell hajlamos-e nem megfelelő szexuális tartalmak előállítására.
+- **Önkárosító tartalom**: Felméri, hogy a modell hajlamos-e önkárosító tartalmak előállítására.
+- **Gyűlöletkeltő és igazságtalan tartalom**: Felméri, hogy a modell hajlamos-e gyűlöletkeltő vagy igazságtalan tartalmak generálására.
+- **Erőszakos tartalom**: Felméri, hogy a modell hajlamos-e erőszakos tartalmak előállítására.
+- **Szexuális tartalom**: Felméri, hogy a modell hajlamos-e nem megfelelő szexuális tartalmak generálására.
 
-Ezeknek az aspektusoknak az értékelése biztosítja, hogy az AI modell ne generáljon káros vagy sértő tartalmakat, összhangban a társadalmi értékekkel és szabályozási előírásokkal.
+Ezeknek a szempontoknak az értékelése biztosítja, hogy az MI modell ne állítson elő káros vagy sértő tartalmat, összhangban a társadalmi értékekkel és a szabályozási előírásokkal.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.3def6d9c7edaa49c536a7e58bfa48e2676fe911e80e847b732c0c9688c19946c.hu.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.hu.png)
 
 ### Bevezetés a teljesítményértékelésbe
 
-Annak érdekében, hogy az AI modell a várakozásoknak megfelelően működjön, fontos értékelni annak teljesítményét a teljesítménymutatók alapján. Az Azure AI Foundry-ban a teljesítményértékelések lehetővé teszik, hogy felmérd a modell hatékonyságát a pontos, releváns és koherens válaszok generálásában.
+Annak érdekében, hogy az MI modell a várakozásoknak megfelelően működjön, fontos a teljesítményének értékelése a teljesítménymutatók alapján. Az Azure AI Foundry-ban a teljesítményértékelések lehetővé teszik, hogy felmérd a modell hatékonyságát a pontos, releváns és koherens válaszok generálásában.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.692eccfdea40b8a399040a6304cfee03667b5a9a0636a7152565d806427ff6be.hu.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.hu.png)
 
 *Kép forrása: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 #### Teljesítménymutatók
 
-Ebben a bemutatóban az Azure AI Foundry teljesítménymutatóival értékeled a finomhangolt Phi-3 / Phi-3.5 modell teljesítményét. Ezek a mutatók segítenek felmérni a modell hatékonyságát a pontos, releváns és koherens válaszok generálásában. A teljesítménymutatók a következők:
+Ebben a bemutatóban az Azure AI Foundry teljesítménymutatóit használva értékeled a finomhangolt Phi-3 / Phi-3.5 modell teljesítményét. Ezek a mutatók segítenek felmérni a modell hatékonyságát a pontos, releváns és koherens válaszok előállításában. A teljesítménymutatók a következők:
 
-- **Alapozottság (Groundedness)**: Értékeli, hogy a generált válaszok mennyire felelnek meg a bemeneti forrásból származó információnak.
+- **Alapozottság (Groundedness)**: Értékeli, hogy a generált válaszok mennyire illeszkednek az input forrásból származó információkhoz.
 - **Relevancia**: Értékeli a generált válaszok kérdéshez való illeszkedését.
-- **Koherencia**: Értékeli, hogy a generált szöveg mennyire folyékony, természetes és emberi nyelvre hasonlító.
+- **Koherencia**: Értékeli, hogy a generált szöveg mennyire folyékony, természetes olvasású és emberi nyelvre emlékeztető.
 - **Folyékonyság (Fluency)**: Értékeli a generált szöveg nyelvi színvonalát.
-- **GPT hasonlóság**: Összehasonlítja a generált választ a valósággal hasonlóság alapján.
-- **F1 pontszám**: Kiszámítja a generált válasz és a forrásadatok közös szavainak arányát.
+- **GPT hasonlóság**: Összehasonlítja a generált választ a valósággal a hasonlóság szempontjából.
+- **F1 pontszám**: Kiszámolja a generált válasz és a forrásadatok közös szavainak arányát.
 
 Ezek a mutatók segítenek értékelni a modell hatékonyságát a pontos, releváns és koherens válaszok előállításában.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.16c477bfd4e547f34dd803492ce032fbdb3376a5dbd236042233e21e5b7f7f6a.hu.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.hu.png)
 
 ## **2. forgatókönyv: Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry-ban**
 
 ### Mielőtt elkezdenéd
 
-Ez a bemutató a korábbi blogbejegyzések folytatása, a "[Finomhangold és integráld a saját Phi-3 modelleket a Prompt Flow-val: lépésről lépésre útmutató](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" és a "[Finomhangold és integráld a saját Phi-3 modelleket a Prompt Flow-val az Azure AI Foundry-ban](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" című bejegyzések. Ezekben végigjártuk a Phi-3 / Phi-3.5 modell finomhangolásának és az Azure AI Foundry-ban történő Prompt flow-val való integrálásának folyamatát.
+Ez a bemutató a korábbi blogbejegyzések, a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" és a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" folytatása. Ezekben a bejegyzésekben végigvezettünk a Phi-3 / Phi-3.5 modell finomhangolásának és az Azure AI Foundry-ban a Prompt flow-val való integrálásának folyamatán.
 
-Ebben a bemutatóban egy Azure OpenAI modellt telepítesz értékelőként az Azure AI Foundry-ban, és azt használod a finomhangolt Phi-3 / Phi-3.5 modell értékelésére.
+Ebben a bemutatóban egy Azure OpenAI modellt telepítesz értékelőként az Azure AI Foundry-ban, és ezt használod a finomhangolt Phi-3 / Phi-3.5 modell értékelésére.
 
-A bemutató megkezdése előtt győződj meg róla, hogy rendelkezel a korábbi bemutatókban leírt következőkkel:
+A bemutató megkezdése előtt győződj meg róla, hogy rendelkezel a korábbi bemutatókban leírt következő előfeltételekkel:
 
 1. Egy előkészített adatállomány a finomhangolt Phi-3 / Phi-3.5 modell értékeléséhez.
-1. Egy finomhangolt és Azure Machine Learning-be telepített Phi-3 / Phi-3.5 modell.
+1. Egy finomhangolt és az Azure Machine Learning-be telepített Phi-3 / Phi-3.5 modell.
 1. Egy a finomhangolt Phi-3 / Phi-3.5 modellel integrált Prompt flow az Azure AI Foundry-ban.
 
 > [!NOTE]
-> A *test_data.jsonl* fájlt fogod használni, amely az előző blogbejegyzésekben letöltött **ULTRACHAT_200k** adatállomány adatmappájában található, mint a finomhangolt Phi-3 / Phi-3.5 modell értékeléséhez használt adatállomány.
+> A finomhangolt Phi-3 / Phi-3.5 modell értékeléséhez a korábbi blogbejegyzésekből letöltött **ULTRACHAT_200k** adatállomány *data* mappájában található *test_data.jsonl* fájlt fogod használni.
 
-#### Egyedi Phi-3 / Phi-3.5 modell integrálása a Prompt flow-val az Azure AI Foundry-ban (elsőként kód alapú megközelítés)
-
+#### Egyedi Phi-3 / Phi-3.5 modell integrálása a Prompt flow-val az Azure AI Foundry-ban (kód alapú megközelítés)
 > [!NOTE]
-> Ha a "[Finomhangold és integráld a saját Phi-3 modelleket a Prompt Flow-val az Azure AI Foundry-ban](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" című bejegyzésben leírt alacsony kódolású megközelítést követted, ezt a lépést kihagyhatod és folytathatod a következővel.
-> Ha azonban a "[Finomhangold és integráld a saját Phi-3 modelleket a Prompt Flow-val: lépésről lépésre útmutató](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" című bejegyzésben ismertetett kód-alapú megközelítést követted a Phi-3 / Phi-3.5 modell finomhangolásához és telepítéséhez, akkor a modell Prompt flow-hoz való csatlakoztatásának folyamata kissé eltérő. Ezt a folyamatot ebben a gyakorlatban fogod megtanulni.
-
+> Ha a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)" című anyagban ismertetett alacsony kódolású megközelítést követted, ezt a feladatot kihagyhatod, és folytathatsz a következővel.
+> Azonban, ha a "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" című anyagban leírt kód-alapú megközelítést alkalmaztad a Phi-3 / Phi-3.5 modell finomhangolásához és telepítéséhez, a modell Prompt flow-hoz való csatlakoztatásának folyamata kissé eltér. Ezt a folyamatot ebben a feladatban fogod megtanulni.
 A folytatáshoz integrálnod kell a finomhangolt Phi-3 / Phi-3.5 modellt a Prompt flow-ba az Azure AI Foundry-ban.
 
 #### Azure AI Foundry Hub létrehozása
 
-Hubot kell létrehoznod a Projekt létrehozása előtt. A Hub olyan, mint egy Erőforráscsoport, amely lehetővé teszi, hogy több Projektet szervezz és kezelj az Azure AI Foundry-n belül.
+A Projekt létrehozása előtt létre kell hoznod egy Hub-ot. A Hub olyan, mint egy Erőforráscsoport, amely lehetővé teszi több Projekt rendszerezését és kezelését az Azure AI Foundry-n belül.
 
-1. Jelentkezz be az [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) felületre.
+1. Jelentkezz be az [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723) oldalra.
 
-1. Válaszd ki a bal oldali menüben az **All hubs** opciót.
+1. Válaszd ki a bal oldali fülön az **All hubs** lehetőséget.
 
-1. A
-![Fill hub.](../../../../../../translated_images/fill-hub.bb8b648703e968da13d123e40a6fc76f2193f6c6b432d24036d2aa9e823ee813.hu.png)
+1. A navigációs menüből válaszd a **+ New hub** opciót.
 
-1. Válaszd a **Next** lehetőséget.
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.hu.png)
 
-#### Azure AI Foundry projekt létrehozása
+1. Végezze el a következő lépéseket:
 
-1. A létrehozott Hubban válaszd az **All projects** menüpontot a bal oldali fülön.
+    - Írd be a **Hub name**-et. Egyedi értéknek kell lennie.
+    - Válaszd ki az Azure **Subscription**-t.
+    - Válaszd ki a használni kívánt **Resource group**-ot (ha szükséges, hozz létre újat).
+    - Válaszd ki a kívánt **Location**-t.
+    - Válaszd ki a használni kívánt **Connect Azure AI Services**-t (ha szükséges, hozz létre újat).
+    - A **Connect Azure AI Search** esetén válaszd a **Skip connecting** opciót.
 
-1. A navigációs menüből válaszd a **+ New project** lehetőséget.
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.hu.png)
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.hu.png)
+1. Kattints a **Next** gombra.
 
-1. Add meg a **Project name**-et. Ez egy egyedi érték kell legyen.
+#### Azure AI Foundry Projekt létrehozása
 
-    ![Create project.](../../../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.hu.png)
+1. A létrehozott Hub-ban válaszd ki a bal oldali fülön az **All projects** lehetőséget.
+
+1. A navigációs menüből válaszd a **+ New project** opciót.
+
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.hu.png)
+
+1. Írd be a **Project name**-et. Egyedi értéknek kell lennie.
+
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.hu.png)
 
 1. Válaszd a **Create a project** lehetőséget.
 
 #### Egyedi kapcsolat hozzáadása a finomhangolt Phi-3 / Phi-3.5 modellhez
 
-Ahhoz, hogy az egyedi Phi-3 / Phi-3.5 modelledet integráld a Prompt flow-val, el kell mentened a modell végpontját és kulcsát egy egyedi kapcsolatban. Ez biztosítja, hogy a Prompt flow hozzáférjen az egyedi Phi-3 / Phi-3.5 modellhez.
+Ahhoz, hogy a finomhangolt Phi-3 / Phi-3.5 modellt integráld a Prompt flow-ba, el kell mentened a modell végpontját és kulcsát egy egyedi kapcsolatban. Ez a beállítás biztosítja a hozzáférést a finomhangolt modellhez a Prompt flow-ban.
 
-#### Állítsd be a finomhangolt Phi-3 / Phi-3.5 modell api kulcsát és végpont URI-ját
+#### Az api kulcs és végpont URI beállítása a finomhangolt Phi-3 / Phi-3.5 modellhez
 
 1. Látogass el az [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) oldalra.
 
-1. Navigálj a létrehozott Azure Machine Learning munkaterületre.
+1. Navigálj a létrehozott Azure Machine learning munkaterületre.
 
-1. Válaszd az **Endpoints** menüpontot a bal oldali fülön.
+1. Válaszd ki a bal oldali fülön az **Endpoints** lehetőséget.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.fc2852aa73fdb1531682b599c0b1f5b39a842f0a60fec7c8e941b3070ec6c463.hu.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.hu.png)
 
 1. Válaszd ki a létrehozott végpontot.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.e1cd34ec8ae5a3eca599be7c894b0738e243317960138984b32d8a3fe20f4380.hu.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.hu.png)
 
-1. A navigációs menüből válaszd a **Consume** lehetőséget.
+1. A navigációs menüből válaszd a **Consume** opciót.
 
-1. Másold ki a **REST endpoint** és a **Primary key** értékeket.
+1. Másold ki a **REST endpoint**-ot és a **Primary key**-t.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.f74d8aab513b5f540d2a219198fc5b7a3e64213497491bedb17f4bd039f16054.hu.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.hu.png)
 
 #### Egyedi kapcsolat hozzáadása
 
@@ -200,59 +210,59 @@ Ahhoz, hogy az egyedi Phi-3 / Phi-3.5 modelledet integráld a Prompt flow-val, e
 
 1. Navigálj a létrehozott Azure AI Foundry projekthez.
 
-1. A projektben válaszd a bal oldali fülön a **Settings** menüpontot.
+1. A létrehozott Projektben válaszd ki a bal oldali fülön a **Settings** lehetőséget.
 
-1. Válaszd a **+ New connection** lehetőséget.
+1. Válaszd a **+ New connection** opciót.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.7ac97b4db6dc44c3d4f01a38b22fff11c3e88f75bcbf4d26999048a61a8729b2.hu.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.hu.png)
 
 1. A navigációs menüből válaszd a **Custom keys** lehetőséget.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.b2e452da9ea19401c4b7c63fe2ec95a3a38fd13ae3e9fca37d431f0b7780d4da.hu.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.hu.png)
 
-1. Hajtsd végre a következő lépéseket:
+1. Végezze el a következő lépéseket:
 
-    - Válaszd a **+ Add key value pairs** lehetőséget.
-    - A kulcs neve legyen **endpoint**, és illeszd be az Azure ML Studio-ból kimásolt végpontot az érték mezőbe.
-    - Ismét válaszd a **+ Add key value pairs** lehetőséget.
-    - A kulcs neve legyen **key**, és illeszd be az Azure ML Studio-ból kimásolt kulcsot az érték mezőbe.
+    - Válaszd a **+ Add key value pairs** opciót.
+    - A kulcsnévhez írd be az **endpoint**-ot, és illeszd be az Azure ML Studio-ból kimásolt végpontot az érték mezőbe.
+    - Ismét válaszd a **+ Add key value pairs** opciót.
+    - A kulcsnévhez írd be a **key**-t, és illeszd be az Azure ML Studio-ból kimásolt kulcsot az érték mezőbe.
     - A kulcsok hozzáadása után jelöld be az **is secret** opciót, hogy a kulcs ne legyen látható.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.645b0c3ecf4a21f97a16ffafc9f25fedbb75a823cec5fc9dd778c3ab6130b4f0.hu.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.hu.png)
 
-1. Válaszd az **Add connection** lehetőséget.
+1. Kattints az **Add connection** gombra.
 
 #### Prompt flow létrehozása
 
-Hozzáadtál egy egyedi kapcsolatot az Azure AI Foundry-ban. Most hozzunk létre egy Prompt flow-t a következő lépésekkel. Ezután összekapcsolod a Prompt flow-t az egyedi kapcsolattal, hogy a finomhangolt modellt használni tudd a Prompt flow-n belül.
+Hozzáadtál egy egyedi kapcsolatot az Azure AI Foundry-ban. Most hozzunk létre egy Prompt flow-t a következő lépésekkel. Ezután csatlakoztatod ezt a Prompt flow-t az egyedi kapcsolathoz, hogy a finomhangolt modellt használhasd a Prompt flow-n belül.
 
 1. Navigálj a létrehozott Azure AI Foundry projekthez.
 
-1. Válaszd a bal oldali fülön a **Prompt flow** menüpontot.
+1. Válaszd ki a bal oldali fülön a **Prompt flow** lehetőséget.
 
-1. A navigációs menüből válaszd a **+ Create** lehetőséget.
+1. A navigációs menüből válaszd a **+ Create** opciót.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.4d42246677cc7ba65feb3e2be4479620a2b1e6637a66847dc1047ca89cd02780.hu.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.hu.png)
 
 1. A navigációs menüből válaszd a **Chat flow** lehetőséget.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.e818b610f36e93c5c9741911d7b95232164f01486cbb39a29d748c322bd62038.hu.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.hu.png)
 
-1. Add meg a használni kívánt **Folder name**-et.
+1. Írd be a használni kívánt **Folder name**-et.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.628d4a5d69122cfae9d66e9bccf0f2f38c595e90e456a3837c713aadeff6aa52.hu.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.hu.png)
 
 1. Válaszd a **Create** lehetőséget.
 
-#### Állítsd be a Prompt flow-t, hogy chatelni tudj az egyedi Phi-3 / Phi-3.5 modelleddel
+#### Prompt flow beállítása a finomhangolt Phi-3 / Phi-3.5 modellel való csevegéshez
 
-Integrálnod kell a finomhangolt Phi-3 / Phi-3.5 modellt a Prompt flow-ba. Az alapértelmezett Prompt flow azonban nem erre a célra készült, ezért újra kell tervezned a Prompt flow-t, hogy lehetővé tedd az egyedi modell integrációját.
+Integrálnod kell a finomhangolt Phi-3 / Phi-3.5 modellt a Prompt flow-ba. Azonban a meglévő Prompt flow nem erre a célra készült, ezért újra kell tervezned a Prompt flow-t, hogy lehetővé tedd az egyedi modell integrációját.
 
-1. A Prompt flow-ban végezd el az alábbi lépéseket a meglévő folyamat újraépítéséhez:
+1. A Prompt flow-ban végezd el a következő lépéseket az aktuális folyamat újraépítéséhez:
 
     - Válaszd a **Raw file mode**-ot.
     - Töröld az összes meglévő kódot a *flow.dag.yml* fájlból.
-    - Illeszd be a következő kódot a *flow.dag.yml* fájlba.
+    - Add hozzá a következő kódot a *flow.dag.yml* fájlhoz.
 
         ```yml
         inputs:
@@ -277,9 +287,9 @@ Integrálnod kell a finomhangolt Phi-3 / Phi-3.5 modellt a Prompt flow-ba. Az al
 
     - Válaszd a **Save** lehetőséget.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.e665df3117bf5411acf4d93bc8ecc405a984120c0ca7b944fe700601fdbac66f.hu.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.hu.png)
 
-1. Illeszd be a következő kódot az *integrate_with_promptflow.py* fájlba, hogy a Prompt flow-ban használd az egyedi Phi-3 / Phi-3.5 modellt.
+1. Add hozzá a következő kódot az *integrate_with_promptflow.py* fájlhoz, hogy a finomhangolt Phi-3 / Phi-3.5 modellt használd a Prompt flow-ban.
 
     ```python
     import logging
@@ -340,47 +350,47 @@ Integrálnod kell a finomhangolt Phi-3 / Phi-3.5 modellt a Prompt flow-ba. Az al
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.8547c46c57a5354667f91578d7bca9cc2d0f5e1c4dadd59efa1ca18d6376e7a8.hu.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.hu.png)
 
 > [!NOTE]
-> Részletesebb információkért az Azure AI Foundry-ban történő Prompt flow használatáról lásd a [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) dokumentációt.
+> További részletes információkért a Prompt flow használatáról az Azure AI Foundry-ban, tekintsd meg a [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) dokumentációt.
 
-1. Válaszd a **Chat input** és **Chat output** opciókat, hogy engedélyezd a chatelést a modelleddel.
+1. Válaszd ki a **Chat input** és **Chat output** opciókat, hogy engedélyezd a csevegést a modelleddel.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.4d094b2da9e817e0ef7b9fd5339d929b50364b430ecc476a39c885ae9e4dcb35.hu.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.hu.png)
 
-1. Most készen állsz arra, hogy chatelj az egyedi Phi-3 / Phi-3.5 modelleddel. A következő gyakorlatban megtanulod, hogyan indítsd el a Prompt flow-t, és hogyan használd a finomhangolt modelleddel való chateléshez.
+1. Most már készen állsz arra, hogy csevegj a finomhangolt Phi-3 / Phi-3.5 modelleddel. A következő gyakorlatban megtanulod, hogyan indítsd el a Prompt flow-t, és hogyan használd a finomhangolt modellel való csevegéshez.
 
 > [!NOTE]
 >
 > Az újraépített folyamatnak az alábbi képhez hasonlónak kell lennie:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.55ee258e205e3b686250c5fc480ffe8956eb9f4887f7b11e94a6720e0d032733.hu.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.hu.png)
 >
 
 #### Prompt flow indítása
 
 1. Válaszd a **Start compute sessions** lehetőséget a Prompt flow elindításához.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.e7eb268344e2040fdee7b46a175d2fbd19477e0ab122ef563113828d03b03946.hu.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.hu.png)
 
-1. Válaszd a **Validate and parse input** lehetőséget a paraméterek frissítéséhez.
+1. Válaszd a **Validate and parse input** opciót a paraméterek frissítéséhez.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.dffb16c78fc266e52d55582791d67a54d631c166a61d7ca57a258e00c2e14150.hu.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.hu.png)
 
 1. Válaszd ki a **Value** mezőt a létrehozott egyedi kapcsolathoz. Például *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.5c7a570da52e12219d21fef02800b152d124722619f56064b172a84721603b52.hu.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.hu.png)
 
-#### Chat az egyedi Phi-3 / Phi-3.5 modelleddel
+#### Csevegés a finomhangolt Phi-3 / Phi-3.5 modellel
 
 1. Válaszd a **Chat** lehetőséget.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.c255a13f678aa46d9601c54a81aa2e0d58c9e01a8c6ec7d86598438d8e19214d.hu.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.hu.png)
 
-1. Íme egy példa az eredményekre: Most már chatelhetsz az egyedi Phi-3 / Phi-3.5 modelleddel. Ajánlott olyan kérdéseket feltenni, amelyek a finomhangoláshoz használt adatokon alapulnak.
+1. Íme egy példa az eredményekre: Most már cseveghetsz a finomhangolt Phi-3 / Phi-3.5 modelleddel. Ajánlott olyan kérdéseket feltenni, amelyek a finomhangoláshoz használt adatokra épülnek.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.6da5e838c71f428b6d8aea9a0c655568354ae82babcdc87cd0f0d4edeee9d930.hu.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.hu.png)
 
 ### Azure OpenAI telepítése a Phi-3 / Phi-3.5 modell értékeléséhez
 
@@ -392,23 +402,23 @@ Ahhoz, hogy értékeld a Phi-3 / Phi-3.5 modellt az Azure AI Foundry-ban, telep�
 
 1. Navigálj a létrehozott Azure AI Foundry projekthez.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.84d119464c1bb0a8f5f9ab58012fa88304b0e3b0d6ddda444617424b2bb0d22e.hu.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.hu.png)
 
-1. A projektben válaszd a bal oldali fülön a **Deployments** menüpontot.
+1. A létrehozott Projektben válaszd ki a bal oldali fülön a **Deployments** lehetőséget.
 
-1. A navigációs menüből válaszd a **+ Deploy model** lehetőséget.
+1. A navigációs menüből válaszd a **+ Deploy model** opciót.
 
 1. Válaszd a **Deploy base model** lehetőséget.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.91e6d9f9934e0e0c63116bd81a7628ea5ab37617f3e3b23a998a37c7f5aaba8b.hu.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.hu.png)
 
-1. Válaszd ki az Azure OpenAI modellt, amit használni szeretnél. Például **gpt-4o**.
+1. Válaszd ki az Azure OpenAI modellt, amelyet használni szeretnél. Például a **gpt-4o** modellt.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.c0f0e8d4afe80525745b4e67b52ae0d23550da9130bc8d1aea8160be0e261399.hu.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.hu.png)
 
-1. Válaszd a **Confirm** lehetőséget.
+1. Kattints a **Confirm** gombra.
 
-### A finomhangolt Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry Prompt flow értékelőjével
+### A finomhangolt Phi-3 / Phi-3.5 modell értékelése az Azure AI Foundry Prompt flow értékelésével
 
 ### Új értékelés indítása
 
@@ -416,98 +426,97 @@ Ahhoz, hogy értékeld a Phi-3 / Phi-3.5 modellt az Azure AI Foundry-ban, telep�
 
 1. Navigálj a létrehozott Azure AI Foundry projekthez.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.84d119464c1bb0a8f5f9ab58012fa88304b0e3b0d6ddda444617424b2bb0d22e.hu.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.hu.png)
 
-1. A projektben válaszd a bal oldali fülön az **Evaluation** menüpontot.
+1. A létrehozott Projektben válaszd ki a bal oldali fülön az **Evaluation** lehetőséget.
 
-1. A navigációs menüből válaszd a **+ New evaluation** lehetőséget.
-![Select evaluation.](../../../../../../translated_images/select-evaluation.00ce489c57544e735170ae63682b293c3f5e362ded9d62b602ff0cf8e957287c.hu.png)
+1. A navigációs menüből válaszd a **+ New evaluation** opciót.
 
-1. Válassza ki a **Prompt flow** értékelést.
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.hu.png)
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.350729f9e70f59110aa0b425adcdf00b2d5382066144ac1cdf265fa1884808b2.hu.png)
+1. Válaszd a **Prompt flow** értékelést.
 
-1. Végezze el a következő lépéseket:
-
-    - Adja meg az értékelés nevét. Egyedi értéknek kell lennie.
-    - Válassza a **Question and answer without context** feladattípust. Ez azért fontos, mert a jelen bemutatóban használt **UlTRACHAT_200k** adatbázis nem tartalmaz kontextust.
-    - Válassza ki a kiértékelni kívánt prompt flow-t.
-
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.772ca4e86a27e9c37d627e36c84c07b363a5d5229724f15596599d6b0f1d4ca1.hu.png)
-
-1. Válassza a **Next** gombot.
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.hu.png)
 
 1. Végezze el a következő lépéseket:
 
-    - Válassza az **Add your dataset** lehetőséget az adatkészlet feltöltéséhez. Például feltöltheti a tesztadatokat tartalmazó fájlt, például a *test_data.json1*-et, amely a **ULTRACHAT_200k** adatbázis letöltésekor elérhető.
-    - Válassza ki az adatkészletének megfelelő **Dataset column** oszlopot. Például, ha a **ULTRACHAT_200k** adatbázist használja, válassza a **${data.prompt}** oszlopot.
+    - Írd be az értékelés nevét. Egyedi értéknek kell lennie.
+    - Válaszd a **Question and answer without context** feladattípust, mert a jelen oktatóanyagban használt **ULTRACHAT_200k** adatállomány nem tartalmaz kontextust.
+    - Válaszd ki a kiértékelni kívánt prompt flow-t.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.074e573f2ab245d37b12a9057b8fef349a552962f1ec3b23fd09734d4d653752.hu.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.hu.png)
 
-1. Válassza a **Next** gombot.
+1. Kattints a **Next** gombra.
 
-1. Végezze el a teljesítmény- és minőségi mutatók beállítását:
+1. Végezze el a következő lépéseket:
 
-    - Válassza ki a használni kívánt teljesítmény- és minőségi mutatókat.
-    - Válassza ki az értékeléshez létrehozott Azure OpenAI modellt. Például válassza a **gpt-4o** modellt.
+    - Válaszd az **Add your dataset** opciót az adatállomány feltöltéséhez. Például feltöltheted a teszt adatállományt, mint a *test_data.json1*, amely a **ULTRACHAT_200k** adatállomány letöltésekor elérhető.
+    - Válaszd ki a megfelelő **Dataset column**-t, amely megfelel az adatállományodnak. Például, ha a **ULTRACHAT_200k** adatállományt használod, válaszd a **${data.prompt}** oszlopot.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.7e26ae563c1312db5d1d21f8f44652243627f487df036ba27fe58d181102300d.hu.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.hu.png)
 
-1. Végezze el a kockázat- és biztonsági mutatók beállítását:
+1. Kattints a **Next** gombra.
 
-    - Válassza ki a használni kívánt kockázat- és biztonsági mutatókat.
-    - Válassza ki a hibaarány számításához használandó küszöbértéket. Például válassza a **Medium** értéket.
-    - A **question** esetén állítsa be az adatforrást **{$data.prompt}**-re.
-    - A **answer** esetén állítsa be az adatforrást **{$run.outputs.answer}**-re.
-    - A **ground_truth** esetén állítsa be az adatforrást **{$data.message}**-re.
+1. Végezze el a következő lépéseket a teljesítmény- és minőségi mutatók beállításához:
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.185148a456f1edb7d0db874f765dc6bc34fec7e1b00833be81b0428af6d18233.hu.png)
+    - Válaszd ki a használni kívánt teljesítmény- és minőségi mutatókat.
+    - Válaszd ki az értékeléshez létrehozott Azure OpenAI modellt. Például a **gpt-4o** modellt.
 
-1. Válassza a **Next** gombot.
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.hu.png)
 
-1. Válassza a **Submit** gombot az értékelés elindításához.
+1. Végezze el a következő lépéseket a kockázat- és biztonsági mutatók beállításához:
 
-1. Az értékelés némi időt vesz igénybe. Az előrehaladást az **Evaluation** fülön követheti nyomon.
+    - Válaszd ki a használni kívánt kockázat- és biztonsági mutatókat.
+    - Válaszd ki a hibaarány számításához használt küszöbértéket. Például a **Medium** értéket.
+    - A **question** mezőhöz válaszd a **Data source**-t **{$data.prompt}** értékre.
+    - Az **answer** mezőhöz válaszd a **Data source**-t **{$run.outputs.answer}** értékre.
+    - A **ground_truth** mezőhöz válaszd a **Data source**-t **{$data.message}** értékre.
 
-### Az értékelési eredmények áttekintése
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.hu.png)
 
+1. Kattints a **Next** gombra.
+
+1. Kattints a **Submit** gombra az értékelés elindításához.
+
+1. Az értékelés némi időt vesz igénybe. A folyamat állapotát az **Evaluation** fülön követheted nyomon.
+
+### Az értékelés eredményeinek áttekintése
 > [!NOTE]
-> Az alábbi eredmények az értékelési folyamat bemutatását szolgálják. Ebben a bemutatóban egy viszonylag kis adatbázison finomhangolt modellt használtunk, ami kevésbé optimális eredményekhez vezethet. A tényleges eredmények jelentősen eltérhetnek az adatbázis méretétől, minőségétől, sokszínűségétől, valamint a modell konkrét beállításaitól függően.
+> Az alábbi eredmények a kiértékelési folyamat bemutatását szolgálják. Ebben a bemutatóban egy viszonylag kis adathalmazon finomhangolt modellt használtunk, ami alacsonyabb színvonalú eredményekhez vezethet. A tényleges eredmények jelentősen eltérhetnek az adathalmaz méretétől, minőségétől és sokszínűségétől, valamint a modell konkrét beállításaitól függően.
+Miután az értékelés befejeződött, áttekintheti az eredményeket mind a teljesítmény, mind a biztonsági mutatók tekintetében.
 
-Az értékelés befejezése után áttekintheti az eredményeket mind a teljesítmény-, mind a biztonsági mutatók tekintetében.
+1. Teljesítmény és minőségi mutatók:
 
-1. Teljesítmény- és minőségi mutatók:
+    - értékelje a modell hatékonyságát a koherens, folyékony és releváns válaszok generálásában.
 
-    - Értékelje a modell hatékonyságát abban, hogy összefüggő, folyékony és releváns válaszokat generáljon.
-
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.8e9decea0f5dd1250948982514bcde94bb2debba2b686be5e633f1aad093921f.hu.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.hu.png)
 
 1. Kockázat- és biztonsági mutatók:
 
-    - Biztosítsa, hogy a modell kimenetei biztonságosak legyenek, és megfeleljenek a Responsible AI elveknek, elkerülve bármilyen káros vagy sértő tartalmat.
+    - Győződjön meg arról, hogy a modell kimenetei biztonságosak és megfelelnek a Responsible AI Principles elveinek, elkerülve bármilyen káros vagy sértő tartalmat.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.180e37b9669f3d31aade247bd38b87b15a2ef93b69a1633c4e4072946aadaa26.hu.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.hu.png)
 
-1. Görgessen lejjebb a **Detailed metrics result** megtekintéséhez.
+1. Görgessen lejjebb a **Részletes mutatók eredményének** megtekintéséhez.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.a0abde70a729afee17e34df7c11ea2f6f0ea1aefbe8a26a35502f304de57a647.hu.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.hu.png)
 
-1. A saját Phi-3 / Phi-3.5 modell teljesítmény- és biztonsági mutatók szerinti értékelésével megerősítheti, hogy a modell nemcsak hatékony, hanem a felelős AI gyakorlatoknak is megfelel, így készen áll a valós környezetben való alkalmazásra.
+1. Az egyedi Phi-3 / Phi-3.5 modell teljesítmény- és biztonsági mutatók szerinti értékelésével megerősítheti, hogy a modell nemcsak hatékony, hanem felelős AI-gyakorlatokat is követ, így készen áll a valós környezetben történő alkalmazásra.
 
 ## Gratulálunk!
 
-### Befejezte ezt a bemutatót
+### Sikeresen befejezte ezt a bemutatót
 
-Sikeresen értékelte az Azure AI Foundry-ba integrált, finomhangolt Phi-3 modellt Prompt flow segítségével. Ez fontos lépés annak biztosításában, hogy AI modelljei ne csak jól teljesítsenek, hanem megfeleljenek a Microsoft Responsible AI alapelveinek, így megbízható és hiteles AI alkalmazásokat építhet.
+Sikeresen értékelte a finomhangolt Phi-3 modellt, amely integrálva van a Prompt flow-val az Azure AI Foundry-ban. Ez egy fontos lépés annak biztosításában, hogy AI modelljei ne csak jól teljesítsenek, hanem megfeleljenek a Microsoft Responsible AI elveinek, így megbízható és hiteles AI alkalmazásokat építhet.
 
-![Architecture.](../../../../../../translated_images/architecture.99df2035c1c1a82e7f7d3aa3368e5940e46d27d35abd498166e55094298fce81.hu.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.hu.png)
 
-## Azure erőforrások törlése
+## Azure erőforrások takarítása
 
-Törölje az Azure erőforrásait, hogy elkerülje a további díjakat. Lépjen be az Azure portálra, és törölje az alábbi erőforrásokat:
+Takarítsa el az Azure erőforrásokat, hogy elkerülje a további költségeket a fiókján. Lépjen be az Azure portálra, és törölje a következő erőforrásokat:
 
-- Az Azure Machine Learning erőforrást.
-- Az Azure Machine Learning modell végpontot.
+- Az Azure Machine learning erőforrást.
+- Az Azure Machine learning modell végpontot.
 - Az Azure AI Foundry Project erőforrást.
 - Az Azure AI Foundry Prompt flow erőforrást.
 
@@ -515,21 +524,21 @@ Törölje az Azure erőforrásait, hogy elkerülje a további díjakat. Lépjen 
 
 #### Dokumentáció
 
-- [Assess AI systems by using the Responsible AI dashboard](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
-- [Evaluation and monitoring metrics for generative AI](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
-- [Prompt flow documentation](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
+- [AI rendszerek értékelése a Responsible AI dashboard segítségével](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
+- [Generatív AI értékelési és monitorozási mutatók](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
+- [Azure AI Foundry dokumentáció](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Prompt flow dokumentáció](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
-#### Oktatási anyagok
+#### Képzési anyagok
 
-- [Introduction to Microsoft's Responsible AI Approach](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Introduction to Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Bevezetés a Microsoft Responsible AI megközelítésébe](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
+- [Bevezetés az Azure AI Foundry-ba](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Hivatkozások
 
-- [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
-- [Announcing new tools in Azure AI to help you build more secure and trustworthy generative AI applications](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
-- [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
+- [Mi az a Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
+- [Új eszközök bejelentése az Azure AI-ban, amelyek segítenek biztonságosabb és megbízhatóbb generatív AI alkalmazásokat építeni](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
+- [Generatív AI alkalmazások értékelése](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
 
-**Nyilatkozat:**  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

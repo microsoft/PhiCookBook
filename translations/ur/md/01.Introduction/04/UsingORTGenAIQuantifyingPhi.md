@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-07T14:53:09+00:00",
+  "translation_date": "2025-07-16T22:15:35+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "ur"
 }
@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### **Phi-3.5-Instruct**
 
-**CPU کی مدد سے کوانٹائزڈ INT 4 کی تبدیلی**
+**کوانٹائزڈ INT4 کی CPU تیز رفتار تبدیلی**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**CUDA کی مدد سے کوانٹائزڈ INT 4 کی تبدیلی**
+**کوانٹائزڈ INT4 کی CUDA تیز رفتار تبدیلی**
 
 ```bash
 
@@ -65,7 +65,7 @@ cd models
 
 5. ٹرمینل پر جائیں
 
-    FP32 کے ساتھ ONNX سپورٹ کی تبدیلی کریں
+    FP32 کے ساتھ ONNX سپورٹ کو تبدیل کریں
 
 ```bash
 
@@ -75,21 +75,21 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ### **نوٹ:**
 
-1. Model Builder فی الحال Phi-3.5-Instruct اور Phi-3.5-Vision کی تبدیلی کی حمایت کرتا ہے، لیکن Phi-3.5-MoE کی نہیں۔
+1. Model Builder اس وقت Phi-3.5-Instruct اور Phi-3.5-Vision کی تبدیلی کی حمایت کرتا ہے، لیکن Phi-3.5-MoE کی نہیں۔
 
 2. ONNX کے کوانٹائزڈ ماڈل کو استعمال کرنے کے لیے، آپ اسے Generative AI extensions for onnxruntime SDK کے ذریعے استعمال کر سکتے ہیں۔
 
-3. ہمیں زیادہ ذمہ دار AI کے بارے میں سوچنا چاہیے، اس لیے ماڈل کی کوانٹائزیشن تبدیلی کے بعد مؤثر نتائج کے ٹیسٹ کرنے کی سفارش کی جاتی ہے۔
+3. ہمیں زیادہ ذمہ دار AI پر غور کرنا چاہیے، اس لیے ماڈل کی کوانٹائزیشن تبدیلی کے بعد مؤثر نتائج کی جانچ کرنا تجویز کی جاتی ہے۔
 
-4. CPU INT4 ماڈل کو کوانٹائز کر کے، ہم اسے Edge Device پر تعینات کر سکتے ہیں، جس کے بہتر اطلاقی منظرنامے ہیں، اس لیے ہم نے Phi-3.5-Instruct کو INT 4 کے گرد مکمل کیا ہے۔
+4. CPU INT4 ماڈل کو کوانٹائز کر کے، ہم اسے Edge Device پر تعینات کر سکتے ہیں، جو بہتر ایپلیکیشن کے منظرنامے فراہم کرتا ہے، اس لیے ہم نے Phi-3.5-Instruct کو INT4 کے گرد مکمل کر لیا ہے۔
 
 ## **وسائل**
 
 1. Generative AI extensions for onnxruntime کے بارے میں مزید جانیں  
 [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. Generative AI extensions for onnxruntime GitHub ریپو  
+2. Generative AI extensions for onnxruntime کا GitHub ریپو  
 [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
-**دسclaimer**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کی کوشش کرتے ہیں، براہ کرم آگاہ رہیں کہ خودکار تراجم میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ذریعہ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ورانہ انسانی ترجمہ تجویز کیا جاتا ہے۔ ہم اس ترجمہ کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

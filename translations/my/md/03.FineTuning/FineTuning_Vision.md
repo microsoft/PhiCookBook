@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-07-09T19:01:53+00:00",
+  "translation_date": "2025-07-17T08:57:35+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "my"
 }
 -->
 # Phi-3.5-vision finetuning recipe
 
-ဤသည်မှာ huggingface libraries များကို အသုံးပြု၍ Phi-3.5-vision ကို finetuning ပြုလုပ်ရာတွင် တရားဝင်ထောက်ခံမှုဖြစ်ပါသည်။
-အောက်ပါ command များကို run မပြုလုပ်မီ `cd` ဖြင့် code directory [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) သို့ ဝင်ရောက်ပါ။
+ဤသည်မှာ huggingface libraries ကို အသုံးပြု၍ Phi-3.5-vision finetuning အတွက် တရားဝင်ထောက်ခံမှုဖြစ်သည်။
+အောက်ပါ command များကို run မလုပ်မီ `cd` ဖြင့် code directory [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) သို့ ဝင်ရောက်ပါ။
 
 ## Installation
 
@@ -35,16 +35,16 @@ pip install bitsandbytes==0.43.1
 
 ## Quick start
 
-DocVQA အတွက်နှင့် hateful meme classification အတွက် finetuning script နှစ်ခုကို ဥပမာအနေနှင့် ပံ့ပိုးပေးထားပါသည်။
+DocVQA အတွက်နှင့် hateful meme classification အတွက် finetuning script နှစ်ခုကို ဥပမာအနေနှင့် ပေးထားသည်။
 
-အနည်းဆုံး hardware အနေဖြင့် 4x RTX8000 (GPU တစ်ခုလျှင် 48GB RAM) တွင် စမ်းသပ်ပြီးဖြစ်သည်။
+အနည်းဆုံး hardware အနေဖြင့် 4x RTX8000 (GPU တစ်ခုလျှင် 48GB RAM) တွင် စမ်းသပ်ထားသည်။
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision သည် ယခု multi-image inputs ကို တရားဝင်ထောက်ခံပါသည်။ NLVR2 အတွက် finetuning ဥပမာကို အောက်တွင် ဖော်ပြထားပါသည်။
+Phi-3.5-vision သည် ယခု multi-image inputs ကို တရားဝင်ထောက်ခံသည်။ NLVR2 အတွက် finetuning ဥပမာကို အောက်တွင် ဖော်ပြထားသည်။
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -52,13 +52,13 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## Usage guide
 
-Hardware အလိုက် အသုံးပြုသူများသည် finetuning နည်းလမ်းများကို မတူညီစွာ ရွေးချယ်နိုင်ပါသည်။ ကျွန်ုပ်တို့သည်
-full-finetuning (Deepspeed Zero-2 ဖြင့်) ကို vision parameters များကို အလိုအလျောက် freeze လုပ်နိုင်စွမ်းဖြင့်၊ နှင့် LoRA (4bit QLoRA အပါအဝင်) ကို ပံ့ပိုးပါသည်။
-ယေဘုယျအားဖြင့် flash attention နှင့် bf16 ကို အသုံးပြု၍ full finetuning ပြုလုပ်ရန် အကြံပြုပါသည်။
+Hardware အလိုက် အသုံးပြုသူများသည် finetuning နည်းလမ်းများကို မတူညီစွာ ရွေးချယ်နိုင်သည်။ ကျွန်ုပ်တို့သည်
+full-finetuning (Deepspeed Zero-2 ဖြင့်) ကို vision parameters များကို အလိုအလျောက် freeze လုပ်နိုင်စွမ်းဖြင့်၊ နှင့် LoRA (4bit QLoRA ပါဝင်သည်) ကို ထောက်ခံသည်။
+အထွေထွေမှာ flash attention နှင့် bf16 ကို အသုံးပြု၍ full finetuning ကို အကြံပြုပါသည်။
 
 ### သင့် custom dataset ကို လိုအပ်သည့် format သို့ ပြောင်းလဲရန် လမ်းညွှန်ချက်
 
-UCF-101 ၏ အပိုင်းအစဖြစ်သော အနည်းဆုံး video classification dataset ကို အသုံးပြု၍ သင့် custom dataset ကို လိုအပ်သည့် format သို့ ပြောင်းလဲခြင်းနှင့် Phi-3.5-vision ကို finetune ပြုလုပ်ခြင်းကို အဆုံးအဖြတ် ဥပမာအနေနှင့် ပြသထားပါသည်။
+UCF-101 ၏ အပိုင်းအစဖြစ်သော အနည်းဆုံး video classification dataset ကို end-to-end ဥပမာအဖြစ် အသုံးပြုကာ သင့် custom dataset ကို လိုအပ်သည့် format သို့ ပြောင်းလဲပြီး Phi-3.5-vision ဖြင့် finetune ပြုလုပ်နည်းကို ဖော်ပြထားသည်။
 
 ```bash
 # convert data
@@ -68,7 +68,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-ပြောင်းလဲပြီးသော data သည် အောက်ပါအတိုင်း ဖြစ်ပါလိမ့်မည်။
+ပြောင်းလဲပြီးသော data သည် အောက်ပါအတိုင်း ဖြစ်မည်။
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -121,11 +121,11 @@ torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/co
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-`conversations` သည် list ဖြစ်သောကြောင့် multi-turn conversation များကို ထောက်ပံ့နိုင်ပါသည်၊ ထိုကဲ့သို့သော data ရှိပါကသာဖြစ်သည်။
+`conversations` သည် list ဖြစ်သောကြောင့် multi-turn စကားပြောဆိုမှုများကို ထောက်ခံနိုင်သည်၊ ထိုကဲ့သို့သော data ရှိပါက ဖြစ်သည်။
 
 ## Azure GPU Quota တောင်းဆိုခြင်း
 
-### မတိုင်မီ လိုအပ်ချက်များ
+### မလိုအပ်သောအချက်များ
 
 Contributor role (သို့) Contributor access ပါဝင်သော အခြား role တစ်ခုပါဝင်သော Azure account တစ်ခု။
 
@@ -133,7 +133,7 @@ Azure account မရှိပါက [စတင်ရန် အခမဲ့အက
 
 ### Quota တိုးမြှင့်ရန် တောင်းဆိုခြင်း
 
-My quotas မှ တိုက်ရိုက် quota တိုးမြှင့်ရန် တောင်းဆိုနိုင်ပါသည်။ Quota တိုးမြှင့်ရန် အောက်ပါအဆင့်များကို လိုက်နာပါ။ ဤဥပမာတွင် သင့် subscription တွင် adjustable ဖြစ်သော quota မည်သည့်အရာကိုမဆို ရွေးချယ်နိုင်ပါသည်။
+My quotas မှ တိုက်ရိုက် quota တိုးမြှင့်ရန် တောင်းဆိုနိုင်သည်။ Quota တိုးမြှင့်ရန် အောက်ပါအဆင့်များကို လိုက်နာပါ။ ဤဥပမာတွင် သင့် subscription တွင် ပြင်ဆင်နိုင်သော quota မည်သည့်အရာကိုမဆို ရွေးချယ်နိုင်သည်။
 
 [Azure portal](https://portal.azure.com) တွင် ဝင်ရောက်ပါ။
 
@@ -142,9 +142,9 @@ My quotas မှ တိုက်ရိုက် quota တိုးမြှင�
 
 Overview စာမျက်နှာတွင် Compute သို့မဟုတ် AML ကဲ့သို့သော provider တစ်ခုကို ရွေးချယ်ပါ။
 
-**Note** Compute အပြင် အခြား provider များအတွက် Request increase ကော်လံကို Adjustable ကော်လံအစား မြင်ရမည်ဖြစ်ပြီး၊ ထိုနေရာတွင် သတ်မှတ်ထားသော quota တစ်ခုအတွက် တိုးမြှင့်ရန် တောင်းဆိုနိုင်သည်၊ သို့မဟုတ် တိုးမြှင့်မှုအတွက် support request တစ်ခု ဖန်တီးနိုင်ပါသည်။
+**Note** Compute အပြင် အခြား provider များအတွက် Request increase ကော်လံကို တွေ့ရမည်ဖြစ်ပြီး Adjustable ကော်လံမပါဝင်ပါ။ ထိုနေရာတွင် သတ်မှတ်ထားသော quota တစ်ခုအတွက် တိုးမြှင့်ရန် တောင်းဆိုနိုင်ပြီး၊ တိုးမြှင့်မှုအတွက် support request တစ်ခု ဖန်တီးနိုင်သည်။
 
-My quotas စာမျက်နှာတွင် Quota name အောက်မှ တိုးမြှင့်လိုသော quota ကို ရွေးချယ်ပါ။ ဤ quota အတွက် Adjustable ကော်လံတွင် Yes ဟု ပြထားရမည်။
+My quotas စာမျက်နှာတွင် Quota name အောက်မှ တိုးမြှင့်လိုသော quota ကို ရွေးချယ်ပါ။ ဤ quota အတွက် Adjustable ကော်လံတွင် Yes ဖြစ်နေသည်ကို သေချာစေပါ။
 
 စာမျက်နှာအပေါ်ဆုံးတွင် New Quota Request ကို နှိပ်ပြီး Enter a new limit ကို ရွေးချယ်ပါ။
 
@@ -152,9 +152,9 @@ My quotas စာမျက်နှာတွင် Quota name အောက်မ�
 
 New Quota Request ပန်းနားတွင် သင့် quota limit အသစ်အတွက် ကိန်းဂဏန်းတန်ဖိုးကို ထည့်သွင်းပြီး Submit ကို နှိပ်ပါ။
 
-သင့်တောင်းဆိုမှုကို ပြန်လည်သုံးသပ်ပြီး ပြည့်မှီနိုင်ပါက သတင်းပို့မည်ဖြစ်သည်။ ယေဘုယျအားဖြင့် မိနစ်အနည်းငယ်အတွင်း ဖြစ်ပေါ်ပါသည်။
+သင့်တောင်းဆိုမှုကို ပြန်လည်သုံးသပ်မည်ဖြစ်ပြီး တောင်းဆိုမှု ပြည့်မှီနိုင်ပါက သတင်းပို့မည်ဖြစ်သည်။ ယင်းသည် မိနစ်အနည်းငယ်အတွင်း ဖြစ်ပေါ်လေ့ရှိသည်။
 
-တောင်းဆိုမှု မပြည့်မှီပါက support request ဖန်တီးရန် လင့်ခ်ကို မြင်ရမည်ဖြစ်ပြီး၊ ထိုလင့်ခ်ကို အသုံးပြုပါက support engineer တစ်ဦးက သင့်တိုးမြှင့်မှု တောင်းဆိုမှုကို ကူညီပေးပါမည်။
+တောင်းဆိုမှု မပြည့်မှီပါက support request ဖန်တီးရန် လင့်ခ်ကို တွေ့ရမည်ဖြစ်ပြီး၊ ထိုလင့်ခ်ကို အသုံးပြုပါက support engineer တစ်ဦးက သင့်တိုးမြှင့်မှု တောင်းဆိုမှုကို ကူညီပေးမည်ဖြစ်သည်။
 
 ## Azure Compute GPU machine SKU အကြံပြုချက်များ
 
@@ -164,11 +164,11 @@ New Quota Request ပန်းနားတွင် သင့် quota limit အ
 
 [Standard_ND40rs_v2](https://learn.microsoft.com/azure/virtual-machines/ndv2-series)
 
-အောက်တွင် ဥပမာအချို့ကို ဖော်ပြထားပါသည်။
+အောက်တွင် ဥပမာအချို့ကို ဖော်ပြထားသည်။
 
 ### A100 သို့မဟုတ် H100 GPU များရှိပါက
 
-Full finetuning သည် ပုံမှန်အားဖြင့် အကောင်းဆုံး စွမ်းဆောင်ရည် ပေးနိုင်ပါသည်။ hateful memes classification အတွက် Phi-3-V ကို finetune ပြုလုပ်ရန် အောက်ပါ command ကို အသုံးပြုနိုင်ပါသည်။
+Full finetuning သည် ပုံမှန်အားဖြင့် အကောင်းဆုံး စွမ်းဆောင်ရည် ပေးသည်။ hateful memes classification အတွက် Phi-3-V ကို finetune ပြုလုပ်ရန် အောက်ပါ command ကို အသုံးပြုနိုင်သည်။
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -182,7 +182,8 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Standard_ND40rs_v2 8x V100-32GB GPU များရှိပါက
 
-Phi-3-V ကို hateful memes classification အတွက် အပြည့်အဝ finetune ပြုလုပ်နိုင်သေးပါသည်။ သို့သော် flash attention ကို မထောက်ပံ့သောကြောင့် A100 သို့မဟုတ် H100 GPU များနှင့် နှိုင်းယှဉ်လျှင် throughput သာမက အရည်အသွေးလည်း နည်းပါးနိုင်သည်။ bf16 ကို မထောက်ပံ့သောကြောင့် (fp16 mixed-precision training ကို အသုံးပြုသည်) တိကျမှုလည်း သက်ရောက်နိုင်ပါသည်။
+Phi-3-V ကို hateful memes classification အတွက် အပြည့်အဝ finetune ပြုလုပ်နိုင်သေးသည်။ သို့သော် flash attention ကို မထောက်ခံသောကြောင့် A100 သို့မဟုတ် H100 GPU များနှင့် နှိုင်းယှဉ်လျှင် throughput သာမက performance လည်း နည်းပါးမည်ဖြစ်သည်။
+bf16 ကို မထောက်ခံသောကြောင့် (fp16 mixed-precision training ကို အသုံးပြုသည်) တိကျမှုလည်း သက်ရောက်နိုင်သည်။
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -194,7 +195,7 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Data center GPU မရရှိပါက
 
-LoRA သာ သင့်ရွေးချယ်စရာ ဖြစ်နိုင်ပါသည်။ hateful memes classification အတွက် Phi-3-V ကို finetune ပြုလုပ်ရန် အောက်ပါ command ကို အသုံးပြုနိုင်ပါသည်။
+LoRA သာ သင့်ရွေးချယ်စရာ ဖြစ်နိုင်သည်။ hateful memes classification အတွက် Phi-3-V ကို finetune ပြုလုပ်ရန် အောက်ပါ command ကို အသုံးပြုနိုင်သည်။
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -204,7 +205,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-Turing+ GPU များအတွက် QLoRA ကို ထောက်ပံ့ပါသည်။
+Turing+ GPU များအတွက် QLoRA ကို ထောက်ခံသည်။
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -215,7 +216,7 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## အကြံပြု hyperparameters များနှင့် မျှော်မှန်းထားသော တိကျမှု
+## အကြံပြု hyperparameters နှင့် မျှော်မှန်းထားသော တိကျမှု
 
 ### NLVR2
 
@@ -237,8 +238,8 @@ full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
 LoRA results comming soon |  |  |  |  |  |  |  |  |
 
 ### NOTE
-အောက်ပါ DocVQA နှင့် Hateful memes ရလဒ်များမှာ ယခင်ဗားရှင်း (Phi-3-vision) အပေါ် မူတည်ပါသည်။
-Phi-3.5-vision ဖြင့် ရရှိမည့် ရလဒ်အသစ်များကို မကြာမီ အပ်ဒိတ် ပြုလုပ်သွားမည်ဖြစ်သည်။
+အောက်ပါ DocVQA နှင့် Hateful memes ရလဒ်များမှာ ယခင်ဗားရှင်း (Phi-3-vision) အပေါ် မူတည်သည်။
+Phi-3.5-vision ဖြင့် ရရှိမည့် ရလဒ်အသစ်များကို မကြာမီ update ပြုလုပ်မည်ဖြစ်သည်။
 
 ### DocVQA (NOTE: Phi-3-vision)
 
@@ -291,9 +292,9 @@ QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 ## Speed benchmarking (NOTE: Phi-3-vision)
 
-Phi-3.5-vision ဖြင့် အသစ်ထွက်ရှိမည့် benchmarking ရလဒ်များကို မကြာမီ အပ်ဒိတ် ပြုလုပ်သွားမည်ဖြစ်သည်။
+Phi-3.5-vision ဖြင့် အသစ်သော benchmarking ရလဒ်များကို မကြာမီ update ပြုလုပ်မည်ဖြစ်သည်။
 
-Speed benchmarking ကို DocVQA dataset ပေါ်တွင် ပြုလုပ်ထားသည်။ ဤ dataset ၏ ပျမ်းမျှ sequence length သည် 2443.23 tokens ဖြစ်ပြီး (image model အတွက် `num_crops=16` ကို အသုံးပြုသည်)။
+Speed benchmarking ကို DocVQA dataset ပေါ်တွင် ပြုလုပ်ထားသည်။ ဤ dataset ၏ ပျမ်းမျှ sequence length သည် 2443.23 tokens ဖြစ်သည် (`num_crops=16` ကို image model အတွက် အသုံးပြုထားသည်)။
 
 ### 8x A100-80GB (Ampere)
 
@@ -322,8 +323,8 @@ LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
 ## သိရှိထားသော ပြဿနာများ
 
-- fp16 ဖြင့် flash attention ကို မရနိုင်ပါ (bf16 ကို ရနိုင်ပါက အမြဲတမ်း အကြံပြုပါသည်၊ flash attention ကို ထောက်ပံ့သော GPU များအားလုံးသည် bf16 ကိုလည်း ထောက်ပံ့ပါသည်)။
-- အလယ်အလတ် checkpoint များကို သိမ်းဆည်းခြင်းနှင့် training ကို ပြန်စတင်ခြင်းကို မထောက်ပံ့သေးပါ။
+- fp16 ဖြင့် flash attention ကို မရနိုင်ပါ (bf16 ကို ရနိုင်ပါက အမြဲတမ်း အကြံပြုသည်၊ flash attention ကို ထောက်ခံသော GPU များသည် bf16 ကိုလည်း ထောက်ခံသည်)။
+- အလယ်အလတ် checkpoint များကို သိမ်းဆည်းခြင်းနှင့် training ကို ပြန်စတင်ခြင်းကို မထောက်ခံသေးပါ။
 
 **အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းမှုများ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အရင်းအမြစ်အဖြစ် သတ်မှတ်သင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းသည် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မိမိဘာသာစကားဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။

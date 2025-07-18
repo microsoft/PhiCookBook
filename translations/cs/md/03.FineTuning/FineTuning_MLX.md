@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:44:55+00:00",
+  "translation_date": "2025-07-17T08:02:39+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "cs"
 }
 -->
-# **Fine-tuning Phi-3 with Apple MLX Framework**
+# **Doladění Phi-3 pomocí Apple MLX Frameworku**
 
-We can complete fine-tuning combined with Lora through the Apple MLX framework command line. (If you want to know more about the operation of MLX Framework, please read [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
-
-
-## **1. Data preparation**
-
-By default, MLX Framework requires the jsonl format of train, test, and eval, and is combined with Lora to complete fine-tuning jobs.
+Doladění v kombinaci s Lora můžeme provést přes příkazový řádek Apple MLX frameworku. (Pokud chcete vědět více o fungování MLX Frameworku, přečtěte si prosím [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
 
 
-### ***Note:***
+## **1. Příprava dat**
 
-1. jsonl data format ：
+Výchozí požadavek MLX Frameworku je formát jsonl pro tréninková, testovací a evaluační data, která se kombinují s Lora pro dokončení doladění.
+
+
+### ***Poznámka:***
+
+1. formát jsonl dat ：
 
 
 ```json
@@ -31,16 +31,16 @@ By default, MLX Framework requires the jsonl format of train, test, and eval, an
 
 ```
 
-2. Our example uses [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), but the amount of data is relatively insufficient, so the fine-tuning results are not necessarily the best. It is recommended that learners use better data based on their own scenarios to complete.
+2. Náš příklad používá [data TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), ale množství dat je relativně nedostatečné, takže výsledky doladění nemusí být nejlepší. Doporučujeme, aby si uživatelé na základě svých scénářů připravili lepší data.
 
-3. The data format is combined with the Phi-3 template
+3. Formát dat je kombinován s šablonou Phi-3
 
-Please download data from this [link](../../../../code/04.Finetuning/mlx), please include all .jsonl in ***data*** folder
+Prosím stáhněte data z tohoto [odkazu](../../../../code/04.Finetuning/mlx), zahrňte všechny .jsonl soubory ve složce ***data***
 
 
-## **2. Fine-tuning in your terminal**
+## **2. Doladění v terminálu**
 
-Please run this command in terminal
+Spusťte tento příkaz v terminálu
 
 
 ```bash
@@ -50,11 +50,11 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 ```
 
 
-## ***Note:***
+## ***Poznámka:***
 
-1. This is LoRA fine-tuning, MLX framework not published QLoRA
+1. Jedná se o LoRA doladění, MLX framework nezveřejnil QLoRA
 
-2. You can set config.yaml to change some arguments, such as
+2. Můžete upravit config.yaml a změnit některé argumenty, například
 
 
 ```yaml
@@ -125,7 +125,7 @@ lora_parameters:
 
 ```
 
-Please run this command in terminal
+Spusťte tento příkaz v terminálu
 
 
 ```bash
@@ -135,9 +135,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Run Fine-tuning adapter to test**
+## **3. Spuštění doladěného adaptéru pro testování**
 
-You can run fine-tuning adapter in terminal, like this 
+Doladěný adaptér můžete spustit v terminálu takto
 
 
 ```bash
@@ -146,7 +146,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-and run original model to compare result 
+a spusťte původní model pro porovnání výsledků
 
 
 ```bash
@@ -155,10 +155,10 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-You can try to compare the results of fine-tuning with the original model
+Můžete zkusit porovnat výsledky doladění s původním modelem
 
 
-## **4. Merge adapters to generate new models**
+## **4. Sloučení adaptérů pro vytvoření nových modelů**
 
 
 ```bash
@@ -167,9 +167,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Running quantified fine-tuning models using ollama**
+## **5. Spuštění kvantovaných doladěných modelů pomocí ollama**
 
-Before use, please configure your llama.cpp environment
+Před použitím si prosím nastavte své prostředí llama.cpp
 
 
 ```bash
@@ -184,13 +184,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:*** 
+***Poznámka:*** 
 
-1. Now supports quantization conversion of fp32, fp16 and INT 8
+1. Nyní je podporována kvantizace z fp32, fp16 a INT 8
 
-2. The merged model is missing tokenizer.model, please download it from https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Sloučený model postrádá tokenizer.model, stáhněte si ho prosím z https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-set a [Ollma Model](https://ollama.com/)
+nastavte [Ollma Model](https://ollama.com/)
 
 
 ```txt
@@ -200,7 +200,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-run command in terminal
+spusťte příkaz v terminálu
 
 
 ```bash
@@ -211,7 +211,7 @@ run command in terminal
 
 ```
 
-Congratulations! Master fine-tuning with the MLX Framework
+Gratulujeme! Ovládli jste doladění s MLX Frameworkem
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo mylné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

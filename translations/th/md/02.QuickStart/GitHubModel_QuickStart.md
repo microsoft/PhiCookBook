@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:18:18+00:00",
+  "translation_date": "2025-07-17T05:37:13+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "th"
 }
 -->
-## GitHub Models - Limited Public Beta
+## GitHub Models - เบต้าแบบสาธารณะจำกัด
 
-ยินดีต้อนรับสู่ [GitHub Models](https://github.com/marketplace/models)! เราเตรียมทุกอย่างไว้พร้อมให้คุณสำรวจ AI Models ที่โฮสต์บน Azure AI
+ยินดีต้อนรับสู่ [GitHub Models](https://github.com/marketplace/models)! เราเตรียมทุกอย่างไว้พร้อมให้คุณสำรวจโมเดล AI ที่โฮสต์บน Azure AI
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.th.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.th.png)
 
-สำหรับข้อมูลเพิ่มเติมเกี่ยวกับ Models ที่มีอยู่ใน GitHub Models โปรดดูที่ [GitHub Model Marketplace](https://github.com/marketplace/models)
+สำหรับข้อมูลเพิ่มเติมเกี่ยวกับโมเดลที่มีใน GitHub Models โปรดดูที่ [GitHub Model Marketplace](https://github.com/marketplace/models)
 
-## Models Available
+## โมเดลที่มีให้ใช้งาน
 
-แต่ละโมเดลมีพื้นที่เล่นและตัวอย่างโค้ดเฉพาะ
+แต่ละโมเดลมีพื้นที่ทดลองและตัวอย่างโค้ดเฉพาะ
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
-### Phi-3 Models in GitHub Model Catalog
+### โมเดล Phi-3 ใน GitHub Model Catalog
 
 [Phi-3-Medium-128k-Instruct](https://github.com/marketplace/models/azureml/Phi-3-medium-128k-instruct)
 
@@ -35,28 +35,28 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Phi-3-small-8k-instruct](https://github.com/marketplace/models/azureml/Phi-3-small-8k-instruct)
 
-## Getting Started
+## เริ่มต้นใช้งาน
 
-มีตัวอย่างพื้นฐานพร้อมให้คุณลองใช้งาน คุณสามารถหาได้ในโฟลเดอร์ samples หากคุณต้องการไปยังภาษาที่ชื่นชอบโดยตรง ตัวอย่างโค้ดมีในภาษาดังนี้:
+มีตัวอย่างพื้นฐานบางส่วนที่พร้อมให้คุณทดลองใช้งาน คุณสามารถหาได้ในโฟลเดอร์ samples หากคุณต้องการข้ามไปยังภาษาที่ชื่นชอบ คุณสามารถดูตัวอย่างในภาษาต่อไปนี้ได้:
 
 - Python
 - JavaScript
 - cURL
 
-นอกจากนี้ยังมี Codespaces Environment เฉพาะสำหรับรันตัวอย่างและโมเดล
+นอกจากนี้ยังมีสภาพแวดล้อม Codespaces เฉพาะสำหรับรันตัวอย่างและโมเดล
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.th.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.th.png)
 
-## Sample Code
+## ตัวอย่างโค้ด
 
-ด้านล่างเป็นตัวอย่างโค้ดสำหรับกรณีการใช้งานบางส่วน สำหรับข้อมูลเพิ่มเติมเกี่ยวกับ Azure AI Inference SDK โปรดดูเอกสารและตัวอย่างโค้ดทั้งหมด
+ด้านล่างเป็นตัวอย่างโค้ดสำหรับกรณีการใช้งานบางอย่าง สำหรับข้อมูลเพิ่มเติมเกี่ยวกับ Azure AI Inference SDK โปรดดูเอกสารและตัวอย่างเต็มรูปแบบ
 
-## Setup
+## การตั้งค่า
 
 1. สร้าง personal access token  
 คุณไม่จำเป็นต้องให้สิทธิ์ใดๆ กับ token นี้ โปรดทราบว่า token จะถูกส่งไปยังบริการของ Microsoft
 
-เพื่อใช้ตัวอย่างโค้ดด้านล่าง สร้าง environment variable เพื่อเก็บ token ของคุณเป็นกุญแจสำหรับโค้ดฝั่งไคลเอนต์
+เพื่อใช้ตัวอย่างโค้ดด้านล่าง ให้สร้าง environment variable เพื่อกำหนด token ของคุณเป็นคีย์สำหรับโค้ดฝั่งไคลเอนต์
 
 ถ้าคุณใช้ bash:  
 ```
@@ -74,7 +74,7 @@ $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 set GITHUB_TOKEN=<your-github-token-goes-here>
 ```  
 
-## Python Sample
+## ตัวอย่าง Python
 
 ### ติดตั้ง dependencies  
 ติดตั้ง Azure AI Inference SDK ด้วย pip (ต้องใช้ Python >=3.8):  
@@ -82,9 +82,9 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 ```
 pip install azure-ai-inference
 ```  
-### รันตัวอย่างโค้ดพื้นฐาน  
+### รันตัวอย่างโค้ดพื้นฐาน
 
-ตัวอย่างนี้แสดงการเรียกใช้งาน chat completion API แบบพื้นฐาน โดยใช้ GitHub AI model inference endpoint และ token ของคุณ การเรียกนี้เป็นแบบ synchronous
+ตัวอย่างนี้แสดงการเรียกใช้งาน API chat completion แบบพื้นฐาน โดยใช้ GitHub AI model inference endpoint และ token GitHub ของคุณ การเรียกใช้งานเป็นแบบ synchronous
 
 ```
 import os
@@ -114,11 +114,11 @@ response = client.complete(
 )
 
 print(response.choices[0].message.content)
-```  
+```
 
-### รันการสนทนาแบบหลายรอบ  
+### รันการสนทนาแบบหลายรอบ
 
-ตัวอย่างนี้แสดงการสนทนาแบบหลายรอบกับ chat completion API เมื่อใช้โมเดลสำหรับแอปแชท คุณจะต้องจัดการประวัติการสนทนาและส่งข้อความล่าสุดไปยังโมเดล
+ตัวอย่างนี้แสดงการสนทนาแบบหลายรอบกับ API chat completion เมื่อใช้โมเดลสำหรับแอปแชท คุณจะต้องจัดการประวัติการสนทนาและส่งข้อความล่าสุดไปยังโมเดล
 
 ```
 import os
@@ -146,11 +146,11 @@ messages = [
 response = client.complete(messages=messages, model=model_name)
 
 print(response.choices[0].message.content)
-```  
+```
 
-### สตรีมผลลัพธ์  
+### สตรีมผลลัพธ์
 
-เพื่อประสบการณ์ผู้ใช้ที่ดีกว่า คุณจะต้องสตรีมการตอบกลับของโมเดลเพื่อให้ token แรกแสดงผลเร็วขึ้นและไม่ต้องรอคำตอบนาน
+เพื่อประสบการณ์ผู้ใช้ที่ดียิ่งขึ้น คุณจะต้องสตรีมการตอบกลับของโมเดลเพื่อให้ token แรกแสดงผลเร็วขึ้นและไม่ต้องรอการตอบกลับนาน
 
 ```
 import os
@@ -182,15 +182,15 @@ for update in response:
         print(update.choices[0].delta.content or "", end="")
 
 client.close()
-```  
+```
 
 ## JavaScript
 
-### ติดตั้ง dependencies  
+### ติดตั้ง dependencies
 
-ติดตั้ง Node.js  
+ติดตั้ง Node.js
 
-คัดลอกบรรทัดข้อความด้านล่างและบันทึกเป็นไฟล์ package.json ในโฟลเดอร์ของคุณ  
+คัดลอกบรรทัดข้อความด้านล่างและบันทึกเป็นไฟล์ package.json ในโฟลเดอร์ของคุณ
 
 ```
 {
@@ -201,17 +201,17 @@ client.close()
     "@azure/core-sse": "latest"
   }
 }
-```  
+```
 
-หมายเหตุ: @azure/core-sse จำเป็นเฉพาะเมื่อคุณสตรีมการตอบกลับของ chat completions  
+หมายเหตุ: @azure/core-sse จำเป็นเฉพาะเมื่อคุณสตรีมการตอบกลับของ chat completions เท่านั้น
 
-เปิดเทอร์มินัลในโฟลเดอร์นี้แล้วรันคำสั่ง npm install  
+เปิดหน้าต่างเทอร์มินัลในโฟลเดอร์นี้และรันคำสั่ง npm install
 
-สำหรับแต่ละตัวอย่างโค้ดด้านล่าง ให้คัดลอกเนื้อหาไปยังไฟล์ sample.js แล้วรันด้วยคำสั่ง node sample.js  
+สำหรับแต่ละตัวอย่างโค้ดด้านล่าง ให้คัดลอกเนื้อหาไปยังไฟล์ sample.js และรันด้วยคำสั่ง node sample.js
 
-### รันตัวอย่างโค้ดพื้นฐาน  
+### รันตัวอย่างโค้ดพื้นฐาน
 
-ตัวอย่างนี้แสดงการเรียกใช้งาน chat completion API แบบพื้นฐาน โดยใช้ GitHub AI model inference endpoint และ token ของคุณ การเรียกนี้เป็นแบบ synchronous
+ตัวอย่างนี้แสดงการเรียกใช้งาน API chat completion แบบพื้นฐาน โดยใช้ GitHub AI model inference endpoint และ token GitHub ของคุณ การเรียกใช้งานเป็นแบบ synchronous
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -248,11 +248,11 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-### รันการสนทนาแบบหลายรอบ  
+### รันการสนทนาแบบหลายรอบ
 
-ตัวอย่างนี้แสดงการสนทนาแบบหลายรอบกับ chat completion API เมื่อใช้โมเดลสำหรับแอปแชท คุณจะต้องจัดการประวัติการสนทนาและส่งข้อความล่าสุดไปยังโมเดล
+ตัวอย่างนี้แสดงการสนทนาแบบหลายรอบกับ API chat completion เมื่อใช้โมเดลสำหรับแอปแชท คุณจะต้องจัดการประวัติการสนทนาและส่งข้อความล่าสุดไปยังโมเดล
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -291,11 +291,11 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
-### สตรีมผลลัพธ์  
+### สตรีมผลลัพธ์
 
-เพื่อประสบการณ์ผู้ใช้ที่ดีกว่า คุณจะต้องสตรีมการตอบกลับของโมเดลเพื่อให้ token แรกแสดงผลเร็วขึ้นและไม่ต้องรอคำตอบนาน
+เพื่อประสบการณ์ผู้ใช้ที่ดียิ่งขึ้น คุณจะต้องสตรีมการตอบกลับของโมเดลเพื่อให้ token แรกแสดงผลเร็วขึ้นและไม่ต้องรอการตอบกลับนาน
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -347,13 +347,13 @@ export async function main() {
 main().catch((err) => {
   console.error("The sample encountered an error:", err);
 });
-```  
+```
 
 ## REST
 
-### รันตัวอย่างโค้ดพื้นฐาน  
+### รันตัวอย่างโค้ดพื้นฐาน
 
-วางคำสั่งต่อไปนี้ใน shell:  
+วางโค้ดต่อไปนี้ใน shell:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -372,10 +372,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
-### รันการสนทนาแบบหลายรอบ  
+```
 
-เรียก chat completion API พร้อมส่งประวัติการสนทนา:  
+### รันการสนทนาแบบหลายรอบ
+
+เรียกใช้งาน API chat completion และส่งประวัติการสนทนา:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -402,10 +403,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
-### สตรีมผลลัพธ์  
+```
 
-นี่คือตัวอย่างการเรียก endpoint และสตรีมการตอบกลับ  
+### สตรีมผลลัพธ์
+
+นี่คือตัวอย่างการเรียก endpoint และสตรีมการตอบกลับ
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -425,23 +427,23 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "stream": true,
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
+```
 
-## FREE Usage and Rate limits for GitHub Models
+## การใช้งานฟรีและข้อจำกัดอัตราสำหรับ GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.th.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.th.png)
 
-[rate limits for the playground and free API usage](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) ถูกออกแบบมาเพื่อช่วยให้คุณทดลองกับโมเดลและสร้างต้นแบบแอป AI ของคุณ สำหรับการใช้งานที่เกินขีดจำกัดเหล่านี้ และเพื่อขยายแอปพลิเคชันของคุณ คุณต้องจัดสรรทรัพยากรจากบัญชี Azure และยืนยันตัวตนจากที่นั่นแทนการใช้ GitHub personal access token ของคุณ คุณไม่ต้องเปลี่ยนแปลงโค้ดอื่นใด ใช้ลิงก์นี้เพื่อเรียนรู้วิธีขยายขีดจำกัดฟรีใน Azure AI  
+[ข้อจำกัดอัตราสำหรับ playground และการใช้งาน API ฟรี](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) มีไว้เพื่อช่วยให้คุณทดลองใช้โมเดลและสร้างต้นแบบแอป AI ของคุณ สำหรับการใช้งานเกินขีดจำกัดเหล่านี้ และเพื่อขยายแอปของคุณ คุณต้องจัดสรรทรัพยากรจากบัญชี Azure และยืนยันตัวตนจากที่นั่นแทนการใช้ personal access token ของ GitHub คุณไม่จำเป็นต้องเปลี่ยนแปลงโค้ดอื่นใด ใช้ลิงก์นี้เพื่อค้นหาวิธีการใช้งานเกินขีดจำกัดฟรีใน Azure AI
 
-### Disclosures
+### ข้อควรทราบ
 
-โปรดจำไว้ว่าเมื่อคุณโต้ตอบกับโมเดล คุณกำลังทดลองกับ AI ซึ่งอาจเกิดข้อผิดพลาดในเนื้อหาได้  
+โปรดจำไว้ว่าเมื่อคุณโต้ตอบกับโมเดล คุณกำลังทดลองใช้ AI ดังนั้นอาจมีข้อผิดพลาดในเนื้อหาเกิดขึ้นได้
 
-ฟีเจอร์นี้มีข้อจำกัดหลายอย่าง (รวมถึงคำขอต่อวินาที คำขอต่อวัน โทเค็นต่อคำขอ และคำขอพร้อมกัน) และไม่ได้ออกแบบมาสำหรับการใช้งานในสภาพแวดล้อมจริง  
+ฟีเจอร์นี้มีข้อจำกัดหลายประการ (รวมถึงจำนวนคำขอต่อวินาที, คำขอต่อวัน, โทเค็นต่อคำขอ และคำขอพร้อมกัน) และไม่ได้ออกแบบมาเพื่อใช้งานในกรณีผลิตจริง
 
-GitHub Models ใช้ Azure AI Content Safety ซึ่งฟิลเตอร์เหล่านี้ไม่สามารถปิดได้ในประสบการณ์ของ GitHub Models หากคุณเลือกใช้โมเดลผ่านบริการแบบชำระเงิน โปรดตั้งค่าฟิลเตอร์เนื้อหาให้ตรงกับความต้องการของคุณ  
+GitHub Models ใช้ Azure AI Content Safety ตัวกรองเหล่านี้ไม่สามารถปิดได้ในประสบการณ์ GitHub Models หากคุณตัดสินใจใช้โมเดลผ่านบริการที่ต้องชำระเงิน โปรดตั้งค่าตัวกรองเนื้อหาให้ตรงกับความต้องการของคุณ
 
 บริการนี้อยู่ภายใต้ข้อกำหนด Pre-release ของ GitHub
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาด้วย AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางควรถูกพิจารณาเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้การแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดที่เกิดขึ้นจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

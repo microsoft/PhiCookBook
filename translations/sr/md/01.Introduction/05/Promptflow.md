@@ -2,80 +2,80 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-05-09T15:23:06+00:00",
+  "translation_date": "2025-07-16T22:45:04+00:00",
   "source_file": "md/01.Introduction/05/Promptflow.md",
   "language_code": "sr"
 }
 -->
-# **Uvod u Promptflow**
+# **Упознавање са Promptflow-ом**
 
-[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) je vizuelni alat za automatizaciju tokova rada koji omogućava korisnicima da kreiraju automatizovane tokove koristeći unapred pripremljene šablone i prilagođene konektore. Dizajniran je da omogući programerima i poslovnim analitičarima brzo pravljenje automatizovanih procesa za zadatke kao što su upravljanje podacima, saradnja i optimizacija procesa. Sa Prompt Flow, korisnici lako povezuju različite servise, aplikacije i sisteme i automatizuju složene poslovne procese.
+[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) је визуелни алат за аутоматизацију радних токова који омогућава корисницима да креирају аутоматизоване процесе користећи унапред направљене шаблоне и прилагођене конекторе. Дизајниран је да омогући програмерима и пословним аналитичарима брзо креирање аутоматизованих процеса за задатке као што су управљање подацима, сарадња и оптимизација процеса. Уз Prompt Flow, корисници могу лако повезивати различите сервисе, апликације и системе и аутоматизовати сложене пословне процесе.
 
-Microsoft Prompt Flow je napravljen da pojednostavi ceo razvojni ciklus AI aplikacija zasnovanih na velikim jezičkim modelima (LLMs). Bilo da smišljate ideje, pravite prototipe, testirate, ocenjujete ili implementirate aplikacije zasnovane na LLM-ovima, Prompt Flow olakšava ceo proces i omogućava vam da napravite LLM aplikacije profesionalnog kvaliteta.
+Microsoft Prompt Flow је осмишљен да поједностави цео развојни циклус AI апликација које користе Large Language Models (LLMs). Без обзира да ли осмишљавате идеје, правите прототипове, тестирате, процењујете или имплементирате апликације засноване на LLM-овима, Prompt Flow поједностављује процес и омогућава вам да изградите LLM апликације производног квалитета.
 
-## Ključne funkcije i prednosti korišćenja Microsoft Prompt Flow:
+## Кључне карактеристике и предности коришћења Microsoft Prompt Flow-а:
 
-**Interaktivno kreiranje**
+**Интерактивно искуство креирања**
 
-Prompt Flow pruža vizuelni prikaz strukture vašeg toka, što olakšava razumevanje i navigaciju kroz projekte.  
-Nudi iskustvo kodiranja slično notebuku za efikasan razvoj i otklanjanje grešaka u toku.
+Prompt Flow пружа визуелан приказ структуре вашег тока, што олакшава разумевање и навигацију кроз пројекте.  
+Нуди искуство слично бележници за ефикасан развој и отклањање грешака у току.
 
-**Varijante i podešavanje promptova**
+**Варијанте и подешавање упита**
 
-Kreirajte i uporedite više varijanti promptova kako biste olakšali iterativni proces usavršavanja. Procijenite performanse različitih promptova i izaberite one najučinkovitije.
+Креирајте и упоредите више варијанти упита како бисте олакшали итеративни процес усавршавања. Процените перформансе различитих упита и изаберите најефикасније.
 
-**Ugrađeni evaluacioni tokovi**  
-Procijenite kvalitet i efikasnost vaših promptova i tokova koristeći ugrađene evaluacione alate.  
-Razumite koliko dobro vaše LLM aplikacije funkcionišu.
+**Уграђени токови за процену**
 
-**Sveobuhvatni resursi**
+Процените квалитет и ефикасност ваших упита и токова користећи уграђене алате за процену.  
+Разумите колико добро ваше апликације засноване на LLM-овима раде.
 
-Prompt Flow uključuje biblioteku ugrađenih alata, primera i šablona. Ovi resursi služe kao polazna tačka za razvoj, podstiču kreativnost i ubrzavaju proces.
+**Обимни ресурси**
 
-**Saradnja i spremnost za preduzeća**
+Prompt Flow укључује библиотеку уграђених алата, примера и шаблона. Ови ресурси служе као полазна тачка за развој, подстичу креативност и убрзавају процес.
 
-Podržava timsku saradnju omogućavajući više korisnika da rade zajedno na projektima prompt inženjeringa.  
-Održava kontrolu verzija i efikasno deli znanje. Pojednostavljuje ceo proces prompt inženjeringa, od razvoja i evaluacije do implementacije i nadzora.
+**Сарадња и спремност за предузећа**
 
-## Evaluacija u Prompt Flow
+Подржава тимски рад омогућавајући више корисника да заједно раде на пројектима инжењеринга упита.  
+Одржава контролу верзија и ефикасно дели знање. Поједностављује цео процес инжењеринга упита, од развоја и процене до имплементације и праћења.
 
-U Microsoft Prompt Flow-u, evaluacija ima ključnu ulogu u proceni performansi vaših AI modela. Pogledajmo kako možete prilagoditi evaluacione tokove i metrike unutar Prompt Flow-a:
+## Процена у Prompt Flow-у
 
-![PFVizualise](../../../../../translated_images/pfvisualize.93c453890f4088830217fa7308b1a589058ed499bbfff160c85676066b5cbf2d.sr.png)
+У Microsoft Prompt Flow-у, процена игра кључну улогу у оцењивању перформанси ваших AI модела. Погледајмо како можете прилагодити токове процене и метрике у Prompt Flow-у:
 
-**Razumevanje evaluacije u Prompt Flow-u**
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.sr.png)
 
-U Prompt Flow-u, tok predstavlja niz čvorova koji obrađuju ulaz i generišu izlaz. Evaluacioni tokovi su posebne vrste tokova dizajnirane da procene performanse izvršavanja na osnovu određenih kriterijuma i ciljeva.
+**Разумевање процене у Prompt Flow-у**
 
-**Ključne karakteristike evaluacionih tokova**
+У Prompt Flow-у, ток представља низ чворова који обрађују улаз и генеришу излаз. Токови процене су посебне врсте токова дизајниране да оцењују перформансе извршења на основу одређених критеријума и циљева.
 
-Obično se pokreću nakon toka koji se testira, koristeći njegove izlaze.  
-Izračunavaju skorove ili metrike koje mere performanse testiranog toka. Metrike mogu uključivati tačnost, relevantnost ili druge odgovarajuće mere.
+**Кључне карактеристике токова процене**
 
-### Prilagođavanje evaluacionih tokova
+Обично се извршавају након тока који се тестира, користећи његове излазе. Израчунавају резултате или метрике за мерење перформанси тока који се тестира. Метрике могу укључивати тачност, оцене релевантности или друге релевантне мере.
 
-**Definisanje ulaza**
+### Прилагођавање токова процене
 
-Evaluacioni tokovi moraju da primaju izlaze toka koji se testira. Definišite ulaze slično kao kod standardnih tokova.  
-Na primer, ako ocenjujete QnA tok, nazovite ulaz "answer". Ako ocenjujete tok klasifikacije, nazovite ulaz "category". Mogu biti potrebni i ulazi sa stvarnim vrednostima (npr. stvarne oznake).
+**Дефинисање улаза**
 
-**Izlazi i metrike**
+Токови процене морају примати излазе тока који се тестира. Дефинишите улазе слично као код стандардних токова.  
+На пример, ако процењујете QnA ток, улаз назовите "answer". Ако процењујете ток класификације, улаз назовите "category". Могу бити потребни и улази са стварним вредностима (нпр. стварне ознаке).
 
-Evaluacioni tokovi proizvode rezultate koji mere performanse testiranog toka. Metrike se mogu računati koristeći Python ili LLM. Koristite funkciju log_metric() za beleženje relevantnih metrika.
+**Излази и метрике**
 
-**Korišćenje prilagođenih evaluacionih tokova**
+Токови процене производе резултате који мере перформансе тока који се тестира. Метрике се могу израчунати помоћу Python-а или LLM-а. Користите функцију log_metric() за евидентирање релевантних метрика.
 
-Razvijte sopstveni evaluacioni tok prilagođen vašim specifičnim zadacima i ciljevima. Prilagodite metrike na osnovu ciljeva evaluacije.  
-Primijenite ovaj prilagođeni evaluacioni tok na serijske pokrete za testiranje u velikom obimu.
+**Коришћење прилагођених токова процене**
 
-## Ugrađene metode evaluacije
+Развијте свој ток процене прилагођен вашим специфичним задацима и циљевима. Прилагодите метрике у складу са својим циљевима процене.  
+Примените овај прилагођени ток процене на серијске извршења за тестирање у великом обиму.
 
-Prompt Flow takođe nudi ugrađene metode evaluacije.  
-Možete pokretati serijske testove i koristiti ove metode da procenite koliko dobro vaš tok funkcioniše sa velikim skupovima podataka.  
-Pogledajte rezultate evaluacije, uporedite metrike i iterirajte po potrebi.  
-Zapamtite, evaluacija je ključna za osiguravanje da vaši AI modeli ispunjavaju željene kriterijume i ciljeve. Pogledajte zvaničnu dokumentaciju za detaljna uputstva o razvoju i korišćenju evaluacionih tokova u Microsoft Prompt Flow-u.
+## Уграђене методе процене
 
-Ukratko, Microsoft Prompt Flow omogućava programerima da kreiraju visokokvalitetne LLM aplikacije pojednostavljujući prompt inženjering i pružajući snažno razvojno okruženje. Ako radite sa LLM-ovima, Prompt Flow je vredan alat za istraživanje. Pogledajte [Prompt Flow Evaluation Documents](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) za detaljna uputstva o razvoju i korišćenju evaluacionih tokova u Microsoft Prompt Flow-u.
+Prompt Flow такође пружа уграђене методе процене.  
+Можете покренути серијска извршења и користити ове методе да процените колико добро ваш ток ради са великим скупом података.  
+Погледајте резултате процене, упоредите метрике и по потреби поновите поступак.  
+Имајте на уму да је процена неопходна за осигурање да ваши AI модели испуњавају жељене критеријуме и циљеве. Погледајте званичну документацију за детаљна упутства о развоју и коришћењу токова процене у Microsoft Prompt Flow-у.
+
+Укратко, Microsoft Prompt Flow омогућава програмерима да креирају квалитетне LLM апликације поједностављујући инжењеринг упита и пружајући робусно развојно окружење. Ако радите са LLM-овима, Prompt Flow је вредан алат за истраживање. Погледајте [Prompt Flow Evaluation Documents](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) за детаљна упутства о развоју и коришћењу токова процене у Microsoft Prompt Flow-у.
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да превод буде тачан, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Изворни документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:06:27+00:00",
+  "translation_date": "2025-07-17T08:52:53+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "hu"
 }
 -->
 # Phi-3.5-vision finomhangolási recept
 
-Ez az hivatalos támogatás a Phi-3.5-vision finomhangolásához a huggingface könyvtárak segítségével.  
-Kérjük, lépj be a kód könyvtárba [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) a következő parancsok futtatása előtt.
+Ez a hivatalos támogatás a Phi-3.5-vision finomhangolásához a huggingface könyvtárak használatával.  
+Kérjük, futtatás előtt lépj be a kód könyvtárba: [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning).
 
 ## Telepítés
 
@@ -35,7 +35,7 @@ pip install bitsandbytes==0.43.1
 
 ## Gyors kezdés
 
-Két példát adunk finomhangolási szkriptre, egyet a DocVQA-hoz és egyet a gyűlöletkeltő mémek osztályozásához.
+Két példa finomhangolási szkriptet biztosítunk, egyet a DocVQA-hoz és egyet a gyűlöletkeltő mémek osztályozásához.
 
 Minimálisan tesztelt hardver: 4x RTX8000 (48GB RAM GPU-nként)
 
@@ -44,7 +44,7 @@ Minimálisan tesztelt hardver: 4x RTX8000 (48GB RAM GPU-nként)
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-A Phi-3.5-vision most már hivatalosan támogatja a többkép-bemenetet. Itt egy példa az NLVR2 finomhangolására
+A Phi-3.5-vision most már hivatalosan támogatja a többkép-bemeneteket is. Íme egy példa az NLVR2 finomhangolására.
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -52,13 +52,13 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## Használati útmutató
 
-A hardvertől függően a felhasználók különböző finomhangolási stratégiákat választhatnak. Támogatjuk  
-a teljes finomhangolást (Deepspeed Zero-2-vel), opcionálisan lefagyasztott látási paraméterekkel, valamint a LoRA-t (beleértve a 4bit QLoRA-t is).  
-Általánosságban azt javasoljuk, hogy ahol csak lehet, használják a teljes finomhangolást flash attention-nel és bf16 formátumban.
+A hardvertől függően a felhasználók különböző finomhangolási stratégiákat választhatnak. Támogatjuk a  
+teljes finomhangolást (Deepspeed Zero-2-vel), opcionálisan lefagyasztott látási paraméterekkel, valamint a LoRA-t (beleértve a 4bit QLoRA-t is).  
+Általánosságban javasoljuk a teljes finomhangolás használatát flash attention-nel és bf16-tal, amikor csak lehetséges.
 
-### Útmutató egyedi adatállomány átalakításához a szükséges formátumra
+### Útmutató egyedi adatkészleted átalakításához a szükséges formátumra
 
-Egy minimális videóosztályozó adatállományt (az UCF-101 egy részhalmazát) használunk end-to-end példaként, hogy megmutassuk, hogyan alakíthatod át a saját adatállományodat a szükséges formátumra, és hogyan finomhangolhatod rajta a Phi-3.5-vision-t.
+Egy minimális videóosztályozó adatkészletet (az UCF-101 egy részhalmazát) használunk végponttól végpontig példaként, hogy bemutassuk, hogyan alakíthatod át az egyedi adatkészleted a szükséges formátumra, és hogyan finomhangolhatod rajta a Phi-3.5-vision-t.
 
 ```bash
 # convert data
@@ -114,49 +114,49 @@ Az átalakított adatok így fognak kinézni:
 34 directories, 3 files
 ```
 
-A `jsonl` annotációnál minden sor egy szótár legyen, például:
+A `jsonl` annotáció esetén minden sor egy szótár legyen, például:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Fontos megjegyezni, hogy a `conversations` lista típusú, így többfordulós beszélgetéseket is támogat, ha ilyen adat áll rendelkezésre.
+Fontos megjegyezni, hogy a `conversations` egy lista, így többfordulós beszélgetések is támogatottak, ha ilyen adatok rendelkezésre állnak.
 
 ## Azure GPU kvóta igénylése
 
 ### Előfeltételek
 
-Egy Azure fiók Contributor szerepkörrel (vagy olyan szerepkörrel, amely tartalmaz Contributor jogosultságot).
+Egy Azure fiók, amely rendelkezik Contributor szerepkörrel (vagy más, Contributor hozzáférést tartalmazó szerepkörrel).
 
 Ha még nincs Azure fiókod, hozz létre egy [ingyenes fiókot a kezdés előtt](https://azure.microsoft.com).
 
-### Kvóta növelésének igénylése
+### Kvóta növelés igénylése
 
-Kvóta növelési kérelmet közvetlenül a My quotas felületről is be lehet nyújtani. Kövesd az alábbi lépéseket egy kvóta növelésének igényléséhez. Ehhez az példához bármelyik módosítható kvótát kiválaszthatod az előfizetésedben.
+Kvóta növelési kérelmet közvetlenül a My quotas felületről is beadhatsz. Az alábbi lépéseket követve kérhetsz növelést egy kvótára. Ebben a példában bármelyik állítható kvótát kiválaszthatod az előfizetésedben.
 
-Jelentkezz be az [Azure portálba](https://portal.azure.com).
+Jelentkezz be az [Azure portálra](https://portal.azure.com).
 
-Írd be a keresőbe, hogy „quotas”, majd válaszd ki a Quotas menüpontot.  
+Írd be a keresőmezőbe, hogy "quotas", majd válaszd a Quotas menüpontot.  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
 Az Áttekintő oldalon válassz egy szolgáltatót, például Compute vagy AML.
 
-**Megjegyzés**: Minden szolgáltatónál a Compute kivételével a Request increase oszlopot fogod látni az Adjustable oszlop helyett. Itt kérhetsz növelést egy adott kvótára, vagy létrehozhatsz támogatási kérelmet a növeléshez.
+**Megjegyzés:** Minden más szolgáltatónál, mint a Compute, a Request increase oszlopot fogod látni az Adjustable oszlop helyett. Itt kérhetsz növelést egy adott kvótára, vagy létrehozhatsz támogatási kérelmet a növeléshez.
 
-A My quotas oldalon, a Quota name alatt válaszd ki a növelni kívánt kvótát. Győződj meg róla, hogy az Adjustable oszlopban Igen szerepel erre a kvótára.
+A My quotas oldalon, a Quota name alatt válaszd ki a növelni kívánt kvótát. Győződj meg róla, hogy az Adjustable oszlopban Igen szerepel ennél a kvótánál.
 
 Az oldal tetején válaszd az Új kvóta kérelem (New Quota Request) lehetőséget, majd az Új limit megadása (Enter a new limit) opciót.
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-Az Új kvóta kérelem panelen add meg az új kvóta korlát numerikus értékét, majd kattints a Beküldésre (Submit).
+Az Új kvóta kérelem panelen add meg az új kvóta limit numerikus értékét, majd kattints a Beküldésre (Submit).
 
-A kérelmedet átnézik, és értesítenek, ha teljesíthető a kérés. Ez általában néhány percen belül megtörténik.
+A kérelmedet felülvizsgálják, és értesítenek, ha teljesíthető. Ez általában néhány percen belül megtörténik.
 
-Ha a kérelmet nem tudják teljesíteni, kapsz egy linket, amivel támogatási kérelmet hozhatsz létre. Ezen a linken keresztül egy támogatási mérnök segít a kvóta növelési igényedben.
+Ha a kérelmed nem teljesül, egy linket fogsz látni támogatási kérelem létrehozásához. Ezen keresztül egy támogatási mérnök segít a növelési igényedben.
 
-## Azure Compute GPU gép SKU ajánlások
+## Azure Compute GPU gép SKU javaslatok
 
 [ND A100 v4-sorozat](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -164,11 +164,11 @@ Ha a kérelmet nem tudják teljesíteni, kapsz egy linket, amivel támogatási k
 
 [Standard_ND40rs_v2](https://learn.microsoft.com/azure/virtual-machines/ndv2-series)
 
-Néhány példa:
+Íme néhány példa:
 
-### Ha rendelkezel A100 vagy H100 GPU-kkal
+### Ha A100 vagy H100 GPU-d van
 
-A teljes finomhangolás általában a legjobb teljesítményt nyújtja. A következő parancsot használhatod a Phi-3-V finomhangolására gyűlöletkeltő mémek osztályozásához.
+A teljes finomhangolás általában a legjobb teljesítményt nyújtja. Az alábbi parancs segítségével finomhangolhatod a Phi-3-V-t a gyűlöletkeltő mémek osztályozására.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -182,8 +182,8 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Ha Standard_ND40rs_v2 8x V100-32GB GPU-d van
 
-Még mindig lehetséges teljesen finomhangolni a Phi-3-V-t gyűlöletkeltő mémek osztályozására. Azonban számíts jóval alacsonyabb áteresztőképességre az A100 vagy H100 GPU-khoz képest, mivel nincs flash attention támogatás.  
-A pontosság is csökkenhet a bf16 támogatás hiánya miatt (helyette fp16 vegyes precizitású tanítás használatos).
+Még mindig lehetséges a Phi-3-V teljes finomhangolása gyűlöletkeltő mémek osztályozására. Azonban számíts jóval alacsonyabb áteresztőképességre az A100 vagy H100 GPU-khoz képest a flash attention támogatás hiánya miatt.  
+A pontosság is csökkenhet a bf16 támogatás hiánya miatt (helyette fp16 kevert precizitású tréninget használnak).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -195,7 +195,7 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Ha nincs hozzáférésed adatközponti GPU-khoz
 
-A LoRA lehet az egyetlen választásod. A következő parancsot használhatod a Phi-3-V finomhangolására gyűlöletkeltő mémek osztályozásához.
+A LoRA lehet az egyetlen választásod. Az alábbi parancs segítségével finomhangolhatod a Phi-3-V-t a gyűlöletkeltő mémek osztályozására.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -205,7 +205,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-Turing+ GPU esetén a QLoRA támogatott
+Turing+ GPU-k esetén a QLoRA támogatott.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -231,15 +231,15 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-| Tanítási módszer | Lefagyasztott látási modell | adattípus | LoRA rang | LoRA alfa | batch méret | tanulási ráta | epochok | Pontosság |
-|---|---|---|---|---|---|---|---|---|
-| teljes finomhangolás |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-| teljes finomhangolás | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
-| LoRA eredmények hamarosan érkeznek |  |  |  |  |  |  |  |  |
+Tréning módszer | Lefagyasztott látási modell | adattípus | LoRA rang | LoRA alfa | batch méret | tanulási ráta | epochok | Pontosság  
+--- | --- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |  
+full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |  
+LoRA eredmények hamarosan |  |  |  |  |  |  |  |  |
 
 ### MEGJEGYZÉS  
-Az alábbi DocVQA és Hateful memes eredmények a korábbi verzióra (Phi-3-vision) vonatkoznak.  
-Az új eredmények Phi-3.5-vision-nel hamarosan frissítésre kerülnek.
+Az alábbi DocVQA és Gyűlöletkeltő mémek eredmények a korábbi verzióra (Phi-3-vision) vonatkoznak.  
+Az új eredmények a Phi-3.5-vision-nal hamarosan frissülnek.
 
 ### DocVQA (MEGJEGYZÉS: Phi-3-vision)
 
@@ -255,16 +255,16 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-| Tanítási módszer | adattípus | LoRA rang | LoRA alfa | batch méret | tanulási ráta | epochok | ANLS |
-|---|---|---|---|---|---|---|---|
-| teljes finomhangolás | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
-| teljes finomhangolás | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
-| lefagyasztott képmodell | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
-| lefagyasztott képmodell | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
-| LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
-| LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
-| QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
-| QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
+Tréning módszer | adattípus | LoRA rang | LoRA alfa | batch méret | tanulási ráta | epochok | ANLS  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |  
+full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |  
+lefagyasztott képi modell | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |  
+lefagyasztott képi modell | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |  
+LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |  
+LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |  
+QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |  
+QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
 ### Gyűlöletkeltő mémek (MEGJEGYZÉS: Phi-3-vision)
 
@@ -279,52 +279,52 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-| Tanítási módszer | adattípus | LoRA rang | LoRA alfa | batch méret | tanulási ráta | epochok | Pontosság |
-|---|---|---|---|---|---|---|---|
-| teljes finomhangolás | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
-| teljes finomhangolás | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
-| lefagyasztott képmodell | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
-| lefagyasztott képmodell | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
-| LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
-| LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
-| QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
-| QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
+Tréning módszer | adattípus | LoRA rang | LoRA alfa | batch méret | tanulási ráta | epochok | Pontosság  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |  
+full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |  
+lefagyasztott képi modell | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |  
+lefagyasztott képi modell | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |  
+LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |  
+LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |  
+QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |  
+QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 ## Sebességteszt (MEGJEGYZÉS: Phi-3-vision)
 
-Új sebességtesztek Phi-3.5-vision-nel hamarosan frissítésre kerülnek.
+Az új sebességtesztek eredményei a Phi-3.5-vision-nal hamarosan elérhetők lesznek.
 
-A sebességteszt a DocVQA adatállományon történt. Az adatállomány átlagos szekvencia hossza 2443,23 token (a képmodellnél `num_crops=16` használatával).
+A sebességteszt a DocVQA adatkészleten történt. Ennek az adatkészletnek az átlagos szekvencia hossza 2443.23 token (a képi modellhez `num_crops=16` használatával).
 
 ### 8x A100-80GB (Ampere)
 
-| Tanítási módszer | # csomópont | GPU-k | flash attention | Effektív batch méret | Áteresztőképesség (kép/s) | Gyorsulás | Maximális GPU memória (GB) |
-|---|---|---|---|---|---|---|---|
-| teljes finomhangolás | 1 | 8 |  | 64 | 5.041 | 1x | ~42 |
-| teljes finomhangolás | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36 |
-| teljes finomhangolás | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29 |
-| teljes finomhangolás | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26 |
-| lefagyasztott képmodell | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29 |
-| lefagyasztott képmodell | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27 |
-| LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50 |
-| LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16 |
-| QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32 |
-| QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10 |
+Tréning módszer | \# csomópont | GPU-k | flash attention | Effektív batch méret | Áteresztőképesség (kép/s) | Gyorsulás | Maximális GPU memória (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | 1 | 8 |  | 64 | 5.041 | 1x | ~42 |  
+full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36 |  
+full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29 |  
+full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26 |  
+lefagyasztott képi modell | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29 |  
+lefagyasztott képi modell | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27 |  
+LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50 |  
+LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16 |  
+QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32 |  
+QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10 |
 
 ### 8x V100-32GB (Volta)
 
-| Tanítási módszer | # csomópont | GPU-k | flash attention | Effektív batch méret | Áteresztőképesség (kép/s) | Gyorsulás | Maximális GPU memória (GB) |
-|---|---|---|---|---|---|---|---|
-| teljes finomhangolás | 1 | 8 |  | 64 | 2.462 | 1x | ~32 |
-| teljes finomhangolás | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32 |
-| teljes finomhangolás | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32 |
-| lefagyasztott képmodell | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27 |
-| LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30 |
+Tréning módszer | \# csomópont | GPU-k | flash attention | Effektív batch méret | Áteresztőképesség (kép/s) | Gyorsulás | Maximális GPU memória (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | 1 | 8 |  | 64 | 2.462 | 1x | ~32 |  
+full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32 |  
+full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32 |  
+lefagyasztott képi modell | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27 |  
+LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30 |
 
 ## Ismert problémák
 
-- Nem lehet flash attention-t futtatni fp16-tal (bf16 használata mindig ajánlott, ha elérhető, és minden flash attention-t támogató GPU támogatja a bf16-ot is).  
-- Még nem támogatott a köztes ellenőrzőpontok mentése és a tanítás folytatása.
+- Nem futtatható flash attention fp16-tal (bf16 használata mindig ajánlott, ha elérhető, és minden flash attention-t támogató GPU támogatja a bf16-ot is).  
+- Jelenleg nem támogatott a köztes ellenőrzőpontok mentése és a tréning folytatása.
 
-**Nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

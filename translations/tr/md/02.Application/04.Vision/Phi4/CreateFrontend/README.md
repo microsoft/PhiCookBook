@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-05-09T20:03:39+00:00",
+  "translation_date": "2025-07-17T05:08:22+00:00",
   "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "tr"
 }
 -->
-## **Phi-4-multimodal kullanarak resimleri okuyun ve kod üretin**
+## **Phi-4-multimodal ile Görüntüleri Okuyup Kod Üretme**
 
-Phi-4-multimodal, güçlü resim okuma yeteneklerine sahiptir. Aşağıdaki işlevleri gerçekleştirmek için Python kullanmayı deneyelim. Görsel bir ChatGPT sayfasıdır.
+Phi-4-multimodal, güçlü görüntü okuma yeteneklerine sahiptir. Aşağıdaki fonksiyonları Python ile gerçekleştirmeyi deneyelim. Görüntü, bir ChatGPT sayfasıdır.
 
-![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.tr.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.tr.png)
 
 ### **Örnek Kod**
 
@@ -68,4 +68,4 @@ print(response)
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum farklılıklarından sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

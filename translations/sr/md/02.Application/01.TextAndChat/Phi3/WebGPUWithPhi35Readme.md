@@ -2,78 +2,78 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b62864faf628eb07f5231d4885555198",
-  "translation_date": "2025-05-09T19:00:36+00:00",
+  "translation_date": "2025-07-17T03:13:40+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md",
   "language_code": "sr"
 }
 -->
 # Phi-3.5-Instruct WebGPU RAG Chatbot
 
-## Demo za prikaz WebGPU i RAG šablona
+## Демонстрација за приказ WebGPU и RAG шаблона
 
-RAG šablon sa Phi-3.5 Onnx Hosted modelom koristi pristup Retrieval-Augmented Generation, kombinujući snagu Phi-3.5 modela sa ONNX hostingom za efikasne AI implementacije. Ovaj šablon je ključan za fino podešavanje modela za zadatke specifične za određene oblasti, nudeći kombinaciju kvaliteta, isplativosti i razumevanja dugih konteksta. Deo je Azure AI paketa, pružajući širok izbor modela koji su lako dostupni, isprobavajući i koristeći, prilagođeni potrebama različitih industrija.
+RAG шаблон са Phi-3.5 Onnx Hosted моделом користи приступ Retrieval-Augmented Generation, комбинујући снагу Phi-3.5 модела са ONNX хостингом за ефикасне AI имплементације. Овај шаблон је кључан за фино подешавање модела за специфичне домене, нудећи комбинацију квалитета, економичности и разумевања дугог контекста. Представља део Azure AI пакета, пружајући широк избор модела који су лако доступни, испробљиви и употребљиви, прилагођени потребама различитих индустрија.
 
-## Šta je WebGPU  
-WebGPU je moderan web grafički API dizajniran da omogući efikasan pristup grafičkoj procesorskoj jedinici (GPU) uređaja direktno iz web pregledača. Namenjen je da bude naslednik WebGL-a, nudeći nekoliko ključnih poboljšanja:
+## Шта је WebGPU  
+WebGPU је модерни веб графички API дизајниран да омогући ефикасан приступ графичком процесору (GPU) уређаја директно из веб прегледача. Намењен је да буде наследник WebGL-а, нудећи неколико кључних побољшања:
 
-1. **Kompatibilnost sa savremenim GPU-ovima**: WebGPU je napravljen da besprekorno radi sa savremenim GPU arhitekturama, koristeći sistemske API-je poput Vulkan, Metal i Direct3D 12.
-2. **Poboljšane performanse**: Podržava opšteprihvaćene GPU proračune i brže operacije, što ga čini pogodnim kako za renderovanje grafike, tako i za zadatke mašinskog učenja.
-3. **Napredne funkcije**: WebGPU omogućava pristup naprednijim GPU mogućnostima, omogućavajući složenije i dinamičnije grafičke i računarske zadatke.
-4. **Smanjeno opterećenje JavaScript-a**: Prebacivanjem više zadataka na GPU, WebGPU značajno smanjuje opterećenje JavaScript-a, što vodi ka boljim performansama i glatkijem radu.
+1. **Компатибилност са савременим GPU-овима**: WebGPU је направљен да беспрекорно ради са модерним архитектурама GPU-а, користећи системске API-је као што су Vulkan, Metal и Direct3D 12.
+2. **Побољшане перформансе**: Подржава опште наменске GPU израчуне и брже операције, што га чини погодним и за графичко приказивање и за задатке машинског учења.
+3. **Напредне функције**: WebGPU пружа приступ сложенијим могућностима GPU-а, омогућавајући комплексније и динамичније графичке и рачунске задатке.
+4. **Смањен оптерећење JavaScript-а**: Преношењем више задатака на GPU, WebGPU значајно смањује оптерећење JavaScript-а, што доводи до бољих перформанси и глаткијег корисничког искуства.
 
-WebGPU je trenutno podržan u pregledačima kao što je Google Chrome, a rad na proširenju podrške na druge platforme je u toku.
+WebGPU тренутно подржавају прегледачи као што је Google Chrome, а рад на проширењу подршке на друге платформе је у току.
 
 ### 03.WebGPU  
-Potrebno okruženje:
+Потребно окружење:
 
-**Podržani pregledači:**  
+**Подржани прегледачи:**  
 - Google Chrome 113+  
 - Microsoft Edge 113+  
 - Safari 18 (macOS 15)  
 - Firefox Nightly.
 
-### Omogućavanje WebGPU-a:
+### Омогућавање WebGPU:
 
-- U Chrome/Microsoft Edge 
+- У Chrome/Microsoft Edge
 
-Omogućite `chrome://flags/#enable-unsafe-webgpu` zastavicu.
+Омогућите `chrome://flags/#enable-unsafe-webgpu` заставицу.
 
-#### Otvorite pregledač:  
-Pokrenite Google Chrome ili Microsoft Edge.
+#### Отворите прегледач:  
+Покрените Google Chrome или Microsoft Edge.
 
-#### Pristupite stranici sa zastavicama:  
-U adresnoj liniji unesite `chrome://flags` i pritisnite Enter.
+#### Приступите страници са заставицама:  
+У адресну траку укуцајте `chrome://flags` и притисните Enter.
 
-#### Pretražite zastavicu:  
-U polju za pretragu na vrhu stranice unesite 'enable-unsafe-webgpu'
+#### Претражите заставицу:  
+У пољу за претрагу на врху странице укуцајте 'enable-unsafe-webgpu'
 
-#### Omogućite zastavicu:  
-Pronađite #enable-unsafe-webgpu zastavicu u listi rezultata.
+#### Омогућите заставицу:  
+Пронађите #enable-unsafe-webgpu заставицу у листи резултата.
 
-Kliknite na padajući meni pored nje i izaberite Enabled.
+Кликните на падајући мени поред ње и изаберите Enabled.
 
-#### Restartujte pregledač:  
+#### Поново покрените прегледач:
 
-Nakon omogućavanja zastavice, potrebno je da restartujete pregledač da bi promene stupile na snagu. Kliknite na dugme Relaunch koje se pojavljuje na dnu stranice.
+Након омогућавања заставице, потребно је да поново покренете прегледач да би промене ступиле на снагу. Кликните на дугме Relaunch које се појављује на дну странице.
 
-- Na Linux-u, pokrenite pregledač sa `--enable-features=Vulkan`.  
-- Safari 18 (macOS 15) ima WebGPU podrazumevano omogućen.  
-- U Firefox Nightly, unesite about:config u adresnoj liniji i `set dom.webgpu.enabled to true`.
+- За Linux, покрените прегледач са `--enable-features=Vulkan`.  
+- Safari 18 (macOS 15) има WebGPU подразумевано омогућен.  
+- У Firefox Nightly, у адресну траку унесите about:config и подесите `dom.webgpu.enabled` на true.
 
-### Podešavanje GPU-a za Microsoft Edge  
+### Подешавање GPU-а за Microsoft Edge  
 
-Evo koraka za podešavanje GPU-a visokih performansi za Microsoft Edge na Windows-u:
+Ево корака за подешавање GPU-а високе перформансе за Microsoft Edge на Windows-у:
 
-- **Otvorite Podešavanja:** Kliknite na Start meni i izaberite Settings.  
-- **Podešavanja sistema:** Idite na System, pa zatim Display.  
-- **Podešavanja grafike:** Skrolujte dole i kliknite na Graphics settings.  
-- **Izaberite aplikaciju:** Pod “Choose an app to set preference,” izaberite Desktop app, pa kliknite Browse.  
-- **Izaberite Edge:** Idite do foldera gde je instaliran Edge (obično `C:\Program Files (x86)\Microsoft\Edge\Application`) i izaberite `msedge.exe`.  
-- **Postavite preferencu:** Kliknite Options, izaberite High performance, pa kliknite Save.  
-Ovo će osigurati da Microsoft Edge koristi vaš GPU visokih performansi za bolje performanse.  
-- **Restartujte** računar da bi ova podešavanja stupila na snagu.
+- **Отворите Подешавања:** Кликните на Старт мени и изаберите Подешавања.  
+- **Системска подешавања:** Идите на System, па Display.  
+- **Графичка подешавања:** Скролујте надоле и кликните на Graphics settings.  
+- **Изаберите апликацију:** Под „Choose an app to set preference“ изаберите Desktop app, па кликните Browse.  
+- **Изаберите Edge:** Пронађите фолдер где је инсталиран Edge (обично `C:\Program Files (x86)\Microsoft\Edge\Application`) и изаберите `msedge.exe`.  
+- **Подесите преференцију:** Кликните Options, изаберите High performance, па кликните Save.  
+Ово ће осигурати да Microsoft Edge користи ваш GPU високе перформансе за боље перформансе.  
+- **Поново покрените** рачунар да би подешавања ступила на снагу.
 
-### Primeri : Molimo [kliknite na ovaj link](https://github.com/microsoft/aitour-exploring-cutting-edge-models/tree/main/src/02.ONNXRuntime/01.WebGPUChatRAG)
+### Примери : Молимо [кликните ову везу](https://github.com/microsoft/aitour-exploring-cutting-edge-models/tree/main/src/02.ONNXRuntime/01.WebGPUChatRAG)
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне тумачења настала употребом овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

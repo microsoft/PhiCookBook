@@ -2,52 +2,52 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:13:08+00:00",
+  "translation_date": "2025-07-17T07:25:47+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "th"
 }
 -->
-## วิธีใช้ chat-completion components จาก Azure ML system registry เพื่อปรับแต่งโมเดล
+## วิธีใช้ส่วนประกอบ chat-completion จาก Azure ML system registry เพื่อปรับแต่งโมเดล
 
-ในตัวอย่างนี้เราจะทำการปรับแต่งโมเดล Phi-3-mini-4k-instruct เพื่อให้โมเดลสามารถตอบสนทนาระหว่างคนสองคนโดยใช้ชุดข้อมูล ultrachat_200k
+ในตัวอย่างนี้เราจะทำการปรับแต่งโมเดล Phi-3-mini-4k-instruct เพื่อให้สามารถสนทนาระหว่างคนสองคนได้โดยใช้ชุดข้อมูล ultrachat_200k
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.th.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.th.png)
 
-ตัวอย่างนี้จะแสดงวิธีการปรับแต่งโมเดลโดยใช้ Azure ML SDK และ Python จากนั้นนำโมเดลที่ปรับแต่งแล้วไปใช้งานบน endpoint ออนไลน์เพื่อทำการทำนายแบบเรียลไทม์
+ตัวอย่างนี้จะแสดงวิธีการปรับแต่งโมเดลโดยใช้ Azure ML SDK และ Python จากนั้นนำโมเดลที่ปรับแต่งแล้วไปใช้งานบน endpoint ออนไลน์สำหรับการทำนายแบบเรียลไทม์
 
 ### ข้อมูลสำหรับการฝึก
 
-เราจะใช้ชุดข้อมูล ultrachat_200k ซึ่งเป็นเวอร์ชันที่ถูกกรองอย่างเข้มข้นของชุดข้อมูล UltraChat และถูกใช้ในการฝึก Zephyr-7B-β ซึ่งเป็นโมเดลแชท 7b ที่ทันสมัยที่สุด
+เราจะใช้ชุดข้อมูล ultrachat_200k ซึ่งเป็นเวอร์ชันที่ผ่านการกรองอย่างเข้มงวดของชุดข้อมูล UltraChat และถูกใช้ในการฝึก Zephyr-7B-β ซึ่งเป็นโมเดลแชท 7b ที่ทันสมัยที่สุด
 
 ### โมเดล
 
-เราจะใช้โมเดล Phi-3-mini-4k-instruct เพื่อแสดงวิธีที่ผู้ใช้สามารถปรับแต่งโมเดลสำหรับงาน chat-completion หากคุณเปิดโน้ตบุ๊กนี้มาจากการ์ดโมเดลเฉพาะ โปรดจำไว้ว่าให้เปลี่ยนชื่อโมเดลให้ตรงกับโมเดลที่คุณใช้
+เราจะใช้โมเดล Phi-3-mini-4k-instruct เพื่อแสดงวิธีการปรับแต่งโมเดลสำหรับงาน chat-completion หากคุณเปิดโน้ตบุ๊กนี้จากการ์ดโมเดลเฉพาะ ให้เปลี่ยนชื่อโมเดลให้ตรงกับโมเดลที่ต้องการ
 
 ### งานที่ต้องทำ
 
 - เลือกโมเดลที่จะปรับแต่ง
-- เลือกและสำรวจข้อมูลสำหรับการฝึก
+- เลือกและสำรวจข้อมูลสำหรับฝึก
 - กำหนดค่าการทำงานของงานปรับแต่ง
 - รันงานปรับแต่ง
-- ตรวจสอบเมตริกการฝึกและประเมินผล
+- ตรวจสอบผลการฝึกและการประเมิน
 - ลงทะเบียนโมเดลที่ปรับแต่งแล้ว
 - นำโมเดลที่ปรับแต่งไปใช้งานแบบเรียลไทม์
 - ทำความสะอาดทรัพยากร
 
-## 1. ตั้งค่าความพร้อมเบื้องต้น
+## 1. การตั้งค่าขั้นต้น
 
 - ติดตั้ง dependencies
-- เชื่อมต่อกับ AzureML Workspace ดูรายละเอียดเพิ่มเติมได้ที่ set up SDK authentication โดยเปลี่ยน <WORKSPACE_NAME>, <RESOURCE_GROUP> และ <SUBSCRIPTION_ID> ตามที่เหมาะสม
+- เชื่อมต่อกับ AzureML Workspace ดูรายละเอียดเพิ่มเติมที่การตั้งค่า SDK authentication โดยเปลี่ยน <WORKSPACE_NAME>, <RESOURCE_GROUP> และ <SUBSCRIPTION_ID> ตามข้อมูลของคุณ
 - เชื่อมต่อกับ azureml system registry
-- กำหนดชื่องานทดลอง (experiment) ที่ต้องการ (ถ้ามี)
+- ตั้งชื่อ experiment แบบไม่บังคับ
 - ตรวจสอบหรือสร้าง compute
 
 > [!NOTE]
-> ความต้องการคือโหนด GPU เดียวสามารถมีการ์ด GPU หลายใบได้ เช่น ในโหนด Standard_NC24rs_v3 มี NVIDIA V100 GPUs 4 ใบ ขณะที่ Standard_NC12s_v3 มี 2 ใบ ดูเอกสารสำหรับข้อมูลนี้ จำนวนการ์ด GPU ต่อโหนดถูกตั้งไว้ในพารามิเตอร์ gpus_per_node ด้านล่าง การตั้งค่านี้ให้ถูกต้องจะช่วยให้ใช้ GPU ทุกใบในโหนดได้อย่างเต็มที่ SKU ของ GPU compute ที่แนะนำสามารถดูได้ที่นี่และที่นี่
+> ต้องใช้โหนด GPU เดียวที่อาจมีหลายการ์ด GPU เช่น ในโหนด Standard_NC24rs_v3 มี NVIDIA V100 GPU 4 ตัว ส่วน Standard_NC12s_v3 มี 2 ตัว ดูรายละเอียดเพิ่มเติมในเอกสาร จำนวนการ์ด GPU ต่อโหนดถูกกำหนดในพารามิเตอร์ gpus_per_node ด้านล่าง การตั้งค่านี้ให้ถูกต้องจะช่วยให้ใช้ GPU ทั้งหมดในโหนดได้อย่างเต็มที่ SKU ของ GPU compute ที่แนะนำสามารถดูได้ที่นี่และที่นี่
 
 ### ไลบรารี Python
 
-ติดตั้ง dependencies โดยรันเซลล์ด้านล่าง ขั้นตอนนี้ไม่ใช่ตัวเลือกถ้ารันในสภาพแวดล้อมใหม่
+ติดตั้ง dependencies โดยรันเซลล์ด้านล่าง ขั้นตอนนี้ไม่ใช่ตัวเลือกหากรันในสภาพแวดล้อมใหม่
 
 ```bash
 pip install azure-ai-ml
@@ -63,15 +63,15 @@ pip install azureml-mlflow
 
     - นำเข้าโมดูลที่จำเป็นจาก azure.ai.ml, azure.identity และ azure.ai.ml.entities รวมถึงโมดูล time
 
-    - พยายามทำการยืนยันตัวตนโดยใช้ DefaultAzureCredential() ซึ่งช่วยให้การยืนยันตัวตนง่ายขึ้นสำหรับการพัฒนาแอปพลิเคชันบนคลาวด์ Azure หากล้มเหลวจะใช้ InteractiveBrowserCredential() ซึ่งจะเปิดหน้าต่างล็อกอินแบบโต้ตอบ
+    - พยายามยืนยันตัวตนด้วย DefaultAzureCredential() ซึ่งช่วยให้การยืนยันตัวตนง่ายขึ้นสำหรับการพัฒนาแอปพลิเคชันบน Azure หากล้มเหลวจะใช้ InteractiveBrowserCredential() ซึ่งเป็นการเข้าสู่ระบบแบบโต้ตอบ
 
-    - จากนั้นพยายามสร้างอินสแตนซ์ MLClient โดยใช้เมธอด from_config ซึ่งอ่านค่าคอนฟิกจากไฟล์ config.json หากล้มเหลวจะสร้าง MLClient โดยระบุ subscription_id, resource_group_name และ workspace_name ด้วยตนเอง
+    - จากนั้นพยายามสร้างอินสแตนซ์ MLClient โดยใช้ from_config ซึ่งอ่านค่าการตั้งค่าจากไฟล์ config.json หากล้มเหลวจะสร้าง MLClient โดยระบุ subscription_id, resource_group_name และ workspace_name ด้วยตนเอง
 
-    - สร้างอินสแตนซ์ MLClient อีกตัวหนึ่งสำหรับ Azure ML registry ชื่อ "azureml" ซึ่งเป็นที่เก็บโมเดล, pipeline สำหรับการปรับแต่ง และสภาพแวดล้อม
+    - สร้าง MLClient อีกอินสแตนซ์หนึ่งสำหรับ Azure ML registry ชื่อ "azureml" ซึ่งเป็นที่เก็บโมเดล, pipeline สำหรับ fine-tuning และ environment
 
-    - กำหนดชื่อ experiment_name เป็น "chat_completion_Phi-3-mini-4k-instruct"
+    - กำหนด experiment_name เป็น "chat_completion_Phi-3-mini-4k-instruct"
 
-    - สร้าง timestamp ที่ไม่ซ้ำกันโดยแปลงเวลาปัจจุบัน (วินาทีตั้งแต่ epoch) เป็นจำนวนเต็มและแปลงเป็นสตริง เพื่อใช้สร้างชื่อหรือเวอร์ชันที่ไม่ซ้ำกัน
+    - สร้าง timestamp ที่ไม่ซ้ำกันโดยแปลงเวลาปัจจุบัน (วินาทีตั้งแต่ epoch) เป็นจำนวนเต็มและแปลงเป็นสตริง ใช้สำหรับสร้างชื่อและเวอร์ชันที่ไม่ซ้ำกัน
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -112,20 +112,20 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. เลือก foundation model สำหรับการปรับแต่ง
+## 2. เลือกโมเดลพื้นฐานสำหรับปรับแต่ง
 
-1. Phi-3-mini-4k-instruct เป็นโมเดลขนาด 3.8 พันล้านพารามิเตอร์ น้ำหนักเบา และเป็น state-of-the-art ที่สร้างขึ้นบนชุดข้อมูลของ Phi-2 โมเดลนี้อยู่ในตระกูล Phi-3 และเวอร์ชัน Mini มีสองแบบคือ 4K และ 128K ซึ่งหมายถึงความยาวของ context (หน่วยเป็น tokens) ที่รองรับ เราต้องปรับแต่งโมเดลให้เหมาะกับการใช้งานเฉพาะ คุณสามารถเรียกดูโมเดลเหล่านี้ใน Model Catalog ของ AzureML Studio โดยกรองตามงาน chat-completion ในตัวอย่างนี้เราใช้ Phi-3-mini-4k-instruct หากคุณเปิดโน้ตบุ๊กนี้สำหรับโมเดลอื่น โปรดเปลี่ยนชื่อและเวอร์ชันของโมเดลให้เหมาะสม
+1. Phi-3-mini-4k-instruct เป็นโมเดลขนาด 3.8 พันล้านพารามิเตอร์ น้ำหนักเบา และทันสมัย สร้างขึ้นจากชุดข้อมูลที่ใช้กับ Phi-2 โมเดลนี้เป็นส่วนหนึ่งของตระกูล Phi-3 และเวอร์ชัน Mini มีสองแบบคือ 4K และ 128K ซึ่งหมายถึงความยาวบริบท (จำนวนโทเคน) ที่รองรับได้ เราจำเป็นต้องปรับแต่งโมเดลเพื่อใช้งานเฉพาะทาง คุณสามารถเรียกดูโมเดลเหล่านี้ได้ใน Model Catalog ของ AzureML Studio โดยกรองตามงาน chat-completion ในตัวอย่างนี้เราใช้โมเดล Phi-3-mini-4k-instruct หากคุณเปิดโน้ตบุ๊กนี้สำหรับโมเดลอื่น ให้เปลี่ยนชื่อและเวอร์ชันโมเดลให้เหมาะสม
 
     > [!NOTE]
-    > model id ของโมเดลนี้จะถูกส่งเป็น input ให้กับงานปรับแต่ง นอกจากนี้ยังสามารถดูได้ในช่อง Asset ID บนหน้ารายละเอียดโมเดลใน Model Catalog ของ AzureML Studio
+    > คุณสมบัติ model id ของโมเดลนี้จะถูกส่งเป็นอินพุตให้กับงาน fine tuning และยังสามารถดูได้ในช่อง Asset ID บนหน้ารายละเอียดโมเดลใน Model Catalog ของ AzureML Studio
 
 2. สคริปต์ Python นี้โต้ตอบกับบริการ Azure Machine Learning (Azure ML) โดยมีรายละเอียดดังนี้:
 
     - กำหนด model_name เป็น "Phi-3-mini-4k-instruct"
 
-    - ใช้เมธอด get ของ models ใน registry_ml_client เพื่อดึงเวอร์ชันล่าสุดของโมเดลที่มีชื่อนี้จาก Azure ML registry โดยส่งชื่อโมเดลและ label เพื่อดึงเวอร์ชันล่าสุด
+    - ใช้เมธอด get ของ models ใน registry_ml_client เพื่อดึงเวอร์ชันล่าสุดของโมเดลที่ระบุชื่อจาก Azure ML registry โดยเรียก get พร้อมอาร์กิวเมนต์สองตัวคือชื่อโมเดลและ label ที่ระบุให้ดึงเวอร์ชันล่าสุด
 
-    - พิมพ์ข้อความแจ้งชื่อ โมเดล เวอร์ชัน และ id ของโมเดลที่จะใช้ในการปรับแต่ง โดยใช้เมธอด format เพื่อแทรกข้อมูลเหล่านี้ในข้อความ ชื่อ เวอร์ชัน และ id ของโมเดลถูกเข้าถึงผ่าน property ของ foundation_model
+    - แสดงข้อความในคอนโซลแจ้งชื่อ, เวอร์ชัน และ id ของโมเดลที่จะใช้สำหรับการปรับแต่ง โดยใช้เมธอด format ของสตริงเพื่อแทรกข้อมูลเหล่านี้จากคุณสมบัติของ foundation_model
 
     ```python
     # Set the model name
@@ -143,29 +143,29 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. สร้าง compute สำหรับใช้งานกับงาน
+## 3. สร้าง compute ที่จะใช้กับงาน
 
-งาน finetune ใช้งานได้เฉพาะกับ GPU compute เท่านั้น ขนาดของ compute ขึ้นอยู่กับขนาดของโมเดล และในหลายกรณีอาจยากที่จะเลือก compute ที่เหมาะสม สำหรับเซลล์นี้เราจะช่วยแนะนำให้ผู้ใช้เลือก compute ที่เหมาะสม
-
-> [!NOTE]
-> Compute ที่ระบุด้านล่างทำงานด้วยการตั้งค่าที่เหมาะสมที่สุด หากเปลี่ยนแปลงการตั้งค่าอาจทำให้เกิดข้อผิดพลาด Cuda Out Of Memory ได้ ในกรณีนี้ให้ลองอัปเกรด compute เป็นขนาดที่ใหญ่ขึ้น
+งาน fine tune ใช้งานได้เฉพาะกับ compute ที่มี GPU ขนาดของ compute ขึ้นอยู่กับขนาดของโมเดล และในหลายกรณีการเลือก compute ที่เหมาะสมอาจซับซ้อน ในเซลล์นี้เราจะแนะนำผู้ใช้เลือก compute ที่เหมาะสมกับงาน
 
 > [!NOTE]
-> ขณะเลือก compute_cluster_size ด้านล่าง ให้ตรวจสอบว่า compute นั้นมีอยู่ใน resource group ของคุณ หาก compute ใดไม่พร้อมใช้งาน คุณสามารถร้องขอเพื่อเข้าถึงทรัพยากร compute นั้นได้
+> compute ที่ระบุด้านล่างทำงานด้วยการตั้งค่าที่เหมาะสมที่สุด การเปลี่ยนแปลงใดๆ อาจทำให้เกิดข้อผิดพลาด Cuda Out Of Memory หากเกิดปัญหานี้ให้ลองอัปเกรด compute เป็นขนาดที่ใหญ่ขึ้น
+
+> [!NOTE]
+> ขณะเลือก compute_cluster_size ด้านล่าง ให้ตรวจสอบว่า compute นั้นมีอยู่ใน resource group ของคุณ หาก compute ใดไม่พร้อมใช้งาน คุณสามารถขอสิทธิ์เข้าถึงทรัพยากร compute ได้
 
 ### ตรวจสอบว่าโมเดลรองรับการปรับแต่งหรือไม่
 
 1. สคริปต์ Python นี้โต้ตอบกับโมเดลใน Azure Machine Learning (Azure ML) โดยมีรายละเอียดดังนี้:
 
-    - นำเข้าโมดูล ast ซึ่งมีฟังก์ชันสำหรับประมวลผลโครงสร้างไวยากรณ์ของ Python
+    - นำเข้าโมดูล ast ซึ่งใช้สำหรับประมวลผลโครงสร้างไวยากรณ์ของ Python
 
-    - ตรวจสอบว่า foundation_model มีแท็กชื่อ finetune_compute_allow_list หรือไม่ แท็กใน Azure ML คือคู่ key-value ที่ใช้สร้างและกรองโมเดล
+    - ตรวจสอบว่าอ็อบเจ็กต์ foundation_model (ซึ่งแทนโมเดลใน Azure ML) มีแท็กชื่อ finetune_compute_allow_list หรือไม่ แท็กใน Azure ML เป็นคู่คีย์-ค่า ที่ใช้กรองและจัดเรียงโมเดล
 
-    - หากมีแท็ก finetune_compute_allow_list จะใช้ฟังก์ชัน ast.literal_eval เพื่อแปลงค่าของแท็ก (ซึ่งเป็นสตริง) ให้เป็นลิสต์ของ Python จากนั้นกำหนดให้ตัวแปร computes_allow_list และพิมพ์ข้อความแจ้งว่าควรสร้าง compute จากลิสต์นี้
+    - หากมีแท็ก finetune_compute_allow_list จะใช้ฟังก์ชัน ast.literal_eval เพื่อแปลงค่าของแท็ก (ซึ่งเป็นสตริง) เป็นลิสต์ Python จากนั้นกำหนดให้ตัวแปร computes_allow_list และแสดงข้อความแจ้งให้สร้าง compute จากลิสต์นี้
 
-    - หากไม่มีแท็กนี้ จะกำหนด computes_allow_list เป็น None และพิมพ์ข้อความแจ้งว่าแท็กนี้ไม่มีในแท็กของโมเดล
+    - หากไม่มีแท็กนี้ จะตั้งค่า computes_allow_list เป็น None และแสดงข้อความแจ้งว่าแท็กนี้ไม่มีในแท็กของโมเดล
 
-    - สรุปคือสคริปต์นี้ตรวจสอบแท็กเฉพาะใน metadata ของโมเดล แปลงค่าของแท็กเป็นลิสต์หากมี และแจ้งผลให้ผู้ใช้ทราบ
+    - สรุปคือ สคริปต์นี้ตรวจสอบแท็กเฉพาะในเมตาดาต้าของโมเดล แปลงค่าของแท็กเป็นลิสต์ถ้ามี และแจ้งผลให้ผู้ใช้ทราบ
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -188,19 +188,19 @@ pip install azureml-mlflow
 
 ### ตรวจสอบ Compute Instance
 
-1. สคริปต์ Python นี้โต้ตอบกับ Azure Machine Learning (Azure ML) และตรวจสอบ compute instance หลายอย่าง รายละเอียดดังนี้:
+1. สคริปต์ Python นี้โต้ตอบกับบริการ Azure Machine Learning (Azure ML) และตรวจสอบ compute instance หลายอย่าง โดยมีรายละเอียดดังนี้:
 
-    - พยายามดึง compute instance ที่มีชื่อเก็บในตัวแปร compute_cluster จาก Azure ML workspace หากสถานะ provisioning ของ compute instance คือ "failed" จะโยนข้อผิดพลาด ValueError
+    - พยายามดึง compute instance ที่มีชื่อเก็บใน compute_cluster จาก Azure ML workspace หากสถานะ provisioning ของ compute instance เป็น "failed" จะเกิดข้อผิดพลาด ValueError
 
-    - ตรวจสอบว่าตัวแปร computes_allow_list ไม่ใช่ None หากไม่ใช่ จะเปลี่ยนชื่อขนาด compute ในลิสต์เป็นตัวพิมพ์เล็กทั้งหมด แล้วตรวจสอบว่าขนาดของ compute instance ปัจจุบันอยู่ในลิสต์นี้หรือไม่ หากไม่อยู่ จะโยนข้อผิดพลาด ValueError
+    - ตรวจสอบว่า computes_allow_list ไม่ใช่ None หากไม่ใช่ จะเปลี่ยนขนาด compute ทั้งหมดในลิสต์เป็นตัวพิมพ์เล็ก และตรวจสอบว่าขนาดของ compute instance ปัจจุบันอยู่ในลิสต์หรือไม่ หากไม่อยู่จะเกิดข้อผิดพลาด ValueError
 
-    - หาก computes_allow_list เป็น None จะตรวจสอบว่าขนาด compute instance อยู่ในลิสต์ขนาด GPU VM ที่ไม่รองรับหรือไม่ หากใช่ จะโยนข้อผิดพลาด ValueError
+    - หาก computes_allow_list เป็น None จะตรวจสอบว่าขนาด compute instance อยู่ในลิสต์ของขนาด GPU VM ที่ไม่รองรับหรือไม่ หากใช่จะเกิดข้อผิดพลาด ValueError
 
-    - ดึงลิสต์ขนาด compute ทั้งหมดที่มีใน workspace แล้ววนลูปตรวจสอบแต่ละขนาด ถ้าชื่อขนาดตรงกับ compute instance ปัจจุบัน จะดึงจำนวน GPU ของ compute นั้นและตั้งค่า gpu_count_found เป็น True
+    - ดึงลิสต์ขนาด compute ทั้งหมดที่มีใน workspace จากนั้นวนลูปตรวจสอบแต่ละขนาด หากชื่อขนาดตรงกับขนาดของ compute instance ปัจจุบัน จะดึงจำนวน GPU ของขนาดนั้นและตั้งค่า gpu_count_found เป็น True
 
-    - ถ้า gpu_count_found เป็น True จะพิมพ์จำนวน GPU ของ compute instance ถ้าไม่ใช่ จะโยนข้อผิดพลาด ValueError
+    - หาก gpu_count_found เป็น True จะแสดงจำนวน GPU ใน compute instance หากไม่ใช่จะเกิดข้อผิดพลาด ValueError
 
-    - สรุปคือสคริปต์นี้ตรวจสอบสถานะ provisioning, ขนาด compute ว่าอยู่ในลิสต์อนุญาตหรือปฏิเสธ และจำนวน GPU ของ compute instance ใน Azure ML workspace
+    - สรุปคือ สคริปต์นี้ตรวจสอบสถานะ provisioning, ขนาด compute เทียบกับลิสต์อนุญาตหรือลิสต์ปฏิเสธ และจำนวน GPU ของ compute instance ใน Azure ML workspace
 
     ```python
     # Print the exception message
@@ -269,9 +269,9 @@ pip install azureml-mlflow
         )
     ```
 
-## 4. เลือกชุดข้อมูลสำหรับการปรับแต่งโมเดล
+## 4. เลือกชุดข้อมูลสำหรับปรับแต่งโมเดล
 
-1. เราใช้ชุดข้อมูล ultrachat_200k ชุดข้อมูลนี้แบ่งเป็นสี่ส่วน เหมาะสำหรับการปรับแต่งแบบ Supervised fine-tuning (sft) และ Generation ranking (gen) จำนวนตัวอย่างในแต่ละส่วนแสดงดังนี้:
+1. เราใช้ชุดข้อมูล ultrachat_200k ชุดข้อมูลนี้แบ่งเป็นสี่ส่วน เหมาะสำหรับการปรับแต่งแบบมีผู้ควบคุม (Supervised fine-tuning หรือ sft) และการจัดอันดับการสร้าง (generation ranking หรือ gen) จำนวนตัวอย่างในแต่ละส่วนแสดงดังนี้:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
@@ -280,30 +280,30 @@ pip install azureml-mlflow
 
 1. เซลล์ถัดไปแสดงการเตรียมข้อมูลพื้นฐานสำหรับการปรับแต่ง:
 
-### แสดงข้อมูลบางแถว
+### แสดงตัวอย่างข้อมูลบางแถว
 
-เราต้องการให้ตัวอย่างนี้รันได้เร็ว จึงบันทึกไฟล์ train_sft และ test_sft ที่มีข้อมูล 5% ของแถวที่ถูกตัดมาแล้ว ซึ่งหมายความว่าโมเดลที่ปรับแต่งจะมีความแม่นยำน้อยลง ดังนั้นไม่ควรนำไปใช้ในงานจริง
-ไฟล์ download-dataset.py ใช้สำหรับดาวน์โหลดชุดข้อมูล ultrachat_200k และแปลงชุดข้อมูลให้อยู่ในรูปแบบที่ pipeline การปรับแต่งใช้งานได้ เนื่องจากชุดข้อมูลมีขนาดใหญ่ เราจึงใช้เพียงส่วนหนึ่งของชุดข้อมูลเท่านั้น
+เราต้องการให้ตัวอย่างนี้รันได้เร็ว จึงบันทึกไฟล์ train_sft และ test_sft ที่มีเพียง 5% ของแถวที่ถูกตัดแต่งแล้ว ซึ่งหมายความว่าโมเดลที่ปรับแต่งจะมีความแม่นยำน้อยลง จึงไม่ควรนำไปใช้ในงานจริง
+สคริปต์ download-dataset.py ใช้ดาวน์โหลดชุดข้อมูล ultrachat_200k และแปลงชุดข้อมูลให้อยู่ในรูปแบบที่ pipeline สำหรับ fine tuning สามารถใช้งานได้ เนื่องจากชุดข้อมูลมีขนาดใหญ่ เราจึงใช้เพียงส่วนหนึ่งของชุดข้อมูลเท่านั้น
 
-1. การรันสคริปต์ด้านล่างจะดาวน์โหลดข้อมูลเพียง 5% เท่านั้น สามารถเพิ่มได้โดยเปลี่ยนพารามิเตอร์ dataset_split_pc เป็นเปอร์เซ็นต์ที่ต้องการ
+1. การรันสคริปต์ด้านล่างจะดาวน์โหลดข้อมูลเพียง 5% ของชุดข้อมูลทั้งหมด สามารถเพิ่มเปอร์เซ็นต์ได้โดยเปลี่ยนพารามิเตอร์ dataset_split_pc เป็นเปอร์เซ็นต์ที่ต้องการ
 
     > [!NOTE]
-    > โมเดลภาษาบางตัวมีรหัสภาษาที่ต่างกัน ดังนั้นชื่อคอลัมน์ในชุดข้อมูลควรสอดคล้องกับรหัสภาษาเหล่านั้น
+    > โมเดลภาษาแต่ละตัวอาจมีรหัสภาษาที่แตกต่างกัน ดังนั้นชื่อคอลัมน์ในชุดข้อมูลควรสะท้อนภาษานั้นด้วย
 
-1. ตัวอย่างรูปแบบข้อมูลที่ควรเป็น
-ชุดข้อมูล chat-completion เก็บในรูปแบบ parquet โดยแต่ละรายการใช้สคีมาแบบนี้:
+1. ตัวอย่างข้อมูลควรมีลักษณะดังนี้
+ชุดข้อมูล chat-completion จะเก็บในรูปแบบ parquet โดยแต่ละรายการมีโครงสร้างดังนี้:
 
     - นี่คือเอกสาร JSON (JavaScript Object Notation) ซึ่งเป็นรูปแบบแลกเปลี่ยนข้อมูลยอดนิยม ไม่ใช่โค้ดที่รันได้ แต่เป็นวิธีเก็บและส่งข้อมูล โครงสร้างมีดังนี้:
 
     - "prompt": คีย์นี้เก็บข้อความที่เป็นงานหรือคำถามที่ส่งให้ AI assistant
 
-    - "messages": คีย์นี้เก็บอาเรย์ของอ็อบเจ็กต์ แต่ละอ็อบเจ็กต์แทนข้อความในการสนทนาระหว่างผู้ใช้และ AI assistant โดยแต่ละข้อความมีคีย์สองตัวคือ:
+    - "messages": คีย์นี้เก็บอาร์เรย์ของอ็อบเจ็กต์ แต่ละอ็อบเจ็กต์แทนข้อความในการสนทนาระหว่างผู้ใช้และ AI assistant โดยแต่ละข้อความมีสองคีย์:
 
     - "content": ข้อความของข้อความนั้น
     - "role": บทบาทของผู้ส่งข้อความ อาจเป็น "user" หรือ "assistant"
-    - "prompt_id": ตัวระบุเฉพาะของ prompt นี้
+    - "prompt_id": รหัสเฉพาะของ prompt นั้น
 
-1. ในเอกสาร JSON นี้ แสดงการสนทนาที่ผู้ใช้ขอให้ AI assistant สร้างตัวเอกสำหรับเรื่องราว dystopian ผู้ช่วยตอบกลับ และผู้ใช้ขอรายละเอียดเพิ่มเติม ผู้ช่วยยินดีให้ข้อมูลเพิ่มเติม การสนทนาทั้งหมดนี้เชื่อมโยงกับ prompt id เฉพาะ
+1. ในเอกสาร JSON นี้ การสนทนาแสดงถึงผู้ใช้ที่ขอให้ AI assistant สร้างตัวเอกสำหรับเรื่องราวดิสโทเปีย ผู้ช่วยตอบกลับ และผู้ใช้ขอรายละเอียดเพิ่มเติม ผู้ช่วยตกลงที่จะให้รายละเอียดเพิ่มเติม การสนทนาทั้งหมดเชื่อมโยงกับ prompt id เฉพาะ
 
     ```python
     {
@@ -345,15 +345,15 @@ pip install azureml-mlflow
 
 ### ดาวน์โหลดข้อมูล
 
-1. สคริปต์ Python นี้ใช้ดาวน์โหลดชุดข้อมูลโดยใช้สคริปต์ช่วยชื่อ download-dataset.py รายละเอียดดังนี้:
+1. สคริปต์ Python นี้ใช้ดาวน์โหลดชุดข้อมูลโดยใช้สคริปต์ช่วยชื่อ download-dataset.py โดยมีรายละเอียดดังนี้:
 
-    - นำเข้าโมดูล os ซึ่งช่วยให้ใช้งานฟังก์ชันที่ขึ้นกับระบบปฏิบัติการได้
+    - นำเข้าโมดูล os ซึ่งให้ฟังก์ชันที่พกพาได้สำหรับการใช้งานระบบปฏิบัติการ
 
-    - ใช้ os.system เพื่อรันสคริปต์ download-dataset.py ในเชลล์ พร้อมอาร์กิวเมนต์ระบุชุดข้อมูลที่จะดาวน์โหลด (HuggingFaceH4/ultrachat_200k), โฟลเดอร์ที่จะดาวน์โหลด (ultrachat_200k_dataset), และเปอร์เซ็นต์ของชุดข้อมูลที่จะใช้แบ่ง (5) ค่าที่คืนจาก os.system เก็บในตัวแปร exit_status
+    - ใช้ฟังก์ชัน os.system เพื่อรันสคริปต์ download-dataset.py ในเชลล์พร้อมอาร์กิวเมนต์ระบุชุดข้อมูลที่ต้องการดาวน์โหลด (HuggingFaceH4/ultrachat_200k), โฟลเดอร์ที่จะดาวน์โหลดไป (ultrachat_200k_dataset) และเปอร์เซ็นต์ของชุดข้อมูลที่จะแบ่ง (5) ค่าที่ส่งกลับจาก os.system จะเก็บในตัวแปร exit_status
 
-    - ตรวจสอบว่า exit_status ไม่เท่ากับ 0 หรือไม่ โดย 0 หมายถึงคำสั่งรันสำเร็จ หากไม่ใช่จะโยน Exception พร้อมข้อความว่าเกิดข้อผิดพลาดในการดาวน์โหลดชุดข้อมูล
+    - ตรวจสอบว่า exit_status ไม่เท่ากับ 0 ซึ่งหมายถึงคำสั่งล้มเหลว หากล้มเหลวจะเกิด Exception พร้อมข้อความแจ้งข้อผิดพลาดในการดาวน์โหลดชุดข้อมูล
 
-    - สรุปคือสคริปต์นี้รันคำสั่งดาวน์โหลดชุดข้อมูลโดยใช้สคริปต์ช่วย และแจ้งข้อผิดพลาดถ้าคำสั่งล้มเหลว
+    - สรุปคือ สคริปต์นี้รันคำสั่งดาวน์โหลดชุดข้อมูลโดยใช้สคริปต์ช่วย และแจ้งข้อผิดพลาดหากคำสั่งล้มเหลว
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -373,21 +373,20 @@ pip install azureml-mlflow
         raise Exception("Error downloading dataset")
     ```
 
-### โหลดข้อมูลเข้า DataFrame
+### โหลดข้อมูลเข้าสู่ DataFrame
 
-1. สคริปต์ Python นี้โหลดไฟล์ JSON Lines เข้า pandas DataFrame และแสดง 5 แถวแรก รายละเอียดดังนี้:
+1. สคริปต์ Python นี้โหลดไฟล์ JSON Lines เข้าสู่ pandas DataFrame และแสดง 5 แถวแรก โดยมีรายละเอียดดังนี้:
 
-    - นำเข้าไลบรารี pandas ซึ่งเป็นไลบรารีสำหรับจัดการและวิเคราะห์ข้อมูล
+    - นำเข้าไลบรารี pandas ซึ่งเป็นไลบรารีสำหรับจัดการและวิเคราะห์ข้อมูลที่ทรงพลัง
 
-    - กำหนดค่าตัวเลือก pandas ให้แสดงความกว้างของคอลัมน์แบบเต็มโดยไม่ตัดข้อความ
+    - ตั้งค่าความกว้างคอลัมน์สูงสุดของ pandas display options เป็น 0 หมายความว่าจะแสดงข้อความเต็มของแต่ละคอลัมน์โดยไม่ตัดทอนเมื่อแสดง DataFrame
 
-    - ใช้ pd.read_json โหลดไฟล์ train_sft.jsonl จากโฟลเดอร์ ultrachat_200k_dataset โดยกำหนด lines=True เพราะไฟล์เป็น JSON Lines ซึ่งแต่ละบรรทัดเป็นอ็อบเจ็กต์ JSON แยกกัน
+    - ใช้ฟังก์ชัน pd.read_json เพื่อโหลดไฟล์ train_sft.jsonl จากโฟลเดอร์ ultrachat_200k_dataset เข้าสู่ DataFrame โดยตั้งค่า lines=True เพื่อระบุว่าไฟล์เป็น JSON Lines ซึ่งแต่ละบรรทัดเป็นอ็อบเจ็กต์ JSON แยกกัน
+- ใช้วิธี head เพื่อแสดง 5 แถวแรกของ DataFrame หาก DataFrame มีแถวน้อยกว่า 5 แถว จะทำการแสดงทั้งหมด
 
-    - ใช้เมธอด head เพื่อแสดง 5 แถวแรก หาก DataFrame มีน้อยกว่า 5 แถวจะแสดงทั้งหมด
+- สรุปคือ สคริปต์นี้กำลังโหลดไฟล์ JSON Lines ลงใน DataFrame และแสดง 5 แถวแรกพร้อมข้อความเต็มของแต่ละคอลัมน์
 
-    - สรุปคือสคริปต์นี้โหลดไฟล์ JSON Lines เข้า DataFrame และแสดง 5 แถวแรกพร้อมแสดงข้อความเต็มในแต่ละคอลัมน์
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -404,46 +403,103 @@ pip install azureml-mlflow
     df.head()
     ```
 
-## 5. ส่งงาน fine tuning โดยใช้โมเดลและข้อมูลเป็น input
+## 5. ส่งงาน fine tuning โดยใช้โมเดลและข้อมูลเป็นอินพุต
 
-สร้างงานที่ใช้ chat-completion pipeline component ดูรายละเอียดพารามิเตอร์ทั้งหมดที่รองรับการปรับแต่งได้เพิ่มเติม
+สร้างงานที่ใช้คอมโพเนนต์ pipeline สำหรับ chat-completion เรียนรู้เพิ่มเติมเกี่ยวกับพารามิเตอร์ทั้งหมดที่รองรับสำหรับการ fine tuning
 
-### กำหนดพารามิเตอร์สำหรับการปรับแต่ง
+### กำหนดพารามิเตอร์ finetune
 
-1. พารามิเตอร์การปรับแต่งแบ่งออกเป็น 2 กลุ่ม คือ พารามิเตอร์การฝึก และพารามิเตอร์การปรับแต่งประสิทธิภาพ
+1. พารามิเตอร์ finetune สามารถแบ่งออกเป็น 2 ประเภท คือ พารามิเตอร์การฝึกสอน และพารามิเตอร์การปรับแต่ง
 
-1. พารามิเตอร์การฝึกกำหนดลักษณะการฝึก เช่น
+1. พารามิเตอร์การฝึกสอนกำหนดลักษณะการฝึก เช่น -
 
     - ตัว optimizer และ scheduler ที่ใช้
-    - เมตริกที่ใช้วัดผลการปรับแต่ง
-    - จำนวนขั้นตอนการฝึก ขนาด batch และอื่นๆ
-    - พารามิเตอร์การปรับแต่งประสิทธิภาพช่วยเพิ่มประสิทธิภาพการใช้หน่วยความจำ GPU และใช้ทรัพยากรคอมพิวต์ได้อย่างมีประสิทธิภาพ
+    - เมตริกที่ใช้ในการปรับแต่ง finetune
+    - จำนวนขั้นตอนการฝึกและขนาด batch เป็นต้น
+    - พารามิเตอร์การปรับแต่งช่วยในการจัดการหน่วยความจำ GPU และใช้ทรัพยากรคอมพิวต์อย่างมีประสิทธิภาพ
 
-1. ด้านล่างนี้เป็นพารามิเตอร์บางส่วนในกลุ่มนี้ ซึ่งแตกต่างกันไปตามแต่ละโมเดลและถูกแพ็กเกจมาพร้อมกับโมเดลเพื่อจัดการความแตกต่างเหล่านี้
+1. ด้านล่างนี้เป็นตัวอย่างพารามิเตอร์ที่อยู่ในกลุ่มนี้ พารามิเตอร์การปรับแต่งจะแตกต่างกันไปตามแต่ละโมเดลและจะถูกบรรจุพร้อมกับโมเดลเพื่อจัดการความแตกต่างเหล่านี้
 
     - เปิดใช้งาน deepspeed และ LoRA
-    - เปิดใช้งาน mixed precision training
-    - เปิดใช้งาน multi-node training
+    - เปิดใช้งานการฝึกแบบ mixed precision
+    - เปิดใช้งานการฝึกแบบ multi-node
+
 
 > [!NOTE]
-> การปรับแต่งแบบ supervised อาจทำให้โมเดลสูญเสีย alignment หรือเกิด forgetting อย่างรุนแรง แนะนำให้ตรวจสอบปัญหานี้และรันขั้นตอน alignment หลังจากปรับแต่งเสร็จ
+> การ finetuning แบบมีผู้ควบคุมอาจทำให้เกิดการสูญเสียการจัดแนวหรือการลืมอย่างรุนแรง เราแนะนำให้ตรวจสอบปัญหานี้และทำขั้นตอนการจัดแนวหลังจาก finetune เสร็จ
 
 ### พารามิเตอร์ Fine Tuning
 
-1. สคริปต์ Python นี้ตั้งค่าพารามิเตอร์สำหรับการปรับแต่งโมเดล machine learning รายละเอียดดังนี้:
+1. สคริปต์ Python นี้กำลังตั้งค่าพารามิเตอร์สำหรับการ fine-tune โมเดลแมชชีนเลิร์นนิง โดยมีรายละเอียดดังนี้:
 
-    - ตั้งค่าพารามิเตอร์การฝึกเริ่มต้น เช่น จำนวน epoch, batch size สำหรับฝึกและประเมินผล, อัตราการเรียนรู้, และชนิดของ learning rate scheduler
+    - ตั้งค่าพารามิเตอร์การฝึกสอนเริ่มต้น เช่น จำนวน epoch ในการฝึก ขนาด batch สำหรับการฝึกและการประเมิน อัตราการเรียนรู้ และประเภท scheduler สำหรับอัตราการเรียนรู้
 
-    - ตั้งค่าพารามิเตอร์การปรับแต่งเริ่มต้น เช่น เปิดใช้งาน Layer-wise Relevance Propagation (LoRa) และ DeepSpeed หรือไม่ และกำหนด stage ของ DeepSpeed
+    - ตั้งค่าพารามิเตอร์การปรับแต่งเริ่มต้น เช่น การใช้ Layer-wise Relevance Propagation (LoRa) และ DeepSpeed รวมถึงระดับของ DeepSpeed
 
-    - รวมพารามิเตอร์การฝึกและการปรับแต่งไว้ในดิกชันนารีเดียวชื่อ finetune_parameters
+    - รวมพารามิเตอร์การฝึกสอนและการปรับแต่งเข้าด้วยกันในพจนานุกรมเดียวชื่อ finetune_parameters
 
-    - ตรวจสอบว่า foundation_model มีพารามิเตอร์เริ่มต้นเฉพาะโมเดลหรือไม่ หากมีจะแสดงข้อความเตือนและอัปเดต finetune_parameters ด้วยพารามิเตอร์เฉพาะโมเดล โดยใช้ ast.literal_eval เพื่อแปลงค่าจากสตริงเป็นดิกชันนารี Python
+    - ตรวจสอบว่า foundation_model มีพารามิเตอร์เริ่มต้นเฉพาะโมเดลหรือไม่ หากมีจะแสดงข้อความเตือนและอัปเดต finetune_parameters ด้วยพารามิเตอร์เฉพาะโมเดลเหล่านั้น โดยใช้ฟังก์ชัน ast.literal_eval เพื่อแปลงค่าจากสตริงเป็นพจนานุกรม Python
 
-    - พิมพ์พารามิเตอร์การปรับแต่งที่ใช้ในรันนี้
+    - แสดงชุดพารามิเตอร์สุดท้ายที่ใช้สำหรับการรัน
 
+    - สรุปคือ สคริปต์นี้กำลังตั้งค่าและแสดงพารามิเตอร์สำหรับการ fine-tune โมเดลแมชชีนเลิร์นนิง โดยสามารถแทนที่พารามิเตอร์เริ่มต้นด้วยพารามิเตอร์เฉพาะโมเดลได้
 
-training pipeline ที่อิงจากพารามิเตอร์ต่างๆ แล้วแสดงชื่อที่ใช้แสดงผลนี้ ```python
+```python
+    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    training_parameters = dict(
+        num_train_epochs=3,
+        per_device_train_batch_size=1,
+        per_device_eval_batch_size=1,
+        learning_rate=5e-6,
+        lr_scheduler_type="cosine",
+    )
+    
+    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    optimization_parameters = dict(
+        apply_lora="true",
+        apply_deepspeed="true",
+        deepspeed_stage=2,
+    )
+    
+    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    finetune_parameters = {**training_parameters, **optimization_parameters}
+    
+    # Check if the foundation_model has any model-specific default parameters
+    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
+    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    if "model_specific_defaults" in foundation_model.tags:
+        print("Warning! Model specific defaults exist. The defaults could be overridden.")
+        finetune_parameters.update(
+            ast.literal_eval(  # convert string to python dict
+                foundation_model.tags["model_specific_defaults"]
+            )
+        )
+    
+    # Print the final set of fine-tuning parameters that will be used for the run
+    print(
+        f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
+    )
+    ```
+
+### Training Pipeline
+
+1. สคริปต์ Python นี้กำหนดฟังก์ชันเพื่อสร้างชื่อแสดงผลสำหรับ pipeline การฝึกสอนแมชชีนเลิร์นนิง จากนั้นเรียกใช้ฟังก์ชันนี้เพื่อสร้างและแสดงชื่อแสดงผล โดยมีรายละเอียดดังนี้:
+
+1. ฟังก์ชัน get_pipeline_display_name ถูกกำหนดขึ้นเพื่อสร้างชื่อแสดงผลโดยอิงจากพารามิเตอร์ต่าง ๆ ที่เกี่ยวข้องกับ pipeline การฝึกสอน
+
+1. ภายในฟังก์ชัน จะคำนวณขนาด batch รวมโดยการคูณขนาด batch ต่ออุปกรณ์ จำนวนขั้นตอนสะสม gradient จำนวน GPU ต่อโหนด และจำนวนโหนดที่ใช้ในการ fine-tuning
+
+1. ดึงพารามิเตอร์อื่น ๆ เช่น ประเภท scheduler ของอัตราการเรียนรู้ การใช้ DeepSpeed ระดับของ DeepSpeed การใช้ Layer-wise Relevance Propagation (LoRa) จำนวน checkpoint ของโมเดลที่เก็บไว้ และความยาวลำดับสูงสุด
+
+1. สร้างสตริงที่รวมพารามิเตอร์ทั้งหมดนี้โดยคั่นด้วยขีดกลาง หากใช้ DeepSpeed หรือ LoRa สตริงจะรวมคำว่า "ds" ตามด้วยระดับ DeepSpeed หรือ "lora" ตามลำดับ หากไม่ใช้จะเป็น "nods" หรือ "nolora"
+
+1. ฟังก์ชันจะคืนค่าสตริงนี้ซึ่งใช้เป็นชื่อแสดงผลของ pipeline การฝึกสอน
+
+1. หลังจากกำหนดฟังก์ชันแล้ว จะเรียกใช้เพื่อสร้างชื่อแสดงผลและแสดงผลออกมา
+
+1. สรุปคือ สคริปต์นี้สร้างชื่อแสดงผลสำหรับ pipeline การฝึกสอนแมชชีนเลิร์นนิงโดยอิงจากพารามิเตอร์ต่าง ๆ และแสดงชื่อแสดงผลนั้น
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -500,21 +556,25 @@ training pipeline ที่อิงจากพารามิเตอร์�
 
 ### การกำหนดค่า Pipeline
 
-สคริปต์ Python นี้กำลังนิยามและกำหนดค่า machine learning pipeline โดยใช้ Azure Machine Learning SDK รายละเอียดของสิ่งที่ทำมีดังนี้:
+สคริปต์ Python นี้กำหนดและกำหนดค่า pipeline สำหรับแมชชีนเลิร์นนิงโดยใช้ Azure Machine Learning SDK โดยมีรายละเอียดดังนี้:
+
 1. นำเข้ามอดูลที่จำเป็นจาก Azure AI ML SDK
-1. ดึง pipeline component ที่ชื่อว่า "chat_completion_pipeline" จาก registry
-1. กำหนด pipeline job โดยใช้ `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+1. ดึงคอมโพเนนต์ pipeline ชื่อ "chat_completion_pipeline" จาก registry
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+1. กำหนดงาน pipeline โดยใช้ตัวตกแต่ง `@pipeline` และฟังก์ชัน `create_pipeline` โดยตั้งชื่อ pipeline เป็น `pipeline_display_name`
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. ภายในฟังก์ชัน `create_pipeline` จะเริ่มต้นคอมโพเนนต์ pipeline ที่ดึงมา พร้อมพารามิเตอร์ต่าง ๆ เช่น เส้นทางโมเดล คลัสเตอร์คอมพิวต์สำหรับแต่ละขั้นตอน การแบ่งชุดข้อมูลสำหรับฝึกและทดสอบ จำนวน GPU ที่ใช้สำหรับ fine-tuning และพารามิเตอร์ fine-tuning อื่น ๆ
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. แมปเอาต์พุตของงาน fine-tuning ไปยังเอาต์พุตของงาน pipeline เพื่อให้โมเดลที่ผ่านการ fine-tune สามารถลงทะเบียนได้ง่าย ซึ่งจำเป็นสำหรับการนำโมเดลไปใช้งานที่ endpoint แบบออนไลน์หรือแบบ batch
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False` หมายความว่า pipeline จะหยุดทำงานถ้ามีขั้นตอนใดล้มเหลว
-1. สรุปคือ สคริปต์นี้กำหนดและตั้งค่า machine learning pipeline สำหรับงาน chat completion โดยใช้ Azure Machine Learning SDK
+1. สร้างอินสแตนซ์ของ pipeline โดยเรียกใช้ฟังก์ชัน `create_pipeline`
+
+1. ตั้งค่า `force_rerun` ของ pipeline เป็น `True` หมายความว่าจะไม่ใช้ผลลัพธ์ที่แคชจากงานก่อนหน้า
+
+1. ตั้งค่า `continue_on_step_failure` ของ pipeline เป็น `False` หมายความว่า pipeline จะหยุดหากขั้นตอนใดล้มเหลว
+
+1. สรุปคือ สคริปต์นี้กำหนดและกำหนดค่า pipeline สำหรับงาน chat completion โดยใช้ Azure Machine Learning SDK
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -567,12 +627,15 @@ training pipeline ที่อิงจากพารามิเตอร์�
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### การส่งงาน (Submit the Job)
+### ส่งงาน
 
-1. สคริปต์ Python นี้กำลังส่งงาน machine learning pipeline job ไปยัง Azure Machine Learning workspace และรอจนกว่างานจะเสร็จสิ้น รายละเอียดของสิ่งที่ทำมีดังนี้:
-- เรียกใช้เมธอด create_or_update ของ jobs ใน workspace_ml_client เพื่อส่ง pipeline job โดย pipeline ที่จะรันถูกระบุโดย pipeline_object และ experiment ที่จะรันงานถูกระบุโดย experiment_name
-- จากนั้นเรียกใช้เมธอด stream ของ jobs ใน workspace_ml_client เพื่อรอให้ pipeline job เสร็จสิ้น งานที่รอถูกระบุโดย name attribute ของ pipeline_job object
-- สรุปคือ สคริปต์นี้ส่งงาน machine learning pipeline job ไปยัง Azure Machine Learning workspace และรอจนกว่างานจะเสร็จ
+1. สคริปต์ Python นี้ส่งงาน pipeline สำหรับแมชชีนเลิร์นนิงไปยัง workspace ของ Azure Machine Learning และรอจนกว่างานจะเสร็จสิ้น โดยมีรายละเอียดดังนี้:
+
+    - เรียกใช้เมธอด create_or_update ของ jobs ใน workspace_ml_client เพื่อส่งงาน pipeline โดยระบุ pipeline ที่จะรันด้วย pipeline_object และระบุ experiment ที่จะรันงานด้วย experiment_name
+
+    - จากนั้นเรียกใช้เมธอด stream ของ jobs ใน workspace_ml_client เพื่อรอให้งาน pipeline เสร็จสิ้น โดยระบุชื่องานที่ต้องรอด้วย attribute name ของ pipeline_job
+
+    - สรุปคือ สคริปต์นี้ส่งงาน pipeline สำหรับแมชชีนเลิร์นนิงไปยัง workspace ของ Azure Machine Learning และรอจนกว่างานจะเสร็จสิ้น
 
 ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
@@ -589,20 +652,27 @@ training pipeline ที่อิงจากพารามิเตอร์�
 
 ## 6. ลงทะเบียนโมเดลที่ผ่านการ fine tune กับ workspace
 
-เราจะลงทะเบียนโมเดลจากผลลัพธ์ของงาน fine tuning ซึ่งจะติดตาม lineage ระหว่างโมเดลที่ผ่านการ fine tune กับงาน fine tuning นั้นๆ งาน fine tuning ยังติดตาม lineage ไปยัง foundation model, ข้อมูล และโค้ดการฝึกอบรม
+เราจะลงทะเบียนโมเดลจากเอาต์พุตของงาน fine tuning ซึ่งจะติดตามความสัมพันธ์ระหว่างโมเดลที่ผ่านการ fine tune กับงาน fine tuning งาน fine tuning ยังติดตามความสัมพันธ์ไปยัง foundation model ข้อมูล และโค้ดการฝึกสอน
 
-### การลงทะเบียน ML Model
+### การลงทะเบียนโมเดล ML
 
-1. สคริปต์ Python นี้กำลังลงทะเบียนโมเดล machine learning ที่ผ่านการฝึกใน Azure Machine Learning pipeline รายละเอียดของสิ่งที่ทำมีดังนี้:
-- นำเข้ามอดูลที่จำเป็นจาก Azure AI ML SDK
-- ตรวจสอบว่า trained_model output มีอยู่ใน pipeline job หรือไม่ โดยเรียกใช้เมธอด get ของ jobs ใน workspace_ml_client และเข้าถึง outputs attribute
-- สร้าง path ไปยังโมเดลที่ฝึกโดยการจัดรูปแบบสตริงโดยใช้ชื่อ pipeline job และชื่อ output ("trained_model")
-- กำหนดชื่อสำหรับโมเดลที่ผ่านการ fine tune โดยเพิ่ม "-ultrachat-200k" ต่อท้ายชื่อโมเดลเดิมและแทนที่ slash ด้วย hyphen
-- เตรียมการลงทะเบียนโมเดลโดยสร้าง Model object พร้อมพารามิเตอร์ต่างๆ รวมถึง path ของโมเดล, ประเภทของโมเดล (MLflow model), ชื่อและเวอร์ชันของโมเดล และคำอธิบายของโมเดล
-- ลงทะเบียนโมเดลโดยเรียกใช้เมธอด create_or_update ของ models ใน workspace_ml_client พร้อมส่ง Model object เป็นอาร์กิวเมนต์
-- แสดงโมเดลที่ลงทะเบียนแล้ว
+1. สคริปต์ Python นี้ลงทะเบียนโมเดลแมชชีนเลิร์นนิงที่ผ่านการฝึกใน pipeline ของ Azure Machine Learning โดยมีรายละเอียดดังนี้:
 
-1. สรุปคือ สคริปต์นี้กำลังลงทะเบียนโมเดล machine learning ที่ผ่านการฝึกใน Azure Machine Learning pipeline
+    - นำเข้ามอดูลที่จำเป็นจาก Azure AI ML SDK
+
+    - ตรวจสอบว่าเอาต์พุต trained_model มีอยู่จากงาน pipeline โดยเรียกใช้เมธอด get ของ jobs ใน workspace_ml_client และเข้าถึง attribute outputs
+
+    - สร้างเส้นทางไปยังโมเดลที่ผ่านการฝึกโดยจัดรูปแบบสตริงด้วยชื่อของงาน pipeline และชื่อเอาต์พุต ("trained_model")
+
+    - กำหนดชื่อสำหรับโมเดลที่ผ่านการ fine-tune โดยเพิ่ม "-ultrachat-200k" ต่อท้ายชื่อโมเดลเดิมและแทนที่เครื่องหมายทับด้วยขีดกลาง
+
+    - เตรียมลงทะเบียนโมเดลโดยสร้างอ็อบเจ็กต์ Model พร้อมพารามิเตอร์ต่าง ๆ เช่น เส้นทางโมเดล ประเภทโมเดล (MLflow model) ชื่อและเวอร์ชันของโมเดล และคำอธิบายโมเดล
+
+    - ลงทะเบียนโมเดลโดยเรียกใช้เมธอด create_or_update ของ models ใน workspace_ml_client โดยส่งอ็อบเจ็กต์ Model เป็นอาร์กิวเมนต์
+
+    - แสดงผลโมเดลที่ลงทะเบียนแล้ว
+
+1. สรุปคือ สคริปต์นี้ลงทะเบียนโมเดลแมชชีนเลิร์นนิงที่ผ่านการฝึกใน pipeline ของ Azure Machine Learning
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -644,19 +714,23 @@ training pipeline ที่อิงจากพารามิเตอร์�
     print("registered model: \n", registered_model)
     ```
 
-## 7. นำโมเดลที่ผ่านการ fine tune ไป deploy ที่ online endpoint
+## 7. นำโมเดลที่ผ่านการ fine tune ไป deploy ที่ endpoint ออนไลน์
 
-Online endpoints ให้ REST API ที่ทนทานและสามารถใช้เชื่อมต่อกับแอปพลิเคชันที่ต้องการใช้โมเดลนี้
+Online endpoint ให้ REST API ที่ทนทานซึ่งสามารถใช้เชื่อมต่อกับแอปพลิเคชันที่ต้องการใช้โมเดล
 
-### การจัดการ Endpoint
+### จัดการ Endpoint
 
-1. สคริปต์ Python นี้กำลังสร้าง managed online endpoint ใน Azure Machine Learning สำหรับโมเดลที่ลงทะเบียนแล้ว รายละเอียดของสิ่งที่ทำมีดังนี้:
-- นำเข้ามอดูลที่จำเป็นจาก Azure AI ML SDK
-- กำหนดชื่อเฉพาะสำหรับ online endpoint โดยเพิ่ม timestamp ต่อท้ายสตริง "ultrachat-completion-"
-- เตรียมสร้าง online endpoint โดยสร้าง ManagedOnlineEndpoint object พร้อมพารามิเตอร์ต่างๆ เช่น ชื่อ endpoint, คำอธิบาย endpoint และโหมดการยืนยันตัวตน ("key")
-- สร้าง online endpoint โดยเรียกใช้เมธอด begin_create_or_update ของ workspace_ml_client พร้อมส่ง ManagedOnlineEndpoint object เป็นอาร์กิวเมนต์ แล้วรอจนกระทั่งการสร้างเสร็จสิ้นโดยเรียก wait
+1. สคริปต์ Python นี้สร้าง managed online endpoint ใน Azure Machine Learning สำหรับโมเดลที่ลงทะเบียนแล้ว โดยมีรายละเอียดดังนี้:
 
-1. สรุปคือ สคริปต์นี้กำลังสร้าง managed online endpoint ใน Azure Machine Learning สำหรับโมเดลที่ลงทะเบียนแล้ว
+    - นำเข้ามอดูลที่จำเป็นจาก Azure AI ML SDK
+
+    - กำหนดชื่อเฉพาะสำหรับ online endpoint โดยเพิ่ม timestamp ต่อท้ายสตริง "ultrachat-completion-"
+
+    - เตรียมสร้าง online endpoint โดยสร้างอ็อบเจ็กต์ ManagedOnlineEndpoint พร้อมพารามิเตอร์ต่าง ๆ เช่น ชื่อ endpoint คำอธิบาย และโหมดการยืนยันตัวตน ("key")
+
+    - สร้าง online endpoint โดยเรียกใช้เมธอด begin_create_or_update ของ workspace_ml_client พร้อมอ็อบเจ็กต์ ManagedOnlineEndpoint จากนั้นรอจนกว่าการสร้างจะเสร็จสิ้นด้วยเมธอด wait
+
+1. สรุปคือ สคริปต์นี้สร้าง managed online endpoint ใน Azure Machine Learning สำหรับโมเดลที่ลงทะเบียนแล้ว
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -688,27 +762,27 @@ Online endpoints ให้ REST API ที่ทนทานและสาม�
 > [!NOTE]
 > คุณสามารถดูรายชื่อ SKU ที่รองรับสำหรับการ deploy ได้ที่นี่ - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### การ deploy ML Model
+### การ deploy โมเดล ML
 
-1. สคริปต์ Python นี้กำลัง deploy โมเดล machine learning ที่ลงทะเบียนแล้วไปยัง managed online endpoint ใน Azure Machine Learning รายละเอียดของสิ่งที่ทำมีดังนี้:
+1. สคริปต์ Python นี้ deploy โมเดลแมชชีนเลิร์นนิงที่ลงทะเบียนแล้วไปยัง managed online endpoint ใน Azure Machine Learning โดยมีรายละเอียดดังนี้:
 
-    - นำเข้าโมดูล ast ซึ่งให้ฟังก์ชันสำหรับจัดการโครงสร้างไวยากรณ์ Python แบบต้นไม้
+    - นำเข้าโมดูล ast ซึ่งให้ฟังก์ชันสำหรับประมวลผลโครงสร้างไวยากรณ์ Python
 
-    - กำหนด instance type สำหรับการ deploy เป็น "Standard_NC6s_v3"
+    - กำหนดประเภท instance สำหรับการ deploy เป็น "Standard_NC6s_v3"
 
-    - ตรวจสอบว่ามีแท็ก inference_compute_allow_list อยู่ใน foundation model หรือไม่ ถ้ามีจะเปลี่ยนค่าจากสตริงเป็นลิสต์ Python และเก็บไว้ใน inference_computes_allow_list ถ้าไม่มีจะตั้งค่า inference_computes_allow_list เป็น None
+    - ตรวจสอบว่ามีแท็ก inference_compute_allow_list ใน foundation model หรือไม่ หากมีจะแปลงค่าจากสตริงเป็นรายการ Python และกำหนดให้ inference_computes_allow_list หากไม่มีจะตั้งค่าเป็น None
 
-    - ตรวจสอบว่า instance type ที่ระบุอยู่ใน allow list หรือไม่ ถ้าไม่อยู่จะแสดงข้อความแจ้งให้ผู้ใช้เลือก instance type จาก allow list
+    - ตรวจสอบว่าประเภท instance ที่ระบุอยู่ในรายการอนุญาตหรือไม่ หากไม่อยู่จะแสดงข้อความให้ผู้ใช้เลือกประเภท instance จากรายการอนุญาต
 
-    - เตรียมสร้าง deployment โดยสร้าง ManagedOnlineDeployment object พร้อมพารามิเตอร์ต่างๆ เช่น ชื่อ deployment, ชื่อ endpoint, ID ของโมเดล, instance type และจำนวน instance, การตั้งค่า liveness probe และการตั้งค่า request
+    - เตรียมสร้าง deployment โดยสร้างอ็อบเจ็กต์ ManagedOnlineDeployment พร้อมพารามิเตอร์ต่าง ๆ เช่น ชื่อ deployment ชื่อ endpoint ไอดีโมเดล ประเภทและจำนวน instance การตั้งค่า liveness probe และการตั้งค่าคำขอ
 
-    - สร้าง deployment โดยเรียกใช้เมธอด begin_create_or_update ของ workspace_ml_client พร้อมส่ง ManagedOnlineDeployment object เป็นอาร์กิวเมนต์ แล้วรอจนกระทั่งการสร้างเสร็จสิ้นโดยเรียก wait
+    - สร้าง deployment โดยเรียกใช้เมธอด begin_create_or_update ของ workspace_ml_client พร้อมอ็อบเจ็กต์ ManagedOnlineDeployment จากนั้นรอจนกว่าการสร้างจะเสร็จสิ้นด้วยเมธอด wait
 
-    - ตั้งค่า traffic ของ endpoint ให้ส่ง 100% ของ traffic ไปยัง deployment ชื่อ "demo"
+    - ตั้งค่า traffic ของ endpoint ให้ส่ง 100% ของทราฟฟิกไปยัง deployment ชื่อ "demo"
 
-    - อัปเดต endpoint โดยเรียกใช้เมธอด begin_create_or_update ของ workspace_ml_client พร้อมส่ง endpoint object เป็นอาร์กิวเมนต์ แล้วรอจนกระทั่งการอัปเดตเสร็จสิ้นโดยเรียก result
+    - อัปเดต endpoint โดยเรียกใช้เมธอด begin_create_or_update ของ workspace_ml_client พร้อมอ็อบเจ็กต์ endpoint จากนั้นรอจนกว่าการอัปเดตจะเสร็จสิ้นด้วยเมธอด result
 
-1. สรุปคือ สคริปต์นี้กำลัง deploy โมเดล machine learning ที่ลงทะเบียนแล้วไปยัง managed online endpoint ใน Azure Machine Learning
+1. สรุปคือ สคริปต์นี้ deploy โมเดลแมชชีนเลิร์นนิงที่ลงทะเบียนแล้วไปยัง managed online endpoint ใน Azure Machine Learning
 
 ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -763,21 +837,21 @@ Online endpoints ให้ REST API ที่ทนทานและสาม�
 
 ## 8. ทดสอบ endpoint ด้วยข้อมูลตัวอย่าง
 
-เราจะดึงข้อมูลตัวอย่างจากชุดข้อมูลทดสอบและส่งไปยัง online endpoint เพื่อทำการ inference จากนั้นจะแสดงผลป้ายคะแนนควบคู่กับป้ายคำตอบจริง
+เราจะดึงข้อมูลตัวอย่างจากชุดข้อมูลทดสอบและส่งไปยัง online endpoint เพื่อทำการทำนาย จากนั้นจะแสดงผลป้ายกำกับที่ได้พร้อมกับป้ายกำกับจริง
 
 ### การอ่านผลลัพธ์
 
-1. สคริปต์ Python นี้กำลังอ่านไฟล์ JSON Lines เข้าเป็น pandas DataFrame, เลือกตัวอย่างแบบสุ่ม, และรีเซ็ตดัชนี รายละเอียดของสิ่งที่ทำมีดังนี้:
+1. สคริปต์ Python นี้อ่านไฟล์ JSON Lines ลงใน pandas DataFrame เลือกตัวอย่างแบบสุ่ม และรีเซ็ตดัชนี โดยมีรายละเอียดดังนี้:
 
-    - อ่านไฟล์ ./ultrachat_200k_dataset/test_gen.jsonl เข้าเป็น pandas DataFrame โดยใช้ฟังก์ชัน read_json พร้อมอาร์กิวเมนต์ lines=True เพราะไฟล์นี้เป็น JSON Lines ที่แต่ละบรรทัดเป็น JSON object แยกกัน
+    - อ่านไฟล์ ./ultrachat_200k_dataset/test_gen.jsonl ลงใน pandas DataFrame โดยใช้ฟังก์ชัน read_json พร้อมอาร์กิวเมนต์ lines=True เนื่องจากไฟล์เป็นรูปแบบ JSON Lines ที่แต่ละบรรทัดเป็นอ็อบเจ็กต์ JSON แยกกัน
 
-    - เลือกตัวอย่างแบบสุ่ม 1 แถวจาก DataFrame โดยใช้ฟังก์ชัน sample พร้อมอาร์กิวเมนต์ n=1 เพื่อระบุจำนวนแถวที่สุ่มเลือก
+    - เลือกตัวอย่างแบบสุ่ม 1 แถวจาก DataFrame โดยใช้ฟังก์ชัน sample พร้อมอาร์กิวเมนต์ n=1 เพื่อระบุจำนวนแถวสุ่ม
 
-    - รีเซ็ตดัชนีของ DataFrame โดยใช้ฟังก์ชัน reset_index พร้อมอาร์กิวเมนต์ drop=True เพื่อลบดัชนีเดิมและแทนที่ด้วยดัชนีใหม่ที่เป็นค่าเต็มจำนวนเริ่มต้น
+    - รีเซ็ตดัชนีของ DataFrame โดยใช้ฟังก์ชัน reset_index พร้อมอาร์กิวเมนต์ drop=True เพื่อทิ้งดัชนีเดิมและแทนที่ด้วยดัชนีใหม่ที่เป็นเลขจำนวนเต็มเริ่มต้น
 
-    - แสดง 2 แถวแรกของ DataFrame โดยใช้ฟังก์ชัน head กับอาร์กิวเมนต์ 2 อย่างไรก็ตามเนื่องจาก DataFrame มีเพียง 1 แถวหลังจากการสุ่ม จึงจะแสดงเพียงแถวนั้นแถวเดียว
+    - แสดง 2 แถวแรกของ DataFrame โดยใช้ฟังก์ชัน head พร้อมอาร์กิวเมนต์ 2 แต่เนื่องจาก DataFrame มีเพียงแถวเดียวหลังการสุ่ม จึงจะแสดงแค่นั้น
 
-1. สรุปคือ สคริปต์นี้กำลังอ่านไฟล์ JSON Lines เข้าเป็น pandas DataFrame, เลือกตัวอย่างแบบสุ่ม 1 แถว, รีเซ็ตดัชนี และแสดงแถวแรก
+1. สรุปคือ สคริปต์นี้อ่านไฟล์ JSON Lines ลงใน pandas DataFrame เลือกตัวอย่างแบบสุ่ม 1 แถว รีเซ็ตดัชนี และแสดงแถวแรก
 
 ```python
     # Import pandas library
@@ -801,17 +875,16 @@ Online endpoints ให้ REST API ที่ทนทานและสาม�
     test_df.head(2)
     ```
 
-### การสร้าง JSON Object
+### สร้าง JSON Object
 
-1. สคริปต์ Python นี้กำลังสร้าง JSON object ด้วยพารามิเตอร์เฉพาะและบันทึกลงไฟล์ รายละเอียดของสิ่งที่ทำมีดังนี้:
+1. สคริปต์ Python นี้สร้างอ็อบเจ็กต์ JSON ด้วยพารามิเตอร์เฉพาะและบันทึกลงไฟล์ โดยมีรายละเอียดดังนี้:
 
     - นำเข้าโมดูล json ซึ่งให้ฟังก์ชันสำหรับจัดการข้อมูล JSON
 
-    - สร้างพจนานุกรม parameters ที่มีคีย์และค่าซึ่งแทนพารามิเตอร์สำหรับโมเดล machine learning โดยคีย์ได้แก่ "temperature", "top_p", "do_sample", และ "max_new_tokens" ซึ่งมีค่าตามลำดับคือ 0.6, 0.9, True และ 200
+    - สร้างพจนานุกรม parameters ที่มีคีย์และค่าซึ่งแทนพารามิเตอร์สำหรับโมเดลแมชชีนเลิร์นนิง คีย์ได้แก่ "temperature", "top_p", "do_sample", และ "max_new_tokens" โดยมีค่าตามลำดับคือ 0.6, 0.9, True, และ 200
 
-    - สร้างพจนานุกรม test_json อีกชุดหนึ่งที่มีสองคีย์คือ "input_data" และ "params" โดยค่าของ "input_data" เป็นพจนานุกรมอีกชุดหนึ่งที่มีคีย์ "input_string" และ "parameters" โดยค่าของ "input_string" เป็นลิสต์ที่เก็บข้อความแรกจาก test_df DataFrame ส่วนค่าของ "parameters" คือพจนานุกรม parameters ที่สร้างไว้ก่อนหน้า ค่าของ "params" เป็นพจนานุกรมว่าง
-
-    - เปิดไฟล์ชื่อ sample_score.json
+    - สร้างพจนานุกรมอีกตัวชื่อ test_json ที่มีคีย์สองตัวคือ "input_data" และ "params" โดยค่า "input_data" เป็นพจนานุกรมอีกชั้นหนึ่งที่มีคีย์ "input_string" และ "parameters" ค่า "input_string" เป็นลิสต์ที่มีข้อความแรกจาก DataFrame test_df ส่วนค่า "parameters" คือพจนานุกรม parameters ที่สร้างไว้ก่อนหน้า ค่า "params" เป็นพจนานุกรมว่างเปล่า
+- มันเปิดไฟล์ชื่อ sample_score.json
 
 ```python
     # Import the json module, which provides functions to work with JSON data
@@ -845,21 +918,21 @@ Online endpoints ให้ REST API ที่ทนทานและสาม�
         json.dump(test_json, f)
     ```
 
-### การเรียกใช้ Endpoint
+### การเรียกใช้งาน Endpoint
 
-1. สคริปต์ Python นี้กำลังเรียกใช้ online endpoint ใน Azure Machine Learning เพื่อทำการสกอร์ไฟล์ JSON รายละเอียดของสิ่งที่ทำมีดังนี้:
+1. สคริปต์ Python นี้กำลังเรียกใช้งาน endpoint ออนไลน์ใน Azure Machine Learning เพื่อประเมินคะแนนไฟล์ JSON โดยมีรายละเอียดดังนี้:
 
-    - เรียกใช้เมธอด invoke ของ online_endpoints ใน workspace_ml_client ซึ่งใช้ส่งคำขอไปยัง online endpoint และรับคำตอบกลับ
+    - มันเรียกใช้เมธอด invoke ของคุณสมบัติ online_endpoints ของอ็อบเจ็กต์ workspace_ml_client เมธอดนี้ใช้ส่งคำขอไปยัง endpoint ออนไลน์และรับการตอบกลับ
 
-    - ระบุชื่อ endpoint และ deployment ผ่านอาร์กิวเมนต์ endpoint_name และ deployment_name ในกรณีนี้ ชื่อ endpoint เก็บในตัวแปร online_endpoint_name และชื่อ deployment คือ "demo"
+    - ระบุชื่อของ endpoint และ deployment ผ่านอาร์กิวเมนต์ endpoint_name และ deployment_name ในกรณีนี้ ชื่อ endpoint ถูกเก็บไว้ในตัวแปร online_endpoint_name และชื่อ deployment คือ "demo"
 
-    - ระบุเส้นทางไฟล์ JSON ที่จะทำการสกอร์ผ่านอาร์กิวเมนต์ request_file ในกรณีนี้ไฟล์คือ ./ultrachat_200k_dataset/sample_score.json
+    - ระบุเส้นทางไปยังไฟล์ JSON ที่จะประเมินคะแนนผ่านอาร์กิวเมนต์ request_file ในกรณีนี้ไฟล์คือ ./ultrachat_200k_dataset/sample_score.json
 
-    - เก็บผลลัพธ์ที่ได้จาก endpoint ในตัวแปร response
+    - เก็บการตอบกลับจาก endpoint ไว้ในตัวแปร response
 
-    - แสดงผลลัพธ์ดิบ (raw response)
+    - แสดงผลการตอบกลับดิบ
 
-1. สรุปคือ สคริปต์นี้กำลังเรียกใช้ online endpoint ใน Azure Machine Learning เพื่อสกอร์ไฟล์ JSON และแสดงผลลัพธ์
+1. สรุปคือ สคริปต์นี้กำลังเรียกใช้งาน endpoint ออนไลน์ใน Azure Machine Learning เพื่อประเมินคะแนนไฟล์ JSON และแสดงผลการตอบกลับ
 
 ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
@@ -879,15 +952,15 @@ Online endpoints ให้ REST API ที่ทนทานและสาม�
 
 ## 9. ลบ online endpoint
 
-1. อย่าลืมลบ online endpoint มิฉะนั้นจะทำให้ระบบคิดค่าบริการสำหรับการใช้ compute ที่ endpoint ใช้อยู่ สายโค้ด Python นี้กำลังลบ online endpoint ใน Azure Machine Learning รายละเอียดของสิ่งที่ทำมีดังนี้:
+1. อย่าลืมลบ online endpoint ออก มิฉะนั้นจะทำให้ระบบคิดค่าบริการสำหรับการใช้งานคอมพิวต์ของ endpoint นั้น โค้ด Python บรรทัดนี้กำลังลบ online endpoint ใน Azure Machine Learning โดยมีรายละเอียดดังนี้:
 
-    - เรียกใช้เมธอด begin_delete ของ online_endpoints ใน workspace_ml_client เพื่อเริ่มการลบ online endpoint
+    - เรียกใช้เมธอด begin_delete ของคุณสมบัติ online_endpoints ของอ็อบเจ็กต์ workspace_ml_client เมธอดนี้ใช้เริ่มต้นการลบ online endpoint
 
-    - ระบุชื่อ endpoint ที่จะลบผ่านอาร์กิวเมนต์ name ในกรณีนี้ชื่อ endpoint เก็บในตัวแปร online_endpoint_name
+    - ระบุชื่อของ endpoint ที่จะลบผ่านอาร์กิวเมนต์ name ในกรณีนี้ชื่อ endpoint ถูกเก็บไว้ในตัวแปร online_endpoint_name
 
-    - เรียกใช้เมธอด wait เพื่อรอให้การลบเสร็จสมบูรณ์ นี่เป็นการทำงานแบบบล็อก ซึ่งจะหยุดสคริปต์ไม่ให้ทำงานต่อจนกว่าการลบจะเสร็จ
+    - เรียกใช้เมธอด wait เพื่อรอให้การลบเสร็จสมบูรณ์ นี่เป็นการทำงานแบบบล็อก ซึ่งหมายความว่าจะหยุดสคริปต์ไม่ให้ทำงานต่อจนกว่าการลบจะเสร็จ
 
-    - สรุปคือ สายโค้ดนี้เริ่มการลบ online endpoint ใน Azure Machine Learning และรอจนกว่าการลบจะเสร็จสมบูรณ์
+    - สรุปคือ โค้ดบรรทัดนี้กำลังเริ่มต้นการลบ online endpoint ใน Azure Machine Learning และรอให้การลบเสร็จสมบูรณ์
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -898,4 +971,4 @@ Online endpoints ให้ REST API ที่ทนทานและสาม�
     ```
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้มีความถูกต้อง แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อนได้ เอกสารต้นฉบับในภาษาต้นทางควรถูกพิจารณาเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ควรใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

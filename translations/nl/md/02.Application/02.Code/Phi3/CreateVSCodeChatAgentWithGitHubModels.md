@@ -2,51 +2,51 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:07:19+00:00",
+  "translation_date": "2025-07-17T03:27:37+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "nl"
 }
 -->
 # **Maak je eigen Visual Studio Code Chat Copilot Agent met Phi-3.5 van GitHub Models**
 
-Gebruik je Visual Studio Code Copilot? Vooral in Chat kun je verschillende agents gebruiken om je vermogen om projecten te creëren, schrijven en onderhouden in Visual Studio Code te verbeteren. Visual Studio Code biedt een API waarmee bedrijven en individuen verschillende agents kunnen maken die zijn afgestemd op hun bedrijfsvoering, om zo hun mogelijkheden in verschillende gespecialiseerde vakgebieden uit te breiden. In dit artikel richten we ons op **Phi-3.5-mini-instruct (128k)** en **Phi-3.5-vision-instruct (128k)** van GitHub Models om je eigen Visual Studio Code Agent te maken.
+Gebruik je Visual Studio Code Copilot? Vooral in Chat kun je verschillende agents gebruiken om je vermogen om projecten te creëren, schrijven en onderhouden in Visual Studio Code te verbeteren. Visual Studio Code biedt een API waarmee bedrijven en individuen verschillende agents kunnen maken op basis van hun bedrijfsbehoeften om hun mogelijkheden in diverse gespecialiseerde gebieden uit te breiden. In dit artikel richten we ons op **Phi-3.5-mini-instruct (128k)** en **Phi-3.5-vision-instruct (128k)** van GitHub Models om je eigen Visual Studio Code Agent te creëren.
 
 ## **Over Phi-3.5 op GitHub Models**
 
-We weten dat Phi-3/3.5-mini-instruct uit de Phi-3/3.5-familie sterke codebegrip- en generatiecapaciteiten heeft, en beter presteert dan Gemma-2-9b en Mistral-Nemo-12B-instruct-2407.
+We weten dat Phi-3/3.5-mini-instruct uit de Phi-3/3.5 Familie sterke codebegrip- en generatiecapaciteiten heeft, en voordelen biedt ten opzichte van Gemma-2-9b en Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.nl.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.nl.png)
 
-De nieuwste GitHub Models bieden al toegang tot de Phi-3.5-mini-instruct (128k) en Phi-3.5-vision-instruct (128k) modellen. Ontwikkelaars kunnen hier via de OpenAI SDK, Azure AI Inference SDK en REST API gebruik van maken.
+De nieuwste GitHub Models bieden al toegang tot de Phi-3.5-mini-instruct (128k) en Phi-3.5-vision-instruct (128k) modellen. Ontwikkelaars kunnen hier toegang toe krijgen via de OpenAI SDK, Azure AI Inference SDK en REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.nl.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.nl.png)
 
 ***Note:*** Het wordt aanbevolen om hier de Azure AI Inference SDK te gebruiken, omdat deze beter kan schakelen met de Azure Model Catalog in een productieomgeving.
 
-Hieronder zie je de resultaten van **Phi-3.5-mini-instruct (128k)** en **Phi-3.5-vision-instruct (128k)** in een codegeneratiescenario na koppeling met GitHub Models, ter voorbereiding op de volgende voorbeelden.
+Hieronder zie je de resultaten van **Phi-3.5-mini-instruct (128k)** en **Phi-3.5-vision-instruct (128k)** in de codegeneratiescenario’s na koppeling met GitHub Models, en tevens ter voorbereiding op de volgende voorbeelden.
 
-**Demo: GitHub Models Phi-3.5-mini-instruct (128k) genereert code vanuit Prompt** ([klik deze link](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-mini-instruct (128k) genereert code vanuit Prompt** ([klik op deze link](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**Demo: GitHub Models Phi-3.5-vision-instruct (128k) genereert code vanuit Afbeelding** ([klik deze link](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-vision-instruct (128k) genereert code vanuit Afbeelding** ([klik op deze link](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 
 ## **Over GitHub Copilot Chat Agent**
 
-GitHub Copilot Chat Agent kan verschillende taken voltooien in uiteenlopende projectsituaties op basis van de code. Het systeem heeft vier agents: workspace, github, terminal, vscode.
+GitHub Copilot Chat Agent kan verschillende taken voltooien in uiteenlopende projectsituaties op basis van de code. Het systeem heeft vier agents: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.nl.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.nl.png)
 
-Door de naam van de agent vooraf te laten gaan door ‘@’, kun je snel het bijbehorende werk uitvoeren. Voor bedrijven geldt: als je je eigen bedrijfsgerelateerde inhoud toevoegt, zoals requirements, codering, testspecificaties en releases, kun je krachtigere private bedrijfsfuncties creëren op basis van GitHub Copilot.
+Door de naam van de agent met ‘@’ toe te voegen, kun je snel het bijbehorende werk uitvoeren. Voor bedrijven geldt dat als je eigen bedrijfsgerelateerde inhoud toevoegt zoals requirements, codering, testspecificaties en releases, je krachtigere privéfuncties voor bedrijven kunt creëren op basis van GitHub Copilot.
 
-Visual Studio Code Chat Agent heeft nu officieel zijn API uitgebracht, waardoor bedrijven of bedrijfsontwikkelaars agents kunnen ontwikkelen die zijn afgestemd op verschillende software-ecosystemen. Op basis van de ontwikkelmethode van Visual Studio Code Extension Development kun je eenvoudig toegang krijgen tot de interface van de Visual Studio Code Chat Agent API. We kunnen ontwikkelen volgens dit proces.
+Visual Studio Code Chat Agent heeft nu officieel zijn API uitgebracht, waardoor bedrijven of bedrijfsontwikkelaars agents kunnen ontwikkelen op basis van verschillende software-ecosystemen. Gebaseerd op de ontwikkelmethode van Visual Studio Code Extension Development, kun je eenvoudig toegang krijgen tot de interface van de Visual Studio Code Chat Agent API. We kunnen ontwikkelen op basis van dit proces.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.nl.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.nl.png)
 
-De ontwikkelsituatie ondersteunt toegang tot API’s van derden (zoals GitHub Models, Azure Model Catalog en zelfgebouwde services gebaseerd op open source modellen) en kan ook gebruikmaken van de gpt-35-turbo, gpt-4 en gpt-4o modellen die door GitHub Copilot worden geleverd.
+De ontwikkelscenario’s ondersteunen toegang tot API’s van derden (zoals GitHub Models, Azure Model Catalog en zelfgebouwde services gebaseerd op open source modellen) en kunnen ook gebruikmaken van de gpt-35-turbo, gpt-4 en gpt-4o modellen die door GitHub Copilot worden aangeboden.
 
-## **Voeg een Agent @phicoding toe op basis van Phi-3.5**
+## **Voeg een Agent @phicoding toe gebaseerd op Phi-3.5**
 
-We proberen de programmeercapaciteiten van Phi-3.5 te integreren om code schrijven, code genereren vanuit afbeeldingen en andere taken te voltooien. We maken een Agent rondom Phi-3.5 - @PHI, met de volgende functies:
+We proberen de programmeermogelijkheden van Phi-3.5 te integreren om code schrijven, code voor beeldgeneratie en andere taken te voltooien. Maak een Agent rondom Phi-3.5 - @PHI, met de volgende functies:
 
 1. Genereer een zelfintroductie gebaseerd op GPT-4o geleverd door GitHub Copilot via het **@phicoding /help** commando
 
@@ -54,7 +54,7 @@ We proberen de programmeercapaciteiten van Phi-3.5 te integreren om code schrijv
 
 3. Genereer code op basis van **Phi-3.5-vision-instruct (128k)** en voltooi afbeeldingen via het **@phicoding /image** commando
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.nl.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.nl.png)
 
 ## **Gerelateerde stappen**
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. Open het aangemaakte project en pas package.json aan. Hier staan de gerelateerde instructies en configuraties, evenals de configuratie van GitHub Models. Let op: je moet hier je GitHub Models token toevoegen.
+3. Open het aangemaakte project en pas package.json aan. Hier vind je de gerelateerde instructies en configuraties, evenals de configuratie van GitHub Models. Let op dat je hier je GitHub Models token moet toevoegen.
 
 ```json
 
@@ -364,21 +364,21 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.nl.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.nl.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.nl.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.nl.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.nl.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.nl.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.nl.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.nl.png)
 
-Je kunt voorbeeldcode downloaden: [klik](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Je kunt voorbeeldcode downloaden: [klik hier](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **Resources**
 
@@ -389,4 +389,4 @@ Je kunt voorbeeldcode downloaden: [klik](../../../../../../code/09.UpdateSamples
 3. Leer over Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsservice [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onjuistheden kunnen bevatten. Het originele document in de oorspronkelijke taal geldt als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

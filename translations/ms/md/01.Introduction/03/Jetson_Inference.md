@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-05-09T11:42:20+00:00",
+  "translation_date": "2025-07-16T20:44:10+00:00",
   "source_file": "md/01.Introduction/03/Jetson_Inference.md",
   "language_code": "ms"
 }
 -->
-# **Inference Phi-3 in Nvidia Jetson**
+# **Inferens Phi-3 di Nvidia Jetson**
 
-Nvidia Jetson هو سلسلة من لوحات الحوسبة المدمجة من Nvidia. طرازات Jetson TK1 و TX1 و TX2 جميعها مزودة بمعالج Tegra (أو SoC) من Nvidia يدمج وحدة معالجة مركزية (CPU) بمعمارية ARM. Jetson هو نظام منخفض الطاقة ومصمم لتسريع تطبيقات تعلم الآلة. يستخدم Nvidia Jetson من قبل المطورين المحترفين لإنشاء منتجات ذكاء اصطناعي رائدة في جميع الصناعات، ومن قبل الطلاب والهواة للتعلم العملي للذكاء الاصطناعي وصنع مشاريع مذهلة. يتم نشر SLM في أجهزة الحافة مثل Jetson، مما سيمكن من تنفيذ أفضل لسيناريوهات تطبيقات الذكاء الاصطناعي التوليدي الصناعية.
+Nvidia Jetson adalah siri papan pengkomputeran terbenam daripada Nvidia. Model Jetson TK1, TX1 dan TX2 semuanya menggunakan pemproses Tegra (atau SoC) dari Nvidia yang menggabungkan unit pemprosesan pusat (CPU) berasaskan seni bina ARM. Jetson adalah sistem berkuasa rendah dan direka untuk mempercepatkan aplikasi pembelajaran mesin. Nvidia Jetson digunakan oleh pembangun profesional untuk mencipta produk AI terobosan dalam pelbagai industri, serta oleh pelajar dan peminat untuk pembelajaran AI secara praktikal dan menghasilkan projek yang menakjubkan. SLM digunakan dalam peranti edge seperti Jetson, yang membolehkan pelaksanaan yang lebih baik bagi senario aplikasi AI generatif industri.
 
-## النشر على NVIDIA Jetson:
-يمكن للمطورين العاملين في مجال الروبوتات الذاتية والأجهزة المدمجة الاستفادة من Phi-3 Mini. الحجم الصغير نسبيًا لـ Phi-3 يجعله مثاليًا للنشر على الحافة. تم ضبط المعلمات بعناية خلال التدريب، مما يضمن دقة عالية في الاستجابات.
+## Penyebaran pada NVIDIA Jetson:
+Pembangun yang bekerja pada robotik autonomi dan peranti terbenam boleh memanfaatkan Phi-3 Mini. Saiz Phi-3 yang agak kecil menjadikannya sesuai untuk penyebaran edge. Parameter telah disesuaikan dengan teliti semasa latihan, memastikan ketepatan tinggi dalam respons.
 
-### تحسين TensorRT-LLM:
-مكتبة [TensorRT-LLM من NVIDIA](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) تقوم بتحسين استدلال نماذج اللغة الكبيرة. تدعم نافذة السياق الطويلة لـ Phi-3 Mini، مما يعزز كل من الإنتاجية والكمون. تشمل التحسينات تقنيات مثل LongRoPE و FP8 و inflight batching.
+### Pengoptimuman TensorRT-LLM:
+[Perpustakaan TensorRT-LLM](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) daripada NVIDIA mengoptimumkan inferens model bahasa besar. Ia menyokong tetingkap konteks panjang Phi-3 Mini, meningkatkan kedua-dua kelajuan pemprosesan dan latensi. Pengoptimuman termasuk teknik seperti LongRoPE, FP8, dan inflight batching.
 
-### التوفر والنشر:
-يمكن للمطورين استكشاف Phi-3 Mini مع نافذة سياق 128K على [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). يتم تعبئته كـ NVIDIA NIM، وهو خدمة مصغرة بواجهة API قياسية يمكن نشرها في أي مكان. بالإضافة إلى ذلك، تتوفر [تنفيذات TensorRT-LLM على GitHub](https://github.com/NVIDIA/TensorRT-LLM).
+### Ketersediaan dan Penyebaran:
+Pembangun boleh meneroka Phi-3 Mini dengan tetingkap konteks 128K di [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/). Ia dibungkus sebagai NVIDIA NIM, satu mikroservis dengan API standard yang boleh disebarkan di mana-mana. Selain itu, [pelaksanaan TensorRT-LLM di GitHub](https://github.com/NVIDIA/TensorRT-LLM).
 
-## **1. التحضير**
+## **1. Persediaan**
 
 a. Jetson Orin NX / Jetson NX
 
@@ -30,17 +30,17 @@ c. Cuda 11.8
 
 d. Python 3.8+
 
-## **2. تشغيل Phi-3 في Jetson**
+## **2. Menjalankan Phi-3 di Jetson**
 
-يمكننا اختيار [Ollama](https://ollama.com) أو [LlamaEdge](https://llamaedge.com)
+Kita boleh memilih [Ollama](https://ollama.com) atau [LlamaEdge](https://llamaedge.com)
 
-إذا كنت ترغب في استخدام gguf في السحابة وأجهزة الحافة في نفس الوقت، يمكن فهم LlamaEdge كـ WasmEdge (WasmEdge هو بيئة تشغيل WebAssembly خفيفة الوزن وعالية الأداء وقابلة للتوسع، مناسبة للتطبيقات السحابية الأصلية والحافة والتطبيقات اللامركزية. تدعم التطبيقات بدون خادم، الوظائف المدمجة، الخدمات المصغرة، العقود الذكية وأجهزة إنترنت الأشياء. يمكنك نشر نموذج gguf الكمي على أجهزة الحافة والسحابة من خلال LlamaEdge.
+Jika anda ingin menggunakan gguf di awan dan peranti edge pada masa yang sama, LlamaEdge boleh difahami sebagai WasmEdge (WasmEdge adalah runtime WebAssembly yang ringan, berprestasi tinggi dan boleh diskalakan sesuai untuk aplikasi asli awan, edge dan terdesentralisasi. Ia menyokong aplikasi tanpa pelayan, fungsi terbenam, mikroservis, kontrak pintar dan peranti IoT). Anda boleh menyebarkan model kuantitatif gguf ke peranti edge dan awan melalui LlamaEdge.
 
-![llamaedge](../../../../../translated_images/llamaedge.1356a35c809c5e9d89d8168db0c92161e87f5e2c34831f2fad800f00fc4e74dc.ms.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.ms.jpg)
 
-فيما يلي خطوات الاستخدام
+Berikut adalah langkah-langkah untuk menggunakan
 
-1. تثبيت وتنزيل المكتبات والملفات المتعلقة
+1. Pasang dan muat turun perpustakaan dan fail berkaitan
 
 ```bash
 
@@ -54,9 +54,9 @@ tar xzf chatbot-ui.tar.gz
 
 ```
 
-**ملاحظة**: يجب أن يكون كل من llama-api-server.wasm و chatbot-ui في نفس المجلد
+**Nota**: llama-api-server.wasm dan chatbot-ui perlu berada dalam direktori yang sama
 
-2. تشغيل السكربتات في الطرفية
+2. Jalankan skrip di terminal
 
 ```bash
 
@@ -64,13 +64,13 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 ```
 
-إليك نتيجة التشغيل
+Ini adalah hasil pelaksanaan
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.66eb2acd7f14e814437879522158b9531ae7c955014d48d0708d0e4ce6ac94a6.ms.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.ms.png)
 
-***كود تجريبي*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
+***Kod contoh*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
-باختصار، يمثل Phi-3 Mini قفزة نوعية في نمذجة اللغة، حيث يجمع بين الكفاءة والوعي بالسياق وقوة تحسينات NVIDIA. سواء كنت تبني روبوتات أو تطبيقات على الحافة، فإن Phi-3 Mini هو أداة قوية يجب معرفتها.
+Secara ringkas, Phi-3 Mini mewakili lonjakan dalam pemodelan bahasa, menggabungkan kecekapan, kesedaran konteks, dan kepakaran pengoptimuman NVIDIA. Sama ada anda membina robot atau aplikasi edge, Phi-3 Mini adalah alat yang kuat untuk diketahui.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau tafsiran yang salah yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

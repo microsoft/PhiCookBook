@@ -2,44 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:58:39+00:00",
+  "translation_date": "2025-07-16T20:53:01+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "cs"
 }
 -->
-## Inference with Kaito 
+## Inference s Kaitem
 
-[Kaito](https://github.com/Azure/kaito) es un operador que automatiza el despliegue de modelos de inferencia AI/ML en un clúster de Kubernetes.
+[Kaito](https://github.com/Azure/kaito) je operator, který automatizuje nasazení AI/ML inference modelů v Kubernetes clusteru.
 
-Kaito presenta las siguientes diferencias clave en comparación con la mayoría de las metodologías convencionales de despliegue de modelos basadas en infraestructuras de máquinas virtuales:
+Kaito se od většiny běžných metod nasazení modelů postavených na infrastruktuře virtuálních strojů liší těmito klíčovými vlastnostmi:
 
-- Gestiona los archivos del modelo usando imágenes de contenedor. Se proporciona un servidor http para realizar llamadas de inferencia usando la biblioteca del modelo.
-- Evita ajustar parámetros de despliegue para adaptarse al hardware GPU proporcionando configuraciones predefinidas.
-- Provisión automática de nodos GPU según los requerimientos del modelo.
-- Aloja imágenes de modelos grandes en el Microsoft Container Registry (MCR) público si la licencia lo permite.
+- Správa modelových souborů pomocí kontejnerových image. K dispozici je HTTP server pro provádění inference volání pomocí modelové knihovny.
+- Vyhýbá se ladění parametrů nasazení podle GPU hardwaru díky přednastaveným konfiguracím.
+- Automaticky zajišťuje GPU uzly podle požadavků modelu.
+- Hostuje velké modelové image v veřejném Microsoft Container Registry (MCR), pokud to licence umožňuje.
 
-Con Kaito, el flujo de trabajo para incorporar grandes modelos de inferencia AI en Kubernetes se simplifica considerablemente.
+Díky Kaitovi je workflow zavádění velkých AI inference modelů v Kubernetes výrazně zjednodušené.
 
+## Architektura
 
-## Arquitectura
-
-Kaito sigue el patrón clásico de diseño Kubernetes Custom Resource Definition (CRD)/controlador. El usuario gestiona un recurso personalizado `workspace` que describe los requerimientos de GPU y la especificación de inferencia. Los controladores de Kaito automatizan el despliegue reconciliando el recurso personalizado `workspace`.
+Kaito vychází z klasického návrhového vzoru Kubernetes Custom Resource Definition (CRD)/controller. Uživatel spravuje vlastní zdroj `workspace`, který popisuje požadavky na GPU a specifikaci inference. Kaito controllery automatizují nasazení tím, že synchronizují stav `workspace` custom resource.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-La figura anterior presenta una visión general de la arquitectura de Kaito. Sus componentes principales son:
+Výše uvedený obrázek ukazuje přehled architektury Kaitoa. Její hlavní komponenty jsou:
 
-- **Controlador de workspace**: Reconciliará el recurso personalizado `workspace`, creará recursos personalizados `machine` (explicados más adelante) para activar la provisión automática de nodos, y creará la carga de trabajo de inferencia (`deployment` o `statefulset`) basada en las configuraciones predefinidas del modelo.
-- **Controlador de provisión de nodos**: El nombre del controlador es *gpu-provisioner* en el [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Utiliza el CRD `machine` originado de [Karpenter](https://sigs.k8s.io/karpenter) para interactuar con el controlador de workspace. Se integra con las APIs de Azure Kubernetes Service (AKS) para añadir nuevos nodos GPU al clúster AKS. 
-> Nota: El componente de código abierto [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) puede ser reemplazado por otros controladores si soportan las APIs de [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Workspace controller**: Synchronizuje `workspace` custom resource, vytváří `machine` (viz níže) custom resources pro spuštění automatického zajištění uzlů a vytváří inference workload (`deployment` nebo `statefulset`) na základě přednastavených konfigurací modelu.
+- **Node provisioner controller**: Tento controller se jmenuje *gpu-provisioner* v [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Používá `machine` CRD pocházející z [Karpenter](https://sigs.k8s.io/karpenter) pro komunikaci s workspace controllerem. Integruje se s Azure Kubernetes Service (AKS) API pro přidání nových GPU uzlů do AKS clusteru.
+> Poznámka: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) je open source komponenta. Může být nahrazena jinými controllery, pokud podporují [Karpenter-core](https://sigs.k8s.io/karpenter) API.
 
-## Instalación
+## Instalace
 
-Por favor, consulta la guía de instalación [aquí](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Pokyny k instalaci najdete [zde](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Inicio rápido Inference Phi-3
-[Código de ejemplo Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Rychlý start Inference Phi-3
+[Vzorový kód Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -84,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-El estado del workspace puede ser monitoreado ejecutando el siguiente comando. Cuando la columna WORKSPACEREADY sea `True`, el modelo se ha desplegado con éxito.
+Stav workspace lze sledovat spuštěním následujícího příkazu. Jakmile se ve sloupci WORKSPACEREADY objeví hodnota `True`, model byl úspěšně nasazen.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -92,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-A continuación, se puede obtener la IP del servicio de inferencia en el clúster y usar un pod temporal con `curl` para probar el endpoint del servicio dentro del clúster.
+Dále lze zjistit cluster IP inference služby a pomocí dočasného `curl` podu otestovat koncový bod služby v clusteru.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -103,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Inicio rápido Inference Phi-3 con adaptadores
+## Rychlý start Inference Phi-3 s adaptéry
 
-Después de instalar Kaito, se pueden probar los siguientes comandos para iniciar un servicio de inferencia.
+Po instalaci Kaitoa lze vyzkoušet následující příkazy pro spuštění inference služby.
 
-[Código de ejemplo Inference Phi-3 con adaptadores](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Vzorový kód Inference Phi-3 s adaptéry](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -156,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-El estado del workspace puede ser monitoreado ejecutando el siguiente comando. Cuando la columna WORKSPACEREADY sea `True`, el modelo se ha desplegado con éxito.
+Stav workspace lze sledovat spuštěním následujícího příkazu. Jakmile se ve sloupci WORKSPACEREADY objeví hodnota `True`, model byl úspěšně nasazen.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -164,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-A continuación, se puede obtener la IP del servicio de inferencia en el clúster y usar un pod temporal con `curl` para probar el endpoint del servicio dentro del clúster.
+Dále lze zjistit cluster IP inference služby a pomocí dočasného `curl` podu otestovat koncový bod služby v clusteru.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -176,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

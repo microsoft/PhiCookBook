@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:08:29+00:00",
+  "translation_date": "2025-07-17T05:15:57+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "da"
 }
 -->
 ## **Funktionskald i Phi-4-mini**
 
-Funktionskald dukkede først op i Phi Family, og nu kan du bruge det gennem Phi-4-mini.
+Funktionskald dukkede først op i Phi Family-familien, og nu kan du bruge det gennem Phi-4-mini.
 
-Dette eksempel viser en simulering af Premier League-resultater. Målet er, at Phi-4-mini leverer realtidsinformation om kampene. Nedenfor er eksempel-koden:
+Dette eksempel viser en simulering af Premier League-resultater. Målet er, at Phi-4-mini leverer spilinformation i realtid. Nedenfor er eksempel-koden:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For vigtig information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

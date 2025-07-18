@@ -2,69 +2,69 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:39:37+00:00",
+  "translation_date": "2025-07-16T21:19:00+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "el"
 }
 -->
-# Απομακρυσμένη Εξαγωγή Συμπερασμάτων με το fine-tuned μοντέλο
+# Απομακρυσμένη Εκτέλεση Inferencing με το fine-tuned μοντέλο
 
-Αφού εκπαιδευτούν οι προσαρμογείς στο απομακρυσμένο περιβάλλον, χρησιμοποιήστε μια απλή εφαρμογή Gradio για να αλληλεπιδράσετε με το μοντέλο.
+Αφού εκπαιδευτούν οι adapters στο απομακρυσμένο περιβάλλον, χρησιμοποιήστε μια απλή εφαρμογή Gradio για να αλληλεπιδράσετε με το μοντέλο.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.el.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.el.png)
 
-### Προετοιμασία Πόρων Azure  
-Πρέπει να ρυθμίσετε τους Πόρους Azure για απομακρυσμένη εξαγωγή συμπερασμάτων εκτελώντας την `AI Toolkit: Provision Azure Container Apps for inference` από την παλέτα εντολών. Κατά τη διάρκεια αυτής της ρύθμισης, θα σας ζητηθεί να επιλέξετε τη Συνδρομή Azure και την ομάδα πόρων σας.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.el.png)
+### Παροχή Πόρων Azure  
+Πρέπει να ρυθμίσετε τους πόρους Azure για απομακρυσμένη inferencing εκτελώντας την εντολή `AI Toolkit: Provision Azure Container Apps for inference` από την παλέτα εντολών. Κατά τη διάρκεια αυτής της διαδικασίας, θα σας ζητηθεί να επιλέξετε τη συνδρομή Azure και την ομάδα πόρων σας.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.el.png)
 
-Κατά προεπιλογή, η συνδρομή και η ομάδα πόρων για την εξαγωγή συμπερασμάτων πρέπει να ταιριάζουν με αυτές που χρησιμοποιήθηκαν για το fine-tuning. Η εξαγωγή συμπερασμάτων θα χρησιμοποιήσει το ίδιο Περιβάλλον Azure Container App και θα έχει πρόσβαση στο μοντέλο και τον προσαρμογέα μοντέλου που είναι αποθηκευμένα σε Azure Files, τα οποία δημιουργήθηκαν κατά το βήμα fine-tuning.
+Από προεπιλογή, η συνδρομή και η ομάδα πόρων για το inference θα πρέπει να είναι οι ίδιες με αυτές που χρησιμοποιήθηκαν για το fine-tuning. Το inference θα χρησιμοποιήσει το ίδιο Azure Container App Environment και θα έχει πρόσβαση στο μοντέλο και τον adapter μοντέλου που αποθηκεύονται στα Azure Files, τα οποία δημιουργήθηκαν κατά το βήμα του fine-tuning.
 
 ## Χρήση του AI Toolkit
 
-### Ανάπτυξη για Εξαγωγή Συμπερασμάτων  
-Αν θέλετε να τροποποιήσετε τον κώδικα εξαγωγής συμπερασμάτων ή να φορτώσετε ξανά το μοντέλο εξαγωγής, εκτελέστε την εντολή `AI Toolkit: Deploy for inference`. Αυτό θα συγχρονίσει τον πιο πρόσφατο κώδικά σας με το ACA και θα επανεκκινήσει το αντίγραφο.
+### Ανάπτυξη για Inference  
+Αν θέλετε να τροποποιήσετε τον κώδικα του inference ή να φορτώσετε ξανά το μοντέλο inference, εκτελέστε την εντολή `AI Toolkit: Deploy for inference`. Αυτό θα συγχρονίσει τον πιο πρόσφατο κώδικά σας με το ACA και θα επανεκκινήσει το αντίγραφο.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.el.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.el.png)
 
 Μετά την επιτυχή ολοκλήρωση της ανάπτυξης, το μοντέλο είναι πλέον έτοιμο για αξιολόγηση μέσω αυτού του endpoint.
 
-### Πρόσβαση στο API Εξαγωγής Συμπερασμάτων
+### Πρόσβαση στο API του Inference
 
-Μπορείτε να έχετε πρόσβαση στο API εξαγωγής συμπερασμάτων κάνοντας κλικ στο κουμπί "*Go to Inference Endpoint*" που εμφανίζεται στην ειδοποίηση του VSCode. Εναλλακτικά, το web API endpoint βρίσκεται κάτω από την `ACA_APP_ENDPOINT` στο `./infra/inference.config.json` και στο πάνελ εξόδου.
+Μπορείτε να αποκτήσετε πρόσβαση στο API του inference πατώντας το κουμπί "*Go to Inference Endpoint*" που εμφανίζεται στην ειδοποίηση του VSCode. Εναλλακτικά, το web API endpoint βρίσκεται στο `ACA_APP_ENDPOINT` μέσα στο αρχείο `./infra/inference.config.json` και στο πάνελ εξόδου.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.el.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.el.png)
 
-> **Note:** Το endpoint εξαγωγής μπορεί να χρειαστεί λίγα λεπτά για να είναι πλήρως λειτουργικό.
+> **Note:** Το endpoint του inference μπορεί να χρειαστεί μερικά λεπτά για να γίνει πλήρως λειτουργικό.
 
-## Συστατικά Εξαγωγής Συμπερασμάτων που Περιλαμβάνονται στο Πρότυπο
+## Συστατικά του Inference που Περιλαμβάνονται στο Πρότυπο
 
 | Φάκελος | Περιεχόμενα |
 | ------ |--------- |
 | `infra` | Περιέχει όλες τις απαραίτητες ρυθμίσεις για απομακρυσμένες λειτουργίες. |
-| `infra/provision/inference.parameters.json` | Περιλαμβάνει παραμέτρους για τα bicep templates, που χρησιμοποιούνται για την προετοιμασία πόρων Azure για εξαγωγή συμπερασμάτων. |
-| `infra/provision/inference.bicep` | Περιέχει πρότυπα για την προετοιμασία πόρων Azure για εξαγωγή συμπερασμάτων. |
-| `infra/inference.config.json` | Το αρχείο ρυθμίσεων, που δημιουργείται από την εντολή `AI Toolkit: Provision Azure Container Apps for inference`. Χρησιμοποιείται ως είσοδος για άλλες απομακρυσμένες παλέτες εντολών. |
+| `infra/provision/inference.parameters.json` | Περιέχει παραμέτρους για τα bicep templates, που χρησιμοποιούνται για την παροχή πόρων Azure για το inference. |
+| `infra/provision/inference.bicep` | Περιέχει τα templates για την παροχή πόρων Azure για το inference. |
+| `infra/inference.config.json` | Το αρχείο ρυθμίσεων, που δημιουργείται από την εντολή `AI Toolkit: Provision Azure Container Apps for inference`. Χρησιμοποιείται ως είσοδος για άλλες απομακρυσμένες εντολές. |
 
-### Χρήση του AI Toolkit για τη ρύθμιση προετοιμασίας πόρων Azure  
+### Χρήση του AI Toolkit για τη ρύθμιση παροχής πόρων Azure  
 Ρυθμίστε το [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Προετοιμάστε τα Azure Container Apps για εξαγωγή συμπερασμάτων` command.
+Εκτελέστε την εντολή `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+Μπορείτε να βρείτε τις παραμέτρους ρύθμισης στο αρχείο `./infra/provision/inference.parameters.json`. Ακολουθούν οι λεπτομέρειες:  
+| Παράμετρος | Περιγραφή |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | Οι εντολές για την εκκίνηση ενός web API. |
+| `maximumInstanceCount` | Ορίζει τη μέγιστη χωρητικότητα των GPU instances. |
+| `location` | Η τοποθεσία όπου παρέχονται οι πόροι Azure. Η προεπιλεγμένη τιμή είναι η ίδια με την τοποθεσία της επιλεγμένης ομάδας πόρων. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | Αυτές οι παράμετροι χρησιμοποιούνται για την ονομασία των πόρων Azure που θα παρασχεθούν. Από προεπιλογή, θα είναι ίδιες με το όνομα των πόρων που χρησιμοποιήθηκαν για το fine-tuning. Μπορείτε να εισάγετε ένα νέο, μη χρησιμοποιημένο όνομα πόρου για να δημιουργήσετε προσαρμοσμένους πόρους ή να εισάγετε το όνομα ενός ήδη υπάρχοντος πόρου Azure αν προτιμάτε να τον χρησιμοποιήσετε. Για λεπτομέρειες, ανατρέξτε στην ενότητα [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### Χρήση Υφιστάμενων Πόρων Azure
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Από προεπιλογή, η παροχή πόρων για το inference χρησιμοποιεί το ίδιο Azure Container App Environment, Storage Account, Azure File Share και Azure Log Analytics που χρησιμοποιήθηκαν για το fine-tuning. Δημιουργείται ξεχωριστό Azure Container App αποκλειστικά για το API του inference.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` αρχείο. Έπειτα, εκτελέστε την εντολή `AI Toolkit: Provision Azure Container Apps for inference` από την παλέτα εντολών. Αυτό ενημερώνει τους καθορισμένους πόρους και δημιουργεί όσους λείπουν.
+Αν έχετε προσαρμόσει τους πόρους Azure κατά το βήμα του fine-tuning ή θέλετε να χρησιμοποιήσετε τους δικούς σας υπάρχοντες πόρους Azure για το inference, καθορίστε τα ονόματά τους στο αρχείο `./infra/inference.parameters.json`. Στη συνέχεια, εκτελέστε την εντολή `AI Toolkit: Provision Azure Container Apps for inference` από την παλέτα εντολών. Αυτό ενημερώνει τους καθορισμένους πόρους και δημιουργεί όσους λείπουν.
 
-Για παράδειγμα, αν έχετε ήδη υπάρχον περιβάλλον Azure container, το αρχείο `./infra/finetuning.parameters.json` θα πρέπει να μοιάζει ως εξής:
+Για παράδειγμα, αν έχετε ήδη ένα υπάρχον Azure container environment, το αρχείο `./infra/finetuning.parameters.json` σας θα πρέπει να μοιάζει ως εξής:
 
 ```json
 {
@@ -83,8 +83,8 @@ If you have customized the Azure resources during the fine-tuning step or want t
   }
 ```
 
-### Χειροκίνητη Προετοιμασία  
-Αν προτιμάτε να ρυθμίσετε χειροκίνητα τους πόρους Azure, μπορείτε να χρησιμοποιήσετε τα διαθέσιμα αρχεία bicep στον φάκελο `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`.
+### Χειροκίνητη Παροχή  
+Αν προτιμάτε να ρυθμίσετε χειροκίνητα τους πόρους Azure, μπορείτε να χρησιμοποιήσετε τα αρχεία bicep που παρέχονται στους φακέλους `./infra/provision`. Αν έχετε ήδη ρυθμίσει και διαμορφώσει όλους τους πόρους Azure χωρίς να χρησιμοποιήσετε την παλέτα εντολών του AI Toolkit, απλά εισάγετε τα ονόματα των πόρων στο αρχείο `inference.config.json`.
 
 Για παράδειγμα:
 
@@ -100,4 +100,4 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική μετάφραση από ανθρώπους. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

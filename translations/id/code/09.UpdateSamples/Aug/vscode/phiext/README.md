@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-09T05:29:29+00:00",
+  "translation_date": "2025-07-16T17:31:25+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "id"
 }
 -->
 # phiext README
 
-Ini adalah README untuk ekstensi Anda "phiext". Setelah menulis deskripsi singkat, kami menyarankan untuk menyertakan bagian-bagian berikut.
+Ini adalah README untuk ekstensi Anda "phiext". Setelah menulis deskripsi singkat, kami sarankan untuk menyertakan bagian-bagian berikut.
 
 ## Features
 
-Jelaskan fitur spesifik dari ekstensi Anda termasuk tangkapan layar ekstensi Anda saat digunakan. Jalur gambar relatif terhadap file README ini.
+Jelaskan fitur-fitur spesifik dari ekstensi Anda termasuk tangkapan layar saat ekstensi Anda digunakan. Jalur gambar bersifat relatif terhadap file README ini.
 
 Misalnya jika ada subfolder gambar di dalam workspace proyek ekstensi Anda:
 
@@ -31,14 +31,14 @@ Sertakan jika ekstensi Anda menambahkan pengaturan VS Code melalui titik ekstens
 
 Misalnya:
 
-Ekstensi ini menyumbang pengaturan berikut:
+Ekstensi ini menambahkan pengaturan berikut:
 
 * `myExtension.enable`: Aktifkan/nonaktifkan ekstensi ini.
 * `myExtension.thing`: Atur ke `blah` untuk melakukan sesuatu.
 
 ## Known Issues
 
-Menyebutkan masalah yang sudah diketahui dapat membantu mengurangi pengguna yang membuka masalah duplikat terhadap ekstensi Anda.
+Menyebutkan masalah yang sudah diketahui dapat membantu mengurangi pengguna yang membuka isu duplikat terkait ekstensi Anda.
 
 ## Release Notes
 
@@ -80,4 +80,4 @@ Anda dapat membuat README menggunakan Visual Studio Code. Berikut beberapa pinta
 **Selamat menikmati!**
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

@@ -2,70 +2,70 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:10:21+00:00",
+  "translation_date": "2025-07-17T03:31:16+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "sl"
 }
 -->
-# **Ustvari svojega Visual Studio Code Chat Copilot agenta s Phi-3.5 od GitHub Models**
+# **Ustvarite svojega Visual Studio Code Chat Copilot agenta z Phi-3.5 iz GitHub Models**
 
-Ali uporabljaš Visual Studio Code Copilot? Še posebej v Chatu lahko uporabiš različne agente za izboljšanje sposobnosti ustvarjanja, pisanja in vzdrževanja projektov v Visual Studio Code. Visual Studio Code ponuja API, ki podjetjem in posameznikom omogoča ustvarjanje različnih agentov, prilagojenih njihovemu poslovanju, da razširijo svoje zmogljivosti na različnih lastniških področjih. V tem članku se bomo osredotočili na **Phi-3.5-mini-instruct (128k)** in **Phi-3.5-vision-instruct (128k)** iz GitHub Models, da ustvarimo svojega Visual Studio Code agenta.
+Ali uporabljate Visual Studio Code Copilot? Še posebej v Chat načinu lahko uporabite različne agente za izboljšanje sposobnosti ustvarjanja, pisanja in vzdrževanja projektov v Visual Studio Code. Visual Studio Code ponuja API, ki podjetjem in posameznikom omogoča ustvarjanje različnih agentov, prilagojenih njihovemu poslovanju, za razširitev zmogljivosti na različnih področjih. V tem članku se bomo osredotočili na **Phi-3.5-mini-instruct (128k)** in **Phi-3.5-vision-instruct (128k)** iz GitHub Models za ustvarjanje lastnega Visual Studio Code agenta.
 
 ## **O Phi-3.5 na GitHub Models**
 
 Vemo, da ima Phi-3/3.5-mini-instruct iz družine Phi-3/3.5 močne sposobnosti razumevanja in generiranja kode ter prednosti pred Gemma-2-9b in Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.sl.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.sl.png)
 
-Najnovejši GitHub Models že omogočajo dostop do modelov Phi-3.5-mini-instruct (128k) in Phi-3.5-vision-instruct (128k). Razvijalci jih lahko uporabljajo preko OpenAI SDK, Azure AI Inference SDK in REST API.
+Najnovejši GitHub Models že omogočajo dostop do modelov Phi-3.5-mini-instruct (128k) in Phi-3.5-vision-instruct (128k). Razvijalci do njih dostopajo preko OpenAI SDK, Azure AI Inference SDK in REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.sl.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.sl.png)
 
-***Note: *** Priporočljivo je uporabljati Azure AI Inference SDK, saj bolje omogoča preklapljanje z Azure Model Catalog v produkcijskem okolju.
+***Note:*** Priporočljivo je uporabljati Azure AI Inference SDK, saj omogoča bolj gladko preklapljanje z Azure Model Catalog v produkcijskem okolju.
 
-Spodaj so prikazani rezultati **Phi-3.5-mini-instruct (128k)** in **Phi-3.5-vision-instruct (128k)** v scenariju generiranja kode po integraciji z GitHub Models, ter priprava na naslednje primere.
+Spodaj so prikazani rezultati **Phi-3.5-mini-instruct (128k)** in **Phi-3.5-vision-instruct (128k)** v scenariju generiranja kode po povezavi z GitHub Models, prav tako pa so pripravljeni za naslednje primere.
 
-**Demo: GitHub Models Phi-3.5-mini-instruct (128k) generira kodo iz poziva** ([klikni tukaj](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-mini-instruct (128k) generira kodo iz Prompt** ([kliknite tukaj](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**Demo: GitHub Models Phi-3.5-vision-instruct (128k) generira kodo iz slike** ([klikni tukaj](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-vision-instruct (128k) generira kodo iz slike** ([kliknite tukaj](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 
 ## **O GitHub Copilot Chat Agentu**
 
-GitHub Copilot Chat Agent lahko opravi različna opravila v različnih projektnih scenarijih na podlagi kode. Sistem ima štiri agente: workspace, github, terminal, vscode
+GitHub Copilot Chat Agent lahko opravi različne naloge v različnih projektnih scenarijih na podlagi kode. Sistem ima štiri agente: workspace, github, terminal, vscode.
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.sl.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.sl.png)
 
-Z dodajanjem imena agenta z ‘@’ lahko hitro opraviš ustrezno delo. Za podjetja, če dodaš svoje vsebine povezane s poslovanjem, kot so zahteve, kodiranje, testne specifikacije in izdaje, lahko dobiš močnejše zasebne funkcije za podjetja na osnovi GitHub Copilot.
+Z dodajanjem imena agenta z ‘@’ lahko hitro opravite ustrezno delo. Za podjetja, če dodate vsebine, povezane z vašim poslovanjem, kot so zahteve, kodiranje, testne specifikacije in izdaje, lahko pridobite močnejše zasebne funkcije za podjetja, ki temeljijo na GitHub Copilot.
 
-Visual Studio Code Chat Agent je zdaj uradno izdal svoj API, ki omogoča podjetjem ali razvojnim skupinam razvijanje agentov na podlagi različnih poslovnih ekosistemov programske opreme. Na podlagi razvoja Visual Studio Code Extension Development lahko enostavno dostopaš do vmesnika Visual Studio Code Chat Agent API. Razvijamo lahko po tem postopku.
+Visual Studio Code Chat Agent je zdaj uradno izdal svoj API, ki podjetjem ali razvijalcem omogoča razvoj agentov, prilagojenih različnim ekosistemom programske opreme. Na podlagi metode razvoja Visual Studio Code Extension Development lahko enostavno dostopate do vmesnika Visual Studio Code Chat Agent API. Razvijamo lahko na podlagi tega procesa.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.sl.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.sl.png)
 
-Razvojni scenarij podpira dostop do API-jev tretjih modelov (kot so GitHub Models, Azure Model Catalog in samostojne storitve na osnovi odprtokodnih modelov) in lahko uporablja modele gpt-35-turbo, gpt-4 in gpt-4o, ki jih zagotavlja GitHub Copilot.
+Razvojni scenarij podpira dostop do API-jev tretjih modelov (kot so GitHub Models, Azure Model Catalog in lastne storitve, zgrajene na odprtokodnih modelih) ter lahko uporablja tudi modele gpt-35-turbo, gpt-4 in gpt-4o, ki jih zagotavlja GitHub Copilot.
 
-## **Dodaj agenta @phicoding na osnovi Phi-3.5**
+## **Dodajanje agenta @phicoding na osnovi Phi-3.5**
 
-Poskušamo združiti programerske zmožnosti Phi-3.5 za dokončanje pisanja kode, generiranje kode iz slik in drugih nalog. Ustvarimo agenta, ki temelji na Phi-3.5 - @PHI, spodaj so nekatere funkcije:
+Poskušamo združiti programerske zmogljivosti Phi-3.5 za dokončanje pisanja kode, generiranja kode iz slik in drugih nalog. Ustvarimo agenta, zgrajenega okoli Phi-3.5 - @PHI, spodaj so nekatere funkcije:
 
-1. Generira samopredstavitev na podlagi GPT-4o, ki ga nudi GitHub Copilot, preko ukaza **@phicoding /help**
+1. Generira samopredstavitev na podlagi GPT-4o, ki ga zagotavlja GitHub Copilot, preko ukaza **@phicoding /help**
 
 2. Generira kodo za različne programske jezike na podlagi **Phi-3.5-mini-instruct (128k)** preko ukaza **@phicoding /gen**
 
-3. Generira kodo na podlagi **Phi-3.5-vision-instruct (128k)** in dokonča slike preko ukaza **@phicoding /image**
+3. Generira kodo na podlagi **Phi-3.5-vision-instruct (128k)** in dokončuje kodo iz slike preko ukaza **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.sl.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.sl.png)
 
 ## **Povezani koraki**
 
-1. Namesti podporo za razvoj Visual Studio Code Extension z uporabo npm
+1. Namestite podporo za razvoj Visual Studio Code Extension z uporabo npm
 
 ```bash
 
 npm install --global yo generator-code 
 
 ```
-2. Ustvari Visual Studio Code Extension vtičnik (uporabi Typescript razvojni način, poimenuj phiext)
+2. Ustvarite Visual Studio Code Extension vtičnik (v načinu razvoja Typescript, poimenujte phiext)
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. Odpri ustvarjen projekt in spremeni package.json. Tukaj so povezani opisi in nastavitve, vključno z nastavitvijo GitHub Models. Pomembno je, da tukaj dodaš svoj GitHub Models žeton.
+3. Odprite ustvarjeni projekt in uredite package.json. Tukaj so povezane instrukcije in konfiguracije, vključno s konfiguracijo GitHub Models. Pomembno je, da tukaj dodate svoj GitHub Models žeton.
 
 ```json
 
@@ -191,7 +191,7 @@ yo code
 
 ```
 
-4. Spremeni src/extension.ts
+4. Uredite src/extension.ts
 
 ```typescript
 
@@ -364,29 +364,29 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.sl.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.sl.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.sl.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.sl.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.sl.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.sl.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.sl.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.sl.png)
 
-Lahko preneseš vzorčno kodo: [klikni](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Vzorec kode lahko prenesete tukaj: [kliknite](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **Viri**
 
-1. Registracija GitHub Models [https://gh.io/models](https://gh.io/models)
+1. Registracija za GitHub Models [https://gh.io/models](https://gh.io/models)
 
-2. Nauči se razvoja Visual Studio Code Extension [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
+2. Naučite se razvoja Visual Studio Code Extension [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
-3. Spoznaj Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
+3. Spoznajte Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

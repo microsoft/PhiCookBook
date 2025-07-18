@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:13:07+00:00",
+  "translation_date": "2025-07-16T21:37:44+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "br"
 }
 -->
-# **Inferência Phi-3-Vision Local**
+# **Inferência Phi-3-Vision Localmente**
 
-Phi-3-vision-128k-instruct permite que o Phi-3 não apenas compreenda a linguagem, mas também veja o mundo visualmente. Com o Phi-3-vision-128k-instruct, podemos resolver diferentes problemas visuais, como OCR, análise de tabelas, reconhecimento de objetos, descrição de imagens, etc. Podemos realizar facilmente tarefas que antes exigiam muito treinamento de dados. A seguir, estão as técnicas relacionadas e os cenários de aplicação citados pelo Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct permite que o Phi-3 não apenas compreenda a linguagem, mas também veja o mundo visualmente. Com o Phi-3-vision-128k-instruct, podemos resolver diferentes problemas visuais, como OCR, análise de tabelas, reconhecimento de objetos, descrição de imagens, entre outros. Podemos realizar tarefas que antes exigiam muito treinamento de dados com facilidade. A seguir, estão as técnicas relacionadas e cenários de aplicação citados pelo Phi-3-vision-128k-instruct
 
 ## **0. Preparação**
 
-Por favor, certifique-se de que as seguintes bibliotecas Python estejam instaladas antes de usar (recomenda-se Python 3.10+)
+Por favor, certifique-se de que as seguintes bibliotecas Python estejam instaladas antes do uso (recomenda-se Python 3.10+)
 
 ```bash
 pip install transformers -U
@@ -27,7 +27,7 @@ Recomenda-se usar ***CUDA 11.6+*** e instalar flatten
 pip install flash-attn --no-build-isolation
 ```
 
-Crie um novo Notebook. Para completar os exemplos, recomenda-se criar o seguinte conteúdo primeiro.
+Crie um novo Notebook. Para completar os exemplos, é recomendado que você crie o seguinte conteúdo primeiro.
 
 ```python
 from PIL import Image
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR com Phi-3-Vision**
 
-Além de analisar a imagem, também podemos extrair informações dela. Este é o processo de OCR que antes exigia escrever códigos complexos para ser concluído.
+Além de analisar a imagem, também podemos extrair informações dela. Esse é o processo de OCR que antes exigia escrever códigos complexos para ser concluído.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Comparação de múltiplas imagens**
 
-Phi-3 Vision suporta comparação de múltiplas imagens. Podemos usar este modelo para encontrar as diferenças entre as imagens.
+Phi-3 Vision suporta a comparação de múltiplas imagens. Podemos usar esse modelo para encontrar as diferenças entre as imagens.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

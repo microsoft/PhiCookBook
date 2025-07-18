@@ -2,42 +2,42 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-05-09T14:20:33+00:00",
+  "translation_date": "2025-07-16T22:12:50+00:00",
   "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "sl"
 }
 -->
-# **Quantiziranje Phi Family z uporabo llama.cpp**
+# **Kvantizacija družine Phi z uporabo llama.cpp**
 
 ## **Kaj je llama.cpp**
 
-llama.cpp je odprtokodna programska knjižnica, večinoma napisana v C++, ki izvaja inferenco na različnih velikih jezikovnih modelih (LLM), kot je Llama. Glavni cilj je zagotoviti vrhunsko zmogljivost za inferenco LLM na širokem spektru strojne opreme z minimalno nastavitev. Poleg tega so na voljo tudi Python vezave, ki nudijo visokonivojski API za dokončanje besedila in OpenAI združljiv spletni strežnik.
+llama.cpp je odprtokodna programska knjižnica, večinoma napisana v C++, ki izvaja sklepanje na različnih velikih jezikovnih modelih (LLM), kot je Llama. Glavni cilj je zagotoviti vrhunsko zmogljivost pri sklepanju LLM na širokem naboru strojne opreme z minimalno nastavitvijo. Poleg tega so na voljo tudi Python vezave za to knjižnico, ki ponujajo visokonivojski API za dokončanje besedila in spletni strežnik združljiv z OpenAI.
 
-Glavni namen llama.cpp je omogočiti inferenco LLM z minimalno nastavitev in vrhunsko zmogljivostjo na različnih napravah – lokalno in v oblaku.
+Glavni namen llama.cpp je omogočiti sklepanje LLM z minimalno nastavitvijo in vrhunsko zmogljivostjo na različnih vrstah strojne opreme – lokalno in v oblaku.
 
-- Čista C/C++ implementacija brez odvisnosti  
-- Apple silicon je enakovredno podprt – optimiziran preko ARM NEON, Accelerate in Metal ogrodij  
-- Podpora za AVX, AVX2 in AVX512 na x86 arhitekturah  
-- Kvantizacija z 1.5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit in 8-bit celimi števili za hitrejšo inferenco in manjšo porabo pomnilnika  
-- Prilagojeni CUDA jedri za poganjanje LLM na NVIDIA GPU-jih (podpora za AMD GPU preko HIP)  
-- Podpora za Vulkan in SYCL backend  
-- Hibridna inferenca CPU+GPU za delno pospeševanje modelov, ki so večji od skupne kapacitete VRAM  
+- Preprosta implementacija v C/C++ brez odvisnosti
+- Apple silicon je podprt kot prvorazredna platforma – optimizirano preko ARM NEON, Accelerate in Metal ogrodij
+- Podpora za AVX, AVX2 in AVX512 na arhitekturah x86
+- Kvantizacija z 1,5-bitnim, 2-bitnim, 3-bitnim, 4-bitnim, 5-bitnim, 6-bitnim in 8-bitnim celim številom za hitrejše sklepanje in manjšo porabo pomnilnika
+- Prilagojeni CUDA jedra za izvajanje LLM na NVIDIA GPU-jih (podpora za AMD GPU-je preko HIP)
+- Podpora za Vulkan in SYCL zaledje
+- Hibridno sklepanje CPU+GPU za delno pospeševanje modelov, večjih od skupne kapacitete VRAM
 
-## **Kvantiacija Phi-3.5 z llama.cpp**
+## **Kvantizacija Phi-3.5 z llama.cpp**
 
-Model Phi-3.5-Instruct je mogoče kvantizirati z llama.cpp, vendar Phi-3.5-Vision in Phi-3.5-MoE še nista podprta. Format, ki ga pretvori llama.cpp, je gguf, kar je tudi najbolj razširjen format kvantizacije.
+Model Phi-3.5-Instruct je mogoče kvantizirati z llama.cpp, medtem ko Phi-3.5-Vision in Phi-3.5-MoE še nista podprta. Format, ki ga pretvori llama.cpp, je gguf, ki je tudi najbolj razširjen format kvantizacije.
 
-Na Hugging Face je veliko modelov v kvantiziranem GGUF formatu. AI Foundry, Ollama in LlamaEdge uporabljajo llama.cpp, zato so GGUF modeli pogosto v uporabi.
+Na Hugging Face je na voljo veliko modelov v kvantiziranem formatu GGUF. AI Foundry, Ollama in LlamaEdge temeljijo na llama.cpp, zato se modeli GGUF pogosto uporabljajo.
 
 ### **Kaj je GGUF**
 
-GGUF je binarni format, optimiziran za hitro nalaganje in shranjevanje modelov, kar ga naredi zelo učinkovitega za inferenco. GGUF je zasnovan za uporabo z GGML in drugimi izvrševalci. GGUF je razvil @ggerganov, ki je tudi razvijalec llama.cpp, priljubljenega C/C++ ogrodja za inferenco LLM. Modeli, ki so sprva razviti v ogrodjih, kot je PyTorch, se lahko pretvorijo v GGUF format za uporabo z omenjenimi motorji.
+GGUF je binarni format, optimiziran za hitro nalaganje in shranjevanje modelov, kar ga naredi zelo učinkovitega za sklepanje. GGUF je zasnovan za uporabo z GGML in drugimi izvrševalci. GGUF je razvil @ggerganov, ki je tudi razvijalec llama.cpp, priljubljenega C/C++ ogrodja za sklepanje LLM. Modeli, sprva razviti v ogrodjih, kot je PyTorch, se lahko pretvorijo v format GGUF za uporabo s temi motorji.
 
 ### **ONNX proti GGUF**
 
-ONNX je tradicionalen format za strojno učenje/globoko učenje, ki je dobro podprt v različnih AI ogrodjih in ima dobre primere uporabe na robnih napravah. GGUF pa temelji na llama.cpp in ga lahko štejemo za produkt dobe GenAI. Oba imata podobne uporabe. Če želite boljšo zmogljivost na vgrajeni strojni opremi in aplikacijskih slojih, je ONNX lahko vaša izbira. Če uporabljate derivatna ogrodja in tehnologije llama.cpp, je GGUF morda boljši.
+ONNX je tradicionalen format za strojno učenje/globoko učenje, ki je dobro podprt v različnih AI ogrodjih in ima dobre primere uporabe na robnih napravah. GGUF pa temelji na llama.cpp in ga lahko označimo kot produkt dobe GenAI. Oba imata podobne namene. Če želite boljšo zmogljivost na vgrajeni strojni opremi in aplikacijskih plasteh, je ONNX morda prava izbira. Če uporabljate izpeljano ogrodje in tehnologijo llama.cpp, je GGUF lahko boljša izbira.
 
-### **Kvantiacija Phi-3.5-Instruct z uporabo llama.cpp**
+### **Kvantizacija Phi-3.5-Instruct z uporabo llama.cpp**
 
 **1. Nastavitev okolja**
 
@@ -55,7 +55,7 @@ make -j8
 
 **2. Kvantizacija**
 
-Pretvorba Phi-3.5-Instruct v FP16 GGUF z uporabo llama.cpp
+S pomočjo llama.cpp pretvorite Phi-3.5-Instruct v FP16 GGUF
 
 
 ```bash
@@ -64,7 +64,7 @@ Pretvorba Phi-3.5-Instruct v FP16 GGUF z uporabo llama.cpp
 
 ```
 
-Kvantiacija Phi-3.5 v INT4
+Kvantizacija Phi-3.5 v INT4
 
 
 ```bash
@@ -109,9 +109,9 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 ## **Viri**
 
-1. Več o llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)  
-2. Več o onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)  
+1. Več o llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+2. Več o onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 3. Več o GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za prevajanje z umetno inteligenco [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

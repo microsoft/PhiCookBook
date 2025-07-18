@@ -2,73 +2,73 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ecbd9179a21edbaafaf114d47f09f3e3",
-  "translation_date": "2025-05-09T18:08:39+00:00",
+  "translation_date": "2025-07-17T01:31:23+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md",
   "language_code": "th"
 }
 -->
-# ปรับแต่งและผสานรวมโมเดล Phi-3 แบบกำหนดเองกับ Prompt flow ใน Azure AI Foundry
+# ปรับแต่งและผสานรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow ใน Azure AI Foundry
 
-ตัวอย่างแบบครบวงจร (E2E) นี้อ้างอิงจากคู่มือ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" จาก Microsoft Tech Community โดยจะแนะนำขั้นตอนการปรับแต่ง การนำไปใช้ และการผสานรวมโมเดล Phi-3 แบบกำหนดเองกับ Prompt flow ใน Azure AI Foundry  
-ต่างจากตัวอย่าง E2E "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" ที่ใช้การรันโค้ดในเครื่อง ตัวอย่างนี้จะเน้นไปที่การปรับแต่งและผสานรวมโมเดลภายใน Azure AI / ML Studio เท่านั้น
+ตัวอย่างแบบครบวงจร (E2E) นี้อ้างอิงจากคำแนะนำ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?WT.mc_id=aiml-137032-kinfeylo)" จาก Microsoft Tech Community ซึ่งแนะนำกระบวนการปรับแต่ง การปรับใช้ และการผสานรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow ใน Azure AI Foundry  
+แตกต่างจากตัวอย่าง E2E "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow](./E2E_Phi-3-FineTuning_PromptFlow_Integration.md)" ที่ต้องรันโค้ดในเครื่อง ตัวอย่างนี้เน้นการปรับแต่งและผสานรวมโมเดลภายใน Azure AI / ML Studio เท่านั้น
 
 ## ภาพรวม
 
-ในตัวอย่าง E2E นี้ คุณจะได้เรียนรู้วิธีการปรับแต่งโมเดล Phi-3 และผสานรวมกับ Prompt flow ใน Azure AI Foundry โดยใช้ Azure AI / ML Studio เพื่อสร้างเวิร์กโฟลว์สำหรับการนำโมเดล AI แบบกำหนดเองไปใช้งาน ตัวอย่างนี้แบ่งออกเป็น 3 กรณีใช้งานหลัก:
+ในตัวอย่าง E2E นี้ คุณจะได้เรียนรู้วิธีปรับแต่งโมเดล Phi-3 และผสานรวมกับ Prompt flow ใน Azure AI Foundry โดยใช้ Azure AI / ML Studio เพื่อสร้างเวิร์กโฟลว์สำหรับการปรับใช้และใช้งานโมเดล AI ที่กำหนดเอง ตัวอย่างนี้แบ่งออกเป็นสามสถานการณ์:
 
-**กรณีที่ 1: ตั้งค่า Azure resources และเตรียมความพร้อมสำหรับการปรับแต่ง**
+**สถานการณ์ที่ 1: ตั้งค่า Azure resources และเตรียมความพร้อมสำหรับการปรับแต่ง**
 
-**กรณีที่ 2: ปรับแต่งโมเดล Phi-3 และนำไปใช้ใน Azure Machine Learning Studio**
+**สถานการณ์ที่ 2: ปรับแต่งโมเดล Phi-3 และปรับใช้ใน Azure Machine Learning Studio**
 
-**กรณีที่ 3: ผสานรวมกับ Prompt flow และแชทกับโมเดลแบบกำหนดเองใน Azure AI Foundry**
+**สถานการณ์ที่ 3: ผสานรวมกับ Prompt flow และสนทนากับโมเดลที่กำหนดเองใน Azure AI Foundry**
 
-นี่คือภาพรวมของตัวอย่าง E2E นี้
+ภาพรวมของตัวอย่าง E2E นี้มีดังนี้
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.48557afd46be88c521fb66f886c611bb93ec4cde1b00e138174ae97f75f56262.th.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a2ceacdc6401c688bdf100d874fe8d55169f7723ed024781e.th.png)
 
 ### สารบัญ
 
-1. **[กรณีที่ 1: ตั้งค่า Azure resources และเตรียมความพร้อมสำหรับการปรับแต่ง](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[สถานการณ์ที่ 1: ตั้งค่า Azure resources และเตรียมความพร้อมสำหรับการปรับแต่ง](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [สร้าง Azure Machine Learning Workspace](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [ขอเพิ่มโควต้า GPU ใน Azure Subscription](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [เพิ่มการมอบหมายบทบาท (role assignment)](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [เพิ่มการมอบหมายบทบาท](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [ตั้งค่าโปรเจกต์](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [เตรียมชุดข้อมูลสำหรับการปรับแต่ง](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[กรณีที่ 2: ปรับแต่งโมเดล Phi-3 และนำไปใช้ใน Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+1. **[สถานการณ์ที่ 2: ปรับแต่งโมเดล Phi-3 และปรับใช้ใน Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
     - [ปรับแต่งโมเดล Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [นำโมเดล Phi-3 ที่ปรับแต่งแล้วไปใช้งาน](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [ปรับใช้โมเดล Phi-3 ที่ปรับแต่งแล้ว](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[กรณีที่ 3: ผสานรวมกับ Prompt flow และแชทกับโมเดลแบบกำหนดเองใน Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [ผสานรวมโมเดล Phi-3 แบบกำหนดเองกับ Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [แชทกับโมเดล Phi-3 แบบกำหนดเองของคุณ](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[สถานการณ์ที่ 3: ผสานรวมกับ Prompt flow และสนทนากับโมเดลที่กำหนดเองใน Azure AI Foundry](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [ผสานรวมโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [สนทนากับโมเดล Phi-3 ที่กำหนดเองของคุณ](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## กรณีที่ 1: ตั้งค่า Azure resources และเตรียมความพร้อมสำหรับการปรับแต่ง
+## สถานการณ์ที่ 1: ตั้งค่า Azure resources และเตรียมความพร้อมสำหรับการปรับแต่ง
 
 ### สร้าง Azure Machine Learning Workspace
 
 1. พิมพ์ *azure machine learning* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Azure Machine Learning** จากตัวเลือกที่ปรากฏ
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.d34ed3e290197950bb59b5574720c139f88921832c375c07d5c0f3134d7831ca.th.png)
+    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b9780de8accc31e4e1de7254e9c34a7836a955d455339e77d.th.png)
 
 2. เลือก **+ Create** จากเมนูนำทาง
 
 3. เลือก **New workspace** จากเมนูนำทาง
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.969d9b84a9a134e223a6efeba5bb9a81729993389665a76b81a22cb65e1ee702.th.png)
+    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2cf04946c36873223099fd568e0c3ab0377c096868892fdda.th.png)
 
-4. ทำตามขั้นตอนดังนี้:
+4. ดำเนินการดังนี้:
 
-    - เลือก Azure **Subscription** ของคุณ
-    - เลือก **Resource group** ที่ต้องการใช้ (สร้างใหม่ถ้าจำเป็น)
-    - กรอก **Workspace Name** ซึ่งต้องไม่ซ้ำกับที่มีอยู่แล้ว
+    - เลือก **Subscription** ของคุณ
+    - เลือก **Resource group** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
+    - กรอกชื่อ **Workspace Name** ซึ่งต้องไม่ซ้ำกับที่มีอยู่
     - เลือก **Region** ที่ต้องการใช้
-    - เลือก **Storage account** ที่ต้องการใช้ (สร้างใหม่ถ้าจำเป็น)
-    - เลือก **Key vault** ที่ต้องการใช้ (สร้างใหม่ถ้าจำเป็น)
-    - เลือก **Application insights** ที่ต้องการใช้ (สร้างใหม่ถ้าจำเป็น)
-    - เลือก **Container registry** ที่ต้องการใช้ (สร้างใหม่ถ้าจำเป็น)
+    - เลือก **Storage account** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
+    - เลือก **Key vault** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
+    - เลือก **Application insights** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
+    - เลือก **Container registry** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.97c43ed40b5231572001c9e2a5193a4c63de657f07401d1fce962a085e129809.th.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090ff9ec341c724c1493e7f96726f5c810a89a7409b782a7b04a.th.png)
 
 5. เลือก **Review + Create**
 
@@ -76,56 +76,56 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### ขอเพิ่มโควต้า GPU ใน Azure Subscription
 
-ในบทเรียนนี้ คุณจะได้เรียนรู้วิธีปรับแต่งและนำโมเดล Phi-3 ไปใช้งานโดยใช้ GPU สำหรับการปรับแต่งจะใช้ GPU รุ่น *Standard_NC24ads_A100_v4* ซึ่งต้องขอโควต้า ส่วนการนำไปใช้งานจะใช้ GPU รุ่น *Standard_NC6s_v3* ซึ่งก็ต้องขอโควต้าเช่นกัน
+ในบทแนะนำนี้ คุณจะได้เรียนรู้วิธีปรับแต่งและปรับใช้โมเดล Phi-3 โดยใช้ GPU สำหรับการปรับแต่งจะใช้ GPU รุ่น *Standard_NC24ads_A100_v4* ซึ่งต้องขอโควต้า สำหรับการปรับใช้จะใช้ GPU รุ่น *Standard_NC6s_v3* ซึ่งก็ต้องขอโควต้าเช่นกัน
 
 > [!NOTE]
 >
-> เฉพาะ Subscription แบบ Pay-As-You-Go (ประเภท Subscription มาตรฐาน) เท่านั้นที่มีสิทธิ์ขอโควต้า GPU; Subscription แบบ benefit ยังไม่รองรับในขณะนี้
+> เฉพาะ Subscription แบบ Pay-As-You-Go (ประเภท Subscription มาตรฐาน) เท่านั้นที่สามารถขอจัดสรร GPU ได้ Subscription ประเภท benefit ยังไม่รองรับในขณะนี้
 >
 
 1. เข้าไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
 
-1. ทำตามขั้นตอนต่อไปนี้เพื่อขอโควต้า *Standard NCADSA100v4 Family*:
+1. ดำเนินการดังนี้เพื่อขอโควต้า *Standard NCADSA100v4 Family*:
 
     - เลือก **Quota** จากแท็บด้านซ้าย
-    - เลือก **Virtual machine family** ที่ต้องการ เช่น เลือก **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** ซึ่งรวม GPU *Standard_NC24ads_A100_v4*
+    - เลือก **Virtual machine family** ที่ต้องการใช้ เช่น เลือก **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** ซึ่งรวม GPU รุ่น *Standard_NC24ads_A100_v4*
     - เลือก **Request quota** จากเมนูนำทาง
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.9bb6ecf76b842dbccd70603b5a6f8533e7a2a0f9f9cc8304bef67fb0bb09e49a.th.png)
+        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd536f2e4a305c8528a34914370813bc2cda4d7bbdd2de873f0.th.png)
 
-    - ในหน้าขอโควต้า กรอกจำนวน **New cores limit** ที่ต้องการ เช่น 24
-    - กด **Submit** เพื่อส่งคำขอโควต้า GPU
+    - ในหน้า Request quota กรอกจำนวน **New cores limit** ที่ต้องการ เช่น 24
+    - ในหน้า Request quota เลือก **Submit** เพื่อส่งคำขอโควต้า GPU
 
-1. ทำตามขั้นตอนต่อไปนี้เพื่อขอโควต้า *Standard NCSv3 Family*:
+1. ดำเนินการดังนี้เพื่อขอโควต้า *Standard NCSv3 Family*:
 
     - เลือก **Quota** จากแท็บด้านซ้าย
-    - เลือก **Virtual machine family** ที่ต้องการ เช่น เลือก **Standard NCSv3 Family Cluster Dedicated vCPUs** ซึ่งรวม GPU *Standard_NC6s_v3*
+    - เลือก **Virtual machine family** ที่ต้องการใช้ เช่น เลือก **Standard NCSv3 Family Cluster Dedicated vCPUs** ซึ่งรวม GPU รุ่น *Standard_NC6s_v3*
     - เลือก **Request quota** จากเมนูนำทาง
-    - ในหน้าขอโควต้า กรอกจำนวน **New cores limit** ที่ต้องการ เช่น 24
-    - กด **Submit** เพื่อส่งคำขอโควต้า GPU
+    - ในหน้า Request quota กรอกจำนวน **New cores limit** ที่ต้องการ เช่น 24
+    - ในหน้า Request quota เลือก **Submit** เพื่อส่งคำขอโควต้า GPU
 
-### เพิ่มการมอบหมายบทบาท (role assignment)
+### เพิ่มการมอบหมายบทบาท
 
-เพื่อให้สามารถปรับแต่งและนำโมเดลไปใช้ได้ คุณต้องสร้าง User Assigned Managed Identity (UAI) และมอบสิทธิ์ที่เหมาะสมให้กับมัน ซึ่ง UAI นี้จะถูกใช้สำหรับการตรวจสอบสิทธิ์ในระหว่างการนำโมเดลไปใช้งาน
+เพื่อปรับแต่งและปรับใช้โมเดลของคุณ คุณต้องสร้าง User Assigned Managed Identity (UAI) และมอบสิทธิ์ที่เหมาะสมให้กับมันก่อน UAI นี้จะใช้สำหรับการยืนยันตัวตนในระหว่างการปรับใช้
 
 #### สร้าง User Assigned Managed Identity (UAI)
 
 1. พิมพ์ *managed identities* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Managed Identities** จากตัวเลือกที่ปรากฏ
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.61954962fbc13913ceb35d00dd9d746b91fdd96834383b65214fa0f4d1152441.th.png)
+    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e52f52a152187b230243fe884f58a9940cd9b534db3dcea383.th.png)
 
 1. เลือก **+ Create**
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.4608dd89e644e68f40b559d30788383bc70dd3d14f082c78f460ba45d208f273.th.png)
+    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f27b6680cd94ef6ec7557394022dafdcfba2a92777b11e4817.th.png)
 
-1. ทำตามขั้นตอนต่อไปนี้:
+1. ดำเนินการดังนี้:
 
-    - เลือก Azure **Subscription** ของคุณ
+    - เลือก **Subscription** ของคุณ
     - เลือก **Resource group** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **Region** ที่ต้องการใช้
-    - กรอก **Name** ซึ่งต้องไม่ซ้ำกับที่มีอยู่แล้ว
+    - กรอกชื่อ **Name** ซึ่งต้องไม่ซ้ำกับที่มีอยู่
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ff32a0010dd0667dd231f214881ab59f809ecf10b901030fc3db4e41a50a834a.th.png)
+    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0e313fffaecf7d6ce4ee5e86c0badcd038f03519cac63b76b.th.png)
 
 1. เลือก **Review + create**
 
@@ -139,13 +139,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+Add role assignment** จากเมนูนำทาง
 
-1. ในหน้าการเพิ่มบทบาท ให้ทำตามขั้นตอนดังนี้:
+1. ในหน้า Add role assignment ดำเนินการดังนี้:
     - เลือก **Scope** เป็น **Resource group**
-    - เลือก Azure **Subscription** ของคุณ
+    - เลือก **Subscription** ของคุณ
     - เลือก **Resource group** ที่จะใช้
     - เลือก **Role** เป็น **Contributor**
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.419141712bde1fa89624c3792233a367b23cbc46fb7018d1d11c3cd65a25f748.th.png)
+    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d1d62333e91b4d2719284f0dad14bd9b4c3459510a0c44fab.th.png)
 
 2. เลือก **Save**
 
@@ -153,31 +153,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *storage accounts* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Storage accounts** จากตัวเลือกที่ปรากฏ
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.026e03a619ba23f474f9d704cd9050335df48aab7253eb17729da506baf2056b.th.png)
+    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e55b6b4dda10841d74d1c7463a2e4f23b9c45ffbb84219deb2.th.png)
 
 1. เลือก storage account ที่เชื่อมโยงกับ Azure Machine Learning workspace ที่คุณสร้าง เช่น *finetunephistorage*
 
-1. ทำตามขั้นตอนต่อไปนี้เพื่อไปยังหน้าการเพิ่มบทบาท:
+1. ดำเนินการดังนี้เพื่อไปยังหน้า Add role assignment:
 
     - ไปที่ Azure Storage account ที่คุณสร้าง
     - เลือก **Access Control (IAM)** จากแท็บด้านซ้าย
     - เลือก **+ Add** จากเมนูนำทาง
     - เลือก **Add role assignment** จากเมนูนำทาง
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.ea9dffa9d4e12c8ce5d7ee4c5ffb6eb7f7a5aac820c60a5782a3fb634b7aa09a.th.png)
+    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c25fb73e63b957e214a2b651375a640a3aa54159a3731f495b.th.png)
 
-1. ในหน้าการเพิ่มบทบาท ให้ทำตามขั้นตอนต่อไปนี้:
+1. ในหน้า Add role assignment ดำเนินการดังนี้:
 
-    - ในหน้าบทบาท พิมพ์ *Storage Blob Data Reader* ใน **แถบค้นหา** แล้วเลือก **Storage Blob Data Reader** จากตัวเลือกที่ปรากฏ
-    - เลือก **Next**
-    - ในหน้าสมาชิก เลือก **Assign access to** เป็น **Managed identity**
-    - เลือก **+ Select members**
-    - ในหน้าการเลือก managed identities เลือก Azure **Subscription** ของคุณ
-    - เลือก **Managed identity** เป็น **Manage Identity**
-    - เลือก Managed Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
-    - เลือก **Select**
+    - ในหน้า Role พิมพ์ *Storage Blob Data Reader* ใน **แถบค้นหา** แล้วเลือก **Storage Blob Data Reader** จากตัวเลือกที่ปรากฏ
+    - ในหน้า Role เลือก **Next**
+    - ในหน้า Members เลือก **Assign access to** เป็น **Managed identity**
+    - ในหน้า Members เลือก **+ Select members**
+    - ในหน้า Select managed identities เลือก **Subscription** ของคุณ
+    - ในหน้า Select managed identities เลือก **Managed identity** เป็น **Manage Identity**
+    - ในหน้า Select managed identities เลือก Manage Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
+    - ในหน้า Select managed identities เลือก **Select**
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.2456b3430a31bbaba7c744256dfb99c7fa6e12ba2dd122e34205973d29115d6c.th.png)
+    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25289f2f121da05d114934d21d26aae9cb779334cbbccdf9e8.th.png)
 
 1. เลือก **Review + assign**
 
@@ -185,33 +185,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *container registries* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Container registries** จากตัวเลือกที่ปรากฏ
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.cac7db97652dda0e9d7b98d40034f5ac81752db9528b708e014c74a9891c49aa.th.png)
+    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a69b003f7a698dac908ffc2f355e675c10939fdd0bb09f790e.th.png)
 
 1. เลือก container registry ที่เชื่อมโยงกับ Azure Machine Learning workspace เช่น *finetunephicontainerregistry*
 
-1. ทำตามขั้นตอนต่อไปนี้เพื่อไปยังหน้าการเพิ่มบทบาท:
+1. ดำเนินการดังนี้เพื่อไปยังหน้า Add role assignment:
 
     - เลือก **Access Control (IAM)** จากแท็บด้านซ้าย
     - เลือก **+ Add** จากเมนูนำทาง
     - เลือก **Add role assignment** จากเมนูนำทาง
 
-1. ในหน้าการเพิ่มบทบาท ให้ทำตามขั้นตอนดังนี้:
+1. ในหน้า Add role assignment ดำเนินการดังนี้:
 
-    - ในหน้าบทบาท พิมพ์ *AcrPull* ใน **แถบค้นหา** แล้วเลือก **AcrPull** จากตัวเลือกที่ปรากฏ
-    - เลือก **Next**
-    - ในหน้าสมาชิก เลือก **Assign access to** เป็น **Managed identity**
-    - เลือก **+ Select members**
-    - ในหน้าการเลือก managed identities เลือก Azure **Subscription** ของคุณ
-    - เลือก **Managed identity** เป็น **Manage Identity**
-    - เลือก Managed Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
-    - เลือก **Select**
+    - ในหน้า Role พิมพ์ *AcrPull* ใน **แถบค้นหา** แล้วเลือก **AcrPull** จากตัวเลือกที่ปรากฏ
+    - ในหน้า Role เลือก **Next**
+    - ในหน้า Members เลือก **Assign access to** เป็น **Managed identity**
+    - ในหน้า Members เลือก **+ Select members**
+    - ในหน้า Select managed identities เลือก **Subscription** ของคุณ
+    - ในหน้า Select managed identities เลือก **Managed identity** เป็น **Manage Identity**
+    - ในหน้า Select managed identities เลือก Manage Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
+    - ในหน้า Select managed identities เลือก **Select**
     - เลือก **Review + assign**
 
 ### ตั้งค่าโปรเจกต์
 
-เพื่อดาวน์โหลดชุดข้อมูลสำหรับการปรับแต่ง คุณจะตั้งค่าสภาพแวดล้อมในเครื่องของคุณ
+เพื่อดาวน์โหลดชุดข้อมูลที่จำเป็นสำหรับการปรับแต่ง คุณจะตั้งค่าสภาพแวดล้อมในเครื่อง
 
-ในการฝึกนี้ คุณจะ
+ในแบบฝึกหัดนี้ คุณจะ
 
 - สร้างโฟลเดอร์สำหรับทำงาน
 - สร้าง virtual environment
@@ -220,360 +220,269 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### สร้างโฟลเดอร์สำหรับทำงาน
 
-1. เปิดหน้าต่าง terminal และพิมพ์คำสั่งต่อไปนี้เพื่อสร้างโฟลเดอร์ชื่อ *finetune-phi* ในเส้นทางเริ่มต้น
+1. เปิดหน้าต่างเทอร์มินัลและพิมพ์คำสั่งต่อไปนี้เพื่อสร้างโฟลเดอร์ชื่อ *finetune-phi* ในเส้นทางเริ่มต้น
 
     ```console
     mkdir finetune-phi
     ```
 
-2. พิมพ์คำสั่งต่อไปนี้ใน terminal เพื่อเข้าไปยังโฟลเดอร์ *finetune-phi* ที่คุณสร้าง
+2. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลเพื่อเข้าไปยังโฟลเดอร์ *finetune-phi* ที่คุณสร้างไว้
+#### สร้างสภาพแวดล้อมเสมือน
 
-    ```console
-    cd finetune-phi
-    ```
+1. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลของคุณเพื่อสร้างสภาพแวดล้อมเสมือนชื่อ *.venv*.
 
-#### สร้าง virtual environment
-
-1. พิมพ์คำสั่งต่อไปนี้ใน terminal เพื่อสร้าง virtual environment ชื่อ *.venv*
-
-    ```console
-    python -m venv .venv
-    ```
-
-2. พิมพ์คำสั่งต่อไปนี้ใน terminal เพื่อเปิดใช้งาน virtual environment
-
-    ```console
-    .venv\Scripts\activate.bat
-    ```
+2. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลของคุณเพื่อเปิดใช้งานสภาพแวดล้อมเสมือน.
 
 > [!NOTE]
-> ถ้าทำถูกต้อง คุณจะเห็น *(.venv)* ปรากฏก่อน prompt ของคำสั่ง
+> หากสำเร็จ คุณจะเห็น *(.venv)* ปรากฏก่อนพรอมต์คำสั่ง
 
 #### ติดตั้งแพ็กเกจที่จำเป็น
 
-1. พิมพ์คำสั่งต่อไปนี้ใน terminal เพื่อติดตั้งแพ็กเกจที่จำเป็น
+1. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลของคุณเพื่อติดตั้งแพ็กเกจที่จำเป็น
 
-    ```console
-    pip install datasets==2.19.1
-    ```
-
-#### สร้าง `download_dataset.py`
+#### สร้างไฟล์ `donload_dataset.py`
 
 > [!NOTE]
 > โครงสร้างโฟลเดอร์สมบูรณ์:
 >
-> ```text
-> └── YourUserName
-> .    └── finetune-phi
-> .        └── download_dataset.py
-> ```
+> 1. เปิด **Visual Studio Code**.
+> 2. เลือก **File** จากแถบเมนู.
+> 3. เลือก **Open Folder**.
+> 4. เลือกโฟลเดอร์ *finetune-phi* ที่คุณสร้างไว้ ซึ่งอยู่ที่ *C:\Users\yourUserName\finetune-phi*.
 
-1. เปิด **Visual Studio Code**
+    ![เลือกโฟลเดอร์ที่คุณสร้าง](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6f63a0a50961e51a39cc6de7a7ddc86da5f4896e815f28abd.th.png)
 
-1. เลือก **File** จากเมนูบาร์
+5. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาแล้วเลือก **New File** เพื่อสร้างไฟล์ใหม่ชื่อ *download_dataset.py*.
 
-1. เลือก **Open Folder**
+    ![สร้างไฟล์ใหม่](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff927ede875300e1b5c91ab90d1e486c77a43bb9494880cf9b6f.th.png)
 
-1. เลือกโฟลเดอร์ *finetune-phi* ที่คุณสร้างไว้ ซึ่งอยู่ที่ *C:\Users\yourUserName\finetune-phi*
+### เตรียมชุดข้อมูลสำหรับการปรับแต่งโมเดล
 
-    ![Select the folder that you created.](../../../../../../translated_images/04-01-open-project-folder.01a82ecd87581d5a0572bc4f12dd8004a204ec366c907a2ad4d42dfd61ea5e21.th.png)
+ในแบบฝึกหัดนี้ คุณจะรันไฟล์ *download_dataset.py* เพื่อดาวน์โหลดชุดข้อมูล *ultrachat_200k* ลงในสภาพแวดล้อมเครื่องของคุณ จากนั้นจะใช้ชุดข้อมูลนี้ในการปรับแต่งโมเดล Phi-3 ใน Azure Machine Learning
 
-1. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาแล้วเลือก **New File** เพื่อสร้างไฟล์ใหม่ชื่อ *download_dataset.py*
-
-    ![Create a new file.](../../../../../../translated_images/04-02-create-new-file.16e088bf7213c299e258482be49fb1c735ba3eca1503b38a6b45b9289c651732.th.png)
-
-### เตรียมชุดข้อมูลสำหรับการปรับแต่ง
-
-ในการฝึกนี้ คุณจะรันไฟล์ *download_dataset.py* เพื่อดาวน์โหลดชุดข้อมูล *ultrachat_200k* ลงในสภาพแวดล้อมในเครื่อง จากนั้นจะใช้ชุดข้อมูลนี้ในการปรับแต่งโมเดล Phi-3 ใน Azure Machine Learning
-
-ในการฝึกนี้ คุณจะ:
+ในแบบฝึกหัดนี้ คุณจะ:
 
 - เพิ่มโค้ดในไฟล์ *download_dataset.py* เพื่อดาวน์โหลดชุดข้อมูล
 - รันไฟล์ *download_dataset.py* เพื่อดาวน์โหลดชุดข้อมูลลงในเครื่องของคุณ
 
-#### ดาวน์โหลดชุดข้อมูลด้วย *download_dataset.py*
+#### ดาวน์โหลดชุดข้อมูลโดยใช้ *download_dataset.py*
 
 1. เปิดไฟล์ *download_dataset.py* ใน Visual Studio Code
 
-1. เพิ่มโค้ดต่อไปนี้ลงในไฟล์ *download_dataset.py*
+2. เพิ่มโค้ดต่อไปนี้ลงในไฟล์ *download_dataset.py*
 
-    ```python
-    import json
-    import os
-    from datasets import load_dataset
+3. พิมพ์คำสั่งต่อไปนี้ในเทอร์มินัลเพื่อรันสคริปต์และดาวน์โหลดชุดข้อมูลลงในเครื่องของคุณ
 
-    def load_and_split_dataset(dataset_name, config_name, split_ratio):
-        """
-        Load and split a dataset.
-        """
-        # Load the dataset with the specified name, configuration, and split ratio
-        dataset = load_dataset(dataset_name, config_name, split=split_ratio)
-        print(f"Original dataset size: {len(dataset)}")
-        
-        # Split the dataset into train and test sets (80% train, 20% test)
-        split_dataset = dataset.train_test_split(test_size=0.2)
-        print(f"Train dataset size: {len(split_dataset['train'])}")
-        print(f"Test dataset size: {len(split_dataset['test'])}")
-        
-        return split_dataset
-
-    def save_dataset_to_jsonl(dataset, filepath):
-        """
-        Save a dataset to a JSONL file.
-        """
-        # Create the directory if it does not exist
-        os.makedirs(os.path.dirname(filepath), exist_ok=True)
-        
-        # Open the file in write mode
-        with open(filepath, 'w', encoding='utf-8') as f:
-            # Iterate over each record in the dataset
-            for record in dataset:
-                # Dump the record as a JSON object and write it to the file
-                json.dump(record, f)
-                # Write a newline character to separate records
-                f.write('\n')
-        
-        print(f"Dataset saved to {filepath}")
-
-    def main():
-        """
-        Main function to load, split, and save the dataset.
-        """
-        # Load and split the ULTRACHAT_200k dataset with a specific configuration and split ratio
-        dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')
-        
-        # Extract the train and test datasets from the split
-        train_dataset = dataset['train']
-        test_dataset = dataset['test']
-
-        # Save the train dataset to a JSONL file
-        save_dataset_to_jsonl(train_dataset, "data/train_data.jsonl")
-        
-        # Save the test dataset to a separate JSONL file
-        save_dataset_to_jsonl(test_dataset, "data/test_data.jsonl")
-
-    if __name__ == "__main__":
-        main()
-
-    ```
-
-1. พิมพ์คำสั่งต่อไปนี้ใน terminal เพื่อรันสคริปต์และดาวน์โหลดชุดข้อมูลลงในเครื่องของคุณ
-
-    ```console
-    python download_dataset.py
-    ```
-
-1. ตรวจสอบว่าชุดข้อมูลถูกบันทึกอย่างถูกต้องในไดเรกทอรี *finetune-phi/data* ของคุณ
+4. ตรวจสอบว่าชุดข้อมูลถูกบันทึกลงในไดเรกทอรี *finetune-phi/data* ในเครื่องของคุณเรียบร้อยแล้ว
 
 > [!NOTE]
 >
 > #### หมายเหตุเกี่ยวกับขนาดชุดข้อมูลและเวลาการปรับแต่ง
 >
-> ในบทเรียนนี้ คุณใช้เพียง 1% ของชุดข้อมูล (`split='train[:1%]'`) ซึ่งช่วยลดขนาดข้อมูลลงอย่างมาก ทำให้การอัปโหลดและการปรับแต่งรวดเร็วขึ้น คุณสามารถปรับเปอร์เซ็นต์นี้เพื่อหาจุดสมดุลระหว่างเวลาการฝึกและประสิทธิภาพของโมเดล การใช้ชุดข้อมูลย่อยจะช่วยลดเวลาที่ใช้ในการปรับแต่ง ทำให้กระบวนการง่ายขึ้นสำหรับการเรียนรู้
+> ในบทแนะนำนี้ คุณใช้เพียง 1% ของชุดข้อมูล (`split='train[:1%]'`) ซึ่งช่วยลดปริมาณข้อมูลอย่างมาก ทำให้การอัปโหลดและการปรับแต่งโมเดลเร็วขึ้น คุณสามารถปรับเปอร์เซ็นต์นี้เพื่อหาสมดุลระหว่างเวลาการฝึกและประสิทธิภาพของโมเดล การใช้ชุดข้อมูลย่อยช่วยลดเวลาที่ใช้ในการปรับแต่ง ทำให้กระบวนการเหมาะสมกับบทแนะนำนี้มากขึ้น
 
-## กรณีที่ 2: ปรับแต่งโมเดล Phi-3 และนำไปใช้ใน Azure Machine Learning Studio
+## สถานการณ์ที่ 2: ปรับแต่งโมเดล Phi-3 และปรับใช้ใน Azure Machine Learning Studio
 
 ### ปรับแต่งโมเดล Phi-3
 
-ในการฝึกนี้ คุณจะปรับแต่งโมเดล Phi-3 ใน Azure Machine Learning Studio
+ในแบบฝึกหัดนี้ คุณจะปรับแต่งโมเดล Phi-3 ใน Azure Machine Learning Studio
 
-ในการฝึกนี้ คุณจะ:
+ในแบบฝึกหัดนี้ คุณจะ:
 
-- สร้าง cluster คอมพิวเตอร์สำหรับการปรับแต่ง
+- สร้างคลัสเตอร์คอมพิวเตอร์สำหรับการปรับแต่ง
 - ปรับแต่งโมเดล Phi-3 ใน Azure Machine Learning Studio
 
-#### สร้าง cluster ค
-1. ไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
+#### สร้างคลัสเตอร์คอมพิวเตอร์สำหรับการปรับแต่ง
 
-1. เลือก **Compute** จากแท็บด้านซ้าย
+1. เข้าไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
 
-1. เลือก **Compute clusters** จากเมนูนำทาง
+2. เลือก **Compute** จากแท็บด้านซ้าย
 
-1. เลือก **+ New**
+3. เลือก **Compute clusters** จากเมนูนำทาง
 
-    ![Select compute.](../../../../../../translated_images/06-01-select-compute.e151458e2884d4877a05acf3553d015cd63c0c6ed056efcfbd425c715692a947.th.png)
+4. เลือก **+ New**
 
-1. ทำตามขั้นตอนดังนี้:
+    ![เลือก compute](../../../../../../translated_images/06-01-select-compute.a29cff290b480252d04ffd0142c073486df7d3b7256335964a98b87e28072523.th.png)
 
-    - เลือก **Region** ที่คุณต้องการใช้
+5. ทำตามขั้นตอนดังนี้:
+
+    - เลือก **Region** ที่ต้องการใช้
     - เลือก **Virtual machine tier** เป็น **Dedicated**
     - เลือก **Virtual machine type** เป็น **GPU**
     - เลือกตัวกรอง **Virtual machine size** เป็น **Select from all options**
     - เลือก **Virtual machine size** เป็น **Standard_NC24ads_A100_v4**
 
-    ![Create cluster.](../../../../../../translated_images/06-02-create-cluster.19e5e8403b754eecaa1e2886625335ca16f4161391e0d75ef85f2e5eaa8ffb5a.th.png)
+    ![สร้างคลัสเตอร์](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e4baa9c5ccf86510f21df87515c231b2a255e1ee545496458.th.png)
 
-1. เลือก **Next**
+6. เลือก **Next**
 
-1. ทำตามขั้นตอนดังนี้:
+7. ทำตามขั้นตอนดังนี้:
 
-    - กรอกชื่อในช่อง **Compute name** โดยต้องไม่ซ้ำกับที่มีอยู่
+    - กรอกชื่อ **Compute name** ซึ่งต้องไม่ซ้ำกับชื่ออื่น
     - เลือก **Minimum number of nodes** เป็น **0**
     - เลือก **Maximum number of nodes** เป็น **1**
     - เลือก **Idle seconds before scale down** เป็น **120**
 
-    ![Create cluster.](../../../../../../translated_images/06-03-create-cluster.8796fad73635590754b6095c30fe98112db248596d194cd5b0af077cca371ac1.th.png)
+    ![สร้างคลัสเตอร์](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662edc0f95ad364a869b4dbb7f7be08ff259528fea96312e77e.th.png)
 
-1. เลือก **Create**
+8. เลือก **Create**
 
 #### ปรับแต่งโมเดล Phi-3
 
-1. ไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
+1. เข้าไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
 
-1. เลือก Azure Machine Learning workspace ที่คุณสร้างไว้
+2. เลือก workspace ของ Azure Machine Learning ที่คุณสร้างไว้
 
-    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.f5449319befd49bad6028622f194507712fccee9d744f96b78765d2c1ffcb9c3.th.png)
+    ![เลือก workspace ที่คุณสร้าง](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.th.png)
 
-1. ทำตามขั้นตอนดังนี้:
+3. ทำตามขั้นตอนดังนี้:
 
     - เลือก **Model catalog** จากแท็บด้านซ้าย
-    - พิมพ์ *phi-3-mini-4k* ในช่อง **search bar** แล้วเลือก **Phi-3-mini-4k-instruct** จากตัวเลือกที่แสดงขึ้นมา
+    - พิมพ์ *phi-3-mini-4k* ในช่องค้นหา และเลือก **Phi-3-mini-4k-instruct** จากตัวเลือกที่ปรากฏ
 
-    ![Type phi-3-mini-4k.](../../../../../../translated_images/06-05-type-phi-3-mini-4k.808fa02bdce5b9cda91e19a5fa9ff254697575293245ea49263f860354032e66.th.png)
+    ![พิมพ์ phi-3-mini-4k](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b25018a7e7353ce6525d8f5803b0af9bc9a60a9be4204dd77578.th.png)
 
-1. เลือก **Fine-tune** จากเมนูนำทาง
+4. เลือก **Fine-tune** จากเมนูนำทาง
 
-    ![Select fine tune.](../../../../../../translated_images/06-06-select-fine-tune.bcb1fd63ead2da12219c0615d35cef2c9ce18d3c8467ef604d755accba87a063.th.png)
+    ![เลือก fine tune](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeecb897ac74882792b59086893b8a7448a89be3628aee62fc1b.th.png)
 
-1. ทำตามขั้นตอนดังนี้:
+5. ทำตามขั้นตอนดังนี้:
 
     - เลือก **Select task type** เป็น **Chat completion**
     - เลือก **+ Select data** เพื่ออัปโหลด **Training data**
     - เลือกประเภทการอัปโหลด Validation data เป็น **Provide different validation data**
     - เลือก **+ Select data** เพื่ออัปโหลด **Validation data**
 
-    ![Fill fine-tuning page.](../../../../../../translated_images/06-07-fill-finetuning.dcf5eb5a2d6d2bfb727e1fc278de717df0b25cf8d11ace970df8ea7d5951591e.th.png)
+    ![กรอกข้อมูลหน้าปรับแต่ง](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0bbc6b248af9e7369ca98379770badec9f73b6bced7a8b7806.th.png)
 
     > [!TIP]
     >
-    > คุณสามารถเลือก **Advanced settings** เพื่อปรับแต่งการตั้งค่า เช่น **learning_rate** และ **lr_scheduler_type** เพื่อเพิ่มประสิทธิภาพการปรับแต่งโมเดลให้เหมาะสมกับความต้องการของคุณ
+    > คุณสามารถเลือก **Advanced settings** เพื่อปรับแต่งค่าต่างๆ เช่น **learning_rate** และ **lr_scheduler_type** เพื่อเพิ่มประสิทธิภาพการปรับแต่งตามความต้องการของคุณ
 
-1. เลือก **Finish**
+6. เลือก **Finish**
 
-1. ในแบบฝึกหัดนี้ คุณได้ปรับแต่งโมเดล Phi-3 สำเร็จแล้ว โปรดทราบว่ากระบวนการปรับแต่งอาจใช้เวลานาน หลังจากเริ่มงาน fine-tuning แล้ว คุณต้องรอจนกว่าจะเสร็จสมบูรณ์ คุณสามารถติดตามสถานะของงาน fine-tuning ได้โดยไปที่แท็บ Jobs ทางด้านซ้ายของ Azure Machine Learning Workspace ของคุณ ในชุดถัดไป คุณจะได้เรียนรู้การนำโมเดลที่ปรับแต่งแล้วไปใช้งานและเชื่อมต่อกับ Prompt flow
+7. ในแบบฝึกหัดนี้ คุณได้ปรับแต่งโมเดล Phi-3 สำเร็จโดยใช้ Azure Machine Learning โปรดทราบว่ากระบวนการปรับแต่งอาจใช้เวลานาน หลังจากเริ่มงานปรับแต่งแล้ว คุณต้องรอจนกว่าจะเสร็จสมบูรณ์ คุณสามารถตรวจสอบสถานะงานได้ที่แท็บ Jobs ทางด้านซ้ายของ Azure Machine Learning Workspace ของคุณ ในชุดถัดไป คุณจะได้เรียนรู้การปรับใช้โมเดลที่ปรับแต่งแล้วและเชื่อมต่อกับ Prompt flow
 
-    ![See finetuning job.](../../../../../../translated_images/06-08-output.3fedec9572bca5d86b7db3a6d060345c762aa59ce6aefa2b1998154b9f475b69.th.png)
+    ![ดูงาน finetuning](../../../../../../translated_images/06-08-output.2bd32e59930672b1cc1de86056e2fbc91e338f59e2a29d7dac86ede49a9714b2.th.png)
 
-### นำโมเดล Phi-3 ที่ปรับแต่งแล้วไปใช้งาน
+### ปรับใช้โมเดล Phi-3 ที่ปรับแต่งแล้ว
 
-เพื่อเชื่อมต่อโมเดล Phi-3 ที่ปรับแต่งแล้วกับ Prompt flow คุณต้องนำโมเดลไป deploy เพื่อให้สามารถเรียกใช้สำหรับการทำนายแบบเรียลไทม์ได้ กระบวนการนี้รวมถึงการลงทะเบียนโมเดล สร้าง online endpoint และนำโมเดลไป deploy
+เพื่อเชื่อมต่อโมเดล Phi-3 ที่ปรับแต่งแล้วกับ Prompt flow คุณต้องปรับใช้โมเดลเพื่อให้สามารถเรียกใช้งานแบบเรียลไทม์ได้ กระบวนการนี้รวมถึงการลงทะเบียนโมเดล สร้าง endpoint ออนไลน์ และปรับใช้โมเดล
 
 ในแบบฝึกหัดนี้ คุณจะ:
 
 - ลงทะเบียนโมเดลที่ปรับแต่งแล้วใน Azure Machine Learning workspace
 - สร้าง online endpoint
-- นำโมเดล Phi-3 ที่ลงทะเบียนไป deploy
+- ปรับใช้โมเดล Phi-3 ที่ลงทะเบียนแล้ว
 
 #### ลงทะเบียนโมเดลที่ปรับแต่งแล้ว
 
-1. ไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
+1. เข้าไปที่ [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723)
 
-1. เลือก Azure Machine Learning workspace ที่คุณสร้างไว้
+2. เลือก workspace ของ Azure Machine Learning ที่คุณสร้างไว้
 
-    ![Select workspace that you created.](../../../../../../translated_images/06-04-select-workspace.f5449319befd49bad6028622f194507712fccee9d744f96b78765d2c1ffcb9c3.th.png)
+    ![เลือก workspace ที่คุณสร้าง](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.th.png)
 
-1. เลือก **Models** จากแท็บด้านซ้าย
+3. เลือก **Models** จากแท็บด้านซ้าย
 
-1. เลือก **+ Register**
+4. เลือก **+ Register**
 
-1. เลือก **From a job output**
+5. เลือก **From a job output**
 
-    ![Register model.](../../../../../../translated_images/07-01-register-model.46cad47d2bb083c74e616691ef836735209ffc42b29fb432a1acbef52e28d41f.th.png)
+    ![ลงทะเบียนโมเดล](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777c8c39906ce5cd57f16b54fb3887dd4e4de1ce963b26499ad.th.png)
 
-1. เลือกงานที่คุณสร้างไว้
+6. เลือกงาน (job) ที่คุณสร้างไว้
 
-    ![Select job.](../../../../../../translated_images/07-02-select-job.a5d34472aead80a4b69594f277dd43491c6aaf42d847940c1dc2081d909a23f3.th.png)
+    ![เลือกงาน](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd09315953b4eb2cc9d62d0d77ab0d9d877e34c6827fa6d2b6be4.th.png)
 
-1. เลือก **Next**
+7. เลือก **Next**
 
-1. เลือก **Model type** เป็น **MLflow**
+8. เลือก **Model type** เป็น **MLflow**
 
-1. ตรวจสอบให้แน่ใจว่าเลือก **Job output** แล้ว (จะถูกเลือกโดยอัตโนมัติ)
+9. ตรวจสอบให้แน่ใจว่าเลือก **Job output** ซึ่งควรถูกเลือกโดยอัตโนมัติ
 
-    ![Select output.](../../../../../../translated_images/07-03-select-output.e1a56a25db9065901df821343ff894ca45ce0569c3daf30b5aafdd060f26e059.th.png)
+    ![เลือก output](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f267b40f73de77f092a5b02808ade72f8eb94e5fe9723feb3.th.png)
 
-2. เลือก **Next**
+10. เลือก **Next**
 
-3. เลือก **Register**
+11. เลือก **Register**
 
-    ![Select register.](../../../../../../translated_images/07-04-register.71316a5a4d2e1f520f14fee93be7865a785971cdfdd8cd08779866f5f29f7da4.th.png)
+    ![เลือก register](../../../../../../translated_images/07-04-register.fd82a3b293060bc78399e613293032d3d301c02a6fd8092bec52bfaf4f3104de.th.png)
 
-4. คุณสามารถดูโมเดลที่ลงทะเบียนแล้วได้โดยไปที่เมนู **Models** จากแท็บด้านซ้าย
+12. คุณสามารถดูโมเดลที่ลงทะเบียนแล้วได้โดยไปที่เมนู **Models** ทางแท็บด้านซ้าย
 
-    ![Registered model.](../../../../../../translated_images/07-05-registered-model.969e2ec99a4cbf5cc9bb006b118110803853a15aa3c499eceb7812d976bd6128.th.png)
+    ![โมเดลที่ลงทะเบียนแล้ว](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591b7995686b95396ffd8c185ba66f0a1f6be18f4aea05e93d5.th.png)
 
-#### นำโมเดลที่ปรับแต่งแล้วไป deploy
+#### ปรับใช้โมเดลที่ปรับแต่งแล้ว
 
-1. ไปที่ Azure Machine Learning workspace ที่คุณสร้างไว้
+1. ไปที่ workspace ของ Azure Machine Learning ที่คุณสร้างไว้
 
-1. เลือก **Endpoints** จากแท็บด้านซ้าย
+2. เลือก **Endpoints** จากแท็บด้านซ้าย
 
-1. เลือก **Real-time endpoints** จากเมนูนำทาง
+3. เลือก **Real-time endpoints** จากเมนูนำทาง
 
-    ![Create endpoint.](../../../../../../translated_images/07-06-create-endpoint.0741c2a4369bd3b9c4e17aa7b31ed0337bfb1303f9038244784791250164b2f7.th.png)
+    ![สร้าง endpoint](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09618ce29b467276523838b8cc766d79ebfecdb052fef2c4df.th.png)
 
-1. เลือก **Create**
+4. เลือก **Create**
 
-1. เลือกโมเดลที่ลงทะเบียนไว้ที่คุณสร้างไว้
+5. เลือกโมเดลที่ลงทะเบียนไว้ที่คุณสร้าง
 
-    ![Select registered model.](../../../../../../translated_images/07-07-select-registered-model.7a270d391fd543a21d9a024d2ea516667c039393dbe954019e19162dd07d2387.th.png)
+    ![เลือกโมเดลที่ลงทะเบียน](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4460f7646dfaa59121fb1384ed1957755427d358462c25225.th.png)
 
-1. เลือก **Select**
+6. เลือก **Select**
 
-1. ทำตามขั้นตอนดังนี้:
+7. ทำตามขั้นตอนดังนี้:
 
     - เลือก **Virtual machine** เป็น *Standard_NC6s_v3*
-    - เลือกจำนวน **Instance count** ที่ต้องการใช้ เช่น *1*
+    - เลือกจำนวน **Instance count** ที่ต้องการ เช่น *1*
     - เลือก **Endpoint** เป็น **New** เพื่อสร้าง endpoint ใหม่
-    - กรอกชื่อในช่อง **Endpoint name** โดยต้องไม่ซ้ำกับที่มีอยู่
-    - กรอกชื่อในช่อง **Deployment name** โดยต้องไม่ซ้ำกับที่มีอยู่
+    - กรอกชื่อ **Endpoint name** ซึ่งต้องไม่ซ้ำกับชื่ออื่น
+    - กรอกชื่อ **Deployment name** ซึ่งต้องไม่ซ้ำกับชื่ออื่น
 
-    ![Fill the deployment setting.](../../../../../../translated_images/07-08-deployment-setting.5907ac712d60af1f5e6d18e09a39b3fcd5706e9ce2e3dffc7120a2f79e025483.th.png)
+    ![กรอกการตั้งค่าการปรับใช้](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e67378494bb8d81418bc3bdaceb8c57151727d538594cb378697f36.th.png)
 
-1. เลือก **Deploy**
+8. เลือก **Deploy**
 
 > [!WARNING]
-> เพื่อหลีกเลี่ยงค่าใช้จ่ายเพิ่มเติมในบัญชีของคุณ อย่าลืมลบ endpoint ที่สร้างไว้ใน Azure Machine Learning workspace เมื่อไม่ใช้งานแล้ว
+> เพื่อหลีกเลี่ยงค่าใช้จ่ายเพิ่มเติมในบัญชีของคุณ โปรดลบ endpoint ที่สร้างไว้ใน Azure Machine Learning workspace เมื่อไม่ใช้งานแล้ว
 >
 
-#### ตรวจสอบสถานะการ deploy ใน Azure Machine Learning Workspace
+#### ตรวจสอบสถานะการปรับใช้ใน Azure Machine Learning Workspace
 
 1. ไปที่ Azure Machine Learning workspace ที่คุณสร้างไว้
 
-1. เลือก **Endpoints** จากแท็บด้านซ้าย
+2. เลือก **Endpoints** จากแท็บด้านซ้าย
 
-1. เลือก endpoint ที่คุณสร้างไว้
+3. เลือก endpoint ที่คุณสร้างไว้
 
-    ![Select endpoints](../../../../../../translated_images/07-09-check-deployment.dc970e535b490992ff68e6127c9d520389b3f0f5a5fc41358c2ad16669bce49a.th.png)
+    ![เลือก endpoints](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4a302f0efc8875002e1c382167083c7fefbdb42ede274d0da.th.png)
 
-1. ในหน้านี้ คุณสามารถจัดการ endpoint ระหว่างกระบวนการ deploy ได้
+4. ในหน้านี้ คุณสามารถจัดการ endpoint ระหว่างกระบวนการปรับใช้ได้
 
 > [!NOTE]
-> เมื่อการ deploy เสร็จสมบูรณ์ ให้ตรวจสอบว่า **Live traffic** ตั้งค่าเป็น **100%** หากไม่ใช่ ให้เลือก **Update traffic** เพื่อปรับการตั้งค่าการจราจร โปรดทราบว่าคุณไม่สามารถทดสอบโมเดลได้หากการจราจรถูกตั้งเป็น 0%
+> เมื่อการปรับใช้เสร็จสมบูรณ์ ให้ตรวจสอบว่า **Live traffic** ตั้งค่าเป็น **100%** หากไม่ใช่ ให้เลือก **Update traffic** เพื่อปรับการตั้งค่าการรับส่งข้อมูล โปรดทราบว่าคุณไม่สามารถทดสอบโมเดลได้หากตั้งค่า traffic เป็น 0%
 >
-> ![Set traffic.](../../../../../../translated_images/07-10-set-traffic.a0fccfd2b1e2bd0dba22860daa76d35999cfcf23b53ecc09df92f992c4cab64f.th.png)
+> ![ตั้งค่า traffic](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d30c64ecabac4b17a7b5dc004ba52ad387cbaaf7b266eeadf.th.png)
 >
 
-## สถานการณ์ที่ 3: เชื่อมต่อกับ Prompt flow และแชทกับโมเดลที่ปรับแต่งเองใน Azure AI Foundry
+## สถานการณ์ที่ 3: เชื่อมต่อกับ Prompt flow และสนทนากับโมเดลที่ปรับแต่งใน Azure AI Foundry
 
-### เชื่อมต่อโมเดล Phi-3 ที่ปรับแต่งเองกับ Prompt flow
+### เชื่อมต่อโมเดล Phi-3 ที่ปรับแต่งกับ Prompt flow
 
-หลังจากนำโมเดลที่ปรับแต่งสำเร็จไป deploy แล้ว คุณสามารถเชื่อมต่อโมเดลนี้กับ Prompt Flow เพื่อใช้งานในแอปพลิเคชันแบบเรียลไทม์ เปิดโอกาสให้ทำงานแบบโต้ตอบกับโมเดล Phi-3 ที่ปรับแต่งเองได้หลากหลายรูปแบบ
+หลังจากที่คุณปรับใช้โมเดลที่ปรับแต่งแล้วสำเร็จ คุณสามารถเชื่อมต่อโมเดลนี้กับ Prompt Flow เพื่อใช้งานโมเดลในแอปพลิเคชันแบบเรียลไทม์ ช่วยให้สามารถทำงานโต้ตอบต่างๆ กับโมเดล Phi-3 ที่ปรับแต่งเองได้
 
 ในแบบฝึกหัดนี้ คุณจะ:
 
 - สร้าง Azure AI Foundry Hub
-- สร้าง Azure AI Foundry Project
+- สร้างโปรเจกต์ Azure AI Foundry
 - สร้าง Prompt flow
 - เพิ่มการเชื่อมต่อแบบกำหนดเองสำหรับโมเดล Phi-3 ที่ปรับแต่งแล้ว
-- ตั้งค่า Prompt flow เพื่อแชทกับโมเดล Phi-3 ที่ปรับแต่งเองของคุณ
-
+- ตั้งค่า Prompt flow เพื่อสนทนากับโมเดล Phi-3 ที่ปรับแต่งของคุณ
 > [!NOTE]
-> คุณยังสามารถเชื่อมต่อกับ Promptflow โดยใช้ Azure ML Studio ได้ กระบวนการเชื่อมต่อเดียวกันนี้สามารถนำไปใช้กับ Azure ML Studio ได้เช่นกัน
-
+> คุณยังสามารถเชื่อมต่อกับ Promptflow ผ่าน Azure ML Studio ได้ กระบวนการเชื่อมต่อเดียวกันนี้สามารถใช้กับ Azure ML Studio ได้เช่นกัน
 #### สร้าง Azure AI Foundry Hub
 
-คุณต้องสร้าง Hub ก่อนสร้าง Project โดย Hub จะทำหน้าที่เหมือน Resource Group ที่ช่วยจัดระเบียบและจัดการหลายๆ Project ภายใน Azure AI Foundry
+คุณต้องสร้าง Hub ก่อนที่จะสร้าง Project Hub ทำหน้าที่เหมือน Resource Group ช่วยให้คุณจัดระเบียบและจัดการหลาย Projects ภายใน Azure AI Foundry ได้
 
 1. ไปที่ [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)
 
@@ -581,117 +490,118 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+ New hub** จากเมนูนำทาง
 
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.c54d78fb49923ff1d8c6a11010a8c8eca9b044d525182a2a1700b3ff4c542674.th.png)
+    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834e092dcf9dda773276fbee65f40252ed4a9af4f9aa4fef5d7.th.png)
 
 1. ทำตามขั้นตอนดังนี้:
 
-    - กรอกชื่อในช่อง **Hub name** โดยต้องไม่ซ้ำกับที่มีอยู่
+    - กรอก **Hub name** ต้องเป็นค่าที่ไม่ซ้ำกัน
     - เลือก Azure **Subscription** ของคุณ
-    - เลือก **Resource group** ที่ต้องการใช้ (สร้างใหม่ถ้าจำเป็น)
+    - เลือก **Resource group** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **Location** ที่ต้องการใช้
-    - เลือก **Connect Azure AI Services** ที่ต้องการใช้ (สร้างใหม่ถ้าจำเป็น)
+    - เลือก **Connect Azure AI Services** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **Connect Azure AI Search** เป็น **Skip connecting**
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.ced9ab1db4d2f3324d3d34bd9e846641e80bb9e4ebfc56f47d09ce6885e9caf7.th.png)
+    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c44658a87c2ed01d9e588581f157480ff1ac3312085c51d25.th.png)
 
 1. เลือก **Next**
 
 #### สร้าง Azure AI Foundry Project
 
-1. ใน Hub ที่คุณสร้างไว้ เลือก **All projects** จากแท็บด้านซ้าย
+1. ใน Hub ที่คุณสร้าง เลือก **All projects** จากแท็บด้านซ้าย
 
 1. เลือก **+ New project** จากเมนูนำทาง
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.e3033e8fa767fa86e03dc830014e59222eceacbc322082771d0e11be6e60ed6a.th.png)
+    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f1251c487d98aed0641bd057100b8e5d6fba9062bfb7d752ce9.th.png)
 
-1. กรอกชื่อในช่อง **Project name** โดยต้องไม่ซ้ำกับที่มีอยู่
+1. กรอก **Project name** ต้องเป็นค่าที่ไม่ซ้ำกัน
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.6172ff97b4c49ad0f364e6d4a7b658dba45f8e27aaa2126a83d0af77056450b0.th.png)
+    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a192b4ed3dde6b1136c860fc85352d612aa2f3ae8a4d54eb4.th.png)
 
 1. เลือก **Create a project**
 
-#### เพิ่มการเชื่อมต่อแบบกำหนดเองสำหรับโมเดล Phi-3 ที่ปรับแต่งแล้ว
+#### เพิ่มการเชื่อมต่อแบบกำหนดเองสำหรับโมเดล Phi-3 ที่ผ่านการปรับแต่ง
 
-เพื่อเชื่อมต่อโมเดล Phi-3 ที่ปรับแต่งเองกับ Prompt flow คุณต้องบันทึก endpoint และ key ของโมเดลในรูปแบบการเชื่อมต่อแบบกำหนดเอง ซึ่งจะช่วยให้สามารถเข้าถึงโมเดล Phi-3 ของคุณใน Prompt flow ได้
+เพื่อเชื่อมต่อโมเดล Phi-3 ที่ปรับแต่งเองกับ Prompt flow คุณต้องบันทึก endpoint และ key ของโมเดลใน custom connection การตั้งค่านี้จะช่วยให้เข้าถึงโมเดล Phi-3 ที่ปรับแต่งใน Prompt flow ได้
 
-#### ตั้งค่า api key และ endpoint uri ของโมเดล Phi-3 ที่ปรับแต่งแล้ว
+#### ตั้งค่า api key และ endpoint uri ของโมเดล Phi-3 ที่ปรับแต่ง
 
 1. ไปที่ [Azure ML Studio](https://ml.azure.com/home?WT.mc_id=aiml-137032-kinfeylo)
 
-1. ไปที่ Azure Machine Learning workspace ที่คุณสร้างไว้
+1. ไปยัง Azure Machine learning workspace ที่คุณสร้างไว้
 
 1. เลือก **Endpoints** จากแท็บด้านซ้าย
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.7c12a37c1b477c2829a045a230ae9c18373156fe7adb797dcabd3ab18bd139a7.th.png)
+    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf960519c1ac95116d1a7e5b8d0bdea5cd42281930766fbfad1929.th.png)
 
 1. เลือก endpoint ที่คุณสร้างไว้
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.d69043d757b715c24c88c9ae7e796247eb8909bae8967839a7dc30de3f403caf.th.png)
+    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275ea16f689f59b70d5b0162fff1781204e389edcb63b42b95b2.th.png)
 
 1. เลือก **Consume** จากเมนูนำทาง
 
 1. คัดลอก **REST endpoint** และ **Primary key** ของคุณ
-![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.511a027574cee0efc50fdda33b6de1e1e268c5979914ba944b72092f72f95544.th.png)
 
-#### เพิ่มการเชื่อมต่อแบบกำหนดเอง
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cbe30a20b889154d04109bf17c5c09816060a8689933dc0fd7.th.png)
 
-1. เข้าไปที่ [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)
+#### เพิ่ม Custom Connection
 
-1. ไปที่โปรเจกต์ Azure AI Foundry ที่คุณสร้างไว้
+1. ไปที่ [Azure AI Foundry](https://ai.azure.com/?WT.mc_id=aiml-137032-kinfeylo)
 
-1. ในโปรเจกต์ที่สร้าง เลือก **Settings** จากแท็บด้านซ้าย
+1. ไปยัง Azure AI Foundry project ที่คุณสร้างไว้
+
+1. ใน Project ที่คุณสร้าง เลือก **Settings** จากแท็บด้านซ้าย
 
 1. เลือก **+ New connection**
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.c55d4faa9f655e163a5d7aec1f21843ea30738d4e8c5ce5f0724048ebc6ca007.th.png)
+    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc77130c3a16fbb8ee59407ecbf74fd3502cb8720c61384446.th.png)
 
 1. เลือก **Custom keys** จากเมนูนำทาง
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.78c5267f5d037ef1931bc25e4d1a77747b709df7141a9968e25ebd9188ac9fdd.th.png)
+    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b29664605513ccc134f1adaefaf27f951981c511783a6a0d1118c9178a5.th.png)
 
 1. ทำตามขั้นตอนดังนี้:
 
     - เลือก **+ Add key value pairs**
-    - สำหรับชื่อคีย์ ให้กรอก **endpoint** และวาง endpoint ที่คุณคัดลอกมาจาก Azure ML Studio ในช่องค่า
+    - สำหรับชื่อ key ให้กรอก **endpoint** และวาง endpoint ที่คัดลอกจาก Azure ML Studio ลงในช่องค่า
     - เลือก **+ Add key value pairs** อีกครั้ง
-    - สำหรับชื่อคีย์ ให้กรอก **key** และวางคีย์ที่คัดลอกมาจาก Azure ML Studio ในช่องค่า
-    - หลังจากเพิ่มคีย์แล้ว ให้เลือก **is secret** เพื่อป้องกันไม่ให้คีย์ถูกเปิดเผย
+    - สำหรับชื่อ key ให้กรอก **key** และวาง key ที่คัดลอกจาก Azure ML Studio ลงในช่องค่า
+    - หลังจากเพิ่ม keys แล้ว ให้เลือก **is secret** เพื่อป้องกันไม่ให้ key ถูกเปิดเผย
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.a2e410ab11c11a4798fe8ac56ba4e9707d1a5079be00f6f91bb187515f756a31.th.png)
+    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26e8df1bbd0948e06aa20aa0dc102faa96c8144722ef7f0b72.th.png)
 
 1. เลือก **Add connection**
 
 #### สร้าง Prompt flow
 
-คุณได้เพิ่มการเชื่อมต่อแบบกำหนดเองใน Azure AI Foundry แล้ว ตอนนี้เราจะสร้าง Prompt flow โดยทำตามขั้นตอนดังนี้ จากนั้นคุณจะเชื่อมต่อ Prompt flow นี้กับการเชื่อมต่อแบบกำหนดเอง เพื่อให้สามารถใช้โมเดลที่ปรับแต่งมาแล้วภายใน Prompt flow ได้
+คุณได้เพิ่ม custom connection ใน Azure AI Foundry แล้ว ตอนนี้มาสร้าง Prompt flow ตามขั้นตอนด้านล่าง จากนั้นคุณจะเชื่อมต่อ Prompt flow นี้กับ custom connection เพื่อให้สามารถใช้โมเดลที่ปรับแต่งใน Prompt flow ได้
 
-1. ไปที่โปรเจกต์ Azure AI Foundry ที่คุณสร้างไว้
+1. ไปยัง Azure AI Foundry project ที่คุณสร้างไว้
 
 1. เลือก **Prompt flow** จากแท็บด้านซ้าย
 
 1. เลือก **+ Create** จากเมนูนำทาง
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.1782ec6988841bb53c35011f31fbebc1bdc09c6f4653fea935176212ba608af1.th.png)
+    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5ba79bedfd35e2f2fb430f344844994375680fcfc111a994ae.th.png)
 
 1. เลือก **Chat flow** จากเมนูนำทาง
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.f346cc55beed0b2774bd61b2afe86f3640cc772c1715914926333b0e4d6281ee.th.png)
+    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591f6cc6360bc35c8fca8d63519c09111c6c431de9b46eed143.th.png)
 
-1. กรอกชื่อโฟลเดอร์ที่ต้องการใช้
+1. กรอก **Folder name** ที่ต้องการใช้
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.e2b324f7734290157520834403e041f46c06cbdfa5633f4c91725f7389b41cf7.th.png)
+    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d824bad779a54e55d808a09394b6b730fbea55d78421f52ff.th.png)
 
 2. เลือก **Create**
 
-#### ตั้งค่า Prompt flow เพื่อแชทกับโมเดล Phi-3 แบบกำหนดเองของคุณ
+#### ตั้งค่า Prompt flow เพื่อสนทนากับโมเดล Phi-3 ที่ปรับแต่ง
 
-คุณต้องรวมโมเดล Phi-3 ที่ปรับแต่งมาแล้วเข้ากับ Prompt flow อย่างไรก็ตาม Prompt flow ที่มีอยู่ไม่ได้ออกแบบมาเพื่อวัตถุประสงค์นี้ ดังนั้นคุณจึงต้องออกแบบ Prompt flow ใหม่เพื่อให้รองรับการเชื่อมต่อกับโมเดลแบบกำหนดเอง
+คุณต้องผสานโมเดล Phi-3 ที่ปรับแต่งเข้ากับ Prompt flow อย่างไรก็ตาม Prompt flow ที่มีอยู่ไม่ได้ออกแบบมาเพื่อจุดประสงค์นี้ ดังนั้นคุณต้องออกแบบ Prompt flow ใหม่เพื่อให้สามารถเชื่อมต่อกับโมเดลที่กำหนดเองได้
 
-1. ใน Prompt flow ให้ทำตามขั้นตอนต่อไปนี้เพื่อสร้างโฟลว์ใหม่:
+1. ใน Prompt flow ให้ทำตามขั้นตอนต่อไปนี้เพื่อสร้าง flow ใหม่:
 
     - เลือก **Raw file mode**
-    - ลบโค้ดทั้งหมดในไฟล์ *flow.dag.yml* ออก
-    - เพิ่มโค้ดต่อไปนี้ลงในไฟล์ *flow.dag.yml*
+    - ลบโค้ดทั้งหมดในไฟล์ *flow.dag.yml*
+    - เพิ่มโค้ดต่อไปนี้ในไฟล์ *flow.dag.yml*
 
         ```yml
         inputs:
@@ -716,9 +626,9 @@ CO_OP_TRANSLATOR_METADATA:
 
     - เลือก **Save**
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.8383d30bf0b893f0f05e340e68fa3631ee2a526b861551865e2e8a5dd6d4b02b.th.png)
+    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985b76e070bf170e1d0d0d26b38d93bc635624642191f715a6d.th.png)
 
-1. เพิ่มโค้ดต่อไปนี้ลงในไฟล์ *integrate_with_promptflow.py* เพื่อใช้โมเดล Phi-3 แบบกำหนดเองใน Prompt flow
+1. เพิ่มโค้ดต่อไปนี้ในไฟล์ *integrate_with_promptflow.py* เพื่อใช้โมเดล Phi-3 ที่กำหนดเองใน Prompt flow
 
     ```python
     import logging
@@ -781,53 +691,53 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.1e74d673739ae3fc114a386fd7dff65d6f98d8bf69be16d4b577cbb75844ba38.th.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d097779ab1c429be9fc07e3f4171e41fbbfb747a6e755816411e6d.th.png)
 
 > [!NOTE]
 > สำหรับข้อมูลเพิ่มเติมเกี่ยวกับการใช้ Prompt flow ใน Azure AI Foundry คุณสามารถดูได้ที่ [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)
 
-1. เลือก **Chat input**, **Chat output** เพื่อเปิดใช้งานการแชทกับโมเดลของคุณ
+1. เลือก **Chat input**, **Chat output** เพื่อเปิดใช้งานการสนทนากับโมเดลของคุณ
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.71fb7bf702d1fff773d9d929aa482bc1962e8ce36dac04ad9d9b86db8c6bb776.th.png)
+    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03ba022a21159e51d544c6e063e73c10e772c942d4e44da0d30.th.png)
 
-1. ตอนนี้คุณพร้อมที่จะเริ่มแชทกับโมเดล Phi-3 แบบกำหนดเองของคุณแล้ว ในแบบฝึกหัดถัดไป คุณจะได้เรียนรู้วิธีเริ่ม Prompt flow และใช้งานเพื่อแชทกับโมเดล Phi-3 ที่ปรับแต่งแล้วของคุณ
+1. ตอนนี้คุณพร้อมที่จะสนทนากับโมเดล Phi-3 ที่ปรับแต่งแล้ว ในแบบฝึกหัดถัดไป คุณจะได้เรียนรู้วิธีเริ่ม Prompt flow และใช้งานเพื่อสนทนากับโมเดล Phi-3 ที่ปรับแต่งของคุณ
 
 > [!NOTE]
 >
-> โฟลว์ที่สร้างใหม่ควรมีลักษณะเหมือนภาพด้านล่างนี้:
+> flow ที่สร้างใหม่ควรมีลักษณะเหมือนภาพด้านล่างนี้:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.bb35453a6bfee310805715e3ec0678e118273bc32ae8248acfcf8e4c553ed1e5.th.png)
+> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c10b7375192511a8e2aba847e442b294a2e65d88ffac8f63b.th.png)
 >
 
-### แชทกับโมเดล Phi-3 แบบกำหนดเองของคุณ
+### สนทนากับโมเดล Phi-3 ที่ปรับแต่งของคุณ
 
-เมื่อคุณปรับแต่งและรวมโมเดล Phi-3 แบบกำหนดเองเข้ากับ Prompt flow เรียบร้อยแล้ว คุณก็พร้อมที่จะเริ่มโต้ตอบกับมัน แบบฝึกหัดนี้จะนำคุณผ่านขั้นตอนการตั้งค่าและเริ่มต้นแชทกับโมเดลของคุณโดยใช้ Prompt flow โดยการทำตามขั้นตอนเหล่านี้ คุณจะสามารถใช้ประโยชน์จากความสามารถของโมเดล Phi-3 ที่ปรับแต่งมาอย่างเต็มที่สำหรับงานและการสนทนาต่างๆ
+ตอนนี้คุณได้ปรับแต่งและผสานโมเดล Phi-3 ที่กำหนดเองกับ Prompt flow เรียบร้อยแล้ว คุณพร้อมที่จะเริ่มโต้ตอบกับโมเดลนี้ แบบฝึกหัดนี้จะแนะนำขั้นตอนการตั้งค่าและเริ่มต้นสนทนากับโมเดลของคุณผ่าน Prompt flow โดยทำตามขั้นตอนเหล่านี้ คุณจะสามารถใช้ประโยชน์จากความสามารถของโมเดล Phi-3 ที่ปรับแต่งสำหรับงานและการสนทนาต่างๆ ได้อย่างเต็มที่
 
-- แชทกับโมเดล Phi-3 แบบกำหนดเองของคุณโดยใช้ Prompt flow
+- สนทนากับโมเดล Phi-3 ที่ปรับแต่งของคุณผ่าน Prompt flow
 
 #### เริ่ม Prompt flow
 
 1. เลือก **Start compute sessions** เพื่อเริ่ม Prompt flow
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.bf4fd553850fc0efcb8f8fa1e089839f9ea09333f48689aeb8ecce41e4a1ba42.th.png)
+    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b4809b60d75ce9b0ad53e0729cc1449935ccbe90b954401dc.th.png)
 
 1. เลือก **Validate and parse input** เพื่อรีเฟรชพารามิเตอร์
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.24092d447308054d25144e73649a9ac630bd895c376297b03d82354090815a97.th.png)
+    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e97038d7529b9060a23dc59d7ddbeb38ac9c4562ef4f5b32f7.th.png)
 
-1. เลือก **Value** ของ **connection** ที่เชื่อมต่อกับการเชื่อมต่อแบบกำหนดเองที่คุณสร้างไว้ เช่น *connection*
+1. เลือก **Value** ของ **connection** เป็น custom connection ที่คุณสร้างไว้ เช่น *connection*
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.77f4eef8f74410b4abae1e34ba0f6bc34b3f1390b7158ab4023a08c025ff4993.th.png)
+    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b184402368a6ec383814b139686118331a5b2eefa489678902269dfc.th.png)
 
-#### แชทกับโมเดลแบบกำหนดเองของคุณ
+#### สนทนากับโมเดลที่กำหนดเองของคุณ
 
 1. เลือก **Chat**
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.3cd7462ff5c6e3aa0eb686a29b91420a8fdcd3066fba5507dc257d7b91a3c492.th.png)
+    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e636a5e1516b6c64fdf2345ceb3142db2bed93ab7e6f03bbb2.th.png)
 
-1. นี่คือตัวอย่างผลลัพธ์: ตอนนี้คุณสามารถแชทกับโมเดล Phi-3 แบบกำหนดเองของคุณได้ แนะนำให้ถามคำถามที่เกี่ยวข้องกับข้อมูลที่ใช้ในการปรับแต่งโมเดล
+1. นี่คือตัวอย่างผลลัพธ์: ตอนนี้คุณสามารถสนทนากับโมเดล Phi-3 ที่ปรับแต่งของคุณได้ แนะนำให้ถามคำถามที่เกี่ยวข้องกับข้อมูลที่ใช้ในการปรับแต่งโมเดล
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.30574a870c00e676916d9afb28b70d3fb90e1f00e73f70413cd6aeed74d9c151.th.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126fa4886e6fd0e7482cfdc6c907fa36f7f2f13d04126f9eda14.th.png)
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้ว่าเราจะพยายามให้ความถูกต้องสูงสุด โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยมนุษย์ผู้เชี่ยวชาญ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดใดๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

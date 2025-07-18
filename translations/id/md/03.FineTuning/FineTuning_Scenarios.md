@@ -2,39 +2,39 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "cb5648935f63edc17e95ce38f23adc32",
-  "translation_date": "2025-05-09T21:56:45+00:00",
+  "translation_date": "2025-07-17T08:28:51+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Scenarios.md",
   "language_code": "id"
 }
 -->
 ## Skenario Fine Tuning
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.25759a0154a97ad90e43a6cace37d6bea87f0ac0236ada3ad5d4a1fbacc3bdf7.id.png)
+![FineTuning dengan Layanan MS](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.id.png)
 
 **Platform** Ini mencakup berbagai teknologi seperti Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, dan ONNX Runtime.
 
-**Infrastruktur** Ini mencakup CPU dan FPGA, yang penting untuk proses fine-tuning. Saya akan tunjukkan ikon untuk masing-masing teknologi ini.
+**Infrastruktur** Ini mencakup CPU dan FPGA, yang sangat penting untuk proses fine-tuning. Saya akan tunjukkan ikon untuk masing-masing teknologi ini.
 
-**Tools & Framework** Ini mencakup ONNX Runtime dan ONNX Runtime. Saya akan tunjukkan ikon untuk masing-masing teknologi ini.  
+**Alat & Kerangka Kerja** Ini mencakup ONNX Runtime dan ONNX Runtime. Saya akan tunjukkan ikon untuk masing-masing teknologi ini.  
 [Masukkan ikon untuk ONNX Runtime dan ONNX Runtime]
 
-Proses fine-tuning dengan teknologi Microsoft melibatkan berbagai komponen dan alat. Dengan memahami dan memanfaatkan teknologi ini, kita bisa melakukan fine-tuning aplikasi secara efektif dan menciptakan solusi yang lebih baik.
+Proses fine-tuning dengan teknologi Microsoft melibatkan berbagai komponen dan alat. Dengan memahami dan memanfaatkan teknologi ini, kita dapat melakukan fine-tuning aplikasi secara efektif dan menciptakan solusi yang lebih baik.
 
 ## Model sebagai Layanan
 
 Fine-tune model menggunakan fine-tuning yang dihosting, tanpa perlu membuat dan mengelola compute.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.6184d80a336ea9d7bb67a581e9e5d0b021cafdffff7ba257c2012e2123e0d77e.id.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.id.png)
 
-Fine-tuning tanpa server tersedia untuk model Phi-3-mini dan Phi-3-medium, memungkinkan pengembang dengan cepat dan mudah menyesuaikan model untuk skenario cloud dan edge tanpa harus mengatur compute. Kami juga mengumumkan bahwa Phi-3-small kini tersedia melalui penawaran Models-as-a-Service kami sehingga pengembang dapat dengan cepat dan mudah memulai pengembangan AI tanpa harus mengelola infrastruktur dasar.
+Fine-tuning tanpa server tersedia untuk model Phi-3-mini dan Phi-3-medium, memungkinkan pengembang untuk dengan cepat dan mudah menyesuaikan model untuk skenario cloud dan edge tanpa harus mengatur compute. Kami juga telah mengumumkan bahwa Phi-3-small kini tersedia melalui penawaran Models-as-a-Service kami sehingga pengembang dapat dengan cepat dan mudah memulai pengembangan AI tanpa harus mengelola infrastruktur dasar.
 
 ## Model sebagai Platform
 
-Pengguna mengelola compute mereka sendiri untuk melakukan Fine-tune pada model mereka.
+Pengguna mengelola compute mereka sendiri untuk melakukan fine-tuning model mereka.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.cf8b08ef05bf57f362da90834be87562502f4370de4a7325a9fb03b8c008e5e7.id.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.id.png)
 
-[Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
+[Contoh Fine Tuning](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
 ## Skenario Fine Tuning
 
@@ -49,11 +49,11 @@ Pengguna mengelola compute mereka sendiri untuk melakukan Fine-tune pada model m
 |Mengurangi biaya komputasi dan finansial|Ya|Ya|Tidak|Ya|Ya|Tidak|
 |Mengurangi penggunaan memori|Tidak|Ya|Tidak|Ya|Ya|Ya|
 |Menggunakan parameter lebih sedikit untuk fine-tuning yang efisien|Tidak|Ya|Ya|Tidak|Tidak|Ya|
-|Bentuk paralelisme data yang efisien memori yang memberikan akses ke memori GPU agregat dari semua perangkat GPU yang tersedia|Tidak|Tidak|Tidak|Ya|Ya|Ya|
+|Bentuk paralelisme data yang hemat memori yang memberikan akses ke memori GPU agregat dari semua perangkat GPU yang tersedia|Tidak|Tidak|Tidak|Ya|Ya|Ya|
 
 ## Contoh Performa Fine Tuning
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.9dbf84557eef43e011eb7cadf51f51686f9245f7953e2712a27095ab7d18a6d1.id.png)
+![Performa Fine Tuning](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.id.png)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

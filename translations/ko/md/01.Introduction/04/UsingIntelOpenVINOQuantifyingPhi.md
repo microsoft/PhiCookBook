@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-08T06:08:56+00:00",
+  "translation_date": "2025-07-16T22:00:03+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "ko"
 }
 -->
 # **Intel OpenVINO를 이용한 Phi-3.5 양자화**
 
-Intel은 가장 전통적인 CPU 제조사로 많은 사용자를 보유하고 있습니다. 머신러닝과 딥러닝의 발전과 함께 Intel도 AI 가속 경쟁에 뛰어들었습니다. 모델 추론을 위해 Intel은 GPU와 CPU뿐만 아니라 NPU도 활용하고 있습니다.
+Intel은 가장 전통적인 CPU 제조사로 많은 사용자를 보유하고 있습니다. 머신러닝과 딥러닝의 부상과 함께 Intel도 AI 가속 경쟁에 뛰어들었습니다. 모델 추론을 위해 Intel은 GPU와 CPU뿐만 아니라 NPU도 활용합니다.
 
-우리는 Phi-3.x 시리즈를 엔드 디바이스에 배포하여 AI PC와 Copilot PC의 핵심이 되기를 기대합니다. 엔드 디바이스에서 모델 로딩은 다양한 하드웨어 제조사의 협력이 필요합니다. 이 장에서는 Intel OpenVINO를 활용한 양자화 모델 적용 사례에 중점을 둡니다.
+우리는 Phi-3.x 패밀리를 엔드 디바이스에 배포하여 AI PC와 Copilot PC의 핵심이 되길 희망합니다. 엔드 디바이스에서 모델 로딩은 다양한 하드웨어 제조사의 협력이 필요합니다. 이 장에서는 주로 Intel OpenVINO를 활용한 양자화 모델 적용 시나리오에 대해 다룹니다.
 
 
 ## **OpenVINO란?**
 
-OpenVINO는 클라우드에서 엣지까지 딥러닝 모델을 최적화하고 배포하기 위한 오픈소스 툴킷입니다. PyTorch, TensorFlow, ONNX 등 인기 프레임워크의 모델을 활용해 생성 AI, 비디오, 오디오, 언어 등 다양한 분야에서 딥러닝 추론을 가속화합니다. 모델을 변환 및 최적화하고, 온프레미스, 디바이스, 브라우저, 클라우드 등 다양한 Intel® 하드웨어 및 환경에 배포할 수 있습니다.
+OpenVINO는 클라우드에서 엣지까지 딥러닝 모델을 최적화하고 배포하기 위한 오픈소스 툴킷입니다. PyTorch, TensorFlow, ONNX 등 인기 프레임워크의 모델을 활용해 생성 AI, 비디오, 오디오, 언어 등 다양한 사용 사례에서 딥러닝 추론을 가속화합니다. 모델을 변환하고 최적화하여 Intel® 하드웨어와 다양한 환경에서, 온프레미스나 디바이스 내, 브라우저 또는 클라우드에서 배포할 수 있습니다.
 
-OpenVINO를 사용하면 Intel 하드웨어에서 GenAI 모델을 빠르게 양자화하고 모델 참조를 가속할 수 있습니다.
+이제 OpenVINO를 통해 Intel 하드웨어에서 GenAI 모델을 빠르게 양자화하고 모델 참조를 가속화할 수 있습니다.
 
 현재 OpenVINO는 Phi-3.5-Vision과 Phi-3.5 Instruct의 양자화 변환을 지원합니다.
 
@@ -39,7 +39,7 @@ openvino-genai>=2024.3.0.0
 
 ### **OpenVINO를 이용한 Phi-3.5-Instruct 양자화**
 
-터미널에서 아래 스크립트를 실행하세요.
+터미널에서 다음 스크립트를 실행하세요.
 
 ```bash
 
@@ -55,7 +55,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ### **OpenVINO를 이용한 Phi-3.5-Vision 양자화**
 
-Python 또는 Jupyter lab에서 아래 스크립트를 실행하세요.
+Python 또는 Jupyter lab에서 다음 스크립트를 실행하세요.
 
 ```python
 
@@ -93,11 +93,11 @@ if not out_dir.exists():
 
 ### **🤖 Intel OpenVINO와 함께하는 Phi-3.5 샘플**
 
-| Labs    | 소개 | 바로가기 |
+| 실습    | 소개 | 바로가기 |
 | -------- | ------- |  ------- |
 | 🚀 Lab-Introduce Phi-3.5 Instruct  | AI PC에서 Phi-3.5 Instruct를 사용하는 방법 배우기    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (image) | AI PC에서 Phi-3.5 Vision으로 이미지 분석하기      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | AI PC에서 Phi-3.5 Vision으로 영상 분석하기    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (이미지) | AI PC에서 Phi-3.5 Vision으로 이미지 분석하는 방법 배우기      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (비디오)   | AI PC에서 Phi-3.5 Vision으로 비디오 분석하는 방법 배우기    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 
 
@@ -108,4 +108,4 @@ if not out_dir.exists():
 2. Intel OpenVINO GitHub 저장소 [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 유의하시기 바랍니다. 원본 문서는 해당 언어의 원문이 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

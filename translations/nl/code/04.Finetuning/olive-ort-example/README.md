@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-09T04:45:57+00:00",
+  "translation_date": "2025-07-16T16:27:07+00:00",
   "source_file": "code/04.Finetuning/olive-ort-example/README.md",
   "language_code": "nl"
 }
@@ -17,7 +17,7 @@ In dit voorbeeld gebruik je Olive om:
 
 We laten je ook zien hoe je het fijn afgestemde model kunt gebruiken met de ONNX Runtime (ORT) Generate API.
 
-> **⚠️ Voor het fijn afstemmen heb je een geschikte GPU nodig - bijvoorbeeld een A10, V100, A100.**
+> **⚠️ Voor fijn afstemmen heb je een geschikte GPU nodig - bijvoorbeeld een A10, V100, A100.**
 
 ## 💾 Installeren
 
@@ -28,7 +28,7 @@ conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-Installeer daarna Olive en de benodigde afhankelijkheden voor een fijn-afstemmingsworkflow:
+Installeer vervolgens Olive en de benodigde dependencies voor een fijn afstemmingsworkflow:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -43,9 +43,9 @@ Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
 In grote lijnen doet deze workflow het volgende:
 
-1. Fijn afstemmen van Phi3 (voor 150 stappen, aan te passen) met de data uit [dataset/data-classification.json](../../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json).
-1. De LoRA adaptergewichten samenvoegen met het basismodel. Dit levert één modelbestand op in ONNX-formaat.
-1. ModelBuilder optimaliseert het model voor de ONNX runtime *en* kwantiseert het model naar `int4`.
+1. Fijn afstemmen van Phi3 (voor 150 stappen, dit kun je aanpassen) met de data uit [dataset/data-classification.json](../../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json).
+1. De LoRA-adaptergewichten samenvoegen met het basismodel. Dit levert één modelbestand op in het ONNX-formaat.
+1. Model Builder optimaliseert het model voor de ONNX runtime *en* kwantiseert het model naar `int4`.
 
 Om de workflow uit te voeren, voer je het volgende uit:
 
@@ -57,13 +57,13 @@ Wanneer Olive klaar is, vind je je geoptimaliseerde `int4` fijn afgestemde Phi3 
 
 ## 🧑‍💻 Integreer het fijn afgestemde Phi3 in je applicatie
 
-Om de app te draaien:
+Om de app te starten:
 
 ```bash
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-De respons is een classificatie van één woord van de zin (Sad/Joy/Fear/Surprise).
+De respons moet een eenduidige classificatie van de zin zijn (Sad/Joy/Fear/Surprise).
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet worden beschouwd als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

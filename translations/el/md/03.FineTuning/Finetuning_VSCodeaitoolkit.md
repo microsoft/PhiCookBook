@@ -2,28 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-05-09T22:10:57+00:00",
+  "translation_date": "2025-07-17T09:12:09+00:00",
   "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "el"
 }
 -->
-## Καλώς ήρθατε στο AI Toolkit για VS Code
+## Καλωσορίσατε στο AI Toolkit για το VS Code
 
-Το [AI Toolkit για VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) συγκεντρώνει διάφορα μοντέλα από το Azure AI Studio Catalog και άλλα καταλόγους όπως το Hugging Face. Το toolkit απλοποιεί τις κοινές εργασίες ανάπτυξης για τη δημιουργία εφαρμογών AI με εργαλεία και μοντέλα γενετικής AI μέσω:
+Το [AI Toolkit για το VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) συγκεντρώνει διάφορα μοντέλα από το Azure AI Studio Catalog και άλλα καταλόγους όπως το Hugging Face. Το toolkit απλοποιεί τις κοινές εργασίες ανάπτυξης για τη δημιουργία εφαρμογών AI με εργαλεία και μοντέλα γεννητικής AI μέσω:
 - Ξεκινήστε με την ανακάλυψη μοντέλων και το playground.
-- Βελτιστοποίηση μοντέλων και εκτέλεση inference με τοπικούς πόρους υπολογιστών.
-- Απομακρυσμένη βελτιστοποίηση και εκτέλεση inference με πόρους Azure.
+- Βελτιστοποίηση μοντέλων και εκτέλεση inference χρησιμοποιώντας τοπικούς υπολογιστικούς πόρους.
+- Απομακρυσμένη βελτιστοποίηση και inference χρησιμοποιώντας πόρους Azure.
 
-[Εγκατάσταση AI Toolkit για VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+[Εγκαταστήστε το AI Toolkit για VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.el.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.el.png)
 
+**[Private Preview]** Παροχή με ένα κλικ για Azure Container Apps για εκτέλεση fine-tuning και inference μοντέλων στο cloud.
 
-**[Private Preview]** Παρέχεται με ένα κλικ η δυνατότητα προμήθειας Azure Container Apps για να τρέξετε fine-tuning μοντέλων και inference στο cloud.
+Ας ξεκινήσουμε την ανάπτυξη της AI εφαρμογής σας:
 
-Ας ξεκινήσουμε με την ανάπτυξη της εφαρμογής AI σας:
-
-- [Καλώς ήρθατε στο AI Toolkit για VS Code](../../../../md/03.FineTuning)
+- [Καλωσορίσατε στο AI Toolkit για το VS Code](../../../../md/03.FineTuning)
 - [Τοπική Ανάπτυξη](../../../../md/03.FineTuning)
   - [Προετοιμασίες](../../../../md/03.FineTuning)
   - [Ενεργοποίηση Conda](../../../../md/03.FineTuning)
@@ -33,13 +32,13 @@ CO_OP_TRANSLATOR_METADATA:
   - [Microsoft Olive](../../../../md/03.FineTuning)
   - [Δείγματα και Πόροι Fine Tuning](../../../../md/03.FineTuning)
 - [**\[Private Preview\]** Απομακρυσμένη Ανάπτυξη](../../../../md/03.FineTuning)
-  - [Απαιτήσεις](../../../../md/03.FineTuning)
-  - [Ρύθμιση απομακρυσμένου έργου ανάπτυξης](../../../../md/03.FineTuning)
-  - [Προμήθεια πόρων Azure](../../../../md/03.FineTuning)
-  - [\[Προαιρετικό\] Προσθήκη Huggingface Token στο μυστικό της Azure Container App](../../../../md/03.FineTuning)
+  - [Προαπαιτούμενα](../../../../md/03.FineTuning)
+  - [Ρύθμιση Απομακρυσμένου Έργου Ανάπτυξης](../../../../md/03.FineTuning)
+  - [Παροχή Πόρων Azure](../../../../md/03.FineTuning)
+  - [\[Προαιρετικό\] Προσθήκη Huggingface Token στο Azure Container App Secret](../../../../md/03.FineTuning)
   - [Εκτέλεση Fine-tuning](../../../../md/03.FineTuning)
-  - [Προμήθεια endpoint για inference](../../../../md/03.FineTuning)
-  - [Ανάπτυξη endpoint για inference](../../../../md/03.FineTuning)
+  - [Παροχή Endpoint Inference](../../../../md/03.FineTuning)
+  - [Ανάπτυξη Endpoint Inference](../../../../md/03.FineTuning)
   - [Προχωρημένη χρήση](../../../../md/03.FineTuning)
 
 ## Τοπική Ανάπτυξη
@@ -47,17 +46,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Βεβαιωθείτε ότι ο οδηγός NVIDIA είναι εγκατεστημένος στον υπολογιστή.
 2. Εκτελέστε `huggingface-cli login`, αν χρησιμοποιείτε HF για αξιοποίηση dataset.
-3. Εξηγήσεις κλειδιών `Olive` για ό,τι τροποποιεί τη χρήση μνήμης.
+3. Επεξηγήσεις ρυθμίσεων κλειδιού `Olive` για οτιδήποτε επηρεάζει τη χρήση μνήμης.
 
 ### Ενεργοποίηση Conda
-Επειδή χρησιμοποιούμε περιβάλλον WSL που είναι κοινόχρηστο, πρέπει να ενεργοποιήσετε χειροκίνητα το περιβάλλον conda. Μετά από αυτό το βήμα, μπορείτε να τρέξετε fine-tuning ή inference.
+Επειδή χρησιμοποιούμε περιβάλλον WSL και είναι κοινόχρηστο, πρέπει να ενεργοποιήσετε χειροκίνητα το περιβάλλον conda. Μετά από αυτό το βήμα μπορείτε να τρέξετε fine-tuning ή inference.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
 ### Μόνο fine-tuning βασικού μοντέλου
-Αν θέλετε απλώς να δοκιμάσετε το βασικό μοντέλο χωρίς fine-tuning, μπορείτε να εκτελέσετε αυτή την εντολή αφού ενεργοποιήσετε το conda.
+Για να δοκιμάσετε απλά το βασικό μοντέλο χωρίς fine-tuning, μπορείτε να εκτελέσετε αυτή την εντολή μετά την ενεργοποίηση του conda.
 
 ```bash
 cd inference
@@ -69,15 +68,15 @@ python gradio_chat.py --baseonly
 
 ### Fine-tuning και inference μοντέλου
 
-Μόλις ανοίξετε το χώρο εργασίας σε dev container, ανοίξτε ένα τερματικό (η προεπιλεγμένη διαδρομή είναι η ρίζα του έργου) και εκτελέστε την παρακάτω εντολή για να κάνετε fine-tuning ενός LLM στο επιλεγμένο dataset.
+Μόλις ανοίξετε το workspace σε dev container, ανοίξτε ένα τερματικό (η προεπιλεγμένη διαδρομή είναι η ρίζα του έργου) και εκτελέστε την παρακάτω εντολή για fine-tuning ενός LLM στο επιλεγμένο dataset.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-Τα checkpoints και το τελικό μοντέλο θα αποθηκευτούν στους φακέλους `models` folder.
+Τα checkpoints και το τελικό μοντέλο θα αποθηκευτούν στον φάκελο `models`.
 
-Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`.
+Στη συνέχεια, εκτελέστε inference με το fine-tuned μοντέλο μέσω συνομιλιών σε `console`, `web browser` ή `prompt flow`.
 
 ```bash
 cd inference
@@ -90,93 +89,92 @@ python console_chat.py
 python gradio_chat.py
 ```
 
-Για να χρησιμοποιήσετε `prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
+Για να χρησιμοποιήσετε το `prompt flow` στο VS Code, ανατρέξτε σε αυτό το [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
 
-### Model Fine-tuning
+### Fine-tuning μοντέλου
 
-Next, download the following model depending on the availability of a GPU on your device.
+Κατεβάστε το παρακάτω μοντέλο ανάλογα με τη διαθεσιμότητα GPU στη συσκευή σας.
 
-To initiate the local fine-tuning session using QLoRA, select a model you want to fine-tune from our catalog.
-| Platform(s) | GPU available | Model name | Size (GB) |
+Για να ξεκινήσετε την τοπική συνεδρία fine-tuning με χρήση QLoRA, επιλέξτε ένα μοντέλο από τον κατάλογό μας που θέλετε να βελτιστοποιήσετε.
+| Πλατφόρμα(ες) | Διαθέσιμη GPU | Όνομα μοντέλου | Μέγεθος (GB) |
 |---------|---------|--------|--------|
-| Windows | Yes | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
-| Linux | Yes | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
-| Windows<br>Linux | No | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
+| Windows | Ναι | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
+| Linux | Ναι | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
+| Windows<br>Linux | Όχι | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
 
-**_Note_** You do not need an Azure Account to download the models
+**_Σημείωση_** Δεν χρειάζεστε λογαριασμό Azure για να κατεβάσετε τα μοντέλα.
 
-The Phi3-mini (int4) model is approximately 2GB-3GB in size. Depending on your network speed, it could take a few minutes to download.
+Το μοντέλο Phi3-mini (int4) έχει μέγεθος περίπου 2GB-3GB. Ανάλογα με την ταχύτητα του δικτύου σας, η λήψη μπορεί να διαρκέσει μερικά λεπτά.
 
-Start by selecting a project name and location.
-Next, select a model from the model catalog. You will be prompted to download the project template. You can then click "Configure Project" to adjust various settings.
+Ξεκινήστε επιλέγοντας όνομα και τοποθεσία έργου.
+Στη συνέχεια, επιλέξτε μοντέλο από τον κατάλογο μοντέλων. Θα σας ζητηθεί να κατεβάσετε το πρότυπο έργου. Μπορείτε μετά να πατήσετε "Configure Project" για να προσαρμόσετε διάφορες ρυθμίσεις.
 
-### Microsoft Olive 
+### Microsoft Olive
 
-We use [Olive](https://microsoft.github.io/Olive/why-olive.html) to run QLoRA fine-tuning on a PyTorch model from our catalog. All of the settings are preset with the default values to optimize to run the fine-tuning process locally with optimized use of memory, but it can be adjusted for your scenario.
+Χρησιμοποιούμε το [Olive](https://microsoft.github.io/Olive/why-olive.html) για να τρέξουμε fine-tuning QLoRA σε PyTorch μοντέλο από τον κατάλογό μας. Όλες οι ρυθμίσεις είναι προκαθορισμένες με τις προεπιλεγμένες τιμές για βέλτιστη εκτέλεση της διαδικασίας fine-tuning τοπικά με βελτιστοποιημένη χρήση μνήμης, αλλά μπορούν να προσαρμοστούν ανάλογα με το σενάριό σας.
 
-### Fine Tuning Samples and Resoures
+### Δείγματα και Πόροι Fine Tuning
 
-- [Fine tuning Getting Started Guide](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
-- [Fine tuning with a HuggingFace Dataset](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
-- [Fine tuning with Simple DataSet](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
+- [Οδηγός Ξεκινήματος Fine tuning](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
+- [Fine tuning με Dataset HuggingFace](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
+- [Fine tuning με Απλό Dataset](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
 
-## **[Private Preview]** Remote Development
+## **[Private Preview]** Απομακρυσμένη Ανάπτυξη
 
-### Prerequisites
+### Προαπαιτούμενα
 
-1. To run the model fine-tuning in your remote Azure Container App Environment, make sure your subscription has enough GPU capacity. Submit a [support ticket](https://azure.microsoft.com/support/create-ticket/) to request the required capacity for your application. [Get More Info about GPU capacity](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
-2. If you are using private dataset on HuggingFace, make sure you have a [HuggingFace account](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) and [generate an access token](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
-3. Enable Remote Fine-tuning and Inference feature flag in the AI Toolkit for VS Code
-   1. Open the VS Code Settings by selecting *File -> Preferences -> Settings*.
-   2. Navigate to *Extensions* and select *AI Toolkit*.
-   3. Select the *"Enable Remote Fine-tuning And Inference"* option.
-   4. Reload VS Code to take effect.
+1. Για να τρέξετε fine-tuning μοντέλου στο απομακρυσμένο περιβάλλον Azure Container App, βεβαιωθείτε ότι η συνδρομή σας έχει επαρκή χωρητικότητα GPU. Υποβάλετε [ticket υποστήριξης](https://azure.microsoft.com/support/create-ticket/) για να ζητήσετε την απαιτούμενη χωρητικότητα για την εφαρμογή σας. [Περισσότερες πληροφορίες για χωρητικότητα GPU](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
+2. Αν χρησιμοποιείτε ιδιωτικό dataset στο HuggingFace, βεβαιωθείτε ότι έχετε [λογαριασμό HuggingFace](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) και [δημιουργήστε access token](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
+3. Ενεργοποιήστε τη σημαία λειτουργίας Remote Fine-tuning και Inference στο AI Toolkit για VS Code
+   1. Ανοίξτε τις Ρυθμίσεις του VS Code επιλέγοντας *File -> Preferences -> Settings*.
+   2. Μεταβείτε στα *Extensions* και επιλέξτε *AI Toolkit*.
+   3. Επιλέξτε την επιλογή *"Enable Remote Fine-tuning And Inference"*.
+   4. Επανεκκινήστε το VS Code για να εφαρμοστούν οι αλλαγές.
 
-- [Remote Fine tuning](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
+- [Απομακρυσμένο Fine tuning](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
 
-### Setting Up a Remote Development Project
-1. Execute the command palette `AI Toolkit: Focus on Resource View`.
-2. Navigate to *Model Fine-tuning* to access the model catalog. Assign a name to your project and select its location on your machine. Then, hit the *"Configure Project"* button.
-3. Project Configuration
-    1. Avoid enabling the *"Fine-tune locally"* option.
-    2. The Olive configuration settings will appear with pre-set default values. Please adjust and fill in these configurations as required.
-    3. Move on to *Generate Project*. This stage leverages WSL and involves setting up a new Conda environment, preparing for future updates that include Dev Containers.
-4. Click on *"Relaunch Window In Workspace"* to open your remote development project.
+### Ρύθμιση Απομακρυσμένου Έργου Ανάπτυξης
+1. Εκτελέστε την παλέτα εντολών `AI Toolkit: Focus on Resource View`.
+2. Μεταβείτε στο *Model Fine-tuning* για να έχετε πρόσβαση στον κατάλογο μοντέλων. Ονομάστε το έργο σας και επιλέξτε την τοποθεσία στον υπολογιστή σας. Στη συνέχεια, πατήστε το κουμπί *"Configure Project"*.
+3. Ρύθμιση Έργου
+    1. Αποφύγετε την ενεργοποίηση της επιλογής *"Fine-tune locally"*.
+    2. Οι ρυθμίσεις Olive θα εμφανιστούν με προκαθορισμένες τιμές. Παρακαλούμε προσαρμόστε και συμπληρώστε τις ρυθμίσεις όπως απαιτείται.
+    3. Προχωρήστε στο *Generate Project*. Αυτό το στάδιο χρησιμοποιεί WSL και περιλαμβάνει τη δημιουργία νέου περιβάλλοντος Conda, προετοιμάζοντας για μελλοντικές ενημερώσεις που θα περιλαμβάνουν Dev Containers.
+4. Πατήστε *"Relaunch Window In Workspace"* για να ανοίξετε το απομακρυσμένο έργο ανάπτυξης.
 
-> **Note:** The project currently works either locally or remotely within the AI Toolkit for VS Code. If you choose *"Fine-tune locally"* during project creation, it will operate exclusively in WSL without remote development capabilities. On the other hand, if you forego enabling *"Fine-tune locally"*, the project will be restricted to the remote Azure Container App environment.
+> **Σημείωση:** Το έργο λειτουργεί είτε τοπικά είτε απομακρυσμένα μέσα στο AI Toolkit για VS Code. Αν επιλέξετε *"Fine-tune locally"* κατά τη δημιουργία έργου, θα λειτουργεί αποκλειστικά σε WSL χωρίς δυνατότητες απομακρυσμένης ανάπτυξης. Αν δεν ενεργοποιήσετε το *"Fine-tune locally"*, το έργο θα περιοριστεί στο απομακρυσμένο περιβάλλον Azure Container App.
 
-### Provision Azure Resources
-To get started, you need to provision the Azure Resource for remote fine-tuning. Do this by running the `AI Toolkit: Provision Azure Container Apps job for fine-tuning` from the command palette.
+### Παροχή Πόρων Azure
+Για να ξεκινήσετε, πρέπει να παρέχετε τον πόρο Azure για απομακρυσμένο fine-tuning. Κάντε το εκτελώντας την εντολή `AI Toolkit: Provision Azure Container Apps job for fine-tuning` από την παλέτα εντολών.
 
-Monitor the progress of the provision through the link displayed in the output channel.
+Παρακολουθήστε την πρόοδο της παροχής μέσω του συνδέσμου που εμφανίζεται στο κανάλι εξόδου.
 
-### [Optional] Add Huggingface Token to the Azure Container App Secret
-If you're using private HuggingFace dataset, set your HuggingFace token as an environment variable to avoid the need for manual login on the Hugging Face Hub.
-You can do this using the `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning command`. With this command, you can set the secret name as [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) and use your Hugging Face token as the secret value.
+### [Προαιρετικό] Προσθήκη Huggingface Token στο Azure Container App Secret
+Αν χρησιμοποιείτε ιδιωτικό dataset HuggingFace, ορίστε το token HuggingFace ως μεταβλητή περιβάλλοντος για να αποφύγετε την ανάγκη χειροκίνητης σύνδεσης στο Hugging Face Hub.
+Μπορείτε να το κάνετε με την εντολή `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning`. Με αυτή την εντολή, ορίστε το όνομα του μυστικού ως [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) και χρησιμοποιήστε το token Hugging Face ως την τιμή του μυστικού.
 
-### Run Fine-tuning
-To start the remote fine-tuning job, execute the `AI Toolkit: Run fine-tuning` command.
+### Εκτέλεση Fine-tuning
+Για να ξεκινήσετε την απομακρυσμένη εργασία fine-tuning, εκτελέστε την εντολή `AI Toolkit: Run fine-tuning`.
 
-To view the system and console logs, you can visit the Azure portal using the link in the output panel (more steps at [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Or, you can view the console logs directly in the VSCode output panel by running the command `AI Toolkit: Show the running fine-tuning job streaming logs`. 
-> **Note:** The job might be queued due to insufficient resources. If the log is not displayed, execute the `AI Toolkit: Show the running fine-tuning job streaming logs` command, wait for a while and then execute the command again to re-connect to the streaming log.
+Για να δείτε τα συστήματα και τα logs της κονσόλας, μπορείτε να επισκεφθείτε το Azure portal μέσω του συνδέσμου στο πάνελ εξόδου (περισσότερα βήματα στο [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Εναλλακτικά, μπορείτε να δείτε τα logs της κονσόλας απευθείας στο πάνελ εξόδου του VSCode εκτελώντας την εντολή `AI Toolkit: Show the running fine-tuning job streaming logs`.
+> **Σημείωση:** Η εργασία μπορεί να είναι σε ουρά λόγω ανεπαρκών πόρων. Αν δεν εμφανίζονται τα logs, εκτελέστε την εντολή `AI Toolkit: Show the running fine-tuning job streaming logs`, περιμένετε λίγο και εκτελέστε ξανά την εντολή για να επανασυνδεθείτε στο streaming των logs.
 
-During this process, QLoRA will be used for fine-tuning, and will create LoRA adapters for the model to use during inference.
-The results of the fine-tuning will be stored in the Azure Files.
+Κατά τη διάρκεια αυτής της διαδικασίας, το QLoRA θα χρησιμοποιηθεί για fine-tuning και θα δημιουργήσει LoRA adapters για το μοντέλο που θα χρησιμοποιηθούν κατά το inference.
+Τα αποτελέσματα του fine-tuning θα αποθηκευτούν στα Azure Files.
 
-### Provision Inference Endpoint
-After the adapters are trained in the remote environment, use a simple Gradio application to interact with the model.
-Similar to the fine-tuning process, you need to set up the Azure Resources for remote inference by executing the `AI Toolkit: Provision Azure Container Apps for inference` from the command palette.
+### Παροχή Endpoint Inference
+Αφού εκπαιδευτούν οι adapters στο απομακρυσμένο περιβάλλον, χρησιμοποιήστε μια απλή εφαρμογή Gradio για να αλληλεπιδράσετε με το μοντέλο.
+Παρόμοια με τη διαδικασία fine-tuning, πρέπει να ρυθμίσετε τους πόρους Azure για απομακρυσμένο inference εκτελώντας την εντολή `AI Toolkit: Provision Azure Container Apps for inference` από την παλέτα εντολών.
 
-By default, the subscription and the resource group for inference should match those used for fine-tuning. The inference will use the same Azure Container App Environment and access the model and model adapter stored in Azure Files, which were generated during the fine-tuning step. 
+Κατά προεπιλογή, η συνδρομή και η ομάδα πόρων για το inference πρέπει να ταιριάζουν με αυτές που χρησιμοποιήθηκαν για το fine-tuning. Το inference θα χρησιμοποιήσει το ίδιο περιβάλλον Azure Container App και θα έχει πρόσβαση στο μοντέλο και τον adapter που αποθηκεύτηκαν στα Azure Files, τα οποία δημιουργήθηκαν κατά το βήμα fine-tuning.
 
+### Ανάπτυξη Endpoint Inference
+Αν θέλετε να τροποποιήσετε τον κώδικα inference ή να φορτώσετε ξανά το μοντέλο inference, εκτελέστε την εντολή `AI Toolkit: Deploy for inference`. Αυτό θα συγχρονίσει τον πιο πρόσφατο κώδικά σας με το Azure Container App και θα επανεκκινήσει το αντίγραφο.
 
-### Deploy the Inference Endpoint
-If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
-
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` και στον πίνακα εξόδου. Είστε πλέον έτοιμοι να αξιολογήσετε το μοντέλο χρησιμοποιώντας αυτό το endpoint.
+Μόλις ολοκληρωθεί επιτυχώς η ανάπτυξη, μπορείτε να έχετε πρόσβαση στο API inference πατώντας το κουμπί "*Go to Inference Endpoint*" που εμφανίζεται στην ειδοποίηση του VSCode. Εναλλακτικά, το web API endpoint βρίσκεται στο `ACA_APP_ENDPOINT` στο αρχείο `./infra/inference.config.json` και στο πάνελ εξόδου. Τώρα είστε έτοιμοι να αξιολογήσετε το μοντέλο χρησιμοποιώντας αυτό το endpoint.
 
 ### Προχωρημένη χρήση
 Για περισσότερες πληροφορίες σχετικά με την απομακρυσμένη ανάπτυξη με το AI Toolkit, ανατρέξτε στην τεκμηρίωση [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) και [Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference).
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να λάβετε υπόψη ότι οι αυτοματοποιημένες μεταφράσεις μπορεί να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

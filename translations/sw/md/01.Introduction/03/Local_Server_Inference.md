@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "bcf5dd7031db0031abdb9dd0c05ba118",
-  "translation_date": "2025-05-09T12:07:38+00:00",
+  "translation_date": "2025-07-16T20:58:42+00:00",
   "source_file": "md/01.Introduction/03/Local_Server_Inference.md",
   "language_code": "sw"
 }
 -->
-# **Inference Phi-3 kwenye Server ya Ndani**
+# **Uchambuzi wa Phi-3 kwenye Seva ya Ndani**
 
-Tunaweza kupeleka Phi-3 kwenye server ya ndani. Watumiaji wanaweza kuchagua suluhisho za [Ollama](https://ollama.com) au [LM Studio](https://llamaedge.com), au wanaweza kuandika msimbo wao wenyewe. Unaweza kuunganisha huduma za ndani za Phi-3 kupitia [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) au [Langchain](https://www.langchain.com/) kujenga programu za Copilot.
+Tunaweza kupeleka Phi-3 kwenye seva ya ndani. Watumiaji wanaweza kuchagua suluhisho za [Ollama](https://ollama.com) au [LM Studio](https://llamaedge.com), au wanaweza kuandika msimbo wao wenyewe. Unaweza kuunganisha huduma za ndani za Phi-3 kupitia [Semantic Kernel](https://github.com/microsoft/semantic-kernel?WT.mc_id=aiml-138114-kinfeylo) au [Langchain](https://www.langchain.com/) kujenga programu za Copilot.
 
 ## **Tumia Semantic Kernel kufikia Phi-3-mini**
 
-Katika programu ya Copilot, tunaunda programu kupitia Semantic Kernel / LangChain. Aina hii ya mfumo wa programu kwa kawaida inalingana na Azure OpenAI Service / mifano ya OpenAI, na pia inaweza kuunga mkono mifano ya chanzo huria kwenye Hugging Face na mifano ya ndani. Tunapaswa kufanya nini tunapotaka kutumia Semantic Kernel kufikia Phi-3-mini? Tukichukua .NET kama mfano, tunaweza kuichanganya na Hugging Face Connector katika Semantic Kernel. Kwa default, inaweza kuendana na kitambulisho cha mfano kwenye Hugging Face (wakati wa kwanza unapotumia, mfano utapakuliwa kutoka Hugging Face, jambo ambalo huchukua muda mrefu). Pia unaweza kuungana na huduma ya ndani uliyojijengea mwenyewe. Kulinganisha kati ya hizo mbili, tunapendekeza kutumia ile ya mwisho kwa sababu ina uhuru zaidi, hasa katika matumizi ya biashara.
+Katika programu ya Copilot, tunaunda programu kupitia Semantic Kernel / LangChain. Aina hii ya mfumo wa programu kwa ujumla inafaa na Azure OpenAI Service / mifano ya OpenAI, na pia inaweza kuunga mkono mifano ya chanzo huria kwenye Hugging Face na mifano ya ndani. Tunapaswa kufanya nini tunapotaka kutumia Semantic Kernel kufikia Phi-3-mini? Kwa kutumia .NET kama mfano, tunaweza kuichanganya na Hugging Face Connector katika Semantic Kernel. Kwa kawaida, inaweza kuendana na kitambulisho cha mfano kwenye Hugging Face (mara ya kwanza unapotumia, mfano utapakuliwa kutoka Hugging Face, jambo ambalo huchukua muda mrefu). Pia unaweza kuungana na huduma ya ndani iliyojengwa. Tukilinganisha hizi mbili, tunapendekeza kutumia ya mwisho kwa sababu ina uhuru zaidi, hasa katika programu za biashara.
 
-![sk](../../../../../translated_images/sk.c244b32f4811c6f0938b9e95b0b2f4b28105bff6495bdc3b24cd42b3e3e89bb9.sw.png)
+![sk](../../../../../translated_images/sk.d03785c25edc6d445a2e9ae037979e544e0b0c482f43c7617b0324e717b9af62.sw.png)
 
-Kutoa huduma za ndani kupitia Semantic Kernel kunaweza kuunganishwa kwa urahisi na server ya mfano wa Phi-3-mini uliyojijengea mwenyewe. Hapa ni matokeo ya kuendesha
+Kutoka kwenye picha, kufikia huduma za ndani kupitia Semantic Kernel kunaweza kuunganisha kwa urahisi na seva ya mfano wa Phi-3-mini uliyojijengea mwenyewe. Hapa ni matokeo ya kuendesha
 
-![skrun](../../../../../translated_images/skrun.fb7a635a22ae8b7919d6e15c0eb27262526ed69728c5a1d2773a97d4562657c7.sw.png)
+![skrun](../../../../../translated_images/skrun.5aafc1e7197dca2020eefcaeaaee184d29bb0cf1c37b00fd9c79acc23a6dc8d2.sw.png)
 
-***Sample Code*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
+***Msimbo wa Mfano*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 
-**Kangamsha**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upotovu wa maana. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubeba dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

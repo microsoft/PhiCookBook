@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T13:57:18+00:00",
+  "translation_date": "2025-07-16T22:02:11+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "da"
 }
@@ -11,12 +11,12 @@ CO_OP_TRANSLATOR_METADATA:
 
 Intel er den mest traditionelle CPU-producent med mange brugere. Med fremkomsten af maskinlæring og dyb læring har Intel også deltaget i konkurrencen om AI-acceleration. Til modelinference bruger Intel ikke kun GPU'er og CPU'er, men også NPUs.
 
-Vi håber at kunne implementere Phi-3.x-familien på enheden, med ambitionen om at blive den vigtigste del af AI PC og Copilot PC. Indlæsningen af modellen på enheden afhænger af samarbejdet mellem forskellige hardwareproducenter. Dette kapitel fokuserer primært på anvendelsesscenariet for Intel OpenVINO som en kvantitativ model.
+Vi håber at implementere Phi-3.x-familien på endenheden og dermed blive den vigtigste del af AI PC og Copilot PC. Indlæsningen af modellen på endenheden afhænger af samarbejdet mellem forskellige hardwareproducenter. Dette kapitel fokuserer primært på anvendelsesscenariet for Intel OpenVINO som en kvantitativ model.
 
 
 ## **Hvad er OpenVINO**
 
-OpenVINO er et open source-værktøjssæt til optimering og implementering af dyb læringsmodeller fra cloud til edge. Det accelererer dyb læringsinference på tværs af forskellige anvendelsestilfælde, såsom generativ AI, video, lyd og sprog med modeller fra populære frameworks som PyTorch, TensorFlow, ONNX og flere. Konverter og optimer modeller, og implementer dem på en blanding af Intel® hardware og miljøer, både lokalt og på enheden, i browseren eller i skyen.
+OpenVINO er et open source-værktøjssæt til optimering og implementering af dyb læringsmodeller fra cloud til edge. Det accelererer dyb læringsinference på tværs af forskellige anvendelsestilfælde, såsom generativ AI, video, lyd og sprog med modeller fra populære frameworks som PyTorch, TensorFlow, ONNX og flere. Konverter og optimer modeller, og implementer dem på en blanding af Intel® hardware og miljøer, både on-premises og på enheden, i browseren eller i skyen.
 
 Med OpenVINO kan du nu hurtigt kvantisere GenAI-modellen på Intel-hardware og accelerere modelreferencen.
 
@@ -95,9 +95,9 @@ if not out_dir.exists():
 
 | Labs    | Introduktion | Gå til |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | Lær, hvordan du bruger Phi-3.5 Instruct på din AI PC    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (billede) | Lær, hvordan du bruger Phi-3.5 Vision til at analysere billeder på din AI PC      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | Lær, hvordan du bruger Phi-3.5 Vision til at analysere video på din AI PC    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introduktion Phi-3.5 Instruct  | Lær, hvordan du bruger Phi-3.5 Instruct på din AI PC    |  [Gå til](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introduktion Phi-3.5 Vision (billede) | Lær, hvordan du bruger Phi-3.5 Vision til at analysere billeder på din AI PC      |  [Gå til](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduktion Phi-3.5 Vision (video)   | Lær, hvordan du bruger Phi-3.5 Vision til at analysere video på din AI PC    |  [Gå til](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 
 
@@ -108,4 +108,4 @@ if not out_dir.exists():
 2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for eventuelle misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:02:28+00:00",
+  "translation_date": "2025-07-17T03:18:03+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "fi"
 }
 -->
 # **Keskustele Phi-4-mini ONNX:n kanssa**
 
-***ONNX*** on avoin formaatti, joka on suunniteltu koneoppimismallien esittämiseen. ONNX määrittelee yhteisen joukon operaattoreita – koneoppimis- ja syväoppimismallien rakennuspalikoita – sekä yhteisen tiedostomuodon, jonka avulla tekoälykehittäjät voivat käyttää malleja monenlaisissa kehyksissä, työkaluissa, suoritinympäristöissä ja kääntäjissä.
+***ONNX*** on avoin formaatti, joka on suunniteltu koneoppimismallien esittämiseen. ONNX määrittelee yhteisen joukon operaattoreita – koneoppimisen ja syväoppimisen mallien rakennuspalikoita – sekä yhteisen tiedostomuodon, jonka avulla tekoälykehittäjät voivat käyttää malleja eri kehysten, työkalujen, ajonaikojen ja kääntäjien kanssa.
 
-Tavoitteenamme on ottaa generatiiviset tekoälymallit käyttöön reunalaitteissa ja käyttää niitä rajallisella laskentateholla tai offline-ympäristöissä. Nyt voimme saavuttaa tämän muuntamalla mallin kvantisoidussa muodossa. Voimme muuntaa kvantisoidun mallin GGUF- tai ONNX-muotoon.
+Tavoitteenamme on ottaa generatiiviset tekoälymallit käyttöön reunalaitteissa ja hyödyntää niitä rajoitetun laskentatehon tai offline-ympäristöjen olosuhteissa. Nyt voimme saavuttaa tämän muuntamalla mallin kvantisoidussa muodossa. Voimme muuntaa kvantisoidun mallin GGUF- tai ONNX-muotoon.
 
-Microsoft Olive voi auttaa sinua muuntamaan SLM:n kvantisoituun ONNX-muotoon. Mallin muuntamisen menetelmä on hyvin yksinkertainen.
+Microsoft Olive voi auttaa sinua muuntamaan SLM:n kvantisoituun ONNX-muotoon. Mallin muuntaminen on hyvin yksinkertaista.
 
 **Asenna Microsoft Olive SDK**
 
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Muunnos CPU ONNX -tuella**
+**Muunna CPU ONNX -tuki**
 
 ```bash
 
@@ -34,10 +34,10 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Huom*** tämä esimerkki käyttää CPU:ta
+***Huom*** tässä esimerkissä käytetään CPU:ta
 
 
-### **Phi-4-mini ONNX -mallin päätteennäyttö ONNX Runtime GenAI:lla**
+### **Suorita Phi-4-mini ONNX -mallin päättely ONNX Runtime GenAI:lla**
 
 - **Asenna ONNX Runtime GenAI**
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä on pidettävä virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

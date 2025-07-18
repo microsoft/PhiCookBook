@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T18:35:21+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T15:22:49+00:00",
   "source_file": "README.md",
   "language_code": "id"
 }
@@ -25,20 +25,20 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi adalah rangkaian model AI open source yang dikembangkan oleh Microsoft.
 
-Phi saat ini merupakan model bahasa kecil (SLM) yang paling kuat dan hemat biaya, dengan benchmark yang sangat baik dalam multi-bahasa, penalaran, generasi teks/chat, pemrograman, gambar, audio, dan berbagai skenario lainnya.
+Phi saat ini merupakan model bahasa kecil (SLM) yang paling kuat dan hemat biaya, dengan benchmark yang sangat baik dalam multi-bahasa, penalaran, generasi teks/chat, pemrograman, gambar, audio, dan skenario lainnya.
 
-Anda dapat menerapkan Phi ke cloud atau perangkat edge, dan dengan mudah membangun aplikasi AI generatif meskipun dengan daya komputasi terbatas.
+Anda dapat menerapkan Phi ke cloud atau perangkat edge, dan dengan mudah membangun aplikasi AI generatif dengan daya komputasi terbatas.
 
 Ikuti langkah-langkah berikut untuk mulai menggunakan sumber daya ini:  
-1. **Fork Repository**: Klik [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
+1. **Fork Repository**: Klik [![Fork GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)  
 2. **Clone Repository**: `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Bergabung dengan Komunitas Microsoft AI Discord dan temui para ahli serta pengembang lain**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![cover](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.id.png)
 
-## 🌐 Dukungan Multi-Bahasa
+### 🌐 Dukungan Multi-Bahasa
 
-### Didukung melalui GitHub Action (Otomatis & Selalu Terbaru)
+#### Didukung melalui GitHub Action (Otomatis & Selalu Terbaru)
 
 [Prancis](../fr/README.md) | [Spanyol](../es/README.md) | [Jerman](../de/README.md) | [Rusia](../ru/README.md) | [Arab](../ar/README.md) | [Persia (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Cina (Sederhana)](../zh/README.md) | [Cina (Tradisional, Makau)](../mo/README.md) | [Cina (Tradisional, Hong Kong)](../hk/README.md) | [Cina (Tradisional, Taiwan)](../tw/README.md) | [Jepang](../ja/README.md) | [Korea](../ko/README.md) | [Hindi](../hi/README.md)  
 [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portugis (Portugal)](../pt/README.md) | [Portugis (Brasil)](../br/README.md) | [Italia](../it/README.md) | [Polandia](../pl/README.md) | [Turki](../tr/README.md) | [Yunani](../el/README.md) | [Thai](../th/README.md) | [Swedia](../sv/README.md) | [Denmark](../da/README.md) | [Norwegia](../no/README.md) | [Finlandia](../fi/README.md) | [Belanda](../nl/README.md) | [Ibrani](../he/README.md) | [Vietnam](../vi/README.md) | [Indonesia](./README.md) | [Melayu](../ms/README.md) | [Tagalog (Filipina)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungaria](../hu/README.md) | [Ceko](../cs/README.md) | [Slovakia](../sk/README.md) | [Rumania](../ro/README.md) | [Bulgaria](../bg/README.md) | [Serbia (Sirilik)](../sr/README.md) | [Kroasia](../hr/README.md) | [Slovenia](../sl/README.md)
@@ -57,38 +57,38 @@ Ikuti langkah-langkah berikut untuk mulai menggunakan sumber daya ini:
   - [Katalog Model Azure AI](https://ai.azure.com)
 
 - Inferensi Phi di berbagai lingkungan  
-    -  [Hugging face](./md/01.Introduction/02/01.HF.md)  
-    -  [Model GitHub](./md/01.Introduction/02/02.GitHubModel.md)  
-    -  [Katalog Model Azure AI Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)  
-    -  [Ollama](./md/01.Introduction/02/04.Ollama.md)  
-    -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)  
-    -  [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)  
-    -  [Foundry Lokal](./md/01.Introduction/02/07.FoundryLocal.md)
+  - [Hugging face](./md/01.Introduction/02/01.HF.md)  
+  - [Model GitHub](./md/01.Introduction/02/02.GitHubModel.md)  
+  - [Katalog Model Azure AI Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)  
+  - [Ollama](./md/01.Introduction/02/04.Ollama.md)  
+  - [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)  
+  - [NVIDIA NIM](./md/01.Introduction/02/06.NVIDIA.md)  
+  - [Foundry Lokal](./md/01.Introduction/02/07.FoundryLocal.md)
 
 - Inferensi Keluarga Phi  
-    - [Inferensi Phi di iOS](./md/01.Introduction/03/iOS_Inference.md)  
-    - [Inferensi Phi di Android](./md/01.Introduction/03/Android_Inference.md)  
-    - [Inferensi Phi di Jetson](./md/01.Introduction/03/Jetson_Inference.md)  
-    - [Inferensi Phi di AI PC](./md/01.Introduction/03/AIPC_Inference.md)  
-    - [Inferensi Phi dengan Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)  
-    - [Inferensi Phi di Server Lokal](./md/01.Introduction/03/Local_Server_Inference.md)  
-    - [Inferensi Phi di Server Jarak Jauh menggunakan AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
-    - [Inferensi Phi dengan Rust](./md/01.Introduction/03/Rust_Inference.md)  
-    - [Inferensi Phi--Vision secara Lokal](./md/01.Introduction/03/Vision_Inference.md)  
-    - [Inferensi Phi dengan Kaito AKS, Azure Containers (dukungan resmi)](./md/01.Introduction/03/Kaito_Inference.md)  
--  [Kuantifikasi Keluarga Phi](./md/01.Introduction/04/QuantifyingPhi.md)  
-    - [Kuantisasi Phi-3.5 / 4 menggunakan llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
-    - [Kuantisasi Phi-3.5 / 4 menggunakan ekstensi Generative AI untuk onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
-    - [Kuantisasi Phi-3.5 / 4 menggunakan Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
-    - [Kuantisasi Phi-3.5 / 4 menggunakan Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+  - [Inferensi Phi di iOS](./md/01.Introduction/03/iOS_Inference.md)  
+  - [Inferensi Phi di Android](./md/01.Introduction/03/Android_Inference.md)  
+  - [Inferensi Phi di Jetson](./md/01.Introduction/03/Jetson_Inference.md)  
+  - [Inferensi Phi di AI PC](./md/01.Introduction/03/AIPC_Inference.md)  
+  - [Inferensi Phi dengan Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)  
+  - [Inferensi Phi di Server Lokal](./md/01.Introduction/03/Local_Server_Inference.md)  
+  - [Inferensi Phi di Server Jarak Jauh menggunakan AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
+  - [Inferensi Phi dengan Rust](./md/01.Introduction/03/Rust_Inference.md)  
+  - [Inferensi Phi--Vision secara Lokal](./md/01.Introduction/03/Vision_Inference.md)  
+  - [Inferensi Phi dengan Kaito AKS, Azure Containers (dukungan resmi)](./md/01.Introduction/03/Kaito_Inference.md)  
+- [Kuantifikasi Keluarga Phi](./md/01.Introduction/04/QuantifyingPhi.md)  
+  - [Kuantifikasi Phi-3.5 / 4 menggunakan llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
+  - [Kuantifikasi Phi-3.5 / 4 menggunakan ekstensi Generative AI untuk onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
+  - [Kuantifikasi Phi-3.5 / 4 menggunakan Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
+  - [Kuantifikasi Phi-3.5 / 4 menggunakan Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
 - Evaluasi Phi  
-    - [AI yang Bertanggung Jawab](./md/01.Introduction/05/ResponsibleAI.md)  
-    - [Azure AI Foundry untuk Evaluasi](./md/01.Introduction/05/AIFoundry.md)  
-    - [Menggunakan Promptflow untuk Evaluasi](./md/01.Introduction/05/Promptflow.md)
+  - [AI yang Bertanggung Jawab](./md/01.Introduction/05/ResponsibleAI.md)  
+  - [Azure AI Foundry untuk Evaluasi](./md/01.Introduction/05/AIFoundry.md)  
+  - [Menggunakan Promptflow untuk Evaluasi](./md/01.Introduction/05/Promptflow.md)
 
 - RAG dengan Azure AI Search  
-    - [Cara menggunakan Phi-4-mini dan Phi-4-multimodal (RAG) dengan Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
+  - [Cara menggunakan Phi-4-mini dan Phi-4-multimodal (RAG) dengan Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
 - Contoh pengembangan aplikasi Phi  
   - Aplikasi Teks & Chat  
@@ -103,11 +103,11 @@ Ikuti langkah-langkah berikut untuk mulai menggunakan sumber daya ini:
       - [MLFlow - Membuat pembungkus dan menggunakan Phi-3 dengan MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
       - [Optimasi Model - Cara mengoptimalkan model Phi-3-min untuk ONNX Runtime Web dengan Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)  
       - [Aplikasi WinUI3 dengan Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)  
-      - [Contoh Aplikasi Catatan Bertenaga AI Multi Model WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+      - [Contoh Aplikasi Catatan Multi Model Berbasis AI WinUI3](https://github.com/microsoft/ai-powered-notes-winui3-sample)
 - [Fine-tune dan Integrasikan model Phi-3 kustom dengan Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
 - [Fine-tune dan Integrasikan model Phi-3 kustom dengan Prompt flow di Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
 - [Evaluasi Model Phi-3 / Phi-3.5 yang sudah di Fine-tune di Azure AI Foundry dengan fokus pada Prinsip Responsible AI Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
-- [📓] [Contoh prediksi bahasa Phi-3.5-mini-instruct (Mandarin/Inggris)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
+- [📓] [Contoh prediksi bahasa Phi-3.5-mini-instruct (Cina/Inggris)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
 - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
 - [Menggunakan GPU Windows untuk membuat solusi Prompt flow dengan Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
 - [Menggunakan Microsoft Phi-3.5 tflite untuk membuat aplikasi Android](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
@@ -191,11 +191,11 @@ Ikuti langkah-langkah berikut untuk mulai menggunakan sumber daya ini:
   - [Fine-Tuning Phi-3 dengan Kaito AKS, Azure Containers (dukungan resmi)](./md/03.FineTuning/FineTuning_Kaito.md)  
   - [Fine-Tuning Phi-3 dan 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)  
 
-- Lab Praktik  
-  - [Menjelajahi model-model mutakhir: LLMs, SLMs, pengembangan lokal, dan lainnya](https://github.com/microsoft/aitour-exploring-cutting-edge-models)  
+- Hands on Lab  
+  - [Menjelajahi model terkini: LLMs, SLMs, pengembangan lokal, dan lainnya](https://github.com/microsoft/aitour-exploring-cutting-edge-models)  
   - [Membuka Potensi NLP: Fine-Tuning dengan Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)  
 
-- Makalah dan Publikasi Penelitian Akademik  
+- Makalah dan Publikasi Akademik  
   - [Textbooks Are All You Need II: laporan teknis phi-1.5](https://arxiv.org/abs/2309.05463)  
   - [Laporan Teknis Phi-3: Model Bahasa Berkapasitas Tinggi secara Lokal di Ponsel Anda](https://arxiv.org/abs/2404.14219)  
   - [Laporan Teknis Phi-4](https://arxiv.org/abs/2412.08905)  
@@ -235,7 +235,7 @@ Pendekatan Microsoft terhadap responsible AI didasarkan pada prinsip AI kami yai
 
 Model bahasa alami, gambar, dan suara berskala besar - seperti yang digunakan dalam contoh ini - berpotensi berperilaku tidak adil, tidak dapat diandalkan, atau menyinggung, yang pada akhirnya dapat menyebabkan kerugian. Silakan lihat [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) untuk mendapatkan informasi tentang risiko dan keterbatasan.
 
-Pendekatan yang direkomendasikan untuk mengurangi risiko ini adalah dengan menyertakan sistem keamanan dalam arsitektur Anda yang dapat mendeteksi dan mencegah perilaku berbahaya. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) menyediakan lapisan perlindungan independen yang mampu mendeteksi konten berbahaya yang dibuat pengguna maupun AI dalam aplikasi dan layanan. Azure AI Content Safety mencakup API teks dan gambar yang memungkinkan Anda mendeteksi materi berbahaya. Dalam Azure AI Foundry, layanan Content Safety memungkinkan Anda melihat, menjelajahi, dan mencoba contoh kode untuk mendeteksi konten berbahaya di berbagai modalitas. Dokumentasi [quickstart berikut](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) akan memandu Anda dalam membuat permintaan ke layanan ini.
+Pendekatan yang direkomendasikan untuk mengurangi risiko ini adalah dengan menyertakan sistem keamanan dalam arsitektur Anda yang dapat mendeteksi dan mencegah perilaku berbahaya. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) menyediakan lapisan perlindungan independen yang mampu mendeteksi konten berbahaya yang dibuat pengguna maupun AI dalam aplikasi dan layanan. Azure AI Content Safety mencakup API teks dan gambar yang memungkinkan Anda mendeteksi materi yang berbahaya. Dalam Azure AI Foundry, layanan Content Safety memungkinkan Anda melihat, menjelajahi, dan mencoba contoh kode untuk mendeteksi konten berbahaya di berbagai modalitas. Dokumentasi [quickstart berikut](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) akan memandu Anda dalam membuat permintaan ke layanan ini.
 
 Aspek lain yang perlu diperhatikan adalah kinerja keseluruhan aplikasi. Dengan aplikasi multi-modal dan multi-model, kami menganggap kinerja berarti sistem berjalan sesuai harapan Anda dan pengguna, termasuk tidak menghasilkan output yang berbahaya. Penting untuk menilai kinerja aplikasi Anda secara keseluruhan menggunakan [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Anda juga dapat membuat dan mengevaluasi dengan [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
@@ -243,8 +243,8 @@ Anda dapat mengevaluasi aplikasi AI Anda di lingkungan pengembangan menggunakan 
 
 ## Merek Dagang
 
-Proyek ini mungkin berisi merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan merek dagang atau logo Microsoft yang sah harus mematuhi dan mengikuti [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Penggunaan merek dagang atau logo Microsoft dalam versi modifikasi dari proyek ini tidak boleh menimbulkan kebingungan atau menyiratkan dukungan dari Microsoft. Penggunaan merek dagang atau logo pihak ketiga tunduk pada kebijakan pihak ketiga tersebut.
+Proyek ini mungkin berisi merek dagang atau logo untuk proyek, produk, atau layanan. Penggunaan merek dagang atau logo Microsoft yang sah tunduk pada dan harus mengikuti [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Penggunaan merek dagang atau logo Microsoft dalam versi modifikasi dari proyek ini tidak boleh menimbulkan kebingungan atau menyiratkan sponsor Microsoft. Penggunaan merek dagang atau logo pihak ketiga tunduk pada kebijakan pihak ketiga tersebut.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

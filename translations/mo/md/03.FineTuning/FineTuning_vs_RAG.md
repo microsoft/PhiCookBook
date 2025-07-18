@@ -2,30 +2,30 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e4e010400c2918557b36bb932a14004c",
-  "translation_date": "2025-05-07T13:33:08+00:00",
+  "translation_date": "2025-07-17T09:27:14+00:00",
   "source_file": "md/03.FineTuning/FineTuning_vs_RAG.md",
   "language_code": "mo"
 }
 -->
-## Finetuning vs RAG
+## 微調與 RAG
 
-## Retrieval Augmented Generation
+## 檢索增強生成
 
-RAG combines data retrieval with text generation. Both structured and unstructured enterprise data are stored in a vector database. When searching for relevant information, related summaries and content are retrieved to form a context, which is then used alongside the text completion capabilities of LLM/SLM to generate content.
+RAG 是資料檢索加上文本生成。企業的結構化資料和非結構化資料會存放在向量資料庫中。當搜尋相關內容時，會找到相關的摘要和內容來組成上下文，並結合 LLM/SLM 的文本補全能力來生成內容。
 
-## RAG Process
+## RAG 流程
 ![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.mo.png)
 
-## Fine-tuning
-Fine-tuning focuses on improving a specific model. It doesn’t require starting from the model algorithm, but it does need continuous accumulation of data. If you want more accurate terminology and language expression in industry applications, fine-tuning is a better choice. However, if your data changes frequently, fine-tuning can become complex.
+## 微調
+微調是基於某個模型的改進，不需要從模型演算法開始，但需要持續累積資料。如果你想在產業應用中使用更精確的術語和語言表達，微調會是更好的選擇。但如果資料經常變動，微調可能會變得複雜。
 
-## How to choose
-If your answer requires incorporating external data, RAG is the best choice.
+## 如何選擇
+如果我們的回答需要引入外部資料，RAG 是最佳選擇。
 
-If you need to deliver stable and precise industry knowledge, fine-tuning is a good option. RAG prioritizes retrieving relevant content but may not always capture specialized nuances perfectly.
+如果你需要輸出穩定且精確的產業知識，微調會是好的選擇。RAG 優先拉取相關內容，但可能無法完全掌握專業細節。
 
-Fine-tuning demands a high-quality dataset, and if your data scope is small, it won’t make much difference. RAG is more flexible.  
-Fine-tuning is a black box, somewhat metaphysical, making it hard to understand the internal workings. RAG, on the other hand, makes it easier to trace the data source, helping to effectively address hallucinations or content errors and offering better transparency.
+微調需要高品質的資料集，如果資料範圍很小，效果不會太明顯。RAG 則較為靈活。  
+微調像是一個黑盒子，帶有神祕色彩，內部機制難以理解。但 RAG 可以更容易找到資料來源，從而有效調整幻覺或內容錯誤，並提供更好的透明度。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

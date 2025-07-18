@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:22:38+00:00",
+  "translation_date": "2025-07-17T05:43:02+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "sl"
 }
 -->
-## GitHub Models - Limited Public Beta
+## GitHub Models - Omejena javna beta
 
-Dobrodošli na [GitHub Models](https://github.com/marketplace/models)! Vse je pripravljeno, da raziščete AI modele, ki gostujejo na Azure AI.
+Dobrodošli na [GitHub Models](https://github.com/marketplace/models)! Vse je pripravljeno, da raziščete AI modele, gostovane na Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.sl.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.sl.png)
 
 Za več informacij o modelih, ki so na voljo na GitHub Models, si oglejte [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Na voljo modeli
 
-Vsak model ima svoj namenski playground in primer kode
+Vsak model ima svoj prostor za preizkušanje in vzorčno kodo
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,7 +37,7 @@ Vsak model ima svoj namenski playground in primer kode
 
 ## Začetek
 
-Na voljo je nekaj osnovnih primerov, ki so pripravljeni za zagon. Najdete jih v mapi samples. Če želite skočiti neposredno na svoj najljubši jezik, so primeri na voljo v naslednjih jezikih:
+Na voljo je nekaj osnovnih primerov, ki jih lahko takoj zaženete. Najdete jih v mapi samples. Če želite skočiti neposredno na svoj najljubši programski jezik, so primeri na voljo v naslednjih jezikih:
 
 - Python
 - JavaScript
@@ -45,18 +45,18 @@ Na voljo je nekaj osnovnih primerov, ki so pripravljeni za zagon. Najdete jih v 
 
 Na voljo je tudi namensko Codespaces okolje za izvajanje primerov in modelov.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.sl.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.sl.png)
 
-## Primer kode
+## Vzorec kode
 
 Spodaj so primeri kode za nekaj primerov uporabe. Za dodatne informacije o Azure AI Inference SDK si oglejte celotno dokumentacijo in primere.
 
 ## Namestitev
 
 1. Ustvarite osebni dostopni žeton  
-Ni vam treba dodeliti nobenih dovoljenj žetonu. Upoštevajte, da bo žeton poslan Microsoftovi storitvi.
+Ni potrebno dodeliti nobenih dovoljenj žetonu. Upoštevajte, da bo žeton poslan Microsoftovi storitvi.
 
-Za uporabo spodnjih primerov kode ustvarite okoljsko spremenljivko, kjer nastavite svoj žeton kot ključ za odjemalsko kodo.
+Za uporabo spodnjih primerov kode ustvarite okoljsko spremenljivko, ki bo vsebovala vaš žeton kot ključ za odjemalsko kodo.
 
 Če uporabljate bash:  
 ```
@@ -74,7 +74,7 @@ $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 set GITHUB_TOKEN=<your-github-token-goes-here>
 ```  
 
-## Python primer
+## Python vzorec
 
 ### Namestite odvisnosti  
 Namestite Azure AI Inference SDK z uporabo pip (zahteva: Python >=3.8):
@@ -84,7 +84,7 @@ pip install azure-ai-inference
 ```  
 ### Zaženite osnovni primer kode
 
-Ta primer prikazuje osnovni klic API-ja za chat completion. Uporablja GitHub AI model inference endpoint in vaš GitHub žeton. Klic je sinhron.
+Ta primer prikazuje osnovni klic API-ja za dokončanje pogovora. Uporablja GitHub AI model inference endpoint in vaš GitHub žeton. Klic je sinhron.
 
 ```
 import os
@@ -118,7 +118,7 @@ print(response.choices[0].message.content)
 
 ### Zaženite večkrožni pogovor
 
-Ta primer prikazuje večkrožni pogovor z API-jem za chat completion. Ko uporabljate model za klepetalno aplikacijo, morate upravljati zgodovino pogovora in poslati najnovejša sporočila modelu.
+Ta primer prikazuje večkrožni pogovor z API-jem za dokončanje pogovora. Pri uporabi modela za klepetalno aplikacijo morate upravljati zgodovino pogovora in modelu poslati najnovejša sporočila.
 
 ```
 import os
@@ -150,7 +150,7 @@ print(response.choices[0].message.content)
 
 ### Pretakajte izhod
 
-Za boljšo uporabniško izkušnjo boste želeli pretakati odziv modela, da se prvi token prikaže prej in se izognete dolgemu čakanju na odziv.
+Za boljšo uporabniško izkušnjo boste želeli pretakati odziv modela, da se prvi token prikaže hitro in se izognete čakanju na dolge odgovore.
 
 ```
 import os
@@ -189,7 +189,7 @@ client.close()
 
 Namestite Node.js.
 
-Kopirajte spodnje vrstice besedila in jih shranite kot datoteko package.json v svojo mapo.
+Kopirajte naslednje vrstice in jih shranite kot datoteko package.json v vašo mapo.
 
 ```
 {
@@ -202,7 +202,7 @@ Kopirajte spodnje vrstice besedila in jih shranite kot datoteko package.json v s
 }
 ```
 
-Opomba: @azure/core-sse je potreben samo, če pretakate odzive chat completion.
+Opomba: @azure/core-sse je potreben samo, če pretakate odzive dokončanja pogovora.
 
 Odprite terminal v tej mapi in zaženite npm install.
 
@@ -210,7 +210,7 @@ Za vsak spodnji primer kode kopirajte vsebino v datoteko sample.js in jo zaženi
 
 ### Zaženite osnovni primer kode
 
-Ta primer prikazuje osnovni klic API-ja za chat completion. Uporablja GitHub AI model inference endpoint in vaš GitHub žeton. Klic je sinhron.
+Ta primer prikazuje osnovni klic API-ja za dokončanje pogovora. Uporablja GitHub AI model inference endpoint in vaš GitHub žeton. Klic je sinhron.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -251,7 +251,7 @@ main().catch((err) => {
 
 ### Zaženite večkrožni pogovor
 
-Ta primer prikazuje večkrožni pogovor z API-jem za chat completion. Ko uporabljate model za klepetalno aplikacijo, morate upravljati zgodovino pogovora in poslati najnovejša sporočila modelu.
+Ta primer prikazuje večkrožni pogovor z API-jem za dokončanje pogovora. Pri uporabi modela za klepetalno aplikacijo morate upravljati zgodovino pogovora in modelu poslati najnovejša sporočila.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,9 +292,8 @@ main().catch((err) => {
 });
 ```
 
-### Pretakajte izhod
-
-Za boljšo uporabniško izkušnjo boste želeli pretakati odziv modela, da se prvi token prikaže prej in se izognete dolgemu čakanju na odziv.
+### Pretakajte izhod  
+Za boljšo uporabniško izkušnjo boste želeli pretakati odziv modela, da se prvi token prikaže hitro in se izognete čakanju na dolge odgovore.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -352,7 +351,7 @@ main().catch((err) => {
 
 ### Zaženite osnovni primer kode
 
-Prilepite naslednje v shell:
+Prilepite naslednje v ukazno vrstico:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -374,7 +373,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 ```  
 ### Zaženite večkrožni pogovor
 
-Pokličite chat completion API in pošljite zgodovino pogovora:
+Pokličite API za dokončanje pogovora in posredujte zgodovino pogovora:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -426,21 +425,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## BREZPLAČNA uporaba in omejitve za GitHub Models
+## BREZPLAČNA uporaba in omejitve hitrosti za GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.sl.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.sl.png)
 
-[Omejitve hitrosti za playground in brezplačno uporabo API-ja](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) so namenjene temu, da lahko eksperimentirate z modeli in prototipirate svojo AI aplikacijo. Za uporabo nad temi omejitvami in za širitev aplikacije morate zagotoviti vire iz Azure računa in se od tam avtenticirati namesto z vašim GitHub osebnim dostopnim žetonom. Ni vam treba spreminjati ničesar drugega v kodi. Uporabite to povezavo, da odkrijete, kako preseči brezplačne omejitve v Azure AI.
+[Omejitve hitrosti za playground in brezplačno uporabo API-ja](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) so namenjene temu, da lahko preizkušate modele in prototipirate svojo AI aplikacijo. Za uporabo nad temi omejitvami in za razširitev vaše aplikacije morate zagotoviti vire iz Azure računa in se tam tudi avtenticirati namesto z vašim GitHub osebnim dostopnim žetonom. V kodi ni potrebno spreminjati ničesar drugega. Uporabite to povezavo, da odkrijete, kako preseči brezplačne omejitve v Azure AI.
 
 ### Opozorila
 
-Zapomnite si, da ko uporabljate model, eksperimentirate z AI, zato so možne vsebinske napake.
+Zapomnite si, da ko uporabljate model, eksperimentirate z AI, zato so možne vsebine z napakami.
 
-Funkcija je podvržena različnim omejitvam (vključno z zahtevami na minuto, zahtevami na dan, tokeni na zahtevo in sočasnimi zahtevami) in ni namenjena za produkcijske primere uporabe.
+Funkcija je podvržena različnim omejitvam (vključno z zahtevki na minuto, zahtevki na dan, tokeni na zahtevo in sočasnimi zahtevki) in ni namenjena za produkcijsko uporabo.
 
-GitHub Models uporablja Azure AI Content Safety. Ti filtri se ne dajo izključiti kot del izkušnje GitHub Models. Če se odločite uporabljati modele preko plačljive storitve, prosimo, konfigurirajte svoje vsebinske filtre glede na vaše zahteve.
+GitHub Models uporablja Azure AI Content Safety. Ti filtri se ne dajo izklopiti kot del izkušnje GitHub Models. Če se odločite uporabljati modele preko plačljive storitve, prosimo, da konfigurirate svoje filtre vsebine glede na vaše zahteve.
 
-Ta storitev je podvržena GitHub-ovim pogojev predizdaje.
+Ta storitev je podvržena GitHubovim pogojev predizdaje.
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvorno jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazumevanja ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.

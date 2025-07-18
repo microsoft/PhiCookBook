@@ -2,58 +2,59 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:06:04+00:00",
+  "translation_date": "2025-07-17T03:26:10+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "el"
 }
 -->
-# **Δημιουργήστε τον δικό σας Visual Studio Code Chat Copilot Agent με Phi-3.5 από GitHub Models**
+# **Δημιουργήστε τον δικό σας Visual Studio Code Chat Copilot Agent με Phi-3.5 από τα GitHub Models**
 
-Χρησιμοποιείτε το Visual Studio Code Copilot; Ιδιαίτερα στο Chat, μπορείτε να χρησιμοποιήσετε διαφορετικούς agents για να βελτιώσετε την ικανότητα δημιουργίας, συγγραφής και συντήρησης έργων στο Visual Studio Code. Το Visual Studio Code παρέχει ένα API που επιτρέπει σε εταιρείες και ιδιώτες να δημιουργήσουν διαφορετικούς agents βασισμένους στην επιχείρησή τους, επεκτείνοντας τις δυνατότητες σε διάφορους εξειδικευμένους τομείς. Σε αυτό το άρθρο, θα εστιάσουμε στα **Phi-3.5-mini-instruct (128k)** και **Phi-3.5-vision-instruct (128k)** των GitHub Models για να δημιουργήσετε τον δικό σας Visual Studio Code Agent.
+Χρησιμοποιείτε το Visual Studio Code Copilot; Ειδικά στο Chat, μπορείτε να χρησιμοποιήσετε διαφορετικούς agents για να βελτιώσετε την ικανότητα δημιουργίας, συγγραφής και συντήρησης έργων στο Visual Studio Code. Το Visual Studio Code παρέχει ένα API που επιτρέπει σε εταιρείες και ιδιώτες να δημιουργήσουν διαφορετικούς agents βασισμένους στην επιχείρησή τους, ώστε να επεκτείνουν τις δυνατότητές τους σε διάφορους εξειδικευμένους τομείς. Σε αυτό το άρθρο, θα εστιάσουμε στα **Phi-3.5-mini-instruct (128k)** και **Phi-3.5-vision-instruct (128k)** των GitHub Models για να δημιουργήσετε τον δικό σας Visual Studio Code Agent.
 
 ## **Σχετικά με το Phi-3.5 στα GitHub Models**
 
-Ξέρουμε ότι το Phi-3/3.5-mini-instruct της οικογένειας Phi-3/3.5 έχει ισχυρές δυνατότητες κατανόησης και παραγωγής κώδικα, και υπερέχει σε σχέση με τα Gemma-2-9b και Mistral-Nemo-12B-instruct-2407.
+Γνωρίζουμε ότι το Phi-3/3.5-mini-instruct στην οικογένεια Phi-3/3.5 έχει ισχυρές ικανότητες κατανόησης και δημιουργίας κώδικα, και υπερέχει σε σχέση με τα Gemma-2-9b και Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.el.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.el.png)
 
-Τα πιο πρόσφατα GitHub Models παρέχουν ήδη πρόσβαση στα μοντέλα Phi-3.5-mini-instruct (128k) και Phi-3.5-vision-instruct (128k). Οι προγραμματιστές μπορούν να τα χρησιμοποιήσουν μέσω του OpenAI SDK, του Azure AI Inference SDK και του REST API.
+Τα πιο πρόσφατα GitHub Models παρέχουν ήδη πρόσβαση στα μοντέλα Phi-3.5-mini-instruct (128k) και Phi-3.5-vision-instruct (128k). Οι προγραμματιστές μπορούν να τα προσεγγίσουν μέσω του OpenAI SDK, του Azure AI Inference SDK και του REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.el.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.el.png)
 
-***Note:*** Συνιστάται η χρήση του Azure AI Inference SDK εδώ, καθώς επιτρέπει καλύτερη εναλλαγή με το Azure Model Catalog στο περιβάλλον παραγωγής.
+***Note: *** Συνιστάται η χρήση του Azure AI Inference SDK εδώ, γιατί μπορεί να εναλλάσσεται καλύτερα με το Azure Model Catalog στο περιβάλλον παραγωγής.
 
-Ακολουθούν τα αποτελέσματα των **Phi-3.5-mini-instruct (128k)** και **Phi-3.5-vision-instruct (128k)** σε σενάρια παραγωγής κώδικα μετά τη σύνδεση με τα GitHub Models, καθώς και παραδείγματα για τα επόμενα βήματα.
+Ακολουθούν τα αποτελέσματα των **Phi-3.5-mini-instruct (128k)** και **Phi-3.5-vision-instruct (128k)** στο σενάριο δημιουργίας κώδικα μετά τη σύνδεση με τα GitHub Models, καθώς και προετοιμασία για τα επόμενα παραδείγματα.
 
-**Demo: GitHub Models Phi-3.5-mini-instruct (128k) δημιουργεί κώδικα από Prompt** ([click this link](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-mini-instruct (128k) δημιουργεί κώδικα από Prompt** ([κάντε κλικ εδώ](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**Demo: GitHub Models Phi-3.5-vision-instruct (128k) δημιουργεί κώδικα από Εικόνα** ([click this link](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-vision-instruct (128k) δημιουργεί κώδικα από Εικόνα** ([κάντε κλικ εδώ](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+
 
 ## **Σχετικά με τον GitHub Copilot Chat Agent**
 
-Ο GitHub Copilot Chat Agent μπορεί να ολοκληρώσει διάφορες εργασίες σε διαφορετικά σενάρια έργου βάσει του κώδικα. Το σύστημα διαθέτει τέσσερις agents: workspace, github, terminal, vscode.
+Ο GitHub Copilot Chat Agent μπορεί να ολοκληρώσει διάφορες εργασίες σε διαφορετικά σενάρια έργων βασισμένα στον κώδικα. Το σύστημα διαθέτει τέσσερις agents: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.el.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.el.png)
 
-Προσθέτοντας το όνομα του agent με ‘@’, μπορείτε γρήγορα να ολοκληρώσετε την αντίστοιχη εργασία. Για επιχειρήσεις, αν προσθέσετε περιεχόμενο σχετικό με την επιχείρησή σας όπως απαιτήσεις, κώδικα, προδιαγραφές δοκιμών και κυκλοφορίες, μπορείτε να έχετε πιο ισχυρές ιδιωτικές λειτουργίες για επιχειρήσεις βασισμένες στο GitHub Copilot.
+Προσθέτοντας το όνομα του agent με ‘@’, μπορείτε να ολοκληρώσετε γρήγορα την αντίστοιχη εργασία. Για επιχειρήσεις, αν προσθέσετε το δικό σας περιεχόμενο σχετικό με την επιχείρηση, όπως απαιτήσεις, κωδικοποίηση, προδιαγραφές δοκιμών και κυκλοφορία, μπορείτε να έχετε πιο ισχυρές ιδιωτικές λειτουργίες για επιχειρήσεις βασισμένες στον GitHub Copilot.
 
-Ο Visual Studio Code Chat Agent έχει πλέον επίσημα κυκλοφορήσει το API του, επιτρέποντας σε επιχειρήσεις ή προγραμματιστές επιχειρήσεων να αναπτύξουν agents βασισμένους σε διαφορετικά οικοσυστήματα λογισμικού. Βασισμένοι στη μέθοδο ανάπτυξης Visual Studio Code Extension Development, μπορείτε εύκολα να έχετε πρόσβαση στο interface του Visual Studio Code Chat Agent API. Μπορούμε να αναπτύξουμε ακολουθώντας αυτή τη διαδικασία.
+Ο Visual Studio Code Chat Agent έχει πλέον επίσημα κυκλοφορήσει το API του, επιτρέποντας σε επιχειρήσεις ή προγραμματιστές επιχειρήσεων να αναπτύξουν agents βασισμένους σε διαφορετικά οικοσυστήματα λογισμικού. Βασισμένοι στη μέθοδο ανάπτυξης Visual Studio Code Extension Development, μπορείτε εύκολα να έχετε πρόσβαση στη διεπαφή του Visual Studio Code Chat Agent API. Μπορούμε να αναπτύξουμε με βάση αυτή τη διαδικασία.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.el.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.el.png)
 
-Το σενάριο ανάπτυξης υποστηρίζει πρόσβαση σε API τρίτων μοντέλων (όπως GitHub Models, Azure Model Catalog, και αυτοδημιούργητες υπηρεσίες βασισμένες σε ανοιχτού κώδικα μοντέλα) και μπορεί επίσης να χρησιμοποιήσει τα μοντέλα gpt-35-turbo, gpt-4, και gpt-4o που παρέχονται από το GitHub Copilot.
+Το σενάριο ανάπτυξης μπορεί να υποστηρίξει πρόσβαση σε API τρίτων μοντέλων (όπως GitHub Models, Azure Model Catalog και αυτοδημιούργητες υπηρεσίες βασισμένες σε ανοιχτού κώδικα μοντέλα) και μπορεί επίσης να χρησιμοποιήσει τα μοντέλα gpt-35-turbo, gpt-4 και gpt-4o που παρέχονται από τον GitHub Copilot.
 
 ## **Προσθήκη Agent @phicoding βασισμένου στο Phi-3.5**
 
-Προσπαθούμε να ενσωματώσουμε τις προγραμματιστικές δυνατότητες του Phi-3.5 για να ολοκληρώσουμε εργασίες όπως συγγραφή κώδικα, δημιουργία κώδικα από εικόνες και άλλες. Ολοκληρώνουμε έναν Agent βασισμένο στο Phi-3.5 - @PHI, με τις ακόλουθες λειτουργίες:
+Προσπαθούμε να ενσωματώσουμε τις προγραμματιστικές δυνατότητες του Phi-3.5 για να ολοκληρώσουμε τη συγγραφή κώδικα, τη δημιουργία κώδικα από εικόνες και άλλες εργασίες. Ολοκληρώνουμε έναν Agent βασισμένο στο Phi-3.5 - @PHI, με τις παρακάτω λειτουργίες:
 
-1. Δημιουργία αυτοπαρουσίασης βασισμένη στο GPT-4o που παρέχει το GitHub Copilot μέσω της εντολής **@phicoding /help**
+1. Δημιουργία αυτοπαρουσίασης βασισμένη στο GPT-4o που παρέχεται από τον GitHub Copilot μέσω της εντολής **@phicoding /help**
 
-2. Δημιουργία κώδικα για διαφορετικές γλώσσες προγραμματισμού βασισμένη στο **Phi-3.5-mini-instruct (128k)** μέσω της εντολής **@phicoding /gen**
+2. Δημιουργία κώδικα για διάφορες γλώσσες προγραμματισμού βασισμένη στο **Phi-3.5-mini-instruct (128k)** μέσω της εντολής **@phicoding /gen**
 
 3. Δημιουργία κώδικα βασισμένη στο **Phi-3.5-vision-instruct (128k)** και ολοκλήρωση εικόνας μέσω της εντολής **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.el.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.el.png)
 
 ## **Σχετικά βήματα**
 
@@ -64,8 +65,7 @@ CO_OP_TRANSLATOR_METADATA:
 npm install --global yo generator-code 
 
 ```
-
-2. Δημιουργήστε ένα Visual Studio Code Extension plugin (σε Typescript, με όνομα phiext)
+2. Δημιουργήστε ένα Visual Studio Code Extension plugin (σε λειτουργία ανάπτυξης Typescript, με όνομα phiext)
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. Ανοίξτε το δημιουργημένο project και τροποποιήστε το package.json. Εδώ υπάρχουν οι σχετικές οδηγίες και ρυθμίσεις, καθώς και η ρύθμιση για τα GitHub Models. Σημειώστε ότι πρέπει να προσθέσετε το token σας για τα GitHub Models εδώ.
+3. Ανοίξτε το δημιουργημένο έργο και τροποποιήστε το package.json. Εδώ υπάρχουν οι σχετικές οδηγίες και ρυθμίσεις, καθώς και η ρύθμιση για τα GitHub Models. Σημειώστε ότι πρέπει να προσθέσετε εδώ το token των GitHub Models.
 
 ```json
 
@@ -364,21 +364,21 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.el.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.el.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.el.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.el.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.el.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.el.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.el.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.el.png)
 
-Μπορείτε να κατεβάσετε τον δείγμα κώδικα: [click](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Μπορείτε να κατεβάσετε δείγμα κώδικα: [κλικ εδώ](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **Πόροι**
 
@@ -389,4 +389,4 @@ export function deactivate() {}
 3. Μάθετε για το Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Αποποίηση ευθυνών**:  
-Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε ακρίβεια, παρακαλούμε να γνωρίζετε ότι οι αυτοματοποιημένες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η επίσημη πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική μετάφραση από ανθρώπους. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.
+Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη μητρική του γλώσσα πρέπει να θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

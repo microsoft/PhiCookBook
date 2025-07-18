@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:07:57+00:00",
+  "translation_date": "2025-07-17T05:15:23+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "br"
 }
 -->
-## **Chamadas de função no Phi-4-mini**
+## **Chamada de função no Phi-4-mini**
 
-A chamada de função apareceu pela primeira vez na família Phi, e agora você pode usá-la no Phi-4-mini.
+A chamada de função apareceu pela primeira vez na família Phi Family, e agora você pode usá-la através do Phi-4-mini.
 
 Este exemplo demonstra a simulação dos resultados da Premier League. O objetivo é que o Phi-4-mini forneça informações dos jogos em tempo real. Abaixo está o código de exemplo:
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

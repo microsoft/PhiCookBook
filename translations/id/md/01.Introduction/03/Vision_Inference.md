@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:16:31+00:00",
+  "translation_date": "2025-07-16T21:39:17+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "id"
 }
 -->
 # **Inferensi Phi-3-Vision secara Lokal**
 
-Phi-3-vision-128k-instruct memungkinkan Phi-3 tidak hanya memahami bahasa, tetapi juga melihat dunia secara visual. Melalui Phi-3-vision-128k-instruct, kita bisa menyelesaikan berbagai masalah visual, seperti OCR, analisis tabel, pengenalan objek, mendeskripsikan gambar, dan lain-lain. Kita dapat dengan mudah menyelesaikan tugas yang sebelumnya memerlukan banyak data pelatihan. Berikut adalah teknik terkait dan skenario aplikasi yang dikutip oleh Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct memungkinkan Phi-3 tidak hanya memahami bahasa, tetapi juga melihat dunia secara visual. Melalui Phi-3-vision-128k-instruct, kita dapat menyelesaikan berbagai masalah visual, seperti OCR, analisis tabel, pengenalan objek, mendeskripsikan gambar, dan lain-lain. Kita bisa dengan mudah menyelesaikan tugas yang sebelumnya memerlukan banyak data pelatihan. Berikut adalah teknik terkait dan skenario aplikasi yang dikutip oleh Phi-3-vision-128k-instruct
 
 ## **0. Persiapan**
 
@@ -21,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-Disarankan menggunakan ***CUDA 11.6+*** dan memasang flatten
+Disarankan menggunakan ***CUDA 11.6+*** dan menginstal flatten
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-Buat Notebook baru. Untuk menyelesaikan contoh, disarankan membuat konten berikut terlebih dahulu.
+Buat Notebook baru. Untuk menyelesaikan contoh, disarankan Anda membuat konten berikut terlebih dahulu.
 
 ```python
 from PIL import Image
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR dengan Phi-3-Vision**
 
-Selain menganalisis gambar, kita juga bisa mengekstrak informasi dari gambar. Ini adalah proses OCR yang sebelumnya memerlukan penulisan kode rumit untuk menyelesaikannya.
+Selain menganalisis gambar, kita juga bisa mengekstrak informasi dari gambar. Ini adalah proses OCR yang sebelumnya memerlukan penulisan kode yang rumit.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Perbandingan beberapa gambar**
 
-Phi-3 Vision mendukung perbandingan beberapa gambar. Kita bisa menggunakan model ini untuk menemukan perbedaan antara gambar-gambar tersebut.
+Phi-3 Vision mendukung perbandingan beberapa gambar. Kita bisa menggunakan model ini untuk menemukan perbedaan antar gambar.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:26:26+00:00",
+  "translation_date": "2025-07-17T05:51:24+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "hu"
 }
 -->
-# Képadatbázis létrehozása a Hugging Face-ről letöltött DataSet és a hozzá tartozó képek alapján
+# Képadatbázis létrehozása a Hugging Face-ről letöltött DataSet és a hozzá tartozó képek segítségével
 
 
 ### Áttekintés
 
-Ez a script egy gépi tanuláshoz használható adatbázist készít elő azáltal, hogy letölti a szükséges képeket, kiszűri azokat a sorokat, ahol a kép letöltése nem sikerült, majd elmenti az adatbázist CSV fájlként.
+Ez a szkript egy gépi tanuláshoz használható adatbázist készít elő azáltal, hogy letölti a szükséges képeket, kiszűri azokat a sorokat, ahol a kép letöltése sikertelen, majd az adatbázist CSV fájlként menti el.
 
 ### Előfeltételek
 
-A script futtatása előtt győződj meg róla, hogy a következő könyvtárak telepítve vannak: `Pandas`, `Datasets`, `requests`, `PIL` és `io`. A 2. sorban található `'Insert_Your_Dataset'` helyére cseréld ki a Hugging Face-en található adatbázisod nevét.
+A szkript futtatása előtt győződj meg róla, hogy a következő könyvtárak telepítve vannak: `Pandas`, `Datasets`, `requests`, `PIL` és `io`. A 2. sorban cseréld ki az `'Insert_Your_Dataset'` részt a Hugging Face-en található adatbázisod nevére.
 
 Szükséges könyvtárak:
 
@@ -30,48 +30,48 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### Funkcionalitás
+### Funkciók
 
-A script a következő lépéseket hajtja végre:
+A szkript a következő lépéseket hajtja végre:
 
-1. Letölti az adatbázist a Hugging Face-ről a `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Letölti az adatbázist a Hugging Face-ről a `load_dataset()` függvény segítségével.
+2. Átalakítja a Hugging Face adatbázist Pandas DataFrame-é a könnyebb kezelhetőség érdekében a `to_pandas()` metódussal.
+3. Létrehozza a mappákat az adatbázis és a képek mentéséhez.
+4. Kiszűri azokat a sorokat, ahol a kép letöltése sikertelen, úgy, hogy végigiterál a DataFrame minden során, letölti a képet a saját `download_image()` függvénnyel, majd a szűrt sorokat egy új DataFrame-hez, `filtered_rows`-hoz adja hozzá.
+5. Új DataFrame-et hoz létre a szűrt sorokból, és elmenti azt CSV fájlként.
+6. Kiír egy üzenetet, amely jelzi, hogy hova mentette az adatbázist és a képeket.
 
-### Custom Function
+### Egyedi függvény
 
-The `download_image()` függvény segítségével. A download_image()` function, and appending the filtered row to a new DataFrame called ` függvény egy URL-ről tölti le a képet, és helyileg menti a Pillow Image Library (PIL) és az `io` modul segítségével. True értéket ad vissza, ha a kép sikeresen letöltődött, különben False-t. Ha a kérés sikertelen, a függvény kivételt dob a hibaüzenettel.
+A `download_image()` függvény egy URL-ről letölt egy képet, és helyileg elmenti a Pillow Image Library (PIL) és az `io` modul segítségével. Ha a kép sikeresen letöltődött, True értéket ad vissza, egyébként False-t. Ha a kérés sikertelen, kivételt dob a hibaüzenettel.
 
 ### Hogyan működik ez
 
-A download_image függvény két paramétert vár: image_url, ami a letöltendő kép URL-je, és save_path, ami a letöltött kép mentési útvonala.
+A download_image függvény két paramétert vár: image_url, ami a letöltendő kép URL-je, és save_path, ami az a hely, ahová a letöltött képet menteni fogja.
 
 A függvény működése a következő:
 
-Először egy GET kérést indít az image_url címre a requests.get metódussal, így lekéri a kép adatait az URL-ről.
+Először egy GET kérést küld az image_url-re a requests.get metódussal. Ez lekéri a kép adatait az URL-ről.
 
-A response.raise_for_status() sor ellenőrzi, hogy a kérés sikeres volt-e. Ha a válasz státuszkódja hibát jelez (pl. 404 - Nem található), kivételt dob. Ez biztosítja, hogy csak akkor folytatódjon a kép letöltése, ha a kérés sikeres volt.
+A response.raise_for_status() sor ellenőrzi, hogy a kérés sikeres volt-e. Ha a válasz státuszkód hibát jelez (pl. 404 - Nem található), kivételt dob. Ez biztosítja, hogy csak akkor folytatjuk a kép letöltését, ha a kérés sikeres volt.
 
-A kép adatait ezután átadja a PIL (Python Imaging Library) Image.open metódusának, amely létrehoz egy Image objektumot a kép adataiból.
+A kép adatokat ezután átadja a PIL (Python Imaging Library) Image.open metódusának. Ez létrehoz egy Image objektumot a kép adataiból.
 
 Az image.save(save_path) sor elmenti a képet a megadott save_path helyre. A save_path tartalmazza a kívánt fájlnevet és kiterjesztést.
 
-Végül a függvény True értéket ad vissza, jelezve, hogy a kép sikeresen letöltődött és elmentésre került. Ha bármilyen kivétel lép fel a folyamat során, elkapja a kivételt, kiír egy hibaüzenetet a sikertelenségről, és False-t ad vissza.
+Végül a függvény True értéket ad vissza, jelezve, hogy a kép sikeresen letöltődött és elmentésre került. Ha bármilyen kivétel történik a folyamat során, elkapja azt, kiír egy hibaüzenetet a sikertelenségről, és False-t ad vissza.
 
-Ez a függvény hasznos URL-ekről történő képletöltéshez és helyi mentéshez. Kezeli a letöltés közbeni esetleges hibákat, és visszajelzést ad a letöltés sikerességéről.
+Ez a függvény hasznos képek URL-ről történő letöltéséhez és helyi mentéséhez. Kezeli a letöltés közbeni esetleges hibákat, és visszajelzést ad arról, hogy a letöltés sikeres volt-e vagy sem.
 
-Érdemes megjegyezni, hogy a requests könyvtár HTTP kérések indítására szolgál, a PIL könyvtár képek kezelésére, a BytesIO osztály pedig az képadatokat bájtsorozatként kezeli.
+Érdemes megjegyezni, hogy a requests könyvtár HTTP kérések küldésére szolgál, a PIL könyvtár képek kezelésére, a BytesIO osztály pedig a kép adatokat bájtsorozatként kezeli.
 
 
 
-### Összefoglalás
+### Összegzés
 
-Ez a script kényelmes megoldást nyújt egy gépi tanuláshoz használható adatbázis előkészítésére azáltal, hogy letölti a szükséges képeket, kiszűri azokat a sorokat, ahol a kép letöltése nem sikerült, és elmenti az adatbázist CSV fájlként.
+Ez a szkript kényelmes módot biztosít egy gépi tanuláshoz használható adatbázis előkészítésére azáltal, hogy letölti a szükséges képeket, kiszűri a sikertelen letöltésű sorokat, és az adatbázist CSV fájlként menti el.
 
-### Minta Script
+### Minta szkript
 
 ```python
 import os
@@ -130,11 +130,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Minta Kód Letöltése  
+### Minta kód letöltése  
 [Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### Minta Adatbázis  
+### Minta adatbázis  
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
-**Nyilatkozat:**  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy félreértelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

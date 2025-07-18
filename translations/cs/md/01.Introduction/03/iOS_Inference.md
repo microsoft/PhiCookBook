@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-09T11:05:10+00:00",
+  "translation_date": "2025-07-16T20:24:11+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "cs"
 }
 -->
-# **Inference Phi-3 en iOS**
+# **Inference Phi-3 v iOS**
 
-Phi-3-mini es una nueva serie de modelos de Microsoft que permite el despliegue de Large Language Models (LLMs) en dispositivos edge y dispositivos IoT. Phi-3-mini está disponible para despliegues en iOS, Android y Edge Device, permitiendo que la IA generativa se implemente en entornos BYOD. El siguiente ejemplo muestra cómo desplegar Phi-3-mini en iOS.
+Phi-3-mini je nová řada modelů od Microsoftu, která umožňuje nasazení velkých jazykových modelů (LLM) na edge zařízeních a IoT zařízeních. Phi-3-mini je dostupný pro iOS, Android a nasazení na edge zařízeních, což umožňuje využití generativní AI v BYOD prostředích. Následující příklad ukazuje, jak nasadit Phi-3-mini na iOS.
 
-## **1. Preparación**
+## **1. Příprava**
 
 - **a.** macOS 14+
 - **b.** Xcode 15+
-- **c.** iOS SDK 17.x (iPhone 14 A16 o superior)
-- **d.** Instalar Python 3.10+ (se recomienda Conda)
-- **e.** Instalar la librería de Python: `python-flatbuffers`
-- **f.** Instalar CMake
+- **c.** iOS SDK 17.x (iPhone 14 A16 nebo novější)
+- **d.** Nainstalujte Python 3.10+ (doporučujeme Conda)
+- **e.** Nainstalujte Python knihovnu: `python-flatbuffers`
+- **f.** Nainstalujte CMake
 
-### Semantic Kernel e Inferencia
+### Semantic Kernel a inference
 
-Semantic Kernel es un framework de aplicaciones que te permite crear apps compatibles con Azure OpenAI Service, modelos OpenAI e incluso modelos locales. Acceder a servicios locales a través de Semantic Kernel facilita la integración con tu servidor de modelos Phi-3-mini auto hospedado.
+Semantic Kernel je aplikační framework, který umožňuje vytvářet aplikace kompatibilní s Azure OpenAI Service, OpenAI modely a dokonce i lokálními modely. Přístup k lokálním službám přes Semantic Kernel usnadňuje integraci s vlastním serverem modelu Phi-3-mini.
 
-### Llamar a modelos cuantificados con Ollama o LlamaEdge
+### Volání kvantovaných modelů pomocí Ollama nebo LlamaEdge
 
-Muchos usuarios prefieren usar modelos cuantificados para ejecutar modelos localmente. [Ollama](https://ollama.com) y [LlamaEdge](https://llamaedge.com) permiten a los usuarios llamar a diferentes modelos cuantificados:
+Mnoho uživatelů preferuje použití kvantovaných modelů pro lokální běh. [Ollama](https://ollama.com) a [LlamaEdge](https://llamaedge.com) umožňují volání různých kvantovaných modelů:
 
 #### **Ollama**
 
-Puedes ejecutar `ollama run phi3` directamente o configurarlo en modo offline. Crea un Modelfile con la ruta a tu archivo `gguf`. Código de ejemplo para ejecutar el modelo cuantificado Phi-3-mini:
+Můžete spustit `ollama run phi3` přímo nebo jej nakonfigurovat offline. Vytvořte Modelfile s cestou k vašemu `gguf` souboru. Ukázkový kód pro spuštění kvantovaného modelu Phi-3-mini:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -41,9 +41,9 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-Si quieres usar `gguf` tanto en la nube como en dispositivos edge al mismo tiempo, LlamaEdge es una excelente opción.
+Pokud chcete používat `gguf` současně v cloudu i na edge zařízeních, LlamaEdge je skvělá volba.
 
-## **2. Compilar ONNX Runtime para iOS**
+## **2. Kompilace ONNX Runtime pro iOS**
 
 ```bash
 
@@ -57,21 +57,21 @@ cd ../
 
 ```
 
-### **Aviso**
+### **Upozornění**
 
-- **a.** Antes de compilar, asegúrate de que Xcode esté configurado correctamente y establece el directorio activo de desarrollo en la terminal:
+- **a.** Před kompilací se ujistěte, že máte správně nastavený Xcode a nastavte jej jako aktivní vývojářský adresář v terminálu:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime debe compilarse para diferentes plataformas. Para iOS, puedes compilar para `arm64` or `x86_64`.
+- **b.** ONNX Runtime je potřeba kompilovat pro různé platformy. Pro iOS můžete kompilovat pro `arm64` nebo `x86_64`.
 
-- **c.** Se recomienda usar la versión más reciente del iOS SDK para la compilación. Sin embargo, también puedes usar una versión anterior si necesitas compatibilidad con SDKs previos.
+- **c.** Doporučuje se použít nejnovější iOS SDK pro kompilaci, ale můžete použít i starší verzi, pokud potřebujete kompatibilitu se staršími SDK.
 
-## **3. Compilar Generative AI con ONNX Runtime para iOS**
+## **3. Kompilace Generative AI s ONNX Runtime pro iOS**
 
-> **Note:** Debido a que Generative AI con ONNX Runtime está en vista previa, ten en cuenta posibles cambios.
+> **Poznámka:** Protože Generative AI s ONNX Runtime je ve fázi preview, mějte prosím na paměti možné změny.
 
 ```bash
 
@@ -99,37 +99,37 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **4. Crear una aplicación App en Xcode**
+## **4. Vytvoření aplikace v Xcode**
 
-Elegí Objective-C como método de desarrollo de la App, porque al usar Generative AI con la API C++ de ONNX Runtime, Objective-C es más compatible. Por supuesto, también puedes realizar las llamadas correspondientes mediante bridging con Swift.
+Zvolil jsem Objective-C jako způsob vývoje aplikace, protože při použití Generative AI s ONNX Runtime C++ API je Objective-C lépe kompatibilní. Samozřejmě můžete také provádět příslušné volání přes Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.cs.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.cs.png)
 
-## **5. Copiar el modelo cuantificado INT4 ONNX al proyecto de la App**
+## **5. Zkopírujte kvantovaný INT4 ONNX model do projektu aplikace**
 
-Necesitamos importar el modelo de cuantificación INT4 en formato ONNX, que debe descargarse primero.
+Potřebujeme importovat INT4 kvantovaný model ve formátu ONNX, který je potřeba nejprve stáhnout.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.cs.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.cs.png)
 
-Después de descargarlo, debes añadirlo al directorio Resources del proyecto en Xcode.
+Po stažení je potřeba jej přidat do složky Resources v projektu v Xcode.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.cs.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.cs.png)
 
-## **6. Añadir la API C++ en ViewControllers**
+## **6. Přidání C++ API do ViewControllers**
 
-> **Aviso:**
+> **Upozornění:**
 
-- **a.** Añade los archivos de encabezado C++ correspondientes al proyecto.
+- **a.** Přidejte odpovídající C++ hlavičkové soubory do projektu.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.cs.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.cs.png)
 
-- **b.** Incluye `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Zahrňte dynamickou knihovnu `onnxruntime-genai` v Xcode.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.cs.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.cs.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **c.** Pro testování použijte C Samples kód. Můžete také přidat další funkce, jako je ChatUI, pro rozšířenou funkcionalitu.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` para habilitar soporte Objective-C++.
+- **d.** Protože v projektu potřebujete používat C++, přejmenujte `ViewController.m` na `ViewController.mm`, aby bylo povoleno Objective-C++.
 
 ```objc
 
@@ -158,13 +158,13 @@ Después de descargarlo, debes añadirlo al directorio Resources del proyecto en
 
 ```
 
-## **7. Ejecutar la Aplicación**
+## **7. Spuštění aplikace**
 
-Una vez completada la configuración, puedes ejecutar la aplicación para ver los resultados de la inferencia del modelo Phi-3-mini.
+Po dokončení nastavení můžete aplikaci spustit a zobrazit výsledky inference modelu Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.cs.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.cs.jpg)
 
-Para más ejemplos de código e instrucciones detalladas, visita el [repositorio Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+Pro více ukázkového kódu a podrobné instrukce navštivte [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědni za jakékoli nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

@@ -2,44 +2,44 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-05-09T14:19:32+00:00",
+  "translation_date": "2025-07-16T22:12:28+00:00",
   "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "sr"
 }
 -->
-# **Kvantizacija Phi porodice koristeći llama.cpp**
+# **Квантизација Phi породице користећи llama.cpp**
 
-## **Šta je llama.cpp**
+## **Шта је llama.cpp**
 
-llama.cpp je open-source softverska biblioteka uglavnom napisana u C++ koja vrši inferencu na različitim velikim jezičkim modelima (LLM), kao što je Llama. Glavni cilj joj je da obezbedi vrhunske performanse za inferencu LLM na širokom spektru hardvera uz minimalnu konfiguraciju. Takođe, dostupni su Python bindingi za ovu biblioteku, koji nude visok nivo API-ja za dopunu teksta i OpenAI kompatibilan web server.
+llama.cpp је софтверска библиотека отвореног кода, углавном написана у C++, која изводи инференцу на различитим великим језичким моделима (LLM), као што је Llama. Њен главни циљ је да обезбеди врхунске перформансе за инференцу LLM модела на широком спектру хардвера уз минималну конфигурацију. Поред тога, постоје Python биндинзи за ову библиотеку који нуде високонапонски API за допуњавање текста и OpenAI компатибилан веб сервер.
 
-Glavni cilj llama.cpp je da omogući inferencu LLM sa minimalnom konfiguracijom i vrhunskim performansama na različitim hardverskim platformama - lokalno i u oblaku.
+Главни циљ llama.cpp је да омогући инференцу LLM модела са минималном конфигурацијом и врхунским перформансама на разноврсном хардверу - локално и у облаку.
 
-- Čista C/C++ implementacija bez ikakvih zavisnosti
-- Apple silicon je prvi rang - optimizovan preko ARM NEON, Accelerate i Metal framework-a
-- Podrška za AVX, AVX2 i AVX512 na x86 arhitekturama
-- Kvantizacija u 1.5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit i 8-bit celobrojne vrednosti za bržu inferencu i smanjenu potrošnju memorije
-- Prilagođeni CUDA kerneli za pokretanje LLM na NVIDIA GPU-ima (podrška za AMD GPU preko HIP)
-- Podrška za Vulkan i SYCL backend
-- Hibridna inferenca CPU+GPU za delimično ubrzanje modela većih od ukupnog kapaciteta VRAM-a
+- Чиста C/C++ имплементација без икаквих зависности  
+- Apple silicon је првокласни корисник - оптимизован преко ARM NEON, Accelerate и Metal фрејмворка  
+- Подршка за AVX, AVX2 и AVX512 на x86 архитектурама  
+- Квантизација у 1.5-битним, 2-битним, 3-битним, 4-битним, 5-битним, 6-битним и 8-битним целобројним форматима за бржу инференцу и мању потрошњу меморије  
+- Прилагођени CUDA кернели за покретање LLM модела на NVIDIA GPU-овима (подршка за AMD GPU преко HIP-а)  
+- Подршка за Vulkan и SYCL бекенд  
+- Хибридна инференца CPU+GPU за делимично убрзање модела већих од укупног капацитета VRAM-а  
 
-## **Kvantizacija Phi-3.5 koristeći llama.cpp**
+## **Квантизација Phi-3.5 помоћу llama.cpp**
 
-Model Phi-3.5-Instruct može se kvantizovati koristeći llama.cpp, dok Phi-3.5-Vision i Phi-3.5-MoE još nisu podržani. Format u koji llama.cpp konvertuje je gguf, koji je takođe najrašireniji format kvantizacije.
+Phi-3.5-Instruct модел може бити квантизован коришћењем llama.cpp, али Phi-3.5-Vision и Phi-3.5-MoE још нису подржани. Формат који конвертује llama.cpp је gguf, који је такође најчешће коришћени формат за квантизацију.
 
-Na Hugging face postoji veliki broj modela u kvantizovanom GGUF formatu. AI Foundry, Ollama i LlamaEdge se oslanjaju na llama.cpp, pa se GGUF modeli često koriste.
+Постоји велики број квантизованих модела у GGUF формату на Hugging Face-у. AI Foundry, Ollama и LlamaEdge се ослањају на llama.cpp, па се GGUF модели често користе.
 
-### **Šta je GGUF**
+### **Шта је GGUF**
 
-GGUF je binarni format optimizovan za brzo učitavanje i čuvanje modela, što ga čini veoma efikasnim za inferencu. GGUF je dizajniran za upotrebu sa GGML i drugim izvršiocima. GGUF je razvio @ggerganov, koji je takođe developer llama.cpp, popularnog C/C++ framework-a za inferencu LLM. Modeli koji su prvobitno razvijeni u framework-ovima poput PyTorch mogu se konvertovati u GGUF format za upotrebu sa tim okruženjima.
+GGUF је бинарни формат оптимизован за брзо учитавање и чување модела, што га чини веома ефикасним за инференцу. GGUF је дизајниран за коришћење са GGML и другим извршиоцима. GGUF је развио @ggerganov, који је такође и аутор llama.cpp, популарног C/C++ фрејмворка за инференцу LLM модела. Модели који су првобитно развијени у фрејмворцима као што је PyTorch могу бити конвертовани у GGUF формат за употребу са тим моторима.
 
-### **ONNX vs GGUF**
+### **ONNX у односу на GGUF**
 
-ONNX je tradicionalni format za mašinsko učenje/duboko učenje, koji je dobro podržan u različitim AI framework-ovima i ima dobre primene na edge uređajima. GGUF, s druge strane, baziran je na llama.cpp i može se reći da je nastao u eri GenAI. Oboje imaju slične primene. Ako vam je potrebna bolja performansa na ugrađenom hardveru i u aplikacionim slojevima, ONNX može biti bolji izbor. Ako koristite izvedeni framework i tehnologiju llama.cpp, GGUF može biti prikladniji.
+ONNX је традиционални формат за машинско учење/дубоко учење, који је добро подржан у различитим AI фрејмворцима и има добре примене на уређајима на ивици мреже. Што се тиче GGUF-а, он је базиран на llama.cpp и може се рећи да је настао у ери GenAI. Оба имају сличне намене. Ако желите боље перформансе на уграђеном хардверу и у апликационим слојевима, ONNX може бити ваш избор. Ако користите деривативни фрејмворк и технологију llama.cpp, онда GGUF може бити бољи.
 
-### **Kvantizacija Phi-3.5-Instruct koristeći llama.cpp**
+### **Квантизација Phi-3.5-Instruct помоћу llama.cpp**
 
-**1. Konfiguracija okruženja**
+**1. Конфигурација окружења**
 
 
 ```bash
@@ -53,9 +53,9 @@ make -j8
 ```
 
 
-**2. Kvantizacija**
+**2. Квантизација**
 
-Konvertovanje Phi-3.5-Instruct u FP16 GGUF koristeći llama.cpp
+Коришћењем llama.cpp конвертујте Phi-3.5-Instruct у FP16 GGUF
 
 
 ```bash
@@ -64,7 +64,7 @@ Konvertovanje Phi-3.5-Instruct u FP16 GGUF koristeći llama.cpp
 
 ```
 
-Kvantizacija Phi-3.5 u INT4
+Квантизација Phi-3.5 у INT4
 
 
 ```bash
@@ -74,9 +74,9 @@ Kvantizacija Phi-3.5 u INT4
 ```
 
 
-**3. Testiranje**
+**3. Тестирање**
 
-Instalirajte llama-cpp-python
+Инсталирајте llama-cpp-python
 
 
 ```bash
@@ -85,9 +85,9 @@ pip install llama-cpp-python -U
 
 ```
 
-***Napomena*** 
+***Напомена*** 
 
-Ako koristite Apple Silicon, instalirajte llama-cpp-python na sledeći način
+Ако користите Apple Silicon, молимо инсталирајте llama-cpp-python на овај начин
 
 
 ```bash
@@ -96,7 +96,7 @@ CMAKE_ARGS="-DLLAMA_METAL=on" pip install llama-cpp-python -U
 
 ```
 
-Testiranje 
+Тестирање 
 
 
 ```bash
@@ -107,11 +107,11 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 
 
-## **Resursi**
+## **Ресурси**
 
-1. Više o llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)  
-2. Više o onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)  
-3. Više o GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
+1. Сазнајте више о llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)  
+2. Сазнајте више о onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)  
+3. Сазнајте више о GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетом. За критичне информације препоручује се професионални превод од стране људског преводиоца. Нисмо одговорни за било каква неспоразума или погрешне тумачења настала коришћењем овог превода.
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

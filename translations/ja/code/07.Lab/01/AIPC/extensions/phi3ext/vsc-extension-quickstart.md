@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
-  "translation_date": "2025-05-08T06:43:50+00:00",
+  "translation_date": "2025-07-16T16:41:20+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
   "language_code": "ja"
 }
 -->
-# Welcome to your VS Code Extension
+# VS Code 拡張機能へようこそ
 
 ## フォルダーの中身
 
 * このフォルダーには拡張機能に必要なすべてのファイルが含まれています。
-* `package.json` - これはマニフェストファイルで、拡張機能とコマンドを宣言します。
-  * サンプルプラグインはコマンドを登録し、そのタイトルとコマンド名を定義します。この情報により、VS Codeはコマンドパレットにコマンドを表示できます。プラグイン自体はまだ読み込む必要はありません。
-* `src/extension.ts` - これはコマンドの実装を提供するメインファイルです。
-  * このファイルは `activate` という関数をエクスポートしており、拡張機能が初めて有効化されたとき（この場合はコマンド実行時）に呼び出されます。`activate` 関数内で `registerCommand` を呼び出します。
+* `package.json` - 拡張機能とコマンドを宣言するマニフェストファイルです。
+  * サンプルプラグインはコマンドを登録し、そのタイトルとコマンド名を定義しています。この情報により、VS Code はコマンドパレットにコマンドを表示できます。プラグインを読み込む必要はまだありません。
+* `src/extension.ts` - コマンドの実装を提供するメインファイルです。
+  * このファイルは `activate` という関数をエクスポートしており、拡張機能が初めて有効化されたとき（この場合はコマンド実行時）に呼び出されます。`activate` 関数内で `registerCommand` を呼び出しています。
   * コマンドの実装を含む関数を `registerCommand` の第2引数として渡します。
 
 ## セットアップ
@@ -24,15 +24,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## すぐに始める
 
-* `F5` を押して、拡張機能が読み込まれた新しいウィンドウを開きます。
-* コマンドパレットを開き（Macでは `Ctrl+Shift+P` または `Cmd+Shift+P`）、`Hello World` と入力してコマンドを実行します。
-* `src/extension.ts` 内のコードにブレークポイントを設定して拡張機能をデバッグします。
+* `F5` キーを押して、拡張機能が読み込まれた新しいウィンドウを開きます。
+* コマンドパレット（`Ctrl+Shift+P` または Mac では `Cmd+Shift+P`）を開き、「Hello World」と入力してコマンドを実行します。
+* `src/extension.ts` 内にブレークポイントを設定して拡張機能のデバッグができます。
 * デバッグコンソールで拡張機能の出力を確認できます。
 
 ## 変更を加える
 
-* `src/extension.ts` のコードを変更した後、デバッグツールバーから拡張機能を再起動できます。
-* また、拡張機能の変更を反映させるために VS Code ウィンドウをリロード（Macでは `Ctrl+R` または `Cmd+R`）することも可能です。
+* `src/extension.ts` のコードを変更したら、デバッグツールバーから拡張機能を再起動できます。
+* また、拡張機能を読み込んだまま VS Code ウィンドウをリロード（`Ctrl+R` または Mac では `Cmd+R`）して変更を反映させることも可能です。
 
 ## API を探る
 
@@ -41,18 +41,18 @@ CO_OP_TRANSLATOR_METADATA:
 ## テストを実行する
 
 * [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner) をインストールしてください。
-* **Tasks: Run Task** コマンドで「watch」タスクを実行します。これが動作していないとテストが検出されない可能性があります。
-* アクティビティバーの Testing ビューを開き、「Run Test」ボタンをクリックするか、ホットキー `Ctrl/Cmd + ; A` を使ってテストを実行します。
+* **Tasks: Run Task** コマンドから「watch」タスクを実行します。これが動作していないとテストが検出されない場合があります。
+* アクティビティバーの Testing ビューを開き、「Run Test」ボタンをクリックするか、ホットキー `Ctrl/Cmd + ; A` を使います。
 * テスト結果は Test Results ビューで確認できます。
-* `src/test/extension.test.ts` を変更したり、`test` フォルダー内に新しいテストファイルを作成できます。
-  * 提供されているテストランナーは `**.test.ts` という名前パターンに一致するファイルのみを対象とします。
+* `src/test/extension.test.ts` を編集するか、`test` フォルダー内に新しいテストファイルを作成してください。
+  * 提供されているテストランナーは、名前が `**.test.ts` にマッチするファイルのみを対象とします。
   * `test` フォルダー内にサブフォルダーを作成して、テストを自由に整理できます。
 
 ## さらに進む
 
-* 拡張機能のサイズを削減し、起動時間を短縮するために[拡張機能のバンドル](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo)を検討してください。
+* 拡張機能のサイズを削減し、起動時間を短縮するには、[拡張機能のバンドル](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo)を検討してください。
 * VS Code 拡張機能マーケットプレイスに[拡張機能を公開](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo)しましょう。
-* [継続的インテグレーション](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo)を設定してビルドを自動化しましょう。
+* [継続的インテグレーション](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo)を設定してビルドを自動化することも可能です。
 
 **免責事項**：  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されています。正確性を期していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご承知ください。原文の母国語による文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

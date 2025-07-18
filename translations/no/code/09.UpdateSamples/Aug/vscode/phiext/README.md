@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-09T05:28:34+00:00",
+  "translation_date": "2025-07-16T17:30:43+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "no"
 }
@@ -13,9 +13,9 @@ Dette er README for utvidelsen din "phiext". Etter en kort beskrivelse anbefaler
 
 ## Funksjoner
 
-Beskriv spesifikke funksjoner i utvidelsen din, inkludert skjermbilder av utvidelsen i bruk. Bildestier er relative til denne README-filen.
+Beskriv spesifikke funksjoner i utvidelsen din, inkludert skjermbilder av utvidelsen i bruk. Bildebaner er relative til denne README-filen.
 
-For eksempel, hvis det finnes en bildemappe under prosjektmappen til utvidelsen:
+For eksempel, hvis det finnes en undermappe for bilder i prosjektmappen til utvidelsen:
 
 \!\[feature X\]\(images/feature-x.png\)
 
@@ -27,7 +27,7 @@ Hvis du har noen krav eller avhengigheter, legg til en seksjon som beskriver dis
 
 ## Utvidelsesinnstillinger
 
-Inkluder dette hvis utvidelsen din legger til noen VS Code-innstillinger via `contributes.configuration`-utvidelsespunktet.
+Inkluder dette hvis utvidelsen din legger til noen VS Code-innstillinger gjennom `contributes.configuration`-utvidelsespunktet.
 
 For eksempel:
 
@@ -38,7 +38,7 @@ Denne utvidelsen bidrar med følgende innstillinger:
 
 ## Kjente problemer
 
-Å gjøre brukerne oppmerksomme på kjente problemer kan bidra til å begrense at de oppretter duplikatsaker for utvidelsen din.
+Å påpeke kjente problemer kan hjelpe med å begrense at brukere oppretter duplikatsaker mot utvidelsen din.
 
 ## Utgivelsesnotater
 
@@ -58,18 +58,18 @@ La til funksjonene X, Y og Z.
 
 ---
 
-## Følge retningslinjene for utvidelser
+## Følge retningslinjer for utvidelser
 
 Sørg for at du har lest gjennom retningslinjene for utvidelser og følger beste praksis for å lage utvidelsen din.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Jobbe med Markdown
+## Arbeide med Markdown
 
-Du kan skrive README-en din i Visual Studio Code. Her er noen nyttige hurtigtaster i editoren:
+Du kan skrive README-en din ved å bruke Visual Studio Code. Her er noen nyttige hurtigtaster for editoren:
 
 * Del editoren (`Cmd+\` på macOS eller `Ctrl+\` på Windows og Linux).
-* Slå på/av forhåndsvisning (`Shift+Cmd+V` på macOS eller `Shift+Ctrl+V` på Windows og Linux).
+* Bytt forhåndsvisning (`Shift+Cmd+V` på macOS eller `Shift+Ctrl+V` på Windows og Linux).
 * Trykk `Ctrl+Space` (Windows, Linux, macOS) for å se en liste over Markdown-snippets.
 
 ## For mer informasjon
@@ -80,4 +80,4 @@ Du kan skrive README-en din i Visual Studio Code. Her er noen nyttige hurtigtast
 **Lykke til!**
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

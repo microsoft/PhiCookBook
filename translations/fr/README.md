@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "2e042b12a63c59931dc121c2c638bc58",
-  "translation_date": "2025-07-09T17:57:59+00:00",
+  "original_hash": "5c07bb4c3c89a36c9be332a065a9a33c",
+  "translation_date": "2025-07-16T14:48:49+00:00",
   "source_file": "README.md",
   "language_code": "fr"
 }
@@ -34,11 +34,11 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
 2. **Clonez le dépôt** : `git clone https://github.com/microsoft/PhiCookBook.git`  
 3. [**Rejoignez la communauté Microsoft AI Discord et rencontrez des experts et développeurs**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![cover](../../imgs/cover.png)
+![couverture](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.fr.png)
 
-## 🌐 Support multilingue
+### 🌐 Support multilingue
 
-### Pris en charge via GitHub Action (Automatisé & Toujours à jour)
+#### Pris en charge via GitHub Action (Automatisé & Toujours à jour)
 
 [Français](./README.md) | [Espagnol](../es/README.md) | [Allemand](../de/README.md) | [Russe](../ru/README.md) | [Arabe](../ar/README.md) | [Persan (Farsi)](../fa/README.md) | [Ourdou](../ur/README.md) | [Chinois (Simplifié)](../zh/README.md) | [Chinois (Traditionnel, Macao)](../mo/README.md) | [Chinois (Traditionnel, Hong Kong)](../hk/README.md) | [Chinois (Traditionnel, Taïwan)](../tw/README.md) | [Japonais](../ja/README.md) | [Coréen](../ko/README.md) | [Hindi](../hi/README.md)  
 [Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Népalais](../ne/README.md) | [Pendjabi (Gurmukhi)](../pa/README.md) | [Portugais (Portugal)](../pt/README.md) | [Portugais (Brésil)](../br/README.md) | [Italien](../it/README.md) | [Polonais](../pl/README.md) | [Turc](../tr/README.md) | [Grec](../el/README.md) | [Thaï](../th/README.md) | [Suédois](../sv/README.md) | [Danois](../da/README.md) | [Norvégien](../no/README.md) | [Finnois](../fi/README.md) | [Néerlandais](../nl/README.md) | [Hébreu](../he/README.md) | [Vietnamien](../vi/README.md) | [Indonésien](../id/README.md) | [Malais](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hongrois](../hu/README.md) | [Tchèque](../cs/README.md) | [Slovaque](../sk/README.md) | [Roumain](../ro/README.md) | [Bulgare](../bg/README.md) | [Serbe (Cyrillique)](../sr/README.md) | [Croate](../hr/README.md) | [Slovène](../sl/README.md)
@@ -47,9 +47,9 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
 
 - Introduction  
   - [Bienvenue dans la famille Phi](./md/01.Introduction/01/01.PhiFamily.md)  
-  - [Configurer votre environnement](./md/01.Introduction/01/01.EnvironmentSetup.md)  
+  - [Configuration de votre environnement](./md/01.Introduction/01/01.EnvironmentSetup.md)  
   - [Comprendre les technologies clés](./md/01.Introduction/01/01.Understandingtech.md)  
-  - [Sécurité IA pour les modèles Phi](./md/01.Introduction/01/01.AISafety.md)  
+  - [Sécurité de l’IA pour les modèles Phi](./md/01.Introduction/01/01.AISafety.md)  
   - [Support matériel Phi](./md/01.Introduction/01/01.Hardwaresupport.md)  
   - [Modèles Phi & disponibilité sur différentes plateformes](./md/01.Introduction/01/01.Edgeandcloud.md)  
   - [Utiliser Guidance-ai et Phi](./md/01.Introduction/01/01.Guidance.md)  
@@ -70,7 +70,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
     - [Inférence Phi sur Android](./md/01.Introduction/03/Android_Inference.md)  
     - [Inférence Phi sur Jetson](./md/01.Introduction/03/Jetson_Inference.md)  
     - [Inférence Phi sur AI PC](./md/01.Introduction/03/AIPC_Inference.md)  
-    - [Inférence Phi avec le framework Apple MLX](./md/01.Introduction/03/MLX_Inference.md)  
+    - [Inférence Phi avec Apple MLX Framework](./md/01.Introduction/03/MLX_Inference.md)  
     - [Inférence Phi sur serveur local](./md/01.Introduction/03/Local_Server_Inference.md)  
     - [Inférence Phi sur serveur distant avec AI Toolkit](./md/01.Introduction/03/Remote_Interence.md)  
     - [Inférence Phi avec Rust](./md/01.Introduction/03/Rust_Inference.md)  
@@ -80,7 +80,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
     - [Quantification Phi-3.5 / 4 avec llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)  
     - [Quantification Phi-3.5 / 4 avec les extensions Generative AI pour onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)  
     - [Quantification Phi-3.5 / 4 avec Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)  
-    - [Quantification Phi-3.5 / 4 avec le framework Apple MLX](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
+    - [Quantification Phi-3.5 / 4 avec Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
 - Évaluation Phi  
     - [IA responsable](./md/01.Introduction/05/ResponsibleAI.md)  
@@ -97,7 +97,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
       - [Chat avec modèle local Phi-4 ONNX en .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)  
       - [Application console Chat .NET avec Phi-4 ONNX utilisant Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)  
     - Exemples Phi-3 / 3.5  
-      - [Chatbot local dans le navigateur avec Phi3, ONNX Runtime Web et WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
+      - [Chatbot local dans le navigateur utilisant Phi3, ONNX Runtime Web et WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)  
       - [Chat OpenVino](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)  
       - [Multi-modèle - Phi-3-mini interactif et OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)  
       - [MLFlow - Création d’un wrapper et utilisation de Phi-3 avec MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)  
@@ -114,16 +114,16 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
 - [Exemple Q&R .NET utilisant un modèle local ONNX Phi-3 avec Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
 - [Application console chat .NET avec Semantic Kernel et Phi-3](../../md/04.HOL/dotnet/src/LabsPhi302)
 
-- Échantillons de code Azure AI Inference SDK  
+- Échantillons basés sur le SDK Azure AI Inference  
   - Échantillons Phi-4 🆕  
-    - [📓] [Générer le code d’un projet avec Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)  
+    - [📓] [Générer le code projet avec Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)  
   - Échantillons Phi-3 / 3.5  
     - [Construisez votre propre chat GitHub Copilot pour Visual Studio Code avec la famille Microsoft Phi-3](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)  
     - [Créez votre propre agent Chat Copilot pour Visual Studio Code avec Phi-3.5 via les modèles GitHub](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)  
 
 - Échantillons de raisonnement avancé  
   - Échantillons Phi-4 🆕  
-    - [📓] [Exemples Phi-4-mini-reasoning ou Phi-4-reasoning](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)  
+    - [📓] [Échantillons Phi-4-mini-reasoning ou Phi-4-reasoning](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)  
     - [📓] [Affinage de Phi-4-mini-reasoning avec Microsoft Olive](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)  
     - [📓] [Affinage de Phi-4-mini-reasoning avec Apple MLX](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)  
     - [📓] [Phi-4-mini-reasoning avec les modèles GitHub](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)  
@@ -139,7 +139,7 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
     - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)  
     - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
     - [DÉMO : Phi-3 Recycling](https://github.com/jennifermarsman/PhiRecycling/)  
-    - [Phi-3-vision - Assistant visuel linguistique - avec Phi3-Vision et OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)  
+    - [Phi-3-vision - Assistant visuel en langage naturel - avec Phi3-Vision et OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)  
     - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)  
     - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)  
     - [📓][Exemple Phi-3.5 Vision multi-frames ou multi-images](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)  
@@ -188,8 +188,8 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
   - [Affiner Phi-3-vision avec Weights and Bias](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)  
   - [Affiner Phi-3 avec le framework Apple MLX](./md/03.FineTuning/FineTuning_MLX.md)  
   - [Affiner Phi-3-vision (support officiel)](./md/03.FineTuning/FineTuning_Vision.md)  
-  - [Affiner Phi-3 avec Kaito AKS, Azure Containers (support officiel)](./md/03.FineTuning/FineTuning_Kaito.md)  
-  - [Affiner Phi-3 et 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)  
+  - [Affinage Phi-3 avec Kaito AKS, conteneurs Azure (support officiel)](./md/03.FineTuning/FineTuning_Kaito.md)  
+  - [Affinage Phi-3 et 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)  
 
 - Atelier pratique  
   - [Explorer les modèles de pointe : LLMs, SLMs, développement local et plus](https://github.com/microsoft/aitour-exploring-cutting-edge-models)  
@@ -209,14 +209,14 @@ Suivez ces étapes pour commencer à utiliser ces ressources :
 
 ### Phi sur Azure AI Foundry
 
-Vous pouvez apprendre à utiliser Microsoft Phi et à créer des solutions de bout en bout sur vos différents appareils matériels. Pour découvrir Phi par vous-même, commencez par tester les modèles et personnaliser Phi pour vos scénarios en utilisant le [Catalogue de modèles Azure AI Foundry](https://aka.ms/phi3-azure-ai). Vous pouvez en savoir plus dans la section Premiers pas avec [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
+Vous pouvez apprendre à utiliser Microsoft Phi et à créer des solutions de bout en bout sur vos différents appareils matériels. Pour découvrir Phi par vous-même, commencez par expérimenter les modèles et personnaliser Phi pour vos scénarios en utilisant le [Catalogue de modèles Azure AI Foundry](https://aka.ms/phi3-azure-ai). Vous pouvez en savoir plus dans la section Premiers pas avec [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
 
 **Playground**  
 Chaque modèle dispose d’un playground dédié pour tester le modèle [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi sur GitHub Models
 
-Vous pouvez apprendre à utiliser Microsoft Phi et à créer des solutions de bout en bout sur vos différents appareils matériels. Pour découvrir Phi par vous-même, commencez par tester le modèle et personnaliser Phi pour vos scénarios en utilisant le [Catalogue de modèles GitHub](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Vous pouvez en savoir plus dans la section Premiers pas avec [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
+Vous pouvez apprendre à utiliser Microsoft Phi et à créer des solutions de bout en bout sur vos différents appareils matériels. Pour découvrir Phi par vous-même, commencez par expérimenter le modèle et personnaliser Phi pour vos scénarios en utilisant le [Catalogue de modèles GitHub](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Vous pouvez en savoir plus dans la section Premiers pas avec [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 **Playground**  
 Chaque modèle dispose d’un [playground dédié pour tester le modèle](/md/02.QuickStart/GitHubModel_QuickStart.md).
@@ -230,16 +230,16 @@ Vous pouvez également retrouver le modèle sur [Hugging Face](https://huggingfa
 
 ## IA responsable
 
-Microsoft s’engage à aider ses clients à utiliser nos produits d’IA de manière responsable, à partager nos enseignements et à construire des partenariats basés sur la confiance grâce à des outils comme Transparency Notes et Impact Assessments. Beaucoup de ces ressources sont disponibles sur [https://aka.ms/RAI](https://aka.ms/RAI).  
+Microsoft s’engage à aider ses clients à utiliser nos produits d’IA de manière responsable, à partager nos enseignements et à construire des partenariats basés sur la confiance grâce à des outils comme les Transparency Notes et les Impact Assessments. Beaucoup de ces ressources sont disponibles sur [https://aka.ms/RAI](https://aka.ms/RAI).  
 L’approche de Microsoft en matière d’IA responsable repose sur nos principes d’IA : équité, fiabilité et sécurité, confidentialité et sécurité, inclusion, transparence et responsabilité.
 
-Les modèles à grande échelle de traitement du langage naturel, d’image et de parole – comme ceux utilisés dans cet exemple – peuvent potentiellement adopter des comportements injustes, peu fiables ou offensants, causant ainsi des préjudices. Veuillez consulter la [note de transparence du service Azure OpenAI](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) pour vous informer des risques et des limites.
+Les modèles à grande échelle de traitement du langage naturel, d’image et de parole – comme ceux utilisés dans cet exemple – peuvent potentiellement adopter des comportements injustes, peu fiables ou offensants, causant ainsi des préjudices. Veuillez consulter la [Transparency note du service Azure OpenAI](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) pour vous informer des risques et des limites.
 
-La méthode recommandée pour atténuer ces risques est d’intégrer un système de sécurité dans votre architecture capable de détecter et prévenir les comportements nuisibles. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) offre une couche de protection indépendante, capable de détecter les contenus nuisibles générés par les utilisateurs ou par l’IA dans les applications et services. Azure AI Content Safety comprend des API texte et image qui permettent de détecter les contenus problématiques. Dans Azure AI Foundry, le service Content Safety vous permet de visualiser, explorer et tester des exemples de code pour détecter les contenus nuisibles dans différentes modalités. La documentation [quickstart suivante](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) vous guide pour effectuer des requêtes vers ce service.
+La méthode recommandée pour atténuer ces risques est d’intégrer un système de sécurité dans votre architecture capable de détecter et prévenir les comportements nuisibles. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) offre une couche de protection indépendante, capable de détecter les contenus nuisibles générés par les utilisateurs ou par l’IA dans les applications et services. Azure AI Content Safety comprend des API texte et image qui permettent de détecter les contenus nuisibles. Dans Azure AI Foundry, le service Content Safety vous permet de visualiser, explorer et tester des exemples de code pour détecter les contenus nuisibles dans différentes modalités. La documentation [quickstart suivante](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) vous guide pour effectuer des requêtes vers ce service.
 
 Un autre aspect à prendre en compte est la performance globale de l’application. Avec des applications multi-modales et multi-modèles, la performance signifie que le système fonctionne comme vous et vos utilisateurs l’attendez, notamment en ne générant pas de résultats nuisibles. Il est important d’évaluer la performance de votre application globale en utilisant les [évaluateurs de Performance, Qualité, Risque et Sécurité](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Vous avez également la possibilité de créer et d’évaluer avec des [évaluateurs personnalisés](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Vous pouvez évaluer votre application d’IA dans votre environnement de développement en utilisant le [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Que vous disposiez d’un jeu de données de test ou d’un objectif, les générations de votre application d’IA générative sont mesurées quantitativement avec des évaluateurs intégrés ou personnalisés de votre choix. Pour commencer avec le Azure AI Evaluation SDK et évaluer votre système, vous pouvez suivre le [guide de démarrage rapide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Une fois une évaluation lancée, vous pouvez [visualiser les résultats dans Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Vous pouvez évaluer votre application IA dans votre environnement de développement en utilisant le [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Que vous disposiez d’un jeu de données de test ou d’un objectif, les générations de votre application d’IA générative sont mesurées quantitativement avec des évaluateurs intégrés ou personnalisés de votre choix. Pour commencer avec le Azure AI Evaluation SDK et évaluer votre système, vous pouvez suivre le [guide de démarrage rapide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Une fois une évaluation lancée, vous pouvez [visualiser les résultats dans Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Marques déposées
 

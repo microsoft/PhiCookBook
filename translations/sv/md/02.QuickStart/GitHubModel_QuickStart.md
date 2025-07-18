@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:18:31+00:00",
+  "translation_date": "2025-07-17T05:37:31+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "sv"
 }
 -->
 ## GitHub Models - Begränsad offentlig beta
 
-Välkommen till [GitHub Models](https://github.com/marketplace/models)! Vi har allt klart för dig att utforska AI-modeller som hostas på Azure AI.
+Välkommen till [GitHub Models](https://github.com/marketplace/models)! Vi har allt igång och redo för dig att utforska AI-modeller som är hostade på Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.sv.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.sv.png)
 
-För mer information om modellerna som finns tillgängliga på GitHub Models, se [GitHub Model Marketplace](https://github.com/marketplace/models)
+För mer information om de modeller som finns tillgängliga på GitHub Models, kolla in [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Tillgängliga modeller
 
-Varje modell har en egen playground och exempel på kod
+Varje modell har en dedikerad playground och exempel på kod
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,7 +37,7 @@ Varje modell har en egen playground och exempel på kod
 
 ## Kom igång
 
-Det finns några grundläggande exempel som är redo att köras. Du hittar dem i samples-katalogen. Om du vill gå direkt till ditt favoritprogrammeringsspråk hittar du exemplen i följande språk:
+Det finns några grundläggande exempel som är redo att köras. Du hittar dem i samples-katalogen. Om du vill hoppa direkt till ditt favoritprogrammeringsspråk finns exemplen i följande språk:
 
 - Python
 - JavaScript
@@ -45,18 +45,18 @@ Det finns några grundläggande exempel som är redo att köras. Du hittar dem i
 
 Det finns också en dedikerad Codespaces-miljö för att köra exemplen och modellerna.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.sv.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.sv.png)
 
-## Exempel på kod
+## Exempelkod
 
-Nedan finns exempel på kodsnuttar för några användningsfall. För mer information om Azure AI Inference SDK, se fullständig dokumentation och exempel.
+Nedan finns kodexempel för några användningsfall. För mer information om Azure AI Inference SDK, se fullständig dokumentation och exempel.
 
-## Installation
+## Setup
 
-1. Skapa en personlig åtkomsttoken  
-Du behöver inte ge några särskilda behörigheter till token. Observera att token kommer att skickas till en Microsoft-tjänst.
+1. Skapa en personlig access-token  
+Du behöver inte ge några behörigheter till token. Observera att token kommer att skickas till en Microsoft-tjänst.
 
-För att använda kodsnuttarna nedan, skapa en miljövariabel och sätt din token som nyckel för klientkoden.
+För att använda kodexemplen nedan, skapa en miljövariabel för att sätta din token som nyckel för klientkoden.
 
 Om du använder bash:  
 ```
@@ -77,14 +77,14 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 ## Python-exempel
 
 ### Installera beroenden  
-Installera Azure AI Inference SDK med pip (Kräver: Python >=3.8):  
+Installera Azure AI Inference SDK med pip (Kräver: Python >=3.8):
 
 ```
 pip install azure-ai-inference
 ```  
 ### Kör ett grundläggande kodexempel
 
-Det här exemplet visar ett enkelt anrop till chat completion API. Det använder GitHub AI-modellens inferensendpoint och din GitHub-token. Anropet är synkront.
+Detta exempel visar ett grundläggande anrop till chat completion API. Det använder GitHub AI-modellens inferensendpoint och din GitHub-token. Anropet är synkront.
 
 ```
 import os
@@ -118,7 +118,7 @@ print(response.choices[0].message.content)
 
 ### Kör en konversation med flera turer
 
-Det här exemplet visar en konversation med flera turer med chat completion API. När du använder modellen för en chattapplikation behöver du hantera konversationshistoriken och skicka de senaste meddelandena till modellen.
+Detta exempel visar en konversation med flera turer med chat completion API. När du använder modellen för en chattapplikation behöver du hantera konversationshistoriken och skicka de senaste meddelandena till modellen.
 
 ```
 import os
@@ -150,7 +150,7 @@ print(response.choices[0].message.content)
 
 ### Strömma utdata
 
-För en bättre användarupplevelse vill du strömma modellens svar så att den första token visas tidigt och du slipper vänta länge på svaret.
+För en bättre användarupplevelse vill du strömma modellens svar så att den första token visas tidigt och du slipper vänta på långa svar.
 
 ```
 import os
@@ -182,7 +182,8 @@ for update in response:
         print(update.choices[0].delta.content or "", end="")
 
 client.close()
-```  
+```
+
 ## JavaScript
 
 ### Installera beroenden
@@ -202,15 +203,15 @@ Kopiera följande rader och spara dem som en fil package.json i din mapp.
 }
 ```
 
-Observera: @azure/core-sse behövs endast när du strömmar chat completion-svar.
+Obs: @azure/core-sse behövs endast när du strömmar chat completion-svar.
 
 Öppna en terminal i denna mapp och kör npm install.
 
-För varje kodsnutt nedan, kopiera innehållet till en fil sample.js och kör med node sample.js.
+För varje kodexempel nedan, kopiera innehållet till en fil sample.js och kör med node sample.js.
 
 ### Kör ett grundläggande kodexempel
 
-Det här exemplet visar ett enkelt anrop till chat completion API. Det använder GitHub AI-modellens inferensendpoint och din GitHub-token. Anropet är synkront.
+Detta exempel visar ett grundläggande anrop till chat completion API. Det använder GitHub AI-modellens inferensendpoint och din GitHub-token. Anropet är synkront.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -251,7 +252,7 @@ main().catch((err) => {
 
 ### Kör en konversation med flera turer
 
-Det här exemplet visar en konversation med flera turer med chat completion API. När du använder modellen för en chattapplikation behöver du hantera konversationshistoriken och skicka de senaste meddelandena till modellen.
+Detta exempel visar en konversation med flera turer med chat completion API. När du använder modellen för en chattapplikation behöver du hantera konversationshistoriken och skicka de senaste meddelandena till modellen.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -293,7 +294,7 @@ main().catch((err) => {
 ```
 
 ### Strömma utdata  
-För en bättre användarupplevelse vill du strömma modellens svar så att den första token visas tidigt och du slipper vänta länge på svaret.
+För en bättre användarupplevelse vill du strömma modellens svar så att den första token visas tidigt och du slipper vänta på långa svar.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -403,7 +404,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 ```  
 ### Strömma utdata
 
-Det här är ett exempel på att anropa endpointen och strömma svaret.
+Detta är ett exempel på att anropa endpointen och strömma svaret.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -427,19 +428,19 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GRATIS användning och begränsningar för GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.sv.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.sv.png)
 
-[Begränsningarna för playground och gratis API-användning](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) är till för att hjälpa dig experimentera med modeller och prototypa din AI-applikation. För användning utöver dessa gränser, och för att skala din applikation, måste du tillhandahålla resurser från ett Azure-konto och autentisera därifrån istället för med din personliga GitHub-token. Du behöver inte ändra något annat i din kod. Använd denna länk för att ta reda på hur du går bortom gratisnivåns begränsningar i Azure AI.
+[Begränsningarna för playground och gratis API-användning](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) är till för att hjälpa dig experimentera med modeller och prototypa din AI-applikation. För användning utöver dessa gränser, och för att skala upp din applikation, måste du tilldela resurser från ett Azure-konto och autentisera därifrån istället för med din personliga GitHub-token. Du behöver inte ändra något annat i din kod. Använd denna länk för att ta reda på hur du går förbi gratisnivåns begränsningar i Azure AI.
 
-### Upplysningar
+### Varningar
 
-Kom ihåg att när du interagerar med en modell experimenterar du med AI, så innehåll kan innehålla fel.
+Kom ihåg att när du interagerar med en modell experimenterar du med AI, så innehållsfel kan förekomma.
 
 Funktionen är föremål för olika begränsningar (inklusive förfrågningar per minut, förfrågningar per dag, tokens per förfrågan och samtidiga förfrågningar) och är inte avsedd för produktionsanvändning.
 
-GitHub Models använder Azure AI Content Safety. Dessa filter kan inte stängas av som en del av GitHub Models-upplevelsen. Om du väljer att använda modeller via en betaltjänst, konfigurera dina innehållsfilter så att de uppfyller dina krav.
+GitHub Models använder Azure AI Content Safety. Dessa filter kan inte stängas av som en del av GitHub Models-upplevelsen. Om du väljer att använda modeller via en betaltjänst, konfigurera dina innehållsfilter för att uppfylla dina krav.
 
 Denna tjänst omfattas av GitHubs villkor för förhandsversion.
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-09T10:54:04+00:00",
+  "translation_date": "2025-07-16T20:19:58+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "mr"
 }
 -->
 # **iOS मध्ये Inference Phi-3**
 
-Phi-3-mini ही Microsoft कडून नवीन मॉडेल्सची सिरीज आहे जी Edge डिव्हाइसेस आणि IoT डिव्हाइसेसवर Large Language Models (LLMs) डिप्लॉय करण्यास सक्षम करते. Phi-3-mini iOS, Android आणि Edge Device डिप्लॉयमेंटसाठी उपलब्ध आहे, ज्यामुळे BYOD वातावरणात generative AI डिप्लॉय करता येतो. खालील उदाहरण iOS वर Phi-3-mini कसे डिप्लॉय करायचे ते दर्शवते.
+Phi-3-mini ही Microsoft कडून नवीन मॉडेल्सची मालिका आहे जी एज डिव्हाइसेस आणि IoT डिव्हाइसेसवर Large Language Models (LLMs) तैनात करण्यास सक्षम करते. Phi-3-mini iOS, Android आणि एज डिव्हाइस डिप्लॉयमेंटसाठी उपलब्ध आहे, ज्यामुळे BYOD वातावरणात जनरेटिव्ह AI तैनात करता येतो. खालील उदाहरण iOS वर Phi-3-mini कसे तैनात करायचे हे दाखवते.
 
 ## **1. तयारी**
 
 - **a.** macOS 14+
 - **b.** Xcode 15+
 - **c.** iOS SDK 17.x (iPhone 14 A16 किंवा त्याहून अधिक)
-- **d.** Python 3.10+ इन्स्टॉल करा (Conda शिफारसीय आहे)
+- **d.** Python 3.10+ इन्स्टॉल करा (Conda वापरणे शिफारसीय)
 - **e.** Python लायब्ररी इन्स्टॉल करा: `python-flatbuffers`
 - **f.** CMake इन्स्टॉल करा
 
 ### Semantic Kernel आणि Inference
 
-Semantic Kernel हा एक application framework आहे जो Azure OpenAI Service, OpenAI मॉडेल्स आणि अगदी लोकल मॉडेल्ससाठी सुसंगत application तयार करण्याची परवानगी देतो. Semantic Kernel द्वारे लोकल सर्व्हिसेस वापरल्यास तुमच्या self-hosted Phi-3-mini मॉडेल सर्व्हरशी सहज इंटिग्रेशन करता येते.
+Semantic Kernel हा एक अ‍ॅप्लिकेशन फ्रेमवर्क आहे जो Azure OpenAI Service, OpenAI मॉडेल्स आणि स्थानिक मॉडेल्सशी सुसंगत अ‍ॅप्लिकेशन्स तयार करण्यास मदत करतो. Semantic Kernel द्वारे स्थानिक सेवा वापरल्यास तुमच्या स्व-होस्ट केलेल्या Phi-3-mini मॉडेल सर्व्हरशी सहज समाकलन करता येते.
 
-### Ollama किंवा LlamaEdge वापरून Quantized मॉडेल कॉल करणे
+### Ollama किंवा LlamaEdge सह Quantized मॉडेल कॉल करणे
 
-अनेक वापरकर्ते quantized मॉडेल्स वापरून लोकल पातळीवर मॉडेल्स चालवणे पसंत करतात. [Ollama](https://ollama.com) आणि [LlamaEdge](https://llamaedge.com) वापरकर्त्यांना वेगवेगळ्या quantized मॉडेल्स कॉल करण्याची परवानगी देतात:
+अनेक वापरकर्ते स्थानिकपणे मॉडेल चालवण्यासाठी quantized मॉडेल्स वापरणे पसंत करतात. [Ollama](https://ollama.com) आणि [LlamaEdge](https://llamaedge.com) वापरकर्त्यांना वेगवेगळ्या quantized मॉडेल्स कॉल करण्याची परवानगी देतात:
 
 #### **Ollama**
 
-तुम्ही `ollama run phi3` थेट चालवू शकता किंवा ऑफलाइन कॉन्फिगर करू शकता. तुमच्या `gguf` फाइलचा पथ असलेला Modelfile तयार करा. Phi-3-mini quantized मॉडेल चालवण्यासाठी नमुना कोड:
+`ollama run phi3` थेट चालवू शकता किंवा ऑफलाइन कॉन्फिगर करू शकता. तुमच्या `gguf` फाइलचा पथ असलेली Modelfile तयार करा. Phi-3-mini quantized मॉडेल चालवण्यासाठी नमुना कोड:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -41,9 +41,9 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-जर तुम्हाला `gguf` क्लाउड आणि Edge डिव्हाइसेस दोन्हीवर एकत्र वापरायचे असेल, तर LlamaEdge एक उत्तम पर्याय आहे.
+जर तुम्हाला `gguf` क्लाउड आणि एज डिव्हाइसेसवर एकाच वेळी वापरायचे असेल, तर LlamaEdge एक उत्तम पर्याय आहे.
 
-## **2. iOS साठी ONNX Runtime कंपाइल करणे**
+## **2. iOS साठी ONNX Runtime संकलन**
 
 ```bash
 
@@ -59,17 +59,17 @@ cd ../
 
 ### **सूचना**
 
-- **a.** कंपाइल करण्यापूर्वी, खात्री करा की Xcode योग्यरित्या कॉन्फिगर केलेले आहे आणि टर्मिनलमध्ये ते active developer directory म्हणून सेट केले आहे:
+- **a.** संकलनापूर्वी, Xcode योग्यरित्या कॉन्फिगर केलेले आहे याची खात्री करा आणि टर्मिनलमध्ये ते सक्रिय डेव्हलपर डायरेक्टरी म्हणून सेट करा:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime वेगवेगळ्या प्लॅटफॉर्मसाठी कंपाइल करणे आवश्यक आहे. iOS साठी, तुम्ही `arm64` or `x86_64` साठी कंपाइल करू शकता.
+- **b.** ONNX Runtime वेगवेगळ्या प्लॅटफॉर्मसाठी संकलित करणे आवश्यक आहे. iOS साठी, तुम्ही `arm64` किंवा `x86_64` साठी संकलित करू शकता.
 
-- **c.** कंपाइलसाठी नवीनतम iOS SDK वापरणे शिफारसीय आहे. मात्र, मागील SDKs शी सुसंगतता हवी असल्यास जुन्या आवृत्तीचा देखील वापर करू शकता.
+- **c.** संकलनासाठी नवीनतम iOS SDK वापरणे शिफारसीय आहे. मात्र, मागील SDKs शी सुसंगततेसाठी जुनी आवृत्ती देखील वापरू शकता.
 
-## **3. iOS साठी ONNX Runtime सह Generative AI कंपाइल करणे**
+## **3. iOS साठी ONNX Runtime सह Generative AI संकलन**
 
 > **Note:** ONNX Runtime सह Generative AI अजून प्रिव्ह्यूमध्ये असल्यामुळे, संभाव्य बदलांची जाणीव ठेवा.
 
@@ -99,21 +99,21 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **4. Xcode मध्ये App application तयार करणे**
+## **4. Xcode मध्ये App अ‍ॅप्लिकेशन तयार करा**
 
-मी App डेव्हलपमेंटसाठी Objective-C निवडले कारण ONNX Runtime C++ API सह Generative AI वापरताना Objective-C अधिक सुसंगत आहे. अर्थात, Swift bridging वापरून संबंधित कॉल्स पूर्ण करणे देखील शक्य आहे.
+मी App विकासासाठी Objective-C निवडले कारण ONNX Runtime C++ API सह Generative AI वापरताना Objective-C अधिक सुसंगत आहे. अर्थात, Swift ब्रिजिंगद्वारे संबंधित कॉल्स पूर्ण करणे देखील शक्य आहे.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.mr.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.mr.png)
 
-## **5. ONNX quantized INT4 मॉडेल App application प्रोजेक्टमध्ये कॉपी करा**
+## **5. ONNX quantized INT4 मॉडेल App प्रोजेक्टमध्ये कॉपी करा**
 
-आपल्याला ONNX फॉरमॅटमधील INT4 quantization मॉडेल आयात करणे आवश्यक आहे, जे आधी डाउनलोड करावे लागेल
+आपल्याला ONNX फॉरमॅटमधील INT4 quantization मॉडेल आयात करायचे आहे, जे आधी डाउनलोड करणे आवश्यक आहे.
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.mr.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.mr.png)
 
 डाउनलोड केल्यानंतर, ते Xcode मधील प्रोजेक्टच्या Resources डायरेक्टरीमध्ये जोडावे लागेल.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.mr.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.mr.png)
 
 ## **6. ViewControllers मध्ये C++ API जोडणे**
 
@@ -121,15 +121,15 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** संबंधित C++ हेडर फाइल्स प्रोजेक्टमध्ये जोडा.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.mr.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.mr.png)
 
-- **b.** Objective-C++ सपोर्टसाठी `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Xcode मध्ये `onnxruntime-genai` डायनॅमिक लायब्ररी समाविष्ट करा.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.mr.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.mr.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **c.** चाचणीसाठी C Samples कोड वापरा. अधिक कार्यक्षमतेसाठी ChatUI सारखे अतिरिक्त फीचर्स देखील जोडू शकता.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` समाविष्ट करा.
+- **d.** प्रोजेक्टमध्ये C++ वापरण्याची गरज असल्यामुळे, `ViewController.m` चे नाव `ViewController.mm` असे बदला जेणेकरून Objective-C++ सपोर्ट सक्षम होईल.
 
 ```objc
 
@@ -158,13 +158,13 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **7. Application चालवा**
+## **7. अ‍ॅप्लिकेशन चालवा**
 
-सेटअप पूर्ण झाल्यानंतर, तुम्ही application चालवून Phi-3-mini मॉडेल inference चे परिणाम पाहू शकता.
+सेटअप पूर्ण झाल्यानंतर, अ‍ॅप्लिकेशन चालवून Phi-3-mini मॉडेल इन्फरन्सचे परिणाम पाहू शकता.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.mr.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.mr.jpg)
 
 अधिक नमुना कोड आणि सविस्तर सूचना पाहण्यासाठी, [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) भेट द्या.
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI भाषांतर सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) चा वापर करून भाषांतरित केला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, परंतु कृपया लक्षात ठेवा की स्वयंचलित भाषांतरांमध्ये चुका किंवा अचूकतेच्या त्रुटी असू शकतात. मूळ दस्तऐवज त्याच्या मूळ भाषेत अधिकृत स्रोत मानला पाहिजे. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी भाषांतर शिफारस केले जाते. या भाषांतराचा वापर केल्यामुळे होणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थ लावण्याबद्दल आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवलेल्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

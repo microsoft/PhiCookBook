@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:51:42+00:00",
+  "translation_date": "2025-07-17T04:47:03+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "cs"
 }
 -->
-## **Использование Phi-4-mini-mm для генерации кода**
+## **Použití Phi-4-mini-mm pro generování kódu**
 
-Phi-4-mini продолжает сильные возможности кодирования семейства Phi. Вы можете использовать Prompt для задавания вопросов, связанных с программированием. Конечно, после добавления мощных возможностей рассуждения, он обладает ещё более сильными возможностями кодирования, например, генерацией проектов по требованиям. Например, создавать проекты по требованиям, таким как:
+Phi-4-mini navazuje na silné programovací schopnosti rodiny Phi. Můžete použít Prompt k pokládání otázek týkajících se programování. Samozřejmě, díky přidané silné schopnosti uvažování má ještě lepší programovací dovednosti, například generování projektů podle požadavků. Například generování projektů podle požadavků, jako jsou:
 
-### **Требование**
+### **Požadavek**
 
-Создать приложение Корзина покупок
+Vytvořit aplikaci nákupního košíku
 
-- Создать REST API со следующими методами:
-    - Получить список пива с использованием смещения страницы и лимита.
-    - Получить детали пива по id.
-    - Искать пиво по названию, описанию, слогану, сочетаниям с едой и цене.
-- Создать список продуктов на главной странице.
-    - Создать строку поиска для фильтрации продуктов.
-    - Перейти на страницу описания при клике пользователя на продукт.
-- (Опционально) Слайсер для фильтрации продуктов по цене.
-- Создать корзину покупок.
-    - Добавлять продукты в корзину.
-    - Удалять продукты из корзины.
-    - Рассчитывать общую стоимость продуктов в корзине.
+- Vytvořit REST API s následujícími metodami:
+    - Získat seznam piv pomocí stránkování s offsetem a limitem.
+    - Získat detaily piva podle id.
+    - Vyhledávat pivo podle názvu, popisu, sloganu, kombinací s jídlem a ceny.
+- Vytvořit seznam produktů na hlavní stránce.
+    - Vytvořit vyhledávací lištu pro filtrování produktů.
+    - Při kliknutí na produkt přejít na stránku s popisem.
+- (Volitelné) Posuvník pro filtrování produktů podle ceny.
+- Vytvořit nákupní košík.
+    - Přidávat produkty do košíku.
+    - Odstraňovat produkty z košíku.
+    - Vypočítat celkovou cenu produktů v košíku.
 
-### **Пример кода - Python**
+### **Ukázkový kód - Python**
 
 
 ```python
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

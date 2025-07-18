@@ -2,108 +2,107 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7fe541373802e33568e94e13226d463c",
-  "translation_date": "2025-05-09T22:24:51+00:00",
+  "translation_date": "2025-07-17T09:49:16+00:00",
   "source_file": "md/03.FineTuning/Introduce_AzureML.md",
   "language_code": "sl"
 }
 -->
-# **Predstavitev Azure Machine Learning Service**
+# **Predstavitev storitve Azure Machine Learning**
 
 [Azure Machine Learning](https://ml.azure.com?WT.mc_id=aiml-138114-kinfeylo) je oblačna storitev za pospeševanje in upravljanje življenjskega cikla projektov strojnega učenja (ML).
 
-ML strokovnjaki, podatkovni znanstveniki in inženirji jo lahko uporabljajo v svojem vsakodnevnem delu za:
+Strokovnjaki za ML, podatkovni znanstveniki in inženirji jo lahko uporabljajo v svojih vsakodnevnih delovnih procesih za:
 
-- Učenje in uvajanje modelov.
-- Upravljanje operacij strojnega učenja (MLOps).
-- V Azure Machine Learning lahko ustvarite model ali uporabite model, izdelan na odprtokodni platformi, kot so PyTorch, TensorFlow ali scikit-learn.
+- Učenje in uvajanje modelov.  
+- Upravljanje operacij strojnega učenja (MLOps).  
+- Ustvarite lahko model v Azure Machine Learning ali uporabite model, zgrajen na odprtokodni platformi, kot so PyTorch, TensorFlow ali scikit-learn.  
 - Orodja MLOps vam pomagajo spremljati, ponovno usposobiti in ponovno uvajati modele.
 
-## Komu je namenjen Azure Machine Learning?
+## Za koga je Azure Machine Learning?
 
 **Podatkovni znanstveniki in ML inženirji**
 
-Uporabljajo orodja za pospešitev in avtomatizacijo svojih vsakodnevnih opravil.  
+Lahko uporabljajo orodja za pospešitev in avtomatizacijo svojih vsakodnevnih delovnih procesov.  
 Azure ML ponuja funkcije za pravičnost, razložljivost, sledenje in revizijsko sledljivost.
 
 **Razvijalci aplikacij:**  
-Lahko brez težav vključujejo modele v aplikacije ali storitve.
+Lahko brez težav integrirajo modele v aplikacije ali storitve.
 
-**Platformni razvijalci**
+**Razvijalci platform**
 
 Imajo dostop do robustnega nabora orodij, podprtih z zanesljivimi Azure Resource Manager API-ji.  
-Ta orodja omogočajo izdelavo naprednih ML orodij.
+Ta orodja omogočajo gradnjo naprednih ML orodij.
 
 **Podjetja**
 
-Delajo v Microsoft Azure oblaku in imajo koristi od poznanih varnostnih mehanizmov ter nadzora dostopa na podlagi vlog.  
-Nastavijo lahko projekte za nadzor dostopa do zaščitenih podatkov in specifičnih operacij.
+Z delom v Microsoft Azure oblaku podjetja izkoristijo znano varnost in nadzor dostopa na podlagi vlog.  
+Nastavijo lahko projekte za nadzor dostopa do zaščitenih podatkov in določenih operacij.
 
-## Produktivnost za vse člane ekipe
-
-ML projekti pogosto zahtevajo ekipo z raznolikimi znanji za razvoj in vzdrževanje.
+## Produktivnost za celotno ekipo  
+Projekti ML pogosto zahtevajo ekipo z raznolikimi znanji za gradnjo in vzdrževanje.
 
 Azure ML ponuja orodja, ki omogočajo:  
-- Sodelovanje z ekipo prek skupnih zvezkov, računske moči, strežniško neodvisne računske moči, podatkov in okolij.  
-- Razvoj modelov s poudarkom na pravičnosti, razložljivosti, sledenju in revizijski skladnosti.  
-- Hitro in enostavno uvajanje ML modelov v velikem obsegu ter učinkovito upravljanje in nadzor z MLOps.  
-- Izvajanje strojno učenih delovnih obremenitev kjerkoli z vgrajenim upravljanjem, varnostjo in skladnostjo.
+- Sodelovanje z ekipo prek skupnih zvezkov, računalniških virov, strežniško brezplačnih računalniških zmogljivosti, podatkov in okolij.  
+- Razvijanje modelov s poudarkom na pravičnosti, razložljivosti, sledenju in revizijski sledljivosti za izpolnjevanje zahtev glede izvora in skladnosti.  
+- Hitro in enostavno uvajanje ML modelov v obsegu ter učinkovito upravljanje in nadzor z MLOps.  
+- Izvajanje del strojnega učenja kjerkoli z vgrajenim upravljanjem, varnostjo in skladnostjo.
 
-## Orodja združljiva na različnih platformah
+## Orodja, združljiva med platformami
 
-Kdor koli v ML ekipi lahko uporablja svoja priljubljena orodja za opravljanje nalog.  
-Ne glede na to, ali izvajate hitre eksperimente, nastavite hiperparametre, gradite pipeline ali upravljate inferenco, lahko uporabljate znane vmesnike, kot so:  
+Vsak član ML ekipe lahko uporablja svoja priljubljena orodja za opravljanje dela.  
+Ne glede na to, ali izvajate hitre eksperimente, prilagajate hiperparametre, gradite cevovode ali upravljate sklepe, lahko uporabljate znane vmesnike, kot so:  
 - Azure Machine Learning Studio  
 - Python SDK (v2)  
 - Azure CLI (v2)  
 - Azure Resource Manager REST API-ji
 
-Med izboljševanjem modelov in sodelovanjem skozi razvojni cikel lahko delite in najdete vire, sredstva in metrike v uporabniškem vmesniku Azure Machine Learning studia.
+Med izboljševanjem modelov in sodelovanjem skozi razvojni cikel lahko v uporabniškem vmesniku Azure Machine Learning studia delite in najdete vire, sredstva in metrike.
 
 ## **LLM/SLM v Azure ML**
 
-Azure ML je dodal številne funkcije povezane z LLM/SLM, ki združujejo LLMOps in SLMOps za ustvarjanje generativne umetne inteligence na ravni celotnega podjetja.
+Azure ML je dodal številne funkcije, povezane z LLM/SLM, ki združujejo LLMOps in SLMOps za ustvarjanje generativne umetne inteligence na ravni celotnega podjetja.
 
 ### **Katalog modelov**
 
-Podjetniški uporabniki lahko prek Model Catalog uvajajo različne modele glede na poslovne primere in nudijo storitve kot Model as Service, ki so dostopne razvijalcem ali uporabnikom.
+Uporabniki v podjetjih lahko prek Kataloga modelov uvajajo različne modele glede na različne poslovne scenarije in nudijo storitve kot Model kot storitev za dostop razvijalcev ali uporabnikov v podjetju.
 
-![models](../../../../translated_images/models.2450411eac222e539ffb55785a8f550d01be1030bd8eb67c9c4f9ae4ca5d64be.sl.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.sl.png)
 
-Katalog modelov v Azure Machine Learning studiu je središče za odkrivanje in uporabo širokega nabora modelov, ki omogočajo gradnjo generativnih AI aplikacij. Katalog vključuje stotine modelov različnih ponudnikov, kot so Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, vključno z modeli, ki jih je usposobil Microsoft. Modeli ponudnikov, ki niso Microsoft, so označeni kot Non-Microsoft Products in so predmet pogojev, določenih v Microsoftovih pogojih za izdelke ter pogojev, priloženih modelu.
+Katalog modelov v Azure Machine Learning studiu je središče za odkrivanje in uporabo širokega nabora modelov, ki omogočajo gradnjo generativnih AI aplikacij. Katalog modelov vsebuje stotine modelov različnih ponudnikov, kot so Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, vključno z modeli, ki jih je usposobil Microsoft. Modeli ponudnikov, ki niso Microsoftovi, so Ne-Microsoftovi izdelki, kot je določeno v Microsoftovih pogojih za izdelke, in so predmet pogojev, priloženih modelu.
 
-### **Pipeline za opravila**
+### **Cevovod opravil**
 
-Jedro ML pipeline je razdelitev celotne naloge strojnega učenja na večstopenjski delovni tok. Vsak korak je obvladljiva enota, ki jo je mogoče razvijati, optimizirati, konfigurirati in avtomatizirati ločeno. Koraki so povezani z jasno opredeljenimi vmesniki. Pipeline storitev Azure Machine Learning samodejno usklajuje vse odvisnosti med koraki pipeline.
+Jedro cevovoda strojnega učenja je razdelitev celotne naloge strojnega učenja na večstopenjski delovni tok. Vsak korak je obvladljiva komponenta, ki jo je mogoče razvijati, optimizirati, konfigurirati in avtomatizirati posamično. Koraki so povezani z jasno določenimi vmesniki. Storitev cevovoda Azure Machine Learning samodejno usklajuje vse odvisnosti med koraki cevovoda.
 
-Pri finem nastavljanju SLM / LLM lahko upravljamo podatke, učenje in generiranje prek Pipeline.
+Pri fino nastavitvi SLM / LLM lahko upravljamo naše podatke, učenje in procese generiranja prek cevovoda.
 
-![finetuning](../../../../translated_images/finetuning.b52e4aa971dfd8d3c668db913a2b419380533bd3a920d227ec19c078b7b3f309.sl.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.sl.png)
 
 ### **Prompt flow**
 
 Prednosti uporabe Azure Machine Learning prompt flow  
-Azure Machine Learning prompt flow ponuja številne koristi, ki uporabnikom pomagajo preiti od ideje do eksperimentiranja in končno do produkcijsko pripravljenih LLM aplikacij:
+Azure Machine Learning prompt flow ponuja vrsto prednosti, ki uporabnikom pomagajo preiti od ideje do eksperimentiranja in na koncu do proizvodno pripravljenih aplikacij na osnovi LLM:
 
 **Agilnost pri oblikovanju pozivov**
 
-Interaktivno ustvarjanje: Azure Machine Learning prompt flow prikazuje vizualno strukturo toka, kar uporabnikom olajša razumevanje in navigacijo po projektih. Prav tako nudi izkušnjo kodiranja podobno zvezku za učinkovito razvoj in odpravljanje napak toka.  
-Različice za nastavitev pozivov: uporabniki lahko ustvarijo in primerjajo več različic pozivov, kar omogoča iterativno izboljševanje.
+Interaktivna izkušnja ustvarjanja: Azure Machine Learning prompt flow prikazuje vizualno strukturo toka, kar uporabnikom omogoča enostavno razumevanje in navigacijo po projektih. Prav tako ponuja izkušnjo kodiranja, podobno zvezku, za učinkovito razvoj in odpravljanje napak toka.  
+Variantnost za prilagajanje pozivov: Uporabniki lahko ustvarijo in primerjajo več različic pozivov, kar omogoča iterativno izboljševanje.
 
-Vrednotenje: Vgrajeni evalvacijski tokovi omogočajo ocenjevanje kakovosti in učinkovitosti pozivov in tokov.
+Vrednotenje: Vgrajeni tokovi za vrednotenje omogočajo uporabnikom oceno kakovosti in učinkovitosti njihovih pozivov in tokov.
 
-Celoviti viri: Azure Machine Learning prompt flow vključuje knjižnico vgrajenih orodij, vzorcev in predlog, ki služijo kot izhodišče za razvoj, spodbujajo ustvarjalnost in pospešujejo proces.
+Obsežni viri: Azure Machine Learning prompt flow vključuje knjižnico vgrajenih orodij, vzorcev in predlog, ki služijo kot izhodišče za razvoj, spodbujajo ustvarjalnost in pospešujejo proces.
 
-**Podjetniška pripravljenost za LLM aplikacije**
+**Pripravljenost za podjetja pri aplikacijah na osnovi LLM**
 
-Sodelovanje: Azure Machine Learning prompt flow podpira timsko sodelovanje, omogoča več uporabnikom skupno delo na projektih oblikovanja pozivov, izmenjavo znanja in upravljanje verzij.
+Sodelovanje: Azure Machine Learning prompt flow podpira timsko sodelovanje, kar omogoča več uporabnikom, da skupaj delajo na projektih oblikovanja pozivov, delijo znanje in vzdržujejo nadzor različic.
 
-Vse-v-enem platforma: Azure Machine Learning prompt flow poenostavi celoten proces oblikovanja pozivov, od razvoja in vrednotenja do uvajanja in spremljanja. Uporabniki lahko enostavno uvajajo svoje tokove kot Azure Machine Learning končne točke in spremljajo njihovo delovanje v realnem času, kar zagotavlja optimalno delovanje in stalno izboljševanje.
+Vse-v-enem platforma: Azure Machine Learning prompt flow poenostavlja celoten proces oblikovanja pozivov, od razvoja in vrednotenja do uvajanja in spremljanja. Uporabniki lahko brez težav uvajajo svoje tokove kot Azure Machine Learning končne točke in spremljajo njihovo delovanje v realnem času, kar zagotavlja optimalno delovanje in stalne izboljšave.
 
-Rešitve za podjetniško pripravljenost Azure Machine Learning: Prompt flow izkorišča robustne rešitve Azure Machine Learning za podjetja, ki zagotavljajo varno, razširljivo in zanesljivo osnovo za razvoj, eksperimentiranje in uvajanje tokov.
+Rešitve Azure Machine Learning za pripravljenost podjetij: Prompt flow izkorišča robustne rešitve Azure Machine Learning za pripravljenost podjetij, ki zagotavljajo varno, razširljivo in zanesljivo osnovo za razvoj, eksperimentiranje in uvajanje tokov.
 
-Z Azure Machine Learning prompt flow lahko uporabniki izkoristijo agilnost pri oblikovanju pozivov, učinkovito sodelujejo in uporabljajo rešitve na podjetniški ravni za uspešen razvoj in uvajanje aplikacij na osnovi LLM.
+Z Azure Machine Learning prompt flow lahko uporabniki izkoristijo agilnost pri oblikovanju pozivov, učinkovito sodelujejo in uporabljajo rešitve na ravni podjetij za uspešen razvoj in uvajanje aplikacij na osnovi LLM.
 
-S kombinacijo računske moči, podatkov in različnih komponent Azure ML lahko podjetniški razvijalci enostavno ustvarijo lastne umetne inteligence aplikacije.
+S kombinacijo računalniške moči, podatkov in različnih komponent Azure ML lahko razvijalci v podjetjih enostavno zgradijo svoje lastne aplikacije umetne inteligence.
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v izvorni jezik je treba upoštevati kot avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne prevzemamo odgovornosti.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

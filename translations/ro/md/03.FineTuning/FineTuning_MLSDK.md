@@ -2,52 +2,52 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:34:50+00:00",
+  "translation_date": "2025-07-17T07:44:46+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "ro"
 }
 -->
-## Cum să folosești componentele chat-completion din registrul sistemului Azure ML pentru a ajusta un model
+## Cum să folosești componentele chat-completion din registrul de sistem Azure ML pentru a ajusta un model
 
-În acest exemplu vom realiza ajustarea fină a modelului Phi-3-mini-4k-instruct pentru a completa o conversație între 2 persoane folosind setul de date ultrachat_200k.
+În acest exemplu vom realiza ajustarea modelului Phi-3-mini-4k-instruct pentru a completa o conversație între 2 persoane folosind setul de date ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.ro.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.ro.png)
 
-Exemplul va arăta cum să faci ajustarea fină folosind Azure ML SDK și Python, apoi cum să implementezi modelul ajustat fin la un endpoint online pentru inferență în timp real.
+Exemplul îți va arăta cum să faci ajustarea folosind Azure ML SDK și Python, apoi cum să implementezi modelul ajustat la un endpoint online pentru inferență în timp real.
 
 ### Date de antrenament
 
-Vom folosi setul de date ultrachat_200k. Acesta este o versiune puternic filtrată a setului UltraChat și a fost folosit pentru antrenarea modelului Zephyr-7B-β, un model chat de ultimă generație de 7 miliarde de parametri.
+Vom folosi setul de date ultrachat_200k. Acesta este o versiune puternic filtrată a setului UltraChat și a fost folosit pentru antrenarea modelului Zephyr-7B-β, un model de chat de ultimă generație cu 7 miliarde de parametri.
 
 ### Model
 
-Vom folosi modelul Phi-3-mini-4k-instruct pentru a arăta cum poate utilizatorul să ajusteze fin un model pentru sarcina de chat-completion. Dacă ai deschis acest notebook dintr-un card de model specific, amintește-ți să înlocuiești numele modelului specific.
+Vom folosi modelul Phi-3-mini-4k-instruct pentru a arăta cum utilizatorul poate ajusta un model pentru sarcina de chat-completion. Dacă ai deschis acest notebook dintr-un card de model specific, nu uita să înlocuiești numele modelului respectiv.
 
 ### Sarcini
 
-- Alege un model pentru ajustare fină.
+- Alege un model pentru ajustare.
 - Alege și explorează datele de antrenament.
-- Configurează jobul de ajustare fină.
-- Rulează jobul de ajustare fină.
+- Configurează jobul de ajustare.
+- Rulează jobul de ajustare.
 - Revizuiește metricile de antrenament și evaluare.
-- Înregistrează modelul ajustat fin.
+- Înregistrează modelul ajustat.
 - Implementează modelul ajustat pentru inferență în timp real.
 - Curăță resursele.
 
 ## 1. Configurarea pre-rechizitelor
 
 - Instalează dependențele
-- Conectează-te la AzureML Workspace. Află mai multe despre autentificarea SDK. Înlocuiește <WORKSPACE_NAME>, <RESOURCE_GROUP> și <SUBSCRIPTION_ID> de mai jos.
-- Conectează-te la registrul sistemului azureml
+- Conectează-te la AzureML Workspace. Află mai multe la set up SDK authentication. Înlocuiește <WORKSPACE_NAME>, <RESOURCE_GROUP> și <SUBSCRIPTION_ID> de mai jos.
+- Conectează-te la registrul de sistem azureml
 - Setează un nume opțional pentru experiment
 - Verifică sau creează un compute.
 
 > [!NOTE]
-> Cerințele: un singur nod GPU poate avea mai multe plăci GPU. De exemplu, într-un nod Standard_NC24rs_v3 sunt 4 plăci NVIDIA V100, în timp ce în Standard_NC12s_v3 sunt 2 plăci NVIDIA V100. Consultă documentația pentru aceste informații. Numărul de plăci GPU per nod este setat în parametrul gpus_per_node de mai jos. Setarea corectă a acestei valori va asigura utilizarea tuturor plăcilor GPU din nod. SKU-urile recomandate pentru compute GPU pot fi găsite aici și aici.
+> Cerințele: un nod GPU poate avea mai multe plăci GPU. De exemplu, un nod Standard_NC24rs_v3 are 4 plăci NVIDIA V100, iar Standard_NC12s_v3 are 2 plăci NVIDIA V100. Consultă documentația pentru aceste informații. Numărul de plăci GPU per nod este setat în parametrul gpus_per_node de mai jos. Setarea corectă a acestei valori va asigura utilizarea tuturor plăcilor GPU din nod. SKU-urile recomandate pentru compute GPU pot fi găsite aici și aici.
 
 ### Biblioteci Python
 
-Instalează dependențele rulând celula de mai jos. Acesta nu este un pas opțional dacă rulezi într-un mediu nou.
+Instalează dependențele rulând celula de mai jos. Acest pas nu este opțional dacă rulezi într-un mediu nou.
 
 ```bash
 pip install azure-ai-ml
@@ -61,17 +61,17 @@ pip install azureml-mlflow
 
 1. Acest script Python este folosit pentru a interacționa cu serviciul Azure Machine Learning (Azure ML). Iată o descriere a ceea ce face:
 
-    - Importă module necesare din pachetele azure.ai.ml, azure.identity și azure.ai.ml.entities. De asemenea, importă modulul time.
+    - Importă modulele necesare din pachetele azure.ai.ml, azure.identity și azure.ai.ml.entities. De asemenea, importă modulul time.
 
     - Încearcă să se autentifice folosind DefaultAzureCredential(), care oferă o experiență simplificată de autentificare pentru a începe rapid dezvoltarea aplicațiilor care rulează în cloud-ul Azure. Dacă acest lucru eșuează, folosește InteractiveBrowserCredential(), care oferă un prompt interactiv de autentificare.
 
-    - Apoi încearcă să creeze o instanță MLClient folosind metoda from_config, care citește configurația din fișierul implicit config.json. Dacă acest lucru eșuează, creează o instanță MLClient oferind manual subscription_id, resource_group_name și workspace_name.
+    - Apoi încearcă să creeze o instanță MLClient folosind metoda from_config, care citește configurația din fișierul implicit config.json. Dacă acest lucru eșuează, creează o instanță MLClient furnizând manual subscription_id, resource_group_name și workspace_name.
 
-    - Creează o altă instanță MLClient, de data aceasta pentru registrul Azure ML numit "azureml". Acest registru este locul unde sunt stocate modelele, pipeline-urile de fine tuning și mediile.
+    - Creează o altă instanță MLClient, de data aceasta pentru registrul Azure ML numit "azureml". Acest registru este locul unde sunt stocate modelele, pipeline-urile de fine-tuning și mediile.
 
     - Setează experiment_name la "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Generează un timestamp unic convertind timpul curent (în secunde de la epoch, ca număr zecimal) într-un întreg și apoi într-un șir. Acest timestamp poate fi folosit pentru a crea nume și versiuni unice.
+    - Generează un timestamp unic convertind timpul curent (în secunde de la epocă, ca număr în virgulă mobilă) într-un întreg și apoi într-un șir de caractere. Acest timestamp poate fi folosit pentru a crea nume și versiuni unice.
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -112,12 +112,12 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. Alege un model de bază pentru ajustare fină
+## 2. Alege un model de bază pentru ajustare
 
-1. Phi-3-mini-4k-instruct este un model ușor, de ultimă generație, cu 3,8 miliarde de parametri, construit pe baza seturilor de date folosite pentru Phi-2. Modelul face parte din familia Phi-3, iar versiunea Mini vine în două variante 4K și 128K, care reprezintă lungimea contextului (în tokeni) pe care o poate suporta. Trebuie să ajustăm fin modelul pentru scopul nostru specific înainte de a-l folosi. Poți naviga prin aceste modele în Catalogul de Modele din AzureML Studio, filtrând după sarcina de chat-completion. În acest exemplu, folosim modelul Phi-3-mini-4k-instruct. Dacă ai deschis acest notebook pentru un alt model, înlocuiește numele și versiunea modelului corespunzător.
+1. Phi-3-mini-4k-instruct este un model ușor, de ultimă generație, cu 3.8 miliarde de parametri, construit pe baza seturilor de date folosite pentru Phi-2. Modelul face parte din familia Phi-3, iar versiunea Mini vine în două variante, 4K și 128K, care reprezintă lungimea contextului (în tokeni) pe care o poate susține. Trebuie să ajustăm modelul pentru scopul nostru specific înainte de utilizare. Poți explora aceste modele în Catalogul de Modele din AzureML Studio, filtrând după sarcina chat-completion. În acest exemplu, folosim modelul Phi-3-mini-4k-instruct. Dacă ai deschis acest notebook pentru un alt model, înlocuiește numele și versiunea modelului corespunzător.
 
     > [!NOTE]
-    > proprietatea model id a modelului. Aceasta va fi transmisă ca input jobului de fine tuning. Este disponibilă și ca câmp Asset ID în pagina de detalii a modelului din Catalogul de Modele AzureML Studio.
+    > proprietatea model id a modelului. Aceasta va fi transmisă ca input jobului de ajustare. Este disponibilă și ca Asset ID în pagina de detalii a modelului din Catalogul de Modele AzureML Studio.
 
 2. Acest script Python interacționează cu serviciul Azure Machine Learning (Azure ML). Iată o descriere a ceea ce face:
 
@@ -125,7 +125,7 @@ pip install azureml-mlflow
 
     - Folosește metoda get a proprietății models a obiectului registry_ml_client pentru a prelua cea mai recentă versiune a modelului cu numele specificat din registrul Azure ML. Metoda get este apelată cu două argumente: numele modelului și o etichetă care specifică că trebuie preluată cea mai recentă versiune.
 
-    - Afișează un mesaj în consolă care indică numele, versiunea și id-ul modelului care va fi folosit pentru ajustare fină. Metoda format a șirului este folosită pentru a introduce numele, versiunea și id-ul modelului în mesaj. Numele, versiunea și id-ul modelului sunt accesate ca proprietăți ale obiectului foundation_model.
+    - Afișează un mesaj în consolă care indică numele, versiunea și id-ul modelului ce va fi folosit pentru ajustare. Metoda format a șirului este folosită pentru a introduce numele, versiunea și id-ul modelului în mesaj. Aceste proprietăți sunt accesate din obiectul foundation_model.
 
     ```python
     # Set the model name
@@ -145,27 +145,27 @@ pip install azureml-mlflow
 
 ## 3. Creează un compute care va fi folosit pentru job
 
-Jobul de fine tuning funcționează DOAR cu compute GPU. Dimensiunea compute-ului depinde de mărimea modelului și, în cele mai multe cazuri, este dificil să identifici compute-ul potrivit pentru job. În această celulă, ghidăm utilizatorul să selecteze compute-ul potrivit pentru job.
+Jobul de fine-tuning funcționează DOAR cu compute GPU. Dimensiunea compute-ului depinde de mărimea modelului și, în majoritatea cazurilor, poate fi dificil să identifici compute-ul potrivit pentru job. În această celulă, ghidăm utilizatorul să aleagă compute-ul corect pentru job.
 
 > [!NOTE]
-> Compute-urile listate mai jos funcționează cu configurația cea mai optimizată. Orice modificare a configurației poate duce la eroarea Cuda Out Of Memory. În astfel de cazuri, încearcă să faci upgrade la un compute mai mare.
+> Compute-urile listate mai jos funcționează cu cea mai optimizată configurație. Orice modificare a configurației poate duce la eroarea Cuda Out Of Memory. În astfel de cazuri, încearcă să faci upgrade la un compute mai mare.
 
 > [!NOTE]
-> Atunci când selectezi compute_cluster_size mai jos, asigură-te că compute-ul este disponibil în grupul tău de resurse. Dacă un compute anume nu este disponibil, poți face o cerere pentru a obține acces la resursele compute.
+> Când selectezi compute_cluster_size mai jos, asigură-te că compute-ul este disponibil în grupul tău de resurse. Dacă un anumit compute nu este disponibil, poți face o cerere pentru acces la resursele compute.
 
-### Verificarea suportului modelului pentru ajustare fină
+### Verificarea suportului modelului pentru fine tuning
 
-1. Acest script Python interacționează cu un model Azure Machine Learning (Azure ML). Iată ce face:
+1. Acest script Python interacționează cu un model Azure Machine Learning (Azure ML). Iată o descriere a ceea ce face:
 
     - Importă modulul ast, care oferă funcții pentru procesarea arborilor de sintaxă abstractă Python.
 
-    - Verifică dacă obiectul foundation_model (care reprezintă un model în Azure ML) are un tag numit finetune_compute_allow_list. Tag-urile în Azure ML sunt perechi cheie-valoare pe care le poți crea și folosi pentru filtrarea și sortarea modelelor.
+    - Verifică dacă obiectul foundation_model (care reprezintă un model în Azure ML) are un tag numit finetune_compute_allow_list. Tag-urile în Azure ML sunt perechi cheie-valoare pe care le poți crea și folosi pentru a filtra și sorta modelele.
 
-    - Dacă tag-ul finetune_compute_allow_list este prezent, folosește funcția ast.literal_eval pentru a parsa în siguranță valoarea tag-ului (un șir) într-o listă Python. Această listă este atribuită variabilei computes_allow_list. Apoi afișează un mesaj care indică faptul că compute-ul ar trebui creat din această listă.
+    - Dacă tag-ul finetune_compute_allow_list este prezent, folosește funcția ast.literal_eval pentru a parsa în siguranță valoarea tag-ului (un șir de caractere) într-o listă Python. Această listă este apoi atribuită variabilei computes_allow_list. Afișează un mesaj care indică faptul că un compute ar trebui creat din această listă.
 
-    - Dacă tag-ul nu este prezent, setează computes_allow_list la None și afișează un mesaj care indică faptul că tag-ul finetune_compute_allow_list nu face parte din tag-urile modelului.
+    - Dacă tag-ul finetune_compute_allow_list nu este prezent, setează computes_allow_list la None și afișează un mesaj care indică faptul că tag-ul nu face parte din tag-urile modelului.
 
-    - Pe scurt, acest script verifică un tag specific în metadata modelului, convertește valoarea tag-ului într-o listă dacă există și oferă feedback utilizatorului.
+    - Pe scurt, acest script verifică un tag specific în metadatele modelului, convertește valoarea tag-ului într-o listă dacă există și oferă feedback utilizatorului.
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -186,21 +186,21 @@ Jobul de fine tuning funcționează DOAR cu compute GPU. Dimensiunea compute-ulu
         print("`finetune_compute_allow_list` is not part of model tags")
     ```
 
-### Verificarea instanței compute
+### Verificarea Compute Instance
 
-1. Acest script Python interacționează cu serviciul Azure Machine Learning (Azure ML) și efectuează mai multe verificări asupra unei instanțe compute. Iată ce face:
+1. Acest script Python interacționează cu serviciul Azure Machine Learning (Azure ML) și efectuează mai multe verificări asupra unei instanțe compute. Iată o descriere a ceea ce face:
 
     - Încearcă să recupereze instanța compute cu numele stocat în compute_cluster din workspace-ul Azure ML. Dacă starea de provisioning a instanței este "failed", ridică o eroare ValueError.
 
-    - Verifică dacă computes_allow_list nu este None. Dacă nu este, convertește toate dimensiunile compute-urilor din listă în litere mici și verifică dacă dimensiunea instanței compute curente este în listă. Dacă nu este, ridică o eroare ValueError.
+    - Verifică dacă computes_allow_list nu este None. Dacă nu este, convertește toate dimensiunile compute din listă în litere mici și verifică dacă dimensiunea instanței compute curente este în listă. Dacă nu este, ridică o eroare ValueError.
 
-    - Dacă computes_allow_list este None, verifică dacă dimensiunea instanței compute se află într-o listă de dimensiuni GPU VM neacceptate. Dacă da, ridică o eroare ValueError.
+    - Dacă computes_allow_list este None, verifică dacă dimensiunea instanței compute este într-o listă de dimensiuni GPU VM neacceptate. Dacă este, ridică o eroare ValueError.
 
-    - Recuperează o listă cu toate dimensiunile compute disponibile în workspace. Iterează prin această listă și pentru fiecare dimensiune compute verifică dacă numele acesteia se potrivește cu dimensiunea instanței curente. Dacă da, preia numărul de GPU-uri pentru acea dimensiune și setează gpu_count_found la True.
+    - Recuperează o listă cu toate dimensiunile compute disponibile în workspace. Parcurge această listă și pentru fiecare dimensiune verifică dacă numele corespunde cu dimensiunea instanței compute curente. Dacă da, recuperează numărul de GPU-uri pentru acea dimensiune și setează gpu_count_found la True.
 
     - Dacă gpu_count_found este True, afișează numărul de GPU-uri din instanța compute. Dacă este False, ridică o eroare ValueError.
 
-    - Pe scurt, acest script face mai multe verificări asupra unei instanțe compute dintr-un workspace Azure ML, inclusiv verificarea stării de provisioning, a dimensiunii față de o listă permisă sau interzisă și numărul de GPU-uri.
+    - Pe scurt, acest script face mai multe verificări asupra unei instanțe compute dintr-un workspace Azure ML, inclusiv starea de provisioning, dimensiunea față de o listă permisă sau interzisă și numărul de GPU-uri.
 
     ```python
     # Print the exception message
@@ -269,42 +269,42 @@ Jobul de fine tuning funcționează DOAR cu compute GPU. Dimensiunea compute-ulu
         )
     ```
 
-## 4. Alege setul de date pentru ajustarea fină a modelului
+## 4. Alege setul de date pentru ajustarea modelului
 
-1. Folosim setul de date ultrachat_200k. Setul este împărțit în patru părți, potrivite pentru fine-tuning supravegheat (sft).
-Generare de ranking (gen). Numărul de exemple per split este afișat astfel:
+1. Folosim setul de date ultrachat_200k. Setul are patru diviziuni, potrivite pentru fine-tuning supravegheat (sft).
+Generare ranking (gen). Numărul de exemple per diviziune este afișat astfel:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. Următoarele celule arată pregătirea de bază a datelor pentru ajustarea fină:
+1. Următoarele celule arată pregătirea de bază a datelor pentru fine tuning:
 
 ### Vizualizează câteva rânduri de date
 
-Vrem ca acest exemplu să ruleze rapid, așa că salvăm fișierele train_sft și test_sft care conțin 5% din rândurile deja filtrate. Aceasta înseamnă că modelul ajustat fin va avea o precizie mai mică, deci nu ar trebui folosit în producție.
-Scriptul download-dataset.py este folosit pentru a descărca setul de date ultrachat_200k și pentru a transforma setul într-un format consumabil de componentă pipeline de fine tuning. Deoarece setul este mare, aici avem doar o parte din el.
+Dorim ca acest eșantion să ruleze rapid, așa că salvăm fișierele train_sft, test_sft conținând 5% din rândurile deja filtrate. Aceasta înseamnă că modelul ajustat va avea o acuratețe mai mică, deci nu ar trebui folosit în producție.
+Scriptul download-dataset.py este folosit pentru a descărca setul ultrachat_200k și a transforma datele într-un format consumabil de componenta pipeline-ului de fine tuning. Deoarece setul este mare, aici avem doar o parte din el.
 
-1. Rularea scriptului de mai jos descarcă doar 5% din date. Aceasta poate fi mărită schimbând parametrul dataset_split_pc la procentajul dorit.
+1. Rularea scriptului de mai jos descarcă doar 5% din date. Aceasta poate fi mărită schimbând parametrul dataset_split_pc la procentul dorit.
 
     > [!NOTE]
-    > Unele modele de limbaj au coduri de limbă diferite și, prin urmare, numele coloanelor din setul de date ar trebui să reflecte acest lucru.
+    > Unele modele de limbaj au coduri de limbă diferite, deci numele coloanelor din setul de date ar trebui să reflecte acest lucru.
 
-1. Iată un exemplu de cum ar trebui să arate datele
-Setul de date pentru chat-completion este stocat în format parquet, fiecare intrare folosind următorul schema:
+1. Iată un exemplu despre cum ar trebui să arate datele
+Setul de date chat-completion este stocat în format parquet, fiecare intrare folosind următorul schelet:
 
-    - Este un document JSON (JavaScript Object Notation), un format popular pentru schimbul de date. Nu este cod executabil, ci o modalitate de a stoca și transporta date. Iată structura sa:
+    - Acesta este un document JSON (JavaScript Object Notation), un format popular de schimb de date. Nu este cod executabil, ci o modalitate de a stoca și transporta date. Iată o descriere a structurii:
 
-    - "prompt": Această cheie conține un șir care reprezintă o sarcină sau o întrebare adresată unui asistent AI.
+    - "prompt": Această cheie conține un șir de caractere care reprezintă o sarcină sau o întrebare adresată unui asistent AI.
 
-    - "messages": Această cheie conține un array de obiecte. Fiecare obiect reprezintă un mesaj într-o conversație între un utilizator și un asistent AI. Fiecare obiect mesaj are două chei:
+    - "messages": Această cheie conține un array de obiecte. Fiecare obiect reprezintă un mesaj într-o conversație între un utilizator și un asistent AI. Fiecare mesaj are două chei:
 
-    - "content": Cheia conține un șir care reprezintă conținutul mesajului.
-    - "role": Cheia conține un șir care reprezintă rolul entității care a trimis mesajul. Poate fi "user" sau "assistant".
-    - "prompt_id": Cheia conține un șir care reprezintă un identificator unic pentru prompt.
+    - "content": Această cheie conține un șir de caractere care reprezintă conținutul mesajului.
+    - "role": Această cheie conține un șir de caractere care reprezintă rolul entității care a trimis mesajul. Poate fi "user" sau "assistant".
+    - "prompt_id": Această cheie conține un șir de caractere care reprezintă un identificator unic pentru prompt.
 
-1. În acest document JSON specific, este reprezentată o conversație în care un utilizator îi cere unui asistent AI să creeze un protagonist pentru o poveste distopică. Asistentul răspunde, iar utilizatorul cere mai multe detalii. Asistentul acceptă să ofere mai multe detalii. Întreaga conversație este asociată cu un anumit prompt_id.
+1. În acest document JSON specific, este reprezentată o conversație în care un utilizator îi cere unui asistent AI să creeze un protagonist pentru o poveste distopică. Asistentul răspunde, iar utilizatorul cere mai multe detalii. Asistentul acceptă să ofere mai multe detalii. Întreaga conversație este asociată cu un id specific de prompt.
 
     ```python
     {
@@ -346,15 +346,15 @@ Setul de date pentru chat-completion este stocat în format parquet, fiecare int
 
 ### Descărcarea datelor
 
-1. Acest script Python este folosit pentru a descărca un set de date folosind un script ajutător numit download-dataset.py. Iată ce face:
+1. Acest script Python este folosit pentru a descărca un set de date folosind un script auxiliar numit download-dataset.py. Iată o descriere a ceea ce face:
 
     - Importă modulul os, care oferă o modalitate portabilă de a folosi funcționalități dependente de sistemul de operare.
 
-    - Folosește funcția os.system pentru a rula scriptul download-dataset.py în shell cu argumente specifice din linia de comandă. Argumentele specifică setul de date de descărcat (HuggingFaceH4/ultrachat_200k), directorul în care să descarce (ultrachat_200k_dataset) și procentajul de împărțire a setului (5). Funcția os.system returnează codul de ieșire al comenzii executate; acest cod este stocat în variabila exit_status.
+    - Folosește funcția os.system pentru a rula scriptul download-dataset.py în shell cu argumente specifice din linia de comandă. Argumentele specifică setul de date de descărcat (HuggingFaceH4/ultrachat_200k), directorul în care să fie descărcat (ultrachat_200k_dataset) și procentul de divizare a setului (5). Funcția os.system returnează codul de ieșire al comenzii executate; acest cod este stocat în variabila exit_status.
 
-    - Verifică dacă exit_status nu este 0. În sistemele de operare de tip Unix, codul de ieșire 0 indică de obicei succesul comenzii, iar orice alt număr indică o eroare. Dacă exit_status nu este 0, ridică o excepție cu un mesaj care indică o eroare la descărcarea setului de date.
+    - Verifică dacă exit_status nu este 0. În sistemele Unix-like, un cod de ieșire 0 indică succes, iar orice alt număr indică o eroare. Dacă exit_status nu este 0, ridică o excepție cu un mesaj care indică o eroare la descărcarea setului de date.
 
-    - Pe scurt, acest script rulează o comandă pentru a descărca un set de date folosind un script ajutător și ridică o excepție dacă comanda eșuează.
+    - Pe scurt, acest script rulează o comandă pentru a descărca un set de date folosind un script auxiliar și ridică o excepție dacă comanda eșuează.
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -376,19 +376,18 @@ Setul de date pentru chat-completion este stocat în format parquet, fiecare int
 
 ### Încărcarea datelor într-un DataFrame
 
-1. Acest script Python încarcă un fișier JSON Lines într-un pandas DataFrame și afișează primele 5 rânduri. Iată ce face:
+1. Acest script Python încarcă un fișier JSON Lines într-un DataFrame pandas și afișează primele 5 rânduri. Iată o descriere a ceea ce face:
 
-    - Importă biblioteca pandas, care este o bibliotecă puternică pentru manipularea și analiza datelor.
+    - Importă biblioteca pandas, o bibliotecă puternică pentru manipularea și analiza datelor.
 
     - Setează lățimea maximă a coloanelor pentru opțiunile de afișare pandas la 0. Aceasta înseamnă că textul complet al fiecărei coloane va fi afișat fără trunchiere când DataFrame-ul este tipărit.
 
     - Folosește funcția pd.read_json pentru a încărca fișierul train_sft.jsonl din directorul ultrachat_200k_dataset într-un DataFrame. Argumentul lines=True indică faptul că fișierul este în format JSON Lines, unde fiecare linie este un obiect JSON separat.
+- Folosește metoda head pentru a afișa primele 5 rânduri din DataFrame. Dacă DataFrame-ul are mai puțin de 5 rânduri, va afișa toate rândurile.
 
-    - Folosește metoda head pentru a afișa primele 5 rânduri ale DataFrame-ului. Dacă DataFrame-ul are mai puțin de 5 rânduri, va afișa toate.
+- Pe scurt, acest script încarcă un fișier JSON Lines într-un DataFrame și afișează primele 5 rânduri cu textul complet al coloanelor.
 
-    - Pe scurt, acest script încarcă un fișier JSON Lines într-un DataFrame și afișează primele 5 rânduri cu textul complet al coloanelor.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -407,28 +406,101 @@ Setul de date pentru chat-completion este stocat în format parquet, fiecare int
 
 ## 5. Trimite jobul de fine tuning folosind modelul și datele ca inputuri
 
-Creează jobul care folosește componenta pipeline chat-completion. Află mai multe despre toți parametrii suportati pentru fine tuning.
+Creează jobul care folosește componenta pipeline pentru chat-completion. Află mai multe despre toți parametrii suportați pentru fine tuning.
 
-### Definirea parametrilor pentru fine tuning
+### Definirea parametrilor pentru finetune
 
-1. Parametrii pentru fine tuning pot fi grupați în 2 categorii - parametri de antrenament, parametri de optimizare
+1. Parametrii pentru finetune pot fi grupați în 2 categorii - parametri de antrenament și parametri de optimizare
 
-1. Parametrii de antrenament definesc aspectele legate de antrenament, precum:
+1. Parametrii de antrenament definesc aspectele legate de antrenament, cum ar fi -
 
-    - Optimizerul, scheduler-ul folosit
-    - Metoda metrică pentru optimizarea fine tuning-ului
+    - Optimizer-ul și scheduler-ul folosit
+    - Metoda de optimizare a fine tuning-ului
     - Numărul de pași de antrenament, dimensiunea batch-ului și altele
-    - Parametrii de optimizare ajută la optimizarea memoriei GPU și la utilizarea eficientă a resurselor compute.
+    - Parametrii de optimizare ajută la optimizarea memoriei GPU și la utilizarea eficientă a resurselor de calcul.
 
-1. Mai jos sunt câțiva dintre parametrii care fac parte din această categorie. Parametrii de optimizare diferă pentru fiecare model și sunt împachetați împreună cu modelul pentru a gestiona aceste variații.
+1. Mai jos sunt câțiva dintre parametrii care aparțin acestei categorii. Parametrii de optimizare diferă pentru fiecare model și sunt incluși împreună cu modelul pentru a gestiona aceste variații.
 
     - Activarea deepspeed și LoRA
     - Activarea antrenamentului cu precizie mixtă
     - Activarea antrenamentului multi-nod
 
+
 > [!NOTE]
-> Fine tuning-ul supravegheat poate duce la pierderea alinierii sau uitarea catastrofală. Recomandăm verificarea acestei probleme și rularea unei etape de alini
-pipeline de antrenament bazată pe diverși parametri, apoi afișând acest nume de afișare. ```python
+> Fine tuning-ul supravegheat poate duce la pierderea alinierii sau la uitare catastrofală. Recomandăm verificarea acestei probleme și rularea unei etape de aliniere după fine tuning.
+
+### Parametrii pentru Fine Tuning
+
+1. Acest script Python setează parametrii pentru fine tuning-ul unui model de machine learning. Iată o descriere a ceea ce face:
+
+    - Setează parametrii impliciți pentru antrenament, cum ar fi numărul de epoci, dimensiunile batch-urilor pentru antrenament și evaluare, rata de învățare și tipul scheduler-ului pentru rata de învățare.
+
+    - Setează parametrii impliciți pentru optimizare, cum ar fi dacă se aplică Layer-wise Relevance Propagation (LoRa) și DeepSpeed, și stadiul DeepSpeed.
+
+    - Combină parametrii de antrenament și optimizare într-un singur dicționar numit finetune_parameters.
+
+    - Verifică dacă foundation_model are parametri impliciți specifici modelului. Dacă da, afișează un mesaj de avertizare și actualizează dicționarul finetune_parameters cu acești parametri specifici modelului. Funcția ast.literal_eval este folosită pentru a converti parametrii specifici modelului dintr-un șir de caractere într-un dicționar Python.
+
+    - Afișează setul final de parametri pentru fine tuning care vor fi folosiți în execuție.
+
+    - Pe scurt, acest script configurează și afișează parametrii pentru fine tuning-ul unui model de machine learning, cu posibilitatea de a suprascrie parametrii impliciți cu cei specifici modelului.
+
+```python
+    # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
+    training_parameters = dict(
+        num_train_epochs=3,
+        per_device_train_batch_size=1,
+        per_device_eval_batch_size=1,
+        learning_rate=5e-6,
+        lr_scheduler_type="cosine",
+    )
+    
+    # Set up default optimization parameters such as whether to apply Layer-wise Relevance Propagation (LoRa) and DeepSpeed, and the DeepSpeed stage
+    optimization_parameters = dict(
+        apply_lora="true",
+        apply_deepspeed="true",
+        deepspeed_stage=2,
+    )
+    
+    # Combine the training and optimization parameters into a single dictionary called finetune_parameters
+    finetune_parameters = {**training_parameters, **optimization_parameters}
+    
+    # Check if the foundation_model has any model-specific default parameters
+    # If it does, print a warning message and update the finetune_parameters dictionary with these model-specific defaults
+    # The ast.literal_eval function is used to convert the model-specific defaults from a string to a Python dictionary
+    if "model_specific_defaults" in foundation_model.tags:
+        print("Warning! Model specific defaults exist. The defaults could be overridden.")
+        finetune_parameters.update(
+            ast.literal_eval(  # convert string to python dict
+                foundation_model.tags["model_specific_defaults"]
+            )
+        )
+    
+    # Print the final set of fine-tuning parameters that will be used for the run
+    print(
+        f"The following finetune parameters are going to be set for the run: {finetune_parameters}"
+    )
+    ```
+
+### Pipeline de Antrenament
+
+1. Acest script Python definește o funcție pentru a genera un nume de afișare pentru un pipeline de antrenament machine learning, apoi apelează această funcție pentru a genera și afișa numele. Iată o descriere a ceea ce face:
+
+1. Funcția get_pipeline_display_name este definită. Această funcție generează un nume de afișare bazat pe diverși parametri legați de pipeline-ul de antrenament.
+
+1. În interiorul funcției, calculează dimensiunea totală a batch-ului prin înmulțirea dimensiunii batch-ului per dispozitiv, numărul de pași de acumulare a gradientului, numărul de GPU-uri per nod și numărul de noduri folosite pentru fine tuning.
+
+1. Recuperează alți parametri precum tipul scheduler-ului pentru rata de învățare, dacă se aplică DeepSpeed, stadiul DeepSpeed, dacă se aplică Layer-wise Relevance Propagation (LoRa), limita pentru numărul de checkpoint-uri ale modelului de păstrat și lungimea maximă a secvenței.
+
+1. Construiește un șir care include toți acești parametri, separați prin cratime. Dacă DeepSpeed sau LoRa sunt aplicate, șirul include "ds" urmat de stadiul DeepSpeed, sau "lora", respectiv. Dacă nu, include "nods" sau "nolora", respectiv.
+
+1. Funcția returnează acest șir, care servește drept nume de afișare pentru pipeline-ul de antrenament.
+
+1. După definirea funcției, aceasta este apelată pentru a genera numele de afișare, care este apoi afișat.
+
+1. Pe scurt, acest script generează un nume de afișare pentru un pipeline de antrenament machine learning bazat pe diverși parametri și apoi afișează acest nume.
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -485,22 +557,25 @@ pipeline de antrenament bazată pe diverși parametri, apoi afișând acest nume
 
 ### Configurarea Pipeline-ului
 
-Acest script Python definește și configurează un pipeline de machine learning folosind Azure Machine Learning SDK. Iată o prezentare a ceea ce face:
+Acest script Python definește și configurează un pipeline de machine learning folosind Azure Machine Learning SDK. Iată o descriere a ceea ce face:
 
 1. Importă modulele necesare din Azure AI ML SDK.
-2. Preia un component de pipeline numit "chat_completion_pipeline" din registru.
-3. Definește un job de pipeline folosind `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+1. Preia o componentă pipeline numită "chat_completion_pipeline" din registru.
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+1. Definește un job pipeline folosind decoratorul `@pipeline` și funcția `create_pipeline`. Numele pipeline-ului este setat la `pipeline_display_name`.
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. În funcția `create_pipeline`, inițializează componenta pipeline preluată cu diverși parametri, inclusiv calea modelului, clusterele de calcul pentru diferite etape, diviziunile dataset-ului pentru antrenament și testare, numărul de GPU-uri folosite pentru fine tuning și alți parametri pentru fine tuning.
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. Mapează output-ul jobului de fine tuning la output-ul jobului pipeline. Acest lucru se face pentru ca modelul fine-tuned să poată fi ușor înregistrat, ceea ce este necesar pentru a implementa modelul la un endpoint online sau batch.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False`, ceea ce înseamnă că pipeline-ul se va opri dacă vreun pas eșuează.
-4. Pe scurt, acest script definește și configurează un pipeline de machine learning pentru o sarcină de completare a chat-ului folosind Azure Machine Learning SDK.
+1. Creează o instanță a pipeline-ului apelând funcția `create_pipeline`.
+
+1. Setează opțiunea `force_rerun` a pipeline-ului la `True`, ceea ce înseamnă că rezultatele cache-uite din joburile anterioare nu vor fi folosite.
+
+1. Setează opțiunea `continue_on_step_failure` a pipeline-ului la `False`, ceea ce înseamnă că pipeline-ul se va opri dacă vreun pas eșuează.
+
+1. Pe scurt, acest script definește și configurează un pipeline de machine learning pentru o sarcină de chat completion folosind Azure Machine Learning SDK.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -553,13 +628,15 @@ Acest script Python definește și configurează un pipeline de machine learning
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### Trimiterea Job-ului
+### Trimiterea Jobului
 
-1. Acest script Python trimite un job de pipeline de machine learning către un workspace Azure Machine Learning și apoi așteaptă finalizarea job-ului. Iată o prezentare a ceea ce face:
+1. Acest script Python trimite un job pipeline de machine learning către un workspace Azure Machine Learning și apoi așteaptă finalizarea jobului. Iată o descriere a ceea ce face:
 
-- Apelează metoda create_or_update a obiectului jobs din workspace_ml_client pentru a trimite job-ul de pipeline. Pipeline-ul care urmează să fie executat este specificat prin pipeline_object, iar experimentul sub care rulează job-ul este specificat prin experiment_name.
-- Apoi apelează metoda stream a obiectului jobs din workspace_ml_client pentru a aștepta finalizarea job-ului de pipeline. Job-ul de așteptat este specificat prin atributul name al obiectului pipeline_job.
-- Pe scurt, acest script trimite un job de pipeline de machine learning către un workspace Azure Machine Learning și apoi așteaptă finalizarea acestuia.
+    - Apelează metoda create_or_update a obiectului jobs din workspace_ml_client pentru a trimite jobul pipeline. Pipeline-ul care va fi rulat este specificat prin pipeline_object, iar experimentul sub care se rulează jobul este specificat prin experiment_name.
+
+    - Apoi apelează metoda stream a obiectului jobs din workspace_ml_client pentru a aștepta finalizarea jobului pipeline. Jobul pentru care se așteaptă este specificat prin atributul name al obiectului pipeline_job.
+
+    - Pe scurt, acest script trimite un job pipeline de machine learning către un workspace Azure Machine Learning și apoi așteaptă finalizarea jobului.
 
 ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
@@ -574,21 +651,27 @@ Acest script Python definește și configurează un pipeline de machine learning
     workspace_ml_client.jobs.stream(pipeline_job.name)
     ```
 
-## 6. Înregistrarea modelului ajustat fin în workspace
+## 6. Înregistrează modelul fine tuned în workspace
 
-Vom înregistra modelul rezultat din job-ul de fine tuning. Aceasta va urmări legătura între modelul ajustat fin și job-ul de fine tuning. Job-ul de fine tuning, la rândul său, urmărește legătura cu modelul de bază, datele și codul de antrenament.
+Vom înregistra modelul din output-ul jobului de fine tuning. Acest lucru va urmări linia de proveniență între modelul fine tuned și jobul de fine tuning. Jobul de fine tuning, la rândul său, urmărește linia de proveniență către modelul de bază, date și codul de antrenament.
 
-### Înregistrarea modelului ML
+### Înregistrarea Modelului ML
 
-1. Acest script Python înregistrează un model de machine learning antrenat într-un pipeline Azure Machine Learning. Iată o prezentare a ceea ce face:
+1. Acest script Python înregistrează un model de machine learning antrenat într-un pipeline Azure Machine Learning. Iată o descriere a ceea ce face:
 
-- Importă modulele necesare din Azure AI ML SDK.
-- Verifică dacă output-ul trained_model este disponibil din job-ul pipeline, apelând metoda get a obiectului jobs din workspace_ml_client și accesând atributul outputs.
-- Construiește un path către modelul antrenat formatând un șir cu numele job-ului pipeline și numele output-ului ("trained_model").
-- Definește un nume pentru modelul ajustat fin, adăugând "-ultrachat-200k" la numele original al modelului și înlocuind orice slash cu cratime.
-- Pregătește înregistrarea modelului creând un obiect Model cu diverși parametri, inclusiv calea către model, tipul modelului (model MLflow), numele și versiunea modelului, și o descriere a modelului.
-- Înregistrează modelul apelând metoda create_or_update a obiectului models din workspace_ml_client cu obiectul Model ca argument.
-- Afișează modelul înregistrat.
+    - Importă modulele necesare din Azure AI ML SDK.
+
+    - Verifică dacă output-ul trained_model este disponibil din jobul pipeline apelând metoda get a obiectului jobs din workspace_ml_client și accesând atributul outputs.
+
+    - Construiește o cale către modelul antrenat formatând un șir cu numele jobului pipeline și numele output-ului ("trained_model").
+
+    - Definește un nume pentru modelul fine tuned adăugând "-ultrachat-200k" la numele original al modelului și înlocuind orice slash-uri cu cratime.
+
+    - Pregătește înregistrarea modelului creând un obiect Model cu diverși parametri, inclusiv calea către model, tipul modelului (model MLflow), numele și versiunea modelului și o descriere a modelului.
+
+    - Înregistrează modelul apelând metoda create_or_update a obiectului models din workspace_ml_client cu obiectul Model ca argument.
+
+    - Afișează modelul înregistrat.
 
 1. Pe scurt, acest script înregistrează un model de machine learning antrenat într-un pipeline Azure Machine Learning.
 
@@ -632,18 +715,21 @@ Vom înregistra modelul rezultat din job-ul de fine tuning. Aceasta va urmări l
     print("registered model: \n", registered_model)
     ```
 
-## 7. Implementarea modelului ajustat fin la un endpoint online
+## 7. Deployează modelul fine tuned la un endpoint online
 
 Endpoint-urile online oferă o API REST durabilă care poate fi folosită pentru integrarea cu aplicații ce au nevoie să utilizeze modelul.
 
 ### Gestionarea Endpoint-ului
 
-1. Acest script Python creează un endpoint online gestionat în Azure Machine Learning pentru un model înregistrat. Iată o prezentare a ceea ce face:
+1. Acest script Python creează un endpoint online gestionat în Azure Machine Learning pentru un model înregistrat. Iată o descriere a ceea ce face:
 
-- Importă modulele necesare din Azure AI ML SDK.
-- Definește un nume unic pentru endpoint-ul online adăugând un timestamp la șirul "ultrachat-completion-".
-- Pregătește crearea endpoint-ului online creând un obiect ManagedOnlineEndpoint cu diverși parametri, inclusiv numele endpoint-ului, o descriere și modul de autentificare ("key").
-- Creează endpoint-ul online apelând metoda begin_create_or_update a workspace_ml_client cu obiectul ManagedOnlineEndpoint ca argument. Apoi așteaptă finalizarea operațiunii apelând metoda wait.
+    - Importă modulele necesare din Azure AI ML SDK.
+
+    - Definește un nume unic pentru endpoint-ul online adăugând un timestamp la șirul "ultrachat-completion-".
+
+    - Pregătește crearea endpoint-ului online creând un obiect ManagedOnlineEndpoint cu diverși parametri, inclusiv numele endpoint-ului, o descriere a endpoint-ului și modul de autentificare ("key").
+
+    - Creează endpoint-ul online apelând metoda begin_create_or_update a workspace_ml_client cu obiectul ManagedOnlineEndpoint ca argument. Apoi așteaptă finalizarea operațiunii apelând metoda wait.
 
 1. Pe scurt, acest script creează un endpoint online gestionat în Azure Machine Learning pentru un model înregistrat.
 
@@ -675,22 +761,29 @@ Endpoint-urile online oferă o API REST durabilă care poate fi folosită pentru
     ```
 
 > [!NOTE]
-> Găsiți aici lista SKU-urilor suportate pentru implementare - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> Poți găsi aici lista SKU-urilor suportate pentru deployment - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
-### Implementarea Modelului ML
+### Deployarea Modelului ML
 
-1. Acest script Python implementează un model de machine learning înregistrat la un endpoint online gestionat în Azure Machine Learning. Iată o prezentare a ceea ce face:
+1. Acest script Python deployează un model de machine learning înregistrat la un endpoint online gestionat în Azure Machine Learning. Iată o descriere a ceea ce face:
 
-- Importă modulul ast, care oferă funcții pentru procesarea arborilor de sintaxă abstractă Python.
-- Setează tipul instanței pentru implementare la "Standard_NC6s_v3".
-- Verifică dacă tag-ul inference_compute_allow_list este prezent în modelul de bază. Dacă este, convertește valoarea tag-ului dintr-un șir într-o listă Python și o atribuie variabilei inference_computes_allow_list. Dacă nu, setează inference_computes_allow_list la None.
-- Verifică dacă tipul instanței specificat este în lista permisă. Dacă nu este, afișează un mesaj care cere utilizatorului să selecteze un tip de instanță din lista permisă.
-- Pregătește crearea implementării creând un obiect ManagedOnlineDeployment cu diverși parametri, inclusiv numele implementării, numele endpoint-ului, ID-ul modelului, tipul și numărul de instanțe, setările probei de liveness și setările pentru cereri.
-- Creează implementarea apelând metoda begin_create_or_update a workspace_ml_client cu obiectul ManagedOnlineDeployment ca argument. Apoi așteaptă finalizarea operațiunii apelând metoda wait.
-- Setează traficul endpoint-ului pentru a direcționa 100% din trafic către implementarea "demo".
-- Actualizează endpoint-ul apelând metoda begin_create_or_update a workspace_ml_client cu obiectul endpoint ca argument. Apoi așteaptă finalizarea operațiunii apelând metoda result.
+    - Importă modulul ast, care oferă funcții pentru procesarea arborilor de sintaxă abstractă Python.
 
-1. Pe scurt, acest script implementează un model de machine learning înregistrat la un endpoint online gestionat în Azure Machine Learning.
+    - Setează tipul instanței pentru deployment la "Standard_NC6s_v3".
+
+    - Verifică dacă tag-ul inference_compute_allow_list este prezent în foundation model. Dacă este, convertește valoarea tag-ului dintr-un șir într-o listă Python și o atribuie lui inference_computes_allow_list. Dacă nu, setează inference_computes_allow_list la None.
+
+    - Verifică dacă tipul instanței specificat este în lista permisă. Dacă nu este, afișează un mesaj care cere utilizatorului să selecteze un tip de instanță din lista permisă.
+
+    - Pregătește crearea deployment-ului creând un obiect ManagedOnlineDeployment cu diverși parametri, inclusiv numele deployment-ului, numele endpoint-ului, ID-ul modelului, tipul și numărul de instanțe, setările pentru liveness probe și setările pentru request.
+
+    - Creează deployment-ul apelând metoda begin_create_or_update a workspace_ml_client cu obiectul ManagedOnlineDeployment ca argument. Apoi așteaptă finalizarea operațiunii apelând metoda wait.
+
+    - Setează traficul endpoint-ului pentru a direcționa 100% din trafic către deployment-ul "demo".
+
+    - Actualizează endpoint-ul apelând metoda begin_create_or_update a workspace_ml_client cu obiectul endpoint ca argument. Apoi așteaptă finalizarea operațiunii apelând metoda result.
+
+1. Pe scurt, acest script deployează un model de machine learning înregistrat la un endpoint online gestionat în Azure Machine Learning.
 
 ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -743,18 +836,21 @@ Endpoint-urile online oferă o API REST durabilă care poate fi folosită pentru
     workspace_ml_client.begin_create_or_update(endpoint).result()
     ```
 
-## 8. Testarea endpoint-ului cu date de exemplu
+## 8. Testează endpoint-ul cu date de exemplu
 
-Vom prelua câteva date de exemplu din setul de test și le vom trimite la endpoint-ul online pentru inferență. Apoi vom afișa etichetele prezise împreună cu etichetele reale.
+Vom prelua câteva date de exemplu din dataset-ul de test și le vom trimite către endpoint-ul online pentru inferență. Apoi vom afișa etichetele prezise alături de etichetele reale.
 
 ### Citirea rezultatelor
 
-1. Acest script Python citește un fișier JSON Lines într-un DataFrame pandas, ia un eșantion aleator și resetează indexul. Iată o prezentare a ceea ce face:
+1. Acest script Python citește un fișier JSON Lines într-un DataFrame pandas, ia un eșantion aleator și resetează indexul. Iată o descriere a ceea ce face:
 
-- Citește fișierul ./ultrachat_200k_dataset/test_gen.jsonl într-un DataFrame pandas. Funcția read_json este folosită cu argumentul lines=True deoarece fișierul este în format JSON Lines, unde fiecare linie este un obiect JSON separat.
-- Ia un eșantion aleator de 1 rând din DataFrame. Funcția sample este folosită cu argumentul n=1 pentru a specifica numărul de rânduri aleatoare selectate.
-- Resetează indexul DataFrame-ului. Funcția reset_index este folosită cu argumentul drop=True pentru a elimina indexul original și a-l înlocui cu un nou index cu valori întregi implicite.
-- Afișează primele 2 rânduri ale DataFrame-ului folosind funcția head cu argumentul 2. Totuși, deoarece DataFrame-ul conține doar un rând după eșantionare, se va afișa doar acel rând.
+    - Citește fișierul ./ultrachat_200k_dataset/test_gen.jsonl într-un DataFrame pandas. Funcția read_json este folosită cu argumentul lines=True deoarece fișierul este în format JSON Lines, unde fiecare linie este un obiect JSON separat.
+
+    - Ia un eșantion aleator de 1 rând din DataFrame. Funcția sample este folosită cu argumentul n=1 pentru a specifica numărul de rânduri aleatorii selectate.
+
+    - Resetează indexul DataFrame-ului. Funcția reset_index este folosită cu argumentul drop=True pentru a elimina indexul original și a-l înlocui cu un index nou, cu valori întregi implicite.
+
+    - Afișează primele 2 rânduri ale DataFrame-ului folosind funcția head cu argumentul 2. Totuși, deoarece DataFrame-ul conține doar un rând după eșantionare, va afișa doar acel rând.
 
 1. Pe scurt, acest script citește un fișier JSON Lines într-un DataFrame pandas, ia un eșantion aleator de 1 rând, resetează indexul și afișează primul rând.
 
@@ -780,14 +876,16 @@ Vom prelua câteva date de exemplu din setul de test și le vom trimite la endpo
     test_df.head(2)
     ```
 
-### Crearea obiectului JSON
+### Crearea Obiectului JSON
 
-1. Acest script Python creează un obiect JSON cu parametri specifici și îl salvează într-un fișier. Iată o prezentare a ceea ce face:
+1. Acest script Python creează un obiect JSON cu parametri specifici și îl salvează într-un fișier. Iată o descriere a ceea ce face:
 
-- Importă modulul json, care oferă funcții pentru lucrul cu date JSON.
-- Creează un dicționar parameters cu chei și valori care reprezintă parametrii pentru un model de machine learning. Cheile sunt "temperature", "top_p", "do_sample" și "max_new_tokens", iar valorile corespunzătoare sunt 0.6, 0.9, True și 200.
-- Creează un alt dicționar test_json cu două chei: "input_data" și "params". Valoarea pentru "input_data" este un alt dicționar cu cheile "input_string" și "parameters". Valoarea pentru "input_string" este o listă care conține primul mesaj din DataFrame-ul test_df. Valoarea pentru "parameters" este dicționarul parameters creat anterior. Valoarea pentru "params" este un dicționar gol.
-- Deschide un fișier numit sample_score.json
+    - Importă modulul json, care oferă funcții pentru lucrul cu date JSON.
+
+    - Creează un dicționar parameters cu chei și valori care reprezintă parametrii pentru un model de machine learning. Cheile sunt "temperature", "top_p", "do_sample" și "max_new_tokens", iar valorile corespunzătoare sunt 0.6, 0.9, True și 200.
+
+    - Creează un alt dicționar test_json cu două chei: "input_data" și "params". Valoarea pentru "input_data" este un alt dicționar cu cheile "input_string" și "parameters". Valoarea pentru "input_string" este o listă care conține primul mesaj din DataFrame-ul test_df. Valoarea pentru "parameters" este dicționarul parameters creat anterior. Valoarea pentru "params" este un dicționar gol.
+- Se deschide un fișier numit sample_score.json
 
 ```python
     # Import the json module, which provides functions to work with JSON data
@@ -823,13 +921,17 @@ Vom prelua câteva date de exemplu din setul de test și le vom trimite la endpo
 
 ### Invocarea Endpoint-ului
 
-1. Acest script Python invocă un endpoint online în Azure Machine Learning pentru a evalua un fișier JSON. Iată o prezentare a ceea ce face:
+1. Acest script Python invocă un endpoint online în Azure Machine Learning pentru a evalua un fișier JSON. Iată o descriere a ceea ce face:
 
-- Apelează metoda invoke a proprietății online_endpoints a obiectului workspace_ml_client. Această metodă este folosită pentru a trimite o cerere către un endpoint online și a primi un răspuns.
-- Specifică numele endpoint-ului și al implementării cu argumentele endpoint_name și deployment_name. În acest caz, numele endpoint-ului este stocat în variabila online_endpoint_name, iar numele implementării este "demo".
-- Specifică calea către fișierul JSON care urmează să fie evaluat cu argumentul request_file. În acest caz, fișierul este ./ultrachat_200k_dataset/sample_score.json.
-- Stochează răspunsul de la endpoint în variabila response.
-- Afișează răspunsul brut.
+    - Apelează metoda invoke a proprietății online_endpoints a obiectului workspace_ml_client. Această metodă este folosită pentru a trimite o cerere către un endpoint online și a primi un răspuns.
+
+    - Specifică numele endpoint-ului și al implementării prin argumentele endpoint_name și deployment_name. În acest caz, numele endpoint-ului este stocat în variabila online_endpoint_name, iar numele implementării este „demo”.
+
+    - Specifică calea către fișierul JSON care trebuie evaluat prin argumentul request_file. În acest caz, fișierul este ./ultrachat_200k_dataset/sample_score.json.
+
+    - Stochează răspunsul de la endpoint în variabila response.
+
+    - Afișează răspunsul brut.
 
 1. Pe scurt, acest script invocă un endpoint online în Azure Machine Learning pentru a evalua un fișier JSON și afișează răspunsul.
 
@@ -851,12 +953,15 @@ Vom prelua câteva date de exemplu din setul de test și le vom trimite la endpo
 
 ## 9. Ștergerea endpoint-ului online
 
-1. Nu uitați să ștergeți endpoint-ul online, altfel veți lăsa contorul de facturare activ pentru resursele de calcul folosite de endpoint. Această linie de cod Python șterge un endpoint online în Azure Machine Learning. Iată o prezentare a ceea ce face:
+1. Nu uita să ștergi endpoint-ul online, altfel vei lăsa contorul de facturare activ pentru resursele de calcul folosite de endpoint. Această linie de cod Python șterge un endpoint online în Azure Machine Learning. Iată o descriere a ceea ce face:
 
-- Apelează metoda begin_delete a proprietății online_endpoints a obiectului workspace_ml_client. Această metodă inițiază ștergerea unui endpoint online.
-- Specifică numele endpoint-ului care urmează să fie șters prin argumentul name. În acest caz, numele endpoint-ului este stocat în variabila online_endpoint_name.
-- Apelează metoda wait pentru a aștepta finalizarea operațiunii de ștergere. Aceasta este o operațiune blocantă, ceea ce înseamnă că va împiedica continuarea scriptului până când ștergerea este finalizată.
-- Pe scurt, această linie de cod inițiază ștergerea unui endpoint online în Azure Machine Learning și așteaptă finalizarea operațiunii.
+    - Apelează metoda begin_delete a proprietății online_endpoints a obiectului workspace_ml_client. Această metodă este folosită pentru a începe ștergerea unui endpoint online.
+
+    - Specifică numele endpoint-ului care trebuie șters prin argumentul name. În acest caz, numele endpoint-ului este stocat în variabila online_endpoint_name.
+
+    - Apelează metoda wait pentru a aștepta finalizarea operațiunii de ștergere. Aceasta este o operațiune blocantă, ceea ce înseamnă că va împiedica continuarea scriptului până când ștergerea este finalizată.
+
+    - Pe scurt, această linie de cod pornește ștergerea unui endpoint online în Azure Machine Learning și așteaptă finalizarea operațiunii.
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -866,5 +971,5 @@ Vom prelua câteva date de exemplu din setul de test și le vom trimite la endpo
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
-**Declinare a responsabilității**:  
+**Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

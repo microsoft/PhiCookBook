@@ -2,69 +2,70 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:35:07+00:00",
+  "translation_date": "2025-07-16T21:17:05+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "bn"
 }
 -->
-# ফাইন-টিউন করা মডেলের সাথে রিমোট ইনফারেন্সিং
+# ফাইন-টিউন করা মডেলের সাথে রিমোট ইনফারেন্স
 
-অ্যাডাপ্টারগুলি রিমোট পরিবেশে প্রশিক্ষিত হওয়ার পরে, মডেলের সাথে ইন্টারঅ্যাক্ট করতে একটি সহজ Gradio অ্যাপ্লিকেশন ব্যবহার করুন।
+অ্যাডাপ্টারগুলো রিমোট পরিবেশে প্রশিক্ষিত হওয়ার পর, মডেলের সাথে ইন্টারঅ্যাক্ট করার জন্য একটি সহজ Gradio অ্যাপ্লিকেশন ব্যবহার করুন।
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.bn.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.bn.png)
 
-### Azure রিসোর্স প্রোভিশন করা
-রিমোট ইনফারেন্সের জন্য Azure রিসোর্স সেটআপ করতে আপনাকে কমান্ড প্যালেট থেকে `AI Toolkit: Provision Azure Container Apps for inference` চালাতে হবে। এই সেটআপের সময় আপনাকে আপনার Azure Subscription এবং resource group নির্বাচন করতে বলা হবে।  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.bn.png)
-   
-ডিফল্টভাবে, ইনফারেন্সের জন্য সাবস্ক্রিপশন এবং রিসোর্স গ্রুপ ফাইন-টিউনিংয়ের জন্য ব্যবহৃত সেটির সাথে মেলে। ইনফারেন্স একই Azure Container App Environment ব্যবহার করবে এবং Azure Files-এ সংরক্ষিত মডেল এবং মডেল অ্যাডাপ্টার অ্যাক্সেস করবে, যা ফাইন-টিউনিং ধাপে তৈরি হয়েছিল। 
+### Azure রিসোর্স প্রোভিশন করা  
+রিমোট ইনফারেন্সের জন্য Azure রিসোর্স সেটআপ করতে কমান্ড প্যালেট থেকে `AI Toolkit: Provision Azure Container Apps for inference` চালান। এই সেটআপের সময় আপনাকে আপনার Azure সাবস্ক্রিপশন এবং রিসোর্স গ্রুপ নির্বাচন করতে বলা হবে।  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.bn.png)
+
+ডিফল্টভাবে, ইনফারেন্সের জন্য সাবস্ক্রিপশন এবং রিসোর্স গ্রুপ ফাইন-টিউনিংয়ের জন্য ব্যবহৃত সেটির সাথে মিলে যাবে। ইনফারেন্স একই Azure Container App Environment ব্যবহার করবে এবং মডেল ও মডেল অ্যাডাপ্টার অ্যাক্সেস করবে যা Azure Files-এ সংরক্ষিত, যা ফাইন-টিউনিং ধাপে তৈরি হয়েছিল।
 
 ## AI Toolkit ব্যবহার
 
 ### ইনফারেন্সের জন্য ডিপ্লয়মেন্ট  
-যদি আপনি ইনফারেন্স কোড সংশোধন করতে বা ইনফারেন্স মডেল পুনরায় লোড করতে চান, তাহলে `AI Toolkit: Deploy for inference` কমান্ড চালান। এটি আপনার সর্বশেষ কোড ACA-এর সাথে সিঙ্ক্রোনাইজ করবে এবং রেপ্লিকা পুনরায় চালু করবে।  
+যদি আপনি ইনফারেন্স কোড সংশোধন করতে চান বা ইনফারেন্স মডেল পুনরায় লোড করতে চান, তাহলে `AI Toolkit: Deploy for inference` কমান্ডটি চালান। এটি আপনার সর্বশেষ কোড ACA-র সাথে সিঙ্ক্রোনাইজ করবে এবং রেপ্লিকা রিস্টার্ট করবে।
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.bn.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.bn.png)
 
-ডিপ্লয়মেন্ট সফল হওয়ার পরে, মডেলটি এখন এই এন্ডপয়েন্ট ব্যবহার করে মূল্যায়নের জন্য প্রস্তুত।
+ডিপ্লয়মেন্ট সফলভাবে সম্পন্ন হওয়ার পর, মডেলটি এই এন্ডপয়েন্ট ব্যবহার করে মূল্যায়নের জন্য প্রস্তুত।
 
-### ইনফারেন্স API অ্যাক্সেস করা
+### ইনফারেন্স API-তে অ্যাক্সেস
 
-VSCode নোটিফিকেশনে প্রদর্শিত "*Go to Inference Endpoint*" বাটনে ক্লিক করে আপনি ইনফারেন্স API অ্যাক্সেস করতে পারেন। বিকল্পভাবে, ওয়েব API এন্ডপয়েন্ট `ACA_APP_ENDPOINT` এর অধীনে `./infra/inference.config.json` এবং আউটপুট প্যানেলে পাওয়া যাবে।
+VSCode নোটিফিকেশনে প্রদর্শিত "*Go to Inference Endpoint*" বোতামে ক্লিক করে আপনি ইনফারেন্স API-তে প্রবেশ করতে পারেন। বিকল্পভাবে, ওয়েব API এন্ডপয়েন্ট `ACA_APP_ENDPOINT`-এ পাওয়া যাবে `./infra/inference.config.json` ফাইলে এবং আউটপুট প্যানেলে।
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.bn.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.bn.png)
 
-> **Note:** ইনফারেন্স এন্ডপয়েন্ট পুরোপুরি কার্যকর হতে কয়েক মিনিট সময় নিতে পারে।
+> **Note:** ইনফারেন্স এন্ডপয়েন্ট সম্পূর্ণ কার্যকর হতে কয়েক মিনিট সময় নিতে পারে।
 
-## টেমপ্লেটে অন্তর্ভুক্ত ইনফারেন্স উপাদানসমূহ
- 
+## টেমপ্লেটে অন্তর্ভুক্ত ইনফারেন্স কম্পোনেন্টসমূহ
+
 | ফোল্ডার | বিষয়বস্তু |
 | ------ |--------- |
-| `infra` | রিমোট অপারেশনের জন্য প্রয়োজনীয় সমস্ত কনফিগারেশন ধারণ করে। |
-| `infra/provision/inference.parameters.json` | ইনফারেন্সের জন্য Azure রিসোর্স প্রোভিশন করার বেসিক টেমপ্লেটের প্যারামিটারগুলি ধারণ করে। |
-| `infra/provision/inference.bicep` | ইনফারেন্সের জন্য Azure রিসোর্স প্রোভিশন করার টেমপ্লেটসমূহ ধারণ করে। |
+| `infra` | রিমোট অপারেশনের জন্য প্রয়োজনীয় সব কনফিগারেশন ধারণ করে। |
+| `infra/provision/inference.parameters.json` | বেসিক টেমপ্লেটের জন্য প্যারামিটার ধারণ করে, যা ইনফারেন্সের জন্য Azure রিসোর্স প্রোভিশনের কাজে লাগে। |
+| `infra/provision/inference.bicep` | ইনফারেন্সের জন্য Azure রিসোর্স প্রোভিশনের টেমপ্লেট ধারণ করে। |
 | `infra/inference.config.json` | `AI Toolkit: Provision Azure Container Apps for inference` কমান্ড দ্বারা তৈরি কনফিগারেশন ফাইল। এটি অন্যান্য রিমোট কমান্ড প্যালেটের ইনপুট হিসেবে ব্যবহৃত হয়। |
 
-### AI Toolkit ব্যবহার করে Azure Resource Provision কনফিগার করা
+### Azure রিসোর্স প্রোভিশন কনফিগার করতে AI Toolkit ব্যবহার  
 [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) কনফিগার করুন।
 
-ইনফারেন্সের জন্য Azure Container Apps প্রোভিশন করুন` command.
+`Provision Azure Container Apps for inference` কমান্ড চালান।
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+কনফিগারেশন প্যারামিটারগুলো `./infra/provision/inference.parameters.json` ফাইলে পাওয়া যাবে। বিস্তারিত নিচে দেওয়া হলো:
+
+| প্যারামিটার | বর্ণনা |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | ওয়েব API শুরু করার জন্য কমান্ড। |
+| `maximumInstanceCount` | GPU ইনস্ট্যান্সের সর্বোচ্চ ক্ষমতা নির্ধারণ করে। |
+| `location` | Azure রিসোর্স প্রোভিশনের অবস্থান। ডিফল্ট মান নির্বাচিত রিসোর্স গ্রুপের অবস্থানের সাথে মিলে। |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | প্রোভিশনের জন্য Azure রিসোর্সের নামকরণের প্যারামিটার। ডিফল্টভাবে এগুলো ফাইন-টিউনিং রিসোর্সের নামের সাথে একই হবে। আপনি নতুন, ব্যবহার না করা নাম দিতে পারেন অথবা বিদ্যমান Azure রিসোর্সের নাম দিতে পারেন যদি আপনি সেগুলো ব্যবহার করতে চান। বিস্তারিত জানতে [Using existing Azure Resources](../../../../../md/01.Introduction/03) অংশ দেখুন। |
 
-### Using Existing Azure Resources
+### বিদ্যমান Azure রিসোর্স ব্যবহার
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+ডিফল্টভাবে, ইনফারেন্স প্রোভিশন ফাইন-টিউনিংয়ের জন্য ব্যবহৃত একই Azure Container App Environment, Storage Account, Azure File Share, এবং Azure Log Analytics ব্যবহার করে। ইনফারেন্স API-এর জন্য আলাদা Azure Container App তৈরি করা হয়।
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` ফাইল। তারপর, কমান্ড প্যালেট থেকে `AI Toolkit: Provision Azure Container Apps for inference` কমান্ড চালান। এটি নির্দিষ্ট রিসোর্স আপডেট করবে এবং অনুপস্থিত রিসোর্স তৈরি করবে।
+যদি আপনি ফাইন-টিউনিং ধাপে Azure রিসোর্স কাস্টমাইজ করে থাকেন বা ইনফারেন্সের জন্য আপনার নিজস্ব বিদ্যমান Azure রিসোর্স ব্যবহার করতে চান, তাহলে তাদের নাম `./infra/inference.parameters.json` ফাইলে উল্লেখ করুন। এরপর কমান্ড প্যালেট থেকে `AI Toolkit: Provision Azure Container Apps for inference` কমান্ড চালান। এটি নির্দিষ্ট রিসোর্সগুলো আপডেট করবে এবং যেগুলো অনুপস্থিত সেগুলো তৈরি করবে।
 
-উদাহরণস্বরূপ, যদি আপনার একটি বিদ্যমান Azure container environment থাকে, তাহলে আপনার `./infra/finetuning.parameters.json` এর মতো হওয়া উচিত:
+উদাহরণস্বরূপ, যদি আপনার বিদ্যমান Azure container environment থাকে, তাহলে আপনার `./infra/finetuning.parameters.json` এরকম দেখাবে:
 
 ```json
 {
@@ -84,7 +85,7 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 ### ম্যানুয়াল প্রোভিশন  
-যদি আপনি Azure রিসোর্সগুলি ম্যানুয়ালি কনফিগার করতে চান, তাহলে আপনি `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` ফাইলে দেওয়া বেসিক ফাইলগুলি ব্যবহার করতে পারেন।
+যদি আপনি ম্যানুয়ালি Azure রিসোর্স কনফিগার করতে চান, তাহলে `./infra/provision` ফোল্ডারে থাকা বেসিক ফাইলগুলো ব্যবহার করতে পারেন। যদি আপনি AI Toolkit কমান্ড প্যালেট ব্যবহার না করে ইতিমধ্যে সব Azure রিসোর্স সেটআপ ও কনফিগার করে থাকেন, তাহলে শুধু `inference.config.json` ফাইলে রিসোর্সের নামগুলো লিখে দিন।
 
 উদাহরণস্বরূপ:
 
@@ -99,5 +100,5 @@ If you have customized the Azure resources during the fine-tuning step or want t
 }
 ```
 
-**দায়বদ্ধতা বিবৃতি**:  
-এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা ভুল থাকার সম্ভাবনা রয়েছে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদের পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।
+**অস্বীকৃতি**:  
+এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ গ্রহণ করার পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।

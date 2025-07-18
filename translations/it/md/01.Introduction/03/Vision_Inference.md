@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:13:19+00:00",
+  "translation_date": "2025-07-16T21:37:50+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "it"
 }
 -->
 # **Inferenza Phi-3-Vision in Locale**
 
-Phi-3-vision-128k-instruct permette a Phi-3 non solo di comprendere il linguaggio, ma anche di vedere il mondo visivamente. Grazie a Phi-3-vision-128k-instruct, possiamo risolvere diversi problemi visivi, come OCR, analisi di tabelle, riconoscimento di oggetti, descrizione delle immagini, ecc. Possiamo completare facilmente compiti che in passato richiedevano molta formazione dati. Di seguito sono riportate le tecniche correlate e gli scenari applicativi citati da Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct permette a Phi-3 non solo di comprendere il linguaggio, ma anche di vedere il mondo visivamente. Grazie a Phi-3-vision-128k-instruct, possiamo risolvere diversi problemi visivi, come OCR, analisi di tabelle, riconoscimento di oggetti, descrizione delle immagini, ecc. Possiamo completare facilmente compiti che in precedenza richiedevano molta formazione sui dati. Di seguito sono riportate le tecniche correlate e gli scenari applicativi citati da Phi-3-vision-128k-instruct
 
 ## **0. Preparazione**
 
-Assicurati che le seguenti librerie Python siano installate prima dell’uso (consigliato Python 3.10+)
+Assicurati che le seguenti librerie Python siano installate prima dell’uso (si consiglia Python 3.10+)
 
 ```bash
 pip install transformers -U
@@ -27,7 +27,7 @@ Si consiglia di utilizzare ***CUDA 11.6+*** e di installare flatten
 pip install flash-attn --no-build-isolation
 ```
 
-Crea un nuovo Notebook. Per completare gli esempi, è consigliato creare prima i seguenti contenuti.
+Crea un nuovo Notebook. Per completare gli esempi, è consigliabile creare prima i seguenti contenuti.
 
 ```python
 from PIL import Image
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR con Phi-3-Vision**
 
-Oltre ad analizzare l’immagine, possiamo anche estrarre informazioni da essa. Questo è il processo OCR per cui in passato era necessario scrivere codice complesso.
+Oltre ad analizzare l’immagine, possiamo anche estrarre informazioni dall’immagine. Questo è il processo OCR che prima richiedeva di scrivere codice complesso per essere completato.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione AI [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire l’accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-07-09T19:36:52+00:00",
+  "translation_date": "2025-07-17T10:43:41+00:00",
   "source_file": "md/04.HOL/dotnet/readme.md",
   "language_code": "uk"
 }
@@ -53,7 +53,7 @@ git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 ```
 
-**Важливо:** Поточні демонстрації розроблені для використання ONNX версій моделей. Попередні кроки клонують наступні моделі.
+**Важливо:** Поточні демо призначені для використання ONNX версій моделей. Попередні кроки клонують наступні моделі.
 
 ## Про лабораторії
 
@@ -92,7 +92,7 @@ git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 
 1. Приклад запитує введення користувача і відповідає, використовуючи локальну модель.
 
-   Запущена демонстрація виглядає приблизно так:
+   Запущене демо виглядає приблизно так:
 
    ```bash
    PS D:\phi\PhiCookBook\md\04.HOL\dotnet\src\LabsPhi4-Chat-01OnnxRuntime> dotnet run

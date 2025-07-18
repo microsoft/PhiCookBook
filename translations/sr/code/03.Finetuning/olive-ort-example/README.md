@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-09T04:34:31+00:00",
+  "translation_date": "2025-07-16T16:06:05+00:00",
   "source_file": "code/03.Finetuning/olive-ort-example/README.md",
   "language_code": "sr"
 }
 -->
-# Fino podešavanje Phi3 koristeći Olive
+# Фино подешавање Phi3 користећи Olive
 
-U ovom primeru koristićete Olive da:
+У овом примеру ћете користити Olive да:
 
-1. Fino podesite LoRA adapter da klasifikuje fraze u Sad, Joy, Fear, Surprise.
-1. Spojite težine adaptera sa osnovnim modelom.
-1. Optimizujete i kvantizujete model u `int4`.
+1. Фино подесите LoRA адаптер за класификацију фраза у Тужан, Радост, Страх, Изненађење.
+1. Спојите тежине адаптера у основни модел.
+1. Оптимизујете и квантујете модел у `int4`.
 
-Takođe ćemo vam pokazati kako da izvršite inferencu fino podešenog modela koristeći ONNX Runtime (ORT) Generate API.
+Такође ћемо вам показати како да извршите инференцу фино подешеног модела користећи ONNX Runtime (ORT) Generate API.
 
-> **⚠️ Za fino podešavanje potrebno je da imate odgovarajuću GPU karticu - na primer, A10, V100, A100.**
+> **⚠️ За фино подешавање потребно је да имате одговарајућу GPU картицу - на пример, A10, V100, A100.**
 
-## 💾 Instalacija
+## 💾 Инсталација
 
-Napravite novi Python virtuelni okruženje (na primer, koristeći `conda`):
+Креирајте ново Python виртуелно окружење (на пример, користећи `conda`):
 
 ```bash
 conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-Zatim instalirajte Olive i zavisnosti za workflow fino podešavanja:
+Затим инсталирајте Olive и зависности за фино подешавање:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -36,34 +36,34 @@ pip install olive-ai[gpu]
 pip install -r requirements.txt
 ```
 
-## 🧪 Fino podešavanje Phi3 koristeći Olive
-[Olive konfiguracioni fajl](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) sadrži *workflow* sa sledećim *koracima*:
+## 🧪 Фино подешавање Phi3 користећи Olive
+[Olive конфигурациони фајл](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) садржи *workflow* са следећим *passes*:
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-Na visokom nivou, ovaj workflow će:
+На високом нивоу, овај workflow ће:
 
-1. Fino podesiti Phi3 (za 150 koraka, što možete promeniti) koristeći podatke iz [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json).
-1. Spojiti LoRA adapter težine u osnovni model. Ovo će vam dati jedan model u ONNX formatu.
-1. Model Builder će optimizovati model za ONNX runtime *i* kvantizovati model u `int4`.
+1. Фино подесити Phi3 (за 150 корака, што можете променити) користећи податке из [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json).
+1. Спојити тежине LoRA адаптера у основни модел. Ово ће вам дати један модел у ONNX формату.
+1. Model Builder ће оптимизовати модел за ONNX runtime *и* квантовати модел у `int4`.
 
-Da biste pokrenuli workflow, izvršite:
+Да бисте покренули workflow, извршите:
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-Kada Olive završi, vaš optimizovani `int4` fino podešeni Phi3 model je dostupan u: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
+Када Olive заврши, ваш оптимизовани `int4` фино подешени Phi3 модел биће доступан у: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-## 🧑‍💻 Integracija fino podešenog Phi3 u vašu aplikaciju
+## 🧑‍💻 Интегрисање фино подешеног Phi3 у вашу апликацију
 
-Da pokrenete aplikaciju:
+Да покренете апликацију:
 
 ```bash
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-Odgovor treba da bude jednoznačna klasifikacija fraze (Sad/Joy/Fear/Surprise).
+Овај одговор треба да буде једна реч која класификује фразу (Тужан/Радост/Страх/Изненађење).
 
-**Odricanje od odgovornosti**:  
-Ovaj dokument je preveden korišćenjem AI prevodilačke usluge [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo tačnosti, imajte na umu da automatski prevodi mogu sadržavati greške ili netačnosti. Originalni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja nastala korišćenjem ovog prevoda.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

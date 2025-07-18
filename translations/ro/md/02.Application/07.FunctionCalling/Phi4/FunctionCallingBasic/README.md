@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:09:26+00:00",
+  "translation_date": "2025-07-17T05:17:00+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "ro"
 }
 -->
 ## **Apelarea funcțiilor în Phi-4-mini**
 
-Apelarea funcțiilor a apărut prima dată în familia Phi, iar acum o poți folosi prin Phi-4-mini.
+Apelarea funcțiilor a apărut pentru prima dată în familia Phi Family, iar acum o poți folosi prin Phi-4-mini.
 
 Acest exemplu demonstrează simularea rezultatelor din Premier League. Scopul este ca Phi-4-mini să ofere informații în timp real despre meciuri. Mai jos este codul exemplu:
 
@@ -108,5 +108,5 @@ print(messages)
 
 ```
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

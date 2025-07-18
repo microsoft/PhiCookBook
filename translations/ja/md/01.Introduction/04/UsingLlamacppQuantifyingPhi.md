@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-05-08T06:11:05+00:00",
+  "translation_date": "2025-07-16T22:07:10+00:00",
   "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "ja"
 }
@@ -11,31 +11,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **llama.cppとは**
 
-llama.cppは主にC++で書かれたオープンソースのソフトウェアライブラリで、Llamaなどのさまざまな大規模言語モデル（LLM）の推論を行います。主な目的は、幅広いハードウェアで最小限のセットアップで最先端のLLM推論性能を提供することです。さらに、このライブラリにはPythonバインディングもあり、テキスト補完のための高レベルAPIやOpenAI互換のウェブサーバーを提供しています。
+llama.cppは主にC++で書かれたオープンソースのソフトウェアライブラリで、Llamaなどのさまざまな大規模言語モデル（LLM）の推論を行います。主な目的は、幅広いハードウェア上で最小限のセットアップで最先端のLLM推論性能を提供することです。さらに、このライブラリにはPythonバインディングもあり、テキスト補完のための高レベルAPIやOpenAI互換のウェブサーバーを提供しています。
 
-llama.cppの主な目標は、ローカルやクラウド上の多様なハードウェアで、最小限のセットアップで最先端のLLM推論を可能にすることです。
+llama.cppの主な目標は、ローカルおよびクラウド環境で幅広いハードウェアに対応し、最小限のセットアップで最先端のLLM推論を可能にすることです。
 
 - 依存関係なしの純粋なC/C++実装
-- Appleシリコンを優先サポートし、ARM NEON、Accelerate、Metalフレームワークで最適化
+- Appleシリコンを第一級にサポートし、ARM NEON、Accelerate、Metalフレームワークで最適化
 - x86アーキテクチャ向けにAVX、AVX2、AVX512をサポート
-- 1.5ビット、2ビット、3ビット、4ビット、5ビット、6ビット、8ビットの整数量子化による高速推論とメモリ使用量削減
-- NVIDIA GPUでのLLM実行のためのカスタムCUDAカーネル（AMD GPUはHIP経由でサポート）
+- 推論高速化とメモリ使用量削減のための1.5ビット、2ビット、3ビット、4ビット、5ビット、6ビット、8ビット整数量子化
+- NVIDIA GPUでのLLM実行のためのカスタムCUDAカーネル（AMD GPUはHIPでサポート）
 - VulkanおよびSYCLバックエンドのサポート
-- 総VRAM容量を超える大規模モデルの部分的高速化のためのCPU+GPUハイブリッド推論
+- VRAM容量を超える大規模モデルの部分的な高速化のためのCPU+GPUハイブリッド推論
 
-## **llama.cppによるPhi-3.5の量子化**
+## **llama.cppを使ったPhi-3.5の量子化**
 
-Phi-3.5-Instructモデルはllama.cppで量子化可能ですが、Phi-3.5-VisionやPhi-3.5-MoEはまだサポートされていません。llama.cppが変換するフォーマットはggufで、これが最も広く使われている量子化フォーマットでもあります。
+Phi-3.5-Instructモデルはllama.cppで量子化可能ですが、Phi-3.5-VisionやPhi-3.5-MoEはまだ対応していません。llama.cppで変換されるフォーマットはggufで、これは最も広く使われている量子化フォーマットでもあります。
 
-Hugging Faceには多くの量子化済みGGUFフォーマットモデルがあります。AI Foundry、Ollama、LlamaEdgeはllama.cppに依存しているため、GGUFモデルもよく使われています。
+Hugging Faceには大量の量子化されたGGUFフォーマットモデルがあります。AI Foundry、Ollama、LlamaEdgeはllama.cppに依存しているため、GGUFモデルもよく使われています。
 
 ### **GGUFとは**
 
-GGUFはモデルの高速な読み込みと保存に最適化されたバイナリフォーマットで、推論用途に非常に効率的です。GGUFはGGMLや他の実行エンジン向けに設計されています。GGUFはllama.cppの開発者である@ggerganovによって開発されました。PyTorchなどのフレームワークで開発されたモデルは、これらのエンジンで使うためにGGUFフォーマットに変換可能です。
+GGUFはモデルの高速な読み込みと保存に最適化されたバイナリフォーマットで、推論に非常に効率的です。GGUFはGGMLやその他の実行環境での使用を想定して設計されています。GGUFはllama.cppの開発者である@ggerganovによって開発されました。PyTorchなどのフレームワークで最初に開発されたモデルは、GGUFフォーマットに変換してこれらのエンジンで利用できます。
 
 ### **ONNXとGGUFの比較**
 
-ONNXは従来の機械学習・深層学習フォーマットで、多様なAIフレームワークで広くサポートされており、エッジデバイスでの利用に適しています。一方、GGUFはllama.cppをベースにしており、生成AI時代に生まれたフォーマットと言えます。用途は似ていますが、組み込みハードウェアやアプリケーション層でより良い性能を求めるならONNXが適しているかもしれません。llama.cppの派生フレームワークや技術を利用するなら、GGUFの方が向いています。
+ONNXは従来の機械学習／深層学習フォーマットで、さまざまなAIフレームワークで広くサポートされており、エッジデバイスでの利用シナリオも豊富です。一方GGUFはllama.cppをベースにしており、GenAI時代に生まれたと言えます。両者は似た用途を持ちます。組み込みハードウェアやアプリケーション層でより良い性能を求めるならONNXが適しているかもしれません。llama.cppの派生フレームワークや技術を使うならGGUFの方が良いでしょう。
 
 ### **llama.cppを使ったPhi-3.5-Instructの量子化**
 
@@ -85,7 +85,7 @@ pip install llama-cpp-python -U
 
 ```
 
-***Note*** 
+***注意*** 
 
 Apple Siliconを使う場合は、llama-cpp-pythonを以下のようにインストールしてください
 
@@ -113,5 +113,5 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 2. onnxruntimeについて詳しくはこちら [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 3. GGUFについて詳しくはこちら [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
-**免責事項**:  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があります。正式な情報源としては、原文（原言語）の文書を参照してください。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の使用により生じた誤解や誤訳について、一切の責任を負いかねますのでご了承ください。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

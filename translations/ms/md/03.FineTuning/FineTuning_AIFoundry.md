@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:34:59+00:00",
+  "translation_date": "2025-07-17T06:10:07+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "ms"
 }
 -->
-# כוונון מדויק של Phi-3 עם Azure AI Foundry
+# Penalaan Halus Phi-3 dengan Azure AI Foundry
 
-בואו נבחן כיצד לכוונן במדויק את מודל השפה Phi-3 Mini של מיקרוסופט באמצעות Azure AI Foundry. כוונון מדויק מאפשר להתאים את Phi-3 Mini למשימות ספציפיות, מה שהופך אותו לעוצמתי ומותאם יותר להקשר.
+Mari kita terokai cara untuk menala halus model bahasa Phi-3 Mini Microsoft menggunakan Azure AI Foundry. Penalaan halus membolehkan anda menyesuaikan Phi-3 Mini untuk tugasan tertentu, menjadikannya lebih berkuasa dan peka konteks.
 
-## שיקולים
+## Pertimbangan
 
-- **יכולות:** אילו מודלים ניתנים לכוונון מדויק? לאילו משימות ניתן לכוונן את המודל הבסיסי?
-- **עלות:** מהו מודל התמחור עבור כוונון מדויק?
-- **התאמה אישית:** עד כמה ניתן לשנות את המודל הבסיסי – ובאילו דרכים?
-- **נוחות:** כיצד מתבצע הכוונון המדויק בפועל – האם צריך לכתוב קוד מותאם? האם יש צורך במשאבי מחשוב משלך?
-- **בטיחות:** למודלים מכווננים מדויק ידועים סיכוני בטיחות – האם קיימים מנגנוני הגנה למניעת נזקים לא מכוונים?
+- **Keupayaan:** Model mana yang boleh ditala halus? Apakah yang boleh dilakukan oleh model asas selepas ditala halus?
+- **Kos:** Apakah model harga untuk penalaan halus
+- **Kebolehsuaian:** Sejauh mana saya boleh mengubah model asas – dan dalam cara apa?
+- **Kemudahan:** Bagaimana penalaan halus sebenarnya dilakukan – adakah saya perlu menulis kod tersuai? Adakah saya perlu menyediakan pengkomputeran sendiri?
+- **Keselamatan:** Model yang ditala halus diketahui mempunyai risiko keselamatan – adakah terdapat langkah-langkah perlindungan untuk mengelakkan kemudaratan yang tidak disengajakan?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.ms.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.ms.png)
 
-## הכנה לכוונון מדויק
+## Persediaan untuk penalaan halus
 
-### דרישות מוקדמות
+### Prasyarat
 
 > [!NOTE]
-> עבור משפחת מודלי Phi-3, אפשרות הכוונון המדויק בתשלום לפי שימוש זמינה רק במרכזי נתונים שנוצרו באזור **East US 2**.
+> Untuk model keluarga Phi-3, tawaran penalaan halus model bayar ikut guna hanya tersedia dengan hab yang dibuat di rantau **East US 2**.
 
-- מנוי Azure. אם אין לך מנוי, צור [חשבון Azure בתשלום](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) כדי להתחיל.
+- Langganan Azure. Jika anda belum mempunyai langganan Azure, buat [akaun Azure berbayar](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) untuk memulakan.
 
-- פרויקט [AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- בקרות גישה מבוססות תפקידים של Azure (Azure RBAC) משמשות למתן הרשאות לפעולות ב-Azure AI Foundry. על חשבון המשתמש שלך להיות משויך לתפקיד __Azure AI Developer__ בקבוצת המשאבים.
+- Projek [AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
+- Kawalan akses berasaskan peranan Azure (Azure RBAC) digunakan untuk memberikan akses kepada operasi dalam Azure AI Foundry. Untuk melaksanakan langkah dalam artikel ini, akaun pengguna anda mesti diberikan __peranan Azure AI Developer__ pada kumpulan sumber.
 
-### רישום ספק מנוי
+### Pendaftaran penyedia langganan
 
-וודא שהמנוי רשום לספק המשאבים `Microsoft.Network`.
+Sahkan langganan didaftarkan kepada penyedia sumber `Microsoft.Network`.
 
-1. התחבר ל-[פורטל Azure](https://portal.azure.com).
-1. בחר **Subscriptions** מהתפריט השמאלי.
-1. בחר את המנוי שברצונך להשתמש בו.
-1. בחר **AI project settings** > **Resource providers** מהתפריט השמאלי.
-1. ודא ש-**Microsoft.Network** מופיע ברשימת ספקי המשאבים. אם לא, הוסף אותו.
+1. Log masuk ke [portal Azure](https://portal.azure.com).
+1. Pilih **Subscriptions** dari menu kiri.
+1. Pilih langganan yang ingin anda gunakan.
+1. Pilih **AI project settings** > **Resource providers** dari menu kiri.
+1. Sahkan bahawa **Microsoft.Network** ada dalam senarai penyedia sumber. Jika tidak, tambahkan ia.
 
-### הכנת נתונים
+### Persediaan data
 
-הכן את נתוני האימון והאימות שלך לכוונון המדויק של המודל. מערכי נתוני האימון והאימות צריכים לכלול דוגמאות של קלט ופלט בהתאם לאופן שבו ברצונך שהמודל יבצע את המשימה.
+Sediakan data latihan dan pengesahan anda untuk menala halus model anda. Set data latihan dan pengesahan anda terdiri daripada contoh input dan output bagi cara anda mahu model berfungsi.
 
-ודא שכל דוגמאות האימון עומדות בפורמט המצופה עבור ההסקה. כדי לכוונן מודלים בצורה יעילה, יש להבטיח מאגר נתונים מאוזן ומגוון.
+Pastikan semua contoh latihan anda mengikuti format yang dijangka untuk inferens. Untuk menala halus model dengan berkesan, pastikan dataset seimbang dan pelbagai.
 
-זה כולל שמירה על איזון בנתונים, הכללת תרחישים שונים, ועדכון תקופתי של נתוני האימון כדי להתאים לציפיות מהמציאות, מה שמוביל לתגובות מדויקות ומאוזנות יותר של המודל.
+Ini melibatkan mengekalkan keseimbangan data, memasukkan pelbagai senario, dan secara berkala memperbaiki data latihan agar selaras dengan jangkaan dunia sebenar, yang akhirnya menghasilkan respons model yang lebih tepat dan seimbang.
 
-סוגי מודלים שונים דורשים פורמט שונה של נתוני אימון.
+Jenis model yang berbeza memerlukan format data latihan yang berbeza.
 
-### השלמת שיחה
+### Penyempurnaan Perbualan
 
-נתוני האימון והאימות שבהם תשתמש **חייבים** להיות בפורמט JSON Lines (JSONL). עבור `Phi-3-mini-128k-instruct`, מערך נתוני הכוונון המדויק חייב להיות בפורמט שיחתי כפי שמשמש API להשלמת שיחות.
+Data latihan dan pengesahan yang anda gunakan **mesti** diformatkan sebagai dokumen JSON Lines (JSONL). Untuk `Phi-3-mini-128k-instruct`, set data penalaan halus mesti diformat dalam format perbualan yang digunakan oleh API Penyempurnaan Perbualan.
 
-### דוגמת פורמט קובץ
+### Contoh format fail
 
 ```json
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Is Xbox better than PlayStation?"}, {"role": "assistant", "content": "I apologize, but I cannot provide personal opinions. My primary job is to assist you with any issues related to your Xbox device. Do you have any Xbox-related issues that need addressing?"}]}
@@ -65,174 +65,172 @@ CO_OP_TRANSLATOR_METADATA:
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-סוג הקובץ הנתמך הוא JSON Lines. הקבצים מועלים למחסן הנתונים ברירת המחדל ונגישים בפרויקט שלך.
+Jenis fail yang disokong adalah JSON Lines. Fail dimuat naik ke stor data lalai dan disediakan dalam projek anda.
 
-## כוונון מדויק של Phi-3 עם Azure AI Foundry
+## Penalaan Halus Phi-3 dengan Azure AI Foundry
 
-Azure AI Foundry מאפשרת להתאים מודלים גדולים של שפה למאגרי הנתונים האישיים שלך באמצעות תהליך הנקרא כוונון מדויק. הכוונון המדויק מעניק ערך משמעותי על ידי התאמה אישית ואופטימיזציה למשימות ויישומים ספציפיים. התהליך משפר ביצועים, חוסך עלויות, מקטין השהייה ומייצר פלט מותאם.
+Azure AI Foundry membolehkan anda menyesuaikan model bahasa besar kepada dataset peribadi anda melalui proses yang dikenali sebagai penalaan halus. Penalaan halus memberikan nilai yang besar dengan membolehkan penyesuaian dan pengoptimuman untuk tugasan dan aplikasi tertentu. Ia membawa kepada prestasi yang lebih baik, kecekapan kos, pengurangan kelewatan, dan output yang disesuaikan.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.ms.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.ms.png)
 
-### יצירת פרויקט חדש
+### Cipta Projek Baru
 
-1. התחבר ל-[Azure AI Foundry](https://ai.azure.com).
+1. Log masuk ke [Azure AI Foundry](https://ai.azure.com).
 
-1. בחר **+New project** כדי ליצור פרויקט חדש ב-Azure AI Foundry.
+1. Pilih **+New project** untuk mencipta projek baru dalam Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.ms.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ms.png)
 
-1. בצע את המשימות הבאות:
+1. Lakukan tugasan berikut:
 
-    - שם **Hub** של הפרויקט. חייב להיות ערך ייחודי.
-    - בחר את ה-**Hub** לשימוש (צור חדש אם צריך).
+    - Nama **Hub** projek. Ia mesti nilai unik.
+    - Pilih **Hub** yang ingin digunakan (cipta baru jika perlu).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.ms.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ms.png)
 
-1. בצע את המשימות הבאות ליצירת Hub חדש:
+1. Lakukan tugasan berikut untuk mencipta hab baru:
 
-    - הזן **Hub name**. חייב להיות ייחודי.
-    - בחר את **Subscription** של Azure שלך.
-    - בחר את **Resource group** לשימוש (צור חדש במידת הצורך).
-    - בחר את **Location** הרצוי.
-    - בחר את **Connect Azure AI Services** לשימוש (צור חדש אם צריך).
-    - בחר ב-**Connect Azure AI Search** את האפשרות **Skip connecting**.
+    - Masukkan **Nama Hub**. Ia mesti nilai unik.
+    - Pilih **Langganan** Azure anda.
+    - Pilih **Kumpulan sumber** yang ingin digunakan (cipta baru jika perlu).
+    - Pilih **Lokasi** yang anda ingin gunakan.
+    - Pilih **Sambungkan Perkhidmatan Azure AI** yang ingin digunakan (cipta baru jika perlu).
+    - Pilih **Sambungkan Azure AI Search** untuk **Langkau sambungan**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.ms.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.ms.png)
 
-1. לחץ על **Next**.
-1. לחץ על **Create a project**.
+1. Pilih **Next**.
+1. Pilih **Create a project**.
 
-### הכנת נתונים
+### Persediaan Data
 
-לפני הכוונון, אסוף או צור מערך נתונים הרלוונטי למשימה שלך, כמו הוראות שיחה, זוגות שאלות ותשובות או כל טקסט רלוונטי אחר. נקה ועבד את הנתונים על ידי הסרת רעשים, טיפול בערכים חסרים, וטוקניזציה של הטקסט.
+Sebelum menala halus, kumpul atau cipta dataset yang berkaitan dengan tugasan anda, seperti arahan perbualan, pasangan soalan-jawapan, atau mana-mana data teks yang relevan. Bersihkan dan pra-proses data ini dengan membuang gangguan, mengendalikan nilai hilang, dan menokennya.
 
-### כוונון מדויק של מודלי Phi-3 ב-Azure AI Foundry
-
-> [!NOTE]
-> כוונון מדויק של מודלי Phi-3 נתמך כרגע בפרויקטים הממוקמים ב-East US 2.
-
-1. בחר **Model catalog** מהכרטיסייה בצד שמאל.
-
-1. הקלד *phi-3* בשורת החיפוש ובחר את מודל phi-3 שברצונך להשתמש בו.
-
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.ms.png)
-
-1. בחר **Fine-tune**.
-
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.ms.png)
-
-1. הזן את **שם המודל המכוונן**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.ms.png)
-
-1. לחץ על **Next**.
-
-1. בצע את המשימות הבאות:
-
-    - בחר את **סוג המשימה** ל-**Chat completion**.
-    - בחר את **נתוני האימון** שברצונך להשתמש בהם. ניתן להעלות אותם דרך Azure AI Foundry או מהסביבה המקומית שלך.
-
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.ms.png)
-
-1. לחץ על **Next**.
-
-1. העלה את **נתוני האימות** שברצונך להשתמש בהם, או בחר באפשרות **Automatic split of training data**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.ms.png)
-
-1. לחץ על **Next**.
-
-1. בצע את המשימות הבאות:
-
-    - בחר את **מכפיל גודל האצווה** הרצוי.
-    - בחר את **קצב הלמידה** הרצוי.
-    - בחר את מספר ה-**Epochs** הרצוי.
-
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.ms.png)
-
-1. לחץ על **Submit** כדי להתחיל את תהליך הכוונון המדויק.
-
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.ms.png)
-
-1. לאחר שהמודל שלך מכוונן, הסטטוס יוצג כ-**Completed**, כפי שמוצג בתמונה למטה. כעת תוכל לפרוס את המודל ולהשתמש בו באפליקציה שלך, במגרש המשחקים או ב-Prompt Flow. למידע נוסף, ראה [כיצד לפרוס משפחת מודלי השפה הקטנים Phi-3 עם Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
-
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.ms.png)
+### Menala Halus model Phi-3 dalam Azure AI Foundry
 
 > [!NOTE]
-> למידע מפורט יותר על כוונון מדויק של Phi-3, בקר ב-[Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Penalaan halus model Phi-3 kini disokong dalam projek yang terletak di East US 2.
 
-## ניקוי מודלים מכווננים
+1. Pilih **Model catalog** dari tab sebelah kiri.
 
-ניתן למחוק מודל מכוונן מרשימת מודלי הכוונון ב-[Azure AI Foundry](https://ai.azure.com) או מדף פרטי המודל. בחר את המודל המכוין למחיקה בדף הכוונון, ואז לחץ על כפתור Delete כדי למחוק את המודל.
+1. Taip *phi-3* dalam **bar carian** dan pilih model phi-3 yang anda ingin gunakan.
 
-> [!NOTE]
-> לא ניתן למחוק מודל מותאם אישית אם יש לו פריסה פעילה. יש למחוק קודם את הפריסה לפני מחיקת המודל.
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.ms.png)
 
-## עלויות ומגבלות
+1. Pilih **Fine-tune**.
 
-### שיקולי עלות ומגבלות עבור מודלי Phi-3 מכווננים כשירות
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.ms.png)
 
-מודלי Phi המכווננים כשירות מוצעים על ידי מיקרוסופט ומשולבים ב-Azure AI Foundry לשימוש. ניתן למצוא את התמחור בעת [פריסה](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) או כוונון המודלים תחת לשונית Pricing and terms באשף הפריסה.
+1. Masukkan **Nama model yang ditala halus**.
 
-## סינון תוכן
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.ms.png)
 
-מודלים המופעלים כשירות בתשלום לפי שימוש מוגנים על ידי Azure AI Content Safety. בעת פריסה לנקודות קצה בזמן אמת, ניתן לבחור לבטל אפשרות זו. עם Azure AI Content Safety מופעל, הן הפרומפט והן התגובה עוברים דרך מערך מודלי סיווג שמטרתם לזהות ולמנוע הפקת תוכן מזיק. מערכת סינון התוכן מזהה ופועלת נגד קטגוריות מסוימות של תוכן פוטנציאלית מזיק הן בפרומפטים והן בתגובות. למידע נוסף על [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+1. Pilih **Next**.
 
-**הגדרות כוונון מדויק**
+1. Lakukan tugasan berikut:
 
-היפרפרמטרים: הגדר היפרפרמטרים כמו קצב למידה, גודל אצווה ומספר אפוקים.
+    - Pilih **jenis tugasan** kepada **Chat completion**.
+    - Pilih **Data latihan** yang anda ingin gunakan. Anda boleh memuat naiknya melalui data Azure AI Foundry atau dari persekitaran tempatan anda.
 
-**פונקציית אובדן**
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.ms.png)
 
-בחר פונקציית אובדן מתאימה למשימה שלך (למשל, cross-entropy).
+1. Pilih **Next**.
 
-**אופטימייזר**
+1. Muat naik **Data pengesahan** yang anda ingin gunakan, atau anda boleh pilih **Pembahagian automatik data latihan**.
 
-בחר אופטימייזר (למשל, Adam) לעדכוני גרדיאנט במהלך האימון.
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.ms.png)
 
-**תהליך הכוונון המדויק**
+1. Pilih **Next**.
 
-- טעינת מודל מאומן מראש: טען את נקודת הבדיקה של Phi-3 Mini.
-- הוספת שכבות מותאמות: הוסף שכבות ספציפיות למשימה (למשל, ראש סיווג להוראות שיחה).
+1. Lakukan tugasan berikut:
 
-**אימון המודל**
+    - Pilih **Pendaraban saiz kumpulan** yang anda ingin gunakan.
+    - Pilih **Kadar pembelajaran** yang anda ingin gunakan.
+    - Pilih **Epochs** yang anda ingin gunakan.
 
-כוונן את המודל באמצעות מערך הנתונים שהכנת. עקוב אחר התקדמות האימון והתאם היפרפרמטרים לפי הצורך.
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.ms.png)
 
-**הערכה ואימות**
+1. Pilih **Submit** untuk memulakan proses penalaan halus.
 
-מערך אימות: חלק את הנתונים למערכי אימון ואימות.
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.ms.png)
 
-**הערכת ביצועים**
+1. Setelah model anda ditala halus, status akan dipaparkan sebagai **Completed**, seperti dalam imej di bawah. Kini anda boleh melaksanakan model dan menggunakannya dalam aplikasi anda sendiri, di playground, atau dalam prompt flow. Untuk maklumat lanjut, lihat [Cara melaksanakan keluarga model bahasa kecil Phi-3 dengan Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-השתמש במדדים כמו דיוק, F1-score או perplexity כדי להעריך את ביצועי המודל.
-
-## שמירת המודל המכוין
-
-**נקודת בדיקה**
-
-שמור את נקודת הבדיקה של המודל המכוין לשימוש עתידי.
-
-## פריסה
-
-- פרוס כשירות רשת: פרוס את המודל המכוין כשירות רשת ב-Azure AI Foundry.
-- בדוק את נקודת הקצה: שלח שאילתות בדיקה לנקודת הקצה כדי לוודא את תפקודה.
-
-## חזרה ושיפור
-
-חזור על התהליך: אם הביצועים אינם מספקים, חזור על התהליך על ידי התאמת היפרפרמטרים, הוספת נתונים נוספים או כוונון לאפוקים נוספים.
-
-## ניטור ושיפור
-
-עקוב באופן רציף אחר התנהגות המודל ושפר לפי הצורך.
-
-## התאמה והרחבה
-
-משימות מותאמות: ניתן לכוונן את Phi-3 Mini למשימות שונות מעבר להוראות שיחה. גלה שימושים נוספים!
-ניסוי: נסה ארכיטקטורות שונות, שילובי שכבות וטכניקות לשיפור הביצועים.
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.ms.png)
 
 > [!NOTE]
-> הכוונון המדויק הוא תהליך איטרטיבי. נסה, למד, והתאם את המודל שלך כדי להשיג את התוצאות הטובות ביותר למשימה הספציפית שלך!
+> Untuk maklumat lebih terperinci mengenai penalaan halus Phi-3, sila lawati [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+
+## Membersihkan model yang telah ditala halus
+
+Anda boleh memadam model yang telah ditala halus dari senarai model penalaan halus dalam [Azure AI Foundry](https://ai.azure.com) atau dari halaman butiran model. Pilih model yang telah ditala halus untuk dipadam dari halaman Penalaan Halus, kemudian pilih butang Padam untuk memadam model tersebut.
+
+> [!NOTE]
+> Anda tidak boleh memadam model tersuai jika ia mempunyai pelaksanaan sedia ada. Anda mesti memadam pelaksanaan model terlebih dahulu sebelum boleh memadam model tersuai anda.
+
+## Kos dan kuota
+
+### Pertimbangan kos dan kuota untuk model Phi-3 yang ditala halus sebagai perkhidmatan
+
+Model Phi yang ditala halus sebagai perkhidmatan ditawarkan oleh Microsoft dan diintegrasikan dengan Azure AI Foundry untuk kegunaan. Anda boleh mendapatkan harga semasa [melaksanakan](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) atau menala halus model di bawah tab Harga dan terma pada wizard pelaksanaan.
+
+## Penapisan kandungan
+
+Model yang dilaksanakan sebagai perkhidmatan dengan bayar ikut guna dilindungi oleh Azure AI Content Safety. Apabila dilaksanakan ke titik akhir masa nyata, anda boleh memilih untuk tidak menggunakan keupayaan ini. Dengan keselamatan kandungan Azure AI diaktifkan, kedua-dua prompt dan penyempurnaan melalui satu set model klasifikasi yang bertujuan mengesan dan menghalang output kandungan berbahaya. Sistem penapisan kandungan mengesan dan mengambil tindakan terhadap kategori kandungan berpotensi berbahaya dalam kedua-dua prompt input dan penyempurnaan output. Ketahui lebih lanjut tentang [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+
+**Konfigurasi Penalaan Halus**
+
+Hyperparameter: Tetapkan hyperparameter seperti kadar pembelajaran, saiz kumpulan, dan bilangan epoch latihan.
+
+**Fungsi Kerugian**
+
+Pilih fungsi kerugian yang sesuai untuk tugasan anda (contoh: cross-entropy).
+
+**Pengoptimum**
+
+Pilih pengoptimum (contoh: Adam) untuk kemas kini kecerunan semasa latihan.
+
+**Proses Penalaan Halus**
+
+- Muat Model Pra-Latih: Muatkan checkpoint Phi-3 Mini.
+- Tambah Lapisan Tersuai: Tambah lapisan khusus tugasan (contoh: kepala klasifikasi untuk arahan perbualan).
+
+**Latih Model**
+Tala halus model menggunakan dataset yang telah disediakan. Pantau kemajuan latihan dan laraskan hyperparameter jika perlu.
+
+**Penilaian dan Pengesahan**
+
+Set Pengesahan: Bahagikan data anda kepada set latihan dan pengesahan.
+
+**Nilai Prestasi**
+
+Gunakan metrik seperti ketepatan, skor F1, atau perplexity untuk menilai prestasi model.
+
+## Simpan Model yang Ditala Halus
+
+**Checkpoint**
+Simpan checkpoint model yang telah ditala halus untuk kegunaan masa depan.
+
+## Pelaksanaan
+
+- Laksanakan sebagai Perkhidmatan Web: Laksanakan model yang telah ditala halus sebagai perkhidmatan web dalam Azure AI Foundry.
+- Uji Titik Akhir: Hantar pertanyaan ujian ke titik akhir yang dilaksanakan untuk mengesahkan fungsinya.
+
+## Ulang dan Perbaiki
+
+Ulang: Jika prestasi tidak memuaskan, ulang dengan melaraskan hyperparameter, menambah lebih banyak data, atau menala halus untuk epoch tambahan.
+
+## Pantau dan Perhalusi
+
+Pantau tingkah laku model secara berterusan dan perhalusi jika perlu.
+
+## Sesuaikan dan Kembangkan
+
+Tugasan Tersuai: Phi-3 Mini boleh ditala halus untuk pelbagai tugasan selain arahan perbualan. Terokai kegunaan lain!
+Eksperimen: Cuba seni bina, gabungan lapisan, dan teknik berbeza untuk meningkatkan prestasi.
+
+> [!NOTE]
+> Penalaan halus adalah proses berulang. Eksperimen, belajar, dan sesuaikan model anda untuk mencapai hasil terbaik bagi tugasan khusus anda!
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

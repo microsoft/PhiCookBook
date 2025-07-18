@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:02:16+00:00",
+  "translation_date": "2025-07-17T08:46:38+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "sv"
 }
@@ -33,7 +33,7 @@ MAX_JOBS=32 pip install flash-attn==2.4.2 --no-build-isolation
 pip install bitsandbytes==0.43.1
 ```
 
-## Snabbstart
+## Kom igång snabbt
 
 Vi tillhandahåller två exempel på finjusteringsskript, ett för DocVQA och ett för klassificering av hatfyllda memes.
 
@@ -44,7 +44,7 @@ Minimal hårdvara testad på 4x RTX8000 (48GB RAM per GPU)
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision stöder nu officiellt flera bildinmatningar. Här är ett exempel på finjustering av NLVR2
+Phi-3.5-vision stödjer nu officiellt multi-bildsindata. Här är ett exempel på finjustering av NLVR2
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -53,12 +53,12 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ## Användarguide
 
 Beroende på hårdvaran kan användare välja olika finjusteringsstrategier. Vi stödjer
-fullständig finjustering (med Deepspeed Zero-2) med valfritt frysta visuella parametrar, samt LoRA (inklusive 4bit QLoRA).
+fullständig finjustering (med Deepspeed Zero-2) med valfritt frysta vision-parametrar, samt LoRA (inklusive 4bit QLoRA).
 Generellt rekommenderar vi att använda fullständig finjustering med flash attention och bf16 när det är möjligt.
 
 ### guide för att konvertera din egen dataset till det kräva formatet
 
-Vi använder en minimal videoklassificeringsdataset (en delmängd av UCF-101) som ett exempel från början till slut för att visa hur du konverterar din egen dataset till det kräva formatet och finjusterar Phi-3.5-vision på den.
+Vi använder en minimal videoklassificeringsdataset (en delmängd av UCF-101) som ett end-to-end-exempel för att visa hur du konverterar din egen dataset till det kräva formatet och finjusterar Phi-3.5-vision på den.
 
 ```bash
 # convert data
@@ -68,7 +68,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-De konverterade data kommer att se ut så här:
+Den konverterade datan kommer att se ut så här:
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -121,7 +121,7 @@ För `jsonl`-annoteringen ska varje rad vara en ordbok som:
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Observera att `conversations` är en lista, vilket gör att flerstegs konversation kan stödjas om sådan data finns tillgänglig.
+Observera att `conversations` är en lista, vilket innebär att flerstegs-konversationer kan stödjas om sådan data finns tillgänglig.
 
 ## Begära Azure GPU-kvot
 
@@ -131,20 +131,20 @@ Ett Azure-konto med rollen Contributor (eller en annan roll som inkluderar Contr
 
 Om du inte har ett Azure-konto, skapa ett [gratis konto innan du börjar](https://azure.microsoft.com).
 
-### Begär en kvothöjning
+### Begär en kvötsökning
 
-Du kan skicka en begäran om kvothöjning direkt från Mina kvoter. Följ stegen nedan för att begära en höjning av en kvot. För detta exempel kan du välja vilken justerbar kvot som helst i din prenumeration.
+Du kan skicka en begäran om kvotökning direkt från Mina kvoter. Följ stegen nedan för att begära en ökning av en kvot. För detta exempel kan du välja vilken justerbar kvot som helst i din prenumeration.
 
 Logga in på [Azure-portalen](https://portal.azure.com).
 
 Skriv "quotas" i sökrutan och välj sedan Quotas.
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-På Översiktssidan väljer du en leverantör, till exempel Compute eller AML.
+På översiktssidan väljer du en leverantör, som Compute eller AML.
 
-**Note** För alla leverantörer utom Compute kommer du att se en kolumn för Request increase istället för kolumnen Adjustable som beskrivs nedan. Där kan du begära en höjning för en specifik kvot eller skapa en supportförfrågan för höjningen.
+**Note** För alla leverantörer utom Compute ser du en kolumn Request increase istället för kolumnen Adjustable som beskrivs nedan. Där kan du begära en ökning för en specifik kvot eller skapa en supportförfrågan för ökningen.
 
-På sidan Mina kvoter, under Kvotnamn, välj den kvot du vill höja. Kontrollera att kolumnen Adjustable visar Ja för denna kvot.
+På sidan Mina kvoter, under Kvotnamn, välj den kvot du vill öka. Kontrollera att kolumnen Adjustable visar Yes för denna kvot.
 
 Nära toppen av sidan, välj New Quota Request och sedan Enter a new limit.
 
@@ -152,11 +152,11 @@ Nära toppen av sidan, välj New Quota Request och sedan Enter a new limit.
 
 I rutan New Quota Request anger du ett numeriskt värde för din nya kvotgräns och väljer sedan Submit.
 
-Din begäran kommer att granskas och du får besked om den kan godkännas. Detta brukar ske inom några minuter.
+Din begäran kommer att granskas och du får besked om den kan godkännas. Detta sker vanligtvis inom några minuter.
 
-Om din begäran inte godkänns, ser du en länk för att skapa en supportförfrågan. När du använder denna länk kommer en supporttekniker att hjälpa dig med din höjningsbegäran.
+Om din begäran inte godkänns ser du en länk för att skapa en supportförfrågan. När du använder denna länk kommer en supportingenjör att hjälpa dig med din begäran om ökning.
 
-## Azure Compute GPU-maskin SKU-förslag
+## Förslag på Azure Compute GPU-maskin SKU
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -166,7 +166,7 @@ Om din begäran inte godkänns, ser du en länk för att skapa en supportförfr�
 
 Här är några exempel:
 
-### Om du har A100 eller H100 GPUs
+### Om du har A100 eller H100 GPU:er
 
 Fullständig finjustering ger vanligtvis bäst prestanda. Du kan använda följande kommando för att finjustera Phi-3-V på klassificering av hatfyllda memes.
 
@@ -180,11 +180,11 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --bf16
 ```
 
-### Om du har Standard_ND40rs_v2 8x V100-32GB GPUs
+### Om du har Standard_ND40rs_v2 8x V100-32GB GPU:er
 
 Det är fortfarande möjligt att fullständigt finjustera Phi-3-V på klassificering av hatfyllda memes. Förvänta dig dock
-mycket lägre genomströmning jämfört med A100 eller H100 GPUs på grund av avsaknaden av stöd för flash attention.
-Noggrannheten kan också påverkas på grund av avsaknaden av bf16-stöd (fp16 mixed-precision träning används istället).
+mycket lägre genomströmning jämfört med A100 eller H100 GPU:er på grund av brist på stöd för flash attention.
+Noggrannheten kan också påverkas på grund av brist på bf16-stöd (fp16 mixed-precision träning används istället).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -194,8 +194,8 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### Om du inte har tillgång till datacenter-GPUs
-Lora kan vara ditt enda val. Du kan använda följande kommando för att finjustera Phi-3-V på klassificering av hatfyllda memes.
+### Om du inte har tillgång till datacenter-GPU:er
+LoRA kan vara ditt enda alternativ. Du kan använda följande kommando för att finjustera Phi-3-V på klassificering av hatfyllda memes.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -205,7 +205,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-För Turing+ GPU stöds QLoRA
+För Turing+ GPU:er stöds QLoRA
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -230,14 +230,14 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Träningsmetod | Fryst visuellt modell | datatyp | LoRA-rank | LoRA alpha | batchstorlek | inlärningshastighet | epoker | Noggrannhet
+Träningsmetod | Fryst visionmodell | datatyp | LoRA-rank | LoRA-alpha | batchstorlek | inlärningshastighet | epoker | Noggrannhet
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
 full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
-LoRA resultat kommer snart |  |  |  |  |  |  |  |  |
+LoRA-resultat kommer snart |  |  |  |  |  |  |  |  |
 
 ### NOTE
-Nedanstående DocVQA och Hateful memes resultat baseras på tidigare version (Phi-3-vision).
+Nedanstående DocVQA och Hateful memes-resultat baseras på föregående version (Phi-3-vision).
 De nya resultaten med Phi-3.5-vision kommer att uppdateras snart.
 
 ### DocVQA (NOTE: Phi-3-vision)
@@ -254,7 +254,7 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Träningsmetod | datatyp | LoRA-rank | LoRA alpha | batchstorlek | inlärningshastighet | epoker | ANLS
+Träningsmetod | datatyp | LoRA-rank | LoRA-alpha | batchstorlek | inlärningshastighet | epoker | ANLS
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
 full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
@@ -278,7 +278,7 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Träningsmetod | datatyp | LoRA-rank | LoRA alpha | batchstorlek | inlärningshastighet | epoker | Noggrannhet
+Träningsmetod | datatyp | LoRA-rank | LoRA-alpha | batchstorlek | inlärningshastighet | epoker | Noggrannhet
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
 full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
@@ -291,14 +291,14 @@ QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 ## Hastighetsbenchmarking (NOTE: Phi-3-vision)
 
-Nya benchmarkresultat med Phi-3.5-vision kommer snart att uppdateras.
+Nya benchmarkresultat med Phi-3.5-vision kommer att uppdateras snart.
 
-Hastighetsbenchmarking utförs på DocVQA-datasetet. Den genomsnittliga sekvenslängden i denna dataset
+Hastighetsbenchmarking utförs på DocVQA-datasetet. Den genomsnittliga sekvenslängden för denna dataset
 är 2443.23 tokens (med `num_crops=16` för bildmodellen).
 
 ### 8x A100-80GB (Ampere)
 
-Träningsmetod | \# noder | GPUs | flash attention | Effektiv batchstorlek | Genomströmning (bild/s) | Acceleration | Max GPU-minne (GB)
+Träningsmetod | \# noder | GPU:er | flash attention | Effektiv batchstorlek | Genomströmning (bild/s) | Acceleration | Max GPU-minne (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
 full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
@@ -313,7 +313,7 @@ QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
 ### 8x V100-32GB (Volta)
 
-Träningsmetod | \# noder | GPUs | flash attention | Effektiv batchstorlek | Genomströmning (bild/s) | Acceleration | Max GPU-minne (GB)
+Träningsmetod | \# noder | GPU:er | flash attention | Effektiv batchstorlek | Genomströmning (bild/s) | Acceleration | Max GPU-minne (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
 full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
@@ -323,8 +323,8 @@ LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
 ## Kända problem
 
-- Kan inte köra flash attention med fp16 (bf16 rekommenderas alltid när det finns tillgängligt, och alla GPUs som stödjer flash attention stöder också bf16).
-- Stödjer ännu inte att spara mellanliggande checkpoints och återuppta träning.
+- Kan inte köra flash attention med fp16 (bf16 rekommenderas alltid när det finns tillgängligt, och alla GPU:er som stödjer flash attention stödjer också bf16).
+- Stöder ännu inte att spara mellanliggande checkpoints och återuppta träning.
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen var medveten om att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

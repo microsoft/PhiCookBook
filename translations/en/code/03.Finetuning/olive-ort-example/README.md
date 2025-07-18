@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-07-09T20:15:00+00:00",
+  "translation_date": "2025-07-16T16:00:39+00:00",
   "source_file": "code/03.Finetuning/olive-ort-example/README.md",
   "language_code": "en"
 }
@@ -63,7 +63,7 @@ To run the app:
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-The output will be a single-word classification of the phrase (Sad/Joy/Fear/Surprise).
+The response will be a single-word classification of the phrase (Sad/Joy/Fear/Surprise).
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

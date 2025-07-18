@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:06:18+00:00",
+  "translation_date": "2025-07-17T03:26:26+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "th"
 }
 -->
 # **สร้าง Visual Studio Code Chat Copilot Agent ของคุณเองด้วย Phi-3.5 จาก GitHub Models**
 
-คุณใช้ Visual Studio Code Copilot อยู่หรือไม่? โดยเฉพาะใน Chat คุณสามารถใช้เอเจนต์ต่าง ๆ เพื่อเพิ่มประสิทธิภาพในการสร้าง เขียน และดูแลโปรเจกต์ใน Visual Studio Code Visual Studio Code มี API ที่ช่วยให้บริษัทและบุคคลสามารถสร้างเอเจนต์ต่าง ๆ ตามธุรกิจของตน เพื่อขยายความสามารถในสาขาที่เป็นกรรมสิทธิ์ต่าง ๆ บทความนี้จะเน้นที่ **Phi-3.5-mini-instruct (128k)** และ **Phi-3.5-vision-instruct (128k)** ของ GitHub Models เพื่อสร้าง Visual Studio Code Agent ของคุณเอง
+คุณกำลังใช้ Visual Studio Code Copilot อยู่หรือไม่? โดยเฉพาะในส่วนของ Chat คุณสามารถใช้เอเจนต์ต่าง ๆ เพื่อเพิ่มประสิทธิภาพในการสร้าง เขียน และดูแลโครงการใน Visual Studio Code ได้ Visual Studio Code มี API ที่ช่วยให้บริษัทและบุคคลสามารถสร้างเอเจนต์ต่าง ๆ ตามธุรกิจของตนเพื่อขยายขีดความสามารถในสาขาเฉพาะทางต่าง ๆ ในบทความนี้ เราจะเน้นที่ **Phi-3.5-mini-instruct (128k)** และ **Phi-3.5-vision-instruct (128k)** จาก GitHub Models เพื่อสร้าง Visual Studio Code Agent ของคุณเอง
 
 ## **เกี่ยวกับ Phi-3.5 บน GitHub Models**
 
-เรารู้ว่า Phi-3/3.5-mini-instruct ในตระกูล Phi-3/3.5 มีความสามารถในการเข้าใจและสร้างโค้ดที่แข็งแกร่ง และมีข้อได้เปรียบเหนือ Gemma-2-9b และ Mistral-Nemo-12B-instruct-2407
+เราทราบว่า Phi-3/3.5-mini-instruct ในตระกูล Phi-3/3.5 มีความสามารถในการเข้าใจและสร้างโค้ดที่แข็งแกร่ง และมีข้อได้เปรียบเหนือ Gemma-2-9b และ Mistral-Nemo-12B-instruct-2407
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.th.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.th.png)
 
-GitHub Models เวอร์ชันล่าสุดได้เปิดให้เข้าถึงโมเดล Phi-3.5-mini-instruct (128k) และ Phi-3.5-vision-instruct (128k) แล้ว นักพัฒนาสามารถเข้าถึงผ่าน OpenAI SDK, Azure AI Inference SDK และ REST API
+GitHub Models รุ่นล่าสุดได้เปิดให้เข้าถึงโมเดล Phi-3.5-mini-instruct (128k) และ Phi-3.5-vision-instruct (128k) แล้ว นักพัฒนาสามารถเข้าถึงผ่าน OpenAI SDK, Azure AI Inference SDK และ REST API
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.th.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.th.png)
 
-***Note: *** แนะนำให้ใช้ Azure AI Inference SDK ที่นี่ เพราะช่วยให้สลับใช้งานกับ Azure Model Catalog ในสภาพแวดล้อมการผลิตได้ดียิ่งขึ้น
+***Note: *** แนะนำให้ใช้ Azure AI Inference SDK ที่นี่ เพราะสามารถสลับกับ Azure Model Catalog ในสภาพแวดล้อมการผลิตได้ดีกว่า
 
-ต่อไปนี้คือผลลัพธ์ของ **Phi-3.5-mini-instruct (128k)** และ **Phi-3.5-vision-instruct (128k)** ในสถานการณ์การสร้างโค้ดหลังจากเชื่อมต่อกับ GitHub Models และเตรียมตัวสำหรับตัวอย่างถัดไป
+ต่อไปนี้เป็นผลลัพธ์ของ **Phi-3.5-mini-instruct (128k)** และ **Phi-3.5-vision-instruct (128k)** ในสถานการณ์การสร้างโค้ดหลังจากเชื่อมต่อกับ GitHub Models และเตรียมพร้อมสำหรับตัวอย่างต่อไปนี้
 
 **Demo: GitHub Models Phi-3.5-mini-instruct (128k) สร้างโค้ดจาก Prompt** ([คลิกที่นี่](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
@@ -32,33 +32,33 @@ GitHub Models เวอร์ชันล่าสุดได้เปิดใ
 
 ## **เกี่ยวกับ GitHub Copilot Chat Agent**
 
-GitHub Copilot Chat Agent สามารถทำงานต่าง ๆ ในสถานการณ์โปรเจกต์ที่แตกต่างกันโดยอิงจากโค้ด ระบบมีเอเจนต์สี่ตัวคือ workspace, github, terminal, vscode
+GitHub Copilot Chat Agent สามารถทำงานต่าง ๆ ได้ในสถานการณ์โครงการที่แตกต่างกันตามโค้ด ระบบมีเอเจนต์สี่ตัว: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.th.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.th.png)
 
-โดยการเพิ่มชื่อเอเจนต์พร้อม ‘@’ คุณสามารถทำงานที่เกี่ยวข้องได้อย่างรวดเร็ว สำหรับองค์กร หากเพิ่มเนื้อหาที่เกี่ยวข้องกับธุรกิจ เช่น ความต้องการ การเขียนโค้ด ข้อกำหนดการทดสอบ และการปล่อยงาน คุณจะมีฟังก์ชันส่วนตัวสำหรับองค์กรที่ทรงพลังขึ้นบนพื้นฐาน GitHub Copilot
+โดยการเพิ่มชื่อเอเจนต์พร้อม ‘@’ คุณสามารถทำงานที่เกี่ยวข้องได้อย่างรวดเร็ว สำหรับองค์กร หากคุณเพิ่มเนื้อหาที่เกี่ยวข้องกับธุรกิจของคุณ เช่น ความต้องการ การเขียนโค้ด ข้อกำหนดการทดสอบ และการปล่อยงาน คุณจะมีฟังก์ชันส่วนตัวสำหรับองค์กรที่ทรงพลังขึ้นบนพื้นฐานของ GitHub Copilot
 
-Visual Studio Code Chat Agent ได้ปล่อย API อย่างเป็นทางการแล้ว ช่วยให้องค์กรหรือผู้พัฒนาขององค์กรสามารถพัฒนาเอเจนต์ตามระบบนิเวศธุรกิจซอฟต์แวร์ต่าง ๆ ได้ โดยอิงจากวิธีการพัฒนา Visual Studio Code Extension Development คุณสามารถเข้าถึงอินเทอร์เฟซของ Visual Studio Code Chat Agent API ได้อย่างง่ายดาย เราสามารถพัฒนาตามกระบวนการนี้
+Visual Studio Code Chat Agent ได้ปล่อย API อย่างเป็นทางการแล้ว ทำให้องค์กรหรือผู้พัฒนาขององค์กรสามารถพัฒนาเอเจนต์ตามระบบนิเวศธุรกิจซอฟต์แวร์ที่แตกต่างกันได้ โดยอิงจากวิธีการพัฒนา Visual Studio Code Extension Development คุณสามารถเข้าถึงอินเทอร์เฟซของ Visual Studio Code Chat Agent API ได้อย่างง่ายดาย เราสามารถพัฒนาตามกระบวนการนี้
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.th.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.th.png)
 
-สถานการณ์การพัฒนานี้รองรับการเข้าถึง API โมเดลของบุคคลที่สาม (เช่น GitHub Models, Azure Model Catalog และบริการที่สร้างเองบนโมเดลโอเพนซอร์ส) และยังสามารถใช้โมเดล gpt-35-turbo, gpt-4 และ gpt-4o ที่ GitHub Copilot ให้บริการได้ด้วย
+สถานการณ์การพัฒนาสามารถรองรับการเข้าถึง API ของโมเดลจากบุคคลที่สาม (เช่น GitHub Models, Azure Model Catalog และบริการที่สร้างขึ้นเองบนพื้นฐานโมเดลโอเพนซอร์ส) และยังสามารถใช้โมเดล gpt-35-turbo, gpt-4 และ gpt-4o ที่ GitHub Copilot ให้บริการได้ด้วย
 
 ## **เพิ่ม Agent @phicoding บนพื้นฐาน Phi-3.5**
 
 เราพยายามผสานความสามารถในการเขียนโปรแกรมของ Phi-3.5 เพื่อทำงานเขียนโค้ด สร้างโค้ดจากภาพ และงานอื่น ๆ ให้เสร็จสมบูรณ์ สร้าง Agent ที่สร้างขึ้นรอบ ๆ Phi-3.5 - @PHI โดยมีฟังก์ชันดังนี้
 
-1. สร้างการแนะนำตัวเองโดยอิงจาก GPT-4o ที่ GitHub Copilot ให้บริการ ผ่านคำสั่ง **@phicoding /help**
+1. สร้างการแนะนำตัวเองโดยใช้ GPT-4o ที่ GitHub Copilot ให้บริการ ผ่านคำสั่ง **@phicoding /help**
 
-2. สร้างโค้ดสำหรับภาษาโปรแกรมต่าง ๆ โดยอิงจาก **Phi-3.5-mini-instruct (128k)** ผ่านคำสั่ง **@phicoding /gen**
+2. สร้างโค้ดสำหรับภาษาโปรแกรมต่าง ๆ โดยใช้ **Phi-3.5-mini-instruct (128k)** ผ่านคำสั่ง **@phicoding /gen**
 
-3. สร้างโค้ดโดยอิงจาก **Phi-3.5-vision-instruct (128k)** และเติมเต็มภาพผ่านคำสั่ง **@phicoding /image**
+3. สร้างโค้ดจากภาพโดยใช้ **Phi-3.5-vision-instruct (128k)** และการเติมภาพผ่านคำสั่ง **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.th.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.th.png)
 
 ## **ขั้นตอนที่เกี่ยวข้อง**
 
-1. ติดตั้งการสนับสนุนการพัฒนา Visual Studio Code Extension โดยใช้ npm
+1. ติดตั้ง Visual Studio Code Extension development support โดยใช้ npm
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. เปิดโปรเจกต์ที่สร้างขึ้นและแก้ไข package.json ที่นี่มีคำแนะนำและการตั้งค่าที่เกี่ยวข้อง รวมถึงการตั้งค่า GitHub Models โปรดทราบว่าคุณต้องเพิ่มโทเค็น GitHub Models ของคุณที่นี่
+3. เปิดโปรเจกต์ที่สร้างขึ้นและแก้ไข package.json นี่คือคำแนะนำและการตั้งค่าที่เกี่ยวข้อง รวมถึงการตั้งค่า GitHub Models โปรดทราบว่าคุณต้องเพิ่มโทเค็น GitHub Models ของคุณที่นี่
 
 ```json
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.th.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.th.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.th.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.th.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.th.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.th.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.th.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.th.png)
 
 คุณสามารถดาวน์โหลดโค้ดตัวอย่างได้ที่ :[คลิก](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
@@ -389,4 +389,4 @@ export function deactivate() {}
 3. เรียนรู้เกี่ยวกับ Visual Studio Code Coilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้อง โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางควรถูกพิจารณาเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ แนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญด้านภาษามนุษย์ เราจะไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

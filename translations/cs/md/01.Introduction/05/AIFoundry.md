@@ -2,54 +2,54 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-05-09T15:03:07+00:00",
+  "translation_date": "2025-07-16T22:33:25+00:00",
   "source_file": "md/01.Introduction/05/AIFoundry.md",
   "language_code": "cs"
 }
 -->
-# **Использование Azure AI Foundry для оценки**
+# **Použití Azure AI Foundry pro hodnocení**
 
-![aistudo](../../../../../translated_images/AIFoundry.61da8c74bccc0241ce9a4cb53a170912245871de9235043afcb796ccbc076fdc.cs.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.cs.png)
 
-Как оценить ваше приложение генеративного ИИ с помощью [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Независимо от того, оцениваете ли вы односторонние или многосторонние диалоги, Azure AI Foundry предоставляет инструменты для проверки производительности модели и её безопасности.
+Jak hodnotit vaši generativní AI aplikaci pomocí [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Ať už posuzujete jednorázové nebo vícekrokové konverzace, Azure AI Foundry nabízí nástroje pro hodnocení výkonu a bezpečnosti modelu.
 
-![aistudo](../../../../../translated_images/AIPortfolio.5aaa2b25e9157624a4542fe041d66a96a1c1ec6007e4e5aadd926c6ec8ce18b3.cs.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.cs.png)
 
-## Как оценивать генеративные AI-приложения с помощью Azure AI Foundry
-Для более подробной инструкции смотрите [документацию Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## Jak hodnotit generativní AI aplikace s Azure AI Foundry
+Podrobné instrukce najdete v [dokumentaci Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
-Вот шаги для начала работы:
+Zde jsou kroky, jak začít:
 
-## Оценка генеративных AI-моделей в Azure AI Foundry
+## Hodnocení generativních AI modelů v Azure AI Foundry
 
-**Требования**
+**Požadavky**
 
-- Тестовый набор данных в формате CSV или JSON.
-- Развернутая генеративная AI-модель (например, Phi-3, GPT 3.5, GPT 4 или модели Davinci).
-- Среда выполнения с вычислительным экземпляром для проведения оценки.
+- Testovací dataset ve formátu CSV nebo JSON.
+- Nasazený generativní AI model (například Phi-3, GPT 3.5, GPT 4 nebo modely Davinci).
+- Runtime s výpočetní instancí pro spuštění hodnocení.
 
-## Встроенные метрики оценки
+## Vestavěné metriky hodnocení
 
-Azure AI Foundry позволяет оценивать как односторонние, так и сложные многосторонние диалоги.  
-Для сценариев Retrieval Augmented Generation (RAG), где модель опирается на конкретные данные, можно использовать встроенные метрики для оценки производительности.  
-Также поддерживается оценка общих сценариев односторонних вопросов и ответов (без RAG).
+Azure AI Foundry umožňuje hodnotit jak jednorázové, tak složité vícekrokové konverzace.  
+Pro scénáře Retrieval Augmented Generation (RAG), kde je model založen na konkrétních datech, můžete výkon posoudit pomocí vestavěných metrik hodnocení.  
+Navíc můžete hodnotit obecné scénáře jednorázového zodpovídání otázek (non-RAG).
 
-## Создание оценки
+## Vytvoření hodnocení
 
-В интерфейсе Azure AI Foundry перейдите на страницу Evaluate или Prompt Flow.  
-Следуйте мастеру создания оценки, чтобы настроить процесс. Можно указать имя оценки по желанию.  
-Выберите сценарий, который соответствует целям вашего приложения.  
-Выберите одну или несколько метрик для оценки результатов модели.
+V uživatelském rozhraní Azure AI Foundry přejděte na stránku Evaluate nebo Prompt Flow.  
+Postupujte podle průvodce vytvořením hodnocení a nastavte běh hodnocení. Můžete zadat volitelný název hodnocení.  
+Vyberte scénář, který odpovídá cílům vaší aplikace.  
+Zvolte jednu nebo více metrik hodnocení pro posouzení výstupu modelu.
 
-## Кастомный процесс оценки (по желанию)
+## Vlastní hodnotící tok (volitelné)
 
-Для большей гибкости можно настроить собственный процесс оценки, адаптируя его под ваши конкретные требования.
+Pro větší flexibilitu můžete vytvořit vlastní hodnotící tok. Přizpůsobte proces hodnocení podle svých specifických požadavků.
 
-## Просмотр результатов
+## Zobrazení výsledků
 
-После завершения оценки просматривайте, анализируйте и сохраняйте подробные метрики в Azure AI Foundry. Получайте представление о возможностях и ограничениях вашего приложения.
+Po dokončení hodnocení si v Azure AI Foundry prohlédněte, zaznamenejte a analyzujte podrobné metriky hodnocení. Získejte přehled o schopnostech a omezeních vaší aplikace.
 
-**Note** Azure AI Foundry сейчас находится в публичном превью, поэтому используйте его для экспериментов и разработки. Для производственных задач рассмотрите другие варианты. Изучите официальную [документацию AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) для подробностей и пошаговых инструкций.
+**Note** Azure AI Foundry je momentálně ve veřejné preview, proto jej používejte pro experimentování a vývoj. Pro produkční nasazení zvažte jiné možnosti. Pro více informací a podrobné návody navštivte oficiální [dokumentaci AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo).
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

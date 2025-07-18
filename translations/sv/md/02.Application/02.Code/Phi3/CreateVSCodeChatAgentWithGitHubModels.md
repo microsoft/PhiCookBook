@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:06:30+00:00",
+  "translation_date": "2025-07-17T03:26:39+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "sv"
 }
 -->
 # **Skapa din egen Visual Studio Code Chat Copilot Agent med Phi-3.5 från GitHub Models**
 
-Använder du Visual Studio Code Copilot? Speciellt i Chat kan du använda olika agenter för att förbättra förmågan att skapa, skriva och underhålla projekt i Visual Studio Code. Visual Studio Code erbjuder ett API som gör det möjligt för företag och individer att skapa olika agenter baserade på deras verksamhet för att utöka deras kapaciteter inom olika specialiserade områden. I denna artikel fokuserar vi på **Phi-3.5-mini-instruct (128k)** och **Phi-3.5-vision-instruct (128k)** från GitHub Models för att skapa din egen Visual Studio Code Agent.
+Använder du Visual Studio Code Copilot? Speciellt i Chat kan du använda olika agenter för att förbättra förmågan att skapa, skriva och underhålla projekt i Visual Studio Code. Visual Studio Code erbjuder ett API som gör det möjligt för företag och individer att skapa olika agenter baserade på deras verksamhet för att utöka deras kapacitet inom olika specialområden. I den här artikeln fokuserar vi på **Phi-3.5-mini-instruct (128k)** och **Phi-3.5-vision-instruct (128k)** från GitHub Models för att skapa din egen Visual Studio Code Agent.
 
 ## **Om Phi-3.5 på GitHub Models**
 
-Vi vet att Phi-3/3.5-mini-instruct i Phi-3/3.5-familjen har starka förmågor för kodförståelse och generering, och har fördelar jämfört med Gemma-2-9b och Mistral-Nemo-12B-instruct-2407.
+Vi vet att Phi-3/3.5-mini-instruct i Phi-3/3.5-familjen har starka förmågor inom kodförståelse och generering, och har fördelar jämfört med Gemma-2-9b och Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.sv.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.sv.png)
 
 De senaste GitHub Models ger redan tillgång till Phi-3.5-mini-instruct (128k) och Phi-3.5-vision-instruct (128k) modellerna. Utvecklare kan nå dem via OpenAI SDK, Azure AI Inference SDK och REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.sv.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.sv.png)
 
-***Note: *** Det rekommenderas att använda Azure AI Inference SDK här, eftersom det bättre kan växla med Azure Model Catalog i produktionsmiljö
+***Note:*** Det rekommenderas att använda Azure AI Inference SDK här, eftersom det bättre kan växla med Azure Model Catalog i produktionsmiljö.
 
-Nedan visas resultaten av **Phi-3.5-mini-instruct (128k)** och **Phi-3.5-vision-instruct (128k)** i kodgenereringsscenarier efter integration med GitHub Models, samt förberedelser för följande exempel
+Nedan visas resultaten för **Phi-3.5-mini-instruct (128k)** och **Phi-3.5-vision-instruct (128k)** i kodgenereringsscenarier efter integration med GitHub Models, samt förberedelser för följande exempel.
 
 **Demo: GitHub Models Phi-3.5-mini-instruct (128k) genererar kod från Prompt** ([klicka på denna länk](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
@@ -34,19 +34,19 @@ Nedan visas resultaten av **Phi-3.5-mini-instruct (128k)** och **Phi-3.5-vision-
 
 GitHub Copilot Chat Agent kan utföra olika uppgifter i olika projektscenarier baserat på koden. Systemet har fyra agenter: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.sv.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.sv.png)
 
-Genom att lägga till agentens namn med ‘@’ kan du snabbt utföra motsvarande arbete. För företag, om du lägger till eget verksamhetsrelaterat innehåll som krav, kodning, testspecifikationer och release, kan du få kraftfullare privata företagsfunktioner baserat på GitHub Copilot.
+Genom att lägga till agentens namn med ‘@’ kan du snabbt utföra motsvarande arbete. För företag, om du lägger till din egen verksamhetsrelaterade information som krav, kodning, testspecifikationer och release, kan du få kraftfullare privata företagsfunktioner baserade på GitHub Copilot.
 
-Visual Studio Code Chat Agent har nu officiellt släppt sitt API, vilket gör det möjligt för företag eller företagsutvecklare att utveckla agenter baserat på olika mjukvaru-ekosystem. Baserat på utvecklingsmetoden Visual Studio Code Extension Development kan du enkelt komma åt gränssnittet för Visual Studio Code Chat Agent API. Vi kan utveckla utifrån denna process
+Visual Studio Code Chat Agent har nu officiellt släppt sitt API, vilket gör det möjligt för företag eller företagsutvecklare att utveckla agenter baserade på olika mjukvaruekosystem. Baserat på utvecklingsmetoden för Visual Studio Code Extension Development kan du enkelt nå gränssnittet för Visual Studio Code Chat Agent API. Vi kan utveckla baserat på denna process.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.sv.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.sv.png)
 
-Utvecklingsscenariot kan stödja tillgång till tredjepartsmodell-API:er (som GitHub Models, Azure Model Catalog och egenbyggda tjänster baserade på open source-modeller) och kan även använda modellerna gpt-35-turbo, gpt-4 och gpt-4o som tillhandahålls av GitHub Copilot.
+Utvecklingsscenariot kan stödja åtkomst till tredjepartsmodell-API:er (såsom GitHub Models, Azure Model Catalog och egenbyggda tjänster baserade på open source-modeller) och kan även använda modellerna gpt-35-turbo, gpt-4 och gpt-4o som tillhandahålls av GitHub Copilot.
 
 ## **Lägg till en Agent @phicoding baserad på Phi-3.5**
 
-Vi försöker integrera programmeringsförmågorna hos Phi-3.5 för att slutföra kodskrivning, bildgenereringskod och andra uppgifter. Skapa en Agent byggd kring Phi-3.5 - @PHI, följande är några funktioner
+Vi försöker integrera programmeringsförmågan hos Phi-3.5 för att slutföra kodskrivning, bildgenereringskod och andra uppgifter. Skapa en Agent byggd kring Phi-3.5 - @PHI, följande är några funktioner:
 
 1. Generera en självintroduktion baserat på GPT-4o som tillhandahålls av GitHub Copilot via kommandot **@phicoding /help**
 
@@ -54,7 +54,7 @@ Vi försöker integrera programmeringsförmågorna hos Phi-3.5 för att slutför
 
 3. Generera kod baserat på **Phi-3.5-vision-instruct (128k)** och bildkomplettering via kommandot **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.sv.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.sv.png)
 
 ## **Relaterade steg**
 
@@ -65,7 +65,7 @@ Vi försöker integrera programmeringsförmågorna hos Phi-3.5 för att slutför
 npm install --global yo generator-code 
 
 ```
-2. Skapa ett Visual Studio Code Extension-plugin (använd Typescript-utvecklingsläge, namngett phiext)
+2. Skapa ett Visual Studio Code Extension-plugin (använd Typescript utvecklingsläge, namnge phiext)
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. Öppna det skapade projektet och ändra package.json. Här finns relaterade instruktioner och konfigurationer, samt konfiguration för GitHub Models. Observera att du måste lägga till din GitHub Models-token här.
+3. Öppna det skapade projektet och ändra package.json. Här finns relaterade instruktioner och konfigurationer, samt konfiguration för GitHub Models. Observera att du behöver lägga till din GitHub Models-token här.
 
 ```json
 
@@ -364,21 +364,21 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.sv.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.sv.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.sv.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.sv.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.sv.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.sv.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.sv.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.sv.png)
 
-Du kan ladda ner exempel-koden här: [klicka](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Du kan ladda ner exempel på kod: [klicka här](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **Resurser**
 
@@ -389,4 +389,4 @@ Du kan ladda ner exempel-koden här: [klicka](../../../../../../code/09.UpdateSa
 3. Läs om Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess ursprungsspråk bör betraktas som den auktoritativa källan. För viktig information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:52:41+00:00",
+  "translation_date": "2025-07-17T04:49:35+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "pt"
 }
 -->
-## **Usando Phi-4-mini-reasoning(3.8b) ou Phi-4-reasoning(14b) como Especialista em Raciocínio**
+## **Usar Phi-4-mini-reasoning(3.8b) ou Phi-4-reasoning(14b) como Especialista em Raciocínio**
 
-Vamos dar uma olhada na sua forte capacidade de raciocínio através do Phi-4-mini-reasoning ou Phi-4-mini-reasoning.
+Vamos analisar a sua forte capacidade de raciocínio através do Phi-4-mini-reasoning ou Phi-4-mini-reasoning.
 
 
 ```python
@@ -50,4 +50,4 @@ print(outputs[0])
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automatizadas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

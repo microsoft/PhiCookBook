@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-05-09T10:48:57+00:00",
+  "translation_date": "2025-07-16T20:15:05+00:00",
   "source_file": "md/01.Introduction/03/Android_Inference.md",
   "language_code": "ms"
 }
 -->
-# **Inference Phi-3 en Android**
+# **Inferens Phi-3 di Android**
 
-Vamos a explorar cómo realizar inferencias con Phi-3-mini en dispositivos Android. Phi-3-mini es una nueva serie de modelos de Microsoft que permite desplegar Modelos de Lenguaje Grande (LLMs) en dispositivos edge y dispositivos IoT.
+Mari kita terokai bagaimana anda boleh melakukan inferens dengan Phi-3-mini pada peranti Android. Phi-3-mini adalah siri model baru dari Microsoft yang membolehkan penyebaran Large Language Models (LLMs) pada peranti edge dan peranti IoT.
 
-## Semantic Kernel e Inferencia
+## Semantic Kernel dan Inferens
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel) es un marco de aplicaciones que te permite crear aplicaciones compatibles con Azure OpenAI Service, modelos OpenAI e incluso modelos locales. Si eres nuevo en Semantic Kernel, te recomendamos revisar el [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
+[Semantic Kernel](https://github.com/microsoft/semantic-kernel) adalah rangka kerja aplikasi yang membolehkan anda mencipta aplikasi yang serasi dengan Azure OpenAI Service, model OpenAI, dan juga model tempatan. Jika anda baru dengan Semantic Kernel, kami cadangkan anda melihat [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
 
-### Para acceder a Phi-3-mini usando Semantic Kernel
+### Untuk Mengakses Phi-3-mini Menggunakan Semantic Kernel
 
-Puedes combinarlo con el Hugging Face Connector en Semantic Kernel. Consulta este [Código de ejemplo](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
+Anda boleh menggabungkannya dengan Hugging Face Connector dalam Semantic Kernel. Rujuk [Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
 
-Por defecto, se conecta al ID del modelo en Hugging Face. Sin embargo, también puedes conectarte a un servidor local del modelo Phi-3-mini.
+Secara lalai, ia merujuk kepada model ID di Hugging Face. Namun, anda juga boleh menyambung ke pelayan model Phi-3-mini yang dibina secara tempatan.
 
-### Llamar a modelos cuantificados con Ollama o LlamaEdge
+### Memanggil Model Quantized dengan Ollama atau LlamaEdge
 
-Muchos usuarios prefieren usar modelos cuantificados para ejecutar modelos localmente. [Ollama](https://ollama.com/) y [LlamaEdge](https://llamaedge.com) permiten a usuarios individuales llamar a diferentes modelos cuantificados:
+Ramai pengguna lebih suka menggunakan model quantized untuk menjalankan model secara tempatan. [Ollama](https://ollama.com/) dan [LlamaEdge](https://llamaedge.com) membolehkan pengguna individu memanggil pelbagai model quantized:
 
 #### Ollama
 
-Puedes ejecutarlo directamente con `ollama run Phi-3` o configurarlo sin conexión creando un `Modelfile` con la ruta a tu archivo `.gguf`.
+Anda boleh terus menjalankan `ollama run Phi-3` atau mengkonfigurasikannya secara offline dengan membuat `Modelfile` yang mengandungi laluan ke fail `.gguf` anda.
 
 ```gguf
 FROM {Add your gguf file path}
@@ -36,19 +36,19 @@ PARAMETER stop <|end|>
 PARAMETER num_ctx 4096
 ```
 
-[Código de ejemplo](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
+[Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
 
 #### LlamaEdge
 
-Si deseas usar archivos `.gguf` en la nube y en dispositivos edge simultáneamente, LlamaEdge es una excelente opción. Puedes consultar este [código de ejemplo](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) para comenzar.
+Jika anda ingin menggunakan fail `.gguf` di awan dan pada peranti edge secara serentak, LlamaEdge adalah pilihan yang baik. Anda boleh rujuk [sample code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) untuk memulakan.
 
-### Instalar y ejecutar en teléfonos Android
+### Pasang dan Jalankan pada Telefon Android
 
-1. **Descarga la app MLC Chat** (Gratis) para teléfonos Android.  
-2. Descarga el archivo APK (148MB) e instálalo en tu dispositivo.  
-3. Abre la app MLC Chat. Verás una lista de modelos de IA, incluyendo Phi-3-mini.
+1. **Muat turun aplikasi MLC Chat** (Percuma) untuk telefon Android.  
+2. Muat turun fail APK (148MB) dan pasang pada peranti anda.  
+3. Lancarkan aplikasi MLC Chat. Anda akan melihat senarai model AI, termasuk Phi-3-mini.
 
-En resumen, Phi-3-mini abre posibilidades emocionantes para IA generativa en dispositivos edge, y puedes comenzar a explorar sus capacidades en Android.
+Secara ringkas, Phi-3-mini membuka peluang menarik untuk AI generatif pada peranti edge, dan anda boleh mula meneroka kemampuannya di Android.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat yang penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

@@ -2,48 +2,48 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "57f14126c1c6add76b3aef3844dfe4e3",
-  "translation_date": "2025-05-07T13:06:04+00:00",
+  "translation_date": "2025-07-16T15:38:55+00:00",
   "source_file": "SECURITY.md",
   "language_code": "mo"
 }
 -->
-## Security
+## 安全性
 
-Microsoft يأخذ أمان منتجاتنا البرمجية وخدماتنا على محمل الجد، ويشمل ذلك جميع مستودعات الشيفرة المصدرية التي تُدار من خلال منظماتنا على GitHub، والتي تشمل [Microsoft](https://github.com/Microsoft)، [Azure](https://github.com/Azure)، [DotNet](https://github.com/dotnet)، [AspNet](https://github.com/aspnet) و [Xamarin](https://github.com/xamarin).
+Microsoft 非常重視我們軟體產品和服務的安全性，這包括所有透過我們的 GitHub 組織管理的原始碼庫，涵蓋 [Microsoft](https://github.com/Microsoft)、[Azure](https://github.com/Azure)、[DotNet](https://github.com/dotnet)、[AspNet](https://github.com/aspnet) 以及 [Xamarin](https://github.com/xamarin)。
 
-إذا كنت تعتقد أنك وجدت ثغرة أمنية في أي مستودع مملوك لـ Microsoft وتطابق [تعريف Microsoft للثغرة الأمنية](https://aka.ms/security.md/definition)، يرجى الإبلاغ عنها لنا كما هو موضح أدناه.
+如果您認為在任何 Microsoft 擁有的原始碼庫中發現了符合 [Microsoft 對安全漏洞定義](https://aka.ms/security.md/definition) 的安全漏洞，請依照以下說明向我們回報。
 
-## Reporting Security Issues
+## 回報安全問題
 
-**يرجى عدم الإبلاغ عن الثغرات الأمنية من خلال قضايا GitHub العامة.**
+**請勿透過公開的 GitHub 問題回報安全漏洞。**
 
-بدلاً من ذلك، يرجى الإبلاغ عنها إلى مركز استجابة الأمان لدى Microsoft (MSRC) عبر [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report).
+請改為向 Microsoft 安全回應中心 (MSRC) 回報，網址為 [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report)。
 
-إذا كنت تفضل الإرسال بدون تسجيل دخول، أرسل بريدًا إلكترونيًا إلى [secure@microsoft.com](mailto:secure@microsoft.com). إذا أمكن، قم بتشفير رسالتك باستخدام مفتاح PGP الخاص بنا؛ يرجى تنزيله من صفحة [Microsoft Security Response Center PGP Key](https://aka.ms/security.md/msrc/pgp).
+如果您偏好不登入即可提交，請寄信至 [secure@microsoft.com](mailto:secure@microsoft.com)。若可能，請使用我們的 PGP 金鑰加密您的訊息；您可以從 [Microsoft 安全回應中心 PGP 金鑰頁面](https://aka.ms/security.md/msrc/pgp) 下載。
 
-يجب أن تتلقى ردًا خلال 24 ساعة. إذا لم يحدث ذلك لأي سبب من الأسباب، يرجى المتابعة عبر البريد الإلكتروني للتأكد من استلامنا لرسالتك الأصلية. يمكن العثور على معلومات إضافية في [microsoft.com/msrc](https://www.microsoft.com/msrc).
+您應該會在 24 小時內收到回覆。如果因故未收到，請透過電子郵件追蹤，以確保我們已收到您的原始訊息。更多資訊請參考 [microsoft.com/msrc](https://www.microsoft.com/msrc)。
 
-يرجى تضمين المعلومات المطلوبة أدناه (قدر الإمكان) لمساعدتنا على فهم طبيعة ونطاق المشكلة المحتملة بشكل أفضل:
+請盡可能提供以下資訊，以協助我們更好地了解問題的性質與範圍：
 
-  * نوع المشكلة (مثل تجاوز السعة، حقن SQL، البرمجة عبر المواقع، إلخ)
-  * المسارات الكاملة لملفات المصدر المتعلقة بظهور المشكلة
-  * موقع الشيفرة المصدرية المتأثرة (tag/branch/commit أو رابط مباشر)
-  * أي إعدادات خاصة مطلوبة لإعادة إنتاج المشكلة
-  * تعليمات خطوة بخطوة لإعادة إنتاج المشكلة
-  * إثبات المفهوم أو كود الاستغلال (إن أمكن)
-  * تأثير المشكلة، بما في ذلك كيف يمكن للمهاجم استغلالها
+  * 問題類型（例如緩衝區溢位、SQL 注入、跨站腳本攻擊等）
+  * 與問題現象相關的原始碼檔案完整路徑
+  * 受影響原始碼的位置（標籤/分支/提交或直接 URL）
+  * 重現問題所需的特殊設定
+  * 重現問題的逐步說明
+  * 概念驗證或利用程式碼（若有）
+  * 問題的影響範圍，包括攻擊者可能如何利用此漏洞
 
-هذه المعلومات ستساعدنا على تقييم تقريرك بشكل أسرع.
+這些資訊將有助於我們更快速地處理您的回報。
 
-إذا كنت تقدم تقريرًا لبرنامج مكافآت الأخطاء، فإن التقارير المكتملة بشكل أكبر قد تساهم في الحصول على مكافأة أعلى. يرجى زيارة صفحة [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty) لمزيد من التفاصيل حول برامجنا النشطة.
+若您是為了漏洞賞金計畫回報，提供更完整的報告有助於獲得更高的獎金。請造訪我們的 [Microsoft 漏洞賞金計畫](https://aka.ms/security.md/msrc/bounty) 頁面，了解更多關於現行計畫的詳情。
 
-## Preferred Languages
+## 優先語言
 
-نفضل أن تكون جميع الاتصالات باللغة الإنجليزية.
+我們偏好所有溝通以英文進行。
 
-## Policy
+## 政策
 
-تتبع Microsoft مبدأ [الإفصاح المنسق عن الثغرات](https://aka.ms/security.md/cvd).
+Microsoft 遵循 [協調漏洞揭露](https://aka.ms/security.md/cvd) 原則。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

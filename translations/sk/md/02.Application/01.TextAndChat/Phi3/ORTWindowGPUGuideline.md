@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-09T18:46:24+00:00",
+  "translation_date": "2025-07-17T02:46:56+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "sk"
 }
 -->
 # **Návod pre OnnxRuntime GenAI Windows GPU**
 
-Tento návod poskytuje kroky na nastavenie a používanie ONNX Runtime (ORT) s GPU na Windows. Je určený na to, aby vám pomohol využiť GPU akceleráciu pre vaše modely, čím zlepší výkon a efektivitu.
+Tento návod poskytuje kroky na nastavenie a používanie ONNX Runtime (ORT) s GPU na Windows. Je určený na to, aby vám pomohol využiť akceleráciu GPU pre vaše modely, čím zlepšíte výkon a efektivitu.
 
-Dokument obsahuje usmernenia pre:
+Dokument obsahuje pokyny na:
 
 - Nastavenie prostredia: Inštrukcie na inštaláciu potrebných závislostí ako CUDA, cuDNN a ONNX Runtime.
-- Konfigurácia: Ako nastaviť prostredie a ONNX Runtime tak, aby efektívne využívali GPU zdroje.
-- Tipy na optimalizáciu: Odporúčania, ako doladiť nastavenia GPU pre čo najlepší výkon.
+- Konfigurácia: Ako nastaviť prostredie a ONNX Runtime na efektívne využitie GPU zdrojov.
+- Tipy na optimalizáciu: Odporúčania, ako doladiť nastavenia GPU pre optimálny výkon.
 
 ### **1. Python 3.10.x /3.11.8**
 
@@ -39,11 +39,11 @@ Dokument obsahuje usmernenia pre:
 
    ```
 
-### **3. Inštalácia Visual Studio 2022 - Desktop Development with C++**
+### **3. Inštalácia Visual Studio 2022 - Desktop Development s C++**
 
    ***Poznámka*** Ak nechcete kompilovať, tento krok môžete preskočiť
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.sk.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.sk.png)
 
 ### **4. Inštalácia NVIDIA ovládača**
 
@@ -57,7 +57,7 @@ Dokument obsahuje usmernenia pre:
 
 ### **5. Nastavenie NVIDIA prostredia**
 
-Skopírujte knižnice, binárky a hlavičkové súbory z NVIDIA CUDNN 9.4 do NVIDIA CUDA 12.4
+Skopírujte NVIDIA CUDNN 9.4 súbory z priečinkov lib, bin, include do príslušných priečinkov NVIDIA CUDA 12.4
 
 - skopírujte súbory z *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* do *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
@@ -83,13 +83,13 @@ Skopírujte knižnice, binárky a hlavičkové súbory z NVIDIA CUDNN 9.4 do NVI
 
    Otvorte [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) a spustite ho
 
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.sk.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.sk.png)
 
 ### **8. Kompilácia ORT GenAI GPU**
 
    ***Poznámka*** 
    
-   1. Najprv odinštalujte všetky balíky týkajúce sa onnx, onnxruntime a onnxruntime-genai
+   1. Najprv odinštalujte všetky knižnice súvisiace s onnx, onnxruntime a onnxruntime-genai
 
    ```bash
 
@@ -97,7 +97,7 @@ Skopírujte knižnice, binárky a hlavičkové súbory z NVIDIA CUDNN 9.4 do NVI
    
    ```
 
-   Potom odinštalujte všetky onnxruntime knižnice, napríklad
+   Potom odinštalujte všetky onnxruntime knižnice, napríklad:
 
    ```bash
 
@@ -111,9 +111,9 @@ Skopírujte knižnice, binárky a hlavičkové súbory z NVIDIA CUDNN 9.4 do NVI
 
    2. Skontrolujte podporu rozšírenia vo Visual Studio
 
-   Skontrolujte priečinok C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras, či obsahuje priečinok C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
-
-   Ak nie je nájdený, skontrolujte iné priečinky CUDA toolkit a skopírujte priečinok visual_studio_integration spolu s obsahom do C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   Skontrolujte priečinok C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras, či obsahuje C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
+   
+   Ak tam nie je, skontrolujte iné priečinky CUDA toolkit a skopírujte priečinok visual_studio_integration a jeho obsah do C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
    - Ak nechcete kompilovať, tento krok môžete preskočiť
 
@@ -127,9 +127,9 @@ Skopírujte knižnice, binárky a hlavičkové súbory z NVIDIA CUDNN 9.4 do NVI
 
    - Rozbaľte onnxruntime-win-x64-gpu-1.19.2.zip, premenovajte ho na **ort** a skopírujte priečinok ort do onnxruntime-genai
 
-   - Použite Windows Terminal, otvorte Developer Command Prompt for VS 2022 a choďte do onnxruntime-genai
+   - Pomocou Windows Terminálu otvorte Developer Command Prompt pre VS 2022 a prejdite do onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.sk.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.sk.png)
 
    - Kompilujte s vaším Python prostredím
 
@@ -146,5 +146,5 @@ Skopírujte knižnice, binárky a hlavičkové súbory z NVIDIA CUDNN 9.4 do NVI
 
    ```
 
-**Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, vezmite prosím na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre dôležité informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+**Zrieknutie sa zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

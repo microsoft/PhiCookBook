@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:03:53+00:00",
+  "translation_date": "2025-07-17T03:19:42+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "hr"
 }
 -->
 # **Razgovarajte s Phi-4-mini ONNX**
 
-***ONNX*** je otvoreni format napravljen za predstavljanje modela strojnog učenja. ONNX definira zajednički skup operatora - osnovnih elemenata modela strojnog i dubokog učenja - i zajednički format datoteke koji omogućuje AI developerima da koriste modele s različitim frameworkovima, alatima, runtime okruženjima i kompajlerima.
+***ONNX*** je otvoreni format namijenjen predstavljanju modela strojnog učenja. ONNX definira zajednički skup operatora - osnovnih elemenata modela strojnog i dubokog učenja - te zajednički format datoteke koji omogućuje AI developerima korištenje modela s različitim frameworkovima, alatima, runtime okruženjima i kompajlerima.
 
-Nadamo se da ćemo implementirati generativne AI modele na edge uređajima i koristiti ih u okruženjima s ograničenom računalnom snagom ili offline. Sada to možemo postići pretvaranjem modela u kvantizirani oblik. Kvantizirani model možemo pretvoriti u GGUF ili ONNX format.
+Nadamo se implementirati generativne AI modele na edge uređajima i koristiti ih u okruženjima s ograničenom računalnom snagom ili bez pristupa internetu. Sada to možemo postići konvertiranjem modela na kvantizirani način. Kvantizirani model možemo pretvoriti u GGUF ili ONNX format.
 
-Microsoft Olive može vam pomoći da pretvorite SLM u kvantizirani ONNX format. Metoda za konverziju modela je vrlo jednostavna
+Microsoft Olive može vam pomoći pretvoriti SLM u kvantizirani ONNX format. Metoda za postizanje konverzije modela je vrlo jednostavna.
 
 **Instalirajte Microsoft Olive SDK**
 
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Konverzija CPU ONNX podrške**
+**Podrška za konverziju CPU ONNX**
 
 ```bash
 
@@ -37,7 +37,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Napomena*** ovaj primjer koristi CPU
 
 
-### **Izvršavanje Phi-4-mini ONNX modela s ONNX Runtime GenAI**
+### **Izvođenje Phi-4-mini ONNX modela s ONNX Runtime GenAI**
 
 - **Instalirajte ONNX Runtime GenAI**
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Odricanje od odgovornosti**:  
-Ovaj je dokument preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

@@ -2,82 +2,82 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-05-09T04:54:23+00:00",
+  "translation_date": "2025-07-16T16:38:51+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/README.md",
   "language_code": "sl"
 }
 -->
 # phi3ext README
 
-Eto tvoj rozszerzenie "phi3ext" README. Po krótkim opisie zalecamy dodanie następujących sekcji.
+To je README za tvojo razširitev "phi3ext". Po kratkem opisu priporočamo vključitev naslednjih poglavij.
 
 ## Features
 
-Opisz konkretne funkcje swojego rozszerzenia, w tym zrzuty ekranu z działania rozszerzenia. Ścieżki do obrazów są względem tego pliku README.
+Opis funkcij tvoje razširitve, vključno z zaslonskimi posnetki med delovanjem razširitve. Pot do slik je relativna glede na ta README dokument.
 
-Na przykład, jeśli w katalogu roboczym projektu rozszerzenia masz podfolder z obrazami:
+Na primer, če imaš v delovnem prostoru razširitve podmapo z slikami:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> TIP: Wiele popularnych rozszerzeń korzysta z animacji. To świetny sposób, by pokazać swoje rozszerzenie! Zalecamy krótkie, skupione animacje, które łatwo śledzić.
+> Namig: Veliko priljubljenih razširitev uporablja animacije. To je odličen način za predstavitev tvoje razširitve! Priporočamo kratke, osredotočene animacije, ki so enostavne za spremljanje.
 
 ## Requirements
 
-Jeśli masz jakiekolwiek wymagania lub zależności, dodaj sekcję opisującą te wymagania oraz jak je zainstalować i skonfigurować.
+Če imaš kakršnekoli zahteve ali odvisnosti, dodaj poglavje, ki opisuje te zahteve ter kako jih namestiti in nastaviti.
 
 ## Extension Settings
 
-Jeśli twoje rozszerzenie dodaje jakiekolwiek ustawienia VS Code przez `contributes.configuration` extension point, uwzględnij je tutaj.
+Če tvoja razširitev preko `contributes.configuration` doda kakšne nastavitve v VS Code, jih vključite tukaj.
 
-Na przykład:
+Na primer:
 
-To rozszerzenie dodaje następujące ustawienia:
+Ta razširitev prispeva naslednje nastavitve:
 
-* `myExtension.enable`: włącz/wyłącz to rozszerzenie.
-* `myExtension.thing`: ustaw na `blah`, aby zrobić coś.
+* `myExtension.enable`: omogoči/onemogoči to razširitev.
+* `myExtension.thing`: nastavi na `blah` za izvedbo določene funkcije.
 
 ## Known Issues
 
-Wskazanie znanych problemów pomaga ograniczyć powtarzające się pytania użytkowników dotyczące twojego rozszerzenia.
+Navajanje znanih težav pomaga zmanjšati število ponavljajočih se vprašanj uporabnikov o tvoji razširitvi.
 
 ## Release Notes
 
-Użytkownicy docenią notatki do wydań, gdy aktualizujesz rozszerzenie.
+Uporabniki bodo hvaležni za objavo opomb ob izdaji, ko posodabljaš svojo razširitev.
 
 ### 1.0.0
 
-Pierwsze wydanie...
+Prva izdaja ...
 
 ### 1.0.1
 
-Naprawiono problem #.
+Popravljena težava #.
 
 ### 1.1.0
 
-Dodano funkcje X, Y i Z.
+Dodane funkcije X, Y in Z.
 
 ---
 
 ## Following extension guidelines
 
-Upewnij się, że przeczytałeś wytyczne dotyczące rozszerzeń i stosujesz najlepsze praktyki tworzenia rozszerzeń.
+Poskrbi, da si prebral smernice za razširitve in upošteval najboljše prakse pri ustvarjanju razširitev.
 
 * [扩展指南](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
 
 ## Working with Markdown
 
-Możesz pisać swój README w Visual Studio Code. Oto kilka przydatnych skrótów edytora:
+README lahko pišeš v Visual Studio Code. Tukaj je nekaj uporabnih bližnjic urejevalnika:
 
-* Podziel edytor (`Cmd+\` na macOS lub `Ctrl+\` na Windows i Linux).
-* Przełącz podgląd (`Shift+Cmd+V` na macOS lub `Shift+Ctrl+V` na Windows i Linux).
-* Naciśnij `Ctrl+Space` (Windows, Linux, macOS), aby zobaczyć listę fragmentów kodu Markdown.
+* Razdeli urejevalnik (`Cmd+\` na macOS ali `Ctrl+\` na Windows in Linux).
+* Preklopi predogled (`Shift+Cmd+V` na macOS ali `Shift+Ctrl+V` na Windows in Linux).
+* Pritisni `Ctrl+Space` (Windows, Linux, macOS) za ogled seznama Markdown odrezkov kode.
 
 ## For more information
 
 * [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
 * [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
 
-**Miłej zabawy!**
+**Uživaj!**
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku velja za avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazumevanja ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

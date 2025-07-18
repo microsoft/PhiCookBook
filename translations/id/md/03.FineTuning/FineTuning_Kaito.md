@@ -2,47 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:42:02+00:00",
+  "translation_date": "2025-07-17T06:23:56+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "id"
 }
 -->
 ## Fine-Tuning dengan Kaito
 
-[Kaito](https://github.com/Azure/kaito) adalah operator yang mengotomatiskan penyebaran model inferensi AI/ML di dalam klaster Kubernetes.
+[Kaito](https://github.com/Azure/kaito) adalah operator yang mengotomatisasi deployment model inferensi AI/ML di dalam klaster Kubernetes.
 
-Kaito memiliki beberapa keunggulan utama dibandingkan dengan sebagian besar metode penyebaran model mainstream yang dibangun di atas infrastruktur mesin virtual:
+Kaito memiliki beberapa keunggulan utama dibandingkan dengan sebagian besar metodologi deployment model mainstream yang dibangun di atas infrastruktur mesin virtual:
 
-- Mengelola file model menggunakan image container. Sebuah server http disediakan untuk melakukan panggilan inferensi menggunakan pustaka model.
-- Menghindari penyesuaian parameter penyebaran agar sesuai dengan perangkat keras GPU dengan menyediakan konfigurasi yang sudah ditetapkan sebelumnya.
+- Mengelola file model menggunakan container image. Sebuah server http disediakan untuk melakukan panggilan inferensi menggunakan library model.
+- Menghindari penyesuaian parameter deployment agar sesuai dengan perangkat keras GPU dengan menyediakan konfigurasi preset.
 - Menyediakan node GPU secara otomatis berdasarkan kebutuhan model.
 - Menyimpan image model besar di Microsoft Container Registry (MCR) publik jika lisensi mengizinkan.
 
-Dengan menggunakan Kaito, alur kerja untuk mengintegrasikan model inferensi AI besar di Kubernetes menjadi jauh lebih sederhana.
+Dengan menggunakan Kaito, alur kerja onboarding model inferensi AI besar di Kubernetes menjadi jauh lebih sederhana.
 
 ## Arsitektur
 
-Kaito mengikuti pola desain klasik Kubernetes Custom Resource Definition (CRD)/controller. Pengguna mengelola custom resource `workspace` yang menjelaskan kebutuhan GPU dan spesifikasi inferensi. Controller Kaito akan mengotomatiskan penyebaran dengan merekonsiliasi custom resource `workspace`.
+Kaito mengikuti pola desain klasik Kubernetes Custom Resource Definition (CRD)/controller. Pengguna mengelola custom resource `workspace` yang mendeskripsikan kebutuhan GPU dan spesifikasi inferensi. Controller Kaito akan mengotomatisasi deployment dengan merekonsiliasi custom resource `workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
 Gambar di atas menunjukkan gambaran umum arsitektur Kaito. Komponen utamanya terdiri dari:
 
-- **Workspace controller**: Mengelola custom resource `workspace`, membuat custom resource `machine` (dijelaskan di bawah) untuk memicu penyediaan node otomatis, dan membuat beban kerja inferensi (`deployment` atau `statefulset`) berdasarkan konfigurasi preset model.
-- **Node provisioner controller**: Nama controller ini adalah *gpu-provisioner* dalam [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Controller ini menggunakan CRD `machine` yang berasal dari [Karpenter](https://sigs.k8s.io/karpenter) untuk berinteraksi dengan workspace controller. Ia terintegrasi dengan API Azure Kubernetes Service (AKS) untuk menambahkan node GPU baru ke klaster AKS.
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) adalah komponen open source. Komponen ini bisa diganti dengan controller lain jika mendukung API [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Workspace controller**: Merekonciliasi custom resource `workspace`, membuat custom resource `machine` (dijelaskan di bawah) untuk memicu penyediaan node secara otomatis, dan membuat workload inferensi (`deployment` atau `statefulset`) berdasarkan konfigurasi preset model.
+- **Node provisioner controller**: Controller ini bernama *gpu-provisioner* dalam [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Ia menggunakan CRD `machine` yang berasal dari [Karpenter](https://sigs.k8s.io/karpenter) untuk berinteraksi dengan workspace controller. Controller ini terintegrasi dengan API Azure Kubernetes Service (AKS) untuk menambahkan node GPU baru ke klaster AKS.  
+> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) adalah komponen open source. Komponen ini dapat diganti dengan controller lain jika mendukung API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
-## Video gambaran umum  
+## Video Overview  
 [Tonton Demo Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
 ## Instalasi
 
 Silakan cek panduan instalasi [di sini](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Mulai cepat
+## Memulai dengan cepat
 
-Setelah memasang Kaito, Anda bisa mencoba perintah berikut untuk memulai layanan fine-tuning.
+Setelah menginstal Kaito, Anda dapat mencoba perintah berikut untuk memulai layanan fine-tuning.
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-Status workspace dapat dilacak dengan menjalankan perintah berikut. Ketika kolom WORKSPACEREADY menjadi `True`, model sudah berhasil disebarkan.
+Status workspace dapat dipantau dengan menjalankan perintah berikut. Ketika kolom WORKSPACEREADY menjadi `True`, model telah berhasil dideploy.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Selanjutnya, Anda bisa mencari IP klaster layanan inferensi dan menggunakan pod `curl` sementara untuk menguji endpoint layanan di dalam klaster.
+Selanjutnya, Anda dapat mencari cluster IP layanan inferensi dan menggunakan pod `curl` sementara untuk menguji endpoint layanan di dalam klaster.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -113,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan manusia profesional. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang salah yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

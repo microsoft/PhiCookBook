@@ -2,81 +2,79 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-05-09T15:18:06+00:00",
+  "translation_date": "2025-07-16T22:43:11+00:00",
   "source_file": "md/01.Introduction/05/Promptflow.md",
   "language_code": "ms"
 }
 -->
-# **Introduce Promptflow**
+# **Memperkenalkan Promptflow**
 
-[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) הוא כלי אוטומציה ויזואלי המאפשר למשתמשים ליצור תהליכי עבודה אוטומטיים באמצעות תבניות מוכנות ומחברים מותאמים אישית. הוא מיועד לאפשר למפתחים ואנליסטים עסקיים לבנות במהירות תהליכים אוטומטיים למשימות כמו ניהול נתונים, שיתוף פעולה ואופטימיזציה של תהליכים. עם Prompt Flow, המשתמשים יכולים בקלות לחבר שירותים, יישומים ומערכות שונות, ולאוטומט תהליכים עסקיים מורכבים.
+[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) adalah alat automasi aliran kerja visual yang membolehkan pengguna mencipta aliran kerja automatik menggunakan templat siap dan penyambung tersuai. Ia direka untuk membolehkan pembangun dan penganalisis perniagaan membina proses automatik dengan pantas untuk tugasan seperti pengurusan data, kerjasama, dan pengoptimuman proses. Dengan Prompt Flow, pengguna boleh dengan mudah menghubungkan perkhidmatan, aplikasi, dan sistem yang berbeza, serta mengautomasikan proses perniagaan yang kompleks.
 
-Microsoft Prompt Flow תוכנן לייעל את מחזור הפיתוח המלא של יישומי AI המופעלים על ידי מודלים שפתיים גדולים (LLMs). בין אם אתם בשלב הרעיוני, הפיתוח, הבדיקה, ההערכה או הפריסה של יישומים מבוססי LLM, Prompt Flow מפשט את התהליך ומאפשר לכם לבנות אפליקציות LLM באיכות ייצור.
+Microsoft Prompt Flow direka untuk mempermudah kitaran pembangunan aplikasi AI dari awal hingga akhir yang dikuasakan oleh Large Language Models (LLMs). Sama ada anda sedang merancang idea, membuat prototaip, menguji, menilai, atau melancarkan aplikasi berasaskan LLM, Prompt Flow memudahkan proses tersebut dan membolehkan anda membina aplikasi LLM dengan kualiti produksi.
 
-## הנה התכונות והיתרונות המרכזיים של שימוש ב-Microsoft Prompt Flow:
+## Berikut adalah ciri utama dan manfaat menggunakan Microsoft Prompt Flow:
 
-**חווית עריכה אינטראקטיבית**
+**Pengalaman Penulisan Interaktif**
 
-Prompt Flow מספק ייצוג ויזואלי של מבנה ה-flow שלכם, מה שמקל על הבנת וניהול הפרויקטים.
-הוא מציע חווית קידוד בסגנון מחברת (notebook) לפיתוח ו-debug יעיל של ה-flow.
+Prompt Flow menyediakan representasi visual struktur aliran anda, memudahkan pemahaman dan navigasi projek anda.  
+Ia menawarkan pengalaman pengekodan seperti buku nota untuk pembangunan dan penyahpepijatan aliran yang cekap.
 
-**גרסאות וכיול של הפרומפט**
+**Variasi dan Penalaan Prompt**
 
-צרו והשוו בין גרסאות שונות של הפרומפט כדי לאפשר תהליך שיפור הדרגתי. העריכו את ביצועי הפרומפטים השונים ובחרו את היעילים ביותר.
+Cipta dan bandingkan pelbagai variasi prompt untuk memudahkan proses penambahbaikan secara berulang. Nilai prestasi pelbagai prompt dan pilih yang paling berkesan.
 
-**תהליכי הערכה מובנים**
+**Aliran Penilaian Terbina Dalam**  
+Nilai kualiti dan keberkesanan prompt dan aliran anda menggunakan alat penilaian terbina dalam.  
+Fahami sejauh mana prestasi aplikasi berasaskan LLM anda.
 
-העריכו את איכות ויעילות הפרומפטים והתהליכים שלכם באמצעות כלי הערכה מובנים.
-הבינו עד כמה יישומי ה-LLM שלכם מבצעים טוב.
+**Sumber Komprehensif**
 
-**משאבים מקיפים**
+Prompt Flow termasuk perpustakaan alat, contoh, dan templat terbina dalam. Sumber ini berfungsi sebagai titik permulaan pembangunan, memberi inspirasi kreativiti, dan mempercepatkan proses.
 
-Prompt Flow כולל ספרייה של כלים, דוגמאות ותבניות מובנות. משאבים אלו משמשים כנקודת התחלה לפיתוח, מעוררים יצירתיות ומאיצים את התהליך.
+**Kerjasama dan Kesediaan Perusahaan**
 
-**שיתוף פעולה ומוכנות ארגונית**
+Sokong kerjasama pasukan dengan membenarkan pelbagai pengguna bekerja bersama dalam projek kejuruteraan prompt.  
+Kekalkan kawalan versi dan kongsi pengetahuan dengan berkesan. Permudahkan keseluruhan proses kejuruteraan prompt, dari pembangunan dan penilaian hingga pelancaran dan pemantauan.
 
-תמכו בשיתוף פעולה צוותי בכך שמאפשרים למספר משתמשים לעבוד יחד על פרויקטים של הנדסת פרומפטים.
-שמרו על בקרת גרסאות ושיתוף ידע יעיל. פשטו את כל תהליך הנדסת הפרומפטים, מהפיתוח וההערכה ועד לפריסה ומעקב.
+## Penilaian dalam Prompt Flow
 
-## הערכה ב-Prompt Flow
+Dalam Microsoft Prompt Flow, penilaian memainkan peranan penting dalam menilai sejauh mana prestasi model AI anda. Mari kita terokai bagaimana anda boleh menyesuaikan aliran dan metrik penilaian dalam Prompt Flow:
 
-ב-Microsoft Prompt Flow, הערכה ממלאת תפקיד מרכזי בהערכת ביצועי מודלי ה-AI שלכם. נבחן כיצד ניתן להתאים אישית תהליכי הערכה ומדדים בתוך Prompt Flow:
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.ms.png)
 
-![PFVizualise](../../../../../translated_images/pfvisualize.93c453890f4088830217fa7308b1a589058ed499bbfff160c85676066b5cbf2d.ms.png)
+**Memahami Penilaian dalam Prompt Flow**
 
-**הבנת ההערכה ב-Prompt Flow**
+Dalam Prompt Flow, aliran mewakili urutan nod yang memproses input dan menghasilkan output. Aliran penilaian adalah jenis aliran khas yang direka untuk menilai prestasi sesuatu run berdasarkan kriteria dan matlamat tertentu.
 
-ב-Prompt Flow, flow מייצג רצף של nodes שמעבדים קלט ומייצרים פלט. תהליכי הערכה הם סוג מיוחד של flows שנועדו להעריך את ביצועי הריצה על פי קריטריונים ומטרות ספציפיות.
+**Ciri utama aliran penilaian**
 
-**תכונות מרכזיות של תהליכי הערכה**
+Ia biasanya dijalankan selepas aliran yang diuji, menggunakan outputnya. Ia mengira skor atau metrik untuk mengukur prestasi aliran yang diuji. Metrik boleh merangkumi ketepatan, skor relevan, atau ukuran lain yang berkaitan.
 
-הם בדרך כלל רצים לאחר ה-flow הנבדק, תוך שימוש בפלט שלו. הם מחשבים ציונים או מדדים כדי למדוד את ביצועי ה-flow הנבדק. מדדים יכולים לכלול דיוק, ציון רלוונטיות או כל מדד רלוונטי אחר.
+### Menyesuaikan Aliran Penilaian
 
-### התאמת תהליכי הערכה
+**Menentukan Input**
 
-**הגדרת קלטים**
+Aliran penilaian perlu menerima output dari run yang diuji. Tentukan input sama seperti aliran biasa.  
+Sebagai contoh, jika anda menilai aliran QnA, namakan input sebagai "answer." Jika menilai aliran klasifikasi, namakan input sebagai "category." Input kebenaran sebenar (contohnya, label sebenar) juga mungkin diperlukan.
 
-תהליכי הערכה צריכים לקבל את הפלטים של הריצה הנבדקת. הגדירו קלטים בדומה ל-flows רגילים.
-לדוגמה, אם אתם מעריכים flow של QnA, קראו לקלט "answer". אם מעריכים flow של סיווג, קראו לקלט "category". ייתכן ויהיו גם קלטים של ground truth (למשל תוויות אמיתיות).
+**Output dan Metrik**
 
-**פלטים ומדדים**
+Aliran penilaian menghasilkan keputusan yang mengukur prestasi aliran yang diuji. Metrik boleh dikira menggunakan Python atau LLM (Large Language Models). Gunakan fungsi log_metric() untuk merekod metrik yang berkaitan.
 
-תהליכי הערכה מייצרים תוצאות שמודדות את ביצועי ה-flow הנבדק. מדדים יכולים להיות מחושבים באמצעות Python או LLM. השתמשו בפונקציה log_metric() כדי לתעד מדדים רלוונטיים.
+**Menggunakan Aliran Penilaian Tersuai**
 
-**שימוש בתהליכי הערכה מותאמים אישית**
+Bangunkan aliran penilaian anda sendiri yang disesuaikan dengan tugasan dan objektif khusus anda. Sesuaikan metrik berdasarkan matlamat penilaian anda.  
+Gunakan aliran penilaian tersuai ini untuk run secara berkelompok bagi ujian berskala besar.
 
-פיתחו את תהליך ההערכה שלכם המותאם למשימות ולמטרות הספציפיות שלכם.
-התאימו את המדדים בהתאם למטרות ההערכה.
-החילו תהליך הערכה זה על ריצות בכמויות גדולות לצורך בדיקות רחבות היקף.
+## Kaedah Penilaian Terbina Dalam
 
-## שיטות הערכה מובנות
+Prompt Flow juga menyediakan kaedah penilaian terbina dalam.  
+Anda boleh menghantar run berkelompok dan menggunakan kaedah ini untuk menilai sejauh mana prestasi aliran anda dengan set data besar.  
+Lihat keputusan penilaian, bandingkan metrik, dan ulangi proses mengikut keperluan.  
+Ingat, penilaian adalah penting untuk memastikan model AI anda memenuhi kriteria dan matlamat yang diingini. Terokai dokumentasi rasmi untuk arahan terperinci mengenai pembangunan dan penggunaan aliran penilaian dalam Microsoft Prompt Flow.
 
-Prompt Flow מציע גם שיטות הערכה מובנות.
-ניתן להגיש ריצות בכמויות גדולות ולהשתמש בשיטות אלו כדי להעריך את ביצועי ה-flow עם מאגרי נתונים גדולים.
-צפו בתוצאות ההערכה, השוו מדדים וערכו שיפורים לפי הצורך.
-זכרו, הערכה חיונית כדי לוודא שמודלי ה-AI שלכם עומדים בקריטריונים ובמטרות הרצויות. עיינו בתיעוד הרשמי לקבלת הוראות מפורטות לפיתוח ושימוש בתהליכי הערכה ב-Microsoft Prompt Flow.
-
-לסיכום, Microsoft Prompt Flow מעניק למפתחים את היכולת ליצור יישומי LLM איכותיים על ידי פישוט הנדסת הפרומפטים וסיפוק סביבת פיתוח חזקה. אם אתם עובדים עם LLM, Prompt Flow הוא כלי חשוב שכדאי להכיר. עיינו ב-[Prompt Flow Evaluation Documents](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) לקבלת הוראות מפורטות לפיתוח ושימוש בתהליכי הערכה ב-Microsoft Prompt Flow.
+Secara ringkas, Microsoft Prompt Flow memberi kuasa kepada pembangun untuk mencipta aplikasi LLM berkualiti tinggi dengan mempermudah kejuruteraan prompt dan menyediakan persekitaran pembangunan yang kukuh. Jika anda bekerja dengan LLM, Prompt Flow adalah alat yang sangat berguna untuk diterokai. Terokai [Dokumen Penilaian Prompt Flow](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) untuk arahan terperinci mengenai pembangunan dan penggunaan aliran penilaian dalam Microsoft Prompt Flow.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

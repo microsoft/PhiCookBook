@@ -2,44 +2,44 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-09T11:28:40+00:00",
+  "translation_date": "2025-07-16T20:36:25+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "ro"
 }
 -->
 # Rularea Phi-3 și Phi-4 pe iOS cu Apple MLX Framework
 
-Acest tutorial arată cum să creezi o aplicație iOS care rulează modelul Phi-3 sau Phi-4 direct pe dispozitiv, folosind framework-ul Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) este framework-ul de machine learning al Apple, optimizat pentru cipurile Apple Silicon.
+Acest tutorial arată cum să creezi o aplicație iOS care rulează modelul Phi-3 sau Phi-4 direct pe dispozitiv, folosind framework-ul Apple MLX. [MLX](https://opensource.apple.com/projects/mlx/) este framework-ul Apple pentru învățare automată, optimizat pentru cipurile Apple Silicon.
 
 ## Cerințe preliminare
 
 - macOS cu Xcode 16 (sau versiune superioară)
-- Dispozitiv țintă iOS 18 (sau versiune superioară) cu cel puțin 8GB (iPhone sau iPad compatibil cu cerințele Apple Intelligence, deoarece acestea sunt similare cu cerințele pentru Phi cuantificat)
+- Dispozitiv țintă iOS 18 (sau versiune superioară) cu cel puțin 8GB RAM (iPhone sau iPad compatibil cu cerințele Apple Intelligence, similare cu cele pentru Phi cuantificat)
 - cunoștințe de bază despre Swift și SwiftUI
 
-## Pasul 1: Creează un nou proiect iOS
+## Pasul 1: Creează un proiect iOS nou
 
-Începe prin a crea un nou proiect iOS în Xcode:
+Începe prin a crea un proiect iOS nou în Xcode:
 
 1. deschide Xcode și selectează „Create a new Xcode project”
-2. alege „App” ca șablon
-3. dă un nume proiectului tău (de exemplu, „Phi3-iOS-App”) și selectează SwiftUI ca interfață
+2. alege șablonul „App”
+3. denumește proiectul (de exemplu, „Phi3-iOS-App”) și selectează SwiftUI ca interfață
 4. alege o locație pentru salvarea proiectului
 
 ## Pasul 2: Adaugă dependențele necesare
 
-Adaugă pachetul [MLX Examples](https://github.com/ml-explore/mlx-swift-examples) care conține toate dependențele și utilitarele necesare pentru preîncărcarea modelelor și efectuarea inferenței:
+Adaugă pachetul [MLX Examples](https://github.com/ml-explore/mlx-swift-examples) care conține toate dependențele și ajutoarele necesare pentru încărcarea modelelor și efectuarea inferenței:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-Deși pachetul de bază [MLX Swift](https://github.com/ml-explore/mlx-swift) este suficient pentru operațiuni tensoriale de bază și funcționalități ML simple, pachetul MLX Examples oferă mai multe componente suplimentare concepute pentru a lucra cu modele de limbaj și pentru a simplifica procesul de inferență:
+Deși pachetul de bază [MLX Swift](https://github.com/ml-explore/mlx-swift) este suficient pentru operațiuni tensoriale de bază și funcționalități ML simple, pachetul MLX Examples oferă componente suplimentare pentru lucrul cu modele de limbaj și pentru a simplifica procesul de inferență:
 
 - utilitare pentru încărcarea modelelor care gestionează descărcarea de pe Hugging Face
 - integrare tokenizer
-- ajutoare pentru inferență în generarea de text
+- ajutoare pentru generarea textului
 - definiții preconfigurate ale modelelor
 
 ## Pasul 3: Configurează entitlements
@@ -65,9 +65,9 @@ Pentru a permite aplicației să descarce modele și să aloce suficientă memor
 
 > **Note:** Entitlement-ul `com.apple.developer.kernel.increased-memory-limit` este important pentru rularea modelelor mai mari, deoarece permite aplicației să solicite mai multă memorie decât în mod normal.
 
-## Pasul 4: Creează modelul pentru mesajele de chat
+## Pasul 4: Creează modelul pentru mesajele din chat
 
-Mai întâi, hai să creăm o structură simplă pentru a reprezenta mesajele din chat:
+Mai întâi, să creăm o structură simplă pentru a reprezenta mesajele din chat:
 
 ```swift
 import SwiftUI
@@ -248,23 +248,23 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-ViewModel-ul demonstrează principalele puncte de integrare MLX:
+ViewModel-ul evidențiază punctele cheie de integrare MLX:
 
-- setarea limitelor cache-ului GPU cu `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- setarea limitelor cache-ului GPU cu `MLX.GPU.set(cacheLimit:)` pentru optimizarea utilizării memoriei pe dispozitive mobile
+- folosirea `LLMModelFactory` pentru descărcarea modelului la cerere și inițializarea modelului optimizat MLX
+- accesarea parametrilor și structurii modelului prin `ModelContainer`
+- utilizarea generării token cu token prin metoda `MLXLMCommon.generate`
+- gestionarea procesului de inferență cu setări adecvate pentru temperatură și limite de tokeni
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+Abordarea de generare a tokenilor în streaming oferă feedback imediat utilizatorilor pe măsură ce modelul generează text. Este similară cu modul în care funcționează modelele pe server, care transmit tokenii înapoi utilizatorului, dar fără întârzierea cauzată de cererile de rețea.
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+În ceea ce privește interacțiunea UI, cele două funcții principale sunt `loadModel()`, care inițializează LLM-ul, și `fetchAIResponse()`, care procesează inputul utilizatorului și generează răspunsurile AI.
 
-### Model format considerations
+### Considerații privind formatul modelului
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Important:** Modelele Phi pentru MLX nu pot fi folosite în formatul lor implicit sau GGUF. Ele trebuie convertite în formatul MLX, proces gestionat de comunitatea MLX. Poți găsi modele pre-convertite la [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`, face referire la un model MLX pre-convertit specific, care va fi descărcat automat:
+Pachetul MLX Examples include înregistrări preconfigurate pentru mai multe modele, inclusiv Phi-3. Când apelezi `ModelRegistry.phi3_5_4bit`, acesta face referire la un model MLX pre-convertit specific, care va fi descărcat automat:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-Poți crea propriile configurații de model pentru a face referire la orice model compatibil de pe Hugging Face. De exemplu, pentru a folosi Phi-4 mini în schimb, ai putea defini propria configurație:
+Poți crea propriile configurații de model pentru a indica orice model compatibil de pe Hugging Face. De exemplu, pentru a folosi Phi-4 mini, poți defini propria configurație:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Note:** Suportul pentru Phi-4 a fost adăugat în depozitul MLX Swift Examples la sfârșitul lunii februarie 2025 (în [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). Până în martie 2025, ultima versiune oficială (2.21.2 din decembrie 2024) nu include suport nativ pentru Phi-4. Pentru a folosi modelele Phi-4, va trebui să faci referire direct la pachetul din ramura principală:
+> **Note:** Suportul pentru Phi-4 a fost adăugat în depozitul MLX Swift Examples la sfârșitul lunii februarie 2025 (în [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). Până în martie 2025, ultima versiune oficială (2.21.2 din decembrie 2024) nu include suport nativ pentru Phi-4. Pentru a folosi modelele Phi-4, trebuie să faci referire direct la pachetul din ramura principală:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-Aceasta îți oferă acces la cele mai recente configurații de modele, inclusiv Phi-4, înainte să fie incluse într-o versiune oficială. Poți folosi această metodă pentru a utiliza diferite versiuni ale modelelor Phi sau chiar alte modele convertite în format MLX.
+Aceasta îți oferă acces la cele mai noi configurații de modele, inclusiv Phi-4, înainte de a fi incluse într-o versiune oficială. Poți folosi această metodă pentru a utiliza diferite versiuni ale modelelor Phi sau chiar alte modele convertite în format MLX.
 
 ## Pasul 6: Creează interfața UI
 
-Acum să implementăm o interfață simplă de chat pentru a interacționa cu ViewModel-ul nostru:
+Acum să implementăm o interfață simplă de chat pentru a interacționa cu view model-ul nostru:
 
 ```swift
 import SwiftUI
@@ -429,11 +429,11 @@ struct TypingIndicatorView: View {
 
 ```
 
-Interfața UI este compusă din trei componente principale care lucrează împreună pentru a crea o interfață de chat de bază. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` oferă un indicator animat simplu pentru a arăta că AI-ul procesează
+Interfața UI este compusă din trei componente principale care lucrează împreună pentru a crea o interfață de chat de bază. `ContentView` creează o interfață cu două stări care afișează fie un buton de încărcare, fie interfața de chat, în funcție de starea de pregătire a modelului. `MessageView` afișează mesajele individuale diferit, în funcție de faptul că sunt mesaje ale utilizatorului (aliniate la dreapta, fundal albastru) sau răspunsuri ale modelului Phi (aliniate la stânga, fundal gri). `TypingIndicatorView` oferă un indicator animat simplu care arată că AI-ul procesează.
 
 ## Pasul 7: Construirea și rularea aplicației
 
-Suntem gata să construim și să rulăm aplicația.
+Acum suntem gata să construim și să rulăm aplicația.
 
 > **Important!** MLX nu suportă simulatorul. Trebuie să rulezi aplicația pe un dispozitiv fizic cu cip Apple Silicon. Vezi [aici](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) pentru mai multe informații.
 
@@ -441,15 +441,15 @@ La lansarea aplicației, apasă butonul „Load model” pentru a descărca și 
 
 Odată încărcat, poți interacționa cu modelul tastând întrebări în câmpul de text și apăsând butonul de trimitere.
 
-Așa ar trebui să se comporte aplicația noastră, rulând pe un iPad Air M1:
+Iată cum ar trebui să se comporte aplicația noastră, rulând pe un iPad Air M1:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
 ## Concluzie
 
-Și gata! Urmând acești pași, ai creat o aplicație iOS care rulează modelul Phi-3 (sau Phi-4) direct pe dispozitiv, folosind framework-ul MLX al Apple.
+Și asta este tot! Urmând acești pași, ai creat o aplicație iOS care rulează modelul Phi-3 (sau Phi-4) direct pe dispozitiv folosind framework-ul MLX de la Apple.
 
 Felicitări!
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:51:11+00:00",
+  "translation_date": "2025-07-17T02:55:34+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "hr"
 }
@@ -13,13 +13,13 @@ Ovo je Android primjer koji koristi Microsoft Phi-3.5 tflite modele.
 
 ## **📚 Znanje**
 
-Android LLM Inference API omogućuje pokretanje velikih jezičnih modela (LLM) potpuno na uređaju za Android aplikacije, što možete iskoristiti za širok spektar zadataka, poput generiranja teksta, dohvaćanja informacija u prirodnom jeziku i sažimanja dokumenata. Ovaj zadatak ima ugrađenu podršku za više velikih jezičnih modela tekst-u-tekst, pa možete primijeniti najnovije generativne AI modele na uređaju u svojim Android aplikacijama.
+Android LLM Inference API omogućuje pokretanje velikih jezičnih modela (LLM) potpuno na uređaju za Android aplikacije, što možete koristiti za obavljanje raznih zadataka, poput generiranja teksta, dohvaćanja informacija u prirodnom jeziku i sažimanja dokumenata. Ovaj zadatak ima ugrađenu podršku za više velikih jezičnih modela za tekst-u-tekst, pa tako možete primijeniti najnovije generativne AI modele na uređaju u svojim Android aplikacijama.
 
-Google AI Edge Torch je Python biblioteka koja podržava pretvaranje PyTorch modela u .tflite format, koji se zatim može pokretati pomoću TensorFlow Lite i MediaPipe. To omogućuje aplikacijama za Android, iOS i IoT da modele izvode potpuno na uređaju. AI Edge Torch nudi široku podršku za CPU, s početnom podrškom za GPU i NPU. AI Edge Torch nastoji se usko integrirati s PyTorchom, nadograđujući torch.export() i pružajući dobru podršku za Core ATen operatore.
+Google AI Edge Torch je Python biblioteka koja podržava konverziju PyTorch modela u .tflite format, koji se potom može pokretati s TensorFlow Lite i MediaPipe. To omogućuje aplikacijama za Android, iOS i IoT da modele pokreću potpuno na uređaju. AI Edge Torch nudi široku podršku za CPU, s početnom podrškom za GPU i NPU. AI Edge Torch nastoji se usko integrirati s PyTorch-om, nadograđujući se na torch.export() i pružajući dobru pokrivenost Core ATen operatora.
 
 ## **🪬 Upute**
 
-### **🔥 Konvertiranje Microsoft Phi-3.5 u tflite format**
+### **🔥 Konverzija Microsoft Phi-3.5 u tflite podršku**
 
 0. Ovaj primjer je za Android 14+
 
@@ -27,11 +27,11 @@ Google AI Edge Torch je Python biblioteka koja podržava pretvaranje PyTorch mod
 
 ***Preporuka:*** koristite conda za instalaciju Python okruženja
 
-2. Ubuntu 20.04 / 22.04 (molimo obratite pažnju na [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
+2. Ubuntu 20.04 / 22.04 (molimo fokusirajte se na [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Preporuka:*** koristite Azure Linux VM ili cloud VM treće strane za kreiranje okruženja
+***Preporuka:*** koristite Azure Linux VM ili VM treće strane u oblaku za kreiranje okruženja
 
-3. Otvorite svoj Linux terminal i instalirajte Python biblioteku
+3. Otvorite Linux bash i instalirajte Python biblioteku
 
 ```bash
 
@@ -65,7 +65,7 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 Konvertiranje Microsoft Phi-3.5 u Android Mediapipe Bundle**
+### **🔥 Konverzija Microsoft Phi-3.5 u Android Mediapipe Bundle**
 
 prvo instalirajte mediapipe
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 Korištenje adb push za prijenos modela zadatka na putanju Android uređaja**
+### **🔥 Korištenje adb push za prijenos modela zadatka na putanju vašeg Android uređaja**
 
 ```bash
 
@@ -108,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Pokretanje vašeg Android koda**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.hr.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.hr.png)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI prevoditeljskog servisa [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili kriva tumačenja proizašla iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

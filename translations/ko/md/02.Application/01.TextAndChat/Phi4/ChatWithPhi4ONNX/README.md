@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-08T05:35:12+00:00",
+  "translation_date": "2025-07-17T03:16:13+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "ko"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 ***ONNX***는 머신러닝 모델을 표현하기 위해 만들어진 오픈 포맷입니다. ONNX는 머신러닝과 딥러닝 모델의 기본 구성 요소인 공통 연산자 집합과, 다양한 프레임워크, 도구, 런타임, 컴파일러에서 모델을 사용할 수 있도록 하는 공통 파일 포맷을 정의합니다.
 
-우리는 생성형 AI 모델을 엣지 디바이스에 배포하고, 제한된 컴퓨팅 파워나 오프라인 환경에서도 사용할 수 있기를 바랍니다. 이제 양자화된 방식으로 모델을 변환함으로써 이 목표를 달성할 수 있습니다. 양자화된 모델은 GGUF나 ONNX 포맷으로 변환할 수 있습니다.
+우리는 생성형 AI 모델을 엣지 디바이스에 배포하고, 제한된 컴퓨팅 파워나 오프라인 환경에서 활용하기를 원합니다. 이제 모델을 양자화된 방식으로 변환하여 이 목표를 달성할 수 있습니다. 양자화된 모델을 GGUF 또는 ONNX 포맷으로 변환할 수 있습니다.
 
-Microsoft Olive는 SLM을 양자화된 ONNX 포맷으로 변환하는 데 도움을 줄 수 있습니다. 모델 변환 방법은 매우 간단합니다.
+Microsoft Olive는 SLM을 양자화된 ONNX 포맷으로 변환하는 데 도움을 줍니다. 모델 변환 방법은 매우 간단합니다.
 
 **Microsoft Olive SDK 설치하기**
 
@@ -34,7 +34,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***Note*** 이 예시는 CPU를 사용합니다
+***참고*** 이 예제는 CPU를 사용합니다
 
 
 ### **ONNX Runtime GenAI로 Phi-4-mini ONNX 모델 추론하기**
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 포함될 수 있음을 양지해 주시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우, 전문적인 인간 번역을 권장합니다. 이 번역의 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

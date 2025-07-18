@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T13:55:43+00:00",
+  "translation_date": "2025-07-16T22:01:33+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "tr"
 }
 -->
-# **Intel OpenVINO kullanarak Phi-3.5'in Kantitleştirilmesi**
+# **Intel OpenVINO kullanarak Phi-3.5’in Kuantizasyonu**
 
-Intel, çok sayıda kullanıcısı olan en köklü CPU üreticisidir. Makine öğrenimi ve derin öğrenmenin yükselişiyle birlikte Intel, AI hızlandırma yarışına katılmıştır. Model çıkarımı için Intel sadece GPU ve CPU değil, aynı zamanda NPU da kullanmaktadır.
+Intel, çok sayıda kullanıcısı olan en köklü CPU üreticisidir. Makine öğrenimi ve derin öğrenmenin yükselişiyle birlikte, Intel yapay zeka hızlandırma yarışına da katılmıştır. Model çıkarımı için Intel sadece GPU ve CPU’ları değil, aynı zamanda NPU’ları da kullanmaktadır.
 
-Phi-3.x Ailesini uç tarafta dağıtmayı hedefliyoruz ve AI PC ile Copilot PC'nin en önemli parçası olmasını umuyoruz. Uç tarafta modelin yüklenmesi farklı donanım üreticilerinin iş birliğine bağlıdır. Bu bölümde ağırlıklı olarak Intel OpenVINO'nun kantitatif model uygulama senaryosuna odaklanacağız.
+Phi-3.x Ailesini uç tarafta dağıtmayı hedefliyoruz ve AI PC ile Copilot PC’nin en önemli parçası olmasını umuyoruz. Modelin uç tarafta yüklenmesi, farklı donanım üreticilerinin iş birliğine bağlıdır. Bu bölümde ağırlıklı olarak Intel OpenVINO’nun kuantitatif model uygulama senaryosuna odaklanılacaktır.
 
 ## **OpenVINO Nedir**
 
-OpenVINO, buluttan uca derin öğrenme modellerini optimize etmek ve dağıtmak için açık kaynaklı bir araç setidir. PyTorch, TensorFlow, ONNX gibi popüler çerçevelerden gelen modellerle, üretken AI, video, ses ve dil gibi çeşitli kullanım durumlarında derin öğrenme çıkarımını hızlandırır. Modelleri dönüştürün ve optimize edin, ardından Intel® donanımları ve ortamlarının karışımında, yerel veya cihazda, tarayıcıda veya bulutta dağıtım yapın.
+OpenVINO, buluttan uca derin öğrenme modellerini optimize etmek ve dağıtmak için açık kaynaklı bir araç setidir. PyTorch, TensorFlow, ONNX gibi popüler framework’lerden gelen modellerle üretken yapay zeka, video, ses ve dil gibi çeşitli kullanım alanlarında derin öğrenme çıkarımını hızlandırır. Modelleri dönüştürüp optimize edin ve Intel® donanımları ve ortamları arasında, kurum içinde veya cihazda, tarayıcıda ya da bulutta dağıtım yapın.
 
-Artık OpenVINO ile Intel donanımında GenAI modelini hızlıca kantitleştirebilir ve model referansını hızlandırabilirsiniz.
+Artık OpenVINO ile Intel donanımında GenAI modelini hızlıca kuantize edebilir ve model referansını hızlandırabilirsiniz.
 
-OpenVINO şu anda Phi-3.5-Vision ve Phi-3.5 Instruct modellerinin kantitleştirme dönüşümünü desteklemektedir.
+Şu anda OpenVINO, Phi-3.5-Vision ve Phi-3.5 Instruct’in kuantizasyon dönüşümünü desteklemektedir.
 
 ### **Ortam Kurulumu**
 
@@ -36,9 +36,9 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **OpenVINO kullanarak Phi-3.5-Instruct’in Kantitleştirilmesi**
+### **OpenVINO kullanarak Phi-3.5-Instruct’in Kuantizasyonu**
 
-Terminalde, lütfen bu betiği çalıştırın
+Terminalde lütfen bu betiği çalıştırın
 
 ```bash
 
@@ -52,7 +52,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **OpenVINO kullanarak Phi-3.5-Vision’un Kantitleştirilmesi**
+### **OpenVINO kullanarak Phi-3.5-Vision’ın Kuantizasyonu**
 
 Lütfen bu betiği Python veya Jupyter lab ortamında çalıştırın
 
@@ -94,10 +94,9 @@ if not out_dir.exists():
 
 | Laboratuvarlar    | Tanıtım | Git |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Phi-3.5 Instruct Tanıtımı  | AI PC'nizde Phi-3.5 Instruct nasıl kullanılır öğrenin    |  [Git](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Phi-3.5 Vision (görüntü) Tanıtımı | AI PC'nizde Phi-3.5 Vision ile görüntü analizini öğrenin      |  [Git](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Phi-3.5 Vision (video) Tanıtımı   | AI PC'nizde Phi-3.5 Vision ile video analizini öğrenin    |  [Git](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
-
+| 🚀 Lab-Phi-3.5 Instruct Tanıtımı  | AI PC’nizde Phi-3.5 Instruct’i nasıl kullanacağınızı öğrenin    |  [Git](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Phi-3.5 Vision (görüntü) Tanıtımı | AI PC’nizde Phi-3.5 Vision ile görüntü analizini nasıl yapacağınızı öğrenin      |  [Git](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Phi-3.5 Vision (video) Tanıtımı   | AI PC’nizde Phi-3.5 Vision ile video analizini nasıl yapacağınızı öğrenin    |  [Git](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **Kaynaklar**
 
@@ -106,4 +105,4 @@ if not out_dir.exists():
 2. Intel OpenVINO GitHub Deposu [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilindeki haliyle yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

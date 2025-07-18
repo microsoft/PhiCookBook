@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-07T10:22:10+00:00",
+  "translation_date": "2025-07-17T07:56:32+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "de"
 }
@@ -14,10 +14,10 @@ Wir können die Feinabstimmung in Kombination mit Lora über die Befehlszeile de
 
 ## **1. Datenvorbereitung**
 
-Standardmäßig erfordert das MLX Framework das jsonl-Format für train, test und eval und wird zusammen mit Lora verwendet, um Feinabstimmungsaufgaben abzuschließen.
+Standardmäßig benötigt das MLX Framework das jsonl-Format für train, test und eval und kombiniert dies mit Lora, um Feinabstimmungsaufgaben abzuschließen.
 
 
-### ***Note:***
+### ***Hinweis:***
 
 1. jsonl-Datenformat ：
 
@@ -31,11 +31,11 @@ Standardmäßig erfordert das MLX Framework das jsonl-Format für train, test un
 
 ```
 
-2. Unser Beispiel verwendet die [TruthfulQA-Daten](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), aber die Datenmenge ist relativ gering, daher sind die Feinabstimmungsergebnisse nicht unbedingt optimal. Es wird empfohlen, dass Lernende bessere Daten basierend auf ihren eigenen Szenarien verwenden.
+2. Unser Beispiel verwendet die [TruthfulQA-Daten](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), aber die Datenmenge ist relativ gering, daher sind die Feinabstimmungsergebnisse nicht unbedingt optimal. Es wird empfohlen, dass Lernende basierend auf ihren eigenen Szenarien bessere Daten verwenden, um die Feinabstimmung durchzuführen.
 
-3. Das Datenformat ist an die Phi-3 Vorlage angepasst.
+3. Das Datenformat ist mit der Phi-3-Vorlage kombiniert
 
-Bitte laden Sie die Daten von diesem [Link](../../../../code/04.Finetuning/mlx) herunter und stellen Sie sicher, dass alle .jsonl-Dateien im ***data***-Ordner enthalten sind.
+Bitte laden Sie die Daten von diesem [Link](../../../../code/04.Finetuning/mlx) herunter, bitte schließen Sie alle .jsonl-Dateien im ***data***-Ordner ein
 
 
 ## **2. Feinabstimmung im Terminal**
@@ -50,9 +50,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 ```
 
 
-## ***Note:***
+## ***Hinweis:***
 
-1. Dies ist eine LoRA-Feinabstimmung, das MLX Framework hat QLoRA nicht veröffentlicht.
+1. Dies ist LoRA-Feinabstimmung, das MLX Framework hat QLoRA nicht veröffentlicht
 
 2. Sie können config.yaml anpassen, um einige Argumente zu ändern, zum Beispiel
 
@@ -135,9 +135,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Feinabstimmungsadapter zum Testen ausführen**
+## **3. Feinabstimmungs-Adapter zum Testen ausführen**
 
-Sie können den Feinabstimmungsadapter im Terminal so ausführen:
+Sie können den Feinabstimmungs-Adapter im Terminal ausführen, so wie hier 
 
 
 ```bash
@@ -146,7 +146,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-und das Originalmodell ausführen, um die Ergebnisse zu vergleichen
+und das Originalmodell ausführen, um die Ergebnisse zu vergleichen 
 
 
 ```bash
@@ -155,7 +155,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Sie können versuchen, die Ergebnisse der Feinabstimmung mit dem Originalmodell zu vergleichen.
+Sie können versuchen, die Ergebnisse der Feinabstimmung mit dem Originalmodell zu vergleichen
 
 
 ## **4. Adapter zusammenführen, um neue Modelle zu erzeugen**
@@ -167,7 +167,7 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Quantisierte Feinabstimmungsmodelle mit ollama ausführen**
+## **5. Ausführen quantisierter Feinabstimmungsmodelle mit ollama**
 
 Bitte konfigurieren Sie vor der Nutzung Ihre llama.cpp-Umgebung
 
@@ -184,13 +184,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:*** 
+***Hinweis:*** 
 
-1. Unterstützt wird jetzt die Quantisierungskonvertierung von fp32, fp16 und INT 8
+1. Unterstützt jetzt die Quantisierungskonvertierung von fp32, fp16 und INT 8
 
-2. Dem zusammengeführten Modell fehlt tokenizer.model, bitte laden Sie es von https://huggingface.co/microsoft/Phi-3-mini-4k-instruct herunter
+2. Das zusammengeführte Modell fehlt tokenizer.model, bitte laden Sie es von https://huggingface.co/microsoft/Phi-3-mini-4k-instruct herunter
 
-Richten Sie ein [Ollma Model](https://ollama.com/) ein
+Legen Sie ein [Ollma Model](https://ollama.com/) fest
 
 
 ```txt
@@ -200,7 +200,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Befehl im Terminal ausführen
+Führen Sie den Befehl im Terminal aus
 
 
 ```bash
@@ -214,4 +214,4 @@ Befehl im Terminal ausführen
 Herzlichen Glückwunsch! Sie beherrschen die Feinabstimmung mit dem MLX Framework
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mithilfe des KI-Übersetzungsdienstes [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

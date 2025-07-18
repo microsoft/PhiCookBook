@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-07T13:35:50+00:00",
+  "translation_date": "2025-07-17T08:35:42+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "ur"
 }
 -->
 # Phi-3.5-vision finetuning recipe
 
-یہ Phi-3.5-vision finetuning کی سرکاری سپورٹ ہے جو huggingface لائبریریز استعمال کرتی ہے۔  
-براہ کرم `cd` کو کوڈ ڈائریکٹری [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) میں چلانے سے پہلے استعمال کریں۔
+یہ huggingface لائبریریز کے ذریعے Phi-3.5-vision finetuning کی سرکاری حمایت ہے۔  
+براہ کرم مندرجہ ذیل کمانڈز چلانے سے پہلے کوڈ ڈائریکٹری [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) میں `cd` کریں۔
 
 ## Installation
 
@@ -35,16 +35,16 @@ pip install bitsandbytes==0.43.1
 
 ## Quick start
 
-ہم دو مثال کے finetuning اسکرپٹس فراہم کرتے ہیں، ایک DocVQA کے لیے اور ایک hateful meme classification کے لیے۔
+ہم دو مثالیں فراہم کرتے ہیں، ایک DocVQA کے لیے اور ایک hateful meme classification کے لیے۔
 
-کم از کم ہارڈویئر جو ٹیسٹ کیا گیا ہے: 4x RTX8000 (ہر GPU پر 48GB RAM)
+کم از کم ہارڈویئر جس پر ٹیسٹ کیا گیا ہے: 4x RTX8000 (ہر GPU کے لیے 48GB RAM)
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision اب باضابطہ طور پر ملٹی-امیج ان پٹس کو سپورٹ کرتا ہے۔ یہاں NLVR2 کے لیے finetuning کی ایک مثال ہے۔
+Phi-3.5-vision اب باضابطہ طور پر ملٹی-امیج ان پٹس کی حمایت کرتا ہے۔ یہاں NLVR2 کے لیے finetuning کی ایک مثال ہے۔
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -53,12 +53,12 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ## Usage guide
 
 ہارڈویئر کے مطابق، صارفین مختلف finetuning حکمت عملیاں منتخب کر سکتے ہیں۔ ہم  
-full-finetuning (Deepspeed Zero-2 کے ساتھ) کو سپورٹ کرتے ہیں جس میں optional طور پر vision parameters کو فریز کیا جا سکتا ہے، اور LoRA (جس میں 4bit QLoRA شامل ہے) بھی۔  
-عمومی طور پر، ہم flash attention اور bf16 کے ساتھ full finetuning کی سفارش کرتے ہیں جہاں ممکن ہو۔
+full-finetuning (Deepspeed Zero-2 کے ساتھ) کی حمایت کرتے ہیں جس میں بصری پیرامیٹرز کو فریز کرنا اختیاری ہے، اور LoRA (جس میں 4bit QLoRA شامل ہے) بھی۔  
+عمومی طور پر، ہم flash attention اور bf16 کے ساتھ full finetuning استعمال کرنے کی سفارش کرتے ہیں جہاں ممکن ہو۔
 
-### اپنے کسٹم ڈیٹا سیٹ کو مطلوبہ فارمیٹ میں تبدیل کرنے کے لیے رہنمائی
+### اپنے کسٹم ڈیٹاسیٹ کو مطلوبہ فارمیٹ میں تبدیل کرنے کے لیے رہنمائی
 
-ہم ایک کم از کم ویڈیو کلاسیفیکیشن ڈیٹا سیٹ (UCF-101 کا ایک ذیلی حصہ) بطور end-to-end مثال استعمال کرتے ہیں تاکہ دکھایا جا سکے کہ کس طرح آپ اپنے کسٹم ڈیٹا سیٹ کو مطلوبہ فارمیٹ میں تبدیل کریں اور اس پر Phi-3.5-vision کو fine-tune کریں۔
+ہم ایک کم از کم ویڈیو کلاسیفیکیشن ڈیٹاسیٹ (UCF-101 کا ایک ذیلی حصہ) کو ایک مکمل مثال کے طور پر استعمال کرتے ہیں تاکہ دکھایا جا سکے کہ آپ اپنے کسٹم ڈیٹاسیٹ کو مطلوبہ فارمیٹ میں کیسے تبدیل کریں اور اس پر Phi-3.5-vision کو finetune کریں۔
 
 ```bash
 # convert data
@@ -114,49 +114,48 @@ torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/co
 34 directories, 3 files
 ```
 
-`jsonl` انوٹیشن کے لیے، ہر لائن ایک dictionary ہونی چاہیے جیسی کہ:
+`jsonl` اینوٹیشن کے لیے، ہر لائن ایک ڈکشنری ہونی چاہیے جیسا کہ:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-نوٹ کریں کہ `conversations` ایک فہرست ہے، لہٰذا اگر ایسا ڈیٹا دستیاب ہو تو ملٹی ٹرن گفتگو کی حمایت کی جا سکتی ہے۔
+نوٹ کریں کہ `conversations` ایک فہرست ہے، اس لیے اگر ایسا ڈیٹا دستیاب ہو تو ملٹی ٹرن گفتگو کی حمایت کی جا سکتی ہے۔
 
-## Requesting Azure GPU Quota 
+## Azure GPU Quota کی درخواست
 
-### Prerequisites
+### ضروریات
 
-ایک Azure اکاؤنٹ جس میں Contributor رول (یا کوئی اور رول جس میں Contributor رسائی شامل ہو) ہو۔
+ایک Azure اکاؤنٹ جس میں Contributor رول ہو (یا کوئی اور رول جس میں Contributor رسائی شامل ہو)۔
 
-اگر آپ کے پاس Azure اکاؤنٹ نہیں ہے تو، [شروع کرنے سے پہلے ایک مفت اکاؤنٹ بنائیں](https://azure.microsoft.com)۔
+اگر آپ کے پاس Azure اکاؤنٹ نہیں ہے، تو [شروع کرنے سے پہلے مفت اکاؤنٹ بنائیں](https://azure.microsoft.com)۔
 
-### Request a quota increase
+### کوٹا میں اضافہ کی درخواست کریں
 
-آپ My quotas سے براہ راست quota increase کے لیے درخواست دے سکتے ہیں۔ نیچے دیے گئے مراحل پر عمل کریں تاکہ quota بڑھانے کی درخواست کی جا سکے۔ اس مثال کے لیے، آپ اپنی سبسکرپشن میں کوئی بھی قابل ایڈجسٹ quota منتخب کر سکتے ہیں۔
+آپ My quotas سے براہ راست کوٹا میں اضافے کی درخواست جمع کرا سکتے ہیں۔ کوٹا میں اضافے کی درخواست کے لیے نیچے دیے گئے مراحل پر عمل کریں۔ اس مثال کے لیے، آپ اپنی سبسکرپشن میں کوئی بھی قابل ایڈجسٹ کوٹا منتخب کر سکتے ہیں۔
 
 [Azure portal](https://portal.azure.com) میں سائن ان کریں۔
 
-سرچ باکس میں "quotas" درج کریں، پھر Quotas منتخب کریں۔  
+سرچ باکس میں "quotas" لکھیں، پھر Quotas منتخب کریں۔  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-Overview صفحے پر، کوئی provider منتخب کریں، جیسے Compute یا AML۔
+Overview صفحے پر، کوئی فراہم کنندہ منتخب کریں، جیسے Compute یا AML۔
 
-**Note** Compute کے علاوہ تمام providers کے لیے، آپ کو Adjustable کالم کی جگہ Request increase کالم نظر آئے گا۔ وہاں، آپ مخصوص quota کے لیے اضافہ کی درخواست کر سکتے ہیں، یا اضافہ کے لیے سپورٹ درخواست بنا سکتے ہیں۔
+**نوٹ** Compute کے علاوہ تمام فراہم کنندگان کے لیے، آپ کو Adjustable کالم کی بجائے Request increase کالم نظر آئے گا۔ وہاں آپ مخصوص کوٹا کے لیے اضافہ کی درخواست کر سکتے ہیں، یا اضافہ کے لیے سپورٹ درخواست بنا سکتے ہیں۔
 
-My quotas صفحے پر، Quota name کے نیچے، وہ quota منتخب کریں جسے آپ بڑھانا چاہتے ہیں۔ یقینی بنائیں کہ Adjustable کالم میں اس quota کے لیے Yes دکھایا گیا ہو۔
+My quotas صفحے پر، Quota name کے تحت وہ کوٹا منتخب کریں جسے آپ بڑھانا چاہتے ہیں۔ یقینی بنائیں کہ Adjustable کالم میں اس کوٹا کے لیے Yes دکھایا گیا ہو۔
 
-صفحے کے اوپر New Quota Request منتخب کریں، پھر Enter a new limit منتخب کریں۔
-
+صفحے کے اوپر، New Quota Request منتخب کریں، پھر Enter a new limit منتخب کریں۔  
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-New Quota Request پین میں، اپنے نئے quota حد کے لیے عددی قدر درج کریں، پھر Submit منتخب کریں۔
+New Quota Request پین میں، اپنے نئے کوٹا کی حد کے لیے عددی قدر درج کریں، پھر Submit کریں۔
 
-آپ کی درخواست کا جائزہ لیا جائے گا، اور آپ کو اطلاع دی جائے گی اگر درخواست پوری کی جا سکتی ہے۔ یہ عموماً چند منٹوں میں ہوتا ہے۔
+آپ کی درخواست کا جائزہ لیا جائے گا، اور آپ کو اطلاع دی جائے گی کہ آیا درخواست پوری کی جا سکتی ہے۔ یہ عام طور پر چند منٹوں میں ہوتا ہے۔
 
-اگر آپ کی درخواست پوری نہیں ہوئی تو، آپ کو سپورٹ درخواست بنانے کے لیے لنک دکھایا جائے گا۔ اس لنک کا استعمال کرنے پر، ایک سپورٹ انجینئر آپ کی اضافہ کی درخواست میں مدد کرے گا۔
+اگر آپ کی درخواست پوری نہیں ہوتی، تو آپ کو سپورٹ درخواست بنانے کے لیے ایک لنک نظر آئے گا۔ اس لنک کا استعمال کرتے ہوئے، ایک سپورٹ انجینئر آپ کی درخواست میں مدد کرے گا۔
 
-## Azure Compute GPU machine SKU suggestions
+## Azure Compute GPU مشین SKU کی تجاویز
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -168,7 +167,7 @@ New Quota Request پین میں، اپنے نئے quota حد کے لیے عدد�
 
 ### اگر آپ کے پاس A100 یا H100 GPUs ہیں
 
-عام طور پر full finetuning بہترین کارکردگی دیتا ہے۔ آپ hateful memes classification کے لیے Phi-3-V کو finetune کرنے کے لیے درج ذیل کمانڈ استعمال کر سکتے ہیں۔
+عام طور پر full finetuning بہترین کارکردگی دیتا ہے۔ آپ hateful memes classification پر Phi-3-V کو finetune کرنے کے لیے درج ذیل کمانڈ استعمال کر سکتے ہیں۔
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -182,8 +181,8 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### اگر آپ کے پاس Standard_ND40rs_v2 8x V100-32GB GPUs ہیں
 
-اب بھی hateful memes classification پر Phi-3-V کو مکمل طور پر finetune کرنا ممکن ہے۔ تاہم، flash attention کی کمی کی وجہ سے A100 یا H100 GPUs کے مقابلے میں تھروپٹ بہت کم ہوگی۔  
-bf16 سپورٹ کی کمی کی وجہ سے درستگی پر بھی اثر پڑ سکتا ہے (اس کی جگہ fp16 مکسڈ-پریسیژن ٹریننگ استعمال ہوتی ہے)۔
+Phi-3-V کو hateful memes classification پر مکمل طور پر finetune کرنا اب بھی ممکن ہے۔ تاہم، flash attention کی حمایت نہ ہونے کی وجہ سے A100 یا H100 GPUs کے مقابلے میں تھروپٹ بہت کم ہوگی۔  
+bf16 کی حمایت نہ ہونے کی وجہ سے درستگی پر بھی اثر پڑ سکتا ہے (اس کی جگہ fp16 مکسڈ-پریسیژن ٹریننگ استعمال ہوتی ہے)۔
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -193,7 +192,7 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### اگر آپ کو data center GPUs تک رسائی نہیں ہے
+### اگر آپ کو ڈیٹا سینٹر GPUs تک رسائی نہیں ہے
 
 LoRA آپ کا واحد انتخاب ہو سکتا ہے۔ آپ hateful memes classification پر Phi-3-V کو finetune کرنے کے لیے درج ذیل کمانڈ استعمال کر سکتے ہیں۔
 
@@ -205,7 +204,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-Turing+ GPU کے لیے، QLoRA سپورٹڈ ہے۔
+Turing+ GPU کے لیے، QLoRA کی حمایت موجود ہے۔
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -216,7 +215,8 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## Suggested hyperparameters and expected accuracy
+## تجویز کردہ ہائپر پیرامیٹرز اور متوقع درستگی
+
 ### NLVR2
 
 ```bash
@@ -230,15 +230,15 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | Frozen vision model | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
---- | --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
+Training method | Frozen vision model | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy  
+--- | --- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |  
+full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |  
 LoRA results comming soon |  |  |  |  |  |  |  |  |
 
-### NOTE
+### NOTE  
 نیچے دیے گئے DocVQA اور Hateful memes کے نتائج پچھلے ورژن (Phi-3-vision) پر مبنی ہیں۔  
-نئے نتائج Phi-3.5-vision کے ساتھ جلد اپ ڈیٹ کیے جائیں گے۔
+Phi-3.5-vision کے ساتھ نئے نتائج جلد اپ ڈیٹ کیے جائیں گے۔
 
 ### DocVQA (NOTE: Phi-3-vision)
 
@@ -254,15 +254,15 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | ANLS
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
-full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
-frozen image model| bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
-frozen image model| fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
-LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
-LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
-QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
+Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | ANLS  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |  
+full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |  
+frozen image model| bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |  
+frozen image model| fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |  
+LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |  
+LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |  
+QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |  
 QLoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
 
 ### Hateful memes (NOTE: Phi-3-vision)
@@ -278,52 +278,52 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
-full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
-frozen image model| bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
-frozen image model| fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
-LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
-LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
-QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
+Training method | data type | LoRA rank | LoRA alpha | batch size | learning rate | epochs | Accuracy  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |  
+full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |  
+frozen image model| bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |  
+frozen image model| fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |  
+LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |  
+LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |  
+QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |  
 QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 ## Speed benchmarking (NOTE: Phi-3-vision)
 
-نئے benchmarking نتائج Phi-3.5-vision کے ساتھ جلد اپ ڈیٹ کیے جائیں گے۔
+Phi-3.5-vision کے ساتھ نئے benchmarking نتائج جلد اپ ڈیٹ کیے جائیں گے۔
 
-Speed benchmarking DocVQA ڈیٹا سیٹ پر کی گئی ہے۔ اس ڈیٹا سیٹ کی اوسط sequence length 2443.23 tokens ہے (تصویری ماڈل کے لیے `num_crops=16` استعمال کرتے ہوئے)۔
+Speed benchmarking DocVQA ڈیٹاسیٹ پر کی گئی ہے۔ اس ڈیٹاسیٹ کی اوسط سیکوئنس لمبائی 2443.23 ٹوکنز ہے (امیج ماڈل کے لیے `num_crops=16` استعمال کیا گیا ہے)۔
 
 ### 8x A100-80GB (Ampere)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
-full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
-full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29
-full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26
-frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29
-frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27
-LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50
-LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16
-QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32
-QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
+Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42  
+full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36  
+full-finetuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29  
+full-finetuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26  
+frozen image model | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29  
+frozen image model | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27  
+LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50  
+LoRA | 1 | 8 | ✔ | 64 | 12.127 | 2.41x | ~16  
+QLoRA | 1 | 8 |  | 64 | 4.831 | 0.96x | ~32  
+QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10  
 
 ### 8x V100-32GB (Volta)
 
-Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)
---- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
-full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
-full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
-frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27
-LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
+Training method | \# nodes | GPUs | flash attention | Effective batch size | Throughput (img/s) | Speedup | Peak GPU mem (GB)  
+--- | --- | --- | --- | --- | --- | --- | --- |  
+full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32  
+full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32  
+full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32  
+frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27  
+LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30  
 
 ## Known issues
 
-- fp16 کے ساتھ flash attention چلانا ممکن نہیں (جب بھی دستیاب ہو bf16 کی ہمیشہ سفارش کی جاتی ہے، اور flash attention سپورٹ کرنے والے تمام GPUs bf16 کو بھی سپورٹ کرتے ہیں)۔  
-- ابھی تک intermediate checkpoints کو محفوظ کرنے اور training کو resume کرنے کی حمایت نہیں کی گئی۔
+- fp16 کے ساتھ flash attention نہیں چل سکتا (جب بھی دستیاب ہو bf16 ہمیشہ تجویز کیا جاتا ہے، اور flash attention کی حمایت کرنے والے تمام GPUs bf16 کی بھی حمایت کرتے ہیں)۔  
+- ابھی تک درمیانی checkpoints کو محفوظ کرنے اور ٹریننگ کو دوبارہ شروع کرنے کی حمایت نہیں ہے۔
 
-**ڈسکلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کی کوشش کرتے ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجموں میں غلطیاں یا بے قاعدگیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ ہم اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے ذمہ دار نہیں ہیں۔
+**دستخطی نوٹ**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

@@ -2,49 +2,49 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-09T11:09:44+00:00",
+  "translation_date": "2025-07-16T20:30:15+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "ne"
 }
 -->
-# iOS मा Apple MLX Framework सँग Phi-3 र Phi-4 चलाउने तरिका
+# iOS मा Apple MLX Framework प्रयोग गरी Phi-3 र Phi-4 चलाउने तरिका
 
-यस ट्यूटोरियलले देखाउँछ कि कसरी Apple MLX फ्रेमवर्क प्रयोग गरी iOS एप्लिकेशन बनाउने जसले Phi-3 वा Phi-4 मोडेल डिभाइसमै चलाउन सक्छ। [MLX](https://opensource.apple.com/projects/mlx/) भनेको Apple Silicon चिपहरूका लागि अनुकूलित Apple को मेशिन लर्निङ फ्रेमवर्क हो।
+यो ट्युटोरियलले देखाउँछ कि कसरी Apple MLX framework प्रयोग गरी iOS एप्लिकेशनमा Phi-3 वा Phi-4 मोडेल डिभाइसमै चलाउने। [MLX](https://opensource.apple.com/projects/mlx/) भनेको Apple Silicon चिपहरूका लागि अनुकूलित Apple को मेशिन लर्निङ फ्रेमवर्क हो।
 
 ## आवश्यकताहरू
 
-- Xcode 16 (वा माथि) भएको macOS
-- iOS 18 (वा माथि) लक्षित डिभाइस, कम्तीमा 8GB मेमोरी (Apple Intelligence आवश्यकतासँग मिल्ने iPhone वा iPad, जुन क्वान्टाइज्ड Phi आवश्यकतासँग समान हुन्छ)
+- macOS र Xcode 16 (वा माथि)
+- iOS 18 (वा माथि) लक्षित डिभाइस जसमा कम्तीमा 8GB मेमोरी होस् (Apple Intelligence आवश्यकतासँग मिल्ने iPhone वा iPad, जुन क्वान्टाइज्ड Phi आवश्यकतासँग समान हुन्छ)
 - Swift र SwiftUI को आधारभूत ज्ञान
 
-## चरण 1: नयाँ iOS प्रोजेक्ट बनाउनुहोस्
+## चरण १: नयाँ iOS प्रोजेक्ट बनाउने
 
 Xcode मा नयाँ iOS प्रोजेक्ट बनाएर सुरु गर्नुहोस्:
 
-1. Xcode खोल्नुहोस् र "Create a new Xcode project" चयन गर्नुहोस्
-2. टेम्प्लेटको रूपमा "App" छान्नुहोस्
-3. प्रोजेक्टको नाम राख्नुहोस् (जस्तै, "Phi3-iOS-App") र इन्टरफेस SwiftUI चयन गर्नुहोस्
-4. प्रोजेक्ट सुरक्षित गर्न स्थान छान्नुहोस्
+1. Xcode खोल्नुहोस् र "Create a new Xcode project" छान्नुहोस्
+2. टेम्प्लेटको रूपमा "App" रोज्नुहोस्
+3. प्रोजेक्टको नाम राख्नुहोस् (जस्तै, "Phi3-iOS-App") र इन्टरफेस SwiftUI छान्नुहोस्
+4. प्रोजेक्ट बचत गर्ने स्थान छान्नुहोस्
 
-## चरण 2: आवश्यक Dependencies थप्नुहोस्
+## चरण २: आवश्यक निर्भरता थप्ने
 
-[MLX Examples package](https://github.com/ml-explore/mlx-swift-examples) थप्नुहोस् जसले मोडेलहरू प्रीलोड गर्न र इन्फरेन्स गर्न आवश्यक सबै निर्भरता र सहायकहरू समावेश गर्छ:
+[MLX Examples package](https://github.com/ml-explore/mlx-swift-examples) थप्नुहोस् जसले मोडेल प्रीलोड र इन्फरेन्सका लागि आवश्यक सबै निर्भरता र सहायकहरू समावेश गर्दछ:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-मूल [MLX Swift package](https://github.com/ml-explore/mlx-swift) ले मुख्य टेन्सर अपरेसन र आधारभूत ML कार्यक्षमता पुर्याउँछ, तर MLX Examples package ले भाषा मोडेलहरूमा काम गर्न र इन्फरेन्स प्रक्रिया सजिलो बनाउन थप कम्पोनेन्टहरू प्रदान गर्छ:
+जबकि आधारभूत [MLX Swift package](https://github.com/ml-explore/mlx-swift) कोर टेन्सर अपरेसन र आधारभूत ML कार्यक्षमताका लागि पर्याप्त हुन्छ, MLX Examples package ले भाषा मोडेलहरूसँग काम गर्न र इन्फरेन्स प्रक्रियालाई सजिलो बनाउन थप कम्पोनेन्टहरू प्रदान गर्छ:
 
-- Hugging Face बाट डाउनलोड गर्ने मोडेल लोड गर्ने युटिलिटीहरू
-- टोकनाइजर इन्टिग्रेसन
-- टेक्स्ट जेनेरेशनका लागि इन्फरेन्स हेल्परहरू
+- Hugging Face बाट मोडेल डाउनलोड गर्ने युटिलिटीहरू
+- टोकनाइजर एकीकरण
+- टेक्स्ट जेनेरेसनका लागि इन्फरेन्स सहायकहरू
 - पूर्व-कन्फिगर गरिएको मोडेल परिभाषाहरू
 
-## चरण 3: Entitlements कन्फिगर गर्नुहोस्
+## चरण ३: Entitlements कन्फिगर गर्ने
 
-हाम्रो एपलाई मोडेलहरू डाउनलोड गर्न र पर्याप्त मेमोरी आवंटन गर्न अनुमति दिन, विशेष entitlements थप्न आवश्यक छ। आफ्नो एपका लागि `.entitlements` फाइल निम्न सामग्रीसहित बनाउनुहोस्:
+हाम्रो एपलाई मोडेल डाउनलोड गर्न र पर्याप्त मेमोरी आवंटन गर्न अनुमति दिन, हामीले विशेष entitlements थप्नुपर्छ। आफ्नो एपको लागि `.entitlements` फाइल बनाउनुहोस् र यसमा तलको सामग्री राख्नुहोस्:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,9 +63,9 @@ Xcode मा नयाँ iOS प्रोजेक्ट बनाएर सु
 </plist>
 ```
 
-> **Note:** `com.apple.developer.kernel.increased-memory-limit` entitlement ठूलो मोडेलहरू चलाउन महत्त्वपूर्ण छ, किनभने यसले एपलाई सामान्यभन्दा बढी मेमोरी माग्न अनुमति दिन्छ।
+> **Note:** `com.apple.developer.kernel.increased-memory-limit` entitlement ठूलो मोडेलहरू चलाउन महत्वपूर्ण छ, किनकि यसले एपलाई सामान्य भन्दा बढी मेमोरी माग्न अनुमति दिन्छ।
 
-## चरण 4: Chat Message मोडेल बनाउनुहोस्
+## चरण ४: Chat Message मोडेल बनाउने
 
 पहिले, हाम्रो च्याट सन्देशहरू प्रतिनिधित्व गर्न एउटा आधारभूत संरचना बनाऔं:
 
@@ -85,9 +85,9 @@ struct ChatMessage: Identifiable {
 }
 ```
 
-## चरण 5: ViewModel कार्यान्वयन गर्नुहोस्
+## चरण ५: ViewModel कार्यान्वयन गर्ने
 
-अब, `PhiViewModel` क्लास बनाउँछौं जसले मोडेल लोडिङ र इन्फरेन्स ह्यान्डल गर्छ:
+अब, `PhiViewModel` क्लास बनाउनेछौं जसले मोडेल लोड गर्ने र इन्फरेन्स गर्ने काम गर्छ:
 
 ```swift
 import MLX
@@ -248,23 +248,23 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-ViewModel ले मुख्य MLX इन्टिग्रेसन पोइन्टहरू देखाउँछ:
+ViewModel ले मुख्य MLX एकीकरण बुँदाहरू देखाउँछ:
 
-- `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- मोबाइल उपकरणमा मेमोरी उपयोग अनुकूलन गर्न `MLX.GPU.set(cacheLimit:)` प्रयोग गरी GPU क्यास सीमा सेट गर्ने
+- `LLMModelFactory` प्रयोग गरी मोडेल आवश्यक पर्दा डाउनलोड गर्ने र MLX-अनुकूलित मोडेल सुरु गर्ने
+- `ModelContainer` मार्फत मोडेलका प्यारामिटर र संरचनामा पहुँच गर्ने
+- MLX को टोकन-द्वारा-टोकन जेनेरेसन `MLXLMCommon.generate` विधि मार्फत गर्ने
+- उपयुक्त तापक्रम सेटिङ र टोकन सीमासहित इन्फरेन्स प्रक्रिया व्यवस्थापन गर्ने
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+स्ट्रीमिङ टोकन जेनेरेसनले मोडेलले टेक्स्ट जेनेरेट गर्दा प्रयोगकर्तालाई तुरुन्त प्रतिक्रिया दिन्छ। यो सर्भर-आधारित मोडेलहरू जस्तै हो, जसले टोकनहरू प्रयोगकर्तालाई स्ट्रिम गर्छन्, तर नेटवर्क अनुरोधको ढिलाइ बिना।
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+UI अन्तरक्रियाको हिसाबले, दुई मुख्य फङ्सनहरू हुन्: `loadModel()`, जसले LLM सुरु गर्छ, र `fetchAIResponse()`, जसले प्रयोगकर्ताको इनपुट प्रक्रिया गरी AI प्रतिक्रिया बनाउँछ।
 
-### Model format considerations
+### मोडेल फर्म्याट सम्बन्धी विचारहरू
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Important:** MLX का लागि Phi मोडेलहरू तिनीहरूको डिफल्ट वा GGUF फर्म्याटमा प्रयोग गर्न सकिँदैन। तिनीहरूलाई MLX फर्म्याटमा रूपान्तरण गर्नुपर्छ, जुन MLX समुदायले ह्यान्डल गर्छ। पूर्व-रूपान्तरण गरिएका मोडेलहरू [huggingface.co/mlx-community](https://huggingface.co/mlx-community) मा फेला पार्न सकिन्छ।
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit` सँग GPU क्यास सीमा सेट गर्दै, जुन स्वतः डाउनलोड हुने विशेष पूर्व-परिवर्तित MLX मोडेललाई रेफरेन्स गर्छ:
+MLX Examples package मा Phi-3 सहित विभिन्न मोडेलहरूको पूर्व-कन्फिगर गरिएको रजिस्ट्रेसनहरू समावेश छन्। जब तपाईं `ModelRegistry.phi3_5_4bit` कल गर्नुहुन्छ, यो स्वतः डाउनलोड हुने पूर्व-रूपान्तरण गरिएको MLX मोडेललाई जनाउँछ:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-तपाईं आफ्नो मोडेल कन्फिगरेसनहरू बनाउन सक्नुहुन्छ जुन Hugging Face मा कुनै पनि उपयुक्त मोडेललाई पोइन्ट गर्छ। उदाहरणका लागि, Phi-4 mini प्रयोग गर्न, आफ्नो कन्फिगरेसन यसरी परिभाषित गर्न सक्नुहुन्छ:
+तपाईं आफ्नो मोडेल कन्फिगरेसनहरू बनाउन सक्नुहुन्छ जुन Hugging Face मा कुनै पनि उपयुक्त मोडेललाई जनाउँछ। उदाहरणका लागि, Phi-4 मिनी प्रयोग गर्न चाहनुहुन्छ भने, तपाईं आफ्नो कन्फिगरेसन यसरी परिभाषित गर्न सक्नुहुन्छ:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Note:** Phi-4 समर्थन MLX Swift Examples रिपोजिटरीमा फेब्रुअरी 2025 को अन्त्यमा थपिएको हो ([PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216))। मार्च 2025 सम्म, डिसेम्बर 2024 को आधिकारिक रिलीज (2.21.2) मा Phi-4 समर्थन समावेश छैन। Phi-4 मोडेलहरू प्रयोग गर्न, तपाईंले मुख्य ब्रान्चबाट सोझै प्याकेज रेफरेन्स गर्नुपर्नेछ:
+> **Note:** Phi-4 समर्थन MLX Swift Examples रिपोजिटरीमा फेब्रुअरी २०२५ को अन्त्यमा थपिएको हो ([PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216))। मार्च २०२५ सम्मको आधिकारिक रिलिज (डिसेम्बर २०२४ को 2.21.2) मा Phi-4 समर्थन समावेश छैन। Phi-4 मोडेलहरू प्रयोग गर्न, तपाईंले मुख्य ब्रान्चबाट सिधै प्याकेजलाई रेफरेन्स गर्नुपर्ने हुन्छ:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-यसले आधिकारिक रिलीज अघि नै Phi-4 सहित नयाँ मोडेल कन्फिगरेसनहरू पहुँच दिन्छ। यस तरिकाले, तपाईं फरक Phi मोडेल संस्करणहरू वा MLX फर्म्याटमा रूपान्तरण गरिएका अन्य मोडेलहरू पनि प्रयोग गर्न सक्नुहुन्छ।
+यसले तपाईंलाई आधिकारिक रिलिजमा समावेश हुनु अघि नवीनतम मोडेल कन्फिगरेसनहरू, जस्तै Phi-4, पहुँच दिन्छ। यस तरिकाले तपाईं विभिन्न Phi मोडेल संस्करणहरू वा MLX फर्म्याटमा रूपान्तरण गरिएका अन्य मोडेलहरू प्रयोग गर्न सक्नुहुन्छ।
 
-## चरण 6: UI बनाउनुहोस्
+## चरण ६: UI बनाउने
 
-अब, हाम्रो ViewModel सँग अन्तरक्रिया गर्न सरल च्याट इन्टरफेस कार्यान्वयन गरौं:
+अब हाम्रो ViewModel सँग अन्तरक्रिया गर्न सरल च्याट इन्टरफेस कार्यान्वयन गरौं:
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-UI तीन मुख्य कम्पोनेन्टहरू मिलेर बनेको छ जसले आधारभूत च्याट इन्टरफेस तयार पार्छ। `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` ले AI ले प्रक्रिया गरिरहेको देखाउन सरल एनिमेटेड संकेत दिन्छ।
+UI तीन मुख्य कम्पोनेन्टहरू मिलेर बनेको छ जसले आधारभूत च्याट इन्टरफेस तयार गर्छ। `ContentView` ले दुई-राज्य इन्टरफेस बनाउँछ जुन मोडेल तयार नभएसम्म लोडिङ बटन देखाउँछ र तयार भएपछि च्याट इन्टरफेस देखाउँछ। `MessageView` ले व्यक्तिगत च्याट सन्देशहरू फरक तरिकाले देखाउँछ—प्रयोगकर्ताका सन्देशहरू दायाँतर्फ, निलो पृष्ठभूमिमा, र Phi मोडेलका प्रतिक्रियाहरू बाँयातर्फ, खैरो पृष्ठभूमिमा। `TypingIndicatorView` ले AI प्रक्रिया गरिरहेको देखाउन सरल एनिमेटेड संकेत दिन्छ।
 
-## चरण 7: एप बनाउने र चलाउने
+## चरण ७: एप बनाउने र चलाउने
 
 अब एप बनाउने र चलाउन तयार छौं।
 
-> **Important!** MLX सिम्युलेटरलाई समर्थन गर्दैन। तपाईंले एपलाई Apple Silicon चिप भएको भौतिक डिभाइसमा मात्र चलाउनुपर्नेछ। थप जानकारीका लागि [यहाँ](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) हेर्नुहोस्।
+> **Important!** MLX सिम्युलेटरलाई समर्थन गर्दैन। तपाईंले एप Apple Silicon चिप भएको भौतिक डिभाइसमा चलाउनुपर्छ। थप जानकारीका लागि [यहाँ](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS) हेर्नुहोस्।
 
-एप सुरु हुँदा, "Load model" बटन थिचेर Phi-3 (वा तपाईंको कन्फिगरेसन अनुसार Phi-4) मोडेल डाउनलोड र इनिसियलाइज गर्नुहोस्। यो प्रक्रिया इन्टरनेट कनेक्शन अनुसार केही समय लाग्न सक्छ किनभने मोडेल Hugging Face बाट डाउनलोड हुँदैछ। हाम्रो कार्यान्वयनमा लोडिङ देखाउन स्पिनर मात्र छ, तर वास्तविक प्रगति Xcode कन्सोलमा हेर्न सकिन्छ।
+एप सुरु हुँदा, "Load model" बटन थिचेर Phi-3 (वा तपाईंको कन्फिगरेसन अनुसार Phi-4) मोडेल डाउनलोड र सुरु गर्नुहोस्। यो प्रक्रिया इन्टरनेट कनेक्शनको आधारमा केही समय लाग्न सक्छ किनकि मोडेल Hugging Face बाट डाउनलोड हुन्छ। हाम्रो कार्यान्वयनमा लोडिङ देखाउन स्पिनर मात्र छ, तर Xcode कन्सोलमा वास्तविक प्रगति हेर्न सकिन्छ।
 
-लोड भएपछि, तपाईं मोडेलसँग अन्तरक्रिया गर्न टेक्स्ट फिल्डमा प्रश्न टाइप गरी पठाउन सक्नुहुन्छ।
+लोड भएपछि, तपाईं मोडेलसँग अन्तरक्रिया गर्न टेक्स्ट फिल्डमा प्रश्न टाइप गरी पठाउने बटन थिच्न सक्नुहुन्छ।
 
-iPad Air M1 मा चलिरहेको हाम्रो एप यसरी देखिन्छ:
+यहाँ हाम्रो एपले iPad Air M1 मा चल्दा कस्तो व्यवहार गर्नेछ:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
 ## निष्कर्ष
 
-त्यसोभए यति नै! यी चरणहरू पालना गरेर, तपाईंले Apple को MLX फ्रेमवर्क प्रयोग गरी डिभाइसमै सिधै Phi-3 (वा Phi-4) मोडेल चलाउने iOS एप्लिकेशन बनाउनु भयो।
+यति नै! यी चरणहरू पालना गरेर, तपाईंले Apple को MLX framework प्रयोग गरी डिभाइसमै सिधै Phi-3 (वा Phi-4) मोडेल चलाउने iOS एप्लिकेशन बनाउनु भयो।
 
 बधाई छ!
 
 **अस्वीकरण**:  
-यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताको प्रयास गर्छौं, तर कृपया जान्नुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धता हुनसक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।
+यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुनसक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

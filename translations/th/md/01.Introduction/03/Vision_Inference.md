@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:14:25+00:00",
+  "translation_date": "2025-07-16T21:38:17+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "th"
 }
 -->
 # **การใช้งาน Inference Phi-3-Vision ในเครื่อง**
 
-Phi-3-vision-128k-instruct ช่วยให้ Phi-3 ไม่เพียงแต่เข้าใจภาษา แต่ยังสามารถมองเห็นโลกในรูปแบบภาพได้ ผ่าน Phi-3-vision-128k-instruct เราสามารถแก้ไขปัญหาภาพต่างๆ เช่น OCR, การวิเคราะห์ตาราง, การรู้จำวัตถุ, การบรรยายภาพ เป็นต้น เราสามารถทำงานเหล่านี้ได้อย่างง่ายดายโดยไม่ต้องใช้ข้อมูลฝึกสอนจำนวนมาก ดังนี้เป็นเทคนิคและกรณีการใช้งานที่เกี่ยวข้องซึ่งอ้างอิงโดย Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct ช่วยให้ Phi-3 ไม่เพียงแต่เข้าใจภาษา แต่ยังสามารถมองเห็นโลกในรูปแบบภาพได้ ผ่าน Phi-3-vision-128k-instruct เราสามารถแก้ไขปัญหาด้านภาพต่างๆ เช่น OCR, การวิเคราะห์ตาราง, การจดจำวัตถุ, การบรรยายภาพ เป็นต้น เราสามารถทำงานเหล่านี้ได้อย่างง่ายดายโดยไม่ต้องใช้ข้อมูลฝึกสอนจำนวนมากเหมือนแต่ก่อน ด้านล่างนี้เป็นเทคนิคและสถานการณ์การใช้งานที่เกี่ยวข้องซึ่งอ้างอิงโดย Phi-3-vision-128k-instruct
 
-## **0. การเตรียมความพร้อม**
+## **0. การเตรียมตัว**
 
-โปรดตรวจสอบให้แน่ใจว่าได้ติดตั้งไลบรารี Python ต่อไปนี้ก่อนใช้งาน (แนะนำ Python 3.10 ขึ้นไป)
+โปรดตรวจสอบให้แน่ใจว่าได้ติดตั้งไลบรารี Python ต่อไปนี้แล้วก่อนใช้งาน (แนะนำ Python 3.10 ขึ้นไป)
 
 ```bash
 pip install transformers -U
@@ -27,7 +27,7 @@ pip install torch -U
 pip install flash-attn --no-build-isolation
 ```
 
-สร้าง Notebook ใหม่ เพื่อทำตามตัวอย่าง แนะนำให้สร้างเนื้อหาต่อไปนี้ก่อน
+สร้าง Notebook ใหม่ เพื่อให้ทำตามตัวอย่างได้สะดวก แนะนำให้สร้างเนื้อหาดังต่อไปนี้ก่อน
 
 ```python
 from PIL import Image
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. วิเคราะห์ภาพด้วย Phi-3-Vision**
 
-เราต้องการให้ AI สามารถวิเคราะห์เนื้อหาของภาพและให้คำอธิบายที่เกี่ยวข้อง
+เราต้องการให้ AI สามารถวิเคราะห์เนื้อหาภาพของเราและให้คำอธิบายที่เกี่ยวข้อง
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-เราสามารถรับคำตอบที่เกี่ยวข้องได้โดยการรันสคริปต์ต่อไปนี้ใน Notebook
+เราสามารถรับคำตอบที่เกี่ยวข้องได้โดยรันสคริปต์ต่อไปนี้ใน Notebook
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR ด้วย Phi-3-Vision**
 
-นอกจากการวิเคราะห์ภาพแล้ว เรายังสามารถดึงข้อมูลจากภาพได้อีกด้วย นี่คือกระบวนการ OCR ซึ่งก่อนหน้านี้เราต้องเขียนโค้ดยุ่งยากเพื่อทำให้เสร็จ
+นอกจากการวิเคราะห์ภาพแล้ว เรายังสามารถดึงข้อมูลจากภาพได้อีกด้วย นี่คือกระบวนการ OCR ที่แต่ก่อนเราต้องเขียนโค้ดยุ่งยากเพื่อทำให้เสร็จ
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. การเปรียบเทียบภาพหลายภาพ**
 
-Phi-3 Vision รองรับการเปรียบเทียบภาพหลายภาพ เราสามารถใช้โมเดลนี้เพื่อค้นหาความแตกต่างระหว่างภาพได้
+Phi-3 Vision รองรับการเปรียบเทียบภาพหลายภาพ เราสามารถใช้โมเดลนี้เพื่อหาความแตกต่างระหว่างภาพได้
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาด้วย AI [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลสำคัญ แนะนำให้ใช้บริการแปลโดยมนุษย์มืออาชีพ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความที่ผิดพลาดที่เกิดขึ้นจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

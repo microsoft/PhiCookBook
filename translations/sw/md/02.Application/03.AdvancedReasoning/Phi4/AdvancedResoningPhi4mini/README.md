@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:53:53+00:00",
+  "translation_date": "2025-07-17T04:50:54+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "sw"
 }
 -->
 ## **Kutumia Phi-4-mini-reasoning(3.8b) au Phi-4-reasoning(14b) kama Mtaalamu wa Ufafanuzi**
 
-Tuchunguze uwezo wake mkubwa wa ufafanuzi kupitia Phi-4-mini-reasoning au Phi-4-mini-reasoning.
+Tuchunguze uwezo wake mkubwa wa kufikiri kupitia Phi-4-mini-reasoning au Phi-4-mini-reasoning.
 
 
 ```python
@@ -49,5 +49,5 @@ print(outputs[0])
 
 ```
 
-**Kiaruhusi**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya utafsiri wa AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upotovu wa maana. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na watu inashauriwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zitokanazo na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-07T14:40:43+00:00",
+  "translation_date": "2025-07-16T21:25:35+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "zh"
 }
 -->
-# 使用 Rust 实现跨平台推理
+# 使用 Rust 进行跨平台推理
 
-本教程将引导我们使用 Rust 和 HuggingFace 的 [Candle ML 框架](https://github.com/huggingface/candle) 进行推理。与其他编程语言相比，使用 Rust 进行推理有许多优势。Rust 以其高性能著称，可媲美 C 和 C++。这使其成为计算密集型推理任务的理想选择。特别是，这得益于零开销抽象和高效的内存管理，没有垃圾回收的负担。Rust 的跨平台特性使得开发的代码能够在多个操作系统上运行，包括 Windows、macOS 和 Linux，以及移动操作系统，而无需对代码库进行重大修改。
+本教程将引导我们使用 Rust 和 HuggingFace 的 [Candle ML 框架](https://github.com/huggingface/candle) 进行推理。与其他编程语言相比，使用 Rust 进行推理有诸多优势。Rust 以其高性能著称，性能可与 C 和 C++ 相媲美，这使其成为计算密集型推理任务的理想选择。特别是，Rust 通过零成本抽象和高效的内存管理（无垃圾回收开销）实现了这一点。Rust 的跨平台能力使得开发的代码可以在包括 Windows、macOS 和 Linux 以及移动操作系统在内的多种操作系统上运行，而无需对代码库进行重大修改。
 
-本教程的前提是需要先[安装 Rust](https://www.rust-lang.org/tools/install)，其中包括 Rust 编译器和包管理工具 Cargo。
+要跟随本教程，前提是先[安装 Rust](https://www.rust-lang.org/tools/install)，其中包含 Rust 编译器和 Rust 包管理器 Cargo。
 
 ## 第一步：创建新的 Rust 项目
 
-在终端中运行以下命令来创建一个新的 Rust 项目：
+在终端中运行以下命令以创建一个新的 Rust 项目：
 
 ```bash
 cargo new phi-console-app
 ```
 
-这会生成一个初始项目结构，其中包含一个 `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+这将生成一个初始项目结构，包含一个 `Cargo.toml` 文件和一个包含 `main.rs` 文件的 `src` 目录。
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` 文件：
+接下来，我们将在 `Cargo.toml` 文件中添加依赖项——即 `candle`、`hf-hub` 和 `tokenizers` crates：
 
 ```toml
 [package]
@@ -41,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## 第二步：配置基本参数
 
-在 main.rs 文件中，我们将设置推理的初始参数。为了简化，所有参数都会硬编码，但我们可以根据需要进行修改。
+在 main.rs 文件中，我们将设置推理的初始参数。为了简化，所有参数都将硬编码，但我们可以根据需要进行修改。
 
 ```rust
 let temperature: f64 = 1.0;
@@ -57,12 +57,12 @@ let device = Device::Cpu;
 
 - **temperature**：控制采样过程的随机性。
 - **sample_len**：指定生成文本的最大长度。
-- **top_p**：用于核采样，限制每一步考虑的标记数量。
-- **repeat_last_n**：控制考虑用于惩罚以防止重复序列的标记数量。
-- **repeat_penalty**：用于惩罚重复标记的值。
-- **seed**：随机种子（为了更好的可复现性，我们可以使用固定值）。
-- **prompt**：用于生成的初始提示文本。注意，我们要求模型生成一首关于冰球的俳句，并且用特殊标记将对话中的用户和助手部分包裹起来。模型随后会完成这个提示，生成一首俳句。
-- **device**：本例中使用 CPU 进行计算。Candle 也支持在 GPU 上运行，支持 CUDA 和 Metal。
+- **top_p**：用于核采样，限制每步考虑的 token 数量。
+- **repeat_last_n**：控制用于惩罚以防止重复序列的 token 数量。
+- **repeat_penalty**：惩罚值，用于抑制重复 token。
+- **seed**：随机种子（为了更好的可复现性，可以使用常量值）。
+- **prompt**：用于开始生成的初始提示文本。注意，我们让模型生成一首关于冰球的俳句，并用特殊标记包裹以指示对话中的用户和助手部分。模型随后会用一首俳句完成提示。
+- **device**：本例中使用 CPU 进行计算。Candle 也支持使用 CUDA 和 Metal 在 GPU 上运行。
 
 ## 第三步：下载/准备模型和分词器
 
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-我们使用 `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` 文件来对输入文本进行分词。模型下载完成后会被缓存，因此第一次执行会比较慢（因为要下载 2.4GB 的模型），但之后的执行会更快。
+我们使用 `hf_hub` API 从 Hugging Face 模型库下载模型和分词器文件。`gguf` 文件包含量化后的模型权重，而 `tokenizer.json` 文件用于对输入文本进行分词。模型下载后会被缓存，因此首次执行会较慢（因为需要下载 2.4GB 的模型），但后续执行会更快。
 
 ## 第四步：加载模型
 
@@ -92,7 +92,7 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-我们将量化后的模型权重加载到内存中，并初始化 Phi-3 模型。这一步包括从 `gguf` 文件中读取模型权重，并为指定设备（本例为 CPU）设置模型以进行推理。
+我们将量化后的模型权重加载到内存中，并初始化 Phi-3 模型。此步骤涉及从 `gguf` 文件读取模型权重，并在指定设备（本例为 CPU）上设置模型以进行推理。
 
 ## 第五步：处理提示并准备推理
 
@@ -120,9 +120,9 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-这一步中，我们将输入提示进行分词，并将其转换为一系列标记 ID 以准备推理。同时初始化 `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` 的值。每个标记被转换成张量并传入模型以获取 logits。
+这一步中，我们对输入提示进行分词，并将其转换为 token ID 序列以准备推理。我们还初始化 `LogitsProcessor`，根据给定的 `temperature` 和 `top_p` 值处理采样过程（词汇表上的概率分布）。每个 token 被转换为张量并传入模型以获取 logits。
 
-循环处理提示中的每个标记，更新 logits 处理器并为生成下一个标记做准备。
+循环处理提示中的每个 token，更新 logits 处理器并为下一个 token 的生成做准备。
 
 ## 第六步：推理
 
@@ -160,14 +160,15 @@ for index in 0..to_sample {
 }
 ```
 
-在推理循环中，我们逐个生成标记，直到达到预定的生成长度或遇到结束序列标记。下一个标记被转换为张量并传入模型，同时对 logits 进行处理以应用惩罚和采样。然后采样出下一个标记，对其解码并追加到序列中。
-为了避免重复文本，会根据 `repeat_last_n` and `repeat_penalty` 参数对重复标记施加惩罚。
+在推理循环中，我们逐个生成 token，直到达到期望的生成长度或遇到序列结束 token。下一个 token 被转换为张量并传入模型，同时对 logits 进行处理以应用惩罚和采样。然后对下一个 token 进行采样、解码并追加到序列中。
 
-最终，生成的文本会随着解码实时打印，确保流式实时输出。
+为了避免文本重复，根据 `repeat_last_n` 和 `repeat_penalty` 参数对重复 token 施加惩罚。
+
+最后，生成的文本在解码时被打印出来，确保实时流式输出。
 
 ## 第七步：运行应用程序
 
-在终端中执行以下命令运行应用程序：
+在终端中执行以下命令以运行应用程序：
 
 ```bash
 cargo run --release
@@ -181,7 +182,7 @@ Blades on ice dance and clash—peace found
 in the cold battle.
 ```
 
-或者
+或
 
 ```
 Glistening puck glides in,
@@ -191,9 +192,9 @@ Swish of sticks now alive.
 
 ## 结论
 
-通过以上步骤，我们可以用不到 100 行代码，利用 Rust 和 Candle 使用 Phi-3 模型进行文本生成。代码涵盖了模型加载、分词和推理，利用张量和 logits 处理生成基于输入提示的连贯文本。
+通过以上步骤，我们可以使用 Rust 和 Candle 在不到 100 行代码中完成基于 Phi-3 模型的文本生成。代码涵盖了模型加载、分词和推理，利用张量和 logits 处理生成基于输入提示的连贯文本。
 
-该控制台应用可在 Windows、Linux 和 macOS 上运行。由于 Rust 的可移植性，代码也可以改编为在移动应用中运行的库（毕竟控制台应用无法在移动端运行）。
+该控制台应用程序可在 Windows、Linux 和 Mac OS 上运行。由于 Rust 的可移植性，代码也可以改编为在移动应用中运行的库（毕竟我们不能在移动端运行控制台应用）。
 
 ## 附录：完整代码
 
@@ -304,7 +305,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-注意：为了在 aarch64 Linux 或 aarch64 Windows 上运行此代码，需要添加一个名为 `.cargo/config` 的文件，内容如下：
+注意：若要在 aarch64 Linux 或 aarch64 Windows 上运行此代码，请添加一个名为 `.cargo/config` 的文件，内容如下：
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +319,7 @@ rustflags = [
 ]
 ```
 
-> 你可以访问官方的 [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) 仓库，获取更多关于如何使用 Rust 和 Candle 调用 Phi-3 模型的示例，包括推理的替代方案。
+> 你可以访问官方的 [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) 仓库，查看更多关于如何使用 Rust 和 Candle 运行 Phi-3 模型的示例，包括推理的替代方法。
 
 **免责声明**：  
-本文件使用AI翻译服务[Co-op Translator](https://github.com/Azure/co-op-translator)进行翻译。尽管我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始语言版本的文件应被视为权威来源。对于重要信息，建议采用专业人工翻译。因使用本翻译而产生的任何误解或误释，我们概不负责。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

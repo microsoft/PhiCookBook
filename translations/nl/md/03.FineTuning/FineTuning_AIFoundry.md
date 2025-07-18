@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:33:27+00:00",
+  "translation_date": "2025-07-17T06:08:21+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "nl"
 }
 -->
 # Fine-tunen van Phi-3 met Azure AI Foundry
 
-Laten we bekijken hoe je het taalmodel Phi-3 Mini van Microsoft kunt fine-tunen met Azure AI Foundry. Fine-tunen stelt je in staat Phi-3 Mini aan te passen aan specifieke taken, waardoor het nog krachtiger en contextbewuster wordt.
+Laten we ontdekken hoe je het taalmodel Phi-3 Mini van Microsoft kunt fine-tunen met Azure AI Foundry. Fine-tunen stelt je in staat om Phi-3 Mini aan te passen aan specifieke taken, waardoor het model krachtiger en beter afgestemd op de context wordt.
 
 ## Overwegingen
 
 - **Mogelijkheden:** Welke modellen zijn fine-tunebaar? Wat kan het basismodel leren na fine-tuning?
 - **Kosten:** Wat is het prijsmodel voor fine-tuning?
 - **Aanpasbaarheid:** Hoeveel kan ik het basismodel aanpassen – en op welke manieren?
-- **Gebruiksgemak:** Hoe vindt fine-tuning eigenlijk plaats – moet ik zelf code schrijven? Moet ik eigen rekenkracht meenemen?
-- **Veiligheid:** Fine-tuned modellen kunnen veiligheidsrisico’s hebben – zijn er waarborgen om onbedoelde schade te voorkomen?
+- **Gebruiksgemak:** Hoe verloopt het fine-tunen precies – moet ik zelf code schrijven? Moet ik eigen rekenkracht meenemen?
+- **Veiligheid:** Fine-tuned modellen kunnen veiligheidsrisico’s met zich meebrengen – zijn er beschermingsmaatregelen om onbedoelde schade te voorkomen?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.nl.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.nl.png)
 
 ## Voorbereiding voor fine-tuning
 
@@ -29,32 +29,33 @@ Laten we bekijken hoe je het taalmodel Phi-3 Mini van Microsoft kunt fine-tunen 
 > Voor Phi-3 familie modellen is het pay-as-you-go fine-tune aanbod alleen beschikbaar voor hubs die zijn aangemaakt in de regio **East US 2**.
 
 - Een Azure-abonnement. Als je nog geen Azure-abonnement hebt, maak dan een [betaald Azure-account](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) aan om te beginnen.
-- Een [AI Foundry project](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure rolgebaseerde toegangscontroles (Azure RBAC) worden gebruikt om toegang te verlenen tot bewerkingen in Azure AI Foundry. Om de stappen in dit artikel uit te voeren, moet je gebruikersaccount de __Azure AI Developer rol__ hebben op de resourcegroep.
+
+- Een [AI Foundry-project](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
+- Azure role-based access controls (Azure RBAC) worden gebruikt om toegang te verlenen tot operaties in Azure AI Foundry. Om de stappen in dit artikel uit te voeren, moet je gebruikersaccount de __Azure AI Developer rol__ toegewezen hebben op de resourcegroep.
 
 ### Registratie van de subscription provider
 
-Controleer of de subscription is geregistreerd bij de `Microsoft.Network` resource provider.
+Controleer of de subscription geregistreerd is bij de `Microsoft.Network` resource provider.
 
-1. Meld je aan bij het [Azure-portaal](https://portal.azure.com).
-2. Selecteer **Subscriptions** in het linkermenu.
-3. Kies de subscription die je wilt gebruiken.
-4. Selecteer **AI project settings** > **Resource providers** in het linkermenu.
-5. Controleer of **Microsoft.Network** in de lijst met resource providers staat. Zo niet, voeg deze dan toe.
+1. Meld je aan bij de [Azure portal](https://portal.azure.com).
+1. Selecteer **Subscriptions** in het linkermenu.
+1. Kies de subscription die je wilt gebruiken.
+1. Selecteer **AI project settings** > **Resource providers** in het linkermenu.
+1. Controleer of **Microsoft.Network** in de lijst van resource providers staat. Zo niet, voeg deze dan toe.
 
 ### Data voorbereiding
 
-Bereid je trainings- en validatiegegevens voor om je model te fine-tunen. Je trainings- en validatiesets bestaan uit input- en outputvoorbeelden van hoe je wilt dat het model presteert.
+Bereid je trainings- en validatiegegevens voor om je model te fine-tunen. Je trainings- en validatiesets bestaan uit input- en outputvoorbeelden die aangeven hoe je wilt dat het model presteert.
 
-Zorg dat al je trainingsvoorbeelden voldoen aan het verwachte formaat voor inferentie. Om modellen effectief te fine-tunen, is het belangrijk een gebalanceerde en diverse dataset te gebruiken.
+Zorg dat al je trainingsvoorbeelden het verwachte formaat voor inferentie volgen. Om modellen effectief te fine-tunen, is het belangrijk om een gebalanceerde en diverse dataset te gebruiken.
 
-Dit betekent dat je data in balans houdt, verschillende scenario’s opneemt en je trainingsdata regelmatig verfijnt om aan te sluiten bij realistische verwachtingen, wat leidt tot nauwkeurigere en evenwichtigere modelantwoorden.
+Dit betekent dat je de data in balans houdt, verschillende scenario’s opneemt en de trainingsdata periodiek verfijnt om aan te sluiten bij de verwachtingen uit de praktijk, wat uiteindelijk leidt tot nauwkeurigere en evenwichtigere modelantwoorden.
 
-Verschillende modeltypen vereisen een verschillend formaat voor trainingsdata.
+Verschillende modeltypes vereisen een verschillend formaat van trainingsdata.
 
 ### Chat Completion
 
-De trainings- en validatiegegevens die je gebruikt, **moeten** worden geformatteerd als een JSON Lines (JSONL) document. Voor `Phi-3-mini-128k-instruct` moet de fine-tuning dataset in het conversatieformaat zijn, zoals gebruikt door de Chat completions API.
+De trainings- en validatiegegevens die je gebruikt **moeten** geformatteerd zijn als een JSON Lines (JSONL) document. Voor `Phi-3-mini-128k-instruct` moet de fine-tuning dataset het conversatieformaat volgen dat gebruikt wordt door de Chat completions API.
 
 ### Voorbeeld bestandsformaat
 
@@ -68,126 +69,126 @@ Het ondersteunde bestandstype is JSON Lines. Bestanden worden geüpload naar de 
 
 ## Fine-tunen van Phi-3 met Azure AI Foundry
 
-Azure AI Foundry stelt je in staat grote taalmodellen aan te passen aan je eigen datasets via fine-tuning. Fine-tuning levert veel waarde doordat je het model kunt personaliseren en optimaliseren voor specifieke taken en toepassingen. Dit resulteert in betere prestaties, kostenbesparing, minder vertraging en op maat gemaakte output.
+Azure AI Foundry stelt je in staat om grote taalmodellen aan te passen aan je eigen datasets via een proces dat fine-tuning heet. Fine-tuning biedt veel waarde doordat het maatwerk en optimalisatie voor specifieke taken en toepassingen mogelijk maakt. Dit leidt tot betere prestaties, kostenbesparing, minder vertraging en op maat gemaakte output.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.nl.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.nl.png)
 
 ### Maak een nieuw project aan
 
 1. Meld je aan bij [Azure AI Foundry](https://ai.azure.com).
 
-2. Selecteer **+New project** om een nieuw project aan te maken in Azure AI Foundry.
+1. Selecteer **+New project** om een nieuw project aan te maken in Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.nl.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.nl.png)
 
-3. Voer de volgende stappen uit:
+1. Voer de volgende taken uit:
 
     - Project **Hub name**. Dit moet een unieke naam zijn.
-    - Selecteer de **Hub** die je wilt gebruiken (maak een nieuwe aan indien nodig).
+    - Selecteer de **Hub** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.nl.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.nl.png)
 
-4. Voer de volgende stappen uit om een nieuwe hub te maken:
+1. Voer de volgende taken uit om een nieuwe hub aan te maken:
 
-    - Voer een **Hub name** in. Dit moet uniek zijn.
+    - Voer een **Hub name** in. Dit moet een unieke naam zijn.
     - Selecteer je Azure **Subscription**.
-    - Selecteer de **Resource group** die je wilt gebruiken (maak een nieuwe aan indien nodig).
-    - Selecteer de **Location** waar je de hub wilt plaatsen.
-    - Selecteer de **Connect Azure AI Services** die je wilt gebruiken (maak een nieuwe aan indien nodig).
-    - Selecteer **Connect Azure AI Search** en kies voor **Skip connecting**.
+    - Selecteer de **Resource group** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
+    - Selecteer de **Location** die je wilt gebruiken.
+    - Selecteer de **Connect Azure AI Services** die je wilt gebruiken (maak er een nieuwe aan indien nodig).
+    - Selecteer **Connect Azure AI Search** en kies **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.nl.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.nl.png)
 
-5. Selecteer **Next**.
-6. Selecteer **Create a project**.
+1. Selecteer **Next**.
+1. Selecteer **Create a project**.
 
 ### Data voorbereiding
 
-Verzamel of maak een dataset die relevant is voor je taak, zoals chatinstructies, vraag-en-antwoord paren of andere relevante tekstdata. Maak de data schoon en verwerk deze voor door ruis te verwijderen, ontbrekende waarden aan te pakken en de tekst te tokenizen.
+Verzamel of maak een dataset die relevant is voor je taak, zoals chatinstructies, vraag-en-antwoordparen of andere relevante tekstdata. Maak deze data schoon en verwerk deze voor door ruis te verwijderen, ontbrekende waarden te behandelen en de tekst te tokenizen.
 
 ### Fine-tune Phi-3 modellen in Azure AI Foundry
 
 > [!NOTE]
 > Fine-tuning van Phi-3 modellen wordt momenteel ondersteund in projecten die zich bevinden in East US 2.
 
-1. Selecteer **Model catalog** in het linker tabblad.
+1. Selecteer **Model catalog** in het tabblad aan de linkerkant.
 
-2. Typ *phi-3* in de **zoekbalk** en selecteer het phi-3 model dat je wilt gebruiken.
+1. Typ *phi-3* in de **zoekbalk** en selecteer het phi-3 model dat je wilt gebruiken.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.nl.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.nl.png)
 
-3. Selecteer **Fine-tune**.
+1. Selecteer **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.nl.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.nl.png)
 
-4. Voer de **Fine-tuned model name** in.
+1. Voer de **Fine-tuned model name** in.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.nl.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.nl.png)
 
-5. Selecteer **Next**.
+1. Selecteer **Next**.
 
-6. Voer de volgende taken uit:
+1. Voer de volgende taken uit:
 
-    - Selecteer **task type** als **Chat completion**.
-    - Selecteer de **Training data** die je wilt gebruiken. Je kunt deze uploaden via Azure AI Foundry of vanuit je lokale omgeving.
+    - Selecteer het **task type** als **Chat completion**.
+    - Selecteer de **Training data** die je wilt gebruiken. Je kunt deze uploaden via Azure AI Foundry’s data of vanaf je lokale omgeving.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.nl.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.nl.png)
 
-7. Selecteer **Next**.
+1. Selecteer **Next**.
 
-8. Upload de **Validation data** die je wilt gebruiken, of kies voor **Automatic split of training data**.
+1. Upload de **Validation data** die je wilt gebruiken, of kies voor **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.nl.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.nl.png)
 
-9. Selecteer **Next**.
+1. Selecteer **Next**.
 
-10. Voer de volgende taken uit:
+1. Voer de volgende taken uit:
 
-    - Selecteer de **Batch size multiplier** die je wilt gebruiken.
-    - Selecteer de **Learning rate** die je wilt gebruiken.
+    - Selecteer de gewenste **Batch size multiplier**.
+    - Selecteer de gewenste **Learning rate**.
     - Selecteer het aantal **Epochs** dat je wilt gebruiken.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.nl.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.nl.png)
 
-11. Selecteer **Submit** om het fine-tuning proces te starten.
+1. Selecteer **Submit** om het fine-tuning proces te starten.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.nl.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.nl.png)
 
-12. Zodra je model is gefinetuned, wordt de status weergegeven als **Completed**, zoals in de afbeelding hieronder. Je kunt het model nu implementeren en gebruiken in je eigen applicatie, in de playground, of in prompt flow. Voor meer informatie, zie [Hoe je Phi-3 familie kleine taalmodellen implementeert met Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Zodra je model is gefinetuned, wordt de status weergegeven als **Completed**, zoals in de afbeelding hieronder. Nu kun je het model implementeren en gebruiken in je eigen applicatie, in de playground of in prompt flow. Voor meer informatie, zie [Hoe Phi-3 familie van kleine taalmodellen te implementeren met Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.nl.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.nl.png)
 
 > [!NOTE]
-> Voor meer gedetailleerde informatie over fine-tuning van Phi-3, bezoek [Fine-tune Phi-3 modellen in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Voor meer gedetailleerde informatie over fine-tuning van Phi-3, bezoek [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Opruimen van je fine-tuned modellen
 
-Je kunt een fine-tuned model verwijderen uit de lijst met fine-tuning modellen in [Azure AI Foundry](https://ai.azure.com) of vanaf de model detailpagina. Selecteer het fine-tuned model dat je wilt verwijderen op de Fine-tuning pagina en klik vervolgens op de Delete knop om het model te verwijderen.
+Je kunt een fine-tuned model verwijderen uit de lijst met fine-tuning modellen in [Azure AI Foundry](https://ai.azure.com) of vanaf de model detailpagina. Selecteer het fine-tuned model dat je wilt verwijderen op de Fine-tuning pagina en klik vervolgens op de Delete-knop om het model te verwijderen.
 
 > [!NOTE]
-> Je kunt een aangepast model niet verwijderen als er een bestaande deployment actief is. Je moet eerst de modeldeployment verwijderen voordat je het aangepaste model kunt verwijderen.
+> Je kunt een custom model niet verwijderen als er een bestaande deployment is. Je moet eerst de modeldeployment verwijderen voordat je het custom model kunt verwijderen.
 
 ## Kosten en quota
 
-### Kosten- en quota-overwegingen voor Phi-3 modellen die als service zijn gefinetuned
+### Kosten- en quotumoverwegingen voor Phi-3 modellen die als service zijn gefinetuned
 
-Phi modellen die als service zijn gefinetuned worden door Microsoft aangeboden en geïntegreerd met Azure AI Foundry. Je vindt de prijzen bij het [implementeren](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) of fine-tunen van de modellen onder het tabblad Prijzen en voorwaarden in de implementatiewizard.
+Phi-modellen die als service zijn gefinetuned worden aangeboden door Microsoft en geïntegreerd met Azure AI Foundry voor gebruik. Je kunt de prijzen vinden tijdens het [implementeren](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) of fine-tunen van de modellen onder het tabblad Prijzen en voorwaarden in de deployment wizard.
 
 ## Content filtering
 
-Modellen die als pay-as-you-go service worden ingezet, zijn beschermd door Azure AI Content Safety. Bij realtime endpoints kun je ervoor kiezen deze bescherming uit te schakelen. Met Azure AI Content Safety ingeschakeld, worden zowel de prompt als de output gecontroleerd door een verzameling classificatiemodellen die schadelijke inhoud detecteren en voorkomen. Het content filtering systeem detecteert en grijpt in bij specifieke categorieën potentieel schadelijke inhoud in zowel input prompts als output. Meer informatie over [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Modellen die als service met pay-as-you-go worden ingezet, worden beschermd door Azure AI Content Safety. Wanneer ze worden ingezet op real-time endpoints, kun je ervoor kiezen om deze functionaliteit uit te schakelen. Met Azure AI Content Safety ingeschakeld, worden zowel de prompt als de output door een ensemble van classificatiemodellen geleid die gericht zijn op het detecteren en voorkomen van schadelijke inhoud. Het contentfilteringssysteem detecteert en onderneemt actie tegen specifieke categorieën van potentieel schadelijke inhoud in zowel input prompts als output responses. Lees meer over [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
 **Fine-Tuning Configuratie**
 
 Hyperparameters: Definieer hyperparameters zoals learning rate, batch size en aantal trainings-epochs.
 
-**Loss Function**
+**Lossfunctie**
 
-Kies een passende loss functie voor je taak (bijv. cross-entropy).
+Kies een geschikte lossfunctie voor je taak (bijv. cross-entropy).
 
 **Optimizer**
 
-Selecteer een optimizer (bijv. Adam) voor de gradient updates tijdens training.
+Selecteer een optimizer (bijv. Adam) voor het bijwerken van de gradiënten tijdens training.
 
 **Fine-Tuning Proces**
 
@@ -203,17 +204,17 @@ Validatieset: Verdeel je data in trainings- en validatiesets.
 
 **Prestaties evalueren**
 
-Gebruik metrics zoals nauwkeurigheid, F1-score of perplexity om de prestaties te beoordelen.
+Gebruik metrics zoals nauwkeurigheid, F1-score of perplexity om de prestaties van het model te beoordelen.
 
-## Opslaan van het fine-tuned model
+## Sla het fine-tuned model op
 
 **Checkpoint**  
-Sla de fine-tuned model checkpoint op voor toekomstig gebruik.
+Sla de checkpoint van het fine-tuned model op voor toekomstig gebruik.
 
 ## Implementatie
 
-- Implementeer als Web Service: Zet je fine-tuned model in als webservice in Azure AI Foundry.
-- Test de Endpoint: Verstuur testvragen naar de geïmplementeerde endpoint om de functionaliteit te verifiëren.
+- Implementeer als webservice: Zet je fine-tuned model in als webservice in Azure AI Foundry.
+- Test het endpoint: Verstuur testvragen naar het geïmplementeerde endpoint om de functionaliteit te controleren.
 
 ## Itereren en verbeteren
 
@@ -225,11 +226,11 @@ Blijf het gedrag van het model monitoren en verfijn waar nodig.
 
 ## Aanpassen en uitbreiden
 
-Aangepaste taken: Phi-3 Mini kan voor verschillende taken worden fine-tuned, niet alleen voor chatinstructies. Ontdek andere toepassingen!  
+Aangepaste taken: Phi-3 Mini kan voor verschillende taken worden gefinetuned, niet alleen voor chatinstructies. Ontdek andere toepassingen!  
 Experimenteer: Probeer verschillende architecturen, laagcombinaties en technieken om de prestaties te verbeteren.
 
-> [!NOTE]  
+> [!NOTE]
 > Fine-tuning is een iteratief proces. Experimenteer, leer en pas je model aan om de beste resultaten voor jouw specifieke taak te behalen!
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal geldt als de gezaghebbende bron. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

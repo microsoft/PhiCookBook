@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T13:00:40+00:00",
+  "translation_date": "2025-07-16T21:31:10+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "nl"
 }
 -->
-# Cross-platform inference met Rust
+# Cross-platform inferentie met Rust
 
-Deze tutorial begeleidt ons door het proces van inferentie uitvoeren met Rust en het [Candle ML framework](https://github.com/huggingface/candle) van HuggingFace. Het gebruik van Rust voor inferentie biedt verschillende voordelen, vooral in vergelijking met andere programmeertalen. Rust staat bekend om zijn hoge prestaties, vergelijkbaar met die van C en C++. Dit maakt het een uitstekende keuze voor inferentietaken, die rekenintensief kunnen zijn. Dit wordt met name mogelijk gemaakt door zero-cost abstracties en efficiënt geheugenbeheer, zonder overhead van garbage collection. De cross-platform mogelijkheden van Rust maken het mogelijk om code te ontwikkelen die draait op verschillende besturingssystemen, zoals Windows, macOS en Linux, evenals mobiele besturingssystemen, zonder ingrijpende aanpassingen in de codebasis.
+Deze tutorial begeleidt ons door het proces van inferentie uitvoeren met Rust en het [Candle ML framework](https://github.com/huggingface/candle) van HuggingFace. Het gebruik van Rust voor inferentie biedt verschillende voordelen, vooral in vergelijking met andere programmeertalen. Rust staat bekend om zijn hoge prestaties, vergelijkbaar met die van C en C++. Dit maakt het een uitstekende keuze voor inferentietaken, die vaak veel rekenkracht vereisen. Dit wordt vooral mogelijk gemaakt door zero-cost abstracties en efficiënt geheugenbeheer, zonder overhead van garbage collection. De cross-platform mogelijkheden van Rust maken het mogelijk om code te ontwikkelen die draait op verschillende besturingssystemen, zoals Windows, macOS en Linux, evenals mobiele besturingssystemen, zonder grote aanpassingen aan de codebasis.
 
 De vereiste om deze tutorial te volgen is om [Rust te installeren](https://www.rust-lang.org/tools/install), wat de Rust compiler en Cargo, de Rust package manager, omvat.
 
@@ -21,9 +21,9 @@ Om een nieuw Rust-project aan te maken, voer je de volgende opdracht uit in de t
 cargo new phi-console-app
 ```
 
-Dit genereert een initiële projectstructuur met een `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Dit genereert een initiële projectstructuur met een `Cargo.toml` bestand en een `src` map met daarin een `main.rs` bestand.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` bestand:
+Vervolgens voegen we onze dependencies toe - namelijk de `candle`, `hf-hub` en `tokenizers` crates - aan het `Cargo.toml` bestand:
 
 ```toml
 [package]
@@ -41,7 +41,7 @@ tokenizers = "0.15.2"
 
 ## Stap 2: Stel basisparameters in
 
-In het main.rs bestand stellen we de initiële parameters voor onze inferentie in. Deze worden voor de eenvoud hardcoded, maar kunnen naar behoefte worden aangepast.
+In het main.rs bestand stellen we de initiële parameters voor onze inferentie in. Deze worden allemaal hardcoded voor de eenvoud, maar we kunnen ze naar wens aanpassen.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -58,11 +58,11 @@ let device = Device::Cpu;
 - **temperature**: Bepaalt de mate van willekeur in het samplingproces.
 - **sample_len**: Geeft de maximale lengte van de gegenereerde tekst aan.
 - **top_p**: Wordt gebruikt voor nucleus sampling om het aantal tokens dat per stap wordt overwogen te beperken.
-- **repeat_last_n**: Bepaalt het aantal tokens dat wordt meegenomen om een straf toe te passen en zo repetitieve sequenties te voorkomen.
+- **repeat_last_n**: Bepaalt het aantal tokens dat wordt meegenomen om een straf toe te passen en zo herhalende sequenties te voorkomen.
 - **repeat_penalty**: De strafwaarde om herhaalde tokens te ontmoedigen.
-- **seed**: Een random seed (we zouden een constante waarde kunnen gebruiken voor betere reproduceerbaarheid).
-- **prompt**: De initiële prompttekst om de generatie te starten. Let op dat we het model vragen een haiku over ijshockey te genereren, en dat we het omringen met speciale tokens om de gebruikers- en assistentgedeelten van het gesprek aan te geven. Het model zal vervolgens de prompt aanvullen met een haiku.
-- **device**: In dit voorbeeld gebruiken we de CPU voor berekeningen. Candle ondersteunt ook uitvoering op GPU met CUDA en Metal.
+- **seed**: Een willekeurige seed (we kunnen een constante waarde gebruiken voor betere reproduceerbaarheid).
+- **prompt**: De initiële prompttekst om de generatie te starten. Let op dat we het model vragen een haiku over ijshockey te genereren, en dat we deze omringen met speciale tokens om de gebruiker- en assistentdelen van het gesprek aan te geven. Het model zal vervolgens de prompt aanvullen met een haiku.
+- **device**: In dit voorbeeld gebruiken we de CPU voor de berekeningen. Candle ondersteunt ook uitvoering op GPU met CUDA en Metal.
 
 ## Stap 3: Download/prepareer model en tokenizer
 
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-We gebruiken het `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` bestand om onze invoertekst te tokenizen. Zodra het model is gedownload, wordt het gecachet, waardoor de eerste uitvoering traag kan zijn (omdat het 2,4 GB aan modeldata downloadt), maar volgende uitvoeringen sneller verlopen.
+We gebruiken de `hf_hub` API om de model- en tokenizerbestanden te downloaden van de Hugging Face model hub. Het `gguf` bestand bevat de gekwantiseerde modelgewichten, terwijl het `tokenizer.json` bestand wordt gebruikt om onze invoertekst te tokenizen. Na het downloaden wordt het model gecached, dus de eerste uitvoering zal traag zijn (omdat het 2,4GB aan modeldata downloadt), maar volgende uitvoeringen zullen sneller zijn.
 
-## Stap 4: Laad model
+## Stap 4: Laad het model
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,7 +92,7 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-We laden de gekwantiseerde modelgewichten in het geheugen en initialiseren het Phi-3 model. Deze stap omvat het lezen van de modelgewichten uit het `gguf` bestand en het opzetten van het model voor inferentie op het opgegeven apparaat (in dit geval de CPU).
+We laden de gekwantiseerde modelgewichten in het geheugen en initialiseren het Phi-3 model. Deze stap omvat het inlezen van de modelgewichten uit het `gguf` bestand en het klaarmaken van het model voor inferentie op het opgegeven apparaat (in dit geval de CPU).
 
 ## Stap 5: Verwerk prompt en bereid voor inferentie
 
@@ -120,9 +120,9 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-In deze stap tokenizen we de input prompt en bereiden deze voor inferentie voor door deze om te zetten in een reeks token IDs. We initialiseren ook de `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` waarden. Elke token wordt omgezet in een tensor en door het model gehaald om de logits te verkrijgen.
+In deze stap tokenizen we de invoerprompt en bereiden we deze voor op inferentie door het om te zetten in een reeks token-ID's. We initialiseren ook de `LogitsProcessor` om het samplingproces (waarschijnlijkheidsverdeling over het vocabulaire) te beheren op basis van de opgegeven `temperature` en `top_p` waarden. Elk token wordt omgezet in een tensor en door het model gehaald om de logits te verkrijgen.
 
-De lus verwerkt elke token in de prompt, werkt de logits processor bij en bereidt de volgende token generatie voor.
+De lus verwerkt elk token in de prompt, werkt de logits processor bij en bereidt de volgende token generatie voor.
 
 ## Stap 6: Inferentie
 
@@ -160,8 +160,8 @@ for index in 0..to_sample {
 }
 ```
 
-In de inferentielus genereren we tokens één voor één totdat we de gewenste sample_lengte bereiken of het end-of-sequence token tegenkomen. De volgende token wordt omgezet in een tensor en door het model gehaald, terwijl de logits worden verwerkt om straffen en sampling toe te passen. Vervolgens wordt de volgende token gesampled, gedecodeerd en aan de reeks toegevoegd.  
-Om repetitieve tekst te voorkomen, wordt een straf toegepast op herhaalde tokens op basis van de `repeat_last_n` and `repeat_penalty` parameters.
+In de inferentielus genereren we tokens één voor één totdat we de gewenste sample-lengte bereiken of het end-of-sequence token tegenkomen. Het volgende token wordt omgezet in een tensor en door het model gehaald, terwijl de logits worden verwerkt om straffen en sampling toe te passen. Daarna wordt het volgende token gesampled, gedecodeerd en toegevoegd aan de sequentie.
+Om herhalende tekst te voorkomen, wordt een straf toegepast op herhaalde tokens op basis van de parameters `repeat_last_n` en `repeat_penalty`.
 
 Tot slot wordt de gegenereerde tekst afgedrukt terwijl deze wordt gedecodeerd, wat zorgt voor een gestreamde realtime output.
 
@@ -191,9 +191,9 @@ Swish of sticks now alive.
 
 ## Conclusie
 
-Door deze stappen te volgen kunnen we tekstgeneratie uitvoeren met het Phi-3 model in Rust en Candle in minder dan 100 regels code. De code verzorgt het laden van het model, tokenisatie en inferentie, waarbij tensors en logits verwerking worden gebruikt om samenhangende tekst te genereren op basis van de input prompt.
+Door deze stappen te volgen kunnen we tekstgeneratie uitvoeren met het Phi-3 model in Rust en Candle in minder dan 100 regels code. De code verzorgt het laden van het model, tokenisatie en inferentie, waarbij tensors en logitsverwerking worden gebruikt om coherente tekst te genereren op basis van de invoerprompt.
 
-Deze console-applicatie kan draaien op Windows, Linux en Mac OS. Dankzij de draagbaarheid van Rust kan de code ook worden aangepast tot een bibliotheek die binnen mobiele apps draait (console-apps kunnen we daar immers niet uitvoeren).
+Deze console-applicatie kan draaien op Windows, Linux en Mac OS. Dankzij de draagbaarheid van Rust kan de code ook worden aangepast tot een bibliotheek die binnen mobiele apps draait (console-apps kunnen we daar immers niet draaien).
 
 ## Appendix: volledige code
 
@@ -304,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Let op: om deze code uit te voeren op aarch64 Linux of aarch64 Windows, voeg een bestand genaamd `.cargo/config` toe met de volgende inhoud:
+Let op: om deze code uit te voeren op aarch64 Linux of aarch64 Windows, voeg een bestand toe met de naam `.cargo/config` met de volgende inhoud:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Je kunt de officiële [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) repository bezoeken voor meer voorbeelden van hoe je het Phi-3 model met Rust en Candle gebruikt, inclusief alternatieve benaderingen voor inferentie.
+> Je kunt de officiële [Candle voorbeelden](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) repository bezoeken voor meer voorbeelden over het gebruik van het Phi-3 model met Rust en Candle, inclusief alternatieve benaderingen voor inferentie.
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor belangrijke informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

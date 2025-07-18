@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:36:30+00:00",
+  "translation_date": "2025-07-17T06:12:12+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "cs"
 }
 -->
-# Тонкая настройка Phi-3 с помощью Azure AI Foundry
+# Doladění Phi-3 pomocí Azure AI Foundry
 
-Давайте рассмотрим, как тонко настроить языковую модель Phi-3 Mini от Microsoft с использованием Azure AI Foundry. Тонкая настройка позволяет адаптировать Phi-3 Mini под конкретные задачи, делая её ещё более мощной и контекстно ориентированной.
+Pojďme prozkoumat, jak doladit jazykový model Phi-3 Mini od Microsoftu pomocí Azure AI Foundry. Doladění vám umožní přizpůsobit Phi-3 Mini konkrétním úkolům, čímž se stane ještě výkonnějším a lépe kontextově uvědomělým.
 
-## Важные моменты
+## Úvahy
 
-- **Возможности:** Какие модели можно тонко настраивать? Какие задачи может выполнять базовая модель после тонкой настройки?
-- **Стоимость:** Какова модель ценообразования для тонкой настройки?
-- **Настраиваемость:** Насколько можно изменять базовую модель и какими способами?
-- **Удобство:** Как происходит процесс тонкой настройки – нужно ли писать собственный код? Нужно ли предоставлять собственные вычислительные ресурсы?
-- **Безопасность:** Известно, что тонко настроенные модели могут представлять риски безопасности – существуют ли защитные механизмы для предотвращения нежелательных последствий?
+- **Možnosti:** Které modely lze doladit? Co lze základní model naučit dělat?
+- **Cena:** Jaký je cenový model doladění?
+- **Přizpůsobitelnost:** Do jaké míry mohu upravit základní model – a jakými způsoby?
+- **Pohodlí:** Jak doladění probíhá – musím psát vlastní kód? Potřebuji vlastní výpočetní zdroje?
+- **Bezpečnost:** Doladěné modely mohou nést bezpečnostní rizika – existují nějaké ochranné mechanismy proti nechtěným škodám?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.cs.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.cs.png)
 
-## Подготовка к тонкой настройке
+## Příprava na doladění
 
-### Требования
+### Požadavky
 
 > [!NOTE]
-> Для моделей семейства Phi-3 предложение по тонкой настройке с оплатой по факту доступно только для хабов, созданных в регионах **East US 2**.
+> U modelů rodiny Phi-3 je nabídka doladění na principu pay-as-you-go dostupná pouze u hubů vytvořených v regionech **East US 2**.
 
-- Подписка Azure. Если у вас нет подписки, создайте [платный аккаунт Azure](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) для начала.
+- Azure předplatné. Pokud ho nemáte, vytvořte si [placený Azure účet](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) a začněte.
 
-- Проект [AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Для доступа к операциям в Azure AI Foundry используются ролевые права доступа Azure (Azure RBAC). Для выполнения шагов из этой статьи ваша учетная запись должна иметь роль __Azure AI Developer__ в группе ресурсов.
+- [AI Foundry projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
+- Pro přístup k operacím v Azure AI Foundry se používají role založené na přístupu (Azure RBAC). Pro provedení kroků v tomto článku musí mít váš uživatelský účet přiřazenou __roli Azure AI Developer__ v rámci skupiny prostředků.
 
-### Регистрация провайдера подписки
+### Registrace poskytovatele předplatného
 
-Проверьте, что подписка зарегистрирована для провайдера ресурсов `Microsoft.Network`.
+Ověřte, že je předplatné registrováno u poskytovatele zdrojů `Microsoft.Network`.
 
-1. Войдите в [портал Azure](https://portal.azure.com).
-1. В меню слева выберите **Subscriptions**.
-1. Выберите нужную подписку.
-1. В меню слева выберите **AI project settings** > **Resource providers**.
-1. Убедитесь, что **Microsoft.Network** есть в списке провайдеров ресурсов. Если нет – добавьте его.
+1. Přihlaste se do [Azure portálu](https://portal.azure.com).
+1. V levém menu vyberte **Subscriptions**.
+1. Vyberte předplatné, které chcete použít.
+1. V levém menu vyberte **AI project settings** > **Resource providers**.
+1. Potvrďte, že **Microsoft.Network** je v seznamu poskytovatelů zdrojů. Pokud ne, přidejte ho.
 
-### Подготовка данных
+### Příprava dat
 
-Подготовьте данные для обучения и валидации для тонкой настройки модели. Ваши тренировочные и валидационные наборы данных должны содержать примеры входных и выходных данных, показывающих, как вы хотите, чтобы модель работала.
+Připravte si tréninková a validační data pro doladění modelu. Vaše tréninková a validační data by měla obsahovat příklady vstupů a výstupů, jak chcete, aby model fungoval.
 
-Убедитесь, что все тренировочные примеры соответствуют ожидаемому формату для инференса. Для эффективной тонкой настройки важно иметь сбалансированный и разнообразный набор данных.
+Ujistěte se, že všechny tréninkové příklady odpovídají očekávanému formátu pro inferenci. Pro efektivní doladění modelů zajistěte vyvážený a různorodý dataset.
 
-Это включает поддержание баланса данных, охват различных сценариев и периодическую корректировку тренировочных данных для соответствия реальным ожиданиям, что в итоге ведет к более точным и сбалансированным ответам модели.
+To zahrnuje udržování rovnováhy dat, zahrnutí různých scénářů a pravidelnou úpravu tréninkových dat tak, aby odpovídala reálným očekáváním, což vede k přesnějším a vyváženějším odpovědím modelu.
 
-Разные типы моделей требуют разных форматов тренировочных данных.
+Různé typy modelů vyžadují odlišný formát tréninkových dat.
 
 ### Chat Completion
 
-Данные для обучения и валидации **должны** быть в формате JSON Lines (JSONL). Для `Phi-3-mini-128k-instruct` набор данных для тонкой настройки должен быть оформлен в разговорном формате, который используется API для Chat completions.
+Tréninková a validační data musí být ve formátu JSON Lines (JSONL). Pro `Phi-3-mini-128k-instruct` musí být dataset pro doladění ve formátu konverzačním, který používá API pro chat completions.
 
-### Пример формата файла
+### Příklad formátu souboru
 
 ```json
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Is Xbox better than PlayStation?"}, {"role": "assistant", "content": "I apologize, but I cannot provide personal opinions. My primary job is to assist you with any issues related to your Xbox device. Do you have any Xbox-related issues that need addressing?"}]}
@@ -65,174 +65,172 @@ CO_OP_TRANSLATOR_METADATA:
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-Поддерживаемый тип файла — JSON Lines. Файлы загружаются в хранилище по умолчанию и становятся доступными в вашем проекте.
+Podporovaný typ souboru je JSON Lines. Soubory se nahrávají do výchozího datového úložiště a zpřístupňují se ve vašem projektu.
 
-## Тонкая настройка Phi-3 с Azure AI Foundry
+## Doladění Phi-3 pomocí Azure AI Foundry
 
-Azure AI Foundry позволяет адаптировать крупные языковые модели под ваши собственные данные с помощью процесса тонкой настройки. Тонкая настройка приносит значительную пользу, позволяя кастомизировать и оптимизировать модели под конкретные задачи и приложения. Это улучшает производительность, экономит средства, снижает задержки и обеспечивает более точные результаты.
+Azure AI Foundry vám umožňuje přizpůsobit velké jazykové modely vašim vlastním datům pomocí procesu zvaného doladění. Doladění přináší významnou hodnotu tím, že umožňuje přizpůsobení a optimalizaci pro konkrétní úkoly a aplikace. Výsledkem je lepší výkon, úspora nákladů, nižší latence a cílené výstupy.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.cs.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.cs.png)
 
-### Создание нового проекта
+### Vytvoření nového projektu
 
-1. Войдите в [Azure AI Foundry](https://ai.azure.com).
+1. Přihlaste se do [Azure AI Foundry](https://ai.azure.com).
 
-1. Выберите **+New project** для создания нового проекта в Azure AI Foundry.
+1. Vyberte **+New project** pro vytvoření nového projektu v Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.cs.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.cs.png)
 
-1. Выполните следующие действия:
+1. Proveďte následující kroky:
 
-    - Укажите уникальное имя проекта **Hub name**.
-    - Выберите **Hub** для использования (при необходимости создайте новый).
+    - Název projektu **Hub name**. Musí být jedinečný.
+    - Vyberte **Hub**, který chcete použít (vytvořte nový, pokud je potřeba).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.cs.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.cs.png)
 
-1. Для создания нового хаба выполните следующие шаги:
+1. Pro vytvoření nového hubu proveďte následující:
 
-    - Введите уникальное имя **Hub name**.
-    - Выберите подписку Azure **Subscription**.
-    - Выберите группу ресурсов **Resource group** (при необходимости создайте новую).
-    - Выберите регион **Location**.
-    - Выберите сервис Azure AI для подключения **Connect Azure AI Services** (создайте новый, если нужно).
-    - Для Azure AI Search выберите **Skip connecting**.
+    - Zadejte **Hub name**. Musí být jedinečný.
+    - Vyberte své Azure **Subscription**.
+    - Vyberte **Resource group** (vytvořte novou, pokud je potřeba).
+    - Vyberte **Location**, kterou chcete použít.
+    - Vyberte **Connect Azure AI Services** (vytvořte nové, pokud je potřeba).
+    - U **Connect Azure AI Search** vyberte **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.cs.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.cs.png)
 
-1. Нажмите **Next**.
-1. Нажмите **Create a project**.
+1. Vyberte **Next**.
+1. Vyberte **Create a project**.
 
-### Подготовка данных
+### Příprava dat
 
-Перед тонкой настройкой соберите или создайте набор данных, релевантный вашей задаче, например, инструкции для чата, пары вопросов и ответов или другие текстовые данные. Очистите и предобработайте данные, удалив шум, обработав пропущенные значения и токенизировав текст.
+Před doladěním shromážděte nebo vytvořte dataset relevantní pro váš úkol, například chatové instrukce, páry otázek a odpovědí nebo jiná textová data. Data vyčistěte a předzpracujte odstraněním šumu, řešením chybějících hodnot a tokenizací textu.
 
-### Тонкая настройка моделей Phi-3 в Azure AI Foundry
-
-> [!NOTE]
-> Тонкая настройка моделей Phi-3 поддерживается только для проектов, расположенных в регионе East US 2.
-
-1. В левой панели выберите **Model catalog**.
-
-1. В строке поиска введите *phi-3* и выберите нужную модель phi-3.
-
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.cs.png)
-
-1. Нажмите **Fine-tune**.
-
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.cs.png)
-
-1. Введите имя для **Fine-tuned model name**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.cs.png)
-
-1. Нажмите **Next**.
-
-1. Выполните следующие действия:
-
-    - Выберите тип задачи **task type** — **Chat completion**.
-    - Выберите тренировочные данные. Можно загрузить через Azure AI Foundry или из локального окружения.
-
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.cs.png)
-
-1. Нажмите **Next**.
-
-1. Загрузите валидационные данные или выберите **Automatic split of training data**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.cs.png)
-
-1. Нажмите **Next**.
-
-1. Выполните следующие действия:
-
-    - Выберите множитель размера пакета **Batch size multiplier**.
-    - Выберите скорость обучения **Learning rate**.
-    - Выберите количество эпох **Epochs**.
-
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.cs.png)
-
-1. Нажмите **Submit** для запуска процесса тонкой настройки.
-
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.cs.png)
-
-1. После завершения тонкой настройки статус модели будет отображаться как **Completed**, как показано ниже. Теперь вы можете развернуть модель и использовать её в своём приложении, в playground или в prompt flow. Подробнее см. [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
-
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.cs.png)
+### Doladění modelů Phi-3 v Azure AI Foundry
 
 > [!NOTE]
-> Более подробную информацию о тонкой настройке Phi-3 смотрите на странице [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Doladění modelů Phi-3 je momentálně podporováno pouze v projektech umístěných v regionu East US 2.
 
-## Очистка тонко настроенных моделей
+1. V levém panelu vyberte **Model catalog**.
 
-Вы можете удалить тонко настроенную модель из списка тонкой настройки в [Azure AI Foundry](https://ai.azure.com) или на странице сведений о модели. Выберите модель для удаления на странице Fine-tuning, затем нажмите кнопку Delete для удаления.
+1. Do **search bar** zadejte *phi-3* a vyberte model phi-3, který chcete použít.
 
-> [!NOTE]
-> Нельзя удалить кастомную модель, если у неё есть активное развертывание. Сначала удалите развертывание модели, затем можно удалить саму модель.
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.cs.png)
 
-## Стоимость и квоты
+1. Vyberte **Fine-tune**.
 
-### Особенности стоимости и квот для моделей Phi-3, тонко настроенных как сервис
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.cs.png)
 
-Модели Phi, тонко настроенные как сервис, предоставляются Microsoft и интегрированы с Azure AI Foundry. Цены можно посмотреть при [развертывании](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) или тонкой настройке моделей во вкладке Pricing and terms в мастере развертывания.
+1. Zadejte **Fine-tuned model name**.
 
-## Фильтрация контента
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.cs.png)
 
-Модели, развернутые как сервис с оплатой по факту, защищены Azure AI Content Safety. При развертывании на конечных точках в реальном времени вы можете отказаться от этой функции. При включённой Azure AI Content Safety и запрос, и ответ проходят через ансамбль моделей классификации, направленных на обнаружение и предотвращение вывода вредоносного контента. Система фильтрации обнаруживает и реагирует на определённые категории потенциально опасного контента как во входных запросах, так и в ответах. Подробнее о [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+1. Vyberte **Next**.
 
-**Конфигурация тонкой настройки**
+1. Proveďte následující:
 
-Гиперпараметры: задайте такие параметры, как скорость обучения, размер пакета и количество эпох.
+    - Vyberte **task type** jako **Chat completion**.
+    - Vyberte **Training data**, které chcete použít. Můžete je nahrát přes Azure AI Foundry nebo z lokálního prostředí.
 
-**Функция потерь**
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.cs.png)
 
-Выберите подходящую функцию потерь для вашей задачи (например, кросс-энтропию).
+1. Vyberte **Next**.
 
-**Оптимизатор**
+1. Nahrajte **Validation data**, které chcete použít, nebo vyberte **Automatic split of training data**.
 
-Выберите оптимизатор (например, Adam) для обновления градиентов во время обучения.
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.cs.png)
 
-**Процесс тонкой настройки**
+1. Vyberte **Next**.
 
-- Загрузите предобученную модель: загрузите чекпоинт Phi-3 Mini.
-- Добавьте кастомные слои: добавьте слои, специфичные для задачи (например, классификационную голову для инструкций чата).
+1. Proveďte následující:
 
-**Обучение модели**
+    - Vyberte **Batch size multiplier**.
+    - Vyberte **Learning rate**.
+    - Vyberte **Epochs**.
 
-Тонко настройте модель на подготовленном наборе данных. Следите за процессом обучения и при необходимости корректируйте гиперпараметры.
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.cs.png)
 
-**Оценка и валидация**
+1. Vyberte **Submit** pro spuštění procesu doladění.
 
-Валидационный набор: разделите данные на тренировочный и валидационный наборы.
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.cs.png)
 
-**Оценка производительности**
+1. Jakmile je model doladěn, stav se zobrazí jako **Completed**, jak je vidět na obrázku níže. Nyní můžete model nasadit a používat ho ve své aplikaci, v playgroundu nebo v prompt flow. Více informací najdete v [Jak nasadit rodinu malých jazykových modelů Phi-3 pomocí Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-Используйте метрики, такие как точность, F1-score или perplexity, для оценки качества модели.
-
-## Сохранение тонко настроенной модели
-
-**Чекпоинт**
-
-Сохраните чекпоинт тонко настроенной модели для дальнейшего использования.
-
-## Развёртывание
-
-- Разверните как веб-сервис: разместите вашу тонко настроенную модель как веб-сервис в Azure AI Foundry.
-- Проверьте конечную точку: отправьте тестовые запросы на развернутую конечную точку для проверки её работы.
-
-## Итерации и улучшения
-
-Итерации: если результаты не удовлетворительны, повторите процесс, изменяя гиперпараметры, добавляя данные или увеличивая количество эпох.
-
-## Мониторинг и доработка
-
-Постоянно отслеживайте поведение модели и при необходимости корректируйте её.
-
-## Кастомизация и расширение
-
-Кастомные задачи: Phi-3 Mini можно тонко настраивать для различных задач помимо инструкций чата. Исследуйте другие варианты использования!
-Эксперименты: пробуйте разные архитектуры, комбинации слоёв и методы для улучшения производительности.
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.cs.png)
 
 > [!NOTE]
-> Тонкая настройка – это итеративный процесс. Экспериментируйте, учитесь и адаптируйте модель для достижения наилучших результатов в вашей конкретной задаче!
+> Pro podrobnější informace o doladění Phi-3 navštivte [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+
+## Odstranění doladěných modelů
+
+Doladěný model můžete smazat ze seznamu doladěných modelů v [Azure AI Foundry](https://ai.azure.com) nebo ze stránky s detaily modelu. Vyberte model, který chcete smazat, na stránce Fine-tuning a poté klikněte na tlačítko Delete.
+
+> [!NOTE]
+> Nelze smazat vlastní model, pokud má aktivní nasazení. Nejprve musíte odstranit nasazení modelu, teprve potom můžete smazat vlastní model.
+
+## Náklady a limity
+
+### Úvahy o nákladech a limitech pro modely Phi-3 doladěné jako služba
+
+Modely Phi doladěné jako služba nabízí Microsoft a jsou integrovány s Azure AI Foundry. Ceny najdete při [nasazení](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) nebo doladění modelů v záložce Pricing and terms v průvodci nasazením.
+
+## Filtrování obsahu
+
+Modely nasazené jako služba s pay-as-you-go jsou chráněny Azure AI Content Safety. Při nasazení na real-time endpointy můžete tuto funkci vypnout. S povolenou ochranou Azure AI Content Safety prochází jak prompt, tak i výstup souborem klasifikačních modelů, které detekují a zabraňují výstupu škodlivého obsahu. Systém filtrování obsahu detekuje a reaguje na specifické kategorie potenciálně škodlivého obsahu ve vstupních promtech i výstupech. Více informací o [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+
+**Konfigurace doladění**
+
+Hyperparametry: Definujte hyperparametry jako learning rate, velikost batch a počet epoch.
+
+**Funkce ztráty**
+
+Vyberte vhodnou funkci ztráty pro váš úkol (např. cross-entropy).
+
+**Optimalizátor**
+
+Vyberte optimalizátor (např. Adam) pro aktualizace gradientů během tréninku.
+
+**Proces doladění**
+
+- Načtení předtrénovaného modelu: Načtěte checkpoint Phi-3 Mini.
+- Přidání vlastních vrstev: Přidejte vrstvy specifické pro úkol (např. klasifikační hlavu pro chatové instrukce).
+
+**Trénink modelu**  
+Doladěte model pomocí připraveného datasetu. Sledujte průběh tréninku a podle potřeby upravujte hyperparametry.
+
+**Hodnocení a validace**
+
+Validační sada: Rozdělte data na tréninkovou a validační část.
+
+**Vyhodnocení výkonu**
+
+Použijte metriky jako přesnost, F1-skóre nebo perplexitu pro posouzení výkonu modelu.
+
+## Uložení doladěného modelu
+
+**Checkpoint**  
+Uložte checkpoint doladěného modelu pro budoucí použití.
+
+## Nasazení
+
+- Nasazení jako webová služba: Nasadíte svůj doladěný model jako webovou službu v Azure AI Foundry.
+- Testování endpointu: Posílejte testovací dotazy na nasazený endpoint a ověřte jeho funkčnost.
+
+## Iterace a zlepšování
+
+Iterujte: Pokud výkon není uspokojivý, upravujte hyperparametry, přidávejte data nebo doladěte model na více epoch.
+
+## Monitorování a ladění
+
+Průběžně sledujte chování modelu a podle potřeby ho dolaďujte.
+
+## Přizpůsobení a rozšíření
+
+Vlastní úkoly: Phi-3 Mini lze doladit pro různé úkoly nad rámec chatových instrukcí. Prozkoumejte další možnosti využití!  
+Experimentujte: Zkoušejte různé architektury, kombinace vrstev a techniky pro zlepšení výkonu.
+
+> [!NOTE]
+> Doladění je iterativní proces. Experimentujte, učte se a přizpůsobujte model, abyste dosáhli nejlepších výsledků pro váš konkrétní úkol!
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

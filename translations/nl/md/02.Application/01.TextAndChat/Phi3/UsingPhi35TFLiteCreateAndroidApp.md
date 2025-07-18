@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:49:35+00:00",
+  "translation_date": "2025-07-17T02:53:34+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "nl"
 }
 -->
-# **Microsoft Phi-3.5 tflite gebruiken om Android-app te maken**
+# **Microsoft Phi-3.5 tflite gebruiken om een Android-app te maken**
 
-Dit is een Androidvoorbeeld dat Microsoft Phi-3.5 tflite-modellen gebruikt.
+Dit is een Androidvoorbeeld dat gebruikmaakt van Microsoft Phi-3.5 tflite-modellen.
 
 ## **📚 Kennis**
 
-Android LLM Inference API stelt je in staat om grote taalmodellen (LLM's) volledig op het apparaat uit te voeren voor Android-applicaties. Hiermee kun je allerlei taken uitvoeren, zoals tekst genereren, informatie ophalen in natuurlijke taal en documenten samenvatten. De taak biedt ingebouwde ondersteuning voor meerdere tekst-naar-tekst grote taalmodellen, zodat je de nieuwste generatieve AI-modellen op het apparaat kunt toepassen in je Android-apps.
+De Android LLM Inference API stelt je in staat om grote taalmodellen (LLM's) volledig op het apparaat uit te voeren voor Android-applicaties. Hiermee kun je een breed scala aan taken uitvoeren, zoals het genereren van tekst, het ophalen van informatie in natuurlijke taal en het samenvatten van documenten. De taak biedt ingebouwde ondersteuning voor meerdere tekst-naar-tekst grote taalmodellen, zodat je de nieuwste generatieve AI-modellen op het apparaat kunt toepassen in je Android-apps.
 
-Google AI Edge Torch is een Python-bibliotheek die het converteren van PyTorch-modellen naar een .tflite-formaat ondersteunt, dat vervolgens kan worden uitgevoerd met TensorFlow Lite en MediaPipe. Dit maakt applicaties voor Android, iOS en IoT mogelijk die modellen volledig op het apparaat kunnen draaien. AI Edge Torch biedt brede CPU-ondersteuning, met aanvankelijke ondersteuning voor GPU en NPU. AI Edge Torch streeft naar nauwe integratie met PyTorch, bouwend op torch.export() en biedt goede dekking van Core ATen-operators.
+Google AI Edge Torch is een Python-bibliotheek die het mogelijk maakt om PyTorch-modellen om te zetten naar een .tflite-formaat, dat vervolgens kan worden uitgevoerd met TensorFlow Lite en MediaPipe. Dit maakt toepassingen voor Android, iOS en IoT mogelijk die modellen volledig op het apparaat kunnen draaien. AI Edge Torch biedt brede CPU-ondersteuning, met initiële GPU- en NPU-ondersteuning. AI Edge Torch streeft naar een nauwe integratie met PyTorch, bouwend op torch.export() en biedt goede dekking van Core ATen-operatoren.
 
 ## **🪬 Richtlijn**
 
@@ -29,7 +29,7 @@ Google AI Edge Torch is een Python-bibliotheek die het converteren van PyTorch-m
 
 2. Ubuntu 20.04 / 22.04 (focus op [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Suggestie:*** gebruik Azure Linux VM of een cloud-VM van een derde partij om je omgeving op te zetten
+***Suggestie:*** gebruik een Azure Linux VM of een cloud-VM van een derde partij om je omgeving op te zetten
 
 3. Ga naar je Linux bash om de Python-bibliotheek te installeren
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-Voer deze code uit in [jouw notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
+Voer deze code uit in [je notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
 
 ```python
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 Gebruik adb push om het taakmodel naar het pad op je Android-apparaat te kopiëren**
+### **🔥 Gebruik adb push om het taakmodel naar het pad van je Android-apparaat te sturen**
 
 ```bash
 
@@ -108,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Je Android-code uitvoeren**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.nl.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.nl.png)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

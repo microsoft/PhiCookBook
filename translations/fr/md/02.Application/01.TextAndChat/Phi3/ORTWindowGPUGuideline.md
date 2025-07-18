@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-07T14:19:38+00:00",
+  "translation_date": "2025-07-17T02:38:14+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "fr"
 }
 -->
 # **Guide pour OnnxRuntime GenAI Windows GPU**
 
-Ce guide présente les étapes pour configurer et utiliser ONNX Runtime (ORT) avec des GPU sous Windows. Il est conçu pour vous aider à tirer parti de l’accélération GPU pour vos modèles, améliorant ainsi les performances et l’efficacité.
+Ce guide explique les étapes pour configurer et utiliser ONNX Runtime (ORT) avec des GPU sous Windows. Il est conçu pour vous aider à tirer parti de l’accélération GPU pour vos modèles, améliorant ainsi les performances et l’efficacité.
 
 Le document couvre :
 
-- Configuration de l’environnement : instructions pour installer les dépendances nécessaires comme CUDA, cuDNN et ONNX Runtime.
-- Configuration : comment configurer l’environnement et ONNX Runtime pour utiliser efficacement les ressources GPU.
-- Conseils d’optimisation : recommandations pour ajuster vos paramètres GPU afin d’obtenir des performances optimales.
+- Configuration de l’environnement : Instructions pour installer les dépendances nécessaires comme CUDA, cuDNN et ONNX Runtime.
+- Configuration : Comment paramétrer l’environnement et ONNX Runtime pour exploiter efficacement les ressources GPU.
+- Conseils d’optimisation : Recommandations pour ajuster vos réglages GPU afin d’obtenir des performances optimales.
 
 ### **1. Python 3.10.x /3.11.8**
 
@@ -29,7 +29,7 @@ Le document couvre :
 
    ```
 
-   ***Rappel*** Si vous avez installé une quelconque bibliothèque ONNX pour Python, veuillez la désinstaller
+   ***Rappel*** Si vous avez installé une bibliothèque ONNX pour Python, veuillez la désinstaller
 
 ### **2. Installer CMake avec winget**
 
@@ -89,7 +89,7 @@ Copiez les dossiers lib, bin, include de NVIDIA CUDNN 9.4 vers NVIDIA CUDA 12.4 
 
    ***Note*** 
    
-   1. Veuillez d’abord désinstaller toutes les versions d’onnx, onnxruntime et onnxruntime-genai
+   1. Veuillez désinstaller d’abord toutes les versions d’onnx, onnxruntime et onnxruntime-genai
 
    ```bash
 
@@ -97,7 +97,7 @@ Copiez les dossiers lib, bin, include de NVIDIA CUDNN 9.4 vers NVIDIA CUDA 12.4 
    
    ```
 
-   Ensuite désinstallez toutes les bibliothèques onnxruntime, par exemple
+   Ensuite, désinstallez toutes les bibliothèques onnxruntime, par exemple :
 
    ```bash
 
@@ -109,11 +109,11 @@ Copiez les dossiers lib, bin, include de NVIDIA CUDNN 9.4 vers NVIDIA CUDA 12.4 
    
    ```
 
-   2. Vérifiez la prise en charge de l’extension Visual Studio 
+   2. Vérifiez la prise en charge de l’extension Visual Studio
 
    Vérifiez dans C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras que le dossier C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration est présent. 
    
-   Si absent, cherchez dans les autres dossiers du toolkit CUDA et copiez le dossier visual_studio_integration avec son contenu vers C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   S’il est absent, cherchez dans les autres dossiers du toolkit CUDA et copiez le dossier visual_studio_integration ainsi que son contenu dans C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
    - Si vous ne souhaitez pas compiler, vous pouvez passer cette étape
 
@@ -127,11 +127,11 @@ Copiez les dossiers lib, bin, include de NVIDIA CUDNN 9.4 vers NVIDIA CUDA 12.4 
 
    - Décompressez onnxruntime-win-x64-gpu-1.19.2.zip, renommez-le en **ort**, puis copiez le dossier ort dans onnxruntime-genai
 
-   - Depuis Windows Terminal, ouvrez Developer Command Prompt pour VS 2022 et rendez-vous dans onnxruntime-genai
+   - Avec Windows Terminal, ouvrez Developer Command Prompt for VS 2022 et placez-vous dans onnxruntime-genai
 
 ![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.fr.png)
 
-   - Compilez-le avec votre environnement Python
+   - Compilez avec votre environnement Python
 
    ```bash
 
@@ -147,4 +147,4 @@ Copiez les dossiers lib, bin, include de NVIDIA CUDNN 9.4 vers NVIDIA CUDA 12.4 
    ```
 
 **Avertissement** :  
-Ce document a été traduit à l'aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d'assurer l'exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue native doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous ne sommes pas responsables des malentendus ou des mauvaises interprétations résultant de l'utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

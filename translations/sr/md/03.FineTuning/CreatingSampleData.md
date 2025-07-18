@@ -2,23 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:27:14+00:00",
+  "translation_date": "2025-07-17T05:52:29+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "sr"
 }
 -->
-# Generisanje skupa podataka za slike preuzimanjem DataSet-a sa Hugging Face-a i pripadajućih slika
+# Генерисање скупа података слика преузимањем DataSet-а са Hugging Face и повезаних слика
 
+### Преглед
 
-### Pregled
+Овај скрипт припрема скуп података за машинско учење преузимањем потребних слика, филтрирањем редова у којима преузимање слике није успело и чува скуп података као CSV фајл.
 
-Ovaj skript priprema skup podataka za mašinsko učenje tako što preuzima potrebne slike, filtrira redove gde preuzimanje slike nije uspelo i čuva skup podataka kao CSV fajl.
+### Захтеви
 
-### Preduslovi
+Пре покретања овог скрипта, уверите се да имате инсталиране следеће библиотеке: `Pandas`, `Datasets`, `requests`, `PIL` и `io`. Такође, потребно је да у линији 2 замените `'Insert_Your_Dataset'` именом вашег скупа података са Hugging Face.
 
-Pre pokretanja ovog skripta, proverite da imate instalirane sledeće biblioteke: `Pandas`, `Datasets`, `requests`, `PIL` i `io`. Takođe, potrebno je da zamenite `'Insert_Your_Dataset'` u liniji 2 imenom vašeg skupa podataka sa Hugging Face-a.
-
-Potrebne biblioteke:
+Потребне библиотеке:
 
 ```python
 
@@ -30,48 +29,46 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### Funkcionalnost
+### Функционалност
 
-Skript izvodi sledeće korake:
+Скрипт извршава следеће кораке:
 
-1. Preuzima skup podataka sa Hugging Face-a koristeći `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Преузима скуп података са Hugging Face користећи функцију `load_dataset()`.
+2. Претвара Hugging Face скуп података у Pandas DataFrame ради лакше манипулације користећи методу `to_pandas()`.
+3. Креира фасцикле за чување скупа података и слика.
+4. Филтрира редове у којима преузимање слике није успело тако што пролази кроз сваки ред у DataFrame-у, преузима слику користећи прилагођену функцију `download_image()` и додаје филтриране редове у нови DataFrame под називом `filtered_rows`.
+5. Креира нови DataFrame са филтрираним редовима и чува га на диск као CSV фајл.
+6. Исписује поруку која указује где су скуп података и слике сачувани.
 
-### Custom Function
+### Прилагођена функција
 
-The `download_image()` funkcija preuzima sliku sa URL-a i čuva je lokalno koristeći Pillow Image Library (PIL) i `io` modul. Vraća True ako je slika uspešno preuzeta, a False u suprotnom. Funkcija takođe baca izuzetak sa porukom o grešci kada zahtev ne uspe.
+Функција `download_image()` преузима слику са URL-а и чува је локално користећи Pillow Image Library (PIL) и модул `io`. Враћа True ако је слика успешно преузета, а False у супротном. Функција такође баца изузетак са поруком о грешци ако захтев није успео.
 
-### Kako ovo funkcioniše
+### Како ово ради
 
-Funkcija download_image prima dva parametra: image_url, što je URL slike koja se preuzima, i save_path, što je putanja gde će preuzeta slika biti sačuvana.
+Функција download_image узима два параметра: image_url, што је URL слике која се преузима, и save_path, што је путања на којој ће преузета слика бити сачувана.
 
-Evo kako funkcija radi:
+Ево како функција ради:
 
-Počinje slanjem GET zahteva na image_url koristeći metodu requests.get. Ovo preuzima podatke slike sa URL-a.
+Почиње тако што шаље GET захтев на image_url користећи метод requests.get. Ово преузима податке слике са URL-а.
 
-Linija response.raise_for_status() proverava da li je zahtev bio uspešan. Ako statusni kod odgovora ukazuje na grešku (npr. 404 - Nije pronađeno), biće bačen izuzetak. Ovo osigurava da nastavljamo sa preuzimanjem slike samo ako je zahtev uspeo.
+Ред `response.raise_for_status()` проверава да ли је захтев био успешан. Ако статусни код одговора указује на грешку (нпр. 404 - Нема странице), биће бачен изузетак. Ово осигурава да настављамо са преузимањем слике само ако је захтев био успешан.
 
-Podaci slike se zatim prosleđuju metodi Image.open iz PIL (Python Imaging Library) modula. Ova metoda kreira Image objekat iz podataka slike.
+Податци слике се затим прослеђују методу Image.open из PIL (Python Imaging Library) модула. Ова метода креира Image објекат од података слике.
 
-Linija image.save(save_path) čuva sliku na naznačenoj putanji save_path. Putanja treba da uključuje željeno ime fajla i ekstenziju.
+Ред `image.save(save_path)` чува слику на назначену путању save_path. save_path треба да садржи жељено име фајла и екстензију.
 
-Na kraju, funkcija vraća True da označi da je slika uspešno preuzeta i sačuvana. Ako dođe do bilo kakvog izuzetka tokom procesa, on se hvata, štampa se poruka o grešci koja označava neuspeh, i funkcija vraća False.
+На крају, функција враћа True да означи да је слика успешно преузета и сачувана. Ако се током процеса догоди било каква грешка, изузетак се хвата, исписује се порука о грешци која указује на неуспех и враћа се False.
 
-Ova funkcija je korisna za preuzimanje slika sa URL-ova i njihovo lokalno čuvanje. Rukuje potencijalnim greškama tokom procesa preuzimanja i pruža povratnu informaciju da li je preuzimanje bilo uspešno ili ne.
+Ова функција је корисна за преузимање слика са URL-ова и њихово локално чување. Обрађује потенцијалне грешке током процеса преузимања и пружа повратну информацију о томе да ли је преузимање било успешно или не.
 
-Vredno je napomenuti da se biblioteka requests koristi za HTTP zahteve, PIL biblioteka za rad sa slikama, a klasa BytesIO za rukovanje podacima slike kao tok bajtova.
+Вреди напоменути да се библиотека requests користи за слање HTTP захтева, PIL библиотека за рад са сликама, а класа BytesIO за руковање подацима слике као током бајтова.
 
+### Закључак
 
+Овај скрипт пружа једноставан начин за припрему скупа података за машинско учење преузимањем потребних слика, филтрирањем редова у којима преузимање слике није успело и чувањем скупа података као CSV фајл.
 
-### Zaključak
-
-Ovaj skript pruža praktičan način za pripremu skupa podataka za mašinsko učenje tako što preuzima potrebne slike, filtrira redove gde preuzimanje slike nije uspelo i čuva skup podataka kao CSV fajl.
-
-### Primer skripta
+### Пример скрипта
 
 ```python
 import os
@@ -130,11 +127,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Primer preuzimanja koda  
+### Пример преузимања кода  
 [Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### Primer skupa podataka  
+### Пример скупа података  
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
-**Ограничење одговорности**:  
-Овај документ је преведен помоћу АИ преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо тачности, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране стручног лекара. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

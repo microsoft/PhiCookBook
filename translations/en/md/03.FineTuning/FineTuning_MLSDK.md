@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-07-09T18:57:35+00:00",
+  "translation_date": "2025-07-17T06:53:31+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "en"
 }
 -->
-## How to use chat-completion components from the Azure ML system registry to fine tune a model
+## How to use chat-completion components from the Azure ML system registry to fine-tune a model
 
-In this example, we will fine tune the Phi-3-mini-4k-instruct model to complete a conversation between two people using the ultrachat_200k dataset.
+In this example, we will fine-tune the Phi-3-mini-4k-instruct model to complete a conversation between two people using the ultrachat_200k dataset.
 
-![MLFineTune](../../../../imgs/03/ft/MLFineTune.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.en.png)
 
-This example will show you how to fine tune a model using the Azure ML SDK and Python, and then deploy the fine tuned model to an online endpoint for real-time inference.
+This example will show you how to fine-tune a model using the Azure ML SDK and Python, and then deploy the fine-tuned model to an online endpoint for real-time inference.
 
 ### Training data
 
@@ -21,20 +21,20 @@ We will use the ultrachat_200k dataset. This is a heavily filtered version of th
 
 ### Model
 
-We will use the Phi-3-mini-4k-instruct model to demonstrate how a user can fine tune a model for a chat-completion task. If you opened this notebook from a specific model card, remember to replace the model name accordingly.
+We will use the Phi-3-mini-4k-instruct model to demonstrate how users can fine-tune a model for chat-completion tasks. If you opened this notebook from a specific model card, remember to replace the model name accordingly.
 
 ### Tasks
 
-- Choose a model to fine tune.
+- Choose a model to fine-tune.
 - Select and explore training data.
-- Configure the fine tuning job.
-- Run the fine tuning job.
+- Configure the fine-tuning job.
+- Run the fine-tuning job.
 - Review training and evaluation metrics.
-- Register the fine tuned model.
-- Deploy the fine tuned model for real-time inference.
+- Register the fine-tuned model.
+- Deploy the fine-tuned model for real-time inference.
 - Clean up resources.
 
-## 1. Setup pre-requisites
+## 1. Setup prerequisites
 
 - Install dependencies
 - Connect to AzureML Workspace. Learn more at set up SDK authentication. Replace <WORKSPACE_NAME>, <RESOURCE_GROUP>, and <SUBSCRIPTION_ID> below.
@@ -42,8 +42,8 @@ We will use the Phi-3-mini-4k-instruct model to demonstrate how a user can fine 
 - Set an optional experiment name
 - Check or create compute.
 
-> [!NOTE]  
-> Requirements: a single GPU node can have multiple GPU cards. For example, one node of Standard_NC24rs_v3 has 4 NVIDIA V100 GPUs, while Standard_NC12s_v3 has 2 NVIDIA V100 GPUs. Refer to the docs for details. The number of GPU cards per node is set in the parameter gpus_per_node below. Setting this value correctly ensures utilization of all GPUs in the node. Recommended GPU compute SKUs can be found here and here.
+> [!NOTE]
+> Requirements: a single GPU node can have multiple GPU cards. For example, one node of Standard_NC24rs_v3 has 4 NVIDIA V100 GPUs, while Standard_NC12s_v3 has 2 NVIDIA V100 GPUs. Refer to the docs for details. The number of GPU cards per node is set in the parameter gpus_per_node below. Setting this value correctly ensures all GPUs in the node are utilized. Recommended GPU compute SKUs can be found here and here.
 
 ### Python Libraries
 
@@ -59,7 +59,7 @@ pip install azureml-mlflow
 
 ### Interacting with Azure ML
 
-1. This Python script is used to interact with the Azure Machine Learning (Azure ML) service. Here's what it does:
+1. This Python script interacts with the Azure Machine Learning (Azure ML) service. Here's what it does:
 
     - Imports necessary modules from azure.ai.ml, azure.identity, and azure.ai.ml.entities packages, as well as the time module.
 
@@ -112,12 +112,12 @@ pip install azureml-mlflow
     timestamp = str(int(time.time()))
     ```
 
-## 2. Pick a foundation model to fine tune
+## 2. Choose a foundation model to fine-tune
 
-1. Phi-3-mini-4k-instruct is a 3.8B parameter, lightweight, state-of-the-art open model built on datasets used for Phi-2. The model belongs to the Phi-3 family, and the Mini version comes in two variants: 4K and 128K, which refer to the context length (in tokens) it supports. We need to fine tune the model for our specific purpose before using it. You can browse these models in the Model Catalog in AzureML Studio, filtering by the chat-completion task. In this example, we use the Phi-3-mini-4k-instruct model. If you opened this notebook for a different model, replace the model name and version accordingly.
+1. Phi-3-mini-4k-instruct is a 3.8B parameter, lightweight, state-of-the-art open model built on datasets used for Phi-2. The model belongs to the Phi-3 family, and the Mini version comes in two variants: 4K and 128K, which refer to the context length (in tokens) it supports. We need to fine-tune the model for our specific use case. You can browse these models in the Model Catalog in AzureML Studio, filtering by the chat-completion task. In this example, we use the Phi-3-mini-4k-instruct model. If you opened this notebook for a different model, replace the model name and version accordingly.
 
-    > [!NOTE]  
-    > The model id property of the model will be passed as input to the fine tuning job. This is also available as the Asset ID field on the model details page in AzureML Studio Model Catalog.
+    > [!NOTE]
+    > The model id property of the model will be passed as input to the fine-tuning job. This is also available as the Asset ID field on the model details page in AzureML Studio Model Catalog.
 
 2. This Python script interacts with Azure Machine Learning (Azure ML) service. Here's what it does:
 
@@ -125,7 +125,7 @@ pip install azureml-mlflow
 
     - Uses the get method of the models property of the registry_ml_client object to retrieve the latest version of the model with the specified name from the Azure ML registry. The get method is called with two arguments: the model name and a label specifying to retrieve the latest version.
 
-    - Prints a message to the console indicating the name, version, and id of the model that will be used for fine tuning. The format method inserts these values into the message. The name, version, and id are accessed as properties of the foundation_model object.
+    - Prints a message to the console indicating the name, version, and id of the model that will be used for fine-tuning. The format method inserts these values into the message. The name, version, and id are accessed as properties of the foundation_model object.
 
     ```python
     # Set the model name
@@ -143,17 +143,17 @@ pip install azureml-mlflow
     )
     ```
 
-## 3. Create a compute to be used with the job
+## 3. Create a compute resource to use with the job
 
-The fine tuning job works ONLY with GPU compute. The size of the compute depends on the model size, and it can be tricky to identify the right compute for the job. This cell guides the user to select the appropriate compute.
+The fine-tuning job works ONLY with GPU compute. The size of the compute depends on the model size, and it can be tricky to identify the right compute for the job. This cell guides the user to select the appropriate compute.
 
-> [!NOTE]  
+> [!NOTE]
 > The computes listed below work with the most optimized configuration. Any changes to the configuration might cause Cuda Out Of Memory errors. In such cases, try upgrading to a larger compute size.
 
-> [!NOTE]  
+> [!NOTE]
 > When selecting the compute_cluster_size below, ensure the compute is available in your resource group. If a particular compute is not available, you can request access to the compute resources.
 
-### Checking Model for Fine Tuning Support
+### Checking Model for Fine-Tuning Support
 
 1. This Python script interacts with an Azure Machine Learning (Azure ML) model. Here's what it does:
 
@@ -269,7 +269,7 @@ The fine tuning job works ONLY with GPU compute. The size of the compute depends
         )
     ```
 
-## 4. Pick the dataset for fine-tuning the model
+## 4. Choose the dataset for fine-tuning the model
 
 1. We use the ultrachat_200k dataset. The dataset has four splits, suitable for Supervised fine-tuning (sft) and Generation ranking (gen). The number of examples per split is shown below:
 
@@ -278,16 +278,16 @@ The fine tuning job works ONLY with GPU compute. The size of the compute depends
     207865  23110  256032  28304
     ```
 
-1. The next few cells show basic data preparation for fine tuning:
+1. The next few cells show basic data preparation for fine-tuning:
 
 ### Visualize some data rows
 
-We want this sample to run quickly, so we save train_sft and test_sft files containing 5% of the already trimmed rows. This means the fine tuned model will have lower accuracy and should not be used in real-world applications.  
-The download-dataset.py script is used to download the ultrachat_200k dataset and transform it into a format consumable by the fine tune pipeline component. Since the dataset is large, here we only use a portion of it.
+We want this sample to run quickly, so we save train_sft and test_sft files containing 5% of the already filtered rows. This means the fine-tuned model will have lower accuracy and should not be used in real-world applications.  
+The download-dataset.py script is used to download the ultrachat_200k dataset and transform it into a format consumable by the fine-tune pipeline component. Since the dataset is large, here we only use a portion of it.
 
 1. Running the script below downloads only 5% of the data. You can increase this by changing the dataset_split_pc parameter to the desired percentage.
 
-    > [!NOTE]  
+    > [!NOTE]
     > Some language models use different language codes, so the column names in the dataset should reflect this.
 
 1. Here is an example of how the data should look:  
@@ -305,7 +305,7 @@ The chat-completion dataset is stored in parquet format, with each entry followi
 
     - "prompt_id": A string representing a unique identifier for the prompt.
 
-1. In this specific JSON document, a conversation is shown where a user asks an AI assistant to create a protagonist for a dystopian story. The assistant responds, and the user then asks for more details. The assistant agrees to provide more details. The entire conversation is associated with a specific prompt id.
+1. In this specific JSON document, a conversation is shown where a user asks an AI assistant to create a protagonist for a dystopian story. The assistant responds, and the user asks for more details. The assistant agrees to provide more details. The entire conversation is associated with a specific prompt id.
 
     ```python
     {
@@ -349,7 +349,7 @@ The chat-completion dataset is stored in parquet format, with each entry followi
 
 1. This Python script downloads a dataset using a helper script named download-dataset.py. Here’s what it does:
 
-    - Imports the os module, which provides a portable way to use operating system dependent functionality.
+    - Imports the os module, which provides a portable way to use operating system-dependent functionality.
 
     - Uses os.system to run the download-dataset.py script in the shell with specific command-line arguments. The arguments specify the dataset to download (HuggingFaceH4/ultrachat_200k), the directory to download it to (ultrachat_200k_dataset), and the percentage of the dataset to split (5). The exit status of the command is stored in exit_status.
 
@@ -381,7 +381,7 @@ The chat-completion dataset is stored in parquet format, with each entry followi
 
     - Imports the pandas library, a powerful data manipulation and analysis tool.
 
-    - Sets the maximum column width for pandas’ display options to 0, meaning the full text of each column will be shown without truncation when printing the DataFrame.
+    - Sets the maximum column width for pandas display options to 0, meaning the full text of each column will be shown without truncation when printing the DataFrame.
 
     - Uses pd.read_json to load the train_sft.jsonl file from the ultrachat_200k_dataset directory into a DataFrame. The lines=True argument indicates the file is in JSON Lines format, where each line is a separate JSON object.
 - It uses the head method to display the first 5 rows of the DataFrame. If the DataFrame has fewer than 5 rows, it will display all of them.
@@ -883,7 +883,7 @@ We will fetch some sample data from the test dataset and submit it to the online
 
     - It imports the json module, which provides functions to work with JSON data.
 
-    - It creates a dictionary parameters with keys and values representing parameters for a machine learning model. The keys are "temperature", "top_p", "do_sample", and "max_new_tokens", and their corresponding values are 0.6, 0.9, True, and 200 respectively.
+    - It creates a dictionary parameters with keys and values representing parameters for a machine learning model. The keys are "temperature", "top_p", "do_sample", and "max_new_tokens", with corresponding values 0.6, 0.9, True, and 200 respectively.
 
     - It creates another dictionary test_json with two keys: "input_data" and "params". The value of "input_data" is another dictionary with keys "input_string" and "parameters". The value of "input_string" is a list containing the first message from the test_df DataFrame. The value of "parameters" is the parameters dictionary created earlier. The value of "params" is an empty dictionary.
 - It opens a file named sample_score.json
@@ -960,7 +960,7 @@ We will fetch some sample data from the test dataset and submit it to the online
 
     - It specifies the endpoint to delete using the name argument. The endpoint name is stored in the online_endpoint_name variable.
 
-    - It calls the wait method to block the script until the deletion is complete.
+    - It calls the wait method to pause execution until the deletion is complete. This is a blocking call, so the script won’t continue until the endpoint is fully deleted.
 
     - In summary, this line starts deleting an online endpoint in Azure Machine Learning and waits for the process to finish.
 

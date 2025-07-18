@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:40:00+00:00",
+  "translation_date": "2025-07-17T02:34:56+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "hu"
 }
@@ -11,49 +11,49 @@ CO_OP_TRANSLATOR_METADATA:
 
 Az [MLflow](https://mlflow.org/) egy nyílt forráskódú platform, amely az egész gépi tanulási életciklus kezelésére szolgál.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.hu.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.hu.png)
 
-Az MLFlow az ML életciklus kezelésére szolgál, beleértve a kísérletezést, reprodukálhatóságot, telepítést és egy központi modellregisztert. Jelenleg négy fő komponensből áll:
+Az MLFlow az ML életciklus kezelésére szolgál, beleértve a kísérletezést, reprodukálhatóságot, telepítést és egy központi modellregisztert. Jelenleg négy fő komponensből áll.
 
 - **MLflow Tracking:** Kísérletek, kód, adatkonfiguráció és eredmények rögzítése és lekérdezése.
-- **MLflow Projects:** Adattudományi kód csomagolása olyan formátumban, amely lehetővé teszi a futtatások reprodukálását bármely platformon.
-- **Mlflow Models:** Gépi tanulási modellek telepítése különféle szolgáltatási környezetekben.
-- **Model Registry:** Modellek tárolása, annotálása és kezelése központi tárolóban.
+- **MLflow Projects:** Adattudományi kód csomagolása olyan formátumban, amely bármely platformon reprodukálható futtatást tesz lehetővé.
+- **Mlflow Models:** Gépi tanulási modellek telepítése különböző kiszolgálási környezetekben.
+- **Model Registry:** Modellek tárolása, megjegyzése és kezelése központi adattárban.
 
-Tartalmaz eszközöket a kísérletek nyomon követésére, a kód reprodukálható futtatásokba csomagolására, valamint a modellek megosztására és telepítésére. Az MLFlow integrálva van a Databricks platformba, és támogat számos ML könyvtárat, így könyvtárfüggetlen. Bármilyen gépi tanulási könyvtárral és programozási nyelven használható, mivel REST API-t és CLI-t is biztosít a könnyebb használathoz.
+Tartalmaz eszközöket a kísérletek nyomon követésére, a kód reprodukálható futtatásokba csomagolására, valamint a modellek megosztására és telepítésére. Az MLFlow beépített a Databricks-be, és számos ML könyvtárat támogat, így könyvtárfüggetlen. Bármely gépi tanulási könyvtárral és programozási nyelvvel használható, mivel REST API-t és CLI-t is biztosít a kényelmes használathoz.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.hu.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.hu.png)
 
 Az MLFlow főbb jellemzői:
 
 - **Kísérletkövetés:** Paraméterek és eredmények rögzítése és összehasonlítása.
-- **Modellkezelés:** Modellek telepítése különböző szolgáltatási és inferencia platformokra.
-- **Model Registry:** Az MLflow modellek életciklusának közös kezelése, verziózás és annotációk.
+- **Modellkezelés:** Modellek telepítése különböző kiszolgálási és inferencia platformokra.
+- **Model Registry:** Az MLflow modellek életciklusának közös kezelése, beleértve a verziókezelést és megjegyzéseket.
 - **Projektek:** ML kód csomagolása megosztásra vagy éles használatra.
 
-Az MLFlow támogatja az MLOps ciklust is, amely magában foglalja az adatelőkészítést, modellek regisztrálását és kezelését, modellek csomagolását futtatáshoz, szolgáltatások telepítését és modellek monitorozását. Célja, hogy egyszerűsítse a prototípusról az éles munkafolyamatra való áttérést, különösen felhő- és élő környezetekben.
+Az MLFlow támogatja az MLOps ciklust is, amely magában foglalja az adatelőkészítést, modellek regisztrálását és kezelését, modellek csomagolását futtatásra, szolgáltatások telepítését és modellek monitorozását. Célja, hogy egyszerűsítse a prototípusról az éles munkafolyamatra való átállást, különösen felhő- és edge környezetekben.
 
 ## E2E forgatókönyv – Wrapper készítése és Phi-3 használata MLFlow modellként
 
-Ebben az E2E példában két különböző megközelítést mutatunk be egy wrapper építésére a Phi-3 kis nyelvi modell (SLM) köré, majd annak MLFlow modellként való futtatására helyileg vagy a felhőben, például az Azure Machine Learning munkaterületen.
+Ebben az E2E példában két különböző megközelítést mutatunk be a Phi-3 kis nyelvi modell (SLM) köré épített wrapper elkészítésére, majd annak MLFlow modellként való futtatására helyben vagy a felhőben, például az Azure Machine Learning munkaterületen.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.hu.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.hu.png)
 
 | Projekt | Leírás | Hely |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | A Transformer Pipeline a legegyszerűbb módja egy wrapper építésének, ha HuggingFace modellt szeretnél használni az MLFlow kísérleti transformers változatával. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Egyedi Python Wrapper | A cikk írásakor a transformer pipeline nem támogatta az MLFlow wrapper generálását HuggingFace modellekhez ONNX formátumban, még az kísérleti optimum Python csomaggal sem. Ilyen esetekben egyedi Python wrappert építhetsz az MLFlow modellhez. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | A Transformer Pipeline a legegyszerűbb megoldás wrapper készítésére, ha HuggingFace modellt szeretnél használni az MLFlow kísérleti transformers változatával. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Egyedi Python Wrapper | A cikk írásakor a transformer pipeline nem támogatta az MLFlow wrapper generálást HuggingFace modellekhez ONNX formátumban, még az kísérleti optimum Python csomaggal sem. Ilyen esetekre egyedi Python wrappert készíthetsz MLFlow modellhez. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Projekt: Transformer Pipeline
 
-1. Szükséged lesz az MLFlow és HuggingFace releváns Python csomagjaira:
+1. Szükséged lesz az MLFlow és HuggingFace megfelelő Python csomagjaira:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Ezután inicializálnod kell egy transformer pipeline-t, megadva a cél Phi-3 modellt a HuggingFace regiszterből. Ahogy a _Phi-3-mini-4k-instruct_ modellkártyáján látható, a feladata „Szöveg generálás” típusú:
+2. Ezután el kell indítanod egy transformer pipeline-t, hivatkozva a cél Phi-3 modellre a HuggingFace regiszterben. Ahogy a _Phi-3-mini-4k-instruct_ modellkártyáján látható, a feladata „Szöveg generálás” típusú:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ Ebben az E2E példában két különböző megközelítést mutatunk be egy wrap
     )
     ```
 
-3. Most elmentheted a Phi-3 modell transformer pipeline-ját MLFlow formátumba, megadva további részleteket, például a célmappa útvonalát, specifikus modellkonfigurációs beállításokat és az inferencia API típusát:
+3. Most elmentheted a Phi-3 modell transformer pipeline-ját MLFlow formátumban, és megadhatsz további részleteket, például a cél artefaktum útvonalát, specifikus modellkonfigurációs beállításokat és az inferencia API típusát:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -75,7 +75,7 @@ Ebben az E2E példában két különböző megközelítést mutatunk be egy wrap
 
 ## Projekt: Egyedi Python Wrapper
 
-1. Itt a Microsoft [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) használható az ONNX modell inferenciájához és tokenek kódolásához / dekódolásához. A cél számítási erőforráshoz az _onnxruntime_genai_ csomagot kell választani, az alábbi példa CPU-ra céloz:
+1. Itt a Microsoft [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) használható az ONNX modell inferenciájához és a tokenek kódolásához / dekódolásához. A cél számítási környezethez az _onnxruntime_genai_ csomagot kell választani, az alábbi példa CPU-ra céloz:
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ Ebben az E2E példában két különböző megközelítést mutatunk be egy wrap
     import onnxruntime_genai as og
     ```
 
-1. Egyedi osztályunk két metódust valósít meg: _load_context()_ az **ONNX modell**, a Phi-3 Mini 4K Instruct **generátor paraméterei** és a **tokenizer** inicializálására; valamint _predict()_ a megadott prompt alapján kimeneti tokenek generálására:
+1. Egyedi osztályunk két metódust valósít meg: a _load_context()_-ot, amely inicializálja a Phi-3 Mini 4K Instruct **ONNX modellt**, a **generátor paramétereket** és a **tokenizert**; valamint a _predict()_-et, amely a megadott prompt alapján generálja a kimeneti tokeneket:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ Ebben az E2E példában két különböző megközelítést mutatunk be egy wrap
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Most az _mlflow.pyfunc.log_model()_ függvényt használhatod egy egyedi Python wrapper generálására (pickle formátumban) a Phi-3 modellhez, az eredeti ONNX modellel és a szükséges függőségekkel együtt:
+1. Most használhatod az _mlflow.pyfunc.log_model()_ függvényt, hogy egyedi Python wrappert generálj (pickle formátumban) a Phi-3 modellhez, az eredeti ONNX modellel és a szükséges függőségekkel együtt:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -129,7 +129,7 @@ Ebben az E2E példában két különböző megközelítést mutatunk be egy wrap
     )
     ```
 
-## A generált MLFlow modellek aláírásai
+## Az MLFlow modellek generált aláírásai
 
 1. A fent említett Transformer Pipeline projekt 3. lépésében az MLFlow modell feladatát „_llm/v1/chat_” értékre állítottuk. Ez az utasítás egy olyan modell API wrappert generál, amely kompatibilis az OpenAI Chat API-val, az alábbiak szerint:
 
@@ -142,13 +142,13 @@ Ebben az E2E példában két különböző megközelítést mutatunk be egy wrap
       None}
     ```
 
-1. Ennek eredményeként a promptodat a következő formátumban küldheted be:
+1. Ennek eredményeként a promptodat az alábbi formátumban küldheted be:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Ezután használhatod az OpenAI API-kompatibilis utófeldolgozást, pl. _response[0][‘choices’][0][‘message’][‘content’]_, hogy az eredményt szépen formázott szöveggé alakítsd:
+1. Ezután használhatod az OpenAI API-kompatibilis utófeldolgozást, például _response[0][‘choices’][0][‘message’][‘content’]_, hogy a kimenetedet szépen formázottá alakítsd, például így:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ Ebben az E2E példában két különböző megközelítést mutatunk be egy wrap
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. A fent említett Egyedi Python Wrapper projekt 3. lépésében az MLFlow csomag generálja a modell aláírását egy adott bemeneti példa alapján. Az MLFlow wrapperünk aláírása így fog kinézni:
+1. A fent említett Egyedi Python Wrapper projekt 3. lépésében az MLFlow csomagot engedjük, hogy a modell aláírását egy adott bemeneti példa alapján generálja. Az MLFlow wrapperünk aláírása így fog kinézni:
 
     ``` Python
     {inputs: 
@@ -169,13 +169,13 @@ Ebben az E2E példában két különböző megközelítést mutatunk be egy wrap
       None}
     ```
 
-1. Ezért a promptnak tartalmaznia kell egy "prompt" kulcsot tartalmazó szótárat, hasonlóan ehhez:
+1. Így a promptunknak tartalmaznia kell a "prompt" kulcsot egy szótárban, hasonlóan ehhez:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. A modell kimenete ezután sztring formátumban érkezik:
+1. A modell kimenete ezután sztring formátumban lesz elérhető:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -188,4 +188,4 @@ Ebben az E2E példában két különböző megközelítést mutatunk be egy wrap
     ```
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

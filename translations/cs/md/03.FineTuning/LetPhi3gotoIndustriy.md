@@ -2,70 +2,70 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "743d7e9cb9c4e8ea642d77bee657a7fa",
-  "translation_date": "2025-05-09T22:29:21+00:00",
+  "translation_date": "2025-07-17T10:00:23+00:00",
   "source_file": "md/03.FineTuning/LetPhi3gotoIndustriy.md",
   "language_code": "cs"
 }
 -->
-# **让 Phi-3 成为行业专家**
+# **Nechte Phi-3 stát se odborníkem v oboru**
 
-要将 Phi-3 模型应用到某个行业，需要向 Phi-3 模型中添加行业业务数据。我们有两种不同的选择，第一种是 RAG（检索增强生成），第二种是微调。
+Chcete-li model Phi-3 nasadit v konkrétním odvětví, je potřeba do modelu Phi-3 přidat data z daného oboru. Máme dvě možnosti: první je RAG (Retrieval Augmented Generation) a druhá je Fine Tuning.
 
-## **RAG 与微调对比**
+## **RAG vs Fine-Tuning**
 
-### **检索增强生成**
+### **Retrieval Augmented Generation**
 
-RAG 是数据检索加文本生成。企业的结构化数据和非结构化数据被存储在向量数据库中。在搜索相关内容时，会找到相关的摘要和内容形成上下文，并结合 LLM/SLM 的文本补全能力生成内容。
+RAG je kombinace vyhledávání dat a generování textu. Strukturovaná i nestrukturovaná data firmy jsou uložena ve vektorové databázi. Při hledání relevantního obsahu se najde souhrn a obsah, které tvoří kontext, a schopnost doplňování textu modelu LLM/SLM se využije k vytvoření výsledného textu.
 
-### **微调**
+### **Fine-tuning**
 
-微调是在某个模型基础上的改进。它不需要从模型算法开始，但需要不断积累数据。如果你想在行业应用中获得更精准的术语和语言表达，微调是更好的选择。但如果你的数据经常变化，微调会变得复杂。
+Fine-tuning znamená doladění konkrétního modelu. Není potřeba začínat od algoritmu modelu, ale je nutné průběžně sbírat data. Pokud chcete v oborových aplikacích přesnější terminologii a jazykové vyjádření, fine-tuning je lepší volba. Pokud se však data často mění, může být fine-tuning komplikovaný.
 
-### **如何选择**
+### **Jak vybrat**
 
-1. 如果我们的答案需要引入外部数据，RAG 是最佳选择
+1. Pokud naše odpověď vyžaduje zapojení externích dat, RAG je nejlepší volba.
 
-2. 如果需要输出稳定且精准的行业知识，微调是不错的选择。RAG 优先拉取相关内容，但可能无法完全把握专业细节。
+2. Pokud potřebujete stabilní a přesné znalosti z oboru, fine-tuning bude vhodnější. RAG upřednostňuje vytažení relevantního obsahu, ale nemusí vždy přesně zachytit specializované nuance.
 
-3. 微调需要高质量的数据集，且数据范围较小时效果不明显。RAG 更灵活。
+3. Fine-tuning vyžaduje kvalitní datovou sadu, a pokud je dat málo, nebude mít velký efekt. RAG je flexibilnější.
 
-4. 微调是一个黑盒，较难理解内部机制。而 RAG 可以更容易追溯数据来源，从而有效调整幻觉或内容错误，提供更好的透明度。
+4. Fine-tuning je černá skříňka, něco jako metafyzika, a je těžké pochopit jeho vnitřní mechanismus. RAG naopak usnadňuje dohledání zdroje dat, což pomáhá efektivně řešit halucinace nebo chyby v obsahu a zvyšuje transparentnost.
 
-### **应用场景**
+### **Scénáře**
 
-1. 垂直行业需要特定专业词汇和表达，***微调*** 是最佳选择
+1. Vertikální odvětví vyžadují specifickou odbornou terminologii a výrazy, ***Fine-tuning*** je nejlepší volba.
 
-2. QA 系统，涉及不同知识点的综合，***RAG*** 是最佳选择
+2. QA systém, který kombinuje různé znalostní body, ***RAG*** je nejlepší volba.
 
-3. 自动化业务流程结合 ***RAG + 微调*** 是最佳选择
+3. Kombinace automatizovaného obchodního procesu ***RAG + Fine-tuning*** je nejlepší volba.
 
-## **如何使用 RAG**
+## **Jak používat RAG**
 
-![rag](../../../../translated_images/rag.36e7cb856f120334d577fde60c6a5d7c5eecae255dac387669303d30b4b3efa4.cs.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.cs.png)
 
-向量数据库是以数学形式存储数据的集合。向量数据库使机器学习模型更容易记住之前的输入，从而支持搜索、推荐和文本生成等应用场景。数据可基于相似度度量而非精确匹配被识别，使计算机模型能够理解数据的上下文。
+Vektorová databáze je sbírka dat uložených v matematické podobě. Vektorové databáze usnadňují modelům strojového učení zapamatovat si předchozí vstupy, což umožňuje využití strojového učení pro případy jako vyhledávání, doporučení a generování textu. Data lze identifikovat na základě metrik podobnosti, nikoli přesných shod, což umožňuje modelům lépe chápat kontext dat.
 
-向量数据库是实现 RAG 的关键。我们可以通过 text-embedding-3、jina-ai-embedding 等向量模型将数据转换为向量存储。
+Vektorová databáze je klíčem k realizaci RAG. Data můžeme převést do vektorového úložiště pomocí vektorových modelů jako text-embedding-3, jina-ai-embedding a dalších.
 
-了解更多关于创建 RAG 应用的信息 [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?WT.mc_id=aiml-138114-kinfeylo)
+Více o tvorbě RAG aplikace najdete na [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook?WT.mc_id=aiml-138114-kinfeylo)
 
-## **如何使用微调**
+## **Jak používat Fine-tuning**
 
-微调中常用的算法有 Lora 和 QLora。如何选择？
-- [通过此示例笔记本了解更多](../../../../code/04.Finetuning/Phi_3_Inference_Finetuning.ipynb)
-- [Python 微调示例代码](../../../../code/04.Finetuning/FineTrainingScript.py)
+Nejčastěji používané algoritmy ve Fine-tuningu jsou Lora a QLora. Jak vybrat?
+- [Více informací v tomto ukázkovém notebooku](../../../../code/04.Finetuning/Phi_3_Inference_Finetuning.ipynb)
+- [Příklad Python FineTuning skriptu](../../../../code/04.Finetuning/FineTrainingScript.py)
 
-### **Lora 和 QLora**
+### **Lora a QLora**
 
-![lora](../../../../translated_images/qlora.6aeba71122bc0c8d56ccf0bc36b861304939fee087f43c1fc6cc5c9cb8764725.cs.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.cs.png)
 
-LoRA（低秩适配）和 QLoRA（量化低秩适配）都是用于使用参数高效微调（PEFT）技术对大型语言模型（LLM）进行微调的方法。PEFT 技术旨在比传统方法更高效地训练模型。
+LoRA (Low-Rank Adaptation) a QLoRA (Quantized Low-Rank Adaptation) jsou techniky používané k doladění velkých jazykových modelů (LLM) pomocí Parameter Efficient Fine Tuning (PEFT). PEFT techniky jsou navrženy tak, aby trénovaly modely efektivněji než tradiční metody.
 
-LoRA 是一种独立的微调技术，通过对权重更新矩阵应用低秩近似来减少内存占用。它训练速度快，性能接近传统微调方法。
+LoRA je samostatná metoda doladění, která snižuje nároky na paměť tím, že aplikuje nízkorozměrnou aproximaci na matici aktualizace vah. Nabízí rychlý trénink a udržuje výkon blízký tradičnímu fine-tuningu.
 
-QLoRA 是 LoRA 的扩展版本，结合了量化技术以进一步减少内存使用。QLoRA 将预训练 LLM 中权重参数的精度量化到 4 位精度，比 LoRA 更节省内存。但由于额外的量化和反量化步骤，QLoRA 训练速度比 LoRA 慢约 30%。
+QLoRA je rozšířená verze LoRA, která využívá kvantizační techniky ke snížení paměťových nároků. QLoRA kvantizuje přesnost váhových parametrů předtrénovaného LLM na 4bitovou přesnost, což je paměťově efektivnější než LoRA. Trénink QLoRA je však asi o 30 % pomalejší než u LoRA kvůli dodatečným krokům kvantizace a dekvantizace.
 
-QLoRA 使用 LoRA 作为辅助，修正量化过程中引入的误差。QLoRA 使得在相对较小且普遍可用的 GPU 上微调拥有数十亿参数的大型模型成为可能。例如，QLoRA 可以微调一个 70B 参数的模型，而传统方法可能需要 36 块 GPU，仅需 2 块 GPU 即可完成。
+QLoRA používá LoRA jako doplněk k opravě chyb vzniklých kvantizací. QLoRA umožňuje doladění obrovských modelů s miliardami parametrů na relativně malých a dostupných GPU. Například QLoRA dokáže doladit model s 70 miliardami parametrů, který by jinak vyžadoval 36 GPU, pouze s 2...
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

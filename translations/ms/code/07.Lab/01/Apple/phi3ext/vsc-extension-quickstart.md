@@ -2,59 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-05-09T05:09:25+00:00",
+  "translation_date": "2025-07-16T17:03:04+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md",
   "language_code": "ms"
 }
 -->
-# ברוכים הבאים לתוסף ה-VS Code שלכם
+# Selamat datang ke Sambungan VS Code anda
 
-## מה יש בתיקייה
+## Apa yang ada dalam folder
 
-* תיקייה זו מכילה את כל הקבצים הנדרשים לתוסף שלכם.
-* `package.json` - זהו קובץ המניפסט שבו אתם מגדירים את התוסף והפקודה שלכם.
-  * התוסף לדוגמה רושם פקודה ומגדיר את הכותרת ושם הפקודה שלה. עם המידע הזה VS Code יכול להציג את הפקודה בפלטת הפקודות. עדיין אין צורך לטעון את התוסף.
-* `src/extension.ts` - זהו הקובץ הראשי שבו תספקו את מימוש הפקודה שלכם.
-  * הקובץ מייצא פונקציה אחת, `activate`, שנקראת בפעם הראשונה שהתוסף מופעל (במקרה זה בעת ביצוע הפקודה). בתוך פונקציית `activate` אנו קוראים ל-`registerCommand`.
-  * אנו מעבירים את הפונקציה שמכילה את מימוש הפקודה כפרמטר השני ל-`registerCommand`.
+* Folder ini mengandungi semua fail yang diperlukan untuk sambungan anda.
+* `package.json` - ini adalah fail manifest di mana anda mengisytiharkan sambungan dan arahan anda.
+  * Plugin contoh mendaftar satu arahan dan menetapkan tajuk serta nama arahan tersebut. Dengan maklumat ini, VS Code boleh memaparkan arahan dalam palet arahan. Ia belum perlu memuatkan plugin.
+* `src/extension.ts` - ini adalah fail utama di mana anda akan menyediakan pelaksanaan arahan anda.
+  * Fail ini mengeksport satu fungsi, `activate`, yang dipanggil kali pertama sambungan anda diaktifkan (dalam kes ini dengan melaksanakan arahan). Di dalam fungsi `activate` kita memanggil `registerCommand`.
+  * Kita menghantar fungsi yang mengandungi pelaksanaan arahan sebagai parameter kedua kepada `registerCommand`.
 
-## התקנה
+## Persediaan
 
-* התקינו את התוספים המומלצים (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, ו-dbaeumer.vscode-eslint)
+* pasang sambungan yang disyorkan (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, dan dbaeumer.vscode-eslint)
 
+## Mulakan dengan segera
 
-## התחילו לעבוד מיד
+* Tekan `F5` untuk membuka tetingkap baru dengan sambungan anda dimuatkan.
+* Jalankan arahan anda dari palet arahan dengan menekan (`Ctrl+Shift+P` atau `Cmd+Shift+P` pada Mac) dan taip `Hello World`.
+* Tetapkan titik henti dalam kod anda di dalam `src/extension.ts` untuk debug sambungan anda.
+* Cari output dari sambungan anda dalam konsol debug.
 
-* לחצו על `F5` כדי לפתוח חלון חדש עם התוסף שלכם טעון.
-* הריצו את הפקודה שלכם מפלטת הפקודות על ידי לחיצה על (`Ctrl+Shift+P` או `Cmd+Shift+P` ב-Mac) והקלדת `Hello World`.
-* הגדירו נקודות עצירה בקוד שלכם בתוך `src/extension.ts` כדי לנפות באגים בתוסף.
-* מצאו את הפלט של התוסף שלכם בקונסולת הניפוי.
+## Buat perubahan
 
-## בצעו שינויים
+* Anda boleh melancarkan semula sambungan dari bar alat debug selepas menukar kod dalam `src/extension.ts`.
+* Anda juga boleh memuat semula (`Ctrl+R` atau `Cmd+R` pada Mac) tetingkap VS Code dengan sambungan anda untuk memuatkan perubahan anda.
 
-* תוכלו להפעיל מחדש את התוסף מסרגל הכלים לניפוי לאחר שינוי קוד ב-`src/extension.ts`.
-* תוכלו גם לטעון מחדש (`Ctrl+R` או `Cmd+R` ב-Mac) את חלון ה-VS Code עם התוסף כדי לטעון את השינויים שלכם.
+## Terokai API
 
+* Anda boleh membuka set penuh API kami apabila anda membuka fail `node_modules/@types/vscode/index.d.ts`.
 
-## חקרו את ה-API
+## Jalankan ujian
 
-* תוכלו לפתוח את כל מערך ה-API שלנו כשאתם פותחים את הקובץ `node_modules/@types/vscode/index.d.ts`.
+* Pasang [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* Jalankan tugas "watch" melalui arahan **Tasks: Run Task**. Pastikan ia berjalan, jika tidak ujian mungkin tidak ditemui.
+* Buka paparan Testing dari bar aktiviti dan klik butang "Run Test", atau gunakan kekunci pintas `Ctrl/Cmd + ; A`
+* Lihat output keputusan ujian dalam paparan Test Results.
+* Buat perubahan pada `src/test/extension.test.ts` atau cipta fail ujian baru dalam folder `test`.
+  * Test runner yang disediakan hanya akan mempertimbangkan fail yang sepadan dengan corak nama `**.test.ts`.
+  * Anda boleh mencipta folder dalam folder `test` untuk menyusun ujian anda mengikut cara yang anda mahu.
 
-## הרצת בדיקות
+## Terokai lebih jauh
 
-* התקינו את [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* הריצו את המשימה "watch" דרך הפקודה **Tasks: Run Task**. ודאו שהיא רצה, אחרת ייתכן שהבדיקות לא יזוהו.
-* פתחו את תצוגת הבדיקות בסרגל הפעילויות ולחצו על כפתור "Run Test", או השתמשו בקיצור המקשים `Ctrl/Cmd + ; A`
-* צפו בפלט תוצאות הבדיקות בתצוגת Test Results.
-* בצעו שינויים ב-`src/test/extension.test.ts` או צרו קבצי בדיקה חדשים בתוך תיקיית `test`.
-  * רץ הבדיקות שסופק יזהה רק קבצים שתואמים לתבנית השם `**.test.ts`.
-  * תוכלו ליצור תיקיות בתוך תיקיית `test` כדי לארגן את הבדיקות שלכם איך שתרצו.
-
-## המשיכו הלאה
-
-* הקטינו את גודל התוסף ושפרו את זמן ההפעלה על ידי [אריזת התוסף שלכם](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
-* [פרסמו את התוסף שלכם](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) בשוק התוספים של VS Code.
-* אוטומטו בניות על ידי הגדרת [אינטגרציה רציפה](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+* Kurangkan saiz sambungan dan tingkatkan masa permulaan dengan [menggabungkan sambungan anda](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
+* [Terbitkan sambungan anda](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) di pasaran sambungan VS Code.
+* Automatikkan binaan dengan menyediakan [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab terhadap sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

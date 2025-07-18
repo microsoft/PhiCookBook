@@ -2,69 +2,69 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:36:40+00:00",
+  "translation_date": "2025-07-16T21:17:46+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "pa"
 }
 -->
-# Remote Inferencing with the fine-tuned model
+# ਫਾਈਨ-ਟਿਊਨ ਕੀਤੇ ਮਾਡਲ ਨਾਲ ਰਿਮੋਟ ਇੰਫਰੈਂਸਿੰਗ
 
-ਜਦੋਂ ਅਡੈਪਟਰਾਂ ਨੂੰ ਰਿਮੋਟ ਮਾਹੌਲ ਵਿੱਚ ਟ੍ਰੇਨ ਕੀਤਾ ਜਾ ਚੁੱਕਾ ਹੋਵੇ, ਤਾਂ ਮਾਡਲ ਨਾਲ ਇੰਟਰੈਕਟ ਕਰਨ ਲਈ ਇੱਕ ਸਧਾਰਣ Gradio ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਵਰਤੋਂ ਕਰੋ।
+ਜਦੋਂ ਅਡੈਪਟਰ ਰਿਮੋਟ ਵਾਤਾਵਰਣ ਵਿੱਚ ਟ੍ਰੇਨ ਹੋ ਜਾਂਦੇ ਹਨ, ਤਾਂ ਮਾਡਲ ਨਾਲ ਇੰਟਰੈਕਟ ਕਰਨ ਲਈ ਇੱਕ ਸਧਾਰਣ Gradio ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਵਰਤੋਂ ਕਰੋ।
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.pa.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.pa.png)
 
-### Azure Resources ਦੀ ਸੈਟਅਪ ਕਰੋ  
-ਤੁਹਾਨੂੰ ਰਿਮੋਟ ਇਨਫਰੰਸ ਲਈ Azure Resources ਸੈਟਅਪ ਕਰਨ ਦੀ ਲੋੜ ਹੈ, ਜਿਸ ਲਈ ਕਮਾਂਡ ਪੈਲੇਟ ਤੋਂ `AI Toolkit: Provision Azure Container Apps for inference` ਚਲਾਓ। ਇਸ ਸੈਟਅਪ ਦੌਰਾਨ, ਤੁਹਾਨੂੰ ਆਪਣੀ Azure Subscription ਅਤੇ resource group ਚੁਣਨ ਲਈ ਕਿਹਾ ਜਾਵੇਗਾ।  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.pa.png)
-   
-ਡਿਫੌਲਟ ਤੌਰ 'ਤੇ, ਇਨਫਰੰਸ ਲਈ subscription ਅਤੇ resource group ਉਹੀ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ ਜੋ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਲਈ ਵਰਤੇ ਗਏ ਸਨ। ਇਨਫਰੰਸ ਉਹੀ Azure Container App Environment ਵਰਤੇਗਾ ਅਤੇ ਮਾਡਲ ਅਤੇ ਮਾਡਲ ਅਡੈਪਟਰ ਨੂੰ Azure Files ਵਿੱਚ ਐਕਸੈੱਸ ਕਰੇਗਾ, ਜੋ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਸਟੈਪ ਦੌਰਾਨ ਬਣਾਏ ਗਏ ਸਨ।
+### Azure ਰਿਸੋਰਸز ਦੀ ਪ੍ਰੋਵਿਜ਼ਨ ਕਰੋ  
+ਰਿਮੋਟ ਇੰਫਰੈਂਸ ਲਈ Azure ਰਿਸੋਰਸਜ਼ ਸੈੱਟਅਪ ਕਰਨ ਲਈ ਕਮਾਂਡ ਪੈਲੇਟ ਤੋਂ `AI Toolkit: Provision Azure Container Apps for inference` ਚਲਾਓ। ਇਸ ਸੈੱਟਅਪ ਦੌਰਾਨ, ਤੁਹਾਨੂੰ ਆਪਣੀ Azure ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਅਤੇ ਰਿਸੋਰਸ ਗਰੁੱਪ ਚੁਣਨ ਲਈ ਕਿਹਾ ਜਾਵੇਗਾ।  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.pa.png)
 
-## AI Toolkit ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹੋਏ
+ਡਿਫਾਲਟ ਤੌਰ 'ਤੇ, ਇੰਫਰੈਂਸ ਲਈ ਸਬਸਕ੍ਰਿਪਸ਼ਨ ਅਤੇ ਰਿਸੋਰਸ ਗਰੁੱਪ ਉਹੀ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ ਜੋ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਲਈ ਵਰਤੇ ਗਏ ਸਨ। ਇੰਫਰੈਂਸ ਉਹੀ Azure Container App Environment ਵਰਤੇਗਾ ਅਤੇ ਮਾਡਲ ਅਤੇ ਮਾਡਲ ਅਡੈਪਟਰ ਨੂੰ ਐਕਸੈਸ ਕਰੇਗਾ ਜੋ Azure Files ਵਿੱਚ ਸਟੋਰ ਕੀਤੇ ਗਏ ਹਨ, ਜੋ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਦੌਰਾਨ ਬਣਾਏ ਗਏ ਸਨ।
 
-### ਇਨਫਰੰਸ ਲਈ ਡਿਪਲੋਇਮੈਂਟ  
-ਜੇ ਤੁਸੀਂ ਇਨਫਰੰਸ ਕੋਡ ਨੂੰ ਸੋਧਣਾ ਜਾਂ ਇਨਫਰੰਸ ਮਾਡਲ ਨੂੰ ਦੁਬਾਰਾ ਲੋਡ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ `AI Toolkit: Deploy for inference` ਕਮਾਂਡ ਚਲਾਓ। ਇਹ ਤੁਹਾਡੇ ਤਾਜ਼ਾ ਕੋਡ ਨੂੰ ACA ਨਾਲ ਸਿੰਕ੍ਰੋਨਾਈਜ਼ ਕਰੇਗਾ ਅਤੇ ਰਿਪਲਿਕਾ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੇਗਾ।  
+## AI Toolkit ਦੀ ਵਰਤੋਂ
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.pa.png)
+### ਇੰਫਰੈਂਸ ਲਈ ਡਿਪਲੋਇਮੈਂਟ  
+ਜੇ ਤੁਸੀਂ ਇੰਫਰੈਂਸ ਕੋਡ ਨੂੰ ਸੋਧਣਾ ਜਾਂ ਇੰਫਰੈਂਸ ਮਾਡਲ ਨੂੰ ਰੀਲੋਡ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ `AI Toolkit: Deploy for inference` ਕਮਾਂਡ ਚਲਾਓ। ਇਹ ਤੁਹਾਡੇ ਤਾਜ਼ਾ ਕੋਡ ਨੂੰ ACA ਨਾਲ ਸਿੰਕ੍ਰੋਨਾਈਜ਼ ਕਰੇਗਾ ਅਤੇ ਰੇਪਲਿਕਾ ਨੂੰ ਰੀਸਟਾਰਟ ਕਰੇਗਾ।
 
-ਡਿਪਲੋਇਮੈਂਟ ਸਫਲਤਾਪੂਰਵਕ ਮੁਕੰਮਲ ਹੋਣ ਤੋਂ ਬਾਅਦ, ਮਾਡਲ ਹੁਣ ਇਸ ਐਂਡਪੌਇੰਟ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਮੁਲਾਂਕਣ ਲਈ ਤਿਆਰ ਹੈ।
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.pa.png)
 
-### ਇਨਫਰੰਸ API ਤੱਕ ਪਹੁੰਚ
+ਡਿਪਲੋਇਮੈਂਟ ਸਫਲਤਾਪੂਰਵਕ ਮੁਕੰਮਲ ਹੋਣ ਤੋਂ ਬਾਅਦ, ਮਾਡਲ ਹੁਣ ਇਸ ਐਂਡਪੌਇੰਟ ਰਾਹੀਂ ਮੁਲਾਂਕਣ ਲਈ ਤਿਆਰ ਹੈ।
 
-ਤੁਸੀਂ VSCode ਨੋਟੀਫਿਕੇਸ਼ਨ ਵਿੱਚ ਦਿਖਾਏ ਗਏ "*Go to Inference Endpoint*" ਬਟਨ 'ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਇਨਫਰੰਸ API ਤੱਕ ਪਹੁੰਚ ਕਰ ਸਕਦੇ ਹੋ। ਵਿਕਲਪ ਵਜੋਂ, ਵੈੱਬ API ਐਂਡਪੌਇੰਟ ਨੂੰ `ACA_APP_ENDPOINT` ਵਿੱਚ `./infra/inference.config.json` ਅਤੇ ਆਉਟਪੁੱਟ ਪੈਨਲ ਵਿੱਚ ਲੱਭਿਆ ਜਾ ਸਕਦਾ ਹੈ।
+### ਇੰਫਰੈਂਸ API ਤੱਕ ਪਹੁੰਚ
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.pa.png)
+ਤੁਸੀਂ VSCode ਨੋਟੀਫਿਕੇਸ਼ਨ ਵਿੱਚ ਦਿਖਾਏ ਗਏ "*Go to Inference Endpoint*" ਬਟਨ 'ਤੇ ਕਲਿੱਕ ਕਰਕੇ ਇੰਫਰੈਂਸ API ਤੱਕ ਪਹੁੰਚ ਕਰ ਸਕਦੇ ਹੋ। ਵਿਕਲਪ ਵਜੋਂ, ਵੈੱਬ API ਐਂਡਪੌਇੰਟ `ACA_APP_ENDPOINT` ਵਿੱਚ `./infra/inference.config.json` ਅਤੇ ਆਉਟਪੁੱਟ ਪੈਨਲ ਵਿੱਚ ਮਿਲ ਸਕਦਾ ਹੈ।
 
-> **Note:** ਇਨਫਰੰਸ ਐਂਡਪੌਇੰਟ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਨ ਲਈ ਕੁਝ ਮਿੰਟ ਲੱਗ ਸਕਦੇ ਹਨ।
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.pa.png)
 
-## ਟੈਂਪਲੇਟ ਵਿੱਚ ਸ਼ਾਮਲ ਇਨਫਰੰਸ ਕੰਪੋਨੈਂਟਸ
- 
+> **Note:** ਇੰਫਰੈਂਸ ਐਂਡਪੌਇੰਟ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਚਾਲੂ ਹੋਣ ਵਿੱਚ ਕੁਝ ਮਿੰਟ ਲੱਗ ਸਕਦੇ ਹਨ।
+
+## ਟੈਮਪਲੇਟ ਵਿੱਚ ਸ਼ਾਮਲ ਇੰਫਰੈਂਸ ਕੰਪੋਨੈਂਟਸ
+
 | ਫੋਲਡਰ | ਸਮੱਗਰੀ |
 | ------ |--------- |
-| `infra` | ਰਿਮੋਟ ਓਪਰੇਸ਼ਨਾਂ ਲਈ ਸਾਰੀਆਂ ਲੋੜੀਂਦੀਆਂ ਸੰਰਚਨਾਵਾਂ ਸ਼ਾਮਲ ਹਨ। |
-| `infra/provision/inference.parameters.json` | ਬਾਇਸਪ ਟੈਂਪਲੇਟ ਲਈ ਪੈਰਾਮੀਟਰਾਂ ਨੂੰ ਰੱਖਦਾ ਹੈ, ਜੋ ਇਨਫਰੰਸ ਲਈ Azure Resources ਪ੍ਰੋਵਿਜ਼ਨ ਕਰਨ ਲਈ ਵਰਤੇ ਜਾਂਦੇ ਹਨ। |
-| `infra/provision/inference.bicep` | ਇਨਫਰੰਸ ਲਈ Azure Resources ਪ੍ਰੋਵਿਜ਼ਨ ਕਰਨ ਵਾਲੇ ਟੈਂਪਲੇਟ ਸ਼ਾਮਲ ਹਨ। |
-| `infra/inference.config.json` | ਸੰਰਚਨਾ ਫਾਈਲ, ਜੋ `AI Toolkit: Provision Azure Container Apps for inference` ਕਮਾਂਡ ਦੁਆਰਾ ਬਣਾਈ ਜਾਂਦੀ ਹੈ। ਇਹ ਹੋਰ ਰਿਮੋਟ ਕਮਾਂਡ ਪੈਲੇਟ ਲਈ ਇਨਪੁੱਟ ਵਜੋਂ ਵਰਤੀ ਜਾਂਦੀ ਹੈ। |
+| `infra` | ਰਿਮੋਟ ਓਪਰੇਸ਼ਨਾਂ ਲਈ ਸਾਰੀਆਂ ਜ਼ਰੂਰੀ ਕਨਫਿਗਰੇਸ਼ਨਜ਼ ਸ਼ਾਮਲ ਹਨ। |
+| `infra/provision/inference.parameters.json` | ਬਾਈਸਪ ਟੈਮਪਲੇਟਸ ਲਈ ਪੈਰਾਮੀਟਰ ਰੱਖਦਾ ਹੈ, ਜੋ ਇੰਫਰੈਂਸ ਲਈ Azure ਰਿਸੋਰਸਜ਼ ਦੀ ਪ੍ਰੋਵਿਜ਼ਨਿੰਗ ਲਈ ਵਰਤੇ ਜਾਂਦੇ ਹਨ। |
+| `infra/provision/inference.bicep` | ਇੰਫਰੈਂਸ ਲਈ Azure ਰਿਸੋਰਸਜ਼ ਦੀ ਪ੍ਰੋਵਿਜ਼ਨਿੰਗ ਲਈ ਟੈਮਪਲੇਟਸ ਸ਼ਾਮਲ ਹਨ। |
+| `infra/inference.config.json` | ਇਹ ਕਨਫਿਗਰੇਸ਼ਨ ਫਾਈਲ ਹੈ, ਜੋ `AI Toolkit: Provision Azure Container Apps for inference` ਕਮਾਂਡ ਨਾਲ ਬਣਾਈ ਜਾਂਦੀ ਹੈ। ਇਹ ਹੋਰ ਰਿਮੋਟ ਕਮਾਂਡ ਪੈਲੇਟਸ ਲਈ ਇਨਪੁੱਟ ਵਜੋਂ ਵਰਤੀ ਜਾਂਦੀ ਹੈ। |
 
-### AI Toolkit ਦੀ ਵਰਤੋਂ ਕਰਕੇ Azure Resource Provision ਸੈਟਅਪ ਕਰਨਾ  
-[AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) ਨੂੰ ਕਨਫਿਗਰ ਕਰੋ
+### Azure Resource Provision ਲਈ AI Toolkit ਦੀ ਵਰਤੋਂ  
+[AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio) ਨੂੰ ਕਨਫਿਗਰ ਕਰੋ।
 
-ਇਨਫਰੰਸ ਲਈ Azure Container Apps ਪ੍ਰੋਵਿਜ਼ਨ ਕਰੋ` command.
+`Provision Azure Container Apps for inference` ਕਮਾਂਡ ਚਲਾਓ।
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+ਤੁਸੀਂ `./infra/provision/inference.parameters.json` ਫਾਈਲ ਵਿੱਚ ਕਨਫਿਗਰੇਸ਼ਨ ਪੈਰਾਮੀਟਰ ਲੱਭ ਸਕਦੇ ਹੋ। ਇੱਥੇ ਵੇਰਵੇ ਹਨ:  
+| ਪੈਰਾਮੀਟਰ | ਵੇਰਵਾ |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | ਇਹ ਵੈੱਬ API ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਕਮਾਂਡਾਂ ਹਨ। |
+| `maximumInstanceCount` | ਇਹ ਪੈਰਾਮੀਟਰ GPU ਇੰਸਟੈਂਸ ਦੀ ਵੱਧ ਤੋਂ ਵੱਧ ਸਮਰੱਥਾ ਸੈੱਟ ਕਰਦਾ ਹੈ। |
+| `location` | ਇਹ ਥਾਂ ਹੈ ਜਿੱਥੇ Azure ਰਿਸੋਰਸਜ਼ ਪ੍ਰੋਵਿਜ਼ਨ ਕੀਤੇ ਜਾਂਦੇ ਹਨ। ਡਿਫਾਲਟ ਮੁੱਲ ਚੁਣੇ ਗਏ ਰਿਸੋਰਸ ਗਰੁੱਪ ਦੀ ਥਾਂ ਦੇ ਬਰਾਬਰ ਹੁੰਦਾ ਹੈ। |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | ਇਹ ਪੈਰਾਮੀਟਰ Azure ਰਿਸੋਰਸਜ਼ ਲਈ ਨਾਮ ਰੱਖਣ ਲਈ ਵਰਤੇ ਜਾਂਦੇ ਹਨ। ਡਿਫਾਲਟ ਤੌਰ 'ਤੇ ਇਹ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਰਿਸੋਰਸ ਨਾਮ ਦੇ ਬਰਾਬਰ ਹੁੰਦੇ ਹਨ। ਤੁਸੀਂ ਆਪਣਾ ਨਵਾਂ, ਅਣਵਰਤਿਤ ਰਿਸੋਰਸ ਨਾਮ ਦਾਖਲ ਕਰਕੇ ਆਪਣੀ ਕਸਟਮ-ਨਾਮ ਵਾਲੀ ਰਿਸੋਰਸ ਬਣਾਉਣ ਲਈ ਇਨਪੁੱਟ ਦੇ ਸਕਦੇ ਹੋ, ਜਾਂ ਤੁਸੀਂ ਮੌਜੂਦਾ Azure ਰਿਸੋਰਸ ਦਾ ਨਾਮ ਦਾਖਲ ਕਰ ਸਕਦੇ ਹੋ ਜੇ ਤੁਸੀਂ ਉਹ ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ। ਵੇਰਵਿਆਂ ਲਈ, [Using existing Azure Resources](../../../../../md/01.Introduction/03) ਸੈਕਸ਼ਨ ਨੂੰ ਵੇਖੋ। |
 
-### Using Existing Azure Resources
+### ਮੌਜੂਦਾ Azure ਰਿਸੋਰਸਜ਼ ਦੀ ਵਰਤੋਂ
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+ਡਿਫਾਲਟ ਤੌਰ 'ਤੇ, ਇੰਫਰੈਂਸ ਪ੍ਰੋਵਿਜ਼ਨ ਉਹੀ Azure Container App Environment, Storage Account, Azure File Share, ਅਤੇ Azure Log Analytics ਵਰਤਦਾ ਹੈ ਜੋ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਲਈ ਵਰਤੇ ਗਏ ਸਨ। ਇੰਫਰੈਂਸ API ਲਈ ਇੱਕ ਵੱਖਰਾ Azure Container App ਬਣਾਇਆ ਜਾਂਦਾ ਹੈ।
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` ਫਾਈਲ ਵਿੱਚ। ਫਿਰ, ਕਮਾਂਡ ਪੈਲੇਟ ਤੋਂ `AI Toolkit: Provision Azure Container Apps for inference` ਕਮਾਂਡ ਚਲਾਓ। ਇਹ ਕਿਸੇ ਵੀ ਦਿੱਤੇ ਗਏ ਰਿਸੋਰਸ ਨੂੰ ਅਪਡੇਟ ਕਰੇਗਾ ਅਤੇ ਜੇ ਕੋਈ ਗਾਇਬ ਹੋਵੇ ਤਾਂ ਉਸਨੂੰ ਬਣਾਏਗਾ।
+ਜੇ ਤੁਸੀਂ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਦੌਰਾਨ Azure ਰਿਸੋਰਸਜ਼ ਨੂੰ ਕਸਟਮਾਈਜ਼ ਕੀਤਾ ਹੈ ਜਾਂ ਇੰਫਰੈਂਸ ਲਈ ਆਪਣੇ ਮੌਜੂਦਾ Azure ਰਿਸੋਰਸਜ਼ ਦੀ ਵਰਤੋਂ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਉਹਨਾਂ ਦੇ ਨਾਮ `./infra/inference.parameters.json` ਫਾਈਲ ਵਿੱਚ ਦਰਜ ਕਰੋ। ਫਿਰ ਕਮਾਂਡ ਪੈਲੇਟ ਤੋਂ `AI Toolkit: Provision Azure Container Apps for inference` ਕਮਾਂਡ ਚਲਾਓ। ਇਹ ਦਿੱਤੇ ਗਏ ਕਿਸੇ ਵੀ ਰਿਸੋਰਸ ਨੂੰ ਅਪਡੇਟ ਕਰੇਗਾ ਅਤੇ ਜੇ ਕੋਈ ਗੁੰਮ ਹੈ ਤਾਂ ਉਹ ਬਣਾਏਗਾ।
 
-ਉਦਾਹਰਣ ਵਜੋਂ, ਜੇ ਤੁਹਾਡੇ ਕੋਲ ਮੌਜੂਦਾ Azure container environment ਹੈ, ਤਾਂ ਤੁਹਾਡੀ `./infra/finetuning.parameters.json` ਇਸ ਤਰ੍ਹਾਂ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ:
+ਉਦਾਹਰਨ ਵਜੋਂ, ਜੇ ਤੁਹਾਡੇ ਕੋਲ ਮੌਜੂਦਾ Azure container environment ਹੈ, ਤਾਂ ਤੁਹਾਡੀ `./infra/finetuning.parameters.json` ਇਸ ਤਰ੍ਹਾਂ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ:
 
 ```json
 {
@@ -84,9 +84,9 @@ If you have customized the Azure resources during the fine-tuning step or want t
 ```
 
 ### ਮੈਨੂਅਲ ਪ੍ਰੋਵਿਜ਼ਨ  
-ਜੇ ਤੁਸੀਂ Azure resources ਨੂੰ ਮੈਨੂਅਲ ਤਰੀਕੇ ਨਾਲ ਕਨਫਿਗਰ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` ਫਾਈਲ ਵਿੱਚ ਦਿੱਤੇ ਗਏ ਬਾਇਸਪ ਫਾਈਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ।
+ਜੇ ਤੁਸੀਂ Azure ਰਿਸੋਰਸਜ਼ ਨੂੰ ਹੱਥੋਂ-ਹੱਥ ਕਨਫਿਗਰ ਕਰਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਤੁਸੀਂ `./infra/provision` ਫੋਲਡਰ ਵਿੱਚ ਦਿੱਤੇ ਬਾਈਸਪ ਫਾਈਲਾਂ ਦੀ ਵਰਤੋਂ ਕਰ ਸਕਦੇ ਹੋ। ਜੇ ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਸਾਰੇ Azure ਰਿਸੋਰਸਜ਼ ਸੈੱਟਅਪ ਅਤੇ ਕਨਫਿਗਰ ਕਰ ਚੁੱਕੇ ਹੋ ਬਿਨਾਂ AI Toolkit ਕਮਾਂਡ ਪੈਲੇਟ ਦੀ ਵਰਤੋਂ ਕੀਤੇ, ਤਾਂ ਸਿਰਫ਼ `inference.config.json` ਫਾਈਲ ਵਿੱਚ ਰਿਸੋਰਸ ਨਾਮ ਦਰਜ ਕਰੋ।
 
-ਉਦਾਹਰਣ ਲਈ:
+ਉਦਾਹਰਨ ਵਜੋਂ:
 
 ```json
 {
@@ -99,5 +99,5 @@ If you have customized the Azure resources during the fine-tuning step or want t
 }
 ```
 
-**ਅਸਵੀਕਾਰੋਤਾ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਵਿੱਚ ਰੱਖੋ ਕਿ ਆਟੋਮੈਟਿਕ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਣਸਹੀਤੀਆਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਹੀ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਜਰੂਰੀ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਪੈਦਾ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀਆਂ ਜਾਂ ਗਲਤ ਵਿਵਰਣ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+**ਅਸਵੀਕਾਰੋਪਣ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

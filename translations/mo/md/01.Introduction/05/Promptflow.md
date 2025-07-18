@@ -2,80 +2,82 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cbe7629d254f1043193b7fe22524d55",
-  "translation_date": "2025-05-07T14:46:48+00:00",
+  "translation_date": "2025-07-16T22:36:36+00:00",
   "source_file": "md/01.Introduction/05/Promptflow.md",
   "language_code": "mo"
 }
 -->
-# **Introduce Promptflow**
+# **介紹 Promptflow**
 
-[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) is a visual workflow automation tool that enables users to build automated workflows using ready-made templates and custom connectors. It’s designed to help developers and business analysts quickly create automated processes for tasks like data management, collaboration, and process optimization. With Prompt Flow, users can easily link various services, applications, and systems, automating complex business workflows.
+[Microsoft Prompt Flow](https://microsoft.github.io/promptflow/index.html?WT.mc_id=aiml-138114-kinfeylo) 是一款視覺化工作流程自動化工具，允許使用者利用預建範本和自訂連接器來建立自動化流程。它旨在幫助開發人員和業務分析師快速構建自動化流程，應用於資料管理、協作和流程優化等任務。透過 Prompt Flow，使用者可以輕鬆連接不同的服務、應用程式和系統，並自動化複雜的業務流程。
 
-Microsoft Prompt Flow aims to streamline the full development cycle of AI applications powered by Large Language Models (LLMs). Whether you’re brainstorming, prototyping, testing, evaluating, or deploying LLM-based applications, Prompt Flow simplifies the workflow and helps you build production-quality LLM apps.
+Microsoft Prompt Flow 專為簡化由大型語言模型（LLMs）驅動的 AI 應用程式的端到端開發週期而設計。無論你是在構思、原型設計、測試、評估還是部署基於 LLM 的應用程式，Prompt Flow 都能簡化流程，幫助你打造具備生產品質的 LLM 應用。
 
-## Here are the key features and benefits of using Microsoft Prompt Flow:
+## 使用 Microsoft Prompt Flow 的主要功能與優勢：
 
-**Interactive Authoring Experience**
+**互動式創作體驗**
 
-Prompt Flow offers a visual layout of your flow’s structure, making it simple to understand and navigate your projects.  
-It provides a notebook-like coding environment for efficient flow development and debugging.
+Prompt Flow 提供流程結構的視覺化呈現，讓你輕鬆理解並瀏覽專案。
+它提供類似筆記本的編碼體驗，提升流程開發與除錯的效率。
 
-**Prompt Variants and Tuning**
+**提示變體與調整**
 
-Create and compare multiple prompt versions to support iterative refinement. Evaluate how different prompts perform and select the best ones.
+建立並比較多個提示變體，促進反覆優化的過程。評估不同提示的表現，選擇最有效的版本。
 
-**Built-in Evaluation Flows**
+**內建評估流程**
 
-Evaluate the quality and effectiveness of your prompts and flows with built-in evaluation tools.  
-Gain insights into how well your LLM-based applications are performing.
+利用內建的評估工具，評估提示和流程的品質與效能。
+了解你的基於 LLM 的應用程式表現如何。
 
-**Comprehensive Resources**
+**豐富資源**
 
-Prompt Flow includes a library of built-in tools, samples, and templates. These resources help you get started, spark creativity, and speed up development.
+Prompt Flow 包含內建工具、範例和範本庫，這些資源可作為開發起點，激發創意並加速流程。
 
-**Collaboration and Enterprise Readiness**
+**協作與企業級準備**
 
-Enable team collaboration by allowing multiple users to work together on prompt engineering projects.  
-Maintain version control and share knowledge efficiently. Simplify the entire prompt engineering lifecycle, from development and evaluation to deployment and monitoring.
+支援團隊協作，允許多位使用者共同參與提示工程專案。
+維護版本控制並有效分享知識。簡化從開發、評估到部署與監控的整個提示工程流程。
 
-## Evaluation in Prompt Flow
+## Prompt Flow 中的評估
 
-In Microsoft Prompt Flow, evaluation is key to measuring how well your AI models perform. Let’s look at how you can customize evaluation flows and metrics within Prompt Flow:
+在 Microsoft Prompt Flow 中，評估在判斷 AI 模型表現上扮演關鍵角色。讓我們來看看如何在 Prompt Flow 中自訂評估流程和指標：
 
 ![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.mo.png)
 
-**Understanding Evaluation in Prompt Flow**
+**理解 Prompt Flow 中的評估**
 
-A flow in Prompt Flow is a sequence of nodes that process input and generate output. Evaluation flows are specialized flows designed to assess the performance of a run based on specific criteria and goals.
+在 Prompt Flow 中，流程代表一連串節點，負責處理輸入並產生輸出。評估流程是專門用來根據特定標準和目標評估執行結果表現的特殊流程。
 
-**Key features of evaluation flows**
+**評估流程的主要特點**
 
-They usually run after the flow under test, using its outputs. They calculate scores or metrics to measure the tested flow’s performance. Metrics can include accuracy, relevance scores, or other relevant measures.
+通常在被測試流程執行後運行，使用其輸出結果。
+計算分數或指標來衡量被測流程的表現。指標可能包括準確率、相關性分數或其他相關衡量標準。
 
-### Customizing Evaluation Flows
+### 自訂評估流程
 
-**Defining Inputs**
+**定義輸入**
 
-Evaluation flows need to accept the outputs of the flow being tested. Define inputs similarly to regular flows.  
-For example, when evaluating a QnA flow, name an input "answer." For a classification flow, name an input "category." Ground truth inputs (such as actual labels) may also be required.
+評估流程需要接收被測流程的輸出。輸入定義方式與一般流程相同。
+例如，若評估 QnA 流程，輸入可命名為「answer」。若評估分類流程，輸入可命名為「category」。也可能需要真實標籤（ground truth）作為輸入。
 
-**Outputs and Metrics**
+**輸出與指標**
 
-Evaluation flows produce results that quantify the tested flow’s performance. Metrics can be computed using Python or LLMs. Use the log_metric() function to record relevant metrics.
+評估流程會產生衡量被測流程表現的結果。指標可透過 Python 或 LLM 計算。使用 log_metric() 函數記錄相關指標。
 
-**Using Customized Evaluation Flows**
+**使用自訂評估流程**
 
-Build your own evaluation flow tailored to your specific tasks and goals. Customize metrics based on your evaluation needs.  
-Apply this custom evaluation flow to batch runs for large-scale testing.
+開發符合你特定任務和目標的自訂評估流程。
+根據評估目標調整指標。
+將此自訂評估流程應用於批次執行，以進行大規模測試。
 
-## Built-in Evaluation Methods
+## 內建評估方法
 
-Prompt Flow also offers built-in evaluation methods.  
-You can submit batch runs and use these methods to assess how well your flow performs on large datasets.  
-Review evaluation results, compare metrics, and iterate as needed.  
-Remember, evaluation is crucial to ensure your AI models meet the desired standards and objectives. Check the official documentation for detailed guidance on developing and using evaluation flows in Microsoft Prompt Flow.
+Prompt Flow 也提供內建的評估方法。
+你可以提交批次執行，並使用這些方法評估流程在大型資料集上的表現。
+查看評估結果、比較指標，並根據需要反覆優化。
+請記得，評估對確保 AI 模型達成預期標準和目標至關重要。請參考官方文件，了解如何在 Microsoft Prompt Flow 中開發和使用評估流程的詳細說明。
 
-In summary, Microsoft Prompt Flow empowers developers to build high-quality LLM applications by simplifying prompt engineering and offering a strong development environment. If you work with LLMs, Prompt Flow is a valuable tool to explore. Visit the [Prompt Flow Evaluation Documents](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo) for detailed instructions on creating and using evaluation flows in Microsoft Prompt Flow.
+總結來說，Microsoft Prompt Flow 透過簡化提示工程並提供強大的開發環境，賦能開發者打造高品質的 LLM 應用程式。如果你正在使用 LLM，Prompt Flow 是值得探索的寶貴工具。請參考[Prompt Flow 評估文件](https://learn.microsoft.com/azure/machine-learning/prompt-flow/how-to-develop-an-evaluation-flow?view=azureml-api-2?WT.mc_id=aiml-138114-kinfeylo)以獲取在 Microsoft Prompt Flow 中開發和使用評估流程的詳細指引。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

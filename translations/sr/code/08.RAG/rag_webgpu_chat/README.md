@@ -2,141 +2,141 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4aac6b8a5dcbbe9a32b47be30340cac2",
-  "translation_date": "2025-05-09T05:23:35+00:00",
+  "translation_date": "2025-07-16T17:22:03+00:00",
   "source_file": "code/08.RAG/rag_webgpu_chat/README.md",
   "language_code": "sr"
 }
 -->
-Phi-3-mini WebGPU RAG Chatbot
+Phi-3-mini WebGPU RAG Чатбот
 
-## Demo za prikazivanje WebGPU i RAG obrasca  
-RAG obrazac sa Phi-3 Onnx Hosted modelom koristi pristup Retrieval-Augmented Generation, kombinujući snagu Phi-3 modela sa ONNX hostingom za efikasne AI implementacije. Ovaj obrazac je ključan za fino podešavanje modela za zadatke specifične za određenu oblast, nudeći spoj kvaliteta, isplativosti i razumevanja dugog konteksta. Deo je Azure AI paketa, pružajući širok izbor modela koji su laki za pronalaženje, isprobavanje i korišćenje, prilagođavajući se potrebama različitih industrija. Phi-3 modeli, uključujući Phi-3-mini, Phi-3-small i Phi-3-medium, dostupni su u Azure AI Model Catalog-u i mogu se fino podešavati i implementirati samostalno ili preko platformi kao što su HuggingFace i ONNX, što pokazuje Microsoftovu posvećenost dostupnim i efikasnim AI rešenjima.
+## Демо за приказ WebGPU и RAG шаблона
+RAG шаблон са Phi-3 Onnx Hosted моделом користи приступ Retrieval-Augmented Generation, комбинујући снагу Phi-3 модела са ONNX хостингом за ефикасне AI имплементације. Овај шаблон је кључан за фино подешавање модела за задатке специфичне за одређену област, нудећи комбинацију квалитета, економичности и разумевања дугог контекста. Представља део Azure AI пакета, који пружа широк избор модела који су лако доступни, испробљиви и употребљиви, прилагођени потребама различитих индустрија. Phi-3 модели, укључујући Phi-3-mini, Phi-3-small и Phi-3-medium, доступни су у Azure AI Model Catalog-у и могу се фино подесити и имплементирати самостално или преко платформи као што су HuggingFace и ONNX, показујући Microsoft-ову посвећеност приступачним и ефикасним AI решењима.
 
-## Šta je WebGPU  
-WebGPU je moderan web grafički API dizajniran da omogući efikasan pristup grafičkom procesoru (GPU) uređaja direktno iz web pregledača. Namenjen je da bude naslednik WebGL-a, donoseći nekoliko ključnih poboljšanja:
+## Шта је WebGPU
+WebGPU је модерни веб графички API дизајниран да омогући ефикасан приступ графичком процесору (GPU) уређаја директно из веб прегледача. Намењен је да буде наследник WebGL-а, нудећи неколико кључних побољшања:
 
-1. **Kompatibilnost sa modernim GPU-ovima**: WebGPU je napravljen da besprekorno radi sa savremenim GPU arhitekturama, koristeći sistemske API-je kao što su Vulkan, Metal i Direct3D 12.  
-2. **Poboljšane performanse**: Podržava generalne GPU proračune i brže operacije, što ga čini pogodnim za grafičko renderovanje i zadatke mašinskog učenja.  
-3. **Napredne funkcije**: WebGPU omogućava pristup naprednijim GPU mogućnostima, dozvoljavajući složenije i dinamičnije grafičke i računarske zadatke.  
-4. **Smanjenje opterećenja JavaScript-a**: Prebacivanjem većeg dela posla na GPU, WebGPU značajno smanjuje opterećenje JavaScript-a, što vodi ka boljim performansama i glađem iskustvu.
+1. **Компатибилност са савременим GPU-овима**: WebGPU је направљен да беспрекорно ради са савременим архитектурама GPU-а, користећи системске API-је као што су Vulkan, Metal и Direct3D 12.
+2. **Побољшане перформансе**: Подржава опште наменске GPU израчунавања и брже операције, што га чини погодним и за графичко приказивање и за задатке машинског учења.
+3. **Напредне функције**: WebGPU пружа приступ напреднијим могућностима GPU-а, омогућавајући сложеније и динамичније графичке и рачунарске задатке.
+4. **Смањен оптерећење JavaScript-а**: Преношењем више задатака на GPU, WebGPU значајно смањује оптерећење JavaScript-а, што доводи до бољих перформанси и глаткијег корисничког искуства.
 
-WebGPU je trenutno podržan u pregledačima kao što je Google Chrome, uz rad na proširenju podrške na druge platforme.
+WebGPU је тренутно подржан у прегледачима као што је Google Chrome, а рад на проширењу подршке на друге платформе је у току.
 
-### 03.WebGPU  
-Potrebno okruženje:
+### 03.WebGPU
+Потребно окружење:
 
-**Podržani pregledači:**  
-- Google Chrome 113+  
-- Microsoft Edge 113+  
-- Safari 18 (macOS 15)  
+**Подржани прегледачи:** 
+- Google Chrome 113+
+- Microsoft Edge 113+
+- Safari 18 (macOS 15)
 - Firefox Nightly.
 
-### Omogućavanje WebGPU-a:
+### Омогућавање WebGPU:
 
-- U Chrome/Microsoft Edge  
+- У Chrome/Microsoft Edge 
 
-Omogućite `chrome://flags/#enable-unsafe-webgpu` zastavicu.
+Омогућите заставицу `chrome://flags/#enable-unsafe-webgpu`.
 
-#### Otvorite pregledač:  
-Pokrenite Google Chrome ili Microsoft Edge.
+#### Отворите прегледач:
+Покрените Google Chrome или Microsoft Edge.
 
-#### Pristupite stranici sa zastavicama:  
-U adresnoj liniji otkucajte `chrome://flags` i pritisnite Enter.
+#### Приступите страници са заставицама:
+У адресну траку укуцајте `chrome://flags` и притисните Enter.
 
-#### Potražite zastavicu:  
-U polju za pretragu na vrhu stranice otkucajte 'enable-unsafe-webgpu'
+#### Претражите заставицу:
+У пољу за претрагу на врху странице укуцајте 'enable-unsafe-webgpu'
 
-#### Omogućite zastavicu:  
-Pronađite #enable-unsafe-webgpu zastavicu u listi rezultata.
+#### Омогућите заставицу:
+Пронађите #enable-unsafe-webgpu заставицу у листи резултата.
 
-Kliknite na padajući meni pored i izaberite Enabled.
+Кликните на падајући мени поред ње и изаберите Enabled.
 
-#### Restartujte pregledač:  
+#### Поново покрените прегледач:
 
-Nakon omogućavanja zastavice, potrebno je da restartujete pregledač da bi promene stupile na snagu. Kliknite na dugme Relaunch koje se pojavi na dnu stranice.
+Након омогућавања заставице, потребно је да поново покренете прегледач да би промене ступиле на снагу. Кликните на дугме Relaunch које се појављује на дну странице.
 
-- Za Linux, pokrenite pregledač sa `--enable-features=Vulkan`.  
-- Safari 18 (macOS 15) ima WebGPU podrazumevano omogućen.  
-- U Firefox Nightly, unesite about:config u adresnu liniju i `set dom.webgpu.enabled to true`.
+- За Linux, покрените прегледач са `--enable-features=Vulkan`.
+- Safari 18 (macOS 15) има WebGPU подразумевано омогућен.
+- У Firefox Nightly, укуцајте about:config у адресну траку и подесите `dom.webgpu.enabled` на true.
 
-### Podešavanje GPU-a za Microsoft Edge  
+### Подешавање GPU-а за Microsoft Edge
 
-Evo koraka za podešavanje GPU-a visokih performansi za Microsoft Edge na Windows-u:
+Ево корака за подешавање GPU-а високе перформансе за Microsoft Edge на Windows-у:
 
-- **Otvorite Settings:** Kliknite na Start meni i izaberite Settings.  
-- **Podešavanja sistema:** Idite na System pa Display.  
-- **Grafička podešavanja:** Skrolujte dole i kliknite na Graphics settings.  
-- **Izaberite aplikaciju:** Pod „Choose an app to set preference,“ izaberite Desktop app pa Browse.  
-- **Izaberite Edge:** Navigirajte do foldera gde je instaliran Edge (obično `C:\Program Files (x86)\Microsoft\Edge\Application`) i izaberite `msedge.exe`.  
-- **Postavite preferencu:** Kliknite Options, izaberite High performance i zatim kliknite Save.  
-Ovo će osigurati da Microsoft Edge koristi vaš GPU visokih performansi za bolje performanse.  
-- **Restartujte** računar da bi podešavanja stupila na snagu.
+- **Отворите Подешавања:** Кликните на Start мени и изаберите Settings.
+- **Системска подешавања:** Идите на System, па Display.
+- **Графичка подешавања:** Скролујте надоле и кликните на Graphics settings.
+- **Изаберите апликацију:** Под „Choose an app to set preference“ изаберите Desktop app, па кликните Browse.
+- **Изаберите Edge:** Пронађите фолдер где је инсталиран Edge (обично `C:\Program Files (x86)\Microsoft\Edge\Application`) и изаберите `msedge.exe`.
+- **Подесите преференцију:** Кликните Options, изаберите High performance, па кликните Save.
+Ово ће осигурати да Microsoft Edge користи ваш GPU високе перформансе за боље перформансе.
+- **Поново покрените** рачунар да би подешавања ступила на снагу.
 
-### Otvorite svoj Codespace:  
-Idite na vaš repozitorijum na GitHub-u.  
-Kliknite na dugme Code i izaberite Open with Codespaces.
+### Отворите свој Codespace:
+Идите у свој репозиторијум на GitHub-у.
+Кликните на дугме Code и изаберите Open with Codespaces.
 
-Ako još nemate Codespace, možete ga napraviti klikom na New codespace.
+Ако још немате Codespace, можете га креирати кликом на New codespace.
 
-**Napomena** Instalacija Node okruženja u vašem codespace-u  
-Pokretanje npm demo aplikacije iz GitHub Codespace-a je odličan način da testirate i razvijate vaš projekat. Evo vodiča korak po korak da započnete:
+**Note** Инсталирање Node окружења у вашем codespace-у
+Покретање npm демо пројекта из GitHub Codespace-а је одличан начин да тестирате и развијате свој пројекат. Ево корак по корак упутства како да почнете:
 
-### Pripremite okruženje:  
-Kada se Codespace otvori, proverite da li imate instalirane Node.js i npm. To možete proveriti pokretanjem:  
+### Подесите окружење:
+Када се ваш Codespace отвори, уверите се да имате инсталиране Node.js и npm. Можете то проверити покретањем:
 ```
 node -v
-```  
+```
 ```
 npm -v
 ```
 
-Ako nisu instalirani, možete ih instalirati koristeći:  
+Ако нису инсталирани, можете их инсталирати користећи:
 ```
 sudo apt-get update
-```  
+```
 ```
 sudo apt-get install nodejs npm
 ```
 
-### Pređite u direktorijum vašeg projekta:  
-Koristite terminal da odete u direktorijum gde se nalazi vaš npm projekat:  
+### Идите у директоријум пројекта:
+Користите терминал да одете у директоријум где се налази ваш npm пројекат:
 ```
 cd path/to/your/project
 ```
 
-### Instalirajte zavisnosti:  
-Pokrenite sledeću komandu da instalirate sve potrebne zavisnosti navedene u package.json fajlu:  
+### Инсталирајте зависности:
+Покрените следећу команду да инсталирате све потребне зависности наведене у вашем package.json фајлу:
 
 ```
 npm install
 ```
 
-### Pokrenite demo:  
-Kada su zavisnosti instalirane, možete pokrenuti demo skriptu. Obično je navedena u scripts delu package.json. Na primer, ako se demo skripta zove start, pokrenite:  
+### Покрените демо:
+Када су зависности инсталиране, можете покренути демо скрипту. Обично је наведена у scripts делу вашег package.json. На пример, ако се ваша демо скрипта зове start, покрените:
 
 ```
 npm run build
-```  
+```
 ```
 npm run dev
 ```
 
-### Pristupite demou:  
-Ako vaš demo uključuje web server, Codespaces će vam dati URL za pristup. Obratite pažnju na notifikacije ili proverite karticu Ports da pronađete URL.
+### Приступите демо-у:
+Ако ваш демо користи веб сервер, Codespaces ће обезбедити URL за приступ. Потражите обавештење или проверите таб Ports да бисте пронашли URL.
 
-**Napomena:** Model mora biti keširan u pregledaču, pa može potrajati dok se učita.
+**Note:** Модел мора бити кеширан у прегледачу, па учитавање може потрајати.
 
-### RAG Demo  
-Otpremite markdown fajl `intro_rag.md` to complete the RAG solution. If using codespaces you can download the file located in `01.InferencePhi3/docs/`
+### RAG демо
+Отпремите markdown фајл `intro_rag.md` да бисте довршили RAG решење. Ако користите codespaces, можете преузети фајл који се налази у `01.InferencePhi3/docs/`
 
-### Izaberite fajl:  
-Kliknite na dugme „Choose File“ da odaberete dokument koji želite da otpremite.
+### Изаберите свој фајл:
+Кликните на дугме „Choose File“ да бисте изабрали документ који желите да отпремите.
 
-### Otpremite dokument:  
-Nakon što izaberete fajl, kliknite na dugme „Upload“ da učitate dokument za RAG (Retrieval-Augmented Generation).
+### Отпремите документ:
+Након избора фајла, кликните на дугме „Upload“ да бисте учитали документ за RAG (Retrieval-Augmented Generation).
 
-### Pokrenite ćaskanje:  
-Kada je dokument otpremljen, možete započeti ćaskanje koristeći RAG na osnovu sadržaja vašeg dokumenta.
+### Покрените ћаскање:
+Када је документ отпремљен, можете започети ћаскање користећи RAG на основу садржаја вашег документа.
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

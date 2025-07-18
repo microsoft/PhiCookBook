@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:40:41+00:00",
+  "translation_date": "2025-07-17T02:35:51+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "ro"
 }
@@ -11,38 +11,38 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) este o platformă open-source creată pentru a gestiona întregul ciclu de viață al învățării automate.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.ro.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.ro.png)
 
-MLFlow este folosit pentru a gestiona ciclul de viață al ML, incluzând experimentarea, reproducibilitatea, implementarea și un registru central de modele. MLflow oferă în prezent patru componente.
+MLFlow este folosit pentru a gestiona ciclul de viață al ML, incluzând experimentarea, reproducibilitatea, implementarea și un registru central de modele. În prezent, MLflow oferă patru componente.
 
-- **MLflow Tracking:** Înregistrează și interoghează experimente, cod, configurări de date și rezultate.
-- **MLflow Projects:** Împachetează codul de data science într-un format care permite reproducerea rulărilor pe orice platformă.
-- **Mlflow Models:** Permite implementarea modelelor de machine learning în diverse medii de servire.
+- **MLflow Tracking:** Înregistrează și interoghează experimente, cod, configurații de date și rezultate.
+- **MLflow Projects:** Împachetează codul de știință a datelor într-un format care permite reproducerea rulărilor pe orice platformă.
+- **Mlflow Models:** Permite implementarea modelelor de învățare automată în diverse medii de servire.
 - **Model Registry:** Stochează, adnotează și gestionează modelele într-un depozit central.
 
-Include funcționalități pentru urmărirea experimentelor, împachetarea codului în rulări reproducibile și partajarea și implementarea modelelor. MLFlow este integrat în Databricks și suportă o varietate de biblioteci ML, fiind astfel independent de bibliotecă. Poate fi folosit cu orice bibliotecă de machine learning și în orice limbaj de programare, oferind o API REST și o interfață CLI pentru comoditate.
+Include funcționalități pentru urmărirea experimentelor, împachetarea codului în rulări reproducibile și partajarea și implementarea modelelor. MLFlow este integrat în Databricks și suportă o varietate de biblioteci ML, fiind astfel independent de bibliotecă. Poate fi folosit cu orice bibliotecă de învățare automată și în orice limbaj de programare, oferind o API REST și o interfață CLI pentru comoditate.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.ro.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.ro.png)
 
 Caracteristicile cheie ale MLFlow includ:
 
-- **Experiment Tracking:** Înregistrează și compară parametrii și rezultatele.
-- **Model Management:** Implementează modele pe diverse platforme de servire și inferență.
+- **Urmărirea experimentelor:** Înregistrează și compară parametrii și rezultatele.
+- **Gestionarea modelelor:** Permite implementarea modelelor pe diverse platforme de servire și inferență.
 - **Model Registry:** Gestionează colaborativ ciclul de viață al modelelor MLflow, inclusiv versionarea și adnotările.
 - **Projects:** Împachetează codul ML pentru partajare sau utilizare în producție.
 
-MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrarea și gestionarea modelelor, împachetarea modelelor pentru execuție, implementarea serviciilor și monitorizarea modelelor. Scopul său este să simplifice procesul de trecere de la prototip la fluxul de lucru de producție, în special în medii cloud și edge.
+MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrarea și gestionarea modelelor, împachetarea modelelor pentru execuție, implementarea serviciilor și monitorizarea modelelor. Scopul său este să simplifice procesul de trecere de la un prototip la un flux de lucru de producție, în special în medii cloud și edge.
 
-## Scenariu E2E - Construirea unui wrapper și folosirea Phi-3 ca model MLFlow
+## Scenariu E2E - Construirea unui wrapper și utilizarea Phi-3 ca model MLFlow
 
 În acest exemplu E2E vom demonstra două abordări diferite pentru construirea unui wrapper în jurul modelului mic de limbaj Phi-3 (SLM) și apoi rularea acestuia ca model MLFlow, fie local, fie în cloud, de exemplu în Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.ro.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.ro.png)
 
 | Proiect | Descriere | Locație |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline este cea mai simplă opțiune pentru a construi un wrapper dacă dorești să folosești un model HuggingFace cu flavour-ul experimental transformers al MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | La momentul scrierii, transformer pipeline nu suporta generarea de wrapper MLFlow pentru modelele HuggingFace în format ONNX, nici măcar cu pachetul experimental optimum Python. Pentru astfel de cazuri, poți construi un wrapper Python personalizat pentru modul MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline este cea mai simplă opțiune pentru a construi un wrapper dacă dorești să folosești un model HuggingFace cu versiunea experimentală transformers a MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | La momentul scrierii, transformer pipeline nu suporta generarea wrapper-ului MLFlow pentru modelele HuggingFace în format ONNX, nici măcar cu pachetul experimental optimum Python. Pentru astfel de cazuri, poți construi un wrapper Python personalizat pentru modul MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Proiect: Transformer Pipeline
 
@@ -53,7 +53,7 @@ MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrare
     import transformers
     ```
 
-2. Apoi, ar trebui să inițiezi un transformer pipeline referindu-te la modelul țintă Phi-3 din registrul HuggingFace. După cum se vede din fișa modelului _Phi-3-mini-4k-instruct_, sarcina acestuia este de tip „Text Generation”:
+2. Apoi, ar trebui să inițiezi un transformer pipeline referindu-te la modelul țintă Phi-3 din registrul HuggingFace. După cum se poate vedea din cardul modelului _Phi-3-mini-4k-instruct_, sarcina sa este de tip „Generare de text”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrare
     )
     ```
 
-3. Acum poți salva pipeline-ul transformer al modelului Phi-3 în format MLFlow și să oferi detalii suplimentare, cum ar fi calea către artefacte, setări specifice de configurare a modelului și tipul API-ului de inferență:
+3. Acum poți salva pipeline-ul transformer al modelului Phi-3 în format MLFlow și să oferi detalii suplimentare, cum ar fi calea țintă pentru artefacte, setările specifice de configurare a modelului și tipul API-ului de inferență:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -75,7 +75,7 @@ MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrare
 
 ## Proiect: Custom Python Wrapper
 
-1. Aici putem folosi API-ul generate() din [ONNX Runtime](https://github.com/microsoft/onnxruntime-genai) de la Microsoft pentru inferența modelului ONNX și codificarea/decodificarea tokenilor. Trebuie să alegi pachetul _onnxruntime_genai_ pentru platforma ta țintă, în exemplul de mai jos fiind vizat CPU:
+1. Putem folosi aici API-ul [ONNX Runtime generate()](https://github.com/microsoft/onnxruntime-genai) de la Microsoft pentru inferența modelului ONNX și codarea/decodarea tokenilor. Trebuie să alegi pachetul _onnxruntime_genai_ pentru calculul țintă, exemplul de mai jos fiind pentru CPU:
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrare
     import onnxruntime_genai as og
     ```
 
-1. Clasa noastră personalizată implementează două metode: _load_context()_ pentru a inițializa **modelul ONNX** Phi-3 Mini 4K Instruct, **parametrii generatorului** și **tokenizatorul**; și _predict()_ pentru a genera tokeni de ieșire pentru promptul furnizat:
+1. Clasa noastră personalizată implementează două metode: _load_context()_ pentru a inițializa **modelul ONNX** Phi-3 Mini 4K Instruct, **parametrii generatorului** și **tokenizatorul**; și _predict()_ pentru a genera tokenii de ieșire pentru promptul furnizat:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -142,13 +142,13 @@ MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrare
       None}
     ```
 
-1. Drept urmare, poți trimite promptul tău în următorul format:
+1. Ca rezultat, poți trimite promptul tău în următorul format:
 
     ``` Python
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Apoi, folosește postprocesarea compatibilă cu OpenAI API, de exemplu _response[0][‘choices’][0][‘message’][‘content’]_, pentru a formata ieșirea într-un mod similar cu acesta:
+1. Apoi, folosește post-procesarea compatibilă cu OpenAI API, de exemplu _response[0][‘choices’][0][‘message’][‘content’]_, pentru a înfrumuseța ieșirea într-un mod similar cu acesta:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrare
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. În pasul 3 al proiectului Custom Python Wrapper de mai sus, permitem pachetului MLFlow să genereze semnătura modelului pe baza unui exemplu de input. Semnătura wrapper-ului nostru MLFlow va arăta astfel:
+1. În pasul 3 al proiectului Custom Python Wrapper de mai sus, permitem pachetului MLFlow să genereze semnătura modelului pornind de la un exemplu de intrare. Semnătura wrapper-ului nostru MLFlow va arăta astfel:
 
     ``` Python
     {inputs: 
@@ -169,7 +169,7 @@ MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrare
       None}
     ```
 
-1. Astfel, promptul nostru va trebui să conțină cheia „prompt” în dicționar, similar cu aceasta:
+1. Astfel, promptul nostru trebuie să conțină cheia de dicționar „prompt”, similar cu aceasta:
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
@@ -188,4 +188,4 @@ MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrare
     ```
 
 **Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea din utilizarea acestei traduceri.
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

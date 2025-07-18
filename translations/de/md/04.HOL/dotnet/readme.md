@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-05-07T10:18:52+00:00",
+  "translation_date": "2025-07-17T10:30:49+00:00",
   "source_file": "md/04.HOL/dotnet/readme.md",
   "language_code": "de"
 }
 -->
-﻿## Willkommen bei den Phi Labs mit C#
+﻿## Willkommen bei den Phi-Labs mit C#
 
-Es gibt eine Auswahl an Labs, die zeigen, wie man die verschiedenen leistungsstarken Phi-Modelle in einer .NET-Umgebung integriert.
+Es gibt eine Auswahl an Labs, die zeigen, wie man die leistungsstarken verschiedenen Versionen der Phi-Modelle in einer .NET-Umgebung integriert.
 
 ## Voraussetzungen
 
@@ -53,7 +53,7 @@ git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 ```
 
-**Wichtig:** Die aktuellen Demos sind so ausgelegt, dass sie die ONNX-Versionen der Modelle verwenden. Die vorherigen Schritte klonen die folgenden Modelle.
+**Wichtig:** Die aktuellen Demos sind darauf ausgelegt, die ONNX-Versionen der Modelle zu verwenden. Die vorherigen Schritte klonen die folgenden Modelle.
 
 ## Über die Labs
 
@@ -61,30 +61,30 @@ Die Hauptlösung enthält mehrere Beispiel-Labs, die die Fähigkeiten der Phi-Mo
 
 | Projekt | Modell | Beschreibung |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 oder Phi-3.5 | Beispielhafte Konsolen-Chat-Anwendung, die es dem Benutzer ermöglicht, Fragen zu stellen. Das Projekt lädt ein lokales ONNX Phi-3 Modell mit `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
-| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
-| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Semantic Kernel` libraries. |
-| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntimeGenAI` libraries and implements the `IChatClient` from `Microsoft.Extensions.AI`. |
-| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Sample console chat that allows the user to ask questions. The chat implements memory. |
-| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | This is a sample project that uses a local Phi-4 model to analyze images showing the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 |This is a sample project that uses a local Phi-4 model to analyze an audio file, generate the transcript of the file and show the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 oder Phi-3.5 | Beispiel für einen Konsolen-Chat, der es dem Benutzer ermöglicht, Fragen zu stellen. Das Projekt lädt ein lokales ONNX Phi-3 Modell mit den `Microsoft.ML.OnnxRuntime` Bibliotheken. |
+| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 oder Phi-3.5 | Beispiel für einen Konsolen-Chat, der es dem Benutzer ermöglicht, Fragen zu stellen. Das Projekt lädt ein lokales ONNX Phi-3 Modell mit den `Microsoft.Semantic.Kernel` Bibliotheken. |
+| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 oder Phi-3.5 | Dies ist ein Beispielprojekt, das ein lokales phi3 Vision Modell zur Bildanalyse verwendet. Das Projekt lädt ein lokales ONNX Phi-3 Vision Modell mit den `Microsoft.ML.OnnxRuntime` Bibliotheken. |
+| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 oder Phi-3.5 | Dies ist ein Beispielprojekt, das ein lokales phi3 Vision Modell zur Bildanalyse verwendet. Das Projekt lädt ein lokales ONNX Phi-3 Vision Modell mit den `Microsoft.ML.OnnxRuntime` Bibliotheken. Das Projekt bietet außerdem ein Menü mit verschiedenen Optionen zur Interaktion mit dem Benutzer. | 
+| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Beispiel für einen Konsolen-Chat, der es dem Benutzer ermöglicht, Fragen zu stellen. Das Projekt lädt ein lokales ONNX Phi-4 Modell mit den `Microsoft.ML.OnnxRuntime` Bibliotheken. |
+| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Beispiel für einen Konsolen-Chat, der es dem Benutzer ermöglicht, Fragen zu stellen. Das Projekt lädt ein lokales ONNX Phi-4 Modell mit den `Semantic Kernel` Bibliotheken. |
+| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Beispiel für einen Konsolen-Chat, der es dem Benutzer ermöglicht, Fragen zu stellen. Das Projekt lädt ein lokales ONNX Phi-4 Modell mit den `Microsoft.ML.OnnxRuntimeGenAI` Bibliotheken und implementiert das `IChatClient` aus `Microsoft.Extensions.AI`. |
+| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Beispiel für einen Konsolen-Chat, der es dem Benutzer ermöglicht, Fragen zu stellen. Der Chat implementiert ein Gedächtnis. |
+| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | Dies ist ein Beispielprojekt, das ein lokales Phi-4 Modell zur Bildanalyse verwendet und das Ergebnis in der Konsole anzeigt. Das Projekt lädt ein lokales Phi-4-`multimodal-instruct-onnx` Modell mit den `Microsoft.ML.OnnxRuntime` Bibliotheken. |
+| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 | Dies ist ein Beispielprojekt, das ein lokales Phi-4 Modell verwendet, um eine Audiodatei zu analysieren, das Transkript der Datei zu erstellen und das Ergebnis in der Konsole anzuzeigen. Das Projekt lädt ein lokales Phi-4-`multimodal-instruct-onnx` Modell mit den `Microsoft.ML.OnnxRuntime` Bibliotheken. |
 
-## How to Run the Projects
+## So führen Sie die Projekte aus
 
-To run the projects, follow these steps:
+Um die Projekte auszuführen, gehen Sie wie folgt vor:
 
-1. Clone the repository to your local machine.
+1. Klonen Sie das Repository auf Ihren lokalen Rechner.
 
-1. Open a terminal and navigate to the desired project. In example, let's run `LabsPhi4-Chat-01OnnxRuntime`.
+1. Öffnen Sie ein Terminal und navigieren Sie zum gewünschten Projekt. Zum Beispiel führen wir `LabsPhi4-Chat-01OnnxRuntime` aus.
 
     ```bash
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
     ```
 
-1. Führen Sie das Projekt mit folgendem Befehl aus
+1. Führen Sie das Projekt mit dem Befehl aus
 
     ```bash
     dotnet run
@@ -103,4 +103,4 @@ To run the projects, follow these steps:
    ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir auf Genauigkeit achten, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

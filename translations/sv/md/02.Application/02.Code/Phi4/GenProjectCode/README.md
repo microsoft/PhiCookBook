@@ -2,31 +2,31 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:50:35+00:00",
+  "translation_date": "2025-07-17T04:45:43+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "sv"
 }
 -->
 ## **Använda Phi-4-mini-mm för att generera kod**
 
-Phi-4-mini fortsätter Phi Familjens starka kodningsförmågor. Du kan använda Prompt för att ställa frågor relaterade till kodning. Självklart, efter att ha lagt till stark resonemangsförmåga, har den ännu starkare kodningskapacitet, som att generera projekt enligt krav. Till exempel, generera projekt enligt krav, såsom:
+Phi-4-mini fortsätter den starka kodningsförmågan hos Phi Family. Du kan använda Prompt för att ställa frågor relaterade till kodning. Självklart, efter att ha lagt till stark resonemangsförmåga, har den ännu bättre kodningskapacitet, som att generera projekt enligt krav. Till exempel, generera projekt enligt krav, såsom:
 
 ### **Krav**
 
 Skapa en Shopping Cart-app
 
 - Skapa en API Rest med följande metoder:
-    - Hämta en lista över öl med hjälp av sidoffset och limit.
+    - Hämta en lista med öl med hjälp av sidförskjutning och begränsning.
     - Hämta öldetaljer via id.
-    - Sök efter öl efter namn, beskrivning, tagline, matparningar och pris.
-- Skapa en lista med produkter på huvudsidan.
+    - Sök efter öl baserat på namn, beskrivning, tagline, matparningar och pris.
+- Skapa en produktlista på huvudsidan.
     - Skapa en sökfält för att filtrera produkter.
     - Navigera till beskrivningssidan när användaren klickar på en produkt.
 - (Valfritt) Slicer för att filtrera produkter efter pris.
-- Skapa en shopping cart.
-    - Lägg till produkter i kundvagnen.
-    - Ta bort produkter från kundvagnen.
-    - Beräkna totalpriset för produkterna i kundvagnen.
+- Skapa en shoppingvagn.
+    - Lägg till produkter i vagnen.
+    - Ta bort produkter från vagnen.
+    - Beräkna totalpriset för produkterna i vagnen.
 
 ### **Exempel på kod - Python**
 
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

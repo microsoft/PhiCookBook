@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:19:10+00:00",
+  "translation_date": "2025-07-17T05:38:27+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "fi"
 }
 -->
 ## GitHub Models - Rajoitettu julkinen beta
 
-Tervetuloa [GitHub Models](https://github.com/marketplace/models) -palveluun! Olemme valmiina ja odotamme, että pääset tutkimaan Azure AI:ssa isännöityjä tekoälymalleja.
+Tervetuloa [GitHub Models](https://github.com/marketplace/models) -palveluun! Olemme valmiina, jotta voit tutustua Azure AI:lla isännöityihin tekoälymalleihin.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.fi.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.fi.png)
 
-Lisätietoja GitHub Models -palvelussa saatavista malleista löydät [GitHub Model Marketplace](https://github.com/marketplace/models) -sivulta.
+Lisätietoja GitHub Models -palvelussa saatavilla olevista malleista löydät osoitteesta [GitHub Model Marketplace](https://github.com/marketplace/models)
 
 ## Saatavilla olevat mallit
 
-Jokaisella mallilla on oma testialue ja esimerkkikoodi
+Jokaisella mallilla on oma leikkikenttä ja esimerkkikoodi
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,7 +37,7 @@ Jokaisella mallilla on oma testialue ja esimerkkikoodi
 
 ## Aloittaminen
 
-Saatavilla on muutama perusesimerkki, jotka voit suorittaa heti. Löydät ne samples-kansiosta. Jos haluat hypätä suoraan suosikkikieleesi, esimerkit löytyvät seuraavilta kieliltä:
+Saatavilla on muutama perusesimerkki, jotka voit ajaa heti. Löydät ne samples-kansiosta. Jos haluat hypätä suoraan suosikkikieleesi, esimerkit löytyvät seuraavilta kieliltä:
 
 - Python
 - JavaScript
@@ -45,18 +45,18 @@ Saatavilla on muutama perusesimerkki, jotka voit suorittaa heti. Löydät ne sam
 
 Saatavilla on myös oma Codespaces-ympäristö, jossa voit ajaa esimerkkejä ja malleja.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.fi.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.fi.png)
 
 ## Esimerkkikoodi
 
-Alla on muutamia esimerkkikoodinpätkiä eri käyttötapauksiin. Lisätietoja Azure AI Inference SDK:sta löydät täydellisestä dokumentaatiosta ja esimerkeistä.
+Alla on esimerkkikoodipätkiä muutamiin käyttötapauksiin. Lisätietoja Azure AI Inference SDK:sta löydät täydellisestä dokumentaatiosta ja esimerkeistä.
 
-## Asennus
+## Asetukset
 
 1. Luo henkilökohtainen käyttöoikeustunnus  
-Sinun ei tarvitse antaa tunnukselle mitään oikeuksia. Huomioithan, että tunnus lähetetään Microsoftin palveluun.
+Sinun ei tarvitse antaa tunnukselle mitään oikeuksia. Huomaa, että tunnus lähetetään Microsoftin palveluun.
 
-Käyttääksesi alla olevia koodinpätkiä, luo ympäristömuuttuja, johon asetat tunnuksesi avaimena asiakaskoodille.
+Käyttääksesi alla olevia koodipätkiä, luo ympäristömuuttuja, johon asetat tunnuksesi avaimena client-koodille.
 
 Jos käytät bashia:  
 ```
@@ -76,15 +76,15 @@ set GITHUB_TOKEN=<your-github-token-goes-here>
 
 ## Python-esimerkki
 
-### Riippuvuuksien asennus  
-Asenna Azure AI Inference SDK pipillä (vaatii: Python >=3.8):  
+### Asenna riippuvuudet  
+Asenna Azure AI Inference SDK pipillä (vaatii: Python >=3.8):
 
 ```
 pip install azure-ai-inference
 ```  
-### Perusesimerkin suorittaminen
+### Aja perusesimerkki
 
-Tämä esimerkki näyttää peruskutsun chat completion -rajapintaan. Se hyödyntää GitHub AI -mallin päätepistettä ja GitHub-tunnustasi. Kutsu on synkroninen.
+Tämä esimerkki näyttää peruskutsun chat completion -rajapintaan. Se hyödyntää GitHub AI -mallin inference-päätepistettä ja GitHub-tunnustasi. Kutsu on synkroninen.
 
 ```
 import os
@@ -116,9 +116,9 @@ response = client.complete(
 print(response.choices[0].message.content)
 ```
 
-### Monikierroksisen keskustelun suorittaminen
+### Aja monivaiheinen keskustelu
 
-Tässä esimerkissä käydään monikierroksinen keskustelu chat completion -rajapinnalla. Kun käytät mallia chat-sovelluksessa, sinun tulee hallita keskusteluhistoriaa ja lähettää mallille uusimmat viestit.
+Tämä esimerkki näyttää monivaiheisen keskustelun chat completion -rajapinnan kanssa. Kun käytät mallia chat-sovelluksessa, sinun täytyy hallita keskustelun historiaa ja lähettää mallille viimeisimmät viestit.
 
 ```
 import os
@@ -148,7 +148,7 @@ response = client.complete(messages=messages, model=model_name)
 print(response.choices[0].message.content)
 ```
 
-### Vastauksen suoratoisto
+### Suoratoista tulos
 
 Parempaa käyttökokemusta varten haluat suoratoistaa mallin vastauksen, jotta ensimmäinen token näkyy nopeasti eikä tarvitse odottaa pitkiä vastauksia.
 
@@ -185,11 +185,11 @@ client.close()
 ```  
 ## JavaScript
 
-### Riippuvuuksien asennus
+### Asenna riippuvuudet
 
 Asenna Node.js.
 
-Kopioi alla oleva teksti ja tallenna se tiedostoksi package.json kansioosi.
+Kopioi seuraavat rivit tekstitiedostoon nimeltä package.json kansiosi sisälle.
 
 ```
 {
@@ -202,15 +202,15 @@ Kopioi alla oleva teksti ja tallenna se tiedostoksi package.json kansioosi.
 }
 ```
 
-Huomio: @azure/core-sse tarvitaan vain, jos suoratoistat chat completion -vastauksia.
+Huom: @azure/core-sse tarvitaan vain, jos suoratoistat chat completion -vastauksia.
 
-Avaa terminaali tässä kansiossa ja suorita npm install.
+Avaa terminaali tässä kansiossa ja aja komento npm install.
 
-Kopioi jokaisen alla olevan koodinpätkän sisältö tiedostoon sample.js ja suorita se komennolla node sample.js.
+Jokaisen alla olevan koodipätkän osalta kopioi sisältö tiedostoon sample.js ja aja komento node sample.js.
 
-### Perusesimerkin suorittaminen
+### Aja perusesimerkki
 
-Tämä esimerkki näyttää peruskutsun chat completion -rajapintaan. Se hyödyntää GitHub AI -mallin päätepistettä ja GitHub-tunnustasi. Kutsu on synkroninen.
+Tämä esimerkki näyttää peruskutsun chat completion -rajapintaan. Se hyödyntää GitHub AI -mallin inference-päätepistettä ja GitHub-tunnustasi. Kutsu on synkroninen.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -249,9 +249,9 @@ main().catch((err) => {
 });
 ```
 
-### Monikierroksisen keskustelun suorittaminen
+### Aja monivaiheinen keskustelu
 
-Tässä esimerkissä käydään monikierroksinen keskustelu chat completion -rajapinnalla. Kun käytät mallia chat-sovelluksessa, sinun tulee hallita keskusteluhistoriaa ja lähettää mallille uusimmat viestit.
+Tämä esimerkki näyttää monivaiheisen keskustelun chat completion -rajapinnan kanssa. Kun käytät mallia chat-sovelluksessa, sinun täytyy hallita keskustelun historiaa ja lähettää mallille viimeisimmät viestit.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,7 +292,7 @@ main().catch((err) => {
 });
 ```
 
-### Vastauksen suoratoisto
+### Suoratoista tulos
 
 Parempaa käyttökokemusta varten haluat suoratoistaa mallin vastauksen, jotta ensimmäinen token näkyy nopeasti eikä tarvitse odottaa pitkiä vastauksia.
 
@@ -350,9 +350,9 @@ main().catch((err) => {
 
 ## REST
 
-### Perusesimerkin suorittaminen
+### Aja perusesimerkki
 
-Liitä seuraava komentoriville:
+Liitä seuraava shelliin:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -372,7 +372,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
-### Monikierroksisen keskustelun suorittaminen
+### Aja monivaiheinen keskustelu
 
 Kutsu chat completion -rajapintaa ja lähetä keskusteluhistoria:
 
@@ -402,9 +402,9 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         "model": "Phi-3-small-8k-instruct"
     }'
 ```  
-### Vastauksen suoratoisto
+### Suoratoista tulos
 
-Tässä esimerkissä kutsutaan päätepistettä ja suoratoistetaan vastaus.
+Tässä esimerkki päätepisteen kutsusta ja vastauksen suoratoistosta.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -426,21 +426,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## GITHUB MODELSIN ILMAINEN KÄYTTÖ JA KÄYTTÖRAJOITUKSET
+## ILMAINEN käyttö ja rajoitukset GitHub Models -palvelussa
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.fi.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.fi.png)
 
-[Leikkikentän ja ilmaisen API-käytön rajoitukset](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) on suunniteltu auttamaan sinua kokeilemaan malleja ja prototyypittämään tekoälysovellustasi. Näiden rajojen ylittävään käyttöön ja sovelluksen skaalaamiseen sinun tulee varata resursseja Azure-tililtä ja todentaa sieltä henkilökohtaisen GitHub-käyttöoikeustunnuksen sijaan. Koodissasi ei tarvitse tehdä muita muutoksia. Käytä tätä linkkiä oppiaksesi, miten voit ylittää ilmaiskäytön rajat Azure AI:ssa.
+[Leikkikentän ja ilmaisen API-käytön rajoitukset](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) on tarkoitettu auttamaan sinua kokeilemaan malleja ja prototyyppien tekoon AI-sovelluksessasi. Näiden rajojen ylittävässä käytössä ja sovelluksen skaalaamisessa sinun tulee varata resursseja Azure-tililtä ja autentikoitua sieltä henkilökohtaisen GitHub-käyttöoikeustunnuksen sijaan. Koodissasi ei tarvitse tehdä muita muutoksia. Käytä tätä linkkiä oppiaksesi, miten voit ylittää ilmaiskäytön rajat Azure AI:ssa.
 
-### Huomautuksia
+### Ilmoitukset
 
-Muista, että kun käytät mallia, kokeilet tekoälyä, joten sisältövirheitä voi esiintyä.
+Muista, että mallin kanssa toimiessasi kokeilet tekoälyä, joten virheitä sisällössä voi esiintyä.
 
-Ominaisuus on rajoitettu monin tavoin (mm. pyynnöt minuutissa, pyynnöt päivässä, tokenit per pyyntö ja samanaikaiset pyynnöt) eikä sitä ole tarkoitettu tuotantokäyttöön.
+Ominaisuus on rajoitettu (mm. pyynnöt minuutissa, pyynnöt päivässä, tokenit per pyyntö ja samanaikaiset pyynnöt) eikä ole tarkoitettu tuotantokäyttöön.
 
-GitHub Models käyttää Azure AI Content Safety -palvelua. Näitä suodattimia ei voi poistaa käytöstä GitHub Models -kokemuksen aikana. Jos päätät käyttää malleja maksullisen palvelun kautta, muokkaa sisältösuodattimia tarpeidesi mukaan.
+GitHub Models käyttää Azure AI Content Safety -suodatusta. Näitä suodattimia ei voi poistaa käytöstä GitHub Models -kokemuksessa. Jos päätät käyttää malleja maksullisen palvelun kautta, konfiguroi sisältösuodattimesi tarpeidesi mukaan.
 
 Tämä palvelu on GitHubin esijulkaisuehtojen alainen.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, otathan huomioon, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai virhetulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

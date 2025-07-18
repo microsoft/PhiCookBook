@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:39:43+00:00",
+  "translation_date": "2025-07-16T14:44:42+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "sw"
 }
@@ -35,7 +35,7 @@ Unapowasilisha pull request (PR) kwenye hazina ya Phi-3 CookBook, tafadhali tumi
 - **Fanya Fork ya Hazina**: Daima fanya fork ya hazina kwenye akaunti yako kabla ya kufanya mabadiliko yako.
 
 - **Pull requests tofauti (PR)**:
-  - Wasilisha kila aina ya mabadiliko katika pull request yake mwenyewe. Kwa mfano, marekebisho ya hitilafu na masasisho ya nyaraka yanapaswa kuwasilishwa katika PR tofauti.
+  - Wasilisha kila aina ya mabadiliko katika pull request yake. Kwa mfano, marekebisho ya hitilafu na masasisho ya nyaraka yafanyike katika PR tofauti.
   - Marekebisho ya makosa ya tahajia na masasisho madogo ya nyaraka yanaweza kuunganishwa katika PR moja inapofaa.
 
 - **Shughulikia migongano ya kuunganisha**: Ikiwa pull request yako inaonyesha migongano ya kuunganisha, sasisha tawi lako la `main` la ndani ili lifanane na hazina kuu kabla ya kufanya mabadiliko yako.
@@ -48,7 +48,7 @@ Ili kuhakikisha muafaka katika nyaraka zote, tafadhali tumia miongozo ifuatayo:
 
 - **Muundo wa URL**: Weka URL zote ndani ya mabano ya mraba ikifuatiwa na mabano ya mviringo, bila nafasi za ziada ndani au karibu nazo. Mfano: `[example](https://www.microsoft.com)`.
 
-- **Viungo vya uhusiano**: Tumia `./` kwa viungo vinavyoelekeza faili au folda katika saraka ya sasa, na `../` kwa zile zilizoko saraka ya mzazi. Mfano: `[example](../../path/to/file)` au `[example](../../../path/to/file)`.
+- **Viungo vya jamaa**: Tumia `./` kwa viungo vya jamaa vinavyoelekeza kwenye faili au folda katika saraka ya sasa, na `../` kwa zile katika saraka ya mzazi. Mfano: `[example](../../path/to/file)` au `[example](../../../path/to/file)`.
 
 - **Lugha zisizo za nchi maalum**: Hakikisha viungo vyako havijumuishi lugha za nchi maalum. Mfano, epuka `/en-us/` au `/en/`.
 
@@ -60,16 +60,16 @@ Ili kuhakikisha muafaka katika nyaraka zote, tafadhali tumia miongozo ifuatayo:
 
 Unapowasilisha pull request, mipangilio ifuatayo itatekelezwa kuthibitisha mabadiliko. Fuata maelekezo hapa chini kuhakikisha pull request yako inapita ukaguzi wa mipangilio:
 
-- [Angalia Njia za Uhusiano Zilizovunjika](../..)
+- [Angalia Njia za Jamaa Zilizovunjika](../..)
 - [Angalia URL Hazina Lugha ya Nchi](../..)
 
-### Angalia Njia za Uhusiano Zilizovunjika
+### Angalia Njia za Jamaa Zilizovunjika
 
-Mpangilio huu unahakikisha kuwa njia zote za uhusiano katika faili zako ni sahihi.
+Mpangilio huu unahakikisha kuwa njia zote za jamaa katika faili zako ni sahihi.
 
 1. Ili kuhakikisha viungo vyako vinafanya kazi vizuri, fanya yafuatayo kwa kutumia VS Code:
     - Elea juu ya kiungo chochote katika faili zako.
-    - Bonyeza **Ctrl + Bonyeza** ili uelekezwe kwenye kiungo.
+    - Bonyeza **Ctrl + Bonyeza** kuhamia kwenye kiungo.
     - Ikiwa unabonyeza kiungo na hakifanyi kazi kwa ndani, mpangilio utaanzishwa na hakitafanya kazi kwenye GitHub.
 
 1. Ili kurekebisha tatizo hili, fanya yafuatayo kwa kutumia mapendekezo ya njia yanayotolewa na VS Code:
@@ -77,11 +77,11 @@ Mpangilio huu unahakikisha kuwa njia zote za uhusiano katika faili zako ni sahih
     - VS Code itakuomba uchague kutoka kwa chaguzi zinazopatikana kulingana na uliyoyaandika.
     - Fuata njia kwa kubonyeza faili au folda unayotaka kuhakikisha njia yako ni sahihi.
 
-Mara baada ya kuongeza njia sahihi ya uhusiano, hifadhi na tuma mabadiliko yako.
+Mara baada ya kuongeza njia sahihi ya jamaa, hifadhi na tuma mabadiliko yako.
 
 ### Angalia URL Hazina Lugha ya Nchi
 
-Mpangilio huu unahakikisha kuwa URL yoyote ya wavuti haina lugha maalum ya nchi. Kwa kuwa hazina hii inapatikana duniani kote, ni muhimu kuhakikisha URL hazina lugha ya nchi yako.
+Mpangilio huu unahakikisha kuwa URL yoyote ya wavuti haina lugha ya nchi maalum. Kwa kuwa hazina hii inapatikana duniani kote, ni muhimu kuhakikisha URL hazina lugha ya nchi yako.
 
 1. Ili kuthibitisha kuwa URL zako hazina lugha za nchi, fanya yafuatayo:
 
@@ -109,11 +109,11 @@ Mara baada ya kurekebisha URL, hifadhi na tuma mabadiliko yako.
 
 > [!NOTE]
 >
-> Kunaweza kuwa na matukio ambapo ukaguzi wa URL unashindwa ingawa kiungo kinapatikana. Hii inaweza kutokea kwa sababu kadhaa, ikiwemo:
+> Kunaweza kuwa na matukio ambapo ukaguzi wa URL unashindwa ingawa kiungo kinapatikana. Hii inaweza kutokea kwa sababu kadhaa, zikiwemo:
 >
 > - **Vizuizi vya mtandao:** Seva za vitendo vya GitHub zinaweza kuwa na vizuizi vya mtandao vinavyozuia ufikiaji wa URL fulani.
-> - **Masuala ya muda wa kusubiri:** URL zinazochukua muda mrefu kujibu zinaweza kusababisha kosa la muda wa kusubiri katika mpangilio.
-> - **Masuala ya muda ya seva:** Kushindwa kwa seva mara kwa mara au matengenezo kunaweza kufanya URL isipatikane kwa muda wakati wa uthibitishaji.
+> - **Masuala ya muda wa kusubiri majibu:** URL zinazochukua muda mrefu kujibu zinaweza kusababisha kosa la muda wa kusubiri katika mpangilio.
+> - **Masuala ya muda ya seva:** Kushindwa kwa seva au matengenezo ya mara kwa mara yanaweza kufanya URL isipatikane kwa muda wakati wa uthibitishaji.
 
 **Kiarifu cha Kutotegemea**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

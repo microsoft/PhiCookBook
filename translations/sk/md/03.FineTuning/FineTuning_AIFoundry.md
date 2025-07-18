@@ -2,60 +2,60 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:36:49+00:00",
+  "translation_date": "2025-07-17T06:12:49+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "sk"
 }
 -->
 # Doladenie Phi-3 pomocou Azure AI Foundry
 
-Poďme preskúmať, ako doladiť jazykový model Phi-3 Mini od Microsoftu pomocou Azure AI Foundry. Doladenie vám umožní prispôsobiť Phi-3 Mini konkrétnym úlohám, čím sa model stane ešte výkonnejším a lepšie chápu kontext.
+Pozrime sa, ako doladiť jazykový model Phi-3 Mini od Microsoftu pomocou Azure AI Foundry. Doladenie vám umožní prispôsobiť Phi-3 Mini konkrétnym úlohám, čím sa stane ešte výkonnejším a lepšie rozumie kontextu.
 
 ## Úvahy
 
-- **Schopnosti:** Ktoré modely je možné doladiť? Čo všetko môže základný model po doladení robiť?
-- **Cena:** Aký je cenový model pre doladenie
-- **Prispôsobiteľnosť:** Do akej miery môžem meniť základný model – a akými spôsobmi?
+- **Možnosti:** Ktoré modely je možné doladiť? Na čo všetko sa dá základný model doladiť?
+- **Cena:** Aký je cenový model pre doladenie?
+- **Prispôsobiteľnosť:** Do akej miery môžem upraviť základný model – a akými spôsobmi?
 - **Pohodlie:** Ako vlastne prebieha doladenie – musím písať vlastný kód? Potrebujem vlastný výpočtový výkon?
-- **Bezpečnosť:** Doladené modely môžu predstavovať bezpečnostné riziká – sú k dispozícii nejaké ochranné mechanizmy na prevenciu neúmyselnej škody?
+- **Bezpečnosť:** Doladené modely môžu predstavovať bezpečnostné riziká – sú zavedené nejaké ochranné opatrenia, ktoré zabraňujú neúmyselnému poškodeniu?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.sk.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.sk.png)
 
 ## Príprava na doladenie
 
 ### Predpoklady
 
 > [!NOTE]
-> Pre modely rodiny Phi-3 je ponuka doladenia v modeli pay-as-you-go dostupná iba pre huby vytvorené v regiónoch **East US 2**.
+> Pre modely rodiny Phi-3 je ponuka doladenia na základe platby podľa použitia dostupná iba pre huby vytvorené v regiónoch **East US 2**.
 
-- Predplatné Azure. Ak ešte nemáte Azure predplatné, vytvorte si [platený Azure účet](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), aby ste mohli začať.
+- Predplatné Azure. Ak ešte nemáte predplatné Azure, vytvorte si [platený Azure účet](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go), aby ste mohli začať.
 
 - Projekt v [AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Na udelenie prístupu k operáciám v Azure AI Foundry sa používajú riadenia prístupu založené na rolách Azure (Azure RBAC). Pre vykonanie krokov v tomto článku musí mať váš používateľský účet pridelenú __Azure AI Developer rolu__ v rámci skupiny prostriedkov.
+- Na prístup k operáciám v Azure AI Foundry sa používajú riadené prístupy na základe rolí (Azure RBAC). Na vykonanie krokov v tomto článku musí mať váš používateľský účet priradenú __rolu Azure AI Developer__ v rámci skupiny prostriedkov.
 
 ### Registrácia poskytovateľa predplatného
 
-Overte, či je predplatné registrované pre poskytovateľa zdrojov `Microsoft.Network`.
+Overte, či je predplatné zaregistrované u poskytovateľa zdrojov `Microsoft.Network`.
 
 1. Prihláste sa do [Azure portálu](https://portal.azure.com).
-1. Vyberte **Subscriptions** v ľavom menu.
+1. V ľavom menu vyberte **Subscriptions**.
 1. Vyberte predplatné, ktoré chcete použiť.
 1. V ľavom menu vyberte **AI project settings** > **Resource providers**.
 1. Skontrolujte, či je v zozname poskytovateľov zdrojov uvedený **Microsoft.Network**. Ak nie, pridajte ho.
 
 ### Príprava dát
 
-Pripravte si tréningové a validačné dáta na doladenie modelu. Vaše tréningové a validačné dátové sady by mali obsahovať príklady vstupov a výstupov, ako očakávate, že model bude fungovať.
+Pripravte si tréningové a validačné dáta na doladenie modelu. Vaše tréningové a validačné dáta by mali obsahovať príklady vstupov a výstupov, ktoré definujú, ako chcete, aby model fungoval.
 
-Uistite sa, že všetky tréningové príklady majú očakávaný formát pre inferenciu. Na efektívne doladenie modelov zabezpečte vyváženú a rozmanitú dátovú sadu.
+Uistite sa, že všetky tréningové príklady majú očakávaný formát pre inferenciu. Na efektívne doladenie modelov zabezpečte vyvážený a rozmanitý dataset.
 
-To zahŕňa udržiavanie rovnováhy dát, zahrnutie rôznych scenárov a pravidelné vylepšovanie tréningových dát, aby zodpovedali reálnym očakávaniam, čo vedie k presnejším a vyváženejším odpovediam modelu.
+To zahŕňa udržiavanie rovnováhy dát, zahrnutie rôznych scenárov a pravidelnú úpravu tréningových dát tak, aby zodpovedali reálnym očakávaniam, čo vedie k presnejším a vyváženejším odpovediam modelu.
 
 Rôzne typy modelov vyžadujú odlišný formát tréningových dát.
 
 ### Chat Completion
 
-Tréningové a validačné dáta musia byť vo formáte JSON Lines (JSONL). Pre `Phi-3-mini-128k-instruct` musí byť dataset na doladenie vo formáte konverzačného štýlu, ktorý používa API Chat completions.
+Tréningové a validačné dáta, ktoré použijete, **musia** byť vo formáte JSON Lines (JSONL). Pre `Phi-3-mini-128k-instruct` musí byť dataset na doladenie vo formáte konverzačného štýlu, ktorý používa API pre chatové dokončenia.
 
 ### Príklad formátu súboru
 
@@ -65,118 +65,118 @@ Tréningové a validačné dáta musia byť vo formáte JSON Lines (JSONL). Pre 
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-Podporovaný typ súboru je JSON Lines. Súbory sa nahrávajú do predvoleného úložiska a sú k dispozícii vo vašom projekte.
+Podporovaný typ súboru je JSON Lines. Súbory sa nahrávajú do predvoleného úložiska a sprístupňujú sa vo vašom projekte.
 
 ## Doladenie Phi-3 pomocou Azure AI Foundry
 
-Azure AI Foundry vám umožňuje prispôsobiť veľké jazykové modely na základe vašich vlastných dát pomocou procesu nazývaného doladenie. Doladenie prináša významnú hodnotu tým, že umožňuje prispôsobenie a optimalizáciu pre konkrétne úlohy a aplikácie. Výsledkom je lepší výkon, úspora nákladov, znížená latencia a prispôsobené výstupy.
+Azure AI Foundry vám umožňuje prispôsobiť veľké jazykové modely vašim vlastným dátam pomocou procesu nazývaného doladenie. Doladenie prináša významnú hodnotu tým, že umožňuje prispôsobenie a optimalizáciu pre konkrétne úlohy a aplikácie. Vedie k lepšiemu výkonu, úspore nákladov, zníženiu latencie a prispôsobeným výstupom.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.sk.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.sk.png)
 
 ### Vytvorenie nového projektu
 
 1. Prihláste sa do [Azure AI Foundry](https://ai.azure.com).
 
-1. Vyberte **+New project** na vytvorenie nového projektu v Azure AI Foundry.
+1. Vyberte **+New project** pre vytvorenie nového projektu v Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.sk.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.sk.png)
 
-1. Vykonajte nasledovné kroky:
+1. Vykonajte nasledujúce kroky:
 
-    - Názov projektu **Hub name** musí byť jedinečný.
-    - Vyberte **Hub**, ktorý chcete použiť (prípadne vytvorte nový).
+    - Názov projektu **Hub name**. Musí byť jedinečný.
+    - Vyberte **Hub**, ktorý chcete použiť (v prípade potreby vytvorte nový).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.sk.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.sk.png)
 
-1. Vykonajte nasledovné kroky na vytvorenie nového hubu:
+1. Vykonajte nasledujúce kroky na vytvorenie nového hubu:
 
     - Zadajte **Hub name**. Musí byť jedinečný.
     - Vyberte svoje Azure **Subscription**.
-    - Vyberte **Resource group**, ktorú chcete použiť (prípadne vytvorte novú).
+    - Vyberte **Resource group**, ktorú chcete použiť (v prípade potreby vytvorte novú).
     - Vyberte **Location**, ktorú chcete použiť.
-    - Vyberte **Connect Azure AI Services** (prípadne vytvorte nové).
-    - Vyberte **Connect Azure AI Search** a zvoľte **Skip connecting**.
+    - Vyberte **Connect Azure AI Services**, ktoré chcete použiť (v prípade potreby vytvorte nové).
+    - Pri **Connect Azure AI Search** vyberte **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.sk.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.sk.png)
 
 1. Vyberte **Next**.
 1. Vyberte **Create a project**.
 
 ### Príprava dát
 
-Pred doladením zozbierajte alebo vytvorte dataset relevantný pre vašu úlohu, napríklad chatové inštrukcie, otázky a odpovede alebo iné textové dáta. Dáta očistite a predspracujte odstránením šumu, doplnením chýbajúcich hodnôt a tokenizáciou textu.
+Pred doladením zozbierajte alebo vytvorte dataset relevantný pre vašu úlohu, napríklad inštrukcie pre chat, páry otázka-odpoveď alebo iné relevantné textové dáta. Dáta vyčistite a predspracujte odstránením šumu, riešením chýbajúcich hodnôt a tokenizáciou textu.
 
 ### Doladenie modelov Phi-3 v Azure AI Foundry
 
 > [!NOTE]
 > Doladenie modelov Phi-3 je momentálne podporované iba v projektoch umiestnených v East US 2.
 
-1. Vyberte **Model catalog** v ľavom paneli.
+1. V ľavom paneli vyberte **Model catalog**.
 
 1. Do **search bar** zadajte *phi-3* a vyberte model phi-3, ktorý chcete použiť.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.sk.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.sk.png)
 
 1. Vyberte **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.sk.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.sk.png)
 
 1. Zadajte názov **Fine-tuned model name**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.sk.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.sk.png)
 
 1. Vyberte **Next**.
 
-1. Vykonajte nasledovné kroky:
+1. Vykonajte nasledujúce kroky:
 
     - Vyberte typ úlohy **task type** ako **Chat completion**.
     - Vyberte **Training data**, ktoré chcete použiť. Dáta môžete nahrať cez Azure AI Foundry alebo z lokálneho prostredia.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.sk.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.sk.png)
 
 1. Vyberte **Next**.
 
 1. Nahrajte **Validation data**, ktoré chcete použiť, alebo vyberte **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.sk.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.sk.png)
 
 1. Vyberte **Next**.
 
-1. Vykonajte nasledovné kroky:
+1. Vykonajte nasledujúce kroky:
 
     - Vyberte **Batch size multiplier**, ktorý chcete použiť.
     - Vyberte **Learning rate**, ktorý chcete použiť.
     - Vyberte počet **Epochs**, ktoré chcete použiť.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.sk.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.sk.png)
 
 1. Vyberte **Submit** na spustenie procesu doladenia.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.sk.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.sk.png)
 
-1. Po úspešnom doladení sa stav zmení na **Completed**, ako je znázornené na obrázku nižšie. Teraz môžete model nasadiť a používať ho vo vlastnej aplikácii, v playgrounde alebo v prompt flow. Viac informácií nájdete v článku [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
+1. Po dokončení doladenia sa stav zobrazí ako **Completed**, ako je znázornené na obrázku nižšie. Teraz môžete model nasadiť a používať ho vo svojej aplikácii, v playgrounde alebo v prompt flow. Pre viac informácií pozrite [Ako nasadiť rodinu malých jazykových modelov Phi-3 pomocou Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.sk.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.sk.png)
 
 > [!NOTE]
 > Pre podrobnejšie informácie o doladení Phi-3 navštívte [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
 
 ## Odstránenie doladených modelov
 
-Doladený model môžete vymazať zo zoznamu doladených modelov v [Azure AI Foundry](https://ai.azure.com) alebo zo stránky s detailmi modelu. Na stránke Fine-tuning vyberte model, ktorý chcete vymazať, a potom kliknite na tlačidlo Delete.
+Doladený model môžete vymazať zo zoznamu doladených modelov v [Azure AI Foundry](https://ai.azure.com) alebo zo stránky s detailmi modelu. Vyberte doladený model, ktorý chcete vymazať na stránke Fine-tuning, a potom kliknite na tlačidlo Delete.
 
 > [!NOTE]
 > Vlastný model nemôžete vymazať, ak má existujúce nasadenie. Najprv musíte vymazať nasadenie modelu, až potom môžete vymazať vlastný model.
 
-## Náklady a limity
+## Náklady a kvóty
 
-### Náklady a limity pre modely Phi-3 doladené ako služba
+### Úvahy o nákladoch a kvótach pre modely Phi-3 doladené ako služba
 
-Modely Phi doladené ako služba poskytuje Microsoft a sú integrované v Azure AI Foundry. Cenník nájdete pri [nasadzovaní](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) alebo doladení modelov v záložke Pricing and terms v sprievodcovi nasadením.
+Modely Phi doladené ako služba sú poskytované Microsoftom a integrované s Azure AI Foundry na použitie. Ceny nájdete pri [nasadzovaní](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) alebo doladení modelov v záložke Pricing and terms v sprievodcovi nasadením.
 
 ## Filtrovanie obsahu
 
-Modely nasadené ako služba v režime pay-as-you-go sú chránené službou Azure AI Content Safety. Pri nasadení na real-time endpointy môžete túto funkciu vypnúť. Keď je Azure AI Content Safety zapnuté, vstupné výzvy aj výstupy prechádzajú súborom klasifikačných modelov, ktoré detegujú a zabraňujú generovaniu škodlivého obsahu. Systém filtrovania deteguje a zasahuje pri konkrétnych kategóriách potenciálne škodlivého obsahu vo vstupoch aj výstupoch. Viac sa dozviete o [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+Modely nasadené ako služba s platbou podľa použitia sú chránené službou Azure AI Content Safety. Pri nasadení na endpointy v reálnom čase môžete túto funkciu vypnúť. S povolenou ochranou obsahu Azure AI prechádzajú prompt aj odpoveď cez súbor klasifikačných modelov, ktoré detegujú a zabraňujú výstupu škodlivého obsahu. Systém filtrovania obsahu deteguje a zasahuje pri špecifických kategóriách potenciálne škodlivého obsahu vo vstupných promptoch aj vo výstupných odpovediach. Viac informácií o [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
 
 **Konfigurácia doladenia**
 
@@ -192,15 +192,15 @@ Vyberte optimalizátor (napr. Adam) pre aktualizácie gradientov počas tréning
 
 **Proces doladenia**
 
-- Načítajte predtrénovaný model: Načítajte checkpoint Phi-3 Mini.
-- Pridajte vlastné vrstvy: Pridajte vrstvy špecifické pre úlohu (napr. klasifikačnú hlavu pre chatové inštrukcie).
+- Načítanie predtrénovaného modelu: Načítajte checkpoint Phi-3 Mini.
+- Pridanie vlastných vrstiev: Pridajte vrstvy špecifické pre úlohu (napr. klasifikačnú hlavu pre inštrukcie chatu).
 
-**Trénovanie modelu**  
+**Tréning modelu**  
 Doladte model pomocou pripraveného datasetu. Sledujte priebeh tréningu a podľa potreby upravujte hyperparametre.
 
 **Vyhodnotenie a validácia**
 
-Validačná sada: Rozdeľte dáta na tréningovú a validačnú sadu.
+Validačná množina: Rozdeľte dáta na tréningovú a validačnú množinu.
 
 **Vyhodnotenie výkonu**
 
@@ -214,23 +214,23 @@ Uložte checkpoint doladeného modelu pre budúce použitie.
 ## Nasadenie
 
 - Nasadenie ako webová služba: Nasadte doladený model ako webovú službu v Azure AI Foundry.
-- Testovanie endpointu: Pošlite testovacie dopyty na nasadený endpoint, aby ste overili jeho funkčnosť.
+- Testovanie endpointu: Posielajte testovacie dotazy na nasadený endpoint a overte jeho funkčnosť.
 
-## Iterácia a vylepšovanie
+## Iterácia a zlepšovanie
 
-Iterujte: Ak výkon nie je uspokojivý, upravujte hyperparametre, pridajte viac dát alebo doladte model počas ďalších epoch.
+Iterujte: Ak výkon nie je uspokojivý, upravujte hyperparametre, pridávajte viac dát alebo doladte model na ďalšie epochy.
 
-## Monitorovanie a zdokonaľovanie
+## Monitorovanie a dolaďovanie
 
-Model neustále sledujte a podľa potreby vylepšujte.
+Neustále sledujte správanie modelu a podľa potreby ho dolaďujte.
 
-## Prispôsobovanie a rozširovanie
+## Prispôsobenie a rozšírenie
 
-Vlastné úlohy: Phi-3 Mini je možné doladiť pre rôzne úlohy okrem chatových inštrukcií. Preskúmajte ďalšie možnosti využitia!  
+Vlastné úlohy: Phi-3 Mini môžete doladiť pre rôzne úlohy okrem inštrukcií pre chat. Preskúmajte ďalšie možnosti použitia!  
 Experimentujte: Vyskúšajte rôzne architektúry, kombinácie vrstiev a techniky na zlepšenie výkonu.
 
 > [!NOTE]
 > Doladenie je iteratívny proces. Experimentujte, učte sa a prispôsobujte model, aby ste dosiahli najlepšie výsledky pre vašu konkrétnu úlohu!
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, vezmite prosím na vedomie, že automatické preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

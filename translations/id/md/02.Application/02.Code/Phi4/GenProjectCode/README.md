@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:51:14+00:00",
+  "translation_date": "2025-07-17T04:46:31+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "id"
 }
 -->
 ## **Menggunakan Phi-4-mini-mm untuk menghasilkan kode**
 
-Phi-4-mini melanjutkan kemampuan coding kuat dari Phi Family. Anda dapat menggunakan Prompt untuk mengajukan pertanyaan terkait coding. Tentu saja, setelah menambahkan kemampuan penalaran yang kuat, ia memiliki kemampuan coding yang lebih baik, seperti menghasilkan proyek sesuai kebutuhan. Misalnya, menghasilkan proyek sesuai kebutuhan, seperti:
+Phi-4-mini melanjutkan kemampuan coding kuat dari Phi Family. Anda dapat menggunakan Prompt untuk mengajukan pertanyaan terkait coding. Tentu saja, setelah menambahkan kemampuan penalaran yang kuat, kemampuan codingnya menjadi lebih hebat, seperti menghasilkan proyek sesuai kebutuhan. Misalnya, membuat proyek sesuai dengan persyaratan, seperti:
 
-### **Kebutuhan**
+### **Persyaratan**
 
 Buat Aplikasi Keranjang Belanja
 
 - Buat API Rest dengan metode berikut:
-    - Dapatkan daftar bir menggunakan offset halaman dan batas.
+    - Dapatkan daftar bir menggunakan page offset dan limit.
     - Dapatkan detail bir berdasarkan id.
     - Cari bir berdasarkan nama, deskripsi, tagline, pasangan makanan, dan harga.
 - Buat daftar produk di halaman utama.
-    - Buat bilah pencarian untuk memfilter produk.
+    - Buat bar pencarian untuk memfilter produk.
     - Navigasi ke halaman deskripsi saat pengguna mengklik produk.
 - (Opsional) Slicer untuk memfilter produk berdasarkan harga.
 - Buat keranjang belanja.
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

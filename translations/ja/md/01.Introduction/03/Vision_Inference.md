@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-08T06:01:32+00:00",
+  "translation_date": "2025-07-16T21:36:48+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "ja"
 }
 -->
 # **ローカルでの Phi-3-Vision 推論**
 
-Phi-3-vision-128k-instruct により、Phi-3 は言語を理解するだけでなく、視覚的に世界を見ることも可能になります。Phi-3-vision-128k-instruct を使うことで、OCR、表解析、物体認識、画像の説明など、さまざまな視覚的な問題を解決できます。これまでは大量のデータトレーニングが必要だったタスクも簡単に完了できます。以下は Phi-3-vision-128k-instruct が引用する関連技術や応用シナリオです。
+Phi-3-vision-128k-instruct は、Phi-3 に言語理解だけでなく視覚的な世界の認識も可能にします。Phi-3-vision-128k-instruct を通じて、OCR、表解析、物体認識、画像の説明など、さまざまな視覚的課題を解決できます。これまで大量のデータトレーニングが必要だったタスクも簡単に完了できます。以下は Phi-3-vision-128k-instruct が引用する関連技術と応用シナリオです。
 
 ## **0. 準備**
 
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Phi-3-Vision で画像を解析する**
 
-AI に画像の内容を解析し、関連する説明を提供してもらいたい場合
+AI に画像の内容を解析させ、関連する説明を出してもらいたい場合
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,15 +74,15 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-ノートブックで以下のスクリプトを実行することで、関連する回答が得られます
+ノートブックで以下のスクリプトを実行することで、関連する回答を得ることができます
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
 ```
 
-## **2. Phi-3-Vision での OCR**
+## **2. Phi-3-Vision で OCR を行う**
 
-画像を解析するだけでなく、画像から情報を抽出することもできます。これは以前は複雑なコードを書いて行っていた OCR 処理です。
+画像の解析に加えて、画像から情報を抽出することも可能です。これは以前は複雑なコードを書いて行っていた OCR 処理です。
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **免責事項**：  
-本書類はAI翻訳サービス「Co-op Translator」（https://github.com/Azure/co-op-translator）を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や解釈の相違について、当方は一切の責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

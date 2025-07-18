@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:28:48+00:00",
+  "translation_date": "2025-07-16T22:20:10+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "pl"
 }
@@ -13,7 +13,7 @@ Model Builder obecnie wspiera kwantyzację modeli ONNX dla Phi-3.5 Instruct oraz
 
 ### **Phi-3.5-Instruct**
 
-**Konwersja kwantyzowanego INT4 z akceleracją CPU**
+**Konwersja kwantyzowana INT4 przyspieszona na CPU**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**Konwersja kwantyzowanego INT4 z akceleracją CUDA**
+**Konwersja kwantyzowana INT4 przyspieszona na CUDA**
 
 ```bash
 
@@ -65,7 +65,7 @@ cd models
 
 5. Przejdź do terminala
 
-    Konwersja wsparcia ONNX z FP32
+    Konwersja ONNX z obsługą FP32
 
 ```bash
 
@@ -73,15 +73,15 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ```
 
-### **Uwaga：**
+### **Uwaga:**
 
-1. Model Builder obecnie wspiera konwersję Phi-3.5-Instruct i Phi-3.5-Vision, ale nie Phi-3.5-MoE
+1. Model Builder obecnie wspiera konwersję Phi-3.5-Instruct oraz Phi-3.5-Vision, ale nie Phi-3.5-MoE
 
-2. Aby używać kwantyzowanego modelu ONNX, możesz korzystać z Generative AI extensions for onnxruntime SDK
+2. Aby używać kwantyzowanego modelu ONNX, można to zrobić przez SDK Generative AI extensions for onnxruntime
 
-3. Powinniśmy brać pod uwagę odpowiedzialną AI, dlatego po konwersji kwantyzacji modelu zaleca się przeprowadzenie dokładniejszych testów wyników
+3. Należy brać pod uwagę odpowiedzialną AI, dlatego po konwersji kwantyzacji modelu zaleca się przeprowadzenie dokładniejszych testów wyników
 
-4. Kwantyzując model CPU INT4, możemy go wdrożyć na urządzenia Edge, co daje lepsze scenariusze zastosowań, dlatego zakończyliśmy pracę nad Phi-3.5-Instruct w wersji INT4
+4. Kwantyzując model CPU INT4, możemy go wdrożyć na urządzenia Edge, co daje lepsze scenariusze zastosowań, dlatego zakończyliśmy prace nad Phi-3.5-Instruct w wersji INT4
 
 ## **Zasoby**
 
@@ -90,4 +90,4 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 2. Repozytorium Generative AI extensions for onnxruntime na GitHub [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dążymy do dokładności, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być traktowany jako wiarygodne źródło. W przypadku informacji o krytycznym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-07T10:12:51+00:00",
+  "translation_date": "2025-07-16T17:27:09+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "es"
 }
@@ -34,11 +34,11 @@ Por ejemplo:
 Esta extensión contribuye con las siguientes configuraciones:
 
 * `myExtension.enable`: Habilitar/deshabilitar esta extensión.
-* `myExtension.thing`: Configurar a `blah` para realizar una acción.
+* `myExtension.thing`: Configura a `blah` para hacer algo.
 
 ## Known Issues
 
-Mencionar problemas conocidos puede ayudar a evitar que los usuarios abran issues duplicados contra tu extensión.
+Mencionar los problemas conocidos puede ayudar a evitar que los usuarios abran issues duplicados sobre tu extensión.
 
 ## Release Notes
 
@@ -50,11 +50,11 @@ Lanzamiento inicial de ...
 
 ### 1.0.1
 
-Corregido el problema #.
+Se corrigió el problema #.
 
 ### 1.1.0
 
-Añadidas las funciones X, Y y Z.
+Se añadieron las características X, Y y Z.
 
 ---
 
@@ -66,7 +66,7 @@ Asegúrate de haber leído las directrices para extensiones y seguir las mejores
 
 ## Working with Markdown
 
-Puedes redactar tu README usando Visual Studio Code. Aquí tienes algunos atajos de teclado útiles para el editor:
+Puedes redactar tu README usando Visual Studio Code. Aquí algunos atajos útiles del editor:
 
 * Dividir el editor (`Cmd+\` en macOS o `Ctrl+\` en Windows y Linux).
 * Alternar vista previa (`Shift+Cmd+V` en macOS o `Shift+Ctrl+V` en Windows y Linux).
@@ -77,7 +77,7 @@ Puedes redactar tu README usando Visual Studio Code. Aquí tienes algunos atajos
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**¡Disfrútalo!**
+**¡Disfruta!**
 
 **Aviso legal**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda una traducción profesional realizada por humanos. No nos hacemos responsables de ningún malentendido o interpretación errónea derivada del uso de esta traducción.
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

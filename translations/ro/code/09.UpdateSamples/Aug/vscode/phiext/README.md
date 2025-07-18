@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-09T05:30:32+00:00",
+  "translation_date": "2025-07-16T17:32:26+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "ro"
 }
@@ -19,7 +19,7 @@ De exemplu, dacă există un subfolder de imagini în spațiul de lucru al proie
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Multe extensii populare folosesc animații. Este o modalitate excelentă de a-ți evidenția extensia! Recomandăm animații scurte, concentrate și ușor de urmărit.
+> Tip: Multe extensii populare folosesc animații. Este o metodă excelentă de a-ți evidenția extensia! Recomandăm animații scurte și concentrate, ușor de urmărit.
 
 ## Requirements
 
@@ -38,7 +38,7 @@ Această extensie contribuie cu următoarele setări:
 
 ## Known Issues
 
-Semnalarea problemelor cunoscute poate ajuta la reducerea numărului de utilizatori care deschid probleme duplicate legate de extensia ta.
+Menționarea problemelor cunoscute poate ajuta la reducerea numărului de utilizatori care deschid probleme duplicate pentru extensia ta.
 
 ## Release Notes
 
@@ -50,7 +50,7 @@ Lansarea inițială a ...
 
 ### 1.0.1
 
-Problema # a fost rezolvată.
+S-a rezolvat problema #.
 
 ### 1.1.0
 
@@ -60,13 +60,13 @@ Au fost adăugate funcționalitățile X, Y și Z.
 
 ## Following extension guidelines
 
-Asigură-te că ai citit ghidul pentru extensii și urmează cele mai bune practici pentru crearea extensiei tale.
+Asigură-te că ai citit ghidurile pentru extensii și urmează cele mai bune practici pentru crearea extensiei tale.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
 ## Working with Markdown
 
-Poți crea README-ul folosind Visual Studio Code. Iată câteva scurtături utile pentru editor:
+Poți scrie README-ul folosind Visual Studio Code. Iată câteva scurtături utile pentru editor:
 
 * Împarte editorul (`Cmd+\` pe macOS sau `Ctrl+\` pe Windows și Linux).
 * Comută previzualizarea (`Shift+Cmd+V` pe macOS sau `Shift+Ctrl+V` pe Windows și Linux).
@@ -79,5 +79,5 @@ Poți crea README-ul folosind Visual Studio Code. Iată câteva scurtături util
 
 **Distracție plăcută!**
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autoritară. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

@@ -2,43 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:51:37+00:00",
+  "translation_date": "2025-07-16T20:50:18+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "pl"
 }
 -->
-## Wnioskowanie z Kaito
+## Inference z Kaito
 
-[Kaito](https://github.com/Azure/kaito) to operator, który automatyzuje wdrażanie modeli AI/ML do wnioskowania w klastrze Kubernetes.
+[Kaito](https://github.com/Azure/kaito) to operator, który automatyzuje wdrażanie modeli AI/ML do inferencji w klastrze Kubernetes.
 
 Kaito wyróżnia się na tle większości popularnych metod wdrażania modeli opartych na infrastrukturze maszyn wirtualnych dzięki następującym cechom:
 
-- Zarządzanie plikami modeli za pomocą obrazów kontenerów. Udostępniany jest serwer http do wykonywania wywołań wnioskowania z wykorzystaniem biblioteki modeli.
-- Unikanie ręcznego dostosowywania parametrów wdrożenia do sprzętu GPU dzięki gotowym konfiguracjom.
-- Automatyczne uruchamianie węzłów GPU zgodnie z wymaganiami modelu.
+- Zarządzanie plikami modeli za pomocą obrazów kontenerów. Udostępniany jest serwer http do wykonywania wywołań inferencji z wykorzystaniem biblioteki modelu.
+- Unikanie dostrajania parametrów wdrożenia pod sprzęt GPU dzięki gotowym konfiguracjom.
+- Automatyczne przydzielanie węzłów GPU na podstawie wymagań modelu.
 - Przechowywanie dużych obrazów modeli w publicznym Microsoft Container Registry (MCR), jeśli pozwala na to licencja.
 
-Dzięki Kaito proces wdrażania dużych modeli AI do wnioskowania w Kubernetes jest znacznie uproszczony.
+Dzięki Kaito proces wdrażania dużych modeli AI do inferencji w Kubernetes jest znacznie uproszczony.
 
 ## Architektura
 
-Kaito korzysta z klasycznego wzorca projektowego Custom Resource Definition (CRD)/kontroler w Kubernetes. Użytkownik zarządza zasobem niestandardowym `workspace`, który opisuje wymagania dotyczące GPU oraz specyfikację wnioskowania. Kontrolery Kaito automatyzują wdrożenie, uzgadniając stan zasobu `workspace`.
+Kaito opiera się na klasycznym wzorcu projektowym Kubernetes Custom Resource Definition (CRD)/kontroler. Użytkownik zarządza niestandardowym zasobem `workspace`, który opisuje wymagania dotyczące GPU oraz specyfikację inferencji. Kontrolery Kaito automatyzują wdrożenie, synchronizując stan zasobu `workspace`.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Architektura Kaito" alt="Architektura Kaito">
 </div>
 
-Powyższy rysunek przedstawia przegląd architektury Kaito. Główne jej komponenty to:
+Powyższy rysunek przedstawia ogólny przegląd architektury Kaito. Główne jej komponenty to:
 
-- **Kontroler Workspace**: Uzgadnia zasób niestandardowy `workspace`, tworzy zasoby niestandardowe `machine` (opisane poniżej) do uruchamiania automatycznego przydzielania węzłów oraz tworzy obciążenie wnioskowania (`deployment` lub `statefulset`) na podstawie gotowych konfiguracji modelu.
-- **Kontroler Node provisioner**: Kontroler nazywa się *gpu-provisioner* w [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Wykorzystuje CRD `machine` pochodzący z [Karpenter](https://sigs.k8s.io/karpenter), aby komunikować się z kontrolerem workspace. Integruje się z API Azure Kubernetes Service (AKS), aby dodawać nowe węzły GPU do klastra AKS.
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) to komponent open source. Może zostać zastąpiony innymi kontrolerami, jeśli obsługują API [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Kontroler workspace**: Synchronizuje niestandardowy zasób `workspace`, tworzy niestandardowe zasoby `machine` (opisane poniżej) w celu wywołania automatycznego przydzielania węzłów oraz tworzy obciążenie inferencyjne (`deployment` lub `statefulset`) na podstawie gotowych konfiguracji modelu.
+- **Kontroler przydzielania węzłów**: Kontroler o nazwie *gpu-provisioner* w [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Wykorzystuje CRD `machine` pochodzący z [Karpenter](https://sigs.k8s.io/karpenter) do współpracy z kontrolerem workspace. Integruje się z API Azure Kubernetes Service (AKS), aby dodawać nowe węzły GPU do klastra AKS.
+> Uwaga: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) to komponent open source. Może zostać zastąpiony innymi kontrolerami, jeśli obsługują API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Instalacja
 
 Proszę zapoznać się z instrukcją instalacji [tutaj](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Szybki start z wnioskowaniem Phi-3
-[Przykładowy kod wnioskowania Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Szybki start Inference Phi-3
+[Przykładowy kod Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Status workspace można śledzić, wykonując poniższe polecenie. Gdy kolumna WORKSPACEREADY przyjmie wartość `True`, model został pomyślnie wdrożony.
+Status workspace można śledzić, wykonując poniższe polecenie. Gdy kolumna WORKSPACEREADY zmieni się na `True`, model został pomyślnie wdrożony.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Następnie można znaleźć adres IP usługi wnioskowania w klastrze i użyć tymczasowego podu `curl`, aby przetestować punkt końcowy usługi w klastrze.
+Następnie można znaleźć adres IP usługi inferencyjnej w klastrze i użyć tymczasowego poda `curl`, aby przetestować punkt końcowy usługi w klastrze.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -102,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Szybki start z wnioskowaniem Phi-3 z adapterami
+## Szybki start Inference Phi-3 z adapterami
 
-Po zainstalowaniu Kaito można wypróbować poniższe polecenia, aby uruchomić usługę wnioskowania.
+Po zainstalowaniu Kaito można wypróbować poniższe polecenia, aby uruchomić usługę inferencyjną.
 
-[Przykładowy kod wnioskowania Phi-3 z adapterami](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Przykładowy kod Inference Phi-3 z adapterami](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Status workspace można śledzić, wykonując poniższe polecenie. Gdy kolumna WORKSPACEREADY przyjmie wartość `True`, model został pomyślnie wdrożony.
+Status workspace można śledzić, wykonując poniższe polecenie. Gdy kolumna WORKSPACEREADY zmieni się na `True`, model został pomyślnie wdrożony.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Następnie można znaleźć adres IP usługi wnioskowania w klastrze i użyć tymczasowego podu `curl`, aby przetestować punkt końcowy usługi w klastrze.
+Następnie można znaleźć adres IP usługi inferencyjnej w klastrze i użyć tymczasowego poda `curl`, aby przetestować punkt końcowy usługi w klastrze.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być traktowany jako wiarygodne źródło informacji. W przypadku istotnych informacji zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do jak największej dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-07-09T19:15:21+00:00",
+  "translation_date": "2025-07-17T00:51:44+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "my"
 }
 -->
 # Fine-tune နှင့် Prompt flow ဖြင့် custom Phi-3 မော်ဒယ်များ ပေါင်းစပ်အသုံးပြုခြင်း
 
-ဤ end-to-end (E2E) နမူနာသည် Microsoft Tech Community မှ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" လမ်းညွှန်အပေါ် အခြေခံထားပြီး၊ custom Phi-3 မော်ဒယ်များကို fine-tune ပြုလုပ်ခြင်း၊ တပ်ဆင်ခြင်းနှင့် Prompt flow နှင့် ပေါင်းစပ်အသုံးပြုခြင်းလုပ်ငန်းစဉ်များကို မိတ်ဆက်ပေးပါသည်။
+ဤ end-to-end (E2E) နမူနာသည် Microsoft Tech Community မှ "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" လမ်းညွှန်ကို အခြေခံထားပြီး၊ custom Phi-3 မော်ဒယ်များကို fine-tune ပြုလုပ်ခြင်း၊ တပ်ဆင်ခြင်းနှင့် Prompt flow နှင့် ပေါင်းစပ်အသုံးပြုခြင်းလုပ်ငန်းစဉ်များကို မိတ်ဆက်ပေးပါသည်။
 
 ## အနှစ်ချုပ်
 
-ဤ E2E နမူနာတွင် Phi-3 မော်ဒယ်ကို fine-tune ပြုလုပ်ခြင်းနှင့် Prompt flow နှင့် ပေါင်းစပ်အသုံးပြုနည်းကို သင်ယူနိုင်ပါသည်။ Azure Machine Learning နှင့် Prompt flow ကို အသုံးပြု၍ custom AI မော်ဒယ်များကို တပ်ဆင်အသုံးပြုနိုင်မည့် workflow တစ်ခုကို တည်ဆောက်ပါမည်။ ဤ E2E နမူနာကို သုံးခုသော အခြေအနေများအဖြစ် ခွဲခြားထားသည်-
+ဤ E2E နမူနာတွင် Phi-3 မော်ဒယ်ကို fine-tune ပြုလုပ်နည်းနှင့် Prompt flow နှင့် ပေါင်းစပ်အသုံးပြုနည်းကို သင်ယူနိုင်ပါသည်။ Azure Machine Learning နှင့် Prompt flow ကို အသုံးပြု၍ custom AI မော်ဒယ်များကို တပ်ဆင်အသုံးပြုနိုင်မည့် workflow တစ်ခုကို တည်ဆောက်ပါမည်။ ဤ E2E နမူနာကို သုံးခုသော အခြေအနေများအဖြစ် ခွဲခြားထားသည်-
 
 **အခြေအနေ ၁: Azure အရင်းအမြစ်များ တပ်ဆင်ခြင်းနှင့် fine-tuning အတွက် ပြင်ဆင်ခြင်း**
 
@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ဤ E2E နမူနာ၏ အနှစ်ချုပ်ကို အောက်တွင် ဖော်ပြထားပါသည်။
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../imgs/02/FineTuning-PromptFlow/00-01-architecture.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.my.png)
 
 ### အကြောင်းအရာ စာရင်း
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Portal စာမျက်နှာ၏ အပေါ်ဆုံးရှိ **search bar** တွင် *azure machine learning* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Azure Machine Learning** ကို ရွေးချယ်ပါ။
 
-    ![Type azure machine learning](../../../../../../imgs/02/FineTuning-PromptFlow/01-01-type-azml.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.my.png)
 
 1. နေရာပြောင်းခြင်း မီနူးမှ **+ Create** ကို ရွေးချယ်ပါ။
 
 1. နေရာပြောင်းခြင်း မီနူးမှ **New workspace** ကို ရွေးချယ်ပါ။
 
-    ![Select new workspace](../../../../../../imgs/02/FineTuning-PromptFlow/01-02-select-new-workspace.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.my.png)
 
 1. အောက်ပါ အချက်များကို ပြုလုပ်ပါ-
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - အသုံးပြုမည့် **Application insights** ကို ရွေးချယ်ပါ (လိုအပ်ပါက အသစ်တစ်ခု ဖန်တီးပါ)။
     - အသုံးပြုမည့် **Container registry** ကို ရွေးချယ်ပါ (လိုအပ်ပါက အသစ်တစ်ခု ဖန်တီးပါ)။
 
-    ![Fill AZML.](../../../../../../imgs/02/FineTuning-PromptFlow/01-03-fill-AZML.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.my.png)
 
 1. **Review + Create** ကို ရွေးချယ်ပါ။
 
@@ -82,17 +82,17 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > Pay-As-You-Go subscription များ (standard subscription အမျိုးအစား) သာ GPU ခွဲဝေပေးခြင်းအတွက် အရည်အချင်းရှိပြီး၊ benefit subscription များကို လက်ရှိတွင် မထောက်ပံ့ပါ။
 >
-> Visual Studio Enterprise Subscription ကဲ့သို့ benefit subscription များ သို့မဟုတ် fine-tuning နှင့် deployment လုပ်ငန်းစဉ်ကို အမြန်စမ်းသပ်လိုသူများအတွက် CPU ဖြင့် dataset သေးငယ်သည့် fine-tuning လုပ်နည်းလမ်းညွှန်ချက်များလည်း ပါဝင်သည်။ သို့သော် GPU နှင့် dataset ကြီးများ အသုံးပြုပါက fine-tuning ရလဒ်များ ပိုမိုကောင်းမွန်သည်ကို သတိပြုပါ။
+> Benefit subscription များ (ဥပမာ Visual Studio Enterprise Subscription) သို့မဟုတ် fine-tuning နှင့် deployment လုပ်ငန်းစဉ်ကို အမြန်စမ်းသပ်လိုသူများအတွက် CPU ဖြင့် dataset သေးငယ်သုံး၍ fine-tuning ပြုလုပ်နည်းလမ်းညွှန်ချက်များလည်း ပါဝင်သည်။ သို့သော် GPU နှင့် dataset ကြီးများ အသုံးပြုပါက fine-tuning ရလဒ်များ ပိုမိုကောင်းမွန်ပါသည်။
 
 1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) သို့ သွားပါ။
 
 1. *Standard NCADSA100v4 Family* ကွိုတားတောင်းဆိုရန် အောက်ပါအတိုင်း လုပ်ဆောင်ပါ-
 
     - ဘယ်ဘက် tab မှ **Quota** ကို ရွေးချယ်ပါ။
-    - အသုံးပြုမည့် **Virtual machine family** ကို ရွေးချယ်ပါ။ ဥပမာအားဖြင့် *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* ကို ရွေးချယ်ပါ၊ ၎င်းတွင် *Standard_NC24ads_A100_v4* GPU ပါဝင်သည်။
+    - အသုံးပြုမည့် **Virtual machine family** ကို ရွေးချယ်ပါ။ ဥပမာ *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* (Standard_NC24ads_A100_v4 GPU ပါဝင်သည်) ကို ရွေးချယ်ပါ။
     - နေရာပြောင်းခြင်း မီနူးမှ **Request quota** ကို ရွေးချယ်ပါ။
 
-        ![Request quota.](../../../../../../imgs/02/FineTuning-PromptFlow/01-04-request-quota.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.my.png)
 
     - Request quota စာမျက်နှာတွင် အသုံးပြုလိုသည့် **New cores limit** ကို ထည့်ပါ။ ဥပမာ 24။
     - Request quota စာမျက်နှာတွင် **Submit** ကို နှိပ်၍ GPU ကွိုတားတောင်းဆိုပါ။
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Portal စာမျက်နှာ၏ အပေါ်ဆုံးရှိ **search bar** တွင် *managed identities* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Managed Identities** ကို ရွေးချယ်ပါ။
 
-    ![Type managed identities.](../../../../../../imgs/02/FineTuning-PromptFlow/01-05-type-managed-identities.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.my.png)
 
 1. **+ Create** ကို ရွေးချယ်ပါ။
 
-    ![Select create.](../../../../../../imgs/02/FineTuning-PromptFlow/01-06-select-create.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.my.png)
 
 1. အောက်ပါ အချက်များကို ပြုလုပ်ပါ-
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - အသုံးပြုမည့် **Resource group** ကို ရွေးချယ်ပါ။
     - **Role** ကို **Contributor** အဖြစ် ရွေးချယ်ပါ။
 
-    ![Fill contributor role.](../../../../../../imgs/02/FineTuning-PromptFlow/01-07-fill-contributor-role.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.my.png)
 
 1. **Save** ကို နှိပ်ပါ။
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Portal စာမျက်နှာ၏ အပေါ်ဆုံးရှိ **search bar** တွင် *storage accounts* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Storage accounts** ကို ရွေးချယ်ပါ။
 
-    ![Type storage accounts.](../../../../../../imgs/02/FineTuning-PromptFlow/01-08-type-storage-accounts.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.my.png)
 
 1. Azure Machine Learning workspace နှင့် ဆက်စပ်ထားသော storage account ကို ရွေးချယ်ပါ။ ဥပမာ *finetunephistorage*။
 
@@ -158,11 +158,11 @@ CO_OP_TRANSLATOR_METADATA:
     - နေရာပြောင်းခြင်း မီနူးမှ **+ Add** ကို ရွေးချယ်ပါ။
     - နေရာပြောင်းခြင်း မီနူးမှ **Add role assignment** ကို ရွေးချယ်ပါ။
 
-    ![Add role.](../../../../../../imgs/02/FineTuning-PromptFlow/01-09-add-role.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.my.png)
 
 1. Add role assignment စာမျက်နှာတွင် အောက်ပါအတိုင်း လုပ်ဆောင်ပါ-
 
-    - Role စာမျက်နှာတွင် **search bar** တွင် *Storage Blob Data Reader* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Storage Blob Data Reader** ကို ရွေးချယ်ပါ။
+    - Role စာမျက်နှာတွင် *Storage Blob Data Reader* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Storage Blob Data Reader** ကို ရွေးချယ်ပါ။
     - Role စာမျက်နှာတွင် **Next** ကို နှိပ်ပါ။
     - Members စာမျက်နှာတွင် **Assign access to** ကို **Managed identity** အဖြစ် ရွေးချယ်ပါ။
     - Members စာမျက်နှာတွင် **+ Select members** ကို နှိပ်ပါ။
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Select managed identities စာမျက်နှာတွင် ဖန်တီးထားသော Manage Identity ကို ရွေးချယ်ပါ။ ဥပမာ *finetunephi-managedidentity*။
     - Select managed identities စာမျက်နှာတွင် **Select** ကို နှိပ်ပါ။
 
-    ![Select managed identity.](../../../../../../imgs/02/FineTuning-PromptFlow/01-10-select-managed-identity.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.my.png)
 
 1. **Review + assign** ကို ရွေးချယ်ပါ။
 
@@ -179,9 +179,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Portal စာမျက်နှာ၏ အပေါ်ဆုံးရှိ **search bar** တွင် *container registries* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Container registries** ကို ရွေးချယ်ပါ။
 
-    ![Type container registries.](../../../../../../imgs/02/FineTuning-PromptFlow/01-11-type-container-registries.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.my.png)
 
-1. Azure Machine Learning workspace နှင့် ဆက်စပ်ထားသော container registry ကို ရွေးချယ်ပါ။ ဥပမာ *finetunephicontainerregistries*
+1. Azure Machine Learning workspace နှင့် ဆက်စပ်ထားသော container registry ကို ရွေးချယ်ပါ။ ဥပမာ *finetunephicontainerregistries*။
 
 1. Add role assignment စာမျက်နှာသို့ သွားရန် အောက်ပါအတိုင်း လုပ်ဆောင်ပါ-
 
@@ -191,7 +191,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Add role assignment စာမျက်နှာတွင် အောက်ပါအတိုင်း လုပ်ဆောင်ပါ-
 
-    - Role စာမျက်နှာတွင် **search bar** တွင် *AcrPull* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **AcrPull** ကို ရွေးချယ်ပါ။
+    - Role စာမျက်နှာတွင် *AcrPull* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **AcrPull** ကို ရွေးချယ်ပါ။
     - Role စာမျက်နှာတွင် **Next** ကို နှိပ်ပါ။
     - Members စာမျက်နှာတွင် **Assign access to** ကို **Managed identity** အဖြစ် ရွေးချယ်ပါ။
     - Members စာမျက်နှာတွင် **+ Select members** ကို နှိပ်ပါ။
@@ -203,15 +203,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Project တည်ဆောက်ခြင်း
 
-ယခု သင်လုပ်ဆောင်မည့်အရာမှာ အသုံးပြုသူနှင့် ဆက်သွယ်နိုင်ပြီး Azure Cosmos DB မှ သိမ်းဆည်းထားသော စကားပြောမှတ်တမ်းများကို အသုံးပြု၍ တုံ့ပြန်ချက်များ ပေးနိုင်မည့် အစီအစဉ်တစ်ခု ဖန်တီးရန် virtual environment တစ်ခု တည်ဆောက်ခြင်းဖြစ်သည်။
+ယခု သင်သည် အလုပ်လုပ်ရန် ဖိုလ်ဒါတစ်ခု ဖန်တီးပြီး၊ အသုံးပြုသူနှင့် ဆက်သွယ်နိုင်သော ပရိုဂရမ်တစ်ခု ဖန်တီးရန် virtual environment တစ်ခု တည်ဆောက်မည်ဖြစ်သည်။ ထို့အပြင် Azure Cosmos DB မှ သိမ်းဆည်းထားသော စကားပြောမှတ်တမ်းများကို အသုံးပြု၍ တုံ့ပြန်ချက်များကို အကောင်းဆုံး ထုတ်ပေးနိုင်မည်ဖြစ်သည်။
 
-#### အလုပ်လုပ်မည့် ဖိုလ်ဒါ တည်ဆောက်ခြင်း
+#### အလုပ်လုပ်ရန် ဖိုလ်ဒါတစ်ခု ဖန်တီးခြင်း
 
-1. Terminal ပြတင်းပ
+1. Terminal ပြတင်း
 > [!NOTE]
 >
 > အလုပ်ဖြစ်ခဲ့ရင် command prompt မတိုင်ခင်မှာ *(.venv)* ကိုမြင်ရပါမယ်။
-#### လိုအပ်သော package များ 설치하기
+#### လိုအပ်သော package များ 설치ခြင်း
 
 1. လိုအပ်သော package များ 설치ရန် terminal ထဲတွင် အောက်ပါ command များကို ရိုက်ထည့်ပါ။
 
@@ -226,22 +226,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### project ဖိုင်များ ဖန်တီးခြင်း
 
-ဒီလေ့ကျင့်မှုတွင် ကျွန်ုပ်တို့ project အတွက် အရေးကြီးသော ဖိုင်များကို ဖန်တီးပါမည်။ ဒီဖိုင်များတွင် dataset ကို download လုပ်ရန် script၊ Azure Machine Learning ပတ်ဝန်းကျင်ကို စတင်တပ်ဆင်ရန် script၊ Phi-3 မော်ဒယ်ကို fine-tune လုပ်ရန် script နှင့် fine-tuned မော်ဒယ်ကို deploy လုပ်ရန် script များ ပါဝင်သည်။ ထို့အပြင် fine-tuning ပတ်ဝန်းကျင်ကို တပ်ဆင်ရန် *conda.yml* ဖိုင်ကိုလည်း ဖန်တီးပါမည်။
+ဒီလေ့ကျင့်ခန်းမှာ ကျွန်တော်တို့ project အတွက် အရေးကြီးဖိုင်တွေကို ဖန်တီးမှာဖြစ်ပါတယ်။ ဒီဖိုင်တွေမှာ dataset ကို download လုပ်ဖို့ script, Azure Machine Learning ပတ်ဝန်းကျင်ကို စတင်တပ်ဆင်ဖို့ script, Phi-3 model ကို fine-tune လုပ်ဖို့ script နဲ့ fine-tuned model ကို deploy လုပ်ဖို့ script တွေ ပါဝင်ပါတယ်။ ထို့အပြင် fine-tuning ပတ်ဝန်းကျင်ကို တပ်ဆင်ဖို့ *conda.yml* ဖိုင်ကိုလည်း ဖန်တီးပါမယ်။
 
-ဒီလေ့ကျင့်မှုတွင် သင်လုပ်ဆောင်မည့်အရာများမှာ -
+ဒီလေ့ကျင့်ခန်းမှာ သင်လုပ်ဆောင်မယ့်အရာတွေကတော့ -
 
-- dataset ကို download လုပ်ရန် *download_dataset.py* ဖိုင်ကို ဖန်တီးပါ။
-- Azure Machine Learning ပတ်ဝန်းကျင်ကို စတင်တပ်ဆင်ရန် *setup_ml.py* ဖိုင်ကို ဖန်တီးပါ။
-- *finetuning_dir* ဖိုလ်ဒါအတွင်း *fine_tune.py* ဖိုင်ကို ဖန်တီးပြီး dataset ကို အသုံးပြု၍ Phi-3 မော်ဒယ်ကို fine-tune လုပ်ပါ။
-- fine-tuning ပတ်ဝန်းကျင်ကို တပ်ဆင်ရန် *conda.yml* ဖိုင်ကို ဖန်တီးပါ။
-- fine-tuned မော်ဒယ်ကို deploy လုပ်ရန် *deploy_model.py* ဖိုင်ကို ဖန်တီးပါ။
-- fine-tuned မော်ဒယ်နှင့် Prompt flow ကို ပေါင်းစည်းပြီး မော်ဒယ်ကို အကောင်အထည်ဖော်ရန် *integrate_with_promptflow.py* ဖိုင်ကို ဖန်တီးပါ။
-- Prompt flow အတွက် workflow ဖွဲ့စည်းမှုကို သတ်မှတ်ရန် *flow.dag.yml* ဖိုင်ကို ဖန်တီးပါ။
+- dataset ကို download လုပ်ဖို့ *download_dataset.py* ဖိုင်ကို ဖန်တီးပါ။
+- Azure Machine Learning ပတ်ဝန်းကျင်ကို စတင်တပ်ဆင်ဖို့ *setup_ml.py* ဖိုင်ကို ဖန်တီးပါ။
+- *finetuning_dir* ဖိုလ်ဒါအတွင်းမှာ Phi-3 model ကို dataset အသုံးပြုပြီး fine-tune လုပ်ဖို့ *fine_tune.py* ဖိုင်ကို ဖန်တီးပါ။
+- fine-tuning ပတ်ဝန်းကျင်ကို တပ်ဆင်ဖို့ *conda.yml* ဖိုင်ကို ဖန်တီးပါ။
+- fine-tuned model ကို deploy လုပ်ဖို့ *deploy_model.py* ဖိုင်ကို ဖန်တီးပါ။
+- fine-tuned model ကို Prompt flow နဲ့ ပေါင်းစည်းပြီး model ကို 실행ဖို့ *integrate_with_promptflow.py* ဖိုင်ကို ဖန်တီးပါ။
+- Prompt flow အတွက် workflow ဖွဲ့စည်းမှုကို သတ်မှတ်ဖို့ flow.dag.yml ဖိုင်ကို ဖန်တီးပါ။
 - Azure အချက်အလက်များ ထည့်သွင်းရန် *config.py* ဖိုင်ကို ဖန်တီးပါ။
 
 > [!NOTE]
 >
-> ပြည့်စုံသော ဖိုလ်ဒါ ဖွဲ့စည်းမှု -
+> ပြည့်စုံသော ဖိုလ်ဒါဖွဲ့စည်းမှု -
 >
 > ```text
 > └── YourUserName
@@ -263,27 +263,27 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **Open Folder** ကို ရွေးချယ်ပါ။
 
-1. သင်ဖန်တီးထားသော *finetune-phi* ဖိုလ်ဒါကို ရွေးချယ်ပါ၊ အဆိုပါဖိုလ်ဒါသည် *C:\Users\yourUserName\finetune-phi* တွင် တည်ရှိသည်။
+1. သင်ဖန်တီးထားသော *finetune-phi* ဖိုလ်ဒါကို ရွေးချယ်ပါ၊ အဲဒါက *C:\Users\yourUserName\finetune-phi* မှာရှိပါတယ်။
 
-    ![Open project floder.](../../../../../../imgs/02/FineTuning-PromptFlow/01-12-open-project-folder.png)
+    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.my.png)
 
-1. Visual Studio Code ၏ ဘယ်ဘက် panel တွင် right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *download_dataset.py* ဟု အမည်ပေး၍ ဖိုင်အသစ်တစ်ခု ဖန်တီးပါ။
+1. Visual Studio Code ၏ ဘယ်ဘက် panel မှာ right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *download_dataset.py* ဆိုတဲ့ ဖိုင်အသစ်ကို ဖန်တီးပါ။
 
-1. Visual Studio Code ၏ ဘယ်ဘက် panel တွင် right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *setup_ml.py* ဟု အမည်ပေး၍ ဖိုင်အသစ်တစ်ခု ဖန်တီးပါ။
+1. Visual Studio Code ၏ ဘယ်ဘက် panel မှာ right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *setup_ml.py* ဆိုတဲ့ ဖိုင်အသစ်ကို ဖန်တီးပါ။
 
-1. Visual Studio Code ၏ ဘယ်ဘက် panel တွင် right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *deploy_model.py* ဟု အမည်ပေး၍ ဖိုင်အသစ်တစ်ခု ဖန်တီးပါ။
+1. Visual Studio Code ၏ ဘယ်ဘက် panel မှာ right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *deploy_model.py* ဆိုတဲ့ ဖိုင်အသစ်ကို ဖန်တီးပါ။
 
-    ![Create new file.](../../../../../../imgs/02/FineTuning-PromptFlow/01-13-create-new-file.png)
+    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.my.png)
 
-1. Visual Studio Code ၏ ဘယ်ဘက် panel တွင် right-click ပြုလုပ်ပြီး **New Folder** ကို ရွေးချယ်ကာ *finetuning_dir* ဟု အမည်ပေး၍ ဖိုလ်ဒါအသစ်တစ်ခု ဖန်တီးပါ။
+1. Visual Studio Code ၏ ဘယ်ဘက် panel မှာ right-click ပြုလုပ်ပြီး **New Folder** ကို ရွေးချယ်ကာ *finetuning_dir* ဆိုတဲ့ ဖိုလ်ဒါအသစ်ကို ဖန်တီးပါ။
 
-1. *finetuning_dir* ဖိုလ်ဒါအတွင်း *fine_tune.py* ဟု အမည်ပေး၍ ဖိုင်အသစ်တစ်ခု ဖန်တီးပါ။
+1. *finetuning_dir* ဖိုလ်ဒါအတွင်း *fine_tune.py* ဆိုတဲ့ ဖိုင်အသစ်ကို ဖန်တီးပါ။
 
 #### *conda.yml* ဖိုင် ဖန်တီးခြင်းနှင့် ပြင်ဆင်ခြင်း
 
-1. Visual Studio Code ၏ ဘယ်ဘက် panel တွင် right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *conda.yml* ဟု အမည်ပေး၍ ဖိုင်အသစ်တစ်ခု ဖန်တီးပါ။
+1. Visual Studio Code ၏ ဘယ်ဘက် panel မှာ right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *conda.yml* ဆိုတဲ့ ဖိုင်အသစ်ကို ဖန်တီးပါ။
 
-1. Phi-3 မော်ဒယ်အတွက် fine-tuning ပတ်ဝန်းကျင် တပ်ဆင်ရန် အောက်ပါ code များကို *conda.yml* ဖိုင်ထဲ ထည့်သွင်းပါ။
+1. Phi-3 model အတွက် fine-tuning ပတ်ဝန်းကျင်ကို တပ်ဆင်ရန် အောက်ပါ code ကို *conda.yml* ဖိုင်ထဲ ထည့်ပါ။
 
     ```yml
     name: phi-3-training-env
@@ -311,9 +311,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### *config.py* ဖိုင် ဖန်တီးခြင်းနှင့် ပြင်ဆင်ခြင်း
 
-1. Visual Studio Code ၏ ဘယ်ဘက် panel တွင် right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *config.py* ဟု အမည်ပေး၍ ဖိုင်အသစ်တစ်ခု ဖန်တီးပါ။
+1. Visual Studio Code ၏ ဘယ်ဘက် panel မှာ right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *config.py* ဆိုတဲ့ ဖိုင်အသစ်ကို ဖန်တီးပါ။
 
-1. သင့် Azure အချက်အလက်များ ထည့်သွင်းရန် အောက်ပါ code များကို *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
+1. သင့် Azure အချက်အလက်များကို ထည့်သွင်းရန် အောက်ပါ code ကို *config.py* ဖိုင်ထဲ ထည့်ပါ။
 
     ```python
     # Azure settings
@@ -349,38 +349,38 @@ CO_OP_TRANSLATOR_METADATA:
     - သင်အသုံးပြုနေသော Azure Subscription ကို ရွေးချယ်ပါ။
     - Subscription ID ကို ကူးယူပြီး *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
 
-    ![Find subscription id.](../../../../../../imgs/02/FineTuning-PromptFlow/01-14-find-subscriptionid.png)
+    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.my.png)
 
 1. Azure Workspace Name ထည့်သွင်းရန် အောက်ပါအဆင့်များကို လုပ်ဆောင်ပါ။
 
     - သင်ဖန်တီးထားသော Azure Machine Learning resource သို့ သွားပါ။
-    - သင့်အကောင့်အမည်ကို ကူးယူပြီး *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
+    - သင့်အကောင့်နာမည်ကို ကူးယူပြီး *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
 
-    ![Find Azure Machine Learning name.](../../../../../../imgs/02/FineTuning-PromptFlow/01-15-find-AZML-name.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.my.png)
 
 1. Azure Resource Group Name ထည့်သွင်းရန် အောက်ပါအဆင့်များကို လုပ်ဆောင်ပါ။
 
     - သင်ဖန်တီးထားသော Azure Machine Learning resource သို့ သွားပါ။
     - Azure Resource Group Name ကို ကူးယူပြီး *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
 
-    ![Find resource group name.](../../../../../../imgs/02/FineTuning-PromptFlow/01-16-find-AZML-resourcegroup.png)
+    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.my.png)
 
 2. Azure Managed Identity name ထည့်သွင်းရန် အောက်ပါအဆင့်များကို လုပ်ဆောင်ပါ။
 
     - သင်ဖန်တီးထားသော Managed Identities resource သို့ သွားပါ။
     - Azure Managed Identity name ကို ကူးယူပြီး *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
 
-    ![Find UAI.](../../../../../../imgs/02/FineTuning-PromptFlow/01-17-find-uai.png)
+    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.my.png)
 
 ### Fine-tuning အတွက် dataset ပြင်ဆင်ခြင်း
 
-ဒီလေ့ကျင့်မှုတွင် *download_dataset.py* ဖိုင်ကို run ပြီး *ULTRACHAT_200k* dataset များကို သင့် local ပတ်ဝန်းကျင်သို့ download လုပ်ပါမည်။ ထို့နောက် ဒီ dataset များကို အသုံးပြု၍ Azure Machine Learning တွင် Phi-3 မော်ဒယ်ကို fine-tune လုပ်ပါမည်။
+ဒီလေ့ကျင့်ခန်းမှာ *download_dataset.py* ဖိုင်ကို run လုပ်ပြီး *ULTRACHAT_200k* dataset ကို သင့် local ပတ်ဝန်းကျင်သို့ download လုပ်ပါမယ်။ ထို့နောက် ဒီ dataset ကို အသုံးပြုပြီး Azure Machine Learning မှာ Phi-3 model ကို fine-tune လုပ်ပါမယ်။
 
 #### *download_dataset.py* ဖြင့် dataset ကို download လုပ်ခြင်း
 
-1. Visual Studio Code တွင် *download_dataset.py* ဖိုင်ကို ဖွင့်ပါ။
+1. Visual Studio Code မှာ *download_dataset.py* ဖိုင်ကို ဖွင့်ပါ။
 
-1. အောက်ပါ code များကို *download_dataset.py* ထဲ ထည့်သွင်းပါ။
+1. အောက်ပါ code ကို *download_dataset.py* ထဲ ထည့်ပါ။
 
     ```python
     import json
@@ -447,45 +447,44 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> **CPU အသုံးပြု၍ အနည်းငယ် dataset ဖြင့် fine-tuning လုပ်ရန် လမ်းညွှန်ချက်**
+> **CPU အသုံးပြုပြီး အနည်းငယ် dataset ဖြင့် fine-tuning လုပ်ရန် လမ်းညွှန်ချက်**
 >
-> CPU ဖြင့် fine-tuning လုပ်လိုပါက၊ Visual Studio Enterprise Subscription ကဲ့သို့သော benefit subscription ရှိသူများ သို့မဟုတ် fine-tuning နှင့် deployment လုပ်ငန်းစဉ်ကို အမြန်စမ်းသပ်လိုသူများအတွက် ဒီနည်းလမ်း သင့်တော်သည်။
+> CPU ဖြင့် fine-tuning လုပ်ချင်ပါက ဒီနည်းလမ်းက Visual Studio Enterprise Subscription ကဲ့သို့သော benefit subscription ရှိသူများ သို့မဟုတ် fine-tuning နဲ့ deployment လုပ်ငန်းစဉ်ကို အမြန်စမ်းသပ်ချင်သူများအတွက် သင့်တော်ပါတယ်။
 >
 > `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` ကို `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')` ဖြင့် အစားထိုးပါ။
 >
 
-1. terminal ထဲတွင် အောက်ပါ command ကို ရိုက်ထည့်ကာ script ကို run ပြီး dataset ကို သင့် local ပတ်ဝန်းကျင်သို့ download လုပ်ပါ။
+1. terminal ထဲတွင် အောက်ပါ command ကို ရိုက်ထည့်ပြီး script ကို run လုပ်ကာ dataset ကို သင့် local ပတ်ဝန်းကျင်သို့ download လုပ်ပါ။
 
     ```console
     python download_data.py
     ```
 
-1. dataset များကို သင့် local *finetune-phi/data* directory တွင် အောင်မြင်စွာ သိမ်းဆည်းထားကြောင်း စစ်ဆေးပါ။
+1. dataset များကို သင့် local *finetune-phi/data* directory ထဲသို့ အောင်မြင်စွာ သိမ်းဆည်းထားကြောင်း စစ်ဆေးပါ။
 
 > [!NOTE]
 >
 > **Dataset အရွယ်အစားနှင့် fine-tuning အချိန်**
 >
-> ဒီ E2E နမူနာတွင် dataset ၏ ၁% (`train_sft[:1%]`) ကိုသာ အသုံးပြုသည်။ ဒါကြောင့် ဒေတာအရေအတွက် လျော့နည်းပြီး upload နှင့် fine-tuning လုပ်ငန်းစဉ်များ မြန်ဆန်စေသည်။ သင် training အချိန်နှင့် မော်ဒယ်စွမ်းဆောင်ရည်အကြား သင့်တော်သော အချိုးကို ရှာဖွေရန် အချိုးကို ပြောင်းလဲနိုင်သည်။ dataset ၏ အနည်းငယ်သာ အသုံးပြုခြင်းကြောင့် fine-tuning အချိန် လျော့နည်းပြီး E2E နမူနာအတွက် လုပ်ငန်းစဉ်ကို ပိုမိုထိန်းချုပ်နိုင်သည်။
->
+> ဒီ E2E နမူနာမှာ dataset ၏ 1% (`train_sft[:1%]`) ကိုသာ အသုံးပြုထားပါတယ်။ ဒါကြောင့် data အရေအတွက် လျော့နည်းပြီး upload နဲ့ fine-tuning လုပ်ငန်းစဉ်များ မြန်ဆန်စေပါတယ်။ သင် training အချိန်နဲ့ model performance အကြား သင့်တော်တဲ့ အချိုးကို ရှာဖွေရန် အချိုးကို ပြောင်းလဲနိုင်ပါတယ်။ dataset ၏ အနည်းငယ်သာ အသုံးပြုခြင်းက fine-tuning အချိန်ကို လျော့နည်းစေပြီး E2E နမူနာအတွက် လုပ်ငန်းစဉ်ကို ပိုမိုထိရောက်စေပါတယ်။
 
-## အခြေအနေ ၂: Phi-3 မော်ဒယ်ကို fine-tune လုပ်ပြီး Azure Machine Learning Studio တွင် Deploy လုပ်ခြင်း
+## Scenario 2: Phi-3 model ကို fine-tune လုပ်ပြီး Azure Machine Learning Studio တွင် Deploy လုပ်ခြင်း
 
 ### Azure CLI ကို စတင်တပ်ဆင်ခြင်း
 
-သင့်ပတ်ဝန်းကျင်ကို အတည်ပြုရန် Azure CLI ကို စတင်တပ်ဆင်ရန် လိုအပ်သည်။ Azure CLI သည် command line မှတဆင့် Azure resource များကို တိုက်ရိုက် စီမံခန့်ခွဲနိုင်ပြီး Azure Machine Learning အတွက် လိုအပ်သော အတည်ပြုချက်များကို ပေးစွမ်းသည်။ စတင်ရန် [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) ကို 설치 လုပ်ပါ။
+သင့်ပတ်ဝန်းကျင်ကို အတည်ပြုရန် Azure CLI ကို စတင်တပ်ဆင်ရန် လိုအပ်ပါတယ်။ Azure CLI က command line မှတဆင့် Azure resource များကို တိုက်ရိုက်စီမံခန့်ခွဲနိုင်စေပြီး Azure Machine Learning အတွက် လိုအပ်သော အတည်ပြုချက်များကို ပေးစွမ်းပါတယ်။ စတင်ရန် [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli) ကို 설치ပါ။
 
-1. terminal ပြတင်းပေါ်ကို ဖွင့်ပြီး အောက်ပါ command ကို ရိုက်ထည့်ကာ သင့် Azure အကောင့်သို့ login ဝင်ပါ။
+1. terminal ပြတင်းပေါ်ကို ဖွင့်ပြီး သင့် Azure အကောင့်သို့ login ဝင်ရန် အောက်ပါ command ကို ရိုက်ထည့်ပါ။
 
     ```console
     az login
     ```
 
-1. သင့်အသုံးပြုမည့် Azure အကောင့်ကို ရွေးချယ်ပါ။
+1. သင့် Azure အကောင့်ကို ရွေးချယ်ပါ။
 
-1. သင့်အသုံးပြုမည့် Azure subscription ကို ရွေးချယ်ပါ။
+1. သင့် Azure subscription ကို ရွေးချယ်ပါ။
 
-    ![Find resource group name.](../../../../../../imgs/02/FineTuning-PromptFlow/02-01-login-using-azure-cli.png)
+    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.my.png)
 
 > [!TIP]
 >
@@ -496,17 +495,17 @@ CO_OP_TRANSLATOR_METADATA:
 > ```
 >
 
-### Phi-3 မော်ဒယ်ကို fine-tune လုပ်ခြင်း
+### Phi-3 model ကို fine-tune လုပ်ခြင်း
 
-ဒီလေ့ကျင့်မှုတွင် သင့်အား ပေးထားသော dataset ကို အသုံးပြု၍ Phi-3 မော်ဒယ်ကို fine-tune လုပ်ပါမည်။ ပထမဦးဆုံး *fine_tune.py* ဖိုင်တွင် fine-tuning လုပ်ငန်းစဉ်ကို သတ်မှတ်ပါမည်။ ထို့နောက် Azure Machine Learning ပတ်ဝန်းကျင်ကို ပြင်ဆင်ပြီး *setup_ml.py* ဖိုင်ကို run ပြီး fine-tuning လုပ်ငန်းစဉ်ကို စတင်ပါမည်။ ဒီ script သည် fine-tuning ကို Azure Machine Learning ပတ်ဝန်းကျင်အတွင်း ပြုလုပ်ရန် သေချာစေပါသည်။
+ဒီလေ့ကျင့်ခန်းမှာ သင့်အား ပေးထားသော dataset ကို အသုံးပြုပြီး Phi-3 model ကို fine-tune လုပ်ပါမယ်။ အရင်ဆုံး *fine_tune.py* ဖိုင်ထဲမှာ fine-tuning လုပ်ငန်းစဉ်ကို သတ်မှတ်ပါမယ်။ ထို့နောက် Azure Machine Learning ပတ်ဝန်းကျင်ကို ပြင်ဆင်ပြီး *setup_ml.py* ဖိုင်ကို run လုပ်ကာ fine-tuning လုပ်ငန်းစဉ်ကို စတင်ပါမယ်။ ဒီ script က fine-tuning ကို Azure Machine Learning ပတ်ဝန်းကျင်အတွင်းမှာ ဖြစ်ပေါ်စေပါသည်။
 
-*setup_ml.py* ကို run ပြီးနောက် Azure Machine Learning ပတ်ဝန်းကျင်တွင် fine-tuning လုပ်ငန်းစဉ်ကို စတင်ပါမည်။
+*setup_ml.py* ကို run လုပ်ခြင်းဖြင့် Azure Machine Learning ပတ်ဝန်းကျင်အတွင်း fine-tuning လုပ်ငန်းစဉ်ကို စတင်နိုင်ပါသည်။
 
-#### *fine_tune.py* ဖိုင်ထဲ code ထည့်သွင်းခြင်း
+#### *fine_tune.py* ဖိုင်ထဲ code ထည့်ခြင်း
 
-1. *finetuning_dir* ဖိုလ်ဒါသို့ သွားပြီး Visual Studio Code တွင် *fine_tune.py* ဖိုင်ကို ဖွင့်ပါ။
+1. *finetuning_dir* ဖိုလ်ဒါသို့ သွားပြီး Visual Studio Code မှာ *fine_tune.py* ဖိုင်ကို ဖွင့်ပါ။
 
-1. အောက်ပါ code များကို *fine_tune.py* ထဲ ထည့်သွင်းပါ။
+1. အောက်ပါ code ကို *fine_tune.py* ထဲ ထည့်ပါ။
 
     ```python
     import argparse
@@ -662,18 +661,18 @@ CO_OP_TRANSLATOR_METADATA:
 1. *fine_tune.py* ဖိုင်ကို သိမ်းပြီး ပိတ်ပါ။
 
 > [!TIP]
-> **Phi-3.5 မော်ဒယ်ကိုလည်း fine-tune လုပ်နိုင်သည်**
+> **Phi-3.5 model ကိုလည်း fine-tune လုပ်နိုင်ပါတယ်**
 >
-> *fine_tune.py* ဖိုင်တွင် `pretrained_model_name` ကို `"microsoft/Phi-3-mini-4k-instruct"` မှ `"microsoft/Phi-3.5-mini-instruct"` သို့ ပြောင်းလဲနိုင်သည်။ ဒီလိုပြောင်းလဲခြင်းဖြင့် Phi-3.5-mini-instruct မော်ဒယ်ကို fine-tune လုပ်နိုင်ပါသည်။ သင်စိတ်ဝင်စားသော မော်ဒယ်အမည်ကို ရှာဖွေရန် [Hugging Face](https://huggingface.co/) သို့ သွားပြီး မော်ဒယ်အမည်ကို ကူးယူပြီး script ထဲ `pretrained_model_name` တွင် ထည့်သွင်းနိုင်ပါသည်။
+> *fine_tune.py* ဖိုင်ထဲမှာ `pretrained_model_name` ကို `"microsoft/Phi-3-mini-4k-instruct"` မှ `"microsoft/Phi-3.5-mini-instruct"` သို့ ပြောင်းလဲနိုင်ပါတယ်။ ဒီလိုပြောင်းလဲခြင်းဖြင့် Phi-3.5-mini-instruct model ကို fine-tune လုပ်မှာဖြစ်ပါတယ်။ သင်စိတ်ဝင်စားသော model နာမည်ကို ရှာဖွေရန် [Hugging Face](https://huggingface.co/) ကို သွားပြီး ရှာဖွေကာ `pretrained_model_name` field ထဲသို့ ကူးထည့်နိုင်ပါသည်။
 >
 > :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.":::
 >
 
-#### *setup_ml.py* ဖိုင်ထဲ code ထည့်သွင်းခြင်း
+#### *setup_ml.py* ဖိုင်ထဲ code ထည့်ခြင်း
 
-1. Visual Studio Code တွင် *setup_ml.py* ဖိုင်ကို ဖွင့်ပါ။
+1. Visual Studio Code မှာ *setup_ml.py* ဖိုင်ကို ဖွင့်ပါ။
 
-1. အောက်ပါ code များကို *setup_ml.py* ထဲ ထည့်သွင်းပါ။
+1. အောက်ပါ code ကို *setup_ml.py* ထဲ ထည့်ပါ။
 
     ```python
     import logging
@@ -800,7 +799,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-1. `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, နှင့် `LOCATION` ကို သင့်အချက်အလက်များဖြင့် အစားထိုးပါ။
+1. `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, နဲ့ `LOCATION` ကို သင့်အချက်အလက်များဖြင့် အစားထိုးပါ။
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -812,13 +811,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 > [!TIP]
 >
-> **CPU အသုံးပြု၍ အနည်းငယ် dataset ဖြင့် fine-tuning လုပ်ရန် လမ်းညွှန်ချက်**
+> **CPU အသုံးပြုပြီး အနည်းငယ် dataset ဖြင့် fine-tuning လုပ်ရန် လမ်းညွှန်ချက်**
 >
-> CPU ဖြင့် fine-tuning လုပ်လိုပါက၊ Visual Studio Enterprise Subscription ကဲ့သို့သော benefit subscription ရှိသူများ သို့မဟုတ် fine-tuning နှင့် deployment လုပ်ငန်းစဉ်ကို အမြန်စမ်းသပ်လိုသူများအတွက် ဒီနည်းလမ်း သင့်တော်သည်။
+> CPU ဖြင့် fine-tuning လုပ်ချင်ပါက ဒီနည်းလမ်းက Visual Studio Enterprise Subscription ကဲ့သို့သော benefit subscription ရှိသူများ သို့မဟုတ် fine-tuning နဲ့ deployment လုပ်ငန်းစဉ်ကို အမြန်စမ်းသပ်ချင်သူများအတွက် သင့်တော်ပါတယ်။
 >
 > 1. *setup_ml* ဖိုင်ကို ဖွင့်ပါ။
-> 2. `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, နှင့် `DOCKER_IMAGE_NAME` ကို အောက်ပါအတိုင်း ပြောင်းလဲပါ။ *Standard_E16s_v3* ကို အသုံးမပြုနိုင်ပါက CPU instance တစ်ခု သို့မဟုတ် အသစ် quota တောင်းနိုင်သည်။
-> 3. `LOCATION` ကို သင့်အချက်အလက်ဖြင့် အစားထိုးပါ။
+> 2. `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, နဲ့ `DOCKER_IMAGE_NAME` ကို အောက်ပါအတိုင်း ပြောင်းလဲပါ။ *Standard_E16s_v3* ကို အသုံးမပြုနိုင်ပါက CPU instance တူညီသည့် အခြား instance သို့မဟုတ် quota အသစ် တောင်းနိုင်ပါသည်။
+> 3. `LOCATION` ကို သင့်အချက်အလက်ဖြင့် ပြောင်းလဲပါ။
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -829,26 +828,36 @@ CO_OP_TRANSLATOR_METADATA:
 >    ```
 >
 
-1. *setup_ml.py* script ကို run ပြီး Azure Machine Learning တွင် fine-tuning လုပ်ငန်းစဉ်ကို စတင်ရန် အောက်ပါ command ကို ရိုက်ထည့်ပါ။
+1. *setup_ml.py* script ကို run လုပ်ကာ Azure Machine Learning မှာ fine-tuning လုပ်ငန်းစဉ်ကို စတင်ရန် အောက်ပါ command ကို ရိုက်ထည့်ပါ။
 
     ```python
     python setup_ml.py
     ```
 
-1. ဒီလေ့ကျင့်မှုတွင် သင်သည် Azure Machine Learning ကို အသုံးပြု၍ Phi-3 မော်ဒယ်ကို အောင်မြင်စွာ fine-tune လုပ်နိုင်ခဲ့ပါသည်။ *setup_ml.py* script ကို run ပြီးနောက် Azure Machine Learning ပတ်ဝန်းကျင်ကို စတင်တပ်ဆင်ပြီး *fine_tune.py* ဖိုင်တွင် သတ်မှတ်ထားသော fine-tuning လုပ်ငန်းစဉ်ကို စတင်ခဲ့ပါသည်။ fine-tuning လုပ်ငန်းစဉ်သည် အချိန်ကြာနိုင်ပါသည်။ `python setup_ml.py` command ကို run ပြီးနောက် လုပ်ငန်းစဉ် ပြီးဆုံးရန် စောင့်ဆိုင်းရမည်ဖြစ်သည်။ terminal တွင် ပေးထားသော link ဖြင့် Azure Machine Learning portal တွင် fine-tuning job အခြေအနေကို ကြည့်ရှုနိုင်ပါသည်။
+1. ဒီလေ့ကျင့်ခန်းမှာ သင် Azure Machine Learning ကို အသုံးပြုပြီး Phi-3 model ကို အောင်မြင်စွာ fine-tune လုပ်နိုင်ခဲ့ပါပြီ။ *setup_ml.py* script ကို run လုပ်ခြင်းဖြင့် Azure Machine Learning ပတ်ဝန်းကျင်ကို စတင်တပ်ဆင်ပြီး *fine_tune.py* ဖိုင်ထဲ သတ်မှတ်ထားသော fine-tuning လုပ်ငန်းစဉ်ကို စတင်ခဲ့ပါသည်။ fine-tuning လုပ်ငန်းစဉ်မှာ အချိန်ကြာနိုင်ပါသည်။ `python setup_ml.py` command run ပြီးနောက် လုပ်ငန်းစဉ်ပြီးဆုံးရန် စောင့်ဆိုင်းရပါမည်။ terminal မှာ ပေးထားသော link ကို အသုံးပြုပြီး Azure Machine Learning portal တွင် fine-tuning job အခြေအနေကို ကြည့်ရှုနိုင်ပါသည်။
 
-    ![See finetuning job.](../../../../../../imgs/02/FineTuning-PromptFlow/02-02-see-finetuning-job.png)
+    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.my.png)
 
-### fine-tuned မော်ဒယ်ကို deploy လုပ်ခြင်း
+### Fine-tuned model ကို deploy လုပ်ခြင်း
 
-fine-tuned Phi-3 မော်ဒယ်ကို Prompt Flow နှင့် ပေါင်းစည်းရန် မော်ဒယ်ကို real-time inference အတွက် အသုံးပြုနိုင်ရန် deploy လုပ်ရမည်ဖြစ်သည်။ ဒီလုပ်ငန်းစဉ်တွင် မော်ဒယ်ကို register လုပ်ခြင်း၊ online endpoint တစ်ခု ဖန်တီးခြင်းနှင့် မော်ဒယ်ကို deploy လုပ်ခြင်းတို့ ပါဝင်သည်။
+fine-tuned Phi-3 model ကို Prompt Flow နဲ့ ပေါင်းစည်းရန် အတွက် model ကို real-time inference အတွက် အသုံးပြုနိုင်ရန် deploy လုပ်ရပါမယ်။ ဒီလုပ်ငန်းစဉ်မှာ model ကို register လုပ်ခြင်း၊ online endpoint ဖန်တီးခြင်းနဲ့ model ကို deploy လုပ်ခြင်းတို့ ပါဝင်ပါတယ်။
 
-#### deployment အ
-- Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+#### deployment အတွက် model နာမည်၊ endpoint နာမည်နဲ့ deployment နာမည် သတ်မှတ်ခြင်း
 
-1. သင့်ရဲ့ အသေးစိတ်အချက်အလက်များဖြင့် `COMPUTE_INSTANCE_TYPE` ကို အစားထိုးပါ။
+1. *config.py* ဖိုင်ကို ဖွင့်ပါ။
 
-1. *deploy_model.py* script ကို run ဖို့အတွက် အောက်ပါ command ကို ရိုက်ထည့်ပြီး Azure Machine Learning မှာ deployment လုပ်ငန်းစဉ်ကို စတင်ပါ။
+1. `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` ကို သင့် model အတွက် လိုချင်သော နာမည်ဖြင့် အစားထိုးပါ။
+
+1. `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` ကို သင့် endpoint အတွက် လိုချင်သော နာမည်ဖြင့် အစားထိုးပါ။
+
+1. `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` ကို သင့် deployment အတွက် လိုချင်သော နာမည်ဖြင့် အစားထိုးပါ။
+
+
+- သင့်အလုပ်အမည်ကို *deploy_model.py* ဖိုင်ထဲရှိ `JOB_NAME = "your-job-name"` မှာ ကူးထည့်ပါ။
+
+1. `COMPUTE_INSTANCE_TYPE` ကို သင့်အသေးစိတ်အချက်အလက်များဖြင့် အစားထိုးပါ။
+
+1. *deploy_model.py* စာရင်းကို အောက်ပါ command ဖြင့် run လုပ်ပြီး Azure Machine Learning တွင် deployment လုပ်ငန်းစဉ်ကို စတင်ပါ။
 
     ```python
     python deploy_model.py
@@ -856,10 +865,10 @@ fine-tuned Phi-3 မော်ဒယ်ကို Prompt Flow နှင့် ပ�
 
 
 > [!WARNING]
-> သင့်အကောင့်ကို အပိုကြေးများ မဖြစ်စေရန်၊ Azure Machine Learning workspace မှာ ဖန်တီးထားသော endpoint ကို ဖျက်ပစ်ရန် သေချာစေပါ။
+> သင့်အကောင့်တွင် အပိုကြေးများ မဖြစ်ပေါ်စေရန် Azure Machine Learning workspace တွင် ဖန်တီးထားသော endpoint ကို ဖျက်ပစ်ရန် သေချာစေပါ။
 >
 
-#### Azure Machine Learning Workspace မှာ deployment အခြေအနေ စစ်ဆေးခြင်း
+#### Azure Machine Learning Workspace တွင် deployment အခြေအနေ စစ်ဆေးခြင်း
 
 1. [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723) သို့ သွားပါ။
 
@@ -869,34 +878,34 @@ fine-tuned Phi-3 မော်ဒယ်ကို Prompt Flow နှင့် ပ�
 
 1. ဘယ်ဘက် tab မှ **Endpoints** ကို ရွေးချယ်ပါ။
 
-    ![Select endpoints.](../../../../../../imgs/02/FineTuning-PromptFlow/02-03-select-endpoints.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.my.png)
 
 2. သင်ဖန်တီးထားသော endpoint ကို ရွေးချယ်ပါ။
 
-    ![Select endpoints that you created.](../../../../../../imgs/02/FineTuning-PromptFlow/02-04-select-endpoint-created.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.my.png)
 
-3. ဒီစာမျက်နှာမှာ deployment လုပ်ငန်းစဉ်အတွင်း ဖန်တီးထားသော endpoints များကို စီမံခန့်ခွဲနိုင်ပါသည်။
+3. ဒီစာမျက်နှာတွင် deployment လုပ်ငန်းစဉ်အတွင်း ဖန်တီးထားသော endpoints များကို စီမံခန့်ခွဲနိုင်ပါသည်။
 
-## Scenario 3: Prompt flow နှင့် ပေါင်းစည်းပြီး သင့် custom model နှင့် စကားပြောခြင်း
+## အခြေအနေ ၃: Prompt flow နှင့် ပေါင်းစည်းပြီး သင့်စိတ်ကြိုက်မော်ဒယ်ဖြင့် စကားပြောခြင်း
 
-### Custom Phi-3 model ကို Prompt flow နှင့် ပေါင်းစည်းခြင်း
+### သင့်စိတ်ကြိုက် Phi-3 မော်ဒယ်ကို Prompt flow နှင့် ပေါင်းစည်းခြင်း
 
-သင့် fine-tuned model ကို အောင်မြင်စွာ deploy ပြီးပါက၊ Prompt flow နှင့် ပေါင်းစည်း၍ သင့် model ကို အချိန်နဲ့တပြေးညီ အသုံးပြုနိုင်ပြီး၊ သင့် custom Phi-3 model ဖြင့် အမျိုးမျိုးသော အပြန်အလှန် လုပ်ဆောင်ချက်များ ပြုလုပ်နိုင်ပါသည်။
+သင့် fine-tuned မော်ဒယ်ကို အောင်မြင်စွာ deploy ပြီးနောက် Prompt flow နှင့် ပေါင်းစည်း၍ သင့်မော်ဒယ်ကို အချိန်နဲ့တပြေးညီ အသုံးပြုနိုင်ပြီး သင့်စိတ်ကြိုက် Phi-3 မော်ဒယ်ဖြင့် အမျိုးမျိုးသော အပြန်အလှန် လုပ်ဆောင်ချက်များ ပြုလုပ်နိုင်ပါသည်။
 
-#### Fine-tuned Phi-3 model ၏ api key နှင့် endpoint uri ကို သတ်မှတ်ခြင်း
+#### fine-tuned Phi-3 မော်ဒယ်၏ api key နှင့် endpoint uri ကို သတ်မှတ်ခြင်း
 
-1. သင်ဖန်တီးထားသော Azure Machine Learning workspace သို့ သွားပါ။
+1. သင်ဖန်တီးထားသော Azure Machine learning workspace သို့ သွားပါ။
 1. ဘယ်ဘက် tab မှ **Endpoints** ကို ရွေးချယ်ပါ။
 1. သင်ဖန်တီးထားသော endpoint ကို ရွေးချယ်ပါ။
 1. navigation menu မှ **Consume** ကို ရွေးချယ်ပါ။
-1. သင့် **REST endpoint** ကို ကူးယူပြီး *config.py* ဖိုင်ထဲတွင် `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ကို သင့် **REST endpoint** ဖြင့် အစားထိုးပါ။
-1. သင့် **Primary key** ကို ကူးယူပြီး *config.py* ဖိုင်ထဲတွင် `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ကို သင့် **Primary key** ဖြင့် အစားထိုးပါ။
+1. သင့် **REST endpoint** ကို ကူးယူပြီး *config.py* ဖိုင်ထဲရှိ `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ကို သင့် **REST endpoint** ဖြင့် အစားထိုးပါ။
+1. သင့် **Primary key** ကို ကူးယူပြီး *config.py* ဖိုင်ထဲရှိ `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ကို သင့် **Primary key** ဖြင့် အစားထိုးပါ။
 
-    ![Copy api key and endpoint uri.](../../../../../../imgs/02/FineTuning-PromptFlow/02-05-copy-apikey-endpoint.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.my.png)
 
-#### *flow.dag.yml* ဖိုင်ထဲ ကုဒ် ထည့်သွင်းခြင်း
+#### *flow.dag.yml* ဖိုင်ထဲ ကုဒ်ထည့်ခြင်း
 
-1. Visual Studio Code မှာ *flow.dag.yml* ဖိုင်ကို ဖွင့်ပါ။
+1. Visual Studio Code တွင် *flow.dag.yml* ဖိုင်ကို ဖွင့်ပါ။
 
 1. အောက်ပါကုဒ်ကို *flow.dag.yml* ထဲသို့ ထည့်ပါ။
 
@@ -921,9 +930,9 @@ fine-tuned Phi-3 မော်ဒယ်ကို Prompt Flow နှင့် ပ�
         input_data: ${inputs.input_data}
     ```
 
-#### *integrate_with_promptflow.py* ဖိုင်ထဲ ကုဒ် ထည့်သွင်းခြင်း
+#### *integrate_with_promptflow.py* ဖိုင်ထဲ ကုဒ်ထည့်ခြင်း
 
-1. Visual Studio Code မှာ *integrate_with_promptflow.py* ဖိုင်ကို ဖွင့်ပါ။
+1. Visual Studio Code တွင် *integrate_with_promptflow.py* ဖိုင်ကို ဖွင့်ပါ။
 
 1. အောက်ပါကုဒ်ကို *integrate_with_promptflow.py* ထဲသို့ ထည့်ပါ။
 
@@ -991,17 +1000,17 @@ fine-tuned Phi-3 မော်ဒယ်ကို Prompt Flow နှင့် ပ�
 
     ```
 
-### သင့် custom model နှင့် စကားပြောခြင်း
+### သင့်စိတ်ကြိုက်မော်ဒယ်ဖြင့် စကားပြောခြင်း
 
-1. *deploy_model.py* script ကို run ဖို့အတွက် အောက်ပါ command ကို ရိုက်ထည့်ပြီး Azure Machine Learning မှာ deployment လုပ်ငန်းစဉ်ကို စတင်ပါ။
+1. *deploy_model.py* စာရင်းကို အောက်ပါ command ဖြင့် run လုပ်ပြီး Azure Machine Learning တွင် deployment လုပ်ငန်းစဉ်ကို စတင်ပါ။
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. ရလဒ် ဥပမာ - ယခု သင့် custom Phi-3 model နှင့် စကားပြောနိုင်ပါပြီ။ Fine-tuning အတွက် အသုံးပြုထားသော ဒေတာအပေါ် အခြေခံ၍ မေးခွန်းများ မေးရန် အကြံပြုပါသည်။
+1. ရလဒ်ဥပမာ - ယခု သင့်စိတ်ကြိုက် Phi-3 မော်ဒယ်နှင့် စကားပြောနိုင်ပါပြီ။ fine-tuning အတွက် အသုံးပြုထားသော ဒေတာအပေါ် အခြေခံ၍ မေးခွန်းများ မေးရန် အကြံပြုပါသည်။
 
-    ![Prompt flow example.](../../../../../../imgs/02/FineTuning-PromptFlow/02-06-promptflow-example.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.my.png)
 
 **အကြောင်းကြားချက်**  
 ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

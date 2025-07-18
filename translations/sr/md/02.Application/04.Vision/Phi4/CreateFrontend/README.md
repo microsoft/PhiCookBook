@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-05-09T20:05:05+00:00",
+  "translation_date": "2025-07-17T05:09:52+00:00",
   "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "sr"
 }
 -->
-## **Koristite Phi-4-multimodal za čitanje slika i generisanje koda**
+## **Користите Phi-4-multimodal за читање слика и генерисање кода**
 
-Phi-4-multimodal ima snažne mogućnosti čitanja slika. Hajde da pokušamo da koristimo Python za implementaciju sledećih funkcija. Slika prikazuje ChatGPT stranicu.
+Phi-4-multimodal има јаке могућности читања слика. Хајде да покушамо да користимо Python за имплементацију следећих функција. Слика је страница ChatGPT-а.
 
-![demo](../../../../../../../translated_images/demo.415266e14de58ca0799f56584dec6684be4bf8d78ab882a38c7a635830f445f4.sr.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.sr.png)
 
-### **Primer koda**
+### **Пример кода**
 
 
 
@@ -67,5 +67,5 @@ print(response)
 
 ```
 
-**Ограничење одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетом. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која могу настати коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

@@ -2,57 +2,58 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:39:47+00:00",
+  "translation_date": "2025-07-17T02:34:39+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "sw"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) ni jukwaa la chanzo huria lililoundwa kusimamia mzunguko mzima wa maisha ya ujifunzaji wa mashine.
+[MLflow](https://mlflow.org/) ni jukwaa la chanzo huria lililoundwa kusimamia mzunguko mzima wa maisha wa kujifunza mashine.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.sw.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.sw.png)
 
-MLFlow hutumika kusimamia mzunguko wa maisha wa ML, ikiwa ni pamoja na majaribio, kurudisha matokeo, uanzishaji na rejista kuu ya modeli. MLFlow kwa sasa hutoa vipengele vinne.
+MLFlow hutumika kusimamia mzunguko wa maisha wa ML, ikiwa ni pamoja na majaribio, kurudisha matokeo, uenezaji na rejista kuu ya modeli. MLflow kwa sasa hutoa vipengele vinne.
 
 - **MLflow Tracking:** Rekodi na uliza majaribio, msimbo, usanidi wa data na matokeo.
-- **MLflow Projects:** Pakia msimbo wa sayansi ya data kwa muundo unaoruhusu kuendesha tena kwenye jukwaa lolote.
-- **Mlflow Models:** Weka modeli za ujifunzaji wa mashine kwenye mazingira tofauti ya huduma.
-- **Model Registry:** Hifadhi, fafanua na simamia modeli katika hifadhi kuu.
+- **MLflow Projects:** Pakia msimbo wa sayansi ya data kwa muundo unaoruhusu kurudia utekelezaji kwenye jukwaa lolote.
+- **Mlflow Models:** Sambaza modeli za kujifunza mashine katika mazingira mbalimbali ya huduma.
+- **Model Registry:** Hifadhi, weka maelezo na simamia modeli katika hifadhidata kuu.
 
-Inajumuisha uwezo wa kufuatilia majaribio, kufunga msimbo katika kuendesha tena, na kushiriki na kupeleka modeli. MLFlow imeunganishwa na Databricks na inaunga mkono maktaba mbalimbali za ML, hivyo haihitaji maktaba maalum. Inaweza kutumika na maktaba yoyote ya ujifunzaji wa mashine na lugha yoyote ya programu, kwani hutoa REST API na CLI kwa urahisi.
+Inajumuisha uwezo wa kufuatilia majaribio, kufunga msimbo kwa utekelezaji unaorudiwa, na kushiriki na kusambaza modeli. MLFlow imeunganishwa na Databricks na inaunga mkono maktaba mbalimbali za ML, hivyo haitegemei maktaba yoyote maalum. Inaweza kutumika na maktaba yoyote ya kujifunza mashine na katika lugha yoyote ya programu, kwani hutoa REST API na CLI kwa urahisi.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.sw.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.sw.png)
 
-Vipengele muhimu vya MLFlow ni pamoja na:
+Sifa kuu za MLFlow ni pamoja na:
 
 - **Ufuatiliaji wa Majaribio:** Rekodi na linganisha vigezo na matokeo.
-- **Usimamizi wa Modeli:** Weka modeli kwenye jukwaa mbalimbali za huduma na utabiri.
-- **Model Registry:** Simamia kwa ushirikiano mzunguko wa maisha wa MLflow Models, ikiwa ni pamoja na toleo na maelezo.
-- **Projects:** Pakia msimbo wa ML kwa ajili ya kushiriki au matumizi ya uzalishaji.
-MLFlow pia inaunga mkono mzunguko wa MLOps, unaojumuisha kuandaa data, kusajili na kusimamia modeli, kufunga modeli kwa ajili ya utekelezaji, kupeleka huduma, na kufuatilia modeli. Lengo lake ni kurahisisha mchakato wa kutoka mfano hadi mtiririko wa uzalishaji, hasa katika mazingira ya wingu na edge.
+- **Usimamizi wa Modeli:** Sambaza modeli kwenye majukwaa mbalimbali ya huduma na utambuzi.
+- **Rejista ya Modeli:** Simamia kwa ushirikiano mzunguko wa maisha wa MLflow Models, ikiwa ni pamoja na toleo na maelezo.
+- **Miradi:** Pakia msimbo wa ML kwa ajili ya kushiriki au matumizi ya uzalishaji.
 
-## E2E Scenario - Kujenga wrapper na kutumia Phi-3 kama modeli ya MLFlow
+MLFlow pia inaunga mkono mzunguko wa MLOps, unaojumuisha kuandaa data, kusajili na kusimamia modeli, kufunga modeli kwa ajili ya utekelezaji, kusambaza huduma, na kufuatilia modeli. Lengo lake ni kurahisisha mchakato wa kutoka mfano wa majaribio hadi mtiririko wa kazi wa uzalishaji, hasa katika mazingira ya wingu na edge.
 
-Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzunguka Phi-3 mfano mdogo wa lugha (SLM) kisha kuutumia kama modeli ya MLFlow ama kwa ndani au wingu, mfano katika Azure Machine Learning workspace.
+## Mfano wa E2E - Kujenga wrapper na kutumia Phi-3 kama modeli ya MLFlow
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.sw.png)
+Katika sampuli hii ya E2E tutaonyesha mbinu mbili tofauti za kujenga wrapper kuzunguka modeli ndogo ya lugha Phi-3 (SLM) kisha kuendesha kama modeli ya MLFlow ama kwa ndani au kwenye wingu, mfano, katika eneo la kazi la Azure Machine Learning.
+
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.sw.png)
 
 | Mradi | Maelezo | Mahali |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline ni njia rahisi zaidi ya kujenga wrapper ikiwa unataka kutumia mfano wa HuggingFace na ladha ya majaribio ya transformers ya MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | Wakati wa kuandika, transformer pipeline haikuunga mkono uundaji wa wrapper ya MLFlow kwa mfano wa HuggingFace katika muundo wa ONNX, hata ukiwa na kifurushi cha majaribio cha optimum Python. Kwa kesi kama hizi, unaweza kujenga wrapper yako maalum ya Python kwa mode ya MLFlow | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | Transformer Pipeline ni chaguo rahisi zaidi kujenga wrapper ikiwa unataka kutumia modeli ya HuggingFace na ladha ya majaribio ya transformers ya MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | Wakati wa kuandika, pipeline ya transformer haikuunga mkono uzalishaji wa wrapper wa MLFlow kwa modeli za HuggingFace katika muundo wa ONNX, hata kwa kutumia kifurushi cha majaribio cha optimum Python. Kwa kesi kama hizi, unaweza kujenga wrapper yako maalum ya Python kwa mode ya MLFlow | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## Mradi: Transformer Pipeline
 
-1. Utahitaji vifurushi vya Python vinavyohitajika kutoka MLFlow na HuggingFace:
+1. Utahitaji vifurushi husika vya Python kutoka MLFlow na HuggingFace:
 
     ``` Python
     import mlflow
     import transformers
     ```
 
-2. Kisha, unapaswa kuanzisha transformer pipeline kwa kurejelea mfano wa Phi-3 unaolengwa katika rejista ya HuggingFace. Kama inavyoonekana kwenye kadi ya mfano ya _Phi-3-mini-4k-instruct_, kazi yake ni ya aina ya “Text Generation”:
+2. Kisha, unapaswa kuanzisha pipeline ya transformer kwa kurejelea modeli lengwa ya Phi-3 katika rejista ya HuggingFace. Kama inavyoonekana kwenye kadi ya modeli ya _Phi-3-mini-4k-instruct_, kazi yake ni ya aina ya “Uundaji wa Maandishi”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -61,7 +62,7 @@ Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzung
     )
     ```
 
-3. Sasa unaweza kuhifadhi transformer pipeline ya mfano wako wa Phi-3 katika muundo wa MLFlow na kutoa maelezo ya ziada kama njia ya kuhifadhi artifacts, usanidi maalum wa modeli na aina ya API ya utabiri:
+3. Sasa unaweza kuhifadhi pipeline ya transformer ya modeli yako ya Phi-3 katika muundo wa MLFlow na kutoa maelezo ya ziada kama njia ya kuhifadhi vitu, usanidi maalum wa modeli na aina ya API ya utambuzi:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -74,7 +75,7 @@ Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzung
 
 ## Mradi: Custom Python Wrapper
 
-1. Tunaweza kutumia hapa API ya [ONNX Runtime generate()](https://github.com/microsoft/onnxruntime-genai) ya Microsoft kwa ajili ya utabiri wa mfano wa ONNX na usimbaji/ufumbuzi wa tokeni. Unapaswa kuchagua kifurushi _onnxruntime_genai_ kwa kompyuta unayotaka, mfano huu unalenga CPU:
+1. Tunaweza kutumia hapa API ya [ONNX Runtime generate()](https://github.com/microsoft/onnxruntime-genai) ya Microsoft kwa ajili ya utambuzi wa modeli ya ONNX na usimbaji / uondoa usimbaji wa tokeni. Lazima uchague kifurushi _onnxruntime_genai_ kwa kompyuta lengwa, mfano hapa ni kwa CPU:
 
     ``` Python
     import mlflow
@@ -82,7 +83,7 @@ Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzung
     import onnxruntime_genai as og
     ```
 
-1. Darasa letu maalum lina utekelezaji wa njia mbili: _load_context()_ kuanzisha **mfano wa ONNX** wa Phi-3 Mini 4K Instruct, **vigezo vya kizalishaji** na **tokenizer**; na _predict()_ kuzalisha tokeni za matokeo kwa ombi lililotolewa:
+1. Darasa letu maalum lina utekelezaji wa njia mbili: _load_context()_ kuanzisha **modeli ya ONNX** ya Phi-3 Mini 4K Instruct, **vigezo vya jenereta** na **tokenizer**; na _predict()_ kuzalisha tokeni za matokeo kwa ombi lililotolewa:
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -113,7 +114,7 @@ Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzung
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Sasa unaweza kutumia _mlflow.pyfunc.log_model()_ kuunda wrapper maalum ya Python (katika muundo wa pickle) kwa mfano wa Phi-3, pamoja na mfano halisi wa ONNX na utegemezi unaohitajika:
+1. Sasa unaweza kutumia _mlflow.pyfunc.log_model()_ kuunda wrapper maalum ya Python (katika muundo wa pickle) kwa modeli ya Phi-3, pamoja na modeli halisi ya ONNX na utegemezi unaohitajika:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -128,9 +129,9 @@ Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzung
     )
     ```
 
-## Sahihi za modeli zilizotengenezwa za MLFlow
+## Sainia za modeli za MLFlow zilizotengenezwa
 
-1. Katika hatua ya 3 ya mradi wa Transformer Pipeline hapo juu, tuliweka kazi ya modeli ya MLFlow kuwa “_llm/v1/chat_”. Maelekezo haya hutengeneza wrapper ya API ya modeli, inayolingana na OpenAI Chat API kama ilivyoonyeshwa hapa chini:
+1. Katika hatua ya 3 ya mradi wa Transformer Pipeline hapo juu, tuliweka kazi ya modeli ya MLFlow kuwa “_llm/v1/chat_”. Maelekezo kama haya huunda wrapper ya API ya modeli, inayolingana na OpenAI Chat API kama inavyoonyeshwa hapa chini:
 
     ``` Python
     {inputs: 
@@ -147,7 +148,7 @@ Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzung
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Kisha, tumia urekebishaji unaolingana na OpenAI API, mfano _response[0][‘choices’][0][‘message’][‘content’]_, kuboresha matokeo yako hadi kitu kama hiki:
+1. Kisha, tumia usindikaji wa ziada unaolingana na OpenAI API, mfano _response[0][‘choices’][0][‘message’][‘content’]_, kuboresha matokeo yako hadi kitu kama hiki:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -157,7 +158,7 @@ Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzung
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. Katika hatua ya 3 ya mradi wa Custom Python Wrapper hapo juu, tunaruhusu kifurushi cha MLFlow kuunda sahihi ya modeli kutoka kwa mfano wa ingizo uliopewa. Sahihi ya wrapper yetu ya MLFlow itaonekana kama hii:
+1. Katika hatua ya 3 ya mradi wa Custom Python Wrapper hapo juu, tunaruhusu kifurushi cha MLFlow kuzalisha saini ya modeli kutoka kwa mfano wa ingizo uliotolewa. Saini ya wrapper yetu ya MLFlow itaonekana kama hii:
 
     ``` Python
     {inputs: 
@@ -174,7 +175,7 @@ Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzung
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Matokeo ya modeli yatatolewa kisha kwa muundo wa mfuatano wa herufi:
+1. Matokeo ya modeli yatawasilishwa kisha katika muundo wa mfuatano wa herufi:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -186,5 +187,5 @@ Katika mfano huu wa E2E tutaonyesha njia mbili tofauti za kujenga wrapper kuzung
     Remember, this is all in good fun, and we're just having a little atomic-level humor!
     ```
 
-**Kanganyo**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upotovu wa maana. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatubebwi dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

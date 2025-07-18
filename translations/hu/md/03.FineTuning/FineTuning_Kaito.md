@@ -2,36 +2,36 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:42:37+00:00",
+  "translation_date": "2025-07-17T06:24:37+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "hu"
 }
 -->
-## Finomhangolás Kaito-val
+## Finomhangolás Kaitóval
 
-A [Kaito](https://github.com/Azure/kaito) egy operátor, amely automatizálja az AI/ML következtetési modellek telepítését Kubernetes klaszterben.
+[Kaito](https://github.com/Azure/kaito) egy operátor, amely automatizálja az AI/ML inferencia modellek telepítését Kubernetes klaszterben.
 
-A Kaito a következő főbb jellemzőkkel különbözik a legtöbb, virtuális gép infrastruktúrákra épülő modelltelepítési módszertől:
+A Kaito a következő főbb különbségekkel rendelkezik a legtöbb, virtuális gép infrastruktúrákra épülő modelltelepítési módszerhez képest:
 
-- A modellfájlokat konténerképek segítségével kezeli. Egy http szerver biztosított a modellkönyvtár használatával történő következtetési hívásokhoz.
-- Előre beállított konfigurációkat kínál, így nem szükséges a telepítési paramétereket a GPU hardverhez igazítani.
+- A modellfájlokat konténerképek segítségével kezeli. Egy http szerver áll rendelkezésre az inferencia hívások végrehajtásához a modellkönyvtár használatával.
+- Előre beállított konfigurációkat kínál, így nem kell a telepítési paramétereket a GPU hardverhez igazítani.
 - Automatikusan biztosít GPU node-okat a modell igényei alapján.
-- Nagy modellképeket tárolhat a nyilvános Microsoft Container Registry-ben (MCR), amennyiben a licenc ezt engedélyezi.
+- Nagy modellképeket tárolhat a nyilvános Microsoft Container Registry-ben (MCR), ha a licenc engedélyezi.
 
-A Kaito segítségével a nagy AI következtetési modellek Kubernetes-be történő integrálása jelentősen leegyszerűsödik.
+A Kaitóval az AI inferencia modellek Kubernetesbe való integrálása jelentősen leegyszerűsödik.
 
 ## Architektúra
 
-A Kaito a klasszikus Kubernetes Custom Resource Definition (CRD)/controller mintát követi. A felhasználó egy `workspace` egyedi erőforrást kezel, amely leírja a GPU követelményeket és a következtetési specifikációt. A Kaito kontroller automatikusan végrehajtja a telepítést az `workspace` egyedi erőforrás egyeztetésével.
+A Kaito a klasszikus Kubernetes Custom Resource Definition (CRD)/controller tervezési mintát követi. A felhasználó egy `workspace` egyedi erőforrást kezel, amely leírja a GPU igényeket és az inferencia specifikációt. A Kaito kontrollerek automatikusan végrehajtják a telepítést a `workspace` egyedi erőforrás összehangolásával.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
 A fenti ábra a Kaito architektúra áttekintését mutatja. Főbb komponensei:
 
-- **Workspace controller**: Ez egyezteti az `workspace` egyedi erőforrást, létrehozza a `machine` (lentebb kifejtve) egyedi erőforrásokat a node automatikus biztosításához, és a modell előre beállított konfigurációi alapján létrehozza a következtetési munkaterhelést (`deployment` vagy `statefulset`).
-- **Node provisioner controller**: A kontroller neve *gpu-provisioner* a [gpu-provisioner helm chartban](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Az `machine` CRD-t használja, amely a [Karpenter](https://sigs.k8s.io/karpenter)-ből származik, hogy kapcsolatot tartson a workspace controllerrel. Integrálódik az Azure Kubernetes Service (AKS) API-kkal, hogy új GPU node-okat adjon az AKS klaszterhez.
-> Megjegyzés: A [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) egy nyílt forráskódú komponens. Más kontrollerek is használhatók helyette, amennyiben támogatják a [Karpenter-core](https://sigs.k8s.io/karpenter) API-kat.
+- **Workspace controller**: Összehangolja a `workspace` egyedi erőforrást, létrehozza a `machine` (lentebb magyarázva) egyedi erőforrásokat a node automatikus biztosításának elindításához, és létrehozza az inferencia munkaterhelést (`deployment` vagy `statefulset`) a modell előre beállított konfigurációi alapján.
+- **Node provisioner controller**: A kontroller neve *gpu-provisioner* a [gpu-provisioner helm chartban](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). A `machine` CRD-t használja, amely a [Karpenter](https://sigs.k8s.io/karpenter)-ből származik, hogy kommunikáljon a workspace controllerrel. Integrálódik az Azure Kubernetes Service (AKS) API-kkal, hogy új GPU node-okat adjon az AKS klaszterhez.
+> Megjegyzés: A [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) egy nyílt forráskódú komponens. Más kontrollerek is használhatók helyette, ha támogatják a [Karpenter-core](https://sigs.k8s.io/karpenter) API-kat.
 
 ## Áttekintő videó  
 [Nézd meg a Kaito demót](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-A workspace állapotát a következő paranccsal lehet nyomon követni. Amikor a WORKSPACEREADY oszlop értéke `True` lesz, a modell sikeresen telepítve lett.
+A workspace állapotát az alábbi paranccsal lehet nyomon követni. Amikor a WORKSPACEREADY oszlop értéke `True` lesz, a modell sikeresen telepítve lett.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Ezután megkereshető a következtetési szolgáltatás klaszter IP címe, és egy ideiglenes `curl` pod segítségével tesztelhető a szolgáltatás elérhetősége a klaszteren belül.
+Ezután megkereshető az inferencia szolgáltatás klaszter IP címe, és egy ideiglenes `curl` pod segítségével tesztelhető a szolgáltatás végpontja a klaszteren belül.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -113,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár törekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy félreértelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

@@ -2,57 +2,59 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-05-09T05:42:04+00:00",
+  "translation_date": "2025-07-16T17:39:17+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/vsc-extension-quickstart.md",
   "language_code": "hu"
 }
 -->
-# Üdvözlünk a VS Code kiterjesztésedben
+# Üdvözlünk a VS Code bővítményedben
 
 ## Mi található a mappában
 
-* Ez a mappa tartalmazza az összes szükséges fájlt a kiterjesztésedhez.
-* `package.json` - ez a manifest fájl, amelyben deklarálod a kiterjesztésedet és a parancsot.
-  * A minta plugin regisztrál egy parancsot, és meghatározza annak címét és nevét. Ezekkel az információkkal a VS Code meg tudja jeleníteni a parancsot a parancspalettán, de még nem kell betöltenie a plugint.
+* Ez a mappa tartalmazza a bővítményedhez szükséges összes fájlt.
+* `package.json` - ez a manifest fájl, amelyben deklarálod a bővítményedet és a parancsot.
+  * A minta plugin regisztrál egy parancsot, és meghatározza annak címét és nevét. Ezekkel az információkkal a VS Code meg tudja jeleníteni a parancsot a parancspalettán. Maga a plugin még nem töltődik be.
 * `src/extension.ts` - ez a fő fájl, ahol megvalósítod a parancsodat.
-  * A fájl egyetlen függvényt exportál, `activate`-t, amelyet az első aktiváláskor hív meg a kiterjesztés (jelen esetben a parancs futtatásakor). Az `activate` függvényen belül meghívjuk `registerCommand`-et.
-  * A parancs megvalósítását tartalmazó függvényt a második paraméterként adjuk át `registerCommand`-nek.
+  * A fájl egyetlen függvényt exportál, az `activate`-et, amelyet a bővítmény első aktiválásakor hívnak meg (jelen esetben a parancs futtatásakor). Az `activate` függvényen belül hívjuk meg a `registerCommand`-ot.
+  * A parancs megvalósítását tartalmazó függvényt a `registerCommand` második paramétereként adjuk át.
 
 ## Beállítás
 
-* Telepítsd a javasolt kiterjesztéseket (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner és dbaeumer.vscode-eslint)
+* Telepítsd a javasolt bővítményeket (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner és dbaeumer.vscode-eslint)
+
 
 ## Azonnali indulás
 
-* Nyomd meg `F5`-t, hogy megnyiss egy új ablakot, amiben betöltődik a kiterjesztésed.
-* Futtasd a parancsodat a parancspalettából a (`Ctrl+Shift+P` vagy Mac-en `Cmd+Shift+P`) megnyomásával, majd írd be `Hello World`-et.
-* Állíts be töréspontokat a kódodban az `src/extension.ts` fájlban, hogy hibakeresést végezhess a kiterjesztéseden.
-* A kiterjesztésed kimenetét a hibakereső konzolon találod.
+* Nyomd meg az `F5`-öt, hogy egy új ablakban megnyisd a bővítményedet.
+* Futtasd a parancsodat a parancspalettából (`Ctrl+Shift+P` vagy Mac-en `Cmd+Shift+P`), és írd be, hogy `Hello World`.
+* Állíts be töréspontokat a kódodban a `src/extension.ts` fájlban, hogy hibakeresést végezhess.
+* A bővítményed kimenetét a hibakereső konzolon találod.
 
 ## Változtatások végrehajtása
 
-* A kód módosítása után újraindíthatod a kiterjesztést a hibakereső eszköztárról az `src/extension.ts` fájlban végzett változtatások után.
-* Újratöltheted a VS Code ablakot a kiterjesztéseddel együtt (`Ctrl+R` vagy Mac-en `Cmd+R`), hogy betöltődjenek a változtatások.
+* A `src/extension.ts` fájl módosítása után újraindíthatod a bővítményt a hibakereső eszköztárról.
+* Újratöltheted a VS Code ablakot a bővítményeddel (`Ctrl+R` vagy Mac-en `Cmd+R`), hogy betöltse a változtatásokat.
 
-## Ismerd meg az API-t
 
-* A teljes API dokumentációt megnyithatod az `node_modules/@types/vscode/index.d.ts` fájl megnyitásával.
+## Fedezd fel az API-t
+
+* Megnyithatod az API teljes készletét a `node_modules/@types/vscode/index.d.ts` fájl megnyitásával.
 
 ## Tesztek futtatása
 
-* Telepítsd az [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner) kiterjesztést
-* Futtasd a "watch" feladatot a **Tasks: Run Task** parancson keresztül. Győződj meg róla, hogy fut, különben a tesztek nem lesznek felismerve.
-* Nyisd meg a Teszt nézetet az aktivitássávból, és kattints a "Run Test" gombra, vagy használd a `Ctrl/Cmd + ; A` gyorsbillentyűt.
-* A teszt eredményét a Teszteredmények nézetben láthatod.
-* Változtass az `src/test/extension.test.ts` fájlon, vagy hozz létre új tesztfájlokat az `test` mappában.
-  * A biztosított tesztfuttató csak az `**.test.ts` név mintának megfelelő fájlokat veszi figyelembe.
-  * Az `test` mappán belül létrehozhatsz almappákat, hogy tetszés szerint strukturáld a tesztjeidet.
+* Telepítsd az [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner) bővítményt
+* Futtasd a "watch" feladatot a **Tasks: Run Task** parancson keresztül. Győződj meg róla, hogy ez fut, különben a tesztek nem lesznek felismerve.
+* Nyisd meg a Teszt nézetet az aktivitás sávból, és kattints a "Run Test" gombra, vagy használd a `Ctrl/Cmd + ; A` gyorsbillentyűt.
+* A teszteredményeket a Teszt eredmények nézetben láthatod.
+* Módosítsd a `src/test/extension.test.ts` fájlt, vagy hozz létre új tesztfájlokat a `test` mappán belül.
+  * A teszt futtató csak az `**.test.ts` névvel rendelkező fájlokat veszi figyelembe.
+  * A `test` mappán belül létrehozhatsz almappákat, hogy tetszés szerint rendszerezd a teszteket.
 
-## Továbbfejlődés
+## Tovább lépés
 
-* Csökkentsd a kiterjesztés méretét és javítsd az indítási időt azzal, hogy [csomagolod a kiterjesztésedet](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
-* [Tedd közzé a kiterjesztésedet](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) a VS Code kiterjesztés piacterén.
+* Csökkentsd a bővítmény méretét és gyorsítsd az indítást azzal, hogy [csomagolod a bővítményedet](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
+* [Tedd közzé a bővítményedet](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) a VS Code bővítmény piacterén.
 * Automatizáld a build folyamatokat a [Folyamatos integráció](https://code.visualstudio.com/api/working-with-extensions/continuous-integration) beállításával.
 
-**Nyilatkozat**:  
-Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hivatalos forrásnak. Fontos információk esetén javasolt professzionális emberi fordítást igénybe venni. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

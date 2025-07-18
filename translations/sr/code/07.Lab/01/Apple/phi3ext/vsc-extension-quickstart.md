@@ -2,57 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-05-09T05:10:41+00:00",
+  "translation_date": "2025-07-16T17:04:20+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md",
   "language_code": "sr"
 }
 -->
-# Dobrodošli u vašu VS Code ekstenziju
+# Добродошли у вашу VS Code екстензију
 
-## Šta se nalazi u fascikli
+## Шта се налази у фасцикли
 
-* Ova fascikla sadrži sve fajlove potrebne za vašu ekstenziju.
-* `package.json` - ovo je manifest fajl u kojem deklarišete vašu ekstenziju i komandu.
-  * Primer plugina registruje komandu i definiše njen naslov i ime komande. Sa ovim informacijama VS Code može prikazati komandu u paleti komandi. Još uvek nije potrebno učitavati plugin.
-* `src/extension.ts` - ovo je glavni fajl u kome ćete implementirati vašu komandu.
-  * Fajl eksportuje jednu funkciju, `activate`, koja se poziva prvi put kada se ekstenzija aktivira (u ovom slučaju izvršavanjem komande). Unutar funkcije `activate` pozivamo `registerCommand`.
-  * Funkciju koja sadrži implementaciju komande prosleđujemo kao drugi parametar funkciji `registerCommand`.
+* Ова фасцикла садржи све потребне фајлове за вашу екстензију.
+* `package.json` - ово је манифест фајл у којем декларишете вашу екстензију и команду.
+  * Пример додатка региструје команду и дефинише њен наслов и име команде. Са овим информацијама VS Code може приказати команду у палети команди. Још увек није потребно учитати додатак.
+* `src/extension.ts` - ово је главни фајл у ком ћете имплементирати вашу команду.
+  * Фајл извозе једну функцију, `activate`, која се позива први пут када се ваша екстензија активира (у овом случају извршавањем команде). Унутар функције `activate` позивамо `registerCommand`.
+  * Као други параметар `registerCommand` прослеђујемо функцију која садржи имплементацију команде.
 
-## Podešavanje
+## Подешавање
 
-* instalirajte preporučene ekstenzije (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, i dbaeumer.vscode-eslint)
+* инсталирајте препоручене екстензије (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner и dbaeumer.vscode-eslint)
 
-## Pokrenite odmah
+## Почните одмах
 
-* Pritisnite `F5` da otvorite novi prozor sa učitanom vašom ekstenzijom.
-* Pokrenite vašu komandu iz palete komandi pritiskom na (`Ctrl+Shift+P` ili `Cmd+Shift+P` na Mac-u) i kucanjem `Hello World`.
-* Postavite tačke prekida u vašem kodu unutar `src/extension.ts` da biste debugovali vašu ekstenziju.
-* Izlaz iz vaše ekstenzije pronađite u debug konzoli.
+* Притисните `F5` да отворите нови прозор са учитаном вашом екстензијом.
+* Покрените вашу команду из палете команди притиском на (`Ctrl+Shift+P` или `Cmd+Shift+P` на Mac-у) и укуцајте `Hello World`.
+* Поставите тачке прекида у вашем коду унутар `src/extension.ts` да бисте дебаговали екстензију.
+* Пронађите излаз из ваше екстензије у дебаг конзоли.
 
-## Napravite izmene
+## Направите измене
 
-* Možete ponovo pokrenuti ekstenziju iz debug trake nakon što promenite kod u `src/extension.ts`.
-* Takođe možete ponovo učitati (`Ctrl+R` ili `Cmd+R` na Mac-u) VS Code prozor sa vašom ekstenzijom da biste učitali izmene.
+* Можете поново покренути екстензију са дебаг траке након измена у коду у `src/extension.ts`.
+* Такође можете освежити (`Ctrl+R` или `Cmd+R` на Mac-у) VS Code прозор са вашом екстензијом да бисте учитали измене.
 
-## Istražite API
+## Истражите API
 
-* Možete otvoriti kompletan skup našeg API-ja kada otvorite fajl `node_modules/@types/vscode/index.d.ts`.
+* Можете отворити цео скуп нашег API-ја тако што ћете отворити фајл `node_modules/@types/vscode/index.d.ts`.
 
-## Pokrenite testove
+## Покрените тестове
 
-* Instalirajte [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
-* Pokrenite "watch" zadatak preko komande **Tasks: Run Task**. Proverite da li je zadatak aktivan, jer u suprotnom testovi možda neće biti pronađeni.
-* Otvorite Testing prikaz iz trake aktivnosti i kliknite na dugme Run Test, ili koristite prečicu `Ctrl/Cmd + ; A`
-* Pogledajte rezultat testa u Test Results prikazu.
-* Pravite izmene u `src/test/extension.test.ts` ili kreirajte nove test fajlove unutar fascikle `test`.
-  * Test runner će uzimati u obzir samo fajlove koji odgovaraju obrascu imena `**.test.ts`.
-  * Možete praviti podfascikle unutar `test` da strukturirate testove kako želite.
+* Инсталирајте [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* Покрените "watch" задатак преко команде **Tasks: Run Task**. Уверите се да је овај задатак покренут, иначе тестови можда неће бити откривени.
+* Отворите Testing приказ са траке активности и кликните на дугме "Run Test", или користите пречицу `Ctrl/Cmd + ; A`
+* Погледајте резултате теста у Test Results приказу.
+* Направите измене у `src/test/extension.test.ts` или креирајте нове тест фајлове унутар `test` фасцикле.
+  * Пружањи тест ранер ће узимати у обзир само фајлове који одговарају шаблону имена `**.test.ts`.
+  * Можете креирати фасцикле унутар `test` фасцикле да организујете тестове како желите.
 
-## Idite dalje
+## Идите даље
 
-* Smanjite veličinu ekstenzije i poboljšajte vreme pokretanja tako što ćete [pakovati vašu ekstenziju](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
-* [Objavite vašu ekstenziju](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) na VS Code marketplace-u.
-* Automatizujte build procese podešavanjem [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
+* Смањите величину екстензије и убрзајте време покретања [паковањем ваше екстензије](https://code.visualstudio.com/api/working-with-extensions/bundling-extension).
+* [Објавите вашу екстензију](https://code.visualstudio.com/api/working-with-extensions/publishing-extension) на VS Code marketplace-у.
+* Аутоматизујте изградњу подешавањем [континуиране интеграције](https://code.visualstudio.com/api/working-with-extensions/continuous-integration).
 
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која могу настати употребом овог превода.
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

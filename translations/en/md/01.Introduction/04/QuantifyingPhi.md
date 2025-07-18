@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d658062de70b131ef4c0bff69b5fc70e",
-  "translation_date": "2025-07-09T19:46:06+00:00",
+  "translation_date": "2025-07-16T21:40:57+00:00",
   "source_file": "md/01.Introduction/04/QuantifyingPhi.md",
   "language_code": "en"
 }
@@ -11,9 +11,9 @@ CO_OP_TRANSLATOR_METADATA:
 
 Model quantization refers to the process of mapping the parameters (such as weights and activation values) in a neural network model from a large value range (usually a continuous value range) to a smaller finite value range. This technology can reduce the size and computational complexity of the model and improve the operating efficiency of the model in resource-constrained environments such as mobile devices or embedded systems. Model quantization achieves compression by reducing the precision of parameters, but it also introduces some loss of accuracy. Therefore, during quantization, it is necessary to balance model size, computational complexity, and precision. Common quantization methods include fixed-point quantization, floating-point quantization, and others. You can choose the appropriate quantization strategy based on the specific scenario and requirements.
 
-We aim to deploy GenAI models to edge devices and enable more devices to participate in GenAI scenarios, such as mobile devices, AI PCs/Copilot+PCs, and traditional IoT devices. Through quantized models, we can deploy them to various edge devices depending on the hardware. Combined with model acceleration frameworks and quantization models provided by hardware manufacturers, we can build better SLM application scenarios.
+We aim to deploy GenAI models to edge devices and enable more devices to participate in GenAI scenarios, such as mobile devices, AI PC/Copilot+PC, and traditional IoT devices. Through quantized models, we can deploy them to various edge devices depending on the hardware. Combined with model acceleration frameworks and quantization models provided by hardware manufacturers, we can build better SLM application scenarios.
 
-In quantization scenarios, we have different precisions (INT4, INT8, FP16, FP32). Below is an explanation of commonly used quantization precisions.
+In quantization scenarios, we have different precision levels (INT4, INT8, FP16, FP32). Below is an explanation of commonly used quantization precisions.
 
 ### **INT4**
 
@@ -21,7 +21,7 @@ INT4 quantization is an aggressive quantization method that converts the model�
 
 ### **INT8**
 
-INT8 quantization converts a model’s weights and activations from floating-point numbers to 8-bit integers. Although the numerical range represented by INT8 integers is smaller and less precise, it significantly reduces storage and computation demands. In INT8 quantization, the model’s weights and activations undergo a quantization process, including scaling and offset, to preserve the original floating-point information as much as possible. During inference, these quantized values are dequantized back to floating-point numbers for computation, then quantized again to INT8 for the next step. This approach provides sufficient accuracy for most applications while maintaining high computational efficiency.
+INT8 quantization converts a model’s weights and activations from floating-point numbers to 8-bit integers. Although the numerical range represented by INT8 integers is smaller and less precise, it can significantly reduce storage and computation demands. In INT8 quantization, the model’s weights and activations undergo a quantization process, including scaling and offset, to preserve the original floating-point information as much as possible. During inference, these quantized values are dequantized back to floating-point numbers for computation, then quantized again to INT8 for the next step. This approach provides sufficient accuracy for most applications while maintaining high computational efficiency.
 
 ### **FP16**
 
@@ -29,9 +29,9 @@ The FP16 format, or 16-bit floating-point numbers (float16), halves the memory f
 
 ### **FP32**
 
-The FP32 format offers higher precision and can accurately represent a wide range of values. It is preferred in scenarios involving complex mathematical operations or when high-precision results are required. However, higher accuracy comes with increased memory usage and longer computation times. For large-scale deep learning models, especially those with many parameters and large datasets, FP32 may lead to insufficient GPU memory or slower inference speeds.
+The FP32 format offers higher precision and can accurately represent a wide range of values. It is preferred in scenarios involving complex mathematical operations or when high-precision results are required. However, higher accuracy comes with increased memory usage and longer computation times. For large-scale deep learning models, especially those with many parameters and massive data, FP32 may lead to insufficient GPU memory or slower inference speeds.
 
-On mobile or IoT devices, we can convert Phi-3.x models to INT4, while AI PCs / Copilot PCs can use higher precisions such as INT8, FP16, or FP32.
+On mobile or IoT devices, we can convert Phi-3.x models to INT4, while AI PC / Copilot PC can use higher precisions such as INT8, FP16, or FP32.
 
 Currently, different hardware manufacturers provide various frameworks to support generative models, such as Intel's OpenVINO, Qualcomm's QNN, Apple's MLX, and Nvidia's CUDA, combined with model quantization to enable local deployment.
 

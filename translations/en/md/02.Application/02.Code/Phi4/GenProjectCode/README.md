@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-07-09T19:36:02+00:00",
+  "translation_date": "2025-07-17T04:42:47+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "en"
 }
 -->
 ## **Using Phi-4-mini-mm to generate code**
 
-Phi-4-mini builds on the strong coding capabilities of the Phi Family. You can use Prompt to ask coding-related questions. With its enhanced reasoning ability, it offers even stronger coding skills, such as generating projects based on requirements. For example, generating projects according to specifications like:
+Phi-4-mini builds on the strong coding capabilities of the Phi Family. You can use Prompts to ask coding-related questions. With its enhanced reasoning ability, it offers even stronger coding skills, such as generating projects based on requirements. For example, generating projects according to specifications like:
 
 ### **Requirement**
 
@@ -18,11 +18,11 @@ Create a Shopping Cart App
 - Create a REST API with the following methods:
     - Retrieve a list of beers using page offset and limit.
     - Get beer details by id.
-    - Search for beer by name, description, tagline, food pairings, and price.
+    - Search for beers by name, description, tagline, food pairings, and price.
 - Display a list of products on the main page.
     - Add a search bar to filter products.
     - Navigate to the description page when a user clicks on a product.
-- (Optional) Slider to filter products by price.
+- (Optional) Add a slider to filter products by price.
 - Create a shopping cart.
     - Add products to the cart.
     - Remove products from the cart.

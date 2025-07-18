@@ -2,17 +2,17 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T21:59:13+00:00",
+  "translation_date": "2025-07-17T08:41:06+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "ne"
 }
 -->
-# Phi-3.5-vision finetuning recipe
+# Phi-3.5-vision फाइनट्यूनिङ रेसिपी
 
-यो Phi-3.5-vision को finetuning को आधिकारिक समर्थन हो जुन huggingface लाइब्रेरीहरू प्रयोग गर्छ।
-कृपया `cd` लाई कोड डाइरेक्टरी [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) मा जानुहोस् र त्यसपछि तलका आदेशहरू चलाउनुहोस्।
+यो huggingface लाइब्रेरीहरू प्रयोग गरेर Phi-3.5-vision फाइनट्यूनिङको आधिकारिक समर्थन हो।  
+कृपया तलका कमाण्डहरू चलाउनु अघि `cd` गरेर कोड डाइरेक्टरी [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) मा जानुहोस्।
 
-## Installation
+## इन्स्टलेसन
 
 ```bash
 # create a new conda environment
@@ -33,31 +33,32 @@ MAX_JOBS=32 pip install flash-attn==2.4.2 --no-build-isolation
 pip install bitsandbytes==0.43.1
 ```
 
-## Quick start
+## छिटो सुरु
 
-हामीले दुई उदाहरण finetuning स्क्रिप्टहरू प्रदान गरेका छौं, एउटा DocVQA का लागि र अर्को hateful meme classification का लागि।
+हामीले दुईवटा उदाहरण फाइनट्यूनिङ स्क्रिप्टहरू प्रदान गरेका छौं, एउटा DocVQA का लागि र अर्को hateful meme वर्गीकरणका लागि।
 
-कम्तिमा 4x RTX8000 (GPU प्रति 48GB RAM) मा परीक्षण गरिएको हार्डवेयर
+न्यूनतम हार्डवेयर परीक्षण 4x RTX8000 (प्रत्येक GPU मा 48GB RAM) मा गरिएको छ।
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision अब आधिकारिक रूपमा बहु-छवि इनपुट समर्थन गर्छ। यहाँ NLVR2 को finetuning को लागि एउटा उदाहरण छ
+Phi-3.5-vision अब आधिकारिक रूपमा बहु-छवि इनपुटहरू समर्थन गर्दछ। यहाँ NLVR2 को फाइनट्यूनिङको लागि एउटा उदाहरण छ।
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ```
 
-## Usage guide
+## प्रयोग मार्गदर्शन
 
-हार्डवेयर अनुसार, प्रयोगकर्ताहरूले फरक finetuning रणनीतिहरू छनौट गर्न सक्छन्। हामी पूर्ण finetuning (Deepspeed Zero-2 सहित) र विकल्पस्वरूप vision प्यारामिटरहरूलाई फ्रोजन गरेर, साथै LoRA (4bit QLoRA सहित) समर्थन गर्छौं।
-सामान्यतया, हामी flash attention र bf16 को साथ पूर्ण finetuning प्रयोग गर्न सिफारिस गर्छौं जहाँ सम्भव हो।
+हार्डवेयर अनुसार, प्रयोगकर्ताहरूले फरक फाइनट्यूनिङ रणनीतिहरू छनोट गर्न सक्छन्। हामी  
+पूर्ण फाइनट्यूनिङ (Deepspeed Zero-2 सहित) समर्थन गर्छौं जसमा दृष्टि प्यारामिटरहरूलाई आवश्यक अनुसार फ्रोजन गर्न सकिन्छ, र LoRA (4bit QLoRA सहित)।  
+सामान्यतया, हामी पूर्ण फाइनट्यूनिङलाई flash attention र bf16 सँग प्रयोग गर्न सिफारिस गर्छौं जहाँ सम्भव हो।
 
-### आफ्नो कस्टम डेटासेटलाई आवश्यक ढाँचामा रूपान्तरण गर्ने मार्गदर्शन
+### तपाईंको कस्टम डेटासेटलाई आवश्यक ढाँचामा रूपान्तरण गर्ने मार्गदर्शन
 
-हामीले न्यूनतम भिडियो वर्गीकरण डेटासेट (UCF-101 को एक उपसमूह) लाई एक अन्त्य-देखि-अन्त्य उदाहरणको रूपमा प्रयोग गरी देखाउँछौं कि कसरी आफ्नो कस्टम डेटासेटलाई आवश्यक ढाँचामा रूपान्तरण गर्ने र Phi-3.5-vision मा finetune गर्ने।
+हामी न्यूनतम भिडियो वर्गीकरण डेटासेट (UCF-101 को एउटा उपसमूह) लाई अन्त्यदेखि अन्त्य उदाहरणको रूपमा प्रयोग गरेर देखाउँछौं कि कसरी तपाईंको कस्टम डेटासेटलाई आवश्यक ढाँचामा रूपान्तरण गर्ने र Phi-3.5-vision मा फाइनट्यून गर्ने।
 
 ```bash
 # convert data
@@ -67,7 +68,7 @@ python convert_ucf101.py --out_dir /path/to/converted_ucf101
 torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/converted_ucf101
 ```
 
-रूपान्तरण गरिएको डाटा यसरी देखिन्छ:
+रूपान्तरण गरिएको डाटा यसरी देखिनेछ:
 
 ```bash
 > tree --filelimit=10 /path/to/converted_ucf101
@@ -120,15 +121,15 @@ torchrun --nproc_per_node=4 finetune_hf_trainer_ucf101.py --data_dir /path/to/co
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-ध्यान दिनुहोस् `conversations` एक सूची हो, त्यसैले बहु-टर्न संवाद समर्थन गर्न सकिन्छ यदि त्यस्तो डाटा उपलब्ध छ भने।
+ध्यान दिनुहोस् कि `conversations` एउटा सूची हो, त्यसैले बहु-चरण संवाद समर्थन गर्न सकिन्छ यदि यस्तो डाटा उपलब्ध छ भने।
 
-## Requesting Azure GPU Quota 
+## Azure GPU कोटा अनुरोध गर्ने तरिका
 
-### आवश्यकताहरू
+### पूर्वशर्तहरू
 
-Azure खाता जुन Contributor भूमिका (वा Contributor पहुँच सहितको अन्य भूमिका) राख्छ।
+Contributor भूमिका भएको Azure खाता (वा Contributor पहुँच भएको अन्य कुनै भूमिका) आवश्यक छ।
 
-यदि तपाईंको Azure खाता छैन भने, [सुरू गर्नु अघि निःशुल्क खाता बनाउनुहोस्](https://azure.microsoft.com)।
+यदि तपाईंको Azure खाता छैन भने, सुरु गर्नु अघि [निःशुल्क खाता बनाउनुहोस्](https://azure.microsoft.com)।
 
 ### कोटा वृद्धि अनुरोध गर्नुहोस्
 
@@ -136,26 +137,26 @@ Azure खाता जुन Contributor भूमिका (वा Contributor 
 
 [Azure portal](https://portal.azure.com) मा साइन इन गर्नुहोस्।
 
-खोज बक्समा "quotas" टाइप गर्नुहोस् र Quotas चयन गर्नुहोस्।
+खोज बाकसमा "quotas" टाइप गर्नुहोस् र Quotas चयन गर्नुहोस्।  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
 Overview पृष्ठमा, Compute वा AML जस्ता प्रदायक चयन गर्नुहोस्।
 
-**Note** Compute बाहेकका सबै प्रदायकहरूमा, तपाईंले Adjustable स्तम्भको सट्टा Request increase स्तम्भ देख्नुहुनेछ। त्यहाँ तपाईं विशिष्ट कोटाको लागि वृद्धि अनुरोध गर्न वा समर्थन अनुरोध सिर्जना गर्न सक्नुहुन्छ।
+**Note** Compute बाहेकका सबै प्रदायकहरूमा, तपाईंले Adjustable स्तम्भको सट्टा Request increase स्तम्भ देख्नुहुनेछ। त्यहाँ तपाईंले कुनै विशेष कोटाको वृद्धि अनुरोध गर्न सक्नुहुन्छ वा वृद्धि लागि समर्थन अनुरोध सिर्जना गर्न सक्नुहुन्छ।
 
-My quotas पृष्ठमा, Quota name अन्तर्गत, तपाईंले वृद्धि गर्न चाहेको कोटा चयन गर्नुहोस्। सुनिश्चित गर्नुहोस् कि Adjustable स्तम्भमा यस कोटाको लागि Yes देखिन्छ।
+My quotas पृष्ठमा, Quota name अन्तर्गत तपाईंले वृद्धि गर्न चाहेको कोटा चयन गर्नुहोस्। सुनिश्चित गर्नुहोस् कि Adjustable स्तम्भमा यस कोटाका लागि Yes देखिन्छ।
 
 पृष्ठको माथिल्लो भागमा, New Quota Request चयन गर्नुहोस्, त्यसपछि Enter a new limit चयन गर्नुहोस्।
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-New Quota Request प्यानमा, नयाँ कोटा सीमा को लागि संख्यात्मक मान प्रविष्ट गर्नुहोस् र Submit चयन गर्नुहोस्।
+New Quota Request प्यानमा, नयाँ कोटा सीमाको लागि संख्यात्मक मान प्रविष्ट गर्नुहोस् र Submit चयन गर्नुहोस्।
 
 तपाईंको अनुरोध समीक्षा गरिनेछ र अनुरोध पूरा गर्न सकिन्छ भने तपाईंलाई सूचित गरिनेछ। यो सामान्यतया केही मिनेट भित्र हुन्छ।
 
-यदि तपाईंको अनुरोध पूरा भएन भने, तपाईंलाई समर्थन अनुरोध सिर्जना गर्न लिंक देखिनेछ। यस लिंक प्रयोग गर्दा, समर्थन इन्जिनियरले तपाईंलाई वृद्धि अनुरोधमा सहयोग गर्नेछन्।
+यदि तपाईंको अनुरोध पूरा भएन भने, तपाईंलाई समर्थन अनुरोध सिर्जना गर्न लिंक देखिनेछ। यो लिंक प्रयोग गर्दा, समर्थन इन्जिनियरले तपाईंको वृद्धि अनुरोधमा सहयोग गर्नेछन्।
 
-## Azure Compute GPU machine SKU सुझावहरू
+## Azure Compute GPU मेसिन SKU सिफारिसहरू
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -165,9 +166,9 @@ New Quota Request प्यानमा, नयाँ कोटा सीमा 
 
 यहाँ केही उदाहरणहरू छन्:
 
-### यदि तपाईं सँग A100 वा H100 GPU छ भने
+### यदि तपाईं सँग A100 वा H100 GPUs छन्
 
-पूर्ण finetuning सामान्यतया सबैभन्दा राम्रो प्रदर्शन दिन्छ। तपाईंले hateful memes classification मा Phi-3-V लाई finetune गर्न तलको आदेश प्रयोग गर्न सक्नुहुन्छ।
+पूर्ण फाइनट्यूनिङले सामान्यतया सबैभन्दा राम्रो प्रदर्शन दिन्छ। तपाईं hateful memes वर्गीकरणमा Phi-3-V फाइनट्यून गर्न तलको कमाण्ड प्रयोग गर्न सक्नुहुन्छ।
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -179,9 +180,10 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --bf16
 ```
 
-### यदि तपाईं सँग Standard_ND40rs_v2 8x V100-32GB GPU छ भने
+### यदि तपाईं सँग Standard_ND40rs_v2 8x V100-32GB GPUs छन्
 
-अझै पनि Phi-3-V लाई hateful memes classification मा पूर्ण रूपमा finetune गर्न सकिन्छ। तर flash attention समर्थन नहुनाले A100 वा H100 GPU को तुलनामा थ्रूपुट धेरै कम हुनेछ। bf16 समर्थन नहुनाले (fp16 मिश्रित-प्रिसिजन प्रशिक्षण प्रयोग गरिन्छ) सटीकतामा पनि असर पर्न सक्छ।
+Phi-3-V लाई hateful memes वर्गीकरणमा पूर्ण रूपमा फाइनट्यून गर्न अझै सम्भव छ। तर, flash attention समर्थन नभएको कारण A100 वा H100 GPU हरूसँग तुलना गर्दा थुप्रै कम थ्रुपुट अपेक्षा गर्नुहोस्।  
+bf16 समर्थन नभएकोले (fp16 मिश्रित-प्रिसिजन प्रशिक्षण प्रयोग गरिएको छ) सटीकता पनि प्रभावित हुन सक्छ।
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -191,9 +193,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### यदि तपाईंलाई डेटा सेन्टर GPU पहुँच छैन भने
+### यदि तपाईंलाई डाटा सेन्टर GPU हरूको पहुँच छैन भने
 
-LoRA मात्र विकल्प हुन सक्छ। तपाईंले hateful memes classification मा Phi-3-V लाई finetune गर्न तलको आदेश प्रयोग गर्न सक्नुहुन्छ।
+LoRA मात्र विकल्प हुन सक्छ। तपाईं hateful memes वर्गीकरणमा Phi-3-V फाइनट्यून गर्न तलको कमाण्ड प्रयोग गर्न सक्नुहुन्छ।
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -203,7 +205,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-Turing+ GPU का लागि, QLoRA समर्थित छ
+Turing+ GPU का लागि QLoRA समर्थन छ।
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -214,7 +216,8 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## सुझाव गरिएका हाइपरप्यारामिटरहरू र अपेक्षित सटीकता
+## सिफारिस गरिएका हाइपरप्यारामिटरहरू र अपेक्षित सटीकता
+
 ### NLVR2
 
 ```bash
@@ -234,9 +237,9 @@ full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
 full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
 LoRA results comming soon |  |  |  |  |  |  |  |  |
 
-### NOTE
-तलका DocVQA र Hateful memes का नतिजाहरू पुरानो संस्करण (Phi-3-vision) मा आधारित छन्।
-Phi-3.5-vision का नयाँ नतिजा चाँडै अपडेट गरिनेछ।
+### NOTE  
+तलका DocVQA र Hateful memes का नतिजाहरू अघिल्लो संस्करण (Phi-3-vision) मा आधारित छन्।  
+Phi-3.5-vision सँग नयाँ नतिजाहरू चाँडै अपडेट गरिनेछ।
 
 ### DocVQA (NOTE: Phi-3-vision)
 
@@ -287,11 +290,11 @@ LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
 QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
 QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
-## Speed benchmarking (NOTE: Phi-3-vision)
+## गति परीक्षण (NOTE: Phi-3-vision)
 
-Phi-3.5-vision को नयाँ benchmarking नतिजा चाँडै अपडेट गरिनेछ।
+Phi-3.5-vision सँग नयाँ गति परीक्षण नतिजाहरू चाँडै अपडेट गरिनेछ।
 
-Speed benchmarking DocVQA डेटासेटमा गरिएको छ। यस डेटासेटको औसत सिक्वेन्स लम्बाइ 2443.23 टोकन छ (`num_crops=16` प्रयोग गरेर छवि मोडलका लागि)।
+गति परीक्षण DocVQA डेटासेटमा गरिएको छ। यस डेटासेटको औसत अनुक्रम लम्बाइ 2443.23 टोकन छ (`num_crops=16` प्रयोग गरेर छवि मोडेलका लागि)।
 
 ### 8x A100-80GB (Ampere)
 
@@ -318,10 +321,10 @@ full-finetuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
 frozen image model | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27
 LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
-## Known issues
+## ज्ञात समस्याहरू
 
-- fp16 सँग flash attention चलाउन सकिंदैन (bf16 उपलब्ध हुँदा सधैं सिफारिस गरिन्छ, र flash attention समर्थन गर्ने सबै GPU ले bf16 पनि समर्थन गर्छन्)।
-- हालसम्म बीच-बीचमा checkpoints बचत गर्ने र प्रशिक्षण पुनः सुरु गर्ने सुविधा समर्थन गरिएको छैन।
+- fp16 सँग flash attention चलाउन सकिँदैन (bf16 सधैं उपलब्ध हुँदा सिफारिस गरिन्छ, र flash attention समर्थन गर्ने सबै GPU हरूले bf16 पनि समर्थन गर्छन्)।  
+- हालसम्म मध्यवर्ती चेकपोइन्टहरू बचत गर्ने र प्रशिक्षण पुनः सुरु गर्ने सुविधा समर्थन गरिएको छैन।
 
 **अस्वीकरण**:  
-यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) को प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताको लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा असंगतिहरू हुन सक्छन्। मूल दस्तावेज यसको मूल भाषामा आधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।
+यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनुपर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

@@ -2,66 +2,66 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "92e7dac1e5af0dd7c94170fdaf6860fe",
-  "translation_date": "2025-05-09T18:52:44+00:00",
+  "translation_date": "2025-07-17T03:00:14+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md",
   "language_code": "tr"
 }
 -->
-# Windows GPU kullanarak Phi-3.5-Instruct ONNX ile Prompt flow çözümü oluşturma
+# Phi-3.5-Instruct ONNX ile Windows GPU kullanarak Prompt flow çözümü oluşturma
 
-Aşağıdaki doküman, Phi-3 modellerine dayalı AI uygulamaları geliştirmek için ONNX (Open Neural Network Exchange) ile PromptFlow kullanımına dair bir örnektir.
+Aşağıdaki belge, Phi-3 modellerine dayalı yapay zeka uygulamaları geliştirmek için PromptFlow'u ONNX (Open Neural Network Exchange) ile nasıl kullanacağınıza dair bir örnektir.
 
-PromptFlow, fikir aşamasından prototip oluşturma, test ve değerlendirmeye kadar LLM tabanlı (Büyük Dil Modeli) AI uygulamalarının uçtan uca geliştirme döngüsünü kolaylaştırmak için tasarlanmış bir geliştirme araçları paketidir.
+PromptFlow, LLM tabanlı (Büyük Dil Modeli) yapay zeka uygulamalarının fikir aşamasından prototiplemeye, test ve değerlendirmeye kadar uçtan uca geliştirme döngüsünü kolaylaştırmak için tasarlanmış bir geliştirme araçları paketidir.
 
-PromptFlow’u ONNX ile entegre ederek geliştiriciler:
+PromptFlow'u ONNX ile entegre ederek geliştiriciler:
 
 - Model Performansını Optimize Edebilir: Verimli model çıkarımı ve dağıtımı için ONNX'ten yararlanabilir.
-- Geliştirmeyi Basitleştirebilir: İş akışını yönetmek ve tekrarlayan görevleri otomatikleştirmek için PromptFlow kullanabilir.
-- İşbirliğini Geliştirebilir: Birleşik bir geliştirme ortamı sağlayarak ekip üyeleri arasında daha iyi işbirliği yapılmasını kolaylaştırabilir.
+- Geliştirmeyi Basitleştirebilir: İş akışını yönetmek ve tekrarlayan görevleri otomatikleştirmek için PromptFlow'u kullanabilir.
+- İş Birliğini Artırabilir: Birleşik bir geliştirme ortamı sağlayarak ekip üyeleri arasında daha iyi iş birliği kolaylaştırabilir.
 
-**Prompt flow**, fikir aşamasından prototip oluşturmaya, test ve değerlendirmeye, üretim dağıtımı ve izlemeye kadar LLM tabanlı AI uygulamalarının uçtan uca geliştirme döngüsünü kolaylaştırmak için tasarlanmış bir geliştirme araçları paketidir. Prompt mühendisliğini çok daha kolay hale getirir ve üretim kalitesinde LLM uygulamaları oluşturmanızı sağlar.
+**Prompt flow**, LLM tabanlı yapay zeka uygulamalarının fikir aşamasından prototipleme, test, değerlendirme, üretim dağıtımı ve izlemeye kadar uçtan uca geliştirme döngüsünü kolaylaştırmak için tasarlanmış bir geliştirme araçları paketidir. Prompt mühendisliğini çok daha kolay hale getirir ve üretim kalitesinde LLM uygulamaları oluşturmanızı sağlar.
 
-Prompt flow, OpenAI, Azure OpenAI Servisi ve özelleştirilebilir modellerle (Huggingface, yerel LLM/SLM) bağlantı kurabilir. Phi-3.5’in kuantize edilmiş ONNX modelini yerel uygulamalara dağıtmayı hedefliyoruz. Prompt flow, işimizi daha iyi planlamamıza ve Phi-3.5 tabanlı yerel çözümleri tamamlamamıza yardımcı olabilir. Bu örnekte, Windows GPU tabanlı Prompt flow çözümünü tamamlamak için ONNX Runtime GenAI Kütüphanesi ile birleştireceğiz.
+Prompt flow, OpenAI, Azure OpenAI Service ve özelleştirilebilir modellerle (Huggingface, yerel LLM/SLM) bağlantı kurabilir. Phi-3.5'in kuantize edilmiş ONNX modelini yerel uygulamalara dağıtmayı hedefliyoruz. Prompt flow, işimizi daha iyi planlamamıza ve Phi-3.5 tabanlı yerel çözümleri tamamlamamıza yardımcı olabilir. Bu örnekte, Windows GPU tabanlı Prompt flow çözümünü tamamlamak için ONNX Runtime GenAI Kütüphanesi ile birleştireceğiz.
 
 ## **Kurulum**
 
 ### **Windows GPU için ONNX Runtime GenAI**
 
-Windows GPU için ONNX Runtime GenAI kurulum rehberini okumak için [buraya tıklayın](./ORTWindowGPUGuideline.md)
+Windows GPU için ONNX Runtime GenAI'yi kurmak için bu kılavuzu okuyun [buraya tıklayın](./ORTWindowGPUGuideline.md)
 
-### **VSCode’da Prompt flow kurulumu**
+### **VSCode'da Prompt flow kurulumu**
 
-1. Prompt flow VS Code Uzantısını yükleyin
+1. Prompt flow VS Code Eklentisini yükleyin
 
-![pfvscode](../../../../../../translated_images/pfvscode.79f42ae5dd93ed35c19d6d978ae75831fef40e0b8440ee48b893b5a0597d2260.tr.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.tr.png)
 
-2. Prompt flow VS Code Uzantısını yükledikten sonra, uzantıya tıklayın ve **Installation dependencies** seçeneğini seçerek bu rehberi takip edip ortamınıza Prompt flow SDK’yı kurun
+2. Prompt flow VS Code Eklentisini yükledikten sonra, eklentiye tıklayın ve **Installation dependencies** seçeneğini seçin, bu kılavuzu takip ederek ortamınıza Prompt flow SDK'yı kurun
 
-![pfsetup](../../../../../../translated_images/pfsetup.0c82d99c7760aac29833b37faf4329e67e22279b1c5f37a73724dfa9ebaa32ee.tr.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.tr.png)
 
-3. [Örnek Kodu](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) indirin ve VS Code ile açın
+3. [Örnek Kodu](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) indirin ve VS Code ile bu örneği açın
 
-![pfsample](../../../../../../translated_images/pfsample.7bf40b133a558d86356dd6bc0e480bad2659d9c5364823dae9b3e6784e6f2d25.tr.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.tr.png)
 
 4. Python ortamınızı seçmek için **flow.dag.yaml** dosyasını açın
 
-![pfdag](../../../../../../translated_images/pfdag.c5eb356fa3a96178cd594de9a5da921c4bbe646a9946f32aa20d344ccbeb51a0.tr.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.tr.png)
 
-   Phi-3.5-instruct ONNX Modelinizin konumunu değiştirmek için **chat_phi3_ort.py** dosyasını açın
+   Phi-3.5-instruct ONNX Model konumunuzu değiştirmek için **chat_phi3_ort.py** dosyasını açın
 
-![pfphi](../../../../../../translated_images/pfphi.fff4b0afea47c92c8481174dbf3092823906fca5b717fc642f78947c3e5bbb39.tr.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.tr.png)
 
-5. Prompt flow’u test etmek için çalıştırın
+5. Prompt flow'u test etmek için çalıştırın
 
 **flow.dag.yaml** dosyasını açın ve görsel editöre tıklayın
 
-![pfv](../../../../../../translated_images/pfv.7af6ecd65784a98558b344ba69b5ba6233876823fb435f163e916a632394fc1e.tr.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.tr.png)
 
-Buna tıkladıktan sonra test etmek için çalıştırın
+Buna tıkladıktan sonra çalıştırarak testi başlatın
 
-![pfflow](../../../../../../translated_images/pfflow.9697e0fda67794bb0cf4b78d52e6f5a42002eec935bc2519933064afbbdd34f0.tr.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.tr.png)
 
-1. Daha fazla sonuç görmek için terminalde toplu çalıştırma yapabilirsiniz
+1. Daha fazla sonuç kontrol etmek için terminalde toplu çalıştırma yapabilirsiniz
 
 
 ```bash
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Sonuçları varsayılan tarayıcınızda kontrol edebilirsiniz
 
 
-![pfresult](../../../../../../translated_images/pfresult.972eb57dd5bec646e1aa01148991ba8959897efea396e42cf9d7df259444878d.tr.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.tr.png)
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalar nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

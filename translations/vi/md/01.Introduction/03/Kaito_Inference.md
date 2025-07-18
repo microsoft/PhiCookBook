@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:56:14+00:00",
+  "translation_date": "2025-07-16T20:52:02+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "vi"
 }
@@ -13,34 +13,32 @@ CO_OP_TRANSLATOR_METADATA:
 
 Kaito có những điểm khác biệt chính so với hầu hết các phương pháp triển khai mô hình phổ biến dựa trên hạ tầng máy ảo:
 
-- Quản lý file mô hình bằng cách sử dụng container images. Một server http được cung cấp để thực hiện các cuộc gọi inference sử dụng thư viện mô hình.
-- Tránh việc điều chỉnh tham số triển khai cho phù hợp với phần cứng GPU bằng cách cung cấp các cấu hình mặc định.
+- Quản lý file mô hình bằng cách sử dụng container images. Một máy chủ http được cung cấp để thực hiện các cuộc gọi inference sử dụng thư viện mô hình.
+- Tránh việc điều chỉnh tham số triển khai để phù hợp với phần cứng GPU bằng cách cung cấp các cấu hình mặc định.
 - Tự động cấp phát các node GPU dựa trên yêu cầu của mô hình.
-- Lưu trữ các ảnh mô hình lớn trên Microsoft Container Registry (MCR) công khai nếu giấy phép cho phép.
+- Lưu trữ các image mô hình lớn trên Microsoft Container Registry (MCR) công khai nếu giấy phép cho phép.
 
-Sử dụng Kaito, quy trình đưa các mô hình AI inference lớn vào Kubernetes được đơn giản hóa rất nhiều.
+Sử dụng Kaito, quy trình đưa các mô hình AI inference lớn vào Kubernetes được đơn giản hóa đáng kể.
 
 ## Kiến trúc
 
-Kaito tuân theo mẫu thiết kế điển hình của Kubernetes Custom Resource Definition (CRD)/controller. Người dùng quản lý một tài nguyên tùy chỉnh `workspace` mô tả yêu cầu GPU và đặc tả inference. Các controller của Kaito sẽ tự động triển khai bằng cách đồng bộ tài nguyên tùy chỉnh `workspace`.
-
+Kaito tuân theo mẫu thiết kế điển hình của Kubernetes Custom Resource Definition (CRD)/controller. Người dùng quản lý một custom resource `workspace` mô tả yêu cầu GPU và đặc tả inference. Các controller của Kaito sẽ tự động triển khai bằng cách đồng bộ hóa custom resource `workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-Hình trên trình bày tổng quan kiến trúc Kaito. Các thành phần chính gồm:
+Hình trên trình bày tổng quan kiến trúc Kaito. Các thành phần chính bao gồm:
 
-- **Workspace controller**: Đồng bộ tài nguyên tùy chỉnh `workspace`, tạo các tài nguyên tùy chỉnh `machine` (giải thích bên dưới) để kích hoạt tự động cấp phát node, và tạo workload inference (`deployment` hoặc `statefulset`) dựa trên cấu hình mặc định của mô hình.
-- **Node provisioner controller**: Controller này có tên *gpu-provisioner* trong [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Nó sử dụng CRD `machine` xuất phát từ [Karpenter](https://sigs.k8s.io/karpenter) để tương tác với workspace controller. Nó tích hợp với API của Azure Kubernetes Service (AKS) để thêm các node GPU mới vào cụm AKS.
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) là một thành phần mã nguồn mở. Nó có thể được thay thế bằng các controller khác nếu chúng hỗ trợ API của [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Workspace controller**: Đồng bộ hóa custom resource `workspace`, tạo các custom resource `machine` (giải thích bên dưới) để kích hoạt việc tự động cấp phát node, và tạo workload inference (`deployment` hoặc `statefulset`) dựa trên các cấu hình mặc định của mô hình.
+- **Node provisioner controller**: Controller này có tên *gpu-provisioner* trong [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Nó sử dụng CRD `machine` bắt nguồn từ [Karpenter](https://sigs.k8s.io/karpenter) để tương tác với workspace controller. Nó tích hợp với API của Azure Kubernetes Service (AKS) để thêm các node GPU mới vào cụm AKS.
+> Lưu ý: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) là một thành phần mã nguồn mở. Nó có thể được thay thế bằng các controller khác nếu chúng hỗ trợ API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Cài đặt
 
 Vui lòng xem hướng dẫn cài đặt [tại đây](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Bắt đầu nhanh Inference Phi-3
-
-[Sample Code Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+[Mã mẫu Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -85,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Trạng thái workspace có thể được theo dõi bằng cách chạy lệnh sau. Khi cột WORKSPACEREADY hiện `True`, mô hình đã được triển khai thành công.
+Trạng thái workspace có thể được theo dõi bằng cách chạy lệnh sau. Khi cột WORKSPACEREADY hiển thị `True`, mô hình đã được triển khai thành công.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -93,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Tiếp theo, bạn có thể tìm địa chỉ cluster ip của dịch vụ inference và sử dụng một pod tạm thời `curl` để kiểm tra endpoint dịch vụ trong cụm.
+Tiếp theo, bạn có thể tìm địa chỉ IP cluster của dịch vụ inference và sử dụng một pod `curl` tạm thời để kiểm tra endpoint dịch vụ trong cụm.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -108,7 +106,7 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 Sau khi cài đặt Kaito, bạn có thể thử các lệnh sau để khởi động dịch vụ inference.
 
-[Sample Code Inference Phi-3 with Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Mã mẫu Inference Phi-3 với Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -157,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Trạng thái workspace có thể được theo dõi bằng cách chạy lệnh sau. Khi cột WORKSPACEREADY hiện `True`, mô hình đã được triển khai thành công.
+Trạng thái workspace có thể được theo dõi bằng cách chạy lệnh sau. Khi cột WORKSPACEREADY hiển thị `True`, mô hình đã được triển khai thành công.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -165,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Tiếp theo, bạn có thể tìm địa chỉ cluster ip của dịch vụ inference và sử dụng một pod tạm thời `curl` để kiểm tra endpoint dịch vụ trong cụm.
+Tiếp theo, bạn có thể tìm địa chỉ IP cluster của dịch vụ inference và sử dụng một pod `curl` tạm thời để kiểm tra endpoint dịch vụ trong cụm.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -177,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

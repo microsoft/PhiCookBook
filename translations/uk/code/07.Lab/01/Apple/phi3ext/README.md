@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be0b2937160c486180ded27e4f14adeb",
-  "translation_date": "2025-07-09T20:12:50+00:00",
+  "translation_date": "2025-07-16T16:57:22+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
   "language_code": "uk"
 }
@@ -15,7 +15,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Опишіть конкретні функції вашого розширення, включаючи скріншоти під час роботи розширення. Шляхи до зображень відносні до цього README файлу.
 
-Наприклад, якщо у вашій робочій папці проекту розширення є підпапка з зображеннями:
+Наприклад, якщо у вашій робочій папці проекту розширення є підпапка зображень:
 
 \!\[feature X\]\(images/feature-x.png\)
 
@@ -27,7 +27,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Extension Settings
 
-Якщо ваше розширення додає будь-які налаштування VS Code через `contributes.configuration`, обов’язково включіть їх сюди.
+Якщо ваше розширення додає будь-які налаштування VS Code через точку розширення `contributes.configuration`, обов’язково включіть їх сюди.
 
 Наприклад:
 
@@ -69,13 +69,13 @@ CO_OP_TRANSLATOR_METADATA:
 Ви можете писати README у Visual Studio Code. Ось кілька корисних комбінацій клавіш редактора:
 
 * Розділити редактор (`Cmd+\` на macOS або `Ctrl+\` на Windows і Linux).
-* Перемикати попередній перегляд (`Shift+Cmd+V` на macOS або `Shift+Ctrl+V` на Windows і Linux).
+* Перемикання перегляду (`Shift+Cmd+V` на macOS або `Shift+Ctrl+V` на Windows і Linux).
 * Натисніть `Ctrl+Space` (Windows, Linux, macOS), щоб побачити список фрагментів коду Markdown.
 
 ## For more information
 
 * [Підтримка Markdown у Visual Studio Code](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
-* [Довідник по синтаксису Markdown](https://help.github.com/articles/markdown-basics/)
+* [Довідка по синтаксису Markdown](https://help.github.com/articles/markdown-basics/)
 
 **Насолоджуйтеся!**
 

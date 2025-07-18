@@ -2,24 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:45:02+00:00",
+  "translation_date": "2025-07-17T08:02:48+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "sk"
 }
 -->
-# **Doladenie Phi-3 pomocou Apple MLX Frameworku**
+# **Doladenie Phi-3 pomocou Apple MLX Framework**
 
-Doladenie v kombinácii s Lora môžeme dokončiť cez príkazový riadok Apple MLX frameworku. (Ak chcete vedieť viac o fungovaní MLX Frameworku, prečítajte si [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
-
+Doladenie môžeme vykonať kombináciou s Lora cez príkazový riadok Apple MLX frameworku. (Ak chcete vedieť viac o fungovaní MLX Frameworku, prečítajte si prosím [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
 
 ## **1. Príprava dát**
 
-Štandardne MLX Framework vyžaduje jsonl formát pre train, test a eval a v kombinácii s Lora dokončuje doladenie.
-
+Štandardne MLX Framework vyžaduje formát jsonl pre train, test a eval, a kombinuje sa s Lora na dokončenie úloh doladenia.
 
 ### ***Note:***
 
-1. jsonl formát dát ：
+1. formát dát jsonl ：
 
 
 ```json
@@ -31,12 +29,11 @@ Doladenie v kombinácii s Lora môžeme dokončiť cez príkazový riadok Apple 
 
 ```
 
-2. Náš príklad používa [TruthfulQA dáta](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), ale množstvo dát je relatívne nedostatočné, preto výsledky doladenia nemusia byť najlepšie. Odporúča sa, aby si študenti na základe svojich scenárov použili lepšie dáta.
+2. Náš príklad používa [TruthfulQA dáta](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), ale množstvo dát je relatívne nedostatočné, preto výsledky doladenia nemusia byť najlepšie. Odporúča sa, aby si používatelia na základe svojich scenárov použili lepšie dáta.
 
 3. Formát dát je kombinovaný s Phi-3 šablónou
 
-Prosím stiahnite dáta z tohto [linku](../../../../code/04.Finetuning/mlx), zahŕňajúce všetky .jsonl v ***data*** priečinku
-
+Prosím, stiahnite si dáta z tohto [linku](../../../../code/04.Finetuning/mlx), zahŕňajú všetky .jsonl súbory v ***data*** priečinku
 
 ## **2. Doladenie v termináli**
 
@@ -54,7 +51,7 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 1. Toto je LoRA doladenie, MLX framework nezverejnil QLoRA
 
-2. Môžete upraviť config.yaml na zmenu niektorých argumentov, napríklad
+2. Môžete upraviť config.yaml a zmeniť niektoré argumenty, napríklad
 
 
 ```yaml
@@ -157,7 +154,6 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Môžete skúsiť porovnať výsledky doladenia s pôvodným modelom
 
-
 ## **4. Zlúčenie adaptérov na vytvorenie nových modelov**
 
 
@@ -167,9 +163,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Spustenie kvantovaných doladených modelov pomocou ollama**
+## **5. Spustenie kvantifikovaných doladených modelov pomocou ollama**
 
-Pred použitím si nakonfigurujte svoje prostredie llama.cpp
+Pred použitím si prosím nastavte svoje prostredie llama.cpp
 
 
 ```bash
@@ -184,11 +180,11 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:***
+***Note:*** 
 
-1. Teraz podporuje kvantizáciu fp32, fp16 a INT 8
+1. Teraz je podporovaná kvantizácia konverzie fp32, fp16 a INT 8
 
-2. Zlúčený model nemá tokenizer.model, stiahnite si ho z https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Zlúčený model postráda tokenizer.model, stiahnite si ho z https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
 nastavte [Ollma Model](https://ollama.com/)
 
@@ -214,4 +210,4 @@ spustite príkaz v termináli
 Gratulujeme! Ovládli ste doladenie s MLX Frameworkom
 
 **Vyhlásenie o zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Hoci sa snažíme o presnosť, majte prosím na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

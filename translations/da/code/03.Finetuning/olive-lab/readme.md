@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T04:25:37+00:00",
+  "translation_date": "2025-07-16T15:53:57+00:00",
   "source_file": "code/03.Finetuning/olive-lab/readme.md",
   "language_code": "da"
 }
@@ -11,65 +11,65 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Introduktion
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Dette lab kræver et **Nvidia A10 eller A100 GPU** med tilhørende drivere og CUDA toolkit (version 12+) installeret.
 
-> [!NOTE]
-> Dette er et **35-minutters** lab, som giver dig en praktisk introduktion til de grundlæggende koncepter for optimering af modeller til inferens på enheden ved brug af OLIVE.
+> [!NOTE]  
+> Dette er et **35-minutters** lab, der giver dig en praktisk introduktion til de grundlæggende koncepter for optimering af modeller til inferens på enheden ved hjælp af OLIVE.
 
 ## Læringsmål
 
-Ved afslutningen af dette lab vil du kunne bruge OLIVE til at:
+Når du er færdig med dette lab, vil du kunne bruge OLIVE til at:
 
-- Kvantisere en AI-model ved hjælp af AWQ kvantiseringsmetoden.
-- Finjustere en AI-model til en specifik opgave.
-- Generere LoRA-adaptere (finjusterede modeller) til effektiv inferens på enheden med ONNX Runtime.
+- Kvantisere en AI-model ved hjælp af AWQ kvantiseringsmetoden.  
+- Finjustere en AI-model til en specifik opgave.  
+- Generere LoRA-adaptere (finjusteret model) til effektiv inferens på enheden med ONNX Runtime.
 
 ### Hvad er Olive
 
 Olive (*O*NNX *live*) er et værktøjssæt til modeloptimering med tilhørende CLI, som gør det muligt at levere modeller til ONNX runtime +++https://onnxruntime.ai+++ med høj kvalitet og ydeevne.
 
-![Olive Flow](../../../../../translated_images/olive-flow.5beac74493fb2216eb8578519cfb1c4a1e752a3536bc755c4545bd0959634684.da.png)
+![Olive Flow](../../../../../translated_images/olive-flow.a47985655a756dcba73521511ea42eef359509a3a33cbd4b9ac04ba433287b80.da.png)
 
-Input til Olive er typisk en PyTorch- eller Hugging Face-model, og output er en optimeret ONNX-model, som køres på en enhed (deploymentsmål) med ONNX runtime. Olive optimerer modellen til deploymentsmålets AI-accelerator (NPU, GPU, CPU) leveret af hardwareleverandører som Qualcomm, AMD, Nvidia eller Intel.
+Input til Olive er typisk en PyTorch- eller Hugging Face-model, og output er en optimeret ONNX-model, der køres på en enhed (deploymentsmål) med ONNX runtime. Olive optimerer modellen til deploymentsmålets AI-accelerator (NPU, GPU, CPU) leveret af en hardwareleverandør som Qualcomm, AMD, Nvidia eller Intel.
 
-Olive udfører en *workflow*, som er en ordnet sekvens af individuelle modeloptimeringsopgaver kaldet *passes* – eksempler på passes inkluderer: modelkomprimering, grafoptagelse, kvantisering, grafoptimering. Hver pass har et sæt parametre, der kan justeres for at opnå de bedste metrikker, fx nøjagtighed og latenstid, som evalueres af den respektive evaluator. Olive anvender en søgestrategi, der bruger en søgealgoritme til automatisk at finjustere hver pass én ad gangen eller flere passes samlet.
+Olive udfører en *workflow*, som er en ordnet sekvens af individuelle modeloptimeringsopgaver kaldet *passes* – eksempler på passes inkluderer: modelkomprimering, grafoptagelse, kvantisering, grafoptimering. Hver pass har et sæt parametre, der kan justeres for at opnå de bedste målinger, fx nøjagtighed og latenstid, som evalueres af den respektive evaluator. Olive anvender en søgestrategi, der bruger en søgealgoritme til automatisk at finjustere hver pass én ad gangen eller flere passes samlet.
 
 #### Fordele ved Olive
 
-- **Reducer frustration og tid** ved manuel trial-and-error med forskellige teknikker til grafoptimering, komprimering og kvantisering. Definer dine kvalitets- og ydeevnekrav, og lad Olive automatisk finde den bedste model for dig.
-- **40+ indbyggede modeloptimeringskomponenter** med de nyeste teknikker inden for kvantisering, komprimering, grafoptimering og finjustering.
-- **Brugervenlig CLI** til almindelige modeloptimeringsopgaver. For eksempel olive quantize, olive auto-opt, olive finetune.
-- Indbygget modelpakning og deployment.
-- Understøtter generering af modeller til **Multi LoRA serving**.
-- Byg workflows med YAML/JSON til at orkestrere modeloptimering og deployment-opgaver.
-- Integration med **Hugging Face** og **Azure AI**.
+- **Reducer frustration og tid** ved manuel forsøg-og-fejl eksperimentering med forskellige teknikker til grafoptimering, komprimering og kvantisering. Definer dine kvalitets- og ydelseskrav, og lad Olive automatisk finde den bedste model for dig.  
+- **40+ indbyggede modeloptimeringskomponenter** der dækker banebrydende teknikker inden for kvantisering, komprimering, grafoptimering og finjustering.  
+- **Brugervenlig CLI** til almindelige modeloptimeringsopgaver. For eksempel olive quantize, olive auto-opt, olive finetune.  
+- Indbygget modelpakning og deployment.  
+- Understøtter generering af modeller til **Multi LoRA serving**.  
+- Byg workflows med YAML/JSON til at orkestrere modeloptimerings- og deploymentopgaver.  
+- **Hugging Face** og **Azure AI** integration.  
 - Indbygget **caching**-mekanisme til at **sænke omkostninger**.
 
-## Lab Instruktioner
+## Lab instruktioner
 
-> [!NOTE]
-> Sørg for, at du har oprettet dit Azure AI Hub og projekt og sat din A100 compute op som beskrevet i Lab 1.
+> [!NOTE]  
+> Sørg for, at du har provisioneret dit Azure AI Hub og projekt samt sat din A100 compute op som beskrevet i Lab 1.
 
 ### Trin 0: Forbind til din Azure AI Compute
 
-Du forbinder til Azure AI compute ved hjælp af remote-funktionen i **VS Code**.
+Du forbinder til Azure AI compute ved hjælp af remote-funktionen i **VS Code.**
 
-1. Åbn din **VS Code** desktop-applikation:
-1. Åbn **command palette** med **Shift+Ctrl+P**
-1. Søg i command palette efter **AzureML - remote: Connect to compute instance in New Window**.
-1. Følg instruktionerne på skærmen for at forbinde til Compute. Det indebærer at vælge dit Azure-abonnement, Resource Group, projekt og Compute-navnet, som du opsatte i Lab 1.
-1. Når du er forbundet til din Azure ML Compute-node, vises det nederst til venstre i Visual Code `><Azure ML: Compute Name`
+1. Åbn din **VS Code** desktop-applikation:  
+1. Åbn **command palette** med **Shift+Ctrl+P**  
+1. Søg i command palette efter **AzureML - remote: Connect to compute instance in New Window**.  
+1. Følg instruktionerne på skærmen for at forbinde til Compute. Det indebærer at vælge dit Azure-abonnement, Resource Group, projekt og Compute-navn, som du satte op i Lab 1.  
+1. Når du er forbundet til din Azure ML Compute-node, vises det i **nederste venstre hjørne af Visual Code** som `><Azure ML: Compute Name`
 
 ### Trin 1: Klon dette repo
 
-I VS Code kan du åbne et nyt terminalvindue med **Ctrl+J** og klone dette repo:
+I VS Code kan du åbne en ny terminal med **Ctrl+J** og klone dette repo:
 
-I terminalen vil du se prompten
+I terminalen skulle du se prompten
 
 ```
 azureuser@computername:~/cloudfiles/code$ 
-```
+```  
 Klon løsningen
 
 ```bash
@@ -99,19 +99,19 @@ az extension remove -n azure-cli-ml
 az extension add -n ml
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > Det tager ca. 5 minutter at installere alle afhængigheder.
 
-I dette lab downloader og uploader du modeller til Azure AI Model kataloget. For at få adgang til modelkataloget skal du logge ind på Azure med:
+I dette lab downloader og uploader du modeller til Azure AI Model-kataloget. For at få adgang til modelkataloget skal du logge ind på Azure med:
 
 ```bash
 az login
 ```
 
-> [!NOTE]
+> [!NOTE]  
 > Ved login bliver du bedt om at vælge dit abonnement. Sørg for at vælge det abonnement, der er tildelt til dette lab.
 
-### Trin 4: Kør Olive-kommandoer
+### Trin 4: Udfør Olive-kommandoer
 
 Åbn et terminalvindue i VS Code på din Azure AI Compute Instance (tip: **Ctrl+J**) og sørg for, at `olive-ai` conda-miljøet er aktiveret:
 
@@ -119,15 +119,15 @@ az login
 conda activate olive-ai
 ```
 
-Kør herefter følgende Olive-kommandoer i kommandolinjen.
+Kør derefter følgende Olive-kommandoer i kommandolinjen.
 
-1. **Undersøg data:** I dette eksempel finjusterer du Phi-3.5-Mini modellen, så den bliver specialiseret i at besvare rejserelaterede spørgsmål. Koden nedenfor viser de første få poster i datasættet, som er i JSON lines-format:
+1. **Undersøg data:** I dette eksempel vil du finjustere Phi-3.5-Mini modellen, så den specialiserer sig i at besvare rejserelaterede spørgsmål. Koden nedenfor viser de første par poster i datasættet, som er i JSON lines-format:
 
     ```bash
     head data/data_sample_travel.jsonl
     ```
 
-1. **Kvantisér modellen:** Før træning kvantiserer du modellen med følgende kommando, som bruger en teknik kaldet Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ kvantiserer modellens vægte ved at tage hensyn til de aktiveringer, der opstår under inferens. Det betyder, at kvantiseringsprocessen tager højde for den faktiske datafordeling i aktiveringerne, hvilket bevarer modellens nøjagtighed bedre end traditionelle vægtkvantiseringsmetoder.
+1. **Kvantisér modellen:** Før træning kvantiserer du modellen med følgende kommando, der bruger en teknik kaldet Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ kvantiserer vægtene i en model ved at tage højde for de aktiveringer, der produceres under inferens. Det betyder, at kvantiseringsprocessen tager hensyn til den faktiske datadistribution i aktiveringerne, hvilket bevarer modelnøjagtigheden bedre end traditionelle vægtkvantiseringsmetoder.
 
     ```bash
     olive quantize \
@@ -138,11 +138,11 @@ Kør herefter følgende Olive-kommandoer i kommandolinjen.
        --log_level 1
     ```
 
-    Det tager **ca. 8 minutter** at fuldføre AWQ kvantiseringen, som **reducerer modellens størrelse fra ca. 7,5GB til ca. 2,5GB**.
+    Det tager **ca. 8 minutter** at gennemføre AWQ-kvantiseringen, som vil **reducere modelstørrelsen fra ca. 7,5GB til ca. 2,5GB**.
 
-    I dette lab viser vi, hvordan du indlæser modeller fra Hugging Face (for eksempel: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
+    I dette lab viser vi, hvordan du kan hente modeller fra Hugging Face (fx `microsoft/Phi-3.5-mini-instruct`). Olive tillader også input af modeller fra Azure AI-kataloget ved at opdatere argumentet `model_name_or_path` til en Azure AI asset ID (fx `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
 
-1. **Train the model:** Next, the `olive finetune` kommandoen finjusterer den kvantiserede model. At kvantisere modellen *før* finjustering i stedet for efter giver bedre nøjagtighed, da finjusteringen genvinder noget af det tab, der opstår ved kvantisering.
+1. **Træn modellen:** Dernæst finjusterer `olive finetune` kommandoen den kvantiserede model. Kvantisering *før* finjustering i stedet for efter giver bedre nøjagtighed, da finjusteringsprocessen genvinder noget af det tab, der opstår ved kvantisering.
 
     ```bash
     olive finetune \
@@ -156,9 +156,9 @@ Kør herefter følgende Olive-kommandoer i kommandolinjen.
         --log_level 1
     ```
 
-    Det tager **ca. 6 minutter** at fuldføre finjusteringen (med 100 steps).
+    Det tager **ca. 6 minutter** at gennemføre finjusteringen (med 100 steps).
 
-1. **Optimer:** Når modellen er trænet, optimerer du modellen ved hjælp af Olive’s `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` argumenter – men til dette lab bruger vi CPU.
+1. **Optimer:** Når modellen er trænet, optimerer du den med Olives `auto-opt` kommando, som fanger ONNX-grafen og automatisk udfører en række optimeringer for at forbedre modelens ydeevne på CPU ved at komprimere modellen og lave fusioner. Bemærk, at du også kan optimere til andre enheder som NPU eller GPU ved blot at opdatere argumenterne `--device` og `--provider` – men i dette lab bruger vi CPU.
 
     ```bash
     olive auto-opt \
@@ -171,7 +171,7 @@ Kør herefter følgende Olive-kommandoer i kommandolinjen.
        --log_level 1
     ```
 
-    Det tager **ca. 5 minutter** at fuldføre optimeringen.
+    Det tager **ca. 5 minutter** at gennemføre optimeringen.
 
 ### Trin 5: Hurtig test af modelinferens
 
@@ -219,12 +219,12 @@ python app.py
 
 ### Trin 6: Upload model til Azure AI
 
-At uploade modellen til et Azure AI model repository gør modellen delbar med andre medlemmer af dit udviklingsteam og håndterer også versionsstyring af modellen. For at uploade modellen, kør følgende kommando:
+Upload af modellen til et Azure AI modelrepository gør modellen delbar med andre medlemmer af dit udviklingsteam og håndterer også versionsstyring af modellen. For at uploade modellen, kør følgende kommando:
 
-> [!NOTE]
-> Opdater `{}` placeholders with the name of your resource group and Azure AI Project Name. 
+> [!NOTE]  
+> Opdater `{}` pladsholderne med navnet på din resource group og Azure AI projekt.
 
-To find your resource group `"resourceGroup"` og Azure AI Project navn, og kør kommandoen
+For at finde din resource group `"resourceGroup"` og Azure AI projekt navn, kør følgende kommando
 
 ```
 az ml workspace show
@@ -232,7 +232,7 @@ az ml workspace show
 
 Eller gå til +++ai.azure.com+++ og vælg **management center** > **project** > **overview**
 
-Opdater `{}` pladsholderne med navnet på din resource group og Azure AI Project navn.
+Opdater `{}` pladsholderne med navnet på din resource group og Azure AI projekt.
 
 ```bash
 az ml model create \
@@ -241,9 +241,8 @@ az ml model create \
     --path ./models/phi/onnx-ao \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
-```
-
+```  
 Du kan derefter se din uploadede model og deploye den på https://ml.azure.com/model/list
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets modersmål bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

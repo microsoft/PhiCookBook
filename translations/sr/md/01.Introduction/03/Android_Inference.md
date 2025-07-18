@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-05-09T10:52:26+00:00",
+  "translation_date": "2025-07-16T20:16:13+00:00",
   "source_file": "md/01.Introduction/03/Android_Inference.md",
   "language_code": "sr"
 }
 -->
-# **Inference Phi-3 na Androidu**
+# **Инференција Phi-3 на Андроиду**
 
-Hajde da istražimo kako možete izvršiti inferencu sa Phi-3-mini na Android uređajima. Phi-3-mini je nova serija modela iz Microsofta koja omogućava implementaciju velikih jezičkih modela (LLM) na edge uređajima i IoT uređajima.
+Хајде да истражимо како можете извршити инференцију са Phi-3-mini на Андроид уређајима. Phi-3-mini је нова серија модела из Microsoft-а која омогућава покретање великих језичких модела (LLM) на уређајима на ивици мреже и IoT уређајима.
 
-## Semantic Kernel i Inference
+## Semantic Kernel и инференција
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel) je aplikacioni okvir koji vam omogućava da kreirate aplikacije kompatibilne sa Azure OpenAI Service, OpenAI modelima, pa čak i lokalnim modelima. Ako ste novi u Semantic Kernel, preporučujemo da pogledate [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
+[Semantic Kernel](https://github.com/microsoft/semantic-kernel) је апликациони оквир који вам омогућава да креирате апликације компатибилне са Azure OpenAI Service, OpenAI моделима, па чак и локалним моделима. Ако сте нови у Semantic Kernel-у, препоручујемо да погледате [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
 
-### Kako pristupiti Phi-3-mini koristeći Semantic Kernel
+### Како приступити Phi-3-mini користећи Semantic Kernel
 
-Možete ga kombinovati sa Hugging Face Connector u Semantic Kernel-u. Pogledajte ovaj [primer koda](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
+Можете га комбиновати са Hugging Face Connector-ом у Semantic Kernel-у. Погледајте овај [пример кода](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
 
-Podrazumevano, koristi model ID sa Hugging Face-a. Međutim, možete se povezati i na lokalno izgrađeni Phi-3-mini model server.
+Подразумевано, одговара моделу са Hugging Face-а. Међутим, можете се повезати и на локално изграђени Phi-3-mini сервер модела.
 
-### Pozivanje kvantizovanih modela sa Ollama ili LlamaEdge
+### Позивање квантованих модела помоћу Ollama или LlamaEdge
 
-Mnogi korisnici preferiraju korišćenje kvantizovanih modela za lokalno pokretanje modela. [Ollama](https://ollama.com/) i [LlamaEdge](https://llamaedge.com) omogućavaju pojedinačnim korisnicima da pozivaju različite kvantizovane modele:
+Многи корисници више воле да користе квантоване моделе за локално покретање модела. [Ollama](https://ollama.com/) и [LlamaEdge](https://llamaedge.com) омогућавају појединцима да позивају различите квантоване моделе:
 
 #### Ollama
 
-Možete direktno pokrenuti `ollama run Phi-3` ili ga podesiti offline kreiranjem `Modelfile` sa putanjom do vašeg `.gguf` fajla.
+Можете директно покренути `ollama run Phi-3` или га конфигурисати офлајн креирањем `Modelfile` са путањом до вашег `.gguf` фајла.
 
 ```gguf
 FROM {Add your gguf file path}
@@ -36,19 +36,19 @@ PARAMETER stop <|end|>
 PARAMETER num_ctx 4096
 ```
 
-[Primer koda](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
+[Пример кода](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
 
 #### LlamaEdge
 
-Ako želite da koristite `.gguf` fajlove istovremeno u oblaku i na edge uređajima, LlamaEdge je odličan izbor. Možete pogledati ovaj [primer koda](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) za početak.
+Ако желите да користите `.gguf` фајлове у облаку и на уређајима на ивици мреже истовремено, LlamaEdge је одличан избор. Можете погледати овај [пример кода](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) за почетак.
 
-### Instalacija i pokretanje na Android telefonima
+### Инсталација и покретање на Андроид телефонима
 
-1. **Preuzmite MLC Chat aplikaciju** (besplatno) za Android telefone.  
-2. Preuzmite APK fajl (148MB) i instalirajte ga na svoj uređaj.  
-3. Pokrenite MLC Chat aplikaciju. Videćete listu AI modela, uključujući Phi-3-mini.
+1. **Преузмите MLC Chat апликацију** (бесплатно) за Андроид телефоне.  
+2. Преузмите APK фајл (148MB) и инсталирајте га на свој уређај.  
+3. Покрените MLC Chat апликацију. Видећете листу AI модела, укључујући Phi-3-mini.
 
-Ukratko, Phi-3-mini otvara uzbudljive mogućnosti za generativnu veštačku inteligenciju na edge uređajima, i možete početi da istražujete njegove mogućnosti na Androidu.
+Укратко, Phi-3-mini отвара узбудљиве могућности за генеративну вештачку интелигенцију на уређајима на ивици мреже, и можете почети да истражујете његове могућности на Андроиду.
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако настојимо да превод буде тачан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални превод од стране људског стручњака. Не одговарамо за било каква неспоразума или погрешне тумачења настала коришћењем овог превода.
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

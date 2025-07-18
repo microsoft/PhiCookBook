@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-07-09T19:30:06+00:00",
+  "translation_date": "2025-07-17T04:59:59+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "uk"
 }
@@ -38,14 +38,14 @@ CO_OP_TRANSLATOR_METADATA:
     import os
     import base64
     ```
-    Ці імпорти підключають потрібні модулі для взаємодії з NVIDIA AI endpoints, безпечного введення паролів, роботи з операційною системою та кодування/декодування даних у форматі base64.
+    Ці імпорти підключають модулі для взаємодії з NVIDIA AI endpoints, безпечного введення паролів, роботи з операційною системою та кодування/декодування даних у форматі base64.
 
 3. **Налаштування API ключа**:
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
     ```
-    Цей код перевіряє, чи встановлена змінна середовища `NVIDIA_API_KEY`. Якщо ні, він безпечно запитує у користувача введення API ключа.
+    Цей код перевіряє, чи встановлена змінна середовища `NVIDIA_API_KEY`. Якщо ні, він безпечно запитує у користувача ввести ключ API.
 
 4. **Визначення моделі та шляху до зображення**:
     ```python
@@ -82,7 +82,7 @@ CO_OP_TRANSLATOR_METADATA:
         print(chunk.content, end="")
         code += chunk.content
     ```
-    Цей код надсилає підказку моделі `ChatNVIDIA` і збирає згенерований код по частинах, виводячи та додаючи кожну частину до рядка `code`.
+    Цей код надсилає підказку моделі `ChatNVIDIA` і збирає згенерований код частинами, виводячи та додаючи кожну частину до рядка `code`.
 
 9. **Витягування Python-коду зі згенерованого вмісту**:
     ```python

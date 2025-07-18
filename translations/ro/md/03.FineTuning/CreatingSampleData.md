@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:26:54+00:00",
+  "translation_date": "2025-07-17T05:52:02+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "ro"
 }
 -->
-# Generare set de date pentru imagini prin descărcarea DataSet-ului de pe Hugging Face și imaginile asociate
+# Generare Set de Date pentru Imagini prin descărcarea DataSet-ului de pe Hugging Face și imaginile asociate
 
 
 ### Prezentare generală
@@ -16,7 +16,7 @@ Acest script pregătește un set de date pentru învățare automată prin desc�
 
 ### Cerințe preliminare
 
-Înainte de a rula acest script, asigură-te că ai instalat următoarele biblioteci: `Pandas`, `Datasets`, `requests`, `PIL` și `io`. De asemenea, va trebui să înlocuiești `'Insert_Your_Dataset'` din linia 2 cu numele setului tău de date de pe Hugging Face.
+Înainte de a rula acest script, asigură-te că ai instalat următoarele biblioteci: `Pandas`, `Datasets`, `requests`, `PIL` și `io`. De asemenea, va trebui să înlocuiești `'Insert_Your_Dataset'` de pe linia 2 cu numele setului tău de date de pe Hugging Face.
 
 Biblioteci necesare:
 
@@ -32,38 +32,38 @@ from io import BytesIO
 
 ### Funcționalitate
 
-Scriptul efectuează următorii pași:
+Scriptul execută următorii pași:
 
-1. Descarcă setul de date de pe Hugging Face folosind funcția `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Descarcă setul de date de pe Hugging Face folosind funcția `load_dataset()`.
+2. Convertește setul de date Hugging Face într-un DataFrame Pandas pentru o manipulare mai ușoară, folosind metoda `to_pandas()`.
+3. Creează directoare pentru salvarea setului de date și a imaginilor.
+4. Filtrează rândurile unde descărcarea imaginii eșuează, parcurgând fiecare rând din DataFrame, descărcând imaginea cu funcția personalizată `download_image()` și adăugând rândul filtrat într-un nou DataFrame numit `filtered_rows`.
+5. Creează un nou DataFrame cu rândurile filtrate și îl salvează pe disc ca fișier CSV.
+6. Afișează un mesaj care indică unde au fost salvate setul de date și imaginile.
 
-### Custom Function
+### Funcție personalizată
 
-The `download_image()` descarcă o imagine de la o adresă URL și o salvează local folosind biblioteca Pillow Image (PIL) și modulul `io`. Returnează True dacă imaginea a fost descărcată cu succes și False în caz contrar. Funcția ridică o excepție cu mesajul de eroare atunci când cererea eșuează.
+Funcția `download_image()` descarcă o imagine de la o adresă URL și o salvează local folosind biblioteca Pillow Image (PIL) și modulul `io`. Returnează True dacă imaginea a fost descărcată cu succes și False în caz contrar. Funcția ridică o excepție cu mesajul de eroare atunci când cererea eșuează.
 
 ### Cum funcționează
 
-Funcția download_image primește doi parametri: image_url, care este URL-ul imaginii ce trebuie descărcată, și save_path, care este calea unde va fi salvată imaginea descărcată.
+Funcția download_image primește doi parametri: image_url, care este URL-ul imaginii ce trebuie descărcată, și save_path, care este calea unde imaginea descărcată va fi salvată.
 
 Iată cum funcționează funcția:
 
 Începe prin a face o cerere GET către image_url folosind metoda requests.get. Aceasta preia datele imaginii de la URL.
 
-Linia response.raise_for_status() verifică dacă cererea a fost cu succes. Dacă codul de stare al răspunsului indică o eroare (ex. 404 - Nu a fost găsit), va ridica o excepție. Acest lucru asigură că continuăm descărcarea imaginii doar dacă cererea a fost reușită.
+Linia response.raise_for_status() verifică dacă cererea a fost realizată cu succes. Dacă codul de stare al răspunsului indică o eroare (de exemplu, 404 - Nu a fost găsit), va ridica o excepție. Acest lucru asigură că descărcarea imaginii continuă doar dacă cererea a fost reușită.
 
 Datele imaginii sunt apoi transmise metodei Image.open din modulul PIL (Python Imaging Library). Această metodă creează un obiect Image din datele imaginii.
 
-Linia image.save(save_path) salvează imaginea la calea specificată save_path. Aceasta trebuie să includă numele fișierului dorit și extensia.
+Linia image.save(save_path) salvează imaginea la calea specificată prin save_path. save_path trebuie să includă numele fișierului dorit și extensia.
 
-În final, funcția returnează True pentru a indica faptul că imaginea a fost descărcată și salvată cu succes. Dacă apare vreo excepție pe parcurs, aceasta este prinsă, se afișează un mesaj de eroare care indică eșecul și funcția returnează False.
+În final, funcția returnează True pentru a indica faptul că imaginea a fost descărcată și salvată cu succes. Dacă apare vreo excepție în timpul procesului, aceasta este prinsă, se afișează un mesaj de eroare care indică eșecul și se returnează False.
 
 Această funcție este utilă pentru descărcarea imaginilor de la URL-uri și salvarea lor locală. Gestionează eventualele erori apărute în timpul procesului de descărcare și oferă feedback dacă descărcarea a fost reușită sau nu.
 
-Este de menționat că biblioteca requests este folosită pentru a face cereri HTTP, biblioteca PIL pentru a lucra cu imagini, iar clasa BytesIO este folosită pentru a trata datele imaginii ca un flux de octeți.
+Este important de menționat că biblioteca requests este folosită pentru a face cereri HTTP, biblioteca PIL este folosită pentru a lucra cu imagini, iar clasa BytesIO este folosită pentru a gestiona datele imaginii ca un flux de octeți.
 
 
 
@@ -130,11 +130,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Cod exemplu descărcare  
+### Cod exemplu pentru descărcare  
 [Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
 ### Set de date exemplu  
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

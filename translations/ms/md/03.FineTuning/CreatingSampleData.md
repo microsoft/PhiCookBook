@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-05-09T20:26:00+00:00",
+  "translation_date": "2025-07-17T05:50:51+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "ms"
 }
 -->
-# Generate Image Data Set by downloading DataSet from Hugging Face and associated images
+# Jana Set Data Imej dengan memuat turun DataSet dari Hugging Face dan imej berkaitan
 
 
-### Overview
+### Gambaran Keseluruhan
 
-This script prepares a dataset for machine learning by downloading the necessary images, filtering out rows where image downloads fail, and saving the dataset as a CSV file.
+Skrip ini menyediakan set data untuk pembelajaran mesin dengan memuat turun imej yang diperlukan, menapis baris di mana muat turun imej gagal, dan menyimpan set data sebagai fail CSV.
 
-### Prerequisites
+### Prasyarat
 
-Before running this script, ensure you have the following libraries installed: `Pandas`, `Datasets`, `requests`, `PIL`, and `io`. You will also need to replace `'Insert_Your_Dataset'` in line 2 with the name of your dataset from Hugging Face.
+Sebelum menjalankan skrip ini, pastikan perpustakaan berikut telah dipasang: `Pandas`, `Datasets`, `requests`, `PIL`, dan `io`. Anda juga perlu menggantikan `'Insert_Your_Dataset'` pada baris 2 dengan nama set data anda dari Hugging Face.
 
-Required Libraries:
+Perpustakaan Diperlukan:
 
 ```python
 
@@ -30,48 +30,48 @@ from PIL import Image
 from io import BytesIO
 ```
 
-### Functionality
+### Fungsi
 
-The script performs the following steps:
+Skrip ini melaksanakan langkah-langkah berikut:
 
-1. Downloads the dataset from Hugging Face using the `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
-3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
-5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
-6. Prints a message indicating where the dataset and images have been saved.
+1. Memuat turun set data dari Hugging Face menggunakan fungsi `load_dataset()`.
+2. Menukar set data Hugging Face kepada DataFrame Pandas untuk memudahkan manipulasi menggunakan kaedah `to_pandas()`.
+3. Membuat direktori untuk menyimpan set data dan imej.
+4. Menapis baris di mana muat turun imej gagal dengan mengulangi setiap baris dalam DataFrame, memuat turun imej menggunakan fungsi khusus `download_image()`, dan menambah baris yang ditapis ke DataFrame baru bernama `filtered_rows`.
+5. Membuat DataFrame baru dengan baris yang ditapis dan menyimpannya ke cakera sebagai fail CSV.
+6. Mencetak mesej yang menunjukkan lokasi set data dan imej telah disimpan.
 
-### Custom Function
+### Fungsi Khusus
 
-The `download_image()` function downloads an image from a URL and saves it locally using the Pillow Image Library (PIL) and the `io` module. It returns True if the image is successfully downloaded, and False otherwise. The function also raises an exception with the error message when the request fails.
+Fungsi `download_image()` memuat turun imej dari URL dan menyimpannya secara tempatan menggunakan Perpustakaan Imej Pillow (PIL) dan modul `io`. Ia mengembalikan True jika imej berjaya dimuat turun, dan False jika tidak. Fungsi ini juga akan membangkitkan pengecualian dengan mesej ralat apabila permintaan gagal.
 
-### How does this work
+### Bagaimana ia berfungsi
 
-The download_image function takes two parameters: image_url, which is the URL of the image to be downloaded, and save_path, which is the path where the downloaded image will be saved.
+Fungsi download_image mengambil dua parameter: image_url, iaitu URL imej yang hendak dimuat turun, dan save_path, iaitu laluan di mana imej yang dimuat turun akan disimpan.
 
-Here's how the function works:
+Berikut adalah cara fungsi ini berfungsi:
 
-It starts by making a GET request to the image_url using the requests.get method. This retrieves the image data from the URL.
+Ia bermula dengan membuat permintaan GET ke image_url menggunakan kaedah requests.get. Ini mengambil data imej dari URL tersebut.
 
-The response.raise_for_status() line checks if the request was successful. If the response status code indicates an error (e.g., 404 - Not Found), it will raise an exception. This ensures that we only proceed with downloading the image if the request was successful.
+Baris response.raise_for_status() memeriksa sama ada permintaan berjaya. Jika kod status respons menunjukkan ralat (contohnya, 404 - Tidak Dijumpai), ia akan membangkitkan pengecualian. Ini memastikan kita hanya meneruskan muat turun imej jika permintaan berjaya.
 
-The image data is then passed to the Image.open method from the PIL (Python Imaging Library) module. This method creates an Image object from the image data.
+Data imej kemudian dihantar ke kaedah Image.open dari modul PIL (Python Imaging Library). Kaedah ini mencipta objek Image daripada data imej tersebut.
 
-The image.save(save_path) line saves the image to the specified save_path. The save_path should include the desired file name and extension.
+Baris image.save(save_path) menyimpan imej ke save_path yang ditetapkan. save_path harus termasuk nama fail dan sambungan yang dikehendaki.
 
-Finally, the function returns True to indicate that the image was successfully downloaded and saved. If any exception occurs during the process, it catches the exception, prints an error message indicating the failure, and returns False.
+Akhir sekali, fungsi mengembalikan True untuk menunjukkan imej berjaya dimuat turun dan disimpan. Jika sebarang pengecualian berlaku semasa proses, ia akan menangkap pengecualian tersebut, mencetak mesej ralat yang menunjukkan kegagalan, dan mengembalikan False.
 
-This function is useful for downloading images from URLs and saving them locally. It handles potential errors during the download process and provides feedback on whether the download was successful or not.
+Fungsi ini berguna untuk memuat turun imej dari URL dan menyimpannya secara tempatan. Ia mengendalikan kemungkinan ralat semasa proses muat turun dan memberikan maklum balas sama ada muat turun berjaya atau tidak.
 
-It's worth noting that the requests library is used to make HTTP requests, the PIL library is used to work with images, and the BytesIO class is used to handle the image data as a stream of bytes.
+Perlu diingat bahawa perpustakaan requests digunakan untuk membuat permintaan HTTP, perpustakaan PIL digunakan untuk bekerja dengan imej, dan kelas BytesIO digunakan untuk mengendalikan data imej sebagai aliran bait.
 
 
 
-### Conclusion
+### Kesimpulan
 
-This script offers a straightforward way to prepare a dataset for machine learning by downloading the necessary images, removing rows where image downloads fail, and saving the dataset as a CSV file.
+Skrip ini menyediakan cara mudah untuk menyediakan set data bagi pembelajaran mesin dengan memuat turun imej yang diperlukan, menapis baris di mana muat turun imej gagal, dan menyimpan set data sebagai fail CSV.
 
-### Sample Script
+### Skrip Contoh
 
 ```python
 import os
@@ -130,11 +130,11 @@ filtered_df.to_csv(dataset_path, index=False)
 print(f"Dataset and images saved to {dataset_dir}")
 ```
 
-### Sample Code Download 
+### Muat Turun Kod Contoh  
 [Generate a new Data Set script](../../../../code/04.Finetuning/generate_dataset.py)
 
-### Sample Data Set
-[Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
+### Set Data Contoh
+[Contoh Set Data dari finetuning dengan contoh LORA](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

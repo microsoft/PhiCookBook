@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:42:25+00:00",
+  "translation_date": "2025-07-17T07:59:21+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "pt"
 }
 -->
 # **Ajuste fino do Phi-3 com o Apple MLX Framework**
 
-Podemos realizar o ajuste fino combinado com Lora através da linha de comando do Apple MLX Framework. (Se quiser saber mais sobre o funcionamento do MLX Framework, por favor leia [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+Podemos realizar o ajuste fino combinado com Lora através da linha de comandos do Apple MLX Framework. (Se quiser saber mais sobre o funcionamento do MLX Framework, por favor leia [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
 
 ## **1. Preparação dos dados**
 
-Por padrão, o MLX Framework exige o formato jsonl para train, test e eval, e é combinado com Lora para completar os trabalhos de ajuste fino.
+Por defeito, o MLX Framework requer o formato jsonl para treino, teste e avaliação, e é combinado com Lora para completar os trabalhos de ajuste fino.
 
 
 ### ***Nota:***
 
-1. Formato dos dados jsonl ：
+1. Formato de dados jsonl ：
 
 
 ```json
@@ -31,11 +31,11 @@ Por padrão, o MLX Framework exige o formato jsonl para train, test e eval, e é
 
 ```
 
-2. Nosso exemplo usa os dados do [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), mas a quantidade de dados é relativamente pequena, então os resultados do ajuste fino podem não ser os melhores. Recomendamos que os aprendizes usem dados melhores baseados em seus próprios cenários para realizar o ajuste.
+2. O nosso exemplo usa os dados do [TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), mas a quantidade de dados é relativamente insuficiente, pelo que os resultados do ajuste fino podem não ser os melhores. Recomenda-se que os utilizadores usem dados melhores, adaptados aos seus próprios cenários, para completar o processo.
 
-3. O formato dos dados é combinado com o template do Phi-3
+3. O formato dos dados está combinado com o template do Phi-3
 
-Por favor, baixe os dados neste [link](../../../../code/04.Finetuning/mlx), incluindo todos os arquivos .jsonl na pasta ***data***
+Por favor, faça o download dos dados a partir deste [link](../../../../code/04.Finetuning/mlx), incluindo todos os ficheiros .jsonl na pasta ***data***
 
 
 ## **2. Ajuste fino no seu terminal**
@@ -52,9 +52,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Nota:***
 
-1. Este é um ajuste fino LoRA, o MLX framework ainda não publicou QLoRA
+1. Este é um ajuste fino LoRA, o MLX framework não publicou QLoRA
 
-2. Você pode configurar o config.yaml para alterar alguns argumentos, como
+2. Pode configurar o config.yaml para alterar alguns argumentos, como
 
 
 ```yaml
@@ -135,9 +135,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Execute o adaptador de ajuste fino para testar**
+## **3. Executar o adaptador de ajuste fino para teste**
 
-Você pode rodar o adaptador de ajuste fino no terminal, assim 
+Pode executar o adaptador de ajuste fino no terminal, assim:
 
 
 ```bash
@@ -146,7 +146,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-e rodar o modelo original para comparar os resultados 
+e executar o modelo original para comparar os resultados
 
 
 ```bash
@@ -155,10 +155,10 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Você pode tentar comparar os resultados do ajuste fino com o modelo original
+Pode tentar comparar os resultados do ajuste fino com o modelo original
 
 
-## **4. Mesclar adaptadores para gerar novos modelos**
+## **4. Unir adaptadores para gerar novos modelos**
 
 
 ```bash
@@ -167,9 +167,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Executando modelos de ajuste fino quantizados usando ollama**
+## **5. Executar modelos de ajuste fino quantificados usando ollama**
 
-Antes de usar, por favor configure seu ambiente llama.cpp
+Antes de usar, por favor configure o seu ambiente llama.cpp
 
 
 ```bash
@@ -188,7 +188,7 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 1. Agora suporta conversão de quantização para fp32, fp16 e INT 8
 
-2. O modelo mesclado está sem o tokenizer.model, por favor baixe-o em https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. O modelo unido não inclui tokenizer.model, por favor faça o download em https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
 defina um [Ollma Model](https://ollama.com/)
 
@@ -211,7 +211,7 @@ execute o comando no terminal
 
 ```
 
-Parabéns! Você dominou o ajuste fino com o MLX Framework
+Parabéns! Domine o ajuste fino com o MLX Framework
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

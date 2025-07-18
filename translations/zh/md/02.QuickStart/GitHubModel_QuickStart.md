@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-07T13:08:31+00:00",
+  "translation_date": "2025-07-17T05:31:56+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "zh"
 }
 -->
-## GitHub 模型 - 限量公开测试版
+## GitHub Models - 限量公开测试版
 
-欢迎使用 [GitHub Models](https://github.com/marketplace/models)！我们已为您准备好一切，随时可以探索托管在 Azure AI 上的 AI 模型。
+欢迎使用 [GitHub Models](https://github.com/marketplace/models)！我们已经准备好让你探索托管在 Azure AI 上的 AI 模型。
 
 ![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.zh.png)
 
@@ -17,7 +17,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 可用模型
 
-每个模型都有专属的 Playground 和示例代码
+每个模型都有专属的演示环境和示例代码
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
@@ -37,54 +37,54 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## 快速开始
 
-这里有一些基础示例，您可以直接运行。它们都位于 samples 目录下。如果想直接跳到您喜欢的编程语言，可以在以下语言中找到示例：
+这里有一些基础示例，已经准备好供你运行。你可以在 samples 目录中找到它们。如果你想直接使用你喜欢的语言，可以在以下语言中找到示例：
 
 - Python
 - JavaScript
 - cURL
 
-此外，还有专门的 Codespaces 环境用来运行示例和模型。
+此外，还有专门的 Codespaces 环境用于运行示例和模型。
 
 ![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.zh.png)
 
 ## 示例代码
 
-以下是几个用例的示例代码片段。有关 Azure AI Inference SDK 的更多信息，请参阅完整文档和示例。
+下面是几个使用场景的示例代码片段。有关 Azure AI Inference SDK 的更多信息，请参阅完整文档和示例。
 
 ## 设置
 
 1. 创建个人访问令牌  
-您不需要为令牌授予任何权限。请注意，令牌会发送到 Microsoft 服务。
+你无需为令牌赋予任何权限。请注意，令牌会发送到微软服务。
 
-要使用下面的代码片段，请创建一个环境变量，将您的令牌设置为客户端代码的密钥。
+要使用下面的代码片段，请创建一个环境变量，将你的令牌设置为客户端代码的密钥。
 
-如果您使用的是 bash：  
+如果你使用 bash：  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-如果您使用的是 powershell：  
+如果你使用 powershell：  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 
-如果您使用的是 Windows 命令提示符：  
+如果你使用 Windows 命令提示符：  
 
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
-```
+```  
 
 ## Python 示例
 
 ### 安装依赖  
-使用 pip 安装 Azure AI Inference SDK（要求：Python >=3.8）：  
+使用 pip 安装 Azure AI Inference SDK（要求：Python >=3.8）：
 
 ```
 pip install azure-ai-inference
 ```  
-### 运行基础代码示例
+### 运行基础示例代码
 
-该示例展示了如何调用聊天补全 API。它使用了 GitHub AI 模型推理端点和您的 GitHub 令牌。调用是同步的。
+此示例演示了对聊天完成 API 的基本调用。它使用了 GitHub AI 模型推理端点和你的 GitHub 令牌。调用是同步的。
 
 ```
 import os
@@ -118,7 +118,7 @@ print(response.choices[0].message.content)
 
 ### 运行多轮对话
 
-该示例演示了如何使用聊天补全 API 进行多轮对话。当在聊天应用中使用模型时，您需要管理对话历史，并将最新消息发送给模型。
+此示例演示了与聊天完成 API 的多轮对话。当你在聊天应用中使用模型时，需要管理对话历史，并将最新消息发送给模型。
 
 ```
 import os
@@ -150,7 +150,7 @@ print(response.choices[0].message.content)
 
 ### 流式输出
 
-为了更好的用户体验，您可能希望对模型响应进行流式处理，这样第一个 token 可以尽早显示，避免等待较长响应时间。
+为了更好的用户体验，你可以流式传输模型的响应，这样第一个 token 会更早出现，避免长时间等待完整响应。
 
 ```
 import os
@@ -182,15 +182,14 @@ for update in response:
         print(update.choices[0].delta.content or "", end="")
 
 client.close()
-```
-
+```  
 ## JavaScript
 
 ### 安装依赖
 
 安装 Node.js。
 
-将以下文本复制并保存为您文件夹内的 package.json 文件。
+复制以下内容并保存为文件 package.json，放在你的文件夹内。
 
 ```
 {
@@ -203,15 +202,15 @@ client.close()
 }
 ```
 
-注意：仅在流式获取聊天补全响应时需要 @azure/core-sse。
+注意：只有在流式传输聊天完成响应时才需要 @azure/core-sse。
 
-在该文件夹打开终端窗口，运行 npm install。
+在该文件夹打开终端，运行 npm install。
 
-下面的每个代码片段，请复制内容到 sample.js 文件中，并通过 node sample.js 运行。
+对于下面的每个代码片段，将内容复制到 sample.js 文件中，然后用 node sample.js 运行。
 
-### 运行基础代码示例
+### 运行基础示例代码
 
-该示例展示了如何调用聊天补全 API。它使用了 GitHub AI 模型推理端点和您的 GitHub 令牌。调用是同步的。
+此示例演示了对聊天完成 API 的基本调用。它使用了 GitHub AI 模型推理端点和你的 GitHub 令牌。调用是同步的。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -252,7 +251,7 @@ main().catch((err) => {
 
 ### 运行多轮对话
 
-该示例演示了如何使用聊天补全 API 进行多轮对话。当在聊天应用中使用模型时，您需要管理对话历史，并将最新消息发送给模型。
+此示例演示了与聊天完成 API 的多轮对话。当你在聊天应用中使用模型时，需要管理对话历史，并将最新消息发送给模型。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -295,7 +294,7 @@ main().catch((err) => {
 
 ### 流式输出
 
-为了更好的用户体验，您可能希望对模型响应进行流式处理，这样第一个 token 可以尽早显示，避免等待较长响应时间。
+为了更好的用户体验，你可以流式传输模型的响应，这样第一个 token 会更早出现，避免长时间等待完整响应。
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -351,7 +350,7 @@ main().catch((err) => {
 
 ## REST
 
-### 运行基础代码示例
+### 运行基础示例代码
 
 将以下内容粘贴到 shell 中：
 
@@ -372,11 +371,10 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```
-
+```  
 ### 运行多轮对话
 
-调用聊天补全 API 并传递聊天历史：
+调用聊天完成 API 并传递聊天历史：
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -403,11 +401,10 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```
-
+```  
 ### 流式输出
 
-这是调用端点并流式获取响应的示例。
+这是调用端点并流式传输响应的示例。
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -429,21 +426,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## GitHub Models 免费使用及速率限制
+## GitHub Models 的免费使用和速率限制
 
 ![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.zh.png)
 
-[playground 和免费 API 使用的速率限制](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) 旨在帮助您试验模型并原型化 AI 应用。若超出这些限制，且想将应用规模化，您必须从 Azure 账户中配置资源，并通过 Azure 认证，而非使用 GitHub 个人访问令牌。代码中无需做其他更改。请使用此链接了解如何突破 Azure AI 免费层限制。
+[游乐场和免费 API 使用的速率限制](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits)旨在帮助你试验模型和快速原型你的 AI 应用。超出这些限制后，若要将应用扩展到生产规模，必须从 Azure 账户配置资源，并从那里进行身份验证，而不是使用你的 GitHub 个人访问令牌。你无需更改代码中的其他内容。请使用此链接了解如何突破 Azure AI 免费层限制。
 
 ### 免责声明
 
-请记住，与模型交互时您正在进行 AI 试验，因此内容可能存在错误。
+请记住，与你交互的模型仍处于实验阶段，可能会出现内容错误。
 
-该功能受多种限制（包括每分钟请求数、每日请求数、每次请求的 token 数量以及并发请求数）约束，且不适合生产环境使用。
+该功能受多种限制（包括每分钟请求数、每日请求数、每次请求的 token 数和并发请求数），不适合生产环境使用。
 
-GitHub Models 使用 Azure AI 内容安全服务。此过滤器在 GitHub Models 体验中无法关闭。如果您选择通过付费服务使用模型，请根据需求配置内容过滤器。
+GitHub Models 使用 Azure AI 内容安全。作为 GitHub Models 体验的一部分，这些过滤器无法关闭。如果你选择通过付费服务使用模型，请根据需求配置内容过滤器。
 
-该服务遵循 GitHub 预发布条款。
+此服务受 GitHub 预发布条款约束。
 
 **免责声明**：  
-本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译。虽然我们力求准确，但请注意自动翻译可能包含错误或不准确之处。原始语言的原文应被视为权威来源。对于重要信息，建议使用专业人工翻译。我们不对因使用本翻译而产生的任何误解或曲解承担责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

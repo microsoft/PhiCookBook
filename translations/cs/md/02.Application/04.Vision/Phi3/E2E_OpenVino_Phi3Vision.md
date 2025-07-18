@@ -2,45 +2,45 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-05-09T20:02:01+00:00",
+  "translation_date": "2025-07-17T05:05:22+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
   "language_code": "cs"
 }
 -->
-// Этот демонстрационный пример показывает, как использовать предварительно обученную модель для генерации кода на Python на основе изображения и текстового запроса.
+Tato ukázka demonstruje, jak použít předtrénovaný model k vygenerování Python kódu na základě obrázku a textového zadání.
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)
 
-// Вот пошаговое объяснение:
+Zde je krok za krokem vysvětlení:
 
-// 1. **Импорты и настройка**:
-//    - Импортируются необходимые библиотеки и модули, включая `requests`, `PIL` для обработки изображений и `transformers` для работы с моделью и обработкой.
+1. **Importy a nastavení**:
+   - Načtou se potřebné knihovny a moduly, včetně `requests`, `PIL` pro zpracování obrázků a `transformers` pro práci s modelem a zpracování.
 
-// 2. **Загрузка и отображение изображения**:
-//    - Открывается файл изображения (`demo.png`) с помощью библиотеки `PIL` и отображается.
+2. **Načtení a zobrazení obrázku**:
+   - Obrázek (`demo.png`) je otevřen pomocí knihovny `PIL` a zobrazen.
 
-// 3. **Определение запроса**:
-//    - Создается сообщение, включающее изображение и запрос на генерацию Python-кода для обработки изображения и сохранения его с использованием `plt` (matplotlib).
+3. **Definování zadání**:
+   - Vytvoří se zpráva, která obsahuje obrázek a požadavek na vygenerování Python kódu pro zpracování obrázku a jeho uložení pomocí `plt` (matplotlib).
 
-// 4. **Загрузка процессора**:
-//    - `AutoProcessor` загружается из предварительно обученной модели, расположенной в директории `out_dir`. Этот процессор будет обрабатывать текст и изображение.
+4. **Načtení procesoru**:
+   - `AutoProcessor` je načten z předtrénovaného modelu určeného adresářem `out_dir`. Tento procesor zpracuje textové i obrazové vstupy.
 
-// 5. **Создание запроса**:
-//    - Метод `apply_chat_template` используется для форматирования сообщения в запрос, подходящий для модели.
+5. **Vytvoření promptu**:
+   - Metoda `apply_chat_template` se použije k formátování zprávy do promptu vhodného pro model.
 
-// 6. **Обработка входных данных**:
-//    - Запрос и изображение преобразуются в тензоры, которые модель может интерпретировать.
+6. **Zpracování vstupů**:
+   - Prompt a obrázek jsou převedeny na tensory, které model dokáže zpracovat.
 
-// 7. **Настройка параметров генерации**:
-//    - Определяются аргументы для процесса генерации модели, включая максимальное количество новых токенов и выбор сэмплинга вывода.
+7. **Nastavení parametrů generování**:
+   - Definují se parametry pro generování modelu, včetně maximálního počtu nových tokenů a zda se má výstup náhodně vzorkovat.
 
-// 8. **Генерация кода**:
-//    - Модель генерирует Python-код на основе входных данных и параметров генерации. `TextStreamer` используется для обработки вывода, пропуская запрос и специальные токены.
+8. **Generování kódu**:
+   - Model vygeneruje Python kód na základě vstupů a nastavených parametrů. `TextStreamer` se použije k zpracování výstupu, přičemž se přeskočí prompt a speciální tokeny.
 
-// 9. **Вывод**:
-//    - Сгенерированный код выводится на экран, он должен содержать Python-код для обработки изображения и его сохранения, как указано в запросе.
+9. **Výstup**:
+   - Vygenerovaný kód je vytištěn, měl by obsahovat Python kód pro zpracování obrázku a jeho uložení podle zadání.
 
-// Этот пример демонстрирует, как использовать предварительно обученную модель с OpenVino для динамической генерации кода на основе пользовательского ввода и изображений.
+Tato ukázka ukazuje, jak využít předtrénovaný model s OpenVino k dynamickému generování kódu na základě uživatelského vstupu a obrázků.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo chybné interpretace vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

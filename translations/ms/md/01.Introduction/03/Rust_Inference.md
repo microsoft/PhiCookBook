@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T13:03:33+00:00",
+  "translation_date": "2025-07-16T21:32:03+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "ms"
 }
 -->
-# Inferenz plattformübergreifend mit Rust
+# Inferens rentas platform dengan Rust
 
-Dieses Tutorial führt uns durch den Prozess der Inferenz mit Rust und dem [Candle ML Framework](https://github.com/huggingface/candle) von HuggingFace. Die Verwendung von Rust für Inferenz bietet mehrere Vorteile, insbesondere im Vergleich zu anderen Programmiersprachen. Rust ist bekannt für seine hohe Leistung, vergleichbar mit der von C und C++. Das macht es zu einer ausgezeichneten Wahl für Inferenzaufgaben, die oft rechenintensiv sind. Besonders hervorzuheben sind die zero-cost Abstraktionen und das effiziente Speichermanagement ohne Garbage Collection. Die plattformübergreifenden Fähigkeiten von Rust ermöglichen die Entwicklung von Code, der auf verschiedenen Betriebssystemen wie Windows, macOS und Linux sowie auf mobilen Betriebssystemen läuft, ohne dass größere Änderungen am Code notwendig sind.
+Tutorial ini akan membimbing kita melalui proses melakukan inferens menggunakan Rust dan [rangka kerja ML Candle](https://github.com/huggingface/candle) dari HuggingFace. Menggunakan Rust untuk inferens menawarkan beberapa kelebihan, terutamanya jika dibandingkan dengan bahasa pengaturcaraan lain. Rust terkenal dengan prestasinya yang tinggi, setanding dengan C dan C++. Ini menjadikannya pilihan yang sangat baik untuk tugasan inferens yang boleh menjadi intensif dari segi pengiraan. Terutamanya, ini didorong oleh abstraksi tanpa kos dan pengurusan memori yang cekap, tanpa beban pengumpulan sampah. Keupayaan rentas platform Rust membolehkan pembangunan kod yang boleh dijalankan pada pelbagai sistem operasi, termasuk Windows, macOS, dan Linux, serta sistem operasi mudah alih, tanpa perubahan besar pada kod asas.
 
-Voraussetzung für dieses Tutorial ist die [Installation von Rust](https://www.rust-lang.org/tools/install), die den Rust-Compiler und Cargo, den Paketmanager von Rust, beinhaltet.
+Prasyarat untuk mengikuti tutorial ini adalah untuk [memasang Rust](https://www.rust-lang.org/tools/install), yang merangkumi penyusun Rust dan Cargo, pengurus pakej Rust.
 
-## Schritt 1: Neues Rust-Projekt erstellen
+## Langkah 1: Cipta Projek Rust Baru
 
-Um ein neues Rust-Projekt zu erstellen, führen Sie folgenden Befehl im Terminal aus:
+Untuk mencipta projek Rust baru, jalankan arahan berikut di terminal:
 
 ```bash
 cargo new phi-console-app
 ```
 
-Dadurch wird eine Grundstruktur mit einer `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Ini akan menjana struktur projek awal dengan fail `Cargo.toml` dan direktori `src` yang mengandungi fail `main.rs`.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` Datei erzeugt:
+Seterusnya, kita akan menambah kebergantungan kita - iaitu `candle`, `hf-hub` dan `tokenizers` crates - ke dalam fail `Cargo.toml`:
 
 ```toml
 [package]
@@ -39,9 +39,9 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## Schritt 2: Grundlegende Parameter konfigurieren
+## Langkah 2: Konfigurasikan Parameter Asas
 
-Innerhalb der main.rs-Datei legen wir die Anfangsparameter für unsere Inferenz fest. Diese werden der Einfachheit halber fest kodiert, können aber bei Bedarf angepasst werden.
+Di dalam fail main.rs, kita akan tetapkan parameter awal untuk inferens kita. Kesemuanya akan dikodkan secara keras untuk kesederhanaan, tetapi kita boleh mengubahnya mengikut keperluan.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -55,16 +55,16 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature**: Steuert die Zufälligkeit des Sampling-Prozesses.
-- **sample_len**: Gibt die maximale Länge des generierten Textes an.
-- **top_p**: Wird beim Nucleus Sampling verwendet, um die Anzahl der berücksichtigten Tokens pro Schritt zu begrenzen.
-- **repeat_last_n**: Bestimmt, wie viele Tokens für die Anwendung einer Strafe zur Vermeidung von Wiederholungen berücksichtigt werden.
-- **repeat_penalty**: Der Strafwert, der wiederholte Tokens entmutigt.
-- **seed**: Ein Zufallswert (für bessere Reproduzierbarkeit kann ein konstanter Wert genutzt werden).
-- **prompt**: Der Anfangstext für die Generierung. Beachten Sie, dass wir das Modell bitten, ein Haiku über Eishockey zu erzeugen und diesen mit speziellen Tokens versehen, die die Benutzer- und Assistententeile des Gesprächs markieren. Das Modell ergänzt dann den Prompt mit einem Haiku.
-- **device**: In diesem Beispiel nutzen wir die CPU für die Berechnung. Candle unterstützt auch GPU-Berechnung mit CUDA und Metal.
+- **temperature**: Mengawal kebarangkalian rawak dalam proses pensampelan.
+- **sample_len**: Menentukan panjang maksimum teks yang dijana.
+- **top_p**: Digunakan untuk pensampelan nukleus bagi mengehadkan bilangan token yang dipertimbangkan pada setiap langkah.
+- **repeat_last_n**: Mengawal bilangan token yang dipertimbangkan untuk mengenakan penalti bagi mengelakkan urutan berulang.
+- **repeat_penalty**: Nilai penalti untuk menghalang token yang berulang.
+- **seed**: Benih rawak (kita boleh menggunakan nilai tetap untuk kebolehulangan yang lebih baik).
+- **prompt**: Teks permulaan untuk memulakan penjanaan. Perhatikan bahawa kita meminta model menjana haiku tentang hoki ais, dan kita membungkusnya dengan token khas untuk menunjukkan bahagian pengguna dan pembantu dalam perbualan. Model kemudian akan melengkapkan prompt dengan haiku.
+- **device**: Kita menggunakan CPU untuk pengiraan dalam contoh ini. Candle juga menyokong penggunaan GPU dengan CUDA dan Metal.
 
-## Schritt 3: Modell und Tokenizer herunterladen/vorbereiten
+## Langkah 3: Muat Turun/Sediakan Model dan Tokenizer
 
 ```rust
 let api = hf_hub::api::sync::Api::new()?;
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Die Datei `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` wird für die Tokenisierung unseres Eingabetextes verwendet. Nach dem Download wird das Modell zwischengespeichert, daher ist die erste Ausführung langsamer (da 2,4 GB Modelldaten heruntergeladen werden), spätere Ausführungen laufen dann schneller.
+Kita menggunakan API `hf_hub` untuk memuat turun fail model dan tokenizer dari pusat model Hugging Face. Fail `gguf` mengandungi berat model yang telah dikuantisasi, manakala fail `tokenizer.json` digunakan untuk men-token-kan teks input kita. Setelah dimuat turun, model akan disimpan dalam cache, jadi pelaksanaan pertama akan lambat (kerana memuat turun model sebesar 2.4GB) tetapi pelaksanaan seterusnya akan lebih pantas.
 
-## Schritt 4: Modell laden
+## Langkah 4: Muatkan Model
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Wir laden die quantisierten Modellgewichte in den Speicher und initialisieren das Phi-3 Modell. Dieser Schritt beinhaltet das Einlesen der Modellgewichte aus der `gguf`-Datei und die Vorbereitung des Modells für die Inferenz auf dem angegebenen Gerät (hier CPU).
+Kita memuatkan berat model yang telah dikuantisasi ke dalam memori dan menginisialisasi model Phi-3. Langkah ini melibatkan pembacaan berat model dari fail `gguf` dan menyediakan model untuk inferens pada peranti yang ditetapkan (CPU dalam kes ini).
 
-## Schritt 5: Prompt verarbeiten und für Inferenz vorbereiten
+## Langkah 5: Proses Prompt dan Sediakan untuk Inferens
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-In diesem Schritt tokenisieren wir den Eingabe-Prompt und bereiten ihn für die Inferenz vor, indem wir ihn in eine Sequenz von Token-IDs umwandeln. Außerdem initialisieren wir die `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` Werte. Jeder Token wird in einen Tensor umgewandelt und durch das Modell geschickt, um die Logits zu erhalten.
+Dalam langkah ini, kita men-token-kan prompt input dan menyediakannya untuk inferens dengan menukarnya menjadi urutan ID token. Kita juga menginisialisasi `LogitsProcessor` untuk mengendalikan proses pensampelan (taburan kebarangkalian ke atas kosa kata) berdasarkan nilai `temperature` dan `top_p` yang diberikan. Setiap token ditukar menjadi tensor dan dihantar melalui model untuk mendapatkan logits.
 
-Die Schleife verarbeitet jeden Token im Prompt, aktualisiert den Logits-Processor und bereitet die Generierung des nächsten Tokens vor.
+Gelung ini memproses setiap token dalam prompt, mengemas kini pemproses logits dan menyediakan untuk penjanaan token seterusnya.
 
-## Schritt 6: Inferenz
+## Langkah 6: Inferens
 
 ```rust
 for index in 0..to_sample {
@@ -160,20 +160,20 @@ for index in 0..to_sample {
 }
 ```
 
-In der Inferenz-Schleife generieren wir Token einzeln, bis die gewünschte Sample-Länge erreicht oder ein End-of-Sequence-Token gefunden wird. Der nächste Token wird in einen Tensor umgewandelt und durch das Modell geschickt, während die Logits verarbeitet werden, um Strafen und Sampling anzuwenden. Anschließend wird der nächste Token ausgewählt, dekodiert und zur Sequenz hinzugefügt.
-Um Wiederholungen zu vermeiden, wird basierend auf den Parametern `repeat_last_n` and `repeat_penalty` eine Strafe auf wiederholte Tokens angewendet.
+Dalam gelung inferens, kita menjana token satu persatu sehingga mencapai panjang sampel yang dikehendaki atau menemui token tamat urutan. Token seterusnya ditukar menjadi tensor dan dihantar melalui model, manakala logits diproses untuk mengenakan penalti dan pensampelan. Kemudian token seterusnya dipilih, disahkod, dan ditambah ke dalam urutan.
+Untuk mengelakkan teks berulang, penalti dikenakan ke atas token yang berulang berdasarkan parameter `repeat_last_n` dan `repeat_penalty`.
 
-Schließlich wird der generierte Text während der Dekodierung ausgegeben, um eine gestreamte Echtzeit-Ausgabe zu gewährleisten.
+Akhirnya, teks yang dijana dicetak semasa ia disahkod, memastikan output masa nyata secara berterusan.
 
-## Schritt 7: Anwendung ausführen
+## Langkah 7: Jalankan Aplikasi
 
-Um die Anwendung zu starten, führen Sie folgenden Befehl im Terminal aus:
+Untuk menjalankan aplikasi, laksanakan arahan berikut di terminal:
 
 ```bash
 cargo run --release
 ```
 
-Dies sollte ein Haiku über Eishockey ausgeben, das vom Phi-3 Modell generiert wurde. Zum Beispiel:
+Ini sepatutnya mencetak haiku tentang hoki ais yang dijana oleh model Phi-3. Sesuatu seperti:
 
 ```
 Puck glides swiftly,  
@@ -181,7 +181,7 @@ Blades on ice dance and clash—peace found
 in the cold battle.
 ```
 
-oder
+atau
 
 ```
 Glistening puck glides in,
@@ -189,13 +189,13 @@ On ice rink's silent stage it thrives—
 Swish of sticks now alive.
 ```
 
-## Fazit
+## Kesimpulan
 
-Mit diesen Schritten können wir Textgenerierung mit dem Phi-3 Modell in Rust und Candle in weniger als 100 Codezeilen durchführen. Der Code kümmert sich um das Laden des Modells, die Tokenisierung und die Inferenz, nutzt Tensoren und Logits-Verarbeitung, um kohärenten Text basierend auf dem Eingabe-Prompt zu erzeugen.
+Dengan mengikuti langkah-langkah ini, kita boleh melakukan penjanaan teks menggunakan model Phi-3 dengan Rust dan Candle dalam kurang daripada 100 baris kod. Kod ini mengendalikan pemuatan model, pen-token-an, dan inferens, menggunakan tensor dan pemprosesan logits untuk menjana teks yang koheren berdasarkan prompt input.
 
-Diese Konsolenanwendung läuft unter Windows, Linux und Mac OS. Aufgrund der Portabilität von Rust kann der Code auch zu einer Bibliothek umgewandelt werden, die in mobilen Apps läuft (Konsolenanwendungen sind dort schließlich nicht möglich).
+Aplikasi konsol ini boleh dijalankan di Windows, Linux dan Mac OS. Disebabkan kebolehpindahan Rust, kod ini juga boleh diubah suai menjadi perpustakaan yang boleh dijalankan dalam aplikasi mudah alih (kita tidak boleh menjalankan aplikasi konsol di sana, selepas semua).
 
-## Anhang: kompletter Code
+## Lampiran: kod penuh
 
 ```rust
 use candle_core::{quantized::gguf_file, Device, Tensor};
@@ -304,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Hinweis: Um diesen Code auf aarch64 Linux oder aarch64 Windows auszuführen, fügen Sie eine Datei namens `.cargo/config` mit folgendem Inhalt hinzu:
+Nota: untuk menjalankan kod ini pada aarch64 Linux atau aarch64 Windows, tambah fail bernama `.cargo/config` dengan kandungan berikut:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Weitere Beispiele zur Verwendung des Phi-3 Modells mit Rust und Candle, einschließlich alternativer Inferenzansätze, finden Sie im offiziellen [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) Repository.
+> Anda boleh melawat repositori rasmi [contoh Candle](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) untuk lebih banyak contoh cara menggunakan model Phi-3 dengan Rust dan Candle, termasuk pendekatan alternatif untuk inferens.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya hendaklah dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

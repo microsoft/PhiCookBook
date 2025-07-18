@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:43:25+00:00",
+  "translation_date": "2025-07-16T22:24:40+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "sw"
 }
 -->
 ## **Jinsi ya kutumia Model Builder kuquantize Phi-3.5**
 
-Model Builder sasa inasaidia kuquantize modeli za ONNX za Phi-3.5 Instruct na Phi-3.5-Vision
+Model Builder sasa inaunga mkono kuquantize modeli za ONNX za Phi-3.5 Instruct na Phi-3.5-Vision
 
 ### **Phi-3.5-Instruct**
 
-**Ubadilishaji wa kuquantize INT 4 kwa kasi ya CPU**
+**Ubadilishaji wa kuharakishwa na CPU wa INT4 iliyopimwa**
 
 ```bash
 
@@ -21,7 +21,7 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-**Ubadilishaji wa kuquantize INT 4 kwa kasi ya CUDA**
+**Ubadilishaji wa kuharakishwa na CUDA wa INT4 iliyopimwa**
 
 ```bash
 
@@ -65,7 +65,7 @@ cd models
 
 5. Nenda kwenye terminal
 
-    Badilisha ONNX ili kuunga mkono FP32
+    Badilisha ONNX kuunga mkono FP32
 
 ```bash
 
@@ -75,19 +75,19 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ### **Kumbuka：**
 
-1. Model Builder kwa sasa inasaidia ubadilishaji wa Phi-3.5-Instruct na Phi-3.5-Vision, lakini si Phi-3.5-MoE
+1. Model Builder kwa sasa inaunga mkono ubadilishaji wa Phi-3.5-Instruct na Phi-3.5-Vision, lakini si Phi-3.5-MoE
 
-2. Ili kutumia modeli ya ONNX iliyokuantizwa, unaweza kuitumia kupitia SDK ya Generative AI extensions for onnxruntime
+2. Ili kutumia modeli iliyopimwa ya ONNX, unaweza kuitumia kupitia Generative AI extensions for onnxruntime SDK
 
-3. Tunahitaji kuzingatia AI yenye uwajibikaji zaidi, kwa hivyo baada ya ubadilishaji wa kuquantize modeli, inashauriwa kufanya majaribio ya matokeo kwa ufanisi zaidi
+3. Tunahitaji kuzingatia AI yenye uwajibikaji zaidi, hivyo baada ya ubadilishaji wa kuquantize modeli, inashauriwa kufanya majaribio ya matokeo yenye ufanisi zaidi
 
-4. Kwa kuquantize modeli ya CPU INT4, tunaweza kuipeleka kwenye Edge Device, ambayo ina mazingira bora ya matumizi, hivyo tumemaliza Phi-3.5-Instruct kwa INT 4
+4. Kwa kuquantize modeli ya CPU INT4, tunaweza kuipeleka kwenye Edge Device, ambayo ina mazingira bora ya matumizi, hivyo tumemaliza Phi-3.5-Instruct kwa INT4
 
 ## **Rasilimali**
 
 1. Jifunze zaidi kuhusu Generative AI extensions for onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. GitHub Repo ya Generative AI extensions for onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
+2. Generative AI extensions for onnxruntime GitHub Repo [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
-**Kiasi cha majibu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za moja kwa moja zinaweza kuwa na makosa au kasoro. Hati asili katika lugha yake ya asili inapaswa kuzingatiwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu ya binadamu inapendekezwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

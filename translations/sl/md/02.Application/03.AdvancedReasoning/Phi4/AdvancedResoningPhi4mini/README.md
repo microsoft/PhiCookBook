@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:54:27+00:00",
+  "translation_date": "2025-07-17T04:51:30+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "sl"
 }
 -->
-## **Uporaba Phi-4-mini-reasoning(3.8b) ali Phi-4-reasoning(14b) kot strokovnjaka za sklepanje**
+## **Uporaba Phi-4-mini-reasoning(3.8b) ali Phi-4-reasoning(14b) kot strokovnjak za sklepanje**
 
-Poglejmo si njegovo močno sposobnost sklepanja preko Phi-4-mini-reasoning ali Phi-4-mini-reasoning.
+Oglejmo si njegovo močno sposobnost sklepanja preko Phi-4-mini-reasoning ali Phi-4-mini-reasoning.
 
 
 ```python
@@ -49,5 +49,5 @@ print(outputs[0])
 
 ```
 
-**Opozorilo**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne prevzemamo odgovornosti.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

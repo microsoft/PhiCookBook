@@ -2,45 +2,45 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-05-09T10:32:51+00:00",
+  "translation_date": "2025-07-16T20:06:19+00:00",
   "source_file": "md/01.Introduction/03/AIPC_Inference.md",
   "language_code": "hu"
 }
 -->
 # **Phi-3 inferálása AI PC-n**
 
-A generatív AI fejlődésével és az élő eszközök hardveres képességeinek javulásával egyre több generatív AI modell integrálható a felhasználók saját eszközeibe (BYOD). Az AI PC-k is ezek közé tartoznak. 2024-től az Intel, az AMD és a Qualcomm együttműködött a PC gyártókkal, hogy olyan AI PC-ket vezessenek be, amelyek hardveres módosítások révén támogatják a helyi generatív AI modellek telepítését. Ebben a témában az Intel AI PC-kre fókuszálunk, és megvizsgáljuk, hogyan telepíthető a Phi-3 egy Intel AI PC-n.
+A generatív MI fejlődésével és az élő eszközök hardveres képességeinek javulásával egyre több generatív MI modell integrálható a felhasználók saját eszközeibe (BYOD). Az AI PC-k ezek közé a modellek közé tartoznak. 2024-től az Intel, az AMD és a Qualcomm együttműködtek a PC-gyártókkal, hogy AI PC-ket vezessenek be, amelyek hardveres módosítások révén lehetővé teszik a helyi generatív MI modellek telepítését. Ebben a témában az Intel AI PC-kre fókuszálunk, és megvizsgáljuk, hogyan lehet a Phi-3 modellt telepíteni egy Intel AI PC-n.
 
 ### Mi az az NPU
 
-Az NPU (Neurális Feldolgozó Egység) egy dedikált processzor vagy feldolgozó egység egy nagyobb SoC-n belül, amely kifejezetten a neurális hálózatok műveleteinek és AI feladatok gyorsítására készült. Ellentétben az általános célú CPU-kkal és GPU-kkal, az NPU-k adatvezérelt párhuzamos számításra optimalizáltak, így rendkívül hatékonyak nagy mennyiségű multimédiás adat, például videók és képek feldolgozásában, valamint neurális hálózatok adatainak kezelésében. Különösen jól kezelik az AI-hoz kapcsolódó feladatokat, mint például a beszédfelismerést, videóhívások háttér elmosását vagy fotó- és videószerkesztési folyamatokat, például objektumfelismerést.
+Az NPU (Neurális Feldolgozó Egység) egy dedikált processzor vagy feldolgozó egység egy nagyobb SoC-n belül, amely kifejezetten a neurális hálózati műveletek és MI feladatok gyorsítására lett tervezve. Ellentétben az általános célú CPU-kkal és GPU-kkal, az NPU-k adatvezérelt párhuzamos számításokra optimalizáltak, így rendkívül hatékonyak nagy mennyiségű multimédiás adat, például videók és képek feldolgozásában, valamint neurális hálózati adatok kezelésében. Különösen jól kezelik az MI-hez kapcsolódó feladatokat, mint például a beszédfelismerés, a háttér elmosása videóhívások során, vagy a fotó- és videószerkesztési folyamatok, például tárgyfelismerés.
 
 ## NPU vs GPU
 
-Bár sok AI és gépi tanulási feladat GPU-kon fut, fontos különbség van a GPU-k és az NPU-k között.  
-A GPU-k párhuzamos számítási képességeikről ismertek, de nem mindegyikük egyformán hatékony a grafikus feldolgozáson túl. Az NPU-k viszont kifejezetten a neurális hálózatok komplex számításaira lettek tervezve, így rendkívül hatékonyak AI feladatoknál.
+Bár sok MI és gépi tanulási feladat GPU-kon fut, fontos különbség van a GPU-k és az NPU-k között.  
+A GPU-k párhuzamos számítási képességeikről ismertek, de nem minden GPU egyformán hatékony a grafikus feldolgozáson túl. Az NPU-k ezzel szemben kifejezetten a neurális hálózati műveletek összetett számításaira készültek, így rendkívül hatékonyak az MI feladatokban.
 
-Összefoglalva, az NPU-k a matematikai zsenik, amelyek felgyorsítják az AI számításokat, és kulcsszerepet játszanak az AI PC-k új korszakában!
+Összefoglalva, az NPU-k a matematikai zsenik, amelyek felgyorsítják az MI számításokat, és kulcsszerepet játszanak az AI PC-k új korszakában!
 
 ***Ez a példa az Intel legújabb Intel Core Ultra processzorán alapul***
 
-## **1. Phi-3 modell futtatása NPU-val**
+## **1. NPU használata a Phi-3 modell futtatásához**
 
-Az Intel® NPU eszköz egy AI inferencia gyorsító, amely az Intel kliens CPU-kkal integrált, az Intel® Core™ Ultra CPU generációjától kezdve (korábban Meteor Lake néven ismert). Energiahatékony végrehajtást tesz lehetővé mesterséges neurális hálózati feladatok számára.
+Az Intel® NPU eszköz egy MI inferencia gyorsító, amely az Intel kliens CPU-kkal integrált, kezdve az Intel® Core™ Ultra generációs CPU-kkal (korábban Meteor Lake néven ismert). Lehetővé teszi az energiatakarékos mesterséges neurális hálózati feladatok végrehajtását.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.hu.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.hu.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.hu.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.hu.png)
 
 **Intel NPU Acceleration Library**
 
-Az Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) egy Python könyvtár, amely az Intel Neurális Feldolgozó Egység (NPU) erejét használva gyorsítja alkalmazásaidat kompatibilis hardveren.
+Az Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) egy Python könyvtár, amely az Intel Neurális Feldolgozó Egység (NPU) erejét kihasználva gyorsítja az alkalmazások hatékonyságát kompatibilis hardveren.
 
-Példa a Phi-3-mini modellre AI PC-n, amelyet Intel® Core™ Ultra processzor hajt.
+Példa a Phi-3-mini futtatására AI PC-n, amelyet Intel® Core™ Ultra processzorok hajtanak.
 
 ![DemoPhiIntelAIPC](../../../../../imgs/01/03/AIPC/aipcphi3-mini.gif)
 
-Python könyvtár telepítése pip-pel
+Telepítsd a Python könyvtárat pip-pel
 
 ```bash
 
@@ -48,11 +48,11 @@ Python könyvtár telepítése pip-pel
 
 ```
 
-***Megjegyzés*** A projekt még fejlesztés alatt áll, de a referencia modell már nagyon fejlett.
+***Megjegyzés*** A projekt még fejlesztés alatt áll, de a referencia modell már nagyon teljes.
 
 ### **Phi-3 futtatása Intel NPU Acceleration Library-vel**
 
-Az Intel NPU gyorsítással ez a könyvtár nem befolyásolja a hagyományos kódolási folyamatot. Csak a könyvtárat kell használni az eredeti Phi-3 modell kvantálásához, például FP16, INT8, INT4 formátumokban:
+Az Intel NPU gyorsítást használva ez a könyvtár nem befolyásolja a hagyományos kódolási folyamatot. Csak a könyvtárat kell használnod az eredeti Phi-3 modell kvantálásához, például FP16, INT8, INT4 formátumokra, például
 
 ```python
 from transformers import AutoTokenizer, pipeline,TextStreamer
@@ -72,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-A kvantálás sikeres befejezése után folytatjuk a végrehajtást, és meghívjuk az NPU-t a Phi-3 modell futtatásához.
+A kvantálás sikeres befejezése után folytathatod a végrehajtást az NPU hívásával a Phi-3 modell futtatásához.
 
 ```python
 generation_args = {
@@ -96,51 +96,51 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-A kód futtatásakor a Feladatkezelőben megtekinthetjük az NPU működési állapotát.
+A kód futtatásakor az NPU futási állapotát a Feladatkezelőben is megtekinthetjük.
 
-![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.hu.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.hu.png)
 
-***Példák*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
+***Minták*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
-## **2. Phi-3 modell futtatása DirectML + ONNX Runtime használatával**
+## **2. DirectML + ONNX Runtime használata a Phi-3 modell futtatásához**
 
 ### **Mi az a DirectML**
 
-A [DirectML](https://github.com/microsoft/DirectML) egy nagy teljesítményű, hardveresen gyorsított DirectX 12 könyvtár gépi tanuláshoz. A DirectML GPU gyorsítást biztosít a gyakori gépi tanulási feladatokhoz széles körű támogatott hardveren és drivereken, beleértve az AMD, Intel, NVIDIA és Qualcomm DirectX 12-képes GPU-it.
+A [DirectML](https://github.com/microsoft/DirectML) egy nagy teljesítményű, hardveresen gyorsított DirectX 12 könyvtár gépi tanuláshoz. A DirectML GPU gyorsítást biztosít a gyakori gépi tanulási feladatokhoz széles körű támogatott hardvereken és drivereken, beleértve az AMD, Intel, NVIDIA és Qualcomm DirectX 12-kompatibilis GPU-it.
 
-Önálló használat esetén a DirectML API egy alacsony szintű DirectX 12 könyvtár, amely alkalmas nagy teljesítményű, alacsony késleltetésű alkalmazásokhoz, mint például keretrendszerek, játékok és egyéb valós idejű alkalmazások. A DirectML zökkenőmentes együttműködése a Direct3D 12-vel, valamint alacsony overhead-je és hardverek közötti konzisztenciája ideálissá teszi a gépi tanulás gyorsítására, amikor egyszerre fontos a nagy teljesítmény és az eredmények megbízhatósága.
+Önálló használat esetén a DirectML API egy alacsony szintű DirectX 12 könyvtár, amely alkalmas nagy teljesítményű, alacsony késleltetésű alkalmazásokhoz, például keretrendszerekhez, játékokhoz és más valós idejű alkalmazásokhoz. A DirectML zökkenőmentes együttműködése a Direct3D 12-vel, valamint alacsony overhead-je és hardverek közötti konformitása miatt ideális a gépi tanulás gyorsítására, amikor egyszerre fontos a magas teljesítmény és az eredmények megbízhatósága, kiszámíthatósága.
 
 ***Megjegyzés*** : A legújabb DirectML már támogatja az NPU-t (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
-### DirectML és CUDA képességei és teljesítménye
+### DirectML és CUDA képességei és teljesítménye összehasonlítva:
 
-**DirectML** egy Microsoft által fejlesztett gépi tanulási könyvtár. Célja, hogy gyorsítsa a gépi tanulási feladatokat Windows eszközökön, beleértve asztali gépeket, laptopokat és élő eszközöket.
-- DX12 alapú: A DirectML a DirectX 12-re épül, amely széles körű hardvertámogatást nyújt GPU-k számára, beleértve NVIDIA és AMD eszközöket.
-- Szélesebb támogatás: A DX12-nek köszönhetően a DirectML bármely DX12-kompatibilis GPU-val működik, még az integrált GPU-kkal is.
-- Képfeldolgozás: A DirectML neurális hálózatokat használ képek és egyéb adatok feldolgozására, így alkalmas képfelismerésre, objektumfelismerésre és hasonló feladatokra.
-- Egyszerű beállítás: A DirectML beállítása egyszerű, nem igényel speciális SDK-kat vagy könyvtárakat a GPU gyártóktól.
-- Teljesítmény: Bizonyos esetekben a DirectML jól teljesít, és gyorsabb lehet, mint a CUDA, különösen bizonyos munkaterheléseknél.
-- Korlátozások: Előfordulhat, hogy a DirectML lassabb, különösen float16 nagy batch méretek esetén.
+**DirectML** a Microsoft által fejlesztett gépi tanulási könyvtár. Célja a gépi tanulási feladatok gyorsítása Windows eszközökön, beleértve asztali gépeket, laptopokat és élő eszközöket.  
+- DX12-alapú: A DirectML a DirectX 12-re épül, amely széles körű hardvertámogatást nyújt GPU-k között, beleértve az NVIDIA és AMD eszközöket is.  
+- Szélesebb támogatás: Mivel a DX12-t használja, a DirectML bármely DX12-kompatibilis GPU-val működik, még az integrált GPU-kkal is.  
+- Képfeldolgozás: A DirectML neurális hálózatokat használ képek és egyéb adatok feldolgozására, így alkalmas képfelismerésre, tárgyfelismerésre és más feladatokra.  
+- Egyszerű beállítás: A DirectML beállítása egyszerű, nem igényel speciális SDK-kat vagy könyvtárakat a GPU gyártóktól.  
+- Teljesítmény: Bizonyos esetekben a DirectML jól teljesít, és gyorsabb lehet, mint a CUDA, különösen bizonyos munkaterheléseknél.  
+- Korlátozások: Ugyanakkor előfordulhat, hogy a DirectML lassabb, különösen float16 nagy batch méretek esetén.
 
-**CUDA** az NVIDIA párhuzamos számítási platformja és programozási modellje. Lehetővé teszi a fejlesztők számára, hogy kihasználják az NVIDIA GPU-k erejét általános célú számításokra, beleértve a gépi tanulást és tudományos szimulációkat.
-- NVIDIA-specifikus: A CUDA szorosan integrált az NVIDIA GPU-kkal, és kifejezetten nekik készült.
-- Magas optimalizáltság: Kiváló teljesítményt nyújt GPU-gyorsított feladatoknál, különösen NVIDIA GPU-kon.
-- Széles körben használt: Sok gépi tanulási keretrendszer és könyvtár (például TensorFlow, PyTorch) támogatja a CUDÁ-t.
-- Testreszabhatóság: A fejlesztők finomhangolhatják a CUDA beállításokat speciális feladatokra, ami optimális teljesítményt eredményezhet.
-- Korlátozások: A CUDA NVIDIA hardverhez kötöttsége korlátozhatja, ha szélesebb kompatibilitásra van szükség különböző GPU-kkal.
+**CUDA** az NVIDIA párhuzamos számítási platformja és programozási modellje. Lehetővé teszi a fejlesztők számára, hogy kihasználják az NVIDIA GPU-k erejét általános célú számításokra, beleértve a gépi tanulást és tudományos szimulációkat.  
+- NVIDIA-specifikus: A CUDA szorosan integrált az NVIDIA GPU-kkal, és kifejezetten nekik készült.  
+- Magasan optimalizált: Kiváló teljesítményt nyújt GPU-gyorsított feladatoknál, különösen NVIDIA GPU-kon.  
+- Széles körben használt: Sok gépi tanulási keretrendszer és könyvtár (például TensorFlow és PyTorch) támogatja a CUDA-t.  
+- Testreszabhatóság: A fejlesztők finomhangolhatják a CUDA beállításait specifikus feladatokra, ami optimális teljesítményt eredményezhet.  
+- Korlátozások: A CUDA NVIDIA hardverhez kötöttsége korlátozhatja a kompatibilitást más GPU-kkal.
 
 ### DirectML vagy CUDA választása
 
-A választás a DirectML és a CUDA között a konkrét felhasználási esettől, a rendelkezésre álló hardvertől és az egyéni preferenciáktól függ.  
-Ha szélesebb kompatibilitást és egyszerű beállítást keresel, a DirectML jó választás lehet. Ha viszont NVIDIA GPU-d van és nagyfokú optimalizált teljesítményre van szükséged, a CUDA továbbra is erős opció. Összefoglalva, mindkettőnek megvannak az előnyei és hátrányai, ezért érdemes figyelembe venni az igényeidet és a rendelkezésre álló hardvert.
+A választás a DirectML és a CUDA között az adott felhasználási esettől, a rendelkezésre álló hardvertől és a preferenciáktól függ.  
+Ha szélesebb kompatibilitást és egyszerű beállítást keresel, a DirectML jó választás lehet. Ha azonban NVIDIA GPU-d van, és nagy teljesítményre van szükséged, a CUDA továbbra is erős opció. Összefoglalva, mindkettőnek megvannak az előnyei és hátrányai, ezért érdemes a saját igényeid és a rendelkezésre álló hardver alapján dönteni.
 
-### **Generatív AI ONNX Runtime-tal**
+### **Generatív MI ONNX Runtime-tal**
 
-Az AI korszakában az AI modellek hordozhatósága nagyon fontos. Az ONNX Runtime könnyen telepíthető különböző eszközökre a betanított modellekhez. A fejlesztőknek nem kell az inferencia keretrendszerrel foglalkozniuk, egységes API-n keresztül végezhetik a modell inferenciát. A generatív AI korszakában az ONNX Runtime kódoptimalizálást is végzett (https://onnxruntime.ai/docs/genai/). Az optimalizált ONNX Runtime segítségével a kvantált generatív AI modell különböző végpontokon is futtatható. Az ONNX Runtime generatív AI API-ját Python, C#, C/C++ nyelveken lehet használni. iPhone-ra telepítés esetén kihasználható a C++ generatív AI ONNX Runtime API.
+Az MI korszakában a modellek hordozhatósága nagyon fontos. Az ONNX Runtime könnyen telepíthető különböző eszközökre. A fejlesztőknek nem kell az inferencia keretrendszerre figyelniük, egységes API-val végezhetik el a modell inferenciát. A generatív MI korszakában az ONNX Runtime kódoptimalizálást is végzett (https://onnxruntime.ai/docs/genai/). Az optimalizált ONNX Runtime segítségével a kvantált generatív MI modell különböző végpontokon is futtatható. Az ONNX Runtime generatív MI API-ját Python, C#, C/C++ nyelveken keresztül érhetjük el. Természetesen iPhone-on a C++-os ONNX Runtime API előnyeit is kihasználhatjuk.
 
 [Minta kód](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
-***Generatív AI fordítása ONNX Runtime könyvtárral***
+***Generatív MI fordítása ONNX Runtime könyvtárral***
 
 ```bash
 
@@ -189,15 +189,15 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Ez a futtatási eredmény
 
-![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.hu.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.hu.png)
 
-***Példák*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
+***Minták*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
-## **3. Phi-3 modell futtatása Intel OpenVino-val**
+## **3. Intel OpenVino használata a Phi-3 modell futtatásához**
 
 ### **Mi az az OpenVINO**
 
-Az [OpenVINO](https://github.com/openvinotoolkit/openvino) egy nyílt forráskódú eszközkészlet mélytanulási modellek optimalizálására és telepítésére. Jelentősen javítja a látás, hang és nyelvi modellek teljesítményét népszerű keretrendszerekből, mint a TensorFlow vagy PyTorch. Kezdj hozzá az OpenVINO használatához! Az OpenVINO CPU és GPU együttes használatával is futtathatja a Phi-3 modellt.
+Az [OpenVINO](https://github.com/openvinotoolkit/openvino) egy nyílt forráskódú eszközkészlet mélytanulási modellek optimalizálására és telepítésére. Javított mélytanulási teljesítményt nyújt látás, hang és nyelvi modellekhez népszerű keretrendszerekből, mint a TensorFlow, PyTorch és mások. Kezdj el dolgozni az OpenVINO-val. Az OpenVINO CPU-val és GPU-val kombinálva is használható a Phi-3 modell futtatásához.
 
 ***Megjegyzés***: Jelenleg az OpenVINO nem támogatja az NPU-t.
 
@@ -215,7 +215,7 @@ Az [OpenVINO](https://github.com/openvinotoolkit/openvino) egy nyílt forráskó
 
 ### **Phi-3 futtatása OpenVINO-val**
 
-Az NPU-hoz hasonlóan az OpenVINO is kvantált modellek futtatásával hívja meg a generatív AI modelleket. Először kvantálni kell a Phi-3 modellt, és a kvantálást az optimum-cli parancssoron keresztül végezhetjük el.
+Az NPU-hoz hasonlóan az OpenVINO is kvantált modellek futtatásával kezeli a generatív MI modellek hívását. Először kvantálni kell a Phi-3 modellt, és a kvantálást az optimum-cli segítségével a parancssorban kell elvégezni.
 
 **INT4**
 
@@ -233,11 +233,11 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ```
 
-Az átalakított formátum így néz ki:
+Az átalakított formátum így néz ki
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.hu.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.hu.png)
 
-A modell elérési útvonalait (model_dir), a kapcsolódó konfigurációkat (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) és a hardveresen gyorsított eszközöket (GPU.0) az OVModelForCausalLM segítségével töltjük be.
+Töltsd be a modell elérési útvonalait (model_dir), a kapcsolódó konfigurációkat (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), és a hardveresen gyorsított eszközöket (GPU.0) az OVModelForCausalLM segítségével
 
 ```python
 
@@ -251,13 +251,13 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-A kód futtatásakor a Feladatkezelőben megtekinthetjük a GPU működési állapotát.
+A kód futtatásakor a GPU futási állapotát a Feladatkezelőben is megtekinthetjük
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.hu.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.hu.png)
 
-***Példák*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
+***Minták*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***Megjegyzés*** : A fent említett három módszer mindegyikének megvannak az előnyei, de AI PC inferenciára az NPU gyorsítás használata ajánlott.
+### ***Megjegyzés*** : A fent említett három módszer mindegyikének megvannak a maga előnyei, de AI PC inferenciához ajánlott az NPU gyorsítás használata.
 
-**Nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) használatával fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hivatalos forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.

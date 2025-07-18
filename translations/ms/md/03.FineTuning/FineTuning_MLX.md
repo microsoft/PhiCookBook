@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:44:23+00:00",
+  "translation_date": "2025-07-17T08:01:58+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "ms"
 }
 -->
-# **Fine-tuning Phi-3 with Apple MLX Framework**
+# **Penalaan Halus Phi-3 dengan Rangka Kerja Apple MLX**
 
-You can complete fine-tuning combined with Lora using the Apple MLX framework command line. (If you want to learn more about how the MLX Framework operates, please refer to [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
-
-
-## **1. Data preparation**
-
-By default, the MLX Framework requires the train, test, and eval data in jsonl format, combined with Lora to complete fine-tuning tasks.
+Kita boleh menyelesaikan Penalaan Halus yang digabungkan dengan Lora melalui baris arahan rangka kerja Apple MLX. (Jika anda ingin mengetahui lebih lanjut tentang operasi Rangka Kerja MLX, sila baca [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
 
-### ***Note:***
+## **1. Penyediaan Data**
 
-1. jsonl data format:
+Secara lalai, Rangka Kerja MLX memerlukan format jsonl untuk train, test, dan eval, dan digabungkan dengan Lora untuk menyelesaikan tugasan penalaan halus.
+
+
+### ***Nota:***
+
+1. format data jsonl ：
 
 
 ```json
@@ -31,16 +31,16 @@ By default, the MLX Framework requires the train, test, and eval data in jsonl f
 
 ```
 
-2. Our example uses [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), but the dataset is relatively small, so the fine-tuning results may not be optimal. We recommend that learners use better data tailored to their own scenarios.
+2. Contoh kami menggunakan [data TruthfulQA](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), tetapi jumlah data agak terhad, jadi hasil penalaan halus tidak semestinya terbaik. Disarankan agar pelajar menggunakan data yang lebih baik berdasarkan senario mereka sendiri untuk melengkapkan tugasan.
 
-3. The data format is combined with the Phi-3 template.
+3. Format data digabungkan dengan templat Phi-3
 
-Please download the data from this [link](../../../../code/04.Finetuning/mlx), and make sure to include all .jsonl files in the ***data*** folder.
+Sila muat turun data dari [pautan ini](../../../../code/04.Finetuning/mlx), pastikan semua fail .jsonl dalam folder ***data*** disertakan
 
 
-## **2. Fine-tuning in your terminal**
+## **2. Penalaan Halus di terminal anda**
 
-Run the following command in your terminal:
+Sila jalankan arahan ini di terminal
 
 
 ```bash
@@ -50,11 +50,11 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 ```
 
 
-## ***Note:***
+## ***Nota:***
 
-1. This is LoRA fine-tuning; the MLX framework has not released QLoRA.
+1. Ini adalah penalaan halus LoRA, rangka kerja MLX tidak menerbitkan QLoRA
 
-2. You can modify config.yaml to change some parameters, such as:
+2. Anda boleh tetapkan config.yaml untuk mengubah beberapa argumen, seperti
 
 
 ```yaml
@@ -125,7 +125,7 @@ lora_parameters:
 
 ```
 
-Run the following command in your terminal:
+Sila jalankan arahan ini di terminal
 
 
 ```bash
@@ -135,9 +135,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Run Fine-tuning adapter to test**
+## **3. Jalankan penalaan halus adapter untuk ujian**
 
-You can run the fine-tuning adapter in the terminal like this:
+Anda boleh jalankan penalaan halus adapter di terminal, seperti ini 
 
 
 ```bash
@@ -146,7 +146,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-Then run the original model to compare results:
+dan jalankan model asal untuk bandingkan keputusan 
 
 
 ```bash
@@ -155,10 +155,10 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Feel free to compare the fine-tuned results with the original model.
+Anda boleh cuba bandingkan keputusan Penalaan Halus dengan model asal
 
 
-## **4. Merge adapters to generate new models**
+## **4. Gabungkan adapter untuk hasilkan model baru**
 
 
 ```bash
@@ -167,9 +167,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Running quantized fine-tuning models using ollama**
+## **5. Menjalankan model penalaan halus berkuantiti menggunakan ollama**
 
-Before use, please configure your llama.cpp environment.
+Sebelum digunakan, sila konfigurasikan persekitaran llama.cpp anda
 
 
 ```bash
@@ -184,13 +184,13 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ```
 
-***Note:***
+***Nota:*** 
 
-1. Currently supports quantization conversion for fp32, fp16, and INT8.
+1. Kini menyokong penukaran kuantisasi fp32, fp16 dan INT 8
 
-2. The merged model lacks tokenizer.model; please download it from https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. Model gabungan tidak mempunyai tokenizer.model, sila muat turun dari https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
-Set up an [Ollama Model](https://ollama.com/).
+tetapkan [Ollma Model](https://ollama.com/)
 
 
 ```txt
@@ -200,7 +200,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Run the command in your terminal:
+jalankan arahan di terminal
 
 
 ```bash
@@ -211,7 +211,7 @@ Run the command in your terminal:
 
 ```
 
-Congratulations! You have mastered fine-tuning with the MLX Framework.
+Tahniah! Kuasai penalaan halus dengan Rangka Kerja MLX
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

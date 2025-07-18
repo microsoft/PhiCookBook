@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-07-09T19:59:48+00:00",
+  "translation_date": "2025-07-16T20:10:18+00:00",
   "source_file": "md/01.Introduction/03/Android_Inference.md",
   "language_code": "en"
 }

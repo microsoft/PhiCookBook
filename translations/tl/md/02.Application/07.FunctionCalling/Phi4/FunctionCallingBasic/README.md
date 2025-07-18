@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:09:04+00:00",
+  "translation_date": "2025-07-17T05:16:34+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "tl"
 }
 -->
 ## **Pagtawag ng function sa Phi-4-mini**
 
-Ang pagtawag ng function ay unang lumitaw sa Phi Family, at ngayon ay maaari mo na itong gamitin sa pamamagitan ng Phi-4-mini.
+Nagsimula ang pagtawag ng function sa Phi Family, at ngayon maaari mo na itong gamitin sa pamamagitan ng Phi-4-mini.
 
-Ipinapakita ng halimbawang ito ang simulasyon ng mga resulta ng Premier League. Layunin nito na maipahatid ng Phi-4-mini ang impormasyon ng laro nang real-time. Narito ang sample na code:
+Ipinapakita ng halimbawang ito ang pagsasagawa ng simulation ng mga resulta ng Premier League. Ang layunin ay maipakita ng Phi-4-mini ang impormasyon ng laro nang real-time. Narito ang sample na code:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat aming pinagsisikapang maging tumpak ang pagsasalin, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

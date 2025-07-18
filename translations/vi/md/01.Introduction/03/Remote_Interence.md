@@ -2,69 +2,69 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:43:20+00:00",
+  "translation_date": "2025-07-16T21:20:39+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "vi"
 }
 -->
-# Inferencing từ xa với mô hình đã tinh chỉnh
+# Suy luận từ xa với mô hình đã tinh chỉnh
 
-Sau khi các adapter được huấn luyện trong môi trường từ xa, sử dụng một ứng dụng Gradio đơn giản để tương tác với mô hình.
+Sau khi các adapter được huấn luyện trong môi trường từ xa, hãy sử dụng một ứng dụng Gradio đơn giản để tương tác với mô hình.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.vi.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.vi.png)
 
 ### Cấp phát tài nguyên Azure  
-Bạn cần thiết lập các tài nguyên Azure cho inferencing từ xa bằng cách thực thi `AI Toolkit: Provision Azure Container Apps for inference` từ command palette. Trong quá trình thiết lập này, bạn sẽ được yêu cầu chọn Azure Subscription và nhóm tài nguyên (resource group).  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.vi.png)
-   
-Mặc định, subscription và resource group cho inferencing nên trùng với những cái đã dùng khi tinh chỉnh. Quá trình inferencing sẽ sử dụng cùng môi trường Azure Container App và truy cập mô hình cùng adapter mô hình được lưu trong Azure Files, được tạo ra trong bước tinh chỉnh.
+Bạn cần thiết lập các tài nguyên Azure cho suy luận từ xa bằng cách thực thi lệnh `AI Toolkit: Provision Azure Container Apps for inference` từ bảng lệnh. Trong quá trình thiết lập này, bạn sẽ được yêu cầu chọn Azure Subscription và nhóm tài nguyên của mình.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.vi.png)
+
+Mặc định, subscription và nhóm tài nguyên cho suy luận nên trùng với những cái đã dùng cho bước tinh chỉnh. Quá trình suy luận sẽ sử dụng cùng một Azure Container App Environment và truy cập mô hình cùng adapter mô hình được lưu trong Azure Files, được tạo ra trong bước tinh chỉnh.
 
 ## Sử dụng AI Toolkit
 
-### Triển khai cho Inferencing  
-Nếu bạn muốn chỉnh sửa mã inferencing hoặc tải lại mô hình inferencing, hãy thực thi lệnh `AI Toolkit: Deploy for inference`. Lệnh này sẽ đồng bộ mã mới nhất của bạn với ACA và khởi động lại bản sao.
+### Triển khai cho suy luận  
+Nếu bạn muốn chỉnh sửa mã suy luận hoặc tải lại mô hình suy luận, hãy thực thi lệnh `AI Toolkit: Deploy for inference`. Lệnh này sẽ đồng bộ mã mới nhất của bạn với ACA và khởi động lại bản sao.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.vi.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.vi.png)
 
 Sau khi triển khai thành công, mô hình đã sẵn sàng để đánh giá qua endpoint này.
 
-### Truy cập API Inferencing
+### Truy cập API suy luận
 
-Bạn có thể truy cập API inferencing bằng cách nhấn nút "*Go to Inference Endpoint*" xuất hiện trong thông báo VSCode. Ngoài ra, endpoint web API có thể tìm thấy dưới `ACA_APP_ENDPOINT` trong `./infra/inference.config.json` và ở bảng output.
+Bạn có thể truy cập API suy luận bằng cách nhấn nút "*Go to Inference Endpoint*" hiển thị trong thông báo của VSCode. Ngoài ra, endpoint web API có thể được tìm thấy trong `ACA_APP_ENDPOINT` ở file `./infra/inference.config.json` và trong bảng đầu ra.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.vi.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.vi.png)
 
-> **Note:** Endpoint inferencing có thể mất vài phút để hoạt động hoàn toàn.
+> **Note:** Endpoint suy luận có thể mất vài phút để hoạt động hoàn toàn.
 
-## Các thành phần inferencing có trong template
+## Các thành phần suy luận có trong mẫu
 
 | Thư mục | Nội dung |
 | ------ |--------- |
 | `infra` | Chứa tất cả cấu hình cần thiết cho hoạt động từ xa. |
-| `infra/provision/inference.parameters.json` | Chứa tham số cho các bicep template, dùng để cấp phát tài nguyên Azure cho inferencing. |
-| `infra/provision/inference.bicep` | Chứa các template để cấp phát tài nguyên Azure cho inferencing. |
-| `infra/inference.config.json` | File cấu hình, được tạo ra bởi lệnh `AI Toolkit: Provision Azure Container Apps for inference`. Dùng làm đầu vào cho các command palette từ xa khác. |
+| `infra/provision/inference.parameters.json` | Chứa các tham số cho các mẫu bicep, dùng để cấp phát tài nguyên Azure cho suy luận. |
+| `infra/provision/inference.bicep` | Chứa các mẫu để cấp phát tài nguyên Azure cho suy luận. |
+| `infra/inference.config.json` | File cấu hình, được tạo ra bởi lệnh `AI Toolkit: Provision Azure Container Apps for inference`. Dùng làm đầu vào cho các lệnh từ xa khác. |
 
 ### Sử dụng AI Toolkit để cấu hình cấp phát tài nguyên Azure  
 Cấu hình [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Cấp phát Azure Container Apps cho inferencing ` command.
+Lệnh `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+Bạn có thể tìm các tham số cấu hình trong file `./infra/provision/inference.parameters.json`. Chi tiết như sau:  
+| Tham số | Mô tả |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | Các lệnh để khởi tạo một web API. |
+| `maximumInstanceCount` | Tham số này đặt giới hạn tối đa số lượng instance GPU. |
+| `location` | Vị trí nơi các tài nguyên Azure được cấp phát. Mặc định là cùng vị trí với nhóm tài nguyên đã chọn. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | Các tham số dùng để đặt tên cho tài nguyên Azure khi cấp phát. Mặc định sẽ giống tên tài nguyên dùng cho tinh chỉnh. Bạn có thể nhập tên tài nguyên mới chưa sử dụng để tạo tài nguyên tùy chỉnh, hoặc nhập tên tài nguyên Azure đã tồn tại nếu muốn dùng lại. Chi tiết xem phần [Sử dụng tài nguyên Azure hiện có](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### Sử dụng tài nguyên Azure hiện có
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Mặc định, việc cấp phát suy luận sử dụng cùng Azure Container App Environment, Storage Account, Azure File Share và Azure Log Analytics đã dùng cho bước tinh chỉnh. Một Azure Container App riêng biệt được tạo ra chỉ dành cho API suy luận.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` rồi chạy lệnh `AI Toolkit: Provision Azure Container Apps for inference` từ command palette. Lệnh này sẽ cập nhật các tài nguyên đã chỉ định và tạo mới những tài nguyên còn thiếu.
+Nếu bạn đã tùy chỉnh tài nguyên Azure trong bước tinh chỉnh hoặc muốn dùng tài nguyên Azure hiện có cho suy luận, hãy chỉ định tên của chúng trong file `./infra/inference.parameters.json`. Sau đó, chạy lệnh `AI Toolkit: Provision Azure Container Apps for inference` từ bảng lệnh. Lệnh này sẽ cập nhật các tài nguyên đã chỉ định và tạo mới những tài nguyên còn thiếu.
 
-Ví dụ, nếu bạn đã có môi trường container Azure, file `./infra/finetuning.parameters.json` của bạn sẽ trông như sau:
+Ví dụ, nếu bạn có môi trường container Azure hiện có, file `./infra/finetuning.parameters.json` của bạn sẽ trông như sau:
 
 ```json
 {
@@ -84,7 +84,7 @@ Ví dụ, nếu bạn đã có môi trường container Azure, file `./infra/fin
 ```
 
 ### Cấp phát thủ công  
-Nếu bạn muốn tự cấu hình các tài nguyên Azure, bạn có thể dùng các file bicep có sẵn trong thư mục `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`.
+Nếu bạn muốn tự cấu hình tài nguyên Azure, bạn có thể sử dụng các file bicep có sẵn trong thư mục `./infra/provision`. Nếu bạn đã thiết lập và cấu hình tất cả tài nguyên Azure mà không dùng bảng lệnh AI Toolkit, bạn chỉ cần nhập tên tài nguyên vào file `inference.config.json`.
 
 Ví dụ:
 
@@ -100,4 +100,4 @@ Ví dụ:
 ```
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn chính xác và đáng tin cậy. Đối với thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

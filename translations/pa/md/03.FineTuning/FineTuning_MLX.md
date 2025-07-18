@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:42:12+00:00",
+  "translation_date": "2025-07-17T07:59:07+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "pa"
 }
 -->
-# **Apple MLX Framework ਨਾਲ Phi-3 ਦੀ Fine-tuning**
+# **Apple MLX Framework ਨਾਲ Phi-3 ਦੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ**
 
-ਅਸੀਂ Apple MLX Framework ਦੇ ਕਮਾਂਡ ਲਾਈਨ ਰਾਹੀਂ Lora ਦੇ ਨਾਲ ਮਿਲਾ ਕੇ Fine-tuning ਕਰ ਸਕਦੇ ਹਾਂ। (ਜੇ ਤੁਹਾਨੂੰ MLX Framework ਦੇ ਚਾਲੂ ਹੋਣ ਬਾਰੇ ਹੋਰ ਜਾਣਨਾ ਹੈ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md) ਪੜ੍ਹੋ)
+ਅਸੀਂ Apple MLX Framework ਦੇ ਕਮਾਂਡ ਲਾਈਨ ਰਾਹੀਂ Lora ਦੇ ਨਾਲ ਮਿਲਾ ਕੇ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਕਰ ਸਕਦੇ ਹਾਂ। (ਜੇ ਤੁਸੀਂ MLX Framework ਦੇ ਕੰਮ ਕਰਨ ਦੇ ਤਰੀਕੇ ਬਾਰੇ ਹੋਰ ਜਾਣਨਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਕਿਰਪਾ ਕਰਕੇ [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md) ਪੜ੍ਹੋ)
 
 
 ## **1. ਡਾਟਾ ਤਿਆਰੀ**
 
-ਡਿਫਾਲਟ ਰੂਪ ਵਿੱਚ, MLX Framework train, test, ਅਤੇ eval ਲਈ jsonl ਫਾਰਮੈਟ ਦੀ ਮੰਗ ਕਰਦਾ ਹੈ, ਅਤੇ Lora ਨਾਲ ਮਿਲਾ ਕੇ fine-tuning ਕੰਮ ਮੁਕੰਮਲ ਕਰਦਾ ਹੈ।
+ਡਿਫਾਲਟ ਤੌਰ 'ਤੇ, MLX Framework ਨੂੰ train, test, ਅਤੇ eval ਲਈ jsonl ਫਾਰਮੈਟ ਦੀ ਲੋੜ ਹੁੰਦੀ ਹੈ, ਅਤੇ ਇਹ Lora ਨਾਲ ਮਿਲ ਕੇ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਦੇ ਕੰਮ ਪੂਰੇ ਕਰਦਾ ਹੈ।
 
 
 ### ***Note:***
@@ -31,14 +31,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 ```
 
-2. ਸਾਡਾ ਉਦਾਹਰਨ [TruthfulQA ਦਾ ਡਾਟਾ](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv) ਵਰਤਦਾ ਹੈ, ਪਰ ਡਾਟਾ ਦੀ ਮਾਤਰਾ ਥੋੜ੍ਹੀ ਹੈ, ਇਸ ਲਈ fine-tuning ਦੇ ਨਤੀਜੇ ਜ਼ਰੂਰੀ ਨਹੀਂ ਕਿ ਸਭ ਤੋਂ ਵਧੀਆ ਹੋਣ। ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਸਿੱਖਣ ਵਾਲੇ ਆਪਣੇ ਸੰਦਰਭ ਅਨੁਸਾਰ ਵਧੀਆ ਡਾਟਾ ਵਰਤਣ।
+2. ਸਾਡਾ ਉਦਾਹਰਨ [TruthfulQA ਦਾ ਡਾਟਾ](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv) ਵਰਤਦਾ ਹੈ, ਪਰ ਡਾਟਾ ਦੀ ਮਾਤਰਾ ਥੋੜ੍ਹੀ ਘੱਟ ਹੈ, ਇਸ ਲਈ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਦੇ ਨਤੀਜੇ ਜ਼ਰੂਰੀ ਨਹੀਂ ਕਿ ਸਭ ਤੋਂ ਵਧੀਆ ਹੋਣ। ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ ਕਿ ਸਿੱਖਣ ਵਾਲੇ ਆਪਣੇ ਸੰਦਰਭਾਂ ਦੇ ਅਧਾਰ 'ਤੇ ਵਧੀਆ ਡਾਟਾ ਵਰਤ ਕੇ ਕੰਮ ਪੂਰਾ ਕਰਨ। 
 
-3. ਡਾਟਾ ਫਾਰਮੈਟ Phi-3 ਟੈਮਪਲੇਟ ਨਾਲ ਮਿਲਾ ਕੇ ਹੈ
+3. ਡਾਟਾ ਫਾਰਮੈਟ Phi-3 ਟੈਮਪਲੇਟ ਨਾਲ ਮਿਲ ਕੇ ਬਣਾਇਆ ਗਿਆ ਹੈ।
 
-ਕਿਰਪਾ ਕਰਕੇ ਇਸ [ਲਿੰਕ](../../../../code/04.Finetuning/mlx) ਤੋਂ ਡਾਟਾ ਡਾਊਨਲੋਡ ਕਰੋ, ਅਤੇ ***data*** ਫੋਲਡਰ ਵਿੱਚ ਸਾਰੇ .jsonl ਸ਼ਾਮਲ ਕਰੋ
+ਕਿਰਪਾ ਕਰਕੇ ਇਸ [ਲਿੰਕ](../../../../code/04.Finetuning/mlx) ਤੋਂ ਡਾਟਾ ਡਾਊਨਲੋਡ ਕਰੋ, ***data*** ਫੋਲਡਰ ਵਿੱਚ ਸਾਰੇ .jsonl ਸ਼ਾਮਲ ਕਰੋ।
 
 
-## **2. ਆਪਣੇ ਟਰਮੀਨਲ ਵਿੱਚ Fine-tuning**
+## **2. ਆਪਣੇ ਟਰਮੀਨਲ ਵਿੱਚ ਫਾਈਨ-ਟਿਊਨਿੰਗ**
 
 ਕਿਰਪਾ ਕਰਕੇ ਟਰਮੀਨਲ ਵਿੱਚ ਇਹ ਕਮਾਂਡ ਚਲਾਓ
 
@@ -52,9 +52,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Note:***
 
-1. ਇਹ LoRA fine-tuning ਹੈ, MLX framework ਨੇ QLoRA ਜਾਰੀ ਨਹੀਂ ਕੀਤਾ
+1. ਇਹ LoRA ਫਾਈਨ-ਟਿਊਨਿੰਗ ਹੈ, MLX Framework ਨੇ QLoRA ਜਾਰੀ ਨਹੀਂ ਕੀਤਾ
 
-2. ਤੁਸੀਂ config.yaml ਵਿੱਚ ਕੁਝ arguments ਬਦਲ ਸਕਦੇ ਹੋ, ਜਿਵੇਂ ਕਿ
+2. ਤੁਸੀਂ config.yaml ਵਿੱਚ ਕੁਝ ਆਰਗੁਮੈਂਟ ਬਦਲ ਸਕਦੇ ਹੋ, ਜਿਵੇਂ ਕਿ
 
 
 ```yaml
@@ -135,9 +135,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. Fine-tuning adapter ਨੂੰ ਟੈਸਟ ਕਰਨ ਲਈ ਚਲਾਓ**
+## **3. ਟੈਸਟ ਕਰਨ ਲਈ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਐਡਾਪਟਰ ਚਲਾਓ**
 
-ਤੁਸੀਂ ਟਰਮੀਨਲ ਵਿੱਚ fine-tuning adapter ਇਸ ਤਰ੍ਹਾਂ ਚਲਾ ਸਕਦੇ ਹੋ
+ਤੁਸੀਂ ਟਰਮੀਨਲ ਵਿੱਚ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਐਡਾਪਟਰ ਇਸ ਤਰ੍ਹਾਂ ਚਲਾ ਸਕਦੇ ਹੋ 
 
 
 ```bash
@@ -146,7 +146,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-ਅਤੇ ਨਤੀਜੇ ਦੀ ਤੁਲਨਾ ਕਰਨ ਲਈ ਅਸਲ ਮਾਡਲ ਚਲਾਓ
+ਅਤੇ ਨਤੀਜੇ ਦੀ ਤੁਲਨਾ ਕਰਨ ਲਈ ਮੂਲ ਮਾਡਲ ਚਲਾਓ 
 
 
 ```bash
@@ -155,10 +155,10 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-ਤੁਸੀਂ Fine-tuning ਦੇ ਨਤੀਜੇ ਅਸਲ ਮਾਡਲ ਨਾਲ ਤੁਲਨਾ ਕਰ ਸਕਦੇ ਹੋ
+ਤੁਸੀਂ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਅਤੇ ਮੂਲ ਮਾਡਲ ਦੇ ਨਤੀਜਿਆਂ ਦੀ ਤੁਲਨਾ ਕਰਨ ਦੀ ਕੋਸ਼ਿਸ਼ ਕਰ ਸਕਦੇ ਹੋ।
 
 
-## **4. ਨਵੇਂ ਮਾਡਲ ਬਣਾਉਣ ਲਈ adapters ਨੂੰ ਮਰਜ ਕਰੋ**
+## **4. ਨਵੇਂ ਮਾਡਲ ਬਣਾਉਣ ਲਈ ਐਡਾਪਟਰਜ਼ ਨੂੰ ਮਰਜ ਕਰੋ**
 
 
 ```bash
@@ -167,9 +167,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. ollama ਵਰਤ ਕੇ quantified fine-tuning ਮਾਡਲ ਚਲਾਉਣਾ**
+## **5. ollama ਦੀ ਵਰਤੋਂ ਨਾਲ ਕੁਆੰਟਾਈਜ਼ਡ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਮਾਡਲ ਚਲਾਉਣਾ**
 
-ਵਰਤੋਂ ਤੋਂ ਪਹਿਲਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ llama.cpp ਵਾਤਾਵਰਣ ਸੈਟ ਕਰੋ
+ਵਰਤੋਂ ਤੋਂ ਪਹਿਲਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਆਪਣਾ llama.cpp ਵਾਤਾਵਰਣ ਸੈੱਟ ਕਰੋ
 
 
 ```bash
@@ -186,11 +186,11 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Note:*** 
 
-1. ਹੁਣ fp32, fp16 ਅਤੇ INT 8 ਦੀ quantization conversion ਸਹਾਇਤਾ ਕਰਦਾ ਹੈ
+1. ਹੁਣ fp32, fp16 ਅਤੇ INT 8 ਦੀ ਕੁਆੰਟਾਈਜ਼ੇਸ਼ਨ ਕਨਵਰਜ਼ਨ ਸਹਾਇਤਾ ਹੈ
 
-2. ਮਰਜ ਕੀਤਾ ਮਾਡਲ tokenizer.model ਗੁੰਮ ਹੈ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਨੂੰ https://huggingface.co/microsoft/Phi-3-mini-4k-instruct ਤੋਂ ਡਾਊਨਲੋਡ ਕਰੋ
+2. ਮਰਜ ਕੀਤਾ ਮਾਡਲ tokenizer.model ਨਹੀਂ ਰੱਖਦਾ, ਕਿਰਪਾ ਕਰਕੇ ਇਸਨੂੰ https://huggingface.co/microsoft/Phi-3-mini-4k-instruct ਤੋਂ ਡਾਊਨਲੋਡ ਕਰੋ
 
-[Ollma Model](https://ollama.com/) ਸੈਟ ਕਰੋ
+[Ollma Model](https://ollama.com/) ਸੈੱਟ ਕਰੋ
 
 
 ```txt
@@ -211,7 +211,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-ਵਧਾਈ ਹੋਵੇ! MLX Framework ਨਾਲ fine-tuning 'ਚ ਮਾਹਰ ਬਣੋ
+ਵਧਾਈਆਂ! MLX Framework ਨਾਲ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਵਿੱਚ ਮਾਹਰ ਬਣੋ।
 
-**ਡਿਸਕਲੇਮਰ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਯਤਨਸ਼ੀਲ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਹੀਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੇ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਜਰੂਰੀ ਜਾਣਕਾਰੀ ਲਈ, ਪ੍ਰੋਫੈਸ਼ਨਲ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਨਾਲ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀਆਂ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆਵਾਂ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+**ਅਸਵੀਕਾਰੋਪੱਤਰ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

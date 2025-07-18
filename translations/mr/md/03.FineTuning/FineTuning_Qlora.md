@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "54b6b824568d4decb574b9e117c4f5f7",
-  "translation_date": "2025-05-09T21:51:28+00:00",
+  "translation_date": "2025-07-17T08:17:58+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Qlora.md",
   "language_code": "mr"
 }
 -->
-**Phi-3 ला QLoRA सह फाइन-ट्यूनिंग करणे**
+**QLoRA सह Phi-3 चे फाइन-ट्यूनिंग**
 
-Microsoft च्या Phi-3 Mini भाषा मॉडेलचे [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora) वापरून फाइन-ट्यूनिंग करणे.
+Microsoft च्या Phi-3 Mini भाषा मॉडेलचे फाइन-ट्यूनिंग [QLoRA (Quantum Low-Rank Adaptation)](https://github.com/artidoro/qlora) वापरून केले जाते.
 
 QLoRA संभाषण समज आणि प्रतिसाद निर्मिती सुधारण्यात मदत करेल.
 
-transformers आणि bitsandbytes सह 4bits मध्ये मॉडेल्स लोड करण्यासाठी, तुम्हाला accelerate आणि transformers स्रोताकडून इंस्टॉल करावे लागेल आणि bitsandbytes लायब्ररीची नवीनतम आवृत्ती असणे आवश्यक आहे.
+transformers आणि bitsandbytes वापरून 4bits मध्ये मॉडेल लोड करण्यासाठी, तुम्हाला accelerate आणि transformers स्रोताकडून इन्स्टॉल करावे लागेल आणि bitsandbytes लायब्ररीची नवीनतम आवृत्ती असणे आवश्यक आहे.
 
 **नमुने**
-- [या सॅम्पल नोटबुकसह अधिक जाणून घ्या](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
-- [Python फाइन-ट्यूनिंग सॅम्पलचे उदाहरण](../../../../code/03.Finetuning/FineTrainingScript.py)
-- [Hugging Face Hub वर LORA सह फाइन ट्यूनिंगचे उदाहरण](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
-- [Hugging Face Hub वर QLORA सह फाइन ट्यूनिंगचे उदाहरण](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
+- [या नमुना नोटबुकसह अधिक जाणून घ्या](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
+- [Python फाइनट्यूनिंग नमुन्याचे उदाहरण](../../../../code/03.Finetuning/FineTrainingScript.py)
+- [LORA सह Hugging Face Hub फाइन ट्यूनिंगचे उदाहरण](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
+- [QLORA सह Hugging Face Hub फाइन ट्यूनिंगचे उदाहरण](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
 **अस्वीकरण**:  
-हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्न करतो, तरी कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेचा अभाव असू शकतो. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद शिफारसीय आहे. या अनुवादाचा वापर केल्यामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागीसाठी आम्ही जबाबदार नाही.
+हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

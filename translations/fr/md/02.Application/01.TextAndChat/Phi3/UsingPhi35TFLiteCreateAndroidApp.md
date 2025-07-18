@@ -2,37 +2,36 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-07T14:07:19+00:00",
+  "translation_date": "2025-07-17T02:49:12+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "fr"
 }
 -->
-# **Utiliser Microsoft Phi-3.5 tflite pour créer une application Android**
+# **Utilisation de Microsoft Phi-3.5 tflite pour créer une application Android**
 
 Ceci est un exemple Android utilisant les modèles Microsoft Phi-3.5 tflite.
 
 ## **📚 Connaissances**
 
-L'API Android LLM Inference vous permet d'exécuter des modèles de langage volumineux (LLM) entièrement sur l'appareil pour les applications Android, ce qui vous permet d'effectuer une large gamme de tâches, telles que générer du texte, récupérer des informations en langage naturel, et résumer des documents. La tâche offre un support intégré pour plusieurs modèles de langage volumineux texte-à-texte, vous permettant d'appliquer les derniers modèles d'IA générative embarqués à vos applications Android.
+L’API d’inférence LLM Android vous permet d’exécuter des modèles de langage de grande taille (LLM) entièrement sur l’appareil pour les applications Android, ce que vous pouvez utiliser pour réaliser une large gamme de tâches, telles que générer du texte, récupérer des informations en langage naturel, et résumer des documents. La tâche offre un support intégré pour plusieurs modèles de langage de grande taille texte-à-texte, vous permettant ainsi d’appliquer les derniers modèles d’IA générative sur appareil à vos applications Android.
 
-Google AI Edge Torch est une bibliothèque python qui prend en charge la conversion des modèles PyTorch au format .tflite, pouvant ensuite être exécutés avec TensorFlow Lite et MediaPipe. Cela permet de créer des applications pour Android, iOS et IoT capables d'exécuter des modèles entièrement sur l'appareil. AI Edge Torch offre une large couverture CPU, avec un support initial pour GPU et NPU. AI Edge Torch cherche à s'intégrer étroitement avec PyTorch, en s'appuyant sur torch.export() et en couvrant bien les opérateurs Core ATen.
-
+Googld AI Edge Torch est une bibliothèque Python qui permet de convertir des modèles PyTorch au format .tflite, pouvant ensuite être exécutés avec TensorFlow Lite et MediaPipe. Cela permet de créer des applications pour Android, iOS et IoT capables d’exécuter les modèles entièrement sur l’appareil. AI Edge Torch offre une large couverture CPU, avec un support initial pour GPU et NPU. AI Edge Torch vise une intégration étroite avec PyTorch, en s’appuyant sur torch.export() et en couvrant bien les opérateurs Core ATen.
 
 ## **🪬 Guide**
 
-### **🔥 Convertir Microsoft Phi-3.5 au format tflite**
+### **🔥 Conversion de Microsoft Phi-3.5 au format tflite**
 
 0. Cet exemple est destiné à Android 14+
 
 1. Installez Python 3.10.12
 
-***Suggestion :*** utiliser conda pour installer votre environnement Python
+***Suggestion :*** utilisez conda pour installer votre environnement Python
 
 2. Ubuntu 20.04 / 22.04 (concentrez-vous sur [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Suggestion :*** Utilisez une VM Linux Azure ou une VM cloud tierce pour créer votre environnement
+***Suggestion :*** utilisez une VM Linux Azure ou une VM cloud tierce pour créer votre environnement
 
-3. Ouvrez votre terminal Linux, pour installer la bibliothèque Python 
+3. Ouvrez votre terminal Linux pour installer la bibliothèque Python
 
 ```bash
 
@@ -48,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Téléchargez Microsoft-3.5-Instruct depuis Hugging face
+4. Téléchargez Microsoft-3.5-Instruct depuis Hugging Face
 
 ```bash
 
@@ -58,7 +57,7 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. Convertissez Microsoft Phi-3.5 au format tflite
+5. Convertissez Microsoft Phi-3.5 en tflite
 
 ```bash
 
@@ -66,10 +65,9 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
+### **🔥 Conversion de Microsoft Phi-3.5 en bundle Android Mediapipe**
 
-### **🔥 Convertir Microsoft Phi-3.5 en bundle Android Mediapipe**
-
-Veuillez d'abord installer mediapipe
+Veuillez installer mediapipe en premier lieu
 
 ```bash
 
@@ -96,8 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-
-### **🔥 Utiliser adb push pour transférer le modèle task vers le chemin de votre appareil Android**
+### **🔥 Utilisation de adb push pour transférer le modèle task vers le chemin de votre appareil Android**
 
 ```bash
 
@@ -109,9 +106,9 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ```
 
-### **🔥 Exécuter votre code Android**
+### **🔥 Exécution de votre code Android**
 
 ![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.fr.png)
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforçons d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, il est recommandé de recourir à une traduction professionnelle réalisée par un humain. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-05-09T15:56:38+00:00",
+  "translation_date": "2025-07-16T23:05:25+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
   "language_code": "fi"
 }
@@ -15,20 +15,20 @@ Tämä koodi vie mallin OpenVINO-muotoon, lataa sen ja käyttää sitä vastauks
    ```bash
    optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6 --sym --trust-remote-code ./model/phi3-instruct/int4
    ```
-   - Tämä komento käyttää `optimum-cli` tool to export a model to the OpenVINO format, which is optimized for efficient inference.
-   - The model being exported is `"microsoft/Phi-3-mini-4k-instruct"`, and it's set up for the task of generating text based on past context.
-   - The weights of the model are quantized to 4-bit integers (`int4`), which helps reduce the model size and speed up processing.
-   - Other parameters like `group-size`, `ratio`, and `sym` are used to fine-tune the quantization process.
-   - The exported model is saved in the directory `./model/phi3-instruct/int4`.
+   - Tämä komento käyttää `optimum-cli`-työkalua mallin viemiseen OpenVINO-muotoon, joka on optimoitu tehokkaaseen päättelyyn.
+   - Viety malli on `"microsoft/Phi-3-mini-4k-instruct"`, ja se on tarkoitettu tekstin generointitehtävään aiemman kontekstin perusteella.
+   - Mallin painot kvantisoidaan 4-bittisiksi kokonaisluvuiksi (`int4`), mikä auttaa pienentämään mallin kokoa ja nopeuttamaan käsittelyä.
+   - Muut parametrit kuten `group-size`, `ratio` ja `sym` hienosäätävät kvantisointiprosessia.
+   - Viety malli tallennetaan hakemistoon `./model/phi3-instruct/int4`.
 
 2. **Tarvittavien kirjastojen tuonti**:
    ```python
    from transformers import AutoConfig, AutoTokenizer
    from optimum.intel.openvino import OVModelForCausalLM
    ```
-   - Nämä rivit tuovat luokkia `transformers` library and the `optimum.intel.openvino`-moduulista, joita tarvitaan mallin lataamiseen ja käyttämiseen.
+   - Nämä rivit tuovat luokkia `transformers`-kirjastosta ja `optimum.intel.openvino`-moduulista, joita tarvitaan mallin lataamiseen ja käyttämiseen.
 
-3. **Mallihakemiston ja konfiguraation määrittäminen**:
+3. **Mallihakemiston ja konfiguraation määrittely**:
    ```python
    model_dir = './model/phi3-instruct/int4'
    ov_config = {
@@ -37,8 +37,8 @@ Tämä koodi vie mallin OpenVINO-muotoon, lataa sen ja käyttää sitä vastauks
        "CACHE_DIR": ""
    }
    ```
-   - `model_dir` specifies where the model files are stored.
-   - `ov_config` on sanakirja, joka määrittää OpenVINO-mallille prioriteetin matalalle viiveelle, yhden inferenssivirran käytön ja välimuistihakemiston pois päältä.
+   - `model_dir` määrittää, mistä mallin tiedostot löytyvät.
+   - `ov_config` on sanakirja, joka konfiguroi OpenVINO-mallin priorisoimaan pienen viiveen, käyttämään yhtä päättelyvirtaa ja olemaan käyttämättä välimuistihakemistoa.
 
 4. **Mallin lataaminen**:
    ```python
@@ -58,19 +58,19 @@ Tämä koodi vie mallin OpenVINO-muotoon, lataa sen ja käyttää sitä vastauks
    ```
    - Tämä rivi lataa tokenisoijan, joka vastaa tekstin muuntamisesta mallelle ymmärrettäviksi tokeneiksi.
 
-6. **Tokenisoijan argumenttien asettaminen**:
+6. **Tokenisoijan argumenttien määrittely**:
    ```python
    tokenizer_kwargs = {
        "add_special_tokens": False
    }
    ```
-   - Tämä sanakirja määrittää, ettei erityisiä tokeneita lisätä tokenisoituun tulokseen.
+   - Tämä sanakirja määrittää, ettei tokenisoituun tulokseen lisätä erikoistokeneita.
 
 7. **Kehotteen määrittely**:
    ```python
    prompt = "<|system|>You are a helpful AI assistant.<|end|><|user|>can you introduce yourself?<|end|><|assistant|>"
    ```
-   - Tämä merkkijono määrittää keskustelun kehotteen, jossa käyttäjä pyytää tekoälyavustajaa esittäytymään.
+   - Tämä merkkijono asettaa keskustelukehotteen, jossa käyttäjä pyytää tekoälyavustajaa esittäytymään.
 
 8. **Kehotteen tokenisointi**:
    ```python
@@ -88,7 +88,7 @@ Tämä koodi vie mallin OpenVINO-muotoon, lataa sen ja käyttää sitä vastauks
     ```python
     decoded_answer = tok.batch_decode(answer, skip_special_tokens=True)[0]
     ```
-    - Tämä rivi muuntaa generoidut tokenit takaisin luettavaksi merkkijonoksi, ohittaen erityiset tokenit, ja hakee ensimmäisen tuloksen.
+    - Tämä rivi muuntaa generoidut tokenit takaisin ihmisen luettavaksi merkkijonoksi, ohittaen erikoistokenit, ja hakee ensimmäisen tuloksen.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattiset käännökset saattavat sisältää virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä johtuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

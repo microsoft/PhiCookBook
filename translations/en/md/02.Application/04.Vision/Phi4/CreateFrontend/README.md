@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "83b94a515637dffaea3bae99278561a6",
-  "translation_date": "2025-07-09T19:30:16+00:00",
+  "translation_date": "2025-07-17T05:06:40+00:00",
   "source_file": "md/02.Application/04.Vision/Phi4/CreateFrontend/README.md",
   "language_code": "en"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal has powerful image reading capabilities. Let's try using Python to implement the following functions. The image is a ChatGPT page.
 
-![demo](../../../../../../../md/02.Application/04.Vision/Phi4/CreateFrontend/demo.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.en.png)
 
 ### **Sample Code**
 

@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:03:04+00:00",
+  "translation_date": "2025-07-17T03:18:43+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "tl"
 }
 -->
 # **Makipag-chat sa Phi-4-mini ONNX**
 
-***ONNX*** ay isang bukas na format na ginawa para ipakita ang mga modelo ng machine learning. Tinutukoy ng ONNX ang isang karaniwang set ng mga operator - ang mga pundasyon ng machine learning at deep learning na mga modelo - pati na rin ang isang karaniwang format ng file para payagan ang mga AI developer na gamitin ang mga modelo gamit ang iba't ibang frameworks, tools, runtimes, at compilers.
+***ONNX*** ay isang bukas na format na ginawa upang ilarawan ang mga modelo ng machine learning. Ang ONNX ay nagtatakda ng isang karaniwang set ng mga operator - ang mga pundasyon ng machine learning at deep learning na mga modelo - at isang karaniwang format ng file upang payagan ang mga AI developer na gamitin ang mga modelo sa iba't ibang frameworks, tools, runtimes, at compilers.
 
-Layunin naming i-deploy ang mga generative AI models sa mga edge device at gamitin ito sa mga lugar na may limitadong computing power o offline na mga kapaligiran. Ngayon, maaari nating makamit ang layuning ito sa pamamagitan ng pag-convert ng modelo sa isang quantized na paraan. Maaari nating i-convert ang quantized na modelo sa GGUF o ONNX format.
+Nais naming i-deploy ang mga generative AI na modelo sa mga edge device at gamitin ang mga ito sa mga kapaligirang may limitadong computing power o offline. Ngayon, maaari nating makamit ang layuning ito sa pamamagitan ng pag-convert ng modelo sa isang quantized na paraan. Maaari nating i-convert ang quantized na modelo sa GGUF o ONNX na format.
 
-Makakatulong ang Microsoft Olive na i-convert ang SLM sa quantized ONNX format. Napakadali lang ng paraan para gawin ang conversion ng modelo.
+Makakatulong ang Microsoft Olive na i-convert ang SLM sa quantized ONNX na format. Napakasimple ng paraan upang makamit ang conversion ng modelo.
 
 **I-install ang Microsoft Olive SDK**
 
@@ -37,7 +37,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Tandaan*** ang halimbawang ito ay gumagamit ng CPU
 
 
-### **Inference ng Phi-4-mini ONNX Model gamit ang ONNX Runtime GenAI**
+### **Mag-infer gamit ang Phi-4-mini ONNX Model gamit ang ONNX Runtime GenAI**
 
 - **I-install ang ONNX Runtime GenAI**
 
@@ -49,7 +49,7 @@ pip install --pre onnxruntime-genai
 
 - **Python Code**
 
-*Ito ang ONNX Runtime GenAI bersyon 0.5.2*
+*Ito ay ONNX Runtime GenAI bersyon 0.5.2*
 
 ```python
 
@@ -105,7 +105,7 @@ while not generator.is_done():
 ```
 
 
-*Ito ang ONNX Runtime GenAI bersyon 0.6.0*
+*Ito ay ONNX Runtime GenAI bersyon 0.6.0*
 
 ```python
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Paalala**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagaman aming pinagsisikapang maging tumpak ang pagsasalin, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaintindihan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

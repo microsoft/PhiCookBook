@@ -2,36 +2,36 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-08T05:41:59+00:00",
+  "translation_date": "2025-07-17T02:50:48+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "ja"
 }
 -->
-# **Microsoft Phi-3.5 tflite を使って Android アプリを作成する方法**
+# **Microsoft Phi-3.5 tfliteを使ってAndroidアプリを作成する方法**
 
-これは Microsoft Phi-3.5 tflite モデルを使った Android のサンプルです。
+これはMicrosoft Phi-3.5 tfliteモデルを使用したAndroidのサンプルです。
 
 ## **📚 知識**
 
-Android LLM Inference API は、大規模言語モデル（LLM）を完全にデバイス上で実行できるようにし、テキスト生成や自然言語での情報取得、ドキュメントの要約など幅広いタスクに利用できます。このタスクは複数のテキスト・ツー・テキスト大規模言語モデルを標準でサポートしており、最新のオンデバイス生成AIモデルを Android アプリに適用可能です。
+Android LLM Inference APIは、Androidアプリ上で大規模言語モデル（LLM）を完全にデバイス内で実行できるようにし、テキスト生成、自然言語での情報取得、文書の要約など幅広いタスクに利用できます。このタスクは複数のテキスト・トゥ・テキスト大規模言語モデルを標準でサポートしており、最新のオンデバイス生成AIモデルをAndroidアプリに適用可能です。
 
-Googld AI Edge Torch は、PyTorch モデルを .tflite 形式に変換できる Python ライブラリで、TensorFlow Lite と MediaPipe で実行可能にします。これにより、Android、iOS、IoT 向けにモデルを完全にオンデバイスで動かすアプリケーションが作れます。AI Edge Torch は幅広い CPU をサポートし、初期段階で GPU と NPU のサポートも備えています。PyTorch と密接に連携し、torch.export() をベースに Core ATen オペレーターを幅広くカバーすることを目指しています。
+Googld AI Edge Torchは、PyTorchモデルを.tflite形式に変換できるPythonライブラリで、TensorFlow LiteやMediaPipeで実行できます。これにより、Android、iOS、IoT向けに完全にデバイス内でモデルを動かすアプリケーションが可能になります。AI Edge Torchは幅広いCPUをサポートし、初期段階でGPUやNPUも対応しています。PyTorchとの密接な統合を目指し、torch.export()を基盤にCore ATenオペレーターのカバー率を高めています。
 
 ## **🪬 ガイドライン**
 
-### **🔥 Microsoft Phi-3.5 を tflite に変換する手順**
+### **🔥 Microsoft Phi-3.5をtfliteに変換する方法**
 
-0. このサンプルは Android 14 以上向けです。
+0. このサンプルはAndroid 14以上向けです
 
-1. Python 3.10.12 をインストールしてください。
+1. Python 3.10.12をインストールしてください
 
-***おすすめ:*** conda を使って Python 環境を構築するのが便利です。
+***おすすめ:*** condaを使ってPython環境を構築することを推奨します
 
-2. Ubuntu 20.04 / 22.04 を使用してください（[google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch) に注目）
+2. Ubuntu 20.04 / 22.04（[google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch)に注目してください）
 
-***おすすめ:*** Azure Linux VM やサードパーティのクラウド VM で環境を作るのが良いでしょう。
+***おすすめ:*** Azure Linux VMやサードパーティのクラウドVMを使って環境を作成するのが便利です
 
-3. Linux の bash で Python ライブラリをインストールします。
+3. Linuxのbashに移動し、Pythonライブラリをインストールします
 
 ```bash
 
@@ -47,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Hugging face から Microsoft-3.5-Instruct をダウンロードします。
+4. Hugging faceからMicrosoft-3.5-Instructをダウンロードします
 
 ```bash
 
@@ -57,7 +57,7 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. Microsoft Phi-3.5 を tflite に変換します。
+5. Microsoft Phi-3.5をtfliteに変換します
 
 ```bash
 
@@ -65,9 +65,9 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 Microsoft Phi-3.5 を Android Mediapipe バンドルに変換する**
+### **🔥 Microsoft Phi-3.5をAndroid Mediapipeバンドルに変換する方法**
 
-まず mediapipe をインストールしてください。
+まずはmediapipeをインストールしてください
 
 ```bash
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-このコードは [your notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb) で実行します。
+このコードは[your notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)で実行します
 
 ```python
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 adb push でタスクモデルを Android デバイスのパスに送る**
+### **🔥 adb pushでモデルをAndroidデバイスのパスに転送する方法**
 
 ```bash
 
@@ -106,9 +106,9 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ```
 
-### **🔥 Android コードの実行**
+### **🔥 Androidコードの実行**
 
 ![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.ja.png)
 
-**免責事項**:  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご承知ください。原文の母国語版が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨いたします。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

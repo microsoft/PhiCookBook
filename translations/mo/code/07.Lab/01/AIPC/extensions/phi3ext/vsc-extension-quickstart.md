@@ -2,61 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "eae2c0ea18160a3e7a63ace7b53897d7",
-  "translation_date": "2025-05-07T15:21:26+00:00",
+  "translation_date": "2025-07-16T16:40:45+00:00",
   "source_file": "code/07.Lab/01/AIPC/extensions/phi3ext/vsc-extension-quickstart.md",
   "language_code": "mo"
 }
 -->
-# Welcome to your VS Code Extension
+# 歡迎使用您的 VS Code 擴充功能
 
-## What's in the folder
+## 資料夾內容
 
-* This folder contains all of the files necessary for your extension.
-* `package.json` - hi si manifest file, ha men ti kha extension leh command a hlawk a ni.
-  * Sample plugin hi command a register a, a title leh command name a hman a ni. Hei hian VS Code command palette-ah command hi a hman theih a ni. Plugin chu a load thei lo.
-* `src/extension.ts` - hi main file a ni a, command a implementation chu he file-ah a provide a ni.
-  * File hi function pawimawh tak a export a, `activate` tih function a ni a, extension chu a activate theihna ah chuan (hei hi command a run chuan) a hman a ni. `activate` function-ah chuan `registerCommand` a call a ni.
-  * Command implementation a zawng zawng hi function-ah chuan `registerCommand`-ah second parameter a lo pass a ni.
+* 此資料夾包含您擴充功能所需的所有檔案。
+* `package.json` - 這是宣告擴充功能和指令的清單檔案。
+  * 範例外掛會註冊一個指令並定義其標題和指令名稱。VS Code 會根據這些資訊在指令面板中顯示該指令，但尚未需要載入外掛。
+* `src/extension.ts` - 這是您實作指令的主要檔案。
+  * 該檔案匯出一個函式 `activate`，當擴充功能第一次被啟動時（本例中是執行指令時）會呼叫它。在 `activate` 函式內，我們呼叫 `registerCommand`。
+  * 我們將包含指令實作的函式作為第二個參數傳給 `registerCommand`。
 
-## Setup
+## 設定
 
-* Recommended extensions (amodio.tsl-problem-matcher, ms-vscode.extension-test-runner, leh dbaeumer.vscode-eslint) a install rawh.
+* 安裝推薦的擴充功能（amodio.tsl-problem-matcher、ms-vscode.extension-test-runner 和 dbaeumer.vscode-eslint）
 
-## Get up and running straight away
+## 立即開始使用
 
-* `F5` tih button a press a, extension a load a, window thar a open theih ang.
-* Command palette-ah chuan command hi run theih a ni, (`Ctrl+Shift+P` leh Mac-ah `Cmd+Shift+P` tih button a hman) a lo press a, `Hello World` tih command a type rawh.
-* `src/extension.ts` file-ah breakpoints set a, extension a debug theih ang.
-* Extension output chu debug console-ah a hmu theih ang.
+* 按下 `F5` 開啟一個載入您擴充功能的新視窗。
+* 從指令面板（按 `Ctrl+Shift+P` 或 Mac 上的 `Cmd+Shift+P`）執行您的指令，輸入 `Hello World`。
+* 在 `src/extension.ts` 中設定斷點以除錯您的擴充功能。
+* 在除錯主控台查看擴充功能的輸出。
 
-## Make changes
+## 進行修改
 
-* `src/extension.ts` file-ah code a change a, debug toolbar-ah chuan extension a relaunch theih ang.
-* VS Code window-ah chuan reload (`Ctrl+R` leh Mac-ah `Cmd+R` tih button a hman) a, extension a load leh a change a hman theih ang.
+* 修改 `src/extension.ts` 後，可以從除錯工具列重新啟動擴充功能。
+* 也可以重新載入 VS Code 視窗（`Ctrl+R` 或 Mac 上的 `Cmd+R`）來套用您的變更。
 
-## Explore the API
+## 探索 API
 
-* API chungchang a hmu theih a, `node_modules/@types/vscode/index.d.ts` file a open rawh.
+* 開啟 `node_modules/@types/vscode/index.d.ts` 檔案即可查看完整的 API。
 
-## Run tests
+## 執行測試
 
-* [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner) a install rawh.
-* **Tasks: Run Task** tih command hmangin "watch" task a run rawh. Hei hi run theih loh chuan test-te hi a hmu lo.
-* Activity bar-ah Testing view a open a, Run Test button a click rawh, leh hotkey `Ctrl/Cmd + ; A` a hman theih ang.
-* Test result output chu Test Results view-ah a hmu theih ang.
-* `src/test/extension.test.ts` a change rawh leh test file thar pawimawh chu `test` folder-ah create rawh.
-  * Provided test runner hi file a name pattern `**.test.ts` tihna a hmu zawng zawng a hman a ni.
-  * `test` folder-ah chuan folder pawimawh a create a, test-te chu a structure theih ang.
+* 安裝 [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner)
+* 透過 **Tasks: Run Task** 指令執行「watch」任務。請確保此任務正在執行，否則可能無法偵測到測試。
+* 從活動列開啟測試視圖，點擊「Run Test」按鈕，或使用快速鍵 `Ctrl/Cmd + ; A`。
+* 在測試結果視圖中查看測試輸出。
+* 修改 `src/test/extension.test.ts` 或在 `test` 資料夾內建立新的測試檔案。
+  * 提供的測試執行器只會執行符合 `**.test.ts` 命名規則的檔案。
+  * 您可以在 `test` 資料夾內建立子資料夾，自由組織測試。
 
-## Go further
+## 進階應用
 
-* Extension size a chhiah leh startup time a hnuaiah a hman theihna a chhuak theih a, [bundling your extension](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo) tih hman rawh.
-* VS Code extension marketplace-ah [Publish your extension](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo) rawh.
-* [Continuous Integration](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo) a setup a, build automation a lo hman rawh.
+* 透過[打包您的擴充功能](https://code.visualstudio.com/api/working-with-extensions/bundling-extension?WT.mc_id=aiml-137032-kinfeylo)來減少擴充功能大小並提升啟動速度。
+* 在 VS Code 擴充功能市集中[發佈您的擴充功能](https://code.visualstudio.com/api/working-with-extensions/publishing-extension?WT.mc_id=aiml-137032-kinfeylo)。
+* 設定[持續整合](https://code.visualstudio.com/api/working-with-extensions/continuous-integration?WT.mc_id=aiml-137032-kinfeylo)來自動化建置流程。
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-I’m not familiar with a language or code called “mo.” Could you please clarify what “mo” refers to? For example, is it a language code, a shorthand for a language name, or something else? This will help me provide an accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們力求準確，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

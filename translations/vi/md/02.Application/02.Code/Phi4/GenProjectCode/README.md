@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:51:09+00:00",
+  "translation_date": "2025-07-17T04:46:21+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "vi"
 }
 -->
 ## **Sử dụng Phi-4-mini-mm để tạo mã**
 
-Phi-4-mini tiếp tục phát huy khả năng lập trình mạnh mẽ của Phi Family. Bạn có thể dùng Prompt để đặt câu hỏi liên quan đến lập trình. Tất nhiên, sau khi bổ sung khả năng suy luận mạnh mẽ, nó có năng lực lập trình vượt trội hơn, ví dụ như tạo dự án theo yêu cầu. Ví dụ, tạo dự án theo yêu cầu như sau:
+Phi-4-mini tiếp tục phát huy khả năng lập trình mạnh mẽ của Phi Family. Bạn có thể sử dụng Prompt để đặt câu hỏi liên quan đến lập trình. Tất nhiên, sau khi được bổ sung khả năng suy luận mạnh mẽ, nó có khả năng lập trình tốt hơn, chẳng hạn như tạo dự án theo yêu cầu. Ví dụ, tạo dự án theo yêu cầu như sau:
 
 ### **Yêu cầu**
 
 Tạo một ứng dụng Giỏ hàng
 
 - Tạo một API Rest với các phương thức sau:
-    - Lấy danh sách bia sử dụng page offset và limit.
+    - Lấy danh sách các loại bia sử dụng phân trang với offset và limit.
     - Lấy chi tiết bia theo id.
-    - Tìm kiếm bia theo tên, mô tả, tagline, đồ ăn kèm và giá.
+    - Tìm kiếm bia theo tên, mô tả, slogan, món ăn kèm và giá.
 - Tạo danh sách sản phẩm trên trang chính.
     - Tạo thanh tìm kiếm để lọc sản phẩm.
     - Điều hướng đến trang mô tả khi người dùng nhấp vào sản phẩm.
 - (Tùy chọn) Bộ lọc để lọc sản phẩm theo giá.
-- Tạo một giỏ hàng.
+- Tạo giỏ hàng.
     - Thêm sản phẩm vào giỏ.
     - Xóa sản phẩm khỏi giỏ.
-    - Tính tổng giá các sản phẩm trong giỏ.
+    - Tính tổng giá trị các sản phẩm trong giỏ.
 
-### **Mã mẫu - Python**
+### **Mẫu mã - Python**
 
 
 ```python
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Tuyên bố từ chối trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc sai sót. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn thông tin chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hay diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

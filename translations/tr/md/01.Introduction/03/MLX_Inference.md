@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-05-09T12:13:13+00:00",
+  "translation_date": "2025-07-16T21:03:03+00:00",
   "source_file": "md/01.Introduction/03/MLX_Inference.md",
   "language_code": "tr"
 }
@@ -11,18 +11,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **MLX Framework Nedir**
 
-MLX, Apple silikon üzerinde makine öğrenimi araştırmaları için Apple makine öğrenimi araştırmaları tarafından geliştirilen bir dizi (array) framework'üdür.
+MLX, Apple silikon üzerinde makine öğrenimi araştırmaları için geliştirilmiş bir dizi (array) framework’üdür ve Apple makine öğrenimi araştırmaları tarafından sunulmaktadır.
 
-MLX, makine öğrenimi araştırmacıları tarafından makine öğrenimi araştırmacıları için tasarlanmıştır. Framework kullanıcı dostu olmayı amaçlarken, modellerin eğitimi ve dağıtımı için de verimli olacak şekilde geliştirilmiştir. Framework'ün tasarımı kavramsal olarak da basittir. Araştırmacıların MLX'i kolayca genişletip geliştirebilmesi ve yeni fikirleri hızlıca keşfedebilmesi hedeflenmektedir.
+MLX, makine öğrenimi araştırmacıları tarafından makine öğrenimi araştırmacıları için tasarlanmıştır. Framework kullanıcı dostu olacak şekilde planlanmış, ancak modelleri eğitmek ve dağıtmak için yine de verimli çalışması hedeflenmiştir. Framework’ün tasarımı kavramsal olarak da basittir. Amacımız, araştırmacıların MLX’i kolayca genişletip geliştirebilmesini sağlayarak yeni fikirleri hızlıca keşfetmelerine olanak tanımaktır.
 
-LLM’ler Apple Silikon cihazlarda MLX ile hızlandırılabilir ve modeller yerelde oldukça pratik bir şekilde çalıştırılabilir.
+Apple Silikon cihazlarda LLM’ler MLX aracılığıyla hızlandırılabilir ve modeller yerel olarak çok rahat bir şekilde çalıştırılabilir.
 
 ## **MLX Kullanarak Phi-3-mini Çıkarımı**
 
-### **1. MLX ortamınızı hazırlayın**
+### **1. MLX ortamınızı kurun**
 
 1. Python 3.11.x
-2. MLX Kütüphanesini kurun
+2. MLX Kütüphanesini yükleyin
 
 
 ```bash
@@ -40,11 +40,11 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Sonuç (benim ortamım Apple M1 Max, 64GB) şu şekildedir
+Sonuç (benim ortamım Apple M1 Max, 64GB) şu şekildedir:
 
-![Terminal](../../../../../translated_images/01.0d0f100b646a4e4c4f1cd36c1a05727cd27f1e696ed642c06cf6e2c9bbf425a4.tr.png)
+![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.tr.png)
 
-### **3. Terminalde MLX ile Phi-3-mini’yi kuantize etme**
+### **3. Terminalde MLX ile Phi-3-mini’yi Kuantize Etme**
 
 
 ```bash
@@ -53,11 +53,11 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***Note：*** Model mlx_lm.convert ile kuantize edilebilir ve varsayılan kuantizasyon INT4’tür. Bu örnekte Phi-3-mini INT4’e kuantize edilmektedir.
+***Not:*** Model mlx_lm.convert ile kuantize edilebilir ve varsayılan kuantizasyon INT4’tür. Bu örnekte Phi-3-mini INT4’e kuantize edilmektedir.
 
-Model mlx_lm.convert ile kuantize edilebilir ve varsayılan kuantizasyon INT4’tür. Bu örnek Phi-3-mini’yi INT4’e kuantize etmeye yöneliktir. Kuantizasyondan sonra model varsayılan ./mlx_model dizininde saklanacaktır.
+Model mlx_lm.convert ile kuantize edilebilir ve varsayılan kuantizasyon INT4’tür. Bu örnek Phi-3-mini’yi INT4’e kuantize etmektedir. Kuantizasyondan sonra model varsayılan dizin olan ./mlx_model içinde saklanacaktır.
 
-Terminalden MLX ile kuantize edilmiş modeli test edebiliriz
+Terminalden MLX ile kuantize edilmiş modeli test edebiliriz.
 
 
 ```bash
@@ -66,17 +66,17 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ```
 
-Sonuç şöyledir
+Sonuç şu şekildedir:
 
-![INT4](../../../../../translated_images/02.04e0be1f18a90a58ad47e0c9d9084ac94d0f1a8c02fa707d04dd2dfc7e9117c6.tr.png)
+![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.tr.png)
 
 
 ### **4. Jupyter Notebook’ta MLX ile Phi-3-mini çalıştırma**
 
 
-![Notebook](../../../../../translated_images/03.0cf0092fe143357656bb5a7bc6427c41d8528d772d38a82d0b2693e2a3eeb16e.tr.png)
+![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.tr.png)
 
-***Note:*** Bu örneği incelemek için lütfen [bu bağlantıya tıklayın](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
+***Not:*** Lütfen bu örneği okuyun [bu bağlantıya tıklayın](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
 
 ## **Kaynaklar**
@@ -86,4 +86,4 @@ Sonuç şöyledir
 2. Apple MLX GitHub Deposu [https://github.com/ml-explore](https://github.com/ml-explore)
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorumlamalardan sorumlu değiliz.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

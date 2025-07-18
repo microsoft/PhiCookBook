@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-09T18:43:50+00:00",
+  "translation_date": "2025-07-17T02:43:44+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "th"
 }
 -->
 # **แนวทางสำหรับ OnnxRuntime GenAI Windows GPU**
 
-แนวทางนี้ให้ขั้นตอนการตั้งค่าและการใช้งาน ONNX Runtime (ORT) กับ GPU บน Windows ออกแบบมาเพื่อช่วยให้คุณใช้ประโยชน์จากการเร่งด้วย GPU สำหรับโมเดลของคุณ เพิ่มประสิทธิภาพและความเร็วในการทำงาน
+แนวทางนี้แนะนำขั้นตอนการตั้งค่าและใช้งาน ONNX Runtime (ORT) กับ GPU บน Windows เพื่อช่วยให้คุณใช้ประโยชน์จากการเร่งความเร็วด้วย GPU สำหรับโมเดลของคุณ เพิ่มประสิทธิภาพและความรวดเร็วในการทำงาน
 
 เอกสารนี้ให้คำแนะนำเกี่ยวกับ:
 
-- การตั้งค่าสภาพแวดล้อม: คำแนะนำในการติดตั้ง dependencies ที่จำเป็น เช่น CUDA, cuDNN และ ONNX Runtime
-- การกำหนดค่า: วิธีการตั้งค่าสภาพแวดล้อมและ ONNX Runtime เพื่อใช้ทรัพยากร GPU อย่างมีประสิทธิภาพ
+- การตั้งค่าสภาพแวดล้อม: คำแนะนำการติดตั้ง dependencies ที่จำเป็น เช่น CUDA, cuDNN และ ONNX Runtime
+- การกำหนดค่า: วิธีการตั้งค่าสภาพแวดล้อมและ ONNX Runtime ให้ใช้ทรัพยากร GPU อย่างมีประสิทธิภาพ
 - เคล็ดลับการปรับแต่ง: คำแนะนำในการปรับแต่งการตั้งค่า GPU เพื่อประสิทธิภาพสูงสุด
 
 ### **1. Python 3.10.x /3.11.8**
@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   ***Reminder*** หากคุณเคยติดตั้งไลบรารี ONNX สำหรับ Python มาก่อน กรุณาถอดถอนออกก่อน
+   ***Reminder*** หากคุณติดตั้งไลบรารี ONNX สำหรับ Python ไว้แล้ว กรุณาถอดถอนออกก่อน
 
 ### **2. ติดตั้ง CMake ด้วย winget**
 
@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** หากคุณไม่ต้องการคอมไพล์ สามารถข้ามขั้นตอนนี้ได้
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.th.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.th.png)
 
 ### **4. ติดตั้ง NVIDIA Driver**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    เปิด [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) และรันคำสั่ง
 
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.th.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.th.png)
 
 ### **8. คอมไพล์ ORT GenAI GPU**
 
@@ -91,7 +91,6 @@ CO_OP_TRANSLATOR_METADATA:
    
    1. กรุณาถอดถอน onnx, onnxruntime และ onnxruntime-genai ทั้งหมดก่อน
 
-   
    ```bash
 
    pip list 
@@ -99,7 +98,6 @@ CO_OP_TRANSLATOR_METADATA:
    ```
 
    จากนั้นถอดถอนไลบรารี onnxruntime ทั้งหมด เช่น
-
 
    ```bash
 
@@ -111,11 +109,11 @@ CO_OP_TRANSLATOR_METADATA:
    
    ```
 
-   2. ตรวจสอบการสนับสนุน Visual Studio Extension 
+   2. ตรวจสอบการสนับสนุน Visual Studio Extension
 
-   ตรวจสอบโฟลเดอร์ C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras ว่ามีโฟลเดอร์ C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration หรือไม่
+   ตรวจสอบที่ C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras ว่ามีโฟลเดอร์ C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration หรือไม่
    
-   หากไม่พบ ให้ตรวจสอบโฟลเดอร์ไดรเวอร์ Cuda toolkit อื่น ๆ แล้วคัดลอกโฟลเดอร์ visual_studio_integration พร้อมเนื้อหาไปยัง C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   หากไม่พบ ให้ตรวจสอบโฟลเดอร์ไดรเวอร์ Cuda toolkit อื่น ๆ และคัดลอกโฟลเดอร์ visual_studio_integration พร้อมเนื้อหาไปยัง C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
    - หากคุณไม่ต้องการคอมไพล์ สามารถข้ามขั้นตอนนี้ได้
 
@@ -129,13 +127,12 @@ CO_OP_TRANSLATOR_METADATA:
 
    - แตกไฟล์ onnxruntime-win-x64-gpu-1.19.2.zip และเปลี่ยนชื่อเป็น **ort** จากนั้นคัดลอกโฟลเดอร์ ort ไปยัง onnxruntime-genai
 
-   - ใช้ Windows Terminal เปิด Developer Command Prompt for VS 2022 แล้วไปที่โฟลเดอร์ onnxruntime-genai
+   - ใช้ Windows Terminal เปิด Developer Command Prompt for VS 2022 และไปที่โฟลเดอร์ onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.th.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.th.png)
 
    - คอมไพล์ด้วยสภาพแวดล้อม Python ของคุณ
 
-   
    ```bash
 
    cd onnxruntime-genai
@@ -150,4 +147,4 @@ CO_OP_TRANSLATOR_METADATA:
    ```
 
 **ข้อจำกัดความรับผิดชอบ**:  
-เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลโดยอัตโนมัติอาจมีข้อผิดพลาดหรือความคลาดเคลื่อน เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้การแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดขึ้นจากการใช้การแปลนี้
+เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

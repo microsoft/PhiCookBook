@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-05-09T17:52:53+00:00",
+  "translation_date": "2025-07-17T00:48:23+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "hr"
 }
@@ -23,14 +23,14 @@ U ovom E2E primjeru naučit ćete kako fino podesiti Phi-3 model i integrirati g
 
 Evo pregleda ovog E2E primjera.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.dfeb1f15c7d3c8989fb267a05ac83a25485a7230bde037df9d3d92336afc1993.hr.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.hr.png)
 
 ### Sadržaj
 
 1. **[Scenarij 1: Postavljanje Azure resursa i priprema za fino podešavanje](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Kreiranje Azure Machine Learning Workspacea](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Zahtjev za GPU kvotama u Azure pretplati](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Dodavanje dodjele uloga](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Kreiranje Azure Machine Learning Workspace-a](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Zahtjev za GPU kvote u Azure pretplati](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Dodavanje dodjele uloge](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Postavljanje projekta](../../../../../../md/02.Application/01.TextAndChat/Phi3)
     - [Priprema skupa podataka za fino podešavanje](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
@@ -45,38 +45,38 @@ Evo pregleda ovog E2E primjera.
 
 ## Scenarij 1: Postavljanje Azure resursa i priprema za fino podešavanje
 
-### Kreiranje Azure Machine Learning Workspacea
+### Kreiranje Azure Machine Learning Workspace-a
 
-1. Upišite *azure machine learning* u **traku za pretraživanje** na vrhu portala i odaberite **Azure Machine Learning** iz ponuđenih opcija.
+1. Upišite *azure machine learning* u **traku za pretraživanje** na vrhu stranice portala i odaberite **Azure Machine Learning** iz ponuđenih opcija.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.321cff72d18a51c06dee2db7463868f3ca6619559a5d68b7795d70f4a8b3a683.hr.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.hr.png)
 
 1. Odaberite **+ Create** u navigacijskom izborniku.
 
 1. Odaberite **New workspace** u navigacijskom izborniku.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.9bd9208488fcf38226fc8d3cefffecb2cb14f414f6d8d982492c1bde8634e24a.hr.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.hr.png)
 
 1. Obavite sljedeće zadatke:
 
     - Odaberite svoju Azure **Pretplatu**.
-    - Odaberite **Resource group** koju želite koristiti (ako treba, kreirajte novu).
-    - Unesite **Workspace Name**. Mora biti jedinstven.
-    - Odaberite **Region** koji želite koristiti.
-    - Odaberite **Storage account** koji želite koristiti (ako treba, kreirajte novi).
-    - Odaberite **Key vault** koji želite koristiti (ako treba, kreirajte novi).
-    - Odaberite **Application insights** koji želite koristiti (ako treba, kreirajte novi).
-    - Odaberite **Container registry** koji želite koristiti (ako treba, kreirajte novi).
+    - Odaberite **Resource group** koju želite koristiti (ako je potrebno, kreirajte novu).
+    - Unesite **Ime Workspace-a**. Mora biti jedinstvena vrijednost.
+    - Odaberite **Regiju** koju želite koristiti.
+    - Odaberite **Storage account** koji želite koristiti (ako je potrebno, kreirajte novi).
+    - Odaberite **Key vault** koji želite koristiti (ako je potrebno, kreirajte novi).
+    - Odaberite **Application insights** koji želite koristiti (ako je potrebno, kreirajte novi).
+    - Odaberite **Container registry** koji želite koristiti (ako je potrebno, kreirajte novi).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.b2ebbef59952cd17d16b1f82adc252bf7616f8638d451e3c6595ffefe44f2cfa.hr.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.hr.png)
 
 1. Odaberite **Review + Create**.
 
 1. Odaberite **Create**.
 
-### Zahtjev za GPU kvotama u Azure pretplati
+### Zahtjev za GPU kvote u Azure pretplati
 
-U ovom E2E primjeru koristit ćete *Standard_NC24ads_A100_v4 GPU* za fino podešavanje, što zahtijeva zahtjev za kvotu, i *Standard_E4s_v3* CPU za implementaciju, koji ne zahtijeva zahtjev za kvotu.
+U ovom E2E primjeru koristit ćete *Standard_NC24ads_A100_v4 GPU* za fino podešavanje, što zahtijeva zahtjev za kvotu, te *Standard_E4s_v3* CPU za implementaciju, za što nije potreban zahtjev za kvotu.
 
 > [!NOTE]
 >
@@ -86,40 +86,40 @@ U ovom E2E primjeru koristit ćete *Standard_NC24ads_A100_v4 GPU* za fino podeš
 
 1. Posjetite [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Obavite sljedeće korake za zahtjev kvote *Standard NCADSA100v4 Family*:
+1. Obavite sljedeće zadatke za zahtjev kvote *Standard NCADSA100v4 Family*:
 
     - Odaberite **Quota** s lijevog izbornika.
-    - Odaberite **Virtual machine family** koju želite koristiti. Na primjer, odaberite **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, koja uključuje *Standard_NC24ads_A100_v4* GPU.
-    - Odaberite **Request quota** iz navigacijskog izbornika.
+    - Odaberite **Virtual machine family** koju želite koristiti. Na primjer, odaberite **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, koji uključuje *Standard_NC24ads_A100_v4* GPU.
+    - Odaberite **Request quota** u navigacijskom izborniku.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.ddf063c7cda9799b8ef6fbde6c3c796201578fe9078feb1c624ed75c7705ad18.hr.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.hr.png)
 
     - Na stranici Request quota unesite **New cores limit** koju želite koristiti. Na primjer, 24.
-    - Na stranici Request quota odaberite **Submit** za zahtjev GPU kvote.
+    - Na stranici Request quota odaberite **Submit** za podnošenje zahtjeva za GPU kvotu.
 
 > [!NOTE]
-> Za odabir odgovarajućeg GPU-a ili CPU-a prema vašim potrebama, pogledajte dokument [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
+> Možete odabrati odgovarajući GPU ili CPU za svoje potrebe koristeći dokument [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
-### Dodavanje dodjele uloga
+### Dodavanje dodjele uloge
 
-Za fino podešavanje i implementaciju vaših modela, prvo morate kreirati User Assigned Managed Identity (UAI) i dodijeliti joj odgovarajuće dozvole. Ovaj UAI će se koristiti za autentifikaciju tijekom implementacije.
+Za fino podešavanje i implementaciju modela prvo morate kreirati User Assigned Managed Identity (UAI) i dodijeliti joj odgovarajuće dozvole. Ova UAI će se koristiti za autentifikaciju tijekom implementacije.
 
 #### Kreiranje User Assigned Managed Identity (UAI)
 
-1. Upišite *managed identities* u **traku za pretraživanje** na vrhu portala i odaberite **Managed Identities** iz ponuđenih opcija.
+1. Upišite *managed identities* u **traku za pretraživanje** na vrhu stranice portala i odaberite **Managed Identities** iz ponuđenih opcija.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.8bf5dc5a4fa3e852f897ec1a983e506c2bc7b7113d159598bf0adeb66d20a5c4.hr.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.hr.png)
 
 1. Odaberite **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.025632b7b54fe323f7d38edabbae05dd23f4665d0731f7143719c27c32e7e84f.hr.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.hr.png)
 
 1. Obavite sljedeće zadatke:
 
     - Odaberite svoju Azure **Pretplatu**.
-    - Odaberite **Resource group** koju želite koristiti (ako treba, kreirajte novu).
-    - Odaberite **Region** koji želite koristiti.
-    - Unesite **Name**. Mora biti jedinstven.
+    - Odaberite **Resource group** koju želite koristiti (ako je potrebno, kreirajte novu).
+    - Odaberite **Regiju** koju želite koristiti.
+    - Unesite **Ime**. Mora biti jedinstvena vrijednost.
 
 1. Odaberite **Review + create**.
 
@@ -131,34 +131,34 @@ Za fino podešavanje i implementaciju vaših modela, prvo morate kreirati User A
 
 1. Odaberite **Azure role assignments** s lijevog izbornika.
 
-1. Odaberite **+Add role assignment** iz navigacijskog izbornika.
+1. Odaberite **+Add role assignment** u navigacijskom izborniku.
 
 1. Na stranici Add role assignment obavite sljedeće zadatke:
     - Odaberite **Scope** na **Resource group**.
     - Odaberite svoju Azure **Pretplatu**.
     - Odaberite **Resource group** koju želite koristiti.
-    - Odaberite ulogu **Contributor**.
+    - Odaberite **Role** na **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.8936866326c7cdc3b876f14657e03422cca9dbff8b193dd541a693ce34407b26.hr.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.hr.png)
 
 1. Odaberite **Save**.
 
 #### Dodavanje uloge Storage Blob Data Reader Managed Identity
 
-1. Upišite *storage accounts* u **traku za pretraživanje** na vrhu portala i odaberite **Storage accounts** iz ponuđenih opcija.
+1. Upišite *storage accounts* u **traku za pretraživanje** na vrhu stranice portala i odaberite **Storage accounts** iz ponuđenih opcija.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.83554a27ff3edb5099ee3fbf7f467b843dabcc0e0e5fbb829a341eab3469ffa5.hr.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.hr.png)
 
-1. Odaberite storage account povezan s Azure Machine Learning workspaceom koji ste kreirali. Na primjer, *finetunephistorage*.
+1. Odaberite storage account povezan s Azure Machine Learning workspace-om koji ste kreirali. Na primjer, *finetunephistorage*.
 
-1. Obavite sljedeće korake za navigaciju do stranice Add role assignment:
+1. Obavite sljedeće zadatke za navigaciju do stranice Add role assignment:
 
     - Idite na Azure Storage account koji ste kreirali.
     - Odaberite **Access Control (IAM)** s lijevog izbornika.
-    - Odaberite **+ Add** iz navigacijskog izbornika.
-    - Odaberite **Add role assignment** iz navigacijskog izbornika.
+    - Odaberite **+ Add** u navigacijskom izborniku.
+    - Odaberite **Add role assignment** u navigacijskom izborniku.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.4fef55886792c7e860da4c5a808044e6f7067fb5694f3ed4819a5758c6cc574e.hr.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.hr.png)
 
 1. Na stranici Add role assignment obavite sljedeće zadatke:
 
@@ -168,26 +168,26 @@ Za fino podešavanje i implementaciju vaših modela, prvo morate kreirati User A
     - Odaberite **+ Select members**.
     - Na stranici Select managed identities odaberite svoju Azure **Pretplatu**.
     - Odaberite **Managed identity** za **Manage Identity**.
-    - Odaberite Manage Identity koju ste kreirali, npr. *finetunephi-managedidentity*.
+    - Odaberite Managed Identity koju ste kreirali. Na primjer, *finetunephi-managedidentity*.
     - Odaberite **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.fffa802e4e6ce2de4fe50e64d37d3f2ef268c2ee16f30ec6f92bd1829b5f19c1.hr.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.hr.png)
 
 1. Odaberite **Review + assign**.
 
 #### Dodavanje uloge AcrPull Managed Identity
 
-1. Upišite *container registries* u **traku za pretraživanje** na vrhu portala i odaberite **Container registries** iz ponuđenih opcija.
+1. Upišite *container registries* u **traku za pretraživanje** na vrhu stranice portala i odaberite **Container registries** iz ponuđenih opcija.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.62e58403d73d16a0cc715571c8a7b4105a0e97b1422aa5f26106aff1c0e8a47d.hr.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.hr.png)
 
-1. Odaberite container registry povezan s Azure Machine Learning workspaceom. Na primjer, *finetunephicontainerregistries*.
+1. Odaberite container registry povezan s Azure Machine Learning workspace-om. Na primjer, *finetunephicontainerregistries*
 
-1. Obavite sljedeće korake za navigaciju do stranice Add role assignment:
+1. Obavite sljedeće zadatke za navigaciju do stranice Add role assignment:
 
     - Odaberite **Access Control (IAM)** s lijevog izbornika.
-    - Odaberite **+ Add** iz navigacijskog izbornika.
-    - Odaberite **Add role assignment** iz navigacijskog izbornika.
+    - Odaberite **+ Add** u navigacijskom izborniku.
+    - Odaberite **Add role assignment** u navigacijskom izborniku.
 
 1. Na stranici Add role assignment obavite sljedeće zadatke:
 
@@ -197,17 +197,17 @@ Za fino podešavanje i implementaciju vaših modela, prvo morate kreirati User A
     - Odaberite **+ Select members**.
     - Na stranici Select managed identities odaberite svoju Azure **Pretplatu**.
     - Odaberite **Managed identity** za **Manage Identity**.
-    - Odaberite Manage Identity koju ste kreirali, npr. *finetunephi-managedidentity*.
+    - Odaberite Managed Identity koju ste kreirali. Na primjer, *finetunephi-managedidentity*.
     - Odaberite **Select**.
     - Odaberite **Review + assign**.
 
 ### Postavljanje projekta
 
-Sada ćete kreirati mapu za rad i postaviti virtualno okruženje za razvoj programa koji komunicira s korisnicima i koristi spremljenu povijest razgovora iz Azure Cosmos DB za oblikovanje odgovora.
+Sada ćete kreirati mapu za rad i postaviti virtualno okruženje za razvoj programa koji komunicira s korisnicima i koristi pohranjenu povijest razgovora iz Azure Cosmos DB za informiranje svojih odgovora.
 
 #### Kreiranje mape za rad
 
-1. Otvorite terminal i upišite sljedeću naredbu za kreiranje mape pod nazivom *finetune-phi* u zadanoj putanji.
+1. Otvorite terminal i upišite sljedeću naredbu za kreiranje mape nazvane *finetune-phi* u zadanoj putanji.
 
     ```console
     mkdir finetune-phi
@@ -221,25 +221,23 @@ Sada ćete kreirati mapu za rad i postaviti virtualno okruženje za razvoj progr
 
 #### Kreiranje virtualnog okruženja
 
-1. Upišite sljedeću naredbu u terminal za kreiranje virtualnog okruženja pod nazivom *.venv*.
+1. Upišite sljedeću naredbu u terminal da biste kreirali virtualno okruženje nazvano *.venv*.
 
     ```console
     python -m venv .venv
     ```
 
-1. Upišite sljedeću naredbu u terminal za aktivaciju virtualnog okruženja.
+1. Upišite sljedeću naredbu u terminal da biste aktivirali virtualno okruženje.
 
     ```console
     .venv\Scripts\activate.bat
     ```
-
 > [!NOTE]
 >
-> Ako je uspjelo, trebali biste vidjeti *(.venv)* ispred prompta naredbi.
+> Ako je uspjelo, trebali biste vidjeti *(.venv)* ispred naredbenog retka.
+#### Instalirajte potrebne pakete
 
-#### Instalacija potrebnih paketa
-
-1. Upišite sljedeće naredbe u terminal za instalaciju potrebnih paketa.
+1. Upišite sljedeće naredbe u terminal kako biste instalirali potrebne pakete.
 
     ```console
     pip install datasets==2.19.1
@@ -250,7 +248,7 @@ Sada ćete kreirati mapu za rad i postaviti virtualno okruženje za razvoj progr
     pip install promptflow==1.12.0
     ```
 
-#### Kreiranje projektnih datoteka
+#### Kreirajte projektne datoteke
 
 U ovom zadatku kreirat ćete osnovne datoteke za naš projekt. Te datoteke uključuju skripte za preuzimanje skupa podataka, postavljanje Azure Machine Learning okruženja, fino podešavanje Phi-3 modela i implementaciju fino podešenog modela. Također ćete kreirati *conda.yml* datoteku za postavljanje okruženja za fino podešavanje.
 
@@ -262,12 +260,12 @@ U ovom zadatku ćete:
 - Kreirati *conda.yml* datoteku za postavljanje okruženja za fino podešavanje.
 - Kreirati *deploy_model.py* datoteku za implementaciju fino podešenog modela.
 - Kreirati *integrate_with_promptflow.py* datoteku za integraciju fino podešenog modela i izvršavanje modela koristeći Prompt flow.
-- Kreirati flow.dag.yml datoteku za postavljanje strukture tijeka rada za Prompt flow.
-- Kreirati *config.py* datoteku za unos Azure informacija.
+- Kreirati *flow.dag.yml* datoteku za postavljanje strukture tijeka rada za Prompt flow.
+- Kreirati *config.py* datoteku za unos Azure podataka.
 
 > [!NOTE]
 >
-> Kompletna struktura mape:
+> Kompletna struktura mapa:
 >
 > ```text
 > └── YourUserName
@@ -285,29 +283,29 @@ U ovom zadatku ćete:
 
 1. Otvorite **Visual Studio Code**.
 
-1. Odaberite **File** u traci izbornika.
+1. Iz izbornika odaberite **File**.
 
 1. Odaberite **Open Folder**.
 
-1. Odaberite mapu *finetune-phi* koju ste kreirali, koja se nalazi na putanji *C:\Users\yourUserName\finetune-phi*.
+1. Odaberite mapu *finetune-phi* koju ste kreirali, a nalazi se na *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1f7f0f79e5d4d62e546e906e1ce5a480cd98d06062ce292b7b99c6cfcd434fdf.hr.png)
+    ![Otvorite mapu projekta.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.hr.png)
 
-1. U lijevom dijelu Visual Studio Code-a kliknite desnim klikom i odaberite **New File** za kreiranje nove datoteke pod nazivom *download_dataset.py*.
+1. U lijevom dijelu Visual Studio Code-a kliknite desnom tipkom miša i odaberite **New File** za kreiranje nove datoteke nazvane *download_dataset.py*.
 
-1. U lijevom dijelu Visual Studio Code-a kliknite desnim klikom i odaberite **New File** za kreiranje nove datoteke pod nazivom *setup_ml.py*.
+1. U lijevom dijelu Visual Studio Code-a kliknite desnom tipkom miša i odaberite **New File** za kreiranje nove datoteke nazvane *setup_ml.py*.
 
-1. U lijevom dijelu Visual Studio Code-a kliknite desnim klikom i odaberite **New File** za kreiranje nove datoteke pod nazivom *deploy_model.py*.
+1. U lijevom dijelu Visual Studio Code-a kliknite desnom tipkom miša i odaberite **New File** za kreiranje nove datoteke nazvane *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.40698c2e0415929e7b6dc2b30925677e413f965bac4134d3aefa0b44d443deaf.hr.png)
+    ![Kreirajte novu datoteku.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.hr.png)
 
-1. U lijevom dijelu Visual Studio Code-a kliknite desnim klikom i odaberite **New Folder** za kreiranje nove mape pod nazivom *finetuning_dir*.
+1. U lijevom dijelu Visual Studio Code-a kliknite desnom tipkom miša i odaberite **New Folder** za kreiranje nove mape nazvane *finetuning_dir*.
 
-1. U mapi *finetuning_dir* kreirajte novu datoteku pod nazivom *fine_tune.py*.
+1. U mapi *finetuning_dir* kreirajte novu datoteku nazvanu *fine_tune.py*.
 
-#### Kreiranje i konfiguracija *conda.yml* datoteke
+#### Kreirajte i konfigurirajte *conda.yml* datoteku
 
-1. U lijevom dijelu Visual Studio Code-a kliknite desnim klikom i odaberite **New File** za kreiranje nove datoteke pod nazivom *conda.yml*.
+1. U lijevom dijelu Visual Studio Code-a kliknite desnom tipkom miša i odaberite **New File** za kreiranje nove datoteke nazvane *conda.yml*.
 
 1. Dodajte sljedeći kod u *conda.yml* datoteku za postavljanje okruženja za fino podešavanje Phi-3 modela.
 
@@ -335,9 +333,9 @@ U ovom zadatku ćete:
           - azureml-mlflow==1.57.0
     ```
 
-#### Kreiranje i konfiguracija *config.py* datoteke
+#### Kreirajte i konfigurirajte *config.py* datoteku
 
-1. U lijevom dijelu Visual Studio Code-a kliknite desnim klikom i odaberite **New File** za kreiranje nove datoteke pod nazivom *config.py*.
+1. U lijevom dijelu Visual Studio Code-a kliknite desnom tipkom miša i odaberite **New File** za kreiranje nove datoteke nazvane *config.py*.
 
 1. Dodajte sljedeći kod u *config.py* datoteku za unos vaših Azure podataka.
 
@@ -367,43 +365,44 @@ U ovom zadatku ćete:
     AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri" # "https://{your-endpoint-name}.{your-region}.inference.ml.azure.com/score"
     ```
 
-#### Dodavanje Azure varijabli okruženja
+#### Dodajte Azure varijable okruženja
 
-1. Obavite sljedeće zadatke za dodavanje Azure Subscription ID-a:
+1. Izvršite sljedeće korake za dodavanje Azure Subscription ID-a:
 
-    - Upišite *subscriptions* u **traku za pretraživanje** na vrhu portala i odaberite **Subscriptions** iz ponuđenih opcija.
+    - Upišite *subscriptions* u **traku za pretraživanje** na vrhu stranice portala i odaberite **Subscriptions** iz ponuđenih opcija.
     - Odaberite Azure pretplatu koju trenutno koristite.
     - Kopirajte i zalijepite vaš Subscription ID u *config.py* datoteku.
-![Pronađi ID pretplate.](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.hr.png)
 
-1. Obavite sljedeće zadatke kako biste dodali naziv Azure Workspacea:
+    ![Pronađite subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.hr.png)
 
-    - Navigirajte do Azure Machine Learning resursa koji ste kreirali.
-    - Kopirajte i zalijepite naziv svog računa u datoteku *config.py*.
+1. Izvršite sljedeće korake za dodavanje Azure Workspace imena:
 
-    ![Pronađi naziv Azure Machine Learninga.](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.hr.png)
+    - Idite na Azure Machine Learning resurs koji ste kreirali.
+    - Kopirajte i zalijepite ime vašeg workspacea u *config.py* datoteku.
 
-1. Obavite sljedeće zadatke kako biste dodali naziv Azure Resource Group:
+    ![Pronađite Azure Machine Learning ime.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.hr.png)
 
-    - Navigirajte do Azure Machine Learning resursa koji ste kreirali.
-    - Kopirajte i zalijepite naziv vaše Azure Resource Group u datoteku *config.py*.
+1. Izvršite sljedeće korake za dodavanje Azure Resource Group imena:
 
-    ![Pronađi naziv resource grupe.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.hr.png)
+    - Idite na Azure Machine Learning resurs koji ste kreirali.
+    - Kopirajte i zalijepite ime vaše Azure Resource Group u *config.py* datoteku.
 
-2. Obavite sljedeće zadatke kako biste dodali naziv Azure Managed Identity
+    ![Pronađite ime resource grupe.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.hr.png)
 
-    - Navigirajte do Managed Identities resursa koji ste kreirali.
-    - Kopirajte i zalijepite naziv vaše Azure Managed Identity u datoteku *config.py*.
+2. Izvršite sljedeće korake za dodavanje Azure Managed Identity imena:
 
-    ![Pronađi UAI.](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.hr.png)
+    - Idite na Managed Identities resurs koji ste kreirali.
+    - Kopirajte i zalijepite ime vaše Azure Managed Identity u *config.py* datoteku.
 
-### Priprema skupa podataka za fino podešavanje
+    ![Pronađite UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.hr.png)
 
-U ovom zadatku pokrenut ćete datoteku *download_dataset.py* kako biste preuzeli *ULTRACHAT_200k* skupove podataka u svoje lokalno okruženje. Zatim ćete koristiti ove skupove podataka za fino podešavanje Phi-3 modela u Azure Machine Learningu.
+### Pripremite skup podataka za fino podešavanje
+
+U ovom zadatku pokrenut ćete *download_dataset.py* datoteku kako biste preuzeli *ULTRACHAT_200k* skupove podataka u vaše lokalno okruženje. Zatim ćete koristiti te skupove podataka za fino podešavanje Phi-3 modela u Azure Machine Learning.
 
 #### Preuzmite svoj skup podataka koristeći *download_dataset.py*
 
-1. Otvorite datoteku *download_dataset.py* u Visual Studio Code-u.
+1. Otvorite *download_dataset.py* datoteku u Visual Studio Code-u.
 
 1. Dodajte sljedeći kod u *download_dataset.py*.
 
@@ -474,12 +473,12 @@ U ovom zadatku pokrenut ćete datoteku *download_dataset.py* kako biste preuzeli
 >
 > **Upute za fino podešavanje s minimalnim skupom podataka koristeći CPU**
 >
-> Ako želite koristiti CPU za fino podešavanje, ovaj pristup je idealan za one s pretplatama koje imaju pogodnosti (kao što je Visual Studio Enterprise Subscription) ili za brzo testiranje procesa fino podešavanja i implementacije.
+> Ako želite koristiti CPU za fino podešavanje, ovaj pristup je idealan za one s benefit pretplatama (kao što je Visual Studio Enterprise Subscription) ili za brzo testiranje procesa fino podešavanja i implementacije.
 >
-> Zamijenite `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
+> Zamijenite `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` s `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. Upišite sljedeću naredbu u terminal kako biste pokrenuli skriptu i preuzeli skup podataka u svoje lokalno okruženje.
+1. Upišite sljedeću naredbu u terminal za pokretanje skripte i preuzimanje skupa podataka u lokalno okruženje.
 
     ```console
     python download_data.py
@@ -491,44 +490,44 @@ U ovom zadatku pokrenut ćete datoteku *download_dataset.py* kako biste preuzeli
 >
 > **Veličina skupa podataka i vrijeme fino podešavanja**
 >
-> U ovom E2E primjeru koristite samo 1% skupa podataka (`train_sft[:1%]`). To značajno smanjuje količinu podataka, ubrzavajući i prijenos i proces fino podešavanja. Možete prilagoditi postotak kako biste pronašli pravi balans između vremena treniranja i performansi modela. Korištenje manjeg dijela skupa podataka smanjuje vrijeme potrebno za fino podešavanje, što čini proces lakšim za E2E primjer.
+> U ovom E2E primjeru koristite samo 1% skupa podataka (`train_sft[:1%]`). To značajno smanjuje količinu podataka, ubrzavajući i prijenos i proces fino podešavanja. Možete prilagoditi postotak kako biste pronašli pravi balans između vremena treniranja i performansi modela. Korištenje manjeg dijela skupa podataka smanjuje vrijeme potrebno za fino podešavanje, čineći proces upravljivijim za E2E primjer.
 
 ## Scenarij 2: Fino podesite Phi-3 model i implementirajte ga u Azure Machine Learning Studio
 
-### Postavljanje Azure CLI-ja
+### Postavite Azure CLI
 
-Potrebno je postaviti Azure CLI za autentifikaciju vašeg okruženja. Azure CLI vam omogućuje upravljanje Azure resursima izravno iz naredbenog retka i pruža vjerodajnice potrebne Azure Machine Learningu za pristup tim resursima. Za početak instalirajte [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+Potrebno je postaviti Azure CLI za autentifikaciju vašeg okruženja. Azure CLI omogućuje upravljanje Azure resursima izravno iz naredbenog retka i pruža vjerodajnice potrebne Azure Machine Learningu za pristup tim resursima. Za početak instalirajte [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
-1. Otvorite terminal i upišite sljedeću naredbu za prijavu na svoj Azure račun.
+1. Otvorite terminal i upišite sljedeću naredbu za prijavu na vaš Azure račun.
 
     ```console
     az login
     ```
 
-1. Odaberite Azure račun koji želite koristiti.
+1. Odaberite svoj Azure račun za korištenje.
 
-1. Odaberite Azure pretplatu koju želite koristiti.
+1. Odaberite svoju Azure pretplatu za korištenje.
 
-    ![Pronađi naziv resource grupe.](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.hr.png)
+    ![Pronađite ime resource grupe.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.hr.png)
 
 > [!TIP]
 >
-> Ako imate problema s prijavom u Azure, pokušajte koristiti kod uređaja. Otvorite terminal i upišite sljedeću naredbu za prijavu na svoj Azure račun:
+> Ako imate problema s prijavom u Azure, pokušajte koristiti kod uređaja. Otvorite terminal i upišite sljedeću naredbu za prijavu na vaš Azure račun:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### Fino podešavanje Phi-3 modela
+### Fino podesite Phi-3 model
 
-U ovom zadatku ćete fino podesiti Phi-3 model koristeći dani skup podataka. Prvo ćete definirati proces fino podešavanja u datoteci *fine_tune.py*. Zatim ćete konfigurirati Azure Machine Learning okruženje i pokrenuti proces fino podešavanja pokretanjem datoteke *setup_ml.py*. Ova skripta osigurava da se fino podešavanje odvija unutar Azure Machine Learning okruženja.
+U ovom zadatku fino ćete podesiti Phi-3 model koristeći dostavljeni skup podataka. Prvo ćete definirati proces fino podešavanja u *fine_tune.py* datoteci. Zatim ćete konfigurirati Azure Machine Learning okruženje i pokrenuti proces fino podešavanja pokretanjem *setup_ml.py* datoteke. Ova skripta osigurava da se fino podešavanje odvija unutar Azure Machine Learning okruženja.
 
-Pokretanjem *setup_ml.py* pokrećete proces fino podešavanja u Azure Machine Learning okruženju.
+Pokretanjem *setup_ml.py* pokrenut ćete proces fino podešavanja u Azure Machine Learning okruženju.
 
-#### Dodajte kod u datoteku *fine_tune.py*
+#### Dodajte kod u *fine_tune.py* datoteku
 
-1. Navigirajte do mape *finetuning_dir* i otvorite datoteku *fine_tune.py* u Visual Studio Code-u.
+1. Idite u mapu *finetuning_dir* i otvorite *fine_tune.py* datoteku u Visual Studio Code-u.
 
 1. Dodajte sljedeći kod u *fine_tune.py*.
 
@@ -683,19 +682,19 @@ Pokretanjem *setup_ml.py* pokrećete proces fino podešavanja u Azure Machine Le
 
     ```
 
-1. Spremite i zatvorite datoteku *fine_tune.py*.
+1. Spremite i zatvorite *fine_tune.py* datoteku.
 
 > [!TIP]
 > **Možete fino podesiti Phi-3.5 model**
 >
-> U datoteci *fine_tune.py* možete promijeniti polje `pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name` u vašem skriptu.
+> U *fine_tune.py* datoteci možete promijeniti `pretrained_model_name` s `"microsoft/Phi-3-mini-4k-instruct"` na bilo koji model koji želite fino podesiti. Na primjer, ako ga promijenite u `"microsoft/Phi-3.5-mini-instruct"`, koristit ćete Phi-3.5-mini-instruct model za fino podešavanje. Da biste pronašli i koristili željeni naziv modela, posjetite [Hugging Face](https://huggingface.co/), potražite model koji vas zanima i zatim kopirajte i zalijepite njegovo ime u polje `pretrained_model_name` u vašem skriptu.
 >
 > :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fino podešavanje Phi-3.5.":::
 >
 
-#### Dodajte kod u datoteku *setup_ml.py*
+#### Dodajte kod u *setup_ml.py* datoteku
 
-1. Otvorite datoteku *setup_ml.py* u Visual Studio Code-u.
+1. Otvorite *setup_ml.py* datoteku u Visual Studio Code-u.
 
 1. Dodajte sljedeći kod u *setup_ml.py*.
 
@@ -824,7 +823,7 @@ Pokretanjem *setup_ml.py* pokrećete proces fino podešavanja u Azure Machine Le
 
     ```
 
-1. Zamijenite `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `LOCATION` sa svojim specifičnim podacima.
+1. Zamijenite `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` i `LOCATION` sa svojim specifičnim podacima.
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -838,11 +837,11 @@ Pokretanjem *setup_ml.py* pokrećete proces fino podešavanja u Azure Machine Le
 >
 > **Upute za fino podešavanje s minimalnim skupom podataka koristeći CPU**
 >
-> Ako želite koristiti CPU za fino podešavanje, ovaj pristup je idealan za one s pretplatama koje imaju pogodnosti (kao što je Visual Studio Enterprise Subscription) ili za brzo testiranje procesa fino podešavanja i implementacije.
+> Ako želite koristiti CPU za fino podešavanje, ovaj pristup je idealan za one s benefit pretplatama (kao što je Visual Studio Enterprise Subscription) ili za brzo testiranje procesa fino podešavanja i implementacije.
 >
-> 1. Otvorite datoteku *setup_ml*.
-> 1. Zamijenite `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
-> 1. Replace `LOCATION` sa svojim specifičnim podacima.
+> 1. Otvorite *setup_ml* datoteku.
+> 1. Zamijenite `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME` i `DOCKER_IMAGE_NAME` sa sljedećim. Ako nemate pristup *Standard_E16s_v3*, možete koristiti ekvivalentni CPU instance ili zatražiti novi kvotu.
+> 1. Zamijenite `LOCATION` sa svojim specifičnim podacima.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -853,35 +852,35 @@ Pokretanjem *setup_ml.py* pokrećete proces fino podešavanja u Azure Machine Le
 >    ```
 >
 
-1. Upišite sljedeću naredbu za pokretanje skripte *setup_ml.py* i početak procesa fino podešavanja u Azure Machine Learningu.
+1. Upišite sljedeću naredbu za pokretanje *setup_ml.py* skripte i započinjanje procesa fino podešavanja u Azure Machine Learningu.
 
     ```python
     python setup_ml.py
     ```
 
-1. U ovom zadatku ste uspješno fino podesili Phi-3 model koristeći Azure Machine Learning. Pokretanjem skripte *setup_ml.py* postavili ste Azure Machine Learning okruženje i pokrenuli proces fino podešavanja definiran u datoteci *fine_tune.py*. Imajte na umu da proces fino podešavanja može potrajati. Nakon pokretanja `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
+1. U ovom zadatku ste uspješno fino podesili Phi-3 model koristeći Azure Machine Learning. Pokretanjem *setup_ml.py* skripte postavili ste Azure Machine Learning okruženje i pokrenuli proces fino podešavanja definiran u *fine_tune.py* datoteci. Imajte na umu da proces fino podešavanja može potrajati. Nakon pokretanja naredbe `python setup_ml.py`, potrebno je pričekati da se proces završi. Status posla fino podešavanja možete pratiti putem poveznice prikazane u terminalu koja vodi na Azure Machine Learning portal.
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.a28c8552f7b7bc088ccd67dd0c522f7fc1944048d3554bb1b24f95a1169ad538.hr.png)
+    ![Pogledajte posao fino podešavanja.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.hr.png)
 
-### Deploy the fine-tuned model
+### Implementirajte fino podešeni model
 
-To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+Da biste integrirali fino podešeni Phi-3 model s Prompt Flow, potrebno je implementirati model kako bi bio dostupan za izvođenje u stvarnom vremenu. Ovaj proces uključuje registraciju modela, kreiranje online endpointa i implementaciju modela.
 
-#### Set the model name, endpoint name, and deployment name for deployment
+#### Postavite ime modela, ime endpointa i ime implementacije za implementaciju
 
-1. Open *config.py* file.
+1. Otvorite *config.py* datoteku.
 
-1. Replace `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` with the desired name for your model.
+1. Zamijenite `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` željenim imenom vašeg modela.
 
-1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
+1. Zamijenite `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` željenim imenom vašeg endpointa.
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` s željenim nazivom za vašu implementaciju.
+1. Zamijenite `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` željenim imenom vaše implementacije.
 
-#### Dodajte kod u datoteku *deploy_model.py*
+#### Dodajte kod u *deploy_model.py* datoteku
 
-Pokretanje datoteke *deploy_model.py* automatizira cijeli proces implementacije. Registrira model, kreira endpoint i izvršava implementaciju na temelju postavki specificiranih u datoteci config.py, koja uključuje naziv modela, naziv endpointa i naziv implementacije.
+Pokretanjem *deploy_model.py* datoteke automatizirate cijeli proces implementacije. Skripta registrira model, kreira endpoint i izvršava implementaciju na temelju postavki navedenih u *config.py* datoteci, koja uključuje ime modela, ime endpointa i ime implementacije.
 
-1. Otvorite datoteku *deploy_model.py* u Visual Studio Code-u.
+1. Otvorite *deploy_model.py* datoteku u Visual Studio Code-u.
 
 1. Dodajte sljedeći kod u *deploy_model.py*.
 
@@ -1049,42 +1048,43 @@ Pokretanje datoteke *deploy_model.py* automatizira cijeli proces implementacije.
 
     ```
 
-1. Obavite sljedeće zadatke kako biste dobili `JOB_NAME`:
+1. Izvršite sljedeće korake za pronalazak `JOB_NAME`:
 
-    - Navigate to Azure Machine Learning resource that you created.
-    - Select **Studio web URL** to open the Azure Machine Learning workspace.
-    - Select **Jobs** from the left side tab.
-    - Select the experiment for fine-tuning. For example, *finetunephi*.
-    - Select the job that you created.
-    - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+    - Idite na Azure Machine Learning resurs koji ste kreirali.
+    - Odaberite **Studio web URL** za otvaranje Azure Machine Learning workspacea.
+    - Odaberite **Jobs** s lijevog izbornika.
+    - Odaberite eksperiment za fino podešavanje, na primjer *finetunephi*.
+    - Odaberite posao koji ste kreirali.
+- Kopirajte i zalijepite naziv vašeg posla u `JOB_NAME = "your-job-name"` u datoteci *deploy_model.py*.
 
-1. Replace `COMPUTE_INSTANCE_TYPE` sa svojim specifičnim podacima.
+1. Zamijenite `COMPUTE_INSTANCE_TYPE` sa svojim specifičnim podacima.
 
-1. Upišite sljedeću naredbu za pokretanje skripte *deploy_model.py* i početak procesa implementacije u Azure Machine Learningu.
+1. Upisujte sljedeću naredbu za pokretanje skripte *deploy_model.py* i započnite proces implementacije u Azure Machine Learning.
 
     ```python
     python deploy_model.py
     ```
 
+
 > [!WARNING]
-> Kako biste izbjegli dodatne troškove na svom računu, obavezno izbrišite kreirani endpoint u Azure Machine Learning workspaceu.
+> Kako biste izbjegli dodatne troškove na svom računu, obavezno izbrišite kreirani endpoint u Azure Machine Learning radnom prostoru.
 >
 
-#### Provjera statusa implementacije u Azure Machine Learning workspaceu
+#### Provjerite status implementacije u Azure Machine Learning radnom prostoru
 
 1. Posjetite [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Navigirajte do Azure Machine Learning workspacea koji ste kreirali.
+1. Idite u Azure Machine Learning radni prostor koji ste kreirali.
 
-1. Odaberite **Studio web URL** za otvaranje Azure Machine Learning workspacea.
+1. Odaberite **Studio web URL** za otvaranje Azure Machine Learning radnog prostora.
 
-1. Odaberite **Endpoints** s lijevog izbornika.
+1. S lijevog izbornika odaberite **Endpoints**.
 
-    ![Odaberi endpoints.](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.hr.png)
+    ![Odaberite endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.hr.png)
 
 2. Odaberite endpoint koji ste kreirali.
 
-    ![Odaberi endpoint koji ste kreirali.](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.hr.png)
+    ![Odaberite endpoint koji ste kreirali.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.hr.png)
 
 3. Na ovoj stranici možete upravljati endpointima kreiranim tijekom procesa implementacije.
 
@@ -1092,22 +1092,22 @@ Pokretanje datoteke *deploy_model.py* automatizira cijeli proces implementacije.
 
 ### Integrirajte prilagođeni Phi-3 model s Prompt flow
 
-Nakon što ste uspješno implementirali svoj fino podešeni model, sada ga možete integrirati s Prompt flow kako biste koristili model u real-time aplikacijama, omogućujući razne interaktivne zadatke s vašim prilagođenim Phi-3 modelom.
+Nakon uspješne implementacije vašeg fino podešenog modela, sada ga možete integrirati s Prompt flow kako biste koristili model u aplikacijama u stvarnom vremenu, omogućujući razne interaktivne zadatke s vašim prilagođenim Phi-3 modelom.
 
-#### Postavite api ključ i endpoint URI fino podešenog Phi-3 modela
+#### Postavite api ključ i endpoint uri fino podešenog Phi-3 modela
 
-1. Navigirajte do Azure Machine Learning workspacea koji ste kreirali.
-1. Odaberite **Endpoints** s lijevog izbornika.
+1. Idite u Azure Machine Learning radni prostor koji ste kreirali.
+1. S lijevog izbornika odaberite **Endpoints**.
 1. Odaberite endpoint koji ste kreirali.
-1. Odaberite **Consume** iz navigacijskog izbornika.
-1. Kopirajte i zalijepite svoj **REST endpoint** u datoteku *config.py*, zamjenjujući `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` s vašim **Primary key**.
+1. Iz navigacijskog izbornika odaberite **Consume**.
+1. Kopirajte i zalijepite svoj **REST endpoint** u datoteku *config.py*, zamjenjujući `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` sa svojim **REST endpointom**.
+1. Kopirajte i zalijepite svoj **Primary key** u datoteku *config.py*, zamjenjujući `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` sa svojim **Primary keyem**.
 
-    ![Kopiraj api ključ i endpoint URI.](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.hr.png)
+    ![Kopirajte api ključ i endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.hr.png)
 
 #### Dodajte kod u datoteku *flow.dag.yml*
 
-1. Otvorite datoteku *flow.dag.yml* u Visual Studio Code-u.
+1. Otvorite datoteku *flow.dag.yml* u Visual Studio Code.
 
 1. Dodajte sljedeći kod u *flow.dag.yml*.
 
@@ -1134,7 +1134,7 @@ Nakon što ste uspješno implementirali svoj fino podešeni model, sada ga može
 
 #### Dodajte kod u datoteku *integrate_with_promptflow.py*
 
-1. Otvorite datoteku *integrate_with_promptflow.py* u Visual Studio Code-u.
+1. Otvorite datoteku *integrate_with_promptflow.py* u Visual Studio Code.
 
 1. Dodajte sljedeći kod u *integrate_with_promptflow.py*.
 
@@ -1204,15 +1204,15 @@ Nakon što ste uspješno implementirali svoj fino podešeni model, sada ga može
 
 ### Razgovarajte s vašim prilagođenim modelom
 
-1. Upišite sljedeću naredbu za pokretanje skripte *deploy_model.py* i početak procesa implementacije u Azure Machine Learningu.
+1. Upisujte sljedeću naredbu za pokretanje skripte *deploy_model.py* i započnite proces implementacije u Azure Machine Learning.
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. Evo primjera rezultata: sada možete razgovarati sa svojim prilagođenim Phi-3 modelom. Preporučuje se postavljati pitanja temeljena na podacima korištenim za fino podešavanje.
+1. Evo primjera rezultata: sada možete razgovarati s vašim prilagođenim Phi-3 modelom. Preporučuje se postavljati pitanja temeljena na podacima korištenim za fino podešavanje.
 
-    ![Primjer prompt flow-a.](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.hr.png)
+    ![Primjer Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.hr.png)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

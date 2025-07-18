@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:00:54+00:00",
+  "translation_date": "2025-07-17T08:44:13+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "pl"
 }
 -->
-# Phi-3.5-vision przepis na dostrajanie
+# Phi-3.5-vision przepis na fine-tuning
 
-To jest oficjalne wsparcie dla dostrajania Phi-3.5-vision z użyciem bibliotek huggingface.  
-Przed uruchomieniem poniższych poleceń, przejdź `cd` do katalogu z kodem [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning).
+To jest oficjalne wsparcie dla fine-tuningu Phi-3.5-vision z użyciem bibliotek huggingface.  
+Przed uruchomieniem poniższych poleceń proszę przejść do katalogu z kodem [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning).
 
 ## Instalacja
 
@@ -35,16 +35,16 @@ pip install bitsandbytes==0.43.1
 
 ## Szybki start
 
-Udostępniamy dwa przykładowe skrypty do dostrajania, jeden dla DocVQA i jeden dla klasyfikacji obraźliwych memów.
+Udostępniamy dwa przykładowe skrypty do fine-tuningu, jeden dla DocVQA, drugi dla klasyfikacji nienawistnych memów.
 
-Minimalny sprzęt testowany to 4x RTX8000 (48GB RAM na GPU)
+Minimalny sprzęt testowany na 4x RTX8000 (48GB RAM na GPU)
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision oficjalnie wspiera teraz wejścia z wieloma obrazami. Oto przykład dostrajania NLVR2
+Phi-3.5-vision oficjalnie wspiera teraz wejścia z wieloma obrazami. Oto przykład fine-tuningu na NLVR2
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -52,13 +52,13 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 
 ## Przewodnik użytkowania
 
-W zależności od sprzętu, użytkownicy mogą wybrać różne strategie dostrajania. Wspieramy  
-pełne dostrajanie (z Deepspeed Zero-2) z opcjonalnie zamrożonymi parametrami wizji oraz LoRA (w tym 4bit QLoRA).  
-Zalecamy generalnie korzystanie z pełnego dostrajania z flash attention i bf16, gdy tylko jest to możliwe.
+W zależności od sprzętu użytkownicy mogą wybrać różne strategie fine-tuningu. Wspieramy  
+pełny fine-tuning (z Deepspeed Zero-2) z opcjonalnie zamrożonymi parametrami wizji oraz LoRA (w tym 4bit QLoRA).  
+Generalnie zalecamy stosowanie pełnego fine-tuningu z flash attention i bf16, gdy tylko jest to możliwe.
 
 ### przewodnik konwersji własnego zbioru danych do wymaganego formatu
 
-Używamy minimalnego zbioru danych do klasyfikacji wideo (podzbiór UCF-101) jako przykładu end-to-end, aby pokazać, jak przekonwertować własny zbiór danych do wymaganego formatu i dostroić na nim Phi-3.5-vision.
+Używamy minimalnego zbioru danych do klasyfikacji wideo (podzbiór UCF-101) jako przykładu end-to-end, aby pokazać, jak przekonwertować własny zbiór danych do wymaganego formatu i przeprowadzić fine-tuning Phi-3.5-vision na nim.
 
 ```bash
 # convert data
@@ -121,41 +121,42 @@ Dla adnotacji `jsonl` każda linia powinna być słownikiem w formacie:
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Zwróć uwagę, że `conversations` jest listą, więc możliwe jest wsparcie konwersacji wieloetapowych, jeśli takie dane są dostępne.
+Zwróć uwagę, że `conversations` to lista, więc możliwe jest wsparcie rozmów wieloetapowych, jeśli takie dane są dostępne.
 
-## Jak uzyskać limit GPU na Azure
+## Wnioskowanie o limit GPU w Azure
 
 ### Wymagania wstępne
 
 Konto Azure z rolą Contributor (lub inną rolą zawierającą dostęp Contributor).
 
-Jeśli nie masz konta Azure, utwórz [konto darmowe zanim zaczniesz](https://azure.microsoft.com).
+Jeśli nie masz konta Azure, załóż [bezpłatne konto przed rozpoczęciem](https://azure.microsoft.com).
 
-### Jak złożyć wniosek o zwiększenie limitu
+### Wniosek o zwiększenie limitu
 
-Możesz złożyć wniosek o zwiększenie limitu bezpośrednio w My quotas. Postępuj według poniższych kroków, aby poprosić o zwiększenie limitu. W tym przykładzie możesz wybrać dowolny regulowany limit w swojej subskrypcji.
+Możesz złożyć wniosek o zwiększenie limitu bezpośrednio z My quotas. Postępuj zgodnie z poniższymi krokami, aby poprosić o zwiększenie limitu. W tym przykładzie możesz wybrać dowolny regulowany limit w swojej subskrypcji.
 
-Zaloguj się do [Azure portal](https://portal.azure.com).
+Zaloguj się do [portalu Azure](https://portal.azure.com).
 
 Wpisz "quotas" w polu wyszukiwania, a następnie wybierz Quotas.  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
 Na stronie Overview wybierz dostawcę, np. Compute lub AML.
 
-**Note** Dla wszystkich dostawców poza Compute, zobaczysz kolumnę Request increase zamiast kolumny Adjustable opisanej poniżej. Tam możesz poprosić o zwiększenie konkretnego limitu lub utworzyć zgłoszenie wsparcia.
+**Note** Dla wszystkich dostawców innych niż Compute zobaczysz kolumnę Request increase zamiast kolumny Adjustable opisanej poniżej. Tam możesz poprosić o zwiększenie konkretnego limitu lub utworzyć zgłoszenie wsparcia w tej sprawie.
 
-Na stronie My quotas, w kolumnie Quota name wybierz limit, który chcesz zwiększyć. Upewnij się, że w kolumnie Adjustable dla tego limitu jest wartość Yes.
+Na stronie My quotas, pod Quota name, wybierz limit, który chcesz zwiększyć. Upewnij się, że w kolumnie Adjustable jest wartość Yes dla tego limitu.
 
-Na górze strony wybierz New Quota Request, a następnie Enter a new limit.  
+Na górze strony wybierz New Quota Request, a następnie Enter a new limit.
+
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-W panelu New Quota Request wpisz wartość numeryczną nowego limitu, a następnie kliknij Submit.
+W panelu New Quota Request wpisz wartość liczbową nowego limitu, a następnie wybierz Submit.
 
-Twój wniosek zostanie rozpatrzony, a Ty zostaniesz powiadomiony, czy został zaakceptowany. Zazwyczaj dzieje się to w ciągu kilku minut.
+Twój wniosek zostanie rozpatrzony, a Ty zostaniesz powiadomiony, czy wniosek może zostać zrealizowany. Zazwyczaj dzieje się to w ciągu kilku minut.
 
-Jeśli wniosek nie zostanie zaakceptowany, pojawi się link do utworzenia zgłoszenia wsparcia. Korzystając z tego linku, inżynier wsparcia pomoże Ci z Twoim wnioskiem o zwiększenie limitu.
+Jeśli wniosek nie zostanie zrealizowany, zobaczysz link do utworzenia zgłoszenia wsparcia. Korzystając z tego linku, inżynier wsparcia pomoże Ci z wnioskiem o zwiększenie limitu.
 
-## Propozycje SKU maszyn GPU w Azure Compute
+## Sugestie dotyczące SKU maszyn GPU w Azure Compute
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -167,7 +168,7 @@ Oto kilka przykładów:
 
 ### Jeśli masz GPU A100 lub H100
 
-Pełne dostrajanie zwykle daje najlepsze wyniki. Możesz użyć poniższego polecenia, aby dostroić Phi-3-V do klasyfikacji obraźliwych memów.
+Pełny fine-tuning zazwyczaj daje najlepsze wyniki. Możesz użyć poniższego polecenia, aby przeprowadzić fine-tuning Phi-3-V na klasyfikacji nienawistnych memów.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -181,8 +182,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Jeśli masz Standard_ND40rs_v2 8x V100-32GB GPU
 
-Nadal możliwe jest pełne dostrajanie Phi-3-V do klasyfikacji obraźliwych memów. Jednak spodziewaj się znacznie niższej przepustowości w porównaniu do GPU A100 lub H100 ze względu na brak wsparcia dla flash attention.  
-Dokładność może również być niższa z powodu braku wsparcia bf16 (zamiast tego stosowane jest mieszane precyzyjne uczenie fp16).
+Wciąż możliwe jest pełne fine-tuning Phi-3-V na klasyfikacji nienawistnych memów. Jednak spodziewaj się  
+znacznie niższej przepustowości w porównaniu do GPU A100 lub H100 z powodu braku wsparcia dla flash attention.  
+Dokładność może również ucierpieć z powodu braku wsparcia dla bf16 (zamiast tego stosowane jest mieszane precyzyjne szkolenie fp16).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -194,7 +196,7 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Jeśli nie masz dostępu do GPU w centrum danych
 
-LoRA może być Twoim jedynym wyborem. Możesz użyć poniższego polecenia, aby dostroić Phi-3-V do klasyfikacji obraźliwych memów.
+LoRA może być Twoim jedynym wyborem. Możesz użyć poniższego polecenia, aby przeprowadzić fine-tuning Phi-3-V na klasyfikacji nienawistnych memów.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -204,7 +206,7 @@ torchrun --nproc_per_node=2 \
   --use_lora
 ```
 
-Dla GPU Turing+ obsługiwane jest QLoRA
+Dla GPU Turing+ wspierany jest QLoRA
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -232,13 +234,13 @@ torchrun --nproc_per_node=4 \
 
 Metoda treningu | Zamrożony model wizji | typ danych | ranga LoRA | alfa LoRA | rozmiar batcha | współczynnik uczenia | epoki | Dokładność
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
-pełne dostrajanie |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-pełne dostrajanie | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
+pełny fine-tuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
+pełny fine-tuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
 Wyniki LoRA wkrótce |  |  |  |  |  |  |  |  |
 
 ### NOTE  
-Poniższe wyniki DocVQA i Hateful memes opierają się na poprzedniej wersji (Phi-3-vision).  
-Nowe wyniki z Phi-3.5-vision zostaną wkrótce opublikowane.
+Poniższe wyniki DocVQA i Hateful memes bazują na poprzedniej wersji (Phi-3-vision).  
+Nowe wyniki dla Phi-3.5-vision zostaną wkrótce zaktualizowane.
 
 ### DocVQA (NOTE: Phi-3-vision)
 
@@ -256,8 +258,8 @@ torchrun --nproc_per_node=4 \
 
 Metoda treningu | typ danych | ranga LoRA | alfa LoRA | rozmiar batcha | współczynnik uczenia | epoki | ANLS
 --- | --- | --- | --- | --- | --- | --- | --- |
-pełne dostrajanie | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
-pełne dostrajanie | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
+pełny fine-tuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
+pełny fine-tuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
 zamrożony model obrazu | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
 zamrożony model obrazu | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
 LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
@@ -280,8 +282,8 @@ torchrun --nproc_per_node=4 \
 
 Metoda treningu | typ danych | ranga LoRA | alfa LoRA | rozmiar batcha | współczynnik uczenia | epoki | Dokładność
 --- | --- | --- | --- | --- | --- | --- | --- |
-pełne dostrajanie | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
-pełne dostrajanie | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
+pełny fine-tuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
+pełny fine-tuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
 zamrożony model obrazu | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
 zamrożony model obrazu | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
 LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
@@ -291,19 +293,19 @@ QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 ## Testy wydajności (NOTE: Phi-3-vision)
 
-Nowe wyniki testów wydajności z Phi-3.5-vision zostaną wkrótce opublikowane.
+Nowe wyniki testów wydajności z Phi-3.5-vision zostaną wkrótce zaktualizowane.
 
-Testy wydajności wykonano na zbiorze DocVQA. Średnia długość sekwencji w tym zbiorze to  
-2443.23 tokenów (przy użyciu `num_crops=16` dla modelu obrazu).
+Testy wydajności przeprowadzono na zbiorze DocVQA. Średnia długość sekwencji w tym zbiorze  
+to 2443.23 tokenów (przy użyciu `num_crops=16` dla modelu obrazu).
 
 ### 8x A100-80GB (Ampere)
 
-Metoda treningu | \# węzłów | GPU | flash attention | Efektywny rozmiar batcha | Przepustowość (img/s) | Przyspieszenie | Maks. pamięć GPU (GB)
+Metoda treningu | \# węzłów | GPU | flash attention | Efektywny rozmiar batcha | Przepustowość (obrazów/s) | Przyspieszenie | Maksymalna pamięć GPU (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
-pełne dostrajanie | 1 | 8 |  | 64 | 5.041 |  1x | ~42
-pełne dostrajanie | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
-pełne dostrajanie | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29
-pełne dostrajanie | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26
+pełny fine-tuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
+pełny fine-tuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
+pełny fine-tuning | 2 | 16 | ✔ | 64 | 16.903 | 3.35x | ~29
+pełny fine-tuning | 4 | 32 | ✔ | 64 | 33.433 | 6.63x | ~26
 zamrożony model obrazu | 1 | 8 |  | 64 | 17.578 | 3.49x | ~29
 zamrożony model obrazu | 1 | 8 | ✔ | 64 | 31.736 | 6.30x | ~27
 LoRA | 1 | 8 |  | 64 | 5.591 | 1.11x | ~50
@@ -313,18 +315,18 @@ QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
 ### 8x V100-32GB (Volta)
 
-Metoda treningu | \# węzłów | GPU | flash attention | Efektywny rozmiar batcha | Przepustowość (img/s) | Przyspieszenie | Maks. pamięć GPU (GB)
+Metoda treningu | \# węzłów | GPU | flash attention | Efektywny rozmiar batcha | Przepustowość (obrazów/s) | Przyspieszenie | Maksymalna pamięć GPU (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
-pełne dostrajanie | 1 | 8 | | 64 | 2.462 |  1x | ~32
-pełne dostrajanie | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
-pełne dostrajanie | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
+pełny fine-tuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
+pełny fine-tuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
+pełny fine-tuning | 4 | 32 |  | 64 | 5.465 | 2.22x | ~32
 zamrożony model obrazu | 1 | 8 |  | 64 | 8.942 | 3.63x | ~27
 LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 
 ## Znane problemy
 
-- Nie można uruchomić flash attention z fp16 (zawsze zalecamy bf16, gdy jest dostępne, a wszystkie GPU wspierające flash attention obsługują też bf16).  
-- Nie obsługujemy jeszcze zapisywania pośrednich checkpointów i wznawiania treningu.
+- Nie można uruchomić flash attention z fp16 (zawsze zalecane jest bf16, gdy jest dostępne, a wszystkie GPU wspierające flash attention obsługują też bf16).  
+- Brak wsparcia dla zapisywania pośrednich checkpointów i wznawiania treningu.
 
 **Zastrzeżenie**:  
-Ten dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że tłumaczenia automatyczne mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

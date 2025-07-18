@@ -2,79 +2,78 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b62864faf628eb07f5231d4885555198",
-  "translation_date": "2025-05-07T14:10:06+00:00",
+  "translation_date": "2025-07-17T03:06:49+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md",
   "language_code": "mo"
 }
 -->
-# Phi-3.5-Instruct WebGPU RAG Chatbot
+# Phi-3.5-Instruct WebGPU RAG 聊天機器人
 
-## Demo for showcasing WebGPU and RAG Pattern
+## 展示 WebGPU 與 RAG 模式的示範
 
-The RAG Pattern with Phi-3.5 Onnx Hosted model uses the Retrieval-Augmented Generation approach, combining the strengths of Phi-3.5 models with ONNX hosting for efficient AI deployments. This pattern is key for fine-tuning models on domain-specific tasks, offering a balance of quality, cost-effectiveness, and long-context understanding. It’s part of Azure AI’s collection, providing a wide range of models that are easy to find, try, and use, meeting the customization needs of various industries.
+結合 Phi-3.5 Onnx 託管模型的 RAG 模式，採用檢索增強生成（Retrieval-Augmented Generation）方法，將 Phi-3.5 模型的強大能力與 ONNX 託管結合，實現高效的 AI 部署。此模式對於針對特定領域任務進行模型微調非常有幫助，兼具品質、成本效益與長上下文理解能力。它是 Azure AI 套件的一部分，提供多樣化且易於尋找、試用與使用的模型，滿足各行各業的客製化需求。
 
-## What is WebGPU  
-WebGPU is a modern web graphics API designed to give efficient access to a device’s graphics processing unit (GPU) directly from web browsers. It aims to replace WebGL, offering several important improvements:
+## 什麼是 WebGPU  
+WebGPU 是一個現代化的網頁圖形 API，設計用來直接從瀏覽器高效存取裝置的圖形處理器（GPU）。它旨在成為 WebGL 的繼任者，帶來多項重要改進：
 
-1. **Compatibility with Modern GPUs**: WebGPU is designed to work smoothly with current GPU architectures, using system APIs like Vulkan, Metal, and Direct3D 12.  
-2. **Enhanced Performance**: It supports general-purpose GPU computations and faster operations, making it ideal for both graphics rendering and machine learning tasks.  
-3. **Advanced Features**: WebGPU grants access to more advanced GPU capabilities, enabling more complex and dynamic graphics and computational workloads.  
-4. **Reduced JavaScript Workload**: By shifting more tasks to the GPU, WebGPU significantly lowers the load on JavaScript, resulting in better performance and smoother experiences.
+1. **支援現代 GPU 架構**：WebGPU 能無縫配合當代 GPU 架構，利用 Vulkan、Metal 和 Direct3D 12 等系統 API。
+2. **提升效能**：支援通用 GPU 運算與更快速的操作，適合圖形渲染與機器學習任務。
+3. **進階功能**：提供更豐富的 GPU 能力，支援更複雜且動態的圖形與計算工作負載。
+4. **減輕 JavaScript 負擔**：將更多任務交由 GPU 處理，大幅降低 JavaScript 的工作量，帶來更流暢的使用體驗。
 
-WebGPU is currently supported in browsers such as Google Chrome, with ongoing efforts to extend support to other platforms.
+目前 WebGPU 已在 Google Chrome 等瀏覽器支援，並持續擴展至其他平台。
 
 ### 03.WebGPU  
-Required Environment:
+所需環境：
 
-**Supported browsers:**  
-- Google Chrome 113+  
-- Microsoft Edge 113+  
-- Safari 18 (macOS 15)  
-- Firefox Nightly.
+**支援瀏覽器：**  
+- Google Chrome 113 以上  
+- Microsoft Edge 113 以上  
+- Safari 18（macOS 15）  
+- Firefox Nightly  
 
-### Enable WebGPU:
+### 啟用 WebGPU：
 
-- In Chrome/Microsoft Edge  
+- 在 Chrome/Microsoft Edge 中  
 
-Enable the `chrome://flags/#enable-unsafe-webgpu` flag.
+啟用 `chrome://flags/#enable-unsafe-webgpu` 標誌。
 
-#### Open Your Browser:  
-Launch Google Chrome or Microsoft Edge.
+#### 開啟瀏覽器：  
+啟動 Google Chrome 或 Microsoft Edge。
 
-#### Access the Flags Page:  
-In the address bar, type `chrome://flags` and press Enter.
+#### 進入 Flags 頁面：  
+在網址列輸入 `chrome://flags`，按下 Enter。
 
-#### Search for the Flag:  
-In the search box at the top of the page, type 'enable-unsafe-webgpu'
+#### 搜尋標誌：  
+在頁面頂端的搜尋框輸入 'enable-unsafe-webgpu'。
 
-#### Enable the Flag:  
-Find the #enable-unsafe-webgpu flag in the list of results.
+#### 啟用標誌：  
+在結果列表中找到 #enable-unsafe-webgpu 標誌。
 
-Click the dropdown menu next to it and select Enabled.
+點擊旁邊的下拉選單，選擇 Enabled。
 
-#### Restart Your Browser:  
+#### 重新啟動瀏覽器：  
 
-After enabling the flag, you need to restart your browser for the changes to take effect. Click the Relaunch button that appears at the bottom of the page.
+啟用標誌後，需重新啟動瀏覽器使設定生效。點擊頁面底部出現的 Relaunch 按鈕。
 
-- For Linux, launch the browser with `--enable-features=Vulkan`.  
-- Safari 18 (macOS 15) has WebGPU enabled by default.  
-- In Firefox Nightly, enter about:config in the address bar and `set dom.webgpu.enabled to true`.
+- Linux 系統請使用 `--enable-features=Vulkan` 參數啟動瀏覽器。  
+- Safari 18（macOS 15）預設已啟用 WebGPU。  
+- Firefox Nightly 輸入 about:config，將 `dom.webgpu.enabled` 設為 true。
 
-### Setting up GPU for Microsoft Edge  
+### 為 Microsoft Edge 設定 GPU  
 
-Here are the steps to configure a high-performance GPU for Microsoft Edge on Windows:
+以下是在 Windows 上為 Microsoft Edge 設定高效能 GPU 的步驟：
 
-- **Open Settings:** Click the Start menu and select Settings.  
-- **System Settings:** Go to System and then Display.  
-- **Graphics Settings:** Scroll down and click Graphics settings.  
-- **Choose App:** Under “Choose an app to set preference,” select Desktop app and then Browse.  
-- **Select Edge:** Navigate to the Edge installation folder (usually `C:\Program Files (x86)\Microsoft\Edge\Application`) and select `msedge.exe`.  
-- **Set Preference:** Click Options, choose High performance, and then click Save.  
+- **開啟設定：** 點擊開始選單，選擇設定。  
+- **系統設定：** 進入系統，然後選擇顯示。  
+- **圖形設定：** 向下捲動並點擊圖形設定。  
+- **選擇應用程式：** 在「選擇要設定偏好的應用程式」中，選擇桌面應用程式，然後點擊瀏覽。  
+- **選擇 Edge：** 導覽至 Edge 安裝資料夾（通常為 `C:\Program Files (x86)\Microsoft\Edge\Application`），選擇 `msedge.exe`。  
+- **設定偏好：** 點擊選項，選擇高效能，然後點擊儲存。  
+這樣可確保 Microsoft Edge 使用高效能 GPU 以提升效能。  
+- **重新啟動** 電腦以使設定生效。
 
-This ensures Microsoft Edge uses your high-performance GPU for improved performance.  
-- **Restart** your computer for these settings to take effect.
+### 範例：請[點此連結](https://github.com/microsoft/aitour-exploring-cutting-edge-models/tree/main/src/02.ONNXRuntime/01.WebGPUChatRAG)
 
-### Samples : Please [click this link](https://github.com/microsoft/aitour-exploring-cutting-edge-models/tree/main/src/02.ONNXRuntime/01.WebGPUChatRAG)
-
-**Disclaimer**:  
-Dis documont has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware dat automated translations may contain errors or inaccuracies. De original documont in its native language should be considered de authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from de use of dis translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:43:35+00:00",
+  "translation_date": "2025-07-17T08:00:55+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "no"
 }
 -->
-# **Finjustering av Phi-3 med Apple MLX-rammeverket**
+# **Finjustering av Phi-3 med Apple MLX Framework**
 
-Vi kan fullføre finjustering kombinert med Lora gjennom Apple MLX-rammeverkets kommandolinje. (Hvis du vil vite mer om hvordan MLX-rammeverket fungerer, vennligst les [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md))
+Vi kan fullføre finjustering kombinert med Lora gjennom Apple MLX Frameworks kommandolinje. (Hvis du vil vite mer om hvordan MLX Framework fungerer, vennligst les [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
 
 
-## **1. Datapreparasjon**
+## **1. Datapreparering**
 
-Som standard krever MLX-rammeverket jsonl-format for train, test og eval, og kombineres med Lora for å fullføre finjusteringsoppgaver.
+Som standard krever MLX Framework jsonl-format for train, test og eval, og kombineres med Lora for å fullføre finjusteringsoppgaver.
 
 
 ### ***Note:***
@@ -31,14 +31,14 @@ Som standard krever MLX-rammeverket jsonl-format for train, test og eval, og kom
 
 ```
 
-2. Vårt eksempel bruker [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), men datamengden er relativt begrenset, så finjusteringsresultatene er ikke nødvendigvis optimale. Det anbefales at brukere benytter bedre data tilpasset egne scenarier for å fullføre prosessen.
+2. Vårt eksempel bruker [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), men datamengden er relativt liten, så finjusteringsresultatene er ikke nødvendigvis de beste. Det anbefales at brukere benytter bedre data basert på sine egne scenarier for å fullføre.
 
 3. Dataformatet er kombinert med Phi-3-malen
 
-Vennligst last ned data fra denne [lenken](../../../../code/04.Finetuning/mlx), og inkluder alle .jsonl i ***data***-mappen
+Vennligst last ned data fra denne [lenken](../../../../code/04.Finetuning/mlx), inkluder alle .jsonl i ***data***-mappen
 
 
-## **2. Finjustering i terminalen**
+## **2. Finjustering i terminalen din**
 
 Kjør denne kommandoen i terminalen
 
@@ -52,9 +52,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Note:***
 
-1. Dette er LoRA-finjustering, MLX-rammeverket har ikke publisert QLoRA
+1. Dette er LoRA finjustering, MLX Framework har ikke publisert QLoRA
 
-2. Du kan endre noen argumenter i config.yaml, for eksempel
+2. Du kan endre config.yaml for å justere noen argumenter, for eksempel
 
 
 ```yaml
@@ -137,7 +137,7 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ## **3. Kjør finjusteringsadapter for testing**
 
-Du kan kjøre finjusteringsadapteren i terminalen, slik:
+Du kan kjøre finjusteringsadapter i terminalen, slik som dette 
 
 
 ```bash
@@ -146,7 +146,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-og kjøre originalmodellen for å sammenligne resultatet
+og kjøre originalmodellen for å sammenligne resultatet 
 
 
 ```bash
@@ -186,7 +186,7 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Note:*** 
 
-1. Støtter nå kvantisering og konvertering for fp32, fp16 og INT 8
+1. Støtter nå kvantisering av fp32, fp16 og INT 8
 
 2. Den sammenslåtte modellen mangler tokenizer.model, vennligst last den ned fra https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
 
@@ -211,7 +211,7 @@ kjør kommando i terminalen
 
 ```
 
-Gratulerer! Du har mestret finjustering med MLX-rammeverket
+Gratulerer! Mestre finjustering med MLX Framework
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

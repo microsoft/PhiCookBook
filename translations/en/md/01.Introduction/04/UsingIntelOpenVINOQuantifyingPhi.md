@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-07-09T19:45:08+00:00",
+  "translation_date": "2025-07-16T21:58:12+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "en"
 }
@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Intel is the most traditional CPU manufacturer with a large user base. With the rise of machine learning and deep learning, Intel has also entered the AI acceleration race. For model inference, Intel utilizes not only GPUs and CPUs but also NPUs.
 
-We aim to deploy the Phi-3.x Family on edge devices, hoping it will become a key component of AI PCs and Copilot PCs. Loading models on edge devices depends on collaboration with various hardware manufacturers. This chapter mainly focuses on the application scenario of Intel OpenVINO as a quantization tool for models.
+We aim to deploy the Phi-3.x Family on edge devices, hoping it becomes a key component of AI PCs and Copilot PCs. Loading the model on edge devices depends on collaboration with various hardware manufacturers. This chapter mainly focuses on the application scenario of Intel OpenVINO as a quantization tool.
 
 ## **What’s OpenVINO**
 
-OpenVINO is an open-source toolkit designed to optimize and deploy deep learning models from the cloud to the edge. It speeds up deep learning inference across various applications such as generative AI, video, audio, and language, supporting models from popular frameworks like PyTorch, TensorFlow, ONNX, and more. It allows you to convert and optimize models and deploy them across a range of Intel® hardware and environments, whether on-premises, on-device, in the browser, or in the cloud.
+OpenVINO is an open-source toolkit for optimizing and deploying deep learning models from cloud to edge. It speeds up deep learning inference across various use cases such as generative AI, video, audio, and language, supporting models from popular frameworks like PyTorch, TensorFlow, ONNX, and more. It allows you to convert and optimize models and deploy them across a range of Intel® hardware and environments, whether on-premises, on-device, in the browser, or in the cloud.
 
 With OpenVINO, you can quickly quantize GenAI models on Intel hardware and accelerate model inference.
 
@@ -38,7 +38,7 @@ openvino-genai>=2024.3.0.0
 
 ### **Quantizing Phi-3.5-Instruct using OpenVINO**
 
-Run this script in the Terminal
+In the terminal, please run this script
 
 ```bash
 
@@ -54,7 +54,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ### **Quantizing Phi-3.5-Vision using OpenVINO**
 
-Run this script in Python or Jupyter Lab
+Please run this script in Python or Jupyter Lab
 
 ```python
 

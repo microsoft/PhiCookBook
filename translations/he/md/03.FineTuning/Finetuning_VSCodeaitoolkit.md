@@ -2,24 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c2bc0950f44919ac75a88c1a871680c2",
-  "translation_date": "2025-05-09T22:12:09+00:00",
+  "translation_date": "2025-07-17T09:16:04+00:00",
   "source_file": "md/03.FineTuning/Finetuning_VSCodeaitoolkit.md",
   "language_code": "he"
 }
 -->
 ## ברוכים הבאים ל-AI Toolkit עבור VS Code
 
-[AI Toolkit עבור VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) מאחד מודלים שונים מ-Azure AI Studio Catalog ומקטלוגים אחרים כמו Hugging Face. הכלי מפשט את משימות הפיתוח השכיחות לבניית אפליקציות AI עם כלים ומודלים של AI גנרטיבי באמצעות:
-- התחלה עם גילוי מודלים ומשחקייה.
-- כוונון דק ומסקנות באמצעות משאבי מחשוב מקומיים.
-- כוונון דק ומסקנות מרוחקים באמצעות משאבי Azure
+[AI Toolkit עבור VS Code](https://github.com/microsoft/vscode-ai-toolkit/tree/main) מאחדת מודלים שונים מתוך קטלוג Azure AI Studio וקטלוגים נוספים כמו Hugging Face. הכלי מפשט את המשימות הנפוצות בפיתוח אפליקציות AI עם כלים ומודלים של AI גנרטיבי באמצעות:
+- התחלה עם גילוי מודלים ו-playground.
+- כוונון מודל והסקת מסקנות באמצעות משאבי מחשוב מקומיים.
+- כוונון והסקת מסקנות מרחוק באמצעות משאבי Azure.
 
 [התקן את AI Toolkit עבור VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.fc953930f4b4027110910d62005d87c6ac76941120d31139a2d9b0de2d4b64b8.he.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.he.png)
 
-
-**[Private Preview]** הפעלה בלחיצה אחת של Azure Container Apps להרצת כוונון דק ומסקנות בענן.
+**[Private Preview]** פרוביזיה בלחיצה אחת עבור Azure Container Apps להרצת כוונון מודל והסקת מסקנות בענן.
 
 עכשיו בואו נתחיל בפיתוח אפליקציית ה-AI שלכם:
 
@@ -27,37 +26,37 @@ CO_OP_TRANSLATOR_METADATA:
 - [פיתוח מקומי](../../../../md/03.FineTuning)
   - [הכנות](../../../../md/03.FineTuning)
   - [הפעלת Conda](../../../../md/03.FineTuning)
-  - [כוונון דק למודל בסיס בלבד](../../../../md/03.FineTuning)
-  - [כוונון דק ומסקנות למודל](../../../../md/03.FineTuning)
-  - [כוונון דק למודל](../../../../md/03.FineTuning)
+  - [כוונון מודל בסיסי בלבד](../../../../md/03.FineTuning)
+  - [כוונון מודל והסקת מסקנות](../../../../md/03.FineTuning)
+  - [כוונון מודל](../../../../md/03.FineTuning)
   - [Microsoft Olive](../../../../md/03.FineTuning)
-  - [דוגמאות ומשאבים לכוונון דק](../../../../md/03.FineTuning)
+  - [דוגמאות ומשאבים לכוונון](../../../../md/03.FineTuning)
 - [**\[Private Preview\]** פיתוח מרחוק](../../../../md/03.FineTuning)
   - [דרישות מוקדמות](../../../../md/03.FineTuning)
   - [הגדרת פרויקט פיתוח מרחוק](../../../../md/03.FineTuning)
-  - [הקצאת משאבי Azure](../../../../md/03.FineTuning)
+  - [פרוביזיה של משאבי Azure](../../../../md/03.FineTuning)
   - [\[אופציונלי\] הוספת טוקן Huggingface לסוד של Azure Container App](../../../../md/03.FineTuning)
-  - [הרצת כוונון דק](../../../../md/03.FineTuning)
-  - [הקצאת נקודת קצה למסקנות](../../../../md/03.FineTuning)
-  - [פריסת נקודת הקצה למסקנות](../../../../md/03.FineTuning)
+  - [הרצת כוונון](../../../../md/03.FineTuning)
+  - [פרוביזיה של נקודת קצה להסקת מסקנות](../../../../md/03.FineTuning)
+  - [פריסת נקודת הקצה להסקת מסקנות](../../../../md/03.FineTuning)
   - [שימוש מתקדם](../../../../md/03.FineTuning)
 
 ## פיתוח מקומי
 ### הכנות
 
-1. ודאו שמותקן דרייבר NVIDIA במארח.
+1. ודאו כי דרייבר NVIDIA מותקן במחשב המארח.
 2. הריצו `huggingface-cli login` אם אתם משתמשים ב-HF לניצול מערכי נתונים.
-3. הסברים על הגדרות מפתח של `Olive` לכל דבר שמשנה את השימוש בזיכרון.
+3. הסברים על הגדרות מפתח `Olive` לכל דבר שמשנה את השימוש בזיכרון.
 
 ### הפעלת Conda
-מאחר ואנחנו משתמשים בסביבת WSL שהיא משותפת, יש להפעיל ידנית את סביבת ה-conda. לאחר שלב זה תוכלו להריץ כוונון דק או מסקנות.
+מכיוון שאנו משתמשים בסביבת WSL שהיא משותפת, יש להפעיל ידנית את סביבת ה-conda. לאחר שלב זה תוכלו להריץ כוונון או הסקת מסקנות.
 
 ```bash
 conda activate [conda-env-name] 
 ```
 
-### כוונון דק למודל בסיס בלבד
-כדי לנסות את המודל הבסיסי בלי כוונון דק, ניתן להריץ את הפקודה הזו לאחר הפעלת ה-conda.
+### כוונון מודל בסיסי בלבד
+כדי לנסות את המודל הבסיסי ללא כוונון, ניתן להריץ את הפקודה הזו לאחר הפעלת conda.
 
 ```bash
 cd inference
@@ -67,17 +66,17 @@ cd inference
 python gradio_chat.py --baseonly
 ```
 
-### כוונון דק ומסקנות למודל
+### כוונון מודל והסקת מסקנות
 
-כשהסביבת הפיתוח פתוחה במיכל dev, פתחו טרמינל (הנתיב המוגדר כברירת מחדל הוא שורש הפרויקט), ואז הריצו את הפקודה הבאה כדי לכוון דק LLM על מערך הנתונים שנבחר.
+כאשר סביבת העבודה פתוחה בתוך מיכל פיתוח, פתחו טרמינל (הנתיב ברירת המחדל הוא שורש הפרויקט), ואז הריצו את הפקודה הבאה כדי לכוונן LLM על מערך הנתונים שנבחר.
 
 ```bash
 python finetuning/invoke_olive.py 
 ```
 
-נקודות ביקורת והמודל הסופי יישמרו ב-`models` folder.
+נקודות הבדיקה והמודל הסופי יישמרו בתיקיית `models`.
 
-Next run inferencing with the fune-tuned model through chats in a `console`, `web browser` or `prompt flow`.
+לאחר מכן הריצו הסקת מסקנות עם המודל המכוונן דרך שיחות ב-`console`, `דפדפן אינטרנט` או `prompt flow`.
 
 ```bash
 cd inference
@@ -90,93 +89,92 @@ python console_chat.py
 python gradio_chat.py
 ```
 
-כדי להשתמש ב-`prompt flow` in VS Code, please refer to this [Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
+כדי להשתמש ב-`prompt flow` ב-VS Code, עיינו ב-[Quick Start](https://microsoft.github.io/promptflow/how-to-guides/quick-start.html).
 
-### Model Fine-tuning
+### כוונון מודל
 
-Next, download the following model depending on the availability of a GPU on your device.
+לאחר מכן, הורידו את המודל המתאים בהתאם לזמינות GPU במכשיר שלכם.
 
-To initiate the local fine-tuning session using QLoRA, select a model you want to fine-tune from our catalog.
-| Platform(s) | GPU available | Model name | Size (GB) |
+כדי להתחיל את סשן הכוונון המקומי באמצעות QLoRA, בחרו מודל שברצונכם לכוונן מתוך הקטלוג שלנו.
+| פלטפורמה | GPU זמין | שם המודל | גודל (GB) |
 |---------|---------|--------|--------|
-| Windows | Yes | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
-| Linux | Yes | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
-| Windows<br>Linux | No | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
+| Windows | כן | Phi-3-mini-4k-**directml**-int4-awq-block-128-onnx | 2.13GB |
+| Linux | כן | Phi-3-mini-4k-**cuda**-int4-onnx | 2.30GB |
+| Windows<br>Linux | לא | Phi-3-mini-4k-**cpu**-int4-rtn-block-32-acc-level-4-onnx | 2.72GB |
 
-**_Note_** You do not need an Azure Account to download the models
+**_הערה_** אין צורך בחשבון Azure כדי להוריד את המודלים.
 
-The Phi3-mini (int4) model is approximately 2GB-3GB in size. Depending on your network speed, it could take a few minutes to download.
+המודל Phi3-mini (int4) בגודל של כ-2GB-3GB. בהתאם למהירות הרשת שלכם, ההורדה עשויה לקחת כמה דקות.
 
-Start by selecting a project name and location.
-Next, select a model from the model catalog. You will be prompted to download the project template. You can then click "Configure Project" to adjust various settings.
+התחילו בבחירת שם ומיקום לפרויקט.
+לאחר מכן בחרו מודל מתוך קטלוג המודלים. תתבקשו להוריד את תבנית הפרויקט. לאחר מכן תוכלו ללחוץ על "Configure Project" כדי להתאים הגדרות שונות.
 
-### Microsoft Olive 
+### Microsoft Olive
 
-We use [Olive](https://microsoft.github.io/Olive/why-olive.html) to run QLoRA fine-tuning on a PyTorch model from our catalog. All of the settings are preset with the default values to optimize to run the fine-tuning process locally with optimized use of memory, but it can be adjusted for your scenario.
+אנו משתמשים ב-[Olive](https://microsoft.github.io/Olive/why-olive.html) להרצת כוונון QLoRA על מודל PyTorch מתוך הקטלוג שלנו. כל ההגדרות מוגדרות מראש עם ערכי ברירת מחדל לאופטימיזציה של תהליך הכוונון המקומי עם שימוש מיטבי בזיכרון, אך ניתן להתאים אותן לסיטואציה שלכם.
 
-### Fine Tuning Samples and Resoures
+### דוגמאות ומשאבים לכוונון
 
-- [Fine tuning Getting Started Guide](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
-- [Fine tuning with a HuggingFace Dataset](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
-- [Fine tuning with Simple DataSet](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
+- [מדריך התחלה לכוונון](https://learn.microsoft.com/windows/ai/toolkit/toolkit-fine-tune)
+- [כוונון עם מערך נתונים של HuggingFace](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-hf-dataset.md)
+- [כוונון עם מערך נתונים פשוט](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/walkthrough-simple-dataset.md)
 
-## **[Private Preview]** Remote Development
+## **[Private Preview]** פיתוח מרחוק
 
-### Prerequisites
+### דרישות מוקדמות
 
-1. To run the model fine-tuning in your remote Azure Container App Environment, make sure your subscription has enough GPU capacity. Submit a [support ticket](https://azure.microsoft.com/support/create-ticket/) to request the required capacity for your application. [Get More Info about GPU capacity](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
-2. If you are using private dataset on HuggingFace, make sure you have a [HuggingFace account](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) and [generate an access token](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
-3. Enable Remote Fine-tuning and Inference feature flag in the AI Toolkit for VS Code
-   1. Open the VS Code Settings by selecting *File -> Preferences -> Settings*.
-   2. Navigate to *Extensions* and select *AI Toolkit*.
-   3. Select the *"Enable Remote Fine-tuning And Inference"* option.
-   4. Reload VS Code to take effect.
+1. כדי להריץ כוונון מודל בסביבת Azure Container App מרחוק, ודאו שלמנוי שלכם יש מספיק קיבולת GPU. הגישו [כרטיס תמיכה](https://azure.microsoft.com/support/create-ticket/) כדי לבקש את הקיבולת הנדרשת לאפליקציה שלכם. [למידע נוסף על קיבולת GPU](https://learn.microsoft.com/azure/container-apps/workload-profiles-overview)
+2. אם אתם משתמשים במערך נתונים פרטי ב-HuggingFace, ודאו שיש לכם [חשבון HuggingFace](https://huggingface.co/?WT.mc_id=aiml-137032-kinfeylo) ו[יצרתם טוקן גישה](https://huggingface.co/docs/hub/security-tokens?WT.mc_id=aiml-137032-kinfeylo)
+3. הפעלת דגל תכונה לכוונון והסקת מסקנות מרחוק ב-AI Toolkit עבור VS Code
+   1. פתחו את הגדרות VS Code דרך *File -> Preferences -> Settings*.
+   2. עברו ל-*Extensions* ובחרו *AI Toolkit*.
+   3. סמן את האפשרות *"Enable Remote Fine-tuning And Inference"*.
+   4. טענו מחדש את VS Code כדי שהשינויים ייכנסו לתוקף.
 
-- [Remote Fine tuning](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
+- [כוונון מרחוק](https://github.com/microsoft/vscode-ai-toolkit/blob/main/archive/remote-finetuning.md)
 
-### Setting Up a Remote Development Project
-1. Execute the command palette `AI Toolkit: Focus on Resource View`.
-2. Navigate to *Model Fine-tuning* to access the model catalog. Assign a name to your project and select its location on your machine. Then, hit the *"Configure Project"* button.
-3. Project Configuration
-    1. Avoid enabling the *"Fine-tune locally"* option.
-    2. The Olive configuration settings will appear with pre-set default values. Please adjust and fill in these configurations as required.
-    3. Move on to *Generate Project*. This stage leverages WSL and involves setting up a new Conda environment, preparing for future updates that include Dev Containers.
-4. Click on *"Relaunch Window In Workspace"* to open your remote development project.
+### הגדרת פרויקט פיתוח מרחוק
+1. הריצו את פלטת הפקודות `AI Toolkit: Focus on Resource View`.
+2. עברו ל-*Model Fine-tuning* כדי לגשת לקטלוג המודלים. תנו שם לפרויקט ובחרו מיקום במחשב שלכם. לאחר מכן לחצו על כפתור *"Configure Project"*.
+3. הגדרת הפרויקט
+    1. הימנעו מהפעלת האפשרות *"Fine-tune locally"*.
+    2. הגדרות Olive יופיעו עם ערכי ברירת מחדל מוגדרים מראש. יש להתאים ולמלא את ההגדרות לפי הצורך.
+    3. המשיכו ל-*Generate Project*. שלב זה משתמש ב-WSL ומכין סביבת Conda חדשה, כהכנה לעדכונים עתידיים הכוללים Dev Containers.
+4. לחצו על *"Relaunch Window In Workspace"* כדי לפתוח את פרויקט הפיתוח המרוחק שלכם.
 
-> **Note:** The project currently works either locally or remotely within the AI Toolkit for VS Code. If you choose *"Fine-tune locally"* during project creation, it will operate exclusively in WSL without remote development capabilities. On the other hand, if you forego enabling *"Fine-tune locally"*, the project will be restricted to the remote Azure Container App environment.
+> **הערה:** הפרויקט עובד כרגע או מקומית או מרחוק בתוך AI Toolkit עבור VS Code. אם תבחרו ב-"Fine-tune locally" בעת יצירת הפרויקט, הוא יפעל רק ב-WSL ללא יכולות פיתוח מרחוק. לעומת זאת, אם לא תפעילו את "Fine-tune locally", הפרויקט יוגבל לסביבת Azure Container App מרחוק.
 
-### Provision Azure Resources
-To get started, you need to provision the Azure Resource for remote fine-tuning. Do this by running the `AI Toolkit: Provision Azure Container Apps job for fine-tuning` from the command palette.
+### פרוביזיה של משאבי Azure
+כדי להתחיל, יש לפרוביז את משאבי Azure עבור כוונון מרחוק. עשו זאת על ידי הרצת הפקודה `AI Toolkit: Provision Azure Container Apps job for fine-tuning` מפלטת הפקודות.
 
-Monitor the progress of the provision through the link displayed in the output channel.
+עקבו אחר התקדמות הפרוביזיה דרך הקישור שמוצג בערוץ הפלט.
 
-### [Optional] Add Huggingface Token to the Azure Container App Secret
-If you're using private HuggingFace dataset, set your HuggingFace token as an environment variable to avoid the need for manual login on the Hugging Face Hub.
-You can do this using the `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning command`. With this command, you can set the secret name as [`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) and use your Hugging Face token as the secret value.
+### [אופציונלי] הוספת טוקן Huggingface לסוד של Azure Container App
+אם אתם משתמשים במערך נתונים פרטי של HuggingFace, הגדירו את טוקן HuggingFace שלכם כמשתנה סביבה כדי למנוע צורך בהתחברות ידנית ל-Hugging Face Hub.
+ניתן לעשות זאת באמצעות הפקודה `AI Toolkit: Add Azure Container Apps Job secret for fine-tuning`. עם פקודה זו, תוכלו להגדיר את שם הסוד כ-[`HF_TOKEN`](https://huggingface.co/docs/huggingface_hub/package_reference/environment_variables#hftoken) ולהשתמש בטוקן Hugging Face שלכם כערך הסוד.
 
-### Run Fine-tuning
-To start the remote fine-tuning job, execute the `AI Toolkit: Run fine-tuning` command.
+### הרצת כוונון
+כדי להתחיל את עבודת הכוונון המרוחק, הריצו את הפקודה `AI Toolkit: Run fine-tuning`.
 
-To view the system and console logs, you can visit the Azure portal using the link in the output panel (more steps at [View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). Or, you can view the console logs directly in the VSCode output panel by running the command `AI Toolkit: Show the running fine-tuning job streaming logs`. 
-> **Note:** The job might be queued due to insufficient resources. If the log is not displayed, execute the `AI Toolkit: Show the running fine-tuning job streaming logs` command, wait for a while and then execute the command again to re-connect to the streaming log.
+כדי לצפות ביומני המערכת והקונסולה, ניתן לבקר בפורטל Azure דרך הקישור בפאנל הפלט (שלבים נוספים ב-[View and Query Logs on Azure](https://aka.ms/ai-toolkit/remote-provision#view-and-query-logs-on-azure)). או, ניתן לצפות ביומני הקונסולה ישירות בפאנל הפלט של VSCode על ידי הרצת הפקודה `AI Toolkit: Show the running fine-tuning job streaming logs`.
+> **הערה:** ייתכן שהעבודה תעמוד בתור עקב מחסור במשאבים. אם היומן לא מוצג, הריצו את הפקודה `AI Toolkit: Show the running fine-tuning job streaming logs`, המתינו מעט ואז הריצו שוב את הפקודה כדי להתחבר מחדש ליומן הזרימה.
 
-During this process, QLoRA will be used for fine-tuning, and will create LoRA adapters for the model to use during inference.
-The results of the fine-tuning will be stored in the Azure Files.
+בתהליך זה, QLoRA ישמש לכוונון, וייצור מתאמי LoRA למודל לשימוש במהלך ההסקה.
+תוצאות הכוונון יאוחסנו ב-Azure Files.
 
-### Provision Inference Endpoint
-After the adapters are trained in the remote environment, use a simple Gradio application to interact with the model.
-Similar to the fine-tuning process, you need to set up the Azure Resources for remote inference by executing the `AI Toolkit: Provision Azure Container Apps for inference` from the command palette.
+### פרוביזיה של נקודת קצה להסקת מסקנות
+לאחר שהמתאמים אומנו בסביבה המרוחקת, השתמשו באפליקציית Gradio פשוטה כדי לתקשר עם המודל.
+בדומה לתהליך הכוונון, יש להגדיר את משאבי Azure להסקת מסקנות מרחוק על ידי הרצת הפקודה `AI Toolkit: Provision Azure Container Apps for inference` מפלטת הפקודות.
 
-By default, the subscription and the resource group for inference should match those used for fine-tuning. The inference will use the same Azure Container App Environment and access the model and model adapter stored in Azure Files, which were generated during the fine-tuning step. 
+ברירת המחדל היא שמנוי וקבוצת המשאבים להסקת מסקנות יתאימו לאלו שבהם השתמשו בכוונון. ההסקה תשתמש באותה סביבת Azure Container App ותיגש למודל ולמתאם המודל המאוחסנים ב-Azure Files, שנוצרו במהלך שלב הכוונון.
 
+### פריסת נקודת הקצה להסקת מסקנות
+אם ברצונכם לשנות את קוד ההסקה או לטעון מחדש את מודל ההסקה, הריצו את הפקודה `AI Toolkit: Deploy for inference`. פעולה זו תסנכרן את הקוד העדכני שלכם עם Azure Container App ותאתחל מחדש את הרפליקה.
 
-### Deploy the Inference Endpoint
-If you wish to revise the inference code or reload the inference model, please execute the `AI Toolkit: Deploy for inference` command. This will synchronize your latest code with Azure Container App and restart the replica.  
-
-Once deployment is successfully completed, you can access the inference API by clicking on the "*Go to Inference Endpoint*" button displayed in the VSCode notification. Or, the web API endpoint can be found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` ובפאנל הפלט. אתם מוכנים עכשיו להעריך את המודל באמצעות נקודת הקצה הזו.
+לאחר שהפריסה הושלמה בהצלחה, תוכלו לגשת ל-API של ההסקה על ידי לחיצה על כפתור "*Go to Inference Endpoint*" שמופיע בהודעת VSCode. או, נקודת הקצה של ה-API נמצאת תחת `ACA_APP_ENDPOINT` בקובץ `./infra/inference.config.json` ובפאנל הפלט. כעת אתם מוכנים להעריך את המודל באמצעות נקודת קצה זו.
 
 ### שימוש מתקדם
-למידע נוסף על פיתוח מרחוק עם AI Toolkit, עיינו בתיעוד [Fine-Tuning models remotely](https://aka.ms/ai-toolkit/remote-provision) ו-[Inferencing with the fine-tuned model](https://aka.ms/ai-toolkit/remote-inference).
+למידע נוסף על פיתוח מרחוק עם AI Toolkit, עיינו בתיעוד [כוונון מודלים מרחוק](https://aka.ms/ai-toolkit/remote-provision) ו-[הסקת מסקנות עם המודל המכוונן](https://aka.ms/ai-toolkit/remote-inference).
 
 **כתב ויתור**:  
-מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון שתרגומים אוטומטיים עלולים להכיל שגיאות או אי דיוקים. המסמך המקורי בשפתו המקורית צריך להיחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי אדם. אנו לא נושאים באחריות לכל אי הבנות או פרשנויות שגויות הנובעות משימוש בתרגום זה.
+מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

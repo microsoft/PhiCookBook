@@ -2,34 +2,34 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-05-09T19:55:46+00:00",
+  "translation_date": "2025-07-17T04:55:49+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "tr"
 }
 -->
 ### Örnek Senaryo
 
-Elinizde bir resim (`demo.png`) olduğunu ve bu resmi işleyip yeni bir versiyonunu kaydeden Python kodu oluşturmak istediğinizi hayal edin (`phi-3-vision.jpg`).
+Elinizde bir resim (`demo.png`) olduğunu ve bu resmi işleyip yeni bir versiyonunu (`phi-3-vision.jpg`) kaydeden Python kodu oluşturmak istediğinizi hayal edin.
 
 Yukarıdaki kod bu süreci otomatikleştirir:
 
-1. Ortamı ve gerekli ayarları kurar.
-2. Modelin istenilen Python kodunu üretmesini sağlayan bir komut oluşturur.
-3. Komutu modele gönderir ve oluşturulan kodu toplar.
-4. Üretilen kodu çıkarır ve çalıştırır.
+1. Ortamı ve gerekli ayarları hazırlar.
+2. Modelin gerekli Python kodunu üretmesi için bir metin istemi oluşturur.
+3. İstemi modele gönderir ve oluşturulan kodu toplar.
+4. Oluşturulan kodu çıkarır ve çalıştırır.
 5. Orijinal ve işlenmiş resimleri gösterir.
 
-Bu yöntem, yapay zekanın gücünden faydalanarak görüntü işleme görevlerini otomatikleştirir, hedeflerinize daha kolay ve hızlı ulaşmanızı sağlar.
+Bu yöntem, görüntü işleme görevlerini otomatikleştirmek için yapay zekanın gücünden yararlanarak hedeflerinize daha kolay ve hızlı ulaşmanızı sağlar.
 
-[Sample Code Solution](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
+[Örnek Kod Çözümü](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
 
 Tüm kodun ne yaptığını adım adım inceleyelim:
 
-1. **Gerekli Paketi Kur**:  
+1. **Gerekli Paketi Yükle**:  
     ```python
     !pip install langchain_nvidia_ai_endpoints -U
     ```  
-    Bu komut `langchain_nvidia_ai_endpoints` paketini en güncel sürümüyle kurar.
+    Bu komut, `langchain_nvidia_ai_endpoints` paketini en güncel sürümüyle yükler.
 
 2. **Gerekli Modülleri İçe Aktar**:  
     ```python
@@ -38,14 +38,14 @@ Tüm kodun ne yaptığını adım adım inceleyelim:
     import os
     import base64
     ```  
-    Bu importlar, NVIDIA AI uç noktalarıyla etkileşim, şifrelerin güvenli yönetimi, işletim sistemi işlemleri ve base64 formatında kodlama/çözme için gereken modülleri getirir.
+    Bu importlar, NVIDIA AI uç noktalarıyla etkileşim, şifreleri güvenli şekilde yönetme, işletim sistemi işlemleri ve base64 formatında veri kodlama/çözme için gerekli modülleri getirir.
 
 3. **API Anahtarını Ayarla**:  
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
     ```  
-    Bu kod, `NVIDIA_API_KEY` ortam değişkeninin ayarlanıp ayarlanmadığını kontrol eder. Ayarlı değilse, kullanıcıdan güvenli bir şekilde API anahtarını girmesini ister.
+    Bu kod, `NVIDIA_API_KEY` ortam değişkeninin ayarlanıp ayarlanmadığını kontrol eder. Ayarlı değilse, kullanıcıdan API anahtarını güvenli şekilde girmesini ister.
 
 4. **Model ve Resim Yolunu Tanımla**:  
     ```python
@@ -53,13 +53,13 @@ Tüm kodun ne yaptığını adım adım inceleyelim:
     chat = ChatNVIDIA(model=model)
     img_path = './imgs/demo.png'
     ```  
-    Bu, kullanılacak modeli belirler, belirtilen modelle bir `ChatNVIDIA` örneği oluşturur ve resim dosyasının yolunu tanımlar.
+    Kullanılacak modeli belirler, belirtilen model ile `ChatNVIDIA` örneği oluşturur ve resim dosyasının yolunu tanımlar.
 
-5. **Metin Komutunu Oluştur**:  
+5. **Metin İstemi Oluştur**:  
     ```python
     text = "Please create Python code for image, and use plt to save the new picture under imgs/ and name it phi-3-vision.jpg."
     ```  
-    Modelin bir resmi işlemek için Python kodu üretmesini sağlayan metin komutunu tanımlar.
+    Modelin bir resmi işlemek için Python kodu üretmesini isteyen bir metin istemi tanımlar.
 
 6. **Resmi Base64 Formatında Kodla**:  
     ```python
@@ -69,11 +69,11 @@ Tüm kodun ne yaptığını adım adım inceleyelim:
     ```  
     Bu kod, resim dosyasını okur, base64 formatında kodlar ve kodlanmış veriyi içeren bir HTML img etiketi oluşturur.
 
-7. **Metin ve Resmi Komutta Birleştir**:  
+7. **Metin ve Resmi İstemde Birleştir**:  
     ```python
     prompt = f"{text} {image}"
     ```  
-    Metin komutu ve HTML img etiketi tek bir stringde birleştirilir.
+    Metin istemi ile HTML img etiketi tek bir stringde birleştirilir.
 
 8. **ChatNVIDIA ile Kod Üret**:  
     ```python
@@ -82,23 +82,23 @@ Tüm kodun ne yaptığını adım adım inceleyelim:
         print(chunk.content, end="")
         code += chunk.content
     ```  
-    Bu kod, komutu `ChatNVIDIA` model and collects the generated code in chunks, printing and appending each chunk to the `code` stringine gönderir.
+    Bu kod, istemi `ChatNVIDIA` modeline gönderir ve oluşturulan kod parçalarını toplar, her parçayı yazdırır ve `code` değişkenine ekler.
 
-9. **Üretilen İçerikten Python Kodunu Çıkar**:  
+9. **Oluşturulan İçerikten Python Kodunu Çıkar**:  
     ```python
     begin = code.index('```python') + 9  
     code = code[begin:]  
     end = code.index('```')
     code = code[:end]
     ```  
-    Bu, markdown formatını kaldırarak gerçek Python kodunu çıkarır.
+    Markdown formatlamasını kaldırarak gerçek Python kodunu içerikten çıkarır.
 
-10. **Üretilen Kodu Çalıştır**:  
+10. **Oluşturulan Kodu Çalıştır**:  
     ```python
     import subprocess
     result = subprocess.run(["python", "-c", code], capture_output=True)
     ```  
-    Çıkarılan Python kodu bir alt süreç olarak çalıştırılır ve çıktısı yakalanır.
+    Çıkarılan Python kodunu bir alt süreç olarak çalıştırır ve çıktısını yakalar.
 
 11. **Resimleri Göster**:  
     ```python
@@ -106,7 +106,7 @@ Tüm kodun ne yaptığını adım adım inceleyelim:
     display(Image(filename='./imgs/phi-3-vision.jpg'))
     display(Image(filename='./imgs/demo.png'))
     ```  
-    Bu satırlar, `IPython.display` modülünü kullanarak resimleri görüntüler.
+    Bu satırlar, `IPython.display` modülünü kullanarak resimleri gösterir.
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek herhangi bir yanlış anlama veya yanlış yorumlamadan sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

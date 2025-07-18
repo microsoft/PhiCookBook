@@ -2,66 +2,66 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5764be88ad2eb4f341e742eb8f14fab1",
-  "translation_date": "2025-05-09T20:52:40+00:00",
+  "translation_date": "2025-07-17T06:46:46+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MicrosoftOlive.md",
   "language_code": "fi"
 }
 -->
 # **Phi-3:n hienosäätö Microsoft Olivella**
 
-[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) on helppokäyttöinen laitteistotietoinen mallin optimointityökalu, joka yhdistää alan johtavat tekniikat mallin pakkaamisessa, optimoinnissa ja käännöksessä.
+[Olive](https://github.com/microsoft/OLive?WT.mc_id=aiml-138114-kinfeylo) on helppokäyttöinen laitteistotietoinen mallin optimointityökalu, joka yhdistää alan johtavat tekniikat mallin pakkaamiseen, optimointiin ja käännökseen.
 
-Se on suunniteltu sujuvoittamaan koneoppimismallien optimointiprosessia, varmistaen, että ne hyödyntävät mahdollisimman tehokkaasti tiettyjä laitteistoarkkitehtuureja.
+Se on suunniteltu sujuvoittamaan koneoppimismallien optimointiprosessia, varmistaen, että mallit hyödyntävät tehokkaasti tiettyjä laitteistoarkkitehtuureja.
 
-Työskentelitpä pilvipohjaisten sovellusten tai reunalaitteiden parissa, Olive mahdollistaa mallien optimoinnin vaivattomasti ja tehokkaasti.
+Työskenteletpä sitten pilvipohjaisten sovellusten tai reunalaitteiden parissa, Olive mahdollistaa malliesi optimoinnin vaivattomasti ja tehokkaasti.
 
 ## Keskeiset ominaisuudet:
-- Olive kokoaa yhteen ja automatisoi optimointitekniikat haluttuihin laitteistokohteisiin.
-- Yksikään optimointimenetelmä ei sovi kaikkiin tilanteisiin, joten Olive mahdollistaa laajennettavuuden, jolloin alan asiantuntijat voivat liittää omia optimointiuudistuksiaan.
+- Olive kokoaa ja automatisoi optimointitekniikat halutuille laitteistokohteille.
+- Yksikään optimointitekniikka ei sovi kaikkiin tilanteisiin, joten Olive mahdollistaa laajennettavuuden antamalla alan asiantuntijoiden liittää omia optimointiuudistuksiaan.
 
-## Vähennä insinöörityötä:
+## Vähennä kehitystyötä:
 - Kehittäjien täytyy usein oppia ja käyttää useita laitevalmistajakohtaisia työkaluketjuja koulutettujen mallien valmisteluun ja optimointiin käyttöönottoa varten.
 - Olive yksinkertaistaa tätä kokemusta automatisoimalla optimointitekniikat halutulle laitteistolle.
 
 ## Valmis E2E-optimointiratkaisu:
 
-Yhdistämällä ja virittämällä integroituja tekniikoita Olive tarjoaa yhtenäisen ratkaisun päästä päähän -optimointiin.
-Se ottaa huomioon rajoitteet kuten tarkkuuden ja viiveen mallia optimoidessa.
+Yhdistämällä ja hienosäätämällä integroituja tekniikoita Olive tarjoaa yhtenäisen ratkaisun päästä päähän optimointiin.
+Se ottaa huomioon rajoitteet kuten tarkkuuden ja viiveen mallien optimoinnin aikana.
 
 ## Microsoft Oliven käyttö hienosäätöön
 
-Microsoft Olive on erittäin helppokäyttöinen avoimen lähdekoodin mallin optimointityökalu, joka kattaa sekä hienosäädön että referenssin generatiivisen tekoälyn alalla. Se vaatii vain yksinkertaisen konfiguraation, ja yhdistettynä avoimen lähdekoodin pieniin kielimalleihin sekä niihin liittyviin ajoympäristöihin (AzureML / paikallinen GPU, CPU, DirectML) voit suorittaa mallin hienosäädön tai referenssin automaattisen optimoinnin avulla ja löytää parhaan mallin käyttöönotettavaksi pilvessä tai reunalaitteissa. Tämä mahdollistaa yrityksille oman toimialakohtaisten mallien rakentamisen paikallisesti ja pilvessä.
+Microsoft Olive on erittäin helppokäyttöinen avoimen lähdekoodin mallin optimointityökalu, joka kattaa sekä hienosäädön että referenssin generatiivisen tekoälyn alalla. Se vaatii vain yksinkertaisen konfiguraation, ja yhdistettynä avoimen lähdekoodin pieniin kielimalleihin ja niihin liittyviin ajoympäristöihin (AzureML / paikallinen GPU, CPU, DirectML) voit suorittaa mallin hienosäädön tai referenssin automaattisen optimoinnin avulla ja löytää parhaan mallin käyttöönotettavaksi pilveen tai reunalaitteisiin. Tämä mahdollistaa yrityksille oman toimialakohtaisten mallien rakentamisen sekä paikallisesti että pilvessä.
 
-![intro](../../../../translated_images/intro.dcc44a1aafcf58bf979b9a69384ffea98b5b599ac034dde94937a94a29260332.fi.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.fi.png)
 
 ## Phi-3:n hienosäätö Microsoft Olivella
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.7a9c66b3310981030c47cf637befed8fa1ea1acd0f5acec5ac090a8f3f904a45.fi.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.fi.png)
 
 ## Phi-3 Olive -esimerkkikoodi ja esimerkki
 Tässä esimerkissä käytät Olivea:
 
-- Hienosäätämään LoRA-adapteria luokittelemaan lauseita tunteisiin Sad, Joy, Fear, Surprise.
+- Hienosäätämään LoRA-adapteria luokittelemaan lauseita Sad, Joy, Fear, Surprise -luokkiin.
 - Yhdistämään adapterin painot perusmalliin.
 - Optimoimaan ja kvantisoimaan mallin int4-muotoon.
 
-[Sample Code](../../code/03.Finetuning/olive-ort-example/README.md)
+[Esimerkkikoodi](../../code/03.Finetuning/olive-ort-example/README.md)
 
 ### Microsoft Oliven asennus
 
-Microsoft Oliven asennus on hyvin yksinkertaista, ja se voidaan asentaa myös CPU:lle, GPU:lle, DirectML:lle ja Azure ML:lle
+Microsoft Oliven asennus on hyvin yksinkertaista, ja se voidaan asentaa myös CPU:lle, GPU:lle, DirectML:lle ja Azure ML:lle.
 
 ```bash
 pip install olive-ai
 ```
 
-Jos haluat ajaa ONNX-mallia CPU:lla, voit käyttää
+Jos haluat ajaa ONNX-mallin CPU:lla, voit käyttää
 
 ```bash
 pip install olive-ai[cpu]
 ```
 
-Jos haluat ajaa ONNX-mallia GPU:lla, voit käyttää
+Jos haluat ajaa ONNX-mallin GPU:lla, voit käyttää
 
 ```python
 pip install olive-ai[gpu]
@@ -82,11 +82,11 @@ Asennuksen jälkeen voit konfiguroida erilaisia mallikohtaisia asetuksia Config-
 
 **1. Data**
 
-Microsoft Olivella voidaan tukea koulutusta paikallisella ja pilvidatalla, ja asetukset voidaan määrittää konfiguraatiossa.
+Microsoft Olivessa voidaan tukea koulutusta paikallisella datalla ja pilvidatalla, ja nämä voidaan määrittää asetuksissa.
 
 *Paikallisen datan asetukset*
 
-Voit helposti määrittää koulutukseen käytettävän datasarjan hienosäätöä varten, yleensä json-muodossa, ja sovittaa sen datamalliin. Tämä tulee säätää mallin vaatimusten mukaan (esim. sovittaa Microsoft Phi-3-minin vaatimaan muotoon. Jos käytössä on muita malleja, katso muiden mallien vaadittuja hienosäätöformaatteja).
+Voit yksinkertaisesti määrittää koulutettavan datan joukon hienosäätöä varten, yleensä json-muodossa, ja sovittaa sen datamalliin. Tämä täytyy säätää mallin vaatimusten mukaan (esimerkiksi sovittaa Microsoft Phi-3-minin vaatimalle formaatille. Jos sinulla on muita malleja, katso muiden mallien vaadittuja hienosäätöformaatteja käsittelyä varten).
 
 ```json
 
@@ -119,9 +119,9 @@ Voit helposti määrittää koulutukseen käytettävän datasarjan hienosäätö
     ],
 ```
 
-**Pilvidatalähteen asetukset**
+**Pilvidatan lähdeasetukset**
 
-Linkittämällä Azure AI Studion/Azure Machine Learning Servicen datastore pilvidataan, voit valita eri datalähteitä Azure AI Studioon/Azure Machine Learning Serviceen Microsoft Fabricin ja Azure Datan kautta hienosäätöä varten.
+Linkittämällä Azure AI Studion/Azure Machine Learning Servicen datastore pilvidataan voit valita eri datalähteitä Azure AI Studioon/Azure Machine Learning Serviceen Microsoft Fabricin ja Azure Datan kautta tukemaan hienosäätödataa.
 
 ```json
 
@@ -168,7 +168,7 @@ Linkittämällä Azure AI Studion/Azure Machine Learning Servicen datastore pilv
 
 **2. Laskentakonfiguraatio**
 
-Jos haluat käyttää paikallisia resursseja, voit suoraan hyödyntää paikallisia datalähteitä. Jos tarvitset Azure AI Studio / Azure Machine Learning Servicen resursseja, sinun tulee konfiguroida siihen liittyvät Azure-parametrit, laskentakapasiteetin nimi jne.
+Jos haluat käyttää paikallista, voit käyttää suoraan paikallisia dataresursseja. Jos tarvitset Azure AI Studion / Azure Machine Learning Servicen resursseja, sinun täytyy konfiguroida asiaankuuluvat Azure-parametrit, laskentatehon nimi jne.
 
 ```json
 
@@ -201,7 +201,7 @@ Jos haluat käyttää paikallisia resursseja, voit suoraan hyödyntää paikalli
 
 ***Huomio***
 
-Koska suoritus tapahtuu kontissa Azure AI Studio / Azure Machine Learning Servicen kautta, vaadittu ympäristö tulee konfiguroida. Tämä tehdään conda.yaml-ympäristötiedostossa.
+Koska se ajetaan kontissa Azure AI Studiossa/Azure Machine Learning Servicessä, tarvittava ympäristö täytyy konfiguroida. Tämä tehdään conda.yaml-ympäristössä.
 
 ```yaml
 
@@ -236,9 +236,9 @@ dependencies:
 
 **3. Valitse SLM**
 
-Voit käyttää mallia suoraan Hugging Facesta tai yhdistää sen Azure AI Studio / Azure Machine Learningin Malliluetteloon ja valita käytettävän mallin. Alla olevassa koodiesimerkissä käytämme Microsoft Phi-3-minia esimerkkinä.
+Voit käyttää mallia suoraan Hugging Facesta tai yhdistää sen suoraan Azure AI Studion / Azure Machine Learningin Malliluetteloon valitaksesi käytettävän mallin. Alla olevassa koodiesimerkissä käytämme Microsoft Phi-3-minia esimerkkinä.
 
-Jos malli on paikallisesti, voit käyttää tätä tapaa
+Jos sinulla on malli paikallisesti, voit käyttää tätä tapaa
 
 ```json
 
@@ -256,7 +256,7 @@ Jos malli on paikallisesti, voit käyttää tätä tapaa
     },
 ```
 
-Jos haluat käyttää mallia Azure AI Studio / Azure Machine Learning Servicestä, voit käyttää tätä tapaa
+Jos haluat käyttää mallia Azure AI Studiosta / Azure Machine Learning Servicestä, voit käyttää tätä tapaa
 
 ```json
 
@@ -284,15 +284,15 @@ Jos haluat käyttää mallia Azure AI Studio / Azure Machine Learning Servicest�
 ```
 
 **Huomio:**
-Tarvitsemme integraation Azure AI Studion / Azure Machine Learning Servicen kanssa, joten mallin asetuksissa tulee huomioida versio ja nimistöt.
+Meidän täytyy integroitua Azure AI Studion / Azure Machine Learning Servicen kanssa, joten mallin asetuksissa ota huomioon versio ja siihen liittyvät nimet.
 
-Kaikki Azuren mallit tulee asettaa PyTorch.MLflow-muotoon.
+Kaikkien Azure-mallien tulee olla asetettu PyTorch.MLflowksi.
 
-Sinulla tulee olla Hugging Face -tili ja liittää avain Azure AI Studion / Azure Machine Learningin Key-arvoon.
+Sinulla tulee olla Hugging Face -tili ja avain sidottuna Azure AI Studion / Azure Machine Learningin avainarvoon.
 
 **4. Algoritmi**
 
-Microsoft Olive kapseloi Lora- ja QLora-hienosäätöalgoritmit erittäin hyvin. Sinun tarvitsee konfiguroida vain muutamia parametreja. Tässä otan QLoran esimerkkinä.
+Microsoft Olive kapseloi LoRA- ja QLoRA-hienosäätöalgoritmit erittäin hyvin. Sinun tarvitsee konfiguroida vain muutamia asiaankuuluvia parametreja. Tässä otan esimerkkinä QLoRAn.
 
 ```json
         "lora": {
@@ -331,10 +331,10 @@ Microsoft Olive kapseloi Lora- ja QLora-hienosäätöalgoritmit erittäin hyvin.
 
 Jos haluat kvantisointimuunnoksen, Microsoft Oliven päähaara tukee jo onnxruntime-genai-menetelmää. Voit asettaa sen tarpeidesi mukaan:
 
-1. yhdistä adapterin painot perusmalliin
-2. Muunna malli onnx-malliksi halutulla tarkkuudella ModelBuilderin avulla
+1. yhdistä adapterin painot perusmalliin  
+2. Muunna malli onnx-malliksi vaaditulla tarkkuudella ModelBuilderilla
 
-esim. muunnos kvantisoituun INT4-muotoon
+esimerkiksi muuntamalla kvantisoiduksi INT4-muodoksi
 
 ```json
 
@@ -349,9 +349,9 @@ esim. muunnos kvantisoituun INT4-muotoon
         }
 ```
 
-**Huomio**
-- Jos käytät QLoRAa, ONNXRuntime-genai:n kvantisointimuunnos ei ole toistaiseksi tuettu.
-- Tässä kannattaa korostaa, että voit asettaa yllä olevat vaiheet tarpeidesi mukaan. Ei ole pakollista konfiguroida kaikkia näitä vaiheita kokonaan. Tarpeidesi mukaan voit käyttää suoraan algoritmin vaiheita ilman hienosäätöä. Lopuksi tulee konfiguroida tarvittavat moottorit.
+**Huomio**  
+- Jos käytät QLoRAa, ONNXRuntime-genain kvantisointimuunnos ei ole toistaiseksi tuettu.  
+- Tässä on hyvä mainita, että voit asettaa yllä olevat vaiheet tarpeidesi mukaan. Ei ole pakollista konfiguroida kaikkia näitä vaiheita kokonaan. Tarpeidesi mukaan voit käyttää suoraan algoritmin vaiheita ilman hienosäätöä. Lopuksi sinun täytyy konfiguroida asiaankuuluvat moottorit.
 
 ```json
 
@@ -368,11 +368,11 @@ esim. muunnos kvantisoituun INT4-muotoon
 
 **5. Hienosäätö valmis**
 
-Komentorivillä suorita olive-config.json-kansion sisällä
+Komentorivillä suorita olive-config.json -hakemistossa
 
 ```bash
 olive run --config olive-config.json  
 ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty tekoälypohjaisella käännöspalvelulla [Co-op Translator](https://github.com/Azure/co-op-translator). Pyrimme tarkkuuteen, mutta huomioithan, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäinen asiakirja sen alkuperäiskielellä tulee pitää auktoritatiivisena lähteenä. Tärkeiden tietojen osalta suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

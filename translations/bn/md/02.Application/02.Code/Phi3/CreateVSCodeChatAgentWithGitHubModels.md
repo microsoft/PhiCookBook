@@ -2,63 +2,63 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:04:05+00:00",
+  "translation_date": "2025-07-17T03:23:48+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "bn"
 }
 -->
-# **GitHub Models দ্বারা Phi-3.5 এর সাহায্যে নিজের Visual Studio Code Chat Copilot Agent তৈরি করুন**
+# **GitHub Models-এর Phi-3.5 দিয়ে নিজের Visual Studio Code Chat Copilot Agent তৈরি করুন**
 
-আপনি কি Visual Studio Code Copilot ব্যবহার করছেন? বিশেষ করে Chat-এ, আপনি বিভিন্ন এজেন্ট ব্যবহার করে Visual Studio Code-এ প্রজেক্ট তৈরি, লেখালেখি এবং রক্ষণাবেক্ষণের ক্ষমতা বাড়াতে পারেন। Visual Studio Code একটি API প্রদান করে যা কোম্পানি এবং ব্যক্তিদের তাদের ব্যবসার ভিত্তিতে বিভিন্ন এজেন্ট তৈরি করতে দেয়, যা তাদের নিজস্ব ক্ষেত্রগুলিতে ক্ষমতা সম্প্রসারণ করে। এই লেখায় আমরা GitHub Models এর **Phi-3.5-mini-instruct (128k)** এবং **Phi-3.5-vision-instruct (128k)** নিয়ে আলোচনা করব, যা দিয়ে আপনি নিজের Visual Studio Code Agent তৈরি করতে পারবেন।
+আপনি কি Visual Studio Code Copilot ব্যবহার করছেন? বিশেষ করে Chat-এ, আপনি বিভিন্ন এজেন্ট ব্যবহার করে Visual Studio Code-এ প্রজেক্ট তৈরি, লেখা এবং রক্ষণাবেক্ষণের ক্ষমতা উন্নত করতে পারেন। Visual Studio Code একটি API প্রদান করে যা কোম্পানি এবং ব্যক্তিদের তাদের ব্যবসার ভিত্তিতে বিভিন্ন এজেন্ট তৈরি করতে দেয়, যাতে তারা বিভিন্ন নিজস্ব ক্ষেত্রের দক্ষতা বাড়াতে পারে। এই প্রবন্ধে, আমরা GitHub Models-এর **Phi-3.5-mini-instruct (128k)** এবং **Phi-3.5-vision-instruct (128k)** নিয়ে আলোচনা করব, যেগুলো দিয়ে আপনি নিজের Visual Studio Code Agent তৈরি করতে পারবেন।
 
-## **GitHub Models এর Phi-3.5 সম্পর্কে**
+## **GitHub Models-এর Phi-3.5 সম্পর্কে**
 
-আমরা জানি Phi-3/3.5-mini-instruct Phi-3/3.5 পরিবারে কোড বোঝা এবং তৈরি করার ক্ষেত্রে শক্তিশালী, এবং এটি Gemma-2-9b ও Mistral-Nemo-12B-instruct-2407 এর থেকে উন্নত।
+আমরা জানি Phi-3/3.5-mini-instruct Phi-3/3.5 পরিবারের একটি মডেল, যার কোড বোঝার এবং তৈরি করার ক্ষমতা শক্তিশালী, এবং এটি Gemma-2-9b ও Mistral-Nemo-12B-instruct-2407 এর থেকে উন্নত।
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.bn.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.bn.png)
 
-সর্বশেষ GitHub Models ইতোমধ্যে Phi-3.5-mini-instruct (128k) এবং Phi-3.5-vision-instruct (128k) মডেলগুলোর অ্যাক্সেস প্রদান করছে। ডেভেলপাররা OpenAI SDK, Azure AI Inference SDK, এবং REST API এর মাধ্যমে এগুলো ব্যবহার করতে পারেন।
+সর্বশেষ GitHub Models ইতোমধ্যে Phi-3.5-mini-instruct (128k) এবং Phi-3.5-vision-instruct (128k) মডেলগুলোর অ্যাক্সেস প্রদান করে। ডেভেলপাররা এগুলো OpenAI SDK, Azure AI Inference SDK, এবং REST API এর মাধ্যমে ব্যবহার করতে পারেন।
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.bn.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.bn.png)
 
-***Note: *** এখানে Azure AI Inference SDK ব্যবহার করার পরামর্শ দেওয়া হয়, কারণ এটি প্রোডাকশন পরিবেশে Azure Model Catalog-এর সাথে ভালভাবে সুইচ করতে পারে।
+***Note:*** এখানে Azure AI Inference SDK ব্যবহার করার পরামর্শ দেওয়া হয়, কারণ এটি প্রোডাকশন পরিবেশে Azure Model Catalog-এর সাথে ভালোভাবে সুইচ করতে পারে।
 
-নিম্নে GitHub Models-এর সাথে সংযুক্ত হওয়ার পর কোড জেনারেশনের ক্ষেত্রে **Phi-3.5-mini-instruct (128k)** এবং **Phi-3.5-vision-instruct (128k)** এর ফলাফল এবং পরবর্তী উদাহরণগুলোর প্রস্তুতি দেওয়া হলো।
+নিচে GitHub Models-এর সাথে সংযুক্ত হওয়ার পর কোড জেনারেশনের ক্ষেত্রে **Phi-3.5-mini-instruct (128k)** এবং **Phi-3.5-vision-instruct (128k)** এর ফলাফল দেওয়া হলো, এবং পরবর্তী উদাহরণগুলোর জন্য প্রস্তুতি নেওয়া হয়েছে।
 
-**Demo: GitHub Models Phi-3.5-mini-instruct (128k) থেকে Prompt ব্যবহার করে কোড তৈরি** ([এই লিংকে ক্লিক করুন](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**ডেমো: GitHub Models Phi-3.5-mini-instruct (128k) প্রম্পট থেকে কোড তৈরি** ([এই লিঙ্কে ক্লিক করুন](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**Demo: GitHub Models Phi-3.5-vision-instruct (128k) থেকে ছবি ব্যবহার করে কোড তৈরি** ([এই লিংকে ক্লিক করুন](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**ডেমো: GitHub Models Phi-3.5-vision-instruct (128k) ছবি থেকে কোড তৈরি** ([এই লিঙ্কে ক্লিক করুন](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 
 ## **GitHub Copilot Chat Agent সম্পর্কে**
 
-GitHub Copilot Chat Agent বিভিন্ন প্রজেক্ট পরিস্থিতিতে কোডের ভিত্তিতে বিভিন্ন কাজ সম্পন্ন করতে পারে। সিস্টেমে চারটি এজেন্ট রয়েছে: workspace, github, terminal, vscode
+GitHub Copilot Chat Agent বিভিন্ন প্রজেক্ট পরিস্থিতিতে কোডের ভিত্তিতে বিভিন্ন কাজ সম্পন্ন করতে পারে। সিস্টেমে চারটি এজেন্ট আছে: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.bn.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.bn.png)
 
-‘@’ চিহ্নের সাথে এজেন্টের নাম যোগ করে আপনি দ্রুত সংশ্লিষ্ট কাজ শেষ করতে পারেন। কোম্পানির জন্য, যদি আপনি আপনার ব্যবসা সংক্রান্ত বিষয় যেমন রিকোয়ারমেন্ট, কোডিং, টেস্ট স্পেসিফিকেশন, এবং রিলিজ যোগ করেন, তাহলে GitHub Copilot-এর ভিত্তিতে আরও শক্তিশালী এন্টারপ্রাইজ প্রাইভেট ফাংশন পেতে পারেন।
+এজেন্টের নামের সাথে ‘@’ যোগ করে আপনি দ্রুত সংশ্লিষ্ট কাজ সম্পন্ন করতে পারেন। ব্যবসার জন্য, যদি আপনি আপনার নিজস্ব ব্যবসায়িক বিষয়বস্তু যেমন প্রয়োজনীয়তা, কোডিং, টেস্ট স্পেসিফিকেশন, এবং রিলিজ যুক্ত করেন, তাহলে GitHub Copilot-এর ভিত্তিতে আরও শক্তিশালী এন্টারপ্রাইজ প্রাইভেট ফাংশন পেতে পারেন।
 
-Visual Studio Code Chat Agent এখন অফিসিয়ালি তার API মুক্তি দিয়েছে, যা কোম্পানি বা এন্টারপ্রাইজ ডেভেলপারদের বিভিন্ন সফটওয়্যার ব্যবসায়িক ইকোসিস্টেমের উপর ভিত্তি করে এজেন্ট তৈরি করতে দেয়। Visual Studio Code Extension Development পদ্ধতির মাধ্যমে আপনি সহজেই Visual Studio Code Chat Agent API এর ইন্টারফেস অ্যাক্সেস করতে পারেন। আমরা এই প্রক্রিয়ার ভিত্তিতে উন্নয়ন করতে পারি।
+Visual Studio Code Chat Agent এখন অফিসিয়ালি API প্রকাশ করেছে, যা এন্টারপ্রাইজ বা এন্টারপ্রাইজ ডেভেলপারদের বিভিন্ন সফটওয়্যার ব্যবসায়িক ইকোসিস্টেমের ভিত্তিতে এজেন্ট তৈরি করতে দেয়। Visual Studio Code Extension Development-এর উন্নয়ন পদ্ধতির ওপর ভিত্তি করে, আপনি সহজেই Visual Studio Code Chat Agent API-এর ইন্টারফেসে অ্যাক্সেস পেতে পারেন। আমরা এই প্রক্রিয়ার ওপর ভিত্তি করে উন্নয়ন করতে পারি।
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.bn.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.bn.png)
 
-উন্নয়ন পরিস্থিতি তৃতীয় পক্ষের মডেল API (যেমন GitHub Models, Azure Model Catalog, এবং ওপেন সোর্স মডেলের উপর ভিত্তি করে নিজস্ব সার্ভিস) অ্যাক্সেস করার সুবিধা দেয় এবং GitHub Copilot দ্বারা সরবরাহিত gpt-35-turbo, gpt-4, এবং gpt-4o মডেলও ব্যবহার করতে পারে।
+উন্নয়ন পরিস্থিতি তৃতীয় পক্ষের মডেল API-তে (যেমন GitHub Models, Azure Model Catalog, এবং ওপেন সোর্স মডেলের ওপর ভিত্তি করে নিজস্ব সেবা) অ্যাক্সেস সমর্থন করে এবং GitHub Copilot দ্বারা প্রদত্ত gpt-35-turbo, gpt-4, এবং gpt-4o মডেলও ব্যবহার করতে পারে।
 
-## **Phi-3.5 ভিত্তিক @phicoding এজেন্ট যোগ করুন**
+## **Phi-3.5-এর ভিত্তিতে @phicoding এজেন্ট যোগ করুন**
 
-আমরা Phi-3.5 এর প্রোগ্রামিং সক্ষমতাগুলো একত্রিত করে কোড লেখা, ছবি থেকে কোড তৈরি এবং অন্যান্য কাজ সম্পন্ন করার চেষ্টা করছি। Phi-3.5 ভিত্তিক @PHI নামে একটি এজেন্ট তৈরি করা হয়েছে, যার কিছু ফিচার নিচে দেওয়া হলো:
+আমরা Phi-3.5-এর প্রোগ্রামিং ক্ষমতাগুলো একত্রিত করে কোড লেখা, ছবি থেকে কোড তৈরি এবং অন্যান্য কাজ সম্পন্ন করার চেষ্টা করছি। Phi-3.5-এর চারপাশে তৈরি একটি এজেন্ট - @PHI, এর কিছু ফাংশন নিচে দেওয়া হলো:
 
-1. GitHub Copilot দ্বারা সরবরাহিত GPT-4o এর মাধ্যমে **@phicoding /help** কমান্ড দিয়ে একটি স্ব-পরিচয় তৈরি করা
+1. GitHub Copilot দ্বারা প্রদত্ত GPT-4o এর ভিত্তিতে **@phicoding /help** কমান্ডের মাধ্যমে স্ব-পরিচিতি তৈরি করা
 
-2. **Phi-3.5-mini-instruct (128k)** এর ভিত্তিতে বিভিন্ন প্রোগ্রামিং ভাষার কোড **@phicoding /gen** কমান্ড দিয়ে তৈরি করা
+2. **Phi-3.5-mini-instruct (128k)** এর ভিত্তিতে বিভিন্ন প্রোগ্রামিং ভাষার কোড তৈরি করা **@phicoding /gen** কমান্ডের মাধ্যমে
 
-3. **Phi-3.5-vision-instruct (128k)** এবং ছবি থেকে কোড পূরণ **@phicoding /image** কমান্ড দিয়ে করা
+3. **Phi-3.5-vision-instruct (128k)** এবং ছবি সম্পূর্ণ করার ভিত্তিতে কোড তৈরি করা **@phicoding /image** কমান্ডের মাধ্যমে
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.bn.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.bn.png)
 
-## **সংশ্লিষ্ট ধাপসমূহ**
+## **সম্পর্কিত ধাপসমূহ**
 
-1. npm ব্যবহার করে Visual Studio Code Extension development সাপোর্ট ইনস্টল করুন
+1. npm ব্যবহার করে Visual Studio Code Extension উন্নয়ন সাপোর্ট ইনস্টল করুন
 
 ```bash
 
@@ -66,7 +66,7 @@ npm install --global yo generator-code
 
 ```
 
-2. Visual Studio Code Extension প্লাগইন তৈরি করুন (Typescript ডেভেলপমেন্ট মোডে, নাম phiext)
+2. Visual Studio Code Extension প্লাগইন তৈরি করুন (Typescript উন্নয়ন মোড ব্যবহার করে, নাম phiext)
 
 ```bash
 
@@ -74,7 +74,7 @@ yo code
 
 ```
 
-3. তৈরি প্রজেক্ট খুলে package.json পরিবর্তন করুন। এখানে সংশ্লিষ্ট নির্দেশনা ও কনফিগারেশন, পাশাপাশি GitHub Models এর কনফিগারেশন থাকবে। লক্ষ্য করুন, এখানে আপনার GitHub Models টোকেন যোগ করতে হবে।
+3. তৈরি করা প্রজেক্ট খুলে package.json পরিবর্তন করুন। এখানে সংশ্লিষ্ট নির্দেশনা ও কনফিগারেশন এবং GitHub Models-এর কনফিগারেশন দেওয়া আছে। লক্ষ্য করুন, এখানে আপনার GitHub Models টোকেন যোগ করতে হবে।
 
 ```json
 
@@ -365,29 +365,29 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.bn.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.bn.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.bn.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.bn.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.bn.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.bn.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.bn.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.bn.png)
 
-আপনি স্যাম্পল কোড ডাউনলোড করতে পারেন :[ক্লিক করুন](../../../../../../code/09.UpdateSamples/Aug/vscode)
+আপনি স্যাম্পল কোড ডাউনলোড করতে পারেন: [ক্লিক করুন](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **রিসোর্সসমূহ**
 
-1. GitHub Models এ সাইন আপ করুন [https://gh.io/models](https://gh.io/models)
+1. GitHub Models-এ সাইন আপ করুন [https://gh.io/models](https://gh.io/models)
 
 2. Visual Studio Code Extension Development শিখুন [https://code.visualstudio.com/api/get-started/your-first-extension](https://code.visualstudio.com/api/get-started/your-first-extension)
 
 3. Visual Studio Code Copilot Chat API সম্পর্কে জানুন [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
-**অস্বীকারোক্তি**:  
-এই ডকুমেন্টটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনুবাদ করা হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল ডকুমেন্টের স্থানীয় ভাষার সংস্করণই কর্তৃপক্ষপূর্ণ উৎস হিসেবে বিবেচনা করা উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ প্রয়োজন। এই অনুবাদের ব্যবহার থেকে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।
+**অস্বীকৃতি**:  
+এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ গ্রহণ করার পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।

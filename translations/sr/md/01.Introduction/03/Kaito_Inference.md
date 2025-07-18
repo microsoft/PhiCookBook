@@ -2,44 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T12:00:31+00:00",
+  "translation_date": "2025-07-16T20:53:42+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "sr"
 }
 -->
-## Inference sa Kaito
+## Инференција са Kaitо
 
-[Kaito](https://github.com/Azure/kaito) je operator koji automatizuje postavljanje AI/ML inference modela u Kubernetes klasteru.
+[Kaito](https://github.com/Azure/kaito) је оператор који аутоматизује распоређивање AI/ML инференцијских модела у Kubernetes кластеру.
 
-Kaito se razlikuje od većine uobičajenih metoda za postavljanje modela koje se baziraju na virtuelnim mašinama na sledeće načine:
+Kaito има следеће кључне разлике у односу на већину уобичајених метода за распоређивање модела базираних на виртуелним машинама:
 
-- Upravljanje fajlovima modela putem container imidža. HTTP server je obezbeđen za izvođenje inference poziva koristeći model biblioteku.
-- Izbegavanje podešavanja parametara postavljanja u skladu sa GPU hardverom kroz unapred definisane konfiguracije.
-- Automatsko obezbeđivanje GPU nodova prema zahtevima modela.
-- Hostovanje velikih model imidža u javnom Microsoft Container Registry (MCR), ukoliko licenca to dozvoljava.
+- Управљање фајловима модела помоћу контејнер слика. Пружа HTTP сервер за извођење инференцијских позива користећи библиотеку модела.
+- Избегава подешавање параметара распоређивања у складу са GPU хардвером пружајући унапред дефинисане конфигурације.
+- Аутоматско обезбеђивање GPU нодова у складу са захтевима модела.
+- Хостовање великих слика модела у јавном Microsoft Container Registry (MCR) ако лиценца то дозвољава.
 
-Korišćenjem Kaito-a, proces integracije velikih AI inference modela u Kubernetes je znatno pojednostavljen.
+Коришћењем Kaitо-а, процес увођења великих AI инференцијских модела у Kubernetes је знатно поједностављен.
 
+## Архитектура
 
-## Arhitektura
-
-Kaito prati klasični Kubernetes Custom Resource Definition (CRD)/kontrolerski dizajn. Korisnik upravlja `workspace` custom resursom koji opisuje GPU zahteve i specifikaciju inference-a. Kaito kontroleri automatizuju postavljanje usklađivanjem sa `workspace` custom resursom.
+Kaito прати класичан Kubernetes дизајн образац заснован на Custom Resource Definition (CRD)/контролеру. Корисник управља `workspace` прилагођеним ресурсом који описује захтеве за GPU и спецификацију инференције. Kaito контролери аутоматски распоређују ресурсе тако што усаглашавају `workspace` прилагођени ресурс.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-Gornja slika prikazuje pregled arhitekture Kaito-a. Njeni glavni delovi su:
+Горња слика приказује преглед архитектуре Kaitо-а. Главне компоненте су:
 
-- **Workspace controller**: Usklađuje `workspace` custom resurs, kreira `machine` (objašnjeno dole) custom resurse za pokretanje automatskog obezbeđivanja nodova, i kreira inference workload (`deployment` ili `statefulset`) bazirano na unapred definisanim konfiguracijama modela.
-- **Node provisioner controller**: Kontroler se zove *gpu-provisioner* u [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Koristi `machine` CRD koji potiče iz [Karpenter](https://sigs.k8s.io/karpenter) da komunicira sa workspace kontrolerom. Integrisan je sa Azure Kubernetes Service (AKS) API-jima za dodavanje novih GPU nodova u AKS klaster. 
-> Napomena: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) je open source komponenta. Može biti zamenjen drugim kontrolerima ako podržavaju [Karpenter-core](https://sigs.k8s.io/karpenter) API-je.
+- **Workspace контролер**: Усаглашава `workspace` прилагођени ресурс, креира `machine` (објашњено у наставку) прилагођене ресурсе како би покренуо аутоматско обезбеђивање нодова и креира инференцијски workload (`deployment` или `statefulset`) на основу унапред дефинисаних конфигурација модела.
+- **Node provisioner контролер**: Контролер се зове *gpu-provisioner* у [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Користи `machine` CRD који потиче из [Karpenter](https://sigs.k8s.io/karpenter) за интеракцију са workspace контролером. Интегрише се са Azure Kubernetes Service (AKS) API-јима ради додавања нових GPU нодова у AKS кластер.
+> Напомена: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) је отворени софтверски компонент. Може бити замењен другим контролерима ако подржавају [Karpenter-core](https://sigs.k8s.io/karpenter) API-је.
 
-## Instalacija
+## Инсталација
 
-Molimo pogledajte uputstvo za instalaciju [ovde](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Молимо проверите упутство за инсталацију [овде](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Brzi početak Inference Phi-3
-[Primer koda Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Брзи почетак инференције Phi-3
+[Пример кода за инференцију Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -84,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Status workspace-a može se pratiti pokretanjem sledeće komande. Kada kolona WORKSPACEREADY postane `True`, model je uspešno postavljen.
+Статус workspace-а може се пратити покретањем следеће команде. Када колона WORKSPACEREADY постане `True`, модел је успешно распоређен.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -92,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Zatim, može se pronaći cluster ip inference servisa i koristiti privremeni `curl` pod za testiranje servisa unutar klastera.
+Затим, може се пронаћи cluster IP инференцијске услуге и користити привремени `curl` под за тестирање крајње тачке услуге у кластеру.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -103,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Brzi početak Inference Phi-3 sa adapterima
+## Брзи почетак инференције Phi-3 са адаптерима
 
-Nakon instalacije Kaito-a, može se probati sledeće komande za pokretanje inference servisa.
+Након инсталације Kaitо-а, могу се покушати следеће команде за покретање инференцијске услуге.
 
-[Primer koda Inference Phi-3 sa adapterima](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Пример кода за инференцију Phi-3 са адаптерима](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -156,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Status workspace-a može se pratiti pokretanjem sledeće komande. Kada kolona WORKSPACEREADY postane `True`, model je uspešno postavljen.
+Статус workspace-а може се пратити покретањем следеће команде. Када колона WORKSPACEREADY постане `True`, модел је успешно распоређен.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -164,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Zatim, može se pronaći cluster ip inference servisa i koristiti privremeni `curl` pod za testiranje servisa unutar klastera.
+Затим, може се пронаћи cluster IP инференцијске услуге и користити привремени `curl` под за тестирање крајње тачке услуге у кластеру.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -176,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Одрицање од одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која могу настати коришћењем овог превода.
+Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

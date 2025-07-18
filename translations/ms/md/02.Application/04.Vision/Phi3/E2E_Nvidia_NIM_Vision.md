@@ -2,111 +2,111 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a8de701a2f1eb12b1f82432288d709cf",
-  "translation_date": "2025-05-09T19:57:29+00:00",
+  "translation_date": "2025-07-17T04:57:45+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md",
   "language_code": "ms"
 }
 -->
-### سيناريو المثال
+### Senario Contoh
 
-تخيل أن لديك صورة (`demo.png`) وتريد إنشاء كود Python يقوم بمعالجة هذه الصورة وحفظ نسخة جديدة منها (`phi-3-vision.jpg`).
+Bayangkan anda mempunyai imej (`demo.png`) dan anda ingin menjana kod Python yang memproses imej ini dan menyimpan versi baru daripadanya (`phi-3-vision.jpg`).
 
-الكود أعلاه يقوم بأتمتة هذه العملية عن طريق:
+Kod di atas mengautomasikan proses ini dengan:
 
-1. إعداد البيئة والتكوينات اللازمة.
-2. إنشاء نص توجيهي يطلب من النموذج توليد كود Python المطلوب.
-3. إرسال النص التوجيهي إلى النموذج وجمع الكود المولد.
-4. استخراج وتشغيل الكود المولد.
-5. عرض الصور الأصلية والمعالجة.
+1. Menyediakan persekitaran dan konfigurasi yang diperlukan.
+2. Mewujudkan arahan yang mengarahkan model untuk menjana kod Python yang diperlukan.
+3. Menghantar arahan kepada model dan mengumpul kod yang dijana.
+4. Mengekstrak dan menjalankan kod yang dijana.
+5. Memaparkan imej asal dan imej yang telah diproses.
 
-هذا الأسلوب يستفيد من قوة الذكاء الاصطناعي لأتمتة مهام معالجة الصور، مما يجعل العملية أسهل وأسرع لتحقيق أهدافك.
+Pendekatan ini memanfaatkan kuasa AI untuk mengautomasikan tugasan pemprosesan imej, menjadikannya lebih mudah dan pantas untuk mencapai matlamat anda.
 
 [Sample Code Solution](../../../../../../code/06.E2E/E2E_Nvidia_NIM_Phi3_Vision.ipynb)
 
-دعونا نفصل ما يقوم به الكود خطوة بخطوة:
+Mari kita pecahkan apa yang dilakukan oleh keseluruhan kod langkah demi langkah:
 
-1. **تثبيت الحزمة المطلوبة**:
+1. **Pasang Pakej Diperlukan**:
     ```python
     !pip install langchain_nvidia_ai_endpoints -U
-    ```  
-    هذا الأمر يثبت حزمة `langchain_nvidia_ai_endpoints` مع التأكد من أنها أحدث إصدار.
+    ```
+    Arahan ini memasang pakej `langchain_nvidia_ai_endpoints`, memastikan ia versi terkini.
 
-2. **استيراد الوحدات اللازمة**:
+2. **Import Modul Diperlukan**:
     ```python
     from langchain_nvidia_ai_endpoints import ChatNVIDIA
     import getpass
     import os
     import base64
-    ```  
-    هذه الاستيرادات تجلب الوحدات الضرورية للتعامل مع نقاط نهاية NVIDIA AI، وتأمين كلمات المرور، والتفاعل مع نظام التشغيل، وترميز/فك ترميز البيانات بصيغة base64.
+    ```
+    Import ini membawa masuk modul yang diperlukan untuk berinteraksi dengan NVIDIA AI endpoints, mengendalikan kata laluan dengan selamat, berinteraksi dengan sistem operasi, dan mengekod/mendekod data dalam format base64.
 
-3. **إعداد مفتاح API**:
+3. **Tetapkan Kunci API**:
     ```python
     if not os.getenv("NVIDIA_API_KEY"):
         os.environ["NVIDIA_API_KEY"] = getpass.getpass("Enter your NVIDIA API key: ")
-    ```  
-    هذا الكود يتحقق مما إذا كانت متغير البيئة `NVIDIA_API_KEY` محددًا. إذا لم يكن كذلك، يطلب من المستخدم إدخال مفتاح API بطريقة آمنة.
+    ```
+    Kod ini memeriksa sama ada pembolehubah persekitaran `NVIDIA_API_KEY` telah ditetapkan. Jika tidak, ia meminta pengguna memasukkan kunci API mereka dengan selamat.
 
-4. **تحديد النموذج ومسار الصورة**:
+4. **Tentukan Model dan Laluan Imej**:
     ```python
     model = 'microsoft/phi-3-vision-128k-instruct'
     chat = ChatNVIDIA(model=model)
     img_path = './imgs/demo.png'
-    ```  
-    هنا يتم تعيين النموذج المستخدم، وإنشاء كائن من `ChatNVIDIA` مع النموذج المحدد، وتحديد مسار ملف الصورة.
+    ```
+    Ini menetapkan model yang akan digunakan, mencipta instans `ChatNVIDIA` dengan model yang ditetapkan, dan menentukan laluan ke fail imej.
 
-5. **إنشاء النص التوجيهي**:
+5. **Cipta Arahan Teks**:
     ```python
     text = "Please create Python code for image, and use plt to save the new picture under imgs/ and name it phi-3-vision.jpg."
-    ```  
-    هذا يحدد نصًا توجيهيًا يطلب من النموذج توليد كود Python لمعالجة الصورة.
+    ```
+    Ini mentakrifkan arahan teks yang mengarahkan model untuk menjana kod Python bagi memproses imej.
 
-6. **ترميز الصورة بصيغة Base64**:
+6. **Ngekod Imej dalam Base64**:
     ```python
     with open(img_path, "rb") as f:
         image_b64 = base64.b64encode(f.read()).decode()
     image = f'<img src="data:image/png;base64,{image_b64}" />'
-    ```  
-    هذا الكود يقرأ ملف الصورة، ويرمزها بصيغة base64، وينشئ وسم HTML للصورة مع البيانات المشفرة.
+    ```
+    Kod ini membaca fail imej, mengekodnya dalam base64, dan mencipta tag imej HTML dengan data yang telah dienkod.
 
-7. **دمج النص والصورة في التوجيه**:
+7. **Gabungkan Teks dan Imej ke dalam Arahan**:
     ```python
     prompt = f"{text} {image}"
-    ```  
-    هنا يتم دمج النص التوجيهي ووسم الصورة HTML في سلسلة واحدة.
+    ```
+    Ini menggabungkan arahan teks dan tag imej HTML ke dalam satu rentetan.
 
-8. **توليد الكود باستخدام ChatNVIDIA**:
+8. **Jana Kod Menggunakan ChatNVIDIA**:
     ```python
     code = ""
     for chunk in chat.stream(prompt):
         print(chunk.content, end="")
         code += chunk.content
-    ```  
-    هذا الكود يرسل التوجيه إلى `ChatNVIDIA` ويجمع سلسلة الكود الناتج.
+    ```
+    Kod ini menghantar arahan kepada model `ChatNVIDIA` dan mengumpul kod yang dijana secara berperingkat, mencetak dan menambah setiap bahagian ke dalam rentetan `code`.
 
-9. **استخراج كود Python من المحتوى المولد**:
+9. **Ekstrak Kod Python dari Kandungan Dijana**:
     ```python
-    begin = code.index('```python') + 9  
-    code = code[begin:]  
+    begin = code.index('```python') + 9
+    code = code[begin:]
     end = code.index('```')
     code = code[:end]
-    ```  
-    هذا الجزء يستخرج كود Python الفعلي من المحتوى المولد عن طريق إزالة تنسيق الماركداون.
+    ```
+    Ini mengekstrak kod Python sebenar daripada kandungan yang dijana dengan membuang format markdown.
 
-10. **تشغيل الكود المولد**:
+10. **Jalankan Kod yang Dijana**:
     ```python
     import subprocess
     result = subprocess.run(["python", "-c", code], capture_output=True)
-    ```  
-    هذا يشغل كود Python المستخرج كعملية فرعية ويجمع مخرجاته.
+    ```
+    Ini menjalankan kod Python yang diekstrak sebagai subprocess dan menangkap outputnya.
 
-11. **عرض الصور**:
+11. **Paparkan Imej**:
     ```python
     from IPython.display import Image, display
     display(Image(filename='./imgs/phi-3-vision.jpg'))
     display(Image(filename='./imgs/demo.png'))
-    ```  
-    هذه الأسطر تعرض الصور باستخدام وحدة `IPython.display`.
+    ```
+    Baris ini memaparkan imej menggunakan modul `IPython.display`.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau tafsiran yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

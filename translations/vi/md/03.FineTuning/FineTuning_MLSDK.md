@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "944949f040e61b2ea25b3460f7394fd4",
-  "translation_date": "2025-05-09T21:23:07+00:00",
+  "translation_date": "2025-07-17T07:34:52+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLSDK.md",
   "language_code": "vi"
 }
 -->
 ## Cách sử dụng các thành phần chat-completion từ Azure ML system registry để tinh chỉnh mô hình
 
-Trong ví dụ này, chúng ta sẽ tiến hành tinh chỉnh mô hình Phi-3-mini-4k-instruct để hoàn thành cuộc hội thoại giữa 2 người sử dụng bộ dữ liệu ultrachat_200k.
+Trong ví dụ này, chúng ta sẽ thực hiện tinh chỉnh mô hình Phi-3-mini-4k-instruct để hoàn thành cuộc hội thoại giữa 2 người sử dụng bộ dữ liệu ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/MLFineTune.d8292fe1f146b4ff1153c2e5bdbbe5b0e7f96858d5054b525bd55f2641505138.vi.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.vi.png)
 
 Ví dụ sẽ hướng dẫn bạn cách thực hiện tinh chỉnh bằng Azure ML SDK và Python, sau đó triển khai mô hình đã tinh chỉnh lên endpoint trực tuyến để suy luận thời gian thực.
 
 ### Dữ liệu huấn luyện
 
-Chúng ta sẽ sử dụng bộ dữ liệu ultrachat_200k. Đây là phiên bản đã được lọc kỹ của bộ UltraChat và đã được dùng để huấn luyện Zephyr-7B-β, một mô hình chat 7b tiên tiến nhất hiện nay.
+Chúng ta sẽ sử dụng bộ dữ liệu ultrachat_200k. Đây là phiên bản đã được lọc kỹ của bộ dữ liệu UltraChat và được dùng để huấn luyện Zephyr-7B-β, một mô hình chat 7 tỷ tham số tiên tiến.
 
 ### Mô hình
 
-Chúng ta sẽ dùng mô hình Phi-3-mini-4k-instruct để minh họa cách người dùng có thể tinh chỉnh mô hình cho tác vụ chat-completion. Nếu bạn mở notebook này từ một thẻ mô hình cụ thể, nhớ thay thế tên mô hình tương ứng.
+Chúng ta sẽ sử dụng mô hình Phi-3-mini-4k-instruct để minh họa cách người dùng có thể tinh chỉnh mô hình cho nhiệm vụ chat-completion. Nếu bạn mở notebook này từ một thẻ mô hình cụ thể, hãy nhớ thay thế tên mô hình tương ứng.
 
 ### Các nhiệm vụ
 
@@ -31,23 +31,23 @@ Chúng ta sẽ dùng mô hình Phi-3-mini-4k-instruct để minh họa cách ng�
 - Chạy công việc tinh chỉnh.
 - Xem lại các chỉ số huấn luyện và đánh giá.
 - Đăng ký mô hình đã tinh chỉnh.
-- Triển khai mô hình đã tinh chỉnh cho suy luận thời gian thực.
+- Triển khai mô hình đã tinh chỉnh để suy luận thời gian thực.
 - Dọn dẹp tài nguyên.
 
-## 1. Thiết lập các yêu cầu trước
+## 1. Thiết lập các yêu cầu cần thiết
 
 - Cài đặt các thư viện phụ thuộc
-- Kết nối đến AzureML Workspace. Tìm hiểu thêm tại thiết lập xác thực SDK. Thay thế <WORKSPACE_NAME>, <RESOURCE_GROUP> và <SUBSCRIPTION_ID> bên dưới.
-- Kết nối đến azureml system registry
-- Thiết lập tên experiment tùy chọn
+- Kết nối tới AzureML Workspace. Tìm hiểu thêm tại thiết lập xác thực SDK. Thay thế <WORKSPACE_NAME>, <RESOURCE_GROUP> và <SUBSCRIPTION_ID> bên dưới.
+- Kết nối tới azureml system registry
+- Đặt tên experiment tùy chọn
 - Kiểm tra hoặc tạo compute.
 
 > [!NOTE]
-> Yêu cầu một node GPU có thể có nhiều card GPU. Ví dụ, một node Standard_NC24rs_v3 có 4 GPU NVIDIA V100 trong khi Standard_NC12s_v3 có 2 GPU NVIDIA V100. Tham khảo tài liệu để biết thêm thông tin. Số lượng card GPU trên mỗi node được thiết lập trong tham số gpus_per_node bên dưới. Thiết lập đúng giá trị này sẽ đảm bảo sử dụng hết các GPU trong node. Các SKU GPU được khuyến nghị có thể tìm thấy ở đây và đây.
+> Yêu cầu một node GPU đơn có thể có nhiều card GPU. Ví dụ, một node Standard_NC24rs_v3 có 4 GPU NVIDIA V100 trong khi Standard_NC12s_v3 có 2 GPU NVIDIA V100. Tham khảo tài liệu để biết thông tin này. Số lượng card GPU trên mỗi node được thiết lập trong tham số gpus_per_node bên dưới. Việc thiết lập đúng giá trị này sẽ đảm bảo sử dụng hết tất cả GPU trong node. Các SKU compute GPU được khuyến nghị có thể tìm thấy tại đây và đây.
 
 ### Thư viện Python
 
-Cài đặt các phụ thuộc bằng cách chạy cell dưới đây. Đây không phải bước tùy chọn nếu bạn chạy trong môi trường mới.
+Cài đặt các thư viện phụ thuộc bằng cách chạy cell dưới đây. Đây không phải bước tùy chọn nếu bạn chạy trong môi trường mới.
 
 ```bash
 pip install azure-ai-ml
@@ -59,19 +59,19 @@ pip install azureml-mlflow
 
 ### Tương tác với Azure ML
 
-1. Script Python này dùng để tương tác với dịch vụ Azure Machine Learning (Azure ML). Dưới đây là tóm tắt chức năng:
+1. Script Python này dùng để tương tác với dịch vụ Azure Machine Learning (Azure ML). Dưới đây là tóm tắt các bước thực hiện:
 
-    - Import các module cần thiết từ azure.ai.ml, azure.identity, và azure.ai.ml.entities. Cũng import module time.
+    - Import các module cần thiết từ các gói azure.ai.ml, azure.identity, và azure.ai.ml.entities. Cũng import module time.
 
-    - Cố gắng xác thực bằng DefaultAzureCredential(), cung cấp trải nghiệm xác thực đơn giản để nhanh chóng phát triển ứng dụng trên Azure cloud. Nếu thất bại, sẽ dùng InteractiveBrowserCredential(), hiển thị cửa sổ đăng nhập tương tác.
+    - Cố gắng xác thực bằng DefaultAzureCredential(), cung cấp trải nghiệm xác thực đơn giản để nhanh chóng phát triển ứng dụng chạy trên đám mây Azure. Nếu thất bại, sẽ chuyển sang InteractiveBrowserCredential(), cung cấp giao diện đăng nhập tương tác.
 
-    - Tiếp theo cố gắng tạo đối tượng MLClient bằng phương thức from_config, đọc cấu hình từ file mặc định (config.json). Nếu thất bại, tạo MLClient bằng cách cung cấp thủ công subscription_id, resource_group_name, và workspace_name.
+    - Tiếp theo cố gắng tạo một instance MLClient bằng phương thức from_config, đọc cấu hình từ file config mặc định (config.json). Nếu thất bại, tạo MLClient bằng cách cung cấp thủ công subscription_id, resource_group_name và workspace_name.
 
-    - Tạo thêm một MLClient khác cho Azure ML registry tên "azureml". Registry này lưu trữ mô hình, pipeline tinh chỉnh và môi trường.
+    - Tạo thêm một instance MLClient cho Azure ML registry có tên "azureml". Registry này lưu trữ các mô hình, pipeline tinh chỉnh và môi trường.
 
-    - Thiết lập experiment_name là "chat_completion_Phi-3-mini-4k-instruct".
+    - Đặt experiment_name là "chat_completion_Phi-3-mini-4k-instruct".
 
-    - Tạo timestamp duy nhất bằng cách chuyển thời gian hiện tại (tính theo giây kể từ epoch, kiểu số thực) sang số nguyên rồi chuyển sang chuỗi. Timestamp này dùng để tạo tên và phiên bản duy nhất.
+    - Tạo một timestamp duy nhất bằng cách chuyển thời gian hiện tại (tính bằng giây kể từ epoch, dưới dạng số thực) sang số nguyên rồi sang chuỗi. Timestamp này dùng để tạo tên và phiên bản duy nhất.
 
     ```python
     # Import necessary modules from Azure ML and Azure Identity
@@ -114,18 +114,18 @@ pip install azureml-mlflow
 
 ## 2. Chọn mô hình nền tảng để tinh chỉnh
 
-1. Phi-3-mini-4k-instruct là mô hình nhẹ, 3.8 tỷ tham số, tiên tiến được xây dựng trên các bộ dữ liệu của Phi-2. Mô hình thuộc họ Phi-3, phiên bản Mini có 2 biến thể 4K và 128K, tương ứng độ dài ngữ cảnh (token) hỗ trợ. Chúng ta cần tinh chỉnh mô hình cho mục đích cụ thể. Bạn có thể duyệt các mô hình này trong Model Catalog của AzureML Studio, lọc theo tác vụ chat-completion. Ở ví dụ này, ta dùng Phi-3-mini-4k-instruct. Nếu mở notebook cho mô hình khác, hãy thay tên và phiên bản cho phù hợp.
+1. Phi-3-mini-4k-instruct là mô hình nhẹ với 3.8 tỷ tham số, tiên tiến, được xây dựng dựa trên các bộ dữ liệu dùng cho Phi-2. Mô hình thuộc họ Phi-3, phiên bản Mini có hai biến thể 4K và 128K, tương ứng với độ dài ngữ cảnh (tính theo token) mà nó hỗ trợ. Chúng ta cần tinh chỉnh mô hình cho mục đích cụ thể để sử dụng. Bạn có thể duyệt các mô hình này trong Model Catalog của AzureML Studio, lọc theo nhiệm vụ chat-completion. Trong ví dụ này, chúng ta dùng mô hình Phi-3-mini-4k-instruct. Nếu bạn mở notebook cho mô hình khác, hãy thay tên và phiên bản mô hình cho phù hợp.
 
     > [!NOTE]
-    > Thuộc tính model id của mô hình sẽ được truyền làm đầu vào cho công việc tinh chỉnh. Thuộc tính này cũng có thể xem tại trường Asset ID trên trang chi tiết mô hình trong Model Catalog của AzureML Studio.
+    > Thuộc tính model id của mô hình. Thuộc tính này sẽ được truyền làm đầu vào cho công việc tinh chỉnh. Nó cũng có thể tìm thấy trong trường Asset ID trên trang chi tiết mô hình trong Model Catalog của AzureML Studio.
 
-2. Script Python này tương tác với dịch vụ Azure ML. Chức năng:
+2. Script Python này tương tác với dịch vụ Azure Machine Learning (Azure ML). Dưới đây là tóm tắt các bước thực hiện:
 
-    - Thiết lập model_name là "Phi-3-mini-4k-instruct".
+    - Đặt model_name là "Phi-3-mini-4k-instruct".
 
-    - Dùng phương thức get của thuộc tính models của registry_ml_client để lấy phiên bản mới nhất của mô hình theo tên từ Azure ML registry. Phương thức get gọi với 2 tham số: tên mô hình và nhãn "latest" để lấy phiên bản mới nhất.
+    - Sử dụng phương thức get của thuộc tính models trong đối tượng registry_ml_client để lấy phiên bản mới nhất của mô hình có tên chỉ định từ Azure ML registry. Phương thức get được gọi với hai tham số: tên mô hình và nhãn chỉ định lấy phiên bản mới nhất.
 
-    - In ra console thông báo tên, phiên bản và id của mô hình sẽ dùng để tinh chỉnh. Phương thức format của chuỗi được dùng để chèn tên, phiên bản, id lấy từ thuộc tính của foundation_model.
+    - In ra console thông báo tên, phiên bản và id của mô hình sẽ được dùng để tinh chỉnh. Phương thức format của chuỗi được dùng để chèn tên, phiên bản và id của mô hình vào thông báo. Các thuộc tính name, version và id được truy cập từ đối tượng foundation_model.
 
     ```python
     # Set the model name
@@ -145,27 +145,27 @@ pip install azureml-mlflow
 
 ## 3. Tạo compute để sử dụng cho công việc
 
-Công việc finetune chỉ hoạt động với compute GPU. Kích thước compute phụ thuộc vào độ lớn mô hình và thường khá khó chọn đúng compute phù hợp. Trong cell này, chúng ta hướng dẫn người dùng chọn compute phù hợp.
+Công việc finetune CHỈ hoạt động với compute GPU. Kích thước compute phụ thuộc vào độ lớn của mô hình và trong nhiều trường hợp khá khó để xác định compute phù hợp cho công việc. Trong cell này, chúng ta hướng dẫn người dùng chọn compute phù hợp.
 
 > [!NOTE]
-> Các compute liệt kê dưới đây hoạt động với cấu hình tối ưu nhất. Thay đổi cấu hình có thể gây lỗi Cuda Out Of Memory. Trong trường hợp đó, hãy nâng cấp compute lên kích thước lớn hơn.
+> Các compute liệt kê dưới đây hoạt động với cấu hình tối ưu nhất. Bất kỳ thay đổi nào về cấu hình có thể dẫn đến lỗi Cuda Out Of Memory. Trong trường hợp đó, hãy thử nâng cấp compute lên kích thước lớn hơn.
 
 > [!NOTE]
-> Khi chọn compute_cluster_size bên dưới, đảm bảo compute có sẵn trong nhóm tài nguyên của bạn. Nếu compute không có sẵn, bạn có thể gửi yêu cầu để được cấp quyền truy cập tài nguyên compute.
+> Khi chọn compute_cluster_size bên dưới, hãy đảm bảo compute có sẵn trong resource group của bạn. Nếu compute cụ thể không có sẵn, bạn có thể gửi yêu cầu để được cấp quyền truy cập tài nguyên compute.
 
 ### Kiểm tra mô hình có hỗ trợ tinh chỉnh không
 
-1. Script Python này tương tác với mô hình Azure ML. Chức năng:
+1. Script Python này tương tác với mô hình Azure Machine Learning (Azure ML). Dưới đây là tóm tắt các bước thực hiện:
 
-    - Import module ast, cung cấp các hàm xử lý cây cú pháp Python.
+    - Import module ast, cung cấp các hàm xử lý cây cú pháp trừu tượng của Python.
 
-    - Kiểm tra xem đối tượng foundation_model (mô hình Azure ML) có tag tên finetune_compute_allow_list hay không. Tag trong Azure ML là cặp key-value dùng để lọc và sắp xếp mô hình.
+    - Kiểm tra xem đối tượng foundation_model (đại diện cho mô hình trong Azure ML) có tag tên finetune_compute_allow_list hay không. Tag trong Azure ML là các cặp khóa-giá trị dùng để lọc và sắp xếp mô hình.
 
-    - Nếu có tag finetune_compute_allow_list, dùng ast.literal_eval để phân tích giá trị tag (chuỗi) thành danh sách Python, gán vào biến computes_allow_list. In ra thông báo yêu cầu tạo compute từ danh sách này.
+    - Nếu tag finetune_compute_allow_list tồn tại, dùng hàm ast.literal_eval để phân tích an toàn giá trị của tag (chuỗi) thành danh sách Python. Danh sách này được gán cho biến computes_allow_list. Sau đó in thông báo yêu cầu tạo compute từ danh sách này.
 
-    - Nếu không có tag, gán computes_allow_list là None và in thông báo tag này không có trong tags của mô hình.
+    - Nếu tag không tồn tại, gán computes_allow_list là None và in thông báo tag finetune_compute_allow_list không có trong các tag của mô hình.
 
-    - Tóm lại, script kiểm tra tag trong metadata mô hình, chuyển giá trị tag thành danh sách nếu có, và cung cấp phản hồi cho người dùng.
+    - Tóm lại, script này kiểm tra một tag cụ thể trong metadata của mô hình, chuyển giá trị tag thành danh sách nếu có, và cung cấp phản hồi cho người dùng.
 
     ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -188,19 +188,19 @@ Công việc finetune chỉ hoạt động với compute GPU. Kích thước com
 
 ### Kiểm tra Compute Instance
 
-1. Script Python này tương tác với dịch vụ Azure ML và thực hiện kiểm tra trên compute instance. Chức năng:
+1. Script Python này tương tác với dịch vụ Azure Machine Learning (Azure ML) và thực hiện một số kiểm tra trên compute instance. Dưới đây là tóm tắt các bước thực hiện:
 
-    - Cố gắng lấy compute instance có tên lưu trong compute_cluster từ workspace Azure ML. Nếu trạng thái provisioning của compute là "failed", ném lỗi ValueError.
+    - Cố gắng lấy compute instance có tên lưu trong biến compute_cluster từ workspace Azure ML. Nếu trạng thái provisioning của compute instance là "failed", ném ra lỗi ValueError.
 
-    - Kiểm tra nếu computes_allow_list không phải None, chuyển tất cả kích thước compute trong danh sách sang chữ thường, rồi kiểm tra kích thước compute hiện tại có nằm trong danh sách hay không. Nếu không, ném ValueError.
+    - Kiểm tra nếu computes_allow_list không phải None. Nếu đúng, chuyển tất cả kích thước compute trong danh sách thành chữ thường và kiểm tra xem kích thước compute hiện tại có trong danh sách không. Nếu không, ném lỗi ValueError.
 
-    - Nếu computes_allow_list là None, kiểm tra kích thước compute có thuộc danh sách các kích thước GPU VM không được hỗ trợ hay không. Nếu có, ném ValueError.
+    - Nếu computes_allow_list là None, kiểm tra xem kích thước compute instance có nằm trong danh sách các kích thước GPU VM không được hỗ trợ không. Nếu có, ném lỗi ValueError.
 
-    - Lấy danh sách tất cả kích thước compute có sẵn trong workspace. Duyệt danh sách này, nếu tên kích thước trùng với kích thước compute hiện tại, lấy số lượng GPU của kích thước đó và đánh dấu gpu_count_found là True.
+    - Lấy danh sách tất cả kích thước compute có sẵn trong workspace. Duyệt qua danh sách này, với mỗi kích thước compute, kiểm tra nếu tên trùng với kích thước compute hiện tại. Nếu đúng, lấy số lượng GPU của kích thước đó và đặt biến gpu_count_found thành True.
 
-    - Nếu tìm thấy số GPU, in ra số lượng GPU của compute instance. Nếu không, ném ValueError.
+    - Nếu gpu_count_found là True, in ra số lượng GPU trong compute instance. Nếu False, ném lỗi ValueError.
 
-    - Tóm lại, script thực hiện các kiểm tra về trạng thái provisioning, kích thước compute so với danh sách cho phép hoặc cấm, và số lượng GPU trên compute instance trong workspace Azure ML.
+    - Tóm lại, script này thực hiện nhiều kiểm tra trên compute instance trong workspace Azure ML, bao gồm trạng thái provisioning, kích thước so với danh sách cho phép hoặc cấm, và số lượng GPU.
 
     ```python
     # Print the exception message
@@ -271,40 +271,39 @@ Công việc finetune chỉ hoạt động với compute GPU. Kích thước com
 
 ## 4. Chọn bộ dữ liệu để tinh chỉnh mô hình
 
-1. Chúng ta dùng bộ dữ liệu ultrachat_200k. Bộ dữ liệu có bốn phần, phù hợp cho Supervised fine-tuning (sft).
-Generation ranking (gen). Số lượng ví dụ trong mỗi phần như sau:
+1. Chúng ta sử dụng bộ dữ liệu ultrachat_200k. Bộ dữ liệu có bốn phần, phù hợp cho tinh chỉnh có giám sát (supervised fine-tuning - sft). Xếp hạng sinh (generation ranking - gen). Số lượng ví dụ trong mỗi phần được hiển thị như sau:
 
     ```bash
     train_sft test_sft  train_gen  test_gen
     207865  23110  256032  28304
     ```
 
-1. Một vài cell tiếp theo thể hiện chuẩn bị dữ liệu cơ bản cho tinh chỉnh:
+1. Một vài cell tiếp theo trình bày chuẩn bị dữ liệu cơ bản cho việc tinh chỉnh:
 
-### Trực quan một số dòng dữ liệu
+### Hiển thị một số dòng dữ liệu
 
-Chúng ta muốn mẫu này chạy nhanh, nên lưu các file train_sft, test_sft chứa 5% số dòng đã được lọc sẵn. Điều này nghĩa là mô hình tinh chỉnh sẽ có độ chính xác thấp hơn, nên không nên dùng trong thực tế.
-download-dataset.py dùng để tải bộ dữ liệu ultrachat_200k và chuyển đổi dữ liệu sang định dạng phù hợp cho pipeline tinh chỉnh. Vì bộ dữ liệu lớn, nên ta chỉ dùng một phần nhỏ.
+Chúng ta muốn mẫu này chạy nhanh, nên lưu các file train_sft, test_sft chứa 5% số dòng đã được lọc. Điều này có nghĩa mô hình tinh chỉnh sẽ có độ chính xác thấp hơn, do đó không nên dùng cho mục đích thực tế.
+Script download-dataset.py được dùng để tải bộ dữ liệu ultrachat_200k và chuyển đổi bộ dữ liệu thành định dạng có thể sử dụng cho pipeline tinh chỉnh. Vì bộ dữ liệu lớn, nên ở đây chúng ta chỉ có một phần của bộ dữ liệu.
 
-1. Chạy script dưới đây chỉ tải 5% dữ liệu. Có thể tăng tỉ lệ bằng cách thay đổi tham số dataset_split_pc theo phần trăm mong muốn.
+1. Chạy script dưới đây chỉ tải 5% dữ liệu. Bạn có thể tăng tỷ lệ này bằng cách thay đổi tham số dataset_split_pc thành phần trăm mong muốn.
 
     > [!NOTE]
-    > Một số mô hình ngôn ngữ có mã ngôn ngữ khác nhau nên tên cột trong bộ dữ liệu cần phản ánh điều đó.
+    > Một số mô hình ngôn ngữ có mã ngôn ngữ khác nhau, do đó tên cột trong bộ dữ liệu cũng nên phản ánh điều này.
 
-1. Đây là ví dụ về cách dữ liệu trông như thế nào
-Bộ dữ liệu chat-completion được lưu ở định dạng parquet với mỗi mục theo cấu trúc:
+1. Đây là ví dụ về cách dữ liệu nên được lưu trữ
+Bộ dữ liệu chat-completion được lưu dưới định dạng parquet với mỗi mục sử dụng cấu trúc sau:
 
-    - Đây là tài liệu JSON (JavaScript Object Notation), định dạng trao đổi dữ liệu phổ biến. Không phải mã thực thi, mà là cách lưu và truyền dữ liệu. Cấu trúc gồm:
+    - Đây là tài liệu JSON (JavaScript Object Notation), một định dạng trao đổi dữ liệu phổ biến. Nó không phải mã thực thi mà là cách lưu trữ và truyền tải dữ liệu. Dưới đây là cấu trúc của nó:
 
-    - "prompt": chứa chuỗi mô tả tác vụ hoặc câu hỏi gửi đến trợ lý AI.
+    - "prompt": Khóa này chứa giá trị chuỗi đại diện cho nhiệm vụ hoặc câu hỏi đặt ra cho trợ lý AI.
 
-    - "messages": chứa mảng các đối tượng. Mỗi đối tượng đại diện cho một tin nhắn trong cuộc hội thoại giữa người dùng và trợ lý AI. Mỗi tin nhắn có hai trường:
+    - "messages": Khóa này chứa một mảng các đối tượng. Mỗi đối tượng đại diện cho một tin nhắn trong cuộc hội thoại giữa người dùng và trợ lý AI. Mỗi đối tượng tin nhắn có hai khóa:
 
-    - "content": chuỗi nội dung tin nhắn.
-    - "role": chuỗi xác định vai trò người gửi tin nhắn, có thể là "user" hoặc "assistant".
-    - "prompt_id": chuỗi định danh duy nhất cho prompt.
+    - "content": Khóa này chứa giá trị chuỗi đại diện cho nội dung tin nhắn.
+    - "role": Khóa này chứa giá trị chuỗi đại diện cho vai trò của thực thể gửi tin nhắn. Có thể là "user" hoặc "assistant".
+    - "prompt_id": Khóa này chứa giá trị chuỗi đại diện cho định danh duy nhất của prompt.
 
-1. Trong tài liệu JSON này, cuộc hội thoại thể hiện người dùng yêu cầu trợ lý AI tạo nhân vật chính cho câu chuyện dystopian. Trợ lý trả lời, rồi người dùng hỏi thêm chi tiết. Trợ lý đồng ý cung cấp thêm chi tiết. Toàn bộ hội thoại gắn với prompt id cụ thể.
+1. Trong tài liệu JSON cụ thể này, một cuộc hội thoại được thể hiện, trong đó người dùng yêu cầu trợ lý AI tạo một nhân vật chính cho câu chuyện dystopian. Trợ lý trả lời, sau đó người dùng yêu cầu thêm chi tiết. Trợ lý đồng ý cung cấp thêm chi tiết. Toàn bộ cuộc hội thoại liên kết với một prompt id cụ thể.
 
     ```python
     {
@@ -346,15 +345,15 @@ Bộ dữ liệu chat-completion được lưu ở định dạng parquet với 
 
 ### Tải dữ liệu
 
-1. Script Python này dùng để tải bộ dữ liệu bằng script phụ trợ download-dataset.py. Chức năng:
+1. Script Python này dùng để tải bộ dữ liệu bằng một script hỗ trợ tên download-dataset.py. Dưới đây là tóm tắt các bước thực hiện:
 
-    - Import module os, cung cấp cách sử dụng các chức năng hệ điều hành.
+    - Import module os, cung cấp cách sử dụng các chức năng phụ thuộc hệ điều hành một cách di động.
 
-    - Dùng os.system để chạy script download-dataset.py trong shell với các tham số chỉ định bộ dữ liệu cần tải (HuggingFaceH4/ultrachat_200k), thư mục tải về (ultrachat_200k_dataset), và tỉ lệ chia bộ dữ liệu (5). Trả về trạng thái thoát của lệnh được lưu trong biến exit_status.
+    - Sử dụng hàm os.system để chạy script download-dataset.py trong shell với các tham số dòng lệnh cụ thể. Các tham số chỉ định bộ dữ liệu cần tải (HuggingFaceH4/ultrachat_200k), thư mục tải về (ultrachat_200k_dataset), và tỷ lệ phần trăm bộ dữ liệu cần chia (5). Hàm os.system trả về trạng thái thoát của lệnh đã chạy; trạng thái này được lưu trong biến exit_status.
 
-    - Kiểm tra nếu exit_status khác 0 (0 thường nghĩa là thành công trên hệ Unix), nếu không thì ném Exception báo lỗi khi tải dữ liệu.
+    - Kiểm tra nếu exit_status khác 0. Trong hệ điều hành kiểu Unix, trạng thái thoát 0 thường chỉ lệnh thành công, các số khác chỉ lỗi. Nếu exit_status khác 0, ném ra Exception với thông báo lỗi khi tải bộ dữ liệu.
 
-    - Tóm lại, script chạy lệnh tải dữ liệu bằng script phụ trợ, và ném lỗi nếu quá trình tải thất bại.
+    - Tóm lại, script này chạy lệnh tải bộ dữ liệu bằng script hỗ trợ, và ném lỗi nếu lệnh thất bại.
 
     ```python
     # Import the os module, which provides a way of using operating system dependent functionality
@@ -376,19 +375,18 @@ Bộ dữ liệu chat-completion được lưu ở định dạng parquet với 
 
 ### Nạp dữ liệu vào DataFrame
 
-1. Script Python này nạp file JSON Lines vào pandas DataFrame và hiển thị 5 dòng đầu tiên. Chức năng:
+1. Script Python này nạp file JSON Lines vào pandas DataFrame và hiển thị 5 dòng đầu tiên. Dưới đây là tóm tắt các bước thực hiện:
 
-    - Import thư viện pandas, thư viện mạnh để xử lý và phân tích dữ liệu.
+    - Import thư viện pandas, thư viện mạnh mẽ để xử lý và phân tích dữ liệu.
 
-    - Thiết lập độ rộng cột tối đa cho pandas là 0, nghĩa là hiển thị đầy đủ nội dung cột khi in DataFrame.
+    - Đặt giới hạn độ rộng cột tối đa cho pandas hiển thị là 0. Điều này có nghĩa toàn bộ nội dung của mỗi cột sẽ được hiển thị đầy đủ khi in DataFrame, không bị cắt ngắn.
 
-    - Dùng pd.read_json để nạp file train_sft.jsonl từ thư mục ultrachat_200k_dataset. Tham số lines=True cho biết file ở định dạng JSON Lines, mỗi dòng là một đối tượng JSON riêng biệt.
+    - Sử dụng hàm pd.read_json để nạp file train_sft.jsonl từ thư mục ultrachat_200k_dataset vào DataFrame. Tham số lines=True chỉ định file ở định dạng JSON Lines, mỗi dòng là một đối tượng JSON riêng biệt.
+- Nó sử dụng phương thức head để hiển thị 5 dòng đầu tiên của DataFrame. Nếu DataFrame có ít hơn 5 dòng, nó sẽ hiển thị tất cả các dòng đó.
 
-    - Dùng phương thức head để hiển thị 5 dòng đầu của DataFrame. Nếu DataFrame ít hơn 5 dòng thì hiển thị hết.
+- Tóm lại, script này đang tải một file JSON Lines vào DataFrame và hiển thị 5 dòng đầu tiên với đầy đủ nội dung cột.
 
-    - Tóm lại, script nạp file JSON Lines vào DataFrame và hiển thị 5 dòng đầu với đầy đủ nội dung cột.
-
-    ```python
+```python
     # Import the pandas library, which is a powerful data manipulation and analysis library
     import pandas as pd
     
@@ -405,47 +403,48 @@ Bộ dữ liệu chat-completion được lưu ở định dạng parquet với 
     df.head()
     ```
 
-## 5. Gửi công việc tinh chỉnh sử dụng mô hình và dữ liệu làm đầu vào
+## 5. Gửi công việc fine tuning sử dụng mô hình và dữ liệu làm đầu vào
 
-Tạo công việc sử dụng thành phần pipeline chat-completion. Tìm hiểu thêm về tất cả các tham số hỗ trợ tinh chỉnh.
+Tạo công việc sử dụng thành phần pipeline chat-completion. Tìm hiểu thêm về tất cả các tham số được hỗ trợ cho fine tuning.
 
-### Định nghĩa các tham số tinh chỉnh
+### Định nghĩa các tham số finetune
 
-1. Các tham số tinh chỉnh có thể chia thành 2 nhóm - tham số huấn luyện, tham số tối ưu hóa
+1. Các tham số finetune có thể được chia thành 2 nhóm - tham số huấn luyện và tham số tối ưu hóa
 
-1. Tham số huấn luyện định nghĩa các khía cạnh huấn luyện như -
+1. Tham số huấn luyện định nghĩa các khía cạnh của quá trình huấn luyện như -
 
-    - Bộ tối ưu, bộ điều chỉnh học (scheduler) sử dụng
-    - Chỉ số để tối ưu hóa tinh chỉnh
+    - Bộ tối ưu, bộ lập lịch sử dụng
+    - Chỉ số để tối ưu fine tune
     - Số bước huấn luyện, kích thước batch, v.v.
-    - Tham số tối ưu hóa giúp tối ưu bộ nhớ GPU và sử dụng hiệu quả tài nguyên compute.
+    - Tham số tối ưu hóa giúp tối ưu bộ nhớ GPU và sử dụng hiệu quả tài nguyên tính toán.
 
-1. Dưới đây là một số tham số thuộc nhóm này. Tham số tối ưu hóa khác nhau với từng mô hình và được đóng gói cùng mô hình để xử lý sự khác biệt.
+1. Dưới đây là một số tham số thuộc nhóm này. Tham số tối ưu hóa khác nhau tùy theo mô hình và được đóng gói cùng mô hình để xử lý các biến thể này.
 
     - Bật deepspeed và LoRA
-    - Bật huấn luyện với độ chính xác hỗn hợp (mixed precision)
+    - Bật huấn luyện với độ chính xác hỗn hợp
     - Bật huấn luyện đa node
 
+
 > [!NOTE]
-> Huấn luyện có giám sát có thể dẫn đến mất đồng bộ hoặc quên kiến thức (catastrophic forgetting). Chúng tôi khuyến nghị kiểm tra vấn đề này và chạy giai đoạn căn chỉnh (alignment) sau khi tinh chỉnh.
+> Fine tuning có giám sát có thể dẫn đến mất sự đồng bộ hoặc quên kiến thức nghiêm trọng. Chúng tôi khuyến nghị kiểm tra vấn đề này và chạy giai đoạn căn chỉnh sau khi fine tune.
 
-### Tham số tinh chỉnh
+### Tham số Fine Tuning
 
-1. Script Python này thiết lập các tham số cho quá trình tinh chỉnh mô hình học máy. Chức năng:
+1. Script Python này thiết lập các tham số cho việc fine-tuning một mô hình học máy. Dưới đây là phân tích chi tiết:
 
-    - Thiết lập tham số huấn luyện mặc định như số epoch, kích thước batch huấn luyện và đánh giá, tốc độ học, loại bộ điều chỉnh tốc độ học.
+    - Nó thiết lập các tham số huấn luyện mặc định như số epoch, kích thước batch cho huấn luyện và đánh giá, tốc độ học, và loại bộ lập lịch tốc độ học.
 
-    - Thiết lập tham số tối ưu hóa mặc định như bật Layer-wise Relevance Propagation (LoRa) và DeepSpeed, cùng giai đoạn DeepSpeed.
+    - Nó thiết lập các tham số tối ưu hóa mặc định như có áp dụng Layer-wise Relevance Propagation (LoRa) và DeepSpeed hay không, và giai đoạn DeepSpeed.
 
-    - Kết hợp tham số huấn luyện và tối ưu hóa vào dictionary finetune_parameters.
+    - Nó kết hợp các tham số huấn luyện và tối ưu hóa thành một dictionary duy nhất gọi là finetune_parameters.
 
-    - Kiểm tra xem foundation_model có tham số mặc định riêng không. Nếu có, in cảnh báo và cập nhật finetune_parameters bằng các tham số mặc định riêng của mô hình. Dùng ast.literal_eval để chuyển tham số từ chuỗi sang dictionary Python.
+    - Nó kiểm tra xem foundation_model có tham số mặc định riêng cho mô hình hay không. Nếu có, nó in cảnh báo và cập nhật finetune_parameters với các tham số mặc định riêng của mô hình. Hàm ast.literal_eval được dùng để chuyển đổi tham số mặc định từ chuỗi sang dictionary Python.
 
-    - In ra tập tham số tinh chỉnh cuối cùng sẽ dùng cho chạy.
+    - Nó in ra bộ tham số fine-tuning cuối cùng sẽ được sử dụng cho lần chạy.
 
-    - Tóm lại, script thiết lập và hiển thị tham số tinh chỉnh mô hình học máy, có thể ghi đè tham số mặc định bằng tham số riêng của mô hình.
+    - Tóm lại, script này thiết lập và hiển thị các tham số cho fine-tuning mô hình học máy, với khả năng ghi đè tham số mặc định bằng tham số riêng của mô hình.
 
-    ```python
+```python
     # Set up default training parameters such as the number of training epochs, batch sizes for training and evaluation, learning rate, and learning rate scheduler type
     training_parameters = dict(
         num_train_epochs=3,
@@ -482,24 +481,25 @@ Tạo công việc sử dụng thành phần pipeline chat-completion. Tìm hi�
     )
     ```
 
-### Pipeline huấn luyện
+### Pipeline Huấn luyện
 
-1. Script Python này định nghĩa hàm tạo tên hiển thị cho pipeline huấn luyện mô hình, rồi gọi hàm để tạo và in tên hiển thị. Chức năng:
+1. Script Python này định nghĩa một hàm để tạo tên hiển thị cho pipeline huấn luyện máy học, sau đó gọi hàm này để tạo và in tên hiển thị. Dưới đây là phân tích chi tiết:
 
-    1. Định nghĩa hàm get_pipeline_display_name. Hàm này tạo tên hiển thị dựa trên các tham số liên quan đến pipeline huấn luyện.
+1. Hàm get_pipeline_display_name được định nghĩa. Hàm này tạo tên hiển thị dựa trên các tham số liên quan đến pipeline huấn luyện.
 
-    2. Trong hàm, tính tổng kích thước batch bằng cách nhân kích thước batch trên mỗi thiết bị, số bước tích lũy gradient, số GPU trên mỗi node và số node dùng để tinh chỉnh.
+1. Bên trong hàm, nó tính tổng kích thước batch bằng cách nhân kích thước batch trên mỗi thiết bị, số bước tích lũy gradient, số GPU trên mỗi node, và số node dùng cho fine-tuning.
 
-    3. Lấy các tham số khác như loại bộ điều chỉnh tốc độ học, có dùng DeepSpeed hay không, giai đoạn DeepSpeed, có dùng LoRa hay không, giới hạn số checkpoint mô hình lưu giữ, và độ dài tối đa chuỗi.
+1. Nó lấy các tham số khác như loại bộ lập lịch tốc độ học, có áp dụng DeepSpeed hay không, giai đoạn DeepSpeed, có áp dụng LoRa hay không, giới hạn số checkpoint mô hình giữ lại, và độ dài chuỗi tối đa.
 
-    4. Tạo chuỗi chứa tất cả tham số này, phân tách bằng dấu gạch ngang. Nếu dùng DeepSpeed hoặc LoRa thì chuỗi có thêm "ds" kèm giai đoạn DeepSpeed hoặc "lora". Nếu không thì có "nods" hoặc "nolora".
+1. Nó tạo một chuỗi gồm tất cả các tham số này, ngăn cách bằng dấu gạch ngang. Nếu áp dụng DeepSpeed hoặc LoRa, chuỗi sẽ bao gồm "ds" kèm giai đoạn DeepSpeed hoặc "lora". Nếu không, sẽ là "nods" hoặc "nolora".
 
-    5. Hàm trả về chuỗi này làm tên hiển thị cho pipeline huấn luyện.
+1. Hàm trả về chuỗi này, dùng làm tên hiển thị cho pipeline huấn luyện.
 
-    6. Sau khi định nghĩa, gọi hàm để tạo tên hiển thị và in ra.
+1. Sau khi định nghĩa hàm, nó được gọi để tạo tên hiển thị và in ra.
 
-    7. Tóm lại, script tạo tên hiển thị cho pipeline huấn luyện mô hình học máy.
-training pipeline dựa trên nhiều tham số khác nhau, sau đó in tên hiển thị này ra. ```python
+1. Tóm lại, script này tạo tên hiển thị cho pipeline huấn luyện máy học dựa trên các tham số khác nhau, rồi in tên đó.
+
+```python
     # Define a function to generate a display name for the training pipeline
     def get_pipeline_display_name():
         # Calculate the total batch size by multiplying the per-device batch size, the number of gradient accumulation steps, the number of GPUs per node, and the number of nodes used for fine-tuning
@@ -556,22 +556,25 @@ training pipeline dựa trên nhiều tham số khác nhau, sau đó in tên hi�
 
 ### Cấu hình Pipeline
 
-Script Python này đang định nghĩa và cấu hình một pipeline machine learning sử dụng Azure Machine Learning SDK. Dưới đây là phân tích những gì nó thực hiện:
+Script Python này định nghĩa và cấu hình một pipeline học máy sử dụng Azure Machine Learning SDK. Dưới đây là phân tích chi tiết:
 
 1. Nó nhập các module cần thiết từ Azure AI ML SDK.
-1. Nó lấy một thành phần pipeline có tên "chat_completion_pipeline" từ registry.
-1. Nó định nghĩa một pipeline job sử dụng `@pipeline` decorator and the function `create_pipeline`. The name of the pipeline is set to `pipeline_display_name`.
 
-1. Inside the `create_pipeline` function, it initializes the fetched pipeline component with various parameters, including the model path, compute clusters for different stages, dataset splits for training and testing, the number of GPUs to use for fine-tuning, and other fine-tuning parameters.
+1. Nó lấy một thành phần pipeline tên là "chat_completion_pipeline" từ registry.
 
-1. It maps the output of the fine-tuning job to the output of the pipeline job. This is done so that the fine-tuned model can be easily registered, which is required to deploy the model to an online or batch endpoint.
+1. Nó định nghĩa một pipeline job sử dụng decorator `@pipeline` và hàm `create_pipeline`. Tên pipeline được đặt là `pipeline_display_name`.
 
-1. It creates an instance of the pipeline by calling the `create_pipeline` function.
+1. Bên trong hàm `create_pipeline`, nó khởi tạo thành phần pipeline đã lấy với các tham số khác nhau, bao gồm đường dẫn mô hình, các cụm tính toán cho các giai đoạn khác nhau, các phân tách dữ liệu cho huấn luyện và kiểm thử, số GPU dùng cho fine-tuning, và các tham số fine-tuning khác.
 
-1. It sets the `force_rerun` setting of the pipeline to `True`, meaning that cached results from previous jobs will not be used.
+1. Nó ánh xạ đầu ra của công việc fine-tuning sang đầu ra của pipeline job. Việc này giúp mô hình fine-tuned dễ dàng được đăng ký, điều cần thiết để triển khai mô hình lên endpoint trực tuyến hoặc batch.
 
-1. It sets the `continue_on_step_failure` setting of the pipeline to `False`, nghĩa là pipeline sẽ dừng nếu bất kỳ bước nào thất bại.
-1. Tóm lại, script này đang định nghĩa và cấu hình một pipeline machine learning cho nhiệm vụ hoàn thành chat sử dụng Azure Machine Learning SDK.
+1. Nó tạo một thể hiện của pipeline bằng cách gọi hàm `create_pipeline`.
+
+1. Nó đặt thuộc tính `force_rerun` của pipeline thành `True`, nghĩa là không sử dụng kết quả cache từ các công việc trước đó.
+
+1. Nó đặt thuộc tính `continue_on_step_failure` của pipeline thành `False`, nghĩa là pipeline sẽ dừng nếu bất kỳ bước nào thất bại.
+
+1. Tóm lại, script này định nghĩa và cấu hình một pipeline học máy cho tác vụ chat completion sử dụng Azure Machine Learning SDK.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -624,15 +627,15 @@ Script Python này đang định nghĩa và cấu hình một pipeline machine l
     pipeline_object.settings.continue_on_step_failure = False
     ```
 
-### Gửi Job
+### Gửi công việc
 
-1. Script Python này đang gửi một job pipeline machine learning tới workspace Azure Machine Learning và chờ job hoàn thành. Dưới đây là phân tích những gì nó thực hiện:
+1. Script Python này gửi một công việc pipeline học máy đến workspace Azure Machine Learning và chờ công việc hoàn thành. Dưới đây là phân tích chi tiết:
 
-- Nó gọi phương thức create_or_update của đối tượng jobs trong workspace_ml_client để gửi job pipeline. Pipeline được chạy được chỉ định bởi pipeline_object, và thí nghiệm dưới đó job được chạy được chỉ định bởi experiment_name.
+    - Nó gọi phương thức create_or_update của đối tượng jobs trong workspace_ml_client để gửi công việc pipeline. Pipeline được chạy được chỉ định bởi pipeline_object, và thí nghiệm chạy công việc được chỉ định bởi experiment_name.
 
-- Sau đó nó gọi phương thức stream của đối tượng jobs trong workspace_ml_client để chờ job pipeline hoàn thành. Job được chờ là job có tên được lấy từ thuộc tính name của pipeline_job.
+    - Sau đó, nó gọi phương thức stream của đối tượng jobs trong workspace_ml_client để chờ công việc pipeline hoàn thành. Công việc chờ được chỉ định bởi thuộc tính name của pipeline_job.
 
-- Tóm lại, script này gửi một job pipeline machine learning tới workspace Azure Machine Learning, rồi chờ job hoàn thành.
+    - Tóm lại, script này gửi một công việc pipeline học máy đến workspace Azure Machine Learning và chờ công việc hoàn thành.
 
 ```python
     # Submit the pipeline job to the Azure Machine Learning workspace
@@ -649,27 +652,27 @@ Script Python này đang định nghĩa và cấu hình một pipeline machine l
 
 ## 6. Đăng ký mô hình fine tuned với workspace
 
-Chúng ta sẽ đăng ký mô hình từ kết quả đầu ra của job fine tuning. Việc này sẽ theo dõi mối quan hệ dòng chảy giữa mô hình fine tuned và job fine tuning. Job fine tuning cũng theo dõi dòng chảy đến mô hình nền tảng, dữ liệu và mã huấn luyện.
+Chúng ta sẽ đăng ký mô hình từ đầu ra của công việc fine tuning. Việc này sẽ theo dõi nguồn gốc giữa mô hình fine tuned và công việc fine tuning. Công việc fine tuning cũng theo dõi nguồn gốc đến mô hình nền tảng, dữ liệu và mã huấn luyện.
 
 ### Đăng ký mô hình ML
 
-1. Script Python này đang đăng ký một mô hình machine learning đã được huấn luyện trong pipeline Azure Machine Learning. Dưới đây là phân tích những gì nó thực hiện:
+1. Script Python này đăng ký một mô hình học máy đã được huấn luyện trong pipeline Azure Machine Learning. Dưới đây là phân tích chi tiết:
 
-- Nó nhập các module cần thiết từ Azure AI ML SDK.
+    - Nó nhập các module cần thiết từ Azure AI ML SDK.
 
-- Nó kiểm tra xem đầu ra trained_model có sẵn từ pipeline job hay không bằng cách gọi phương thức get của đối tượng jobs trong workspace_ml_client và truy cập thuộc tính outputs.
+    - Nó kiểm tra xem đầu ra trained_model có sẵn từ pipeline job hay không bằng cách gọi phương thức get của đối tượng jobs trong workspace_ml_client và truy cập thuộc tính outputs.
 
-- Nó tạo đường dẫn tới mô hình đã huấn luyện bằng cách định dạng chuỗi với tên pipeline job và tên đầu ra ("trained_model").
+    - Nó tạo đường dẫn đến mô hình đã huấn luyện bằng cách định dạng chuỗi với tên pipeline job và tên đầu ra ("trained_model").
 
-- Nó định nghĩa tên cho mô hình fine tuned bằng cách thêm "-ultrachat-200k" vào tên mô hình gốc và thay thế các dấu gạch chéo bằng dấu gạch ngang.
+    - Nó định nghĩa tên cho mô hình fine-tuned bằng cách thêm "-ultrachat-200k" vào tên mô hình gốc và thay thế các dấu gạch chéo bằng dấu gạch ngang.
 
-- Nó chuẩn bị đăng ký mô hình bằng cách tạo một đối tượng Model với các tham số khác nhau, bao gồm đường dẫn tới mô hình, loại mô hình (MLflow model), tên và phiên bản của mô hình, cùng mô tả cho mô hình.
+    - Nó chuẩn bị đăng ký mô hình bằng cách tạo một đối tượng Model với các tham số khác nhau, bao gồm đường dẫn mô hình, loại mô hình (MLflow model), tên và phiên bản mô hình, và mô tả mô hình.
 
-- Nó đăng ký mô hình bằng cách gọi phương thức create_or_update của đối tượng models trong workspace_ml_client với đối tượng Model làm đối số.
+    - Nó đăng ký mô hình bằng cách gọi phương thức create_or_update của đối tượng models trong workspace_ml_client với đối tượng Model làm đối số.
 
-- Nó in ra mô hình đã được đăng ký.
+    - Nó in ra mô hình đã đăng ký.
 
-1. Tóm lại, script này đăng ký một mô hình machine learning đã được huấn luyện trong pipeline Azure Machine Learning.
+1. Tóm lại, script này đăng ký một mô hình học máy đã được huấn luyện trong pipeline Azure Machine Learning.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -711,23 +714,23 @@ Chúng ta sẽ đăng ký mô hình từ kết quả đầu ra của job fine tu
     print("registered model: \n", registered_model)
     ```
 
-## 7. Triển khai mô hình fine tuned tới endpoint online
+## 7. Triển khai mô hình fine tuned lên endpoint trực tuyến
 
-Các endpoint online cung cấp API REST bền vững, có thể tích hợp với các ứng dụng cần sử dụng mô hình.
+Endpoint trực tuyến cung cấp API REST bền vững để tích hợp với các ứng dụng cần sử dụng mô hình.
 
 ### Quản lý Endpoint
 
-1. Script Python này đang tạo một managed online endpoint trong Azure Machine Learning cho mô hình đã đăng ký. Dưới đây là phân tích những gì nó thực hiện:
+1. Script Python này tạo một endpoint trực tuyến được quản lý trong Azure Machine Learning cho một mô hình đã đăng ký. Dưới đây là phân tích chi tiết:
 
-- Nó nhập các module cần thiết từ Azure AI ML SDK.
+    - Nó nhập các module cần thiết từ Azure AI ML SDK.
 
-- Nó định nghĩa một tên duy nhất cho endpoint online bằng cách thêm dấu thời gian vào chuỗi "ultrachat-completion-".
+    - Nó định nghĩa một tên duy nhất cho endpoint trực tuyến bằng cách thêm dấu thời gian vào chuỗi "ultrachat-completion-".
 
-- Nó chuẩn bị tạo endpoint online bằng cách tạo một đối tượng ManagedOnlineEndpoint với các tham số khác nhau, bao gồm tên endpoint, mô tả endpoint và chế độ xác thực ("key").
+    - Nó chuẩn bị tạo endpoint trực tuyến bằng cách tạo một đối tượng ManagedOnlineEndpoint với các tham số khác nhau, bao gồm tên endpoint, mô tả endpoint, và chế độ xác thực ("key").
 
-- Nó tạo endpoint online bằng cách gọi phương thức begin_create_or_update của workspace_ml_client với đối tượng ManagedOnlineEndpoint làm đối số. Sau đó chờ quá trình tạo hoàn thành bằng cách gọi phương thức wait.
+    - Nó tạo endpoint trực tuyến bằng cách gọi phương thức begin_create_or_update của workspace_ml_client với đối tượng ManagedOnlineEndpoint làm đối số. Sau đó chờ quá trình tạo hoàn thành bằng cách gọi phương thức wait.
 
-1. Tóm lại, script này đang tạo một managed online endpoint trong Azure Machine Learning cho mô hình đã đăng ký.
+1. Tóm lại, script này tạo một endpoint trực tuyến được quản lý trong Azure Machine Learning cho một mô hình đã đăng ký.
 
 ```python
     # Import necessary modules from the Azure AI ML SDK
@@ -757,29 +760,29 @@ Các endpoint online cung cấp API REST bền vững, có thể tích hợp v�
     ```
 
 > [!NOTE]
-> Bạn có thể tìm danh sách SKU được hỗ trợ để triển khai tại đây - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
+> Bạn có thể tìm danh sách các SKU được hỗ trợ để triển khai tại đây - [Managed online endpoints SKU list](https://learn.microsoft.com/azure/machine-learning/reference-managed-online-endpoints-vm-sku-list)
 
 ### Triển khai mô hình ML
 
-1. Script Python này đang triển khai một mô hình machine learning đã đăng ký tới một managed online endpoint trong Azure Machine Learning. Dưới đây là phân tích những gì nó thực hiện:
+1. Script Python này triển khai một mô hình học máy đã đăng ký lên một endpoint trực tuyến được quản lý trong Azure Machine Learning. Dưới đây là phân tích chi tiết:
 
-    - Nó nhập module ast, cung cấp các hàm để xử lý cây cú pháp trừu tượng của Python.
+    - Nó nhập module ast, cung cấp các hàm xử lý cây cú pháp trừu tượng của Python.
 
-    - Nó đặt loại instance cho việc triển khai là "Standard_NC6s_v3".
+    - Nó đặt loại instance cho triển khai là "Standard_NC6s_v3".
 
-    - Nó kiểm tra xem tag inference_compute_allow_list có trong mô hình nền tảng hay không. Nếu có, nó chuyển giá trị tag từ chuỗi sang danh sách Python và gán cho inference_computes_allow_list. Nếu không có, nó đặt inference_computes_allow_list thành None.
+    - Nó kiểm tra xem tag inference_compute_allow_list có trong foundation model hay không. Nếu có, nó chuyển giá trị tag từ chuỗi sang danh sách Python và gán cho inference_computes_allow_list. Nếu không, nó đặt inference_computes_allow_list là None.
 
-    - Nó kiểm tra xem loại instance được chỉ định có nằm trong danh sách cho phép hay không. Nếu không, nó in thông báo yêu cầu người dùng chọn loại instance từ danh sách cho phép.
+    - Nó kiểm tra xem loại instance được chỉ định có nằm trong danh sách cho phép hay không. Nếu không, nó in thông báo yêu cầu người dùng chọn loại instance trong danh sách cho phép.
 
-    - Nó chuẩn bị tạo deployment bằng cách tạo một đối tượng ManagedOnlineDeployment với các tham số khác nhau, bao gồm tên deployment, tên endpoint, ID của mô hình, loại instance và số lượng, cấu hình kiểm tra trạng thái sống (liveness probe), và các thiết lập yêu cầu.
+    - Nó chuẩn bị tạo triển khai bằng cách tạo một đối tượng ManagedOnlineDeployment với các tham số khác nhau, bao gồm tên triển khai, tên endpoint, ID mô hình, loại và số lượng instance, cài đặt kiểm tra trạng thái (liveness probe), và cài đặt yêu cầu.
 
-    - Nó tạo deployment bằng cách gọi phương thức begin_create_or_update của workspace_ml_client với đối tượng ManagedOnlineDeployment làm đối số. Sau đó chờ quá trình tạo hoàn thành bằng cách gọi phương thức wait.
+    - Nó tạo triển khai bằng cách gọi phương thức begin_create_or_update của workspace_ml_client với đối tượng ManagedOnlineDeployment làm đối số. Sau đó chờ quá trình tạo hoàn thành bằng cách gọi phương thức wait.
 
-    - Nó đặt lưu lượng truy cập của endpoint để chuyển 100% lưu lượng tới deployment "demo".
+    - Nó đặt lưu lượng của endpoint để chuyển 100% lưu lượng đến triển khai "demo".
 
     - Nó cập nhật endpoint bằng cách gọi phương thức begin_create_or_update của workspace_ml_client với đối tượng endpoint làm đối số. Sau đó chờ quá trình cập nhật hoàn thành bằng cách gọi phương thức result.
 
-1. Tóm lại, script này đang triển khai một mô hình machine learning đã đăng ký tới một managed online endpoint trong Azure Machine Learning.
+1. Tóm lại, script này triển khai một mô hình học máy đã đăng ký lên một endpoint trực tuyến được quản lý trong Azure Machine Learning.
 
 ```python
     # Import the ast module, which provides functions to process trees of the Python abstract syntax grammar
@@ -834,21 +837,21 @@ Các endpoint online cung cấp API REST bền vững, có thể tích hợp v�
 
 ## 8. Kiểm thử endpoint với dữ liệu mẫu
 
-Chúng ta sẽ lấy một số dữ liệu mẫu từ bộ dữ liệu test và gửi tới endpoint online để suy luận. Sau đó sẽ hiển thị nhãn dự đoán cùng với nhãn thực tế.
+Chúng ta sẽ lấy một số dữ liệu mẫu từ bộ dữ liệu kiểm thử và gửi đến endpoint trực tuyến để suy luận. Sau đó hiển thị nhãn dự đoán cùng với nhãn thực tế.
 
 ### Đọc kết quả
 
-1. Script Python này đang đọc một file JSON Lines vào một pandas DataFrame, lấy một mẫu ngẫu nhiên, và đặt lại chỉ số. Dưới đây là phân tích những gì nó thực hiện:
+1. Script Python này đọc một file JSON Lines vào pandas DataFrame, lấy mẫu ngẫu nhiên, và đặt lại chỉ số. Dưới đây là phân tích chi tiết:
 
-    - Nó đọc file ./ultrachat_200k_dataset/test_gen.jsonl vào pandas DataFrame. Hàm read_json được sử dụng với đối số lines=True vì file có định dạng JSON Lines, mỗi dòng là một đối tượng JSON riêng biệt.
+    - Nó đọc file ./ultrachat_200k_dataset/test_gen.jsonl vào pandas DataFrame. Hàm read_json được sử dụng với tham số lines=True vì file ở định dạng JSON Lines, mỗi dòng là một đối tượng JSON riêng biệt.
 
-    - Nó lấy một mẫu ngẫu nhiên gồm 1 dòng từ DataFrame. Hàm sample được dùng với đối số n=1 để chỉ định số dòng ngẫu nhiên lấy ra.
+    - Nó lấy một mẫu ngẫu nhiên gồm 1 dòng từ DataFrame. Hàm sample được sử dụng với tham số n=1 để chỉ định số dòng ngẫu nhiên cần chọn.
 
-    - Nó đặt lại chỉ số của DataFrame. Hàm reset_index được dùng với đối số drop=True để loại bỏ chỉ số cũ và thay thế bằng chỉ số mới kiểu số nguyên mặc định.
+    - Nó đặt lại chỉ số của DataFrame. Hàm reset_index được sử dụng với tham số drop=True để loại bỏ chỉ số cũ và thay thế bằng chỉ số mặc định kiểu số nguyên.
 
-    - Nó hiển thị 2 dòng đầu tiên của DataFrame bằng hàm head với đối số 2. Tuy nhiên, vì DataFrame chỉ có một dòng sau khi lấy mẫu, nên chỉ dòng đó sẽ được hiển thị.
+    - Nó hiển thị 2 dòng đầu tiên của DataFrame bằng hàm head với tham số 2. Tuy nhiên, vì DataFrame chỉ có một dòng sau khi lấy mẫu, nên chỉ dòng đó được hiển thị.
 
-1. Tóm lại, script này đọc file JSON Lines vào pandas DataFrame, lấy một mẫu ngẫu nhiên gồm 1 dòng, đặt lại chỉ số và hiển thị dòng đầu tiên.
+1. Tóm lại, script này đọc file JSON Lines vào pandas DataFrame, lấy mẫu ngẫu nhiên 1 dòng, đặt lại chỉ số, và hiển thị dòng đầu tiên.
 
 ```python
     # Import pandas library
@@ -874,15 +877,14 @@ Chúng ta sẽ lấy một số dữ liệu mẫu từ bộ dữ liệu test và
 
 ### Tạo đối tượng JSON
 
-1. Script Python này đang tạo một đối tượng JSON với các tham số cụ thể và lưu nó vào file. Dưới đây là phân tích những gì nó thực hiện:
+1. Script Python này tạo một đối tượng JSON với các tham số cụ thể và lưu vào file. Dưới đây là phân tích chi tiết:
 
     - Nó nhập module json, cung cấp các hàm làm việc với dữ liệu JSON.
 
-    - Nó tạo một dictionary parameters với các khóa và giá trị đại diện cho tham số cho mô hình machine learning. Các khóa là "temperature", "top_p", "do_sample" và "max_new_tokens", với các giá trị tương ứng là 0.6, 0.9, True và 200.
+    - Nó tạo một dictionary parameters với các khóa và giá trị đại diện cho tham số cho mô hình học máy. Các khóa là "temperature", "top_p", "do_sample", và "max_new_tokens", với các giá trị tương ứng là 0.6, 0.9, True, và 200.
 
     - Nó tạo một dictionary khác test_json với hai khóa: "input_data" và "params". Giá trị của "input_data" là một dictionary khác với các khóa "input_string" và "parameters". Giá trị của "input_string" là một danh sách chứa tin nhắn đầu tiên từ DataFrame test_df. Giá trị của "parameters" là dictionary parameters đã tạo trước đó. Giá trị của "params" là một dictionary rỗng.
-
-    - Nó mở file có tên sample_score.json
+- Nó mở một tệp có tên sample_score.json
 
 ```python
     # Import the json module, which provides functions to work with JSON data
@@ -918,19 +920,19 @@ Chúng ta sẽ lấy một số dữ liệu mẫu từ bộ dữ liệu test và
 
 ### Gọi Endpoint
 
-1. Script Python này đang gọi một endpoint online trong Azure Machine Learning để chấm điểm một file JSON. Dưới đây là phân tích những gì nó thực hiện:
+1. Script Python này đang gọi một endpoint trực tuyến trong Azure Machine Learning để đánh giá một tệp JSON. Dưới đây là phân tích những gì nó thực hiện:
 
-    - Nó gọi phương thức invoke của thuộc tính online_endpoints của đối tượng workspace_ml_client. Phương thức này dùng để gửi yêu cầu tới endpoint online và nhận phản hồi.
+    - Nó gọi phương thức invoke của thuộc tính online_endpoints trong đối tượng workspace_ml_client. Phương thức này được dùng để gửi yêu cầu đến một endpoint trực tuyến và nhận phản hồi.
 
-    - Nó chỉ định tên endpoint và deployment với các tham số endpoint_name và deployment_name. Trong trường hợp này, tên endpoint được lưu trong biến online_endpoint_name và tên deployment là "demo".
+    - Nó chỉ định tên của endpoint và deployment thông qua các tham số endpoint_name và deployment_name. Trong trường hợp này, tên endpoint được lưu trong biến online_endpoint_name và tên deployment là "demo".
 
-    - Nó chỉ định đường dẫn tới file JSON cần chấm điểm với tham số request_file. Ở đây file là ./ultrachat_200k_dataset/sample_score.json.
+    - Nó chỉ định đường dẫn đến tệp JSON cần đánh giá thông qua tham số request_file. Ở đây, tệp là ./ultrachat_200k_dataset/sample_score.json.
 
     - Nó lưu phản hồi từ endpoint vào biến response.
 
     - Nó in ra phản hồi thô.
 
-1. Tóm lại, script này gọi một endpoint online trong Azure Machine Learning để chấm điểm file JSON và in phản hồi.
+1. Tóm lại, script này gọi một endpoint trực tuyến trong Azure Machine Learning để đánh giá một tệp JSON và in ra phản hồi.
 
 ```python
     # Invoke the online endpoint in Azure Machine Learning to score the `sample_score.json` file
@@ -948,17 +950,17 @@ Chúng ta sẽ lấy một số dữ liệu mẫu từ bộ dữ liệu test và
     print("raw response: \n", response, "\n")
     ```
 
-## 9. Xóa endpoint online
+## 9. Xóa endpoint trực tuyến
 
-1. Đừng quên xóa endpoint online, nếu không bạn sẽ tiếp tục bị tính phí cho tài nguyên compute mà endpoint sử dụng. Dòng code Python này đang xóa một endpoint online trong Azure Machine Learning. Dưới đây là phân tích những gì nó thực hiện:
+1. Đừng quên xóa endpoint trực tuyến, nếu không bạn sẽ để đồng hồ tính phí chạy cho tài nguyên tính toán mà endpoint sử dụng. Dòng mã Python này đang xóa một endpoint trực tuyến trong Azure Machine Learning. Dưới đây là phân tích những gì nó thực hiện:
 
-    - Nó gọi phương thức begin_delete của thuộc tính online_endpoints của workspace_ml_client. Phương thức này dùng để bắt đầu quá trình xóa một endpoint online.
+    - Nó gọi phương thức begin_delete của thuộc tính online_endpoints trong đối tượng workspace_ml_client. Phương thức này được dùng để bắt đầu quá trình xóa một endpoint trực tuyến.
 
-    - Nó chỉ định tên endpoint cần xóa với tham số name. Ở đây tên endpoint được lưu trong biến online_endpoint_name.
+    - Nó chỉ định tên của endpoint cần xóa thông qua tham số name. Trong trường hợp này, tên endpoint được lưu trong biến online_endpoint_name.
 
-    - Nó gọi phương thức wait để chờ quá trình xóa hoàn tất. Đây là thao tác chặn, nghĩa là script sẽ không tiếp tục cho tới khi xóa xong.
+    - Nó gọi phương thức wait để chờ cho quá trình xóa hoàn tất. Đây là một thao tác chặn, nghĩa là script sẽ không tiếp tục cho đến khi việc xóa kết thúc.
 
-    - Tóm lại, dòng code này bắt đầu quá trình xóa một endpoint online trong Azure Machine Learning và chờ cho quá trình hoàn tất.
+    - Tóm lại, dòng mã này bắt đầu quá trình xóa một endpoint trực tuyến trong Azure Machine Learning và chờ cho đến khi thao tác hoàn thành.
 
 ```python
     # Delete the online endpoint in Azure Machine Learning
@@ -968,5 +970,5 @@ Chúng ta sẽ lấy một số dữ liệu mẫu từ bộ dữ liệu test và
     workspace_ml_client.online_endpoints.begin_delete(name=online_endpoint_name).wait()
     ```
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ bản địa nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

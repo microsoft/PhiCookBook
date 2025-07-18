@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-07T11:12:59+00:00",
+  "translation_date": "2025-07-17T03:15:06+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "de"
 }
 -->
 # **Chat mit Phi-4-mini ONNX**
 
-***ONNX*** ist ein offenes Format zur Darstellung von Machine-Learning-Modellen. ONNX definiert eine gemeinsame Menge von Operatoren – die Bausteine von Machine-Learning- und Deep-Learning-Modellen – sowie ein einheitliches Dateiformat, damit KI-Entwickler Modelle mit verschiedenen Frameworks, Tools, Laufzeitumgebungen und Compilern verwenden können.
+***ONNX*** ist ein offenes Format zur Darstellung von Machine-Learning-Modellen. ONNX definiert eine gemeinsame Menge von Operatoren – die Bausteine von Machine-Learning- und Deep-Learning-Modellen – sowie ein einheitliches Dateiformat, das es KI-Entwicklern ermöglicht, Modelle mit verschiedenen Frameworks, Tools, Laufzeitumgebungen und Compilern zu verwenden.
 
-Wir möchten generative KI-Modelle auf Edge-Geräten bereitstellen und in Umgebungen mit begrenzter Rechenleistung oder offline nutzen. Dieses Ziel erreichen wir jetzt, indem wir das Modell quantisiert konvertieren. Wir können das quantisierte Modell in das GGUF- oder ONNX-Format umwandeln.
+Wir möchten generative KI-Modelle auf Edge-Geräten bereitstellen und sie in Umgebungen mit begrenzter Rechenleistung oder offline nutzen. Dieses Ziel können wir nun erreichen, indem wir das Modell quantisiert konvertieren. Wir können das quantisierte Modell in das GGUF- oder ONNX-Format umwandeln.
 
-Microsoft Olive kann Ihnen helfen, SLM in das quantisierte ONNX-Format zu konvertieren. Die Methode zur Modellkonvertierung ist sehr einfach.
+Microsoft Olive kann Ihnen dabei helfen, SLM in das quantisierte ONNX-Format zu konvertieren. Die Methode zur Modellkonvertierung ist sehr einfach.
 
 **Microsoft Olive SDK installieren**
 
@@ -37,7 +37,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Hinweis*** dieses Beispiel verwendet die CPU
 
 
-### **Inference des Phi-4-mini ONNX Modells mit ONNX Runtime GenAI**
+### **Inference des Phi-4-mini ONNX-Modells mit ONNX Runtime GenAI**
 
 - **ONNX Runtime GenAI installieren**
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

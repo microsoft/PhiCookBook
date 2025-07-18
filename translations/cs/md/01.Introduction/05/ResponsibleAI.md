@@ -2,120 +2,120 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "805b96b20152936d8f4c587d90d6e06e",
-  "translation_date": "2025-05-09T15:45:49+00:00",
+  "translation_date": "2025-07-16T22:57:25+00:00",
   "source_file": "md/01.Introduction/05/ResponsibleAI.md",
   "language_code": "cs"
 }
 -->
-# **Introducir IA Responsable**
+# **Představení Responsible AI**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) es una iniciativa que busca ayudar a desarrolladores y organizaciones a crear sistemas de IA que sean transparentes, confiables y responsables. La iniciativa ofrece orientación y recursos para desarrollar soluciones de IA responsables que se alineen con principios éticos, como la privacidad, la equidad y la transparencia. También exploraremos algunos de los desafíos y mejores prácticas relacionados con la construcción de sistemas de IA responsables.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) je iniciativa, která pomáhá vývojářům a organizacím vytvářet AI systémy, jež jsou transparentní, důvěryhodné a zodpovědné. Tato iniciativa poskytuje rady a zdroje pro vývoj odpovědných AI řešení, která jsou v souladu s etickými principy, jako jsou ochrana soukromí, spravedlnost a transparentnost. Také se podíváme na některé výzvy a osvědčené postupy spojené s tvorbou odpovědných AI systémů.
 
-## Visión general de Microsoft Responsible AI
+## Přehled Microsoft Responsible AI
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.e40f2a169a854832e885ce2659f3a913cfb393fa59b595ed57cfae9119694eb7.cs.png)
+![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d336830630939a5130a22b3f9e1f633773562f83fed08a50520.cs.png)
 
-**Principios éticos**
+**Etické principy**
 
-Microsoft Responsible AI se guía por un conjunto de principios éticos, como privacidad, equidad, transparencia, responsabilidad y seguridad. Estos principios están diseñados para asegurar que los sistemas de IA se desarrollen de manera ética y responsable.
+Microsoft Responsible AI se řídí souborem etických principů, jako jsou ochrana soukromí, spravedlnost, transparentnost, odpovědnost a bezpečnost. Tyto principy mají zajistit, že AI systémy jsou vyvíjeny eticky a zodpovědně.
 
-**IA transparente**
+**Transparentní AI**
 
-Microsoft Responsible AI destaca la importancia de la transparencia en los sistemas de IA. Esto incluye proporcionar explicaciones claras sobre cómo funcionan los modelos de IA, así como garantizar que las fuentes de datos y los algoritmos estén disponibles públicamente.
+Microsoft Responsible AI klade důraz na transparentnost AI systémů. To zahrnuje poskytování jasných vysvětlení, jak AI modely fungují, a také zajištění veřejné dostupnosti datových zdrojů a algoritmů.
 
-**IA responsable**
+**Odpovědná AI**
 
-[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) fomenta el desarrollo de sistemas de IA responsables, que puedan ofrecer información sobre cómo los modelos de IA toman decisiones. Esto ayuda a los usuarios a comprender y confiar en los resultados de los sistemas de IA.
+[Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_id=aiml-138114-kinfeylo) podporuje vývoj odpovědných AI systémů, které dokážou poskytnout přehled o tom, jak AI modely přijímají rozhodnutí. To pomáhá uživatelům lépe porozumět a důvěřovat výstupům AI systémů.
 
-**Inclusividad**
+**Inkluzivita**
 
-Los sistemas de IA deben diseñarse para beneficiar a todos. Microsoft busca crear una IA inclusiva que considere diversas perspectivas y evite sesgos o discriminación.
+AI systémy by měly být navrženy tak, aby přinášely užitek všem. Microsoft usiluje o vytváření inkluzivní AI, která zohledňuje různé pohledy a vyhýbá se zaujatosti či diskriminaci.
 
-**Confiabilidad y seguridad**
+**Spolehlivost a bezpečnost**
 
-Garantizar que los sistemas de IA sean confiables y seguros es fundamental. Microsoft se enfoca en construir modelos robustos que funcionen de manera consistente y eviten resultados dañinos.
+Zajištění spolehlivosti a bezpečnosti AI systémů je klíčové. Microsoft se zaměřuje na tvorbu robustních modelů, které fungují konzistentně a vyhýbají se škodlivým výsledkům.
 
-**Equidad en IA**
+**Spravedlnost v AI**
 
-Microsoft Responsible AI reconoce que los sistemas de IA pueden perpetuar sesgos si se entrenan con datos o algoritmos sesgados. La iniciativa ofrece orientación para desarrollar sistemas de IA justos que no discriminen por factores como raza, género o edad.
+Microsoft Responsible AI si uvědomuje, že AI systémy mohou přenášet předsudky, pokud jsou trénovány na zaujatých datech nebo algoritmech. Iniciativa poskytuje doporučení pro vývoj spravedlivých AI systémů, které nediskriminují na základě faktorů jako je rasa, pohlaví nebo věk.
 
-**Privacidad y seguridad**
+**Ochrana soukromí a bezpečnost**
 
-Microsoft Responsible AI enfatiza la importancia de proteger la privacidad del usuario y la seguridad de los datos en los sistemas de IA. Esto incluye implementar cifrado fuerte de datos y controles de acceso, así como auditar regularmente los sistemas de IA para detectar vulnerabilidades.
+Microsoft Responsible AI zdůrazňuje důležitost ochrany soukromí uživatelů a bezpečnosti dat v AI systémech. To zahrnuje implementaci silného šifrování dat a kontrol přístupu, stejně jako pravidelné audity AI systémů na zranitelnosti.
 
-**Responsabilidad y rendición de cuentas**
+**Odpovědnost a zodpovědnost**
 
-Microsoft Responsible AI promueve la responsabilidad y rendición de cuentas en el desarrollo y despliegue de IA. Esto implica asegurar que los desarrolladores y organizaciones conozcan los riesgos potenciales asociados con los sistemas de IA y tomen medidas para mitigarlos.
+Microsoft Responsible AI podporuje odpovědnost a zodpovědnost při vývoji a nasazení AI. To znamená, že vývojáři a organizace by měli být informováni o možných rizicích spojených s AI systémy a podnikat kroky k jejich minimalizaci.
 
-## Mejores prácticas para construir sistemas de IA responsables
+## Osvědčené postupy pro tvorbu odpovědných AI systémů
 
-**Desarrollar modelos de IA usando conjuntos de datos diversos**
+**Vyvíjejte AI modely s využitím různorodých datových sad**
 
-Para evitar sesgos en los sistemas de IA, es importante usar conjuntos de datos diversos que representen una variedad de perspectivas y experiencias.
+Aby se předešlo zaujatosti v AI systémech, je důležité používat různorodé datové sady, které reprezentují široké spektrum pohledů a zkušeností.
 
-**Usar técnicas de IA explicable**
+**Používejte techniky vysvětlitelné AI**
 
-Las técnicas de IA explicable pueden ayudar a los usuarios a entender cómo los modelos de IA toman decisiones, lo que puede aumentar la confianza en el sistema.
+Techniky vysvětlitelné AI pomáhají uživatelům pochopit, jak AI modely přijímají rozhodnutí, což může zvýšit důvěru v systém.
 
-**Auditar regularmente los sistemas de IA en busca de vulnerabilidades**
+**Pravidelně provádějte audity AI systémů na zranitelnosti**
 
-Las auditorías periódicas de los sistemas de IA pueden ayudar a identificar riesgos y vulnerabilidades que deben ser abordados.
+Pravidelné audity AI systémů pomáhají odhalit potenciální rizika a zranitelnosti, které je třeba řešit.
 
-**Implementar cifrado fuerte de datos y controles de acceso**
+**Implementujte silné šifrování dat a kontroly přístupu**
 
-El cifrado de datos y los controles de acceso ayudan a proteger la privacidad y seguridad del usuario en los sistemas de IA.
+Šifrování dat a kontroly přístupu pomáhají chránit soukromí a bezpečnost uživatelů v AI systémech.
 
-**Seguir principios éticos en el desarrollo de IA**
+**Dodržujte etické principy při vývoji AI**
 
-Seguir principios éticos, como equidad, transparencia y responsabilidad, puede ayudar a generar confianza en los sistemas de IA y asegurar que se desarrollen de manera responsable.
+Dodržování etických principů, jako jsou spravedlnost, transparentnost a odpovědnost, pomáhá budovat důvěru v AI systémy a zajišťuje, že jsou vyvíjeny zodpovědně.
 
-## Uso de AI Foundry para IA Responsable
+## Použití AI Foundry pro Responsible AI
 
-[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) es una plataforma potente que permite a desarrolladores y organizaciones crear rápidamente aplicaciones inteligentes, innovadoras, listas para el mercado y responsables. Aquí algunas características y capacidades clave de Azure AI Foundry:
+[Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) je výkonná platforma, která umožňuje vývojářům a organizacím rychle vytvářet inteligentní, moderní, na trh připravené a odpovědné aplikace. Zde jsou některé klíčové funkce a možnosti Azure AI Foundry:
 
-**APIs y modelos listos para usar**
+**Předpřipravené API a modely**
 
-Azure AI Foundry ofrece APIs y modelos preconstruidos y personalizables. Estos cubren una amplia gama de tareas de IA, incluyendo IA generativa, procesamiento de lenguaje natural para conversaciones, búsqueda, monitoreo, traducción, voz, visión y toma de decisiones.
+Azure AI Foundry nabízí předpřipravená a přizpůsobitelná API a modely. Pokrývají širokou škálu AI úloh, včetně generativní AI, zpracování přirozeného jazyka pro konverzace, vyhledávání, monitorování, překladů, řeči, vidění a rozhodování.
 
 **Prompt Flow**
 
-Prompt flow en Azure AI Foundry permite crear experiencias de IA conversacional. Facilita diseñar y gestionar flujos conversacionales, haciendo más sencillo construir chatbots, asistentes virtuales y otras aplicaciones interactivas.
+Prompt flow v Azure AI Foundry umožňuje vytvářet konverzační AI zážitky. Umožňuje navrhovat a spravovat konverzační toky, což usnadňuje tvorbu chatbotů, virtuálních asistentů a dalších interaktivních aplikací.
 
-**Generación aumentada por recuperación (RAG)**
+**Retrieval Augmented Generation (RAG)**
 
-RAG es una técnica que combina enfoques basados en recuperación y generación. Mejora la calidad de las respuestas generadas aprovechando tanto el conocimiento preexistente (recuperación) como la generación creativa (generación).
+RAG je technika, která kombinuje přístupy založené na vyhledávání a generování. Zlepšuje kvalitu generovaných odpovědí tím, že využívá jak předem existující znalosti (vyhledávání), tak kreativní generování (generování).
 
-**Métricas de evaluación y monitoreo para IA generativa**
+**Měření a monitorování generativní AI**
 
-Azure AI Foundry ofrece herramientas para evaluar y monitorear modelos de IA generativa. Puedes medir su desempeño, equidad y otras métricas importantes para asegurar un despliegue responsable. Además, si has creado un panel de control, puedes usar la interfaz sin código en Azure Machine Learning Studio para personalizar y generar un Panel de IA Responsable y su tarjeta de puntuación basada en las librerías Python del [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo). Esta tarjeta ayuda a compartir insights clave relacionados con equidad, importancia de características y otras consideraciones responsables con audiencias técnicas y no técnicas.
+Azure AI Foundry poskytuje nástroje pro hodnocení a monitorování generativních AI modelů. Můžete hodnotit jejich výkon, spravedlnost a další důležité metriky, aby bylo zajištěno odpovědné nasazení. Navíc, pokud jste vytvořili dashboard, můžete použít no-code uživatelské rozhraní v Azure Machine Learning Studio k přizpůsobení a vytvoření Responsible AI Dashboard a přidružené scorecard založené na [Responsible AI Toolbox](https://responsibleaitoolbox.ai/?WT.mc_id=aiml-138114-kinfeylo) Python knihovnách. Tento scorecard pomáhá sdílet klíčové poznatky týkající se spravedlnosti, důležitosti funkcí a dalších aspektů odpovědného nasazení jak s technickými, tak netechnickými zainteresovanými stranami.
 
-Para usar AI Foundry con IA responsable, puedes seguir estas mejores prácticas:
+Pro použití AI Foundry s Responsible AI můžete dodržovat tyto osvědčené postupy:
 
-**Definir el problema y los objetivos de tu sistema de IA**
+**Definujte problém a cíle vašeho AI systému**
 
-Antes de comenzar el desarrollo, es importante definir claramente el problema u objetivo que tu sistema de IA busca resolver. Esto ayudará a identificar los datos, algoritmos y recursos necesarios para construir un modelo efectivo.
+Před zahájením vývoje je důležité jasně definovat problém nebo cíl, který má váš AI systém řešit. To vám pomůže určit data, algoritmy a zdroje potřebné k vytvoření efektivního modelu.
 
-**Recolectar y preprocesar datos relevantes**
+**Shromážděte a předzpracujte relevantní data**
 
-La calidad y cantidad de datos usados para entrenar un sistema de IA tienen un impacto significativo en su desempeño. Por ello, es importante recolectar datos relevantes, limpiarlos, preprocesarlos y asegurarse de que representen la población o problema que se desea resolver.
+Kvalita a množství dat použitých k tréninku AI systému má zásadní vliv na jeho výkon. Proto je důležité shromáždit relevantní data, vyčistit je, předzpracovat a zajistit, aby byla reprezentativní pro populaci nebo problém, který se snažíte vyřešit.
 
-**Elegir la evaluación apropiada**
+**Vyberte vhodné hodnotící metody**
 
-Existen varios algoritmos de evaluación disponibles. Es fundamental elegir el más adecuado según tus datos y problema.
+Existuje mnoho hodnotících algoritmů. Je důležité vybrat ten nejvhodnější podle vašich dat a problému.
 
-**Evaluar e interpretar el modelo**
+**Vyhodnoťte a interpretujte model**
 
-Una vez construido un modelo de IA, es importante evaluar su desempeño usando métricas apropiadas e interpretar los resultados de forma transparente. Esto ayudará a identificar sesgos o limitaciones del modelo y a hacer mejoras cuando sea necesario.
+Jakmile máte AI model vytvořený, je důležité vyhodnotit jeho výkon pomocí vhodných metrik a transparentně interpretovat výsledky. To vám pomůže odhalit případné zaujatosti nebo omezení modelu a provést potřebná vylepšení.
 
-**Garantizar transparencia y explicabilidad**
+**Zajistěte transparentnost a vysvětlitelnost**
 
-Los sistemas de IA deben ser transparentes y explicables para que los usuarios comprendan cómo funcionan y cómo se toman las decisiones. Esto es especialmente importante en aplicaciones con impactos significativos en la vida humana, como salud, finanzas y sistemas legales.
+AI systémy by měly být transparentní a vysvětlitelné, aby uživatelé mohli pochopit, jak fungují a jak jsou přijímána rozhodnutí. To je zvláště důležité u aplikací, které mají významný dopad na lidské životy, jako je zdravotnictví, finance nebo právní systémy.
 
-**Monitorear y actualizar el modelo**
+**Monitorujte a aktualizujte model**
 
-Los sistemas de IA deben ser monitoreados y actualizados continuamente para asegurar que sigan siendo precisos y efectivos con el tiempo. Esto requiere mantenimiento, pruebas y reentrenamiento constantes.
+AI systémy by měly být průběžně monitorovány a aktualizovány, aby zůstaly přesné a efektivní v čase. To vyžaduje pravidelnou údržbu, testování a přeškolování modelu.
 
-En conclusión, Microsoft Responsible AI es una iniciativa que busca ayudar a desarrolladores y organizaciones a construir sistemas de IA que sean transparentes, confiables y responsables. Recuerda que la implementación responsable de IA es crucial, y Azure AI Foundry busca hacerla práctica para las organizaciones. Siguiendo principios éticos y mejores prácticas, podemos asegurar que los sistemas de IA se desarrollen y desplieguen de manera responsable, beneficiando a la sociedad en su conjunto.
+Na závěr, Microsoft Responsible AI je iniciativa, která pomáhá vývojářům a organizacím vytvářet AI systémy, jež jsou transparentní, důvěryhodné a zodpovědné. Pamatujte, že odpovědná implementace AI je klíčová a Azure AI Foundry usiluje o to, aby byla pro organizace praktická. Dodržováním etických principů a osvědčených postupů můžeme zajistit, že AI systémy budou vyvíjeny a nasazovány zodpovědně a ve prospěch celé společnosti.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakákoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

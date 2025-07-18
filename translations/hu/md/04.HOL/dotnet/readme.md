@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "903c509a6d0d1ecce00b849d7f753bdd",
-  "translation_date": "2025-05-09T22:45:43+00:00",
+  "translation_date": "2025-07-17T10:40:44+00:00",
   "source_file": "md/04.HOL/dotnet/readme.md",
   "language_code": "hu"
 }
 -->
 ﻿## Üdvözlünk a Phi laborokban C# használatával
 
-Számos labor áll rendelkezésre, amelyek bemutatják, hogyan lehet integrálni a Phi modellek különböző verzióit egy .NET környezetben.
+Különböző laborok állnak rendelkezésre, amelyek bemutatják, hogyan lehet integrálni a Phi modellek különböző verzióit egy .NET környezetben.
 
 ## Előfeltételek
 
@@ -17,19 +17,19 @@ A minta futtatása előtt győződj meg róla, hogy a következők telepítve va
 
 **.NET 9:** Győződj meg róla, hogy a gépeden a [legfrissebb .NET verzió](https://dotnet.microsoft.com/download/dotnet?WT.mc_id=aiml-137032-kinfeylo) telepítve van.
 
-**(Opcionális) Visual Studio vagy Visual Studio Code:** Szükséged lesz egy IDE-re vagy kódszerkesztőre, amely képes .NET projektek futtatására. Ajánlott a [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) vagy a [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo).
+**(Opcionális) Visual Studio vagy Visual Studio Code:** Szükséged lesz egy IDE-re vagy kódszerkesztőre, amely képes .NET projekteket futtatni. Ajánlott a [Visual Studio](https://visualstudio.microsoft.com?WT.mc_id=aiml-137032-kinfeylo) vagy a [Visual Studio Code](https://code.visualstudio.com?WT.mc_id=aiml-137032-kinfeylo).
 
 **Git használata:** Klónozd le helyileg a Phi-3, Phi3.5 vagy Phi-4 verziók egyikét a [Hugging Face-ről](https://huggingface.co/collections/lokinfey/phi-4-family-679c6f234061a1ab60f5547c).
 
 **Phi-4 ONNX modellek letöltése** a helyi gépedre:
 
-### Navigálj a mappába, ahová a modelleket menteni szeretnéd
+### Navigálj a mappába, ahová a modelleket tárolni szeretnéd
 
 ```bash
 cd c:\phi\models
 ```
 
-### Adj hozzá támogatást az lfs-hez
+### Add hozzá az lfs támogatást
 
 ```bash
 git lfs install 
@@ -43,7 +43,7 @@ git clone https://huggingface.co/microsoft/Phi-4-mini-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-4-multimodal-instruct-onnx
 ```
 
-**Phi-3 ONNX modellek letöltése** a helyi gépre:
+**Phi-3 ONNX modellek letöltése** a helyi gépedre:
 
 ### Klónozd és töltsd le a Phi-3 mini 4K instruct modellt és a Phi-3 vision 128K modellt
 
@@ -53,44 +53,44 @@ git clone https://huggingface.co/microsoft/Phi-3-mini-4k-instruct-onnx
 git clone https://huggingface.co/microsoft/Phi-3-vision-128k-instruct-onnx-cpu
 ```
 
-**Fontos:** A jelenlegi demók az ONNX verziókat használják. Az előző lépések ezeknek a modelleknek a klónozását végzik el.
+**Fontos:** A jelenlegi demók az ONNX verziókat használják. A fenti lépések ezeknek a modelleknek a klónozását végzik el.
 
 ## A laborokról
 
-A fő megoldás több mintapéldát tartalmaz, amelyek bemutatják a Phi modellek képességeit C# használatával.
+A fő megoldás több mintát tartalmazó labort, amelyek bemutatják a Phi modellek képességeit C# használatával.
 
 | Projekt | Modell | Leírás |
 | ------------ | -----------| ----------- |
-| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 vagy Phi-3.5 | Konzolos chat példa, amely lehetővé teszi a felhasználó számára, hogy kérdéseket tegyen fel. A projekt egy helyi ONNX Phi-3 modellt tölt be a `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 or Phi-3.5 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-3 model using the `Microsoft.Semantic.Kernel` libraries. |
-| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 or Phi-3.5 | This is a sample project that uses a local phi3 vision model to analyze images.. The project load a local ONNX Phi-3 Vision model using the `Microsoft.ML.OnnxRuntime` libraries. The project also presents a menu with different options to interacti with the user. | 
-| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Semantic Kernel` libraries. |
-| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Sample console chat that allows the user to ask questions. The project load a local ONNX Phi-4 model using the `Microsoft.ML.OnnxRuntimeGenAI` libraries and implements the `IChatClient` from `Microsoft.Extensions.AI`. |
-| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Sample console chat that allows the user to ask questions. The chat implements memory. |
-| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | This is a sample project that uses a local Phi-4 model to analyze images showing the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
-| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 |This is a sample project that uses a local Phi-4 model to analyze an audio file, generate the transcript of the file and show the result in the console. The project load a local Phi-4-`multimodal-instruct-onnx` model using the `Microsoft.ML.OnnxRuntime` libraries. |
+| [LabsPhi301](../../../../../md/04.HOL/dotnet/src/LabsPhi301) | Phi-3 vagy Phi-3.5 | Konzolos chat minta, amely lehetővé teszi a felhasználó számára kérdések feltevését. A projekt egy helyi ONNX Phi-3 modellt tölt be a `Microsoft.ML.OnnxRuntime` könyvtárak segítségével. |
+| [LabsPhi302](../../../../../md/04.HOL/dotnet/src/LabsPhi302) | Phi-3 vagy Phi-3.5 | Konzolos chat minta, amely lehetővé teszi a felhasználó számára kérdések feltevését. A projekt egy helyi ONNX Phi-3 modellt tölt be a `Microsoft.Semantic.Kernel` könyvtárak segítségével. |
+| [LabPhi303](../../../../../md/04.HOL/dotnet/src/LabsPhi303) | Phi-3 vagy Phi-3.5 | Ez egy minta projekt, amely egy helyi phi3 vision modellt használ képek elemzésére. A projekt egy helyi ONNX Phi-3 Vision modellt tölt be a `Microsoft.ML.OnnxRuntime` könyvtárak segítségével. |
+| [LabPhi304](../../../../../md/04.HOL/dotnet/src/LabsPhi304) | Phi-3 vagy Phi-3.5 | Ez egy minta projekt, amely egy helyi phi3 vision modellt használ képek elemzésére. A projekt egy helyi ONNX Phi-3 Vision modellt tölt be a `Microsoft.ML.OnnxRuntime` könyvtárak segítségével. A projekt emellett menüt is kínál különböző opciókkal a felhasználóval való interakcióhoz. | 
+| [LabPhi4-Chat](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime) | Phi-4 | Konzolos chat minta, amely lehetővé teszi a felhasználó számára kérdések feltevését. A projekt egy helyi ONNX Phi-4 modellt tölt be a `Microsoft.ML.OnnxRuntime` könyvtárak segítségével. |
+| [LabPhi-4-SK](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK) | Phi-4 | Konzolos chat minta, amely lehetővé teszi a felhasználó számára kérdések feltevését. A projekt egy helyi ONNX Phi-4 modellt tölt be a `Semantic Kernel` könyvtárak segítségével. |
+| [LabsPhi4-Chat-03GenAIChatClient](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-03GenAIChatClient) | Phi-4 | Konzolos chat minta, amely lehetővé teszi a felhasználó számára kérdések feltevését. A projekt egy helyi ONNX Phi-4 modellt tölt be a `Microsoft.ML.OnnxRuntimeGenAI` könyvtárak segítségével, és megvalósítja az `IChatClient` interfészt a `Microsoft.Extensions.AI`-ból. |
+| [LabsPhi4-Chat-04-ChatMode](../../../../../md/04.HOL/dotnet/src/LabsPhi4-Chat-04-ChatMode) | Phi-4 | Konzolos chat minta, amely lehetővé teszi a felhasználó számára kérdések feltevését. A chat memóriát is használ. |
+| [Phi-4multimodal-vision](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images) | Phi-4 | Ez egy minta projekt, amely egy helyi Phi-4 modellt használ képek elemzésére, az eredményt a konzolon jeleníti meg. A projekt egy helyi Phi-4-`multimodal-instruct-onnx` modellt tölt be a `Microsoft.ML.OnnxRuntime` könyvtárak segítségével. |
+| [LabPhi4-MM-Audio](../../../../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio) | Phi-4 | Ez egy minta projekt, amely egy helyi Phi-4 modellt használ egy hangfájl elemzésére, a fájl átiratának generálására és az eredmény konzolon való megjelenítésére. A projekt egy helyi Phi-4-`multimodal-instruct-onnx` modellt tölt be a `Microsoft.ML.OnnxRuntime` könyvtárak segítségével. |
 
-## How to Run the Projects
+## Hogyan futtasd a projekteket
 
-To run the projects, follow these steps:
+A projektek futtatásához kövesd az alábbi lépéseket:
 
-1. Clone the repository to your local machine.
+1. Klónozd le a repozitóriumot a helyi gépedre.
 
-1. Open a terminal and navigate to the desired project. In example, let's run `LabsPhi4-Chat-01OnnxRuntime` segítségével.
+1. Nyiss meg egy terminált, és navigálj a kívánt projekthez. Például futtassuk a `LabsPhi4-Chat-01OnnxRuntime` projektet.
 
     ```bash
     cd .\src\LabsPhi4-Chat-01OnnxRuntime \
     ```
 
-1. Futtasd a projektet a következő parancs segítségével
+1. Futtasd a projektet a következő paranccsal
 
     ```bash
     dotnet run
     ```
 
-1. A minta projekt bekéri a felhasználó bemenetét, majd a helyi modell segítségével válaszol.
+1. A minta projekt kér egy felhasználói bemenetet, és a helyi modell segítségével válaszol.
 
    A futó demo hasonló ehhez:
 
@@ -103,4 +103,4 @@ To run the projects, follow these steps:
    ```
 
 **Jogi nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

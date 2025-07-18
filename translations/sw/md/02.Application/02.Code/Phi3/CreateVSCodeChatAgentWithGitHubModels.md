@@ -2,59 +2,59 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:08:36+00:00",
+  "translation_date": "2025-07-17T03:29:13+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "sw"
 }
 -->
-# **Tengeneza Wakala wako wa Visual Studio Code Chat Copilot kwa Phi-3.5 kutoka GitHub Models**
+# **Tengeneza Wakala wako wa Visual Studio Code Chat Copilot kwa Phi-3.5 kupitia GitHub Models**
 
-Je, unatumia Visual Studio Code Copilot? Hasa katika Chat, unaweza kutumia mawakala tofauti kuboresha uwezo wa kuunda, kuandika, na kudumisha miradi ndani ya Visual Studio Code. Visual Studio Code hutoa API inayowezesha kampuni na watu binafsi kuunda mawakala tofauti kulingana na biashara zao ili kupanua uwezo wao katika nyanja mbalimbali za kipekee. Katika makala hii, tutazingatia **Phi-3.5-mini-instruct (128k)** na **Phi-3.5-vision-instruct (128k)** kutoka GitHub Models ili kuunda Wakala wako wa Visual Studio Code.
+Je, unatumia Visual Studio Code Copilot? Hasa katika Chat, unaweza kutumia mawakala tofauti kuboresha uwezo wa kuunda, kuandika, na kudumisha miradi ndani ya Visual Studio Code. Visual Studio Code hutoa API inayowezesha makampuni na watu binafsi kuunda mawakala tofauti kulingana na biashara yao ili kupanua uwezo wao katika nyanja mbalimbali za kipekee. Katika makala hii, tutazingatia **Phi-3.5-mini-instruct (128k)** na **Phi-3.5-vision-instruct (128k)** za GitHub Models kuunda Wakala wako wa Visual Studio Code.
 
 ## **Kuhusu Phi-3.5 kwenye GitHub Models**
 
 Tunajua kuwa Phi-3/3.5-mini-instruct katika Familia ya Phi-3/3.5 ina uwezo mkubwa wa kuelewa na kuzalisha msimbo, na ina faida ikilinganishwa na Gemma-2-9b na Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.sw.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.sw.png)
 
 GitHub Models za hivi karibuni tayari zinatoa ufikiaji wa modeli za Phi-3.5-mini-instruct (128k) na Phi-3.5-vision-instruct (128k). Waendelezaji wanaweza kuzifikia kupitia OpenAI SDK, Azure AI Inference SDK, na REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.sw.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.sw.png)
 
-***Note: *** Inashauriwa kutumia Azure AI Inference SDK hapa, kwa sababu inaweza kubadilisha vyema na Azure Model Catalog katika mazingira ya uzalishaji
+***Note: *** Inashauriwa kutumia Azure AI Inference SDK hapa, kwa sababu inaweza kubadilika vizuri zaidi na Azure Model Catalog katika mazingira ya uzalishaji
 
-Hapa chini ni matokeo ya **Phi-3.5-mini-instruct (128k)** na **Phi-3.5-vision-instruct (128k)** katika mazingira ya uzalishaji msimbo baada ya kuunganishwa na GitHub Models, na pia maandalizi kwa mifano ifuatayo
+Hapa chini ni matokeo ya **Phi-3.5-mini-instruct (128k)** na **Phi-3.5-vision-instruct (128k)** katika hali ya uzalishaji msimbo baada ya kuunganishwa na GitHub Models, na pia maandalizi kwa mifano ifuatayo
 
-**Demo: GitHub Models Phi-3.5-mini-instruct (128k) kuzalisha msimbo kutoka Prompt** ([click this link](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-mini-instruct (128k) kuzalisha msimbo kutoka kwa Prompt** ([bonyeza hapa](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
-**Demo: GitHub Models Phi-3.5-vision-instruct (128k) kuzalisha msimbo kutoka Picha** ([click this link](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
+**Demo: GitHub Models Phi-3.5-vision-instruct (128k) kuzalisha msimbo kutoka kwa Picha** ([bonyeza hapa](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_vision_demo.ipynb))
 
 
-## **Kuhusu GitHub Copilot Chat Agent**
+## **Kuhusu Wakala wa GitHub Copilot Chat**
 
-GitHub Copilot Chat Agent inaweza kutekeleza kazi mbalimbali katika mazingira tofauti ya miradi kulingana na msimbo. Mfumo una mawakala wanne: workspace, github, terminal, vscode
+Wakala wa GitHub Copilot Chat unaweza kukamilisha kazi mbalimbali katika mazingira tofauti ya mradi kulingana na msimbo. Mfumo una mawakala wanne: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.sw.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.sw.png)
 
-Kwa kuongeza jina la wakala kwa ‘@’, unaweza kumaliza kazi husika haraka. Kwa makampuni, ikiwa utaongeza maudhui yako yanayohusiana na biashara kama mahitaji, uandishi wa msimbo, vipimo, na utoaji, unaweza kuwa na huduma za kibinafsi za kampuni zenye nguvu zaidi zinazotegemea GitHub Copilot.
+Kwa kuongeza jina la wakala kwa ‘@’, unaweza haraka kukamilisha kazi inayohusiana. Kwa makampuni, ikiwa utaongeza maudhui yanayohusiana na biashara yako kama mahitaji, uandishi wa msimbo, vipimo vya majaribio, na utoaji, unaweza kuwa na kazi za kibinafsi za kampuni zenye nguvu zaidi kulingana na GitHub Copilot.
 
-Visual Studio Code Chat Agent sasa imetolewa rasmi API yake, ikiruhusu makampuni au waendelezaji wa kampuni kuunda mawakala kulingana na mifumo tofauti ya biashara za programu. Kulingana na njia ya maendeleo ya Visual Studio Code Extension Development, unaweza kwa urahisi kupata kiolesura cha Visual Studio Code Chat Agent API. Tunaweza kuendeleza kulingana na mchakato huu
+Wakala wa Visual Studio Code Chat sasa umezindua rasmi API yake, ikiruhusu makampuni au waendelezaji wa makampuni kuendeleza mawakala kulingana na mifumo tofauti ya biashara ya programu. Kulingana na njia ya maendeleo ya Visual Studio Code Extension Development, unaweza kwa urahisi kupata kiolesura cha API ya Wakala wa Visual Studio Code Chat. Tunaweza kuendeleza kulingana na mchakato huu
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.sw.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.sw.png)
 
-Mazingira ya maendeleo yanaweza kuunga mkono ufikiaji wa API za modeli za mtu wa tatu (kama GitHub Models, Azure Model Catalog, na huduma za kujijengea zinazotegemea modeli za chanzo wazi) na pia yanaweza kutumia modeli za gpt-35-turbo, gpt-4, na gpt-4o zinazotolewa na GitHub Copilot.
+Hali ya maendeleo inaweza kusaidia ufikiaji wa API za modeli za wahusika wengine (kama GitHub Models, Azure Model Catalog, na huduma zilizojengwa binafsi kulingana na modeli za chanzo huria) na pia inaweza kutumia modeli za gpt-35-turbo, gpt-4, na gpt-4o zinazotolewa na GitHub Copilot.
 
 ## **Ongeza Wakala @phicoding kulingana na Phi-3.5**
 
-Tujaribu kuunganisha uwezo wa uandishi wa programu wa Phi-3.5 kukamilisha uandishi wa msimbo, kuzalisha msimbo wa picha na kazi nyingine. Kamalisha Wakala uliojengwa kwa msingi wa Phi-3.5 - @PHI, zifuatazo ni baadhi ya kazi zake
+Tunajaribu kuunganisha uwezo wa uandishi wa programu wa Phi-3.5 kukamilisha uandishi wa msimbo, kuzalisha msimbo wa picha na kazi nyinginezo. Kamili Wakala uliojengwa kuzunguka Phi-3.5 - @PHI, zifuatazo ni baadhi ya kazi zake
 
-1. Tengeneza utambulisho binafsi kwa kutumia GPT-4o inayotolewa na GitHub Copilot kupitia amri **@phicoding /help**
+1. Tengeneza utambulisho binafsi kulingana na GPT-4o inayotolewa na GitHub Copilot kupitia amri ya **@phicoding /help**
 
-2. Tengeneza msimbo kwa lugha mbalimbali za programu kwa kutumia **Phi-3.5-mini-instruct (128k)** kupitia amri **@phicoding /gen**
+2. Tengeneza msimbo kwa lugha tofauti za programu kulingana na **Phi-3.5-mini-instruct (128k)** kupitia amri ya **@phicoding /gen**
 
-3. Tengeneza msimbo kulingana na **Phi-3.5-vision-instruct (128k)** na ukamilishaji wa picha kupitia amri **@phicoding /image**
+3. Tengeneza msimbo kulingana na **Phi-3.5-vision-instruct (128k)** na ukamilishaji wa picha kupitia amri ya **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.sw.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.sw.png)
 
 ## **Hatua zinazohusiana**
 
@@ -65,8 +65,7 @@ Tujaribu kuunganisha uwezo wa uandishi wa programu wa Phi-3.5 kukamilisha uandis
 npm install --global yo generator-code 
 
 ```
-2. Tengeneza programu-jalizi ya Visual Studio Code Extension (kutumia mtindo wa maendeleo wa Typescript, iitwayo phiext)
-
+2. Unda plugin ya Visual Studio Code Extension (kutumia hali ya maendeleo ya Typescript, iitwe phiext)
 
 ```bash
 
@@ -74,8 +73,7 @@ yo code
 
 ```
 
-3. Fungua mradi uliounda na ubadilishe package.json. Hapa kuna maelekezo na usanidi unaohusiana, pamoja na usanidi wa GitHub Models. Kumbuka unahitaji kuongeza tokeni yako ya GitHub Models hapa.
-
+3. Fungua mradi ulioundwa na badilisha package.json. Hapa kuna maelekezo na usanidi unaohusiana, pamoja na usanidi wa GitHub Models. Kumbuka unahitaji kuongeza tokeni yako ya GitHub Models hapa.
 
 ```json
 
@@ -194,7 +192,6 @@ yo code
 ```
 
 4. Badilisha src/extension.ts
-
 
 ```typescript
 
@@ -367,23 +364,21 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.sw.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.sw.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.sw.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.sw.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.sw.png)
-
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.sw.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.sw.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.sw.png)
 
-
-Unaweza kupakua msimbo wa mfano :[click](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Unaweza kupakua msimbo wa mfano :[bonyeza hapa](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **Rasilimali**
 
@@ -393,5 +388,5 @@ Unaweza kupakua msimbo wa mfano :[click](../../../../../../code/09.UpdateSamples
 
 3. Jifunze kuhusu Visual Studio Code Coilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
-**Kasi ya Majukumu**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha kuaminika. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na watu inashauriwa. Hatubebeki dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

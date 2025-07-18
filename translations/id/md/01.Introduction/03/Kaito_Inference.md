@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:56:38+00:00",
+  "translation_date": "2025-07-16T20:52:11+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "id"
 }
 -->
 ## Inferensi dengan Kaito
 
-[Kaito](https://github.com/Azure/kaito) adalah operator yang mengotomatiskan deployment model inferensi AI/ML di dalam cluster Kubernetes.
+[Kaito](https://github.com/Azure/kaito) adalah operator yang mengotomatisasi deployment model inferensi AI/ML di dalam klaster Kubernetes.
 
-Kaito memiliki beberapa perbedaan utama dibandingkan dengan sebagian besar metode deployment model mainstream yang dibangun di atas infrastruktur mesin virtual:
+Kaito memiliki beberapa keunggulan utama dibandingkan dengan sebagian besar metodologi deployment model mainstream yang dibangun di atas infrastruktur mesin virtual:
 
-- Mengelola file model menggunakan container image. Sebuah server http disediakan untuk melakukan panggilan inferensi menggunakan library model.
+- Mengelola file model menggunakan image container. Sebuah server http disediakan untuk melakukan panggilan inferensi menggunakan pustaka model.
 - Menghindari penyesuaian parameter deployment agar sesuai dengan perangkat keras GPU dengan menyediakan konfigurasi preset.
 - Menyediakan node GPU secara otomatis berdasarkan kebutuhan model.
 - Menyimpan image model besar di Microsoft Container Registry (MCR) publik jika lisensi mengizinkan.
@@ -22,7 +22,7 @@ Dengan menggunakan Kaito, alur kerja onboarding model inferensi AI besar di Kube
 
 ## Arsitektur
 
-Kaito mengikuti pola desain klasik Kubernetes Custom Resource Definition(CRD)/controller. Pengguna mengelola custom resource `workspace` yang mendeskripsikan kebutuhan GPU dan spesifikasi inferensi. Controller Kaito akan mengotomatiskan deployment dengan merekonsiliasi custom resource `workspace`.
+Kaito mengikuti pola desain klasik Kubernetes Custom Resource Definition (CRD)/controller. Pengguna mengelola custom resource `workspace` yang mendeskripsikan kebutuhan GPU dan spesifikasi inferensi. Controller Kaito akan mengotomatisasi deployment dengan merekonsiliasi custom resource `workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
@@ -30,7 +30,7 @@ Kaito mengikuti pola desain klasik Kubernetes Custom Resource Definition(CRD)/co
 Gambar di atas menunjukkan gambaran umum arsitektur Kaito. Komponen utamanya terdiri dari:
 
 - **Workspace controller**: Merekonsiliasi custom resource `workspace`, membuat custom resource `machine` (dijelaskan di bawah) untuk memicu penyediaan node otomatis, dan membuat beban kerja inferensi (`deployment` atau `statefulset`) berdasarkan konfigurasi preset model.
-- **Node provisioner controller**: Nama controller ini adalah *gpu-provisioner* dalam [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Controller ini menggunakan CRD `machine` yang berasal dari [Karpenter](https://sigs.k8s.io/karpenter) untuk berinteraksi dengan workspace controller. Controller ini terintegrasi dengan API Azure Kubernetes Service (AKS) untuk menambahkan node GPU baru ke cluster AKS.
+- **Node provisioner controller**: Controller ini bernama *gpu-provisioner* dalam [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Ia menggunakan CRD `machine` yang berasal dari [Karpenter](https://sigs.k8s.io/karpenter) untuk berinteraksi dengan workspace controller. Controller ini terintegrasi dengan API Azure Kubernetes Service (AKS) untuk menambahkan node GPU baru ke klaster AKS.
 > Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) adalah komponen open source. Komponen ini dapat diganti dengan controller lain jika mendukung API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Instalasi
@@ -38,7 +38,7 @@ Gambar di atas menunjukkan gambaran umum arsitektur Kaito. Komponen utamanya ter
 Silakan cek panduan instalasi [di sini](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Memulai Cepat Inferensi Phi-3  
-[Sample Code Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+[Contoh Kode Inferensi Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-Status workspace dapat dipantau dengan menjalankan perintah berikut. Ketika kolom WORKSPACEREADY menjadi `True`, model sudah berhasil dideploy.
+Status workspace dapat dipantau dengan menjalankan perintah berikut. Ketika kolom WORKSPACEREADY menjadi `True`, model telah berhasil dideploy.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Selanjutnya, Anda dapat mencari IP cluster dari layanan inferensi dan menggunakan pod `curl` sementara untuk menguji endpoint layanan di cluster.
+Selanjutnya, Anda dapat menemukan cluster IP layanan inferensi dan menggunakan pod `curl` sementara untuk menguji endpoint layanan di dalam klaster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -106,7 +106,7 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 Setelah menginstal Kaito, Anda dapat mencoba perintah berikut untuk memulai layanan inferensi.
 
-[Sample Code Inference Phi-3 dengan Adapter](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Contoh Kode Inferensi Phi-3 dengan Adapter](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-Status workspace dapat dipantau dengan menjalankan perintah berikut. Ketika kolom WORKSPACEREADY menjadi `True`, model sudah berhasil dideploy.
+Status workspace dapat dipantau dengan menjalankan perintah berikut. Ketika kolom WORKSPACEREADY menjadi `True`, model telah berhasil dideploy.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Selanjutnya, Anda dapat mencari IP cluster dari layanan inferensi dan menggunakan pod `curl` sementara untuk menguji endpoint layanan di cluster.
+Selanjutnya, Anda dapat menemukan cluster IP layanan inferensi dan menggunakan pod `curl` sementara untuk menguji endpoint layanan di dalam klaster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

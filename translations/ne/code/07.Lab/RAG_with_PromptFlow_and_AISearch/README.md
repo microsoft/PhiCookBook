@@ -2,39 +2,39 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-05-09T05:11:31+00:00",
+  "translation_date": "2025-07-16T17:07:33+00:00",
   "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "ne"
 }
 -->
-## RAG with PromptFlow and AISearch
+## RAG with PromptFlow र AISearch
 
-यस उदाहरणमा, हामी Retrieval Augmented Generation (RAG) एप्लिकेसनलाई Phi3 लाई SLM को रूपमा, AI Search लाई vectorDB को रूपमा र Prompt Flow लाई low-code orchestrator को रूपमा प्रयोग गरेर कार्यान्वयन गर्नेछौं।
+यस उदाहरणमा, हामी Retrieval Augmented Generation (RAG) एप्लिकेशन कार्यान्वयन गर्नेछौं जसमा Phi3 लाई SLM को रूपमा, AI Search लाई vectorDB को रूपमा र Prompt Flow लाई low-code orchestrator को रूपमा प्रयोग गरिनेछ।
 
-## विशेषताहरू
+## सुविधाहरू
 
-- Docker प्रयोग गरेर सजिलो डिप्लोइमेन्ट।
-- AI वर्कफ्लोहरूलाई सम्हाल्न स्केलेबल आर्किटेक्चर।
+- Docker प्रयोग गरेर सजिलो डिप्लोयमेन्ट।
+- AI वर्कफ्लोहरू सम्हाल्न सक्ने स्केलेबल आर्किटेक्चर।
 - Prompt Flow प्रयोग गरेर कम कोड विधि।
 
-## आवश्यकताहरू
+## पूर्वआवश्यकताहरू
 
-शुरु गर्नु अघि, तलका आवश्यकताहरू पूरा भएको सुनिश्चित गर्नुहोस्:
+सुरु गर्नु अघि, तलका आवश्यकताहरू पूरा भएको सुनिश्चित गर्नुहोस्:
 
 - तपाईंको स्थानीय मेसिनमा Docker इन्स्टल गरिएको छ।
-- कन्टेनर स्रोतहरू सिर्जना र व्यवस्थापन गर्ने अनुमति भएको Azure खाता।
+- कन्टेनर स्रोतहरू सिर्जना र व्यवस्थापन गर्न अनुमति भएको Azure खाता।
 - Azure AI Studio र Azure AI Search इन्स्टेन्सहरू।
-- तपाईंको इन्डेक्स बनाउनको लागि embedding मोडल (Azure OpenAI embedding वा क्याटलगबाट कुनै OS मोडल हुनसक्छ)।
-- तपाईंको स्थानीय मेसिनमा Python 3.8 वा पछिको संस्करण इन्स्टल गरिएको छ।
+- तपाईंको इन्डेक्स बनाउनको लागि एक embedding मोडेल (Azure OpenAI embedding वा क्याटलगबाट OS मोडेल हुन सक्छ)।
+- तपाईंको स्थानीय मेसिनमा Python 3.8 वा पछि संस्करण इन्स्टल गरिएको छ।
 - Azure Container Registry (वा तपाईंको रोजाइको कुनै पनि रजिस्ट्री)।
 
 ## इन्स्टलेशन
 
-1. flow.yaml फाइल प्रयोग गरेर Azure AI Studio प्रोजेक्टमा नयाँ फ्लो सिर्जना गर्नुहोस्।
-2. Azure AI मोडल क्याटलगबाट Phi3 मोडल डिप्लोय गर्नुहोस् र प्रोजेक्टसँग कनेक्शन बनाउनुहोस्। [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
-3. तपाईंको रोजाइको कुनै पनि कागजात प्रयोग गरेर Azure AI Search मा भेक्टर इन्डेक्स सिर्जना गर्नुहोस्। [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. म्यानेज्ड एन्डपोइन्टमा फ्लो डिप्लोय गर्नुहोस् र prompt-flow-frontend.py फाइलमा प्रयोग गर्नुहोस्। [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
-5. रिपोजिटरी क्लोन गर्नुहोस्:
+1. तपाईंको Azure AI Studio प्रोजेक्टमा flow.yaml फाइल प्रयोग गरेर नयाँ फ्लो सिर्जना गर्नुहोस्।
+2. Azure AI मोडेल क्याटलगबाट Phi3 मोडेल डिप्लोय गर्नुहोस् र तपाईंको प्रोजेक्टसँग कनेक्शन बनाउनुहोस्। [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
+3. Azure AI Search मा तपाईंको रोजाइको कुनै पनि डकुमेन्ट प्रयोग गरेर भेक्टर इन्डेक्स सिर्जना गर्नुहोस्। [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
+4. फ्लोलाई म्यानेज्ड एन्डपोइन्टमा डिप्लोय गर्नुहोस् र prompt-flow-frontend.py फाइलमा प्रयोग गर्नुहोस्। [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+5. रिपोजिटोरी क्लोन गर्नुहोस्:
 
     ```sh
     git clone [[https://github.com/yourusername/prompt-flow-frontend.git](https://github.com/microsoft/Phi-3CookBook.git)](https://github.com/microsoft/Phi-3CookBook.git)
@@ -66,7 +66,7 @@ CO_OP_TRANSLATOR_METADATA:
     docker run -p 8501:8501 yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-2. तपाईँको ब्राउजरमा `http://localhost:8501` मा एप्लिकेसन पहुँच गर्नुहोस्।
+2. तपाईंको ब्राउजरमा `http://localhost:8501` मा एप्लिकेशन पहुँच गर्नुहोस्।
 
 ## सम्पर्क
 
@@ -75,4 +75,4 @@ Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148
 पूर्ण लेख: [RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
 **अस्वीकरण**:  
-यो दस्तावेज़ AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताको प्रयास गर्छौं, तर कृपया जान्नुहोस् कि स्वचालित अनुवादमा त्रुटिहरू वा अशुद्धता हुन सक्छ। मूल दस्तावेज़लाई यसको मूल भाषामा अधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीको लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याहरूको लागि हामी जिम्मेवार छैनौं।
+यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं भने पनि, कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

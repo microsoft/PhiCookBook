@@ -2,65 +2,66 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-09T04:43:47+00:00",
+  "translation_date": "2025-07-16T16:22:02+00:00",
   "source_file": "code/04.Finetuning/olive-lab/readme.md",
   "language_code": "sl"
 }
 -->
-# Lab. Optimize AI models for on-device inference
+# Lab. Optimizacija AI modelov za izvajanje na napravi
 
-## Introduction 
+## Uvod
 
 > [!IMPORTANT]
-> Ta laboratorijska vaja zahteva **Nvidia A10 ali A100 GPU** z ustreznimi gonilniki in nameščenim CUDA orodjem (različica 12+).
+> Ta laboratorij zahteva **Nvidia A10 ali A100 GPU** z ustreznimi gonilniki in nameščenim CUDA orodjem (verzija 12+).
 
 > [!NOTE]
-> To je **35-minutna** vaja, ki vam bo dala praktičen uvod v osnovne koncepte optimizacije modelov za izvajanje na napravi z uporabo OLIVE.
+> To je **35-minutni** laboratorij, ki vam bo omogočil praktičen uvod v osnovne koncepte optimizacije modelov za izvajanje na napravi z uporabo OLIVE.
 
-## Learning Objectives
+## Cilji učenja
 
-Na koncu te vaje boste znali uporabiti OLIVE za:
+Ob koncu tega laboratorija boste znali z OLIVE:
 
-- Kvantizacijo AI modela z metodo kvantizacije AWQ.
-- Fino prilagoditi AI model za specifično nalogo.
-- Generirati LoRA adapterje (fino prilagojen model) za učinkovito izvajanje na napravi z ONNX Runtime.
+- Kvantizirati AI model z metodo kvantizacije AWQ.
+- Izvesti fino nastavitev AI modela za specifično nalogo.
+- Generirati LoRA adapterje (fino nastavljeni model) za učinkovito izvajanje na napravi z ONNX Runtime.
 
 ### Kaj je Olive
 
-Olive (*O*NNX *live*) je orodje za optimizacijo modelov z vgrajenim CLI, ki omogoča pošiljanje modelov za ONNX runtime +++https://onnxruntime.ai+++ z zagotovljeno kakovostjo in zmogljivostjo.
+Olive (*O*NNX *live*) je orodje za optimizacijo modelov z vgrajenim CLI, ki omogoča pošiljanje modelov za ONNX runtime +++https://onnxruntime.ai+++ z visoko kakovostjo in zmogljivostjo.
 
-![Olive Flow](../../../../../translated_images/olive-flow.e4682fa65f77777f49e884482fa8dd83eadcb90904fcb41a54093af85c330060.sl.png)
+![Olive Flow](../../../../../translated_images/olive-flow.c4f76d9142c579b2462b631b8aa862093b595bb89064fa33e6d4fa90f937f52d.sl.png)
 
-Vhod v Olive je običajno PyTorch ali Hugging Face model, izhod pa optimiziran ONNX model, ki se izvaja na napravi (ciljna platforma) z ONNX runtime. Olive optimizira model za AI pospeševalnik ciljne platforme (NPU, GPU, CPU), ki ga zagotavlja proizvajalec strojne opreme, kot so Qualcomm, AMD, Nvidia ali Intel.
+Vhod v Olive je običajno PyTorch ali Hugging Face model, izhod pa optimiziran ONNX model, ki se izvaja na napravi (ciljni sistem za namestitev) z ONNX runtime. Olive optimizira model za AI pospeševalnik ciljnega sistema (NPU, GPU, CPU), ki ga zagotavlja proizvajalec strojne opreme, kot so Qualcomm, AMD, Nvidia ali Intel.
 
-Olive izvaja *workflow*, kar je zaporedje posameznih nalog optimizacije modela, imenovanih *passes* – primeri teh nalog so: stiskanje modela, zajem grafa, kvantizacija, optimizacija grafa. Vsaka naloga ima niz parametrov, ki jih lahko prilagodite za dosego najboljših meritev, kot sta natančnost in zakasnitev, ki jih ocenjuje ustrezni evaluator. Olive uporablja strategijo iskanja, ki s pomočjo algoritma samodejno prilagaja posamezne naloge eno za drugo ali skupine nalog skupaj.
+Olive izvaja *workflow*, kar je urejen niz posameznih nalog optimizacije modela, imenovanih *passes* – primeri teh nalog so: stiskanje modela, zajem grafa, kvantizacija, optimizacija grafa. Vsaka naloga ima niz parametrov, ki jih je mogoče prilagoditi za dosego najboljših metrik, kot sta natančnost in zakasnitev, ki jih ocenjuje ustrezni evaluator. Olive uporablja strategijo iskanja, ki z algoritmom samodejno nastavi posamezne naloge eno za drugo ali skupine nalog skupaj.
 
 #### Prednosti Olive
 
-- **Zmanjša frustracije in čas** ročnega preizkušanja različnih tehnik optimizacije grafa, stiskanja in kvantizacije. Določite svoje omejitve glede kakovosti in zmogljivosti ter pustite, da Olive samodejno poišče najboljši model za vas.
-- **Več kot 40 vgrajenih komponent** za optimizacijo modelov, ki pokrivajo najnovejše tehnike kvantizacije, stiskanja, optimizacije grafa in fino nastavljanje.
-- **Enostaven CLI** za pogoste naloge optimizacije modelov. Na primer, olive quantize, olive auto-opt, olive finetune.
+- **Zmanjšajte frustracije in čas** ročnega poskušanja različnih tehnik optimizacije grafa, stiskanja in kvantizacije. Določite svoje zahteve glede kakovosti in zmogljivosti ter pustite, da Olive samodejno najde najboljši model za vas.
+- **Več kot 40 vgrajenih komponent za optimizacijo modelov**, ki pokrivajo najnovejše tehnike kvantizacije, stiskanja, optimizacije grafa in fino nastavljanje.
+- **Enostaven CLI** za pogoste naloge optimizacije modelov, na primer olive quantize, olive auto-opt, olive finetune.
 - Vgrajeno pakiranje in nameščanje modelov.
 - Podpora za generiranje modelov za **Multi LoRA strežbo**.
-- Sestavljanje workflow-ov z YAML/JSON za orkestracijo nalog optimizacije in nameščanja modelov.
+- Sestavljanje workflowov z YAML/JSON za orkestracijo nalog optimizacije in nameščanja modelov.
 - Integracija z **Hugging Face** in **Azure AI**.
 - Vgrajen mehanizem **predpomnjenja** za **znižanje stroškov**.
 
-## Lab Instructions
+## Navodila za laboratorij
+
 > [!NOTE]
-> Prepričajte se, da ste uredili Azure AI Hub in projekt ter nastavili A100 računski vir po navodilih v Lab 1.
+> Prepričajte se, da ste pripravili svoj Azure AI Hub in projekt ter nastavili A100 računski vir, kot je opisano v laboratoriju 1.
 
-### Step 0: Povežite se z Azure AI Compute
+### Korak 0: Povežite se z Azure AI Compute
 
-Povezali se boste z Azure AI računalniškim virom preko funkcije oddaljenega dostopa v **VS Code**.
+Povezali se boste z Azure AI računalnikom preko oddaljene funkcije v **VS Code**.
 
-1. Odprite aplikacijo **VS Code** na namizju:
+1. Odprite namizno aplikacijo **VS Code**:
 1. Odprite **ukazno paleto** s **Shift+Ctrl+P**
 1. V ukazni paleti poiščite **AzureML - remote: Connect to compute instance in New Window**.
-1. Sledite navodilom na zaslonu za povezavo z računalniškim virom. Izbrati boste morali svojo Azure naročnino, Resource Group, projekt in ime računalniškega vira, ki ste ga nastavili v Lab 1.
-1. Ko ste povezani z Azure ML Compute vozliščem, bo to prikazano v **spodnjem levem kotu Visual Studio Code** `><Azure ML: Compute Name`
+1. Sledite navodilom na zaslonu za povezavo z računalnikom. Izbrati boste morali svojo Azure naročnino, skupino virov, projekt in ime računalnika, ki ste ga nastavili v laboratoriju 1.
+1. Ko ste povezani z Azure ML Compute vozliščem, bo to prikazano v **spodnjem levem kotu Visual Code** kot `><Azure ML: Compute Name`
 
-### Step 1: Klonirajte ta repozitorij
+### Korak 1: Klonirajte ta repozitorij
 
 V VS Code lahko odprete nov terminal s **Ctrl+J** in klonirate ta repozitorij:
 
@@ -76,7 +77,7 @@ cd ~/localfiles
 git clone https://github.com/microsoft/phi-3cookbook.git
 ```
 
-### Step 2: Odprite mapo v VS Code
+### Korak 2: Odprite mapo v VS Code
 
 Za odpiranje mape v VS Code zaženite naslednji ukaz v terminalu, ki bo odprl novo okno:
 
@@ -86,9 +87,9 @@ code phi-3cookbook/code/04.Finetuning/Olive-lab
 
 Lahko pa mapo odprete tudi preko **File** > **Open Folder**.
 
-### Step 3: Odvisnosti
+### Korak 3: Odvisnosti
 
-Odprite terminal v VS Code na vašem Azure AI Compute vozlišču (nasvet: **Ctrl+J**) in izvedite naslednje ukaze za namestitev odvisnosti:
+Odprite terminal v VS Code na svojem Azure AI Compute vozlišču (namig: **Ctrl+J**) in zaženite naslednje ukaze za namestitev odvisnosti:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -101,32 +102,32 @@ az extension add -n ml
 > [!NOTE]
 > Namestitev vseh odvisnosti bo trajala približno 5 minut.
 
-V tej vaji boste prenašali modele v Azure AI Model katalog in iz njega. Da boste lahko dostopali do kataloga, se morate prijaviti v Azure z:
+V tem laboratoriju boste prenašali in nalagali modele v Azure AI katalog modelov. Za dostop do kataloga se morate prijaviti v Azure z:
 
 ```bash
 az login
 ```
 
 > [!NOTE]
-> Ob prijavi boste morali izbrati svojo naročnino. Poskrbite, da izberete naročnino, ki je namenjena tej vaji.
+> Ob prijavi boste morali izbrati svojo naročnino. Poskrbite, da izberete naročnino, dodeljeno za ta laboratorij.
 
-### Step 4: Izvajanje Olive ukazov
+### Korak 4: Izvedite Olive ukaze
 
-Odprite terminal v VS Code na vašem Azure AI Compute vozlišču (nasvet: **Ctrl+J**) in poskrbite, da je aktivno okolje `olive-ai`:
+Odprite terminal v VS Code na svojem Azure AI Compute vozlišču (namig: **Ctrl+J**) in poskrbite, da je aktivirano okolje `olive-ai`:
 
 ```bash
 conda activate olive-ai
 ```
 
-Nato zaženite naslednje Olive ukaze v ukazni vrstici.
+Nato izvedite naslednje Olive ukaze v ukazni vrstici.
 
-1. **Pregled podatkov:** V tem primeru boste fino prilagodili model Phi-3.5-Mini, da bo specializiran za odgovarjanje na vprašanja o potovanjih. Koda spodaj prikaže nekaj prvih zapisov iz podatkovnega nabora, ki so v formatu JSON lines:
-   
+1. **Preglejte podatke:** V tem primeru boste fino nastavili model Phi-3.5-Mini, da bo specializiran za odgovarjanje na vprašanja o potovanjih. Spodnja koda prikaže nekaj prvih zapisov iz nabora podatkov, ki so v formatu JSON lines:
+
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **Kvantizacija modela:** Pred treniranjem modela ga najprej kvantizirate z ukazom, ki uporablja tehniko Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ kvantizira uteži modela ob upoštevanju aktivacij, ki nastanejo med inferenco. To pomeni, da kvantizacijski proces upošteva dejansko porazdelitev podatkov v aktivacijah, kar bolje ohranja natančnost modela v primerjavi s tradicionalnimi metodami kvantizacije uteži.
-    
+1. **Kvantizirajte model:** Pred treniranjem modela ga najprej kvantizirajte z ukazom, ki uporablja tehniko imenovano Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ kvantizira uteži modela ob upoštevanju aktivacij, ki nastanejo med izvajanjem. To pomeni, da kvantizacijski proces upošteva dejansko porazdelitev podatkov v aktivacijah, kar vodi do boljše ohranitve natančnosti modela v primerjavi s tradicionalnimi metodami kvantizacije uteži.
+
     ```bash
     olive quantize \
        --model_name_or_path microsoft/Phi-3.5-mini-instruct \
@@ -135,13 +136,13 @@ Nato zaženite naslednje Olive ukaze v ukazni vrstici.
        --output_path models/phi/awq \
        --log_level 1
     ```
-    
-    Postopek AWQ kvantizacije traja približno **8 minut** in bo **zmanjšal velikost modela z okoli 7,5 GB na približno 2,5 GB**.
-   
-   V tej vaji prikazujemo, kako vnesti modele iz Hugging Face (na primer: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
 
-1. **Train the model:** Next, the `olive finetune` ukaz fino prilagodi kvantizirani model. Kvantizacija modela *pred* fino prilagoditvijo namesto po njej zagotavlja boljšo natančnost, saj fino prilagajanje delno povrne izgubo zaradi kvantizacije.
-    
+    Postopek AWQ kvantizacije traja približno **8 minut** in bo **zmanjšal velikost modela s približno 7,5 GB na približno 2,5 GB**.
+
+    V tem laboratoriju prikazujemo, kako vnesti modele iz Hugging Face (na primer: `microsoft/Phi-3.5-mini-instruct`). Olive pa omogoča tudi vnos modelov iz Azure AI kataloga z zamenjavo argumenta `model_name_or_path` z ID-jem Azure AI sredstva (na primer: `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`).
+
+1. **Trenirajte model:** Nato ukaz `olive finetune` fino nastavi kvantizirani model. Kvantizacija modela *pred* fino nastavitvijo namesto po njej prinaša boljšo natančnost, saj proces fino nastavitve delno povrne izgubo zaradi kvantizacije.
+
     ```bash
     olive finetune \
         --method lora \
@@ -153,10 +154,10 @@ Nato zaženite naslednje Olive ukaze v ukazni vrstici.
         --output_path ./models/phi/ft \
         --log_level 1
     ```
-    
-    Fino prilagajanje (s 100 koraki) traja približno **6 minut**.
 
-1. **Optimizacija:** Ko je model izurjen, ga zdaj optimizirate z Olive ukazom `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` - za namen te vaje bomo uporabili CPU.
+    Fino nastavljanje traja približno **6 minut** (100 korakov).
+
+1. **Optimizirajte:** Ko je model treniran, ga optimizirate z Olive ukazom `auto-opt`, ki zajame ONNX graf in samodejno izvede več optimizacij za izboljšanje zmogljivosti modela na CPU z stiskanjem modela in združevanjem operacij. Omeniti je treba, da lahko optimizirate tudi za druge naprave, kot so NPU ali GPU, tako da spremenite argumenta `--device` in `--provider` – za potrebe tega laboratorija bomo uporabili CPU.
 
     ```bash
     olive auto-opt \
@@ -168,12 +169,12 @@ Nato zaženite naslednje Olive ukaze v ukazni vrstici.
        --output_path models/phi/onnx-ao \
        --log_level 1
     ```
-    
+
     Optimizacija traja približno **5 minut**.
 
-### Step 5: Hiter test inferenciranja modela
+### Korak 5: Hiter preizkus izvajanja modela
 
-Za testiranje inferenciranja modela ustvarite Python datoteko v svoji mapi z imenom **app.py** in prilepite naslednjo kodo:
+Za preizkus izvajanja modela ustvarite Python datoteko v svoji mapi z imenom **app.py** in prilepite naslednjo kodo:
 
 ```python
 import onnxruntime_genai as og
@@ -215,22 +216,22 @@ Kodo zaženite z:
 python app.py
 ```
 
-### Step 6: Naložite model v Azure AI
+### Korak 6: Naložite model v Azure AI
 
-Nalaganje modela v Azure AI repozitorij omogoča deljenje modela z drugimi člani vaše razvojne ekipe in hkrati upravljanje različic modela. Za nalaganje modela zaženite naslednji ukaz:
+Nalaganje modela v Azure AI repozitorij omogoča deljenje modela z drugimi člani razvojne ekipe in hkrati upravljanje različic modela. Za nalaganje modela zaženite naslednji ukaz:
 
 > [!NOTE]
-> Posodobite `{}` ` placeholders with the name of your resource group and Azure AI Project Name. 
+> Posodobite `{}` z imenom vaše skupine virov in imenom Azure AI projekta.
 
-To find your resource group ` z imenom vaše Resource Group in imenom Azure AI projekta, nato zaženite ukaz
+Za iskanje imena skupine virov `"resourceGroup"` in imena Azure AI projekta zaženite naslednji ukaz:
 
 ```
 az ml workspace show
 ```
 
-Lahko pa greste na +++ai.azure.com+++ in izberete **management center** > **project** > **overview**
+Lahko pa tudi obiščete +++ai.azure.com+++ in izberete **management center** > **project** > **overview**
 
-Posodobite `{}` z imenom vaše resource group in Azure AI projekta.
+Posodobite `{}` z imenom vaše skupine virov in imenom Azure AI projekta.
 
 ```bash
 az ml model create \
@@ -240,7 +241,8 @@ az ml model create \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
 ```
-Model lahko nato vidite in namestite na https://ml.azure.com/model/list
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni prevod s strani človeka. Ne odgovarjamo za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Naloženi model si lahko ogledate in ga namestite na https://ml.azure.com/model/list
+
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

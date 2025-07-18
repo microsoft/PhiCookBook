@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:00:33+00:00",
+  "translation_date": "2025-07-17T08:43:45+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "it"
 }
 -->
 # Ricetta per il fine-tuning di Phi-3.5-vision
 
-Questa è la guida ufficiale per il fine-tuning di Phi-3.5-vision utilizzando le librerie huggingface.  
-Prima di eseguire i comandi seguenti, spostati nella directory del codice [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning).
+Questo è il supporto ufficiale per il fine-tuning di Phi-3.5-vision utilizzando le librerie huggingface.  
+Per favore, esegui `cd` nella directory del codice [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) prima di eseguire i comandi seguenti.
 
 ## Installazione
 
@@ -37,28 +37,28 @@ pip install bitsandbytes==0.43.1
 
 Forniamo due script di esempio per il fine-tuning, uno per DocVQA e uno per la classificazione di meme offensivi.
 
-Hardware minimo testato: 4x RTX8000 (48GB RAM per GPU)
+Hardware minimo testato su 4x RTX8000 (48GB RAM per GPU)
 
 ```bash
 # minimal script on a mini-train split of DocVQA
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision ora supporta ufficialmente input multi-immagine. Ecco un esempio di fine-tuning su NLVR2
+Phi-3.5-vision supporta ora ufficialmente input multi-immagine. Ecco un esempio per il fine-tuning su NLVR2
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ```
 
-## Guida all'uso
+## Guida all’uso
 
 A seconda dell’hardware, gli utenti possono scegliere diverse strategie di fine-tuning. Supportiamo  
-full-finetuning (con Deepspeed Zero-2) con parametri visivi opzionalmente congelati, e LoRA (incluso 4bit QLoRA).  
-In generale, consigliamo di usare il full-finetuning con flash attention e bf16 quando possibile.
+full-finetuning (con Deepspeed Zero-2) con parametri di visione opzionalmente congelati, e LoRA (incluso QLoRA a 4 bit).  
+In generale, consigliamo di utilizzare il full-finetuning con flash attention e bf16 ogni volta che è possibile.
 
 ### Guida per convertire il tuo dataset personalizzato nel formato richiesto
 
-Utilizziamo un dataset minimo di classificazione video (un sottoinsieme di UCF-101) come esempio completo per mostrare come convertire il tuo dataset personalizzato nel formato richiesto e fare il fine-tuning di Phi-3.5-vision su di esso.
+Utilizziamo un dataset minimo per la classificazione video (un sottoinsieme di UCF-101) come esempio end-to-end per mostrare come convertire il tuo dataset personalizzato nel formato richiesto e fare il fine-tuning di Phi-3.5-vision su di esso.
 
 ```bash
 # convert data
@@ -114,47 +114,47 @@ I dati convertiti avranno questo aspetto:
 34 directories, 3 files
 ```
 
-Per l’annotazione `jsonl`, ogni riga deve essere un dizionario del tipo:
+Per l’annotazione in formato `jsonl`, ogni riga dovrebbe essere un dizionario come:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Nota che `conversations` è una lista, quindi è possibile supportare conversazioni multi-turno se sono disponibili dati di questo tipo.
+Nota che `conversations` è una lista, quindi è possibile supportare conversazioni multi-turno se tali dati sono disponibili.
 
 ## Richiesta di quota GPU Azure
 
 ### Prerequisiti
 
-Un account Azure con ruolo Contributor (o un altro ruolo che include l’accesso Contributor).
+Un account Azure con il ruolo Contributor (o un altro ruolo che includa l’accesso Contributor).
 
 Se non hai un account Azure, crea un [account gratuito prima di iniziare](https://azure.microsoft.com).
 
 ### Richiedere un aumento di quota
 
-Puoi inviare una richiesta di aumento quota direttamente da My quotas. Segui i passaggi qui sotto per richiedere un aumento per una quota. Per questo esempio, puoi selezionare qualsiasi quota regolabile nella tua sottoscrizione.
+Puoi inviare una richiesta di aumento quota direttamente da My quotas. Segui i passaggi seguenti per richiedere un aumento di quota. Per questo esempio, puoi selezionare qualsiasi quota regolabile nella tua sottoscrizione.
 
 Accedi al [portale Azure](https://portal.azure.com).
 
-Digita "quotas" nella barra di ricerca, quindi seleziona Quotas.  
+Digita "quotas" nella casella di ricerca, quindi seleziona Quotas.  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
 Nella pagina Overview, seleziona un provider, come Compute o AML.
 
 **Nota** Per tutti i provider diversi da Compute, vedrai una colonna Request increase invece della colonna Adjustable descritta di seguito. Qui puoi richiedere un aumento per una quota specifica o creare una richiesta di supporto per l’aumento.
 
-Nella pagina My quotas, sotto Quota name, seleziona la quota che vuoi aumentare. Assicurati che nella colonna Adjustable sia indicato Yes per questa quota.
+Nella pagina My quotas, sotto Quota name, seleziona la quota che vuoi aumentare. Assicurati che la colonna Adjustable mostri Yes per questa quota.
 
-In alto nella pagina, seleziona New Quota Request, poi scegli Enter a new limit.
+In alto nella pagina, seleziona New Quota Request, poi seleziona Enter a new limit.
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-Nel pannello New Quota Request, inserisci un valore numerico per il nuovo limite di quota, poi seleziona Submit.
+Nel pannello New Quota Request, inserisci un valore numerico per il nuovo limite di quota, quindi seleziona Submit.
 
-La tua richiesta verrà esaminata e sarai avvisato se può essere soddisfatta. Di solito questo avviene entro pochi minuti.
+La tua richiesta verrà esaminata e sarai notificato se la richiesta può essere soddisfatta. Di solito questo avviene entro pochi minuti.
 
-Se la tua richiesta non viene accolta, vedrai un link per creare una richiesta di supporto. Usando questo link, un ingegnere del supporto ti assisterà con la tua richiesta di aumento.
+Se la tua richiesta non viene soddisfatta, vedrai un link per creare una richiesta di supporto. Usando questo link, un ingegnere del supporto ti assisterà con la richiesta di aumento.
 
 ## Suggerimenti per SKU di macchine GPU Azure Compute
 
@@ -182,9 +182,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
 
 ### Se hai GPU Standard_ND40rs_v2 8x V100-32GB
 
-È comunque possibile fare il full-finetuning di Phi-3-V sulla classificazione di meme offensivi. Tuttavia, aspettati  
-una throughput molto più bassa rispetto a GPU A100 o H100 a causa della mancanza di supporto per flash attention.  
-Anche la precisione potrebbe risentirne per l’assenza di supporto bf16 (viene usato il training a precisione mista fp16).
+È ancora possibile fare il full-finetuning di Phi-3-V sulla classificazione di meme offensivi. Tuttavia, aspettati  
+una velocità molto inferiore rispetto alle GPU A100 o H100 a causa della mancanza di supporto per flash attention.  
+Anche l’accuratezza potrebbe risentirne a causa della mancanza di supporto bf16 (viene usato invece il training a precisione mista fp16).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -232,7 +232,7 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Metodo di training | Modello visivo congelato | tipo di dato | rango LoRA | alpha LoRA | batch size | learning rate | epoche | Accuratezza
+Metodo di training | Modello visione congelato | tipo di dato | rango LoRA | alpha LoRA | batch size | learning rate | epoche | Accuratezza
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
 full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
@@ -293,10 +293,10 @@ QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 ## Benchmark di velocità (NOTA: Phi-3-vision)
 
-I nuovi risultati di benchmark con Phi-3.5-vision saranno aggiornati presto.
+I nuovi risultati di benchmark con Phi-3.5-vision saranno aggiornati a breve.
 
-Il benchmark di velocità è stato eseguito sul dataset DocVQA. La lunghezza media della sequenza in questo dataset  
-è di 2443.23 token (usando `num_crops=16` per il modello immagine).
+Il benchmark di velocità è stato eseguito sul dataset DocVQA. La lunghezza media delle sequenze di questo dataset  
+è 2443.23 token (usando `num_crops=16` per il modello immagine).
 
 ### 8x A100-80GB (Ampere)
 
@@ -328,5 +328,5 @@ LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 - Non è possibile eseguire flash attention con fp16 (bf16 è sempre consigliato quando disponibile, e tutte le GPU che supportano flash attention supportano anche bf16).  
 - Non è ancora supportato il salvataggio di checkpoint intermedi e la ripresa del training.
 
-**Avvertenza**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo responsabilità per eventuali incomprensioni o interpretazioni errate derivanti dall’uso di questa traduzione.
+**Disclaimer**:  
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

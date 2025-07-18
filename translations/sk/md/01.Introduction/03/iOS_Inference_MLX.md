@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-09T11:23:01+00:00",
+  "translation_date": "2025-07-16T20:36:09+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "sk"
 }
 -->
 # Spustenie Phi-3 a Phi-4 na iOS s Apple MLX Frameworkom
 
-Tento tutoriál ukazuje, ako vytvoriť iOS aplikáciu, ktorá spustí model Phi-3 alebo Phi-4 priamo na zariadení pomocou Apple MLX frameworku. [MLX](https://opensource.apple.com/projects/mlx/) je Apple framework pre strojové učenie optimalizovaný pre čipy Apple Silicon.
+Tento tutoriál ukazuje, ako vytvoriť iOS aplikáciu, ktorá spúšťa model Phi-3 alebo Phi-4 priamo na zariadení pomocou Apple MLX frameworku. [MLX](https://opensource.apple.com/projects/mlx/) je Apple framework pre strojové učenie optimalizovaný pre čipy Apple Silicon.
 
 ## Požiadavky
 
 - macOS s Xcode 16 (alebo novším)
-- cieľové zariadenie s iOS 18 (alebo novším) a aspoň 8GB RAM (iPhone alebo iPad kompatibilný s požiadavkami Apple Intelligence, ktoré sú podobné požiadavkám kvantizovaného Phi)
+- cieľové zariadenie s iOS 18 (alebo novším) a minimálne 8 GB RAM (iPhone alebo iPad kompatibilný s požiadavkami Apple Intelligence, ktoré sú podobné požiadavkám na kvantizovaný Phi)
 - základné znalosti Swift a SwiftUI
 
 ## Krok 1: Vytvorenie nového iOS projektu
@@ -23,7 +23,7 @@ Začnite vytvorením nového iOS projektu v Xcode:
 
 1. spustite Xcode a vyberte „Create a new Xcode project“
 2. zvoľte šablónu „App“
-3. pomenujte projekt (napr. „Phi3-iOS-App“) a vyberte SwiftUI ako rozhranie
+3. pomenujte projekt (napr. „Phi3-iOS-App“) a vyberte SwiftUI ako používateľské rozhranie
 4. vyberte miesto, kam chcete projekt uložiť
 
 ## Krok 2: Pridanie potrebných závislostí
@@ -35,16 +35,16 @@ Pridajte [MLX Examples package](https://github.com/ml-explore/mlx-swift-examples
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-Zatiaľ čo základný [MLX Swift package](https://github.com/ml-explore/mlx-swift) stačí na základné tensorové operácie a základnú ML funkcionalitu, MLX Examples package prináša niekoľko ďalších komponentov určených na prácu s jazykovými modelmi a uľahčenie inferenčného procesu:
+Zatiaľ čo základný [MLX Swift package](https://github.com/ml-explore/mlx-swift) postačuje pre základné operácie s tenzormi a základnú ML funkcionalitu, balík MLX Examples poskytuje niekoľko ďalších komponentov určených na prácu s jazykovými modelmi a zjednodušenie inferenčného procesu:
 
-- nástroje na načítanie modelov s podporou sťahovania z Hugging Face
+- nástroje na načítanie modelov, ktoré zvládajú sťahovanie z Hugging Face
 - integrácia tokenizéra
-- pomocníci na generovanie textu
+- pomocníci pre generovanie textu
 - predkonfigurované definície modelov
 
-## Krok 3: Konfigurácia entitlements
+## Krok 3: Konfigurácia oprávnení (Entitlements)
 
-Aby naša aplikácia mohla sťahovať modely a alokovať dostatok pamäte, je potrebné pridať špecifické entitlements. Vytvorte `.entitlements` súbor pre vašu aplikáciu s nasledovným obsahom:
+Aby naša aplikácia mohla sťahovať modely a alokovať dostatok pamäte, musíme pridať špecifické oprávnenia. Vytvorte `.entitlements` súbor pre vašu aplikáciu s nasledujúcim obsahom:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ Aby naša aplikácia mohla sťahovať modely a alokovať dostatok pamäte, je po
 </plist>
 ```
 
-> **Note:** Entitlement `com.apple.developer.kernel.increased-memory-limit` je dôležitý pre spustenie väčších modelov, pretože umožňuje aplikácii požadovať viac pamäte, než je bežne povolené.
+> **Poznámka:** Oprávnenie `com.apple.developer.kernel.increased-memory-limit` je dôležité pre spúšťanie väčších modelov, pretože umožňuje aplikácii žiadať o viac pamäte, než je bežne povolené.
 
 ## Krok 4: Vytvorenie modelu správy chatu
 
-Najskôr vytvoríme základnú štruktúru na reprezentáciu správ v chate:
+Najskôr si vytvoríme základnú štruktúru na reprezentáciu správ v chate:
 
 ```swift
 import SwiftUI
@@ -250,21 +250,21 @@ class PhiViewModel: ObservableObject {
 
 ViewModel ukazuje kľúčové body integrácie MLX:
 
-- nastavenie limitu GPU cache pomocou `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- nastavenie limitu GPU cache pomocou `MLX.GPU.set(cacheLimit:)` na optimalizáciu využitia pamäte na mobilných zariadeniach
+- použitie `LLMModelFactory` na sťahovanie modelu na požiadanie a inicializáciu MLX-optimalizovaného modelu
+- prístup k parametrom a štruktúre modelu cez `ModelContainer`
+- využitie token-po-tokene generovania pomocou metódy `MLXLMCommon.generate`
+- riadenie inferenčného procesu s vhodným nastavením teploty a limitmi tokenov
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+Prístup generovania tokenov v reálnom čase poskytuje používateľom okamžitú spätnú väzbu počas generovania textu modelom. Je to podobné ako pri serverových modeloch, ktoré streamujú tokeny späť používateľovi, ale bez oneskorenia spôsobeného sieťovými požiadavkami.
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+Čo sa týka interakcie s UI, dve kľúčové funkcie sú `loadModel()`, ktorá inicializuje LLM, a `fetchAIResponse()`, ktorá spracováva vstup používateľa a generuje odpovede AI.
 
-### Model format considerations
+### Úvahy o formáte modelu
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Dôležité:** Phi modely pre MLX nemožno používať v ich predvolenom alebo GGUF formáte. Musia byť prevedené do MLX formátu, čo zabezpečuje komunita MLX. Predkonvertované modely nájdete na [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`, kde sa odkazuje na konkrétny predkonvertovaný MLX model, ktorý sa automaticky stiahne:
+Balík MLX Examples obsahuje predkonfigurované registrácie pre niekoľko modelov, vrátane Phi-3. Keď zavoláte `ModelRegistry.phi3_5_4bit`, odkazuje to na konkrétny predkonvertovaný MLX model, ktorý sa automaticky stiahne:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Note:** Podpora Phi-4 bola pridaná do MLX Swift Examples repozitára koncom februára 2025 (v [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). K marcu 2025 najnovšie oficiálne vydanie (2.21.2 z decembra 2024) neobsahuje vstavanú podporu Phi-4. Ak chcete používať Phi-4 modely, musíte odkazovať balík priamo z hlavnej vetvy:
+> **Poznámka:** Podpora Phi-4 bola pridaná do repozitára MLX Swift Examples koncom februára 2025 (v [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). K marcu 2025 najnovšie oficiálne vydanie (2.21.2 z decembra 2024) neobsahuje zabudovanú podporu Phi-4. Ak chcete používať Phi-4 modely, musíte odkazovať na balík priamo z hlavnej vetvy:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-Tým získate prístup k najnovším konfiguráciám modelov vrátane Phi-4 ešte pred ich oficiálnym vydaním. Túto metódu môžete použiť na rôzne verzie Phi modelov alebo aj iné modely prevedené do MLX formátu.
+Tým získate prístup k najnovším konfiguráciám modelov vrátane Phi-4 ešte pred ich zaradením do oficiálneho vydania. Tento prístup môžete využiť na používanie rôznych verzií Phi modelov alebo iných modelov prevedených do MLX formátu.
 
 ## Krok 6: Vytvorenie používateľského rozhrania
 
-Teraz implementujeme jednoduché chatové rozhranie na interakciu s naším view modelom:
+Teraz implementujme jednoduché chatové rozhranie na interakciu s naším view modelom:
 
 ```swift
 import SwiftUI
@@ -429,15 +429,15 @@ struct TypingIndicatorView: View {
 
 ```
 
-UI pozostáva z troch hlavných komponentov, ktoré spolu tvoria základné chatové rozhranie. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` poskytuje jednoduchý animovaný indikátor, ktorý ukazuje, že AI spracováva požiadavku.
+UI pozostáva z troch hlavných komponentov, ktoré spolu tvoria základné chatové rozhranie. `ContentView` vytvára rozhranie s dvoma stavmi, ktoré zobrazuje buď tlačidlo na načítanie modelu, alebo chat podľa pripravenosti modelu. `MessageView` zobrazuje jednotlivé správy v chate odlišne podľa toho, či ide o správy používateľa (zarovnané vpravo, modré pozadie) alebo odpovede Phi modelu (zarovnané vľavo, sivé pozadie). `TypingIndicatorView` poskytuje jednoduchý animovaný indikátor, ktorý ukazuje, že AI spracováva požiadavku.
 
 ## Krok 7: Kompilácia a spustenie aplikácie
 
 Teraz sme pripravení aplikáciu zostaviť a spustiť.
 
-> **Important!** MLX nepodporuje simulátor. Aplikáciu musíte spustiť na fyzickom zariadení s Apple Silicon čipom. Viac informácií nájdete [tu](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS).
+> **Dôležité!** MLX nepodporuje simulátor. Aplikáciu musíte spustiť na fyzickom zariadení s čipom Apple Silicon. Viac informácií nájdete [tu](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS).
 
-Po spustení aplikácie ťuknite na tlačidlo „Load model“, čím sa začne sťahovanie a inicializácia modelu Phi-3 (alebo podľa vašej konfigurácie Phi-4). Tento proces môže trvať určitý čas v závislosti od rýchlosti vášho internetového pripojenia, keďže zahŕňa stiahnutie modelu z Hugging Face. Naša implementácia obsahuje iba spinner na indikáciu načítavania, ale skutočný priebeh môžete sledovať v Xcode konzole.
+Po spustení aplikácie klepnite na tlačidlo „Load model“ na stiahnutie a inicializáciu modelu Phi-3 (alebo podľa vašej konfigurácie Phi-4). Tento proces môže trvať určitý čas v závislosti od rýchlosti vášho internetového pripojenia, pretože zahŕňa sťahovanie modelu z Hugging Face. Naša implementácia obsahuje iba točiaci sa indikátor načítania, ale skutočný priebeh môžete sledovať v konzole Xcode.
 
 Po načítaní môžete s modelom komunikovať písaním otázok do textového poľa a stlačením tlačidla odoslať.
 
@@ -447,9 +447,9 @@ Takto by mala naša aplikácia fungovať na iPad Air M1:
 
 ## Záver
 
-A to je všetko! Dodržaním týchto krokov ste vytvorili iOS aplikáciu, ktorá spúšťa model Phi-3 (alebo Phi-4) priamo na zariadení pomocou Apple MLX frameworku.
+A to je všetko! Dodržiavaním týchto krokov ste vytvorili iOS aplikáciu, ktorá spúšťa model Phi-3 (alebo Phi-4) priamo na zariadení pomocou Apple MLX frameworku.
 
 Gratulujeme!
 
-**Zrieknutie sa zodpovednosti**:  
-Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne výklady vyplývajúce z použitia tohto prekladu.
+**Vyhlásenie o zodpovednosti**:  
+Tento dokument bol preložený pomocou AI prekladateľskej služby [Co-op Translator](https://github.com/Azure/co-op-translator). Aj keď sa snažíme o presnosť, prosím, majte na pamäti, že automatizované preklady môžu obsahovať chyby alebo nepresnosti. Originálny dokument v jeho pôvodnom jazyku by mal byť považovaný za autoritatívny zdroj. Pre kritické informácie sa odporúča profesionálny ľudský preklad. Nie sme zodpovední za akékoľvek nedorozumenia alebo nesprávne interpretácie vyplývajúce z použitia tohto prekladu.

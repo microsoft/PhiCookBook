@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-07T15:15:17+00:00",
+  "translation_date": "2025-07-16T16:24:13+00:00",
   "source_file": "code/04.Finetuning/olive-ort-example/README.md",
   "language_code": "ur"
 }
@@ -12,8 +12,8 @@ CO_OP_TRANSLATOR_METADATA:
 اس مثال میں آپ Olive استعمال کریں گے تاکہ:
 
 1. LoRA adapter کو fine-tune کریں تاکہ جملوں کو Sad, Joy, Fear, Surprise میں classify کیا جا سکے۔
-1. adapter کے وزنوں کو base model میں merge کریں۔
-1. ماڈل کو optimize اور Quantize کریں `int4` میں۔
+1. adapter کے وزنوں کو base ماڈل میں merge کریں۔
+1. ماڈل کو optimize اور `int4` میں Quantize کریں۔
 
 ہم آپ کو دکھائیں گے کہ fine-tuned ماڈل کو ONNX Runtime (ORT) Generate API کے ذریعے کیسے inference کیا جائے۔
 
@@ -28,7 +28,7 @@ conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-اس کے بعد، Olive اور fine-tuning workflow کی dependencies انسٹال کریں:
+اس کے بعد، Olive اور fine-tuning ورک فلو کی dependencies انسٹال کریں:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -41,13 +41,13 @@ pip install -r requirements.txt
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-مجموعی طور پر، یہ workflow یہ کرے گا:
+اعلی سطح پر، یہ ورک فلو یہ کرے گا:
 
 1. Phi3 کو fine-tune کرے گا (150 steps کے لیے، جسے آپ تبدیل کر سکتے ہیں) [dataset/data-classification.json](../../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json) ڈیٹا استعمال کرتے ہوئے۔
-1. LoRA adapter کے وزن base model میں merge کرے گا۔ اس سے آپ کو ONNX فارمیٹ میں ایک واحد ماڈل artifact ملے گا۔
+1. LoRA adapter کے وزنوں کو base ماڈل میں merge کرے گا۔ اس سے آپ کو ONNX فارمیٹ میں ایک واحد ماڈل artifact ملے گا۔
 1. Model Builder ماڈل کو ONNX runtime کے لیے optimize کرے گا *اور* ماڈل کو `int4` میں quantize کرے گا۔
 
-Workflow چلانے کے لیے، یہ کمانڈ چلائیں:
+ورک فلو چلانے کے لیے، یہ کمانڈ چلائیں:
 
 ```bash
 olive run --config phrase-classification.json
@@ -63,7 +63,7 @@ olive run --config phrase-classification.json
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-جوابی جواب جملے کی ایک لفظی درجہ بندی ہوگی (Sad/Joy/Fear/Surprise)۔
+اس کا جواب جملے کی ایک لفظی classification ہوگی (Sad/Joy/Fear/Surprise)۔
 
-**ڈس کلیمر**:  
-یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم اس بات سے آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ تجویز کیا جاتا ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کے لیے ہم ذمہ دار نہیں ہیں۔
+**دستخطی دستبرداری**:  
+یہ دستاویز AI ترجمہ سروس [Co-op Translator](https://github.com/Azure/co-op-translator) کے ذریعے ترجمہ کی گئی ہے۔ اگرچہ ہم درستگی کے لیے کوشاں ہیں، براہ کرم آگاہ رہیں کہ خودکار ترجمے میں غلطیاں یا عدم درستیاں ہو سکتی ہیں۔ اصل دستاویز اپنی مادری زبان میں ہی معتبر ماخذ سمجھی جانی چاہیے۔ اہم معلومات کے لیے پیشہ ور انسانی ترجمہ کی سفارش کی جاتی ہے۔ اس ترجمے کے استعمال سے پیدا ہونے والی کسی بھی غلط فہمی یا غلط تشریح کی ذمہ داری ہم پر عائد نہیں ہوتی۔

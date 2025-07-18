@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-09T11:21:56+00:00",
+  "translation_date": "2025-07-16T20:35:36+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "hu"
 }
@@ -14,7 +14,7 @@ Ez a bemutató megmutatja, hogyan készíthetünk iOS alkalmazást, amely a Phi-
 ## Előfeltételek
 
 - macOS Xcode 16-tal (vagy újabb)
-- iOS 18 (vagy újabb) célkészülék, legalább 8 GB memóriával (iPhone vagy iPad, amely megfelel az Apple Intelligence követelményeinek, mivel ezek hasonlóak a kvantált Phi követelményekhez)
+- iOS 18 (vagy újabb) célkészülék legalább 8 GB memóriával (iPhone vagy iPad, amely megfelel az Apple Intelligence követelményeinek, mivel ezek hasonlóak a kvantált Phi követelményekhez)
 - alapvető Swift és SwiftUI ismeretek
 
 ## 1. lépés: Új iOS projekt létrehozása
@@ -35,16 +35,16 @@ Add hozzá az [MLX Examples csomagot](https://github.com/ml-explore/mlx-swift-ex
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-Míg az alap [MLX Swift csomag](https://github.com/ml-explore/mlx-swift) elegendő az alapvető tenzor műveletekhez és ML funkciókhoz, az MLX Examples csomag további komponenseket kínál a nyelvi modellekkel való munkához és az inferencia folyamat megkönnyítéséhez:
+Míg az alap [MLX Swift csomag](https://github.com/ml-explore/mlx-swift) elegendő a fő tenzorműveletekhez és alapvető ML funkciókhoz, az MLX Examples csomag számos további összetevőt kínál, amelyek a nyelvi modellekkel való munkát és az inferencia folyamatát könnyítik meg:
 
-- modell betöltő segédprogramok, amelyek kezelik a Hugging Face-ről való letöltést
+- modell betöltő eszközök, amelyek kezelik a letöltést a Hugging Face-ről
 - tokenizáló integráció
-- inferencia segédek szöveg generáláshoz
+- szöveggeneráláshoz segédfunkciók
 - előre konfigurált modell definíciók
 
 ## 3. lépés: Jogosultságok beállítása
 
-Ahhoz, hogy az alkalmazásunk modelleket tölthessen le és elegendő memóriát foglalhasson, hozzá kell adnunk bizonyos jogosultságokat. Hozz létre egy `.entitlements` fájlt az alkalmazásodhoz az alábbi tartalommal:
+Ahhoz, hogy az alkalmazásunk letölthesse a modelleket és elegendő memóriát foglalhasson, speciális jogosultságokat kell hozzáadnunk. Hozz létre egy `.entitlements` fájlt az alkalmazásodhoz a következő tartalommal:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ Ahhoz, hogy az alkalmazásunk modelleket tölthessen le és elegendő memóriát
 </plist>
 ```
 
-> **Megjegyzés:** A `com.apple.developer.kernel.increased-memory-limit` jogosultság fontos a nagyobb modellek futtatásához, mert lehetővé teszi az alkalmazás számára, hogy több memóriát kérjen, mint ami általában engedélyezett.
+> **Megjegyzés:** A `com.apple.developer.kernel.increased-memory-limit` jogosultság fontos a nagyobb modellek futtatásához, mert lehetővé teszi, hogy az alkalmazás több memóriát kérjen, mint amit alapból engedélyeznek.
 
 ## 4. lépés: Chat üzenet modell létrehozása
 
-Először hozzunk létre egy egyszerű struktúrát a chat üzenetek reprezentálásához:
+Először hozzunk létre egy egyszerű struktúrát a chat üzenetek reprezentálására:
 
 ```swift
 import SwiftUI
@@ -85,7 +85,7 @@ struct ChatMessage: Identifiable {
 }
 ```
 
-## 5. lépés: ViewModel implementálása
+## 5. lépés: ViewModel megvalósítása
 
 Ezután készítsük el a `PhiViewModel` osztályt, amely kezeli a modell betöltését és az inferenciát:
 
@@ -248,23 +248,23 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-A ViewModel bemutatja az MLX integráció kulcspontjait:
+A ViewModel bemutatja a legfontosabb MLX integrációs pontokat:
 
-- GPU cache korlát beállítása `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- GPU cache limit beállítása az `MLX.GPU.set(cacheLimit:)` segítségével a memóriahasználat optimalizálásához mobil eszközökön
+- a `LLMModelFactory` használata a modell igény szerinti letöltéséhez és az MLX-re optimalizált modell inicializálásához
+- a modell paramétereinek és struktúrájának elérése a `ModelContainer` segítségével
+- az MLX tokenenkénti generálásának kihasználása az `MLXLMCommon.generate` metódussal
+- az inferencia folyamatának kezelése megfelelő hőmérséklet és token limit beállításokkal
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+A tokenek folyamatos generálása azonnali visszajelzést ad a felhasználónak, miközben a modell szöveget generál. Ez hasonló a szerver alapú modellek működéséhez, amelyek a tokeneket folyamatosan visszaküldik a felhasználónak, de hálózati késleltetés nélkül.
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+A felhasználói felület szempontjából a két kulcsfontosságú függvény a `loadModel()`, amely inicializálja az LLM-et, és a `fetchAIResponse()`, amely feldolgozza a felhasználói bemenetet és generálja az AI válaszokat.
 
-### Model format considerations
+### Modell formátumra vonatkozó megjegyzések
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Fontos:** Az MLX-hez készült Phi modellek nem használhatók alapértelmezett vagy GGUF formátumban. Azokat MLX formátumra kell konvertálni, amit az MLX közösség végez el. Előre konvertált modelleket találsz a [huggingface.co/mlx-community](https://huggingface.co/mlx-community) oldalon.
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit` segítségével, amely egy konkrét előre átkonvertált MLX modellt hivatkozik, amely automatikusan letöltődik:
+Az MLX Examples csomag előre konfigurált regisztrációkat tartalmaz több modellhez, köztük a Phi-3-hoz is. Amikor meghívod a `ModelRegistry.phi3_5_4bit`-et, az egy adott előre konvertált MLX modellt hivatkozik, amely automatikusan letöltődik:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-Saját modell konfigurációkat is létrehozhatsz, amelyek bármilyen kompatibilis modellt a Hugging Face-ről céloznak meg. Például, ha a Phi-4 mini modellt szeretnéd használni, definiálhatod a saját konfigurációdat:
+Saját modell konfigurációkat is létrehozhatsz, amelyek bármely kompatibilis Hugging Face modellen mutatnak. Például, ha a Phi-4 mini modellt szeretnéd használni, definiálhatsz saját konfigurációt:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,14 +291,14 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Megjegyzés:** A Phi-4 támogatás 2025 február végén került hozzáadásra az MLX Swift Examples tárolóhoz ([PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). 2025 márciusáig a legfrissebb hivatalos kiadás (a 2024 decemberi 2.21.2 verzió) nem tartalmaz beépített Phi-4 támogatást. A Phi-4 modellek használatához közvetlenül a főágból kell hivatkoznod a csomagra:
+> **Megjegyzés:** A Phi-4 támogatás 2025 február végén került be az MLX Swift Examples tárolóba ([PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). 2025 márciusában a legfrissebb hivatalos kiadás (2024 decemberi 2.21.2) még nem tartalmaz beépített Phi-4 támogatást. A Phi-4 modellek használatához közvetlenül a fő ágból kell hivatkoznod a csomagra:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-Ez hozzáférést ad a legfrissebb modell konfigurációkhoz, beleértve a Phi-4-et is, mielőtt azok hivatalos kiadásba kerülnének. Ezzel a módszerrel különböző Phi modellek vagy akár más MLX formátumra konvertált modellek különböző verzióit is használhatod.
+Ez lehetővé teszi, hogy hozzáférj a legfrissebb modell konfigurációkhoz, beleértve a Phi-4-et is, még mielőtt azok hivatalos kiadásban megjelennének. Ezzel a módszerrel különböző Phi modellek vagy más, MLX formátumra konvertált modellek verzióit is használhatod.
 
 ## 6. lépés: Felhasználói felület létrehozása
 
@@ -429,19 +429,19 @@ struct TypingIndicatorView: View {
 
 ```
 
-A felhasználói felület három fő komponensből áll, amelyek együtt alkotnak egy alap chat felületet. A `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` egyszerű animált jelzést ad, hogy az AI éppen dolgozik.
+A felhasználói felület három fő komponensből áll, amelyek együtt egy alap chat felületet alkotnak. A `ContentView` egy kétállapotú felületet hoz létre, amely vagy egy betöltés gombot, vagy a chat felületet mutatja a modell állapotától függően. A `MessageView` különböző módon jeleníti meg az egyes chat üzeneteket attól függően, hogy azok felhasználói üzenetek (jobbra igazított, kék háttér) vagy Phi modell válaszok (balra igazított, szürke háttér). A `TypingIndicatorView` egy egyszerű animált jelző, amely mutatja, hogy az AI éppen dolgozik.
 
-## 7. lépés: Az alkalmazás buildelése és futtatása
+## 7. lépés: Az alkalmazás építése és futtatása
 
-Most készen állunk az alkalmazás buildelésére és futtatására.
+Most készen állunk az alkalmazás építésére és futtatására.
 
 > **Fontos!** Az MLX nem támogatja a szimulátort. Az alkalmazást fizikai Apple Silicon chippel rendelkező eszközön kell futtatni. További információkért lásd [itt](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS).
 
-Az alkalmazás indításakor érintsd meg a „Load model” gombot, hogy letöltsd és inicializáld a Phi-3 (vagy a konfigurációdtól függően Phi-4) modellt. Ez a folyamat az internetkapcsolatodtól függően eltarthat egy ideig, mivel a modellt a Hugging Face-ről tölti le. A megvalósítás csak egy betöltést jelző forgó ikont tartalmaz, de az aktuális folyamat előrehaladását az Xcode konzoljában követheted.
+Az alkalmazás elindulásakor koppints a „Load model” gombra, hogy letöltsd és inicializáld a Phi-3 (vagy a konfigurációdtól függően Phi-4) modellt. Ez a folyamat az internetkapcsolatodtól függően eltarthat egy ideig, mivel a modellt a Hugging Face-ről tölti le. A megvalósításunk csak egy töltő forgó ikont tartalmaz, de a tényleges folyamatot az Xcode konzoljában is nyomon követheted.
 
-Betöltés után kérdéseket írva a szövegmezőbe, majd a küldés gombra kattintva léphetsz interakcióba a modellel.
+Miután betöltődött, kérdéseket írhatsz be a szövegmezőbe, és a küldés gomb megnyomásával kommunikálhatsz a modellel.
 
-Így kell működnie az alkalmazásunknak iPad Air M1-en futtatva:
+Így működik az alkalmazás iPad Air M1-en futtatva:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
@@ -451,5 +451,5 @@ Ennyi volt! Ezeknek a lépéseknek a követésével létrehoztál egy iOS alkalm
 
 Gratulálunk!
 
-**Felelősségkizárás**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy félreértelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

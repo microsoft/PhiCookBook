@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:08:25+00:00",
+  "translation_date": "2025-07-17T05:15:53+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "sv"
 }
 -->
 ## **Funktionsanrop i Phi-4-mini**
 
-Funktionsanrop dök först upp i Phi Family, och nu kan du använda det genom Phi-4-mini.
+Funktionsanrop dök först upp i Phi Family-familjen, och nu kan du använda det i Phi-4-mini.
 
-Det här exemplet visar en simulering av Premier League-resultat. Målet är att Phi-4-mini ska leverera realtidsinformation om matcherna. Nedan är exempel på koden:
+Det här exemplet visar en simulering av Premier League-resultat. Målet är att Phi-4-mini ska leverera realtidsinformation om matcherna. Nedan finns exempel på kod:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess ursprungliga språk bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för eventuella missförstånd eller feltolkningar som uppstår från användningen av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.

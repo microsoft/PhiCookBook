@@ -2,57 +2,57 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "62b2632720dd39ef391d6b60b9b4bfb8",
-  "translation_date": "2025-05-08T06:45:33+00:00",
+  "translation_date": "2025-07-16T16:59:27+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/vsc-extension-quickstart.md",
   "language_code": "ja"
 }
 -->
-# Welcome to your VS Code Extension
+# VS Code 拡張機能へようこそ
 
-## フォルダーの内容
+## フォルダーの中身
 
-* このフォルダーには、拡張機能に必要なすべてのファイルが含まれています。
-* `package.json` - これは拡張機能とコマンドを宣言するマニフェストファイルです。
-  * サンプルプラグインはコマンドを登録し、そのタイトルとコマンド名を定義します。この情報により、VS Codeはコマンドパレットにコマンドを表示できます。プラグイン自体はまだ読み込む必要はありません。
-* `src/extension.ts` - ここがコマンドの実装を提供するメインファイルです。
-  * このファイルは `activate` という関数をエクスポートしており、拡張機能が初めて有効化されたとき（この場合はコマンド実行時）に呼び出されます。`activate` 関数の中で `registerCommand` を呼び出します。
-  * コマンドの実装を含む関数を `registerCommand` の第二引数として渡しています。
+* このフォルダーには拡張機能に必要なすべてのファイルが含まれています。
+* `package.json` - 拡張機能とコマンドを宣言するマニフェストファイルです。
+  * サンプルプラグインはコマンドを登録し、そのタイトルとコマンド名を定義しています。この情報により、VS Code はコマンドパレットにコマンドを表示できます。プラグインを読み込む必要はまだありません。
+* `src/extension.ts` - コマンドの実装を提供するメインファイルです。
+  * このファイルは `activate` という関数をエクスポートしており、拡張機能が初めて有効化されたとき（この場合はコマンド実行時）に呼び出されます。`activate` 関数内で `registerCommand` を呼び出しています。
+  * コマンドの実装を含む関数を `registerCommand` の第2引数として渡しています。
 
 ## セットアップ
 
 * 推奨される拡張機能（amodio.tsl-problem-matcher、ms-vscode.extension-test-runner、dbaeumer.vscode-eslint）をインストールしてください。
 
-## すぐに使い始める
+## すぐに始める
 
-* `F5` を押して、拡張機能が読み込まれた新しいウィンドウを開きます。
-* コマンドパレットを開くには (`Ctrl+Shift+P` または Macでは `Cmd+Shift+P`) を押し、`Hello World` と入力してコマンドを実行します。
-* `src/extension.ts` 内のコードにブレークポイントを設定して拡張機能のデバッグを行います。
-* デバッグコンソールで拡張機能からの出力を確認できます。
+* `F5` キーを押して、拡張機能が読み込まれた新しいウィンドウを開きます。
+* コマンドパレット（`Ctrl+Shift+P` または Mac では `Cmd+Shift+P`）を開き、「Hello World」と入力してコマンドを実行します。
+* `src/extension.ts` 内にブレークポイントを設定して拡張機能のデバッグができます。
+* デバッグコンソールで拡張機能の出力を確認できます。
 
 ## 変更を加える
 
 * `src/extension.ts` のコードを変更した後、デバッグツールバーから拡張機能を再起動できます。
-* また、拡張機能を読み込んだまま VS Code ウィンドウをリロード（`Ctrl+R` または Macでは `Cmd+R`）して変更を反映することも可能です。
+* また、拡張機能を読み込んだまま VS Code ウィンドウをリロード（`Ctrl+R` または Mac では `Cmd+R`）して変更を反映させることも可能です。
 
-## APIを探る
+## API を探る
 
-* `node_modules/@types/vscode/index.d.ts` ファイルを開くと、APIの全セットを参照できます。
+* `node_modules/@types/vscode/index.d.ts` ファイルを開くと、API の全セットを確認できます。
 
 ## テストを実行する
 
 * [Extension Test Runner](https://marketplace.visualstudio.com/items?itemName=ms-vscode.extension-test-runner) をインストールしてください。
-* **Tasks: Run Task** コマンドから "watch" タスクを実行します。これが動作していないとテストが検出されない可能性があります。
-* アクティビティバーの Testing ビューを開き、「Run Test」ボタンをクリックするか、ホットキー `Ctrl/Cmd + ; A` を使用します。
+* **Tasks: Run Task** コマンドから「watch」タスクを実行します。これが動作していないとテストが検出されない場合があります。
+* アクティビティバーの Testing ビューを開き、「Run Test」ボタンをクリックするか、ホットキー `Ctrl/Cmd + ; A` を使います。
 * テスト結果は Test Results ビューで確認できます。
-* `src/test/extension.test.ts` を変更するか、`test` フォルダー内に新しいテストファイルを作成してください。
-  * 用意されたテストランナーは `**.test.ts` という名前パターンにマッチするファイルのみを対象とします。
-  * `test` フォルダー内にサブフォルダーを作成して、テストを自由に整理することができます。
+* `src/test/extension.test.ts` を編集するか、`test` フォルダー内に新しいテストファイルを作成してください。
+  * 提供されているテストランナーは、名前が `**.test.ts` にマッチするファイルのみを対象とします。
+  * `test` フォルダー内にサブフォルダーを作成して、テストを自由に整理できます。
 
 ## さらに進む
 
-* 拡張機能のサイズを減らし起動時間を短縮するには、[拡張機能のバンドル](https://code.visualstudio.com/api/working-with-extensions/bundling-extension)を検討してください。
-* [VS Code拡張機能マーケットプレイス](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)で拡張機能を公開しましょう。
+* 拡張機能のサイズを削減し、起動時間を短縮するには、[拡張機能のバンドル](https://code.visualstudio.com/api/working-with-extensions/bundling-extension)を行いましょう。
+* VS Code 拡張機能マーケットプレイスに[拡張機能を公開](https://code.visualstudio.com/api/working-with-extensions/publishing-extension)しましょう。
 * [継続的インテグレーション](https://code.visualstudio.com/api/working-with-extensions/continuous-integration)を設定してビルドを自動化しましょう。
 
 **免責事項**：  
-本書類はAI翻訳サービス[Co-op Translator](https://github.com/Azure/co-op-translator)を使用して翻訳されました。正確性を期していますが、自動翻訳には誤りや不正確な箇所が含まれる可能性があることをご承知おきください。原文の母国語版が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

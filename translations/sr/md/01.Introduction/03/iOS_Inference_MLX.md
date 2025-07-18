@@ -2,49 +2,49 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9a626d7522772d8b7b6f188dc79108c4",
-  "translation_date": "2025-05-09T11:30:17+00:00",
+  "translation_date": "2025-07-16T20:36:56+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference_MLX.md",
   "language_code": "sr"
 }
 -->
-# Pokretanje Phi-3 i Phi-4 na iOS-u uz Apple MLX Framework
+# Покретање Phi-3 и Phi-4 на iOS-у уз Apple MLX Framework
 
-Ovaj vodič pokazuje kako napraviti iOS aplikaciju koja pokreće Phi-3 ili Phi-4 model direktno na uređaju, koristeći Apple MLX framework. [MLX](https://opensource.apple.com/projects/mlx/) je Apple-ov framework za mašinsko učenje optimizovan za Apple Silicon čipove.
+Овај туторијал показује како направити iOS апликацију која покреће Phi-3 или Phi-4 модел директно на уређају, користећи Apple MLX framework. [MLX](https://opensource.apple.com/projects/mlx/) је Apple-ов машински учењски фрејмворк оптимизован за Apple Silicon чипове.
 
-## Preduslovi
+## Захтеви
 
-- macOS sa Xcode 16 (ili novijim)
-- iOS 18 (ili noviji) uređaj sa najmanje 8GB RAM-a (iPhone ili iPad kompatibilan sa Apple Intelligence zahtevima, koji su slični zahtevima za kvantizovani Phi)
-- osnovno znanje Swift i SwiftUI
+- macOS са Xcode 16 (или новијим)
+- iOS 18 (или новији) уређај са најмање 8GB RAM-а (iPhone или iPad компатибилан са Apple Intelligence захтевима, који су слични захтевима за квантоване Phi моделе)
+- основно познавање Swift и SwiftUI
 
-## Korak 1: Kreirajte novi iOS projekat
+## Корак 1: Креирање новог iOS пројекта
 
-Počnite tako što ćete kreirati novi iOS projekat u Xcode-u:
+Почните креирањем новог iOS пројекта у Xcode-у:
 
-1. pokrenite Xcode i izaberite "Create a new Xcode project"
-2. izaberite "App" kao šablon
-3. imenujte projekat (npr. "Phi3-iOS-App") i izaberite SwiftUI kao interfejs
-4. odaberite lokaciju gde ćete sačuvati projekat
+1. покрените Xcode и изаберите „Create a new Xcode project“
+2. изаберите „App“ као шаблон
+3. именујте пројекат (нпр. „Phi3-iOS-App“) и изаберите SwiftUI као интерфејс
+4. изаберите локацију за чување пројекта
 
-## Korak 2: Dodajte potrebne zavisnosti
+## Корак 2: Додавање потребних зависности
 
-Dodajte [MLX Examples paket](https://github.com/ml-explore/mlx-swift-examples) koji sadrži sve potrebne zavisnosti i pomoćne alate za učitavanje modela i izvođenje inferencije:
+Додајте [MLX Examples пакет](https://github.com/ml-explore/mlx-swift-examples) који садржи све неопходне зависности и помоћне алате за претходно учитавање модела и извођење инференце:
 
 ```swift
 // In Xcode: File > Add Package Dependencies
 // URL: https://github.com/ml-explore/mlx-swift-examples
 ```
 
-Iako je osnovni [MLX Swift paket](https://github.com/ml-explore/mlx-swift) dovoljan za osnovne tenzorske operacije i osnovnu funkcionalnost ML-a, MLX Examples paket pruža dodatne komponente za rad sa jezičkim modelima i olakšava proces inferencije:
+Иако би основни [MLX Swift пакет](https://github.com/ml-explore/mlx-swift) био довољан за основне тензорске операције и базичну ML функционалност, MLX Examples пакет пружа додатне компоненте дизајниране за рад са језичким моделима и олакшавање процеса инференце:
 
-- alati za učitavanje modela koji omogućavaju preuzimanje sa Hugging Face-a
-- integracija tokenizatora
-- pomoćni alati za generisanje teksta
-- unapred konfigurisane definicije modela
+- алате за учитавање модела који подржавају преузимање са Hugging Face
+- интеграцију токенизатора
+- помоћне функције за генерисање текста
+- унапред конфигурисане дефиниције модела
 
-## Korak 3: Konfigurišite entitlements
+## Корак 3: Конфигурисање дозвола (entitlements)
 
-Da bismo omogućili aplikaciji da preuzima modele i alocira dovoljno memorije, potrebno je dodati određene entitlements. Kreirajte `.entitlements` fajl za vašu aplikaciju sa sledećim sadržajem:
+Да бисмо апликацији омогућили преузимање модела и доделу довољно меморије, потребно је додати одређене дозволе. Креирајте `.entitlements` фајл за вашу апликацију са следећим садржајем:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -63,11 +63,11 @@ Da bismo omogućili aplikaciji da preuzima modele i alocira dovoljno memorije, p
 </plist>
 ```
 
-> **Note:** `com.apple.developer.kernel.increased-memory-limit` entitlement je važan za pokretanje većih modela, jer omogućava aplikaciji da zatraži više memorije nego što je inače dozvoljeno.
+> **Note:** Дозвола `com.apple.developer.kernel.increased-memory-limit` је важна за покретање већих модела, јер апликацији омогућава да затражи више меморије него што је уобичајено дозвољено.
 
-## Korak 4: Kreirajte model za poruke u četu
+## Корак 4: Креирање модела поруке у ћаскању
 
-Prvo, napravimo osnovnu strukturu za predstavljanje poruka u četu:
+Прво, направимо основну структуру која представља поруке у ћаскању:
 
 ```swift
 import SwiftUI
@@ -85,9 +85,9 @@ struct ChatMessage: Identifiable {
 }
 ```
 
-## Korak 5: Implementirajte ViewModel
+## Корак 5: Имплементација ViewModel-а
 
-Zatim ćemo napraviti `PhiViewModel` klasu koja upravlja učitavanjem modela i inferencijom:
+Затим ћемо направити класу `PhiViewModel` која управља учитавањем модела и инференцом:
 
 ```swift
 import MLX
@@ -248,23 +248,23 @@ class PhiViewModel: ObservableObject {
 
 ```
 
-ViewModel prikazuje ključne tačke integracije sa MLX:
+ViewModel илуструје кључне тачке интеграције са MLX-ом:
 
-- podešavanje limita GPU keša sa `MLX.GPU.set(cacheLimit:)` to optimize memory usage on mobile devices
-- using `LLMModelFactory` to download the model on-demand and initialize the MLX-optimized model
-- accessing the model's parameters and structure through the `ModelContainer`
-- leveraging MLX's token-by-token generation through the `MLXLMCommon.generate` method
-- managing the inference process with appropriate temperature settings and token limits
+- подешавање ограничења кеша на GPU-у помоћу `MLX.GPU.set(cacheLimit:)` ради оптимизације коришћења меморије на мобилним уређајима
+- коришћење `LLMModelFactory` за преузимање модела по потреби и иницијализацију MLX-оптимизованог модела
+- приступ параметрима и структури модела преко `ModelContainer`
+- коришћење MLX-ове генерације токен по токен кроз `MLXLMCommon.generate` метод
+- управљање процесом инференце са одговарајућим подешавањима температуре и ограничењима броја токена
 
-The streaming token generation approach provides immediate feedback to users as the model generates text. This is similar to how server-based models function, as they stream the tokens back to the user, but without the latency of network requests.
+Приступ стримовања токена пружа корисницима тренутну повратну информацију док модел генерише текст. Ово је слично раду сервера који шаље токене кориснику у реалном времену, али без кашњења услед мрежних захтева.
 
-In terms of UI interaction, the two key functions are `loadModel()`, which initializes the LLM, and `fetchAIResponse()`, which processes user input and generates AI responses.
+Што се тиче корисничког интерфејса, две кључне функције су `loadModel()`, која иницијализује LLM, и `fetchAIResponse()`, која обрађује унос корисника и генерише одговоре вештачке интелигенције.
 
-### Model format considerations
+### Разматрања о формату модела
 
-> **Important:** Phi models for MLX cannot be used in their default or GGUF format. They must be converted to the MLX format, which is handled by the MLX community. You can find pre-converted models at [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
+> **Important:** Phi модели за MLX не могу се користити у свом подразумеваном или GGUF формату. Морају бити конвертовани у MLX формат, што обавља MLX заједница. Пре-конвертоване моделе можете пронаћи на [huggingface.co/mlx-community](https://huggingface.co/mlx-community).
 
-The MLX Examples package includes pre-configured registrations for several models, including Phi-3. When you call `ModelRegistry.phi3_5_4bit`, gde se referencira konkretan prethodno konvertovani MLX model koji će biti automatski preuzet:
+MLX Examples пакет укључује унапред конфигурисане регистрације за неколико модела, укључујући Phi-3. Када позовете `ModelRegistry.phi3_5_4bit`, он референцира одређени пре-конвертовани MLX модел који ће бити аутоматски преузет:
 
 ```swift
 static public let phi3_5_4bit = ModelConfiguration(
@@ -274,7 +274,7 @@ static public let phi3_5_4bit = ModelConfiguration(
 )
 ```
 
-Možete kreirati sopstvene konfiguracije modela koje pokazuju na bilo koji kompatibilan model na Hugging Face-u. Na primer, za korišćenje Phi-4 mini modela, možete definisati sopstvenu konfiguraciju:
+Можете направити своје конфигурације модела које показују на било који компатибилан модел на Hugging Face-у. На пример, да бисте користили Phi-4 mini, можете дефинисати своју конфигурацију:
 
 ```swift
 let phi4_mini_4bit = ModelConfiguration(
@@ -291,18 +291,18 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Note:** Podrška za Phi-4 je dodata u MLX Swift Examples repozitorijum krajem februara 2025. (u [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). Od marta 2025, najnovije zvanično izdanje (2.21.2 iz decembra 2024) ne uključuje ugrađenu podršku za Phi-4. Da biste koristili Phi-4 modele, potrebno je da referencirate paket direktno sa glavne grane:
+> **Note:** Подршка за Phi-4 додата је у MLX Swift Examples репозиторијум крајем фебруара 2025. (у [PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)). Од марта 2025, најновије званично издање (2.21.2 из децембра 2024) не укључује уграђену подршку за Phi-4. Да бисте користили Phi-4 моделе, потребно је да пакет референцирате директно са главне гране:
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
 > .package(url: "https://github.com/ml-explore/mlx-swift-examples.git", branch: "main")
 > ```
 
-Ovo vam daje pristup najnovijim konfiguracijama modela, uključujući Phi-4, pre nego što budu uključene u zvanično izdanje. Ovim pristupom možete koristiti različite verzije Phi modela ili čak druge modele koji su konvertovani u MLX format.
+Ово вам омогућава приступ најновијим конфигурацијама модела, укључујући Phi-4, пре него што буду укључене у званично издање. Овим приступом можете користити различите верзије Phi модела или чак друге моделе који су конвертовани у MLX формат.
 
-## Korak 6: Kreirajte korisnički interfejs
+## Корак 6: Креирање корисничког интерфејса
 
-Sada ćemo implementirati jednostavan chat interfejs za interakciju sa našim ViewModel-om:
+Сада ћемо имплементирати једноставан интерфејс за ћаскање који комуницира са нашим view model-ом:
 
 ```swift
 import SwiftUI
@@ -429,27 +429,27 @@ struct TypingIndicatorView: View {
 
 ```
 
-UI se sastoji od tri glavne komponente koje zajedno prave osnovni chat interfejs. `ContentView` creates a two-state interface that shows either a loading button or the chat interface depending on model readiness. `MessageView` renders individual chat messages differently based on whether they are user messages (right-aligned, blue background) or Phi model responses (left-aligned, gray background). `TypingIndicatorView` pruža jednostavan animirani indikator koji pokazuje da AI obrađuje zahtev.
+Кориснички интерфејс се састоји из три главне компоненте које заједно праве основни интерфејс за ћаскање. `ContentView` креира интерфејс са два стања који приказује или дугме за учитавање или интерфејс за ћаскање у зависности од спремности модела. `MessageView` приказује појединачне поруке у ћаскању различито у зависности од тога да ли су поруке корисника (постављене десно, са плавом позадином) или одговори Phi модела (постављени лево, са сивом позадином). `TypingIndicatorView` пружа једноставан анимирани индикатор који показује да AI обрађује унос.
 
-## Korak 7: Izgradnja i pokretanje aplikacije
+## Корак 7: Компилација и покретање апликације
 
-Sada smo spremni da izgradimo i pokrenemo aplikaciju.
+Сада смо спремни да компајлирамо и покренемо апликацију.
 
-> **Important!** MLX ne podržava simulator. Aplikaciju morate pokrenuti na fizičkom uređaju sa Apple Silicon čipom. Više informacija potražite [ovde](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS).
+> **Important!** MLX не подржава симулатор. Апликацију морате покренути на физичком уређају са Apple Silicon чипом. Више информација потражите [овде](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS).
 
-Kada se aplikacija pokrene, dodirnite dugme "Load model" da biste preuzeli i inicijalizovali Phi-3 (ili, u zavisnosti od konfiguracije, Phi-4) model. Ovaj proces može potrajati u zavisnosti od vaše internet konekcije, jer se model preuzima sa Hugging Face-a. Naša implementacija prikazuje samo spinner tokom učitavanja, ali stvarni napredak možete pratiti u Xcode konzoli.
+Када апликација крене, додирните дугме „Load model“ да бисте преузели и иницијализовали Phi-3 (или, у зависности од конфигурације, Phi-4) модел. Овај процес може потрајати у зависности од ваше интернет везе, јер укључује преузимање модела са Hugging Face-а. Наша имплементација укључује само индикатор учитавања, али стварни напредак можете пратити у Xcode конзоли.
 
-Kada se model učita, možete komunicirati sa njim tako što ćete kucati pitanja u tekstualno polje i pritiskati dugme za slanje.
+Када се модел учита, можете комуницирати са њим тако што ћете уносити питања у текстуално поље и притиснути дугме за слање.
 
-Ovako bi naša aplikacija trebalo da funkcioniše, pokrenuta na iPad Air M1:
+Ево како наша апликација треба да функционише на iPad Air M1:
 
 ![Demo GIF](../../../../../imgs/01/01/01.phi3ipados.gif)
 
-## Zaključak
+## Закључак
 
-I to je to! Prateći ove korake, napravili ste iOS aplikaciju koja pokreće Phi-3 (ili Phi-4) model direktno na uređaju koristeći Apple MLX framework.
+И то је то! Пратећи ове кораке, направили сте iOS апликацију која покреће Phi-3 (или Phi-4) модел директно на уређају користећи Apple MLX framework.
 
-Čestitamo!
+Честитамо!
 
-**Ограничење одговорности**:  
-Овај документ је преведен коришћењем AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Изворни документ на његовом оригиналном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешне тумачења која произилазе из коришћења овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која произилазе из коришћења овог превода.

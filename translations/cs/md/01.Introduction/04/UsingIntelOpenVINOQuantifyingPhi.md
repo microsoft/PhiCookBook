@@ -2,29 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T14:02:13+00:00",
+  "translation_date": "2025-07-16T22:03:51+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "cs"
 }
 -->
-# **使用 Intel OpenVINO 对 Phi-3.5 进行量化**
+# **Kvantilace Phi-3.5 pomocí Intel OpenVINO**
 
-Intel 是历史最悠久的 CPU 制造商，拥有大量用户。随着机器学习和深度学习的发展，Intel 也加入了 AI 加速的竞争。对于模型推理，Intel 不仅使用 GPU 和 CPU，还使用 NPU。
+Intel je nejtradičnější výrobce CPU s mnoha uživateli. S nástupem strojového učení a hlubokého učení se Intel také zapojil do soutěže o akceleraci AI. Pro inferenci modelů Intel využívá nejen GPU a CPU, ale také NPU.
 
-我们希望将 Phi-3.x 系列部署到终端设备，期望成为 AI PC 和 Copilot PC 最重要的组成部分。终端侧模型的加载依赖于不同硬件厂商的合作。本章主要聚焦于 Intel OpenVINO 作为量化模型的应用场景。
+Doufáme, že nasadíme rodinu Phi-3.x na koncovou stranu, s cílem stát se nejdůležitější součástí AI PC a Copilot PC. Načítání modelu na koncovém zařízení závisí na spolupráci různých výrobců hardwaru. Tato kapitola se zaměřuje především na aplikační scénář Intel OpenVINO jako kvantitativního modelu.
 
+## **Co je OpenVINO**
 
-## **什么是 OpenVINO**
+OpenVINO je open-source sada nástrojů pro optimalizaci a nasazení modelů hlubokého učení od cloudu až po edge. Urychluje inferenci hlubokého učení v různých případech použití, jako je generativní AI, video, audio a jazyk, s modely z populárních frameworků jako PyTorch, TensorFlow, ONNX a dalších. Převádí a optimalizuje modely a nasazuje je na různorodý Intel® hardware a prostředí, lokálně i na zařízení, v prohlížeči nebo v cloudu.
 
-OpenVINO 是一个开源工具包，用于优化和部署从云端到边缘的深度学习模型。它加速了各种应用场景下的深度学习推理，如生成式 AI、视频、音频和语言，支持来自 PyTorch、TensorFlow、ONNX 等主流框架的模型。可以转换和优化模型，并部署在多种 Intel® 硬件和环境中，包括本地、设备端、浏览器或云端。
+S OpenVINO nyní můžete rychle kvantizovat GenAI model na Intel hardwaru a zrychlit referenční model.
 
-借助 OpenVINO，你可以快速在 Intel 硬件上对 GenAI 模型进行量化，并加速模型推理。
+OpenVINO nyní podporuje kvantizační převod Phi-3.5-Vision a Phi-3.5 Instruct.
 
-目前 OpenVINO 支持对 Phi-3.5-Vision 和 Phi-3.5 Instruct 的量化转换。
+### **Nastavení prostředí**
 
-### **环境配置**
-
-请确保已安装以下环境依赖，这是 requirement.txt 内容
+Ujistěte se, že máte nainstalované následující závislosti, jedná se o requirement.txt
 
 ```txt
 
@@ -37,10 +36,9 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **使用 OpenVINO 量化 Phi-3.5-Instruct**
+### **Kvantilace Phi-3.5-Instruct pomocí OpenVINO**
 
-在终端中运行以下脚本
-
+V terminálu spusťte tento skript
 
 ```bash
 
@@ -54,9 +52,9 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **使用 OpenVINO 量化 Phi-3.5-Vision**
+### **Kvantilace Phi-3.5-Vision pomocí OpenVINO**
 
-请在 Python 或 Jupyter lab 中运行以下脚本
+Spusťte tento skript v Pythonu nebo Jupyter labu
 
 ```python
 
@@ -92,21 +90,19 @@ if not out_dir.exists():
 
 ```
 
-### **🤖 Intel OpenVINO 上的 Phi-3.5 示例**
+### **🤖 Ukázky pro Phi-3.5 s Intel OpenVINO**
 
-| 实验室    | 介绍 | 入口 |
+| Laboratoře    | Popis | Jít |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | 学习如何在你的 AI PC 上使用 Phi-3.5 Instruct    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (image) | 学习如何使用 Phi-3.5 Vision 分析 AI PC 上的图像      |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | 学习如何使用 Phi-3.5 Vision 分析 AI PC 上的视频    |  [Go](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Instruct  | Naučte se, jak používat Phi-3.5 Instruct ve vašem AI PC    |  [Jít](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (obrázek) | Naučte se, jak používat Phi-3.5 Vision k analýze obrázků ve vašem AI PC      |  [Jít](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | Naučte se, jak používat Phi-3.5 Vision k analýze videa ve vašem AI PC    |  [Jít](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
+## **Zdroje**
 
+1. Více o Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
-## **资源**
-
-1. 了解更多 Intel OpenVINO 信息 [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
-
-2. Intel OpenVINO GitHub 仓库 [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
+2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

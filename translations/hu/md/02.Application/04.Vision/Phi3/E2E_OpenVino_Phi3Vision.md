@@ -2,45 +2,45 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-05-09T20:01:53+00:00",
+  "translation_date": "2025-07-17T05:05:12+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
   "language_code": "hu"
 }
 -->
-Ez a bemutató azt mutatja be, hogyan használhatunk egy előre betanított modellt Python kód generálására egy kép és egy szöveges utasítás alapján.
+Ez a demó bemutatja, hogyan lehet egy előre betanított modellt használni Python kód generálására egy kép és egy szöveges utasítás alapján.
 
 [Sample Code](../../../../../../code/06.E2E/E2E_OpenVino_Phi3-vision.ipynb)
 
 Lépésről lépésre a magyarázat:
 
 1. **Importálás és beállítás**:
-   - A szükséges könyvtárak és modulok importálása történik, többek között `requests`, `PIL` a képfeldolgozáshoz, valamint `transformers` a modell és a feldolgozás kezeléséhez.
+   - A szükséges könyvtárak és modulok importálása, beleértve a `requests`-et, a képfeldolgozáshoz a `PIL`-t, valamint a modellt és feldolgozást kezelő `transformers`-t.
 
 2. **A kép betöltése és megjelenítése**:
-   - Egy kép fájl (`demo.png`) megnyitása a `PIL` könyvtár segítségével, majd megjelenítése.
+   - Egy képfájl (`demo.png`) megnyitása a `PIL` könyvtárral, majd megjelenítése.
 
 3. **Az utasítás definiálása**:
-   - Egy üzenet létrehozása, amely tartalmazza a képet és kérést fogalmaz meg Python kód generálására a kép feldolgozásához és `plt` (matplotlib) használatával történő mentéséhez.
+   - Egy üzenet létrehozása, amely tartalmazza a képet és egy kérést, hogy generáljon Python kódot a kép feldolgozására és mentésére `plt` (matplotlib) használatával.
 
-4. **A feldolgozó betöltése**:
-   - A `AutoProcessor` betöltése egy előre betanított modellből, amely a `out_dir` könyvtárban található. Ez a feldolgozó kezeli a szöveges és képi bemeneteket.
+4. **A processzor betöltése**:
+   - Az `AutoProcessor` betöltése egy előre betanított modellből, amelyet az `out_dir` könyvtár határoz meg. Ez a processzor kezeli a szöveges és képi bemeneteket.
 
-5. **Az utasítás létrehozása**:
-   - A `apply_chat_template` metódus használata az üzenet olyan formázására, amely alkalmas a modell számára promptként.
+5. **Az utasítás elkészítése**:
+   - Az `apply_chat_template` metódus segítségével az üzenet formázása a modell számára megfelelő prompttá.
 
 6. **A bemenetek feldolgozása**:
-   - Az utasítás és a kép tensorokká alakítása, amelyeket a modell képes értelmezni.
+   - A prompt és a kép átalakítása tenzorokká, amelyeket a modell értelmezni tud.
 
 7. **A generálási paraméterek beállítása**:
-   - A modell generálási folyamatának paraméterei megadása, például a generálandó új tokenek maximális száma és az output mintavételezésének engedélyezése.
+   - A modell generálási folyamatának paraméterei, például a generálandó új tokenek maximális száma és az output mintavételezésének beállítása.
 
 8. **A kód generálása**:
-   - A modell a bemenetek és a generálási paraméterek alapján létrehozza a Python kódot. Az `TextStreamer` az output kezelésére szolgál, kihagyva az utasítást és a speciális tokeneket.
+   - A modell a bemenetek és a generálási paraméterek alapján létrehozza a Python kódot. A `TextStreamer` kezeli a kimenetet, kihagyva az utasítást és a speciális tokeneket.
 
-9. **Eredmény**:
-   - A generált kód kiírásra kerül, amelynek tartalmaznia kell a képfeldolgozáshoz és a kép mentéséhez szükséges Python kódot, ahogy az utasításban szerepel.
+9. **Kimenet**:
+   - A generált kód kiírása, amelynek tartalmaznia kell a kép feldolgozására és mentésére szolgáló Python kódot, ahogy az utasításban szerepel.
 
-Ez a bemutató szemlélteti, hogyan használhatjuk az OpenVino előre betanított modelljét dinamikus kódgenerálásra felhasználói input és képek alapján.
+Ez a demó bemutatja, hogyan lehet egy előre betanított modellt kihasználni OpenVino segítségével, hogy dinamikusan generáljunk kódot felhasználói input és képek alapján.
 
-**Nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár igyekszünk a pontosságra, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hivatalos forrásnak. Kritikus információk esetén szakmai emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

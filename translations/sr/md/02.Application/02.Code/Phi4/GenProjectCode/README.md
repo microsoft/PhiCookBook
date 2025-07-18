@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:52:05+00:00",
+  "translation_date": "2025-07-17T04:47:32+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "sr"
 }
 -->
-## **Korišćenje Phi-4-mini-mm za generisanje koda**
+## **Коришћење Phi-4-mini-mm за генерисање кода**
 
-Phi-4-mini nastavlja snažne programske mogućnosti Phi porodice. Možete koristiti Prompt da postavljate pitanja vezana za programiranje. Naravno, uz dodatak snažne sposobnosti rezonovanja, poseduje još jače sposobnosti kodiranja, kao što je generisanje projekata prema zahtevima. Na primer, generisanje projekata prema zahtevima, kao što su:
+Phi-4-mini наставља јаке могућности кодирања Phi породице. Можете користити Prompt да постављате питања везана за кодирање. Наравно, након додавања јаке способности резоновања, има јаче могућности кодирања, као што је генерисање пројеката према захтевима. На пример, генерисање пројеката према захтевима, као што су:
 
-### **Zahtev**
+### **Захтев**
 
-Napraviti aplikaciju za korpu za kupovinu
+Направити апликацију за корпу за куповину
 
-- Napraviti API Rest sa sledećim metodama:
-    - Dohvati listu piva koristeći page offset i limit.
-    - Dohvati detalje piva po id-u.
-    - Pretraži pivo po imenu, opisu, sloganu, uparivanju sa hranom i ceni.
-- Napraviti listu proizvoda na glavnoj stranici.
-    - Napraviti polje za pretragu za filtriranje proizvoda.
-    - Navigacija na stranicu sa opisom kada korisnik klikne na proizvod.
-- (Opcionalno) Slicer za filtriranje proizvoda po ceni.
-- Napraviti korpu za kupovinu.
-    - Dodavanje proizvoda u korpu.
-    - Uklanjanje proizvoda iz korpe.
-    - Izračunavanje ukupne cene proizvoda u korpi.
+- Направити API Rest са следећим методама:
+    - Добијање листе пива користећи page offset и limit.
+    - Добијање детаља о пиву по id-у.
+    - Претрага пива по имену, опису, слогану, комбинацијама са храном и цени.
+- Направити листу производа на главној страници.
+    - Направити траку за претрагу за филтрирање производа.
+    - Навигација на страницу са описом када корисник кликне на производ.
+- (Опционо) Слајсер за филтрирање производа по цени.
+- Направити корпу за куповину.
+    - Додавање производа у корпу.
+    - Уклањање производа из корпе.
+    - Израчунавање укупне цене производа у корпи.
 
-### **Primer koda - Python**
+### **Пример кода - Python**
 
 
 ```python
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Одрицање од одговорности**:  
-Овај документ је преведен помоћу AI преводилачке услуге [Co-op Translator](https://github.com/Azure/co-op-translator). Иако тежимо прецизности, имајте у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала употребом овог превода.
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења која могу настати коришћењем овог превода.

@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:08:12+00:00",
+  "translation_date": "2025-07-17T05:15:38+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "tr"
 }
 -->
-## **Phi-4-mini'da Fonksiyon Çağrısı**
+## **Phi-4-mini'de Fonksiyon Çağrısı**
 
-Fonksiyon çağrısı ilk olarak Phi Family ailesinde ortaya çıktı ve şimdi Phi-4-mini üzerinden de kullanabilirsiniz.
+Fonksiyon çağrısı ilk olarak Phi Family ailesinde ortaya çıktı ve şimdi Phi-4-mini üzerinden kullanabilirsiniz.
 
-Bu örnek, Premier League sonuçlarının simülasyonunu gösteriyor. Amaç, Phi-4-mini'nin gerçek zamanlı maç bilgisi sunmasıdır. Aşağıda örnek kod bulunmaktadır:
+Bu örnek, Premier League sonuçlarının simülasyonunu gösteriyor. Amaç, Phi-4-mini'nin gerçek zamanlı maç bilgisi sunmasıdır. Aşağıda örnek kod yer almaktadır:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Feragatname**:  
-Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucunda ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalar için sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

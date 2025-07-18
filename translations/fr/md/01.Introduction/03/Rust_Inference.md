@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-07T14:40:00+00:00",
+  "translation_date": "2025-07-16T21:23:55+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "fr"
 }
 -->
 # Inférence multiplateforme avec Rust
 
-Ce tutoriel nous guidera à travers le processus d'inférence en utilisant Rust et le [framework Candle ML](https://github.com/huggingface/candle) de HuggingFace. Utiliser Rust pour l'inférence présente plusieurs avantages, notamment par rapport à d'autres langages de programmation. Rust est reconnu pour ses performances élevées, comparables à celles de C et C++. Cela en fait un excellent choix pour les tâches d'inférence, souvent très gourmandes en calcul. Cela s'explique notamment par les abstractions sans coût supplémentaire et la gestion efficace de la mémoire, sans surcharge liée au ramasse-miettes. Les capacités multiplateformes de Rust permettent de développer un code fonctionnant sur différents systèmes d'exploitation, y compris Windows, macOS et Linux, ainsi que sur les systèmes mobiles, sans modifications importantes du code.
+Ce tutoriel nous guidera à travers le processus d’inférence en utilisant Rust et le [framework Candle ML](https://github.com/huggingface/candle) de HuggingFace. Utiliser Rust pour l’inférence présente plusieurs avantages, notamment par rapport à d’autres langages de programmation. Rust est reconnu pour ses performances élevées, comparables à celles de C et C++. Cela en fait un excellent choix pour les tâches d’inférence, souvent gourmandes en calcul. Cela s’explique notamment par ses abstractions sans coût supplémentaire et sa gestion efficace de la mémoire, sans surcharge liée au ramasse-miettes. Les capacités multiplateformes de Rust permettent de développer du code fonctionnant sur divers systèmes d’exploitation, y compris Windows, macOS et Linux, ainsi que sur des systèmes mobiles, sans modifications majeures du code.
 
 La condition préalable pour suivre ce tutoriel est d’[installer Rust](https://www.rust-lang.org/tools/install), qui inclut le compilateur Rust et Cargo, le gestionnaire de paquets Rust.
 
@@ -21,9 +21,9 @@ Pour créer un nouveau projet Rust, exécutez la commande suivante dans le termi
 cargo new phi-console-app
 ```
 
-Cela génère une structure de projet initiale avec un fichier `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Cela génère une structure de projet initiale avec un fichier `Cargo.toml` et un répertoire `src` contenant un fichier `main.rs`.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml` :
+Ensuite, nous allons ajouter nos dépendances - à savoir les crates `candle`, `hf-hub` et `tokenizers` - dans le fichier `Cargo.toml` :
 
 ```toml
 [package]
@@ -55,13 +55,13 @@ let prompt = "<|user|>\nWrite a haiku about ice hockey<|end|>\n<|assistant|>";
 let device = Device::Cpu;
 ```
 
-- **temperature** : Contrôle le caractère aléatoire du processus d’échantillonnage.
+- **temperature** : Contrôle l’aléa du processus d’échantillonnage.
 - **sample_len** : Spécifie la longueur maximale du texte généré.
-- **top_p** : Utilisé pour l’échantillonnage par noyau afin de limiter le nombre de tokens considérés à chaque étape.
+- **top_p** : Utilisé pour l’échantillonnage nucleus afin de limiter le nombre de tokens considérés à chaque étape.
 - **repeat_last_n** : Contrôle le nombre de tokens pris en compte pour appliquer une pénalité afin d’éviter les séquences répétitives.
-- **repeat_penalty** : Valeur de pénalité pour décourager les tokens répétés.
-- **seed** : Une graine aléatoire (nous pourrions utiliser une valeur constante pour une meilleure reproductibilité).
-- **prompt** : Le texte initial pour démarrer la génération. Notez que nous demandons au modèle de générer un haïku sur le hockey sur glace, et que nous l’encadrons avec des tokens spéciaux pour indiquer les parties utilisateur et assistant de la conversation. Le modèle complétera alors le prompt avec un haïku.
+- **repeat_penalty** : Valeur de pénalité pour décourager la répétition des tokens.
+- **seed** : Une graine aléatoire (on pourrait utiliser une valeur constante pour une meilleure reproductibilité).
+- **prompt** : Le texte initial servant de point de départ à la génération. Notez que nous demandons au modèle de générer un haïku sur le hockey sur glace, et que nous l’encadrons avec des tokens spéciaux pour indiquer les parties utilisateur et assistant de la conversation. Le modèle complétera ensuite le prompt avec un haïku.
 - **device** : Nous utilisons le CPU pour le calcul dans cet exemple. Candle supporte également l’exécution sur GPU avec CUDA et Metal.
 
 ## Étape 3 : Télécharger/Préparer le modèle et le tokenizer
@@ -82,7 +82,7 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Nous utilisons le fichier `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` pour tokeniser notre texte d’entrée. Une fois téléchargé, le modèle est mis en cache, donc la première exécution sera lente (car elle télécharge les 2,4 Go du modèle) mais les exécutions suivantes seront plus rapides.
+Nous utilisons l’API `hf_hub` pour télécharger les fichiers du modèle et du tokenizer depuis le hub de modèles Hugging Face. Le fichier `gguf` contient les poids quantifiés du modèle, tandis que le fichier `tokenizer.json` sert à tokeniser notre texte d’entrée. Une fois téléchargé, le modèle est mis en cache, donc la première exécution sera lente (car elle télécharge les 2,4 Go du modèle), mais les exécutions suivantes seront plus rapides.
 
 ## Étape 4 : Charger le modèle
 
@@ -120,7 +120,7 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-À cette étape, nous tokenisons le prompt d’entrée et le préparons pour l’inférence en le convertissant en une séquence d’identifiants de tokens. Nous initialisons également les valeurs `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p`. Chaque token est converti en tenseur et passé dans le modèle pour obtenir les logits.
+À cette étape, nous tokenisons le prompt d’entrée et le préparons pour l’inférence en le convertissant en une séquence d’identifiants de tokens. Nous initialisons également le `LogitsProcessor` pour gérer le processus d’échantillonnage (distribution de probabilité sur le vocabulaire) en fonction des valeurs données de `temperature` et `top_p`. Chaque token est converti en tenseur et passé dans le modèle pour obtenir les logits.
 
 La boucle traite chaque token du prompt, met à jour le processeur de logits et prépare la génération du token suivant.
 
@@ -160,8 +160,8 @@ for index in 0..to_sample {
 }
 ```
 
-Dans la boucle d’inférence, nous générons les tokens un par un jusqu’à atteindre la longueur souhaitée ou rencontrer le token de fin de séquence. Le token suivant est converti en tenseur et passé dans le modèle, tandis que les logits sont traités pour appliquer les pénalités et l’échantillonnage. Ensuite, le token suivant est échantillonné, décodé et ajouté à la séquence.  
-Pour éviter les répétitions, une pénalité est appliquée aux tokens répétés selon les paramètres `repeat_last_n` and `repeat_penalty`.
+Dans la boucle d’inférence, nous générons les tokens un par un jusqu’à atteindre la longueur d’échantillon souhaitée ou rencontrer le token de fin de séquence. Le token suivant est converti en tenseur et passé dans le modèle, tandis que les logits sont traités pour appliquer les pénalités et l’échantillonnage. Ensuite, le token suivant est échantillonné, décodé et ajouté à la séquence.  
+Pour éviter les répétitions, une pénalité est appliquée aux tokens répétés selon les paramètres `repeat_last_n` et `repeat_penalty`.
 
 Enfin, le texte généré est affiché au fur et à mesure de son décodage, assurant une sortie en temps réel en streaming.
 
@@ -193,7 +193,7 @@ Swish of sticks now alive.
 
 En suivant ces étapes, nous pouvons réaliser une génération de texte avec le modèle Phi-3 en Rust et Candle en moins de 100 lignes de code. Le code gère le chargement du modèle, la tokenisation et l’inférence, en exploitant les tenseurs et le traitement des logits pour générer un texte cohérent à partir du prompt d’entrée.
 
-Cette application console peut fonctionner sur Windows, Linux et Mac OS. Grâce à la portabilité de Rust, le code peut aussi être adapté en bibliothèque pour s’exécuter dans des applications mobiles (car on ne peut pas exécuter d’applications console là-bas, après tout).
+Cette application console peut fonctionner sous Windows, Linux et Mac OS. Grâce à la portabilité de Rust, le code peut aussi être adapté en bibliothèque pour être utilisé dans des applications mobiles (on ne peut pas exécuter d’applications console sur ces plateformes, après tout).
 
 ## Annexe : code complet
 
@@ -321,4 +321,4 @@ rustflags = [
 > Vous pouvez consulter le dépôt officiel des [exemples Candle](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) pour plus d’exemples d’utilisation du modèle Phi-3 avec Rust et Candle, incluant des approches alternatives pour l’inférence.
 
 **Avertissement** :  
-Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous ne sommes pas responsables des malentendus ou des interprétations erronées résultant de l’utilisation de cette traduction.
+Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

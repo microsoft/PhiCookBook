@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:17:38+00:00",
+  "translation_date": "2025-07-16T21:39:45+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "hu"
 }
 -->
 # **Phi-3-Vision helyi futtatása**
 
-A Phi-3-vision-128k-instruct lehetővé teszi, hogy a Phi-3 ne csak nyelvet értsen, hanem vizuálisan is lássa a világot. A Phi-3-vision-128k-instruct segítségével különféle vizuális problémákat oldhatunk meg, például OCR-t, táblázatelemzést, tárgyfelismerést, kép leírását stb. Könnyedén végezhetünk el olyan feladatokat, amelyekhez korábban nagy mennyiségű adat tréningre volt szükség. Az alábbiakban a Phi-3-vision-128k-instruct által hivatkozott kapcsolódó technikák és alkalmazási helyzetek találhatók.
+A Phi-3-vision-128k-instruct lehetővé teszi, hogy a Phi-3 ne csak a nyelvet értse meg, hanem vizuálisan is lássa a világot. A Phi-3-vision-128k-instruct segítségével különböző vizuális problémákat oldhatunk meg, például OCR-t, táblázatelemzést, tárgyfelismerést, képleírást stb. Könnyedén elvégezhetünk olyan feladatokat, amelyek korábban sok adat alapú tanítást igényeltek. Az alábbiakban a Phi-3-vision-128k-instruct által hivatkozott kapcsolódó technikák és alkalmazási forgatókönyvek találhatók.
 
 ## **0. Előkészületek**
 
-Kérjük, győződj meg róla, hogy a következő Python könyvtárak telepítve vannak (ajánlott a Python 3.10+ használata)
+Kérjük, győződj meg róla, hogy a következő Python könyvtárak telepítve vannak használat előtt (Python 3.10+ ajánlott)
 
 ```bash
 pip install transformers -U
@@ -27,7 +27,7 @@ Ajánlott a ***CUDA 11.6+*** használata és a flatten telepítése
 pip install flash-attn --no-build-isolation
 ```
 
-Hozz létre egy új Notebookot. Az példák végrehajtásához ajánlott először az alábbi tartalmat létrehozni.
+Hozz létre egy új Notebookot. A példák elvégzéséhez ajánlott először a következő tartalmat létrehozni.
 
 ```python
 from PIL import Image
@@ -49,7 +49,7 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. Kép elemzése Phi-3-Vision-nel**
+## **1. Kép elemzése Phi-3-Vision segítségével**
 
 Szeretnénk, ha az AI képes lenne elemezni a képeink tartalmát és releváns leírásokat adni
 
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-A következő szkript futtatásával a Notebookban megkaphatjuk a releváns válaszokat
+A következő szkript futtatásával a Notebookban megkaphatjuk a kapcsolódó válaszokat
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR Phi-3-Vision-nel**
 
-A kép elemzése mellett információkat is kinyerhetünk a képből. Ez az OCR folyamat, amelyhez korábban bonyolult kódot kellett írni.
+A kép elemzésén túl információt is kinyerhetünk a képből. Ez az OCR folyamat, amelyhez korábban bonyolult kódot kellett írni.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -149,5 +149,5 @@ Az eredmény
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-**Nyilatkozat**:  
-Ezt a dokumentumot az AI fordítószolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk le. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum a saját nyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Kritikus információk esetén professzionális emberi fordítást javaslunk. Nem vállalunk felelősséget a fordítás használatából eredő félreértésekért vagy téves értelmezésekért.

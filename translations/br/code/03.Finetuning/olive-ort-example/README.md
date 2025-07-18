@@ -2,33 +2,33 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "4164123a700fecd535d850f09506d72a",
-  "translation_date": "2025-05-09T04:31:43+00:00",
+  "translation_date": "2025-07-16T16:03:11+00:00",
   "source_file": "code/03.Finetuning/olive-ort-example/README.md",
   "language_code": "br"
 }
 -->
-# Fine-tune Phi3 gamit ang Olive
+# Ajuste fino do Phi3 usando Olive
 
-Sa halimbawa na ito, gagamitin mo ang Olive para:
+Neste exemplo, você usará o Olive para:
 
-1. I-fine-tune ang LoRA adapter para i-classify ang mga parirala bilang Sad, Joy, Fear, Surprise.
-1. Pagsamahin ang mga timbang ng adapter sa base model.
-1. I-optimize at i-quantize ang modelo sa `int4`.
+1. Ajustar fino um adaptador LoRA para classificar frases em Tristeza, Alegria, Medo, Surpresa.
+1. Mesclar os pesos do adaptador no modelo base.
+1. Otimizar e quantizar o modelo para `int4`.
 
-Ipapakita rin namin kung paano mag-inference gamit ang fine-tuned na modelo gamit ang ONNX Runtime (ORT) Generate API.
+Também mostraremos como fazer inferência com o modelo ajustado usando a API Generate do ONNX Runtime (ORT).
 
-> **⚠️ Para sa Fine-tuning, kailangan mong magkaroon ng angkop na GPU - halimbawa, A10, V100, A100.**
+> **⚠️ Para o ajuste fino, é necessário ter uma GPU adequada disponível - por exemplo, uma A10, V100, A100.**
 
-## 💾 Install
+## 💾 Instalação
 
-Gumawa ng bagong Python virtual environment (halimbawa, gamit ang `conda`):
+Crie um novo ambiente virtual Python (por exemplo, usando `conda`):
 
 ```bash
 conda create -n olive-ai python=3.11
 conda activate olive-ai
 ```
 
-Sunod, i-install ang Olive at ang mga dependencies para sa fine-tuning workflow:
+Em seguida, instale o Olive e as dependências para o fluxo de trabalho de ajuste fino:
 
 ```bash
 cd Phi-3CookBook/code/04.Finetuning/olive-ort-example
@@ -36,34 +36,34 @@ pip install olive-ai[gpu]
 pip install -r requirements.txt
 ```
 
-## 🧪 Fine-tune Phi3 gamit ang Olive
-Ang [Olive configuration file](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) ay naglalaman ng *workflow* na may mga sumusunod na *passes*:
+## 🧪 Ajuste fino do Phi3 usando Olive
+O [arquivo de configuração do Olive](../../../../../code/03.Finetuning/olive-ort-example/phrase-classification.json) contém um *workflow* com as seguintes *etapas*:
 
 Phi3 -> LoRA -> MergeAdapterWeights -> ModelBuilder
 
-Sa pangkalahatan, ang workflow na ito ay:
+De forma geral, esse workflow irá:
 
-1. I-fine-tune ang Phi3 (sa loob ng 150 steps, na pwede mong baguhin) gamit ang data mula sa [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json).
-1. Pagsamahin ang mga timbang ng LoRA adapter sa base model. Magkakaroon ka ng isang model artifact sa ONNX format.
-1. I-o-optimize ng Model Builder ang modelo para sa ONNX runtime *at* i-quantize ang modelo sa `int4`.
+1. Ajustar fino o Phi3 (por 150 passos, que você pode modificar) usando os dados do [dataset/data-classification.json](../../../../../code/03.Finetuning/olive-ort-example/dataset/dataset-classification.json).
+1. Mesclar os pesos do adaptador LoRA no modelo base. Isso resultará em um único artefato de modelo no formato ONNX.
+1. O Model Builder irá otimizar o modelo para o runtime ONNX *e* quantizar o modelo para `int4`.
 
-Para patakbuhin ang workflow, gamitin ang:
+Para executar o workflow, rode:
 
 ```bash
 olive run --config phrase-classification.json
 ```
 
-Kapag natapos na ang Olive, ang optimized na `int4` fine-tuned Phi3 model ay makikita sa: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
+Quando o Olive terminar, seu modelo Phi3 ajustado e otimizado em `int4` estará disponível em: `code/04.Finetuning/olive-ort-example/models/lora-merge-mb/gpu-cuda_model`.
 
-## 🧑‍💻 Isama ang fine-tuned na Phi3 sa iyong application
+## 🧑‍💻 Integre o Phi3 ajustado na sua aplicação
 
-Para patakbuhin ang app:
+Para rodar o app:
 
 ```bash
 python app/app.py --phrase "cricket is a wonderful sport!" --model-path models/lora-merge-mb/gpu-cuda_model
 ```
 
-Ang sagot ay isang salita lamang na classification ng parirala (Sad/Joy/Fear/Surprise).
+A resposta deve ser uma classificação de palavra única da frase (Sad/Joy/Fear/Surprise).
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

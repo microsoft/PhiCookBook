@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-09T18:44:13+00:00",
+  "translation_date": "2025-07-17T02:44:14+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "da"
 }
 -->
 # **Retningslinje for OnnxRuntime GenAI Windows GPU**
 
-Denne retningslinje giver trin til opsætning og brug af ONNX Runtime (ORT) med GPU’er på Windows. Den er designet til at hjælpe dig med at udnytte GPU-acceleration for dine modeller og dermed forbedre ydeevne og effektivitet.
+Denne retningslinje beskriver trin til opsætning og brug af ONNX Runtime (ORT) med GPU'er på Windows. Den er designet til at hjælpe dig med at udnytte GPU-acceleration til dine modeller, hvilket forbedrer ydeevne og effektivitet.
 
-Dokumentet indeholder vejledning om:
+Dokumentet giver vejledning om:
 
 - Miljøopsætning: Instruktioner til installation af nødvendige afhængigheder som CUDA, cuDNN og ONNX Runtime.
-- Konfiguration: Hvordan man konfigurerer miljøet og ONNX Runtime til effektiv udnyttelse af GPU-ressourcer.
+- Konfiguration: Hvordan du konfigurerer miljøet og ONNX Runtime til effektivt at bruge GPU-ressourcer.
 - Optimeringstips: Råd om, hvordan du finjusterer dine GPU-indstillinger for optimal ydeevne.
 
 ### **1. Python 3.10.x /3.11.8**
@@ -29,9 +29,9 @@ Dokumentet indeholder vejledning om:
 
    ```
 
-   ***Reminder*** Hvis du har installeret nogen python ONNX-biblioteker, så afinstaller dem venligst
+   ***Reminder*** Hvis du har installeret nogen Python ONNX-biblioteker, skal du afinstallere dem
 
-### **2. Installér CMake med winget**
+### **2. Installer CMake med winget**
 
    ```bash
 
@@ -39,13 +39,13 @@ Dokumentet indeholder vejledning om:
 
    ```
 
-### **3. Installér Visual Studio 2022 - Desktopudvikling med C++**
+### **3. Installer Visual Studio 2022 - Desktop Development med C++**
 
    ***Note*** Hvis du ikke ønsker at kompilere, kan du springe dette trin over
 
-![CPP](../../../../../../translated_images/01.8964c1fa47e00dc36af710b967e72dd2f8a2be498e49c8d4c65c11ba105dedf8.da.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.da.png)
 
-### **4. Installér NVIDIA-driver**
+### **4. Installer NVIDIA Driver**
 
 1. **NVIDIA GPU Driver**  [https://www.nvidia.com/en-us/drivers/](https://www.nvidia.com/en-us/drivers/)
 
@@ -59,9 +59,9 @@ Dokumentet indeholder vejledning om:
 
 Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
-- kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* filer til  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin*
+- kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* filer til  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
-- kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* filer til  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include*
+- kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\include\12.6'* filer til  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\include'*
 
 - kopier *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* filer til  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
@@ -83,7 +83,7 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
    Åbn [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) og kør den
 
-![RESULT](../../../../../../translated_images/02.be96d16e7b1007f1f3941f65561553e62ccbd49c962f3d4a9154b8326c033ec1.da.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.da.png)
 
 ### **8. Kompiler ORT GenAI GPU**
 
@@ -97,7 +97,7 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
    
    ```
 
-   Afinstaller derefter alle onnxruntime-biblioteker, f.eks.
+   Derefter afinstaller alle onnxruntime biblioteker, f.eks.
 
    ```bash
 
@@ -111,9 +111,9 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
    2. Tjek Visual Studio Extension support
 
-   Tjek i C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras om mappen C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration findes. 
+   Kontroller i C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras, at mappen C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration findes. 
    
-   Hvis den ikke findes, så kig i andre Cuda toolkit driver-mapper og kopier mappen visual_studio_integration og dens indhold til C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   Hvis den ikke findes, tjek andre CUDA toolkit driver-mapper og kopier mappen visual_studio_integration og dens indhold til C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
    - Hvis du ikke ønsker at kompilere, kan du springe dette trin over
 
@@ -125,13 +125,13 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
 
    - Download [https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip](https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-win-x64-gpu-1.19.2.zip)
 
-   - Pak onnxruntime-win-x64-gpu-1.19.2.zip ud, omdøb mappen til **ort**, og kopier ort-mappen til onnxruntime-genai
+   - Pak onnxruntime-win-x64-gpu-1.19.2.zip ud, og omdøb mappen til **ort**, kopier derefter ort-mappen til onnxruntime-genai
 
    - Brug Windows Terminal, åbn Developer Command Prompt for VS 2022 og gå til onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.53bb08e3bde53edd1735c5546fb32b9b0bdba93d8241c5e6e3196d8bc01adbd7.da.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.da.png)
 
-   - Kompiler med dit python-miljø
+   - Kompiler det med dit Python-miljø
 
    ```bash
 
@@ -147,4 +147,4 @@ Kopier NVIDIA CUDNN 9.4 lib, bin, include til NVIDIA CUDA 12.4 lib, bin, include
    ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, skal du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

@@ -2,21 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:50:18+00:00",
+  "translation_date": "2025-07-17T02:54:28+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "sw"
 }
 -->
 # **Kutumia Microsoft Phi-3.5 tflite kuunda app ya Android**
 
-Hii ni mfano wa Android kutumia modeli za Microsoft Phi-3.5 tflite.
+Hii ni mfano wa Android unaotumia mifano ya Microsoft Phi-3.5 tflite.
 
 ## **📚 Maarifa**
 
-Android LLM Inference API inakuwezesha kuendesha modeli kubwa za lugha (LLMs) kabisa ndani ya kifaa kwa ajili ya programu za Android, ambazo unaweza kutumia kufanya kazi mbalimbali, kama kuandika maandishi, kupata taarifa kwa lugha ya kawaida, na kufupisha nyaraka. Kazi hii ina msaada wa moja kwa moja kwa modeli nyingi kubwa za lugha za aina ya maandishi-kwa-maandishi, hivyo unaweza kutumia modeli za kisasa za AI zinazotumia kifaa moja kwa moja kwenye programu zako za Android.
+Android LLM Inference API inakuwezesha kuendesha mifano mikubwa ya lugha (LLMs) kabisa kwenye kifaa kwa ajili ya programu za Android, ambazo unaweza kutumia kufanya kazi mbalimbali, kama vile kuunda maandishi, kupata taarifa kwa lugha ya asili, na kufupisha nyaraka. Kazi hii ina msaada wa ndani kwa mifano mingi ya lugha kubwa ya maandishi kwa maandishi, hivyo unaweza kutumia mifano ya kisasa ya AI ya kizazi inayotumia kifaa moja kwa moja kwenye programu zako za Android.
 
-Googld AI Edge Torch ni maktaba ya python inayosaidia kubadilisha modeli za PyTorch kuwa muundo wa .tflite, ambao unaweza kuendeshwa kwa TensorFlow Lite na MediaPipe. Hii inaruhusu programu za Android, iOS na IoT kuendesha modeli moja kwa moja kwenye kifaa. AI Edge Torch ina msaada mpana wa CPU, na msaada wa awali wa GPU na NPU. AI Edge Torch inalenga kuunganishwa kwa karibu na PyTorch, ikijengwa juu ya torch.export() na kutoa msaada mzuri kwa Core ATen operators.
-
+Google AI Edge Torch ni maktaba ya python inayounga mkono kubadilisha mifano ya PyTorch kuwa muundo wa .tflite, ambayo inaweza kuendeshwa kwa TensorFlow Lite na MediaPipe. Hii inaruhusu programu za Android, iOS na IoT kuendesha mifano kabisa kwenye kifaa. AI Edge Torch inatoa msaada mpana wa CPU, pamoja na msaada wa awali wa GPU na NPU. AI Edge Torch inalenga kuunganishwa kwa karibu na PyTorch, ikijengwa juu ya torch.export() na kutoa msaada mzuri wa Core ATen operators.
 
 ## **🪬 Mwongozo**
 
@@ -30,9 +29,9 @@ Googld AI Edge Torch ni maktaba ya python inayosaidia kubadilisha modeli za PyTo
 
 2. Ubuntu 20.04 / 22.04 (tafadhali zingatia [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Pendekezo:*** Tumia Azure Linux VM au cloud VM ya mtu wa tatu kuunda mazingira yako
+***Pendekezo:*** Tumia Azure Linux VM au cloud vm ya mtu wa tatu kuunda mazingira yako
 
-3. Nenda kwenye bash ya Linux yako, kusakinisha maktaba za Python
+3. Nenda kwenye bash ya Linux yako, kusakinisha maktaba ya Python
 
 ```bash
 
@@ -66,7 +65,6 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-
 ### **🔥 Badilisha Microsoft Phi-3.5 kuwa Android Mediapipe Bundle**
 
 tafadhali sakinisha mediapipe kwanza
@@ -96,8 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-
-### **🔥 Tumia adb push kuhamisha modeli ya task kwenye njia ya kifaa chako cha Android**
+### **🔥 Tumia adb push kuhamisha mfano wa kazi kwenye njia ya vifaa vyako vya Android**
 
 ```bash
 
@@ -111,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Kuendesha msimbo wako wa Android**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.sw.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.sw.png)
 
-**Kiarifu cha Kutokujali**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya utafsiri wa AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuna dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kuwa tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

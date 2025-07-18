@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:30:07+00:00",
+  "translation_date": "2025-07-16T14:42:34+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "no"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Dette prosjektet ønsker bidrag og forslag velkommen. De fleste bidrag krever at du godtar en Contributor License Agreement (CLA) som bekrefter at du har rettighetene til, og faktisk gir oss, rettighetene til å bruke ditt bidrag. For detaljer, besøk [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-Når du sender inn en pull request, vil en CLA-bot automatisk avgjøre om du må levere en CLA og merke PR-en deretter (f.eks. statuskontroll, kommentar). Følg bare instruksjonene fra boten. Du trenger kun å gjøre dette én gang for alle repos som bruker vår CLA.
+Når du sender inn en pull request, vil en CLA-bot automatisk avgjøre om du må levere en CLA og merke PR-en deretter (f.eks. statuskontroll, kommentar). Følg bare instruksjonene gitt av boten. Du trenger kun å gjøre dette én gang for alle repos som bruker vår CLA.
 
 ## Adferdskodeks
 
@@ -24,7 +24,7 @@ Vennligst ikke opprett GitHub-issues for generelle supportspørsmål, da GitHub-
 
 ## Hvordan bidra
 
-### Retningslinjer for Pull Requests
+### Retningslinjer for pull requests
 
 Når du sender inn en pull request (PR) til Phi-3 CookBook-repositoriet, vennligst følg disse retningslinjene:
 
@@ -44,7 +44,7 @@ For å sikre konsistens i alle dokumenter, vennligst bruk følgende retningslinj
 
 - **URL-formatering**: Pakk alle URL-er inn i hakeparenteser etterfulgt av parenteser, uten ekstra mellomrom rundt eller inni. For eksempel: `[example](https://www.microsoft.com)`.
 
-- **Relative lenker**: Bruk `./` for relative lenker som peker til filer eller mapper i gjeldende katalog, og `../` for de i overordnet katalog. For eksempel: `[example](../../path/to/file)` eller `[example](../../../path/to/file)`.
+- **Relative lenker**: Bruk `./` for relative lenker som peker til filer eller mapper i gjeldende katalog, og `../` for de i en overordnet katalog. For eksempel: `[example](../../path/to/file)` eller `[example](../../../path/to/file)`.
 
 - **Ikke landsspesifikke lokaliteter**: Sørg for at lenkene dine ikke inneholder landsspesifikke lokaliteter. For eksempel, unngå `/en-us/` eller `/en/`.
 
@@ -86,7 +86,7 @@ Denne workflowen sikrer at ingen nettadresser inneholder landsspesifikke lokalit
 
 1. For å fikse dette, gjør følgende:
     - Åpne filstien som workflowen har markert.
-    - Fjern landsspesifikke lokaliteter fra URL-ene.
+    - Fjern landsspesifikk lokalitet fra URL-ene.
 
 Når du har fjernet lokaliteten, lagre og push endringene dine.
 
@@ -104,12 +104,11 @@ Denne workflowen sikrer at alle nettadresser i filene dine fungerer og returnere
 Når du har fikset URL-ene, lagre og push endringene dine.
 
 > [!NOTE]  
->  
 > Det kan forekomme tilfeller der URL-sjekken feiler selv om lenken er tilgjengelig. Dette kan skje av flere grunner, blant annet:  
 >  
 > - **Nettverksbegrensninger:** GitHub Actions-servere kan ha nettverksbegrensninger som hindrer tilgang til enkelte URL-er.  
 > - **Timeout-problemer:** URL-er som bruker for lang tid på å svare kan utløse timeout-feil i workflowen.  
-> - **Midlertidige serverproblemer:** Sporadisk nedetid eller vedlikehold kan gjøre en URL midlertidig utilgjengelig under validering.
+> - **Midlertidige serverproblemer:** Periodisk nedetid eller vedlikehold kan gjøre en URL midlertidig utilgjengelig under validering.
 
 **Ansvarsfraskrivelse**:  
 Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:47:55+00:00",
+  "translation_date": "2025-07-16T21:22:51+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "hr"
 }
@@ -11,60 +11,60 @@ CO_OP_TRANSLATOR_METADATA:
 
 Nakon što su adapteri trenirani u udaljenom okruženju, koristite jednostavnu Gradio aplikaciju za interakciju s modelom.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.hr.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.hr.png)
 
-### Postavljanje Azure resursa
-Potrebno je postaviti Azure resurse za udaljeno izvođenje izvođenjem `AI Toolkit: Provision Azure Container Apps for inference` iz palete naredbi. Tijekom ovog postupka bit ćete upitani da odaberete svoj Azure pretplatu i grupu resursa.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.hr.png)
-   
-Prema zadanim postavkama, pretplata i grupa resursa za izvođenje trebaju odgovarati onima korištenima za fino podešavanje. Izvođenje će koristiti isto Azure Container App okruženje i pristupiti modelu i adapteru modela pohranjenima u Azure Files, koji su generirani tijekom koraka fino podešavanja.
+### Postavljanje Azure resursa  
+Potrebno je postaviti Azure resurse za udaljeno izvođenje inferencije pokretanjem naredbe `AI Toolkit: Provision Azure Container Apps for inference` iz palete naredbi. Tijekom ovog postupka bit ćete upitani da odaberete svoju Azure pretplatu i grupu resursa.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.hr.png)
+
+Prema zadanim postavkama, pretplata i grupa resursa za inferenciju trebaju biti iste kao one korištene za fino podešavanje. Inferencija će koristiti isto Azure Container App okruženje i pristupiti modelu i adapteru modela pohranjenim u Azure Files, koji su generirani tijekom koraka fino podešavanja.
 
 ## Korištenje AI Toolkit-a
 
-### Postavljanje za izvođenje  
-Ako želite izmijeniti kod za izvođenje ili ponovno učitati model za izvođenje, izvršite naredbu `AI Toolkit: Deploy for inference`. To će sinkronizirati vaš najnoviji kod s ACA i ponovno pokrenuti repliku.  
+### Deploy za inferenciju  
+Ako želite izmijeniti kod za inferenciju ili ponovno učitati model za inferenciju, pokrenite naredbu `AI Toolkit: Deploy for inference`. Time ćete sinkronizirati najnoviji kod s ACA i ponovno pokrenuti repliku.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.hr.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.hr.png)
 
-Nakon uspješnog dovršetka postavljanja, model je spreman za evaluaciju putem ove krajnje točke.
+Nakon uspješnog dovršetka deploya, model je spreman za evaluaciju putem ovog endpointa.
 
-### Pristup API-ju za izvođenje
+### Pristup API-ju za inferenciju
 
-Do API-ja za izvođenje možete pristupiti klikom na gumb "*Go to Inference Endpoint*" prikazan u VSCode obavijesti. Alternativno, web API krajnja točka može se pronaći pod `ACA_APP_ENDPOINT` u `./infra/inference.config.json` i u izlaznom panelu.
+API za inferenciju možete pristupiti klikom na gumb "*Go to Inference Endpoint*" koji se prikazuje u VSCode obavijesti. Alternativno, web API endpoint možete pronaći pod `ACA_APP_ENDPOINT` u datoteci `./infra/inference.config.json` i u izlaznom panelu.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.hr.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.hr.png)
 
-> **Note:** Krajnja točka za izvođenje može trebati nekoliko minuta da postane potpuno operativna.
+> **Note:** Endpoint za inferenciju može trebati nekoliko minuta da postane potpuno operativan.
 
-## Komponente izvođenja uključene u predložak
- 
-| Folder | Sadržaj |
+## Komponente za inferenciju uključene u predložak
+
+| Mapa | Sadržaj |
 | ------ |--------- |
-| `infra` | Sadrži sve potrebne konfiguracije za udaljene operacije. |
-| `infra/provision/inference.parameters.json` | Sadrži parametre za bicep predloške, koji se koriste za postavljanje Azure resursa za izvođenje. |
-| `infra/provision/inference.bicep` | Sadrži predloške za postavljanje Azure resursa za izvođenje. |
+| `infra` | Sadrži sve potrebne konfiguracije za udaljeni rad. |
+| `infra/provision/inference.parameters.json` | Sadrži parametre za bicep predloške, koji se koriste za postavljanje Azure resursa za inferenciju. |
+| `infra/provision/inference.bicep` | Sadrži predloške za postavljanje Azure resursa za inferenciju. |
 | `infra/inference.config.json` | Konfiguracijska datoteka, generirana naredbom `AI Toolkit: Provision Azure Container Apps for inference`. Koristi se kao ulaz za druge udaljene palete naredbi. |
 
-### Korištenje AI Toolkit-a za konfiguraciju Azure resursa
+### Korištenje AI Toolkit-a za konfiguraciju postavljanja Azure resursa  
 Konfigurirajte [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Postavite Azure Container Apps za izvođenje ` command.
+Pokrenite naredbu `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+Parametre konfiguracije možete pronaći u datoteci `./infra/provision/inference.parameters.json`. Evo detalja:  
+| Parametar | Opis |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | Naredbe za pokretanje web API-ja. |
+| `maximumInstanceCount` | Postavlja maksimalni broj GPU instanci. |
+| `location` | Lokacija na kojoj se postavljaju Azure resursi. Zadana vrijednost je ista kao lokacija odabrane grupe resursa. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | Ovi parametri služe za imenovanje Azure resursa za postavljanje. Prema zadanim postavkama, isti su kao i imena resursa za fino podešavanje. Možete unijeti novo, neiskorišteno ime resursa za kreiranje vlastitih resursa s prilagođenim imenima ili možete unijeti ime već postojećeg Azure resursa ako želite koristiti njega. Za detalje pogledajte odjeljak [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### Korištenje postojećih Azure resursa
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Prema zadanim postavkama, postavljanje inferencije koristi isto Azure Container App okruženje, Storage Account, Azure File Share i Azure Log Analytics koji su korišteni za fino podešavanje. Za inferencijski API kreira se zaseban Azure Container App.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` datoteka. Zatim pokrenite naredbu `AI Toolkit: Provision Azure Container Apps for inference` iz palete naredbi. To će ažurirati navedene resurse i kreirati one koji nedostaju.
+Ako ste prilagodili Azure resurse tijekom koraka fino podešavanja ili želite koristiti vlastite postojeće Azure resurse za inferenciju, navedite njihova imena u datoteci `./infra/inference.parameters.json`. Zatim pokrenite naredbu `AI Toolkit: Provision Azure Container Apps for inference` iz palete naredbi. Time će se ažurirati navedeni resursi i kreirati oni koji nedostaju.
 
-Na primjer, ako imate postojeće Azure container okruženje, vaša `./infra/finetuning.parameters.json` datoteka trebala bi izgledati ovako:
+Na primjer, ako imate postojeće Azure container okruženje, vaša datoteka `./infra/finetuning.parameters.json` trebala bi izgledati ovako:
 
 ```json
 {
@@ -84,7 +84,7 @@ Na primjer, ako imate postojeće Azure container okruženje, vaša `./infra/fine
 ```
 
 ### Ručno postavljanje  
-Ako radije ručno konfigurirate Azure resurse, možete koristiti dostupne bicep datoteke u `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` datoteci.
+Ako želite ručno konfigurirati Azure resurse, možete koristiti priložene bicep datoteke u mapama `./infra/provision`. Ako ste već postavili i konfigurirali sve Azure resurse bez korištenja AI Toolkit palete naredbi, jednostavno unesite imena resursa u datoteku `inference.config.json`.
 
 Na primjer:
 
@@ -100,4 +100,4 @@ Na primjer:
 ```
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument preveden je korištenjem AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakve nesporazume ili kriva tumačenja proizašla iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakve nesporazume ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

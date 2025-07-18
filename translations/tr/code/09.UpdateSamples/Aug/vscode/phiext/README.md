@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-09T05:27:52+00:00",
+  "translation_date": "2025-07-16T17:29:58+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "tr"
 }
 -->
 # phiext README
 
-Bu, "phiext" uzantınız için README dosyasıdır. Kısa bir açıklama yazdıktan sonra aşağıdaki bölümleri eklemenizi öneririz.
+Bu, "phiext" uzantınız için README dosyasıdır. Kısa bir açıklama yazdıktan sonra, aşağıdaki bölümleri eklemenizi öneririz.
 
 ## Özellikler
 
-Uzantınızın belirli özelliklerini, uzantınızın çalışırken çekilmiş ekran görüntüleriyle birlikte açıklayın. Görsel yolları bu README dosyasına göre görecelidir.
+Uzantınızın belirli özelliklerini ve uzantınızın çalışırken çekilmiş ekran görüntülerini açıklayın. Görsel yolları bu README dosyasına göre görecelidir.
 
-Örneğin, uzantı projenizin çalışma alanında bir image alt klasörü varsa:
+Örneğin, uzantı proje çalışma alanınızda bir images alt klasörü varsa:
 
 \!\[feature X\]\(images/feature-x.png\)
 
@@ -38,11 +38,11 @@ Bu uzantı aşağıdaki ayarları sağlar:
 
 ## Bilinen Sorunlar
 
-Bilinen sorunları belirtmek, kullanıcıların uzantınız için aynı sorunları tekrar açmasını engellemeye yardımcı olabilir.
+Bilinen sorunları belirtmek, kullanıcıların uzantınızla ilgili aynı sorunları tekrar açmasını önlemeye yardımcı olabilir.
 
 ## Sürüm Notları
 
-Kullanıcılar, uzantınızı güncelledikçe sürüm notlarını takdir eder.
+Kullanıcılar, uzantınızı güncellediğinizde sürüm notlarını takdir eder.
 
 ### 1.0.0
 
@@ -60,7 +60,7 @@ X, Y ve Z özellikleri eklendi.
 
 ## Uzantı yönergelerini takip etmek
 
-Uzantı yönergelerini okuduğunuzdan emin olun ve uzantınızı oluştururken en iyi uygulamaları izleyin.
+Uzantı yönergelerini okuduğunuzdan ve uzantınızı oluştururken en iyi uygulamaları takip ettiğinizden emin olun.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
@@ -68,16 +68,16 @@ Uzantı yönergelerini okuduğunuzdan emin olun ve uzantınızı oluştururken e
 
 README dosyanızı Visual Studio Code kullanarak yazabilirsiniz. İşte bazı faydalı editör klavye kısayolları:
 
-* Editörü bölmek (macOS'ta `Cmd+\` veya Windows ve Linux'ta `Ctrl+\`).
-* Önizlemeyi aç/kapat (macOS'ta `Shift+Cmd+V` veya Windows ve Linux'ta `Shift+Ctrl+V`).
+* Editörü böl (`Cmd+\` macOS’te veya `Ctrl+\` Windows ve Linux’ta).
+* Önizlemeyi aç/kapat (`Shift+Cmd+V` macOS’te veya `Shift+Ctrl+V` Windows ve Linux’ta).
 * Markdown snippet listesini görmek için `Ctrl+Space` tuşuna basın (Windows, Linux, macOS).
 
 ## Daha fazla bilgi için
 
 * [Visual Studio Code'un Markdown Desteği](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Söz Dizimi Referansı](https://help.github.com/articles/markdown-basics/)
+* [Markdown Sözdizimi Referansı](https://help.github.com/articles/markdown-basics/)
 
-**Keyfini çıkarın!**
+**İyi eğlenceler!**
 
 **Feragatname**:  
-Bu belge, [Co-op Translator](https://github.com/Azure/co-op-translator) AI çeviri hizmeti kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.
+Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi ana dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu oluşabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-07T10:48:37+00:00",
+  "translation_date": "2025-07-16T22:14:25+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "de"
 }
@@ -63,9 +63,9 @@ cd models
 4. Lade diese Datei in den Models-Ordner herunter  
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
-5. Terminal öffnen
+5. Öffne das Terminal
 
-    ONNX-Unterstützung mit FP32 konvertieren
+    Konvertiere ONNX-Unterstützung mit FP32
 
 ```bash
 
@@ -75,19 +75,19 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ### **Hinweis:**
 
-1. Model Builder unterstützt derzeit die Konvertierung von Phi-3.5-Instruct und Phi-3.5-Vision, jedoch nicht von Phi-3.5-MoE.
+1. Model Builder unterstützt derzeit die Konvertierung von Phi-3.5-Instruct und Phi-3.5-Vision, jedoch nicht Phi-3.5-MoE.
 
-2. Um das quantisierte ONNX-Modell zu verwenden, kann es über das Generative AI extensions for onnxruntime SDK genutzt werden.
+2. Um das quantisierte ONNX-Modell zu verwenden, kannst du es über das Generative AI extensions for onnxruntime SDK nutzen.
 
-3. Da wir verantwortungsvoll mit KI umgehen möchten, wird nach der Modellquantisierung empfohlen, umfassendere Tests zur Qualität der Ergebnisse durchzuführen.
+3. Da wir verantwortungsbewusste KI berücksichtigen müssen, wird empfohlen, nach der Quantisierung des Modells umfassendere Tests der Ergebnisse durchzuführen.
 
-4. Durch die Quantisierung des CPU INT4-Modells können wir es auf Edge-Geräten einsetzen, was bessere Anwendungsszenarien ermöglicht. Deshalb haben wir Phi-3.5-Instruct rund um INT4 abgeschlossen.
+4. Durch die Quantisierung des CPU INT4-Modells können wir es auf Edge-Geräten bereitstellen, was bessere Anwendungsszenarien ermöglicht. Daher haben wir Phi-3.5-Instruct rund um INT4 abgeschlossen.
 
 ## **Ressourcen**
 
-1. Weitere Informationen zu Generative AI extensions for onnxruntime finden Sie unter [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+1. Erfahre mehr über Generative AI extensions for onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
-2. GitHub-Repo von Generative AI extensions for onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
+2. Generative AI extensions for onnxruntime GitHub-Repo [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **Haftungsausschluss**:  
-Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner ursprünglichen Sprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die durch die Nutzung dieser Übersetzung entstehen.
+Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache ist als maßgebliche Quelle zu betrachten. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

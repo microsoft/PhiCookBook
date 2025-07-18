@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:17:05+00:00",
+  "translation_date": "2025-07-16T21:39:30+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "tl"
 }
 -->
-# **Local na Pagsasagawa ng Inference ng Phi-3-Vision**
+# **Inference Phi-3-Vision sa Lokal**
 
-Pinapahintulutan ng Phi-3-vision-128k-instruct ang Phi-3 na hindi lang maintindihan ang wika, kundi makita rin ang mundo nang biswal. Sa pamamagitan ng Phi-3-vision-128k-instruct, kaya nating lutasin ang iba't ibang visual na problema, tulad ng OCR, pagsusuri ng talahanayan, pagkilala ng mga bagay, paglalarawan ng larawan, atbp. Madali nating matatapos ang mga gawain na dati ay nangangailangan ng maraming data training. Narito ang mga kaugnay na teknolohiya at mga senaryo ng aplikasyon na binanggit ng Phi-3-vision-128k-instruct
+Pinapayagan ng Phi-3-vision-128k-instruct ang Phi-3 na hindi lamang maintindihan ang wika, kundi makita rin ang mundo nang biswal. Sa pamamagitan ng Phi-3-vision-128k-instruct, maaari nating lutasin ang iba't ibang visual na problema, tulad ng OCR, pagsusuri ng talahanayan, pagkilala sa mga bagay, paglalarawan ng larawan, atbp. Madali nating matatapos ang mga gawain na dati ay nangangailangan ng maraming data training. Narito ang mga kaugnay na teknik at mga senaryo ng aplikasyon na binanggit ng Phi-3-vision-128k-instruct
 
 ## **0. Paghahanda**
 
-Siguraduhing naka-install na ang mga sumusunod na Python libraries bago gamitin (inirerekomenda ang Python 3.10+)
+Siguraduhing naka-install ang mga sumusunod na Python libraries bago gamitin (inirerekomenda ang Python 3.10+)
 
 ```bash
 pip install transformers -U
@@ -21,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-Inirerekomenda ang paggamit ng ***CUDA 11.6+*** at pag-install ng flatten
+Inirerekomenda ang paggamit ng ***CUDA 11.6+*** at i-install ang flatten
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-Gumawa ng bagong Notebook. Para makumpleto ang mga halimbawa, mas mainam na gawin mo muna ang mga sumusunod na nilalaman.
+Gumawa ng bagong Notebook. Para makumpleto ang mga halimbawa, inirerekomenda na gawin mo muna ang mga sumusunod na nilalaman.
 
 ```python
 from PIL import Image
@@ -49,9 +49,9 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. Pagsusuri ng larawan gamit ang Phi-3-Vision**
+## **1. Suriin ang larawan gamit ang Phi-3-Vision**
 
-Nais nating matulungan ang AI na ma-analisa ang nilalaman ng ating mga larawan at magbigay ng kaugnay na paglalarawan
+Nais nating kaya ng AI na suriin ang nilalaman ng ating mga larawan at magbigay ng kaugnay na paglalarawan
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR gamit ang Phi-3-Vision**
 
-Bukod sa pagsusuri ng larawan, maaari rin nating kunin ang impormasyon mula sa larawan. Ito ang proseso ng OCR na dati ay kailangan nating sumulat ng komplikadong code para matapos.
+Bukod sa pagsusuri ng larawan, maaari rin nating kunin ang impormasyon mula sa larawan. Ito ang proseso ng OCR na dati ay kailangan nating magsulat ng komplikadong code para matapos.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -112,9 +112,9 @@ Ang resulta ay
 The title of the book is "ALONE" and the author is Morgan Maxwell.
 ```
 
-## **3. Paghahambing ng maramihang larawan**
+## **3. Paghahambing ng maraming larawan**
 
-Sinusuportahan ng Phi-3 Vision ang paghahambing ng maraming larawan. Maaari nating gamitin ang modelong ito para makita ang mga pagkakaiba sa pagitan ng mga larawan.
+Sinusuportahan ng Phi-3 Vision ang paghahambing ng maraming larawan. Maaari nating gamitin ang modelong ito upang makita ang mga pagkakaiba sa pagitan ng mga larawan.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -149,5 +149,5 @@ Ang resulta ay
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-**Pagtatanggol**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pinagmulan ng katotohanan. Para sa mga mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na nagmula sa paggamit ng pagsasaling ito.
+**Paalala**:  
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagamat nagsusumikap kami para sa katumpakan, pakatandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o di-tumpak na impormasyon. Ang orihinal na dokumento sa orihinal nitong wika ang dapat ituring na pangunahing sanggunian. Para sa mahahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na maaaring magmula sa paggamit ng pagsasaling ito.

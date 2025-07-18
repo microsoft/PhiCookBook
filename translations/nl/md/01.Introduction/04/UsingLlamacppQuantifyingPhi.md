@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "462bddc47427d8785f3c9fd817b346fe",
-  "translation_date": "2025-05-09T14:13:31+00:00",
+  "translation_date": "2025-07-16T22:10:23+00:00",
   "source_file": "md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md",
   "language_code": "nl"
 }
@@ -11,31 +11,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **Wat is llama.cpp**
 
-llama.cpp is een open-source softwarebibliotheek, voornamelijk geschreven in C++, die inferentie uitvoert op diverse Large Language Models (LLM's), zoals Llama. Het hoofddoel is om state-of-the-art prestaties te bieden voor LLM-inferentie op een breed scala aan hardware met minimale configuratie. Daarnaast zijn er Python-bindings beschikbaar die een high-level API bieden voor tekstafwerking en een OpenAI-compatibele webserver.
+llama.cpp is een open-source softwarebibliotheek, voornamelijk geschreven in C++, die inferentie uitvoert op verschillende Large Language Models (LLM's), zoals Llama. Het hoofddoel is om state-of-the-art prestaties te leveren voor LLM-inferentie op een breed scala aan hardware met minimale configuratie. Daarnaast zijn er Python-bindings beschikbaar voor deze bibliotheek, die een high-level API bieden voor tekstafwerking en een OpenAI-compatibele webserver.
 
-Het belangrijkste doel van llama.cpp is het mogelijk maken van LLM-inferentie met minimale setup en state-of-the-art prestaties op diverse hardware - zowel lokaal als in de cloud.
+Het belangrijkste doel van llama.cpp is om LLM-inferentie mogelijk te maken met minimale setup en state-of-the-art prestaties op diverse hardware - zowel lokaal als in de cloud.
 
-- Eenvoudige C/C++-implementatie zonder afhankelijkheden  
-- Apple silicon wordt volledig ondersteund - geoptimaliseerd via ARM NEON, Accelerate en Metal frameworks  
-- AVX, AVX2 en AVX512 ondersteuning voor x86-architecturen  
-- 1,5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit en 8-bit integer quantisatie voor snellere inferentie en minder geheugengebruik  
-- Aangepaste CUDA-kernels voor het draaien van LLMs op NVIDIA GPU’s (ondersteuning voor AMD GPU’s via HIP)  
-- Vulkan- en SYCL-backend ondersteuning  
-- CPU+GPU hybride inferentie om modellen die groter zijn dan de totale VRAM-capaciteit deels te versnellen  
+- Eenvoudige C/C++ implementatie zonder afhankelijkheden
+- Apple silicon wordt volledig ondersteund - geoptimaliseerd via ARM NEON, Accelerate en Metal frameworks
+- AVX, AVX2 en AVX512 ondersteuning voor x86-architecturen
+- 1,5-bit, 2-bit, 3-bit, 4-bit, 5-bit, 6-bit en 8-bit integer quantisatie voor snellere inferentie en minder geheugengebruik
+- Aangepaste CUDA-kernels voor het draaien van LLM's op NVIDIA GPU's (ondersteuning voor AMD GPU's via HIP)
+- Vulkan- en SYCL-backend ondersteuning
+- CPU+GPU hybride inferentie om modellen die groter zijn dan de totale VRAM-capaciteit gedeeltelijk te versnellen
 
 ## **Quantizen van Phi-3.5 met llama.cpp**
 
-Het Phi-3.5-Instruct model kan gequantized worden met llama.cpp, maar Phi-3.5-Vision en Phi-3.5-MoE worden nog niet ondersteund. Het door llama.cpp geconverteerde formaat is gguf, wat ook het meest gebruikte quantisatieformaat is.
+Het Phi-3.5-Instruct model kan worden gequantized met llama.cpp, maar Phi-3.5-Vision en Phi-3.5-MoE worden nog niet ondersteund. Het formaat dat door llama.cpp wordt geconverteerd is gguf, wat ook het meest gebruikte quantisatieformaat is.
 
-Er zijn veel gequantizeerde GGUF-formaat modellen beschikbaar op Hugging Face. AI Foundry, Ollama en LlamaEdge maken gebruik van llama.cpp, dus GGUF-modellen worden ook vaak toegepast.
+Er zijn veel gequantizeerde GGUF-formaat modellen beschikbaar op Hugging Face. AI Foundry, Ollama en LlamaEdge vertrouwen op llama.cpp, dus GGUF-modellen worden ook vaak gebruikt.
 
 ### **Wat is GGUF**
 
-GGUF is een binair formaat dat geoptimaliseerd is voor snelle laadtijd en opslag van modellen, waardoor het zeer efficiënt is voor inferentie. GGUF is ontworpen voor gebruik met GGML en andere uitvoerders. GGUF is ontwikkeld door @ggerganov, die ook de ontwikkelaar is van llama.cpp, een populair C/C++ LLM-inferentiekader. Modellen die oorspronkelijk in frameworks zoals PyTorch zijn ontwikkeld, kunnen worden geconverteerd naar het GGUF-formaat voor gebruik met deze engines.
+GGUF is een binair formaat dat geoptimaliseerd is voor snelle laad- en opslagtijden van modellen, waardoor het zeer efficiënt is voor inferentie. GGUF is ontworpen voor gebruik met GGML en andere executors. GGUF is ontwikkeld door @ggerganov, die ook de ontwikkelaar is van llama.cpp, een populair C/C++ LLM-inferentiekader. Modellen die oorspronkelijk in frameworks zoals PyTorch zijn ontwikkeld, kunnen worden geconverteerd naar het GGUF-formaat voor gebruik met deze engines.
 
 ### **ONNX vs GGUF**
 
-ONNX is een traditioneel machine learning/deep learning formaat, dat goed wordt ondersteund in verschillende AI-frameworks en geschikt is voor toepassingen op edge-apparaten. GGUF daarentegen is gebaseerd op llama.cpp en kan gezien worden als een product van het GenAI-tijdperk. Beide hebben vergelijkbare toepassingen. Als je betere prestaties wilt op embedded hardware en in applicatielagen, is ONNX wellicht je keuze. Gebruik je het afgeleide framework en technologie van llama.cpp, dan is GGUF waarschijnlijk beter.
+ONNX is een traditioneel machine learning/deep learning formaat, dat goed wordt ondersteund in verschillende AI-frameworks en goede toepassingsmogelijkheden heeft op edge-apparaten. GGUF daarentegen is gebaseerd op llama.cpp en kan worden gezien als een product uit het GenAI-tijdperk. Beide hebben vergelijkbare toepassingen. Wil je betere prestaties op embedded hardware en applicatielagen, dan is ONNX wellicht de beste keuze. Gebruik je het afgeleide framework en de technologie van llama.cpp, dan is GGUF waarschijnlijk beter.
 
 ### **Quantizen van Phi-3.5-Instruct met llama.cpp**
 
@@ -55,7 +55,7 @@ make -j8
 
 **2. Quantisatie**
 
-Converteer Phi-3.5-Instruct naar FP16 GGUF met llama.cpp
+Gebruik llama.cpp om Phi-3.5-Instruct te converteren naar FP16 GGUF
 
 
 ```bash
@@ -85,9 +85,9 @@ pip install llama-cpp-python -U
 
 ```
 
-***Opmerking***  
+***Opmerking*** 
 
-Als je Apple Silicon gebruikt, installeer llama-cpp-python dan op deze manier
+Als je Apple Silicon gebruikt, installeer dan llama-cpp-python op deze manier
 
 
 ```bash
@@ -109,9 +109,9 @@ llama.cpp/llama-cli --model <Your phi-3.5-128k-mini_Q4_K_M.gguf location> --prom
 
 ## **Bronnen**
 
-1. Lees meer over llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)  
-2. Lees meer over onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)  
-3. Lees meer over GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
+1. Meer informatie over llama.cpp [https://github.com/ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp)
+2. Meer informatie over onnxruntime [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
+3. Meer informatie over GGUF [https://huggingface.co/docs/hub/en/gguf](https://huggingface.co/docs/hub/en/gguf)
 
 **Disclaimer**:  
-Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat automatische vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.
+Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

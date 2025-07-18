@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-07T13:56:37+00:00",
+  "translation_date": "2025-07-17T03:15:40+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "zh"
 }
 -->
 # **与 Phi-4-mini ONNX 聊天**
 
-***ONNX*** 是一种用于表示机器学习模型的开放格式。ONNX 定义了一套通用的算子——机器学习和深度学习模型的基础构建块——以及一种通用文件格式，使 AI 开发者能够在各种框架、工具、运行时和编译器中使用模型。
+***ONNX*** 是一种用于表示机器学习模型的开放格式。ONNX 定义了一套通用的算子——机器学习和深度学习模型的构建模块——以及一种通用的文件格式，使 AI 开发者能够在多种框架、工具、运行时和编译器中使用模型。
 
-我们希望能在边缘设备上部署生成式 AI 模型，并在计算能力有限或离线的环境中使用它们。现在，通过量化方式转换模型，我们可以实现这一目标。量化后的模型可以转换为 GGUF 或 ONNX 格式。
+我们希望能在边缘设备上部署生成式 AI 模型，并在计算能力有限或离线环境中使用它们。现在，我们可以通过量化方式转换模型来实现这一目标。量化后的模型可以转换为 GGUF 或 ONNX 格式。
 
 Microsoft Olive 可以帮助你将 SLM 转换为量化的 ONNX 格式。实现模型转换的方法非常简单。
 
@@ -34,7 +34,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 
 ```
 
-***注意*** 本示例使用 CPU
+***注意*** 此示例使用 CPU
 
 
 ### **使用 ONNX Runtime GenAI 推理 Phi-4-mini ONNX 模型**
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **免责声明**：  
-本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译而成。虽然我们努力确保准确性，但请注意自动翻译可能存在错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。我们不对因使用本翻译而产生的任何误解或误释承担责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们概不负责。

@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-07T10:46:02+00:00",
+  "translation_date": "2025-07-16T21:35:43+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "es"
 }
 -->
 # **Inferencia Phi-3-Vision en Local**
 
-Phi-3-vision-128k-instruct permite que Phi-3 no solo entienda el lenguaje, sino que también vea el mundo visualmente. A través de Phi-3-vision-128k-instruct, podemos resolver diferentes problemas visuales, como OCR, análisis de tablas, reconocimiento de objetos, descripción de imágenes, etc. Podemos completar fácilmente tareas que antes requerían mucho entrenamiento con datos. A continuación se presentan técnicas relacionadas y escenarios de aplicación citados por Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct permite que Phi-3 no solo entienda el lenguaje, sino que también vea el mundo de forma visual. A través de Phi-3-vision-128k-instruct, podemos resolver diferentes problemas visuales, como OCR, análisis de tablas, reconocimiento de objetos, describir imágenes, etc. Podemos completar fácilmente tareas que antes requerían mucho entrenamiento con datos. A continuación, se presentan técnicas relacionadas y escenarios de aplicación citados por Phi-3-vision-128k-instruct
 
 ## **0. Preparación**
 
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Analizar la imagen con Phi-3-Vision**
 
-Queremos que la IA pueda analizar el contenido de nuestras imágenes y dar descripciones relevantes
+Queremos que la IA pueda analizar el contenido de nuestras imágenes y ofrecer descripciones relevantes
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Podemos obtener las respuestas relevantes ejecutando el siguiente script en el Notebook
+Podemos obtener las respuestas correspondientes ejecutando el siguiente script en el Notebook
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -149,5 +149,5 @@ El resultado es
 The first image shows a group of soccer players from the Arsenal Football Club posing for a team photo with their trophies, while the second image shows a group of soccer players from the Arsenal Football Club celebrating a victory with a large crowd of fans in the background. The difference between the two images is the context in which the photos were taken, with the first image focusing on the team and their trophies, and the second image capturing a moment of celebration and victory.
 ```
 
-**Descargo de responsabilidad**:  
-Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables por malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.
+**Aviso legal**:  
+Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

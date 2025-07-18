@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:38:29+00:00",
+  "translation_date": "2025-07-16T14:44:23+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "tl"
 }
 -->
 # Contributing
 
-Malugod na tinatanggap ng proyektong ito ang mga kontribusyon at suhestiyon. Karamihan sa mga kontribusyon ay nangangailangan na sumang-ayon ka sa isang Contributor License Agreement (CLA) na nagsasaad na may karapatan ka, at talagang binibigyan mo kami ng karapatan na gamitin ang iyong kontribusyon. Para sa mga detalye, bisitahin ang [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
+Malugod na tinatanggap ng proyektong ito ang mga kontribusyon at suhestiyon. Karamihan sa mga kontribusyon ay nangangailangan na sumang-ayon ka sa isang Contributor License Agreement (CLA) na nagsasaad na may karapatan ka, at talagang binibigyan mo kami, ng mga karapatan na gamitin ang iyong kontribusyon. Para sa mga detalye, bisitahin ang [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
 Kapag nagsumite ka ng pull request, awtomatikong malalaman ng CLA bot kung kailangan mong magbigay ng CLA at bibigyan ng angkop na marka ang PR (hal., status check, komento). Sundin lamang ang mga tagubiling ibibigay ng bot. Isang beses mo lang ito kailangang gawin para sa lahat ng repos na gumagamit ng aming CLA.
 
@@ -20,7 +20,7 @@ Para sa karagdagang impormasyon, basahin ang [Code of Conduct FAQ](https://opens
 
 ## Cautions for creating issues
 
-Mangyaring huwag magbukas ng mga GitHub issues para sa mga pangkalahatang tanong sa suporta dahil ang listahan sa GitHub ay dapat gamitin para sa mga kahilingan sa tampok at mga ulat ng bug. Sa ganitong paraan, mas madali naming matutunton ang mga aktwal na isyu o bug mula sa code at mapanatili ang pangkalahatang talakayan na hiwalay sa aktwal na code.
+Mangyaring huwag magbukas ng mga GitHub issues para sa mga pangkalahatang tanong sa suporta dahil ang listahan sa GitHub ay dapat gamitin para sa mga kahilingan sa tampok at mga ulat ng bug. Sa ganitong paraan, mas madali naming matutunton ang mga totoong isyu o bug mula sa code at mapanatili ang pangkalahatang talakayan na hiwalay sa aktwal na code.
 
 ## How to Contribute
 
@@ -31,7 +31,7 @@ Kapag nagsusumite ng pull request (PR) sa Phi-3 CookBook repository, pakigamit a
 - **I-fork ang Repository**: Palaging i-fork ang repository sa iyong sariling account bago gawin ang mga pagbabago.
 
 - **Hiwalay na pull requests (PR)**:
-  - Isumite ang bawat uri ng pagbabago sa hiwalay na pull request. Halimbawa, ang mga pag-aayos ng bug at mga update sa dokumentasyon ay dapat isumite sa magkahiwalay na PR.
+  - Isumite ang bawat uri ng pagbabago sa sarili nitong pull request. Halimbawa, ang mga pag-aayos ng bug at mga update sa dokumentasyon ay dapat isumite sa magkahiwalay na PR.
   - Ang mga pag-aayos ng typo at maliliit na update sa dokumentasyon ay maaaring pagsamahin sa isang PR kung naaangkop.
 
 - **Ayusin ang mga merge conflict**: Kung nagpapakita ng merge conflicts ang iyong pull request, i-update ang iyong lokal na `main` branch upang tumugma sa pangunahing repository bago gawin ang mga pagbabago.
@@ -42,7 +42,7 @@ Kapag nagsusumite ng pull request (PR) sa Phi-3 CookBook repository, pakigamit a
 
 Upang matiyak ang pagkakapare-pareho sa lahat ng dokumento, pakigamit ang mga sumusunod na gabay:
 
-- **Pag-format ng URL**: Balutin ang lahat ng URL sa mga panaklong na may kasamang panaklong, nang walang dagdag na espasyo sa paligid o loob nito. Halimbawa: `[example](https://www.microsoft.com)`.
+- **Pag-format ng URL**: Balutin ang lahat ng URL sa mga panaklong na parisukat na sinusundan ng panaklong na bilog, nang walang dagdag na espasyo sa paligid o loob nito. Halimbawa: `[example](https://www.microsoft.com)`.
 
 - **Relative links**: Gamitin ang `./` para sa mga relative link na tumutukoy sa mga file o folder sa kasalukuyang direktoryo, at `../` para sa mga nasa parent directory. Halimbawa: `[example](../../path/to/file)` o `[example](../../../path/to/file)`.
 
@@ -70,14 +70,14 @@ Tinitiyak ng workflow na ito na lahat ng relative paths sa iyong mga file ay tam
 
 1. Upang ayusin ang isyung ito, gawin ang mga sumusunod gamit ang mga path suggestion na ibinibigay ng VS Code:
     - I-type ang `./` o `../`.
-    - Hihilingin ng VS Code na pumili ka mula sa mga available na opsyon base sa iyong tinype.
+    - Hihilingin sa iyo ng VS Code na pumili mula sa mga available na opsyon base sa iyong tinype.
     - Sundan ang path sa pamamagitan ng pag-click sa nais na file o folder upang matiyak na tama ang iyong path.
 
 Kapag naidagdag mo na ang tamang relative path, i-save at i-push ang iyong mga pagbabago.
 
 ### Check URLs Don't Have Locale
 
-Tinitiyak ng workflow na ito na walang web URL na naglalaman ng country-specific na locale. Dahil ang repository na ito ay naa-access sa buong mundo, mahalagang tiyakin na ang mga URL ay walang kasamang locale ng iyong bansa.
+Tinitiyak ng workflow na ito na walang web URL na naglalaman ng country-specific na locale. Dahil ang repository na ito ay naa-access sa buong mundo, mahalagang tiyakin na ang mga URL ay walang locale ng iyong bansa.
 
 1. Upang suriin na walang country locale ang iyong mga URL, gawin ang mga sumusunod:
 
@@ -97,7 +97,7 @@ Tinitiyak ng workflow na ito na ang anumang web URL sa iyong mga file ay gumagan
 1. Upang suriin na gumagana nang tama ang iyong mga URL, gawin ang mga sumusunod:
     - Suriin ang status ng mga URL sa iyong mga file.
 
-2. Upang ayusin ang anumang sirang URL, gawin ang mga sumusunod:
+2. Upang ayusin ang mga sirang URL, gawin ang mga sumusunod:
     - Buksan ang file na naglalaman ng sirang URL.
     - I-update ang URL sa tamang address.
 
@@ -105,10 +105,10 @@ Kapag naayos mo na ang mga URL, i-save at i-push ang iyong mga pagbabago.
 
 > [!NOTE]
 >
-> Maaaring may mga pagkakataon na mabigo ang URL check kahit na naa-access ang link. Ito ay maaaring mangyari dahil sa ilang dahilan, kabilang ang:
+> Maaaring may mga pagkakataon na mabigo ang URL check kahit na naa-access ang link. Ito ay maaaring mangyari dahil sa ilang mga dahilan, kabilang ang:
 >
-> - **Mga limitasyon sa network:** Maaaring may mga network restriction ang mga GitHub actions server na pumipigil sa pag-access sa ilang URL.
-> - **Timeout issues:** Ang mga URL na matagal mag-respond ay maaaring mag-trigger ng timeout error sa workflow.
+> - **Mga limitasyon sa network:** Maaaring may mga network restrictions ang mga GitHub actions server na pumipigil sa pag-access sa ilang URL.
+> - **Timeout issues:** Ang mga URL na matagal mag-reply ay maaaring mag-trigger ng timeout error sa workflow.
 > - **Pansamantalang problema sa server:** Paminsan-minsang downtime o maintenance ng server ay maaaring magpahinto pansamantala sa URL habang sinusuri.
 
 **Paalala**:  

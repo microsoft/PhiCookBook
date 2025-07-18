@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:15:27+00:00",
+  "translation_date": "2025-07-16T21:38:45+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "fi"
 }
 -->
 # **Inference Phi-3-Vision paikallisesti**
 
-Phi-3-vision-128k-instruct mahdollistaa Phi-3:n paitsi ymmärtämään kieltä, myös näkemään maailman visuaalisesti. Phi-3-vision-128k-instructin avulla voimme ratkaista erilaisia visuaalisia ongelmia, kuten OCR, taulukkoanalyysi, kohteiden tunnistus, kuvan kuvaaminen jne. Voimme helposti suorittaa tehtäviä, jotka aiemmin vaativat paljon datakoulutusta. Seuraavassa on Phi-3-vision-128k-instructin mainitsemia tekniikoita ja sovelluskohtauksia
+Phi-3-vision-128k-instruct mahdollistaa Phi-3:n paitsi ymmärtämään kieltä, myös näkemään maailman visuaalisesti. Phi-3-vision-128k-instructin avulla voimme ratkaista erilaisia visuaalisia ongelmia, kuten OCR, taulukoiden analysointi, kohteiden tunnistus, kuvan kuvaaminen jne. Voimme helposti suorittaa tehtäviä, jotka aiemmin vaativat paljon datakoulutusta. Seuraavassa on Phi-3-vision-128k-instructin mainitsemia tekniikoita ja sovelluskohtia
 
 ## **0. Valmistelut**
 
@@ -27,7 +27,7 @@ Suositellaan käyttämään ***CUDA 11.6+*** ja asentamaan flatten
 pip install flash-attn --no-build-isolation
 ```
 
-Luo uusi Notebook. Esimerkkien suorittamiseksi on suositeltavaa ensin luoda seuraava sisältö.
+Luo uusi Notebook. Esimerkkien suorittamiseksi on suositeltavaa luoda ensin seuraava sisältö.
 
 ```python
 from PIL import Image
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. Kuvan analysointi Phi-3-Visionilla**
 
-Haluamme, että tekoäly pystyy analysoimaan kuvamme sisällön ja antamaan siihen liittyviä kuvauksia
+Haluamme, että tekoäly pystyy analysoimaan kuvien sisällön ja antamaan siihen liittyviä kuvauksia
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-Saatamme saada asiaankuuluvat vastaukset suorittamalla seuraavan skriptin Notebookissa
+Saat asiaankuuluvat vastaukset suorittamalla seuraavan skriptin Notebookissa
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulisi pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

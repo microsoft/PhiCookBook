@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-08T06:12:09+00:00",
+  "translation_date": "2025-07-16T22:17:06+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "ja"
 }
 -->
 ## **Model Builderを使ったPhi-3.5の量子化方法**
 
-Model Builderは現在、Phi-3.5 InstructおよびPhi-3.5-VisionのONNXモデル量子化に対応しています。
+Model Builderは現在、Phi-3.5 InstructおよびPhi-3.5-VisionのONNXモデル量子化をサポートしています。
 
 ### **Phi-3.5-Instruct**
 
@@ -52,7 +52,7 @@ cd models
 2. modelsフォルダにmicrosoft/Phi-3.5-vision-instructをダウンロード  
 [https://huggingface.co/microsoft/Phi-3.5-vision-instruct](https://huggingface.co/microsoft/Phi-3.5-vision-instruct)
 
-3. 以下のファイルをYour Phi-3.5-vision-instructフォルダにダウンロードしてください
+3. 以下のファイルをPhi-3.5-vision-instructフォルダにダウンロードしてください
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/resolve/main/onnx/config.json)
 
@@ -60,12 +60,13 @@ cd models
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py)
 
-4. 以下のファイルをmodelsフォルダにダウンロードしてください  
+4. 以下のファイルをmodelsフォルダにダウンロード
+
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
 5. ターミナルに移動し、
 
-    FP32でのONNXサポート変換を実行
+    FP32でONNXサポートの変換を実行
 
 ```bash
 
@@ -75,21 +76,21 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 ### **注意：**
 
-1. Model Builderは現在、Phi-3.5-InstructおよびPhi-3.5-Visionの変換に対応していますが、Phi-3.5-MoEには対応していません。
+1. Model Builderは現在、Phi-3.5-InstructとPhi-3.5-Visionの変換をサポートしていますが、Phi-3.5-MoEはサポートしていません。
 
-2. ONNXの量子化モデルを使う場合は、Generative AI extensions for onnxruntime SDKを通じて利用できます。
+2. ONNXの量子化モデルを使用するには、Generative AI extensions for onnxruntime SDKを通じて利用可能です。
 
-3. より責任あるAI利用のために、モデルの量子化変換後は十分な結果検証を行うことを推奨します。
+3. より責任あるAIの観点から、モデルの量子化変換後は、より効果的な結果検証を行うことを推奨します。
 
-4. CPUのINT4モデルを量子化することで、Edgeデバイスへの展開が可能になり、より良い応用シナリオが広がります。これにより、Phi-3.5-InstructのINT4周りの対応が完了しています。
+4. CPUのINT4モデルを量子化することで、エッジデバイスへの展開が可能となり、より良いアプリケーションシナリオが期待できるため、Phi-3.5-InstructのINT4周りの対応を完了しています。
 
 ## **リソース**
 
-1. Generative AI extensions for onnxruntimeについて詳しくは  
+1. Generative AI extensions for onnxruntimeについて詳しくはこちら  
 [https://onnxruntime.ai/docs/genai/](https://onnxruntime.ai/docs/genai/)
 
 2. Generative AI extensions for onnxruntime GitHubリポジトリ  
 [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
-**免責事項**:  
-本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されています。正確性を期していますが、自動翻訳には誤りや不正確な部分が含まれる可能性があることをご理解ください。原文の言語で記載されたオリジナル文書が正式な情報源とみなされます。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+**免責事項**：  
+本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

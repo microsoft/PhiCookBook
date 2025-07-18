@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "d7d7afa242a4a041ff4193546d4baf16",
-  "translation_date": "2025-05-09T20:00:43+00:00",
+  "translation_date": "2025-07-17T05:03:54+00:00",
   "source_file": "md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md",
   "language_code": "da"
 }
@@ -14,25 +14,25 @@ Denne demo viser, hvordan man bruger en forudtrænet model til at generere Pytho
 Her er en trin-for-trin forklaring:
 
 1. **Imports og opsætning**:
-   - De nødvendige biblioteker og moduler importeres, inklusive `requests`, `PIL` til billedbehandling, og `transformers` til håndtering af modellen og processen.
+   - De nødvendige biblioteker og moduler importeres, herunder `requests`, `PIL` til billedbehandling og `transformers` til håndtering af modellen og processen.
 
 2. **Indlæsning og visning af billedet**:
-   - En billedfil (`demo.png`) åbnes ved hjælp af `PIL` biblioteket og vises.
+   - En billedfil (`demo.png`) åbnes med `PIL`-biblioteket og vises.
 
 3. **Definering af prompten**:
    - En besked oprettes, som inkluderer billedet og en anmodning om at generere Python-kode til at behandle billedet og gemme det ved hjælp af `plt` (matplotlib).
 
 4. **Indlæsning af processoren**:
-   - `AutoProcessor` indlæses fra en forudtrænet model, der er angivet i `out_dir` mappen. Denne processor håndterer tekst- og billedinput.
+   - `AutoProcessor` indlæses fra en forudtrænet model, der er angivet i `out_dir`-mappen. Denne processor håndterer tekst- og billedinput.
 
 5. **Oprettelse af prompten**:
-   - `apply_chat_template` metoden bruges til at formatere beskeden til en prompt, der passer til modellen.
+   - Metoden `apply_chat_template` bruges til at formatere beskeden til en prompt, der passer til modellen.
 
 6. **Behandling af input**:
-   - Prompten og billedet behandles til tensors, som modellen kan forstå.
+   - Prompten og billedet behandles til tensorer, som modellen kan forstå.
 
 7. **Indstilling af genereringsparametre**:
-   - Argumenter til modellens genereringsproces defineres, herunder maksimum antal nye tokens der skal genereres, og om output skal samples.
+   - Parametre for modellens genereringsproces defineres, herunder det maksimale antal nye tokens, der skal genereres, og om output skal samples.
 
 8. **Generering af koden**:
    - Modellen genererer Python-koden baseret på input og genereringsparametre. `TextStreamer` bruges til at håndtere outputtet, hvor prompt og specialtegn springes over.
@@ -40,7 +40,7 @@ Her er en trin-for-trin forklaring:
 9. **Output**:
    - Den genererede kode printes, og den bør indeholde Python-kode til at behandle billedet og gemme det som angivet i prompten.
 
-Denne demo viser, hvordan man kan udnytte en forudtrænet model med OpenVino til dynamisk at generere kode baseret på brugerinput og billeder.
+Denne demo illustrerer, hvordan man kan udnytte en forudtrænet model med OpenVino til dynamisk at generere kode baseret på brugerinput og billeder.
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

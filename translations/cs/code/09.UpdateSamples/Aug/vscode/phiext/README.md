@@ -2,82 +2,82 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-09T05:30:15+00:00",
+  "translation_date": "2025-07-16T17:32:09+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "cs"
 }
 -->
 # phiext README
 
-这是你的扩展 "phiext" 的 README。写完简要描述后，我们建议包含以下几个部分。
+Toto je README pro vaše rozšíření "phiext". Po krátkém popisu doporučujeme zahrnout následující sekce.
 
-## Features
+## Funkce
 
-描述你的扩展的具体功能，包括扩展实际运行时的截图。图片路径相对于此 README 文件。
+Popište konkrétní funkce vašeho rozšíření včetně screenshotů, jak rozšíření funguje. Cesty k obrázkům jsou relativní k tomuto README souboru.
 
-例如，如果你的扩展项目工作区下有一个 images 子文件夹：
+Například pokud je ve vašem pracovním prostoru rozšíření podsložka s obrázky:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tip: 许多流行的扩展都会使用动画。这是展示你的扩展的绝佳方式！我们推荐简短、重点突出的动画，便于观看。
+> Tip: Mnoho oblíbených rozšíření využívá animace. Je to skvělý způsob, jak předvést vaše rozšíření! Doporučujeme krátké, zaměřené animace, které se snadno sledují.
 
-## Requirements
+## Požadavky
 
-如果你有任何要求或依赖项，请添加一个部分描述它们以及如何安装和配置。
+Pokud máte nějaké požadavky nebo závislosti, přidejte sekci, která je popisuje a vysvětluje, jak je nainstalovat a nastavit.
 
-## Extension Settings
+## Nastavení rozšíření
 
-如果你的扩展通过 `contributes.configuration` 扩展点添加了任何 VS Code 设置，请包含此部分。
+Zahrňte, pokud vaše rozšíření přidává nějaká nastavení VS Code přes `contributes.configuration`.
 
-例如：
+Například:
 
-此扩展贡献了以下设置：
+Toto rozšíření přispívá následujícími nastaveními:
 
-* `myExtension.enable`: 启用/禁用此扩展。
-* `myExtension.thing`: 设置为 `blah` 以执行某操作。
+* `myExtension.enable`: Zapnout/vypnout toto rozšíření.
+* `myExtension.thing`: Nastavte na `blah` pro provedení něčeho.
 
-## Known Issues
+## Známé problémy
 
-指出已知问题可以帮助减少用户为你的扩展打开重复的问题。
+Uvedení známých problémů může pomoci omezit, aby uživatelé neotvírali duplicitní hlášení k vašemu rozšíření.
 
-## Release Notes
+## Poznámky k vydání
 
-用户会感谢你在更新扩展时提供的发行说明。
+Uživatelé oceňují poznámky k vydání při aktualizaci vašeho rozšíření.
 
 ### 1.0.0
 
-首次发布...
+První vydání ...
 
 ### 1.0.1
 
-修复了问题 #。
+Opraven problém #.
 
 ### 1.1.0
 
-新增了功能 X、Y 和 Z。
+Přidány funkce X, Y a Z.
 
 ---
 
-## Following extension guidelines
+## Dodržování pokynů pro rozšíření
 
-确保你已阅读扩展指南，并遵循创建扩展的最佳实践。
+Ujistěte se, že jste si přečetli pokyny pro rozšíření a dodržujete osvědčené postupy při vytváření vašeho rozšíření.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Working with Markdown
+## Práce s Markdownem
 
-你可以使用 Visual Studio Code 撰写你的 README。这里有一些实用的编辑器快捷键：
+README můžete psát ve Visual Studio Code. Zde je několik užitečných klávesových zkratek editoru:
 
-* 分割编辑器（macOS 上为 `Cmd+\`，Windows 和 Linux 上为 `Ctrl+\`）。
-* 切换预览（macOS 上为 `Shift+Cmd+V`，Windows 和 Linux 上为 `Shift+Ctrl+V`）。
-* 按 `Ctrl+Space`（Windows、Linux、macOS）查看 Markdown 代码片段列表。
+* Rozdělit editor (`Cmd+\` na macOS nebo `Ctrl+\` na Windows a Linux).
+* Přepnout náhled (`Shift+Cmd+V` na macOS nebo `Shift+Ctrl+V` na Windows a Linux).
+* Stiskněte `Ctrl+Space` (Windows, Linux, macOS) pro zobrazení seznamu Markdown snippetů.
 
-## For more information
+## Pro více informací
 
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Užijte si to!**
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

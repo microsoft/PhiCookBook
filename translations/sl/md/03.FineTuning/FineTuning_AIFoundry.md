@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c1559c5af6caccf6f623fd43a6b3a9a3",
-  "translation_date": "2025-05-09T20:38:50+00:00",
+  "translation_date": "2025-07-17T06:16:03+00:00",
   "source_file": "md/03.FineTuning/FineTuning_AIFoundry.md",
   "language_code": "sl"
 }
 -->
-# Fine-tuning Phi-3 with Azure AI Foundry
+# Prilagajanje Phi-3 z Azure AI Foundry
 
-Chalo dekhiye kaise Microsoft ke Phi-3 Mini language model ko Azure AI Foundry ke zariye fine-tune karte hain. Fine-tuning se aap Phi-3 Mini ko khaas tasks ke liye customize kar sakte hain, jisse yeh aur bhi powerful aur context-aware ho jaata hai.
+Raziščimo, kako prilagoditi Microsoftov jezikovni model Phi-3 Mini z uporabo Azure AI Foundry. Prilagajanje omogoča, da Phi-3 Mini prilagodite specifičnim nalogam, s čimer postane še močnejši in bolj zavedajoč se konteksta.
 
-## Considerations
+## Premisleki
 
-- **Capabilities:** Kaunse models fine-tune kiye ja sakte hain? Base model ko fine-tune karke kya kya kiya ja sakta hai?
-- **Cost:** Fine-tuning ka pricing model kya hai?
-- **Customizability:** Base model mein kitna badlav kar sakte hain – aur kaise?
-- **Convenience:** Fine-tuning kaise hoti hai – kya mujhe custom code likhna padega? Kya apna compute laana padega?
-- **Safety:** Fine-tuned models mein safety risks hote hain – kya koi guardrails hain jo unintended nuksaan se bachate hain?
+- **Zmožnosti:** Kateri modeli so prilagodljivi? Kaj lahko osnovni model naredi po prilagoditvi?
+- **Stroški:** Kakšen je cenovni model za prilagajanje?
+- **Prilagodljivost:** Koliko lahko spremenim osnovni model – in na kakšne načine?
+- **Udobje:** Kako poteka prilagajanje – ali moram pisati lastno kodo? Ali potrebujem lastne računalniške vire?
+- **Varnost:** Prilagojeni modeli lahko predstavljajo varnostna tveganja – ali so na voljo zaščitni mehanizmi za preprečevanje neželenih posledic?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.4440430c9f07dbd6c625971422e7b9a5b9cb91fa046e447ba9ea41457860532f.sl.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.sl.png)
 
-## Preparation for fine-tuning
+## Priprava na prilagajanje
 
-### Prerequisites
+### Predpogoji
 
 > [!NOTE]
-> Phi-3 family ke models ke liye, pay-as-you-go fine-tune option sirf **East US 2** regions mein banaye gaye hubs ke saath available hai.
+> Za modele družine Phi-3 je ponudba prilagajanja po modelu plačaj-po-porabi na voljo samo za hube, ustvarjene v regijah **East US 2**.
 
-- Ek Azure subscription. Agar aapke paas Azure subscription nahi hai, to ek [paid Azure account](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) banayein.
+- Azure naročnina. Če je še nimate, ustvarite [plačljiv Azure račun](https://azure.microsoft.com/pricing/purchase-options/pay-as-you-go) za začetek.
 
-- Ek [AI Foundry project](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
-- Azure role-based access controls (Azure RBAC) Azure AI Foundry mein operations ke liye access dete hain. Is article ke steps karne ke liye, aapke user account ko resource group par __Azure AI Developer role__ assign hona chahiye.
+- [AI Foundry projekt](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo).
+- Za dostop do operacij v Azure AI Foundry se uporabljajo vloge Azure RBAC. Za izvedbo korakov v tem članku mora biti vaš uporabniški račun dodeljen vlogi __Azure AI Developer__ v skupini virov.
 
-### Subscription provider registration
+### Registracija ponudnika naročnine
 
-Confirm karein ki subscription `Microsoft.Network` resource provider ke liye registered hai.
+Preverite, ali je naročnina registrirana pri ponudniku virov `Microsoft.Network`.
 
-1. [Azure portal](https://portal.azure.com) mein sign in karein.
-1. Left menu se **Subscriptions** select karein.
-1. Apni subscription select karein.
-1. Left menu se **AI project settings** > **Resource providers** select karein.
-1. Dekhein ki **Microsoft.Network** resource providers ki list mein hai. Agar nahi, to add karein.
+1. Prijavite se v [Azure portal](https://portal.azure.com).
+1. Izberite **Subscriptions** v levem meniju.
+1. Izberite naročnino, ki jo želite uporabiti.
+1. Izberite **AI project settings** > **Resource providers** v levem meniju.
+1. Preverite, ali je **Microsoft.Network** na seznamu ponudnikov virov. Če ni, ga dodajte.
 
-### Data preparation
+### Priprava podatkov
 
-Apne training aur validation data ko fine-tune ke liye tayaar karein. Training aur validation datasets mein input-output examples hote hain jo model ko batate hain ki aap kaise perform karwana chahte hain.
+Pripravite podatke za učenje in validacijo za prilagoditev modela. Vaši podatki za učenje in validacijo vsebujejo primere vhodov in izhodov, ki prikazujejo, kako želite, da model deluje.
 
-Ensure karein ki aapke training examples inference ke expected format mein hon. Effective fine-tuning ke liye data balanced aur diverse hona chahiye.
+Poskrbite, da vsi primeri učenja sledijo pričakovanemu formatu za inferenco. Za učinkovito prilagajanje modelov zagotovite uravnotežen in raznolik nabor podatkov.
 
-Iska matlab hai data balance maintain karna, alag-alag scenarios shamil karna, aur training data ko time-time par refine karna taaki model ke responses accurate aur balanced ho.
+To vključuje ohranjanje ravnovesja podatkov, vključevanje različnih scenarijev in občasno izboljševanje učnih podatkov, da se uskladijo z realnimi pričakovanji, kar vodi do natančnejših in bolj uravnoteženih odzivov modela.
 
-Alag-alag model types ke liye training data ka format alag hota hai.
+Različni tipi modelov zahtevajo različne formate učnih podatkov.
 
 ### Chat Completion
 
-Jo training aur validation data aap use karenge, woh **JSON Lines (JSONL)** format mein hona chahiye. `Phi-3-mini-128k-instruct` ke liye fine-tuning dataset conversational format mein hona chahiye jo Chat completions API use karti hai.
+Podatki za učenje in validacijo **morajo** biti oblikovani kot JSON Lines (JSONL) dokument. Za `Phi-3-mini-128k-instruct` mora biti nabor podatkov za prilagajanje oblikovan v pogovornem formatu, ki ga uporablja API za Chat completions.
 
-### Example file format
+### Primer formata datoteke
 
 ```json
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "Is Xbox better than PlayStation?"}, {"role": "assistant", "content": "I apologize, but I cannot provide personal opinions. My primary job is to assist you with any issues related to your Xbox device. Do you have any Xbox-related issues that need addressing?"}]}
@@ -65,174 +65,172 @@ Jo training aur validation data aap use karenge, woh **JSON Lines (JSONL)** form
     {"messages": [{"role": "system", "content": "You are an Xbox customer support agent whose primary goal is to help users with issues they are experiencing with their Xbox devices. You are friendly and concise. You only provide factual answers to queries, and do not provide answers that are not related to Xbox."}, {"role": "user", "content": "I'm having trouble connecting my Xbox to the Wi-Fi."}, {"role": "assistant", "content": "No worries, let's go through the network settings on your Xbox. Can you please tell me what happens when you try to connect it to the Wi-Fi?"}]}
 ```
 
-Supported file type JSON Lines hai. Files default datastore mein upload hote hain aur aapke project mein available hote hain.
+Podprta vrsta datoteke je JSON Lines. Datoteke se naložijo v privzeti podatkovni prostor in so na voljo v vašem projektu.
 
-## Fine-Tuning Phi-3 with Azure AI Foundry
+## Prilagajanje Phi-3 z Azure AI Foundry
 
-Azure AI Foundry se aap apne personal datasets ke liye large language models ko fine-tune kar sakte hain. Fine-tuning se aapko customization aur optimization milta hai jo specific tasks aur applications ke liye faydemand hai. Isse performance improve hoti hai, cost efficient hota hai, latency kam hoti hai, aur output tailored hota hai.
+Azure AI Foundry vam omogoča, da prilagodite velike jezikovne modele svojim osebnim podatkom z uporabo procesa, imenovanega prilagajanje (fine-tuning). Prilagajanje prinaša veliko vrednost z omogočanjem prilagoditve in optimizacije za specifične naloge in aplikacije. To vodi do izboljšane zmogljivosti, stroškovne učinkovitosti, zmanjšane zakasnitve in prilagojenih izhodov.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.69ddc22d1ab08167a7e53a911cd33c749d99fea4047801a836ceb6eec66c5719.sl.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.sl.png)
 
-### Create a New Project
+### Ustvarjanje novega projekta
 
-1. [Azure AI Foundry](https://ai.azure.com) mein sign in karein.
+1. Prijavite se v [Azure AI Foundry](https://ai.azure.com).
 
-1. **+New project** select karke naya project banayein.
+1. Izberite **+New project** za ustvarjanje novega projekta v Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.1b9270456fbb8d598938036c6bd26247ea39c8b9ad76be16c81df57d54ce78ed.sl.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.sl.png)
 
-1. Ye tasks complete karein:
+1. Izvedite naslednje korake:
 
-    - Project ka **Hub name** daalein. Yeh unique hona chahiye.
-    - Use karne ke liye **Hub** select karein (zarurat pade to naya banayein).
+    - Ime projekta **Hub name**. Mora biti unikatno.
+    - Izberite **Hub**, ki ga želite uporabiti (po potrebi ustvarite novega).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.8378d7842c49702498ba20f0553cbe91ff516275c8514ec865799669f9becbff.sl.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.sl.png)
 
-1. Naya hub banane ke liye ye steps karein:
+1. Izvedite naslednje korake za ustvarjanje novega huba:
 
-    - **Hub name** daalein, jo unique ho.
-    - Apni Azure **Subscription** select karein.
-    - Use karne ke liye **Resource group** select karein (zarurat pade to naya banayein).
-    - Apni pasand ki **Location** select karein.
-    - Use karne ke liye **Connect Azure AI Services** select karein (zarurat pade to naya banayein).
-    - **Connect Azure AI Search** ko **Skip connecting** karein.
+    - Vnesite **Hub name**. Mora biti unikatno.
+    - Izberite svojo Azure **Subscription**.
+    - Izberite **Resource group** za uporabo (po potrebi ustvarite novo).
+    - Izberite **Location**, ki ga želite uporabiti.
+    - Izberite **Connect Azure AI Services** za uporabo (po potrebi ustvarite novega).
+    - Izberite **Connect Azure AI Search** in izberite **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.b93d390a6d3eebd4c33eb7e4ea6ef41fd69c4d39f21339d4bda51af9ed70505f.sl.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.sl.png)
 
-1. **Next** select karein.
-1. **Create a project** select karein.
+1. Izberite **Next**.
+1. Izberite **Create a project**.
 
-### Data Preparation
+### Priprava podatkov
 
-Fine-tuning se pehle apne task se related dataset ikatha karein ya banayein, jaise chat instructions, question-answer pairs, ya koi aur relevant text data. Data ko clean karein, noise hataayein, missing values handle karein, aur text ko tokenize karein.
+Pred prilagajanjem zberite ali ustvarite nabor podatkov, ki je relevanten za vašo nalogo, kot so navodila za klepet, pari vprašanje-odgovor ali kateri koli drugi ustrezni besedilni podatki. Očistite in predobdelajte te podatke z odstranjevanjem šuma, obravnavo manjkajočih vrednosti in tokenizacijo besedila.
 
-### Fine-tune Phi-3 models in Azure AI Foundry
-
-> [!NOTE]
-> Phi-3 models ka fine-tuning abhi sirf East US 2 region ke projects mein supported hai.
-
-1. Left side tab se **Model catalog** select karein.
-
-1. **search bar** mein *phi-3* type karein aur apne pasand ka phi-3 model select karein.
-
-    ![FineTuneSelect](../../../../translated_images/select-model.02eef2cbb5b7e61a86526b05bd5ec9822fd6b2abae4e38fd5d9bdef541dfb967.sl.png)
-
-1. **Fine-tune** select karein.
-
-    ![FineTuneSelect](../../../../translated_images/select-finetune.88cf562034f78baf0b7f41511fd4c45e1f068104238f1397661b9402ff9e2e09.sl.png)
-
-1. **Fine-tuned model name** daalein.
-
-    ![FineTuneSelect](../../../../translated_images/finetune1.8a20c66f797cc7ede7feb789a45c42713b7aeadfeb01dbc34446019db5c189d4.sl.png)
-
-1. **Next** select karein.
-
-1. Ye tasks karein:
-
-    - **task type** mein **Chat completion** select karein.
-    - Apna **Training data** select karein. Aap ise Azure AI Foundry ke data se ya apne local environment se upload kar sakte hain.
-
-    ![FineTuneSelect](../../../../translated_images/finetune2.47df1aa177096dbaa01e4d64a06eb3f46a29718817fa706167af3ea01419a32f.sl.png)
-
-1. **Next** select karein.
-
-1. Apna **Validation data** upload karein, ya phir **Automatic split of training data** select karein.
-
-    ![FineTuneSelect](../../../../translated_images/finetune3.e887e47240626c31f969532610c965594635c91cf3f94639fa60fb5d2bbd8f93.sl.png)
-
-1. **Next** select karein.
-
-1. Ye options select karein:
-
-    - Apna pasandida **Batch size multiplier** choose karein.
-    - Apna pasandida **Learning rate** choose karein.
-    - Apna pasandida **Epochs** choose karein.
-
-    ![FineTuneSelect](../../../../translated_images/finetune4.9f47c2fad66fddd0f091b62a2fa6ac23260226ab841287805d843ebc83761801.sl.png)
-
-1. Fine-tuning process start karne ke liye **Submit** select karein.
-
-    ![FineTuneSelect](../../../../translated_images/select-submit.b5344fd77e49bfb6d4efe72e713f6a46f04323d871c118bbf59bf0217698dfee.sl.png)
-
-1. Jab model fine-tune ho jaye, status **Completed** dikhaya jayega, jaise neeche image mein hai. Ab aap model ko deploy kar sakte hain aur apni application, playground, ya prompt flow mein use kar sakte hain. Zyada jankari ke liye dekhein [How to deploy Phi-3 family of small language models with Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
-
-    ![FineTuneSelect](../../../../translated_images/completed.f4be2c6e660d8ba908d1d23e2102925cc31e57cbcd60fb10e7ad3b7925f585c4.sl.png)
+### Prilagajanje Phi-3 modelov v Azure AI Foundry
 
 > [!NOTE]
-> Phi-3 fine-tuning ke detailed info ke liye dekhein [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+> Prilagajanje Phi-3 modelov je trenutno podprto samo v projektih, ki se nahajajo v regiji East US 2.
 
-## Cleaning up your fine-tuned models
+1. Izberite **Model catalog** v levem zavihku.
 
-Aap fine-tuned model ko [Azure AI Foundry](https://ai.azure.com) ke fine-tuning model list se ya model details page se delete kar sakte hain. Fine-tuned model select karein Fine-tuning page par, phir Delete button dabakar model delete karein.
+1. V iskalno polje vnesite *phi-3* in izberite želeni phi-3 model.
 
-> [!NOTE]
-> Agar custom model ka deployment exist karta hai, to aap us model ko delete nahi kar sakte. Pehle deployment delete karna zaruri hai tabhi custom model delete ho payega.
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.sl.png)
 
-## Cost and quotas
+1. Izberite **Fine-tune**.
 
-### Cost and quota considerations for Phi-3 models fine-tuned as a service
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.sl.png)
 
-Phi models jo service ke roop mein fine-tune kiye jaate hain, Microsoft ke dwara offer kiye jaate hain aur Azure AI Foundry ke saath integrated hain. Pricing aap [deploy](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ya fine-tuning ke dauran deployment wizard ke Pricing and terms tab mein dekh sakte hain.
+1. Vnesite ime za **Fine-tuned model name**.
 
-## Content filtering
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.sl.png)
 
-Pay-as-you-go service ke roop mein deploy kiye gaye models Azure AI Content Safety se protected hote hain. Jab real-time endpoints par deploy kiya jata hai, to aap is feature ko opt out kar sakte hain. Azure AI content safety enabled hone par, prompt aur completion dono ek ensemble classification models ke through pass hote hain jo harmful content detect aur rokne ke liye design kiye gaye hain. Content filtering system input prompts aur output completions mein harmful content ke specific categories ko detect karta hai aur action leta hai. Zyada jankari ke liye dekhein [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+1. Izberite **Next**.
 
-**Fine-Tuning Configuration**
+1. Izvedite naslednje korake:
 
-Hyperparameters: Learning rate, batch size, aur training epochs jaise hyperparameters define karein.
+    - Izberite **task type** kot **Chat completion**.
+    - Izberite **Training data**, ki ga želite uporabiti. Lahko ga naložite preko Azure AI Foundry ali iz lokalnega okolja.
 
-**Loss Function**
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.sl.png)
 
-Apne task ke liye sahi loss function choose karein (jaise cross-entropy).
+1. Izberite **Next**.
 
-**Optimizer**
+1. Naložite **Validation data**, ki ga želite uporabiti, ali pa izberite **Automatic split of training data**.
 
-Training ke dauran gradient updates ke liye optimizer select karein (jaise Adam).
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.sl.png)
 
-**Fine-Tuning Process**
+1. Izberite **Next**.
 
-- Pre-Trained Model Load karein: Phi-3 Mini checkpoint load karein.
-- Custom Layers Add karein: Task-specific layers add karein (jaise chat instructions ke liye classification head).
+1. Izvedite naslednje korake:
 
-**Train the Model**
+    - Izberite **Batch size multiplier**, ki ga želite uporabiti.
+    - Izberite **Learning rate**, ki ga želite uporabiti.
+    - Izberite **Epochs**, ki jih želite uporabiti.
 
-Apne tayaar kiye gaye dataset se model ko fine-tune karein. Training progress monitor karein aur zarurat pade to hyperparameters adjust karein.
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.sl.png)
 
-**Evaluation and Validation**
+1. Izberite **Submit** za začetek procesa prilagajanja.
 
-Validation Set: Apne data ko training aur validation sets mein baant lein.
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.sl.png)
 
-**Evaluate Performance**
+1. Ko je vaš model prilagojen, bo status prikazan kot **Completed**, kot je prikazano na spodnji sliki. Model lahko zdaj namestite in uporabljate v svoji aplikaciji, v playgroundu ali v prompt flow. Za več informacij glejte [Kako namestiti družino majhnih jezikovnih modelov Phi-3 z Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-Accuracy, F1-score, ya perplexity jaise metrics se model ki performance assess karein.
-
-## Save Fine-Tuned Model
-
-**Checkpoint**
-
-Future use ke liye fine-tuned model checkpoint save karein.
-
-## Deployment
-
-- Web Service ke roop mein deploy karein: Apne fine-tuned model ko Azure AI Foundry mein web service ke roop mein deploy karein.
-- Endpoint test karein: Deploy kiye gaye endpoint par test queries bhej kar uski functionality verify karein.
-
-## Iterate and Improve
-
-Agar performance satisfactory nahi hai, to hyperparameters adjust karke, zyada data add karke, ya additional epochs ke liye fine-tune karke iterate karein.
-
-## Monitor and Refine
-
-Model ke behaviour ko lagataar monitor karein aur zarurat ke mutabiq refine karein.
-
-## Customize and Extend
-
-Custom Tasks: Phi-3 Mini ko chat instructions ke alawa bhi kai tasks ke liye fine-tune kiya ja sakta hai. Dusre use cases explore karein!
-Experiment: Alag architectures, layer combinations, aur techniques try karein taaki performance aur behtar ho.
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.sl.png)
 
 > [!NOTE]
-> Fine-tuning ek iterative process hai. Experiment karein, seekhein, aur apne model ko apne specific task ke liye best results ke liye adapt karein!
+> Za podrobnejše informacije o prilagajanju Phi-3 obiščite [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).
+
+## Čiščenje prilagojenih modelov
+
+Prilagojeni model lahko izbrišete s seznama prilagojenih modelov v [Azure AI Foundry](https://ai.azure.com) ali na strani s podrobnostmi modela. Izberite model, ki ga želite izbrisati na strani Fine-tuning, nato pa kliknite gumb Delete za brisanje.
+
+> [!NOTE]
+> Prilagojenega modela ne morete izbrisati, če ima obstoječo namestitev. Najprej morate izbrisati namestitev modela, preden lahko izbrišete prilagojeni model.
+
+## Stroški in kvote
+
+### Premisleki o stroških in kvotah za Phi-3 modele, prilagojene kot storitev
+
+Phi modeli, prilagojeni kot storitev, jih ponuja Microsoft in so integrirani z Azure AI Foundry za uporabo. Cene najdete med [namestitvijo](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) ali prilagajanjem modelov pod zavihkom Pricing and terms v čarovniku za namestitev.
+
+## Filtriranje vsebine
+
+Modeli, nameščeni kot storitev po modelu plačaj-po-porabi, so zaščiteni z Azure AI Content Safety. Ko so nameščeni na realnočasovne končne točke, se lahko odločite, da te funkcije ne uporabljate. Z omogočeno Azure AI Content Safety tako poziv kot izhod prehajata skozi skupek klasifikacijskih modelov, ki zaznavajo in preprečujejo izhod škodljive vsebine. Sistem filtriranja vsebine zaznava in ukrepa glede določenih kategorij potencialno škodljive vsebine tako v vhodnih pozivih kot v izhodnih odgovorih. Več o [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering).
+
+**Konfiguracija prilagajanja**
+
+Določite hiperparametre, kot so hitrost učenja, velikost serije in število epochov učenja.
+
+**Funkcija izgube**
+
+Izberite ustrezno funkcijo izgube za vašo nalogo (npr. cross-entropy).
+
+**Optimizator**
+
+Izberite optimizator (npr. Adam) za posodobitve gradienta med učenjem.
+
+**Proces prilagajanja**
+
+- Naložite predhodno naučen model: naložite Phi-3 Mini kontrolno točko.
+- Dodajte lastne plasti: dodajte plasti, specifične za nalogo (npr. klasifikacijsko glavo za navodila za klepet).
+
+**Učenje modela**  
+Prilagodite model z uporabo pripravljenega nabora podatkov. Spremljajte napredek učenja in po potrebi prilagajajte hiperparametre.
+
+**Evalvacija in validacija**
+
+Validacijski nabor: podatke razdelite na učni in validacijski nabor.
+
+**Ocenjevanje zmogljivosti**
+
+Uporabite metrike, kot so natančnost, F1-ocena ali perplexity za oceno zmogljivosti modela.
+
+## Shranjevanje prilagojenega modela
+
+**Kontrolna točka**  
+Shranjena kontrolna točka prilagojenega modela za kasnejšo uporabo.
+
+## Namestitev
+
+- Namestitev kot spletna storitev: namestite prilagojeni model kot spletno storitev v Azure AI Foundry.
+- Testiranje končne točke: pošljite testne poizvedbe na nameščeno končno točko za preverjanje delovanja.
+
+## Iteracija in izboljšave
+
+Iterirajte: če zmogljivost ni zadovoljiva, prilagodite hiperparametre, dodajte več podatkov ali podaljšajte učenje za dodatne epohe.
+
+## Spremljanje in izboljševanje
+
+Nenehno spremljajte vedenje modela in ga po potrebi izboljšujte.
+
+## Prilagajanje in razširjanje
+
+Prilagojene naloge: Phi-3 Mini lahko prilagodite za različne naloge, ne le za navodila za klepet. Raziščite druge primere uporabe!  
+Eksperimentirajte: preizkusite različne arhitekture, kombinacije plasti in tehnike za izboljšanje zmogljivosti.
+
+> [!NOTE]
+> Prilagajanje je iterativen proces. Eksperimentirajte, se učite in prilagajajte model, da dosežete najboljše rezultate za svojo specifično nalogo!
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem maternem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitna nesporazumevanja ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

@@ -2,54 +2,54 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "7b4235159486df4000e16b7b46ddfec3",
-  "translation_date": "2025-05-09T15:01:40+00:00",
+  "translation_date": "2025-07-16T22:32:48+00:00",
   "source_file": "md/01.Introduction/05/AIFoundry.md",
   "language_code": "ms"
 }
 -->
-# **Usando Azure AI Foundry para evaluación**
+# **Menggunakan Azure AI Foundry untuk penilaian**
 
-![aistudo](../../../../../translated_images/AIFoundry.61da8c74bccc0241ce9a4cb53a170912245871de9235043afcb796ccbc076fdc.ms.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.ms.png)
 
-Cómo evaluar tu aplicación de IA generativa usando [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Ya sea que estés evaluando conversaciones de una sola vuelta o de varias, Azure AI Foundry ofrece herramientas para medir el rendimiento y la seguridad del modelo.
+Cara menilai aplikasi AI generatif anda menggunakan [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Sama ada anda menilai perbualan satu pusingan atau berbilang pusingan, Azure AI Foundry menyediakan alat untuk menilai prestasi dan keselamatan model.
 
-![aistudo](../../../../../translated_images/AIPortfolio.5aaa2b25e9157624a4542fe041d66a96a1c1ec6007e4e5aadd926c6ec8ce18b3.ms.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.ms.png)
 
-## Cómo evaluar aplicaciones de IA generativa con Azure AI Foundry
-Para instrucciones más detalladas, consulta la [Documentación de Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
+## Cara menilai aplikasi AI generatif dengan Azure AI Foundry
+Untuk arahan lebih terperinci, lihat [Dokumentasi Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)
 
-Estos son los pasos para comenzar:
+Berikut adalah langkah-langkah untuk memulakan:
 
-## Evaluación de modelos de IA generativa en Azure AI Foundry
+## Menilai Model AI Generatif dalam Azure AI Foundry
 
-**Requisitos previos**
+**Prasyarat**
 
-- Un conjunto de datos de prueba en formato CSV o JSON.
-- Un modelo de IA generativa desplegado (como Phi-3, GPT 3.5, GPT 4 o modelos Davinci).
-- Un entorno de ejecución con una instancia de cómputo para realizar la evaluación.
+- Set data ujian dalam format CSV atau JSON.
+- Model AI generatif yang telah dideploy (seperti Phi-3, GPT 3.5, GPT 4, atau model Davinci).
+- Runtime dengan instance pengkomputeran untuk menjalankan penilaian.
 
-## Métricas de evaluación integradas
+## Metrik Penilaian Terbina Dalam
 
-Azure AI Foundry permite evaluar tanto conversaciones de una sola vuelta como conversaciones complejas de varias vueltas.  
-Para escenarios de Retrieval Augmented Generation (RAG), donde el modelo se basa en datos específicos, puedes medir el rendimiento usando las métricas de evaluación integradas.  
-Además, puedes evaluar escenarios generales de preguntas y respuestas de una sola vuelta (no RAG).
+Azure AI Foundry membolehkan anda menilai perbualan satu pusingan dan juga perbualan kompleks berbilang pusingan.  
+Untuk senario Retrieval Augmented Generation (RAG), di mana model berasaskan data tertentu, anda boleh menilai prestasi menggunakan metrik penilaian terbina dalam.  
+Selain itu, anda juga boleh menilai senario menjawab soalan satu pusingan secara umum (bukan RAG).
 
-## Creación de una ejecución de evaluación
+## Membuat Larian Penilaian
 
-Desde la interfaz de Azure AI Foundry, navega a la página Evaluate o a la página Prompt Flow.  
-Sigue el asistente para crear una ejecución de evaluación. Puedes asignar un nombre opcional a tu evaluación.  
-Selecciona el escenario que mejor se adapte a los objetivos de tu aplicación.  
-Elige una o varias métricas de evaluación para valorar los resultados del modelo.
+Dari UI Azure AI Foundry, navigasi ke halaman Evaluate atau halaman Prompt Flow.  
+Ikuti wizard penciptaan penilaian untuk menyediakan larian penilaian. Berikan nama pilihan untuk penilaian anda.  
+Pilih senario yang selaras dengan objektif aplikasi anda.  
+Pilih satu atau lebih metrik penilaian untuk menilai output model.
 
-## Flujo de evaluación personalizado (Opcional)
+## Aliran Penilaian Tersuai (Pilihan)
 
-Para mayor flexibilidad, puedes crear un flujo de evaluación personalizado. Ajusta el proceso de evaluación según tus necesidades específicas.
+Untuk fleksibiliti lebih tinggi, anda boleh membina aliran penilaian tersuai. Sesuaikan proses penilaian mengikut keperluan khusus anda.
 
-## Visualización de resultados
+## Melihat Keputusan
 
-Después de ejecutar la evaluación, registra, visualiza y analiza las métricas detalladas en Azure AI Foundry. Obtén información sobre las capacidades y limitaciones de tu aplicación.
+Selepas menjalankan penilaian, log, lihat, dan analisis metrik penilaian terperinci dalam Azure AI Foundry. Dapatkan pandangan tentang keupayaan dan had aplikasi anda.
 
-**Note** Azure AI Foundry está actualmente en vista previa pública, por lo que se recomienda usarlo para experimentación y desarrollo. Para cargas de trabajo en producción, considera otras opciones. Consulta la [documentación oficial de AI Foundry](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) para más detalles e instrucciones paso a paso.
+**Note** Azure AI Foundry kini dalam pratonton awam, jadi gunakan untuk tujuan eksperimen dan pembangunan. Untuk beban kerja produksi, pertimbangkan pilihan lain. Terokai [dokumentasi AI Foundry rasmi](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo) untuk maklumat lanjut dan arahan langkah demi langkah.
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

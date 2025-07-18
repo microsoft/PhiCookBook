@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-07T14:33:09+00:00",
+  "translation_date": "2025-07-16T20:47:31+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "fa"
 }
@@ -11,33 +11,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 [Kaito](https://github.com/Azure/kaito) یک اپراتور است که استقرار مدل‌های استنتاج AI/ML را در یک کلاستر Kubernetes به‌صورت خودکار انجام می‌دهد.
 
-Kaito نسبت به بیشتر روش‌های متداول استقرار مدل که بر بستر ماشین‌های مجازی ساخته شده‌اند، تفاوت‌های کلیدی زیر را دارد:
+Kaito تفاوت‌های کلیدی زیر را نسبت به بیشتر روش‌های رایج استقرار مدل که بر پایه زیرساخت‌های ماشین مجازی ساخته شده‌اند، دارد:
 
-- مدیریت فایل‌های مدل با استفاده از ایمیج‌های کانتینری. یک سرور http فراهم شده است تا فراخوانی‌های استنتاج با استفاده از کتابخانه مدل انجام شود.
-- اجتناب از تنظیم پارامترهای استقرار برای هماهنگی با سخت‌افزار GPU با ارائه پیکربندی‌های پیش‌فرض.
+- مدیریت فایل‌های مدل با استفاده از ایمیج‌های کانتینر. یک سرور http فراهم شده است تا فراخوانی‌های استنتاج با استفاده از کتابخانه مدل انجام شود.
+- اجتناب از تنظیم پارامترهای استقرار برای تطبیق با سخت‌افزار GPU با ارائه پیکربندی‌های پیش‌فرض.
 - تأمین خودکار نودهای GPU بر اساس نیازهای مدل.
-- میزبانی ایمیج‌های مدل بزرگ در Microsoft Container Registry (MCR) عمومی در صورت اجازه مجوز.
+- میزبانی ایمیج‌های مدل بزرگ در رجیستری عمومی Microsoft Container Registry (MCR) در صورت اجازه مجوز.
 
-با استفاده از Kaito، روند ورود مدل‌های بزرگ استنتاج AI در Kubernetes تا حد زیادی ساده شده است.
+با استفاده از Kaito، روند وارد کردن مدل‌های بزرگ استنتاج AI در Kubernetes تا حد زیادی ساده می‌شود.
 
 ## معماری
 
-Kaito از الگوی طراحی کلاسیک Kubernetes Custom Resource Definition (CRD) / کنترلر پیروی می‌کند. کاربر یک منبع سفارشی `workspace` را مدیریت می‌کند که نیازهای GPU و مشخصات استنتاج را توصیف می‌کند. کنترلرهای Kaito با تطبیق منبع سفارشی `workspace` استقرار را به‌صورت خودکار انجام می‌دهند.
+Kaito از الگوی طراحی کلاسیک Kubernetes Custom Resource Definition (CRD) / کنترلر پیروی می‌کند. کاربر یک منبع سفارشی `workspace` را مدیریت می‌کند که نیازهای GPU و مشخصات استنتاج را توصیف می‌کند. کنترلرهای Kaito با تطبیق منبع سفارشی `workspace`، استقرار را به‌صورت خودکار انجام می‌دهند.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
+  <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="معماری Kaito" alt="معماری Kaito">
 </div>
 
 شکل بالا نمای کلی معماری Kaito را نشان می‌دهد. اجزای اصلی آن شامل موارد زیر است:
 
 - **کنترلر Workspace**: این کنترلر منبع سفارشی `workspace` را تطبیق می‌دهد، منابع سفارشی `machine` (که در ادامه توضیح داده شده) را برای فعال‌سازی تأمین خودکار نودها ایجاد می‌کند و بار کاری استنتاج (`deployment` یا `statefulset`) را بر اساس پیکربندی‌های پیش‌فرض مدل ایجاد می‌کند.
-- **کنترلر تأمین نود**: نام این کنترلر *gpu-provisioner* در [نمودار helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) است. این کنترلر از CRD `machine` که از [Karpenter](https://sigs.k8s.io/karpenter) منشأ گرفته، برای تعامل با کنترلر Workspace استفاده می‌کند. همچنین با APIهای Azure Kubernetes Service (AKS) ادغام می‌شود تا نودهای GPU جدید را به کلاستر AKS اضافه کند.  
-> نکته: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) یک کامپوننت متن‌باز است. می‌توان آن را با کنترلرهای دیگر جایگزین کرد اگر از APIهای [Karpenter-core](https://sigs.k8s.io/karpenter) پشتیبانی کنند.
+- **کنترلر تأمین نود**: نام این کنترلر *gpu-provisioner* در [نمودار helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) است. این کنترلر از CRD `machine` که از [Karpenter](https://sigs.k8s.io/karpenter) منشأ می‌گیرد برای تعامل با کنترلر workspace استفاده می‌کند. همچنین با APIهای Azure Kubernetes Service (AKS) ادغام شده تا نودهای GPU جدید را به کلاستر AKS اضافه کند.
+> توجه: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) یک کامپوننت متن‌باز است. در صورت پشتیبانی از APIهای [Karpenter-core](https://sigs.k8s.io/karpenter)، می‌توان آن را با کنترلرهای دیگر جایگزین کرد.
 
 ## نصب
 
-لطفاً راهنمای نصب را از [اینجا](https://github.com/Azure/kaito/blob/main/docs/installation.md) بررسی کنید.
+لطفاً راهنمای نصب را [اینجا](https://github.com/Azure/kaito/blob/main/docs/installation.md) بررسی کنید.
 
-## شروع سریع استنتاج Phi-3  
+## شروع سریع استنتاج Phi-3
 [نمونه کد استنتاج Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-وضعیت workspace را می‌توان با اجرای فرمان زیر پیگیری کرد. وقتی ستون WORKSPACEREADY مقدار `True` شود، مدل با موفقیت مستقر شده است.
+وضعیت workspace را می‌توان با اجرای دستور زیر پیگیری کرد. وقتی ستون WORKSPACEREADY مقدار `True` را نشان داد، مدل با موفقیت مستقر شده است.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -91,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-سپس می‌توان آدرس IP کلاستر سرویس استنتاج را پیدا کرد و با استفاده از یک پاد موقتی `curl` نقطه انتهایی سرویس را در کلاستر تست کرد.
+سپس می‌توان آدرس IP کلاستر سرویس استنتاج را پیدا کرد و با استفاده از یک پاد موقتی `curl`، نقطه انتهایی سرویس را در کلاستر آزمایش کرد.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -104,7 +104,7 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 ## شروع سریع استنتاج Phi-3 با آداپتورها
 
-پس از نصب Kaito، می‌توان دستورات زیر را برای راه‌اندازی سرویس استنتاج امتحان کرد.
+پس از نصب Kaito، می‌توان با اجرای دستورات زیر سرویس استنتاج را راه‌اندازی کرد.
 
 [نمونه کد استنتاج Phi-3 با آداپتورها](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-وضعیت workspace را می‌توان با اجرای فرمان زیر پیگیری کرد. وقتی ستون WORKSPACEREADY مقدار `True` شود، مدل با موفقیت مستقر شده است.
+وضعیت workspace را می‌توان با اجرای دستور زیر پیگیری کرد. وقتی ستون WORKSPACEREADY مقدار `True` را نشان داد، مدل با موفقیت مستقر شده است.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -163,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-سپس می‌توان آدرس IP کلاستر سرویس استنتاج را پیدا کرد و با استفاده از یک پاد موقتی `curl` نقطه انتهایی سرویس را در کلاستر تست کرد.
+سپس می‌توان آدرس IP کلاستر سرویس استنتاج را پیدا کرد و با استفاده از یک پاد موقتی `curl`، نقطه انتهایی سرویس را در کلاستر آزمایش کرد.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است شامل اشتباهات یا نواقصی باشند. سند اصلی به زبان مادری خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، توصیه می‌شود از ترجمه حرفه‌ای انسانی استفاده شود. ما مسئول هیچ گونه سوء تفاهم یا برداشت نادرستی که از استفاده از این ترجمه به وجود آید، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نواقصی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.

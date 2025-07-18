@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-09T13:13:35+00:00",
+  "translation_date": "2025-07-16T21:37:56+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "pl"
 }
 -->
-# **Wnioskowanie Phi-3-Vision lokalnie**
+# **Inference Phi-3-Vision lokalnie**
 
-Phi-3-vision-128k-instruct pozwala Phi-3 nie tylko rozumieć język, ale także widzieć świat wizualnie. Dzięki Phi-3-vision-128k-instruct możemy rozwiązywać różne problemy wizualne, takie jak OCR, analiza tabel, rozpoznawanie obiektów, opisywanie obrazów itd. Łatwo wykonujemy zadania, które wcześniej wymagały dużej ilości danych treningowych. Poniżej znajdują się powiązane techniki i scenariusze zastosowań cytowane przez Phi-3-vision-128k-instruct
+Phi-3-vision-128k-instruct pozwala Phi-3 nie tylko rozumieć język, ale także widzieć świat wizualnie. Dzięki Phi-3-vision-128k-instruct możemy rozwiązywać różne problemy wizualne, takie jak OCR, analiza tabel, rozpoznawanie obiektów, opisywanie obrazów itp. Łatwo wykonujemy zadania, które wcześniej wymagały dużej ilości danych treningowych. Poniżej znajdują się powiązane techniki i scenariusze zastosowań cytowane przez Phi-3-vision-128k-instruct
 
 ## **0. Przygotowanie**
 
-Upewnij się, że przed użyciem zainstalowano następujące biblioteki Pythona (zalecany Python 3.10+)
+Upewnij się, że przed użyciem zostały zainstalowane następujące biblioteki Pythona (zalecany Python 3.10+)
 
 ```bash
 pip install transformers -U
@@ -21,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-Zaleca się używanie ***CUDA 11.6+*** oraz instalację flatten
+Zaleca się użycie ***CUDA 11.6+*** oraz instalację flatten
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-Utwórz nowy Notebook. Aby zrealizować przykłady, najlepiej najpierw przygotować następującą zawartość.
+Utwórz nowy Notebook. Aby wykonać przykłady, zaleca się najpierw utworzyć następującą zawartość.
 
 ```python
 from PIL import Image
@@ -49,9 +49,9 @@ assistant_prompt = '<|assistant|>\n'
 prompt_suffix = "<|end|>\n"
 ```
 
-## **1. Analiza obrazu z Phi-3-Vision**
+## **1. Analiza obrazu za pomocą Phi-3-Vision**
 
-Chcemy, aby AI potrafiło analizować zawartość naszych obrazów i podawać odpowiednie opisy
+Chcemy, aby AI potrafiło analizować zawartość naszych zdjęć i podawać odpowiednie opisy
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR z Phi-3-Vision**
 
-Oprócz analizy obrazu, możemy również wydobywać informacje z obrazu. To proces OCR, który wcześniej wymagał pisania skomplikowanego kodu.
+Oprócz analizy obrazu, możemy także wydobywać informacje z obrazu. To jest proces OCR, do którego wcześniej musieliśmy pisać skomplikowany kod.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -114,7 +114,7 @@ The title of the book is "ALONE" and the author is Morgan Maxwell.
 
 ## **3. Porównanie wielu obrazów**
 
-Phi-3 Vision wspiera porównywanie wielu obrazów. Możemy użyć tego modelu, aby znaleźć różnice między obrazami.
+Phi-3 Vision obsługuje porównywanie wielu obrazów. Możemy użyć tego modelu, aby znaleźć różnice między obrazami.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\n<|image_2|>\n What is difference in this two images?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony przy użyciu automatycznej usługi tłumaczeniowej AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiążące. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

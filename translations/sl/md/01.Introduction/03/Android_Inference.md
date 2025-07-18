@@ -2,32 +2,32 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "9481b07dda8f9715a5d1ff43fb27568b",
-  "translation_date": "2025-05-09T10:53:09+00:00",
+  "translation_date": "2025-07-16T20:16:31+00:00",
   "source_file": "md/01.Introduction/03/Android_Inference.md",
   "language_code": "sl"
 }
 -->
-# **Inference Phi-3 in Android**
+# **Inferenca Phi-3 na Androidu**
 
-Chaliye dekhte hain ki aap Android devices par Phi-3-mini ke saath inference kaise kar sakte hain. Phi-3-mini Microsoft ki ek nayi model series hai jo Large Language Models (LLMs) ko edge devices aur IoT devices par deploy karne mein madad karti hai.
+Poglejmo, kako lahko izvedete inferenco s Phi-3-mini na napravah z Androidom. Phi-3-mini je nova serija modelov iz Microsofta, ki omogoča uporabo velikih jezikovnih modelov (LLM) na robnih napravah in IoT napravah.
 
-## Semantic Kernel aur Inference
+## Semantic Kernel in inferenca
 
-[Semantic Kernel](https://github.com/microsoft/semantic-kernel) ek application framework hai jo aapko Azure OpenAI Service, OpenAI models, aur local models ke saath compatible applications banane deta hai. Agar aap Semantic Kernel mein naye hain, to hum aapko [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo) dekhne ki salah dete hain.
+[Semantic Kernel](https://github.com/microsoft/semantic-kernel) je aplikacijski okvir, ki omogoča ustvarjanje aplikacij, združljivih z Azure OpenAI Service, OpenAI modeli in celo lokalnimi modeli. Če ste novi pri Semantic Kernel, priporočamo, da si ogledate [Semantic Kernel Cookbook](https://github.com/microsoft/SemanticKernelCookBook?WT.mc_id=aiml-138114-kinfeylo).
 
-### Semantic Kernel ke zariye Phi-3-mini ko Access karna
+### Dostop do Phi-3-mini prek Semantic Kernel
 
-Aap ise Semantic Kernel ke Hugging Face Connector ke saath combine kar sakte hain. Iska reference aap is [Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo) mein dekh sakte hain.
+Lahko ga združite s Hugging Face Connectorjem v Semantic Kernel. Oglejte si ta [primer kode](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/semantickernel?WT.mc_id=aiml-138114-kinfeylo).
 
-By default, ye Hugging Face par model ID ke saath kaam karta hai. Lekin aap locally banaye gaye Phi-3-mini model server se bhi connect kar sakte hain.
+Privzeto ustreza ID-ju modela na Hugging Face. Vendar se lahko povežete tudi z lokalno postavljenim strežnikom modela Phi-3-mini.
 
-### Ollama ya LlamaEdge ke zariye Quantized Models ko Call karna
+### Klicanje kvantiziranih modelov z Ollama ali LlamaEdge
 
-Kai users quantized models ko pasand karte hain taaki models ko local level par chala sakein. [Ollama](https://ollama.com/) aur [LlamaEdge](https://llamaedge.com) individual users ko alag-alag quantized models call karne ka option dete hain:
+Veliko uporabnikov raje uporablja kvantizirane modele za lokalno izvajanje modelov. [Ollama](https://ollama.com/) in [LlamaEdge](https://llamaedge.com) omogočata posameznim uporabnikom klic različnih kvantiziranih modelov:
 
 #### Ollama
 
-Aap seedha `ollama run Phi-3` chala sakte hain ya phir offline configuration ke liye apne `.gguf` file ke path ke saath ek `Modelfile` bana sakte hain.
+Model lahko zaženete neposredno z ukazom `ollama run Phi-3` ali pa ga konfigurirate brez povezave tako, da ustvarite `Modelfile` s potjo do vaše `.gguf` datoteke.
 
 ```gguf
 FROM {Add your gguf file path}
@@ -36,19 +36,19 @@ PARAMETER stop <|end|>
 PARAMETER num_ctx 4096
 ```
 
-[Sample Code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
+[Primer kode](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ollama?WT.mc_id=aiml-138114-kinfeylo)
 
 #### LlamaEdge
 
-Agar aap cloud aur edge devices dono par ek saath `.gguf` files use karna chahte hain, to LlamaEdge ek achha option hai. Iske liye aap is [sample code](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo) ko refer kar sakte hain.
+Če želite hkrati uporabljati `.gguf` datoteke v oblaku in na robnih napravah, je LlamaEdge odlična izbira. Za začetek si lahko ogledate ta [primer kode](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm?WT.mc_id=aiml-138114-kinfeylo).
 
-### Android Phones par Install aur Run karna
+### Namestitev in zagon na Android telefonih
 
-1. **MLC Chat app download karein** (Free) Android phones ke liye.  
-2. APK file (148MB) download karke apne device par install karein.  
-3. MLC Chat app launch karein. Aapko AI models ki list nazar aayegi, jisme Phi-3-mini bhi shamil hai.
+1. **Prenesite aplikacijo MLC Chat** (brezplačno) za Android telefone.  
+2. Prenesite APK datoteko (148 MB) in jo namestite na svojo napravo.  
+3. Zaženite aplikacijo MLC Chat. Videli boste seznam AI modelov, vključno s Phi-3-mini.
 
-Saaransh yeh hai ki Phi-3-mini edge devices par generative AI ke liye naye mauke kholta hai, aur aap Android par iske features explore karna shuru kar sakte hain.
+Za povzetek, Phi-3-mini odpira zanimive možnosti za generativno AI na robnih napravah, zato lahko začnete raziskovati njegove zmogljivosti na Androidu.
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve AI prevajanja [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, upoštevajte, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku je treba obravnavati kot avtoritativni vir. Za kritične informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

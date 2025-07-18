@@ -2,244 +2,242 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "455be2b7b9c3390d367d528f8fab2aa0",
-  "translation_date": "2025-05-09T17:41:24+00:00",
+  "translation_date": "2025-07-17T00:38:18+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md",
   "language_code": "ms"
 }
 -->
-# Fine-tune and Integrate custom Phi-3 models with Prompt flow
+# Laraskan dan Integrasikan model Phi-3 tersuai dengan Prompt flow
 
-This end-to-end (E2E) sample is based on the guide "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" from the Microsoft Tech Community. It explains the steps to fine-tune, deploy, and integrate custom Phi-3 models with Prompt flow.
+Contoh hujung-ke-hujung (E2E) ini berdasarkan panduan "[Laraskan dan Integrasikan Model Phi-3 Tersuai dengan Prompt Flow: Panduan Langkah demi Langkah](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?WT.mc_id=aiml-137032-kinfeylo)" dari Microsoft Tech Community. Ia memperkenalkan proses melaraskan, menyebarkan, dan mengintegrasikan model Phi-3 tersuai dengan Prompt flow.
 
-## Overview
+## Gambaran Keseluruhan
 
-In this E2E sample, you will learn how to fine-tune the Phi-3 model and integrate it with Prompt flow. Using Azure Machine Learning and Prompt flow, you will create a workflow to deploy and use custom AI models. This E2E sample is divided into three scenarios:
+Dalam contoh E2E ini, anda akan belajar cara melaraskan model Phi-3 dan mengintegrasikannya dengan Prompt flow. Dengan memanfaatkan Azure Machine Learning dan Prompt flow, anda akan membina aliran kerja untuk menyebarkan dan menggunakan model AI tersuai. Contoh E2E ini dibahagikan kepada tiga senario:
 
-**Scenario 1: Set up Azure resources and Prepare for fine-tuning**
+**Senario 1: Sediakan sumber Azure dan Bersedia untuk melaraskan**
 
-**Scenario 2: Fine-tune the Phi-3 model and Deploy in Azure Machine Learning Studio**
+**Senario 2: Laraskan model Phi-3 dan Sebarkan dalam Azure Machine Learning Studio**
 
-**Scenario 3: Integrate with Prompt flow and Chat with your custom model**
+**Senario 3: Integrasikan dengan Prompt flow dan Berbual dengan model tersuai anda**
 
-Here is an overview of this E2E sample.
+Berikut adalah gambaran keseluruhan contoh E2E ini.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.dfeb1f15c7d3c8989fb267a05ac83a25485a7230bde037df9d3d92336afc1993.ms.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.ms.png)
 
-### Table of Contents
+### Jadual Kandungan
 
-1. **[Scenario 1: Set up Azure resources and Prepare for fine-tuning](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Create an Azure Machine Learning Workspace](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Request GPU quotas in Azure Subscription](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Add role assignment](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Set up project](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Prepare dataset for fine-tuning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Senario 1: Sediakan sumber Azure dan Bersedia untuk melaraskan](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Cipta Workspace Azure Machine Learning](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Mohon kuota GPU dalam Langganan Azure](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Tambah penugasan peranan](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Sediakan projek](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Sediakan set data untuk melaraskan](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 2: Fine-tune Phi-3 model and Deploy in Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Set up Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Fine-tune the Phi-3 model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Deploy the fine-tuned model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Senario 2: Laraskan model Phi-3 dan Sebarkan dalam Azure Machine Learning Studio](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Sediakan Azure CLI](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Laraskan model Phi-3](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Sebarkan model yang telah dilaraskan](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-1. **[Scenario 3: Integrate with Prompt flow and Chat with your custom model](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
-    - [Integrate the custom Phi-3 model with Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
-    - [Chat with your custom model](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+1. **[Senario 3: Integrasikan dengan Prompt flow dan Berbual dengan model tersuai anda](../../../../../../md/02.Application/01.TextAndChat/Phi3)**
+    - [Integrasikan model Phi-3 tersuai dengan Prompt flow](../../../../../../md/02.Application/01.TextAndChat/Phi3)
+    - [Berbual dengan model tersuai anda](../../../../../../md/02.Application/01.TextAndChat/Phi3)
 
-## Scenario 1: Set up Azure resources and Prepare for fine-tuning
+## Senario 1: Sediakan sumber Azure dan Bersedia untuk melaraskan
 
-### Create an Azure Machine Learning Workspace
+### Cipta Workspace Azure Machine Learning
 
-1. Type *azure machine learning* in the **search bar** at the top of the portal page and select **Azure Machine Learning** from the options that appear.
+1. Taip *azure machine learning* dalam **bar carian** di bahagian atas halaman portal dan pilih **Azure Machine Learning** daripada pilihan yang muncul.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.321cff72d18a51c06dee2db7463868f3ca6619559a5d68b7795d70f4a8b3a683.ms.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.ms.png)
 
-1. Select **+ Create** from the navigation menu.
+1. Pilih **+ Create** dari menu navigasi.
 
-1. Select **New workspace** from the navigation menu.
+1. Pilih **New workspace** dari menu navigasi.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.9bd9208488fcf38226fc8d3cefffecb2cb14f414f6d8d982492c1bde8634e24a.ms.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.ms.png)
 
-1. Complete the following:
+1. Lakukan tugasan berikut:
 
-    - Select your Azure **Subscription**.
-    - Select the **Resource group** to use (or create a new one if needed).
-    - Enter a unique **Workspace Name**.
-    - Choose the **Region** you'd like to use.
-    - Select the **Storage account** (or create a new one if needed).
-    - Select the **Key vault** (or create a new one if needed).
-    - Select the **Application insights** (or create a new one if needed).
-    - Select the **Container registry** (or create a new one if needed).
+    - Pilih **Subscription** Azure anda.
+    - Pilih **Resource group** yang ingin digunakan (cipta baru jika perlu).
+    - Masukkan **Workspace Name**. Ia mesti nilai unik.
+    - Pilih **Region** yang anda ingin gunakan.
+    - Pilih **Storage account** yang ingin digunakan (cipta baru jika perlu).
+    - Pilih **Key vault** yang ingin digunakan (cipta baru jika perlu).
+    - Pilih **Application insights** yang ingin digunakan (cipta baru jika perlu).
+    - Pilih **Container registry** yang ingin digunakan (cipta baru jika perlu).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.b2ebbef59952cd17d16b1f82adc252bf7616f8638d451e3c6595ffefe44f2cfa.ms.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.ms.png)
 
-1. Select **Review + Create**.
+1. Pilih **Review + Create**.
 
-1. Select **Create**.
+1. Pilih **Create**.
 
-### Request GPU quotas in Azure Subscription
+### Mohon kuota GPU dalam Langganan Azure
 
-For this E2E sample, you will use the *Standard_NC24ads_A100_v4 GPU* for fine-tuning, which requires a quota request. For deployment, the *Standard_E4s_v3* CPU is used, which does not require a quota request.
+Dalam contoh E2E ini, anda akan menggunakan *Standard_NC24ads_A100_v4 GPU* untuk melaraskan, yang memerlukan permohonan kuota, dan *Standard_E4s_v3* CPU untuk penyebaran, yang tidak memerlukan permohonan kuota.
 
 > [!NOTE]
 >
-> Only Pay-As-You-Go subscriptions (standard subscription type) are eligible for GPU allocation; benefit subscriptions are currently not supported.
+> Hanya langganan Pay-As-You-Go (jenis langganan standard) layak untuk peruntukan GPU; langganan manfaat tidak disokong buat masa ini.
 >
-> If you have a benefit subscription (e.g., Visual Studio Enterprise Subscription) or want to quickly test fine-tuning and deployment, this tutorial also guides you on fine-tuning with a minimal dataset on CPU. However, fine-tuning with a GPU and larger datasets yields significantly better results.
+> Bagi mereka yang menggunakan langganan manfaat (seperti Visual Studio Enterprise Subscription) atau yang ingin menguji proses melaraskan dan penyebaran dengan cepat, tutorial ini juga menyediakan panduan untuk melaraskan dengan set data minimum menggunakan CPU. Namun, penting untuk diingat bahawa hasil pelarasan jauh lebih baik apabila menggunakan GPU dengan set data yang lebih besar.
 
-1. Visit [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Lawati [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. To request *Standard NCADSA100v4 Family* quota:
+1. Lakukan tugasan berikut untuk memohon kuota *Standard NCADSA100v4 Family*:
 
-    - Select **Quota** from the left-side tab.
-    - Choose the **Virtual machine family**. For example, select **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, which includes the *Standard_NC24ads_A100_v4* GPU.
-    - Select **Request quota** from the navigation menu.
+    - Pilih **Quota** dari tab sebelah kiri.
+    - Pilih **Virtual machine family** yang ingin digunakan. Contohnya, pilih **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, yang merangkumi *Standard_NC24ads_A100_v4* GPU.
+    - Pilih **Request quota** dari menu navigasi.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.ddf063c7cda9799b8ef6fbde6c3c796201578fe9078feb1c624ed75c7705ad18.ms.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.ms.png)
 
-    - On the Request quota page, enter the **New cores limit** you want (e.g., 24).
-    - Click **Submit** to request the GPU quota.
+    - Dalam halaman Request quota, masukkan **New cores limit** yang anda ingin gunakan. Contohnya, 24.
+    - Dalam halaman Request quota, pilih **Submit** untuk memohon kuota GPU.
 
 > [!NOTE]
-> Refer to [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist) to choose the right GPU or CPU for your needs.
+> Anda boleh memilih GPU atau CPU yang sesuai mengikut keperluan dengan merujuk kepada dokumen [Sizes for Virtual Machines in Azure](https://learn.microsoft.com/azure/virtual-machines/sizes/overview?tabs=breakdownseries%2Cgeneralsizelist%2Ccomputesizelist%2Cmemorysizelist%2Cstoragesizelist%2Cgpusizelist%2Cfpgasizelist%2Chpcsizelist).
 
-### Add role assignment
+### Tambah penugasan peranan
 
-To fine-tune and deploy your models, you need to create a User Assigned Managed Identity (UAI) and assign the necessary permissions. This UAI will be used for authentication during deployment.
+Untuk melaraskan dan menyebarkan model anda, anda mesti terlebih dahulu mencipta User Assigned Managed Identity (UAI) dan memberikan kebenaran yang sesuai. UAI ini akan digunakan untuk pengesahan semasa penyebaran.
 
-#### Create User Assigned Managed Identity(UAI)
+#### Cipta User Assigned Managed Identity (UAI)
 
-1. Type *managed identities* in the **search bar** at the top of the portal page and select **Managed Identities** from the options.
+1. Taip *managed identities* dalam **bar carian** di bahagian atas halaman portal dan pilih **Managed Identities** daripada pilihan yang muncul.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.8bf5dc5a4fa3e852f897ec1a983e506c2bc7b7113d159598bf0adeb66d20a5c4.ms.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.ms.png)
 
-1. Select **+ Create**.
+1. Pilih **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.025632b7b54fe323f7d38edabbae05dd23f4665d0731f7143719c27c32e7e84f.ms.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.ms.png)
 
-1. Complete the following:
+1. Lakukan tugasan berikut:
 
-    - Select your Azure **Subscription**.
-    - Select the **Resource group** (or create a new one if needed).
-    - Choose the **Region**.
-    - Enter a unique **Name**.
+    - Pilih **Subscription** Azure anda.
+    - Pilih **Resource group** yang ingin digunakan (cipta baru jika perlu).
+    - Pilih **Region** yang anda ingin gunakan.
+    - Masukkan **Name**. Ia mesti nilai unik.
 
-1. Select **Review + create**.
+1. Pilih **Review + create**.
 
-1. Select **+ Create**.
+1. Pilih **+ Create**.
 
-#### Add Contributor role assignment to Managed Identity
+#### Tambah penugasan peranan Contributor kepada Managed Identity
 
-1. Go to the Managed Identity resource you created.
+1. Navigasi ke sumber Managed Identity yang anda cipta.
 
-1. Select **Azure role assignments** from the left tab.
+1. Pilih **Azure role assignments** dari tab sebelah kiri.
 
-1. Click **+ Add role assignment** from the navigation menu.
+1. Pilih **+Add role assignment** dari menu navigasi.
 
-1. On the Add role assignment page, do the following:
-    - Set **Scope** to **Resource group**.
-    - Select your Azure **Subscription**.
-    - Select the **Resource group** to use.
-    - Set **Role** to **Contributor**.
+1. Dalam halaman Add role assignment, lakukan tugasan berikut:
+    - Pilih **Scope** kepada **Resource group**.
+    - Pilih **Subscription** Azure anda.
+    - Pilih **Resource group** yang ingin digunakan.
+    - Pilih **Role** kepada **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.8936866326c7cdc3b876f14657e03422cca9dbff8b193dd541a693ce34407b26.ms.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.ms.png)
 
-1. Click **Save**.
+1. Pilih **Save**.
 
-#### Add Storage Blob Data Reader role assignment to Managed Identity
+#### Tambah penugasan peranan Storage Blob Data Reader kepada Managed Identity
 
-1. Type *storage accounts* in the **search bar** and select **Storage accounts** from the options.
+1. Taip *storage accounts* dalam **bar carian** di bahagian atas halaman portal dan pilih **Storage accounts** daripada pilihan yang muncul.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.83554a27ff3edb5099ee3fbf7f467b843dabcc0e0e5fbb829a341eab3469ffa5.ms.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.ms.png)
 
-1. Select the storage account linked to your Azure Machine Learning workspace. For example, *finetunephistorage*.
+1. Pilih akaun storan yang berkaitan dengan workspace Azure Machine Learning yang anda cipta. Contohnya, *finetunephistorage*.
 
-1. To navigate to Add role assignment page:
+1. Lakukan tugasan berikut untuk navigasi ke halaman Add role assignment:
 
-    - Go to your Azure Storage account.
-    - Select **Access Control (IAM)** from the left tab.
-    - Click **+ Add** from the navigation menu.
-    - Select **Add role assignment**.
+    - Navigasi ke akaun storan Azure yang anda cipta.
+    - Pilih **Access Control (IAM)** dari tab sebelah kiri.
+    - Pilih **+ Add** dari menu navigasi.
+    - Pilih **Add role assignment** dari menu navigasi.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.4fef55886792c7e860da4c5a808044e6f7067fb5694f3ed4819a5758c6cc574e.ms.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.ms.png)
 
-1. On the Add role assignment page:
+1. Dalam halaman Add role assignment, lakukan tugasan berikut:
 
-    - In the Role page, type *Storage Blob Data Reader* in the **search bar** and select it.
-    - Click **Next**.
-    - On the Members page, set **Assign access to** to **Managed identity**.
-    - Click **+ Select members**.
-    - Choose your Azure **Subscription**.
-    - Select the **Managed identity** option.
-    - Choose the Managed Identity you created, e.g., *finetunephi-managedidentity*.
-    - Click **Select**.
+    - Dalam halaman Role, taip *Storage Blob Data Reader* dalam **bar carian** dan pilih **Storage Blob Data Reader** daripada pilihan yang muncul.
+    - Dalam halaman Role, pilih **Next**.
+    - Dalam halaman Members, pilih **Assign access to** **Managed identity**.
+    - Dalam halaman Members, pilih **+ Select members**.
+    - Dalam halaman Select managed identities, pilih **Subscription** Azure anda.
+    - Dalam halaman Select managed identities, pilih **Managed identity** kepada **Manage Identity**.
+    - Dalam halaman Select managed identities, pilih Managed Identity yang anda cipta. Contohnya, *finetunephi-managedidentity*.
+    - Dalam halaman Select managed identities, pilih **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.fffa802e4e6ce2de4fe50e64d37d3f2ef268c2ee16f30ec6f92bd1829b5f19c1.ms.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.ms.png)
 
-1. Click **Review + assign**.
+1. Pilih **Review + assign**.
 
-#### Add AcrPull role assignment to Managed Identity
+#### Tambah penugasan peranan AcrPull kepada Managed Identity
 
-1. Type *container registries* in the **search bar** and select **Container registries** from the options.
+1. Taip *container registries* dalam **bar carian** di bahagian atas halaman portal dan pilih **Container registries** daripada pilihan yang muncul.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.62e58403d73d16a0cc715571c8a7b4105a0e97b1422aa5f26106aff1c0e8a47d.ms.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.ms.png)
 
-1. Select the container registry linked to your Azure Machine Learning workspace. For example, *finetunephicontainerregistries*.
+1. Pilih container registry yang berkaitan dengan workspace Azure Machine Learning. Contohnya, *finetunephicontainerregistries*
 
-1. To navigate to Add role assignment page:
+1. Lakukan tugasan berikut untuk navigasi ke halaman Add role assignment:
 
-    - Select **Access Control (IAM)** from the left tab.
-    - Click **+ Add**.
-    - Select **Add role assignment**.
+    - Pilih **Access Control (IAM)** dari tab sebelah kiri.
+    - Pilih **+ Add** dari menu navigasi.
+    - Pilih **Add role assignment** dari menu navigasi.
 
-1. On the Add role assignment page:
+1. Dalam halaman Add role assignment, lakukan tugasan berikut:
 
-    - Type *AcrPull* in the **search bar** and select **AcrPull**.
-    - Click **Next**.
-    - On the Members page, set **Assign access to** to **Managed identity**.
-    - Click **+ Select members**.
-    - Choose your Azure **Subscription**.
-    - Select the **Managed identity** option.
-    - Choose the Managed Identity you created, e.g., *finetunephi-managedidentity*.
-    - Click **Select**.
-    - Click **Review + assign**.
+    - Dalam halaman Role, taip *AcrPull* dalam **bar carian** dan pilih **AcrPull** daripada pilihan yang muncul.
+    - Dalam halaman Role, pilih **Next**.
+    - Dalam halaman Members, pilih **Assign access to** **Managed identity**.
+    - Dalam halaman Members, pilih **+ Select members**.
+    - Dalam halaman Select managed identities, pilih **Subscription** Azure anda.
+    - Dalam halaman Select managed identities, pilih **Managed identity** kepada **Manage Identity**.
+    - Dalam halaman Select managed identities, pilih Managed Identity yang anda cipta. Contohnya, *finetunephi-managedidentity*.
+    - Dalam halaman Select managed identities, pilih **Select**.
+    - Pilih **Review + assign**.
 
-### Set up project
+### Sediakan projek
 
-Now, create a folder for your work and set up a virtual environment to develop a program that interacts with users and uses stored chat history from Azure Cosmos DB to inform its responses.
+Sekarang, anda akan mencipta folder untuk bekerja di dalamnya dan menyediakan persekitaran maya untuk membangunkan program yang berinteraksi dengan pengguna dan menggunakan sejarah sembang yang disimpan dari Azure Cosmos DB untuk memaklumkan responsnya.
 
-#### Create a folder to work inside it
+#### Cipta folder untuk bekerja di dalamnya
 
-1. Open a terminal window and run the following command to create a folder named *finetune-phi* in the default path.
+1. Buka tetingkap terminal dan taip arahan berikut untuk mencipta folder bernama *finetune-phi* dalam laluan lalai.
 
     ```console
     mkdir finetune-phi
     ```
 
-1. Run this command in your terminal to navigate to the *finetune-phi* folder.
+1. Taip arahan berikut dalam terminal anda untuk menavigasi ke folder *finetune-phi* yang anda cipta.
 
     ```console
     cd finetune-phi
     ```
 
-#### Create a virtual environment
+#### Cipta persekitaran maya
 
-1. Run this command to create a virtual environment named *.venv*.
+1. Taip arahan berikut dalam terminal anda untuk mencipta persekitaran maya bernama *.venv*.
 
     ```console
     python -m venv .venv
     ```
 
-1. Run this command to activate the virtual environment.
+1. Taip arahan berikut dalam terminal anda untuk mengaktifkan persekitaran maya.
 
     ```console
     .venv\Scripts\activate.bat
     ```
-
 > [!NOTE]
 >
-> If successful, you should see *(.venv)* before your command prompt.
+> Jika berjaya, anda akan melihat *(.venv)* sebelum prompt arahan.
+#### Pasang pakej yang diperlukan
 
-#### Install the required packages
-
-1. Run the following commands to install the required packages.
+1. Taip arahan berikut dalam terminal anda untuk memasang pakej yang diperlukan.
 
     ```console
     pip install datasets==2.19.1
@@ -250,24 +248,24 @@ Now, create a folder for your work and set up a virtual environment to develop a
     pip install promptflow==1.12.0
     ```
 
-#### Create project files
+#### Cipta fail projek
 
-In this step, you will create the essential files for the project. These include scripts for downloading the dataset, setting up the Azure Machine Learning environment, fine-tuning the Phi-3 model, and deploying the fine-tuned model. You will also create a *conda.yml* file to configure the fine-tuning environment.
+Dalam latihan ini, anda akan mencipta fail penting untuk projek kita. Fail-fail ini termasuk skrip untuk memuat turun set data, menyediakan persekitaran Azure Machine Learning, melatih semula model Phi-3, dan menyebarkan model yang telah dilatih semula. Anda juga akan mencipta fail *conda.yml* untuk menyediakan persekitaran latihan semula.
 
-You will:
+Dalam latihan ini, anda akan:
 
-- Create a *download_dataset.py* file to download the dataset.
-- Create a *setup_ml.py* file to set up the Azure Machine Learning environment.
-- Create a *fine_tune.py* file inside the *finetuning_dir* folder to fine-tune the Phi-3 model using the dataset.
-- Create a *conda.yml* file to set up the fine-tuning environment.
-- Create a *deploy_model.py* file to deploy the fine-tuned model.
-- Create an *integrate_with_promptflow.py* file to integrate the fine-tuned model and run it with Prompt flow.
-- Create a *flow.dag.yml* file to define the workflow structure for Prompt flow.
-- Create a *config.py* file to enter your Azure information.
+- Cipta fail *download_dataset.py* untuk memuat turun set data.
+- Cipta fail *setup_ml.py* untuk menyediakan persekitaran Azure Machine Learning.
+- Cipta fail *fine_tune.py* dalam folder *finetuning_dir* untuk melatih semula model Phi-3 menggunakan set data.
+- Cipta fail *conda.yml* untuk menyediakan persekitaran latihan semula.
+- Cipta fail *deploy_model.py* untuk menyebarkan model yang telah dilatih semula.
+- Cipta fail *integrate_with_promptflow.py* untuk mengintegrasikan model yang telah dilatih semula dan menjalankan model menggunakan Prompt flow.
+- Cipta fail flow.dag.yml untuk menyediakan struktur aliran kerja bagi Prompt flow.
+- Cipta fail *config.py* untuk memasukkan maklumat Azure.
 
 > [!NOTE]
 >
-> Complete folder structure:
+> Struktur folder lengkap:
 >
 > ```text
 > └── YourUserName
@@ -283,33 +281,33 @@ You will:
 > .        └── setup_ml.py
 > ```
 
-1. Open **Visual Studio Code**.
+1. Buka **Visual Studio Code**.
 
-1. Select **File** from the menu bar.
+1. Pilih **File** dari bar menu.
 
-1. Select **Open Folder**.
+1. Pilih **Open Folder**.
 
-1. Choose the *finetune-phi* folder you created, located at *C:\Users\yourUserName\finetune-phi*.
+1. Pilih folder *finetune-phi* yang anda cipta, yang terletak di *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1f7f0f79e5d4d62e546e906e1ce5a480cd98d06062ce292b7b99c6cfcd434fdf.ms.png)
+    ![Buka folder projek.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.ms.png)
 
-1. In Visual Studio Code's left pane, right-click and select **New File** to create *download_dataset.py*.
+1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk mencipta fail baru bernama *download_dataset.py*.
 
-1. Similarly, create *setup_ml.py*.
+1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk mencipta fail baru bernama *setup_ml.py*.
 
-1. Create *deploy_model.py*.
+1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk mencipta fail baru bernama *deploy_model.py*.
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.40698c2e0415929e7b6dc2b30925677e413f965bac4134d3aefa0b44d443deaf.ms.png)
+    ![Cipta fail baru.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.ms.png)
 
-1. Right-click in the left pane and select **New Folder** to create *finetuning_dir*.
+1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New Folder** untuk mencipta folder baru bernama *finetuning_dir*.
 
-1. Inside *finetuning_dir*, create *fine_tune.py*.
+1. Dalam folder *finetuning_dir*, cipta fail baru bernama *fine_tune.py*.
 
-#### Create and Configure *conda.yml* file
+#### Cipta dan Konfigurasikan fail *conda.yml*
 
-1. In the left pane, right-click and select **New File** to create *conda.yml*.
+1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk mencipta fail baru bernama *conda.yml*.
 
-1. Add the following content to *conda.yml* to configure the fine-tuning environment for the Phi-3 model.
+1. Tambahkan kod berikut ke dalam fail *conda.yml* untuk menyediakan persekitaran latihan semula bagi model Phi-3.
 
     ```yml
     name: phi-3-training-env
@@ -335,11 +333,11 @@ You will:
           - azureml-mlflow==1.57.0
     ```
 
-#### Create and Configure *config.py* file
+#### Cipta dan Konfigurasikan fail *config.py*
 
-1. In the left pane, right-click and select **New File** to create *config.py*.
+1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk mencipta fail baru bernama *config.py*.
 
-1. Add the following code to *config.py* to include your Azure details.
+1. Tambahkan kod berikut ke dalam fail *config.py* untuk memasukkan maklumat Azure anda.
 
     ```python
     # Azure settings
@@ -367,45 +365,46 @@ You will:
     AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri" # "https://{your-endpoint-name}.{your-region}.inference.ml.azure.com/score"
     ```
 
-#### Add Azure environment variables
+#### Tambah pembolehubah persekitaran Azure
 
-1. To add your Azure Subscription ID:
+1. Lakukan tugas berikut untuk menambah Azure Subscription ID:
 
-    - Type *subscriptions* in the **search bar** and select **Subscriptions**.
-    - Select the Azure Subscription you are using.
-    - Copy your Subscription ID and paste it into the *config.py* file.
-![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4daef33360f6d3808a9f1acea2b6b6121c498c75c36cb6ecc6c6b211f0d3b725.ms.png)
+    - Taip *subscriptions* dalam **bar carian** di bahagian atas halaman portal dan pilih **Subscriptions** dari pilihan yang muncul.
+    - Pilih Azure Subscription yang anda sedang gunakan.
+    - Salin dan tampal Subscription ID anda ke dalam fail *config.py*.
 
-1. ביצעו את המשימות הבאות כדי להוסיף את שם Azure Workspace:
+    ![Cari subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.ms.png)
 
-    - נווטו למשאב Azure Machine Learning שיצרתם.
-    - העתקו והדביקו את שם החשבון שלכם בקובץ *config.py*.
+1. Lakukan tugas berikut untuk menambah Nama Workspace Azure:
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.c8efdc5a8f2e594260004695c145fafb4fd903e96715f495a43733560cd706b5.ms.png)
+    - Navigasi ke sumber Azure Machine Learning yang anda cipta.
+    - Salin dan tampal nama akaun anda ke dalam fail *config.py*.
 
-1. בצעו את המשימות הבאות כדי להוסיף את שם קבוצת המשאבים של Azure:
+    ![Cari nama Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.ms.png)
 
-    - נווטו למשאב Azure Machine Learning שיצרתם.
-    - העתקו והדביקו את שם קבוצת המשאבים של Azure בקובץ *config.py*.
+1. Lakukan tugas berikut untuk menambah Nama Kumpulan Sumber Azure:
 
-    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.0647be51d3f1b8183995949df5866455e5532ef1c3d1f93b33dc9a91d615e882.ms.png)
+    - Navigasi ke sumber Azure Machine Learning yang anda cipta.
+    - Salin dan tampal Nama Kumpulan Sumber Azure anda ke dalam fail *config.py*.
 
-2. בצעו את המשימות הבאות כדי להוסיף את שם הזהות המנוהלת של Azure
+    ![Cari nama kumpulan sumber.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.ms.png)
 
-    - נווטו למשאב Managed Identities שיצרתם.
-    - העתקו והדביקו את שם הזהות המנוהלת של Azure בקובץ *config.py*.
+2. Lakukan tugas berikut untuk menambah nama Identiti Terurus Azure
 
-    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.b0fe7164cacc93b03c3c534daee68da244de6de4e6dcbc2a4e9df43403eb0f1b.ms.png)
+    - Navigasi ke sumber Managed Identities yang anda cipta.
+    - Salin dan tampal nama Identiti Terurus Azure anda ke dalam fail *config.py*.
 
-### הכנת מערך הנתונים לכוונון עדין
+    ![Cari UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.ms.png)
 
-בתרגיל זה תריצו את הקובץ *download_dataset.py* כדי להוריד את מערכי הנתונים *ULTRACHAT_200k* לסביבת העבודה המקומית שלכם. לאחר מכן תשתמשו במערכי הנתונים הללו כדי לכוונן עדין את מודל Phi-3 ב-Azure Machine Learning.
+### Sediakan set data untuk latihan semula
 
-#### הורדת מערך הנתונים באמצעות *download_dataset.py*
+Dalam latihan ini, anda akan menjalankan fail *download_dataset.py* untuk memuat turun set data *ULTRACHAT_200k* ke persekitaran tempatan anda. Anda kemudian akan menggunakan set data ini untuk melatih semula model Phi-3 dalam Azure Machine Learning.
 
-1. פתחו את הקובץ *download_dataset.py* ב-Visual Studio Code.
+#### Muat turun set data anda menggunakan *download_dataset.py*
 
-1. הוסיפו את הקוד הבא לתוך *download_dataset.py*.
+1. Buka fail *download_dataset.py* dalam Visual Studio Code.
+
+1. Tambahkan kod berikut ke dalam *download_dataset.py*.
 
     ```python
     import json
@@ -472,65 +471,65 @@ You will:
 
 > [!TIP]
 >
-> **הנחיות לכוונון עדין עם מערך נתונים מינימלי באמצעות CPU**
+> **Panduan untuk melatih semula dengan set data minimum menggunakan CPU**
 >
-> אם ברצונכם להשתמש ב-CPU לכוונון עדין, גישה זו מתאימה במיוחד למי שיש לו מנויים מיוחדים (כגון Visual Studio Enterprise Subscription) או למי שרוצה לבדוק במהירות את תהליך הכוונון והפריסה.
+> Jika anda ingin menggunakan CPU untuk latihan semula, pendekatan ini sesuai untuk mereka yang mempunyai langganan manfaat (seperti Visual Studio Enterprise Subscription) atau untuk menguji proses latihan semula dan penyebaran dengan cepat.
 >
-> החליפו את `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` with `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
+> Gantikan `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:1%]')` dengan `dataset = load_and_split_dataset("HuggingFaceH4/ultrachat_200k", 'default', 'train_sft[:10]')`
 >
 
-1. הקלידו את הפקודה הבאה במסוף כדי להריץ את הסקריפט ולהוריד את מערך הנתונים לסביבת העבודה המקומית שלכם.
+1. Taip arahan berikut dalam terminal anda untuk menjalankan skrip dan memuat turun set data ke persekitaran tempatan anda.
 
     ```console
     python download_data.py
     ```
 
-1. ודאו שמערכי הנתונים נשמרו בהצלחה בתיקיית *finetune-phi/data* המקומית שלכם.
+1. Sahkan bahawa set data telah berjaya disimpan ke direktori *finetune-phi/data* tempatan anda.
 
 > [!NOTE]
 >
-> **גודל מערך הנתונים וזמן כוונון עדין**
+> **Saiz set data dan masa latihan semula**
 >
-> בדוגמה זו, אתם משתמשים רק ב-1% ממערך הנתונים (`train_sft[:1%]`). זה מקטין משמעותית את כמות הנתונים, מה שמאיץ את תהליכי ההעלאה והכוונון. ניתן לשנות את האחוז כדי למצוא את האיזון המתאים בין זמן האימון לביצועי המודל. שימוש בתת-מערך קטן מקטין את זמן הכוונון, מה שהופך את התהליך לנוח יותר לדוגמה E2E.
+> Dalam contoh E2E ini, anda hanya menggunakan 1% daripada set data (`train_sft[:1%]`). Ini mengurangkan jumlah data dengan ketara, mempercepatkan proses muat naik dan latihan semula. Anda boleh laraskan peratusan untuk mencari keseimbangan yang sesuai antara masa latihan dan prestasi model. Menggunakan subset yang lebih kecil daripada set data mengurangkan masa yang diperlukan untuk latihan semula, menjadikan proses lebih mudah diurus untuk contoh E2E.
 
-## תרחיש 2: כוונון עדין למודל Phi-3 ופריסה ב-Azure Machine Learning Studio
+## Senario 2: Latih semula model Phi-3 dan Sebarkan dalam Azure Machine Learning Studio
 
-### הגדרת Azure CLI
+### Sediakan Azure CLI
 
-יש להגדיר את Azure CLI כדי לאמת את הסביבה שלכם. Azure CLI מאפשר לנהל משאבי Azure ישירות משורת הפקודה ומספק את האישורים הדרושים ל-Azure Machine Learning לגישה למשאבים אלו. להתקנה התחילו ב-[Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
+Anda perlu menyediakan Azure CLI untuk mengesahkan persekitaran anda. Azure CLI membolehkan anda mengurus sumber Azure terus dari baris arahan dan menyediakan kelayakan yang diperlukan untuk Azure Machine Learning mengakses sumber ini. Untuk bermula, pasang [Azure CLI](https://learn.microsoft.com/cli/azure/install-azure-cli)
 
-1. פתחו חלון טרמינל והקלידו את הפקודה הבאה כדי להתחבר לחשבון Azure שלכם.
+1. Buka tetingkap terminal dan taip arahan berikut untuk log masuk ke akaun Azure anda.
 
     ```console
     az login
     ```
 
-1. בחרו את חשבון ה-Azure שלכם לשימוש.
+1. Pilih akaun Azure anda untuk digunakan.
 
-1. בחרו את המנוי של Azure לשימוש.
+1. Pilih langganan Azure anda untuk digunakan.
 
-    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.b6e8fb6255e8d09673cb48eca2b12aebbb84dfb8817af8a6b1dfd4bb2759d68f.ms.png)
+    ![Cari nama kumpulan sumber.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.ms.png)
 
 > [!TIP]
 >
-> אם אתם נתקלים בקשיים בהתחברות ל-Azure, נסו להשתמש בקוד מכשיר. פתחו חלון טרמינל והקלידו את הפקודה הבאה כדי להתחבר לחשבון Azure שלכם:
+> Jika anda menghadapi masalah untuk log masuk ke Azure, cuba gunakan kod peranti. Buka tetingkap terminal dan taip arahan berikut untuk log masuk ke akaun Azure anda:
 >
 > ```console
 > az login --use-device-code
 > ```
 >
 
-### כוונון עדין למודל Phi-3
+### Latih semula model Phi-3
 
-בתרגיל זה תכווננו עדין את מודל Phi-3 באמצעות מערך הנתונים שסופק. תחילה תגדירו את תהליך הכוונון בקובץ *fine_tune.py*. לאחר מכן תגדירו את סביבת Azure Machine Learning ותתחילו את תהליך הכוונון על ידי הרצת הקובץ *setup_ml.py*. סקריפט זה מבטיח שהכוונון יתבצע בסביבת Azure Machine Learning.
+Dalam latihan ini, anda akan melatih semula model Phi-3 menggunakan set data yang disediakan. Pertama, anda akan mentakrifkan proses latihan semula dalam fail *fine_tune.py*. Kemudian, anda akan mengkonfigurasi persekitaran Azure Machine Learning dan memulakan proses latihan semula dengan menjalankan fail *setup_ml.py*. Skrip ini memastikan latihan semula berlaku dalam persekitaran Azure Machine Learning.
 
-בהרצת *setup_ml.py* תפעילו את תהליך הכוונון בסביבת Azure Machine Learning.
+Dengan menjalankan *setup_ml.py*, anda akan menjalankan proses latihan semula dalam persekitaran Azure Machine Learning.
 
-#### הוספת קוד לקובץ *fine_tune.py*
+#### Tambah kod ke fail *fine_tune.py*
 
-1. נווטו לתיקיית *finetuning_dir* ופתחו את הקובץ *fine_tune.py* ב-Visual Studio Code.
+1. Navigasi ke folder *finetuning_dir* dan buka fail *fine_tune.py* dalam Visual Studio Code.
 
-1. הוסיפו את הקוד הבא לתוך *fine_tune.py*.
+1. Tambahkan kod berikut ke dalam *fine_tune.py*.
 
     ```python
     import argparse
@@ -683,21 +682,21 @@ You will:
 
     ```
 
-1. שמרו וסגרו את הקובץ *fine_tune.py*.
+1. Simpan dan tutup fail *fine_tune.py*.
 
 > [!TIP]
-> **ניתן לכוונן את מודל Phi-3.5**
+> **Anda boleh melatih semula model Phi-3.5**
 >
-> בקובץ *fine_tune.py*, ניתן לשנות את השדה `pretrained_model_name` from `"microsoft/Phi-3-mini-4k-instruct"` to any model you want to fine-tune. For example, if you change it to `"microsoft/Phi-3.5-mini-instruct"`, you'll be using the Phi-3.5-mini-instruct model for fine-tuning. To find and use the model name you prefer, visit [Hugging Face](https://huggingface.co/), search for the model you're interested in, and then copy and paste its name into the `pretrained_model_name` בסקריפט שלכם.
+> Dalam fail *fine_tune.py*, anda boleh menukar `pretrained_model_name` dari `"microsoft/Phi-3-mini-4k-instruct"` ke mana-mana model yang anda ingin latih semula. Contohnya, jika anda menukarnya kepada `"microsoft/Phi-3.5-mini-instruct"`, anda akan menggunakan model Phi-3.5-mini-instruct untuk latihan semula. Untuk mencari dan menggunakan nama model yang anda suka, lawati [Hugging Face](https://huggingface.co/), cari model yang anda minati, dan salin serta tampal namanya ke dalam medan `pretrained_model_name` dalam skrip anda.
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Fine tune Phi-3.5.":::
+> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Latih semula Phi-3.5.":::
 >
 
-#### הוספת קוד לקובץ *setup_ml.py*
+#### Tambah kod ke fail *setup_ml.py*
 
-1. פתחו את הקובץ *setup_ml.py* ב-Visual Studio Code.
+1. Buka fail *setup_ml.py* dalam Visual Studio Code.
 
-1. הוסיפו את הקוד הבא לתוך *setup_ml.py*.
+1. Tambahkan kod berikut ke dalam *setup_ml.py*.
 
     ```python
     import logging
@@ -824,7 +823,7 @@ You will:
 
     ```
 
-1. החליפו את `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `LOCATION` בפרטים הספציפיים שלכם.
+1. Gantikan `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, dan `LOCATION` dengan butiran khusus anda.
 
     ```python
    # Uncomment the following lines to use a GPU instance for training
@@ -836,13 +835,13 @@ You will:
 
 > [!TIP]
 >
-> **הנחיות לכוונון עדין עם מערך נתונים מינימלי באמצעות CPU**
+> **Panduan untuk melatih semula dengan set data minimum menggunakan CPU**
 >
-> אם ברצונכם להשתמש ב-CPU לכוונון עדין, גישה זו מתאימה במיוחד למי שיש לו מנויים מיוחדים (כגון Visual Studio Enterprise Subscription) או למי שרוצה לבדוק במהירות את תהליך הכוונון והפריסה.
+> Jika anda ingin menggunakan CPU untuk latihan semula, pendekatan ini sesuai untuk mereka yang mempunyai langganan manfaat (seperti Visual Studio Enterprise Subscription) atau untuk menguji proses latihan semula dan penyebaran dengan cepat.
 >
-> 1. פתחו את הקובץ *setup_ml*.
-> 1. החליפו את `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, and `DOCKER_IMAGE_NAME` with the following. If you do not have access to *Standard_E16s_v3*, you can use an equivalent CPU instance or request a new quota.
-> 1. Replace `LOCATION` בפרטים הספציפיים שלכם.
+> 1. Buka fail *setup_ml*.
+> 2. Gantikan `COMPUTE_INSTANCE_TYPE`, `COMPUTE_NAME`, dan `DOCKER_IMAGE_NAME` dengan yang berikut. Jika anda tidak mempunyai akses ke *Standard_E16s_v3*, anda boleh menggunakan instans CPU yang setara atau memohon kuota baru.
+> 3. Gantikan `LOCATION` dengan butiran khusus anda.
 >
 >    ```python
 >    # Uncomment the following lines to use a CPU instance for training
@@ -853,37 +852,37 @@ You will:
 >    ```
 >
 
-1. הקלידו את הפקודה הבאה כדי להריץ את הסקריפט *setup_ml.py* ולהתחיל את תהליך הכוונון ב-Azure Machine Learning.
+1. Taip arahan berikut untuk menjalankan skrip *setup_ml.py* dan mulakan proses latihan semula dalam Azure Machine Learning.
 
     ```python
     python setup_ml.py
     ```
 
-1. בתרגיל זה כיוונתם בהצלחה את מודל Phi-3 באמצעות Azure Machine Learning. בהרצת סקריפט *setup_ml.py* הקמתם את סביבת Azure Machine Learning והפעלתם את תהליך הכוונון שהוגדר בקובץ *fine_tune.py*. שימו לב שתהליך הכוונון עלול לקחת זמן רב. לאחר הרצת הפקודה `python setup_ml.py` command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
+1. Dalam latihan ini, anda berjaya melatih semula model Phi-3 menggunakan Azure Machine Learning. Dengan menjalankan skrip *setup_ml.py*, anda telah menyediakan persekitaran Azure Machine Learning dan memulakan proses latihan semula yang ditakrifkan dalam fail *fine_tune.py*. Sila ambil perhatian bahawa proses latihan semula boleh mengambil masa yang agak lama. Selepas menjalankan arahan `python setup_ml.py`, anda perlu menunggu proses selesai. Anda boleh memantau status kerja latihan semula dengan mengikuti pautan yang disediakan dalam terminal ke portal Azure Machine Learning.
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.a28c8552f7b7bc088ccd67dd0c522f7fc1944048d3554bb1b24f95a1169ad538.ms.png)
+    ![Lihat kerja latihan semula.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.ms.png)
 
-### Deploy the fine-tuned model
+### Sebarkan model yang telah dilatih semula
 
-To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+Untuk mengintegrasikan model Phi-3 yang telah dilatih semula dengan Prompt Flow, anda perlu menyebarkan model tersebut supaya ia boleh diakses untuk inferens masa nyata. Proses ini melibatkan pendaftaran model, mencipta endpoint dalam talian, dan menyebarkan model.
 
-#### Set the model name, endpoint name, and deployment name for deployment
+#### Tetapkan nama model, nama endpoint, dan nama penyebaran untuk penyebaran
 
-1. Open *config.py* file.
+1. Buka fail *config.py*.
 
-1. Replace `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` with the desired name for your model.
+1. Gantikan `AZURE_MODEL_NAME = "your_fine_tuned_model_name"` dengan nama yang anda inginkan untuk model anda.
 
-1. Replace `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` with the desired name for your endpoint.
+1. Gantikan `AZURE_ENDPOINT_NAME = "your_fine_tuned_model_endpoint_name"` dengan nama yang anda inginkan untuk endpoint anda.
 
-1. Replace `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` עם השם הרצוי לפריסה שלכם.
+1. Gantikan `AZURE_DEPLOYMENT_NAME = "your_fine_tuned_model_deployment_name"` dengan nama yang anda inginkan untuk penyebaran anda.
 
-#### הוספת קוד לקובץ *deploy_model.py*
+#### Tambah kod ke fail *deploy_model.py*
 
-הרצת הקובץ *deploy_model.py* מפעילה אוטומטית את כל תהליך הפריסה. הוא רושם את המודל, יוצר נקודת קצה ומבצע את הפריסה בהתאם להגדרות שבקובץ config.py, הכוללות את שם המודל, שם נקודת הקצה ושם הפריסה.
+Menjalankan fail *deploy_model.py* mengautomasikan keseluruhan proses penyebaran. Ia mendaftar model, mencipta endpoint, dan melaksanakan penyebaran berdasarkan tetapan yang ditentukan dalam fail config.py, yang merangkumi nama model, nama endpoint, dan nama penyebaran.
 
-1. פתחו את הקובץ *deploy_model.py* ב-Visual Studio Code.
+1. Buka fail *deploy_model.py* dalam Visual Studio Code.
 
-1. הוסיפו את הקוד הבא לתוך *deploy_model.py*.
+1. Tambahkan kod berikut ke dalam *deploy_model.py*.
 
     ```python
     import logging
@@ -1049,67 +1048,68 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
     ```
 
-1. בצעו את המשימות הבאות כדי לקבל את `JOB_NAME`:
+1. Lakukan tugas berikut untuk mendapatkan `JOB_NAME`:
 
-    - Navigate to Azure Machine Learning resource that you created.
-    - Select **Studio web URL** to open the Azure Machine Learning workspace.
-    - Select **Jobs** from the left side tab.
-    - Select the experiment for fine-tuning. For example, *finetunephi*.
-    - Select the job that you created.
-    - Copy and paste your job Name into the `JOB_NAME = "your-job-name"` in *deploy_model.py* file.
+    - Navigasi ke sumber Azure Machine Learning yang anda cipta.
+    - Pilih **Studio web URL** untuk membuka ruang kerja Azure Machine Learning.
+    - Pilih **Jobs** dari tab sebelah kiri.
+    - Pilih eksperimen untuk latihan semula. Contohnya, *finetunephi*.
+    - Pilih kerja yang anda cipta.
+- Salin dan tampal Nama kerja anda ke dalam `JOB_NAME = "your-job-name"` dalam fail *deploy_model.py*.
 
-1. Replace `COMPUTE_INSTANCE_TYPE` עם הפרטים הספציפיים שלכם.
+1. Gantikan `COMPUTE_INSTANCE_TYPE` dengan butiran khusus anda.
 
-1. הקלידו את הפקודה הבאה כדי להריץ את הסקריפט *deploy_model.py* ולהתחיל את תהליך הפריסה ב-Azure Machine Learning.
+1. Taip arahan berikut untuk menjalankan skrip *deploy_model.py* dan mulakan proses penyebaran dalam Azure Machine Learning.
 
     ```python
     python deploy_model.py
     ```
 
+
 > [!WARNING]
-> כדי למנוע חיובים נוספים בחשבונכם, ודאו למחוק את נקודת הקצה שנוצרה ב-Azure Machine Learning workspace.
+> Untuk mengelakkan caj tambahan ke akaun anda, pastikan untuk memadamkan endpoint yang telah dibuat dalam ruang kerja Azure Machine Learning.
 >
 
-#### בדיקת סטטוס הפריסה ב-Azure Machine Learning Workspace
+#### Semak status penyebaran dalam Azure Machine Learning Workspace
 
-1. בקרו ב-[Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
+1. Lawati [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. נווטו ל-Azure Machine Learning workspace שיצרתם.
+1. Navigasi ke ruang kerja Azure Machine Learning yang anda telah cipta.
 
-1. בחרו **Studio web URL** כדי לפתוח את סביבת Azure Machine Learning.
+1. Pilih **Studio web URL** untuk membuka ruang kerja Azure Machine Learning.
 
-1. בחרו **Endpoints** מהתפריט בצד שמאל.
+1. Pilih **Endpoints** dari tab sebelah kiri.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.a32f4eb2854cd54ee997f9bec0e842c3084bbc24bd693457b5c6b132fe966bf4.ms.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.ms.png)
 
-2. בחרו את נקודת הקצה שיצרתם.
+2. Pilih endpoint yang anda telah cipta.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.048b4f0f6479c1885b62711a151227a24408679be65dd1039cd2f64448ec5842.ms.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.ms.png)
 
-3. בעמוד זה תוכלו לנהל את נקודות הקצה שנוצרו במהלך תהליך הפריסה.
+3. Pada halaman ini, anda boleh menguruskan endpoint yang dibuat semasa proses penyebaran.
 
-## תרחיש 3: אינטגרציה עם Prompt flow ושיחה עם המודל המותאם אישית שלך
+## Senario 3: Integrasi dengan Prompt flow dan Berbual dengan model tersuai anda
 
-### אינטגרציה של מודל Phi-3 המותאם אישית עם Prompt flow
+### Integrasi model Phi-3 tersuai dengan Prompt flow
 
-לאחר שהפרסתם בהצלחה את המודל המותאם, תוכלו כעת לשלב אותו עם Prompt flow כדי להשתמש במודל בזמן אמת, ולבצע מגוון משימות אינטראקטיביות עם מודל Phi-3 המותאם אישית שלכם.
+Selepas berjaya menyebarkan model yang telah ditala halus, anda kini boleh mengintegrasikannya dengan Prompt flow untuk menggunakan model anda dalam aplikasi masa nyata, membolehkan pelbagai tugasan interaktif dengan model Phi-3 tersuai anda.
 
-#### הגדרת מפתח API ו-URI של נקודת הקצה של מודל Phi-3 המותאם
+#### Tetapkan kunci api dan uri endpoint model Phi-3 yang telah ditala halus
 
-1. נווטו ל-Azure Machine Learning workspace שיצרתם.
-1. בחרו **Endpoints** מהתפריט בצד שמאל.
-1. בחרו את נקודת הקצה שיצרתם.
-1. בחרו **Consume** מתפריט הניווט.
-1. העתיקו והדביקו את **REST endpoint** לתוך קובץ *config.py*, תוך החלפת `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
-1. Copy and paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` עם **מפתח ראשי**.
+1. Navigasi ke ruang kerja Azure Machine Learning yang anda telah cipta.
+1. Pilih **Endpoints** dari tab sebelah kiri.
+1. Pilih endpoint yang anda telah cipta.
+1. Pilih **Consume** dari menu navigasi.
+1. Salin dan tampal **REST endpoint** anda ke dalam fail *config.py*, gantikan `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` dengan **REST endpoint** anda.
+1. Salin dan tampal **Primary key** anda ke dalam fail *config.py*, gantikan `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` dengan **Primary key** anda.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.602de7450770e9984149dc7da7472bacafbf0e8447e2adb53896ad93b1dc7684.ms.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.ms.png)
 
-#### הוספת קוד לקובץ *flow.dag.yml*
+#### Tambah kod ke dalam fail *flow.dag.yml*
 
-1. פתחו את הקובץ *flow.dag.yml* ב-Visual Studio Code.
+1. Buka fail *flow.dag.yml* dalam Visual Studio Code.
 
-1. הוסיפו את הקוד הבא לתוך *flow.dag.yml*.
+1. Tambah kod berikut ke dalam *flow.dag.yml*.
 
     ```yml
     inputs:
@@ -1132,11 +1132,11 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
         input_data: ${inputs.input_data}
     ```
 
-#### הוספת קוד לקובץ *integrate_with_promptflow.py*
+#### Tambah kod ke dalam fail *integrate_with_promptflow.py*
 
-1. פתחו את הקובץ *integrate_with_promptflow.py* ב-Visual Studio Code.
+1. Buka fail *integrate_with_promptflow.py* dalam Visual Studio Code.
 
-1. הוסיפו את הקוד הבא לתוך *integrate_with_promptflow.py*.
+1. Tambah kod berikut ke dalam *integrate_with_promptflow.py*.
 
     ```python
     import logging
@@ -1202,17 +1202,17 @@ To integrate the fine-tuned Phi-3 model with Prompt Flow, you need to deploy the
 
     ```
 
-### שיחה עם המודל המותאם אישית שלכם
+### Berbual dengan model tersuai anda
 
-1. הקלידו את הפקודה הבאה כדי להריץ את הסקריפט *deploy_model.py* ולהתחיל את תהליך הפריסה ב-Azure Machine Learning.
+1. Taip arahan berikut untuk menjalankan skrip *deploy_model.py* dan mulakan proses penyebaran dalam Azure Machine Learning.
 
     ```python
     pf flow serve --source ./ --port 8080 --host localhost
     ```
 
-1. דוגמה לתוצאות: כעת ניתן לשוחח עם מודל Phi-3 המותאם אישית שלכם. מומלץ לשאול שאלות המבוססות על הנתונים ששימשו לכוונון.
+1. Berikut adalah contoh hasilnya: Kini anda boleh berbual dengan model Phi-3 tersuai anda. Disarankan untuk bertanya soalan berdasarkan data yang digunakan untuk tala halus.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.023c07a4be8f02199e04eaf49f40ba24415da1be2274cbda9a7aa39776acd0bb.ms.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.ms.png)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

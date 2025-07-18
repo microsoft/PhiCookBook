@@ -2,69 +2,69 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:48:20+00:00",
+  "translation_date": "2025-07-16T21:23:02+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "sl"
 }
 -->
-# Remote Inferencing with the fine-tuned model
+# Oddaljeno sklepanje z modelom, ki je bil dodatno prilagojen
 
-After training the adapters in the remote environment, use a simple Gradio app to interact with the model.
+Ko so adapterji usposobljeni v oddaljenem okolju, uporabite preprosto aplikacijo Gradio za interakcijo z modelom.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.sl.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.sl.png)
 
-### Provision Azure Resources
-Set up the Azure Resources for remote inference by running the `AI Toolkit: Provision Azure Container Apps for inference` command from the command palette. During setup, you'll be prompted to select your Azure Subscription and resource group.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.sl.png)
+### Priprava Azure virov
+Za oddaljeno sklepanje morate nastaviti Azure vire z izvajanjem ukaza `AI Toolkit: Provision Azure Container Apps for inference` iz ukazne palete. Med tem postopkom boste morali izbrati svojo Azure naročnino in skupino virov.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.sl.png)
    
-By default, the subscription and resource group for inference should match those used during fine-tuning. The inference will use the same Azure Container App Environment and access the model and adapter stored in Azure Files, created during the fine-tuning step. 
+Privzeto naj bi bila naročnina in skupina virov za sklepanje enaka tistima, ki sta bili uporabljeni za dodatno prilagajanje. Sklepanje bo uporabljalo isto okolje Azure Container App in dostopalo do modela ter adapterja modela, shranjenih v Azure Files, ki so bili ustvarjeni med korakom dodatnega prilagajanja.
 
-## Using AI Toolkit 
+## Uporaba AI Toolkit
 
-### Deployment for Inference  
-If you want to update the inference code or reload the inference model, run the `AI Toolkit: Deploy for inference` command. This syncs your latest code with ACA and restarts the replica.  
+### Namestitev za sklepanje  
+Če želite spremeniti kodo za sklepanje ali ponovno naložiti model za sklepanje, zaženite ukaz `AI Toolkit: Deploy for inference`. Ta ukaz bo sinhroniziral vašo najnovejšo kodo z ACA in ponovno zagnal repliko.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.sl.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.sl.png)
 
-Once deployment finishes successfully, the model is ready for evaluation via this endpoint.
+Po uspešni namestitvi je model pripravljen za ocenjevanje preko tega končnega naslova.
 
-### Accessing the Inference API
+### Dostop do API-ja za sklepanje
 
-Access the inference API by clicking the "*Go to Inference Endpoint*" button in the VSCode notification. Alternatively, find the web API endpoint under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` and in the output panel.
+Do API-ja za sklepanje lahko dostopate s klikom na gumb "*Go to Inference Endpoint*", ki se prikaže v obvestilu VSCode. Alternativno lahko spletni API končni naslov najdete pod `ACA_APP_ENDPOINT` v datoteki `./infra/inference.config.json` in v izhodnem panelu.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.sl.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.sl.png)
 
-> **Note:** The inference endpoint may take a few minutes before it becomes fully operational.
+> **Note:** Končni naslov za sklepanje lahko potrebuje nekaj minut, da postane popolnoma operativen.
 
-## Inference Components Included in the Template
- 
-| Folder | Contents |
+## Komponente za sklepanje, vključene v predlogo
+
+| Mapa | Vsebina |
 | ------ |--------- |
-| `infra` | Contains all necessary configurations for remote operations. |
-| `infra/provision/inference.parameters.json` | Holds parameters for the bicep templates, used to provision Azure resources for inference. |
-| `infra/provision/inference.bicep` | Contains templates for provisioning Azure resources for inference. |
-| `infra/inference.config.json` | The configuration file generated by the `AI Toolkit: Provision Azure Container Apps for inference` command. It serves as input for other remote command palettes. |
+| `infra` | Vsebuje vse potrebne konfiguracije za oddaljeno delovanje. |
+| `infra/provision/inference.parameters.json` | Vsebuje parametre za bicep predloge, ki se uporabljajo za pripravo Azure virov za sklepanje. |
+| `infra/provision/inference.bicep` | Vsebuje predloge za pripravo Azure virov za sklepanje. |
+| `infra/inference.config.json` | Konfiguracijska datoteka, ustvarjena z ukazom `AI Toolkit: Provision Azure Container Apps for inference`. Uporablja se kot vhod za druge ukaze v ukazni paleti za oddaljeno delo. |
 
-### Using AI Toolkit to configure Azure Resource Provision
-Set up the [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+### Uporaba AI Toolkit za konfiguracijo priprave Azure virov
+Konfigurirajte [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Provision Azure Container Apps for inference using ` command.
+Ukaz `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
+Konfiguracijske parametre najdete v datoteki `./infra/provision/inference.parameters.json`. Tukaj so podrobnosti:
+| Parameter | Opis |
 | --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+| `defaultCommands` | Ukazi za zagon spletnega API-ja. |
+| `maximumInstanceCount` | Ta parameter določa največjo kapaciteto GPU instanc. |
+| `location` | Lokacija, kjer se pripravljajo Azure viri. Privzeta vrednost je enaka lokaciji izbrane skupine virov. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | Ti parametri se uporabljajo za poimenovanje Azure virov za pripravo. Privzeto so enaki imenom virov, uporabljenih pri dodatnem prilagajanju. Lahko vnesete novo, neuporabljeno ime vira za ustvarjanje lastnih virov z izbranim imenom ali pa vnesete ime že obstoječega Azure vira, če želite uporabiti tega. Za podrobnosti glejte razdelek [Uporaba obstoječih Azure virov](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### Uporaba obstoječih Azure virov
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Privzeto priprava za sklepanje uporablja isto okolje Azure Container App, Storage Account, Azure File Share in Azure Log Analytics, ki so bili uporabljeni pri dodatnem prilagajanju. Za API za sklepanje se ustvari ločen Azure Container App.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json` file. Then run the `AI Toolkit: Provision Azure Container Apps for inference` command from the command palette. This will update any specified resources and create any missing ones.
+Če ste med dodatnim prilagajanjem prilagodili Azure vire ali želite za sklepanje uporabiti svoje obstoječe Azure vire, vnesite njihova imena v datoteko `./infra/inference.parameters.json`. Nato zaženite ukaz `AI Toolkit: Provision Azure Container Apps for inference` iz ukazne palete. Ta ukaz posodobi navedene vire in ustvari manjkajoče.
 
-For example, if you already have an Azure container environment, your `./infra/finetuning.parameters.json` should look like this:
+Na primer, če imate obstoječe Azure container okolje, naj bo vaša datoteka `./infra/finetuning.parameters.json` videti takole:
 
 ```json
 {
@@ -83,10 +83,10 @@ For example, if you already have an Azure container environment, your `./infra/f
   }
 ```
 
-### Manual Provision  
-If you prefer to manually set up Azure resources, you can use the provided bicep files in the `./infra/provision` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json` file.
+### Ročna priprava  
+Če želite Azure vire nastaviti ročno, lahko uporabite priložene bicep datoteke v mapah `./infra/provision`. Če ste že nastavili in konfigurirali vse Azure vire brez uporabe ukazne palete AI Toolkit, lahko preprosto vnesete imena virov v datoteko `inference.config.json`.
 
-For example:
+Na primer:
 
 ```json
 {
@@ -99,5 +99,5 @@ For example:
 }
 ```
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvorno jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

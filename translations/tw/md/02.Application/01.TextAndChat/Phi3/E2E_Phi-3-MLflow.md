@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-08T05:35:48+00:00",
+  "translation_date": "2025-07-17T02:27:43+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "tw"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) 是一個開源平台，專門用來管理機器學習整個生命週期。
+[MLflow](https://mlflow.org/) 是一個開源平台，旨在管理機器學習的端到端生命週期。
 
 ![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.tw.png)
 
-MLFlow 用來管理機器學習生命週期，包括實驗、可重現性、部署以及集中式模型註冊。MLFlow 目前提供四個主要組件。
+MLFlow 用於管理機器學習生命週期，包括實驗、可重現性、部署以及中央模型註冊。MLflow 目前提供四個組件。
 
-- **MLflow Tracking:** 記錄並查詢實驗、程式碼、資料設定和結果。
-- **MLflow Projects:** 將資料科學程式碼包裝成可在任何平台重現的格式。
-- **Mlflow Models:** 在多種服務環境中部署機器學習模型。
-- **Model Registry:** 在集中式儲存庫中存放、註解並管理模型。
+- **MLflow Tracking：** 記錄並查詢實驗、程式碼、資料配置和結果。
+- **MLflow Projects：** 將資料科學程式碼打包成可在任何平台重現的格式。
+- **Mlflow Models：** 在多種服務環境中部署機器學習模型。
+- **Model Registry：** 在中央儲存庫中存放、註解及管理模型。
 
-它具備追蹤實驗、包裝程式碼成可重現執行、分享與部署模型的功能。MLFlow 已整合至 Databricks，並支援多種機器學習函式庫，具有函式庫無關性。它可以搭配任何機器學習函式庫及程式語言使用，並提供 REST API 與 CLI 以方便操作。
+它具備追蹤實驗、將程式碼打包成可重現執行、以及分享和部署模型的功能。MLFlow 已整合至 Databricks，並支援多種機器學習函式庫，具備函式庫無關性。它可與任何機器學習函式庫及任何程式語言搭配使用，並提供 REST API 和 CLI 以方便操作。
 
 ![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.tw.png)
 
@@ -28,21 +28,21 @@ MLFlow 的主要功能包括：
 
 - **實驗追蹤：** 記錄並比較參數與結果。
 - **模型管理：** 將模型部署到各種服務和推論平台。
-- **模型註冊：** 協同管理 MLflow 模型的生命週期，包括版本控制與註解。
-- **Projects:** 將機器學習程式碼包裝以便分享或生產使用。
+- **模型註冊：** 協作管理 MLflow 模型的生命週期，包括版本控制和註解。
+- **Projects：** 將機器學習程式碼打包以便分享或生產使用。
 
-MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模型包裝以供執行、服務部署及模型監控。它的目標是簡化從原型到生產流程的轉換，特別是在雲端與邊緣運算環境中。
+MLFlow 也支援 MLOps 循環，包括資料準備、模型註冊與管理、模型包裝以供執行、服務部署及模型監控。它旨在簡化從原型到生產工作流程的過程，特別是在雲端和邊緣環境中。
 
-## E2E 範例 - 建立包裝器並使用 Phi-3 作為 MLFlow 模型
+## 端到端範例 - 建立包裝器並將 Phi-3 作為 MLFlow 模型使用
 
-在這個端到端範例中，我們會示範兩種不同的方法，來為 Phi-3 小型語言模型（SLM）建立包裝器，並將其作為 MLFlow 模型在本地或雲端（例如 Azure Machine Learning 工作區）運行。
+在此端到端範例中，我們將展示兩種不同方法，來建立 Phi-3 小型語言模型（SLM）的包裝器，並將其作為 MLFlow 模型在本地或雲端（例如 Azure Machine Learning 工作區）執行。
 
 ![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.tw.png)
 
 | 專案 | 說明 | 位置 |
 | ------------ | ----------- | -------- |
-| Transformer Pipeline | Transformer Pipeline 是建立包裝器最簡單的選項，適合想用 HuggingFace 模型搭配 MLFlow 的實驗性 transformers 功能。 | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | 撰寫時，transformer pipeline 尚不支援以 MLFlow 包裝 HuggingFace ONNX 格式模型，即使使用實驗性 optimum Python 套件。這種情況下，可以自訂 Python 包裝器以供 MLFlow 使用。 | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Transformer Pipeline | 如果想使用 HuggingFace 模型搭配 MLFlow 的實驗性 transformers 風格，Transformer Pipeline 是建立包裝器最簡單的選擇。 | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
+| Custom Python Wrapper | 撰寫本文時，transformer pipeline 尚不支援為 ONNX 格式的 HuggingFace 模型產生 MLFlow 包裝器，即使使用實驗性 optimum Python 套件。針對這類情況，可以自行建立自訂的 Python 包裝器以用於 MLFlow 模型。 | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
 ## 專案：Transformer Pipeline
 
@@ -53,7 +53,7 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
     import transformers
     ```
 
-2. 接著，透過 HuggingFace 模型庫指定目標 Phi-3 模型，初始化 transformer pipeline。從 _Phi-3-mini-4k-instruct_ 的模型卡可看到，它的任務是「文字生成」類型：
+2. 接著，應透過 HuggingFace 註冊表指定目標 Phi-3 模型，初始化 transformer pipeline。如 _Phi-3-mini-4k-instruct_ 的模型卡所示，其任務類型為「文字生成」：
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
     )
     ```
 
-3. 現在你可以將 Phi-3 模型的 transformer pipeline 儲存成 MLFlow 格式，並提供額外細節，如目標 artifact 路徑、特定模型設定以及推論 API 類型：
+3. 現在可以將 Phi-3 模型的 transformer pipeline 儲存為 MLFlow 格式，並提供額外資訊，如目標 artifact 路徑、特定模型設定及推論 API 類型：
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -75,7 +75,7 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
 
 ## 專案：Custom Python Wrapper
 
-1. 這裡我們使用 Microsoft 的 [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) 來進行 ONNX 模型的推論與標記編碼／解碼。你需要選擇 _onnxruntime_genai_ 套件來對應目標運算裝置，以下範例是以 CPU 為目標：
+1. 這裡我們可以使用 Microsoft 的 [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) 來進行 ONNX 模型的推論及 token 編碼/解碼。你必須選擇適合目標運算環境的 _onnxruntime_genai_ 套件，以下範例以 CPU 為目標：
 
     ``` Python
     import mlflow
@@ -83,7 +83,7 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
     import onnxruntime_genai as og
     ```
 
-1. 我們自訂的類別實作兩個方法：_load_context()_ 用來初始化 Phi-3 Mini 4K Instruct 的 **ONNX 模型**、**生成器參數** 和 **tokenizer**；_predict()_ 用來根據輸入提示產生輸出標記：
+1. 我們的自訂類別實作了兩個方法：_load_context()_ 用於初始化 Phi-3 Mini 4K Instruct 的 **ONNX 模型**、**生成器參數**及**分詞器**；_predict()_ 用於根據輸入提示產生輸出 token：
 
     ``` Python
     class Phi3Model(mlflow.pyfunc.PythonModel):
@@ -114,7 +114,7 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. 接著可以用 _mlflow.pyfunc.log_model()_ 函式，為 Phi-3 模型產生自訂 Python 包裝器（pickle 格式），並包含原始 ONNX 模型及所需相依套件：
+1. 現在可以使用 _mlflow.pyfunc.log_model()_ 函式，為 Phi-3 模型產生自訂 Python 包裝器（pickle 格式），並包含原始 ONNX 模型及所需依賴：
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -129,9 +129,9 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
     )
     ```
 
-## 產生的 MLFlow 模型簽章
+## 產生的 MLFlow 模型簽名
 
-1. 在上面 Transformer Pipeline 專案的第 3 步，我們設定 MLFlow 模型的任務為「_llm/v1/chat_」。這樣會產生與 OpenAI Chat API 相容的模型 API 包裝器，如下所示：
+1. 在上述 Transformer Pipeline 專案的第 3 步中，我們將 MLFlow 模型的任務設定為「_llm/v1/chat_」。此設定會產生一個與 OpenAI Chat API 相容的模型 API 包裝器，如下所示：
 
     ``` Python
     {inputs: 
@@ -148,7 +148,7 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. 接著，使用類似 OpenAI API 的後處理，例如 _response[0][‘choices’][0][‘message’][‘content’]_，將輸出美化成這樣：
+1. 接著，使用與 OpenAI API 相容的後處理，例如 _response[0][‘choices’][0][‘message’][‘content’]_，將輸出美化成類似以下格式：
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. 在上面 Custom Python Wrapper 專案的第 3 步，我們讓 MLFlow 套件根據範例輸入產生模型簽章。MLFlow 包裝器的簽章會長這樣：
+1. 在上述 Custom Python Wrapper 專案的第 3 步中，我們讓 MLFlow 套件根據給定的輸入範例自動產生模型簽名。我們的 MLFlow 包裝器簽名會長這樣：
 
     ``` Python
     {inputs: 
@@ -169,13 +169,13 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
       None}
     ```
 
-1. 因此，我們的提示需要包含名為 "prompt" 的字典鍵，格式類似這樣：
+1. 因此，我們的提示需包含名為 "prompt" 的字典鍵，類似以下範例：
 
     ``` Python
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. 模型輸出會以字串格式提供：
+1. 模型的輸出將以字串格式提供：
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -188,4 +188,4 @@ MLFlow 也支援 MLOps 循環，包含資料準備、模型註冊與管理、模
     ```
 
 **免責聲明**：  
-本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們努力確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議使用專業人工翻譯。我們不對因使用此翻譯而產生的任何誤解或誤釋負責。
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保翻譯的準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

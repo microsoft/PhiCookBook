@@ -2,23 +2,23 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "be4101a30d98e95a71d42c276e8bcd37",
-  "translation_date": "2025-05-09T11:34:19+00:00",
+  "translation_date": "2025-07-16T20:41:29+00:00",
   "source_file": "md/01.Introduction/03/Jetson_Inference.md",
   "language_code": "pa"
 }
 -->
 # **Nvidia Jetson ਵਿੱਚ Inference Phi-3**
 
-Nvidia Jetson Nvidia ਦੀਆਂ embedded computing boards ਦੀ ਇੱਕ ਸੀਰੀਜ਼ ਹੈ। Jetson TK1, TX1 ਅਤੇ TX2 ਮਾਡਲ ਸਭ ਵਿੱਚ Nvidia ਦਾ Tegra processor (ਜਾਂ SoC) ਹੁੰਦਾ ਹੈ ਜੋ ARM architecture ਵਾਲਾ central processing unit (CPU) ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ। Jetson ਇੱਕ low-power ਸਿਸਟਮ ਹੈ ਅਤੇ ਇਹ machine learning ਐਪਲੀਕੇਸ਼ਨਾਂ ਨੂੰ ਤੇਜ਼ ਕਰਨ ਲਈ ਬਣਾਇਆ ਗਿਆ ਹੈ। Nvidia Jetson ਪ੍ਰੋਫੈਸ਼ਨਲ ਡਿਵੈਲਪਰਾਂ ਵੱਲੋਂ ਸਾਰੇ ਉਦਯੋਗਾਂ ਵਿੱਚ ਨਵੀਂ AI ਉਤਪਾਦ ਬਣਾਉਣ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਵਿਦਿਆਰਥੀ ਅਤੇ ਸ਼ੌਕੀਨ ਲੋਕਾਂ ਵੱਲੋਂ practical AI ਸਿੱਖਣ ਅਤੇ ਸ਼ਾਨਦਾਰ ਪ੍ਰੋਜੈਕਟ ਬਣਾਉਣ ਲਈ। SLM edge ਡਿਵਾਈਸਾਂ ਜਿਵੇਂ ਕਿ Jetson ਵਿੱਚ deploy ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਜੋ ਉਦਯੋਗਿਕ generative AI ਐਪਲੀਕੇਸ਼ਨ ਸੈਨਾਰਿਓਜ਼ ਦੀ ਵਧੀਆ ਅਮਲਦਾਰੀ ਯਕੀਨੀ ਬਣਾਉਂਦਾ ਹੈ।
+Nvidia Jetson Nvidia ਦੀਆਂ ਐਮਬੈਡਿਡ ਕੰਪਿਊਟਿੰਗ ਬੋਰਡਾਂ ਦੀ ਇੱਕ ਸੀਰੀਜ਼ ਹੈ। Jetson TK1, TX1 ਅਤੇ TX2 ਮਾਡਲਾਂ ਵਿੱਚ Nvidia ਦਾ Tegra ਪ੍ਰੋਸੈਸਰ (ਜਾਂ SoC) ਹੁੰਦਾ ਹੈ ਜੋ ARM ਆਰਕੀਟੈਕਚਰ ਵਾਲਾ ਸੈਂਟਰਲ ਪ੍ਰੋਸੈਸਿੰਗ ਯੂਨਿਟ (CPU) ਸ਼ਾਮਲ ਕਰਦਾ ਹੈ। Jetson ਇੱਕ ਘੱਟ-ਪਾਵਰ ਸਿਸਟਮ ਹੈ ਅਤੇ ਮਸ਼ੀਨ ਲਰਨਿੰਗ ਐਪਲੀਕੇਸ਼ਨਾਂ ਨੂੰ ਤੇਜ਼ ਕਰਨ ਲਈ ਡਿਜ਼ਾਈਨ ਕੀਤਾ ਗਿਆ ਹੈ। Nvidia Jetson ਨੂੰ ਪੇਸ਼ੇਵਰ ਡਿਵੈਲਪਰਾਂ ਵੱਲੋਂ ਸਾਰੇ ਉਦਯੋਗਾਂ ਵਿੱਚ ਨਵੀਂ AI ਉਤਪਾਦ ਬਣਾਉਣ ਲਈ ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ, ਅਤੇ ਵਿਦਿਆਰਥੀ ਅਤੇ ਸ਼ੌਕੀਨ ਲੋਕ ਹੱਥੋਂ-ਹੱਥ AI ਸਿੱਖਣ ਅਤੇ ਸ਼ਾਨਦਾਰ ਪ੍ਰੋਜੈਕਟ ਬਣਾਉਣ ਲਈ ਇਸਦਾ ਇਸਤੇਮਾਲ ਕਰਦੇ ਹਨ। SLM ਨੂੰ Jetson ਵਰਗੇ ਐਜ ਡਿਵਾਈਸਾਂ ਵਿੱਚ ਤਾਇਨਾਤ ਕੀਤਾ ਜਾਂਦਾ ਹੈ, ਜੋ ਉਦਯੋਗਿਕ ਜਨਰੇਟਿਵ AI ਐਪਲੀਕੇਸ਼ਨ ਸਥਿਤੀਆਂ ਦੀ ਬਿਹਤਰ ਕਾਰਗੁਜ਼ਾਰੀ ਯਕੀਨੀ ਬਣਾਉਂਦਾ ਹੈ।
 
-## NVIDIA Jetson 'ਤੇ Deployment:
-ਆਟੋਨੋਮਸ ਰੋਬੋਟਿਕਸ ਅਤੇ embedded ਡਿਵਾਈਸਾਂ 'ਤੇ ਕੰਮ ਕਰਨ ਵਾਲੇ ਡਿਵੈਲਪਰ Phi-3 Mini ਦਾ ਫਾਇਦਾ ਲੈ ਸਕਦੇ ਹਨ। Phi-3 ਦਾ relatively ਛੋਟਾ ਆਕਾਰ ਇਸਨੂੰ edge deployment ਲਈ ਬਹੁਤ ਵਧੀਆ ਬਣਾਉਂਦਾ ਹੈ। Parameters ਨੂੰ training ਦੌਰਾਨ ਬੜੀ ਸੂਚੀਵਧੀ ਨਾਲ ਟਿਊਨ ਕੀਤਾ ਗਿਆ ਹੈ, ਜਿਸ ਨਾਲ responses ਵਿੱਚ ਉੱਚ ਦਰੁਸਤੀ ਆਉਂਦੀ ਹੈ।
+## NVIDIA Jetson 'ਤੇ ਤਾਇਨਾਤੀ:
+ਆਟੋਨੋਮਸ ਰੋਬੋਟਿਕਸ ਅਤੇ ਐਮਬੈਡਿਡ ਡਿਵਾਈਸਾਂ 'ਤੇ ਕੰਮ ਕਰਨ ਵਾਲੇ ਡਿਵੈਲਪਰ Phi-3 Mini ਦਾ ਲਾਭ ਉਠਾ ਸਕਦੇ ਹਨ। Phi-3 ਦਾ ਛੋਟਾ ਆਕਾਰ ਇਸਨੂੰ ਐਜ ਤਾਇਨਾਤੀ ਲਈ ਬਹੁਤ ਉਚਿਤ ਬਣਾਉਂਦਾ ਹੈ। ਟ੍ਰੇਨਿੰਗ ਦੌਰਾਨ ਪੈਰਾਮੀਟਰਾਂ ਨੂੰ ਬੜੀ ਸਾਵਧਾਨੀ ਨਾਲ ਟਿਊਨ ਕੀਤਾ ਗਿਆ ਹੈ, ਜਿਸ ਨਾਲ ਜਵਾਬਾਂ ਵਿੱਚ ਉੱਚ ਸਹੀਤਾ ਮਿਲਦੀ ਹੈ।
 
-### TensorRT-LLM Optimization:
-NVIDIA ਦੀ [TensorRT-LLM library](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲ inference ਨੂੰ optimize ਕਰਦੀ ਹੈ। ਇਹ Phi-3 Mini ਦੇ ਲੰਮੇ context window ਨੂੰ ਸਹਾਰਦਾ ਹੈ, throughput ਅਤੇ latency ਦੋਹਾਂ ਨੂੰ ਸੁਧਾਰਦਾ ਹੈ। Optimizations ਵਿੱਚ LongRoPE, FP8, ਅਤੇ inflight batching ਵਰਗੀਆਂ ਤਕਨੀਕਾਂ ਸ਼ਾਮਲ ਹਨ।
+### TensorRT-LLM ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ:
+NVIDIA ਦੀ [TensorRT-LLM ਲਾਇਬ੍ਰੇਰੀ](https://github.com/NVIDIA/TensorRT-LLM?WT.mc_id=aiml-138114-kinfeylo) ਵੱਡੇ ਭਾਸ਼ਾ ਮਾਡਲ ਦੀ ਇੰਫਰੈਂਸ ਨੂੰ ਅਪਟੀਮਾਈਜ਼ ਕਰਦੀ ਹੈ। ਇਹ Phi-3 Mini ਦੇ ਲੰਮੇ ਸੰਦਰਭ ਵਿੰਡੋ ਨੂੰ ਸਹਾਰਾ ਦਿੰਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਥਰੂਪੁੱਟ ਅਤੇ ਲੇਟੈਂਸੀ ਦੋਹਾਂ ਵਿੱਚ ਸੁਧਾਰ ਹੁੰਦਾ ਹੈ। ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨਾਂ ਵਿੱਚ LongRoPE, FP8 ਅਤੇ inflight batching ਵਰਗੀਆਂ ਤਕਨੀਕਾਂ ਸ਼ਾਮਲ ਹਨ।
 
-### Availability ਅਤੇ Deployment:
-ਡਿਵੈਲਪਰ 128K context window ਵਾਲੇ Phi-3 Mini ਨੂੰ [NVIDIA's AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/) 'ਤੇ ਖੋਜ ਸਕਦੇ ਹਨ। ਇਹ NVIDIA NIM ਵਜੋਂ ਪੈਕੇਜ ਕੀਤਾ ਗਿਆ ਹੈ, ਜੋ ਇੱਕ ਮਾਈਕਰੋਸਰਵਿਸ ਹੈ ਜਿਸਦਾ standard API ਹੈ ਅਤੇ ਇਹ ਕਿਤੇ ਵੀ deploy ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਨਾਲ ਹੀ, [TensorRT-LLM ਦੇ GitHub implementations](https://github.com/NVIDIA/TensorRT-LLM) ਵੀ ਉਪਲਬਧ ਹਨ।
+### ਉਪਲਬਧਤਾ ਅਤੇ ਤਾਇਨਾਤੀ:
+ਡਿਵੈਲਪਰ Phi-3 Mini ਨੂੰ 128K ਸੰਦਰਭ ਵਿੰਡੋ ਨਾਲ [NVIDIA ਦੇ AI](https://www.nvidia.com/en-us/ai-data-science/generative-ai/) 'ਤੇ ਅਨੁਸੰਧਾਨ ਕਰ ਸਕਦੇ ਹਨ। ਇਹ NVIDIA NIM ਵਜੋਂ ਪੈਕੇਜ ਕੀਤਾ ਗਿਆ ਹੈ, ਜੋ ਇੱਕ ਮਾਈਕ੍ਰੋਸਰਵਿਸ ਹੈ ਜਿਸਦਾ ਇੱਕ ਸਧਾਰਣ API ਹੁੰਦਾ ਹੈ ਅਤੇ ਇਹ ਕਿਤੇ ਵੀ ਤਾਇਨਾਤ ਕੀਤਾ ਜਾ ਸਕਦਾ ਹੈ। ਇਸਦੇ ਨਾਲ-ਨਾਲ, [TensorRT-LLM ਦੇ GitHub 'ਤੇ ਇੰਪਲੀਮੈਂਟੇਸ਼ਨ](https://github.com/NVIDIA/TensorRT-LLM) ਵੀ ਉਪਲਬਧ ਹਨ।
 
 ## **1. ਤਿਆਰੀ**
 
@@ -34,13 +34,13 @@ d. Python 3.8+
 
 ਅਸੀਂ [Ollama](https://ollama.com) ਜਾਂ [LlamaEdge](https://llamaedge.com) ਚੁਣ ਸਕਦੇ ਹਾਂ।
 
-ਜੇ ਤੁਸੀਂ ਇੱਕੋ ਸਮੇਂ cloud ਅਤੇ edge ਡਿਵਾਈਸਾਂ ਵਿੱਚ gguf ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ LlamaEdge ਨੂੰ WasmEdge ਵਜੋਂ ਸਮਝਿਆ ਜਾ ਸਕਦਾ ਹੈ (WasmEdge ਇੱਕ lightweight, high-performance, scalable WebAssembly runtime ਹੈ ਜੋ cloud native, edge ਅਤੇ decentralized ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ موزوں ਹੈ। ਇਹ serverless ਐਪਲੀਕੇਸ਼ਨਾਂ, embedded functions, microservices, smart contracts ਅਤੇ IoT ਡਿਵਾਈਸਾਂ ਨੂੰ ਸਹਾਰਦਾ ਹੈ। ਤੁਸੀਂ gguf ਦੇ quantitative ਮਾਡਲ ਨੂੰ LlamaEdge ਰਾਹੀਂ edge ਡਿਵਾਈਸਾਂ ਅਤੇ cloud ਵਿੱਚ deploy ਕਰ ਸਕਦੇ ਹੋ।
+ਜੇ ਤੁਸੀਂ ਇੱਕੋ ਸਮੇਂ ਕਲਾਉਡ ਅਤੇ ਐਜ ਡਿਵਾਈਸਾਂ ਵਿੱਚ gguf ਵਰਤਣਾ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ LlamaEdge ਨੂੰ WasmEdge ਵਜੋਂ ਸਮਝਿਆ ਜਾ ਸਕਦਾ ਹੈ (WasmEdge ਇੱਕ ਹਲਕਾ, ਉੱਚ-ਕਾਰਗੁਜ਼ਾਰੀ, ਸਕੇਲ ਕਰਨ ਯੋਗ WebAssembly ਰਨਟਾਈਮ ਹੈ ਜੋ ਕਲਾਉਡ ਨੈਟਿਵ, ਐਜ ਅਤੇ ਵਿਖੰਡਿਤ ਐਪਲੀਕੇਸ਼ਨਾਂ ਲਈ ਉਚਿਤ ਹੈ। ਇਹ ਸਰਵਰਲੈੱਸ ਐਪਲੀਕੇਸ਼ਨਾਂ, ਐਮਬੈਡਿਡ ਫੰਕਸ਼ਨਾਂ, ਮਾਈਕ੍ਰੋਸਰਵਿਸਿਜ਼, ਸਮਾਰਟ ਕਾਂਟ੍ਰੈਕਟ ਅਤੇ IoT ਡਿਵਾਈਸਾਂ ਨੂੰ ਸਹਾਰਾ ਦਿੰਦਾ ਹੈ। ਤੁਸੀਂ gguf ਦਾ ਮਾਤਰਾਤਮਕ ਮਾਡਲ LlamaEdge ਰਾਹੀਂ ਐਜ ਡਿਵਾਈਸਾਂ ਅਤੇ ਕਲਾਉਡ 'ਤੇ ਤਾਇਨਾਤ ਕਰ ਸਕਦੇ ਹੋ।
 
-![llamaedge](../../../../../translated_images/llamaedge.1356a35c809c5e9d89d8168db0c92161e87f5e2c34831f2fad800f00fc4e74dc.pa.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.pa.jpg)
 
-ਇਹ ਹਨ ਵਰਤੋਂ ਦੇ ਕਦਮ:
+ਇਹ ਰਹੇ ਵਰਤੋਂ ਦੇ ਕਦਮ:
 
-1. ਸੰਬੰਧਤ ਲਾਇਬ੍ਰੇਰੀਆਂ ਅਤੇ ਫਾਇਲਾਂ ਇੰਸਟਾਲ ਅਤੇ ਡਾਊਨਲੋਡ ਕਰੋ
+1. ਸੰਬੰਧਿਤ ਲਾਇਬ੍ਰੇਰੀਆਂ ਅਤੇ ਫਾਈਲਾਂ ਇੰਸਟਾਲ ਅਤੇ ਡਾਊਨਲੋਡ ਕਰੋ
 
 ```bash
 
@@ -54,7 +54,7 @@ tar xzf chatbot-ui.tar.gz
 
 ```
 
-**ਨੋਟ**: llama-api-server.wasm ਅਤੇ chatbot-ui ਨੂੰ ਇੱਕੋ ਡਾਇਰੈਕਟਰੀ ਵਿੱਚ ਹੋਣਾ ਚਾਹੀਦਾ ਹੈ
+**Note**: llama-api-server.wasm ਅਤੇ chatbot-ui ਨੂੰ ਇੱਕੋ ਡਾਇਰੈਕਟਰੀ ਵਿੱਚ ਹੋਣਾ ਜਰੂਰੀ ਹੈ
 
 2. ਟਰਮੀਨਲ ਵਿੱਚ ਸਕ੍ਰਿਪਟ ਚਲਾਓ
 
@@ -64,13 +64,13 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 ```
 
-ਇਹ ਹੈ ਚਲਾਉਣ ਦਾ ਨਤੀਜਾ
+ਇਹ ਰਹੀ ਚਲਾਉਣ ਦੀ ਨਤੀਜਾ
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.66eb2acd7f14e814437879522158b9531ae7c955014d48d0708d0e4ce6ac94a6.pa.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.pa.png)
 
-***ਨਮੂਨਾ ਕੋਡ*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
+***ਨਮੂਨਾ ਕੋਡ*** [Phi-3 mini WASM ਨੋਟਬੁੱਕ ਨਮੂਨਾ](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
-ਸੰਖੇਪ ਵਿੱਚ, Phi-3 Mini ਭਾਸ਼ਾ ਮਾਡਲਿੰਗ ਵਿੱਚ ਇੱਕ ਵੱਡਾ ਕਦਮ ਹੈ, ਜੋ ਕੁਸ਼ਲਤਾ, context ਸੂਝਬੂਝ ਅਤੇ NVIDIA ਦੀ optimization ਸਮਰੱਥਾ ਨੂੰ ਮਿਲਾਉਂਦਾ ਹੈ। ਚਾਹੇ ਤੁਸੀਂ ਰੋਬੋਟ ਬਣਾ ਰਹੇ ਹੋ ਜਾਂ edge ਐਪਲੀਕੇਸ਼ਨਾਂ 'ਤੇ ਕੰਮ ਕਰ ਰਹੇ ਹੋ, Phi-3 Mini ਇੱਕ ਸ਼ਕਤੀਸ਼ਾਲੀ ਟੂਲ ਹੈ ਜਿਸਦਾ ਧਿਆਨ ਰੱਖਣਾ ਚਾਹੀਦਾ ਹੈ।
+ਸੰਖੇਪ ਵਿੱਚ, Phi-3 Mini ਭਾਸ਼ਾ ਮਾਡਲਿੰਗ ਵਿੱਚ ਇੱਕ ਵੱਡਾ ਕਦਮ ਹੈ, ਜੋ ਕੁਸ਼ਲਤਾ, ਸੰਦਰਭ ਜਾਗਰੂਕਤਾ ਅਤੇ NVIDIA ਦੀ ਅਪਟੀਮਾਈਜ਼ੇਸ਼ਨ ਸਮਰੱਥਾ ਨੂੰ ਜੋੜਦਾ ਹੈ। ਚਾਹੇ ਤੁਸੀਂ ਰੋਬੋਟ ਬਣਾਉਂਦੇ ਹੋ ਜਾਂ ਐਜ ਐਪਲੀਕੇਸ਼ਨ, Phi-3 Mini ਇੱਕ ਸ਼ਕਤੀਸ਼ਾਲੀ ਸੰਦ ਹੈ ਜਿਸ ਨਾਲ ਜਾਣੂ ਹੋਣਾ ਲਾਜ਼ਮੀ ਹੈ।
 
-**ਡਿਸਕਲੇਮਰ**:  
-ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਜਾਣੂ ਰਹੋ ਕਿ ਆਟੋਮੇਟਿਕ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਥਿਰਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਹੀ ਅਧਿਕਾਰਤ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਜ਼ਰੂਰੀ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਅਸੀਂ ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਨਾਲ ਹੋਣ ਵਾਲੀਆਂ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀਆਂ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆਵਾਂ ਲਈ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।
+**ਅਸਵੀਕਾਰੋਪਣ**:  
+ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਤਾ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

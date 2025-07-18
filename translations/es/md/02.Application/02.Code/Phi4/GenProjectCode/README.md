@@ -2,29 +2,29 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-07T10:58:38+00:00",
+  "translation_date": "2025-07-17T04:42:58+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "es"
 }
 -->
 ## **Usando Phi-4-mini-mm para generar código**
 
-Phi-4-mini continúa con las sólidas capacidades de codificación de la familia Phi. Puedes usar Prompt para hacer preguntas relacionadas con la programación. Por supuesto, después de añadir una fuerte capacidad de razonamiento, tiene habilidades de codificación aún más potentes, como generar proyectos según los requisitos. Por ejemplo, generar proyectos según las especificaciones, tales como:
+Phi-4-mini continúa con las potentes capacidades de codificación de la familia Phi. Puedes usar Prompt para hacer preguntas relacionadas con la programación. Por supuesto, tras añadir una fuerte capacidad de razonamiento, cuenta con habilidades de codificación aún más avanzadas, como generar proyectos según los requisitos. Por ejemplo, generar proyectos conforme a las especificaciones, tales como:
 
 ### **Requisito**
 
 Crear una aplicación de carrito de compras
 
 - Crear una API Rest con los siguientes métodos:
-    - Obtener una lista de cervezas usando desplazamiento de página y límite.
+    - Obtener una lista de cervezas usando paginación con offset y límite.
     - Obtener detalles de una cerveza por id.
     - Buscar cerveza por nombre, descripción, eslogan, maridajes de comida y precio.
 - Crear una lista de productos en la página principal.
     - Crear una barra de búsqueda para filtrar productos.
     - Navegar a la página de descripción cuando el usuario haga clic en un producto.
-- (Opcional) Selector para filtrar productos por precio.
+- (Opcional) Filtro deslizante para filtrar productos por precio.
 - Crear un carrito de compras.
-    - Agregar productos al carrito.
+    - Añadir productos al carrito.
     - Eliminar productos del carrito.
     - Calcular el precio total de los productos en el carrito.
 
@@ -139,5 +139,5 @@ print(response)
 
 ```
 
-**Descargo de responsabilidad**:  
+**Aviso legal**:  
 Este documento ha sido traducido utilizando el servicio de traducción automática [Co-op Translator](https://github.com/Azure/co-op-translator). Aunque nos esforzamos por la precisión, tenga en cuenta que las traducciones automáticas pueden contener errores o inexactitudes. El documento original en su idioma nativo debe considerarse la fuente autorizada. Para información crítica, se recomienda la traducción profesional realizada por humanos. No nos hacemos responsables de malentendidos o interpretaciones erróneas derivadas del uso de esta traducción.

@@ -2,44 +2,43 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:57:00+00:00",
+  "translation_date": "2025-07-16T20:52:20+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "ms"
 }
 -->
-## Inference with Kaito 
+## Inferens dengan Kaito
 
-[Kaito](https://github.com/Azure/kaito) هو أوبريتور يقوم بأتمتة نشر نماذج الاستدلال AI/ML في عنقود Kubernetes.
+[Kaito](https://github.com/Azure/kaito) adalah operator yang mengautomasikan penyebaran model inferens AI/ML dalam kluster Kubernetes.
 
-يمتاز Kaito بالميزات التالية مقارنة بمعظم طرق نشر النماذج التقليدية المبنية على بنى الأجهزة الافتراضية:
+Kaito mempunyai perbezaan utama berikut berbanding kebanyakan metodologi penyebaran model arus perdana yang dibina di atas infrastruktur mesin maya:
 
-- إدارة ملفات النماذج باستخدام صور الحاويات. يتم توفير خادم http لتنفيذ استدعاءات الاستدلال باستخدام مكتبة النموذج.
-- تجنب تعديل معلمات النشر لتناسب أجهزة GPU من خلال توفير إعدادات مسبقة.
-- توفير عقد GPU تلقائيًا بناءً على متطلبات النموذج.
-- استضافة صور النماذج الكبيرة في سجل الحاويات العام لمايكروسوفت (MCR) إذا سمحت الرخصة.
+- Mengurus fail model menggunakan imej kontena. Pelayan http disediakan untuk melakukan panggilan inferens menggunakan perpustakaan model.
+- Mengelakkan penyelarasan parameter penyebaran untuk menyesuaikan perkakasan GPU dengan menyediakan konfigurasi yang telah ditetapkan.
+- Menyediakan nod GPU secara automatik berdasarkan keperluan model.
+- Mengehos imej model besar dalam Microsoft Container Registry (MCR) awam jika lesen membenarkan.
 
-باستخدام Kaito، يتم تبسيط سير العمل الخاص بإضافة نماذج استدلال AI كبيرة في Kubernetes بشكل كبير.
+Dengan menggunakan Kaito, aliran kerja untuk memasukkan model inferens AI bersaiz besar dalam Kubernetes menjadi lebih mudah.
 
+## Seni Bina
 
-## Architecture
-
-يتبع Kaito نمط التصميم الكلاسيكي لتعريف الموارد المخصصة (CRD)/المتحكم في Kubernetes. يدير المستخدم موردًا مخصصًا `workspace` يصف متطلبات GPU ومواصفات الاستدلال. يقوم متحكم Kaito بأتمتة النشر عن طريق التوفيق بين مورد `workspace` المخصص.
+Kaito mengikuti corak reka bentuk klasik Kubernetes Custom Resource Definition (CRD)/controller. Pengguna mengurus sumber tersuai `workspace` yang menerangkan keperluan GPU dan spesifikasi inferens. Pengawal Kaito akan mengautomasikan penyebaran dengan menyelaraskan sumber tersuai `workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-الشكل أعلاه يعرض نظرة عامة على بنية Kaito. مكوناته الرئيسية تتضمن:
+Rajah di atas menunjukkan gambaran keseluruhan seni bina Kaito. Komponen utamanya terdiri daripada:
 
-- **Workspace controller**: يقوم بتوفيق مورد `workspace` المخصص، ينشئ موارد مخصصة `machine` (مشروحة أدناه) لتحفيز التوفير التلقائي للعقد، وينشئ عبء عمل الاستدلال (`deployment` أو `statefulset`) بناءً على إعدادات النموذج المسبقة.
-- **Node provisioner controller**: اسم المتحكم هو *gpu-provisioner* في [مخطط helm الخاص بـ gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). يستخدم CRD `machine` القادم من [Karpenter](https://sigs.k8s.io/karpenter) للتفاعل مع متحكم workspace. يتكامل مع واجهات برمجة تطبيقات Azure Kubernetes Service (AKS) لإضافة عقد GPU جديدة إلى عنقود AKS. 
-> ملاحظة: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) هو مكون مفتوح المصدر. يمكن استبداله بمتحكمات أخرى إذا دعمت واجهات برمجة تطبيقات [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Workspace controller**: Ia menyelaraskan sumber tersuai `workspace`, mencipta sumber tersuai `machine` (dijelaskan di bawah) untuk mencetuskan penyediaan nod secara automatik, dan mencipta beban kerja inferens (`deployment` atau `statefulset`) berdasarkan konfigurasi model yang telah ditetapkan.
+- **Node provisioner controller**: Nama pengawal ini ialah *gpu-provisioner* dalam [graf carta helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Ia menggunakan CRD `machine` yang berasal dari [Karpenter](https://sigs.k8s.io/karpenter) untuk berinteraksi dengan workspace controller. Ia berintegrasi dengan API Azure Kubernetes Service (AKS) untuk menambah nod GPU baru ke kluster AKS.
+> Nota: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) adalah komponen sumber terbuka. Ia boleh digantikan dengan pengawal lain jika mereka menyokong API [Karpenter-core](https://sigs.k8s.io/karpenter).
 
-## Installation
+## Pemasangan
 
-يرجى مراجعة إرشادات التثبيت [هنا](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Sila semak panduan pemasangan [di sini](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Quick start Inference Phi-3
-[رمز العينة Inference Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
+## Mula Cepat Inferens Phi-3  
+[Contoh Kod Inferens Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -84,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-يمكن تتبع حالة workspace بتشغيل الأمر التالي. عندما يصبح عمود WORKSPACEREADY على `True`، يكون النموذج قد تم نشره بنجاح.
+Status workspace boleh dipantau dengan menjalankan arahan berikut. Apabila lajur WORKSPACEREADY menjadi `True`, model telah berjaya disebarkan.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -92,7 +91,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini   Standard_NC6s_v3   True            True             True             10m
 ```
 
-بعد ذلك، يمكن العثور على IP العنقود الخاص بخدمة الاستدلال واستخدام بود `curl` مؤقت لاختبار نقطة نهاية الخدمة داخل العنقود.
+Seterusnya, anda boleh mencari IP kluster perkhidmatan inferens dan menggunakan pod `curl` sementara untuk menguji titik akhir perkhidmatan dalam kluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini
@@ -103,11 +102,11 @@ export CLUSTERIP=$(kubectl get svc workspace-phi-3-mini-adapter -o jsonpath="{.s
 $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X POST http://$CLUSTERIP/chat -H "accept: application/json" -H "Content-Type: application/json" -d "{\"prompt\":\"YOUR QUESTION HERE\"}"
 ```
 
-## Quick start Inference Phi-3 with adapters
+## Mula Cepat Inferens Phi-3 dengan penyesuai
 
-بعد تثبيت Kaito، يمكن تجربة الأوامر التالية لبدء خدمة استدلال.
+Selepas memasang Kaito, anda boleh mencuba arahan berikut untuk memulakan perkhidmatan inferens.
 
-[رمز العينة Inference Phi-3 مع Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
+[Contoh Kod Inferens Phi-3 dengan Penyesuai](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -156,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-يمكن تتبع حالة workspace بتشغيل الأمر التالي. عندما يصبح عمود WORKSPACEREADY على `True`، يكون النموذج قد تم نشره بنجاح.
+Status workspace boleh dipantau dengan menjalankan arahan berikut. Apabila lajur WORKSPACEREADY menjadi `True`, model telah berjaya disebarkan.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -164,7 +163,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-phi-3-mini-adapter   Standard_NC6s_v3   True            True             True             10m
 ```
 
-بعد ذلك، يمكن العثور على IP العنقود الخاص بخدمة الاستدلال واستخدام بود `curl` مؤقت لاختبار نقطة نهاية الخدمة داخل العنقود.
+Seterusnya, anda boleh mencari IP kluster perkhidmatan inferens dan menggunakan pod `curl` sementara untuk menguji titik akhir perkhidmatan dalam kluster.
 
 ```sh
 $ kubectl get svc workspace-phi-3-mini-adapter
@@ -176,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau tafsiran yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

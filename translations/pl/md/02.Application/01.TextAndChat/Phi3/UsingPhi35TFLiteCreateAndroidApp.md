@@ -2,36 +2,36 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:48:34+00:00",
+  "translation_date": "2025-07-17T02:52:22+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "pl"
 }
 -->
 # **Używanie Microsoft Phi-3.5 tflite do tworzenia aplikacji na Androida**
 
-To jest przykład aplikacji na Androida wykorzystujący modele Microsoft Phi-3.5 tflite.
+To jest przykładowa aplikacja na Androida wykorzystująca modele Microsoft Phi-3.5 tflite.
 
 ## **📚 Wiedza**
 
-Android LLM Inference API pozwala na uruchamianie dużych modeli językowych (LLM) całkowicie na urządzeniu z Androidem, co umożliwia wykonywanie szerokiego zakresu zadań, takich jak generowanie tekstu, wyszukiwanie informacji w naturalnej formie językowej czy streszczanie dokumentów. Zadanie to oferuje wbudowane wsparcie dla wielu modeli tekst-na-tekst, dzięki czemu możesz zastosować najnowsze generatywne modele AI działające lokalnie w swoich aplikacjach na Androida.
+Android LLM Inference API pozwala na uruchamianie dużych modeli językowych (LLM) całkowicie na urządzeniu w aplikacjach na Androida, co umożliwia wykonywanie szerokiego zakresu zadań, takich jak generowanie tekstu, wyszukiwanie informacji w formie naturalnego języka oraz streszczanie dokumentów. Zadanie to oferuje wbudowane wsparcie dla wielu modeli tekst-do-tekstu, dzięki czemu możesz zastosować najnowsze generatywne modele AI działające lokalnie w swoich aplikacjach na Androida.
 
-Google AI Edge Torch to biblioteka Pythona, która wspiera konwersję modeli PyTorch do formatu .tflite, które następnie można uruchomić za pomocą TensorFlow Lite i MediaPipe. Umożliwia to tworzenie aplikacji na Androida, iOS oraz IoT, które mogą działać całkowicie lokalnie. AI Edge Torch oferuje szerokie wsparcie CPU oraz początkowe wsparcie dla GPU i NPU. AI Edge Torch stara się ściśle integrować z PyTorch, opierając się na torch.export() i zapewniając dobrą obsługę operatorów Core ATen.
+Google AI Edge Torch to biblioteka Pythona, która wspiera konwersję modeli PyTorch do formatu .tflite, który następnie można uruchomić za pomocą TensorFlow Lite i MediaPipe. Umożliwia to tworzenie aplikacji na Androida, iOS oraz IoT, które mogą działać całkowicie lokalnie na urządzeniu. AI Edge Torch oferuje szerokie wsparcie dla CPU, a także początkowe wsparcie dla GPU i NPU. AI Edge Torch dąży do ścisłej integracji z PyTorch, opierając się na torch.export() i zapewniając dobre wsparcie dla operatorów Core ATen.
 
 ## **🪬 Wskazówki**
 
-### **🔥 Konwersja Microsoft Phi-3.5 do wsparcia tflite**
+### **🔥 Konwersja Microsoft Phi-3.5 do formatu tflite**
 
 0. Ten przykład jest przeznaczony dla Androida 14+
 
 1. Zainstaluj Python 3.10.12
 
-***Sugestia:*** użyj conda do instalacji środowiska Pythona
+***Sugestia:*** użyj conda do stworzenia środowiska Pythona
 
-2. Ubuntu 20.04 / 22.04 (proszę zwrócić uwagę na [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
+2. Ubuntu 20.04 / 22.04 (skup się na [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch))
 
-***Sugestia:*** Użyj Azure Linux VM lub zewnętrznego VM w chmurze do stworzenia środowiska
+***Sugestia:*** użyj Azure Linux VM lub innej chmury do stworzenia środowiska
 
-3. Przejdź do swojego bash w Linux, aby zainstalować bibliotekę Pythona
+3. Przejdź do swojego terminala Linux i zainstaluj bibliotekę Pythona
 
 ```bash
 
@@ -47,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Pobierz Microsoft-3.5-Instruct z Hugging face
+4. Pobierz Microsoft-3.5-Instruct z Hugging Face
 
 ```bash
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-uruchom ten kod w [twoim notebooku](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
+uruchom ten kod w [twoim notatniku](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
 
 ```python
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 Użycie adb push, aby przesłać model zadania na ścieżkę urządzenia Android**
+### **🔥 Wysyłanie modelu zadania na urządzenia Android za pomocą adb push**
 
 ```bash
 
@@ -108,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Uruchamianie kodu na Androidzie**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.pl.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.pl.png)
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy pamiętać, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym należy traktować jako źródło wiarygodne i autorytatywne. W przypadku informacji o krytycznym znaczeniu zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z użycia tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najbardziej precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji o kluczowym znaczeniu zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

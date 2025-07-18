@@ -2,82 +2,82 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "63e2d8f5b452d7842ae393f19ad812c5",
-  "translation_date": "2025-05-09T05:29:36+00:00",
+  "translation_date": "2025-07-16T17:31:33+00:00",
   "source_file": "code/09.UpdateSamples/Aug/vscode/phiext/README.md",
   "language_code": "ms"
 }
 -->
 # phiext README
 
-This is the README for your extension "phiext". After providing a brief description, we recommend including the following sections.
+Ini adalah README untuk sambungan anda "phiext". Selepas menulis penerangan ringkas, kami mengesyorkan untuk memasukkan bahagian-bahagian berikut.
 
-## Features
+## Ciri-ciri
 
-Describe specific features of your extension including screenshots showing your extension in action. Image paths are relative to this README file.
+Terangkan ciri-ciri khusus sambungan anda termasuk tangkapan skrin sambungan anda sedang berfungsi. Laluan imej adalah relatif kepada fail README ini.
 
-For example, if there is an image subfolder under your extension project workspace:
+Sebagai contoh jika terdapat subfolder imej di bawah ruang kerja projek sambungan anda:
 
 \!\[feature X\]\(images/feature-x.png\)
 
-> Tip: Many popular extensions use animations. This is a great way to showcase your extension! We suggest short, focused animations that are easy to follow.
+> Tip: Ramai sambungan popular menggunakan animasi. Ini adalah cara yang sangat baik untuk mempamerkan sambungan anda! Kami mengesyorkan animasi pendek dan fokus yang mudah diikuti.
 
-## Requirements
+## Keperluan
 
-If your extension has any requirements or dependencies, add a section explaining them and how to install and configure them.
+Jika anda mempunyai sebarang keperluan atau pergantungan, tambahkan bahagian yang menerangkan perkara tersebut serta cara memasang dan mengkonfigurasinya.
 
-## Extension Settings
+## Tetapan Sambungan
 
-Include this if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+Sertakan jika sambungan anda menambah sebarang tetapan VS Code melalui titik sambungan `contributes.configuration`.
 
-For example:
+Sebagai contoh:
 
-This extension contributes the following settings:
+Sambungan ini menyumbang tetapan berikut:
 
-* `myExtension.enable`: Enable or disable this extension.
-* `myExtension.thing`: Set to `blah` to perform a specific action.
+* `myExtension.enable`: Aktifkan/lumpuhkan sambungan ini.
+* `myExtension.thing`: Tetapkan kepada `blah` untuk melakukan sesuatu.
 
-## Known Issues
+## Isu Dikenali
 
-Highlighting known issues can help reduce users opening duplicate issues for your extension.
+Menyenaraikan isu yang diketahui boleh membantu mengurangkan pengguna membuka isu pendua terhadap sambungan anda.
 
-## Release Notes
+## Nota Keluaran
 
-Users appreciate release notes when you update your extension.
+Pengguna menghargai nota keluaran apabila anda mengemas kini sambungan anda.
 
 ### 1.0.0
 
-Initial release of ...
+Keluaran awal ...
 
 ### 1.0.1
 
-Fixed issue #.
+Isu # telah diperbaiki.
 
 ### 1.1.0
 
-Added features X, Y, and Z.
+Menambah ciri X, Y, dan Z.
 
 ---
 
-## Following extension guidelines
+## Mengikuti garis panduan sambungan
 
-Make sure you have read the extension guidelines and follow best practices when creating your extension.
+Pastikan anda telah membaca garis panduan sambungan dan mengikuti amalan terbaik untuk mencipta sambungan anda.
 
 * [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 
-## Working with Markdown
+## Bekerja dengan Markdown
 
-You can write your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+Anda boleh menulis README anda menggunakan Visual Studio Code. Berikut adalah beberapa pintasan papan kekunci editor yang berguna:
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+* Bahagikan editor (`Cmd+\` pada macOS atau `Ctrl+\` pada Windows dan Linux).
+* Togol pratonton (`Shift+Cmd+V` pada macOS atau `Shift+Ctrl+V` pada Windows dan Linux).
+* Tekan `Ctrl+Space` (Windows, Linux, macOS) untuk melihat senarai snippet Markdown.
 
-## For more information
+## Untuk maklumat lanjut
 
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Selamat mencuba!**
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

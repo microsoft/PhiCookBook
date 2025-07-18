@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:09:43+00:00",
+  "translation_date": "2025-07-17T05:17:19+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "sl"
 }
 -->
-## **Klicanje funkcij v Phi-4-mini**
+## **Klic funkcij v Phi-4-mini**
 
-Klicanje funkcij se je prvič pojavilo v družini Phi, zdaj pa ga lahko uporabljate tudi v Phi-4-mini.
+Klic funkcij se je prvič pojavil v družini Phi Family, zdaj pa ga lahko uporabljate tudi v Phi-4-mini.
 
-Ta primer prikazuje simulacijo rezultatov Premier lige. Cilj je, da Phi-4-mini zagotavlja informacije o igrah v realnem času. Spodaj je vzorčna koda:
+Ta primer prikazuje simulacijo rezultatov Premier League. Cilj je, da Phi-4-mini zagotavlja informacije o tekmah v realnem času. Spodaj je vzorčna koda: 
 
 
 
@@ -108,5 +108,5 @@ print(messages)
 
 ```
 
-**Izjava o omejitvi odgovornosti**:  
-Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatizirani prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Nismo odgovorni za morebitne nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+**Omejitev odgovornosti**:  
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

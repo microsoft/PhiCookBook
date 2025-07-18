@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b066fc29c1b2129df84e027cb75119ce",
-  "translation_date": "2025-05-07T14:19:50+00:00",
+  "translation_date": "2025-07-17T02:38:50+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/ORTWindowGPUGuideline.md",
   "language_code": "ru"
 }
 -->
 # **Руководство по OnnxRuntime GenAI для Windows GPU**
 
-Это руководство описывает шаги по настройке и использованию ONNX Runtime (ORT) с GPU на Windows. Оно поможет вам использовать ускорение на GPU для ваших моделей, улучшая производительность и эффективность.
+Это руководство описывает шаги по настройке и использованию ONNX Runtime (ORT) с GPU на Windows. Оно поможет вам использовать ускорение на GPU для ваших моделей, повышая производительность и эффективность.
 
 В документе приведены рекомендации по:
 
 - Настройке окружения: инструкции по установке необходимых зависимостей, таких как CUDA, cuDNN и ONNX Runtime.
 - Конфигурации: как настроить окружение и ONNX Runtime для эффективного использования ресурсов GPU.
-- Советы по оптимизации: рекомендации по тонкой настройке параметров GPU для максимальной производительности.
+- Советы по оптимизации: рекомендации по тонкой настройке параметров GPU для достижения максимальной производительности.
 
 ### **1. Python 3.10.x /3.11.8**
 
@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ```
 
-   ***Напоминание*** Если у вас установлен какой-либо Python ONNX пакет, пожалуйста, удалите его
+   ***Напоминание*** Если у вас установлены какие-либо библиотеки ONNX для Python, пожалуйста, удалите их
 
 ### **2. Установка CMake с помощью winget**
 
@@ -53,11 +53,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 3. **NVIDIA CUDNN 9.4**  [https://developer.nvidia.com/cudnn-downloads](https://developer.nvidia.com/cudnn-downloads)
 
-***Напоминание*** Используйте настройки по умолчанию во время установки
+***Напоминание*** Пожалуйста, используйте настройки по умолчанию при установке
 
 ### **5. Настройка окружения NVIDIA**
 
-Скопируйте файлы NVIDIA CUDNN 9.4 из папок lib, bin, include в соответствующие папки NVIDIA CUDA 12.4
+Скопируйте файлы из NVIDIA CUDNN 9.4 (lib, bin, include) в соответствующие папки NVIDIA CUDA 12.4
 
 - скопируйте файлы из *'C:\Program Files\NVIDIA\CUDNN\v9.4\bin\12.6'* в  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\bin'*
 
@@ -65,7 +65,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - скопируйте файлы из *'C:\Program Files\NVIDIA\CUDNN\v9.4\lib\12.6'* в  *'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\lib\x64'*
 
-### **6. Скачайте Phi-3.5-mini-instruct-onnx**
+### **6. Загрузка Phi-3.5-mini-instruct-onnx**
 
    ```bash
 
@@ -81,7 +81,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### **7. Запуск InferencePhi35Instruct.ipynb**
 
-   Откройте [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) и выполните его
+   Откройте [блокнот](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) и выполните
 
 ![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.ru.png)
 
@@ -111,9 +111,9 @@ CO_OP_TRANSLATOR_METADATA:
 
    2. Проверьте поддержку расширения Visual Studio
 
-   Проверьте папку C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras, чтобы убедиться, что там есть C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
+   Убедитесь, что в папке C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras присутствует каталог C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration. 
    
-   Если её нет, проверьте другие папки драйверов Cuda toolkit и скопируйте папку visual_studio_integration со всем содержимым в C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
+   Если его нет, проверьте другие папки с драйверами CUDA toolkit и скопируйте папку visual_studio_integration вместе с содержимым в C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.4\extras\visual_studio_integration
 
    - Если вы не планируете компилировать, этот шаг можно пропустить
 
@@ -131,7 +131,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.ru.png)
 
-   - Скомпилируйте с вашей Python средой
+   - Скомпилируйте с использованием вашей среды Python
 
    ```bash
 
@@ -147,4 +147,4 @@ CO_OP_TRANSLATOR_METADATA:
    ```
 
 **Отказ от ответственности**:  
-Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, имейте в виду, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для критически важной информации рекомендуется использовать профессиональный человеческий перевод. Мы не несем ответственности за любые недоразумения или неверные толкования, возникшие в результате использования данного перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

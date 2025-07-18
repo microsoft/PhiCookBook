@@ -2,35 +2,35 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-05-09T11:04:04+00:00",
+  "translation_date": "2025-07-16T20:23:48+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "sw"
 }
 -->
-# **Utambuzi wa Phi-3 katika iOS**
+# **Inference Phi-3 kwenye iOS**
 
-Phi-3-mini ni mfululizo mpya wa modeli kutoka Microsoft unaowezesha utumaji wa Large Language Models (LLMs) kwenye vifaa vya edge na vifaa vya IoT. Phi-3-mini inapatikana kwa iOS, Android, na uanzishaji wa Edge Device, ikiruhusu AI ya kizazi kuanzishwa katika mazingira ya BYOD. Mfano ufuatao unaonyesha jinsi ya kuanzisha Phi-3-mini kwenye iOS.
+Phi-3-mini ni mfululizo mpya wa mifano kutoka Microsoft inayowezesha kupeleka Large Language Models (LLMs) kwenye vifaa vya edge na vifaa vya IoT. Phi-3-mini inapatikana kwa ajili ya iOS, Android, na upelekaaji wa Vifaa vya Edge, ikiruhusu AI ya kizazi kuendeshwa katika mazingira ya BYOD. Mfano ufuatao unaonyesha jinsi ya kupeleka Phi-3-mini kwenye iOS.
 
 ## **1. Maandalizi**
 
 - **a.** macOS 14+
 - **b.** Xcode 15+
 - **c.** iOS SDK 17.x (iPhone 14 A16 au zaidi)
-- **d.** Sakinisha Python 3.10+ (Conda inashauriwa)
+- **d.** Sakinisha Python 3.10+ (Conda inapendekezwa)
 - **e.** Sakinisha maktaba ya Python: `python-flatbuffers`
 - **f.** Sakinisha CMake
 
-### Semantic Kernel na Utambuzi
+### Semantic Kernel na Inference
 
-Semantic Kernel ni fremu ya programu inayokuwezesha kuunda programu zinazofaa kwa Azure OpenAI Service, modeli za OpenAI, na hata modeli za ndani. Kupata huduma za ndani kupitia Semantic Kernel hurahisisha kuunganisha na seva yako ya modeli ya Phi-3-mini inayojimiliki.
+Semantic Kernel ni mfumo wa programu unaokuwezesha kuunda programu zinazolingana na Azure OpenAI Service, mifano ya OpenAI, na hata mifano ya ndani. Kupata huduma za ndani kupitia Semantic Kernel hurahisisha kuunganisha na seva yako ya mfano wa Phi-3-mini inayojitegemea.
 
-### Kupigia Simu Modeli Zilizopunguzwa Ukubwa kwa Ollama au LlamaEdge
+### Kupiga Simu kwa Mifano Iliyopunguzwa kwa Ollama au LlamaEdge
 
-Watumiaji wengi hupendelea kutumia modeli zilizopunguzwa ukubwa (quantized) kwa ajili ya kuendesha modeli ndani ya kifaa. [Ollama](https://ollama.com) na [LlamaEdge](https://llamaedge.com) huruhusu watumiaji kupiga simu modeli mbalimbali zilizo quantized:
+Watumiaji wengi wanapendelea kutumia mifano iliyopunguzwa kuendesha mifano kwa ndani. [Ollama](https://ollama.com) na [LlamaEdge](https://llamaedge.com) huruhusu watumiaji kupiga simu kwa mifano tofauti iliyopunguzwa:
 
 #### **Ollama**
 
-Unaweza kuendesha `ollama run phi3` moja kwa moja au kuipanga bila mtandao. Tengeneza Modelfile yenye njia ya faili yako ya `gguf`. Mfano wa msimbo wa kuendesha modeli ya Phi-3-mini iliyopunguzwa ukubwa:
+Unaweza kuendesha `ollama run phi3` moja kwa moja au kuipanga bila mtandao. Tengeneza Modelfile yenye njia ya faili yako ya `gguf`. Mfano wa msimbo wa kuendesha mfano wa Phi-3-mini uliopunguzwa:
 
 ```gguf
 FROM {Add your gguf file path}
@@ -41,7 +41,7 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-Ikiwa unataka kutumia `gguf` kwenye wingu na vifaa vya edge kwa wakati mmoja, LlamaEdge ni chaguo zuri.
+Ikiwa unataka kutumia `gguf` kwenye wingu na vifaa vya edge kwa wakati mmoja, LlamaEdge ni chaguo nzuri.
 
 ## **2. Kukusanya ONNX Runtime kwa iOS**
 
@@ -57,21 +57,21 @@ cd ../
 
 ```
 
-### **Tahadhari**
+### **Taarifa**
 
-- **a.** Kabla ya kukusanya, hakikisha Xcode imewekwa vizuri na iweke kama saraka ya mtengenezaji inayotumika kwenye terminal:
+- **a.** Kabla ya kukusanya, hakikisha Xcode imewekwa vizuri na iite kama saraka ya mtengenezaji inayotumika kwenye terminal:
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **b.** ONNX Runtime inahitaji kukusanywa kwa majukwaa tofauti. Kwa iOS, unaweza kukusanya kwa `arm64` or `x86_64`.
+- **b.** ONNX Runtime inahitaji kukusanywa kwa majukwaa tofauti. Kwa iOS, unaweza kukusanya kwa `arm64` au `x86_64`.
 
-- **c.** Inashauriwa kutumia toleo la hivi karibuni la iOS SDK kwa kukusanya. Hata hivyo, unaweza pia kutumia toleo la zamani ikiwa unahitaji ulinganifu na SDK zilizopita.
+- **c.** Inapendekezwa kutumia toleo jipya la iOS SDK kwa kukusanya. Hata hivyo, unaweza pia kutumia toleo la zamani ikiwa unahitaji ulinganifu na SDK za awali.
 
 ## **3. Kukusanya Generative AI na ONNX Runtime kwa iOS**
 
-> **Note:** Kwa kuwa Generative AI na ONNX Runtime bado iko katika awamu ya majaribio, tafadhali zingatia mabadiliko yanayoweza kutokea.
+> **Note:** Kwa sababu Generative AI na ONNX Runtime iko katika awamu ya majaribio, tafadhali fahamu mabadiliko yanayoweza kutokea.
 
 ```bash
 
@@ -99,37 +99,37 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ```
 
-## **4. Tengeneza App katika Xcode**
+## **4. Tengeneza programu ya App katika Xcode**
 
-Nilichagua Objective-C kama njia ya kuendeleza App, kwa sababu kutumia Generative AI na ONNX Runtime C++ API, Objective-C ina ulinganifu bora zaidi. Bila shaka, unaweza pia kutekeleza simu zinazohusiana kupitia daraja la Swift.
+Nilichagua Objective-C kama njia ya kuendeleza App, kwa sababu kutumia Generative AI na ONNX Runtime C++ API, Objective-C ina ulinganifu bora. Bila shaka, unaweza pia kukamilisha simu zinazohusiana kupitia daraja la Swift.
 
-![xcode](../../../../../translated_images/xcode.6c67033ca85b703e80cc51ecaa681fbcb6ac63cc0c256705ac97bc9ca039c235.sw.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.sw.png)
 
-## **5. Nakili modeli ya ONNX quantized INT4 kwenye mradi wa App**
+## **5. Nakili mfano wa ONNX uliopunguzwa wa INT4 kwenye mradi wa App**
 
-Tunahitaji kuingiza modeli ya quantization ya INT4 katika muundo wa ONNX, ambayo inahitaji kupakuliwa kwanza
+Tunahitaji kuingiza mfano wa quantization wa INT4 katika muundo wa ONNX, ambao unahitaji kupakuliwa kwanza
 
-![hf](../../../../../translated_images/hf.b99941885c6561bb3bcc0155d409e713db6d47b4252fb6991a08ffeefc0170ec.sw.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.sw.png)
 
-Baada ya kupakua, unahitaji kuiongeza kwenye saraka ya Resources ya mradi katika Xcode.
+Baada ya kupakua, unahitaji kuuweka kwenye saraka ya Resources ya mradi katika Xcode.
 
-![model](../../../../../translated_images/model.f0cb932ac2c7648211fbe5341ee1aa42b77cb7f956b6d9b084afb8fbf52927c7.sw.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.sw.png)
 
 ## **6. Kuongeza API ya C++ katika ViewControllers**
 
-> **Tahadhari:**
+> **Taarifa:**
 
-- **a.** Ongeza faili za kichwa za C++ zinazofaa kwenye mradi.
+- **a.** Ongeza faili za kichwa za C++ zinazohusiana kwenye mradi.
 
-  ![Header File](../../../../../translated_images/head.2504a93b0be166afde6729fb193ebd14c5acb00a0bb6de1939b8a175b1f630fb.sw.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.sw.png)
 
-- **b.** Jumuisha `onnxruntime-genai` dynamic library in Xcode.
+- **b.** Jumuisha maktaba ya `onnxruntime-genai` inayobadilika katika Xcode.
 
-  ![Library](../../../../../translated_images/lib.86e12a925eb07e4e71a1466fa4f3ad27097e08505d25d34e98c33005d69b6f23.sw.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.sw.png)
 
-- **c.** Use the C Samples code for testing. You can also add additional features like ChatUI for more functionality.
+- **c.** Tumia msimbo wa Sampuli za C kwa majaribio. Pia unaweza kuongeza vipengele zaidi kama ChatUI kwa utendaji zaidi.
 
-- **d.** Since you need to use C++ in your project, rename `ViewController.m` to `ViewController.mm` ili kuwezesha msaada wa Objective-C++.
+- **d.** Kwa kuwa unahitaji kutumia C++ katika mradi wako, badilisha jina la `ViewController.m` kuwa `ViewController.mm` ili kuwezesha msaada wa Objective-C++.
 
 ```objc
 
@@ -160,11 +160,11 @@ Baada ya kupakua, unahitaji kuiongeza kwenye saraka ya Resources ya mradi katika
 
 ## **7. Kuendesha Programu**
 
-Mara tu maandalizi yatakapokamilika, unaweza kuendesha programu kuona matokeo ya utambuzi wa modeli ya Phi-3-mini.
+Mara tu maandalizi yatakapokamilika, unaweza kuendesha programu kuona matokeo ya inference ya mfano wa Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.7ebd1fe614f809d776c46475275ec72e4ab898c4ec53ae62b29315c064ca6839.sw.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.sw.jpg)
 
-Kwa msimbo zaidi wa mfano na maelekezo ya kina, tembelea [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
+Kwa msimbo zaidi wa sampuli na maelekezo ya kina, tembelea [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
-**Kiasi cha Majadiliano**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kuhakikisha usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au kasoro. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya mtaalamu wa binadamu inapendekezwa. Hatubebei lawama kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

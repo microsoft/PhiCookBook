@@ -2,39 +2,39 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-05-09T05:13:59+00:00",
+  "translation_date": "2025-07-16T17:09:51+00:00",
   "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "ms"
 }
 -->
-## RAG with PromptFlow and AISearch
+## RAG dengan PromptFlow dan AISearch
 
-In this example, we will build a Retrieval Augmented Generation (RAG) application using Phi3 as SLM, AI Search as vectorDB, and Prompt Flow as a low-code orchestrator.
+Dalam contoh ini, kita akan melaksanakan aplikasi Retrieval Augmented Generation (RAG) dengan menggunakan Phi3 sebagai SLM, AI Search sebagai vectorDB dan Prompt Flow sebagai pengaturcara kod rendah.
 
-## Features
+## Ciri-ciri
 
-- Simple deployment with Docker.
-- Scalable architecture for managing AI workflows.
-- Low-code development using Prompt Flow.
+- Mudah untuk dikerahkan menggunakan Docker.
+- Seni bina yang boleh diskalakan untuk mengendalikan aliran kerja AI.
+- Pendekatan kod rendah menggunakan Prompt Flow
 
-## Prerequisites
+## Prasyarat
 
-Before you start, make sure you have the following:
+Sebelum anda bermula, pastikan anda memenuhi keperluan berikut:
 
-- Docker installed on your local machine.
-- An Azure account with permissions to create and manage container resources.
-- Azure AI Studio and Azure AI Search instances.
-- An embedding model to create your index (either an Azure OpenAI embedding or an OS model from the catalog).
-- Python 3.8 or later installed on your local machine.
-- An Azure Container Registry (or any registry you prefer).
+- Docker dipasang pada mesin tempatan anda.
+- Akaun Azure dengan kebenaran untuk mencipta dan mengurus sumber kontena.
+- Instans Azure AI Studio dan Azure AI Search
+- Model embedding untuk mencipta indeks anda (boleh menggunakan embedding Azure OpenAI atau model OS dari katalog)
+- Python 3.8 atau lebih baru dipasang pada mesin tempatan anda.
+- Azure Container Registry (atau mana-mana registry pilihan anda)
 
-## Installation
+## Pemasangan
 
-1. Create a new flow in your Azure AI Studio Project using the flow.yaml file.
-2. Deploy a Phi3 Model from your Azure AI model catalog and link it to your project. [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
-3. Create the vector index on Azure AI Search using any document you choose. [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
-4. Deploy the flow on a managed endpoint and use it in the prompt-flow-frontend.py file. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
-5. Clone the repository:
+1. Cipta aliran baru pada Projek Azure AI Studio anda menggunakan fail flow.yaml.
+2. Sebarkan Model Phi3 dari katalog model Azure AI anda dan buat sambungan ke projek anda. [Deploy Phi-3 as a Model as a Service](https://learn.microsoft.com/azure/machine-learning/how-to-deploy-models-phi-3?view=azureml-api-2&tabs=phi-3-mini)
+3. Cipta indeks vektor pada Azure AI Search menggunakan mana-mana dokumen pilihan anda [Create a vector index on Azure AI Search](https://learn.microsoft.com/azure/search/search-how-to-create-search-index?tabs=portal)
+4. Sebarkan aliran pada endpoint yang diurus dan gunakan ia dalam fail prompt-flow-frontend.py. [Deploy a flow on an online endpoint](https://learn.microsoft.com/azure/ai-studio/how-to/flow-deploy)
+5. Klon repositori:
 
     ```sh
     git clone [[https://github.com/yourusername/prompt-flow-frontend.git](https://github.com/microsoft/Phi-3CookBook.git)](https://github.com/microsoft/Phi-3CookBook.git)
@@ -42,13 +42,13 @@ Before you start, make sure you have the following:
     cd code/07.Lab/RAG with PromptFlow and AISearch
     ```
 
-6. Build the Docker image:
+6. Bina imej Docker:
 
     ```sh
     docker build -t prompt-flow-frontend.py .
     ```
 
-7. Push the Docker image to Azure Container Registry:
+7. Tolak imej Docker ke Azure Container Registry:
 
     ```sh
     az acr login --name yourregistry
@@ -58,21 +58,21 @@ Before you start, make sure you have the following:
     docker push yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-## Usage
+## Penggunaan
 
-1. Run the Docker container:
+1. Jalankan kontena Docker:
 
     ```sh
     docker run -p 8501:8501 yourregistry.azurecr.io/prompt-flow-frontend.py:latest
     ```
 
-2. Open the application in your browser at `http://localhost:8501`.
+2. Akses aplikasi di pelayar anda di `http://localhost:8501`.
 
-## Contact
+## Hubungi
 
 Valentina Alto - [Linkedin](https://www.linkedin.com/in/valentina-alto-6a0590148/)
 
-Full Article: [RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
+Artikel Penuh: [RAG with Phi-3-Medium as a Model as a Service from Azure Model Catalog](https://medium.com/@valentinaalto/rag-with-phi-3-medium-as-a-model-as-a-service-from-azure-model-catalog-62e1411948f3)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

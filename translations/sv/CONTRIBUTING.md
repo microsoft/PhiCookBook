@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:27:40+00:00",
+  "translation_date": "2025-07-16T14:41:55+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "sv"
 }
@@ -18,27 +18,27 @@ När du skickar in en pull request kommer en CLA-bot automatiskt att avgöra om 
 Det här projektet har antagit [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).  
 För mer information, läs [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) eller kontakta [opencode@microsoft.com](mailto:opencode@microsoft.com) vid ytterligare frågor eller kommentarer.
 
-## Varningar för att skapa ärenden
+## Varningar för att skapa issues
 
-Vänligen öppna inte GitHub-ärenden för allmänna supportfrågor eftersom GitHub-listan ska användas för funktionsförfrågningar och bugg-rapporter. På så sätt kan vi enklare spåra faktiska problem eller buggar i koden och hålla den allmänna diskussionen separat från själva koden.
+Vänligen öppna inte GitHub-issues för allmänna supportfrågor eftersom GitHub-listan ska användas för funktionsförfrågningar och bugg-rapporter. På så sätt kan vi enklare spåra faktiska problem eller buggar i koden och hålla den allmänna diskussionen separat från själva koden.
 
 ## Hur man bidrar
 
 ### Riktlinjer för Pull Requests
 
-När du skickar in en pull request (PR) till Phi-3 CookBook-repositoriet, vänligen följ dessa riktlinjer:
+När du skickar in en pull request (PR) till Phi-3 CookBook-repositoriet, vänligen använd följande riktlinjer:
 
 - **Forka Repositoriet**: Forka alltid repositoriet till ditt eget konto innan du gör dina ändringar.
 
 - **Separata pull requests (PR)**:
   - Skicka varje typ av ändring i en egen pull request. Till exempel bör buggfixar och dokumentationsuppdateringar skickas i separata PR:er.
-  - Stavfel och mindre dokumentationsuppdateringar kan kombineras i en och samma PR där det är lämpligt.
+  - Stavningskorrigeringar och mindre dokumentationsuppdateringar kan kombineras i en enda PR där det är lämpligt.
 
-- **Hantera merge-konflikter**: Om din pull request visar merge-konflikter, uppdatera din lokala `main`-gren så att den speglar huvudrepositoriet innan du gör dina ändringar.
+- **Hantera merge-konflikter**: Om din pull request visar merge-konflikter, uppdatera din lokala `main`-gren för att spegla huvudrepositoriet innan du gör dina ändringar.
 
 - **Översättningsbidrag**: När du skickar in en översättnings-PR, se till att översättningsmappen innehåller översättningar för alla filer i originalmappen.
 
-### Riktlinjer för skrivande
+### Skrivriktlinjer
 
 För att säkerställa enhetlighet i alla dokument, vänligen använd följande riktlinjer:
 
@@ -52,7 +52,7 @@ För att säkerställa enhetlighet i alla dokument, vänligen använd följande 
 
 - **Beskrivande bildnamn**: Namnge bilder beskrivande med engelska tecken, siffror och bindestreck. Exempel: `example-image.jpg`.
 
-## GitHub-arbetsflöden
+## GitHub Workflows
 
 När du skickar in en pull request kommer följande arbetsflöden att köras för att validera ändringarna. Följ instruktionerna nedan för att säkerställa att din pull request klarar arbetsflödeskontrollerna:
 
@@ -63,7 +63,7 @@ När du skickar in en pull request kommer följande arbetsflöden att köras fö
 
 Detta arbetsflöde säkerställer att alla relativa sökvägar i dina filer är korrekta.
 
-1. För att säkerställa att dina länkar fungerar korrekt, gör följande i VS Code:
+1. För att säkerställa att dina länkar fungerar korrekt, utför följande uppgifter med VS Code:
     - Hovra över en länk i dina filer.
     - Tryck på **Ctrl + Klick** för att navigera till länken.
     - Om du klickar på en länk och den inte fungerar lokalt, kommer det att trigga arbetsflödet och inte fungera på GitHub.
@@ -97,8 +97,8 @@ Detta arbetsflöde säkerställer att alla webbadresser i dina filer fungerar oc
 1. För att verifiera att dina URL:er fungerar korrekt, gör följande:
     - Kontrollera statusen för URL:erna i dina filer.
 
-2. För att åtgärda trasiga URL:er, gör följande:
-    - Öppna filen som innehåller den trasiga URL:en.
+2. För att åtgärda brutna URL:er, gör följande:
+    - Öppna filen som innehåller den brutna URL:en.
     - Uppdatera URL:en till rätt adress.
 
 När du har åtgärdat URL:erna, spara och pusha dina ändringar.
@@ -112,4 +112,4 @@ När du har åtgärdat URL:erna, spara och pusha dina ändringar.
 > - **Tillfälliga serverproblem:** Tillfälliga driftstopp eller underhåll kan göra en URL otillgänglig under valideringen.
 
 **Ansvarsfriskrivning**:  
-Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår vid användning av denna översättning.
+Detta dokument har översatts med hjälp av AI-översättningstjänsten [Co-op Translator](https://github.com/Azure/co-op-translator). Även om vi strävar efter noggrannhet, vänligen observera att automatiska översättningar kan innehålla fel eller brister. Det ursprungliga dokumentet på dess modersmål bör betraktas som den auktoritativa källan. För kritisk information rekommenderas professionell mänsklig översättning. Vi ansvarar inte för några missförstånd eller feltolkningar som uppstår till följd av användningen av denna översättning.

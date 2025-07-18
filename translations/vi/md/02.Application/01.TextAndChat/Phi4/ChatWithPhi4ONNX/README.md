@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:02:47+00:00",
+  "translation_date": "2025-07-17T03:18:23+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "vi"
 }
@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ***ONNX*** là một định dạng mở được xây dựng để biểu diễn các mô hình học máy. ONNX định nghĩa một tập hợp các toán tử chung - những thành phần cơ bản của các mô hình học máy và học sâu - cùng với một định dạng tệp chung giúp các nhà phát triển AI có thể sử dụng mô hình với nhiều framework, công cụ, runtime và trình biên dịch khác nhau.
 
-Chúng tôi hy vọng sẽ triển khai các mô hình AI sinh tạo trên các thiết bị biên và sử dụng chúng trong các môi trường có công suất tính toán hạn chế hoặc ngoại tuyến. Hiện tại, chúng ta có thể đạt được mục tiêu này bằng cách chuyển đổi mô hình theo cách lượng tử hóa. Chúng ta có thể chuyển đổi mô hình đã lượng tử sang định dạng GGUF hoặc ONNX.
+Chúng tôi hy vọng sẽ triển khai các mô hình AI sinh tạo trên các thiết bị biên và sử dụng chúng trong môi trường có hạn chế về sức mạnh tính toán hoặc khi không có kết nối mạng. Giờ đây, chúng ta có thể đạt được mục tiêu này bằng cách chuyển đổi mô hình theo cách lượng tử hóa. Chúng ta có thể chuyển đổi mô hình đã lượng tử hóa sang định dạng GGUF hoặc ONNX.
 
 Microsoft Olive có thể giúp bạn chuyển đổi SLM sang định dạng ONNX đã lượng tử hóa. Phương pháp để thực hiện chuyển đổi mô hình rất đơn giản
 
@@ -26,7 +26,7 @@ pip install transformers
 
 ```
 
-**Chuyển đổi hỗ trợ ONNX cho CPU**
+**Chuyển đổi hỗ trợ ONNX trên CPU**
 
 ```bash
 
@@ -158,5 +158,5 @@ while not generator.is_done():
 
 ```
 
-**Tuyên bố miễn trừ trách nhiệm**:  
-Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc sự không chính xác. Tài liệu gốc bằng ngôn ngữ gốc nên được coi là nguồn tham khảo chính xác nhất. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu nhầm hay diễn giải sai nào phát sinh từ việc sử dụng bản dịch này.
+**Tuyên bố từ chối trách nhiệm**:  
+Tài liệu này đã được dịch bằng dịch vụ dịch thuật AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mặc dù chúng tôi cố gắng đảm bảo độ chính xác, xin lưu ý rằng các bản dịch tự động có thể chứa lỗi hoặc không chính xác. Tài liệu gốc bằng ngôn ngữ gốc của nó nên được coi là nguồn chính xác và đáng tin cậy. Đối với các thông tin quan trọng, nên sử dụng dịch vụ dịch thuật chuyên nghiệp do con người thực hiện. Chúng tôi không chịu trách nhiệm về bất kỳ sự hiểu lầm hoặc giải thích sai nào phát sinh từ việc sử dụng bản dịch này.

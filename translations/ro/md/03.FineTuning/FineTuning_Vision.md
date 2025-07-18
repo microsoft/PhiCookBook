@@ -2,15 +2,15 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a5a67308d3b2c5af97baf01067c6f007",
-  "translation_date": "2025-05-09T22:07:33+00:00",
+  "translation_date": "2025-07-17T08:54:47+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Vision.md",
   "language_code": "ro"
 }
 -->
-# Phi-3.5-vision finetuning recipe
+# Rețetă de finetuning Phi-3.5-vision
 
 Aceasta este suportul oficial pentru finetuning-ul Phi-3.5-vision folosind bibliotecile huggingface.  
-Te rugăm să `cd` în directorul de cod [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) înainte de a rula comenzile de mai jos.
+Vă rugăm să faceți `cd` în directorul de cod [vision_finetuning](../../../../code/03.Finetuning/vision_finetuning) înainte de a rula comenzile următoare.
 
 ## Instalare
 
@@ -35,7 +35,7 @@ pip install bitsandbytes==0.43.1
 
 ## Pornire rapidă
 
-Punem la dispoziție două scripturi exemplu pentru finetuning, unul pentru DocVQA și unul pentru clasificarea meme-urilor cu conținut ofensator.
+Oferim două scripturi exemplu pentru finetuning, unul pentru DocVQA și unul pentru clasificarea meme-urilor urâte.
 
 Hardware minim testat: 4x RTX8000 (48GB RAM per GPU)
 
@@ -44,7 +44,7 @@ Hardware minim testat: 4x RTX8000 (48GB RAM per GPU)
 torchrun --nproc_per_node=4 finetune_hf_trainer_docvqa.py
 ```
 
-Phi-3.5-vision suportă acum oficial input-uri cu mai multe imagini. Iată un exemplu pentru finetuning pe NLVR2
+Phi-3.5-vision suportă acum oficial inputuri cu mai multe imagini. Iată un exemplu pentru finetuning NLVR2
 
 ```bash
 torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
@@ -53,12 +53,12 @@ torchrun --nproc_per_node=8 finetune_hf_trainer_nlvr2.py
 ## Ghid de utilizare
 
 În funcție de hardware, utilizatorii pot alege diferite strategii de finetuning. Suportăm  
-full-finetuning (cu Deepspeed Zero-2) cu parametri de viziune opțional înghețați și LoRA (inclusiv QLoRA pe 4 biți).  
-În general, recomandăm utilizarea full finetuning cu flash attention și bf16 ori de câte ori este posibil.
+full-finetuning (cu Deepspeed Zero-2) cu parametri de viziune opțional înghețați, și LoRA (inclusiv QLoRA pe 4 biți).  
+În general, recomandăm folosirea full finetuning cu flash attention și bf16 ori de câte ori este posibil.
 
-### ghid pentru convertirea setului tău de date personalizat în formatul necesar
+### Ghid pentru convertirea dataset-ului personal în formatul cerut
 
-Folosim un set minim de date pentru clasificarea videoclipurilor (un subset din UCF-101) ca exemplu complet pentru a demonstra cum să convertești setul tău de date personalizat în formatul necesar și să faci finetuning pe Phi-3.5-vision.
+Folosim un dataset minim de clasificare video (un subset din UCF-101) ca exemplu complet pentru a demonstra cum să convertiți dataset-ul personal în formatul cerut și să faceți finetuning pe Phi-3.5-vision.
 
 ```bash
 # convert data
@@ -114,49 +114,49 @@ Datele convertite vor arăta astfel:
 34 directories, 3 files
 ```
 
-Pentru adnotarea în format `jsonl`, fiecare linie trebuie să fie un dicționar de forma:
+Pentru adnotarea `jsonl`, fiecare linie trebuie să fie un dicționar de forma:
 
 ```json
 {"id": "val-0000000300", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g21_c04.0.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.1.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.2.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.3.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.4.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.5.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.6.jpg", "val/BabyCrawling/v_BabyCrawling_g21_c04.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 {"id": "val-0000000301", "source": "ucf101", "conversations": [{"images": ["val/BabyCrawling/v_BabyCrawling_g09_c06.0.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.1.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.2.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.3.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.4.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.5.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.6.jpg", "val/BabyCrawling/v_BabyCrawling_g09_c06.7.jpg"], "user": "Classify the video into one of the following classes: ApplyEyeMakeup, ApplyLipstick, Archery, BabyCrawling, BalanceBeam, BandMarching, BaseballPitch, Basketball, BasketballDunk, BenchPress.", "assistant": "BabyCrawling"}]}
 ```
 
-Reține că `conversations` este o listă, astfel că pot fi suportate conversații multi-turn dacă există astfel de date disponibile.
+Rețineți că `conversations` este o listă, deci conversațiile cu mai multe runde pot fi suportate dacă astfel de date sunt disponibile.
 
-## Solicitarea cotei Azure GPU
+## Solicitarea cotei GPU Azure
 
 ### Cerințe preliminare
 
-Un cont Azure cu rol de Contributor (sau un alt rol care include acces de Contributor).
+Un cont Azure cu rolul Contributor (sau alt rol care include acces Contributor).
 
-Dacă nu ai un cont Azure, creează un [cont gratuit înainte de a începe](https://azure.microsoft.com).
+Dacă nu aveți un cont Azure, creați un [cont gratuit înainte de a începe](https://azure.microsoft.com).
 
 ### Solicitarea unei creșteri a cotei
 
-Poți trimite o cerere pentru creșterea cotei direct din My quotas. Urmează pașii de mai jos pentru a solicita o creștere a unei cote. Pentru acest exemplu, poți selecta orice cotă ajustabilă din abonamentul tău.
+Puteți trimite o cerere de creștere a cotei direct din My quotas. Urmați pașii de mai jos pentru a solicita o creștere a unei cote. Pentru acest exemplu, puteți selecta orice cotă ajustabilă din abonamentul dvs.
 
-Conectează-te la [portalul Azure](https://portal.azure.com).
+Conectați-vă la [portalul Azure](https://portal.azure.com).
 
-Introdu „quotas” în caseta de căutare, apoi selectează Quotas.  
+Introduceți „quotas” în caseta de căutare, apoi selectați Quotas.  
 ![Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/quotas-portal.png)
 
-Pe pagina Overview, selectează un furnizor, cum ar fi Compute sau AML.
+Pe pagina Overview, selectați un furnizor, cum ar fi Compute sau AML.
 
-**Note** Pentru toți furnizorii în afară de Compute, vei vedea o coloană Request increase în locul coloanei Adjustable descrisă mai jos. Acolo poți solicita o creștere pentru o anumită cotă sau poți crea o cerere de suport pentru creștere.
+**Note** Pentru toți furnizorii în afară de Compute, veți vedea o coloană Request increase în loc de coloana Adjustable descrisă mai jos. Acolo puteți solicita o creștere pentru o cotă specifică sau puteți crea o cerere de suport pentru creștere.
 
-Pe pagina My quotas, sub Quota name, selectează cota pe care dorești să o mărești. Asigură-te că coloana Adjustable afișează Yes pentru această cotă.
+Pe pagina My quotas, sub Quota name, selectați cota pe care doriți să o măriți. Asigurați-vă că în coloana Adjustable apare Yes pentru această cotă.
 
-În partea de sus a paginii, selectează New Quota Request, apoi alege Enter a new limit.
+În partea de sus a paginii, selectați New Quota Request, apoi selectați Enter a new limit.
 
 ![Increase Quota](https://learn.microsoft.com/azure/quotas/media/quickstart-increase-quota-portal/enter-new-quota-limit.png)
 
-În panoul New Quota Request, introdu o valoare numerică pentru noul tău limită de cotă, apoi selectează Submit.
+În panoul New Quota Request, introduceți o valoare numerică pentru noul dvs. limită de cotă, apoi selectați Submit.
 
-Cererea ta va fi analizată și vei fi notificat dacă poate fi aprobată. De obicei, acest lucru se întâmplă în câteva minute.
+Cererea dvs. va fi revizuită și veți fi notificat dacă poate fi aprobată. De obicei, acest lucru se întâmplă în câteva minute.
 
-Dacă cererea nu este aprobată, vei vedea un link pentru a crea o cerere de suport. Folosind acest link, un inginer de suport te va ajuta cu solicitarea ta de creștere.
+Dacă cererea nu este aprobată, veți vedea un link pentru a crea o cerere de suport. Folosind acest link, un inginer de suport vă va ajuta cu solicitarea de creștere.
 
-## Sugestii pentru SKU-urile mașinilor GPU Azure Compute
+## Sugestii pentru SKU-uri mașini GPU Azure Compute
 
 [ND A100 v4-series](https://learn.microsoft.com/azure/virtual-machines/nda100-v4-series)
 
@@ -166,9 +166,9 @@ Dacă cererea nu este aprobată, vei vedea un link pentru a crea o cerere de sup
 
 Iată câteva exemple:
 
-### Dacă ai GPU-uri A100 sau H100
+### Dacă aveți GPU-uri A100 sau H100
 
-Full finetuning oferă de obicei cele mai bune performanțe. Poți folosi comanda următoare pentru a face finetuning pe Phi-3-V pentru clasificarea meme-urilor ofensatoare.
+Full finetuning oferă de obicei cea mai bună performanță. Puteți folosi comanda următoare pentru a face finetuning pe Phi-3-V pentru clasificarea meme-urilor urâte.
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -180,10 +180,10 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --bf16
 ```
 
-### Dacă ai Standard_ND40rs_v2 cu 8x V100-32GB GPU-uri
+### Dacă aveți Standard_ND40rs_v2 cu 8x V100-32GB GPU-uri
 
-Este încă posibil să faci full finetuning pe Phi-3-V pentru clasificarea meme-urilor ofensatoare. Totuși, așteaptă-te la un debit mult mai mic comparativ cu GPU-urile A100 sau H100 din cauza lipsei suportului pentru flash attention.  
-De asemenea, acuratețea ar putea fi afectată din cauza lipsei suportului pentru bf16 (în schimb se folosește antrenament cu precizie mixtă fp16).
+Este totuși posibil să faceți full finetuning pe Phi-3-V pentru clasificarea meme-urilor urâte. Totuși, așteptați-vă la un throughput mult mai mic comparativ cu GPU-urile A100 sau H100 din cauza lipsei suportului pentru flash attention.  
+Acuratețea poate fi de asemenea afectată din cauza lipsei suportului bf16 (se folosește antrenament cu precizie mixtă fp16 în schimb).
 
 ```bash
 torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
@@ -193,8 +193,9 @@ torchrun --nproc_per_node=8 --nnodes=<num_nodes> \
   --batch_size 64
 ```
 
-### Dacă nu ai acces la GPU-uri din centre de date  
-LoRA ar putea fi singura ta opțiune. Poți folosi comanda următoare pentru a face finetuning pe Phi-3-V pentru clasificarea meme-urilor ofensatoare.
+### Dacă nu aveți acces la GPU-uri din centre de date
+
+LoRA ar putea fi singura opțiune. Puteți folosi comanda următoare pentru a face finetuning pe Phi-3-V pentru clasificarea meme-urilor urâte.
 
 ```bash
 torchrun --nproc_per_node=2 \
@@ -215,7 +216,8 @@ torchrun --nproc_per_node=2 \
   --use_qlora
 ```
 
-## Hiperparametri sugerați și acuratețea așteptată
+## Hiperparametri sugerați și acuratețe așteptată
+
 ### NLVR2
 
 ```bash
@@ -229,14 +231,14 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Metoda de antrenament | Model de viziune înghețat | tipul datelor | rang LoRA | alpha LoRA | dimensiune batch | rată de învățare | epoci | Acuratețe
+Metoda de antrenament | Model de viziune înghețat | tip date | rang LoRA | alpha LoRA | dimensiune batch | rată învățare | epoci | Acuratețe
 --- | --- | --- | --- | --- | --- | --- | --- | --- |
-full-finetuning |  |bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
-full-finetuning | ✔ |bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
-Rezultatele LoRA vor fi disponibile în curând |  |  |  |  |  |  |  |  |
+full-finetuning |  | bf16 | - | - | 64 | 1e-5 | 3 | 89.40 |
+full-finetuning | ✔ | bf16 | - | - | 64 | 2e-5 | 2 | 89.20 |
+Rezultate LoRA în curând |  |  |  |  |  |  |  |  |
 
 ### NOTE  
-Rezultatele pentru DocVQA și Hateful memes de mai jos sunt bazate pe versiunea anterioară (Phi-3-vision).  
+Rezultatele de mai jos pentru DocVQA și Hateful memes sunt bazate pe versiunea anterioară (Phi-3-vision).  
 Noile rezultate cu Phi-3.5-vision vor fi actualizate în curând.
 
 ### DocVQA (NOTE: Phi-3-vision)
@@ -253,12 +255,12 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Metoda de antrenament | tipul datelor | rang LoRA | alpha LoRA | dimensiune batch | rată de învățare | epoci | ANLS
+Metoda de antrenament | tip date | rang LoRA | alpha LoRA | dimensiune batch | rată învățare | epoci | ANLS
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | bf16 | - | - | 64 | 5e-6 | 2 | 83.65 |
 full-finetuning | fp16 | - | - | 64 | 5e-6 | 2 | 82.60 |
-model imagine înghețat| bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
-model imagine înghețat| fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
+model imagine înghețat | bf16 | - | - | 64 | 1e-4 | 2 | 79.19 |
+model imagine înghețat | fp16 | - | - | 64 | 1e-4 | 2 | 78.74 |
 LoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 82.46 |
 LoRA | fp16 | 32 | 16 | 64 | 2e-4 | 2 | 82.34 |
 QLoRA | bf16 | 32 | 16 | 64 | 2e-4 | 2 | 81.85 |
@@ -277,12 +279,12 @@ torchrun --nproc_per_node=4 \
 
 ```
 
-Metoda de antrenament | tipul datelor | rang LoRA | alpha LoRA | dimensiune batch | rată de învățare | epoci | Acuratețe
+Metoda de antrenament | tip date | rang LoRA | alpha LoRA | dimensiune batch | rată învățare | epoci | Acuratețe
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | bf16 | - | - | 64 | 5e-5 | 2 | 86.4 |
 full-finetuning | fp16 | - | - | 64 | 5e-5 | 2 | 85.4 |
-model imagine înghețat| bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
-model imagine înghețat| fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
+model imagine înghețat | bf16 | - | - | 64 | 1e-4 | 3 | 79.4 |
+model imagine înghețat | fp16 | - | - | 64 | 1e-4 | 3 | 78.6 |
 LoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 86.6 |
 LoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 85.2 |
 QLoRA | bf16 | 128 | 256 | 64 | 2e-4 | 2 | 84.0 |
@@ -292,11 +294,12 @@ QLoRA | fp16 | 128 | 256 | 64 | 2e-4 | 2 | 83.8 |
 
 Noile rezultate de benchmark cu Phi-3.5-vision vor fi actualizate în curând.
 
-Benchmark-ul de viteză este realizat pe setul de date DocVQA. Lungimea medie a secvenței în acest set este de 2443.23 tokeni (folosind `num_crops=16` pentru modelul de imagine).
+Benchmark-ul de viteză este realizat pe dataset-ul DocVQA. Lungimea medie a secvenței în acest dataset  
+este de 2443.23 tokeni (folosind `num_crops=16` pentru modelul de imagini).
 
 ### 8x A100-80GB (Ampere)
 
-Metoda de antrenament | \# noduri | GPU-uri | flash attention | Dimensiune batch efectivă | Debit (img/s) | Accelerare | Memorie GPU maximă (GB)
+Metoda de antrenament | \# noduri | GPU-uri | flash attention | Dimensiune batch efectivă | Throughput (img/s) | Accelerare | Memorie GPU maximă (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | 1 | 8 |  | 64 | 5.041 |  1x | ~42
 full-finetuning | 1 | 8 | ✔ | 64 | 8.657 | 1.72x | ~36
@@ -311,7 +314,7 @@ QLoRA | 1 | 8 | ✔ | 64 | 10.545 | 2.09x | ~10
 
 ### 8x V100-32GB (Volta)
 
-Metoda de antrenament | \# noduri | GPU-uri | flash attention | Dimensiune batch efectivă | Debit (img/s) | Accelerare | Memorie GPU maximă (GB)
+Metoda de antrenament | \# noduri | GPU-uri | flash attention | Dimensiune batch efectivă | Throughput (img/s) | Accelerare | Memorie GPU maximă (GB)
 --- | --- | --- | --- | --- | --- | --- | --- |
 full-finetuning | 1 | 8 | | 64 | 2.462 |  1x | ~32
 full-finetuning | 2 | 16 |  | 64 | 4.182 | 1.70x | ~32
@@ -324,5 +327,5 @@ LoRA | 1 | 8 |  | 64 | 2.807 | 1.14x | ~30
 - Nu se poate rula flash attention cu fp16 (bf16 este întotdeauna recomandat când este disponibil, iar toate GPU-urile care suportă flash attention suportă și bf16).  
 - Nu se suportă încă salvarea checkpoint-urilor intermediare și reluarea antrenamentului.
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere automată AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original, în limba sa nativă, trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm responsabilitatea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

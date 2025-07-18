@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a54cd3d65b6963e4e8ce21e143c3ab04",
-  "translation_date": "2025-05-09T12:38:17+00:00",
+  "translation_date": "2025-07-16T21:18:24+00:00",
   "source_file": "md/01.Introduction/03/Remote_Interence.md",
   "language_code": "it"
 }
@@ -11,30 +11,30 @@ CO_OP_TRANSLATOR_METADATA:
 
 Dopo che gli adapter sono stati addestrati nell'ambiente remoto, utilizza una semplice applicazione Gradio per interagire con il modello.
 
-![Fine-tune completo](../../../../../translated_images/log-finetuning-res.4b3ee593f24d3096742d09375adade22b217738cab93bc1139f224e5888a1cbf.it.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.it.png)
 
 ### Provisionare le risorse Azure  
-Devi configurare le risorse Azure per l'inferenza remota eseguendo il comando `AI Toolkit: Provision Azure Container Apps for inference` dalla command palette. Durante questa procedura ti verrà chiesto di selezionare la tua sottoscrizione Azure e il gruppo di risorse.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.b294f3ae5764ab45b83246d464ad5329b0de20cf380f75a699b4cc6b5495ca11.it.png)
+Devi configurare le risorse Azure per l'inferenza remota eseguendo il comando `AI Toolkit: Provision Azure Container Apps for inference` dalla command palette. Durante questa configurazione, ti verrà chiesto di selezionare la tua sottoscrizione Azure e il gruppo di risorse.  
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.it.png)
    
-Di default, la sottoscrizione e il gruppo di risorse per l'inferenza dovrebbero corrispondere a quelli usati per il fine-tuning. L'inferenza utilizzerà lo stesso Azure Container App Environment e accederà al modello e all'adapter del modello archiviati in Azure Files, generati durante la fase di fine-tuning.
+Di default, la sottoscrizione e il gruppo di risorse per l'inferenza dovrebbero corrispondere a quelli usati per il fine-tuning. L'inferenza utilizzerà lo stesso Azure Container App Environment e accederà al modello e all'adapter del modello memorizzati in Azure Files, generati durante la fase di fine-tuning.
 
 ## Uso di AI Toolkit
 
 ### Deployment per l'inferenza  
-Se desideri modificare il codice di inferenza o ricaricare il modello di inferenza, esegui il comando `AI Toolkit: Deploy for inference`. Questo sincronizzerà il codice più recente con ACA e riavvierà la replica.
+Se desideri modificare il codice di inferenza o ricaricare il modello di inferenza, esegui il comando `AI Toolkit: Deploy for inference`. Questo sincronizzerà il tuo codice più recente con ACA e riavvierà la replica.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.cb6508c973d6257e649aa4f262d3c170a374da3e9810a4f3d9e03935408a592b.it.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.it.png)
 
-Al termine del deployment, il modello sarà pronto per essere valutato tramite questo endpoint.
+Al termine con successo del deployment, il modello sarà pronto per la valutazione tramite questo endpoint.
 
 ### Accesso all'API di inferenza
 
-Puoi accedere all'API di inferenza cliccando sul pulsante "*Go to Inference Endpoint*" mostrato nella notifica di VSCode. In alternativa, l'endpoint web API si trova sotto `ACA_APP_ENDPOINT` in `./infra/inference.config.json` e nel pannello di output.
+Puoi accedere all'API di inferenza cliccando sul pulsante "*Go to Inference Endpoint*" mostrato nella notifica di VSCode. In alternativa, l'endpoint web API si trova sotto `ACA_APP_ENDPOINT` in `./infra/inference.config.json` e nel pannello output.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.00f4267b7aa6a18cfaaec83a7831b5d09311d5d96a70bb4c9d651ea4a41a8af7.it.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.it.png)
 
-> **Nota:** L'endpoint di inferenza potrebbe impiegare qualche minuto prima di essere completamente operativo.
+> **Note:** L'endpoint di inferenza potrebbe impiegare qualche minuto prima di essere completamente operativo.
 
 ## Componenti di inferenza inclusi nel template
 
@@ -43,28 +43,28 @@ Puoi accedere all'API di inferenza cliccando sul pulsante "*Go to Inference Endp
 | `infra` | Contiene tutte le configurazioni necessarie per le operazioni remote. |
 | `infra/provision/inference.parameters.json` | Contiene i parametri per i template bicep, usati per il provisioning delle risorse Azure per l'inferenza. |
 | `infra/provision/inference.bicep` | Contiene i template per il provisioning delle risorse Azure per l'inferenza. |
-| `infra/inference.config.json` | Il file di configurazione, generato dal comando `AI Toolkit: Provision Azure Container Apps for inference`. Viene usato come input per altri comandi della command palette remota. |
+| `infra/inference.config.json` | Il file di configurazione, generato dal comando `AI Toolkit: Provision Azure Container Apps for inference`. Viene usato come input per altri comandi remoti nella command palette. |
 
-### Usare AI Toolkit per configurare il provisioning delle risorse Azure  
+### Uso di AI Toolkit per configurare il provisioning delle risorse Azure  
 Configura [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-Provisiona Azure Container Apps per l'inferenza modificando il file ` command.
+Esegui il comando `Provision Azure Container Apps for inference`.
 
-You can find configuration parameters in `./infra/provision/inference.parameters.json` file. Here are the details:
-| Parameter | Description |
-| --------- |------------ |
-| `defaultCommands` | This is the commands to initiate a web API. |
-| `maximumInstanceCount` | This parameter sets the maximum capacity of GPU instances. |
-| `location` | This is the location where Azure resources are provisioned. The default value is the same as the chosen resource group's location. |
-| `storageAccountName`, `fileShareName` `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`,  `acaLogAnalyticsName` | These parameters are used to name the Azure resources for provision. By default, they will be same to the fine-tuning resource name. You can input a new, unused resource name to create your own custom-named resources, or you can input the name of an already existing Azure resource if you'd prefer to use that. For details, refer to the section [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
+Puoi trovare i parametri di configurazione nel file `./infra/provision/inference.parameters.json`. Ecco i dettagli:  
+| Parametro | Descrizione |
+| --------- | ----------- |
+| `defaultCommands` | Comandi per avviare una web API. |
+| `maximumInstanceCount` | Imposta la capacità massima di istanze GPU. |
+| `location` | Località in cui vengono provisionate le risorse Azure. Il valore di default è lo stesso della località del gruppo di risorse scelto. |
+| `storageAccountName`, `fileShareName`, `acaEnvironmentName`, `acaEnvironmentStorageName`, `acaAppName`, `acaLogAnalyticsName` | Questi parametri servono per nominare le risorse Azure da provisionare. Di default, corrisponderanno ai nomi delle risorse usate per il fine-tuning. Puoi inserire un nuovo nome non utilizzato per creare risorse personalizzate, oppure il nome di una risorsa Azure già esistente se preferisci usarla. Per maggiori dettagli, consulta la sezione [Using existing Azure Resources](../../../../../md/01.Introduction/03). |
 
-### Using Existing Azure Resources
+### Uso di risorse Azure esistenti
 
-By default, the inference provision use the same Azure Container App Environment, Storage Account, Azure File Share, and Azure Log Analytics that were used for fine-tuning. A separate Azure Container App is created solely for the inference API. 
+Di default, il provisioning per l'inferenza utilizza lo stesso Azure Container App Environment, Storage Account, Azure File Share e Azure Log Analytics usati per il fine-tuning. Viene creato un Azure Container App separato esclusivamente per l'API di inferenza.
 
-If you have customized the Azure resources during the fine-tuning step or want to use your own existing Azure resources for inference, specify their names in the `./infra/inference.parameters.json. Poi esegui il comando `AI Toolkit: Provision Azure Container Apps for inference` dalla command palette. Questo aggiorna le risorse specificate e crea quelle mancanti.
+Se hai personalizzato le risorse Azure durante il fine-tuning o vuoi usare risorse Azure esistenti per l'inferenza, specifica i loro nomi nel file `./infra/inference.parameters.json`. Poi esegui il comando `AI Toolkit: Provision Azure Container Apps for inference` dalla command palette. Questo aggiornerà le risorse specificate e ne creerà eventuali mancanti.
 
-Ad esempio, se hai già un ambiente Azure container esistente, il tuo file `./infra/finetuning.parameters.json` dovrebbe essere simile a questo:
+Ad esempio, se hai un ambiente container Azure esistente, il tuo file `./infra/finetuning.parameters.json` dovrebbe essere simile a questo:
 
 ```json
 {
@@ -84,9 +84,9 @@ Ad esempio, se hai già un ambiente Azure container esistente, il tuo file `./in
 ```
 
 ### Provision manuale  
-Se preferisci configurare manualmente le risorse Azure, puoi usare i file bicep forniti nella cartella `./infra/provision` e il file `` folders. If you have already set up and configured all the Azure resources without using the AI Toolkit command palette, you can simply enter the resource names in the `inference.config.json`.
+Se preferisci configurare manualmente le risorse Azure, puoi usare i file bicep forniti nelle cartelle `./infra/provision`. Se hai già configurato tutte le risorse Azure senza usare la command palette di AI Toolkit, puoi semplicemente inserire i nomi delle risorse nel file `inference.config.json`.
 
-Per esempio:
+Ad esempio:
 
 ```json
 {
@@ -100,4 +100,4 @@ Per esempio:
 ```
 
 **Disclaimer**:  
-Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non siamo responsabili per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.
+Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

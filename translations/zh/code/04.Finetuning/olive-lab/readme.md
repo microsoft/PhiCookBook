@@ -2,12 +2,12 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "6bbe47de3b974df7eea29dfeccf6032b",
-  "translation_date": "2025-05-07T15:13:56+00:00",
+  "translation_date": "2025-07-16T16:09:18+00:00",
   "source_file": "code/04.Finetuning/olive-lab/readme.md",
   "language_code": "zh"
 }
 -->
-# 实验：优化 AI 模型以实现设备端推理
+# 实验室：优化 AI 模型以实现设备端推理
 
 ## 介绍
 
@@ -15,7 +15,7 @@ CO_OP_TRANSLATOR_METADATA:
 > 本实验需要配备 **Nvidia A10 或 A100 GPU**，并安装相应的驱动程序和 CUDA 工具包（版本 12 及以上）。
 
 > [!NOTE]  
-> 本实验时长约 **35 分钟**，将带你动手体验使用 OLIVE 优化模型以实现设备端推理的核心概念。
+> 这是一个 **35 分钟** 的实验，将带你动手了解使用 OLIVE 优化模型以实现设备端推理的核心概念。
 
 ## 学习目标
 
@@ -23,47 +23,46 @@ CO_OP_TRANSLATOR_METADATA:
 
 - 使用 AWQ 量化方法对 AI 模型进行量化。
 - 针对特定任务微调 AI 模型。
-- 生成 LoRA 适配器（微调模型），以便在 ONNX Runtime 上高效实现设备端推理。
+- 生成 LoRA 适配器（微调模型），以便在 ONNX Runtime 上高效进行设备端推理。
 
 ### 什么是 Olive
 
-Olive（*O*NNX *live*）是一个模型优化工具包，配备命令行界面（CLI），可帮助你为 ONNX runtime +++https://onnxruntime.ai+++ 部署高质量、高性能的模型。
+Olive（*O*NNX *live*）是一个模型优化工具包，配有命令行界面，能够帮助你为 ONNX runtime +++https://onnxruntime.ai+++ 提供高质量和高性能的模型。
 
-![Olive 流程图](../../../../../translated_images/olive-flow.c4f76d9142c579b2462b631b8aa862093b595bb89064fa33e6d4fa90f937f52d.zh.png)
+![Olive 流程](../../../../../translated_images/olive-flow.c4f76d9142c579b2462b631b8aa862093b595bb89064fa33e6d4fa90f937f52d.zh.png)
 
-Olive 的输入通常是 PyTorch 或 Hugging Face 模型，输出则是一个优化后的 ONNX 模型，在运行 ONNX runtime 的设备（部署目标）上执行。Olive 会针对由 Qualcomm、AMD、Nvidia 或 Intel 等硬件厂商提供的 AI 加速器（NPU、GPU、CPU）对模型进行优化。
+Olive 的输入通常是 PyTorch 或 Hugging Face 模型，输出是一个经过优化的 ONNX 模型，该模型将在运行 ONNX runtime 的设备（部署目标）上执行。Olive 会针对部署目标的 AI 加速器（NPU、GPU、CPU）进行优化，这些硬件由 Qualcomm、AMD、Nvidia 或 Intel 等厂商提供。
 
-Olive 执行一个*工作流*，即一系列有序的模型优化任务，称为*passes*（过程）。示例过程包括：模型压缩、图捕获、量化、图优化。每个过程都有一组参数，可调节以达到最佳指标，如准确率和延迟，这些指标由相应的评估器评估。Olive 采用搜索算法逐个或组合自动调优各个过程的参数。
+Olive 执行一个*工作流*，即一系列有序的模型优化任务，称为*passes*——示例包括：模型压缩、图捕获、量化、图优化。每个 pass 都有一组可调参数，用于实现最佳指标，比如准确率和延迟，这些指标由相应的评估器进行评估。Olive 采用搜索策略，使用搜索算法逐个或批量自动调优每个 pass。
 
 #### Olive 的优势
 
-- **减少手动尝试各种图优化、压缩和量化技术的挫败感和时间消耗**。定义你的质量和性能约束，Olive 会自动帮你找到最佳模型。
+- **减少手动试错的挫败感和时间**，无需反复尝试不同的图优化、压缩和量化技术。定义你的质量和性能约束，Olive 会自动帮你找到最佳模型。
 - **内置 40 多个模型优化组件**，涵盖量化、压缩、图优化和微调的前沿技术。
-- **易用的 CLI**，支持常见的模型优化任务，如 olive quantize、olive auto-opt、olive finetune。
+- **易用的命令行工具**，支持常见的模型优化任务。例如，olive quantize、olive auto-opt、olive finetune。
 - 内置模型打包和部署功能。
-- 支持生成用于**多 LoRA 服务**的模型。
+- 支持生成用于 **多 LoRA 服务** 的模型。
 - 使用 YAML/JSON 构建工作流，协调模型优化和部署任务。
 - 集成 **Hugging Face** 和 **Azure AI**。
-- 内置**缓存**机制，帮助**节省成本**。
+- 内置 **缓存** 机制，帮助 **节省成本**。
 
-## 实验说明
-
+## 实验步骤
 > [!NOTE]  
-> 请确保你已按照实验 1 配置好 Azure AI Hub 和项目，并设置好 A100 计算资源。
+> 请确保你已按照实验 1 的要求配置好 Azure AI Hub 和项目，并设置好 A100 计算资源。
 
 ### 步骤 0：连接到你的 Azure AI 计算资源
 
-你将通过 **VS Code** 的远程功能连接到 Azure AI 计算资源。
+你将使用 **VS Code** 的远程功能连接到 Azure AI 计算资源。
 
-1. 打开你的 **VS Code** 桌面应用。  
-1. 使用 **Shift+Ctrl+P** 打开命令面板。  
-1. 在命令面板中搜索 **AzureML - remote: Connect to compute instance in New Window**。  
-1. 按屏幕提示操作连接计算资源，选择你在实验 1 中设置的 Azure 订阅、资源组、项目和计算名称。  
-1. 连接成功后，你将在 Visual Code 左下角看到你的 Azure ML 计算节点 `><Azure ML: Compute Name`。
+1. 打开你的 **VS Code** 桌面应用程序。  
+2. 使用 **Shift+Ctrl+P** 打开 **命令面板**。  
+3. 在命令面板中搜索 **AzureML - remote: Connect to compute instance in New Window**。  
+4. 按照屏幕提示连接计算资源，这包括选择你的 Azure 订阅、资源组、项目和你在实验 1 中设置的计算名称。  
+5. 连接成功后，VS Code 左下角会显示 `><Azure ML: Compute Name`。
 
 ### 步骤 1：克隆此仓库
 
-在 VS Code 中，按 **Ctrl+J** 打开新的终端，克隆此仓库：
+在 VS Code 中，按 **Ctrl+J** 打开新终端，克隆此仓库：
 
 终端中应显示提示：
 
@@ -79,7 +78,7 @@ git clone https://github.com/microsoft/phi-3cookbook.git
 
 ### 步骤 2：在 VS Code 中打开文件夹
 
-在终端执行以下命令打开对应文件夹，会弹出新窗口：
+在终端执行以下命令打开相关文件夹，会弹出新窗口：
 
 ```bash
 code phi-3cookbook/code/04.Finetuning/Olive-lab
@@ -89,7 +88,7 @@ code phi-3cookbook/code/04.Finetuning/Olive-lab
 
 ### 步骤 3：安装依赖
 
-在 Azure AI 计算实例的 VS Code 终端（快捷键：**Ctrl+J**）中执行以下命令安装依赖：
+在 VS Code 中的 Azure AI 计算实例终端（提示：**Ctrl+J**）执行以下命令安装依赖：
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -102,18 +101,18 @@ az extension add -n ml
 > [!NOTE]  
 > 安装所有依赖大约需要 5 分钟。
 
-本实验需要你从 Azure AI 模型目录下载和上传模型。为访问模型目录，你需要登录 Azure：
+本实验中你将下载并上传模型到 Azure AI 模型目录。为访问模型目录，你需要登录 Azure：
 
 ```bash
 az login
 ```
 
 > [!NOTE]  
-> 登录时系统会要求选择订阅，请确保选择本实验提供的订阅。
+> 登录时会要求选择订阅，请确保选择本实验提供的订阅。
 
 ### 步骤 4：执行 Olive 命令
 
-在 Azure AI 计算实例的 VS Code 终端（快捷键：**Ctrl+J**）中，确保激活了 `olive-ai` conda 环境：
+在 VS Code 中的 Azure AI 计算实例终端（提示：**Ctrl+J**）确保激活了 `olive-ai` conda 环境：
 
 ```bash
 conda activate olive-ai
@@ -121,13 +120,13 @@ conda activate olive-ai
 
 接下来，在命令行执行以下 Olive 命令。
 
-1. **查看数据：** 本例中，你将微调 Phi-3.5-Mini 模型，使其专注于回答旅游相关问题。以下代码展示了数据集的前几条记录，格式为 JSON 行：
+1. **查看数据：** 本例中，你将微调 Phi-3.5-Mini 模型，使其专注于回答旅游相关问题。以下代码展示了数据集的前几条记录，数据格式为 JSON 行：
 
     ```bash
     head data/data_sample_travel.jsonl
     ```
 
-1. **量化模型：** 在训练模型之前，先使用以下命令进行量化，采用一种称为 Active Aware Quantization（AWQ） +++https://arxiv.org/abs/2306.00978+++ 的技术。AWQ 通过考虑推理时产生的激活值来量化模型权重。这意味着量化过程会考虑激活值的实际数据分布，相较传统权重量化方法能更好地保持模型准确率。
+2. **量化模型：** 在训练模型之前，先用以下命令进行量化，采用一种称为 Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++ 的技术。AWQ 通过考虑推理时产生的激活值来量化模型权重，这意味着量化过程考虑了激活的实际数据分布，相比传统的权重量化方法能更好地保持模型准确度。
 
     ```bash
     olive quantize \
@@ -138,11 +137,11 @@ conda activate olive-ai
        --log_level 1
     ```
 
-    AWQ 量化大约需要 **8 分钟**，可将模型大小从约 7.5GB 缩减至约 2.5GB。
+    AWQ 量化大约需要 **8 分钟**，能将模型大小从约 7.5GB 减少到约 2.5GB。
 
-    本实验演示如何从 Hugging Face 导入模型（例如：`microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
+    本实验演示如何从 Hugging Face 输入模型（例如：`microsoft/Phi-3.5-mini-instruct`）。Olive 也支持通过将 `model_name_or_path` 参数更新为 Azure AI 资产 ID（例如：`azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`）来输入 Azure AI 目录中的模型。
 
-1. **Train the model:** Next, the `olive finetune` 命令用于微调量化后的模型）。先量化再微调的方式优于先微调后量化，因为微调过程能恢复部分量化带来的性能损失。
+3. **训练模型：** 接着，使用 `olive finetune` 命令微调量化后的模型。先量化再微调比先微调后量化能获得更好的准确度，因为微调过程能恢复部分量化带来的损失。
 
     ```bash
     olive finetune \
@@ -158,7 +157,7 @@ conda activate olive-ai
 
     微调（100 步）大约需要 **6 分钟**。
 
-1. **优化模型：** 训练完成后，使用 Olive 的 `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` 参数优化模型，但本实验中我们使用 CPU。
+4. **优化模型：** 模型训练完成后，使用 Olive 的 `auto-opt` 命令优化模型，该命令会捕获 ONNX 图并自动执行多项优化，以通过压缩和融合提升 CPU 上的模型性能。需要注意的是，你也可以通过更新 `--device` 和 `--provider` 参数来针对 NPU 或 GPU 进行优化，但本实验中我们使用 CPU。
 
     ```bash
     olive auto-opt \
@@ -219,10 +218,12 @@ python app.py
 
 ### 步骤 6：上传模型到 Azure AI
 
-将模型上传到 Azure AI 模型仓库，可以方便开发团队共享模型，并管理模型版本。上传模型时运行以下命令：
+将模型上传到 Azure AI 模型仓库，可以让团队成员共享模型，并支持模型版本控制。上传模型请运行以下命令：
 
 > [!NOTE]  
-> 请将 `{}` 中的 `resourceGroup` 和 Azure AI 项目名称替换为你的实际值，然后执行命令。
+> 请将 `{}` 占位符替换为你的资源组名称和 Azure AI 项目名称。
+
+若要查找资源组 `"resourceGroup"` 和 Azure AI 项目名称，请运行以下命令：
 
 ```
 az ml workspace show
@@ -241,7 +242,7 @@ az ml model create \
     --workspace-name {PROJECT_NAME}
 ```
 
-上传成功后，你可以在 https://ml.azure.com/model/list 查看并部署你的模型。
+然后你可以在 https://ml.azure.com/model/list 查看已上传的模型并进行部署。
 
 **免责声明**：  
-本文件由 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻译。尽管我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议采用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
+本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始语言的文档应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。

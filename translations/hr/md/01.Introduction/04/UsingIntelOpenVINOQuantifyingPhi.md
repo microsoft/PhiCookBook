@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T14:04:31+00:00",
+  "translation_date": "2025-07-16T22:04:37+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "hr"
 }
 -->
 # **Kvantizacija Phi-3.5 pomoću Intel OpenVINO**
 
-Intel je najtradicionalniji proizvođač CPU-a s mnogim korisnicima. S porastom strojnog učenja i dubokog učenja, Intel se također uključio u natjecanje za AI ubrzanje. Za izvođenje modela, Intel ne koristi samo GPU i CPU, već i NPU.
+Intel je najtradicionalniji proizvođač CPU-a s velikim brojem korisnika. S razvojem strojnog učenja i dubokog učenja, Intel se također uključio u natjecanje za AI akceleraciju. Za izvođenje modela, Intel ne koristi samo GPU i CPU, već i NPU.
 
-Nadamo se da ćemo implementirati Phi-3.x obitelj na krajnjoj strani, s ciljem da postane najvažniji dio AI PC-a i Copilot PC-a. Učitavanje modela na krajnjoj strani ovisi o suradnji različitih proizvođača hardvera. Ovo poglavlje se uglavnom fokusira na primjenu Intel OpenVINO kao kvantitativnog modela.
+Nadamo se da ćemo obitelj Phi-3.x implementirati na krajnjoj strani, s ciljem da postane najvažniji dio AI PC-a i Copilot PC-a. Učitavanje modela na krajnjoj strani ovisi o suradnji različitih proizvođača hardvera. Ovo poglavlje uglavnom se fokusira na primjenu Intel OpenVINO kao kvantitativnog modela.
 
 ## **Što je OpenVINO**
 
-OpenVINO je open-source alat za optimizaciju i implementaciju dubokih modela učenja od oblaka do kraja mreže. Ubrzava izvođenje dubokog učenja u različitim slučajevima upotrebe, kao što su generativni AI, video, audio i jezik, s modelima iz popularnih okvira poput PyTorch, TensorFlow, ONNX i drugih. Pretvarajte i optimizirajte modele te ih implementirajte na različitim Intel® hardverskim platformama i okruženjima, lokalno ili na uređaju, u pregledniku ili u oblaku.
+OpenVINO je open-source alatni paket za optimizaciju i implementaciju modela dubokog učenja od oblaka do edge uređaja. Ubrzava izvođenje dubokog učenja u različitim scenarijima, poput generativne AI, videozapisa, zvuka i jezika, koristeći modele iz popularnih okvira kao što su PyTorch, TensorFlow, ONNX i drugi. Pretvarajte i optimizirajte modele te ih implementirajte na kombinaciji Intel® hardvera i okruženja, lokalno ili na uređaju, u pregledniku ili u oblaku.
 
-Sada s OpenVINO možete brzo kvantizirati GenAI model na Intel hardveru i ubrzati referencu modela.
+Sada, uz OpenVINO, možete brzo kvantizirati GenAI model na Intel hardveru i ubrzati referentni model.
 
 OpenVINO sada podržava kvantizaciju Phi-3.5-Vision i Phi-3.5 Instruct.
 
 ### **Postavljanje okruženja**
 
-Molimo osigurajte da su instalirane sljedeće ovisnosti okruženja, ovo je requirement.txt
+Molimo provjerite jesu li instalirane sljedeće ovisnosti okruženja, ovo je requirement.txt
 
 ```txt
 
@@ -92,7 +92,7 @@ if not out_dir.exists():
 
 ### **🤖 Primjeri za Phi-3.5 s Intel OpenVINO**
 
-| Laboratoriji    | Uvod | Idi |
+| Laboratoriji    | Opis | Idi |
 | -------- | ------- |  ------- |
 | 🚀 Lab-Uvod u Phi-3.5 Instruct  | Naučite kako koristiti Phi-3.5 Instruct na vašem AI PC-u    |  [Idi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
 | 🚀 Lab-Uvod u Phi-3.5 Vision (slika) | Naučite kako koristiti Phi-3.5 Vision za analizu slika na vašem AI PC-u      |  [Idi](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
@@ -105,4 +105,4 @@ if not out_dir.exists():
 2. Intel OpenVINO GitHub repozitorij [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prijevod [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba se smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili kriva tumačenja koja proizlaze iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

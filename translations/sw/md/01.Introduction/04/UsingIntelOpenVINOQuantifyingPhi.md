@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T14:00:57+00:00",
+  "translation_date": "2025-07-16T22:03:31+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "sw"
 }
 -->
 # **Kukokotoa Phi-3.5 kwa kutumia Intel OpenVINO**
 
-Intel ni mtengenezaji wa CPU wa jadi sana na ana watumiaji wengi. Pamoja na kuibuka kwa ujifunzaji wa mashine na ujifunzaji wa kina, Intel pia imejiunga na ushindani wa kuharakisha AI. Kwa utambuzi wa modeli, Intel haitumii tu GPU na CPU, bali pia hutumia NPU.
+Intel ni mtengenezaji wa CPU wa jadi zaidi na wenye watumiaji wengi. Pamoja na kuibuka kwa ujifunzaji wa mashine na ujifunzaji wa kina, Intel pia imejiunga na ushindani wa kuharakisha AI. Kwa ajili ya utambuzi wa modeli, Intel haitumii tu GPU na CPU, bali pia hutumia NPU.
 
 Tunatarajia kuweka Familia ya Phi-3.x upande wa mwisho, tukitumaini kuwa sehemu muhimu zaidi ya AI PC na Copilot PC. Kupakia modeli upande wa mwisho kunategemea ushirikiano wa watengenezaji mbalimbali wa vifaa. Sura hii inazingatia zaidi matumizi ya Intel OpenVINO kama modeli ya kiasi.
 
-## **OpenVINO ni nini**
+## **OpenVINO ni Nini**
 
-OpenVINO ni zana ya wazi ya chanzo kwa ajili ya kuboresha na kupeleka modeli za ujifunzaji wa kina kutoka wingu hadi mwisho wa mtandao. Inaharakisha utambuzi wa ujifunzaji wa kina kwa matumizi mbalimbali, kama AI ya kizazi, video, sauti, na lugha kwa kutumia modeli kutoka kwa mifumo maarufu kama PyTorch, TensorFlow, ONNX, na zaidi. Badilisha na boresha modeli, na ziweke kwenye mchanganyiko wa vifaa na mazingira ya Intel®, iwe sehemu ya mtandao, kifaa, kivinjari au wingu.
+OpenVINO ni kifaa cha chanzo huria kwa ajili ya kuboresha na kuweka modeli za ujifunzaji wa kina kutoka wingu hadi mwisho wa mtandao. Kina harakisha utambuzi wa ujifunzaji wa kina katika matumizi mbalimbali, kama AI ya kizazi, video, sauti, na lugha kwa kutumia modeli kutoka kwa mifumo maarufu kama PyTorch, TensorFlow, ONNX, na mingine. Badilisha na boresha modeli, na ziweke kwenye mchanganyiko wa vifaa na mazingira ya Intel®, ndani ya ofisi au kifaa, kwenye kivinjari au wingu.
 
-Sasa kwa OpenVINO, unaweza kwa haraka kukokotoa modeli ya GenAI kwenye vifaa vya Intel na kuharakisha mfano wa modeli.
+Sasa kwa OpenVINO, unaweza haraka kukokotoa modeli ya GenAI kwenye vifaa vya Intel na kuharakisha marejeleo ya modeli.
 
-Sasa OpenVINO inaunga mkono mabadiliko ya kiasi ya Phi-3.5-Vision na Phi-3.5 Instruct
+Sasa OpenVINO inaunga mkono mabadiliko ya kukokotoa ya Phi-3.5-Vision na Phi-3.5 Instruct
 
 ### **Kuweka Mazingira**
 
-Tafadhali hakikisha utegemezi wa mazingira umezinduliwa, hii ni requirement.txt
+Tafadhali hakikisha utegemezi wa mazingira yafuatayo yamewekwa, hii ni requirement.txt
 
 ```txt
 
@@ -102,7 +102,7 @@ if not out_dir.exists():
 
 1. Jifunze zaidi kuhusu Intel OpenVINO [https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html)
 
-2. Hifadhidata ya Intel OpenVINO GitHub [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
+2. Intel OpenVINO GitHub Repo [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
-**Kumbusho**:  
-Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inashauriwa. Hatuwajibiki kwa kutoelewana au tafsiri zisizo sahihi zinazotokana na matumizi ya tafsiri hii.
+**Kiarifu cha Kutotegemea**:  
+Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.

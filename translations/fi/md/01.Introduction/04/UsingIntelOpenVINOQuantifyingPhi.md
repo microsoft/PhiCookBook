@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T13:58:09+00:00",
+  "translation_date": "2025-07-16T22:02:28+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "fi"
 }
 -->
-# **Phi-3.5:n kvantisointi Intel OpenVINO -työkalulla**
+# **Phi-3.5:n kvantisointi Intel OpenVINO:lla**
 
-Intel on perinteisin suorittimien valmistaja, jolla on paljon käyttäjiä. Koneoppimisen ja syväoppimisen yleistyessä Intel on myös liittynyt tekoälyn kiihdytyskilpailuun. Mallin päätöksenteossa Intel käyttää paitsi GPU:ita ja CPU:ita, myös NPU:ita.
+Intel on perinteisin suorittimien valmistaja, jolla on paljon käyttäjiä. Koneoppimisen ja syväoppimisen nousun myötä Intel on myös liittynyt tekoälyn kiihdytyskilpailuun. Mallin päättelyssä Intel käyttää paitsi GPU:ita ja CPU:ita, myös NPU:ita.
 
-Toivomme voivamme ottaa Phi-3.x -perheen käyttöön loppukäyttäjän laitteissa, tavoitteena tehdä siitä tärkein osa AI-tietokonetta ja Copilot PC:tä. Mallin lataaminen loppupäässä riippuu eri laitevalmistajien yhteistyöstä. Tässä luvussa keskitytään pääasiassa Intel OpenVINO:n käyttöön kvantisoidun mallin sovellusympäristössä.
+Toivomme voivamme ottaa Phi-3.x -perheen käyttöön loppukäyttäjän laitteissa, pyrkien siitä tekoäly-PC:n ja Copilot-PC:n tärkein osa. Mallin lataaminen loppukäyttäjän laitteella riippuu eri laitevalmistajien yhteistyöstä. Tässä luvussa keskitytään pääasiassa Intel OpenVINO:n käyttötilanteeseen kvantitatiivisena mallina.
 
 
 ## **Mikä on OpenVINO**
 
-OpenVINO on avoimen lähdekoodin työkalu, joka optimoi ja ottaa käyttöön syväoppimismalleja pilvestä reunalaitteisiin. Se nopeuttaa syväoppimisen päätöksentekoa monissa käyttötapauksissa, kuten generatiivisessa tekoälyssä, videossa, äänessä ja kielessä, hyödyntäen suosittuja kehyksiä kuten PyTorch, TensorFlow, ONNX ja muita. Muunna ja optimoi malleja sekä ota ne käyttöön erilaisissa Intel®-laitteissa ja ympäristöissä, paikallisesti, laitteessa, selaimessa tai pilvessä.
+OpenVINO on avoimen lähdekoodin työkalu syväoppimismallien optimointiin ja käyttöönottoon pilvestä reunalaitteisiin. Se nopeuttaa syväoppimisen päättelyä monissa käyttötapauksissa, kuten generatiivisessa tekoälyssä, videoissa, äänissä ja kielissä, hyödyntäen suosittuja kehyksiä kuten PyTorch, TensorFlow, ONNX ja muita. Muunna ja optimoi malleja, ja ota ne käyttöön erilaisissa Intel®-laitteissa ja ympäristöissä, paikallisesti tai laitteella, selaimessa tai pilvessä.
 
-Nyt OpenVINO:n avulla voit nopeasti kvantisoida GenAI-mallin Intel-laitteistolla ja nopeuttaa mallin käyttöönottoa.
+Nyt OpenVINO:n avulla voit nopeasti kvantisoida GenAI-mallin Intel-laitteistolla ja nopeuttaa mallin referenssiä.
 
-OpenVINO tukee nyt Phi-3.5-Vision ja Phi-3.5 Instruct -mallien kvantisointimuunnoksia.
+OpenVINO tukee nyt Phi-3.5-Vision ja Phi-3.5 Instruct -mallien kvantisointimuunnosta.
 
 ### **Ympäristön asennus**
 
@@ -39,7 +39,7 @@ openvino-genai>=2024.3.0.0
 
 ### **Phi-3.5-Instructin kvantisointi OpenVINO:lla**
 
-Aja tämä skripti komentorivillä
+Aja tämä skripti terminaalissa
 
 ```bash
 
@@ -55,7 +55,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ### **Phi-3.5-Vision kvantisointi OpenVINO:lla**
 
-Aja tämä skripti Pythonissa tai Jupyter Labissa
+Aja tämä skripti Pythonissa tai Jupyter labissa
 
 ```python
 
@@ -91,13 +91,13 @@ if not out_dir.exists():
 
 ```
 
-### **🤖 Phi-3.5:n esimerkit Intel OpenVINO:n kanssa**
+### **🤖 Phi-3.5:n esimerkit Intel OpenVINO:lla**
 
-| Labs    | Esittely | Siirry |
+| Labit    | Esittely | Siirry |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introduce Phi-3.5 Instruct  | Opettele käyttämään Phi-3.5 Instructia AI-tietokoneessasi    |  [Siirry](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (kuva) | Opettele käyttämään Phi-3.5 Visionia kuvan analysointiin AI-tietokoneessasi      |  [Siirry](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introduce Phi-3.5 Vision (video)   | Opettele käyttämään Phi-3.5 Visionia videon analysointiin AI-tietokoneessasi    |  [Siirry](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-esittely Phi-3.5 Instruct  | Opi käyttämään Phi-3.5 Instructia tekoäly-PC:ssäsi    |  [Siirry](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-esittely Phi-3.5 Vision (kuva) | Opi käyttämään Phi-3.5 Visionia kuvien analysointiin tekoäly-PC:ssäsi      |  [Siirry](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-esittely Phi-3.5 Vision (video)   | Opi käyttämään Phi-3.5 Visionia videoiden analysointiin tekoäly-PC:ssäsi    |  [Siirry](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 
 

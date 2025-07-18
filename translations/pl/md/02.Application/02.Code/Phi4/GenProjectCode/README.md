@@ -2,21 +2,21 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:50:08+00:00",
+  "translation_date": "2025-07-17T04:45:13+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "pl"
 }
 -->
-## **Korzystanie z Phi-4-mini-mm do generowania kodu**
+## **Używanie Phi-4-mini-mm do generowania kodu**
 
-Phi-4-mini kontynuuje silne możliwości kodowania rodziny Phi. Możesz użyć Prompt, aby zadawać pytania związane z programowaniem. Oczywiście, po dodaniu silnej zdolności rozumowania, ma jeszcze większe możliwości kodowania, takie jak generowanie projektów zgodnie z wymaganiami. Na przykład generowanie projektów zgodnie z wymaganiami, takich jak:
+Phi-4-mini kontynuuje silne możliwości kodowania rodziny Phi. Możesz użyć Prompt, aby zadawać pytania związane z programowaniem. Oczywiście, po dodaniu silnej zdolności rozumowania, ma jeszcze większe możliwości kodowania, takie jak generowanie projektów zgodnie z wymaganiami. Na przykład generowanie projektów według wymagań, takich jak:
 
 ### **Wymagania**
 
-Stwórz aplikację Koszyk Zakupowy
+Stwórz aplikację koszyka zakupowego
 
 - Stwórz API Rest z następującymi metodami:
-    - Pobierz listę piw, używając offsetu strony i limitu.
+    - Pobierz listę piw, używając przesunięcia strony i limitu.
     - Pobierz szczegóły piwa po id.
     - Wyszukaj piwo po nazwie, opisie, sloganie, dopasowaniach do jedzenia i cenie.
 - Stwórz listę produktów na stronie głównej.
@@ -26,7 +26,7 @@ Stwórz aplikację Koszyk Zakupowy
 - Stwórz koszyk zakupowy.
     - Dodawaj produkty do koszyka.
     - Usuwaj produkty z koszyka.
-    - Oblicz całkowitą cenę produktów w koszyku.
+    - Obliczaj łączną cenę produktów w koszyku.
 
 ### **Przykładowy kod - Python**
 
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczeń AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy starań, aby tłumaczenie było jak najdokładniejsze, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być traktowany jako autorytatywne źródło. W przypadku informacji krytycznych zaleca się skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

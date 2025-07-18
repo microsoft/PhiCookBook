@@ -2,24 +2,24 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "80a853c08e4ee25ef9b4bfcedd8990da",
-  "translation_date": "2025-05-07T14:22:57+00:00",
+  "translation_date": "2025-07-16T23:12:11+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md",
   "language_code": "ru"
 }
 -->
 # Оценка дообученной модели Phi-3 / Phi-3.5 в Azure AI Foundry с акцентом на принципы ответственного ИИ Microsoft
 
-Этот пошаговый пример основан на руководстве "[Оценка дообученных моделей Phi-3 / 3.5 в Azure AI Foundry с акцентом на ответственный ИИ Microsoft](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" из сообщества Microsoft Tech Community.
+Этот сквозной (E2E) пример основан на руководстве "[Evaluate Fine-tuned Phi-3 / 3.5 Models in Azure AI Foundry Focusing on Microsoft's Responsible AI](https://techcommunity.microsoft.com/blog/educatordeveloperblog/evaluate-fine-tuned-phi-3--3-5-models-in-azure-ai-studio-focusing-on-microsofts-/4227850?WT.mc_id=aiml-137032-kinfeylo)" из сообщества Microsoft Tech Community.
 
 ## Обзор
 
 ### Как оценить безопасность и производительность дообученной модели Phi-3 / Phi-3.5 в Azure AI Foundry?
 
-Дообучение модели иногда может привести к непреднамеренным или нежелательным ответам. Чтобы убедиться, что модель остается безопасной и эффективной, важно оценить её способность генерировать вредоносный контент, а также создавать точные, релевантные и связные ответы. В этом руководстве вы научитесь оценивать безопасность и производительность дообученной модели Phi-3 / Phi-3.5, интегрированной с Prompt flow в Azure AI Foundry.
+Дообучение модели иногда может привести к непреднамеренным или нежелательным ответам. Чтобы убедиться, что модель остаётся безопасной и эффективной, важно оценить её потенциал к генерации вредоносного контента, а также способность выдавать точные, релевантные и связные ответы. В этом руководстве вы научитесь оценивать безопасность и производительность дообученной модели Phi-3 / Phi-3.5, интегрированной с Prompt flow в Azure AI Foundry.
 
 Ниже представлен процесс оценки в Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.ru.png)
+![Архитектура руководства.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.ru.png)
 
 *Источник изображения: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -53,27 +53,27 @@ CO_OP_TRANSLATOR_METADATA:
 
 ### Введение в оценку безопасности
 
-Для того чтобы ваш ИИ-модель была этичной и безопасной, важно оценивать её в соответствии с принципами ответственного ИИ Microsoft. В Azure AI Foundry оценка безопасности позволяет проверить уязвимость модели к атакам jailbreak и её потенциал для генерации вредоносного контента, что напрямую соответствует этим принципам.
+Чтобы убедиться, что ваша модель ИИ этична и безопасна, важно оценить её в соответствии с принципами ответственного ИИ Microsoft. В Azure AI Foundry оценки безопасности позволяют проверить уязвимость модели к атакам jailbreak и её потенциал к генерации вредоносного контента, что напрямую соответствует этим принципам.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.ru.png)
+![Оценка безопасности.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.ru.png)
 
 *Источник изображения: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
 #### Принципы ответственного ИИ Microsoft
 
-Перед началом технических шагов важно понять Принципы ответственного ИИ Microsoft — этическую основу, которая направляет разработку, внедрение и эксплуатацию ИИ-систем. Эти принципы обеспечивают справедливость, прозрачность и инклюзивность при создании ИИ-технологий. Они служат фундаментом для оценки безопасности ИИ-моделей.
+Перед началом технических шагов важно понять принципы ответственного ИИ Microsoft — этическую основу, которая направляет ответственную разработку, внедрение и эксплуатацию систем ИИ. Эти принципы обеспечивают справедливость, прозрачность и инклюзивность при создании ИИ-технологий. Они служат фундаментом для оценки безопасности моделей ИИ.
 
 Принципы ответственного ИИ Microsoft включают:
 
-- **Справедливость и инклюзивность**: ИИ-системы должны одинаково справедливо относиться ко всем и не допускать различий в отношении к схожим группам людей. Например, при рекомендациях по медицинскому лечению, кредитным заявкам или трудоустройству ИИ должен давать одинаковые советы всем с похожими симптомами, финансовым положением или квалификацией.
+- **Справедливость и инклюзивность**: Системы ИИ должны относиться ко всем справедливо и избегать различного обращения с группами людей в схожих ситуациях. Например, при предоставлении рекомендаций по медицинскому лечению, кредитным заявкам или трудоустройству ИИ должен давать одинаковые рекомендации всем с похожими симптомами, финансовым положением или квалификацией.
 
-- **Надежность и безопасность**: Для завоевания доверия ИИ-системы должны работать надежно, безопасно и последовательно. Они должны функционировать согласно своему первоначальному замыслу, безопасно реагировать на неожиданные ситуации и противостоять вредоносным воздействиям. Их поведение и спектр обрабатываемых условий отражают ситуации, предусмотренные разработчиками на этапе проектирования и тестирования.
+- **Надёжность и безопасность**: Для формирования доверия системы ИИ должны работать надёжно, безопасно и последовательно. Они должны функционировать согласно изначальному замыслу, безопасно реагировать на непредвиденные ситуации и противостоять вредоносным манипуляциям. Их поведение и диапазон условий, с которыми они справляются, отражают ситуации, предусмотренные разработчиками на этапе проектирования и тестирования.
 
-- **Прозрачность**: Когда ИИ помогает принимать решения, существенно влияющие на жизнь людей, важно, чтобы люди понимали, как эти решения были приняты. Например, банк может использовать ИИ для оценки кредитоспособности, а компания — для выбора наиболее подходящих кандидатов на работу.
+- **Прозрачность**: Когда системы ИИ влияют на решения, существенно меняющие жизнь людей, важно, чтобы люди понимали, как эти решения принимаются. Например, банк может использовать ИИ для оценки кредитоспособности, а компания — для выбора наиболее квалифицированных кандидатов.
 
-- **Конфиденциальность и безопасность**: С ростом распространенности ИИ защита конфиденциальности и безопасность личной и корпоративной информации становятся всё более важными и сложными. Для ИИ критично внимательно относиться к этим вопросам, поскольку доступ к данным необходим для точных и обоснованных предсказаний и решений.
+- **Конфиденциальность и безопасность**: С ростом распространённости ИИ защита конфиденциальности и безопасности личной и корпоративной информации становится всё более важной и сложной задачей. Для ИИ особенно важно внимательно относиться к этим аспектам, так как доступ к данным необходим для точных и обоснованных прогнозов и решений.
 
-- **Ответственность**: Люди, разрабатывающие и внедряющие ИИ-системы, должны нести ответственность за их работу. Организации должны использовать отраслевые стандарты для разработки норм ответственности. Эти нормы гарантируют, что ИИ-системы не будут единственным авторитетом в решениях, влияющих на жизнь людей, и что человек сохраняет значимый контроль над высокоавтономными ИИ.
+- **Ответственность**: Люди, разрабатывающие и внедряющие системы ИИ, должны нести ответственность за их работу. Организации должны опираться на отраслевые стандарты для формирования норм ответственности. Эти нормы гарантируют, что системы ИИ не являются окончательным авторитетом в решениях, влияющих на жизнь людей, и что человек сохраняет значимый контроль над высокоавтономными системами ИИ.
 
 ![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.ru.png)
 
@@ -84,22 +84,22 @@ CO_OP_TRANSLATOR_METADATA:
 
 #### Метрики безопасности
 
-В этом руководстве вы оцените безопасность дообученной модели Phi-3 с помощью метрик безопасности Azure AI Foundry. Эти метрики помогают определить потенциал модели к генерации вредоносного контента и её уязвимость к атакам jailbreak. Метрики безопасности включают:
+В этом руководстве вы оцените безопасность дообученной модели Phi-3 с помощью метрик безопасности Azure AI Foundry. Эти метрики помогают определить потенциал модели к генерации вредоносного контента и её уязвимость к jailbreak-атакам. Метрики безопасности включают:
 
-- **Контент, связанный с самоповреждением**: Оценивает склонность модели к созданию контента, связанного с самоповреждением.
-- **Ненавистнический и несправедливый контент**: Оценивает склонность модели к генерации ненавистнического или несправедливого контента.
-- **Насильственный контент**: Оценивает склонность модели к созданию насильственного контента.
-- **Сексуальный контент**: Оценивает склонность модели к созданию неподобающего сексуального контента.
+- **Контент, связанный с самоповреждением**: Оценивает склонность модели генерировать контент, связанный с самоповреждением.
+- **Ненавистнический и несправедливый контент**: Оценивает склонность модели создавать ненавистнический или несправедливый контент.
+- **Насильственный контент**: Оценивает склонность модели генерировать насильственный контент.
+- **Сексуальный контент**: Оценивает склонность модели создавать неподобающий сексуальный контент.
 
-Оценка этих аспектов помогает убедиться, что ИИ-модель не генерирует вредоносный или оскорбительный контент, что соответствует общественным ценностям и нормативным требованиям.
+Оценка этих аспектов помогает убедиться, что модель не генерирует вредоносный или оскорбительный контент, что соответствует общественным ценностям и нормативным требованиям.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.ru.png)
+![Оценка на основе безопасности.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.ru.png)
 
 ### Введение в оценку производительности
 
-Чтобы убедиться, что ваша ИИ-модель работает как задумано, важно оценить её производительность с помощью соответствующих метрик. В Azure AI Foundry оценка производительности позволяет проверить эффективность модели в генерации точных, релевантных и связных ответов.
+Чтобы убедиться, что ваша модель ИИ работает как ожидается, важно оценить её производительность с помощью соответствующих метрик. В Azure AI Foundry оценки производительности позволяют проверить эффективность модели в генерации точных, релевантных и связных ответов.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.ru.png)
+![Оценка безопасности.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.ru.png)
 
 *Источник изображения: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -107,103 +107,102 @@ CO_OP_TRANSLATOR_METADATA:
 
 В этом руководстве вы оцените производительность дообученной модели Phi-3 / Phi-3.5 с помощью метрик производительности Azure AI Foundry. Эти метрики помогают определить эффективность модели в генерации точных, релевантных и связных ответов. Метрики производительности включают:
 
-- **Основанность (Groundedness)**: Оценивает, насколько сгенерированные ответы соответствуют информации из исходного источника.
+- **Обоснованность (Groundedness)**: Оценивает, насколько сгенерированные ответы соответствуют информации из исходного источника.
 - **Релевантность**: Оценивает уместность сгенерированных ответов по отношению к заданным вопросам.
-- **Связность (Coherence)**: Оценивает плавность и естественность текста, а также его сходство с человеческой речью.
+- **Связность (Coherence)**: Оценивает плавность текста, его естественность и сходство с человеческой речью.
 - **Беглость (Fluency)**: Оценивает языковую грамотность сгенерированного текста.
 - **Сходство с GPT (GPT Similarity)**: Сравнивает сгенерированный ответ с эталонным для определения степени сходства.
 - **F1 Score**: Вычисляет долю общих слов между сгенерированным ответом и исходными данными.
 
-Эти метрики помогают оценить эффективность модели в создании точных, релевантных и связных ответов.
+Эти метрики помогают оценить эффективность модели в генерации точных, релевантных и связных ответов.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.ru.png)
+![Оценка на основе производительности.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.ru.png)
 
 ## **Сценарий 2: Оценка модели Phi-3 / Phi-3.5 в Azure AI Foundry**
 
 ### Перед началом
 
-Это руководство является продолжением предыдущих публикаций в блоге: "[Дообучение и интеграция кастомных моделей Phi-3 с Prompt Flow: пошаговое руководство](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" и "[Дообучение и интеграция кастомных моделей Phi-3 с Prompt Flow в Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)". В этих статьях мы рассмотрели процесс дообучения модели Phi-3 / Phi-3.5 в Azure AI Foundry и её интеграцию с Prompt flow.
+Это руководство является продолжением предыдущих публикаций в блоге: "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" и "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)." В этих публикациях мы подробно рассмотрели процесс дообучения модели Phi-3 / Phi-3.5 в Azure AI Foundry и её интеграцию с Prompt flow.
 
-В этом руководстве вы развернете модель Azure OpenAI в качестве оценщика в Azure AI Foundry и используете её для оценки вашей дообученной модели Phi-3 / Phi-3.5.
+В этом руководстве вы развернёте модель Azure OpenAI в качестве оценщика в Azure AI Foundry и используете её для оценки вашей дообученной модели Phi-3 / Phi-3.5.
 
-Перед началом убедитесь, что у вас есть следующие необходимые компоненты, описанные в предыдущих руководствах:
+Перед началом убедитесь, что у вас есть следующие требования, описанные в предыдущих руководствах:
 
 1. Подготовленный набор данных для оценки дообученной модели Phi-3 / Phi-3.5.
-1. Модель Phi-3 / Phi-3.5, дообученная и развернутая в Azure Machine Learning.
+1. Модель Phi-3 / Phi-3.5, которая была дообучена и развернута в Azure Machine Learning.
 1. Prompt flow, интегрированный с вашей дообученной моделью Phi-3 / Phi-3.5 в Azure AI Foundry.
 
 > [!NOTE]
-> В качестве набора данных для оценки дообученной модели Phi-3 / Phi-3.5 вы будете использовать файл *test_data.jsonl*, который находится в папке data из набора данных **ULTRACHAT_200k**, загруженного в предыдущих публикациях.
+> В качестве набора данных для оценки дообученной модели Phi-3 / Phi-3.5 вы будете использовать файл *test_data.jsonl*, расположенный в папке data из набора данных **ULTRACHAT_200k**, загруженного в предыдущих публикациях.
 
-#### Интеграция кастомной модели Phi-3 / Phi-3.5 с Prompt flow в Azure AI Foundry (подход с кодом в первую очередь)
-
-> [!NOTE]
-> Если вы использовали подход low-code, описанный в "[Дообучение и интеграция кастомных моделей Phi-3 с Prompt Flow в Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", вы можете пропустить это упражнение и перейти к следующему.
-> Однако если вы использовали подход с кодом в первую очередь, описанный в "[Дообучение и интеграция кастомных моделей Phi-3 с Prompt Flow: пошаговое руководство](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)", процесс подключения модели к Prompt flow будет немного другим. Вы узнаете этот процесс в этом упражнении.
-
-Для продолжения вам нужно интегрировать вашу дообученную модель Phi-3 / Phi-3.5 в Prompt flow в Azure AI Foundry.
+#### Интеграция кастомной модели Phi-3 / Phi-3.5 с Prompt flow в Azure AI Foundry (подход с кодом)
+> [!NOTE]  
+> Если вы использовали подход с низким кодом, описанный в "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow in Azure AI Foundry](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow-in/ba-p/4191726?wt.mc_id=studentamb_279723)", вы можете пропустить это упражнение и перейти к следующему.  
+> Однако, если вы следовали подходу с приоритетом кода, описанному в "[Fine-Tune and Integrate Custom Phi-3 Models with Prompt Flow: Step-by-Step Guide](https://techcommunity.microsoft.com/t5/educator-developer-blog/fine-tune-and-integrate-custom-phi-3-models-with-prompt-flow/ba-p/4178612?wt.mc_id=studentamb_279723)" для дообучения и развертывания вашей модели Phi-3 / Phi-3.5, процесс подключения модели к Prompt flow будет немного отличаться. Вы изучите этот процесс в этом упражнении.
+Чтобы продолжить, необходимо интегрировать вашу дообученную модель Phi-3 / Phi-3.5 в Prompt flow в Azure AI Foundry.
 
 #### Создание Azure AI Foundry Hub
 
-Перед созданием проекта необходимо создать Hub. Hub действует как группа ресурсов, позволяя организовывать и управлять несколькими проектами в Azure AI Foundry.
+Перед созданием проекта нужно создать Hub. Hub действует как группа ресурсов, позволяя организовывать и управлять несколькими проектами в Azure AI Foundry.
 
 1. Войдите в [Azure AI Foundry](https://ai.azure.com/?wt.mc_id=studentamb_279723).
 
 1. Выберите **All hubs** в левой панели.
 
-1. Нажмите **+ New hub** в навигационном меню.
+1. Выберите **+ New hub** в навигационном меню.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.ru.png)
+    ![Создание хаба.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.ru.png)
 
 1. Выполните следующие действия:
 
     - Введите **Hub name**. Имя должно быть уникальным.
     - Выберите вашу подписку Azure (**Subscription**).
-    - Выберите **Resource group** (создайте новую при необходимости).
-    - Выберите желаемое **Location**.
-    - Выберите **Connect Azure AI Services** (создайте новую при необходимости).
-    - Для **Connect Azure AI Search** выберите **Skip connecting**.
-![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.ru.png)
+    - Выберите **Resource group** для использования (создайте новую, если нужно).
+    - Выберите **Location**, которую хотите использовать.
+    - Выберите **Connect Azure AI Services** для подключения (создайте новую, если нужно).
+    - Выберите **Connect Azure AI Search** и установите **Skip connecting**.
 
-1. Выберите **Next**.
+    ![Заполнение хаба.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.ru.png)
+
+1. Нажмите **Next**.
 
 #### Создание проекта Azure AI Foundry
 
-1. В созданном вами Hub выберите **All projects** в левой вкладке.
+1. В созданном Hub выберите **All projects** в левой панели.
 
 1. Выберите **+ New project** в навигационном меню.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ru.png)
+    ![Выбор нового проекта.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ru.png)
 
 1. Введите **Project name**. Имя должно быть уникальным.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ru.png)
+    ![Создание проекта.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ru.png)
 
 1. Нажмите **Create a project**.
 
 #### Добавление пользовательского подключения для дообученной модели Phi-3 / Phi-3.5
 
-Для интеграции вашей дообученной модели Phi-3 / Phi-3.5 с Prompt flow необходимо сохранить endpoint и ключ модели в пользовательском подключении. Это обеспечит доступ к вашей модели Phi-3 / Phi-3.5 в Prompt flow.
+Чтобы интегрировать вашу кастомную модель Phi-3 / Phi-3.5 с Prompt flow, необходимо сохранить endpoint и ключ модели в пользовательском подключении. Это обеспечит доступ к вашей модели в Prompt flow.
 
 #### Установка api key и endpoint uri для дообученной модели Phi-3 / Phi-3.5
 
 1. Перейдите в [Azure ML Studio](https://ml.azure.com/home?wt.mc_id=studentamb_279723).
 
-1. Откройте созданное вами рабочее пространство Azure Machine learning.
+1. Откройте рабочее пространство Azure Machine Learning, которое вы создали.
 
-1. Выберите **Endpoints** в левой вкладке.
+1. Выберите **Endpoints** в левой панели.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.ru.png)
+    ![Выбор endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.ru.png)
 
 1. Выберите созданный вами endpoint.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.ru.png)
+    ![Выбор созданного endpoint.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.ru.png)
 
 1. Выберите **Consume** в навигационном меню.
 
 1. Скопируйте ваш **REST endpoint** и **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.ru.png)
+    ![Копирование api key и endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.ru.png)
 
 #### Добавление пользовательского подключения
 
@@ -211,53 +210,53 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Откройте созданный вами проект Azure AI Foundry.
 
-1. В проекте выберите **Settings** в левой вкладке.
+1. В проекте выберите **Settings** в левой панели.
 
 1. Нажмите **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.ru.png)
+    ![Выбор нового подключения.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.ru.png)
 
 1. Выберите **Custom keys** в навигационном меню.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.ru.png)
+    ![Выбор custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.ru.png)
 
 1. Выполните следующие действия:
 
     - Нажмите **+ Add key value pairs**.
-    - Введите для имени ключа **endpoint** и вставьте скопированный из Azure ML Studio endpoint в поле значения.
+    - Введите имя ключа **endpoint** и вставьте скопированный endpoint из Azure ML Studio в поле значения.
     - Снова нажмите **+ Add key value pairs**.
-    - Введите для имени ключа **key** и вставьте скопированный из Azure ML Studio ключ в поле значения.
+    - Введите имя ключа **key** и вставьте скопированный ключ из Azure ML Studio в поле значения.
     - После добавления ключей отметьте **is secret**, чтобы ключи не были видны.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.ru.png)
+    ![Добавление подключения.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.ru.png)
 
 1. Нажмите **Add connection**.
 
 #### Создание Prompt flow
 
-Вы добавили пользовательское подключение в Azure AI Foundry. Теперь создадим Prompt flow по следующим шагам. Затем подключим этот Prompt flow к пользовательскому подключению, чтобы использовать дообученную модель внутри Prompt flow.
+Вы добавили пользовательское подключение в Azure AI Foundry. Теперь создадим Prompt flow, используя следующие шаги. Затем вы подключите этот Prompt flow к пользовательскому подключению, чтобы использовать дообученную модель внутри Prompt flow.
 
 1. Откройте созданный вами проект Azure AI Foundry.
 
-1. Выберите **Prompt flow** в левой вкладке.
+1. Выберите **Prompt flow** в левой панели.
 
 1. Нажмите **+ Create** в навигационном меню.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.ru.png)
+    ![Выбор Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.ru.png)
 
 1. Выберите **Chat flow** в навигационном меню.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.ru.png)
+    ![Выбор chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.ru.png)
 
-1. Введите **Folder name** для использования.
+1. Введите имя папки (**Folder name**), которую хотите использовать.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.ru.png)
+    ![Ввод имени папки.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.ru.png)
 
 1. Нажмите **Create**.
 
-#### Настройка Prompt flow для общения с вашей дообученной моделью Phi-3 / Phi-3.5
+#### Настройка Prompt flow для общения с вашей кастомной моделью Phi-3 / Phi-3.5
 
-Необходимо интегрировать дообученную модель Phi-3 / Phi-3.5 в Prompt flow. Однако, существующий Prompt flow не предназначен для этого, поэтому его нужно перепроектировать для поддержки пользовательской модели.
+Необходимо интегрировать дообученную модель Phi-3 / Phi-3.5 в Prompt flow. Однако существующий Prompt flow не предназначен для этого, поэтому его нужно переделать для поддержки кастомной модели.
 
 1. В Prompt flow выполните следующие действия для перестройки существующего потока:
 
@@ -288,9 +287,9 @@ CO_OP_TRANSLATOR_METADATA:
 
     - Нажмите **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.ru.png)
+    ![Выбор raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.ru.png)
 
-1. Добавьте следующий код в *integrate_with_promptflow.py* для использования пользовательской модели Phi-3 / Phi-3.5 в Prompt flow.
+1. Добавьте следующий код в *integrate_with_promptflow.py* для использования кастомной модели Phi-3 / Phi-3.5 в Prompt flow.
 
     ```python
     import logging
@@ -351,51 +350,51 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.ru.png)
+    ![Вставка кода prompt flow.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.ru.png)
 
 > [!NOTE]
-> Более подробную информацию о работе с Prompt flow в Azure AI Foundry можно найти в [Prompt flow в Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
+> Для более подробной информации по использованию Prompt flow в Azure AI Foundry обратитесь к [Prompt flow в Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
-1. Выберите **Chat input**, **Chat output** для включения общения с вашей моделью.
+1. Выберите **Chat input** и **Chat output**, чтобы включить чат с вашей моделью.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.ru.png)
+    ![Выбор Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.ru.png)
 
-1. Теперь вы готовы общаться с вашей дообученной моделью Phi-3 / Phi-3.5. В следующем упражнении вы узнаете, как запустить Prompt flow и использовать его для общения с моделью.
+1. Теперь вы готовы общаться с вашей кастомной моделью Phi-3 / Phi-3.5. В следующем упражнении вы узнаете, как запустить Prompt flow и использовать его для общения с вашей дообученной моделью.
 
 > [!NOTE]
 >
-> Перестроенный поток должен выглядеть так, как на изображении ниже:
+> Переделанный поток должен выглядеть примерно так:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.ru.png)
+> ![Пример потока](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.ru.png)
 >
 
 #### Запуск Prompt flow
 
 1. Нажмите **Start compute sessions** для запуска Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.ru.png)
+    ![Запуск compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.ru.png)
 
 1. Нажмите **Validate and parse input** для обновления параметров.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.ru.png)
+    ![Валидация ввода.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.ru.png)
 
-1. Выберите значение **Value** для **connection**, соответствующее созданному вами пользовательскому подключению, например *connection*.
+1. Выберите значение **connection** для пользовательского подключения, которое вы создали. Например, *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.ru.png)
+    ![Выбор подключения.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.ru.png)
 
-#### Общение с вашей дообученной моделью Phi-3 / Phi-3.5
+#### Общение с вашей кастомной моделью Phi-3 / Phi-3.5
 
 1. Нажмите **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.ru.png)
+    ![Выбор чата.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.ru.png)
 
-1. Пример результата: теперь вы можете общаться с вашей дообученной моделью Phi-3 / Phi-3.5. Рекомендуется задавать вопросы на основе данных, использованных для дообучения.
+1. Пример результата: теперь вы можете общаться с вашей кастомной моделью Phi-3 / Phi-3.5. Рекомендуется задавать вопросы, основанные на данных, использованных для дообучения.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.ru.png)
+    ![Чат с prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.ru.png)
 
 ### Развертывание Azure OpenAI для оценки модели Phi-3 / Phi-3.5
 
-Для оценки модели Phi-3 / Phi-3.5 в Azure AI Foundry необходимо развернуть модель Azure OpenAI. Эта модель будет использоваться для оценки производительности модели Phi-3 / Phi-3.5.
+Для оценки модели Phi-3 / Phi-3.5 в Azure AI Foundry необходимо развернуть модель Azure OpenAI. Эта модель будет использоваться для оценки производительности Phi-3 / Phi-3.5.
 
 #### Развертывание Azure OpenAI
 
@@ -403,19 +402,19 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Откройте созданный вами проект Azure AI Foundry.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ru.png)
+    ![Выбор проекта.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ru.png)
 
-1. В проекте выберите **Deployments** в левой вкладке.
+1. В проекте выберите **Deployments** в левой панели.
 
 1. Нажмите **+ Deploy model** в навигационном меню.
 
 1. Выберите **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.ru.png)
+    ![Выбор Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.ru.png)
 
-1. Выберите модель Azure OpenAI, которую хотите использовать, например, **gpt-4o**.
+1. Выберите модель Azure OpenAI, которую хотите использовать. Например, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.ru.png)
+    ![Выбор модели Azure OpenAI.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.ru.png)
 
 1. Нажмите **Confirm**.
 
@@ -427,65 +426,64 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Откройте созданный вами проект Azure AI Foundry.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ru.png)
+    ![Выбор проекта.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ru.png)
 
-1. В проекте выберите **Evaluation** в левой вкладке.
+1. В проекте выберите **Evaluation** в левой панели.
 
 1. Нажмите **+ New evaluation** в навигационном меню.
-![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.ru.png)
+
+    ![Выбор оценки.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.ru.png)
 
 1. Выберите оценку **Prompt flow**.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.ru.png)
+    ![Выбор оценки Prompt flow.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.ru.png)
 
 1. Выполните следующие действия:
 
     - Введите имя оценки. Оно должно быть уникальным.
-    - Выберите тип задачи **Question and answer without context**, так как в используемом в этом руководстве наборе данных **UlTRACHAT_200k** отсутствует контекст.
-    - Выберите prompt flow, который хотите оценить.
+    - Выберите тип задачи **Question and answer without context**, так как датасет **ULTRACHAT_200k**, используемый в этом руководстве, не содержит контекста.
+    - Выберите Prompt flow, который хотите оценить.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.ru.png)
+    ![Настройка оценки Prompt flow.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.ru.png)
 
 1. Нажмите **Next**.
 
 1. Выполните следующие действия:
 
-    - Выберите **Add your dataset** для загрузки набора данных. Например, вы можете загрузить тестовый файл набора данных, такой как *test_data.json1*, который входит в состав набора **ULTRACHAT_200k**.
-    - Выберите соответствующий **Dataset column**, который соответствует вашему набору данных. Например, если вы используете набор **ULTRACHAT_200k**, выберите **${data.prompt}** в качестве столбца набора данных.
+    - Нажмите **Add your dataset** для загрузки датасета. Например, можно загрузить тестовый файл *test_data.json1*, который входит в состав датасета **ULTRACHAT_200k**.
+    - Выберите соответствующий **Dataset column**, который соответствует вашему датасету. Например, для **ULTRACHAT_200k** выберите **${data.prompt}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.ru.png)
+    ![Настройка оценки Prompt flow.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.ru.png)
 
 1. Нажмите **Next**.
 
 1. Выполните следующие действия для настройки метрик производительности и качества:
 
     - Выберите метрики производительности и качества, которые хотите использовать.
-    - Выберите модель Azure OpenAI, созданную для оценки. Например, выберите **gpt-4o**.
+    - Выберите модель Azure OpenAI, созданную для оценки. Например, **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.ru.png)
+    ![Настройка оценки Prompt flow.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.ru.png)
 
 1. Выполните следующие действия для настройки метрик риска и безопасности:
 
     - Выберите метрики риска и безопасности, которые хотите использовать.
-    - Выберите порог для расчёта уровня дефектов. Например, выберите **Medium**.
+    - Выберите порог для расчёта уровня дефектов. Например, **Medium**.
     - Для **question** выберите источник данных **{$data.prompt}**.
     - Для **answer** выберите источник данных **{$run.outputs.answer}**.
     - Для **ground_truth** выберите источник данных **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.ru.png)
+    ![Настройка оценки Prompt flow.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.ru.png)
 
 1. Нажмите **Next**.
 
-1. Нажмите **Submit**, чтобы начать оценку.
+1. Нажмите **Submit** для запуска оценки.
 
-1. Оценка займёт некоторое время. Вы можете отслеживать прогресс во вкладке **Evaluation**.
+1. Оценка займет некоторое время. Вы можете отслеживать прогресс во вкладке **Evaluation**.
 
 ### Просмотр результатов оценки
-
 > [!NOTE]
-> Представленные ниже результаты служат для иллюстрации процесса оценки. В этом руководстве использовалась модель, дообученная на относительно небольшом наборе данных, что может привести к не оптимальным результатам. Фактические результаты могут значительно отличаться в зависимости от размера, качества и разнообразия используемого набора данных, а также от конкретной настройки модели.
-
-После завершения оценки вы сможете просмотреть результаты по метрикам производительности и безопасности.
+> Представленные ниже результаты служат для иллюстрации процесса оценки. В этом руководстве мы использовали модель, дообученную на относительно небольшом наборе данных, что может привести к не самым оптимальным результатам. Фактические результаты могут значительно отличаться в зависимости от размера, качества и разнообразия используемого набора данных, а также от конкретной конфигурации модели.
+После завершения оценки вы можете просмотреть результаты как по показателям производительности, так и по показателям безопасности.
 
 1. Метрики производительности и качества:
 
@@ -495,52 +493,52 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Метрики риска и безопасности:
 
-    - убедитесь, что результаты модели безопасны и соответствуют принципам Responsible AI, избегая вредоносного или оскорбительного контента.
+    - убедитесь, что выводы модели безопасны и соответствуют принципам Ответственного ИИ, избегая любого вредоносного или оскорбительного контента.
 
     ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.ru.png)
 
-1. Прокрутите вниз, чтобы просмотреть **Detailed metrics result**.
+1. Вы можете прокрутить страницу вниз, чтобы увидеть **Подробные результаты метрик**.
 
     ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.ru.png)
 
-1. Оценивая вашу кастомную модель Phi-3 / Phi-3.5 по метрикам производительности и безопасности, вы можете убедиться, что модель не только эффективна, но и соответствует принципам ответственного ИИ, что делает её готовой к реальному использованию.
+1. Оценивая вашу кастомную модель Phi-3 / Phi-3.5 по показателям производительности и безопасности, вы подтверждаете, что модель не только эффективна, но и соответствует принципам ответственного ИИ, что делает её готовой к реальному применению.
 
 ## Поздравляем!
 
-### Вы завершили это руководство
+### Вы завершили этот учебный курс
 
-Вы успешно оценили дообученную модель Phi-3, интегрированную с Prompt flow в Azure AI Foundry. Это важный шаг для того, чтобы ваши модели ИИ не только хорошо работали, но и соответствовали принципам Responsible AI от Microsoft, помогая создавать надёжные и заслуживающие доверия приложения ИИ.
+Вы успешно оценили дообученную модель Phi-3, интегрированную с Prompt flow в Azure AI Foundry. Это важный шаг для того, чтобы ваши ИИ-модели не только хорошо работали, но и соответствовали принципам Ответственного ИИ Microsoft, помогая создавать надёжные и заслуживающие доверия ИИ-приложения.
 
 ![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.ru.png)
 
 ## Очистка ресурсов Azure
 
-Очистите ресурсы Azure, чтобы избежать дополнительных затрат. Перейдите в портал Azure и удалите следующие ресурсы:
+Очистите ресурсы Azure, чтобы избежать дополнительных расходов на вашем аккаунте. Перейдите в портал Azure и удалите следующие ресурсы:
 
 - Ресурс Azure Machine learning.
-- Endpoint модели Azure Machine learning.
+- Конечную точку модели Azure Machine learning.
 - Ресурс проекта Azure AI Foundry.
-- Ресурс Prompt flow Azure AI Foundry.
+- Ресурс Prompt flow в Azure AI Foundry.
 
 ### Следующие шаги
 
 #### Документация
 
-- [Assess AI systems by using the Responsible AI dashboard](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
-- [Evaluation and monitoring metrics for generative AI](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
-- [Azure AI Foundry documentation](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
-- [Prompt flow documentation](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
+- [Оценка ИИ-систем с помощью панели Responsible AI](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
+- [Метрики оценки и мониторинга для генеративного ИИ](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
+- [Документация Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
+- [Документация Prompt flow](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
 
 #### Учебные материалы
 
-- [Introduction to Microsoft's Responsible AI Approach](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
-- [Introduction to Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
+- [Введение в подход Microsoft к Ответственному ИИ](https://learn.microsoft.com/training/modules/introduction-to-microsofts-responsible-ai-approach/?source=recommendations?wt.mc_id=studentamb_279723)
+- [Введение в Azure AI Foundry](https://learn.microsoft.com/training/modules/introduction-to-azure-ai-studio/?wt.mc_id=studentamb_279723)
 
 ### Ссылки
 
-- [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
-- [Announcing new tools in Azure AI to help you build more secure and trustworthy generative AI applications](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
-- [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
+- [Что такое Ответственный ИИ?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)
+- [Анонс новых инструментов в Azure AI для создания более безопасных и надёжных генеративных ИИ-приложений](https://azure.microsoft.com/blog/announcing-new-tools-in-azure-ai-to-help-you-build-more-secure-and-trustworthy-generative-ai-applications/?wt.mc_id=studentamb_279723)
+- [Оценка генеративных ИИ-приложений](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)
 
 **Отказ от ответственности**:  
-Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия обеспечить точность, пожалуйста, учитывайте, что автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его родном языке следует считать авторитетным источником. Для критически важной информации рекомендуется обращаться к профессиональному человеческому переводу. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.
+Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматические переводы могут содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному человеческому переводу. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

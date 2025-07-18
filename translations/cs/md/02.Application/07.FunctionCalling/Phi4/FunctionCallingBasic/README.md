@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-09T20:09:17+00:00",
+  "translation_date": "2025-07-17T05:16:49+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "cs"
 }
 -->
-## **Вызов функций в Phi-4-mini**
+## **Volání funkcí v Phi-4-mini**
 
-Вызов функций впервые появился в семействе Phi, и теперь вы можете использовать его в Phi-4-mini.
+Volání funkcí se poprvé objevilo v rodině Phi Family a nyní ho můžete používat i v Phi-4-mini.
 
-Этот пример демонстрирует моделирование результатов Премьер-лиги. Цель — чтобы Phi-4-mini предоставлял информацию о ходе игры в реальном времени. Ниже приведён пример кода:
+Tento příklad ukazuje simulaci výsledků Premier League. Cílem je, aby Phi-4-mini poskytovalo informace o zápasech v reálném čase. Níže je ukázkový kód:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo nesprávné výklady vzniklé použitím tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

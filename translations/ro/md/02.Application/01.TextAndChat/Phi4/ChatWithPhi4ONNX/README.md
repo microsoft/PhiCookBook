@@ -2,20 +2,20 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:03:34+00:00",
+  "translation_date": "2025-07-17T03:19:21+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "ro"
 }
 -->
-# **Conversați cu Phi-4-mini ONNX**
+# **Conversație cu Phi-4-mini ONNX**
 
-***ONNX*** este un format deschis creat pentru a reprezenta modele de învățare automată. ONNX definește un set comun de operatori - elementele de bază ale modelelor de învățare automată și învățare profundă - și un format comun de fișier pentru a permite dezvoltatorilor AI să utilizeze modele cu o varietate de framework-uri, unelte, runtime-uri și compilatoare.
+***ONNX*** este un format deschis creat pentru a reprezenta modelele de învățare automată. ONNX definește un set comun de operatori - elementele de bază ale modelelor de învățare automată și învățare profundă - și un format comun de fișier pentru a permite dezvoltatorilor AI să folosească modelele cu o varietate de framework-uri, unelte, runtime-uri și compilatoare.
 
-Sperăm să implementăm modele AI generative pe dispozitive edge și să le folosim în medii cu putere de calcul limitată sau offline. Acum putem atinge acest obiectiv prin convertirea modelului într-un mod cuantificat. Putem converti modelul cuantificat în format GGUF sau ONNX.
+Ne dorim să implementăm modele AI generative pe dispozitive edge și să le folosim în medii cu putere de calcul limitată sau offline. Acum putem atinge acest obiectiv prin convertirea modelului într-un mod cuantificat. Putem converti modelul cuantificat în format GGUF sau ONNX.
 
-Microsoft Olive vă poate ajuta să convertiți SLM în format ONNX cuantificat. Metoda pentru a realiza conversia modelului este foarte simplă
+Microsoft Olive te poate ajuta să convertești SLM în format ONNX cuantificat. Metoda pentru a realiza conversia modelului este foarte simplă
 
-**Instalați Microsoft Olive SDK**
+**Instalează Microsoft Olive SDK**
 
 
 ```bash
@@ -37,9 +37,9 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Notă*** acest exemplu folosește CPU
 
 
-### **Inferență Model Phi-4-mini ONNX cu ONNX Runtime GenAI**
+### **Inferență model Phi-4-mini ONNX cu ONNX Runtime GenAI**
 
-- **Instalați ONNX Runtime GenAI**
+- **Instalează ONNX Runtime GenAI**
 
 ```bash
 
@@ -158,5 +158,5 @@ while not generator.is_done():
 
 ```
 
-**Declinare a responsabilității**:  
-Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un traducător uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite care pot apărea ca urmare a utilizării acestei traduceri.
+**Declinare de responsabilitate**:  
+Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

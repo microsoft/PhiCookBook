@@ -2,47 +2,47 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a1c62bf7d86d6186bf8d3917196a92a0",
-  "translation_date": "2025-05-09T20:42:49+00:00",
+  "translation_date": "2025-07-17T06:24:51+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Kaito.md",
   "language_code": "cs"
 }
 -->
-## Тонкая настройка с Kaito
+## Doladění s Kaito
 
-[Kaito](https://github.com/Azure/kaito) — оператор, который автоматизирует развертывание моделей AI/ML для инференса в кластере Kubernetes.
+[Kaito](https://github.com/Azure/kaito) je operator, který automatizuje nasazení AI/ML inferenčních modelů v Kubernetes clusteru.
 
-Kaito имеет следующие ключевые отличия по сравнению с большинством популярных методологий развертывания моделей, построенных на инфраструктуре виртуальных машин:
+Kaito se od většiny běžných metod nasazení modelů postavených na infrastruktuře virtuálních strojů liší těmito klíčovými vlastnostmi:
 
-- Управление файлами моделей с помощью контейнерных образов. Для выполнения вызовов инференса используется HTTP-сервер с библиотекой моделей.
-- Избегание настройки параметров развертывания под конкретное GPU-оборудование за счёт предустановленных конфигураций.
-- Автоматическое выделение GPU-нод на основе требований модели.
-- Хранение крупных образов моделей в публичном Microsoft Container Registry (MCR), если лицензия это позволяет.
+- Správa modelových souborů pomocí kontejnerových image. K dispozici je HTTP server pro provádění inferenčních volání pomocí modelové knihovny.
+- Nepotřebujete ladit parametry nasazení podle GPU hardwaru díky přednastaveným konfiguracím.
+- Automatické zajištění GPU uzlů podle požadavků modelu.
+- Hostování velkých modelových image v veřejném Microsoft Container Registry (MCR), pokud to licence umožňuje.
 
-С помощью Kaito процесс интеграции крупных AI-моделей инференса в Kubernetes значительно упрощается.
+Díky Kaito je proces zavádění velkých AI inferenčních modelů v Kubernetes výrazně jednodušší.
 
-## Архитектура
+## Architektura
 
-Kaito следует классической архитектуре Kubernetes с использованием Custom Resource Definition (CRD) и контроллеров. Пользователь управляет кастомным ресурсом `workspace`, который описывает требования к GPU и спецификацию инференса. Контроллеры Kaito автоматизируют развертывание, синхронизируя состояние кастомного ресурса `workspace`.
+Kaito vychází z klasického návrhového vzoru Kubernetes Custom Resource Definition (CRD)/controller. Uživatel spravuje vlastní zdroj `workspace`, který popisuje požadavky na GPU a specifikaci inferencí. Kaito controllery automatizují nasazení tím, že synchronizují stav `workspace` custom resource.
 <div align="left">
-  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Архитектура Kaito" alt="Архитектура Kaito">
+  <img src="https://github.com/kaito-project/kaito/raw/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-На схеме выше показан обзор архитектуры Kaito. Основные компоненты включают:
+Výše uvedený obrázek ukazuje přehled architektury Kaito. Její hlavní komponenty jsou:
 
-- **Контроллер рабочего пространства (Workspace controller)**: синхронизирует кастомный ресурс `workspace`, создаёт кастомные ресурсы `machine` (описанные ниже) для запуска автоматического выделения нод, а также создаёт нагрузку инференса (`deployment` или `statefulset`) на основе предустановленных конфигураций модели.
-- **Контроллер provisioner нод (Node provisioner controller)**: в [helm chart gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) называется *gpu-provisioner*. Использует CRD `machine`, заимствованный из [Karpenter](https://sigs.k8s.io/karpenter), для взаимодействия с контроллером рабочего пространства. Интегрируется с API Azure Kubernetes Service (AKS) для добавления новых GPU-нод в кластер AKS.
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) — это open source компонент. Его можно заменить другими контроллерами, если они поддерживают API [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Workspace controller**: Synchronizuje `workspace` custom resource, vytváří `machine` (viz níže) custom resources pro spuštění automatického zajištění uzlů a vytváří inferenční workload (`deployment` nebo `statefulset`) na základě přednastavených konfigurací modelu.
+- **Node provisioner controller**: Tento controller se jmenuje *gpu-provisioner* v [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Používá `machine` CRD pocházející z [Karpenter](https://sigs.k8s.io/karpenter) pro komunikaci s workspace controllerem. Integruje se s Azure Kubernetes Service (AKS) API pro přidání nových GPU uzlů do AKS clusteru.
+> Poznámka: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) je open source komponenta. Může být nahrazena jinými controllery, pokud podporují [Karpenter-core](https://sigs.k8s.io/karpenter) API.
 
-## Видеообзор  
-[Смотреть демонстрацию Kaito](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
+## Přehledové video  
+[Sledujte Kaito Demo](https://www.youtube.com/embed/pmfBSg7L6lE?si=b8hXKJXb1gEZcmAe)
 
-## Установка
+## Instalace
 
-Пожалуйста, ознакомьтесь с инструкцией по установке [здесь](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Pokyny k instalaci najdete [zde](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
-## Быстрый старт
+## Rychlý start
 
-После установки Kaito можно попробовать выполнить следующие команды для запуска сервиса тонкой настройки.
+Po instalaci Kaito můžete vyzkoušet následující příkazy pro spuštění služby doladění.
 
 ```
 apiVersion: kaito.sh/v1alpha1
@@ -93,7 +93,7 @@ tuning:
 $ kubectl apply -f examples/fine-tuning/kaito_workspace_tuning_phi_3.yaml
 ```
 
-Статус рабочего пространства можно отслеживать с помощью следующей команды. Когда в столбце WORKSPACEREADY появится значение `True`, модель успешно развернута.
+Stav workspace lze sledovat pomocí následujícího příkazu. Jakmile se ve sloupci WORKSPACEREADY objeví hodnota `True`, model byl úspěšně nasazen.
 
 ```sh
 $ kubectl get workspace kaito_workspace_tuning_phi_3.yaml
@@ -101,7 +101,7 @@ NAME                  INSTANCE            RESOURCEREADY   INFERENCEREADY   WORKS
 workspace-tuning-phi-3   Standard_NC6s_v3   True            True             True             10m
 ```
 
-Далее можно узнать IP-адрес сервиса инференса в кластере и использовать временный pod с `curl` для тестирования конечной точки сервиса внутри кластера.
+Dále můžete zjistit cluster IP inferenční služby a použít dočasný `curl` pod pro otestování koncového bodu služby v clusteru.
 
 ```sh
 $ kubectl get svc workspace_tuning
@@ -113,4 +113,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Originální dokument v jeho původním jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

@@ -2,27 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dcb656f3d206fc4968e236deec5d4384",
-  "translation_date": "2025-05-07T13:41:54+00:00",
+  "translation_date": "2025-07-17T10:04:18+00:00",
   "source_file": "md/03.FineTuning/03.Inference/MLX_Inference.md",
   "language_code": "mo"
 }
 -->
-# **Inference Phi-3 með Apple MLX Framework**
+# **使用 Apple MLX 框架推論 Phi-3**
 
-## **Hvað er MLX Framework**
+## **什麼是 MLX 框架**
 
-MLX er fylkisrammi fyrir vélanám á Apple silicon, þróaður af Apple vélanámshópnum.
+MLX 是一個專為 Apple 矽晶片上的機器學習研究所設計的陣列框架，由 Apple 機器學習研究團隊開發。
 
-MLX er hannaður af vélanámssérfræðingum fyrir vélanámssérfræðinga. Ramminn er ætlaður að vera notendavænn en samt skilvirkur til að þjálfa og keyra líkön. Hönnun rammans sjálfs er líka hugmyndafræðilega einföld. Markmiðið er að auðvelda rannsakendum að bæta við og þróa MLX til að flýta fyrir nýjum hugmyndum.
+MLX 由機器學習研究人員為機器學習研究人員打造。這個框架旨在使用者友好，同時在訓練和部署模型時保持高效。框架本身的設計概念也相當簡單。我們希望讓研究人員能輕鬆擴展和改進 MLX，以便快速探索新想法。
 
-LLM líkön geta verið hraðað á Apple Silicon tækjum með MLX, og líkön geta keyrt á staðnum mjög þægilega.
+透過 MLX，Apple 矽晶片設備上的大型語言模型（LLMs）可以被加速，且模型能非常方便地在本地運行。
 
-## **Notkun MLX til að keyra Phi-3-mini**
+## **使用 MLX 推論 Phi-3-mini**
 
-### **1. Setja upp MLX umhverfið þitt**
+### **1. 設定你的 MLX 環境**
 
 1. Python 3.11.x  
-2. Settu upp MLX bókasafnið
+2. 安裝 MLX 函式庫
+
 
 ```bash
 
@@ -30,7 +31,8 @@ pip install mlx-lm
 
 ```
 
-### **2. Keyra Phi-3-mini í Terminal með MLX**
+### **2. 在終端機使用 MLX 執行 Phi-3-mini**
+
 
 ```bash
 
@@ -38,11 +40,12 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Útkoman (umhverfið mitt er Apple M1 Max, 64GB) er
+結果（我的環境是 Apple M1 Max，64GB）如下
 
 ![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.mo.png)
 
-### **3. Kvantun Phi-3-mini með MLX í Terminal**
+### **3. 在終端機使用 MLX 量化 Phi-3-mini**
+
 
 ```bash
 
@@ -50,11 +53,12 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***Note：*** Líkanið er hægt að kvantunera með mlx_lm.convert, og sjálfgefna kvantunin er INT4. Þessi dæmi kvantunar kvantunar Phi-3-mini í INT4.
+***Note：*** 模型可以透過 mlx_lm.convert 進行量化，預設量化方式為 INT4。此範例將 Phi-3-mini 量化為 INT4。
 
-Líkanið er hægt að kvantunera með mlx_lm.convert, og sjálfgefna kvantunin er INT4. Í þessu dæmi er Phi-3-mini kvantunar í INT4. Eftir kvantun er það vistað í sjálfgefna möppunni ./mlx_model
+模型可以透過 mlx_lm.convert 進行量化，預設量化方式為 INT4。此範例是將 Phi-3-mini 量化成 INT4。量化後的模型會儲存在預設目錄 ./mlx_model。
 
-Við getum prófað kvantaða líkanið með MLX úr terminal
+我們可以從終端機測試使用 MLX 量化後的模型
+
 
 ```bash
 
@@ -62,25 +66,24 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ```
 
-Útkoman er
+結果如下
 
 ![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.mo.png)
 
-### **4. Keyra Phi-3-mini með MLX í Jupyter Notebook**
+
+### **4. 在 Jupyter Notebook 使用 MLX 執行 Phi-3-mini**
+
 
 ![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.mo.png)
 
-***Note:*** Vinsamlegast skoðaðu þetta sýnidæmi [click this link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
+***Note:*** 請閱讀此範例 [點此連結](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
-## **Auðlindir**
 
-1. Lærðu um Apple MLX Framework [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)
+## **資源**
 
-2. Apple MLX GitHub Repo [https://github.com/ml-explore](https://github.com/ml-explore)
+1. 了解 Apple MLX 框架 [https://ml-explore.github.io](https://ml-explore.github.io/mlx/build/html/index.html)
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+2. Apple MLX GitHub 倉庫 [https://github.com/ml-explore](https://github.com/ml-explore)
 
----
-
-Could you please clarify what language or code "mo" refers to? "mo" is not a widely recognized language code. If you mean Moldovan (which is essentially Romanian), or something else, please specify so I can provide the correct translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋承擔責任。

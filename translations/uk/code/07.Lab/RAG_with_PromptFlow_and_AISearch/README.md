@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8ec74e4a49934dad78bc52dcb898359c",
-  "translation_date": "2025-07-09T20:13:30+00:00",
+  "translation_date": "2025-07-16T17:11:31+00:00",
   "source_file": "code/07.Lab/RAG_with_PromptFlow_and_AISearch/README.md",
   "language_code": "uk"
 }
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 - Встановлений Docker на вашому локальному комп’ютері.
 - Обліковий запис Azure з правами на створення та керування контейнерними ресурсами.
 - Екземпляри Azure AI Studio та Azure AI Search.
-- Модель для створення векторного індексу (може бути як Azure OpenAI embedding, так і модель з відкритим кодом з каталогу).
+- Модель для створення векторного індексу (може бути Azure OpenAI embedding або модель з відкритим кодом з каталогу).
 - Встановлений Python 3.8 або новіша версія на вашому локальному комп’ютері.
 - Azure Container Registry (або будь-який інший реєстр на ваш вибір).
 
@@ -42,13 +42,13 @@ CO_OP_TRANSLATOR_METADATA:
     cd code/07.Lab/RAG with PromptFlow and AISearch
     ```
 
-6. Зберіть Docker-образ:
+6. Створіть Docker-образ:
 
     ```sh
     docker build -t prompt-flow-frontend.py .
     ```
 
-7. Відправте Docker-образ до Azure Container Registry:
+7. Завантажте Docker-образ у Azure Container Registry:
 
     ```sh
     az acr login --name yourregistry

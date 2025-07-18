@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "110bee6270dad2ebf506d90a30b46dde",
-  "translation_date": "2025-05-07T14:37:48+00:00",
+  "translation_date": "2025-07-16T21:36:09+00:00",
   "source_file": "md/01.Introduction/03/Vision_Inference.md",
   "language_code": "fa"
 }
 -->
 # **استنتاج Phi-3-Vision به صورت محلی**
 
-Phi-3-vision-128k-instruct به Phi-3 این امکان را می‌دهد که نه تنها زبان را بفهمد، بلکه جهان را به صورت بصری نیز ببیند. از طریق Phi-3-vision-128k-instruct می‌توانیم مسائل مختلف بصری مانند OCR، تحلیل جدول، شناسایی اشیاء، توصیف تصویر و غیره را حل کنیم. به راحتی می‌توانیم وظایفی را انجام دهیم که قبلاً نیاز به حجم زیادی از داده‌های آموزشی داشتند. در ادامه تکنیک‌ها و سناریوهای کاربردی مرتبط با Phi-3-vision-128k-instruct آورده شده است.
+Phi-3-vision-128k-instruct به Phi-3 این امکان را می‌دهد که نه تنها زبان را درک کند، بلکه جهان را به صورت بصری نیز ببیند. از طریق Phi-3-vision-128k-instruct می‌توانیم مسائل مختلف بصری را حل کنیم، مانند OCR، تحلیل جدول، شناسایی اشیاء، توصیف تصویر و غیره. به راحتی می‌توانیم کارهایی را انجام دهیم که قبلاً نیاز به آموزش داده‌های زیادی داشتند. در ادامه تکنیک‌ها و سناریوهای کاربردی مرتبط با Phi-3-vision-128k-instruct آورده شده است.
 
 ## **0. آماده‌سازی**
 
@@ -21,13 +21,13 @@ pip install datasets -U
 pip install torch -U
 ```
 
-توصیه می‌شود از ***CUDA 11.6+*** استفاده کرده و flatten را نصب کنید
+پیشنهاد می‌شود از ***CUDA 11.6+*** استفاده کرده و flatten را نصب کنید
 
 ```bash
 pip install flash-attn --no-build-isolation
 ```
 
-یک نوت‌بوک جدید بسازید. برای کامل کردن مثال‌ها، توصیه می‌شود ابتدا محتوای زیر را ایجاد کنید.
+یک نوت‌بوک جدید ایجاد کنید. برای تکمیل مثال‌ها، توصیه می‌شود ابتدا محتوای زیر را ایجاد کنید.
 
 ```python
 from PIL import Image
@@ -51,7 +51,7 @@ prompt_suffix = "<|end|>\n"
 
 ## **1. تحلیل تصویر با Phi-3-Vision**
 
-می‌خواهیم هوش مصنوعی بتواند محتوای تصاویر ما را تحلیل کرده و توضیحات مرتبط ارائه دهد
+می‌خواهیم هوش مصنوعی قادر باشد محتوای تصاویر ما را تحلیل کرده و توضیحات مرتبط ارائه دهد
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nCould you please introduce this stock to me?{prompt_suffix}{assistant_prompt}"
@@ -74,7 +74,7 @@ response = processor.batch_decode(generate_ids,
                                   clean_up_tokenization_spaces=False)[0]
 ```
 
-می‌توانیم با اجرای اسکریپت زیر در نوت‌بوک پاسخ‌های مرتبط را دریافت کنیم
+با اجرای اسکریپت زیر در نوت‌بوک می‌توانیم پاسخ‌های مرتبط را دریافت کنیم
 
 ```txt
 Certainly! Nvidia Corporation is a global leader in advanced computing and artificial intelligence (AI). The company designs and develops graphics processing units (GPUs), which are specialized hardware accelerators used to process and render images and video. Nvidia's GPUs are widely used in professional visualization, data centers, and gaming. The company also provides software and services to enhance the capabilities of its GPUs. Nvidia's innovative technologies have applications in various industries, including automotive, healthcare, and entertainment. The company's stock is publicly traded and can be found on major stock exchanges.
@@ -82,7 +82,7 @@ Certainly! Nvidia Corporation is a global leader in advanced computing and artif
 
 ## **2. OCR با Phi-3-Vision**
 
-علاوه بر تحلیل تصویر، می‌توانیم اطلاعات را از تصویر استخراج کنیم. این همان فرآیند OCR است که قبلاً نیاز بود کد پیچیده‌ای برای انجام آن بنویسیم.
+علاوه بر تحلیل تصویر، می‌توانیم اطلاعات را از تصویر استخراج کنیم. این همان فرآیند OCR است که قبلاً برای انجام آن باید کدهای پیچیده می‌نوشتیم.
 
 ```python
 prompt = f"{user_prompt}<|image_1|>\nHelp me get the title and author information of this book?{prompt_suffix}{assistant_prompt}"
@@ -150,4 +150,4 @@ The first image shows a group of soccer players from the Arsenal Football Club p
 ```
 
 **سلب مسئولیت**:  
-این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما برای دقت تلاش می‌کنیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطا یا نادرستی باشند. سند اصلی به زبان بومی آن باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، استفاده از ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده این ترجمه ناشی شود، نیستیم.
+این سند با استفاده از سرویس ترجمه هوش مصنوعی [Co-op Translator](https://github.com/Azure/co-op-translator) ترجمه شده است. در حالی که ما در تلاش برای دقت هستیم، لطفاً توجه داشته باشید که ترجمه‌های خودکار ممکن است حاوی خطاها یا نادرستی‌هایی باشند. سند اصلی به زبان بومی خود باید به عنوان منبع معتبر در نظر گرفته شود. برای اطلاعات حیاتی، ترجمه حرفه‌ای انسانی توصیه می‌شود. ما مسئول هیچ گونه سوءتفاهم یا تفسیر نادرستی که از استفاده از این ترجمه ناشی شود، نیستیم.

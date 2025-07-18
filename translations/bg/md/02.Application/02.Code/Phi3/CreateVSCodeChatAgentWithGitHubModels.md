@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "35bf81388ac6917277b8d9a0c39bdc70",
-  "translation_date": "2025-05-09T19:09:42+00:00",
+  "translation_date": "2025-07-17T03:30:27+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md",
   "language_code": "bg"
 }
 -->
-# **Създайте собствен Visual Studio Code Chat Copilot агент с Phi-3.5 от GitHub Models**
+# **Създайте свой собствен Visual Studio Code Chat Copilot агент с Phi-3.5 от GitHub Models**
 
 Използвате ли Visual Studio Code Copilot? Особено в Chat, можете да използвате различни агенти, за да подобрите възможностите за създаване, писане и поддръжка на проекти във Visual Studio Code. Visual Studio Code предоставя API, който позволява на компании и индивидуални разработчици да създават различни агенти, базирани на техния бизнес, за да разширят възможностите си в различни специализирани области. В тази статия ще се фокусираме върху **Phi-3.5-mini-instruct (128k)** и **Phi-3.5-vision-instruct (128k)** от GitHub Models, за да създадем собствен Visual Studio Code агент.
 
 ## **За Phi-3.5 в GitHub Models**
 
-Знаем, че Phi-3/3.5-mini-instruct в семейството Phi-3/3.5 притежава силни възможности за разбиране и генериране на код и има предимства пред Gemma-2-9b и Mistral-Nemo-12B-instruct-2407.
+Знаем, че Phi-3/3.5-mini-instruct от семейството Phi-3/3.5 има силни възможности за разбиране и генериране на код и превъзхожда Gemma-2-9b и Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.eede87d45b849fd8738a7789f44ec3b81c4907d23eebd2b0e3dbd62c939c7cb9.bg.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.bg.png)
 
 Последните GitHub Models вече предоставят достъп до моделите Phi-3.5-mini-instruct (128k) и Phi-3.5-vision-instruct (128k). Разработчиците могат да ги използват чрез OpenAI SDK, Azure AI Inference SDK и REST API.
 
-![gh](../../../../../../translated_images/gh.7fa589617baffe1b3f8a044fb29ee1b46f02645a47f3caa57d493768512b94e8.bg.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.bg.png)
 
-***Note:*** Препоръчва се тук да се използва Azure AI Inference SDK, тъй като позволява по-добро превключване с Azure Model Catalog в продукционна среда.
+***Note: *** Препоръчително е да използвате Azure AI Inference SDK тук, тъй като той по-добре се интегрира с Azure Model Catalog в продукционна среда.
 
-По-долу са резултатите от **Phi-3.5-mini-instruct (128k)** и **Phi-3.5-vision-instruct (128k)** в сценария за генериране на код след интеграция с GitHub Models, както и подготовка за следващите примери.
+По-долу са резултатите от **Phi-3.5-mini-instruct (128k)** и **Phi-3.5-vision-instruct (128k)** в сценарий за генериране на код след интеграция с GitHub Models, както и подготовка за следващите примери.
 
 **Демо: GitHub Models Phi-3.5-mini-instruct (128k) генерира код от Prompt** ([кликнете тук](../../../../../../code/09.UpdateSamples/Aug/ghmodel_phi35_instruct_demo.ipynb))
 
@@ -34,31 +34,31 @@ CO_OP_TRANSLATOR_METADATA:
 
 GitHub Copilot Chat Agent може да изпълнява различни задачи в различни проектни сценарии, базирани на кода. Системата разполага с четири агента: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.19ff410949975e96c38aa5763545604a33dc923968b6abcd200ff8590c62efd7.bg.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.bg.png)
 
-Чрез добавяне на името на агента с ‘@’ можете бързо да изпълните съответната задача. За предприятия, ако добавите свои бизнес-специфични съдържания като изисквания, кодиране, тестови спецификации и релийзи, можете да получите по-мощни частни функции, базирани на GitHub Copilot.
+Като добавите името на агента с ‘@’, можете бързо да изпълните съответната задача. За предприятия, ако добавите бизнес-свързано съдържание като изисквания, кодиране, тестови спецификации и релийзи, можете да имате по-мощни частни функции, базирани на GitHub Copilot.
 
-Visual Studio Code Chat Agent вече официално пусна своето API, което позволява на предприятия или корпоративни разработчици да създават агенти, базирани на различни софтуерни бизнес екосистеми. Базирайки се на метода за разработка на Visual Studio Code Extension, лесно можете да достъпите интерфейса на Visual Studio Code Chat Agent API. Можем да разработваме по този процес.
+Visual Studio Code Chat Agent вече официално пусна своя API, позволяващ на предприятия или разработчици да създават агенти, базирани на различни софтуерни бизнес екосистеми. Въз основа на метода за разработка на Visual Studio Code Extension Development, лесно можете да достъпите интерфейса на Visual Studio Code Chat Agent API. Можем да разработваме, следвайки този процес.
 
-![diagram](../../../../../../translated_images/diagram.e17900e549fa305114e13994f4091c34860163aaff8e67d206550bfd01bcb004.bg.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.bg.png)
 
-Сценарият за разработка поддържа достъп до API-та на трети страни (като GitHub Models, Azure Model Catalog и самостоятелно изградени услуги, базирани на отворени модели) и също така може да използва моделите gpt-35-turbo, gpt-4 и gpt-4o, предоставени от GitHub Copilot.
+Сценарият за разработка поддържа достъп до API-та на трети страни (като GitHub Models, Azure Model Catalog и самостоятелно изградени услуги, базирани на open source модели) и може да използва моделите gpt-35-turbo, gpt-4 и gpt-4o, предоставени от GitHub Copilot.
 
 ## **Добавяне на агент @phicoding, базиран на Phi-3.5**
 
-Опитваме се да интегрираме програмистките възможности на Phi-3.5 за изпълнение на задачи като писане на код, генериране на код от изображения и други. Създаваме агент, базиран на Phi-3.5 - @PHI, като следните функции са налични:
+Опитваме се да интегрираме програмните възможности на Phi-3.5 за изпълнение на задачи като писане на код, генериране на код от изображения и други. Създаваме агент, базиран на Phi-3.5 - @PHI, с някои от функциите:
 
-1. Генериране на самопрезентация, базирана на GPT-4o, предоставен от GitHub Copilot чрез командата **@phicoding /help**
+1. Генерира самопрезентация, базирана на GPT-4o, предоставен от GitHub Copilot чрез командата **@phicoding /help**
 
-2. Генериране на код за различни програмни езици, базирано на **Phi-3.5-mini-instruct (128k)** чрез командата **@phicoding /gen**
+2. Генерира код за различни програмни езици, базиран на **Phi-3.5-mini-instruct (128k)** чрез командата **@phicoding /gen**
 
-3. Генериране на код, базирано на **Phi-3.5-vision-instruct (128k)** и допълване на изображение чрез командата **@phicoding /image**
+3. Генерира код, базиран на **Phi-3.5-vision-instruct (128k)** и завършва код от изображение чрез командата **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.c302d58012f0988b02f2275e24d8d21259899ef827d8a7579daecd1dd8b83ffd.bg.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.bg.png)
 
 ## **Свързани стъпки**
 
-1. Инсталирайте поддръжка за разработка на Visual Studio Code Extension чрез npm
+1. Инсталирайте поддръжка за разработка на Visual Studio Code Extension с помощта на npm
 
 ```bash
 
@@ -73,7 +73,7 @@ yo code
 
 ```
 
-3. Отворете създадения проект и редактирайте package.json. Тук са свързаните инструкции и конфигурации, както и настройките за GitHub Models. Обърнете внимание, че трябва да добавите своя GitHub Models токен тук.
+3. Отворете създадения проект и модифицирайте package.json. Тук са свързаните инструкции и конфигурации, както и конфигурацията за GitHub Models. Обърнете внимание, че трябва да добавите своя GitHub Models токен тук.
 
 ```json
 
@@ -191,7 +191,7 @@ yo code
 
 ```
 
-4. Редактирайте src/extension.ts
+4. Модифицирайте src/extension.ts
 
 ```typescript
 
@@ -364,21 +364,21 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.e26759fe1e92cea3e8788b2157e4383f621254ce001ba4ef6d35fce1e0667e55.bg.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.bg.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.f249f33c3fa449e0a779c78e3c2f3a65820702c03129e52a81a8df369443e413.bg.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.bg.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.90c9cb76281be28a6cfdccda08f65043579ef4730a818c34e6f33ab6eb90e38c.bg.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.bg.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.db0cc3d3bd0ee494170ebd2623623e1012eb9f5786436439e2e36b91ca163172.bg.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.bg.png)
 
-Можете да изтеглите примерен код: [кликнете](../../../../../../code/09.UpdateSamples/Aug/vscode)
+Можете да изтеглите примерен код: [кликнете тук](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
 ## **Ресурси**
 
@@ -389,4 +389,4 @@ export function deactivate() {}
 3. Научете за Visual Studio Code Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat)
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.

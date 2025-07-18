@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-07-09T20:07:06+00:00",
+  "translation_date": "2025-07-16T20:54:15+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "my"
 }
@@ -18,18 +18,18 @@ Kaito သည် virtual machine အခြေခံ အဆောက်အအု�
 - မော်ဒယ်လိုအပ်ချက်အရ GPU node များကို အလိုအလျောက် provision ပြုလုပ်ပေးသည်။
 - လိုင်စင်ခွင့်ရှိပါက Microsoft Container Registry (MCR) တွင် ကြီးမားသော မော်ဒယ် image များကို တင်ဆက်ထားနိုင်သည်။
 
-Kaito ကို အသုံးပြုခြင်းဖြင့် Kubernetes တွင် ကြီးမားသော AI အနုတ်ယူမော်ဒယ်များကို တင်သွင်းခြင်းလုပ်ငန်းစဉ်ကို အလွန်လွယ်ကူစေသည်။
+Kaito ကို အသုံးပြုခြင်းဖြင့် Kubernetes တွင် ကြီးမားသော AI အနုတ်ယူမှု မော်ဒယ်များကို တင်သွင်းခြင်းလုပ်ငန်းစဉ်ကို အလွန်လွယ်ကူစေသည်။
 
 ## ဖွဲ့စည်းပုံ
 
-Kaito သည် ရိုးရာ Kubernetes Custom Resource Definition(CRD)/controller ဒီဇိုင်းပုံစံကို လိုက်နာသည်။ အသုံးပြုသူသည် GPU လိုအပ်ချက်များနှင့် အနုတ်ယူမှု ဖော်ပြချက်များကို ဖော်ပြထားသော `workspace` custom resource ကို စီမံခန့်ခွဲသည်။ Kaito controller များသည် `workspace` custom resource ကို ပြန်လည်ညှိနှိုင်းခြင်းဖြင့် deployment ကို အလိုအလျောက် ပြုလုပ်ပေးသည်။
+Kaito သည် ရိုးရာ Kubernetes Custom Resource Definition (CRD) / controller ဒီဇိုင်းပုံစံကို လိုက်နာသည်။ အသုံးပြုသူသည် GPU လိုအပ်ချက်များနှင့် အနုတ်ယူမှု ဖော်ပြချက်များကို ဖော်ပြထားသော `workspace` custom resource ကို စီမံခန့်ခွဲသည်။ Kaito controller များသည် `workspace` custom resource ကို ပြန်လည်ညှိနှိုင်းခြင်းဖြင့် deployment ကို အလိုအလျောက် ပြုလုပ်ပေးသည်။
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Kaito architecture" alt="Kaito architecture">
 </div>
 
-အထက်ပါ ပုံသည် Kaito ဖွဲ့စည်းပုံ အနှစ်ချုပ်ကို ဖော်ပြထားသည်။ ၎င်း၏ အဓိက အစိတ်အပိုင်းများမှာ-
+အထက်ပါ ပုံသည် Kaito ၏ ဖွဲ့စည်းပုံ အနှစ်ချုပ်ကို ဖော်ပြထားသည်။ ၎င်း၏ အဓိက အစိတ်အပိုင်းများမှာ-
 
-- **Workspace controller**: `workspace` custom resource ကို ပြန်လည်ညှိနှိုင်းပြီး `machine` (အောက်တွင် ရှင်းပြထားသည်) custom resource များကို ဖန်တီးကာ node auto provisioning ကို စတင်ပေးသည်။ မော်ဒယ် preset configuration များအရ အနုတ်ယူမှု workload (`deployment` သို့မဟုတ် `statefulset`) ကို ဖန်တီးပေးသည်။
+- **Workspace controller**: `workspace` custom resource ကို ပြန်လည်ညှိနှိုင်းပြီး `machine` (အောက်တွင်ရှင်းပြထားသည်) custom resource များကို ဖန်တီးကာ node auto provisioning ကို စတင်ပေးသည်။ မော်ဒယ် preset configuration များအရ အနုတ်ယူမှု workload (`deployment` သို့မဟုတ် `statefulset`) ကို ဖန်တီးပေးသည်။
 - **Node provisioner controller**: controller ၏ အမည်မှာ [gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner) တွင် *gpu-provisioner* ဖြစ်သည်။ ၎င်းသည် [Karpenter](https://sigs.k8s.io/karpenter) မှ ရရှိသော `machine` CRD ကို အသုံးပြုကာ workspace controller နှင့် ဆက်သွယ်သည်။ Azure Kubernetes Service (AKS) API များနှင့် ပေါင်းစည်းကာ AKS cluster တွင် GPU node အသစ်များ ထည့်သွင်းပေးသည်။
 > Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) သည် open source component ဖြစ်သည်။ [Karpenter-core](https://sigs.k8s.io/karpenter) API များကို ထောက်ပံ့သော အခြား controller များဖြင့် အစားထိုးနိုင်သည်။
 
@@ -104,7 +104,7 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 ## အမြန်စတင်ခြင်း Inference Phi-3 နှင့် adapters
 
-Kaito ကို တပ်ဆင်ပြီးနောက် အောက်ပါ command များကို အသုံးပြုကာ အနုတ်ယူမှု ဝန်ဆောင်မှုကို စတင်နိုင်သည်။
+Kaito တပ်ဆင်ပြီးနောက် အောက်ပါ command များကို အသုံးပြုကာ အနုတ်ယူမှု ဝန်ဆောင်မှုကို စတင်နိုင်သည်။
 
 [နမူနာကုဒ် Inference Phi-3 နှင့် Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **အကြောင်းကြားချက်**  
-ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း၊ အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။
+ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့ တာဝန်မယူပါ။

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "90d0d072cf26ccc1f271a580d3e45d70",
-  "translation_date": "2025-07-09T18:21:13+00:00",
+  "translation_date": "2025-07-16T14:40:27+00:00",
   "source_file": "CONTRIBUTING.md",
   "language_code": "it"
 }
@@ -13,7 +13,7 @@ Questo progetto accoglie contributi e suggerimenti. La maggior parte dei contrib
 Contributor License Agreement (CLA) che dichiara che hai il diritto e effettivamente concedi a noi
 i diritti di utilizzare il tuo contributo. Per maggiori dettagli, visita [https://cla.opensource.microsoft.com](https://cla.opensource.microsoft.com)
 
-Quando invii una pull request, un bot CLA determinerà automaticamente se devi fornire
+Quando invii una pull request, un bot CLA determinerà automaticamente se è necessario fornire
 un CLA e decorerà la PR di conseguenza (ad esempio, controllo dello stato, commento). Segui semplicemente le istruzioni
 fornite dal bot. Dovrai farlo solo una volta per tutti i repository che utilizzano il nostro CLA.
 
@@ -24,11 +24,11 @@ Per maggiori informazioni leggi le [FAQ sul Codice di Condotta](https://opensour
 
 ## Avvertenze per la creazione di issue
 
-Per favore, non aprire issue su GitHub per domande di supporto generali, poiché la lista GitHub dovrebbe essere usata per richieste di funzionalità e segnalazioni di bug. In questo modo possiamo tracciare più facilmente problemi o bug reali nel codice e mantenere la discussione generale separata dal codice effettivo.
+Per favore, non aprire issue su GitHub per domande di supporto generali, poiché la lista GitHub dovrebbe essere usata per richieste di funzionalità e segnalazioni di bug. In questo modo possiamo tracciare più facilmente problemi o bug reali nel codice e mantenere la discussione generale separata dal codice vero e proprio.
 
 ## Come Contribuire
 
-### Linee guida per le Pull Requests
+### Linee guida per le Pull Request
 
 Quando invii una pull request (PR) al repository Phi-3 CookBook, segui queste linee guida:
 
@@ -44,7 +44,7 @@ Quando invii una pull request (PR) al repository Phi-3 CookBook, segui queste li
 
 ### Linee guida di scrittura
 
-Per garantire coerenza in tutti i documenti, usa le seguenti linee guida:
+Per garantire coerenza in tutti i documenti, utilizza le seguenti indicazioni:
 
 - **Formattazione URL**: Inserisci tutti gli URL tra parentesi quadre seguite da parentesi tonde, senza spazi aggiuntivi dentro o intorno. Ad esempio: `[example](https://www.microsoft.com)`.
 
@@ -70,7 +70,7 @@ Questo workflow verifica che tutti i percorsi relativi nei tuoi file siano corre
 1. Per assicurarti che i tuoi link funzionino correttamente, esegui le seguenti operazioni usando VS Code:
     - Passa il mouse su qualsiasi link nei tuoi file.
     - Premi **Ctrl + Click** per navigare al link.
-    - Se clicchi su un link e non funziona localmente, questo attiverà il workflow e non funzionerà su GitHub.
+    - Se clicchi su un link e non funziona localmente, attiverà il workflow e non funzionerà su GitHub.
 
 1. Per risolvere questo problema, esegui le seguenti operazioni usando i suggerimenti di percorso forniti da VS Code:
     - Digita `./` o `../`.
@@ -85,7 +85,7 @@ Questo workflow verifica che nessun URL web includa un locale specifico per paes
 
 1. Per verificare che i tuoi URL non contengano locali di paese, esegui le seguenti operazioni:
 
-    - Controlla la presenza di testi come `/en-us/`, `/en/` o altri locali linguistici negli URL.
+    - Controlla la presenza di testi come `/en-us/`, `/en/` o qualsiasi altro locale linguistico negli URL.
     - Se questi non sono presenti nei tuoi URL, supererai questo controllo.
 
 1. Per risolvere questo problema, esegui le seguenti operazioni:
@@ -109,9 +109,9 @@ Una volta corretto l’URL, salva e invia le modifiche.
 
 > [!NOTE]
 >
-> Potrebbero esserci casi in cui il controllo degli URL fallisce anche se il link è accessibile. Questo può accadere per diversi motivi, tra cui:
+> Potrebbero verificarsi casi in cui il controllo degli URL fallisce anche se il link è accessibile. Questo può accadere per diversi motivi, tra cui:
 >
-> - **Restrizioni di rete:** I server di GitHub Actions potrebbero avere restrizioni di rete che impediscono l’accesso a certi URL.
+> - **Restrizioni di rete:** I server delle GitHub actions potrebbero avere restrizioni di rete che impediscono l’accesso a certi URL.
 > - **Problemi di timeout:** URL che impiegano troppo tempo a rispondere possono causare un errore di timeout nel workflow.
 > - **Problemi temporanei del server:** Interruzioni occasionali o manutenzioni del server possono rendere un URL temporaneamente non disponibile durante la validazione.
 

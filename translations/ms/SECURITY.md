@@ -2,48 +2,48 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "57f14126c1c6add76b3aef3844dfe4e3",
-  "translation_date": "2025-05-09T04:20:13+00:00",
+  "translation_date": "2025-07-16T15:42:49+00:00",
   "source_file": "SECURITY.md",
   "language_code": "ms"
 }
 -->
-## Security
+## Keselamatan
 
-Microsoft takes the security of our software products and services seriously, which includes all source code repositories managed through our GitHub organizations, which include [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet) and [Xamarin](https://github.com/xamarin).
+Microsoft mengambil serius keselamatan produk perisian dan perkhidmatan kami, termasuk semua repositori kod sumber yang diuruskan melalui organisasi GitHub kami, yang merangkumi [Microsoft](https://github.com/Microsoft), [Azure](https://github.com/Azure), [DotNet](https://github.com/dotnet), [AspNet](https://github.com/aspnet) dan [Xamarin](https://github.com/xamarin).
 
-If you believe you have found a security vulnerability in any Microsoft-owned repository that meets [Microsoft's definition of a security vulnerability](https://aka.ms/security.md/definition), please report it to us as described below.
+Jika anda percaya anda telah menemui kelemahan keselamatan dalam mana-mana repositori milik Microsoft yang memenuhi [definisi kelemahan keselamatan Microsoft](https://aka.ms/security.md/definition), sila laporkan kepada kami seperti yang diterangkan di bawah.
 
-## Reporting Security Issues
+## Melaporkan Isu Keselamatan
 
-**Please do not report security vulnerabilities through public GitHub issues.**
+**Sila jangan laporkan kelemahan keselamatan melalui isu GitHub awam.**
 
-Instead, please report them to the Microsoft Security Response Center (MSRC) at [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report).
+Sebaliknya, sila laporkan kepada Microsoft Security Response Center (MSRC) di [https://msrc.microsoft.com/create-report](https://aka.ms/security.md/msrc/create-report).
 
-If you prefer to submit without logging in, send email to [secure@microsoft.com](mailto:secure@microsoft.com).  If possible, encrypt your message with our PGP key; please download it from the [Microsoft Security Response Center PGP Key page](https://aka.ms/security.md/msrc/pgp).
+Jika anda lebih suka menghantar tanpa log masuk, hantar emel ke [secure@microsoft.com](mailto:secure@microsoft.com). Jika boleh, sila enkripsi mesej anda dengan kunci PGP kami; sila muat turun dari [Microsoft Security Response Center PGP Key page](https://aka.ms/security.md/msrc/pgp).
 
-You should receive a response within 24 hours. If for some reason you do not, please follow up via email to ensure we received your original message. Additional information can be found at [microsoft.com/msrc](https://www.microsoft.com/msrc). 
+Anda sepatutnya menerima maklum balas dalam masa 24 jam. Jika atas sebab tertentu anda tidak menerimanya, sila ikuti semula melalui emel untuk memastikan kami telah menerima mesej asal anda. Maklumat tambahan boleh didapati di [microsoft.com/msrc](https://www.microsoft.com/msrc).
 
-Please include the requested information listed below (as much as you can provide) to help us better understand the nature and scope of the possible issue:
+Sila sertakan maklumat yang diminta di bawah (seberapa banyak yang anda boleh berikan) untuk membantu kami memahami dengan lebih baik sifat dan skop isu yang mungkin:
 
-  * Type of issue (e.g. buffer overflow, SQL injection, cross-site scripting, etc.)
-  * Full paths of source file(s) related to the manifestation of the issue
-  * The location of the affected source code (tag/branch/commit or direct URL)
-  * Any special configuration required to reproduce the issue
-  * Step-by-step instructions to reproduce the issue
-  * Proof-of-concept or exploit code (if possible)
-  * Impact of the issue, including how an attacker might exploit the issue
+  * Jenis isu (contoh: buffer overflow, suntikan SQL, cross-site scripting, dan lain-lain)
+  * Laluan penuh fail sumber yang berkaitan dengan manifestasi isu
+  * Lokasi kod sumber yang terjejas (tag/branch/commit atau URL langsung)
+  * Sebarang konfigurasi khas yang diperlukan untuk menghasilkan semula isu
+  * Arahan langkah demi langkah untuk menghasilkan semula isu
+  * Bukti konsep atau kod eksploitasi (jika boleh)
+  * Kesan isu, termasuk bagaimana penyerang mungkin mengeksploitasi isu tersebut
 
-This information will help us triage your report more quickly.
+Maklumat ini akan membantu kami menilai laporan anda dengan lebih cepat.
 
-If you are reporting for a bug bounty, more complete reports can contribute to a higher bounty award. Please visit our [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty) page for more details about our active programs.
+Jika anda melaporkan untuk bug bounty, laporan yang lebih lengkap boleh menyumbang kepada ganjaran bounty yang lebih tinggi. Sila lawati halaman [Microsoft Bug Bounty Program](https://aka.ms/security.md/msrc/bounty) untuk maklumat lanjut mengenai program aktif kami.
 
-## Preferred Languages
+## Bahasa Pilihan
 
-We prefer all communications to be in English.
+Kami mengutamakan semua komunikasi dalam Bahasa Inggeris.
 
-## Policy
+## Polisi
 
-Microsoft follows the principle of [Coordinated Vulnerability Disclosure](https://aka.ms/security.md/cvd).
+Microsoft mengikut prinsip [Pendedahan Kelemahan Berkoordinasi](https://aka.ms/security.md/cvd).
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil maklum bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

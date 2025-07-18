@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-08T05:42:06+00:00",
+  "translation_date": "2025-07-17T02:50:38+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "tw"
 }
@@ -13,25 +13,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## **📚 知識**
 
-Android LLM 推理 API 讓你可以在 Android 裝置上完全本地執行大型語言模型（LLMs），你可以用它來執行各種任務，例如生成文字、以自然語言形式檢索資訊，以及摘要文件。這個任務內建支援多種文字轉文字的大型語言模型，因此你可以將最新的本地生成式 AI 模型應用到你的 Android 應用程式中。
+Android LLM Inference API 讓你能在 Android 裝置上完全離線執行大型語言模型（LLMs），可用於多種任務，例如生成文字、以自然語言形式檢索資訊，以及文件摘要。此任務內建支援多種文字轉文字的大型語言模型，讓你能將最新的離線生成式 AI 模型應用於 Android 應用程式。
 
-Googld AI Edge Torch 是一個 Python 函式庫，支援將 PyTorch 模型轉換成 .tflite 格式，之後可搭配 TensorFlow Lite 和 MediaPipe 執行。這讓 Android、iOS 和物聯網應用能完全在裝置上執行模型。AI Edge Torch 提供廣泛的 CPU 支援，並初步支援 GPU 和 NPU。AI Edge Torch 致力於與 PyTorch 緊密整合，基於 torch.export() 並提供良好的 Core ATen 運算子支援。
+Google AI Edge Torch 是一個 Python 函式庫，支援將 PyTorch 模型轉換成 .tflite 格式，之後可用 TensorFlow Lite 和 MediaPipe 執行。這使得 Android、iOS 和物聯網應用能完全在裝置端執行模型。AI Edge Torch 提供廣泛的 CPU 支援，並初步支援 GPU 和 NPU。AI Edge Torch 致力於與 PyTorch 緊密整合，基於 torch.export() 並涵蓋 Core ATen 運算子。
 
 ## **🪬 指南**
 
-### **🔥 將 Microsoft Phi-3.5 轉成 tflite 支援**
+### **🔥 將 Microsoft Phi-3.5 轉換為 tflite 支援**
 
-0. 此範例適用於 Android 14+
+0. 本範例適用於 Android 14+
 
 1. 安裝 Python 3.10.12
 
 ***建議：*** 使用 conda 來建立你的 Python 環境
 
-2. Ubuntu 20.04 / 22.04（請特別注意 [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch)）
+2. Ubuntu 20.04 / 22.04（請參考 [google ai-edge-torch](https://github.com/google-ai-edge/ai-edge-torch)）
 
-***建議：*** 使用 Azure Linux VM 或第三方雲端虛擬機來建立你的環境
+***建議：*** 使用 Azure Linux VM 或第三方雲端虛擬機建立環境
 
-3. 開啟你的 Linux bash，安裝 Python 函式庫
+3. 進入你的 Linux bash，安裝 Python 函式庫
 
 ```bash
 
@@ -57,7 +57,7 @@ git clone  https://huggingface.co/microsoft/Phi-3.5-mini-instruct
 
 ```
 
-5. 將 Microsoft Phi-3.5 轉成 tflite
+5. 將 Microsoft Phi-3.5 轉換為 tflite
 
 ```bash
 
@@ -65,7 +65,7 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 將 Microsoft Phi-3.5 轉成 Android Mediapipe Bundle**
+### **🔥 將 Microsoft Phi-3.5 轉換為 Android Mediapipe Bundle**
 
 請先安裝 mediapipe
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-在 [你的 notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb) 執行此程式碼
+在你的 [notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb) 執行此程式碼
 
 ```python
 
@@ -94,7 +94,7 @@ bundler.create_bundle(config)
 
 ```
 
-### **🔥 使用 adb push 將模型推送到你的 Android 裝置路徑**
+### **🔥 使用 adb 將任務模型推送到你的 Android 裝置路徑**
 
 ```bash
 

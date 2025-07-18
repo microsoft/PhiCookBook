@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "8a7ad026d880c666db9739a17a2eb400",
-  "translation_date": "2025-05-09T13:10:17+00:00",
+  "translation_date": "2025-07-16T21:34:22+00:00",
   "source_file": "md/01.Introduction/03/Rust_Inference.md",
   "language_code": "hr"
 }
 -->
-# Cross-platform inference with Rust
+# Inference na više platformi s Rustom
 
-Ovaj vodič će nas provesti kroz proces izvođenja inferencije koristeći Rust i [Candle ML framework](https://github.com/huggingface/candle) iz HuggingFacea. Korištenje Rusta za inferenciju donosi nekoliko prednosti, posebno u usporedbi s drugim programskim jezicima. Rust je poznat po svojoj visokoj performansi, usporedivoj s C i C++. To ga čini izvrsnim izborom za zadatke inferencije, koji mogu biti računalno zahtjevni. Posebno je to moguće zahvaljujući zero-cost apstrakcijama i efikasnom upravljanju memorijom, bez opterećenja garbage collectora. Rustove cross-platform mogućnosti omogućuju razvoj koda koji radi na različitim operativnim sustavima, uključujući Windows, macOS i Linux, kao i mobilne operativne sustave, bez značajnih promjena u kodnoj bazi.
+Ovaj vodič će nas provesti kroz proces izvođenja inference koristeći Rust i [Candle ML framework](https://github.com/huggingface/candle) iz HuggingFacea. Korištenje Rusta za inference donosi nekoliko prednosti, osobito u usporedbi s drugim programskim jezicima. Rust je poznat po visokoj izvedbi, usporedivoj s C i C++. To ga čini izvrsnim izborom za zadatke inference, koji mogu biti računalno zahtjevni. Posebno je to omogućeno nultim troškovima apstrakcija i učinkovitim upravljanjem memorijom, bez opterećenja prikupljanjem smeća. Rustove mogućnosti rada na više platformi omogućuju razvoj koda koji radi na različitim operativnim sustavima, uključujući Windows, macOS i Linux, kao i mobilne operativne sustave, bez značajnih promjena u kodnoj bazi.
 
-Preduvjet za praćenje ovog vodiča je [instalacija Rust](https://www.rust-lang.org/tools/install), koja uključuje Rust kompajler i Cargo, Rustov upravitelj paketa.
+Preduvjet za praćenje ovog vodiča je [instalacija Rusta](https://www.rust-lang.org/tools/install), koja uključuje Rust kompajler i Cargo, upravitelj paketa za Rust.
 
-## Step 1: Create a New Rust Project
+## Korak 1: Kreirajte novi Rust projekt
 
 Za kreiranje novog Rust projekta, pokrenite sljedeću naredbu u terminalu:
 
@@ -21,9 +21,9 @@ Za kreiranje novog Rust projekta, pokrenite sljedeću naredbu u terminalu:
 cargo new phi-console-app
 ```
 
-Ovo generira početnu strukturu projekta s datotekom `Cargo.toml` file and a `src` directory containing a `main.rs` file.
+Ovo generira početnu strukturu projekta s datotekom `Cargo.toml` i direktorijem `src` koji sadrži datoteku `main.rs`.
 
-Next, we will add our dependencies - namely the `candle`, `hf-hub` and `tokenizers` crates - to the `Cargo.toml`:
+Zatim ćemo dodati naše ovisnosti - točnije `candle`, `hf-hub` i `tokenizers` crateove - u datoteku `Cargo.toml`:
 
 ```toml
 [package]
@@ -39,9 +39,9 @@ rand = "0.8"
 tokenizers = "0.15.2"
 ```
 
-## Step 2: Configure Basic Parameters
+## Korak 2: Konfigurirajte osnovne parametre
 
-U datoteci main.rs postavit ćemo početne parametre za našu inferenciju. Svi će biti hardkodirani radi jednostavnosti, ali ih možemo mijenjati po potrebi.
+U datoteci main.rs postavit ćemo početne parametre za našu inferencu. Svi će biti hardkodirani radi jednostavnosti, ali ih možemo po potrebi mijenjati.
 
 ```rust
 let temperature: f64 = 1.0;
@@ -57,14 +57,14 @@ let device = Device::Cpu;
 
 - **temperature**: Kontrolira nasumičnost procesa uzorkovanja.
 - **sample_len**: Određuje maksimalnu duljinu generiranog teksta.
-- **top_p**: Koristi se za nucleus sampling kako bi se ograničio broj tokena koji se razmatraju u svakom koraku.
-- **repeat_last_n**: Kontrolira broj tokena na koje se primjenjuje penalizacija kako bi se spriječilo ponavljanje.
-- **repeat_penalty**: Vrijednost penalizacije za ponovljene tokene.
-- **seed**: Nasumični seed (možemo koristiti konstantnu vrijednost za bolju reproducibilnost).
-- **prompt**: Početni tekst za generiranje. Primijetite da tražimo od modela da generira haiku o hokeju na ledu, te da ga omotavamo posebnim tokenima kako bismo označili dijelove razgovora korisnika i asistenta. Model zatim dovršava prompt haikuom.
-- **device**: U ovom primjeru koristimo CPU za izračune. Candle podržava i rad na GPU-u s CUDA i Metal.
+- **top_p**: Koristi se za nucleus sampling kako bi se ograničio broj tokena razmatranih u svakom koraku.
+- **repeat_last_n**: Kontrolira broj tokena koji se uzimaju u obzir za primjenu kazne kako bi se spriječile ponavljajuće sekvence.
+- **repeat_penalty**: Vrijednost kazne za obeshrabrivanje ponavljanja tokena.
+- **seed**: Nasumični seed (možemo koristiti konstantnu vrijednost za bolju ponovljivost).
+- **prompt**: Početni tekst za generiranje. Primijetite da tražimo od modela da generira haiku o hokeju na ledu, te da ga omotavamo posebnim tokenima koji označavaju dijelove razgovora korisnika i asistenta. Model će zatim dovršiti prompt haikuom.
+- **device**: U ovom primjeru koristimo CPU za izračune. Candle također podržava rad na GPU-u s CUDA i Metal podrškom.
 
-## Step 3: Download/Prepare Model and Tokenizer
+## Korak 3: Preuzmite/pripremite model i tokenizer
 
 ```rust
 let api = hf_hub::api::sync::Api::new()?;
@@ -82,9 +82,9 @@ let tokenizer_path = api
 let tokenizer = Tokenizer::from_file(tokenizer_path).map_err(|e| e.to_string())?;
 ```
 
-Koristimo `hf_hub` API to download the model and tokenizer files from the Hugging Face model hub. The `gguf` file contains the quantized model weights, while the `tokenizer.json` datoteku za tokenizaciju ulaznog teksta. Nakon što se model preuzme, on se kešira, pa će prvo pokretanje biti sporo (jer preuzima 2.4GB modela), dok će sljedeća pokretanja biti brža.
+Koristimo `hf_hub` API za preuzimanje modela i tokenizer datoteka s Hugging Face model hub-a. Datoteka `gguf` sadrži kvantizirane težine modela, dok se `tokenizer.json` koristi za tokenizaciju ulaznog teksta. Nakon preuzimanja, model se kešira, pa će prvo izvođenje biti sporije (jer se preuzima 2.4GB modela), dok će sljedeća izvođenja biti brža.
 
-## Step 4: Load Model
+## Korak 4: Učitajte model
 
 ```rust
 let mut file = std::fs::File::open(&model_path)?;
@@ -92,9 +92,9 @@ let model_content = gguf_file::Content::read(&mut file)?;
 let mut model = Phi3::from_gguf(false, model_content, &mut file, &device)?;
 ```
 
-Učitavamo kvantizirane težine modela u memoriju i inicijaliziramo Phi-3 model. Ovaj korak uključuje čitanje težina iz `gguf` datoteke i pripremu modela za inferenciju na specificiranom uređaju (ovdje CPU).
+Učitavamo kvantizirane težine modela u memoriju i inicijaliziramo Phi-3 model. Ovaj korak uključuje čitanje težina iz `gguf` datoteke i postavljanje modela za inferencu na odabranom uređaju (u ovom slučaju CPU).
 
-## Step 5: Process Prompt and Prepare for Inference
+## Korak 5: Obrada prompta i priprema za inferencu
 
 ```rust
 let tokens = tokenizer.encode(prompt, true).map_err(|e| e.to_string())?;
@@ -120,11 +120,11 @@ for (pos, &token) in tokens.iter().enumerate() {
 }
 ```
 
-U ovom koraku tokeniziramo ulazni prompt i pripremamo ga za inferenciju pretvaranjem u niz ID-eva tokena. Također inicijaliziramo `LogitsProcessor` to handle the sampling process (probability distribution over the vocabulary) based on the given `temperature` and `top_p` vrijednosti. Svaki token se pretvara u tensor i prosljeđuje modelu kako bi se dobili logits.
+U ovom koraku tokeniziramo ulazni prompt i pripremamo ga za inferencu pretvaranjem u niz ID-eva tokena. Također inicijaliziramo `LogitsProcessor` koji upravlja procesom uzorkovanja (vjerojatnosnom distribucijom preko vokabulara) na temelju zadanih vrijednosti `temperature` i `top_p`. Svaki token se pretvara u tensor i prosljeđuje modelu kako bi se dobili logits.
 
-Petlja obrađuje svaki token u promptu, ažurira logits procesor i priprema se za generiranje sljedećeg tokena.
+Petlja obrađuje svaki token u promptu, ažurira logits processor i priprema se za generiranje sljedećeg tokena.
 
-## Step 6: Inference
+## Korak 6: Inference
 
 ```rust
 for index in 0..to_sample {
@@ -160,12 +160,12 @@ for index in 0..to_sample {
 }
 ```
 
-U petlji inferencije generiramo tokene jedan po jedan dok ne dođemo do željene duljine ili dok ne naiđemo na token kraja sekvence. Sljedeći token se pretvara u tensor i prolazi kroz model, dok se logits obrađuju kako bi se primijenile penalizacije i uzorkovanje. Zatim se sljedeći token uzorkuje, dekodira i dodaje u niz.
-Kako bismo izbjegli ponavljajući tekst, primjenjuje se penalizacija na ponovljene tokene na temelju parametara `repeat_last_n` and `repeat_penalty`.
+U petlji inference generiramo tokene jedan po jedan dok ne dođemo do željene duljine uzorka ili dok ne naiđemo na token kraja sekvence. Sljedeći token se pretvara u tensor i prosljeđuje modelu, dok se logits obrađuju kako bi se primijenile kazne i uzorkovanje. Zatim se sljedeći token uzorkuje, dekodira i dodaje u niz.
+Kako bismo izbjegli ponavljajući tekst, primjenjuje se kazna na ponovljene tokene na temelju parametara `repeat_last_n` i `repeat_penalty`.
 
-Na kraju, generirani tekst se ispisuje u realnom vremenu kako se dekodira, omogućujući streaming izlaz.
+Na kraju se generirani tekst ispisuje kako se dekodira, osiguravajući real-time ispis u streamu.
 
-## Step 7: Run the Application
+## Korak 7: Pokrenite aplikaciju
 
 Za pokretanje aplikacije, izvršite sljedeću naredbu u terminalu:
 
@@ -189,13 +189,13 @@ On ice rink's silent stage it thrives—
 Swish of sticks now alive.
 ```
 
-## Conclusion
+## Zaključak
 
-Slijedeći ove korake, možemo generirati tekst koristeći Phi-3 model s Rustom i Candleom u manje od 100 linija koda. Kod rukuje učitavanjem modela, tokenizacijom i inferencijom, koristeći tensore i obradu logits za generiranje koherentnog teksta na temelju ulaznog prompta.
+Slijedeći ove korake, možemo generirati tekst koristeći Phi-3 model s Rustom i Candleom u manje od 100 linija koda. Kod upravlja učitavanjem modela, tokenizacijom i inferencom, koristeći tensore i obradu logits za generiranje koherentnog teksta na temelju ulaznog prompta.
 
-Ova konzolna aplikacija može se pokretati na Windowsu, Linuxu i Mac OS-u. Zbog Rustove prenosivosti, kod se također može prilagoditi kao biblioteka koja bi se koristila unutar mobilnih aplikacija (jer konzolne aplikacije tamo ne možemo pokretati).
+Ova konzolna aplikacija može raditi na Windowsu, Linuxu i Mac OS-u. Zbog Rustove prenosivosti, kod se može prilagoditi i kao biblioteka koja bi radila unutar mobilnih aplikacija (jer konzolne aplikacije tamo ne možemo pokretati).
 
-## Appendix: full code
+## Dodatak: kompletan kod
 
 ```rust
 use candle_core::{quantized::gguf_file, Device, Tensor};
@@ -304,7 +304,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 }
 ```
 
-Napomena: kako biste ovaj kod pokrenuli na aarch64 Linuxu ili aarch64 Windowsu, dodajte datoteku nazvanu `.cargo/config` s sljedećim sadržajem:
+Napomena: kako biste pokrenuli ovaj kod na aarch64 Linuxu ili aarch64 Windowsu, dodajte datoteku nazvanu `.cargo/config` sa sljedećim sadržajem:
 
 ```toml
 [target.aarch64-pc-windows-msvc]
@@ -318,7 +318,7 @@ rustflags = [
 ]
 ```
 
-> Za više primjera korištenja Phi-3 modela s Rustom i Candleom, uključujući alternativne pristupe inferenciji, možete posjetiti službeni [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) repozitorij.
+> Za više primjera korištenja Phi-3 modela s Rustom i Candleom, uključujući alternativne pristupe inferenci, možete posjetiti službeni [Candle examples](https://github.com/huggingface/candle/blob/main/candle-examples/examples/quantized-phi/main.rs) repozitorij.
 
 **Odricanje od odgovornosti**:  
-Ovaj dokument je preveden pomoću AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako nastojimo postići točnost, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Nismo odgovorni za bilo kakva nesporazuma ili pogrešna tumačenja proizašla iz korištenja ovog prijevoda.
+Ovaj dokument je preveden korištenjem AI usluge za prevođenje [Co-op Translator](https://github.com/Azure/co-op-translator). Iako težimo točnosti, imajte na umu da automatski prijevodi mogu sadržavati pogreške ili netočnosti. Izvorni dokument na izvornom jeziku treba smatrati službenim i autoritativnim izvorom. Za kritične informacije preporučuje se profesionalni ljudski prijevod. Ne snosimo odgovornost za bilo kakva nesporazuma ili pogrešna tumačenja koja proizlaze iz korištenja ovog prijevoda.

@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "dbb0b6218ce5f9cf0ede8f4201f6ad58",
-  "translation_date": "2025-05-09T05:01:44+00:00",
+  "translation_date": "2025-07-16T16:50:19+00:00",
   "source_file": "code/07.Lab/01/Apple/phi3ext/CHANGELOG.md",
   "language_code": "bg"
 }
 -->
 # Дневник на промените
 
-Всички значими промени по разширенията "phi3ext" ще бъдат документирани в този файл.
+Всички значими промени по разширенията "phi3ext" ще бъдат записвани в този файл.
 
-Моля, вижте [Keep a Changelog](http://keepachangelog.com/) за съвети как да структурирате този файл.
+Моля, разгледайте [Keep a Changelog](http://keepachangelog.com/) за съвети как да структурирате този файл.
 
-## [Неиздадено]
+## [Непубликувано]
 
 - Първоначална версия
 

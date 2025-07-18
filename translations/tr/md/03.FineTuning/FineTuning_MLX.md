@@ -2,19 +2,19 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-09T21:42:56+00:00",
+  "translation_date": "2025-07-17T08:00:00+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "tr"
 }
 -->
 # **Apple MLX Framework ile Phi-3 İnce Ayarı**
 
-Apple MLX framework komut satırı ile Lora ile birleştirilmiş ince ayarı tamamlayabiliriz. (MLX Framework’ün çalışma mantığını daha iyi anlamak için lütfen [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md) dosyasını okuyun)
+Apple MLX framework komut satırı üzerinden Lora ile birleştirilmiş ince ayarı tamamlayabiliriz. (MLX Framework’ün çalışma prensibini daha iyi anlamak isterseniz, lütfen [Apple MLX Framework ile Phi-3 Çıkarımı](../03.FineTuning/03.Inference/MLX_Inference.md) dosyasını okuyun)
 
 
 ## **1. Veri hazırlığı**
 
-Varsayılan olarak, MLX Framework train, test ve eval için jsonl formatını ister ve Lora ile birleştirilerek ince ayar işlemleri tamamlanır.
+Varsayılan olarak, MLX Framework eğitim, test ve değerlendirme için jsonl formatını gerektirir ve Lora ile birleştirilerek ince ayar işleri tamamlanır.
 
 
 ### ***Not:***
@@ -31,16 +31,16 @@ Varsayılan olarak, MLX Framework train, test ve eval için jsonl formatını is
 
 ```
 
-2. Örneğimizde [TruthfulQA'nın verisi](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv) kullanılmıştır, ancak veri miktarı nispeten yetersiz olduğu için ince ayar sonuçları en iyi olmayabilir. Öğrenenlerin kendi senaryolarına uygun daha iyi verilerle tamamlamaları tavsiye edilir.
+2. Örneğimizde [TruthfulQA verisi](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv) kullanılmıştır, ancak veri miktarı nispeten yetersiz olduğundan ince ayar sonuçları mutlaka en iyi olmayabilir. Öğrenenlerin kendi senaryolarına göre daha iyi veriler kullanmaları önerilir.
 
 3. Veri formatı Phi-3 şablonuyla uyumludur
 
-Lütfen veriyi bu [linkten](../../../../code/04.Finetuning/mlx) indiriniz, ***data*** klasöründeki tüm .jsonl dosyalarını dahil edin
+Lütfen verileri bu [linkten](../../../../code/04.Finetuning/mlx) indirin, ***data*** klasöründeki tüm .jsonl dosyalarını dahil edin
 
 
-## **2. Terminalde İnce Ayar**
+## **2. Terminalde ince ayar**
 
-Lütfen terminalde bu komutu çalıştırın
+Lütfen terminalde şu komutu çalıştırın
 
 
 ```bash
@@ -52,7 +52,7 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Not:***
 
-1. Bu LoRA ince ayarıdır, MLX framework QLoRA yayınlamamıştır
+1. Bu LoRA ince ayarıdır, MLX framework QLoRA’yı yayınlamamıştır
 
 2. Bazı argümanları değiştirmek için config.yaml dosyasını ayarlayabilirsiniz, örneğin
 
@@ -125,7 +125,7 @@ lora_parameters:
 
 ```
 
-Lütfen terminalde bu komutu çalıştırın
+Lütfen terminalde şu komutu çalıştırın
 
 
 ```bash
@@ -135,7 +135,7 @@ python -m  mlx_lm.lora --config lora_config.yaml
 ```
 
 
-## **3. İnce Ayar adaptörünü test etmek için çalıştırma**
+## **3. İnce ayar adaptörünü test etmek için çalıştırma**
 
 Terminalde ince ayar adaptörünü şu şekilde çalıştırabilirsiniz
 
@@ -155,7 +155,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-İnce ayar ile orijinal modelin sonuçlarını karşılaştırmayı deneyebilirsiniz
+İnce ayar sonuçlarını orijinal modelle karşılaştırmayı deneyebilirsiniz
 
 
 ## **4. Adaptörleri birleştirerek yeni modeller oluşturma**
@@ -167,9 +167,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Ollama kullanarak kantitatif ince ayar modellerini çalıştırma**
+## **5. Ollama kullanarak nicelenmiş ince ayar modellerini çalıştırma**
 
-Kullanmadan önce llama.cpp ortamınızı yapılandırınız
+Kullanmadan önce, lütfen llama.cpp ortamınızı yapılandırın
 
 
 ```bash
@@ -186,7 +186,7 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Not:*** 
 
-1. Şu anda fp32, fp16 ve INT 8 kantitatif dönüşümü desteklenmektedir
+1. Şu anda fp32, fp16 ve INT 8 nicelleştirme dönüşümü desteklenmektedir
 
 2. Birleştirilmiş modelde tokenizer.model eksik, lütfen https://huggingface.co/microsoft/Phi-3-mini-4k-instruct adresinden indirin
 
@@ -211,7 +211,7 @@ Terminalde komutu çalıştırın
 
 ```
 
-Tebrikler! MLX Framework ile ince ayarı öğrendiniz
+Tebrikler! MLX Framework ile ince ayarı ustalıkla tamamladınız
 
 **Feragatname**:  
-Bu belge, AI çeviri servisi [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba gösterilse de, otomatik çevirilerin hata veya yanlışlık içerebileceğini lütfen unutmayın. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yanlış yorumlamalar nedeniyle sorumluluk kabul edilmemektedir.
+Bu belge, AI çeviri hizmeti [Co-op Translator](https://github.com/Azure/co-op-translator) kullanılarak çevrilmiştir. Doğruluk için çaba göstersek de, otomatik çevirilerin hatalar veya yanlışlıklar içerebileceğini lütfen unutmayınız. Orijinal belge, kendi dilinde yetkili kaynak olarak kabul edilmelidir. Kritik bilgiler için profesyonel insan çevirisi önerilir. Bu çevirinin kullanımı sonucu ortaya çıkabilecek yanlış anlamalar veya yorum hatalarından sorumlu değiliz.

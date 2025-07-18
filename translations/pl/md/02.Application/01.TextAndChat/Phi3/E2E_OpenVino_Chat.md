@@ -2,31 +2,31 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
-  "translation_date": "2025-05-09T15:54:00+00:00",
+  "translation_date": "2025-07-16T23:04:16+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
   "language_code": "pl"
 }
 -->
 [OpenVino Chat Sample](../../../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
 
-Ten kod eksportuje model do formatu OpenVINO, ładuje go i używa do wygenerowania odpowiedzi na podane zapytanie.
+Ten kod eksportuje model do formatu OpenVINO, ładuje go i używa do wygenerowania odpowiedzi na podany prompt.
 
 1. **Eksportowanie modelu**:  
    ```bash
    optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6 --sym --trust-remote-code ./model/phi3-instruct/int4
    ```  
-   - To polecenie używa `optimum-cli` tool to export a model to the OpenVINO format, which is optimized for efficient inference.
-   - The model being exported is `"microsoft/Phi-3-mini-4k-instruct"`, and it's set up for the task of generating text based on past context.
-   - The weights of the model are quantized to 4-bit integers (`int4`), which helps reduce the model size and speed up processing.
-   - Other parameters like `group-size`, `ratio`, and `sym` are used to fine-tune the quantization process.
-   - The exported model is saved in the directory `./model/phi3-instruct/int4`.
+   - To polecenie używa narzędzia `optimum-cli` do eksportu modelu do formatu OpenVINO, który jest zoptymalizowany pod kątem wydajnego wnioskowania.  
+   - Eksportowany model to `"microsoft/Phi-3-mini-4k-instruct"`, przygotowany do zadania generowania tekstu na podstawie wcześniejszego kontekstu.  
+   - Wagi modelu są kwantyzowane do 4-bitowych liczb całkowitych (`int4`), co pomaga zmniejszyć rozmiar modelu i przyspieszyć przetwarzanie.  
+   - Inne parametry, takie jak `group-size`, `ratio` i `sym`, służą do precyzyjnego dostrojenia procesu kwantyzacji.  
+   - Wyeksportowany model jest zapisywany w katalogu `./model/phi3-instruct/int4`.
 
 2. **Importowanie niezbędnych bibliotek**:  
    ```python
    from transformers import AutoConfig, AutoTokenizer
    from optimum.intel.openvino import OVModelForCausalLM
    ```  
-   - Te linie importują klasy z modułu `transformers` library and the `optimum.intel.openvino`, które są potrzebne do załadowania i użycia modelu.
+   - Te linie importują klasy z biblioteki `transformers` oraz modułu `optimum.intel.openvino`, które są potrzebne do załadowania i użycia modelu.
 
 3. **Konfiguracja katalogu modelu i ustawień**:  
    ```python
@@ -37,8 +37,8 @@ Ten kod eksportuje model do formatu OpenVINO, ładuje go i używa do wygenerowan
        "CACHE_DIR": ""
    }
    ```  
-   - `model_dir` specifies where the model files are stored.
-   - `ov_config` to słownik konfiguracyjny modelu OpenVINO, który ustawia priorytet na niskie opóźnienia, używa jednego strumienia inferencji oraz nie korzysta z katalogu cache.
+   - `model_dir` określa, gdzie znajdują się pliki modelu.  
+   - `ov_config` to słownik konfigurujący model OpenVINO tak, aby priorytetem była niska latencja, użycie jednego strumienia inferencji oraz brak katalogu cache.
 
 4. **Ładowanie modelu**:  
    ```python
@@ -50,13 +50,13 @@ Ten kod eksportuje model do formatu OpenVINO, ładuje go i używa do wygenerowan
        trust_remote_code=True,
    )
    ```  
-   - Ta linia ładuje model z określonego katalogu, korzystając z wcześniej zdefiniowanych ustawień konfiguracyjnych. Pozwala też na zdalne wykonanie kodu, jeśli jest to potrzebne.
+   - Ta linia ładuje model z określonego katalogu, korzystając z wcześniej zdefiniowanych ustawień konfiguracyjnych. Pozwala również na zdalne wykonywanie kodu, jeśli jest to konieczne.
 
 5. **Ładowanie tokenizera**:  
    ```python
    tok = AutoTokenizer.from_pretrained(model_dir, trust_remote_code=True)
    ```  
-   - Ta linia ładuje tokenizer, który odpowiada za zamianę tekstu na tokeny zrozumiałe dla modelu.
+   - Ta linia ładuje tokenizer, który odpowiada za konwersję tekstu na tokeny zrozumiałe dla modelu.
 
 6. **Konfiguracja argumentów tokenizera**:  
    ```python
@@ -70,25 +70,25 @@ Ten kod eksportuje model do formatu OpenVINO, ładuje go i używa do wygenerowan
    ```python
    prompt = "<|system|>You are a helpful AI assistant.<|end|><|user|>can you introduce yourself?<|end|><|assistant|>"
    ```  
-   - Ten ciąg znaków tworzy prompt konwersacyjny, w którym użytkownik prosi asystenta AI o przedstawienie się.
+   - Ten ciąg znaków ustawia prompt konwersacji, w którym użytkownik prosi asystenta AI o przedstawienie się.
 
 8. **Tokenizacja promptu**:  
    ```python
    input_tokens = tok(prompt, return_tensors="pt", **tokenizer_kwargs)
    ```  
-   - Ta linia zamienia prompt na tokeny, które model może przetworzyć, zwracając wynik jako tensory PyTorch.
+   - Ta linia konwertuje prompt na tokeny, które model może przetworzyć, zwracając wynik jako tensory PyTorch.
 
 9. **Generowanie odpowiedzi**:  
    ```python
    answer = ov_model.generate(**input_tokens, max_new_tokens=1024)
    ```  
-   - Ta linia używa modelu do wygenerowania odpowiedzi na podstawie tokenów wejściowych, z maksymalną długością 1024 nowych tokenów.
+   - Ta linia używa modelu do wygenerowania odpowiedzi na podstawie podanych tokenów, z maksymalną długością 1024 nowych tokenów.
 
 10. **Dekodowanie odpowiedzi**:  
     ```python
     decoded_answer = tok.batch_decode(answer, skip_special_tokens=True)[0]
     ```  
-    - Ta linia konwertuje wygenerowane tokeny z powrotem na czytelny dla człowieka tekst, pomijając specjalne tokeny, i pobiera pierwszy wynik.
+    - Ta linia konwertuje wygenerowane tokeny z powrotem na czytelny tekst, pomijając specjalne tokeny, i pobiera pierwszy wynik.
 
 **Zastrzeżenie**:  
-Niniejszy dokument został przetłumaczony za pomocą usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Chociaż dokładamy wszelkich starań, aby tłumaczenie było precyzyjne, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub niedokładności. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło wiarygodne. W przypadku istotnych informacji zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.
+Niniejszy dokument został przetłumaczony przy użyciu usługi tłumaczenia AI [Co-op Translator](https://github.com/Azure/co-op-translator). Mimo że dążymy do dokładności, prosimy mieć na uwadze, że automatyczne tłumaczenia mogą zawierać błędy lub nieścisłości. Oryginalny dokument w języku źródłowym powinien być uznawany za źródło autorytatywne. W przypadku informacji krytycznych zalecane jest skorzystanie z profesjonalnego tłumaczenia wykonanego przez człowieka. Nie ponosimy odpowiedzialności za jakiekolwiek nieporozumienia lub błędne interpretacje wynikające z korzystania z tego tłumaczenia.

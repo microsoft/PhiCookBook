@@ -2,18 +2,18 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "50b6a55a0831b417835087d8b57759fe",
-  "translation_date": "2025-05-09T20:48:48+00:00",
+  "translation_date": "2025-07-17T06:36:34+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Lora.md",
   "language_code": "sl"
 }
 -->
-# **Fine-tuning Phi-3 with Lora**
+# **Natančno prilagajanje Phi-3 z Loro**
 
-Fine-tuning Microsoft's Phi-3 Mini jezikovni model z uporabo [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) na prilagojenem naboru podatkov za navodila v klepetu.
+Natančno prilagajanje Microsoftovega jezikovnega modela Phi-3 Mini z uporabo [LoRA (Low-Rank Adaptation)](https://github.com/microsoft/LoRA?WT.mc_id=aiml-138114-kinfeylo) na prilagojenem naboru navodil za klepet.
 
 LORA bo pomagala izboljšati razumevanje pogovora in generiranje odgovorov.
 
-## Korak za korakom vodič, kako fino nastaviti Phi-3 Mini:
+## Korak za korakom vodič za natančno prilagajanje Phi-3 Mini:
 
 **Uvozi in nastavitev**
 
@@ -26,10 +26,10 @@ pip install loralib
 
 ```
 
-Najprej uvozite potrebne knjižnice, kot so datasets, transformers, peft, trl in torch.  
+Začnite z uvozom potrebnih knjižnic, kot so datasets, transformers, peft, trl in torch.  
 Nastavite beleženje za spremljanje procesa učenja.
 
-Lahko izberete, da prilagodite nekatere plasti tako, da jih nadomestite s tistimi, ki jih izvaja loralib. Trenutno podpiramo nn.Linear, nn.Embedding in nn.Conv2d. Podpiramo tudi MergedLinear za primere, kjer ena sama nn.Linear predstavlja več plasti, kot je to v nekaterih izvedbah projekcije qkv pozornosti (glejte Dodatne opombe za več).
+Lahko se odločite, da prilagodite nekatere plasti tako, da jih zamenjate s tistimi, ki so implementirane v loralib. Trenutno podpiramo samo nn.Linear, nn.Embedding in nn.Conv2d. Prav tako podpiramo MergedLinear za primere, kjer ena sama nn.Linear predstavlja več plasti, kot je v nekaterih implementacijah projekcije pozornosti qkv (glejte dodatne opombe za več).
 
 ```
 # ===== Before =====
@@ -69,7 +69,7 @@ Pri shranjevanju kontrolne točke ustvarite state_dict, ki vsebuje samo LoRA par
 torch.save(lora.lora_state_dict(model), checkpoint_path)
 ```
 
-Pri nalaganju kontrolne točke z load_state_dict poskrbite, da je strict=False.
+Pri nalaganju kontrolne točke z uporabo load_state_dict poskrbite, da bo strict=False.
 
 ```
 # Load the pretrained checkpoint first
@@ -78,30 +78,30 @@ model.load_state_dict(torch.load('ckpt_pretrained.pt'), strict=False)
 model.load_state_dict(torch.load('ckpt_lora.pt'), strict=False)
 ```
 
-Zdaj se lahko učenje nadaljuje kot običajno.
+Zdaj lahko učenje poteka kot običajno.
 
 **Hiperparametri**
 
 Določite dva slovarja: training_config in peft_config. training_config vsebuje hiperparametre za učenje, kot so hitrost učenja, velikost serije in nastavitve beleženja.
 
-peft_config določa parametre povezane z LoRA, kot so rank, dropout in tip naloge.
+peft_config določa parametre, povezane z LoRA, kot so rang, dropout in tip naloge.
 
-**Nalaganje modela in tokenizerja**
+**Nalaganje modela in tokenizatorja**
 
-Določite pot do predhodno naučenega modela Phi-3 (npr. "microsoft/Phi-3-mini-4k-instruct"). Konfigurirajte nastavitve modela, vključno z uporabo predpomnilnika, tipom podatkov (bfloat16 za mešano natančnost) in implementacijo pozornosti.
+Določite pot do vnaprej naučenega modela Phi-3 (npr. "microsoft/Phi-3-mini-4k-instruct"). Konfigurirajte nastavitve modela, vključno z uporabo predpomnilnika, tipom podatkov (bfloat16 za mešano natančnost) in implementacijo pozornosti.
 
 **Učenje**
 
-Fino nastavite model Phi-3 z uporabo prilagojenega nabora podatkov za navodila v klepetu. Uporabite LoRA nastavitve iz peft_config za učinkovito prilagoditev. Spremljajte napredek učenja z določenim načinom beleženja.  
-Evaluacija in shranjevanje: ocenite fino nastavljeni model.  
-Shranjujte kontrolne točke med učenjem za kasnejšo uporabo.
+Natančno prilagodite model Phi-3 z uporabo prilagojenega nabora navodil za klepet. Uporabite nastavitve LoRA iz peft_config za učinkovito prilagoditev. Spremljajte napredek učenja z izbrano strategijo beleženja.  
+Evalvacija in shranjevanje: Ocenite natančno prilagojen model.  
+Med učenjem shranjujte kontrolne točke za kasnejšo uporabo.
 
 **Primeri**
-- [Več informacij s tem vzorčnim zvezkom](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)  
-- [Primer Python FineTuning vzorca](../../../../code/03.Finetuning/FineTrainingScript.py)  
-- [Primer Fine Tuning na Hugging Face Hub z LORA](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)  
-- [Primer model kartice na Hugging Face - LORA Fine Tuning vzorec](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)  
-- [Primer Fine Tuning na Hugging Face Hub z QLORA](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
+- [Več o tem v tem vzorčnem zvezku](../../../../code/03.Finetuning/Phi_3_Inference_Finetuning.ipynb)
+- [Primer Python skripte za natančno prilagajanje](../../../../code/03.Finetuning/FineTrainingScript.py)
+- [Primer natančnega prilagajanja z LORA na Hugging Face Hub](../../../../code/03.Finetuning/Phi-3-finetune-lora-python.ipynb)
+- [Primer modelne kartice Hugging Face - vzorec natančnega prilagajanja z LORA](https://huggingface.co/microsoft/Phi-3-mini-4k-instruct/blob/main/sample_finetune.py)
+- [Primer natančnega prilagajanja z QLORA na Hugging Face Hub](../../../../code/03.Finetuning/Phi-3-finetune-qlora-python.ipynb)
 
 **Omejitev odgovornosti**:  
-Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas prosimo, da upoštevate, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Ne odgovarjamo za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda.
+Ta dokument je bil preveden z uporabo AI prevajalske storitve [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da avtomatizirani prevodi lahko vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za ključne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

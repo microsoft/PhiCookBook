@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-09T19:54:18+00:00",
+  "translation_date": "2025-07-17T04:51:21+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "sr"
 }
 -->
-## **Korišćenje Phi-4-mini-reasoning(3.8b) ili Phi-4-reasoning(14b) kao Eksperta za rezonovanje**
+## **Коришћење Phi-4-mini-reasoning(3.8b) или Phi-4-reasoning(14b) као експерта за резоновање**
 
-Hajde da pogledamo njegovu snažnu sposobnost rezonovanja kroz Phi-4-mini-reasoning ili Phi-4-mini-reasoning.
+Хајде да погледамо његову снажну способност резоновања кроз Phi-4-mini-reasoning или Phi-4-mini-reasoning.
 
 
 ```python
@@ -49,5 +49,5 @@ print(outputs[0])
 
 ```
 
-**Ограничење одговорности**:  
-Овај документ је преведен коришћењем AI услуге за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, имајте у виду да аутоматизовани преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.
+**Одрицање од одговорности**:  
+Овај документ је преведен коришћењем AI сервиса за превођење [Co-op Translator](https://github.com/Azure/co-op-translator). Иако се трудимо да превод буде тачан, молимо вас да имате у виду да аутоматски преводи могу садржати грешке или нетачности. Оригинални документ на његовом изворном језику треба сматрати ауторитетним извором. За критичне информације препоручује се професионални људски превод. Нисмо одговорни за било каква неспоразума или погрешна тумачења настала коришћењем овог превода.

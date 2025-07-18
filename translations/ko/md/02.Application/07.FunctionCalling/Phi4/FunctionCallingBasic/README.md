@@ -2,16 +2,16 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "b7078bd9f16589c50139fbba8674de82",
-  "translation_date": "2025-05-08T05:25:35+00:00",
+  "translation_date": "2025-07-17T05:14:46+00:00",
   "source_file": "md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md",
   "language_code": "ko"
 }
 -->
 ## **Phi-4-mini에서 함수 호출하기**
 
-함수 호출은 Phi Family에서 처음 도입되었으며, 이제 Phi-4-mini에서도 사용할 수 있습니다.
+함수 호출은 Phi Family에서 처음 등장했으며, 이제 Phi-4-mini에서도 사용할 수 있습니다.
 
-이 예제는 프리미어 리그 결과 시뮬레이션을 보여줍니다. 목표는 Phi-4-mini가 실시간 경기 정보를 제공하는 것입니다. 아래는 샘플 코드입니다:
+이 예제는 프리미어 리그 결과를 시뮬레이션하는 방법을 보여줍니다. 목표는 Phi-4-mini가 실시간 경기 정보를 제공하는 것입니다. 아래는 샘플 코드입니다:
 
 
 
@@ -109,4 +109,4 @@ print(messages)
 ```
 
 **면책 조항**:  
-이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확성이 있을 수 있음을 유의하시기 바랍니다. 원본 문서는 해당 언어의 원문이 권위 있는 자료로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역의 사용으로 인한 오해나 잘못된 해석에 대해서는 책임을 지지 않습니다.
+이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 노력하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

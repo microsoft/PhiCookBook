@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e0a07fd2a30fe2af30b1373df207a5bf",
-  "translation_date": "2025-05-09T21:50:04+00:00",
+  "translation_date": "2025-07-17T08:13:44+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md",
   "language_code": "cs"
 }
 -->
-# Phi-3-Vision-128K-Instruct Проект Обзор
+# Phi-3-Vision-128K-Instruct Přehled projektu
 
-## Модель
+## Model
 
-Phi-3-Vision-128K-Instruct — это легкая, передовая мультимодальная модель, которая лежит в основе этого проекта. Она входит в семейство моделей Phi-3 и поддерживает длину контекста до 128 000 токенов. Модель была обучена на разнообразном наборе данных, включающем синтетические данные и тщательно отфильтрованные общедоступные веб-сайты, с упором на высококачественный контент, требующий глубокого анализа. Процесс обучения включал контролируемую донастройку и оптимизацию предпочтений для точного следования инструкциям, а также надежные меры безопасности.
+Phi-3-Vision-128K-Instruct, lehký a špičkový multimodální model, je jádrem tohoto projektu. Patří do rodiny modelů Phi-3 a podporuje délku kontextu až 128 000 tokenů. Model byl trénován na různorodé sadě dat, která zahrnuje syntetická data a pečlivě filtrované veřejně dostupné webové stránky, s důrazem na vysoce kvalitní obsah vyžadující logické uvažování. Tréninkový proces zahrnoval řízené doladění a přímou optimalizaci preferencí, aby bylo zajištěno přesné dodržování instrukcí, stejně jako robustní bezpečnostní opatření.
 
-## Создание примерных данных важно по нескольким причинам:
+## Vytváření vzorových dat je důležité z několika důvodů:
 
-1. **Тестирование**: Примерные данные позволяют тестировать приложение в различных сценариях, не затрагивая реальные данные. Это особенно важно на этапах разработки и тестирования.
+1. **Testování**: Vzorová data umožňují testovat vaši aplikaci v různých scénářích, aniž by došlo k ovlivnění skutečných dat. To je zvláště důležité ve fázi vývoje a testování.
 
-2. **Оптимизация производительности**: Используя примерные данные, которые имитируют масштаб и сложность реальных данных, можно выявлять узкие места в производительности и оптимизировать приложение.
+2. **Ladění výkonu**: Díky vzorovým datům, která napodobují rozsah a složitost reálných dat, můžete identifikovat úzká místa ve výkonu a optimalizovat aplikaci.
 
-3. **Прототипирование**: Примерные данные помогают создавать прототипы и макеты, что способствует лучшему пониманию требований пользователей и получению обратной связи.
+3. **Prototypování**: Vzorová data lze použít k tvorbě prototypů a maket, které pomáhají lépe pochopit požadavky uživatelů a získat zpětnou vazbu.
 
-4. **Анализ данных**: В науке о данных примерные данные часто используются для разведочного анализа, обучения моделей и тестирования алгоритмов.
+4. **Analýza dat**: V datové vědě se vzorová data často používají pro průzkumnou analýzu, trénink modelů a testování algoritmů.
 
-5. **Безопасность**: Использование примерных данных в средах разработки и тестирования помогает предотвратить случайные утечки чувствительной информации.
+5. **Bezpečnost**: Používání vzorových dat ve vývojových a testovacích prostředích pomáhá zabránit nechtěnému úniku citlivých reálných dat.
 
-6. **Обучение**: Если вы осваиваете новую технологию или инструмент, работа с примерными данными дает практическое применение полученным знаниям.
+6. **Učení**: Pokud se učíte novou technologii nebo nástroj, práce se vzorovými daty vám poskytne praktickou možnost aplikovat získané znalosti.
 
-Помните, качество примерных данных существенно влияет на эффективность этих задач. Они должны максимально соответствовать структуре и вариативности реальных данных.
+Pamatujte, že kvalita vašich vzorových dat může výrazně ovlivnit tyto aktivity. Měla by být co nejblíže reálným datům z hlediska struktury a variability.
 
-### Создание примерных данных
+### Vytváření vzorových dat
 [Generate DataSet Script](./CreatingSampleData.md)
 
-## Набор данных
+## Dataset
 
-Хорошим примером примерного набора данных является [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States) (доступен на Huggingface).  
-Этот набор содержит данные о продуктах Burberry вместе с метаданными о категории продукта, цене и названии, всего 3040 строк, каждая из которых представляет уникальный продукт. Этот набор позволяет проверить способность модели понимать и интерпретировать визуальные данные, генерируя описательный текст, который отражает сложные визуальные детали и особенности бренда.
+Dobrou ukázkou vzorové datové sady je [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States) (dostupná na Huggingface).  
+Vzorová datová sada produktů Burberry spolu s metadaty o kategorii produktů, ceně a názvu obsahuje celkem 3 040 řádků, z nichž každý představuje jedinečný produkt. Tato datová sada nám umožňuje testovat schopnost modelu porozumět a interpretovat vizuální data a generovat popisný text, který zachycuje složité vizuální detaily a charakteristické znaky značky.
 
-**Note:** Вы можете использовать любой набор данных, который включает изображения.
+**Note:** Můžete použít jakoukoli datovou sadu, která obsahuje obrázky.
 
-## Сложное рассуждение
+## Složitá dedukce
 
-Модель должна делать выводы о ценах и названиях, имея только изображение. Это требует не только распознавания визуальных признаков, но и понимания их значения с точки зрения ценности продукта и брендинга. Создавая точные текстовые описания на основе изображений, проект демонстрирует потенциал интеграции визуальных данных для повышения производительности и универсальности моделей в реальных приложениях.
+Model musí odvozovat ceny a názvy pouze na základě obrázku. To vyžaduje, aby model nejen rozpoznal vizuální prvky, ale také pochopil jejich význam z hlediska hodnoty produktu a značky. Tím, že model dokáže přesně syntetizovat textové popisy z obrázků, projekt ukazuje potenciál integrace vizuálních dat pro zlepšení výkonu a všestrannosti modelů v reálných aplikacích.
 
-## Архитектура Phi-3 Vision
+## Architektura Phi-3 Vision
 
-Архитектура модели — это мультимодальная версия Phi-3. Она обрабатывает как текстовые, так и визуальные данные, объединяя их в единую последовательность для комплексного понимания и генерации. Модель использует отдельные слои встраивания для текста и изображений. Текстовые токены преобразуются в плотные векторы, а изображения проходят через CLIP vision модель для извлечения признаков. Эти встраивания изображений затем проецируются в размерность, совпадающую с размерностью текстовых встраиваний, чтобы обеспечить бесшовную интеграцию.
+Architektura modelu je multimodální verze Phi-3. Zpracovává jak textová, tak obrazová data a integruje tyto vstupy do jednotné sekvence pro komplexní porozumění a generování. Model používá samostatné vrstvy embeddingu pro text a obrázky. Textové tokeny jsou převedeny na husté vektory, zatímco obrázky jsou zpracovány pomocí CLIP vision modelu pro extrakci rysových embeddingů. Tyto obrazové embeddingy jsou následně projekčně upraveny tak, aby odpovídaly rozměrům textových embeddingů, což zajišťuje jejich bezproblémovou integraci.
 
-## Интеграция текстовых и визуальных встраиваний
+## Integrace textových a obrazových embeddingů
 
-Специальные токены в текстовой последовательности указывают, где должны быть вставлены встраивания изображений. Во время обработки эти специальные токены заменяются соответствующими встраиваниями изображений, позволяя модели работать с текстом и изображениями как с единой последовательностью. Промпт для нашего набора данных форматируется с использованием специального токена <|image|> следующим образом:
+Speciální tokeny v textové sekvenci označují místa, kde mají být vloženy obrazové embeddingy. Během zpracování jsou tyto speciální tokeny nahrazeny odpovídajícími obrazovými embeddingy, což umožňuje modelu pracovat s textem i obrázky jako s jednou sekvencí. Prompt pro naši datovou sadu je formátován pomocí speciálního tokenu <|image|> následovně:
 
 ```python
 text = f"<|user|>\n<|image_1|>What is shown in this image?<|end|><|assistant|>\nProduct: {row['title']}, Category: {row['category3_code']}, Full Price: {row['full_price']}<|end|>"
 ```
 
-## Пример кода
+## Ukázkový kód
 - [Phi-3-Vision Training Script](../../../../code/03.Finetuning/Phi-3-vision-Trainingscript.py)
 - [Weights and Bias Example walkthrough](https://wandb.ai/byyoung3/mlnews3/reports/How-to-fine-tune-Phi-3-vision-on-a-custom-dataset--Vmlldzo4MTEzMTg3)
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). Přestože usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho rodném jazyce by měl být považován za autoritativní zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatické překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

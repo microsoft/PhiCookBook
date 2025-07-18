@@ -2,26 +2,26 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "5113634b77370af6790f9697d5d7de90",
-  "translation_date": "2025-05-09T20:21:16+00:00",
+  "translation_date": "2025-07-17T05:41:01+00:00",
   "source_file": "md/02.QuickStart/GitHubModel_QuickStart.md",
   "language_code": "cs"
 }
 -->
-## GitHub Models - Beta Público Limitado
+## GitHub Models - Omezená veřejná beta
 
-Bienvenido a [GitHub Models](https://github.com/marketplace/models). Todo está listo para que explores los Modelos de IA alojados en Azure AI.
+Vítejte na [GitHub Models](https://github.com/marketplace/models)! Vše je připraveno a můžete začít objevovat AI modely hostované na Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.4fc858ab26afe64c43f5e423ad0c5c733878bb536fdb027a5bcf1f80c41b0633.cs.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.cs.png)
 
-Para más información sobre los modelos disponibles en GitHub Models, consulta el [GitHub Model Marketplace](https://github.com/marketplace/models)
+Pro více informací o modelech dostupných na GitHub Models navštivte [GitHub Model Marketplace](https://github.com/marketplace/models)
 
-## Modelos Disponibles
+## Dostupné modely
 
-Cada modelo cuenta con un espacio de pruebas dedicado y código de ejemplo
+Každý model má vlastní playground a ukázkový kód
 
 ![Phi-3Model_Github](../../../../imgs/01/02/02/GitHub_ModelPlay.png)
 
-### Modelos Phi-3 en el Catálogo de GitHub Models
+### Phi-3 modely v GitHub Model Catalog
 
 [Phi-3-Medium-128k-Instruct](https://github.com/marketplace/models/azureml/Phi-3-medium-128k-instruct)
 
@@ -35,56 +35,56 @@ Cada modelo cuenta con un espacio de pruebas dedicado y código de ejemplo
 
 [Phi-3-small-8k-instruct](https://github.com/marketplace/models/azureml/Phi-3-small-8k-instruct)
 
-## Primeros Pasos
+## Začínáme
 
-Hay algunos ejemplos básicos listos para que los ejecutes. Los puedes encontrar en el directorio samples. Si prefieres ir directamente a tu lenguaje favorito, los ejemplos están disponibles en los siguientes lenguajes:
+K dispozici je několik základních příkladů, které můžete rovnou spustit. Najdete je ve složce samples. Pokud chcete přejít rovnou na svůj oblíbený jazyk, příklady jsou dostupné v těchto jazycích:
 
 - Python
 - JavaScript
 - cURL
 
-También hay un entorno dedicado en Codespaces para ejecutar los ejemplos y modelos.
+K dispozici je také speciální Codespaces prostředí pro spouštění příkladů a modelů.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.b4b839a081583da39bc976c2f0d8ac4603d3b8c23194b16cc9e0a1014f5611d0.cs.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.cs.png)
 
-## Código de Ejemplo
+## Ukázkový kód
 
-A continuación, algunos fragmentos de código para distintos casos de uso. Para más información sobre Azure AI Inference SDK, consulta la documentación completa y los ejemplos.
+Níže najdete ukázky kódu pro několik scénářů použití. Pro další informace o Azure AI Inference SDK si prohlédněte kompletní dokumentaci a příklady.
 
-## Configuración
+## Nastavení
 
-1. Crea un token de acceso personal  
-No es necesario asignar permisos al token. Ten en cuenta que el token será enviado a un servicio de Microsoft.
+1. Vytvořte osobní přístupový token  
+Nemusíte tokenu udělovat žádná oprávnění. Upozornění: token bude odesílán do služby Microsoft.
 
-Para usar los fragmentos de código que siguen, crea una variable de entorno para establecer tu token como clave para el código cliente.
+Pro použití níže uvedených ukázek kódu si vytvořte proměnnou prostředí, kde nastavíte svůj token jako klíč pro klientský kód.
 
-Si usas bash:  
+Pokud používáte bash:  
 ```
 export GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
-Si usas powershell:  
+Pokud používáte powershell:  
 
 ```
 $Env:GITHUB_TOKEN="<your-github-token-goes-here>"
 ```  
 
-Si usas el símbolo del sistema de Windows:  
+Pokud používáte Windows příkazový řádek:  
 
 ```
 set GITHUB_TOKEN=<your-github-token-goes-here>
 ```  
 
-## Ejemplo en Python
+## Python ukázka
 
-### Instalar dependencias  
-Instala el Azure AI Inference SDK con pip (Requiere: Python >=3.8):  
+### Instalace závislostí  
+Nainstalujte Azure AI Inference SDK pomocí pip (vyžaduje Python >=3.8):
 
 ```
 pip install azure-ai-inference
 ```  
-### Ejecutar un ejemplo básico
+### Spuštění základního příkladu
 
-Este ejemplo muestra una llamada básica a la API de chat completion. Usa el endpoint de inferencia del modelo de IA de GitHub y tu token de GitHub. La llamada es síncrona.
+Tento příklad ukazuje základní volání chat completion API. Využívá GitHub AI model inference endpoint a váš GitHub token. Volání je synchronní.
 
 ```
 import os
@@ -116,9 +116,9 @@ response = client.complete(
 print(response.choices[0].message.content)
 ```
 
-### Ejecutar una conversación multi-turno
+### Spuštění vícetahové konverzace
 
-Este ejemplo muestra una conversación de varios turnos con la API de chat completion. Cuando uses el modelo para una aplicación de chat, deberás manejar el historial de la conversación y enviar los mensajes más recientes al modelo.
+Tento příklad ukazuje vícetahovou konverzaci s chat completion API. Při použití modelu pro chatovací aplikaci je potřeba spravovat historii konverzace a posílat modelu nejnovější zprávy.
 
 ```
 import os
@@ -148,9 +148,9 @@ response = client.complete(messages=messages, model=model_name)
 print(response.choices[0].message.content)
 ```
 
-### Transmitir la salida
+### Streamování výstupu
 
-Para una mejor experiencia de usuario, querrás transmitir la respuesta del modelo para que el primer token aparezca rápido y evitar esperas prolongadas por respuestas largas.
+Pro lepší uživatelský zážitek je vhodné streamovat odpověď modelu, aby se první token zobrazil co nejdříve a vy jste nemuseli čekat na dlouhé odpovědi.
 
 ```
 import os
@@ -182,14 +182,15 @@ for update in response:
         print(update.choices[0].delta.content or "", end="")
 
 client.close()
-```  
+```
+
 ## JavaScript
 
-### Instalar dependencias
+### Instalace závislostí
 
-Instala Node.js.
+Nainstalujte Node.js.
 
-Copia las siguientes líneas de texto y guárdalas como un archivo package.json dentro de tu carpeta.
+Zkopírujte následující řádky a uložte je jako soubor package.json do své složky.
 
 ```
 {
@@ -202,15 +203,15 @@ Copia las siguientes líneas de texto y guárdalas como un archivo package.json 
 }
 ```
 
-Nota: @azure/core-sse solo es necesario cuando transmites la respuesta de chat completions.
+Poznámka: @azure/core-sse je potřeba pouze při streamování odpovědí chat completions.
 
-Abre una terminal en esta carpeta y ejecuta npm install.
+Otevřete terminál ve složce a spusťte npm install.
 
-Para cada uno de los fragmentos de código que siguen, copia el contenido en un archivo sample.js y ejecútalo con node sample.js.
+Pro každý z níže uvedených kódů zkopírujte obsah do souboru sample.js a spusťte pomocí node sample.js.
 
-### Ejecutar un ejemplo básico
+### Spuštění základního příkladu
 
-Este ejemplo muestra una llamada básica a la API de chat completion. Usa el endpoint de inferencia del modelo de IA de GitHub y tu token de GitHub. La llamada es síncrona.
+Tento příklad ukazuje základní volání chat completion API. Využívá GitHub AI model inference endpoint a váš GitHub token. Volání je synchronní.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -249,9 +250,9 @@ main().catch((err) => {
 });
 ```
 
-### Ejecutar una conversación multi-turno
+### Spuštění vícetahové konverzace
 
-Este ejemplo muestra una conversación de varios turnos con la API de chat completion. Cuando uses el modelo para una aplicación de chat, deberás manejar el historial de la conversación y enviar los mensajes más recientes al modelo.
+Tento příklad ukazuje vícetahovou konverzaci s chat completion API. Při použití modelu pro chatovací aplikaci je potřeba spravovat historii konverzace a posílat modelu nejnovější zprávy.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -292,9 +293,9 @@ main().catch((err) => {
 });
 ```
 
-### Transmitir la salida
+### Streamování výstupu
 
-Para una mejor experiencia de usuario, querrás transmitir la respuesta del modelo para que el primer token aparezca rápido y evitar esperas prolongadas por respuestas largas.
+Pro lepší uživatelský zážitek je vhodné streamovat odpověď modelu, aby se první token zobrazil co nejdříve a vy jste nemuseli čekat na dlouhé odpovědi.
 
 ```
 import ModelClient from "@azure-rest/ai-inference";
@@ -350,9 +351,9 @@ main().catch((err) => {
 
 ## REST
 
-### Ejecutar un ejemplo básico
+### Spuštění základního příkladu
 
-Pega lo siguiente en un shell:
+Vložte následující příkaz do shellu:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -371,10 +372,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
-### Ejecutar una conversación multi-turno
+```
 
-Llama a la API de chat completion y pasa el historial del chat:
+### Spuštění vícetahové konverzace
+
+Zavolejte chat completion API a předejte historii chatu:
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -401,10 +403,11 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
         ],
         "model": "Phi-3-small-8k-instruct"
     }'
-```  
-### Transmitir la salida
+```
 
-Este es un ejemplo de llamada al endpoint transmitiendo la respuesta.
+### Streamování výstupu
+
+Příklad volání endpointu se streamováním odpovědi.
 
 ```
 curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
@@ -426,21 +429,21 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
     }'
 ```
 
-## Uso GRATUITO y Límites de tasa para GitHub Models
+## BEZPLATNÉ použití a limity pro GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.0c2abb992151c5407046e2b763af51505ff709f04c0950785e0300fdc8c55a0c.cs.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.cs.png)
 
-Los [límites de tasa para el playground y uso gratuito de la API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) están pensados para que experimentes con los modelos y prototipes tu aplicación de IA. Para un uso que exceda esos límites y escalar tu aplicación, debes aprovisionar recursos desde una cuenta de Azure y autenticarte desde allí en lugar de usar tu token personal de GitHub. No necesitas cambiar nada más en tu código. Usa este enlace para descubrir cómo superar los límites del nivel gratuito en Azure AI.
+[Limity pro playground a bezplatné API použití](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) jsou nastaveny tak, aby vám umožnily experimentovat s modely a prototypovat AI aplikace. Pro použití nad rámec těchto limitů a pro škálování aplikace je potřeba zajistit prostředky z Azure účtu a autentizovat se tam místo pomocí osobního GitHub tokenu. V kódu není potřeba nic dalšího měnit. Použijte tento odkaz, kde zjistíte, jak překročit limity bezplatné úrovně v Azure AI.
 
-### Advertencias
+### Upozornění
 
-Recuerda que al interactuar con un modelo estás experimentando con IA, por lo que pueden ocurrir errores en el contenido.
+Pamatujte, že při práci s modelem experimentujete s AI, takže se mohou vyskytnout chyby v obsahu.
 
-La función está sujeta a varios límites (incluyendo solicitudes por minuto, solicitudes por día, tokens por solicitud y solicitudes concurrentes) y no está diseñada para casos de uso en producción.
+Funkce podléhá různým omezením (včetně počtu požadavků za minutu, za den, tokenů na požadavek a současných požadavků) a není určena pro produkční nasazení.
 
-GitHub Models utiliza Azure AI Content Safety. Estos filtros no pueden desactivarse como parte de la experiencia de GitHub Models. Si decides usar modelos mediante un servicio de pago, configura tus filtros de contenido según tus necesidades.
+GitHub Models využívá Azure AI Content Safety. Tyto filtry nelze v rámci GitHub Models vypnout. Pokud se rozhodnete používat modely přes placenou službu, nakonfigurujte si filtry obsahu podle svých potřeb.
 
-Este servicio está bajo los Términos de Pre-lanzamiento de GitHub.
+Tato služba je poskytována podle GitHub Pre-release Terms.
 
 **Prohlášení o vyloučení odpovědnosti**:  
-Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za závazný zdroj. Pro kritické informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoli nedorozumění nebo chybné výklady vyplývající z použití tohoto překladu.
+Tento dokument byl přeložen pomocí AI překladatelské služby [Co-op Translator](https://github.com/Azure/co-op-translator). I když usilujeme o přesnost, mějte prosím na paměti, že automatizované překlady mohou obsahovat chyby nebo nepřesnosti. Původní dokument v jeho mateřském jazyce by měl být považován za autoritativní zdroj. Pro důležité informace se doporučuje profesionální lidský překlad. Nejsme odpovědní za jakékoliv nedorozumění nebo nesprávné výklady vyplývající z použití tohoto překladu.

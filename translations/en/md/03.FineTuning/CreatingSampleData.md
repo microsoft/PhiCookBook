@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3cd0b727945d57998f1096763df56a84",
-  "translation_date": "2025-07-09T19:07:44+00:00",
+  "translation_date": "2025-07-17T05:43:55+00:00",
   "source_file": "md/03.FineTuning/CreatingSampleData.md",
   "language_code": "en"
 }
@@ -35,15 +35,15 @@ from io import BytesIO
 The script performs the following steps:
 
 1. Downloads the dataset from Hugging Face using the `load_dataset()` function.
-2. Converts the Hugging Face dataset to a Pandas DataFrame for easier manipulation using the `to_pandas()` method.
+2. Converts the Hugging Face dataset to a Pandas DataFrame for easier handling using the `to_pandas()` method.
 3. Creates directories to save the dataset and images.
-4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the filtered row to a new DataFrame called `filtered_rows`.
+4. Filters out rows where image download fails by iterating through each row in the DataFrame, downloading the image using the custom `download_image()` function, and appending the successful rows to a new DataFrame called `filtered_rows`.
 5. Creates a new DataFrame with the filtered rows and saves it to disk as a CSV file.
 6. Prints a message indicating where the dataset and images have been saved.
 
 ### Custom Function
 
-The `download_image()` function downloads an image from a URL and saves it locally using the Pillow Image Library (PIL) and the `io` module. It returns True if the image is successfully downloaded, and False otherwise. The function also raises an exception with the error message when the request fails.
+The `download_image()` function downloads an image from a URL and saves it locally using the Pillow Image Library (PIL) and the `io` module. It returns True if the image is successfully downloaded, and False otherwise. The function also raises an exception with the error message if the request fails.
 
 ### How does this work
 
@@ -66,10 +66,9 @@ This function is useful for downloading images from URLs and saving them locally
 It's worth noting that the requests library is used to make HTTP requests, the PIL library is used to work with images, and the BytesIO class is used to handle the image data as a stream of bytes.
 
 
-
 ### Conclusion
 
-This script provides a convenient way to prepare a dataset for machine learning by downloading the necessary images, filtering out rows where image downloads fail, and saving the dataset as a CSV file.
+This script offers a convenient way to prepare a dataset for machine learning by downloading the required images, filtering out rows where image downloads fail, and saving the dataset as a CSV file.
 
 ### Sample Script
 
@@ -137,4 +136,4 @@ print(f"Dataset and images saved to {dataset_dir}")
 [Sample Data Set example from finetuning with LORA example](../../../../code/04.Finetuning/olive-ort-example/dataset/dataset-classification.json)
 
 **Disclaimer**:  
-This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
+This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

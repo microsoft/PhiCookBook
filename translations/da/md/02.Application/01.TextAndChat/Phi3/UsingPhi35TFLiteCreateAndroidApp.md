@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c4fe7f589d179be96a5577b0b8cba6aa",
-  "translation_date": "2025-05-09T18:49:12+00:00",
+  "translation_date": "2025-07-17T02:53:09+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md",
   "language_code": "da"
 }
@@ -15,9 +15,9 @@ Dette er et Android-eksempel, der bruger Microsoft Phi-3.5 tflite-modeller.
 
 Android LLM Inference API giver dig mulighed for at køre store sprogmodeller (LLMs) helt på enheden til Android-applikationer, som du kan bruge til at udføre en bred vifte af opgaver, såsom at generere tekst, hente information i naturligt sprog og opsummere dokumenter. Opgaven har indbygget support til flere tekst-til-tekst store sprogmodeller, så du kan anvende de nyeste generative AI-modeller på enheden i dine Android-apps.
 
-Googld AI Edge Torch er et python-bibliotek, der understøtter konvertering af PyTorch-modeller til et .tflite-format, som derefter kan køres med TensorFlow Lite og MediaPipe. Dette muliggør applikationer til Android, iOS og IoT, der kan køre modeller helt på enheden. AI Edge Torch tilbyder bred CPU-understøttelse med indledende GPU- og NPU-support. AI Edge Torch søger at integrere tæt med PyTorch, bygger oven på torch.export() og giver god dækning af Core ATen-operatører.
+Googld AI Edge Torch er et Python-bibliotek, der understøtter konvertering af PyTorch-modeller til et .tflite-format, som derefter kan køres med TensorFlow Lite og MediaPipe. Dette muliggør applikationer til Android, iOS og IoT, der kan køre modeller helt på enheden. AI Edge Torch tilbyder bred CPU-dækning med indledende GPU- og NPU-understøttelse. AI Edge Torch søger at integrere tæt med PyTorch ved at bygge videre på torch.export() og give god dækning af Core ATen-operatorer.
 
-## **🪬 Vejledning**
+## **🪬 Retningslinje**
 
 ### **🔥 Konverter Microsoft Phi-3.5 til tflite-support**
 
@@ -47,7 +47,7 @@ pip install -e .
 
 ```
 
-4. Download Microsoft-3.5-Instruct fra Hugging face
+4. Download Microsoft-3.5-Instruct fra Hugging Face
 
 ```bash
 
@@ -65,7 +65,7 @@ python ai-edge-torch/ai_edge_torch/generative/examples/phi/convert_phi3_to_tflit
 
 ```
 
-### **🔥 Konverter til Microsoft Phi-3.5 til Android Mediapipe Bundle**
+### **🔥 Konverter Microsoft Phi-3.5 til Android Mediapipe Bundle**
 
 Installer venligst mediapipe først
 
@@ -75,7 +75,7 @@ pip install mediapipe
 
 ```
 
-kør denne kode i [din notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
+Kør denne kode i [din notebook](../../../../../../code/09.UpdateSamples/Aug/Android/convert/convert_phi.ipynb)
 
 ```python
 
@@ -108,7 +108,7 @@ adb push 'Your Phi-3.5 task model path' /data/local/tmp/llm/phi3.task
 
 ### **🔥 Kør din Android-kode**
 
-![demo](../../../../../../translated_images/demo.8981711efb5a9cee5dcd835f66b3b31b94b4f3e527300e15a98a0d48863b9fbd.da.png)
+![demo](../../../../../../translated_images/demo.06d5a4246f057d1be99ffad0cbf22f4ac0c41530774d51ff903cfaa1d3cd3c8e.da.png)
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der måtte opstå som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

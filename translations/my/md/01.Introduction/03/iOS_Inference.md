@@ -2,27 +2,27 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "82af197df38d25346a98f1f0e84d1698",
-  "translation_date": "2025-07-09T20:04:02+00:00",
+  "translation_date": "2025-07-16T20:25:32+00:00",
   "source_file": "md/01.Introduction/03/iOS_Inference.md",
   "language_code": "my"
 }
 -->
 # **iOS တွင် Phi-3 အာရုံစူးစိုက်မှု**
 
-Phi-3-mini သည် Microsoft မှ ထုတ်လုပ်သော မော်ဒယ်အသစ်တစ်ခုဖြစ်ပြီး Edge စက်ပစ္စည်းများနှင့် IoT စက်ပစ္စည်းများပေါ်တွင် Large Language Models (LLMs) ကို တပ်ဆင်အသုံးပြုနိုင်စေသည်။ Phi-3-mini ကို iOS, Android နှင့် Edge Device များတွင် အသုံးပြုနိုင်ပြီး BYOD ပတ်ဝန်းကျင်များတွင် generative AI ကို တပ်ဆင်နိုင်သည်။ အောက်ပါ ဥပမာတွင် iOS ပေါ်တွင် Phi-3-mini ကို မည်သို့ တပ်ဆင်ရမည်ကို ပြသထားသည်။
+Phi-3-mini သည် Microsoft မှ ထုတ်လုပ်သော မော်ဒယ်အသစ်တစ်စီးရီးဖြစ်ပြီး Edge စက်ပစ္စည်းများနှင့် IoT စက်ပစ္စည်းများပေါ်တွင် Large Language Models (LLMs) ကို တပ်ဆင်အသုံးပြုနိုင်စေသည်။ Phi-3-mini ကို iOS, Android နှင့် Edge Device များတွင် အသုံးပြုနိုင်ပြီး BYOD ပတ်ဝန်းကျင်များတွင် generative AI ကို တပ်ဆင်နိုင်သည်။ အောက်ပါ ဥပမာတွင် iOS ပေါ်တွင် Phi-3-mini ကို မည်သို့ တပ်ဆင်ရမည်ကို ပြသထားသည်။
 
 ## **1. ပြင်ဆင်မှု**
 
-- **က.** macOS 14+
-- **ခ.** Xcode 15+
-- **ဂ.** iOS SDK 17.x (iPhone 14 A16 သို့မဟုတ် အထက်)
-- **ဃ.** Python 3.10+ တပ်ဆင်ရန် (Conda ကို အကြံပြုသည်)
-- **င.** Python စာကြည့်တိုက် `python-flatbuffers` ကို တပ်ဆင်ရန်
-- **စ.** CMake ကို တပ်ဆင်ရန်
+- **က။** macOS 14+
+- **ခ။** Xcode 15+
+- **ဂ။** iOS SDK 17.x (iPhone 14 A16 သို့မဟုတ် အထက်)
+- **ဃ။** Python 3.10+ ကို တပ်ဆင်ပါ (Conda ကို အကြံပြုသည်)
+- **င။** Python စာကြည့်တိုက် `python-flatbuffers` ကို တပ်ဆင်ပါ
+- **စ။** CMake ကို တပ်ဆင်ပါ
 
 ### Semantic Kernel နှင့် အာရုံစူးစိုက်မှု
 
-Semantic Kernel သည် Azure OpenAI Service, OpenAI မော်ဒယ်များနှင့် ဒေသခံ မော်ဒယ်များနှင့် ကိုက်ညီသော အက်ပလီကေးရှင်းများ ဖန်တီးနိုင်သော application framework ဖြစ်သည်။ Semantic Kernel မှတဆင့် ဒေသခံ ဝန်ဆောင်မှုများကို ချိတ်ဆက်နိုင်ပြီး သင့်ကိုယ်ပိုင် Phi-3-mini မော်ဒယ်ဆာဗာနှင့် လွယ်ကူစွာ ပေါင်းစည်းနိုင်သည်။
+Semantic Kernel သည် Azure OpenAI Service, OpenAI မော်ဒယ်များနှင့် ဒေသခံ မော်ဒယ်များနှင့် ကိုက်ညီသော အက်ပလီကေးရှင်းများ ဖန်တီးနိုင်သော အက်ပလီကေးရှင်း ဖရိမ်ဝပ်တစ်ခုဖြစ်သည်။ Semantic Kernel မှတဆင့် ဒေသခံ ဝန်ဆောင်မှုများကို ချိတ်ဆက်ခြင်းဖြင့် သင့်ကိုယ်ပိုင် Phi-3-mini မော်ဒယ်ဆာဗာနှင့် လွယ်ကူစွာ ပေါင်းစည်းနိုင်သည်။
 
 ### Ollama သို့မဟုတ် LlamaEdge ဖြင့် Quantized မော်ဒယ်များ ခေါ်ယူခြင်း
 
@@ -41,7 +41,7 @@ PARAMETER num_ctx 4096
 
 #### **LlamaEdge**
 
-Cloud နှင့် edge စက်ပစ္စည်းများတွင် `gguf` ကို တပြိုင်နက် အသုံးပြုလိုပါက LlamaEdge သည် အကောင်းဆုံးရွေးချယ်မှုဖြစ်သည်။
+`gguf` ကို cloud နှင့် edge စက်ပစ္စည်းများတွင် တပြိုင်နက် အသုံးပြုလိုပါက LlamaEdge သည် အကောင်းဆုံးရွေးချယ်မှုဖြစ်သည်။
 
 ## **2. iOS အတွက် ONNX Runtime ကို ကုဒ်ဖိုင်ပြုလုပ်ခြင်း**
 
@@ -59,19 +59,19 @@ cd ../
 
 ### **သတိပေးချက်**
 
-- **က.** ကုဒ်ဖိုင်ပြုလုပ်မတိုင်မီ Xcode ကို မှန်ကန်စွာ ပြင်ဆင်ထားပြီး terminal တွင် active developer directory အဖြစ် သတ်မှတ်ထားရန်လိုအပ်သည်-
+- **က။** ကုဒ်ဖိုင်ပြုလုပ်မတိုင်မီ Xcode ကို မှန်ကန်စွာ ပြင်ဆင်ထားပြီး terminal တွင် active developer directory အဖြစ် သတ်မှတ်ထားပါ။
 
     ```bash
     sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer
     ```
 
-- **ခ.** ONNX Runtime ကို မတူညီသော ပလက်ဖောင်းများအတွက် ကုဒ်ဖိုင်ပြုလုပ်ရမည်။ iOS အတွက် `arm64` သို့မဟုတ် `x86_64` အတွက် ကုဒ်ဖိုင်ပြုလုပ်နိုင်သည်။
+- **ခ။** ONNX Runtime ကို မတူညီသော ပလက်ဖောင်းများအတွက် ကုဒ်ဖိုင်ပြုလုပ်ရမည်။ iOS အတွက် `arm64` သို့မဟုတ် `x86_64` အတွက် ကုဒ်ဖိုင်ပြုလုပ်နိုင်သည်။
 
-- **ဂ.** ကုဒ်ဖိုင်ပြုလုပ်ရာတွင် နောက်ဆုံး iOS SDK ကို အသုံးပြုရန် အကြံပြုသည်။ သို့သော် ယခင် SDK များနှင့် ကိုက်ညီမှုလိုအပ်ပါက အဟောင်း SDK ကိုလည်း အသုံးပြုနိုင်သည်။
+- **ဂ။** ကုဒ်ဖိုင်ပြုလုပ်ရာတွင် နောက်ဆုံး iOS SDK ကို အသုံးပြုရန် အကြံပြုသည်။ သို့သော် ယခင် SDK များနှင့် ကိုက်ညီမှုလိုအပ်ပါက အဟောင်း SDK ကိုလည်း အသုံးပြုနိုင်သည်။
 
 ## **3. iOS အတွက် ONNX Runtime ဖြင့် Generative AI ကို ကုဒ်ဖိုင်ပြုလုပ်ခြင်း**
 
-> **Note:** ONNX Runtime ဖြင့် Generative AI သည် preview အဆင့်တွင် ရှိသောကြောင့် ပြောင်းလဲမှုများ ဖြစ်ပေါ်နိုင်သည်ကို သတိပြုပါ။
+> **မှတ်ချက်။** ONNX Runtime ဖြင့် Generative AI သည် preview အဆင့်တွင် ရှိသောကြောင့် ပြောင်းလဲမှုများ ဖြစ်ပေါ်နိုင်ကြောင်း သတိပြုပါ။
 
 ```bash
 
@@ -101,35 +101,35 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ## **4. Xcode တွင် App application တစ်ခု ဖန်တီးခြင်း**
 
-App ဖန်တီးရာတွင် Objective-C ကို ရွေးချယ်ခဲ့သည်၊ ONNX Runtime C++ API ဖြင့် Generative AI ကို အသုံးပြုရာတွင် Objective-C သည် ပိုမိုကိုက်ညီသည်။ သို့သော် Swift bridging ဖြင့်လည်း ဆက်စပ်ခေါ်ယူမှုများ ပြီးမြောက်နိုင်သည်။
+App ဖန်တီးမှုနည်းလမ်းအဖြစ် Objective-C ကို ရွေးချယ်ခဲ့သည်၊ ONNX Runtime C++ API ဖြင့် Generative AI ကို အသုံးပြုရာတွင် Objective-C သည် ပိုမိုကိုက်ညီသည်။ သို့သော် Swift bridging ဖြင့်လည်း ဆက်စပ်ခေါ်ယူမှုများ ပြီးစီးနိုင်သည်။
 
-![xcode](../../../../../imgs/01/03/iOS/xcode.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.my.png)
 
-## **5. ONNX quantized INT4 မော်ဒယ်ကို App application project သို့ ကူးယူထည့်သွင်းခြင်း**
+## **5. ONNX quantized INT4 မော်ဒယ်ကို App application project ထဲသို့ ကူးယူခြင်း**
 
-ONNX ပုံစံဖြင့် INT4 quantization မော်ဒယ်ကို အရင်ဆုံး ဒေါင်းလုပ်ရယူရန် လိုအပ်သည်။
+ONNX ပုံစံဖြင့် INT4 quantization မော်ဒယ်ကို တင်သွင်းရန် လိုအပ်ပြီး အရင်ဆုံး ဒေါင်းလုပ်လုပ်ရမည်။
 
-![hf](../../../../../imgs/01/03/iOS/hf.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.my.png)
 
 ဒေါင်းလုပ်ပြီးနောက် Xcode တွင် project ၏ Resources ဖိုလ်ဒါထဲသို့ ထည့်သွင်းရမည်။
 
-![model](../../../../../imgs/01/03/iOS/model.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.my.png)
 
 ## **6. ViewControllers တွင် C++ API ထည့်သွင်းခြင်း**
 
 > **သတိပေးချက်**
 
-- **က.** သင့် project တွင် သင့်တော်သော C++ header ဖိုင်များ ထည့်သွင်းပါ။
+- **က။** သက်ဆိုင်ရာ C++ header ဖိုင်များကို project ထဲသို့ ထည့်သွင်းပါ။
 
-  ![Header File](../../../../../imgs/01/03/iOS/head.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.my.png)
 
-- **ခ.** Xcode တွင် `onnxruntime-genai` dynamic library ကို ထည့်သွင်းပါ။
+- **ခ။** Xcode တွင် `onnxruntime-genai` dynamic library ကို ထည့်သွင်းပါ။
 
-  ![Library](../../../../../imgs/01/03/iOS/lib.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.my.png)
 
-- **ဂ.** စမ်းသပ်ရန် C Samples ကုဒ်ကို အသုံးပြုနိုင်သည်။ ChatUI ကဲ့သို့ အပိုဆောင်း လုပ်ဆောင်ချက်များလည်း ထည့်သွင်းနိုင်သည်။
+- **ဂ။** စမ်းသပ်ရန် C Samples ကုဒ်ကို အသုံးပြုနိုင်သည်။ ChatUI ကဲ့သို့ အပိုဆောင်း လုပ်ဆောင်ချက်များကိုလည်း ထည့်သွင်းနိုင်သည်။
 
-- **ဃ.** Project တွင် C++ ကို အသုံးပြုရန် `ViewController.m` ကို `ViewController.mm` ဟု အမည်ပြောင်း၍ Objective-C++ ကို ပံ့ပိုးပေးရန် လိုအပ်သည်။
+- **ဃ။** Project တွင် C++ ကို အသုံးပြုရန် `ViewController.m` ကို `ViewController.mm` ဟု အမည်ပြောင်း၍ Objective-C++ ကို ပံ့ပိုးပေးပါ။
 
 ```objc
 
@@ -162,7 +162,7 @@ ONNX ပုံစံဖြင့် INT4 quantization မော်ဒယ်က�
 
 ပြင်ဆင်မှုများ ပြီးဆုံးသည့်အခါ Phi-3-mini မော်ဒယ်၏ အာရုံစူးစိုက်မှုရလဒ်များကို ကြည့်ရှုနိုင်ရန် အက်ပလီကေးရှင်းကို ပြေးဆွဲနိုင်သည်။
 
-![Running Result](../../../../../imgs/01/03/iOS/result.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.my.jpg)
 
 နမူနာကုဒ်များနှင့် အသေးစိတ် လမ်းညွှန်ချက်များအတွက် [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ကို လည်ပတ်ကြည့်ရှုနိုင်ပါသည်။
 

@@ -2,22 +2,22 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "2b94610e2f6fe648e01fa23626f0dd03",
-  "translation_date": "2025-05-07T13:26:57+00:00",
+  "translation_date": "2025-07-17T07:57:33+00:00",
   "source_file": "md/03.FineTuning/FineTuning_MLX.md",
   "language_code": "mo"
 }
 -->
-# **Fine-tuning Phi-3 with Apple MLX Framework**
+# **使用 Apple MLX Framework 微調 Phi-3**
 
-We can complete fine-tuning combined with Lora through the Apple MLX framework command line. (If you want to know more about the operation of MLX Framework, please read [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)
+我們可以透過 Apple MLX Framework 的命令列完成結合 Lora 的微調。（如果想了解更多 MLX Framework 的操作，請參考 [Inference Phi-3 with Apple MLX Framework](../03.FineTuning/03.Inference/MLX_Inference.md)）
 
-## **1. Data preparation**
+## **1. 資料準備**
 
-By default, MLX Framework requires the jsonl format of train, test, and eval, and is combined with Lora to complete fine-tuning jobs.
+預設情況下，MLX Framework 需要 train、test 和 eval 的 jsonl 格式資料，並結合 Lora 來完成微調任務。
 
 ### ***Note:***
 
-1. jsonl data format：
+1. jsonl 資料格式：
 
 ```json
 
@@ -28,15 +28,15 @@ By default, MLX Framework requires the jsonl format of train, test, and eval, an
 
 ```
 
-2. Our example uses [TruthfulQA's data](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv), but the amount of data is relatively insufficient, so the fine-tuning results may not be optimal. It is recommended that learners use better data based on their own scenarios to complete the process.
+2. 我們的範例使用的是 [TruthfulQA 的資料](https://github.com/sylinrl/TruthfulQA/blob/main/TruthfulQA.csv)，但資料量相對不足，因此微調結果不一定最佳。建議學習者根據自身場景使用更合適的資料來完成微調。
 
-3. The data format is combined with the Phi-3 template
+3. 資料格式需配合 Phi-3 模板
 
-Please download data from this [link](../../../../code/04.Finetuning/mlx), make sure to include all .jsonl files in the ***data*** folder
+請從此 [連結](../../../../code/04.Finetuning/mlx) 下載資料，請包含 ***data*** 資料夾內所有 .jsonl 檔案
 
-## **2. Fine-tuning in your terminal**
+## **2. 在終端機進行微調**
 
-Please run this command in terminal
+請在終端機執行以下指令
 
 ```bash
 
@@ -46,9 +46,9 @@ python -m mlx_lm.lora --model microsoft/Phi-3-mini-4k-instruct --train --data ./
 
 ## ***Note:***
 
-1. This is LoRA fine-tuning; the MLX framework does not support QLoRA yet.
+1. 這是 LoRA 微調，MLX Framework 尚未發布 QLoRA
 
-2. You can modify config.yaml to change some parameters, such as
+2. 你可以透過設定 config.yaml 來更改部分參數，例如
 
 ```yaml
 
@@ -118,7 +118,7 @@ lora_parameters:
 
 ```
 
-Please run this command in terminal
+請在終端機執行以下指令
 
 ```bash
 
@@ -126,9 +126,9 @@ python -m  mlx_lm.lora --config lora_config.yaml
 
 ```
 
-## **3. Run Fine-tuning adapter to test**
+## **3. 執行微調 adapter 進行測試**
 
-You can run the fine-tuning adapter in terminal like this
+你可以在終端機執行微調 adapter，指令如下
 
 ```bash
 
@@ -136,7 +136,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --adapter-pat
 
 ```
 
-and run the original model to compare results
+並執行原始模型來比較結果
 
 ```bash
 
@@ -144,9 +144,9 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ```
 
-Feel free to compare the outputs of the fine-tuned model with the original one
+你可以嘗試比較微調後與原始模型的結果差異
 
-## **4. Merge adapters to generate new models**
+## **4. 合併 adapters 生成新模型**
 
 ```bash
 
@@ -154,9 +154,9 @@ python -m mlx_lm.fuse --model microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-## **5. Running quantized fine-tuning models using ollama**
+## **5. 使用 ollama 執行量化微調模型**
 
-Before use, please configure your llama.cpp environment
+使用前，請先配置你的 llama.cpp 環境
 
 ```bash
 
@@ -172,11 +172,11 @@ python convert.py 'Your meger model path'  --outfile phi-3-mini-ft.gguf --outtyp
 
 ***Note:***
 
-1. Currently supports quantization conversion for fp32, fp16, and INT8
+1. 現在支援 fp32、fp16 及 INT 8 的量化轉換
 
-2. The merged model lacks tokenizer.model, please download it from https://huggingface.co/microsoft/Phi-3-mini-4k-instruct
+2. 合併後的模型缺少 tokenizer.model，請從 https://huggingface.co/microsoft/Phi-3-mini-4k-instruct 下載
 
-Set up a [Ollama Model](https://ollama.com/)
+設定一個 [Ollma Model](https://ollama.com/)
 
 ```txt
 
@@ -185,7 +185,7 @@ PARAMETER stop "<|end|>"
 
 ```
 
-Run the command in terminal
+在終端機執行指令
 
 ```bash
 
@@ -195,11 +195,7 @@ Run the command in terminal
 
 ```
 
-Congratulations! You’ve mastered fine-tuning with the MLX Framework
+恭喜！你已掌握使用 MLX Framework 進行微調
 
-**Disclaimer**:  
-This document has been translated using AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.
-
----
-
-I’m not familiar with a language called “mo.” Could you please clarify which language or dialect you mean by “mo”? For example, is it a language code, a shorthand, or a specific language name? This will help me provide an accurate translation.
+**免責聲明**：  
+本文件係使用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意，自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而產生的任何誤解或誤釋負責。

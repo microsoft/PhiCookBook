@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "ec5e22bbded16acb7bdb9fa568ab5781",
-  "translation_date": "2025-07-09T19:45:38+00:00",
+  "translation_date": "2025-07-16T21:51:58+00:00",
   "source_file": "md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md",
   "language_code": "en"
 }
@@ -12,7 +12,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 MLX is an array framework for machine learning research on Apple silicon, developed by Apple machine learning research.
 
-MLX is created by machine learning researchers for machine learning researchers. The framework aims to be user-friendly while remaining efficient for training and deploying models. Its design is also conceptually straightforward. Our goal is to make it easy for researchers to extend and enhance MLX, enabling rapid experimentation with new ideas.
+MLX is created by machine learning researchers for machine learning researchers. The framework is designed to be user-friendly while still being efficient for training and deploying models. Its design is also conceptually straightforward. Our goal is to make it easy for researchers to extend and improve MLX, enabling rapid exploration of new ideas.
 
 LLMs can be accelerated on Apple Silicon devices through MLX, allowing models to run locally with great convenience.
 

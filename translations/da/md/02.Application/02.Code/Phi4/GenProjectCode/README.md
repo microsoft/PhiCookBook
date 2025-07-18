@@ -2,25 +2,25 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e7bb23ac4d9ef7b419305d8a5745b7aa",
-  "translation_date": "2025-05-09T19:50:40+00:00",
+  "translation_date": "2025-07-17T04:45:49+00:00",
   "source_file": "md/02.Application/02.Code/Phi4/GenProjectCode/README.md",
   "language_code": "da"
 }
 -->
 ## **Brug af Phi-4-mini-mm til at generere kode**
 
-Phi-4-mini fortsætter de stærke kodningsmuligheder fra Phi Family. Du kan bruge Prompt til at stille spørgsmål relateret til kodning. Selvfølgelig, efter at have tilføjet den stærke evne til ræsonnering, har den endnu stærkere kodningsmuligheder, såsom at generere projekter efter krav. For eksempel generere projekter efter krav, såsom:
+Phi-4-mini fortsætter de stærke kodningsevner fra Phi-familien. Du kan bruge Prompt til at stille spørgsmål relateret til kodning. Selvfølgelig, efter at have tilføjet den stærke ræsonneringsevne, har den endnu stærkere kodningsevner, såsom at generere projekter efter krav. For eksempel generere projekter efter krav, såsom:
 
 ### **Krav**
 
-Opret en Shopping Cart App
+Opret en indkøbskurv-app
 
 - Opret en API Rest med følgende metoder:
-    - Hent en liste over øl ved hjælp af sideoffset og limit.
+    - Hent en liste over øl ved hjælp af sideoffset og begrænsning.
     - Hent øldetaljer efter id.
     - Søg efter øl efter navn, beskrivelse, tagline, madparringer og pris.
-- Opret en liste over produkter på hovedsiden.
-    - Opret en søgelinje til at filtrere produkter.
+- Opret en produktliste på hovedsiden.
+    - Opret en søgefelt til at filtrere produkter.
     - Naviger til beskrivelsessiden, når brugeren klikker på et produkt.
 - (Valgfrit) Slicer til at filtrere produkter efter pris.
 - Opret en indkøbskurv.
@@ -140,4 +140,4 @@ print(response)
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det originale dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.
+Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

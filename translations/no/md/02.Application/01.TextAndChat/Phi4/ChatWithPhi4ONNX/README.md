@@ -2,14 +2,14 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "c98217bb3eff6c24e97b104b21632fd0",
-  "translation_date": "2025-05-09T19:02:22+00:00",
+  "translation_date": "2025-07-17T03:17:58+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md",
   "language_code": "no"
 }
 -->
 # **Chat med Phi-4-mini ONNX**
 
-***ONNX*** er et åpent format laget for å representere maskinlæringsmodeller. ONNX definerer et felles sett med operatorer – byggesteinene i maskinlærings- og dyp læringsmodeller – og et felles filformat som gjør det mulig for AI-utviklere å bruke modeller med ulike rammeverk, verktøy, kjøretider og kompilatorer.
+***ONNX*** er et åpent format laget for å representere maskinlæringsmodeller. ONNX definerer et felles sett med operatorer – byggesteinene i maskinlæring og dyp læring – samt et felles filformat som gjør det mulig for AI-utviklere å bruke modeller med ulike rammeverk, verktøy, kjøretider og kompilatorer.
 
 Vi ønsker å distribuere generative AI-modeller på edge-enheter og bruke dem i miljøer med begrenset regnekraft eller offline. Nå kan vi oppnå dette ved å konvertere modellen på en kvantisert måte. Vi kan konvertere den kvantiserte modellen til GGUF- eller ONNX-format.
 
@@ -37,7 +37,7 @@ olive auto-opt --model_name_or_path Your Phi-4-mini location --output_path Your 
 ***Merk*** dette eksempelet bruker CPU
 
 
-### **Inferens av Phi-4-mini ONNX-modell med ONNX Runtime GenAI**
+### **Kjør inferens med Phi-4-mini ONNX-modellen ved hjelp av ONNX Runtime GenAI**
 
 - **Installer ONNX Runtime GenAI**
 
@@ -159,4 +159,4 @@ while not generator.is_done():
 ```
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på dets opprinnelige språk bør betraktes som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vennligst vær oppmerksom på at automatiske oversettelser kan inneholde feil eller unøyaktigheter. Det opprinnelige dokumentet på originalspråket skal anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.

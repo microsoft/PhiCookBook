@@ -2,40 +2,40 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e46691923dca7cb2f11d32b1d9d558e0",
-  "translation_date": "2025-05-09T11:50:39+00:00",
+  "translation_date": "2025-07-16T20:50:00+00:00",
   "source_file": "md/01.Introduction/03/Kaito_Inference.md",
   "language_code": "br"
 }
 -->
 ## Inferência com Kaito
 
-[Kaito](https://github.com/Azure/kaito) é um operador que automatiza o deploy de modelos de inferência AI/ML em um cluster Kubernetes.
+[Kaito](https://github.com/Azure/kaito) é um operador que automatiza a implantação de modelos de inferência AI/ML em um cluster Kubernetes.
 
-O Kaito possui as seguintes diferenças principais em comparação com a maioria das metodologias convencionais de deploy de modelos construídas sobre infraestruturas de máquinas virtuais:
+O Kaito apresenta as seguintes diferenças principais em comparação com a maioria das metodologias tradicionais de implantação de modelos baseadas em infraestruturas de máquinas virtuais:
 
 - Gerencia arquivos de modelo usando imagens de container. Um servidor http é fornecido para realizar chamadas de inferência usando a biblioteca do modelo.
-- Evita ajustar parâmetros de deploy para se adequar ao hardware GPU, oferecendo configurações pré-definidas.
+- Evita a necessidade de ajustar parâmetros de implantação para se adequar ao hardware GPU, oferecendo configurações pré-definidas.
 - Provisiona automaticamente nós GPU com base nos requisitos do modelo.
-- Hospeda imagens grandes de modelos no Microsoft Container Registry (MCR) público, caso a licença permita.
+- Hospeda imagens de modelos grandes no Microsoft Container Registry (MCR) público, se a licença permitir.
 
 Com o Kaito, o fluxo de trabalho para integrar grandes modelos de inferência AI no Kubernetes é bastante simplificado.
 
 ## Arquitetura
 
-O Kaito segue o padrão clássico de Custom Resource Definition (CRD)/controller do Kubernetes. O usuário gerencia um recurso customizado `workspace` que descreve os requisitos de GPU e a especificação da inferência. Os controllers do Kaito automatizam o deploy reconciliando o recurso customizado `workspace`.
+O Kaito segue o padrão clássico de design Kubernetes Custom Resource Definition (CRD)/controlador. O usuário gerencia um recurso customizado `workspace` que descreve os requisitos de GPU e a especificação de inferência. Os controladores do Kaito automatizam a implantação reconciliando o recurso customizado `workspace`.
 <div align="left">
   <img src="https://github.com/kaito-project/kaito/blob/main/docs/img/arch.png" width=80% title="Arquitetura do Kaito" alt="Arquitetura do Kaito">
 </div>
 
-A figura acima apresenta uma visão geral da arquitetura do Kaito. Seus principais componentes são:
+A figura acima apresenta uma visão geral da arquitetura do Kaito. Seus principais componentes consistem em:
 
-- **Workspace controller**: Reconcilia o recurso customizado `workspace`, cria recursos customizados `machine` (explicados abaixo) para disparar o provisionamento automático de nós, e cria a carga de trabalho de inferência (`deployment` ou `statefulset`) com base nas configurações pré-definidas do modelo.
-- **Node provisioner controller**: O nome do controller é *gpu-provisioner* no [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Ele usa o CRD `machine` originado do [Karpenter](https://sigs.k8s.io/karpenter) para interagir com o workspace controller. Integra-se com as APIs do Azure Kubernetes Service (AKS) para adicionar novos nós GPU ao cluster AKS.
-> Nota: O [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) é um componente open source. Pode ser substituído por outros controllers se eles suportarem as APIs do [Karpenter-core](https://sigs.k8s.io/karpenter).
+- **Controlador Workspace**: Reconciliam o recurso customizado `workspace`, criam recursos customizados `machine` (explicados abaixo) para disparar o provisionamento automático de nós e criam a carga de trabalho de inferência (`deployment` ou `statefulset`) com base nas configurações pré-definidas do modelo.
+- **Controlador de provisionamento de nós**: O nome do controlador é *gpu-provisioner* no [chart helm gpu-provisioner](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner). Ele usa o CRD `machine` originado do [Karpenter](https://sigs.k8s.io/karpenter) para interagir com o controlador workspace. Integra-se com as APIs do Azure Kubernetes Service (AKS) para adicionar novos nós GPU ao cluster AKS.
+> Nota: O [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner) é um componente open source. Pode ser substituído por outros controladores caso eles suportem as APIs do [Karpenter-core](https://sigs.k8s.io/karpenter).
 
 ## Instalação
 
-Por favor, consulte o guia de instalação [aqui](https://github.com/Azure/kaito/blob/main/docs/installation.md).
+Por favor, consulte as instruções de instalação [aqui](https://github.com/Azure/kaito/blob/main/docs/installation.md).
 
 ## Início rápido Inferência Phi-3  
 [Código de exemplo Inferência Phi-3](https://github.com/Azure/kaito/tree/main/examples/inference)
@@ -83,7 +83,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3.yaml
 ```
 
-O status do workspace pode ser acompanhado executando o comando abaixo. Quando a coluna WORKSPACEREADY mostrar `True`, o modelo foi implantado com sucesso.
+O status do workspace pode ser acompanhado executando o comando abaixo. Quando a coluna WORKSPACEREADY estiver `True`, o modelo foi implantado com sucesso.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3.yaml
@@ -104,7 +104,7 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 
 ## Início rápido Inferência Phi-3 com adapters
 
-Após instalar o Kaito, pode-se usar os comandos abaixo para iniciar um serviço de inferência.
+Após instalar o Kaito, você pode tentar os comandos abaixo para iniciar um serviço de inferência.
 
 [Código de exemplo Inferência Phi-3 com Adapters](https://github.com/Azure/kaito/blob/main/examples/inference/kaito_workspace_phi_3_with_adapters.yaml)
 
@@ -155,7 +155,7 @@ tuning:
 $ kubectl apply -f examples/inference/kaito_workspace_phi_3_with_adapters.yaml
 ```
 
-O status do workspace pode ser acompanhado executando o comando abaixo. Quando a coluna WORKSPACEREADY mostrar `True`, o modelo foi implantado com sucesso.
+O status do workspace pode ser acompanhado executando o comando abaixo. Quando a coluna WORKSPACEREADY estiver `True`, o modelo foi implantado com sucesso.
 
 ```sh
 $ kubectl get workspace kaito_workspace_phi_3_with_adapters.yaml
@@ -175,4 +175,4 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional feita por humanos. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

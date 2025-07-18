@@ -2,28 +2,28 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3139a6a82f357a9f90f1fe51c4caf65a",
-  "translation_date": "2025-05-09T13:54:11+00:00",
+  "translation_date": "2025-07-16T22:01:00+00:00",
   "source_file": "md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md",
   "language_code": "pt"
 }
 -->
-# **Quantizando Phi-3.5 usando Intel OpenVINO**
+# **Quantização do Phi-3.5 usando Intel OpenVINO**
 
-A Intel é o fabricante de CPU mais tradicional, com muitos usuários. Com o crescimento do machine learning e deep learning, a Intel também entrou na corrida pela aceleração de IA. Para inferência de modelos, a Intel não utiliza apenas GPUs e CPUs, mas também NPUs.
+A Intel é o fabricante de CPUs mais tradicional, com muitos utilizadores. Com o crescimento do machine learning e deep learning, a Intel também entrou na corrida pela aceleração de IA. Para a inferência de modelos, a Intel não utiliza apenas GPUs e CPUs, mas também NPUs.
 
-Queremos implantar a Família Phi-3.x na ponta, visando torná-la a parte mais importante do PC de IA e do PC Copilot. O carregamento do modelo na ponta depende da colaboração entre diferentes fabricantes de hardware. Este capítulo foca principalmente no cenário de aplicação do Intel OpenVINO como modelo quantitativo.
+Pretendemos implementar a família Phi-3.x no lado do utilizador final, esperando que se torne a parte mais importante do PC de IA e do PC Copilot. O carregamento do modelo no lado do utilizador final depende da colaboração entre diferentes fabricantes de hardware. Este capítulo foca-se principalmente no cenário de aplicação do Intel OpenVINO como modelo quantitativo.
 
 ## **O que é o OpenVINO**
 
-OpenVINO é um kit de ferramentas open-source para otimizar e implantar modelos de deep learning do cloud até a edge. Ele acelera a inferência de deep learning em vários casos de uso, como IA generativa, vídeo, áudio e linguagem, com modelos de frameworks populares como PyTorch, TensorFlow, ONNX e outros. Converta e otimize modelos e faça deploy em uma variedade de hardwares e ambientes Intel®, localmente ou em dispositivos, no navegador ou na nuvem.
+O OpenVINO é um toolkit open-source para otimizar e implementar modelos de deep learning desde a cloud até ao edge. Acelera a inferência de deep learning em vários casos de uso, como IA generativa, vídeo, áudio e linguagem, com modelos de frameworks populares como PyTorch, TensorFlow, ONNX, entre outros. Permite converter e otimizar modelos, e implementá-los numa combinação de hardware e ambientes Intel®, localmente ou em dispositivos, no browser ou na cloud.
 
-Com o OpenVINO, você pode rapidamente quantizar modelos GenAI em hardware Intel e acelerar a referência do modelo.
+Com o OpenVINO, pode quantizar rapidamente o modelo GenAI em hardware Intel e acelerar a referência do modelo.
 
-Atualmente, o OpenVINO suporta conversão de quantização para Phi-3.5-Vision e Phi-3.5 Instruct.
+Atualmente, o OpenVINO suporta a conversão de quantização do Phi-3.5-Vision e do Phi-3.5 Instruct.
 
 ### **Configuração do Ambiente**
 
-Por favor, certifique-se de que as seguintes dependências do ambiente estão instaladas, este é o requirement.txt
+Por favor, assegure que as seguintes dependências do ambiente estão instaladas, este é o requirement.txt
 
 ```txt
 
@@ -36,7 +36,7 @@ openvino-genai>=2024.3.0.0
 
 ```
 
-### **Quantizando Phi-3.5-Instruct usando OpenVINO**
+### **Quantização do Phi-3.5-Instruct usando OpenVINO**
 
 No Terminal, execute este script
 
@@ -52,7 +52,7 @@ optimum-cli export openvino --model {llm_model_id} --task text-generation-with-p
 
 ```
 
-### **Quantizando Phi-3.5-Vision usando OpenVINO**
+### **Quantização do Phi-3.5-Vision usando OpenVINO**
 
 Execute este script em Python ou Jupyter lab
 
@@ -92,11 +92,11 @@ if not out_dir.exists():
 
 ### **🤖 Exemplos para Phi-3.5 com Intel OpenVINO**
 
-| Labs    | Introdução | Acessar |
+| Labs    | Introdução | Ir |
 | -------- | ------- |  ------- |
-| 🚀 Lab-Introdução Phi-3.5 Instruct  | Aprenda como usar Phi-3.5 Instruct no seu PC de IA    |  [Acessar](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
-| 🚀 Lab-Introdução Phi-3.5 Vision (imagem) | Aprenda como usar Phi-3.5 Vision para analisar imagens no seu PC de IA      |  [Acessar](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
-| 🚀 Lab-Introdução Phi-3.5 Vision (vídeo)   | Aprenda como usar Phi-3.5 Vision para analisar vídeos no seu PC de IA    |  [Acessar](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
+| 🚀 Lab-Introdução Phi-3.5 Instruct  | Aprenda a usar o Phi-3.5 Instruct no seu PC de IA    |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-instruct-zh.ipynb)    |
+| 🚀 Lab-Introdução Phi-3.5 Vision (imagem) | Aprenda a usar o Phi-3.5 Vision para analisar imagens no seu PC de IA      |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-img.ipynb)    |
+| 🚀 Lab-Introdução Phi-3.5 Vision (vídeo)   | Aprenda a usar o Phi-3.5 Vision para analisar vídeo no seu PC de IA    |  [Ir](../../../../../code/09.UpdateSamples/Aug/intel-phi35-vision-video.ipynb)    |
 
 ## **Recursos**
 
@@ -105,4 +105,4 @@ if not out_dir.exists():
 2. Repositório Intel OpenVINO no GitHub [https://github.com/openvinotoolkit/openvino.genai](https://github.com/openvinotoolkit/openvino.genai)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se a tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos pela precisão, por favor tenha em conta que traduções automáticas podem conter erros ou imprecisões. O documento original na sua língua nativa deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes da utilização desta tradução.

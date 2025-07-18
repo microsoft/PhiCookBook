@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-07-09T19:44:19+00:00",
+  "translation_date": "2025-07-16T22:13:32+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "en"
 }
@@ -63,7 +63,9 @@ cd models
 4. Download this file into the models folder  
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
-5. Go to the terminal and convert ONNX model with FP32 support
+5. Go to the terminal
+
+    Convert ONNX model with FP32 support
 
 ```bash
 
@@ -79,7 +81,7 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 
 3. Responsible AI considerations are important, so after quantization, it is recommended to perform thorough testing to ensure effective results.
 
-4. By quantizing the CPU INT4 model, we can deploy it on Edge Devices, which offers better application scenarios. Therefore, we have completed Phi-3.5-Instruct quantization around INT4.
+4. By quantizing the CPU INT4 model, deployment to Edge Devices becomes possible, offering better application scenarios. Therefore, we have completed Phi-3.5-Instruct quantization around INT4.
 
 ## **Resources**
 

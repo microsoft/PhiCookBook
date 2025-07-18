@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "1f21d34bca1fc59898ff97ca5c113edf",
-  "translation_date": "2025-05-08T05:54:38+00:00",
+  "translation_date": "2025-07-17T04:48:55+00:00",
   "source_file": "md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md",
   "language_code": "hk"
 }
@@ -10,7 +10,6 @@ CO_OP_TRANSLATOR_METADATA:
 ## **使用 Phi-4-mini-reasoning(3.8b) 或 Phi-4-reasoning(14b) 作為推理專家**
 
 讓我們透過 Phi-4-mini-reasoning 或 Phi-4-mini-reasoning 來看看它強大的推理能力。
-
 
 ```python
 
@@ -50,4 +49,4 @@ print(outputs[0])
 ```
 
 **免責聲明**：  
-本文件係用 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 翻譯。雖然我哋致力保持準確，但請注意自動翻譯可能包含錯誤或不準確嘅地方。原文文件嘅母語版本應被視為權威來源。對於重要資訊，建議使用專業人手翻譯。我哋對因使用本翻譯而引致嘅任何誤解或誤釋概不負責。
+本文件由 AI 翻譯服務 [Co-op Translator](https://github.com/Azure/co-op-translator) 進行翻譯。雖然我們致力於確保準確性，但請注意自動翻譯可能包含錯誤或不準確之處。原始文件的母語版本應被視為權威來源。對於重要資訊，建議採用專業人工翻譯。我們不對因使用本翻譯而引起的任何誤解或誤釋承擔責任。

@@ -2,7 +2,7 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "3bb9f5c926673593287eddc3741226cb",
-  "translation_date": "2025-05-09T14:26:52+00:00",
+  "translation_date": "2025-07-16T22:19:34+00:00",
   "source_file": "md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md",
   "language_code": "br"
 }
@@ -13,9 +13,7 @@ O Model Builder agora suporta a quantização de modelos ONNX para Phi-3.5 Instr
 
 ### **Phi-3.5-Instruct**
 
-
 **Conversão acelerada por CPU para INT4 quantizado**
-
 
 ```bash
 
@@ -31,14 +29,11 @@ python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  
 
 ```
 
-
-
 ```python
 
 python3 -m onnxruntime_genai.models.builder -m microsoft/Phi-3.5-mini-instruct  -o ./onnx-cpu -p int4 -e cuda -c ./Phi-3.5-mini-instruct
 
 ```
-
 
 ### **Phi-3.5-Vision**
 
@@ -65,7 +60,6 @@ cd models
 
 - [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/modeling_phi3_v.py)
 
-
 4. Baixe este arquivo para a pasta models  
 [https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py](https://huggingface.co/lokinfey/Phi-3.5-vision-instruct-onnx-cpu/blob/main/onnx/build.py)
 
@@ -73,24 +67,21 @@ cd models
 
     Converta o suporte ONNX com FP32
 
-
 ```bash
 
 python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p f32 -e cpu
 
 ```
 
-
 ### **Nota:**
 
 1. O Model Builder atualmente suporta a conversão do Phi-3.5-Instruct e Phi-3.5-Vision, mas não do Phi-3.5-MoE
 
-2. Para usar o modelo quantizado ONNX, você pode usá-lo através do SDK Generative AI extensions for onnxruntime
+2. Para usar o modelo quantizado do ONNX, você pode utilizá-lo através do SDK Generative AI extensions for onnxruntime
 
-3. Precisamos considerar uma IA mais responsável, então após a conversão da quantização do modelo, é recomendado realizar testes mais eficazes nos resultados
+3. Precisamos considerar uma IA mais responsável, então após a conversão da quantização do modelo, é recomendado realizar testes mais eficazes dos resultados
 
-4. Quantizando o modelo CPU INT4, podemos implantá-lo em dispositivos Edge, que têm cenários de aplicação melhores, por isso completamos o Phi-3.5-Instruct com foco em INT4
-
+4. Ao quantizar o modelo CPU INT4, podemos implantá-lo em dispositivos Edge, que possuem cenários de aplicação melhores, por isso completamos o Phi-3.5-Instruct em torno do INT4
 
 ## **Recursos**
 
@@ -99,4 +90,4 @@ python build.py -i .\Your Phi-3.5-vision-instruct Path\ -o .\vision-cpu-fp32 -p 
 2. Repositório GitHub do Generative AI extensions for onnxruntime [https://github.com/microsoft/onnxruntime-genai](https://github.com/microsoft/onnxruntime-genai)
 
 **Aviso Legal**:  
-Este documento foi traduzido utilizando o serviço de tradução automática [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte oficial. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações equivocadas decorrentes do uso desta tradução.
+Este documento foi traduzido utilizando o serviço de tradução por IA [Co-op Translator](https://github.com/Azure/co-op-translator). Embora nos esforcemos para garantir a precisão, esteja ciente de que traduções automáticas podem conter erros ou imprecisões. O documento original em seu idioma nativo deve ser considerado a fonte autorizada. Para informações críticas, recomenda-se tradução profissional humana. Não nos responsabilizamos por quaisquer mal-entendidos ou interpretações incorretas decorrentes do uso desta tradução.

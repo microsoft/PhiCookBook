@@ -2,111 +2,111 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "00b7a699de8ac405fa821f4c0f7fc0ab",
-  "translation_date": "2025-05-09T19:15:45+00:00",
+  "translation_date": "2025-07-17T03:42:30+00:00",
   "source_file": "md/02.Application/02.Code/Phi3/VSCodeExt/README.md",
   "language_code": "ms"
 }
 -->
-# **قم ببناء مساعد GitHub Copilot Chat الخاص بك في Visual Studio Code باستخدام عائلة Microsoft Phi-3**
+# **Bina Visual Studio Code GitHub Copilot Chat anda sendiri dengan Keluarga Microsoft Phi-3**
 
-هل استخدمت وكيل مساحة العمل في GitHub Copilot Chat؟ هل ترغب في بناء وكيل كود خاص بفريقك؟ تهدف هذه الورشة العملية إلى دمج النموذج مفتوح المصدر لبناء وكيل أعمال كود على مستوى المؤسسات.
+Adakah anda pernah menggunakan agen workspace dalam GitHub Copilot Chat? Adakah anda ingin membina agen kod untuk pasukan anda sendiri? Makmal praktikal ini bertujuan menggabungkan model sumber terbuka untuk membina agen perniagaan kod tahap perusahaan.
 
-## **الأساسيات**
+## **Asas**
 
-### **لماذا تختار Microsoft Phi-3**
+### **Mengapa memilih Microsoft Phi-3**
 
-Phi-3 هي سلسلة عائلية تشمل phi-3-mini و phi-3-small و phi-3-medium، تعتمد على معلمات تدريب مختلفة لتوليد النصوص، إكمال الحوارات، وتوليد الأكواد. هناك أيضًا phi-3-vision المبني على الرؤية. هذا مناسب للمؤسسات أو الفرق المختلفة لإنشاء حلول ذكاء اصطناعي توليدي تعمل بدون اتصال بالإنترنت.
+Phi-3 adalah siri keluarga, termasuk phi-3-mini, phi-3-small, dan phi-3-medium berdasarkan parameter latihan yang berbeza untuk penjanaan teks, penyelesaian dialog, dan penjanaan kod. Terdapat juga phi-3-vision yang berasaskan Vision. Ia sesuai untuk perusahaan atau pasukan yang berbeza untuk mencipta penyelesaian AI generatif secara luar talian.
 
-يوصى بقراءة هذا الرابط [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
+Disyorkan untuk membaca pautan ini [https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md](https://github.com/microsoft/PhiCookBook/blob/main/md/01.Introduction/01/01.PhiFamily.md)
 
 ### **Microsoft GitHub Copilot Chat**
 
-امتداد GitHub Copilot Chat يوفر لك واجهة دردشة تتيح لك التفاعل مع GitHub Copilot والحصول على إجابات لأسئلة متعلقة بالبرمجة مباشرة داخل VS Code، دون الحاجة للبحث في الوثائق أو المنتديات عبر الإنترنت.
+Sambungan GitHub Copilot Chat memberikan anda antara muka sembang yang membolehkan anda berinteraksi dengan GitHub Copilot dan menerima jawapan kepada soalan berkaitan pengkodan terus dalam VS Code, tanpa perlu melayari dokumentasi atau mencari di forum dalam talian.
 
-قد يستخدم Copilot Chat تمييز بناء الجملة، التراجع، وميزات تنسيق أخرى لإضافة وضوح للرد المولد. بناءً على نوع السؤال من المستخدم، قد يحتوي الرد على روابط للسياق الذي استخدمه Copilot في توليد الرد، مثل ملفات الكود المصدر أو الوثائق، أو أزرار للوصول إلى وظائف VS Code.
+Copilot Chat mungkin menggunakan penyorotan sintaks, indentasi, dan ciri pemformatan lain untuk menambah kejelasan pada jawapan yang dijana. Bergantung pada jenis soalan daripada pengguna, hasilnya boleh mengandungi pautan kepada konteks yang digunakan oleh Copilot untuk menjana jawapan, seperti fail kod sumber atau dokumentasi, atau butang untuk mengakses fungsi VS Code.
 
-- يندمج Copilot Chat في سير عمل المطور ويوفر لك المساعدة حيث تحتاجها:
+- Copilot Chat disepadukan dalam aliran kerja pembangun anda dan memberikan bantuan di mana anda memerlukannya:
 
-- ابدأ محادثة دردشة داخلية مباشرة من المحرر أو الطرفية للحصول على مساعدة أثناء البرمجة
+- Mulakan perbualan sembang secara langsung dari editor atau terminal untuk mendapatkan bantuan semasa anda menulis kod
 
-- استخدم عرض الدردشة لتكون لديك مساعد ذكي بجانبك لمساعدتك في أي وقت
+- Gunakan paparan Chat untuk mempunyai pembantu AI di sisi yang membantu anda pada bila-bila masa
 
-- شغّل Quick Chat لطرح سؤال سريع والعودة إلى عملك
+- Lancarkan Quick Chat untuk bertanya soalan ringkas dan kembali kepada kerja anda dengan cepat
 
-يمكنك استخدام GitHub Copilot Chat في سيناريوهات مختلفة، مثل:
+Anda boleh menggunakan GitHub Copilot Chat dalam pelbagai senario, seperti:
 
-- الإجابة على أسئلة برمجية حول أفضل طريقة لحل مشكلة
+- Menjawab soalan pengkodan tentang cara terbaik menyelesaikan masalah
 
-- شرح كود شخص آخر واقتراح تحسينات
+- Menerangkan kod orang lain dan mencadangkan penambahbaikan
 
-- اقتراح إصلاحات للكود
+- Mencadangkan pembetulan kod
 
-- توليد حالات اختبار وحدة
+- Menjana kes ujian unit
 
-- توليد توثيق للكود
+- Menjana dokumentasi kod
 
-يوصى بقراءة هذا الرابط [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
+Disyorkan untuk membaca pautan ini [https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/copilot-chat?WT.mc_id=aiml-137032-kinfeylo)
 
 
 ###  **Microsoft GitHub Copilot Chat @workspace**
 
-الإشارة إلى **@workspace** في Copilot Chat تتيح لك طرح أسئلة حول كامل قاعدة كودك. بناءً على السؤال، يقوم Copilot باسترجاع الملفات والرموز ذات الصلة بذكاء، والتي يذكرها في إجابته كرابط وأمثلة على الكود.
+Merujuk kepada **@workspace** dalam Copilot Chat membolehkan anda bertanya soalan mengenai keseluruhan kod asas anda. Berdasarkan soalan, Copilot secara pintar mengambil fail dan simbol yang berkaitan, yang kemudian dirujuk dalam jawapannya sebagai pautan dan contoh kod.
 
-للإجابة على سؤالك، يبحث **@workspace** في نفس المصادر التي يستخدمها المطور عند التنقل في قاعدة الكود في VS Code:
+Untuk menjawab soalan anda, **@workspace** mencari melalui sumber yang sama yang digunakan oleh pembangun apabila menavigasi kod asas dalam VS Code:
 
-- جميع الملفات في مساحة العمل، باستثناء الملفات التي تم تجاهلها بواسطة ملف .gitignore
+- Semua fail dalam workspace, kecuali fail yang diabaikan oleh fail .gitignore
 
-- هيكل الدليل مع المجلدات والملفات المتداخلة
+- Struktur direktori dengan folder dan nama fail bersarang
 
-- فهرس بحث الكود الخاص بـ GitHub، إذا كانت مساحة العمل مستودع GitHub ومفهرسة بواسطة بحث الكود
+- Indeks carian kod GitHub, jika workspace adalah repositori GitHub dan diindeks oleh carian kod
 
-- الرموز والتعريفات في مساحة العمل
+- Simbol dan definisi dalam workspace
 
-- النص المحدد حاليًا أو النص المرئي في المحرر النشط
+- Teks yang dipilih atau teks yang kelihatan dalam editor aktif
 
-ملاحظة: يتم تجاوز .gitignore إذا كان لديك ملف مفتوح أو نص محدد داخل ملف تم تجاهله.
+Nota: .gitignore diabaikan jika anda membuka fail atau memilih teks dalam fail yang diabaikan.
 
-يوصى بقراءة هذا الرابط [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
-
-
-## **المزيد عن هذه الورشة**
-
-لقد حسّن GitHub Copilot بشكل كبير من كفاءة البرمجة في المؤسسات، وكل مؤسسة تأمل في تخصيص الوظائف ذات الصلة بـ GitHub Copilot. العديد من المؤسسات قامت بتخصيص امتدادات مشابهة لـ GitHub Copilot بناءً على سيناريوهات أعمالها الخاصة والنماذج مفتوحة المصدر. بالنسبة للمؤسسات، فإن الامتدادات المخصصة أسهل في التحكم، لكن هذا يؤثر على تجربة المستخدم. بعد كل شيء، يمتلك GitHub Copilot وظائف أقوى في التعامل مع السيناريوهات العامة والاحترافية. إذا أمكن الحفاظ على تجربة متسقة، فسيكون من الأفضل تخصيص امتداد المؤسسة الخاص. يوفر GitHub Copilot Chat واجهات برمجة تطبيقات مناسبة للمؤسسات للتوسع في تجربة الدردشة. الحفاظ على تجربة متسقة ووجود وظائف مخصصة يوفر تجربة مستخدم أفضل.
-
-تعتمد هذه الورشة بشكل رئيسي على نموذج Phi-3 مع الجمع بين NPU المحلي و Azure الهجين لبناء وكيل مخصص في GitHub Copilot Chat ***@PHI3*** لمساعدة مطوري المؤسسات في إكمال توليد الكود***(@PHI3 /gen)*** وتوليد الكود بناءً على الصور ***(@PHI3 /img)***.
-
-![PHI3](../../../../../../../translated_images/cover.410a18b85555fad4ca8bfb8f0b1776a96ae7f8eae1132b8f0c09d4b92b8e3365.ms.png)
-
-### ***ملاحظة:*** 
-
-يتم تنفيذ هذه الورشة حاليًا في AIPC لمعالجات Intel و Apple Silicon. سنستمر في تحديث نسخة NPU الخاصة بـ Qualcomm.
+Disyorkan untuk membaca pautan ini [[https://code.visualstudio.com/docs/copilot/copilot-chat](https://code.visualstudio.com/docs/copilot/workspace-context?WT.mc_id=aiml-137032-kinfeylo)]
 
 
-## **الورشة**
+## **Ketahui lebih lanjut tentang Makmal ini**
+
+GitHub Copilot telah banyak meningkatkan kecekapan pengaturcaraan perusahaan, dan setiap perusahaan berharap untuk menyesuaikan fungsi berkaitan GitHub Copilot. Banyak perusahaan telah menyesuaikan Extensions yang serupa dengan GitHub Copilot berdasarkan senario perniagaan mereka sendiri dan model sumber terbuka. Bagi perusahaan, Extensions yang disesuaikan lebih mudah dikawal, tetapi ini juga mempengaruhi pengalaman pengguna. Lagipun, GitHub Copilot mempunyai fungsi yang lebih kuat dalam menangani senario umum dan profesionalisme. Jika pengalaman dapat dikekalkan konsisten, adalah lebih baik untuk menyesuaikan Extension perusahaan sendiri. GitHub Copilot Chat menyediakan API berkaitan untuk perusahaan mengembangkan pengalaman Chat. Mengekalkan pengalaman yang konsisten dan mempunyai fungsi yang disesuaikan adalah pengalaman pengguna yang lebih baik.
+
+Makmal ini terutamanya menggunakan model Phi-3 digabungkan dengan NPU tempatan dan Azure hibrid untuk membina Agen tersuai dalam GitHub Copilot Chat ***@PHI3*** untuk membantu pembangun perusahaan menyelesaikan penjanaan kod***(@PHI3 /gen)*** dan menjana kod berdasarkan imej ***(@PHI3 /img)***.
+
+![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d095fe0b942687287803c03933d2d1d439d14e10fa1442a864d.ms.png)
+
+### ***Nota:*** 
+
+Makmal ini kini dilaksanakan dalam AIPC CPU Intel dan Apple Silicon. Kami akan terus mengemas kini versi Qualcomm NPU.
 
 
-| الاسم | الوصف | AIPC | Apple |
+## **Makmal**
+
+
+| Nama | Penerangan | AIPC | Apple |
 | ------------ | ----------- | -------- |-------- |
-| Lab0 - Installations(✅) | إعداد وتثبيت البيئات والأدوات ذات الصلة | [Go](./HOL/AIPC/01.Installations.md) |[Go](./HOL/Apple/01.Installations.md) |
-| Lab1 - Run Prompt flow with Phi-3-mini (✅) | بالاشتراك مع AIPC / Apple Silicon، استخدام NPU المحلي لإنشاء توليد الكود عبر Phi-3-mini | [Go](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Go](./HOL/Apple/02.PromptflowWithMLX.md) |
-| Lab2 - Deploy Phi-3-vision on Azure Machine Learning Service(✅) | توليد الكود من خلال نشر نموذج كتالوج Azure Machine Learning Service - صورة Phi-3-vision | [Go](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Go](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
-| Lab3 - Create a @phi-3 agent in GitHub Copilot Chat(✅)  | إنشاء وكيل Phi-3 مخصص في GitHub Copilot Chat لإكمال توليد الكود، كود توليد الرسوم البيانية، RAG، وغيرها | [Go](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Go](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
-| Sample Code (✅)  | تحميل كود العينة | [Go](../../../../../../../code/07.Lab/01/AIPC) | [Go](../../../../../../../code/07.Lab/01/Apple) |
+| Lab0 - Pemasangan(✅) | Konfigurasi dan pasang persekitaran dan alat pemasangan berkaitan | [Go](./HOL/AIPC/01.Installations.md) |[Go](./HOL/Apple/01.Installations.md) |
+| Lab1 - Jalankan Prompt flow dengan Phi-3-mini (✅) | Digabungkan dengan AIPC / Apple Silicon, menggunakan NPU tempatan untuk mencipta penjanaan kod melalui Phi-3-mini | [Go](./HOL/AIPC/02.PromptflowWithNPU.md) |  [Go](./HOL/Apple/02.PromptflowWithMLX.md) |
+| Lab2 - Lancarkan Phi-3-vision pada Azure Machine Learning Service(✅) | Jana kod dengan melancarkan Model Catalog Azure Machine Learning Service - imej Phi-3-vision | [Go](./HOL/AIPC/03.DeployPhi3VisionOnAzure.md) |[Go](./HOL/Apple/03.DeployPhi3VisionOnAzure.md) |
+| Lab3 - Cipta agen @phi-3 dalam GitHub Copilot Chat(✅)  | Cipta agen Phi-3 tersuai dalam GitHub Copilot Chat untuk menyelesaikan penjanaan kod, penjanaan kod graf, RAG, dan lain-lain | [Go](./HOL/AIPC/04.CreatePhi3AgentInVSCode.md) | [Go](./HOL/Apple/04.CreatePhi3AgentInVSCode.md) |
+| Kod Contoh (✅)  | Muat turun kod contoh | [Go](../../../../../../../code/07.Lab/01/AIPC) | [Go](../../../../../../../code/07.Lab/01/Apple) |
 
 
-## **الموارد**
+## **Sumber**
 
 1. Phi-3 Cookbook [https://github.com/microsoft/Phi-3CookBook](https://github.com/microsoft/Phi-3CookBook)
 
-2. تعرف أكثر على GitHub Copilot [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
+2. Ketahui lebih lanjut tentang GitHub Copilot [https://learn.microsoft.com/training/paths/copilot/](https://learn.microsoft.com/training/paths/copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-3. تعرف أكثر على GitHub Copilot Chat [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
+3. Ketahui lebih lanjut tentang GitHub Copilot Chat [https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/](https://learn.microsoft.com/training/paths/accelerate-app-development-using-github-copilot/?WT.mc_id=aiml-137032-kinfeylo)
 
-4. تعرف أكثر على GitHub Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
+4. Ketahui lebih lanjut tentang GitHub Copilot Chat API [https://code.visualstudio.com/api/extension-guides/chat](https://code.visualstudio.com/api/extension-guides/chat?WT.mc_id=aiml-137032-kinfeylo)
 
-5. تعرف أكثر على Azure AI Foundry [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
+5. Ketahui lebih lanjut tentang Azure AI Foundry [https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/](https://learn.microsoft.com/training/paths/create-custom-copilots-ai-studio/?WT.mc_id=aiml-137032-kinfeylo)
 
-6. تعرف أكثر على كتالوج النماذج في Azure AI Foundry [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
+6. Ketahui lebih lanjut tentang Model Catalog Azure AI Foundry [https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview](https://learn.microsoft.com/azure/ai-studio/how-to/model-catalog-overview)
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan manusia profesional adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan perkhidmatan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Walaupun kami berusaha untuk ketepatan, sila ambil perhatian bahawa terjemahan automatik mungkin mengandungi kesilapan atau ketidaktepatan. Dokumen asal dalam bahasa asalnya harus dianggap sebagai sumber yang sahih. Untuk maklumat penting, terjemahan profesional oleh manusia adalah disyorkan. Kami tidak bertanggungjawab atas sebarang salah faham atau salah tafsir yang timbul daripada penggunaan terjemahan ini.

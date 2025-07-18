@@ -2,49 +2,49 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "f61c383bbf0c3dac97e43f833c258731",
-  "translation_date": "2025-05-09T18:39:12+00:00",
+  "translation_date": "2025-07-17T02:33:58+00:00",
   "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md",
   "language_code": "id"
 }
 -->
 # MLflow
 
-[MLflow](https://mlflow.org/) adalah platform sumber terbuka yang dirancang untuk mengelola siklus hidup machine learning secara menyeluruh.
+[MLflow](https://mlflow.org/) adalah platform open-source yang dirancang untuk mengelola siklus hidup machine learning secara menyeluruh.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.e5d74ef39e988d267f5da3174105d728e556b25cee7d686689174acb1f07a11a.id.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.id.png)
 
-MLFlow digunakan untuk mengelola siklus hidup ML, termasuk eksperimen, reproduksibilitas, deployment, dan registri model pusat. Saat ini MLFlow menawarkan empat komponen.
+MLFlow digunakan untuk mengelola siklus hidup ML, termasuk eksperimen, reproduksibilitas, deployment, dan registri model pusat. Saat ini MLflow menawarkan empat komponen.
 
 - **MLflow Tracking:** Mencatat dan menanyakan eksperimen, kode, konfigurasi data, dan hasil.
-- **MLflow Projects:** Mengemas kode data science dalam format yang dapat mereproduksi jalannya di platform manapun.
+- **MLflow Projects:** Mengemas kode data science dalam format yang dapat mereproduksi eksekusi di platform manapun.
 - **Mlflow Models:** Mendeploy model machine learning di berbagai lingkungan penyajian.
 - **Model Registry:** Menyimpan, memberi anotasi, dan mengelola model dalam repositori pusat.
 
-Platform ini mencakup kemampuan untuk melacak eksperimen, mengemas kode menjadi jalankan ulang yang dapat direproduksi, serta berbagi dan mendeploy model. MLFlow terintegrasi dengan Databricks dan mendukung berbagai pustaka ML, sehingga bersifat library-agnostic. MLFlow dapat digunakan dengan pustaka machine learning apapun dan dalam bahasa pemrograman apapun, karena menyediakan REST API dan CLI untuk kemudahan penggunaan.
+MLFlow memiliki kemampuan untuk melacak eksperimen, mengemas kode menjadi eksekusi yang dapat direproduksi, serta berbagi dan mendeploy model. MLFlow terintegrasi dengan Databricks dan mendukung berbagai pustaka ML, sehingga bersifat agnostik terhadap pustaka. MLFlow dapat digunakan dengan pustaka machine learning apapun dan dalam bahasa pemrograman apapun, karena menyediakan REST API dan CLI untuk kemudahan penggunaan.
 
-![MLFlow](../../../../../../translated_images/MLflow2.74e3f1a430b83b5379854d81f4d2d125b6e5a0f35f46b57625761d1f0597bc53.id.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.id.png)
 
 Fitur utama MLFlow meliputi:
 
-- **Experiment Tracking:** Mencatat dan membandingkan parameter serta hasil.
-- **Model Management:** Mendeploy model ke berbagai platform penyajian dan inferensi.
-- **Model Registry:** Mengelola siklus hidup MLflow Models secara kolaboratif, termasuk versi dan anotasi.
-- **Projects:** Mengemas kode ML untuk dibagikan atau digunakan di produksi.
+- **Pelacakan Eksperimen:** Mencatat dan membandingkan parameter serta hasil.
+- **Manajemen Model:** Mendeploy model ke berbagai platform penyajian dan inferensi.
+- **Model Registry:** Mengelola siklus hidup MLflow Models secara kolaboratif, termasuk versioning dan anotasi.
+- **Projects:** Mengemas kode ML untuk dibagikan atau digunakan dalam produksi.
 
-MLFlow juga mendukung siklus MLOps, yang mencakup persiapan data, pendaftaran dan pengelolaan model, pengemasan model untuk eksekusi, deployment layanan, dan pemantauan model. Tujuannya adalah mempermudah proses transisi dari prototipe ke workflow produksi, terutama di lingkungan cloud dan edge.
+MLFlow juga mendukung siklus MLOps, yang mencakup persiapan data, pendaftaran dan pengelolaan model, pengemasan model untuk eksekusi, deployment layanan, dan pemantauan model. Tujuannya adalah menyederhanakan proses dari prototipe ke alur kerja produksi, terutama di lingkungan cloud dan edge.
 
 ## Skenario E2E - Membangun wrapper dan menggunakan Phi-3 sebagai model MLFlow
 
-Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membangun wrapper di sekitar model bahasa kecil Phi-3 (SLM) dan kemudian menjalankannya sebagai model MLFlow baik secara lokal maupun di cloud, misalnya di Azure Machine Learning workspace.
+Dalam contoh E2E ini, kami akan menunjukkan dua pendekatan berbeda untuk membangun wrapper di sekitar model bahasa kecil Phi-3 (SLM) dan kemudian menjalankannya sebagai model MLFlow baik secara lokal maupun di cloud, misalnya di workspace Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.03b29de8b4a8f3706a3e7b229c94a81ece6e3ba983c78592ed332f3ef6efcfe0.id.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.id.png)
 
-| Project | Deskripsi | Lokasi |
+| Proyek | Deskripsi | Lokasi |
 | ------------ | ----------- | -------- |
 | Transformer Pipeline | Transformer Pipeline adalah opsi termudah untuk membangun wrapper jika Anda ingin menggunakan model HuggingFace dengan flavour transformer eksperimental MLFlow. | [**TransformerPipeline.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_TransformerPipeline.ipynb) |
-| Custom Python Wrapper | Saat penulisan, transformer pipeline belum mendukung generasi wrapper MLFlow untuk model HuggingFace dalam format ONNX, bahkan dengan paket Python optimum eksperimental. Untuk kasus seperti ini, Anda dapat membuat wrapper Python kustom untuk mode MLFlow | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
+| Custom Python Wrapper | Saat penulisan, transformer pipeline belum mendukung pembuatan wrapper MLFlow untuk model HuggingFace dalam format ONNX, bahkan dengan paket Python optimum eksperimental. Untuk kasus seperti ini, Anda dapat membangun wrapper Python kustom untuk mode MLFlow. | [**CustomPythonWrapper.ipynb**](../../../../../../code/06.E2E/E2E_Phi-3-MLflow_CustomPythonWrapper.ipynb) |
 
-## Project: Transformer Pipeline
+## Proyek: Transformer Pipeline
 
 1. Anda memerlukan paket Python relevan dari MLFlow dan HuggingFace:
 
@@ -53,7 +53,7 @@ Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membang
     import transformers
     ```
 
-2. Selanjutnya, Anda harus memulai pipeline transformer dengan merujuk ke model Phi-3 target di registri HuggingFace. Seperti yang terlihat dari kartu model _Phi-3-mini-4k-instruct_, tugasnya adalah tipe “Text Generation”:
+2. Selanjutnya, Anda harus memulai transformer pipeline dengan merujuk ke model Phi-3 target di registri HuggingFace. Seperti yang terlihat dari kartu model _Phi-3-mini-4k-instruct_, tugasnya adalah tipe “Text Generation”:
 
     ``` Python
     pipeline = transformers.pipeline(
@@ -62,7 +62,7 @@ Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membang
     )
     ```
 
-3. Sekarang Anda dapat menyimpan pipeline transformer model Phi-3 Anda ke format MLFlow dan memberikan detail tambahan seperti path artefak target, pengaturan konfigurasi model spesifik, dan tipe API inferensi:
+3. Sekarang Anda dapat menyimpan transformer pipeline model Phi-3 Anda ke format MLFlow dan memberikan detail tambahan seperti path artefak target, pengaturan konfigurasi model spesifik, dan tipe API inferensi:
 
     ``` Python
     model_info = mlflow.transformers.log_model(
@@ -73,9 +73,9 @@ Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membang
     )
     ```
 
-## Project: Custom Python Wrapper
+## Proyek: Custom Python Wrapper
 
-1. Di sini kita dapat memanfaatkan [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) dari Microsoft untuk inferensi model ONNX dan encoding/decoding token. Anda harus memilih paket _onnxruntime_genai_ untuk target komputasi Anda, dengan contoh berikut menargetkan CPU:
+1. Di sini kita dapat memanfaatkan [ONNX Runtime generate() API](https://github.com/microsoft/onnxruntime-genai) dari Microsoft untuk inferensi model ONNX dan encoding/decoding token. Anda harus memilih paket _onnxruntime_genai_ sesuai target komputasi, dengan contoh di bawah ini menargetkan CPU:
 
     ``` Python
     import mlflow
@@ -114,7 +114,7 @@ Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membang
             return self.tokenizer.decode(response[0][len(self.params.input_ids):])
     ```
 
-1. Sekarang Anda dapat menggunakan fungsi _mlflow.pyfunc.log_model()_ untuk menghasilkan wrapper Python kustom (dalam format pickle) untuk model Phi-3, bersama model ONNX asli dan dependensi yang diperlukan:
+1. Sekarang Anda dapat menggunakan fungsi _mlflow.pyfunc.log_model()_ untuk menghasilkan wrapper Python kustom (dalam format pickle) untuk model Phi-3, bersama dengan model ONNX asli dan dependensi yang diperlukan:
 
     ``` Python
     model_info = mlflow.pyfunc.log_model(
@@ -129,9 +129,9 @@ Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membang
     )
     ```
 
-## Signature model MLFlow yang dihasilkan
+## Tanda tangan model MLFlow yang dihasilkan
 
-1. Pada langkah 3 dari project Transformer Pipeline di atas, kami menetapkan tugas model MLFlow menjadi “_llm/v1/chat_”. Instruksi seperti ini menghasilkan wrapper API model yang kompatibel dengan OpenAI Chat API seperti yang ditunjukkan di bawah:
+1. Pada langkah 3 proyek Transformer Pipeline di atas, kami menetapkan tugas model MLFlow menjadi “_llm/v1/chat_”. Instruksi ini menghasilkan wrapper API model yang kompatibel dengan OpenAI Chat API seperti yang ditunjukkan di bawah:
 
     ``` Python
     {inputs: 
@@ -148,7 +148,7 @@ Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membang
     messages = [{"role": "user", "content": "What is the capital of Spain?"}]
     ```
 
-1. Kemudian, gunakan post-processing kompatibel OpenAI API, misalnya _response[0][‘choices’][0][‘message’][‘content’]_, untuk memperindah output Anda menjadi seperti ini:
+1. Kemudian, gunakan post-processing kompatibel OpenAI API, misalnya _response[0][‘choices’][0][‘message’][‘content’]_, untuk mempercantik output Anda menjadi seperti ini:
 
     ``` JSON
     Question: What is the capital of Spain?
@@ -158,7 +158,7 @@ Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membang
     Usage: {'prompt_tokens': 11, 'completion_tokens': 73, 'total_tokens': 84}
     ```
 
-1. Pada langkah 3 dari project Custom Python Wrapper di atas, kami mengizinkan paket MLFlow untuk menghasilkan signature model dari contoh input yang diberikan. Signature wrapper MLFlow kami akan terlihat seperti ini:
+1. Pada langkah 3 proyek Custom Python Wrapper di atas, kami membiarkan paket MLFlow menghasilkan tanda tangan model dari contoh input yang diberikan. Tanda tangan wrapper MLFlow kami akan terlihat seperti ini:
 
     ``` Python
     {inputs: 
@@ -175,7 +175,7 @@ Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membang
     {"prompt": "<|system|>You are a stand-up comedian.<|end|><|user|>Tell me a joke about atom<|end|><|assistant|>",}
     ```
 
-1. Output model akan diberikan dalam format string:
+1. Output model kemudian akan diberikan dalam format string:
 
     ``` JSON
     Alright, here's a little atom-related joke for you!
@@ -188,4 +188,4 @@ Dalam contoh E2E ini, kita akan menunjukkan dua pendekatan berbeda untuk membang
     ```
 
 **Penafian**:  
-Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berusaha untuk akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang otoritatif. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau salah tafsir yang timbul dari penggunaan terjemahan ini.
+Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diingat bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

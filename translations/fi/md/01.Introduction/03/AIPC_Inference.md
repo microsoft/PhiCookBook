@@ -2,41 +2,41 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e08ce816e23ad813244a09ca34ebb8ac",
-  "translation_date": "2025-05-09T10:22:51+00:00",
+  "translation_date": "2025-07-16T20:03:26+00:00",
   "source_file": "md/01.Introduction/03/AIPC_Inference.md",
   "language_code": "fi"
 }
 -->
-# **Phi-3-päätelmä AI-tietokoneessa**
+# **Phi-3-päätelmä AI-PC:ssä**
 
-Generatiivisen tekoälyn kehityksen ja reunalaitteiden laitteistokapasiteetin parantumisen myötä yhä useammat generatiiviset tekoälymallit voidaan nyt integroida käyttäjien omiin BYOD-laitteisiin. AI-tietokoneet ovat näiden mallien joukossa. Vuodesta 2024 lähtien Intel, AMD ja Qualcomm ovat tehneet yhteistyötä tietokonevalmistajien kanssa tuodakseen markkinoille AI-tietokoneita, jotka helpottavat paikallisten generatiivisten tekoälymallien käyttöönottoa laitteistomuutosten avulla. Tässä keskustelussa keskitymme Intelin AI-tietokoneisiin ja tutkimme, miten Phi-3 otetaan käyttöön Intelin AI-tietokoneessa.
+Generatiivisen tekoälyn kehittymisen ja reunalaitteiden laitteistokapasiteetin parantumisen myötä yhä useammat generatiiviset tekoälymallit voidaan nyt integroida käyttäjien omiin BYOD-laitteisiin. AI-PC:t ovat näiden mallien joukossa. Vuodesta 2024 alkaen Intel, AMD ja Qualcomm ovat tehneet yhteistyötä PC-valmistajien kanssa tuodakseen markkinoille AI-PC:t, jotka mahdollistavat paikallisten generatiivisten tekoälymallien käyttöönoton laitteistomuutosten avulla. Tässä keskustelussa keskitymme Intelin AI-PC:ihin ja tarkastelemme, miten Phi-3 otetaan käyttöön Intel AI-PC:ssä.
 
 ### Mikä on NPU
 
-NPU (Neural Processing Unit) on erikoistunut prosessori tai prosessointiyksikkö suuremmassa SoC:ssa, joka on suunniteltu erityisesti hermoverkkojen toimintojen ja tekoälytehtävien kiihdyttämiseen. Toisin kuin yleiskäyttöiset CPU:t ja GPU:t, NPU:t on optimoitu datavetoiseen rinnakkaislaskentaan, mikä tekee niistä erittäin tehokkaita käsittelemään suuria multimedia-aineistoja, kuten videoita ja kuvia, sekä prosessoimaan dataa hermoverkoille. Ne soveltuvat erityisesti tekoälytehtäviin, kuten puheentunnistukseen, taustan sumentamiseen videopuheluissa ja valokuva- tai videoeditointiprosesseihin, kuten kohteiden tunnistukseen.
+NPU (Neural Processing Unit) on erillinen prosessori tai prosessointiyksikkö suuremmassa SoC:ssa, joka on suunniteltu erityisesti hermoverkkojen toimintojen ja tekoälytehtävien kiihdyttämiseen. Toisin kuin yleiskäyttöiset CPU:t ja GPU:t, NPU:t on optimoitu datalähtöiseen rinnakkaislaskentaan, mikä tekee niistä erittäin tehokkaita käsittelemään suuria multimedia-aineistoja, kuten videoita ja kuvia, sekä hermoverkkojen datankäsittelyä. Ne soveltuvat erityisen hyvin tekoälyyn liittyviin tehtäviin, kuten puheentunnistukseen, taustan sumennukseen videopuheluissa sekä valokuva- tai videonmuokkausprosesseihin, kuten kohteiden tunnistukseen.
 
 ## NPU vs GPU
 
-Vaikka monet tekoäly- ja koneoppimistehtävät ajetaan GPU:lla, GPU:iden ja NPU:iden välillä on tärkeä ero.
-GPU:t tunnetaan rinnakkaislaskentakyvyistään, mutta kaikki GPU:t eivät ole yhtä tehokkaita graafisen prosessoinnin ulkopuolella. NPU:t sen sijaan on suunniteltu monimutkaisiin laskutoimituksiin, joita hermoverkkojen toiminnot vaativat, mikä tekee niistä erittäin tehokkaita tekoälytehtävissä.
+Vaikka monet tekoäly- ja koneoppimistehtävät ajetaan GPU:illa, GPU:iden ja NPU:iden välillä on tärkeä ero.
+GPU:t tunnetaan rinnakkaislaskentakyvystään, mutta kaikki GPU:t eivät ole yhtä tehokkaita graafisen käsittelyn ulkopuolella. NPU:t sen sijaan on suunniteltu monimutkaisiin hermoverkkojen laskutoimituksiin, mikä tekee niistä erittäin tehokkaita tekoälytehtävissä.
 
-Yhteenvetona: NPU:t ovat matemaattisia neroja, jotka kiihdyttävät tekoälyn laskentaa ja näyttelevät keskeistä roolia AI-tietokoneiden uudella aikakaudella!
+Yhteenvetona: NPU:t ovat matemaattisia neroja, jotka kiihdyttävät tekoälyn laskentaa, ja ne ovat keskeisessä roolissa nousevassa AI-PC-aikakaudessa!
 
-***Tämä esimerkki perustuu Intelin uusimpaan Intel Core Ultra -suorittimeen***
+***Tämä esimerkki perustuu Intelin uusimpaan Intel Core Ultra -prosessoriin***
 
 ## **1. Käytä NPU:ta Phi-3-mallin ajamiseen**
 
-Intel® NPU-laite on tekoälyn päätelmäkiihdytin, joka on integroitu Intelin asiakas-CPU:ihin alkaen Intel® Core™ Ultra -sukupolvesta (entinen Meteor Lake). Se mahdollistaa energiatehokkaan keinotekoisten hermoverkkojen tehtävien suorittamisen.
+Intel® NPU-laite on tekoälyn päätelmäkiihdytin, joka on integroitu Intelin asiakasprosessoreihin alkaen Intel® Core™ Ultra -sukupolvesta (entinen Meteor Lake). Se mahdollistaa energiatehokkaan keinotekoisten hermoverkkojen tehtävien suorittamisen.
 
-![Viive](../../../../../translated_images/aipcphitokenlatency.446d244d43a98a99f001e6eb55b421ab7ebc0b5d8f93fad8458da46cf263bfad.fi.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.fi.png)
 
-![Viive770](../../../../../translated_images/aipcphitokenlatency770.862269853961e495131e9465fdb06c2c7b94395b83729dc498cfc077e02caade.fi.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.fi.png)
 
 **Intel NPU Acceleration Library**
 
-Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) on Python-kirjasto, joka on suunniteltu parantamaan sovellustesi tehokkuutta hyödyntämällä Intelin Neural Processing Unitin (NPU) laskentatehoa yhteensopivalla laitteistolla.
+Intel NPU Acceleration Library [https://github.com/intel/intel-npu-acceleration-library](https://github.com/intel/intel-npu-acceleration-library) on Python-kirjasto, joka on suunniteltu parantamaan sovellustesi tehokkuutta hyödyntämällä Intel Neural Processing Unitin (NPU) laskentatehoa yhteensopivalla laitteistolla.
 
-Esimerkki Phi-3-mini -mallista AI-tietokoneessa, jota pyörittävät Intel® Core™ Ultra -suorittimet.
+Esimerkki Phi-3-ministä AI-PC:llä, jossa on Intel® Core™ Ultra -prosessori.
 
 ![DemoPhiIntelAIPC](../../../../../imgs/01/03/AIPC/aipcphi3-mini.gif)
 
@@ -72,7 +72,7 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 text_streamer = TextStreamer(tokenizer, skip_prompt=True)
 ```
 
-Kun kvantisointi on onnistunut, jatka kutsumalla NPU:ta suorittamaan Phi-3-malli.
+Kun kvantisointi onnistuu, jatka suorittamista kutsumalla NPU:ta ajamaan Phi-3-mallia.
 
 ```python
 generation_args = {
@@ -96,9 +96,9 @@ with warnings.catch_warnings():
     pipe(query, **generation_args)
 ```
 
-Koodia suoritettaessa voimme tarkastella NPU:n tilaa Tehtävienhallinnan kautta
+Koodia suoritettaessa voimme tarkastella NPU:n toimintatilaa Tehtävienhallinnan kautta
 
-![NPU](../../../../../translated_images/aipc_NPU.f047860f84f5bb5b183756f23b4b8506485e862ea34c6a53c58988707c23bc80.fi.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.fi.png)
 
 ***Esimerkit*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -106,37 +106,37 @@ Koodia suoritettaessa voimme tarkastella NPU:n tilaa Tehtävienhallinnan kautta
 
 ### **Mikä on DirectML**
 
-[DirectML](https://github.com/microsoft/DirectML) on suorituskykyinen, laitteistokiihdytetty DirectX 12 -kirjasto koneoppimiseen. DirectML tarjoaa GPU-kiihdytyksen yleisille koneoppimistehtäville laajalla valikoimalla tuettuja laitteistoja ja ajureita, mukaan lukien kaikki DirectX 12 -yhteensopivat GPU:t valmistajilta kuten AMD, Intel, NVIDIA ja Qualcomm.
+[DirectML](https://github.com/microsoft/DirectML) on suorituskykyinen, laitteistokiihdytetty DirectX 12 -kirjasto koneoppimiseen. DirectML tarjoaa GPU-kiihdytyksen yleisille koneoppimistehtäville laajalla tuettujen laitteistojen ja ajureiden valikoimalla, mukaan lukien kaikki DirectX 12 -yhteensopivat GPU:t valmistajilta kuten AMD, Intel, NVIDIA ja Qualcomm.
 
-Kun sitä käytetään itsenäisesti, DirectML API on matalan tason DirectX 12 -kirjasto, joka sopii korkean suorituskyvyn ja pienen viiveen sovelluksiin, kuten kehyksiin, peleihin ja muihin reaaliaikaisiin sovelluksiin. DirectML:n saumaton yhteensopivuus Direct3D 12:n kanssa sekä sen alhainen kuormitus ja laitteistojen välinen yhdenmukaisuus tekevät siitä ihanteellisen koneoppimisen kiihdyttämiseen silloin, kun halutaan sekä korkea suorituskyky että luotettavat ja ennustettavat tulokset eri laitteistoilla.
+Itsenäisesti käytettynä DirectML API on matalan tason DirectX 12 -kirjasto, joka sopii korkean suorituskyvyn ja pienen viiveen sovelluksiin, kuten kehyskirjastoihin, peleihin ja muihin reaaliaikaisiin sovelluksiin. DirectML:n saumaton yhteensopivuus Direct3D 12:n kanssa sekä sen pieni ylikuorma ja laitteistojen välinen yhdenmukaisuus tekevät siitä ihanteellisen koneoppimisen kiihdyttämiseen, kun halutaan sekä korkea suorituskyky että luotettavat ja ennustettavat tulokset eri laitteistoilla.
 
 ***Huom*** : Uusin DirectML tukee jo NPU:ta (https://devblogs.microsoft.com/directx/introducing-neural-processor-unit-npu-support-in-directml-developer-preview/)
 
 ### DirectML ja CUDA ominaisuuksien ja suorituskyvyn näkökulmasta:
 
 **DirectML** on Microsoftin kehittämä koneoppimiskirjasto. Se on suunniteltu kiihdyttämään koneoppimistehtäviä Windows-laitteilla, mukaan lukien pöytäkoneet, kannettavat ja reunalaitteet.
-- DX12-pohjainen: DirectML rakentuu DirectX 12:n (DX12) päälle, joka tarjoaa laajan laitteistotuen eri GPU:ille, mukaan lukien NVIDIA ja AMD.
-- Laajempi tuki: Koska se hyödyntää DX12:ta, DirectML toimii kaikkien DX12-yhteensopivien GPU:iden kanssa, myös integroitujen GPU:iden.
-- Kuvankäsittely: DirectML käsittelee kuvia ja muuta dataa hermoverkkojen avulla, joten se soveltuu tehtäviin kuten kuvantunnistus, kohteiden havaitseminen ja muut.
+- DX12-pohjainen: DirectML rakentuu DirectX 12:n (DX12) päälle, joka tarjoaa laajan laitteistotuen GPU:ille, mukaan lukien sekä NVIDIA että AMD.
+- Laajempi tuki: Koska se hyödyntää DX12:ta, DirectML toimii minkä tahansa DX12-yhteensopivan GPU:n kanssa, myös integroitujen GPU:iden.
+- Kuvankäsittely: DirectML käsittelee kuvia ja muuta dataa hermoverkkojen avulla, joten se sopii tehtäviin kuten kuvantunnistus, kohteiden tunnistus ja muut.
 - Helppo käyttöönotto: DirectML:n käyttöönotto on suoraviivaista, eikä se vaadi erityisiä SDK:ita tai kirjastoja GPU-valmistajilta.
 - Suorituskyky: Joissain tapauksissa DirectML toimii hyvin ja voi olla nopeampi kuin CUDA, erityisesti tietyissä työkuormissa.
-- Rajoitukset: Toisaalta on tilanteita, joissa DirectML voi olla hitaampi, erityisesti float16-muotoisten suurten erien kanssa.
+- Rajoitukset: Toisaalta DirectML voi olla hitaampi, erityisesti float16-muotoisissa suurissa erissä.
 
-**CUDA** on NVIDIAn rinnakkaislaskenta-alusta ja ohjelmointimalli. Se antaa kehittäjille mahdollisuuden hyödyntää NVIDIA-GPU:iden tehoa yleiskäyttöiseen laskentaan, mukaan lukien koneoppiminen ja tieteelliset simulaatiot.
-- NVIDIA-spesifinen: CUDA on tiiviisti integroitu NVIDIA-GPU:ihin ja suunniteltu erityisesti niille.
-- Erittäin optimoitu: Se tarjoaa erinomaisen suorituskyvyn GPU-kiihdytetyille tehtäville, erityisesti NVIDIA-GPU:illa.
-- Laajasti käytetty: Monet koneoppimiskehykset ja kirjastot (kuten TensorFlow ja PyTorch) tukevat CUDAa.
+**CUDA** on NVIDIAn rinnakkaislaskenta-alusta ja ohjelmointimalli. Se antaa kehittäjille mahdollisuuden hyödyntää NVIDIA GPU:iden tehoa yleiskäyttöiseen laskentaan, mukaan lukien koneoppiminen ja tieteelliset simulaatiot.
+- NVIDIA-spesifinen: CUDA on tiiviisti integroitu NVIDIA GPU:ihin ja suunniteltu nimenomaan niille.
+- Erittäin optimoitu: Se tarjoaa erinomaisen suorituskyvyn GPU-kiihdytetyissä tehtävissä, erityisesti NVIDIA GPU:illa.
+- Laajasti käytetty: Monet koneoppimiskehykset ja kirjastot (kuten TensorFlow ja PyTorch) tukevat CUDA:ta.
 - Räätälöitävyys: Kehittäjät voivat hienosäätää CUDA-asetuksia tiettyihin tehtäviin, mikä voi johtaa optimaaliseen suorituskykyyn.
-- Rajoitukset: CUDA:n riippuvuus NVIDIA-laitteistosta voi rajoittaa laajemman yhteensopivuuden halutessa eri GPU:iden kanssa.
+- Rajoitukset: CUDA:n riippuvuus NVIDIA-laitteistosta voi olla rajoittava, jos halutaan laajempi yhteensopivuus eri GPU:iden kanssa.
 
 ### Valinta DirectML:n ja CUDA:n välillä
 
 Valinta DirectML:n ja CUDA:n välillä riippuu käyttötapauksestasi, laitteistosta ja mieltymyksistäsi.
-Jos tarvitset laajempaa yhteensopivuutta ja helppoa käyttöönottoa, DirectML voi olla hyvä valinta. Jos sinulla on NVIDIA-GPU ja tarvitset erittäin optimoitua suorituskykyä, CUDA on edelleen vahva vaihtoehto. Yhteenvetona molemmilla on vahvuutensa ja heikkoutensa, joten harkitse tarpeitasi ja käytettävissä olevaa laitteistoa päätöstä tehdessäsi.
+Jos haluat laajemman yhteensopivuuden ja helpon käyttöönoton, DirectML voi olla hyvä valinta. Jos sinulla on NVIDIA GPU:t ja tarvitset erittäin optimoitua suorituskykyä, CUDA on edelleen vahva vaihtoehto. Yhteenvetona molemmilla on omat vahvuutensa ja heikkoutensa, joten harkitse tarpeitasi ja käytettävissä olevaa laitteistoa päätöstä tehdessäsi.
 
 ### **Generatiivinen tekoäly ONNX Runtime -ympäristössä**
 
-Tekoälyn aikakaudella AI-mallien siirrettävyys on erittäin tärkeää. ONNX Runtime mahdollistaa koulutettujen mallien helpon käyttöönoton eri laitteilla. Kehittäjien ei tarvitse huolehtia päätelmäkehyksestä, vaan he voivat käyttää yhtenäistä API:a mallin päätelmään. Generatiivisen tekoälyn aikakaudella ONNX Runtime on myös suorittanut koodin optimointia (https://onnxruntime.ai/docs/genai/). Optimoidun ONNX Runtime -ympäristön avulla kvantisoitu generatiivinen AI-malli voidaan ajaa eri päätelaitteilla. Generatiivisessa tekoälyssä ONNX Runtime avulla voit tehdä mallipäätelmiä Pythonilla, C#:lla, C/C++:lla. Tietysti iPhonella käyttöönotto voi hyödyntää C++:n Generative AI with ONNX Runtime API:a.
+Tekoälyn aikakaudella mallien siirrettävyys on erittäin tärkeää. ONNX Runtime mahdollistaa koulutettujen mallien helpon käyttöönoton eri laitteilla. Kehittäjien ei tarvitse huolehtia päätelmäkehyksestä, vaan he voivat käyttää yhtenäistä API:a mallin päätelmään. Generatiivisen tekoälyn aikakaudella ONNX Runtime on myös optimoitu koodin suorituskyvyn parantamiseksi (https://onnxruntime.ai/docs/genai/). Optimoidun ONNX Runtime -ympäristön avulla kvantisoitu generatiivinen tekoälymalli voidaan ajaa eri päätelaitteilla. Generatiivisen tekoälyn kanssa ONNX Runtime tarjoaa API:n Pythonille, C#:lle, C/C++:lle. Tietysti iPhonella käyttöönotto voi hyödyntää C++:n Generative AI with ONNX Runtime -API:a.
 
 [Esimerkkikoodi](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/onnx)
 
@@ -187,9 +187,9 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 ```
 
-Tässä on ajon tulos
+Tässä ajon tulos
 
-![DML](../../../../../translated_images/aipc_DML.dd810ee1f3882323c131b39065ed0cf41bbe0aaa8d346a0d6d290c20f5c0bf75.fi.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.fi.png)
 
 ***Esimerkit*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -197,7 +197,7 @@ Tässä on ajon tulos
 
 ### **Mikä on OpenVINO**
 
-[OpenVINO](https://github.com/openvinotoolkit/openvino) on avoimen lähdekoodin työkalu syväoppimismallien optimointiin ja käyttöönottoon. Se tarjoaa parannetun syväoppimisen suorituskyvyn näkö-, ääni- ja kielimalleille suosituista kehyksistä kuten TensorFlow, PyTorch ja muut. Aloita OpenVINO:n käyttö. OpenVINO:a voi käyttää myös yhdessä CPU:n ja GPU:n kanssa Phi-3-mallin ajamiseen.
+[OpenVINO](https://github.com/openvinotoolkit/openvino) on avoimen lähdekoodin työkalu syväoppimismallien optimointiin ja käyttöönottoon. Se tarjoaa parannetun suorituskyvyn näkö-, ääni- ja kielimalleille suosituista kehyksistä kuten TensorFlow, PyTorch ja muista. Aloita OpenVINO:n käyttö. OpenVINOa voidaan käyttää myös yhdessä CPU:n ja GPU:n kanssa Phi-3-mallin ajamiseen.
 
 ***Huom***: Tällä hetkellä OpenVINO ei tue NPU:ta.
 
@@ -213,9 +213,9 @@ Tässä on ajon tulos
 
 ```
 
-### **Phi-3:n ajaminen OpenVINO:lla**
+### **Phi-3:n ajaminen OpenVINOlla**
 
-Kuten NPU, OpenVINO suorittaa generatiivisten AI-mallien kutsut ajamalla kvantisoituja malleja. Meidän täytyy ensin kvantisoida Phi-3-malli ja suorittaa mallin kvantisointi komentoriviltä optimum-cli:n avulla.
+Kuten NPU:n kanssa, OpenVINO suorittaa generatiivisten tekoälymallien kutsun ajamalla kvantisoituja malleja. Meidän täytyy ensin kvantisoida Phi-3-malli ja suorittaa mallin kvantisointi komentoriviltä optimum-cli:n avulla.
 
 **INT4**
 
@@ -233,11 +233,11 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 ```
 
-Muunnettu muoto näyttää tältä
+Muunnettu formaatti näyttää tältä
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.bd70cf3d87e65a923d2d663f559a03d86227ab71071802355a6cfeaf80eb7042.fi.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.fi.png)
 
-Lataa mallipolut (model_dir), asiaankuuluvat konfiguraatiot (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) ja laitteistokiihdytetyt laitteet (GPU.0) OVModelForCausalLM:n kautta
+Lataa mallin polut (model_dir), siihen liittyvät asetukset (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) ja laitteistokiihdytetyt laitteet (GPU.0) OVModelForCausalLM:n kautta
 
 ```python
 
@@ -251,13 +251,13 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 ```
 
-Koodia suoritettaessa voimme tarkastella GPU:n tilaa Tehtävienhallinnan kautta
+Koodia suoritettaessa voimme tarkastella GPU:n toimintatilaa Tehtävienhallinnan kautta
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.142b31f25c5ffcf8802077629d11fbae275e53aeeb0752e0cdccf826feca6875.fi.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.fi.png)
 
 ***Esimerkit*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 
-### ***Huom*** : Edellä mainituilla kolmella menetelmällä on omat etunsa, mutta AI-tietokoneen päätelmään suositellaan NPU-kiihdytystä.
+### ***Huom*** : Edellä mainituilla kolmella menetelmällä on omat etunsa, mutta AI-PC:n päätelmässä suositellaan NPU-kiihdytystä.
 
 **Vastuuvapauslauseke**:  
-Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, ole hyvä ja huomioi, että automaattikäännöksissä voi esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää ensisijaisena ja luotettavana lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa mahdollisista väärinymmärryksistä tai virhetulkinnoista, jotka johtuvat tämän käännöksen käytöstä.
+Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä tiedoissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

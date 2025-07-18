@@ -2,62 +2,62 @@
 CO_OP_TRANSLATOR_METADATA:
 {
   "original_hash": "e0a07fd2a30fe2af30b1373df207a5bf",
-  "translation_date": "2025-05-09T21:49:51+00:00",
+  "translation_date": "2025-07-17T08:13:28+00:00",
   "source_file": "md/03.FineTuning/FineTuning_Phi-3-visionWandB.md",
   "language_code": "hu"
 }
 -->
-# Phi-3-Vision-128K-Instruct Projekt áttekintése
+# Phi-3-Vision-128K-Instruct Projekt Áttekintés
 
-## A modell
+## A Modell
 
-A Phi-3-Vision-128K-Instruct egy könnyű, korszerű multimodális modell, amely ennek a projektnek a központi eleme. A Phi-3 modellcsalád része, és akár 128 000 token hosszúságú kontextust is támogat. A modellt egy sokszínű adathalmazon képezték, amely szintetikus adatokat és gondosan szűrt, nyilvánosan elérhető weboldalakat tartalmaz, különös hangsúlyt fektetve a magas minőségű, következtetés-igényes tartalomra. A tanítási folyamat magában foglalta a felügyelt finomhangolást és a közvetlen preferencia optimalizálást, hogy pontosan kövesse az utasításokat, valamint erős biztonsági intézkedéseket.
+A Phi-3-Vision-128K-Instruct egy könnyű, csúcstechnológiás multimodális modell, amely ennek a projektnek a központi eleme. A Phi-3 modellcsalád része, és akár 128 000 token hosszúságú kontextust is támogat. A modellt egy sokszínű adathalmazon képezték, amely szintetikus adatokat és gondosan szűrt, nyilvánosan elérhető weboldalakat tartalmaz, különös hangsúlyt fektetve a magas minőségű, érvelést igénylő tartalmakra. A tanítási folyamat magában foglalta a felügyelt finomhangolást és a közvetlen preferencia-optimalizálást, hogy pontosan kövesse az utasításokat, valamint erős biztonsági intézkedéseket alkalmaztak.
 
-## Mintaadatok létrehozása több okból is fontos:
+## Mintaadatok létrehozása több okból is kulcsfontosságú:
 
-1. **Tesztelés**: A mintaadatok lehetővé teszik az alkalmazás különböző helyzetek alatti tesztelését anélkül, hogy a valós adatokat érintenék. Ez különösen fontos a fejlesztés és a tesztelési fázisokban.
+1. **Tesztelés**: A mintaadatok lehetővé teszik, hogy különböző helyzetekben teszteld az alkalmazásodat anélkül, hogy a valós adatokat érintenéd. Ez különösen fontos a fejlesztési és tesztelési fázisokban.
 
-2. **Teljesítményhangolás**: Olyan mintaadatokkal, amelyek a valós adatok méretét és összetettségét utánozzák, azonosíthatók a teljesítmény szűk keresztmetszetei, és ennek megfelelően optimalizálható az alkalmazás.
+2. **Teljesítményhangolás**: Olyan mintaadatokkal, amelyek hasonlítanak a valós adatok méretére és összetettségére, azonosíthatod a teljesítménybeli szűk keresztmetszeteket, és optimalizálhatod az alkalmazást.
 
-3. **Prototípus készítés**: A mintaadatok segítségével prototípusok és vázlatok hozhatók létre, amelyek segítenek a felhasználói igények megértésében és visszajelzés gyűjtésében.
+3. **Prototípus készítés**: A mintaadatok segítségével prototípusokat és vázlatokat készíthetsz, amelyek segítenek megérteni a felhasználói igényeket és visszajelzést gyűjteni.
 
-4. **Adat elemzés**: Az adat tudományban a mintaadatokat gyakran használják felfedező adat elemzéshez, modell tanításhoz és algoritmus teszteléshez.
+4. **Adat elemzés**: Az adat tudományban a mintaadatokat gyakran használják felfedező adat elemzéshez, modellképzéshez és algoritmus teszteléshez.
 
-5. **Biztonság**: Fejlesztési és tesztelési környezetben mintaadatok használata segít elkerülni a valós, érzékeny adatok véletlen kiszivárgását.
+5. **Biztonság**: Fejlesztési és tesztelési környezetben mintaadatok használata segít megelőzni a valós, érzékeny adatok véletlen kiszivárgását.
 
-6. **Tanulás**: Ha új technológiát vagy eszközt tanulsz, a mintaadatokkal való munka gyakorlati lehetőséget nyújt a tanultak alkalmazására.
+6. **Tanulás**: Ha új technológiát vagy eszközt tanulsz, a mintaadatokkal való munka gyakorlati módot ad arra, hogy alkalmazd a tanultakat.
 
-Ne feledd, a mintaadatok minősége jelentősen befolyásolhatja ezeket a tevékenységeket. Lehetőleg minél közelebb kell állnia a valós adatokhoz szerkezet és változatosság szempontjából.
+Ne feledd, a mintaadatok minősége jelentősen befolyásolhatja ezeket a tevékenységeket. Struktúrájukban és változatosságukban minél közelebb kell állniuk a valós adatokhoz.
 
-### Mintaadat létrehozása
+### Mintaadat Létrehozása
 [Generate DataSet Script](./CreatingSampleData.md)
 
 ## Adathalmaz
 
-Jó példa egy mintaadat-halmazra a [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States) (elérhető a Huggingface-en).  
-A Burberry termékek mintaadatai a termékkategóriára, árra és címre vonatkozó metaadatokkal együtt, összesen 3040 sorral, mindegyik egyedi terméket képvisel. Ez az adathalmaz lehetővé teszi, hogy teszteljük a modell képességét a vizuális adatok megértésére és értelmezésére, leíró szöveget generálva, amely részletes vizuális jellemzőket és márkára jellemző tulajdonságokat ragad meg.
+Egy jó példa mintaadat-halmazra a [DBQ/Burberry.Product.prices.United.States dataset](https://huggingface.co/datasets/DBQ/Burberry.Product.prices.United.States) (elérhető a Huggingface-en).  
+A Burberry termékek mintaadat-halmaza, amely tartalmazza a termékek kategóriájára, árára és címére vonatkozó metaadatokat, összesen 3 040 sorral, mindegyik egyedi terméket képvisel. Ez az adathalmaz lehetővé teszi, hogy teszteljük a modell képességét a vizuális adatok megértésére és értelmezésére, valamint olyan leíró szövegek generálására, amelyek részletes vizuális jellemzőket és márkára jellemző tulajdonságokat ragadnak meg.
 
-**Megjegyzés:** Használhatsz bármilyen képeket tartalmazó adathalmazt.
+**Megjegyzés:** Bármilyen képeket tartalmazó adathalmaz használható.
 
-## Összetett következtetés
+## Összetett Érvelés
 
-A modellnek árakról és elnevezésekről kell következtetnie kizárólag a kép alapján. Ez megköveteli, hogy ne csak felismerje a vizuális jellemzőket, hanem megértse azok jelentőségét a termék értéke és márkája szempontjából. Azáltal, hogy pontos szöveges leírásokat állít elő képekből, a projekt kiemeli a vizuális adatok integrálásának lehetőségét a modellek teljesítményének és sokoldalúságának növelésére a valós alkalmazásokban.
+A modellnek az árakról és elnevezésekről kell érvelnie kizárólag a kép alapján. Ez megköveteli, hogy a modell ne csak felismerje a vizuális jellemzőket, hanem értse azok jelentőségét a termék értéke és márkázása szempontjából is. Azáltal, hogy pontos szöveges leírásokat szintetizál a képekből, a projekt rámutat arra, milyen lehetőségek rejlenek a vizuális adatok integrálásában a modellek valós alkalmazásokban történő teljesítményének és sokoldalúságának növelésére.
 
-## Phi-3 Vision architektúra
+## Phi-3 Vision Architektúra
 
-A modell architektúrája a Phi-3 multimodális változata. Mind szöveges, mind képi adatokat feldolgoz, és ezeket az inputokat egy egységes sorozatba integrálja az átfogó megértés és generálás érdekében. A modell külön beágyazási rétegeket használ szöveg és kép számára. A szöveges tokeneket sűrű vektorokká alakítja, míg a képeket egy CLIP vision modell dolgozza fel, hogy jellemző beágyazásokat nyerjen. Ezeket a képbeágyazásokat aztán úgy vetíti át, hogy illeszkedjenek a szövegbeágyazások dimenzióihoz, biztosítva a zökkenőmentes integrációt.
+A modell architektúrája a Phi-3 multimodális változata. Egyszerre dolgozza fel a szöveges és képi adatokat, ezeket egy egységes szekvenciába integrálva a teljes körű megértés és generálás érdekében. A modell külön beágyazási rétegeket használ a szöveghez és a képekhez. A szövegtokeneket sűrű vektorokká alakítja, míg a képeket egy CLIP vision modell segítségével dolgozza fel, hogy jellemző beágyazásokat nyerjen. Ezeket a képi beágyazásokat aztán úgy vetíti át, hogy illeszkedjenek a szöveges beágyazások dimenzióihoz, így zökkenőmentesen integrálhatók.
 
-## Szöveg- és képbeágyazások integrációja
+## Szöveg- és Képbeágyazások Integrációja
 
-A szövegsorozaton belüli speciális tokenek jelzik, hol kell beilleszteni a képbeágyazásokat. Feldolgozás közben ezek a speciális tokenek a megfelelő képbeágyazásokkal helyettesítődnek, lehetővé téve, hogy a modell szöveget és képeket egyetlen sorozatként kezeljen. Az adataink promptja a speciális <|image|> token használatával van formázva, az alábbi módon:
+A szövegszekvencián belül speciális tokenek jelzik, hová kell beilleszteni a képbeágyazásokat. Feldolgozás közben ezek a speciális tokenek a megfelelő képbeágyazásokra cserélődnek, lehetővé téve, hogy a modell a szöveget és a képeket egyetlen szekvenciaként kezelje. Az adatállományunk promptja a speciális <|image|> token használatával van formázva az alábbi módon:
 
 ```python
 text = f"<|user|>\n<|image_1|>What is shown in this image?<|end|><|assistant|>\nProduct: {row['title']}, Category: {row['category3_code']}, Full Price: {row['full_price']}<|end|>"
 ```
 
-## Minta kód
+## Minta Kód
 - [Phi-3-Vision Training Script](../../../../code/03.Finetuning/Phi-3-vision-Trainingscript.py)
 - [Weights and Bias Example walkthrough](https://wandb.ai/byyoung3/mlnews3/reports/How-to-fine-tune-Phi-3-vision-on-a-custom-dataset--Vmlldzo4MTEzMTg3)
 
-**Nyilatkozat**:  
-Ezt a dokumentumot az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével fordítottuk. Bár az pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások tartalmazhatnak hibákat vagy pontatlanságokat. Az eredeti dokumentum az anyanyelvén tekintendő hivatalos forrásnak. Kritikus információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből eredő félreértésekért vagy félreértelmezésekért.
+**Jogi nyilatkozat**:  
+Ez a dokumentum az AI fordító szolgáltatás, a [Co-op Translator](https://github.com/Azure/co-op-translator) segítségével készült. Bár a pontosságra törekszünk, kérjük, vegye figyelembe, hogy az automatikus fordítások hibákat vagy pontatlanságokat tartalmazhatnak. Az eredeti dokumentum az anyanyelvén tekintendő hiteles forrásnak. Fontos információk esetén szakmai, emberi fordítást javaslunk. Nem vállalunk felelősséget az ebből a fordításból eredő félreértésekért vagy téves értelmezésekért.
