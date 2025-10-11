@@ -1,24 +1,38 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "698f7f3d48ebc9e25a273d7c8b7e31c5",
-  "translation_date": "2025-09-12T14:15:11+00:00",
+  "original_hash": "a73c59eecd7ad4ec494fd4333a29e208",
+  "translation_date": "2025-10-11T11:21:01+00:00",
   "source_file": "README.md",
   "language_code": "bg"
 }
 -->
 # Phi Cookbook: Практически примери с моделите Phi на Microsoft
 
+[![Отворете и използвайте примерите в GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
+[![Отворете в Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
+
+[![GitHub contributors](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub issues](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
+
+[![GitHub watchers](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+[![GitHub stars](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
+
+[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
+
 Phi е серия от отворени AI модели, разработени от Microsoft.
 
 Phi в момента е най-мощният и икономически ефективен малък езиков модел (SLM), с отлични резултати в многоезичност, логическо мислене, генериране на текст/чат, кодиране, изображения, аудио и други сценарии.
 
-Можете да внедрите Phi в облака или на крайни устройства и лесно да създавате приложения за генеративен AI с ограничена изчислителна мощност.
+Можете да внедрите Phi в облака или на крайни устройства и лесно да изграждате приложения за генеративен AI с ограничена изчислителна мощност.
 
 Следвайте тези стъпки, за да започнете да използвате тези ресурси:
 1. **Направете Fork на хранилището**: Кликнете [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
 2. **Клонирайте хранилището**:   `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**Присъединете се към Microsoft AI Discord общността и се срещнете с експерти и други разработчици**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+3. [**Присъединете се към Microsoft AI Discord Community и се срещнете с експерти и други разработчици**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
 ![cover](../../imgs/cover.png)
 
@@ -26,8 +40,9 @@ Phi в момента е най-мощният и икономически еф�
 
 #### Поддържано чрез GitHub Action (Автоматизирано и винаги актуално)
 
-[French](../fr/README.md) | [Spanish](../es/README.md) | [German](../de/README.md) | [Russian](../ru/README.md) | [Arabic](../ar/README.md) | [Persian (Farsi)](../fa/README.md) | [Urdu](../ur/README.md) | [Chinese (Simplified)](../zh/README.md) | [Chinese (Traditional, Macau)](../mo/README.md) | [Chinese (Traditional, Hong Kong)](../hk/README.md) | [Chinese (Traditional, Taiwan)](../tw/README.md) | [Japanese](../ja/README.md) | [Korean](../ko/README.md) | [Hindi](../hi/README.md) 
-[Bengali](../bn/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Portuguese (Portugal)](../pt/README.md) | [Portuguese (Brazil)](../br/README.md) | [Italian](../it/README.md) | [Polish](../pl/README.md) | [Turkish](../tr/README.md) | [Greek](../el/README.md) | [Thai](../th/README.md) | [Swedish](../sv/README.md) | [Danish](../da/README.md) | [Norwegian](../no/README.md) | [Finnish](../fi/README.md) | [Dutch](../nl/README.md) | [Hebrew](../he/README.md) | [Vietnamese](../vi/README.md) | [Indonesian](../id/README.md) | [Malay](../ms/README.md) | [Tagalog (Filipino)](../tl/README.md) | [Swahili](../sw/README.md) | [Hungarian](../hu/README.md) | [Czech](../cs/README.md) | [Slovak](../sk/README.md) | [Romanian](../ro/README.md) | [Bulgarian](./README.md) | [Serbian (Cyrillic)](../sr/README.md) | [Croatian](../hr/README.md) | [Slovenian](../sl/README.md)
+<!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
+[Арабски](../ar/README.md) | [Бенгалски](../bn/README.md) | [Български](./README.md) | [Бирмански (Мианмар)](../my/README.md) | [Китайски (опростен)](../zh/README.md) | [Китайски (традиционен, Хонконг)](../hk/README.md) | [Китайски (традиционен, Макао)](../mo/README.md) | [Китайски (традиционен, Тайван)](../tw/README.md) | [Хърватски](../hr/README.md) | [Чешки](../cs/README.md) | [Датски](../da/README.md) | [Холандски](../nl/README.md) | [Естонски](../et/README.md) | [Фински](../fi/README.md) | [Френски](../fr/README.md) | [Немски](../de/README.md) | [Гръцки](../el/README.md) | [Иврит](../he/README.md) | [Хинди](../hi/README.md) | [Унгарски](../hu/README.md) | [Индонезийски](../id/README.md) | [Италиански](../it/README.md) | [Японски](../ja/README.md) | [Корейски](../ko/README.md) | [Литовски](../lt/README.md) | [Малайски](../ms/README.md) | [Марати](../mr/README.md) | [Непалски](../ne/README.md) | [Норвежки](../no/README.md) | [Персийски (фарси)](../fa/README.md) | [Полски](../pl/README.md) | [Португалски (Бразилия)](../br/README.md) | [Португалски (Португалия)](../pt/README.md) | [Панджаби (Гурмуки)](../pa/README.md) | [Румънски](../ro/README.md) | [Руски](../ru/README.md) | [Сръбски (кирилица)](../sr/README.md) | [Словашки](../sk/README.md) | [Словенски](../sl/README.md) | [Испански](../es/README.md) | [Суахили](../sw/README.md) | [Шведски](../sv/README.md) | [Тагалог (Филипински)](../tl/README.md) | [Тамилски](../ta/README.md) | [Тайландски](../th/README.md) | [Турски](../tr/README.md) | [Украински](../uk/README.md) | [Урду](../ur/README.md) | [Виетнамски](../vi/README.md)
+<!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
 
 ## Съдържание
 
@@ -39,12 +54,12 @@ Phi в момента е най-мощният и икономически еф�
   - [Поддръжка на хардуер за Phi](./md/01.Introduction/01/01.Hardwaresupport.md)
   - [Модели Phi и наличност на различни платформи](./md/01.Introduction/01/01.Edgeandcloud.md)
   - [Използване на Guidance-ai и Phi](./md/01.Introduction/01/01.Guidance.md)
-  - [Модели от GitHub Marketplace](https://github.com/marketplace/models)
+  - [Модели в GitHub Marketplace](https://github.com/marketplace/models)
   - [Каталог на модели в Azure AI](https://ai.azure.com)
 
 - Извеждане на Phi в различни среди
     -  [Hugging face](./md/01.Introduction/02/01.HF.md)
-    -  [GitHub модели](./md/01.Introduction/02/02.GitHubModel.md)
+    -  [Модели в GitHub](./md/01.Introduction/02/02.GitHubModel.md)
     -  [Каталог на модели в Azure AI Foundry](./md/01.Introduction/02/03.AzureAIFoundry.md)
     -  [Ollama](./md/01.Introduction/02/04.Ollama.md)
     -  [AI Toolkit VSCode (AITK)](./md/01.Introduction/02/05.AITK.md)
@@ -62,43 +77,42 @@ Phi в момента е най-мощният и икономически еф�
     - [Извеждане на Phi с Rust](./md/01.Introduction/03/Rust_Inference.md)
     - [Извеждане на Phi--Vision локално](./md/01.Introduction/03/Vision_Inference.md)
     - [Извеждане на Phi с Kaito AKS, Azure Containers (официална поддръжка)](./md/01.Introduction/03/Kaito_Inference.md)
-
-- [Квантифициране на семейството Phi](./md/01.Introduction/04/QuantifyingPhi.md)
+-  [Квантифициране на семейството Phi](./md/01.Introduction/04/QuantifyingPhi.md)
     - [Квантифициране на Phi-3.5 / 4 с llama.cpp](./md/01.Introduction/04/UsingLlamacppQuantifyingPhi.md)
     - [Квантифициране на Phi-3.5 / 4 с разширения за генеративен AI за onnxruntime](./md/01.Introduction/04/UsingORTGenAIQuantifyingPhi.md)
     - [Квантифициране на Phi-3.5 / 4 с Intel OpenVINO](./md/01.Introduction/04/UsingIntelOpenVINOQuantifyingPhi.md)
     - [Квантифициране на Phi-3.5 / 4 с Apple MLX Framework](./md/01.Introduction/04/UsingAppleMLXQuantifyingPhi.md)
 
-- Оценка на Phi
+-  Оценка на Phi
     - [Отговорен AI](./md/01.Introduction/05/ResponsibleAI.md)
     - [Оценка с Azure AI Foundry](./md/01.Introduction/05/AIFoundry.md)
     - [Използване на Promptflow за оценка](./md/01.Introduction/05/Promptflow.md)
-
+ 
 - RAG с Azure AI Search
     - [Как да използвате Phi-4-mini и Phi-4-multimodal (RAG) с Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
 - Примери за разработка на приложения с Phi
   - Текстови и чат приложения
-    - Примери с Phi-4 🆕
+    - Примери за Phi-4 🆕
       - [📓] [Чат с Phi-4-mini ONNX модел](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
-      - [Чат с локален ONNX модел Phi-4 .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
-      - [Конзолно приложение .NET за чат с Phi-4 ONNX, използвайки Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
-    - Примери с Phi-3 / 3.5
+      - [Чат с Phi-4 локален ONNX модел .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
+      - [Чат .NET конзолно приложение с Phi-4 ONNX, използвайки Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
+    - Примери за Phi-3 / 3.5
       - [Локален чатбот в браузъра, използвайки Phi3, ONNX Runtime Web и WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
-      - [Чат с OpenVino](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
+      - [OpenVino чат](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
       - [Мултимодел - Интерактивен Phi-3-mini и OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
       - [MLFlow - Създаване на обвивка и използване на Phi-3 с MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
       - [Оптимизация на модел - Как да оптимизирате Phi-3-min модел за ONNX Runtime Web с Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
-      - [WinUI3 приложение с Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
-      - [WinUI3 мултимодел AI приложение за бележки](https://github.com/microsoft/ai-powered-notes-winui3-sample)
+- [WinUI3 приложение с Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
+- [WinUI3 приложение за бележки с AI и множество модели - пример](https://github.com/microsoft/ai-powered-notes-winui3-sample)
 - [Фина настройка и интеграция на персонализирани Phi-3 модели с Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
 - [Фина настройка и интеграция на персонализирани Phi-3 модели с Prompt flow в Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-- [Оценка на фино настроените Phi-3 / Phi-3.5 модели в Azure AI Foundry с акцент върху принципите на отговорния AI на Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+- [Оценка на фино настроените Phi-3 / Phi-3.5 модели в Azure AI Foundry с акцент върху принципите на Microsoft за отговорен AI](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
 - [📓] [Пример за езиково предсказание с Phi-3.5-mini-instruct (китайски/английски)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
-- [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
+- [Phi-3.5-Instruct WebGPU RAG чатбот](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
 - [Използване на Windows GPU за създаване на решение с Prompt flow и Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
 - [Използване на Microsoft Phi-3.5 tflite за създаване на Android приложение](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
-- [Пример за Q&A .NET с локален ONNX Phi-3 модел, използвайки Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
+- [Пример за Q&A .NET приложение с локален ONNX Phi-3 модел, използвайки Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
 - [Конзолно чат приложение .NET със Semantic Kernel и Phi-3](../../md/04.HOL/dotnet/src/LabsPhi302)
 
 - Примери за код с Azure AI Inference SDK
@@ -106,9 +120,9 @@ Phi в момента е най-мощният и икономически еф�
     - [📓] [Генериране на проектен код с Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
   - Примери с Phi-3 / 3.5
     - [Създайте свой собствен Visual Studio Code GitHub Copilot Chat с Microsoft Phi-3 Family](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
-    - [Създайте свой собствен Visual Studio Code Chat Copilot Agent с Phi-3.5 чрез GitHub модели](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
+    - [Създайте свой собствен Visual Studio Code Chat Copilot Agent с Phi-3.5 и GitHub модели](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
 
-- Примери за напреднало разсъждение
+- Примери за усъвършенствано разсъждение
   - Примери с Phi-4 🆕
     - [📓] [Примери с Phi-4-mini-reasoning или Phi-4-reasoning](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
     - [📓] [Фина настройка на Phi-4-mini-reasoning с Microsoft Olive](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
@@ -139,19 +153,19 @@ Phi в момента е най-мощният и икономически еф�
 - Примери за аудио
   - Примери с Phi-4 🆕
     - [📓] [Извличане на аудио транскрипции с Phi-4-multimodal](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
-    - [📓] [Пример за аудио с Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
+    - [📓] [Аудио пример с Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
     - [📓] [Пример за превод на реч с Phi-4-multimodal](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
     - [.NET конзолно приложение, използващо Phi-4-multimodal за анализ на аудио файл и генериране на транскрипция](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
 
-- Примери за MOE
+- Примери за MoE
   - Примери с Phi-3 / 3.5
-    - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) пример за социални медии](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
-    - [📓] [Създаване на Retrieval-Augmented Generation (RAG) Pipeline с NVIDIA NIM Phi-3 MOE, Azure AI Search и LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
+    - [📓] [Phi-3.5 модели с комбинация от експерти (MoEs) - пример за социални медии](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
+    - [📓] [Създаване на Retrieval-Augmented Generation (RAG) тръбопровод с NVIDIA NIM Phi-3 MOE, Azure AI Search и LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
 
 - Примери за извикване на функции
   - Примери с Phi-4 🆕
     - [📓] [Използване на извикване на функции с Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
-    - [📓] [Използване на извикване на функции за създаване на много агенти с Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
+    - [📓] [Използване на извикване на функции за създаване на множество агенти с Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
     - [📓] [Използване на извикване на функции с Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)
     - [📓] [Използване на извикване на функции с ONNX](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)
 
@@ -184,56 +198,56 @@ Phi в момента е най-мощният и икономически еф�
 
 - Академични изследователски статии и публикации
   - [Textbooks Are All You Need II: phi-1.5 технически доклад](https://arxiv.org/abs/2309.05463)
-  - [Phi-3 Технически доклад: Висококапацитетен езиков модел локално на вашия телефон](https://arxiv.org/abs/2404.14219)
-  - [Phi-4 Технически доклад](https://arxiv.org/abs/2412.08905)
-  - [Phi-4-Mini Технически доклад: Компактни, но мощни мултимодални езикови модели чрез Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
+  - [Phi-3 технически доклад: Висококапацитетен езиков модел локално на вашия телефон](https://arxiv.org/abs/2404.14219)
+  - [Phi-4 технически доклад](https://arxiv.org/abs/2412.08905)
+  - [Phi-4-Mini технически доклад: Компактни, но мощни мултимодални езикови модели чрез Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
   - [Оптимизиране на малки езикови модели за извикване на функции в превозни средства](https://arxiv.org/abs/2501.02342)
-  - [(WhyPHI) Фина настройка на PHI-3 за въпроси с множество отговори: Методология, резултати и предизвикателства](https://arxiv.org/abs/2501.01588)
-- [Phi-4-reasoning Технически доклад](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)  
-- [Phi-4-mini-reasoning Технически доклад](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)  
+  - [(WhyPHI) Фина настройка на PHI-3 за отговаряне на въпроси с множество възможности: методология, резултати и предизвикателства](https://arxiv.org/abs/2501.01588)
+  - [Технически доклад за Phi-4-разсъждения](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
+  - [Технически доклад за Phi-4-mini-разсъждения](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
 
-## Използване на Phi модели  
+## Използване на Phi модели
 
-### Phi в Azure AI Foundry  
+### Phi в Azure AI Foundry
 
-Можете да научите как да използвате Microsoft Phi и как да изграждате E2E решения на различни хардуерни устройства. За да изпробвате Phi сами, започнете с тестване на моделите и персонализиране на Phi за вашите сценарии, използвайки [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Можете да научите повече в раздела "Започнете" с [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).  
-
-**Playground**  
-Всеки модел има специален playground за тестване на модела [Azure AI Playground](https://aka.ms/try-phi3).  
-
-### Phi в GitHub Models  
-
-Можете да научите как да използвате Microsoft Phi и как да изграждате E2E решения на различни хардуерни устройства. За да изпробвате Phi сами, започнете с тестване на модела и персонализиране на Phi за вашите сценарии, използвайки [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Можете да научите повече в раздела "Започнете" с [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).  
+Можете да научите как да използвате Microsoft Phi и как да изграждате решения от край до край за различни хардуерни устройства. За да изпробвате Phi сами, започнете с тестване на моделите и персонализиране на Phi за вашите сценарии, използвайки [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Можете да научите повече в раздела "Започване" на [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
 
 **Playground**  
-Всеки модел има специален [playground за тестване на модела](/md/02.QuickStart/GitHubModel_QuickStart.md).  
+Всеки модел има специален playground за тестване на модела [Azure AI Playground](https://aka.ms/try-phi3).
 
-### Phi в Hugging Face  
+### Phi в GitHub Models
 
-Можете също да намерите модела в [Hugging Face](https://huggingface.co/microsoft).  
+Можете да научите как да използвате Microsoft Phi и как да изграждате решения от край до край за различни хардуерни устройства. За да изпробвате Phi сами, започнете с тестване на модела и персонализиране на Phi за вашите сценарии, използвайки [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Можете да научите повече в раздела "Започване" на [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 **Playground**  
-[Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct).  
+Всеки модел има специален [playground за тестване на модела](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
-## Отговорен AI  
+### Phi в Hugging Face
+
+Можете също да намерите модела в [Hugging Face](https://huggingface.co/microsoft).
+
+**Playground**  
+[Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
+
+## Отговорен AI
 
 Microsoft се ангажира да помага на своите клиенти да използват AI продуктите отговорно, споделяйки наученото и изграждайки партньорства, базирани на доверие, чрез инструменти като Transparency Notes и Impact Assessments. Много от тези ресурси могат да бъдат намерени на [https://aka.ms/RAI](https://aka.ms/RAI).  
-Подходът на Microsoft към отговорния AI се основава на нашите принципи за AI: справедливост, надеждност и безопасност, поверителност и сигурност, приобщаване, прозрачност и отчетност.  
+Подходът на Microsoft към отговорния AI се основава на нашите принципи за AI: справедливост, надеждност и безопасност, поверителност и сигурност, приобщаване, прозрачност и отчетност.
 
-Мащабни модели за естествен език, изображения и реч - като тези, използвани в този пример - могат потенциално да се държат по начини, които са несправедливи, ненадеждни или обидни, което може да причини вреди. Моля, консултирайте се с [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text), за да бъдете информирани за рисковете и ограниченията.  
+Мащабните модели за естествен език, изображения и реч - като тези, използвани в този пример - могат потенциално да се държат по начини, които са несправедливи, ненадеждни или обидни, което може да причини вреди. Моля, консултирайте се с [Transparency note за Azure OpenAI service](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text), за да бъдете информирани за рисковете и ограниченията.
 
-Препоръчаният подход за смекчаване на тези рискове е включването на система за безопасност във вашата архитектура, която може да открива и предотвратява вредно поведение. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) предоставя независим слой защита, способен да открива вредно съдържание, генерирано от потребители или AI, в приложения и услуги. Azure AI Content Safety включва текстови и визуални API, които позволяват откриване на вредни материали. В рамките на Azure AI Foundry, Content Safety услугата ви позволява да разглеждате, изследвате и тествате примерен код за откриване на вредно съдържание в различни модалности. Следната [бърза документация](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ви насочва как да правите заявки към услугата.  
+Препоръчаният подход за смекчаване на тези рискове е включването на система за безопасност във вашата архитектура, която може да открива и предотвратява вредно поведение. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) предоставя независим слой защита, способен да открива вредно съдържание, генерирано от потребители и AI, в приложения и услуги. Azure AI Content Safety включва API за текст и изображения, които ви позволяват да откривате вредни материали. В рамките на Azure AI Foundry, услугата Content Safety ви позволява да преглеждате, изследвате и тествате примерен код за откриване на вредно съдържание в различни модалности. Следната [документация за бърз старт](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ви насочва как да правите заявки към услугата.
 
-Друг аспект, който трябва да се вземе предвид, е цялостната производителност на приложението. При мултимодални и мултимоделни приложения, производителността означава, че системата работи според очакванията на вас и вашите потребители, включително да не генерира вредни резултати. Важно е да оцените производителността на вашето приложение, използвайки [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Имате възможност да създавате и оценявате с [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).  
+Друг аспект, който трябва да се вземе предвид, е цялостната производителност на приложението. При мултимодални и мултимоделни приложения, производителността означава, че системата работи според очакванията на вас и вашите потребители, включително да не генерира вредни резултати. Важно е да оцените производителността на цялостното си приложение, използвайки [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Имате също така възможност да създавате и оценявате с [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Можете да оцените вашето AI приложение в средата за разработка, използвайки [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). С предоставен тестов набор от данни или цел, генериранията на вашето генеративно AI приложение се измерват количествено с вградени или персонализирани оценители по ваш избор. За да започнете с Azure AI Evaluation SDK и да оцените вашата система, можете да следвате [бързия наръчник](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). След като изпълните оценка, можете [да визуализирате резултатите в Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).  
+Можете да оцените вашето AI приложение в средата за разработка, използвайки [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). С предоставен тестов набор от данни или цел, генериранията на вашето генеративно AI приложение се измерват количествено с вградени или персонализирани оценители по ваш избор. За да започнете с Azure AI Evaluation SDK за оценка на вашата система, можете да следвате [ръководството за бърз старт](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). След като изпълните оценка, можете [да визуализирате резултатите в Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
-## Търговски марки  
+## Търговски марки
 
 Този проект може да съдържа търговски марки или лога за проекти, продукти или услуги. Употребата на търговски марки или лога на Microsoft трябва да бъде съобразена с [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
-Употребата на търговски марки или лога на Microsoft в модифицирани версии на този проект не трябва да създава объркване или да предполага спонсорство от Microsoft. Употребата на търговски марки или лога на трети страни трябва да бъде съобразена с политиките на съответните трети страни.  
+Употребата на търговски марки или лога на Microsoft в модифицирани версии на този проект не трябва да създава объркване или да предполага спонсорство от Microsoft. Всяка употреба на търговски марки или лога на трети страни трябва да бъде съобразена с политиките на съответните трети страни.
 
 ---
 
 **Отказ от отговорност**:  
-Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия роден език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за недоразумения или погрешни интерпретации, произтичащи от използването на този превод.
+Този документ е преведен с помощта на AI услуга за превод [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматичните преводи може да съдържат грешки или неточности. Оригиналният документ на неговия изходен език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Не носим отговорност за каквито и да е недоразумения или погрешни интерпретации, произтичащи от използването на този превод.
