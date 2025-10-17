@@ -1,8 +1,8 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a73c59eecd7ad4ec494fd4333a29e208",
-  "translation_date": "2025-10-11T11:13:22+00:00",
+  "original_hash": "4987daf30687ad3850757c9eae3f5411",
+  "translation_date": "2025-10-17T10:32:02+00:00",
   "source_file": "README.md",
   "language_code": "tl"
 }
@@ -15,7 +15,7 @@ CO_OP_TRANSLATOR_METADATA:
 [![Mga Contributor sa GitHub](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
 [![Mga Isyu sa GitHub](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
 [![Mga Pull Request sa GitHub](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
+[![Malugod na tinatanggap ang PRs](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
 
 [![Mga Tagamasid sa GitHub](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
 [![Mga Fork sa GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
@@ -25,13 +25,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ang Phi ay isang serye ng mga open source AI models na binuo ng Microsoft.
 
-Ang Phi ay kasalukuyang ang pinakamakapangyarihan at pinaka-matipid na maliit na language model (SLM), na may napakahusay na benchmark sa multi-language, reasoning, text/chat generation, coding, mga imahe, audio, at iba pang mga senaryo.
+Ang Phi ay kasalukuyang pinakamakapangyarihan at pinaka-matipid na small language model (SLM), na may napakahusay na benchmark sa multi-language, reasoning, text/chat generation, coding, mga imahe, audio, at iba pang mga senaryo.
 
-Maaaring i-deploy ang Phi sa cloud o sa mga edge device, at madali kang makakagawa ng generative AI applications kahit na limitado ang computing power.
+Maaaring i-deploy ang Phi sa cloud o sa mga edge devices, at madali kang makakagawa ng generative AI applications kahit limitado ang computing power.
 
 Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resource na ito:
-1. **I-Fork ang Repository**: I-click [![Mga Fork sa GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. **I-Clone ang Repository**:   `git clone https://github.com/microsoft/PhiCookBook.git`
+1. **I-fork ang Repository**: I-click [![Mga Fork sa GitHub](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+2. **I-clone ang Repository**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Sumali sa Microsoft AI Discord Community at makipagtagpo sa mga eksperto at kapwa developer**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
 ![cover](../../imgs/cover.png)
@@ -91,8 +91,8 @@ Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resource na ito
 - RAG gamit ang Azure AI Search
     - [Paano gamitin ang Phi-4-mini at Phi-4-multimodal (RAG) gamit ang Azure AI Search](https://github.com/microsoft/PhiCookBook/blob/main/code/06.E2E/E2E_Phi-4-RAG-Azure-AI-Search.ipynb)
 
-- Mga halimbawa ng pag-develop ng Phi application
-  - Mga Text at Chat Application
+- Mga sample ng pag-develop ng Phi application
+  - Mga Text & Chat Application
     - Mga Sample ng Phi-4 🆕
       - [📓] [Makipag-chat gamit ang Phi-4-mini ONNX Model](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
       - [Makipag-chat gamit ang Phi-4 lokal na ONNX Model .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
@@ -101,18 +101,18 @@ Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resource na ito
       - [Lokal na Chatbot sa browser gamit ang Phi3, ONNX Runtime Web at WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
       - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
       - [Multi Model - Interactive Phi-3-mini at OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
-      - [MLFlow - Paggawa ng wrapper at paggamit ng Phi-3 gamit ang MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
+      - [MLFlow - Pagbuo ng wrapper at paggamit ng Phi-3 gamit ang MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
       - [Model Optimization - Paano i-optimize ang Phi-3-min model para sa ONNX Runtime Web gamit ang Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
 - [WinUI3 App gamit ang Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
 - [WinUI3 Multi Model AI Powered Notes App Sample](https://github.com/microsoft/ai-powered-notes-winui3-sample)
-- [Pag-fine-tune at Integrasyon ng custom na Phi-3 models gamit ang Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
-- [Pag-fine-tune at Integrasyon ng custom na Phi-3 models gamit ang Prompt flow sa Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
-- [Pagsusuri sa Fine-tuned Phi-3 / Phi-3.5 Model sa Azure AI Foundry na nakatuon sa Prinsipyo ng Responsible AI ng Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
+- [Pag-fine-tune at Integrasyon ng custom Phi-3 models gamit ang Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
+- [Pag-fine-tune at Integrasyon ng custom Phi-3 models gamit ang Prompt flow sa Azure AI Foundry](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration_AIFoundry.md)
+- [Pagsusuri sa Fine-tuned Phi-3 / Phi-3.5 Model sa Azure AI Foundry na nakatuon sa Responsible AI Principles ng Microsoft](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-Evaluation_AIFoundry.md)
 - [📓] [Phi-3.5-mini-instruct language prediction sample (Chinese/English)](../../md/02.Application/01.TextAndChat/Phi3/phi3-instruct-demo.ipynb)
 - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
 - [Paggamit ng Windows GPU para gumawa ng Prompt flow solution gamit ang Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
 - [Paggamit ng Microsoft Phi-3.5 tflite para gumawa ng Android app](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
-- [Q&A .NET Example gamit ang lokal na ONNX Phi-3 model gamit ang Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
+- [Q&A .NET Example gamit ang local ONNX Phi-3 model gamit ang Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
 - [Console chat .NET app gamit ang Semantic Kernel at Phi-3](../../md/04.HOL/dotnet/src/LabsPhi302)
 
 - Azure AI Inference SDK Code Based Samples 
@@ -144,8 +144,8 @@ Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resource na ito
     - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)
     - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)
     - [📓][Phi-3.5 Vision multi-frame o multi-image sample](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)
-    - [Phi-3 Vision Lokal na ONNX Model gamit ang Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi303)
-    - [Menu based Phi-3 Vision Lokal na ONNX Model gamit ang Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)
+    - [Phi-3 Vision Local ONNX Model gamit ang Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi303)
+    - [Menu based Phi-3 Vision Local ONNX Model gamit ang Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)
 
 - Math Samples
   - Phi-4-Mini-Flash-Reasoning-Instruct Samples 🆕 [Math Demo gamit ang Phi-4-Mini-Flash-Reasoning-Instruct](../../md/02.Application/09.Math/MathDemo.ipynb)
@@ -155,7 +155,7 @@ Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resource na ito
     - [📓] [Pagkuha ng audio transcripts gamit ang Phi-4-multimodal](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
     - [📓] [Phi-4-multimodal Audio Sample](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
     - [📓] [Phi-4-multimodal Speech Translation Sample](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
-    - [.NET console application gamit ang Phi-4-multimodal Audio para suriin ang isang audio file at bumuo ng transcript](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
+    - [.NET console application gamit ang Phi-4-multimodal Audio para suriin ang isang audio file at gumawa ng transcript](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
 
 - MOE Samples
   - Phi-3 / 3.5 Samples
@@ -175,9 +175,9 @@ Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resource na ito
     - [.NET console application gamit ang Phi-4-multimodal para suriin ang mga imahe](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)
 
 - Fine-tuning Phi Samples
-  - [Fine-tuning Scenarios](./md/03.FineTuning/FineTuning_Scenarios.md)
+  - [Mga Senaryo ng Fine-tuning](./md/03.FineTuning/FineTuning_Scenarios.md)
   - [Fine-tuning vs RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)
-  - [Fine-tuning Hayaan ang Phi-3 na maging eksperto sa industriya](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
+  - [Fine-tuning: Hayaan ang Phi-3 na maging eksperto sa industriya](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
   - [Fine-tuning Phi-3 gamit ang AI Toolkit para sa VS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)
   - [Fine-tuning Phi-3 gamit ang Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
   - [Fine-tuning Phi-3 gamit ang Lora](./md/03.FineTuning/FineTuning_Lora.md)
@@ -189,18 +189,18 @@ Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resource na ito
   - [Fine-tuning Phi-3-vision gamit ang Weights and Bias](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)
   - [Fine-tuning Phi-3 gamit ang Apple MLX Framework](./md/03.FineTuning/FineTuning_MLX.md)
   - [Fine-tuning Phi-3-vision (opisyal na suporta)](./md/03.FineTuning/FineTuning_Vision.md)
-  - [Fine-Tuning Phi-3 gamit ang Kaito AKS, Azure Containers (opisyal na suporta)](./md/03.FineTuning/FineTuning_Kaito.md)
+  - [Fine-Tuning Phi-3 gamit ang Kaito AKS, Azure Containers (opisyal na Suporta)](./md/03.FineTuning/FineTuning_Kaito.md)
   - [Fine-Tuning Phi-3 at 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)
 
 - Hands on Lab
   - [Paggalugad sa mga makabagong modelo: LLMs, SLMs, lokal na pag-develop at iba pa](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
-  - [Pagbubukas ng Potensyal ng NLP: Fine-Tuning gamit ang Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
+  - [Pag-unlock ng NLP Potential: Fine-Tuning gamit ang Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
 
 - Academic Research Papers and Publications
   - [Textbooks Are All You Need II: phi-1.5 technical report](https://arxiv.org/abs/2309.05463)
-  - [Phi-3 Technical Report: Isang Highly Capable Language Model Lokal sa Iyong Telepono](https://arxiv.org/abs/2404.14219)
+  - [Phi-3 Technical Report: Isang Highly Capable Language Model Locally sa Iyong Telepono](https://arxiv.org/abs/2404.14219)
   - [Phi-4 Technical Report](https://arxiv.org/abs/2412.08905)
-  - [Phi-4-Mini Technical Report: Compact ngunit Makapangyarihang Multimodal Language Models sa pamamagitan ng Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
+  - [Phi-4-Mini Technical Report: Compact ngunit Makapangyarihang Multimodal Language Models gamit ang Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
   - [Pag-optimize ng Maliit na Language Models para sa Pagtawag ng Function sa Sasakyan](https://arxiv.org/abs/2501.02342)
   - [(WhyPHI) Fine-Tuning PHI-3 para sa Multiple-Choice Question Answering: Metodolohiya, Resulta, at Hamon](https://arxiv.org/abs/2501.01588)
   - [Phi-4-reasoning Technical Report](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
@@ -210,43 +210,54 @@ Sundin ang mga hakbang na ito upang magsimula sa paggamit ng mga resource na ito
 
 ### Phi sa Azure AI Foundry
 
-Matutunan mo kung paano gamitin ang Microsoft Phi at kung paano bumuo ng E2E solutions sa iba't ibang hardware devices. Para maranasan ang Phi, magsimula sa paglaro sa mga modelo at i-customize ang Phi para sa iyong mga senaryo gamit ang [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Maaari kang matuto pa sa Getting Started sa [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
+Matutunan mo kung paano gamitin ang Microsoft Phi at kung paano bumuo ng mga E2E na solusyon sa iba't ibang hardware devices. Para maranasan ang Phi, magsimula sa pamamagitan ng paggamit ng mga modelo at i-customize ang Phi para sa iyong mga senaryo gamit ang [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Maaari kang matuto pa sa Getting Started with [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
 
-**Playground**
-Ang bawat modelo ay may dedikadong playground para subukan ang modelo [Azure AI Playground](https://aka.ms/try-phi3).
+**Playground**  
+Ang bawat modelo ay may nakalaang playground para subukan ang modelo [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi sa GitHub Models
 
-Matutunan mo kung paano gamitin ang Microsoft Phi at kung paano bumuo ng E2E solutions sa iba't ibang hardware devices. Para maranasan ang Phi, magsimula sa paglaro sa modelo at i-customize ang Phi para sa iyong mga senaryo gamit ang [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Maaari kang matuto pa sa Getting Started sa [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
+Matutunan mo kung paano gamitin ang Microsoft Phi at kung paano bumuo ng mga E2E na solusyon sa iba't ibang hardware devices. Para maranasan ang Phi, magsimula sa pamamagitan ng paggamit ng modelo at i-customize ang Phi para sa iyong mga senaryo gamit ang [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Maaari kang matuto pa sa Getting Started with [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
-**Playground**
-Ang bawat modelo ay may dedikadong [playground para subukan ang modelo](/md/02.QuickStart/GitHubModel_QuickStart.md).
+**Playground**  
+Ang bawat modelo ay may nakalaang [playground para subukan ang modelo](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 ### Phi sa Hugging Face
 
-Maaari mo ring mahanap ang modelo sa [Hugging Face](https://huggingface.co/microsoft).
+Maaari mo ring makita ang modelo sa [Hugging Face](https://huggingface.co/microsoft).
 
-**Playground**
+**Playground**  
 [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
 
-## Responsableng AI
+## Responsableng AI 
 
-Ang Microsoft ay nakatuon sa pagtulong sa aming mga customer na gamitin ang aming mga AI products nang responsable, ibahagi ang aming mga natutunan, at bumuo ng mga partnership na nakabatay sa tiwala gamit ang mga tools tulad ng Transparency Notes at Impact Assessments. Marami sa mga resources na ito ay matatagpuan sa [https://aka.ms/RAI](https://aka.ms/RAI). Ang diskarte ng Microsoft sa responsableng AI ay nakabatay sa aming mga prinsipyo ng AI: pagiging patas, pagiging maaasahan at kaligtasan, privacy at seguridad, pagiging inklusibo, transparency, at pananagutan.
+Ang Microsoft ay nakatuon sa pagtulong sa aming mga customer na gamitin ang aming mga AI na produkto nang responsable, ibahagi ang aming mga natutunan, at bumuo ng mga partnership na nakabase sa tiwala sa pamamagitan ng mga tool tulad ng Transparency Notes at Impact Assessments. Marami sa mga resources na ito ay matatagpuan sa [https://aka.ms/RAI](https://aka.ms/RAI).  
+Ang diskarte ng Microsoft sa responsableng AI ay nakabatay sa aming mga prinsipyo ng AI: pagiging patas, pagiging maaasahan at kaligtasan, privacy at seguridad, pagiging inklusibo, transparency, at pananagutan.
 
-Ang malakihang natural language, image, at speech models - tulad ng mga ginagamit sa sample na ito - ay maaaring magpakita ng mga pag-uugali na hindi patas, hindi maaasahan, o nakakasakit, na maaaring magdulot ng pinsala. Mangyaring konsultahin ang [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) upang malaman ang mga panganib at limitasyon.
+Ang malakihang natural language, image, at speech models - tulad ng mga ginagamit sa sample na ito - ay maaaring magpakita ng mga hindi patas, hindi maaasahan, o nakakasakit na pag-uugali, na maaaring magdulot ng pinsala. Mangyaring konsultahin ang [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) upang malaman ang mga panganib at limitasyon.
 
-Ang inirerekomendang paraan upang mabawasan ang mga panganib na ito ay ang pagsama ng safety system sa iyong arkitektura na maaaring mag-detect at mag-prevent ng mapanganib na pag-uugali. Ang [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ay nagbibigay ng independiyenteng layer ng proteksyon, na kayang mag-detect ng mapanganib na user-generated at AI-generated content sa mga aplikasyon at serbisyo. Ang Azure AI Content Safety ay may kasamang text at image APIs na nagbibigay-daan sa iyo upang mag-detect ng materyal na mapanganib. Sa loob ng Azure AI Foundry, ang Content Safety service ay nagbibigay-daan sa iyo upang makita, suriin, at subukan ang sample code para sa pag-detect ng mapanganib na content sa iba't ibang modalities. Ang sumusunod na [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ay gagabay sa iyo sa paggawa ng mga request sa serbisyo.
+Ang inirerekomendang diskarte upang mabawasan ang mga panganib na ito ay ang pagsama ng safety system sa iyong arkitektura na maaaring mag-detect at mag-prevent ng mapanganib na pag-uugali. Ang [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) ay nagbibigay ng independent layer ng proteksyon, na kayang mag-detect ng mapanganib na user-generated at AI-generated na content sa mga aplikasyon at serbisyo. Ang Azure AI Content Safety ay may kasamang text at image APIs na nagbibigay-daan sa iyo upang mag-detect ng materyal na mapanganib. Sa loob ng Azure AI Foundry, ang Content Safety service ay nagbibigay-daan sa iyo upang makita, galugarin, at subukan ang sample code para sa pag-detect ng mapanganib na content sa iba't ibang modalities. Ang sumusunod na [quickstart documentation](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) ay gagabay sa iyo sa paggawa ng mga request sa serbisyo.
 
 Isa pang aspeto na dapat isaalang-alang ay ang kabuuang performance ng aplikasyon. Sa mga multi-modal at multi-models na aplikasyon, ang performance ay nangangahulugan na ang sistema ay gumagana ayon sa inaasahan mo at ng iyong mga user, kabilang ang hindi pagbuo ng mapanganib na outputs. Mahalagang suriin ang performance ng iyong kabuuang aplikasyon gamit ang [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). May kakayahan ka ring gumawa at mag-evaluate gamit ang [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Maaari mong suriin ang iyong AI application sa iyong development environment gamit ang [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Gamit ang test dataset o target, ang mga generation ng iyong generative AI application ay sinusukat nang quantitatively gamit ang built-in evaluators o custom evaluators na iyong pinili. Para magsimula sa Azure AI Evaluation SDK upang suriin ang iyong sistema, maaari mong sundan ang [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Kapag naisagawa mo na ang evaluation run, maaari mong [i-visualize ang mga resulta sa Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
+Maaari mong i-evaluate ang iyong AI application sa iyong development environment gamit ang [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Gamit ang test dataset o target, ang mga generation ng iyong generative AI application ay sinusukat nang quantitatively gamit ang built-in evaluators o custom evaluators na iyong pinili. Para magsimula sa Azure AI Evaluation SDK upang i-evaluate ang iyong sistema, maaari mong sundan ang [quickstart guide](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Kapag naisagawa mo na ang evaluation run, maaari mong [i-visualize ang mga resulta sa Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Mga Trademark
 
-Ang proyektong ito ay maaaring naglalaman ng mga trademark o logo para sa mga proyekto, produkto, o serbisyo. Ang awtorisadong paggamit ng mga trademark o logo ng Microsoft ay dapat sumunod sa at sundin ang [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). 
+Ang proyektong ito ay maaaring naglalaman ng mga trademark o logo para sa mga proyekto, produkto, o serbisyo. Ang awtorisadong paggamit ng mga trademark o logo ng Microsoft ay dapat sumunod sa at sundin ang [Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
 Ang paggamit ng mga trademark o logo ng Microsoft sa mga binagong bersyon ng proyektong ito ay hindi dapat magdulot ng kalituhan o magpahiwatig ng sponsorship ng Microsoft. Ang anumang paggamit ng mga third-party na trademark o logo ay dapat sumunod sa mga patakaran ng third-party na iyon.
+
+## Pagkuha ng Tulong
+
+Kung ikaw ay nahihirapan o may mga tanong tungkol sa paggawa ng AI apps, sumali sa:
+
+[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+
+Kung mayroon kang feedback sa produkto o mga error habang gumagawa, bisitahin:
+
+[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 **Paunawa**:  
-Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na sanggunian. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
+Ang dokumentong ito ay isinalin gamit ang AI translation service na [Co-op Translator](https://github.com/Azure/co-op-translator). Bagama't sinisikap naming maging tumpak, mangyaring tandaan na ang mga awtomatikong pagsasalin ay maaaring maglaman ng mga pagkakamali o hindi pagkakatugma. Ang orihinal na dokumento sa kanyang katutubong wika ang dapat ituring na opisyal na pinagmulan. Para sa mahalagang impormasyon, inirerekomenda ang propesyonal na pagsasalin ng tao. Hindi kami mananagot sa anumang hindi pagkakaunawaan o maling interpretasyon na dulot ng paggamit ng pagsasaling ito.
