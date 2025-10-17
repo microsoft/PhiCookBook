@@ -1,48 +1,32 @@
 <!--
 CO_OP_TRANSLATOR_METADATA:
 {
-  "original_hash": "a73c59eecd7ad4ec494fd4333a29e208",
-  "translation_date": "2025-10-11T11:04:02+00:00",
+  "original_hash": "4987daf30687ad3850757c9eae3f5411",
+  "translation_date": "2025-10-17T10:26:08+00:00",
   "source_file": "README.md",
   "language_code": "no"
 }
 -->
-# Phi Kokebok: Praktiske Eksempler med Microsofts Phi-modeller
+# Phi Kokebok: Praktiske eksempler med Microsofts Phi-modeller
 
-[![Åpne og bruk eksemplene i GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/microsoft/phicookbook)
-[![Åpne i Dev Containers](https://img.shields.io/static/v1?style=for-the-badge&label=Dev%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/microsoft/phicookbook)
-
-[![GitHub bidragsytere](https://img.shields.io/github/contributors/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/graphs/contributors/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub problemer](https://img.shields.io/github/issues/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/issues/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub pull-requests](https://img.shields.io/github/issues-pr/microsoft/phicookbook.svg)](https://GitHub.com/microsoft/phicookbook/pulls/?WT.mc_id=aiml-137032-kinfeylo)
-[![PRs Velkommen](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com?WT.mc_id=aiml-137032-kinfeylo)
-
-[![GitHub følgere](https://img.shields.io/github/watchers/microsoft/phicookbook.svg?style=social&label=Watch)](https://GitHub.com/microsoft/phicookbook/watchers/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub forgreininger](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-[![GitHub stjerner](https://img.shields.io/github/stars/microsoft/phicookbook?style=social&label=Star)](https://GitHub.com/microsoft/phicookbook/stargazers/?WT.mc_id=aiml-137032-kinfeylo)
-
-[![Microsoft Azure AI Foundry Discord](https://dcbadge.limes.pink/api/server/ByRwuEEgH4)](https://discord.com/invite/ByRwuEEgH4)
-
-Phi er en serie med åpen kildekode AI-modeller utviklet av Microsoft.
+Phi er en serie med åpne AI-modeller utviklet av Microsoft.
 
 Phi er for øyeblikket den mest kraftfulle og kostnadseffektive lille språkmodellen (SLM), med svært gode resultater innen flerspråklighet, resonnement, tekst/chat-generering, koding, bilder, lyd og andre scenarier.
 
 Du kan distribuere Phi til skyen eller til kant-enheter, og du kan enkelt bygge generative AI-applikasjoner med begrenset datakraft.
 
 Følg disse trinnene for å komme i gang med disse ressursene:
-1. **Fork Repository**: Klikk [![GitHub forgreininger](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
-2. **Klon Repository**:   `git clone https://github.com/microsoft/PhiCookBook.git`
-3. [**Bli med i Microsoft AI Discord Community og møt eksperter og andre utviklere**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
+1. **Fork repositoryen**: Klikk [![GitHub forks](https://img.shields.io/github/forks/microsoft/phicookbook.svg?style=social&label=Fork)](https://GitHub.com/microsoft/phicookbook/network/?WT.mc_id=aiml-137032-kinfeylo)
+2. **Klon repositoryen**:   `git clone https://github.com/microsoft/PhiCookBook.git`
+3. [**Bli med i Microsoft AI Discord-fellesskapet og møt eksperter og andre utviklere**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
 ![cover](../../imgs/cover.png)
 
-### 🌐 Flerspråklig Støtte
+### 🌐 Flerspråklig støtte
 
-#### Støttet via GitHub Action (Automatisert & Alltid Oppdatert)
+#### Støttet via GitHub Action (Automatisk og alltid oppdatert)
 
-<!-- CO-OP TRANSLATOR LANGUAGES TABLE START -->
-[Arabisk](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarsk](../bg/README.md) | [Burmesisk (Myanmar)](../my/README.md) | [Kinesisk (Forenklet)](../zh/README.md) | [Kinesisk (Tradisjonell, Hong Kong)](../hk/README.md) | [Kinesisk (Tradisjonell, Macau)](../mo/README.md) | [Kinesisk (Tradisjonell, Taiwan)](../tw/README.md) | [Kroatisk](../hr/README.md) | [Tsjekkisk](../cs/README.md) | [Dansk](../da/README.md) | [Nederlandsk](../nl/README.md) | [Estisk](../et/README.md) | [Finsk](../fi/README.md) | [Fransk](../fr/README.md) | [Tysk](../de/README.md) | [Gresk](../el/README.md) | [Hebraisk](../he/README.md) | [Hindi](../hi/README.md) | [Ungarsk](../hu/README.md) | [Indonesisk](../id/README.md) | [Italiensk](../it/README.md) | [Japansk](../ja/README.md) | [Koreansk](../ko/README.md) | [Litauisk](../lt/README.md) | [Malayisk](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norsk](./README.md) | [Persisk (Farsi)](../fa/README.md) | [Polsk](../pl/README.md) | [Portugisisk (Brasil)](../br/README.md) | [Portugisisk (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumensk](../ro/README.md) | [Russisk](../ru/README.md) | [Serbisk (Kyrillisk)](../sr/README.md) | [Slovakisk](../sk/README.md) | [Slovensk](../sl/README.md) | [Spansk](../es/README.md) | [Swahili](../sw/README.md) | [Svensk](../sv/README.md) | [Tagalog (Filippinsk)](../tl/README.md) | [Tamil](../ta/README.md) | [Thai](../th/README.md) | [Tyrkisk](../tr/README.md) | [Ukrainsk](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamesisk](../vi/README.md)
-<!-- CO-OP TRANSLATOR LANGUAGES TABLE END -->
+[Arabisk](../ar/README.md) | [Bengali](../bn/README.md) | [Bulgarsk](../bg/README.md) | [Burmesisk (Myanmar)](../my/README.md) | [Kinesisk (forenklet)](../zh/README.md) | [Kinesisk (tradisjonell, Hong Kong)](../hk/README.md) | [Kinesisk (tradisjonell, Macau)](../mo/README.md) | [Kinesisk (tradisjonell, Taiwan)](../tw/README.md) | [Kroatisk](../hr/README.md) | [Tsjekkisk](../cs/README.md) | [Dansk](../da/README.md) | [Nederlandsk](../nl/README.md) | [Estisk](../et/README.md) | [Finsk](../fi/README.md) | [Fransk](../fr/README.md) | [Tysk](../de/README.md) | [Gresk](../el/README.md) | [Hebraisk](../he/README.md) | [Hindi](../hi/README.md) | [Ungarsk](../hu/README.md) | [Indonesisk](../id/README.md) | [Italiensk](../it/README.md) | [Japansk](../ja/README.md) | [Koreansk](../ko/README.md) | [Litauisk](../lt/README.md) | [Malayisk](../ms/README.md) | [Marathi](../mr/README.md) | [Nepali](../ne/README.md) | [Norsk](./README.md) | [Persisk (Farsi)](../fa/README.md) | [Polsk](../pl/README.md) | [Portugisisk (Brasil)](../br/README.md) | [Portugisisk (Portugal)](../pt/README.md) | [Punjabi (Gurmukhi)](../pa/README.md) | [Rumensk](../ro/README.md) | [Russisk](../ru/README.md) | [Serbisk (kyrillisk)](../sr/README.md) | [Slovakisk](../sk/README.md) | [Slovensk](../sl/README.md) | [Spansk](../es/README.md) | [Swahili](../sw/README.md) | [Svensk](../sv/README.md) | [Tagalog (Filippinsk)](../tl/README.md) | [Tamil](../ta/README.md) | [Thai](../th/README.md) | [Tyrkisk](../tr/README.md) | [Ukrainsk](../uk/README.md) | [Urdu](../ur/README.md) | [Vietnamesisk](../vi/README.md)
 
 ## Innholdsfortegnelse
 
@@ -52,7 +36,7 @@ Følg disse trinnene for å komme i gang med disse ressursene:
   - [Forstå nøkkelteknologier](./md/01.Introduction/01/01.Understandingtech.md)
   - [AI-sikkerhet for Phi-modeller](./md/01.Introduction/01/01.AISafety.md)
   - [Phi-maskinvarestøtte](./md/01.Introduction/01/01.Hardwaresupport.md)
-  - [Phi-modeller & tilgjengelighet på tvers av plattformer](./md/01.Introduction/01/01.Edgeandcloud.md)
+  - [Phi-modeller og tilgjengelighet på tvers av plattformer](./md/01.Introduction/01/01.Edgeandcloud.md)
   - [Bruke Guidance-ai og Phi](./md/01.Introduction/01/01.Guidance.md)
   - [GitHub Marketplace-modeller](https://github.com/marketplace/models)
   - [Azure AI Model Catalog](https://ai.azure.com)
@@ -93,16 +77,16 @@ Følg disse trinnene for å komme i gang med disse ressursene:
 
 - Eksempler på utvikling av Phi-applikasjoner
   - Tekst- og chatapplikasjoner
-    - Phi-4 Eksempler 🆕
+    - Phi-4 eksempler 🆕
       - [📓] [Chat med Phi-4-mini ONNX-modell](./md/02.Application/01.TextAndChat/Phi4/ChatWithPhi4ONNX/README.md)
       - [Chat med Phi-4 lokal ONNX-modell .NET](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-01OnnxRuntime)
       - [Chat .NET konsollapp med Phi-4 ONNX ved bruk av Semantic Kernel](../../md/04.HOL/dotnet/src/LabsPhi4-Chat-02SK)
-    - Phi-3 / 3.5 Eksempler
+    - Phi-3 / 3.5 eksempler
       - [Lokal chatbot i nettleseren ved bruk av Phi3, ONNX Runtime Web og WebGPU](https://github.com/microsoft/onnxruntime-inference-examples/tree/main/js/chat)
       - [OpenVino Chat](./md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md)
       - [Multi-modell - Interaktiv Phi-3-mini og OpenAI Whisper](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-mini_with_whisper.md)
       - [MLFlow - Bygge en wrapper og bruke Phi-3 med MLFlow](./md//02.Application/01.TextAndChat/Phi3/E2E_Phi-3-MLflow.md)
-      - [Modelloptimalisering - Hvordan optimalisere Phi-3-mini-modellen for ONNX Runtime Web med Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
+      - [Modelloptimalisering - Hvordan optimalisere Phi-3-min-modellen for ONNX Runtime Web med Olive](https://github.com/microsoft/Olive/tree/main/examples/phi3)
 - [WinUI3-app med Phi-3 mini-4k-instruct-onnx](https://github.com/microsoft/Phi3-Chat-WinUI3-Sample/)
 - [WinUI3 Multi Model AI-drevet notatapp-eksempel](https://github.com/microsoft/ai-powered-notes-winui3-sample)
 - [Finjuster og integrer tilpassede Phi-3-modeller med Prompt flow](./md/02.Application/01.TextAndChat/Phi3/E2E_Phi-3-FineTuning_PromptFlow_Integration.md)
@@ -112,95 +96,95 @@ Følg disse trinnene for å komme i gang med disse ressursene:
 - [Phi-3.5-Instruct WebGPU RAG Chatbot](./md/02.Application/01.TextAndChat/Phi3/WebGPUWithPhi35Readme.md)
 - [Bruke Windows GPU til å lage Prompt flow-løsning med Phi-3.5-Instruct ONNX](./md/02.Application/01.TextAndChat/Phi3/UsingPromptFlowWithONNX.md)
 - [Bruke Microsoft Phi-3.5 tflite til å lage Android-app](./md/02.Application/01.TextAndChat/Phi3/UsingPhi35TFLiteCreateAndroidApp.md)
-- [Q&A .NET-eksempel med lokal ONNX Phi-3-modell ved bruk av Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
+- [Q&A .NET-eksempel som bruker lokal ONNX Phi-3-modell med Microsoft.ML.OnnxRuntime](../../md/04.HOL/dotnet/src/LabsPhi301)
 - [Konsollchat .NET-app med Semantic Kernel og Phi-3](../../md/04.HOL/dotnet/src/LabsPhi302)
 
-- Azure AI Inference SDK kodebaserte eksempler
-  - Phi-4-eksempler 🆕
-    - [📓] [Generer prosjektkode med Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)
-  - Phi-3 / 3.5-eksempler
-    - [Bygg din egen Visual Studio Code GitHub Copilot Chat med Microsoft Phi-3-familien](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)
-    - [Lag din egen Visual Studio Code Chat Copilot Agent med Phi-3.5 ved hjelp av GitHub-modeller](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)
+- Azure AI Inference SDK kodebaserte eksempler  
+  - Phi-4-eksempler 🆕  
+    - [📓] [Generer prosjektkode med Phi-4-multimodal](./md/02.Application/02.Code/Phi4/GenProjectCode/README.md)  
+  - Phi-3 / 3.5-eksempler  
+    - [Bygg din egen Visual Studio Code GitHub Copilot Chat med Microsoft Phi-3-familien](./md/02.Application/02.Code/Phi3/VSCodeExt/README.md)  
+    - [Lag din egen Visual Studio Code Chat Copilot Agent med Phi-3.5 ved hjelp av GitHub-modeller](/md/02.Application/02.Code/Phi3/CreateVSCodeChatAgentWithGitHubModels.md)  
 
-- Avanserte resonnementseksempler
-  - Phi-4-eksempler 🆕
-    - [📓] [Phi-4-mini-reasoning eller Phi-4-reasoning-eksempler](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)
-    - [📓] [Finjustering av Phi-4-mini-reasoning med Microsoft Olive](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)
-    - [📓] [Finjustering av Phi-4-mini-reasoning med Apple MLX](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)
-    - [📓] [Phi-4-mini-reasoning med GitHub-modeller](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)
-    - [📓] [Phi-4-mini-reasoning med Azure AI Foundry-modeller](../../md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)
-- Demoer
-    - [Phi-4-mini-demoer hostet på Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)
-    - [Phi-4-multimodal-demoer hostet på Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)
-- Visjonseksempler
-  - Phi-4-eksempler 🆕
-    - [📓] [Bruk Phi-4-multimodal til å lese bilder og generere kode](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md) 
-  - Phi-3 / 3.5-eksempler
-    - [📓][Phi-3-vision-Bildetekst til tekst](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
-    - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)
-    - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)
-    - [DEMO: Phi-3 Resirkulering](https://github.com/jennifermarsman/PhiRecycling/)
-    - [Phi-3-vision - Visuell språkassistent - med Phi3-Vision og OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)
-    - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)
-    - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)
-    - [📓][Phi-3.5 Vision multi-frame eller multi-image-eksempel](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)
-    - [Phi-3 Vision lokal ONNX-modell ved bruk av Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi303)
-    - [Menybasert Phi-3 Vision lokal ONNX-modell ved bruk av Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)
+- Avanserte resonnementseksempler  
+  - Phi-4-eksempler 🆕  
+    - [📓] [Phi-4-mini-reasoning eller Phi-4-reasoning-eksempler](./md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/README.md)  
+    - [📓] [Finjustering av Phi-4-mini-reasoning med Microsoft Olive](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/olive_ft_phi_4_reasoning_with_medicaldata.ipynb)  
+    - [📓] [Finjustering av Phi-4-mini-reasoning med Apple MLX](../../md/02.Application/03.AdvancedReasoning/Phi4/AdvancedResoningPhi4mini/mlx_ft_phi_4_reasoning_with_medicaldata.ipynb)  
+    - [📓] [Phi-4-mini-reasoning med GitHub-modeller](../../md/02.Application/02.Code/Phi4r/github_models_inference.ipynb)  
+    - [📓] [Phi-4-mini-reasoning med Azure AI Foundry-modeller](../../md/02.Application/02.Code/Phi4r/azure_models_inference.ipynb)  
+- Demoer  
+    - [Phi-4-mini-demoer hostet på Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-mini?WT.mc_id=aiml-137032-kinfeylo)  
+    - [Phi-4-multimodal-demoer hostet på Hugging Face Spaces](https://huggingface.co/spaces/microsoft/phi-4-multimodal?WT.mc_id=aiml-137032-kinfeylo)  
+- Visjonseksempler  
+  - Phi-4-eksempler 🆕  
+    - [📓] [Bruk Phi-4-multimodal til å lese bilder og generere kode](./md/02.Application/04.Vision/Phi4/CreateFrontend/README.md)  
+  - Phi-3 / 3.5-eksempler  
+    - [📓][Phi-3-vision-Bildetekst til tekst](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
+    - [Phi-3-vision-ONNX](https://onnxruntime.ai/docs/genai/tutorials/phi3-v.html)  
+    - [📓][Phi-3-vision CLIP Embedding](../../md/02.Application/04.Vision/Phi3/E2E_Phi-3-vision-image-text-to-text-online-endpoint.ipynb)  
+    - [DEMO: Phi-3 Resirkulering](https://github.com/jennifermarsman/PhiRecycling/)  
+    - [Phi-3-vision - Visuell språkassistent - med Phi3-Vision og OpenVINO](https://docs.openvino.ai/nightly/notebooks/phi-3-vision-with-output.html)  
+    - [Phi-3 Vision Nvidia NIM](./md/02.Application/04.Vision/Phi3/E2E_Nvidia_NIM_Vision.md)  
+    - [Phi-3 Vision OpenVino](./md/02.Application/04.Vision/Phi3/E2E_OpenVino_Phi3Vision.md)  
+    - [📓][Phi-3.5 Vision multi-frame eller multi-image-eksempel](../../md/02.Application/04.Vision/Phi3/phi3-vision-demo.ipynb)  
+    - [Phi-3 Vision Lokal ONNX-modell med Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi303)  
+    - [Menybasert Phi-3 Vision Lokal ONNX-modell med Microsoft.ML.OnnxRuntime .NET](../../md/04.HOL/dotnet/src/LabsPhi304)  
 
-- Matteeksempler
-  - Phi-4-Mini-Flash-Reasoning-Instruct-eksempler 🆕 [Matte-demo med Phi-4-Mini-Flash-Reasoning-Instruct](../../md/02.Application/09.Math/MathDemo.ipynb)
+- Matteeksempler  
+  - Phi-4-Mini-Flash-Reasoning-Instruct-eksempler 🆕 [Matte-demo med Phi-4-Mini-Flash-Reasoning-Instruct](../../md/02.Application/09.Math/MathDemo.ipynb)  
 
-- Lydeksempler
-  - Phi-4-eksempler 🆕
-    - [📓] [Uttrekk av lydtranskripsjoner ved bruk av Phi-4-multimodal](./md/02.Application/05.Audio/Phi4/Transciption/README.md)
-    - [📓] [Phi-4-multimodal lydeksempel](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)
-    - [📓] [Phi-4-multimodal taleoversettelse-eksempel](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)
-    - [.NET konsollapplikasjon som bruker Phi-4-multimodal lyd til å analysere en lydfil og generere transkripsjon](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)
+- Lydeksempler  
+  - Phi-4-eksempler 🆕  
+    - [📓] [Ekstraher lydtranskripsjoner med Phi-4-multimodal](./md/02.Application/05.Audio/Phi4/Transciption/README.md)  
+    - [📓] [Phi-4-multimodal lydeksempel](../../md/02.Application/05.Audio/Phi4/Siri/demo.ipynb)  
+    - [📓] [Phi-4-multimodal taleoversettelse-eksempel](../../md/02.Application/05.Audio/Phi4/Translate/demo.ipynb)  
+    - [.NET konsollapplikasjon som bruker Phi-4-multimodal lyd til å analysere en lydfil og generere transkripsjon](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-02Audio)  
 
-- MOE-eksempler
-  - Phi-3 / 3.5-eksempler
-    - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) Sosiale medier-eksempel](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)
-    - [📓] [Bygg en Retrieval-Augmented Generation (RAG)-pipeline med NVIDIA NIM Phi-3 MOE, Azure AI Search og LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)
+- MOE-eksempler  
+  - Phi-3 / 3.5-eksempler  
+    - [📓] [Phi-3.5 Mixture of Experts Models (MoEs) Sosiale medier-eksempel](../../md/02.Application/06.MoE/Phi3/phi3_moe_demo.ipynb)  
+    - [📓] [Bygg en Retrieval-Augmented Generation (RAG)-pipeline med NVIDIA NIM Phi-3 MOE, Azure AI Search og LlamaIndex](../../md/02.Application/06.MoE/Phi3/azure-ai-search-nvidia-rag.ipynb)  
 
-- Eksempler på funksjonskall
-  - Phi-4-eksempler 🆕
-    - [📓] [Bruk av funksjonskall med Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)
-    - [📓] [Bruk av funksjonskall for å lage multi-agenter med Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)
-    - [📓] [Bruk av funksjonskall med Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)
-    - [📓] [Bruk av funksjonskall med ONNX](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)
+- Eksempler på funksjonskall  
+  - Phi-4-eksempler 🆕  
+    - [📓] [Bruke funksjonskall med Phi-4-mini](./md/02.Application/07.FunctionCalling/Phi4/FunctionCallingBasic/README.md)  
+    - [📓] [Bruke funksjonskall til å lage multi-agenter med Phi-4-mini](../../md/02.Application/07.FunctionCalling/Phi4/Multiagents/Phi_4_mini_multiagent.ipynb)  
+    - [📓] [Bruke funksjonskall med Ollama](../../md/02.Application/07.FunctionCalling/Phi4/Ollama/ollama_functioncalling.ipynb)  
+    - [📓] [Bruke funksjonskall med ONNX](../../md/02.Application/07.FunctionCalling/Phi4/ONNX/onnx_parallel_functioncalling.ipynb)  
 
-- Multimodal miksing-eksempler
-  - Phi-4-eksempler 🆕
-    - [📓] [Bruk av Phi-4-multimodal som teknologijournalist](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)
-    - [.NET konsollapplikasjon som bruker Phi-4-multimodal til å analysere bilder](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)
+- Multimodal blandingseksempler  
+  - Phi-4-eksempler 🆕  
+    - [📓] [Bruke Phi-4-multimodal som teknologijournalist](../../md/02.Application/08.Multimodel/Phi4/TechJournalist/phi_4_mm_audio_text_publish_news.ipynb)  
+    - [.NET konsollapplikasjon som bruker Phi-4-multimodal til å analysere bilder](../../md/04.HOL/dotnet/src/LabsPhi4-MultiModal-01Images)  
 
-- Finjustering av Phi-eksempler
-  - [Finjusteringsscenarier](./md/03.FineTuning/FineTuning_Scenarios.md)
-  - [Finjustering vs RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)
-  - [Finjustering: La Phi-3 bli en bransjeekspert](./md/03.FineTuning/LetPhi3gotoIndustriy.md)
-  - [Finjustering av Phi-3 med AI Toolkit for VS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)
-  - [Finjustering av Phi-3 med Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)
-  - [Finjustering av Phi-3 med Lora](./md/03.FineTuning/FineTuning_Lora.md)
-  - [Finjustering av Phi-3 med QLora](./md/03.FineTuning/FineTuning_Qlora.md)
-  - [Finjustering av Phi-3 med Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)
-  - [Finjustering av Phi-3 med Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)
-  - [Finjustering med Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)
-  - [Finjustering med Microsoft Olive Hands-On Lab](./md/03.FineTuning/olive-lab/readme.md)
-  - [Finjustering av Phi-3-vision med Weights and Bias](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)
-  - [Finjustering av Phi-3 med Apple MLX Framework](./md/03.FineTuning/FineTuning_MLX.md)
-  - [Finjustering av Phi-3-vision (offisiell støtte)](./md/03.FineTuning/FineTuning_Vision.md)
-  - [Finjustering av Phi-3 med Kaito AKS, Azure Containers (offisiell støtte)](./md/03.FineTuning/FineTuning_Kaito.md)
-  - [Finjustering av Phi-3 og 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)
+- Finjustering av Phi-eksempler  
+  - [Finjusteringsscenarier](./md/03.FineTuning/FineTuning_Scenarios.md)  
+  - [Finjustering vs RAG](./md/03.FineTuning/FineTuning_vs_RAG.md)  
+  - [Finjustering: La Phi-3 bli en bransjeekspert](./md/03.FineTuning/LetPhi3gotoIndustriy.md)  
+  - [Finjustering av Phi-3 med AI Toolkit for VS Code](./md/03.FineTuning/Finetuning_VSCodeaitoolkit.md)  
+  - [Finjustering av Phi-3 med Azure Machine Learning Service](./md/03.FineTuning/Introduce_AzureML.md)  
+  - [Finjustering av Phi-3 med Lora](./md/03.FineTuning/FineTuning_Lora.md)  
+  - [Finjustering av Phi-3 med QLora](./md/03.FineTuning/FineTuning_Qlora.md)  
+  - [Finjustering av Phi-3 med Azure AI Foundry](./md/03.FineTuning/FineTuning_AIFoundry.md)  
+  - [Finjustering av Phi-3 med Azure ML CLI/SDK](./md/03.FineTuning/FineTuning_MLSDK.md)  
+  - [Finjustering med Microsoft Olive](./md/03.FineTuning/FineTuning_MicrosoftOlive.md)  
+  - [Finjustering med Microsoft Olive Hands-On Lab](./md/03.FineTuning/olive-lab/readme.md)  
+  - [Finjustering av Phi-3-vision med Weights and Bias](./md/03.FineTuning/FineTuning_Phi-3-visionWandB.md)  
+  - [Finjustering av Phi-3 med Apple MLX Framework](./md/03.FineTuning/FineTuning_MLX.md)  
+  - [Finjustering av Phi-3-vision (offisiell støtte)](./md/03.FineTuning/FineTuning_Vision.md)  
+  - [Finjustering av Phi-3 med Kaito AKS, Azure Containers (offisiell støtte)](./md/03.FineTuning/FineTuning_Kaito.md)  
+  - [Finjustering av Phi-3 og 3.5 Vision](https://github.com/2U1/Phi3-Vision-Finetune)  
 
-- Hands-on Lab
-  - [Utforske banebrytende modeller: LLMs, SLMs, lokal utvikling og mer](https://github.com/microsoft/aitour-exploring-cutting-edge-models)
-  - [Låse opp NLP-potensial: Finjustering med Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)
+- Hands-On Lab  
+  - [Utforske banebrytende modeller: LLMs, SLMs, lokal utvikling og mer](https://github.com/microsoft/aitour-exploring-cutting-edge-models)  
+  - [Lås opp NLP-potensial: Finjustering med Microsoft Olive](https://github.com/azure/Ignite_FineTuning_workshop)  
 
-- Akademiske forskningsartikler og publikasjoner
-  - [Textbooks Are All You Need II: phi-1.5 teknisk rapport](https://arxiv.org/abs/2309.05463)
-  - [Phi-3 teknisk rapport: En svært kapabel språkmodell lokalt på telefonen din](https://arxiv.org/abs/2404.14219)
-  - [Phi-4 teknisk rapport](https://arxiv.org/abs/2412.08905)
-  - [Phi-4-Mini teknisk rapport: Kompakte, men kraftige multimodale språkmodeller via Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)
+- Akademiske forskningsartikler og publikasjoner  
+  - [Textbooks Are All You Need II: phi-1.5 teknisk rapport](https://arxiv.org/abs/2309.05463)  
+  - [Phi-3 teknisk rapport: En svært kapabel språkmodell lokalt på din telefon](https://arxiv.org/abs/2404.14219)  
+  - [Phi-4 teknisk rapport](https://arxiv.org/abs/2412.08905)  
+  - [Phi-4-Mini teknisk rapport: Kompakte, men kraftige multimodale språkmodeller via Mixture-of-LoRAs](https://arxiv.org/abs/2503.01743)  
   - [Optimalisering av små språkmodeller for funksjonskalling i kjøretøy](https://arxiv.org/abs/2501.02342)
   - [(WhyPHI) Finjustering av PHI-3 for flervalgsspørsmål: Metodikk, resultater og utfordringer](https://arxiv.org/abs/2501.01588)
   - [Phi-4-reasoning Teknisk Rapport](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
@@ -210,43 +194,54 @@ Følg disse trinnene for å komme i gang med disse ressursene:
 
 ### Phi på Azure AI Foundry
 
-Du kan lære hvordan du bruker Microsoft Phi og hvordan du bygger ende-til-ende-løsninger på ulike maskinvareenheter. For å oppleve Phi selv, start med å teste modellene og tilpasse Phi til dine scenarier ved hjelp av [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Du kan lære mer ved å starte med [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
+Du kan lære hvordan du bruker Microsoft Phi og hvordan du bygger ende-til-ende-løsninger på dine ulike maskinvareenheter. For å oppleve Phi selv, start med å teste modellene og tilpasse Phi til dine scenarioer ved å bruke [Azure AI Foundry Azure AI Model Catalog](https://aka.ms/phi3-azure-ai). Du kan lære mer ved å begynne med [Azure AI Foundry](/md/02.QuickStart/AzureAIFoundry_QuickStart.md).
 
-**Playground**
-Hver modell har en dedikert playground for å teste modellen [Azure AI Playground](https://aka.ms/try-phi3).
+**Playground**  
+Hver modell har en dedikert testplattform [Azure AI Playground](https://aka.ms/try-phi3).
 
 ### Phi på GitHub-modeller
 
-Du kan lære hvordan du bruker Microsoft Phi og hvordan du bygger ende-til-ende-løsninger på ulike maskinvareenheter. For å oppleve Phi selv, start med å teste modellen og tilpasse Phi til dine scenarier ved hjelp av [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Du kan lære mer ved å starte med [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
+Du kan lære hvordan du bruker Microsoft Phi og hvordan du bygger ende-til-ende-løsninger på dine ulike maskinvareenheter. For å oppleve Phi selv, start med å teste modellen og tilpasse Phi til dine scenarioer ved å bruke [GitHub Model Catalog](https://github.com/marketplace/models?WT.mc_id=aiml-137032-kinfeylo). Du kan lære mer ved å begynne med [GitHub Model Catalog](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
-**Playground**
-Hver modell har en dedikert [playground for å teste modellen](/md/02.QuickStart/GitHubModel_QuickStart.md).
+**Playground**  
+Hver modell har en dedikert [testplattform for å prøve modellen](/md/02.QuickStart/GitHubModel_QuickStart.md).
 
 ### Phi på Hugging Face
 
 Du kan også finne modellen på [Hugging Face](https://huggingface.co/microsoft).
 
-**Playground**
- [Hugging Chat playground](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct)
+**Playground**  
+[Hugging Chat testplattform](https://huggingface.co/chat/models/microsoft/Phi-3-mini-4k-instruct).
 
-## Ansvarlig AI 
+## Ansvarlig AI
 
-Microsoft er forpliktet til å hjelpe kundene våre med å bruke våre AI-produkter ansvarlig, dele våre erfaringer og bygge tillitsbaserte partnerskap gjennom verktøy som Transparency Notes og Impact Assessments. Mange av disse ressursene finner du på [https://aka.ms/RAI](https://aka.ms/RAI). Microsofts tilnærming til ansvarlig AI er basert på våre AI-prinsipper om rettferdighet, pålitelighet og sikkerhet, personvern og sikkerhet, inkludering, åpenhet og ansvarlighet.
+Microsoft er forpliktet til å hjelpe våre kunder med å bruke våre AI-produkter ansvarlig, dele våre erfaringer og bygge tillitsbaserte partnerskap gjennom verktøy som Transparency Notes og Impact Assessments. Mange av disse ressursene finner du på [https://aka.ms/RAI](https://aka.ms/RAI).  
+Microsofts tilnærming til ansvarlig AI er basert på våre AI-prinsipper om rettferdighet, pålitelighet og sikkerhet, personvern og sikkerhet, inkludering, åpenhet og ansvarlighet.
 
 Storskala naturlige språk-, bilde- og tale-modeller - som de som brukes i dette eksempelet - kan potensielt oppføre seg på måter som er urettferdige, upålitelige eller støtende, og dermed forårsake skade. Vennligst konsulter [Azure OpenAI service Transparency note](https://learn.microsoft.com/legal/cognitive-services/openai/transparency-note?tabs=text) for å bli informert om risikoer og begrensninger.
 
-Den anbefalte tilnærmingen for å redusere disse risikoene er å inkludere et sikkerhetssystem i din arkitektur som kan oppdage og forhindre skadelig oppførsel. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) gir et uavhengig beskyttelseslag som kan oppdage skadelig innhold generert av brukere og AI i applikasjoner og tjenester. Azure AI Content Safety inkluderer tekst- og bilde-APIer som lar deg oppdage skadelig materiale. Innenfor Azure AI Foundry gir Content Safety-tjenesten deg muligheten til å se, utforske og prøve ut eksempelkode for å oppdage skadelig innhold på tvers av ulike modaliteter. Følgende [hurtigstart-dokumentasjon](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) veileder deg gjennom hvordan du sender forespørsler til tjenesten.
+Den anbefalte tilnærmingen for å redusere disse risikoene er å inkludere et sikkerhetssystem i din arkitektur som kan oppdage og forhindre skadelig oppførsel. [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview) gir et uavhengig beskyttelseslag som kan oppdage skadelig innhold generert av brukere og AI i applikasjoner og tjenester. Azure AI Content Safety inkluderer tekst- og bilde-APIer som lar deg oppdage skadelig materiale. Innenfor Azure AI Foundry lar Content Safety-tjenesten deg se, utforske og prøve ut eksempelkode for å oppdage skadelig innhold på tvers av ulike modaliteter. Følgende [hurtigstart-dokumentasjon](https://learn.microsoft.com/azure/ai-services/content-safety/quickstart-text?tabs=visual-studio%2Clinux&pivots=programming-language-rest) veileder deg gjennom hvordan du sender forespørsler til tjenesten.
 
-En annen faktor å ta hensyn til er den generelle applikasjonsytelsen. Med multimodale og multimodell-applikasjoner anser vi ytelse som at systemet fungerer som du og brukerne dine forventer, inkludert å ikke generere skadelige resultater. Det er viktig å vurdere ytelsen til din totale applikasjon ved hjelp av [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Du har også muligheten til å lage og evaluere med [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
+En annen faktor å ta hensyn til er den generelle applikasjonsytelsen. Med multimodale og multimodell-applikasjoner anser vi ytelse som at systemet fungerer som du og dine brukere forventer, inkludert å ikke generere skadelige resultater. Det er viktig å vurdere ytelsen til din generelle applikasjon ved å bruke [Performance and Quality and Risk and Safety evaluators](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in). Du har også muligheten til å lage og evaluere med [custom evaluators](https://learn.microsoft.com/azure/ai-studio/how-to/develop/evaluate-sdk#custom-evaluators).
 
-Du kan evaluere din AI-applikasjon i ditt utviklingsmiljø ved hjelp av [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Ved å bruke enten et testdatasett eller et mål, blir genereringene fra din generative AI-applikasjon målt kvantitativt med innebygde evalueringer eller egendefinerte evalueringer etter eget valg. For å komme i gang med Azure AI Evaluation SDK for å evaluere systemet ditt, kan du følge [hurtigstart-guiden](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Når du har utført en evalueringskjøring, kan du [visualisere resultatene i Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results). 
+Du kan evaluere din AI-applikasjon i ditt utviklingsmiljø ved å bruke [Azure AI Evaluation SDK](https://microsoft.github.io/promptflow/index.html). Gitt enten et testdatasett eller et mål, blir genereringene fra din generative AI-applikasjon målt kvantitativt med innebygde eller egendefinerte evalueringer etter ditt valg. For å komme i gang med Azure AI Evaluation SDK for å evaluere systemet ditt, kan du følge [hurtigstart-guiden](https://learn.microsoft.com/azure/ai-studio/how-to/develop/flow-evaluate-sdk). Når du har utført en evalueringskjøring, kan du [visualisere resultatene i Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-flow-results).
 
 ## Varemerker
 
-Dette prosjektet kan inneholde varemerker eller logoer for prosjekter, produkter eller tjenester. Autorisert bruk av Microsofts varemerker eller logoer er underlagt og må følge [Microsofts retningslinjer for varemerker og merkevare](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general). 
-Bruk av Microsofts varemerker eller logoer i modifiserte versjoner av dette prosjektet må ikke skape forvirring eller antyde Microsoft-sponsing. All bruk av tredjeparts varemerker eller logoer er underlagt disse tredjepartenes retningslinjer.
+Dette prosjektet kan inneholde varemerker eller logoer for prosjekter, produkter eller tjenester. Autorisert bruk av Microsofts varemerker eller logoer er underlagt og må følge [Microsofts retningslinjer for varemerker og merkevare](https://www.microsoft.com/legal/intellectualproperty/trademarks/usage/general).  
+Bruk av Microsofts varemerker eller logoer i modifiserte versjoner av dette prosjektet må ikke forårsake forvirring eller antyde Microsoft-sponsing. All bruk av tredjeparts varemerker eller logoer er underlagt disse tredjepartenes retningslinjer.
+
+## Få hjelp
+
+Hvis du står fast eller har spørsmål om å bygge AI-applikasjoner, bli med:
+
+[![Azure AI Foundry Discord](https://img.shields.io/badge/Discord-Azure_AI_Foundry_Community_Discord-blue?style=for-the-badge&logo=discord&color=5865f2&logoColor=fff)](https://aka.ms/foundry/discord)
+
+Hvis du har produktfeedback eller opplever feil under utvikling, besøk:
+
+[![Azure AI Foundry Developer Forum](https://img.shields.io/badge/GitHub-Azure_AI_Foundry_Developer_Forum-blue?style=for-the-badge&logo=github&color=000000&logoColor=fff)](https://aka.ms/foundry/forum)
 
 ---
 
 **Ansvarsfraskrivelse**:  
-Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi tilstreber nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for eventuelle misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
+Dette dokumentet er oversatt ved hjelp av AI-oversettelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selv om vi streber etter nøyaktighet, vær oppmerksom på at automatiserte oversettelser kan inneholde feil eller unøyaktigheter. Det originale dokumentet på sitt opprinnelige språk bør anses som den autoritative kilden. For kritisk informasjon anbefales profesjonell menneskelig oversettelse. Vi er ikke ansvarlige for misforståelser eller feiltolkninger som oppstår ved bruk av denne oversettelsen.
