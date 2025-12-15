@@ -201,7 +201,7 @@ Phiはクラウドやエッジデバイスにデプロイ可能で、限られ�
   - [Phi-3 技術レポート: 高性能な言語モデルをスマートフォンでローカルに](https://arxiv.org/abs/2404.14219)
   - [Phi-4 技術レポート](https://arxiv.org/abs/2412.08905)
   - [Phi-4-Mini 技術レポート: Mixture-of-LoRAs によるコンパクトで強力なマルチモーダル言語モデル](https://arxiv.org/abs/2503.01743)
-  - [車載機能呼び出しのための小型言語モデルの最適化](https://arxiv.org/abs/2501.02342)
+  - [車載機能呼び出しのための小規模言語モデルの最適化](https://arxiv.org/abs/2501.02342)
   - [(WhyPHI) PHI-3を選択式質問応答に特化させる: 方法論、結果、課題](https://arxiv.org/abs/2501.01588)
   - [Phi-4推論技術レポート](https://www.microsoft.com/en-us/research/wp-content/uploads/2025/04/phi_4_reasoning.pdf)
   - [Phi-4-mini推論技術レポート](https://huggingface.co/microsoft/Phi-4-mini-reasoning/blob/main/Phi-4-Mini-Reasoning.pdf)
