@@ -1,0 +1,98 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "a2a54312eea82ac654fb0f6d39b1f772",
+  "translation_date": "2025-12-21T21:35:06+00:00",
+  "source_file": "md/02.Application/01.TextAndChat/Phi3/E2E_OpenVino_Chat.md",
+  "language_code": "kn"
+}
+-->
+[OpenVINO ಚಾಟ್ ಉದಾಹರಣೆ](../../../../code/06.E2E/E2E_OpenVino_Chat_Phi3-instruct.ipynb)
+
+ಈ ಕೋಡ್ ಒಂದು ಮಾದರಿಯನ್ನು OpenVINO ಸ್ವರೂಪಕ್ಕೆ ರಫ್ತುಮಾಡುತ್ತದೆ, ಅದನ್ನು ಲೋಡ್ ಮಾಡುತ್ತದೆ ಮತ್ತು ನೀಡಲಾದ ಪ್ರಾಂಪ್ಟ್‌ಗೆ ಪ್ರತಿಕ್ರಿಯೆ ರಚಿಸಲು ಬಳಸುತ್ತದೆ. 
+
+1. **ಮಾದರಿಯನ್ನು ರಫ್ತುಮಾಡುವುದು**:
+   ```bash
+   optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task text-generation-with-past --weight-format int4 --group-size 128 --ratio 0.6 --sym --trust-remote-code ./model/phi3-instruct/int4
+   ```
+   - ಈ ಆಜ್ಞೆ `optimum-cli` ಉಪಕರಣವನ್ನು ಬಳಸಿಕೊಂಡು ಮಾದರಿಯನ್ನು OpenVINO ಸ್ವರೂಪದಲ್ಲಿ ರಫ್ತುಮಾಡುತ್ತದೆ, ಇದು ಪರಿಣಾಮಕಾರಿ ಇನ್‌ಫರೆನ್ಸ್‌ಗೆ ಸೂಕ್ತವಾಗಿರುತ್ತದೆ.
+   - ರಫ್ತುಮಾಡಲಾಗುತ್ತಿರುವ ಮಾದರಿ `"microsoft/Phi-3-mini-4k-instruct"` ಆಗಿದ್ದು, ಇದು ಹಿಂದಿನ.context ಆಧಾರದ ಮೇಲೆ ಪಠ್ಯವನ್ನು ರಚಿಸುವ ಕಾರ್ಯಕ್ಕಾಗಿ ಹೊಂದಿಸಲಾಗಿದೆ.
+   - ಮಾದರಿಯ ತೂಕಗಳನ್ನು 4-ಬಿಟ್ ಪೂರ್ಣಾಂಕಗಳಾಗಿ (`int4`) ಕಾಂಟಿಕೆಯು ಮಾಡಲಾಗಿದೆ, ಇದು ಮಾದರಿಯ ಗಾತ್ರವನ್ನು ಕಡಿಮೆ ಮಾಡುತ್ತದೆ ಮತ್ತು ಪ್ರಕ್ರಿಯೆಯನ್ನು ವೇಗಗೊಳಿಸುತ್ತದೆ.
+   - `group-size`, `ratio`, ಮತ್ತು `sym` ಮುಂತಾದ ಇತರ ಪರಿಮಾಣಗಳು ಕ್ವಾಂಟೈಜೆ이션 ಪ್ರಕ್ರಿಯೆಯನ್ನು ಸೂಕ್ಷ್ಮಗೊಳಿಸಲು ಬಳಕೆಯಾಗುತ್ತವೆ.
+   - ರಫ್ತುಮಾಡಿದ ಮಾದರಿ `./model/phi3-instruct/int4` ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಉಳಿಸಲಾಗುತ್ತದೆ.
+
+2. **ಅವಶ್ಯಕ ಲೈಬ್ರರಿಗಳನ್ನು ಆಮದು ಮಾಡಿಕೊಳ್ಳುವುದು**:
+   ```python
+   from transformers import AutoConfig, AutoTokenizer
+   from optimum.intel.openvino import OVModelForCausalLM
+   ```
+   - ಈ ಸಾಲುಗಳು `transformers` ಲೈಬ್ರರಿ ಮತ್ತು `optimum.intel.openvino` ಮೋಡ್ಯೂಲ್‌ನ ಕ್ಲಾಸ್‌ಗಳನ್ನು ಆಮದು ಮಾಡುತ್ತವೆ, ಅವು ಮಾದರಿಯನ್ನು ಲೋಡ್ ಮಾಡಲು ಮತ್ತು ಬಳಸಲು ಬೇಕಾಗುತ್ತವೆ.
+
+3. **ಮಾದರಿ ಡೈರೆಕ್ಟರಿ ಮತ್ತು ಸಂರಚನೆಯನ್ನು ಸ್ಥಾಪಿಸುವುದು**:
+   ```python
+   model_dir = './model/phi3-instruct/int4'
+   ov_config = {
+       "PERFORMANCE_HINT": "LATENCY",
+       "NUM_STREAMS": "1",
+       "CACHE_DIR": ""
+   }
+   ```
+   - `model_dir` ಎಂದರೆ ಮಾದರಿ ಫೈಲ್‌ಗಳು ಯಾವ ಸ್ಥಳದಲ್ಲಿವೆ ಎಂಬುದನ್ನು ಸೂಚಿಸುತ್ತದೆ.
+   - `ov_config` ಒಂದು ಡಿಕ್ಷನರಿ ಆಗಿದ್ದು OpenVINO ಮಾದರಿಯನ್ನು ಕಡಿಮೆ ತಡತೆ ಕುರಿತಾಗಿ ಆದ್ಯತೆಯನ್ನಿಟ್ಟುಕೊಳ್ಳಲು, ಒಂದು ಇನ್‌ಫರೆನ್ಸ್ ಸ್ಟ್ರೀಮ್ ಬಳಸಲು ಮತ್ತು ಕ್ಯಾಶ್ ಡೈರೆಕ್ಟರಿ ಬಳಸದಂತೆ ಸಂರಚಿಸುತ್ತದೆ.
+
+4. **ಮಾದರಿಯನ್ನು ಲೋಡ್ ಮಾಡುವುದು**:
+   ```python
+   ov_model = OVModelForCausalLM.from_pretrained(
+       model_dir,
+       device='GPU.0',
+       ov_config=ov_config,
+       config=AutoConfig.from_pretrained(model_dir, trust_remote_code=True),
+       trust_remote_code=True,
+   )
+   ```
+   - ಈ ಸಾಲು ನಿರ್ದಿಷ್ಟ ಡೈರೆಕ್ಟರಿಯಿಂದ ಮಾದರಿಯನ್ನು ಲೋಡ್ ಮಾಡುತ್ತದೆ, ಮೊದಲು ನಿರ್ಧರಿಸಿದ್ದ ಸಂರಚನಾ ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಬಳಸುತ್ತிறது. ಅಗತ್ಯವಿದ್ದರೆ ರಿಮೋಟ್ ಕೋಡ್ ಕಾರ್ಯಗತಗೊಳಿಸುವಿಕೆಯನ್ನು ಸಹ ಅನುಮತಿಸುತ್ತದೆ.
+
+5. **ಟೋಕನೈಸರ್ ಅನ್ನು ಲೋಡ್ ಮಾಡುವುದು**:
+   ```python
+   tok = AutoTokenizer.from_pretrained(model_dir, trust_remote_code=True)
+   ```
+   - ಈ ಸಾಲು ಟೋಕನೈಸರ್ ಅನ್ನು ಲೋಡ್ ಮಾಡುತ್ತದೆ, ಅದು ಪಠ್ಯವನ್ನು ಮಾದರಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳಬಹುದಾದ ಟೋಕನ್‌ಗಳಾಗಿ ಪರಿವರ್ತಿಸಲು ಹೊಣೆಗಾರವಾಗಿದೆ.
+
+6. **ಟೋಕನೈಸರ್ ಆರ್ಗ್ಯುಮೆಂಟ್‌ಗಳನ್ನು ಸ್ಥಾಪಿಸುವುದು**:
+   ```python
+   tokenizer_kwargs = {
+       "add_special_tokens": False
+   }
+   ```
+   - ಈ ಡಿಕ್ಷನರಿ ವಿಶೇಷ ಟೋಕನ್‌ಗಳನ್ನು ಟೋಕನೈಸ್ ಮಾಡಿದ ಔಟ್‌ಪುಟ್‌ಗೆ ಸೇರಿಸುವುದಿಲ್ಲ ಎಂದು ನಿರ್ದಿಷ್ಟಪಡಿಸುತ್ತದೆ.
+
+7. **ಪ್ರಾಂಪ್ಟ್‌ನ್ನು ನಿರ್ಧರಿಸುವುದು**:
+   ```python
+   prompt = "<|system|>You are a helpful AI assistant.<|end|><|user|>can you introduce yourself?<|end|><|assistant|>"
+   ```
+   - ಈ ಸ್ಟ್ರಿಂಗ್ ಒಂದು ಸಂವಾದ ಪ್ರಾಂಪ್ಟ್ ಅನ್ನು ಸಿದ್ಧಪಡಿಸುತ್ತದೆ,ಲ್ಲಿ ಬಳಕೆದಾರನು AI ಸಹಾಯಕರಿಗೆ ತನ್ನ ಪರಿಚಯವನ್ನು ಮಾಡುವಂತೆ ಕೇಳುತ್ತಾನೆ.
+
+8. **ಪ್ರಾಂಪ್ಟ್ ಅನ್ನು ಟೋಕನೈಸ್ ಮಾಡುವುದು**:
+   ```python
+   input_tokens = tok(prompt, return_tensors="pt", **tokenizer_kwargs)
+   ```
+   - ಈ ಸಾಲು ಪ್ರಾಂಪ್ಟ್ ಅನ್ನು ಮಾದರಿ ಪ್ರಕ್ರಿಯೆ ಮಾಡಬಹುದಾದ ಟೋಕನ್‌ಗಳಾಗಿ ಪರಿವರ್ತಿಸುತ್ತದೆ, ಫಲಿತಾಂಶವನ್ನು PyTorch ಟೆನ್ಸರ್‌ಗಳಾಗಿ ಮರಳಿ ನೀಡುತ್ತದೆ.
+
+9. **ಪ್ರತಿಕ್ರಿಯೆ ರಚಿಸುವುದು**:
+   ```python
+   answer = ov_model.generate(**input_tokens, max_new_tokens=1024)
+   ```
+   - ಈ ಸಾಲು ಮಾದರಿಯನ್ನು ಬಳಸಿಕೊಂಡು ಇನ್‌ಪುಟ್ ಟೋಕನ್‌ಗಳ ಆಧಾರದ ಮೇಲೆ ಪ್ರತಿಕ್ರಿಯೆ ರಚಿಸುತ್ತದೆ, ಅತ್ಯಧಿಕ 1024 ಹೊಸ ಟೋಕನ್‌ಗಳ ಗರಿಷ್ಠದೊಂದಿಗೆ.
+
+10. **ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಡಿಕೋಡ್ ಮಾಡುವುದು**:
+    ```python
+    decoded_answer = tok.batch_decode(answer, skip_special_tokens=True)[0]
+    ```
+    - ಈ ಸಾಲು ರಚಿಸಲಾದ ಟೋಕನ್‌ಗಳನ್ನು ಮಾನವ ಓದು ಅವರಿಗೆ ಹೊಂದುವ ಸ್ಟ್ರಿಂಗ್‌ಗೆ ಪರಿವರ್ತಿಸುತ್ತದೆ, ಯಾವುದೇ ವಿಶೇಷ ಟೋಕನ್‌ಗಳನ್ನು ಬಿಟ್ಟುಕೊಡದು, ಮತ್ತು ಮೊದಲ ಫಲಿತಾಂಶವನ್ನು ಪಡೆಯುತ್ತದೆ.
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+ಜವಾಬ್ದಾರಿಯ ನಿರಾಕರಣೆ:
+ಈ ದಾಖಲೆ ಅನ್ನು AI ಅನುವಾದ ಸೇವೆ [Co-op Translator](https://github.com/Azure/co-op-translator) ಬಳಸಿ ಅನುವಾದಿಸಲಾಗಿದೆ. ನಾವು ಶುದ್ಧತೆಗೆ ಪ್ರಯತ್ನಿಸಿದರೂ, ಸ್ವಯಂಚಾಲಿತ ಅನುವಾದಗಳಲ್ಲಿ ದೋಷಗಳು ಅಥವಾ ಅಸತ್ಯತೆಗಳು ಇರungalಲೆಂದು ದಯವಿಟ್ಟು ಗಮನಿಸಿ. ಮೂಲ ಭಾಷೆಯಲ್ಲಿನ ಮೂಲ ದಸ್ತಾವೇಜನ್ನು ಅಧಿಕೃತ ಮೂಲವಾಗಿ ಪರಿಗಣಿಸಬೇಕು. ಗಂಭೀರ/ಅತ್ಯವಶ್ಯಕ ಮಾಹಿತಿಗಾಗಿ ವೃತ್ತಿಪರ ಮಾನವ ಅನುವಾದವನ್ನು ಶಿಫಾರಸು ಮಾಡಲಾಗುತ್ತದೆ. ಈ ಅನುವಾದವನ್ನು ಬಳಕೆ ಮಾಡುವುದರಿಂದ ಉಂಟಾಗುವ ಯಾವುದೇ ತಪ್ಪು ಗ್ರಹಿಕೆಗಳು ಅಥವಾ ಅರ್ಥತಪ್ಪುಗಳಿಗಾಗಿ ನಾವು ಜವಾಬ್ದಾರಿಯಲ್ಲ.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
