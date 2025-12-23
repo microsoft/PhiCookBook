@@ -53,7 +53,7 @@ python -m mlx_lm.convert --hf-path microsoft/Phi-3-mini-4k-instruct
 
 ```
 
-***Note：*** モデルはmlx_lm.convertを使って量子化でき、デフォルトの量子化はINT4です。この例ではPhi-3-miniをINT4に量子化しています。
+***注意：*** モデルはmlx_lm.convertを使って量子化でき、デフォルトの量子化はINT4です。この例ではPhi-3-miniをINT4に量子化しています。
 
 モデルはmlx_lm.convertで量子化可能で、デフォルトはINT4です。この例ではPhi-3-miniをINT4に量子化し、量子化後のモデルはデフォルトのディレクトリ ./mlx_model に保存されます。
 
@@ -76,7 +76,7 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.ja.png)
 
-***Note:*** このサンプルは[こちらのリンク](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)からご覧ください。
+***注意:*** このサンプルは[こちらのリンク](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)からご覧ください。
 
 
 ## **リソース**
@@ -86,4 +86,6 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 2. Apple MLX GitHubリポジトリ [https://github.com/ml-explore](https://github.com/ml-explore)
 
 **免責事項**：  
+
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
+
