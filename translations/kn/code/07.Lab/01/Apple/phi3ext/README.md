@@ -1,0 +1,85 @@
+<!--
+CO_OP_TRANSLATOR_METADATA:
+{
+  "original_hash": "be0b2937160c486180ded27e4f14adeb",
+  "translation_date": "2025-12-21T16:13:33+00:00",
+  "source_file": "code/07.Lab/01/Apple/phi3ext/README.md",
+  "language_code": "kn"
+}
+-->
+# phi3ext README
+
+ಇದು ನಿಮ್ಮ ವಿಸ್ತರಣೆ "phi3ext" 的 README。在写完简要描述后，我们建议包含以下章节。
+
+## Features
+
+ವಿಸ್ತರಣೆಯ ನಿರ್ದಿಷ್ಟ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ವಿವರಣೆ ಮಾಡಿ, ವಿಸ್ತರಣೆ ಕಾರ್ಯನಿರ್ವಹಣೆಯ ಸ್ಕ್ರೀನ್‌ಶಾಟ್‌ಗಳನ್ನು ಸೇರಿಸಿ. ಚಿತ್ರಗಳ ಪಥವು ಈ README ಫೈಲಿನ نسبtive ಆಗಿದೆ.
+
+\!\[ವೈಶಿಷ್ಟ್ಯ X\]\(images/feature-x.png\)
+
+> ಸೂಚನೆ：ಬಹುತೇಕ ಜನಪ್ರಿಯ ವಿಸ್ತರಣೆಗಳು ಆನಿಮೇಷನ್ ಬಳಸುತ್ತವೆ. ಇದು ನಿಮ್ಮ ವಿಸ್ತರಣೆಯನ್ನು ಪ್ರದರ್ಶಿಸಲು ಅತ್ಯುತ್ತಮ ವಿಧಾನವಾಗಿದೆ! ನಾವು ಸಂಕ್ಷಿಪ್ತ, ಕೆಂದ್ರೀಕৃত ಆನಿಮೇಷನ್‌ಗಳನ್ನು ಶಿಫಾರಸು ಮಾಡುತ್ತೇವೆ, ಅನುಸರಿಸಲು ಸುಲಭವಾಗುವಂತೆ。
+
+## Requirements
+
+ಯಾವುದೇ ಅಗತ್ಯಗಳು ಅಥವಾ ಅವಲಂಬನೆಗಳು ಇದ್ದರೆ, ಅವುಗಳನ್ನು ಹಾಗೂ ಅವುಗಳನ್ನು ಹೇಗೆ ಸ್ಥಾಪಿಸಿ ಮತ್ತು ಸಂರಚಿಸಬೇಕೆಂದು ವಿವರಿಸುವ ವಿಭಾಗವನ್ನು ಸೇರಿಸಿ。
+
+## Extension Settings
+
+ನಿಮ್ಮ ವಿಸ್ತರಣೆ `contributes.configuration` ಎಕ್ಸ್ಟೆನ್ಶನ್ ಪಾಯಿಂಟ್ ಮೂಲಕ ಯಾವುದೇ VS Code ಸೆಟ್ಟಿಂಗ್‌ಗಳನ್ನು ಸೇರಿಸಿದ್ದರೆ, ಅವನ್ನು ಇಲ್ಲಿ ಸೇರಿಸಿ。
+
+例如：
+
+此扩展贡献了以下设置：
+
+* `myExtension.enable`: ಈ ವಿಸ್ತರಣೆಯನ್ನು ಸಕ್ರಿಯ / ನಿಷ್ಕ್ರಿಯಗೊಳಿಸಲು。
+* `myExtension.thing`: 将其设置为 `blah` 来执行某事。
+
+## Known Issues
+
+ಪ್ರಸಿದ್ಧ ಸಮಸ್ಯೆಗಳನ್ನ ಗುರುತಿಸುವುದು ಬಳಕೆದಾರರು ನೀವುಗಳಿಗೆ ಸಲ್ಲಿಸುವ ಮರು-open ಸಂಶಯಗಳನ್ನು ಕಡಿಮೆ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ。
+
+## Release Notes
+
+ಬಳಕೆದಾರರು ನಿಮಗೆ ವಿಸ್ತರಣೆಯನ್ನು ನವೀಕರಿಸಿದಾಗ ನೀಡುವ ಬಿಡುಗಡೆಯ نوಟ್ಗಳನ್ನು ಮೆಚ್ಚುತ್ತಾರೆ。
+
+### 1.0.0
+
+ಆರಂಭಿಕ ಬಿಡುಗಡೆ ...
+
+### 1.0.1
+
+ಸಮಸ್ಯೆ # ಸರಿಪಡಿಸಲಾಗಿದೆ。
+
+### 1.1.0
+
+X、Y 和 Z 功能已添加。
+
+---
+
+## Following extension guidelines
+
+ದಯವಿಟ್ಟು ನೀವು ವಿಸ್ತರಣೆ ಮಾರ್ಗಸೂಚಿಯನ್ನು ಓದಿ ವಿಸ್ತರಣೆ ರಚನೆಗೆ ಉತ್ತಮ ಅಭ್ಯಾಸಗಳನ್ನು ಅನುಸರಿಸಿದ್ದೀರಿ ಎಂಬುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ。
+
+* [ವಿಸ್ತರಣೆ ಮಾರ್ಗಸೂಚಿ](https://code.visualstudio.com/api/references/extension-guidelines?WT.mc_id=aiml-137032-kinfeylo)
+
+## Working with Markdown
+
+ನೀವು Visual Studio Code ಬಳಸಿಕೊಂಡು ನಿಮ್ಮ README ಅನ್ನು ಬರೆಯಬಹುದು. ಇಲ್ಲಿ ಕೆಲವು ಉಪಯುಕ್ತ ಎಡಿಟರ್ শর್ಟ್‌ಕಟ್ಗಳು:
+
+* ಎಡಿಟರ್ ವಿಭಜನೆ (`Cmd+\` 在 macOS 上或 `Ctrl+\` 在 Windows 和 Linux 上)。
+* ಪ್ರಿವ್ಯೂ切换 (`Shift+Cmd+V` 在 macOS 上或 `Shift+Ctrl+V` 在 Windows 和 Linux 上)。
+* 按 `Ctrl+Space` (Windows、Linux、macOS) 查看 Markdown 代码片段列表。
+
+## For more information
+
+* [Visual Studio Code 的 Markdown 支持](http://code.visualstudio.com/docs/languages/markdown?WT.mc_id=aiml-137032-kinfeylo)
+* [Markdown 语法参考](https://help.github.com/articles/markdown-basics/)
+
+**ಆನಂದಿಸಿ！**
+
+---
+
+<!-- CO-OP TRANSLATOR DISCLAIMER START -->
+ಅಸ್ವೀಕರಣ:
+ಈ ದಸ್ತಾವೇಜನ್ನು AI ಅನುವಾದ ಸೇವೆ Co-op Translator (https://github.com/Azure/co-op-translator) ಬಳಸಿ ಅನುವಾದಿಸಲಾಗಿದೆ. ನಾವು ಶುದ್ಧತೆಗೆ ಯತ್ನಿಸುವುದಾದರೂ, ಸ್ವಯಂಚಾಲಿತ ಅನುವಾದಗಳಲ್ಲಿ ದೋಷಗಳು ಅಥವಾ ಅಸತ್ಯತೆಗಳಾಗಬಹುದೆಂದು ದಯವಿಟ್ಟು ಗಮನಿಸಿ. ಮೂಲ ಭಾಷೆಯಲ್ಲಿನ ದಸ್ತಾವೇಜನ್ನು ಅಧಿಕೃತ ಮೂಲವೆಂದು ಪರಿಗಣಿಸಬೇಕು. ಗಂಭೀರ ಅಥವಾ ನಿರ್ಣಾಯಕ ಮಾಹಿತಿಗಾಗಿ ವೃತ್ತಿಪರ ಮಾನವ ಅನುವಾದವನ್ನು ಶಿಫಾರಸು ಮಾಡಲಾಗಿದೆ. ಈ ಅನುವಾದದ ಬಳಕೆಯಿಂದ ಉಂಟಾಗುವ ಯಾವುದೇ ತಪ್ಪಾಗಿ ಅರ್ಥಮಾಡಿಕೊಳ್ಳುವಿಕೆಗಳು ಅಥವಾ ದುರವ್ಯಾಖ್ಯಾನಗಳಿಗಾಗಿ ನಾವು ಜವಾಬ್ದಾರಿಯಲ್ಲ.
+<!-- CO-OP TRANSLATOR DISCLAIMER END -->
