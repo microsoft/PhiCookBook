@@ -32,7 +32,7 @@ Kaitoは、Kubernetesのカスタムリソース定義（CRD）とコントロ�
 
 - **Workspace controller**：`workspace`カスタムリソースを調整し、ノードの自動プロビジョニングをトリガーする`machine`（後述）カスタムリソースを作成し、モデルのプリセット構成に基づいて推論ワークロード（`deployment`または`statefulset`）を作成します。
 - **Node provisioner controller**：このコントローラーは[gpu-provisioner helm chart](https://github.com/Azure/gpu-provisioner/tree/main/charts/gpu-provisioner)内で*gpu-provisioner*と呼ばれています。`machine` CRDは[Karpenter](https://sigs.k8s.io/karpenter)由来で、workspace controllerと連携します。Azure Kubernetes Service（AKS）のAPIと統合し、AKSクラスターに新しいGPUノードを追加します。
-> Note: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner)はオープンソースのコンポーネントです。もし他のコントローラーが[Karpenter-core](https://sigs.k8s.io/karpenter) APIをサポートしていれば、置き換え可能です。
+> 注意: [*gpu-provisioner*](https://github.com/Azure/gpu-provisioner)はオープンソースのコンポーネントです。もし他のコントローラーが[Karpenter-core](https://sigs.k8s.io/karpenter) APIをサポートしていれば、置き換え可能です。
 
 ## インストール
 
@@ -176,4 +176,5 @@ $ kubectl run -it --rm --restart=Never curl --image=curlimages/curl -- curl -X P
 ```
 
 **免責事項**：  
+
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。
