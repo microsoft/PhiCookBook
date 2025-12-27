@@ -26,7 +26,7 @@ On mobile devices or IoT devices, we can convert Phi-3.x models to INT4, while A
 
 At present, different hardware manufacturers have different frameworks to support generative models, such as Intel's OpenVINO, Qualcomm's QNN, Apple's MLX, and Nvidia's CUDA, etc., combined with model quantization to complete local deployment.
 
-In terms of technology, we have different format support after quantization, such as PyTorch / Tensorflow format, GGUF, and ONNX. I have done a format comparison and application scenarios between GGUF and ONNX. Here I recommend the ONNX quantization format, which has good support from the model framework to the hardware. In this chapter, we will focus on ONNX Runtime for GenAI, OpenVINO, and Apple MLX to perform model quantization (if you have a better way, you can also give it to us by submitting PR)
+In terms of technology, we have different format support after quantization, such as PyTorch / TensorFlow format, GGUF, and ONNX. I have done a format comparison and application scenarios between GGUF and ONNX. Here I recommend the ONNX quantization format, which has good support from the model framework to the hardware. In this chapter, we will focus on ONNX Runtime for GenAI, OpenVINO, and Apple MLX to perform model quantization (if you have a better way, you can also give it to us by submitting PR)
 
 **This chapter includes**
 
