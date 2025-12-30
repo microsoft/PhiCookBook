@@ -80,7 +80,7 @@ Microsoftの責任あるAI原則には以下が含まれます：
 *画像出典: [責任ある AI とは?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
 > [!NOTE]
-> Microsoftの責任あるAI原則について詳しくは、[What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)をご覧ください。
+> Microsoftの責任あるAI原則について詳しくは、[責任ある AI とは?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2?wt.mc_id=studentamb_279723)をご覧ください。
 
 #### 安全性指標
 
@@ -524,7 +524,7 @@ Azure AI FoundryでPrompt flowと統合されたファインチューニング�
 
 #### ドキュメント
 
-- [Responsible AIダッシュボードを使ったAIシステムの評価](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
+- [責任ある AI ダッシュボードを使ったAIシステムの評価](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai-dashboard?view=azureml-api-2&source=recommendations?wt.mc_id=studentamb_279723)
 - [生成AIの評価と監視指標](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-metrics-built-in?tabs=definition?wt.mc_id=studentamb_279723)
 - [Azure AI Foundryドキュメント](https://learn.microsoft.com/azure/ai-studio/?wt.mc_id=studentamb_279723)
 - [Prompt flowドキュメント](https://microsoft.github.io/promptflow/?wt.mc_id=studentamb_279723)
@@ -543,4 +543,5 @@ Azure AI FoundryでPrompt flowと統合されたファインチューニング�
 **免責事項**：  
 
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+
 
