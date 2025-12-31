@@ -353,7 +353,7 @@ Azure AI Foundry にカスタム接続を追加しました。次に、以下の
     ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.ja.png)
 
 > [!NOTE]
-> Azure AI Foundry での Prompt flow の詳細な使い方については、[Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) を参照してください。
+> Azure AI Foundry での Prompt flow の詳細な使い方については、[Microsoft Foundry ポータルでのプロンプト フロー](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) を参照してください。
 
 1. **Chat input** と **Chat output** を選択して、モデルとのチャットを有効にします。
 
@@ -543,5 +543,6 @@ Azure AI FoundryでPrompt flowと統合されたファインチューニング�
 **免責事項**：  
 
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
+
 
 
