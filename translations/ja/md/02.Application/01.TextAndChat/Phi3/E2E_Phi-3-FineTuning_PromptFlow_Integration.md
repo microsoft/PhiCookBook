@@ -689,7 +689,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > *fine_tune.py* ファイル内の `pretrained_model_name` を `"microsoft/Phi-3-mini-4k-instruct"` から任意のモデル名に変更できます。例えば、`"microsoft/Phi-3.5-mini-instruct"` に変更すると、Phi-3.5-mini-instructモデルでファインチューニングが行えます。使用したいモデル名は [Hugging Face](https://huggingface.co/) で検索し、名前をコピーしてスクリプトの `pretrained_model_name` フィールドに貼り付けてください。
 >
-> :::image type="content" source="../../imgs/03/FineTuning-PromptFlow/finetunephi3.5.png" alt-text="Phi-3.5のファインチューニング":::
+> <image type="content" src="../../../../../../translated_images/finetunephi3.5.a55fc02962430af50512436bb262aa9d3bf4ef09c7c9c791b4cca5f8298e9f4d.ja.png" alt-text="Phi-3.5のファインチューニング">
 >
 
 #### *setup_ml.py* ファイルにコードを追加
@@ -1215,4 +1215,5 @@ CO_OP_TRANSLATOR_METADATA:
     ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.ja.png)
 
 **免責事項**：  
+
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性を期しておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語による文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。
