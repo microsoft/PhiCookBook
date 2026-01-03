@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 بعد تدريب المحولات في البيئة البعيدة، استخدم تطبيق Gradio بسيط للتفاعل مع النموذج.
 
-![اكتمل التخصيص](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.ar.png)
+![اكتمل التخصيص](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.ar.png)
 
 ### توفير موارد Azure  
 يجب عليك إعداد موارد Azure للاستدلال عن بُعد من خلال تنفيذ الأمر `AI Toolkit: Provision Azure Container Apps for inference` من لوحة الأوامر. خلال هذه العملية، سيُطلب منك اختيار اشتراك Azure ومجموعة الموارد الخاصة بك.  
-![توفير مورد الاستدلال](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.ar.png)
+![توفير مورد الاستدلال](../../../../../translated_images/command-provision-inference.467afc8d351642fc.ar.png)
 
 بشكل افتراضي، يجب أن يتطابق الاشتراك ومجموعة الموارد الخاصة بالاستدلال مع تلك المستخدمة في التخصيص. سيستخدم الاستدلال نفس بيئة تطبيق Azure Container App ويصل إلى النموذج ومحول النموذج المخزن في Azure Files، والتي تم إنشاؤها أثناء خطوة التخصيص.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### النشر للاستدلال  
 إذا رغبت في تعديل كود الاستدلال أو إعادة تحميل نموذج الاستدلال، يرجى تنفيذ الأمر `AI Toolkit: Deploy for inference`. سيؤدي ذلك إلى مزامنة أحدث كود لديك مع ACA وإعادة تشغيل النسخة.
 
-![النشر للاستدلال](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.ar.png)
+![النشر للاستدلال](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.ar.png)
 
 بعد إتمام النشر بنجاح، يصبح النموذج جاهزًا للتقييم باستخدام نقطة النهاية هذه.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 يمكنك الوصول إلى واجهة برمجة تطبيقات الاستدلال بالنقر على زر "*الانتقال إلى نقطة نهاية الاستدلال*" المعروض في إشعار VSCode. بدلاً من ذلك، يمكن العثور على نقطة نهاية واجهة الويب API تحت `ACA_APP_ENDPOINT` في ملف `./infra/inference.config.json` وفي لوحة الإخراج.
 
-![نقطة نهاية التطبيق](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.ar.png)
+![نقطة نهاية التطبيق](../../../../../translated_images/notification-deploy.446e480a44b1be58.ar.png)
 
 > **ملاحظة:** قد يستغرق تفعيل نقطة نهاية الاستدلال بضع دقائق لتصبح جاهزة تمامًا.
 
