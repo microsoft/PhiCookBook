@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Scénarios de Fine Tuning
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.fr.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.fr.png)
 
 **Plateforme** Cela inclut diverses technologies telles que Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito et ONNX Runtime.
 
@@ -24,7 +24,7 @@ Le processus de fine-tuning avec les technologies Microsoft implique plusieurs c
 
 Affinez le modèle en utilisant le fine-tuning hébergé, sans avoir besoin de créer et gérer des ressources de calcul.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.fr.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.fr.png)
 
 Le fine-tuning serverless est disponible pour les modèles Phi-3-mini et Phi-3-medium, permettant aux développeurs de personnaliser rapidement et facilement les modèles pour des scénarios cloud et edge sans avoir à gérer les ressources de calcul. Nous avons également annoncé que Phi-3-small est désormais disponible via notre offre Models-as-a-Service, permettant aux développeurs de démarrer rapidement et facilement le développement IA sans avoir à gérer l’infrastructure sous-jacente.
 
@@ -32,7 +32,7 @@ Le fine-tuning serverless est disponible pour les modèles Phi-3-mini et Phi-3-m
 
 Les utilisateurs gèrent leur propre infrastructure de calcul afin d’affiner leurs modèles.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.fr.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.fr.png)
 
 [Exemple de Fine Tuning](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Les utilisateurs gèrent leur propre infrastructure de calcul afin d’affiner l
 
 ## Exemples de Performance de Fine Tuning
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.fr.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.fr.png)
 
 **Avertissement** :  
 Ce document a été traduit à l’aide du service de traduction automatique [Co-op Translator](https://github.com/Azure/co-op-translator). Bien que nous nous efforcions d’assurer l’exactitude, veuillez noter que les traductions automatiques peuvent contenir des erreurs ou des inexactitudes. Le document original dans sa langue d’origine doit être considéré comme la source faisant foi. Pour les informations critiques, une traduction professionnelle réalisée par un humain est recommandée. Nous déclinons toute responsabilité en cas de malentendus ou de mauvaises interprétations résultant de l’utilisation de cette traduction.

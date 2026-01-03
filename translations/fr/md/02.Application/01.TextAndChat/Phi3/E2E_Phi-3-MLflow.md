@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) est une plateforme open-source conçue pour gérer le cycle de vie complet du machine learning.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.fr.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.fr.png)
 
 MLFlow est utilisé pour gérer le cycle de vie du ML, incluant l’expérimentation, la reproductibilité, le déploiement et un registre central de modèles. MLflow propose actuellement quatre composants.
 
@@ -22,7 +22,7 @@ MLFlow est utilisé pour gérer le cycle de vie du ML, incluant l’expérimenta
 
 Il inclut des fonctionnalités pour suivre les expériences, empaqueter le code en exécutions reproductibles, ainsi que partager et déployer des modèles. MLFlow est intégré à Databricks et supporte une variété de bibliothèques ML, ce qui le rend indépendant de la bibliothèque utilisée. Il peut être utilisé avec n’importe quelle bibliothèque de machine learning et dans n’importe quel langage de programmation, grâce à une API REST et une interface en ligne de commande pour plus de commodité.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.fr.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.fr.png)
 
 Les principales fonctionnalités de MLFlow incluent :
 
@@ -37,7 +37,7 @@ MLFlow supporte également la boucle MLOps, qui comprend la préparation des don
 
 Dans cet exemple E2E, nous allons démontrer deux approches différentes pour créer un wrapper autour du petit modèle de langage Phi-3 (SLM) puis l’exécuter comme un modèle MLFlow, soit localement, soit dans le cloud, par exemple dans un workspace Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.fr.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.fr.png)
 
 | Projet | Description | Emplacement |
 | ------------ | ----------- | -------- |
