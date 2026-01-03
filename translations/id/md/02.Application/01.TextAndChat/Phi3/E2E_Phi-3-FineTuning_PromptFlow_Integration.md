@@ -23,7 +23,7 @@ Dalam contoh E2E ini, Anda akan belajar cara melakukan fine-tuning model Phi-3 d
 
 Berikut adalah gambaran umum dari contoh E2E ini.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.id.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.id.png)
 
 ### Daftar Isi
 
@@ -49,13 +49,13 @@ Berikut adalah gambaran umum dari contoh E2E ini.
 
 1. Ketik *azure machine learning* di **search bar** di bagian atas halaman portal dan pilih **Azure Machine Learning** dari opsi yang muncul.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.id.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.id.png)
 
 1. Pilih **+ Create** dari menu navigasi.
 
 1. Pilih **New workspace** dari menu navigasi.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.id.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.id.png)
 
 1. Lakukan tugas berikut:
 
@@ -68,7 +68,7 @@ Berikut adalah gambaran umum dari contoh E2E ini.
     - Pilih **Application insights** yang akan digunakan (buat baru jika perlu).
     - Pilih **Container registry** yang akan digunakan (buat baru jika perlu).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.id.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.id.png)
 
 1. Pilih **Review + Create**.
 
@@ -92,7 +92,7 @@ Dalam contoh E2E ini, Anda akan menggunakan *Standard_NC24ads_A100_v4 GPU* untuk
     - Pilih **Virtual machine family** yang akan digunakan. Misalnya, pilih **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, yang mencakup GPU *Standard_NC24ads_A100_v4*.
     - Pilih **Request quota** dari menu navigasi.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.id.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.id.png)
 
     - Di halaman Request quota, masukkan **New cores limit** yang ingin Anda gunakan. Misalnya, 24.
     - Di halaman Request quota, pilih **Submit** untuk mengajukan permintaan kuota GPU.
@@ -108,11 +108,11 @@ Untuk melakukan fine-tuning dan deployment model Anda, Anda harus terlebih dahul
 
 1. Ketik *managed identities* di **search bar** di bagian atas halaman portal dan pilih **Managed Identities** dari opsi yang muncul.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.id.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.id.png)
 
 1. Pilih **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.id.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.id.png)
 
 1. Lakukan tugas berikut:
 
@@ -139,7 +139,7 @@ Untuk melakukan fine-tuning dan deployment model Anda, Anda harus terlebih dahul
     - Pilih **Resource group** yang akan digunakan.
     - Pilih **Role** ke **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.id.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.id.png)
 
 1. Pilih **Save**.
 
@@ -147,7 +147,7 @@ Untuk melakukan fine-tuning dan deployment model Anda, Anda harus terlebih dahul
 
 1. Ketik *storage accounts* di **search bar** di bagian atas halaman portal dan pilih **Storage accounts** dari opsi yang muncul.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.id.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.id.png)
 
 1. Pilih storage account yang terkait dengan Azure Machine Learning workspace yang Anda buat. Misalnya, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Untuk melakukan fine-tuning dan deployment model Anda, Anda harus terlebih dahul
     - Pilih **+ Add** dari menu navigasi.
     - Pilih **Add role assignment** dari menu navigasi.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.id.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.id.png)
 
 1. Di halaman Add role assignment, lakukan tugas berikut:
 
@@ -171,7 +171,7 @@ Untuk melakukan fine-tuning dan deployment model Anda, Anda harus terlebih dahul
     - Di halaman Select managed identities, pilih Manage Identity yang Anda buat. Misalnya, *finetunephi-managedidentity*.
     - Di halaman Select managed identities, pilih **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.id.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.id.png)
 
 1. Pilih **Review + assign**.
 
@@ -179,7 +179,7 @@ Untuk melakukan fine-tuning dan deployment model Anda, Anda harus terlebih dahul
 
 1. Ketik *container registries* di **search bar** di bagian atas halaman portal dan pilih **Container registries** dari opsi yang muncul.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.id.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.id.png)
 
 1. Pilih container registry yang terkait dengan Azure Machine Learning workspace. Misalnya, *finetunephicontainerregistries*
 
@@ -289,7 +289,7 @@ Dalam latihan ini, Anda akan:
 
 1. Pilih folder *finetune-phi* yang sudah Anda buat, yang terletak di *C:\Users\yourUserName\finetune-phi*.
 
-    ![Buka folder proyek.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.id.png)
+    ![Buka folder proyek.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.id.png)
 
 1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk membuat file baru bernama *download_dataset.py*.
 
@@ -297,7 +297,7 @@ Dalam latihan ini, Anda akan:
 
 1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New File** untuk membuat file baru bernama *deploy_model.py*.
 
-    ![Buat file baru.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.id.png)
+    ![Buat file baru.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.id.png)
 
 1. Di panel kiri Visual Studio Code, klik kanan dan pilih **New Folder** untuk membuat folder baru bernama *finetuning_dir*.
 
@@ -373,28 +373,28 @@ Dalam latihan ini, Anda akan:
     - Pilih Azure Subscription yang sedang Anda gunakan.
     - Salin dan tempel Subscription ID Anda ke dalam file *config.py*.
 
-    ![Temukan subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.id.png)
+    ![Temukan subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.id.png)
 
 1. Lakukan langkah berikut untuk menambahkan Nama Workspace Azure:
 
     - Navigasikan ke resource Azure Machine Learning yang sudah Anda buat.
     - Salin dan tempel nama akun Anda ke dalam file *config.py*.
 
-    ![Temukan nama Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.id.png)
+    ![Temukan nama Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.id.png)
 
 1. Lakukan langkah berikut untuk menambahkan Nama Resource Group Azure:
 
     - Navigasikan ke resource Azure Machine Learning yang sudah Anda buat.
     - Salin dan tempel Nama Resource Group Azure Anda ke dalam file *config.py*.
 
-    ![Temukan nama resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.id.png)
+    ![Temukan nama resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.id.png)
 
 2. Lakukan langkah berikut untuk menambahkan nama Azure Managed Identity
 
     - Navigasikan ke resource Managed Identities yang sudah Anda buat.
     - Salin dan tempel nama Azure Managed Identity Anda ke dalam file *config.py*.
 
-    ![Temukan UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.id.png)
+    ![Temukan UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.id.png)
 
 ### Siapkan dataset untuk fine-tuning
 
@@ -508,7 +508,7 @@ Anda perlu menyiapkan Azure CLI untuk mengautentikasi lingkungan Anda. Azure CLI
 
 1. Pilih subscription Azure yang akan digunakan.
 
-    ![Temukan nama resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.id.png)
+    ![Temukan nama resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.id.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ Dengan menjalankan *setup_ml.py*, Anda akan menjalankan proses fine-tuning di li
 
 1. Dalam latihan ini, Anda berhasil melakukan fine-tuning model Phi-3 menggunakan Azure Machine Learning. Dengan menjalankan skrip *setup_ml.py*, Anda telah menyiapkan lingkungan Azure Machine Learning dan memulai proses fine-tuning yang sudah didefinisikan di file *fine_tune.py*. Harap diperhatikan bahwa proses fine-tuning bisa memakan waktu cukup lama. Setelah menjalankan perintah `python setup_ml.py`, Anda perlu menunggu hingga proses selesai. Anda dapat memantau status pekerjaan fine-tuning dengan mengikuti tautan yang diberikan di terminal menuju portal Azure Machine Learning.
 
-    ![Lihat pekerjaan fine-tuning.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.id.png)
+    ![Lihat pekerjaan fine-tuning.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.id.png)
 
 ### Deploy model yang sudah di-fine-tune
 
@@ -1080,11 +1080,11 @@ Menjalankan file *deploy_model.py* akan mengotomatisasi seluruh proses deploymen
 
 1. Pilih **Endpoints** dari tab di sisi kiri.
 
-    ![Pilih endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.id.png)
+    ![Pilih endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.id.png)
 
 2. Pilih endpoint yang telah Anda buat.
 
-    ![Pilih endpoint yang telah Anda buat.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.id.png)
+    ![Pilih endpoint yang telah Anda buat.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.id.png)
 
 3. Di halaman ini, Anda dapat mengelola endpoint yang dibuat selama proses deployment.
 
@@ -1103,7 +1103,7 @@ Setelah berhasil melakukan deployment model fine-tuned Anda, sekarang Anda dapat
 1. Salin dan tempel **REST endpoint** Anda ke dalam file *config.py*, ganti `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` dengan **REST endpoint** Anda.
 1. Salin dan tempel **Primary key** Anda ke dalam file *config.py*, ganti `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` dengan **Primary key** Anda.
 
-    ![Salin api key dan endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.id.png)
+    ![Salin api key dan endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.id.png)
 
 #### Tambahkan kode ke file *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ Setelah berhasil melakukan deployment model fine-tuned Anda, sekarang Anda dapat
 
 1. Berikut contoh hasilnya: Sekarang Anda dapat chat dengan model Phi-3 kustom Anda. Disarankan untuk mengajukan pertanyaan berdasarkan data yang digunakan untuk fine-tuning.
 
-    ![Contoh prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.id.png)
+    ![Contoh prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.id.png)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk mencapai akurasi, harap diperhatikan bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sahih. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

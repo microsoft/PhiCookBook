@@ -42,7 +42,7 @@ Fenntartja a verziókezelést és hatékonyan osztja meg a tudást. Egyszerűsí
 
 A Microsoft Prompt Flow-ban az értékelés kulcsfontosságú szerepet játszik az AI modellek teljesítményének mérésében. Nézzük meg, hogyan testreszabhatod az értékelési munkafolyamatokat és metrikákat a Prompt Flow-ban:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.hu.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.hu.png)
 
 **Az értékelés megértése a Prompt Flow-ban**
 

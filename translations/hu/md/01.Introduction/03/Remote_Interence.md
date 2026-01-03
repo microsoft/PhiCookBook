@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Miután az adaptereket a távoli környezetben betanítottuk, egy egyszerű Gradio alkalmazással léphetünk kapcsolatba a modellel.
 
-![Finomhangolás befejezve](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.hu.png)
+![Finomhangolás befejezve](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.hu.png)
 
 ### Azure erőforrások előkészítése  
 A távoli inferencia beállításához futtassa az `AI Toolkit: Provision Azure Container Apps for inference` parancsot a parancspalettából. A beállítás során ki kell választania az Azure-előfizetését és az erőforráscsoportot.  
-![Inferenciához erőforrás előkészítése](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.hu.png)
+![Inferenciához erőforrás előkészítése](../../../../../translated_images/command-provision-inference.467afc8d351642fc.hu.png)
 
 Alapértelmezés szerint az inferenciához használt előfizetésnek és erőforráscsoportnak meg kell egyeznie a finomhangoláshoz használtakkal. Az inferencia ugyanazt az Azure Container App környezetet használja, és hozzáfér a finomhangolás során létrehozott modellhez és adapterhez, amelyek az Azure Files-ban vannak tárolva.
 
@@ -24,7 +24,7 @@ Alapértelmezés szerint az inferenciához használt előfizetésnek és erőfor
 ### Telepítés inferenciához  
 Ha módosítani szeretné az inferencia kódját vagy újratölteni az inferencia modellt, futtassa az `AI Toolkit: Deploy for inference` parancsot. Ez szinkronizálja a legfrissebb kódot az ACA-val, és újraindítja a replikát.
 
-![Inferenciához telepítés](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.hu.png)
+![Inferenciához telepítés](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.hu.png)
 
 A telepítés sikeres befejezése után a modell készen áll az értékelésre ezen a végponton keresztül.
 
@@ -32,7 +32,7 @@ A telepítés sikeres befejezése után a modell készen áll az értékelésre 
 
 Az inferencia API-hoz a VSCode értesítésében megjelenő "*Go to Inference Endpoint*" gombra kattintva férhet hozzá. Alternatív megoldásként a web API végpont megtalálható az `ACA_APP_ENDPOINT` alatt a `./infra/inference.config.json` fájlban, illetve a kimeneti panelen.
 
-![Alkalmazás végpont](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.hu.png)
+![Alkalmazás végpont](../../../../../translated_images/notification-deploy.446e480a44b1be58.hu.png)
 
 > **Megjegyzés:** Az inferencia végpontnak eltarthat néhány percig, mire teljesen működőképes lesz.
 

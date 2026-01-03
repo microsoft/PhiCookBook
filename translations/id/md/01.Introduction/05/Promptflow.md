@@ -41,7 +41,7 @@ Pertahankan kontrol versi dan bagikan pengetahuan secara efektif. Permudah selur
 
 Dalam Microsoft Prompt Flow, evaluasi memegang peranan penting untuk menilai seberapa baik model AI Anda bekerja. Mari kita lihat bagaimana Anda dapat menyesuaikan alur evaluasi dan metrik dalam Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.id.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.id.png)
 
 **Memahami Evaluasi dalam Prompt Flow**
 
