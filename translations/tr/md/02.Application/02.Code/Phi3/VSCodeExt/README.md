@@ -73,7 +73,7 @@ GitHub Copilot, işletmelerin programlama verimliliğini büyük ölçüde artı
 
 Bu laboratuvar, Phi-3 modelini yerel NPU ve Azure hibriti ile birleştirerek GitHub Copilot Chat'te ***@PHI3*** adlı özel bir ajan oluşturmayı amaçlar. Bu ajan, kurumsal geliştiricilere kod üretimi tamamlamada ***(@PHI3 /gen)*** ve görüntülere dayalı kod üretiminde ***(@PHI3 /img)*** yardımcı olur.
 
-![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d095fe0b942687287803c03933d2d1d439d14e10fa1442a864d.tr.png)
+![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d09.tr.png)
 
 ### ***Not:***
 

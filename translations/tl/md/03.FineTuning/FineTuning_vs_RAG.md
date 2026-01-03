@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 Ang RAG ay kombinasyon ng data retrieval at text generation. Ang nakaayos at hindi nakaayos na data ng kumpanya ay nakaimbak sa vector database. Kapag naghahanap ng kaugnay na nilalaman, hinahanap ang kaugnay na buod at nilalaman upang mabuo ang konteksto, at pinagsasama ito sa kakayahan ng LLM/SLM sa text completion upang makabuo ng nilalaman.
 
 ## Proseso ng RAG
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.tl.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.tl.png)
 
 ## Fine-tuning
 Ang fine-tuning ay nakabatay sa pagpapabuti ng isang partikular na modelo. Hindi kailangang magsimula sa algorithm ng modelo, ngunit kailangang patuloy na mag-ipon ng data. Kung nais mo ng mas tumpak na terminolohiya at pagpapahayag ng wika sa mga aplikasyon sa industriya, mas mainam ang fine-tuning. Ngunit kung madalas magbago ang iyong data, maaaring maging komplikado ang fine-tuning.
