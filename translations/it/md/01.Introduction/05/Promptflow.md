@@ -41,7 +41,7 @@ Mantieni il controllo delle versioni e condividi efficacemente le conoscenze. Sn
 
 In Microsoft Prompt Flow, la valutazione gioca un ruolo cruciale nel misurare le prestazioni dei tuoi modelli AI. Vediamo come personalizzare i flussi di valutazione e le metriche all’interno di Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.it.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.it.png)
 
 **Comprendere la valutazione in Prompt Flow**
 

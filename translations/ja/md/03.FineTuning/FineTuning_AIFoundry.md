@@ -19,7 +19,7 @@ MicrosoftのPhi-3 Mini言語モデルをAzure AI Foundryを使ってファイン
 - **利便性:** ファインチューニングは実際にどのように行うのか？カスタムコードは必要か？自分で計算リソースを用意する必要はあるか？
 - **安全性:** ファインチューニングされたモデルには安全上のリスクがあることが知られているが、意図しない害を防ぐためのガードレールはあるか？
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.ja.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.ja.png)
 
 ## ファインチューニングの準備
 
@@ -71,7 +71,7 @@ MicrosoftのPhi-3 Mini言語モデルをAzure AI Foundryを使ってファイン
 
 Azure AI Foundryを使うと、ファインチューニングというプロセスで大規模言語モデルを自分のデータセットに合わせて調整できます。ファインチューニングは、特定のタスクやアプリケーションに最適化・カスタマイズすることで、性能向上、コスト効率の改善、レイテンシの低減、そして出力の最適化をもたらします。
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.ja.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.ja.png)
 
 ### 新しいプロジェクトの作成
 
@@ -79,14 +79,14 @@ Azure AI Foundryを使うと、ファインチューニングというプロセ�
 
 1. **+New project** を選択して新しいプロジェクトを作成します。
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ja.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.ja.png)
 
 1. 以下の項目を設定します：
 
     - プロジェクトの**Hub名**。一意の値である必要があります。
     - 使用する**Hub**を選択（必要に応じて新規作成）。
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ja.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.ja.png)
 
 1. 新しいハブを作成する場合は以下を設定します：
 
@@ -97,7 +97,7 @@ Azure AI Foundryを使うと、ファインチューニングというプロセ�
     - 使用する**Connect Azure AI Services**を選択（必要に応じて新規作成）。
     - **Connect Azure AI Search**は**接続をスキップ**を選択。
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.ja.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.ja.png)
 
 1. **Next**を選択。
 1. **Create a project**を選択。
@@ -115,15 +115,15 @@ Azure AI Foundryを使うと、ファインチューニングというプロセ�
 
 1. **検索バー**に*phi-3*と入力し、使用したいphi-3モデルを選択。
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.ja.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.ja.png)
 
 1. **Fine-tune**を選択。
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.ja.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.ja.png)
 
 1. **Fine-tuned model name**を入力。
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.ja.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.ja.png)
 
 1. **Next**を選択。
 
@@ -132,13 +132,13 @@ Azure AI Foundryを使うと、ファインチューニングというプロセ�
     - **task type**を**Chat completion**に設定。
     - 使用する**Training data**を選択。Azure AI Foundryのデータから、またはローカル環境からアップロード可能。
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.ja.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.ja.png)
 
 1. **Next**を選択。
 
 1. 使用する**Validation data**をアップロード、または**Automatic split of training data**を選択。
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.ja.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.ja.png)
 
 1. **Next**を選択。
 
@@ -148,15 +148,15 @@ Azure AI Foundryを使うと、ファインチューニングというプロセ�
     - 使用する**Learning rate**を選択。
     - 使用する**Epochs**を選択。
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.ja.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.ja.png)
 
 1. **Submit**を選択してファインチューニングを開始。
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.ja.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.ja.png)
 
 1. モデルのファインチューニングが完了すると、ステータスが**Completed**と表示されます。これでモデルをデプロイし、自分のアプリケーションやプレイグラウンド、プロンプトフローで利用可能です。詳細は[Azure AI FoundryでのPhi-3ファミリー小型言語モデルのデプロイ方法](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)をご覧ください。
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.ja.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.ja.png)
 
 > [!NOTE]
 > Phi-3のファインチューニングに関する詳細は、[Azure AI FoundryでのPhi-3モデルのファインチューニング](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)をご参照ください。
