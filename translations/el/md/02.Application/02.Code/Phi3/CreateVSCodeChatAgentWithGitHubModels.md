@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Γνωρίζουμε ότι το Phi-3/3.5-mini-instruct στην οικογένεια Phi-3/3.5 έχει ισχυρές ικανότητες κατανόησης και δημιουργίας κώδικα, και υπερέχει σε σχέση με τα Gemma-2-9b και Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.el.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.el.png)
 
 Τα πιο πρόσφατα GitHub Models παρέχουν ήδη πρόσβαση στα μοντέλα Phi-3.5-mini-instruct (128k) και Phi-3.5-vision-instruct (128k). Οι προγραμματιστές μπορούν να τα προσεγγίσουν μέσω του OpenAI SDK, του Azure AI Inference SDK και του REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.el.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.el.png)
 
 ***Note: *** Συνιστάται η χρήση του Azure AI Inference SDK εδώ, γιατί μπορεί να εναλλάσσεται καλύτερα με το Azure Model Catalog στο περιβάλλον παραγωγής.
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ο GitHub Copilot Chat Agent μπορεί να ολοκληρώσει διάφορες εργασίες σε διαφορετικά σενάρια έργων βασισμένα στον κώδικα. Το σύστημα διαθέτει τέσσερις agents: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.el.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.el.png)
 
 Προσθέτοντας το όνομα του agent με ‘@’, μπορείτε να ολοκληρώσετε γρήγορα την αντίστοιχη εργασία. Για επιχειρήσεις, αν προσθέσετε το δικό σας περιεχόμενο σχετικό με την επιχείρηση, όπως απαιτήσεις, κωδικοποίηση, προδιαγραφές δοκιμών και κυκλοφορία, μπορείτε να έχετε πιο ισχυρές ιδιωτικές λειτουργίες για επιχειρήσεις βασισμένες στον GitHub Copilot.
 
 Ο Visual Studio Code Chat Agent έχει πλέον επίσημα κυκλοφορήσει το API του, επιτρέποντας σε επιχειρήσεις ή προγραμματιστές επιχειρήσεων να αναπτύξουν agents βασισμένους σε διαφορετικά οικοσυστήματα λογισμικού. Βασισμένοι στη μέθοδο ανάπτυξης Visual Studio Code Extension Development, μπορείτε εύκολα να έχετε πρόσβαση στη διεπαφή του Visual Studio Code Chat Agent API. Μπορούμε να αναπτύξουμε με βάση αυτή τη διαδικασία.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.el.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.el.png)
 
 Το σενάριο ανάπτυξης μπορεί να υποστηρίξει πρόσβαση σε API τρίτων μοντέλων (όπως GitHub Models, Azure Model Catalog και αυτοδημιούργητες υπηρεσίες βασισμένες σε ανοιχτού κώδικα μοντέλα) και μπορεί επίσης να χρησιμοποιήσει τα μοντέλα gpt-35-turbo, gpt-4 και gpt-4o που παρέχονται από τον GitHub Copilot.
 
@@ -54,7 +54,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 3. Δημιουργία κώδικα βασισμένη στο **Phi-3.5-vision-instruct (128k)** και ολοκλήρωση εικόνας μέσω της εντολής **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.el.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.el.png)
 
 ## **Σχετικά βήματα**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.el.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.el.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.el.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.el.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.el.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.el.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.el.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.el.png)
 
 Μπορείτε να κατεβάσετε δείγμα κώδικα: [κλικ εδώ](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

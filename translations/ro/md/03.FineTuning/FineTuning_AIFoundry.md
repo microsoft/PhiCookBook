@@ -19,7 +19,7 @@ Să explorăm cum să ajustăm fin modelul de limbaj Phi-3 Mini de la Microsoft 
 - **Confort:** Cum se realizează efectiv ajustarea fină – trebuie să scriu cod personalizat? Trebuie să aduc propriul meu sistem de calcul?
 - **Siguranță:** Modelele ajustate fin pot prezenta riscuri de siguranță – există măsuri de protecție pentru a preveni daune neintenționate?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.ro.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.ro.png)
 
 ## Pregătirea pentru ajustarea fină
 
@@ -71,7 +71,7 @@ Tipul de fișier acceptat este JSON Lines. Fișierele sunt încărcate în depoz
 
 Azure AI Foundry îți permite să personalizezi modelele mari de limbaj pe baza propriilor seturi de date, folosind un proces numit ajustare fină. Ajustarea fină oferă valoare semnificativă prin personalizare și optimizare pentru sarcini și aplicații specifice. Aceasta conduce la performanțe îmbunătățite, eficiență a costurilor, latență redusă și rezultate adaptate.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.ro.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.ro.png)
 
 ### Crearea unui proiect nou
 
@@ -79,14 +79,14 @@ Azure AI Foundry îți permite să personalizezi modelele mari de limbaj pe baza
 
 2. Selectează **+New project** pentru a crea un proiect nou în Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ro.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.ro.png)
 
 3. Efectuează următoarele:
 
     - Numele **Hub-ului** proiectului. Trebuie să fie o valoare unică.
     - Selectează **Hub-ul** pe care vrei să-l folosești (creează unul nou dacă este necesar).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ro.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.ro.png)
 
 4. Efectuează următorii pași pentru a crea un hub nou:
 
@@ -97,7 +97,7 @@ Azure AI Foundry îți permite să personalizezi modelele mari de limbaj pe baza
     - Selectează **Connect Azure AI Services** pe care vrei să-l folosești (creează unul nou dacă este necesar).
     - Selectează **Connect Azure AI Search** și alege **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.ro.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.ro.png)
 
 5. Selectează **Next**.
 6. Selectează **Create a project**.
@@ -115,15 +115,15 @@ Azure AI Foundry îți permite să personalizezi modelele mari de limbaj pe baza
 
 2. Tastează *phi-3* în **bara de căutare** și selectează modelul phi-3 pe care dorești să-l folosești.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.ro.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.ro.png)
 
 3. Selectează **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.ro.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.ro.png)
 
 4. Introdu **Numele modelului ajustat fin**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.ro.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.ro.png)
 
 5. Selectează **Next**.
 
@@ -132,13 +132,13 @@ Azure AI Foundry îți permite să personalizezi modelele mari de limbaj pe baza
     - Selectează **tipul sarcinii** ca **Chat completion**.
     - Selectează **datele de antrenament** pe care dorești să le folosești. Le poți încărca prin Azure AI Foundry sau din mediul tău local.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.ro.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.ro.png)
 
 7. Selectează **Next**.
 
 8. Încarcă **datele de validare** pe care dorești să le folosești sau poți selecta **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.ro.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.ro.png)
 
 9. Selectează **Next**.
 
@@ -148,15 +148,15 @@ Azure AI Foundry îți permite să personalizezi modelele mari de limbaj pe baza
     - Selectează **rata de învățare** pe care dorești să o folosești.
     - Selectează **numărul de epoci** pe care dorești să-l folosești.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.ro.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.ro.png)
 
 11. Selectează **Submit** pentru a începe procesul de ajustare fină.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.ro.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.ro.png)
 
 12. Odată ce modelul tău este ajustat fin, starea va fi afișată ca **Completed**, așa cum se vede în imaginea de mai jos. Acum poți implementa modelul și îl poți folosi în propria aplicație, în playground sau în prompt flow. Pentru mai multe informații, vezi [Cum să implementezi familia de modele mici Phi-3 cu Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.ro.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.ro.png)
 
 > [!NOTE]
 > Pentru informații mai detaliate despre ajustarea fină a Phi-3, vizitează [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

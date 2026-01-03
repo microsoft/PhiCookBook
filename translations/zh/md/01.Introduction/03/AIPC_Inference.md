@@ -28,9 +28,9 @@ GPU 以其并行计算能力著称，但并非所有 GPU 在图形处理之外�
 
 Intel® NPU 设备是集成在 Intel 客户端 CPU 中的 AI 推理加速器，从 Intel® Core™ Ultra 代（前称 Meteor Lake）开始支持。它能够高效节能地执行人工神经网络任务。
 
-![延迟](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.zh.png)
+![延迟](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.zh.png)
 
-![延迟770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.zh.png)
+![延迟770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.zh.png)
 
 **Intel NPU 加速库**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 执行代码时，可以通过任务管理器查看 NPU 的运行状态。
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.zh.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.zh.png)
 
 ***示例***：[AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 运行结果如下
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.zh.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.zh.png)
 
 ***示例***：[AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 转换后的格式如下图所示
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.zh.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.zh.png)
 
 通过 OVModelForCausalLM 加载模型路径（model_dir）、相关配置（ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}）以及硬件加速设备（GPU.0）
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 执行代码时，可以通过任务管理器查看 GPU 的运行状态
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.zh.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.zh.png)
 
 ***示例***：[AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

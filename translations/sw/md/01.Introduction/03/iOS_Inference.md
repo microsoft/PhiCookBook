@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Nilichagua Objective-C kama njia ya kuendeleza App, kwa sababu kutumia Generative AI na ONNX Runtime C++ API, Objective-C ina ulinganifu bora. Bila shaka, unaweza pia kukamilisha simu zinazohusiana kupitia daraja la Swift.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.sw.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.sw.png)
 
 ## **5. Nakili mfano wa ONNX uliopunguzwa wa INT4 kwenye mradi wa App**
 
 Tunahitaji kuingiza mfano wa quantization wa INT4 katika muundo wa ONNX, ambao unahitaji kupakuliwa kwanza
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.sw.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.sw.png)
 
 Baada ya kupakua, unahitaji kuuweka kwenye saraka ya Resources ya mradi katika Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.sw.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.sw.png)
 
 ## **6. Kuongeza API ya C++ katika ViewControllers**
 
@@ -121,11 +121,11 @@ Baada ya kupakua, unahitaji kuuweka kwenye saraka ya Resources ya mradi katika X
 
 - **a.** Ongeza faili za kichwa za C++ zinazohusiana kwenye mradi.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.sw.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.sw.png)
 
 - **b.** Jumuisha maktaba ya `onnxruntime-genai` inayobadilika katika Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.sw.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.sw.png)
 
 - **c.** Tumia msimbo wa Sampuli za C kwa majaribio. Pia unaweza kuongeza vipengele zaidi kama ChatUI kwa utendaji zaidi.
 
@@ -162,7 +162,7 @@ Baada ya kupakua, unahitaji kuuweka kwenye saraka ya Resources ya mradi katika X
 
 Mara tu maandalizi yatakapokamilika, unaweza kuendesha programu kuona matokeo ya inference ya mfano wa Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.sw.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.sw.jpg)
 
 Kwa msimbo zaidi wa sampuli na maelekezo ya kina, tembelea [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

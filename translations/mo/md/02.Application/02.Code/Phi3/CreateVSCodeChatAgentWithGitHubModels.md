@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 我們知道 Phi-3/3.5-mini-instruct 屬於 Phi-3/3.5 家族，具備強大的程式碼理解與生成能力，並且在某些方面優於 Gemma-2-9b 與 Mistral-Nemo-12B-instruct-2407。
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.mo.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.mo.png)
 
 最新的 GitHub Models 已經提供了 Phi-3.5-mini-instruct (128k) 與 Phi-3.5-vision-instruct (128k) 模型。開發者可以透過 OpenAI SDK、Azure AI Inference SDK 以及 REST API 來存取這些模型。
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.mo.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.mo.png)
 
 ***Note: *** 建議此處使用 Azure AI Inference SDK，因為在生產環境中能更好地與 Azure Model Catalog 切換。
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 GitHub Copilot Chat Agent 能根據程式碼在不同專案場景中完成各種任務。系統包含四個代理人：workspace、github、terminal、vscode。
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.mo.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.mo.png)
 
 只要在代理人名稱前加上「@」，即可快速完成對應工作。對企業來說，若加入自身業務相關內容，如需求、程式碼、測試規範與發佈流程，便能基於 GitHub Copilot 擁有更強大的企業私有功能。
 
 Visual Studio Code Chat Agent 現已正式釋出 API，允許企業或企業開發者基於不同軟體業務生態系開發代理人。依照 Visual Studio Code 擴充套件開發方式，你可以輕鬆存取 Visual Studio Code Chat Agent API 的介面。我們可以依此流程進行開發。
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.mo.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.mo.png)
 
 開發場景支援接入第三方模型 API（如 GitHub Models、Azure Model Catalog，以及基於開源模型自建服務），也能使用 GitHub Copilot 提供的 gpt-35-turbo、gpt-4 與 gpt-4o 模型。
 
@@ -54,7 +54,7 @@ Visual Studio Code Chat Agent 現已正式釋出 API，允許企業或企業開�
 
 3. 透過 **@phicoding /image** 指令，基於 **Phi-3.5-vision-instruct (128k)** 及圖片完成程式碼生成
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.mo.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.mo.png)
 
 ## **相關步驟**
 
@@ -365,19 +365,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.mo.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.mo.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.mo.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.mo.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.mo.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.mo.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.mo.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.mo.png)
 
 你可以下載範例程式碼：[點此](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

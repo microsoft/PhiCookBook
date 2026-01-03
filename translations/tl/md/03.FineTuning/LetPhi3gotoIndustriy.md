@@ -41,7 +41,7 @@ Ang Fine-tuning ay nakabatay sa pagpapabuti ng isang partikular na modelo. Hindi
 
 ## **Paano gamitin ang RAG**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.tl.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007.tl.png)
 
 Ang vector database ay koleksyon ng datos na iniimbak sa anyong matematikal. Pinapadali ng vector databases para sa mga machine learning model na maalala ang mga naunang input, kaya nagagamit ang machine learning para suportahan ang mga kaso tulad ng paghahanap, rekomendasyon, at pagbuo ng teksto. Nakikilala ang datos base sa pagkakatulad kaysa eksaktong tugma, kaya naiintindihan ng mga computer model ang konteksto ng datos.
 
@@ -57,7 +57,7 @@ Ang karaniwang ginagamit na algorithm sa Fine-tuning ay Lora at QLora. Paano pum
 
 ### **Lora at QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.tl.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca0.tl.png)
 
 Ang LoRA (Low-Rank Adaptation) at QLoRA (Quantized Low-Rank Adaptation) ay mga teknik na ginagamit para i-fine-tune ang malalaking language model (LLMs) gamit ang Parameter Efficient Fine Tuning (PEFT). Ang PEFT ay mga teknik na dinisenyo para mas epektibong matrain ang mga modelo kumpara sa tradisyunal na paraan.
 

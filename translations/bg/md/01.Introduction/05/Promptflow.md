@@ -41,7 +41,7 @@ Prompt Flow включва библиотека с вградени инстру
 
 В Microsoft Prompt Flow оценката играе ключова роля за преценяване на представянето на вашите AI модели. Нека разгледаме как можете да персонализирате оценъчните потоци и метрики в Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.bg.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.bg.png)
 
 **Разбиране на оценката в Prompt Flow**
 

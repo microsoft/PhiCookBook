@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Po natrénování adapterů v vzdáleném prostředí použijte jednoduchou aplikaci Gradio pro interakci s modelem.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.cs.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.cs.png)
 
 ### Zajištění Azure zdrojů
 Pro vzdálené inferování je potřeba nastavit Azure zdroje spuštěním příkazu `AI Toolkit: Provision Azure Container Apps for inference` z příkazové palety. Během tohoto nastavení budete vyzváni k výběru Azure Subscription a resource group.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.cs.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.cs.png)
    
 Ve výchozím nastavení by měla subscription a resource group pro inferování odpovídat těm, které byly použity při doladění modelu. Inferování bude využívat stejné Azure Container App Environment a přistupovat k modelu a adapteru uloženým v Azure Files, které byly vytvořeny během kroku doladění.
 
@@ -24,7 +24,7 @@ Ve výchozím nastavení by měla subscription a resource group pro inferování
 ### Nasazení pro inferování  
 Pokud chcete upravit inferenční kód nebo znovu načíst inferenční model, spusťte příkaz `AI Toolkit: Deploy for inference`. Tím se synchronizuje váš nejnovější kód s ACA a restartuje se replika.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.cs.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.cs.png)
 
 Po úspěšném dokončení nasazení je model připraven k vyhodnocení přes tento endpoint.
 
@@ -32,7 +32,7 @@ Po úspěšném dokončení nasazení je model připraven k vyhodnocení přes t
 
 K inferenčnímu API se dostanete kliknutím na tlačítko „*Go to Inference Endpoint*“ zobrazené v notifikaci VSCode. Alternativně lze webový API endpoint najít v `ACA_APP_ENDPOINT` v souboru `./infra/inference.config.json` a také v panelu výstupu.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.cs.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.cs.png)
 
 > **Poznámka:** Inferenční endpoint může chvíli trvat, než bude plně funkční.
 

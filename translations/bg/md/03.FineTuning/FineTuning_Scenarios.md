@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Сценарии за фино настройване
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.bg.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.bg.png)
 
 **Платформа** Това включва различни технологии като Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito и ONNX Runtime.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Фино настройване на модела чрез хоствано фино настройване, без необходимост от създаване и управление на изчислителни ресурси.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.bg.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.bg.png)
 
 Безсървърното фино настройване е налично за моделите Phi-3-mini и Phi-3-medium, което позволява на разработчиците бързо и лесно да персонализират моделите за облачни и крайни сценарии, без да се налага да осигуряват изчислителни ресурси. Също така обявихме, че Phi-3-small вече е достъпен чрез нашето предложение Models-as-a-Service, така че разработчиците могат бързо и лесно да започнат с AI разработка, без да се налага да управляват основната инфраструктура.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Потребителите управляват собствените си изчислителни ресурси, за да фино настроят своите модели.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.bg.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.bg.png)
 
 [Пример за фино настройване](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Примери за производителност при фино настройване
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.bg.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.bg.png)
 
 **Отказ от отговорност**:  
 Този документ е преведен с помощта на AI преводаческа услуга [Co-op Translator](https://github.com/Azure/co-op-translator). Въпреки че се стремим към точност, моля, имайте предвид, че автоматизираните преводи могат да съдържат грешки или неточности. Оригиналният документ на неговия език трябва да се счита за авторитетен източник. За критична информация се препоръчва професионален човешки превод. Ние не носим отговорност за каквито и да е недоразумения или неправилни тълкувания, произтичащи от използването на този превод.

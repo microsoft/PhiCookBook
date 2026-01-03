@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG combine la recherche de données et la génération de texte. Les données structurées et non structurées de l’entreprise sont stockées dans une base de données vectorielle. Lorsqu’on recherche un contenu pertinent, un résumé et un contenu pertinents sont trouvés pour former un contexte, puis la capacité de complétion de texte du LLM/SLM est utilisée pour générer du contenu.
 
 ## Processus RAG
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.fr.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.fr.png)
 
 ## Affinage
 L’affinage consiste à améliorer un modèle existant. Il n’est pas nécessaire de repartir de l’algorithme du modèle, mais il faut accumuler continuellement des données. Si vous souhaitez une terminologie et une expression linguistique plus précises dans les applications industrielles, l’affinage est un meilleur choix. En revanche, si vos données changent fréquemment, l’affinage peut devenir complexe.

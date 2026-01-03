@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## תרחישי כוונון עדין
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.he.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.he.png)
 
 **פלטפורמה** כוללת טכנולוגיות שונות כמו Azure AI Foundry, Azure Machine Learning, כלי AI, Kaito ו-ONNX Runtime.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 כוונן את המודל באמצעות כוונון עדין מתארח, ללא צורך ביצירה וניהול של משאבי חישוב.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.he.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.he.png)
 
 כוונון עדין ללא שרת זמין לדגמי Phi-3-mini ו-Phi-3-medium, ומאפשר למפתחים להתאים במהירות ובקלות את המודלים לתרחישי ענן וקצה ללא צורך בארגון משאבי חישוב. בנוסף, הכרזנו כי Phi-3-small זמין כעת דרך ההצעה שלנו Models-as-a-Service, כך שמפתחים יכולים להתחיל במהירות ובקלות בפיתוח AI ללא צורך בניהול התשתית התחתונה.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 המשתמשים מנהלים את משאבי החישוב שלהם כדי לכוונן את המודלים שלהם.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.he.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.he.png)
 
 [דוגמת כוונון עדין](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## דוגמאות לביצועי כוונון עדין
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.he.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.he.png)
 
 **כתב ויתור**:  
 מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

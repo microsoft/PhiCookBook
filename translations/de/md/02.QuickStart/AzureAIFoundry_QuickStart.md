@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Mit der Entwicklung von Generative AI möchten wir eine einheitliche Plattform nutzen, um verschiedene LLM und SLM, die Integration von Unternehmensdaten, Fine-Tuning/RAG-Operationen sowie die Bewertung unterschiedlicher Unternehmensbereiche nach der Integration von LLM und SLM zu verwalten, damit generative KI in Smart-Anwendungen besser umgesetzt werden kann. [Azure AI Foundry](https://ai.azure.com) ist eine generative KI-Anwendungsplattform auf Unternehmensebene.
 
-![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.de.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93.de.png)
 
 Mit Azure AI Foundry können Sie die Antworten großer Sprachmodelle (LLM) bewerten und Prompt-Anwendungskomponenten mit Prompt Flow orchestrieren, um bessere Leistung zu erzielen. Die Plattform erleichtert die Skalierbarkeit, um Proof of Concepts problemlos in vollwertige Produktionsumgebungen zu überführen. Kontinuierliche Überwachung und Verfeinerung unterstützen den langfristigen Erfolg.
 

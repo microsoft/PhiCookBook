@@ -23,7 +23,7 @@ Tässä E2E-esimerkissä opit hienosäätämään Phi-3-mallin ja integroimaan s
 
 Tässä on yleiskatsaus tähän E2E-esimerkkiin.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.fi.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.fi.png)
 
 ### Sisällysluettelo
 
@@ -49,13 +49,13 @@ Tässä on yleiskatsaus tähän E2E-esimerkkiin.
 
 1. Kirjoita *azure machine learning* **hakupalkkiin** portaalin yläosassa ja valitse **Azure Machine Learning** vaihtoehdoista.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.fi.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.fi.png)
 
 1. Valitse navigointivalikosta **+ Create**.
 
 1. Valitse navigointivalikosta **New workspace**.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.fi.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.fi.png)
 
 1. Suorita seuraavat tehtävät:
 
@@ -68,7 +68,7 @@ Tässä on yleiskatsaus tähän E2E-esimerkkiin.
     - Valitse käytettävä **Application insights** (luo uusi tarvittaessa).
     - Valitse käytettävä **Container registry** (luo uusi tarvittaessa).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.fi.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.fi.png)
 
 1. Valitse **Review + Create**.
 
@@ -92,7 +92,7 @@ Tässä E2E-esimerkissä käytät hienosäätöön *Standard_NC24ads_A100_v4 GPU
     - Valitse käytettävä **Virtual machine family**. Esimerkiksi valitse **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, joka sisältää *Standard_NC24ads_A100_v4* GPU:n.
     - Valitse navigointivalikosta **Request quota**.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.fi.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.fi.png)
 
     - Kirjoita Request quota -sivulla haluamasi **New cores limit**. Esimerkiksi 24.
     - Valitse Request quota -sivulla **Submit** pyytääksesi GPU-kiintiötä.
@@ -108,11 +108,11 @@ Hienosäätöä ja käyttöönottoa varten sinun on ensin luotava User Assigned 
 
 1. Kirjoita *managed identities* **hakupalkkiin** portaalin yläosassa ja valitse **Managed Identities** vaihtoehdoista.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.fi.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.fi.png)
 
 1. Valitse **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.fi.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.fi.png)
 
 1. Suorita seuraavat tehtävät:
 
@@ -139,7 +139,7 @@ Hienosäätöä ja käyttöönottoa varten sinun on ensin luotava User Assigned 
     - Valitse käytettävä **Resource group**.
     - Valitse **Role** arvoksi **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.fi.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.fi.png)
 
 1. Valitse **Save**.
 
@@ -147,7 +147,7 @@ Hienosäätöä ja käyttöönottoa varten sinun on ensin luotava User Assigned 
 
 1. Kirjoita *storage accounts* **hakupalkkiin** portaalin yläosassa ja valitse **Storage accounts** vaihtoehdoista.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.fi.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.fi.png)
 
 1. Valitse Azure Machine Learning -työtilaan liittyvä tallennustili, jonka loit. Esimerkiksi *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Hienosäätöä ja käyttöönottoa varten sinun on ensin luotava User Assigned 
     - Valitse navigointivalikosta **+ Add**.
     - Valitse navigointivalikosta **Add role assignment**.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.fi.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.fi.png)
 
 1. Add role assignment -sivulla suorita seuraavat tehtävät:
 
@@ -171,7 +171,7 @@ Hienosäätöä ja käyttöönottoa varten sinun on ensin luotava User Assigned 
     - Valitse luomasi Manage Identity, esimerkiksi *finetunephi-managedidentity*.
     - Valitse Select managed identities -sivulla **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.fi.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.fi.png)
 
 1. Valitse **Review + assign**.
 
@@ -179,7 +179,7 @@ Hienosäätöä ja käyttöönottoa varten sinun on ensin luotava User Assigned 
 
 1. Kirjoita *container registries* **hakupalkkiin** portaalin yläosassa ja valitse **Container registries** vaihtoehdoista.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.fi.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.fi.png)
 
 1. Valitse Azure Machine Learning -työtilaan liittyvä container registry, esimerkiksi *finetunephicontainerregistries*.
 
@@ -289,7 +289,7 @@ Tässä harjoituksessa teet seuraavaa:
 
 1. Valitse luomasi *finetune-phi* -kansio, joka sijaitsee polussa *C:\Users\yourUserName\finetune-phi*.
 
-    ![Avaa projektikansio.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.fi.png)
+    ![Avaa projektikansio.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.fi.png)
 
 1. Visual Studio Coden vasemmassa paneelissa napsauta hiiren oikealla ja valitse **New File** luodaksesi uuden tiedoston nimeltä *download_dataset.py*.
 
@@ -297,7 +297,7 @@ Tässä harjoituksessa teet seuraavaa:
 
 1. Visual Studio Coden vasemmassa paneelissa napsauta hiiren oikealla ja valitse **New File** luodaksesi uuden tiedoston nimeltä *deploy_model.py*.
 
-    ![Luo uusi tiedosto.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.fi.png)
+    ![Luo uusi tiedosto.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.fi.png)
 
 1. Visual Studio Coden vasemmassa paneelissa napsauta hiiren oikealla ja valitse **New Folder** luodaksesi uuden kansion nimeltä *finetuning_dir*.
 
@@ -373,28 +373,28 @@ Tässä harjoituksessa teet seuraavaa:
     - Valitse käyttämäsi Azure-tilaus.
     - Kopioi ja liitä tilaus-ID *config.py* -tiedostoon.
 
-    ![Löydä tilaus-ID.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.fi.png)
+    ![Löydä tilaus-ID.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.fi.png)
 
 1. Suorita seuraavat toimenpiteet lisätäksesi Azure Workspace -nimen:
 
     - Siirry luomaasi Azure Machine Learning -resurssiin.
     - Kopioi ja liitä tilisi nimi *config.py* -tiedostoon.
 
-    ![Löydä Azure Machine Learning -nimi.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.fi.png)
+    ![Löydä Azure Machine Learning -nimi.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.fi.png)
 
 1. Suorita seuraavat toimenpiteet lisätäksesi Azure Resource Group -nimen:
 
     - Siirry luomaasi Azure Machine Learning -resurssiin.
     - Kopioi ja liitä Azure Resource Group -nimesi *config.py* -tiedostoon.
 
-    ![Löydä resurssiryhmän nimi.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.fi.png)
+    ![Löydä resurssiryhmän nimi.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.fi.png)
 
 2. Suorita seuraavat toimenpiteet lisätäksesi Azure Managed Identity -nimen:
 
     - Siirry luomaasi Managed Identities -resurssiin.
     - Kopioi ja liitä Azure Managed Identity -nimesi *config.py* -tiedostoon.
 
-    ![Löydä UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.fi.png)
+    ![Löydä UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.fi.png)
 
 ### Valmistele dataset hienosäätöä varten
 
@@ -508,7 +508,7 @@ Sinun täytyy määrittää Azure CLI todennusta varten. Azure CLI:n avulla voit
 
 1. Valitse käytettävä Azure-tilaus.
 
-    ![Löydä resurssiryhmän nimi.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.fi.png)
+    ![Löydä resurssiryhmän nimi.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.fi.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ Suorittamalla *setup_ml.py* käynnistät hienosäätöprosessin Azure Machine Le
 
 1. Tässä harjoituksessa hienosäädit Phi-3-mallin onnistuneesti Azure Machine Learningin avulla. Suorittamalla *setup_ml.py* -skriptin olet määrittänyt Azure Machine Learning -ympäristön ja käynnistänyt hienosäätöprosessin, joka on määritelty *fine_tune.py* -tiedostossa. Huomioithan, että hienosäätö voi kestää jonkin aikaa. Kun suoritat `python setup_ml.py` -komennon, sinun tulee odottaa prosessin valmistumista. Voit seurata hienosäätötyön tilaa seuraamalla terminaalissa annettua linkkiä Azure Machine Learning -portaaliin.
 
-    ![Näytä hienosäätötyö.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.fi.png)
+    ![Näytä hienosäätötyö.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.fi.png)
 
 ### Ota hienosäädetty malli käyttöön
 
@@ -1080,11 +1080,11 @@ Jotta voit integroida hienosäädetyn Phi-3-mallin Prompt Flow'hun, sinun täyty
 
 1. Valitse vasemman sivupalkin valikosta **Endpoints**.
 
-    ![Valitse endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.fi.png)
+    ![Valitse endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.fi.png)
 
 2. Valitse luomasi endpoint.
 
-    ![Valitse luomasi endpoint.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.fi.png)
+    ![Valitse luomasi endpoint.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.fi.png)
 
 3. Tällä sivulla voit hallita käyttöönoton aikana luotuja endpointteja.
 
@@ -1103,7 +1103,7 @@ Kun hienosäädetty mallisi on onnistuneesti otettu käyttöön, voit nyt integr
 1. Kopioi ja liitä **REST endpoint** *config.py* tiedostoon korvaten `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` omalla **REST endpoint** -osoitteellasi.
 1. Kopioi ja liitä **Primary key** *config.py* tiedostoon korvaten `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` omalla **Primary key** -avaimellasi.
 
-    ![Kopioi api-avain ja endpoint-osoite.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.fi.png)
+    ![Kopioi api-avain ja endpoint-osoite.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.fi.png)
 
 #### Lisää koodi *flow.dag.yml* tiedostoon
 
@@ -1212,7 +1212,7 @@ Kun hienosäädetty mallisi on onnistuneesti otettu käyttöön, voit nyt integr
 
 1. Tässä esimerkki tuloksista: Nyt voit keskustella mukautetun Phi-3 mallisi kanssa. Suositeltavaa on esittää kysymyksiä, jotka perustuvat hienosäätöön käytettyyn dataan.
 
-    ![Prompt flow esimerkki.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.fi.png)
+    ![Prompt flow esimerkki.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.fi.png)
 
 **Vastuuvapauslauseke**:  
 Tämä asiakirja on käännetty käyttämällä tekoälypohjaista käännöspalvelua [Co-op Translator](https://github.com/Azure/co-op-translator). Vaikka pyrimme tarkkuuteen, huomioithan, että automaattikäännöksissä saattaa esiintyä virheitä tai epätarkkuuksia. Alkuperäistä asiakirjaa sen alkuperäiskielellä tulee pitää virallisena lähteenä. Tärkeissä asioissa suositellaan ammattimaista ihmiskäännöstä. Emme ole vastuussa tämän käännöksen käytöstä aiheutuvista väärinymmärryksistä tai tulkinnoista.

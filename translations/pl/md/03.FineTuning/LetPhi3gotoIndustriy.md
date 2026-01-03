@@ -41,7 +41,7 @@ Fine-tuning polega na ulepszaniu konkretnego modelu. Nie wymaga rozpoczynania od
 
 ## **Jak korzystać z RAG**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.pl.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007.pl.png)
 
 Baza wektorowa to zbiór danych przechowywanych w formie matematycznej. Bazy wektorowe ułatwiają modelom uczenia maszynowego zapamiętywanie wcześniejszych danych wejściowych, co pozwala na wykorzystanie uczenia maszynowego do wspierania takich zastosowań jak wyszukiwanie, rekomendacje czy generowanie tekstu. Dane mogą być identyfikowane na podstawie metryk podobieństwa, a nie dokładnych dopasowań, co pozwala modelom komputerowym rozumieć kontekst danych.
 
@@ -57,7 +57,7 @@ Najczęściej używane algorytmy w Fine-tuning to Lora i QLora. Jak wybrać?
 
 ### **Lora i QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.pl.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca0.pl.png)
 
 LoRA (Low-Rank Adaptation) i QLoRA (Quantized Low-Rank Adaptation) to techniki stosowane do fine-tuningu dużych modeli językowych (LLM) z wykorzystaniem Parameter Efficient Fine Tuning (PEFT). Techniki PEFT zostały zaprojektowane, aby trenować modele bardziej efektywnie niż tradycyjne metody.
 

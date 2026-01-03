@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## फाइन ट्यूनिंग परिस्थिती
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.mr.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.mr.png)
 
 **प्लॅटफॉर्म** यात Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, आणि ONNX Runtime यांसारख्या विविध तंत्रज्ञानांचा समावेश आहे.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 होस्टेड फाइन-ट्यूनिंग वापरून मॉडेल फाइन-ट्यून करा, ज्यासाठी कम्प्युट तयार करण्याची किंवा व्यवस्थापित करण्याची गरज नाही.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.mr.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.mr.png)
 
 Phi-3-mini आणि Phi-3-medium मॉडेलसाठी सर्व्हरलेस फाइन-ट्यूनिंग उपलब्ध आहे, ज्यामुळे डेव्हलपर्सना क्लाउड आणि एज परिस्थितीसाठी मॉडेल्स जलद आणि सोप्या पद्धतीने सानुकूलित करता येतात, कम्प्युटची व्यवस्था न करता. तसेच, Phi-3-small आता Models-as-a-Service ऑफरिंगद्वारे उपलब्ध आहे, ज्यामुळे डेव्हलपर्सना AI विकास लवकर आणि सोप्या पद्धतीने सुरू करता येतो, underlying infrastructure व्यवस्थापित न करता.
 
@@ -32,7 +32,7 @@ Phi-3-mini आणि Phi-3-medium मॉडेलसाठी सर्व्ह
 
 वापरकर्ते स्वतःचा कम्प्युट व्यवस्थापित करून आपले मॉडेल फाइन-ट्यून करतात.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.mr.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.mr.png)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Phi-3-mini आणि Phi-3-medium मॉडेलसाठी सर्व्ह
 
 ## फाइन ट्यूनिंग कामगिरी उदाहरणे
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.mr.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.mr.png)
 
 **अस्वीकरण**:  
 हा दस्तऐवज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) वापरून अनुवादित केला आहे. आम्ही अचूकतेसाठी प्रयत्नशील असलो तरी, कृपया लक्षात घ्या की स्वयंचलित अनुवादांमध्ये चुका किंवा अचूकतेची कमतरता असू शकते. मूळ दस्तऐवज त्याच्या स्थानिक भाषेत अधिकृत स्रोत मानला जावा. महत्त्वाच्या माहितीसाठी व्यावसायिक मानवी अनुवाद करण्याची शिफारस केली जाते. या अनुवादाच्या वापरामुळे उद्भवणाऱ्या कोणत्याही गैरसमजुती किंवा चुकीच्या अर्थलागी आम्ही जबाबदार नाही.

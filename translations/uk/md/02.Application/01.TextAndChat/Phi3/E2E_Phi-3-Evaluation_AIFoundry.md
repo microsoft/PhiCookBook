@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ось процес оцінки в Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.uk.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.uk.png)
 
 *Джерело зображення: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Щоб переконатися, що ваша модель ШІ є етичною та безпечною, важливо оцінити її відповідно до Принципів відповідального ШІ Microsoft. В Azure AI Foundry оцінка безпеки дозволяє перевірити вразливість вашої моделі до атак jailbreak та її потенціал генерувати шкідливий контент, що безпосередньо відповідає цим принципам.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.uk.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.uk.png)
 
 *Джерело зображення: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **Відповідальність**: Особи, які розробляють і впроваджують системи ШІ, повинні нести відповідальність за їх роботу. Організації мають використовувати галузеві стандарти для формування норм відповідальності. Ці норми гарантують, що системи ШІ не є остаточним авторитетом у рішеннях, що впливають на життя людей, і що люди зберігають значущий контроль над високорівневими автономними системами ШІ.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.uk.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.uk.png)
 
 *Джерело зображення: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Оцінка цих аспектів гарантує, що модель ШІ не створює шкідливий або образливий контент, що відповідає суспільним цінностям і нормативним вимогам.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.uk.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.uk.png)
 
 ### Вступ до оцінки продуктивності
 
 Щоб переконатися, що ваша модель ШІ працює належним чином, важливо оцінити її продуктивність за відповідними метриками. В Azure AI Foundry оцінка продуктивності дозволяє перевірити ефективність моделі у створенні точних, релевантних та послідовних відповідей.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.uk.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.uk.png)
 
 *Джерело зображення: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ці метрики допомагають оцінити ефективність моделі у створенні точних, релевантних та послідовних відповідей.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.uk.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.uk.png)
 
 ## **Сценарій 2: Оцінка моделі Phi-3 / Phi-3.5 в Azure AI Foundry**
 
@@ -151,7 +151,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **+ New hub** у навігаційному меню.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.uk.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.uk.png)
 
 1. Виконайте наступні дії:
 
@@ -162,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Виберіть **Connect Azure AI Services** для використання (створіть нову, якщо потрібно).
     - Виберіть **Connect Azure AI Search** і оберіть **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.uk.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.uk.png)
 
 1. Виберіть **Next**.
 
@@ -172,11 +172,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **+ New project** у навігаційному меню.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.uk.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.uk.png)
 
 1. Введіть **Project name**. Він має бути унікальним.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.uk.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.uk.png)
 
 1. Виберіть **Create a project**.
 
@@ -192,17 +192,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **Endpoints** у лівій вкладці.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.uk.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.uk.png)
 
 1. Виберіть створений вами endpoint.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.uk.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.uk.png)
 
 1. Виберіть **Consume** у навігаційному меню.
 
 1. Скопіюйте ваш **REST endpoint** та **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.uk.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.uk.png)
 
 #### Додавання користувацького з’єднання
 
@@ -214,11 +214,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.uk.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.uk.png)
 
 1. Виберіть **Custom keys** у навігаційному меню.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.uk.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.uk.png)
 
 1. Виконайте наступні дії:
 
@@ -228,7 +228,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Для імені ключа введіть **key** і вставте скопійований ключ з Azure ML Studio у поле значення.
     - Після додавання ключів виберіть **is secret**, щоб приховати ключ від відображення.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.uk.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.uk.png)
 
 1. Виберіть **Add connection**.
 
@@ -242,15 +242,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **+ Create** у навігаційному меню.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.uk.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.uk.png)
 
 1. Виберіть **Chat flow** у навігаційному меню.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.uk.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.uk.png)
 
 1. Введіть **Folder name** для використання.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.uk.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.uk.png)
 
 1. Виберіть **Create**.
 
@@ -287,7 +287,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - Виберіть **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.uk.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.uk.png)
 
 1. Додайте наступний код у *integrate_with_promptflow.py* для використання користувацької моделі Phi-3 / Phi-3.5 у Prompt flow.
 
@@ -350,14 +350,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.uk.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.uk.png)
 
 > [!NOTE]
 > Для детальнішої інформації про використання Prompt flow в Azure AI Foundry зверніться до [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Виберіть **Chat input**, **Chat output**, щоб увімкнути чат з вашою моделлю.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.uk.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.uk.png)
 
 1. Тепер ви готові спілкуватися з вашою користувацькою моделлю Phi-3 / Phi-3.5. У наступному завданні ви навчитеся запускати Prompt flow і використовувати його для спілкування з тонко налаштованою моделлю Phi-3 / Phi-3.5.
 
@@ -365,32 +365,32 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > Перероблений потік має виглядати, як на зображенні нижче:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.uk.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.uk.png)
 >
 
 #### Запуск Prompt flow
 
 1. Виберіть **Start compute sessions**, щоб запустити Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.uk.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.uk.png)
 
 1. Виберіть **Validate and parse input**, щоб оновити параметри.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.uk.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.uk.png)
 
 1. Виберіть **Value** для **connection** у створеному вами користувацькому з’єднанні. Наприклад, *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.uk.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.uk.png)
 
 #### Спілкування з вашою користувацькою моделлю Phi-3 / Phi-3.5
 
 1. Виберіть **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.uk.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.uk.png)
 
 1. Ось приклад результатів: тепер ви можете спілкуватися з вашою користувацькою моделлю Phi-3 / Phi-3.5. Рекомендується ставити запитання на основі даних, використаних для тонкого налаштування.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.uk.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.uk.png)
 
 ### Розгортання Azure OpenAI для оцінки моделі Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Перейдіть до створеного вами проєкту Azure AI Foundry.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.uk.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.uk.png)
 
 1. У створеному проєкті виберіть **Deployments** у лівій вкладці.
 
@@ -410,11 +410,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Виберіть **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.uk.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.uk.png)
 
 1. Виберіть модель Azure OpenAI, яку хочете використовувати. Наприклад, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.uk.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.uk.png)
 
 1. Виберіть **Confirm**.
 
@@ -426,17 +426,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Перейдіть до створеного вами проєкту Azure AI Foundry.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.uk.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.uk.png)
 
 1. У створеному проєкті виберіть **Evaluation** у лівій вкладці.
 
 1. Виберіть **+ New evaluation** у навігаційному меню.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.uk.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.uk.png)
 
 1. Виберіть оцінювання **Prompt flow**.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.uk.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.uk.png)
 
 1. Виконайте наступні дії:
 
@@ -444,7 +444,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Виберіть тип завдання **Question and answer without context**, оскільки датасет **ULTRACHAT_200k**, використаний у цьому посібнику, не містить контексту.
     - Виберіть Prompt flow, який хочете оцінити.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.uk.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.uk.png)
 
 1. Виберіть **Next**.
 
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Виберіть **Add your dataset**, щоб завантажити датасет. Наприклад, можна завантажити тестовий файл датасету, такий як *test_data.json1*, який входить до складу **ULTRACHAT_200k**.
     - Виберіть відповідний **Dataset column**, що відповідає вашому датасету. Наприклад, якщо ви використовуєте **ULTRACHAT_200k**, виберіть **${data.prompt}** як стовпець датасету.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.uk.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.uk.png)
 
 1. Виберіть **Next**.
 
@@ -462,7 +462,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Виберіть метрики продуктивності та якості, які хочете використовувати.
     - Виберіть модель Azure OpenAI, створену для оцінювання. Наприклад, **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.uk.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.uk.png)
 
 1. Виконайте наступні дії для налаштування метрик ризику та безпеки:
 
@@ -472,7 +472,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Для **answer** виберіть **Data source** як **{$run.outputs.answer}**.
     - Для **ground_truth** виберіть **Data source** як **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.uk.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.uk.png)
 
 1. Виберіть **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     - оцініть ефективність моделі у генерації зв’язних, плавних та релевантних відповідей.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.uk.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.uk.png)
 
 1. Показники ризиків та безпеки:
 
     - Переконайтеся, що вихідні дані моделі є безпечними та відповідають Принципам Відповідального ШІ, уникаючи будь-якого шкідливого або образливого контенту.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.uk.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.uk.png)
 
 1. Ви можете прокрутити вниз, щоб переглянути **Детальні результати метрик**.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.uk.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.uk.png)
 
 1. Оцінюючи вашу кастомну модель Phi-3 / Phi-3.5 за показниками продуктивності та безпеки, ви можете підтвердити, що модель не лише ефективна, а й відповідає принципам відповідального ШІ, що робить її готовою до реального використання.
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ви успішно оцінили тонко налаштовану модель Phi-3, інтегровану з Prompt flow в Azure AI Foundry. Це важливий крок для забезпечення того, щоб ваші ШІ-моделі не лише добре працювали, а й відповідали Принципам Відповідального ШІ Microsoft, допомагаючи створювати надійні та довірені ШІ-додатки.
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.uk.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.uk.png)
 
 ## Очищення ресурсів Azure
 

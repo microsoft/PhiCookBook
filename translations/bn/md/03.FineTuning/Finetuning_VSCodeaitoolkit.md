@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [VSCode এর জন্য AI Toolkit ইনস্টল করুন](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.bn.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dc.bn.png)
 
 **[Private Preview]** ক্লাউডে মডেল ফাইন-টিউনিং এবং ইনফারেন্স চালানোর জন্য Azure Container Apps এর এক-ক্লিক প্রোভিশনিং।
 

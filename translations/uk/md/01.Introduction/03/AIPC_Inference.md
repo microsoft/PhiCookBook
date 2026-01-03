@@ -28,9 +28,9 @@ GPU відомі своїми можливостями паралельних о
 
 Пристрій Intel® NPU — це прискорювач інференсу ШІ, інтегрований з клієнтськими CPU Intel, починаючи з покоління Intel® Core™ Ultra (раніше відомого як Meteor Lake). Він забезпечує енергоефективне виконання завдань штучних нейронних мереж.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.uk.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.uk.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.uk.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.uk.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Під час виконання коду можна переглядати стан роботи NPU через Диспетчер завдань
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.uk.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.uk.png)
 
 ***Приклади*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Ось результат виконання
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.uk.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.uk.png)
 
 ***Приклади*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 конвертований формат виглядає так
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.uk.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.uk.png)
 
 Завантажте шляхи до моделі (model_dir), відповідні конфігурації (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) та апаратно-прискорені пристрої (GPU.0) через OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Під час виконання коду можна переглядати стан роботи GPU через Диспетчер завдань
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.uk.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.uk.png)
 
 ***Приклади*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

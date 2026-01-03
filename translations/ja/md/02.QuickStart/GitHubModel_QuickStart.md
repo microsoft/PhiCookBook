@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [GitHub Models](https://github.com/marketplace/models)へようこそ！Azure AI上でホストされているAIモデルをぜひご覧ください。
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.ja.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.ja.png)
 
 GitHub Modelsで利用可能なモデルの詳細については、[GitHub Model Marketplace](https://github.com/marketplace/models)をご覧ください。
 
@@ -45,7 +45,7 @@ GitHub Modelsで利用可能なモデルの詳細については、[GitHub Model
 
 また、サンプルやモデルを実行するための専用のCodespaces環境もあります。
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.ja.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.ja.png)
 
 ## サンプルコード
 
@@ -429,7 +429,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GitHub Modelsの無料利用とレート制限
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.ja.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.ja.png)
 
 [プレイグラウンドと無料API利用のレート制限](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits)は、モデルを試したりAIアプリケーションのプロトタイプを作成するためのものです。これらの制限を超えて利用し、アプリケーションをスケールさせるには、Azureアカウントからリソースをプロビジョニングし、GitHubのパーソナルアクセストークンではなくそちらで認証する必要があります。コードの他の部分を変更する必要はありません。Azure AIで無料枠の制限を超える方法については、こちらのリンクをご利用ください。
 

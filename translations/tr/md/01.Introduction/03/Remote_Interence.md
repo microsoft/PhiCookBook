@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Adaptörler uzaktaki ortamda eğitildikten sonra, modelle etkileşim kurmak için basit bir Gradio uygulaması kullanabilirsiniz.
 
-![İnce ayar tamamlandı](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.tr.png)
+![İnce ayar tamamlandı](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.tr.png)
 
 ### Azure Kaynaklarını Sağlama  
 Uzaktan çıkarım için Azure Kaynaklarını ayarlamak üzere komut paletinden `AI Toolkit: Provision Azure Container Apps for inference` komutunu çalıştırmanız gerekir. Bu işlem sırasında Azure Aboneliğinizi ve kaynak grubunuzu seçmeniz istenecektir.  
-![Çıkarım Kaynağı Sağlama](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.tr.png)
+![Çıkarım Kaynağı Sağlama](../../../../../translated_images/command-provision-inference.467afc8d351642fc.tr.png)
 
 Varsayılan olarak, çıkarım için kullanılan abonelik ve kaynak grubu, ince ayar için kullanılanlarla aynı olmalıdır. Çıkarım, aynı Azure Container App Ortamını kullanacak ve ince ayar adımında oluşturulan model ve model adaptörüne Azure Files üzerinden erişecektir.
 
@@ -24,7 +24,7 @@ Varsayılan olarak, çıkarım için kullanılan abonelik ve kaynak grubu, ince 
 ### Çıkarım için Dağıtım  
 Çıkarım kodunu gözden geçirmek veya çıkarım modelini yeniden yüklemek isterseniz, `AI Toolkit: Deploy for inference` komutunu çalıştırın. Bu, en güncel kodunuzu ACA ile senkronize eder ve replika yeniden başlatılır.
 
-![Çıkarım için dağıtım](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.tr.png)
+![Çıkarım için dağıtım](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.tr.png)
 
 Dağıtım başarıyla tamamlandıktan sonra, model bu uç nokta üzerinden değerlendirmeye hazırdır.
 
@@ -32,7 +32,7 @@ Dağıtım başarıyla tamamlandıktan sonra, model bu uç nokta üzerinden değ
 
 VSCode bildiriminde gösterilen "*Go to Inference Endpoint*" butonuna tıklayarak çıkarım API’sine erişebilirsiniz. Alternatif olarak, web API uç noktası `./infra/inference.config.json` dosyasındaki `ACA_APP_ENDPOINT` altında ve çıktı panelinde bulunabilir.
 
-![Uygulama Uç Noktası](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.tr.png)
+![Uygulama Uç Noktası](../../../../../translated_images/notification-deploy.446e480a44b1be58.tr.png)
 
 > **Not:** Çıkarım uç noktasının tam olarak çalışır hale gelmesi birkaç dakika sürebilir.
 

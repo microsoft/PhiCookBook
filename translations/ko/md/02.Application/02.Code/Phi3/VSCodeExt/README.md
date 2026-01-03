@@ -73,7 +73,7 @@ GitHub Copilot은 기업의 프로그래밍 효율성을 크게 향상시켰으�
 
 이 랩은 주로 Phi-3 모델을 로컬 NPU와 Azure 하이브리드와 결합해 GitHub Copilot Chat 내에서 맞춤형 에이전트 ***@PHI3***를 구축하여 기업 개발자가 코드 생성***(@PHI3 /gen)***과 이미지 기반 코드 생성***(@PHI3 /img)***을 지원하도록 합니다.
 
-![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d095fe0b942687287803c03933d2d1d439d14e10fa1442a864d.ko.png)
+![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d09.ko.png)
 
 ### ***참고:***
 

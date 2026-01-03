@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) je open-source platforma dizajnirana za upravljanje cjelokupnim životnim ciklusom strojnog učenja.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.hr.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.hr.png)
 
 MLFlow se koristi za upravljanje životnim ciklusom strojnog učenja, uključujući eksperimentiranje, reproducibilnost, implementaciju i centralni registar modela. Trenutno MLflow nudi četiri komponente.
 
@@ -22,7 +22,7 @@ MLFlow se koristi za upravljanje životnim ciklusom strojnog učenja, uključuju
 
 Uključuje mogućnosti za praćenje eksperimenata, pakiranje koda u reproducibilne pokrete te dijeljenje i implementaciju modela. MLFlow je integriran u Databricks i podržava razne ML biblioteke, što ga čini neovisnim o biblioteci. Može se koristiti s bilo kojom bibliotekom strojnog učenja i u bilo kojem programskom jeziku, jer pruža REST API i CLI radi praktičnosti.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.hr.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.hr.png)
 
 Ključne značajke MLFlow uključuju:
 
@@ -37,7 +37,7 @@ MLFlow također podržava MLOps ciklus, koji uključuje pripremu podataka, regis
 
 U ovom E2E primjeru prikazat ćemo dva različita pristupa izradi omotača oko malog jezičnog modela Phi-3 (SLM) i njegovo pokretanje kao MLFlow modela lokalno ili u oblaku, npr. u Azure Machine Learning radnom prostoru.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.hr.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.hr.png)
 
 | Projekt | Opis | Lokacija |
 | ------------ | ----------- | -------- |

@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **سهولت:** آموزش دقیق چگونه انجام می‌شود؟ آیا نیاز به نوشتن کد سفارشی دارم؟ آیا باید منابع محاسباتی خودم را بیاورم؟
 - **ایمنی:** مدل‌های آموزش دیده دقیق ممکن است ریسک‌های ایمنی داشته باشند – آیا محدودیت‌هایی برای جلوگیری از آسیب ناخواسته وجود دارد؟
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.fa.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.fa.png)
 
 ## آماده‌سازی برای آموزش دقیق
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry به شما امکان می‌دهد مدل‌های زبان بزرگ را با استفاده از فرآیندی به نام آموزش دقیق، بر اساس داده‌های شخصی خود تنظیم کنید. آموزش دقیق ارزش زیادی دارد زیرا امکان سفارشی‌سازی و بهینه‌سازی برای وظایف و کاربردهای خاص را فراهم می‌کند. این کار منجر به بهبود عملکرد، صرفه‌جویی در هزینه، کاهش تأخیر و خروجی‌های متناسب می‌شود.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.fa.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.fa.png)
 
 ### ایجاد پروژه جدید
 
@@ -79,14 +79,14 @@ Azure AI Foundry به شما امکان می‌دهد مدل‌های زبان �
 
 1. برای ایجاد پروژه جدید، **+New project** را انتخاب کنید.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.fa.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.fa.png)
 
 1. کارهای زیر را انجام دهید:
 
     - نام **Hub** پروژه. باید یک مقدار یکتا باشد.
     - **Hub** مورد نظر را انتخاب کنید (در صورت نیاز یک هاب جدید بسازید).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.fa.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.fa.png)
 
 1. برای ایجاد یک هاب جدید، کارهای زیر را انجام دهید:
 
@@ -97,7 +97,7 @@ Azure AI Foundry به شما امکان می‌دهد مدل‌های زبان �
     - سرویس‌های Azure AI را برای اتصال انتخاب کنید (در صورت نیاز جدید بسازید).
     - گزینه **Connect Azure AI Search** را روی **Skip connecting** قرار دهید.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.fa.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.fa.png)
 
 1. روی **Next** کلیک کنید.
 1. روی **Create a project** کلیک کنید.
@@ -115,15 +115,15 @@ Azure AI Foundry به شما امکان می‌دهد مدل‌های زبان �
 
 1. در **نوار جستجو** عبارت *phi-3* را تایپ کرده و مدل phi-3 مورد نظر خود را انتخاب کنید.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.fa.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.fa.png)
 
 1. روی **Fine-tune** کلیک کنید.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.fa.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.fa.png)
 
 1. نام **مدل آموزش دیده دقیق** را وارد کنید.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.fa.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.fa.png)
 
 1. روی **Next** کلیک کنید.
 
@@ -132,13 +132,13 @@ Azure AI Foundry به شما امکان می‌دهد مدل‌های زبان �
     - نوع **وظیفه** را روی **Chat completion** تنظیم کنید.
     - داده‌های **آموزش** مورد نظر خود را انتخاب کنید. می‌توانید آن را از داده‌های Azure AI Foundry یا محیط محلی خود بارگذاری کنید.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.fa.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.fa.png)
 
 1. روی **Next** کلیک کنید.
 
 1. داده‌های **اعتبارسنجی** مورد نظر خود را بارگذاری کنید یا گزینه **Automatic split of training data** را انتخاب کنید.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.fa.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.fa.png)
 
 1. روی **Next** کلیک کنید.
 
@@ -148,15 +148,15 @@ Azure AI Foundry به شما امکان می‌دهد مدل‌های زبان �
     - نرخ **Learning rate** را انتخاب کنید.
     - تعداد **Epochs** را انتخاب کنید.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.fa.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.fa.png)
 
 1. برای شروع فرآیند آموزش دقیق، روی **Submit** کلیک کنید.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.fa.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.fa.png)
 
 1. پس از اتمام آموزش دقیق، وضعیت مدل به صورت **Completed** نمایش داده می‌شود، همانطور که در تصویر زیر می‌بینید. اکنون می‌توانید مدل را مستقر کرده و در برنامه خود، در محیط آزمایشی یا در prompt flow استفاده کنید. برای اطلاعات بیشتر، به [نحوه استقرار خانواده مدل‌های کوچک زبان Phi-3 با Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python) مراجعه کنید.
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.fa.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.fa.png)
 
 > [!NOTE]
 > برای اطلاعات دقیق‌تر درباره آموزش دقیق Phi-3، لطفاً به [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini) مراجعه کنید.

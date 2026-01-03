@@ -30,7 +30,7 @@ Noudata näitä vaiheita aloittaaksesi näiden resurssien käytön:
 2. **Kloonaa repositorio**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Liity Microsoft AI Discord -yhteisöön ja tapaa asiantuntijoita ja muita kehittäjiä**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![kansi](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.fi.png)
+![kansi](../../translated_images/cover.eb18d1b9605d754b.fi.png)
 
 ### 🌐 Monikielituki
 

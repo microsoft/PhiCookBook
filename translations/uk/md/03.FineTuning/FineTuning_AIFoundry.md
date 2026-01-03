@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 - **Зручність:** Як саме відбувається тонке налаштування – чи потрібно писати власний код? Чи потрібно мати власні обчислювальні ресурси?
 - **Безпека:** Відомо, що тонко налаштовані моделі можуть мати ризики безпеки – чи є якісь захисні механізми, щоб уникнути небажаної шкоди?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.uk.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.uk.png)
 
 ## Підготовка до тонкого налаштування
 
@@ -71,7 +71,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Azure AI Foundry дозволяє налаштовувати великі мовні моделі під ваші власні набори даних за допомогою процесу, відомого як тонке налаштування. Тонке налаштування дає значну користь, дозволяючи кастомізувати та оптимізувати модель для конкретних завдань і застосунків. Це покращує продуктивність, знижує витрати, зменшує затримки та забезпечує більш релевантні результати.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.uk.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.uk.png)
 
 ### Створення нового проєкту
 
@@ -79,14 +79,14 @@ Azure AI Foundry дозволяє налаштовувати великі мов
 
 1. Виберіть **+New project**, щоб створити новий проєкт у Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.uk.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.uk.png)
 
 1. Виконайте наступні дії:
 
     - Вкажіть унікальне ім’я **Hub name**.
     - Виберіть **Hub** для використання (створіть новий, якщо потрібно).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.uk.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.uk.png)
 
 1. Виконайте наступні дії для створення нового хабу:
 
@@ -97,7 +97,7 @@ Azure AI Foundry дозволяє налаштовувати великі мов
     - Виберіть **Connect Azure AI Services** для підключення (створіть нове, якщо потрібно).
     - Виберіть **Connect Azure AI Search** і оберіть **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.uk.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.uk.png)
 
 1. Виберіть **Next**.
 1. Виберіть **Create a project**.
@@ -115,15 +115,15 @@ Azure AI Foundry дозволяє налаштовувати великі мов
 
 1. Введіть *phi-3* у **рядок пошуку** і виберіть модель phi-3, яку хочете використовувати.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.uk.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.uk.png)
 
 1. Виберіть **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.uk.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.uk.png)
 
 1. Введіть ім’я для **Fine-tuned model name**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.uk.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.uk.png)
 
 1. Виберіть **Next**.
 
@@ -132,13 +132,13 @@ Azure AI Foundry дозволяє налаштовувати великі мов
     - Виберіть тип завдання (**task type**) – **Chat completion**.
     - Виберіть навчальні дані (**Training data**), які хочете використати. Ви можете завантажити їх через сховище Azure AI Foundry або з локального середовища.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.uk.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.uk.png)
 
 1. Виберіть **Next**.
 
 1. Завантажте валідаційні дані (**Validation data**), які хочете використати, або оберіть **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.uk.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.uk.png)
 
 1. Виберіть **Next**.
 
@@ -148,15 +148,15 @@ Azure AI Foundry дозволяє налаштовувати великі мов
     - Виберіть швидкість навчання (**Learning rate**).
     - Виберіть кількість епох (**Epochs**).
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.uk.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.uk.png)
 
 1. Виберіть **Submit**, щоб розпочати процес тонкого налаштування.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.uk.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.uk.png)
 
 1. Після завершення тонкого налаштування статус моделі відобразиться як **Completed**, як показано на зображенні нижче. Тепер ви можете розгорнути модель і використовувати її у власному застосунку, у playground або в prompt flow. Для детальнішої інформації дивіться [Як розгорнути сімейство малих мовних моделей Phi-3 з Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.uk.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.uk.png)
 
 > [!NOTE]
 > Для більш детальної інформації про тонке налаштування Phi-3 відвідайте [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

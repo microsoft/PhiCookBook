@@ -43,7 +43,7 @@ Tài liệu bao gồm hướng dẫn về:
 
    ***Lưu ý*** Nếu bạn không muốn biên dịch, có thể bỏ qua bước này
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.vi.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.vi.png)
 
 ### **4. Cài đặt Driver NVIDIA**
 
@@ -83,7 +83,7 @@ Sao chép các thư mục lib, bin, include của NVIDIA CUDNN 9.4 vào thư m�
 
    Mở [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) và thực thi
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.vi.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.vi.png)
 
 ### **8. Biên dịch ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Sao chép các thư mục lib, bin, include của NVIDIA CUDNN 9.4 vào thư m�
 
    - Sử dụng Windows Terminal, mở Developer Command Prompt for VS 2022 và chuyển đến thư mục onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.vi.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.vi.png)
 
    - Biên dịch với môi trường python của bạn
 

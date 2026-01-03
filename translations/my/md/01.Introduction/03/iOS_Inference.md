@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 App ဖန်တီးမှုနည်းလမ်းအဖြစ် Objective-C ကို ရွေးချယ်ခဲ့သည်၊ ONNX Runtime C++ API ဖြင့် Generative AI ကို အသုံးပြုရာတွင် Objective-C သည် ပိုမိုကိုက်ညီသည်။ သို့သော် Swift bridging ဖြင့်လည်း ဆက်စပ်ခေါ်ယူမှုများ ပြီးစီးနိုင်သည်။
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.my.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.my.png)
 
 ## **5. ONNX quantized INT4 မော်ဒယ်ကို App application project ထဲသို့ ကူးယူခြင်း**
 
 ONNX ပုံစံဖြင့် INT4 quantization မော်ဒယ်ကို တင်သွင်းရန် လိုအပ်ပြီး အရင်ဆုံး ဒေါင်းလုပ်လုပ်ရမည်။
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.my.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.my.png)
 
 ဒေါင်းလုပ်ပြီးနောက် Xcode တွင် project ၏ Resources ဖိုလ်ဒါထဲသို့ ထည့်သွင်းရမည်။
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.my.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.my.png)
 
 ## **6. ViewControllers တွင် C++ API ထည့်သွင်းခြင်း**
 
@@ -121,11 +121,11 @@ ONNX ပုံစံဖြင့် INT4 quantization မော်ဒယ်က�
 
 - **က။** သက်ဆိုင်ရာ C++ header ဖိုင်များကို project ထဲသို့ ထည့်သွင်းပါ။
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.my.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.my.png)
 
 - **ခ။** Xcode တွင် `onnxruntime-genai` dynamic library ကို ထည့်သွင်းပါ။
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.my.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.my.png)
 
 - **ဂ။** စမ်းသပ်ရန် C Samples ကုဒ်ကို အသုံးပြုနိုင်သည်။ ChatUI ကဲ့သို့ အပိုဆောင်း လုပ်ဆောင်ချက်များကိုလည်း ထည့်သွင်းနိုင်သည်။
 
@@ -162,7 +162,7 @@ ONNX ပုံစံဖြင့် INT4 quantization မော်ဒယ်က�
 
 ပြင်ဆင်မှုများ ပြီးဆုံးသည့်အခါ Phi-3-mini မော်ဒယ်၏ အာရုံစူးစိုက်မှုရလဒ်များကို ကြည့်ရှုနိုင်ရန် အက်ပလီကေးရှင်းကို ပြေးဆွဲနိုင်သည်။
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.my.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.my.jpg)
 
 နမူနာကုဒ်များနှင့် အသေးစိတ် လမ်းညွှန်ချက်များအတွက် [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ကို လည်ပတ်ကြည့်ရှုနိုင်ပါသည်။
 

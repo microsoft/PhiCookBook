@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) ist eine Open-Source-Plattform, die entwickelt wurde, um den gesamten Lebenszyklus von Machine Learning zu verwalten.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.de.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.de.png)
 
 MLFlow wird verwendet, um den ML-Lebenszyklus zu steuern, einschließlich Experimentieren, Reproduzierbarkeit, Bereitstellung und einem zentralen Modell-Register. MLflow bietet derzeit vier Komponenten an.
 
@@ -22,7 +22,7 @@ MLFlow wird verwendet, um den ML-Lebenszyklus zu steuern, einschließlich Experi
 
 Es umfasst Funktionen zum Nachverfolgen von Experimenten, Verpacken von Code in reproduzierbare Läufe sowie zum Teilen und Bereitstellen von Modellen. MLFlow ist in Databricks integriert und unterstützt eine Vielzahl von ML-Bibliotheken, wodurch es bibliotheksunabhängig ist. Es kann mit jeder Machine-Learning-Bibliothek und in jeder Programmiersprache verwendet werden, da es eine REST-API und CLI für die einfache Nutzung bereitstellt.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.de.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.de.png)
 
 Wichtige Funktionen von MLFlow umfassen:
 
@@ -37,7 +37,7 @@ MLFlow unterstützt außerdem den MLOps-Zyklus, der das Vorbereiten von Daten, R
 
 In diesem E2E-Beispiel zeigen wir zwei verschiedene Ansätze, um einen Wrapper um das kleine Sprachmodell Phi-3 (SLM) zu bauen und es anschließend als MLFlow-Modell lokal oder in der Cloud, z. B. im Azure Machine Learning Workspace, auszuführen.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.de.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.de.png)
 
 | Projekt | Beschreibung | Speicherort |
 | ------------ | ----------- | -------- |

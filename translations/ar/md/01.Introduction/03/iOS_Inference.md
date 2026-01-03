@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 اخترت Objective-C كطريقة لتطوير التطبيق، لأن استخدام الذكاء الاصطناعي التوليدي مع ONNX Runtime API الخاص بـ C++ يتوافق بشكل أفضل مع Objective-C. بالطبع، يمكنك أيضًا إتمام الاستدعاءات ذات الصلة عبر جسر Swift.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.ar.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.ar.png)
 
 ## **5. نسخ نموذج ONNX المكمم INT4 إلى مشروع تطبيق App**
 
 نحتاج إلى استيراد نموذج الكمّية INT4 بصيغة ONNX، والذي يجب تنزيله أولاً.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.ar.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.ar.png)
 
 بعد التنزيل، يجب إضافته إلى مجلد Resources في المشروع داخل Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.ar.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.ar.png)
 
 ## **6. إضافة API الخاص بـ C++ في ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **أ.** أضف ملفات الرأس الخاصة بـ C++ المناسبة إلى المشروع.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.ar.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.ar.png)
 
 - **ب.** أدرج مكتبة `onnxruntime-genai` الديناميكية في Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.ar.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.ar.png)
 
 - **ج.** استخدم كود عينات C للاختبار. يمكنك أيضًا إضافة ميزات إضافية مثل ChatUI لمزيد من الوظائف.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 بمجرد الانتهاء من الإعداد، يمكنك تشغيل التطبيق لرؤية نتائج استدلال نموذج Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.ar.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.ar.jpg)
 
 لمزيد من أكواد العينات والتعليمات التفصيلية، قم بزيارة [مستودع عينات Phi-3 Mini](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

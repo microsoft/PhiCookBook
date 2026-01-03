@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 นี่คือกระบวนการประเมินของ Azure AI Foundry
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.th.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.th.png)
 
 *ที่มาของภาพ: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 เพื่อให้มั่นใจว่าโมเดล AI ของคุณมีจริยธรรมและปลอดภัย จำเป็นต้องประเมินโมเดลตามหลักการ Responsible AI ของ Microsoft ใน Azure AI Foundry การประเมินความปลอดภัยช่วยให้คุณตรวจสอบความเสี่ยงที่โมเดลอาจถูกโจมตีแบบ jailbreak และความเป็นไปได้ที่โมเดลจะสร้างเนื้อหาที่เป็นอันตราย ซึ่งสอดคล้องกับหลักการเหล่านี้โดยตรง
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.th.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.th.png)
 
 *ที่มาของภาพ: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **ความรับผิดชอบ**: ผู้ที่ออกแบบและปรับใช้ระบบ AI ต้องรับผิดชอบต่อการทำงานของระบบของตน องค์กรควรใช้มาตรฐานในอุตสาหกรรมเพื่อพัฒนากฎเกณฑ์ความรับผิดชอบ กฎเกณฑ์เหล่านี้ช่วยให้มั่นใจว่าระบบ AI จะไม่เป็นผู้ตัดสินขั้นสุดท้ายในเรื่องที่ส่งผลต่อชีวิตผู้คน และยังช่วยให้มนุษย์ยังคงควบคุมระบบ AI ที่มีความเป็นอิสระสูงได้อย่างมีความหมาย
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.th.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.th.png)
 
 *ที่มาของภาพ: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 การประเมินด้านเหล่านี้ช่วยให้มั่นใจว่าโมเดล AI จะไม่สร้างเนื้อหาที่เป็นอันตรายหรือไม่เหมาะสม สอดคล้องกับค่านิยมทางสังคมและมาตรฐานทางกฎหมาย
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.th.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.th.png)
 
 ### แนะนำการประเมินประสิทธิภาพ
 
 เพื่อให้มั่นใจว่าโมเดล AI ของคุณทำงานได้ตามที่คาดหวัง จำเป็นต้องประเมินประสิทธิภาพของโมเดลตามตัวชี้วัดประสิทธิภาพ ใน Azure AI Foundry การประเมินประสิทธิภาพช่วยให้คุณประเมินความสามารถของโมเดลในการสร้างคำตอบที่ถูกต้อง สอดคล้อง และเหมาะสม
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.th.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.th.png)
 
 *ที่มาของภาพ: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ตัวชี้วัดเหล่านี้ช่วยให้คุณประเมินความสามารถของโมเดลในการสร้างคำตอบที่ถูกต้อง สอดคล้อง และเหมาะสม
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.th.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.th.png)
 
 ## **สถานการณ์ที่ 2: การประเมินโมเดล Phi-3 / Phi-3.5 ใน Azure AI Foundry**
 
@@ -151,7 +151,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+ New hub** จากเมนูนำทาง
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.th.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.th.png)
 
 1. ดำเนินการตามขั้นตอนดังนี้:
 
@@ -162,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Connect Azure AI Services** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **Connect Azure AI Search** เป็น **Skip connecting**
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.th.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.th.png)
 
 1. เลือก **Next**
 
@@ -172,11 +172,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+ New project** จากเมนูนำทาง
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.th.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.th.png)
 
 1. กรอก **Project name** ต้องเป็นค่าที่ไม่ซ้ำกัน
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.th.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.th.png)
 
 1. เลือก **Create a project**
 
@@ -192,17 +192,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **Endpoints** จากแท็บด้านซ้าย
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.th.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.th.png)
 
 1. เลือก endpoint ที่คุณสร้างไว้
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.th.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.th.png)
 
 1. เลือก **Consume** จากเมนูนำทาง
 
 1. คัดลอก **REST endpoint** และ **Primary key** ของคุณ
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.th.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.th.png)
 
 #### เพิ่มการเชื่อมต่อแบบกำหนดเอง
 
@@ -214,11 +214,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+ New connection**
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.th.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.th.png)
 
 1. เลือก **Custom keys** จากเมนูนำทาง
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.th.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.th.png)
 
 1. ดำเนินการตามขั้นตอนดังนี้:
 
@@ -228,7 +228,7 @@ CO_OP_TRANSLATOR_METADATA:
     - สำหรับชื่อ key ให้กรอก **key** และวาง key ที่คุณคัดลอกจาก Azure ML Studio ลงในช่องค่า
     - หลังจากเพิ่ม key แล้ว ให้เลือก **is secret** เพื่อป้องกันไม่ให้ key ถูกเปิดเผย
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.th.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.th.png)
 
 1. เลือก **Add connection**
 
@@ -242,15 +242,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **+ Create** จากเมนูนำทาง
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.th.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.th.png)
 
 1. เลือก **Chat flow** จากเมนูนำทาง
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.th.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.th.png)
 
 1. กรอก **Folder name** ที่ต้องการใช้
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.th.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.th.png)
 
 1. เลือก **Create**
 
@@ -287,7 +287,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - เลือก **Save**
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.th.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.th.png)
 
 1. เพิ่มโค้ดต่อไปนี้ใน *integrate_with_promptflow.py* เพื่อใช้โมเดล Phi-3 / Phi-3.5 แบบกำหนดเองใน Prompt flow
 
@@ -350,14 +350,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.th.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.th.png)
 
 > [!NOTE]
 > สำหรับข้อมูลเพิ่มเติมเกี่ยวกับการใช้ Prompt flow ใน Azure AI Foundry คุณสามารถดูได้ที่ [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)
 
 1. เลือก **Chat input**, **Chat output** เพื่อเปิดใช้งานการสนทนากับโมเดลของคุณ
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.th.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.th.png)
 
 1. ตอนนี้คุณพร้อมที่จะสนทนากับโมเดล Phi-3 / Phi-3.5 แบบกำหนดเองของคุณแล้ว ในแบบฝึกหัดถัดไป คุณจะได้เรียนรู้วิธีเริ่มต้น Prompt flow และใช้งานเพื่อสนทนากับโมเดลที่ผ่านการปรับแต่ง
 
@@ -365,32 +365,32 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > โฟลว์ที่สร้างใหม่ควรมีลักษณะเหมือนภาพด้านล่างนี้:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.th.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.th.png)
 >
 
 #### เริ่มต้น Prompt flow
 
 1. เลือก **Start compute sessions** เพื่อเริ่ม Prompt flow
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.th.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.th.png)
 
 1. เลือก **Validate and parse input** เพื่อรีเฟรชพารามิเตอร์
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.th.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.th.png)
 
 1. เลือก **Value** ของ **connection** เป็นการเชื่อมต่อแบบกำหนดเองที่คุณสร้างไว้ เช่น *connection*
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.th.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.th.png)
 
 #### สนทนากับโมเดล Phi-3 / Phi-3.5 แบบกำหนดเองของคุณ
 
 1. เลือก **Chat**
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.th.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.th.png)
 
 1. นี่คือตัวอย่างผลลัพธ์: ตอนนี้คุณสามารถสนทนากับโมเดล Phi-3 / Phi-3.5 แบบกำหนดเองของคุณได้ แนะนำให้ถามคำถามที่เกี่ยวข้องกับข้อมูลที่ใช้ในการปรับแต่งโมเดล
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.th.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.th.png)
 
 ### นำ Azure OpenAI มาใช้งานเพื่อประเมินโมเดล Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ไปยังโปรเจกต์ Azure AI Foundry ที่คุณสร้างไว้
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.th.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.th.png)
 
 1. ในโปรเจกต์ที่คุณสร้าง เลือก **Deployments** จากแท็บด้านซ้าย
 
@@ -410,11 +410,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **Deploy base model**
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.th.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.th.png)
 
 1. เลือกโมเดล Azure OpenAI ที่คุณต้องการใช้ เช่น **gpt-4o**
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.th.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.th.png)
 
 1. เลือก **Confirm**
 
@@ -426,17 +426,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ไปยังโปรเจกต์ Azure AI Foundry ที่คุณสร้างไว้
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.th.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.th.png)
 
 1. ในโปรเจกต์ที่คุณสร้าง เลือก **Evaluation** จากแท็บด้านซ้าย
 
 1. เลือก **+ New evaluation** จากเมนูนำทาง
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.th.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.th.png)
 
 1. เลือกการประเมินแบบ **Prompt flow**
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.th.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.th.png)
 
 1. ดำเนินการตามขั้นตอนดังนี้:
 
@@ -444,7 +444,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Question and answer without context** เป็นประเภทงาน เนื่องจากชุดข้อมูล **UlTRACHAT_200k** ที่ใช้ในบทเรียนนี้ไม่มีบริบท
     - เลือก prompt flow ที่คุณต้องการประเมิน
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.th.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.th.png)
 
 1. เลือก **Next**
 
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Add your dataset** เพื่ออัปโหลดชุดข้อมูล เช่น ไฟล์ชุดข้อมูลทดสอบ *test_data.json1* ซึ่งรวมอยู่ในชุดข้อมูล **ULTRACHAT_200k**
     - เลือก **Dataset column** ที่เหมาะสมกับชุดข้อมูลของคุณ เช่น หากใช้ชุดข้อมูล **ULTRACHAT_200k** ให้เลือก **${data.prompt}** เป็นคอลัมน์ชุดข้อมูล
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.th.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.th.png)
 
 1. เลือก **Next**
 
@@ -462,7 +462,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือกตัวชี้วัดประสิทธิภาพและคุณภาพที่คุณต้องการใช้
     - เลือกโมเดล Azure OpenAI ที่คุณสร้างขึ้นเพื่อการประเมิน เช่น **gpt-4o**
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.th.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.th.png)
 
 1. ดำเนินการตามขั้นตอนเพื่อกำหนดค่าตัวชี้วัดความเสี่ยงและความปลอดภัย:
 
@@ -472,7 +472,7 @@ CO_OP_TRANSLATOR_METADATA:
     - สำหรับ **answer** เลือก **Data source** เป็น **{$run.outputs.answer}**
     - สำหรับ **ground_truth** เลือก **Data source** เป็น **{$data.message}**
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.th.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.th.png)
 
 1. เลือก **Next**
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     - ประเมินประสิทธิผลของโมเดลในการสร้างคำตอบที่สอดคล้อง ลื่นไหล และเกี่ยวข้อง
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.th.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.th.png)
 
 1. ตัวชี้วัดความเสี่ยงและความปลอดภัย:
 
     - ตรวจสอบให้แน่ใจว่าผลลัพธ์ของโมเดลปลอดภัยและสอดคล้องกับ Responsible AI Principles หลีกเลี่ยงเนื้อหาที่เป็นอันตรายหรือไม่เหมาะสม
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.th.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.th.png)
 
 1. คุณสามารถเลื่อนลงเพื่อดู **ผลลัพธ์ตัวชี้วัดโดยละเอียด**
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.th.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.th.png)
 
 1. โดยการประเมินโมเดล Phi-3 / Phi-3.5 ที่ปรับแต่งเองของคุณทั้งในด้านประสิทธิภาพและความปลอดภัย คุณจะมั่นใจได้ว่าโมเดลไม่เพียงแต่มีประสิทธิภาพเท่านั้น แต่ยังปฏิบัติตามแนวทาง Responsible AI ทำให้พร้อมสำหรับการใช้งานจริง
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 คุณได้ประเมินโมเดล Phi-3 ที่ปรับแต่งและผสานรวมกับ Prompt flow ใน Azure AI Foundry สำเร็จแล้ว นี่เป็นขั้นตอนสำคัญในการรับรองว่าโมเดล AI ของคุณไม่เพียงแต่ทำงานได้ดี แต่ยังสอดคล้องกับหลักการ Responsible AI ของ Microsoft เพื่อช่วยให้คุณสร้างแอปพลิเคชัน AI ที่น่าเชื่อถือและมั่นใจได้
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.th.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.th.png)
 
 ## ล้างทรัพยากร Azure
 

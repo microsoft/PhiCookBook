@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 A Phi-4-multimodálnak erős képolvasó képességei vannak. Próbáljuk meg Python segítségével megvalósítani a következő funkciókat. A kép egy ChatGPT oldal.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.hu.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.hu.png)
 
 ### **Minta kód**
 

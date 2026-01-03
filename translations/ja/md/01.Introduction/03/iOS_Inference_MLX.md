@@ -63,7 +63,7 @@ CO_OP_TRANSLATOR_METADATA:
 </plist>
 ```
 
-> **Note:** `com.apple.developer.kernel.increased-memory-limit`エンタイトルメントは、大きなモデルを実行する際に重要です。これにより、通常より多くのメモリをアプリが要求できるようになります。
+> **注意:** `com.apple.developer.kernel.increased-memory-limit`エンタイトルメントは、大きなモデルを実行する際に重要です。これにより、通常より多くのメモリをアプリが要求できるようになります。
 
 ## ステップ4: チャットメッセージモデルを作成する
 
@@ -262,7 +262,7 @@ UIとの連携では、LLMを初期化する`loadModel()`と、ユーザー入�
 
 ### モデルフォーマットに関する注意点
 
-> **Important:** MLX用のPhiモデルはデフォルトやGGUFフォーマットのままでは使用できません。MLXフォーマットに変換する必要があり、これはMLXコミュニティによって行われています。事前変換済みモデルは[huggingface.co/mlx-community](https://huggingface.co/mlx-community)で入手可能です。
+> **重要:** MLX用のPhiモデルはデフォルトやGGUFフォーマットのままでは使用できません。MLXフォーマットに変換する必要があり、これはMLXコミュニティによって行われています。事前変換済みモデルは[huggingface.co/mlx-community](https://huggingface.co/mlx-community)で入手可能です。
 
 MLX ExamplesパッケージにはPhi-3を含むいくつかのモデルの事前設定登録が含まれています。`ModelRegistry.phi3_5_4bit`を呼び出すと、特定の事前変換済みMLXモデルが自動的にダウンロードされます：
 
@@ -291,7 +291,7 @@ self.modelContainer = try await LLMModelFactory.shared.loadContainer(
 }
 ```
 
-> **Note:** Phi-4のサポートは2025年2月末にMLX Swift Examplesリポジトリに追加されました（[PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)）。2025年3月時点での最新公式リリース（2024年12月の2.21.2）にはPhi-4の組み込みサポートは含まれていません。Phi-4モデルを使うには、メインブランチから直接パッケージを参照する必要があります：
+> **注意:** Phi-4のサポートは2025年2月末にMLX Swift Examplesリポジトリに追加されました（[PR #216](https://github.com/ml-explore/mlx-swift-examples/pull/216)）。2025年3月時点での最新公式リリース（2024年12月の2.21.2）にはPhi-4の組み込みサポートは含まれていません。Phi-4モデルを使うには、メインブランチから直接パッケージを参照する必要があります：
 >
 >```swift
 > // In your Package.swift or via Xcode's package manager interface
@@ -435,7 +435,7 @@ UIは3つの主要コンポーネントで構成され、基本的なチャッ�
 
 これでアプリのビルドと実行の準備が整いました。
 
-> **Important!** MLXはシミュレーターをサポートしていません。Apple Siliconチップ搭載の実機で実行する必要があります。詳細は[こちら](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS)を参照してください。
+> **重要!** MLXはシミュレーターをサポートしていません。Apple Siliconチップ搭載の実機で実行する必要があります。詳細は[こちら](https://swiftpackageindex.com/ml-explore/mlx-swift/main/documentation/mlx/running-on-ios#Developing-for-iOS)を参照してください。
 
 アプリ起動後、「Load model」ボタンをタップしてPhi-3（または設定に応じてPhi-4）モデルをダウンロードし初期化します。これはHugging Faceからモデルをダウンロードするため、インターネット接続状況によって時間がかかる場合があります。実装では読み込み中を示すスピナーのみですが、Xcodeのコンソールで実際の進捗を確認できます。
 
@@ -452,4 +452,5 @@ iPad Air M1上で動作しているアプリの様子は以下の通りです：
 おめでとうございます！
 
 **免責事項**：  
+
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は責任を負いかねます。

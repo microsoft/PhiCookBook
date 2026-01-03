@@ -66,7 +66,7 @@ Azure ML a adăugat multe funcții legate de LLM/SLM, combinând LLMOps și SLMO
 
 Utilizatorii enterprise pot implementa modele diferite în funcție de scenarii de afaceri variate prin Catalogul de modele și pot oferi servicii ca Model as Service pentru dezvoltatorii sau utilizatorii enterprise.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.ro.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.ro.png)
 
 Catalogul de modele din Azure Machine Learning studio este centrul pentru descoperirea și utilizarea unei game largi de modele care îți permit să construiești aplicații Generative AI. Catalogul conține sute de modele de la furnizori precum Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, inclusiv modele antrenate de Microsoft. Modelele de la furnizori non-Microsoft sunt considerate Produse Non-Microsoft, conform Termenilor de produs Microsoft, și sunt supuse termenilor specifici modelului.
 
@@ -76,7 +76,7 @@ Nucleul unui pipeline de machine learning este împărțirea unei sarcini comple
 
 În fine-tuning-ul SLM / LLM, putem gestiona datele, antrenamentul și procesele de generare prin Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.ro.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.ro.png)
 
 ### **Prompt flow**
 

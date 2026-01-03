@@ -41,7 +41,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Στο Microsoft Prompt Flow, η αξιολόγηση παίζει κρίσιμο ρόλο στην εκτίμηση της απόδοσης των μοντέλων AI σας. Ας δούμε πώς μπορείτε να προσαρμόσετε τις ροές αξιολόγησης και τα μετρικά μέσα στο Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.el.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.el.png)
 
 **Κατανόηση της Αξιολόγησης στο Prompt Flow**
 

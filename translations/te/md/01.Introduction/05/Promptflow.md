@@ -41,7 +41,7 @@ Prompt Flow లో బిల్ట్-ఇన్ టూల్స్, ఉదాహ
 
 In Microsoft Prompt Flow, evaluation plays a crucial role in assessing how well your AI models perform. Let's explore how you can customize evaluation flows and metrics within Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.te.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.te.png)
 
 **Understanding Evaluation in Prompt Flow**
 

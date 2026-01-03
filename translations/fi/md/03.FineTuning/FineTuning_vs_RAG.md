@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG on tiedonhaku + tekstin generointi. Yrityksen rakenteellinen ja rakenteeton data tallennetaan vektoritietokantaan. Kun haetaan relevanttia sisältöä, löydetään siihen liittyvä tiivistelmä ja sisältö muodostamaan kontekstin, ja yhdistetään LLM/SLM:n tekstin täydentämiskyky sisällön luomiseksi.
 
 ## RAG-prosessi
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.fi.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.fi.png)
 
 ## Fine-tuning
 Fine-tuning perustuu tietyn mallin parantamiseen. Sen ei tarvitse alkaa mallin algoritmista, mutta dataa täytyy kerätä jatkuvasti. Jos haluat tarkempaa terminologiaa ja kielen ilmaisua teollisuussovelluksissa, fine-tuning on parempi valinta. Mutta jos datasi muuttuu usein, fine-tuning voi käydä monimutkaiseksi.

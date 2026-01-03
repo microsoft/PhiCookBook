@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [VSCode కోసం AI Toolkit ఇన్‌స్టాల్ చేయండి](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit ఫైన్‌ట్యూనింగ్](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.te.png)
+![AIToolkit ఫైన్‌ట్యూనింగ్](../../../../translated_images/Aitoolkit.7157953df04812dc.te.png)
 
 
 **[ప్రైవేట్ ప్రీవ్యూ]** క్లౌడ్‌లో మోడల్ ఫైన్‑ట్యూనింగ్ మరియు ఇన్ఫరెన్స్ నడిపే Azure Container Apps కోసం ఒక క్లిక్ ప్రావిజనింగ్.

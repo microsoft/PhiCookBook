@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Знаем, че Phi-3/3.5-mini-instruct от семейството Phi-3/3.5 има силни възможности за разбиране и генериране на код и превъзхожда Gemma-2-9b и Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.bg.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.bg.png)
 
 Последните GitHub Models вече предоставят достъп до моделите Phi-3.5-mini-instruct (128k) и Phi-3.5-vision-instruct (128k). Разработчиците могат да ги използват чрез OpenAI SDK, Azure AI Inference SDK и REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.bg.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.bg.png)
 
 ***Note: *** Препоръчително е да използвате Azure AI Inference SDK тук, тъй като той по-добре се интегрира с Azure Model Catalog в продукционна среда.
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 GitHub Copilot Chat Agent може да изпълнява различни задачи в различни проектни сценарии, базирани на кода. Системата разполага с четири агента: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.bg.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.bg.png)
 
 Като добавите името на агента с ‘@’, можете бързо да изпълните съответната задача. За предприятия, ако добавите бизнес-свързано съдържание като изисквания, кодиране, тестови спецификации и релийзи, можете да имате по-мощни частни функции, базирани на GitHub Copilot.
 
 Visual Studio Code Chat Agent вече официално пусна своя API, позволяващ на предприятия или разработчици да създават агенти, базирани на различни софтуерни бизнес екосистеми. Въз основа на метода за разработка на Visual Studio Code Extension Development, лесно можете да достъпите интерфейса на Visual Studio Code Chat Agent API. Можем да разработваме, следвайки този процес.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.bg.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.bg.png)
 
 Сценарият за разработка поддържа достъп до API-та на трети страни (като GitHub Models, Azure Model Catalog и самостоятелно изградени услуги, базирани на open source модели) и може да използва моделите gpt-35-turbo, gpt-4 и gpt-4o, предоставени от GitHub Copilot.
 
@@ -54,7 +54,7 @@ Visual Studio Code Chat Agent вече официално пусна своя AP
 
 3. Генерира код, базиран на **Phi-3.5-vision-instruct (128k)** и завършва код от изображение чрез командата **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.bg.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.bg.png)
 
 ## **Свързани стъпки**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.bg.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.bg.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.bg.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.bg.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.bg.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.bg.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.bg.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.bg.png)
 
 Можете да изтеглите примерен код: [кликнете тук](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

@@ -33,33 +33,33 @@ Read this guideline to set ONNX Runtime GenAI for Windows GPU  [click here](./OR
 
 1. Install Prompt flow VS Code Extension
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.en.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.en.png)
 
 2. After installing the Prompt flow VS Code Extension, click the extension and choose **Installation dependencies**. Follow this guideline to install the Prompt flow SDK in your environment.
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.en.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.en.png)
 
 3. Download [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) and open this sample in VS Code.
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.en.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.en.png)
 
 4. Open **flow.dag.yaml** to select your Python environment.
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.en.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.en.png)
 
    Open **chat_phi3_ort.py** to update the location of your Phi-3.5-instruct ONNX Model.
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.en.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.en.png)
 
 5. Run your prompt flow to test it.
 
 Open **flow.dag.yaml** and click the visual editor.
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.en.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.en.png)
 
 After clicking this, run it to test.
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.en.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.en.png)
 
 1. You can run batch commands in the terminal to check more results.
 
@@ -71,7 +71,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 
 You can view the results in your default browser.
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.en.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.en.png)
 
 **Disclaimer**:  
 This document has been translated using the AI translation service [Co-op Translator](https://github.com/Azure/co-op-translator). While we strive for accuracy, please be aware that automated translations may contain errors or inaccuracies. The original document in its native language should be considered the authoritative source. For critical information, professional human translation is recommended. We are not liable for any misunderstandings or misinterpretations arising from the use of this translation.

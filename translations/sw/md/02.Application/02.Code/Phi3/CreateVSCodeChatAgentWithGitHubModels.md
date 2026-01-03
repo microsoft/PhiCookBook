@@ -15,11 +15,11 @@ Je, unatumia Visual Studio Code Copilot? Hasa katika Chat, unaweza kutumia mawak
 
 Tunajua kuwa Phi-3/3.5-mini-instruct katika Familia ya Phi-3/3.5 ina uwezo mkubwa wa kuelewa na kuzalisha msimbo, na ina faida ikilinganishwa na Gemma-2-9b na Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.sw.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.sw.png)
 
 GitHub Models za hivi karibuni tayari zinatoa ufikiaji wa modeli za Phi-3.5-mini-instruct (128k) na Phi-3.5-vision-instruct (128k). Waendelezaji wanaweza kuzifikia kupitia OpenAI SDK, Azure AI Inference SDK, na REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.sw.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.sw.png)
 
 ***Note: *** Inashauriwa kutumia Azure AI Inference SDK hapa, kwa sababu inaweza kubadilika vizuri zaidi na Azure Model Catalog katika mazingira ya uzalishaji
 
@@ -34,13 +34,13 @@ Hapa chini ni matokeo ya **Phi-3.5-mini-instruct (128k)** na **Phi-3.5-vision-in
 
 Wakala wa GitHub Copilot Chat unaweza kukamilisha kazi mbalimbali katika mazingira tofauti ya mradi kulingana na msimbo. Mfumo una mawakala wanne: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.sw.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.sw.png)
 
 Kwa kuongeza jina la wakala kwa ‘@’, unaweza haraka kukamilisha kazi inayohusiana. Kwa makampuni, ikiwa utaongeza maudhui yanayohusiana na biashara yako kama mahitaji, uandishi wa msimbo, vipimo vya majaribio, na utoaji, unaweza kuwa na kazi za kibinafsi za kampuni zenye nguvu zaidi kulingana na GitHub Copilot.
 
 Wakala wa Visual Studio Code Chat sasa umezindua rasmi API yake, ikiruhusu makampuni au waendelezaji wa makampuni kuendeleza mawakala kulingana na mifumo tofauti ya biashara ya programu. Kulingana na njia ya maendeleo ya Visual Studio Code Extension Development, unaweza kwa urahisi kupata kiolesura cha API ya Wakala wa Visual Studio Code Chat. Tunaweza kuendeleza kulingana na mchakato huu
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.sw.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.sw.png)
 
 Hali ya maendeleo inaweza kusaidia ufikiaji wa API za modeli za wahusika wengine (kama GitHub Models, Azure Model Catalog, na huduma zilizojengwa binafsi kulingana na modeli za chanzo huria) na pia inaweza kutumia modeli za gpt-35-turbo, gpt-4, na gpt-4o zinazotolewa na GitHub Copilot.
 
@@ -54,7 +54,7 @@ Tunajaribu kuunganisha uwezo wa uandishi wa programu wa Phi-3.5 kukamilisha uand
 
 3. Tengeneza msimbo kulingana na **Phi-3.5-vision-instruct (128k)** na ukamilishaji wa picha kupitia amri ya **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.sw.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.sw.png)
 
 ## **Hatua zinazohusiana**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.sw.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.sw.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.sw.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.sw.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.sw.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.sw.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.sw.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.sw.png)
 
 Unaweza kupakua msimbo wa mfano :[bonyeza hapa](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 به [مدل‌های GitHub](https://github.com/marketplace/models) خوش آمدید! همه چیز آماده است تا شما مدل‌های هوش مصنوعی میزبانی شده روی Azure AI را کشف کنید.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.fa.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.fa.png)
 
 برای اطلاعات بیشتر درباره مدل‌های موجود در مدل‌های GitHub، به [بازار مدل‌های GitHub](https://github.com/marketplace/models) مراجعه کنید.
 
@@ -45,7 +45,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 همچنین یک محیط Codespaces اختصاصی برای اجرای نمونه‌ها و مدل‌ها وجود دارد.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.fa.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.fa.png)
 
 ## کد نمونه
 
@@ -427,7 +427,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## استفاده رایگان و محدودیت‌های نرخ برای مدل‌های GitHub
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.fa.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.fa.png)
 
 [محدودیت‌های نرخ برای محیط آزمایشی و استفاده رایگان از API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) به شما کمک می‌کند تا با مدل‌ها آزمایش کنید و برنامه هوش مصنوعی خود را نمونه‌سازی کنید. برای استفاده فراتر از این محدودیت‌ها و مقیاس‌بندی برنامه خود، باید منابع را از یک حساب Azure تهیه کرده و به جای توکن دسترسی شخصی GitHub خود، از آنجا احراز هویت کنید. نیازی به تغییر چیز دیگری در کد خود ندارید. از این لینک برای آشنایی با نحوه عبور از محدودیت‌های رایگان در Azure AI استفاده کنید.
 

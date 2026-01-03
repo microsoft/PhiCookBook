@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) je open-source platforma navrhnutá na správu celého životného cyklu strojového učenia.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.sk.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.sk.png)
 
 MLFlow sa používa na správu životného cyklu ML, vrátane experimentovania, reprodukovateľnosti, nasadenia a centrálneho registra modelov. MLflow momentálne ponúka štyri komponenty.
 
@@ -22,7 +22,7 @@ MLFlow sa používa na správu životného cyklu ML, vrátane experimentovania, 
 
 Obsahuje funkcie na sledovanie experimentov, balenie kódu do reprodukovateľných spustení a zdieľanie a nasadzovanie modelov. MLFlow je integrovaný v Databricks a podporuje rôzne ML knižnice, čím je nezávislý na konkrétnej knižnici. Môže byť použitý s akoukoľvek knižnicou strojového učenia a v ľubovoľnom programovacom jazyku, keďže poskytuje REST API a CLI pre pohodlné použitie.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.sk.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.sk.png)
 
 Hlavné vlastnosti MLFlow zahŕňajú:
 
@@ -37,7 +37,7 @@ MLFlow tiež podporuje MLOps cyklus, ktorý zahŕňa prípravu dát, registráci
 
 V tomto E2E príklade ukážeme dva rôzne prístupy na vytvorenie wrappera okolo malého jazykového modelu Phi-3 (SLM) a následné spustenie ako MLFlow modelu buď lokálne, alebo v cloude, napríklad v Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.sk.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.sk.png)
 
 | Projekt | Popis | Umiestnenie |
 | ------------ | ----------- | -------- |

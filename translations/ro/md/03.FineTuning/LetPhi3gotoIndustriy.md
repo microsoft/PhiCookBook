@@ -41,7 +41,7 @@ Fine-tuning se bazează pe îmbunătățirea unui anumit model. Nu este nevoie s
 
 ## **Cum să folosești RAG**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.ro.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007.ro.png)
 
 O bază de date vectorială este o colecție de date stocate în formă matematică. Bazele de date vectoriale facilitează reținerea inputurilor anterioare de către modelele de machine learning, permițând utilizarea machine learning pentru cazuri de utilizare precum căutarea, recomandările și generarea de text. Datele pot fi identificate pe baza metricilor de similaritate, nu doar pe potriviri exacte, permițând modelelor să înțeleagă contextul datelor.
 
@@ -57,7 +57,7 @@ Algoritmii folosiți frecvent în Fine-tuning sunt Lora și QLora. Cum să alegi
 
 ### **Lora și QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.ro.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca0.ro.png)
 
 LoRA (Low-Rank Adaptation) și QLoRA (Quantized Low-Rank Adaptation) sunt ambele tehnici folosite pentru fine-tuning-ul modelelor mari de limbaj (LLM) folosind Parameter Efficient Fine Tuning (PEFT). Tehnicile PEFT sunt concepute pentru a antrena modelele mai eficient decât metodele tradiționale.  
 LoRA este o tehnică de fine-tuning independentă care reduce amprenta de memorie prin aplicarea unei aproximări de rang redus asupra matricei de actualizare a greutăților. Oferă timpi rapizi de antrenament și menține performanțe apropiate de metodele tradiționale de fine-tuning.

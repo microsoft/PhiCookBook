@@ -29,7 +29,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Olive (*O*NNX *live*) הוא כלי לאופטימיזציה של מודלים עם ממשק שורת פקודה (CLI) שמאפשר לכם לשגר מודלים להרצה ב-ONNX runtime +++https://onnxruntime.ai+++ עם איכות וביצועים גבוהים.
 
-![Olive Flow](../../../../../translated_images/olive-flow.5daf97340275f8b61397e91430ff02724a2547937b352e7fdfc2f669c56dcd35.he.png)
+![Olive Flow](../../../../../translated_images/olive-flow.5daf97340275f8b6.he.png)
 
 הקלט ל-Olive הוא בדרך כלל מודל PyTorch או Hugging Face, והפלט הוא מודל ONNX מותאם שמורץ על מכשיר (יעד פריסה) שמריץ את ONNX runtime. Olive תבצע אופטימיזציה למודל בהתאם למאיץ ה-AI של יעד הפריסה (NPU, GPU, CPU) המסופק על ידי ספק חומרה כמו Qualcomm, AMD, Nvidia או Intel.
 

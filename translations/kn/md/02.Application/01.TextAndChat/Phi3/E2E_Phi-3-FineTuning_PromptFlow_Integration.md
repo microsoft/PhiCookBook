@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ಇದು ಈ E2E ಉದಾಹರಣೆಯ ಒಂದು ಅವಲೋಕನವಾಗಿದೆ.
 
-![Phi-3 ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ PromptFlow ಏಕೀಕರಣ ಅವಲೋಕನ](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.kn.png)
+![Phi-3 ಫೈನ್‑ಟ್ಯೂನಿಂಗ್ PromptFlow ಏಕೀಕರಣ ಅವಲೋಕನ](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.kn.png)
 
 ### Table of Contents
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ಪೋರ್ಟಲ್ ಪುಟದ ಮೇಲ್ಭಾಗದಲ್ಲಿ ಇರುವ **search bar** ನಲ್ಲಿ *azure machine learning* ಎಂದು ಟೈಪ್ ಮಾಡಿ ಮತ್ತು ಕಾಣುವ ಆಯ್ಕೆಗಳಲ್ಲಿ **Azure Machine Learning** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.kn.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.kn.png)
 
 1. ನ್ಯಾವಿಗೇಶನ್ ಮெனುವಿನಿಂದ **+ Create** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
 1. ನ್ಯಾವಿಗೇಶನ್ ಮெனುವಿನಿಂದ **New workspace** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.kn.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.kn.png)
 
 1. ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ನಿರ್ವಹಿಸಿ:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ಉಪಯೋಗಿಸಲು **Application insights** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ (ಅವಶ್ಯಕತೆ ಇದ್ದಲ್ಲಿ ಹೊಸದನ್ನು ರಚಿಸಿ).
     - ಉಪಯೋಗಿಸಲು **Container registry** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ (ಅವಶ್ಯಕತೆ ಇದ್ದಲ್ಲಿ ಹೊಸದನ್ನು ರಚಿಸಿ).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.kn.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.kn.png)
 
 1. **Review + Create** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ಬಳಸಲು ಇಚ್ಛಿಸುವ **Virtual machine family** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಉದಾಹರಣೆಗೆ, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ, ಇದು *Standard_NC24ads_A100_v4* GPU ಅನ್ನು ಒಳಗೊಂಡಿದೆ.
     - ನ್ಯಾವಿಗೇಶನ್ ಮெனುವಿನಿಂದ **Request quota** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.kn.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.kn.png)
 
     - Request quota ಪುಟದ ಒಳಗೆ, ನೀವು ಬಳಸಲು ಬಯಸುವ **New cores limit** ಅನ್ನು ನಮೂದಿಸಿ. ಉದಾಹರಣೆಗೆ, 24.
     - Request quota ಪುಟದ ಒಳಗೆ, GPU ಕೋಟ್ಟಾ ಬೇಡಿಕೆಯಾಗಿ **Submit** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ಪೋರ್ಟಲ್ ಪುಟದ ಮೇಲ್ಭಾಗದಲ್ಲಿರುವ **search bar** ನಲ್ಲಿ *managed identities* ಎಂದು ಟೈಪ್ ಮಾಡಿ ಮತ್ತು ಕಾಣುವ ಆಯ್ಕೆಗಳಲ್ಲಿ **Managed Identities** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.kn.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.kn.png)
 
 1. **+ Create** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.kn.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.kn.png)
 
 1. ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ನಿರ್ವಹಿಸಿ:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ಉಪಯೋಗಿಸಲು **Resource group** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
     - **Role** ಅನ್ನು **Contributor** ಗೆ ಸೆಟ್ ಮಾಡಿ.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.kn.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.kn.png)
 
 1. **Save** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ಪೋರ್ಟಲ್ ಪುಟದ ಮೇಲ್ಭಾಗದಲ್ಲಿರುವ **search bar** ನಲ್ಲಿ *storage accounts* ಎಂದು ಟೈಪ್ ಮಾಡಿ ಮತ್ತು ಕಾಣುವ ಆಯ್ಕೆಗಳಲ್ಲಿ **Storage accounts** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.kn.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.kn.png)
 
 1. ನೀವು ರಚಿಸಿದ Azure Machine Learning ವರ್ಕ್‌ಸ್ಪೇಸ್‌ಗೆ ಸಂಬಂಧಿಸಿದ ಸ್ಟೋರ್‌ಜೆ ಖಾತೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಉದಾಹರಣೆಗೆ, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ನ್ಯಾವಿಗೇಶನ್ ಮெனುವಿಂದ **+ Add** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
     - ನ್ಯಾವಿಗೇಶನ್ ಮெனುವಿಂದ **Add role assignment** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.kn.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.kn.png)
 
 1. Add role assignment ಪುಟದ ಒಳಗೆ, ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ನಿರ್ವಹಿಸಿ:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Select managed identities ಪುಟದಲ್ಲಿಗೆ, ನೀವು ರಚಿಸಿದ Manage Identity ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಉದಾಹರಣೆಗೆ, *finetunephi-managedidentity*.
     - Select managed identities ಪುಟದಲ್ಲಿಗೆ, **Select** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.kn.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.kn.png)
 
 1. **Review + assign** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ಪೋರ್ಟಲ್ ಪುಟದ ಮೇಲ್ಭಾಗದಲ್ಲಿರುವ **search bar** ನಲ್ಲಿ *container registries* ಎಂದು ಟೈಪ್ ಮಾಡಿ ಮತ್ತು ಕಾಣುವ ಆಯ್ಕೆಗಳಲ್ಲಿ **Container registries** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.kn.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.kn.png)
 
 1. Azure Machine Learning ವರ್ಕ್‌ಸ್ಪೇಸ್‌ಗೆ ಸಂಬಂಧಿಸಿದ container registry ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಉದಾಹರಣೆಗೆ, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ನೀವು ರಚಿಸಿದ *finetune-phi* ಫೋಲ್ಡರ್ ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ, ಅದು *C:\Users\yourUserName\finetune-phi* ನಲ್ಲಿ ಇದೆ.
 
-    ![ಪ್ರಾಜೆಕ್ಟ್ ಫೋಲ್ಡರ್ ತೆರೆಯಿರಿ.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.kn.png)
+    ![ಪ್ರಾಜೆಕ್ಟ್ ಫೋಲ್ಡರ್ ತೆರೆಯಿರಿ.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.kn.png)
 
 1. Visual Studio Code‌ನ ಎಡ ಪೇನ್‌ನಲ್ಲಿ, ರೈಟ್-ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು **New File** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು *download_dataset.py* ಎಂಬ ಹೊಸ ಫೈಲ್ ರಚಿಸಿ.
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Visual Studio Code‌ನ ಎಡ ಪೇನ್‌ನಲ್ಲಿ, ರೈಟ್-ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು **New File** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು *deploy_model.py* ಎಂಬ ಹೊಸ ಫೈಲ್ ರಚಿಸಿ.
 
-    ![ಹೊಸ ಫೈಲ್ ರಚಿಸಿ.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.kn.png)
+    ![ಹೊಸ ಫೈಲ್ ರಚಿಸಿ.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.kn.png)
 
 1. Visual Studio Code‌ನ ಎಡ ಪೇನ್‌ನಲ್ಲಿ, ರೈಟ್-ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು **New Folder** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು *finetuning_dir* ಎಂಬ ಹೊಸ ಫೋಲ್ಡರ್ ರಚಿಸಿ.
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - ನೀವು ಪ್ರಸ್ತುತ ಬಳಸುತ್ತಿರುವ Azure Subscription ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
     - ನಿಮ್ಮ Subscription ID ಅನ್ನು ಕಾಪಿ ಮಾಡಿ ಮತ್ತು *config.py* ಫೈಲಿನಲ್ಲಿ ಪೇಸ್ಟ್ ಮಾಡಿ.
 
-    ![Subscription ID ಕಂಡುಹಿಡಿ.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.kn.png)
+    ![Subscription ID ಕಂಡುಹಿಡಿ.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.kn.png)
 
 1. Azure Workspace Name ಸೇರಿಸಲು ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಿ:
 
     - ನೀವು ರಚಿಸಿದ Azure Machine Learning ಸಂಪನ್ಮೂಲಕ್ಕೆ ಹೋಗಿ.
     - ನಿಮ್ಮ ಖಾತೆಯ ಹೆಸರನ್ನು ಕಾಪಿ ಮಾಡಿ ಮತ್ತು *config.py* ಫೈಲಿಗೆ ಪೇಸ್ಟ್ ಮಾಡಿ.
 
-    ![Azure Machine Learning ಹೆಸರು ಕಂಡುಹಿಡಿ.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.kn.png)
+    ![Azure Machine Learning ಹೆಸರು ಕಂಡುಹಿಡಿ.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.kn.png)
 
 1. Azure Resource Group Name ಸೇರಿಸಲು ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಿ:
 
     - ನೀವು ರಚಿಸಿದ Azure Machine Learning ಸಂಪನ್ಮೂಲಕ್ಕೆ ಹೋಗಿ.
     - ನಿಮ್ಮ Azure Resource Group ಹೆಸರನ್ನು ಕಾಪಿ ಮಾಡಿ ಮತ್ತು *config.py* ಫೈಲಿಗೆ ಪೇಸ್ಟ್ ಮಾಡಿ.
 
-    ![ರಿಸೋರ್ಸ್ಗ್ರುಪ್ ಹೆಸರು ಕಂಡುಹಿಡಿ.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.kn.png)
+    ![ರಿಸೋರ್ಸ್ಗ್ರುಪ್ ಹೆಸರು ಕಂಡುಹಿಡಿ.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.kn.png)
 
 2. Azure Managed Identity ಹೆಸರು ಸೇರಿಸಲು ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಿ
 
     - ನೀವು ರಚಿಸಿದ Managed Identities ಸಂಪನ್ಮೂಲಕ್ಕೆ ಹೋಗಿ.
     - ನಿಮ್ಮ Azure Managed Identity ಹೆಸರನ್ನು ಕಾಪಿ ಮಾಡಿ ಮತ್ತು *config.py* ಫೈಲಿಗೆ ಪೇಸ್ಟ್ ಮಾಡಿ.
 
-    ![UAI ಕಂಡುಹಿಡಿ.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.kn.png)
+    ![UAI ಕಂಡುಹಿಡಿ.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.kn.png)
 
 ### ಫೈನ್-ಟ್ಯೂನಿಂಗ್‌ಗಾಗಿ ಡೇಟಾಸೆಟ್ ತಯಾರಿಸಿ
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ಬಳಸಲು ನಿಮ್ಮ Azure ಸಬ್ಸ್ಕ್ರಿಪ್ಶನ್ ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಲಾಗಿನ್ ಮಾಡಲು Azure ಖಾತೆ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.kn.png)
+    ![ಲಾಗಿನ್ ಮಾಡಲು Azure ಖಾತೆ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.kn.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ಈ ವ್ಯಾಯಾಮದಲ್ಲಿ, ನೀವು ಯಶಸ್ವಿಯಾಗಿ Azure Machine Learning ಅನ್ನು ಬಳಸಿ Phi-3 ಮಾದರಿಯನ್ನು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದಿರಿ. *setup_ml.py* ಸ್ಕ್ರಿಪ್ಟ್ ಅನ್ನು ರನ್ ಮಾಡುವ ಮೂಲಕ, ನೀವು Azure Machine Learning ಪರಿಸರವನ್ನು ಸೆಟ್ ಅಪ್ ಮಾಡಿ ಮತ್ತು *fine_tune.py* ಫೈಲ್‌ನಲ್ಲಿ ವ್ಯಾಖ್ಯಾನಿಸಿದ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಪ್ರಕ್ರಿಯೆಯನ್ನು ಪ್ರಾರಂಭಿಸಿದ್ದೀರಿ. ದಯವಿಟ್ಟು ಗಮನಿಸಿ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಪ್ರಕ್ರಿಯೆಗೆ ಹಲವಾರು ಸಮಯ ಬೇಕಾಗಬಹುದು. `python setup_ml.py` ಕಮಾಂಡ್ ರನ್ ಮಾಡಿದ ನಂತರ ಪ್ರಕ್ರಿಯೆ ಪೂರ್ಣವಾಗುವವರೆಗೆ ನೀವು ಕಾಯಬೇಕು. ಟರ್ಮಿನಲ್‌ನಲ್ಲಿ ನೀಡಲ್ಪಟ್ಟ ಲಿಂಕ್ ಮೂಲಕ ನೀವು Azure Machine Learning ಪೋರ್ಟಲ್‌ನಲ್ಲಿ ಫೈನ್-ಟ್ಯೂನಿಂಗ್ ಕೆಲಸದ ಸ್ಥಿತಿಯನ್ನು ವೀಕ್ಷಿಸಬಹುದು.
 
-    ![ಫೈನ್‌ಟ್ಯೂನಿಂಗ್ ಕೆಲಸವನ್ನು ನೋಡಿ.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.kn.png)
+    ![ಫೈನ್‌ಟ್ಯೂನಿಂಗ್ ಕೆಲಸವನ್ನು ನೋಡಿ.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.kn.png)
 
 ### ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ ಮಾದರಿಯನ್ನು ಡಿಪ್ಲಾಯ್ ಮಾಡಿ
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ಎಡಬದಿಯ ಟ್ಯಾಬ್‌ನಿಂದ **Endpoints** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.kn.png)
+    ![ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.kn.png)
 
 2. ನೀವು ರಚಿಸಿದ ಎಂಡ್‌ಪಾಯಿಂಟ್ ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ನೀವು ರಚಿಸಿದ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.kn.png)
+    ![ನೀವು ರಚಿಸಿದ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.kn.png)
 
 3. ಈ ಪುಟದಲ್ಲಿ, ನೀವು ನಿಯೋಜನೆ ಪ್ರಕ್ರಿಯೆಯ ಸಮಯದಲ್ಲಿ ರಚಿಸಿದ ಎಂಡ್‌ಪಾಯಿಂಟ್‌ಗಳನ್ನು ನಿರ್ವಹಿಸಬಹುದು.
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. ನಿಮ್ಮ **REST endpoint** ಅನ್ನು *config.py* ಫೈಲಿನಲ್ಲಿ ನಕಲಿಸಿ ಮತ್ತು ಅಂಟಿಸಿ, `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ಅನ್ನು ನಿಮ್ಮ **REST endpoint** ನೊಂದಿಗೆ ಬದಲಾಯಿಸಿ.
 1. ನಿಮ್ಮ **Primary key** ಅನ್ನು *config.py* ಫೈಲಿನಲ್ಲಿ ನಕಲಿಸಿ ಮತ್ತು ಅಂಟಿಸಿ, `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ಅನ್ನು ನಿಮ್ಮ **Primary key** ನೊಂದಿಗೆ ಬದಲಾಯಿಸಿ.
 
-    ![API ಕೀ ಮತ್ತು ಎಂಡ್‌ಪಾಯಿಂಟ್ URI ನಕಲಿಸಿ ಮತ್ತು ಅಂಟಿಸಿ.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.kn.png)
+    ![API ಕೀ ಮತ್ತು ಎಂಡ್‌ಪಾಯಿಂಟ್ URI ನಕಲಿಸಿ ಮತ್ತು ಅಂಟಿಸಿ.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.kn.png)
 
 #### *flow.dag.yml* ಫೈಲಿಗೆ ಕೋಡ್ ಸೇರಿಸಿ
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ಇದು ಫಲಿತಾಂಶದ ಉದಾಹರಣೆ: ಈಗ ನೀವು ನಿಮ್ಮ ಕಸ್ಟಮ್ Phi-3 ಮಾದರಿಯೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಬಹುದು. ಫೈನ್‑ಟ್ಯೂನಿಂಗ್‌ಗೆ ಬಳಸಿದ ಡೇಟಾದ ಆಧಾರದ ಮೇಲೆ ಪ್ರಶ್ನೆಗಳು ಕೇಳಲು ಶಿಫಾರಸು ಮಾಡಲಾಗುತ್ತದೆ.
 
-    ![Prompt flow ಉದಾಹರಣೆ.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.kn.png)
+    ![Prompt flow ಉದಾಹರಣೆ.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.kn.png)
 
 ---
 

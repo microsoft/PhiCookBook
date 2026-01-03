@@ -42,7 +42,7 @@ Prompt Flow میں بلٹ ان ٹولز، نمونے، اور ٹیمپلیٹس �
 
 Microsoft Prompt Flow میں، ایویلیوایشن آپ کے AI ماڈلز کی کارکردگی کا جائزہ لینے میں اہم کردار ادا کرتی ہے۔ آئیے دیکھتے ہیں کہ آپ Prompt Flow میں ایویلیوایشن فلو اور میٹرکس کو کس طرح حسب ضرورت بنا سکتے ہیں:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.ur.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.ur.png)
 
 **Prompt Flow میں ایویلیوایشن کو سمجھنا**
 

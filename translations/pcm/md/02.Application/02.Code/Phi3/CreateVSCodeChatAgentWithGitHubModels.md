@@ -15,11 +15,11 @@ You dey use Visual Studio Code Copilot? Especially for Chat, you fit use differe
 
 We sabi say Phi-3/3.5-mini-instruct for the Phi-3/3.5 Family get strong ability to understand and generate code, and e get advantages pass Gemma-2-9b and Mistral-Nemo-12B-instruct-2407.
 
-![kod jen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.pcm.png)
+![kod jen](../../../../../../translated_images/codegen.53be1150ee54d969.pcm.png)
 
 The latest GitHub Models don already give access to Phi-3.5-mini-instruct (128k) and Phi-3.5-vision-instruct (128k) models. Developers fit access dem through OpenAI SDK, Azure AI Inference SDK, and REST API.
 
-![gh models](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.pcm.png)
+![gh models](../../../../../../translated_images/gh.459640c7ceba01d5.pcm.png)
 
 ***Note: *** Dem recommend make you use Azure AI Inference SDK for here, because e fit switch better with Azure Model Catalog for production environment
 
@@ -34,13 +34,13 @@ Below na the results wey **Phi-3.5-mini-instruct (128k)** and **Phi-3.5-vision-i
 
 GitHub Copilot Chat Agent fit complete all kinds tasks for different project scenarios based on the code. The system get four agents: workspace, github, terminal, vscode
 
-![agent picture](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.pcm.png)
+![agent picture](../../../../../../translated_images/agent.3dbb06228f9a6189.pcm.png)
 
 If you add the agent name with ‘@’, you go quickly finish the work wey dey relevant. For companies, if you add your business-related content like requirements, coding, test specifications, and release, you fit get more powerful private enterprise features based on GitHub Copilot.
 
 Visual Studio Code Chat Agent don officially release im API, so companies or enterprise developers fit build agents based on different software business ecosystems. Based on how you dey develop Visual Studio Code Extensions, you fit easily access the Visual Studio Code Chat Agent API. We fit develop following this process
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.pcm.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.pcm.png)
 
 This development scenario fit support third-party model APIs (like GitHub Models, Azure Model Catalog, and self-built services wey base on open source models) and e fit also use gpt-35-turbo, gpt-4, and gpt-4o models wey GitHub Copilot provide.
 
@@ -54,7 +54,7 @@ We dey try join the programming power of Phi-3.5 to finish code writing, image g
 
 3. Generate code based on **Phi-3.5-vision-instruct (128k)** and do image completion through the **@phicoding /image** command
 
-![architecture](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.pcm.png)
+![architecture](../../../../../../translated_images/arch.5a58a0adfa959a2d.pcm.png)
 
 ## **Related steps**
 
@@ -367,20 +367,20 @@ export function deactivate() {}
 
 ***/help***
 
-![help screenshot](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.pcm.png)
+![help screenshot](../../../../../../translated_images/help.04c134d2bf9a9541.pcm.png)
 
 ***@phicoding /help***
 
-![agent help screenshot](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.pcm.png)
+![agent help screenshot](../../../../../../translated_images/agenthelp.60c68767c941a3fe.pcm.png)
 
 ***@phicoding /gen***
 
-![agent gen screenshot](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.pcm.png)
+![agent gen screenshot](../../../../../../translated_images/agentgen.a16e7735790f764b.pcm.png)
 
 
 ***@phicoding /image***
 
-![agent image screenshot](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.pcm.png)
+![agent image screenshot](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.pcm.png)
 
 
 You fit download sample code :[click](../../../../../../code/09.UpdateSamples/Aug/vscode)

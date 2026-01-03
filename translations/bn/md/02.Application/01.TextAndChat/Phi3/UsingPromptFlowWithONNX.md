@@ -33,33 +33,33 @@ Windows GPU এর জন্য ONNX Runtime GenAI সেটআপ করার 
 
 1. Prompt flow VS Code এক্সটেনশন ইনস্টল করুন
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.bn.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.bn.png)
 
 2. Prompt flow VS Code এক্সটেনশন ইনস্টল করার পর, এক্সটেনশনটি ক্লিক করুন এবং **Installation dependencies** নির্বাচন করুন, এই নির্দেশিকা অনুসরণ করে আপনার পরিবেশে Prompt flow SDK ইনস্টল করুন
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.bn.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.bn.png)
 
 3. [Sample Code](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ডাউনলোড করুন এবং VS Code দিয়ে এই স্যাম্পলটি খুলুন
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.bn.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.bn.png)
 
 4. **flow.dag.yaml** খুলে আপনার Python পরিবেশ নির্বাচন করুন
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.bn.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.bn.png)
 
    **chat_phi3_ort.py** খুলে আপনার Phi-3.5-instruct ONNX মডেলের অবস্থান পরিবর্তন করুন
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.bn.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.bn.png)
 
 5. আপনার prompt flow চালিয়ে পরীক্ষা করুন
 
 **flow.dag.yaml** খুলে ভিজ্যুয়াল এডিটর ক্লিক করুন
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.bn.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.bn.png)
 
 এটি ক্লিক করার পর চালিয়ে পরীক্ষা করুন
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.bn.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.bn.png)
 
 1. আপনি টার্মিনালে ব্যাচ রান করে আরও ফলাফল পরীক্ষা করতে পারেন
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 আপনি আপনার ডিফল্ট ব্রাউজারে ফলাফল দেখতে পারবেন
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.bn.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.bn.png)
 
 **অস্বীকৃতি**:  
 এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ গ্রহণ করার পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।
