@@ -15,11 +15,11 @@ Podemos implementar o Phi-3 num servidor local. Os utilizadores podem escolher a
 
 Na aplicação Copilot, criamos aplicações através do Semantic Kernel / LangChain. Este tipo de framework de aplicação é geralmente compatível com o Azure OpenAI Service / modelos OpenAI, e também pode suportar modelos open source no Hugging Face e modelos locais. O que devemos fazer se quisermos usar o Semantic Kernel para aceder ao Phi-3-mini? Usando .NET como exemplo, podemos combiná-lo com o Hugging Face Connector no Semantic Kernel. Por defeito, ele corresponde ao id do modelo no Hugging Face (na primeira vez que o usar, o modelo será descarregado do Hugging Face, o que demora algum tempo). Também pode ligar-se ao serviço local construído. Comparando os dois, recomendamos usar o último porque oferece um maior grau de autonomia, especialmente em aplicações empresariais.
 
-![sk](../../../../../translated_images/sk.d03785c25edc6d445a2e9ae037979e544e0b0c482f43c7617b0324e717b9af62.pt.png)
+![sk](../../../../../translated_images/sk.d03785c25edc6d44.pt.png)
 
 A partir da figura, aceder a serviços locais através do Semantic Kernel permite ligar facilmente ao servidor do modelo Phi-3-mini construído por si. Aqui está o resultado da execução:
 
-![skrun](../../../../../translated_images/skrun.5aafc1e7197dca2020eefcaeaaee184d29bb0cf1c37b00fd9c79acc23a6dc8d2.pt.png)
+![skrun](../../../../../translated_images/skrun.5aafc1e7197dca20.pt.png)
 
 ***Código de Exemplo*** https://github.com/kinfey/Phi3MiniSamples/tree/main/semantickernel
 
