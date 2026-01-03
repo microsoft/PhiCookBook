@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 我選擇使用 Objective-C 作為 App 開發方式，因為使用 ONNX Runtime C++ API 進行生成式 AI 時，Objective-C 兼容性較佳。當然，你也可以透過 Swift bridging 完成相關呼叫。
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.hk.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.hk.png)
 
 ## **5. 將 ONNX 量化 INT4 模型複製到 App 專案中**
 
 我們需要匯入 ONNX 格式的 INT4 量化模型，請先下載該模型。
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.hk.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.hk.png)
 
 下載後，需將模型加入 Xcode 專案的 Resources 目錄中。
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.hk.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.hk.png)
 
 ## **6. 在 ViewControllers 中加入 C++ API**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** 將對應的 C++ 標頭檔加入專案。
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.hk.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.hk.png)
 
 - **b.** 在 Xcode 中加入 `onnxruntime-genai` 動態函式庫。
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.hk.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.hk.png)
 
 - **c.** 使用 C Samples 程式碼進行測試。你也可以加入像 ChatUI 這類額外功能。
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 完成設定後，即可執行應用程式，查看 Phi-3-mini 模型推理的結果。
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.hk.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.hk.jpg)
 
 更多範例程式碼與詳細說明，請參考 [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios)。
 

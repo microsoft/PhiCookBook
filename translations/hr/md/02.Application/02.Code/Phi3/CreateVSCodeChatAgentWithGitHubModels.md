@@ -15,11 +15,11 @@ Koristite li Visual Studio Code Copilot? Posebno u Chatu, možete koristiti razl
 
 Znamo da Phi-3/3.5-mini-instruct iz Phi-3/3.5 obitelji ima snažne sposobnosti razumijevanja i generiranja koda, te prednosti u odnosu na Gemma-2-9b i Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.hr.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.hr.png)
 
 Najnoviji GitHub Models već omogućuju pristup modelima Phi-3.5-mini-instruct (128k) i Phi-3.5-vision-instruct (128k). Programeri im mogu pristupiti putem OpenAI SDK-a, Azure AI Inference SDK-a i REST API-ja.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.hr.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.hr.png)
 
 ***Note: *** Preporučuje se korištenje Azure AI Inference SDK-a ovdje, jer se bolje integrira s Azure Model Catalogom u produkcijskom okruženju
 
@@ -34,13 +34,13 @@ Slijede rezultati **Phi-3.5-mini-instruct (128k)** i **Phi-3.5-vision-instruct (
 
 GitHub Copilot Chat Agent može obavljati različite zadatke u različitim projektnim scenarijima na temelju koda. Sustav ima četiri agenta: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.hr.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.hr.png)
 
 Dodavanjem imena agenta s ‘@’ možete brzo izvršiti odgovarajući zadatak. Za tvrtke, ako dodate vlastiti poslovno povezani sadržaj poput zahtjeva, kodiranja, testnih specifikacija i objava, možete imati snažnije privatne funkcije za poduzeća temeljene na GitHub Copilotu.
 
 Visual Studio Code Chat Agent sada je službeno objavio svoj API, što omogućuje tvrtkama ili razvojnim programerima u poduzećima da razvijaju agente temeljene na različitim softverskim poslovnim ekosustavima. Temeljem metode razvoja Visual Studio Code Extension Development, lako možete pristupiti sučelju Visual Studio Code Chat Agent API-ja. Možemo razvijati na temelju ovog procesa
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.hr.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.hr.png)
 
 Razvojni scenarij može podržavati pristup API-jima trećih strana (kao što su GitHub Models, Azure Model Catalog i samostalno izgrađene usluge temeljene na open source modelima) te može koristiti i modele gpt-35-turbo, gpt-4 i gpt-4o koje pruža GitHub Copilot.
 
@@ -54,7 +54,7 @@ Pokušavamo integrirati programerske sposobnosti Phi-3.5 za dovršavanje pisanja
 
 3. Generira kod na temelju **Phi-3.5-vision-instruct (128k)** i dovršava kod iz slike putem naredbe **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.hr.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.hr.png)
 
 ## **Povezani koraci**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.hr.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.hr.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.hr.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.hr.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.hr.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.hr.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.hr.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.hr.png)
 
 Možete preuzeti primjerni kod: [kliknite](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

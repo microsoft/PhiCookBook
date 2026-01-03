@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 以下是 Azure AI Foundry 的評估流程。
 
-![教學架構。](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.hk.png)
+![教學架構。](../../../../../../translated_images/architecture.10bec55250f5d6a4.hk.png)
 
 *圖片來源：[Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 為確保您的 AI 模型符合倫理且安全，評估其是否符合微軟的負責任 AI 原則至關重要。在 Azure AI Foundry 中，安全性評估可讓您檢視模型對越獄攻擊的脆弱性及產生有害內容的可能性，這與這些原則直接對應。
 
-![安全性評估。](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.hk.png)
+![安全性評估。](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.hk.png)
 
 *圖片來源：[Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -89,7 +89,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 從導覽選單選擇 **+ New hub**。
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.hk.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.hk.png)
 
 1. 執行以下操作：
 
@@ -100,7 +100,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 選擇要連接的 **Connect Azure AI Services**（如有需要可新建）。
     - 選擇 **Connect Azure AI Search**，並選擇 **Skip connecting**。
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.hk.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.hk.png)
 
 1. 選擇 **Next**。
 
@@ -110,11 +110,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 從導覽選單選擇 **+ New project**。
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.hk.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.hk.png)
 
 1. 輸入 **Project name**，必須是唯一值。
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.hk.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.hk.png)
 
 1. 選擇 **Create a project**。
 
@@ -130,17 +130,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 從左側標籤選擇 **Endpoints**。
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.hk.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.hk.png)
 
 1. 選擇您建立的端點。
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.hk.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.hk.png)
 
 1. 從導覽選單選擇 **Consume**。
 
 1. 複製您的 **REST endpoint** 和 **Primary key**。
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.hk.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.hk.png)
 
 #### 新增自訂連線
 
@@ -152,11 +152,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 選擇 **+ New connection**。
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.hk.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.hk.png)
 
 1. 從導覽選單選擇 **Custom keys**。
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.hk.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.hk.png)
 
 1. 執行以下操作：
 
@@ -166,7 +166,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 在鍵名稱輸入 **key**，並將您從 Azure ML Studio 複製的金鑰貼到值欄位。
     - 新增完鍵值後，選擇 **is secret**，以防止金鑰外洩。
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.hk.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.hk.png)
 
 1. 選擇 **Add connection**。
 
@@ -180,15 +180,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 從導覽選單選擇 **+ Create**。
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.hk.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.hk.png)
 
 1. 從導覽選單選擇 **Chat flow**。
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.hk.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.hk.png)
 
 1. 輸入要使用的 **Folder name**。
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.hk.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.hk.png)
 
 1. 選擇 **Create**。
 
@@ -225,7 +225,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - 選擇 **Save**。
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.hk.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.hk.png)
 
 1. 將以下程式碼加入 *integrate_with_promptflow.py*，以在 Prompt flow 中使用自訂 Phi-3 / Phi-3.5 模型。
 
@@ -288,14 +288,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.hk.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.hk.png)
 
 > [!NOTE]
 > 如需在 Azure AI Foundry 使用 Prompt flow 的詳細資訊，請參考 [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)。
 
 1. 選擇 **Chat input**、**Chat output**，以啟用與模型的對話功能。
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.hk.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.hk.png)
 
 1. 現在您已準備好與自訂 Phi-3 / Phi-3.5 模型對話。在下一個練習中，您將學習如何啟動 Prompt flow 並使用它與微調模型聊天。
 
@@ -303,32 +303,32 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > 重建後的流程應該長得像下圖：
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.hk.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.hk.png)
 >
 
 #### 啟動 Prompt flow
 
 1. 選擇 **Start compute sessions** 以啟動 Prompt flow。
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.hk.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.hk.png)
 
 1. 選擇 **Validate and parse input** 以更新參數。
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.hk.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.hk.png)
 
 1. 選擇 **connection** 的 **Value**，並選擇您建立的自訂連線，例如 *connection*。
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.hk.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.hk.png)
 
 #### 與您的自訂 Phi-3 / Phi-3.5 模型聊天
 
 1. 選擇 **Chat**。
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.hk.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.hk.png)
 
 1. 以下是結果範例：現在您可以與自訂 Phi-3 / Phi-3.5 模型聊天。建議根據用於微調的資料來提問。
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.hk.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.hk.png)
 
 ### 部署 Azure OpenAI 以評估 Phi-3 / Phi-3.5 模型
 
@@ -340,7 +340,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 導覽至您建立的 Azure AI Foundry 專案。
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.hk.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.hk.png)
 
 1. 在您建立的專案中，從左側標籤選擇 **Deployments**。
 
@@ -348,11 +348,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 選擇 **Deploy base model**。
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.hk.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.hk.png)
 
 1. 選擇您想使用的 Azure OpenAI 模型，例如 **gpt-4o**。
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.hk.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.hk.png)
 
 1. 選擇 **Confirm**。
 
@@ -364,17 +364,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 導覽至您建立的 Azure AI Foundry 專案。
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.hk.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.hk.png)
 
 1. 在您建立的專案中，從左側標籤選擇 **Evaluation**。
 
 1. 從導覽選單選擇 **+ New evaluation**。
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.hk.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.hk.png)
 
 1. 選擇 **Prompt flow** 評估。
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.hk.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.hk.png)
 
 1. 執行以下操作：
 
@@ -382,7 +382,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 選擇任務類型為 **Question and answer without context**，因為本教學使用的 **ULTRACHAT_200k** 資料集不包含上下文。
     - 選擇您想評估的 prompt flow。
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.hk.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.hk.png)
 
 1. 選擇 **Next**。
 
@@ -391,7 +391,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 選擇 **Add your dataset** 上傳資料集。例如，您可以上傳測試資料集檔案，如下載的 **ULTRACHAT_200k** 資料集內的 *test_data.json1*。
     - 選擇與您的資料集相符的 **Dataset column**。例如，使用 **ULTRACHAT_200k** 資料集時，選擇 **${data.prompt}** 作為資料欄位。
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.hk.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.hk.png)
 
 1. 選擇 **Next**。
 
@@ -400,7 +400,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 選擇您想使用的效能與品質指標。
     - 選擇您為評估建立的 Azure OpenAI 模型，例如 **gpt-4o**。
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.hk.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.hk.png)
 
 1. 執行以下操作以設定風險與安全指標：
 
@@ -410,7 +410,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 對於 **answer**，選擇 **Data source** 為 **{$run.outputs.answer}**。
     - 對於 **ground_truth**，選擇 **Data source** 為 **{$data.message}**。
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.hk.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.hk.png)
 
 1. 選擇 **Next**。
 
@@ -427,17 +427,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     - 評估模型在生成連貫、流暢且相關回應方面的效能。
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.hk.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.hk.png)
 
 1. 風險與安全指標：
 
     - 確保模型輸出安全，符合 Responsible AI Principles，避免任何有害或冒犯性內容。
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.hk.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.hk.png)
 
 1. 您可以向下捲動查看**詳細指標結果**。
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.hk.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.hk.png)
 
 1. 透過對自訂的 Phi-3 / Phi-3.5 模型進行性能與安全指標評估，您可以確認模型不僅有效，還遵守負責任的 AI 實踐，準備好投入實際應用。
 
@@ -447,7 +447,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 您已成功評估整合 Prompt flow 的微調 Phi-3 模型於 Azure AI Foundry。這是確保您的 AI 模型不僅表現優異，還遵循 Microsoft 的 Responsible AI 原則，幫助您打造值得信賴且可靠的 AI 應用程式的重要步驟。
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.hk.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.hk.png)
 
 ## 清理 Azure 資源
 

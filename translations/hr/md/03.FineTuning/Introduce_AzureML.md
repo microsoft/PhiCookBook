@@ -67,7 +67,7 @@ Azure ML je dodao mnoge funkcije vezane uz LLM/SLM, spajajući LLMOps i SLMOps u
 
 Korisnici u poduzećima mogu implementirati različite modele prema različitim poslovnim scenarijima putem Kataloga modela, te pružati usluge kao Model kao uslugu (Model as Service) za pristup programerima ili korisnicima u poduzeću.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.hr.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.hr.png)
 
 Katalog modela u Azure Machine Learning studiju je središte za otkrivanje i korištenje širokog spektra modela koji vam omogućuju izgradnju Generativnih AI aplikacija. Katalog modela sadrži stotine modela od različitih pružatelja poput Azure OpenAI servisa, Mistrala, Mete, Coherea, Nvidije, Hugging Facea, uključujući modele koje je trenirao Microsoft. Modeli od pružatelja osim Microsofta su proizvodi ne-Microsoft tvrtki, kako je definirano u Microsoftovim Uvjetima proizvoda, i podliježu uvjetima koji dolaze s modelom.
 
@@ -77,7 +77,7 @@ Srž pipelinea strojnog učenja je podjela kompletnog zadatka strojnog učenja u
 
 Kod fino podešavanja SLM / LLM, možemo upravljati našim podacima, treniranjem i procesima generiranja kroz Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.hr.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.hr.png)
 
 ### **Prompt flow**
 
