@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Baada ya adapters kufunzwa katika mazingira ya mbali, tumia programu rahisi ya Gradio kuwasiliana na modeli.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.sw.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.sw.png)
 
 ### Kuweka Rasilimali za Azure
 Unahitaji kuanzisha Rasilimali za Azure kwa ajili ya utabiri wa mbali kwa kutekeleza amri ya `AI Toolkit: Provision Azure Container Apps for inference` kutoka kwenye orodha ya amri. Wakati wa usanidi huu, utaombwa kuchagua Usajili wako wa Azure na kundi la rasilimali.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.sw.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.sw.png)
    
 Kwa kawaida, usajili na kundi la rasilimali kwa ajili ya utabiri yanapaswa kufanana na yale yaliyotumika kwa ajili ya uboreshaji. Utabiri utatumia Mazingira ya Azure Container App sawa na kufikia modeli na adapter ya modeli iliyohifadhiwa katika Azure Files, ambazo zilitengenezwa wakati wa hatua ya uboreshaji. 
 
@@ -24,7 +24,7 @@ Kwa kawaida, usajili na kundi la rasilimali kwa ajili ya utabiri yanapaswa kufan
 ### Uwekaji kwa ajili ya Utabiri  
 Ikiwa unataka kurekebisha msimbo wa utabiri au kupakia tena modeli ya utabiri, tafadhali tekeleza amri ya `AI Toolkit: Deploy for inference`. Hii italinganisha msimbo wako wa hivi karibuni na ACA na kuanzisha tena nakala.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.sw.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.sw.png)
 
 Baada ya utekelezaji kufanikiwa, modeli sasa iko tayari kwa tathmini kwa kutumia kiunganishi hiki.
 
@@ -32,7 +32,7 @@ Baada ya utekelezaji kufanikiwa, modeli sasa iko tayari kwa tathmini kwa kutumia
 
 Unaweza kufikia API ya utabiri kwa kubofya kitufe cha "*Go to Inference Endpoint*" kinachoonyeshwa kwenye taarifa ya VSCode. Vinginevyo, kiunganishi cha API ya wavuti kinaweza kupatikana chini ya `ACA_APP_ENDPOINT` katika `./infra/inference.config.json` na kwenye paneli ya matokeo.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.sw.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.sw.png)
 
 > **Note:** Kiunganishi cha utabiri kinaweza kuchukua dakika chache kabla ya kuwa tayari kabisa.
 

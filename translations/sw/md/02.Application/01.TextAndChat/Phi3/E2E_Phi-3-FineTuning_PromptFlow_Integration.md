@@ -23,7 +23,7 @@ Katika mfano huu wa E2E, utajifunza jinsi ya kurekebisha modeli ya Phi-3 na kuui
 
 Hapa kuna muhtasari wa mfano huu wa E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.sw.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.sw.png)
 
 ### Jedwali la Yaliyomo
 
@@ -49,13 +49,13 @@ Hapa kuna muhtasari wa mfano huu wa E2E.
 
 1. Andika *azure machine learning* katika **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Azure Machine Learning** kutoka kwa chaguzi zinazojitokeza.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.sw.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.sw.png)
 
 1. Chagua **+ Create** kutoka kwenye menyu ya urambazaji.
 
 1. Chagua **New workspace** kutoka kwenye menyu ya urambazaji.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.sw.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.sw.png)
 
 1. Fanya kazi zifuatazo:
 
@@ -68,7 +68,7 @@ Hapa kuna muhtasari wa mfano huu wa E2E.
     - Chagua **Application insights** utakayotumia (tengeneza mpya ikiwa inahitajika).
     - Chagua **Container registry** utakayotumia (tengeneza mpya ikiwa inahitajika).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.sw.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.sw.png)
 
 1. Chagua **Review + Create**.
 
@@ -92,7 +92,7 @@ Katika mfano huu wa E2E, utatumia *Standard_NC24ads_A100_v4 GPU* kwa ajili ya ku
     - Chagua **Virtual machine family** utakayotumia. Kwa mfano, chagua **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, ambayo inajumuisha *Standard_NC24ads_A100_v4* GPU.
     - Chagua **Request quota** kutoka kwenye menyu ya urambazaji.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.sw.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.sw.png)
 
     - Ndani ya ukurasa wa Request quota, weka **New cores limit** unayotaka kutumia. Kwa mfano, 24.
     - Ndani ya ukurasa wa Request quota, chagua **Submit** kuomba vigezo vya GPU.
@@ -108,11 +108,11 @@ Ili kurekebisha na kupeleka modeli zako, lazima kwanza utengeneze User Assigned 
 
 1. Andika *managed identities* katika **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Managed Identities** kutoka kwa chaguzi zinazojitokeza.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.sw.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.sw.png)
 
 1. Chagua **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.sw.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.sw.png)
 
 1. Fanya kazi zifuatazo:
 
@@ -139,7 +139,7 @@ Ili kurekebisha na kupeleka modeli zako, lazima kwanza utengeneze User Assigned 
     - Chagua **Resource group** utakayotumia.
     - Chagua **Role** kuwa **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.sw.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.sw.png)
 
 1. Chagua **Save**.
 
@@ -147,7 +147,7 @@ Ili kurekebisha na kupeleka modeli zako, lazima kwanza utengeneze User Assigned 
 
 1. Andika *storage accounts* katika **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Storage accounts** kutoka kwa chaguzi zinazojitokeza.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.sw.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.sw.png)
 
 1. Chagua akaunti ya kuhifadhi inayohusiana na Azure Machine Learning workspace uliyotengeneza. Kwa mfano, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Ili kurekebisha na kupeleka modeli zako, lazima kwanza utengeneze User Assigned 
     - Chagua **+ Add** kutoka kwenye menyu ya urambazaji.
     - Chagua **Add role assignment** kutoka kwenye menyu ya urambazaji.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.sw.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.sw.png)
 
 1. Ndani ya ukurasa wa Add role assignment, fanya kazi zifuatazo:
 
@@ -171,7 +171,7 @@ Ili kurekebisha na kupeleka modeli zako, lazima kwanza utengeneze User Assigned 
     - Ndani ya ukurasa wa Select managed identities, chagua Manage Identity uliyotengeneza. Kwa mfano, *finetunephi-managedidentity*.
     - Ndani ya ukurasa wa Select managed identities, chagua **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.sw.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.sw.png)
 
 1. Chagua **Review + assign**.
 
@@ -179,7 +179,7 @@ Ili kurekebisha na kupeleka modeli zako, lazima kwanza utengeneze User Assigned 
 
 1. Andika *container registries* katika **kisanduku cha utafutaji** juu ya ukurasa wa portal na chagua **Container registries** kutoka kwa chaguzi zinazojitokeza.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.sw.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.sw.png)
 
 1. Chagua rejista ya kontena inayohusiana na Azure Machine Learning workspace. Kwa mfano, *finetunephicontainerregistries*
 
@@ -289,7 +289,7 @@ Katika zoezi hili, utafanya:
 
 1. Chagua folda ya *finetune-phi* uliyounda, iliyoko kwenye *C:\Users\yourUserName\finetune-phi*.
 
-    ![Fungua folda ya mradi.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.sw.png)
+    ![Fungua folda ya mradi.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.sw.png)
 
 1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia na chagua **New File** kuunda faili mpya iitwayo *download_dataset.py*.
 
@@ -297,7 +297,7 @@ Katika zoezi hili, utafanya:
 
 1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia na chagua **New File** kuunda faili mpya iitwayo *deploy_model.py*.
 
-    ![Unda faili mpya.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.sw.png)
+    ![Unda faili mpya.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.sw.png)
 
 1. Katika sehemu ya kushoto ya Visual Studio Code, bonyeza kulia na chagua **New Folder** kuunda folda mpya iitwayo *finetuning_dir*.
 
@@ -373,28 +373,28 @@ Katika zoezi hili, utafanya:
     - Chagua Azure Subscription unayotumia kwa sasa.
     - Nakili na bandika Subscription ID yako kwenye faili la *config.py*.
 
-    ![Tafuta subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.sw.png)
+    ![Tafuta subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.sw.png)
 
 1. Fanya yafuatayo kuongeza Azure Workspace Name:
 
     - Nenda kwenye rasilimali ya Azure Machine Learning uliyounda.
     - Nakili na bandika jina la akaunti yako kwenye faili la *config.py*.
 
-    ![Tafuta jina la Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.sw.png)
+    ![Tafuta jina la Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.sw.png)
 
 1. Fanya yafuatayo kuongeza Azure Resource Group Name:
 
     - Nenda kwenye rasilimali ya Azure Machine Learning uliyounda.
     - Nakili na bandika jina la Azure Resource Group yako kwenye faili la *config.py*.
 
-    ![Tafuta jina la resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.sw.png)
+    ![Tafuta jina la resource group.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.sw.png)
 
 2. Fanya yafuatayo kuongeza jina la Azure Managed Identity
 
     - Nenda kwenye rasilimali ya Managed Identities uliyounda.
     - Nakili na bandika jina la Azure Managed Identity yako kwenye faili la *config.py*.
 
-    ![Tafuta UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.sw.png)
+    ![Tafuta UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.sw.png)
 
 ### Andaa seti ya data kwa ajili ya kurekebisha
 
@@ -508,7 +508,7 @@ Unahitaji kusanidi Azure CLI kuthibitisha mazingira yako. Azure CLI inakuwezesha
 
 1. Chagua usajili wako wa Azure kutumia.
 
-    ![Tafuta jina la resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.sw.png)
+    ![Tafuta jina la resource group.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.sw.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ Kwa kuendesha *setup_ml.py*, utaendesha mchakato wa kurekebisha ndani ya mazingi
 
 1. Katika zoezi hili, umefanikiwa kurekebisha mfano wa Phi-3 kwa kutumia Azure Machine Learning. Kwa kuendesha skiripti la *setup_ml.py*, umeanzisha mazingira ya Azure Machine Learning na kuanzisha mchakato wa kurekebisha uliobainishwa katika faili la *fine_tune.py*. Tafadhali fahamu kuwa mchakato wa kurekebisha unaweza kuchukua muda mrefu. Baada ya kuendesha amri `python setup_ml.py`, unahitaji kusubiri mchakato ukamilike. Unaweza kufuatilia hali ya kazi ya kurekebisha kwa kufuata kiungo kilichotolewa kwenye terminal kwenda kwenye portal ya Azure Machine Learning.
 
-    ![Tazama kazi ya kurekebisha.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.sw.png)
+    ![Tazama kazi ya kurekebisha.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.sw.png)
 
 ### Peleka mfano uliorekebishwa
 
@@ -1080,11 +1080,11 @@ Kuendesha faili la *deploy_model.py* kunaendesha mchakato mzima wa upeleka moja 
 
 1. Chagua **Endpoints** kutoka kwenye tab upande wa kushoto.
 
-    ![Chagua endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.sw.png)
+    ![Chagua endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.sw.png)
 
 2. Chagua endpoint uliouunda.
 
-    ![Chagua endpoints uliounda.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.sw.png)
+    ![Chagua endpoints uliounda.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.sw.png)
 
 3. Ukurasa huu unaweza kusimamia endpoints zilizoundwa wakati wa mchakato wa uanzishaji.
 
@@ -1103,7 +1103,7 @@ Baada ya kufanikisha kuanzisha modeli yako iliyofanyiwa fine-tuning, sasa unawez
 1. Nakili na ubandike **REST endpoint** yako kwenye faili *config.py*, ukibadilisha `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` na **REST endpoint** yako.
 1. Nakili na ubandike **Primary key** yako kwenye faili *config.py*, ukibadilisha `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` na **Primary key** yako.
 
-    ![Nakili api key na endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.sw.png)
+    ![Nakili api key na endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.sw.png)
 
 #### Ongeza msimbo kwenye faili *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ Baada ya kufanikisha kuanzisha modeli yako iliyofanyiwa fine-tuning, sasa unawez
 
 1. Hapa kuna mfano wa matokeo: Sasa unaweza kuzungumza na modeli yako maalum ya Phi-3. Inashauriwa kuuliza maswali yanayohusiana na data iliyotumika kwa fine-tuning.
 
-    ![Mfano wa prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.sw.png)
+    ![Mfano wa prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.sw.png)
 
 **Kiarifu cha Kutotegemea**:  
 Hati hii imetafsiriwa kwa kutumia huduma ya tafsiri ya AI [Co-op Translator](https://github.com/Azure/co-op-translator). Ingawa tunajitahidi kwa usahihi, tafadhali fahamu kwamba tafsiri za kiotomatiki zinaweza kuwa na makosa au upungufu wa usahihi. Hati ya asili katika lugha yake ya asili inapaswa kuchukuliwa kama chanzo cha mamlaka. Kwa taarifa muhimu, tafsiri ya kitaalamu inayofanywa na binadamu inapendekezwa. Hatubebei dhamana kwa kutoelewana au tafsiri potofu zinazotokana na matumizi ya tafsiri hii.
