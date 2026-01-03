@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) ay isang open-source na platform na idinisenyo upang pamahalaan ang buong lifecycle ng machine learning.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.tl.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.tl.png)
 
 Ginagamit ang MLFlow para pamahalaan ang ML lifecycle, kabilang ang eksperimento, reproducibility, deployment, at isang sentral na model registry. Sa kasalukuyan, nag-aalok ang ML flow ng apat na bahagi.
 
@@ -22,7 +22,7 @@ Ginagamit ang MLFlow para pamahalaan ang ML lifecycle, kabilang ang eksperimento
 
 Kasama dito ang mga kakayahan para sa pagsubaybay ng mga eksperimento, pag-package ng code para sa reproducible na mga run, at pagbabahagi at pag-deploy ng mga modelo. Ang MLFlow ay naka-integrate sa Databricks at sumusuporta sa iba't ibang ML libraries, kaya ito ay library-agnostic. Maaari itong gamitin sa anumang machine learning library at sa anumang programming language, dahil nagbibigay ito ng REST API at CLI para sa kaginhawaan.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.tl.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.tl.png)
 
 Mga pangunahing tampok ng MLFlow ay kinabibilangan ng:
 
@@ -37,7 +37,7 @@ Sinusuportahan din ng MLFlow ang MLOps loop, na kinabibilangan ng paghahanda ng 
 
 Sa E2E na halimbawa na ito, ipapakita namin ang dalawang magkaibang paraan sa paggawa ng wrapper sa paligid ng Phi-3 small language model (SLM) at pagkatapos ay patakbuhin ito bilang MLFlow model, alinman lokal o sa cloud, halimbawa sa Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.tl.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.tl.png)
 
 | Project | Paglalarawan | Lokasyon |
 | ------------ | ----------- | -------- |

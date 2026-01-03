@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Pinili ko ang Objective-C bilang paraan ng pag-develop ng App, dahil sa paggamit ng Generative AI gamit ang ONNX Runtime C++ API, mas compatible ang Objective-C. Siyempre, maaari mo ring tapusin ang mga kaugnay na tawag gamit ang Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.tl.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.tl.png)
 
 ## **5. Kopyahin ang ONNX quantized INT4 model sa App application project**
 
 Kailangan nating i-import ang INT4 quantization model sa ONNX format, na kailangang i-download muna
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.tl.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.tl.png)
 
 Pagkatapos ma-download, kailangan mo itong idagdag sa Resources directory ng proyekto sa Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.tl.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.tl.png)
 
 ## **6. Pagdagdag ng C++ API sa ViewControllers**
 
@@ -121,11 +121,11 @@ Pagkatapos ma-download, kailangan mo itong idagdag sa Resources directory ng pro
 
 - **a.** Idagdag ang mga kaukulang C++ header files sa proyekto.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.tl.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.tl.png)
 
 - **b.** Isama ang `onnxruntime-genai` dynamic library sa Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.tl.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.tl.png)
 
 - **c.** Gamitin ang C Samples code para sa testing. Maaari ka ring magdagdag ng karagdagang features tulad ng ChatUI para sa mas maraming functionality.
 
@@ -162,7 +162,7 @@ Pagkatapos ma-download, kailangan mo itong idagdag sa Resources directory ng pro
 
 Kapag kumpleto na ang setup, maaari mo nang patakbuhin ang application upang makita ang resulta ng Phi-3-mini model inference.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.tl.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.tl.jpg)
 
 Para sa karagdagang sample code at detalyadong mga tagubilin, bisitahin ang [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
