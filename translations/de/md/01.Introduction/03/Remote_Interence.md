@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Nachdem die Adapter in der Remote-Umgebung trainiert wurden, verwenden Sie eine einfache Gradio-Anwendung, um mit dem Modell zu interagieren.
 
-![Fine-tune abgeschlossen](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.de.png)
+![Fine-tune abgeschlossen](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.de.png)
 
 ### Azure-Ressourcen bereitstellen  
 Sie müssen die Azure-Ressourcen für die Remote-Inferenz einrichten, indem Sie den Befehl `AI Toolkit: Provision Azure Container Apps for inference` aus der Befehls-Palette ausführen. Während der Einrichtung werden Sie aufgefordert, Ihr Azure-Abonnement und die Ressourcengruppe auszuwählen.  
-![Inference-Ressource bereitstellen](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.de.png)
+![Inference-Ressource bereitstellen](../../../../../translated_images/command-provision-inference.467afc8d351642fc.de.png)
 
 Standardmäßig sollten das Abonnement und die Ressourcengruppe für die Inferenz mit denen übereinstimmen, die auch für das Fine-Tuning verwendet wurden. Die Inferenz nutzt dieselbe Azure Container App Umgebung und greift auf das Modell sowie den Modelladapter zu, die in Azure Files gespeichert sind und während des Fine-Tuning-Schritts erstellt wurden.
 
@@ -24,7 +24,7 @@ Standardmäßig sollten das Abonnement und die Ressourcengruppe für die Inferen
 ### Bereitstellung für die Inferenz  
 Wenn Sie den Inferenzcode überarbeiten oder das Inferenzmodell neu laden möchten, führen Sie bitte den Befehl `AI Toolkit: Deploy for inference` aus. Dadurch wird Ihr aktueller Code mit ACA synchronisiert und die Replik neu gestartet.
 
-![Für Inferenz bereitstellen](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.de.png)
+![Für Inferenz bereitstellen](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.de.png)
 
 Nach erfolgreichem Abschluss der Bereitstellung ist das Modell bereit für die Auswertung über diesen Endpunkt.
 
@@ -32,7 +32,7 @@ Nach erfolgreichem Abschluss der Bereitstellung ist das Modell bereit für die A
 
 Sie können auf die Inferenz-API zugreifen, indem Sie auf die Schaltfläche "*Go to Inference Endpoint*" klicken, die in der VSCode-Benachrichtigung angezeigt wird. Alternativ finden Sie den Web-API-Endpunkt unter `ACA_APP_ENDPOINT` in der Datei `./infra/inference.config.json` sowie im Ausgabefenster.
 
-![App-Endpunkt](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.de.png)
+![App-Endpunkt](../../../../../translated_images/notification-deploy.446e480a44b1be58.de.png)
 
 > **Hinweis:** Es kann einige Minuten dauern, bis der Inferenz-Endpunkt vollständig einsatzbereit ist.
 

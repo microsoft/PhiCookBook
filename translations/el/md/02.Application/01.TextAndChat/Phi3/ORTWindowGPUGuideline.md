@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** Αν δεν θέλετε να κάνετε compile, μπορείτε να παραλείψετε αυτό το βήμα
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.el.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.el.png)
 
 ### **4. Εγκατάσταση NVIDIA Driver**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    Ανοίξτε το [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) και εκτελέστε
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.el.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.el.png)
 
 ### **8. Compile ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    - Χρησιμοποιώντας το Windows Terminal, ανοίξτε το Developer Command Prompt για VS 2022 και μεταβείτε στο onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.el.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.el.png)
 
    - Κάντε compile με το περιβάλλον Python σας
 

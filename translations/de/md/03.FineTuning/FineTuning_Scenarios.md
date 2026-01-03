@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Fine-Tuning-Szenarien
 
-![FineTuning mit MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.de.png)
+![FineTuning mit MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.de.png)
 
 **Plattform** Dazu gehören verschiedene Technologien wie Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito und ONNX Runtime.
 
@@ -24,7 +24,7 @@ Der Fine-Tuning-Prozess mit Microsoft-Technologien umfasst verschiedene Komponen
 
 Feinabstimmung des Modells mit gehostetem Fine-Tuning, ohne dass Compute erstellt oder verwaltet werden muss.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.de.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.de.png)
 
 Serverloses Fine-Tuning ist für die Modelle Phi-3-mini und Phi-3-medium verfügbar, wodurch Entwickler die Modelle schnell und einfach für Cloud- und Edge-Szenarien anpassen können, ohne Compute organisieren zu müssen. Wir haben außerdem angekündigt, dass Phi-3-small jetzt über unser Models-as-a-Service-Angebot verfügbar ist, sodass Entwickler schnell und unkompliziert mit der KI-Entwicklung starten können, ohne die zugrunde liegende Infrastruktur verwalten zu müssen.
 
@@ -32,7 +32,7 @@ Serverloses Fine-Tuning ist für die Modelle Phi-3-mini und Phi-3-medium verfüg
 
 Benutzer verwalten ihre eigene Compute-Ressource, um ihre Modelle feinabzustimmen.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.de.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.de.png)
 
 [Fine Tuning Beispiel](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Benutzer verwalten ihre eigene Compute-Ressource, um ihre Modelle feinabzustimme
 
 ## Beispiele für Fine-Tuning-Leistung
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.de.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.de.png)
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.
