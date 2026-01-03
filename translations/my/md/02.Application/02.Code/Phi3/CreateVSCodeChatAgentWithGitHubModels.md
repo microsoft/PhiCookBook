@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-3/3.5 မိသားစုရှိ Phi-3/3.5-mini-instruct သည် ကုဒ်နားလည်မှုနှင့် ဖန်တီးနိုင်စွမ်းများအားကောင်းပြီး Gemma-2-9b နှင့် Mistral-Nemo-12B-instruct-2407 ထက် အားသာချက်ရှိကြောင်း ကျွန်ုပ်တို့ သိရှိထားပါသည်။
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.my.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.my.png)
 
 နောက်ဆုံးထွက် GitHub Models များတွင် Phi-3.5-mini-instruct (128k) နှင့် Phi-3.5-vision-instruct (128k) မော်ဒယ်များကို ရရှိနိုင်ပြီး၊ ဖန်တီးသူများသည် OpenAI SDK၊ Azure AI Inference SDK နှင့် REST API များမှတဆင့် ဝင်ရောက်အသုံးပြုနိုင်ပါသည်။
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.my.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.my.png)
 
 ***Note: *** ထုတ်လုပ်မှုပတ်ဝန်းကျင်တွင် Azure Model Catalog နှင့် ပိုမိုကောင်းမွန်စွာ ပြောင်းလဲအသုံးပြုနိုင်သောကြောင့် Azure AI Inference SDK ကို အသုံးပြုရန် အကြံပြုပါသည်။
 
@@ -34,13 +34,13 @@ Phi-3/3.5 မိသားစုရှိ Phi-3/3.5-mini-instruct သည် က�
 
 GitHub Copilot Chat Agent သည် ကုဒ်အခြေခံ၍ ပရောဂျက်အမျိုးမျိုးတွင် မတူညီသောတာဝန်များကို ပြီးမြောက်စေပါသည်။ စနစ်တွင် Agent လေးမျိုးရှိသည်- workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.my.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.my.png)
 
 Agent အမည်ကို ‘@’ ဖြင့် ထည့်သွင်းခြင်းအားဖြင့် သက်ဆိုင်ရာ အလုပ်များကို အမြန်ဆုံး ပြီးမြောက်စေနိုင်သည်။ စီးပွားရေးလုပ်ငန်းများအတွက် မိမိလုပ်ငန်းနှင့်ဆိုင်သော လိုအပ်ချက်များ၊ ကုဒ်ရေးသားခြင်း၊ စမ်းသပ်မှုစံနှုန်းများနှင့် ထုတ်ပြန်ခြင်းများကို ထည့်သွင်းပါက GitHub Copilot အခြေခံ စီးပွားရေးလုပ်ငန်းပုဂ္ဂိုလ်ရေး လုပ်ဆောင်ချက်များ ပိုမိုခိုင်မာစေပါသည်။
 
 Visual Studio Code Chat Agent သည် ယခုအခါ တရားဝင် API ကို ထုတ်ပြန်ပြီးဖြစ်ကာ၊ စီးပွားရေးလုပ်ငန်းများ သို့မဟုတ် စီးပွားရေးလုပ်ငန်း ဖန်တီးသူများအနေဖြင့် မတူညီသော ဆော့ဖ်ဝဲလုပ်ငန်းစဉ်ပတ်ဝန်းကျင်များအပေါ် အခြေခံ၍ Agent များ ဖန်တီးနိုင်ပါသည်။ Visual Studio Code Extension Development နည်းလမ်းအတိုင်း ဖန်တီးခြင်းဖြင့် Visual Studio Code Chat Agent API ၏ အင်တာဖေ့စ်ကို လွယ်ကူစွာ ဝင်ရောက်အသုံးပြုနိုင်ပါသည်။ ဤလုပ်ငန်းစဉ်အပေါ် အခြေခံ၍ ဖန်တီးနိုင်ပါသည်။
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.my.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.my.png)
 
 ဖန်တီးမှုအခြေအနေတွင် တတိယပါတီ မော်ဒယ် API များ (GitHub Models, Azure Model Catalog, နှင့် open source မော်ဒယ်များအပေါ် အခြေခံ၍ ကိုယ်ပိုင်တည်ဆောက်ထားသော ဝန်ဆောင်မှုများ) ကို ဝင်ရောက်အသုံးပြုနိုင်ပြီး GitHub Copilot မှ ပံ့ပိုးပေးသော gpt-35-turbo, gpt-4, gpt-4o မော်ဒယ်များကိုလည်း အသုံးပြုနိုင်ပါသည်။
 
@@ -54,7 +54,7 @@ Phi-3.5 ၏ ပရိုဂရမ်ရေးသားနိုင်စွမ�
 
 3. **Phi-3.5-vision-instruct (128k)** နှင့် ပုံမှန် ပြီးမြောက်မှုအပေါ် အခြေခံ၍ **@phicoding /image** command ဖြင့် ကုဒ်ဖန်တီးခြင်း
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.my.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.my.png)
 
 ## **ဆက်စပ်အဆင့်များ**
 
@@ -365,19 +365,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.my.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.my.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.my.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.my.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.my.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.my.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.my.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.my.png)
 
 နမူနာကုဒ်ကို ဒေါင်းလုပ်လုပ်နိုင်ပါသည် :[click](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

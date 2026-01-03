@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ဤ E2E နမူနာ၏ အနှစ်ချုပ်ကို အောက်တွင် ဖော်ပြထားပါသည်။
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.my.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.my.png)
 
 ### အကြောင်းအရာ စာရင်း
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Portal စာမျက်နှာ၏ အပေါ်ဆုံးရှိ **search bar** တွင် *azure machine learning* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Azure Machine Learning** ကို ရွေးချယ်ပါ။
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.my.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.my.png)
 
 1. နေရာပြောင်းခြင်း မီနူးမှ **+ Create** ကို ရွေးချယ်ပါ။
 
 1. နေရာပြောင်းခြင်း မီနူးမှ **New workspace** ကို ရွေးချယ်ပါ။
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.my.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.my.png)
 
 1. အောက်ပါ အချက်များကို ပြုလုပ်ပါ-
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - အသုံးပြုမည့် **Application insights** ကို ရွေးချယ်ပါ (လိုအပ်ပါက အသစ်တစ်ခု ဖန်တီးပါ)။
     - အသုံးပြုမည့် **Container registry** ကို ရွေးချယ်ပါ (လိုအပ်ပါက အသစ်တစ်ခု ဖန်တီးပါ)။
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.my.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.my.png)
 
 1. **Review + Create** ကို ရွေးချယ်ပါ။
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - အသုံးပြုမည့် **Virtual machine family** ကို ရွေးချယ်ပါ။ ဥပမာ *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* (Standard_NC24ads_A100_v4 GPU ပါဝင်သည်) ကို ရွေးချယ်ပါ။
     - နေရာပြောင်းခြင်း မီနူးမှ **Request quota** ကို ရွေးချယ်ပါ။
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.my.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.my.png)
 
     - Request quota စာမျက်နှာတွင် အသုံးပြုလိုသည့် **New cores limit** ကို ထည့်ပါ။ ဥပမာ 24။
     - Request quota စာမျက်နှာတွင် **Submit** ကို နှိပ်၍ GPU ကွိုတားတောင်းဆိုပါ။
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Portal စာမျက်နှာ၏ အပေါ်ဆုံးရှိ **search bar** တွင် *managed identities* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Managed Identities** ကို ရွေးချယ်ပါ။
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.my.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.my.png)
 
 1. **+ Create** ကို ရွေးချယ်ပါ။
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.my.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.my.png)
 
 1. အောက်ပါ အချက်များကို ပြုလုပ်ပါ-
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - အသုံးပြုမည့် **Resource group** ကို ရွေးချယ်ပါ။
     - **Role** ကို **Contributor** အဖြစ် ရွေးချယ်ပါ။
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.my.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.my.png)
 
 1. **Save** ကို နှိပ်ပါ။
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Portal စာမျက်နှာ၏ အပေါ်ဆုံးရှိ **search bar** တွင် *storage accounts* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Storage accounts** ကို ရွေးချယ်ပါ။
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.my.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.my.png)
 
 1. Azure Machine Learning workspace နှင့် ဆက်စပ်ထားသော storage account ကို ရွေးချယ်ပါ။ ဥပမာ *finetunephistorage*။
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - နေရာပြောင်းခြင်း မီနူးမှ **+ Add** ကို ရွေးချယ်ပါ။
     - နေရာပြောင်းခြင်း မီနူးမှ **Add role assignment** ကို ရွေးချယ်ပါ။
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.my.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.my.png)
 
 1. Add role assignment စာမျက်နှာတွင် အောက်ပါအတိုင်း လုပ်ဆောင်ပါ-
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Select managed identities စာမျက်နှာတွင် ဖန်တီးထားသော Manage Identity ကို ရွေးချယ်ပါ။ ဥပမာ *finetunephi-managedidentity*။
     - Select managed identities စာမျက်နှာတွင် **Select** ကို နှိပ်ပါ။
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.my.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.my.png)
 
 1. **Review + assign** ကို ရွေးချယ်ပါ။
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Portal စာမျက်နှာ၏ အပေါ်ဆုံးရှိ **search bar** တွင် *container registries* ဟု ရိုက်ထည့်ပြီး ပေါ်လာသော ရွေးချယ်စရာများထဲမှ **Container registries** ကို ရွေးချယ်ပါ။
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.my.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.my.png)
 
 1. Azure Machine Learning workspace နှင့် ဆက်စပ်ထားသော container registry ကို ရွေးချယ်ပါ။ ဥပမာ *finetunephicontainerregistries*။
 
@@ -265,7 +265,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. သင်ဖန်တီးထားသော *finetune-phi* ဖိုလ်ဒါကို ရွေးချယ်ပါ၊ အဲဒါက *C:\Users\yourUserName\finetune-phi* မှာရှိပါတယ်။
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.my.png)
+    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.my.png)
 
 1. Visual Studio Code ၏ ဘယ်ဘက် panel မှာ right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *download_dataset.py* ဆိုတဲ့ ဖိုင်အသစ်ကို ဖန်တီးပါ။
 
@@ -273,7 +273,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Visual Studio Code ၏ ဘယ်ဘက် panel မှာ right-click ပြုလုပ်ပြီး **New File** ကို ရွေးချယ်ကာ *deploy_model.py* ဆိုတဲ့ ဖိုင်အသစ်ကို ဖန်တီးပါ။
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.my.png)
+    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.my.png)
 
 1. Visual Studio Code ၏ ဘယ်ဘက် panel မှာ right-click ပြုလုပ်ပြီး **New Folder** ကို ရွေးချယ်ကာ *finetuning_dir* ဆိုတဲ့ ဖိုလ်ဒါအသစ်ကို ဖန်တီးပါ။
 
@@ -349,28 +349,28 @@ CO_OP_TRANSLATOR_METADATA:
     - သင်အသုံးပြုနေသော Azure Subscription ကို ရွေးချယ်ပါ။
     - Subscription ID ကို ကူးယူပြီး *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
 
-    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.my.png)
+    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.my.png)
 
 1. Azure Workspace Name ထည့်သွင်းရန် အောက်ပါအဆင့်များကို လုပ်ဆောင်ပါ။
 
     - သင်ဖန်တီးထားသော Azure Machine Learning resource သို့ သွားပါ။
     - သင့်အကောင့်နာမည်ကို ကူးယူပြီး *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.my.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.my.png)
 
 1. Azure Resource Group Name ထည့်သွင်းရန် အောက်ပါအဆင့်များကို လုပ်ဆောင်ပါ။
 
     - သင်ဖန်တီးထားသော Azure Machine Learning resource သို့ သွားပါ။
     - Azure Resource Group Name ကို ကူးယူပြီး *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
 
-    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.my.png)
+    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.my.png)
 
 2. Azure Managed Identity name ထည့်သွင်းရန် အောက်ပါအဆင့်များကို လုပ်ဆောင်ပါ။
 
     - သင်ဖန်တီးထားသော Managed Identities resource သို့ သွားပါ။
     - Azure Managed Identity name ကို ကူးယူပြီး *config.py* ဖိုင်ထဲ ထည့်သွင်းပါ။
 
-    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.my.png)
+    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.my.png)
 
 ### Fine-tuning အတွက် dataset ပြင်ဆင်ခြင်း
 
@@ -484,7 +484,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. သင့် Azure subscription ကို ရွေးချယ်ပါ။
 
-    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.my.png)
+    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.my.png)
 
 > [!TIP]
 >
@@ -836,7 +836,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ဒီလေ့ကျင့်ခန်းမှာ သင် Azure Machine Learning ကို အသုံးပြုပြီး Phi-3 model ကို အောင်မြင်စွာ fine-tune လုပ်နိုင်ခဲ့ပါပြီ။ *setup_ml.py* script ကို run လုပ်ခြင်းဖြင့် Azure Machine Learning ပတ်ဝန်းကျင်ကို စတင်တပ်ဆင်ပြီး *fine_tune.py* ဖိုင်ထဲ သတ်မှတ်ထားသော fine-tuning လုပ်ငန်းစဉ်ကို စတင်ခဲ့ပါသည်။ fine-tuning လုပ်ငန်းစဉ်မှာ အချိန်ကြာနိုင်ပါသည်။ `python setup_ml.py` command run ပြီးနောက် လုပ်ငန်းစဉ်ပြီးဆုံးရန် စောင့်ဆိုင်းရပါမည်။ terminal မှာ ပေးထားသော link ကို အသုံးပြုပြီး Azure Machine Learning portal တွင် fine-tuning job အခြေအနေကို ကြည့်ရှုနိုင်ပါသည်။
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.my.png)
+    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.my.png)
 
 ### Fine-tuned model ကို deploy လုပ်ခြင်း
 
@@ -878,11 +878,11 @@ fine-tuned Phi-3 model ကို Prompt Flow နဲ့ ပေါင်းစည�
 
 1. ဘယ်ဘက် tab မှ **Endpoints** ကို ရွေးချယ်ပါ။
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.my.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.my.png)
 
 2. သင်ဖန်တီးထားသော endpoint ကို ရွေးချယ်ပါ။
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.my.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.my.png)
 
 3. ဒီစာမျက်နှာတွင် deployment လုပ်ငန်းစဉ်အတွင်း ဖန်တီးထားသော endpoints များကို စီမံခန့်ခွဲနိုင်ပါသည်။
 
@@ -901,7 +901,7 @@ fine-tuned Phi-3 model ကို Prompt Flow နဲ့ ပေါင်းစည�
 1. သင့် **REST endpoint** ကို ကူးယူပြီး *config.py* ဖိုင်ထဲရှိ `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ကို သင့် **REST endpoint** ဖြင့် အစားထိုးပါ။
 1. သင့် **Primary key** ကို ကူးယူပြီး *config.py* ဖိုင်ထဲရှိ `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ကို သင့် **Primary key** ဖြင့် အစားထိုးပါ။
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.my.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.my.png)
 
 #### *flow.dag.yml* ဖိုင်ထဲ ကုဒ်ထည့်ခြင်း
 
@@ -1010,7 +1010,7 @@ fine-tuned Phi-3 model ကို Prompt Flow နဲ့ ပေါင်းစည�
 
 1. ရလဒ်ဥပမာ - ယခု သင့်စိတ်ကြိုက် Phi-3 မော်ဒယ်နှင့် စကားပြောနိုင်ပါပြီ။ fine-tuning အတွက် အသုံးပြုထားသော ဒေတာအပေါ် အခြေခံ၍ မေးခွန်းများ မေးရန် အကြံပြုပါသည်။
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.my.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.my.png)
 
 **အကြောင်းကြားချက်**  
 ဤစာတမ်းကို AI ဘာသာပြန်ဝန်ဆောင်မှု [Co-op Translator](https://github.com/Azure/co-op-translator) ဖြင့် ဘာသာပြန်ထားပါသည်။ ကျွန်ုပ်တို့သည် တိကျမှန်ကန်မှုအတွက် ကြိုးစားသော်လည်း အလိုအလျောက် ဘာသာပြန်ခြင်းတွင် အမှားများ သို့မဟုတ် မှားယွင်းချက်များ ပါဝင်နိုင်ကြောင်း သတိပြုပါရန် မေတ္တာရပ်ခံအပ်ပါသည်။ မူရင်းစာတမ်းကို မူလဘာသာဖြင့်သာ တရားဝင်အချက်အလက်အဖြစ် ယူဆသင့်ပါသည်။ အရေးကြီးသော အချက်အလက်များအတွက် လူ့ဘာသာပြန်ပညာရှင်မှ ဘာသာပြန်ခြင်းကို အကြံပြုပါသည်။ ဤဘာသာပြန်ချက်ကို အသုံးပြုရာမှ ဖြစ်ပေါ်လာနိုင်သည့် နားလည်မှုမှားယွင်းမှုများအတွက် ကျွန်ုပ်တို့သည် တာဝန်မယူပါ။

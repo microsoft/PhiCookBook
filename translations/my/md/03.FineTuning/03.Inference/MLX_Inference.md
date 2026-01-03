@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ရလဒ် (ကျွန်ုပ်၏ ပတ်ဝန်းကျင်မှာ Apple M1 Max, 64GB ဖြစ်သည်)မှာ
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.my.png)
+![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.my.png)
 
 ### **3. Terminal မှာ MLX ဖြင့် Phi-3-mini ကို Quantize လုပ်ခြင်း**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ရလဒ်မှာ
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.my.png)
+![INT4](../../../../../translated_images/02.7b188681a8eadbc1.my.png)
 
 
 ### **4. Jupyter Notebook မှာ MLX ဖြင့် Phi-3-mini ကို လည်ပတ်ခြင်း**
 
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.my.png)
+![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.my.png)
 
 ***Note:*** ဤနမူနာကို [ဒီလင့်ခ်ကိုနှိပ်ပါ](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb) မှာ ဖတ်ရှုနိုင်ပါသည်။
 
