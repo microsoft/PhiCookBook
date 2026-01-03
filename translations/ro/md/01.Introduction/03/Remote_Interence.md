@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 După ce adaptoarele sunt antrenate în mediul la distanță, folosește o aplicație simplă Gradio pentru a interacționa cu modelul.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.ro.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.ro.png)
 
 ### Provisionarea resurselor Azure  
 Trebuie să configurezi resursele Azure pentru inferență la distanță executând comanda `AI Toolkit: Provision Azure Container Apps for inference` din paleta de comenzi. În timpul acestei configurări, ți se va cere să selectezi abonamentul Azure și grupul de resurse.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.ro.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.ro.png)
    
 Implicit, abonamentul și grupul de resurse pentru inferență ar trebui să fie aceleași cu cele folosite pentru ajustarea fină. Inferența va folosi același mediu Azure Container App și va accesa modelul și adaptorul de model stocate în Azure Files, generate în timpul etapei de ajustare fină.
 
@@ -24,7 +24,7 @@ Implicit, abonamentul și grupul de resurse pentru inferență ar trebui să fie
 ### Implementare pentru inferență  
 Dacă dorești să modifici codul de inferență sau să reîncarci modelul de inferență, execută comanda `AI Toolkit: Deploy for inference`. Aceasta va sincroniza codul tău cel mai recent cu ACA și va reporni replica.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.ro.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.ro.png)
 
 După finalizarea cu succes a implementării, modelul este gata pentru evaluare folosind acest endpoint.
 
@@ -32,7 +32,7 @@ După finalizarea cu succes a implementării, modelul este gata pentru evaluare 
 
 Poți accesa API-ul de inferență făcând clic pe butonul „*Go to Inference Endpoint*” afișat în notificarea VSCode. Alternativ, endpoint-ul web API poate fi găsit sub `ACA_APP_ENDPOINT` în fișierul `./infra/inference.config.json` și în panoul de ieșire.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.ro.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.ro.png)
 
 > **Note:** Endpoint-ul de inferență poate dura câteva minute până devine complet operațional.
 

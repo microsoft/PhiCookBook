@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Odată cu dezvoltarea AI Generativ, ne dorim să folosim o platformă unificată pentru a gestiona diferite LLM și SLM, integrarea datelor enterprise, operațiuni de fine-tuning/RAG și evaluarea diferitelor afaceri enterprise după integrarea LLM și SLM, etc., astfel încât aplicațiile inteligente bazate pe AI generativ să fie implementate mai eficient. [Azure AI Foundry](https://ai.azure.com) este o platformă de aplicații AI generative la nivel enterprise.
 
-![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.ro.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93.ro.png)
 
 Cu Azure AI Foundry, poți evalua răspunsurile modelelor mari de limbaj (LLM) și poți orchestra componentele aplicațiilor de prompturi folosind prompt flow pentru performanțe mai bune. Platforma facilitează scalabilitatea pentru transformarea conceptelor demonstrative în producție completă cu ușurință. Monitorizarea continuă și rafinarea susțin succesul pe termen lung.
 
