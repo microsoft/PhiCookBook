@@ -36,7 +36,7 @@ Maaaring piliin ang [Ollama](https://ollama.com) o [LlamaEdge](https://llamaedge
 
 Kung nais mong gamitin ang gguf sa cloud at edge devices nang sabay, maaaring ituring ang LlamaEdge bilang WasmEdge (ang WasmEdge ay isang magaan, mataas ang performance, at scalable na WebAssembly runtime na angkop para sa cloud native, edge, at decentralized applications. Sinusuportahan nito ang serverless applications, embedded functions, microservices, smart contracts, at IoT devices). Maaari mong i-deploy ang quantitative model ng gguf sa edge devices at cloud gamit ang LlamaEdge.
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.tl.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.tl.jpg)
 
 Narito ang mga hakbang para gamitin ito:
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Narito ang resulta ng pagpapatakbo
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.tl.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.tl.png)
 
 ***Sample code*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

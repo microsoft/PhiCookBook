@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Después de entrenar los adaptadores en el entorno remoto, utiliza una aplicación sencilla de Gradio para interactuar con el modelo.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.es.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.es.png)
 
 ### Provisión de recursos en Azure  
 Debes configurar los recursos de Azure para la inferencia remota ejecutando el comando `AI Toolkit: Provision Azure Container Apps for inference` desde la paleta de comandos. Durante esta configuración, se te pedirá seleccionar tu suscripción de Azure y el grupo de recursos.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.es.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.es.png)
    
 Por defecto, la suscripción y el grupo de recursos para la inferencia deberían coincidir con los usados para el afinamiento. La inferencia utilizará el mismo entorno de Azure Container App y accederá al modelo y al adaptador de modelo almacenados en Azure Files, que se generaron durante el paso de afinamiento. 
 
@@ -24,7 +24,7 @@ Por defecto, la suscripción y el grupo de recursos para la inferencia deberían
 ### Despliegue para inferencia  
 Si deseas modificar el código de inferencia o recargar el modelo de inferencia, ejecuta el comando `AI Toolkit: Deploy for inference`. Esto sincronizará tu código más reciente con ACA y reiniciará la réplica.  
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.es.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.es.png)
 
 Una vez completado el despliegue con éxito, el modelo estará listo para ser evaluado usando este endpoint.
 
@@ -32,7 +32,7 @@ Una vez completado el despliegue con éxito, el modelo estará listo para ser ev
 
 Puedes acceder a la API de inferencia haciendo clic en el botón "*Go to Inference Endpoint*" que aparece en la notificación de VSCode. Alternativamente, el endpoint de la API web se encuentra en `ACA_APP_ENDPOINT` dentro de `./infra/inference.config.json` y en el panel de salida.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.es.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.es.png)
 
 > **Note:** El endpoint de inferencia puede tardar unos minutos en estar completamente operativo.
 

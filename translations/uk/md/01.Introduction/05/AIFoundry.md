@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Використання Azure AI Foundry для оцінювання**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.uk.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.uk.png)
 
 Як оцінити вашу генеративну AI-застосунок за допомогою [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Незалежно від того, чи оцінюєте ви одноразові чи багатокрокові розмови, Azure AI Foundry надає інструменти для оцінки продуктивності моделі та безпеки.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.uk.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.uk.png)
 
 ## Як оцінювати генеративні AI-застосунки з Azure AI Foundry
 Для детальніших інструкцій дивіться [документацію Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

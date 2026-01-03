@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** אם אינך מעוניין לקמפל, ניתן לדלג על שלב זה
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.he.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.he.png)
 
 ### **4. התקנת דרייבר NVIDIA**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    פתח את [המחברת](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) והרץ אותה
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.he.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.he.png)
 
 ### **8. קומפילציה של ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    - באמצעות Windows Terminal, עבור ל-Developer Command Prompt for VS 2022 וגש לתיקיית onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.he.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.he.png)
 
    - קמפל עם סביבת הפייתון שלך
 

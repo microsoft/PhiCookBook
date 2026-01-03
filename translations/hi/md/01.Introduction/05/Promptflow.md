@@ -42,7 +42,7 @@ Prompt Flow में बिल्ट-इन टूल्स, सैंपल्
 
 Microsoft Prompt Flow में, मूल्यांकन आपके AI मॉडल के प्रदर्शन को मापने में महत्वपूर्ण भूमिका निभाता है। आइए देखें कि आप Prompt Flow में मूल्यांकन फ्लो और मेट्रिक्स को कैसे कस्टमाइज़ कर सकते हैं:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.hi.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.hi.png)
 
 **Prompt Flow में मूल्यांकन को समझना**
 

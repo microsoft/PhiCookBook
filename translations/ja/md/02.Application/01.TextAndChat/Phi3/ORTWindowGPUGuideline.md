@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***Note*** コンパイルしない場合はこのステップをスキップできます
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.ja.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.ja.png)
 
 ### **4. NVIDIAドライバーのインストール**
 
@@ -83,7 +83,7 @@ NVIDIA CUDNN 9.4のlib、bin、includeフォルダの内容をNVIDIA CUDA 12.4�
 
    [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb)を開いて実行してください
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.ja.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.ja.png)
 
 ### **8. ORT GenAI GPUのコンパイル**
 
@@ -131,7 +131,7 @@ NVIDIA CUDNN 9.4のlib、bin、includeフォルダの内容をNVIDIA CUDA 12.4�
 
    - Windows TerminalでVS 2022のDeveloper Command Promptを開き、onnxruntime-genaiに移動
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.ja.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.ja.png)
 
    - Python環境でコンパイルを実行
 

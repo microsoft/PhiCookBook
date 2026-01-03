@@ -34,7 +34,7 @@ Slijedite ove korake da biste počeli koristiti ove resurse:
 2. **Klonirajte repozitorij**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Pridružite se Microsoft AI Discord zajednici i upoznajte stručnjake i kolege programere**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![naslovnica](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.hr.png)
+![naslovnica](../../translated_images/cover.eb18d1b9605d754b.hr.png)
 
 ### 🌐 Podrška za više jezika
 

@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ಇತ್ತೀಚೀಗ Azure AI Foundry ನ ಮೌಲ್ಯಮಾಪನ ಪ್ರಕ್ರಿಯೆ ಇಲ್ಲಿದೆ.
 
-![ಟ್ಯುಟೋರಿಯಲ್ ವಾಸ್ತುಶಿಲ್ಪ.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.kn.png)
+![ಟ್ಯುಟೋರಿಯಲ್ ವಾಸ್ತುಶಿಲ್ಪ.](../../../../../../translated_images/architecture.10bec55250f5d6a4.kn.png)
 
 *ಚಿತ್ರದ ಮೂಲ: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ನಿಮ್ಮ AI ಮಾದರಿ ನೈತಿಕ ಮತ್ತು ಸುರಕ್ಷಿತವಾಗಿರಬೇಕೆಂಬುದನ್ನು ಖಾತ್ರಿ ಪಡಿಸಲು, ಅದನ್ನು Microsoft's Responsible AI ತತ್ವಗಳ ವಿರುದ್ಧ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು ಅತ್ಯಾಕಾಂಕ್ಷೆಯಾಗಿದೆ. Azure AI Foundry ನಲ್ಲಿ, ಸುರಕ್ಷತಾ ಮೌಲ್ಯಮಾಪನಗಳು ನಿಮ್ಮ ಮಾದರಿಯ ಜೈಲ್‌ಬ್ರೆಕ್ ಹಲ್ಲೆಗಳಿಗೆ ಅಡಕದಂತಹ ಮತು ಅಥವಾ ಹಾನಿಕರ ವಿಷಯವನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಅನುಮತಿಸುತ್ತವೆ, ಇದು ಈ ತತ್ವಗಳಿಗೆ ನೇರ ಸಂಯೋಜನೆಯಾಗಿದೆ.
 
-![ಸುರಕ್ಷತೆ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.kn.png)
+![ಸುರಕ್ಷತೆ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.kn.png)
 
 *ಚಿತ್ರದ ಮೂಲ: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 - **ಲೆಕ್ಕಪತ್ರದ ಕರ್ತವ್ಯ (Accountability)**: AI ವ್ಯವಸ್ಥೆಗಳನ್ನು ವಿನ್ಯಾಸಗೊಳಿಸುವ ಮತ್ತು ನಿಯೋಜಿಸುವವರು ತಮ್ಮ ವ್ಯವಸ್ಥೆಗಳ ಕಾರ್ಯಾಚರಣೆಗೆ ಜವಾಬ್ದಾರಿಯಾಗಿರಬೇಕು. ಸಂಸ್ಥೆಗಳು ಕೈಗಾರಿಕಾ ಮಾನದಂಡಗಳನ್ನು ಆಧರಿಸಿ ಲೆಕ್ಕಪತ್ರದ ನಿಬಂಧನೆಗಳನ್ನು ಅಭಿವೃದ್ಧಿಪಡಿಸಬೇಕು. ಈ ನಿಬಂಧನೆಗಳು ಜನರ ಜೀವನದ ಮೇಲೆ ಪ್ರಭಾವ ಬೀರುವ ಯಾವುದೇ ನಿರ್ಣಯದಲ್ಲಿ AI ವ್ಯವಸ್ಥೆಗಳು ಅಂತಿಮ ಪ್ರಾಧಿಕಾರವಾಗದ ರೀತಿಯನ್ನು ಖಚಿತಪಡಿಸಬಹುದು. ಇವು ತುಂಬಾ ಸ್ವಾಯತ್ತತೆಗೆ ಒಳപ്പെട്ട AI ವ್ಯವಸ್ಥೆಗಳ ಮೇಲೆ ಮಾನವರ ನಿಯಂತ್ರಣವನ್ನು ನಿರ್ವಹಿಸುವುದನ್ನು ಖಚಿತಪಡಿಸಬಹುದು.
 
-![ಹಬ್ ಭರ್ತಿ.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.kn.png)
+![ಹಬ್ ಭರ್ತಿ.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.kn.png)
 
 *ಚಿತ್ರದ ಮೂಲ: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 ಈ ಅಂಶಗಳನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುವ ಮೂಲಕ AI ಮಾದರಿ ಹಾನಿಕರ ಅಥವಾಅಪಮಾನಕರ ವಿಷಯವನ್ನು ಉತ್ಪಾದಿಸದಿರುವುದನ್ನು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಬಹುದು ಮತ್ತು ಸಮಾಜದ ಮೌಲ್ಯಗಳು ಮತ್ತು ನಿಯಂತ್ರಣ ಮಾನದಂಡಗಳಿಗೆ ಅನುಗುಣವಾಗಿರುತ್ತದೆ.
 
-![ಸುರಕ್ಷತೆ ಆಧಾರದ ಮೇಲೆ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.kn.png)
+![ಸುರಕ್ಷತೆ ಆಧಾರದ ಮೇಲೆ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.kn.png)
 
 ### ಕಾರ್ಯಕ್ಷಮತಾ ಮೌಲ್ಯಮಾಪನಕ್ಕೆ ಪರಿಚಯ
 
 ನಿಮ್ಮ AI ಮಾದರಿ ನಿರೀಕ್ಷೆಯಂತೆ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆಯೇ ಎಂದು ಖಚಿತಪಡಿಸಲು, ಅದನ್ನು ಕಾರ್ಯಕ್ಷಮತಾ ಮಾನದಂಡಗಳ ವಿರುದ್ಧ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು ಮುಖ್ಯವಾಗಿದೆ. Azure AI Foundry ನಲ್ಲಿ, ಕಾರ್ಯಕ್ಷಮತಾ ಮೌಲ್ಯಮಾಪನಗಳು ನಿಮಗೆ ಮಾದರಿಯ ಸತ್ಯಸಂದર્ભ, ಪ್ರಾಸಕ್ತತೆ ಮತ್ತು ಸुसಂಬಂಧಿತ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ.
 
-![ಕಾರ್ಯಕ್ಷಮತಾ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.kn.png)
+![ಕಾರ್ಯಕ್ಷಮತಾ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.kn.png)
 
 *ಚಿತ್ರದ ಮೂಲ: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 ಈ ಮಾನದಂಡಗಳು ನೀವು ಮಾದರಿಯ ನಿಖರ, ಸಂಬಂಧಿತ ಮತ್ತು ಸुसಂಬಂಧಿತ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ಉತ್ಪಾದಿಸುವ ಸಾಮರ್ಥ್ಯವನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಸಹಾಯ ಮಾಡುತ್ತವೆ.
 
-![ಕಾರ್ಯಕ್ಷಮತೆಯ ಆಧಾರದ ಮೇಲೆ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.kn.png)
+![ಕಾರ್ಯಕ್ಷಮತೆಯ ಆಧಾರದ ಮೇಲೆ ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.kn.png)
 
 ## **Scenario 2: Evaluating the Phi-3 / Phi-3.5 model in Azure AI Foundry**
 
@@ -153,7 +153,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 1. ನ್ಯಾವಿಗೇಷನ್ ಮೆನುದಿಂದ **+ New hub** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.kn.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.kn.png)
 1. ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಿ:
 
     - **ಹಬ್ ಹೆಸರು** ನಮೂದಿಸಿ. ಇದು ಒಂದು ವಿಶಿಷ್ಟ ಮೌಲ್ಯವಾಗಿರಬೇಕು.
@@ -163,7 +163,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
     - ಬಳಸಲು **Connect Azure AI Services** ಆಯ್ಕೆಮಾಡಿ (ಅವಶ್ಯಕವಾದರೆ ಹೊಸದನ್ನು ರಚಿಸಿ).
     - **Connect Azure AI Search** ಗೆ **Skip connecting** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಹಬ್ ಭರ್ತಿ ಮಾಡಿ.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.kn.png)
+    ![ಹಬ್ ಭರ್ತಿ ಮಾಡಿ.](../../../../../../translated_images/fill-hub.baaa108495c71e34.kn.png)
 
 1. **Next** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -173,11 +173,11 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 1. ನೇವಿಗೇಶನ್ ಮೆನುವಿನಿಂದ **+ New project** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಹೊಸ ಪ್ರಾಜೆಕ್ಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.kn.png)
+    ![ಹೊಸ ಪ್ರಾಜೆಕ್ಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.kn.png)
 
 1. **Project name** ನಮೂದಿಸಿ. ಇದು ಒಂದು ವಿಶಿಷ್ಟ ಮೌಲ್ಯವಾಗಿರಬೇಕು.
 
-    ![ಪ್ರಾಜೆಕ್ಟ್ ರಚಿಸಿ.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.kn.png)
+    ![ಪ್ರಾಜೆಕ್ಟ್ ರಚಿಸಿ.](../../../../../../translated_images/create-project.ca3b71298b90e420.kn.png)
 
 1. **Create a project** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -193,17 +193,17 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 1. ಎಡದ ಟ್ಯಾಬ್‌ನಿಂದ **Endpoints** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Endpoints ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.kn.png)
+    ![Endpoints ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.kn.png)
 
 1. ನೀವು ರಚಿಸಿದ endpoint ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Endpoints ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.kn.png)
+    ![Endpoints ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.kn.png)
 
 1. ನೇವಿಗೇಶನ್ ಮೆನುವಿನಿಂದ **Consume** ಆಯ್ಕೆಮಾಡಿ.
 
 1. ನಿಮ್ಮ **REST endpoint** ಮತ್ತು **Primary key** ಅನ್ನು ನಕಲಿಸಿ.
 
-    ![api ಕೀ ಮತ್ತು ಎಂಡ್‌ಪಾಯಿಂಟ್ ನಕಲಿಸಿ.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.kn.png)
+    ![api ಕೀ ಮತ್ತು ಎಂಡ್‌ಪಾಯಿಂಟ್ ನಕಲಿಸಿ.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.kn.png)
 
 #### ಕಸ್ಟಮ್ ಸಂಪರ್ಕವನ್ನು ಸೇರಿಸಿ
 
@@ -215,11 +215,11 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 1. **+ New connection** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಹೊಸ ಸಂಪರ್ಕ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.kn.png)
+    ![ಹೊಸ ಸಂಪರ್ಕ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.kn.png)
 
 1. ನೇವಿಗೇಶನ್ ಮೆನುವಿನಿಂದ **Custom keys** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Custom keys ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.kn.png)
+    ![Custom keys ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.kn.png)
 
 1. ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಿ:
 
@@ -229,7 +229,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
     - ಕೀ ಹೆಸರಿಗಾಗಿ, **key** ಅನ್ನು ನಮೂದಿಸಿ ಮತ್ತು ನೀವು Azure ML Studio ನಿಂದ ನಕಲಿಸಿದ ಕಿಯನ್ನು value ಕ್ಷೇತ್ರಕ್ಕೆ ಪೇಸ್ಟ್ ಮಾಡಿ.
     - ಕೀಗಳನ್ನು ಸೇರಿಸಿದ ನಂತರ, ಕೀ ಹೊರತಾಗುವ ಹಾಗೆ ನಿಲ್ಲಿಸಲು **is secret** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಸಂಪರ್ಕ ಸೇರಿಸಿ.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.kn.png)
+    ![ಸಂಪರ್ಕ ಸೇರಿಸಿ.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.kn.png)
 
 1. **Add connection** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -243,15 +243,15 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
 1. ನೇವಿಗೇಶನ್ ಮೆನುವಿನಿಂದ **+ Create** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Promptflow ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.kn.png)
+    ![Promptflow ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.kn.png)
 
 1. ನೇವಿಗೇಶನ್ ಮೆನುವಿನಿಂದ **Chat flow** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಚಾಟ್ ಫ್ಲೋ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.kn.png)
+    ![ಚಾಟ್ ಫ್ಲೋ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.kn.png)
 
 1. ಬಳಸಲು **Folder name** ನಮೂದಿಸಿ.
 
-    ![ಚಾಟ್ ಫ್ಲೋ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.kn.png)
+    ![ಚಾಟ್ ಫ್ಲೋ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.kn.png)
 
 1. **Create** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -288,7 +288,7 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
     - **Save** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Raw file mode ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.kn.png)
+    ![Raw file mode ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.kn.png)
 
 1. Prompt flow ನಲ್ಲಿ ಕಸ್ಟಮ್ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಬಳಕೆ ಮಾಡಲು *integrate_with_promptflow.py* ಗೆ ಕೆಳಗಿನ ಕೋಡ್ ಅನ್ನು ಸೇರಿಸಿ.
 
@@ -351,14 +351,14 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 
     ```
 
-    ![Prompt flow ಕೋಡ್ ಪೇಸ್ಟ್ ಮಾಡಿ.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.kn.png)
+    ![Prompt flow ಕೋಡ್ ಪೇಸ್ಟ್ ಮಾಡಿ.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.kn.png)
 
 > [!NOTE]
 > Prompt flow ಅನ್ನು Azure AI Foundry ನಲ್ಲಿ ಬಳಸುವ ಕುರಿತು ಹೆಚ್ಚಿನ ವಿವರಗಳಿಗಾಗಿ, ನೀವು [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) ಅನ್ನು ನೋಡಬಹುದು.
 
 1. ನಿಮ್ಮ ಮಾದರಿಯೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಲು **Chat input**, **Chat output** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಇನ್‌ಪುಟ್ ಔಟ್‌ಪುಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.kn.png)
+    ![ಇನ್‌ಪುಟ್ ಔಟ್‌ಪುಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.kn.png)
 
 1. ಈಗ ನೀವು ನಿಮ್ಮ ಕಸ್ಟಮ್ Phi-3 / Phi-3.5 ಮಾದರಿಯೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಲು ತಯಾರಾಗಿದ್ದೀರಿ. ಮುಂದಿನ ವ್ಯಾಯಾಮದಲ್ಲಿ, Prompt flow ಅನ್ನು ಹೇಗೆ ಪ್ರಾರಂಭಿಸಿ ಮತ್ತು ಫೈನ್-ಟ್ಯೂನ್ ಮಾಡಿದ Phi-3 / Phi-3.5 ಮಾದರಿಯೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಲು ಅದನ್ನು ಹೇಗೆ ಬಳಸಬೇಕು ಎಂಬುದನ್ನು ನೀವು ಕಲಿಯೋಿರಿ.
 
@@ -366,32 +366,32 @@ Microsoft ನ Responsible AI ತತ್ವಗಳಲ್ಲಿ ಸೇರಿವೆ:
 >
 > ಪುನಃ ರಚಿಸಿದ ಫ್ಲೋ ಕೆಳಗಿನ ಚಿತ್ರದಂತಿರಬೇಕು:
 >
-> ![ಫ್ಲೋ ಉದಾಹರಣೆ](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.kn.png)
+> ![ಫ್ಲೋ ಉದಾಹರಣೆ](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.kn.png)
 >
 
 #### Prompt flow ಪ್ರಾರಂಭಿಸಿ
 
 1. Prompt flow ಪ್ರಾರಂಭಿಸಲು **Start compute sessions** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಕಂಪ್ಯೂಟ್ ಸೆಶನ್ ಪ್ರಾರಂಭಿಸಿ.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.kn.png)
+    ![ಕಂಪ್ಯೂಟ್ ಸೆಶನ್ ಪ್ರಾರಂಭಿಸಿ.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.kn.png)
 
 1. ಪರಿಮಾಣಗಳನ್ನು ನವೀಕರಿಸಲು **Validate and parse input** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಇನ್ಪುಟ್ ಪರಿಶೀಲಿಸಿ.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.kn.png)
+    ![ಇನ್ಪುಟ್ ಪರಿಶೀಲಿಸಿ.](../../../../../../translated_images/validate-input.c1adb9543c6495be.kn.png)
 
 1. ನೀವು ರಚಿಸಿದ ಕಸ್ಟಮ್ ಸಂಪರ್ಕಕ್ಕೆ ಇರುವ **connection** ರ **Value** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಉದಾಹರಣೆಗೆ, *connection*.
 
-    ![ಸಂಪರ್ಕ.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.kn.png)
+    ![ಸಂಪರ್ಕ.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.kn.png)
 
 #### ನಿಮ್ಮ ಕಸ್ಟಮ್ Phi-3 / Phi-3.5 ಮಾದರಿಯೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಿ
 
 1. **Chat** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಚಾಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.kn.png)
+    ![ಚಾಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.kn.png)
 
 1. ಫಲಿತಾಂಶಗಳ ಉದಾಹರಣೆ ಇಲ್ಲಿದೆ: ಈಗ ನೀವು ನಿಮ್ಮ ಕಸ್ಟಮ್ Phi-3 / Phi-3.5 ಮಾದರಿಯೊಂದಿಗೆ ಚಾಟ್ ಮಾಡಬಹುದು. ಫೈನ್-ಟ್ಯುನಿಂಗ್‌ಗೆ ಬಳಸಿದ ದತ್ತಾಂಶವನ್ನು ಆಧರಿಸಿ ಪ್ರಶ್ನೆಗಳನ್ನು ಕೇಳುವುದು ಶಿಫಾರಸು ಮಾಡಲಾಗುತ್ತದೆ.
 
-    ![Prompt flow ಜೊತೆಗೆ ಚಾಟ್ ಮಾಡಿ.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.kn.png)
+    ![Prompt flow ಜೊತೆಗೆ ಚಾಟ್ ಮಾಡಿ.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.kn.png)
 
 ### Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು Azure OpenAI ಅನ್ನು ಡಿಪ್ಲಾಯ್ ಮಾಡಿ
 
@@ -403,7 +403,7 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
 
 1. ನೀವು ರಚಿಸಿದ Azure AI Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
 
-    ![ಪ್ರಾಜೆಕ್ಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.kn.png)
+    ![ಪ್ರಾಜೆಕ್ಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.kn.png)
 
 1. ನೀವು ರಚಿಸಿದ ಪ್ರಾಜೆಕ್ಟ್‌ನಲ್ಲಿ, ಎಡದ ಟ್ಯಾಬ್‌ನಿಂದ **Deployments** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -411,11 +411,11 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
 
 1. **Deploy base model** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Deployments ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.kn.png)
+    ![Deployments ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.kn.png)
 
 1. ನೀವು ಬಳಸಲು ಬಯಸುವ Azure OpenAI ಮಾದರಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಉದಾಹರಣೆಗೆ, **gpt-4o**.
 
-    ![ನೀವು ಬಳಸಲು ಬಯಸುವ Azure OpenAI ಮಾದರಿ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.kn.png)
+    ![ನೀವು ಬಳಸಲು ಬಯಸುವ Azure OpenAI ಮಾದರಿ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-openai-model.959496d7e311546d.kn.png)
 
 1. **Confirm** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -427,17 +427,17 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
 
 1. ನೀವು ರಚಿಸಿದ Azure AI Foundry ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಹೋಗಿ.
 
-    ![ಪ್ರಾಜೆಕ್ಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.kn.png)
+    ![ಪ್ರಾಜೆಕ್ಟ್ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.kn.png)
 
 1. ನೀವು ರಚಿಸಿದ ಪ್ರಾಜೆಕ್ಟ್‌ನಲ್ಲಿ, ಎಡದ ಟ್ಯಾಬ್‌ನಿಂದ **Evaluation** ಆಯ್ಕೆಮಾಡಿ.
 
 1. ನೇವಿಗೇಶನ್ ಮೆನುವಿನಿಂದ **+ New evaluation** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![ಮೌಲ್ಯಮಾಪನ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.kn.png)
+    ![ಮೌಲ್ಯಮಾಪನ ಆಯ್ಕೆಮಾಡಿ.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.kn.png)
 
 1. **Prompt flow** ಮೌಲ್ಯಮಾಪನವನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.kn.png)
+    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.kn.png)
 
 1. ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಿ:
 
@@ -445,7 +445,7 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
     - ಕಾರ್ಯದ ಪ್ರಕಾರವಾಗಿ **Question and answer without context** ಆಯ್ಕೆಮಾಡಿ. ಯಾಕಂದ್ರೆ, ಈ ಟ್ಯುಟೋರಿಯಲ್‌ನಲ್ಲಿ ಬಳಸಲಾದ **ULTRACHAT_200k** ಡೇಟಾಸೆಟ್‌ನಲ್ಲಿ.context ಇಲ್ಲ.
     - ನೀವು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಬಯಸುವ prompt flow ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.kn.png)
+    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.kn.png)
 
 1. **Next** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -454,7 +454,7 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
     - **Add your dataset** ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ಡೇಟಾಸೆಟ್ ಅನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ. ಉದಾಹರಣೆಗೆ, ನೀವು ULTRACHAT_200k ಡೇಟಾಸೆಟ್ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿದಾಗ ಸೇರಿದ್ದ test dataset ಫೈಲ್, ಉದಾಹರಣೆಗೆ *test_data.json1*, ಅನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಬಹುದು.
     - ನಿಮ್ಮ ಡೇಟಾಸೆಟ್‌ಗೆ ಹೊಂದುವ megfelelő **Dataset column** ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಉದಾಹರಣೆಗೆ, ನೀವು **ULTRACHAT_200k** ಡೇಟಾಸೆಟ್ ಬಳಸಿ ಇದ್ದರೆ, **${data.prompt}** ಅನ್ನು Dataset column ಆಗಿ ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.kn.png)
+    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.kn.png)
 
 1. **Next** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -463,7 +463,7 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
     - ನೀವು ಬಳಸಲು ಬಯಸುವ ಪ್ರದರ್ಶನ ಮತ್ತು ಗುಣಮಟ್ಟ ಮೀಟ್ರಿಕ್ಸ್ ಅನ್ನು ಆಯ್ಕೆಮಾಡಿ.
     - ಮೌಲ್ಯಮಾಪನಕ್ಕೆ ನೀವು ರಚಿಸಿದ Azure OpenAI ಮಾದರಿಯನ್ನು ಆಯ್ಕೆಮಾಡಿ. ಉದಾಹರಣೆಗೆ, **gpt-4o** ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.kn.png)
+    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.kn.png)
 
 1. ಅಪಾಯ ಮತ್ತು ಸುರಕ್ಷತೆ ಮೀಟ್ರಿಕ್ಸ್ ಅನ್ನು ಸಂರಚಿಸಲು ಕೆಳಗಿನ ಕಾರ್ಯಗಳನ್ನು ಮಾಡಿ:
 
@@ -473,7 +473,7 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
     - **answer**ಗಾಗಿ, **Data source** ಅನ್ನು **{$run.outputs.answer}** ಆಗಿ ಆಯ್ಕೆಮಾಡಿ.
     - **ground_truth**ಗಾಗಿ, **Data source** ಅನ್ನು **{$data.message}** ಆಗಿ ಆಯ್ಕೆಮಾಡಿ.
 
-    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.kn.png)
+    ![Prompt flow ಮೌಲ್ಯಮಾಪನ.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.kn.png)
 
 1. **Next** ಆಯ್ಕೆಮಾಡಿ.
 
@@ -492,16 +492,16 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
 
     - ಸಮಗ್ರ, ಸುಗಮ ಹಾಗೂ ಸಂಬಂಧಿತ ಪ್ರತಿಕ್ರಿಯೆಗಳನ್ನು ತಯಾರಿಸುವಲ್ಲಿ ಮಾದರಿಯ ಪರಿಣಾಮಕಾರಿತ್ವವನ್ನು ಅಳೆಯಲು.
 
-    ![ಮೌಲ್ಯಮಾಪನ ಫಲಿತಾಂಶ.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.kn.png)
+    ![ಮೌಲ್ಯಮಾಪನ ಫಲಿತಾಂಶ.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.kn.png)
 
 1. ಅಪಾಯ ಮತ್ತು ಸುರಕ್ಷತೆ ಮೀಟ್ರಿಕ್ಸ್:
     - ಮಾದರಿಯ ಔಟ್‌ಪುಟ್‌ಗಳು ಸುರಕ್ಷಿತವಾಗಿರಬೇಕು ಮತ್ತು ಜವಾಬ್ದಾರಿಯುತ ಏಐ ತತ್ವಗಳಿಗೆ ಹೊಂದಿಕೊಳ್ಳಬೇಕು, ಯಾವುದೇ ಹಾನಿಕರ ಅಥವಾ ಆಕ್ಷೇಪಾರ್ಹ ವಿಷಯಗಳನ್ನು ತಪ್ಪಿಸಿಕೊಳ್ಳಬೇಕು.
 
-    ![ಮೌಲ್ಯಮಾಪನ ಫಲಿತಾಂಶ.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.kn.png)
+    ![ಮೌಲ್ಯಮಾಪನ ಫಲಿತಾಂಶ.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.kn.png)
 
 1. ನೀವು ಕೆಳಗೆ ಸ್ಕ್ರೋಲ್ ಮಾಡಿ **ವಿಸ್ತೃತ ಮೀಟ್ರಿಕ್ ಫಲಿತಾಂಶ** ಅನ್ನು ವೀಕ್ಷಿಸಬಹುದು.
 
-    ![ಮೌಲ್ಯಮಾಪನ ಫಲಿತಾಂಶ.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.kn.png)
+    ![ಮೌಲ್ಯಮಾಪನ ಫಲಿತಾಂಶ.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.kn.png)
 
 1. ನಿಮ್ಮ ಕಸ್ಟಮ್ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು ಸುರಕ್ಷತಾ ಮೀಟ್ರಿಕ್‌ಗಳ ವಿರುದ್ಧ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವ ಮೂಲಕ, ಆ ಮಾದರಿ ಕೇವಲ ಪರಿಣಾಮಕಾರಿ ಮಾತ್ರವಲ್ಲ, ಜವಾಬ್ದಾರಿಯುತ ಏಐ ಅಭ್ಯಾಸಗಳನ್ನು ಅನುಸರಿಸುತ್ತದ್ದು ಎಂದು ನೀವು ದೃಢೀಕರಿಸಬಹುದು, ಇದರಿಂದಾಗಿ ಅದು ವಾಸ್ತವ ಜಗತ್ತಿನ ನಿಯೋಜನೆಗೆ ಸಿದ್ಧವಾಗುತ್ತದೆ.
 
@@ -511,7 +511,7 @@ Phi-3 / Phi-3.5 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ 
 
 ನೀವು ಯಶಸ್ವಿಯಾಗಿ Prompt flow ಜೊತೆಗೆ ಸಂಯೋಜಿತ fine-tuned Phi-3 ಮಾದರಿಯನ್ನು Azure AI Foundry ನಲ್ಲಿ ಮೌಲ್ಯಮಾಪನ ಮಾಡಿದ್ದಾರೆ. ಇದು ನಿಮ್ಮ ಏಐ ಮಾದರಿಗಳು ಒಳ್ಳೆಯ ಪರಿಚಯವನ್ನು ನೀಡುವುದಕ್ಕಾಗಿ ಮಾತ್ರವಲ್ಲ, बल्कि Microsoft ನ ಜವಾಬ್ದಾರಿಯುತ ಏಐ ತತ್ತ್ವಗಳನ್ನು ಅನುಸರಿಸುವುದಾಗಿ ಖಚಿತಪಡಿಸುವ ಒಂದು ಪ್ರಮುಖ ಹೆಜ್ಜೆ, ಇದರಿಂದ ನಿಮಗೆ ವಿಶ್ವಾಸಾರ್ಹ ಮತ್ತು ನಂಬಿಗಸ್ತ ಏಐ ಅಪ್ಲಿಕೇಶನ್ಗಳನ್ನು ನಿರ್ಮಿಸಲು ಸಹಾಯವಾಗುತ್ತದೆ.
 
-![ವ್ಯವಸ್ಥೆ.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.kn.png)
+![ವ್ಯವಸ್ಥೆ.](../../../../../../translated_images/architecture.10bec55250f5d6a4.kn.png)
 
 ## Azure ಸಂಪನ್ಮೂಲಗಳನ್ನು ತೆರವುಗೊಳಿಸಿ
 

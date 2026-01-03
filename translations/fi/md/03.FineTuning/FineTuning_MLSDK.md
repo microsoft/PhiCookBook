@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Tässä esimerkissä teemme hienosäädön Phi-3-mini-4k-instruct-mallille, jotta se osaa täydentää keskustelun kahden henkilön välillä käyttäen ultrachat_200k-datasarjaa.
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.fi.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.fi.png)
 
 Esimerkki näyttää, miten hienosäätö tehdään Azure ML SDK:lla ja Pythonilla, ja miten hienosäädetty malli otetaan käyttöön online-päätepisteessä reaaliaikaista päättelyä varten.
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) adalah platform sumber terbuka yang direka untuk menguruskan kitar hayat pembelajaran mesin dari awal hingga akhir.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.ms.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.ms.png)
 
 MLFlow digunakan untuk menguruskan kitar hayat ML, termasuk eksperimen, kebolehulangan, penyebaran dan pendaftaran model pusat. ML flow kini menawarkan empat komponen.
 
@@ -22,7 +22,7 @@ MLFlow digunakan untuk menguruskan kitar hayat ML, termasuk eksperimen, kebolehu
 
 Ia merangkumi keupayaan untuk menjejak eksperimen, membungkus kod ke dalam larian yang boleh diulang, serta berkongsi dan menyebarkan model. MLFlow diintegrasikan ke dalam Databricks dan menyokong pelbagai perpustakaan ML, menjadikannya bebas perpustakaan. Ia boleh digunakan dengan mana-mana perpustakaan pembelajaran mesin dan dalam mana-mana bahasa pengaturcaraan, kerana ia menyediakan REST API dan CLI untuk kemudahan.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.ms.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.ms.png)
 
 Ciri utama MLFlow termasuk:
 
@@ -37,7 +37,7 @@ MLFlow juga menyokong gelung MLOps, yang merangkumi penyediaan data, pendaftaran
 
 Dalam contoh E2E ini, kami akan menunjukkan dua pendekatan berbeza untuk membina pembalut di sekitar model bahasa kecil Phi-3 (SLM) dan kemudian menjalankannya sebagai model MLFlow sama ada secara tempatan atau di awan, contohnya, dalam ruang kerja Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.ms.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.ms.png)
 
 | Projek | Penerangan | Lokasi |
 | ------------ | ----------- | -------- |

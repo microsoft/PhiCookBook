@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG ist Datenabruf plus Textgenerierung. Die strukturierten und unstrukturierten Daten des Unternehmens werden in der Vektordatenbank gespeichert. Bei der Suche nach relevantem Inhalt werden die passenden Zusammenfassungen und Inhalte gefunden, um einen Kontext zu bilden, und die Textvervollständigungsfunktion von LLM/SLM wird kombiniert, um Inhalte zu generieren.
 
 ## RAG-Prozess
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.de.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.de.png)
 
 ## Fine-tuning
 Fine-tuning basiert auf der Verbesserung eines bestimmten Modells. Es ist nicht nötig, mit dem Modellalgorithmus zu beginnen, aber es müssen kontinuierlich Daten gesammelt werden. Wenn Sie in Branchenanwendungen präzisere Terminologie und sprachliche Ausdrucksweise wünschen, ist Fine-tuning die bessere Wahl. Wenn sich Ihre Daten jedoch häufig ändern, kann Fine-tuning kompliziert werden.

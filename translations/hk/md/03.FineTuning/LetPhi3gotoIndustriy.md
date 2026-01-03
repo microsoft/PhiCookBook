@@ -41,7 +41,7 @@ RAG 是資料檢索 + 文字生成。企業的結構化數據和非結構化數�
 
 ## **如何使用 RAG**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.hk.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007.hk.png)
 
 向量資料庫是以數學形式存儲資料的集合。向量資料庫讓機器學習模型更容易記住之前的輸入，從而支持搜尋、推薦和文本生成等應用。資料可以根據相似度指標而非精確匹配來識別，讓模型能理解資料的上下文。
 
@@ -57,7 +57,7 @@ RAG 是資料檢索 + 文字生成。企業的結構化數據和非結構化數�
 
 ### **Lora 與 QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.hk.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca0.hk.png)
 
 LoRA（低秩適配）和 QLoRA（量化低秩適配）都是用於微調大型語言模型（LLM）的參數高效微調（PEFT）技術。PEFT 技術旨在比傳統方法更有效率地訓練模型。
 

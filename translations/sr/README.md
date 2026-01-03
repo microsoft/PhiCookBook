@@ -34,7 +34,7 @@ Phi је тренутно најмоћнији и најисплативији �
 2. **Clone the Repository**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Придружите се Microsoft AI Discord заједници и упознајте експерте и колеге програмере**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![насловна](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.sr.png)
+![насловна](../../translated_images/cover.eb18d1b9605d754b.sr.png)
 
 ### 🌐 Подршка за више језика
 

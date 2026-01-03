@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Након што су адаптери обучени у даљинском окружењу, користите једноставну Gradio апликацију за интеракцију са моделом.
 
-![Фино подешавање завршено](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.sr.png)
+![Фино подешавање завршено](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.sr.png)
 
 ### Постављање Azure ресурса  
 Потребно је да подесите Azure ресурсе за даљинско извођење тако што ћете извршити команду `AI Toolkit: Provision Azure Container Apps for inference` из командне палете. Током овог подешавања бићете упитани да изаберете вашу Azure претплату и групу ресурса.  
-![Постављање ресурса за извођење](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.sr.png)
+![Постављање ресурса за извођење](../../../../../translated_images/command-provision-inference.467afc8d351642fc.sr.png)
    
 Подразумевано, претплата и група ресурса за извођење треба да буду исте као оне које сте користили за фино подешавање. Извођење ће користити исто Azure Container App окружење и приступити моделу и адаптеру модела који су сачувани у Azure Files, а који су генерисани током корака фино подешавања.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### Деплојмент за извођење  
 Ако желите да измените код за извођење или поново учитате модел за извођење, извршите команду `AI Toolkit: Deploy for inference`. Ово ће синхронизовати ваш најновији код са ACA и поново покренути реплику.
 
-![Деплојмент за извођење](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.sr.png)
+![Деплојмент за извођење](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.sr.png)
 
 Након успешног завршетка деплојмента, модел је спреман за процену преко овог ендпоинта.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Приступ API-ју за извођење можете добити кликом на дугме "*Go to Inference Endpoint*" које се појављује у обавештењу у VSCode-у. Алтернативно, веб API ендпоинт се налази у `ACA_APP_ENDPOINT` у фајлу `./infra/inference.config.json` и у излазном панелу.
 
-![Ендпоинт апликације](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.sr.png)
+![Ендпоинт апликације](../../../../../translated_images/notification-deploy.446e480a44b1be58.sr.png)
 
 > **Напомена:** Ендпоинт за извођење може захтевати неколико минута да постане потпуно оперативан.
 

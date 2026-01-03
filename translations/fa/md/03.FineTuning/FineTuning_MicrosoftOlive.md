@@ -32,11 +32,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Microsoft Olive ابزاری متن‌باز و بسیار ساده برای بهینه‌سازی مدل است که می‌تواند هم تنظیم دقیق و هم مرجع در حوزه هوش مصنوعی مولد را پوشش دهد. تنها به پیکربندی ساده نیاز دارد و با استفاده از مدل‌های زبان کوچک متن‌باز و محیط‌های اجرایی مرتبط (AzureML / GPU محلی، CPU، DirectML) می‌توانید تنظیم دقیق یا مرجع مدل را از طریق بهینه‌سازی خودکار انجام دهید و بهترین مدل را برای استقرار در ابر یا دستگاه‌های لبه پیدا کنید. این امکان را به شرکت‌ها می‌دهد تا مدل‌های عمودی صنعتی خود را هم در محل و هم در ابر بسازند.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.fa.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.fa.png)
 
 ## تنظیم دقیق Phi-3 با Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.fa.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.fa.png)
 
 ## نمونه کد و مثال Phi-3 Olive
 در این مثال از Olive استفاده خواهید کرد برای:

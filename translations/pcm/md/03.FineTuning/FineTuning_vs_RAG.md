@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG na data retrieval + text generation. Di structured data and unstructured data wey belong to di enterprise dey store for di vector database. When you dey search for relevant content, di relevant summary and content go dey find to form context, and di text completion capability of LLM/SLM go combine to generate content.
 
 ## RAG Process
-![Finetuning kontra RAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.pcm.png)
+![Finetuning kontra RAG](../../../../translated_images/rag.2014adc59e6f6007.pcm.png)
 
 ## Fine-tuning
 Fine-tuning dey based on to improve one particular model. E no need start from di model algorithm, but data need to dey accumulate steady. If you want more precise terminology and language expression for industry applications, fine-tuning na better choice. But if your data dey change often, fine-tuning fit turn complicated.

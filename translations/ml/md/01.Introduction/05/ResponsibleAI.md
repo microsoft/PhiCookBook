@@ -13,7 +13,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## Microsoft Responsible AI ന്റെ ഒരു അവലോകനം 
 
-![RAI സിദ്ധാന്തങ്ങൾ](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d336830630939a5130a22b3f9e1f633773562f83fed08a50520.ml.png)
+![RAI സിദ്ധാന്തങ്ങൾ](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d33.ml.png)
 
 **നൈതിക തത്വങ്ങൾ** 
 

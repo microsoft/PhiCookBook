@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 پس از آموزش آداپتورها در محیط راه دور، از یک برنامه ساده Gradio برای تعامل با مدل استفاده کنید.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.fa.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.fa.png)
 
 ### فراهم‌سازی منابع Azure  
 برای استنتاج از راه دور، باید منابع Azure را با اجرای دستور `AI Toolkit: Provision Azure Container Apps for inference` از پنل فرمان تنظیم کنید. در این مرحله از شما خواسته می‌شود اشتراک Azure و گروه منابع خود را انتخاب کنید.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.fa.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.fa.png)
    
 به طور پیش‌فرض، اشتراک و گروه منابع برای استنتاج باید با آن‌هایی که برای تنظیم دقیق استفاده شده‌اند، مطابقت داشته باشند. استنتاج از همان محیط Azure Container App استفاده می‌کند و به مدل و آداپتور مدل ذخیره شده در Azure Files که در مرحله تنظیم دقیق ایجاد شده‌اند، دسترسی دارد.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### استقرار برای استنتاج  
 اگر می‌خواهید کد استنتاج را بازبینی کنید یا مدل استنتاج را مجدداً بارگذاری کنید، دستور `AI Toolkit: Deploy for inference` را اجرا کنید. این کار کد جدید شما را با ACA همگام‌سازی کرده و نسخه را مجدداً راه‌اندازی می‌کند.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.fa.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.fa.png)
 
 پس از اتمام موفقیت‌آمیز استقرار، مدل آماده ارزیابی از طریق این نقطه پایانی است.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 می‌توانید با کلیک روی دکمه "*Go to Inference Endpoint*" که در اعلان VSCode نمایش داده می‌شود، به API استنتاج دسترسی پیدا کنید. همچنین، نقطه پایانی وب API را می‌توانید در `ACA_APP_ENDPOINT` در فایل `./infra/inference.config.json` و در پنل خروجی بیابید.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.fa.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.fa.png)
 
 > **Note:** ممکن است چند دقیقه طول بکشد تا نقطه پایانی استنتاج به طور کامل فعال شود.
 

@@ -15,11 +15,11 @@ Používáte Visual Studio Code Copilot? Zejména v chatu můžete využít růz
 
 Ví se, že Phi-3/3.5-mini-instruct z rodiny Phi-3/3.5 má silné schopnosti porozumění a generování kódu a má výhody oproti Gemma-2-9b a Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.cs.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.cs.png)
 
 Nejnovější GitHub Models již poskytují přístup k modelům Phi-3.5-mini-instruct (128k) a Phi-3.5-vision-instruct (128k). Vývojáři k nim mohou přistupovat přes OpenAI SDK, Azure AI Inference SDK a REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.cs.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.cs.png)
 
 ***Poznámka:*** Doporučuje se zde používat Azure AI Inference SDK, protože lépe přepíná s Azure Model Catalog v produkčním prostředí.
 
@@ -34,13 +34,13 @@ Následují výsledky **Phi-3.5-mini-instruct (128k)** a **Phi-3.5-vision-instru
 
 GitHub Copilot Chat Agent dokáže dokončit různé úkoly v různých projektových scénářích na základě kódu. Systém má čtyři agenty: workspace, github, terminal, vscode.
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.cs.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.cs.png)
 
 Přidáním jména agenta s ‘@’ můžete rychle dokončit odpovídající práci. Pro firmy, pokud přidáte vlastní obsah související s byznysem, jako jsou požadavky, kódování, testovací specifikace a vydání, můžete získat výkonnější privátní firemní funkce založené na GitHub Copilot.
 
 Visual Studio Code Chat Agent nyní oficiálně vydal své API, které umožňuje firmám nebo vývojářům ve firmách vyvíjet agenty založené na různých softwarových byznysových ekosystémech. Na základě vývojové metody Visual Studio Code Extension Development můžete snadno přistupovat k rozhraní Visual Studio Code Chat Agent API. Vývoj můžeme provádět podle tohoto postupu.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.cs.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.cs.png)
 
 Vývojový scénář podporuje přístup k API třetích stran (například GitHub Models, Azure Model Catalog a vlastní služby založené na open source modelech) a také lze využít modely gpt-35-turbo, gpt-4 a gpt-4o poskytované GitHub Copilot.
 
@@ -54,7 +54,7 @@ Snažíme se integrovat programovací schopnosti Phi-3.5 pro dokončení psaní 
 
 3. Generování kódu na základě **Phi-3.5-vision-instruct (128k)** a doplnění obrázku pomocí příkazu **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.cs.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.cs.png)
 
 ## **Související kroky**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.cs.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.cs.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.cs.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.cs.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.cs.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.cs.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.cs.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.cs.png)
 
 Můžete si stáhnout ukázkový kód: [klikněte zde](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

@@ -66,7 +66,7 @@ Azure ML је додао многе функције везане за LLM/SLM, 
 
 Корисници из предузећа могу да имплементирају различите моделе према различитим пословним сценаријима преко Каталога модела, и пружају услуге као Model as Service за приступ предузетничким програмерима или корисницима.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.sr.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.sr.png)
 
 Каталог модела у Azure Machine Learning студију је центар за откривање и коришћење широког спектра модела који вам омогућавају да градите генеративне AI апликације. Каталог модела садржи стотине модела од провајдера као што су Azure OpenAI сервис, Mistral, Meta, Cohere, Nvidia, Hugging Face, укључујући и моделе које је обучио Microsoft. Модели од провајдера осим Microsoft-а су Non-Microsoft Products, како је дефинисано у Microsoft-овим условима коришћења производа, и подлежу условима који су приложени уз модел.
 
@@ -76,7 +76,7 @@ Azure ML је додао многе функције везане за LLM/SLM, 
 
 При финој подешавању SLM / LLM, можемо управљати нашим подацима, тренингом и процесима генерисања кроз Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.sr.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.sr.png)
 
 ### **Prompt flow**
 

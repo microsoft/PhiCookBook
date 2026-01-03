@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 아래는 이 E2E 샘플의 개요입니다.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a2ceacdc6401c688bdf100d874fe8d55169f7723ed024781e.ko.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.ko.png)
 
 ### 목차
 
@@ -48,13 +48,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 포털 페이지 상단의 **검색창**에 *azure machine learning*을 입력하고 나타나는 옵션 중 **Azure Machine Learning**을 선택합니다.
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b9780de8accc31e4e1de7254e9c34a7836a955d455339e77d.ko.png)
+    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.ko.png)
 
 2. 탐색 메뉴에서 **+ 생성**을 선택합니다.
 
 3. 탐색 메뉴에서 **새 작업 영역**을 선택합니다.
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2cf04946c36873223099fd568e0c3ab0377c096868892fdda.ko.png)
+    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.ko.png)
 
 4. 다음 작업을 수행합니다:
 
@@ -67,7 +67,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 사용할 **Application insights**를 선택합니다(필요 시 새로 만듭니다).
     - 사용할 **컨테이너 레지스트리**를 선택합니다(필요 시 새로 만듭니다).
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090ff9ec341c724c1493e7f96726f5c810a89a7409b782a7b04a.ko.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.ko.png)
 
 5. **검토 + 생성**을 선택합니다.
 
@@ -90,7 +90,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 사용할 **가상 머신 패밀리**를 선택합니다. 예를 들어, *Standard_NC24ads_A100_v4* GPU가 포함된 **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**를 선택합니다.
     - 탐색 메뉴에서 **할당량 요청**을 선택합니다.
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd536f2e4a305c8528a34914370813bc2cda4d7bbdd2de873f0.ko.png)
+        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.ko.png)
 
     - 할당량 요청 페이지에서 원하는 **새 코어 제한**을 입력합니다. 예: 24.
     - 할당량 요청 페이지에서 **제출**을 선택하여 GPU 할당량을 요청합니다.
@@ -111,11 +111,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 포털 페이지 상단의 **검색창**에 *managed identities*를 입력하고 나타나는 옵션 중 **Managed Identities**를 선택합니다.
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e52f52a152187b230243fe884f58a9940cd9b534db3dcea383.ko.png)
+    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.ko.png)
 
 1. **+ 생성**을 선택합니다.
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f27b6680cd94ef6ec7557394022dafdcfba2a92777b11e4817.ko.png)
+    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.ko.png)
 
 1. 다음 작업을 수행합니다:
 
@@ -124,7 +124,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 사용할 **지역**을 선택합니다.
     - **이름**을 입력합니다. 고유한 값이어야 합니다.
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0e313fffaecf7d6ce4ee5e86c0badcd038f03519cac63b76b.ko.png)
+    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.ko.png)
 
 1. **검토 + 생성**을 선택합니다.
 
@@ -144,7 +144,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 사용할 **리소스 그룹**을 선택합니다.
     - **역할**을 **Contributor**로 선택합니다.
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d1d62333e91b4d2719284f0dad14bd9b4c3459510a0c44fab.ko.png)
+    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.ko.png)
 
 2. **저장**을 선택합니다.
 
@@ -152,7 +152,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 포털 페이지 상단의 **검색창**에 *storage accounts*를 입력하고 나타나는 옵션 중 **Storage accounts**를 선택합니다.
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e55b6b4dda10841d74d1c7463a2e4f23b9c45ffbb84219deb2.ko.png)
+    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.ko.png)
 
 1. 생성한 Azure Machine Learning 작업 영역과 연결된 스토리지 계정을 선택합니다. 예: *finetunephistorage*.
 
@@ -163,7 +163,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 탐색 메뉴에서 **+ 추가**를 선택합니다.
     - **역할 할당 추가**를 선택합니다.
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c25fb73e63b957e214a2b651375a640a3aa54159a3731f495b.ko.png)
+    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.ko.png)
 
 1. 역할 할당 추가 페이지에서 다음 작업을 수행합니다:
 
@@ -176,7 +176,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 관리 ID 선택 페이지에서 생성한 관리 ID를 선택합니다. 예: *finetunephi-managedidentity*.
     - 관리 ID 선택 페이지에서 **선택**을 클릭합니다.
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25289f2f121da05d114934d21d26aae9cb779334cbbccdf9e8.ko.png)
+    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.ko.png)
 
 1. **검토 + 할당**을 선택합니다.
 
@@ -184,7 +184,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 포털 페이지 상단의 **검색창**에 *container registries*를 입력하고 나타나는 옵션 중 **Container registries**를 선택합니다.
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a69b003f7a698dac908ffc2f355e675c10939fdd0bb09f790e.ko.png)
+    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.ko.png)
 
 1. Azure Machine Learning 작업 영역과 연결된 컨테이너 레지스트리를 선택합니다. 예: *finetunephicontainerregistry*
 
@@ -271,11 +271,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. *C:\Users\yourUserName\finetune-phi* 경로에 생성한 *finetune-phi* 폴더를 선택합니다.
 
-    ![생성한 폴더 선택하기](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6f63a0a50961e51a39cc6de7a7ddc86da5f4896e815f28abd.ko.png)
+    ![생성한 폴더 선택하기](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.ko.png)
 
 1. Visual Studio Code 왼쪽 창에서 마우스 오른쪽 버튼을 클릭하고 **New File**을 선택하여 *download_dataset.py*라는 새 파일을 만듭니다.
 
-    ![새 파일 생성하기](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff927ede875300e1b5c91ab90d1e486c77a43bb9494880cf9b6f.ko.png)
+    ![새 파일 생성하기](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.ko.png)
 
 ### 파인튜닝을 위한 데이터셋 준비하기
 
@@ -387,7 +387,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **+ New**를 선택합니다.
 
-    ![Compute 선택하기](../../../../../../translated_images/06-01-select-compute.a29cff290b480252d04ffd0142c073486df7d3b7256335964a98b87e28072523.ko.png)
+    ![Compute 선택하기](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.ko.png)
 
 1. 다음 작업을 수행합니다:
 
@@ -397,7 +397,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **Virtual machine size** 필터를 **Select from all options**로 설정합니다.
     - **Virtual machine size**를 **Standard_NC24ads_A100_v4**로 선택합니다.
 
-    ![클러스터 생성하기](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e4baa9c5ccf86510f21df87515c231b2a255e1ee545496458.ko.png)
+    ![클러스터 생성하기](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.ko.png)
 
 1. **Next**를 선택합니다.
 
@@ -408,7 +408,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **Maximum number of nodes**를 **1**로 설정합니다.
     - **Idle seconds before scale down**을 **120**으로 설정합니다.
 
-    ![클러스터 생성하기](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662edc0f95ad364a869b4dbb7f7be08ff259528fea96312e77e.ko.png)
+    ![클러스터 생성하기](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.ko.png)
 
 1. **Create**를 선택합니다.
 
@@ -418,18 +418,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 생성한 Azure Machine Learning 작업 영역을 선택합니다.
 
-    ![생성한 작업 영역 선택하기](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.ko.png)
+    ![생성한 작업 영역 선택하기](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.ko.png)
 
 1. 다음 작업을 수행합니다:
 
     - 왼쪽 탭에서 **Model catalog**를 선택합니다.
     - 검색창에 *phi-3-mini-4k*를 입력하고 나타나는 옵션 중 **Phi-3-mini-4k-instruct**를 선택합니다.
 
-    ![phi-3-mini-4k 입력하기](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b25018a7e7353ce6525d8f5803b0af9bc9a60a9be4204dd77578.ko.png)
+    ![phi-3-mini-4k 입력하기](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.ko.png)
 
 1. 네비게이션 메뉴에서 **Fine-tune**을 선택합니다.
 
-    ![Fine-tune 선택하기](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeecb897ac74882792b59086893b8a7448a89be3628aee62fc1b.ko.png)
+    ![Fine-tune 선택하기](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.ko.png)
 
 1. 다음 작업을 수행합니다:
 
@@ -438,7 +438,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 검증 데이터 업로드 유형을 **Provide different validation data**로 선택합니다.
     - **+ Select data**를 선택하여 **Validation data**를 업로드합니다.
 
-    ![파인튜닝 페이지 작성하기](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0bbc6b248af9e7369ca98379770badec9f73b6bced7a8b7806.ko.png)
+    ![파인튜닝 페이지 작성하기](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.ko.png)
 
     > [!TIP]
     >
@@ -448,7 +448,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 이번 실습에서 Azure Machine Learning을 사용해 Phi-3 모델을 성공적으로 파인튜닝했습니다. 파인튜닝 작업은 시간이 꽤 걸릴 수 있으니 완료될 때까지 기다려야 합니다. 작업 상태는 Azure Machine Learning 작업 영역 왼쪽 탭의 Jobs 메뉴에서 확인할 수 있습니다. 다음 시리즈에서는 파인튜닝된 모델을 배포하고 Prompt flow와 통합할 예정입니다.
 
-    ![파인튜닝 작업 확인하기](../../../../../../translated_images/06-08-output.2bd32e59930672b1cc1de86056e2fbc91e338f59e2a29d7dac86ede49a9714b2.ko.png)
+    ![파인튜닝 작업 확인하기](../../../../../../translated_images/06-08-output.2bd32e59930672b1.ko.png)
 
 ### 파인튜닝된 Phi-3 모델 배포하기
 
@@ -466,7 +466,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 생성한 Azure Machine Learning 작업 영역을 선택합니다.
 
-    ![생성한 작업 영역 선택하기](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.ko.png)
+    ![생성한 작업 영역 선택하기](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.ko.png)
 
 1. 왼쪽 탭에서 **Models**를 선택합니다.
 
@@ -474,11 +474,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **From a job output**을 선택합니다.
 
-    ![모델 등록하기](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777c8c39906ce5cd57f16b54fb3887dd4e4de1ce963b26499ad.ko.png)
+    ![모델 등록하기](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.ko.png)
 
 1. 생성한 작업을 선택합니다.
 
-    ![작업 선택하기](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd09315953b4eb2cc9d62d0d77ab0d9d877e34c6827fa6d2b6be4.ko.png)
+    ![작업 선택하기](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.ko.png)
 
 1. **Next**를 선택합니다.
 
@@ -486,17 +486,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **Job output**이 자동으로 선택되어 있는지 확인합니다.
 
-    ![출력 선택하기](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f267b40f73de77f092a5b02808ade72f8eb94e5fe9723feb3.ko.png)
+    ![출력 선택하기](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.ko.png)
 
 2. **Next**를 선택합니다.
 
 3. **Register**를 선택합니다.
 
-    ![등록 선택하기](../../../../../../translated_images/07-04-register.fd82a3b293060bc78399e613293032d3d301c02a6fd8092bec52bfaf4f3104de.ko.png)
+    ![등록 선택하기](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.ko.png)
 
 4. 왼쪽 탭의 **Models** 메뉴에서 등록된 모델을 확인할 수 있습니다.
 
-    ![등록된 모델 확인하기](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591b7995686b95396ffd8c185ba66f0a1f6be18f4aea05e93d5.ko.png)
+    ![등록된 모델 확인하기](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.ko.png)
 
 #### 파인튜닝된 모델 배포하기
 
@@ -506,13 +506,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 네비게이션 메뉴에서 **Real-time endpoints**를 선택합니다.
 
-    ![엔드포인트 생성하기](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09618ce29b467276523838b8cc766d79ebfecdb052fef2c4df.ko.png)
+    ![엔드포인트 생성하기](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.ko.png)
 
 1. **Create**를 선택합니다.
 
 1. 등록한 모델을 선택합니다.
 
-    ![등록된 모델 선택하기](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4460f7646dfaa59121fb1384ed1957755427d358462c25225.ko.png)
+    ![등록된 모델 선택하기](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.ko.png)
 
 1. **Select**를 선택합니다.
 
@@ -524,7 +524,7 @@ CO_OP_TRANSLATOR_METADATA:
     - **Endpoint name**을 입력합니다. 고유한 값이어야 합니다.
     - **Deployment name**을 입력합니다. 고유한 값이어야 합니다.
 
-    ![배포 설정 작성하기](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e67378494bb8d81418bc3bdaceb8c57151727d538594cb378697f36.ko.png)
+    ![배포 설정 작성하기](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.ko.png)
 
 1. **Deploy**를 선택합니다.
 
@@ -540,14 +540,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 생성한 엔드포인트를 선택합니다.
 
-    ![엔드포인트 선택하기](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4a302f0efc8875002e1c382167083c7fefbdb42ede274d0da.ko.png)
+    ![엔드포인트 선택하기](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.ko.png)
 
 1. 이 페이지에서 배포 과정 중 엔드포인트를 관리할 수 있습니다.
 
 > [!NOTE]
 > 배포가 완료되면 **Live traffic**이 **100%**로 설정되어 있는지 확인하세요. 그렇지 않으면 **Update traffic**을 선택해 트래픽 설정을 조정해야 합니다. 트래픽이 0%로 설정되어 있으면 모델 테스트가 불가능합니다.
 >
-> ![트래픽 설정하기](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d30c64ecabac4b17a7b5dc004ba52ad387cbaaf7b266eeadf.ko.png)
+> ![트래픽 설정하기](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.ko.png)
 >
 
 ## 시나리오 3: Prompt flow와 통합하고 Azure AI Foundry에서 맞춤형 모델과 대화하기
@@ -575,7 +575,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 내비게이션 메뉴에서 **+ New hub**를 선택합니다.
 
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834e092dcf9dda773276fbee65f40252ed4a9af4f9aa4fef5d7.ko.png)
+    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.ko.png)
 
 1. 다음 작업을 수행합니다:
 
@@ -586,7 +586,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 사용할 **Connect Azure AI Services**를 선택합니다 (필요 시 새로 만듭니다).
     - **Connect Azure AI Search**는 **Skip connecting**으로 선택합니다.
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c44658a87c2ed01d9e588581f157480ff1ac3312085c51d25.ko.png)
+    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.ko.png)
 
 1. **Next**를 선택합니다.
 
@@ -596,11 +596,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 내비게이션 메뉴에서 **+ New project**를 선택합니다.
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f1251c487d98aed0641bd057100b8e5d6fba9062bfb7d752ce9.ko.png)
+    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.ko.png)
 
 1. **Project name**을 입력합니다. 고유한 값이어야 합니다.
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a192b4ed3dde6b1136c860fc85352d612aa2f3ae8a4d54eb4.ko.png)
+    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.ko.png)
 
 1. **Create a project**를 선택합니다.
 
@@ -616,17 +616,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 왼쪽 탭에서 **Endpoints**를 선택합니다.
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf960519c1ac95116d1a7e5b8d0bdea5cd42281930766fbfad1929.ko.png)
+    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.ko.png)
 
 1. 생성한 엔드포인트를 선택합니다.
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275ea16f689f59b70d5b0162fff1781204e389edcb63b42b95b2.ko.png)
+    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.ko.png)
 
 1. 내비게이션 메뉴에서 **Consume**을 선택합니다.
 
 1. **REST endpoint**와 **Primary key**를 복사합니다.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cbe30a20b889154d04109bf17c5c09816060a8689933dc0fd7.ko.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.ko.png)
 
 #### 사용자 지정 연결 추가하기
 
@@ -638,11 +638,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. **+ New connection**을 선택합니다.
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc77130c3a16fbb8ee59407ecbf74fd3502cb8720c61384446.ko.png)
+    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.ko.png)
 
 1. 내비게이션 메뉴에서 **Custom keys**를 선택합니다.
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b29664605513ccc134f1adaefaf27f951981c511783a6a0d1118c9178a5.ko.png)
+    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.ko.png)
 
 1. 다음 작업을 수행합니다:
 
@@ -652,7 +652,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 키 이름에 **key**를 입력하고 Azure ML Studio에서 복사한 키를 값 필드에 붙여넣습니다.
     - 키를 추가한 후, 키가 노출되지 않도록 **is secret**을 선택합니다.
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26e8df1bbd0948e06aa20aa0dc102faa96c8144722ef7f0b72.ko.png)
+    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.ko.png)
 
 1. **Add connection**을 선택합니다.
 
@@ -666,15 +666,15 @@ Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음
 
 1. 내비게이션 메뉴에서 **+ Create**를 선택합니다.
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5ba79bedfd35e2f2fb430f344844994375680fcfc111a994ae.ko.png)
+    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.ko.png)
 
 1. 내비게이션 메뉴에서 **Chat flow**를 선택합니다.
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591f6cc6360bc35c8fca8d63519c09111c6c431de9b46eed143.ko.png)
+    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.ko.png)
 
 1. 사용할 **Folder name**을 입력합니다.
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d824bad779a54e55d808a09394b6b730fbea55d78421f52ff.ko.png)
+    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.ko.png)
 
 2. **Create**를 선택합니다.
 
@@ -711,7 +711,7 @@ Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음
 
     - **Save**를 선택합니다.
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985b76e070bf170e1d0d0d26b38d93bc635624642191f715a6d.ko.png)
+    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.ko.png)
 
 1. Prompt flow에서 사용자 지정 Phi-3 모델을 사용하기 위해 *integrate_with_promptflow.py* 파일에 다음 코드를 추가합니다.
 
@@ -776,14 +776,14 @@ Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d097779ab1c429be9fc07e3f4171e41fbbfb747a6e755816411e6d.ko.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.ko.png)
 
 > [!NOTE]
 > Azure AI Foundry에서 Prompt flow 사용에 대한 자세한 내용은 [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow)를 참고하세요.
 
 1. **Chat input**, **Chat output**을 선택하여 모델과의 채팅을 활성화합니다.
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03ba022a21159e51d544c6e063e73c10e772c942d4e44da0d30.ko.png)
+    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.ko.png)
 
 1. 이제 사용자 지정 Phi-3 모델과 대화할 준비가 되었습니다. 다음 실습에서는 Prompt flow를 시작하고 미세 조정된 Phi-3 모델과 대화하는 방법을 배웁니다.
 
@@ -791,7 +791,7 @@ Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음
 >
 > 재구성된 흐름은 아래 이미지와 비슷해야 합니다:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c10b7375192511a8e2aba847e442b294a2e65d88ffac8f63b.ko.png)
+> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.ko.png)
 >
 
 ### 사용자 지정 Phi-3 모델과 대화하기
@@ -804,25 +804,25 @@ Azure AI Foundry에 사용자 지정 연결을 추가했습니다. 이제 다음
 
 1. **Start compute sessions**를 선택하여 Prompt flow를 시작합니다.
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b4809b60d75ce9b0ad53e0729cc1449935ccbe90b954401dc.ko.png)
+    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.ko.png)
 
 1. **Validate and parse input**을 선택하여 매개변수를 갱신합니다.
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e97038d7529b9060a23dc59d7ddbeb38ac9c4562ef4f5b32f7.ko.png)
+    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.ko.png)
 
 1. 생성한 사용자 지정 연결의 **connection** 값을 선택합니다. 예: *connection*.
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b184402368a6ec383814b139686118331a5b2eefa489678902269dfc.ko.png)
+    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.ko.png)
 
 #### 사용자 지정 모델과 대화하기
 
 1. **Chat**을 선택합니다.
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e636a5e1516b6c64fdf2345ceb3142db2bed93ab7e6f03bbb2.ko.png)
+    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.ko.png)
 
 1. 결과 예시는 다음과 같습니다: 이제 사용자 지정 Phi-3 모델과 대화할 수 있습니다. 미세 조정에 사용된 데이터를 기반으로 질문하는 것이 좋습니다.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126fa4886e6fd0e7482cfdc6c907fa36f7f2f13d04126f9eda14.ko.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.ko.png)
 
 **면책 조항**:  
 이 문서는 AI 번역 서비스 [Co-op Translator](https://github.com/Azure/co-op-translator)를 사용하여 번역되었습니다. 정확성을 위해 최선을 다하고 있으나, 자동 번역에는 오류나 부정확한 부분이 있을 수 있음을 유의하시기 바랍니다. 원문은 해당 언어의 원본 문서가 권위 있는 출처로 간주되어야 합니다. 중요한 정보의 경우 전문적인 인간 번역을 권장합니다. 본 번역 사용으로 인해 발생하는 오해나 잘못된 해석에 대해 당사는 책임을 지지 않습니다.

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 در این مثال، فاین‌تیون مدل Phi-3-mini-4k-instruct برای تکمیل مکالمه بین دو نفر با استفاده از دیتاست ultrachat_200k انجام می‌شود.
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.fa.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.fa.png)
 
 این مثال نشان می‌دهد چگونه می‌توان با استفاده از Azure ML SDK و پایتون فاین‌تیون را انجام داد و سپس مدل فاین‌تیون شده را برای استنتاج در زمان واقعی روی یک endpoint آنلاین مستقر کرد.
 

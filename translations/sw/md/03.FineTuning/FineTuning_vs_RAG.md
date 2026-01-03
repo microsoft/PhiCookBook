@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG ni mchakato wa kupata data + uundaji wa maandishi. Data iliyopangwa na isiyopangwa ya shirika huhifadhiwa katika hifadhidata ya vector. Wakati wa kutafuta maudhui yanayofaa, muhtasari na maudhui yanayohusiana hupatikana kuunda muktadha, na uwezo wa kukamilisha maandishi wa LLM/SLM unachanganywa ili kuunda maudhui.
 
 ## Mchakato wa RAG
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.sw.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.sw.png)
 
 ## Fine-tuning
 Fine-tuning inategemea kuboresha mfano fulani. Hainahitaji kuanza na algoriti ya mfano, lakini data inapaswa kuendelea kukusanywa. Ikiwa unataka istilahi sahihi zaidi na ueleza lugha bora katika matumizi ya viwanda, fine-tuning ni chaguo bora kwako. Lakini ikiwa data yako hubadilika mara kwa mara, fine-tuning inaweza kuwa ngumu.

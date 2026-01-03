@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Ich habe Objective-C als Entwicklungsweg für die App gewählt, da die Verwendung von Generative AI mit der ONNX Runtime C++ API in Objective-C besser kompatibel ist. Natürlich können Sie die entsprechenden Aufrufe auch über Swift-Bridging realisieren.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.de.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.de.png)
 
 ## **5. Kopieren des ONNX quantisierten INT4 Modells in das App-Projekt**
 
 Wir müssen das INT4-Quantisierungsmodell im ONNX-Format importieren, das zuerst heruntergeladen werden muss.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.de.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.de.png)
 
 Nach dem Herunterladen fügen Sie es dem Ressourcenverzeichnis des Projekts in Xcode hinzu.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.de.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.de.png)
 
 ## **6. Hinzufügen der C++ API in ViewControllers**
 
@@ -121,11 +121,11 @@ Nach dem Herunterladen fügen Sie es dem Ressourcenverzeichnis des Projekts in X
 
 - **a.** Fügen Sie die entsprechenden C++ Header-Dateien zum Projekt hinzu.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.de.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.de.png)
 
 - **b.** Binden Sie die dynamische Bibliothek `onnxruntime-genai` in Xcode ein.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.de.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.de.png)
 
 - **c.** Verwenden Sie den C-Sample-Code zum Testen. Sie können auch zusätzliche Funktionen wie ChatUI hinzufügen, um den Funktionsumfang zu erweitern.
 
@@ -162,7 +162,7 @@ Nach dem Herunterladen fügen Sie es dem Ressourcenverzeichnis des Projekts in X
 
 Sobald die Einrichtung abgeschlossen ist, können Sie die Anwendung starten, um die Ergebnisse der Phi-3-mini Modellinferenz zu sehen.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.de.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.de.jpg)
 
 Für weitere Beispielcodes und detaillierte Anleitungen besuchen Sie das [Phi-3 Mini Samples Repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

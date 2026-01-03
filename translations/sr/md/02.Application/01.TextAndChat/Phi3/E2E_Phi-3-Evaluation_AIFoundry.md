@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ево процеса евалуације у Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.sr.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.sr.png)
 
 *Извор слике: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Да бисте осигурали да је ваш AI модел етичан и безбедан, кључно је да га процените у складу са Microsoft-овим принципима одговорног AI. У Azure AI Foundry, евалуације безбедности вам омогућавају да процените рањивост вашег модела на jailbreak нападе и његов потенцијал за генерисање штетног садржаја, што је у директној вези са овим принципима.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.sr.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.sr.png)
 
 *Извор слике: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Microsoft-ови принципи одговорног AI укључују:
 
 - **Одговорност**: Људи који дизајнирају и имплементирају AI системе морају бити одговорни за начин на који ти системи функционишу. Организације треба да користе индустријске стандарде за развој норми одговорности. Ове норме могу осигурати да AI системи нису коначна власт у било којој одлуци која утиче на животе људи. Такође могу осигурати да људи задрже значајну контролу над иначе високо аутономним AI системима.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.sr.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.sr.png)
 
 *Извор слике: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Microsoft-ови принципи одговорног AI укључују:
 
 Оцењивање ових аспеката осигурава да AI модел не производи штетан или увредљив садржај, у складу са друштвеним вредностима и регулаторним стандардима.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.sr.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.sr.png)
 
 ### Увод у евалуацију перформанси
 
 Да бисте осигурали да ваш AI модел ради како се очекује, важно је да процените његове перформансе у односу на метрике перформанси. У Azure AI Foundry, евалуације перформанси вам омогућавају да процените ефикасност вашег модела у генерисању тачних, релевантних и кохерентних одговора.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.sr.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.sr.png)
 
 *Извор слике: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ Microsoft-ови принципи одговорног AI укључују:
 
 Ове метрике вам помажу да процените ефикасност модела у генерисању тачних, релевантних и кохерентних одговора.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.sr.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.sr.png)
 
 ## **Сценарио 2: Евалуација Phi-3 / Phi-3.5 модела у Azure AI Foundry**
 
@@ -151,7 +151,7 @@ Microsoft-ови принципи одговорног AI укључују:
 
 1. Изаберите **+ New hub** из навигационог менија.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.sr.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.sr.png)
 
 1. Извршите следеће кораке:
 
@@ -162,7 +162,7 @@ Microsoft-ови принципи одговорног AI укључују:
     - Изаберите **Connect Azure AI Services** које желите да користите (направите нову ако је потребно).
     - Изаберите **Connect Azure AI Search** и одаберите **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.sr.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.sr.png)
 
 1. Изаберите **Next**.
 
@@ -172,11 +172,11 @@ Microsoft-ови принципи одговорног AI укључују:
 
 1. Изаберите **+ New project** из навигационог менија.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.sr.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.sr.png)
 
 1. Унесите **Project name**. Мора бити јединствена вредност.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.sr.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.sr.png)
 
 1. Изаберите **Create a project**.
 
@@ -192,17 +192,17 @@ Microsoft-ови принципи одговорног AI укључују:
 
 1. Изаберите **Endpoints** са леве стране.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.sr.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.sr.png)
 
 1. Изаберите endpoint који сте креирали.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.sr.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.sr.png)
 
 1. Изаберите **Consume** из навигационог менија.
 
 1. Копирајте свој **REST endpoint** и **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.sr.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.sr.png)
 
 #### Додавање прилагођене везе
 
@@ -214,11 +214,11 @@ Microsoft-ови принципи одговорног AI укључују:
 
 1. Изаберите **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.sr.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.sr.png)
 
 1. Изаберите **Custom keys** из навигационог менија.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.sr.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.sr.png)
 
 1. Извршите следеће кораке:
 
@@ -228,7 +228,7 @@ Microsoft-ови принципи одговорног AI укључују:
     - За име кључа унесите **key** и налепите key који сте копирали из Azure ML Studio у поље за вредност.
     - Након додавања кључева, означите **is secret** да бисте спречили да кључ буде изложен.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.sr.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.sr.png)
 
 1. Изаберите **Add connection**.
 
@@ -242,15 +242,15 @@ Microsoft-ови принципи одговорног AI укључују:
 
 1. Изаберите **+ Create** из навигационог менија.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.sr.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.sr.png)
 
 1. Изаберите **Chat flow** из навигационог менија.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.sr.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.sr.png)
 
 1. Унесите **Folder name** који желите да користите.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.sr.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.sr.png)
 
 1. Изаберите **Create**.
 
@@ -287,7 +287,7 @@ Microsoft-ови принципи одговорног AI укључују:
 
     - Изаберите **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.sr.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.sr.png)
 
 1. Додајте следећи код у *integrate_with_promptflow.py* да бисте користили прилагођени Phi-3 / Phi-3.5 модел у Prompt flow.
 
@@ -350,14 +350,14 @@ Microsoft-ови принципи одговорног AI укључују:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.sr.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.sr.png)
 
 > [!NOTE]
 > За детаљније информације о коришћењу Prompt flow у Azure AI Foundry, можете погледати [Prompt flow у Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Изаберите **Chat input**, **Chat output** да бисте омогућили разговор са вашим моделом.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.sr.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.sr.png)
 
 1. Сада сте спремни да разговарате са својим прилагођеним Phi-3 / Phi-3.5 моделом. У следећој вежби ћете научити како да покренете Prompt flow и користите га за разговор са фино подешеним Phi-3 / Phi-3.5 моделом.
 
@@ -365,32 +365,32 @@ Microsoft-ови принципи одговорног AI укључују:
 >
 > Обновљени flow треба да изгледа као на слици испод:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.sr.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.sr.png)
 >
 
 #### Покретање Prompt flow-а
 
 1. Изаберите **Start compute sessions** да бисте покренули Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.sr.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.sr.png)
 
 1. Изаберите **Validate and parse input** да бисте обновили параметре.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.sr.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.sr.png)
 
 1. Изаберите **Value** за **connection** која води ка прилагођеној вези коју сте креирали. На пример, *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.sr.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.sr.png)
 
 #### Разговор са вашим прилагођеним Phi-3 / Phi-3.5 моделом
 
 1. Изаберите **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.sr.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.sr.png)
 
 1. Ево примера резултата: Сада можете разговарати са својим прилагођеним Phi-3 / Phi-3.5 моделом. Препоручује се да постављате питања везана за податке који су коришћени за фино подешавање.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.sr.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.sr.png)
 
 ### Деплој Azure OpenAI за евалуацију Phi-3 / Phi-3.5 модела
 
@@ -402,7 +402,7 @@ Microsoft-ови принципи одговорног AI укључују:
 
 1. Идите у Azure AI Foundry пројекат који сте креирали.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.sr.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.sr.png)
 
 1. У пројекту који сте креирали, изаберите **Deployments** са леве стране.
 
@@ -410,11 +410,11 @@ Microsoft-ови принципи одговорног AI укључују:
 
 1. Изаберите **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.sr.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.sr.png)
 
 1. Изаберите Azure OpenAI модел који желите да користите. На пример, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.sr.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.sr.png)
 
 1. Изаберите **Confirm**.
 
@@ -426,17 +426,17 @@ Microsoft-ови принципи одговорног AI укључују:
 
 1. Идите у Azure AI Foundry пројекат који сте креирали.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.sr.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.sr.png)
 
 1. У пројекту који сте креирали, изаберите **Evaluation** са леве стране.
 
 1. Изаберите **+ New evaluation** из навигационог менија.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.sr.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.sr.png)
 
 1. Изаберите **Prompt flow** евалуацију.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.sr.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.sr.png)
 
 1. Извршите следеће кораке:
 
@@ -444,7 +444,7 @@ Microsoft-ови принципи одговорног AI укључују:
     - Изаберите **Question and answer without context** као тип задатка. Јер, **ULTRACHAT_200k** скуп података коришћен у овом туторијалу не садржи контекст.
     - Изаберите prompt flow који желите да евалуирате.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.sr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.sr.png)
 
 1. Изаберите **Next**.
 
@@ -453,7 +453,7 @@ Microsoft-ови принципи одговорног AI укључују:
     - Изаберите **Add your dataset** да отпремите скуп података. На пример, можете отпремити тест скуп података, као што је *test_data.json1*, који је укључен када преузмете **ULTRACHAT_200k** скуп података.
     - Изаберите одговарајућу **Dataset column** која одговара вашем скупу података. На пример, ако користите **ULTRACHAT_200k** скуп података, изаберите **${data.prompt}** као колону скупа података.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.sr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.sr.png)
 
 1. Изаберите **Next**.
 
@@ -462,7 +462,7 @@ Microsoft-ови принципи одговорног AI укључују:
     - Изаберите метрике перформанси и квалитета које желите да користите.
     - Изаберите Azure OpenAI модел који сте креирали за евалуацију. На пример, изаберите **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.sr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.sr.png)
 
 1. Извршите следеће кораке за подешавање метрика ризика и безбедности:
 
@@ -472,7 +472,7 @@ Microsoft-ови принципи одговорног AI укључују:
     - За **answer**, изаберите **Data source** као **{$run.outputs.answer}**.
     - За **ground_truth**, изаберите **Data source** као **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.sr.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.sr.png)
 
 1. Изаберите **Next**.
 
@@ -489,17 +489,17 @@ Microsoft-ови принципи одговорног AI укључују:
 
     - процените ефикасност модела у генерисању кохерентних, течно и релевантних одговора.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.sr.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.sr.png)
 
 1. Метрике ризика и безбедности:
 
     - Осигурајте да излази модела буду безбедни и у складу са Responsible AI Principles, избегавајући било какав штетан или увредљив садржај.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.sr.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.sr.png)
 
 1. Можете скроловати надоле да бисте видели **Детаљне резултате метрика**.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.sr.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.sr.png)
 
 1. Процењујући свој прилагођени Phi-3 / Phi-3.5 модел према метрикама перформанси и безбедности, можете потврдити да модел није само ефикасан, већ и да поштује одговорне праксе у вези са вештачком интелигенцијом, чинећи га спремним за примену у стварном свету.
 
@@ -509,7 +509,7 @@ Microsoft-ови принципи одговорног AI укључују:
 
 Успешно сте проценили фино подешени Phi-3 модел интегрисан са Prompt flow у Azure AI Foundry. Ово је важан корак у осигуравању да ваши AI модели не само да добро раде, већ и да поштују Microsoft-ове принципе Responsible AI, помажући вам да изградите поуздане и сигурне AI апликације.
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.sr.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.sr.png)
 
 ## Чишћење Azure ресурса
 

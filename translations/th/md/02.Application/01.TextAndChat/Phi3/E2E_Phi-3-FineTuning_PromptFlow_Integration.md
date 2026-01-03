@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 นี่คือภาพรวมของตัวอย่าง E2E นี้
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.th.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.th.png)
 
 ### สารบัญ
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *azure machine learning* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Azure Machine Learning** จากตัวเลือกที่ปรากฏ
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.th.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.th.png)
 
 1. เลือก **+ Create** จากเมนูนำทาง
 
 1. เลือก **New workspace** จากเมนูนำทาง
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.th.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.th.png)
 
 1. ดำเนินการตามขั้นตอนดังนี้:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Application insights** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
     - เลือก **Container registry** ที่จะใช้ (สร้างใหม่ถ้าจำเป็น)
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.th.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.th.png)
 
 1. เลือก **Review + Create**
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Virtual machine family** ที่ต้องการใช้ เช่น เลือก **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** ซึ่งรวมถึง *Standard_NC24ads_A100_v4* GPU
     - เลือก **Request quota** จากเมนูนำทาง
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.th.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.th.png)
 
     - ในหน้า Request quota ให้กรอกจำนวน **New cores limit** ที่ต้องการ เช่น 24
     - ในหน้า Request quota ให้เลือก **Submit** เพื่อส่งคำขอโควต้า GPU
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *managed identities* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Managed Identities** จากตัวเลือกที่ปรากฏ
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.th.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.th.png)
 
 1. เลือก **+ Create**
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.th.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.th.png)
 
 1. ดำเนินการตามขั้นตอนดังนี้:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **Resource group** ที่จะใช้
     - เลือก **Role** เป็น **Contributor**
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.th.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.th.png)
 
 1. เลือก **Save**
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *storage accounts* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Storage accounts** จากตัวเลือกที่ปรากฏ
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.th.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.th.png)
 
 1. เลือก storage account ที่เชื่อมโยงกับ Azure Machine Learning workspace ที่คุณสร้าง เช่น *finetunephistorage*
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก **+ Add** จากเมนูนำทาง
     - เลือก **Add role assignment** จากเมนูนำทาง
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.th.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.th.png)
 
 1. ในหน้า Add role assignment ดำเนินการดังนี้:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก Managed Identity ที่คุณสร้าง เช่น *finetunephi-managedidentity*
     - เลือก **Select**
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.th.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.th.png)
 
 1. เลือก **Review + assign**
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. พิมพ์ *container registries* ใน **แถบค้นหา** ที่ด้านบนของหน้า portal แล้วเลือก **Container registries** จากตัวเลือกที่ปรากฏ
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.th.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.th.png)
 
 1. เลือก container registry ที่เชื่อมโยงกับ Azure Machine Learning workspace เช่น *finetunephicontainerregistries*
 
@@ -289,7 +289,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือกโฟลเดอร์ *finetune-phi* ที่คุณสร้างไว้ ซึ่งอยู่ที่ *C:\Users\yourUserName\finetune-phi*
 
-    ![เปิดโฟลเดอร์โปรเจกต์](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.th.png)
+    ![เปิดโฟลเดอร์โปรเจกต์](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.th.png)
 
 1. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาและเลือก **New File** เพื่อสร้างไฟล์ใหม่ชื่อ *download_dataset.py*
 
@@ -297,7 +297,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาและเลือก **New File** เพื่อสร้างไฟล์ใหม่ชื่อ *deploy_model.py*
 
-    ![สร้างไฟล์ใหม่](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.th.png)
+    ![สร้างไฟล์ใหม่](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.th.png)
 
 1. ในแถบด้านซ้ายของ Visual Studio Code คลิกขวาและเลือก **New Folder** เพื่อสร้างโฟลเดอร์ใหม่ชื่อ *finetuning_dir*
 
@@ -373,28 +373,28 @@ CO_OP_TRANSLATOR_METADATA:
     - เลือก Azure Subscription ที่คุณกำลังใช้งานอยู่
     - คัดลอกและวาง Subscription ID ของคุณลงในไฟล์ *config.py*
 
-    ![ค้นหา subscription id](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.th.png)
+    ![ค้นหา subscription id](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.th.png)
 
 1. ทำตามขั้นตอนต่อไปนี้เพื่อเพิ่มชื่อ Azure Workspace:
 
     - ไปที่ Azure Machine Learning resource ที่คุณสร้างไว้
     - คัดลอกและวางชื่อบัญชีของคุณลงในไฟล์ *config.py*
 
-    ![ค้นหาชื่อ Azure Machine Learning](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.th.png)
+    ![ค้นหาชื่อ Azure Machine Learning](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.th.png)
 
 1. ทำตามขั้นตอนต่อไปนี้เพื่อเพิ่มชื่อ Azure Resource Group:
 
     - ไปที่ Azure Machine Learning resource ที่คุณสร้างไว้
     - คัดลอกและวางชื่อ Azure Resource Group ของคุณลงในไฟล์ *config.py*
 
-    ![ค้นหาชื่อ resource group](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.th.png)
+    ![ค้นหาชื่อ resource group](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.th.png)
 
 2. ทำตามขั้นตอนต่อไปนี้เพื่อเพิ่มชื่อ Azure Managed Identity
 
     - ไปที่ Managed Identities resource ที่คุณสร้างไว้
     - คัดลอกและวางชื่อ Azure Managed Identity ของคุณลงในไฟล์ *config.py*
 
-    ![ค้นหา UAI](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.th.png)
+    ![ค้นหา UAI](../../../../../../translated_images/01-17-find-uai.3529464f53499827.th.png)
 
 ### เตรียมชุดข้อมูลสำหรับการปรับแต่ง
 
@@ -508,7 +508,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก Azure subscription ที่คุณต้องการใช้งาน
 
-    ![ค้นหาชื่อ resource group](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.th.png)
+    ![ค้นหาชื่อ resource group](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.th.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ในแบบฝึกหัดนี้ คุณได้ปรับแต่งโมเดล Phi-3 สำเร็จโดยใช้ Azure Machine Learning โดยการรันสคริปต์ *setup_ml.py* คุณได้ตั้งค่าสภาพแวดล้อม Azure Machine Learning และเริ่มกระบวนการปรับแต่งที่กำหนดไว้ในไฟล์ *fine_tune.py* โปรดทราบว่ากระบวนการปรับแต่งอาจใช้เวลานาน หลังจากรันคำสั่ง `python setup_ml.py` คุณต้องรอจนกระบวนการเสร็จสมบูรณ์ คุณสามารถติดตามสถานะงานปรับแต่งได้โดยคลิกลิงก์ที่แสดงในเทอร์มินัลเพื่อเข้าสู่พอร์ทัล Azure Machine Learning
 
-    ![ดูงานปรับแต่ง](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.th.png)
+    ![ดูงานปรับแต่ง](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.th.png)
 
 ### ปรับใช้โมเดลที่ปรับแต่งแล้ว
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. เลือก **Endpoints** จากแท็บด้านซ้าย
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.th.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.th.png)
 
 2. เลือก endpoint ที่คุณสร้างขึ้น
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.th.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.th.png)
 
 3. บนหน้านี้ คุณสามารถจัดการกับ endpoints ที่สร้างขึ้นในระหว่างกระบวนการดีพลอยได้
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. คัดลอกและวาง **REST endpoint** ของคุณลงในไฟล์ *config.py* โดยแทนที่ `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` ด้วย **REST endpoint** ของคุณ  
 1. คัดลอกและวาง **Primary key** ของคุณลงในไฟล์ *config.py* โดยแทนที่ `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` ด้วย **Primary key** ของคุณ  
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.th.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.th.png)
 
 #### เพิ่มโค้ดในไฟล์ *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. นี่คือตัวอย่างผลลัพธ์: ตอนนี้คุณสามารถแชทกับโมเดล Phi-3 ที่ปรับแต่งเองได้ แนะนำให้ถามคำถามที่เกี่ยวข้องกับข้อมูลที่ใช้ในการปรับแต่งโมเดล
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.th.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.th.png)
 
 **ข้อจำกัดความรับผิดชอบ**:  
 เอกสารนี้ได้รับการแปลโดยใช้บริการแปลภาษาอัตโนมัติ [Co-op Translator](https://github.com/Azure/co-op-translator) แม้เราจะพยายามให้ความถูกต้องสูงสุด แต่โปรดทราบว่าการแปลอัตโนมัติอาจมีข้อผิดพลาดหรือความไม่ถูกต้อง เอกสารต้นฉบับในภาษาต้นทางถือเป็นแหล่งข้อมูลที่เชื่อถือได้ สำหรับข้อมูลที่สำคัญ ขอแนะนำให้ใช้บริการแปลโดยผู้เชี่ยวชาญมนุษย์ เราไม่รับผิดชอบต่อความเข้าใจผิดหรือการตีความผิดใด ๆ ที่เกิดจากการใช้การแปลนี้

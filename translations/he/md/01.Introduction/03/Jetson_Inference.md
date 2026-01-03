@@ -36,7 +36,7 @@ d. Python 3.8+
 
 אם רוצים להשתמש ב-gguf בענן ובמכשירי קצה בו זמנית, ניתן להבין את LlamaEdge כ-WasmEdge (WasmEdge הוא ריצה קלה, בעלת ביצועים גבוהים וסקלאבילית של WebAssembly המתאימה ליישומי ענן, קצה ויישומים מבוזרים. היא תומכת ביישומים ללא שרת, פונקציות משובצות, מיקרו-שירותים, חוזים חכמים ומכשירי IoT). ניתן לפרוס את המודל הכמותי של gguf למכשירי קצה ולענן דרך LlamaEdge.
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.he.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.he.jpg)
 
 הנה השלבים לשימוש
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 הנה תוצאת ההרצה
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.he.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.he.png)
 
 ***קוד לדוגמה*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Saya memilih Objective-C sebagai kaedah pembangunan App, kerana menggunakan Generative AI dengan ONNX Runtime C++ API, Objective-C lebih serasi. Sudah tentu, anda juga boleh melengkapkan panggilan berkaitan melalui penghubung Swift.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.ms.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.ms.png)
 
 ## **5. Salin model ONNX quantized INT4 ke projek aplikasi App**
 
 Kita perlu mengimport model quantization INT4 dalam format ONNX, yang perlu dimuat turun terlebih dahulu
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.ms.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.ms.png)
 
 Selepas memuat turun, anda perlu menambahkannya ke direktori Resources projek dalam Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.ms.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.ms.png)
 
 ## **6. Menambah API C++ dalam ViewControllers**
 
@@ -121,11 +121,11 @@ Selepas memuat turun, anda perlu menambahkannya ke direktori Resources projek da
 
 - **a.** Tambah fail header C++ yang berkaitan ke dalam projek.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.ms.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.ms.png)
 
 - **b.** Sertakan perpustakaan dinamik `onnxruntime-genai` dalam Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.ms.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.ms.png)
 
 - **c.** Gunakan kod sampel C untuk ujian. Anda juga boleh menambah ciri tambahan seperti ChatUI untuk fungsi lebih lanjut.
 
@@ -162,7 +162,7 @@ Selepas memuat turun, anda perlu menambahkannya ke direktori Resources projek da
 
 Setelah persediaan selesai, anda boleh menjalankan aplikasi untuk melihat hasil inferens model Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.ms.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.ms.jpg)
 
 Untuk lebih banyak kod sampel dan arahan terperinci, lawati [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

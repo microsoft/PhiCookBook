@@ -29,7 +29,7 @@ By di time you finish dis lab, you go fit use OLIVE to:
 
 Olive (*O*NNX *live*) na model optimization toolkit wey get accompanying CLI wey enable you to ship models for the ONNX runtime +++https://onnxruntime.ai+++ with better quality and performance.
 
-![Olive Flow](../../../../../translated_images/olive-flow.a47985655a756dcba73521511ea42eef359509a3a33cbd4b9ac04ba433287b80.pcm.png)
+![Olive Flow](../../../../../translated_images/olive-flow.a47985655a756dcb.pcm.png)
 
 Di input to Olive normally be a PyTorch or Hugging Face model and di output na an optimized ONNX model wey dem go run on a device (deployment target) wey dey run the ONNX runtime. Olive go optimize di model for di deployment target's AI accelerator (NPU, GPU, CPU) wey hardware vendor like Qualcomm, AMD, Nvidia or Intel provide.
 

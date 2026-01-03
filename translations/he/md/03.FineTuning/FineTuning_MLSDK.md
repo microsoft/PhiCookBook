@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 בדוגמה זו נבצע כוונון מדויק למודל Phi-3-mini-4k-instruct להשלמת שיחה בין שני אנשים באמצעות מערך הנתונים ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.he.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.he.png)
 
 הדוגמה תראה כיצד לבצע כוונון מדויק באמצעות Azure ML SDK ו-Python, ולאחר מכן לפרוס את המודל המכוונן לנקודת קצה מקוונת להסקת מסקנות בזמן אמת.
 

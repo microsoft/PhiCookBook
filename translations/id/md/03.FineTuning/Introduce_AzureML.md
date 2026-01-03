@@ -66,7 +66,7 @@ Azure ML telah menambahkan banyak fungsi terkait LLM/SLM, menggabungkan LLMOps d
 
 Pengguna perusahaan dapat menerapkan berbagai model sesuai dengan skenario bisnis yang berbeda melalui Model Catalog, dan menyediakan layanan sebagai Model as Service bagi pengembang atau pengguna perusahaan untuk mengakses.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.id.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.id.png)
 
 Model Catalog di Azure Machine Learning studio adalah pusat untuk menemukan dan menggunakan berbagai model yang memungkinkan Anda membangun aplikasi Generative AI. Model catalog menampilkan ratusan model dari penyedia model seperti Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, termasuk model yang dilatih oleh Microsoft. Model dari penyedia selain Microsoft adalah Produk Non-Microsoft, sebagaimana didefinisikan dalam Ketentuan Produk Microsoft, dan tunduk pada ketentuan yang disediakan bersama model tersebut.
 
@@ -76,7 +76,7 @@ Inti dari pipeline machine learning adalah memecah tugas machine learning lengka
 
 Dalam fine-tuning SLM / LLM, kita dapat mengelola data, pelatihan, dan proses generasi melalui Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.id.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.id.png)
 
 ### **Prompt flow**
 

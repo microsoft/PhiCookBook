@@ -15,11 +15,11 @@ Använder du Visual Studio Code Copilot? Speciellt i Chat kan du använda olika 
 
 Vi vet att Phi-3/3.5-mini-instruct i Phi-3/3.5-familjen har starka förmågor inom kodförståelse och generering, och har fördelar jämfört med Gemma-2-9b och Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.sv.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.sv.png)
 
 De senaste GitHub Models ger redan tillgång till Phi-3.5-mini-instruct (128k) och Phi-3.5-vision-instruct (128k) modellerna. Utvecklare kan nå dem via OpenAI SDK, Azure AI Inference SDK och REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.sv.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.sv.png)
 
 ***Note:*** Det rekommenderas att använda Azure AI Inference SDK här, eftersom det bättre kan växla med Azure Model Catalog i produktionsmiljö.
 
@@ -34,13 +34,13 @@ Nedan visas resultaten för **Phi-3.5-mini-instruct (128k)** och **Phi-3.5-visio
 
 GitHub Copilot Chat Agent kan utföra olika uppgifter i olika projektscenarier baserat på koden. Systemet har fyra agenter: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.sv.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.sv.png)
 
 Genom att lägga till agentens namn med ‘@’ kan du snabbt utföra motsvarande arbete. För företag, om du lägger till din egen verksamhetsrelaterade information som krav, kodning, testspecifikationer och release, kan du få kraftfullare privata företagsfunktioner baserade på GitHub Copilot.
 
 Visual Studio Code Chat Agent har nu officiellt släppt sitt API, vilket gör det möjligt för företag eller företagsutvecklare att utveckla agenter baserade på olika mjukvaruekosystem. Baserat på utvecklingsmetoden för Visual Studio Code Extension Development kan du enkelt nå gränssnittet för Visual Studio Code Chat Agent API. Vi kan utveckla baserat på denna process.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.sv.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.sv.png)
 
 Utvecklingsscenariot kan stödja åtkomst till tredjepartsmodell-API:er (såsom GitHub Models, Azure Model Catalog och egenbyggda tjänster baserade på open source-modeller) och kan även använda modellerna gpt-35-turbo, gpt-4 och gpt-4o som tillhandahålls av GitHub Copilot.
 
@@ -54,7 +54,7 @@ Vi försöker integrera programmeringsförmågan hos Phi-3.5 för att slutföra 
 
 3. Generera kod baserat på **Phi-3.5-vision-instruct (128k)** och bildkomplettering via kommandot **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.sv.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.sv.png)
 
 ## **Relaterade steg**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.sv.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.sv.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.sv.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.sv.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.sv.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.sv.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.sv.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.sv.png)
 
 Du kan ladda ner exempel på kod: [klicka här](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

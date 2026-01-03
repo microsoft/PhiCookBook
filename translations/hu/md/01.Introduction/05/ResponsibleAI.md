@@ -13,7 +13,7 @@ A [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai?WT.mc_i
 
 ## A Microsoft Responsible AI áttekintése
 
-![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d336830630939a5130a22b3f9e1f633773562f83fed08a50520.hu.png)
+![RAIPrinciples](../../../../../translated_images/RAIPrinciples.bf9c9bc6ca160d33.hu.png)
 
 **Etikai elvek**
 

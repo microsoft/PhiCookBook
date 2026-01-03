@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Избрах Objective-C като метод за разработка на приложението, защото при използване на Generative AI с ONNX Runtime C++ API, Objective-C е по-добре съвместим. Разбира се, можете да осъществите свързаните извиквания и чрез Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.bg.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.bg.png)
 
 ## **5. Копиране на ONNX квантизирания INT4 модел в проекта на App приложението**
 
 Трябва да импортираме INT4 квантизационния модел в ONNX формат, който първо трябва да бъде изтеглен.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.bg.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.bg.png)
 
 След изтегляне, трябва да го добавите в директорията Resources на проекта в Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.bg.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.bg.png)
 
 ## **6. Добавяне на C++ API във ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** Добавете съответните C++ хедър файлове към проекта.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.bg.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.bg.png)
 
 - **b.** Включете динамичната библиотека `onnxruntime-genai` в Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.bg.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.bg.png)
 
 - **c.** Използвайте примерния C код за тестване. Можете също да добавите допълнителни функции като ChatUI за повече възможности.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 След като настройката е завършена, можете да стартирате приложението, за да видите резултатите от инференцията на модела Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.bg.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.bg.jpg)
 
 За повече примерен код и подробни инструкции посетете [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

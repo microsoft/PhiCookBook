@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ONNX Runtime C++ API를 사용하는 생성형 AI 개발에는 Objective-C가 더 호환성이 좋기 때문에 Objective-C를 선택했습니다. 물론 Swift 브리징을 통해 관련 호출을 완료할 수도 있습니다.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.ko.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.ko.png)
 
 ## **5. ONNX 양자화 INT4 모델을 앱 프로젝트에 복사하기**
 
 ONNX 형식의 INT4 양자화 모델을 먼저 다운로드해야 합니다.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.ko.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.ko.png)
 
 다운로드 후 Xcode 프로젝트의 Resources 디렉터리에 추가하세요.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.ko.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.ko.png)
 
 ## **6. ViewControllers에 C++ API 추가하기**
 
@@ -121,11 +121,11 @@ ONNX 형식의 INT4 양자화 모델을 먼저 다운로드해야 합니다.
 
 - **a.** 해당 C++ 헤더 파일을 프로젝트에 추가하세요.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.ko.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.ko.png)
 
 - **b.** Xcode에 `onnxruntime-genai` 동적 라이브러리를 포함시키세요.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.ko.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.ko.png)
 
 - **c.** 테스트용으로 C 샘플 코드를 사용하세요. 추가 기능으로 ChatUI 같은 것도 넣을 수 있습니다.
 
@@ -162,7 +162,7 @@ ONNX 형식의 INT4 양자화 모델을 먼저 다운로드해야 합니다.
 
 설정이 완료되면 애플리케이션을 실행하여 Phi-3-mini 모델 추론 결과를 확인할 수 있습니다.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.ko.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.ko.jpg)
 
 더 많은 샘플 코드와 자세한 설명은 [Phi-3 Mini Samples 저장소](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios)를 참고하세요.
 

@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 หลังจากที่ได้ฝึก adapters ในสภาพแวดล้อมระยะไกลแล้ว ให้ใช้แอป Gradio ง่ายๆ เพื่อโต้ตอบกับโมเดล
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.th.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.th.png)
 
 ### การจัดเตรียม Azure Resources  
 คุณต้องตั้งค่า Azure Resources สำหรับการทำ remote inference โดยการรันคำสั่ง `AI Toolkit: Provision Azure Container Apps for inference` จาก command palette ในขั้นตอนนี้ คุณจะถูกขอให้เลือก Azure Subscription และ resource group ของคุณ  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.th.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.th.png)
 
 โดยค่าเริ่มต้น subscription และ resource group สำหรับ inference ควรตรงกับที่ใช้สำหรับการปรับแต่ง โมเดลจะใช้ Azure Container App Environment เดียวกันและเข้าถึงโมเดลและ adapter ที่เก็บไว้ใน Azure Files ซึ่งถูกสร้างขึ้นในขั้นตอนการปรับแต่ง
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### การ Deploy สำหรับ Inference  
 หากคุณต้องการแก้ไขโค้ด inference หรือต้องการโหลดโมเดล inference ใหม่ ให้รันคำสั่ง `AI Toolkit: Deploy for inference` คำสั่งนี้จะซิงโครไนซ์โค้ดล่าสุดของคุณกับ ACA และรีสตาร์ท replica
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.th.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.th.png)
 
 หลังจากการ deploy สำเร็จ โมเดลก็พร้อมสำหรับการประเมินผลผ่าน endpoint นี้
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 คุณสามารถเข้าถึง inference API ได้โดยคลิกที่ปุ่ม "*Go to Inference Endpoint*" ที่แสดงใน notification ของ VSCode หรือจะดู endpoint ของเว็บ API ได้จาก `ACA_APP_ENDPOINT` ในไฟล์ `./infra/inference.config.json` และใน output panel
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.th.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.th.png)
 
 > **Note:** อาจต้องใช้เวลาสักครู่ก่อนที่ inference endpoint จะพร้อมใช้งานเต็มที่
 

@@ -32,11 +32,11 @@ Modeli optimize ederken doğruluk ve gecikme gibi kısıtlamaları dikkate alır
 
 Microsoft Olive, jeneratif yapay zeka alanında hem ince ayar hem de referans için kullanılabilen, kullanımı çok kolay açık kaynaklı bir model optimizasyon aracıdır. Sadece basit bir yapılandırma gerektirir; açık kaynak küçük dil modelleri ve ilgili çalışma zamanı ortamları (AzureML / yerel GPU, CPU, DirectML) ile birleştirildiğinde, otomatik optimizasyon yoluyla modelin ince ayarını veya referansını tamamlayabilir ve buluta ya da uç cihazlara dağıtmak için en iyi modeli bulabilirsiniz. İşletmelerin kendi sektör dikey modellerini hem yerel hem de bulut ortamında oluşturmasına olanak tanır.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.tr.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.tr.png)
 
 ## Microsoft Olive ile Phi-3 İnce Ayarı
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.tr.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.tr.png)
 
 ## Phi-3 Olive Örnek Kodu ve Örnek
 

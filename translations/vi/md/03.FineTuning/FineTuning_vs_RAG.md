@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG là sự kết hợp giữa truy xuất dữ liệu và tạo văn bản. Dữ liệu có cấu trúc và không có cấu trúc của doanh nghiệp được lưu trữ trong cơ sở dữ liệu vector. Khi tìm kiếm nội dung liên quan, bản tóm tắt và nội dung phù hợp sẽ được tìm ra để tạo thành ngữ cảnh, sau đó kết hợp với khả năng hoàn thiện văn bản của LLM/SLM để tạo ra nội dung.
 
 ## Quy trình RAG
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.vi.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.vi.png)
 
 ## Fine-tuning
 Fine-tuning dựa trên việc cải tiến một mô hình nhất định. Nó không cần bắt đầu từ thuật toán mô hình, nhưng dữ liệu cần được tích lũy liên tục. Nếu bạn muốn thuật ngữ và cách diễn đạt ngôn ngữ chính xác hơn trong các ứng dụng ngành, fine-tuning là lựa chọn tốt hơn. Nhưng nếu dữ liệu của bạn thay đổi thường xuyên, fine-tuning có thể trở nên phức tạp.

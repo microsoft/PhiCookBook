@@ -32,11 +32,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Microsoft Oliveは非常に使いやすいオープンソースのモデル最適化ツールで、生成系AI分野におけるファインチューニングとリファレンスの両方をカバーできます。簡単な設定だけで、オープンソースの小型言語モデルや関連するランタイム環境（AzureML / ローカルGPU、CPU、DirectML）と組み合わせて、自動最適化によりモデルのファインチューニングやリファレンスを完了し、クラウドやエッジデバイスに展開する最適なモデルを見つけられます。企業がオンプレミスやクラウド上で独自の業界特化モデルを構築することを可能にします。
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.ja.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.ja.png)
 
 ## Microsoft OliveによるPhi-3のファインチューニング
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.ja.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.ja.png)
 
 ## Phi-3 Olive サンプルコードと例
 この例では、Oliveを使って以下を行います：

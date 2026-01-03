@@ -33,33 +33,33 @@ Prompt flow יכולה להתחבר ל-OpenAI, Azure OpenAI Service, ולמוד�
 
 1. התקינו את תוסף Prompt flow ל-VS Code
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.he.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.he.png)
 
 2. לאחר התקנת התוסף, לחצו עליו ובחרו **Installation dependencies** ופעלו לפי ההנחיות להתקנת Prompt flow SDK בסביבת העבודה שלכם
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.he.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.he.png)
 
 3. הורידו את [קוד הדוגמה](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) ופתחו אותו ב-VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.he.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.he.png)
 
 4. פתחו את הקובץ **flow.dag.yaml** כדי לבחור את סביבת הפייתון שלכם
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.he.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.he.png)
 
    פתחו את **chat_phi3_ort.py** כדי לשנות את מיקום מודל Phi-3.5-instruct ONNX שלכם
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.he.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.he.png)
 
 5. הריצו את ה-prompt flow שלכם לבדיקה
 
 פתחו את **flow.dag.yaml** ולחצו על העורך הוויזואלי
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.he.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.he.png)
 
 לאחר הלחיצה, הריצו את הפתרון לבדיקה
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.he.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.he.png)
 
 1. ניתן להריץ אצווה בטרמינל כדי לבדוק תוצאות נוספות
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 ניתן לבדוק את התוצאות בדפדפן המוגדר כברירת מחדל
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.he.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.he.png)
 
 **כתב ויתור**:  
 מסמך זה תורגם באמצעות שירות תרגום מבוסס בינה מלאכותית [Co-op Translator](https://github.com/Azure/co-op-translator). למרות שאנו שואפים לדיוק, יש לקחת בחשבון כי תרגומים אוטומטיים עלולים להכיל שגיאות או אי-דיוקים. המסמך המקורי בשפת המקור שלו נחשב למקור הסמכותי. למידע קריטי מומלץ להשתמש בתרגום מקצועי על ידי מתרגם אנושי. אנו לא נושאים באחריות לכל אי-הבנה או פרשנות שגויה הנובעת משימוש בתרגום זה.

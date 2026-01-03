@@ -42,7 +42,7 @@ Prompt Flow укључује библиотеку уграђених алата,
 
 У Microsoft Prompt Flow-у, процена игра кључну улогу у оцењивању перформанси ваших AI модела. Погледајмо како можете прилагодити токове процене и метрике у Prompt Flow-у:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.sr.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.sr.png)
 
 **Разумевање процене у Prompt Flow-у**
 

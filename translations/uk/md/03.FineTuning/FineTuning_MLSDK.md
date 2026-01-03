@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 У цьому прикладі ми проведемо донавчання моделі Phi-3-mini-4k-instruct для завершення розмови між двома людьми, використовуючи датасет ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.uk.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.uk.png)
 
 Приклад покаже, як виконати донавчання за допомогою Azure ML SDK і Python, а потім розгорнути донавчену модель на онлайн-ендпоінті для інференсу в реальному часі.
 

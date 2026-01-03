@@ -28,9 +28,9 @@ GPU са известни със своите паралелни изчисли�
 
 Intel® NPU устройството е AI ускорител за инференция, интегриран с Intel клиентски CPU, започвайки от поколението Intel® Core™ Ultra (преди известно като Meteor Lake). То позволява енергийно ефективно изпълнение на задачи с изкуствени невронни мрежи.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.bg.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.bg.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.bg.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.bg.png)
 
 **Intel NPU Acceleration Library**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 При изпълнение на кода можем да наблюдаваме състоянието на NPU през Диспечера на задачите
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.bg.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.bg.png)
 
 ***Примери*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Това е резултатът от изпълнението
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.bg.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.bg.png)
 
 ***Примери*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 конвертирания формат изглежда така
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.bg.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.bg.png)
 
 Зареждаме пътищата към модела (model_dir), свързаните конфигурации (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}) и хардуерно ускорените устройства (GPU.0) чрез OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 При изпълнение на кода можем да наблюдаваме състоянието на GPU през Диспечера на задачите
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.bg.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.bg.png)
 
 ***Примери*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

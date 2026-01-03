@@ -32,11 +32,11 @@ Dabei werden Einschränkungen wie Genauigkeit und Latenz berücksichtigt.
 
 Microsoft Olive ist ein sehr einfach zu bedienendes Open-Source-Modelloptimierungstool, das sowohl Feinabstimmung als auch Referenzierung im Bereich der generativen künstlichen Intelligenz abdeckt. Es erfordert nur eine einfache Konfiguration und in Kombination mit der Nutzung von Open-Source-Kleinsprachenmodellen und den zugehörigen Laufzeitumgebungen (AzureML / lokale GPU, CPU, DirectML) können Sie die Feinabstimmung oder Referenzierung des Modells durch automatische Optimierung abschließen und das beste Modell für die Bereitstellung in der Cloud oder auf Edge-Geräten finden. So können Unternehmen ihre eigenen branchenspezifischen Modelle sowohl lokal als auch in der Cloud erstellen.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.de.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.de.png)
 
 ## Phi-3 Feinabstimmung mit Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.de.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.de.png)
 
 ## Phi-3 Olive Beispielcode und Beispiel
 In diesem Beispiel verwenden Sie Olive, um:
