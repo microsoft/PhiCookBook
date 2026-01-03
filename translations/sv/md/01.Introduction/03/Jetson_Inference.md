@@ -36,7 +36,7 @@ Vi kan välja [Ollama](https://ollama.com) eller [LlamaEdge](https://llamaedge.c
 
 Om du vill använda gguf i både molnet och edge-enheter samtidigt kan LlamaEdge ses som WasmEdge (WasmEdge är en lätt, högpresterande och skalbar WebAssembly-runtime som passar för molnbaserade, edge- och decentraliserade applikationer. Den stödjer serverlösa applikationer, inbäddade funktioner, mikrotjänster, smarta kontrakt och IoT-enheter). Du kan distribuera ggufs kvantitativa modell till edge-enheter och molnet via LlamaEdge.
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.sv.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.sv.jpg)
 
 Här är stegen för att använda
 
@@ -66,7 +66,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 
 Här är resultatet av körningen
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.sv.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.sv.png)
 
 ***Exempelkod*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 
