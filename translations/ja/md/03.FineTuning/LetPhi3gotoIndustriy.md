@@ -41,7 +41,7 @@ RAGはデータ検索＋テキスト生成の組み合わせです。企業の�
 
 ## **RAGの使い方**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.ja.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007.ja.png)
 
 ベクトルデータベースは、データを数学的な形式で保存したものです。ベクトルデータベースは機械学習モデルが過去の入力を記憶しやすくし、検索、推薦、テキスト生成などのユースケースをサポートします。データは完全一致ではなく類似度指標に基づいて識別されるため、コンピュータモデルがデータの文脈を理解できます。
 
@@ -57,7 +57,7 @@ RAGアプリケーションの作成について詳しくは[https://github.com/
 
 ### **LoraとQLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.ja.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca0.ja.png)
 
 LoRA（Low-Rank Adaptation）とQLoRA（Quantized Low-Rank Adaptation）は、パラメータ効率の良いファインチューニング（PEFT）を用いて大規模言語モデル（LLM）を微調整する技術です。PEFTは従来の方法より効率的にモデルを訓練することを目的としています。
 

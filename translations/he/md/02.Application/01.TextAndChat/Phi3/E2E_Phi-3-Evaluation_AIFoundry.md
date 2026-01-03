@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 להלן תהליך ההערכה של Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.he.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.he.png)
 
 *מקור התמונה: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 כדי להבטיח שמודל ה-AI שלך אתי ובטוח, חשוב להעריך אותו מול עקרונות ה-AI האחראי של מיקרוסופט. ב-Azure AI Foundry, הערכות בטיחות מאפשרות לך לבדוק את הפגיעות של המודל להתקפות jailbreak ואת הפוטנציאל שלו לייצר תוכן מזיק, בהתאם לעקרונות אלו.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.he.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.he.png)
 
 *מקור התמונה: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **אחריות**: האנשים שמעצבים ומפרסים מערכות AI חייבים להיות אחראים על אופן פעולת המערכות שלהם. ארגונים צריכים להיעזר בסטנדרטים בתעשייה כדי לפתח נורמות אחריות. נורמות אלו יכולות להבטיח שמערכות AI אינן הסמכות הסופית על כל החלטה שמשפיעה על חיי אנשים, ושהאנשים שומרים על שליטה משמעותית במערכות AI אוטונומיות מאוד.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.he.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.he.png)
 
 *מקור התמונה: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 הערכת היבטים אלו מבטיחה שמודל ה-AI לא יפיק תוכן מזיק או פוגעני, בהתאמה לערכי החברה ולתקנות.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.he.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.he.png)
 
 ### מבוא להערכת ביצועים
 
 כדי להבטיח שמודל ה-AI שלך מתפקד כמצופה, חשוב להעריך את ביצועיו מול מדדי ביצועים. ב-Azure AI Foundry, הערכות ביצועים מאפשרות לך להעריך את יעילות המודל ביצירת תגובות מדויקות, רלוונטיות וקוהרנטיות.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.he.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.he.png)
 
 *מקור התמונה: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 מדדים אלו עוזרים לך להעריך את יעילות המודל ביצירת תגובות מדויקות, רלוונטיות וקוהרנטיות.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.he.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.he.png)
 
 ## **תרחיש 2: הערכת מודל Phi-3 / Phi-3.5 ב-Azure AI Foundry**
 
@@ -151,7 +151,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **+ New hub** מתפריט הניווט.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.he.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.he.png)
 
 1. בצע את המשימות הבאות:
 
@@ -162,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את **Connect Azure AI Services** לשימוש (צור חדש במידת הצורך).
     - בחר ב-**Connect Azure AI Search** את האפשרות **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.he.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.he.png)
 
 1. בחר **Next**.
 
@@ -172,11 +172,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **+ New project** מתפריט הניווט.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.he.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.he.png)
 
 1. הזן **Project name**. חייב להיות ערך ייחודי.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.he.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.he.png)
 
 1. בחר **Create a project**.
 
@@ -192,17 +192,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **Endpoints** מהטאב בצד שמאל.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.he.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.he.png)
 
 1. בחר את נקודת הקצה שיצרת.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.he.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.he.png)
 
 1. בחר **Consume** מתפריט הניווט.
 
 1. העתק את **REST endpoint** ואת **Primary key** שלך.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.he.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.he.png)
 
 #### הוספת החיבור המותאם
 
@@ -214,11 +214,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.he.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.he.png)
 
 1. בחר **Custom keys** מתפריט הניווט.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.he.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.he.png)
 
 1. בצע את המשימות הבאות:
 
@@ -228,7 +228,7 @@ CO_OP_TRANSLATOR_METADATA:
     - עבור שם המפתח, הזן **key** והדבק את המפתח שהעתקת מ-Azure ML Studio בשדה הערך.
     - לאחר הוספת המפתחות, סמן **is secret** כדי למנוע חשיפת המפתח.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.he.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.he.png)
 
 1. בחר **Add connection**.
 
@@ -242,15 +242,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **+ Create** מתפריט הניווט.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.he.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.he.png)
 
 1. בחר **Chat flow** מתפריט הניווט.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.he.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.he.png)
 
 1. הזן **Folder name** לשימוש.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.he.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.he.png)
 
 1. בחר **Create**.
 
@@ -287,7 +287,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - בחר **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.he.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.he.png)
 
 1. הוסף את הקוד הבא ל-*integrate_with_promptflow.py* כדי להשתמש במודל ה-Phi-3 / Phi-3.5 המותאם ב-Prompt flow.
 
@@ -350,14 +350,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.he.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.he.png)
 
 > [!NOTE]
 > למידע מפורט יותר על שימוש ב-Prompt flow ב-Azure AI Foundry, ניתן לעיין ב-[Prompt flow ב-Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. בחר **Chat input**, **Chat output** כדי לאפשר שיחה עם המודל שלך.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.he.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.he.png)
 
 1. כעת אתה מוכן לשוחח עם מודל ה-Phi-3 / Phi-3.5 המותאם שלך. בתרגיל הבא תלמד כיצד להפעיל את ה-Prompt flow ולהשתמש בו לשיחה עם המודל המותאם.
 
@@ -365,32 +365,32 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > ה-flow המחודש אמור להיראות כמו בתמונה למטה:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.he.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.he.png)
 >
 
 #### הפעלת Prompt flow
 
 1. בחר **Start compute sessions** כדי להפעיל את ה-Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.he.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.he.png)
 
 1. בחר **Validate and parse input** כדי לעדכן את הפרמטרים.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.he.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.he.png)
 
 1. בחר את **Value** של ה-**connection** לחיבור המותאם שיצרת. לדוגמה, *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.he.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.he.png)
 
 #### שיחה עם מודל ה-Phi-3 / Phi-3.5 המותאם שלך
 
 1. בחר **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.he.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.he.png)
 
 1. הנה דוגמה לתוצאות: כעת תוכל לשוחח עם מודל ה-Phi-3 / Phi-3.5 המותאם שלך. מומלץ לשאול שאלות המבוססות על הנתונים ששימשו לאימון המודל.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.he.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.he.png)
 
 ### פריסת Azure OpenAI להערכת מודל ה-Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. נווט אל פרויקט Azure AI Foundry שיצרת.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.he.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.he.png)
 
 1. בפרויקט שיצרת, בחר **Deployments** מהטאב בצד שמאל.
 
@@ -410,11 +410,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. בחר **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.he.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.he.png)
 
 1. בחר את מודל Azure OpenAI שברצונך להשתמש בו. לדוגמה, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.he.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.he.png)
 
 1. בחר **Confirm**.
 
@@ -426,17 +426,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. נווט אל פרויקט Azure AI Foundry שיצרת.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.he.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.he.png)
 
 1. בפרויקט שיצרת, בחר **Evaluation** מהטאב בצד שמאל.
 
 1. בחר **+ New evaluation** מתפריט הניווט.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.he.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.he.png)
 
 1. בחר בהערכת **Prompt flow**.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.he.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.he.png)
 
 1. בצע את המשימות הבאות:
 
@@ -444,7 +444,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר **Question and answer without context** כסוג המשימה. מכיוון שמאגר הנתונים **UlTRACHAT_200k** בו השתמשנו במדריך זה אינו מכיל הקשר.
     - בחר את ה-Prompt flow שברצונך להעריך.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.he.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.he.png)
 
 1. בחר **Next**.
 
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר **Add your dataset** להעלאת מאגר הנתונים. לדוגמה, תוכל להעלות את קובץ מאגר הנתונים למבחן, כמו *test_data.json1*, הכלול בהורדת מאגר הנתונים **ULTRACHAT_200k**.
     - בחר את **Dataset column** המתאים למאגר הנתונים שלך. לדוגמה, אם אתה משתמש במאגר הנתונים **ULTRACHAT_200k**, בחר **${data.prompt}** כעמודת הנתונים.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.he.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.he.png)
 
 1. בחר **Next**.
 
@@ -462,7 +462,7 @@ CO_OP_TRANSLATOR_METADATA:
     - בחר את מדדי הביצועים והאיכות שברצונך להשתמש בהם.
     - בחר את מודל Azure OpenAI שיצרת להערכת המודל. לדוגמה, בחר **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.he.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.he.png)
 
 1. בצע את המשימות הבאות להגדרת מדדי סיכון ובטיחות:
 
@@ -472,7 +472,7 @@ CO_OP_TRANSLATOR_METADATA:
     - עבור **answer**, בחר **Data source** ל-**{$run.outputs.answer}**.
     - עבור **ground_truth**, בחר **Data source** ל-**{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.he.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.he.png)
 
 1. בחר **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     - הערכת יעילות המודל ביצירת תגובות קוהרנטיות, שוטפות ורלוונטיות.
 
-    ![תוצאת הערכה.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.he.png)
+    ![תוצאת הערכה.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.he.png)
 
 1. מדדי סיכון ובטיחות:
 
     - ודאו שהתוצרים של המודל בטוחים ותואמים לעקרונות Responsible AI, תוך הימנעות מתוכן מזיק או פוגעני.
 
-    ![תוצאת הערכה.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.he.png)
+    ![תוצאת הערכה.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.he.png)
 
 1. ניתן לגלול למטה כדי לצפות ב**תוצאות מדדים מפורטים**.
 
-    ![תוצאת הערכה.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.he.png)
+    ![תוצאת הערכה.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.he.png)
 
 1. על ידי הערכת מודל ה-Phi-3 / Phi-3.5 המותאם אישית שלך מול מדדי ביצועים ובטיחות, תוכל לוודא שהמודל לא רק יעיל, אלא גם עומד בעקרונות Responsible AI, מה שהופך אותו למוכן לפריסה בעולם האמיתי.
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 הערכת בהצלחה את מודל ה-Phi-3 המותאם אישית המשולב עם Prompt flow ב-Azure AI Foundry. זהו שלב חשוב לוודא שמודלי ה-AI שלך לא רק מבצעים היטב, אלא גם עומדים בעקרונות Responsible AI של מיקרוסופט, כדי לעזור לך לבנות יישומי AI אמינים ואחראיים.
 
-![ארכיטקטורה.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.he.png)
+![ארכיטקטורה.](../../../../../../translated_images/architecture.10bec55250f5d6a4.he.png)
 
 ## ניקוי משאבי Azure
 

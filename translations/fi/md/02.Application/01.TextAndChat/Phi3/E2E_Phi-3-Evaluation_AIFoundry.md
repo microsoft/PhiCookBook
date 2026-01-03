@@ -19,7 +19,7 @@ Mallin hienosäätö voi joskus johtaa tahattomiin tai ei-toivottuihin vastauksi
 
 Tässä on Azure AI Foundryn arviointiprosessi.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.fi.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.fi.png)
 
 *Kuvan lähde: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ Tässä on Azure AI Foundryn arviointiprosessi.
 
 Jotta tekoälymallisi olisi eettinen ja turvallinen, on tärkeää arvioida sitä Microsoftin vastuullisen tekoälyn periaatteiden mukaisesti. Azure AI Foundryssa turvallisuusarvioinnit mahdollistavat mallin haavoittuvuuden arvioinnin jailbreak-hyökkäyksiä vastaan sekä sen kyvyn tuottaa haitallista sisältöä, mikä on suoraan linjassa näiden periaatteiden kanssa.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.fi.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.fi.png)
 
 *Kuvan lähde: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Microsoftin vastuullisen tekoälyn periaatteet ovat:
 
 - **Vastuullisuus**: Tekoälyjärjestelmien suunnittelijoiden ja käyttöönottojen tekijöiden tulee olla vastuussa järjestelmiensä toiminnasta. Organisaatioiden tulisi hyödyntää alan standardeja vastuullisuuden normien kehittämiseksi. Nämä normit varmistavat, että tekoälyjärjestelmät eivät ole lopullinen auktoriteetti päätöksissä, jotka vaikuttavat ihmisten elämään, ja että ihmiset säilyttävät merkittävän kontrollin muuten hyvin autonomisten tekoälyjärjestelmien yli.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.fi.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.fi.png)
 
 *Kuvan lähde: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Tässä opetusohjelmassa arvioit hienosäädetyn Phi-3 -mallin turvallisuutta Az
 
 Näiden osa-alueiden arviointi varmistaa, että tekoälymalli ei tuota haitallista tai loukkaavaa sisältöä, mikä vastaa yhteiskunnallisia arvoja ja sääntelyvaatimuksia.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.fi.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.fi.png)
 
 ### Johdatus suorituskyvyn arviointiin
 
 Jotta tekoälymallisi toimisi odotetusti, on tärkeää arvioida sen suorituskykyä suorituskykymittareiden avulla. Azure AI Foundryssa suorituskyvyn arvioinnit mahdollistavat mallin tehokkuuden arvioinnin tarkkojen, asiaankuuluvien ja johdonmukaisten vastausten tuottamisessa.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.fi.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.fi.png)
 
 *Kuvan lähde: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ Tässä opetusohjelmassa arvioit hienosäädetyn Phi-3 / Phi-3.5 -mallin suoritu
 
 Nämä mittarit auttavat sinua arvioimaan mallin tehokkuutta tarkkojen, asiaankuuluvien ja johdonmukaisten vastausten tuottamisessa.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.fi.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.fi.png)
 
 ## **Tapaus 2: Phi-3 / Phi-3.5 -mallin arviointi Azure AI Foundryssa**
 
@@ -151,7 +151,7 @@ Sinun täytyy luoda Hub ennen projektin luomista. Hub toimii kuin resurssiryhmä
 
 1. Valitse navigaatiovalikosta **+ New hub**.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.fi.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.fi.png)
 
 1. Suorita seuraavat tehtävät:
 
@@ -162,7 +162,7 @@ Sinun täytyy luoda Hub ennen projektin luomista. Hub toimii kuin resurssiryhmä
     - Valitse käytettävä **Connect Azure AI Services** (luo uusi tarvittaessa).
     - Valitse **Connect Azure AI Search** ja valitse **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.fi.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.fi.png)
 
 1. Valitse **Next**.
 
@@ -172,11 +172,11 @@ Sinun täytyy luoda Hub ennen projektin luomista. Hub toimii kuin resurssiryhmä
 
 1. Valitse navigaatiovalikosta **+ New project**.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.fi.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.fi.png)
 
 1. Syötä **Project name**. Sen täytyy olla yksilöllinen arvo.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.fi.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.fi.png)
 
 1. Valitse **Create a project**.
 
@@ -192,17 +192,17 @@ Jotta voit integroida mukautetun Phi-3 / Phi-3.5 -mallisi Prompt flow'hun, sinun
 
 1. Valitse vasemman sivupalkin välilehdeltä **Endpoints**.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.fi.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.fi.png)
 
 1. Valitse luomasi endpoint.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.fi.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.fi.png)
 
 1. Valitse navigaatiovalikosta **Consume**.
 
 1. Kopioi **REST endpoint** ja **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.fi.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.fi.png)
 
 #### Lisää mukautettu yhteys
 
@@ -214,11 +214,11 @@ Jotta voit integroida mukautetun Phi-3 / Phi-3.5 -mallisi Prompt flow'hun, sinun
 
 1. Valitse **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.fi.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.fi.png)
 
 1. Valitse navigaatiovalikosta **Custom keys**.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.fi.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.fi.png)
 
 1. Suorita seuraavat tehtävät:
 
@@ -228,7 +228,7 @@ Jotta voit integroida mukautetun Phi-3 / Phi-3.5 -mallisi Prompt flow'hun, sinun
     - Avaimen nimeksi kirjoita **key** ja liitä Azure ML Studiosta kopioimasi avain arvokenttään.
     - Kun avaimet on lisätty, valitse **is secret** estääksesi avaimen paljastumisen.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.fi.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.fi.png)
 
 1. Valitse **Add connection**.
 
@@ -242,15 +242,15 @@ Olet lisännyt mukautetun yhteyden Azure AI Foundryssa. Luodaan nyt Prompt flow 
 
 1. Valitse navigaatiovalikosta **+ Create**.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.fi.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.fi.png)
 
 1. Valitse navigaatiovalikosta **Chat flow**.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.fi.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.fi.png)
 
 1. Syötä käytettävä **Folder name**.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.fi.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.fi.png)
 
 1. Valitse **Create**.
 
@@ -287,7 +287,7 @@ Sinun täytyy integroida hienosäädetty Phi-3 / Phi-3.5 -malli Prompt flow'hun.
 
     - Valitse **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.fi.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.fi.png)
 
 1. Lisää seuraava koodi tiedostoon *integrate_with_promptflow.py* käyttääksesi mukautettua Phi-3 / Phi-3.5 -mallia Prompt flow'ssa.
 
@@ -350,14 +350,14 @@ Sinun täytyy integroida hienosäädetty Phi-3 / Phi-3.5 -malli Prompt flow'hun.
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.fi.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.fi.png)
 
 > [!NOTE]
 > Lisätietoja Prompt flow'n käytöstä Azure AI Foundryssa löydät osoitteesta [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Valitse **Chat input** ja **Chat output** ottaaksesi keskustelun mallisi kanssa käyttöön.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.fi.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.fi.png)
 
 1. Nyt olet valmis keskustelemaan mukautetun Phi-3 / Phi-3.5 -mallisi kanssa. Seuraavassa harjoituksessa opit, miten Prompt flow käynnistetään ja miten sitä käytetään keskusteluun hienosäädetyn Phi-3 / Phi-3.5 -mallin kanssa.
 
@@ -365,32 +365,32 @@ Sinun täytyy integroida hienosäädetty Phi-3 / Phi-3.5 -malli Prompt flow'hun.
 >
 > Uudelleen rakennettu flow näyttää tältä:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.fi.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.fi.png)
 >
 
 #### Käynnistä Prompt flow
 
 1. Valitse **Start compute sessions** käynnistääksesi Prompt flow'n.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.fi.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.fi.png)
 
 1. Valitse **Validate and parse input** päivittääksesi parametrit.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.fi.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.fi.png)
 
 1. Valitse **connection**-arvoksi luomasi mukautettu yhteys, esimerkiksi *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.fi.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.fi.png)
 
 #### Keskustele mukautetun Phi-3 / Phi-3.5 -mallisi kanssa
 
 1. Valitse **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.fi.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.fi.png)
 
 1. Tässä esimerkki tuloksista: Nyt voit keskustella mukautetun Phi-3 / Phi-3.5 -mallisi kanssa. On suositeltavaa esittää kysymyksiä, jotka perustuvat hienosäätöön käytettyyn dataan.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.fi.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.fi.png)
 
 ### Ota käyttöön Azure OpenAI Phi-3 / Phi-3.5 -mallin arviointia varten
 
@@ -402,7 +402,7 @@ Phi-3 / Phi-3.5 -mallin arvioimiseksi Azure AI Foundryssa sinun täytyy ottaa k�
 
 1. Siirry luomaasi Azure AI Foundry -projektiin.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.fi.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.fi.png)
 
 1. Valitse luomassasi projektissa vasemman sivupalkin välilehdeltä **Deployments**.
 
@@ -410,11 +410,11 @@ Phi-3 / Phi-3.5 -mallin arvioimiseksi Azure AI Foundryssa sinun täytyy ottaa k�
 
 1. Valitse **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.fi.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.fi.png)
 
 1. Valitse käytettävä Azure OpenAI -malli, esimerkiksi **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.fi.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.fi.png)
 
 1. Valitse **Confirm**.
 
@@ -426,17 +426,17 @@ Phi-3 / Phi-3.5 -mallin arvioimiseksi Azure AI Foundryssa sinun täytyy ottaa k�
 
 1. Siirry luomaasi Azure AI Foundry -projektiin.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.fi.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.fi.png)
 
 1. Valitse luomassasi projektissa vasemman sivupalkin välilehdeltä **Evaluation**.
 
 1. Valitse navigaatiovalikosta **+ New evaluation**.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.fi.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.fi.png)
 
 1. Valitse **Prompt flow** -arviointi.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.fi.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.fi.png)
 
 1. Suorita seuraavat tehtävät:
 
@@ -444,7 +444,7 @@ Phi-3 / Phi-3.5 -mallin arvioimiseksi Azure AI Foundryssa sinun täytyy ottaa k�
     - Valitse tehtävätyypiksi **Question and answer without context**, koska tässä ohjeistuksessa käytetty **ULTRACHAT_200k** -aineisto ei sisällä kontekstia.
     - Valitse arvioitava prompt flow.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.fi.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.fi.png)
 
 1. Valitse **Next**.
 
@@ -453,7 +453,7 @@ Phi-3 / Phi-3.5 -mallin arvioimiseksi Azure AI Foundryssa sinun täytyy ottaa k�
     - Valitse **Add your dataset** ladataksesi aineiston. Esimerkiksi voit ladata testiaineiston tiedoston, kuten *test_data.json1*, joka sisältyy **ULTRACHAT_200k** -aineistoon.
     - Valitse sopiva **Dataset column**, joka vastaa aineistoasi. Esimerkiksi **ULTRACHAT_200k** -aineiston tapauksessa valitse **${data.prompt}** dataset-sarakkeeksi.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.fi.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.fi.png)
 
 1. Valitse **Next**.
 
@@ -462,7 +462,7 @@ Phi-3 / Phi-3.5 -mallin arvioimiseksi Azure AI Foundryssa sinun täytyy ottaa k�
     - Valitse käytettävät suorituskyky- ja laatumittarit.
     - Valitse arviointiin käyttämäsi Azure OpenAI -malli, esimerkiksi **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.fi.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.fi.png)
 
 1. Suorita seuraavat tehtävät riskien ja turvallisuusmittareiden määrittämiseksi:
 
@@ -472,7 +472,7 @@ Phi-3 / Phi-3.5 -mallin arvioimiseksi Azure AI Foundryssa sinun täytyy ottaa k�
     - Vastaukselle valitse **Data source** arvoksi **{$run.outputs.answer}**.
     - Totuustiedolle valitse **Data source** arvoksi **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.fi.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.fi.png)
 
 1. Valitse **Next**.
 
@@ -489,17 +489,17 @@ Kun arviointi on valmis, voit tarkastella tuloksia sekä suorituskyky- että tur
 
     - arvioi mallin tehokkuutta tuottaa johdonmukaisia, sujuvia ja asiaankuuluvia vastauksia.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.fi.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.fi.png)
 
 1. Riskien ja turvallisuuden mittarit:
 
     - Varmista, että mallin tuottamat vastaukset ovat turvallisia ja noudattavat Responsible AI Principles -periaatteita, välttäen haitallista tai loukkaavaa sisältöä.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.fi.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.fi.png)
 
 1. Voit selata alaspäin nähdäksesi **Yksityiskohtaiset mittaustulokset**.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.fi.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.fi.png)
 
 1. Arvioimalla mukautetun Phi-3 / Phi-3.5 -mallisi sekä suorituskyky- että turvallisuusmittareiden perusteella voit varmistaa, että malli ei ole pelkästään tehokas, vaan myös noudattaa vastuullisen tekoälyn käytäntöjä, tehden siitä valmiin käytettäväksi todellisissa sovelluksissa.
 
@@ -509,7 +509,7 @@ Kun arviointi on valmis, voit tarkastella tuloksia sekä suorituskyky- että tur
 
 Olet onnistuneesti arvioinut hienosäädetyn Phi-3 -mallin, joka on integroitu Prompt flow -työkaluun Azure AI Foundryssa. Tämä on tärkeä askel varmistettaessa, että tekoälymallisi eivät ainoastaan toimi hyvin, vaan myös noudattavat Microsoftin Responsible AI -periaatteita, auttaen sinua rakentamaan luotettavia ja vastuullisia tekoälysovelluksia.
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.fi.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.fi.png)
 
 ## Siivoa Azure-resurssit
 

@@ -19,7 +19,7 @@ Tuchunguze jinsi ya kurekebisha mfano wa lugha wa Microsoft Phi-3 Mini kwa kutum
 - **Urahisi:** Kurekebisha hufanyika vipi – je, nahitaji kuandika msimbo maalum? Je, nahitaji kuleta kompyuta yangu?
 - **Usalama:** Mifano iliyorekebishwa inajulikana kuwa na hatari za usalama – je, kuna kinga zozote za kuzuia madhara yasiyokusudiwa?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.sw.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.sw.png)
 
 ## Maandalizi ya Kurekebisha
 
@@ -71,7 +71,7 @@ Aina ya faili inayoungwa mkono ni JSON Lines. Faili hupakiwa kwenye hifadhi ya k
 
 Azure AI Foundry inakuwezesha kubinafsisha mifano mikubwa ya lugha kwa seti zako binafsi za data kwa kutumia mchakato unaojulikana kama kurekebisha. Kurekebisha kunatoa thamani kubwa kwa kuwezesha ubinafsishaji na uboreshaji kwa kazi na matumizi maalum. Hii huleta utendaji bora, ufanisi wa gharama, kupunguza ucheleweshaji, na matokeo yaliyobinafsishwa.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.sw.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.sw.png)
 
 ### Tengeneza Mradi Mpya
 
@@ -79,14 +79,14 @@ Azure AI Foundry inakuwezesha kubinafsisha mifano mikubwa ya lugha kwa seti zako
 
 1. Chagua **+New project** kuunda mradi mpya katika Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.sw.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.sw.png)
 
 1. Fanya kazi zifuatazo:
 
     - Jina la **Hub** la mradi. Lazima liwe la kipekee.
     - Chagua **Hub** unayotaka kutumia (unda mpya ikiwa inahitajika).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.sw.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.sw.png)
 
 1. Fanya kazi zifuatazo kuunda hub mpya:
 
@@ -97,7 +97,7 @@ Azure AI Foundry inakuwezesha kubinafsisha mifano mikubwa ya lugha kwa seti zako
     - Chagua **Connect Azure AI Services** unayotaka kutumia (unda mpya ikiwa inahitajika).
     - Chagua **Connect Azure AI Search** kisha **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.sw.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.sw.png)
 
 1. Chagua **Next**.
 1. Chagua **Create a project**.
@@ -115,15 +115,15 @@ Kabla ya kurekebisha, kusanya au tengeneza seti ya data inayohusiana na kazi yak
 
 1. Andika *phi-3* kwenye **search bar** na chagua mfano wa phi-3 unayotaka kutumia.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.sw.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.sw.png)
 
 1. Chagua **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.sw.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.sw.png)
 
 1. Weka **Jina la mfano uliorekebishwa**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.sw.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.sw.png)
 
 1. Chagua **Next**.
 
@@ -132,13 +132,13 @@ Kabla ya kurekebisha, kusanya au tengeneza seti ya data inayohusiana na kazi yak
     - Chagua aina ya **kazi** kuwa **Chat completion**.
     - Chagua **Data ya Mafunzo** unayotaka kutumia. Unaweza kuipakia kupitia data ya Azure AI Foundry au kutoka mazingira yako ya ndani.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.sw.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.sw.png)
 
 1. Chagua **Next**.
 
 1. Pakia **Data ya Uthibitishaji** unayotaka kutumia, au unaweza kuchagua **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.sw.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.sw.png)
 
 1. Chagua **Next**.
 
@@ -148,15 +148,15 @@ Kabla ya kurekebisha, kusanya au tengeneza seti ya data inayohusiana na kazi yak
     - Chagua **Kiwango cha kujifunza (Learning rate)** unayotaka kutumia.
     - Chagua **Idadi ya mizunguko (Epochs)** unayotaka kutumia.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.sw.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.sw.png)
 
 1. Chagua **Submit** kuanza mchakato wa kurekebisha.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.sw.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.sw.png)
 
 1. Mara mfano wako utakaporekebishwa, hali itakuwa **Completed**, kama inavyoonyeshwa kwenye picha hapa chini. Sasa unaweza kupeleka mfano na kuutumia katika programu yako, kwenye playground, au katika prompt flow. Kwa maelezo zaidi, angalia [Jinsi ya kupeleka familia ya mifano midogo ya lugha ya Phi-3 kwa Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.sw.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.sw.png)
 
 > [!NOTE]
 > Kwa maelezo zaidi kuhusu kurekebisha Phi-3, tafadhali tembelea [Kurekebisha mifano ya Phi-3 katika Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

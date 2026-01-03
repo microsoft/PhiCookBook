@@ -15,11 +15,11 @@ Adakah anda menggunakan Visual Studio Code Copilot? Terutamanya dalam Chat, anda
 
 Kita tahu bahawa Phi-3/3.5-mini-instruct dalam Keluarga Phi-3/3.5 mempunyai keupayaan pemahaman dan penjanaan kod yang kukuh, dan mempunyai kelebihan berbanding Gemma-2-9b dan Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.ms.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.ms.png)
 
 GitHub Models terkini sudah menyediakan akses kepada model Phi-3.5-mini-instruct (128k) dan Phi-3.5-vision-instruct (128k). Pembangun boleh mengaksesnya melalui OpenAI SDK, Azure AI Inference SDK, dan REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.ms.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.ms.png)
 
 ***Nota:*** Disarankan menggunakan Azure AI Inference SDK di sini, kerana ia boleh bertukar dengan lebih baik menggunakan Azure Model Catalog dalam persekitaran pengeluaran.
 
@@ -34,13 +34,13 @@ Berikut adalah hasil **Phi-3.5-mini-instruct (128k)** dan **Phi-3.5-vision-instr
 
 GitHub Copilot Chat Agent boleh melengkapkan pelbagai tugasan dalam pelbagai senario projek berdasarkan kod. Sistem ini mempunyai empat ejen: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.ms.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.ms.png)
 
 Dengan menambah nama ejen dengan ‘@’, anda boleh menyelesaikan kerja yang sepadan dengan cepat. Untuk perusahaan, jika anda menambah kandungan berkaitan perniagaan anda seperti keperluan, pengekodan, spesifikasi ujian, dan pelepasan, anda boleh mempunyai fungsi peribadi perusahaan yang lebih berkuasa berdasarkan GitHub Copilot.
 
 Visual Studio Code Chat Agent kini secara rasmi telah mengeluarkan API-nya, membolehkan perusahaan atau pembangun perusahaan membangunkan ejen berdasarkan ekosistem perniagaan perisian yang berbeza. Berdasarkan kaedah pembangunan Visual Studio Code Extension Development, anda boleh dengan mudah mengakses antara muka API Visual Studio Code Chat Agent. Kita boleh membangunkan berdasarkan proses ini.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.ms.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.ms.png)
 
 Senario pembangunan boleh menyokong akses kepada API model pihak ketiga (seperti GitHub Models, Azure Model Catalog, dan perkhidmatan binaan sendiri berdasarkan model sumber terbuka) dan juga boleh menggunakan model gpt-35-turbo, gpt-4, dan gpt-4o yang disediakan oleh GitHub Copilot.
 
@@ -54,7 +54,7 @@ Kami cuba mengintegrasikan keupayaan pengaturcaraan Phi-3.5 untuk melengkapkan p
 
 3. Menjana kod berdasarkan **Phi-3.5-vision-instruct (128k)** dan pelengkap imej melalui arahan **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.ms.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.ms.png)
 
 ## **Langkah Berkaitan**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.ms.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.ms.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.ms.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.ms.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.ms.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.ms.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.ms.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.ms.png)
 
 Anda boleh muat turun kod contoh :[klik](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

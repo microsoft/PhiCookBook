@@ -64,7 +64,7 @@ Azure ML don add plenty LLM/SLM-related functions, wey combine LLMOps and SLMOps
 
 Enterprise users fit deploy different models according to different business scenarios through Model Catalog, and provide services as Model as Service make enterprise developers or users fit access.
 
-![model dem](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.pcm.png)
+![model dem](../../../../translated_images/models.e6c7ff50a51806fd.pcm.png)
 
 The Model Catalog in Azure Machine Learning studio na the hub to discover and use wide range of models wey go enable you to build Generative AI applications. The model catalog get hundreds of models from model providers like Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, including models trained by Microsoft. Models wey come from providers wey no be Microsoft na Non-Microsoft Products, as Microsoft define am for Microsoft's Product Terms, and dem dey subject to the terms wey come with the model.
 
@@ -76,7 +76,7 @@ The core of machine learning pipeline na to split complete machine learning task
 When we dey fine-tune SLM / LLM, we fit manage our data, training, and generation processes through Pipeline
 
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.pcm.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.pcm.png)
 
 
 ### **Prompt flow**

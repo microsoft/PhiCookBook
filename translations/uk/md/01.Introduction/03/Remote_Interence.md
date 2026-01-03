@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Після навчання адаптерів у віддаленому середовищі, використовуйте простий додаток Gradio для взаємодії з моделлю.
 
-![Навчання завершено](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.uk.png)
+![Навчання завершено](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.uk.png)
 
 ### Налаштування ресурсів Azure  
 Для віддаленого інференсування потрібно налаштувати ресурси Azure, виконавши команду `AI Toolkit: Provision Azure Container Apps for inference` з палітри команд. Під час цього процесу вам буде запропоновано вибрати підписку Azure та групу ресурсів.  
-![Налаштування ресурсу для інференсування](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.uk.png)
+![Налаштування ресурсу для інференсування](../../../../../translated_images/command-provision-inference.467afc8d351642fc.uk.png)
    
 За замовчуванням підписка та група ресурсів для інференсування мають збігатися з тими, що використовувалися для донавчання. Інференсування використовуватиме те саме середовище Azure Container App і матиме доступ до моделі та адаптера моделі, збережених у Azure Files, які були створені під час кроку донавчання.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### Розгортання для інференсування  
 Якщо потрібно змінити код інференсування або перезавантажити модель для інференсування, виконайте команду `AI Toolkit: Deploy for inference`. Це синхронізує ваш останній код з ACA та перезапустить репліку.
 
-![Розгортання для інференсування](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.uk.png)
+![Розгортання для інференсування](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.uk.png)
 
 Після успішного завершення розгортання модель готова до оцінки через цей endpoint.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ви можете отримати доступ до API інференсування, натиснувши кнопку "*Go to Inference Endpoint*" у сповіщенні VSCode. Також веб-адресу API можна знайти у `ACA_APP_ENDPOINT` у файлі `./infra/inference.config.json` та у панелі виводу.
 
-![Endpoint додатку](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.uk.png)
+![Endpoint додатку](../../../../../translated_images/notification-deploy.446e480a44b1be58.uk.png)
 
 > **Note:** Endpoint інференсування може потребувати кілька хвилин для повного запуску.
 

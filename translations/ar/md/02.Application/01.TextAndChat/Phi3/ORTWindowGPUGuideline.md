@@ -43,7 +43,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***ملاحظة*** إذا لم ترغب في الترجمة، يمكنك تخطي هذه الخطوة
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.ar.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.ar.png)
 
 ### **4. تثبيت تعريف NVIDIA**
 
@@ -83,7 +83,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    افتح [دفتر الملاحظات](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) وقم بالتنفيذ
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.ar.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.ar.png)
 
 ### **8. ترجمة ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    - باستخدام Windows Terminal، افتح Developer Command Prompt لـ VS 2022 واذهب إلى مجلد onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.ar.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.ar.png)
 
    - قم بترجمته باستخدام بيئة بايثون الخاصة بك
 

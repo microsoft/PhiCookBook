@@ -43,7 +43,7 @@ Nyaraka hii inatoa mwongozo kuhusu:
 
    ***Note*** Ikiwa hutaki kukusanya unaweza ruka hatua hii
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.sw.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.sw.png)
 
 ### **4. Sakinisha Dereva wa NVIDIA**
 
@@ -83,7 +83,7 @@ Nakili maktaba za NVIDIA CUDNN 9.4 lib, bin, include kwenda NVIDIA CUDA 12.4 lib
 
    Fungua [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) na utekeleze
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.sw.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.sw.png)
 
 ### **8. Kusanya ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Nakili maktaba za NVIDIA CUDNN 9.4 lib, bin, include kwenda NVIDIA CUDA 12.4 lib
 
    - Tumia Windows Terminal, nenda kwenye Developer Command Prompt for VS 2022 na uende kwenye onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.sw.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.sw.png)
 
    - Kusanya kwa kutumia mazingira yako ya python
 

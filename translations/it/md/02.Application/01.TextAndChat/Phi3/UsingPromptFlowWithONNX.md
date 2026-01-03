@@ -33,33 +33,33 @@ Leggi questa guida per configurare ONNX Runtime GenAI per GPU Windows [clicca qu
 
 1. Installa l’estensione Prompt flow per VS Code
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.it.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.it.png)
 
 2. Dopo aver installato l’estensione Prompt flow per VS Code, clicca sull’estensione e scegli **Installation dependencies**; segui questa guida per installare il Prompt flow SDK nel tuo ambiente
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.it.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.it.png)
 
 3. Scarica il [Codice di esempio](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) e apri questo esempio con VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.it.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.it.png)
 
 4. Apri **flow.dag.yaml** per selezionare il tuo ambiente Python
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.it.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.it.png)
 
    Apri **chat_phi3_ort.py** per modificare la posizione del tuo modello Phi-3.5-instruct ONNX
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.it.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.it.png)
 
 5. Esegui il tuo prompt flow per il test
 
 Apri **flow.dag.yaml** e clicca su visual editor
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.it.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.it.png)
 
 dopo aver cliccato, esegui il flusso per testarlo
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.it.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.it.png)
 
 1. Puoi eseguire batch nel terminale per verificare più risultati
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Puoi controllare i risultati nel tuo browser predefinito
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.it.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.it.png)
 
 **Disclaimer**:  
 Questo documento è stato tradotto utilizzando il servizio di traduzione automatica [Co-op Translator](https://github.com/Azure/co-op-translator). Pur impegnandoci per garantire accuratezza, si prega di notare che le traduzioni automatiche possono contenere errori o imprecisioni. Il documento originale nella sua lingua nativa deve essere considerato la fonte autorevole. Per informazioni critiche, si raccomanda una traduzione professionale effettuata da un umano. Non ci assumiamo alcuna responsabilità per eventuali malintesi o interpretazioni errate derivanti dall’uso di questa traduzione.

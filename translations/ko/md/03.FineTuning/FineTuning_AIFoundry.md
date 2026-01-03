@@ -19,7 +19,7 @@ Microsoft의 Phi-3 Mini 언어 모델을 Azure AI Foundry를 사용해 미세 �
 - **편의성:** 미세 조정은 실제로 어떻게 진행되나요? 별도의 코드를 작성해야 하나요? 직접 컴퓨팅 자원을 준비해야 하나요?
 - **안전성:** 미세 조정된 모델은 안전성 위험이 알려져 있습니다. 의도치 않은 피해를 방지하기 위한 안전장치가 있나요?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.ko.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.ko.png)
 
 ## 미세 조정 준비
 
@@ -71,7 +71,7 @@ Microsoft의 Phi-3 Mini 언어 모델을 Azure AI Foundry를 사용해 미세 �
 
 Azure AI Foundry는 미세 조정이라는 과정을 통해 대형 언어 모델을 개인 데이터셋에 맞게 맞춤화할 수 있게 해줍니다. 미세 조정은 특정 작업과 애플리케이션에 맞게 최적화 및 커스터마이징할 수 있어 성능 향상, 비용 효율성, 지연 시간 감소, 맞춤형 출력 제공 등 큰 가치를 제공합니다.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.ko.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.ko.png)
 
 ### 새 프로젝트 만들기
 
@@ -79,14 +79,14 @@ Azure AI Foundry는 미세 조정이라는 과정을 통해 대형 언어 모델
 
 1. **+New project**를 선택해 새 프로젝트를 만듭니다.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ko.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.ko.png)
 
 1. 다음 작업을 수행합니다:
 
     - 프로젝트 **Hub 이름**을 입력합니다. 고유한 값이어야 합니다.
     - 사용할 **Hub**를 선택합니다(필요 시 새로 만듭니다).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ko.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.ko.png)
 
 1. 새 허브를 만들기 위해 다음 작업을 수행합니다:
 
@@ -97,7 +97,7 @@ Azure AI Foundry는 미세 조정이라는 과정을 통해 대형 언어 모델
     - 사용할 **Connect Azure AI Services**를 선택합니다(필요 시 새로 만듭니다).
     - **Connect Azure AI Search**는 **연결 건너뛰기**를 선택합니다.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.ko.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.ko.png)
 
 1. **Next**를 선택합니다.
 1. **Create a project**를 선택합니다.
@@ -115,15 +115,15 @@ Azure AI Foundry는 미세 조정이라는 과정을 통해 대형 언어 모델
 
 1. **검색창**에 *phi-3*를 입력하고 원하는 phi-3 모델을 선택합니다.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.ko.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.ko.png)
 
 1. **Fine-tune**을 선택합니다.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.ko.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.ko.png)
 
 1. **Fine-tuned model name**을 입력합니다.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.ko.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.ko.png)
 
 1. **Next**를 선택합니다.
 
@@ -132,13 +132,13 @@ Azure AI Foundry는 미세 조정이라는 과정을 통해 대형 언어 모델
     - **작업 유형(task type)**을 **Chat completion**으로 선택합니다.
     - 사용할 **학습 데이터**를 선택합니다. Azure AI Foundry의 데이터 또는 로컬 환경에서 업로드할 수 있습니다.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.ko.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.ko.png)
 
 1. **Next**를 선택합니다.
 
 1. 사용할 **검증 데이터**를 업로드하거나, **학습 데이터 자동 분할**을 선택할 수 있습니다.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.ko.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.ko.png)
 
 1. **Next**를 선택합니다.
 
@@ -148,15 +148,15 @@ Azure AI Foundry는 미세 조정이라는 과정을 통해 대형 언어 모델
     - 사용할 **학습률(Learning rate)**을 선택합니다.
     - 사용할 **에포크(Epochs)** 수를 선택합니다.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.ko.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.ko.png)
 
 1. **Submit**을 선택해 미세 조정 프로세스를 시작합니다.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.ko.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.ko.png)
 
 1. 모델 미세 조정이 완료되면 상태가 **Completed**로 표시됩니다. 이제 모델을 배포하여 자체 애플리케이션, 플레이그라운드 또는 프롬프트 플로우에서 사용할 수 있습니다. 자세한 내용은 [Azure AI Foundry로 Phi-3 계열 소형 언어 모델 배포하기](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python)를 참고하세요.
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.ko.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.ko.png)
 
 > [!NOTE]
 > Phi-3 미세 조정에 대한 자세한 정보는 [Azure AI Foundry에서 Phi-3 모델 미세 조정하기](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini)를 방문하세요.

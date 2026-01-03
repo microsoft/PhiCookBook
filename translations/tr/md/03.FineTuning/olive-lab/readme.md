@@ -29,7 +29,7 @@ Bu laboratuvarın sonunda OLIVE kullanarak:
 
 Olive (*O*NNX *live*), ONNX runtime +++https://onnxruntime.ai+++ için modelleri kalite ve performansla teslim etmenizi sağlayan, CLI ile birlikte gelen bir model optimizasyon araç setidir.
 
-![Olive Akışı](../../../../../translated_images/olive-flow.5daf97340275f8b61397e91430ff02724a2547937b352e7fdfc2f669c56dcd35.tr.png)
+![Olive Akışı](../../../../../translated_images/olive-flow.5daf97340275f8b6.tr.png)
 
 Olive’a genellikle bir PyTorch veya Hugging Face modeli girdi olarak verilir ve çıktı olarak ONNX runtime üzerinde çalışan optimize edilmiş bir ONNX modeli elde edilir. Olive, Qualcomm, AMD, Nvidia veya Intel gibi donanım sağlayıcılarının sunduğu AI hızlandırıcılar (NPU, GPU, CPU) için modeli dağıtım hedefi doğrultusunda optimize eder.
 

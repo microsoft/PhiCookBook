@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 می‌دانیم که Phi-3/3.5-mini-instruct در خانواده Phi-3/3.5 توانایی‌های قوی در درک و تولید کد دارد و نسبت به Gemma-2-9b و Mistral-Nemo-12B-instruct-2407 مزیت‌هایی دارد.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.fa.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.fa.png)
 
 جدیدترین GitHub Models دسترسی به مدل‌های Phi-3.5-mini-instruct (128k) و Phi-3.5-vision-instruct (128k) را فراهم کرده‌اند. توسعه‌دهندگان می‌توانند از طریق OpenAI SDK، Azure AI Inference SDK و REST API به آن‌ها دسترسی پیدا کنند.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.fa.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.fa.png)
 
 ***توجه:*** توصیه می‌شود از Azure AI Inference SDK استفاده کنید، زیرا در محیط تولید بهتر می‌تواند با Azure Model Catalog جابجا شود.
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 عامل چت GitHub Copilot می‌تواند وظایف مختلفی را در سناریوهای پروژه متفاوت بر اساس کد انجام دهد. این سیستم چهار عامل دارد: workspace، github، terminal، vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.fa.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.fa.png)
 
 با اضافه کردن نام عامل به همراه ‘@’ می‌توانید به سرعت کار مربوطه را انجام دهید. برای شرکت‌ها، اگر محتوای مرتبط با کسب‌وکار خود مانند نیازمندی‌ها، کدنویسی، مشخصات تست و انتشار را اضافه کنید، می‌توانید قابلیت‌های خصوصی قدرتمندتری بر اساس GitHub Copilot داشته باشید.
 
 عامل چت Visual Studio Code اکنون به‌طور رسمی API خود را منتشر کرده است که به شرکت‌ها یا توسعه‌دهندگان سازمانی اجازه می‌دهد عوامل مبتنی بر اکوسیستم‌های مختلف نرم‌افزاری بسازند. بر اساس روش توسعه افزونه Visual Studio Code، می‌توانید به راحتی به رابط API عامل چت Visual Studio Code دسترسی پیدا کنید. ما می‌توانیم بر اساس این روند توسعه دهیم.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.fa.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.fa.png)
 
 سناریوی توسعه می‌تواند از دسترسی به API مدل‌های شخص ثالث (مانند GitHub Models، Azure Model Catalog و سرویس‌های خودساخته بر اساس مدل‌های متن‌باز) پشتیبانی کند و همچنین می‌تواند از مدل‌های gpt-35-turbo، gpt-4 و gpt-4o ارائه شده توسط GitHub Copilot استفاده کند.
 
@@ -54,7 +54,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 3. تولید کد بر اساس **Phi-3.5-vision-instruct (128k)** و تکمیل تصویر از طریق دستور **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.fa.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.fa.png)
 
 ## **مراحل مرتبط**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.fa.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.fa.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.fa.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.fa.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.fa.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.fa.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.fa.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.fa.png)
 
 می‌توانید کد نمونه را دانلود کنید: [کلیک کنید](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

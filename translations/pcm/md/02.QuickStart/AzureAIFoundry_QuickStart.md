@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 As Generative AI dey develop, we wan use one platform wey go manage different LLM and SLM, enterprise data integration, fine-tuning/RAG operations, and to evaluate different enterprise business dem after we don join LLM and SLM, make generative AI fit enter Smart applications better. [Azure AI Foundry](https://ai.azure.com) na enterprise-level generative AI application platform.
 
-![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.pcm.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93.pcm.png)
 
 With Azure AI Foundry, you fit evaluate large language model (LLM) responses and organize prompt application components with prompt flow make e perform well. The platform dey help scale make proof of concept fit turn production easy. Continuous monitoring and refinement dey support long-term success.
 

@@ -32,11 +32,11 @@ Ia mengambil kira kekangan seperti ketepatan dan kelewatan semasa mengoptimumkan
 
 Microsoft Olive adalah alat pengoptimuman model sumber terbuka yang sangat mudah digunakan yang boleh merangkumi kedua-dua penalaan halus dan rujukan dalam bidang kecerdasan buatan generatif. Ia hanya memerlukan konfigurasi ringkas, digabungkan dengan penggunaan model bahasa kecil sumber terbuka dan persekitaran runtime berkaitan (AzureML / GPU tempatan, CPU, DirectML), anda boleh menyelesaikan penalaan halus atau rujukan model melalui pengoptimuman automatik, dan mencari model terbaik untuk dikerahkan ke awan atau pada peranti edge. Membolehkan perusahaan membina model vertikal industri mereka sendiri secara on-premises dan di awan.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.ms.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.ms.png)
 
 ## Penalaan Halus Phi-3 dengan Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.ms.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.ms.png)
 
 ## Contoh Kod dan Contoh Phi-3 Olive
 Dalam contoh ini anda akan menggunakan Olive untuk:

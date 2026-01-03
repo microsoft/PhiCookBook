@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Escolhi Objective-C como método de desenvolvimento da App, porque ao usar a API C++ do ONNX Runtime para IA Generativa, o Objective-C é mais compatível. Claro que também pode completar as chamadas relacionadas através do bridging com Swift.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.pt.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.pt.png)
 
 ## **5. Copiar o modelo ONNX quantizado INT4 para o projeto da aplicação App**
 
 Precisamos importar o modelo de quantização INT4 em formato ONNX, que deve ser descarregado primeiro.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.pt.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.pt.png)
 
 Depois de descarregar, é necessário adicioná-lo à diretoria Resources do projeto no Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.pt.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.pt.png)
 
 ## **6. Adicionar a API C++ nos ViewControllers**
 
@@ -121,11 +121,11 @@ Depois de descarregar, é necessário adicioná-lo à diretoria Resources do pro
 
 - **a.** Adicione os ficheiros header C++ correspondentes ao projeto.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.pt.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.pt.png)
 
 - **b.** Inclua a biblioteca dinâmica `onnxruntime-genai` no Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.pt.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.pt.png)
 
 - **c.** Use o código de exemplos em C para testes. Pode também adicionar funcionalidades adicionais como ChatUI para mais funcionalidades.
 
@@ -162,7 +162,7 @@ Depois de descarregar, é necessário adicioná-lo à diretoria Resources do pro
 
 Depois de concluir a configuração, pode executar a aplicação para ver os resultados da inferência do modelo Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.pt.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.pt.jpg)
 
 Para mais código de exemplo e instruções detalhadas, visite o [repositório Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

@@ -41,7 +41,7 @@ Fine-tuning adalah peningkatan dari model tertentu. Ini tidak perlu dimulai dari
 
 ## **Cara menggunakan RAG**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.id.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007.id.png)
 
 Database vektor adalah kumpulan data yang disimpan dalam bentuk matematis. Database vektor memudahkan model pembelajaran mesin untuk mengingat input sebelumnya, memungkinkan pembelajaran mesin digunakan untuk mendukung kasus penggunaan seperti pencarian, rekomendasi, dan pembuatan teks. Data dapat diidentifikasi berdasarkan metrik kesamaan, bukan kecocokan tepat, sehingga model komputer dapat memahami konteks data.
 
@@ -57,7 +57,7 @@ Algoritma yang umum digunakan dalam Fine-tuning adalah Lora dan QLora. Bagaimana
 
 ### **Lora dan QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.id.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca0.id.png)
 
 LoRA (Low-Rank Adaptation) dan QLoRA (Quantized Low-Rank Adaptation) adalah teknik yang digunakan untuk fine-tuning model bahasa besar (LLM) menggunakan Parameter Efficient Fine Tuning (PEFT). Teknik PEFT dirancang untuk melatih model lebih efisien dibandingkan metode tradisional.  
 LoRA adalah teknik fine-tuning mandiri yang mengurangi penggunaan memori dengan menerapkan aproksimasi low-rank pada matriks pembaruan bobot. Ini menawarkan waktu pelatihan yang cepat dan mempertahankan performa yang mendekati metode fine-tuning tradisional.

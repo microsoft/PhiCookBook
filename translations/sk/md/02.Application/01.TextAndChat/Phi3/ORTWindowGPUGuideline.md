@@ -43,7 +43,7 @@ Dokument obsahuje pokyny na:
 
    ***Poznámka*** Ak nechcete kompilovať, tento krok môžete preskočiť
 
-![CPP](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.sk.png)
+![CPP](../../../../../../translated_images/01.42f52a2b2aedff02.sk.png)
 
 ### **4. Inštalácia NVIDIA ovládača**
 
@@ -83,7 +83,7 @@ Skopírujte NVIDIA CUDNN 9.4 súbory z priečinkov lib, bin, include do príslu�
 
    Otvorte [Notebook](../../../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) a spustite ho
 
-![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.sk.png)
+![RESULT](../../../../../../translated_images/02.b9b06996cf7255d5.sk.png)
 
 ### **8. Kompilácia ORT GenAI GPU**
 
@@ -129,7 +129,7 @@ Skopírujte NVIDIA CUDNN 9.4 súbory z priečinkov lib, bin, include do príslu�
 
    - Pomocou Windows Terminálu otvorte Developer Command Prompt pre VS 2022 a prejdite do onnxruntime-genai
 
-![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.sk.png)
+![RESULT](../../../../../../translated_images/03.b83ce473d5ff9b9b.sk.png)
 
    - Kompilujte s vaším Python prostredím
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 W tym przykładzie przeprowadzimy dostrajanie modelu Phi-3-mini-4k-instruct, aby ukończyć rozmowę między 2 osobami, korzystając z zestawu danych ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.pl.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.pl.png)
 
 Przykład pokaże, jak przeprowadzić dostrajanie za pomocą Azure ML SDK i Pythona, a następnie wdrożyć dostrojony model do punktu końcowego online do inferencji w czasie rzeczywistym.
 

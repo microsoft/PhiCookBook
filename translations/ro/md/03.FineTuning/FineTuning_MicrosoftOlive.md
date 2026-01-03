@@ -32,11 +32,11 @@ Ia în considerare constrângeri precum acuratețea și latența în timpul opti
 
 Microsoft Olive este un instrument open source foarte ușor de folosit pentru optimizarea modelelor, care acoperă atât fine-tuning-ul, cât și referința în domeniul inteligenței artificiale generative. Necesită doar o configurare simplă, combinată cu utilizarea modelelor mici open source și a mediilor de rulare aferente (AzureML / GPU local, CPU, DirectML), permițând finalizarea fine-tuning-ului sau referinței modelului prin optimizare automată și găsirea celui mai bun model pentru implementare în cloud sau pe dispozitive edge. Permite companiilor să-și construiască propriile modele verticale de industrie on-premises și în cloud.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.ro.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.ro.png)
 
 ## Fine-tuning Phi-3 cu Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.ro.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.ro.png)
 
 ## Exemplu de cod și utilizare Phi-3 Olive
 În acest exemplu vei folosi Olive pentru a:

@@ -33,33 +33,33 @@ Windows GPU కోసం ONNX Runtime GenAI అమర్చడానికి �
 
 1. Install Prompt flow VS Code Extension
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.te.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.te.png)
 
 2. After install Prompt flow VS Code Extension， click the extension，and choose **Installation dependencies** follow this guideline to install Prompt flow SDK in your env
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.te.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.te.png)
 
 3. Download [నమూనా కోడ్](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) and use VS Code to open this sample
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.te.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.te.png)
 
 4. Open **flow.dag.yaml** to choose your Python env
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.te.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.te.png)
 
    Open **chat_phi3_ort.py** to change your Phi-3.5-instruct ONNX Model location
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.te.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.te.png)
 
 5. Run your prompt flow to testing
 
 Open **flow.dag.yaml** click visual editor
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.te.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.te.png)
 
 after click this,and run it to test
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.te.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.te.png)
 
 1. You can run batch in terminal to check more result
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 You can check results in your default browser
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.te.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.te.png)
 
 ---
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) este o platformă open-source creată pentru a gestiona întregul ciclu de viață al învățării automate.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.ro.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.ro.png)
 
 MLFlow este folosit pentru a gestiona ciclul de viață al ML, incluzând experimentarea, reproducibilitatea, implementarea și un registru central de modele. În prezent, MLflow oferă patru componente.
 
@@ -22,7 +22,7 @@ MLFlow este folosit pentru a gestiona ciclul de viață al ML, incluzând experi
 
 Include funcționalități pentru urmărirea experimentelor, împachetarea codului în rulări reproducibile și partajarea și implementarea modelelor. MLFlow este integrat în Databricks și suportă o varietate de biblioteci ML, fiind astfel independent de bibliotecă. Poate fi folosit cu orice bibliotecă de învățare automată și în orice limbaj de programare, oferind o API REST și o interfață CLI pentru comoditate.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.ro.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.ro.png)
 
 Caracteristicile cheie ale MLFlow includ:
 
@@ -37,7 +37,7 @@ MLFlow susține și bucla MLOps, care include pregătirea datelor, înregistrare
 
 În acest exemplu E2E vom demonstra două abordări diferite pentru construirea unui wrapper în jurul modelului mic de limbaj Phi-3 (SLM) și apoi rularea acestuia ca model MLFlow, fie local, fie în cloud, de exemplu în Azure Machine Learning workspace.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.ro.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.ro.png)
 
 | Proiect | Descriere | Locație |
 | ------------ | ----------- | -------- |

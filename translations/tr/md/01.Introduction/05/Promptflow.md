@@ -42,7 +42,7 @@ Sürüm kontrolünü sağlar ve bilgi paylaşımını etkin hale getirir. Geliş
 
 Microsoft Prompt Flow’da değerlendirme, yapay zeka modellerinizin performansını ölçmede kritik bir rol oynar. Prompt Flow içinde değerlendirme akışlarını ve metriklerini nasıl özelleştirebileceğinizi inceleyelim:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.tr.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.tr.png)
 
 **Prompt Flow’da Değerlendirmeyi Anlamak**
 

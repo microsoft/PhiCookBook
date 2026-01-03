@@ -44,7 +44,7 @@ CO_OP_TRANSLATOR_METADATA:
 
    ***കുറിപ്പ്*** നിങ്ങൾ കമ്പൈൽ ചെയ്യാൻ ആഗ്രഹിക്കുന്നില്ലെങ്കിൽ ഈ ഘട്ടം ഒഴിവാക്കാം
 
-![സി++](../../../../../../translated_images/01.42f52a2b2aedff029e1c9beb13d2b09fcdab284ffd5fa8f3d7ac3cef5f347ad2.ml.png)
+![സി++](../../../../../../translated_images/01.42f52a2b2aedff02.ml.png)
 
 
 ### **4. Install NVIDIA Driver**
@@ -88,7 +88,7 @@ NVIDIA CUDNN 9.4 ലെ lib, bin, include ഫയലുകൾ NVIDIA CUDA 12.4 �
    [Notebook](../../../../code/09.UpdateSamples/Aug/ortgpu-phi35-instruct.ipynb) തുറന്ന് ഓടിക്കുക
 
 
-![ഫലം](../../../../../../translated_images/02.b9b06996cf7255d5e5ee19a703c4352f4a96dd7a1068b2af227eda1f3104bfa0.ml.png)
+![ഫലം](../../../../../../translated_images/02.b9b06996cf7255d5.ml.png)
 
 
 ### **8. Compile ORT GenAI GPU**
@@ -142,7 +142,7 @@ NVIDIA CUDNN 9.4 ലെ lib, bin, include ഫയലുകൾ NVIDIA CUDA 12.4 �
 
    - Windows Terminal ഉപയോഗിച്ച്, VS 2022-നുള്ള Developer Command Prompt തുറന്ന് onnxruntime-genai ഫോൾഡറിലേക്ക് പോകുക
 
-![ഫലം](../../../../../../translated_images/03.b83ce473d5ff9b9b94670a1b26fdb66a05320d534cbee2762f64e52fd12ef9c9.ml.png)
+![ഫലം](../../../../../../translated_images/03.b83ce473d5ff9b9b.ml.png)
 
    - നിങ്ങളുടെ Python പരിസ്ഥിതിയോടുകൂടി അതിനെ കമ്പൈൽ ചെയ്യുക
 

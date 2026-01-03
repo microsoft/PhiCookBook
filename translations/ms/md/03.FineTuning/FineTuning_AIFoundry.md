@@ -19,7 +19,7 @@ Mari kita terokai cara untuk menala halus model bahasa Phi-3 Mini Microsoft meng
 - **Kemudahan:** Bagaimana penalaan halus sebenarnya dilakukan – adakah saya perlu menulis kod tersuai? Adakah saya perlu menyediakan pengkomputeran sendiri?
 - **Keselamatan:** Model yang ditala halus diketahui mempunyai risiko keselamatan – adakah terdapat langkah-langkah perlindungan untuk mengelakkan kemudaratan yang tidak disengajakan?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.ms.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.ms.png)
 
 ## Persediaan untuk penalaan halus
 
@@ -71,7 +71,7 @@ Jenis fail yang disokong adalah JSON Lines. Fail dimuat naik ke stor data lalai 
 
 Azure AI Foundry membolehkan anda menyesuaikan model bahasa besar kepada dataset peribadi anda melalui proses yang dikenali sebagai penalaan halus. Penalaan halus memberikan nilai yang besar dengan membolehkan penyesuaian dan pengoptimuman untuk tugasan dan aplikasi tertentu. Ia membawa kepada prestasi yang lebih baik, kecekapan kos, pengurangan kelewatan, dan output yang disesuaikan.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.ms.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.ms.png)
 
 ### Cipta Projek Baru
 
@@ -79,14 +79,14 @@ Azure AI Foundry membolehkan anda menyesuaikan model bahasa besar kepada dataset
 
 1. Pilih **+New project** untuk mencipta projek baru dalam Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ms.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.ms.png)
 
 1. Lakukan tugasan berikut:
 
     - Nama **Hub** projek. Ia mesti nilai unik.
     - Pilih **Hub** yang ingin digunakan (cipta baru jika perlu).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ms.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.ms.png)
 
 1. Lakukan tugasan berikut untuk mencipta hab baru:
 
@@ -97,7 +97,7 @@ Azure AI Foundry membolehkan anda menyesuaikan model bahasa besar kepada dataset
     - Pilih **Sambungkan Perkhidmatan Azure AI** yang ingin digunakan (cipta baru jika perlu).
     - Pilih **Sambungkan Azure AI Search** untuk **Langkau sambungan**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.ms.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.ms.png)
 
 1. Pilih **Next**.
 1. Pilih **Create a project**.
@@ -115,15 +115,15 @@ Sebelum menala halus, kumpul atau cipta dataset yang berkaitan dengan tugasan an
 
 1. Taip *phi-3* dalam **bar carian** dan pilih model phi-3 yang anda ingin gunakan.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.ms.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.ms.png)
 
 1. Pilih **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.ms.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.ms.png)
 
 1. Masukkan **Nama model yang ditala halus**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.ms.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.ms.png)
 
 1. Pilih **Next**.
 
@@ -132,13 +132,13 @@ Sebelum menala halus, kumpul atau cipta dataset yang berkaitan dengan tugasan an
     - Pilih **jenis tugasan** kepada **Chat completion**.
     - Pilih **Data latihan** yang anda ingin gunakan. Anda boleh memuat naiknya melalui data Azure AI Foundry atau dari persekitaran tempatan anda.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.ms.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.ms.png)
 
 1. Pilih **Next**.
 
 1. Muat naik **Data pengesahan** yang anda ingin gunakan, atau anda boleh pilih **Pembahagian automatik data latihan**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.ms.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.ms.png)
 
 1. Pilih **Next**.
 
@@ -148,15 +148,15 @@ Sebelum menala halus, kumpul atau cipta dataset yang berkaitan dengan tugasan an
     - Pilih **Kadar pembelajaran** yang anda ingin gunakan.
     - Pilih **Epochs** yang anda ingin gunakan.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.ms.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.ms.png)
 
 1. Pilih **Submit** untuk memulakan proses penalaan halus.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.ms.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.ms.png)
 
 1. Setelah model anda ditala halus, status akan dipaparkan sebagai **Completed**, seperti dalam imej di bawah. Kini anda boleh melaksanakan model dan menggunakannya dalam aplikasi anda sendiri, di playground, atau dalam prompt flow. Untuk maklumat lanjut, lihat [Cara melaksanakan keluarga model bahasa kecil Phi-3 dengan Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.ms.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.ms.png)
 
 > [!NOTE]
 > Untuk maklumat lebih terperinci mengenai penalaan halus Phi-3, sila lawati [Fine-tune Phi-3 models in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

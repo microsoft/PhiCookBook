@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Nadat de adapters zijn getraind in de remote omgeving, gebruik je een eenvoudige Gradio-applicatie om met het model te communiceren.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.nl.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.nl.png)
 
 ### Azure-resources provisionen  
 Je moet de Azure-resources voor remote inferentie instellen door de opdracht `AI Toolkit: Provision Azure Container Apps for inference` uit te voeren vanuit de commandopalet. Tijdens deze setup wordt je gevraagd je Azure-abonnement en resourcegroep te selecteren.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.nl.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.nl.png)
 
 Standaard zouden het abonnement en de resourcegroep voor inferentie overeen moeten komen met die gebruikt voor het fijn-afstellen. De inferentie maakt gebruik van dezelfde Azure Container App Environment en krijgt toegang tot het model en de modeladapter die zijn opgeslagen in Azure Files, welke zijn gegenereerd tijdens de fijn-afstap.
 
@@ -24,7 +24,7 @@ Standaard zouden het abonnement en de resourcegroep voor inferentie overeen moet
 ### Deployment voor inferentie  
 Als je de inferentiecode wilt aanpassen of het inferentiemodel opnieuw wilt laden, voer dan de opdracht `AI Toolkit: Deploy for inference` uit. Dit synchroniseert je nieuwste code met ACA en herstart de replica.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.nl.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.nl.png)
 
 Na een succesvolle deployment is het model klaar voor evaluatie via deze endpoint.
 
@@ -32,7 +32,7 @@ Na een succesvolle deployment is het model klaar voor evaluatie via deze endpoin
 
 Je kunt de inference API openen door te klikken op de knop "*Go to Inference Endpoint*" die wordt weergegeven in de VSCode-notificatie. Alternatief is de web API endpoint te vinden onder `ACA_APP_ENDPOINT` in `./infra/inference.config.json` en in het outputpaneel.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.nl.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.nl.png)
 
 > **Note:** Het kan enkele minuten duren voordat de inference endpoint volledig operationeel is.
 

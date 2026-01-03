@@ -34,7 +34,7 @@ Phi Microsoft ਵਲੋਂ ਵਿਕਸਿਤ ਖੁੱਲ੍ਹਾ-ਸਰੋਤ
 2. **ਰਿਪੋਜ਼ਿਟਰੀ ਕਲੋਨ ਕਰੋ**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**Microsoft AI Discord Community ਵਿੱਚ ਸ਼ਾਮਿਲ ਹੋਵੋ ਅਤੇ ਮਾਹਿਰਾਂ ਅਤੇ ਹੋਰ ਡੈਵਲਪਰਾਂ ਨਾਲ ਮਿਲੋ**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![ਕਵਰ](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.pa.png)
+![ਕਵਰ](../../translated_images/cover.eb18d1b9605d754b.pa.png)
 
 ### 🌐 ਬਹੁ-ਭਾਸ਼ੀਏ ਸਹਾਇਤਾ
 

@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Setelah adapter dilatih di lingkungan jarak jauh, gunakan aplikasi Gradio sederhana untuk berinteraksi dengan model.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.id.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.id.png)
 
 ### Menyediakan Sumber Daya Azure  
 Anda perlu menyiapkan Sumber Daya Azure untuk inferensi jarak jauh dengan menjalankan perintah `AI Toolkit: Provision Azure Container Apps for inference` dari command palette. Selama proses ini, Anda akan diminta untuk memilih Azure Subscription dan resource group Anda.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.id.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.id.png)
    
 Secara default, subscription dan resource group untuk inferensi harus sama dengan yang digunakan saat fine-tuning. Inferensi akan menggunakan Azure Container App Environment yang sama dan mengakses model serta adapter model yang disimpan di Azure Files, yang dibuat selama langkah fine-tuning.
 
@@ -24,7 +24,7 @@ Secara default, subscription dan resource group untuk inferensi harus sama denga
 ### Deployment untuk Inferensi  
 Jika Anda ingin mengubah kode inferensi atau memuat ulang model inferensi, jalankan perintah `AI Toolkit: Deploy for inference`. Ini akan menyinkronkan kode terbaru Anda dengan ACA dan me-restart replika.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.id.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.id.png)
 
 Setelah deployment berhasil, model siap untuk dievaluasi menggunakan endpoint ini.
 
@@ -32,7 +32,7 @@ Setelah deployment berhasil, model siap untuk dievaluasi menggunakan endpoint in
 
 Anda dapat mengakses API inferensi dengan mengklik tombol "*Go to Inference Endpoint*" yang muncul di notifikasi VSCode. Alternatifnya, endpoint web API dapat ditemukan di bawah `ACA_APP_ENDPOINT` dalam file `./infra/inference.config.json` dan di panel output.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.id.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.id.png)
 
 > **Note:** Endpoint inferensi mungkin membutuhkan beberapa menit agar dapat beroperasi sepenuhnya.
 

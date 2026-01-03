@@ -73,7 +73,7 @@ Phi-3 هي سلسلة عائلية تشمل phi-3-mini وphi-3-small وphi-3-med
 
 تعتمد هذه الورشة بشكل رئيسي على نموذج Phi-3 مع الجمع بين NPU المحلي وAzure الهجين لبناء وكيل مخصص في GitHub Copilot Chat ***@PHI3*** لمساعدة مطوري المؤسسات في إكمال توليد الكود***(@PHI3 /gen)*** وتوليد الكود بناءً على الصور ***(@PHI3 /img)***.
 
-![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d095fe0b942687287803c03933d2d1d439d14e10fa1442a864d.ar.png)
+![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d09.ar.png)
 
 ### ***ملاحظة:*** 
 

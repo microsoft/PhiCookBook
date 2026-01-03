@@ -75,7 +75,7 @@ GitHub Copilotは企業のプログラミング効率を大幅に向上させて
 
 このラボでは主にPhi-3モデルを使い、ローカルNPUとAzureのハイブリッドを組み合わせて、GitHub Copilot Chat内にカスタムエージェント***@PHI3***を構築し、企業の開発者がコード生成***(@PHI3 /gen)***や画像に基づくコード生成***(@PHI3 /img)***を支援します。
 
-![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d095fe0b942687287803c03933d2d1d439d14e10fa1442a864d.ja.png)
+![PHI3](../../../../../../../translated_images/cover.1017ebc9a7c46d09.ja.png)
 
 ### ***Note:*** 
 

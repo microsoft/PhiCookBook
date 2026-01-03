@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Zvolil som Objective-C ako spôsob vývoja aplikácie, pretože pri používaní Generatívnej AI s ONNX Runtime C++ API je Objective-C lepšie kompatibilný. Samozrejme, sú možné aj volania cez Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.sk.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.sk.png)
 
 ## **5. Skopírovanie ONNX kvantizovaného INT4 modelu do projektu App aplikácie**
 
 Potrebujeme importovať INT4 kvantizačný model v ONNX formáte, ktorý je potrebné najprv stiahnuť.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.sk.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.sk.png)
 
 Po stiahnutí ho pridajte do priečinka Resources v projekte v Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.sk.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.sk.png)
 
 ## **6. Pridanie C++ API do ViewControllers**
 
@@ -121,11 +121,11 @@ Po stiahnutí ho pridajte do priečinka Resources v projekte v Xcode.
 
 - **a.** Pridajte príslušné C++ hlavičkové súbory do projektu.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.sk.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.sk.png)
 
 - **b.** Zahrňte dynamickú knižnicu `onnxruntime-genai` v Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.sk.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.sk.png)
 
 - **c.** Použite C Samples kód na testovanie. Môžete tiež pridať ďalšie funkcie ako ChatUI pre rozšírenú funkcionalitu.
 
@@ -162,7 +162,7 @@ Po stiahnutí ho pridajte do priečinka Resources v projekte v Xcode.
 
 Po dokončení nastavenia môžete aplikáciu spustiť a vidieť výsledky inferencie modelu Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.sk.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.sk.jpg)
 
 Pre viac ukážkového kódu a podrobné inštrukcie navštívte [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

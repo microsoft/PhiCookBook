@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 V tomto príklade vykonáme doladenie modelu Phi-3-mini-4k-instruct na dokončenie konverzácie medzi dvoma ľuďmi pomocou datasetu ultrachat_200k.
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.sk.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.sk.png)
 
 Príklad vám ukáže, ako vykonať doladenie pomocou Azure ML SDK a Pythonu a následne nasadiť doladený model na online endpoint pre inferenciu v reálnom čase.
 

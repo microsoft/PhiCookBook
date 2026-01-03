@@ -44,7 +44,7 @@ Fine-tuning na to improve one particular model. You no need start from di model 
 
 ## **How to use RAG**
 
-![RAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.pcm.png)
+![RAG](../../../../translated_images/rag.2014adc59e6f6007.pcm.png)
 
 
 A vector database na collection of data wey dem store in mathematical form. Vector databases dey make am easier for machine learning models to remember previous inputs, e dey enable machine learning to support use cases like search, recommendations, and text generation. Data fit dey identified based on similarity metrics rather than exact matches, which allow computer models to understand di context of di data.
@@ -62,7 +62,7 @@ Di commonly used algorithms for Fine-tuning na Lora and QLora. How to choose?
 
 ### **Lora and QLora**
 
-![LoRA](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.pcm.png)
+![LoRA](../../../../translated_images/qlora.e6446c988ee04ca0.pcm.png)
 
 
 LoRA (Low-Rank Adaptation) and QLoRA (Quantized Low-Rank Adaptation) na techniques wey dem dey use to fine-tune large language models (LLMs) using Parameter Efficient Fine Tuning (PEFT). PEFT techniques dem design make e possible to train models more efficiently than traditional methods. 

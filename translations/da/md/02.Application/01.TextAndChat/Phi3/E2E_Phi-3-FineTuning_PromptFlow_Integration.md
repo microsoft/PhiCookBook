@@ -23,7 +23,7 @@ I dette E2E eksempel vil du lære, hvordan du finjusterer Phi-3 modellen og inte
 
 Her er en oversigt over dette E2E eksempel.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.da.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.da.png)
 
 ### Indholdsfortegnelse
 
@@ -49,13 +49,13 @@ Her er en oversigt over dette E2E eksempel.
 
 1. Skriv *azure machine learning* i **søgefeltet** øverst på portal-siden og vælg **Azure Machine Learning** fra de viste muligheder.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.da.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.da.png)
 
 1. Vælg **+ Create** i navigationsmenuen.
 
 1. Vælg **New workspace** i navigationsmenuen.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.da.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.da.png)
 
 1. Udfør følgende opgaver:
 
@@ -68,7 +68,7 @@ Her er en oversigt over dette E2E eksempel.
     - Vælg den **Application insights**, der skal bruges (opret en ny, hvis nødvendigt).
     - Vælg den **Container registry**, der skal bruges (opret en ny, hvis nødvendigt).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.da.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.da.png)
 
 1. Vælg **Review + Create**.
 
@@ -92,7 +92,7 @@ I dette E2E eksempel vil du bruge *Standard_NC24ads_A100_v4 GPU* til finjusterin
     - Vælg den **Virtual machine family**, der skal bruges. For eksempel vælg **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, som inkluderer *Standard_NC24ads_A100_v4* GPU.
     - Vælg **Request quota** i navigationsmenuen.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.da.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.da.png)
 
     - På siden Request quota, indtast den **New cores limit**, du ønsker at bruge. For eksempel 24.
     - På siden Request quota, vælg **Submit** for at anmode om GPU-kvoten.
@@ -108,11 +108,11 @@ For at finjustere og implementere dine modeller skal du først oprette en User A
 
 1. Skriv *managed identities* i **søgefeltet** øverst på portal-siden og vælg **Managed Identities** fra de viste muligheder.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.da.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.da.png)
 
 1. Vælg **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.da.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.da.png)
 
 1. Udfør følgende opgaver:
 
@@ -139,7 +139,7 @@ For at finjustere og implementere dine modeller skal du først oprette en User A
     - Vælg den **Resource group**, der skal bruges.
     - Vælg **Role** til **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.da.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.da.png)
 
 1. Vælg **Save**.
 
@@ -147,7 +147,7 @@ For at finjustere og implementere dine modeller skal du først oprette en User A
 
 1. Skriv *storage accounts* i **søgefeltet** øverst på portal-siden og vælg **Storage accounts** fra de viste muligheder.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.da.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.da.png)
 
 1. Vælg den storage account, der er tilknyttet Azure Machine Learning workspace, som du oprettede. For eksempel *finetunephistorage*.
 
@@ -158,7 +158,7 @@ For at finjustere og implementere dine modeller skal du først oprette en User A
     - Vælg **+ Add** i navigationsmenuen.
     - Vælg **Add role assignment** i navigationsmenuen.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.da.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.da.png)
 
 1. På siden Add role assignment, udfør følgende opgaver:
 
@@ -171,7 +171,7 @@ For at finjustere og implementere dine modeller skal du først oprette en User A
     - På siden Select managed identities, vælg den Manage Identity, du oprettede. For eksempel *finetunephi-managedidentity*.
     - På siden Select managed identities, vælg **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.da.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.da.png)
 
 1. Vælg **Review + assign**.
 
@@ -179,7 +179,7 @@ For at finjustere og implementere dine modeller skal du først oprette en User A
 
 1. Skriv *container registries* i **søgefeltet** øverst på portal-siden og vælg **Container registries** fra de viste muligheder.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.da.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.da.png)
 
 1. Vælg den container registry, der er tilknyttet Azure Machine Learning workspace. For eksempel *finetunephicontainerregistries*
 
@@ -289,7 +289,7 @@ I denne øvelse vil du:
 
 1. Vælg *finetune-phi* mappen, som du har oprettet, og som ligger i *C:\Users\yourUserName\finetune-phi*.
 
-    ![Åbn projektmappe.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.da.png)
+    ![Åbn projektmappe.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.da.png)
 
 1. I venstre panel i Visual Studio Code, højreklik og vælg **New File** for at oprette en ny fil med navnet *download_dataset.py*.
 
@@ -297,7 +297,7 @@ I denne øvelse vil du:
 
 1. I venstre panel i Visual Studio Code, højreklik og vælg **New File** for at oprette en ny fil med navnet *deploy_model.py*.
 
-    ![Opret ny fil.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.da.png)
+    ![Opret ny fil.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.da.png)
 
 1. I venstre panel i Visual Studio Code, højreklik og vælg **New Folder** for at oprette en ny mappe med navnet *finetuning_dir*.
 
@@ -373,28 +373,28 @@ I denne øvelse vil du:
     - Vælg den Azure Subscription, du bruger.
     - Kopiér og indsæt dit Subscription ID i *config.py* filen.
 
-    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.da.png)
+    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.da.png)
 
 1. Udfør følgende for at tilføje Azure Workspace Navn:
 
     - Gå til den Azure Machine Learning-ressource, du har oprettet.
     - Kopiér og indsæt dit kontonavn i *config.py* filen.
 
-    ![Find Azure Machine Learning navn.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.da.png)
+    ![Find Azure Machine Learning navn.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.da.png)
 
 1. Udfør følgende for at tilføje Azure Resource Group Navn:
 
     - Gå til den Azure Machine Learning-ressource, du har oprettet.
     - Kopiér og indsæt dit Azure Resource Group Navn i *config.py* filen.
 
-    ![Find resource group navn.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.da.png)
+    ![Find resource group navn.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.da.png)
 
 2. Udfør følgende for at tilføje Azure Managed Identity navn:
 
     - Gå til Managed Identities ressourcen, du har oprettet.
     - Kopiér og indsæt dit Azure Managed Identity navn i *config.py* filen.
 
-    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.da.png)
+    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.da.png)
 
 ### Forbered datasæt til finjustering
 
@@ -508,7 +508,7 @@ Du skal opsætte Azure CLI for at autentificere dit miljø. Azure CLI giver dig 
 
 1. Vælg den Azure-subscription, du vil bruge.
 
-    ![Find resource group navn.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.da.png)
+    ![Find resource group navn.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.da.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ Ved at køre *setup_ml.py* starter du finjusteringsprocessen i Azure Machine Lea
 
 1. I denne øvelse har du med succes finjusteret Phi-3 modellen ved hjælp af Azure Machine Learning. Ved at køre *setup_ml.py* scriptet har du opsat Azure Machine Learning-miljøet og startet finjusteringsprocessen defineret i *fine_tune.py* filen. Bemærk, at finjusteringsprocessen kan tage en betydelig tid. Efter at have kørt `python setup_ml.py` kommandoen, skal du vente på, at processen bliver færdig. Du kan følge status for finjusteringsjobbet via linket, der vises i terminalen til Azure Machine Learning-portalen.
 
-    ![Se finjusteringsjob.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.da.png)
+    ![Se finjusteringsjob.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.da.png)
 
 ### Implementer den finjusterede model
 
@@ -1080,11 +1080,11 @@ Når du kører *deploy_model.py* filen, automatiseres hele implementeringsproces
 
 1. Vælg **Endpoints** i venstre sidepanel.
 
-    ![Vælg endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.da.png)
+    ![Vælg endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.da.png)
 
 2. Vælg det endpoint, du har oprettet.
 
-    ![Vælg endpoints, som du har oprettet.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.da.png)
+    ![Vælg endpoints, som du har oprettet.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.da.png)
 
 3. På denne side kan du administrere de endpoints, der blev oprettet under udrulningsprocessen.
 
@@ -1103,7 +1103,7 @@ Efter du med succes har udrullet din finjusterede model, kan du nu integrere den
 1. Kopiér og indsæt din **REST endpoint** i *config.py*-filen, og erstat `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` med din **REST endpoint**.
 1. Kopiér og indsæt din **Primary key** i *config.py*-filen, og erstat `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` med din **Primary key**.
 
-    ![Kopiér api-nøgle og endpoint URI.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.da.png)
+    ![Kopiér api-nøgle og endpoint URI.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.da.png)
 
 #### Tilføj kode til *flow.dag.yml*-filen
 
@@ -1212,7 +1212,7 @@ Efter du med succes har udrullet din finjusterede model, kan du nu integrere den
 
 1. Her er et eksempel på resultaterne: Nu kan du chatte med din tilpassede Phi-3 model. Det anbefales at stille spørgsmål baseret på de data, der blev brugt til finjusteringen.
 
-    ![Eksempel på Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.da.png)
+    ![Eksempel på Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.da.png)
 
 **Ansvarsfraskrivelse**:  
 Dette dokument er blevet oversat ved hjælp af AI-oversættelsestjenesten [Co-op Translator](https://github.com/Azure/co-op-translator). Selvom vi bestræber os på nøjagtighed, bedes du være opmærksom på, at automatiserede oversættelser kan indeholde fejl eller unøjagtigheder. Det oprindelige dokument på dets oprindelige sprog bør betragtes som den autoritative kilde. For kritisk information anbefales professionel menneskelig oversættelse. Vi påtager os intet ansvar for misforståelser eller fejltolkninger, der opstår som følge af brugen af denne oversættelse.

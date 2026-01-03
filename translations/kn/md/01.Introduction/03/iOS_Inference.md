@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ನಾನು ಅಪ್ಲಿಕೇಶನ್ ಅಭಿವೃದ್ಧಿಯ әдіಗಾಗಿಯೇ Objective-C ಅನ್ನು ಆಯ್ಕೆಮಾಡಿದೆ, ಏಕೆಂದರೆ ONNX Runtime C++ API ನೊಂದಿಗೆ ಜನರೆಟಿವ್ AI ಅನ್ನು ಬಳಸುವಾಗ Objective-C ಉತ್ತಮ ಹೊಂದಾಣಿಕೆಯನ್ನು ನೀಡುತ್ತದೆ. ಖಚಿತವಾಗಿ, ನೀವು Swift ಬ್ರಿಡ್ಜಿಂಗ್ ಮೂಲಕ ಸಂಬಂಧಿತ ಕರೆಗಳನ್ನು ಸಹ ಪೂರ್ಣಗೊಳಿಸಬಹುದು.
 
-![Xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.kn.png)
+![Xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.kn.png)
 
 ## **5. ONNX ಕ್ವಾಂಟೈಜ್ಡ್ INT4 ಮಾದರಿಯನ್ನು App ಅಪ್ಲಿಕೇಶನ್ ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಕಾಪಿ ಮಾಡುವದು**
 
 ನಾವು ONNX ಫಾರ್ಮ್ಯಾಟ್‌ನ INT4 ಕ್ವಾಂಟೈಜೆಶನ್ ಮಾದರಿಯನ್ನು ಆಮದು ಮಾಡಬೇಕಾಗುತ್ತದೆ, ಅದನ್ನು ಮೊದಲು ಡೌನ್‌ಲೋಡ್ ಮಾಡಬೇಕು
 
-![HF](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.kn.png)
+![HF](../../../../../translated_images/hf.6b8504fd88ee48dd.kn.png)
 
 ಡೌನ್‌ಲೋಡ್ ಮಾಡಿದ ನಂತರ, ಅದನ್ನು Xcode ಪ್ರಾಜೆಕ್ಟಿನ Resources ಡೈರೆಕ್ಟರಿಯಲ್ಲಿ ಸೇರಿಸಬೇಕು.
 
-![ಮಾದರಿ](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.kn.png)
+![ಮಾದರಿ](../../../../../translated_images/model.3b879b14e0be877d.kn.png)
 
 ## **6. ViewControllers ನಲ್ಲಿ C++ API ಸೇರಿಸುವುದು**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** ಸಂಬಂಧಿತ C++ ಹೆಡರ್ ಫೈಲ್‌ಗಳನ್ನು ಪ್ರಾಜೆಕ್ಟ್‌ಗೆ ಸೇರಿಸಿ.
 
-  ![ಹೆಡರ್ ಫೈಲ್](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.kn.png)
+  ![ಹೆಡರ್ ಫೈಲ್](../../../../../translated_images/head.64cad021ce70a333.kn.png)
 
 - **b.** `onnxruntime-genai` ಡೈನಾಮಿಕ್ ಲೈಬ್ರೆರಿಯನ್ನು Xcode ನಲ್ಲಿ ಸೇರಿಸಿ.
 
-  ![ಲೈಬ್ರರಿ](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.kn.png)
+  ![ಲೈಬ್ರರಿ](../../../../../translated_images/lib.a4209b9f21ddf344.kn.png)
 
 - **c.** ಪರೀಕ್ಷೆಗಾಗಿ C Samples ಕೋಡ್ ಅನ್ನು ಬಳಸಿ. ಹೆಚ್ಚಿನ ಕಾರ್ಯಕ್ಷಮತೆಗಾಗಿ ChatUI ಮುಂತಾದ ಹೆಚ್ಚುವರಿ ವೈಶಿಷ್ಟ್ಯಗಳನ್ನು ಕೂಡ ಸೇರಿಸಬಹುದು.
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ಸೆಟ್‌ಅಪ್ ಪೂರ್ಣವಾದ ನಂತರ, Phi-3-mini ಮಾದರಿ ಇನ್‌ಫೆರನ್ಸ್ ಫಲಿತಾಂಶಗಳನ್ನು ನೋಡಲು ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಚಾಲನೆ ಮಾಡಬಹುದು.
 
-![ಚಲಾಯಿಸಿದ ಫಲಿತಾಂಶ](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.kn.jpg)
+![ಚಲಾಯಿಸಿದ ಫಲಿತಾಂಶ](../../../../../translated_images/result.326a947a6a2b9c51.kn.jpg)
 
 ಹೆಚ್ಚಿನ ಉದಾಹರಣಾ ಕೋಡ್ ಮತ್ತು ವಿವರವಾದ ಸೂಚನೆಗಳಿಗಾಗಿ, [Phi-3 Mini Samples ರೆಪೊಸಿಟರಿ](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios) ಅನ್ನು ಭೇಟಿ ಮಾಡಿ.
 

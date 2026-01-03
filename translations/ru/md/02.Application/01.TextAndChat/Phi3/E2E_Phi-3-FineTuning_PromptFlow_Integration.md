@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ниже представлен общий обзор этого примера.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.ru.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.ru.png)
 
 ### Содержание
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введите *azure machine learning* в **строке поиска** в верхней части портала и выберите **Azure Machine Learning** из появившихся вариантов.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.ru.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.ru.png)
 
 1. Выберите **+ Create** в навигационном меню.
 
 1. Выберите **New workspace** в навигационном меню.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.ru.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.ru.png)
 
 1. Выполните следующие действия:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите Application Insights для использования (создайте новое, если нужно).
     - Выберите реестр контейнеров (**Container registry**) для использования (создайте новый, если нужно).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.ru.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.ru.png)
 
 1. Нажмите **Review + Create**.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите семейство виртуальных машин (**Virtual machine family**), например, **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, которое включает GPU *Standard_NC24ads_A100_v4*.
     - Выберите **Request quota** в навигационном меню.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.ru.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.ru.png)
 
     - На странице запроса квоты укажите желаемый **New cores limit**, например, 24.
     - Нажмите **Submit** для отправки запроса на квоту GPU.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введите *managed identities* в **строке поиска** в верхней части портала и выберите **Managed Identities** из появившихся вариантов.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.ru.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.ru.png)
 
 1. Нажмите **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.ru.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.ru.png)
 
 1. Выполните следующие действия:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите **Resource group** для использования.
     - В поле **Role** выберите **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.ru.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.ru.png)
 
 1. Нажмите **Save**.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введите *storage accounts* в **строке поиска** в верхней части портала и выберите **Storage accounts** из появившихся вариантов.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.ru.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.ru.png)
 
 1. Выберите учетную запись хранения, связанную с вашим рабочим пространством Azure Machine Learning. Например, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Нажмите **+ Add** в навигационном меню.
     - Выберите **Add role assignment**.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.ru.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.ru.png)
 
 1. На странице добавления назначения роли выполните следующие действия:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите созданную вами Managed Identity, например, *finetunephi-managedidentity*.
     - Нажмите **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.ru.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.ru.png)
 
 1. Нажмите **Review + assign**.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Введите *container registries* в **строке поиска** в верхней части портала и выберите **Container registries** из появившихся вариантов.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.ru.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.ru.png)
 
 1. Выберите реестр контейнеров, связанный с вашим рабочим пространством Azure Machine Learning. Например, *finetunephicontainerregistries*.
 
@@ -289,7 +289,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите папку *finetune-phi*, которую вы создали, расположенную по пути *C:\Users\yourUserName\finetune-phi*.
 
-    ![Открыть папку проекта.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.ru.png)
+    ![Открыть папку проекта.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.ru.png)
 
 1. В левой панели Visual Studio Code кликните правой кнопкой мыши и выберите **New File**, чтобы создать новый файл с именем *download_dataset.py*.
 
@@ -297,7 +297,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. В левой панели Visual Studio Code кликните правой кнопкой мыши и выберите **New File**, чтобы создать новый файл с именем *deploy_model.py*.
 
-    ![Создать новый файл.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.ru.png)
+    ![Создать новый файл.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.ru.png)
 
 1. В левой панели Visual Studio Code кликните правой кнопкой мыши и выберите **New Folder**, чтобы создать новую папку с именем *finetuning_dir*.
 
@@ -373,28 +373,28 @@ CO_OP_TRANSLATOR_METADATA:
     - Выберите используемую подписку Azure.
     - Скопируйте и вставьте ваш Subscription ID в файл *config.py*.
 
-    ![Найти subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.ru.png)
+    ![Найти subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ru.png)
 
 1. Выполните следующие действия, чтобы добавить имя Azure Workspace:
 
     - Перейдите к ресурсу Azure Machine Learning, который вы создали.
     - Скопируйте и вставьте имя вашего рабочего пространства в файл *config.py*.
 
-    ![Найти имя Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.ru.png)
+    ![Найти имя Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.ru.png)
 
 1. Выполните следующие действия, чтобы добавить имя Azure Resource Group:
 
     - Перейдите к ресурсу Azure Machine Learning, который вы создали.
     - Скопируйте и вставьте имя вашей группы ресурсов в файл *config.py*.
 
-    ![Найти имя группы ресурсов.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.ru.png)
+    ![Найти имя группы ресурсов.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.ru.png)
 
 2. Выполните следующие действия, чтобы добавить имя Azure Managed Identity:
 
     - Перейдите к ресурсу Managed Identities, который вы создали.
     - Скопируйте и вставьте имя вашей управляемой идентичности в файл *config.py*.
 
-    ![Найти UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.ru.png)
+    ![Найти UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.ru.png)
 
 ### Подготовка набора данных для дообучения
 
@@ -508,7 +508,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите подписку Azure для использования.
 
-    ![Найти имя группы ресурсов.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.ru.png)
+    ![Найти имя группы ресурсов.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.ru.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. В этом упражнении вы успешно дообучили модель Phi-3 с помощью Azure Machine Learning. Запустив скрипт *setup_ml.py*, вы настроили среду Azure Machine Learning и инициировали процесс дообучения, определённый в файле *fine_tune.py*. Обратите внимание, что процесс дообучения может занять значительное время. После запуска команды `python setup_ml.py` необходимо дождаться завершения процесса. Вы можете отслеживать статус задания по ссылке, указанной в терминале, которая ведёт в портал Azure Machine Learning.
 
-    ![Просмотр задания дообучения.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.ru.png)
+    ![Просмотр задания дообучения.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ru.png)
 
 ### Развертывание дообученной модели
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Выберите **Endpoints** в левой панели.
 
-    ![Выберите endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.ru.png)
+    ![Выберите endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ru.png)
 
 2. Выберите созданную вами конечную точку.
 
-    ![Выберите созданные конечные точки.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.ru.png)
+    ![Выберите созданные конечные точки.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ru.png)
 
 3. На этой странице вы можете управлять конечными точками, созданными в процессе развертывания.
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. Скопируйте и вставьте ваш **REST endpoint** в файл *config.py*, заменив `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` на ваш **REST endpoint**.
 1. Скопируйте и вставьте ваш **Primary key** в файл *config.py*, заменив `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` на ваш **Primary key**.
 
-    ![Скопируйте api ключ и URI конечной точки.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.ru.png)
+    ![Скопируйте api ключ и URI конечной точки.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ru.png)
 
 #### Добавление кода в файл *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Вот пример результатов: теперь вы можете общаться с вашей кастомной моделью Phi-3. Рекомендуется задавать вопросы, основанные на данных, использованных для дообучения.
 
-    ![Пример Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.ru.png)
+    ![Пример Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ru.png)
 
 **Отказ от ответственности**:  
 Этот документ был переведен с помощью сервиса автоматического перевода [Co-op Translator](https://github.com/Azure/co-op-translator). Несмотря на наши усилия по обеспечению точности, просим учитывать, что автоматический перевод может содержать ошибки или неточности. Оригинальный документ на его исходном языке следует считать авторитетным источником. Для получения критически важной информации рекомендуется обращаться к профессиональному переводу, выполненному человеком. Мы не несем ответственности за любые недоразумения или неправильные толкования, возникшие в результате использования данного перевода.

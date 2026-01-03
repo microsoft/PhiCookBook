@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ഇത് ഈ E2E സാമ്പിളിന്റെ അവലോകനമാണ്.
 
-![Phi-3 ഫൈൻ-ട്യൂണിംഗ്_PromptFlow_ഇന്റഗ്രേഷൻ അവലോകനം](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.ml.png)
+![Phi-3 ഫൈൻ-ട്യൂണിംഗ്_PromptFlow_ഇന്റഗ്രേഷൻ അവലോകനം](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.ml.png)
 
 ### ഉള്ളടക്ക പട്ടിക
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. പോർട്ടൽ പേജിന്റെ മുകളിൽ 있는 **search bar**-ൽ *azure machine learning* എന്ന് টাইപ്പ് ചെയ്ത് കാണുന്ന ഓപ്ഷനുകളിൽ നിന്ന് **Azure Machine Learning** തിരഞ്ഞെടുക്കുക.
 
-    ![azure machine learning ടൈപ്പ് ചെയ്യുക](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.ml.png)
+    ![azure machine learning ടൈപ്പ് ചെയ്യുക](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.ml.png)
 
 1. നാവിഗേഷൻ മෙන്യുവിൽ നിന്ന് **+ Create** തിരഞ്ഞെടുക്കുക.
 
 1. നാവിഗേഷൻ മෙන്യുവിൽ നിന്ന് **New workspace** തിരഞ്ഞെടുക്കുക.
 
-    ![പുതിയ വേർക്ക്സ്പേസ് തിരഞ്ഞെടുക്കുക](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.ml.png)
+    ![പുതിയ വേർക്ക്സ്പേസ് തിരഞ്ഞെടുക്കുക](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.ml.png)
 
 1. താഴെ കാണുന്ന പ്രവർത്തനങ്ങൾ നടത്തുക:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ഉപയോഗിക്കാൻ **Application insights** തിരഞ്ഞെടുക്കുക (ആവശ്യമുള്ള പക്ഷം പുതിയതുണ്ടാക്കുക).
     - ഉപയോഗിക്കാൻ **Container registry** തിരഞ്ഞെടുക്കുക (ആവശ്യമുള്ള പക്ഷം പുതിയതുണ്ടാക്കുക).
 
-    ![AZML പൂരിപ്പിക്കുക.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.ml.png)
+    ![AZML പൂരിപ്പിക്കുക.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.ml.png)
 
 1. **Review + Create** തിരഞ്ഞെടുക്കുക.
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ഉപയോഗിക്കാൻ ഉദ്ദേശിക്കുന്ന **Virtual machine family** തിരഞ്ഞെടുക്കുക. ഉദാഹരണത്തിന്, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* തിരഞ്ഞെടുക്കുക, ഇതിൽ *Standard_NC24ads_A100_v4* GPU ഉൾപ്പെടുന്നു.
     - നാവിഗേഷൻ മനെുയിൽ നിന്ന് **Request quota** തിരഞ്ഞെടുക്കുക.
 
-        ![കോട്ട് അഭ്യർത്ഥിക്കുക.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.ml.png)
+        ![കോട്ട് അഭ്യർത്ഥിക്കുക.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.ml.png)
 
     - Request quota പേജിന്റെ ഉള്ളിൽ നിങ്ങൾ ഉപയോഗിക്കാൻ ആഗ്രഹിക്കുന്ന **New cores limit** നൽകുക. ഉദാഹരണത്തിന്, 24.
     - Request quota പേജിന്റെ ഉള്ളിൽ **Submit** തിരഞ്ഞെടുക്കുക GPU കോട്ട് അഭ്യർത്ഥിക്കാൻ.
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. പോർട്ടൽ പേജിന്റെ മുകളിൽ 있는 **search bar**-ൽ *managed identities* എന്ന് ടൈപ്പ് ചെയ്ത് കാണുന്ന ഓപ്ഷനുകളിൽ നിന്ന് **Managed Identities** തിരഞ്ഞെടുക്കുക.
 
-    ![managed identities ടൈപ്പ് ചെയ്യുക.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.ml.png)
+    ![managed identities ടൈപ്പ് ചെയ്യുക.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.ml.png)
 
 1. **+ Create** തിരഞ്ഞെടുക്കുക.
 
-    ![Create തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.ml.png)
+    ![Create തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.ml.png)
 
 1. താഴെ കാണുന്ന പ്രവർത്തനങ്ങൾ ചെയ്യുക:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ഉപയോഗിക്കാൻ **Resource group** തിരഞ്ഞെടുക്കുക.
     - **Role** ആയി **Contributor** തിരഞ്ഞെടുക്കുക.
 
-    ![Contributor റോൾ പൂരിപ്പിക്കുക.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.ml.png)
+    ![Contributor റോൾ പൂരിപ്പിക്കുക.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.ml.png)
 
 1. **Save** തിരഞ്ഞെടുക്കുക.
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. പോർട്ടൽ പേജിന്റെ മുകളിൽ 있는 **search bar**-ൽ *storage accounts* എന്ന് ടൈപ്പ് ചെയ്ത് കാണുന്ന ഓപ്ഷനുകളിൽ നിന്ന് **Storage accounts** തിരഞ്ഞെടുക്കുക.
 
-    ![storage accounts ടൈപ്പ് ചെയ്യുക.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.ml.png)
+    ![storage accounts ടൈപ്പ് ചെയ്യുക.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.ml.png)
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച Azure Machine Learning വേർക്ക്സ്പേസുമായി ബന്ധപ്പെട്ട സ്റ്റോറേജ് അക്കൗണ്ട് തിരഞ്ഞെടുക്കുക. ഉദാഹരണത്തിന്, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - നാവിഗേഷൻ മെയ്നുവിൽ നിന്ന് **+ Add** തിരഞ്ഞെടുക്കുക.
     - നാവിഗേഷൻ മെയ്നുവിൽ നിന്ന് **Add role assignment** തിരഞ്ഞെടുക്കുക.
 
-    ![റോൾ ചേർക്കുക.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.ml.png)
+    ![റോൾ ചേർക്കുക.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.ml.png)
 
 1. Add role assignment പേജിന്റെ ഉള്ളിൽ താഴെ കാണുന്ന പ്രവർത്തനങ്ങൾ നിർവഹിക്കുക:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Select managed identities പേജിൽ നിങ്ങൾ സൃഷ്ടിച്ച Manage Identity തിരഞ്ഞെടുക്കുക. ഉദാഹരണത്തിന്, *finetunephi-managedidentity*.
     - Select managed identities പേജിൽ **Select** തിരഞ്ഞടുക്കുക.
 
-    ![Managed identity തിരഞ്ഞടുക്കുക.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.ml.png)
+    ![Managed identity തിരഞ്ഞടുക്കുക.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.ml.png)
 
 1. **Review + assign** തിരഞ്ഞെടുക്കുക.
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. പോർട്ടൽ പേജിന്റെ മുകളിൽ 있는 **search bar**-ൽ *container registries* എന്ന് ടൈപ്പ് ചെയ്ത് കാണുന്ന ഓപ്ഷനുകളിൽ നിന്ന് **Container registries** തിരഞ്ഞെടുക്കുക.
 
-    ![container registries ടൈപ്പ് ചെയ്യുക.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.ml.png)
+    ![container registries ടൈപ്പ് ചെയ്യുക.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.ml.png)
 
 1. Azure Machine Learning വേർക്ക്സ്പേസുമായി ബന്ധപ്പെട്ട container registry തിരഞ്ഞെടുക്കുക. ഉദാഹരണത്തിന്, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. നിങ്ങൾ സൃഷ്ടിച്ച *finetune-phi* ഫോൾഡർ തിരഞ്ഞെടുക്കുക, ഇത് സ്ഥിതിചെയ്യുന്നു *C:\Users\yourUserName\finetune-phi*.
 
-    ![പ്രോജക്ട് ഫോൾഡർ തുറക്കുക.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.ml.png)
+    ![പ്രോജക്ട് ഫോൾഡർ തുറക്കുക.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.ml.png)
 
 1. Visual Studio Code-ന്റെ ഇടതു പേനിലിൽ, റൈറ്റ്-ക്ലിക്ക് ചെയ്ത് **New File** തെരഞ്ഞെടുക്കുകയും *download_dataset.py* എന്ന പേരിൽ ഒരു പുതിയ ഫയൽ സൃഷ്ടിക്കുകയും ചെയ്യുക.
 
@@ -298,7 +298,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Visual Studio Code-ന്റെ ഇടതു പേനിലിൽ, റൈറ്റ്-ക്ലിക്ക് ചെയ്ത് **New File** തെരഞ്ഞെടുത്ത് *deploy_model.py* എന്ന പേരിൽ ഒരു പുതിയ ഫയൽ സൃഷ്ടിക്കുക.
 
-    ![പുതിയ ഫയൽ സൃഷ്ടിക്കുക.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.ml.png)
+    ![പുതിയ ഫയൽ സൃഷ്ടിക്കുക.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.ml.png)
 
 1. Visual Studio Code-ന്റെ ഇടതു പേനിലിൽ, റൈറ്റ്-ക്ലിക്ക് ചെയ്ത് **New Folder** തെരഞ്ഞെടുത്ത് *finetuning_dir* എന്ന പേരിൽ പുതിയ ഒരു ഫോൾഡർ സൃഷ്ടിക്കുക.
 
@@ -374,28 +374,28 @@ CO_OP_TRANSLATOR_METADATA:
     - നിങ്ങൾ ഇപ്പോൾ ഉപയോഗിക്കുന്ന Azure Subscription തിരഞ്ഞെടുക്കുക.
     - നിങ്ങളുടെ Subscription ID ಅನ್ನು *config.py* ഫയലിലേക്ക് കോപ്പി ചെയ്ത് പേസ്റ്റ് ചെയ്യുക.
 
-    ![Subscription id കണ്ടെത്തുക.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.ml.png)
+    ![Subscription id കണ്ടെത്തുക.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ml.png)
 
 1. Azure Workspace Name ചേർക്കാൻ താഴെയുള്ള നടപടിക്രമങ്ങൾ ചെയ്യുക:
 
     - നിങ്ങൾ സൃഷ്ടിച്ച Azure Machine Learning റിസോഴ്സ് തുറക്കുക.
     - നിങ്ങളുടെ അക്കൗണ്ട് പേര് *config.py* ഫയലിലേക്ക് കോപ്പി ചെയ്ത് പേസ്റ്റുചെയ്യുക.
 
-    ![Azure Machine Learning പേര് കണ്ടെത്തുക.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.ml.png)
+    ![Azure Machine Learning പേര് കണ്ടെത്തുക.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.ml.png)
 
 1. Azure Resource Group Name ചേർക്കാൻ താഴെയുള്ള നടപടിക്രമങ്ങൾ ചെയ്യുക:
 
     - നിങ്ങൾ സൃഷ്ടിച്ച Azure Machine Learning റിസോഴ്സ് തുറക്കുക.
     - നിങ്ങളുടെ Azure Resource Group Name *config.py* ഫയലിലേക്ക് കോപ്പി ചെയ്ത് പേസ്റ്റുചെയ്യുക.
 
-    ![Resource group പേര് കണ്ടെത്തുക.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.ml.png)
+    ![Resource group പേര് കണ്ടെത്തുക.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.ml.png)
 
 2. Azure Managed Identity name ചേർക്കാൻ താഴെയുള്ള നടപടിക്രമങ്ങൾ ചെയ്യുക:
 
     - നിങ്ങൾ സൃഷ്ടിച്ച Managed Identities റിസോഴ്സ് തിരയുക.
     - നിങ്ങളുടെ Azure Managed Identity name *config.py* ഫയലിലേക്ക് കോപ്പി ചെയ്ത് പേസ്റ്റുചെയ്യുക.
 
-    ![UAI കണ്ടെത്തുക.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.ml.png)
+    ![UAI കണ്ടെത്തുക.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.ml.png)
 
 ### ഫൈൻ-ട്യൂണിംഗിനായി ഡാറ്റാസെറ്റ് തയ്യാറാക്കുക
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. നിങ്ങളുടെ ഉപയോഗിക്കാനുദ്ദേശമുള്ള Azure subscription തിരഞ്ഞെടുക്കുക.
 
-    ![Login using Azure CLI.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.ml.png)
+    ![Login using Azure CLI.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.ml.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ഈ അഭ്യാസത്തിൽ, നിങ്ങൾ വിജയകരമായി Phi-3 മോഡൽ Azure Machine Learning ഉപയോഗിച്ച് ഫൈൻ-ട്യൂൺ ചെയ്തു. *setup_ml.py* സ്ക്രിപ്റ്റ് പ്രവർത്തിപ്പിക്കുന്നത് കൊണ്ട് Azure Machine Learning പരിസ്ഥിതി സജ്ജീകരിക്കുകയും *fine_tune.py* ഫയലിൽ നിർവചിച്ച ഫൈൻ-ട്യൂണിംഗ് പ്രക്രിയ ആരംഭിപ്പിക്കുകയും ചെയ്തു. ദയവായി ശ്രദ്ധിക്കുക, ഫൈൻ-ട്യൂണിംഗ് പ്രക്രിയ 상당ം സമയം എടുത്തേക്കാം. `python setup_ml.py` കമാൻഡ് പ്രവർത്തിപ്പിച്ചതിന് ശേഷം പ്രക്രിയ പൂർത്തിയായതെന്ന് വരെയും കാത്തിരിക്കണം. ഫൈൻ-ട്യൂണിംഗ് ജോബിന്റെ നില ടെർമിനൽ നൽകിയ ലിങ്കിലൂടെ Azure Machine Learning പോർട്ടലിൽ വെച്ച് നിരീക്ഷിക്കാം.
 
-    ![ഫൈൻ-ട്യൂണിംഗ് ജോബ് കാണുക.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.ml.png)
+    ![ഫൈൻ-ട്യൂണിംഗ് ജോബ് കാണുക.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ml.png)
 
 ### ഫൈൻ-ട്യൂൺ ചെയ്ത മോഡൽ ഡിപ്പ്ലോയ് ചെയ്യുക
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ഇടതുവശത്തെ ടാബിൽ നിന്നും **Endpoints** തിരഞ്ഞെടുക്കുക.
 
-    ![എൻഡ്‌പോയിന്റുകൾ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.ml.png)
+    ![എൻഡ്‌പോയിന്റുകൾ തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ml.png)
 
 2. നിങ്ങൾ സൃഷ്ടിച്ച എൻഡ്‌പോയിന്റ് തിരഞ്ഞെടുക്കുക.
 
-    ![നിങ്ങൾ സൃഷ്ടിച്ച എൻഡ്‌പോയിന്റ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.ml.png)
+    ![നിങ്ങൾ സൃഷ്ടിച്ച എൻഡ്‌പോയിന്റ് തിരഞ്ഞെടുക്കുക.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ml.png)
 
 3. ഈ പേജിൽ, ഡിപ്ലോയ്മെന്റ് പ്രക്രിയയിൽ സൃഷ്ടിച്ച എൻഡ്‌പോയിന്റുകൾ നിങ്ങൾ മാനേജ് ചെയ്യാൻ കഴിയും.
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. നിങ്ങളുടെ **REST endpoint** *config.py* ഫയലിലേക്ക് കോപ്പി ചെയ്ത് പേസ്റ്റ് ചെയ്യുക, `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` എന്നതിനെ നിങ്ങളുടെ **REST endpoint**-നായി മാറ്റി.
 1. നിങ്ങളുടെ **Primary key** *config.py* ഫയലിൽ കോപ്പി ചെയ്ത് പേസ്റ്റ് ചെയ്യുക, `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` എന്നതിനെ നിങ്ങളുടെ **Primary key**-നായി മാറ്റി.
 
-    ![API കീയും എൻഡ്‌പോയിന്റ് URIയും കോപ്പി ചെയ്യുക.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.ml.png)
+    ![API കീയും എൻഡ്‌പോയിന്റ് URIയും കോപ്പി ചെയ്യുക.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ml.png)
 
 #### *flow.dag.yml* ഫയലിലേക്ക് കോഡ് ചേർക്കുക
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ഫലങ്ങളുടെ ഒരു ഉദാഹരണം ഇവിടെ: ഇപ്പോൾ നിങ്ങൾ നിങ്ങളുടെ കസ്റ്റം Phi-3 മോഡലുമായി ചാറ്റ് ചെയ്യാൻ കഴിയും. ഫൈൻ-ട്യൂണിംഗിനായി ഉപയോഗിച്ച ഡേറ്റാ അടിസ്ഥാനമാക്കി ചോദ്യങ്ങൾ ചോദിക്കുന്നത് ശുപാർശ ചെയ്യപ്പെടുന്നു.
 
-    ![Prompt flow ഉദാഹരണം.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.ml.png)
+    ![Prompt flow ഉദാഹരണം.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ml.png)
 
 ---
 

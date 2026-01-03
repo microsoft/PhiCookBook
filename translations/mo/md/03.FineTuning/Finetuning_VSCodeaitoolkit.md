@@ -16,7 +16,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [安裝 AI Toolkit for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
 
-![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dced01c8815a5a4d4b139e6640cc19b1c7adb4eea15b5403e6.mo.png)
+![AIToolkit FineTuning](../../../../translated_images/Aitoolkit.7157953df04812dc.mo.png)
 
 **[Private Preview]** 一鍵部署 Azure Container Apps，在雲端執行模型微調和推理。
 

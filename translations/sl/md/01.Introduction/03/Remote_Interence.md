@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ko so adapterji usposobljeni v oddaljenem okolju, uporabite preprosto aplikacijo Gradio za interakcijo z modelom.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.sl.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.sl.png)
 
 ### Priprava Azure virov
 Za oddaljeno sklepanje morate nastaviti Azure vire z izvajanjem ukaza `AI Toolkit: Provision Azure Container Apps for inference` iz ukazne palete. Med tem postopkom boste morali izbrati svojo Azure naročnino in skupino virov.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.sl.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.sl.png)
    
 Privzeto naj bi bila naročnina in skupina virov za sklepanje enaka tistima, ki sta bili uporabljeni za dodatno prilagajanje. Sklepanje bo uporabljalo isto okolje Azure Container App in dostopalo do modela ter adapterja modela, shranjenih v Azure Files, ki so bili ustvarjeni med korakom dodatnega prilagajanja.
 
@@ -24,7 +24,7 @@ Privzeto naj bi bila naročnina in skupina virov za sklepanje enaka tistima, ki 
 ### Namestitev za sklepanje  
 Če želite spremeniti kodo za sklepanje ali ponovno naložiti model za sklepanje, zaženite ukaz `AI Toolkit: Deploy for inference`. Ta ukaz bo sinhroniziral vašo najnovejšo kodo z ACA in ponovno zagnal repliko.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.sl.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.sl.png)
 
 Po uspešni namestitvi je model pripravljen za ocenjevanje preko tega končnega naslova.
 
@@ -32,7 +32,7 @@ Po uspešni namestitvi je model pripravljen za ocenjevanje preko tega končnega 
 
 Do API-ja za sklepanje lahko dostopate s klikom na gumb "*Go to Inference Endpoint*", ki se prikaže v obvestilu VSCode. Alternativno lahko spletni API končni naslov najdete pod `ACA_APP_ENDPOINT` v datoteki `./infra/inference.config.json` in v izhodnem panelu.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.sl.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.sl.png)
 
 > **Note:** Končni naslov za sklepanje lahko potrebuje nekaj minut, da postane popolnoma operativen.
 

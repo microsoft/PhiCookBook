@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Vitajte na [GitHub Models](https://github.com/marketplace/models)! Všetko je pripravené na preskúmanie AI modelov hosťovaných na Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.sk.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.sk.png)
 
 Pre viac informácií o modeloch dostupných na GitHub Models si pozrite [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ K dispozícii je niekoľko základných príkladov, ktoré môžete spustiť. N�
 
 K dispozícii je tiež špeciálne prostredie Codespaces na spúšťanie príkladov a modelov.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.sk.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.sk.png)
 
 ## Ukážkový kód
 
@@ -431,7 +431,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Bezplatné používanie a limity pre GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.sk.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.sk.png)
 
 [Limity pre používanie playgroundu a bezplatné API](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sú určené na experimentovanie s modelmi a prototypovanie AI aplikácií. Ak chcete prekročiť tieto limity a škálovať svoju aplikáciu, musíte si zabezpečiť zdroje z Azure účtu a autentifikovať sa tam namiesto použitia osobného GitHub tokenu. V kóde nie je potrebné nič meniť. Použite tento odkaz, aby ste zistili, ako prekročiť limity bezplatnej úrovne v Azure AI.
 

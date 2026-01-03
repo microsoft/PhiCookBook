@@ -15,11 +15,11 @@ Folosești Visual Studio Code Copilot? Mai ales în Chat, poți utiliza diferiț
 
 Știm că Phi-3/3.5-mini-instruct din familia Phi-3/3.5 are capacități puternice de înțelegere și generare a codului și are avantaje față de Gemma-2-9b și Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.ro.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.ro.png)
 
 Cele mai recente GitHub Models oferă deja acces la modelele Phi-3.5-mini-instruct (128k) și Phi-3.5-vision-instruct (128k). Dezvoltatorii le pot accesa prin OpenAI SDK, Azure AI Inference SDK și REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.ro.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.ro.png)
 
 ***Note:*** Se recomandă utilizarea Azure AI Inference SDK aici, deoarece permite o comutare mai bună cu Azure Model Catalog în mediul de producție.
 
@@ -34,13 +34,13 @@ Mai jos sunt rezultatele pentru **Phi-3.5-mini-instruct (128k)** și **Phi-3.5-v
 
 GitHub Copilot Chat Agent poate îndeplini diverse sarcini în diferite scenarii de proiect, bazându-se pe cod. Sistemul are patru agenți: workspace, github, terminal, vscode.
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.ro.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.ro.png)
 
 Adăugând numele agentului cu ‘@’, poți finaliza rapid sarcina corespunzătoare. Pentru companii, dacă adaugi conținut specific afacerii tale, cum ar fi cerințe, codare, specificații de testare și lansare, poți beneficia de funcții private mai puternice bazate pe GitHub Copilot.
 
 Visual Studio Code Chat Agent a lansat oficial API-ul său, permițând companiilor sau dezvoltatorilor enterprise să creeze agenți adaptați diferitelor ecosisteme software de business. Bazându-te pe metoda de dezvoltare Visual Studio Code Extension Development, poți accesa cu ușurință interfața API a Visual Studio Code Chat Agent. Putem dezvolta pe baza acestui proces.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.ro.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.ro.png)
 
 Scenariul de dezvoltare poate suporta accesul la API-uri de modele terțe (cum ar fi GitHub Models, Azure Model Catalog și servicii proprii bazate pe modele open source) și poate folosi modelele gpt-35-turbo, gpt-4 și gpt-4o oferite de GitHub Copilot.
 
@@ -54,7 +54,7 @@ Scenariul de dezvoltare poate suporta accesul la API-uri de modele terțe (cum a
 
 3. Generează cod bazat pe **Phi-3.5-vision-instruct (128k)** și completare de imagine prin comanda **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.ro.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.ro.png)
 
 ## **Pași asociați**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.ro.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.ro.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.ro.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.ro.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.ro.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.ro.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.ro.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.ro.png)
 
 Poți descărca codul exemplu: [click](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

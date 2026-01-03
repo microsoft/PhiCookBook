@@ -40,7 +40,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Ang resulta (ang aking environment ay Apple M1 Max, 64GB) ay
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.tl.png)
+![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.tl.png)
 
 ### **3. Pag-quantize ng Phi-3-mini gamit ang MLX sa Terminal**
 
@@ -64,11 +64,11 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Ang resulta ay
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.tl.png)
+![INT4](../../../../../translated_images/02.7b188681a8eadbc1.tl.png)
 
 ### **4. Patakbuhin ang Phi-3-mini gamit ang MLX sa Jupyter Notebook**
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.tl.png)
+![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.tl.png)
 
 ***Note:*** Pakibasa ang sample na ito [click this link](../../../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 

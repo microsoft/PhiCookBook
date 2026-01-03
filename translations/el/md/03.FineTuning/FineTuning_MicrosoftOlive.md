@@ -32,11 +32,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Το Microsoft Olive είναι ένα πολύ εύχρηστο εργαλείο ανοιχτού κώδικα για βελτιστοποίηση μοντέλων που καλύπτει τόσο το fine-tuning όσο και την αναφορά στον τομέα της γενετικής τεχνητής νοημοσύνης. Απαιτεί μόνο απλή διαμόρφωση, σε συνδυασμό με τη χρήση ανοιχτών μικρών γλωσσικών μοντέλων και σχετικών περιβαλλόντων εκτέλεσης (AzureML / τοπικό GPU, CPU, DirectML), μπορείτε να ολοκληρώσετε το fine-tuning ή την αναφορά του μοντέλου μέσω αυτόματης βελτιστοποίησης και να βρείτε το καλύτερο μοντέλο για ανάπτυξη στο cloud ή σε συσκευές άκρου. Επιτρέπει στις επιχειρήσεις να δημιουργήσουν τα δικά τους μοντέλα για κάθετα βιομηχανικά πεδία τόσο on-premises όσο και στο cloud.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.el.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.el.png)
 
 ## Fine Tuning του Phi-3 με το Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.el.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.el.png)
 
 ## Παράδειγμα Κώδικα και Χρήσης του Phi-3 Olive
 Σε αυτό το παράδειγμα θα χρησιμοποιήσετε το Olive για:

@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 ידוע כי Phi-3/3.5-mini-instruct במשפחת Phi-3/3.5 מציג יכולות חזקות של הבנת קוד ויצירתו, ויש לו יתרונות על פני Gemma-2-9b ו-Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.he.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.he.png)
 
 הגרסאות האחרונות של GitHub Models כבר מספקות גישה למודלים Phi-3.5-mini-instruct (128k) ו-Phi-3.5-vision-instruct (128k). מפתחים יכולים לגשת אליהם דרך OpenAI SDK, Azure AI Inference SDK ו-REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.he.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.he.png)
 
 ***Note:*** מומלץ להשתמש ב-Azure AI Inference SDK כאן, מכיוון שהוא מאפשר החלפה טובה יותר עם Azure Model Catalog בסביבת הייצור
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 סוכן GitHub Copilot Chat יכול להשלים משימות שונות בתרחישי פרויקטים מגוונים בהתבסס על הקוד. המערכת כוללת ארבעה סוכנים: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.he.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.he.png)
 
 על ידי הוספת שם הסוכן עם ‘@’, ניתן להשלים במהירות את העבודה המתאימה. עבור ארגונים, אם תוסיפו תוכן עסקי משלכם כמו דרישות, קידוד, מפרטי בדיקה ושחרור, תוכלו לקבל פונקציות פרטיות ארגוניות חזקות יותר בהתבסס על GitHub Copilot.
 
 סוכן Visual Studio Code Chat שוחרר כעת רשמית עם API, המאפשר לארגונים או למפתחים ארגוניים לפתח סוכנים בהתבסס על אקוסיסטמים עסקיים שונים של תוכנה. בהתבסס על שיטת הפיתוח של Visual Studio Code Extension Development, ניתן לגשת בקלות לממשק ה-API של סוכן Visual Studio Code Chat. ניתן לפתח בהתבסס על תהליך זה
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.he.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.he.png)
 
 תרחיש הפיתוח תומך בגישה ל-API של מודלים צד שלישי (כגון GitHub Models, Azure Model Catalog, ושירותים עצמאיים המבוססים על מודלים בקוד פתוח) וניתן גם להשתמש במודלים gpt-35-turbo, gpt-4, ו-gpt-4o המסופקים על ידי GitHub Copilot.
 
@@ -54,7 +54,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 3. יצירת קוד בהתבסס על **Phi-3.5-vision-instruct (128k)** והשלמת תמונה באמצעות הפקודה **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.he.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.he.png)
 
 ## **שלבים קשורים**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.he.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.he.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.he.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.he.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.he.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.he.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.he.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.he.png)
 
 ניתן להוריד קוד לדוגמה: [לחץ כאן](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

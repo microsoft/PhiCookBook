@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 隨著生成式 AI 的發展，我們希望能使用一個統一的平台來管理不同的 LLM 和 SLM、企業資料整合、微調/RAG 操作，以及整合 LLM 和 SLM 後對不同企業業務的評估等，讓生成式 AI 能更好地應用於智慧化場景。[Azure AI Foundry](https://ai.azure.com) 是一個企業級的生成式 AI 應用平台。
 
-![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.tw.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93.tw.png)
 
 透過 Azure AI Foundry，您可以評估大型語言模型（LLM）的回應，並使用 prompt flow 編排提示應用元件，以提升效能。此平台便於擴展，能輕鬆將概念驗證轉化為完整的生產環境，並支援持續監控與優化，確保長期成功。
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [MLflow](https://mlflow.org/) هو منصة مفتوحة المصدر مصممة لإدارة دورة حياة تعلم الآلة من البداية إلى النهاية.
 
-![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9ac0407bf43985ec022ad01f3d970083e465326951e43b2e01.ar.png)
+![MLFlow](../../../../../../translated_images/MlFlowmlops.ed16f47809d74d9a.ar.png)
 
 يُستخدم MLFlow لإدارة دورة حياة تعلم الآلة، بما في ذلك التجارب، وإعادة الإنتاج، والنشر، وسجل النماذج المركزي. يقدم MLflow حالياً أربعة مكونات.
 
@@ -22,7 +22,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 يتضمن قدرات لتتبع التجارب، حزم الكود لتشغيلات قابلة لإعادة الإنتاج، ومشاركة ونشر النماذج. تم دمج MLFlow في Databricks ويدعم مجموعة متنوعة من مكتبات تعلم الآلة، مما يجعله غير مرتبط بمكتبة معينة. يمكن استخدامه مع أي مكتبة تعلم آلة وأي لغة برمجة، حيث يوفر واجهة REST API وCLI لسهولة الاستخدام.
 
-![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d16f1a1952a047dc6b9e392649f1e0fc7bc3c3dcd65e3af07c.ar.png)
+![MLFlow](../../../../../../translated_images/MLflow2.5a22eb718f6311d1.ar.png)
 
 تشمل الميزات الرئيسية لـ MLFlow:
 
@@ -37,7 +37,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 في هذا المثال الشامل سنوضح طريقتين مختلفتين لبناء غلاف حول نموذج اللغة الصغيرة Phi-3 (SLM) ثم تشغيله كنموذج MLFlow سواء محلياً أو في السحابة، مثلاً في مساحة عمل Azure Machine Learning.
 
-![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecfee254096d496cdf1cb3e1789184f9efcead9c2a96e5a979b.ar.png)
+![MLFlow](../../../../../../translated_images/MlFlow1.fd745e47dbd3fecf.ar.png)
 
 | المشروع | الوصف | الموقع |
 | ------------ | ----------- | -------- |

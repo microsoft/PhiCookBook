@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 A generatív MI fejlődésével arra törekszünk, hogy egy egységes platformon kezeljük a különböző LLM és SLM modelleket, vállalati adatintegrációt, finomhangolást/RAG műveleteket, valamint az LLM és SLM integrálása utáni különböző vállalati üzletek értékelését, hogy a generatív MI okos alkalmazásai hatékonyabban valósulhassanak meg. Az [Azure AI Foundry](https://ai.azure.com) egy vállalati szintű generatív MI alkalmazásplatform.
 
-![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.hu.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93.hu.png)
 
 Az Azure AI Foundry segítségével értékelhetjük a nagy nyelvi modellek (LLM) válaszait, és prompt flow-val irányíthatjuk a prompt alkalmazás komponenseit a jobb teljesítmény érdekében. A platform támogatja a skálázhatóságot, így a koncepcióbizonyításokat könnyedén alakíthatjuk teljes értékű termelési környezetté. A folyamatos monitorozás és finomhangolás hosszú távú sikert biztosít.
 

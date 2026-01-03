@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 歡迎使用 [GitHub Models](https://github.com/marketplace/models)！我們已經準備好讓你探索在 Azure AI 上託管的 AI 模型。
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.hk.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.hk.png)
 
 想了解更多關於 GitHub Models 上可用模型的資訊，請參考 [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 此外，也有專門的 Codespaces 環境用來執行範例和模型。
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.hk.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.hk.png)
 
 ## 範例程式碼
 
@@ -428,7 +428,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GitHub Models 的免費使用與速率限制
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.hk.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.hk.png)
 
 [playground 和免費 API 使用的速率限制](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) 是為了幫助你試驗模型和快速開發 AI 應用。若超出這些限制，並想將應用擴展到生產規模，必須從 Azure 帳戶配置資源，並從那裡進行身份驗證，而非使用你的 GitHub 個人存取權杖。你不需要更改程式碼中的其他部分。請使用此連結了解如何突破 Azure AI 的免費層限制。
 

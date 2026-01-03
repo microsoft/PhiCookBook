@@ -15,11 +15,11 @@ Visual Studio Code Copilot kullanıyor musunuz? Özellikle Chat bölümünde, Vi
 
 Phi-3/3.5 Ailesindeki Phi-3/3.5-mini-instruct modelinin güçlü kod anlama ve üretme yeteneklerine sahip olduğunu ve Gemma-2-9b ile Mistral-Nemo-12B-instruct-2407 modellerine göre avantajları olduğunu biliyoruz.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.tr.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.tr.png)
 
 En son GitHub Modelleri, Phi-3.5-mini-instruct (128k) ve Phi-3.5-vision-instruct (128k) modellerine erişim sağlamaktadır. Geliştiriciler bu modellere OpenAI SDK, Azure AI Inference SDK ve REST API üzerinden ulaşabilirler.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.tr.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.tr.png)
 
 ***Not:*** Üretim ortamında Azure Model Catalog ile daha iyi geçiş yapabildiği için burada Azure AI Inference SDK kullanılması önerilir.
 
@@ -34,13 +34,13 @@ Aşağıda, GitHub Modelleri ile entegre edildikten sonra kod üretme senaryosun
 
 GitHub Copilot Chat Ajanı, kod temelinde farklı proje senaryolarında çeşitli görevleri tamamlayabilir. Sistem dört ajan içerir: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.tr.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.tr.png)
 
 Ajan adını ‘@’ ile ekleyerek ilgili işi hızlıca tamamlayabilirsiniz. Kuruluşlar için, gereksinimler, kodlama, test spesifikasyonları ve sürüm gibi kendi işlerine dair içerikleri ekleyerek GitHub Copilot tabanlı daha güçlü kurumsal özel fonksiyonlara sahip olunabilir.
 
 Visual Studio Code Chat Ajanı artık resmi olarak API’sini yayınladı ve bu sayede şirketler veya kurumsal geliştiriciler farklı yazılım iş ekosistemlerine dayalı ajanlar geliştirebilir. Visual Studio Code Extension Development geliştirme yöntemi temel alınarak, Visual Studio Code Chat Ajan API arayüzüne kolayca erişilebilir. Bu süreç üzerinden geliştirme yapabiliriz.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.tr.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.tr.png)
 
 Geliştirme senaryosu, üçüncü taraf model API’lerine (örneğin GitHub Modelleri, Azure Model Catalog ve açık kaynak modeller üzerine kurulu kendi servisleriniz) erişimi destekler ve ayrıca GitHub Copilot tarafından sağlanan gpt-35-turbo, gpt-4 ve gpt-4o modellerini kullanabilir.
 
@@ -54,7 +54,7 @@ Phi-3.5’in programlama yeteneklerini kod yazma, görüntüden kod üretme ve d
 
 3. **Phi-3.5-vision-instruct (128k)** ve görüntü tamamlama tabanlı kod üretme, **@phicoding /image** komutu ile
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.tr.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.tr.png)
 
 ## **İlgili Adımlar**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.tr.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.tr.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.tr.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.tr.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.tr.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.tr.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.tr.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.tr.png)
 
 Örnek kodları indirebilirsiniz: [tıklayın](../../../../../../code/09.UpdateSamples/Aug/vscode)
 
