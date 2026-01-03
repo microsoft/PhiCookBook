@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Fine-tuning Scenario's
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.nl.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.nl.png)
 
 **Platform** Dit omvat verschillende technologieën zoals Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito en ONNX Runtime.
 
@@ -24,7 +24,7 @@ Het fine-tuning proces met Microsoft-technologieën bestaat uit verschillende co
 
 Fine-tune het model met gehoste fine-tuning, zonder dat je zelf compute hoeft te creëren en beheren.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.nl.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.nl.png)
 
 Serverless fine-tuning is beschikbaar voor Phi-3-mini en Phi-3-medium modellen, waardoor ontwikkelaars snel en eenvoudig de modellen kunnen aanpassen voor cloud- en edge-scenario’s zonder zelf voor compute te hoeven zorgen. We hebben ook aangekondigd dat Phi-3-small nu beschikbaar is via onze Models-as-a-Service aanbieding, zodat ontwikkelaars snel en gemakkelijk kunnen starten met AI-ontwikkeling zonder de onderliggende infrastructuur te hoeven beheren.
 
@@ -32,7 +32,7 @@ Serverless fine-tuning is beschikbaar voor Phi-3-mini en Phi-3-medium modellen, 
 
 Gebruikers beheren hun eigen compute om hun modellen te fine-tunen.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.nl.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.nl.png)
 
 [Fine Tuning Voorbeeld](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Gebruikers beheren hun eigen compute om hun modellen te fine-tunen.
 
 ## Voorbeelden van Fine-tuning Prestaties
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.nl.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.nl.png)
 
 **Disclaimer**:  
 Dit document is vertaald met behulp van de AI-vertalingsdienst [Co-op Translator](https://github.com/Azure/co-op-translator). Hoewel we streven naar nauwkeurigheid, dient u er rekening mee te houden dat geautomatiseerde vertalingen fouten of onnauwkeurigheden kunnen bevatten. Het originele document in de oorspronkelijke taal moet als de gezaghebbende bron worden beschouwd. Voor cruciale informatie wordt professionele menselijke vertaling aanbevolen. Wij zijn niet aansprakelijk voor eventuele misverstanden of verkeerde interpretaties die voortvloeien uit het gebruik van deze vertaling.

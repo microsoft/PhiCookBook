@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 RAG is data-opvraging + tekstgeneratie. De gestructureerde en ongestructureerde data van de onderneming worden opgeslagen in de vector database. Bij het zoeken naar relevante inhoud worden de relevante samenvatting en content gevonden om een context te vormen, waarna de tekstaanvulcapaciteit van LLM/SLM wordt gecombineerd om content te genereren.
 
 ## RAG Proces
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.nl.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.nl.png)
 
 ## Fine-tuning
 Fine-tuning is gebaseerd op het verbeteren van een bepaald model. Het hoeft niet te beginnen met het modelalgoritme, maar er moet wel continu data worden verzameld. Als je meer nauwkeurige terminologie en taalgebruik in industriële toepassingen wilt, is fine-tuning de betere keuze. Maar als je data vaak verandert, kan fine-tuning ingewikkeld worden.

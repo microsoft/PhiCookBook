@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Jeg valgte Objective-C som utviklingsmetode for appen, fordi ved bruk av Generativ AI med ONNX Runtime C++ API, er Objective-C bedre kompatibelt. Selvfølgelig kan du også gjøre relaterte kall via Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.no.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.no.png)
 
 ## **5. Kopier ONNX kvantisert INT4-modell til App-applikasjonsprosjektet**
 
 Vi må importere INT4 kvantiseringsmodellen i ONNX-format, som må lastes ned først.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.no.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.no.png)
 
 Etter nedlasting må du legge den til i Resources-mappen i prosjektet i Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.no.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.no.png)
 
 ## **6. Legge til C++ API i ViewControllers**
 
@@ -121,11 +121,11 @@ Etter nedlasting må du legge den til i Resources-mappen i prosjektet i Xcode.
 
 - **a.** Legg til de tilsvarende C++ header-filene i prosjektet.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.no.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.no.png)
 
 - **b.** Inkluder `onnxruntime-genai` dynamisk bibliotek i Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.no.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.no.png)
 
 - **c.** Bruk C-eksempelkoden for testing. Du kan også legge til ekstra funksjoner som ChatUI for mer funksjonalitet.
 
@@ -162,7 +162,7 @@ Etter nedlasting må du legge den til i Resources-mappen i prosjektet i Xcode.
 
 Når oppsettet er fullført, kan du kjøre applikasjonen for å se resultatene av Phi-3-mini modellens inferens.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.no.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.no.jpg)
 
 For mer eksempelkode og detaljerte instruksjoner, besøk [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 
