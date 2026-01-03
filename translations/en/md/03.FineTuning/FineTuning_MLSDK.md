@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 In this example, we will fine-tune the Phi-3-mini-4k-instruct model to complete a conversation between two people using the ultrachat_200k dataset.
 
-![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35fbd9d20d56e4116e17c55b0e0eb45500069eeee3a2d6fa0a.en.png)
+![MLFineTune](../../../../translated_images/MLFineTune.928d4c6b3767dd35.en.png)
 
 This example will show you how to fine-tune a model using the Azure ML SDK and Python, and then deploy the fine-tuned model to an online endpoint for real-time inference.
 
