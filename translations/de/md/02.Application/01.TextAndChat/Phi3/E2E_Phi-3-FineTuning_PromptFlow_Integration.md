@@ -23,7 +23,7 @@ In diesem E2E-Beispiel lernen Sie, wie Sie das Phi-3-Modell feinabstimmen und mi
 
 Hier ist eine Übersicht über dieses E2E-Beispiel.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.de.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.de.png)
 
 ### Inhaltsverzeichnis
 
@@ -49,13 +49,13 @@ Hier ist eine Übersicht über dieses E2E-Beispiel.
 
 1. Geben Sie *azure machine learning* in die **Suchleiste** oben auf der Portal-Seite ein und wählen Sie **Azure Machine Learning** aus den angezeigten Optionen aus.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.de.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.de.png)
 
 1. Wählen Sie **+ Erstellen** im Navigationsmenü aus.
 
 1. Wählen Sie **Neuen Workspace** im Navigationsmenü aus.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.de.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.de.png)
 
 1. Führen Sie die folgenden Schritte aus:
 
@@ -68,7 +68,7 @@ Hier ist eine Übersicht über dieses E2E-Beispiel.
     - Wählen Sie die **Application Insights** aus (erstellen Sie bei Bedarf eine neue).
     - Wählen Sie die **Container-Registry** aus (erstellen Sie bei Bedarf eine neue).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.de.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.de.png)
 
 1. Wählen Sie **Überprüfen + Erstellen**.
 
@@ -92,7 +92,7 @@ In diesem E2E-Beispiel verwenden Sie die *Standard_NC24ads_A100_v4 GPU* für die
     - Wählen Sie die **Virtuelle Maschinenfamilie** aus. Zum Beispiel **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, die die *Standard_NC24ads_A100_v4* GPU enthält.
     - Wählen Sie **Kontingent anfordern** im Navigationsmenü.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.de.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.de.png)
 
     - Geben Sie auf der Seite zur Kontingentanfrage das gewünschte **Neue Kernlimit** ein, z. B. 24.
     - Wählen Sie **Absenden**, um das GPU-Kontingent anzufordern.
@@ -108,11 +108,11 @@ Um Ihre Modelle feinabzustimmen und bereitzustellen, müssen Sie zunächst eine 
 
 1. Geben Sie *managed identities* in die **Suchleiste** oben auf der Portal-Seite ein und wählen Sie **Managed Identities** aus den angezeigten Optionen aus.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.de.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.de.png)
 
 1. Wählen Sie **+ Erstellen**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.de.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.de.png)
 
 1. Führen Sie die folgenden Schritte aus:
 
@@ -139,7 +139,7 @@ Um Ihre Modelle feinabzustimmen und bereitzustellen, müssen Sie zunächst eine 
     - Wählen Sie die **Ressourcengruppe** aus.
     - Wählen Sie die **Rolle** **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.de.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.de.png)
 
 1. Wählen Sie **Speichern**.
 
@@ -147,7 +147,7 @@ Um Ihre Modelle feinabzustimmen und bereitzustellen, müssen Sie zunächst eine 
 
 1. Geben Sie *storage accounts* in die **Suchleiste** oben auf der Portal-Seite ein und wählen Sie **Storage accounts** aus den angezeigten Optionen aus.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.de.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.de.png)
 
 1. Wählen Sie das Speicherkonto aus, das mit dem Azure Machine Learning Workspace verknüpft ist, den Sie erstellt haben. Zum Beispiel *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Um Ihre Modelle feinabzustimmen und bereitzustellen, müssen Sie zunächst eine 
     - Wählen Sie **+ Hinzufügen** im Navigationsmenü.
     - Wählen Sie **Rolle zuweisen** im Navigationsmenü.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.de.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.de.png)
 
 1. Führen Sie auf der Seite „Rolle zuweisen“ die folgenden Schritte aus:
 
@@ -171,7 +171,7 @@ Um Ihre Modelle feinabzustimmen und bereitzustellen, müssen Sie zunächst eine 
     - Wählen Sie die Managed Identity aus, die Sie erstellt haben, z. B. *finetunephi-managedidentity*.
     - Wählen Sie **Auswählen**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.de.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.de.png)
 
 1. Wählen Sie **Überprüfen + zuweisen**.
 
@@ -179,7 +179,7 @@ Um Ihre Modelle feinabzustimmen und bereitzustellen, müssen Sie zunächst eine 
 
 1. Geben Sie *container registries* in die **Suchleiste** oben auf der Portal-Seite ein und wählen Sie **Container registries** aus den angezeigten Optionen aus.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.de.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.de.png)
 
 1. Wählen Sie die Container-Registry aus, die mit dem Azure Machine Learning Workspace verknüpft ist. Zum Beispiel *finetunephicontainerregistries*.
 
@@ -289,7 +289,7 @@ In dieser Übung werden Sie:
 
 1. Wählen Sie den Ordner *finetune-phi* aus, den Sie erstellt haben, der sich unter *C:\Users\yourUserName\finetune-phi* befindet.
 
-    ![Projektordner öffnen.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.de.png)
+    ![Projektordner öffnen.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.de.png)
 
 1. Klicken Sie im linken Bereich von Visual Studio Code mit der rechten Maustaste und wählen Sie **Neue Datei**, um eine neue Datei namens *download_dataset.py* zu erstellen.
 
@@ -297,7 +297,7 @@ In dieser Übung werden Sie:
 
 1. Klicken Sie im linken Bereich von Visual Studio Code mit der rechten Maustaste und wählen Sie **Neue Datei**, um eine neue Datei namens *deploy_model.py* zu erstellen.
 
-    ![Neue Datei erstellen.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.de.png)
+    ![Neue Datei erstellen.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.de.png)
 
 1. Klicken Sie im linken Bereich von Visual Studio Code mit der rechten Maustaste und wählen Sie **Neuer Ordner**, um einen neuen Ordner namens *finetuning_dir* zu erstellen.
 
@@ -373,28 +373,28 @@ In dieser Übung werden Sie:
     - Wählen Sie die Azure Subscription aus, die Sie aktuell verwenden.
     - Kopieren Sie Ihre Subscription ID und fügen Sie sie in die *config.py*-Datei ein.
 
-    ![Subscription-ID finden.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.de.png)
+    ![Subscription-ID finden.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.de.png)
 
 1. Führen Sie die folgenden Schritte aus, um den Azure Workspace-Namen hinzuzufügen:
 
     - Navigieren Sie zur Azure Machine Learning-Ressource, die Sie erstellt haben.
     - Kopieren Sie Ihren Kontonamen und fügen Sie ihn in die *config.py*-Datei ein.
 
-    ![Azure Machine Learning-Namen finden.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.de.png)
+    ![Azure Machine Learning-Namen finden.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.de.png)
 
 1. Führen Sie die folgenden Schritte aus, um den Azure Resource Group-Namen hinzuzufügen:
 
     - Navigieren Sie zur Azure Machine Learning-Ressource, die Sie erstellt haben.
     - Kopieren Sie den Namen Ihrer Azure Resource Group und fügen Sie ihn in die *config.py*-Datei ein.
 
-    ![Resource Group-Namen finden.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.de.png)
+    ![Resource Group-Namen finden.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.de.png)
 
 2. Führen Sie die folgenden Schritte aus, um den Azure Managed Identity-Namen hinzuzufügen:
 
     - Navigieren Sie zur Managed Identities-Ressource, die Sie erstellt haben.
     - Kopieren Sie den Namen Ihrer Azure Managed Identity und fügen Sie ihn in die *config.py*-Datei ein.
 
-    ![UAI finden.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.de.png)
+    ![UAI finden.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.de.png)
 
 ### Datensatz für die Feinabstimmung vorbereiten
 
@@ -508,7 +508,7 @@ Sie müssen die Azure CLI einrichten, um Ihre Umgebung zu authentifizieren. Die 
 
 1. Wählen Sie Ihre Azure-Subscription aus, die Sie verwenden möchten.
 
-    ![Resource Group-Namen finden.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.de.png)
+    ![Resource Group-Namen finden.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.de.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ Durch Ausführen von *setup_ml.py* starten Sie den Feinabstimmungsprozess in der
 
 1. In dieser Übung haben Sie das Phi-3-Modell erfolgreich mit Azure Machine Learning fein abgestimmt. Durch Ausführen des *setup_ml.py*-Skripts haben Sie die Azure Machine Learning-Umgebung eingerichtet und den in der *fine_tune.py*-Datei definierten Feinabstimmungsprozess gestartet. Bitte beachten Sie, dass der Feinabstimmungsprozess eine beträchtliche Zeit in Anspruch nehmen kann. Nach dem Ausführen des Befehls `python setup_ml.py` müssen Sie warten, bis der Prozess abgeschlossen ist. Sie können den Status des Feinabstimmungsjobs über den im Terminal bereitgestellten Link zum Azure Machine Learning-Portal überwachen.
 
-    ![Feinabstimmungsjob anzeigen.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.de.png)
+    ![Feinabstimmungsjob anzeigen.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.de.png)
 
 ### Bereitstellen des feinabgestimmten Modells
 
@@ -1080,11 +1080,11 @@ Das Ausführen der *deploy_model.py*-Datei automatisiert den gesamten Bereitstel
 
 1. Wählen Sie **Endpoints** im linken Seitenmenü aus.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.de.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.de.png)
 
 2. Wählen Sie den von Ihnen erstellten Endpunkt aus.
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.de.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.de.png)
 
 3. Auf dieser Seite können Sie die während des Bereitstellungsprozesses erstellten Endpunkte verwalten.
 
@@ -1103,7 +1103,7 @@ Nachdem Sie Ihr feinabgestimmtes Modell erfolgreich bereitgestellt haben, könne
 1. Kopieren Sie Ihren **REST endpoint** und fügen Sie ihn in die Datei *config.py* ein, indem Sie `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` durch Ihren **REST endpoint** ersetzen.
 1. Kopieren Sie Ihren **Primary key** und fügen Sie ihn in die Datei *config.py* ein, indem Sie `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` durch Ihren **Primary key** ersetzen.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.de.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.de.png)
 
 #### Code zur *flow.dag.yml* Datei hinzufügen
 
@@ -1212,7 +1212,7 @@ Nachdem Sie Ihr feinabgestimmtes Modell erfolgreich bereitgestellt haben, könne
 
 1. Hier ein Beispiel für die Ergebnisse: Nun können Sie mit Ihrem benutzerdefinierten Phi-3 Modell chatten. Es wird empfohlen, Fragen basierend auf den für das Fine-Tuning verwendeten Daten zu stellen.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.de.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.de.png)
 
 **Haftungsausschluss**:  
 Dieses Dokument wurde mit dem KI-Übersetzungsdienst [Co-op Translator](https://github.com/Azure/co-op-translator) übersetzt. Obwohl wir uns um Genauigkeit bemühen, beachten Sie bitte, dass automatisierte Übersetzungen Fehler oder Ungenauigkeiten enthalten können. Das Originaldokument in seiner Ursprungssprache gilt als maßgebliche Quelle. Für wichtige Informationen wird eine professionelle menschliche Übersetzung empfohlen. Wir übernehmen keine Haftung für Missverständnisse oder Fehlinterpretationen, die aus der Nutzung dieser Übersetzung entstehen.

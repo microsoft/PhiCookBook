@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 After dem don train di adapters for di remote environment, use one simple Gradio application to interact wit di model.
 
-![Fine-tune don complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.pcm.png)
+![Fine-tune don complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.pcm.png)
 
 ### Provision Azure Resources
 You need set up di Azure Resources for remote inference by executing the `AI Toolkit: Provision Azure Container Apps for inference` from the command palette. During dis setup, dem go ask you to select your Azure Subscription and resource group.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.pcm.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.pcm.png)
    
 By default, di subscription and di resource group for inference suppose match dem wey dem use for fine-tuning. Di inference go use di same Azure Container App Environment and go access di model and model adapter wey dey stored in Azure Files, wey dem generate during di fine-tuning step. 
 
@@ -24,7 +24,7 @@ By default, di subscription and di resource group for inference suppose match de
 ### Deployment for Inference  
 If you wan revise di inference code or reload di inference model, abeg execute di `AI Toolkit: Deploy for inference` command. Dis go synchronize your latest code wit ACA and restart di replica.  
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.pcm.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.pcm.png)
 
 After deployment don complete successful, di model don ready for evaluation using dis endpoint.
 
@@ -32,7 +32,7 @@ After deployment don complete successful, di model don ready for evaluation usin
 
 You fit access di inference API by clicking on di "*Go to Inference Endpoint*" button wey display for di VSCode notification. Alternatively, di web API endpoint fit dey found under `ACA_APP_ENDPOINT` in `./infra/inference.config.json` and for di output panel.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.pcm.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.pcm.png)
 
 > **Nota:** Di inference endpoint fit need small minutes make e become fully operational.
 

@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 Nakon što su adapteri trenirani u udaljenom okruženju, koristite jednostavnu Gradio aplikaciju za interakciju s modelom.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.hr.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.hr.png)
 
 ### Postavljanje Azure resursa  
 Potrebno je postaviti Azure resurse za udaljeno izvođenje inferencije pokretanjem naredbe `AI Toolkit: Provision Azure Container Apps for inference` iz palete naredbi. Tijekom ovog postupka bit ćete upitani da odaberete svoju Azure pretplatu i grupu resursa.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.hr.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.hr.png)
 
 Prema zadanim postavkama, pretplata i grupa resursa za inferenciju trebaju biti iste kao one korištene za fino podešavanje. Inferencija će koristiti isto Azure Container App okruženje i pristupiti modelu i adapteru modela pohranjenim u Azure Files, koji su generirani tijekom koraka fino podešavanja.
 
@@ -24,7 +24,7 @@ Prema zadanim postavkama, pretplata i grupa resursa za inferenciju trebaju biti 
 ### Deploy za inferenciju  
 Ako želite izmijeniti kod za inferenciju ili ponovno učitati model za inferenciju, pokrenite naredbu `AI Toolkit: Deploy for inference`. Time ćete sinkronizirati najnoviji kod s ACA i ponovno pokrenuti repliku.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.hr.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.hr.png)
 
 Nakon uspješnog dovršetka deploya, model je spreman za evaluaciju putem ovog endpointa.
 
@@ -32,7 +32,7 @@ Nakon uspješnog dovršetka deploya, model je spreman za evaluaciju putem ovog e
 
 API za inferenciju možete pristupiti klikom na gumb "*Go to Inference Endpoint*" koji se prikazuje u VSCode obavijesti. Alternativno, web API endpoint možete pronaći pod `ACA_APP_ENDPOINT` u datoteci `./infra/inference.config.json` i u izlaznom panelu.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.hr.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.hr.png)
 
 > **Note:** Endpoint za inferenciju može trebati nekoliko minuta da postane potpuno operativan.
 

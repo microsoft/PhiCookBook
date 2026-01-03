@@ -23,7 +23,7 @@ Acest exemplu end-to-end (E2E) se bazează pe ghidul „[Fine-Tune and Integrate
 
 Iată o prezentare generală a acestui exemplu E2E.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.ro.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.ro.png)
 
 ### Cuprins
 
@@ -49,13 +49,13 @@ Iată o prezentare generală a acestui exemplu E2E.
 
 1. Tastați *azure machine learning* în **bara de căutare** din partea de sus a paginii portalului și selectați **Azure Machine Learning** din opțiunile afișate.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.ro.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.ro.png)
 
 1. Selectați **+ Create** din meniul de navigare.
 
 1. Selectați **New workspace** din meniul de navigare.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.ro.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.ro.png)
 
 1. Efectuați următoarele acțiuni:
 
@@ -68,7 +68,7 @@ Iată o prezentare generală a acestui exemplu E2E.
     - Selectați **Application insights** pe care doriți să îl folosiți (creați unul nou dacă este necesar).
     - Selectați **Container registry** pe care doriți să îl folosiți (creați unul nou dacă este necesar).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.ro.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.ro.png)
 
 1. Selectați **Review + Create**.
 
@@ -92,7 +92,7 @@ Iată o prezentare generală a acestui exemplu E2E.
     - Selectați **Virtual machine family** pe care doriți să o folosiți. De exemplu, selectați **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, care include GPU-ul *Standard_NC24ads_A100_v4*.
     - Selectați **Request quota** din meniul de navigare.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.ro.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.ro.png)
 
     - În pagina Request quota, introduceți **New cores limit** pe care doriți să îl utilizați. De exemplu, 24.
     - În pagina Request quota, selectați **Submit** pentru a trimite cererea de cotă GPU.
@@ -108,11 +108,11 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
 1. Tastați *managed identities* în **bara de căutare** din partea de sus a paginii portalului și selectați **Managed Identities** din opțiunile afișate.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.ro.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.ro.png)
 
 1. Selectați **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.ro.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.ro.png)
 
 1. Efectuați următoarele acțiuni:
 
@@ -139,7 +139,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
     - Selectați **Resource group** pe care doriți să îl folosiți.
     - Selectați **Role** la **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.ro.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.ro.png)
 
 1. Selectați **Save**.
 
@@ -147,7 +147,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
 1. Tastați *storage accounts* în **bara de căutare** din partea de sus a paginii portalului și selectați **Storage accounts** din opțiunile afișate.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.ro.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.ro.png)
 
 1. Selectați contul de stocare asociat cu workspace-ul Azure Machine Learning pe care l-ați creat. De exemplu, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
     - Selectați **+ Add** din meniul de navigare.
     - Selectați **Add role assignment** din meniul de navigare.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.ro.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.ro.png)
 
 1. În pagina Add role assignment, efectuați următoarele acțiuni:
 
@@ -171,7 +171,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
     - În pagina Select managed identities, selectați Managed Identity pe care ați creat-o. De exemplu, *finetunephi-managedidentity*.
     - În pagina Select managed identities, selectați **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.ro.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.ro.png)
 
 1. Selectați **Review + assign**.
 
@@ -179,7 +179,7 @@ Pentru a ajusta fin și implementa modelele, trebuie mai întâi să creați o I
 
 1. Tastați *container registries* în **bara de căutare** din partea de sus a paginii portalului și selectați **Container registries** din opțiunile afișate.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.ro.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.ro.png)
 
 1. Selectați container registry asociat cu workspace-ul Azure Machine Learning. De exemplu, *finetunephicontainerregistries*
 
@@ -289,7 +289,7 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
 
 1. Selectează folderul *finetune-phi* pe care l-ai creat, situat la *C:\Users\yourUserName\finetune-phi*.
 
-    ![Deschide folderul proiectului.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.ro.png)
+    ![Deschide folderul proiectului.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.ro.png)
 
 1. În panoul din stânga al Visual Studio Code, fă clic dreapta și selectează **New File** pentru a crea un fișier nou numit *download_dataset.py*.
 
@@ -297,7 +297,7 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
 
 1. În panoul din stânga al Visual Studio Code, fă clic dreapta și selectează **New File** pentru a crea un fișier nou numit *deploy_model.py*.
 
-    ![Creează fișier nou.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.ro.png)
+    ![Creează fișier nou.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.ro.png)
 
 1. În panoul din stânga al Visual Studio Code, fă clic dreapta și selectează **New Folder** pentru a crea un folder nou numit *finetuning_dir*.
 
@@ -373,28 +373,28 @@ Acum, veți crea un folder în care să lucrați și veți configura un mediu vi
     - Selectează abonamentul Azure pe care îl folosești.
     - Copiază și lipește Subscription ID în fișierul *config.py*.
 
-    ![Găsește subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.ro.png)
+    ![Găsește subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.ro.png)
 
 1. Urmează pașii de mai jos pentru a adăuga Azure Workspace Name:
 
     - Navighează la resursa Azure Machine Learning pe care ai creat-o.
     - Copiază și lipește numele contului în fișierul *config.py*.
 
-    ![Găsește numele Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.ro.png)
+    ![Găsește numele Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.ro.png)
 
 1. Urmează pașii de mai jos pentru a adăuga Azure Resource Group Name:
 
     - Navighează la resursa Azure Machine Learning pe care ai creat-o.
     - Copiază și lipește numele grupului de resurse Azure în fișierul *config.py*.
 
-    ![Găsește numele grupului de resurse.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.ro.png)
+    ![Găsește numele grupului de resurse.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.ro.png)
 
 2. Urmează pașii de mai jos pentru a adăuga numele Azure Managed Identity:
 
     - Navighează la resursa Managed Identities pe care ai creat-o.
     - Copiază și lipește numele Azure Managed Identity în fișierul *config.py*.
 
-    ![Găsește UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.ro.png)
+    ![Găsește UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.ro.png)
 
 ### Pregătește setul de date pentru fine-tuning
 
@@ -508,7 +508,7 @@ Trebuie să configurezi Azure CLI pentru a autentifica mediul tău. Azure CLI î
 
 1. Selectează abonamentul Azure pe care dorești să îl folosești.
 
-    ![Găsește numele grupului de resurse.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.ro.png)
+    ![Găsește numele grupului de resurse.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.ro.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ Prin rularea *setup_ml.py*, vei porni procesul de fine-tuning în mediul Azure M
 
 1. În acest exercițiu, ai ajustat cu succes modelul Phi-3 folosind Azure Machine Learning. Prin rularea scriptului *setup_ml.py*, ai configurat mediul Azure Machine Learning și ai inițiat procesul de fine-tuning definit în fișierul *fine_tune.py*. Reține că procesul de fine-tuning poate dura destul de mult timp. După ce rulezi comanda `python setup_ml.py`, trebuie să aștepți finalizarea procesului. Poți monitoriza starea jobului de fine-tuning urmând linkul oferit în terminal către portalul Azure Machine Learning.
 
-    ![Vezi jobul de fine-tuning.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.ro.png)
+    ![Vezi jobul de fine-tuning.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.ro.png)
 
 ### Implementează modelul ajustat
 
@@ -1080,11 +1080,11 @@ Rularea fișierului *deploy_model.py* automatizează întregul proces de impleme
 
 1. Selectează **Endpoints** din meniul din partea stângă.
 
-    ![Selectează endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.ro.png)
+    ![Selectează endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.ro.png)
 
 2. Selectează endpoint-ul pe care l-ai creat.
 
-    ![Selectează endpoint-ul creat.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.ro.png)
+    ![Selectează endpoint-ul creat.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.ro.png)
 
 3. Pe această pagină poți gestiona endpoint-urile create în timpul procesului de implementare.
 
@@ -1103,7 +1103,7 @@ După ce ai implementat cu succes modelul tău ajustat, îl poți integra acum c
 1. Copiază și lipește **REST endpoint** în fișierul *config.py*, înlocuind `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` cu **REST endpoint**-ul tău.
 1. Copiază și lipește **Primary key** în fișierul *config.py*, înlocuind `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` cu **Primary key**-ul tău.
 
-    ![Copiază cheia API și URI-ul endpoint-ului.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.ro.png)
+    ![Copiază cheia API și URI-ul endpoint-ului.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.ro.png)
 
 #### Adaugă cod în fișierul *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ După ce ai implementat cu succes modelul tău ajustat, îl poți integra acum c
 
 1. Iată un exemplu de rezultate: Acum poți discuta cu modelul tău personalizat Phi-3. Se recomandă să pui întrebări bazate pe datele folosite pentru ajustare.
 
-    ![Exemplu Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.ro.png)
+    ![Exemplu Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.ro.png)
 
 **Declinare de responsabilitate**:  
 Acest document a fost tradus folosind serviciul de traducere AI [Co-op Translator](https://github.com/Azure/co-op-translator). Deși ne străduim pentru acuratețe, vă rugăm să rețineți că traducerile automate pot conține erori sau inexactități. Documentul original în limba sa nativă trebuie considerat sursa autorizată. Pentru informații critice, se recomandă traducerea profesională realizată de un specialist uman. Nu ne asumăm răspunderea pentru eventualele neînțelegeri sau interpretări greșite rezultate din utilizarea acestei traduceri.

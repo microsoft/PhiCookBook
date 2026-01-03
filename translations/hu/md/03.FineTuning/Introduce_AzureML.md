@@ -67,7 +67,7 @@ Az Azure ML számos LLM/SLM-hez kapcsolódó funkciót adott hozzá, ötvözve a
 
 A vállalati felhasználók különböző modelleket telepíthetnek különböző üzleti helyzetekhez a Modellkatalógus segítségével, és Model as Service szolgáltatásként kínálhatják azokat vállalati fejlesztők vagy felhasználók számára.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.hu.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.hu.png)
 
 Az Azure Machine Learning studio Modellkatalógusa központként szolgál a generatív MI alkalmazások építéséhez szükséges széles körű modellek felfedezéséhez és használatához. A katalógus több száz modellt tartalmaz különböző szolgáltatóktól, mint az Azure OpenAI szolgáltatás, Mistral, Meta, Cohere, Nvidia, Hugging Face, beleértve a Microsoft által betanított modelleket is. A Microsofttól eltérő szolgáltatók modelljei a Microsoft Termékfeltételek szerint nem Microsoft termékeknek minősülnek, és a modellel együtt adott feltételek vonatkoznak rájuk.
 
@@ -77,7 +77,7 @@ A gépi tanulási pipeline lényege, hogy egy teljes gépi tanulási feladatot t
 
 Az SLM / LLM finomhangolásakor a pipeline segítségével kezelhetjük az adatokat, a tanítást és a generálási folyamatokat.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.hu.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.hu.png)
 
 ### **Prompt flow**
 

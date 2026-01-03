@@ -15,11 +15,11 @@ Käytätkö Visual Studio Code Copilotia? Erityisesti Chat-tilassa voit hyödynt
 
 Tiedämme, että Phi-3/3.5-mini-instruct Phi-3/3.5 -perheessä omaa vahvat koodin ymmärrys- ja generointikyvyt, ja se on edellä Gemma-2-9b:tä sekä Mistral-Nemo-12B-instruct-2407:ää.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.fi.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.fi.png)
 
 Uusimmat GitHub-mallit tarjoavat jo pääsyn Phi-3.5-mini-instruct (128k) ja Phi-3.5-vision-instruct (128k) malleihin. Kehittäjät voivat käyttää niitä OpenAI SDK:n, Azure AI Inference SDK:n ja REST API:n kautta.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.fi.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.fi.png)
 
 ***Note:*** Suositellaan käyttämään Azure AI Inference SDK:ta, koska se mahdollistaa paremman vaihdon Azure Model Catalogin kanssa tuotantoympäristössä.
 
@@ -34,13 +34,13 @@ Seuraavassa on **Phi-3.5-mini-instruct (128k)** ja **Phi-3.5-vision-instruct (12
 
 GitHub Copilot Chat Agent pystyy suorittamaan erilaisia tehtäviä eri projektitilanteissa koodin pohjalta. Järjestelmässä on neljä agenttia: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.fi.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.fi.png)
 
 Lisäämällä agentin nimen eteen ‘@’ voit nopeasti suorittaa vastaavan tehtävän. Yrityksille, jos lisäät omaan liiketoimintaan liittyvää sisältöä kuten vaatimuksia, koodausta, testausmäärittelyjä ja julkaisua, voit saada tehokkaampia yrityksen yksityisiä toimintoja GitHub Copilotin pohjalta.
 
 Visual Studio Code Chat Agent on nyt virallisesti julkaissut API:nsa, joka mahdollistaa yrityksille tai yrityskehittäjille agenttien kehittämisen eri ohjelmistoliiketoiminnan ekosysteemien pohjalta. Visual Studio Code Extension Development -kehitystavan avulla pääset helposti käsiksi Visual Studio Code Chat Agent API:n rajapintaan. Voimme kehittää tämän prosessin pohjalta.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.fi.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.fi.png)
 
 Kehitystilanne tukee kolmannen osapuolen mallien API-pääsyä (kuten GitHub Models, Azure Model Catalog ja itse rakennettavat palvelut avoimen lähdekoodin mallien pohjalta) ja voi myös käyttää GitHub Copilotin tarjoamia gpt-35-turbo, gpt-4 ja gpt-4o malleja.
 
@@ -54,7 +54,7 @@ Yritämme yhdistää Phi-3.5:n ohjelmointikyvyt koodin kirjoittamiseen, kuvan ge
 
 3. Luo koodia **Phi-3.5-vision-instruct (128k)** ja kuvan täydentämisen pohjalta komennolla **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.fi.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.fi.png)
 
 ## **Liittyvät vaiheet**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.fi.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.fi.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.fi.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.fi.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.fi.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.fi.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.fi.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.fi.png)
 
 Voit ladata esimerkkikoodin: [klikkaa](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

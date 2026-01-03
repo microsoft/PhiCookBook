@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 जब एडाप्टर्स को रिमोट वातावरण में प्रशिक्षित कर लिया जाता है, तो मॉडल के साथ इंटरैक्ट करने के लिए एक सरल Gradio एप्लिकेशन का उपयोग करें।
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.hi.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.hi.png)
 
 ### Azure संसाधनों की व्यवस्था करें  
 रिमोट इन्फरेंस के लिए Azure संसाधनों को सेटअप करने के लिए कमांड पैलेट से `AI Toolkit: Provision Azure Container Apps for inference` कमांड चलाएं। इस सेटअप के दौरान, आपसे आपकी Azure सब्सक्रिप्शन और रिसोर्स ग्रुप चुनने के लिए कहा जाएगा।  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.hi.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.hi.png)
 
 डिफ़ॉल्ट रूप से, इन्फरेंस के लिए सब्सक्रिप्शन और रिसोर्स ग्रुप वही होने चाहिए जो फाइन-ट्यूनिंग के लिए उपयोग किए गए थे। इन्फरेंस उसी Azure Container App Environment का उपयोग करेगा और मॉडल तथा मॉडल एडाप्टर को Azure Files में एक्सेस करेगा, जो फाइन-ट्यूनिंग चरण के दौरान बनाए गए थे।
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### इन्फरेंस के लिए डिप्लॉयमेंट  
 यदि आप इन्फरेंस कोड को संशोधित करना चाहते हैं या इन्फरेंस मॉडल को पुनः लोड करना चाहते हैं, तो कृपया `AI Toolkit: Deploy for inference` कमांड चलाएं। यह आपके नवीनतम कोड को ACA के साथ सिंक्रनाइज़ करेगा और रिप्लिका को पुनः शुरू करेगा।
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.hi.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.hi.png)
 
 डिप्लॉयमेंट सफलतापूर्वक पूरा होने के बाद, मॉडल अब इस एंडपॉइंट के माध्यम से मूल्यांकन के लिए तैयार है।
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 आप VSCode नोटिफिकेशन में दिखाए गए "*Go to Inference Endpoint*" बटन पर क्लिक करके इन्फरेंस API तक पहुँच सकते हैं। वैकल्पिक रूप से, वेब API एंडपॉइंट `ACA_APP_ENDPOINT` के अंतर्गत `./infra/inference.config.json` में और आउटपुट पैनल में पाया जा सकता है।
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.hi.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.hi.png)
 
 > **Note:** इन्फरेंस एंडपॉइंट को पूरी तरह से सक्रिय होने में कुछ मिनट लग सकते हैं।
 

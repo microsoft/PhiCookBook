@@ -33,33 +33,33 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Εγκαταστήστε την επέκταση Prompt flow για VS Code
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.el.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.el.png)
 
 2. Μετά την εγκατάσταση της επέκτασης Prompt flow για VS Code, κάντε κλικ στην επέκταση και επιλέξτε **Installation dependencies** ακολουθώντας αυτόν τον οδηγό για να εγκαταστήσετε το Prompt flow SDK στο περιβάλλον σας
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.el.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.el.png)
 
 3. Κατεβάστε τον [Κώδικα Δείγματος](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf) και ανοίξτε το δείγμα με το VS Code
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.el.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.el.png)
 
 4. Ανοίξτε το **flow.dag.yaml** για να επιλέξετε το Python περιβάλλον σας
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.el.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.el.png)
 
    Ανοίξτε το **chat_phi3_ort.py** για να αλλάξετε τη θέση του μοντέλου Phi-3.5-instruct ONNX
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.el.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.el.png)
 
 5. Εκτελέστε το prompt flow για δοκιμή
 
 Ανοίξτε το **flow.dag.yaml** και κάντε κλικ στον οπτικό επεξεργαστή
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.el.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.el.png)
 
 Μετά το κλικ, εκτελέστε το για να το δοκιμάσετε
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.el.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.el.png)
 
 1. Μπορείτε να εκτελέσετε batch στο τερματικό για να δείτε περισσότερα αποτελέσματα
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 Μπορείτε να δείτε τα αποτελέσματα στον προεπιλεγμένο περιηγητή σας
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.el.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.el.png)
 
 **Αποποίηση ευθυνών**:  
 Αυτό το έγγραφο έχει μεταφραστεί χρησιμοποιώντας την υπηρεσία αυτόματης μετάφρασης AI [Co-op Translator](https://github.com/Azure/co-op-translator). Παρόλο που επιδιώκουμε την ακρίβεια, παρακαλούμε να έχετε υπόψη ότι οι αυτόματες μεταφράσεις ενδέχεται να περιέχουν λάθη ή ανακρίβειες. Το πρωτότυπο έγγραφο στη γλώσσα του θεωρείται η αυθεντική πηγή. Για κρίσιμες πληροφορίες, συνιστάται επαγγελματική ανθρώπινη μετάφραση. Δεν φέρουμε ευθύνη για τυχόν παρεξηγήσεις ή λανθασμένες ερμηνείες που προκύπτουν από τη χρήση αυτής της μετάφρασης.

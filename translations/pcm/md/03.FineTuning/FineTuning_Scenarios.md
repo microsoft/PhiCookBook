@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Fine Tuning Scenarios
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.pcm.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.pcm.png)
 
 **Platform** Dis dey include different technologies like Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, and ONNX Runtime. 
 
@@ -24,7 +24,7 @@ The fine-tuning process wey use Microsoft technologies get plenty components and
 
 Fine-tune the model using hosted fine-tuning, e no need to create or manage compute.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.pcm.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.pcm.png)
 
 Serverless fine-tuning dey available for Phi-3-mini and Phi-3-medium models, e allow developers to quickly and easily customize the models for cloud and edge scenarios without them need to arrange for compute. We don also announce say Phi-3-small don dey available through our Models-as-a-Service offering so developers fit quickly and easily start AI development without them need manage the underlying infrastructure.
 
@@ -32,7 +32,7 @@ Serverless fine-tuning dey available for Phi-3-mini and Phi-3-medium models, e a
 
 Users go manage their own compute to fine-tune their models.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.pcm.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.pcm.png)
 
 [Sample wey show Fine-tuning](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Users go manage their own compute to fine-tune their models.
 
 ## Fine Tuning Performance Examples
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.pcm.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.pcm.png)
 
 ---
 

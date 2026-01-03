@@ -23,7 +23,7 @@ V tem E2E primeru se boste naučili, kako prilagoditi model Phi-3 in ga integrir
 
 Tukaj je pregled tega E2E primera.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.sl.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.sl.png)
 
 ### Kazalo
 
@@ -49,13 +49,13 @@ Tukaj je pregled tega E2E primera.
 
 1. V iskalno vrstico na vrhu portala vpišite *azure machine learning* in izberite **Azure Machine Learning** med prikazanimi možnostmi.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.sl.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.sl.png)
 
 1. Izberite **+ Create** v navigacijskem meniju.
 
 1. Izberite **New workspace** v navigacijskem meniju.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.sl.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.sl.png)
 
 1. Izvedite naslednje korake:
 
@@ -68,7 +68,7 @@ Tukaj je pregled tega E2E primera.
     - Izberite **Application insights**, ki ga želite uporabiti (po potrebi ustvarite novega).
     - Izberite **Container registry**, ki ga želite uporabiti (po potrebi ustvarite novega).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.sl.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.sl.png)
 
 1. Izberite **Review + Create**.
 
@@ -92,7 +92,7 @@ V tem E2E primeru boste za prilagajanje uporabili *Standard_NC24ads_A100_v4 GPU*
     - Izberite **Virtual machine family**, ki jo želite uporabiti. Na primer, izberite **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, ki vključuje *Standard_NC24ads_A100_v4* GPU.
     - Izberite **Request quota** v navigacijskem meniju.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.sl.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.sl.png)
 
     - Na strani Request quota vnesite **New cores limit**, ki ga želite uporabiti. Na primer, 24.
     - Na strani Request quota izberite **Submit** za oddajo zahteve za GPU kvoto.
@@ -108,11 +108,11 @@ Za prilagajanje in nameščanje modelov morate najprej ustvariti User Assigned M
 
 1. V iskalno vrstico na vrhu portala vpišite *managed identities* in izberite **Managed Identities** med prikazanimi možnostmi.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.sl.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.sl.png)
 
 1. Izberite **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.sl.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.sl.png)
 
 1. Izvedite naslednje korake:
 
@@ -139,7 +139,7 @@ Za prilagajanje in nameščanje modelov morate najprej ustvariti User Assigned M
     - Izberite **Resource group**, ki jo želite uporabiti.
     - Izberite **Role** na **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.sl.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.sl.png)
 
 1. Izberite **Save**.
 
@@ -147,7 +147,7 @@ Za prilagajanje in nameščanje modelov morate najprej ustvariti User Assigned M
 
 1. V iskalno vrstico na vrhu portala vpišite *storage accounts* in izberite **Storage accounts** med prikazanimi možnostmi.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.sl.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.sl.png)
 
 1. Izberite storage account, ki je povezan z Azure Machine Learning delovnim okoljem, ki ste ga ustvarili. Na primer, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ Za prilagajanje in nameščanje modelov morate najprej ustvariti User Assigned M
     - Izberite **+ Add** v navigacijskem meniju.
     - Izberite **Add role assignment** v navigacijskem meniju.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.sl.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.sl.png)
 
 1. Na strani Add role assignment izvedite naslednje korake:
 
@@ -171,7 +171,7 @@ Za prilagajanje in nameščanje modelov morate najprej ustvariti User Assigned M
     - Izberite Manage Identity, ki ste jo ustvarili. Na primer, *finetunephi-managedidentity*.
     - Izberite **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.sl.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.sl.png)
 
 1. Izberite **Review + assign**.
 
@@ -179,7 +179,7 @@ Za prilagajanje in nameščanje modelov morate najprej ustvariti User Assigned M
 
 1. V iskalno vrstico na vrhu portala vpišite *container registries* in izberite **Container registries** med prikazanimi možnostmi.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.sl.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.sl.png)
 
 1. Izberite container registry, ki je povezan z Azure Machine Learning delovnim okoljem. Na primer, *finetunephicontainerregistries*
 
@@ -289,7 +289,7 @@ V tej vaji boste:
 
 1. Izberite mapo *finetune-phi*, ki ste jo ustvarili, in se nahaja na *C:\Users\yourUserName\finetune-phi*.
 
-    ![Odprite mapo projekta.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.sl.png)
+    ![Odprite mapo projekta.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.sl.png)
 
 1. V levem delu Visual Studio Code z desnim klikom izberite **New File** in ustvarite novo datoteko z imenom *download_dataset.py*.
 
@@ -297,7 +297,7 @@ V tej vaji boste:
 
 1. V levem delu Visual Studio Code z desnim klikom izberite **New File** in ustvarite novo datoteko z imenom *deploy_model.py*.
 
-    ![Ustvarite novo datoteko.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.sl.png)
+    ![Ustvarite novo datoteko.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.sl.png)
 
 1. V levem delu Visual Studio Code z desnim klikom izberite **New Folder** in ustvarite novo mapo z imenom *finetuning_dir*.
 
@@ -373,28 +373,28 @@ V tej vaji boste:
     - Izberite Azure naročnino, ki jo trenutno uporabljate.
     - Kopirajte in prilepite vaš Subscription ID v datoteko *config.py*.
 
-    ![Poiščite ID naročnine.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.sl.png)
+    ![Poiščite ID naročnine.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.sl.png)
 
 1. Izvedite naslednje korake za dodajanje imena Azure Workspace:
 
     - Pojdite do Azure Machine Learning vira, ki ste ga ustvarili.
     - Kopirajte in prilepite ime vašega delovnega prostora v datoteko *config.py*.
 
-    ![Poiščite ime Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.sl.png)
+    ![Poiščite ime Azure Machine Learning.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.sl.png)
 
 1. Izvedite naslednje korake za dodajanje imena Azure Resource Group:
 
     - Pojdite do Azure Machine Learning vira, ki ste ga ustvarili.
     - Kopirajte in prilepite ime vaše Azure Resource Group v datoteko *config.py*.
 
-    ![Poiščite ime skupine virov.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.sl.png)
+    ![Poiščite ime skupine virov.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.sl.png)
 
 2. Izvedite naslednje korake za dodajanje imena Azure Managed Identity:
 
     - Pojdite do vira Managed Identities, ki ste ga ustvarili.
     - Kopirajte in prilepite ime vaše Azure Managed Identity v datoteko *config.py*.
 
-    ![Poiščite UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.sl.png)
+    ![Poiščite UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.sl.png)
 
 ### Pripravite podatkovni nabor za fino prilagajanje
 
@@ -508,7 +508,7 @@ Za avtentikacijo vašega okolja morate nastaviti Azure CLI. Azure CLI omogoča u
 
 1. Izberite vašo Azure naročnino za uporabo.
 
-    ![Poiščite ime skupine virov.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.sl.png)
+    ![Poiščite ime skupine virov.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.sl.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ Z zagonom *setup_ml.py* boste zagnali postopek fino prilagajanja v okolju Azure 
 
 1. V tej vaji ste uspešno fino prilagodili model Phi-3 z uporabo Azure Machine Learning. Z zagonom skripte *setup_ml.py* ste nastavili okolje Azure Machine Learning in začeli postopek fino prilagajanja, definiran v datoteki *fine_tune.py*. Upoštevajte, da lahko postopek fino prilagajanja traja precej časa. Po zagonu ukaza `python setup_ml.py` morate počakati, da se postopek zaključi. Status naloge fino prilagajanja lahko spremljate preko povezave, ki je prikazana v terminalu in vodi do portala Azure Machine Learning.
 
-    ![Oglejte si nalogo fino prilagajanja.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.sl.png)
+    ![Oglejte si nalogo fino prilagajanja.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.sl.png)
 
 ### Namestite fino prilagojen model
 
@@ -1080,11 +1080,11 @@ Zagon datoteke *deploy_model.py* avtomatizira celoten postopek nameščanja. Reg
 
 1. Izberite **Endpoints** v levem zavihku.
 
-    ![Izberite endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.sl.png)
+    ![Izberite endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.sl.png)
 
 2. Izberite endpoint, ki ste ga ustvarili.
 
-    ![Izberite endpoint, ki ste ga ustvarili.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.sl.png)
+    ![Izberite endpoint, ki ste ga ustvarili.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.sl.png)
 
 3. Na tej strani lahko upravljate z endpointi, ustvarjenimi med procesom nameščanja.
 
@@ -1103,7 +1103,7 @@ Po uspešnem nameščanju vašega fino nastavljanega modela ga lahko zdaj integr
 1. Kopirajte in prilepite vaš **REST endpoint** v datoteko *config.py*, tako da zamenjate `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` z vašim **REST endpoint**.
 1. Kopirajte in prilepite vaš **Primary key** v datoteko *config.py*, tako da zamenjate `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` z vašim **Primary key**.
 
-    ![Kopirajte api ključ in endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.sl.png)
+    ![Kopirajte api ključ in endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.sl.png)
 
 #### Dodajte kodo v datoteko *flow.dag.yml*
 
@@ -1212,7 +1212,7 @@ Po uspešnem nameščanju vašega fino nastavljanega modela ga lahko zdaj integr
 
 1. Tukaj je primer rezultatov: Zdaj lahko klepetate z vašim prilagojenim modelom Phi-3. Priporočljivo je postavljati vprašanja, ki temeljijo na podatkih, uporabljenih za fino nastavljanje.
 
-    ![Primer Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.sl.png)
+    ![Primer Prompt flow.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.sl.png)
 
 **Omejitev odgovornosti**:  
 Ta dokument je bil preveden z uporabo storitve za avtomatski prevod AI [Co-op Translator](https://github.com/Azure/co-op-translator). Čeprav si prizadevamo za natančnost, vas opozarjamo, da lahko avtomatski prevodi vsebujejo napake ali netočnosti. Izvirni dokument v njegovem izvirnem jeziku velja za avtoritativni vir. Za pomembne informacije priporočamo strokovni človeški prevod. Za morebitna nesporazume ali napačne interpretacije, ki izhajajo iz uporabe tega prevoda, ne odgovarjamo.

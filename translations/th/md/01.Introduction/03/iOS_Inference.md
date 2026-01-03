@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 ผมเลือกใช้ Objective-C เป็นวิธีพัฒนาแอป เพราะการใช้งาน Generative AI กับ ONNX Runtime C++ API นั้น Objective-C เข้ากันได้ดีกว่า แน่นอนว่าคุณก็สามารถเรียกใช้งานผ่าน Swift bridging ได้เช่นกัน
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.th.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.th.png)
 
 ## **5. คัดลอกโมเดล ONNX quantized INT4 ไปยังโปรเจกต์แอป**
 
 เราต้องนำเข้าโมเดล quantized INT4 ในรูปแบบ ONNX ซึ่งต้องดาวน์โหลดมาก่อน
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.th.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.th.png)
 
 หลังดาวน์โหลดแล้ว ให้เพิ่มไฟล์นี้เข้าไปในโฟลเดอร์ Resources ของโปรเจกต์ใน Xcode
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.th.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.th.png)
 
 ## **6. เพิ่ม C++ API ใน ViewControllers**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** เพิ่มไฟล์ header ของ C++ ที่เกี่ยวข้องเข้าไปในโปรเจกต์
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.th.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.th.png)
 
 - **b.** รวมไลบรารีไดนามิก `onnxruntime-genai` ใน Xcode
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.th.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.th.png)
 
 - **c.** ใช้โค้ดตัวอย่าง C สำหรับทดสอบ คุณยังสามารถเพิ่มฟีเจอร์เสริม เช่น ChatUI เพื่อเพิ่มความสามารถได้
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 เมื่อเตรียมทุกอย่างเรียบร้อยแล้ว คุณสามารถรันแอปเพื่อดูผลลัพธ์ของการ inference โมเดล Phi-3-mini ได้
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.th.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.th.jpg)
 
 สำหรับโค้ดตัวอย่างเพิ่มเติมและคำแนะนำละเอียด โปรดเยี่ยมชม [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios)
 

@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 I choose Objective-C as the app development method, because when you dey use Generative AI with ONNX Runtime C++ API, Objective-C dey more compatible. Of course, you fit also complete related calls through Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.pcm.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.pcm.png)
 
 ## **5. Copy the ONNX quantized INT4 model to the App project**
 
 We need make we import the INT4 quantization model for ONNX format, you go need download am first
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.pcm.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.pcm.png)
 
 After you don download, you need add am to the Resources directory of the project in Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.pcm.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.pcm.png)
 
 ## **6. Adding the C++ API in ViewControllers**
 
@@ -121,11 +121,11 @@ After you don download, you need add am to the Resources directory of the projec
 
 - **a.** Add the corresponding C++ header files to the project.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.pcm.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.pcm.png)
 
 - **b.** Include the `onnxruntime-genai` dynamic library in Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.pcm.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.pcm.png)
 
 - **c.** Use the C Samples code for testing. You fit also add extra features like ChatUI for more functionality.
 
@@ -162,7 +162,7 @@ After you don download, you need add am to the Resources directory of the projec
 
 Once the setup don finish, you fit run the application to see the results of the Phi-3-mini model inference.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.pcm.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.pcm.jpg)
 
 For more sample code and detailed instructions, visit the [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Paggamit ng Azure AI Foundry para sa pagsusuri**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.tl.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.tl.png)
 
 Paano suriin ang iyong generative AI application gamit ang [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Kung sinusuri mo man ang single-turn o multi-turn na mga pag-uusap, nagbibigay ang Azure AI Foundry ng mga kasangkapan para sa pagsusuri ng performance at kaligtasan ng modelo.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.tl.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.tl.png)
 
 ## Paano suriin ang mga generative AI app gamit ang Azure AI Foundry  
 Para sa mas detalyadong gabay, tingnan ang [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

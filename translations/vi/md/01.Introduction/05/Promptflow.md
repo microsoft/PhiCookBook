@@ -42,7 +42,7 @@ Duy trì kiểm soát phiên bản và chia sẻ kiến thức hiệu quả. Tin
 
 Trong Microsoft Prompt Flow, đánh giá đóng vai trò quan trọng trong việc xác định hiệu quả hoạt động của các mô hình AI. Hãy cùng tìm hiểu cách bạn có thể tùy chỉnh các luồng và chỉ số đánh giá trong Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.vi.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.vi.png)
 
 **Hiểu về đánh giá trong Prompt Flow**
 

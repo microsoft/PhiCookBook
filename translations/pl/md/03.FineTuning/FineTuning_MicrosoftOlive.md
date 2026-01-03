@@ -32,11 +32,11 @@ Uwzględnia ograniczenia takie jak dokładność i opóźnienie podczas optymali
 
 Microsoft Olive to bardzo łatwe w użyciu narzędzie open source do optymalizacji modeli, które może obejmować zarówno dostrajanie, jak i referencje w dziedzinie generatywnej sztucznej inteligencji. Wymaga jedynie prostej konfiguracji, a w połączeniu z użyciem otwartych małych modeli językowych oraz odpowiednich środowisk uruchomieniowych (AzureML / lokalne GPU, CPU, DirectML) pozwala na automatyczną optymalizację i dostrajanie modelu oraz znalezienie najlepszego modelu do wdrożenia w chmurze lub na urządzeniach brzegowych. Umożliwia to firmom budowanie własnych modeli branżowych zarówno lokalnie, jak i w chmurze.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.pl.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.pl.png)
 
 ## Dostrajanie Phi-3 za pomocą Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.pl.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.pl.png)
 
 ## Przykładowy kod i przykład Phi-3 Olive
 W tym przykładzie użyjesz Olive do:

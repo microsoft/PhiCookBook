@@ -19,7 +19,7 @@ Penalaan halus model kadangkala boleh menyebabkan respons yang tidak diingini at
 
 Berikut adalah proses penilaian Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.ms.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.ms.png)
 
 *Sumber Imej: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ Berikut adalah proses penilaian Azure AI Foundry.
 
 Untuk memastikan model AI anda beretika dan selamat, adalah penting untuk menilainya berdasarkan Prinsip AI Bertanggungjawab Microsoft. Dalam Azure AI Foundry, penilaian keselamatan membolehkan anda menilai kerentanan model anda terhadap serangan jailbreak dan potensi model menghasilkan kandungan berbahaya, yang selari dengan prinsip-prinsip ini.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.ms.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.ms.png)
 
 *Sumber Imej: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Prinsip AI Bertanggungjawab Microsoft termasuk:
 
 - **Tanggungjawab**: Orang yang mereka bentuk dan menyebarkan sistem AI mesti bertanggungjawab terhadap cara sistem mereka beroperasi. Organisasi harus menggunakan piawaian industri untuk membangunkan norma tanggungjawab. Norma ini boleh memastikan sistem AI bukanlah autoriti terakhir dalam sebarang keputusan yang memberi kesan kepada kehidupan orang. Ia juga memastikan manusia mengekalkan kawalan bermakna ke atas sistem AI yang sangat autonomi.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.ms.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.ms.png)
 
 *Sumber Imej: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ Dalam tutorial ini, anda akan menilai keselamatan model Phi-3 yang telah disesua
 
 Menilai aspek-aspek ini memastikan model AI tidak menghasilkan kandungan yang berbahaya atau menyinggung, sejajar dengan nilai masyarakat dan piawaian peraturan.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.ms.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.ms.png)
 
 ### Pengenalan kepada penilaian prestasi
 
 Untuk memastikan model AI anda berprestasi seperti yang dijangka, adalah penting untuk menilai prestasinya berdasarkan metrik prestasi. Dalam Azure AI Foundry, penilaian prestasi membolehkan anda menilai keberkesanan model anda dalam menghasilkan respons yang tepat, relevan, dan koheren.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.ms.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.ms.png)
 
 *Sumber Imej: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ Dalam tutorial ini, anda akan menilai prestasi model Phi-3 / Phi-3.5 yang telah 
 
 Metrik ini membantu anda menilai keberkesanan model dalam menghasilkan respons yang tepat, relevan, dan koheren.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.ms.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.ms.png)
 
 ## **Senario 2: Menilai model Phi-3 / Phi-3.5 dalam Azure AI Foundry**
 
@@ -151,7 +151,7 @@ Anda perlu mencipta Hub sebelum mencipta Projek. Hub berfungsi seperti Kumpulan 
 
 1. Pilih **+ New hub** dari menu navigasi.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.ms.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.ms.png)
 
 1. Lakukan tugasan berikut:
 
@@ -162,7 +162,7 @@ Anda perlu mencipta Hub sebelum mencipta Projek. Hub berfungsi seperti Kumpulan 
     - Pilih **Connect Azure AI Services** yang ingin digunakan (cipta yang baru jika perlu).
     - Pilih **Connect Azure AI Search** untuk **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.ms.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.ms.png)
 
 1. Pilih **Next**.
 
@@ -172,11 +172,11 @@ Anda perlu mencipta Hub sebelum mencipta Projek. Hub berfungsi seperti Kumpulan 
 
 1. Pilih **+ New project** dari menu navigasi.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.ms.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.ms.png)
 
 1. Masukkan **Project name**. Ia mesti nilai yang unik.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.ms.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.ms.png)
 
 1. Pilih **Create a project**.
 
@@ -192,17 +192,17 @@ Untuk mengintegrasikan model Phi-3 / Phi-3.5 khusus anda dengan Prompt flow, and
 
 1. Pilih **Endpoints** dari tab sebelah kiri.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.ms.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.ms.png)
 
 1. Pilih endpoint yang anda cipta.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.ms.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.ms.png)
 
 1. Pilih **Consume** dari menu navigasi.
 
 1. Salin **REST endpoint** dan **Primary key** anda.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.ms.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.ms.png)
 
 #### Tambah Sambungan Khusus
 
@@ -214,11 +214,11 @@ Untuk mengintegrasikan model Phi-3 / Phi-3.5 khusus anda dengan Prompt flow, and
 
 1. Pilih **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.ms.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.ms.png)
 
 1. Pilih **Custom keys** dari menu navigasi.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.ms.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.ms.png)
 
 1. Lakukan tugasan berikut:
 
@@ -228,7 +228,7 @@ Untuk mengintegrasikan model Phi-3 / Phi-3.5 khusus anda dengan Prompt flow, and
     - Untuk nama kunci, masukkan **key** dan tampal kunci yang anda salin dari Azure ML Studio ke dalam medan nilai.
     - Selepas menambah kunci, pilih **is secret** untuk mengelakkan kunci didedahkan.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.ms.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.ms.png)
 
 1. Pilih **Add connection**.
 
@@ -242,15 +242,15 @@ Anda telah menambah sambungan khusus dalam Azure AI Foundry. Sekarang, mari cipt
 
 1. Pilih **+ Create** dari menu navigasi.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.ms.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.ms.png)
 
 1. Pilih **Chat flow** dari menu navigasi.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.ms.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.ms.png)
 
 1. Masukkan **Folder name** yang ingin digunakan.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.ms.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.ms.png)
 
 1. Pilih **Create**.
 
@@ -287,7 +287,7 @@ Anda perlu mengintegrasikan model Phi-3 / Phi-3.5 yang telah disesuaikan ke dala
 
     - Pilih **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.ms.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.ms.png)
 
 1. Tambah kod berikut ke *integrate_with_promptflow.py* untuk menggunakan model Phi-3 / Phi-3.5 khusus dalam Prompt flow.
 
@@ -350,14 +350,14 @@ Anda perlu mengintegrasikan model Phi-3 / Phi-3.5 yang telah disesuaikan ke dala
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.ms.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.ms.png)
 
 > [!NOTE]
 > Untuk maklumat lebih terperinci mengenai penggunaan Prompt flow dalam Azure AI Foundry, anda boleh rujuk [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Pilih **Chat input**, **Chat output** untuk mengaktifkan sembang dengan model anda.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.ms.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.ms.png)
 
 1. Kini anda sudah bersedia untuk bersembang dengan model Phi-3 / Phi-3.5 khusus anda. Dalam latihan seterusnya, anda akan belajar cara memulakan Prompt flow dan menggunakannya untuk bersembang dengan model Phi-3 / Phi-3.5 yang telah disesuaikan.
 
@@ -365,32 +365,32 @@ Anda perlu mengintegrasikan model Phi-3 / Phi-3.5 yang telah disesuaikan ke dala
 >
 > Aliran yang dibina semula harus kelihatan seperti imej di bawah:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.ms.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.ms.png)
 >
 
 #### Mulakan Prompt flow
 
 1. Pilih **Start compute sessions** untuk memulakan Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.ms.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.ms.png)
 
 1. Pilih **Validate and parse input** untuk memperbaharui parameter.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.ms.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.ms.png)
 
 1. Pilih **Value** bagi **connection** kepada sambungan khusus yang anda cipta. Contohnya, *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.ms.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.ms.png)
 
 #### Bersembang dengan model Phi-3 / Phi-3.5 khusus anda
 
 1. Pilih **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.ms.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.ms.png)
 
 1. Berikut adalah contoh hasilnya: Kini anda boleh bersembang dengan model Phi-3 / Phi-3.5 khusus anda. Disarankan untuk bertanya soalan berdasarkan data yang digunakan untuk penalaan halus.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.ms.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.ms.png)
 
 ### Lancarkan Azure OpenAI untuk menilai model Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ Untuk menilai model Phi-3 / Phi-3.5 dalam Azure AI Foundry, anda perlu melancark
 
 1. Navigasi ke projek Azure AI Foundry yang anda cipta.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ms.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.ms.png)
 
 1. Dalam Projek yang anda cipta, pilih **Deployments** dari tab sebelah kiri.
 
@@ -410,11 +410,11 @@ Untuk menilai model Phi-3 / Phi-3.5 dalam Azure AI Foundry, anda perlu melancark
 
 1. Pilih **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.ms.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.ms.png)
 
 1. Pilih model Azure OpenAI yang anda ingin gunakan. Contohnya, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.ms.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.ms.png)
 
 1. Pilih **Confirm**.
 
@@ -426,17 +426,17 @@ Untuk menilai model Phi-3 / Phi-3.5 dalam Azure AI Foundry, anda perlu melancark
 
 1. Navigasi ke projek Azure AI Foundry yang anda cipta.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.ms.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.ms.png)
 
 1. Dalam Projek yang anda cipta, pilih **Evaluation** dari tab sebelah kiri.
 
 1. Pilih **+ New evaluation** dari menu navigasi.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.ms.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.ms.png)
 
 1. Pilih penilaian **Prompt flow**.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.ms.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.ms.png)
 
 1. Lakukan tugasan berikut:
 
@@ -444,7 +444,7 @@ Untuk menilai model Phi-3 / Phi-3.5 dalam Azure AI Foundry, anda perlu melancark
     - Pilih **Question and answer without context** sebagai jenis tugasan. Kerana, set data **UlTRACHAT_200k** yang digunakan dalam tutorial ini tidak mengandungi konteks.
     - Pilih prompt flow yang anda ingin nilai.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.ms.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.ms.png)
 
 1. Pilih **Next**.
 
@@ -453,7 +453,7 @@ Untuk menilai model Phi-3 / Phi-3.5 dalam Azure AI Foundry, anda perlu melancark
     - Pilih **Add your dataset** untuk memuat naik set data. Contohnya, anda boleh memuat naik fail set data ujian, seperti *test_data.json1*, yang disertakan apabila anda memuat turun set data **ULTRACHAT_200k**.
     - Pilih **Dataset column** yang sesuai dengan set data anda. Contohnya, jika anda menggunakan set data **ULTRACHAT_200k**, pilih **${data.prompt}** sebagai lajur set data.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.ms.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.ms.png)
 
 1. Pilih **Next**.
 
@@ -462,7 +462,7 @@ Untuk menilai model Phi-3 / Phi-3.5 dalam Azure AI Foundry, anda perlu melancark
     - Pilih metrik prestasi dan kualiti yang anda ingin gunakan.
     - Pilih model Azure OpenAI yang anda cipta untuk penilaian. Contohnya, pilih **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.ms.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.ms.png)
 
 1. Lakukan tugasan berikut untuk mengkonfigurasi metrik risiko dan keselamatan:
 
@@ -472,7 +472,7 @@ Untuk menilai model Phi-3 / Phi-3.5 dalam Azure AI Foundry, anda perlu melancark
     - Untuk **answer**, pilih **Data source** kepada **{$run.outputs.answer}**.
     - Untuk **ground_truth**, pilih **Data source** kepada **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.ms.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.ms.png)
 
 1. Pilih **Next**.
 
@@ -489,17 +489,17 @@ Setelah penilaian selesai, anda boleh menyemak keputusan untuk metrik prestasi d
 
     - menilai keberkesanan model dalam menghasilkan respons yang koheren, lancar, dan relevan.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.ms.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.ms.png)
 
 1. Metrik risiko dan keselamatan:
 
     - Pastikan output model adalah selamat dan selaras dengan Prinsip AI Bertanggungjawab, mengelakkan sebarang kandungan yang berbahaya atau menyinggung.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.ms.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.ms.png)
 
 1. Anda boleh skrol ke bawah untuk melihat **Keputusan metrik terperinci**.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.ms.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.ms.png)
 
 1. Dengan menilai model Phi-3 / Phi-3.5 tersuai anda berdasarkan metrik prestasi dan keselamatan, anda boleh mengesahkan bahawa model bukan sahaja berkesan, tetapi juga mematuhi amalan AI bertanggungjawab, menjadikannya sedia untuk digunakan dalam dunia sebenar.
 
@@ -509,7 +509,7 @@ Setelah penilaian selesai, anda boleh menyemak keputusan untuk metrik prestasi d
 
 Anda telah berjaya menilai model Phi-3 yang telah disesuaikan dan diintegrasikan dengan Prompt flow dalam Azure AI Foundry. Ini adalah langkah penting untuk memastikan model AI anda bukan sahaja berprestasi baik, tetapi juga mematuhi prinsip AI Bertanggungjawab Microsoft untuk membantu anda membina aplikasi AI yang boleh dipercayai dan kukuh.
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.ms.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.ms.png)
 
 ## Bersihkan Sumber Azure
 

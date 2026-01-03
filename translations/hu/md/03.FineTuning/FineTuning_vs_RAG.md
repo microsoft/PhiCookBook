@@ -14,7 +14,7 @@ CO_OP_TRANSLATOR_METADATA:
 A RAG adatlekérés + szöveggenerálás. A vállalat strukturált és strukturálatlan adatai egy vektoralapú adatbázisban tárolódnak. Amikor releváns tartalmat keresünk, megtaláljuk a kapcsolódó összefoglalót és tartalmat, hogy kontextust alkossunk, majd az LLM/SLM szövegkiegészítő képességét kombinálva generáljuk a tartalmat.
 
 ## RAG folyamat
-![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.hu.png)
+![FinetuningvsRAG](../../../../translated_images/rag.2014adc59e6f6007.hu.png)
 
 ## Finomhangolás
 A finomhangolás egy adott modell továbbfejlesztésén alapul. Nem kell a modell algoritmusával kezdeni, de az adatok folyamatos gyűjtése szükséges. Ha ipari alkalmazásokban pontosabb terminológiára és nyelvi kifejezésre van szükség, a finomhangolás jobb választás. Viszont ha az adatok gyakran változnak, a finomhangolás bonyolulttá válhat.

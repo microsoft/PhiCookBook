@@ -66,7 +66,7 @@ Azure ML הוסיפה פונקציות רבות הקשורות ל-LLM/SLM, שמ�
 
 משתמשים ארגוניים יכולים לפרוס מודלים שונים בהתאם לתרחישי עסק שונים דרך קטלוג המודלים, ולספק שירותים כ-Model as Service למפתחים או משתמשים ארגוניים.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.he.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.he.png)
 
 קטלוג המודלים ב-Azure Machine Learning studio הוא המרכז לגילוי ושימוש במגוון רחב של מודלים שמאפשרים לבנות יישומי בינה מלאכותית גנרטיבית. קטלוג המודלים כולל מאות מודלים מספקי מודלים כמו Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, כולל מודלים שאומנו על ידי Microsoft. מודלים מספקים שאינם Microsoft מוגדרים כמוצרים שאינם של Microsoft, בהתאם לתנאי המוצר של Microsoft, וכפופים לתנאים הנלווים למודל.
 
@@ -76,7 +76,7 @@ Azure ML הוסיפה פונקציות רבות הקשורות ל-LLM/SLM, שמ�
 
 בכיוונון עדין של SLM / LLM, ניתן לנהל את הנתונים, האימון ותהליכי ההפקה דרך Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.he.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.he.png)
 
 ### **Prompt flow**
 

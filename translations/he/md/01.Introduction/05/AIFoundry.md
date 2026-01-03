@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **שימוש ב-Azure AI Foundry להערכה**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.he.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.he.png)
 
 כיצד להעריך את אפליקציית ה-AI הגנרטיבית שלך באמצעות [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). בין אם אתה מעריך שיחות חד-סיבוביות או רב-סיבוביות, Azure AI Foundry מספקת כלים להערכת ביצועי המודל והבטיחות שלו.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.he.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.he.png)
 
 ## כיצד להעריך אפליקציות AI גנרטיביות עם Azure AI Foundry  
 להוראות מפורטות ראה את [תיעוד Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

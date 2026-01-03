@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## Skenario Fine Tuning
 
-![FineTuning dengan Layanan MS](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.id.png)
+![FineTuning dengan Layanan MS](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.id.png)
 
 **Platform** Ini mencakup berbagai teknologi seperti Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, dan ONNX Runtime.
 
@@ -24,7 +24,7 @@ Proses fine-tuning dengan teknologi Microsoft melibatkan berbagai komponen dan a
 
 Fine-tune model menggunakan fine-tuning yang dihosting, tanpa perlu membuat dan mengelola compute.
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.id.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.id.png)
 
 Fine-tuning tanpa server tersedia untuk model Phi-3-mini dan Phi-3-medium, memungkinkan pengembang untuk dengan cepat dan mudah menyesuaikan model untuk skenario cloud dan edge tanpa harus mengatur compute. Kami juga telah mengumumkan bahwa Phi-3-small kini tersedia melalui penawaran Models-as-a-Service kami sehingga pengembang dapat dengan cepat dan mudah memulai pengembangan AI tanpa harus mengelola infrastruktur dasar.
 
@@ -32,7 +32,7 @@ Fine-tuning tanpa server tersedia untuk model Phi-3-mini dan Phi-3-medium, memun
 
 Pengguna mengelola compute mereka sendiri untuk melakukan fine-tuning model mereka.
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.id.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.id.png)
 
 [Contoh Fine Tuning](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ Pengguna mengelola compute mereka sendiri untuk melakukan fine-tuning model mere
 
 ## Contoh Performa Fine Tuning
 
-![Performa Fine Tuning](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.id.png)
+![Performa Fine Tuning](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.id.png)
 
 **Penafian**:  
 Dokumen ini telah diterjemahkan menggunakan layanan terjemahan AI [Co-op Translator](https://github.com/Azure/co-op-translator). Meskipun kami berupaya untuk akurasi, harap diketahui bahwa terjemahan otomatis mungkin mengandung kesalahan atau ketidakakuratan. Dokumen asli dalam bahasa aslinya harus dianggap sebagai sumber yang sah. Untuk informasi penting, disarankan menggunakan terjemahan profesional oleh manusia. Kami tidak bertanggung jawab atas kesalahpahaman atau penafsiran yang keliru yang timbul dari penggunaan terjemahan ini.

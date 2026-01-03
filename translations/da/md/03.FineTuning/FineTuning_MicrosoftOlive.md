@@ -32,11 +32,11 @@ Den tager hensyn til begrænsninger som nøjagtighed og latenstid under optimeri
 
 Microsoft Olive er et meget brugervenligt open source værktøj til modeloptimering, som kan dække både finjustering og reference inden for generativ kunstig intelligens. Det kræver kun enkel konfiguration, og i kombination med open source små sprogmodeller og tilhørende runtime-miljøer (AzureML / lokal GPU, CPU, DirectML) kan du gennem automatisk optimering fuldføre finjustering eller reference af modellen og finde den bedste model til implementering i skyen eller på edge-enheder. Det giver virksomheder mulighed for at bygge deres egne branchespecifikke modeller både lokalt og i skyen.
 
-![intro](../../../../translated_images/intro.46086a3f16ec48e273c5ec11ec23b0dd23593dbab951e95d565145b40e8571a5.da.png)
+![intro](../../../../translated_images/intro.46086a3f16ec48e2.da.png)
 
 ## Phi-3 Finjustering med Microsoft Olive
 
-![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681cff9564145ddbf6d335cbcd7a79f4886b4120380deaa384f.da.png)
+![FinetuningwithOlive](../../../../translated_images/olivefinetune.76d09e9b68253681.da.png)
 
 ## Phi-3 Olive Eksempelkode og eksempel
 I dette eksempel vil du bruge Olive til at:

@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Izbral sem Objective-C kot način razvoja aplikacije, ker je uporaba Generative AI z ONNX Runtime C++ API-jem v Objective-C bolj združljiva. Seveda lahko ustrezne klice izvedete tudi preko Swift bridginga.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.sl.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.sl.png)
 
 ## **5. Kopirajte ONNX kvantizirani INT4 model v projekt aplikacije**
 
 Potrebno je uvoziti INT4 kvantizacijski model v ONNX formatu, ki ga je treba najprej prenesti.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.sl.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.sl.png)
 
 Po prenosu ga dodajte v mapo Resources v projektu v Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.sl.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.sl.png)
 
 ## **6. Dodajanje C++ API v ViewControllers**
 
@@ -121,11 +121,11 @@ Po prenosu ga dodajte v mapo Resources v projektu v Xcode.
 
 - **a.** Dodajte ustrezne C++ glave datotek v projekt.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.sl.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.sl.png)
 
 - **b.** Vključite dinamično knjižnico `onnxruntime-genai` v Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.sl.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.sl.png)
 
 - **c.** Za testiranje uporabite C vzorčno kodo. Dodate lahko tudi dodatne funkcije, kot je ChatUI, za večjo funkcionalnost.
 
@@ -162,7 +162,7 @@ Po prenosu ga dodajte v mapo Resources v projektu v Xcode.
 
 Ko je nastavitev končana, lahko zaženete aplikacijo in si ogledate rezultate inference modela Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.sl.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.sl.jpg)
 
 Za več vzorčne kode in podrobna navodila obiščite [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

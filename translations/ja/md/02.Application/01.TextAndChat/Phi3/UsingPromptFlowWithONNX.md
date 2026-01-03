@@ -33,33 +33,33 @@ Windows GPU用ONNX Runtime GenAIの設定方法はこのガイドを参照して
 
 1. Prompt flowのVS Code拡張機能をインストールします
 
-![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbef699fc16fa48f3ed3a23361875a3362037d026896395a00d.ja.png)
+![pfvscode](../../../../../../translated_images/pfvscode.eff93dfc66a42cbe.ja.png)
 
 2. Prompt flowのVS Code拡張機能をインストール後、拡張機能をクリックし、**Installation dependencies**を選択して、このガイドに従い環境にPrompt flow SDKをインストールします
 
-![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f74e8b74ce2be7047ce963ef573d755ec897eb1b78cb9c954.ja.png)
+![pfsetup](../../../../../../translated_images/pfsetup.b46e93096f5a254f.ja.png)
 
 3. [サンプルコード](../../../../../../code/09.UpdateSamples/Aug/pf/onnx_inference_pf)をダウンロードし、VS Codeで開きます
 
-![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4dba182513e3148a989e552c3b8e4948567a6b806b5ae1845.ja.png)
+![pfsample](../../../../../../translated_images/pfsample.8d89e70584ffe7c4.ja.png)
 
 4. **flow.dag.yaml**を開いてPython環境を選択します
 
-![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff850a76ae949226391ea382856d543ef9da4b92096aff7e4b.ja.png)
+![pfdag](../../../../../../translated_images/pfdag.264a77f7366458ff.ja.png)
 
    **chat_phi3_ort.py**を開いてPhi-3.5-instruct ONNXモデルの場所を変更します
 
-![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45fc78cdfeeb8c7fbd9e7cd610bf2f96814dbade6a4a2dfad7e.ja.png)
+![pfphi](../../../../../../translated_images/pfphi.72da81d74244b45f.ja.png)
 
 5. Prompt flowを実行してテストします
 
 **flow.dag.yaml**を開き、ビジュアルエディターをクリックします
 
-![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603cccee3fe91e94113792ed6f5af28f76ab08e1a0b3e77b33b.ja.png)
+![pfv](../../../../../../translated_images/pfv.ba8a81f34b20f603.ja.png)
 
 クリック後、実行してテストします
 
-![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b6348b59edefdb6333e5729b54c8e57f9039b7f9463e68fbd.ja.png)
+![pfflow](../../../../../../translated_images/pfflow.4e1135a089b1ce1b.ja.png)
 
 1. ターミナルでバッチ実行してさらに結果を確認できます
 
@@ -73,7 +73,7 @@ pf run create --file batch_run.yaml --stream --name 'Your eval qa name'
 結果はデフォルトのブラウザで確認可能です
 
 
-![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cbe871cff35db4a013dcfefc13fafe5da6710a8549a96a4ceb.ja.png)
+![pfresult](../../../../../../translated_images/pfresult.c22c826f8062d7cb.ja.png)
 
 **免責事項**：  
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性には努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じたいかなる誤解や誤訳についても、当方は一切の責任を負いかねます。

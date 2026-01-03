@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Jag valde Objective-C som utvecklingsmetod för appen eftersom Generative AI med ONNX Runtime C++ API fungerar bättre med Objective-C. Självklart kan du också göra motsvarande anrop via Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.sv.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.sv.png)
 
 ## **5. Kopiera ONNX kvantiserade INT4-modellen till App-projektet**
 
 Vi behöver importera INT4-kvantiseringsmodellen i ONNX-format, som först måste laddas ner.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.sv.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.sv.png)
 
 Efter nedladdning behöver du lägga till den i projektets Resources-katalog i Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.sv.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.sv.png)
 
 ## **6. Lägg till C++ API i ViewControllers**
 
@@ -121,11 +121,11 @@ Efter nedladdning behöver du lägga till den i projektets Resources-katalog i X
 
 - **a.** Lägg till motsvarande C++ header-filer i projektet.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.sv.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.sv.png)
 
 - **b.** Inkludera den dynamiska biblioteket `onnxruntime-genai` i Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.sv.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.sv.png)
 
 - **c.** Använd C Samples-koden för testning. Du kan även lägga till extra funktioner som ChatUI för mer funktionalitet.
 
@@ -162,7 +162,7 @@ Efter nedladdning behöver du lägga till den i projektets Resources-katalog i X
 
 När allt är klart kan du köra applikationen för att se resultatet av Phi-3-mini modellens inferens.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.sv.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.sv.jpg)
 
 För fler exempel och detaljerade instruktioner, besök [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

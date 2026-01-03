@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry használata értékeléshez**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.hu.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.hu.png)
 
 Hogyan értékelheted generatív AI alkalmazásodat az [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) segítségével. Akár egyszeri, akár többszörös körös beszélgetéseket vizsgálsz, az Azure AI Foundry eszközöket kínál a modell teljesítményének és biztonságának értékelésére.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.hu.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.hu.png)
 
 ## Hogyan értékeljük a generatív AI alkalmazásokat az Azure AI Foundry-val
 Részletes útmutatóért lásd a [Azure AI Foundry dokumentációját](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

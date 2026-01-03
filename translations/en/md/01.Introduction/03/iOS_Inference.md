@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 I chose Objective-C for app development because using Generative AI with the ONNX Runtime C++ API works better with Objective-C. Of course, you can also handle related calls through Swift bridging.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.en.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.en.png)
 
 ## **5. Copy the ONNX quantized INT4 model to the App project**
 
 We need to import the INT4 quantized ONNX model, which must be downloaded first.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.en.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.en.png)
 
 After downloading, add it to the Resources folder of your Xcode project.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.en.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.en.png)
 
 ## **6. Adding the C++ API in ViewControllers**
 
@@ -121,11 +121,11 @@ After downloading, add it to the Resources folder of your Xcode project.
 
 - **a.** Add the corresponding C++ header files to the project.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.en.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.en.png)
 
 - **b.** Include the `onnxruntime-genai` dynamic library in Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.en.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.en.png)
 
 - **c.** Use the C sample code for testing. You can also add extra features like ChatUI for more functionality.
 
@@ -162,7 +162,7 @@ After downloading, add it to the Resources folder of your Xcode project.
 
 Once everything is set up, you can run the app to see the results of the Phi-3-mini model inference.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.en.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.en.jpg)
 
 For more sample code and detailed instructions, visit the [Phi-3 Mini Samples repository](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

@@ -41,7 +41,7 @@ RAG అనేది డేటా రిట్రీవల్ + పాఠ్య �
 
 ## **RAG ను ఎలా ఉపయోగించాలి**
 
-![RAG](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.te.png)
+![RAG](../../../../translated_images/rag.2014adc59e6f6007.te.png)
 
 A vector database is a collection of data stored in mathematical form. Vector databases make it easier for machine learning models to remember previous inputs, enabling machine learning to be used to support use cases such as search, recommendations, and text generation. Data can be identified based on similarity metrics rather than exact matches, allowing computer models to understand the context of the data.
 
@@ -58,7 +58,7 @@ The commonly used algorithms in Fine-tuning are Lora and QLora. How to choose?
 
 ### **LoRA మరియు QLoRA**
 
-![LoRA](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.te.png)
+![LoRA](../../../../translated_images/qlora.e6446c988ee04ca0.te.png)
 
 LoRA (Low-Rank Adaptation) మరియు QLoRA (Quantized Low-Rank Adaptation) రెండూ Parameter Efficient Fine Tuning (PEFT) ఉపయోగించి పెద్ద భాషా మోడల్స్ (LLMs) ను ఫైన్-ట్యూన్ చేయడానికి ఉపయోగించే సాంకేతికతలు. PEFT సాంకేతికతలు సాంప్రదాయ పద్ధతులకంటే మోడళ్లను మరింత సమర్థవంతంగా ట్రెయిన్ చేయడానికి రూపొందించబడ్డాయి. 
 LoRA ఒక స్టాండ్అలోన్ ఫైన్‌ట్యూనింగ్ సాంకేతికత, ఇది వెయిట్ అప్‌డేట్ మెట్రిక్స్‌పై లో-రాంక్ ఆప్రోక్సిమేషన్ ఇచ్చి మెమొరీ ఫుట్‌ప్రింట్ తగ్గిస్తుంది. ఇది వేగవంతమైన ట్రైనింగ్ సమయాలను అందించి సాంప్రదాయ ఫైన్-ట్యూనింగ్ పద్ధతులకు సమీపంగా పనితీరును నిలుపుతుంది. 

@@ -41,7 +41,7 @@ Fine-tuning perustuu tietyn mallin parantamiseen. Ei tarvitse aloittaa mallin al
 
 ## **Miten käyttää RAG:ia**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.fi.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007.fi.png)
 
 Vektoritietokanta on matemaattisessa muodossa tallennettu datakokoelma. Vektoritietokannat helpottavat koneoppimismallien aiempien syötteiden muistamista, mahdollistaen koneoppimisen hyödyntämisen esimerkiksi haussa, suosituksissa ja tekstin generoinnissa. Data voidaan tunnistaa samankaltaisuusmittareiden perusteella, ei pelkästään täsmällisten osumien avulla, jolloin tietokoneet ymmärtävät datan kontekstin.
 
@@ -57,7 +57,7 @@ Yleisimmin käytetyt algoritmit Fine-tuningissa ovat Lora ja QLora. Miten valita
 
 ### **Lora ja QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.fi.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca0.fi.png)
 
 LoRA (Low-Rank Adaptation) ja QLoRA (Quantized Low-Rank Adaptation) ovat molemmat tekniikoita suurten kielimallien (LLM) hienosäätöön käyttäen Parameter Efficient Fine Tuning (PEFT) -menetelmiä. PEFT-tekniikat on suunniteltu kouluttamaan malleja tehokkaammin kuin perinteiset menetelmät.  
 LoRA on itsenäinen hienosäätötekniikka, joka vähentää muistinkulutusta soveltamalla matalarankista approksimaatiota painopäivitysmatriisiin. Se tarjoaa nopean koulutusajan ja säilyttää suorituskyvyn lähellä perinteisiä hienosäätömenetelmiä.

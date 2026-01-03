@@ -34,7 +34,7 @@ Phi הוא סדרת דגמי AI בקוד פתוח שפותחה על ידי Micro
 2. **שכפל את המאגר**:   `git clone https://github.com/microsoft/PhiCookBook.git`
 3. [**הצטרף לקהילת Discord של Microsoft AI ופגוש מומחים ומפתחים אחרים**](https://discord.com/invite/ByRwuEEgH4?WT.mc_id=aiml-137032-kinfeylo)
 
-![כריכה](../../translated_images/cover.eb18d1b9605d754b30973f4e17c6e11ea4f8473d9686ee378d6e7b44e3c70ac7.he.png)
+![כריכה](../../translated_images/cover.eb18d1b9605d754b.he.png)
 
 ### 🌐 תמיכה בריבוי שפות
 

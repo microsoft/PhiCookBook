@@ -41,7 +41,7 @@ Bevar versionskontrol og del viden effektivt. Strømlin hele prompt engineering-
 
 I Microsoft Prompt Flow spiller evaluering en afgørende rolle i at vurdere, hvor godt dine AI-modeller præsterer. Lad os se på, hvordan du kan tilpasse evalueringsflows og metrikker i Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.da.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.da.png)
 
 **Forståelse af evaluering i Prompt Flow**
 

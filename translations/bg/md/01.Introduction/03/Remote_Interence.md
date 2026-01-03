@@ -11,11 +11,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 След като адаптерите бъдат обучени в отдалечената среда, използвайте проста Gradio апликация за взаимодействие с модела.
 
-![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7ffbec00f51a29199b0a53cefdd7fd2ce8330e4f787d98a94a.bg.png)
+![Fine-tune complete](../../../../../translated_images/log-finetuning-res.7b92254e7e822c7f.bg.png)
 
 ### Осигуряване на Azure ресурси
 Трябва да настроите Azure ресурсите за отдалечено извеждане, като изпълните командата `AI Toolkit: Provision Azure Container Apps for inference` от командната палитра. По време на тази настройка ще бъдете помолени да изберете вашия Azure абонамент и група ресурси.  
-![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc03bc2ae439330ad1253da4f08ed8a8e98cdf89ca5c7ae4c5.bg.png)
+![Provision Inference Resource](../../../../../translated_images/command-provision-inference.467afc8d351642fc.bg.png)
    
 По подразбиране абонаментът и групата ресурси за извеждане трябва да съвпадат с тези, използвани за финото настройване. Извеждането ще използва същата Azure Container App среда и ще има достъп до модела и адаптера на модела, съхранени в Azure Files, които бяха създадени по време на стъпката за фино настройване.
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 ### Разгръщане за извеждане  
 Ако желаете да промените кода за извеждане или да презаредите модела за извеждане, изпълнете командата `AI Toolkit: Deploy for inference`. Това ще синхронизира последния ви код с ACA и ще рестартира репликата.
 
-![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0aec6bb518f3c5b19a945ca040216da11e210666ad0330702ea.bg.png)
+![Deploy for inference](../../../../../translated_images/command-deploy.9adb4e310dd0b0ae.bg.png)
 
 След успешно приключване на разгръщането, моделът е готов за оценка чрез този крайна точка.
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Можете да получите достъп до API за извеждане, като кликнете върху бутона "*Go to Inference Endpoint*" в известието на VSCode. Алтернативно, уеб API крайна точка може да бъде намерена под `ACA_APP_ENDPOINT` в `./infra/inference.config.json` и в панела с изходни данни.
 
-![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be5848fd31391c467b8d42c2db1d5daffa2250c9fcd3d8486164.bg.png)
+![App Endpoint](../../../../../translated_images/notification-deploy.446e480a44b1be58.bg.png)
 
 > **Note:** Крайната точка за извеждане може да отнеме няколко минути, за да стане напълно функционална.
 

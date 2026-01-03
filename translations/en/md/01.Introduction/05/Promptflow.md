@@ -42,7 +42,7 @@ Maintain version control and share knowledge efficiently. Streamline the entire 
 
 In Microsoft Prompt Flow, evaluation is key to measuring how well your AI models perform. Let’s look at how you can customize evaluation flows and metrics within Prompt Flow:
 
-![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.en.png)
+![PFVizualise](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.en.png)
 
 **Understanding Evaluation in Prompt Flow**
 

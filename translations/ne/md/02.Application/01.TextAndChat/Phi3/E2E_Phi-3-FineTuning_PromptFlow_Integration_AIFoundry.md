@@ -24,7 +24,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 यहाँ यस E2E नमूनाको अवलोकन छ।
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a2ceacdc6401c688bdf100d874fe8d55169f7723ed024781e.ne.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.ne.png)
 
 ### सामग्री तालिका
 
@@ -49,13 +49,13 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. पोर्टल पृष्ठको माथिल्लो भागमा रहेको **search bar** मा *azure machine learning* टाइप गर्नुहोस् र देखिएका विकल्पहरूबाट **Azure Machine Learning** चयन गर्नुहोस्।
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b9780de8accc31e4e1de7254e9c34a7836a955d455339e77d.ne.png)
+    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.ne.png)
 
 2. नेभिगेसन मेनुबाट **+ Create** चयन गर्नुहोस्।
 
 3. नेभिगेसन मेनुबाट **New workspace** चयन गर्नुहोस्।
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2cf04946c36873223099fd568e0c3ab0377c096868892fdda.ne.png)
+    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.ne.png)
 
 4. तलका कार्यहरू गर्नुहोस्:
 
@@ -68,7 +68,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - प्रयोग गर्नुपर्ने **Application insights** चयन गर्नुहोस् (आवश्यक परे नयाँ बनाउनुहोस्)।
     - प्रयोग गर्नुपर्ने **Container registry** चयन गर्नुहोस् (आवश्यक परे नयाँ बनाउनुहोस्)।
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090ff9ec341c724c1493e7f96726f5c810a89a7409b782a7b04a.ne.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.ne.png)
 
 5. **Review + Create** चयन गर्नुहोस्।
 
@@ -91,7 +91,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - प्रयोग गर्नुपर्ने **Virtual machine family** चयन गर्नुहोस्। उदाहरणका लागि, *Standard NCADSA100v4 Family Cluster Dedicated vCPUs* चयन गर्नुहोस्, जसमा *Standard_NC24ads_A100_v4* GPU समावेश छ।
     - नेभिगेसन मेनुबाट **Request quota** चयन गर्नुहोस्।
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd536f2e4a305c8528a34914370813bc2cda4d7bbdd2de873f0.ne.png)
+        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.ne.png)
 
     - Request quota पृष्ठमा, तपाईंले प्रयोग गर्न चाहेको **New cores limit** प्रविष्ट गर्नुहोस्। उदाहरणका लागि, २४।
     - Request quota पृष्ठमा, GPU कोटा अनुरोध गर्न **Submit** चयन गर्नुहोस्।
@@ -112,11 +112,11 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. पोर्टल पृष्ठको माथिल्लो भागमा रहेको **search bar** मा *managed identities* टाइप गर्नुहोस् र देखिएका विकल्पहरूबाट **Managed Identities** चयन गर्नुहोस्।
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e52f52a152187b230243fe884f58a9940cd9b534db3dcea383.ne.png)
+    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.ne.png)
 
 1. **+ Create** चयन गर्नुहोस्।
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f27b6680cd94ef6ec7557394022dafdcfba2a92777b11e4817.ne.png)
+    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.ne.png)
 
 1. तलका कार्यहरू गर्नुहोस्:
 
@@ -125,7 +125,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - प्रयोग गर्न चाहेको **Region** चयन गर्नुहोस्।
     - **Name** प्रविष्ट गर्नुहोस्। यो अनौठो हुनुपर्छ।
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0e313fffaecf7d6ce4ee5e86c0badcd038f03519cac63b76b.ne.png)
+    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.ne.png)
 
 1. **Review + create** चयन गर्नुहोस्।
 
@@ -145,7 +145,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - प्रयोग गर्नुपर्ने **Resource group** चयन गर्नुहोस्।
     - **Role** लाई **Contributor** मा सेट गर्नुहोस्।
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d1d62333e91b4d2719284f0dad14bd9b4c3459510a0c44fab.ne.png)
+    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.ne.png)
 
 2. **Save** चयन गर्नुहोस्।
 
@@ -153,7 +153,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. पोर्टल पृष्ठको माथिल्लो भागमा रहेको **search bar** मा *storage accounts* टाइप गर्नुहोस् र देखिएका विकल्पहरूबाट **Storage accounts** चयन गर्नुहोस्।
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e55b6b4dda10841d74d1c7463a2e4f23b9c45ffbb84219deb2.ne.png)
+    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.ne.png)
 
 1. तपाईंले सिर्जना गरेको Azure Machine Learning workspace सँग सम्बन्धित storage account चयन गर्नुहोस्। उदाहरणका लागि, *finetunephistorage*।
 
@@ -164,7 +164,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - नेभिगेसन मेनुबाट **+ Add** चयन गर्नुहोस्।
     - नेभिगेसन मेनुबाट **Add role assignment** चयन गर्नुहोस्।
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c25fb73e63b957e214a2b651375a640a3aa54159a3731f495b.ne.png)
+    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.ne.png)
 
 1. Add role assignment पृष्ठमा, तलका कार्यहरू गर्नुहोस्:
 
@@ -177,7 +177,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - Select managed identities पृष्ठमा, तपाईंले सिर्जना गरेको Manage Identity चयन गर्नुहोस्। उदाहरणका लागि, *finetunephi-managedidentity*।
     - Select managed identities पृष्ठमा, **Select** चयन गर्नुहोस्।
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25289f2f121da05d114934d21d26aae9cb779334cbbccdf9e8.ne.png)
+    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.ne.png)
 
 1. **Review + assign** चयन गर्नुहोस्।
 
@@ -185,7 +185,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. पोर्टल पृष्ठको माथिल्लो भागमा रहेको **search bar** मा *container registries* टाइप गर्नुहोस् र देखिएका विकल्पहरूबाट **Container registries** चयन गर्नुहोस्।
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a69b003f7a698dac908ffc2f355e675c10939fdd0bb09f790e.ne.png)
+    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.ne.png)
 
 1. Azure Machine Learning workspace सँग सम्बन्धित container registry चयन गर्नुहोस्। उदाहरणका लागि, *finetunephicontainerregistry*
 
@@ -272,11 +272,11 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. तपाईंले सिर्जना गरेको *finetune-phi* फोल्डर चयन गर्नुहोस्, जुन *C:\Users\yourUserName\finetune-phi* मा अवस्थित छ।
 
-    ![तपाईंले सिर्जना गरेको फोल्डर चयन गर्नुहोस्।](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6f63a0a50961e51a39cc6de7a7ddc86da5f4896e815f28abd.ne.png)
+    ![तपाईंले सिर्जना गरेको फोल्डर चयन गर्नुहोस्।](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.ne.png)
 
 1. Visual Studio Code को बायाँ प्यानलमा राइट-क्लिक गरेर **New File** चयन गरी *download_dataset.py* नामको नयाँ फाइल सिर्जना गर्नुहोस्।
 
-    ![नयाँ फाइल सिर्जना गर्नुहोस्।](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff927ede875300e1b5c91ab90d1e486c77a43bb9494880cf9b6f.ne.png)
+    ![नयाँ फाइल सिर्जना गर्नुहोस्।](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.ne.png)
 
 ### फाइन-ट्युनिङका लागि डेटासेट तयार गर्नुहोस्
 
@@ -388,7 +388,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. **+ New** चयन गर्नुहोस्।
 
-    ![Compute चयन गर्नुहोस्।](../../../../../../translated_images/06-01-select-compute.a29cff290b480252d04ffd0142c073486df7d3b7256335964a98b87e28072523.ne.png)
+    ![Compute चयन गर्नुहोस्।](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.ne.png)
 
 1. तलका कार्यहरू गर्नुहोस्:
 
@@ -398,7 +398,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - **Virtual machine size** फिल्टरलाई **Select from all options** मा सेट गर्नुहोस्।
     - **Virtual machine size** लाई **Standard_NC24ads_A100_v4** चयन गर्नुहोस्।
 
-    ![क्लस्टर सिर्जना गर्नुहोस्।](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e4baa9c5ccf86510f21df87515c231b2a255e1ee545496458.ne.png)
+    ![क्लस्टर सिर्जना गर्नुहोस्।](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.ne.png)
 
 1. **Next** चयन गर्नुहोस्।
 
@@ -409,7 +409,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - **Maximum number of nodes** लाई **1** मा सेट गर्नुहोस्।
     - **Idle seconds before scale down** लाई **120** मा सेट गर्नुहोस्।
 
-    ![क्लस्टर सिर्जना गर्नुहोस्।](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662edc0f95ad364a869b4dbb7f7be08ff259528fea96312e77e.ne.png)
+    ![क्लस्टर सिर्जना गर्नुहोस्।](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.ne.png)
 
 1. **Create** चयन गर्नुहोस्।
 
@@ -419,18 +419,18 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. तपाईंले सिर्जना गरेको Azure Machine Learning workspace चयन गर्नुहोस्।
 
-    ![तपाईंले सिर्जना गरेको workspace चयन गर्नुहोस्।](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.ne.png)
+    ![तपाईंले सिर्जना गरेको workspace चयन गर्नुहोस्।](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.ne.png)
 
 1. तलका कार्यहरू गर्नुहोस्:
 
     - बायाँपट्टि ट्याबबाट **Model catalog** चयन गर्नुहोस्।
     - **search bar** मा *phi-3-mini-4k* टाइप गर्नुहोस् र देखिएका विकल्पहरूबाट **Phi-3-mini-4k-instruct** चयन गर्नुहोस्।
 
-    ![phi-3-mini-4k टाइप गर्नुहोस्।](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b25018a7e7353ce6525d8f5803b0af9bc9a60a9be4204dd77578.ne.png)
+    ![phi-3-mini-4k टाइप गर्नुहोस्।](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.ne.png)
 
 1. नेभिगेसन मेनुबाट **Fine-tune** चयन गर्नुहोस्।
 
-    ![Fine-tune चयन गर्नुहोस्।](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeecb897ac74882792b59086893b8a7448a89be3628aee62fc1b.ne.png)
+    ![Fine-tune चयन गर्नुहोस्।](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.ne.png)
 
 1. तलका कार्यहरू गर्नुहोस्:
 
@@ -439,7 +439,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - Validation data अपलोड प्रकारलाई **Provide different validation data** मा सेट गर्नुहोस्।
     - **+ Select data** मा क्लिक गरेर **Validation data** अपलोड गर्नुहोस्।
 
-    ![फाइन-ट्युनिङ पृष्ठ भर्नुहोस्।](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0bbc6b248af9e7369ca98379770badec9f73b6bced7a8b7806.ne.png)
+    ![फाइन-ट्युनिङ पृष्ठ भर्नुहोस्।](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.ne.png)
 
     > [!TIP]
     >
@@ -449,7 +449,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. यस अभ्यासमा, तपाईंले Azure Machine Learning प्रयोग गरी सफलतापूर्वक Phi-3 मोडेल फाइन-ट्युन गर्नुभयो। कृपया ध्यान दिनुहोस् कि फाइन-ट्युनिङ प्रक्रिया केही समय लाग्न सक्छ। फाइन-ट्युनिङ जॉब चलाएपछि, यसको पूरा हुन कुर्नुहोस्। तपाईंले Azure Machine Learning Workspace को बायाँपट्टि रहेको Jobs ट्याबमा गएर फाइन-ट्युनिङ जॉबको स्थिति अनुगमन गर्न सक्नुहुन्छ। अर्को श्रृंखलामा, तपाईंले फाइन-ट्युन गरिएको मोडेल डिप्लोय गरी Prompt flow सँग एकीकृत गर्नुहुनेछ।
 
-    ![फाइनट्युनिङ जॉब हेर्नुहोस्।](../../../../../../translated_images/06-08-output.2bd32e59930672b1cc1de86056e2fbc91e338f59e2a29d7dac86ede49a9714b2.ne.png)
+    ![फाइनट्युनिङ जॉब हेर्नुहोस्।](../../../../../../translated_images/06-08-output.2bd32e59930672b1.ne.png)
 
 ### फाइन-ट्युन गरिएको Phi-3 मोडेल डिप्लोय गर्नुहोस्
 
@@ -467,7 +467,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. तपाईंले सिर्जना गरेको Azure Machine Learning workspace चयन गर्नुहोस्।
 
-    ![तपाईंले सिर्जना गरेको workspace चयन गर्नुहोस्।](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.ne.png)
+    ![तपाईंले सिर्जना गरेको workspace चयन गर्नुहोस्।](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.ne.png)
 
 1. बायाँपट्टि ट्याबबाट **Models** चयन गर्नुहोस्।
 
@@ -475,11 +475,11 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. **From a job output** चयन गर्नुहोस्।
 
-    ![मोडेल दर्ता गर्नुहोस्।](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777c8c39906ce5cd57f16b54fb3887dd4e4de1ce963b26499ad.ne.png)
+    ![मोडेल दर्ता गर्नुहोस्।](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.ne.png)
 
 1. तपाईंले सिर्जना गरेको जॉब चयन गर्नुहोस्।
 
-    ![जॉब चयन गर्नुहोस्।](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd09315953b4eb2cc9d62d0d77ab0d9d877e34c6827fa6d2b6be4.ne.png)
+    ![जॉब चयन गर्नुहोस्।](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.ne.png)
 
 1. **Next** चयन गर्नुहोस्।
 
@@ -487,17 +487,17 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. **Job output** चयन गरिएको छ कि छैन सुनिश्चित गर्नुहोस्; यो स्वचालित रूपमा चयन हुन्छ।
 
-    ![आउटपुट चयन गर्नुहोस्।](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f267b40f73de77f092a5b02808ade72f8eb94e5fe9723feb3.ne.png)
+    ![आउटपुट चयन गर्नुहोस्।](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.ne.png)
 
 2. **Next** चयन गर्नुहोस्।
 
 3. **Register** चयन गर्नुहोस्।
 
-    ![दर्ता गर्नुहोस्।](../../../../../../translated_images/07-04-register.fd82a3b293060bc78399e613293032d3d301c02a6fd8092bec52bfaf4f3104de.ne.png)
+    ![दर्ता गर्नुहोस्।](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.ne.png)
 
 4. तपाईंले दर्ता गरेको मोडेल बायाँपट्टि ट्याबको **Models** मेनुमा गएर हेर्न सक्नुहुन्छ।
 
-    ![दर्ता गरिएको मोडेल।](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591b7995686b95396ffd8c185ba66f0a1f6be18f4aea05e93d5.ne.png)
+    ![दर्ता गरिएको मोडेल।](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.ne.png)
 
 #### फाइन-ट्युन गरिएको मोडेल डिप्लोय गर्नुहोस्
 
@@ -507,13 +507,13 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. नेभिगेसन मेनुबाट **Real-time endpoints** चयन गर्नुहोस्।
 
-    ![एन्डपोइन्ट सिर्जना गर्नुहोस्।](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09618ce29b467276523838b8cc766d79ebfecdb052fef2c4df.ne.png)
+    ![एन्डपोइन्ट सिर्जना गर्नुहोस्।](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.ne.png)
 
 1. **Create** चयन गर्नुहोस्।
 
 1. तपाईंले दर्ता गरेको मोडेल चयन गर्नुहोस्।
 
-    ![दर्ता गरिएको मोडेल चयन गर्नुहोस्।](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4460f7646dfaa59121fb1384ed1957755427d358462c25225.ne.png)
+    ![दर्ता गरिएको मोडेल चयन गर्नुहोस्।](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.ne.png)
 
 1. **Select** चयन गर्नुहोस्।
 
@@ -525,7 +525,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - **Endpoint name** प्रविष्ट गर्नुहोस्। यो अनौठो हुनुपर्छ।
     - **Deployment name** प्रविष्ट गर्नुहोस्। यो अनौठो हुनुपर्छ।
 
-    ![डिप्लोयमेन्ट सेटिङ भर्नुहोस्।](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e67378494bb8d81418bc3bdaceb8c57151727d538594cb378697f36.ne.png)
+    ![डिप्लोयमेन्ट सेटिङ भर्नुहोस्।](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.ne.png)
 
 1. **Deploy** चयन गर्नुहोस्।
 
@@ -541,14 +541,14 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. तपाईंले सिर्जना गरेको एन्डपोइन्ट चयन गर्नुहोस्।
 
-    ![एन्डपोइन्ट चयन गर्नुहोस्।](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4a302f0efc8875002e1c382167083c7fefbdb42ede274d0da.ne.png)
+    ![एन्डपोइन्ट चयन गर्नुहोस्।](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.ne.png)
 
 1. यस पृष्ठमा, तपाईंले डिप्लोयमेन्ट प्रक्रियाको क्रममा एन्डपोइन्टहरू व्यवस्थापन गर्न सक्नुहुन्छ।
 
 > [!NOTE]
 > डिप्लोयमेन्ट पूरा भएपछि, सुनिश्चित गर्नुहोस् कि **Live traffic** लाई **100%** मा सेट गरिएको छ। यदि छैन भने, **Update traffic** चयन गरेर ट्राफिक सेटिङ समायोजन गर्नुहोस्। ट्राफिक 0% मा सेट भएमा मोडेल परीक्षण गर्न सकिँदैन।
 >
-> ![ट्राफिक सेट गर्नुहोस्।](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d30c64ecabac4b17a7b5dc004ba52ad387cbaaf7b266eeadf.ne.png)
+> ![ट्राफिक सेट गर्नुहोस्।](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.ne.png)
 >
 
 ## परिदृश्य ३: Prompt flow सँग एकीकृत गर्नुहोस् र Azure AI Foundry मा आफ्नो कस्टम मोडेलसँग कुराकानी गर्नुहोस्
@@ -576,7 +576,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. नेभिगेसन मेनुबाट **+ New hub** चयन गर्नुहोस्।
 
-    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834e092dcf9dda773276fbee65f40252ed4a9af4f9aa4fef5d7.ne.png)
+    ![Create hub.](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.ne.png)
 
 1. तलका कार्यहरू गर्नुहोस्:
 
@@ -587,7 +587,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - प्रयोग गर्न चाहेको **Connect Azure AI Services** चयन गर्नुहोस् (आवश्यक परे नयाँ बनाउनुहोस्)।
     - **Connect Azure AI Search** मा **Skip connecting** चयन गर्नुहोस्।
 
-    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c44658a87c2ed01d9e588581f157480ff1ac3312085c51d25.ne.png)
+    ![Fill hub.](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.ne.png)
 
 1. **Next** चयन गर्नुहोस्।
 
@@ -597,11 +597,11 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. नेभिगेसन मेनुबाट **+ New project** चयन गर्नुहोस्।
 
-    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f1251c487d98aed0641bd057100b8e5d6fba9062bfb7d752ce9.ne.png)
+    ![Select new project.](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.ne.png)
 
 1. **Project name** प्रविष्ट गर्नुहोस्। यो अनौठो हुनुपर्छ।
 
-    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a192b4ed3dde6b1136c860fc85352d612aa2f3ae8a4d54eb4.ne.png)
+    ![Create project.](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.ne.png)
 
 1. **Create a project** चयन गर्नुहोस्।
 
@@ -617,17 +617,17 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. बाँया पट्टि रहेको ट्याबबाट **Endpoints** चयन गर्नुहोस्।
 
-    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf960519c1ac95116d1a7e5b8d0bdea5cd42281930766fbfad1929.ne.png)
+    ![Select endpoints.](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.ne.png)
 
 1. तपाईंले सिर्जना गरेको endpoint चयन गर्नुहोस्।
 
-    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275ea16f689f59b70d5b0162fff1781204e389edcb63b42b95b2.ne.png)
+    ![Select endpoints.](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.ne.png)
 
 1. नेभिगेसन मेनुबाट **Consume** चयन गर्नुहोस्।
 
 1. आफ्नो **REST endpoint** र **Primary key** कपी गर्नुहोस्।
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cbe30a20b889154d04109bf17c5c09816060a8689933dc0fd7.ne.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.ne.png)
 
 #### कस्टम कनेक्शन थप्नुहोस्
 
@@ -639,11 +639,11 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. **+ New connection** चयन गर्नुहोस्।
 
-    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc77130c3a16fbb8ee59407ecbf74fd3502cb8720c61384446.ne.png)
+    ![Select new connection.](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.ne.png)
 
 1. नेभिगेसन मेनुबाट **Custom keys** चयन गर्नुहोस्।
 
-    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b29664605513ccc134f1adaefaf27f951981c511783a6a0d1118c9178a5.ne.png)
+    ![Select custom keys.](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.ne.png)
 
 1. तलका कार्यहरू गर्नुहोस्:
 
@@ -653,7 +653,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
     - key नामको लागि **key** लेख्नुहोस् र Azure ML Studio बाट कपी गरेको key मानमा टाँस्नुहोस्।
     - key हरू थपिसकेपछि, key लाई सार्वजनिक हुनबाट रोक्न **is secret** चयन गर्नुहोस्।
 
-    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26e8df1bbd0948e06aa20aa0dc102faa96c8144722ef7f0b72.ne.png)
+    ![Add connection.](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.ne.png)
 
 1. **Add connection** चयन गर्नुहोस्।
 
@@ -667,15 +667,15 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. नेभिगेसन मेनुबाट **+ Create** चयन गर्नुहोस्।
 
-    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5ba79bedfd35e2f2fb430f344844994375680fcfc111a994ae.ne.png)
+    ![Select Promptflow.](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.ne.png)
 
 1. नेभिगेसन मेनुबाट **Chat flow** चयन गर्नुहोस्।
 
-    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591f6cc6360bc35c8fca8d63519c09111c6c431de9b46eed143.ne.png)
+    ![Select chat flow.](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.ne.png)
 
 1. प्रयोग गर्न चाहेको **Folder name** प्रविष्ट गर्नुहोस्।
 
-    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d824bad779a54e55d808a09394b6b730fbea55d78421f52ff.ne.png)
+    ![Enter name.](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.ne.png)
 
 2. **Create** चयन गर्नुहोस्।
 
@@ -712,7 +712,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
     - **Save** चयन गर्नुहोस्।
 
-    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985b76e070bf170e1d0d0d26b38d93bc635624642191f715a6d.ne.png)
+    ![Select raw file mode.](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.ne.png)
 
 1. Prompt flow मा कस्टम Phi-3 मोडेल प्रयोग गर्न *integrate_with_promptflow.py* फाइलमा तलको कोड थप्नुहोस्।
 
@@ -777,14 +777,14 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d097779ab1c429be9fc07e3f4171e41fbbfb747a6e755816411e6d.ne.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.ne.png)
 
 > [!NOTE]
 > Azure AI Foundry मा Prompt flow प्रयोग गर्ने थप विस्तृत जानकारीका लागि, तपाईं [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow) हेर्न सक्नुहुन्छ।
 
 1. **Chat input**, **Chat output** चयन गरेर तपाईंको मोडेलसँग कुराकानी सक्षम गर्नुहोस्।
 
-    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03ba022a21159e51d544c6e063e73c10e772c942d4e44da0d30.ne.png)
+    ![Input Output.](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.ne.png)
 
 1. अब तपाईं आफ्नो कस्टम Phi-3 मोडेलसँग कुराकानी गर्न तयार हुनुहुन्छ। अर्को अभ्यासमा, तपाईंले कसरी Prompt flow सुरु गर्ने र यसलाई प्रयोग गरेर fine-tuned Phi-3 मोडेलसँग कुराकानी गर्ने सिक्नुहुनेछ।
 
@@ -792,7 +792,7 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 >
 > पुनर्निर्मित फ्लो तलको चित्र जस्तो देखिनु पर्छ:
 >
-> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c10b7375192511a8e2aba847e442b294a2e65d88ffac8f63b.ne.png)
+> ![Flow example.](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.ne.png)
 >
 
 ### तपाईंको कस्टम Phi-3 मोडेलसँग कुराकानी गर्नुहोस्
@@ -805,25 +805,25 @@ E2E नमूनाको विपरीत, "[Fine-Tune and Integrate Custom P
 
 1. Prompt flow सुरु गर्न **Start compute sessions** चयन गर्नुहोस्।
 
-    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b4809b60d75ce9b0ad53e0729cc1449935ccbe90b954401dc.ne.png)
+    ![Start compute session.](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.ne.png)
 
 1. प्यारामिटरहरू नवीकरण गर्न **Validate and parse input** चयन गर्नुहोस्।
 
-    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e97038d7529b9060a23dc59d7ddbeb38ac9c4562ef4f5b32f7.ne.png)
+    ![Validate input.](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.ne.png)
 
 1. तपाईंले सिर्जना गरेको कस्टम कनेक्शनको **connection** को **Value** चयन गर्नुहोस्। उदाहरणका लागि, *connection*।
 
-    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b184402368a6ec383814b139686118331a5b2eefa489678902269dfc.ne.png)
+    ![Connection.](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.ne.png)
 
 #### तपाईंको कस्टम मोडेलसँग कुराकानी गर्नुहोस्
 
 1. **Chat** चयन गर्नुहोस्।
 
-    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e636a5e1516b6c64fdf2345ceb3142db2bed93ab7e6f03bbb2.ne.png)
+    ![Select chat.](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.ne.png)
 
 1. यहाँ परिणामको उदाहरण छ: अब तपाईं आफ्नो कस्टम Phi-3 मोडेलसँग कुराकानी गर्न सक्नुहुन्छ। fine-tuning मा प्रयोग गरिएको डाटामा आधारित प्रश्न सोध्न सिफारिस गरिन्छ।
 
-    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126fa4886e6fd0e7482cfdc6c907fa36f7f2f13d04126f9eda14.ne.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.ne.png)
 
 **अस्वीकरण**:  
 यो दस्तावेज AI अनुवाद सेवा [Co-op Translator](https://github.com/Azure/co-op-translator) प्रयोग गरी अनुवाद गरिएको हो। हामी शुद्धताका लागि प्रयासरत छौं, तर कृपया ध्यान दिनुहोस् कि स्वचालित अनुवादमा त्रुटि वा अशुद्धता हुन सक्छ। मूल दस्तावेज यसको मूल भाषामा नै अधिकारिक स्रोत मानिनु पर्छ। महत्वपूर्ण जानकारीका लागि व्यावसायिक मानव अनुवाद सिफारिस गरिन्छ। यस अनुवादको प्रयोगबाट उत्पन्न कुनै पनि गलतफहमी वा गलत व्याख्याका लागि हामी जिम्मेवार छैनौं।

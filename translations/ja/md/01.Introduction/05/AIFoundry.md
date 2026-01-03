@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundryを使った評価方法**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.ja.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.ja.png)
 
 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo)を使って生成AIアプリケーションを評価する方法です。シングルターンやマルチターンの会話を評価する際に、Azure AI Foundryはモデルの性能や安全性を評価するためのツールを提供します。
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.ja.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.ja.png)
 
 ## Azure AI Foundryで生成AIアプリを評価する方法
 詳細な手順については、[Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)をご覧ください。
@@ -51,10 +51,9 @@ Azure AI FoundryのUIから、EvaluateページまたはPrompt Flowページに�
 評価を実行した後、Azure AI Foundryで詳細な評価指標のログを確認し、分析できます。  
 アプリケーションの能力や限界についての洞察を得ることができます。
 
-**注意** Azure AI Foundryは現在パブリックプレビュー段階のため、実験や開発目的での利用を推奨します。  
+**Note** Azure AI Foundryは現在パブリックプレビュー段階のため、実験や開発目的での利用を推奨します。  
 本番環境での利用には他の選択肢を検討してください。  
 詳しい情報や手順については、公式の[AI Foundryドキュメント](https://learn.microsoft.com/azure/ai-studio/?WT.mc_id=aiml-138114-kinfeylo)を参照してください。
 
 **免責事項**：  
-
 本書類はAI翻訳サービス「[Co-op Translator](https://github.com/Azure/co-op-translator)」を使用して翻訳されました。正確性の向上に努めておりますが、自動翻訳には誤りや不正確な部分が含まれる可能性があります。原文の言語によるオリジナル文書が正式な情報源とみなされるべきです。重要な情報については、専門の人間による翻訳を推奨します。本翻訳の利用により生じた誤解や誤訳について、当方は一切の責任を負いかねます。

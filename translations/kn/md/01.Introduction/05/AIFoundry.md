@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry ಬಳಸಿ ಮೌಲ್ಯಮಾಪನ**
 
-![AI ಸ್ಟುಡಿಯೋ](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.kn.png)
+![AI ಸ್ಟುಡಿಯೋ](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.kn.png)
 
 [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ಬಳಸಿ ನಿಮ್ಮ ಜನರೇಟಿವ್ AI ಅಪ್ಲಿಕೇಶನ್ ಅನ್ನು ಹೇಗೆ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು. ನೀವು ಒಂದೇ-ತಿರುವು (single-turn) ಅಥವಾ ಬಹು-ತಿರುವು (multi-turn) ಸಂಭಾಷಣೆಗಳನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡುತ್ತಿದ್ದೀರೋ ಎಂಬುದರಿಂದ, Azure AI Foundry ಮಾದರಿಯ ಕಾರ್ಯಕ್ಷಮತೆ ಮತ್ತು ಸುರಕ್ಷತೆಯನ್ನು ಮೌಲ್ಯಮಾಪನ ಮಾಡಲು ಉಪಕರಣಗಳನ್ನು ಒದಗಿಸುತ್ತದೆ. 
 
-![AI ಸ್ಟುಡಿಯೋ](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.kn.png)
+![AI ಸ್ಟುಡಿಯೋ](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.kn.png)
 
 ## Azure AI Foundry ಮೂಲಕ ಜನರೇಟಿವ್ AI ಅಪ್ಲಿಕೇಶನ್‌ಗಳನ್ನು ಹೇಗೆ ಮೌಲ್ಯಮಾಪನ ಮಾಡುವುದು
 ಹೆಚ್ಚಿನ ವಿವರಗಳ ಸೂಚನೆಗಾಗಿ [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) ಅನ್ನು ನೋಡಿ

@@ -41,7 +41,7 @@ Fine-tuning, belirli bir modelin geliştirilmesine dayanır. Model algoritmasıy
 
 ## **RAG Nasıl Kullanılır**
 
-![rag](../../../../translated_images/rag.2014adc59e6f6007bafac13e800a6cbc3e297fbb9903efe20a93129bd13987e9.tr.png)
+![rag](../../../../translated_images/rag.2014adc59e6f6007.tr.png)
 
 Vektör veritabanı, verilerin matematiksel formda saklandığı bir koleksiyondur. Vektör veritabanları, makine öğrenimi modellerinin önceki girdileri hatırlamasını kolaylaştırır ve arama, öneri ve metin üretimi gibi kullanım senaryolarını desteklemek için makine öğreniminin kullanılmasını sağlar. Veriler, tam eşleşmeler yerine benzerlik ölçütlerine göre tanımlanabilir, böylece bilgisayar modelleri verinin bağlamını anlayabilir.
 
@@ -57,7 +57,7 @@ Fine-tuning’de yaygın kullanılan algoritmalar Lora ve QLora’dır. Nasıl s
 
 ### **Lora ve QLora**
 
-![lora](../../../../translated_images/qlora.e6446c988ee04ca08807488bb7d9e2c0ea7ef4af9d000fc6d13032b4ac2de18d.tr.png)
+![lora](../../../../translated_images/qlora.e6446c988ee04ca0.tr.png)
 
 LoRA (Low-Rank Adaptation) ve QLoRA (Quantized Low-Rank Adaptation), büyük dil modellerini (LLM) Parametre Verimli İnce Ayar (PEFT) kullanarak ince ayar yapmak için kullanılan tekniklerdir. PEFT teknikleri, modelleri geleneksel yöntemlere göre daha verimli eğitmek için tasarlanmıştır.  
 LoRA, ağırlık güncelleme matrisine düşük dereceli bir yaklaşım uygulayarak bellek kullanımını azaltan bağımsız bir ince ayar tekniğidir. Hızlı eğitim süreleri sunar ve performansı geleneksel ince ayar yöntemlerine yakın tutar.

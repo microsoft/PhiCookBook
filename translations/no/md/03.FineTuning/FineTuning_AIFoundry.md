@@ -19,7 +19,7 @@ La oss utforske hvordan man finjusterer Microsofts Phi-3 Mini språkmodell ved h
 - **Brukervennlighet:** Hvordan foregår finjusteringen i praksis – må jeg skrive egen kode? Må jeg ha egen datakraft?
 - **Sikkerhet:** Finjusterte modeller kan ha sikkerhetsrisikoer – finnes det noen sikkerhetsmekanismer for å beskytte mot utilsiktet skade?
 
-![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73e15278aa4351740ed2076b3bdde88c48e6839f8f8cf640c7.no.png)
+![AIFoundry Models](../../../../translated_images/AIFoundryModels.0e1b16f7d0b09b73.no.png)
 
 ## Forberedelser til finjustering
 
@@ -71,7 +71,7 @@ Støttet filtype er JSON Lines. Filene lastes opp til standard datalager og gjø
 
 Azure AI Foundry lar deg tilpasse store språkmodeller til dine egne datasett ved hjelp av en prosess kalt finjustering. Finjustering gir stor verdi ved å muliggjøre tilpasning og optimalisering for spesifikke oppgaver og bruksområder. Det fører til bedre ytelse, kostnadseffektivitet, redusert ventetid og skreddersydde resultater.
 
-![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553ce078eabed1526dfa300ae7fac7840e10b38fb50ea86b436c.no.png)
+![Finetune AI Foundry](../../../../translated_images/AIFoundryfinetune.193aaddce48d553c.no.png)
 
 ### Opprett et nytt prosjekt
 
@@ -79,14 +79,14 @@ Azure AI Foundry lar deg tilpasse store språkmodeller til dine egne datasett ve
 
 1. Velg **+New project** for å opprette et nytt prosjekt i Azure AI Foundry.
 
-    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.no.png)
+    ![FineTuneSelect](../../../../translated_images/select-new-project.cd31c0404088d7a3.no.png)
 
 1. Gjør følgende:
 
     - Prosjektets **Hub name**. Det må være en unik verdi.
     - Velg hvilken **Hub** som skal brukes (opprett en ny om nødvendig).
 
-    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.no.png)
+    ![FineTuneSelect](../../../../translated_images/create-project.ca3b71298b90e420.no.png)
 
 1. Gjør følgende for å opprette en ny hub:
 
@@ -97,7 +97,7 @@ Azure AI Foundry lar deg tilpasse store språkmodeller til dine egne datasett ve
     - Velg **Connect Azure AI Services** som skal brukes (opprett en ny om nødvendig).
     - Velg **Connect Azure AI Search** og velg **Skip connecting**.
 
-    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e95293c08654daf213e003b942a2fa81045b994c088acad7f.no.png)
+    ![FineTuneSelect](../../../../translated_images/create-hub.49e53d235e80779e.no.png)
 
 1. Velg **Next**.
 1. Velg **Create a project**.
@@ -115,15 +115,15 @@ Før finjustering, samle eller lag et datasett som er relevant for oppgaven din,
 
 1. Skriv *phi-3* i **søkelinjen** og velg den phi-3 modellen du ønsker å bruke.
 
-    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57c3c45a8404613f25f8ad41534a209a88f5549e95d21320f8.no.png)
+    ![FineTuneSelect](../../../../translated_images/select-model.60ef2d4a6a3cec57.no.png)
 
 1. Velg **Fine-tune**.
 
-    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8d621e322d186ff670c3fb92bbba8435e6bcd4e79b9aab251.no.png)
+    ![FineTuneSelect](../../../../translated_images/select-finetune.a976213b543dd9d8.no.png)
 
 1. Skriv inn navnet på den **finjusterte modellen**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148be1473af400e30e936c425f1cb8d5dbefcf9454008923402.no.png)
+    ![FineTuneSelect](../../../../translated_images/finetune1.c2b39463f0d34148.no.png)
 
 1. Velg **Next**.
 
@@ -132,13 +132,13 @@ Før finjustering, samle eller lag et datasett som er relevant for oppgaven din,
     - Velg **task type** til **Chat completion**.
     - Velg **Training data** du ønsker å bruke. Du kan laste det opp via Azure AI Foundry eller fra ditt lokale miljø.
 
-    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442df8f77c70e22fce46849329882a9e278ab1d87df196a63c4c.no.png)
+    ![FineTuneSelect](../../../../translated_images/finetune2.43cb099b1a94442d.no.png)
 
 1. Velg **Next**.
 
 1. Last opp **Validation data** du ønsker å bruke, eller velg **Automatic split of training data**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd928568f64970980db22685ef54a4e48d1cc8d139c1ecb8c99f.no.png)
+    ![FineTuneSelect](../../../../translated_images/finetune3.fd96121b67dcdd92.no.png)
 
 1. Velg **Next**.
 
@@ -148,15 +148,15 @@ Før finjustering, samle eller lag et datasett som er relevant for oppgaven din,
     - Velg ønsket **Learning rate**.
     - Velg ønsket antall **Epochs**.
 
-    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a2690f855223a6e007bd8ca771663f7b0f5dbefb3c47850c3.no.png)
+    ![FineTuneSelect](../../../../translated_images/finetune4.e18b80ffccb5834a.no.png)
 
 1. Velg **Submit** for å starte finjusteringsprosessen.
 
-    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac27168ae1a8667026ad7f6c5f9188615113968272dbe1f7f774d.no.png)
+    ![FineTuneSelect](../../../../translated_images/select-submit.0a3802d581bac271.no.png)
 
 1. Når modellen er finjustert, vil status vises som **Completed**, som vist i bildet under. Nå kan du distribuere modellen og bruke den i din egen applikasjon, i playground, eller i prompt flow. For mer informasjon, se [Hvordan distribuere Phi-3 familie av små språkmodeller med Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/deploy-models-phi-3?tabs=phi-3-5&pivots=programming-language-python).
 
-    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef5ba7303f42e9f1fca2baa37049bcededb5392d51cb21cc03.no.png)
+    ![FineTuneSelect](../../../../translated_images/completed.4dc8d2357144cdef.no.png)
 
 > [!NOTE]
 > For mer detaljert informasjon om finjustering av Phi-3, besøk [Finjuster Phi-3 modeller i Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/fine-tune-phi-3?tabs=phi-3-mini).

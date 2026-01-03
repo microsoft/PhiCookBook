@@ -15,11 +15,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 我们知道 Phi-3/3.5-mini-instruct 属于 Phi-3/3.5 家族，具备强大的代码理解和生成能力，相较于 Gemma-2-9b 和 Mistral-Nemo-12B-instruct-2407 有明显优势。
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.zh.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.zh.png)
 
 最新的 GitHub Models 已经提供了 Phi-3.5-mini-instruct (128k) 和 Phi-3.5-vision-instruct (128k) 模型。开发者可以通过 OpenAI SDK、Azure AI Inference SDK 以及 REST API 访问它们。
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.zh.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.zh.png)
 
 ***Note: *** 建议这里使用 Azure AI Inference SDK，因为它在生产环境中可以更好地与 Azure Model Catalog 切换。
 
@@ -34,13 +34,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 GitHub Copilot 聊天助手可以基于代码完成不同项目场景下的多种任务。系统内置四个助手：workspace、github、terminal、vscode。
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.zh.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.zh.png)
 
 通过在助手名称前加‘@’，你可以快速完成对应的工作。对于企业来说，如果添加与自身业务相关的内容，如需求、编码、测试规范和发布，就能基于 GitHub Copilot 拥有更强大的企业私有功能。
 
 Visual Studio Code 聊天助手现已正式发布其 API，允许企业或企业开发者基于不同的软件业务生态开发助手。基于 Visual Studio Code 扩展开发的方式，你可以轻松接入 Visual Studio Code 聊天助手 API 的接口。我们可以基于此流程进行开发。
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.zh.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.zh.png)
 
 开发场景支持接入第三方模型 API（如 GitHub Models、Azure Model Catalog 以及基于开源模型自建的服务），也可以使用 GitHub Copilot 提供的 gpt-35-turbo、gpt-4 和 gpt-4o 模型。
 
@@ -54,7 +54,7 @@ Visual Studio Code 聊天助手现已正式发布其 API，允许企业或企业
 
 3. 通过 **@phicoding /image** 命令，基于 **Phi-3.5-vision-instruct (128k)** 和图片完成代码生成
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.zh.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.zh.png)
 
 ## **相关步骤**
 
@@ -365,19 +365,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.zh.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.zh.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.zh.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.zh.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.zh.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.zh.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.zh.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.zh.png)
 
 你可以下载示例代码：[点击这里](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

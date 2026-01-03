@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Folosirea Azure AI Foundry pentru evaluare**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.ro.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.ro.png)
 
 Cum să evaluezi aplicația ta de AI generativ folosind [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo). Indiferent dacă evaluezi conversații cu un singur schimb sau cu mai multe schimburi, Azure AI Foundry oferă instrumente pentru evaluarea performanței și siguranței modelului.
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.ro.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.ro.png)
 
 ## Cum să evaluezi aplicațiile AI generative cu Azure AI Foundry  
 Pentru instrucțiuni detaliate, consultă [Documentația Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo)

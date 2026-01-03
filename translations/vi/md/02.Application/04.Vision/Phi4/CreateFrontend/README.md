@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Phi-4-multimodal có khả năng đọc hình ảnh rất mạnh. Hãy thử dùng Python để thực hiện các chức năng sau. Hình ảnh là một trang ChatGPT.
 
-![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27c7509d776f123d0a57fcbaa27f353af8b10fa764c1f9edea.vi.png)
+![demo](../../../../../../../translated_images/demo.609a55a7a2b9ed27.vi.png)
 
 ### **Mã mẫu**
 

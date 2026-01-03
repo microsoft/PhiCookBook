@@ -9,11 +9,11 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 # **Azure AI Foundry ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਮੁਲਾਂਕਣ ਕਰਨਾ**
 
-![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5aa227e4c7028b5ff9a6cb712e6613c696705445ee4ca8f35d.pa.png)
+![aistudo](../../../../../translated_images/AIFoundry.9e0b513e999a1c5a.pa.png)
 
 ਤੁਹਾਡੇ ਜਨਰੇਟਿਵ AI ਐਪਲੀਕੇਸ਼ਨ ਦਾ ਮੁਲਾਂਕਣ ਕਿਵੇਂ ਕਰਨਾ ਹੈ [Azure AI Foundry](https://ai.azure.com?WT.mc_id=aiml-138114-kinfeylo) ਦੀ ਵਰਤੋਂ ਕਰਕੇ। ਚਾਹੇ ਤੁਸੀਂ ਸਿੰਗਲ-ਟਰਨ ਜਾਂ ਮਲਟੀ-ਟਰਨ ਗੱਲਬਾਤਾਂ ਦਾ ਮੁਲਾਂਕਣ ਕਰ ਰਹੇ ਹੋ, Azure AI Foundry ਮਾਡਲ ਦੀ ਕਾਰਗੁਜ਼ਾਰੀ ਅਤੇ ਸੁਰੱਖਿਆ ਦੀ ਜਾਂਚ ਕਰਨ ਲਈ ਸੰਦ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ।
 
-![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f2bab1836c11a69fc97e59f1b1b4154ce5e58bc589d278047.pa.png)
+![aistudo](../../../../../translated_images/AIPortfolio.69da59a8e1eaa70f.pa.png)
 
 ## Azure AI Foundry ਨਾਲ ਜਨਰੇਟਿਵ AI ਐਪਸ ਦਾ ਮੁਲਾਂਕਣ ਕਿਵੇਂ ਕਰੀਏ  
 ਵਧੇਰੇ ਵਿਸਥਾਰ ਲਈ [Azure AI Foundry Documentation](https://learn.microsoft.com/azure/ai-studio/how-to/evaluate-generative-ai-app?WT.mc_id=aiml-138114-kinfeylo) ਵੇਖੋ।

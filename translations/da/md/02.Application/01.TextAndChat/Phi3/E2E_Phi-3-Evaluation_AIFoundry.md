@@ -19,7 +19,7 @@ Finjustering af en model kan nogle gange føre til utilsigtede eller uønskede s
 
 Her er en evalueringsproces i Azure AI Foundry.
 
-![Arkitektur af vejledning.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.da.png)
+![Arkitektur af vejledning.](../../../../../../translated_images/architecture.10bec55250f5d6a4.da.png)
 
 *Billedkilde: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ Her er en evalueringsproces i Azure AI Foundry.
 
 For at sikre, at din AI-model er etisk og sikker, er det afgørende at evaluere den i forhold til Microsofts Responsible AI-principper. I Azure AI Foundry giver sikkerhedsevalueringer dig mulighed for at vurdere din models sårbarhed over for jailbreak-angreb og dens potentiale for at generere skadeligt indhold, hvilket er direkte i tråd med disse principper.
 
-![Sikkerhedsevaluering.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.da.png)
+![Sikkerhedsevaluering.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.da.png)
 
 *Billedkilde: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ Microsofts Responsible AI-principper inkluderer:
 
 - **Ansvarlighed**: De personer, der designer og implementerer AI-systemer, skal holdes ansvarlige for, hvordan deres systemer fungerer. Organisationer bør trække på branchestandarder for at udvikle normer for ansvarlighed. Disse normer kan sikre, at AI-systemer ikke er den endelige myndighed i beslutninger, der påvirker menneskers liv. De kan også sikre, at mennesker bevarer meningsfuld kontrol over ellers meget autonome AI-systemer.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.da.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.da.png)
 
 *Billedkilde: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ I denne vejledning vil du evaluere sikkerheden af den finjusterede Phi-3 model v
 
 Evaluering af disse aspekter sikrer, at AI-modellen ikke producerer skadeligt eller stødende indhold, hvilket bringer den i overensstemmelse med samfundsmæssige værdier og lovgivningsmæssige standarder.
 
-![Evaluer baseret på sikkerhed.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.da.png)
+![Evaluer baseret på sikkerhed.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.da.png)
 
 ### Introduktion til ydeevneevaluering
 
 For at sikre, at din AI-model præsterer som forventet, er det vigtigt at evaluere dens ydeevne mod ydeevnemål. I Azure AI Foundry giver ydeevneevalueringer dig mulighed for at vurdere din models effektivitet i at generere præcise, relevante og sammenhængende svar.
 
-![Sikkerhedsevaluering.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.da.png)
+![Sikkerhedsevaluering.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.da.png)
 
 *Billedkilde: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ I denne vejledning vil du evaluere ydeevnen af den finjusterede Phi-3 / Phi-3.5 
 
 Disse mål hjælper dig med at evaluere modellens effektivitet i at generere præcise, relevante og sammenhængende svar.
 
-![Evaluer baseret på ydeevne.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.da.png)
+![Evaluer baseret på ydeevne.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.da.png)
 
 ## **Scenario 2: Evaluering af Phi-3 / Phi-3.5 modellen i Azure AI Foundry**
 
@@ -151,7 +151,7 @@ Du skal oprette en Hub, før du opretter projektet. En Hub fungerer som en Resou
 
 1. Vælg **+ New hub** i navigationsmenuen.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.da.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.da.png)
 
 1. Udfør følgende opgaver:
 
@@ -162,7 +162,7 @@ Du skal oprette en Hub, før du opretter projektet. En Hub fungerer som en Resou
     - Vælg **Connect Azure AI Services** til brug (opret en ny, hvis nødvendigt).
     - Vælg **Connect Azure AI Search** og vælg **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.da.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.da.png)
 
 1. Vælg **Next**.
 
@@ -172,11 +172,11 @@ Du skal oprette en Hub, før du opretter projektet. En Hub fungerer som en Resou
 
 1. Vælg **+ New project** i navigationsmenuen.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.da.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.da.png)
 
 1. Indtast **Project name**. Det skal være en unik værdi.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.da.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.da.png)
 
 1. Vælg **Create a project**.
 
@@ -192,17 +192,17 @@ For at integrere din brugerdefinerede Phi-3 / Phi-3.5-model med Prompt flow skal
 
 1. Vælg **Endpoints** i venstre sidepanel.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.da.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.da.png)
 
 1. Vælg det endpoint, du oprettede.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.da.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.da.png)
 
 1. Vælg **Consume** i navigationsmenuen.
 
 1. Kopiér din **REST endpoint** og **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.da.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.da.png)
 
 #### Tilføj den brugerdefinerede forbindelse
 
@@ -214,11 +214,11 @@ For at integrere din brugerdefinerede Phi-3 / Phi-3.5-model med Prompt flow skal
 
 1. Vælg **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.da.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.da.png)
 
 1. Vælg **Custom keys** i navigationsmenuen.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.da.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.da.png)
 
 1. Udfør følgende opgaver:
 
@@ -228,7 +228,7 @@ For at integrere din brugerdefinerede Phi-3 / Phi-3.5-model med Prompt flow skal
     - For nøglens navn, indtast **key** og indsæt den nøgle, du kopierede fra Azure ML Studio, i værdifeltet.
     - Efter tilføjelse af nøglerne, vælg **is secret** for at forhindre, at nøglen bliver synlig.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.da.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.da.png)
 
 1. Vælg **Add connection**.
 
@@ -242,15 +242,15 @@ Du har tilføjet en brugerdefineret forbindelse i Azure AI Foundry. Lad os nu op
 
 1. Vælg **+ Create** i navigationsmenuen.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.da.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.da.png)
 
 1. Vælg **Chat flow** i navigationsmenuen.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.da.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.da.png)
 
 1. Indtast **Folder name**, som du vil bruge.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.da.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.da.png)
 
 1. Vælg **Create**.
 
@@ -287,7 +287,7 @@ Du skal integrere den finjusterede Phi-3 / Phi-3.5-model i et Prompt flow. Den e
 
     - Vælg **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.da.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.da.png)
 
 1. Tilføj følgende kode til *integrate_with_promptflow.py* for at bruge den brugerdefinerede Phi-3 / Phi-3.5-model i Prompt flow.
 
@@ -350,14 +350,14 @@ Du skal integrere den finjusterede Phi-3 / Phi-3.5-model i et Prompt flow. Den e
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.da.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.da.png)
 
 > [!NOTE]
 > For mere detaljeret information om brug af Prompt flow i Azure AI Foundry, kan du se [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Vælg **Chat input**, **Chat output** for at aktivere chat med din model.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.da.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.da.png)
 
 1. Nu er du klar til at chatte med din brugerdefinerede Phi-3 / Phi-3.5-model. I den næste øvelse lærer du, hvordan du starter Prompt flow og bruger det til at chatte med din finjusterede Phi-3 / Phi-3.5-model.
 
@@ -365,32 +365,32 @@ Du skal integrere den finjusterede Phi-3 / Phi-3.5-model i et Prompt flow. Den e
 >
 > Det genopbyggede flow skulle se ud som billedet nedenfor:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.da.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.da.png)
 >
 
 #### Start Prompt flow
 
 1. Vælg **Start compute sessions** for at starte Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.da.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.da.png)
 
 1. Vælg **Validate and parse input** for at opdatere parametrene.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.da.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.da.png)
 
 1. Vælg **Value** for **connection** til den brugerdefinerede forbindelse, du oprettede. For eksempel *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.da.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.da.png)
 
 #### Chat med din brugerdefinerede Phi-3 / Phi-3.5-model
 
 1. Vælg **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.da.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.da.png)
 
 1. Her er et eksempel på resultaterne: Nu kan du chatte med din brugerdefinerede Phi-3 / Phi-3.5-model. Det anbefales at stille spørgsmål baseret på de data, der blev brugt til finjusteringen.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.da.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.da.png)
 
 ### Deploy Azure OpenAI for at evaluere Phi-3 / Phi-3.5-modellen
 
@@ -402,7 +402,7 @@ For at evaluere Phi-3 / Phi-3.5-modellen i Azure AI Foundry skal du implementere
 
 1. Naviger til det Azure AI Foundry-projekt, du oprettede.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.da.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.da.png)
 
 1. I det projekt, du oprettede, vælg **Deployments** i venstre sidepanel.
 
@@ -410,11 +410,11 @@ For at evaluere Phi-3 / Phi-3.5-modellen i Azure AI Foundry skal du implementere
 
 1. Vælg **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.da.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.da.png)
 
 1. Vælg den Azure OpenAI-model, du ønsker at bruge. For eksempel **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.da.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.da.png)
 
 1. Vælg **Confirm**.
 
@@ -426,17 +426,17 @@ For at evaluere Phi-3 / Phi-3.5-modellen i Azure AI Foundry skal du implementere
 
 1. Naviger til det Azure AI Foundry-projekt, du oprettede.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.da.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.da.png)
 
 1. I det projekt, du oprettede, vælg **Evaluation** i venstre sidepanel.
 
 1. Vælg **+ New evaluation** i navigationsmenuen.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.da.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.da.png)
 
 1. Vælg **Prompt flow** evaluering.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.da.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.da.png)
 
 1. Udfør følgende opgaver:
 
@@ -444,7 +444,7 @@ For at evaluere Phi-3 / Phi-3.5-modellen i Azure AI Foundry skal du implementere
     - Vælg **Question and answer without context** som opgavetype. Fordi datasættet **ULTRACHAT_200k**, der bruges i denne vejledning, ikke indeholder kontekst.
     - Vælg det prompt flow, du ønsker at evaluere.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.da.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.da.png)
 
 1. Vælg **Next**.
 
@@ -453,7 +453,7 @@ For at evaluere Phi-3 / Phi-3.5-modellen i Azure AI Foundry skal du implementere
     - Vælg **Add your dataset** for at uploade datasættet. For eksempel kan du uploade testdatasættet, såsom *test_data.json1*, som følger med, når du downloader **ULTRACHAT_200k** datasættet.
     - Vælg den passende **Dataset column**, der matcher dit datasæt. For eksempel, hvis du bruger **ULTRACHAT_200k** datasættet, vælg **${data.prompt}** som datasætkolonne.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.da.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.da.png)
 
 1. Vælg **Next**.
 
@@ -462,7 +462,7 @@ For at evaluere Phi-3 / Phi-3.5-modellen i Azure AI Foundry skal du implementere
     - Vælg de performance- og kvalitetsmålinger, du ønsker at bruge.
     - Vælg den Azure OpenAI-model, du oprettede til evaluering. For eksempel vælg **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.da.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.da.png)
 
 1. Udfør følgende opgaver for at konfigurere risikio- og sikkerhedsmålinger:
 
@@ -472,7 +472,7 @@ For at evaluere Phi-3 / Phi-3.5-modellen i Azure AI Foundry skal du implementere
     - For **answer**, vælg **Data source** til **{$run.outputs.answer}**.
     - For **ground_truth**, vælg **Data source** til **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.da.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.da.png)
 
 1. Vælg **Next**.
 
@@ -489,17 +489,17 @@ Når evalueringen er færdig, kan du gennemgå resultaterne for både ydeevne- o
 
     - vurder modellens effektivitet i at generere sammenhængende, flydende og relevante svar.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.da.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.da.png)
 
 1. Risiko- og sikkerhedsmålinger:
 
     - Sørg for, at modellens output er sikre og overholder Responsible AI Principles, og undgå skadeligt eller stødende indhold.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.da.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.da.png)
 
 1. Du kan scrolle ned for at se **Detaljerede måleresultater**.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.da.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.da.png)
 
 1. Ved at evaluere din tilpassede Phi-3 / Phi-3.5-model ud fra både ydeevne- og sikkerhedsmålinger kan du bekræfte, at modellen ikke kun er effektiv, men også følger ansvarlige AI-principper, hvilket gør den klar til brug i praksis.
 
@@ -509,7 +509,7 @@ Når evalueringen er færdig, kan du gennemgå resultaterne for både ydeevne- o
 
 Du har med succes evalueret den finjusterede Phi-3-model integreret med Prompt flow i Azure AI Foundry. Dette er et vigtigt skridt for at sikre, at dine AI-modeller ikke kun præsterer godt, men også overholder Microsofts Responsible AI-principper, så du kan bygge pålidelige og troværdige AI-applikationer.
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.da.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.da.png)
 
 ## Ryd op i Azure-ressourcer
 

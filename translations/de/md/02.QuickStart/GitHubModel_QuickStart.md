@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Willkommen bei [GitHub Models](https://github.com/marketplace/models)! Wir haben alles startklar gemacht, damit du die auf Azure AI gehosteten KI-Modelle erkunden kannst.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.de.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.de.png)
 
 Weitere Informationen zu den auf GitHub Models verfügbaren Modellen findest du im [GitHub Model Marketplace](https://github.com/marketplace/models).
 
@@ -45,7 +45,7 @@ Es gibt einige grundlegende Beispiele, die du direkt ausführen kannst. Du finde
 
 Es gibt außerdem eine spezielle Codespaces-Umgebung zum Ausführen der Beispiele und Modelle.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.de.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.de.png)
 
 ## Beispielcode
 
@@ -428,7 +428,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## KOSTENLOSE Nutzung und Ratenbegrenzungen für GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.de.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.de.png)
 
 Die [Ratenbegrenzungen für die Spielwiese und die kostenlose API-Nutzung](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) sollen dir helfen, Modelle auszuprobieren und deine KI-Anwendung zu prototypisieren. Für die Nutzung über diese Limits hinaus und um deine Anwendung zu skalieren, musst du Ressourcen über ein Azure-Konto bereitstellen und dich dort authentifizieren, anstatt dein persönliches GitHub-Zugriffstoken zu verwenden. Du musst sonst nichts an deinem Code ändern. Nutze diesen Link, um zu erfahren, wie du die kostenlosen Kontingente in Azure AI überschreiten kannst.
 

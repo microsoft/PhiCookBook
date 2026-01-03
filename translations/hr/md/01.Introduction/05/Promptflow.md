@@ -41,7 +41,7 @@ Održava kontrolu verzija i učinkovito dijeljenje znanja. Pojednostavljuje cije
 
 U Microsoft Prompt Flow-u, evaluacija ima ključnu ulogu u procjeni koliko dobro vaši AI modeli rade. Pogledajmo kako možete prilagoditi evaluacijske tijekove i metrike unutar Prompt Flow-a:
 
-![PFVizualizacija](../../../../../translated_images/pfvisualize.c1d9ca75baa2a2221667124fa82ba2307f74a34620b9c1eff2cfc1fa2972909b.hr.png)
+![PFVizualizacija](../../../../../translated_images/pfvisualize.c1d9ca75baa2a222.hr.png)
 
 **Razumijevanje evaluacije u Prompt Flow-u**
 

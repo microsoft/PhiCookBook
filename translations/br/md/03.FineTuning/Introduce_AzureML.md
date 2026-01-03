@@ -66,7 +66,7 @@ O Azure ML adicionou muitas funções relacionadas a LLM/SLM, combinando LLMOps 
 
 Usuários empresariais podem implantar diferentes modelos conforme diferentes cenários de negócio através do Catálogo de Modelos, e fornecer serviços como Modelo como Serviço para desenvolvedores ou usuários empresariais acessarem.
 
-![models](../../../../translated_images/models.e6c7ff50a51806fd0bfd398477e3db3d5c3dc545cd7308344e448e0b8d8295a1.br.png)
+![models](../../../../translated_images/models.e6c7ff50a51806fd.br.png)
 
 O Catálogo de Modelos no Azure Machine Learning Studio é o centro para descobrir e usar uma ampla variedade de modelos que permitem construir aplicações de IA Generativa. O catálogo apresenta centenas de modelos de provedores como Azure OpenAI service, Mistral, Meta, Cohere, Nvidia, Hugging Face, incluindo modelos treinados pela Microsoft. Modelos de provedores que não sejam Microsoft são Produtos Não Microsoft, conforme definido nos Termos de Produto da Microsoft, e estão sujeitos aos termos fornecidos com o modelo.
 
@@ -76,7 +76,7 @@ O núcleo de um pipeline de machine learning é dividir uma tarefa completa de M
 
 No fine-tuning de SLM / LLM, podemos gerenciar nossos dados, treinamento e processos de geração através do Pipeline.
 
-![finetuning](../../../../translated_images/finetuning.6559da198851fa523d94d6f0b9f271fa6e1bbac13db0024ebda43cb5348a4633.br.png)
+![finetuning](../../../../translated_images/finetuning.6559da198851fa52.br.png)
 
 ### **Prompt flow**
 

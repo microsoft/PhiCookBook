@@ -19,7 +19,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Ακολουθεί η διαδικασία αξιολόγησης του Azure AI Foundry.
 
-![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.el.png)
+![Architecture of tutorial.](../../../../../../translated_images/architecture.10bec55250f5d6a4.el.png)
 
 *Πηγή εικόνας: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -55,7 +55,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Για να διασφαλίσετε ότι το μοντέλο AI σας είναι ηθικό και ασφαλές, είναι κρίσιμο να το αξιολογήσετε με βάση τις Αρχές Υπεύθυνης Τεχνητής Νοημοσύνης της Microsoft. Στο Azure AI Foundry, οι αξιολογήσεις ασφάλειας σας επιτρέπουν να ελέγξετε την ευπάθεια του μοντέλου σε επιθέσεις jailbreak και την πιθανότητα να παράγει επιβλαβές περιεχόμενο, κάτι που ευθυγραμμίζεται άμεσα με αυτές τις αρχές.
 
-![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa9500d3d25faf0720fd99cbf07c8c4b559dda5e70c84a0e2c1aa.el.png)
+![Safaty evaluation.](../../../../../../translated_images/safety-evaluation.083586ec88dfa950.el.png)
 
 *Πηγή εικόνας: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -75,7 +75,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 - **Λογοδοσία**: Οι άνθρωποι που σχεδιάζουν και υλοποιούν συστήματα AI πρέπει να είναι υπεύθυνοι για τον τρόπο λειτουργίας των συστημάτων τους. Οι οργανισμοί θα πρέπει να βασίζονται σε βιομηχανικά πρότυπα για να αναπτύξουν κανόνες λογοδοσίας. Αυτοί οι κανόνες μπορούν να διασφαλίσουν ότι τα συστήματα AI δεν είναι η τελική αρχή σε καμία απόφαση που επηρεάζει τη ζωή των ανθρώπων. Επίσης, μπορούν να διασφαλίσουν ότι οι άνθρωποι διατηρούν ουσιαστικό έλεγχο επί συστημάτων AI που είναι κατά τα άλλα πολύ αυτόνομα.
 
-![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c72329615ecf51a4e3df31043fb0d918f868525e7a9747b98.el.png)
+![Fill hub.](../../../../../../translated_images/responsibleai2.c07ef430113fad8c.el.png)
 
 *Πηγή εικόνας: [What is Responsible AI?](https://learn.microsoft.com/azure/machine-learning/concept-responsible-ai?view=azureml-api-2&viewFallbackFrom=azureml-api-2%253fwt.mc_id%3Dstudentamb_279723)*
 
@@ -93,13 +93,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 Η αξιολόγηση αυτών των πτυχών διασφαλίζει ότι το μοντέλο AI δεν παράγει επιβλαβές ή προσβλητικό περιεχόμενο, ευθυγραμμίζοντάς το με τις κοινωνικές αξίες και τα κανονιστικά πρότυπα.
 
-![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07156d9b1e18bdf1f130120f7d23e05ea78bc9773d2500b665.el.png)
+![Evaluate based on safety.](../../../../../../translated_images/evaluate-based-on-safety.c5df819f5b0bfc07.el.png)
 
 ### Εισαγωγή στην αξιολόγηση απόδοσης
 
 Για να διασφαλίσετε ότι το μοντέλο AI σας αποδίδει όπως αναμένεται, είναι σημαντικό να αξιολογήσετε την απόδοσή του με βάση τις μετρικές απόδοσης. Στο Azure AI Foundry, οι αξιολογήσεις απόδοσης σας επιτρέπουν να εκτιμήσετε την αποτελεσματικότητα του μοντέλου σας στην παραγωγή ακριβών, σχετικών και συνεκτικών απαντήσεων.
 
-![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740c7babf1904fa4acca46c5bd7ea8c826832989c776c0e01ca.el.png)
+![Safaty evaluation.](../../../../../../translated_images/performance-evaluation.48b3e7e01a098740.el.png)
 
 *Πηγή εικόνας: [Evaluation of generative AI applications](https://learn.microsoft.com/azure/ai-studio/concepts/evaluation-approach-gen-ai?wt.mc_id%3Dstudentamb_279723)*
 
@@ -116,7 +116,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Αυτές οι μετρικές σας βοηθούν να αξιολογήσετε την αποτελεσματικότητα του μοντέλου στην παραγωγή ακριβών, σχετικών και συνεκτικών απαντήσεων.
 
-![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e820ceb3f7f148014fe0572c05dbdadb1af7205e1588fb0358.el.png)
+![Evaluate based on performance.](../../../../../../translated_images/evaluate-based-on-performance.3e801c647c7554e8.el.png)
 
 ## **Σενάριο 2: Αξιολόγηση του μοντέλου Phi-3 / Phi-3.5 στο Azure AI Foundry**
 
@@ -151,7 +151,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **+ New hub** από το μενού πλοήγησης.
 
-    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1aa9ecc232c2c95d337386f3cd0f361ca80c4475dc8aa2c7b.el.png)
+    ![Create hub.](../../../../../../translated_images/create-hub.5be78fb1e21ffbf1.el.png)
 
 1. Εκτελέστε τις παρακάτω ενέργειες:
 
@@ -162,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε το **Connect Azure AI Services** που θα χρησιμοποιήσετε (δημιουργήστε νέο αν χρειάζεται).
     - Επιλέξτε **Connect Azure AI Search** και επιλέξτε **Skip connecting**.
 
-    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e3449667210a8ec5a0f3206bf2724ebacaa69cb09d3b12f29d3.el.png)
+    ![Fill hub.](../../../../../../translated_images/fill-hub.baaa108495c71e34.el.png)
 
 1. Επιλέξτε **Next**.
 
@@ -172,11 +172,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **+ New project** από το μενού πλοήγησης.
 
-    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a32ee9018978b607dfb773956b15a88606f45579d3bc23c155.el.png)
+    ![Select new project.](../../../../../../translated_images/select-new-project.cd31c0404088d7a3.el.png)
 
 1. Εισάγετε **Project name**. Πρέπει να είναι μοναδικό.
 
-    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e42049ce8f6f452313bde644c309331fd728fcacd8954a20e26d.el.png)
+    ![Create project.](../../../../../../translated_images/create-project.ca3b71298b90e420.el.png)
 
 1. Επιλέξτε **Create a project**.
 
@@ -192,17 +192,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **Endpoints** από την αριστερή καρτέλα.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d35cd7f235f930ebe99841a8c8c9dea2f608b7f43508576dd.el.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoints.ee7387ecd68bd18d.el.png)
 
 1. Επιλέξτε το endpoint που δημιουργήσατε.
 
-    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2ec92358f15ad36d69820e627c048f14c7ec3750fdbce3558b.el.png)
+    ![Select endpoints.](../../../../../../translated_images/select-endpoint-created.9f63af5e4cf98b2e.el.png)
 
 1. Επιλέξτε **Consume** από το μενού πλοήγησης.
 
 1. Αντιγράψτε το **REST endpoint** και το **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab0b5a80833917b7b8f32ee011c09af0459f3830dc25b00760.el.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/copy-endpoint-key.0650c3786bd646ab.el.png)
 
 #### Προσθήκη της Προσαρμοσμένης Σύνδεσης
 
@@ -214,11 +214,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **+ New connection**.
 
-    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b6c5dca5f37ca22939163f5c89eac47d1fd0a8c663bd5904a.el.png)
+    ![Select new connection.](../../../../../../translated_images/select-new-connection.fa0f35743758a74b.el.png)
 
 1. Επιλέξτε **Custom keys** από το μενού πλοήγησης.
 
-    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67df43e8c5519124268b987d8cb77d6e5fe5631f116714bd47.el.png)
+    ![Select custom keys.](../../../../../../translated_images/select-custom-keys.5a3c6b25580a9b67.el.png)
 
 1. Εκτελέστε τις παρακάτω ενέργειες:
 
@@ -228,7 +228,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Για το όνομα του κλειδιού, εισάγετε **key** και επικολλήστε το κλειδί που αντιγράψατε από το Azure ML Studio στο πεδίο τιμής.
     - Αφού προσθέσετε τα κλειδιά, επιλέξτε **is secret** για να αποτρέψετε την έκθεση του κλειδιού.
 
-    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0dfe6679422f479f88cc47c33cbf24568da138ab19fbb17dc4b.el.png)
+    ![Add connection.](../../../../../../translated_images/add-connection.ac7f5faf8b10b0df.el.png)
 
 1. Επιλέξτε **Add connection**.
 
@@ -242,15 +242,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **+ Create** από το μενού πλοήγησης.
 
-    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb94fbf771819d7ddf21e9c239f2689cb2684d4d3c739deb75.el.png)
+    ![Select Promptflow.](../../../../../../translated_images/select-promptflow.18ff2e61ab9173eb.el.png)
 
 1. Επιλέξτε **Chat flow** από το μενού πλοήγησης.
 
-    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d33a7d73eb77e59354e1b70fd246009e30bdd40db17143ec83.el.png)
+    ![Select chat flow.](../../../../../../translated_images/select-flow-type.28375125ec9996d3.el.png)
 
 1. Εισάγετε **Folder name** που θέλετε να χρησιμοποιήσετε.
 
-    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad4305ba88e0a804a5198ddd8720ebccb420d65ba13dcd481591f.el.png)
+    ![Select chat flow.](../../../../../../translated_images/enter-name.02ddf8fb840ad430.el.png)
 
 1. Επιλέξτε **Create**.
 
@@ -287,7 +287,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - Επιλέξτε **Save**.
 
-    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f5344b4801da9d695b3c1ea7019479754e566d2df495e868664.el.png)
+    ![Select raw file mode.](../../../../../../translated_images/select-raw-file-mode.06c1eca581ce4f53.el.png)
 
 1. Προσθέστε τον παρακάτω κώδικα στο *integrate_with_promptflow.py* για να χρησιμοποιήσετε το προσαρμοσμένο μοντέλο Phi-3 / Phi-3.5 στο Prompt flow.
 
@@ -350,14 +350,14 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec2818291eeeb2aa744d0e01320308a1fa6348ac7f51bec93de9.el.png)
+    ![Paste prompt flow code.](../../../../../../translated_images/paste-promptflow-code.cd6d95b101c0ec28.el.png)
 
 > [!NOTE]
 > Για πιο αναλυτικές πληροφορίες σχετικά με τη χρήση του Prompt flow στο Azure AI Foundry, μπορείτε να ανατρέξετε στο [Prompt flow in Azure AI Foundry](https://learn.microsoft.com/azure/ai-studio/how-to/prompt-flow).
 
 1. Επιλέξτε **Chat input**, **Chat output** για να ενεργοποιήσετε τη συνομιλία με το μοντέλο σας.
 
-    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc339811bdd5a2285589fef803aded96b8c58b40131f0663571.el.png)
+    ![Select Input Output.](../../../../../../translated_images/select-input-output.c187fc58f25fbfc3.el.png)
 
 1. Τώρα είστε έτοιμοι να συνομιλήσετε με το προσαρμοσμένο μοντέλο Phi-3 / Phi-3.5. Στην επόμενη άσκηση, θα μάθετε πώς να ξεκινήσετε το Prompt flow και να το χρησιμοποιήσετε για συνομιλία με το fine-tuned μοντέλο σας.
 
@@ -365,32 +365,32 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > Η αναδημιουργημένη ροή θα πρέπει να μοιάζει με την εικόνα παρακάτω:
 >
-> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545bcc81d64cb6542972ae593588ab94564c8c25edf06fae27fc.el.png)
+> ![Flow example](../../../../../../translated_images/graph-example.82fd1bcdd3fc545b.el.png)
 >
 
 #### Εκκίνηση Prompt flow
 
 1. Επιλέξτε **Start compute sessions** για να ξεκινήσετε το Prompt flow.
 
-    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df160358b6be6cad3e069a9c22271fd8b40addc847aeca83b44.el.png)
+    ![Start compute session.](../../../../../../translated_images/start-compute-session.9acd8cbbd2c43df1.el.png)
 
 1. Επιλέξτε **Validate and parse input** για να ανανεώσετε τις παραμέτρους.
 
-    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be3c94da090ce7c61a77cc8baf0718552e3d6e41b87eb96a41.el.png)
+    ![Validate input.](../../../../../../translated_images/validate-input.c1adb9543c6495be.el.png)
 
 1. Επιλέξτε την **Value** της **connection** στην προσαρμοσμένη σύνδεση που δημιουργήσατε. Για παράδειγμα, *connection*.
 
-    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafefe7ac3726aaa2a7fdb04a5b969cd09f009acfe8b1e841efb6.el.png)
+    ![Connection.](../../../../../../translated_images/select-connection.1f2b59222bcaafef.el.png)
 
 #### Συνομιλία με το προσαρμοσμένο μοντέλο Phi-3 / Phi-3.5
 
 1. Επιλέξτε **Chat**.
 
-    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d8bf2b8145f603ed5616b71ba82a0eadde189275b88e50a3f.el.png)
+    ![Select chat.](../../../../../../translated_images/select-chat.0406bd9687d0c49d.el.png)
 
 1. Ακολουθεί ένα παράδειγμα αποτελεσμάτων: Τώρα μπορείτε να συνομιλήσετε με το προσαρμοσμένο μοντέλο Phi-3 / Phi-3.5. Συνιστάται να κάνετε ερωτήσεις βασισμένες στα δεδομένα που χρησιμοποιήθηκαν για το fine-tuning.
 
-    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada4628ea1d3d9f563f3e6df2c01cf917bade1a5eb9d197493a.el.png)
+    ![Chat with prompt flow.](../../../../../../translated_images/chat-with-promptflow.1cf8cea112359ada.el.png)
 
 ### Ανάπτυξη Azure OpenAI για αξιολόγηση του μοντέλου Phi-3 / Phi-3.5
 
@@ -402,7 +402,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Μεταβείτε στο Azure AI Foundry project που δημιουργήσατε.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.el.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.el.png)
 
 1. Στο Project που δημιουργήσατε, επιλέξτε **Deployments** από την αριστερή καρτέλα.
 
@@ -410,11 +410,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Επιλέξτε **Deploy base model**.
 
-    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b05b20fe43c20130da7eae1e485ad60bb8e46bbc85a6c613a.el.png)
+    ![Select Deployments.](../../../../../../translated_images/deploy-openai-model.95d812346b25834b.el.png)
 
 1. Επιλέξτε το Azure OpenAI μοντέλο που θέλετε να χρησιμοποιήσετε. Για παράδειγμα, **gpt-4o**.
 
-    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d66ec145dc4e0bf0cc806e6e5469b17e776788d6f5ba7a221.el.png)
+    ![Select Azure OpenAI model you'd like to use.](../../../../../../translated_images/select-openai-model.959496d7e311546d.el.png)
 
 1. Επιλέξτε **Confirm**.
 
@@ -426,17 +426,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. Μεταβείτε στο Azure AI Foundry project που δημιουργήσατε.
 
-    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6a17c809ad9aee8de593cd48717f157cc3eb2b29a37aa02ae.el.png)
+    ![Select Project.](../../../../../../translated_images/select-project-created.5221e0e403e2c9d6.el.png)
 
 1. Στο Project που δημιουργήσατε, επιλέξτε **Evaluation** από την αριστερή καρτέλα.
 
 1. Επιλέξτε **+ New evaluation** από το μενού πλοήγησης.
 
-    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f2cd3f728b640e64eeb639dc5dcb52f2d651099576b894848.el.png)
+    ![Select evaluation.](../../../../../../translated_images/select-evaluation.2846ad7aaaca7f4f.el.png)
 
 1. Επιλέξτε αξιολόγηση **Prompt flow**.
 
-    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f7a1ddda46bf47281cac59f2b1043f6a775a73977875f29a6.el.png)
+    ![Select Prompt flow evaluation.](../../../../../../translated_images/promptflow-evaluation.cb9758cc19b4760f.el.png)
 
 1. Εκτελέστε τις παρακάτω ενέργειες:
 
@@ -444,7 +444,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε **Question and answer without context** ως τύπο εργασίας, επειδή το dataset **ULTRACHAT_200k** που χρησιμοποιείται σε αυτό το tutorial δεν περιέχει context.
     - Επιλέξτε το prompt flow που θέλετε να αξιολογήσετε.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e2e0e3011ff583f7164532d954a5ede4434fe9985cf51047e.el.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting1.4aa08259ff7a536e.el.png)
 
 1. Επιλέξτε **Next**.
 
@@ -453,7 +453,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε **Add your dataset** για να ανεβάσετε το dataset. Για παράδειγμα, μπορείτε να ανεβάσετε το αρχείο test dataset, όπως *test_data.json1*, που περιλαμβάνεται όταν κατεβάζετε το dataset **ULTRACHAT_200k**.
     - Επιλέξτε την κατάλληλη **Dataset column** που ταιριάζει με το dataset σας. Για παράδειγμα, αν χρησιμοποιείτε το dataset **ULTRACHAT_200k**, επιλέξτε **${data.prompt}** ως στήλη dataset.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64ee622f9ee9b1c70f71b51cf39c3749dcd294414048c5b7e39.el.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting2.07036831ba58d64e.el.png)
 
 1. Επιλέξτε **Next**.
 
@@ -462,7 +462,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Επιλέξτε τα metrics απόδοσης και ποιότητας που θέλετε να χρησιμοποιήσετε.
     - Επιλέξτε το Azure OpenAI μοντέλο που δημιουργήσατε για την αξιολόγηση. Για παράδειγμα, επιλέξτε **gpt-4o**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e68a0ad38486ca2d6c3ee5a30f4275f98fd3bc510c8d8f6d2.el.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-1.d1ae69e3bf80914e.el.png)
 
 1. Εκτελέστε τις παρακάτω ενέργειες για να ρυθμίσετε τα metrics κινδύνου και ασφάλειας:
 
@@ -472,7 +472,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Για το **answer**, επιλέξτε **Data source** σε **{$run.outputs.answer}**.
     - Για το **ground_truth**, επιλέξτε **Data source** σε **{$data.message}**.
 
-    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2fab8ffb7e4dc28e8e544d2a093fbc9f63449a03984df98d9.el.png)
+    ![Prompt flow evaluation.](../../../../../../translated_images/evaluation-setting3-2.d53bd075c60a45a2.el.png)
 
 1. Επιλέξτε **Next**.
 
@@ -489,17 +489,17 @@ CO_OP_TRANSLATOR_METADATA:
 
     - αξιολογήστε την αποτελεσματικότητα του μοντέλου στη δημιουργία συνεκτικών, ρέοντων και σχετικών απαντήσεων.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb7425434ec49685cff41376de3954fdab20f2a82c726f9fd690617.el.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu.85f48b42dfb74254.el.png)
 
 1. Μετρήσεις κινδύνου και ασφάλειας:
 
     - Βεβαιωθείτε ότι τα αποτελέσματα του μοντέλου είναι ασφαλή και ευθυγραμμίζονται με τις Αρχές Υπεύθυνης Τεχνητής Νοημοσύνης, αποφεύγοντας οποιοδήποτε επιβλαβές ή προσβλητικό περιεχόμενο.
 
-    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0589153bf7fb6269cd10aaeb10c1456bc76a06b93b2be15e6.el.png)
+    ![Evaluation result.](../../../../../../translated_images/evaluation-result-gpu-2.1b74e336118f4fd0.el.png)
 
 1. Μπορείτε να κάνετε κύλιση προς τα κάτω για να δείτε τα **Αναλυτικά αποτελέσματα μετρήσεων**.
 
-    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f179c3916ba948feb367dfd4e0658752615be62824ef1dcf2d3.el.png)
+    ![Evaluation result.](../../../../../../translated_images/detailed-metrics-result.afa2f5c39a4f5f17.el.png)
 
 1. Αξιολογώντας το προσαρμοσμένο μοντέλο σας Phi-3 / Phi-3.5 τόσο με βάση τις μετρήσεις απόδοσης όσο και ασφάλειας, μπορείτε να επιβεβαιώσετε ότι το μοντέλο δεν είναι μόνο αποτελεσματικό, αλλά και συμμορφώνεται με τις πρακτικές υπεύθυνης ΤΝ, καθιστώντας το έτοιμο για πραγματική χρήση.
 
@@ -509,7 +509,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Έχετε αξιολογήσει με επιτυχία το προσαρμοσμένο μοντέλο Phi-3 ενσωματωμένο με το Prompt flow στο Azure AI Foundry. Αυτό είναι ένα σημαντικό βήμα για να διασφαλίσετε ότι τα μοντέλα ΤΝ σας όχι μόνο αποδίδουν καλά, αλλά και τηρούν τις Αρχές Υπεύθυνης Τεχνητής Νοημοσύνης της Microsoft, βοηθώντας σας να δημιουργήσετε αξιόπιστες και έμπιστες εφαρμογές ΤΝ.
 
-![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4e1438bb31c5c70309908e21e7ada24a621bbfdd8d0f834f4.el.png)
+![Architecture.](../../../../../../translated_images/architecture.10bec55250f5d6a4.el.png)
 
 ## Καθαρισμός Πόρων Azure
 

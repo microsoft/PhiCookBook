@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 [GitHub Modelleri](https://github.com/marketplace/models)'ne hoş geldiniz! Azure AI üzerinde barındırılan Yapay Zeka Modellerini keşfetmeniz için her şey hazır ve sizi bekliyor.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.tr.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.tr.png)
 
 GitHub Modellerinde bulunan Modeller hakkında daha fazla bilgi için [GitHub Model Marketplace](https://github.com/marketplace/models) sayfasını inceleyebilirsiniz.
 
@@ -45,7 +45,7 @@ Her model için özel bir deneme alanı ve örnek kod bulunmaktadır.
 
 Ayrıca örnekleri ve modelleri çalıştırmak için özel bir Codespaces Ortamı da bulunmaktadır.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.tr.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.tr.png)
 
 ## Örnek Kod
 
@@ -431,7 +431,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## GitHub Modelleri için ÜCRETSİZ Kullanım ve Oran Sınırları
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.tr.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.tr.png)
 
 [Deneme alanı ve ücretsiz API kullanımı için oran sınırları](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits), modellerle denemeler yapmanızı ve yapay zeka uygulamanızın prototipini oluşturmanızı kolaylaştırmak içindir. Bu sınırların ötesinde kullanım ve uygulamanızı ölçeklendirmek için Azure hesabından kaynak sağlamanız ve kimlik doğrulamasını GitHub kişisel erişim belirteciniz yerine oradan yapmanız gerekir. Kodunuzda başka bir değişiklik yapmanıza gerek yoktur. Ücretsiz katman sınırlarını Azure AI’da nasıl aşacağınızı öğrenmek için bu bağlantıyı kullanabilirsiniz.
 

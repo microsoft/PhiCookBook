@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Selamat datang di [GitHub Models](https://github.com/marketplace/models)! Kami sudah menyiapkan semuanya agar Anda bisa menjelajahi Model AI yang dihosting di Azure AI.
 
-![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747ca1cc1ffa799db02cc66b4fb7e8495311701adb072442df8.id.png)
+![GitHubModel](../../../../translated_images/GitHub_ModelCatalog.aa43c51c36454747.id.png)
 
 Untuk informasi lebih lanjut tentang Model yang tersedia di GitHub Models, lihat [GitHub Model Marketplace](https://github.com/marketplace/models)
 
@@ -45,7 +45,7 @@ Ada beberapa contoh dasar yang siap untuk Anda jalankan. Anda bisa menemukannya 
 
 Tersedia juga lingkungan Codespaces khusus untuk menjalankan contoh dan model.
 
-![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb67944ad93c1a4c7b8a9811e43d77879a149ecf54c02928c6b.id.png)
+![Getting Started](../../../../translated_images/GitHub_ModelGetStarted.150220a802da6fb6.id.png)
 
 ## Contoh Kode
 
@@ -428,7 +428,7 @@ curl -X POST "https://models.inference.ai.azure.com/chat/completions" \
 
 ## Penggunaan GRATIS dan Batasan Rate untuk GitHub Models
 
-![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0ea7c2e204b066ee4619858d28e7b1a419c262443c5e9a2d5b.id.png)
+![Model Catalog](../../../../translated_images/GitHub_Model.ca6c125cb3117d0e.id.png)
 
 [Batasan rate untuk playground dan penggunaan API gratis](https://docs.github.com/en/github-models/prototyping-with-ai-models#rate-limits) dimaksudkan untuk membantu Anda bereksperimen dengan model dan membuat prototipe aplikasi AI Anda. Untuk penggunaan di luar batas tersebut, dan untuk membawa aplikasi Anda ke skala yang lebih besar, Anda harus menyediakan sumber daya dari akun Azure, dan melakukan autentikasi dari sana, bukan menggunakan personal access token GitHub Anda. Anda tidak perlu mengubah apapun di kode Anda. Gunakan tautan ini untuk mengetahui cara melewati batasan free tier di Azure AI.
 

@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 Di result (my env na Apple M1 Max,64GB) na
 
-![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.pcm.png)
+![Terminal](../../../../../translated_images/01.5cf57df8f7407cf9.pcm.png)
 
 ### **3. Quantizing Phi-3-mini wit MLX in Terminal**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 Di result na
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.pcm.png)
+![INT4](../../../../../translated_images/02.7b188681a8eadbc1.pcm.png)
 
 
 ### **4. Run Phi-3-mini wit MLX in Jupyter Notebook**
 
 
-![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.pcm.png)
+![Notebook](../../../../../translated_images/03.b9705a3a5aaa89f9.pcm.png)
 
 ***Note:*** Abeg read dis sample [click this link](../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
