@@ -23,7 +23,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 এখানে এই E2E স্যাম্পলের একটি ওভারভিউ দেওয়া হলো।
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.bn.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.bn.png)
 
 ### বিষয়বস্তু সূচি
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. পোর্টালের উপরের **search bar**-এ *azure machine learning* টাইপ করুন এবং প্রদর্শিত অপশন থেকে **Azure Machine Learning** নির্বাচন করুন।
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.bn.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.bn.png)
 
 1. নেভিগেশন মেনু থেকে **+ Create** নির্বাচন করুন।
 
 1. নেভিগেশন মেনু থেকে **New workspace** নির্বাচন করুন।
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.bn.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.bn.png)
 
 1. নিম্নলিখিত কাজগুলো করুন:
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ব্যবহার করার জন্য **Application insights** নির্বাচন করুন (প্রয়োজনে নতুন তৈরি করুন)।
     - ব্যবহার করার জন্য **Container registry** নির্বাচন করুন (প্রয়োজনে নতুন তৈরি করুন)।
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.bn.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.bn.png)
 
 1. **Review + Create** নির্বাচন করুন।
 
@@ -92,7 +92,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ব্যবহার করার জন্য **Virtual machine family** নির্বাচন করুন। উদাহরণস্বরূপ, **Standard NCADSA100v4 Family Cluster Dedicated vCPUs** নির্বাচন করুন, যা *Standard_NC24ads_A100_v4* GPU অন্তর্ভুক্ত।
     - নেভিগেশন মেনু থেকে **Request quota** নির্বাচন করুন।
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.bn.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.bn.png)
 
     - Request quota পৃষ্ঠায়, আপনি যে **New cores limit** ব্যবহার করতে চান তা লিখুন। উদাহরণস্বরূপ, ২৪।
     - Request quota পৃষ্ঠায়, GPU কোটা অনুরোধ করতে **Submit** নির্বাচন করুন।
@@ -108,11 +108,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. পোর্টালের উপরের **search bar**-এ *managed identities* টাইপ করুন এবং প্রদর্শিত অপশন থেকে **Managed Identities** নির্বাচন করুন।
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.bn.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.bn.png)
 
 1. **+ Create** নির্বাচন করুন।
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.bn.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.bn.png)
 
 1. নিম্নলিখিত কাজগুলো করুন:
 
@@ -139,7 +139,7 @@ CO_OP_TRANSLATOR_METADATA:
     - ব্যবহার করার জন্য **Resource group** নির্বাচন করুন।
     - **Role** হিসেবে **Contributor** নির্বাচন করুন।
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.bn.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.bn.png)
 
 1. **Save** নির্বাচন করুন।
 
@@ -147,7 +147,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. পোর্টালের উপরের **search bar**-এ *storage accounts* টাইপ করুন এবং প্রদর্শিত অপশন থেকে **Storage accounts** নির্বাচন করুন।
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.bn.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.bn.png)
 
 1. Azure Machine Learning ওয়ার্কস্পেসের সাথে যুক্ত স্টোরেজ অ্যাকাউন্ট নির্বাচন করুন। উদাহরণস্বরূপ, *finetunephistorage*।
 
@@ -158,7 +158,7 @@ CO_OP_TRANSLATOR_METADATA:
     - নেভিগেশন মেনু থেকে **+ Add** নির্বাচন করুন।
     - নেভিগেশন মেনু থেকে **Add role assignment** নির্বাচন করুন।
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.bn.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.bn.png)
 
 1. Add role assignment পৃষ্ঠায় নিম্নলিখিত কাজগুলো করুন:
 
@@ -171,7 +171,7 @@ CO_OP_TRANSLATOR_METADATA:
     - Select managed identities পৃষ্ঠায়, আপনি যে Managed Identity তৈরি করেছেন তা নির্বাচন করুন। উদাহরণস্বরূপ, *finetunephi-managedidentity*।
     - Select managed identities পৃষ্ঠায়, **Select** নির্বাচন করুন।
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.bn.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.bn.png)
 
 1. **Review + assign** নির্বাচন করুন।
 
@@ -179,7 +179,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. পোর্টালের উপরের **search bar**-এ *container registries* টাইপ করুন এবং প্রদর্শিত অপশন থেকে **Container registries** নির্বাচন করুন।
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.bn.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.bn.png)
 
 1. Azure Machine Learning ওয়ার্কস্পেসের সাথে যুক্ত container registry নির্বাচন করুন। উদাহরণস্বরূপ, *finetunephicontainerregistries*।
 
@@ -289,7 +289,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. আপনি যে *finetune-phi* ফোল্ডার তৈরি করেছেন, সেটি নির্বাচন করুন, যা *C:\Users\yourUserName\finetune-phi* এ অবস্থিত।
 
-    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.bn.png)
+    ![Open project floder.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.bn.png)
 
 1. Visual Studio Code এর বাম প্যানেলে রাইট-ক্লিক করে **New File** নির্বাচন করে *download_dataset.py* নামে একটি নতুন ফাইল তৈরি করুন।
 
@@ -297,7 +297,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. একইভাবে *deploy_model.py* নামে একটি নতুন ফাইল তৈরি করুন।
 
-    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.bn.png)
+    ![Create new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.bn.png)
 
 1. Visual Studio Code এর বাম প্যানেলে রাইট-ক্লিক করে **New Folder** নির্বাচন করে *finetuning_dir* নামে একটি নতুন ফোল্ডার তৈরি করুন।
 
@@ -373,28 +373,28 @@ CO_OP_TRANSLATOR_METADATA:
     - আপনি যে Azure Subscription ব্যবহার করছেন তা নির্বাচন করুন।
     - আপনার Subscription ID কপি করে *config.py* ফাইলে পেস্ট করুন।
 
-    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.bn.png)
+    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.bn.png)
 
 1. Azure Workspace Name যোগ করতে:
 
     - আপনি যে Azure Machine Learning রিসোর্স তৈরি করেছেন সেখানে যান।
     - আপনার অ্যাকাউন্টের নাম কপি করে *config.py* ফাইলে পেস্ট করুন।
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.bn.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.bn.png)
 
 1. Azure Resource Group Name যোগ করতে:
 
     - Azure Machine Learning রিসোর্সে যান।
     - আপনার Azure Resource Group Name কপি করে *config.py* ফাইলে পেস্ট করুন।
 
-    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.bn.png)
+    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.bn.png)
 
 2. Azure Managed Identity নাম যোগ করতে:
 
     - আপনি যে Managed Identities রিসোর্স তৈরি করেছেন সেখানে যান।
     - আপনার Azure Managed Identity নাম কপি করে *config.py* ফাইলে পেস্ট করুন।
 
-    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.bn.png)
+    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.bn.png)
 
 ### ফাইন-টিউনিংয়ের জন্য ডেটাসেট প্রস্তুত করুন
 
@@ -508,7 +508,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. আপনার Azure সাবস্ক্রিপশন নির্বাচন করুন।
 
-    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.bn.png)
+    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.bn.png)
 
 > [!TIP]
 >
@@ -860,7 +860,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. এই অনুশীলনে, আপনি সফলভাবে Azure Machine Learning ব্যবহার করে Phi-3 মডেল ফাইন-টিউন করেছেন। *setup_ml.py* স্ক্রিপ্ট চালিয়ে আপনি Azure Machine Learning পরিবেশ সেটআপ এবং *fine_tune.py* ফাইলে সংজ্ঞায়িত ফাইন-টিউনিং প্রক্রিয়া শুরু করেছেন। ফাইন-টিউনিং প্রক্রিয়া সম্পন্ন হতে কিছু সময় লাগতে পারে। `python setup_ml.py` কমান্ড চালানোর পর প্রক্রিয়া শেষ হওয়া পর্যন্ত অপেক্ষা করুন। টার্মিনালে প্রদত্ত লিঙ্ক থেকে Azure Machine Learning পোর্টালে গিয়ে ফাইন-টিউনিং জবের অবস্থা মনিটর করতে পারেন।
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.bn.png)
+    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.bn.png)
 
 ### ফাইন-টিউন করা মডেল ডিপ্লয় করুন
 
@@ -1080,11 +1080,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. বাম পাশের ট্যাব থেকে **Endpoints** নির্বাচন করুন।
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.bn.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.bn.png)
 
 2. আপনি যে এন্ডপয়েন্ট তৈরি করেছেন তা নির্বাচন করুন।
 
-    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.bn.png)
+    ![Select endpoints that you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.bn.png)
 
 3. এই পৃষ্ঠায়, আপনি ডিপ্লয়মেন্ট প্রক্রিয়ার সময় তৈরি করা এন্ডপয়েন্টগুলি পরিচালনা করতে পারবেন।
 
@@ -1103,7 +1103,7 @@ CO_OP_TRANSLATOR_METADATA:
 1. আপনার **REST endpoint** কপি করে *config.py* ফাইলে `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` এর জায়গায় পেস্ট করুন।
 1. আপনার **Primary key** কপি করে *config.py* ফাইলে `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` এর জায়গায় পেস্ট করুন।
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.bn.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.bn.png)
 
 #### *flow.dag.yml* ফাইলে কোড যোগ করুন
 
@@ -1212,7 +1212,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. ফলাফলের একটি উদাহরণ এখানে দেওয়া হলো: এখন আপনি আপনার কাস্টম Phi-3 মডেলের সাথে চ্যাট করতে পারবেন। ফাইন-টিউনিংয়ের জন্য ব্যবহৃত ডেটার ভিত্তিতে প্রশ্ন করা সুপারিশ করা হয়।
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.bn.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.bn.png)
 
 **অস্বীকৃতি**:  
 এই নথিটি AI অনুবাদ সেবা [Co-op Translator](https://github.com/Azure/co-op-translator) ব্যবহার করে অনূদিত হয়েছে। আমরা যথাসাধ্য সঠিকতার চেষ্টা করি, তবে স্বয়ংক্রিয় অনুবাদে ত্রুটি বা অসঙ্গতি থাকতে পারে। মূল নথিটি তার নিজস্ব ভাষায়ই কর্তৃত্বপূর্ণ উৎস হিসেবে বিবেচিত হওয়া উচিত। গুরুত্বপূর্ণ তথ্যের জন্য পেশাদার মানব অনুবাদ গ্রহণ করার পরামর্শ দেওয়া হয়। এই অনুবাদের ব্যবহারে সৃষ্ট কোনো ভুল বোঝাবুঝি বা ভুল ব্যাখ্যার জন্য আমরা দায়ী নই।
