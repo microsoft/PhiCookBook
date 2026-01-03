@@ -42,7 +42,7 @@ python -m mlx_lm.generate --model microsoft/Phi-3-mini-4k-instruct --max-token 2
 
 ഫലമായി (എന്റെ പരിസ്ഥിതി Apple M1 Max,64GB ആണ്) ആണ്
 
-![ടെർമിനൽ](../../../../../translated_images/01.5cf57df8f7407cf9281c0237f4e69c3728b8817253aad0835d14108b07c83c88.ml.png)
+![ടെർമിനൽ](../../../../../translated_images/01.5cf57df8f7407cf9.ml.png)
 
 ### **3. Terminal-ൽ MLX ഉപയോഗിച്ച് Phi-3-mini ക്വാണ്ടൈസേഷൻ ചെയ്യൽ**
 
@@ -68,13 +68,13 @@ python -m mlx_lm.generate --model ./mlx_model/ --max-token 2048 --prompt  "<|use
 
 ഫലം:
 
-![INT4](../../../../../translated_images/02.7b188681a8eadbc111aba8d8006e4b3671788947a99a46329261e169dd2ec29f.ml.png)
+![INT4](../../../../../translated_images/02.7b188681a8eadbc1.ml.png)
 
 
 ### **4. Jupyter Notebook-ൽ MLX ഉപയോഗിച്ച് Phi-3-mini ഓടിക്കൽ**
 
 
-![നോട്ട്‌ബുക്ക്](../../../../../translated_images/03.b9705a3a5aaa89f9eb0ca04c1a4565dfe4a5e8cc68604227d2eab149fef1d3c7.ml.png)
+![നോട്ട്‌ബുക്ക്](../../../../../translated_images/03.b9705a3a5aaa89f9.ml.png)
 
 ***Note:*** ദയവായി ഈ സാമ്പിൾ [ഈ ലിങ്ക് ക്ലിക്ക് ചെയ്യുക](../../../code/03.Inference/MLX/MLX_DEMO.ipynb)
 
