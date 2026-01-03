@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Generative AI کی ترقی کے ساتھ، ہم امید کرتے ہیں کہ ایک متحدہ پلیٹ فارم کے ذریعے مختلف LLM اور SLM، انٹرپرائز ڈیٹا انٹیگریشن، fine-tuning/RAG آپریشنز، اور LLM اور SLM کے انضمام کے بعد مختلف انٹرپرائز کاروباروں کی تشخیص کو منظم کیا جا سکے، تاکہ generative AI کی مدد سے اسمارٹ ایپلیکیشنز کو بہتر طریقے سے نافذ کیا جا سکے۔ [Azure AI Foundry](https://ai.azure.com) ایک انٹرپرائز سطح کا generative AI ایپلیکیشن پلیٹ فارم ہے۔
 
-![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.ur.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93.ur.png)
 
 Azure AI Foundry کے ذریعے، آپ بڑے زبان کے ماڈلز (LLM) کے جوابات کا جائزہ لے سکتے ہیں اور بہتر کارکردگی کے لیے prompt flow کے ساتھ prompt application components کو منظم کر سکتے ہیں۔ یہ پلیٹ فارم proof of concepts کو آسانی سے مکمل پروڈکشن میں تبدیل کرنے کے لیے scalability فراہم کرتا ہے۔ مسلسل نگرانی اور بہتری طویل مدتی کامیابی کی حمایت کرتی ہے۔
 

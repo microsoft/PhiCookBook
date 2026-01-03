@@ -28,9 +28,9 @@ Tóm lại, NPU là những "bậc thầy toán học" giúp tăng tốc các ph
 
 Thiết bị Intel® NPU là bộ tăng tốc suy luận AI tích hợp với CPU Intel dành cho khách hàng, bắt đầu từ thế hệ CPU Intel® Core™ Ultra (trước đây gọi là Meteor Lake). Nó cho phép thực thi các tác vụ mạng nơ-ron nhân tạo với hiệu quả năng lượng cao.
 
-![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf74c98789557809c9e7f5e3d99ee4d429f79dd54161bb8920b.vi.png)
+![Latency](../../../../../translated_images/aipcphitokenlatency.2be14f04f30a3bf7.vi.png)
 
-![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d3946f8e89bedb78575d600a5b32a921ddb6ed96d02c8a169c1d.vi.png)
+![Latency770](../../../../../translated_images/aipcphitokenlatency770.e923609a57c5d394.vi.png)
 
 **Thư viện tăng tốc Intel NPU**
 
@@ -98,7 +98,7 @@ with warnings.catch_warnings():
 
 Khi chạy mã, bạn có thể xem trạng thái hoạt động của NPU qua Task Manager
 
-![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1f081845eb7aaf186ffa5542735491da2aa14ee4f31617c74.vi.png)
+![NPU](../../../../../translated_images/aipc_NPU.7a3cb6db47b377e1.vi.png)
 
 ***Ví dụ mẫu*** : [AIPC_NPU_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_NPU_DEMO.ipynb)
 
@@ -189,7 +189,7 @@ pip install .\onnxruntime_genai_directml-0.3.0.dev0-cp310-cp310-win_amd64.whl
 
 Kết quả chạy như sau
 
-![DML](../../../../../translated_images/aipc_DML.52a44180393ab491cafdcfb87d067e9dc2c85f771bfea53590b6d0cc65b60351.vi.png)
+![DML](../../../../../translated_images/aipc_DML.52a44180393ab491.vi.png)
 
 ***Ví dụ mẫu*** : [AIPC_DirectML_DEMO.ipynb](../../../../../code/03.Inference/AIPC/AIPC_DirectML_DEMO.ipynb)
 
@@ -235,7 +235,7 @@ optimum-cli export openvino --model "microsoft/Phi-3-mini-4k-instruct" --task te
 
 định dạng chuyển đổi sẽ như thế này
 
-![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca5c354c476b35ebb22dc06affcf1b0e1f5ea7efba0a6e9e5d.vi.png)
+![openvino_convert](../../../../../translated_images/aipc_OpenVINO_convert.9e6360b65331ffca.vi.png)
 
 Tải đường dẫn mô hình (model_dir), cấu hình liên quan (ov_config = {"PERFORMANCE_HINT": "LATENCY", "NUM_STREAMS": "1", "CACHE_DIR": ""}), và thiết bị tăng tốc phần cứng (GPU.0) qua OVModelForCausalLM
 
@@ -253,7 +253,7 @@ ov_model = OVModelForCausalLM.from_pretrained(
 
 Khi chạy mã, bạn có thể xem trạng thái hoạt động của GPU qua Task Manager
 
-![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55725d63931195c0321f2901c7f92d06c3fbd7a1b2cbc22238.vi.png)
+![openvino_gpu](../../../../../translated_images/aipc_OpenVINO_GPU.20180edfffd91e55.vi.png)
 
 ***Ví dụ mẫu*** : [AIPC_OpenVino_Demo.ipynb](../../../../../code/03.Inference/AIPC/AIPC_OpenVino_Demo.ipynb)
 

@@ -11,7 +11,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 Với sự phát triển của Generative AI, chúng ta mong muốn sử dụng một nền tảng thống nhất để quản lý các LLM và SLM khác nhau, tích hợp dữ liệu doanh nghiệp, thực hiện fine-tuning/RAG, và đánh giá các hoạt động kinh doanh sau khi tích hợp LLM và SLM, nhằm giúp các ứng dụng AI tạo sinh được triển khai thông minh hơn. [Azure AI Foundry](https://ai.azure.com) là nền tảng ứng dụng AI tạo sinh cấp doanh nghiệp.
 
-![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93d6fb1d0a69b635bc36834da1f0615d7d2b8be216021d9eeb.vi.png)
+![aistudo](../../../../translated_images/aifoundry_home.f28a8127c96c7d93.vi.png)
 
 Với Azure AI Foundry, bạn có thể đánh giá phản hồi của các mô hình ngôn ngữ lớn (LLM) và điều phối các thành phần ứng dụng prompt bằng prompt flow để nâng cao hiệu suất. Nền tảng này hỗ trợ mở rộng dễ dàng, giúp chuyển đổi các bằng chứng khái niệm thành sản phẩm hoàn chỉnh. Việc giám sát và tinh chỉnh liên tục giúp đảm bảo thành công lâu dài.
 

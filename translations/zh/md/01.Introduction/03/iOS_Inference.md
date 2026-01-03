@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 我选择了 Objective-C 作为 App 开发语言，因为使用 ONNX Runtime 的生成式 AI C++ API 时，Objective-C 兼容性更好。当然，你也可以通过 Swift 桥接完成相关调用。
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.zh.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.zh.png)
 
 ## **5. 将 ONNX 量化 INT4 模型复制到 App 项目中**
 
 我们需要导入 ONNX 格式的 INT4 量化模型，需先下载该模型。
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.zh.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.zh.png)
 
 下载后，需要将其添加到 Xcode 项目的 Resources 目录中。
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.zh.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.zh.png)
 
 ## **6. 在 ViewControllers 中添加 C++ API**
 
@@ -121,11 +121,11 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 - **a.** 将对应的 C++ 头文件添加到项目中。
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.zh.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.zh.png)
 
 - **b.** 在 Xcode 中引入 `onnxruntime-genai` 动态库。
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.zh.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.zh.png)
 
 - **c.** 使用 C 语言示例代码进行测试。你也可以添加如 ChatUI 等额外功能。
 
@@ -162,7 +162,7 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 完成以上设置后，即可运行应用，查看 Phi-3-mini 模型推理的效果。
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.zh.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.zh.jpg)
 
 更多示例代码和详细说明，请访问 [Phi-3 Mini Samples 仓库](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios)。
 

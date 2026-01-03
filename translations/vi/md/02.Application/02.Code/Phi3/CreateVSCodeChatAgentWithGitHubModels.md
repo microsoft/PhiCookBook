@@ -15,11 +15,11 @@ Bạn có đang sử dụng Visual Studio Code Copilot không? Đặc biệt tro
 
 Chúng ta biết rằng Phi-3/3.5-mini-instruct trong gia đình Phi-3/3.5 có khả năng hiểu và sinh mã mạnh mẽ, và có ưu thế hơn so với Gemma-2-9b và Mistral-Nemo-12B-instruct-2407.
 
-![codegen](../../../../../../translated_images/codegen.53be1150ee54d969f06699bbe6f0daf5c6b423ab800181589c61a9e31ccb6e83.vi.png)
+![codegen](../../../../../../translated_images/codegen.53be1150ee54d969.vi.png)
 
 GitHub Models mới nhất đã cung cấp quyền truy cập vào các mô hình Phi-3.5-mini-instruct (128k) và Phi-3.5-vision-instruct (128k). Các nhà phát triển có thể truy cập chúng thông qua OpenAI SDK, Azure AI Inference SDK và REST API.
 
-![gh](../../../../../../translated_images/gh.459640c7ceba01d57827546901c205ee7c53e85f6ddd81d2231ef7693d8b08a2.vi.png)
+![gh](../../../../../../translated_images/gh.459640c7ceba01d5.vi.png)
 
 ***Lưu ý:*** Khuyến nghị sử dụng Azure AI Inference SDK ở đây, vì nó có thể chuyển đổi tốt hơn với Azure Model Catalog trong môi trường sản xuất.
 
@@ -34,13 +34,13 @@ Dưới đây là kết quả của **Phi-3.5-mini-instruct (128k)** và **Phi-3
 
 GitHub Copilot Chat Agent có thể hoàn thành các nhiệm vụ khác nhau trong các kịch bản dự án dựa trên mã nguồn. Hệ thống có bốn agent: workspace, github, terminal, vscode
 
-![agent](../../../../../../translated_images/agent.3dbb06228f9a618982b8761c2501f1b5124cd8c4611fb882ee09516de29a2153.vi.png)
+![agent](../../../../../../translated_images/agent.3dbb06228f9a6189.vi.png)
 
 Bằng cách thêm tên agent với ký hiệu ‘@’, bạn có thể nhanh chóng hoàn thành công việc tương ứng. Đối với doanh nghiệp, nếu bạn thêm các nội dung liên quan đến nghiệp vụ như yêu cầu, mã hóa, tiêu chuẩn kiểm thử và phát hành, bạn có thể có các chức năng riêng tư doanh nghiệp mạnh mẽ hơn dựa trên GitHub Copilot.
 
 Visual Studio Code Chat Agent hiện đã chính thức phát hành API, cho phép doanh nghiệp hoặc nhà phát triển doanh nghiệp phát triển agent dựa trên các hệ sinh thái phần mềm kinh doanh khác nhau. Dựa trên phương pháp phát triển Visual Studio Code Extension Development, bạn có thể dễ dàng truy cập giao diện API của Visual Studio Code Chat Agent. Chúng ta có thể phát triển dựa trên quy trình này.
 
-![diagram](../../../../../../translated_images/diagram.ca70d2866762f1155a89e483e77537aa08087e04c909992595dc0cbe9b3a6a80.vi.png)
+![diagram](../../../../../../translated_images/diagram.ca70d2866762f115.vi.png)
 
 Kịch bản phát triển có thể hỗ trợ truy cập API mô hình bên thứ ba (như GitHub Models, Azure Model Catalog, và dịch vụ tự xây dựng dựa trên các mô hình mã nguồn mở) và cũng có thể sử dụng các mô hình gpt-35-turbo, gpt-4, và gpt-4o do GitHub Copilot cung cấp.
 
@@ -54,7 +54,7 @@ Chúng tôi thử tích hợp khả năng lập trình của Phi-3.5 để hoàn
 
 3. Sinh mã dựa trên **Phi-3.5-vision-instruct (128k)** và hoàn thiện hình ảnh thông qua lệnh **@phicoding /image**
 
-![arch](../../../../../../translated_images/arch.5a58a0adfa959a2da4fe954f16e66b008aef250fe81e9062571688c4f1e57068.vi.png)
+![arch](../../../../../../translated_images/arch.5a58a0adfa959a2d.vi.png)
 
 ## **Các bước liên quan**
 
@@ -364,19 +364,19 @@ export function deactivate() {}
 
 ***/help***
 
-![help](../../../../../../translated_images/help.04c134d2bf9a95418857a947113b38ccad1aef1b8a9f0d9fd80a80719126e11d.vi.png)
+![help](../../../../../../translated_images/help.04c134d2bf9a9541.vi.png)
 
 ***@phicoding /help***
 
-![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fea985d8095f5681ee4529210f94d66ff71ee2b4aea245af31.vi.png)
+![agenthelp](../../../../../../translated_images/agenthelp.60c68767c941a3fe.vi.png)
 
 ***@phicoding /gen***
 
-![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764bae0018e6d4b7d6f06554d76a3e955796764af4096bead6d2.vi.png)
+![agentgen](../../../../../../translated_images/agentgen.a16e7735790f764b.vi.png)
 
 ***@phicoding /image***
 
-![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1c2d012668cd069dddbd1dfd2ef7cec9c7814eb46f0820d4d.vi.png)
+![agentimage](../../../../../../translated_images/agentimage.f5cb52b45ab7d0d1.vi.png)
 
 Bạn có thể tải mã mẫu tại đây: [nhấn vào đây](../../../../../../code/09.UpdateSamples/Aug/vscode)
 

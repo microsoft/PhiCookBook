@@ -103,17 +103,17 @@ python3 build.py --parallel --build_dir ./build_ios --ios --ios_sysroot iphoneos
 
 Tôi chọn Objective-C làm phương pháp phát triển App, vì khi sử dụng Generative AI với ONNX Runtime C++ API, Objective-C tương thích tốt hơn. Tất nhiên, bạn cũng có thể hoàn thành các gọi liên quan thông qua cầu nối Swift.
 
-![xcode](../../../../../translated_images/xcode.8147789e6c25e3e289e6aa56c168089a2c277e3cd6af353fae6c2f4a56eba836.vi.png)
+![xcode](../../../../../translated_images/xcode.8147789e6c25e3e2.vi.png)
 
 ## **5. Sao chép mô hình ONNX lượng tử hóa INT4 vào dự án ứng dụng App**
 
 Chúng ta cần nhập mô hình lượng tử hóa INT4 ở định dạng ONNX, bạn cần tải xuống trước.
 
-![hf](../../../../../translated_images/hf.6b8504fd88ee48dd512d76e0665cb76bd68c8e53d0b21b2a9e6f269f5b961173.vi.png)
+![hf](../../../../../translated_images/hf.6b8504fd88ee48dd.vi.png)
 
 Sau khi tải về, bạn cần thêm nó vào thư mục Resources của dự án trong Xcode.
 
-![model](../../../../../translated_images/model.3b879b14e0be877d12282beb83c953a82b62d4bc6b207a78937223f4798d0f4a.vi.png)
+![model](../../../../../translated_images/model.3b879b14e0be877d.vi.png)
 
 ## **6. Thêm API C++ vào ViewControllers**
 
@@ -121,11 +121,11 @@ Sau khi tải về, bạn cần thêm nó vào thư mục Resources của dự �
 
 - **a.** Thêm các file header C++ tương ứng vào dự án.
 
-  ![Header File](../../../../../translated_images/head.64cad021ce70a333ff5d59d4a1b4fb0f3dd2ca457413646191a18346067b2cc9.vi.png)
+  ![Header File](../../../../../translated_images/head.64cad021ce70a333.vi.png)
 
 - **b.** Bao gồm thư viện động `onnxruntime-genai` trong Xcode.
 
-  ![Library](../../../../../translated_images/lib.a4209b9f21ddf3445ba6ac69797d49e6586d68a57cea9f8bc9fc34ec3ee979ec.vi.png)
+  ![Library](../../../../../translated_images/lib.a4209b9f21ddf344.vi.png)
 
 - **c.** Sử dụng mã mẫu C để thử nghiệm. Bạn cũng có thể thêm các tính năng bổ sung như ChatUI để tăng cường chức năng.
 
@@ -162,7 +162,7 @@ Sau khi tải về, bạn cần thêm nó vào thư mục Resources của dự �
 
 Khi đã hoàn tất thiết lập, bạn có thể chạy ứng dụng để xem kết quả suy luận của mô hình Phi-3-mini.
 
-![Running Result](../../../../../translated_images/result.326a947a6a2b9c5115a3e462b9c1b5412260f847478496c0fc7535b985c3f55a.vi.jpg)
+![Running Result](../../../../../translated_images/result.326a947a6a2b9c51.vi.jpg)
 
 Để xem thêm mã mẫu và hướng dẫn chi tiết, hãy truy cập [kho mẫu Phi-3 Mini Samples](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/ios).
 

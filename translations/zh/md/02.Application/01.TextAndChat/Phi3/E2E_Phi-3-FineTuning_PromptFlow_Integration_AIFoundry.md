@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 以下是本端到端示例的整体架构图。
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a2ceacdc6401c688bdf100d874fe8d55169f7723ed024781e.zh.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview.](../../../../../../translated_images/00-01-architecture.198ba0f1ae6d841a.zh.png)
 
 ### 目录
 
@@ -49,13 +49,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在门户页面顶部的 **搜索栏** 中输入 *azure machine learning*，然后从出现的选项中选择 **Azure Machine Learning**。
 
-    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b9780de8accc31e4e1de7254e9c34a7836a955d455339e77d.zh.png)
+    ![Type azure machine learning.](../../../../../../translated_images/01-01-type-azml.acae6c5455e67b4b.zh.png)
 
 2. 从导航菜单中选择 **+ 创建**。
 
 3. 从导航菜单中选择 **新建工作区**。
 
-    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2cf04946c36873223099fd568e0c3ab0377c096868892fdda.zh.png)
+    ![Select new workspace.](../../../../../../translated_images/01-02-select-new-workspace.cd09cd0ec4a60ef2.zh.png)
 
 4. 执行以下操作：
 
@@ -68,7 +68,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 选择要使用的 **应用程序洞察**（如有需要可新建）。  
     - 选择要使用的 **容器注册表**（如有需要可新建）。
 
-    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090ff9ec341c724c1493e7f96726f5c810a89a7409b782a7b04a.zh.png)
+    ![Fill azure machine learning.](../../../../../../translated_images/01-03-fill-AZML.a1b6fd944be0090f.zh.png)
 
 5. 选择 **查看 + 创建**。
 
@@ -89,7 +89,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 选择要使用的 **虚拟机系列**，例如选择包含 *Standard_NC24ads_A100_v4* GPU 的 **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**。  
     - 从导航菜单选择 **申请配额**。
 
-        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd536f2e4a305c8528a34914370813bc2cda4d7bbdd2de873f0.zh.png)
+        ![Request quota.](../../../../../../translated_images/02-02-request-quota.c0428239a63ffdd5.zh.png)
 
     - 在申请配额页面中，输入您想要的 **新核心限制**，例如 24。  
     - 在申请配额页面中，选择 **提交** 以申请 GPU 配额。
@@ -110,11 +110,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在门户页面顶部的 **搜索栏** 中输入 *managed identities*，然后从出现的选项中选择 **Managed Identities**。
 
-    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e52f52a152187b230243fe884f58a9940cd9b534db3dcea383.zh.png)
+    ![Type managed identities.](../../../../../../translated_images/03-01-type-managed-identities.24de763e0f1f37e5.zh.png)
 
 1. 选择 **+ 创建**。
 
-    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f27b6680cd94ef6ec7557394022dafdcfba2a92777b11e4817.zh.png)
+    ![Select create.](../../../../../../translated_images/03-02-select-create.92bf8989a5cd98f2.zh.png)
 
 1. 执行以下操作：
 
@@ -123,7 +123,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 选择您想使用的 **区域**。  
     - 输入 **名称**，必须是唯一值。
 
-    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0e313fffaecf7d6ce4ee5e86c0badcd038f03519cac63b76b.zh.png)
+    ![Select create.](../../../../../../translated_images/03-03-fill-managed-identities-1.ef1d6a2261b449e0.zh.png)
 
 1. 选择 **查看 + 创建**。
 
@@ -143,7 +143,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 选择要使用的 **资源组**。  
     - 将 **角色** 设置为 **Contributor**。
 
-    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d1d62333e91b4d2719284f0dad14bd9b4c3459510a0c44fab.zh.png)
+    ![Fill contributor role.](../../../../../../translated_images/03-04-fill-contributor-role.73990bc6a32e140d.zh.png)
 
 2. 选择 **保存**。
 
@@ -151,7 +151,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在门户页面顶部的 **搜索栏** 中输入 *storage accounts*，然后从出现的选项中选择 **Storage accounts**。
 
-    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e55b6b4dda10841d74d1c7463a2e4f23b9c45ffbb84219deb2.zh.png)
+    ![Type storage accounts.](../../../../../../translated_images/03-05-type-storage-accounts.9303de485e65e1e5.zh.png)
 
 1. 选择与您创建的 Azure 机器学习工作区关联的存储帐户，例如 *finetunephistorage*。
 
@@ -162,7 +162,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 从导航菜单选择 **+ 添加**。  
     - 选择 **添加角色分配**。
 
-    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c25fb73e63b957e214a2b651375a640a3aa54159a3731f495b.zh.png)
+    ![Add role.](../../../../../../translated_images/03-06-add-role.353ccbfdcf0789c2.zh.png)
 
 1. 在添加角色分配页面，执行以下操作：
 
@@ -175,7 +175,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 选择您创建的托管身份，例如 *finetunephi-managedidentity*。  
     - 选择 **选择**。
 
-    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25289f2f121da05d114934d21d26aae9cb779334cbbccdf9e8.zh.png)
+    ![Select managed identity.](../../../../../../translated_images/03-08-select-managed-identity.e80a2aad5247eb25.zh.png)
 
 1. 选择 **查看 + 分配**。
 
@@ -183,7 +183,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在门户页面顶部的 **搜索栏** 中输入 *container registries*，然后从出现的选项中选择 **Container registries**。
 
-    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a69b003f7a698dac908ffc2f355e675c10939fdd0bb09f790e.zh.png)
+    ![Type container registries.](../../../../../../translated_images/03-09-type-container-registries.7a4180eb2110e5a6.zh.png)
 
 1. 选择与 Azure 机器学习工作区关联的容器注册表，例如 *finetunephicontainerregistry*。
 
@@ -270,11 +270,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 选择你创建的 *finetune-phi* 文件夹，路径为 *C:\Users\yourUserName\finetune-phi*。
 
-    ![选择你创建的文件夹。](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6f63a0a50961e51a39cc6de7a7ddc86da5f4896e815f28abd.zh.png)
+    ![选择你创建的文件夹。](../../../../../../translated_images/04-01-open-project-folder.f734374bcfd5f9e6.zh.png)
 
 1. 在 Visual Studio Code 左侧面板中右键点击，选择 **新建文件**，创建一个名为 *download_dataset.py* 的新文件。
 
-    ![创建新文件。](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff927ede875300e1b5c91ab90d1e486c77a43bb9494880cf9b6f.zh.png)
+    ![创建新文件。](../../../../../../translated_images/04-02-create-new-file.cf9a330a3a9cff92.zh.png)
 
 ### 准备微调数据集
 
@@ -386,7 +386,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 选择 **+ 新建**。
 
-    ![选择计算。](../../../../../../translated_images/06-01-select-compute.a29cff290b480252d04ffd0142c073486df7d3b7256335964a98b87e28072523.zh.png)
+    ![选择计算。](../../../../../../translated_images/06-01-select-compute.a29cff290b480252.zh.png)
 
 1. 执行以下操作：
 
@@ -396,7 +396,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 将 **虚拟机大小** 过滤器设置为 **从所有选项中选择**。
     - 选择 **虚拟机大小** 为 **Standard_NC24ads_A100_v4**。
 
-    ![创建集群。](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e4baa9c5ccf86510f21df87515c231b2a255e1ee545496458.zh.png)
+    ![创建集群。](../../../../../../translated_images/06-02-create-cluster.f221b65ae1221d4e.zh.png)
 
 1. 选择 **下一步**。
 
@@ -407,7 +407,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 将 **最大节点数** 设为 **1**。
     - 将 **空闲秒数后缩减规模** 设为 **120**。
 
-    ![创建集群。](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662edc0f95ad364a869b4dbb7f7be08ff259528fea96312e77e.zh.png)
+    ![创建集群。](../../../../../../translated_images/06-03-create-cluster.4a54ba20914f3662.zh.png)
 
 1. 选择 **创建**。
 
@@ -417,18 +417,18 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 选择你创建的 Azure 机器学习工作区。
 
-    ![选择你创建的工作区。](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.zh.png)
+    ![选择你创建的工作区。](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.zh.png)
 
 1. 执行以下操作：
 
     - 从左侧标签选择 **模型目录**。
     - 在 **搜索栏** 输入 *phi-3-mini-4k*，然后从出现的选项中选择 **Phi-3-mini-4k-instruct**。
 
-    ![输入 phi-3-mini-4k。](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b25018a7e7353ce6525d8f5803b0af9bc9a60a9be4204dd77578.zh.png)
+    ![输入 phi-3-mini-4k。](../../../../../../translated_images/06-05-type-phi-3-mini-4k.8ab6d2a04418b250.zh.png)
 
 1. 从导航菜单选择 **微调**。
 
-    ![选择微调。](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeecb897ac74882792b59086893b8a7448a89be3628aee62fc1b.zh.png)
+    ![选择微调。](../../../../../../translated_images/06-06-select-fine-tune.2918a59be55dfeec.zh.png)
 
 1. 执行以下操作：
 
@@ -437,7 +437,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 将验证数据上传类型设为 **提供不同的验证数据**。
     - 选择 **+ 选择数据** 上传 **验证数据**。
 
-    ![填写微调页面。](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0bbc6b248af9e7369ca98379770badec9f73b6bced7a8b7806.zh.png)
+    ![填写微调页面。](../../../../../../translated_images/06-07-fill-finetuning.b6d14c89e7c27d0b.zh.png)
 
     > [!TIP]
     >
@@ -447,7 +447,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 在本练习中，你成功使用 Azure 机器学习微调了 Phi-3 模型。请注意，微调过程可能需要较长时间。运行微调任务后，需要等待其完成。你可以通过导航到 Azure 机器学习工作区左侧的作业标签，监控微调任务状态。在后续系列中，你将部署微调后的模型并将其与 Prompt flow 集成。
 
-    ![查看微调任务。](../../../../../../translated_images/06-08-output.2bd32e59930672b1cc1de86056e2fbc91e338f59e2a29d7dac86ede49a9714b2.zh.png)
+    ![查看微调任务。](../../../../../../translated_images/06-08-output.2bd32e59930672b1.zh.png)
 
 ### 部署微调后的 Phi-3 模型
 
@@ -465,17 +465,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 选择你创建的 Azure 机器学习工作区。
 
-    ![选择你创建的工作区。](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f18133117ca7d6a6c6f03a6d9267dae544308b8df243835a21d0.zh.png)
+    ![选择你创建的工作区。](../../../../../../translated_images/06-04-select-workspace.a92934ac04f4f181.zh.png)
 
 1. 从左侧标签选择 **模型**。
 1. 选择 **+ 注册**。
 1. 选择 **从作业输出注册**。
 
-    ![注册模型。](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777c8c39906ce5cd57f16b54fb3887dd4e4de1ce963b26499ad.zh.png)
+    ![注册模型。](../../../../../../translated_images/07-01-register-model.ad1e7cc05e4b2777.zh.png)
 
 1. 选择你创建的作业。
 
-    ![选择作业。](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd09315953b4eb2cc9d62d0d77ab0d9d877e34c6827fa6d2b6be4.zh.png)
+    ![选择作业。](../../../../../../translated_images/07-02-select-job.3e2e1144cd6cd093.zh.png)
 
 1. 选择 **下一步**。
 
@@ -483,17 +483,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 确认已选择 **作业输出**，通常会自动选中。
 
-    ![选择输出。](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f267b40f73de77f092a5b02808ade72f8eb94e5fe9723feb3.zh.png)
+    ![选择输出。](../../../../../../translated_images/07-03-select-output.4cf1a0e645baea1f.zh.png)
 
 2. 选择 **下一步**。
 
 3. 选择 **注册**。
 
-    ![选择注册。](../../../../../../translated_images/07-04-register.fd82a3b293060bc78399e613293032d3d301c02a6fd8092bec52bfaf4f3104de.zh.png)
+    ![选择注册。](../../../../../../translated_images/07-04-register.fd82a3b293060bc7.zh.png)
 
 4. 你可以通过左侧标签的 **模型** 菜单查看已注册的模型。
 
-    ![已注册的模型。](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591b7995686b95396ffd8c185ba66f0a1f6be18f4aea05e93d5.zh.png)
+    ![已注册的模型。](../../../../../../translated_images/07-05-registered-model.7db9775f58dfd591.zh.png)
 
 #### 部署微调后的模型
 
@@ -503,13 +503,13 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 从导航菜单选择 **实时端点**。
 
-    ![创建端点。](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09618ce29b467276523838b8cc766d79ebfecdb052fef2c4df.zh.png)
+    ![创建端点。](../../../../../../translated_images/07-06-create-endpoint.1ba865c606551f09.zh.png)
 
 1. 选择 **创建**。
 
 1. 选择你已注册的模型。
 
-    ![选择已注册的模型。](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4460f7646dfaa59121fb1384ed1957755427d358462c25225.zh.png)
+    ![选择已注册的模型。](../../../../../../translated_images/07-07-select-registered-model.29c947c37fa30cb4.zh.png)
 
 1. 选择 **选择**。
 
@@ -521,7 +521,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 输入 **端点名称**，必须是唯一值。
     - 输入 **部署名称**，必须是唯一值。
 
-    ![填写部署设置。](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e67378494bb8d81418bc3bdaceb8c57151727d538594cb378697f36.zh.png)
+    ![填写部署设置。](../../../../../../translated_images/07-08-deployment-setting.43ddc4209e673784.zh.png)
 
 1. 选择 **部署**。
 
@@ -537,14 +537,14 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 选择你创建的端点。
 
-    ![选择端点](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4a302f0efc8875002e1c382167083c7fefbdb42ede274d0da.zh.png)
+    ![选择端点](../../../../../../translated_images/07-09-check-deployment.325d18cae8475ef4.zh.png)
 
 1. 在此页面，你可以管理部署过程中的端点。
 
 > [!NOTE]
 > 部署完成后，确保 **实时流量** 设置为 **100%**。如果不是，请选择 **更新流量** 进行调整。流量设置为 0% 时，无法测试模型。
 >
-> ![设置流量。](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d30c64ecabac4b17a7b5dc004ba52ad387cbaaf7b266eeadf.zh.png)
+> ![设置流量。](../../../../../../translated_images/07-10-set-traffic.085b847e5751ff3d.zh.png)
 >
 
 ## 场景 3：与 Prompt flow 集成并在 Azure AI Foundry 中与自定义模型聊天
@@ -572,7 +572,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 从导航菜单中选择 **+ New hub**。
 
-    ![创建 Hub。](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834e092dcf9dda773276fbee65f40252ed4a9af4f9aa4fef5d7.zh.png)
+    ![创建 Hub。](../../../../../../translated_images/08-01-create-hub.8f7dd615bb8d9834.zh.png)
 
 1. 执行以下操作：
 
@@ -583,7 +583,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 选择要连接的 **Connect Azure AI Services**（如有需要可新建）。
     - 选择 **Connect Azure AI Search** 并选择 **Skip connecting**。
 
-    ![填写 Hub 信息。](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c44658a87c2ed01d9e588581f157480ff1ac3312085c51d25.zh.png)
+    ![填写 Hub 信息。](../../../../../../translated_images/08-02-fill-hub.c2d3b505bbbdba7c.zh.png)
 
 1. 选择 **Next**。
 
@@ -593,11 +593,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 从导航菜单选择 **+ New project**。
 
-    ![选择新项目。](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f1251c487d98aed0641bd057100b8e5d6fba9062bfb7d752ce9.zh.png)
+    ![选择新项目。](../../../../../../translated_images/08-04-select-new-project.390fadfc9c8f8f12.zh.png)
 
 1. 输入 **Project name**，必须是唯一值。
 
-    ![创建项目。](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a192b4ed3dde6b1136c860fc85352d612aa2f3ae8a4d54eb4.zh.png)
+    ![创建项目。](../../../../../../translated_images/08-05-create-project.4d97f0372f03375a.zh.png)
 
 1. 选择 **Create a project**。
 
@@ -613,17 +613,17 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 从左侧标签选择 **Endpoints**。
 
-    ![选择 Endpoints。](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf960519c1ac95116d1a7e5b8d0bdea5cd42281930766fbfad1929.zh.png)
+    ![选择 Endpoints。](../../../../../../translated_images/08-06-select-endpoints.aff38d453bcf9605.zh.png)
 
 1. 选择您创建的端点。
 
-    ![选择已创建的端点。](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275ea16f689f59b70d5b0162fff1781204e389edcb63b42b95b2.zh.png)
+    ![选择已创建的端点。](../../../../../../translated_images/08-07-select-endpoint-created.47f0dc09df2e275e.zh.png)
 
 1. 从导航菜单选择 **Consume**。
 
 1. 复制您的 **REST endpoint** 和 **Primary key**。
 
-    ![复制 api key 和 endpoint uri。](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cbe30a20b889154d04109bf17c5c09816060a8689933dc0fd7.zh.png)
+    ![复制 api key 和 endpoint uri。](../../../../../../translated_images/08-08-copy-endpoint-key.18f934b5953ae8cb.zh.png)
 
 #### 添加自定义连接
 
@@ -635,11 +635,11 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 选择 **+ New connection**。
 
-    ![选择新连接。](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc77130c3a16fbb8ee59407ecbf74fd3502cb8720c61384446.zh.png)
+    ![选择新连接。](../../../../../../translated_images/08-09-select-new-connection.02eb45deadc401fc.zh.png)
 
 1. 从导航菜单选择 **Custom keys**。
 
-    ![选择自定义密钥。](../../../../../../translated_images/08-10-select-custom-keys.856f6b29664605513ccc134f1adaefaf27f951981c511783a6a0d1118c9178a5.zh.png)
+    ![选择自定义密钥。](../../../../../../translated_images/08-10-select-custom-keys.856f6b2966460551.zh.png)
 
 1. 执行以下操作：
 
@@ -649,7 +649,7 @@ CO_OP_TRANSLATOR_METADATA:
     - 在键名中输入 **key**，并将您从 Azure ML Studio 复制的密钥粘贴到值字段。
     - 添加密钥后，选择 **is secret** 以防止密钥泄露。
 
-    ![添加连接。](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26e8df1bbd0948e06aa20aa0dc102faa96c8144722ef7f0b72.zh.png)
+    ![添加连接。](../../../../../../translated_images/08-11-add-connection.785486badb4d2d26.zh.png)
 
 1. 选择 **Add connection**。
 
@@ -663,15 +663,15 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 从导航菜单选择 **+ Create**。
 
-    ![选择 Promptflow。](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5ba79bedfd35e2f2fb430f344844994375680fcfc111a994ae.zh.png)
+    ![选择 Promptflow。](../../../../../../translated_images/08-12-select-promptflow.6f4b451cb9821e5b.zh.png)
 
 1. 从导航菜单选择 **Chat flow**。
 
-    ![选择聊天流程。](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591f6cc6360bc35c8fca8d63519c09111c6c431de9b46eed143.zh.png)
+    ![选择聊天流程。](../../../../../../translated_images/08-13-select-flow-type.2ec689b22da32591.zh.png)
 
 1. 输入要使用的 **Folder name**。
 
-    ![输入名称。](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d824bad779a54e55d808a09394b6b730fbea55d78421f52ff.zh.png)
+    ![输入名称。](../../../../../../translated_images/08-14-enter-name.ff9520fefd89f40d.zh.png)
 
 2. 选择 **Create**。
 
@@ -708,7 +708,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     - 选择 **Save**。
 
-    ![选择原始文件模式。](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985b76e070bf170e1d0d0d26b38d93bc635624642191f715a6d.zh.png)
+    ![选择原始文件模式。](../../../../../../translated_images/08-15-select-raw-file-mode.61d988b41df28985.zh.png)
 
 1. 将以下代码添加到 *integrate_with_promptflow.py* 文件中，以便在 Prompt flow 中使用自定义 Phi-3 模型。
 
@@ -773,7 +773,7 @@ CO_OP_TRANSLATOR_METADATA:
 
     ```
 
-    ![粘贴 Prompt flow 代码。](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d097779ab1c429be9fc07e3f4171e41fbbfb747a6e755816411e6d.zh.png)
+    ![粘贴 Prompt flow 代码。](../../../../../../translated_images/08-16-paste-promptflow-code.a6041b74a7d09777.zh.png)
 
 > [!NOTE]
 > 
@@ -781,7 +781,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 选择 **Chat input** 和 **Chat output**，以启用与模型的聊天功能。
 
-    ![选择输入输出。](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03ba022a21159e51d544c6e063e73c10e772c942d4e44da0d30.zh.png)
+    ![选择输入输出。](../../../../../../translated_images/08-17-select-input-output.64dbb39bbe59d03b.zh.png)
 
 1. 现在，您已准备好与自定义 Phi-3 模型聊天。在接下来的练习中，您将学习如何启动 Prompt flow 并使用它与微调后的 Phi-3 模型进行对话。
 
@@ -789,7 +789,7 @@ CO_OP_TRANSLATOR_METADATA:
 >
 > 重建后的流程应如下图所示：
 >
-> ![流程示例。](../../../../../../translated_images/08-18-graph-example.d6457533952e690c10b7375192511a8e2aba847e442b294a2e65d88ffac8f63b.zh.png)
+> ![流程示例。](../../../../../../translated_images/08-18-graph-example.d6457533952e690c.zh.png)
 >
 
 ### 与您的自定义 Phi-3 模型聊天
@@ -802,25 +802,25 @@ CO_OP_TRANSLATOR_METADATA:
 
 1. 选择 **Start compute sessions** 以启动 Prompt flow。
 
-    ![启动计算会话。](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b4809b60d75ce9b0ad53e0729cc1449935ccbe90b954401dc.zh.png)
+    ![启动计算会话。](../../../../../../translated_images/09-01-start-compute-session.a86fcf5be68e386b.zh.png)
 
 1. 选择 **Validate and parse input** 以更新参数。
 
-    ![验证输入。](../../../../../../translated_images/09-02-validate-input.317c76ef766361e97038d7529b9060a23dc59d7ddbeb38ac9c4562ef4f5b32f7.zh.png)
+    ![验证输入。](../../../../../../translated_images/09-02-validate-input.317c76ef766361e9.zh.png)
 
 1. 选择 **connection** 的 **Value**，即您创建的自定义连接。例如，*connection*。
 
-    ![选择连接。](../../../../../../translated_images/09-03-select-connection.99bdddb4b184402368a6ec383814b139686118331a5b2eefa489678902269dfc.zh.png)
+    ![选择连接。](../../../../../../translated_images/09-03-select-connection.99bdddb4b1844023.zh.png)
 
 #### 与您的自定义模型聊天
 
 1. 选择 **Chat**。
 
-    ![选择聊天。](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e636a5e1516b6c64fdf2345ceb3142db2bed93ab7e6f03bbb2.zh.png)
+    ![选择聊天。](../../../../../../translated_images/09-04-select-chat.61936dce6612a1e6.zh.png)
 
 1. 以下是示例结果：现在您可以与自定义 Phi-3 模型聊天。建议基于用于微调的数据提问。
 
-    ![与 Prompt flow 聊天。](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126fa4886e6fd0e7482cfdc6c907fa36f7f2f13d04126f9eda14.zh.png)
+    ![与 Prompt flow 聊天。](../../../../../../translated_images/09-05-chat-with-promptflow.c8ca404c07ab126f.zh.png)
 
 **免责声明**：  
 本文件使用 AI 翻译服务 [Co-op Translator](https://github.com/Azure/co-op-translator) 进行翻译。虽然我们力求准确，但请注意，自动翻译可能包含错误或不准确之处。原始文件的母语版本应被视为权威来源。对于重要信息，建议使用专业人工翻译。对于因使用本翻译而产生的任何误解或误释，我们不承担任何责任。
