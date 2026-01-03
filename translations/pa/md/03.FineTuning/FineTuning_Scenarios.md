@@ -9,7 +9,7 @@ CO_OP_TRANSLATOR_METADATA:
 -->
 ## ਫਾਈਨ ਟਿਊਨਿੰਗ ਸਿਨਾਰਿਓਜ਼
 
-![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094c38c72575e63f2c9bf1cf980ab90f1388e102709f9c979e5.pa.png)
+![FineTuning with MS Services](../../../../translated_images/FinetuningwithMS.3d0cec8ae693e094.pa.png)
 
 **ਪਲੇਟਫਾਰਮ** ਇਸ ਵਿੱਚ ਵੱਖ-ਵੱਖ ਤਕਨਾਲੋਜੀਆਂ ਸ਼ਾਮਲ ਹਨ ਜਿਵੇਂ ਕਿ Azure AI Foundry, Azure Machine Learning, AI Tools, Kaito, ਅਤੇ ONNX Runtime।
 
@@ -24,7 +24,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ਹੋਸਟ ਕੀਤੀ ਫਾਈਨ-ਟਿਊਨਿੰਗ ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਮਾਡਲ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰੋ, ਬਿਨਾਂ ਕਮਪਿਊਟ ਬਣਾਉਣ ਅਤੇ ਪ੍ਰਬੰਧਨ ਕਰਨ ਦੀ ਲੋੜ ਦੇ।
 
-![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d0a137b16ab79ec5977ece923cd1fdd89557a2655c632669d.pa.png)
+![MaaS Fine Tuning](../../../../translated_images/MaaSfinetune.3eee4630607aff0d.pa.png)
 
 ਸਰਵਰਲੈੱਸ ਫਾਈਨ-ਟਿਊਨਿੰਗ Phi-3-mini ਅਤੇ Phi-3-medium ਮਾਡਲਾਂ ਲਈ ਉਪਲਬਧ ਹੈ, ਜੋ ਡਿਵੈਲਪਰਾਂ ਨੂੰ ਮਾਡਲਾਂ ਨੂੰ ਕਲਾਉਡ ਅਤੇ ਐਜ ਸਿਨਾਰਿਓਜ਼ ਲਈ ਤੇਜ਼ੀ ਨਾਲ ਅਤੇ ਆਸਾਨੀ ਨਾਲ ਕਸਟਮਾਈਜ਼ ਕਰਨ ਦੀ ਆਗਿਆ ਦਿੰਦਾ ਹੈ ਬਿਨਾਂ ਕਮਪਿਊਟ ਦੀ ਵਿਵਸਥਾ ਕੀਤੇ। ਅਸੀਂ ਇਹ ਵੀ ਐਲਾਨ ਕੀਤਾ ਹੈ ਕਿ Phi-3-small ਹੁਣ ਸਾਡੇ Models-as-a-Service ਆਫਰਿੰਗ ਰਾਹੀਂ ਉਪਲਬਧ ਹੈ, ਤਾਂ ਜੋ ਡਿਵੈਲਪਰ ਬਿਨਾਂ ਅਧਾਰਭੂਤ ਇੰਫਰਾਸਟਰੱਕਚਰ ਨੂੰ ਸੰਭਾਲੇ ਤੇਜ਼ੀ ਨਾਲ AI ਵਿਕਾਸ ਸ਼ੁਰੂ ਕਰ ਸਕਣ।
 
@@ -32,7 +32,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ਉਪਭੋਗਤਾ ਆਪਣੇ ਕਮਪਿਊਟ ਨੂੰ ਪ੍ਰਬੰਧਿਤ ਕਰਦੇ ਹਨ ਤਾਂ ਜੋ ਆਪਣੇ ਮਾਡਲਾਂ ਨੂੰ ਫਾਈਨ-ਟਿਊਨ ਕਰ ਸਕਣ।
 
-![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c4a6a91593ebc348548410e162acda34f18034384e3b3816a.pa.png)
+![Maap Fine Tuning](../../../../translated_images/MaaPFinetune.fd3829c1122f5d1c.pa.png)
 
 [Fine Tuning Sample](https://github.com/Azure/azureml-examples/blob/main/sdk/python/foundation-models/system/finetune/chat-completion/chat-completion.ipynb)
 
@@ -53,7 +53,7 @@ CO_OP_TRANSLATOR_METADATA:
 
 ## ਫਾਈਨ ਟਿਊਨਿੰਗ ਪ੍ਰਦਰਸ਼ਨ ਉਦਾਹਰਣਾਂ
 
-![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc186adb16a413b1c17e2f43a89933ba95feb5aee84b0b24add.pa.png)
+![Finetuning Performance](../../../../translated_images/Finetuningexamples.a9a41214f8f5afc1.pa.png)
 
 **ਅਸਵੀਕਾਰੋਪਣ**:  
 ਇਹ ਦਸਤਾਵੇਜ਼ AI ਅਨੁਵਾਦ ਸੇਵਾ [Co-op Translator](https://github.com/Azure/co-op-translator) ਦੀ ਵਰਤੋਂ ਕਰਕੇ ਅਨੁਵਾਦਿਤ ਕੀਤਾ ਗਿਆ ਹੈ। ਜਦੋਂ ਕਿ ਅਸੀਂ ਸਹੀਅਤ ਲਈ ਕੋਸ਼ਿਸ਼ ਕਰਦੇ ਹਾਂ, ਕਿਰਪਾ ਕਰਕੇ ਧਿਆਨ ਰੱਖੋ ਕਿ ਸਵੈਚਾਲਿਤ ਅਨੁਵਾਦਾਂ ਵਿੱਚ ਗਲਤੀਆਂ ਜਾਂ ਅਸਮਰਥਤਾਵਾਂ ਹੋ ਸਕਦੀਆਂ ਹਨ। ਮੂਲ ਦਸਤਾਵੇਜ਼ ਆਪਣੀ ਮੂਲ ਭਾਸ਼ਾ ਵਿੱਚ ਪ੍ਰਮਾਣਿਕ ਸਰੋਤ ਮੰਨਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਮਹੱਤਵਪੂਰਨ ਜਾਣਕਾਰੀ ਲਈ, ਪੇਸ਼ੇਵਰ ਮਨੁੱਖੀ ਅਨੁਵਾਦ ਦੀ ਸਿਫਾਰਸ਼ ਕੀਤੀ ਜਾਂਦੀ ਹੈ। ਇਸ ਅਨੁਵਾਦ ਦੀ ਵਰਤੋਂ ਤੋਂ ਉਤਪੰਨ ਕਿਸੇ ਵੀ ਗਲਤਫਹਿਮੀ ਜਾਂ ਗਲਤ ਵਿਆਖਿਆ ਲਈ ਅਸੀਂ ਜ਼ਿੰਮੇਵਾਰ ਨਹੀਂ ਹਾਂ।

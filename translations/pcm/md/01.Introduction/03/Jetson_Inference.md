@@ -37,7 +37,7 @@ d. Python 3.8+
 
  If you wan use gguf for cloud and edge devices at the same time, LlamaEdge fit be like WasmEdge (WasmEdge na lightweight, high-performance, scalable WebAssembly runtime wey fine for cloud native, edge and decentralized applications. E support serverless applications, embedded functions, microservices, smart contracts and IoT devices. You fit deploy gguf quantitative model to edge devices and the cloud through LlamaEdge).
 
-![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf729d0c895601ffb284d46998dd44022f5a3ebd3745c91e7db.pcm.jpg)
+![llamaedge](../../../../../translated_images/llamaedge.e9d6ff96dff11cf7.pcm.jpg)
 
 Here na the steps to use 
 
@@ -69,7 +69,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:{Your gguf path} llama-api-ser
 Here na the running result
 
 
-![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821cf23486eee46e18241c442f862976040c2681b36b905125a6.pcm.png)
+![llamaedgerun](../../../../../translated_images/llamaedgerun.bed921516c9a821c.pcm.png)
 
 ***Sample code*** [Phi-3 mini WASM Notebook Sample](https://github.com/Azure-Samples/Phi-3MiniSamples/tree/main/wasm)
 

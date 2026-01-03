@@ -23,7 +23,7 @@ For dis E2E sample, you go learn how to fine-tune di Phi-3 model an integrate am
 
 Here na overview of dis E2E sample.
 
-![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468cf3bbb3158cf273380cbdf7fcec042c7328e1559c6b2e2632.pcm.png)
+![Phi-3-FineTuning_PromptFlow_Integration Overview](../../../../../../translated_images/00-01-architecture.02fc569e266d468c.pcm.png)
 
 ### Table of Contents
 
@@ -49,13 +49,13 @@ Here na overview of dis E2E sample.
 
 1. Type *azure machine learning* for di **search bar** wey dey top di portal page an select **Azure Machine Learning** from di options wey go show.
 
-    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c600d87008fb78206d2cf90c0b920c231618a8ec8baaa6f46c3.pcm.png)
+    ![Type azure machine learning](../../../../../../translated_images/01-01-type-azml.a5116f8454d98c60.pcm.png)
 
 1. Select **+ Create** from di navigation menu.
 
 1. Select **New workspace** from di navigation menu.
 
-    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4fbb808d1bbcd92962692b1fa687f4c5d3952f453177825bc.pcm.png)
+    ![Select new workspace](../../../../../../translated_images/01-02-select-new-workspace.83e17436f8898dc4.pcm.png)
 
 1. Do di following tasks:
 
@@ -68,7 +68,7 @@ Here na overview of dis E2E sample.
     - Select di **Application insights** wey you wan use (create new one if you need).
     - Select di **Container registry** wey you wan use (create new one if you need).
 
-    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb141b9e8c16f31834e82e831275bd9faad0b70343f46255de.pcm.png)
+    ![Fill AZML.](../../../../../../translated_images/01-03-fill-AZML.730a5177757bbebb.pcm.png)
 
 1. Select **Review + Create**.
 
@@ -92,7 +92,7 @@ For dis E2E sample, you go use di *Standard_NC24ads_A100_v4 GPU* for fine-tuning
     - Select di **Virtual machine family** wey you wan use. For example, select **Standard NCADSA100v4 Family Cluster Dedicated vCPUs**, wey include di *Standard_NC24ads_A100_v4* GPU.
     - Select di **Request quota** from di navigation menu.
 
-        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab8348515fcfba9d0279114f04065df8bd6fb78e3d3704e627545.pcm.png)
+        ![Request quota.](../../../../../../translated_images/01-04-request-quota.3d3670c3221ab834.pcm.png)
 
     - For di Request quota page, enter di **New cores limit** wey you wan use. For example, 24.
     - For di Request quota page, select **Submit** to request di GPU quota.
@@ -108,11 +108,11 @@ To fine-tune an deploy your models, you must first create User Assigned Managed 
 
 1. Type *managed identities* for di **search bar** wey dey top di portal page an select **Managed Identities** from di options wey go show.
 
-    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8a95d6e7762f1b087275a9634677f0a4e355717550ace3c02.pcm.png)
+    ![Type managed identities.](../../../../../../translated_images/01-05-type-managed-identities.9297b6039874eff8.pcm.png)
 
 1. Select **+ Create**.
 
-    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a8c70af922bf28a573c0744fb642f8228d62214b010a070d9.pcm.png)
+    ![Select create.](../../../../../../translated_images/01-06-select-create.936d8d66d7144f9a.pcm.png)
 
 1. Do di following tasks:
 
@@ -139,7 +139,7 @@ To fine-tune an deploy your models, you must first create User Assigned Managed 
     - Select di **Resource group** wey you wan use.
     - Select di **Role** to **Contributor**.
 
-    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e008e224cf336687c04c9fe24740e47e34ce041b50b47e0ed1.pcm.png)
+    ![Fill contributor role.](../../../../../../translated_images/01-07-fill-contributor-role.29ca99b7c9f687e0.pcm.png)
 
 1. Select **Save**.
 
@@ -147,7 +147,7 @@ To fine-tune an deploy your models, you must first create User Assigned Managed 
 
 1. Type *storage accounts* for di **search bar** wey dey top di portal page an select **Storage accounts** from di options wey go show.
 
-    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49bcd9cce3ffd1b6218afb6e5c3700b628da7b7c294be71b911.pcm.png)
+    ![Type storage accounts.](../../../../../../translated_images/01-08-type-storage-accounts.1186c8e42933e49b.pcm.png)
 
 1. Select di storage account wey connect to di Azure Machine Learning workspace wey you create. For example, *finetunephistorage*.
 
@@ -158,7 +158,7 @@ To fine-tune an deploy your models, you must first create User Assigned Managed 
     - Select **+ Add** from di navigation menu.
     - Select **Add role assignment** from di navigation menu.
 
-    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0ae84790d65dc5726a9b57c496d916b8700d41e0b3b468451.pcm.png)
+    ![Add role.](../../../../../../translated_images/01-09-add-role.d2db22fec1b187f0.pcm.png)
 
 1. For di Add role assignment page, do di following tasks:
 
@@ -171,7 +171,7 @@ To fine-tune an deploy your models, you must first create User Assigned Managed 
     - For di Select managed identities page, select di Manage Identity wey you create. For example, *finetunephi-managedidentity*.
     - For di Select managed identities page, select **Select**.
 
-    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df788963e1dc0a68c39ee297363aabe979b487c60b3037662f.pcm.png)
+    ![Select managed identity.](../../../../../../translated_images/01-10-select-managed-identity.5ce5ba181f72a4df.pcm.png)
 
 1. Select **Review + assign**.
 
@@ -179,7 +179,7 @@ To fine-tune an deploy your models, you must first create User Assigned Managed 
 
 1. Type *container registries* for di **search bar** wey dey top di portal page an select **Container registries** from di options wey go show.
 
-    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c64c0f778633c652ce08e4ac28f142a17afc10de81bb8c336.pcm.png)
+    ![Type container registries.](../../../../../../translated_images/01-11-type-container-registries.ff3b8bdc49dc596c.pcm.png)
 
 1. Select di container registry wey connect to di Azure Machine Learning workspace. For example, *finetunephicontainerregistries*
 
@@ -290,7 +290,7 @@ For dis exercise, you go:
 
 1. Select di *finetune-phi* folder wey you create, wey dey for *C:\Users\yourUserName\finetune-phi*.
 
-    ![Open di project folda.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639c12e7da258ac8b3deca260786edb07598e206725cd1593ce.pcm.png)
+    ![Open di project folda.](../../../../../../translated_images/01-12-open-project-folder.1fff9c7f41dd1639.pcm.png)
 
 1. For di left pane for Visual Studio Code, right-click and select **New File** make you create new file wey name na *download_dataset.py*.
 
@@ -298,7 +298,7 @@ For dis exercise, you go:
 
 1. For di left pane for Visual Studio Code, right-click and select **New File** make you create new file wey name na *deploy_model.py*.
 
-    ![Make new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a398766a39eac9f15240a9a4da566bd8dca86f471e78eadc69e.pcm.png)
+    ![Make new file.](../../../../../../translated_images/01-13-create-new-file.c17c150fff384a39.pcm.png)
 
 1. For di left pane for Visual Studio Code, right-click and select **New Folder** make you create new folder wey name na *finetuning_dir*.
 
@@ -374,28 +374,28 @@ For dis exercise, you go:
     - Select di Azure Subscription wey you dey use now.
     - Copy and paste your Subscription ID into di *config.py* file.
 
-    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637e01163bfdd2a606e7d06f05455ab56e05cb5107e938e7a90.pcm.png)
+    ![Find subscription id.](../../../../../../translated_images/01-14-find-subscriptionid.4f4ca33555f1e637.pcm.png)
 
 1. Do di following things to add di Azure Workspace Name:
 
     - Go to di Azure Machine Learning resource wey you create.
     - Copy and paste your account name into di *config.py* file.
 
-    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a702b1bb5e9d8e9f5e5424abe066a0ff310da980582e65721f.pcm.png)
+    ![Find Azure Machine Learning name.](../../../../../../translated_images/01-15-find-AZML-name.1975f0422bca19a7.pcm.png)
 
 1. Do di following things to add di Azure Resource Group Name:
 
     - Go to di Azure Machine Learning resource wey you create.
     - Copy and paste your Azure Resource Group Name into di *config.py* file.
 
-    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a399243d7c94d5aabd86070ab6535d3cf2ec38c78538626666.pcm.png)
+    ![Find resource group name.](../../../../../../translated_images/01-16-find-AZML-resourcegroup.855a349d0af134a3.pcm.png)
 
 2. Do di following things to add di Azure Managed Identity name
 
     - Go to di Managed Identities resource wey you create.
     - Copy and paste your Azure Managed Identity name into di *config.py* file.
 
-    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f534998271ea7c5aebafa887051567417f3b4244ff58fdd443192b6d7.pcm.png)
+    ![Find UAI.](../../../../../../translated_images/01-17-find-uai.3529464f53499827.pcm.png)
 
 ### Prepare dataset for fine-tuning
 
@@ -509,7 +509,7 @@ You need set up Azure CLI to authenticate your environment. Azure CLI go allow y
 
 1. Select your Azure subscription wey you wan use.
 
-    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a8792c687d36e4fc4f4ee37fd76640e6e4e5aed3329513f2328.pcm.png)
+    ![Find resource group name.](../../../../../../translated_images/02-01-login-using-azure-cli.dfde31cb75e58a87.pcm.png)
 
 > [!TIP]
 >
@@ -861,7 +861,7 @@ By running *setup_ml.py*, you go run di fine-tuning process inside di Azure Mach
 
 1. For dis exercise, you don successfully fine-tune di Phi-3 model using Azure Machine Learning. By running di *setup_ml.py* script, you don set up di Azure Machine Learning environment and start di fine-tuning process wey dey define for *fine_tune.py* file. Abeg note say di fine-tuning process fit take plenty time. After you run `python setup_ml.py` command, you go need wait make di process finish. You fit monitor di status of di fine-tuning job by following di link wey dem show for terminal go Azure Machine Learning portal.
 
-    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871ee8ba32fa508cc4018c0f04e51ad14b95c421ad77151f768f.pcm.png)
+    ![See finetuning job.](../../../../../../translated_images/02-02-see-finetuning-job.59393bc3b143871e.pcm.png)
 
 ### Deploy the fine-tuned model
 
@@ -1080,11 +1080,11 @@ Running di *deploy_model.py* file go automate di whole deployment process. E go 
 
 1. Select **Endpoints** from the left side tab.
 
-    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff109f3b7a6b6e4e9689f99b2d7bf021b057f6c0ecbd1ba90c0.pcm.png)
+    ![Select endpoints.](../../../../../../translated_images/02-03-select-endpoints.c3136326510baff1.pcm.png)
 
 2. Select the endpoint wey you created.
 
-    ![Select endpoints wey you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4b726505fcfb7d262b0510de029dcbaf36422bb75b77f25dd.pcm.png)
+    ![Select endpoints wey you created.](../../../../../../translated_images/02-04-select-endpoint-created.0363e7dca51dabb4.pcm.png)
 
 3. On this page, you fit manage the endpoints wey dem create during the deployment process.
 
@@ -1103,7 +1103,7 @@ After you don successfully deploy your fine-tuned model, you fit now integrate a
 1. Copy an paste your **REST endpoint** into the *config.py* file, replacing `AZURE_ML_ENDPOINT = "your_fine_tuned_model_endpoint_uri"` with your **REST endpoint**.
 1. Copy an paste your **Primary key** into the *config.py* file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` with your **Primary key**.
 
-    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53bf44401e184f65a0a088daa76a65f5df5eb4489ae40b890f6.pcm.png)
+    ![Copy api key and endpoint uri.](../../../../../../translated_images/02-05-copy-apikey-endpoint.88b5a92e6462c53b.pcm.png)
 
 #### Add code to the *flow.dag.yml* file
 
@@ -1212,7 +1212,7 @@ After you don successfully deploy your fine-tuned model, you fit now integrate a
 
 1. Dis na example of the results: Now you fit chat wit your custom Phi-3 model. E dey recommended make you ask questions wey base on the data wey dem use for fine-tuning.
 
-    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6412447c9786c562be969a8c3b19791eadffce725fa84f014.pcm.png)
+    ![Prompt flow example.](../../../../../../translated_images/02-06-promptflow-example.89384abaf3ad71f6.pcm.png)
 
 ---
 
